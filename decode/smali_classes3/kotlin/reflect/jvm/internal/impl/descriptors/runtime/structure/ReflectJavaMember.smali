@@ -59,7 +59,7 @@
     return p1
 .end method
 
-.method public findAnnotation(Lkotlin/reflect/jvm/internal/impl/name/FqName;)Lkotlin/reflect/jvm/internal/impl/load/java/structure/JavaAnnotation;
+.method public findAnnotation(Lkotlin/reflect/jvm/internal/impl/name/FqName;)Lkotlin/reflect/jvm/internal/impl/descriptors/runtime/structure/ReflectJavaAnnotation;
     .locals 0
 
     invoke-static {p0, p1}, Lkotlin/reflect/jvm/internal/impl/descriptors/runtime/structure/ReflectJavaAnnotationOwner$DefaultImpls;->findAnnotation(Lkotlin/reflect/jvm/internal/impl/descriptors/runtime/structure/ReflectJavaAnnotationOwner;Lkotlin/reflect/jvm/internal/impl/name/FqName;)Lkotlin/reflect/jvm/internal/impl/descriptors/runtime/structure/ReflectJavaAnnotation;
@@ -69,8 +69,36 @@
     return-object p1
 .end method
 
-.method public getAnnotations()Ljava/util/Collection;
+.method public bridge synthetic findAnnotation(Lkotlin/reflect/jvm/internal/impl/name/FqName;)Lkotlin/reflect/jvm/internal/impl/load/java/structure/JavaAnnotation;
+    .locals 0
+
+    invoke-virtual {p0, p1}, Lkotlin/reflect/jvm/internal/impl/descriptors/runtime/structure/ReflectJavaMember;->findAnnotation(Lkotlin/reflect/jvm/internal/impl/name/FqName;)Lkotlin/reflect/jvm/internal/impl/descriptors/runtime/structure/ReflectJavaAnnotation;
+
+    move-result-object p1
+
+    return-object p1
+.end method
+
+.method public bridge synthetic getAnnotations()Ljava/util/Collection;
     .locals 1
+
+    invoke-virtual {p0}, Lkotlin/reflect/jvm/internal/impl/descriptors/runtime/structure/ReflectJavaMember;->getAnnotations()Ljava/util/List;
+
+    move-result-object v0
+
+    return-object v0
+.end method
+
+.method public getAnnotations()Ljava/util/List;
+    .locals 1
+    .annotation system Ldalvik/annotation/Signature;
+        value = {
+            "()",
+            "Ljava/util/List<",
+            "Lkotlin/reflect/jvm/internal/impl/descriptors/runtime/structure/ReflectJavaAnnotation;",
+            ">;"
+        }
+    .end annotation
 
     invoke-static {p0}, Lkotlin/reflect/jvm/internal/impl/descriptors/runtime/structure/ReflectJavaAnnotationOwner$DefaultImpls;->getAnnotations(Lkotlin/reflect/jvm/internal/impl/descriptors/runtime/structure/ReflectJavaAnnotationOwner;)Ljava/util/List;
 
@@ -79,7 +107,7 @@
     return-object v0
 .end method
 
-.method public getContainingClass()Lkotlin/reflect/jvm/internal/impl/load/java/structure/JavaClass;
+.method public getContainingClass()Lkotlin/reflect/jvm/internal/impl/descriptors/runtime/structure/ReflectJavaClass;
     .locals 3
 
     new-instance v0, Lkotlin/reflect/jvm/internal/impl/descriptors/runtime/structure/ReflectJavaClass;
@@ -97,6 +125,16 @@
     invoke-static {v1, v2}, Lkotlin/jvm/internal/Intrinsics;->checkNotNullExpressionValue(Ljava/lang/Object;Ljava/lang/String;)V
 
     invoke-direct {v0, v1}, Lkotlin/reflect/jvm/internal/impl/descriptors/runtime/structure/ReflectJavaClass;-><init>(Ljava/lang/Class;)V
+
+    return-object v0
+.end method
+
+.method public bridge synthetic getContainingClass()Lkotlin/reflect/jvm/internal/impl/load/java/structure/JavaClass;
+    .locals 1
+
+    invoke-virtual {p0}, Lkotlin/reflect/jvm/internal/impl/descriptors/runtime/structure/ReflectJavaMember;->getContainingClass()Lkotlin/reflect/jvm/internal/impl/descriptors/runtime/structure/ReflectJavaClass;
+
+    move-result-object v0
 
     return-object v0
 .end method
@@ -166,7 +204,7 @@
 .end method
 
 .method public final getValueParameters([Ljava/lang/reflect/Type;[[Ljava/lang/annotation/Annotation;Z)Ljava/util/List;
-    .locals 12
+    .locals 11
     .annotation system Ldalvik/annotation/Signature;
         value = {
             "([",
@@ -180,312 +218,119 @@
         }
     .end annotation
 
+    const-string v0, "parameterTypes"
+
+    invoke-static {p1, v0}, Lkotlin/jvm/internal/Intrinsics;->checkNotNullParameter(Ljava/lang/Object;Ljava/lang/String;)V
+
+    const-string v0, "parameterAnnotations"
+
+    invoke-static {p2, v0}, Lkotlin/jvm/internal/Intrinsics;->checkNotNullParameter(Ljava/lang/Object;Ljava/lang/String;)V
+
     new-instance v0, Ljava/util/ArrayList;
 
     array-length v1, p1
 
     invoke-direct {v0, v1}, Ljava/util/ArrayList;-><init>(I)V
 
+    sget-object v1, Lkotlin/reflect/jvm/internal/impl/descriptors/runtime/structure/Java8ParameterNamesLoader;->INSTANCE:Lkotlin/reflect/jvm/internal/impl/descriptors/runtime/structure/Java8ParameterNamesLoader;
+
     invoke-virtual {p0}, Lkotlin/reflect/jvm/internal/impl/descriptors/runtime/structure/ReflectJavaMember;->getMember()Ljava/lang/reflect/Member;
+
+    move-result-object v2
+
+    invoke-virtual {v1, v2}, Lkotlin/reflect/jvm/internal/impl/descriptors/runtime/structure/Java8ParameterNamesLoader;->loadParameterNames(Ljava/lang/reflect/Member;)Ljava/util/List;
 
     move-result-object v1
 
-    const-string v2, "member"
+    const/4 v2, 0x0
 
-    invoke-static {v1, v2}, Lkotlin/jvm/internal/Intrinsics;->checkNotNullParameter(Ljava/lang/Object;Ljava/lang/String;)V
+    if-nez v1, :cond_0
 
-    sget-object v2, Lkotlin/reflect/jvm/internal/impl/descriptors/runtime/structure/Java8ParameterNamesLoader;->cache:Lkotlin/reflect/jvm/internal/impl/descriptors/runtime/structure/Java8ParameterNamesLoader$Cache;
-
-    const/4 v3, 0x0
-
-    const/4 v4, 0x0
-
-    if-nez v2, :cond_0
-
-    invoke-virtual {v1}, Ljava/lang/Object;->getClass()Ljava/lang/Class;
-
-    move-result-object v2
-
-    :try_start_0
-    const-string v5, "getParameters"
-
-    new-array v6, v4, [Ljava/lang/Class;
-
-    invoke-virtual {v2, v5, v6}, Ljava/lang/Class;->getMethod(Ljava/lang/String;[Ljava/lang/Class;)Ljava/lang/reflect/Method;
-
-    move-result-object v5
-    :try_end_0
-    .catch Ljava/lang/NoSuchMethodException; {:try_start_0 .. :try_end_0} :catch_0
-
-    invoke-static {v2}, Lkotlin/reflect/jvm/internal/impl/descriptors/runtime/structure/ReflectClassUtilKt;->getSafeClassLoader(Ljava/lang/Class;)Ljava/lang/ClassLoader;
-
-    move-result-object v2
-
-    const-string v6, "java.lang.reflect.Parameter"
-
-    invoke-virtual {v2, v6}, Ljava/lang/ClassLoader;->loadClass(Ljava/lang/String;)Ljava/lang/Class;
-
-    move-result-object v2
-
-    new-instance v6, Lkotlin/reflect/jvm/internal/impl/descriptors/runtime/structure/Java8ParameterNamesLoader$Cache;
-
-    new-array v7, v4, [Ljava/lang/Class;
-
-    const-string v8, "getName"
-
-    invoke-virtual {v2, v8, v7}, Ljava/lang/Class;->getMethod(Ljava/lang/String;[Ljava/lang/Class;)Ljava/lang/reflect/Method;
-
-    move-result-object v2
-
-    invoke-direct {v6, v5, v2}, Lkotlin/reflect/jvm/internal/impl/descriptors/runtime/structure/Java8ParameterNamesLoader$Cache;-><init>(Ljava/lang/reflect/Method;Ljava/lang/reflect/Method;)V
-
-    move-object v2, v6
+    move v3, v2
 
     goto :goto_0
 
-    :catch_0
-    new-instance v2, Lkotlin/reflect/jvm/internal/impl/descriptors/runtime/structure/Java8ParameterNamesLoader$Cache;
+    :cond_0
+    invoke-interface {v1}, Ljava/util/List;->size()I
 
-    invoke-direct {v2, v3, v3}, Lkotlin/reflect/jvm/internal/impl/descriptors/runtime/structure/Java8ParameterNamesLoader$Cache;-><init>(Ljava/lang/reflect/Method;Ljava/lang/reflect/Method;)V
+    move-result v3
+
+    array-length v4, p1
+
+    sub-int/2addr v3, v4
 
     :goto_0
-    sput-object v2, Lkotlin/reflect/jvm/internal/impl/descriptors/runtime/structure/Java8ParameterNamesLoader;->cache:Lkotlin/reflect/jvm/internal/impl/descriptors/runtime/structure/Java8ParameterNamesLoader$Cache;
+    array-length v4, p1
 
-    :cond_0
-    iget-object v5, v2, Lkotlin/reflect/jvm/internal/impl/descriptors/runtime/structure/Java8ParameterNamesLoader$Cache;->getParameters:Ljava/lang/reflect/Method;
+    add-int/lit8 v4, v4, -0x1
 
-    if-nez v5, :cond_1
+    if-ltz v4, :cond_5
 
-    goto :goto_1
-
-    :cond_1
-    iget-object v2, v2, Lkotlin/reflect/jvm/internal/impl/descriptors/runtime/structure/Java8ParameterNamesLoader$Cache;->getName:Ljava/lang/reflect/Method;
-
-    if-nez v2, :cond_2
+    move v5, v2
 
     :goto_1
-    move-object v5, v3
+    add-int/lit8 v6, v5, 0x1
+
+    sget-object v7, Lkotlin/reflect/jvm/internal/impl/descriptors/runtime/structure/ReflectJavaType;->Factory:Lkotlin/reflect/jvm/internal/impl/descriptors/runtime/structure/ReflectJavaType$Factory;
+
+    aget-object v8, p1, v5
+
+    invoke-virtual {v7, v8}, Lkotlin/reflect/jvm/internal/impl/descriptors/runtime/structure/ReflectJavaType$Factory;->create(Ljava/lang/reflect/Type;)Lkotlin/reflect/jvm/internal/impl/descriptors/runtime/structure/ReflectJavaType;
+
+    move-result-object v7
+
+    if-nez v1, :cond_1
+
+    const/4 v8, 0x0
+
+    goto :goto_2
+
+    :cond_1
+    add-int v8, v5, v3
+
+    invoke-static {v1, v8}, Lkotlin/collections/CollectionsKt___CollectionsKt;->getOrNull(Ljava/util/List;I)Ljava/lang/Object;
+
+    move-result-object v8
+
+    check-cast v8, Ljava/lang/String;
+
+    if-eqz v8, :cond_4
+
+    :goto_2
+    if-eqz p3, :cond_2
+
+    invoke-static {p1}, Lkotlin/collections/ArraysKt___ArraysKt;->getLastIndex([Ljava/lang/Object;)I
+
+    move-result v9
+
+    if-ne v5, v9, :cond_2
+
+    const/4 v9, 0x1
 
     goto :goto_3
 
     :cond_2
-    new-array v6, v4, [Ljava/lang/Object;
+    move v9, v2
 
-    invoke-virtual {v5, v1, v6}, Ljava/lang/reflect/Method;->invoke(Ljava/lang/Object;[Ljava/lang/Object;)Ljava/lang/Object;
-
-    move-result-object v1
-
-    const-string v5, "null cannot be cast to non-null type kotlin.Array<*>"
-
-    invoke-static {v1, v5}, Ljava/util/Objects;->requireNonNull(Ljava/lang/Object;Ljava/lang/String;)Ljava/lang/Object;
-
-    check-cast v1, [Ljava/lang/Object;
-
-    new-instance v5, Ljava/util/ArrayList;
-
-    array-length v6, v1
-
-    invoke-direct {v5, v6}, Ljava/util/ArrayList;-><init>(I)V
-
-    array-length v6, v1
-
-    move v7, v4
-
-    :goto_2
-    if-ge v7, v6, :cond_3
-
-    aget-object v8, v1, v7
-
-    new-array v9, v4, [Ljava/lang/Object;
-
-    invoke-virtual {v2, v8, v9}, Ljava/lang/reflect/Method;->invoke(Ljava/lang/Object;[Ljava/lang/Object;)Ljava/lang/Object;
-
-    move-result-object v8
-
-    const-string v9, "null cannot be cast to non-null type kotlin.String"
-
-    invoke-static {v8, v9}, Ljava/util/Objects;->requireNonNull(Ljava/lang/Object;Ljava/lang/String;)Ljava/lang/Object;
-
-    check-cast v8, Ljava/lang/String;
-
-    invoke-virtual {v5, v8}, Ljava/util/ArrayList;->add(Ljava/lang/Object;)Z
-
-    add-int/lit8 v7, v7, 0x1
-
-    goto :goto_2
-
-    :cond_3
     :goto_3
-    if-nez v5, :cond_4
+    new-instance v10, Lkotlin/reflect/jvm/internal/impl/descriptors/runtime/structure/ReflectJavaValueParameter;
 
-    move-object v1, v3
+    aget-object v5, p2, v5
+
+    invoke-direct {v10, v7, v5, v8, v9}, Lkotlin/reflect/jvm/internal/impl/descriptors/runtime/structure/ReflectJavaValueParameter;-><init>(Lkotlin/reflect/jvm/internal/impl/descriptors/runtime/structure/ReflectJavaType;[Ljava/lang/annotation/Annotation;Ljava/lang/String;Z)V
+
+    invoke-virtual {v0, v10}, Ljava/util/ArrayList;->add(Ljava/lang/Object;)Z
+
+    if-le v6, v4, :cond_3
 
     goto :goto_4
 
+    :cond_3
+    move v5, v6
+
+    goto :goto_1
+
     :cond_4
-    invoke-interface {v5}, Ljava/util/List;->size()I
-
-    move-result v1
-
-    invoke-static {v1}, Ljava/lang/Integer;->valueOf(I)Ljava/lang/Integer;
-
-    move-result-object v1
-
-    :goto_4
-    if-nez v1, :cond_5
-
-    move v1, v4
-
-    goto :goto_5
-
-    :cond_5
-    invoke-virtual {v1}, Ljava/lang/Integer;->intValue()I
-
-    move-result v1
-
-    array-length v2, p1
-
-    sub-int/2addr v1, v2
-
-    :goto_5
-    array-length v2, p1
-
-    add-int/lit8 v2, v2, -0x1
-
-    if-ltz v2, :cond_e
-
-    move v6, v4
-
-    :goto_6
-    add-int/lit8 v7, v6, 0x1
-
-    aget-object v8, p1, v6
-
-    const-string v9, "type"
-
-    invoke-static {v8, v9}, Lkotlin/jvm/internal/Intrinsics;->checkNotNullParameter(Ljava/lang/Object;Ljava/lang/String;)V
-
-    instance-of v9, v8, Ljava/lang/Class;
-
-    if-eqz v9, :cond_6
-
-    move-object v10, v8
-
-    check-cast v10, Ljava/lang/Class;
-
-    invoke-virtual {v10}, Ljava/lang/Class;->isPrimitive()Z
-
-    move-result v11
-
-    if-eqz v11, :cond_6
-
-    new-instance v8, Lkotlin/reflect/jvm/internal/impl/descriptors/runtime/structure/ReflectJavaPrimitiveType;
-
-    invoke-direct {v8, v10}, Lkotlin/reflect/jvm/internal/impl/descriptors/runtime/structure/ReflectJavaPrimitiveType;-><init>(Ljava/lang/Class;)V
-
-    goto :goto_9
-
-    :cond_6
-    instance-of v10, v8, Ljava/lang/reflect/GenericArrayType;
-
-    if-nez v10, :cond_9
-
-    if-eqz v9, :cond_7
-
-    move-object v9, v8
-
-    check-cast v9, Ljava/lang/Class;
-
-    invoke-virtual {v9}, Ljava/lang/Class;->isArray()Z
-
-    move-result v9
-
-    if-eqz v9, :cond_7
-
-    goto :goto_7
-
-    :cond_7
-    instance-of v9, v8, Ljava/lang/reflect/WildcardType;
-
-    if-eqz v9, :cond_8
-
-    new-instance v9, Lkotlin/reflect/jvm/internal/impl/descriptors/runtime/structure/ReflectJavaWildcardType;
-
-    check-cast v8, Ljava/lang/reflect/WildcardType;
-
-    invoke-direct {v9, v8}, Lkotlin/reflect/jvm/internal/impl/descriptors/runtime/structure/ReflectJavaWildcardType;-><init>(Ljava/lang/reflect/WildcardType;)V
-
-    goto :goto_8
-
-    :cond_8
-    new-instance v9, Lkotlin/reflect/jvm/internal/impl/descriptors/runtime/structure/ReflectJavaClassifierType;
-
-    invoke-direct {v9, v8}, Lkotlin/reflect/jvm/internal/impl/descriptors/runtime/structure/ReflectJavaClassifierType;-><init>(Ljava/lang/reflect/Type;)V
-
-    goto :goto_8
-
-    :cond_9
-    :goto_7
-    new-instance v9, Lkotlin/reflect/jvm/internal/impl/descriptors/runtime/structure/ReflectJavaArrayType;
-
-    invoke-direct {v9, v8}, Lkotlin/reflect/jvm/internal/impl/descriptors/runtime/structure/ReflectJavaArrayType;-><init>(Ljava/lang/reflect/Type;)V
-
-    :goto_8
-    move-object v8, v9
-
-    :goto_9
-    if-nez v5, :cond_a
-
-    move-object v9, v3
-
-    goto :goto_a
-
-    :cond_a
-    add-int v9, v6, v1
-
-    invoke-static {v5, v9}, Lkotlin/collections/CollectionsKt___CollectionsKt;->getOrNull(Ljava/util/List;I)Ljava/lang/Object;
-
-    move-result-object v9
-
-    check-cast v9, Ljava/lang/String;
-
-    if-eqz v9, :cond_d
-
-    :goto_a
-    if-eqz p3, :cond_b
-
-    invoke-static {p1}, Lkotlin/collections/ArraysKt___ArraysKt;->getLastIndex([Ljava/lang/Object;)I
-
-    move-result v10
-
-    if-ne v6, v10, :cond_b
-
-    const/4 v10, 0x1
-
-    goto :goto_b
-
-    :cond_b
-    move v10, v4
-
-    :goto_b
-    new-instance v11, Lkotlin/reflect/jvm/internal/impl/descriptors/runtime/structure/ReflectJavaValueParameter;
-
-    aget-object v6, p2, v6
-
-    invoke-direct {v11, v8, v6, v9, v10}, Lkotlin/reflect/jvm/internal/impl/descriptors/runtime/structure/ReflectJavaValueParameter;-><init>(Lkotlin/reflect/jvm/internal/impl/descriptors/runtime/structure/ReflectJavaType;[Ljava/lang/annotation/Annotation;Ljava/lang/String;Z)V
-
-    invoke-virtual {v0, v11}, Ljava/util/ArrayList;->add(Ljava/lang/Object;)Z
-
-    if-le v7, v2, :cond_c
-
-    goto :goto_c
-
-    :cond_c
-    move v6, v7
-
-    goto :goto_6
-
-    :cond_d
     new-instance p1, Ljava/lang/StringBuilder;
 
     invoke-direct {p1}, Ljava/lang/StringBuilder;-><init>()V
@@ -494,13 +339,13 @@
 
     invoke-virtual {p1, p2}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
 
-    invoke-virtual {p1, v6}, Ljava/lang/StringBuilder;->append(I)Ljava/lang/StringBuilder;
+    invoke-virtual {p1, v5}, Ljava/lang/StringBuilder;->append(I)Ljava/lang/StringBuilder;
 
     const/16 p2, 0x2b
 
     invoke-virtual {p1, p2}, Ljava/lang/StringBuilder;->append(C)Ljava/lang/StringBuilder;
 
-    invoke-virtual {p1, v1}, Ljava/lang/StringBuilder;->append(I)Ljava/lang/StringBuilder;
+    invoke-virtual {p1, v3}, Ljava/lang/StringBuilder;->append(I)Ljava/lang/StringBuilder;
 
     const-string p2, " (name="
 
@@ -516,13 +361,13 @@
 
     invoke-virtual {p1, p2}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
 
-    invoke-virtual {p1, v8}, Ljava/lang/StringBuilder;->append(Ljava/lang/Object;)Ljava/lang/StringBuilder;
+    invoke-virtual {p1, v7}, Ljava/lang/StringBuilder;->append(Ljava/lang/Object;)Ljava/lang/StringBuilder;
 
     const-string p2, ") in "
 
     invoke-virtual {p1, p2}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
 
-    invoke-virtual {p1, v5}, Ljava/lang/StringBuilder;->append(Ljava/lang/Object;)Ljava/lang/StringBuilder;
+    invoke-virtual {p1, v1}, Ljava/lang/StringBuilder;->append(Ljava/lang/Object;)Ljava/lang/StringBuilder;
 
     const-string p2, "@ReflectJavaMember"
 
@@ -542,8 +387,8 @@
 
     throw p2
 
-    :cond_e
-    :goto_c
+    :cond_5
+    :goto_4
     return-object v0
 .end method
 
@@ -574,11 +419,7 @@
 .method public isAbstract()Z
     .locals 1
 
-    invoke-virtual {p0}, Lkotlin/reflect/jvm/internal/impl/descriptors/runtime/structure/ReflectJavaMember;->getModifiers()I
-
-    move-result v0
-
-    invoke-static {v0}, Ljava/lang/reflect/Modifier;->isAbstract(I)Z
+    invoke-static {p0}, Lkotlin/reflect/jvm/internal/impl/descriptors/runtime/structure/ReflectJavaModifierListOwner$DefaultImpls;->isAbstract(Lkotlin/reflect/jvm/internal/impl/descriptors/runtime/structure/ReflectJavaModifierListOwner;)Z
 
     move-result v0
 
@@ -590,7 +431,7 @@
 
     invoke-static {p0}, Lkotlin/reflect/jvm/internal/impl/descriptors/runtime/structure/ReflectJavaAnnotationOwner$DefaultImpls;->isDeprecatedInJavaDoc(Lkotlin/reflect/jvm/internal/impl/descriptors/runtime/structure/ReflectJavaAnnotationOwner;)Z
 
-    const/4 v0, 0x0
+    move-result v0
 
     return v0
 .end method
@@ -598,11 +439,7 @@
 .method public isFinal()Z
     .locals 1
 
-    invoke-virtual {p0}, Lkotlin/reflect/jvm/internal/impl/descriptors/runtime/structure/ReflectJavaMember;->getModifiers()I
-
-    move-result v0
-
-    invoke-static {v0}, Ljava/lang/reflect/Modifier;->isFinal(I)Z
+    invoke-static {p0}, Lkotlin/reflect/jvm/internal/impl/descriptors/runtime/structure/ReflectJavaModifierListOwner$DefaultImpls;->isFinal(Lkotlin/reflect/jvm/internal/impl/descriptors/runtime/structure/ReflectJavaModifierListOwner;)Z
 
     move-result v0
 
@@ -612,11 +449,7 @@
 .method public isStatic()Z
     .locals 1
 
-    invoke-virtual {p0}, Lkotlin/reflect/jvm/internal/impl/descriptors/runtime/structure/ReflectJavaMember;->getModifiers()I
-
-    move-result v0
-
-    invoke-static {v0}, Ljava/lang/reflect/Modifier;->isStatic(I)Z
+    invoke-static {p0}, Lkotlin/reflect/jvm/internal/impl/descriptors/runtime/structure/ReflectJavaModifierListOwner$DefaultImpls;->isStatic(Lkotlin/reflect/jvm/internal/impl/descriptors/runtime/structure/ReflectJavaModifierListOwner;)Z
 
     move-result v0
 

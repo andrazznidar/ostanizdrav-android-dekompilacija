@@ -3,16 +3,20 @@
 .source "MutableClassDescriptor.java"
 
 
+# static fields
+.field public static final synthetic $assertionsDisabled:Z
+
+
 # instance fields
-.field public final isInner:Z
+.field private final isInner:Z
 
-.field public final kind:Lkotlin/reflect/jvm/internal/impl/descriptors/ClassKind;
+.field private final kind:Lkotlin/reflect/jvm/internal/impl/descriptors/ClassKind;
 
-.field public modality:Lkotlin/reflect/jvm/internal/impl/descriptors/Modality;
+.field private modality:Lkotlin/reflect/jvm/internal/impl/descriptors/Modality;
 
-.field public final storageManager:Lkotlin/reflect/jvm/internal/impl/storage/StorageManager;
+.field private final storageManager:Lkotlin/reflect/jvm/internal/impl/storage/StorageManager;
 
-.field public final supertypes:Ljava/util/Collection;
+.field private final supertypes:Ljava/util/Collection;
     .annotation system Ldalvik/annotation/Signature;
         value = {
             "Ljava/util/Collection<",
@@ -22,9 +26,9 @@
     .end annotation
 .end field
 
-.field public typeConstructor:Lkotlin/reflect/jvm/internal/impl/types/TypeConstructor;
+.field private typeConstructor:Lkotlin/reflect/jvm/internal/impl/types/TypeConstructor;
 
-.field public typeParameters:Ljava/util/List;
+.field private typeParameters:Ljava/util/List;
     .annotation system Ldalvik/annotation/Signature;
         value = {
             "Ljava/util/List<",
@@ -34,11 +38,11 @@
     .end annotation
 .end field
 
-.field public visibility:Lkotlin/reflect/jvm/internal/impl/descriptors/DescriptorVisibility;
+.field private visibility:Lkotlin/reflect/jvm/internal/impl/descriptors/DescriptorVisibility;
 
 
 # direct methods
-.method public static synthetic $$$reportNull$$$0(I)V
+.method private static synthetic $$$reportNull$$$0(I)V
     .locals 6
 
     packed-switch p0, :pswitch_data_0
@@ -408,12 +412,41 @@
 .method public constructor <init>(Lkotlin/reflect/jvm/internal/impl/descriptors/DeclarationDescriptor;Lkotlin/reflect/jvm/internal/impl/descriptors/ClassKind;ZZLkotlin/reflect/jvm/internal/impl/name/Name;Lkotlin/reflect/jvm/internal/impl/descriptors/SourceElement;Lkotlin/reflect/jvm/internal/impl/storage/StorageManager;)V
     .locals 6
 
+    if-nez p1, :cond_0
+
     const/4 v0, 0x0
 
-    if-eqz p5, :cond_1
+    invoke-static {v0}, Lkotlin/reflect/jvm/internal/impl/descriptors/impl/MutableClassDescriptor;->$$$reportNull$$$0(I)V
 
-    if-eqz p7, :cond_0
+    :cond_0
+    if-nez p2, :cond_1
 
+    const/4 v0, 0x1
+
+    invoke-static {v0}, Lkotlin/reflect/jvm/internal/impl/descriptors/impl/MutableClassDescriptor;->$$$reportNull$$$0(I)V
+
+    :cond_1
+    if-nez p5, :cond_2
+
+    const/4 v0, 0x2
+
+    invoke-static {v0}, Lkotlin/reflect/jvm/internal/impl/descriptors/impl/MutableClassDescriptor;->$$$reportNull$$$0(I)V
+
+    :cond_2
+    if-nez p6, :cond_3
+
+    const/4 v0, 0x3
+
+    invoke-static {v0}, Lkotlin/reflect/jvm/internal/impl/descriptors/impl/MutableClassDescriptor;->$$$reportNull$$$0(I)V
+
+    :cond_3
+    if-nez p7, :cond_4
+
+    const/4 v0, 0x4
+
+    invoke-static {v0}, Lkotlin/reflect/jvm/internal/impl/descriptors/impl/MutableClassDescriptor;->$$$reportNull$$$0(I)V
+
+    :cond_4
     move-object v0, p0
 
     move-object v1, p7
@@ -441,20 +474,6 @@
     iput-boolean p3, p0, Lkotlin/reflect/jvm/internal/impl/descriptors/impl/MutableClassDescriptor;->isInner:Z
 
     return-void
-
-    :cond_0
-    const/4 p1, 0x4
-
-    invoke-static {p1}, Lkotlin/reflect/jvm/internal/impl/descriptors/impl/MutableClassDescriptor;->$$$reportNull$$$0(I)V
-
-    throw v0
-
-    :cond_1
-    const/4 p1, 0x2
-
-    invoke-static {p1}, Lkotlin/reflect/jvm/internal/impl/descriptors/impl/MutableClassDescriptor;->$$$reportNull$$$0(I)V
-
-    throw v0
 .end method
 
 
@@ -474,11 +493,9 @@
 
     iput-object v0, p0, Lkotlin/reflect/jvm/internal/impl/descriptors/impl/MutableClassDescriptor;->typeConstructor:Lkotlin/reflect/jvm/internal/impl/types/TypeConstructor;
 
-    invoke-static {}, Ljava/util/Collections;->emptySet()Ljava/util/Set;
+    invoke-virtual {p0}, Lkotlin/reflect/jvm/internal/impl/descriptors/impl/MutableClassDescriptor;->getConstructors()Ljava/util/Set;
 
     move-result-object v0
-
-    if-eqz v0, :cond_1
 
     invoke-interface {v0}, Ljava/util/Set;->iterator()Ljava/util/Iterator;
 
@@ -509,24 +526,24 @@
 
     :cond_0
     return-void
-
-    :cond_1
-    const/16 v0, 0xd
-
-    invoke-static {v0}, Lkotlin/reflect/jvm/internal/impl/descriptors/impl/MutableClassDescriptor;->$$$reportNull$$$0(I)V
-
-    const/4 v0, 0x0
-
-    throw v0
 .end method
 
 .method public getAnnotations()Lkotlin/reflect/jvm/internal/impl/descriptors/annotations/Annotations;
-    .locals 1
+    .locals 2
 
-    sget v0, Lkotlin/reflect/jvm/internal/impl/descriptors/annotations/Annotations;->$r8$clinit:I
+    sget-object v0, Lkotlin/reflect/jvm/internal/impl/descriptors/annotations/Annotations;->Companion:Lkotlin/reflect/jvm/internal/impl/descriptors/annotations/Annotations$Companion;
 
-    sget-object v0, Lkotlin/reflect/jvm/internal/impl/descriptors/annotations/Annotations$Companion;->EMPTY:Lkotlin/reflect/jvm/internal/impl/descriptors/annotations/Annotations;
+    invoke-virtual {v0}, Lkotlin/reflect/jvm/internal/impl/descriptors/annotations/Annotations$Companion;->getEMPTY()Lkotlin/reflect/jvm/internal/impl/descriptors/annotations/Annotations;
 
+    move-result-object v0
+
+    if-nez v0, :cond_0
+
+    const/4 v1, 0x5
+
+    invoke-static {v1}, Lkotlin/reflect/jvm/internal/impl/descriptors/impl/MutableClassDescriptor;->$$$reportNull$$$0(I)V
+
+    :cond_0
     return-object v0
 .end method
 
@@ -538,29 +555,43 @@
     return-object v0
 .end method
 
-.method public getConstructors()Ljava/util/Collection;
+.method public bridge synthetic getConstructors()Ljava/util/Collection;
     .locals 1
+
+    invoke-virtual {p0}, Lkotlin/reflect/jvm/internal/impl/descriptors/impl/MutableClassDescriptor;->getConstructors()Ljava/util/Set;
+
+    move-result-object v0
+
+    return-object v0
+.end method
+
+.method public getConstructors()Ljava/util/Set;
+    .locals 2
+    .annotation system Ldalvik/annotation/Signature;
+        value = {
+            "()",
+            "Ljava/util/Set<",
+            "Lkotlin/reflect/jvm/internal/impl/descriptors/ClassConstructorDescriptor;",
+            ">;"
+        }
+    .end annotation
 
     invoke-static {}, Ljava/util/Collections;->emptySet()Ljava/util/Set;
 
     move-result-object v0
 
-    if-eqz v0, :cond_0
+    if-nez v0, :cond_0
 
-    return-object v0
+    const/16 v1, 0xd
+
+    invoke-static {v1}, Lkotlin/reflect/jvm/internal/impl/descriptors/impl/MutableClassDescriptor;->$$$reportNull$$$0(I)V
 
     :cond_0
-    const/16 v0, 0xd
-
-    invoke-static {v0}, Lkotlin/reflect/jvm/internal/impl/descriptors/impl/MutableClassDescriptor;->$$$reportNull$$$0(I)V
-
-    const/4 v0, 0x0
-
-    throw v0
+    return-object v0
 .end method
 
 .method public getDeclaredTypeParameters()Ljava/util/List;
-    .locals 1
+    .locals 2
     .annotation system Ldalvik/annotation/Signature;
         value = {
             "()",
@@ -572,60 +603,64 @@
 
     iget-object v0, p0, Lkotlin/reflect/jvm/internal/impl/descriptors/impl/MutableClassDescriptor;->typeParameters:Ljava/util/List;
 
-    if-eqz v0, :cond_0
+    if-nez v0, :cond_0
 
-    return-object v0
+    const/16 v1, 0xf
+
+    invoke-static {v1}, Lkotlin/reflect/jvm/internal/impl/descriptors/impl/MutableClassDescriptor;->$$$reportNull$$$0(I)V
 
     :cond_0
-    const/16 v0, 0xf
+    return-object v0
+.end method
 
-    invoke-static {v0}, Lkotlin/reflect/jvm/internal/impl/descriptors/impl/MutableClassDescriptor;->$$$reportNull$$$0(I)V
+.method public getInlineClassRepresentation()Lkotlin/reflect/jvm/internal/impl/descriptors/InlineClassRepresentation;
+    .locals 1
+    .annotation system Ldalvik/annotation/Signature;
+        value = {
+            "()",
+            "Lkotlin/reflect/jvm/internal/impl/descriptors/InlineClassRepresentation<",
+            "Lkotlin/reflect/jvm/internal/impl/types/SimpleType;",
+            ">;"
+        }
+    .end annotation
 
     const/4 v0, 0x0
 
-    throw v0
+    return-object v0
 .end method
 
 .method public getKind()Lkotlin/reflect/jvm/internal/impl/descriptors/ClassKind;
-    .locals 1
+    .locals 2
 
     iget-object v0, p0, Lkotlin/reflect/jvm/internal/impl/descriptors/impl/MutableClassDescriptor;->kind:Lkotlin/reflect/jvm/internal/impl/descriptors/ClassKind;
 
-    if-eqz v0, :cond_0
+    if-nez v0, :cond_0
 
-    return-object v0
+    const/16 v1, 0x8
+
+    invoke-static {v1}, Lkotlin/reflect/jvm/internal/impl/descriptors/impl/MutableClassDescriptor;->$$$reportNull$$$0(I)V
 
     :cond_0
-    const/16 v0, 0x8
-
-    invoke-static {v0}, Lkotlin/reflect/jvm/internal/impl/descriptors/impl/MutableClassDescriptor;->$$$reportNull$$$0(I)V
-
-    const/4 v0, 0x0
-
-    throw v0
+    return-object v0
 .end method
 
 .method public getModality()Lkotlin/reflect/jvm/internal/impl/descriptors/Modality;
-    .locals 1
+    .locals 2
 
     iget-object v0, p0, Lkotlin/reflect/jvm/internal/impl/descriptors/impl/MutableClassDescriptor;->modality:Lkotlin/reflect/jvm/internal/impl/descriptors/Modality;
 
-    if-eqz v0, :cond_0
+    if-nez v0, :cond_0
 
-    return-object v0
+    const/4 v1, 0x7
+
+    invoke-static {v1}, Lkotlin/reflect/jvm/internal/impl/descriptors/impl/MutableClassDescriptor;->$$$reportNull$$$0(I)V
 
     :cond_0
-    const/4 v0, 0x7
-
-    invoke-static {v0}, Lkotlin/reflect/jvm/internal/impl/descriptors/impl/MutableClassDescriptor;->$$$reportNull$$$0(I)V
-
-    const/4 v0, 0x0
-
-    throw v0
+    return-object v0
 .end method
 
 .method public getSealedSubclasses()Ljava/util/Collection;
-    .locals 1
+    .locals 2
     .annotation system Ldalvik/annotation/Signature;
         value = {
             "()",
@@ -639,64 +674,66 @@
 
     move-result-object v0
 
-    if-eqz v0, :cond_0
+    if-nez v0, :cond_0
 
-    return-object v0
+    const/16 v1, 0x13
+
+    invoke-static {v1}, Lkotlin/reflect/jvm/internal/impl/descriptors/impl/MutableClassDescriptor;->$$$reportNull$$$0(I)V
 
     :cond_0
-    const/16 v0, 0x13
-
-    invoke-static {v0}, Lkotlin/reflect/jvm/internal/impl/descriptors/impl/MutableClassDescriptor;->$$$reportNull$$$0(I)V
-
-    const/4 v0, 0x0
-
-    throw v0
+    return-object v0
 .end method
 
 .method public getStaticScope()Lkotlin/reflect/jvm/internal/impl/resolve/scopes/MemberScope;
-    .locals 1
+    .locals 2
 
     sget-object v0, Lkotlin/reflect/jvm/internal/impl/resolve/scopes/MemberScope$Empty;->INSTANCE:Lkotlin/reflect/jvm/internal/impl/resolve/scopes/MemberScope$Empty;
 
+    if-nez v0, :cond_0
+
+    const/16 v1, 0x12
+
+    invoke-static {v1}, Lkotlin/reflect/jvm/internal/impl/descriptors/impl/MutableClassDescriptor;->$$$reportNull$$$0(I)V
+
+    :cond_0
     return-object v0
 .end method
 
 .method public getTypeConstructor()Lkotlin/reflect/jvm/internal/impl/types/TypeConstructor;
-    .locals 1
+    .locals 2
 
     iget-object v0, p0, Lkotlin/reflect/jvm/internal/impl/descriptors/impl/MutableClassDescriptor;->typeConstructor:Lkotlin/reflect/jvm/internal/impl/types/TypeConstructor;
 
-    if-eqz v0, :cond_0
+    if-nez v0, :cond_0
 
-    return-object v0
+    const/16 v1, 0xb
+
+    invoke-static {v1}, Lkotlin/reflect/jvm/internal/impl/descriptors/impl/MutableClassDescriptor;->$$$reportNull$$$0(I)V
 
     :cond_0
-    const/16 v0, 0xb
-
-    invoke-static {v0}, Lkotlin/reflect/jvm/internal/impl/descriptors/impl/MutableClassDescriptor;->$$$reportNull$$$0(I)V
-
-    const/4 v0, 0x0
-
-    throw v0
+    return-object v0
 .end method
 
 .method public getUnsubstitutedMemberScope(Lkotlin/reflect/jvm/internal/impl/types/checker/KotlinTypeRefiner;)Lkotlin/reflect/jvm/internal/impl/resolve/scopes/MemberScope;
-    .locals 0
+    .locals 1
 
-    if-eqz p1, :cond_0
+    if-nez p1, :cond_0
 
-    sget-object p1, Lkotlin/reflect/jvm/internal/impl/resolve/scopes/MemberScope$Empty;->INSTANCE:Lkotlin/reflect/jvm/internal/impl/resolve/scopes/MemberScope$Empty;
-
-    return-object p1
-
-    :cond_0
     const/16 p1, 0x10
 
     invoke-static {p1}, Lkotlin/reflect/jvm/internal/impl/descriptors/impl/MutableClassDescriptor;->$$$reportNull$$$0(I)V
 
-    const/4 p1, 0x0
+    :cond_0
+    sget-object p1, Lkotlin/reflect/jvm/internal/impl/resolve/scopes/MemberScope$Empty;->INSTANCE:Lkotlin/reflect/jvm/internal/impl/resolve/scopes/MemberScope$Empty;
 
-    throw p1
+    if-nez p1, :cond_1
+
+    const/16 v0, 0x11
+
+    invoke-static {v0}, Lkotlin/reflect/jvm/internal/impl/descriptors/impl/MutableClassDescriptor;->$$$reportNull$$$0(I)V
+
+    :cond_1
+    return-object p1
 .end method
 
 .method public getUnsubstitutedPrimaryConstructor()Lkotlin/reflect/jvm/internal/impl/descriptors/ClassConstructorDescriptor;
@@ -708,22 +745,18 @@
 .end method
 
 .method public getVisibility()Lkotlin/reflect/jvm/internal/impl/descriptors/DescriptorVisibility;
-    .locals 1
+    .locals 2
 
     iget-object v0, p0, Lkotlin/reflect/jvm/internal/impl/descriptors/impl/MutableClassDescriptor;->visibility:Lkotlin/reflect/jvm/internal/impl/descriptors/DescriptorVisibility;
 
-    if-eqz v0, :cond_0
+    if-nez v0, :cond_0
 
-    return-object v0
+    const/16 v1, 0xa
+
+    invoke-static {v1}, Lkotlin/reflect/jvm/internal/impl/descriptors/impl/MutableClassDescriptor;->$$$reportNull$$$0(I)V
 
     :cond_0
-    const/16 v0, 0xa
-
-    invoke-static {v0}, Lkotlin/reflect/jvm/internal/impl/descriptors/impl/MutableClassDescriptor;->$$$reportNull$$$0(I)V
-
-    const/4 v0, 0x0
-
-    throw v0
+    return-object v0
 .end method
 
 .method public isActual()Z
@@ -790,6 +823,21 @@
     return v0
 .end method
 
+.method public setModality(Lkotlin/reflect/jvm/internal/impl/descriptors/Modality;)V
+    .locals 1
+
+    if-nez p1, :cond_0
+
+    const/4 v0, 0x6
+
+    invoke-static {v0}, Lkotlin/reflect/jvm/internal/impl/descriptors/impl/MutableClassDescriptor;->$$$reportNull$$$0(I)V
+
+    :cond_0
+    iput-object p1, p0, Lkotlin/reflect/jvm/internal/impl/descriptors/impl/MutableClassDescriptor;->modality:Lkotlin/reflect/jvm/internal/impl/descriptors/Modality;
+
+    return-void
+.end method
+
 .method public setTypeParameterDescriptors(Ljava/util/List;)V
     .locals 2
     .annotation system Ldalvik/annotation/Signature;
@@ -801,9 +849,16 @@
         }
     .end annotation
 
+    if-nez p1, :cond_0
+
+    const/16 v0, 0xe
+
+    invoke-static {v0}, Lkotlin/reflect/jvm/internal/impl/descriptors/impl/MutableClassDescriptor;->$$$reportNull$$$0(I)V
+
+    :cond_0
     iget-object v0, p0, Lkotlin/reflect/jvm/internal/impl/descriptors/impl/MutableClassDescriptor;->typeParameters:Ljava/util/List;
 
-    if-nez v0, :cond_0
+    if-nez v0, :cond_1
 
     new-instance v0, Ljava/util/ArrayList;
 
@@ -813,7 +868,7 @@
 
     return-void
 
-    :cond_0
+    :cond_1
     new-instance p1, Ljava/lang/IllegalStateException;
 
     const-string v0, "Type parameters are already set for "
@@ -835,6 +890,21 @@
     invoke-direct {p1, v0}, Ljava/lang/IllegalStateException;-><init>(Ljava/lang/String;)V
 
     throw p1
+.end method
+
+.method public setVisibility(Lkotlin/reflect/jvm/internal/impl/descriptors/DescriptorVisibility;)V
+    .locals 1
+
+    if-nez p1, :cond_0
+
+    const/16 v0, 0x9
+
+    invoke-static {v0}, Lkotlin/reflect/jvm/internal/impl/descriptors/impl/MutableClassDescriptor;->$$$reportNull$$$0(I)V
+
+    :cond_0
+    iput-object p1, p0, Lkotlin/reflect/jvm/internal/impl/descriptors/impl/MutableClassDescriptor;->visibility:Lkotlin/reflect/jvm/internal/impl/descriptors/DescriptorVisibility;
+
+    return-void
 .end method
 
 .method public toString()Ljava/lang/String;

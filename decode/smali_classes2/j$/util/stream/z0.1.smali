@@ -1,43 +1,81 @@
-.class public final synthetic Lj$/util/stream/z0;
+.class abstract Lj$/util/stream/z0;
 .super Ljava/lang/Object;
 
 # interfaces
-.implements Lj$/util/function/h;
+.implements Lj$/util/stream/q2;
 
 
-# static fields
-.field public static final synthetic a:Lj$/util/stream/z0;
+# instance fields
+.field a:Z
+
+.field b:Z
 
 
 # direct methods
-.method static synthetic constructor <clinit>()V
-    .locals 1
-
-    new-instance v0, Lj$/util/stream/z0;
-
-    invoke-direct {v0}, Lj$/util/stream/z0;-><init>()V
-
-    sput-object v0, Lj$/util/stream/z0;->a:Lj$/util/stream/z0;
-
-    return-void
-.end method
-
-.method private synthetic constructor <init>()V
+.method constructor <init>(Lj$/util/stream/A0;)V
     .locals 0
 
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
+
+    invoke-static {p1}, Lj$/util/stream/A0;->b(Lj$/util/stream/A0;)Z
+
+    move-result p1
+
+    xor-int/lit8 p1, p1, 0x1
+
+    iput-boolean p1, p0, Lj$/util/stream/z0;->b:Z
 
     return-void
 .end method
 
 
 # virtual methods
-.method public final g(II)I
+.method public synthetic accept(I)V
     .locals 0
 
-    invoke-static {p1, p2}, Ljava/lang/Math;->max(II)I
+    invoke-static {}, Lj$/util/stream/D0;->O()V
 
-    move-result p1
+    const/4 p1, 0x0
 
-    return p1
+    throw p1
+.end method
+
+.method public synthetic c(D)V
+    .locals 0
+
+    invoke-static {}, Lj$/util/stream/D0;->K()V
+
+    const/4 p1, 0x0
+
+    throw p1
+.end method
+
+.method public synthetic d(J)V
+    .locals 0
+
+    invoke-static {}, Lj$/util/stream/D0;->P()V
+
+    const/4 p1, 0x0
+
+    throw p1
+.end method
+
+.method public synthetic g()V
+    .locals 0
+
+    return-void
+.end method
+
+.method public synthetic i(J)V
+    .locals 0
+
+    return-void
+.end method
+
+.method public r()Z
+    .locals 1
+
+    iget-boolean v0, p0, Lj$/util/stream/z0;->a:Z
+
+    return v0
 .end method

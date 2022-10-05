@@ -536,17 +536,255 @@
 
     invoke-virtual {p0}, Lokio/SegmentedByteString;->toByteString()Lokio/ByteString;
 
-    move-result-object v1
+    move-result-object v0
 
-    invoke-static {p1, v0}, Lkotlin/jvm/internal/Intrinsics;->checkNotNullParameter(Ljava/lang/Object;Ljava/lang/String;)V
-
-    iget-object v0, v1, Lokio/ByteString;->data:[B
+    iget-object v0, v0, Lokio/ByteString;->data:[B
 
     new-instance v1, Ljava/lang/String;
 
     invoke-direct {v1, v0, p1}, Ljava/lang/String;-><init>([BLjava/nio/charset/Charset;)V
 
     return-object v1
+.end method
+
+.method public substring(II)Lokio/ByteString;
+    .locals 11
+
+    const/4 v0, 0x1
+
+    const/4 v1, 0x0
+
+    if-ltz p1, :cond_0
+
+    move v2, v0
+
+    goto :goto_0
+
+    :cond_0
+    move v2, v1
+
+    :goto_0
+    if-eqz v2, :cond_9
+
+    invoke-virtual {p0}, Lokio/SegmentedByteString;->getSize$okio()I
+
+    move-result v2
+
+    if-gt p2, v2, :cond_1
+
+    move v2, v0
+
+    goto :goto_1
+
+    :cond_1
+    move v2, v1
+
+    :goto_1
+    const-string v3, "endIndex="
+
+    if-eqz v2, :cond_8
+
+    sub-int v2, p2, p1
+
+    if-ltz v2, :cond_2
+
+    move v4, v0
+
+    goto :goto_2
+
+    :cond_2
+    move v4, v1
+
+    :goto_2
+    if-eqz v4, :cond_7
+
+    if-nez p1, :cond_3
+
+    invoke-virtual {p0}, Lokio/SegmentedByteString;->getSize$okio()I
+
+    move-result v3
+
+    if-ne p2, v3, :cond_3
+
+    move-object p1, p0
+
+    goto :goto_5
+
+    :cond_3
+    if-ne p1, p2, :cond_4
+
+    sget-object p1, Lokio/ByteString;->EMPTY:Lokio/ByteString;
+
+    goto :goto_5
+
+    :cond_4
+    invoke-static {p0, p1}, Lokio/internal/SegmentedByteStringKt;->segment(Lokio/SegmentedByteString;I)I
+
+    move-result v3
+
+    sub-int/2addr p2, v0
+
+    invoke-static {p0, p2}, Lokio/internal/SegmentedByteStringKt;->segment(Lokio/SegmentedByteString;I)I
+
+    move-result p2
+
+    iget-object v4, p0, Lokio/SegmentedByteString;->segments:[[B
+
+    add-int/lit8 v5, p2, 0x1
+
+    invoke-static {v4, v3, v5}, Lkotlin/collections/ArraysKt___ArraysJvmKt;->copyOfRange([Ljava/lang/Object;II)[Ljava/lang/Object;
+
+    move-result-object v4
+
+    check-cast v4, [[B
+
+    array-length v5, v4
+
+    mul-int/lit8 v5, v5, 0x2
+
+    new-array v5, v5, [I
+
+    if-gt v3, p2, :cond_5
+
+    move v7, v1
+
+    move v6, v3
+
+    :goto_3
+    iget-object v8, p0, Lokio/SegmentedByteString;->directory:[I
+
+    aget v8, v8, v6
+
+    sub-int/2addr v8, p1
+
+    invoke-static {v8, v2}, Ljava/lang/Math;->min(II)I
+
+    move-result v8
+
+    aput v8, v5, v7
+
+    add-int/lit8 v8, v7, 0x1
+
+    array-length v9, v4
+
+    add-int/2addr v7, v9
+
+    iget-object v9, p0, Lokio/SegmentedByteString;->directory:[I
+
+    iget-object v10, p0, Lokio/SegmentedByteString;->segments:[[B
+
+    array-length v10, v10
+
+    add-int/2addr v10, v6
+
+    aget v9, v9, v10
+
+    aput v9, v5, v7
+
+    if-eq v6, p2, :cond_5
+
+    add-int/lit8 v6, v6, 0x1
+
+    move v7, v8
+
+    goto :goto_3
+
+    :cond_5
+    if-nez v3, :cond_6
+
+    goto :goto_4
+
+    :cond_6
+    iget-object p2, p0, Lokio/SegmentedByteString;->directory:[I
+
+    sub-int/2addr v3, v0
+
+    aget v1, p2, v3
+
+    :goto_4
+    array-length p2, v4
+
+    aget v0, v5, p2
+
+    sub-int/2addr p1, v1
+
+    add-int/2addr p1, v0
+
+    aput p1, v5, p2
+
+    new-instance p1, Lokio/SegmentedByteString;
+
+    invoke-direct {p1, v4, v5}, Lokio/SegmentedByteString;-><init>([[B[I)V
+
+    :goto_5
+    return-object p1
+
+    :cond_7
+    const-string v0, " < beginIndex="
+
+    invoke-static {v3, p2, v0, p1}, Landroidx/camera/camera2/internal/Camera2CameraImpl$$ExternalSyntheticOutline0;->m(Ljava/lang/String;ILjava/lang/String;I)Ljava/lang/String;
+
+    move-result-object p1
+
+    new-instance p2, Ljava/lang/IllegalArgumentException;
+
+    invoke-virtual {p1}, Ljava/lang/Object;->toString()Ljava/lang/String;
+
+    move-result-object p1
+
+    invoke-direct {p2, p1}, Ljava/lang/IllegalArgumentException;-><init>(Ljava/lang/String;)V
+
+    throw p2
+
+    :cond_8
+    const-string p1, " > length("
+
+    invoke-static {v3, p2, p1}, Landroidx/appcompat/widget/SuggestionsAdapter$$ExternalSyntheticOutline0;->m(Ljava/lang/String;ILjava/lang/String;)Ljava/lang/StringBuilder;
+
+    move-result-object p1
+
+    invoke-virtual {p0}, Lokio/SegmentedByteString;->getSize$okio()I
+
+    move-result p2
+
+    invoke-virtual {p1, p2}, Ljava/lang/StringBuilder;->append(I)Ljava/lang/StringBuilder;
+
+    const/16 p2, 0x29
+
+    invoke-virtual {p1, p2}, Ljava/lang/StringBuilder;->append(C)Ljava/lang/StringBuilder;
+
+    invoke-virtual {p1}, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
+
+    move-result-object p1
+
+    new-instance p2, Ljava/lang/IllegalArgumentException;
+
+    invoke-virtual {p1}, Ljava/lang/Object;->toString()Ljava/lang/String;
+
+    move-result-object p1
+
+    invoke-direct {p2, p1}, Ljava/lang/IllegalArgumentException;-><init>(Ljava/lang/String;)V
+
+    throw p2
+
+    :cond_9
+    const-string p2, "beginIndex="
+
+    const-string v0, " < 0"
+
+    invoke-static {p2, p1, v0}, Landroidx/core/os/LocaleListCompatWrapper$$ExternalSyntheticOutline0;->m(Ljava/lang/String;ILjava/lang/String;)Ljava/lang/String;
+
+    move-result-object p1
+
+    new-instance p2, Ljava/lang/IllegalArgumentException;
+
+    invoke-virtual {p1}, Ljava/lang/Object;->toString()Ljava/lang/String;
+
+    move-result-object p1
+
+    invoke-direct {p2, p1}, Ljava/lang/IllegalArgumentException;-><init>(Ljava/lang/String;)V
+
+    throw p2
 .end method
 
 .method public toAsciiLowercase()Lokio/ByteString;

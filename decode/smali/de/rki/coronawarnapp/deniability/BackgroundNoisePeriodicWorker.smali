@@ -9,11 +9,7 @@
 .end annotation
 
 .annotation runtime Lkotlin/Metadata;
-    bv = {
-        0x1,
-        0x0,
-        0x3
-    }
+    bv = {}
     d1 = {
         "\u0000(\n\u0002\u0018\u0002\n\u0002\u0018\u0002\n\u0002\u0018\u0002\n\u0000\n\u0002\u0018\u0002\n\u0000\n\u0002\u0018\u0002\n\u0000\n\u0002\u0018\u0002\n\u0000\n\u0002\u0018\u0002\n\u0002\u0008\u0004\u0018\u00002\u00020\u0001B5\u0008\u0007\u0012\u0008\u0008\u0001\u0010\u0003\u001a\u00020\u0002\u0012\u0008\u0008\u0001\u0010\u0005\u001a\u00020\u0004\u0012\u0006\u0010\u0007\u001a\u00020\u0006\u0012\u0006\u0010\t\u001a\u00020\u0008\u0012\u0006\u0010\u000b\u001a\u00020\n\u00a2\u0006\u0004\u0008\u000c\u0010\r\u00a8\u0006\u000e"
     }
@@ -37,8 +33,8 @@
     k = 0x1
     mv = {
         0x1,
-        0x5,
-        0x1
+        0x6,
+        0x0
     }
 .end annotation
 
@@ -438,7 +434,7 @@
 
     new-array v3, v2, [Ljava/lang/Object;
 
-    const-string v4, "setPeriodicNoise(enabled=false)"
+    const-string/jumbo v4, "setPeriodicNoise(enabled=false)"
 
     invoke-virtual {v1, v4, v3}, Ltimber/log/Timber$Forest;->d(Ljava/lang/String;[Ljava/lang/Object;)V
 

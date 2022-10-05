@@ -66,14 +66,6 @@
     return-void
 .end method
 
-.method public synthetic constructor <init>(Lcom/google/android/gms/internal/nearby/zzec;)V
-    .locals 0
-
-    invoke-direct {p0}, Lcom/google/android/gms/common/internal/safeparcel/AbstractSafeParcelable;-><init>()V
-
-    return-void
-.end method
-
 .method public constructor <init>(Ljava/util/List;Landroid/os/IBinder;Ljava/util/List;Lcom/google/android/gms/nearby/exposurenotification/ExposureConfiguration;Ljava/lang/String;Landroid/os/IBinder;)V
     .locals 2
     .annotation system Ldalvik/annotation/Signature;
@@ -141,6 +133,14 @@
     iput-object p5, p0, Lcom/google/android/gms/internal/nearby/zzee;->zze:Ljava/lang/String;
 
     iput-object p6, p0, Lcom/google/android/gms/internal/nearby/zzee;->zzf:Lcom/google/android/gms/internal/nearby/zzcu;
+
+    return-void
+.end method
+
+.method public synthetic constructor <init>(Lorg/ejml/dense/row/CommonOps_ZDRM;)V
+    .locals 0
+
+    invoke-direct {p0}, Lcom/google/android/gms/common/internal/safeparcel/AbstractSafeParcelable;-><init>()V
 
     return-void
 .end method

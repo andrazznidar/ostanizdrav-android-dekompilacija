@@ -130,7 +130,7 @@
 
     iget-object v1, p0, Lde/rki/coronawarnapp/covidcertificate/validation/core/ValidationUserInput;->arrivalDateTime:Lorg/joda/time/LocalDateTime;
 
-    invoke-virtual {v1}, Lorg/joda/time/base/BaseLocal;->hashCode()I
+    invoke-virtual {v1}, Lorg/joda/time/base/AbstractPartial;->hashCode()I
 
     move-result v1
 

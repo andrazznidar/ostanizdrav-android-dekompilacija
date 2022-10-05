@@ -3,18 +3,22 @@
 
 # interfaces
 .implements Ljava/security/PrivateKey;
-.implements Ljava/security/Key;
+.implements Lorg/bouncycastle/pqc/jcajce/interfaces/LMSPrivateKey;
+
+
+# static fields
+.field private static final serialVersionUID:J = 0x76ea24cf15920952L
 
 
 # instance fields
-.field public transient attributes:Lorg/bouncycastle/asn1/ASN1Set;
+.field private transient attributes:Lorg/bouncycastle/asn1/ASN1Set;
 
-.field public transient keyParams:Lorg/bouncycastle/pqc/crypto/lms/LMSKeyParameters;
+.field private transient keyParams:Lorg/bouncycastle/pqc/crypto/lms/LMSKeyParameters;
 
 
 # direct methods
 .method public constructor <init>(Lorg/bouncycastle/asn1/pkcs/PrivateKeyInfo;)V
-    .locals 1
+    .locals 0
     .annotation system Ldalvik/annotation/Throws;
         value = {
             Ljava/io/IOException;
@@ -23,7 +27,32 @@
 
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
-    iget-object v0, p1, Lorg/bouncycastle/asn1/pkcs/PrivateKeyInfo;->attributes:Lorg/bouncycastle/asn1/ASN1Set;
+    invoke-direct {p0, p1}, Lorg/bouncycastle/pqc/jcajce/provider/lms/BCLMSPrivateKey;->init(Lorg/bouncycastle/asn1/pkcs/PrivateKeyInfo;)V
+
+    return-void
+.end method
+
+.method public constructor <init>(Lorg/bouncycastle/pqc/crypto/lms/LMSKeyParameters;)V
+    .locals 0
+
+    invoke-direct {p0}, Ljava/lang/Object;-><init>()V
+
+    iput-object p1, p0, Lorg/bouncycastle/pqc/jcajce/provider/lms/BCLMSPrivateKey;->keyParams:Lorg/bouncycastle/pqc/crypto/lms/LMSKeyParameters;
+
+    return-void
+.end method
+
+.method private init(Lorg/bouncycastle/asn1/pkcs/PrivateKeyInfo;)V
+    .locals 1
+    .annotation system Ldalvik/annotation/Throws;
+        value = {
+            Ljava/io/IOException;
+        }
+    .end annotation
+
+    invoke-virtual {p1}, Lorg/bouncycastle/asn1/pkcs/PrivateKeyInfo;->getAttributes()Lorg/bouncycastle/asn1/ASN1Set;
+
+    move-result-object v0
 
     iput-object v0, p0, Lorg/bouncycastle/pqc/jcajce/provider/lms/BCLMSPrivateKey;->attributes:Lorg/bouncycastle/asn1/ASN1Set;
 
@@ -34,6 +63,51 @@
     check-cast p1, Lorg/bouncycastle/pqc/crypto/lms/LMSKeyParameters;
 
     iput-object p1, p0, Lorg/bouncycastle/pqc/jcajce/provider/lms/BCLMSPrivateKey;->keyParams:Lorg/bouncycastle/pqc/crypto/lms/LMSKeyParameters;
+
+    return-void
+.end method
+
+.method private readObject(Ljava/io/ObjectInputStream;)V
+    .locals 0
+    .annotation system Ldalvik/annotation/Throws;
+        value = {
+            Ljava/io/IOException;,
+            Ljava/lang/ClassNotFoundException;
+        }
+    .end annotation
+
+    invoke-virtual {p1}, Ljava/io/ObjectInputStream;->defaultReadObject()V
+
+    invoke-virtual {p1}, Ljava/io/ObjectInputStream;->readObject()Ljava/lang/Object;
+
+    move-result-object p1
+
+    check-cast p1, [B
+
+    invoke-static {p1}, Lorg/bouncycastle/asn1/pkcs/PrivateKeyInfo;->getInstance(Ljava/lang/Object;)Lorg/bouncycastle/asn1/pkcs/PrivateKeyInfo;
+
+    move-result-object p1
+
+    invoke-direct {p0, p1}, Lorg/bouncycastle/pqc/jcajce/provider/lms/BCLMSPrivateKey;->init(Lorg/bouncycastle/asn1/pkcs/PrivateKeyInfo;)V
+
+    return-void
+.end method
+
+.method private writeObject(Ljava/io/ObjectOutputStream;)V
+    .locals 1
+    .annotation system Ldalvik/annotation/Throws;
+        value = {
+            Ljava/io/IOException;
+        }
+    .end annotation
+
+    invoke-virtual {p1}, Ljava/io/ObjectOutputStream;->defaultWriteObject()V
+
+    invoke-virtual {p0}, Lorg/bouncycastle/pqc/jcajce/provider/lms/BCLMSPrivateKey;->getEncoded()[B
+
+    move-result-object v0
+
+    invoke-virtual {p1, v0}, Ljava/io/ObjectOutputStream;->writeObject(Ljava/lang/Object;)V
 
     return-void
 .end method
@@ -92,6 +166,41 @@
     return p1
 .end method
 
+.method public extractKeyShard(I)Lorg/bouncycastle/pqc/jcajce/interfaces/LMSPrivateKey;
+    .locals 2
+
+    iget-object v0, p0, Lorg/bouncycastle/pqc/jcajce/provider/lms/BCLMSPrivateKey;->keyParams:Lorg/bouncycastle/pqc/crypto/lms/LMSKeyParameters;
+
+    instance-of v1, v0, Lorg/bouncycastle/pqc/crypto/lms/LMSPrivateKeyParameters;
+
+    if-eqz v1, :cond_0
+
+    new-instance v1, Lorg/bouncycastle/pqc/jcajce/provider/lms/BCLMSPrivateKey;
+
+    check-cast v0, Lorg/bouncycastle/pqc/crypto/lms/LMSPrivateKeyParameters;
+
+    invoke-virtual {v0, p1}, Lorg/bouncycastle/pqc/crypto/lms/LMSPrivateKeyParameters;->extractKeyShard(I)Lorg/bouncycastle/pqc/crypto/lms/LMSPrivateKeyParameters;
+
+    move-result-object p1
+
+    invoke-direct {v1, p1}, Lorg/bouncycastle/pqc/jcajce/provider/lms/BCLMSPrivateKey;-><init>(Lorg/bouncycastle/pqc/crypto/lms/LMSKeyParameters;)V
+
+    return-object v1
+
+    :cond_0
+    new-instance v1, Lorg/bouncycastle/pqc/jcajce/provider/lms/BCLMSPrivateKey;
+
+    check-cast v0, Lorg/bouncycastle/pqc/crypto/lms/HSSPrivateKeyParameters;
+
+    invoke-virtual {v0, p1}, Lorg/bouncycastle/pqc/crypto/lms/HSSPrivateKeyParameters;->extractKeyShard(I)Lorg/bouncycastle/pqc/crypto/lms/HSSPrivateKeyParameters;
+
+    move-result-object p1
+
+    invoke-direct {v1, p1}, Lorg/bouncycastle/pqc/jcajce/provider/lms/BCLMSPrivateKey;-><init>(Lorg/bouncycastle/pqc/crypto/lms/LMSKeyParameters;)V
+
+    return-object v1
+.end method
+
 .method public getAlgorithm()Ljava/lang/String;
     .locals 1
 
@@ -132,6 +241,112 @@
     const-string v0, "PKCS#8"
 
     return-object v0
+.end method
+
+.method public getIndex()J
+    .locals 4
+
+    invoke-virtual {p0}, Lorg/bouncycastle/pqc/jcajce/provider/lms/BCLMSPrivateKey;->getUsagesRemaining()J
+
+    move-result-wide v0
+
+    const-wide/16 v2, 0x0
+
+    cmp-long v0, v0, v2
+
+    if-eqz v0, :cond_1
+
+    iget-object v0, p0, Lorg/bouncycastle/pqc/jcajce/provider/lms/BCLMSPrivateKey;->keyParams:Lorg/bouncycastle/pqc/crypto/lms/LMSKeyParameters;
+
+    instance-of v1, v0, Lorg/bouncycastle/pqc/crypto/lms/LMSPrivateKeyParameters;
+
+    if-eqz v1, :cond_0
+
+    check-cast v0, Lorg/bouncycastle/pqc/crypto/lms/LMSPrivateKeyParameters;
+
+    invoke-virtual {v0}, Lorg/bouncycastle/pqc/crypto/lms/LMSPrivateKeyParameters;->getIndex()I
+
+    move-result v0
+
+    int-to-long v0, v0
+
+    return-wide v0
+
+    :cond_0
+    check-cast v0, Lorg/bouncycastle/pqc/crypto/lms/HSSPrivateKeyParameters;
+
+    invoke-virtual {v0}, Lorg/bouncycastle/pqc/crypto/lms/HSSPrivateKeyParameters;->getIndex()J
+
+    move-result-wide v0
+
+    return-wide v0
+
+    :cond_1
+    new-instance v0, Ljava/lang/IllegalStateException;
+
+    const-string v1, "key exhausted"
+
+    invoke-direct {v0, v1}, Ljava/lang/IllegalStateException;-><init>(Ljava/lang/String;)V
+
+    throw v0
+.end method
+
+.method public getKeyParams()Lorg/bouncycastle/crypto/CipherParameters;
+    .locals 1
+
+    iget-object v0, p0, Lorg/bouncycastle/pqc/jcajce/provider/lms/BCLMSPrivateKey;->keyParams:Lorg/bouncycastle/pqc/crypto/lms/LMSKeyParameters;
+
+    return-object v0
+.end method
+
+.method public getLevels()I
+    .locals 2
+
+    iget-object v0, p0, Lorg/bouncycastle/pqc/jcajce/provider/lms/BCLMSPrivateKey;->keyParams:Lorg/bouncycastle/pqc/crypto/lms/LMSKeyParameters;
+
+    instance-of v1, v0, Lorg/bouncycastle/pqc/crypto/lms/LMSPrivateKeyParameters;
+
+    if-eqz v1, :cond_0
+
+    const/4 v0, 0x1
+
+    return v0
+
+    :cond_0
+    check-cast v0, Lorg/bouncycastle/pqc/crypto/lms/HSSPrivateKeyParameters;
+
+    invoke-virtual {v0}, Lorg/bouncycastle/pqc/crypto/lms/HSSPrivateKeyParameters;->getL()I
+
+    move-result v0
+
+    return v0
+.end method
+
+.method public getUsagesRemaining()J
+    .locals 2
+
+    iget-object v0, p0, Lorg/bouncycastle/pqc/jcajce/provider/lms/BCLMSPrivateKey;->keyParams:Lorg/bouncycastle/pqc/crypto/lms/LMSKeyParameters;
+
+    instance-of v1, v0, Lorg/bouncycastle/pqc/crypto/lms/LMSPrivateKeyParameters;
+
+    if-eqz v1, :cond_0
+
+    check-cast v0, Lorg/bouncycastle/pqc/crypto/lms/LMSPrivateKeyParameters;
+
+    invoke-virtual {v0}, Lorg/bouncycastle/pqc/crypto/lms/LMSPrivateKeyParameters;->getUsagesRemaining()J
+
+    move-result-wide v0
+
+    return-wide v0
+
+    :cond_0
+    check-cast v0, Lorg/bouncycastle/pqc/crypto/lms/HSSPrivateKeyParameters;
+
+    invoke-virtual {v0}, Lorg/bouncycastle/pqc/crypto/lms/HSSPrivateKeyParameters;->getUsagesRemaining()J
+
+    move-result-wide v0
+
+    return-wide v0
 .end method
 
 .method public hashCode()I

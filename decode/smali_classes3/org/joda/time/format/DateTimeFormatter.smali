@@ -125,13 +125,13 @@
 
     move-result v0
 
-    if-ltz v0, :cond_4
+    if-ltz v0, :cond_3
 
     invoke-virtual {p1}, Ljava/lang/String;->length()I
 
     move-result v2
 
-    if-lt v0, v2, :cond_5
+    if-lt v0, v2, :cond_4
 
     const/4 v0, 0x1
 
@@ -178,41 +178,19 @@
 
     iget-object v0, p0, Lorg/joda/time/format/DateTimeFormatter;->iZone:Lorg/joda/time/DateTimeZone;
 
-    if-eqz v0, :cond_3
+    if-eqz v0, :cond_2
 
-    iget-object v1, p1, Lorg/joda/time/base/BaseDateTime;->iChronology:Lorg/joda/time/Chronology;
+    invoke-virtual {p1, v0}, Lorg/joda/time/DateTime;->withZone(Lorg/joda/time/DateTimeZone;)Lorg/joda/time/DateTime;
 
-    invoke-virtual {v1, v0}, Lorg/joda/time/Chronology;->withZone(Lorg/joda/time/DateTimeZone;)Lorg/joda/time/Chronology;
-
-    move-result-object v0
-
-    invoke-static {v0}, Lorg/joda/time/DateTimeUtils;->getChronology(Lorg/joda/time/Chronology;)Lorg/joda/time/Chronology;
-
-    move-result-object v0
-
-    iget-object v1, p1, Lorg/joda/time/base/BaseDateTime;->iChronology:Lorg/joda/time/Chronology;
-
-    if-ne v0, v1, :cond_2
-
-    goto :goto_1
+    move-result-object p1
 
     :cond_2
-    new-instance v1, Lorg/joda/time/DateTime;
-
-    iget-wide v2, p1, Lorg/joda/time/base/BaseDateTime;->iMillis:J
-
-    invoke-direct {v1, v2, v3, v0}, Lorg/joda/time/DateTime;-><init>(JLorg/joda/time/Chronology;)V
-
-    move-object p1, v1
-
-    :cond_3
-    :goto_1
     return-object p1
 
-    :cond_4
+    :cond_3
     not-int v0, v0
 
-    :cond_5
+    :cond_4
     new-instance v1, Ljava/lang/IllegalArgumentException;
 
     invoke-static {p1, v0}, Lorg/joda/time/format/FormatUtils;->createErrorMessage(Ljava/lang/String;I)Ljava/lang/String;
@@ -415,17 +393,10 @@
 
     move-result-wide v1
 
-    invoke-interface {p1}, Lorg/joda/time/ReadableInstant;->getChronology()Lorg/joda/time/Chronology;
+    invoke-static {p1}, Lorg/joda/time/DateTimeUtils;->getInstantChronology(Lorg/joda/time/ReadableInstant;)Lorg/joda/time/Chronology;
 
     move-result-object p1
 
-    if-nez p1, :cond_0
-
-    invoke-static {}, Lorg/joda/time/chrono/ISOChronology;->getInstance()Lorg/joda/time/chrono/ISOChronology;
-
-    move-result-object p1
-
-    :cond_0
     invoke-virtual {p0, v0, v1, v2, p1}, Lorg/joda/time/format/DateTimeFormatter;->printTo(Ljava/lang/Appendable;JLorg/joda/time/Chronology;)V
     :try_end_0
     .catch Ljava/io/IOException; {:try_start_0 .. :try_end_0} :catch_0
@@ -458,13 +429,27 @@
 
     move-result-object v1
 
+    if-eqz p1, :cond_0
+
     iget-object v2, p0, Lorg/joda/time/format/DateTimeFormatter;->iLocale:Ljava/util/Locale;
 
     invoke-interface {v1, v0, p1, v2}, Lorg/joda/time/format/InternalPrinter;->printTo(Ljava/lang/Appendable;Lorg/joda/time/ReadablePartial;Ljava/util/Locale;)V
+
+    goto :goto_0
+
+    :cond_0
+    new-instance p1, Ljava/lang/IllegalArgumentException;
+
+    const-string v1, "The partial must not be null"
+
+    invoke-direct {p1, v1}, Ljava/lang/IllegalArgumentException;-><init>(Ljava/lang/String;)V
+
+    throw p1
     :try_end_0
     .catch Ljava/io/IOException; {:try_start_0 .. :try_end_0} :catch_0
 
     :catch_0
+    :goto_0
     invoke-virtual {v0}, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
 
     move-result-object p1
@@ -729,40 +714,49 @@
     return-object v0
 .end method
 
-.method public withZoneUTC()Lorg/joda/time/format/DateTimeFormatter;
+.method public withZone(Lorg/joda/time/DateTimeZone;)Lorg/joda/time/format/DateTimeFormatter;
     .locals 10
-
-    sget-object v6, Lorg/joda/time/DateTimeZone;->UTC:Lorg/joda/time/DateTimeZone;
 
     iget-object v0, p0, Lorg/joda/time/format/DateTimeFormatter;->iZone:Lorg/joda/time/DateTimeZone;
 
-    if-ne v0, v6, :cond_0
+    if-ne v0, p1, :cond_0
 
-    move-object v9, p0
-
-    goto :goto_0
+    return-object p0
 
     :cond_0
-    new-instance v9, Lorg/joda/time/format/DateTimeFormatter;
+    new-instance v0, Lorg/joda/time/format/DateTimeFormatter;
 
-    iget-object v1, p0, Lorg/joda/time/format/DateTimeFormatter;->iPrinter:Lorg/joda/time/format/InternalPrinter;
+    iget-object v2, p0, Lorg/joda/time/format/DateTimeFormatter;->iPrinter:Lorg/joda/time/format/InternalPrinter;
 
-    iget-object v2, p0, Lorg/joda/time/format/DateTimeFormatter;->iParser:Lorg/joda/time/format/InternalParser;
+    iget-object v3, p0, Lorg/joda/time/format/DateTimeFormatter;->iParser:Lorg/joda/time/format/InternalParser;
 
-    iget-object v3, p0, Lorg/joda/time/format/DateTimeFormatter;->iLocale:Ljava/util/Locale;
+    iget-object v4, p0, Lorg/joda/time/format/DateTimeFormatter;->iLocale:Ljava/util/Locale;
 
-    const/4 v4, 0x0
+    const/4 v5, 0x0
 
-    iget-object v5, p0, Lorg/joda/time/format/DateTimeFormatter;->iChrono:Lorg/joda/time/Chronology;
+    iget-object v6, p0, Lorg/joda/time/format/DateTimeFormatter;->iChrono:Lorg/joda/time/Chronology;
 
-    iget-object v7, p0, Lorg/joda/time/format/DateTimeFormatter;->iPivotYear:Ljava/lang/Integer;
+    iget-object v8, p0, Lorg/joda/time/format/DateTimeFormatter;->iPivotYear:Ljava/lang/Integer;
 
-    iget v8, p0, Lorg/joda/time/format/DateTimeFormatter;->iDefaultYear:I
+    iget v9, p0, Lorg/joda/time/format/DateTimeFormatter;->iDefaultYear:I
 
-    move-object v0, v9
+    move-object v1, v0
 
-    invoke-direct/range {v0 .. v8}, Lorg/joda/time/format/DateTimeFormatter;-><init>(Lorg/joda/time/format/InternalPrinter;Lorg/joda/time/format/InternalParser;Ljava/util/Locale;ZLorg/joda/time/Chronology;Lorg/joda/time/DateTimeZone;Ljava/lang/Integer;I)V
+    move-object v7, p1
 
-    :goto_0
-    return-object v9
+    invoke-direct/range {v1 .. v9}, Lorg/joda/time/format/DateTimeFormatter;-><init>(Lorg/joda/time/format/InternalPrinter;Lorg/joda/time/format/InternalParser;Ljava/util/Locale;ZLorg/joda/time/Chronology;Lorg/joda/time/DateTimeZone;Ljava/lang/Integer;I)V
+
+    return-object v0
+.end method
+
+.method public withZoneUTC()Lorg/joda/time/format/DateTimeFormatter;
+    .locals 1
+
+    sget-object v0, Lorg/joda/time/DateTimeZone;->UTC:Lorg/joda/time/DateTimeZone;
+
+    invoke-virtual {p0, v0}, Lorg/joda/time/format/DateTimeFormatter;->withZone(Lorg/joda/time/DateTimeZone;)Lorg/joda/time/format/DateTimeFormatter;
+
+    move-result-object v0
+
+    return-object v0
 .end method

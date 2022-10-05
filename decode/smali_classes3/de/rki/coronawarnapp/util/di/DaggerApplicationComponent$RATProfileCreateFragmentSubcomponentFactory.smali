@@ -24,18 +24,8 @@
 
 
 # direct methods
-.method public constructor <init>(Lde/rki/coronawarnapp/util/di/DaggerApplicationComponent;Lde/rki/coronawarnapp/util/di/DaggerApplicationComponent$MainActivitySubcomponentImpl;Lde/rki/coronawarnapp/util/di/DaggerApplicationComponent$RATProfileCreateFragmentSubcomponentFactory-IA;)V
+.method public constructor <init>(Lde/rki/coronawarnapp/util/di/DaggerApplicationComponent;Lde/rki/coronawarnapp/util/di/DaggerApplicationComponent$MainActivitySubcomponentImpl;Lboofcv/core/image/GeneralizedImageOps$$ExternalSyntheticLambda0;)V
     .locals 0
-    .annotation system Ldalvik/annotation/MethodParameters;
-        accessFlags = {
-            0x0,
-            0x0
-        }
-        names = {
-            "applicationComponent",
-            "mainActivitySubcomponentImpl"
-        }
-    .end annotation
 
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
@@ -71,7 +61,7 @@
 
     const/4 v3, 0x0
 
-    invoke-direct {v0, v1, v2, p1, v3}, Lde/rki/coronawarnapp/util/di/DaggerApplicationComponent$RATProfileCreateFragmentSubcomponentImpl;-><init>(Lde/rki/coronawarnapp/util/di/DaggerApplicationComponent;Lde/rki/coronawarnapp/util/di/DaggerApplicationComponent$MainActivitySubcomponentImpl;Lde/rki/coronawarnapp/ui/coronatest/rat/profile/create/RATProfileCreateFragment;Lde/rki/coronawarnapp/util/di/DaggerApplicationComponent$RATProfileCreateFragmentSubcomponentImpl-IA;)V
+    invoke-direct {v0, v1, v2, p1, v3}, Lde/rki/coronawarnapp/util/di/DaggerApplicationComponent$RATProfileCreateFragmentSubcomponentImpl;-><init>(Lde/rki/coronawarnapp/util/di/DaggerApplicationComponent;Lde/rki/coronawarnapp/util/di/DaggerApplicationComponent$MainActivitySubcomponentImpl;Lde/rki/coronawarnapp/ui/coronatest/rat/profile/create/RATProfileCreateFragment;Lboofcv/core/image/GeneralizedImageOps$$ExternalSyntheticLambda1;)V
 
     return-object v0
 .end method

@@ -1,45 +1,67 @@
-.class public final synthetic Lj$/util/stream/n;
+.class Lj$/util/stream/n;
 .super Ljava/lang/Object;
 
 # interfaces
-.implements Lj$/util/function/BiConsumer;
+.implements Lj$/util/stream/Collector;
 
 
-# static fields
-.field public static final synthetic a:Lj$/util/stream/n;
+# instance fields
+.field private final a:Lj$/util/function/C;
+
+.field private final b:Ljava/util/Set;
 
 
 # direct methods
-.method static synthetic constructor <clinit>()V
-    .locals 1
-
-    new-instance v0, Lj$/util/stream/n;
-
-    invoke-direct {v0}, Lj$/util/stream/n;-><init>()V
-
-    sput-object v0, Lj$/util/stream/n;->a:Lj$/util/stream/n;
-
-    return-void
-.end method
-
-.method private synthetic constructor <init>()V
+.method constructor <init>(Lj$/util/function/C;Lj$/util/function/BiConsumer;Lj$/util/function/c;Lj$/util/function/Function;Ljava/util/Set;)V
     .locals 0
 
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
+
+    iput-object p1, p0, Lj$/util/stream/n;->a:Lj$/util/function/C;
+
+    iput-object p5, p0, Lj$/util/stream/n;->b:Ljava/util/Set;
 
     return-void
 .end method
 
 
 # virtual methods
-.method public final y(Ljava/lang/Object;Ljava/lang/Object;)V
-    .locals 0
+.method public a()Lj$/util/function/BiConsumer;
+    .locals 1
 
-    check-cast p1, Ljava/util/LinkedHashSet;
+    sget-object v0, Lj$/util/stream/a;->b:Lj$/util/stream/a;
 
-    check-cast p2, Ljava/util/LinkedHashSet;
+    return-object v0
+.end method
 
-    invoke-virtual {p1, p2}, Ljava/util/AbstractCollection;->addAll(Ljava/util/Collection;)Z
+.method public b()Lj$/util/function/c;
+    .locals 1
 
-    return-void
+    sget-object v0, Lj$/util/stream/a;->c:Lj$/util/stream/a;
+
+    return-object v0
+.end method
+
+.method public c()Lj$/util/function/C;
+    .locals 1
+
+    iget-object v0, p0, Lj$/util/stream/n;->a:Lj$/util/function/C;
+
+    return-object v0
+.end method
+
+.method public characteristics()Ljava/util/Set;
+    .locals 1
+
+    iget-object v0, p0, Lj$/util/stream/n;->b:Ljava/util/Set;
+
+    return-object v0
+.end method
+
+.method public d()Lj$/util/function/Function;
+    .locals 1
+
+    sget-object v0, Lj$/util/stream/a;->d:Lj$/util/stream/a;
+
+    return-object v0
 .end method

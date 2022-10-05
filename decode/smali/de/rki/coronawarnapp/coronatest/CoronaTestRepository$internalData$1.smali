@@ -34,14 +34,14 @@
 .end annotation
 
 .annotation system Ldalvik/annotation/SourceDebugExtension;
-    value = "SMAP\nCoronaTestRepository.kt\nKotlin\n*S Kotlin\n*F\n+ 1 CoronaTestRepository.kt\nde/rki/coronawarnapp/coronatest/CoronaTestRepository$internalData$1\n+ 2 _Collections.kt\nkotlin/collections/CollectionsKt___CollectionsKt\n*L\n1#1,293:1\n1547#2:294\n1618#2,3:295\n*S KotlinDebug\n*F\n+ 1 CoronaTestRepository.kt\nde/rki/coronawarnapp/coronatest/CoronaTestRepository$internalData$1\n*L\n53#1:294\n53#1:295,3\n*E\n"
+    value = "SMAP\nCoronaTestRepository.kt\nKotlin\n*S Kotlin\n*F\n+ 1 CoronaTestRepository.kt\nde/rki/coronawarnapp/coronatest/CoronaTestRepository$internalData$1\n+ 2 _Collections.kt\nkotlin/collections/CollectionsKt___CollectionsKt\n*L\n1#1,341:1\n1547#2:342\n1618#2,3:343\n*S KotlinDebug\n*F\n+ 1 CoronaTestRepository.kt\nde/rki/coronawarnapp/coronatest/CoronaTestRepository$internalData$1\n*L\n54#1:342\n54#1:343,3\n*E\n"
 .end annotation
 
 .annotation runtime Lkotlin/coroutines/jvm/internal/DebugMetadata;
     c = "de.rki.coronawarnapp.coronatest.CoronaTestRepository$internalData$1"
     f = "CoronaTestRepository.kt"
     l = {
-        0x33
+        0x34
     }
     m = "invokeSuspend"
 .end annotation

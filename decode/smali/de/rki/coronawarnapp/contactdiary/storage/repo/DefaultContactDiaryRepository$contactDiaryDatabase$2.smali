@@ -52,19 +52,15 @@
 
     const/4 v1, 0x1
 
-    const-string v2, "ContactDiary-db"
-
     invoke-static {v0}, Ljava/util/Objects;->requireNonNull(Ljava/lang/Object;)Ljava/lang/Object;
-
-    const-string v3, "databaseName"
-
-    invoke-static {v2, v3}, Lkotlin/jvm/internal/Intrinsics;->checkNotNullParameter(Ljava/lang/Object;Ljava/lang/String;)V
 
     iget-object v0, v0, Lde/rki/coronawarnapp/contactdiary/storage/ContactDiaryDatabase$Factory;->ctx:Landroid/content/Context;
 
-    const-class v3, Lde/rki/coronawarnapp/contactdiary/storage/ContactDiaryDatabase;
+    const-class v2, Lde/rki/coronawarnapp/contactdiary/storage/ContactDiaryDatabase;
 
-    invoke-static {v0, v3, v2}, Landroidx/room/Room;->databaseBuilder(Landroid/content/Context;Ljava/lang/Class;Ljava/lang/String;)Landroidx/room/RoomDatabase$Builder;
+    const-string v3, "ContactDiary-db"
+
+    invoke-static {v0, v2, v3}, Landroidx/room/Room;->databaseBuilder(Landroid/content/Context;Ljava/lang/Class;Ljava/lang/String;)Landroidx/room/RoomDatabase$Builder;
 
     move-result-object v0
 

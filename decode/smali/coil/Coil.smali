@@ -104,8 +104,6 @@
     :goto_2
     if-nez v1, :cond_3
 
-    sget v1, Lcoil/ImageLoader;->$r8$clinit:I
-
     new-instance v1, Lcoil/ImageLoader$Builder;
 
     invoke-direct {v1, p0}, Lcoil/ImageLoader$Builder;-><init>(Landroid/content/Context;)V

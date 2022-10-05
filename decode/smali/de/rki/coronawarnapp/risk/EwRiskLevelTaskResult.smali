@@ -22,22 +22,26 @@
     .end annotation
 .end field
 
-.field public final failureReason:Lde/rki/coronawarnapp/risk/EwRiskLevelResult$FailureReason;
+.field public final failureReason:I
 
 
 # direct methods
-.method public constructor <init>(Lorg/joda/time/Instant;Lde/rki/coronawarnapp/risk/EwRiskLevelResult$FailureReason;)V
+.method public constructor <init>(Lorg/joda/time/Instant;I)V
     .locals 1
 
     const-string v0, "calculatedAt"
 
     invoke-static {p1, v0}, Lkotlin/jvm/internal/Intrinsics;->checkNotNullParameter(Ljava/lang/Object;Ljava/lang/String;)V
 
+    const-string v0, "failureReason"
+
+    invoke-static {p2, v0}, Lkotlin/jvm/internal/Intrinsics$$ExternalSyntheticCheckNotZero0;->m(ILjava/lang/String;)V
+
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
     iput-object p1, p0, Lde/rki/coronawarnapp/risk/EwRiskLevelTaskResult;->calculatedAt:Lorg/joda/time/Instant;
 
-    iput-object p2, p0, Lde/rki/coronawarnapp/risk/EwRiskLevelTaskResult;->failureReason:Lde/rki/coronawarnapp/risk/EwRiskLevelResult$FailureReason;
+    iput p2, p0, Lde/rki/coronawarnapp/risk/EwRiskLevelTaskResult;->failureReason:I
 
     const/4 p1, 0x0
 
@@ -71,7 +75,7 @@
 
     const/4 p1, 0x0
 
-    iput-object p1, p0, Lde/rki/coronawarnapp/risk/EwRiskLevelTaskResult;->failureReason:Lde/rki/coronawarnapp/risk/EwRiskLevelResult$FailureReason;
+    iput p1, p0, Lde/rki/coronawarnapp/risk/EwRiskLevelTaskResult;->failureReason:I
 
     iput-object p2, p0, Lde/rki/coronawarnapp/risk/EwRiskLevelTaskResult;->ewAggregatedRiskResult:Lde/rki/coronawarnapp/risk/result/EwAggregatedRiskResult;
 
@@ -116,9 +120,9 @@
     return v2
 
     :cond_2
-    iget-object v1, p0, Lde/rki/coronawarnapp/risk/EwRiskLevelTaskResult;->failureReason:Lde/rki/coronawarnapp/risk/EwRiskLevelResult$FailureReason;
+    iget v1, p0, Lde/rki/coronawarnapp/risk/EwRiskLevelTaskResult;->failureReason:I
 
-    iget-object v3, p1, Lde/rki/coronawarnapp/risk/EwRiskLevelTaskResult;->failureReason:Lde/rki/coronawarnapp/risk/EwRiskLevelResult$FailureReason;
+    iget v3, p1, Lde/rki/coronawarnapp/risk/EwRiskLevelTaskResult;->failureReason:I
 
     if-eq v1, v3, :cond_3
 
@@ -186,22 +190,18 @@
     return-object v0
 .end method
 
-.method public getFailureReason()Lde/rki/coronawarnapp/risk/EwRiskLevelResult$FailureReason;
+.method public getFailureReason$enumunboxing$()I
     .locals 1
 
-    iget-object v0, p0, Lde/rki/coronawarnapp/risk/EwRiskLevelTaskResult;->failureReason:Lde/rki/coronawarnapp/risk/EwRiskLevelResult$FailureReason;
+    iget v0, p0, Lde/rki/coronawarnapp/risk/EwRiskLevelTaskResult;->failureReason:I
 
-    return-object v0
+    return v0
 .end method
 
 .method public getMatchedKeyCount()I
     .locals 2
 
-    const-string/jumbo v0, "this"
-
-    invoke-static {p0, v0}, Lkotlin/jvm/internal/Intrinsics;->checkNotNullParameter(Ljava/lang/Object;Ljava/lang/String;)V
-
-    invoke-virtual {p0}, Lde/rki/coronawarnapp/risk/EwRiskLevelTaskResult;->isIncreasedRisk()Z
+    invoke-interface {p0}, Lde/rki/coronawarnapp/risk/EwRiskLevelResult;->isIncreasedRisk()Z
 
     move-result v0
 
@@ -209,7 +209,7 @@
 
     if-eqz v0, :cond_1
 
-    invoke-virtual {p0}, Lde/rki/coronawarnapp/risk/EwRiskLevelTaskResult;->getEwAggregatedRiskResult()Lde/rki/coronawarnapp/risk/result/EwAggregatedRiskResult;
+    invoke-interface {p0}, Lde/rki/coronawarnapp/risk/EwRiskLevelResult;->getEwAggregatedRiskResult()Lde/rki/coronawarnapp/risk/result/EwAggregatedRiskResult;
 
     move-result-object v0
 
@@ -223,7 +223,7 @@
     goto :goto_0
 
     :cond_1
-    invoke-virtual {p0}, Lde/rki/coronawarnapp/risk/EwRiskLevelTaskResult;->getEwAggregatedRiskResult()Lde/rki/coronawarnapp/risk/result/EwAggregatedRiskResult;
+    invoke-interface {p0}, Lde/rki/coronawarnapp/risk/EwRiskLevelResult;->getEwAggregatedRiskResult()Lde/rki/coronawarnapp/risk/result/EwAggregatedRiskResult;
 
     move-result-object v0
 
@@ -251,11 +251,7 @@
 .method public getRiskState()Lde/rki/coronawarnapp/risk/RiskState;
     .locals 4
 
-    const-string/jumbo v0, "this"
-
-    invoke-static {p0, v0}, Lkotlin/jvm/internal/Intrinsics;->checkNotNullParameter(Ljava/lang/Object;Ljava/lang/String;)V
-
-    invoke-virtual {p0}, Lde/rki/coronawarnapp/risk/EwRiskLevelTaskResult;->getEwAggregatedRiskResult()Lde/rki/coronawarnapp/risk/result/EwAggregatedRiskResult;
+    invoke-interface {p0}, Lde/rki/coronawarnapp/risk/EwRiskLevelResult;->getEwAggregatedRiskResult()Lde/rki/coronawarnapp/risk/result/EwAggregatedRiskResult;
 
     move-result-object v0
 
@@ -290,7 +286,7 @@
     goto :goto_4
 
     :cond_2
-    invoke-virtual {p0}, Lde/rki/coronawarnapp/risk/EwRiskLevelTaskResult;->getEwAggregatedRiskResult()Lde/rki/coronawarnapp/risk/result/EwAggregatedRiskResult;
+    invoke-interface {p0}, Lde/rki/coronawarnapp/risk/EwRiskLevelResult;->getEwAggregatedRiskResult()Lde/rki/coronawarnapp/risk/result/EwAggregatedRiskResult;
 
     move-result-object v0
 
@@ -353,7 +349,7 @@
 
     mul-int/lit8 v0, v0, 0x1f
 
-    iget-object v1, p0, Lde/rki/coronawarnapp/risk/EwRiskLevelTaskResult;->failureReason:Lde/rki/coronawarnapp/risk/EwRiskLevelResult$FailureReason;
+    iget v1, p0, Lde/rki/coronawarnapp/risk/EwRiskLevelTaskResult;->failureReason:I
 
     const/4 v2, 0x0
 
@@ -364,7 +360,7 @@
     goto :goto_0
 
     :cond_0
-    invoke-virtual {v1}, Ljava/lang/Enum;->hashCode()I
+    invoke-static {v1}, Landroidx/camera/camera2/internal/Camera2CameraImpl$InternalState$EnumUnboxingSharedUtility;->ordinal(I)I
 
     move-result v1
 
@@ -423,7 +419,7 @@
 
     iget-object v0, p0, Lde/rki/coronawarnapp/risk/EwRiskLevelTaskResult;->calculatedAt:Lorg/joda/time/Instant;
 
-    iget-object v1, p0, Lde/rki/coronawarnapp/risk/EwRiskLevelTaskResult;->failureReason:Lde/rki/coronawarnapp/risk/EwRiskLevelResult$FailureReason;
+    iget v1, p0, Lde/rki/coronawarnapp/risk/EwRiskLevelTaskResult;->failureReason:I
 
     iget-object v2, p0, Lde/rki/coronawarnapp/risk/EwRiskLevelTaskResult;->ewAggregatedRiskResult:Lde/rki/coronawarnapp/risk/result/EwAggregatedRiskResult;
 
@@ -459,7 +455,11 @@
 
     invoke-virtual {v4, v0}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
 
-    invoke-virtual {v4, v1}, Ljava/lang/StringBuilder;->append(Ljava/lang/Object;)Ljava/lang/StringBuilder;
+    invoke-static {v1}, Lde/rki/coronawarnapp/risk/EwRiskLevelResult$FailureReason$EnumUnboxingLocalUtility;->stringValueOf(I)Ljava/lang/String;
+
+    move-result-object v0
+
+    invoke-virtual {v4, v0}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
 
     const-string v0, ", ewAggregatedRiskResult="
 

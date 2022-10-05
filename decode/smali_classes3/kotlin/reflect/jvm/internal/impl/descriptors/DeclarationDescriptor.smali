@@ -3,6 +3,7 @@
 .source "DeclarationDescriptor.java"
 
 # interfaces
+.implements Lkotlin/reflect/jvm/internal/impl/descriptors/Named;
 .implements Lkotlin/reflect/jvm/internal/impl/descriptors/annotations/Annotated;
 
 
@@ -22,9 +23,6 @@
 .end method
 
 .method public abstract getContainingDeclaration()Lkotlin/reflect/jvm/internal/impl/descriptors/DeclarationDescriptor;
-.end method
-
-.method public abstract getName()Lkotlin/reflect/jvm/internal/impl/name/Name;
 .end method
 
 .method public abstract getOriginal()Lkotlin/reflect/jvm/internal/impl/descriptors/DeclarationDescriptor;

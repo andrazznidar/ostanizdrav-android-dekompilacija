@@ -21,7 +21,7 @@
 
     sput-object v0, Lde/rki/coronawarnapp/databinding/TracingDetailsFragmentLayoutBindingImpl;->sViewsWithIds:Landroid/util/SparseIntArray;
 
-    const v1, 0x7f0a059a
+    const v1, 0x7f0a05e6
 
     const/4 v2, 0x5
 
@@ -254,7 +254,7 @@
 
     if-ne v8, v9, :cond_5
 
-    const v8, 0x7f1303e4
+    const v8, 0x7f1303f7
 
     invoke-virtual {v7, v8}, Landroid/content/Context;->getString(I)Ljava/lang/String;
 
@@ -267,7 +267,7 @@
     goto :goto_5
 
     :cond_5
-    const v8, 0x7f1303e1
+    const v8, 0x7f1303f4
 
     invoke-virtual {v7, v8}, Landroid/content/Context;->getString(I)Ljava/lang/String;
 
@@ -290,7 +290,7 @@
 
     iget-object v9, v5, Lde/rki/coronawarnapp/tracing/ui/details/TracingDetailsState;->tracingStatus:Lde/rki/coronawarnapp/tracing/GeneralTracingStatus$Status;
 
-    const v10, 0x7f060064
+    const v10, 0x7f06006a
 
     if-ne v9, v4, :cond_6
 
@@ -303,7 +303,7 @@
 
     if-ne v9, v11, :cond_7
 
-    const v10, 0x7f06005c
+    const v10, 0x7f060062
 
     goto :goto_6
 
@@ -316,12 +316,12 @@
 
     if-lez v9, :cond_8
 
-    const v10, 0x7f060060
+    const v10, 0x7f060066
 
     goto :goto_6
 
     :cond_8
-    const v10, 0x7f06005e
+    const v10, 0x7f060064
 
     :cond_9
     :goto_6
@@ -570,7 +570,7 @@
     :try_end_0
     .catchall {:try_start_0 .. :try_end_0} :catchall_0
 
-    const/16 p1, 0x30
+    const/16 p1, 0x2e
 
     invoke-virtual {p0, p1}, Landroidx/databinding/BaseObservable;->notifyPropertyChanged(I)V
 

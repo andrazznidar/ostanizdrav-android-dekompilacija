@@ -75,7 +75,7 @@
 
     const-string v3, ", "
 
-    invoke-static {v2, p1, v3, v0}, Lcom/airbnb/lottie/utils/GammaEvaluator$$ExternalSyntheticOutline0;->m(Ljava/lang/String;ILjava/lang/String;I)Ljava/lang/String;
+    invoke-static {v2, p1, v3, v0}, Landroidx/camera/camera2/internal/Camera2CameraImpl$$ExternalSyntheticOutline0;->m(Ljava/lang/String;ILjava/lang/String;I)Ljava/lang/String;
 
     move-result-object p1
 

@@ -7,7 +7,7 @@
 
 
 # direct methods
-.method public constructor <init>(Ljava/security/interfaces/ECPublicKey;Lcom/google/crypto/tink/subtle/Enums$HashType;I)V
+.method public constructor <init>(Ljava/security/interfaces/ECPublicKey;II)V
     .locals 0
     .annotation system Ldalvik/annotation/MethodParameters;
         accessFlags = {
@@ -44,9 +44,9 @@
 
     invoke-static {p3, p1}, Lcom/google/crypto/tink/subtle/EllipticCurves;->checkPointOnCurve(Ljava/security/spec/ECPoint;Ljava/security/spec/EllipticCurve;)V
 
-    invoke-static {p2}, Lcom/google/crypto/tink/subtle/Validators;->validateSignatureHash(Lcom/google/crypto/tink/subtle/Enums$HashType;)V
+    invoke-static {p2}, Lcom/google/crypto/tink/subtle/Validators;->validateSignatureHash(I)V
 
-    invoke-virtual {p2}, Ljava/lang/Object;->toString()Ljava/lang/String;
+    invoke-static {p2}, Lcom/google/crypto/tink/subtle/Enums$HashType$EnumUnboxingLocalUtility;->name(I)Ljava/lang/String;
 
     return-void
 .end method

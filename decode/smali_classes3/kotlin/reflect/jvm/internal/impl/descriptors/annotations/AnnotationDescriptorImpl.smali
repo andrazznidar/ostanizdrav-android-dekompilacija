@@ -7,11 +7,11 @@
 
 
 # instance fields
-.field public final annotationType:Lkotlin/reflect/jvm/internal/impl/types/KotlinType;
+.field private final annotationType:Lkotlin/reflect/jvm/internal/impl/types/KotlinType;
 
-.field public final source:Lkotlin/reflect/jvm/internal/impl/descriptors/SourceElement;
+.field private final source:Lkotlin/reflect/jvm/internal/impl/descriptors/SourceElement;
 
-.field public final valueArguments:Ljava/util/Map;
+.field private final valueArguments:Ljava/util/Map;
     .annotation system Ldalvik/annotation/Signature;
         value = {
             "Ljava/util/Map<",
@@ -24,7 +24,7 @@
 
 
 # direct methods
-.method public static synthetic $$$reportNull$$$0(I)V
+.method private static synthetic $$$reportNull$$$0(I)V
     .locals 10
 
     const/4 v0, 0x5
@@ -186,14 +186,27 @@
         }
     .end annotation
 
+    if-nez p1, :cond_0
+
     const/4 v0, 0x0
 
-    if-eqz p1, :cond_2
+    invoke-static {v0}, Lkotlin/reflect/jvm/internal/impl/descriptors/annotations/AnnotationDescriptorImpl;->$$$reportNull$$$0(I)V
 
-    if-eqz p2, :cond_1
+    :cond_0
+    if-nez p2, :cond_1
 
-    if-eqz p3, :cond_0
+    const/4 v0, 0x1
 
+    invoke-static {v0}, Lkotlin/reflect/jvm/internal/impl/descriptors/annotations/AnnotationDescriptorImpl;->$$$reportNull$$$0(I)V
+
+    :cond_1
+    if-nez p3, :cond_2
+
+    const/4 v0, 0x2
+
+    invoke-static {v0}, Lkotlin/reflect/jvm/internal/impl/descriptors/annotations/AnnotationDescriptorImpl;->$$$reportNull$$$0(I)V
+
+    :cond_2
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
     iput-object p1, p0, Lkotlin/reflect/jvm/internal/impl/descriptors/annotations/AnnotationDescriptorImpl;->annotationType:Lkotlin/reflect/jvm/internal/impl/types/KotlinType;
@@ -203,33 +216,12 @@
     iput-object p3, p0, Lkotlin/reflect/jvm/internal/impl/descriptors/annotations/AnnotationDescriptorImpl;->source:Lkotlin/reflect/jvm/internal/impl/descriptors/SourceElement;
 
     return-void
-
-    :cond_0
-    const/4 p1, 0x2
-
-    invoke-static {p1}, Lkotlin/reflect/jvm/internal/impl/descriptors/annotations/AnnotationDescriptorImpl;->$$$reportNull$$$0(I)V
-
-    throw v0
-
-    :cond_1
-    const/4 p1, 0x1
-
-    invoke-static {p1}, Lkotlin/reflect/jvm/internal/impl/descriptors/annotations/AnnotationDescriptorImpl;->$$$reportNull$$$0(I)V
-
-    throw v0
-
-    :cond_2
-    const/4 p1, 0x0
-
-    invoke-static {p1}, Lkotlin/reflect/jvm/internal/impl/descriptors/annotations/AnnotationDescriptorImpl;->$$$reportNull$$$0(I)V
-
-    throw v0
 .end method
 
 
 # virtual methods
 .method public getAllValueArguments()Ljava/util/Map;
-    .locals 1
+    .locals 2
     .annotation system Ldalvik/annotation/Signature;
         value = {
             "()",
@@ -242,18 +234,14 @@
 
     iget-object v0, p0, Lkotlin/reflect/jvm/internal/impl/descriptors/annotations/AnnotationDescriptorImpl;->valueArguments:Ljava/util/Map;
 
-    if-eqz v0, :cond_0
+    if-nez v0, :cond_0
 
-    return-object v0
+    const/4 v1, 0x4
+
+    invoke-static {v1}, Lkotlin/reflect/jvm/internal/impl/descriptors/annotations/AnnotationDescriptorImpl;->$$$reportNull$$$0(I)V
 
     :cond_0
-    const/4 v0, 0x4
-
-    invoke-static {v0}, Lkotlin/reflect/jvm/internal/impl/descriptors/annotations/AnnotationDescriptorImpl;->$$$reportNull$$$0(I)V
-
-    const/4 v0, 0x0
-
-    throw v0
+    return-object v0
 .end method
 
 .method public getFqName()Lkotlin/reflect/jvm/internal/impl/name/FqName;
@@ -267,41 +255,33 @@
 .end method
 
 .method public getSource()Lkotlin/reflect/jvm/internal/impl/descriptors/SourceElement;
-    .locals 1
+    .locals 2
 
     iget-object v0, p0, Lkotlin/reflect/jvm/internal/impl/descriptors/annotations/AnnotationDescriptorImpl;->source:Lkotlin/reflect/jvm/internal/impl/descriptors/SourceElement;
 
-    if-eqz v0, :cond_0
+    if-nez v0, :cond_0
 
-    return-object v0
+    const/4 v1, 0x5
+
+    invoke-static {v1}, Lkotlin/reflect/jvm/internal/impl/descriptors/annotations/AnnotationDescriptorImpl;->$$$reportNull$$$0(I)V
 
     :cond_0
-    const/4 v0, 0x5
-
-    invoke-static {v0}, Lkotlin/reflect/jvm/internal/impl/descriptors/annotations/AnnotationDescriptorImpl;->$$$reportNull$$$0(I)V
-
-    const/4 v0, 0x0
-
-    throw v0
+    return-object v0
 .end method
 
 .method public getType()Lkotlin/reflect/jvm/internal/impl/types/KotlinType;
-    .locals 1
+    .locals 2
 
     iget-object v0, p0, Lkotlin/reflect/jvm/internal/impl/descriptors/annotations/AnnotationDescriptorImpl;->annotationType:Lkotlin/reflect/jvm/internal/impl/types/KotlinType;
 
-    if-eqz v0, :cond_0
+    if-nez v0, :cond_0
 
-    return-object v0
+    const/4 v1, 0x3
+
+    invoke-static {v1}, Lkotlin/reflect/jvm/internal/impl/descriptors/annotations/AnnotationDescriptorImpl;->$$$reportNull$$$0(I)V
 
     :cond_0
-    const/4 v0, 0x3
-
-    invoke-static {v0}, Lkotlin/reflect/jvm/internal/impl/descriptors/annotations/AnnotationDescriptorImpl;->$$$reportNull$$$0(I)V
-
-    const/4 v0, 0x0
-
-    throw v0
+    return-object v0
 .end method
 
 .method public toString()Ljava/lang/String;

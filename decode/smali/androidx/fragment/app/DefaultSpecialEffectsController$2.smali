@@ -51,11 +51,11 @@
 
     iget-object p1, p0, Landroidx/fragment/app/DefaultSpecialEffectsController$2;->val$operation:Landroidx/fragment/app/SpecialEffectsController$Operation;
 
-    iget-object p1, p1, Landroidx/fragment/app/SpecialEffectsController$Operation;->mFinalState:Landroidx/fragment/app/SpecialEffectsController$Operation$State;
+    iget p1, p1, Landroidx/fragment/app/SpecialEffectsController$Operation;->mFinalState:I
 
     iget-object v0, p0, Landroidx/fragment/app/DefaultSpecialEffectsController$2;->val$viewToAnimate:Landroid/view/View;
 
-    invoke-virtual {p1, v0}, Landroidx/fragment/app/SpecialEffectsController$Operation$State;->applyState(Landroid/view/View;)V
+    invoke-static {p1, v0}, Landroidx/fragment/app/SpecialEffectsController$Operation$State$EnumUnboxingLocalUtility;->_applyState(ILandroid/view/View;)V
 
     :cond_0
     iget-object p1, p0, Landroidx/fragment/app/DefaultSpecialEffectsController$2;->val$animationInfo:Landroidx/fragment/app/DefaultSpecialEffectsController$AnimationInfo;

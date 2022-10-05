@@ -36,6 +36,16 @@
 
 
 # virtual methods
+.method public getAbsentValue(Lcom/fasterxml/jackson/databind/DeserializationContext;)Ljava/lang/Object;
+    .locals 0
+
+    invoke-virtual {p0, p1}, Lcom/fasterxml/jackson/databind/deser/impl/NullsFailProvider;->getNullValue(Lcom/fasterxml/jackson/databind/DeserializationContext;)Ljava/lang/Object;
+
+    const/4 p1, 0x0
+
+    throw p1
+.end method
+
 .method public getNullValue(Lcom/fasterxml/jackson/databind/DeserializationContext;)Ljava/lang/Object;
     .locals 5
     .annotation system Ldalvik/annotation/Throws;

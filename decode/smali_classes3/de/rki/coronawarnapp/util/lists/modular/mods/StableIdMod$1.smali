@@ -7,15 +7,6 @@
 
 
 # annotations
-.annotation system Ldalvik/annotation/EnclosingMethod;
-    value = Lde/rki/coronawarnapp/util/lists/modular/mods/StableIdMod;-><init>(Ljava/util/List;Lkotlin/jvm/functions/Function1;I)V
-.end annotation
-
-.annotation system Ldalvik/annotation/InnerClass;
-    accessFlags = 0x19
-    name = null
-.end annotation
-
 .annotation system Ldalvik/annotation/Signature;
     value = {
         "Lkotlin/jvm/internal/Lambda;",
@@ -32,7 +23,8 @@
     .annotation system Ldalvik/annotation/Signature;
         value = {
             "Ljava/util/List<",
-            "TItemT;>;"
+            "Lde/rki/coronawarnapp/util/lists/HasStableId;",
+            ">;"
         }
     .end annotation
 .end field
@@ -45,7 +37,8 @@
         value = {
             "(",
             "Ljava/util/List<",
-            "+TItemT;>;)V"
+            "Lde/rki/coronawarnapp/util/lists/HasStableId;",
+            ">;)V"
         }
     .end annotation
 

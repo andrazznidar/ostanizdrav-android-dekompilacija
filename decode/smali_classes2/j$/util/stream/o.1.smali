@@ -3,7 +3,7 @@
 
 # interfaces
 .implements Lj$/util/function/Consumer;
-.implements Lj$/util/function/t;
+.implements Lj$/util/function/C;
 
 
 # instance fields
@@ -15,114 +15,16 @@
 
 
 # direct methods
-.method public synthetic constructor <init>(Lj$/util/function/BiConsumer;Ljava/lang/Object;)V
-    .locals 1
-
-    const/4 v0, 0x5
-
-    iput v0, p0, Lj$/util/stream/o;->a:I
-
-    invoke-direct {p0}, Ljava/lang/Object;-><init>()V
-
-    iput-object p1, p0, Lj$/util/stream/o;->b:Ljava/lang/Object;
-
-    iput-object p2, p0, Lj$/util/stream/o;->c:Ljava/lang/Object;
-
-    return-void
-.end method
-
-.method public synthetic constructor <init>(Lj$/util/stream/l1;Lj$/util/function/Predicate;)V
-    .locals 1
-
-    const/4 v0, 0x4
-
-    iput v0, p0, Lj$/util/stream/o;->a:I
-
-    invoke-direct {p0}, Ljava/lang/Object;-><init>()V
-
-    iput-object p1, p0, Lj$/util/stream/o;->b:Ljava/lang/Object;
-
-    iput-object p2, p0, Lj$/util/stream/o;->c:Ljava/lang/Object;
-
-    return-void
-.end method
-
-.method public synthetic constructor <init>(Lj$/util/stream/l1;Lj$/wrappers/i;)V
-    .locals 1
-
-    const/4 v0, 0x1
-
-    iput v0, p0, Lj$/util/stream/o;->a:I
-
-    invoke-direct {p0}, Ljava/lang/Object;-><init>()V
-
-    iput-object p1, p0, Lj$/util/stream/o;->b:Ljava/lang/Object;
-
-    iput-object p2, p0, Lj$/util/stream/o;->c:Ljava/lang/Object;
-
-    return-void
-.end method
-
-.method public synthetic constructor <init>(Lj$/util/stream/l1;Lj$/wrappers/i;Lj$/lang/a;)V
+.method public synthetic constructor <init>(Ljava/lang/Object;Ljava/lang/Object;I)V
     .locals 0
-
-    const/4 p3, 0x2
 
     iput p3, p0, Lj$/util/stream/o;->a:I
 
-    invoke-direct {p0}, Ljava/lang/Object;-><init>()V
-
     iput-object p1, p0, Lj$/util/stream/o;->b:Ljava/lang/Object;
 
     iput-object p2, p0, Lj$/util/stream/o;->c:Ljava/lang/Object;
 
-    return-void
-.end method
-
-.method public synthetic constructor <init>(Lj$/util/stream/l1;Lj$/wrappers/i;Lj$/lang/b;)V
-    .locals 0
-
-    const/4 p3, 0x3
-
-    iput p3, p0, Lj$/util/stream/o;->a:I
-
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
-
-    iput-object p1, p0, Lj$/util/stream/o;->b:Ljava/lang/Object;
-
-    iput-object p2, p0, Lj$/util/stream/o;->c:Ljava/lang/Object;
-
-    return-void
-.end method
-
-.method public synthetic constructor <init>(Lj$/util/stream/o4;Lj$/util/function/Consumer;)V
-    .locals 1
-
-    const/4 v0, 0x6
-
-    iput v0, p0, Lj$/util/stream/o;->a:I
-
-    invoke-direct {p0}, Ljava/lang/Object;-><init>()V
-
-    iput-object p1, p0, Lj$/util/stream/o;->b:Ljava/lang/Object;
-
-    iput-object p2, p0, Lj$/util/stream/o;->c:Ljava/lang/Object;
-
-    return-void
-.end method
-
-.method public synthetic constructor <init>(Ljava/util/concurrent/atomic/AtomicBoolean;Lj$/util/concurrent/ConcurrentHashMap;)V
-    .locals 1
-
-    const/4 v0, 0x0
-
-    iput v0, p0, Lj$/util/stream/o;->a:I
-
-    invoke-direct {p0}, Ljava/lang/Object;-><init>()V
-
-    iput-object p1, p0, Lj$/util/stream/o;->b:Ljava/lang/Object;
-
-    iput-object p2, p0, Lj$/util/stream/o;->c:Ljava/lang/Object;
 
     return-void
 .end method
@@ -141,60 +43,60 @@
     :pswitch_0
     iget-object v0, p0, Lj$/util/stream/o;->b:Ljava/lang/Object;
 
-    check-cast v0, Lj$/util/stream/l1;
+    check-cast v0, Lj$/util/stream/A0;
 
     iget-object v1, p0, Lj$/util/stream/o;->c:Ljava/lang/Object;
 
-    check-cast v1, Lj$/wrappers/i;
+    check-cast v1, Lj$/util/function/b;
 
-    new-instance v2, Lj$/util/stream/i1;
+    new-instance v2, Lj$/util/stream/x0;
 
-    invoke-direct {v2, v0, v1}, Lj$/util/stream/i1;-><init>(Lj$/util/stream/l1;Lj$/wrappers/i;)V
+    invoke-direct {v2, v0, v1}, Lj$/util/stream/x0;-><init>(Lj$/util/stream/A0;Lj$/util/function/b;)V
 
     return-object v2
 
     :pswitch_1
     iget-object v0, p0, Lj$/util/stream/o;->b:Ljava/lang/Object;
 
-    check-cast v0, Lj$/util/stream/l1;
+    check-cast v0, Lj$/util/stream/A0;
 
     iget-object v1, p0, Lj$/util/stream/o;->c:Ljava/lang/Object;
 
-    check-cast v1, Lj$/wrappers/i;
+    check-cast v1, Lj$/util/function/b;
 
-    new-instance v2, Lj$/util/stream/h1;
+    new-instance v2, Lj$/util/stream/w0;
 
-    invoke-direct {v2, v0, v1}, Lj$/util/stream/h1;-><init>(Lj$/util/stream/l1;Lj$/wrappers/i;)V
+    invoke-direct {v2, v0, v1}, Lj$/util/stream/w0;-><init>(Lj$/util/stream/A0;Lj$/util/function/b;)V
 
     return-object v2
 
     :pswitch_2
     iget-object v0, p0, Lj$/util/stream/o;->b:Ljava/lang/Object;
 
-    check-cast v0, Lj$/util/stream/l1;
+    check-cast v0, Lj$/util/stream/A0;
 
     iget-object v1, p0, Lj$/util/stream/o;->c:Ljava/lang/Object;
 
-    check-cast v1, Lj$/wrappers/i;
+    check-cast v1, Lj$/util/function/b;
 
-    new-instance v2, Lj$/util/stream/j1;
+    new-instance v2, Lj$/util/stream/y0;
 
-    invoke-direct {v2, v0, v1}, Lj$/util/stream/j1;-><init>(Lj$/util/stream/l1;Lj$/wrappers/i;)V
+    invoke-direct {v2, v0, v1}, Lj$/util/stream/y0;-><init>(Lj$/util/stream/A0;Lj$/util/function/b;)V
 
     return-object v2
 
     :goto_0
     iget-object v0, p0, Lj$/util/stream/o;->b:Ljava/lang/Object;
 
-    check-cast v0, Lj$/util/stream/l1;
+    check-cast v0, Lj$/util/stream/A0;
 
     iget-object v1, p0, Lj$/util/stream/o;->c:Ljava/lang/Object;
 
     check-cast v1, Lj$/util/function/Predicate;
 
-    new-instance v2, Lj$/util/stream/g1;
+    new-instance v2, Lj$/util/stream/v0;
 
-    invoke-direct {v2, v0, v1}, Lj$/util/stream/g1;-><init>(Lj$/util/stream/l1;Lj$/util/function/Predicate;)V
+    invoke-direct {v2, v0, v1}, Lj$/util/stream/v0;-><init>(Lj$/util/stream/A0;Lj$/util/function/Predicate;)V
 
     return-object v2
 
@@ -206,7 +108,7 @@
     .end packed-switch
 .end method
 
-.method public i(Ljava/lang/Object;)V
+.method public j(Ljava/lang/Object;)V
     .locals 2
 
     iget v0, p0, Lj$/util/stream/o;->a:I
@@ -222,7 +124,7 @@
 
     iget-object v1, p0, Lj$/util/stream/o;->c:Ljava/lang/Object;
 
-    invoke-interface {v0, v1, p1}, Lj$/util/function/BiConsumer;->y(Ljava/lang/Object;Ljava/lang/Object;)V
+    invoke-interface {v0, v1, p1}, Lj$/util/function/BiConsumer;->n(Ljava/lang/Object;Ljava/lang/Object;)V
 
     return-void
 
@@ -254,13 +156,13 @@
     :goto_1
     iget-object v0, p0, Lj$/util/stream/o;->b:Ljava/lang/Object;
 
-    check-cast v0, Lj$/util/stream/o4;
+    check-cast v0, Lj$/util/stream/m3;
 
     iget-object v1, p0, Lj$/util/stream/o;->c:Ljava/lang/Object;
 
     check-cast v1, Lj$/util/function/Consumer;
 
-    invoke-virtual {v0, v1, p1}, Lj$/util/stream/o4;->m(Lj$/util/function/Consumer;Ljava/lang/Object;)V
+    invoke-virtual {v0, v1, p1}, Lj$/util/stream/m3;->n(Lj$/util/function/Consumer;Ljava/lang/Object;)V
 
     return-void
 

@@ -34,14 +34,14 @@
 .end annotation
 
 .annotation system Ldalvik/annotation/SourceDebugExtension;
-    value = "SMAP\nTestCertificateRepository.kt\nKotlin\n*S Kotlin\n*F\n+ 1 TestCertificateRepository.kt\nde/rki/coronawarnapp/covidcertificate/test/core/TestCertificateRepository$internalData$1\n+ 2 _Collections.kt\nkotlin/collections/CollectionsKt___CollectionsKt\n*L\n1#1,496:1\n1547#2:497\n1618#2,3:498\n1547#2:501\n1618#2,3:502\n*S KotlinDebug\n*F\n+ 1 TestCertificateRepository.kt\nde/rki/coronawarnapp/covidcertificate/test/core/TestCertificateRepository$internalData$1\n*L\n67#1:497\n67#1:498,3\n73#1:501\n73#1:502,3\n*E\n"
+    value = "SMAP\nTestCertificateRepository.kt\nKotlin\n*S Kotlin\n*F\n+ 1 TestCertificateRepository.kt\nde/rki/coronawarnapp/covidcertificate/test/core/TestCertificateRepository$internalData$1\n+ 2 _Collections.kt\nkotlin/collections/CollectionsKt___CollectionsKt\n*L\n1#1,590:1\n1547#2:591\n1618#2,3:592\n1192#2,2:595\n1220#2,4:597\n*S KotlinDebug\n*F\n+ 1 TestCertificateRepository.kt\nde/rki/coronawarnapp/covidcertificate/test/core/TestCertificateRepository$internalData$1\n*L\n68#1:591\n68#1:592,3\n73#1:595,2\n73#1:597,4\n*E\n"
 .end annotation
 
 .annotation runtime Lkotlin/coroutines/jvm/internal/DebugMetadata;
     c = "de.rki.coronawarnapp.covidcertificate.test.core.TestCertificateRepository$internalData$1"
     f = "TestCertificateRepository.kt"
     l = {
-        0x42
+        0x43
     }
     m = "invokeSuspend"
 .end annotation
@@ -214,61 +214,74 @@
     goto :goto_1
 
     :cond_3
-    new-instance p1, Ljava/util/ArrayList;
-
     invoke-static {v1, v3}, Lkotlin/collections/CollectionsKt__IteratorsJVMKt;->collectionSizeOrDefault(Ljava/lang/Iterable;I)I
 
-    move-result v0
+    move-result p1
 
-    invoke-direct {p1, v0}, Ljava/util/ArrayList;-><init>(I)V
+    invoke-static {p1}, Lkotlin/collections/MapsKt__MapsJVMKt;->mapCapacity(I)I
+
+    move-result p1
+
+    const/16 v0, 0x10
+
+    if-ge p1, v0, :cond_4
+
+    move p1, v0
+
+    :cond_4
+    new-instance v0, Ljava/util/LinkedHashMap;
+
+    invoke-direct {v0, p1}, Ljava/util/LinkedHashMap;-><init>(I)V
 
     invoke-virtual {v1}, Ljava/util/ArrayList;->iterator()Ljava/util/Iterator;
 
-    move-result-object v0
+    move-result-object p1
 
     :goto_2
-    invoke-interface {v0}, Ljava/util/Iterator;->hasNext()Z
+    invoke-interface {p1}, Ljava/util/Iterator;->hasNext()Z
 
     move-result v1
 
-    if-eqz v1, :cond_4
+    if-eqz v1, :cond_5
 
-    invoke-interface {v0}, Ljava/util/Iterator;->next()Ljava/lang/Object;
+    invoke-interface {p1}, Ljava/util/Iterator;->next()Ljava/lang/Object;
 
     move-result-object v1
 
-    check-cast v1, Lde/rki/coronawarnapp/covidcertificate/test/core/storage/TestCertificateContainer;
+    move-object v3, v1
 
-    invoke-virtual {v1}, Lde/rki/coronawarnapp/covidcertificate/test/core/storage/TestCertificateContainer;->getContainerId()Lde/rki/coronawarnapp/covidcertificate/common/repository/TestCertificateContainerId;
+    check-cast v3, Lde/rki/coronawarnapp/covidcertificate/test/core/storage/TestCertificateContainer;
+
+    invoke-virtual {v3}, Lde/rki/coronawarnapp/covidcertificate/test/core/storage/TestCertificateContainer;->getContainerId()Lde/rki/coronawarnapp/covidcertificate/common/repository/TestCertificateContainerId;
 
     move-result-object v3
 
-    new-instance v4, Lkotlin/Pair;
-
-    invoke-direct {v4, v3, v1}, Lkotlin/Pair;-><init>(Ljava/lang/Object;Ljava/lang/Object;)V
-
-    invoke-virtual {p1, v4}, Ljava/util/ArrayList;->add(Ljava/lang/Object;)Z
+    invoke-interface {v0, v3, v1}, Ljava/util/Map;->put(Ljava/lang/Object;Ljava/lang/Object;)Ljava/lang/Object;
 
     goto :goto_2
 
-    :cond_4
-    invoke-static {p1}, Lkotlin/collections/MapsKt___MapsKt;->toMap(Ljava/lang/Iterable;)Ljava/util/Map;
-
-    move-result-object p1
-
-    sget-object v0, Ltimber/log/Timber;->Forest:Ltimber/log/Timber$Forest;
+    :cond_5
+    sget-object p1, Ltimber/log/Timber;->Forest:Ltimber/log/Timber$Forest;
 
     sget-object v1, Lde/rki/coronawarnapp/covidcertificate/test/core/TestCertificateRepository;->TAG:Ljava/lang/String;
 
-    invoke-virtual {v0, v1}, Ltimber/log/Timber$Forest;->tag(Ljava/lang/String;)Ltimber/log/Timber$Tree;
+    invoke-virtual {p1, v1}, Ltimber/log/Timber$Forest;->tag(Ljava/lang/String;)Ltimber/log/Timber$Tree;
 
     new-array v1, v2, [Ljava/lang/Object;
 
-    aput-object p1, v1, v5
+    invoke-interface {v0}, Ljava/util/Map;->size()I
 
-    const-string v2, "Restored TestCertificate data: %s"
+    move-result v2
 
-    invoke-virtual {v0, v2, v1}, Ltimber/log/Timber$Forest;->v(Ljava/lang/String;[Ljava/lang/Object;)V
+    new-instance v3, Ljava/lang/Integer;
 
-    return-object p1
+    invoke-direct {v3, v2}, Ljava/lang/Integer;-><init>(I)V
+
+    aput-object v3, v1, v5
+
+    const-string v2, "Restored TestCertificate data: %d items"
+
+    invoke-virtual {p1, v2, v1}, Ltimber/log/Timber$Forest;->v(Ljava/lang/String;[Ljava/lang/Object;)V
+
+    return-object v0
 .end method

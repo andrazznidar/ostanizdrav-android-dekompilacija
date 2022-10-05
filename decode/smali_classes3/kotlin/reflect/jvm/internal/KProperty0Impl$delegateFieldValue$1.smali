@@ -1,4 +1,4 @@
-.class public final Lkotlin/reflect/jvm/internal/KProperty0Impl$delegateFieldValue$1;
+.class final Lkotlin/reflect/jvm/internal/KProperty0Impl$delegateFieldValue$1;
 .super Lkotlin/jvm/internal/Lambda;
 .source "KProperty0Impl.kt"
 
@@ -7,12 +7,39 @@
 
 
 # annotations
+.annotation system Ldalvik/annotation/EnclosingMethod;
+    value = Lkotlin/reflect/jvm/internal/KProperty0Impl;-><init>(Lkotlin/reflect/jvm/internal/KDeclarationContainerImpl;Ljava/lang/String;Ljava/lang/String;Ljava/lang/Object;)V
+.end annotation
+
+.annotation system Ldalvik/annotation/InnerClass;
+    accessFlags = 0x19
+    name = null
+.end annotation
+
 .annotation system Ldalvik/annotation/Signature;
     value = {
         "Lkotlin/jvm/internal/Lambda;",
         "Lkotlin/jvm/functions/Function0<",
         "Ljava/lang/Object;",
         ">;"
+    }
+.end annotation
+
+.annotation runtime Lkotlin/Metadata;
+    d1 = {
+        "\u0000\n\n\u0000\n\u0002\u0010\u0000\n\u0002\u0008\u0002\u0010\u0000\u001a\u0004\u0018\u00010\u0001\"\u0006\u0008\u0000\u0010\u0002 \u0001H\n\u00a2\u0006\u0002\u0008\u0003"
+    }
+    d2 = {
+        "<anonymous>",
+        "",
+        "V",
+        "invoke"
+    }
+    k = 0x3
+    mv = {
+        0x1,
+        0x5,
+        0x1
     }
 .end annotation
 
@@ -37,7 +64,7 @@
 
 # virtual methods
 .method public final invoke()Ljava/lang/Object;
-    .locals 4
+    .locals 3
 
     iget-object v0, p0, Lkotlin/reflect/jvm/internal/KProperty0Impl$delegateFieldValue$1;->this$0:Lkotlin/reflect/jvm/internal/KProperty0Impl;
 
@@ -47,86 +74,13 @@
 
     iget-object v2, p0, Lkotlin/reflect/jvm/internal/KProperty0Impl$delegateFieldValue$1;->this$0:Lkotlin/reflect/jvm/internal/KProperty0Impl;
 
-    iget-object v3, v2, Lkotlin/reflect/jvm/internal/KPropertyImpl;->rawBoundReceiver:Ljava/lang/Object;
-
-    invoke-virtual {v2}, Lkotlin/reflect/jvm/internal/KPropertyImpl;->getDescriptor()Lkotlin/reflect/jvm/internal/impl/descriptors/PropertyDescriptor;
+    invoke-virtual {v2}, Lkotlin/reflect/jvm/internal/KPropertyImpl;->getBoundReceiver()Ljava/lang/Object;
 
     move-result-object v2
 
-    invoke-static {v3, v2}, Lkotlin/reflect/jvm/internal/calls/InlineClassAwareCallerKt;->coerceToExpectedReceiverType(Ljava/lang/Object;Lkotlin/reflect/jvm/internal/impl/descriptors/CallableMemberDescriptor;)Ljava/lang/Object;
-
-    move-result-object v2
-
-    :try_start_0
-    sget-object v3, Lkotlin/reflect/jvm/internal/KPropertyImpl;->EXTENSION_PROPERTY_DELEGATE:Ljava/lang/Object;
-
-    if-ne v2, v3, :cond_1
-
-    invoke-virtual {v0}, Lkotlin/reflect/jvm/internal/KPropertyImpl;->getDescriptor()Lkotlin/reflect/jvm/internal/impl/descriptors/PropertyDescriptor;
-
-    move-result-object v3
-
-    invoke-interface {v3}, Lkotlin/reflect/jvm/internal/impl/descriptors/CallableDescriptor;->getExtensionReceiverParameter()Lkotlin/reflect/jvm/internal/impl/descriptors/ReceiverParameterDescriptor;
-
-    move-result-object v3
-
-    if-eqz v3, :cond_0
-
-    goto :goto_0
-
-    :cond_0
-    new-instance v1, Ljava/lang/RuntimeException;
-
-    new-instance v2, Ljava/lang/StringBuilder;
-
-    invoke-direct {v2}, Ljava/lang/StringBuilder;-><init>()V
-
-    const/16 v3, 0x27
-
-    invoke-virtual {v2, v3}, Ljava/lang/StringBuilder;->append(C)Ljava/lang/StringBuilder;
-
-    invoke-virtual {v2, v0}, Ljava/lang/StringBuilder;->append(Ljava/lang/Object;)Ljava/lang/StringBuilder;
-
-    const-string v0, "\' is not an extension property and thus getExtensionDelegate() "
-
-    invoke-virtual {v2, v0}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
-
-    const-string v0, "is not going to work, use getDelegate() instead"
-
-    invoke-virtual {v2, v0}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
-
-    invoke-virtual {v2}, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
+    invoke-virtual {v0, v1, v2}, Lkotlin/reflect/jvm/internal/KPropertyImpl;->getDelegate(Ljava/lang/reflect/Field;Ljava/lang/Object;)Ljava/lang/Object;
 
     move-result-object v0
 
-    invoke-direct {v1, v0}, Ljava/lang/RuntimeException;-><init>(Ljava/lang/String;)V
-
-    throw v1
-
-    :cond_1
-    :goto_0
-    if-eqz v1, :cond_2
-
-    invoke-virtual {v1, v2}, Ljava/lang/reflect/Field;->get(Ljava/lang/Object;)Ljava/lang/Object;
-
-    move-result-object v0
-    :try_end_0
-    .catch Ljava/lang/IllegalAccessException; {:try_start_0 .. :try_end_0} :catch_0
-
-    goto :goto_1
-
-    :cond_2
-    const/4 v0, 0x0
-
-    :goto_1
     return-object v0
-
-    :catch_0
-    move-exception v0
-
-    new-instance v1, Lkotlin/reflect/full/IllegalPropertyDelegateAccessException;
-
-    invoke-direct {v1, v0}, Lkotlin/reflect/full/IllegalPropertyDelegateAccessException;-><init>(Ljava/lang/IllegalAccessException;)V
-
-    throw v1
 .end method

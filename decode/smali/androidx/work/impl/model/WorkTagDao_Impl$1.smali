@@ -15,9 +15,7 @@
 
 .annotation system Ldalvik/annotation/Signature;
     value = {
-        "Landroidx/room/EntityInsertionAdapter<",
-        "Landroidx/work/impl/model/WorkTag;",
-        ">;"
+        "Landroidx/room/EntityInsertionAdapter;"
     }
 .end annotation
 

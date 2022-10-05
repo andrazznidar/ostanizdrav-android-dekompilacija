@@ -193,11 +193,11 @@
     goto :goto_1
 
     :cond_4
-    new-instance v4, Lde/rki/coronawarnapp/datadonation/analytics/ui/input/AnalyticsUserInputViewModel$districtSource$lambda-9$$inlined$sortedBy$1;
+    new-instance v4, Lde/rki/coronawarnapp/datadonation/analytics/ui/input/AnalyticsUserInputViewModel$districtSource$lambda-10$$inlined$sortedBy$1;
 
     iget-object v8, v0, Lde/rki/coronawarnapp/datadonation/analytics/ui/input/AnalyticsUserInputViewModel$special$$inlined$map$4$2;->this$0:Lde/rki/coronawarnapp/datadonation/analytics/ui/input/AnalyticsUserInputViewModel;
 
-    invoke-direct {v4, v8}, Lde/rki/coronawarnapp/datadonation/analytics/ui/input/AnalyticsUserInputViewModel$districtSource$lambda-9$$inlined$sortedBy$1;-><init>(Lde/rki/coronawarnapp/datadonation/analytics/ui/input/AnalyticsUserInputViewModel;)V
+    invoke-direct {v4, v8}, Lde/rki/coronawarnapp/datadonation/analytics/ui/input/AnalyticsUserInputViewModel$districtSource$lambda-10$$inlined$sortedBy$1;-><init>(Lde/rki/coronawarnapp/datadonation/analytics/ui/input/AnalyticsUserInputViewModel;)V
 
     invoke-static {v7, v4}, Lkotlin/collections/CollectionsKt___CollectionsKt;->sortedWith(Ljava/lang/Iterable;Ljava/util/Comparator;)Ljava/util/List;
 
@@ -233,7 +233,7 @@
     move v6, v9
 
     :goto_2
-    const v8, 0x7f130052
+    const v8, 0x7f13004d
 
     new-array v9, v9, [Ljava/lang/Object;
 

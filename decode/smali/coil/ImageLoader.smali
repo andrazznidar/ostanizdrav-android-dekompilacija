@@ -11,10 +11,6 @@
 .end annotation
 
 
-# static fields
-.field public static final synthetic $r8$clinit:I
-
-
 # virtual methods
 .method public abstract enqueue(Lcoil/request/ImageRequest;)Lcoil/request/Disposable;
 .end method

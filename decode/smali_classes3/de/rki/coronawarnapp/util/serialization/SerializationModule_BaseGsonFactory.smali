@@ -49,85 +49,79 @@
 
     invoke-static {v0}, Ljava/util/Objects;->requireNonNull(Ljava/lang/Object;)Ljava/lang/Object;
 
-    new-instance v0, Lcom/google/gson/GsonBuilder;
+    new-instance v1, Lcom/google/gson/GsonBuilder;
 
-    invoke-direct {v0}, Lcom/google/gson/GsonBuilder;-><init>()V
+    invoke-direct {v1}, Lcom/google/gson/GsonBuilder;-><init>()V
 
-    const-class v1, Lorg/joda/time/Instant;
+    const-class v2, Lorg/joda/time/Instant;
 
-    new-instance v2, Lde/rki/coronawarnapp/util/serialization/adapter/InstantAdapter;
+    new-instance v3, Lde/rki/coronawarnapp/util/serialization/adapter/InstantAdapter;
 
-    invoke-direct {v2}, Lde/rki/coronawarnapp/util/serialization/adapter/InstantAdapter;-><init>()V
+    invoke-direct {v3}, Lde/rki/coronawarnapp/util/serialization/adapter/InstantAdapter;-><init>()V
 
-    invoke-virtual {v0, v1, v2}, Lcom/google/gson/GsonBuilder;->registerTypeAdapter(Ljava/lang/reflect/Type;Ljava/lang/Object;)Lcom/google/gson/GsonBuilder;
+    invoke-virtual {v1, v2, v3}, Lcom/google/gson/GsonBuilder;->registerTypeAdapter(Ljava/lang/reflect/Type;Ljava/lang/Object;)Lcom/google/gson/GsonBuilder;
 
-    const-class v1, Lorg/joda/time/LocalDate;
+    const-class v2, Lorg/joda/time/LocalDate;
 
-    new-instance v2, Lde/rki/coronawarnapp/util/serialization/adapter/LocalDateAdapter;
+    new-instance v3, Lde/rki/coronawarnapp/util/serialization/adapter/LocalDateAdapter;
 
-    invoke-direct {v2}, Lde/rki/coronawarnapp/util/serialization/adapter/LocalDateAdapter;-><init>()V
+    invoke-direct {v3}, Lde/rki/coronawarnapp/util/serialization/adapter/LocalDateAdapter;-><init>()V
 
-    invoke-virtual {v0, v1, v2}, Lcom/google/gson/GsonBuilder;->registerTypeAdapter(Ljava/lang/reflect/Type;Ljava/lang/Object;)Lcom/google/gson/GsonBuilder;
+    invoke-virtual {v1, v2, v3}, Lcom/google/gson/GsonBuilder;->registerTypeAdapter(Ljava/lang/reflect/Type;Ljava/lang/Object;)Lcom/google/gson/GsonBuilder;
 
-    const-class v1, Lorg/joda/time/Duration;
+    const-class v2, Lorg/joda/time/Duration;
 
-    new-instance v2, Lde/rki/coronawarnapp/util/serialization/adapter/DurationAdapter;
+    new-instance v3, Lde/rki/coronawarnapp/util/serialization/adapter/DurationAdapter;
 
-    invoke-direct {v2}, Lde/rki/coronawarnapp/util/serialization/adapter/DurationAdapter;-><init>()V
+    invoke-direct {v3}, Lde/rki/coronawarnapp/util/serialization/adapter/DurationAdapter;-><init>()V
 
-    invoke-virtual {v0, v1, v2}, Lcom/google/gson/GsonBuilder;->registerTypeAdapter(Ljava/lang/reflect/Type;Ljava/lang/Object;)Lcom/google/gson/GsonBuilder;
+    invoke-virtual {v1, v2, v3}, Lcom/google/gson/GsonBuilder;->registerTypeAdapter(Ljava/lang/reflect/Type;Ljava/lang/Object;)Lcom/google/gson/GsonBuilder;
 
-    const-class v1, [B
+    const-class v2, [B
 
-    new-instance v2, Lde/rki/coronawarnapp/util/serialization/adapter/ByteArrayAdapter;
+    new-instance v3, Lde/rki/coronawarnapp/util/serialization/adapter/ByteArrayAdapter;
 
-    invoke-direct {v2}, Lde/rki/coronawarnapp/util/serialization/adapter/ByteArrayAdapter;-><init>()V
+    invoke-direct {v3}, Lde/rki/coronawarnapp/util/serialization/adapter/ByteArrayAdapter;-><init>()V
 
-    invoke-virtual {v0, v1, v2}, Lcom/google/gson/GsonBuilder;->registerTypeAdapter(Ljava/lang/reflect/Type;Ljava/lang/Object;)Lcom/google/gson/GsonBuilder;
+    invoke-virtual {v1, v2, v3}, Lcom/google/gson/GsonBuilder;->registerTypeAdapter(Ljava/lang/reflect/Type;Ljava/lang/Object;)Lcom/google/gson/GsonBuilder;
 
-    const-class v1, Lokio/ByteString;
+    const-class v2, Lokio/ByteString;
 
-    new-instance v2, Lde/rki/coronawarnapp/util/serialization/adapter/ByteStringBase64Adapter;
+    new-instance v3, Lde/rki/coronawarnapp/util/serialization/adapter/ByteStringBase64Adapter;
 
-    invoke-direct {v2}, Lde/rki/coronawarnapp/util/serialization/adapter/ByteStringBase64Adapter;-><init>()V
+    invoke-direct {v3}, Lde/rki/coronawarnapp/util/serialization/adapter/ByteStringBase64Adapter;-><init>()V
 
-    invoke-virtual {v0, v1, v2}, Lcom/google/gson/GsonBuilder;->registerTypeAdapter(Ljava/lang/reflect/Type;Ljava/lang/Object;)Lcom/google/gson/GsonBuilder;
+    invoke-virtual {v1, v2, v3}, Lcom/google/gson/GsonBuilder;->registerTypeAdapter(Ljava/lang/reflect/Type;Ljava/lang/Object;)Lcom/google/gson/GsonBuilder;
 
-    const-class v1, Lde/rki/coronawarnapp/util/encryption/rsa/RSAKey$Public;
+    const-class v2, Lde/rki/coronawarnapp/util/encryption/rsa/RSAKey$Public;
 
-    new-instance v2, Lde/rki/coronawarnapp/util/encryption/rsa/RSAKey$Public$GsonAdapter;
+    new-instance v3, Lde/rki/coronawarnapp/util/encryption/rsa/RSAKey$Public$GsonAdapter;
 
-    invoke-direct {v2}, Lde/rki/coronawarnapp/util/encryption/rsa/RSAKey$Public$GsonAdapter;-><init>()V
+    invoke-direct {v3}, Lde/rki/coronawarnapp/util/encryption/rsa/RSAKey$Public$GsonAdapter;-><init>()V
 
-    invoke-virtual {v0, v1, v2}, Lcom/google/gson/GsonBuilder;->registerTypeAdapter(Ljava/lang/reflect/Type;Ljava/lang/Object;)Lcom/google/gson/GsonBuilder;
+    invoke-virtual {v1, v2, v3}, Lcom/google/gson/GsonBuilder;->registerTypeAdapter(Ljava/lang/reflect/Type;Ljava/lang/Object;)Lcom/google/gson/GsonBuilder;
 
-    const-class v1, Lde/rki/coronawarnapp/util/encryption/rsa/RSAKey$Private;
+    const-class v2, Lde/rki/coronawarnapp/util/encryption/rsa/RSAKey$Private;
 
-    new-instance v2, Lde/rki/coronawarnapp/util/encryption/rsa/RSAKey$Private$GsonAdapter;
+    new-instance v3, Lde/rki/coronawarnapp/util/encryption/rsa/RSAKey$Private$GsonAdapter;
 
-    invoke-direct {v2}, Lde/rki/coronawarnapp/util/encryption/rsa/RSAKey$Private$GsonAdapter;-><init>()V
+    invoke-direct {v3}, Lde/rki/coronawarnapp/util/encryption/rsa/RSAKey$Private$GsonAdapter;-><init>()V
 
-    invoke-virtual {v0, v1, v2}, Lcom/google/gson/GsonBuilder;->registerTypeAdapter(Ljava/lang/reflect/Type;Ljava/lang/Object;)Lcom/google/gson/GsonBuilder;
+    invoke-virtual {v1, v2, v3}, Lcom/google/gson/GsonBuilder;->registerTypeAdapter(Ljava/lang/reflect/Type;Ljava/lang/Object;)Lcom/google/gson/GsonBuilder;
 
-    const-class v1, Lcom/fasterxml/jackson/databind/JsonNode;
+    const-class v2, Lcom/fasterxml/jackson/databind/JsonNode;
 
-    new-instance v2, Lde/rki/coronawarnapp/util/serialization/adapter/JsonNodeAdapter;
+    new-instance v3, Lde/rki/coronawarnapp/util/serialization/adapter/JsonNodeAdapter;
 
-    sget-object v3, Lde/rki/coronawarnapp/util/serialization/SerializationModule;->jacksonBaseMapper$delegate:Lkotlin/Lazy;
+    invoke-virtual {v0}, Lde/rki/coronawarnapp/util/serialization/SerializationModule;->jacksonObjectMapper()Lcom/fasterxml/jackson/databind/ObjectMapper;
 
-    check-cast v3, Lkotlin/SynchronizedLazyImpl;
+    move-result-object v0
 
-    invoke-virtual {v3}, Lkotlin/SynchronizedLazyImpl;->getValue()Ljava/lang/Object;
+    invoke-direct {v3, v0}, Lde/rki/coronawarnapp/util/serialization/adapter/JsonNodeAdapter;-><init>(Lcom/fasterxml/jackson/databind/ObjectMapper;)V
 
-    move-result-object v3
+    invoke-virtual {v1, v2, v3}, Lcom/google/gson/GsonBuilder;->registerTypeAdapter(Ljava/lang/reflect/Type;Ljava/lang/Object;)Lcom/google/gson/GsonBuilder;
 
-    check-cast v3, Lcom/fasterxml/jackson/databind/ObjectMapper;
-
-    invoke-direct {v2, v3}, Lde/rki/coronawarnapp/util/serialization/adapter/JsonNodeAdapter;-><init>(Lcom/fasterxml/jackson/databind/ObjectMapper;)V
-
-    invoke-virtual {v0, v1, v2}, Lcom/google/gson/GsonBuilder;->registerTypeAdapter(Ljava/lang/reflect/Type;Ljava/lang/Object;)Lcom/google/gson/GsonBuilder;
-
-    invoke-virtual {v0}, Lcom/google/gson/GsonBuilder;->create()Lcom/google/gson/Gson;
+    invoke-virtual {v1}, Lcom/google/gson/GsonBuilder;->create()Lcom/google/gson/Gson;
 
     move-result-object v0
 

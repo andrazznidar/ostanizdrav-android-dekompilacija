@@ -1,4 +1,4 @@
-.class public Lkotlin/reflect/jvm/internal/impl/storage/LockBasedStorageManager$MapBasedMemoizedFunctionToNotNull;
+.class Lkotlin/reflect/jvm/internal/impl/storage/LockBasedStorageManager$MapBasedMemoizedFunctionToNotNull;
 .super Lkotlin/reflect/jvm/internal/impl/storage/LockBasedStorageManager$MapBasedMemoizedFunction;
 .source "LockBasedStorageManager.java"
 
@@ -31,8 +31,12 @@
 .end annotation
 
 
+# static fields
+.field public static final synthetic $assertionsDisabled:Z
+
+
 # direct methods
-.method public static synthetic $$$reportNull$$$0(I)V
+.method private static synthetic $$$reportNull$$$0(I)V
     .locals 8
 
     const/4 v0, 0x3
@@ -152,35 +156,36 @@
         }
     .end annotation
 
+    if-nez p1, :cond_0
+
     const/4 v0, 0x0
 
-    if-eqz p2, :cond_1
+    invoke-static {v0}, Lkotlin/reflect/jvm/internal/impl/storage/LockBasedStorageManager$MapBasedMemoizedFunctionToNotNull;->$$$reportNull$$$0(I)V
 
-    if-eqz p3, :cond_0
+    :cond_0
+    if-nez p2, :cond_1
 
+    const/4 v0, 0x1
+
+    invoke-static {v0}, Lkotlin/reflect/jvm/internal/impl/storage/LockBasedStorageManager$MapBasedMemoizedFunctionToNotNull;->$$$reportNull$$$0(I)V
+
+    :cond_1
+    if-nez p3, :cond_2
+
+    const/4 v0, 0x2
+
+    invoke-static {v0}, Lkotlin/reflect/jvm/internal/impl/storage/LockBasedStorageManager$MapBasedMemoizedFunctionToNotNull;->$$$reportNull$$$0(I)V
+
+    :cond_2
     invoke-direct {p0, p1, p2, p3}, Lkotlin/reflect/jvm/internal/impl/storage/LockBasedStorageManager$MapBasedMemoizedFunction;-><init>(Lkotlin/reflect/jvm/internal/impl/storage/LockBasedStorageManager;Ljava/util/concurrent/ConcurrentMap;Lkotlin/jvm/functions/Function1;)V
 
     return-void
-
-    :cond_0
-    const/4 p1, 0x2
-
-    invoke-static {p1}, Lkotlin/reflect/jvm/internal/impl/storage/LockBasedStorageManager$MapBasedMemoizedFunctionToNotNull;->$$$reportNull$$$0(I)V
-
-    throw v0
-
-    :cond_1
-    const/4 p1, 0x1
-
-    invoke-static {p1}, Lkotlin/reflect/jvm/internal/impl/storage/LockBasedStorageManager$MapBasedMemoizedFunctionToNotNull;->$$$reportNull$$$0(I)V
-
-    throw v0
 .end method
 
 
 # virtual methods
 .method public invoke(Ljava/lang/Object;)Ljava/lang/Object;
-    .locals 0
+    .locals 1
     .annotation system Ldalvik/annotation/Signature;
         value = {
             "(TK;)TV;"
@@ -191,16 +196,12 @@
 
     move-result-object p1
 
-    if-eqz p1, :cond_0
+    if-nez p1, :cond_0
 
-    return-object p1
+    const/4 v0, 0x3
+
+    invoke-static {v0}, Lkotlin/reflect/jvm/internal/impl/storage/LockBasedStorageManager$MapBasedMemoizedFunctionToNotNull;->$$$reportNull$$$0(I)V
 
     :cond_0
-    const/4 p1, 0x3
-
-    invoke-static {p1}, Lkotlin/reflect/jvm/internal/impl/storage/LockBasedStorageManager$MapBasedMemoizedFunctionToNotNull;->$$$reportNull$$$0(I)V
-
-    const/4 p1, 0x0
-
-    throw p1
+    return-object p1
 .end method

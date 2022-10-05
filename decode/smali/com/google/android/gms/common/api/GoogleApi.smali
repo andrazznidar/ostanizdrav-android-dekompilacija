@@ -65,7 +65,7 @@
     .end annotation
 .end field
 
-.field public final zaj:Lcom/google/android/gms/common/api/internal/ApiExceptionMapper;
+.field public final zaj:Lokhttp3/internal/HostnamesKt;
 
 
 # direct methods
@@ -204,9 +204,9 @@
 
     iput p2, p0, Lcom/google/android/gms/common/api/GoogleApi;->zah:I
 
-    iget-object p2, p4, Lcom/google/android/gms/common/api/GoogleApi$Settings;->zaa:Lcom/google/android/gms/common/api/internal/ApiExceptionMapper;
+    iget-object p2, p4, Lcom/google/android/gms/common/api/GoogleApi$Settings;->zaa:Lokhttp3/internal/HostnamesKt;
 
-    iput-object p2, p0, Lcom/google/android/gms/common/api/GoogleApi;->zaj:Lcom/google/android/gms/common/api/internal/ApiExceptionMapper;
+    iput-object p2, p0, Lcom/google/android/gms/common/api/GoogleApi;->zaj:Lokhttp3/internal/HostnamesKt;
 
     iget-object p1, p1, Lcom/google/android/gms/common/api/internal/GoogleApiManager;->zat:Landroid/os/Handler;
 
@@ -377,7 +377,7 @@
 
     iget-object v7, p0, Lcom/google/android/gms/common/api/GoogleApi;->zaa:Lcom/google/android/gms/common/api/internal/GoogleApiManager;
 
-    iget-object v8, p0, Lcom/google/android/gms/common/api/GoogleApi;->zaj:Lcom/google/android/gms/common/api/internal/ApiExceptionMapper;
+    iget-object v8, p0, Lcom/google/android/gms/common/api/GoogleApi;->zaj:Lokhttp3/internal/HostnamesKt;
 
     invoke-static {v7}, Ljava/util/Objects;->requireNonNull(Ljava/lang/Object;)Ljava/lang/Object;
 
@@ -532,7 +532,7 @@
     :cond_8
     new-instance v1, Lcom/google/android/gms/common/api/internal/zag;
 
-    invoke-direct {v1, p1, p2, v0, v8}, Lcom/google/android/gms/common/api/internal/zag;-><init>(ILcom/google/android/gms/common/api/internal/TaskApiCall;Lcom/google/android/gms/tasks/TaskCompletionSource;Lcom/google/android/gms/common/api/internal/ApiExceptionMapper;)V
+    invoke-direct {v1, p1, p2, v0, v8}, Lcom/google/android/gms/common/api/internal/zag;-><init>(ILcom/google/android/gms/common/api/internal/TaskApiCall;Lcom/google/android/gms/tasks/TaskCompletionSource;Lokhttp3/internal/HostnamesKt;)V
 
     iget-object p1, v7, Lcom/google/android/gms/common/api/internal/GoogleApiManager;->zat:Landroid/os/Handler;
 

@@ -101,7 +101,7 @@
 
 # virtual methods
 .method public get()Ljava/lang/Object;
-    .locals 13
+    .locals 15
 
     iget-object v0, p0, Lde/rki/coronawarnapp/util/coil/CoilModule_ImageLoaderFactory;->module:Lde/rki/coronawarnapp/util/coil/CoilModule;
 
@@ -180,23 +180,11 @@
 
     const-class v7, Lde/rki/coronawarnapp/util/qrcode/coil/CoilQrCode;
 
-    const-string v8, "fetcher"
-
-    invoke-static {v2, v8}, Lkotlin/jvm/internal/Intrinsics;->checkNotNullParameter(Ljava/lang/Object;Ljava/lang/String;)V
-
-    const-string v8, "type"
-
-    invoke-static {v7, v8}, Lkotlin/jvm/internal/Intrinsics;->checkNotNullParameter(Ljava/lang/Object;Ljava/lang/String;)V
-
     new-instance v8, Lkotlin/Pair;
 
     invoke-direct {v8, v2, v7}, Lkotlin/Pair;-><init>(Ljava/lang/Object;Ljava/lang/Object;)V
 
     invoke-virtual {v5, v8}, Ljava/util/ArrayList;->add(Ljava/lang/Object;)Z
-
-    const-string v2, "decoder"
-
-    invoke-static {v3, v2}, Lkotlin/jvm/internal/Intrinsics;->checkNotNullParameter(Ljava/lang/Object;Ljava/lang/String;)V
 
     invoke-virtual {v6, v3}, Ljava/util/ArrayList;->add(Ljava/lang/Object;)Z
 
@@ -204,29 +192,25 @@
 
     invoke-static {v1}, Lkotlin/collections/CollectionsKt___CollectionsKt;->toList(Ljava/lang/Iterable;)Ljava/util/List;
 
-    move-result-object v8
+    move-result-object v10
 
     invoke-static {v4}, Lkotlin/collections/CollectionsKt___CollectionsKt;->toList(Ljava/lang/Iterable;)Ljava/util/List;
 
-    move-result-object v9
+    move-result-object v11
 
     invoke-static {v5}, Lkotlin/collections/CollectionsKt___CollectionsKt;->toList(Ljava/lang/Iterable;)Ljava/util/List;
 
-    move-result-object v10
+    move-result-object v12
 
     invoke-static {v6}, Lkotlin/collections/CollectionsKt___CollectionsKt;->toList(Ljava/lang/Iterable;)Ljava/util/List;
 
-    move-result-object v11
+    move-result-object v13
 
-    const/4 v12, 0x0
+    const/4 v14, 0x0
 
-    move-object v7, v2
+    move-object v9, v2
 
-    invoke-direct/range {v7 .. v12}, Lcoil/ComponentRegistry;-><init>(Ljava/util/List;Ljava/util/List;Ljava/util/List;Ljava/util/List;Lkotlin/jvm/internal/DefaultConstructorMarker;)V
-
-    const-string v1, "registry"
-
-    invoke-static {v2, v1}, Lkotlin/jvm/internal/Intrinsics;->checkNotNullParameter(Ljava/lang/Object;Ljava/lang/String;)V
+    invoke-direct/range {v9 .. v14}, Lcoil/ComponentRegistry;-><init>(Ljava/util/List;Ljava/util/List;Ljava/util/List;Ljava/util/List;Lkotlin/jvm/internal/DefaultConstructorMarker;)V
 
     iput-object v2, v0, Lcoil/ImageLoader$Builder;->componentRegistry:Lcoil/ComponentRegistry;
 

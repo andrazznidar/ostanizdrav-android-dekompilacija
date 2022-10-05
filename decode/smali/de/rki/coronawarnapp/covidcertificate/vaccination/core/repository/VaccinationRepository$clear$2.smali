@@ -106,7 +106,7 @@
 .end method
 
 .method public final invokeSuspend(Ljava/lang/Object;)Ljava/lang/Object;
-    .locals 3
+    .locals 4
 
     invoke-static {p1}, Lkotlin/ResultKt;->throwOnFailure(Ljava/lang/Object;)V
 
@@ -126,9 +126,17 @@
 
     const/4 v2, 0x0
 
-    aput-object p1, v1, v2
+    invoke-interface {p1}, Ljava/util/Set;->size()I
 
-    const-string p1, "Deleting: %s"
+    move-result p1
+
+    new-instance v3, Ljava/lang/Integer;
+
+    invoke-direct {v3, p1}, Ljava/lang/Integer;-><init>(I)V
+
+    aput-object v3, v1, v2
+
+    const-string p1, "Deleting %d items"
 
     invoke-virtual {v0, p1, v1}, Ltimber/log/Timber$Tree;->v(Ljava/lang/String;[Ljava/lang/Object;)V
 

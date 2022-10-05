@@ -6,11 +6,11 @@
 
 
 # virtual methods
-.method public abstract a(Lj$/time/temporal/l;)Lj$/time/temporal/k;
+.method public abstract b(Lj$/time/temporal/l;)Lj$/time/temporal/k;
 .end method
 
-.method public abstract b(Lj$/time/temporal/o;J)Lj$/time/temporal/k;
+.method public abstract c(Lj$/time/temporal/o;J)Lj$/time/temporal/k;
 .end method
 
-.method public abstract f(JLj$/time/temporal/y;)Lj$/time/temporal/k;
+.method public abstract h(JLj$/time/temporal/x;)Lj$/time/temporal/k;
 .end method

@@ -27,19 +27,19 @@
 
     iget-object v0, p0, Landroidx/constraintlayout/core/widgets/analyzer/WidgetRun;->start:Landroidx/constraintlayout/core/widgets/analyzer/DependencyNode;
 
-    sget-object v1, Landroidx/constraintlayout/core/widgets/analyzer/DependencyNode$Type;->TOP:Landroidx/constraintlayout/core/widgets/analyzer/DependencyNode$Type;
+    const/4 v1, 0x6
 
-    iput-object v1, v0, Landroidx/constraintlayout/core/widgets/analyzer/DependencyNode;->type:Landroidx/constraintlayout/core/widgets/analyzer/DependencyNode$Type;
+    iput v1, v0, Landroidx/constraintlayout/core/widgets/analyzer/DependencyNode;->type:I
 
     iget-object v0, p0, Landroidx/constraintlayout/core/widgets/analyzer/WidgetRun;->end:Landroidx/constraintlayout/core/widgets/analyzer/DependencyNode;
 
-    sget-object v1, Landroidx/constraintlayout/core/widgets/analyzer/DependencyNode$Type;->BOTTOM:Landroidx/constraintlayout/core/widgets/analyzer/DependencyNode$Type;
+    const/4 v1, 0x7
 
-    iput-object v1, v0, Landroidx/constraintlayout/core/widgets/analyzer/DependencyNode;->type:Landroidx/constraintlayout/core/widgets/analyzer/DependencyNode$Type;
+    iput v1, v0, Landroidx/constraintlayout/core/widgets/analyzer/DependencyNode;->type:I
 
-    sget-object v0, Landroidx/constraintlayout/core/widgets/analyzer/DependencyNode$Type;->BASELINE:Landroidx/constraintlayout/core/widgets/analyzer/DependencyNode$Type;
+    const/16 v0, 0x8
 
-    iput-object v0, p1, Landroidx/constraintlayout/core/widgets/analyzer/DependencyNode;->type:Landroidx/constraintlayout/core/widgets/analyzer/DependencyNode$Type;
+    iput v0, p1, Landroidx/constraintlayout/core/widgets/analyzer/DependencyNode;->type:I
 
     const/4 p1, 0x1
 
@@ -1373,7 +1373,7 @@
 
     iget p1, p0, Landroidx/constraintlayout/core/widgets/analyzer/WidgetRun;->mRunType:I
 
-    invoke-static {p1}, Landroidx/constraintlayout/core/SolverVariable$Type$r8$EnumUnboxingUtility;->$enumboxing$ordinal(I)I
+    invoke-static {p1}, Landroidx/camera/camera2/internal/Camera2CameraImpl$InternalState$EnumUnboxingSharedUtility;->ordinal(I)I
 
     move-result p1
 

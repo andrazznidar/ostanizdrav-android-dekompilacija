@@ -274,7 +274,7 @@
     return-void
 .end method
 
-.method public static synthetic -$$Nest$sfgetDEFAULT_INSTANCE()Lde/rki/coronawarnapp/server/protocols/internal/RiskScoreParametersOuterClass$RiskScoreParameters$DaysSinceLastExposureRiskParameters;
+.method public static bridge synthetic -$$Nest$sfgetDEFAULT_INSTANCE()Lde/rki/coronawarnapp/server/protocols/internal/RiskScoreParametersOuterClass$RiskScoreParameters$DaysSinceLastExposureRiskParameters;
     .locals 1
 
     sget-object v0, Lde/rki/coronawarnapp/server/protocols/internal/RiskScoreParametersOuterClass$RiskScoreParameters$DaysSinceLastExposureRiskParameters;->DEFAULT_INSTANCE:Lde/rki/coronawarnapp/server/protocols/internal/RiskScoreParametersOuterClass$RiskScoreParameters$DaysSinceLastExposureRiskParameters;

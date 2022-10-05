@@ -3,4 +3,4 @@
 .source "KMarkers.kt"
 
 # interfaces
-.implements Lkotlin/jvm/internal/markers/KMutableCollection;
+.implements Lkotlin/jvm/internal/markers/KMappedMarker;

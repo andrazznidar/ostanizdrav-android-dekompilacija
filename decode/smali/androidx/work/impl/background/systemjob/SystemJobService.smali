@@ -100,7 +100,7 @@
 .method public onCreate()V
     .locals 4
 
-    invoke-super {p0}, Landroid/app/Service;->onCreate()V
+    invoke-super {p0}, Landroid/app/job/JobService;->onCreate()V
 
     :try_start_0
     invoke-virtual {p0}, Landroid/app/job/JobService;->getApplicationContext()Landroid/content/Context;
@@ -168,7 +168,7 @@
 .method public onDestroy()V
     .locals 1
 
-    invoke-super {p0}, Landroid/app/Service;->onDestroy()V
+    invoke-super {p0}, Landroid/app/job/JobService;->onDestroy()V
 
     iget-object v0, p0, Landroidx/work/impl/background/systemjob/SystemJobService;->mWorkManagerImpl:Landroidx/work/impl/WorkManagerImpl;
 

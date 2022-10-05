@@ -262,7 +262,7 @@
 
     check-cast v0, Lcom/google/android/material/shape/MaterialShapeDrawable;
 
-    invoke-static {p0, v0}, Lcom/google/android/material/shape/MaterialShapeUtils;->setParentAbsoluteElevation(Landroid/view/View;Lcom/google/android/material/shape/MaterialShapeDrawable;)V
+    invoke-static {p0, v0}, Lcom/google/common/base/Preconditions;->setParentAbsoluteElevation(Landroid/view/View;Lcom/google/android/material/shape/MaterialShapeDrawable;)V
 
     :cond_0
     return-void
@@ -288,7 +288,7 @@
 
     move-result-object p1
 
-    invoke-static {p0, p1}, Ldagger/internal/Preconditions;->getTextView(Landroidx/appcompat/widget/Toolbar;Ljava/lang/CharSequence;)Landroid/widget/TextView;
+    invoke-static {p0, p1}, Lcom/google/android/material/internal/ToolbarUtils;->getTextView(Landroidx/appcompat/widget/Toolbar;Ljava/lang/CharSequence;)Landroid/widget/TextView;
 
     move-result-object p1
 
@@ -296,7 +296,7 @@
 
     move-result-object p2
 
-    invoke-static {p0, p2}, Ldagger/internal/Preconditions;->getTextView(Landroidx/appcompat/widget/Toolbar;Ljava/lang/CharSequence;)Landroid/widget/TextView;
+    invoke-static {p0, p2}, Lcom/google/android/material/internal/ToolbarUtils;->getTextView(Landroidx/appcompat/widget/Toolbar;Ljava/lang/CharSequence;)Landroid/widget/TextView;
 
     move-result-object p2
 
@@ -424,9 +424,9 @@
 .method public setElevation(F)V
     .locals 0
 
-    invoke-super {p0, p1}, Landroid/view/View;->setElevation(F)V
+    invoke-super {p0, p1}, Landroid/view/ViewGroup;->setElevation(F)V
 
-    invoke-static {p0, p1}, Lcom/google/android/material/shape/MaterialShapeUtils;->setElevation(Landroid/view/View;F)V
+    invoke-static {p0, p1}, Lcom/google/common/base/Preconditions;->setElevation(Landroid/view/View;F)V
 
     return-void
 .end method

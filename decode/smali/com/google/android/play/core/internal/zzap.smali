@@ -27,7 +27,7 @@
 
     iget-object v0, v0, Lcom/google/android/play/core/internal/zzar;->zza:Lcom/google/android/play/core/internal/zzas;
 
-    iget-object v1, v0, Lcom/google/android/play/core/internal/zzas;->zzc:Lkotlin/jvm/internal/SpreadBuilder;
+    iget-object v1, v0, Lcom/google/android/play/core/internal/zzas;->zzc:Lcom/google/android/play/core/internal/zzag;
 
     const/4 v2, 0x0
 
@@ -35,7 +35,7 @@
 
     const-string/jumbo v4, "unlinkToDeath"
 
-    invoke-virtual {v1, v4, v3}, Lkotlin/jvm/internal/SpreadBuilder;->zzd(Ljava/lang/String;[Ljava/lang/Object;)I
+    invoke-virtual {v1, v4, v3}, Lcom/google/android/play/core/internal/zzag;->zzd(Ljava/lang/String;[Ljava/lang/Object;)I
 
     iget-object v1, v0, Lcom/google/android/play/core/internal/zzas;->zzn:Landroid/os/IInterface;
 

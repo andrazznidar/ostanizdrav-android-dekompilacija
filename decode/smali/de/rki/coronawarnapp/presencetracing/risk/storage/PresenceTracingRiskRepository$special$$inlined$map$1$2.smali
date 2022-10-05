@@ -98,7 +98,7 @@
 
     invoke-static {p2}, Lkotlin/ResultKt;->throwOnFailure(Ljava/lang/Object;)V
 
-    goto/16 :goto_3
+    goto/16 :goto_4
 
     :cond_1
     new-instance p1, Ljava/lang/IllegalStateException;
@@ -190,7 +190,7 @@
 
     move-result v4
 
-    if-eqz v4, :cond_5
+    if-eqz v4, :cond_6
 
     invoke-interface {v2}, Ljava/util/Iterator;->next()Ljava/lang/Object;
 
@@ -214,29 +214,39 @@
 
     move-result-object v6
 
-    invoke-virtual {v5, v6}, Lorg/joda/time/base/BaseLocal;->isAfter(Lorg/joda/time/ReadablePartial;)Z
+    invoke-virtual {v5, v6}, Lorg/joda/time/LocalDate;->compareTo(Lorg/joda/time/ReadablePartial;)I
 
     move-result v5
 
+    if-lez v5, :cond_5
+
+    move v5, v3
+
+    goto :goto_3
+
+    :cond_5
+    const/4 v5, 0x0
+
+    :goto_3
     if-eqz v5, :cond_4
 
     invoke-virtual {p1, v4}, Ljava/util/ArrayList;->add(Ljava/lang/Object;)Z
 
     goto :goto_2
 
-    :cond_5
+    :cond_6
     iput v3, v0, Lde/rki/coronawarnapp/presencetracing/risk/storage/PresenceTracingRiskRepository$special$$inlined$map$1$2$1;->label:I
 
     invoke-interface {p2, p1, v0}, Lkotlinx/coroutines/flow/FlowCollector;->emit(Ljava/lang/Object;Lkotlin/coroutines/Continuation;)Ljava/lang/Object;
 
     move-result-object p1
 
-    if-ne p1, v1, :cond_6
+    if-ne p1, v1, :cond_7
 
     return-object v1
 
-    :cond_6
-    :goto_3
+    :cond_7
+    :goto_4
     sget-object p1, Lkotlin/Unit;->INSTANCE:Lkotlin/Unit;
 
     return-object p1

@@ -16,9 +16,6 @@
 .method public abstract getTargetDisease()Ljava/lang/String;
 .end method
 
-.method public abstract getTestedPositiveOn()Lorg/joda/time/LocalDate;
-.end method
-
 .method public abstract getTestedPositiveOnFormatted()Ljava/lang/String;
 .end method
 

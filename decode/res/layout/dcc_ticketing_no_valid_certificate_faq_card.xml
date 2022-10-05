@@ -1,0 +1,3 @@
+<?xml version="1.0" encoding="utf-8"?>
+<TextView android:id="@id/faq_link" android:layout_width="fill_parent" android:layout_height="wrap_content" android:layout_marginTop="16.0dip" android:text="@string/dcc_ticketing_certificate_selection_more_information_text" android:layout_marginStart="24.0dip" android:layout_marginEnd="24.0dip" style="@style/materialSubtitleSixteen"
+  xmlns:android="http://schemas.android.com/apk/res/android" />

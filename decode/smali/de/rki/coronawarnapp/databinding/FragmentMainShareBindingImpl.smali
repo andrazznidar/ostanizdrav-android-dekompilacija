@@ -43,7 +43,7 @@
 
     new-array v4, v2, [I
 
-    const v6, 0x7f0d00d8
+    const v6, 0x7f0d00e9
 
     aput v6, v4, v5
 
@@ -63,7 +63,7 @@
 
     new-array v4, v2, [I
 
-    const v6, 0x7f0d00d9
+    const v6, 0x7f0d00ea
 
     aput v6, v4, v5
 
@@ -75,25 +75,25 @@
 
     sput-object v0, Lde/rki/coronawarnapp/databinding/FragmentMainShareBindingImpl;->sViewsWithIds:Landroid/util/SparseIntArray;
 
-    const v1, 0x7f0a0435
+    const v1, 0x7f0a047a
 
     const/4 v2, 0x4
 
     invoke-virtual {v0, v1, v2}, Landroid/util/SparseIntArray;->put(II)V
 
-    const v1, 0x7f0a0342
+    const v1, 0x7f0a0371
 
     const/4 v2, 0x5
 
     invoke-virtual {v0, v1, v2}, Landroid/util/SparseIntArray;->put(II)V
 
-    const v1, 0x7f0a0348
+    const v1, 0x7f0a0377
 
     const/4 v2, 0x6
 
     invoke-virtual {v0, v1, v2}, Landroid/util/SparseIntArray;->put(II)V
 
-    const v1, 0x7f0a0345
+    const v1, 0x7f0a0374
 
     const/4 v2, 0x7
 
@@ -262,17 +262,17 @@
 
     iget-object v1, p0, Landroidx/databinding/ViewDataBinding;->mRoot:Landroid/view/View;
 
-    const v2, 0x7f0800dd
+    const v2, 0x7f0800d3
 
-    invoke-static {v1, v2, v0}, Lde/rki/coronawarnapp/databinding/FragmentInformationAboutBindingImpl$$ExternalSyntheticOutline0;->m(Landroid/view/View;ILde/rki/coronawarnapp/databinding/IncludeHeaderBinding;)V
+    invoke-static {v1, v2, v0}, Landroidx/constraintlayout/core/widgets/analyzer/DependencyNode$Type$EnumUnboxingLocalUtility;->m(Landroid/view/View;ILde/rki/coronawarnapp/databinding/IncludeHeaderBinding;)V
 
     iget-object v0, p0, Lde/rki/coronawarnapp/databinding/FragmentMainShareBinding;->mainShareHeader:Lde/rki/coronawarnapp/databinding/IncludeHeaderBinding;
 
     iget-object v1, p0, Landroidx/databinding/ViewDataBinding;->mRoot:Landroid/view/View;
 
-    const v2, 0x7f130270
+    const v2, 0x7f130285
 
-    invoke-static {v1, v2, v0}, Lde/rki/coronawarnapp/databinding/FragmentInformationAboutBindingImpl$$ExternalSyntheticOutline1;->m(Landroid/view/View;ILde/rki/coronawarnapp/databinding/IncludeHeaderBinding;)V
+    invoke-static {v1, v2, v0}, Lde/rki/coronawarnapp/server/protocols/internal/ppdd/PpaData$ExposureRiskMetadata$Builder-IA;->m(Landroid/view/View;ILde/rki/coronawarnapp/databinding/IncludeHeaderBinding;)V
 
     iget-object v0, p0, Lde/rki/coronawarnapp/databinding/FragmentMainShareBinding;->mainShareHeaderDetails:Lde/rki/coronawarnapp/databinding/IncludeInformationDetailsBinding;
 
@@ -282,7 +282,7 @@
 
     move-result-object v1
 
-    const v2, 0x7f13026b
+    const v2, 0x7f130280
 
     invoke-virtual {v1, v2}, Landroid/content/res/Resources;->getString(I)Ljava/lang/String;
 
@@ -298,7 +298,7 @@
 
     move-result-object v1
 
-    const v2, 0x7f13026d
+    const v2, 0x7f130282
 
     invoke-virtual {v1, v2}, Landroid/content/res/Resources;->getString(I)Ljava/lang/String;
 
@@ -314,7 +314,7 @@
 
     move-result-object v1
 
-    const v2, 0x7f08014a
+    const v2, 0x7f080140
 
     invoke-static {v1, v2}, Landroidx/appcompat/content/res/AppCompatResources;->getDrawable(Landroid/content/Context;I)Landroid/graphics/drawable/Drawable;
 
@@ -330,7 +330,7 @@
 
     move-result-object v1
 
-    const v2, 0x7f13026e
+    const v2, 0x7f130283
 
     invoke-virtual {v1, v2}, Landroid/content/res/Resources;->getString(I)Ljava/lang/String;
 

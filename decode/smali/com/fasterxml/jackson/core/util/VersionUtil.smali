@@ -22,6 +22,102 @@
     return-void
 .end method
 
+.method public static parseVersion(Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;)Lcom/fasterxml/jackson/core/Version;
+    .locals 8
+
+    invoke-virtual {p0}, Ljava/lang/String;->trim()Ljava/lang/String;
+
+    move-result-object p0
+
+    invoke-virtual {p0}, Ljava/lang/String;->length()I
+
+    move-result v0
+
+    if-lez v0, :cond_3
+
+    sget-object v0, Lcom/fasterxml/jackson/core/util/VersionUtil;->V_SEP:Ljava/util/regex/Pattern;
+
+    invoke-virtual {v0, p0}, Ljava/util/regex/Pattern;->split(Ljava/lang/CharSequence;)[Ljava/lang/String;
+
+    move-result-object p0
+
+    new-instance v7, Lcom/fasterxml/jackson/core/Version;
+
+    const/4 v0, 0x0
+
+    aget-object v1, p0, v0
+
+    invoke-static {v1}, Lcom/fasterxml/jackson/core/util/VersionUtil;->parseVersionPart(Ljava/lang/String;)I
+
+    move-result v1
+
+    array-length v2, p0
+
+    const/4 v3, 0x1
+
+    if-le v2, v3, :cond_0
+
+    aget-object v2, p0, v3
+
+    invoke-static {v2}, Lcom/fasterxml/jackson/core/util/VersionUtil;->parseVersionPart(Ljava/lang/String;)I
+
+    move-result v2
+
+    goto :goto_0
+
+    :cond_0
+    move v2, v0
+
+    :goto_0
+    array-length v3, p0
+
+    const/4 v4, 0x2
+
+    if-le v3, v4, :cond_1
+
+    aget-object v0, p0, v4
+
+    invoke-static {v0}, Lcom/fasterxml/jackson/core/util/VersionUtil;->parseVersionPart(Ljava/lang/String;)I
+
+    move-result v0
+
+    :cond_1
+    move v3, v0
+
+    array-length v0, p0
+
+    const/4 v4, 0x3
+
+    if-le v0, v4, :cond_2
+
+    aget-object p0, p0, v4
+
+    goto :goto_1
+
+    :cond_2
+    const/4 p0, 0x0
+
+    :goto_1
+    move-object v4, p0
+
+    move-object v0, v7
+
+    move-object v5, p1
+
+    move-object v6, p2
+
+    invoke-direct/range {v0 .. v6}, Lcom/fasterxml/jackson/core/Version;-><init>(IIILjava/lang/String;Ljava/lang/String;Ljava/lang/String;)V
+
+    return-object v7
+
+    :cond_3
+    sget-object p0, Lcom/fasterxml/jackson/core/Version;->UNKNOWN_VERSION:Lcom/fasterxml/jackson/core/Version;
+
+    sget-object p0, Lcom/fasterxml/jackson/core/Version;->UNKNOWN_VERSION:Lcom/fasterxml/jackson/core/Version;
+
+    return-object p0
+.end method
+
 .method public static parseVersionPart(Ljava/lang/String;)I
     .locals 5
 

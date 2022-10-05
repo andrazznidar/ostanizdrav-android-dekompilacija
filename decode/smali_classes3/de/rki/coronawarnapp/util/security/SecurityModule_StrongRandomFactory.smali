@@ -18,11 +18,11 @@
 
 
 # instance fields
-.field public final module:Lde/rki/coronawarnapp/util/security/SecurityModule;
+.field public final module:Lorg/bouncycastle/util/Fingerprint;
 
 
 # direct methods
-.method public constructor <init>(Lde/rki/coronawarnapp/util/security/SecurityModule;)V
+.method public constructor <init>(Lorg/bouncycastle/util/Fingerprint;)V
     .locals 0
     .annotation system Ldalvik/annotation/MethodParameters;
         accessFlags = {
@@ -35,7 +35,7 @@
 
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
-    iput-object p1, p0, Lde/rki/coronawarnapp/util/security/SecurityModule_StrongRandomFactory;->module:Lde/rki/coronawarnapp/util/security/SecurityModule;
+    iput-object p1, p0, Lde/rki/coronawarnapp/util/security/SecurityModule_StrongRandomFactory;->module:Lorg/bouncycastle/util/Fingerprint;
 
     return-void
 .end method
@@ -45,7 +45,7 @@
 .method public get()Ljava/lang/Object;
     .locals 2
 
-    iget-object v0, p0, Lde/rki/coronawarnapp/util/security/SecurityModule_StrongRandomFactory;->module:Lde/rki/coronawarnapp/util/security/SecurityModule;
+    iget-object v0, p0, Lde/rki/coronawarnapp/util/security/SecurityModule_StrongRandomFactory;->module:Lorg/bouncycastle/util/Fingerprint;
 
     invoke-static {v0}, Ljava/util/Objects;->requireNonNull(Ljava/lang/Object;)Ljava/lang/Object;
 
@@ -71,9 +71,13 @@
 
     invoke-static {v0, v1}, Lkotlin/jvm/internal/Intrinsics;->checkNotNullExpressionValue(Ljava/lang/Object;Ljava/lang/String;)V
 
-    invoke-static {v0}, Lokhttp3/logging/Utf8Kt;->asKotlinRandom(Ljava/util/Random;)Lkotlin/random/Random;
+    invoke-static {v0}, Lkotlin/random/PlatformRandomKt;->asKotlinRandom(Ljava/util/Random;)Lkotlin/random/Random;
 
     move-result-object v0
+
+    const-string v1, "Cannot return null from a non-@Nullable @Provides method"
+
+    invoke-static {v0, v1}, Ljava/util/Objects;->requireNonNull(Ljava/lang/Object;Ljava/lang/String;)Ljava/lang/Object;
 
     return-object v0
 .end method

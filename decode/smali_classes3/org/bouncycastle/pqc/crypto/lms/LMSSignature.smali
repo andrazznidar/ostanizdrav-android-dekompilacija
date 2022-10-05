@@ -1,4 +1,4 @@
-.class public Lorg/bouncycastle/pqc/crypto/lms/LMSSignature;
+.class Lorg/bouncycastle/pqc/crypto/lms/LMSSignature;
 .super Ljava/lang/Object;
 
 # interfaces
@@ -6,13 +6,13 @@
 
 
 # instance fields
-.field public final otsSignature:Lorg/bouncycastle/pqc/crypto/lms/LMOtsSignature;
+.field private final otsSignature:Lorg/bouncycastle/pqc/crypto/lms/LMOtsSignature;
 
-.field public final parameter:Lorg/bouncycastle/pqc/crypto/lms/LMSigParameters;
+.field private final parameter:Lorg/bouncycastle/pqc/crypto/lms/LMSigParameters;
 
-.field public final q:I
+.field private final q:I
 
-.field public final y:[[B
+.field private final y:[[B
 
 
 # direct methods
@@ -73,7 +73,9 @@
 
     move-result-object v2
 
-    iget v3, v2, Lorg/bouncycastle/pqc/crypto/lms/LMSigParameters;->h:I
+    invoke-virtual {v2}, Lorg/bouncycastle/pqc/crypto/lms/LMSigParameters;->getH()I
+
+    move-result v3
 
     new-array v4, v3, [[B
 
@@ -82,7 +84,9 @@
     :goto_0
     if-ge v5, v3, :cond_1
 
-    iget v6, v2, Lorg/bouncycastle/pqc/crypto/lms/LMSigParameters;->m:I
+    invoke-virtual {v2}, Lorg/bouncycastle/pqc/crypto/lms/LMSigParameters;->getM()I
+
+    move-result v6
 
     new-array v6, v6, [B
 
@@ -199,7 +203,9 @@
 
     if-eqz p1, :cond_7
 
-    const-class v1, Lorg/bouncycastle/pqc/crypto/lms/LMSSignature;
+    invoke-virtual {p0}, Ljava/lang/Object;->getClass()Ljava/lang/Class;
+
+    move-result-object v1
 
     invoke-virtual {p1}, Ljava/lang/Object;->getClass()Ljava/lang/Class;
 
@@ -283,7 +289,7 @@
 .end method
 
 .method public getEncoded()[B
-    .locals 6
+    .locals 2
     .annotation system Ldalvik/annotation/Throws;
         value = {
             Ljava/io/IOException;
@@ -298,6 +304,8 @@
 
     invoke-virtual {v0, v1}, Lorg/bouncycastle/pqc/crypto/lms/Composer;->u32str(I)Lorg/bouncycastle/pqc/crypto/lms/Composer;
 
+    move-result-object v0
+
     iget-object v1, p0, Lorg/bouncycastle/pqc/crypto/lms/LMSSignature;->otsSignature:Lorg/bouncycastle/pqc/crypto/lms/LMOtsSignature;
 
     invoke-virtual {v1}, Lorg/bouncycastle/pqc/crypto/lms/LMOtsSignature;->getEncoded()[B
@@ -306,55 +314,61 @@
 
     invoke-virtual {v0, v1}, Lorg/bouncycastle/pqc/crypto/lms/Composer;->bytes([B)Lorg/bouncycastle/pqc/crypto/lms/Composer;
 
+    move-result-object v0
+
     iget-object v1, p0, Lorg/bouncycastle/pqc/crypto/lms/LMSSignature;->parameter:Lorg/bouncycastle/pqc/crypto/lms/LMSigParameters;
 
-    iget v1, v1, Lorg/bouncycastle/pqc/crypto/lms/LMSigParameters;->type:I
+    invoke-virtual {v1}, Lorg/bouncycastle/pqc/crypto/lms/LMSigParameters;->getType()I
+
+    move-result v1
 
     invoke-virtual {v0, v1}, Lorg/bouncycastle/pqc/crypto/lms/Composer;->u32str(I)Lorg/bouncycastle/pqc/crypto/lms/Composer;
 
+    move-result-object v0
+
     iget-object v1, p0, Lorg/bouncycastle/pqc/crypto/lms/LMSSignature;->y:[[B
 
-    :try_start_0
-    array-length v2, v1
+    invoke-virtual {v0, v1}, Lorg/bouncycastle/pqc/crypto/lms/Composer;->bytes([[B)Lorg/bouncycastle/pqc/crypto/lms/Composer;
 
-    const/4 v3, 0x0
+    move-result-object v0
 
-    :goto_0
-    if-ge v3, v2, :cond_0
-
-    aget-object v4, v1, v3
-
-    iget-object v5, v0, Lorg/bouncycastle/pqc/crypto/lms/Composer;->bos:Ljava/lang/Object;
-
-    check-cast v5, Ljava/io/ByteArrayOutputStream;
-
-    invoke-virtual {v5, v4}, Ljava/io/ByteArrayOutputStream;->write([B)V
-    :try_end_0
-    .catch Ljava/lang/Exception; {:try_start_0 .. :try_end_0} :catch_0
-
-    add-int/lit8 v3, v3, 0x1
-
-    goto :goto_0
-
-    :cond_0
     invoke-virtual {v0}, Lorg/bouncycastle/pqc/crypto/lms/Composer;->build()[B
 
     move-result-object v0
 
     return-object v0
+.end method
 
-    :catch_0
-    move-exception v0
+.method public getOtsSignature()Lorg/bouncycastle/pqc/crypto/lms/LMOtsSignature;
+    .locals 1
 
-    new-instance v1, Ljava/lang/RuntimeException;
+    iget-object v0, p0, Lorg/bouncycastle/pqc/crypto/lms/LMSSignature;->otsSignature:Lorg/bouncycastle/pqc/crypto/lms/LMOtsSignature;
 
-    invoke-virtual {v0}, Ljava/lang/Exception;->getMessage()Ljava/lang/String;
+    return-object v0
+.end method
 
-    move-result-object v2
+.method public getParameter()Lorg/bouncycastle/pqc/crypto/lms/LMSigParameters;
+    .locals 1
 
-    invoke-direct {v1, v2, v0}, Ljava/lang/RuntimeException;-><init>(Ljava/lang/String;Ljava/lang/Throwable;)V
+    iget-object v0, p0, Lorg/bouncycastle/pqc/crypto/lms/LMSSignature;->parameter:Lorg/bouncycastle/pqc/crypto/lms/LMSigParameters;
 
-    throw v1
+    return-object v0
+.end method
+
+.method public getQ()I
+    .locals 1
+
+    iget v0, p0, Lorg/bouncycastle/pqc/crypto/lms/LMSSignature;->q:I
+
+    return v0
+.end method
+
+.method public getY()[[B
+    .locals 1
+
+    iget-object v0, p0, Lorg/bouncycastle/pqc/crypto/lms/LMSSignature;->y:[[B
+
+    return-object v0
 .end method
 
 .method public hashCode()I

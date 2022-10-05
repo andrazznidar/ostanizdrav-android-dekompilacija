@@ -277,7 +277,7 @@
 .end method
 
 .method public getSelectedProtocol(Ljavax/net/ssl/SSLSocket;)Ljava/lang/String;
-    .locals 10
+    .locals 4
 
     const-string v0, "failed to get ALPN selected protocol"
 
@@ -314,19 +314,11 @@
 
     if-nez v3, :cond_0
 
-    const-string v5, "ALPN callback dropped: HTTP/2 is disabled. Is alpn-boot on the boot class path?"
+    const-string v1, "ALPN callback dropped: HTTP/2 is disabled. Is alpn-boot on the boot class path?"
 
-    const/4 v6, 0x0
+    const/4 v2, 0x4
 
-    const/4 v7, 0x0
-
-    const/4 v8, 0x6
-
-    const/4 v9, 0x0
-
-    move-object v4, p0
-
-    invoke-static/range {v4 .. v9}, Lokhttp3/internal/platform/Platform;->log$default(Lokhttp3/internal/platform/Platform;Ljava/lang/String;ILjava/lang/Throwable;ILjava/lang/Object;)V
+    invoke-virtual {p0, v1, v2, p1}, Lokhttp3/internal/platform/Platform;->log(Ljava/lang/String;ILjava/lang/Throwable;)V
 
     return-object p1
 

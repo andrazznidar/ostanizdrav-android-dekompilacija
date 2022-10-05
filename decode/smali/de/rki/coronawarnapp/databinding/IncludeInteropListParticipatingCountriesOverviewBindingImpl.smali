@@ -130,7 +130,7 @@
 
     if-eqz v7, :cond_0
 
-    invoke-static {v4}, Lcom/google/android/gms/internal/nearby/zzfc;->formatVisibilityText(Ljava/lang/String;)I
+    invoke-static {v4}, Lorg/ejml/dense/row/misc/ImplCommonOps_DDMA;->formatVisibilityText(Ljava/lang/String;)I
 
     move-result v9
 
@@ -148,7 +148,7 @@
 
     if-eqz v10, :cond_1
 
-    invoke-static {v5}, Lcom/google/android/gms/internal/nearby/zzfc;->formatVisibilityText(Ljava/lang/String;)I
+    invoke-static {v5}, Lorg/ejml/dense/row/misc/ImplCommonOps_DDMA;->formatVisibilityText(Ljava/lang/String;)I
 
     move-result v8
 

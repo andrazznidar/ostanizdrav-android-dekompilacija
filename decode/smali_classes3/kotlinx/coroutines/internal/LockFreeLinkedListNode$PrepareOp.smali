@@ -86,7 +86,7 @@
 
     move-result-object v0
 
-    sget-object v1, Lkotlinx/coroutines/internal/LockFreeLinkedList_commonKt;->REMOVE_PREPARED:Ljava/lang/Object;
+    sget-object v1, Lde/rki/coronawarnapp/submission/SubmissionModule;->REMOVE_PREPARED:Ljava/lang/Object;
 
     const/4 v2, 0x0
 

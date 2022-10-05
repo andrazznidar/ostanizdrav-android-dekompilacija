@@ -7,15 +7,6 @@
 
 
 # annotations
-.annotation system Ldalvik/annotation/EnclosingMethod;
-    value = Lde/rki/coronawarnapp/risk/storage/internal/RiskCombinator;->combineEwPtRiskLevelResults$Corona_Warn_App_deviceRelease(Ljava/util/List;Ljava/util/List;)Ljava/util/List;
-.end annotation
-
-.annotation system Ldalvik/annotation/InnerClass;
-    accessFlags = 0x19
-    name = null
-.end annotation
-
 .annotation system Ldalvik/annotation/Signature;
     value = {
         "<T:",

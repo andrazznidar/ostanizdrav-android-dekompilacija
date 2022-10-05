@@ -1,4 +1,4 @@
-.class public final Lkotlin/reflect/jvm/internal/impl/load/java/lazy/descriptors/LazyJavaPackageFragment$partToFacade$2;
+.class final Lkotlin/reflect/jvm/internal/impl/load/java/lazy/descriptors/LazyJavaPackageFragment$partToFacade$2;
 .super Lkotlin/jvm/internal/Lambda;
 .source "LazyJavaPackageFragment.kt"
 
@@ -8,12 +8,18 @@
 
 # annotations
 .annotation system Ldalvik/annotation/EnclosingMethod;
-    value = Lkotlin/reflect/jvm/internal/impl/load/java/lazy/descriptors/LazyJavaPackageFragment;-><init>(Lorg/joda/time/convert/ConverterManager;Lkotlin/reflect/jvm/internal/impl/load/java/structure/JavaPackage;)V
+    value = Lkotlin/reflect/jvm/internal/impl/load/java/lazy/descriptors/LazyJavaPackageFragment;-><init>(Lkotlin/reflect/jvm/internal/impl/load/java/lazy/LazyJavaResolverContext;Lkotlin/reflect/jvm/internal/impl/load/java/structure/JavaPackage;)V
 .end annotation
 
 .annotation system Ldalvik/annotation/InnerClass;
     accessFlags = 0x19
     name = null
+.end annotation
+
+.annotation system Ldalvik/annotation/MemberClasses;
+    value = {
+        Lkotlin/reflect/jvm/internal/impl/load/java/lazy/descriptors/LazyJavaPackageFragment$partToFacade$2$WhenMappings;
+    }
 .end annotation
 
 .annotation system Ldalvik/annotation/Signature;
@@ -47,8 +53,27 @@
 
 
 # virtual methods
-.method public invoke()Ljava/lang/Object;
+.method public bridge synthetic invoke()Ljava/lang/Object;
+    .locals 1
+
+    invoke-virtual {p0}, Lkotlin/reflect/jvm/internal/impl/load/java/lazy/descriptors/LazyJavaPackageFragment$partToFacade$2;->invoke()Ljava/util/HashMap;
+
+    move-result-object v0
+
+    return-object v0
+.end method
+
+.method public final invoke()Ljava/util/HashMap;
     .locals 6
+    .annotation system Ldalvik/annotation/Signature;
+        value = {
+            "()",
+            "Ljava/util/HashMap<",
+            "Lkotlin/reflect/jvm/internal/impl/resolve/jvm/JvmClassName;",
+            "Lkotlin/reflect/jvm/internal/impl/resolve/jvm/JvmClassName;",
+            ">;"
+        }
+    .end annotation
 
     new-instance v0, Ljava/util/HashMap;
 
@@ -97,46 +122,60 @@
 
     move-result-object v3
 
+    const-string v4, "byInternalName(partInternalName)"
+
+    invoke-static {v3, v4}, Lkotlin/jvm/internal/Intrinsics;->checkNotNullExpressionValue(Ljava/lang/Object;Ljava/lang/String;)V
+
     invoke-interface {v2}, Lkotlin/reflect/jvm/internal/impl/load/kotlin/KotlinJvmBinaryClass;->getClassHeader()Lkotlin/reflect/jvm/internal/impl/load/kotlin/header/KotlinClassHeader;
 
     move-result-object v2
 
-    iget-object v4, v2, Lkotlin/reflect/jvm/internal/impl/load/kotlin/header/KotlinClassHeader;->kind:Lkotlin/reflect/jvm/internal/impl/load/kotlin/header/KotlinClassHeader$Kind;
+    invoke-virtual {v2}, Lkotlin/reflect/jvm/internal/impl/load/kotlin/header/KotlinClassHeader;->getKind()Lkotlin/reflect/jvm/internal/impl/load/kotlin/header/KotlinClassHeader$Kind;
+
+    move-result-object v4
+
+    sget-object v5, Lkotlin/reflect/jvm/internal/impl/load/java/lazy/descriptors/LazyJavaPackageFragment$partToFacade$2$WhenMappings;->$EnumSwitchMapping$0:[I
 
     invoke-virtual {v4}, Ljava/lang/Enum;->ordinal()I
 
     move-result v4
 
-    const/4 v5, 0x2
+    aget v4, v5, v4
 
-    if-eq v4, v5, :cond_2
+    const/4 v5, 0x1
 
-    const/4 v5, 0x5
+    if-eq v4, v5, :cond_1
 
-    if-eq v4, v5, :cond_0
+    const/4 v2, 0x2
+
+    if-eq v4, v2, :cond_0
 
     goto :goto_0
 
     :cond_0
-    invoke-virtual {v2}, Lkotlin/reflect/jvm/internal/impl/load/kotlin/header/KotlinClassHeader;->getMultifileClassName()Ljava/lang/String;
-
-    move-result-object v2
-
-    if-nez v2, :cond_1
+    invoke-interface {v0, v3, v3}, Ljava/util/Map;->put(Ljava/lang/Object;Ljava/lang/Object;)Ljava/lang/Object;
 
     goto :goto_0
 
     :cond_1
-    invoke-static {v2}, Lkotlin/reflect/jvm/internal/impl/resolve/jvm/JvmClassName;->byInternalName(Ljava/lang/String;)Lkotlin/reflect/jvm/internal/impl/resolve/jvm/JvmClassName;
+    invoke-virtual {v2}, Lkotlin/reflect/jvm/internal/impl/load/kotlin/header/KotlinClassHeader;->getMultifileClassName()Ljava/lang/String;
 
     move-result-object v2
 
-    invoke-virtual {v0, v3, v2}, Ljava/util/HashMap;->put(Ljava/lang/Object;Ljava/lang/Object;)Ljava/lang/Object;
+    if-nez v2, :cond_2
 
     goto :goto_0
 
     :cond_2
-    invoke-virtual {v0, v3, v3}, Ljava/util/HashMap;->put(Ljava/lang/Object;Ljava/lang/Object;)Ljava/lang/Object;
+    invoke-static {v2}, Lkotlin/reflect/jvm/internal/impl/resolve/jvm/JvmClassName;->byInternalName(Ljava/lang/String;)Lkotlin/reflect/jvm/internal/impl/resolve/jvm/JvmClassName;
+
+    move-result-object v2
+
+    const-string v4, "byInternalName(header.mu\u2026: continue@kotlinClasses)"
+
+    invoke-static {v2, v4}, Lkotlin/jvm/internal/Intrinsics;->checkNotNullExpressionValue(Ljava/lang/Object;Ljava/lang/String;)V
+
+    invoke-interface {v0, v3, v2}, Ljava/util/Map;->put(Ljava/lang/Object;Ljava/lang/Object;)Ljava/lang/Object;
 
     goto :goto_0
 

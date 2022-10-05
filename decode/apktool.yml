@@ -10,6 +10,10 @@ doNotCompress:
 - META-INF/androidx.appcompat_appcompat.version
 - META-INF/androidx.arch.core_core-runtime.version
 - META-INF/androidx.asynclayoutinflater_asynclayoutinflater.version
+- META-INF/androidx.camera_camera-camera2.version
+- META-INF/androidx.camera_camera-core.version
+- META-INF/androidx.camera_camera-lifecycle.version
+- META-INF/androidx.camera_camera-view.version
 - META-INF/androidx.cardview_cardview.version
 - META-INF/androidx.coordinatorlayout_coordinatorlayout.version
 - META-INF/androidx.core_core-ktx.version
@@ -20,6 +24,8 @@ doNotCompress:
 - META-INF/androidx.databinding_databindingKtx.version
 - META-INF/androidx.databinding_library.version
 - META-INF/androidx.databinding_viewbinding.version
+- META-INF/androidx.datastore_datastore-preferences.version
+- META-INF/androidx.datastore_datastore.version
 - META-INF/androidx.documentfile_documentfile.version
 - META-INF/androidx.drawerlayout_drawerlayout.version
 - META-INF/androidx.dynamicanimation_dynamicanimation.version
@@ -76,6 +82,7 @@ doNotCompress:
 - META-INF/androidx.versionedparcelable_versionedparcelable.version
 - META-INF/androidx.viewpager2_viewpager2.version
 - META-INF/androidx.viewpager_viewpager.version
+- META-INF/androidx.window_window.version
 - META-INF/androidx.work_work-runtime-ktx.version
 - META-INF/androidx.work_work-runtime.version
 - META-INF/com.google.android.material_material.version
@@ -87,7 +94,6 @@ doNotCompress:
 - META-INF/services/com.fasterxml.jackson.core.ObjectCodec
 - jpg
 - png
-- ogg
 isFrameworkApk: false
 packageInfo:
   forcedPackageId: '127'
@@ -104,12 +110,26 @@ unknownFiles:
   draftv4.schema.json: '8'
   jsv-messages.properties: '8'
   jsv-messages_zh_cn.properties: '8'
+  kotlin-tooling-metadata.json: '8'
   play-services-base.properties: '8'
   play-services-basement.properties: '8'
   play-services-nearby.properties: '8'
   play-services-safetynet.properties: '8'
   play-services-tasks.properties: '8'
   stamp-cert-sha256: '8'
+  boofcv/factory/fiducial/apriltag_16h5.txt: '8'
+  boofcv/factory/fiducial/apriltag_25h7.txt: '8'
+  boofcv/factory/fiducial/apriltag_25h9.txt: '8'
+  boofcv/factory/fiducial/apriltag_36h10.txt: '8'
+  boofcv/factory/fiducial/apriltag_36h11.txt: '8'
+  boofcv/factory/fiducial/aruco_mip_16h3.txt: '8'
+  boofcv/factory/fiducial/aruco_mip_25h7.txt: '8'
+  boofcv/factory/fiducial/aruco_mip_36h12.txt: '8'
+  boofcv/factory/fiducial/aruco_ocv_4x4_1000.txt: '8'
+  boofcv/factory/fiducial/aruco_ocv_5x5_1000.txt: '8'
+  boofcv/factory/fiducial/aruco_ocv_6x6_1000.txt: '8'
+  boofcv/factory/fiducial/aruco_ocv_7x7_1000.txt: '8'
+  boofcv/factory/fiducial/aruco_original.txt: '8'
   external/exposurenotification/diagnosis_key_batch.proto: '8'
   external/exposurenotification/temporary_exposure_key_export.proto: '8'
   external/exposurenotification/temporary_exposure_key_signature_list.proto: '8'
@@ -124,6 +144,7 @@ unknownFiles:
   internal/risk_score_parameters.proto: '8'
   internal/submission_payload.proto: '8'
   internal/dgc/dsc_list.proto: '8'
+  internal/dgc/validation_service_allowlist.proto: '8'
   internal/dgc/value_sets.proto: '8'
   internal/evreg/check_in.proto: '8'
   internal/evreg/check_in_export.proto: '8'
@@ -508,7 +529,6 @@ unknownFiles:
   org/joda/time/tz/data/Australia/Adelaide: '8'
   org/joda/time/tz/data/Australia/Brisbane: '8'
   org/joda/time/tz/data/Australia/Broken_Hill: '8'
-  org/joda/time/tz/data/Australia/Currie: '8'
   org/joda/time/tz/data/Australia/Darwin: '8'
   org/joda/time/tz/data/Australia/Eucla: '8'
   org/joda/time/tz/data/Australia/Hobart: '8'
@@ -624,7 +644,6 @@ unknownFiles:
   org/joda/time/tz/data/Pacific/Chuuk: '8'
   org/joda/time/tz/data/Pacific/Easter: '8'
   org/joda/time/tz/data/Pacific/Efate: '8'
-  org/joda/time/tz/data/Pacific/Enderbury: '8'
   org/joda/time/tz/data/Pacific/Fakaofo: '8'
   org/joda/time/tz/data/Pacific/Fiji: '8'
   org/joda/time/tz/data/Pacific/Funafuti: '8'
@@ -633,6 +652,7 @@ unknownFiles:
   org/joda/time/tz/data/Pacific/Guadalcanal: '8'
   org/joda/time/tz/data/Pacific/Guam: '8'
   org/joda/time/tz/data/Pacific/Honolulu: '8'
+  org/joda/time/tz/data/Pacific/Kanton: '8'
   org/joda/time/tz/data/Pacific/Kiritimati: '8'
   org/joda/time/tz/data/Pacific/Kosrae: '8'
   org/joda/time/tz/data/Pacific/Kwajalein: '8'
@@ -661,5 +681,5 @@ usesFramework:
   tag: null
 version: 2.6.1
 versionInfo:
-  versionCode: '2130102'
-  versionName: 2.13.1
+  versionCode: '2180102'
+  versionName: 2.18.1

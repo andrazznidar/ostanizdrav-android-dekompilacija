@@ -69,7 +69,9 @@
     move v1, v0
 
     :goto_0
-    if-eqz v1, :cond_1
+    const-string v2, "Cannot create a CalendarItemStyle with a styleResId of 0"
+
+    invoke-static {v1, v2}, Landroidx/core/util/Preconditions;->checkArgument(ZLjava/lang/Object;)V
 
     sget-object v1, Lcom/google/android/material/R$styleable;->MaterialCalendarItem:[I
 
@@ -164,15 +166,6 @@
     invoke-direct/range {v5 .. v11}, Lcom/google/android/material/datepicker/CalendarItemStyle;-><init>(Landroid/content/res/ColorStateList;Landroid/content/res/ColorStateList;Landroid/content/res/ColorStateList;ILcom/google/android/material/shape/ShapeAppearanceModel;Landroid/graphics/Rect;)V
 
     return-object p0
-
-    :cond_1
-    new-instance p0, Ljava/lang/IllegalArgumentException;
-
-    const-string p1, "Cannot create a CalendarItemStyle with a styleResId of 0"
-
-    invoke-direct {p0, p1}, Ljava/lang/IllegalArgumentException;-><init>(Ljava/lang/String;)V
-
-    throw p0
 .end method
 
 

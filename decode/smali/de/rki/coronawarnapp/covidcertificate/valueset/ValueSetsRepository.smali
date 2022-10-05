@@ -5,12 +5,14 @@
 
 # annotations
 .annotation system Ldalvik/annotation/SourceDebugExtension;
-    value = "SMAP\nValueSetsRepository.kt\nKotlin\n*S Kotlin\n*F\n+ 1 ValueSetsRepository.kt\nde/rki/coronawarnapp/covidcertificate/valueset/ValueSetsRepository\n+ 2 Transform.kt\nkotlinx/coroutines/flow/FlowKt__TransformKt\n+ 3 Emitters.kt\nkotlinx/coroutines/flow/FlowKt__EmittersKt\n+ 4 SafeCollector.common.kt\nkotlinx/coroutines/flow/internal/SafeCollector_commonKt\n+ 5 fake.kt\nkotlin/jvm/internal/FakeKt\n*L\n1#1,106:1\n47#2:107\n49#2:111\n47#2:112\n49#2:116\n50#3:108\n55#3:110\n50#3:113\n55#3:115\n106#4:109\n106#4:114\n1#5:117\n*S KotlinDebug\n*F\n+ 1 ValueSetsRepository.kt\nde/rki/coronawarnapp/covidcertificate/valueset/ValueSetsRepository\n*L\n63#1:107\n63#1:111\n69#1:112\n69#1:116\n63#1:108\n63#1:110\n69#1:113\n69#1:115\n63#1:109\n69#1:114\n*E\n"
+    value = "SMAP\nValueSetsRepository.kt\nKotlin\n*S Kotlin\n*F\n+ 1 ValueSetsRepository.kt\nde/rki/coronawarnapp/covidcertificate/valueset/ValueSetsRepository\n+ 2 Transform.kt\nkotlinx/coroutines/flow/FlowKt__TransformKt\n+ 3 Emitters.kt\nkotlinx/coroutines/flow/FlowKt__EmittersKt\n+ 4 SafeCollector.common.kt\nkotlinx/coroutines/flow/internal/SafeCollector_commonKt\n+ 5 fake.kt\nkotlin/jvm/internal/FakeKt\n*L\n1#1,108:1\n47#2:109\n49#2:113\n47#2:114\n49#2:118\n50#3:110\n55#3:112\n50#3:115\n55#3:117\n106#4:111\n106#4:116\n1#5:119\n*S KotlinDebug\n*F\n+ 1 ValueSetsRepository.kt\nde/rki/coronawarnapp/covidcertificate/valueset/ValueSetsRepository\n*L\n65#1:109\n65#1:113\n71#1:114\n71#1:118\n65#1:110\n65#1:112\n71#1:115\n71#1:117\n65#1:111\n71#1:116\n*E\n"
 .end annotation
 
 
 # instance fields
 .field public final certificateValueSetServer:Lde/rki/coronawarnapp/covidcertificate/valueset/server/CertificateValueSetServer;
+
+.field public final context:Landroid/content/Context;
 
 .field public final internalData:Lde/rki/coronawarnapp/util/flow/HotDataFlow;
     .annotation system Ldalvik/annotation/Signature;
@@ -28,7 +30,7 @@
 
 
 # direct methods
-.method public constructor <init>(Lde/rki/coronawarnapp/covidcertificate/valueset/server/CertificateValueSetServer;Lde/rki/coronawarnapp/covidcertificate/valueset/valuesets/ValueSetsStorage;Lkotlinx/coroutines/CoroutineScope;Lde/rki/coronawarnapp/util/coroutine/DispatcherProvider;)V
+.method public constructor <init>(Lde/rki/coronawarnapp/covidcertificate/valueset/server/CertificateValueSetServer;Lde/rki/coronawarnapp/covidcertificate/valueset/valuesets/ValueSetsStorage;Lkotlinx/coroutines/CoroutineScope;Lde/rki/coronawarnapp/util/coroutine/DispatcherProvider;Landroid/content/Context;)V
     .locals 7
 
     const-string v0, "certificateValueSetServer"
@@ -47,6 +49,10 @@
 
     invoke-static {p4, v0}, Lkotlin/jvm/internal/Intrinsics;->checkNotNullParameter(Ljava/lang/Object;Ljava/lang/String;)V
 
+    const-string v0, "context"
+
+    invoke-static {p5, v0}, Lkotlin/jvm/internal/Intrinsics;->checkNotNullParameter(Ljava/lang/Object;Ljava/lang/String;)V
+
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
     iput-object p1, p0, Lde/rki/coronawarnapp/covidcertificate/valueset/ValueSetsRepository;->certificateValueSetServer:Lde/rki/coronawarnapp/covidcertificate/valueset/server/CertificateValueSetServer;
@@ -55,13 +61,13 @@
 
     iput-object p3, p0, Lde/rki/coronawarnapp/covidcertificate/valueset/ValueSetsRepository;->scope:Lkotlinx/coroutines/CoroutineScope;
 
+    iput-object p5, p0, Lde/rki/coronawarnapp/covidcertificate/valueset/ValueSetsRepository;->context:Landroid/content/Context;
+
     new-instance p1, Lde/rki/coronawarnapp/util/flow/HotDataFlow;
 
     invoke-interface {p4}, Lde/rki/coronawarnapp/util/coroutine/DispatcherProvider;->getIO()Lkotlin/coroutines/CoroutineContext;
 
     move-result-object v4
-
-    sget p2, Lkotlinx/coroutines/flow/SharingStarted;->$r8$clinit:I
 
     sget-object v5, Lkotlinx/coroutines/flow/SharingStarted$Companion;->Lazily:Lkotlinx/coroutines/flow/SharingStarted;
 
@@ -83,35 +89,27 @@
 
     iget-object p1, p1, Lde/rki/coronawarnapp/util/flow/HotDataFlow;->data:Lkotlinx/coroutines/flow/Flow;
 
-    new-instance v0, Lde/rki/coronawarnapp/covidcertificate/valueset/ValueSetsRepository$1;
+    const/4 p5, 0x1
 
-    invoke-direct {v0, p2}, Lde/rki/coronawarnapp/covidcertificate/valueset/ValueSetsRepository$1;-><init>(Lkotlin/coroutines/Continuation;)V
-
-    new-instance v1, Lkotlinx/coroutines/flow/FlowKt__EmittersKt$onStart$$inlined$unsafeFlow$1;
-
-    invoke-direct {v1, v0, p1}, Lkotlinx/coroutines/flow/FlowKt__EmittersKt$onStart$$inlined$unsafeFlow$1;-><init>(Lkotlin/jvm/functions/Function2;Lkotlinx/coroutines/flow/Flow;)V
-
-    const/4 p1, 0x1
-
-    invoke-static {v1, p1}, Lkotlinx/coroutines/flow/FlowKt;->drop(Lkotlinx/coroutines/flow/Flow;I)Lkotlinx/coroutines/flow/Flow;
+    invoke-static {p1, p5}, Lkotlinx/coroutines/flow/FlowKt;->drop(Lkotlinx/coroutines/flow/Flow;I)Lkotlinx/coroutines/flow/Flow;
 
     move-result-object p1
 
-    new-instance v0, Lde/rki/coronawarnapp/covidcertificate/valueset/ValueSetsRepository$2;
+    new-instance p5, Lde/rki/coronawarnapp/covidcertificate/valueset/ValueSetsRepository$1;
 
-    invoke-direct {v0, p0, p2}, Lde/rki/coronawarnapp/covidcertificate/valueset/ValueSetsRepository$2;-><init>(Lde/rki/coronawarnapp/covidcertificate/valueset/ValueSetsRepository;Lkotlin/coroutines/Continuation;)V
+    invoke-direct {p5, p0, p2}, Lde/rki/coronawarnapp/covidcertificate/valueset/ValueSetsRepository$1;-><init>(Lde/rki/coronawarnapp/covidcertificate/valueset/ValueSetsRepository;Lkotlin/coroutines/Continuation;)V
 
-    new-instance v1, Lkotlinx/coroutines/flow/FlowKt__TransformKt$onEach$$inlined$unsafeTransform$1;
+    new-instance v0, Lkotlinx/coroutines/flow/FlowKt__TransformKt$onEach$$inlined$unsafeTransform$1;
 
-    invoke-direct {v1, p1, v0}, Lkotlinx/coroutines/flow/FlowKt__TransformKt$onEach$$inlined$unsafeTransform$1;-><init>(Lkotlinx/coroutines/flow/Flow;Lkotlin/jvm/functions/Function2;)V
+    invoke-direct {v0, p1, p5}, Lkotlinx/coroutines/flow/FlowKt__TransformKt$onEach$$inlined$unsafeTransform$1;-><init>(Lkotlinx/coroutines/flow/Flow;Lkotlin/jvm/functions/Function2;)V
 
-    new-instance p1, Lde/rki/coronawarnapp/covidcertificate/valueset/ValueSetsRepository$3;
+    new-instance p1, Lde/rki/coronawarnapp/covidcertificate/valueset/ValueSetsRepository$2;
 
-    invoke-direct {p1, p2}, Lde/rki/coronawarnapp/covidcertificate/valueset/ValueSetsRepository$3;-><init>(Lkotlin/coroutines/Continuation;)V
+    invoke-direct {p1, p2}, Lde/rki/coronawarnapp/covidcertificate/valueset/ValueSetsRepository$2;-><init>(Lkotlin/coroutines/Continuation;)V
 
     new-instance p2, Lkotlinx/coroutines/flow/FlowKt__ErrorsKt$catch$$inlined$unsafeFlow$1;
 
-    invoke-direct {p2, v1, p1}, Lkotlinx/coroutines/flow/FlowKt__ErrorsKt$catch$$inlined$unsafeFlow$1;-><init>(Lkotlinx/coroutines/flow/Flow;Lkotlin/jvm/functions/Function3;)V
+    invoke-direct {p2, v0, p1}, Lkotlinx/coroutines/flow/FlowKt__ErrorsKt$catch$$inlined$unsafeFlow$1;-><init>(Lkotlinx/coroutines/flow/Flow;Lkotlin/jvm/functions/Function3;)V
 
     invoke-interface {p4}, Lde/rki/coronawarnapp/util/coroutine/DispatcherProvider;->getIO()Lkotlin/coroutines/CoroutineContext;
 
@@ -351,11 +349,9 @@
 
     sget-object p0, Ltimber/log/Timber;->Forest:Ltimber/log/Timber$Forest;
 
-    new-array p1, v6, [Ljava/lang/Object;
+    new-array p1, v5, [Ljava/lang/Object;
 
-    aput-object v1, p1, v5
-
-    const-string p2, "New value sets %s"
+    const-string p2, "Value set has been obtained from server"
 
     invoke-virtual {p0, p2, p1}, Ltimber/log/Timber$Forest;->v(Ljava/lang/String;[Ljava/lang/Object;)V
 

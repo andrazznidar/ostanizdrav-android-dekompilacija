@@ -1,4 +1,4 @@
-.class public Lkotlin/reflect/jvm/internal/impl/storage/LockBasedStorageManager$KeyWithComputation;
+.class Lkotlin/reflect/jvm/internal/impl/storage/LockBasedStorageManager$KeyWithComputation;
 .super Ljava/lang/Object;
 .source "LockBasedStorageManager.java"
 
@@ -26,7 +26,7 @@
 
 
 # instance fields
-.field public final computation:Lkotlin/jvm/functions/Function0;
+.field private final computation:Lkotlin/jvm/functions/Function0;
     .annotation system Ldalvik/annotation/Signature;
         value = {
             "Lkotlin/jvm/functions/Function0<",
@@ -35,7 +35,7 @@
     .end annotation
 .end field
 
-.field public final key:Ljava/lang/Object;
+.field private final key:Ljava/lang/Object;
     .annotation system Ldalvik/annotation/Signature;
         value = {
             "TK;"
@@ -64,6 +64,14 @@
     return-void
 .end method
 
+.method public static synthetic access$400(Lkotlin/reflect/jvm/internal/impl/storage/LockBasedStorageManager$KeyWithComputation;)Lkotlin/jvm/functions/Function0;
+    .locals 0
+
+    iget-object p0, p0, Lkotlin/reflect/jvm/internal/impl/storage/LockBasedStorageManager$KeyWithComputation;->computation:Lkotlin/jvm/functions/Function0;
+
+    return-object p0
+.end method
+
 
 # virtual methods
 .method public equals(Ljava/lang/Object;)Z
@@ -80,7 +88,9 @@
 
     if-eqz p1, :cond_3
 
-    const-class v2, Lkotlin/reflect/jvm/internal/impl/storage/LockBasedStorageManager$KeyWithComputation;
+    invoke-virtual {p0}, Ljava/lang/Object;->getClass()Ljava/lang/Class;
+
+    move-result-object v2
 
     invoke-virtual {p1}, Ljava/lang/Object;->getClass()Ljava/lang/Class;
 

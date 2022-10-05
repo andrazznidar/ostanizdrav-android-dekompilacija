@@ -28,11 +28,11 @@
     .end annotation
 .end field
 
-.field public final module:Lde/rki/coronawarnapp/rootdetection/RootDetectionModule;
+.field public final module:Lde/rki/coronawarnapp/covidcertificate/pdf/core/ExportCertificateModule;
 
 
 # direct methods
-.method public constructor <init>(Lde/rki/coronawarnapp/rootdetection/RootDetectionModule;Ljavax/inject/Provider;)V
+.method public constructor <init>(Lde/rki/coronawarnapp/covidcertificate/pdf/core/ExportCertificateModule;Ljavax/inject/Provider;)V
     .locals 0
     .annotation system Ldalvik/annotation/MethodParameters;
         accessFlags = {
@@ -48,7 +48,7 @@
     .annotation system Ldalvik/annotation/Signature;
         value = {
             "(",
-            "Lde/rki/coronawarnapp/rootdetection/RootDetectionModule;",
+            "Lde/rki/coronawarnapp/covidcertificate/pdf/core/ExportCertificateModule;",
             "Ljavax/inject/Provider<",
             "Landroid/content/Context;",
             ">;)V"
@@ -57,7 +57,7 @@
 
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
-    iput-object p1, p0, Lde/rki/coronawarnapp/covidcertificate/pdf/core/ExportCertificateModule_ProvideFontFactory;->module:Lde/rki/coronawarnapp/rootdetection/RootDetectionModule;
+    iput-object p1, p0, Lde/rki/coronawarnapp/covidcertificate/pdf/core/ExportCertificateModule_ProvideFontFactory;->module:Lde/rki/coronawarnapp/covidcertificate/pdf/core/ExportCertificateModule;
 
     iput-object p2, p0, Lde/rki/coronawarnapp/covidcertificate/pdf/core/ExportCertificateModule_ProvideFontFactory;->contextProvider:Ljavax/inject/Provider;
 
@@ -69,7 +69,7 @@
 .method public get()Ljava/lang/Object;
     .locals 2
 
-    iget-object v0, p0, Lde/rki/coronawarnapp/covidcertificate/pdf/core/ExportCertificateModule_ProvideFontFactory;->module:Lde/rki/coronawarnapp/rootdetection/RootDetectionModule;
+    iget-object v0, p0, Lde/rki/coronawarnapp/covidcertificate/pdf/core/ExportCertificateModule_ProvideFontFactory;->module:Lde/rki/coronawarnapp/covidcertificate/pdf/core/ExportCertificateModule;
 
     iget-object v1, p0, Lde/rki/coronawarnapp/covidcertificate/pdf/core/ExportCertificateModule_ProvideFontFactory;->contextProvider:Ljavax/inject/Provider;
 

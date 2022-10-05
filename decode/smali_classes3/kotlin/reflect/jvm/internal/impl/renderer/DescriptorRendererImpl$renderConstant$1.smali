@@ -1,4 +1,4 @@
-.class public final Lkotlin/reflect/jvm/internal/impl/renderer/DescriptorRendererImpl$renderConstant$1;
+.class final Lkotlin/reflect/jvm/internal/impl/renderer/DescriptorRendererImpl$renderConstant$1;
 .super Lkotlin/jvm/internal/Lambda;
 .source "DescriptorRendererImpl.kt"
 
@@ -47,10 +47,16 @@
 
 
 # virtual methods
-.method public invoke(Ljava/lang/Object;)Ljava/lang/Object;
+.method public final invoke(Lkotlin/reflect/jvm/internal/impl/resolve/constants/ConstantValue;)Ljava/lang/CharSequence;
     .locals 1
-
-    check-cast p1, Lkotlin/reflect/jvm/internal/impl/resolve/constants/ConstantValue;
+    .annotation system Ldalvik/annotation/Signature;
+        value = {
+            "(",
+            "Lkotlin/reflect/jvm/internal/impl/resolve/constants/ConstantValue<",
+            "*>;)",
+            "Ljava/lang/CharSequence;"
+        }
+    .end annotation
 
     const-string v0, "it"
 
@@ -58,7 +64,19 @@
 
     iget-object v0, p0, Lkotlin/reflect/jvm/internal/impl/renderer/DescriptorRendererImpl$renderConstant$1;->this$0:Lkotlin/reflect/jvm/internal/impl/renderer/DescriptorRendererImpl;
 
-    invoke-virtual {v0, p1}, Lkotlin/reflect/jvm/internal/impl/renderer/DescriptorRendererImpl;->renderConstant(Lkotlin/reflect/jvm/internal/impl/resolve/constants/ConstantValue;)Ljava/lang/String;
+    invoke-static {v0, p1}, Lkotlin/reflect/jvm/internal/impl/renderer/DescriptorRendererImpl;->access$renderConstant(Lkotlin/reflect/jvm/internal/impl/renderer/DescriptorRendererImpl;Lkotlin/reflect/jvm/internal/impl/resolve/constants/ConstantValue;)Ljava/lang/String;
+
+    move-result-object p1
+
+    return-object p1
+.end method
+
+.method public bridge synthetic invoke(Ljava/lang/Object;)Ljava/lang/Object;
+    .locals 0
+
+    check-cast p1, Lkotlin/reflect/jvm/internal/impl/resolve/constants/ConstantValue;
+
+    invoke-virtual {p0, p1}, Lkotlin/reflect/jvm/internal/impl/renderer/DescriptorRendererImpl$renderConstant$1;->invoke(Lkotlin/reflect/jvm/internal/impl/resolve/constants/ConstantValue;)Ljava/lang/CharSequence;
 
     move-result-object p1
 

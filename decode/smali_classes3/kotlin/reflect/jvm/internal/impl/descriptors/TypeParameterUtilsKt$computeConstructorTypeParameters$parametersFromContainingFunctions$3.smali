@@ -1,4 +1,4 @@
-.class public final Lkotlin/reflect/jvm/internal/impl/descriptors/TypeParameterUtilsKt$computeConstructorTypeParameters$parametersFromContainingFunctions$3;
+.class final Lkotlin/reflect/jvm/internal/impl/descriptors/TypeParameterUtilsKt$computeConstructorTypeParameters$parametersFromContainingFunctions$3;
 .super Lkotlin/jvm/internal/Lambda;
 .source "typeParameterUtils.kt"
 
@@ -58,10 +58,30 @@
 
 
 # virtual methods
-.method public invoke(Ljava/lang/Object;)Ljava/lang/Object;
-    .locals 1
+.method public bridge synthetic invoke(Ljava/lang/Object;)Ljava/lang/Object;
+    .locals 0
 
     check-cast p1, Lkotlin/reflect/jvm/internal/impl/descriptors/DeclarationDescriptor;
+
+    invoke-virtual {p0, p1}, Lkotlin/reflect/jvm/internal/impl/descriptors/TypeParameterUtilsKt$computeConstructorTypeParameters$parametersFromContainingFunctions$3;->invoke(Lkotlin/reflect/jvm/internal/impl/descriptors/DeclarationDescriptor;)Lkotlin/sequences/Sequence;
+
+    move-result-object p1
+
+    return-object p1
+.end method
+
+.method public final invoke(Lkotlin/reflect/jvm/internal/impl/descriptors/DeclarationDescriptor;)Lkotlin/sequences/Sequence;
+    .locals 1
+    .annotation system Ldalvik/annotation/Signature;
+        value = {
+            "(",
+            "Lkotlin/reflect/jvm/internal/impl/descriptors/DeclarationDescriptor;",
+            ")",
+            "Lkotlin/sequences/Sequence<",
+            "Lkotlin/reflect/jvm/internal/impl/descriptors/TypeParameterDescriptor;",
+            ">;"
+        }
+    .end annotation
 
     const-string v0, "it"
 

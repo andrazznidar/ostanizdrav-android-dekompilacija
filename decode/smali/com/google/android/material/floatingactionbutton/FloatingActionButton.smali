@@ -400,7 +400,7 @@
 .method public static synthetic access$101(Lcom/google/android/material/floatingactionbutton/FloatingActionButton;Landroid/graphics/drawable/Drawable;)V
     .locals 0
 
-    invoke-super {p0, p1}, Landroid/view/View;->setBackgroundDrawable(Landroid/graphics/drawable/Drawable;)V
+    invoke-super {p0, p1}, Landroid/widget/ImageButton;->setBackgroundDrawable(Landroid/graphics/drawable/Drawable;)V
 
     return-void
 .end method
@@ -563,7 +563,7 @@
 .method public drawableStateChanged()V
     .locals 2
 
-    invoke-super {p0}, Landroid/widget/ImageView;->drawableStateChanged()V
+    invoke-super {p0}, Landroid/widget/ImageButton;->drawableStateChanged()V
 
     invoke-direct {p0}, Lcom/google/android/material/floatingactionbutton/FloatingActionButton;->getImpl()Lcom/google/android/material/floatingactionbutton/FloatingActionButtonImpl;
 
@@ -1109,7 +1109,7 @@
 .method public jumpDrawablesToCurrentState()V
     .locals 1
 
-    invoke-super {p0}, Landroid/widget/ImageView;->jumpDrawablesToCurrentState()V
+    invoke-super {p0}, Landroid/widget/ImageButton;->jumpDrawablesToCurrentState()V
 
     invoke-direct {p0}, Lcom/google/android/material/floatingactionbutton/FloatingActionButton;->getImpl()Lcom/google/android/material/floatingactionbutton/FloatingActionButtonImpl;
 
@@ -1214,7 +1214,7 @@
 .method public onAttachedToWindow()V
     .locals 3
 
-    invoke-super {p0}, Landroid/widget/ImageView;->onAttachedToWindow()V
+    invoke-super {p0}, Landroid/widget/ImageButton;->onAttachedToWindow()V
 
     invoke-direct {p0}, Lcom/google/android/material/floatingactionbutton/FloatingActionButton;->getImpl()Lcom/google/android/material/floatingactionbutton/FloatingActionButtonImpl;
 
@@ -1226,7 +1226,7 @@
 
     iget-object v2, v0, Lcom/google/android/material/floatingactionbutton/FloatingActionButtonImpl;->view:Lcom/google/android/material/floatingactionbutton/FloatingActionButton;
 
-    invoke-static {v2, v1}, Lcom/google/android/material/shape/MaterialShapeUtils;->setParentAbsoluteElevation(Landroid/view/View;Lcom/google/android/material/shape/MaterialShapeDrawable;)V
+    invoke-static {v2, v1}, Lcom/google/common/base/Preconditions;->setParentAbsoluteElevation(Landroid/view/View;Lcom/google/android/material/shape/MaterialShapeDrawable;)V
 
     :cond_0
     instance-of v1, v0, Lcom/google/android/material/floatingactionbutton/FloatingActionButtonImplLollipop;
@@ -1263,7 +1263,7 @@
 .method public onDetachedFromWindow()V
     .locals 3
 
-    invoke-super {p0}, Landroid/widget/ImageView;->onDetachedFromWindow()V
+    invoke-super {p0}, Landroid/widget/ImageButton;->onDetachedFromWindow()V
 
     invoke-direct {p0}, Lcom/google/android/material/floatingactionbutton/FloatingActionButton;->getImpl()Lcom/google/android/material/floatingactionbutton/FloatingActionButtonImpl;
 
@@ -1352,7 +1352,7 @@
 
     if-nez v0, :cond_0
 
-    invoke-super {p0, p1}, Landroid/view/View;->onRestoreInstanceState(Landroid/os/Parcelable;)V
+    invoke-super {p0, p1}, Landroid/widget/ImageButton;->onRestoreInstanceState(Landroid/os/Parcelable;)V
 
     return-void
 
@@ -1361,7 +1361,7 @@
 
     iget-object v0, p1, Landroidx/customview/view/AbsSavedState;->mSuperState:Landroid/os/Parcelable;
 
-    invoke-super {p0, v0}, Landroid/view/View;->onRestoreInstanceState(Landroid/os/Parcelable;)V
+    invoke-super {p0, v0}, Landroid/widget/ImageButton;->onRestoreInstanceState(Landroid/os/Parcelable;)V
 
     iget-object v0, p0, Lcom/google/android/material/floatingactionbutton/FloatingActionButton;->expandableWidgetHelper:Lcom/google/android/material/expandable/ExpandableWidgetHelper;
 
@@ -1426,7 +1426,7 @@
 .method public onSaveInstanceState()Landroid/os/Parcelable;
     .locals 6
 
-    invoke-super {p0}, Landroid/view/View;->onSaveInstanceState()Landroid/os/Parcelable;
+    invoke-super {p0}, Landroid/widget/ImageButton;->onSaveInstanceState()Landroid/os/Parcelable;
 
     move-result-object v0
 
@@ -1512,7 +1512,7 @@
     return p1
 
     :cond_0
-    invoke-super {p0, p1}, Landroid/view/View;->onTouchEvent(Landroid/view/MotionEvent;)Z
+    invoke-super {p0, p1}, Landroid/widget/ImageButton;->onTouchEvent(Landroid/view/MotionEvent;)Z
 
     move-result p1
 
@@ -1760,7 +1760,7 @@
 .method public setElevation(F)V
     .locals 1
 
-    invoke-super {p0, p1}, Landroid/view/View;->setElevation(F)V
+    invoke-super {p0, p1}, Landroid/widget/ImageButton;->setElevation(F)V
 
     invoke-direct {p0}, Lcom/google/android/material/floatingactionbutton/FloatingActionButton;->getImpl()Lcom/google/android/material/floatingactionbutton/FloatingActionButtonImpl;
 
@@ -1841,7 +1841,7 @@
 
     if-eq v0, p1, :cond_0
 
-    invoke-super {p0, p1}, Landroid/widget/ImageView;->setImageDrawable(Landroid/graphics/drawable/Drawable;)V
+    invoke-super {p0, p1}, Landroid/widget/ImageButton;->setImageDrawable(Landroid/graphics/drawable/Drawable;)V
 
     invoke-direct {p0}, Lcom/google/android/material/floatingactionbutton/FloatingActionButton;->getImpl()Lcom/google/android/material/floatingactionbutton/FloatingActionButtonImpl;
 
@@ -1909,7 +1909,7 @@
 .method public setScaleX(F)V
     .locals 0
 
-    invoke-super {p0, p1}, Landroid/view/View;->setScaleX(F)V
+    invoke-super {p0, p1}, Landroid/widget/ImageButton;->setScaleX(F)V
 
     invoke-direct {p0}, Lcom/google/android/material/floatingactionbutton/FloatingActionButton;->getImpl()Lcom/google/android/material/floatingactionbutton/FloatingActionButtonImpl;
 
@@ -1923,7 +1923,7 @@
 .method public setScaleY(F)V
     .locals 0
 
-    invoke-super {p0, p1}, Landroid/view/View;->setScaleY(F)V
+    invoke-super {p0, p1}, Landroid/widget/ImageButton;->setScaleY(F)V
 
     invoke-direct {p0}, Lcom/google/android/material/floatingactionbutton/FloatingActionButton;->getImpl()Lcom/google/android/material/floatingactionbutton/FloatingActionButtonImpl;
 
@@ -2056,7 +2056,7 @@
 .method public setTranslationX(F)V
     .locals 0
 
-    invoke-super {p0, p1}, Landroid/view/View;->setTranslationX(F)V
+    invoke-super {p0, p1}, Landroid/widget/ImageButton;->setTranslationX(F)V
 
     invoke-direct {p0}, Lcom/google/android/material/floatingactionbutton/FloatingActionButton;->getImpl()Lcom/google/android/material/floatingactionbutton/FloatingActionButtonImpl;
 
@@ -2070,7 +2070,7 @@
 .method public setTranslationY(F)V
     .locals 0
 
-    invoke-super {p0, p1}, Landroid/view/View;->setTranslationY(F)V
+    invoke-super {p0, p1}, Landroid/widget/ImageButton;->setTranslationY(F)V
 
     invoke-direct {p0}, Lcom/google/android/material/floatingactionbutton/FloatingActionButton;->getImpl()Lcom/google/android/material/floatingactionbutton/FloatingActionButtonImpl;
 
@@ -2084,7 +2084,7 @@
 .method public setTranslationZ(F)V
     .locals 0
 
-    invoke-super {p0, p1}, Landroid/view/View;->setTranslationZ(F)V
+    invoke-super {p0, p1}, Landroid/widget/ImageButton;->setTranslationZ(F)V
 
     invoke-direct {p0}, Lcom/google/android/material/floatingactionbutton/FloatingActionButton;->getImpl()Lcom/google/android/material/floatingactionbutton/FloatingActionButtonImpl;
 

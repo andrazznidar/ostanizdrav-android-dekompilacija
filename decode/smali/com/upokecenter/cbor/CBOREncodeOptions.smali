@@ -16,6 +16,8 @@
 
 .field public final propVarfloat64:Z
 
+.field public final propVarkeepkeyorder:Z
+
 .field public final propVarresolvereferences:Z
 
 .field public final propVaruseindeflengthstrings:Z
@@ -47,15 +49,15 @@
 
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
-    new-instance v0, Lokhttp3/ConnectionPool;
+    new-instance v0, Lcom/upokecenter/cbor/OptionsParser;
 
-    invoke-direct {v0, p1}, Lokhttp3/ConnectionPool;-><init>(Ljava/lang/String;)V
+    invoke-direct {v0, p1}, Lcom/upokecenter/cbor/OptionsParser;-><init>(Ljava/lang/String;)V
 
     const-string p1, "resolvereferences"
 
     const/4 v1, 0x0
 
-    invoke-virtual {v0, p1, v1}, Lokhttp3/ConnectionPool;->GetBoolean(Ljava/lang/String;Z)Z
+    invoke-virtual {v0, p1, v1}, Lcom/upokecenter/cbor/OptionsParser;->GetBoolean(Ljava/lang/String;Z)Z
 
     move-result p1
 
@@ -63,7 +65,7 @@
 
     const-string/jumbo p1, "useindeflengthstrings"
 
-    invoke-virtual {v0, p1, v1}, Lokhttp3/ConnectionPool;->GetBoolean(Ljava/lang/String;Z)Z
+    invoke-virtual {v0, p1, v1}, Lcom/upokecenter/cbor/OptionsParser;->GetBoolean(Ljava/lang/String;Z)Z
 
     move-result p1
 
@@ -71,7 +73,7 @@
 
     const-string p1, "float64"
 
-    invoke-virtual {v0, p1, v1}, Lokhttp3/ConnectionPool;->GetBoolean(Ljava/lang/String;Z)Z
+    invoke-virtual {v0, p1, v1}, Lcom/upokecenter/cbor/OptionsParser;->GetBoolean(Ljava/lang/String;Z)Z
 
     move-result p1
 
@@ -79,15 +81,23 @@
 
     const-string p1, "allowduplicatekeys"
 
-    invoke-virtual {v0, p1, v1}, Lokhttp3/ConnectionPool;->GetBoolean(Ljava/lang/String;Z)Z
+    invoke-virtual {v0, p1, v1}, Lcom/upokecenter/cbor/OptionsParser;->GetBoolean(Ljava/lang/String;Z)Z
 
     move-result p1
 
     iput-boolean p1, p0, Lcom/upokecenter/cbor/CBOREncodeOptions;->propVarallowduplicatekeys:Z
 
+    const-string p1, "keepkeyorder"
+
+    invoke-virtual {v0, p1, v1}, Lcom/upokecenter/cbor/OptionsParser;->GetBoolean(Ljava/lang/String;Z)Z
+
+    move-result p1
+
+    iput-boolean p1, p0, Lcom/upokecenter/cbor/CBOREncodeOptions;->propVarkeepkeyorder:Z
+
     const-string p1, "allowempty"
 
-    invoke-virtual {v0, p1, v1}, Lokhttp3/ConnectionPool;->GetBoolean(Ljava/lang/String;Z)Z
+    invoke-virtual {v0, p1, v1}, Lcom/upokecenter/cbor/OptionsParser;->GetBoolean(Ljava/lang/String;Z)Z
 
     move-result p1
 
@@ -95,7 +105,7 @@
 
     const-string p1, "ctap2canonical"
 
-    invoke-virtual {v0, p1, v1}, Lokhttp3/ConnectionPool;->GetBoolean(Ljava/lang/String;Z)Z
+    invoke-virtual {v0, p1, v1}, Lcom/upokecenter/cbor/OptionsParser;->GetBoolean(Ljava/lang/String;Z)Z
 
     move-result p1
 
@@ -187,11 +197,11 @@
     :goto_3
     invoke-virtual {v0, v1}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
 
-    const-string v1, ";resolvereferences="
+    const-string v1, ";keepkeyorder="
 
     invoke-virtual {v0, v1}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
 
-    iget-boolean v1, p0, Lcom/upokecenter/cbor/CBOREncodeOptions;->propVarresolvereferences:Z
+    iget-boolean v1, p0, Lcom/upokecenter/cbor/CBOREncodeOptions;->propVarkeepkeyorder:Z
 
     if-eqz v1, :cond_4
 
@@ -205,20 +215,38 @@
     :goto_4
     invoke-virtual {v0, v1}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
 
+    const-string v1, ";resolvereferences="
+
+    invoke-virtual {v0, v1}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+
+    iget-boolean v1, p0, Lcom/upokecenter/cbor/CBOREncodeOptions;->propVarresolvereferences:Z
+
+    if-eqz v1, :cond_5
+
+    move-object v1, v2
+
+    goto :goto_5
+
+    :cond_5
+    move-object v1, v3
+
+    :goto_5
+    invoke-virtual {v0, v1}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+
     const-string v1, ";allowempty="
 
     invoke-virtual {v0, v1}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
 
     iget-boolean v1, p0, Lcom/upokecenter/cbor/CBOREncodeOptions;->propVarallowempty:Z
 
-    if-eqz v1, :cond_5
+    if-eqz v1, :cond_6
 
-    goto :goto_5
+    goto :goto_6
 
-    :cond_5
+    :cond_6
     move-object v2, v3
 
-    :goto_5
+    :goto_6
     invoke-virtual {v0, v2}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
 
     invoke-virtual {v0}, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;

@@ -18,12 +18,16 @@
 
 
 # instance fields
-.field public final javaElement:Lkotlin/reflect/jvm/internal/impl/descriptors/runtime/structure/ReflectJavaElement;
+.field private final javaElement:Lkotlin/reflect/jvm/internal/impl/descriptors/runtime/structure/ReflectJavaElement;
 
 
 # direct methods
 .method public constructor <init>(Lkotlin/reflect/jvm/internal/impl/descriptors/runtime/structure/ReflectJavaElement;)V
-    .locals 0
+    .locals 1
+
+    const-string v0, "javaElement"
+
+    invoke-static {p1, v0}, Lkotlin/jvm/internal/Intrinsics;->checkNotNullParameter(Ljava/lang/Object;Ljava/lang/String;)V
 
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
@@ -35,14 +39,18 @@
 
 # virtual methods
 .method public getContainingFile()Lkotlin/reflect/jvm/internal/impl/descriptors/SourceFile;
-    .locals 1
+    .locals 2
 
     sget-object v0, Lkotlin/reflect/jvm/internal/impl/descriptors/SourceFile;->NO_SOURCE_FILE:Lkotlin/reflect/jvm/internal/impl/descriptors/SourceFile;
+
+    const-string v1, "NO_SOURCE_FILE"
+
+    invoke-static {v0, v1}, Lkotlin/jvm/internal/Intrinsics;->checkNotNullExpressionValue(Ljava/lang/Object;Ljava/lang/String;)V
 
     return-object v0
 .end method
 
-.method public getJavaElement()Lkotlin/reflect/jvm/internal/impl/load/java/structure/JavaElement;
+.method public getJavaElement()Lkotlin/reflect/jvm/internal/impl/descriptors/runtime/structure/ReflectJavaElement;
     .locals 1
 
     iget-object v0, p0, Lkotlin/reflect/jvm/internal/impl/descriptors/runtime/components/RuntimeSourceElementFactory$RuntimeSourceElement;->javaElement:Lkotlin/reflect/jvm/internal/impl/descriptors/runtime/structure/ReflectJavaElement;
@@ -50,8 +58,18 @@
     return-object v0
 .end method
 
+.method public bridge synthetic getJavaElement()Lkotlin/reflect/jvm/internal/impl/load/java/structure/JavaElement;
+    .locals 1
+
+    invoke-virtual {p0}, Lkotlin/reflect/jvm/internal/impl/descriptors/runtime/components/RuntimeSourceElementFactory$RuntimeSourceElement;->getJavaElement()Lkotlin/reflect/jvm/internal/impl/descriptors/runtime/structure/ReflectJavaElement;
+
+    move-result-object v0
+
+    return-object v0
+.end method
+
 .method public toString()Ljava/lang/String;
-    .locals 3
+    .locals 2
 
     new-instance v0, Ljava/lang/StringBuilder;
 
@@ -59,11 +77,19 @@
 
     const-class v1, Lkotlin/reflect/jvm/internal/impl/descriptors/runtime/components/RuntimeSourceElementFactory$RuntimeSourceElement;
 
-    const-string v2, ": "
+    invoke-virtual {v1}, Ljava/lang/Class;->getName()Ljava/lang/String;
 
-    invoke-static {v1, v0, v2}, Lcom/fasterxml/jackson/annotation/JsonInclude$Value$$ExternalSyntheticOutline0;->m(Ljava/lang/Class;Ljava/lang/StringBuilder;Ljava/lang/String;)V
+    move-result-object v1
 
-    iget-object v1, p0, Lkotlin/reflect/jvm/internal/impl/descriptors/runtime/components/RuntimeSourceElementFactory$RuntimeSourceElement;->javaElement:Lkotlin/reflect/jvm/internal/impl/descriptors/runtime/structure/ReflectJavaElement;
+    invoke-virtual {v0, v1}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+
+    const-string v1, ": "
+
+    invoke-virtual {v0, v1}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+
+    invoke-virtual {p0}, Lkotlin/reflect/jvm/internal/impl/descriptors/runtime/components/RuntimeSourceElementFactory$RuntimeSourceElement;->getJavaElement()Lkotlin/reflect/jvm/internal/impl/descriptors/runtime/structure/ReflectJavaElement;
+
+    move-result-object v1
 
     invoke-virtual {v0, v1}, Ljava/lang/StringBuilder;->append(Ljava/lang/Object;)Ljava/lang/StringBuilder;
 

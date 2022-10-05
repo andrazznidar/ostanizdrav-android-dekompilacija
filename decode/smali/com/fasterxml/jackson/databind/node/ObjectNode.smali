@@ -8,8 +8,7 @@
     value = {
         "Lcom/fasterxml/jackson/databind/node/ContainerNode<",
         "Lcom/fasterxml/jackson/databind/node/ObjectNode;",
-        ">;",
-        "Ljava/io/Serializable;"
+        ">;"
     }
 .end annotation
 
@@ -1101,6 +1100,27 @@
     iget-object v0, p0, Lcom/fasterxml/jackson/databind/node/ObjectNode;->_children:Ljava/util/Map;
 
     invoke-interface {v0, p1, p2}, Ljava/util/Map;->put(Ljava/lang/Object;Ljava/lang/Object;)Ljava/lang/Object;
+
+    return-object p0
+.end method
+
+.method public setAll(Lcom/fasterxml/jackson/databind/node/ObjectNode;)Lcom/fasterxml/jackson/databind/JsonNode;
+    .locals 1
+    .annotation system Ldalvik/annotation/Signature;
+        value = {
+            "<T:",
+            "Lcom/fasterxml/jackson/databind/JsonNode;",
+            ">(",
+            "Lcom/fasterxml/jackson/databind/node/ObjectNode;",
+            ")TT;"
+        }
+    .end annotation
+
+    iget-object v0, p0, Lcom/fasterxml/jackson/databind/node/ObjectNode;->_children:Ljava/util/Map;
+
+    iget-object p1, p1, Lcom/fasterxml/jackson/databind/node/ObjectNode;->_children:Ljava/util/Map;
+
+    invoke-interface {v0, p1}, Ljava/util/Map;->putAll(Ljava/util/Map;)V
 
     return-object p0
 .end method

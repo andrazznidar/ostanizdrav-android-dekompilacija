@@ -91,7 +91,7 @@
 
     iput-object p1, p0, Lkotlinx/coroutines/flow/StateFlowSlot;->_state:Ljava/lang/Object;
 
-    sget-object p1, Lkotlinx/coroutines/flow/internal/AbstractSharedFlowKt;->EMPTY_RESUMES:[Lkotlin/coroutines/Continuation;
+    sget-object p1, Lde/rki/coronawarnapp/bugreporting/BugReportingModule;->EMPTY_RESUMES:[Lkotlin/coroutines/Continuation;
 
     return-object p1
 .end method

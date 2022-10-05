@@ -56,15 +56,27 @@
 
     iget-object v0, p0, Lkotlin/collections/ReversedList;->delegate:Ljava/util/List;
 
-    invoke-virtual {p0}, Lkotlin/collections/AbstractMutableList;->size()I
-
-    move-result v1
+    const/4 v1, 0x0
 
     if-ltz p1, :cond_0
 
-    if-lt v1, p1, :cond_0
+    invoke-interface {p0}, Ljava/util/List;->size()I
 
-    invoke-virtual {p0}, Lkotlin/collections/AbstractMutableList;->size()I
+    move-result v2
+
+    if-gt p1, v2, :cond_0
+
+    const/4 v2, 0x1
+
+    goto :goto_0
+
+    :cond_0
+    move v2, v1
+
+    :goto_0
+    if-eqz v2, :cond_1
+
+    invoke-interface {p0}, Ljava/util/List;->size()I
 
     move-result v1
 
@@ -74,28 +86,26 @@
 
     return-void
 
-    :cond_0
+    :cond_1
     new-instance p2, Ljava/lang/IndexOutOfBoundsException;
 
     const-string v0, "Position index "
 
-    const-string v1, " must be in range ["
+    const-string v2, " must be in range ["
 
-    invoke-static {v0, p1, v1}, Landroidx/appcompat/widget/SuggestionsAdapter$$ExternalSyntheticOutline0;->m(Ljava/lang/String;ILjava/lang/String;)Ljava/lang/StringBuilder;
+    invoke-static {v0, p1, v2}, Landroidx/appcompat/widget/SuggestionsAdapter$$ExternalSyntheticOutline0;->m(Ljava/lang/String;ILjava/lang/String;)Ljava/lang/StringBuilder;
 
     move-result-object p1
 
-    const/4 v0, 0x0
+    new-instance v0, Lkotlin/ranges/IntRange;
 
-    new-instance v1, Lkotlin/ranges/IntRange;
-
-    invoke-virtual {p0}, Lkotlin/collections/AbstractMutableList;->size()I
+    invoke-interface {p0}, Ljava/util/List;->size()I
 
     move-result v2
 
-    invoke-direct {v1, v0, v2}, Lkotlin/ranges/IntRange;-><init>(II)V
+    invoke-direct {v0, v1, v2}, Lkotlin/ranges/IntRange;-><init>(II)V
 
-    invoke-virtual {p1, v1}, Ljava/lang/StringBuilder;->append(Ljava/lang/Object;)Ljava/lang/StringBuilder;
+    invoke-virtual {p1, v0}, Ljava/lang/StringBuilder;->append(Ljava/lang/Object;)Ljava/lang/StringBuilder;
 
     const-string v0, "]."
 

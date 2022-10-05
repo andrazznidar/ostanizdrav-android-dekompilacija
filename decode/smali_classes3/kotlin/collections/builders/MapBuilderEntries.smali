@@ -11,7 +11,11 @@
         "V:",
         "Ljava/lang/Object;",
         ">",
-        "Ljava/lang/Object;"
+        "Lkotlin/collections/AbstractMutableSet<",
+        "Ljava/util/Map$Entry<",
+        "Ljava/lang/Object;",
+        "Ljava/lang/Object;",
+        ">;>;"
     }
 .end annotation
 
@@ -101,13 +105,16 @@
 
     instance-of v0, p1, Ljava/util/Map$Entry;
 
-    if-eqz v0, :cond_0
+    if-nez v0, :cond_0
 
+    const/4 p1, 0x0
+
+    goto :goto_0
+
+    :cond_0
     check-cast p1, Ljava/util/Map$Entry;
 
     const-string v0, "element"
-
-    invoke-static {p1, v0}, Lkotlin/jvm/internal/Intrinsics;->checkNotNullParameter(Ljava/lang/Object;Ljava/lang/String;)V
 
     invoke-static {p1, v0}, Lkotlin/jvm/internal/Intrinsics;->checkNotNullParameter(Ljava/lang/Object;Ljava/lang/String;)V
 
@@ -116,11 +123,6 @@
     invoke-virtual {v0, p1}, Lkotlin/collections/builders/MapBuilder;->containsEntry$kotlin_stdlib(Ljava/util/Map$Entry;)Z
 
     move-result p1
-
-    goto :goto_0
-
-    :cond_0
-    const/4 p1, 0x0
 
     :goto_0
     return p1
@@ -202,8 +204,11 @@
 
     const/4 v1, 0x0
 
-    if-eqz v0, :cond_2
+    if-nez v0, :cond_0
 
+    goto :goto_0
+
+    :cond_0
     check-cast p1, Ljava/util/Map$Entry;
 
     const-string v0, "element"
@@ -213,10 +218,6 @@
     iget-object v0, p0, Lkotlin/collections/builders/MapBuilderEntries;->backing:Lkotlin/collections/builders/MapBuilder;
 
     invoke-static {v0}, Ljava/util/Objects;->requireNonNull(Ljava/lang/Object;)Ljava/lang/Object;
-
-    const-string v2, "entry"
-
-    invoke-static {p1, v2}, Lkotlin/jvm/internal/Intrinsics;->checkNotNullParameter(Ljava/lang/Object;Ljava/lang/String;)V
 
     invoke-virtual {v0}, Lkotlin/collections/builders/MapBuilder;->checkIsMutable$kotlin_stdlib()V
 
@@ -228,11 +229,11 @@
 
     move-result v2
 
-    if-gez v2, :cond_0
+    if-gez v2, :cond_1
 
     goto :goto_0
 
-    :cond_0
+    :cond_1
     iget-object v3, v0, Lkotlin/collections/builders/MapBuilder;->valuesArray:[Ljava/lang/Object;
 
     invoke-static {v3}, Lkotlin/jvm/internal/Intrinsics;->checkNotNull(Ljava/lang/Object;)V
@@ -247,20 +248,15 @@
 
     move-result p1
 
-    const/4 v3, 0x1
-
-    xor-int/2addr p1, v3
-
-    if-eqz p1, :cond_1
+    if-nez p1, :cond_2
 
     goto :goto_0
 
-    :cond_1
+    :cond_2
     invoke-virtual {v0, v2}, Lkotlin/collections/builders/MapBuilder;->removeKeyAt(I)V
 
-    move v1, v3
+    const/4 v1, 0x1
 
-    :cond_2
     :goto_0
     return v1
 .end method
@@ -312,7 +308,7 @@
 
     invoke-virtual {v0}, Lkotlin/collections/builders/MapBuilder;->checkIsMutable$kotlin_stdlib()V
 
-    invoke-super {p0, p1}, Ljava/util/AbstractCollection;->retainAll(Ljava/util/Collection;)Z
+    invoke-super {p0, p1}, Ljava/util/AbstractSet;->retainAll(Ljava/util/Collection;)Z
 
     move-result p1
 

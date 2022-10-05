@@ -1,23 +1,12 @@
 .class public final Lkotlin/collections/SetsKt;
-.super Lkotlin/collections/SetsKt__SetsKt;
+.super Lorg/bouncycastle/util/IPAddress;
 
 
 # direct methods
 .method public static final minus(Ljava/util/Set;Ljava/lang/Object;)Ljava/util/Set;
     .locals 6
-    .annotation system Ldalvik/annotation/Signature;
-        value = {
-            "<T:",
-            "Ljava/lang/Object;",
-            ">(",
-            "Ljava/util/Set<",
-            "+TT;>;TT;)",
-            "Ljava/util/Set<",
-            "TT;>;"
-        }
-    .end annotation
 
-    const-string v0, "$this$minus"
+    const-string v0, "<this>"
 
     invoke-static {p0, v0}, Lkotlin/jvm/internal/Intrinsics;->checkNotNullParameter(Ljava/lang/Object;Ljava/lang/String;)V
 
@@ -80,21 +69,8 @@
 
 .method public static final plus(Ljava/util/Set;Ljava/lang/Iterable;)Ljava/util/Set;
     .locals 2
-    .annotation system Ldalvik/annotation/Signature;
-        value = {
-            "<T:",
-            "Ljava/lang/Object;",
-            ">(",
-            "Ljava/util/Set<",
-            "+TT;>;",
-            "Ljava/lang/Iterable<",
-            "+TT;>;)",
-            "Ljava/util/Set<",
-            "TT;>;"
-        }
-    .end annotation
 
-    const-string v0, "$this$plus"
+    const-string v0, "<this>"
 
     invoke-static {p0, v0}, Lkotlin/jvm/internal/Intrinsics;->checkNotNullParameter(Ljava/lang/Object;Ljava/lang/String;)V
 
@@ -124,8 +100,17 @@
     const/4 v0, 0x0
 
     :goto_0
-    if-eqz v0, :cond_1
+    if-nez v0, :cond_1
 
+    invoke-interface {p0}, Ljava/util/Set;->size()I
+
+    move-result v0
+
+    mul-int/lit8 v0, v0, 0x2
+
+    goto :goto_1
+
+    :cond_1
     invoke-virtual {v0}, Ljava/lang/Number;->intValue()I
 
     move-result v0
@@ -134,19 +119,10 @@
 
     move-result v1
 
-    add-int/2addr v1, v0
-
-    goto :goto_1
-
-    :cond_1
-    invoke-interface {p0}, Ljava/util/Set;->size()I
-
-    move-result v0
-
-    mul-int/lit8 v1, v0, 0x2
+    add-int/2addr v0, v1
 
     :goto_1
-    invoke-static {v1}, Lkotlin/collections/MapsKt__MapsJVMKt;->mapCapacity(I)I
+    invoke-static {v0}, Lkotlin/collections/MapsKt__MapsJVMKt;->mapCapacity(I)I
 
     move-result v0
 
@@ -163,19 +139,8 @@
 
 .method public static final plus(Ljava/util/Set;Ljava/lang/Object;)Ljava/util/Set;
     .locals 2
-    .annotation system Ldalvik/annotation/Signature;
-        value = {
-            "<T:",
-            "Ljava/lang/Object;",
-            ">(",
-            "Ljava/util/Set<",
-            "+TT;>;TT;)",
-            "Ljava/util/Set<",
-            "TT;>;"
-        }
-    .end annotation
 
-    const-string v0, "$this$plus"
+    const-string v0, "<this>"
 
     invoke-static {p0, v0}, Lkotlin/jvm/internal/Intrinsics;->checkNotNullParameter(Ljava/lang/Object;Ljava/lang/String;)V
 

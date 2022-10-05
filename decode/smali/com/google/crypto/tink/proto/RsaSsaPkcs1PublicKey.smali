@@ -18,7 +18,8 @@
         "Lcom/google/crypto/tink/shaded/protobuf/GeneratedMessageLite<",
         "Lcom/google/crypto/tink/proto/RsaSsaPkcs1PublicKey;",
         "Lcom/google/crypto/tink/proto/RsaSsaPkcs1PublicKey$Builder;",
-        ">;"
+        ">;",
+        "Lcom/google/crypto/tink/shaded/protobuf/MessageLiteOrBuilder;"
     }
 .end annotation
 

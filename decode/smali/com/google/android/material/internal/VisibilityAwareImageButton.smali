@@ -59,7 +59,7 @@
 .method public final internalSetVisibility(IZ)V
     .locals 0
 
-    invoke-super {p0, p1}, Landroid/widget/ImageView;->setVisibility(I)V
+    invoke-super {p0, p1}, Landroid/widget/ImageButton;->setVisibility(I)V
 
     if-eqz p2, :cond_0
 
@@ -72,7 +72,7 @@
 .method public setVisibility(I)V
     .locals 0
 
-    invoke-super {p0, p1}, Landroid/widget/ImageView;->setVisibility(I)V
+    invoke-super {p0, p1}, Landroid/widget/ImageButton;->setVisibility(I)V
 
     iput p1, p0, Lcom/google/android/material/internal/VisibilityAwareImageButton;->userSetVisibility:I
 

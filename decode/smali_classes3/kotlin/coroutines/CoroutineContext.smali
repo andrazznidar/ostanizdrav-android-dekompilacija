@@ -7,7 +7,8 @@
 .annotation system Ldalvik/annotation/MemberClasses;
     value = {
         Lkotlin/coroutines/CoroutineContext$Key;,
-        Lkotlin/coroutines/CoroutineContext$Element;
+        Lkotlin/coroutines/CoroutineContext$Element;,
+        Lkotlin/coroutines/CoroutineContext$DefaultImpls;
     }
 .end annotation
 

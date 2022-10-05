@@ -5,7 +5,7 @@
 
 # annotations
 .annotation system Ldalvik/annotation/SourceDebugExtension;
-    value = "SMAP\nBoosterRulesRepository.kt\nKotlin\n*S Kotlin\n*F\n+ 1 BoosterRulesRepository.kt\nde/rki/coronawarnapp/covidcertificate/booster/BoosterRulesRepository\n+ 2 fake.kt\nkotlin/jvm/internal/FakeKt\n*L\n1#1,74:1\n1#2:75\n*E\n"
+    value = "SMAP\nBoosterRulesRepository.kt\nKotlin\n*S Kotlin\n*F\n+ 1 BoosterRulesRepository.kt\nde/rki/coronawarnapp/covidcertificate/booster/BoosterRulesRepository\n+ 2 fake.kt\nkotlin/jvm/internal/FakeKt\n*L\n1#1,96:1\n1#2:97\n*E\n"
 .end annotation
 
 
@@ -88,8 +88,6 @@
     move-result-object p1
 
     invoke-direct {v3, p1}, Lkotlinx/coroutines/internal/ContextScope;-><init>(Lkotlin/coroutines/CoroutineContext;)V
-
-    sget p1, Lkotlinx/coroutines/flow/SharingStarted;->$r8$clinit:I
 
     sget-object v5, Lkotlinx/coroutines/flow/SharingStarted$Companion;->Eagerly:Lkotlinx/coroutines/flow/SharingStarted;
 
@@ -295,29 +293,28 @@
     return-object p1
 .end method
 
-.method public final updateBoosterNotificationRules(Lkotlin/coroutines/Continuation;)Ljava/lang/Object;
-    .locals 7
+.method public final update(Lkotlin/coroutines/Continuation;)Ljava/lang/Object;
+    .locals 9
     .annotation system Ldalvik/annotation/Signature;
         value = {
             "(",
             "Lkotlin/coroutines/Continuation<",
             "-",
-            "Ljava/util/List<",
-            "Lde/rki/coronawarnapp/covidcertificate/validation/core/rule/DccValidationRule;",
-            ">;>;)",
+            "Lde/rki/coronawarnapp/util/repositories/UpdateResult;",
+            ">;)",
             "Ljava/lang/Object;"
         }
     .end annotation
 
-    instance-of v0, p1, Lde/rki/coronawarnapp/covidcertificate/booster/BoosterRulesRepository$updateBoosterNotificationRules$1;
+    instance-of v0, p1, Lde/rki/coronawarnapp/covidcertificate/booster/BoosterRulesRepository$update$1;
 
     if-eqz v0, :cond_0
 
     move-object v0, p1
 
-    check-cast v0, Lde/rki/coronawarnapp/covidcertificate/booster/BoosterRulesRepository$updateBoosterNotificationRules$1;
+    check-cast v0, Lde/rki/coronawarnapp/covidcertificate/booster/BoosterRulesRepository$update$1;
 
-    iget v1, v0, Lde/rki/coronawarnapp/covidcertificate/booster/BoosterRulesRepository$updateBoosterNotificationRules$1;->label:I
+    iget v1, v0, Lde/rki/coronawarnapp/covidcertificate/booster/BoosterRulesRepository$update$1;->label:I
 
     const/high16 v2, -0x80000000
 
@@ -327,21 +324,21 @@
 
     sub-int/2addr v1, v2
 
-    iput v1, v0, Lde/rki/coronawarnapp/covidcertificate/booster/BoosterRulesRepository$updateBoosterNotificationRules$1;->label:I
+    iput v1, v0, Lde/rki/coronawarnapp/covidcertificate/booster/BoosterRulesRepository$update$1;->label:I
 
     goto :goto_0
 
     :cond_0
-    new-instance v0, Lde/rki/coronawarnapp/covidcertificate/booster/BoosterRulesRepository$updateBoosterNotificationRules$1;
+    new-instance v0, Lde/rki/coronawarnapp/covidcertificate/booster/BoosterRulesRepository$update$1;
 
-    invoke-direct {v0, p0, p1}, Lde/rki/coronawarnapp/covidcertificate/booster/BoosterRulesRepository$updateBoosterNotificationRules$1;-><init>(Lde/rki/coronawarnapp/covidcertificate/booster/BoosterRulesRepository;Lkotlin/coroutines/Continuation;)V
+    invoke-direct {v0, p0, p1}, Lde/rki/coronawarnapp/covidcertificate/booster/BoosterRulesRepository$update$1;-><init>(Lde/rki/coronawarnapp/covidcertificate/booster/BoosterRulesRepository;Lkotlin/coroutines/Continuation;)V
 
     :goto_0
-    iget-object p1, v0, Lde/rki/coronawarnapp/covidcertificate/booster/BoosterRulesRepository$updateBoosterNotificationRules$1;->result:Ljava/lang/Object;
+    iget-object p1, v0, Lde/rki/coronawarnapp/covidcertificate/booster/BoosterRulesRepository$update$1;->result:Ljava/lang/Object;
 
     sget-object v1, Lkotlin/coroutines/intrinsics/CoroutineSingletons;->COROUTINE_SUSPENDED:Lkotlin/coroutines/intrinsics/CoroutineSingletons;
 
-    iget v2, v0, Lde/rki/coronawarnapp/covidcertificate/booster/BoosterRulesRepository$updateBoosterNotificationRules$1;->label:I
+    iget v2, v0, Lde/rki/coronawarnapp/covidcertificate/booster/BoosterRulesRepository$update$1;->label:I
 
     const/4 v3, 0x0
 
@@ -352,6 +349,10 @@
     if-eqz v2, :cond_2
 
     if-ne v2, v5, :cond_1
+
+    iget-object v0, v0, Lde/rki/coronawarnapp/covidcertificate/booster/BoosterRulesRepository$update$1;->L$0:Ljava/lang/Object;
+
+    check-cast v0, Lkotlin/jvm/internal/Ref$ObjectRef;
 
     invoke-static {p1}, Lkotlin/ResultKt;->throwOnFailure(Ljava/lang/Object;)V
 
@@ -379,51 +380,69 @@
 
     invoke-virtual {p1, v6, v2}, Ltimber/log/Timber$Forest;->d(Ljava/lang/String;[Ljava/lang/Object;)V
 
-    iget-object p1, p0, Lde/rki/coronawarnapp/covidcertificate/booster/BoosterRulesRepository;->internalData:Lde/rki/coronawarnapp/util/flow/HotDataFlow;
+    new-instance p1, Lkotlin/jvm/internal/Ref$ObjectRef;
 
-    new-instance v2, Lde/rki/coronawarnapp/covidcertificate/booster/BoosterRulesRepository$updateBoosterNotificationRules$2;
+    invoke-direct {p1}, Lkotlin/jvm/internal/Ref$ObjectRef;-><init>()V
 
-    const/4 v6, 0x0
+    sget-object v2, Lde/rki/coronawarnapp/util/repositories/UpdateResult;->NO_UPDATE:Lde/rki/coronawarnapp/util/repositories/UpdateResult;
 
-    invoke-direct {v2, p0, v6}, Lde/rki/coronawarnapp/covidcertificate/booster/BoosterRulesRepository$updateBoosterNotificationRules$2;-><init>(Lde/rki/coronawarnapp/covidcertificate/booster/BoosterRulesRepository;Lkotlin/coroutines/Continuation;)V
+    iput-object v2, p1, Lkotlin/jvm/internal/Ref$ObjectRef;->element:Ljava/lang/Object;
 
-    iput v5, v0, Lde/rki/coronawarnapp/covidcertificate/booster/BoosterRulesRepository$updateBoosterNotificationRules$1;->label:I
+    iget-object v2, p0, Lde/rki/coronawarnapp/covidcertificate/booster/BoosterRulesRepository;->internalData:Lde/rki/coronawarnapp/util/flow/HotDataFlow;
 
-    invoke-virtual {p1, v2, v0}, Lde/rki/coronawarnapp/util/flow/HotDataFlow;->updateBlocking(Lkotlin/jvm/functions/Function2;Lkotlin/coroutines/Continuation;)Ljava/lang/Object;
+    new-instance v6, Lde/rki/coronawarnapp/covidcertificate/booster/BoosterRulesRepository$update$2;
 
-    move-result-object p1
+    const/4 v7, 0x0
 
-    if-ne p1, v1, :cond_3
+    invoke-direct {v6, p0, p1, v7}, Lde/rki/coronawarnapp/covidcertificate/booster/BoosterRulesRepository$update$2;-><init>(Lde/rki/coronawarnapp/covidcertificate/booster/BoosterRulesRepository;Lkotlin/jvm/internal/Ref$ObjectRef;Lkotlin/coroutines/Continuation;)V
+
+    iput-object p1, v0, Lde/rki/coronawarnapp/covidcertificate/booster/BoosterRulesRepository$update$1;->L$0:Ljava/lang/Object;
+
+    iput v5, v0, Lde/rki/coronawarnapp/covidcertificate/booster/BoosterRulesRepository$update$1;->label:I
+
+    invoke-virtual {v2, v6, v0}, Lde/rki/coronawarnapp/util/flow/HotDataFlow;->updateBlocking(Lkotlin/jvm/functions/Function2;Lkotlin/coroutines/Continuation;)Ljava/lang/Object;
+
+    move-result-object v0
+
+    if-ne v0, v1, :cond_3
 
     return-object v1
 
     :cond_3
+    move-object v8, v0
+
+    move-object v0, p1
+
+    move-object p1, v8
+
     :goto_1
     check-cast p1, Ljava/util/List;
 
-    sget-object v0, Ltimber/log/Timber;->Forest:Ltimber/log/Timber$Forest;
+    sget-object v1, Ltimber/log/Timber;->Forest:Ltimber/log/Timber$Forest;
 
-    invoke-virtual {v0, v4}, Ltimber/log/Timber$Forest;->tag(Ljava/lang/String;)Ltimber/log/Timber$Tree;
+    invoke-virtual {v1, v4}, Ltimber/log/Timber$Forest;->tag(Ljava/lang/String;)Ltimber/log/Timber$Tree;
 
-    const/4 v1, 0x2
+    const/4 v2, 0x2
 
-    new-array v1, v1, [Ljava/lang/Object;
+    new-array v2, v2, [Ljava/lang/Object;
 
     invoke-interface {p1}, Ljava/util/List;->size()I
 
-    move-result v2
+    move-result v4
 
-    new-instance v4, Ljava/lang/Integer;
+    new-instance v6, Ljava/lang/Integer;
 
-    invoke-direct {v4, v2}, Ljava/lang/Integer;-><init>(I)V
+    invoke-direct {v6, v4}, Ljava/lang/Integer;-><init>(I)V
 
-    aput-object v4, v1, v3
+    aput-object v6, v2, v3
 
-    aput-object p1, v1, v5
+    aput-object p1, v2, v5
 
-    const-string v2, "Booster notification rules size=%s: %s"
+    const-string p1, "Booster notification rules size=%s: %s"
 
-    invoke-virtual {v0, v2, v1}, Ltimber/log/Timber$Forest;->d(Ljava/lang/String;[Ljava/lang/Object;)V
+    invoke-virtual {v1, p1, v2}, Ltimber/log/Timber$Forest;->d(Ljava/lang/String;[Ljava/lang/Object;)V
+
+    iget-object p1, v0, Lkotlin/jvm/internal/Ref$ObjectRef;->element:Ljava/lang/Object;
 
     return-object p1
 .end method

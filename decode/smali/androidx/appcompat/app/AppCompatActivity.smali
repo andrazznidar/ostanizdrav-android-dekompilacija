@@ -245,7 +245,7 @@
 
     sget v0, Landroidx/appcompat/widget/VectorEnabledTintResources;->$r8$clinit:I
 
-    invoke-super {p0}, Landroid/view/ContextThemeWrapper;->getResources()Landroid/content/res/Resources;
+    invoke-super {p0}, Landroid/app/Activity;->getResources()Landroid/content/res/Resources;
 
     move-result-object v0
 

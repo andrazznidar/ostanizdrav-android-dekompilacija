@@ -1,11 +1,14 @@
 .class public Lorg/bouncycastle/pqc/crypto/lms/HSSPublicKeyParameters;
 .super Lorg/bouncycastle/pqc/crypto/lms/LMSKeyParameters;
 
+# interfaces
+.implements Lorg/bouncycastle/pqc/crypto/lms/LMSContextBasedVerifier;
+
 
 # instance fields
-.field public final l:I
+.field private final l:I
 
-.field public final lmsPublicKey:Lorg/bouncycastle/pqc/crypto/lms/LMSPublicKeyParameters;
+.field private final lmsPublicKey:Lorg/bouncycastle/pqc/crypto/lms/LMSPublicKeyParameters;
 
 
 # direct methods
@@ -158,7 +161,9 @@
 
     if-eqz p1, :cond_3
 
-    const-class v1, Lorg/bouncycastle/pqc/crypto/lms/HSSPublicKeyParameters;
+    invoke-virtual {p0}, Ljava/lang/Object;->getClass()Ljava/lang/Class;
+
+    move-result-object v1
 
     invoke-virtual {p1}, Ljava/lang/Object;->getClass()Ljava/lang/Class;
 
@@ -195,6 +200,68 @@
     return v0
 .end method
 
+.method public generateLMSContext([B)Lorg/bouncycastle/pqc/crypto/lms/LMSContext;
+    .locals 2
+
+    :try_start_0
+    invoke-virtual {p0}, Lorg/bouncycastle/pqc/crypto/lms/HSSPublicKeyParameters;->getL()I
+
+    move-result v0
+
+    invoke-static {p1, v0}, Lorg/bouncycastle/pqc/crypto/lms/HSSSignature;->getInstance(Ljava/lang/Object;I)Lorg/bouncycastle/pqc/crypto/lms/HSSSignature;
+
+    move-result-object p1
+    :try_end_0
+    .catch Ljava/io/IOException; {:try_start_0 .. :try_end_0} :catch_0
+
+    invoke-virtual {p1}, Lorg/bouncycastle/pqc/crypto/lms/HSSSignature;->getSignedPubKey()[Lorg/bouncycastle/pqc/crypto/lms/LMSSignedPubKey;
+
+    move-result-object v0
+
+    array-length v1, v0
+
+    add-int/lit8 v1, v1, -0x1
+
+    aget-object v1, v0, v1
+
+    invoke-virtual {v1}, Lorg/bouncycastle/pqc/crypto/lms/LMSSignedPubKey;->getPublicKey()Lorg/bouncycastle/pqc/crypto/lms/LMSPublicKeyParameters;
+
+    move-result-object v1
+
+    invoke-virtual {p1}, Lorg/bouncycastle/pqc/crypto/lms/HSSSignature;->getSignature()Lorg/bouncycastle/pqc/crypto/lms/LMSSignature;
+
+    move-result-object p1
+
+    invoke-virtual {v1, p1}, Lorg/bouncycastle/pqc/crypto/lms/LMSPublicKeyParameters;->generateOtsContext(Lorg/bouncycastle/pqc/crypto/lms/LMSSignature;)Lorg/bouncycastle/pqc/crypto/lms/LMSContext;
+
+    move-result-object p1
+
+    invoke-virtual {p1, v0}, Lorg/bouncycastle/pqc/crypto/lms/LMSContext;->withSignedPublicKeys([Lorg/bouncycastle/pqc/crypto/lms/LMSSignedPubKey;)Lorg/bouncycastle/pqc/crypto/lms/LMSContext;
+
+    move-result-object p1
+
+    return-object p1
+
+    :catch_0
+    move-exception p1
+
+    new-instance v0, Ljava/lang/IllegalStateException;
+
+    const-string v1, "cannot parse signature: "
+
+    invoke-static {v1}, Landroid/support/v4/media/RatingCompat$$ExternalSyntheticOutline0;->m(Ljava/lang/String;)Ljava/lang/StringBuilder;
+
+    move-result-object v1
+
+    invoke-static {p1, v1}, Lorg/bouncycastle/asn1/ASN1ApplicationSpecific$$ExternalSyntheticOutline0;->m(Ljava/io/IOException;Ljava/lang/StringBuilder;)Ljava/lang/String;
+
+    move-result-object p1
+
+    invoke-direct {v0, p1}, Ljava/lang/IllegalStateException;-><init>(Ljava/lang/String;)V
+
+    throw v0
+.end method
+
 .method public getEncoded()[B
     .locals 2
     .annotation system Ldalvik/annotation/Throws;
@@ -211,6 +278,8 @@
 
     invoke-virtual {v0, v1}, Lorg/bouncycastle/pqc/crypto/lms/Composer;->u32str(I)Lorg/bouncycastle/pqc/crypto/lms/Composer;
 
+    move-result-object v0
+
     iget-object v1, p0, Lorg/bouncycastle/pqc/crypto/lms/HSSPublicKeyParameters;->lmsPublicKey:Lorg/bouncycastle/pqc/crypto/lms/LMSPublicKeyParameters;
 
     invoke-virtual {v1}, Lorg/bouncycastle/pqc/crypto/lms/LMSPublicKeyParameters;->getEncoded()[B
@@ -219,9 +288,27 @@
 
     invoke-virtual {v0, v1}, Lorg/bouncycastle/pqc/crypto/lms/Composer;->bytes([B)Lorg/bouncycastle/pqc/crypto/lms/Composer;
 
+    move-result-object v0
+
     invoke-virtual {v0}, Lorg/bouncycastle/pqc/crypto/lms/Composer;->build()[B
 
     move-result-object v0
+
+    return-object v0
+.end method
+
+.method public getL()I
+    .locals 1
+
+    iget v0, p0, Lorg/bouncycastle/pqc/crypto/lms/HSSPublicKeyParameters;->l:I
+
+    return v0
+.end method
+
+.method public getLMSPublicKey()Lorg/bouncycastle/pqc/crypto/lms/LMSPublicKeyParameters;
+    .locals 1
+
+    iget-object v0, p0, Lorg/bouncycastle/pqc/crypto/lms/HSSPublicKeyParameters;->lmsPublicKey:Lorg/bouncycastle/pqc/crypto/lms/LMSPublicKeyParameters;
 
     return-object v0
 .end method
@@ -242,4 +329,86 @@
     add-int/2addr v1, v0
 
     return v1
+.end method
+
+.method public verify(Lorg/bouncycastle/pqc/crypto/lms/LMSContext;)Z
+    .locals 7
+
+    invoke-virtual {p1}, Lorg/bouncycastle/pqc/crypto/lms/LMSContext;->getSignedPubKeys()[Lorg/bouncycastle/pqc/crypto/lms/LMSSignedPubKey;
+
+    move-result-object v0
+
+    array-length v1, v0
+
+    invoke-virtual {p0}, Lorg/bouncycastle/pqc/crypto/lms/HSSPublicKeyParameters;->getL()I
+
+    move-result v2
+
+    const/4 v3, 0x1
+
+    sub-int/2addr v2, v3
+
+    const/4 v4, 0x0
+
+    if-eq v1, v2, :cond_0
+
+    return v4
+
+    :cond_0
+    invoke-virtual {p0}, Lorg/bouncycastle/pqc/crypto/lms/HSSPublicKeyParameters;->getLMSPublicKey()Lorg/bouncycastle/pqc/crypto/lms/LMSPublicKeyParameters;
+
+    move-result-object v1
+
+    move v2, v4
+
+    :goto_0
+    array-length v5, v0
+
+    if-ge v4, v5, :cond_2
+
+    aget-object v5, v0, v4
+
+    invoke-virtual {v5}, Lorg/bouncycastle/pqc/crypto/lms/LMSSignedPubKey;->getSignature()Lorg/bouncycastle/pqc/crypto/lms/LMSSignature;
+
+    move-result-object v5
+
+    aget-object v6, v0, v4
+
+    invoke-virtual {v6}, Lorg/bouncycastle/pqc/crypto/lms/LMSSignedPubKey;->getPublicKey()Lorg/bouncycastle/pqc/crypto/lms/LMSPublicKeyParameters;
+
+    move-result-object v6
+
+    invoke-virtual {v6}, Lorg/bouncycastle/pqc/crypto/lms/LMSPublicKeyParameters;->toByteArray()[B
+
+    move-result-object v6
+
+    invoke-static {v1, v5, v6}, Lorg/bouncycastle/pqc/crypto/lms/LMS;->verifySignature(Lorg/bouncycastle/pqc/crypto/lms/LMSPublicKeyParameters;Lorg/bouncycastle/pqc/crypto/lms/LMSSignature;[B)Z
+
+    move-result v1
+
+    if-nez v1, :cond_1
+
+    move v2, v3
+
+    :cond_1
+    aget-object v1, v0, v4
+
+    invoke-virtual {v1}, Lorg/bouncycastle/pqc/crypto/lms/LMSSignedPubKey;->getPublicKey()Lorg/bouncycastle/pqc/crypto/lms/LMSPublicKeyParameters;
+
+    move-result-object v1
+
+    add-int/lit8 v4, v4, 0x1
+
+    goto :goto_0
+
+    :cond_2
+    xor-int/lit8 v0, v2, 0x1
+
+    invoke-virtual {v1, p1}, Lorg/bouncycastle/pqc/crypto/lms/LMSPublicKeyParameters;->verify(Lorg/bouncycastle/pqc/crypto/lms/LMSContext;)Z
+
+    move-result p1
+
+    and-int/2addr p1, v0
+
+    return p1
 .end method

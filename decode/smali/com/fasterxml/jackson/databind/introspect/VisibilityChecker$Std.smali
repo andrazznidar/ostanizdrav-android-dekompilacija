@@ -29,6 +29,8 @@
 
 
 # static fields
+.field public static final ALL_PUBLIC:Lcom/fasterxml/jackson/databind/introspect/VisibilityChecker$Std;
+
 .field public static final DEFAULT:Lcom/fasterxml/jackson/databind/introspect/VisibilityChecker$Std;
 
 
@@ -46,25 +48,39 @@
 
 # direct methods
 .method public static constructor <clinit>()V
-    .locals 7
+    .locals 8
 
     new-instance v6, Lcom/fasterxml/jackson/databind/introspect/VisibilityChecker$Std;
 
-    sget-object v5, Lcom/fasterxml/jackson/annotation/JsonAutoDetect$Visibility;->PUBLIC_ONLY:Lcom/fasterxml/jackson/annotation/JsonAutoDetect$Visibility;
+    sget-object v7, Lcom/fasterxml/jackson/annotation/JsonAutoDetect$Visibility;->PUBLIC_ONLY:Lcom/fasterxml/jackson/annotation/JsonAutoDetect$Visibility;
 
     sget-object v4, Lcom/fasterxml/jackson/annotation/JsonAutoDetect$Visibility;->ANY:Lcom/fasterxml/jackson/annotation/JsonAutoDetect$Visibility;
 
     move-object v0, v6
 
-    move-object v1, v5
+    move-object v1, v7
 
-    move-object v2, v5
+    move-object v2, v7
 
     move-object v3, v4
+
+    move-object v5, v7
 
     invoke-direct/range {v0 .. v5}, Lcom/fasterxml/jackson/databind/introspect/VisibilityChecker$Std;-><init>(Lcom/fasterxml/jackson/annotation/JsonAutoDetect$Visibility;Lcom/fasterxml/jackson/annotation/JsonAutoDetect$Visibility;Lcom/fasterxml/jackson/annotation/JsonAutoDetect$Visibility;Lcom/fasterxml/jackson/annotation/JsonAutoDetect$Visibility;Lcom/fasterxml/jackson/annotation/JsonAutoDetect$Visibility;)V
 
     sput-object v6, Lcom/fasterxml/jackson/databind/introspect/VisibilityChecker$Std;->DEFAULT:Lcom/fasterxml/jackson/databind/introspect/VisibilityChecker$Std;
+
+    new-instance v6, Lcom/fasterxml/jackson/databind/introspect/VisibilityChecker$Std;
+
+    move-object v0, v6
+
+    move-object v3, v7
+
+    move-object v4, v7
+
+    invoke-direct/range {v0 .. v5}, Lcom/fasterxml/jackson/databind/introspect/VisibilityChecker$Std;-><init>(Lcom/fasterxml/jackson/annotation/JsonAutoDetect$Visibility;Lcom/fasterxml/jackson/annotation/JsonAutoDetect$Visibility;Lcom/fasterxml/jackson/annotation/JsonAutoDetect$Visibility;Lcom/fasterxml/jackson/annotation/JsonAutoDetect$Visibility;Lcom/fasterxml/jackson/annotation/JsonAutoDetect$Visibility;)V
+
+    sput-object v6, Lcom/fasterxml/jackson/databind/introspect/VisibilityChecker$Std;->ALL_PUBLIC:Lcom/fasterxml/jackson/databind/introspect/VisibilityChecker$Std;
 
     return-void
 .end method

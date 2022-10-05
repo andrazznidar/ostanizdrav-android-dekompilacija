@@ -1,4 +1,4 @@
-.class public final Lkotlin/reflect/jvm/internal/KTypeImpl$arguments$2$$special$$inlined$mapIndexed$lambda$1;
+.class final Lkotlin/reflect/jvm/internal/KTypeImpl$arguments$2$$special$$inlined$mapIndexed$lambda$1;
 .super Lkotlin/jvm/internal/Lambda;
 .source "KTypeImpl.kt"
 
@@ -7,6 +7,15 @@
 
 
 # annotations
+.annotation system Ldalvik/annotation/EnclosingMethod;
+    value = Lkotlin/reflect/jvm/internal/KTypeImpl$arguments$2;->invoke()Ljava/util/List;
+.end annotation
+
+.annotation system Ldalvik/annotation/InnerClass;
+    accessFlags = 0x19
+    name = null
+.end annotation
+
 .annotation system Ldalvik/annotation/Signature;
     value = {
         "Lkotlin/jvm/internal/Lambda;",
@@ -16,11 +25,31 @@
     }
 .end annotation
 
+.annotation runtime Lkotlin/Metadata;
+    d1 = {
+        "\u0000\n\n\u0000\n\u0002\u0018\u0002\n\u0002\u0008\u0002\u0010\u0000\u001a\u00020\u0001H\n\u00a2\u0006\u0002\u0008\u0002\u00a8\u0006\u0003"
+    }
+    d2 = {
+        "<no name provided>",
+        "Ljava/lang/reflect/Type;",
+        "invoke",
+        "kotlin/reflect/jvm/internal/KTypeImpl$arguments$2$1$type$1"
+    }
+    k = 0x3
+    mv = {
+        0x1,
+        0x5,
+        0x1
+    }
+.end annotation
+
 
 # instance fields
 .field public final synthetic $i:I
 
 .field public final synthetic $parameterizedTypeArguments$inlined:Lkotlin/Lazy;
+
+.field public final synthetic $parameterizedTypeArguments$metadata$inlined:Lkotlin/reflect/KProperty;
 
 .field public final synthetic this$0:Lkotlin/reflect/jvm/internal/KTypeImpl$arguments$2;
 
@@ -35,6 +64,8 @@
 
     iput-object p3, p0, Lkotlin/reflect/jvm/internal/KTypeImpl$arguments$2$$special$$inlined$mapIndexed$lambda$1;->$parameterizedTypeArguments$inlined:Lkotlin/Lazy;
 
+    iput-object p4, p0, Lkotlin/reflect/jvm/internal/KTypeImpl$arguments$2$$special$$inlined$mapIndexed$lambda$1;->$parameterizedTypeArguments$metadata$inlined:Lkotlin/reflect/KProperty;
+
     const/4 p1, 0x0
 
     invoke-direct {p0, p1}, Lkotlin/jvm/internal/Lambda;-><init>(I)V
@@ -44,7 +75,17 @@
 
 
 # virtual methods
-.method public invoke()Ljava/lang/Object;
+.method public bridge synthetic invoke()Ljava/lang/Object;
+    .locals 1
+
+    invoke-virtual {p0}, Lkotlin/reflect/jvm/internal/KTypeImpl$arguments$2$$special$$inlined$mapIndexed$lambda$1;->invoke()Ljava/lang/reflect/Type;
+
+    move-result-object v0
+
+    return-object v0
+.end method
+
+.method public final invoke()Ljava/lang/reflect/Type;
     .locals 3
 
     iget-object v0, p0, Lkotlin/reflect/jvm/internal/KTypeImpl$arguments$2$$special$$inlined$mapIndexed$lambda$1;->this$0:Lkotlin/reflect/jvm/internal/KTypeImpl$arguments$2;

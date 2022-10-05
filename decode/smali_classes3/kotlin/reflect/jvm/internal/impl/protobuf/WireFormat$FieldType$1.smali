@@ -1,4 +1,4 @@
-.class public final enum Lkotlin/reflect/jvm/internal/impl/protobuf/WireFormat$FieldType$1;
+.class final enum Lkotlin/reflect/jvm/internal/impl/protobuf/WireFormat$FieldType$1;
 .super Lkotlin/reflect/jvm/internal/impl/protobuf/WireFormat$FieldType;
 .source "WireFormat.java"
 
@@ -33,4 +33,14 @@
     invoke-direct/range {v0 .. v5}, Lkotlin/reflect/jvm/internal/impl/protobuf/WireFormat$FieldType;-><init>(Ljava/lang/String;ILkotlin/reflect/jvm/internal/impl/protobuf/WireFormat$JavaType;ILkotlin/reflect/jvm/internal/impl/protobuf/WireFormat$1;)V
 
     return-void
+.end method
+
+
+# virtual methods
+.method public isPackable()Z
+    .locals 1
+
+    const/4 v0, 0x0
+
+    return v0
 .end method

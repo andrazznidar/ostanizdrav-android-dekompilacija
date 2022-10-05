@@ -110,10 +110,6 @@
 
     iget-object p2, p2, Lde/rki/coronawarnapp/release/NewReleaseInfoItemLinked;->linkTarget:Ljava/lang/String;
 
-    const-string v1, "<this>"
-
-    invoke-static {p1, v1}, Lkotlin/jvm/internal/Intrinsics;->checkNotNullParameter(Ljava/lang/Object;Ljava/lang/String;)V
-
     const-string v1, "content"
 
     invoke-static {p3, v1}, Lkotlin/jvm/internal/Intrinsics;->checkNotNullParameter(Ljava/lang/Object;Ljava/lang/String;)V

@@ -31,3 +31,21 @@
         }
     .end annotation
 .end method
+
+.method public abstract getContributedFunctions(Lkotlin/reflect/jvm/internal/impl/name/Name;Lkotlin/reflect/jvm/internal/impl/incremental/components/LookupLocation;)Ljava/util/Collection;
+    .annotation system Ldalvik/annotation/Signature;
+        value = {
+            "(",
+            "Lkotlin/reflect/jvm/internal/impl/name/Name;",
+            "Lkotlin/reflect/jvm/internal/impl/incremental/components/LookupLocation;",
+            ")",
+            "Ljava/util/Collection<",
+            "+",
+            "Lkotlin/reflect/jvm/internal/impl/descriptors/FunctionDescriptor;",
+            ">;"
+        }
+    .end annotation
+.end method
+
+.method public abstract recordLookup(Lkotlin/reflect/jvm/internal/impl/name/Name;Lkotlin/reflect/jvm/internal/impl/incremental/components/LookupLocation;)V
+.end method

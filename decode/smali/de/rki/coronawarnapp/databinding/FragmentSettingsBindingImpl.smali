@@ -43,7 +43,7 @@
 
     new-array v4, v2, [I
 
-    const v6, 0x7f0d00d8
+    const v6, 0x7f0d00e9
 
     aput v6, v4, v5
 
@@ -73,25 +73,25 @@
 
     sput-object v0, Lde/rki/coronawarnapp/databinding/FragmentSettingsBindingImpl;->sViewsWithIds:Landroid/util/SparseIntArray;
 
-    const v1, 0x7f0a060e
+    const v1, 0x7f0a065b
 
     const/4 v2, 0x7
 
     invoke-virtual {v0, v1, v2}, Landroid/util/SparseIntArray;->put(II)V
 
-    const v1, 0x7f0a063f
+    const v1, 0x7f0a068f
 
     const/16 v2, 0x8
 
     invoke-virtual {v0, v1, v2}, Landroid/util/SparseIntArray;->put(II)V
 
-    const v1, 0x7f0a0647
+    const v1, 0x7f0a0697
 
     const/16 v2, 0x9
 
     invoke-virtual {v0, v1, v2}, Landroid/util/SparseIntArray;->put(II)V
 
-    const v1, 0x7f0a0640
+    const v1, 0x7f0a0690
 
     const/16 v2, 0xa
 
@@ -111,10 +111,10 @@
 
     :array_1
     .array-data 4
-        0x7f0d00e6
-        0x7f0d00e6
-        0x7f0d00e6
-        0x7f0d00e6
+        0x7f0d00f6
+        0x7f0d00f6
+        0x7f0d00f6
+        0x7f0d00f6
     .end array-data
 .end method
 
@@ -304,7 +304,7 @@
 
 # virtual methods
 .method public executeBindings()V
-    .locals 22
+    .locals 23
 
     move-object/from16 v1, p0
 
@@ -353,18 +353,14 @@
 
     if-eqz v11, :cond_0
 
-    const v11, 0x7f060040
+    const v11, 0x7f060041
 
     goto :goto_0
 
     :cond_0
-    const v11, 0x7f060086
+    const v11, 0x7f06008c
 
     :goto_0
-    const-string v12, "<this>"
-
-    invoke-static {v10, v12}, Lkotlin/jvm/internal/Intrinsics;->checkNotNullParameter(Ljava/lang/Object;Ljava/lang/String;)V
-
     sget-object v12, Landroidx/core/content/ContextCompat;->sLock:Ljava/lang/Object;
 
     invoke-static {v10, v11}, Landroidx/core/content/ContextCompat$Api23Impl;->getColor(Landroid/content/Context;I)I
@@ -375,7 +371,7 @@
 
     const/16 v12, 0x17
 
-    invoke-static {v11, v12}, Lcom/airbnb/lottie/utils/GammaEvaluator;->hasAPILevel(Lde/rki/coronawarnapp/util/BuildVersionWrap;I)Z
+    invoke-static {v11, v12}, Lokhttp3/CookieJar$Companion$NoCookies;->hasAPILevel(Lde/rki/coronawarnapp/util/BuildVersionWrap;I)Z
 
     move-result v11
 
@@ -393,12 +389,12 @@
 
     if-eqz v13, :cond_1
 
-    const v13, 0x7f130468
+    const v13, 0x7f130479
 
     goto :goto_1
 
     :cond_1
-    const v13, 0x7f130467
+    const v13, 0x7f130478
 
     :goto_1
     invoke-virtual {v12, v13}, Landroid/content/Context;->getString(I)Ljava/lang/String;
@@ -423,18 +419,14 @@
 
     if-eqz v0, :cond_2
 
-    const v0, 0x7f080193
+    const v0, 0x7f080192
 
     goto :goto_2
 
     :cond_2
-    const v0, 0x7f080192
+    const v0, 0x7f080191
 
     :goto_2
-    const-string v14, "<this>"
-
-    invoke-static {v13, v14}, Lkotlin/jvm/internal/Intrinsics;->checkNotNullParameter(Ljava/lang/Object;Ljava/lang/String;)V
-
     invoke-static {v13, v0}, Landroidx/core/content/ContextCompat$Api21Impl;->getDrawable(Landroid/content/Context;I)Landroid/graphics/drawable/Drawable;
 
     move-result-object v0
@@ -489,18 +481,14 @@
 
     if-eqz v13, :cond_5
 
-    const v13, 0x7f060040
+    const v13, 0x7f060041
 
     goto :goto_5
 
     :cond_5
-    const v13, 0x7f060086
+    const v13, 0x7f06008c
 
     :goto_5
-    const-string v14, "<this>"
-
-    invoke-static {v5, v14}, Lkotlin/jvm/internal/Intrinsics;->checkNotNullParameter(Ljava/lang/Object;Ljava/lang/String;)V
-
     sget-object v14, Landroidx/core/content/ContextCompat;->sLock:Ljava/lang/Object;
 
     invoke-static {v5, v13}, Landroidx/core/content/ContextCompat$Api23Impl;->getColor(Landroid/content/Context;I)I
@@ -521,12 +509,12 @@
 
     if-eqz v14, :cond_6
 
-    const v14, 0x7f130468
+    const v14, 0x7f130479
 
     goto :goto_6
 
     :cond_6
-    const v14, 0x7f130467
+    const v14, 0x7f130478
 
     :goto_6
     invoke-virtual {v13, v14}, Landroid/content/Context;->getString(I)Ljava/lang/String;
@@ -551,18 +539,14 @@
 
     if-eqz v6, :cond_7
 
-    const v6, 0x7f08019e
+    const v6, 0x7f08019b
 
     goto :goto_7
 
     :cond_7
-    const v6, 0x7f0801a0
+    const v6, 0x7f08019d
 
     :goto_7
-    const-string v15, "<this>"
-
-    invoke-static {v14, v15}, Lkotlin/jvm/internal/Intrinsics;->checkNotNullParameter(Ljava/lang/Object;Ljava/lang/String;)V
-
     invoke-static {v14, v6}, Landroidx/core/content/ContextCompat$Api21Impl;->getDrawable(Landroid/content/Context;I)Landroid/graphics/drawable/Drawable;
 
     move-result-object v6
@@ -570,11 +554,11 @@
     goto :goto_8
 
     :cond_8
-    const/4 v5, 0x0
-
     const/4 v13, 0x0
 
     const/4 v6, 0x0
+
+    const/4 v5, 0x0
 
     :goto_8
     const-wide/16 v14, 0x280
@@ -669,104 +653,104 @@
 
     if-eqz v15, :cond_a
 
-    const v15, 0x7f0801a2
+    const v15, 0x7f08019f
 
     goto :goto_a
 
     :cond_a
-    const v15, 0x7f0801a1
+    const v15, 0x7f08019e
 
     :goto_a
-    move/from16 v20, v14
-
-    const-string v14, "<this>"
-
-    invoke-static {v7, v14}, Lkotlin/jvm/internal/Intrinsics;->checkNotNullParameter(Ljava/lang/Object;Ljava/lang/String;)V
-
-    sget-object v14, Landroidx/core/content/ContextCompat;->sLock:Ljava/lang/Object;
+    sget-object v20, Landroidx/core/content/ContextCompat;->sLock:Ljava/lang/Object;
 
     invoke-static {v7, v15}, Landroidx/core/content/ContextCompat$Api21Impl;->getDrawable(Landroid/content/Context;I)Landroid/graphics/drawable/Drawable;
 
     move-result-object v7
 
-    iget-object v14, v1, Landroidx/databinding/ViewDataBinding;->mRoot:Landroid/view/View;
+    iget-object v15, v1, Landroidx/databinding/ViewDataBinding;->mRoot:Landroid/view/View;
 
-    invoke-virtual {v14}, Landroid/view/View;->getContext()Landroid/content/Context;
+    invoke-virtual {v15}, Landroid/view/View;->getContext()Landroid/content/Context;
 
-    move-result-object v14
+    move-result-object v15
 
-    const-string v15, "context"
+    move-object/from16 v20, v7
 
-    invoke-static {v14, v15}, Lkotlin/jvm/internal/Intrinsics;->checkNotNullParameter(Ljava/lang/Object;Ljava/lang/String;)V
+    const-string v7, "context"
 
-    iget-boolean v15, v8, Lde/rki/coronawarnapp/ui/settings/start/SettingsPrivacyPreservingAnalyticsState;->isEnabled:Z
+    invoke-static {v15, v7}, Lkotlin/jvm/internal/Intrinsics;->checkNotNullParameter(Ljava/lang/Object;Ljava/lang/String;)V
 
-    if-eqz v15, :cond_b
+    iget-boolean v7, v8, Lde/rki/coronawarnapp/ui/settings/start/SettingsPrivacyPreservingAnalyticsState;->isEnabled:Z
 
-    const v15, 0x7f060040
+    if-eqz v7, :cond_b
+
+    const v7, 0x7f060041
 
     goto :goto_b
 
     :cond_b
-    const v15, 0x7f060086
+    const v7, 0x7f06008c
 
     :goto_b
-    move-object/from16 v21, v7
-
-    const-string v7, "<this>"
-
-    invoke-static {v14, v7}, Lkotlin/jvm/internal/Intrinsics;->checkNotNullParameter(Ljava/lang/Object;Ljava/lang/String;)V
-
-    invoke-static {v14, v15}, Landroidx/core/content/ContextCompat$Api23Impl;->getColor(Landroid/content/Context;I)I
+    invoke-static {v15, v7}, Landroidx/core/content/ContextCompat$Api23Impl;->getColor(Landroid/content/Context;I)I
 
     move-result v7
 
-    iget-object v14, v1, Landroidx/databinding/ViewDataBinding;->mRoot:Landroid/view/View;
+    iget-object v15, v1, Landroidx/databinding/ViewDataBinding;->mRoot:Landroid/view/View;
 
-    invoke-virtual {v14}, Landroid/view/View;->getContext()Landroid/content/Context;
+    invoke-virtual {v15}, Landroid/view/View;->getContext()Landroid/content/Context;
 
-    move-result-object v14
+    move-result-object v15
 
-    const-string v15, "context"
+    move/from16 v21, v7
 
-    invoke-static {v14, v15}, Lkotlin/jvm/internal/Intrinsics;->checkNotNullParameter(Ljava/lang/Object;Ljava/lang/String;)V
+    const-string v7, "context"
 
-    iget-boolean v8, v8, Lde/rki/coronawarnapp/ui/settings/start/SettingsPrivacyPreservingAnalyticsState;->isEnabled:Z
+    invoke-static {v15, v7}, Lkotlin/jvm/internal/Intrinsics;->checkNotNullParameter(Ljava/lang/Object;Ljava/lang/String;)V
 
-    if-eqz v8, :cond_c
+    iget-boolean v7, v8, Lde/rki/coronawarnapp/ui/settings/start/SettingsPrivacyPreservingAnalyticsState;->isEnabled:Z
 
-    const v8, 0x7f130468
+    if-eqz v7, :cond_c
+
+    const v7, 0x7f130479
 
     goto :goto_c
 
     :cond_c
-    const v8, 0x7f130467
+    const v7, 0x7f130478
 
     :goto_c
-    invoke-virtual {v14, v8}, Landroid/content/Context;->getString(I)Ljava/lang/String;
+    invoke-virtual {v15, v7}, Landroid/content/Context;->getString(I)Ljava/lang/String;
 
-    move-result-object v8
+    move-result-object v7
 
-    const-string v14, "context.getString(\n     \u2026string.settings_off\n    )"
+    const-string v8, "context.getString(\n     \u2026string.settings_off\n    )"
 
-    invoke-static {v8, v14}, Lkotlin/jvm/internal/Intrinsics;->checkNotNullExpressionValue(Ljava/lang/Object;Ljava/lang/String;)V
+    invoke-static {v7, v8}, Lkotlin/jvm/internal/Intrinsics;->checkNotNullExpressionValue(Ljava/lang/Object;Ljava/lang/String;)V
 
-    move-object/from16 v14, v21
+    move-object v15, v7
+
+    move-object/from16 v8, v20
+
+    move/from16 v7, v21
 
     goto :goto_d
 
     :cond_d
     move-object/from16 v17, v7
 
-    move/from16 v20, v14
-
     move/from16 v19, v15
-
-    const/4 v8, 0x0
 
     const/4 v7, 0x0
 
-    const/4 v14, 0x0
+    const/4 v8, 0x0
+
+    const/4 v15, 0x0
+
+    move/from16 v22, v15
+
+    move-object v15, v7
+
+    move/from16 v7, v22
 
     :goto_d
     if-eqz v9, :cond_e
@@ -812,7 +796,7 @@
 
     move-result-object v2
 
-    const v3, 0x7f13044f
+    const v3, 0x7f130469
 
     invoke-virtual {v2, v3}, Landroid/content/res/Resources;->getString(I)Ljava/lang/String;
 
@@ -834,7 +818,7 @@
 
     move-result-object v3
 
-    const v9, 0x7f130457
+    const v9, 0x7f130470
 
     invoke-virtual {v3, v9}, Landroid/content/res/Resources;->getString(I)Ljava/lang/String;
 
@@ -846,17 +830,17 @@
 
     iget-object v3, v1, Landroidx/databinding/ViewDataBinding;->mRoot:Landroid/view/View;
 
-    const v9, 0x7f0800dd
+    const v9, 0x7f0800d3
 
-    invoke-static {v3, v9, v0}, Lde/rki/coronawarnapp/databinding/FragmentInformationAboutBindingImpl$$ExternalSyntheticOutline0;->m(Landroid/view/View;ILde/rki/coronawarnapp/databinding/IncludeHeaderBinding;)V
+    invoke-static {v3, v9, v0}, Landroidx/constraintlayout/core/widgets/analyzer/DependencyNode$Type$EnumUnboxingLocalUtility;->m(Landroid/view/View;ILde/rki/coronawarnapp/databinding/IncludeHeaderBinding;)V
 
     iget-object v0, v1, Lde/rki/coronawarnapp/databinding/FragmentSettingsBinding;->settingsHeader:Lde/rki/coronawarnapp/databinding/IncludeHeaderBinding;
 
     iget-object v3, v1, Landroidx/databinding/ViewDataBinding;->mRoot:Landroid/view/View;
 
-    const v9, 0x7f130478
+    const v9, 0x7f130489
 
-    invoke-static {v3, v9, v0}, Lde/rki/coronawarnapp/databinding/FragmentInformationAboutBindingImpl$$ExternalSyntheticOutline1;->m(Landroid/view/View;ILde/rki/coronawarnapp/databinding/IncludeHeaderBinding;)V
+    invoke-static {v3, v9, v0}, Lde/rki/coronawarnapp/server/protocols/internal/ppdd/PpaData$ExposureRiskMetadata$Builder-IA;->m(Landroid/view/View;ILde/rki/coronawarnapp/databinding/IncludeHeaderBinding;)V
 
     iget-object v0, v1, Lde/rki/coronawarnapp/databinding/FragmentSettingsBinding;->settingsNotifications:Lde/rki/coronawarnapp/databinding/IncludeSettingRowBinding;
 
@@ -866,7 +850,7 @@
 
     move-result-object v3
 
-    const v9, 0x7f13045b
+    const v9, 0x7f130473
 
     invoke-virtual {v3, v9}, Landroid/content/res/Resources;->getString(I)Ljava/lang/String;
 
@@ -886,7 +870,7 @@
 
     move-result-object v3
 
-    const v9, 0x7f130466
+    const v9, 0x7f130477
 
     invoke-virtual {v3, v9}, Landroid/content/res/Resources;->getString(I)Ljava/lang/String;
 
@@ -902,7 +886,7 @@
 
     move-result-object v3
 
-    const v9, 0x7f130469
+    const v9, 0x7f13047a
 
     invoke-virtual {v3, v9}, Landroid/content/res/Resources;->getString(I)Ljava/lang/String;
 
@@ -922,7 +906,7 @@
 
     move-result-object v3
 
-    const v9, 0x7f13046a
+    const v9, 0x7f13047b
 
     invoke-virtual {v3, v9}, Landroid/content/res/Resources;->getString(I)Ljava/lang/String;
 
@@ -938,7 +922,7 @@
 
     move-result-object v3
 
-    const v9, 0x7f13047d
+    const v9, 0x7f13048d
 
     invoke-virtual {v3, v9}, Landroid/content/res/Resources;->getString(I)Ljava/lang/String;
 
@@ -958,7 +942,7 @@
 
     move-result-object v2
 
-    const v3, 0x7f130494
+    const v3, 0x7f1304a0
 
     invoke-virtual {v2, v3}, Landroid/content/res/Resources;->getString(I)Ljava/lang/String;
 
@@ -998,14 +982,14 @@
 
     iget-object v0, v1, Lde/rki/coronawarnapp/databinding/FragmentSettingsBinding;->settingsPrivacyPreservingAnalytics:Lde/rki/coronawarnapp/databinding/IncludeSettingRowBinding;
 
-    invoke-virtual {v0, v14}, Lde/rki/coronawarnapp/databinding/IncludeSettingRowBinding;->setIcon(Landroid/graphics/drawable/Drawable;)V
+    invoke-virtual {v0, v8}, Lde/rki/coronawarnapp/databinding/IncludeSettingRowBinding;->setIcon(Landroid/graphics/drawable/Drawable;)V
 
     iget-object v0, v1, Lde/rki/coronawarnapp/databinding/FragmentSettingsBinding;->settingsPrivacyPreservingAnalytics:Lde/rki/coronawarnapp/databinding/IncludeSettingRowBinding;
 
-    invoke-virtual {v0, v8}, Lde/rki/coronawarnapp/databinding/IncludeSettingRowBinding;->setStatusText(Ljava/lang/String;)V
+    invoke-virtual {v0, v15}, Lde/rki/coronawarnapp/databinding/IncludeSettingRowBinding;->setStatusText(Ljava/lang/String;)V
 
     :cond_11
-    if-eqz v20, :cond_12
+    if-eqz v14, :cond_12
 
     iget-object v0, v1, Lde/rki/coronawarnapp/databinding/FragmentSettingsBinding;->settingsTracing:Lde/rki/coronawarnapp/databinding/IncludeSettingRowBinding;
 
@@ -1363,7 +1347,7 @@
     :try_end_0
     .catchall {:try_start_0 .. :try_end_0} :catchall_0
 
-    const/16 p1, 0x23
+    const/16 p1, 0x22
 
     invoke-virtual {p0, p1}, Landroidx/databinding/BaseObservable;->notifyPropertyChanged(I)V
 
@@ -1410,7 +1394,7 @@
     :try_end_0
     .catchall {:try_start_0 .. :try_end_0} :catchall_0
 
-    const/16 p1, 0x32
+    const/16 p1, 0x30
 
     invoke-virtual {p0, p1}, Landroidx/databinding/BaseObservable;->notifyPropertyChanged(I)V
 

@@ -21,19 +21,19 @@
 
     sput-object v0, Lde/rki/coronawarnapp/databinding/TracingDetailsItemRiskdetailsIncreasedViewBindingImpl;->sViewsWithIds:Landroid/util/SparseIntArray;
 
-    const v1, 0x7f0a05ca
+    const v1, 0x7f0a0615
 
     const/4 v2, 0x2
 
     invoke-virtual {v0, v1, v2}, Landroid/util/SparseIntArray;->put(II)V
 
-    const v1, 0x7f0a05cc
+    const v1, 0x7f0a0617
 
     const/4 v2, 0x3
 
     invoke-virtual {v0, v1, v2}, Landroid/util/SparseIntArray;->put(II)V
 
-    const v1, 0x7f0a05c9
+    const v1, 0x7f0a0614
 
     const/4 v2, 0x4
 
@@ -174,7 +174,7 @@
 
     invoke-static {v1, v2}, Lkotlin/jvm/internal/Intrinsics;->checkNotNullParameter(Ljava/lang/Object;Ljava/lang/String;)V
 
-    const v2, 0x7f130419
+    const v2, 0x7f130431
 
     invoke-virtual {v1, v2}, Landroid/content/Context;->getString(I)Ljava/lang/String;
 
@@ -299,7 +299,7 @@
     :try_end_0
     .catchall {:try_start_0 .. :try_end_0} :catchall_0
 
-    const/16 p1, 0x1b
+    const/16 p1, 0x1a
 
     invoke-virtual {p0, p1}, Landroidx/databinding/BaseObservable;->notifyPropertyChanged(I)V
 

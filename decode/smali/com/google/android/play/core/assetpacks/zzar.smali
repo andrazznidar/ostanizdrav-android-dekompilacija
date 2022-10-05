@@ -67,7 +67,7 @@
 
     move-result p1
 
-    sget-object v0, Lcom/google/android/play/core/assetpacks/zzaw;->zza:Lkotlin/jvm/internal/SpreadBuilder;
+    sget-object v0, Lcom/google/android/play/core/assetpacks/zzaw;->zza:Lcom/google/android/play/core/internal/zzag;
 
     const/4 v1, 0x1
 
@@ -83,7 +83,7 @@
 
     const-string p1, "onError(%d), retrying notifyModuleCompleted..."
 
-    invoke-virtual {v0, p1, v1}, Lkotlin/jvm/internal/SpreadBuilder;->zzb(Ljava/lang/String;[Ljava/lang/Object;)I
+    invoke-virtual {v0, p1, v1}, Lcom/google/android/play/core/internal/zzag;->zzb(Ljava/lang/String;[Ljava/lang/Object;)I
 
     iget p1, p0, Lcom/google/android/play/core/assetpacks/zzar;->zze:I
 

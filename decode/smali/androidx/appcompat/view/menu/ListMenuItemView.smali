@@ -585,7 +585,7 @@
 .method public onFinishInflate()V
     .locals 3
 
-    invoke-super {p0}, Landroid/view/View;->onFinishInflate()V
+    invoke-super {p0}, Landroid/widget/LinearLayout;->onFinishInflate()V
 
     iget-object v0, p0, Landroidx/appcompat/view/menu/ListMenuItemView;->mBackground:Landroid/graphics/drawable/Drawable;
 

@@ -131,3 +131,79 @@
 
     return-object p0
 .end method
+
+.method public static encrypt$default(Lde/rki/coronawarnapp/util/encryption/rsa/RSACryptography;[BLjava/security/PublicKey;Lde/rki/coronawarnapp/util/encryption/rsa/RSACryptography$CipherType;I)[B
+    .locals 1
+
+    and-int/lit8 p3, p4, 0x4
+
+    if-eqz p3, :cond_0
+
+    sget-object p3, Lde/rki/coronawarnapp/util/encryption/rsa/RSACryptography$CipherType;->RSA_PKCS1_OAEP_PADDING:Lde/rki/coronawarnapp/util/encryption/rsa/RSACryptography$CipherType;
+
+    goto :goto_0
+
+    :cond_0
+    const/4 p3, 0x0
+
+    :goto_0
+    invoke-static {p0}, Ljava/util/Objects;->requireNonNull(Ljava/lang/Object;)Ljava/lang/Object;
+
+    const-string p0, "toEncrypt"
+
+    invoke-static {p1, p0}, Lkotlin/jvm/internal/Intrinsics;->checkNotNullParameter(Ljava/lang/Object;Ljava/lang/String;)V
+
+    const-string p0, "publicKey"
+
+    invoke-static {p2, p0}, Lkotlin/jvm/internal/Intrinsics;->checkNotNullParameter(Ljava/lang/Object;Ljava/lang/String;)V
+
+    const-string p0, "cipherType"
+
+    invoke-static {p3, p0}, Lkotlin/jvm/internal/Intrinsics;->checkNotNullParameter(Ljava/lang/Object;Ljava/lang/String;)V
+
+    iget-object p0, p3, Lde/rki/coronawarnapp/util/encryption/rsa/RSACryptography$CipherType;->transformation:Ljava/lang/String;
+
+    invoke-static {p0}, Ljavax/crypto/Cipher;->getInstance(Ljava/lang/String;)Ljavax/crypto/Cipher;
+
+    move-result-object p0
+
+    iget-object p3, p3, Lde/rki/coronawarnapp/util/encryption/rsa/RSACryptography$CipherType;->oaepParameterSpec:Ljavax/crypto/spec/OAEPParameterSpec;
+
+    const/4 p4, 0x1
+
+    invoke-virtual {p0, p4, p2, p3}, Ljavax/crypto/Cipher;->init(ILjava/security/Key;Ljava/security/spec/AlgorithmParameterSpec;)V
+
+    invoke-virtual {p0, p1}, Ljavax/crypto/Cipher;->doFinal([B)[B
+
+    move-result-object p0
+
+    sget-object p2, Ltimber/log/Timber;->Forest:Ltimber/log/Timber$Forest;
+
+    const/4 p3, 0x2
+
+    new-array p3, p3, [Ljava/lang/Object;
+
+    const/4 v0, 0x0
+
+    array-length p1, p1
+
+    invoke-static {p1}, Ljava/lang/Integer;->valueOf(I)Ljava/lang/Integer;
+
+    move-result-object p1
+
+    aput-object p1, p3, v0
+
+    array-length p1, p0
+
+    invoke-static {p1}, Ljava/lang/Integer;->valueOf(I)Ljava/lang/Integer;
+
+    move-result-object p1
+
+    aput-object p1, p3, p4
+
+    const-string p1, "Encrypted %s bytes to %s bytes"
+
+    invoke-virtual {p2, p1, p3}, Ltimber/log/Timber$Forest;->v(Ljava/lang/String;[Ljava/lang/Object;)V
+
+    return-object p0
+.end method

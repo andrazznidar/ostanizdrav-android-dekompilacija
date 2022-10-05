@@ -64,10 +64,6 @@
 
     move-result-object v0
 
-    const-string/jumbo v1, "value"
-
-    invoke-static {p1, v1}, Lkotlin/jvm/internal/Intrinsics;->checkNotNullParameter(Ljava/lang/Object;Ljava/lang/String;)V
-
     iget-object v1, v0, Lde/rki/coronawarnapp/datadonation/analytics/ui/input/UserInfoItemAdapter;->internalData:Ljava/util/List;
 
     invoke-interface {v1}, Ljava/util/List;->clear()V

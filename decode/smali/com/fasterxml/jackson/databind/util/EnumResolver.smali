@@ -47,11 +47,13 @@
     .end annotation
 .end field
 
+.field public final _isFromIntValue:Z
+
 .field public final _isIgnoreCase:Z
 
 
 # direct methods
-.method public constructor <init>(Ljava/lang/Class;[Ljava/lang/Enum;Ljava/util/HashMap;Ljava/lang/Enum;Z)V
+.method public constructor <init>(Ljava/lang/Class;[Ljava/lang/Enum;Ljava/util/HashMap;Ljava/lang/Enum;ZZ)V
     .locals 0
     .annotation system Ldalvik/annotation/Signature;
         value = {
@@ -66,7 +68,7 @@
             "Ljava/lang/Enum<",
             "*>;>;",
             "Ljava/lang/Enum<",
-            "*>;Z)V"
+            "*>;ZZ)V"
         }
     .end annotation
 
@@ -81,6 +83,8 @@
     iput-object p4, p0, Lcom/fasterxml/jackson/databind/util/EnumResolver;->_defaultValue:Ljava/lang/Enum;
 
     iput-boolean p5, p0, Lcom/fasterxml/jackson/databind/util/EnumResolver;->_isIgnoreCase:Z
+
+    iput-boolean p6, p0, Lcom/fasterxml/jackson/databind/util/EnumResolver;->_isFromIntValue:Z
 
     return-void
 .end method
@@ -187,14 +191,17 @@
 
     new-array p0, p0, [[Ljava/lang/String;
 
+    if-eqz v0, :cond_0
+
     invoke-virtual {v0, p1, v4, p0}, Lcom/fasterxml/jackson/databind/AnnotationIntrospector;->findEnumAliases(Ljava/lang/Class;[Ljava/lang/Enum;[[Ljava/lang/String;)V
 
+    :cond_0
     array-length v1, v4
 
-    :cond_0
+    :cond_1
     add-int/lit8 v1, v1, -0x1
 
-    if-ltz v1, :cond_2
+    if-ltz v1, :cond_3
 
     aget-object v2, v4, v1
 
@@ -206,14 +213,14 @@
 
     aget-object v3, p0, v1
 
-    if-eqz v3, :cond_0
+    if-eqz v3, :cond_1
 
     array-length v6, v3
 
     const/4 v8, 0x0
 
     :goto_0
-    if-ge v8, v6, :cond_0
+    if-ge v8, v6, :cond_1
 
     aget-object v9, v3, v8
 
@@ -221,27 +228,29 @@
 
     move-result v10
 
-    if-nez v10, :cond_1
+    if-nez v10, :cond_2
 
     invoke-virtual {v5, v9, v2}, Ljava/util/HashMap;->put(Ljava/lang/Object;Ljava/lang/Object;)Ljava/lang/Object;
 
-    :cond_1
+    :cond_2
     add-int/lit8 v8, v8, 0x1
 
     goto :goto_0
 
-    :cond_2
+    :cond_3
     new-instance p0, Lcom/fasterxml/jackson/databind/util/EnumResolver;
 
     invoke-static {v0, p1}, Lcom/fasterxml/jackson/databind/util/EnumResolver;->_enumDefault(Lcom/fasterxml/jackson/databind/AnnotationIntrospector;Ljava/lang/Class;)Ljava/lang/Enum;
 
     move-result-object v6
 
+    const/4 v8, 0x0
+
     move-object v2, p0
 
     move-object v3, p1
 
-    invoke-direct/range {v2 .. v7}, Lcom/fasterxml/jackson/databind/util/EnumResolver;-><init>(Ljava/lang/Class;[Ljava/lang/Enum;Ljava/util/HashMap;Ljava/lang/Enum;Z)V
+    invoke-direct/range {v2 .. v8}, Lcom/fasterxml/jackson/databind/util/EnumResolver;-><init>(Ljava/lang/Class;[Ljava/lang/Enum;Ljava/util/HashMap;Ljava/lang/Enum;ZZ)V
 
     return-object p0
 .end method

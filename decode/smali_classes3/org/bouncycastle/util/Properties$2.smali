@@ -5,6 +5,17 @@
 .implements Ljava/security/PrivilegedAction;
 
 
+# annotations
+.annotation system Ldalvik/annotation/EnclosingMethod;
+    value = Lorg/bouncycastle/util/Properties;->getPropertyValue(Ljava/lang/String;)Ljava/lang/String;
+.end annotation
+
+.annotation system Ldalvik/annotation/InnerClass;
+    accessFlags = 0x9
+    name = null
+.end annotation
+
+
 # instance fields
 .field public final synthetic val$propertyName:Ljava/lang/String;
 

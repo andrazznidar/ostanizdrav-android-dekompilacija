@@ -7,7 +7,7 @@
 
 
 # direct methods
-.method public static synthetic $$$reportNull$$$0(I)V
+.method private static synthetic $$$reportNull$$$0(I)V
     .locals 11
 
     const/16 v0, 0x18
@@ -289,69 +289,84 @@
 .method public constructor <init>(Lkotlin/reflect/jvm/internal/impl/descriptors/DeclarationDescriptor;Lkotlin/reflect/jvm/internal/impl/descriptors/SimpleFunctionDescriptor;Lkotlin/reflect/jvm/internal/impl/descriptors/annotations/Annotations;Lkotlin/reflect/jvm/internal/impl/name/Name;Lkotlin/reflect/jvm/internal/impl/descriptors/CallableMemberDescriptor$Kind;Lkotlin/reflect/jvm/internal/impl/descriptors/SourceElement;)V
     .locals 1
 
+    if-nez p1, :cond_0
+
     const/4 v0, 0x0
 
-    if-eqz p1, :cond_4
+    invoke-static {v0}, Lkotlin/reflect/jvm/internal/impl/descriptors/impl/SimpleFunctionDescriptorImpl;->$$$reportNull$$$0(I)V
 
-    if-eqz p3, :cond_3
+    :cond_0
+    if-nez p3, :cond_1
 
-    if-eqz p4, :cond_2
+    const/4 v0, 0x1
 
-    if-eqz p5, :cond_1
+    invoke-static {v0}, Lkotlin/reflect/jvm/internal/impl/descriptors/impl/SimpleFunctionDescriptorImpl;->$$$reportNull$$$0(I)V
 
-    if-eqz p6, :cond_0
+    :cond_1
+    if-nez p4, :cond_2
 
+    const/4 v0, 0x2
+
+    invoke-static {v0}, Lkotlin/reflect/jvm/internal/impl/descriptors/impl/SimpleFunctionDescriptorImpl;->$$$reportNull$$$0(I)V
+
+    :cond_2
+    if-nez p5, :cond_3
+
+    const/4 v0, 0x3
+
+    invoke-static {v0}, Lkotlin/reflect/jvm/internal/impl/descriptors/impl/SimpleFunctionDescriptorImpl;->$$$reportNull$$$0(I)V
+
+    :cond_3
+    if-nez p6, :cond_4
+
+    const/4 v0, 0x4
+
+    invoke-static {v0}, Lkotlin/reflect/jvm/internal/impl/descriptors/impl/SimpleFunctionDescriptorImpl;->$$$reportNull$$$0(I)V
+
+    :cond_4
     invoke-direct/range {p0 .. p6}, Lkotlin/reflect/jvm/internal/impl/descriptors/impl/FunctionDescriptorImpl;-><init>(Lkotlin/reflect/jvm/internal/impl/descriptors/DeclarationDescriptor;Lkotlin/reflect/jvm/internal/impl/descriptors/FunctionDescriptor;Lkotlin/reflect/jvm/internal/impl/descriptors/annotations/Annotations;Lkotlin/reflect/jvm/internal/impl/name/Name;Lkotlin/reflect/jvm/internal/impl/descriptors/CallableMemberDescriptor$Kind;Lkotlin/reflect/jvm/internal/impl/descriptors/SourceElement;)V
 
     return-void
-
-    :cond_0
-    const/4 p1, 0x4
-
-    invoke-static {p1}, Lkotlin/reflect/jvm/internal/impl/descriptors/impl/SimpleFunctionDescriptorImpl;->$$$reportNull$$$0(I)V
-
-    throw v0
-
-    :cond_1
-    const/4 p1, 0x3
-
-    invoke-static {p1}, Lkotlin/reflect/jvm/internal/impl/descriptors/impl/SimpleFunctionDescriptorImpl;->$$$reportNull$$$0(I)V
-
-    throw v0
-
-    :cond_2
-    const/4 p1, 0x2
-
-    invoke-static {p1}, Lkotlin/reflect/jvm/internal/impl/descriptors/impl/SimpleFunctionDescriptorImpl;->$$$reportNull$$$0(I)V
-
-    throw v0
-
-    :cond_3
-    const/4 p1, 0x1
-
-    invoke-static {p1}, Lkotlin/reflect/jvm/internal/impl/descriptors/impl/SimpleFunctionDescriptorImpl;->$$$reportNull$$$0(I)V
-
-    throw v0
-
-    :cond_4
-    const/4 p1, 0x0
-
-    invoke-static {p1}, Lkotlin/reflect/jvm/internal/impl/descriptors/impl/SimpleFunctionDescriptorImpl;->$$$reportNull$$$0(I)V
-
-    throw v0
 .end method
 
 .method public static create(Lkotlin/reflect/jvm/internal/impl/descriptors/DeclarationDescriptor;Lkotlin/reflect/jvm/internal/impl/descriptors/annotations/Annotations;Lkotlin/reflect/jvm/internal/impl/name/Name;Lkotlin/reflect/jvm/internal/impl/descriptors/CallableMemberDescriptor$Kind;Lkotlin/reflect/jvm/internal/impl/descriptors/SourceElement;)Lkotlin/reflect/jvm/internal/impl/descriptors/impl/SimpleFunctionDescriptorImpl;
     .locals 8
 
-    const/4 v0, 0x0
+    if-nez p0, :cond_0
 
-    if-eqz p0, :cond_2
+    const/4 v0, 0x5
 
-    if-eqz p2, :cond_1
+    invoke-static {v0}, Lkotlin/reflect/jvm/internal/impl/descriptors/impl/SimpleFunctionDescriptorImpl;->$$$reportNull$$$0(I)V
 
-    if-eqz p4, :cond_0
+    :cond_0
+    if-nez p1, :cond_1
 
+    const/4 v0, 0x6
+
+    invoke-static {v0}, Lkotlin/reflect/jvm/internal/impl/descriptors/impl/SimpleFunctionDescriptorImpl;->$$$reportNull$$$0(I)V
+
+    :cond_1
+    if-nez p2, :cond_2
+
+    const/4 v0, 0x7
+
+    invoke-static {v0}, Lkotlin/reflect/jvm/internal/impl/descriptors/impl/SimpleFunctionDescriptorImpl;->$$$reportNull$$$0(I)V
+
+    :cond_2
+    if-nez p3, :cond_3
+
+    const/16 v0, 0x8
+
+    invoke-static {v0}, Lkotlin/reflect/jvm/internal/impl/descriptors/impl/SimpleFunctionDescriptorImpl;->$$$reportNull$$$0(I)V
+
+    :cond_3
+    if-nez p4, :cond_4
+
+    const/16 v0, 0x9
+
+    invoke-static {v0}, Lkotlin/reflect/jvm/internal/impl/descriptors/impl/SimpleFunctionDescriptorImpl;->$$$reportNull$$$0(I)V
+
+    :cond_4
     new-instance v0, Lkotlin/reflect/jvm/internal/impl/descriptors/impl/SimpleFunctionDescriptorImpl;
 
     const/4 v3, 0x0
@@ -371,27 +386,6 @@
     invoke-direct/range {v1 .. v7}, Lkotlin/reflect/jvm/internal/impl/descriptors/impl/SimpleFunctionDescriptorImpl;-><init>(Lkotlin/reflect/jvm/internal/impl/descriptors/DeclarationDescriptor;Lkotlin/reflect/jvm/internal/impl/descriptors/SimpleFunctionDescriptor;Lkotlin/reflect/jvm/internal/impl/descriptors/annotations/Annotations;Lkotlin/reflect/jvm/internal/impl/name/Name;Lkotlin/reflect/jvm/internal/impl/descriptors/CallableMemberDescriptor$Kind;Lkotlin/reflect/jvm/internal/impl/descriptors/SourceElement;)V
 
     return-object v0
-
-    :cond_0
-    const/16 p0, 0x9
-
-    invoke-static {p0}, Lkotlin/reflect/jvm/internal/impl/descriptors/impl/SimpleFunctionDescriptorImpl;->$$$reportNull$$$0(I)V
-
-    throw v0
-
-    :cond_1
-    const/4 p0, 0x7
-
-    invoke-static {p0}, Lkotlin/reflect/jvm/internal/impl/descriptors/impl/SimpleFunctionDescriptorImpl;->$$$reportNull$$$0(I)V
-
-    throw v0
-
-    :cond_2
-    const/4 p0, 0x5
-
-    invoke-static {p0}, Lkotlin/reflect/jvm/internal/impl/descriptors/impl/SimpleFunctionDescriptorImpl;->$$$reportNull$$$0(I)V
-
-    throw v0
 .end method
 
 
@@ -425,42 +419,58 @@
 
     check-cast p1, Lkotlin/reflect/jvm/internal/impl/descriptors/SimpleFunctionDescriptor;
 
-    if-eqz p1, :cond_0
+    if-nez p1, :cond_0
 
-    return-object p1
+    const/16 p2, 0x17
+
+    invoke-static {p2}, Lkotlin/reflect/jvm/internal/impl/descriptors/impl/SimpleFunctionDescriptorImpl;->$$$reportNull$$$0(I)V
 
     :cond_0
-    const/16 p1, 0x17
-
-    invoke-static {p1}, Lkotlin/reflect/jvm/internal/impl/descriptors/impl/SimpleFunctionDescriptorImpl;->$$$reportNull$$$0(I)V
-
-    const/4 p1, 0x0
-
-    throw p1
+    return-object p1
 .end method
 
 .method public createSubstitutedCopy(Lkotlin/reflect/jvm/internal/impl/descriptors/DeclarationDescriptor;Lkotlin/reflect/jvm/internal/impl/descriptors/FunctionDescriptor;Lkotlin/reflect/jvm/internal/impl/descriptors/CallableMemberDescriptor$Kind;Lkotlin/reflect/jvm/internal/impl/name/Name;Lkotlin/reflect/jvm/internal/impl/descriptors/annotations/Annotations;Lkotlin/reflect/jvm/internal/impl/descriptors/SourceElement;)Lkotlin/reflect/jvm/internal/impl/descriptors/impl/FunctionDescriptorImpl;
     .locals 8
 
-    const/4 v0, 0x0
+    if-nez p1, :cond_0
 
-    if-eqz p1, :cond_3
+    const/16 v0, 0x13
 
-    if-eqz p3, :cond_2
+    invoke-static {v0}, Lkotlin/reflect/jvm/internal/impl/descriptors/impl/SimpleFunctionDescriptorImpl;->$$$reportNull$$$0(I)V
 
-    if-eqz p5, :cond_1
+    :cond_0
+    if-nez p3, :cond_1
 
+    const/16 v0, 0x14
+
+    invoke-static {v0}, Lkotlin/reflect/jvm/internal/impl/descriptors/impl/SimpleFunctionDescriptorImpl;->$$$reportNull$$$0(I)V
+
+    :cond_1
+    if-nez p5, :cond_2
+
+    const/16 v0, 0x15
+
+    invoke-static {v0}, Lkotlin/reflect/jvm/internal/impl/descriptors/impl/SimpleFunctionDescriptorImpl;->$$$reportNull$$$0(I)V
+
+    :cond_2
+    if-nez p6, :cond_3
+
+    const/16 v0, 0x16
+
+    invoke-static {v0}, Lkotlin/reflect/jvm/internal/impl/descriptors/impl/SimpleFunctionDescriptorImpl;->$$$reportNull$$$0(I)V
+
+    :cond_3
     new-instance v0, Lkotlin/reflect/jvm/internal/impl/descriptors/impl/SimpleFunctionDescriptorImpl;
 
     move-object v3, p2
 
     check-cast v3, Lkotlin/reflect/jvm/internal/impl/descriptors/SimpleFunctionDescriptor;
 
-    if-eqz p4, :cond_0
+    if-eqz p4, :cond_4
 
     goto :goto_0
 
-    :cond_0
+    :cond_4
     invoke-virtual {p0}, Lkotlin/reflect/jvm/internal/impl/descriptors/impl/DeclarationDescriptorImpl;->getName()Lkotlin/reflect/jvm/internal/impl/name/Name;
 
     move-result-object p4
@@ -481,27 +491,6 @@
     invoke-direct/range {v1 .. v7}, Lkotlin/reflect/jvm/internal/impl/descriptors/impl/SimpleFunctionDescriptorImpl;-><init>(Lkotlin/reflect/jvm/internal/impl/descriptors/DeclarationDescriptor;Lkotlin/reflect/jvm/internal/impl/descriptors/SimpleFunctionDescriptor;Lkotlin/reflect/jvm/internal/impl/descriptors/annotations/Annotations;Lkotlin/reflect/jvm/internal/impl/name/Name;Lkotlin/reflect/jvm/internal/impl/descriptors/CallableMemberDescriptor$Kind;Lkotlin/reflect/jvm/internal/impl/descriptors/SourceElement;)V
 
     return-object v0
-
-    :cond_1
-    const/16 p1, 0x15
-
-    invoke-static {p1}, Lkotlin/reflect/jvm/internal/impl/descriptors/impl/SimpleFunctionDescriptorImpl;->$$$reportNull$$$0(I)V
-
-    throw v0
-
-    :cond_2
-    const/16 p1, 0x14
-
-    invoke-static {p1}, Lkotlin/reflect/jvm/internal/impl/descriptors/impl/SimpleFunctionDescriptorImpl;->$$$reportNull$$$0(I)V
-
-    throw v0
-
-    :cond_3
-    const/16 p1, 0x13
-
-    invoke-static {p1}, Lkotlin/reflect/jvm/internal/impl/descriptors/impl/SimpleFunctionDescriptorImpl;->$$$reportNull$$$0(I)V
-
-    throw v0
 .end method
 
 .method public bridge synthetic getOriginal()Lkotlin/reflect/jvm/internal/impl/descriptors/CallableDescriptor;
@@ -555,7 +544,7 @@
 .end method
 
 .method public getOriginal()Lkotlin/reflect/jvm/internal/impl/descriptors/SimpleFunctionDescriptor;
-    .locals 1
+    .locals 2
 
     invoke-super {p0}, Lkotlin/reflect/jvm/internal/impl/descriptors/impl/FunctionDescriptorImpl;->getOriginal()Lkotlin/reflect/jvm/internal/impl/descriptors/FunctionDescriptor;
 
@@ -563,18 +552,14 @@
 
     check-cast v0, Lkotlin/reflect/jvm/internal/impl/descriptors/SimpleFunctionDescriptor;
 
-    if-eqz v0, :cond_0
+    if-nez v0, :cond_0
 
-    return-object v0
+    const/16 v1, 0x12
+
+    invoke-static {v1}, Lkotlin/reflect/jvm/internal/impl/descriptors/impl/SimpleFunctionDescriptorImpl;->$$$reportNull$$$0(I)V
 
     :cond_0
-    const/16 v0, 0x12
-
-    invoke-static {v0}, Lkotlin/reflect/jvm/internal/impl/descriptors/impl/SimpleFunctionDescriptorImpl;->$$$reportNull$$$0(I)V
-
-    const/4 v0, 0x0
-
-    throw v0
+    return-object v0
 .end method
 
 .method public bridge synthetic initialize(Lkotlin/reflect/jvm/internal/impl/descriptors/ReceiverParameterDescriptor;Lkotlin/reflect/jvm/internal/impl/descriptors/ReceiverParameterDescriptor;Ljava/util/List;Ljava/util/List;Lkotlin/reflect/jvm/internal/impl/types/KotlinType;Lkotlin/reflect/jvm/internal/impl/descriptors/Modality;Lkotlin/reflect/jvm/internal/impl/descriptors/DescriptorVisibility;)Lkotlin/reflect/jvm/internal/impl/descriptors/impl/FunctionDescriptorImpl;
@@ -588,7 +573,7 @@
 .end method
 
 .method public initialize(Lkotlin/reflect/jvm/internal/impl/descriptors/ReceiverParameterDescriptor;Lkotlin/reflect/jvm/internal/impl/descriptors/ReceiverParameterDescriptor;Ljava/util/List;Ljava/util/List;Lkotlin/reflect/jvm/internal/impl/types/KotlinType;Lkotlin/reflect/jvm/internal/impl/descriptors/Modality;Lkotlin/reflect/jvm/internal/impl/descriptors/DescriptorVisibility;)Lkotlin/reflect/jvm/internal/impl/descriptors/impl/SimpleFunctionDescriptorImpl;
-    .locals 10
+    .locals 9
     .annotation system Ldalvik/annotation/Signature;
         value = {
             "(",
@@ -609,67 +594,57 @@
         }
     .end annotation
 
-    const/4 v0, 0x0
+    if-nez p3, :cond_0
 
-    if-eqz p3, :cond_3
+    const/16 v0, 0xa
 
-    if-eqz p4, :cond_2
-
-    if-eqz p7, :cond_1
-
-    const/4 v9, 0x0
-
-    move-object v1, p0
-
-    move-object v2, p1
-
-    move-object v3, p2
-
-    move-object v4, p3
-
-    move-object v5, p4
-
-    move-object v6, p5
-
-    move-object/from16 v7, p6
-
-    move-object/from16 v8, p7
-
-    invoke-virtual/range {v1 .. v9}, Lkotlin/reflect/jvm/internal/impl/descriptors/impl/SimpleFunctionDescriptorImpl;->initialize(Lkotlin/reflect/jvm/internal/impl/descriptors/ReceiverParameterDescriptor;Lkotlin/reflect/jvm/internal/impl/descriptors/ReceiverParameterDescriptor;Ljava/util/List;Ljava/util/List;Lkotlin/reflect/jvm/internal/impl/types/KotlinType;Lkotlin/reflect/jvm/internal/impl/descriptors/Modality;Lkotlin/reflect/jvm/internal/impl/descriptors/DescriptorVisibility;Ljava/util/Map;)Lkotlin/reflect/jvm/internal/impl/descriptors/impl/SimpleFunctionDescriptorImpl;
-
-    move-result-object v1
-
-    if-eqz v1, :cond_0
-
-    return-object v1
+    invoke-static {v0}, Lkotlin/reflect/jvm/internal/impl/descriptors/impl/SimpleFunctionDescriptorImpl;->$$$reportNull$$$0(I)V
 
     :cond_0
+    if-nez p4, :cond_1
+
+    const/16 v0, 0xb
+
+    invoke-static {v0}, Lkotlin/reflect/jvm/internal/impl/descriptors/impl/SimpleFunctionDescriptorImpl;->$$$reportNull$$$0(I)V
+
+    :cond_1
+    if-nez p7, :cond_2
+
+    const/16 v0, 0xc
+
+    invoke-static {v0}, Lkotlin/reflect/jvm/internal/impl/descriptors/impl/SimpleFunctionDescriptorImpl;->$$$reportNull$$$0(I)V
+
+    :cond_2
+    const/4 v8, 0x0
+
+    move-object v0, p0
+
+    move-object v1, p1
+
+    move-object v2, p2
+
+    move-object v3, p3
+
+    move-object v4, p4
+
+    move-object v5, p5
+
+    move-object v6, p6
+
+    move-object/from16 v7, p7
+
+    invoke-virtual/range {v0 .. v8}, Lkotlin/reflect/jvm/internal/impl/descriptors/impl/SimpleFunctionDescriptorImpl;->initialize(Lkotlin/reflect/jvm/internal/impl/descriptors/ReceiverParameterDescriptor;Lkotlin/reflect/jvm/internal/impl/descriptors/ReceiverParameterDescriptor;Ljava/util/List;Ljava/util/List;Lkotlin/reflect/jvm/internal/impl/types/KotlinType;Lkotlin/reflect/jvm/internal/impl/descriptors/Modality;Lkotlin/reflect/jvm/internal/impl/descriptors/DescriptorVisibility;Ljava/util/Map;)Lkotlin/reflect/jvm/internal/impl/descriptors/impl/SimpleFunctionDescriptorImpl;
+
+    move-result-object v0
+
+    if-nez v0, :cond_3
+
     const/16 v1, 0xd
 
     invoke-static {v1}, Lkotlin/reflect/jvm/internal/impl/descriptors/impl/SimpleFunctionDescriptorImpl;->$$$reportNull$$$0(I)V
 
-    throw v0
-
-    :cond_1
-    const/16 v1, 0xc
-
-    invoke-static {v1}, Lkotlin/reflect/jvm/internal/impl/descriptors/impl/SimpleFunctionDescriptorImpl;->$$$reportNull$$$0(I)V
-
-    throw v0
-
-    :cond_2
-    const/16 v1, 0xb
-
-    invoke-static {v1}, Lkotlin/reflect/jvm/internal/impl/descriptors/impl/SimpleFunctionDescriptorImpl;->$$$reportNull$$$0(I)V
-
-    throw v0
-
     :cond_3
-    const/16 v1, 0xa
-
-    invoke-static {v1}, Lkotlin/reflect/jvm/internal/impl/descriptors/impl/SimpleFunctionDescriptorImpl;->$$$reportNull$$$0(I)V
-
-    throw v0
+    return-object v0
 .end method
 
 .method public initialize(Lkotlin/reflect/jvm/internal/impl/descriptors/ReceiverParameterDescriptor;Lkotlin/reflect/jvm/internal/impl/descriptors/ReceiverParameterDescriptor;Ljava/util/List;Ljava/util/List;Lkotlin/reflect/jvm/internal/impl/types/KotlinType;Lkotlin/reflect/jvm/internal/impl/descriptors/Modality;Lkotlin/reflect/jvm/internal/impl/descriptors/DescriptorVisibility;Ljava/util/Map;)Lkotlin/reflect/jvm/internal/impl/descriptors/impl/SimpleFunctionDescriptorImpl;
@@ -697,23 +672,36 @@
         }
     .end annotation
 
-    const/4 v0, 0x0
+    if-nez p3, :cond_0
 
-    if-eqz p3, :cond_3
+    const/16 v0, 0xe
 
-    if-eqz p4, :cond_2
+    invoke-static {v0}, Lkotlin/reflect/jvm/internal/impl/descriptors/impl/SimpleFunctionDescriptorImpl;->$$$reportNull$$$0(I)V
 
-    if-eqz p7, :cond_1
+    :cond_0
+    if-nez p4, :cond_1
 
+    const/16 v0, 0xf
+
+    invoke-static {v0}, Lkotlin/reflect/jvm/internal/impl/descriptors/impl/SimpleFunctionDescriptorImpl;->$$$reportNull$$$0(I)V
+
+    :cond_1
+    if-nez p7, :cond_2
+
+    const/16 v0, 0x10
+
+    invoke-static {v0}, Lkotlin/reflect/jvm/internal/impl/descriptors/impl/SimpleFunctionDescriptorImpl;->$$$reportNull$$$0(I)V
+
+    :cond_2
     invoke-super/range {p0 .. p7}, Lkotlin/reflect/jvm/internal/impl/descriptors/impl/FunctionDescriptorImpl;->initialize(Lkotlin/reflect/jvm/internal/impl/descriptors/ReceiverParameterDescriptor;Lkotlin/reflect/jvm/internal/impl/descriptors/ReceiverParameterDescriptor;Ljava/util/List;Ljava/util/List;Lkotlin/reflect/jvm/internal/impl/types/KotlinType;Lkotlin/reflect/jvm/internal/impl/descriptors/Modality;Lkotlin/reflect/jvm/internal/impl/descriptors/DescriptorVisibility;)Lkotlin/reflect/jvm/internal/impl/descriptors/impl/FunctionDescriptorImpl;
 
-    if-eqz p8, :cond_0
+    if-eqz p8, :cond_3
 
     invoke-interface {p8}, Ljava/util/Map;->isEmpty()Z
 
     move-result p1
 
-    if-nez p1, :cond_0
+    if-nez p1, :cond_3
 
     new-instance p1, Ljava/util/LinkedHashMap;
 
@@ -721,33 +709,12 @@
 
     iput-object p1, p0, Lkotlin/reflect/jvm/internal/impl/descriptors/impl/FunctionDescriptorImpl;->userDataMap:Ljava/util/Map;
 
-    :cond_0
-    return-object p0
-
-    :cond_1
-    const/16 p1, 0x10
-
-    invoke-static {p1}, Lkotlin/reflect/jvm/internal/impl/descriptors/impl/SimpleFunctionDescriptorImpl;->$$$reportNull$$$0(I)V
-
-    throw v0
-
-    :cond_2
-    const/16 p1, 0xf
-
-    invoke-static {p1}, Lkotlin/reflect/jvm/internal/impl/descriptors/impl/SimpleFunctionDescriptorImpl;->$$$reportNull$$$0(I)V
-
-    throw v0
-
     :cond_3
-    const/16 p1, 0xe
-
-    invoke-static {p1}, Lkotlin/reflect/jvm/internal/impl/descriptors/impl/SimpleFunctionDescriptorImpl;->$$$reportNull$$$0(I)V
-
-    throw v0
+    return-object p0
 .end method
 
 .method public newCopyBuilder()Lkotlin/reflect/jvm/internal/impl/descriptors/FunctionDescriptor$CopyBuilder;
-    .locals 1
+    .locals 2
     .annotation system Ldalvik/annotation/Signature;
         value = {
             "()",
@@ -762,5 +729,12 @@
 
     move-result-object v0
 
+    if-nez v0, :cond_0
+
+    const/16 v1, 0x18
+
+    invoke-static {v1}, Lkotlin/reflect/jvm/internal/impl/descriptors/impl/SimpleFunctionDescriptorImpl;->$$$reportNull$$$0(I)V
+
+    :cond_0
     return-object v0
 .end method

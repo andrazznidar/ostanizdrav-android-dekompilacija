@@ -222,7 +222,7 @@
 
     const-string v2, "Illegal alphabet length "
 
-    invoke-static {v1, v2, p2}, Lcom/google/android/gms/common/api/internal/BasePendingResult$CallbackHandler$$ExternalSyntheticOutline0;->m(ILjava/lang/String;I)Ljava/lang/String;
+    invoke-static {v1, v2, p2}, Lboofcv/alg/misc/HistogramStatistics$$ExternalSyntheticOutline0;->m(ILjava/lang/String;I)Ljava/lang/String;
 
     move-result-object p2
 

@@ -21,49 +21,49 @@
 
     sput-object v0, Lde/rki/coronawarnapp/databinding/NewReleaseInfoScreenFragmentBindingImpl;->sViewsWithIds:Landroid/util/SparseIntArray;
 
-    const v1, 0x7f0a07e4
+    const v1, 0x7f0a082c
 
     const/4 v2, 0x1
 
     invoke-virtual {v0, v1, v2}, Landroid/util/SparseIntArray;->put(II)V
 
-    const v1, 0x7f0a060e
+    const v1, 0x7f0a065b
 
     const/4 v2, 0x2
 
     invoke-virtual {v0, v1, v2}, Landroid/util/SparseIntArray;->put(II)V
 
-    const v1, 0x7f0a04a8
+    const v1, 0x7f0a04ed
 
     const/4 v2, 0x3
 
     invoke-virtual {v0, v1, v2}, Landroid/util/SparseIntArray;->put(II)V
 
-    const v1, 0x7f0a0354
+    const v1, 0x7f0a0384
 
     const/4 v2, 0x4
 
     invoke-virtual {v0, v1, v2}, Landroid/util/SparseIntArray;->put(II)V
 
-    const v1, 0x7f0a04a6
+    const v1, 0x7f0a04eb
 
     const/4 v2, 0x5
 
     invoke-virtual {v0, v1, v2}, Landroid/util/SparseIntArray;->put(II)V
 
-    const v1, 0x7f0a059a
+    const v1, 0x7f0a05e6
 
     const/4 v2, 0x6
 
     invoke-virtual {v0, v1, v2}, Landroid/util/SparseIntArray;->put(II)V
 
-    const v1, 0x7f0a04a7
+    const v1, 0x7f0a04ec
 
     const/4 v2, 0x7
 
     invoke-virtual {v0, v1, v2}, Landroid/util/SparseIntArray;->put(II)V
 
-    const v1, 0x7f0a04a9
+    const v1, 0x7f0a04ee
 
     const/16 v2, 0x8
 

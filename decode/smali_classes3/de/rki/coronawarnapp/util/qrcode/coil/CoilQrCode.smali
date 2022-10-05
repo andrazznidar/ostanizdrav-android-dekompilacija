@@ -60,7 +60,7 @@
 
     invoke-direct {p1, p0}, Lde/rki/coronawarnapp/util/qrcode/coil/CoilQrCode$requestKey$2;-><init>(Lde/rki/coronawarnapp/util/qrcode/coil/CoilQrCode;)V
 
-    invoke-static {p1}, Lkotlin/LazyKt__LazyKt;->lazy(Lkotlin/jvm/functions/Function0;)Lkotlin/Lazy;
+    invoke-static {p1}, Lkotlin/LazyKt__LazyJVMKt;->lazy(Lkotlin/jvm/functions/Function0;)Lkotlin/Lazy;
 
     move-result-object p1
 
@@ -70,7 +70,7 @@
 .end method
 
 .method public synthetic constructor <init>(Ljava/lang/String;Lde/rki/coronawarnapp/util/qrcode/QrCodeOptions;I)V
-    .locals 1
+    .locals 2
 
     and-int/lit8 p2, p3, 0x2
 
@@ -82,7 +82,9 @@
 
     const/4 v0, 0x3
 
-    invoke-direct {p2, p3, p3, v0}, Lde/rki/coronawarnapp/util/qrcode/QrCodeOptions;-><init>(Lcom/google/zxing/qrcode/decoder/ErrorCorrectionLevel;Ljava/nio/charset/Charset;I)V
+    const/4 v1, 0x0
+
+    invoke-direct {p2, v1, p3, v0}, Lde/rki/coronawarnapp/util/qrcode/QrCodeOptions;-><init>(ILjava/nio/charset/Charset;I)V
 
     move-object p3, p2
 

@@ -39,9 +39,7 @@
 
     iget-object v0, p0, Lcom/google/android/play/core/appupdate/zzj;->zza:Lcom/google/android/play/core/appupdate/zzh;
 
-    iget-object v0, v0, Lcom/google/android/play/core/appupdate/zzh;->zza:Ljava/lang/Object;
-
-    check-cast v0, Landroid/content/Context;
+    iget-object v0, v0, Lcom/google/android/play/core/appupdate/zzh;->zza:Landroid/content/Context;
 
     const-string v1, "Cannot return null from a non-@Nullable @Provides method"
 
@@ -55,9 +53,7 @@
 
     iget-object v0, p0, Lcom/google/android/play/core/appupdate/zzj;->zza:Lcom/google/android/play/core/appupdate/zzh;
 
-    iget-object v0, v0, Lcom/google/android/play/core/appupdate/zzh;->zza:Ljava/lang/Object;
-
-    check-cast v0, Landroid/content/Context;
+    iget-object v0, v0, Lcom/google/android/play/core/appupdate/zzh;->zza:Landroid/content/Context;
 
     const-string v1, "Cannot return null from a non-@Nullable @Provides method"
 

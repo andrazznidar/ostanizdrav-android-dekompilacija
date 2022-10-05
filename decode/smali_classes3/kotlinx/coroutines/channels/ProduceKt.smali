@@ -102,11 +102,9 @@
     :cond_2
     invoke-static {p2}, Lkotlin/ResultKt;->throwOnFailure(Ljava/lang/Object;)V
 
-    iget-object p2, v0, Lkotlin/coroutines/jvm/internal/ContinuationImpl;->_context:Lkotlin/coroutines/CoroutineContext;
+    invoke-interface {v0}, Lkotlin/coroutines/Continuation;->getContext()Lkotlin/coroutines/CoroutineContext;
 
-    invoke-static {p2}, Lkotlin/jvm/internal/Intrinsics;->checkNotNull(Ljava/lang/Object;)V
-
-    sget v2, Lkotlinx/coroutines/Job;->$r8$clinit:I
+    move-result-object p2
 
     sget-object v2, Lkotlinx/coroutines/Job$Key;->$$INSTANCE:Lkotlinx/coroutines/Job$Key;
 
@@ -135,7 +133,7 @@
 
     new-instance p2, Lkotlinx/coroutines/CancellableContinuationImpl;
 
-    invoke-static {v0}, Lkotlinx/coroutines/flow/FlowKt;->intercepted(Lkotlin/coroutines/Continuation;)Lkotlin/coroutines/Continuation;
+    invoke-static {v0}, Lcom/google/android/gms/nearby/messages/internal/zzag;->intercepted(Lkotlin/coroutines/Continuation;)Lkotlin/coroutines/Continuation;
 
     move-result-object v0
 
@@ -222,7 +220,7 @@
 
     const/4 v1, 0x4
 
-    invoke-static {p2, p3, v0, v1}, Lkotlin/collections/SetsKt__SetsKt;->Channel$default(ILkotlinx/coroutines/channels/BufferOverflow;Lkotlin/jvm/functions/Function1;I)Lkotlinx/coroutines/channels/Channel;
+    invoke-static {p2, p3, v0, v1}, Landroidx/core/provider/CalleeHandler;->Channel$default(ILkotlinx/coroutines/channels/BufferOverflow;Lkotlin/jvm/functions/Function1;I)Lkotlinx/coroutines/channels/Channel;
 
     move-result-object p2
 

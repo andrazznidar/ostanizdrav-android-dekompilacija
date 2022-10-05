@@ -21,7 +21,8 @@
         "Lcom/google/protobuf/GeneratedMessageLite$Builder<",
         "Lde/rki/coronawarnapp/server/protocols/external/exposurenotification/TemporaryExposureKeyExportOuterClass$SignatureInfo;",
         "Lde/rki/coronawarnapp/server/protocols/external/exposurenotification/TemporaryExposureKeyExportOuterClass$SignatureInfo$Builder;",
-        ">;"
+        ">;",
+        "Lcom/google/protobuf/MessageLiteOrBuilder;"
     }
 .end annotation
 
@@ -37,7 +38,7 @@
     return-void
 .end method
 
-.method public constructor <init>(Lde/rki/coronawarnapp/server/protocols/external/exposurenotification/TemporaryExposureKeyExportOuterClass$SignatureInfo$Builder-IA;)V
+.method public constructor <init>(Lorg/conscrypt/OpenSSLProvider$$ExternalSyntheticOutline1;)V
     .locals 0
 
     sget-object p1, Lde/rki/coronawarnapp/server/protocols/external/exposurenotification/TemporaryExposureKeyExportOuterClass$SignatureInfo;->DEFAULT_INSTANCE:Lde/rki/coronawarnapp/server/protocols/external/exposurenotification/TemporaryExposureKeyExportOuterClass$SignatureInfo;

@@ -74,11 +74,11 @@
     :try_start_0
     iget-object v0, p0, Lde/rki/coronawarnapp/presencetracing/warning/storage/TraceWarningPackageDao_Impl$6;->this$0:Lde/rki/coronawarnapp/presencetracing/warning/storage/TraceWarningPackageDao_Impl;
 
-    iget-object v0, v0, Lde/rki/coronawarnapp/presencetracing/warning/storage/TraceWarningPackageDao_Impl;->__updateAdapterOfUpdateDownloadAsTraceWarningPackageMetadata:Landroidx/room/EntityDeletionOrUpdateAdapter;
+    iget-object v0, v0, Lde/rki/coronawarnapp/presencetracing/warning/storage/TraceWarningPackageDao_Impl;->__updateAdapterOfUpdateDownloadAsTraceWarningPackageMetadata:Landroidx/room/EntityInsertionAdapter;
 
     iget-object v1, p0, Lde/rki/coronawarnapp/presencetracing/warning/storage/TraceWarningPackageDao_Impl$6;->val$update:Lde/rki/coronawarnapp/presencetracing/warning/storage/TraceWarningPackageMetadata$UpdateDownload;
 
-    invoke-virtual {v0, v1}, Landroidx/room/EntityDeletionOrUpdateAdapter;->handle(Ljava/lang/Object;)I
+    invoke-virtual {v0, v1}, Landroidx/room/EntityInsertionAdapter;->handle(Ljava/lang/Object;)I
 
     iget-object v0, p0, Lde/rki/coronawarnapp/presencetracing/warning/storage/TraceWarningPackageDao_Impl$6;->this$0:Lde/rki/coronawarnapp/presencetracing/warning/storage/TraceWarningPackageDao_Impl;
 

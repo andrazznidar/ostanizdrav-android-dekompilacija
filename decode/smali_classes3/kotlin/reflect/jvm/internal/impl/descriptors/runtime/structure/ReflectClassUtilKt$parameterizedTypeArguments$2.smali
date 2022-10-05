@@ -1,4 +1,4 @@
-.class public final Lkotlin/reflect/jvm/internal/impl/descriptors/runtime/structure/ReflectClassUtilKt$parameterizedTypeArguments$2;
+.class final Lkotlin/reflect/jvm/internal/impl/descriptors/runtime/structure/ReflectClassUtilKt$parameterizedTypeArguments$2;
 .super Lkotlin/jvm/internal/Lambda;
 .source "reflectClassUtil.kt"
 
@@ -58,10 +58,30 @@
 
 
 # virtual methods
-.method public invoke(Ljava/lang/Object;)Ljava/lang/Object;
-    .locals 1
+.method public bridge synthetic invoke(Ljava/lang/Object;)Ljava/lang/Object;
+    .locals 0
 
     check-cast p1, Ljava/lang/reflect/ParameterizedType;
+
+    invoke-virtual {p0, p1}, Lkotlin/reflect/jvm/internal/impl/descriptors/runtime/structure/ReflectClassUtilKt$parameterizedTypeArguments$2;->invoke(Ljava/lang/reflect/ParameterizedType;)Lkotlin/sequences/Sequence;
+
+    move-result-object p1
+
+    return-object p1
+.end method
+
+.method public final invoke(Ljava/lang/reflect/ParameterizedType;)Lkotlin/sequences/Sequence;
+    .locals 1
+    .annotation system Ldalvik/annotation/Signature;
+        value = {
+            "(",
+            "Ljava/lang/reflect/ParameterizedType;",
+            ")",
+            "Lkotlin/sequences/Sequence<",
+            "Ljava/lang/reflect/Type;",
+            ">;"
+        }
+    .end annotation
 
     const-string v0, "it"
 

@@ -12,6 +12,9 @@
 .method public abstract getDigestSize()I
 .end method
 
+.method public abstract reset()V
+.end method
+
 .method public abstract update(B)V
 .end method
 

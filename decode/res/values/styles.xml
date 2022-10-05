@@ -1015,8 +1015,8 @@
         <item name="dialogCornerRadius">@dimen/abc_dialog_corner_radius_material</item>
         <item name="dialogPreferredPadding">@dimen/abc_dialog_padding_material</item>
         <item name="dialogTheme">@style/ThemeOverlay.AppCompat.Dialog</item>
-        <item name="dividerHorizontal">@drawable/abc_list_divider_mtrl_alpha</item>
-        <item name="dividerVertical">@drawable/abc_list_divider_mtrl_alpha</item>
+        <item name="dividerHorizontal">@drawable/APKTOOL_DUMMY_3d</item>
+        <item name="dividerVertical">@drawable/APKTOOL_DUMMY_3d</item>
         <item name="drawerArrowStyle">@style/Widget.AppCompat.DrawerArrowToggle</item>
         <item name="dropDownListViewStyle">?android:dropDownListViewStyle</item>
         <item name="dropdownListPreferredItemHeight">?listPreferredItemHeightSmall</item>
@@ -1037,7 +1037,7 @@
         <item name="listPreferredItemPaddingLeft">@dimen/abc_list_item_padding_horizontal_material</item>
         <item name="listPreferredItemPaddingRight">@dimen/abc_list_item_padding_horizontal_material</item>
         <item name="listPreferredItemPaddingStart">@dimen/abc_list_item_padding_horizontal_material</item>
-        <item name="panelBackground">@drawable/abc_menu_hardkey_panel_mtrl_mult</item>
+        <item name="panelBackground">@drawable/APKTOOL_DUMMY_48</item>
         <item name="panelMenuListTheme">@style/Theme.AppCompat.CompactMenu</item>
         <item name="panelMenuListWidth">@dimen/abc_panel_menu_list_width</item>
         <item name="popupMenuStyle">@style/Widget.AppCompat.PopupMenu</item>
@@ -1160,8 +1160,8 @@
         <item name="dialogCornerRadius">@dimen/abc_dialog_corner_radius_material</item>
         <item name="dialogPreferredPadding">@dimen/abc_dialog_padding_material</item>
         <item name="dialogTheme">@style/ThemeOverlay.AppCompat.Dialog</item>
-        <item name="dividerHorizontal">@drawable/abc_list_divider_mtrl_alpha</item>
-        <item name="dividerVertical">@drawable/abc_list_divider_mtrl_alpha</item>
+        <item name="dividerHorizontal">@drawable/APKTOOL_DUMMY_3d</item>
+        <item name="dividerVertical">@drawable/APKTOOL_DUMMY_3d</item>
         <item name="drawerArrowStyle">@style/Widget.AppCompat.DrawerArrowToggle</item>
         <item name="dropDownListViewStyle">?android:dropDownListViewStyle</item>
         <item name="dropdownListPreferredItemHeight">?listPreferredItemHeightSmall</item>
@@ -1182,7 +1182,7 @@
         <item name="listPreferredItemPaddingLeft">@dimen/abc_list_item_padding_horizontal_material</item>
         <item name="listPreferredItemPaddingRight">@dimen/abc_list_item_padding_horizontal_material</item>
         <item name="listPreferredItemPaddingStart">@dimen/abc_list_item_padding_horizontal_material</item>
-        <item name="panelBackground">@drawable/abc_menu_hardkey_panel_mtrl_mult</item>
+        <item name="panelBackground">@drawable/APKTOOL_DUMMY_48</item>
         <item name="panelMenuListTheme">@style/Theme.AppCompat.CompactMenu</item>
         <item name="panelMenuListWidth">@dimen/abc_panel_menu_list_width</item>
         <item name="popupMenuStyle">@style/Widget.AppCompat.Light.PopupMenu</item>
@@ -1271,7 +1271,7 @@
         <item name="android:textColor">?editTextColor</item>
         <item name="android:background">?editTextBackground</item>
         <item name="android:dropDownSelector">?listChoiceBackgroundIndicator</item>
-        <item name="android:popupBackground">@drawable/APKTOOL_DUMMY_59</item>
+        <item name="android:popupBackground">@drawable/APKTOOL_DUMMY_49</item>
         <item name="android:textCursorDrawable">@drawable/abc_text_cursor_material</item>
     </style>
     <style name="Base.V7.Widget.AppCompat.EditText" parent="@android:style/Widget.EditText">
@@ -1351,7 +1351,7 @@
     </style>
     <style name="Base.Widget.AppCompat.ActivityChooserView" parent="">
         <item name="android:gravity">center</item>
-        <item name="android:background">@drawable/abc_ab_share_pack_mtrl_alpha</item>
+        <item name="android:background">@drawable/APKTOOL_DUMMY_18</item>
         <item name="divider">?dividerVertical</item>
         <item name="dividerPadding">6.0dip</item>
         <item name="showDividers">middle</item>
@@ -1382,7 +1382,7 @@
         <item name="showText">false</item>
         <item name="switchPadding">@dimen/abc_switch_padding</item>
         <item name="switchTextAppearance">@style/TextAppearance.AppCompat.Widget.Switch</item>
-        <item name="track">@drawable/abc_switch_track_mtrl_alpha</item>
+        <item name="track">@drawable/APKTOOL_DUMMY_5a</item>
     </style>
     <style name="Base.Widget.AppCompat.DrawerArrowToggle" parent="@style/Base.Widget.AppCompat.DrawerArrowToggle.Common">
         <item name="barLength">18.0dip</item>
@@ -1440,7 +1440,7 @@
     <style name="Base.Widget.AppCompat.RatingBar.Small" parent="@android:style/Widget.Material.RatingBar.Small" />
     <style name="Base.Widget.AppCompat.SearchView" parent="@android:style/Widget">
         <item name="closeIcon">@drawable/abc_ic_clear_material</item>
-        <item name="commitIcon">@drawable/abc_ic_commit_search_api_mtrl_alpha</item>
+        <item name="commitIcon">@drawable/APKTOOL_DUMMY_30</item>
         <item name="goIcon">@drawable/abc_ic_go_search_api_material</item>
         <item name="layout">@layout/abc_search_view</item>
         <item name="queryBackground">@drawable/abc_textfield_search_material</item>
@@ -1628,7 +1628,7 @@
         <item name="suffixTextColor">@color/mtrl_indicator_text_color</item>
     </style>
     <style name="Base.Widget.MaterialComponents.TextView" parent="@style/Widget.AppCompat.TextView" />
-    <style name="BaseTheme" parent="@style/Theme.MaterialComponents.Light.NoActionBar.Bridge">
+    <style name="BaseTheme" parent="@style/Theme.MaterialComponents.DayNight.NoActionBar">
         <item name="android:actionOverflowButtonStyle">@style/CWAToolbar.Overflow</item>
         <item name="android:statusBarColor">@color/colorSystemUI</item>
         <item name="android:windowLightStatusBar">@bool/lightSystemUI</item>
@@ -1689,7 +1689,7 @@
         <item name="android:padding">@dimen/no_padding</item>
     </style>
     <style name="Card.Vaccination" parent="@style/Card.NoElevation">
-        <item name="android:backgroundTint">@color/colorVaccinationCardBackground</item>
+        <item name="android:background">@drawable/ic_certificate_background_border</item>
     </style>
     <style name="Card.Vaccination.Ripple" parent="@style/Card.Vaccination">
         <item name="android:background">@drawable/grey_card_ripple</item>
@@ -1712,6 +1712,13 @@
     </style>
     <style name="CardView.Light" parent="@style/CardView">
         <item name="cardBackgroundColor">@color/cardview_light_background</item>
+    </style>
+    <style name="CertificateCardInfoButton" parent="@style/buttonIcon">
+        <item name="android:padding">14.0dip</item>
+        <item name="android:src">@drawable/ic_info</item>
+        <item name="android:height">@dimen/button_icon</item>
+        <item name="android:width">@dimen/button_icon</item>
+        <item name="android:contentDescription">@string/cov_pass_info_title</item>
     </style>
     <style name="ContactDiaryCircumstancesTextInputLayout" parent="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox.Dense">
         <item name="android:textSize">@dimen/font_small</item>
@@ -2759,6 +2766,14 @@
     <style name="TimePickerTheme" parent="@style/ThemeOverlay.MaterialComponents.TimePicker">
         <item name="colorOnPrimary">@android:color/white</item>
     </style>
+    <style name="UniversalScannerInfoButton" parent="@style/buttonIcon">
+        <item name="android:padding">14.0dip</item>
+        <item name="android:src">@drawable/ic_info</item>
+        <item name="android:tint">@color/colorSecondary</item>
+        <item name="android:height">@dimen/button_icon</item>
+        <item name="android:width">@dimen/button_icon</item>
+        <item name="android:contentDescription">@string/statistics_info_button</item>
+    </style>
     <style name="Widget.AppCompat.ActionBar" parent="@style/Base.Widget.AppCompat.ActionBar" />
     <style name="Widget.AppCompat.ActionBar.Solid" parent="@style/Base.Widget.AppCompat.ActionBar.Solid" />
     <style name="Widget.AppCompat.ActionBar.TabBar" parent="@style/Base.Widget.AppCompat.ActionBar.TabBar" />
@@ -3675,15 +3690,6 @@
         <item name="android:stateListAnimator">@null</item>
         <item name="android:backgroundTint">@color/button_trace_location</item>
     </style>
-    <style name="buttonTracing">
-        <item name="android:textColor">@color/colorOnPrimary</item>
-        <item name="android:background">@drawable/rectangle</item>
-        <item name="android:paddingTop">@dimen/spacing_tiny</item>
-        <item name="android:paddingBottom">@dimen/spacing_tiny</item>
-        <item name="android:paddingStart">@dimen/spacing_small</item>
-        <item name="android:paddingEnd">@dimen/spacing_small</item>
-        <item name="android:backgroundTint">@color/button_main_tracing</item>
-    </style>
     <style name="calendarMonthText">
         <item name="android:textSize">@dimen/font_normal</item>
         <item name="android:textColor">@color/colorCalendarMonthText</item>
@@ -3705,6 +3711,24 @@
     <style name="cardTracing">
         <item name="android:background">@drawable/card_dark</item>
         <item name="android:padding">@dimen/card_padding</item>
+    </style>
+    <style name="certificateSelectionToggleButton" parent="@style/Widget.MaterialComponents.Button.OutlinedButton">
+        <item name="android:textColor">@color/certificate_selector_button_text_color</item>
+        <item name="android:insetTop">0.0dip</item>
+        <item name="android:insetBottom">0.0dip</item>
+        <item name="android:fontFamily">sans-serif-medium</item>
+        <item name="android:letterSpacing">0.0</item>
+        <item name="cornerRadius">5.0dip</item>
+        <item name="strokeColor">@color/certificate_selector_button_stroke</item>
+        <item name="strokeWidth">2.0dip</item>
+        <item name="textAllCaps">false</item>
+    </style>
+    <style name="checkValidityButton" parent="@style/Widget.MaterialComponents.Button.OutlinedButton">
+        <item name="android:textColor">@color/text_button_color</item>
+        <item name="android:maxWidth">6000.0dip</item>
+        <item name="android:paddingStart">0.0dip</item>
+        <item name="android:paddingEnd">0.0dip</item>
+        <item name="strokeColor">@color/text_button_color</item>
     </style>
     <style name="contactDiaryCard">
         <item name="android:background">@drawable/contact_diary_card</item>
@@ -3858,5 +3882,4 @@
     <style name="vanishedErrorAppearance" parent="@android:style/TextAppearance">
         <item name="android:textSize">0.0sp</item>
     </style>
-    <style name="zxing_CaptureTheme" parent="@android:style/Theme.Holo.NoActionBar.Fullscreen" />
 </resources>

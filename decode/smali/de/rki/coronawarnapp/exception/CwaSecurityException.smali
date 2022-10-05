@@ -13,11 +13,11 @@
 
     move-result-object v2
 
+    const-string v3, "Something went wrong during a critical part of the application ensuring security, please refer to the details for more information"
+
     const/4 v5, 0x0
 
     const/16 v6, 0x8
-
-    const-string v3, "Something went wrong during a critical part of the application ensuring security, please refer to the details for more information"
 
     move-object v1, p0
 

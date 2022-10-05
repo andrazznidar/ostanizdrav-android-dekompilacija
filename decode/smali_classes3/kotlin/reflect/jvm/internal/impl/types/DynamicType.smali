@@ -7,12 +7,20 @@
 
 
 # instance fields
-.field public final annotations:Lkotlin/reflect/jvm/internal/impl/descriptors/annotations/Annotations;
+.field private final annotations:Lkotlin/reflect/jvm/internal/impl/descriptors/annotations/Annotations;
 
 
 # direct methods
 .method public constructor <init>(Lkotlin/reflect/jvm/internal/impl/builtins/KotlinBuiltIns;Lkotlin/reflect/jvm/internal/impl/descriptors/annotations/Annotations;)V
     .locals 2
+
+    const-string v0, "builtIns"
+
+    invoke-static {p1, v0}, Lkotlin/jvm/internal/Intrinsics;->checkNotNullParameter(Ljava/lang/Object;Ljava/lang/String;)V
+
+    const-string v0, "annotations"
+
+    invoke-static {p2, v0}, Lkotlin/jvm/internal/Intrinsics;->checkNotNullParameter(Ljava/lang/Object;Ljava/lang/String;)V
 
     invoke-virtual {p1}, Lkotlin/reflect/jvm/internal/impl/builtins/KotlinBuiltIns;->getNothingType()Lkotlin/reflect/jvm/internal/impl/types/SimpleType;
 
@@ -50,7 +58,9 @@
 .method public getDelegate()Lkotlin/reflect/jvm/internal/impl/types/SimpleType;
     .locals 1
 
-    iget-object v0, p0, Lkotlin/reflect/jvm/internal/impl/types/FlexibleType;->upperBound:Lkotlin/reflect/jvm/internal/impl/types/SimpleType;
+    invoke-virtual {p0}, Lkotlin/reflect/jvm/internal/impl/types/FlexibleType;->getUpperBound()Lkotlin/reflect/jvm/internal/impl/types/SimpleType;
+
+    move-result-object v0
 
     return-object v0
 .end method
@@ -63,13 +73,23 @@
     return v0
 .end method
 
-.method public makeNullableAsSpecified(Z)Lkotlin/reflect/jvm/internal/impl/types/UnwrappedType;
+.method public makeNullableAsSpecified(Z)Lkotlin/reflect/jvm/internal/impl/types/DynamicType;
     .locals 0
 
     return-object p0
 .end method
 
-.method public refine(Lkotlin/reflect/jvm/internal/impl/types/checker/KotlinTypeRefiner;)Lkotlin/reflect/jvm/internal/impl/types/KotlinType;
+.method public bridge synthetic makeNullableAsSpecified(Z)Lkotlin/reflect/jvm/internal/impl/types/UnwrappedType;
+    .locals 0
+
+    invoke-virtual {p0, p1}, Lkotlin/reflect/jvm/internal/impl/types/DynamicType;->makeNullableAsSpecified(Z)Lkotlin/reflect/jvm/internal/impl/types/DynamicType;
+
+    move-result-object p1
+
+    return-object p1
+.end method
+
+.method public refine(Lkotlin/reflect/jvm/internal/impl/types/checker/KotlinTypeRefiner;)Lkotlin/reflect/jvm/internal/impl/types/DynamicType;
     .locals 1
 
     const-string v0, "kotlinTypeRefiner"
@@ -79,25 +99,43 @@
     return-object p0
 .end method
 
-.method public refine(Lkotlin/reflect/jvm/internal/impl/types/checker/KotlinTypeRefiner;)Lkotlin/reflect/jvm/internal/impl/types/UnwrappedType;
-    .locals 1
+.method public bridge synthetic refine(Lkotlin/reflect/jvm/internal/impl/types/checker/KotlinTypeRefiner;)Lkotlin/reflect/jvm/internal/impl/types/KotlinType;
+    .locals 0
 
-    const-string v0, "kotlinTypeRefiner"
+    invoke-virtual {p0, p1}, Lkotlin/reflect/jvm/internal/impl/types/DynamicType;->refine(Lkotlin/reflect/jvm/internal/impl/types/checker/KotlinTypeRefiner;)Lkotlin/reflect/jvm/internal/impl/types/DynamicType;
 
-    invoke-static {p1, v0}, Lkotlin/jvm/internal/Intrinsics;->checkNotNullParameter(Ljava/lang/Object;Ljava/lang/String;)V
+    move-result-object p1
 
-    return-object p0
+    return-object p1
+.end method
+
+.method public bridge synthetic refine(Lkotlin/reflect/jvm/internal/impl/types/checker/KotlinTypeRefiner;)Lkotlin/reflect/jvm/internal/impl/types/UnwrappedType;
+    .locals 0
+
+    invoke-virtual {p0, p1}, Lkotlin/reflect/jvm/internal/impl/types/DynamicType;->refine(Lkotlin/reflect/jvm/internal/impl/types/checker/KotlinTypeRefiner;)Lkotlin/reflect/jvm/internal/impl/types/DynamicType;
+
+    move-result-object p1
+
+    return-object p1
 .end method
 
 .method public render(Lkotlin/reflect/jvm/internal/impl/renderer/DescriptorRenderer;Lkotlin/reflect/jvm/internal/impl/renderer/DescriptorRendererOptions;)Ljava/lang/String;
-    .locals 0
+    .locals 1
+
+    const-string v0, "renderer"
+
+    invoke-static {p1, v0}, Lkotlin/jvm/internal/Intrinsics;->checkNotNullParameter(Ljava/lang/Object;Ljava/lang/String;)V
+
+    const-string p1, "options"
+
+    invoke-static {p2, p1}, Lkotlin/jvm/internal/Intrinsics;->checkNotNullParameter(Ljava/lang/Object;Ljava/lang/String;)V
 
     const-string p1, "dynamic"
 
     return-object p1
 .end method
 
-.method public replaceAnnotations(Lkotlin/reflect/jvm/internal/impl/descriptors/annotations/Annotations;)Lkotlin/reflect/jvm/internal/impl/types/UnwrappedType;
+.method public replaceAnnotations(Lkotlin/reflect/jvm/internal/impl/descriptors/annotations/Annotations;)Lkotlin/reflect/jvm/internal/impl/types/DynamicType;
     .locals 2
 
     const-string v0, "newAnnotations"
@@ -106,7 +144,9 @@
 
     new-instance v0, Lkotlin/reflect/jvm/internal/impl/types/DynamicType;
 
-    iget-object v1, p0, Lkotlin/reflect/jvm/internal/impl/types/FlexibleType;->upperBound:Lkotlin/reflect/jvm/internal/impl/types/SimpleType;
+    invoke-virtual {p0}, Lkotlin/reflect/jvm/internal/impl/types/DynamicType;->getDelegate()Lkotlin/reflect/jvm/internal/impl/types/SimpleType;
+
+    move-result-object v1
 
     invoke-static {v1}, Lkotlin/reflect/jvm/internal/impl/types/typeUtil/TypeUtilsKt;->getBuiltIns(Lkotlin/reflect/jvm/internal/impl/types/KotlinType;)Lkotlin/reflect/jvm/internal/impl/builtins/KotlinBuiltIns;
 
@@ -115,4 +155,14 @@
     invoke-direct {v0, v1, p1}, Lkotlin/reflect/jvm/internal/impl/types/DynamicType;-><init>(Lkotlin/reflect/jvm/internal/impl/builtins/KotlinBuiltIns;Lkotlin/reflect/jvm/internal/impl/descriptors/annotations/Annotations;)V
 
     return-object v0
+.end method
+
+.method public bridge synthetic replaceAnnotations(Lkotlin/reflect/jvm/internal/impl/descriptors/annotations/Annotations;)Lkotlin/reflect/jvm/internal/impl/types/UnwrappedType;
+    .locals 0
+
+    invoke-virtual {p0, p1}, Lkotlin/reflect/jvm/internal/impl/types/DynamicType;->replaceAnnotations(Lkotlin/reflect/jvm/internal/impl/descriptors/annotations/Annotations;)Lkotlin/reflect/jvm/internal/impl/types/DynamicType;
+
+    move-result-object p1
+
+    return-object p1
 .end method

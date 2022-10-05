@@ -63,11 +63,11 @@
 
     const-string v0, "context"
 
-    const v1, 0x7f1301c1
+    const v1, 0x7f1301ee
 
     const-string v2, "context.getString(ERROR_\u2026E_E2E_ERROR_CALL_HOTLINE)"
 
-    invoke-static {p1, v0, v1, v2}, Lde/rki/coronawarnapp/covidcertificate/common/exception/InvalidHealthCertificateException$errorMessage$1$$ExternalSyntheticOutline0;->m(Landroid/content/Context;Ljava/lang/String;ILjava/lang/String;)Ljava/lang/String;
+    invoke-static {p1, v0, v1, v2}, Lcom/google/common/collect/Sets$$ExternalSyntheticOutline0;->m(Landroid/content/Context;Ljava/lang/String;ILjava/lang/String;)Ljava/lang/String;
 
     move-result-object p1
 

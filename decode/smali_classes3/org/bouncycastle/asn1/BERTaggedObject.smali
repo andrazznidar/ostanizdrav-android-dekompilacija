@@ -3,6 +3,30 @@
 
 
 # direct methods
+.method public constructor <init>(I)V
+    .locals 2
+
+    new-instance v0, Lorg/bouncycastle/asn1/BERSequence;
+
+    invoke-direct {v0}, Lorg/bouncycastle/asn1/BERSequence;-><init>()V
+
+    const/4 v1, 0x0
+
+    invoke-direct {p0, v1, p1, v0}, Lorg/bouncycastle/asn1/ASN1TaggedObject;-><init>(ZILorg/bouncycastle/asn1/ASN1Encodable;)V
+
+    return-void
+.end method
+
+.method public constructor <init>(ILorg/bouncycastle/asn1/ASN1Encodable;)V
+    .locals 1
+
+    const/4 v0, 0x1
+
+    invoke-direct {p0, v0, p1, p2}, Lorg/bouncycastle/asn1/ASN1TaggedObject;-><init>(ZILorg/bouncycastle/asn1/ASN1Encodable;)V
+
+    return-void
+.end method
+
 .method public constructor <init>(ZILorg/bouncycastle/asn1/ASN1Encodable;)V
     .locals 0
 
@@ -27,11 +51,9 @@
 
     invoke-virtual {p1, p2, v1, v0}, Lorg/bouncycastle/asn1/ASN1OutputStream;->writeTag(ZII)V
 
-    iget-object p2, p1, Lorg/bouncycastle/asn1/ASN1OutputStream;->os:Ljava/io/OutputStream;
+    const/16 p2, 0x80
 
-    const/16 v0, 0x80
-
-    invoke-virtual {p2, v0}, Ljava/io/OutputStream;->write(I)V
+    invoke-virtual {p1, p2}, Lorg/bouncycastle/asn1/ASN1OutputStream;->write(I)V
 
     iget-boolean p2, p0, Lorg/bouncycastle/asn1/ASN1TaggedObject;->explicit:Z
 
@@ -60,7 +82,9 @@
 
     new-instance v0, Lorg/bouncycastle/asn1/BEROctetString;
 
-    iget-object p2, p2, Lorg/bouncycastle/asn1/ASN1OctetString;->string:[B
+    invoke-virtual {p2}, Lorg/bouncycastle/asn1/ASN1OctetString;->getOctets()[B
+
+    move-result-object p2
 
     invoke-direct {v0, p2}, Lorg/bouncycastle/asn1/BEROctetString;-><init>([B)V
 
@@ -90,13 +114,9 @@
 
     check-cast p2, Lorg/bouncycastle/asn1/ASN1Set;
 
-    invoke-static {p2}, Ljava/util/Objects;->requireNonNull(Ljava/lang/Object;)Ljava/lang/Object;
+    invoke-virtual {p2}, Lorg/bouncycastle/asn1/ASN1Set;->getObjects()Ljava/util/Enumeration;
 
-    new-instance v0, Lorg/bouncycastle/asn1/ASN1Set$1;
-
-    invoke-direct {v0, p2}, Lorg/bouncycastle/asn1/ASN1Set$1;-><init>(Lorg/bouncycastle/asn1/ASN1Set;)V
-
-    move-object p2, v0
+    move-result-object p2
 
     :goto_0
     invoke-virtual {p1, p2}, Lorg/bouncycastle/asn1/ASN1OutputStream;->writeElements(Ljava/util/Enumeration;)V
@@ -144,15 +164,11 @@
     invoke-virtual {p1, p2, v0}, Lorg/bouncycastle/asn1/ASN1OutputStream;->writePrimitive(Lorg/bouncycastle/asn1/ASN1Primitive;Z)V
 
     :goto_1
-    iget-object p2, p1, Lorg/bouncycastle/asn1/ASN1OutputStream;->os:Ljava/io/OutputStream;
+    const/4 p2, 0x0
 
-    const/4 v0, 0x0
+    invoke-virtual {p1, p2}, Lorg/bouncycastle/asn1/ASN1OutputStream;->write(I)V
 
-    invoke-virtual {p2, v0}, Ljava/io/OutputStream;->write(I)V
-
-    iget-object p1, p1, Lorg/bouncycastle/asn1/ASN1OutputStream;->os:Ljava/io/OutputStream;
-
-    invoke-virtual {p1, v0}, Ljava/io/OutputStream;->write(I)V
+    invoke-virtual {p1, p2}, Lorg/bouncycastle/asn1/ASN1OutputStream;->write(I)V
 
     return-void
 .end method
@@ -189,11 +205,12 @@
 
     move-result v2
 
-    add-int/2addr v2, v1
+    add-int/2addr v1, v2
 
-    add-int/2addr v2, v0
+    :goto_0
+    add-int/2addr v1, v0
 
-    return v2
+    return v1
 
     :cond_0
     add-int/lit8 v0, v0, -0x1
@@ -204,9 +221,7 @@
 
     move-result v1
 
-    add-int/2addr v1, v0
-
-    return v1
+    goto :goto_0
 .end method
 
 .method public isConstructed()Z

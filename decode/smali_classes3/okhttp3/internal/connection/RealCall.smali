@@ -79,9 +79,7 @@
 
     iget-object p2, p1, Lokhttp3/OkHttpClient;->connectionPool:Lokhttp3/ConnectionPool;
 
-    iget-object p2, p2, Lokhttp3/ConnectionPool;->delegate:Ljava/lang/Object;
-
-    check-cast p2, Lokhttp3/internal/connection/RealConnectionPool;
+    iget-object p2, p2, Lokhttp3/ConnectionPool;->delegate:Lokhttp3/internal/connection/RealConnectionPool;
 
     iput-object p2, p0, Lokhttp3/internal/connection/RealCall;->connectionPool:Lokhttp3/internal/connection/RealConnectionPool;
 
@@ -356,32 +354,6 @@
     return-object v0
 .end method
 
-.method public final callStart()V
-    .locals 2
-
-    sget-object v0, Lokhttp3/internal/platform/Platform;->Companion:Lokhttp3/internal/platform/Platform$Companion;
-
-    sget-object v0, Lokhttp3/internal/platform/Platform;->platform:Lokhttp3/internal/platform/Platform;
-
-    const-string v1, "response.body().close()"
-
-    invoke-virtual {v0, v1}, Lokhttp3/internal/platform/Platform;->getStackTraceForCloseable(Ljava/lang/String;)Ljava/lang/Object;
-
-    move-result-object v0
-
-    iput-object v0, p0, Lokhttp3/internal/connection/RealCall;->callStackTrace:Ljava/lang/Object;
-
-    iget-object v0, p0, Lokhttp3/internal/connection/RealCall;->eventListener:Lokhttp3/EventListener;
-
-    invoke-static {v0}, Ljava/util/Objects;->requireNonNull(Ljava/lang/Object;)Ljava/lang/Object;
-
-    const-string v0, "call"
-
-    invoke-static {p0, v0}, Lkotlin/jvm/internal/Intrinsics;->checkNotNullParameter(Ljava/lang/Object;Ljava/lang/String;)V
-
-    return-void
-.end method
-
 .method public cancel()V
     .locals 1
 
@@ -454,7 +426,21 @@
 
     if-eqz v0, :cond_5
 
-    invoke-virtual {p0}, Lokhttp3/internal/connection/RealCall;->callStart()V
+    sget-object v0, Lokhttp3/internal/platform/Platform;->Companion:Lokhttp3/internal/platform/Platform$Companion;
+
+    sget-object v0, Lokhttp3/internal/platform/Platform;->platform:Lokhttp3/internal/platform/Platform;
+
+    const-string v1, "response.body().close()"
+
+    invoke-virtual {v0, v1}, Lokhttp3/internal/platform/Platform;->getStackTraceForCloseable(Ljava/lang/String;)Ljava/lang/Object;
+
+    move-result-object v0
+
+    iput-object v0, p0, Lokhttp3/internal/connection/RealCall;->callStackTrace:Ljava/lang/Object;
+
+    iget-object v0, p0, Lokhttp3/internal/connection/RealCall;->eventListener:Lokhttp3/EventListener;
+
+    invoke-static {v0}, Ljava/util/Objects;->requireNonNull(Ljava/lang/Object;)Ljava/lang/Object;
 
     iget-object v0, p0, Lokhttp3/internal/connection/RealCall;->client:Lokhttp3/OkHttpClient;
 
@@ -473,9 +459,7 @@
 
     invoke-virtual {p1, v1}, Ljava/util/ArrayDeque;->add(Ljava/lang/Object;)Z
 
-    iget-object p1, v1, Lokhttp3/internal/connection/RealCall$AsyncCall;->this$0:Lokhttp3/internal/connection/RealCall;
-
-    iget-boolean p1, p1, Lokhttp3/internal/connection/RealCall;->forWebSocket:Z
+    iget-boolean p1, p0, Lokhttp3/internal/connection/RealCall;->forWebSocket:Z
 
     if-nez p1, :cond_4
 
@@ -605,7 +589,21 @@
 
     invoke-virtual {v0}, Lokio/AsyncTimeout;->enter()V
 
-    invoke-virtual {p0}, Lokhttp3/internal/connection/RealCall;->callStart()V
+    sget-object v0, Lokhttp3/internal/platform/Platform;->Companion:Lokhttp3/internal/platform/Platform$Companion;
+
+    sget-object v0, Lokhttp3/internal/platform/Platform;->platform:Lokhttp3/internal/platform/Platform;
+
+    const-string v1, "response.body().close()"
+
+    invoke-virtual {v0, v1}, Lokhttp3/internal/platform/Platform;->getStackTraceForCloseable(Ljava/lang/String;)Ljava/lang/Object;
+
+    move-result-object v0
+
+    iput-object v0, p0, Lokhttp3/internal/connection/RealCall;->callStackTrace:Ljava/lang/Object;
+
+    iget-object v0, p0, Lokhttp3/internal/connection/RealCall;->eventListener:Lokhttp3/EventListener;
+
+    invoke-static {v0}, Ljava/util/Objects;->requireNonNull(Ljava/lang/Object;)Ljava/lang/Object;
 
     :try_start_0
     iget-object v0, p0, Lokhttp3/internal/connection/RealCall;->client:Lokhttp3/OkHttpClient;

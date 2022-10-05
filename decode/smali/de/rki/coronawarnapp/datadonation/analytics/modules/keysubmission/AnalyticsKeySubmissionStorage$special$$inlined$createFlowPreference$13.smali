@@ -22,7 +22,7 @@
         "Lkotlin/jvm/functions/Function2<",
         "Landroid/content/SharedPreferences;",
         "Ljava/lang/String;",
-        "Ljava/lang/Integer;",
+        "Ljava/lang/Boolean;",
         ">;"
     }
 .end annotation
@@ -32,15 +32,9 @@
 .end annotation
 
 
-# instance fields
-.field public final synthetic $defaultValue:Ljava/lang/Object;
-
-
 # direct methods
 .method public constructor <init>(Ljava/lang/Object;)V
     .locals 0
-
-    iput-object p1, p0, Lde/rki/coronawarnapp/datadonation/analytics/modules/keysubmission/AnalyticsKeySubmissionStorage$special$$inlined$createFlowPreference$13;->$defaultValue:Ljava/lang/Object;
 
     const/4 p1, 0x2
 
@@ -62,9 +56,9 @@
 
     const-string v1, "key"
 
-    const-class v2, Ljava/lang/Integer;
+    const-class v2, Ljava/lang/Boolean;
 
-    invoke-static {p1, v0, p2, v1, v2}, Lde/rki/coronawarnapp/contactdiary/storage/ContactDiaryPreferences$special$$inlined$createFlowPreference$1$$ExternalSyntheticOutline0;->m(Landroid/content/SharedPreferences;Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;Ljava/lang/Class;)Lkotlin/reflect/KClass;
+    invoke-static {p1, v0, p2, v1, v2}, Lde/rki/coronawarnapp/util/di/DaggerApplicationComponent$ContactDiaryOverviewFragmentSubcomponentImpl-IA;->m(Landroid/content/SharedPreferences;Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;Ljava/lang/Class;)Lkotlin/reflect/KClass;
 
     move-result-object v0
 
@@ -107,12 +101,12 @@
 
     move-object p1, v0
 
-    check-cast p1, Ljava/lang/Integer;
+    check-cast p1, Ljava/lang/Boolean;
 
     :goto_0
     if-nez p1, :cond_3
 
-    iget-object p1, p0, Lde/rki/coronawarnapp/datadonation/analytics/modules/keysubmission/AnalyticsKeySubmissionStorage$special$$inlined$createFlowPreference$13;->$defaultValue:Ljava/lang/Object;
+    sget-object p1, Ljava/lang/Boolean;->FALSE:Ljava/lang/Boolean;
 
     goto :goto_1
 
@@ -127,14 +121,14 @@
 
     if-nez p1, :cond_2
 
-    iget-object p1, p0, Lde/rki/coronawarnapp/datadonation/analytics/modules/keysubmission/AnalyticsKeySubmissionStorage$special$$inlined$createFlowPreference$13;->$defaultValue:Ljava/lang/Object;
+    sget-object p1, Ljava/lang/Boolean;->FALSE:Ljava/lang/Boolean;
 
     :cond_2
-    const-string p2, "null cannot be cast to non-null type kotlin.Int"
+    const-string p2, "null cannot be cast to non-null type kotlin.Boolean"
 
     invoke-static {p1, p2}, Ljava/util/Objects;->requireNonNull(Ljava/lang/Object;Ljava/lang/String;)Ljava/lang/Object;
 
-    check-cast p1, Ljava/lang/Integer;
+    check-cast p1, Ljava/lang/Boolean;
 
     :cond_3
     :goto_1

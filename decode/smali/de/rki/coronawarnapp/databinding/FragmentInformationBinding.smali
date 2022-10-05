@@ -4,6 +4,8 @@
 
 
 # instance fields
+.field public final cclVersion:Landroid/widget/TextView;
+
 .field public final informationAbout:Lde/rki/coronawarnapp/databinding/IncludeRowBinding;
 
 .field public final informationContact:Lde/rki/coronawarnapp/databinding/IncludeRowBinding;
@@ -32,10 +34,11 @@
 
 
 # direct methods
-.method public constructor <init>(Ljava/lang/Object;Landroid/view/View;ILde/rki/coronawarnapp/databinding/IncludeRowBinding;Lde/rki/coronawarnapp/databinding/IncludeRowBinding;Landroidx/constraintlayout/widget/ConstraintLayout;Lde/rki/coronawarnapp/databinding/IncludeRowBinding;Landroid/widget/TextView;Lcom/google/android/material/appbar/MaterialToolbar;Lde/rki/coronawarnapp/databinding/IncludeRowBinding;Lde/rki/coronawarnapp/databinding/IncludeRowBinding;Lde/rki/coronawarnapp/databinding/IncludeRowBinding;Lde/rki/coronawarnapp/databinding/IncludeRowBinding;Lde/rki/coronawarnapp/databinding/IncludeRowBinding;Lde/rki/coronawarnapp/databinding/IncludeRowBinding;Landroid/widget/TextView;Landroid/widget/ScrollView;)V
+.method public constructor <init>(Ljava/lang/Object;Landroid/view/View;ILandroid/widget/TextView;Lde/rki/coronawarnapp/databinding/IncludeRowBinding;Lde/rki/coronawarnapp/databinding/IncludeRowBinding;Landroidx/constraintlayout/widget/ConstraintLayout;Lde/rki/coronawarnapp/databinding/IncludeRowBinding;Landroid/widget/TextView;Lcom/google/android/material/appbar/MaterialToolbar;Lde/rki/coronawarnapp/databinding/IncludeRowBinding;Lde/rki/coronawarnapp/databinding/IncludeRowBinding;Lde/rki/coronawarnapp/databinding/IncludeRowBinding;Lde/rki/coronawarnapp/databinding/IncludeRowBinding;Lde/rki/coronawarnapp/databinding/IncludeRowBinding;Lde/rki/coronawarnapp/databinding/IncludeRowBinding;Landroid/widget/TextView;Landroid/widget/ScrollView;)V
     .locals 2
     .annotation system Ldalvik/annotation/MethodParameters;
         accessFlags = {
+            0x0,
             0x0,
             0x0,
             0x0,
@@ -58,6 +61,7 @@
             "_bindingComponent",
             "_root",
             "_localFieldCount",
+            "cclVersion",
             "informationAbout",
             "informationContact",
             "informationContainer",
@@ -81,53 +85,57 @@
 
     move-object v1, p4
 
-    iput-object v1, v0, Lde/rki/coronawarnapp/databinding/FragmentInformationBinding;->informationAbout:Lde/rki/coronawarnapp/databinding/IncludeRowBinding;
+    iput-object v1, v0, Lde/rki/coronawarnapp/databinding/FragmentInformationBinding;->cclVersion:Landroid/widget/TextView;
 
     move-object v1, p5
 
-    iput-object v1, v0, Lde/rki/coronawarnapp/databinding/FragmentInformationBinding;->informationContact:Lde/rki/coronawarnapp/databinding/IncludeRowBinding;
+    iput-object v1, v0, Lde/rki/coronawarnapp/databinding/FragmentInformationBinding;->informationAbout:Lde/rki/coronawarnapp/databinding/IncludeRowBinding;
 
     move-object v1, p6
 
-    iput-object v1, v0, Lde/rki/coronawarnapp/databinding/FragmentInformationBinding;->informationContainer:Landroidx/constraintlayout/widget/ConstraintLayout;
+    iput-object v1, v0, Lde/rki/coronawarnapp/databinding/FragmentInformationBinding;->informationContact:Lde/rki/coronawarnapp/databinding/IncludeRowBinding;
 
     move-object v1, p7
 
-    iput-object v1, v0, Lde/rki/coronawarnapp/databinding/FragmentInformationBinding;->informationDebuglog:Lde/rki/coronawarnapp/databinding/IncludeRowBinding;
+    iput-object v1, v0, Lde/rki/coronawarnapp/databinding/FragmentInformationBinding;->informationContainer:Landroidx/constraintlayout/widget/ConstraintLayout;
 
     move-object v1, p8
 
-    iput-object v1, v0, Lde/rki/coronawarnapp/databinding/FragmentInformationBinding;->informationEnfVersion:Landroid/widget/TextView;
+    iput-object v1, v0, Lde/rki/coronawarnapp/databinding/FragmentInformationBinding;->informationDebuglog:Lde/rki/coronawarnapp/databinding/IncludeRowBinding;
 
     move-object v1, p9
 
-    iput-object v1, v0, Lde/rki/coronawarnapp/databinding/FragmentInformationBinding;->informationHeader:Lcom/google/android/material/appbar/MaterialToolbar;
+    iput-object v1, v0, Lde/rki/coronawarnapp/databinding/FragmentInformationBinding;->informationEnfVersion:Landroid/widget/TextView;
 
     move-object v1, p10
 
-    iput-object v1, v0, Lde/rki/coronawarnapp/databinding/FragmentInformationBinding;->informationHelp:Lde/rki/coronawarnapp/databinding/IncludeRowBinding;
+    iput-object v1, v0, Lde/rki/coronawarnapp/databinding/FragmentInformationBinding;->informationHeader:Lcom/google/android/material/appbar/MaterialToolbar;
 
     move-object v1, p11
 
-    iput-object v1, v0, Lde/rki/coronawarnapp/databinding/FragmentInformationBinding;->informationLegal:Lde/rki/coronawarnapp/databinding/IncludeRowBinding;
+    iput-object v1, v0, Lde/rki/coronawarnapp/databinding/FragmentInformationBinding;->informationHelp:Lde/rki/coronawarnapp/databinding/IncludeRowBinding;
 
     move-object v1, p12
 
-    iput-object v1, v0, Lde/rki/coronawarnapp/databinding/FragmentInformationBinding;->informationPrivacy:Lde/rki/coronawarnapp/databinding/IncludeRowBinding;
+    iput-object v1, v0, Lde/rki/coronawarnapp/databinding/FragmentInformationBinding;->informationLegal:Lde/rki/coronawarnapp/databinding/IncludeRowBinding;
 
     move-object v1, p13
 
-    iput-object v1, v0, Lde/rki/coronawarnapp/databinding/FragmentInformationBinding;->informationRelease:Lde/rki/coronawarnapp/databinding/IncludeRowBinding;
+    iput-object v1, v0, Lde/rki/coronawarnapp/databinding/FragmentInformationBinding;->informationPrivacy:Lde/rki/coronawarnapp/databinding/IncludeRowBinding;
 
     move-object/from16 v1, p14
 
-    iput-object v1, v0, Lde/rki/coronawarnapp/databinding/FragmentInformationBinding;->informationTechnical:Lde/rki/coronawarnapp/databinding/IncludeRowBinding;
+    iput-object v1, v0, Lde/rki/coronawarnapp/databinding/FragmentInformationBinding;->informationRelease:Lde/rki/coronawarnapp/databinding/IncludeRowBinding;
 
     move-object/from16 v1, p15
 
-    iput-object v1, v0, Lde/rki/coronawarnapp/databinding/FragmentInformationBinding;->informationTerms:Lde/rki/coronawarnapp/databinding/IncludeRowBinding;
+    iput-object v1, v0, Lde/rki/coronawarnapp/databinding/FragmentInformationBinding;->informationTechnical:Lde/rki/coronawarnapp/databinding/IncludeRowBinding;
 
     move-object/from16 v1, p16
+
+    iput-object v1, v0, Lde/rki/coronawarnapp/databinding/FragmentInformationBinding;->informationTerms:Lde/rki/coronawarnapp/databinding/IncludeRowBinding;
+
+    move-object/from16 v1, p17
 
     iput-object v1, v0, Lde/rki/coronawarnapp/databinding/FragmentInformationBinding;->informationVersion:Landroid/widget/TextView;
 
@@ -147,7 +155,7 @@
 
     sget-object v0, Landroidx/databinding/DataBindingUtil;->sMapper:Landroidx/databinding/DataBinderMapper;
 
-    const v0, 0x7f0d006f
+    const v0, 0x7f0d007d
 
     const/4 v1, 0x0
 

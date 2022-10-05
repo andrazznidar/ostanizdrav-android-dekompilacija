@@ -2,6 +2,9 @@
 .super Ljava/lang/Object;
 .source "DccV1.kt"
 
+# interfaces
+.implements Lde/rki/coronawarnapp/covidcertificate/common/certificate/DccV1$Payload;
+
 
 # annotations
 .annotation system Ldalvik/annotation/EnclosingClass;
@@ -302,7 +305,7 @@
 
     move-result-object v0
 
-    invoke-static {v0}, Lkotlin/reflect/jvm/internal/impl/descriptors/PackageFragmentProviderKt;->parseLocalDate(Ljava/lang/String;)Lorg/joda/time/LocalDate;
+    invoke-static {v0}, Lcom/google/android/gms/internal/nearby/zzew;->parseLocalDate(Ljava/lang/String;)Lorg/joda/time/LocalDate;
 
     move-result-object v0
 
@@ -314,7 +317,7 @@
 
     iget-object v0, p0, Lde/rki/coronawarnapp/covidcertificate/common/certificate/DccV1$VaccinationData;->dt:Ljava/lang/String;
 
-    invoke-static {v0}, Lkotlin/reflect/jvm/internal/impl/descriptors/PackageFragmentProviderKt;->formatDate(Ljava/lang/String;)Ljava/lang/String;
+    invoke-static {v0}, Lcom/google/android/gms/internal/nearby/zzew;->formatDate(Ljava/lang/String;)Ljava/lang/String;
 
     move-result-object v0
 

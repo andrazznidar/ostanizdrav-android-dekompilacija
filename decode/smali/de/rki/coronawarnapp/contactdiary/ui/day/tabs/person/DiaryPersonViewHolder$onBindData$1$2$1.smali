@@ -67,7 +67,7 @@
 
     move-result v0
 
-    const v1, 0x7f0a02cb
+    const v1, 0x7f0a02f0
 
     if-ne v0, v1, :cond_1
 
@@ -77,7 +77,7 @@
 
     :cond_1
     :goto_0
-    const v0, 0x7f0a02cc
+    const v0, 0x7f0a02f1
 
     if-nez p1, :cond_2
 

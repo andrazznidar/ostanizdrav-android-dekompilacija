@@ -1,5 +1,5 @@
 .class public final Lcom/google/android/material/progressindicator/DeterminateDrawable$1;
-.super Landroidx/dynamicanimation/animation/FloatPropertyCompat;
+.super Lboofcv/struct/border/ImageBorder;
 .source "DeterminateDrawable.java"
 
 
@@ -15,18 +15,18 @@
 
 .annotation system Ldalvik/annotation/Signature;
     value = {
-        "Landroidx/dynamicanimation/animation/FloatPropertyCompat<",
-        "Lcom/google/android/material/progressindicator/DeterminateDrawable;",
-        ">;"
+        "Lboofcv/struct/border/ImageBorder;"
     }
 .end annotation
 
 
 # direct methods
 .method public constructor <init>(Ljava/lang/String;)V
-    .locals 0
+    .locals 1
 
-    invoke-direct {p0, p1}, Landroidx/dynamicanimation/animation/FloatPropertyCompat;-><init>(Ljava/lang/String;)V
+    const/4 v0, 0x1
+
+    invoke-direct {p0, p1, v0}, Lboofcv/struct/border/ImageBorder;-><init>(Ljava/lang/Object;I)V
 
     return-void
 .end method

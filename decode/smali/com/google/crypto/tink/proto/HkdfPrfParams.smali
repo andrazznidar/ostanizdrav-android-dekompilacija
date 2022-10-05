@@ -18,7 +18,8 @@
         "Lcom/google/crypto/tink/shaded/protobuf/GeneratedMessageLite<",
         "Lcom/google/crypto/tink/proto/HkdfPrfParams;",
         "Lcom/google/crypto/tink/proto/HkdfPrfParams$Builder;",
-        ">;"
+        ">;",
+        "Lcom/google/crypto/tink/shaded/protobuf/MessageLiteOrBuilder;"
     }
 .end annotation
 

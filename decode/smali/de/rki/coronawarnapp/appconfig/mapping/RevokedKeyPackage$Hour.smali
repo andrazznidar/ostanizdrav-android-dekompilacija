@@ -162,7 +162,7 @@
 
     iget-object v1, p0, Lde/rki/coronawarnapp/appconfig/mapping/RevokedKeyPackage$Hour;->hour:Lorg/joda/time/LocalTime;
 
-    invoke-virtual {v1}, Lorg/joda/time/base/BaseLocal;->hashCode()I
+    invoke-virtual {v1}, Lorg/joda/time/base/AbstractPartial;->hashCode()I
 
     move-result v1
 

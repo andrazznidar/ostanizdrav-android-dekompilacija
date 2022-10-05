@@ -2,16 +2,20 @@
 .super Ljava/lang/Object;
 
 
+# annotations
+.annotation system Ldalvik/annotation/Signature;
+    value = {
+        "<E:",
+        "Ljava/lang/Object;",
+        ">",
+        "Ljava/lang/Object;"
+    }
+.end annotation
+
+
 # direct methods
 .method public static $default$forEachRemaining(Ljava/util/Iterator;Lj$/util/function/Consumer;)V
     .locals 1
-    .annotation system Ldalvik/annotation/Signature;
-        value = {
-            "(",
-            "Lj$/util/function/Consumer<",
-            "-TE;>;)V"
-        }
-    .end annotation
 
     invoke-static {p1}, Ljava/util/Objects;->requireNonNull(Ljava/lang/Object;)Ljava/lang/Object;
 
@@ -26,7 +30,7 @@
 
     move-result-object v0
 
-    invoke-interface {p1, v0}, Lj$/util/function/Consumer;->i(Ljava/lang/Object;)V
+    invoke-interface {p1, v0}, Lj$/util/function/Consumer;->j(Ljava/lang/Object;)V
 
     goto :goto_0
 
@@ -34,14 +38,14 @@
     return-void
 .end method
 
-.method public static a(Ljava/util/Iterator;)V
-    .locals 1
+.method public static a()V
+    .locals 2
 
-    new-instance p0, Ljava/lang/UnsupportedOperationException;
+    new-instance v0, Ljava/lang/UnsupportedOperationException;
 
-    const-string v0, "remove"
+    const-string v1, "remove"
 
-    invoke-direct {p0, v0}, Ljava/lang/UnsupportedOperationException;-><init>(Ljava/lang/String;)V
+    invoke-direct {v0, v1}, Ljava/lang/UnsupportedOperationException;-><init>(Ljava/lang/String;)V
 
-    throw p0
+    throw v0
 .end method

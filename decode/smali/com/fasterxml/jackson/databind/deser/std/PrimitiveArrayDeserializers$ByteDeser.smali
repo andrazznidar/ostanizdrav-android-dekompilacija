@@ -84,7 +84,7 @@
     .annotation system Ldalvik/annotation/Throws;
         value = {
             Ljava/io/IOException;,
-            Lcom/fasterxml/jackson/core/JsonProcessingException;
+            Lcom/fasterxml/jackson/core/JacksonException;
         }
     .end annotation
 
@@ -109,7 +109,7 @@
 
     move-result-object v3
     :try_end_0
-    .catch Lcom/fasterxml/jackson/core/JsonParseException; {:try_start_0 .. :try_end_0} :catch_0
+    .catch Lcom/fasterxml/jackson/core/exc/StreamReadException; {:try_start_0 .. :try_end_0} :catch_0
 
     goto/16 :goto_3
 

@@ -22,7 +22,7 @@
 
 
 # instance fields
-.field public final zaa:Lcom/google/android/gms/common/api/internal/ApiExceptionMapper;
+.field public final zaa:Lokhttp3/internal/HostnamesKt;
     .annotation build Landroidx/annotation/RecentlyNonNull;
     .end annotation
 .end field
@@ -37,9 +37,9 @@
 .method public static constructor <clinit>()V
     .locals 4
 
-    new-instance v0, Lcom/google/android/gms/common/api/internal/ApiExceptionMapper;
+    new-instance v0, Lokhttp3/internal/HostnamesKt;
 
-    invoke-direct {v0}, Lcom/google/android/gms/common/api/internal/ApiExceptionMapper;-><init>()V
+    invoke-direct {v0}, Lokhttp3/internal/HostnamesKt;-><init>()V
 
     invoke-static {}, Landroid/os/Looper;->getMainLooper()Landroid/os/Looper;
 
@@ -49,19 +49,19 @@
 
     const/4 v3, 0x0
 
-    invoke-direct {v2, v0, v3, v1}, Lcom/google/android/gms/common/api/GoogleApi$Settings;-><init>(Lcom/google/android/gms/common/api/internal/ApiExceptionMapper;Landroid/accounts/Account;Landroid/os/Looper;)V
+    invoke-direct {v2, v0, v3, v1}, Lcom/google/android/gms/common/api/GoogleApi$Settings;-><init>(Lokhttp3/internal/HostnamesKt;Landroid/accounts/Account;Landroid/os/Looper;)V
 
     sput-object v2, Lcom/google/android/gms/common/api/GoogleApi$Settings;->DEFAULT_SETTINGS:Lcom/google/android/gms/common/api/GoogleApi$Settings;
 
     return-void
 .end method
 
-.method public constructor <init>(Lcom/google/android/gms/common/api/internal/ApiExceptionMapper;Landroid/accounts/Account;Landroid/os/Looper;)V
+.method public constructor <init>(Lokhttp3/internal/HostnamesKt;Landroid/accounts/Account;Landroid/os/Looper;)V
     .locals 0
 
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
-    iput-object p1, p0, Lcom/google/android/gms/common/api/GoogleApi$Settings;->zaa:Lcom/google/android/gms/common/api/internal/ApiExceptionMapper;
+    iput-object p1, p0, Lcom/google/android/gms/common/api/GoogleApi$Settings;->zaa:Lokhttp3/internal/HostnamesKt;
 
     iput-object p3, p0, Lcom/google/android/gms/common/api/GoogleApi$Settings;->zab:Landroid/os/Looper;
 

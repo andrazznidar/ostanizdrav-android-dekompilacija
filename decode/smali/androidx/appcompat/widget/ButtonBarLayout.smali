@@ -120,7 +120,7 @@
 .method public getMinimumHeight()I
     .locals 2
 
-    invoke-super {p0}, Landroid/view/View;->getMinimumHeight()I
+    invoke-super {p0}, Landroid/widget/LinearLayout;->getMinimumHeight()I
 
     move-result v0
 

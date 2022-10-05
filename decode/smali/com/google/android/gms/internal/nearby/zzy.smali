@@ -52,7 +52,7 @@
 
     const/4 v1, 0x0
 
-    invoke-direct {v0, v1}, Lcom/google/android/gms/internal/nearby/zzem;-><init>(Lcom/google/android/gms/internal/nearby/zzek;)V
+    invoke-direct {v0, v1}, Lcom/google/android/gms/internal/nearby/zzem;-><init>(Landroidx/fragment/app/ViewKt;)V
 
     new-instance v1, Lcom/google/android/gms/internal/nearby/zzan;
 

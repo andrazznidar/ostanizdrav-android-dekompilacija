@@ -523,15 +523,7 @@
     invoke-virtual {v0, v2}, Lcom/google/android/material/textfield/TextInputLayout;->setMaxWidth(I)V
 
     :cond_1
-    new-instance v2, Lcom/google/android/material/shape/AbsoluteCornerSize;
-
-    const/4 v3, 0x0
-
-    int-to-float v4, v3
-
-    invoke-direct {v2, v4}, Lcom/google/android/material/shape/AbsoluteCornerSize;-><init>(F)V
-
-    invoke-static {v13, v7, v8, v9, v2}, Lcom/google/android/material/shape/ShapeAppearanceModel;->builder(Landroid/content/Context;Landroid/util/AttributeSet;IILcom/google/android/material/shape/CornerSize;)Lcom/google/android/material/shape/ShapeAppearanceModel$Builder;
+    invoke-static {v13, v7, v8, v9}, Lcom/google/android/material/shape/ShapeAppearanceModel;->builder(Landroid/content/Context;Landroid/util/AttributeSet;II)Lcom/google/android/material/shape/ShapeAppearanceModel$Builder;
 
     move-result-object v2
 
@@ -545,15 +537,17 @@
 
     move-result-object v2
 
-    sget v4, Lcom/google/android/material/R$dimen;->mtrl_textinput_box_label_cutout_padding:I
+    sget v3, Lcom/google/android/material/R$dimen;->mtrl_textinput_box_label_cutout_padding:I
 
-    invoke-virtual {v2, v4}, Landroid/content/res/Resources;->getDimensionPixelOffset(I)I
+    invoke-virtual {v2, v3}, Landroid/content/res/Resources;->getDimensionPixelOffset(I)I
 
     move-result v2
 
     iput v2, v0, Lcom/google/android/material/textfield/TextInputLayout;->boxLabelCutoutPaddingPx:I
 
     sget v2, Lcom/google/android/material/R$styleable;->TextInputLayout_boxCollapsedPaddingTop:I
+
+    const/4 v3, 0x0
 
     invoke-virtual {v1, v2, v3}, Landroidx/appcompat/widget/TintTypedArray;->getDimensionPixelOffset(II)I
 
@@ -2394,7 +2388,7 @@
     goto :goto_0
 
     :cond_0
-    invoke-super {p0, p1, p2, p3}, Landroid/view/ViewGroup;->addView(Landroid/view/View;ILandroid/view/ViewGroup$LayoutParams;)V
+    invoke-super {p0, p1, p2, p3}, Landroid/widget/LinearLayout;->addView(Landroid/view/View;ILandroid/view/ViewGroup$LayoutParams;)V
 
     :goto_0
     return-void
@@ -2547,7 +2541,7 @@
 
     move-result-object v1
 
-    invoke-static {v1, v0, v3}, Ldagger/android/AndroidInjection;->getColor(Landroid/content/Context;II)I
+    invoke-static {v1, v0, v3}, Lkotlin/math/MathKt__MathJVMKt;->getColor(Landroid/content/Context;II)I
 
     move-result v0
 
@@ -2774,7 +2768,7 @@
 
     if-nez v0, :cond_0
 
-    invoke-super {p0, p1, p2}, Landroid/view/ViewGroup;->dispatchProvideAutofillStructure(Landroid/view/ViewStructure;I)V
+    invoke-super {p0, p1, p2}, Landroid/widget/LinearLayout;->dispatchProvideAutofillStructure(Landroid/view/ViewStructure;I)V
 
     return-void
 
@@ -2800,7 +2794,7 @@
     invoke-virtual {v2, v3}, Landroid/widget/EditText;->setHint(Ljava/lang/CharSequence;)V
 
     :try_start_0
-    invoke-super {p0, p1, p2}, Landroid/view/ViewGroup;->dispatchProvideAutofillStructure(Landroid/view/ViewStructure;I)V
+    invoke-super {p0, p1, p2}, Landroid/widget/LinearLayout;->dispatchProvideAutofillStructure(Landroid/view/ViewStructure;I)V
     :try_end_0
     .catchall {:try_start_0 .. :try_end_0} :catchall_0
 
@@ -2898,7 +2892,7 @@
 
     iput-boolean v0, p0, Lcom/google/android/material/textfield/TextInputLayout;->restoringSavedState:Z
 
-    invoke-super {p0, p1}, Landroid/view/ViewGroup;->dispatchRestoreInstanceState(Landroid/util/SparseArray;)V
+    invoke-super {p0, p1}, Landroid/widget/LinearLayout;->dispatchRestoreInstanceState(Landroid/util/SparseArray;)V
 
     const/4 p1, 0x0
 
@@ -2910,7 +2904,7 @@
 .method public draw(Landroid/graphics/Canvas;)V
     .locals 3
 
-    invoke-super {p0, p1}, Landroid/view/View;->draw(Landroid/graphics/Canvas;)V
+    invoke-super {p0, p1}, Landroid/widget/LinearLayout;->draw(Landroid/graphics/Canvas;)V
 
     iget-boolean v0, p0, Lcom/google/android/material/textfield/TextInputLayout;->hintEnabled:Z
 
@@ -2959,7 +2953,7 @@
 
     iput-boolean v0, p0, Lcom/google/android/material/textfield/TextInputLayout;->inDrawableStateChanged:Z
 
-    invoke-super {p0}, Landroid/view/ViewGroup;->drawableStateChanged()V
+    invoke-super {p0}, Landroid/widget/LinearLayout;->drawableStateChanged()V
 
     invoke-virtual {p0}, Landroid/widget/LinearLayout;->getDrawableState()[I
 
@@ -3827,7 +3821,7 @@
 
     const-string v3, " is illegal; only @BoxBackgroundMode constants are supported."
 
-    invoke-static {v1, v2, v3}, Landroidx/constraintlayout/core/widgets/ConstraintWidget$$ExternalSyntheticOutline0;->m(Ljava/lang/StringBuilder;ILjava/lang/String;)Ljava/lang/String;
+    invoke-static {v1, v2, v3}, Landroidx/camera/core/AutoValue_ImmutableImageInfo$$ExternalSyntheticOutline0;->m(Ljava/lang/StringBuilder;ILjava/lang/String;)Ljava/lang/String;
 
     move-result-object v1
 
@@ -4628,7 +4622,7 @@
 
     if-nez v0, :cond_0
 
-    invoke-super {p0, p1}, Landroid/view/View;->onRestoreInstanceState(Landroid/os/Parcelable;)V
+    invoke-super {p0, p1}, Landroid/widget/LinearLayout;->onRestoreInstanceState(Landroid/os/Parcelable;)V
 
     return-void
 
@@ -4637,7 +4631,7 @@
 
     iget-object v0, p1, Landroidx/customview/view/AbsSavedState;->mSuperState:Landroid/os/Parcelable;
 
-    invoke-super {p0, v0}, Landroid/view/View;->onRestoreInstanceState(Landroid/os/Parcelable;)V
+    invoke-super {p0, v0}, Landroid/widget/LinearLayout;->onRestoreInstanceState(Landroid/os/Parcelable;)V
 
     iget-object v0, p1, Lcom/google/android/material/textfield/TextInputLayout$SavedState;->error:Ljava/lang/CharSequence;
 
@@ -4676,7 +4670,7 @@
 .method public onSaveInstanceState()Landroid/os/Parcelable;
     .locals 2
 
-    invoke-super {p0}, Landroid/view/View;->onSaveInstanceState()Landroid/os/Parcelable;
+    invoke-super {p0}, Landroid/widget/LinearLayout;->onSaveInstanceState()Landroid/os/Parcelable;
 
     move-result-object v0
 
@@ -5623,7 +5617,7 @@
 
     invoke-static {p0, p1}, Lcom/google/android/material/textfield/TextInputLayout;->recursiveSetEnabled(Landroid/view/ViewGroup;Z)V
 
-    invoke-super {p0, p1}, Landroid/view/View;->setEnabled(Z)V
+    invoke-super {p0, p1}, Landroid/widget/LinearLayout;->setEnabled(Z)V
 
     return-void
 .end method

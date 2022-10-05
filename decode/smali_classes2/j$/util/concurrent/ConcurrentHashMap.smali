@@ -4,36 +4,10 @@
 # interfaces
 .implements Ljava/util/concurrent/ConcurrentMap;
 .implements Ljava/io/Serializable;
-.implements Lj$/util/concurrent/b;
+.implements Lj$/util/concurrent/u;
 
 
 # annotations
-.annotation system Ldalvik/annotation/MemberClasses;
-    value = {
-        Lj$/util/concurrent/ConcurrentHashMap$e;,
-        Lj$/util/concurrent/ConcurrentHashMap$u;,
-        Lj$/util/concurrent/ConcurrentHashMap$i;,
-        Lj$/util/concurrent/ConcurrentHashMap$b;,
-        Lj$/util/concurrent/ConcurrentHashMap$f;,
-        Lj$/util/concurrent/ConcurrentHashMap$t;,
-        Lj$/util/concurrent/ConcurrentHashMap$j;,
-        Lj$/util/concurrent/ConcurrentHashMap$k;,
-        Lj$/util/concurrent/ConcurrentHashMap$d;,
-        Lj$/util/concurrent/ConcurrentHashMap$s;,
-        Lj$/util/concurrent/ConcurrentHashMap$h;,
-        Lj$/util/concurrent/ConcurrentHashMap$a;,
-        Lj$/util/concurrent/ConcurrentHashMap$p;,
-        Lj$/util/concurrent/ConcurrentHashMap$o;,
-        Lj$/util/concurrent/ConcurrentHashMap$q;,
-        Lj$/util/concurrent/ConcurrentHashMap$r;,
-        Lj$/util/concurrent/ConcurrentHashMap$c;,
-        Lj$/util/concurrent/ConcurrentHashMap$m;,
-        Lj$/util/concurrent/ConcurrentHashMap$g;,
-        Lj$/util/concurrent/ConcurrentHashMap$n;,
-        Lj$/util/concurrent/ConcurrentHashMap$l;
-    }
-.end annotation
-
 .annotation system Ldalvik/annotation/Signature;
     value = {
         "<K:",
@@ -46,7 +20,7 @@
         "Ljava/util/concurrent/ConcurrentMap<",
         "TK;TV;>;",
         "Ljava/io/Serializable;",
-        "Lj$/util/concurrent/b;"
+        "Lj$/util/concurrent/u;"
     }
 .end annotation
 
@@ -74,7 +48,7 @@
 
 .field static final MAX_ARRAY_SIZE:I = 0x7ffffff7
 
-.field private static final MAX_RESIZERS:I = 0xffff
+.field private static final MAX_RESIZERS:I
 
 .field private static final MIN_TRANSFER_STRIDE:I = 0x10
 
@@ -88,7 +62,7 @@
 
 .field private static RESIZE_STAMP_BITS:I = 0x10
 
-.field private static final RESIZE_STAMP_SHIFT:I = 0x10
+.field private static final RESIZE_STAMP_SHIFT:I
 
 .field private static final SIZECTL:J
 
@@ -112,52 +86,50 @@
 
 .field private volatile transient cellsBusy:I
 
-.field private volatile transient counterCells:[Lj$/util/concurrent/ConcurrentHashMap$c;
+.field private volatile transient counterCells:[Lj$/util/concurrent/c;
 
-.field private transient entrySet:Lj$/util/concurrent/ConcurrentHashMap$e;
+.field private transient entrySet:Lj$/util/concurrent/e;
     .annotation system Ldalvik/annotation/Signature;
         value = {
-            "Lj$/util/concurrent/ConcurrentHashMap$e;"
+            "Lj$/util/concurrent/e;"
         }
     .end annotation
 .end field
 
-.field private transient keySet:Lj$/util/concurrent/ConcurrentHashMap$i;
+.field private transient keySet:Lj$/util/concurrent/i;
     .annotation system Ldalvik/annotation/Signature;
         value = {
-            "Lj$/util/concurrent/ConcurrentHashMap$i;"
+            "Lj$/util/concurrent/i;"
         }
     .end annotation
 .end field
 
-.field private volatile transient nextTable:[Lj$/util/concurrent/ConcurrentHashMap$l;
+.field private volatile transient nextTable:[Lj$/util/concurrent/l;
     .annotation system Ldalvik/annotation/Signature;
         value = {
             "[",
-            "Lj$/util/concurrent/ConcurrentHashMap$l<",
-            "TK;TV;>;"
+            "Lj$/util/concurrent/l;"
         }
     .end annotation
 .end field
 
 .field private volatile transient sizeCtl:I
 
-.field volatile transient table:[Lj$/util/concurrent/ConcurrentHashMap$l;
+.field volatile transient table:[Lj$/util/concurrent/l;
     .annotation system Ldalvik/annotation/Signature;
         value = {
             "[",
-            "Lj$/util/concurrent/ConcurrentHashMap$l<",
-            "TK;TV;>;"
+            "Lj$/util/concurrent/l;"
         }
     .end annotation
 .end field
 
 .field private volatile transient transferIndex:I
 
-.field private transient values:Lj$/util/concurrent/ConcurrentHashMap$u;
+.field private transient values:Lj$/util/concurrent/s;
     .annotation system Ldalvik/annotation/Signature;
         value = {
-            "Lj$/util/concurrent/ConcurrentHashMap$u;"
+            "Lj$/util/concurrent/s;"
         }
     .end annotation
 .end field
@@ -165,7 +137,23 @@
 
 # direct methods
 .method static constructor <clinit>()V
-    .locals 4
+    .locals 5
+
+    const/16 v0, 0x10
+
+    rsub-int/lit8 v1, v0, 0x20
+
+    const/4 v2, 0x1
+
+    shl-int v1, v2, v1
+
+    sub-int/2addr v1, v2
+
+    sput v1, Lj$/util/concurrent/ConcurrentHashMap;->MAX_RESIZERS:I
+
+    rsub-int/lit8 v0, v0, 0x20
+
+    sput v0, Lj$/util/concurrent/ConcurrentHashMap;->RESIZE_STAMP_SHIFT:I
 
     invoke-static {}, Ljava/lang/Runtime;->getRuntime()Ljava/lang/Runtime;
 
@@ -183,33 +171,31 @@
 
     new-instance v1, Ljava/io/ObjectStreamField;
 
-    const-class v2, [Lj$/util/concurrent/ConcurrentHashMap$n;
+    const-class v3, [Lj$/util/concurrent/n;
 
-    const-string v3, "segments"
+    const-string v4, "segments"
 
-    invoke-direct {v1, v3, v2}, Ljava/io/ObjectStreamField;-><init>(Ljava/lang/String;Ljava/lang/Class;)V
+    invoke-direct {v1, v4, v3}, Ljava/io/ObjectStreamField;-><init>(Ljava/lang/String;Ljava/lang/Class;)V
 
-    const/4 v2, 0x0
-
-    aput-object v1, v0, v2
-
-    new-instance v1, Ljava/io/ObjectStreamField;
-
-    sget-object v2, Ljava/lang/Integer;->TYPE:Ljava/lang/Class;
-
-    const-string v3, "segmentMask"
-
-    invoke-direct {v1, v3, v2}, Ljava/io/ObjectStreamField;-><init>(Ljava/lang/String;Ljava/lang/Class;)V
-
-    const/4 v3, 0x1
+    const/4 v3, 0x0
 
     aput-object v1, v0, v3
 
     new-instance v1, Ljava/io/ObjectStreamField;
 
-    const-string v3, "segmentShift"
+    sget-object v3, Ljava/lang/Integer;->TYPE:Ljava/lang/Class;
 
-    invoke-direct {v1, v3, v2}, Ljava/io/ObjectStreamField;-><init>(Ljava/lang/String;Ljava/lang/Class;)V
+    const-string v4, "segmentMask"
+
+    invoke-direct {v1, v4, v3}, Ljava/io/ObjectStreamField;-><init>(Ljava/lang/String;Ljava/lang/Class;)V
+
+    aput-object v1, v0, v2
+
+    new-instance v1, Ljava/io/ObjectStreamField;
+
+    const-string v2, "segmentShift"
+
+    invoke-direct {v1, v2, v3}, Ljava/io/ObjectStreamField;-><init>(Ljava/lang/String;Ljava/lang/Class;)V
 
     const/4 v2, 0x2
 
@@ -218,7 +204,7 @@
     sput-object v0, Lj$/util/concurrent/ConcurrentHashMap;->serialPersistentFields:[Ljava/io/ObjectStreamField;
 
     :try_start_0
-    invoke-static {}, Lj$/util/concurrent/c;->c()Lsun/misc/Unsafe;
+    invoke-static {}, Lj$/util/concurrent/v;->c()Lsun/misc/Unsafe;
 
     move-result-object v0
 
@@ -274,7 +260,7 @@
 
     sput-wide v1, Lj$/util/concurrent/ConcurrentHashMap;->CELLSBUSY:J
 
-    const-class v1, Lj$/util/concurrent/ConcurrentHashMap$c;
+    const-class v1, Lj$/util/concurrent/c;
 
     const-string v2, "value"
 
@@ -288,7 +274,7 @@
 
     sput-wide v1, Lj$/util/concurrent/ConcurrentHashMap;->CELLVALUE:J
 
-    const-class v1, [Lj$/util/concurrent/ConcurrentHashMap$l;
+    const-class v1, [Lj$/util/concurrent/l;
 
     invoke-virtual {v0, v1}, Lsun/misc/Unsafe;->arrayBaseOffset(Ljava/lang/Class;)I
 
@@ -397,7 +383,7 @@
 .end method
 
 .method public constructor <init>(IFI)V
-    .locals 2
+    .locals 4
 
     invoke-direct {p0}, Ljava/util/AbstractMap;-><init>()V
 
@@ -416,15 +402,15 @@
     move p1, p3
 
     :cond_0
-    int-to-long v0, p1
+    const-wide/high16 v0, 0x3ff0000000000000L    # 1.0
 
-    long-to-float p1, v0
+    int-to-long v2, p1
+
+    long-to-float p1, v2
 
     div-float/2addr p1, p2
 
     float-to-double p1, p1
-
-    const-wide/high16 v0, 0x3ff0000000000000L    # 1.0
 
     add-double/2addr p1, v0
 
@@ -484,7 +470,7 @@
 .method private final addCount(JI)V
     .locals 11
 
-    iget-object v0, p0, Lj$/util/concurrent/ConcurrentHashMap;->counterCells:[Lj$/util/concurrent/ConcurrentHashMap$c;
+    iget-object v0, p0, Lj$/util/concurrent/ConcurrentHashMap;->counterCells:[Lj$/util/concurrent/c;
 
     if-nez v0, :cond_0
 
@@ -531,7 +517,7 @@
 
     sget-wide v5, Lj$/util/concurrent/ConcurrentHashMap;->CELLVALUE:J
 
-    iget-wide v7, v4, Lj$/util/concurrent/ConcurrentHashMap$c;->value:J
+    iget-wide v7, v4, Lj$/util/concurrent/c;->value:J
 
     add-long v9, v7, p1
 
@@ -567,7 +553,7 @@
 
     if-ltz p1, :cond_7
 
-    iget-object p1, p0, Lj$/util/concurrent/ConcurrentHashMap;->table:[Lj$/util/concurrent/ConcurrentHashMap$l;
+    iget-object p1, p0, Lj$/util/concurrent/ConcurrentHashMap;->table:[Lj$/util/concurrent/l;
 
     if-eqz p1, :cond_7
 
@@ -599,7 +585,7 @@
 
     if-eq v4, p2, :cond_7
 
-    iget-object p2, p0, Lj$/util/concurrent/ConcurrentHashMap;->nextTable:[Lj$/util/concurrent/ConcurrentHashMap$l;
+    iget-object p2, p0, Lj$/util/concurrent/ConcurrentHashMap;->nextTable:[Lj$/util/concurrent/l;
 
     if-eqz p2, :cond_7
 
@@ -624,7 +610,7 @@
 
     if-eqz p3, :cond_6
 
-    invoke-direct {p0, p1, p2}, Lj$/util/concurrent/ConcurrentHashMap;->transfer([Lj$/util/concurrent/ConcurrentHashMap$l;[Lj$/util/concurrent/ConcurrentHashMap$l;)V
+    invoke-direct {p0, p1, p2}, Lj$/util/concurrent/ConcurrentHashMap;->transfer([Lj$/util/concurrent/l;[Lj$/util/concurrent/l;)V
 
     goto :goto_1
 
@@ -649,7 +635,7 @@
 
     const/4 p2, 0x0
 
-    invoke-direct {p0, p1, p2}, Lj$/util/concurrent/ConcurrentHashMap;->transfer([Lj$/util/concurrent/ConcurrentHashMap$l;[Lj$/util/concurrent/ConcurrentHashMap$l;)V
+    invoke-direct {p0, p1, p2}, Lj$/util/concurrent/ConcurrentHashMap;->transfer([Lj$/util/concurrent/l;[Lj$/util/concurrent/l;)V
 
     :cond_6
     :goto_1
@@ -670,7 +656,7 @@
     return-void
 .end method
 
-.method static final casTabAt([Lj$/util/concurrent/ConcurrentHashMap$l;ILj$/util/concurrent/ConcurrentHashMap$l;Lj$/util/concurrent/ConcurrentHashMap$l;)Z
+.method static final casTabAt([Lj$/util/concurrent/l;ILj$/util/concurrent/l;Lj$/util/concurrent/l;)Z
     .locals 6
     .annotation system Ldalvik/annotation/Signature;
         value = {
@@ -679,10 +665,10 @@
             "V:",
             "Ljava/lang/Object;",
             ">([",
-            "Lj$/util/concurrent/ConcurrentHashMap$l<",
-            "TK;TV;>;I",
-            "Lj$/util/concurrent/ConcurrentHashMap$l;",
-            "Lj$/util/concurrent/ConcurrentHashMap$l;",
+            "Lj$/util/concurrent/l;",
+            "I",
+            "Lj$/util/concurrent/l;",
+            "Lj$/util/concurrent/l;",
             ")Z"
         }
     .end annotation
@@ -874,13 +860,14 @@
     :goto_0
     const/4 v13, 0x0
 
+    :goto_1
     move v14, v1
 
     move v15, v13
 
     :cond_1
-    :goto_1
-    iget-object v7, v9, Lj$/util/concurrent/ConcurrentHashMap;->counterCells:[Lj$/util/concurrent/ConcurrentHashMap$c;
+    :goto_2
+    iget-object v7, v9, Lj$/util/concurrent/ConcurrentHashMap;->counterCells:[Lj$/util/concurrent/c;
 
     if-eqz v7, :cond_c
 
@@ -900,9 +887,9 @@
 
     if-nez v1, :cond_a
 
-    new-instance v7, Lj$/util/concurrent/ConcurrentHashMap$c;
+    new-instance v7, Lj$/util/concurrent/c;
 
-    invoke-direct {v7, v10, v11}, Lj$/util/concurrent/ConcurrentHashMap$c;-><init>(J)V
+    invoke-direct {v7, v10, v11}, Lj$/util/concurrent/c;-><init>(J)V
 
     iget v1, v9, Lj$/util/concurrent/ConcurrentHashMap;->cellsBusy:I
 
@@ -925,7 +912,7 @@
     if-eqz v1, :cond_a
 
     :try_start_0
-    iget-object v1, v9, Lj$/util/concurrent/ConcurrentHashMap;->counterCells:[Lj$/util/concurrent/ConcurrentHashMap$c;
+    iget-object v1, v9, Lj$/util/concurrent/ConcurrentHashMap;->counterCells:[Lj$/util/concurrent/c;
 
     if-eqz v1, :cond_2
 
@@ -947,17 +934,17 @@
 
     move v1, v12
 
-    goto :goto_2
+    goto :goto_3
 
     :cond_2
     move v1, v13
 
-    :goto_2
+    :goto_3
     iput v13, v9, Lj$/util/concurrent/ConcurrentHashMap;->cellsBusy:I
 
     if-eqz v1, :cond_1
 
-    goto/16 :goto_7
+    goto/16 :goto_8
 
     :catchall_0
     move-exception v0
@@ -971,14 +958,14 @@
 
     move v0, v12
 
-    goto :goto_5
+    goto :goto_6
 
     :cond_4
     sget-object v2, Lj$/util/concurrent/ConcurrentHashMap;->U:Lsun/misc/Unsafe;
 
     sget-wide v18, Lj$/util/concurrent/ConcurrentHashMap;->CELLVALUE:J
 
-    iget-wide v3, v1, Lj$/util/concurrent/ConcurrentHashMap$c;->value:J
+    iget-wide v3, v1, Lj$/util/concurrent/c;->value:J
 
     add-long v22, v3, v10
 
@@ -994,10 +981,10 @@
 
     if-eqz v1, :cond_5
 
-    goto/16 :goto_7
+    goto/16 :goto_8
 
     :cond_5
-    iget-object v1, v9, Lj$/util/concurrent/ConcurrentHashMap;->counterCells:[Lj$/util/concurrent/ConcurrentHashMap$c;
+    iget-object v1, v9, Lj$/util/concurrent/ConcurrentHashMap;->counterCells:[Lj$/util/concurrent/c;
 
     if-ne v1, v7, :cond_a
 
@@ -1005,14 +992,14 @@
 
     if-lt v8, v1, :cond_6
 
-    goto :goto_4
+    goto :goto_5
 
     :cond_6
     if-nez v15, :cond_7
 
     move v15, v12
 
-    goto :goto_5
+    goto :goto_6
 
     :cond_7
     iget v1, v9, Lj$/util/concurrent/ConcurrentHashMap;->cellsBusy:I
@@ -1036,17 +1023,17 @@
     if-eqz v1, :cond_b
 
     :try_start_1
-    iget-object v1, v9, Lj$/util/concurrent/ConcurrentHashMap;->counterCells:[Lj$/util/concurrent/ConcurrentHashMap$c;
+    iget-object v1, v9, Lj$/util/concurrent/ConcurrentHashMap;->counterCells:[Lj$/util/concurrent/c;
 
     if-ne v1, v7, :cond_9
 
     shl-int/lit8 v1, v8, 0x1
 
-    new-array v1, v1, [Lj$/util/concurrent/ConcurrentHashMap$c;
+    new-array v1, v1, [Lj$/util/concurrent/c;
 
     move v2, v13
 
-    :goto_3
+    :goto_4
     if-ge v2, v8, :cond_8
 
     aget-object v3, v7, v2
@@ -1055,10 +1042,10 @@
 
     add-int/lit8 v2, v2, 0x1
 
-    goto :goto_3
+    goto :goto_4
 
     :cond_8
-    iput-object v1, v9, Lj$/util/concurrent/ConcurrentHashMap;->counterCells:[Lj$/util/concurrent/ConcurrentHashMap$c;
+    iput-object v1, v9, Lj$/util/concurrent/ConcurrentHashMap;->counterCells:[Lj$/util/concurrent/c;
     :try_end_1
     .catchall {:try_start_1 .. :try_end_1} :catchall_1
 
@@ -1067,7 +1054,7 @@
 
     move v1, v14
 
-    goto/16 :goto_0
+    goto/16 :goto_1
 
     :catchall_1
     move-exception v0
@@ -1077,23 +1064,23 @@
     throw v0
 
     :cond_a
-    :goto_4
+    :goto_5
     move v15, v13
 
     :cond_b
-    :goto_5
+    :goto_6
     invoke-static {v14}, Lj$/util/concurrent/ThreadLocalRandom;->a(I)I
 
     move-result v14
 
-    goto/16 :goto_1
+    goto/16 :goto_2
 
     :cond_c
     iget v1, v9, Lj$/util/concurrent/ConcurrentHashMap;->cellsBusy:I
 
     if-nez v1, :cond_e
 
-    iget-object v1, v9, Lj$/util/concurrent/ConcurrentHashMap;->counterCells:[Lj$/util/concurrent/ConcurrentHashMap$c;
+    iget-object v1, v9, Lj$/util/concurrent/ConcurrentHashMap;->counterCells:[Lj$/util/concurrent/c;
 
     if-ne v1, v7, :cond_e
 
@@ -1114,39 +1101,39 @@
     if-eqz v1, :cond_e
 
     :try_start_2
-    iget-object v1, v9, Lj$/util/concurrent/ConcurrentHashMap;->counterCells:[Lj$/util/concurrent/ConcurrentHashMap$c;
+    iget-object v1, v9, Lj$/util/concurrent/ConcurrentHashMap;->counterCells:[Lj$/util/concurrent/c;
 
     if-ne v1, v7, :cond_d
 
     const/4 v1, 0x2
 
-    new-array v1, v1, [Lj$/util/concurrent/ConcurrentHashMap$c;
+    new-array v1, v1, [Lj$/util/concurrent/c;
 
     and-int/lit8 v2, v14, 0x1
 
-    new-instance v3, Lj$/util/concurrent/ConcurrentHashMap$c;
+    new-instance v3, Lj$/util/concurrent/c;
 
-    invoke-direct {v3, v10, v11}, Lj$/util/concurrent/ConcurrentHashMap$c;-><init>(J)V
+    invoke-direct {v3, v10, v11}, Lj$/util/concurrent/c;-><init>(J)V
 
     aput-object v3, v1, v2
 
-    iput-object v1, v9, Lj$/util/concurrent/ConcurrentHashMap;->counterCells:[Lj$/util/concurrent/ConcurrentHashMap$c;
+    iput-object v1, v9, Lj$/util/concurrent/ConcurrentHashMap;->counterCells:[Lj$/util/concurrent/c;
     :try_end_2
     .catchall {:try_start_2 .. :try_end_2} :catchall_2
 
     move v1, v12
 
-    goto :goto_6
+    goto :goto_7
 
     :cond_d
     move v1, v13
 
-    :goto_6
+    :goto_7
     iput v13, v9, Lj$/util/concurrent/ConcurrentHashMap;->cellsBusy:I
 
     if-eqz v1, :cond_1
 
-    goto :goto_7
+    goto :goto_8
 
     :catchall_2
     move-exception v0
@@ -1172,23 +1159,22 @@
 
     if-eqz v1, :cond_1
 
-    :goto_7
+    :goto_8
     return-void
 .end method
 
-.method private final initTable()[Lj$/util/concurrent/ConcurrentHashMap$l;
+.method private final initTable()[Lj$/util/concurrent/l;
     .locals 8
     .annotation system Ldalvik/annotation/Signature;
         value = {
             "()[",
-            "Lj$/util/concurrent/ConcurrentHashMap$l<",
-            "TK;TV;>;"
+            "Lj$/util/concurrent/l;"
         }
     .end annotation
 
     :cond_0
     :goto_0
-    iget-object v0, p0, Lj$/util/concurrent/ConcurrentHashMap;->table:[Lj$/util/concurrent/ConcurrentHashMap$l;
+    iget-object v0, p0, Lj$/util/concurrent/ConcurrentHashMap;->table:[Lj$/util/concurrent/l;
 
     if-eqz v0, :cond_1
 
@@ -1223,7 +1209,7 @@
     if-eqz v1, :cond_0
 
     :try_start_0
-    iget-object v1, p0, Lj$/util/concurrent/ConcurrentHashMap;->table:[Lj$/util/concurrent/ConcurrentHashMap$l;
+    iget-object v1, p0, Lj$/util/concurrent/ConcurrentHashMap;->table:[Lj$/util/concurrent/l;
 
     if-eqz v1, :cond_3
 
@@ -1242,9 +1228,9 @@
     const/16 v1, 0x10
 
     :goto_1
-    new-array v2, v1, [Lj$/util/concurrent/ConcurrentHashMap$l;
+    new-array v2, v1, [Lj$/util/concurrent/l;
 
-    iput-object v2, p0, Lj$/util/concurrent/ConcurrentHashMap;->table:[Lj$/util/concurrent/ConcurrentHashMap$l;
+    iput-object v2, p0, Lj$/util/concurrent/ConcurrentHashMap;->table:[Lj$/util/concurrent/l;
     :try_end_0
     .catchall {:try_start_0 .. :try_end_0} :catchall_0
 
@@ -1302,7 +1288,7 @@
 
     if-eqz v8, :cond_0
 
-    new-instance v11, Lj$/util/concurrent/ConcurrentHashMap$l;
+    new-instance v11, Lj$/util/concurrent/l;
 
     invoke-virtual {v7}, Ljava/lang/Object;->hashCode()I
 
@@ -1312,7 +1298,7 @@
 
     move-result v12
 
-    invoke-direct {v11, v12, v7, v8, v6}, Lj$/util/concurrent/ConcurrentHashMap$l;-><init>(ILjava/lang/Object;Ljava/lang/Object;Lj$/util/concurrent/ConcurrentHashMap$l;)V
+    invoke-direct {v11, v12, v7, v8, v6}, Lj$/util/concurrent/l;-><init>(ILjava/lang/Object;Ljava/lang/Object;Lj$/util/concurrent/l;)V
 
     add-long/2addr v4, v9
 
@@ -1358,20 +1344,20 @@
     move-result v4
 
     :goto_1
-    new-array v5, v4, [Lj$/util/concurrent/ConcurrentHashMap$l;
+    new-array v5, v4, [Lj$/util/concurrent/l;
 
     add-int/lit8 v7, v4, -0x1
 
     :goto_2
     if-eqz v6, :cond_d
 
-    iget-object v12, v6, Lj$/util/concurrent/ConcurrentHashMap$l;->d:Lj$/util/concurrent/ConcurrentHashMap$l;
+    iget-object v12, v6, Lj$/util/concurrent/l;->d:Lj$/util/concurrent/l;
 
-    iget v13, v6, Lj$/util/concurrent/ConcurrentHashMap$l;->a:I
+    iget v13, v6, Lj$/util/concurrent/l;->a:I
 
     and-int v14, v13, v7
 
-    invoke-static {v5, v14}, Lj$/util/concurrent/ConcurrentHashMap;->tabAt([Lj$/util/concurrent/ConcurrentHashMap$l;I)Lj$/util/concurrent/ConcurrentHashMap$l;
+    invoke-static {v5, v14}, Lj$/util/concurrent/ConcurrentHashMap;->tabAt([Lj$/util/concurrent/l;I)Lj$/util/concurrent/l;
 
     move-result-object v15
 
@@ -1382,19 +1368,19 @@
     goto/16 :goto_8
 
     :cond_3
-    iget-object v1, v6, Lj$/util/concurrent/ConcurrentHashMap$l;->b:Ljava/lang/Object;
+    iget-object v1, v6, Lj$/util/concurrent/l;->b:Ljava/lang/Object;
 
-    iget v8, v15, Lj$/util/concurrent/ConcurrentHashMap$l;->a:I
+    iget v8, v15, Lj$/util/concurrent/l;->a:I
 
     if-gez v8, :cond_5
 
     move-object v8, v15
 
-    check-cast v8, Lj$/util/concurrent/ConcurrentHashMap$q;
+    check-cast v8, Lj$/util/concurrent/q;
 
-    iget-object v11, v6, Lj$/util/concurrent/ConcurrentHashMap$l;->c:Ljava/lang/Object;
+    iget-object v11, v6, Lj$/util/concurrent/l;->c:Ljava/lang/Object;
 
-    invoke-virtual {v8, v13, v1, v11}, Lj$/util/concurrent/ConcurrentHashMap$q;->f(ILjava/lang/Object;Ljava/lang/Object;)Lj$/util/concurrent/ConcurrentHashMap$r;
+    invoke-virtual {v8, v13, v1, v11}, Lj$/util/concurrent/q;->f(ILjava/lang/Object;Ljava/lang/Object;)Lj$/util/concurrent/r;
 
     move-result-object v1
 
@@ -1416,11 +1402,11 @@
     :goto_4
     if-eqz v8, :cond_8
 
-    iget v9, v8, Lj$/util/concurrent/ConcurrentHashMap$l;->a:I
+    iget v9, v8, Lj$/util/concurrent/l;->a:I
 
     if-ne v9, v13, :cond_7
 
-    iget-object v9, v8, Lj$/util/concurrent/ConcurrentHashMap$l;->b:Ljava/lang/Object;
+    iget-object v9, v8, Lj$/util/concurrent/l;->b:Ljava/lang/Object;
 
     if-eq v9, v1, :cond_6
 
@@ -1440,7 +1426,7 @@
     :cond_7
     add-int/lit8 v11, v11, 0x1
 
-    iget-object v8, v8, Lj$/util/concurrent/ConcurrentHashMap$l;->d:Lj$/util/concurrent/ConcurrentHashMap$l;
+    iget-object v8, v8, Lj$/util/concurrent/l;->d:Lj$/util/concurrent/l;
 
     const-wide/16 v9, 0x1
 
@@ -1460,7 +1446,7 @@
 
     add-long/2addr v2, v8
 
-    iput-object v15, v6, Lj$/util/concurrent/ConcurrentHashMap$l;->d:Lj$/util/concurrent/ConcurrentHashMap$l;
+    iput-object v15, v6, Lj$/util/concurrent/l;->d:Lj$/util/concurrent/l;
 
     move-object v1, v6
 
@@ -1471,15 +1457,15 @@
     :goto_6
     if-eqz v1, :cond_a
 
-    new-instance v10, Lj$/util/concurrent/ConcurrentHashMap$r;
+    new-instance v10, Lj$/util/concurrent/r;
 
-    iget v11, v1, Lj$/util/concurrent/ConcurrentHashMap$l;->a:I
+    iget v11, v1, Lj$/util/concurrent/l;->a:I
 
-    iget-object v13, v1, Lj$/util/concurrent/ConcurrentHashMap$l;->b:Ljava/lang/Object;
+    iget-object v13, v1, Lj$/util/concurrent/l;->b:Ljava/lang/Object;
 
     move-wide/from16 v22, v2
 
-    iget-object v2, v1, Lj$/util/concurrent/ConcurrentHashMap$l;->c:Ljava/lang/Object;
+    iget-object v2, v1, Lj$/util/concurrent/l;->c:Ljava/lang/Object;
 
     const/16 v20, 0x0
 
@@ -1493,9 +1479,9 @@
 
     move-object/from16 v19, v2
 
-    invoke-direct/range {v16 .. v21}, Lj$/util/concurrent/ConcurrentHashMap$r;-><init>(ILjava/lang/Object;Ljava/lang/Object;Lj$/util/concurrent/ConcurrentHashMap$l;Lj$/util/concurrent/ConcurrentHashMap$r;)V
+    invoke-direct/range {v16 .. v21}, Lj$/util/concurrent/r;-><init>(ILjava/lang/Object;Ljava/lang/Object;Lj$/util/concurrent/l;Lj$/util/concurrent/r;)V
 
-    iput-object v9, v10, Lj$/util/concurrent/ConcurrentHashMap$r;->h:Lj$/util/concurrent/ConcurrentHashMap$r;
+    iput-object v9, v10, Lj$/util/concurrent/r;->h:Lj$/util/concurrent/r;
 
     if-nez v9, :cond_9
 
@@ -1504,10 +1490,10 @@
     goto :goto_7
 
     :cond_9
-    iput-object v10, v9, Lj$/util/concurrent/ConcurrentHashMap$l;->d:Lj$/util/concurrent/ConcurrentHashMap$l;
+    iput-object v10, v9, Lj$/util/concurrent/l;->d:Lj$/util/concurrent/l;
 
     :goto_7
-    iget-object v1, v1, Lj$/util/concurrent/ConcurrentHashMap$l;->d:Lj$/util/concurrent/ConcurrentHashMap$l;
+    iget-object v1, v1, Lj$/util/concurrent/l;->d:Lj$/util/concurrent/l;
 
     move-object v9, v10
 
@@ -1518,11 +1504,11 @@
     :cond_a
     move-wide/from16 v22, v2
 
-    new-instance v1, Lj$/util/concurrent/ConcurrentHashMap$q;
+    new-instance v1, Lj$/util/concurrent/q;
 
-    invoke-direct {v1, v8}, Lj$/util/concurrent/ConcurrentHashMap$q;-><init>(Lj$/util/concurrent/ConcurrentHashMap$r;)V
+    invoke-direct {v1, v8}, Lj$/util/concurrent/q;-><init>(Lj$/util/concurrent/r;)V
 
-    invoke-static {v5, v14, v1}, Lj$/util/concurrent/ConcurrentHashMap;->setTabAt([Lj$/util/concurrent/ConcurrentHashMap$l;ILj$/util/concurrent/ConcurrentHashMap$l;)V
+    invoke-static {v5, v14, v1}, Lj$/util/concurrent/ConcurrentHashMap;->setTabAt([Lj$/util/concurrent/l;ILj$/util/concurrent/l;)V
 
     goto :goto_3
 
@@ -1534,9 +1520,9 @@
 
     add-long/2addr v2, v8
 
-    iput-object v15, v6, Lj$/util/concurrent/ConcurrentHashMap$l;->d:Lj$/util/concurrent/ConcurrentHashMap$l;
+    iput-object v15, v6, Lj$/util/concurrent/l;->d:Lj$/util/concurrent/l;
 
-    invoke-static {v5, v14, v6}, Lj$/util/concurrent/ConcurrentHashMap;->setTabAt([Lj$/util/concurrent/ConcurrentHashMap$l;ILj$/util/concurrent/ConcurrentHashMap$l;)V
+    invoke-static {v5, v14, v6}, Lj$/util/concurrent/ConcurrentHashMap;->setTabAt([Lj$/util/concurrent/l;ILj$/util/concurrent/l;)V
 
     :cond_c
     move-wide v9, v8
@@ -1550,7 +1536,7 @@
     goto/16 :goto_2
 
     :cond_d
-    iput-object v5, v0, Lj$/util/concurrent/ConcurrentHashMap;->table:[Lj$/util/concurrent/ConcurrentHashMap$l;
+    iput-object v5, v0, Lj$/util/concurrent/ConcurrentHashMap;->table:[Lj$/util/concurrent/l;
 
     ushr-int/lit8 v1, v4, 0x2
 
@@ -1584,7 +1570,7 @@
     return p0
 .end method
 
-.method static final setTabAt([Lj$/util/concurrent/ConcurrentHashMap$l;ILj$/util/concurrent/ConcurrentHashMap$l;)V
+.method static final setTabAt([Lj$/util/concurrent/l;ILj$/util/concurrent/l;)V
     .locals 5
     .annotation system Ldalvik/annotation/Signature;
         value = {
@@ -1593,9 +1579,9 @@
             "V:",
             "Ljava/lang/Object;",
             ">([",
-            "Lj$/util/concurrent/ConcurrentHashMap$l<",
-            "TK;TV;>;I",
-            "Lj$/util/concurrent/ConcurrentHashMap$l;",
+            "Lj$/util/concurrent/l;",
+            "I",
+            "Lj$/util/concurrent/l;",
             ")V"
         }
     .end annotation
@@ -1631,7 +1617,7 @@
     return p0
 .end method
 
-.method static final tabAt([Lj$/util/concurrent/ConcurrentHashMap$l;I)Lj$/util/concurrent/ConcurrentHashMap$l;
+.method static final tabAt([Lj$/util/concurrent/l;I)Lj$/util/concurrent/l;
     .locals 5
     .annotation system Ldalvik/annotation/Signature;
         value = {
@@ -1640,9 +1626,9 @@
             "V:",
             "Ljava/lang/Object;",
             ">([",
-            "Lj$/util/concurrent/ConcurrentHashMap$l<",
-            "TK;TV;>;I)",
-            "Lj$/util/concurrent/ConcurrentHashMap$l;"
+            "Lj$/util/concurrent/l;",
+            "I)",
+            "Lj$/util/concurrent/l;"
         }
     .end annotation
 
@@ -1662,7 +1648,7 @@
 
     move-result-object p0
 
-    check-cast p0, Lj$/util/concurrent/ConcurrentHashMap$l;
+    check-cast p0, Lj$/util/concurrent/l;
 
     return-object p0
 .end method
@@ -1714,15 +1700,15 @@
     return v0
 .end method
 
-.method private final transfer([Lj$/util/concurrent/ConcurrentHashMap$l;[Lj$/util/concurrent/ConcurrentHashMap$l;)V
-    .locals 30
+.method private final transfer([Lj$/util/concurrent/l;[Lj$/util/concurrent/l;)V
+    .locals 29
     .annotation system Ldalvik/annotation/Signature;
         value = {
             "([",
-            "Lj$/util/concurrent/ConcurrentHashMap$l<",
-            "TK;TV;>;[",
-            "Lj$/util/concurrent/ConcurrentHashMap$l<",
-            "TK;TV;>;)V"
+            "Lj$/util/concurrent/l;",
+            "[",
+            "Lj$/util/concurrent/l;",
+            ")V"
         }
     .end annotation
 
@@ -1765,11 +1751,11 @@
     shl-int/lit8 v1, v8, 0x1
 
     :try_start_0
-    new-array v1, v1, [Lj$/util/concurrent/ConcurrentHashMap$l;
+    new-array v1, v1, [Lj$/util/concurrent/l;
     :try_end_0
     .catchall {:try_start_0 .. :try_end_0} :catchall_0
 
-    iput-object v1, v7, Lj$/util/concurrent/ConcurrentHashMap;->nextTable:[Lj$/util/concurrent/ConcurrentHashMap$l;
+    iput-object v1, v7, Lj$/util/concurrent/ConcurrentHashMap;->nextTable:[Lj$/util/concurrent/l;
 
     iput v8, v7, Lj$/util/concurrent/ConcurrentHashMap;->transferIndex:I
 
@@ -1790,28 +1776,28 @@
     :goto_2
     array-length v12, v11
 
-    new-instance v13, Lj$/util/concurrent/ConcurrentHashMap$g;
+    new-instance v13, Lj$/util/concurrent/g;
 
-    invoke-direct {v13, v11}, Lj$/util/concurrent/ConcurrentHashMap$g;-><init>([Lj$/util/concurrent/ConcurrentHashMap$l;)V
+    invoke-direct {v13, v11}, Lj$/util/concurrent/g;-><init>([Lj$/util/concurrent/l;)V
 
-    const/4 v14, -0x1
-
-    move/from16 v16, v9
+    move v15, v9
 
     const/4 v5, 0x0
 
     const/4 v6, 0x0
 
-    const/16 v17, 0x0
+    const/16 v16, 0x0
 
     :goto_3
-    if-eqz v16, :cond_8
+    const/4 v1, -0x1
+
+    if-eqz v15, :cond_8
 
     add-int/lit8 v6, v6, -0x1
 
     if-ge v6, v5, :cond_7
 
-    if-eqz v17, :cond_3
+    if-eqz v16, :cond_3
 
     goto :goto_5
 
@@ -1820,40 +1806,40 @@
 
     if-gtz v3, :cond_4
 
-    move v6, v14
+    move v6, v1
 
     goto :goto_6
 
     :cond_4
     sget-object v1, Lj$/util/concurrent/ConcurrentHashMap;->U:Lsun/misc/Unsafe;
 
-    sget-wide v18, Lj$/util/concurrent/ConcurrentHashMap;->TRANSFERINDEX:J
+    sget-wide v17, Lj$/util/concurrent/ConcurrentHashMap;->TRANSFERINDEX:J
 
     if-le v3, v10, :cond_5
 
     sub-int v2, v3, v10
 
-    move/from16 v20, v2
+    move/from16 v19, v2
 
     goto :goto_4
 
     :cond_5
-    const/16 v20, 0x0
+    const/16 v19, 0x0
 
     :goto_4
     move-object/from16 v2, p0
 
-    move/from16 v21, v3
+    move/from16 v20, v3
 
-    move-wide/from16 v3, v18
+    move-wide/from16 v3, v17
 
-    move/from16 v18, v5
+    move/from16 v17, v5
 
-    move/from16 v5, v21
+    move/from16 v5, v20
 
-    move/from16 v19, v6
+    move/from16 v18, v6
 
-    move/from16 v6, v20
+    move/from16 v6, v19
 
     invoke-virtual/range {v1 .. v6}, Lsun/misc/Unsafe;->compareAndSwapInt(Ljava/lang/Object;JII)Z
 
@@ -1861,199 +1847,224 @@
 
     if-eqz v1, :cond_6
 
-    add-int/lit8 v6, v21, -0x1
+    add-int/lit8 v3, v20, -0x1
 
-    move/from16 v5, v20
+    move v6, v3
+
+    move/from16 v5, v19
 
     goto :goto_6
 
     :cond_6
-    move/from16 v5, v18
+    move/from16 v5, v17
 
-    move/from16 v6, v19
+    move/from16 v6, v18
 
     goto :goto_3
 
     :cond_7
     :goto_5
-    move/from16 v18, v5
+    move/from16 v17, v5
 
-    move/from16 v19, v6
+    move/from16 v18, v6
 
-    move/from16 v5, v18
+    move/from16 v5, v17
 
-    move/from16 v6, v19
+    move/from16 v6, v18
 
     :goto_6
-    const/16 v16, 0x0
+    const/4 v15, 0x0
 
     goto :goto_3
 
     :cond_8
-    move/from16 v18, v5
+    move/from16 v17, v5
 
-    const/4 v1, 0x0
+    const/4 v2, 0x0
 
     if-ltz v6, :cond_1c
 
     if-ge v6, v8, :cond_1c
 
-    add-int v2, v6, v8
+    add-int v3, v6, v8
 
-    if-lt v2, v12, :cond_9
+    if-lt v3, v12, :cond_9
 
     goto/16 :goto_14
 
     :cond_9
-    invoke-static {v0, v6}, Lj$/util/concurrent/ConcurrentHashMap;->tabAt([Lj$/util/concurrent/ConcurrentHashMap$l;I)Lj$/util/concurrent/ConcurrentHashMap$l;
+    invoke-static {v0, v6}, Lj$/util/concurrent/ConcurrentHashMap;->tabAt([Lj$/util/concurrent/l;I)Lj$/util/concurrent/l;
 
-    move-result-object v3
+    move-result-object v4
 
-    if-nez v3, :cond_a
+    if-nez v4, :cond_a
 
-    invoke-static {v0, v6, v1, v13}, Lj$/util/concurrent/ConcurrentHashMap;->casTabAt([Lj$/util/concurrent/ConcurrentHashMap$l;ILj$/util/concurrent/ConcurrentHashMap$l;Lj$/util/concurrent/ConcurrentHashMap$l;)Z
+    invoke-static {v0, v6, v2, v13}, Lj$/util/concurrent/ConcurrentHashMap;->casTabAt([Lj$/util/concurrent/l;ILj$/util/concurrent/l;Lj$/util/concurrent/l;)Z
 
-    move-result v16
+    move-result v1
+
+    move v15, v1
+
+    move/from16 v19, v10
+
+    move/from16 v20, v12
+
+    move v10, v9
+
+    move-object v9, v7
 
     :goto_7
-    move/from16 v5, v18
+    move-object v7, v13
 
-    goto :goto_3
+    goto/16 :goto_15
 
     :cond_a
-    iget v4, v3, Lj$/util/concurrent/ConcurrentHashMap$l;->a:I
+    iget v5, v4, Lj$/util/concurrent/l;->a:I
 
-    if-ne v4, v14, :cond_b
+    if-ne v5, v1, :cond_b
 
-    move/from16 v16, v9
+    move v15, v9
+
+    move/from16 v19, v10
+
+    move/from16 v20, v12
+
+    move-object v9, v7
+
+    move v10, v15
 
     goto :goto_7
 
     :cond_b
-    monitor-enter v3
+    monitor-enter v4
 
     :try_start_1
-    invoke-static {v0, v6}, Lj$/util/concurrent/ConcurrentHashMap;->tabAt([Lj$/util/concurrent/ConcurrentHashMap$l;I)Lj$/util/concurrent/ConcurrentHashMap$l;
+    invoke-static {v0, v6}, Lj$/util/concurrent/ConcurrentHashMap;->tabAt([Lj$/util/concurrent/l;I)Lj$/util/concurrent/l;
 
-    move-result-object v5
+    move-result-object v1
 
-    if-ne v5, v3, :cond_1a
+    if-ne v1, v4, :cond_1a
 
-    if-ltz v4, :cond_11
+    if-ltz v5, :cond_11
 
-    and-int/2addr v4, v8
+    and-int v1, v5, v8
 
-    iget-object v5, v3, Lj$/util/concurrent/ConcurrentHashMap$l;->d:Lj$/util/concurrent/ConcurrentHashMap$l;
+    iget-object v5, v4, Lj$/util/concurrent/l;->d:Lj$/util/concurrent/l;
 
-    move-object v14, v3
+    move-object v15, v4
 
     :goto_8
     if-eqz v5, :cond_d
 
-    iget v15, v5, Lj$/util/concurrent/ConcurrentHashMap$l;->a:I
+    iget v14, v5, Lj$/util/concurrent/l;->a:I
 
-    and-int/2addr v15, v8
+    and-int/2addr v14, v8
 
-    if-eq v15, v4, :cond_c
+    if-eq v14, v1, :cond_c
 
-    move-object v14, v5
+    move-object v15, v5
 
-    move v4, v15
+    move v1, v14
 
     :cond_c
-    iget-object v5, v5, Lj$/util/concurrent/ConcurrentHashMap$l;->d:Lj$/util/concurrent/ConcurrentHashMap$l;
+    iget-object v5, v5, Lj$/util/concurrent/l;->d:Lj$/util/concurrent/l;
 
     goto :goto_8
 
     :cond_d
-    if-nez v4, :cond_e
+    if-nez v1, :cond_e
 
-    move-object v4, v1
+    move-object v1, v2
 
-    move-object v1, v14
+    move-object v2, v15
 
     goto :goto_9
 
     :cond_e
-    move-object v4, v14
+    move-object v1, v15
 
     :goto_9
-    move-object v5, v3
+    move-object v5, v4
 
     :goto_a
-    if-eq v5, v14, :cond_10
+    if-eq v5, v15, :cond_10
 
-    iget v15, v5, Lj$/util/concurrent/ConcurrentHashMap$l;->a:I
+    iget v14, v5, Lj$/util/concurrent/l;->a:I
 
-    iget-object v9, v5, Lj$/util/concurrent/ConcurrentHashMap$l;->b:Ljava/lang/Object;
+    iget-object v9, v5, Lj$/util/concurrent/l;->b:Ljava/lang/Object;
 
-    move/from16 v21, v10
+    move/from16 v19, v10
 
-    iget-object v10, v5, Lj$/util/concurrent/ConcurrentHashMap$l;->c:Ljava/lang/Object;
+    iget-object v10, v5, Lj$/util/concurrent/l;->c:Ljava/lang/Object;
 
-    and-int v16, v15, v8
+    and-int v20, v14, v8
 
-    move/from16 v22, v12
+    if-nez v20, :cond_f
 
-    if-nez v16, :cond_f
+    move/from16 v20, v12
 
-    new-instance v12, Lj$/util/concurrent/ConcurrentHashMap$l;
+    new-instance v12, Lj$/util/concurrent/l;
 
-    invoke-direct {v12, v15, v9, v10, v1}, Lj$/util/concurrent/ConcurrentHashMap$l;-><init>(ILjava/lang/Object;Ljava/lang/Object;Lj$/util/concurrent/ConcurrentHashMap$l;)V
+    invoke-direct {v12, v14, v9, v10, v2}, Lj$/util/concurrent/l;-><init>(ILjava/lang/Object;Ljava/lang/Object;Lj$/util/concurrent/l;)V
 
-    move-object v1, v12
+    move-object v2, v12
 
     goto :goto_b
 
     :cond_f
-    new-instance v12, Lj$/util/concurrent/ConcurrentHashMap$l;
+    move/from16 v20, v12
 
-    invoke-direct {v12, v15, v9, v10, v4}, Lj$/util/concurrent/ConcurrentHashMap$l;-><init>(ILjava/lang/Object;Ljava/lang/Object;Lj$/util/concurrent/ConcurrentHashMap$l;)V
+    new-instance v12, Lj$/util/concurrent/l;
 
-    move-object v4, v12
+    invoke-direct {v12, v14, v9, v10, v1}, Lj$/util/concurrent/l;-><init>(ILjava/lang/Object;Ljava/lang/Object;Lj$/util/concurrent/l;)V
+
+    move-object v1, v12
 
     :goto_b
-    iget-object v5, v5, Lj$/util/concurrent/ConcurrentHashMap$l;->d:Lj$/util/concurrent/ConcurrentHashMap$l;
+    iget-object v5, v5, Lj$/util/concurrent/l;->d:Lj$/util/concurrent/l;
 
-    move/from16 v10, v21
+    move/from16 v10, v19
 
-    move/from16 v12, v22
+    move/from16 v12, v20
 
     const/4 v9, 0x1
 
     goto :goto_a
 
     :cond_10
-    move/from16 v21, v10
+    move/from16 v19, v10
 
-    move/from16 v22, v12
+    move/from16 v20, v12
 
-    invoke-static {v11, v6, v1}, Lj$/util/concurrent/ConcurrentHashMap;->setTabAt([Lj$/util/concurrent/ConcurrentHashMap$l;ILj$/util/concurrent/ConcurrentHashMap$l;)V
+    invoke-static {v11, v6, v2}, Lj$/util/concurrent/ConcurrentHashMap;->setTabAt([Lj$/util/concurrent/l;ILj$/util/concurrent/l;)V
 
-    invoke-static {v11, v2, v4}, Lj$/util/concurrent/ConcurrentHashMap;->setTabAt([Lj$/util/concurrent/ConcurrentHashMap$l;ILj$/util/concurrent/ConcurrentHashMap$l;)V
+    invoke-static {v11, v3, v1}, Lj$/util/concurrent/ConcurrentHashMap;->setTabAt([Lj$/util/concurrent/l;ILj$/util/concurrent/l;)V
 
-    invoke-static {v0, v6, v13}, Lj$/util/concurrent/ConcurrentHashMap;->setTabAt([Lj$/util/concurrent/ConcurrentHashMap$l;ILj$/util/concurrent/ConcurrentHashMap$l;)V
+    invoke-static {v0, v6, v13}, Lj$/util/concurrent/ConcurrentHashMap;->setTabAt([Lj$/util/concurrent/l;ILj$/util/concurrent/l;)V
 
     move-object v7, v13
 
-    goto/16 :goto_12
+    :goto_c
+    const/4 v15, 0x1
+
+    goto/16 :goto_13
 
     :cond_11
-    move/from16 v21, v10
+    move/from16 v19, v10
 
-    move/from16 v22, v12
+    move/from16 v20, v12
 
-    instance-of v4, v3, Lj$/util/concurrent/ConcurrentHashMap$q;
+    instance-of v1, v4, Lj$/util/concurrent/q;
 
-    if-eqz v4, :cond_1b
+    if-eqz v1, :cond_1b
 
-    move-object v4, v3
+    move-object v1, v4
 
-    check-cast v4, Lj$/util/concurrent/ConcurrentHashMap$q;
+    check-cast v1, Lj$/util/concurrent/q;
 
-    iget-object v5, v4, Lj$/util/concurrent/ConcurrentHashMap$q;->f:Lj$/util/concurrent/ConcurrentHashMap$r;
+    iget-object v5, v1, Lj$/util/concurrent/q;->f:Lj$/util/concurrent/r;
 
-    move-object v9, v1
+    move-object v9, v2
 
     move-object v10, v9
 
@@ -2065,184 +2076,169 @@
 
     move-object v5, v10
 
-    :goto_c
+    :goto_d
     if-eqz v12, :cond_15
 
-    move-object/from16 v16, v4
+    move-object/from16 v27, v1
 
-    iget v4, v12, Lj$/util/concurrent/ConcurrentHashMap$l;->a:I
+    iget v1, v12, Lj$/util/concurrent/l;->a:I
 
-    new-instance v7, Lj$/util/concurrent/ConcurrentHashMap$r;
+    new-instance v7, Lj$/util/concurrent/r;
 
-    iget-object v0, v12, Lj$/util/concurrent/ConcurrentHashMap$l;->b:Ljava/lang/Object;
+    iget-object v0, v12, Lj$/util/concurrent/l;->b:Ljava/lang/Object;
 
-    move-object/from16 v29, v13
+    move-object/from16 v28, v13
 
-    iget-object v13, v12, Lj$/util/concurrent/ConcurrentHashMap$l;->c:Ljava/lang/Object;
+    iget-object v13, v12, Lj$/util/concurrent/l;->c:Ljava/lang/Object;
 
-    const/16 v27, 0x0
+    const/16 v25, 0x0
 
-    const/16 v28, 0x0
+    const/16 v26, 0x0
 
-    move-object/from16 v23, v7
+    move-object/from16 v21, v7
 
-    move/from16 v24, v4
+    move/from16 v22, v1
 
-    move-object/from16 v25, v0
+    move-object/from16 v23, v0
 
-    move-object/from16 v26, v13
+    move-object/from16 v24, v13
 
-    invoke-direct/range {v23 .. v28}, Lj$/util/concurrent/ConcurrentHashMap$r;-><init>(ILjava/lang/Object;Ljava/lang/Object;Lj$/util/concurrent/ConcurrentHashMap$l;Lj$/util/concurrent/ConcurrentHashMap$r;)V
+    invoke-direct/range {v21 .. v26}, Lj$/util/concurrent/r;-><init>(ILjava/lang/Object;Ljava/lang/Object;Lj$/util/concurrent/l;Lj$/util/concurrent/r;)V
 
-    and-int v0, v4, v8
+    and-int v0, v1, v8
 
     if-nez v0, :cond_13
 
-    iput-object v10, v7, Lj$/util/concurrent/ConcurrentHashMap$r;->h:Lj$/util/concurrent/ConcurrentHashMap$r;
+    iput-object v10, v7, Lj$/util/concurrent/r;->h:Lj$/util/concurrent/r;
 
     if-nez v10, :cond_12
 
-    move-object v1, v7
+    move-object v2, v7
 
-    goto :goto_d
+    goto :goto_e
 
     :cond_12
-    iput-object v7, v10, Lj$/util/concurrent/ConcurrentHashMap$l;->d:Lj$/util/concurrent/ConcurrentHashMap$l;
+    iput-object v7, v10, Lj$/util/concurrent/l;->d:Lj$/util/concurrent/l;
 
-    :goto_d
+    :goto_e
     add-int/lit8 v14, v14, 0x1
 
     move-object v10, v7
 
-    goto :goto_f
+    goto :goto_10
 
     :cond_13
-    iput-object v9, v7, Lj$/util/concurrent/ConcurrentHashMap$r;->h:Lj$/util/concurrent/ConcurrentHashMap$r;
+    iput-object v9, v7, Lj$/util/concurrent/r;->h:Lj$/util/concurrent/r;
 
     if-nez v9, :cond_14
 
     move-object v5, v7
 
-    goto :goto_e
+    goto :goto_f
 
     :cond_14
-    iput-object v7, v9, Lj$/util/concurrent/ConcurrentHashMap$l;->d:Lj$/util/concurrent/ConcurrentHashMap$l;
+    iput-object v7, v9, Lj$/util/concurrent/l;->d:Lj$/util/concurrent/l;
 
-    :goto_e
+    :goto_f
     add-int/lit8 v15, v15, 0x1
 
     move-object v9, v7
 
-    :goto_f
-    iget-object v12, v12, Lj$/util/concurrent/ConcurrentHashMap$l;->d:Lj$/util/concurrent/ConcurrentHashMap$l;
+    :goto_10
+    iget-object v12, v12, Lj$/util/concurrent/l;->d:Lj$/util/concurrent/l;
 
     move-object/from16 v7, p0
 
     move-object/from16 v0, p1
 
-    move-object/from16 v4, v16
+    move-object/from16 v1, v27
 
-    move-object/from16 v13, v29
+    move-object/from16 v13, v28
 
-    goto :goto_c
+    goto :goto_d
 
     :cond_15
-    move-object/from16 v16, v4
+    move-object/from16 v27, v1
 
-    move-object/from16 v29, v13
+    move-object/from16 v28, v13
 
     const/4 v0, 0x6
 
     if-gt v14, v0, :cond_16
 
-    invoke-static {v1}, Lj$/util/concurrent/ConcurrentHashMap;->untreeify(Lj$/util/concurrent/ConcurrentHashMap$l;)Lj$/util/concurrent/ConcurrentHashMap$l;
+    invoke-static {v2}, Lj$/util/concurrent/ConcurrentHashMap;->untreeify(Lj$/util/concurrent/l;)Lj$/util/concurrent/l;
 
     move-result-object v1
 
-    goto :goto_10
+    goto :goto_11
 
     :cond_16
     if-eqz v15, :cond_17
 
-    new-instance v4, Lj$/util/concurrent/ConcurrentHashMap$q;
+    new-instance v1, Lj$/util/concurrent/q;
 
-    invoke-direct {v4, v1}, Lj$/util/concurrent/ConcurrentHashMap$q;-><init>(Lj$/util/concurrent/ConcurrentHashMap$r;)V
-
-    move-object v1, v4
-
-    goto :goto_10
-
-    :cond_17
-    move-object/from16 v1, v16
-
-    :goto_10
-    if-gt v15, v0, :cond_18
-
-    invoke-static {v5}, Lj$/util/concurrent/ConcurrentHashMap;->untreeify(Lj$/util/concurrent/ConcurrentHashMap$l;)Lj$/util/concurrent/ConcurrentHashMap$l;
-
-    move-result-object v4
+    invoke-direct {v1, v2}, Lj$/util/concurrent/q;-><init>(Lj$/util/concurrent/r;)V
 
     goto :goto_11
+
+    :cond_17
+    move-object/from16 v1, v27
+
+    :goto_11
+    if-gt v15, v0, :cond_18
+
+    invoke-static {v5}, Lj$/util/concurrent/ConcurrentHashMap;->untreeify(Lj$/util/concurrent/l;)Lj$/util/concurrent/l;
+
+    move-result-object v0
+
+    goto :goto_12
 
     :cond_18
     if-eqz v14, :cond_19
 
-    new-instance v4, Lj$/util/concurrent/ConcurrentHashMap$q;
+    new-instance v0, Lj$/util/concurrent/q;
 
-    invoke-direct {v4, v5}, Lj$/util/concurrent/ConcurrentHashMap$q;-><init>(Lj$/util/concurrent/ConcurrentHashMap$r;)V
+    invoke-direct {v0, v5}, Lj$/util/concurrent/q;-><init>(Lj$/util/concurrent/r;)V
 
-    goto :goto_11
+    goto :goto_12
 
     :cond_19
-    move-object/from16 v4, v16
+    move-object/from16 v0, v27
 
-    :goto_11
-    invoke-static {v11, v6, v1}, Lj$/util/concurrent/ConcurrentHashMap;->setTabAt([Lj$/util/concurrent/ConcurrentHashMap$l;ILj$/util/concurrent/ConcurrentHashMap$l;)V
+    :goto_12
+    invoke-static {v11, v6, v1}, Lj$/util/concurrent/ConcurrentHashMap;->setTabAt([Lj$/util/concurrent/l;ILj$/util/concurrent/l;)V
 
-    invoke-static {v11, v2, v4}, Lj$/util/concurrent/ConcurrentHashMap;->setTabAt([Lj$/util/concurrent/ConcurrentHashMap$l;ILj$/util/concurrent/ConcurrentHashMap$l;)V
+    invoke-static {v11, v3, v0}, Lj$/util/concurrent/ConcurrentHashMap;->setTabAt([Lj$/util/concurrent/l;ILj$/util/concurrent/l;)V
 
     move-object/from16 v0, p1
 
-    move-object/from16 v7, v29
+    move-object/from16 v7, v28
 
-    invoke-static {v0, v6, v7}, Lj$/util/concurrent/ConcurrentHashMap;->setTabAt([Lj$/util/concurrent/ConcurrentHashMap$l;ILj$/util/concurrent/ConcurrentHashMap$l;)V
+    invoke-static {v0, v6, v7}, Lj$/util/concurrent/ConcurrentHashMap;->setTabAt([Lj$/util/concurrent/l;ILj$/util/concurrent/l;)V
 
-    :goto_12
-    const/16 v16, 0x1
-
-    goto :goto_13
+    goto/16 :goto_c
 
     :cond_1a
-    move/from16 v21, v10
+    move/from16 v19, v10
 
-    move/from16 v22, v12
+    move/from16 v20, v12
 
     :cond_1b
     move-object v7, v13
 
     :goto_13
-    monitor-exit v3
+    monitor-exit v4
 
-    move-object v13, v7
+    move-object/from16 v9, p0
 
-    move/from16 v5, v18
+    const/4 v10, 0x1
 
-    move/from16 v10, v21
-
-    move/from16 v12, v22
-
-    const/4 v9, 0x1
-
-    const/4 v14, -0x1
-
-    move-object/from16 v7, p0
-
-    goto/16 :goto_3
+    goto :goto_15
 
     :catchall_1
     move-exception v0
 
-    monitor-exit v3
+    monitor-exit v4
     :try_end_1
     .catchall {:try_start_1 .. :try_end_1} :catchall_1
 
@@ -2250,19 +2246,19 @@
 
     :cond_1c
     :goto_14
-    move/from16 v21, v10
+    move/from16 v19, v10
 
-    move/from16 v22, v12
+    move/from16 v20, v12
 
     move-object v7, v13
 
     move-object/from16 v9, p0
 
-    if-eqz v17, :cond_1d
+    if-eqz v16, :cond_1d
 
-    iput-object v1, v9, Lj$/util/concurrent/ConcurrentHashMap;->nextTable:[Lj$/util/concurrent/ConcurrentHashMap$l;
+    iput-object v2, v9, Lj$/util/concurrent/ConcurrentHashMap;->nextTable:[Lj$/util/concurrent/l;
 
-    iput-object v11, v9, Lj$/util/concurrent/ConcurrentHashMap;->table:[Lj$/util/concurrent/ConcurrentHashMap$l;
+    iput-object v11, v9, Lj$/util/concurrent/ConcurrentHashMap;->table:[Lj$/util/concurrent/l;
 
     shl-int/lit8 v0, v8, 0x1
 
@@ -2316,48 +2312,40 @@
     return-void
 
     :cond_1e
-    move-object v13, v7
-
     move v6, v8
 
-    move-object v7, v9
+    move v15, v10
 
-    move v9, v10
-
-    move/from16 v16, v9
-
-    move/from16 v17, v16
+    move/from16 v16, v15
 
     goto :goto_15
 
     :cond_1f
+    move v6, v14
+
+    :goto_15
     move-object v13, v7
 
     move-object v7, v9
 
     move v9, v10
 
-    move v6, v14
+    move/from16 v5, v17
 
-    :goto_15
-    move/from16 v5, v18
+    move/from16 v10, v19
 
-    move/from16 v10, v21
-
-    move/from16 v12, v22
-
-    const/4 v14, -0x1
+    move/from16 v12, v20
 
     goto/16 :goto_3
 .end method
 
-.method private final treeifyBin([Lj$/util/concurrent/ConcurrentHashMap$l;I)V
+.method private final treeifyBin([Lj$/util/concurrent/l;I)V
     .locals 11
     .annotation system Ldalvik/annotation/Signature;
         value = {
             "([",
-            "Lj$/util/concurrent/ConcurrentHashMap$l<",
-            "TK;TV;>;I)V"
+            "Lj$/util/concurrent/l;",
+            "I)V"
         }
     .end annotation
 
@@ -2376,20 +2364,20 @@
     goto :goto_2
 
     :cond_0
-    invoke-static {p1, p2}, Lj$/util/concurrent/ConcurrentHashMap;->tabAt([Lj$/util/concurrent/ConcurrentHashMap$l;I)Lj$/util/concurrent/ConcurrentHashMap$l;
+    invoke-static {p1, p2}, Lj$/util/concurrent/ConcurrentHashMap;->tabAt([Lj$/util/concurrent/l;I)Lj$/util/concurrent/l;
 
     move-result-object v0
 
     if-eqz v0, :cond_4
 
-    iget v1, v0, Lj$/util/concurrent/ConcurrentHashMap$l;->a:I
+    iget v1, v0, Lj$/util/concurrent/l;->a:I
 
     if-ltz v1, :cond_4
 
     monitor-enter v0
 
     :try_start_0
-    invoke-static {p1, p2}, Lj$/util/concurrent/ConcurrentHashMap;->tabAt([Lj$/util/concurrent/ConcurrentHashMap$l;I)Lj$/util/concurrent/ConcurrentHashMap$l;
+    invoke-static {p1, p2}, Lj$/util/concurrent/ConcurrentHashMap;->tabAt([Lj$/util/concurrent/l;I)Lj$/util/concurrent/l;
 
     move-result-object v1
 
@@ -2404,13 +2392,13 @@
     :goto_0
     if-eqz v3, :cond_2
 
-    new-instance v10, Lj$/util/concurrent/ConcurrentHashMap$r;
+    new-instance v10, Lj$/util/concurrent/r;
 
-    iget v5, v3, Lj$/util/concurrent/ConcurrentHashMap$l;->a:I
+    iget v5, v3, Lj$/util/concurrent/l;->a:I
 
-    iget-object v6, v3, Lj$/util/concurrent/ConcurrentHashMap$l;->b:Ljava/lang/Object;
+    iget-object v6, v3, Lj$/util/concurrent/l;->b:Ljava/lang/Object;
 
-    iget-object v7, v3, Lj$/util/concurrent/ConcurrentHashMap$l;->c:Ljava/lang/Object;
+    iget-object v7, v3, Lj$/util/concurrent/l;->c:Ljava/lang/Object;
 
     const/4 v8, 0x0
 
@@ -2418,9 +2406,9 @@
 
     move-object v4, v10
 
-    invoke-direct/range {v4 .. v9}, Lj$/util/concurrent/ConcurrentHashMap$r;-><init>(ILjava/lang/Object;Ljava/lang/Object;Lj$/util/concurrent/ConcurrentHashMap$l;Lj$/util/concurrent/ConcurrentHashMap$r;)V
+    invoke-direct/range {v4 .. v9}, Lj$/util/concurrent/r;-><init>(ILjava/lang/Object;Ljava/lang/Object;Lj$/util/concurrent/l;Lj$/util/concurrent/r;)V
 
-    iput-object v2, v10, Lj$/util/concurrent/ConcurrentHashMap$r;->h:Lj$/util/concurrent/ConcurrentHashMap$r;
+    iput-object v2, v10, Lj$/util/concurrent/r;->h:Lj$/util/concurrent/r;
 
     if-nez v2, :cond_1
 
@@ -2429,21 +2417,21 @@
     goto :goto_1
 
     :cond_1
-    iput-object v10, v2, Lj$/util/concurrent/ConcurrentHashMap$l;->d:Lj$/util/concurrent/ConcurrentHashMap$l;
+    iput-object v10, v2, Lj$/util/concurrent/l;->d:Lj$/util/concurrent/l;
 
     :goto_1
-    iget-object v3, v3, Lj$/util/concurrent/ConcurrentHashMap$l;->d:Lj$/util/concurrent/ConcurrentHashMap$l;
+    iget-object v3, v3, Lj$/util/concurrent/l;->d:Lj$/util/concurrent/l;
 
     move-object v2, v10
 
     goto :goto_0
 
     :cond_2
-    new-instance v2, Lj$/util/concurrent/ConcurrentHashMap$q;
+    new-instance v2, Lj$/util/concurrent/q;
 
-    invoke-direct {v2, v1}, Lj$/util/concurrent/ConcurrentHashMap$q;-><init>(Lj$/util/concurrent/ConcurrentHashMap$r;)V
+    invoke-direct {v2, v1}, Lj$/util/concurrent/q;-><init>(Lj$/util/concurrent/r;)V
 
-    invoke-static {p1, p2, v2}, Lj$/util/concurrent/ConcurrentHashMap;->setTabAt([Lj$/util/concurrent/ConcurrentHashMap$l;ILj$/util/concurrent/ConcurrentHashMap$l;)V
+    invoke-static {p1, p2, v2}, Lj$/util/concurrent/ConcurrentHashMap;->setTabAt([Lj$/util/concurrent/l;ILj$/util/concurrent/l;)V
 
     :cond_3
     monitor-exit v0
@@ -2494,7 +2482,7 @@
 
     if-ltz v7, :cond_9
 
-    iget-object v8, p0, Lj$/util/concurrent/ConcurrentHashMap;->table:[Lj$/util/concurrent/ConcurrentHashMap$l;
+    iget-object v8, p0, Lj$/util/concurrent/ConcurrentHashMap;->table:[Lj$/util/concurrent/l;
 
     if-eqz v8, :cond_6
 
@@ -2512,7 +2500,7 @@
     goto/16 :goto_3
 
     :cond_3
-    iget-object v2, p0, Lj$/util/concurrent/ConcurrentHashMap;->table:[Lj$/util/concurrent/ConcurrentHashMap$l;
+    iget-object v2, p0, Lj$/util/concurrent/ConcurrentHashMap;->table:[Lj$/util/concurrent/l;
 
     if-ne v8, v2, :cond_1
 
@@ -2538,7 +2526,7 @@
 
     if-eq v7, v1, :cond_9
 
-    iget-object v9, p0, Lj$/util/concurrent/ConcurrentHashMap;->nextTable:[Lj$/util/concurrent/ConcurrentHashMap$l;
+    iget-object v9, p0, Lj$/util/concurrent/ConcurrentHashMap;->nextTable:[Lj$/util/concurrent/l;
 
     if-eqz v9, :cond_9
 
@@ -2565,7 +2553,7 @@
 
     if-eqz v1, :cond_1
 
-    invoke-direct {p0, v8, v9}, Lj$/util/concurrent/ConcurrentHashMap;->transfer([Lj$/util/concurrent/ConcurrentHashMap$l;[Lj$/util/concurrent/ConcurrentHashMap$l;)V
+    invoke-direct {p0, v8, v9}, Lj$/util/concurrent/ConcurrentHashMap;->transfer([Lj$/util/concurrent/l;[Lj$/util/concurrent/l;)V
 
     goto :goto_0
 
@@ -2594,7 +2582,7 @@
 
     const/4 v1, 0x0
 
-    invoke-direct {p0, v8, v1}, Lj$/util/concurrent/ConcurrentHashMap;->transfer([Lj$/util/concurrent/ConcurrentHashMap$l;[Lj$/util/concurrent/ConcurrentHashMap$l;)V
+    invoke-direct {p0, v8, v1}, Lj$/util/concurrent/ConcurrentHashMap;->transfer([Lj$/util/concurrent/l;[Lj$/util/concurrent/l;)V
 
     goto :goto_0
 
@@ -2627,13 +2615,13 @@
     if-eqz v1, :cond_1
 
     :try_start_0
-    iget-object v1, p0, Lj$/util/concurrent/ConcurrentHashMap;->table:[Lj$/util/concurrent/ConcurrentHashMap$l;
+    iget-object v1, p0, Lj$/util/concurrent/ConcurrentHashMap;->table:[Lj$/util/concurrent/l;
 
     if-ne v1, v8, :cond_8
 
-    new-array v1, v9, [Lj$/util/concurrent/ConcurrentHashMap$l;
+    new-array v1, v9, [Lj$/util/concurrent/l;
 
-    iput-object v1, p0, Lj$/util/concurrent/ConcurrentHashMap;->table:[Lj$/util/concurrent/ConcurrentHashMap$l;
+    iput-object v1, p0, Lj$/util/concurrent/ConcurrentHashMap;->table:[Lj$/util/concurrent/l;
     :try_end_0
     .catchall {:try_start_0 .. :try_end_0} :catchall_0
 
@@ -2658,7 +2646,7 @@
     return-void
 .end method
 
-.method static untreeify(Lj$/util/concurrent/ConcurrentHashMap$l;)Lj$/util/concurrent/ConcurrentHashMap$l;
+.method static untreeify(Lj$/util/concurrent/l;)Lj$/util/concurrent/l;
     .locals 7
     .annotation system Ldalvik/annotation/Signature;
         value = {
@@ -2667,9 +2655,9 @@
             "V:",
             "Ljava/lang/Object;",
             ">(",
-            "Lj$/util/concurrent/ConcurrentHashMap$l;",
+            "Lj$/util/concurrent/l;",
             ")",
-            "Lj$/util/concurrent/ConcurrentHashMap$l;"
+            "Lj$/util/concurrent/l;"
         }
     .end annotation
 
@@ -2682,15 +2670,15 @@
     :goto_0
     if-eqz p0, :cond_1
 
-    new-instance v3, Lj$/util/concurrent/ConcurrentHashMap$l;
+    new-instance v3, Lj$/util/concurrent/l;
 
-    iget v4, p0, Lj$/util/concurrent/ConcurrentHashMap$l;->a:I
+    iget v4, p0, Lj$/util/concurrent/l;->a:I
 
-    iget-object v5, p0, Lj$/util/concurrent/ConcurrentHashMap$l;->b:Ljava/lang/Object;
+    iget-object v5, p0, Lj$/util/concurrent/l;->b:Ljava/lang/Object;
 
-    iget-object v6, p0, Lj$/util/concurrent/ConcurrentHashMap$l;->c:Ljava/lang/Object;
+    iget-object v6, p0, Lj$/util/concurrent/l;->c:Ljava/lang/Object;
 
-    invoke-direct {v3, v4, v5, v6, v0}, Lj$/util/concurrent/ConcurrentHashMap$l;-><init>(ILjava/lang/Object;Ljava/lang/Object;Lj$/util/concurrent/ConcurrentHashMap$l;)V
+    invoke-direct {v3, v4, v5, v6, v0}, Lj$/util/concurrent/l;-><init>(ILjava/lang/Object;Ljava/lang/Object;Lj$/util/concurrent/l;)V
 
     if-nez v2, :cond_0
 
@@ -2699,10 +2687,10 @@
     goto :goto_1
 
     :cond_0
-    iput-object v3, v2, Lj$/util/concurrent/ConcurrentHashMap$l;->d:Lj$/util/concurrent/ConcurrentHashMap$l;
+    iput-object v3, v2, Lj$/util/concurrent/l;->d:Lj$/util/concurrent/l;
 
     :goto_1
-    iget-object p0, p0, Lj$/util/concurrent/ConcurrentHashMap$l;->d:Lj$/util/concurrent/ConcurrentHashMap$l;
+    iget-object p0, p0, Lj$/util/concurrent/l;->d:Lj$/util/concurrent/l;
 
     move-object v2, v3
 
@@ -2739,18 +2727,18 @@
 
     sub-int/2addr v2, v1
 
-    new-array v1, v4, [Lj$/util/concurrent/ConcurrentHashMap$n;
+    new-array v1, v4, [Lj$/util/concurrent/n;
 
     move v5, v0
 
     :goto_1
     if-ge v5, v4, :cond_1
 
-    new-instance v6, Lj$/util/concurrent/ConcurrentHashMap$n;
+    new-instance v6, Lj$/util/concurrent/n;
 
     const/high16 v7, 0x3f400000    # 0.75f
 
-    invoke-direct {v6, v7}, Lj$/util/concurrent/ConcurrentHashMap$n;-><init>(F)V
+    invoke-direct {v6, v7}, Lj$/util/concurrent/n;-><init>(F)V
 
     aput-object v6, v1, v5
 
@@ -2785,30 +2773,30 @@
 
     invoke-virtual {p1}, Ljava/io/ObjectOutputStream;->writeFields()V
 
-    iget-object v1, p0, Lj$/util/concurrent/ConcurrentHashMap;->table:[Lj$/util/concurrent/ConcurrentHashMap$l;
+    iget-object v1, p0, Lj$/util/concurrent/ConcurrentHashMap;->table:[Lj$/util/concurrent/l;
 
     if-eqz v1, :cond_2
 
-    new-instance v2, Lj$/util/concurrent/ConcurrentHashMap$p;
+    new-instance v2, Lj$/util/concurrent/p;
 
     array-length v3, v1
 
     array-length v4, v1
 
-    invoke-direct {v2, v1, v3, v0, v4}, Lj$/util/concurrent/ConcurrentHashMap$p;-><init>([Lj$/util/concurrent/ConcurrentHashMap$l;III)V
+    invoke-direct {v2, v1, v3, v0, v4}, Lj$/util/concurrent/p;-><init>([Lj$/util/concurrent/l;III)V
 
     :goto_2
-    invoke-virtual {v2}, Lj$/util/concurrent/ConcurrentHashMap$p;->a()Lj$/util/concurrent/ConcurrentHashMap$l;
+    invoke-virtual {v2}, Lj$/util/concurrent/p;->b()Lj$/util/concurrent/l;
 
     move-result-object v0
 
     if-eqz v0, :cond_2
 
-    iget-object v1, v0, Lj$/util/concurrent/ConcurrentHashMap$l;->b:Ljava/lang/Object;
+    iget-object v1, v0, Lj$/util/concurrent/l;->b:Ljava/lang/Object;
 
     invoke-virtual {p1, v1}, Ljava/io/ObjectOutputStream;->writeObject(Ljava/lang/Object;)V
 
-    iget-object v0, v0, Lj$/util/concurrent/ConcurrentHashMap$l;->c:Ljava/lang/Object;
+    iget-object v0, v0, Lj$/util/concurrent/l;->c:Ljava/lang/Object;
 
     invoke-virtual {p1, v0}, Ljava/io/ObjectOutputStream;->writeObject(Ljava/lang/Object;)V
 
@@ -2829,7 +2817,7 @@
 .method public clear()V
     .locals 12
 
-    iget-object v0, p0, Lj$/util/concurrent/ConcurrentHashMap;->table:[Lj$/util/concurrent/ConcurrentHashMap$l;
+    iget-object v0, p0, Lj$/util/concurrent/ConcurrentHashMap;->table:[Lj$/util/concurrent/l;
 
     const/4 v1, 0x0
 
@@ -2848,7 +2836,7 @@
 
     if-ge v4, v8, :cond_6
 
-    invoke-static {v0, v4}, Lj$/util/concurrent/ConcurrentHashMap;->tabAt([Lj$/util/concurrent/ConcurrentHashMap$l;I)Lj$/util/concurrent/ConcurrentHashMap$l;
+    invoke-static {v0, v4}, Lj$/util/concurrent/ConcurrentHashMap;->tabAt([Lj$/util/concurrent/l;I)Lj$/util/concurrent/l;
 
     move-result-object v8
 
@@ -2859,11 +2847,11 @@
     goto :goto_0
 
     :cond_0
-    iget v9, v8, Lj$/util/concurrent/ConcurrentHashMap$l;->a:I
+    iget v9, v8, Lj$/util/concurrent/l;->a:I
 
     if-ne v9, v7, :cond_1
 
-    invoke-virtual {p0, v0, v8}, Lj$/util/concurrent/ConcurrentHashMap;->helpTransfer([Lj$/util/concurrent/ConcurrentHashMap$l;Lj$/util/concurrent/ConcurrentHashMap$l;)[Lj$/util/concurrent/ConcurrentHashMap$l;
+    invoke-virtual {p0, v0, v8}, Lj$/util/concurrent/ConcurrentHashMap;->helpTransfer([Lj$/util/concurrent/l;Lj$/util/concurrent/l;)[Lj$/util/concurrent/l;
 
     move-result-object v0
 
@@ -2875,7 +2863,7 @@
     monitor-enter v8
 
     :try_start_0
-    invoke-static {v0, v4}, Lj$/util/concurrent/ConcurrentHashMap;->tabAt([Lj$/util/concurrent/ConcurrentHashMap$l;I)Lj$/util/concurrent/ConcurrentHashMap$l;
+    invoke-static {v0, v4}, Lj$/util/concurrent/ConcurrentHashMap;->tabAt([Lj$/util/concurrent/l;I)Lj$/util/concurrent/l;
 
     move-result-object v7
 
@@ -2890,15 +2878,15 @@
     goto :goto_1
 
     :cond_2
-    instance-of v9, v8, Lj$/util/concurrent/ConcurrentHashMap$q;
+    instance-of v9, v8, Lj$/util/concurrent/q;
 
     if-eqz v9, :cond_3
 
     move-object v9, v8
 
-    check-cast v9, Lj$/util/concurrent/ConcurrentHashMap$q;
+    check-cast v9, Lj$/util/concurrent/q;
 
-    iget-object v9, v9, Lj$/util/concurrent/ConcurrentHashMap$q;->f:Lj$/util/concurrent/ConcurrentHashMap$r;
+    iget-object v9, v9, Lj$/util/concurrent/q;->f:Lj$/util/concurrent/r;
 
     goto :goto_1
 
@@ -2912,14 +2900,14 @@
 
     sub-long/2addr v5, v10
 
-    iget-object v9, v9, Lj$/util/concurrent/ConcurrentHashMap$l;->d:Lj$/util/concurrent/ConcurrentHashMap$l;
+    iget-object v9, v9, Lj$/util/concurrent/l;->d:Lj$/util/concurrent/l;
 
     goto :goto_1
 
     :cond_4
     add-int/lit8 v9, v4, 0x1
 
-    invoke-static {v0, v4, v7}, Lj$/util/concurrent/ConcurrentHashMap;->setTabAt([Lj$/util/concurrent/ConcurrentHashMap$l;ILj$/util/concurrent/ConcurrentHashMap$l;)V
+    invoke-static {v0, v4, v7}, Lj$/util/concurrent/ConcurrentHashMap;->setTabAt([Lj$/util/concurrent/l;ILj$/util/concurrent/l;)V
 
     move v4, v9
 
@@ -2972,7 +2960,7 @@
 
     move-result v1
 
-    iget-object v2, p0, Lj$/util/concurrent/ConcurrentHashMap;->table:[Lj$/util/concurrent/ConcurrentHashMap$l;
+    iget-object v2, p0, Lj$/util/concurrent/ConcurrentHashMap;->table:[Lj$/util/concurrent/l;
 
     const/4 v3, 0x0
 
@@ -2995,7 +2983,7 @@
 
     and-int/2addr v6, v1
 
-    invoke-static {v2, v6}, Lj$/util/concurrent/ConcurrentHashMap;->tabAt([Lj$/util/concurrent/ConcurrentHashMap$l;I)Lj$/util/concurrent/ConcurrentHashMap$l;
+    invoke-static {v2, v6}, Lj$/util/concurrent/ConcurrentHashMap;->tabAt([Lj$/util/concurrent/l;I)Lj$/util/concurrent/l;
 
     move-result-object v7
 
@@ -3003,14 +2991,14 @@
 
     if-nez v7, :cond_4
 
-    new-instance v9, Lj$/util/concurrent/ConcurrentHashMap$m;
+    new-instance v9, Lj$/util/concurrent/m;
 
-    invoke-direct {v9}, Lj$/util/concurrent/ConcurrentHashMap$m;-><init>()V
+    invoke-direct {v9}, Lj$/util/concurrent/m;-><init>()V
 
     monitor-enter v9
 
     :try_start_0
-    invoke-static {v2, v6, v0, v9}, Lj$/util/concurrent/ConcurrentHashMap;->casTabAt([Lj$/util/concurrent/ConcurrentHashMap$l;ILj$/util/concurrent/ConcurrentHashMap$l;Lj$/util/concurrent/ConcurrentHashMap$l;)Z
+    invoke-static {v2, v6, v0, v9}, Lj$/util/concurrent/ConcurrentHashMap;->casTabAt([Lj$/util/concurrent/l;ILj$/util/concurrent/l;Lj$/util/concurrent/l;)Z
 
     move-result v7
     :try_end_0
@@ -3025,9 +3013,9 @@
 
     if-eqz v4, :cond_2
 
-    new-instance v3, Lj$/util/concurrent/ConcurrentHashMap$l;
+    new-instance v3, Lj$/util/concurrent/l;
 
-    invoke-direct {v3, v1, p1, v4, v0}, Lj$/util/concurrent/ConcurrentHashMap$l;-><init>(ILjava/lang/Object;Ljava/lang/Object;Lj$/util/concurrent/ConcurrentHashMap$l;)V
+    invoke-direct {v3, v1, p1, v4, v0}, Lj$/util/concurrent/l;-><init>(ILjava/lang/Object;Ljava/lang/Object;Lj$/util/concurrent/l;)V
     :try_end_1
     .catchall {:try_start_1 .. :try_end_1} :catchall_0
 
@@ -3042,7 +3030,7 @@
 
     :goto_1
     :try_start_2
-    invoke-static {v2, v6, v3}, Lj$/util/concurrent/ConcurrentHashMap;->setTabAt([Lj$/util/concurrent/ConcurrentHashMap$l;ILj$/util/concurrent/ConcurrentHashMap$l;)V
+    invoke-static {v2, v6, v3}, Lj$/util/concurrent/ConcurrentHashMap;->setTabAt([Lj$/util/concurrent/l;ILj$/util/concurrent/l;)V
 
     move v3, v5
 
@@ -3055,7 +3043,7 @@
     :catchall_0
     move-exception p1
 
-    invoke-static {v2, v6, v0}, Lj$/util/concurrent/ConcurrentHashMap;->setTabAt([Lj$/util/concurrent/ConcurrentHashMap$l;ILj$/util/concurrent/ConcurrentHashMap$l;)V
+    invoke-static {v2, v6, v0}, Lj$/util/concurrent/ConcurrentHashMap;->setTabAt([Lj$/util/concurrent/l;ILj$/util/concurrent/l;)V
 
     throw p1
 
@@ -3077,13 +3065,13 @@
     throw p1
 
     :cond_4
-    iget v9, v7, Lj$/util/concurrent/ConcurrentHashMap$l;->a:I
+    iget v9, v7, Lj$/util/concurrent/l;->a:I
 
     const/4 v10, -0x1
 
     if-ne v9, v10, :cond_5
 
-    invoke-virtual {p0, v2, v7}, Lj$/util/concurrent/ConcurrentHashMap;->helpTransfer([Lj$/util/concurrent/ConcurrentHashMap$l;Lj$/util/concurrent/ConcurrentHashMap$l;)[Lj$/util/concurrent/ConcurrentHashMap$l;
+    invoke-virtual {p0, v2, v7}, Lj$/util/concurrent/ConcurrentHashMap;->helpTransfer([Lj$/util/concurrent/l;Lj$/util/concurrent/l;)[Lj$/util/concurrent/l;
 
     move-result-object v2
 
@@ -3093,7 +3081,7 @@
     monitor-enter v7
 
     :try_start_3
-    invoke-static {v2, v6}, Lj$/util/concurrent/ConcurrentHashMap;->tabAt([Lj$/util/concurrent/ConcurrentHashMap$l;I)Lj$/util/concurrent/ConcurrentHashMap$l;
+    invoke-static {v2, v6}, Lj$/util/concurrent/ConcurrentHashMap;->tabAt([Lj$/util/concurrent/l;I)Lj$/util/concurrent/l;
 
     move-result-object v11
 
@@ -3108,11 +3096,11 @@
     move v5, v8
 
     :goto_3
-    iget v11, v4, Lj$/util/concurrent/ConcurrentHashMap$l;->a:I
+    iget v11, v4, Lj$/util/concurrent/l;->a:I
 
     if-ne v11, v1, :cond_9
 
-    iget-object v11, v4, Lj$/util/concurrent/ConcurrentHashMap$l;->b:Ljava/lang/Object;
+    iget-object v11, v4, Lj$/util/concurrent/l;->b:Ljava/lang/Object;
 
     if-eq v11, p1, :cond_6
 
@@ -3125,7 +3113,7 @@
     if-eqz v11, :cond_9
 
     :cond_6
-    iget-object v8, v4, Lj$/util/concurrent/ConcurrentHashMap$l;->c:Ljava/lang/Object;
+    iget-object v8, v4, Lj$/util/concurrent/l;->c:Ljava/lang/Object;
 
     invoke-interface {p2, p1, v8}, Lj$/util/function/BiFunction;->apply(Ljava/lang/Object;Ljava/lang/Object;)Ljava/lang/Object;
 
@@ -3133,21 +3121,21 @@
 
     if-eqz v8, :cond_7
 
-    iput-object v8, v4, Lj$/util/concurrent/ConcurrentHashMap$l;->c:Ljava/lang/Object;
+    iput-object v8, v4, Lj$/util/concurrent/l;->c:Ljava/lang/Object;
 
     goto :goto_5
 
     :cond_7
-    iget-object v3, v4, Lj$/util/concurrent/ConcurrentHashMap$l;->d:Lj$/util/concurrent/ConcurrentHashMap$l;
+    iget-object v3, v4, Lj$/util/concurrent/l;->d:Lj$/util/concurrent/l;
 
     if-eqz v9, :cond_8
 
-    iput-object v3, v9, Lj$/util/concurrent/ConcurrentHashMap$l;->d:Lj$/util/concurrent/ConcurrentHashMap$l;
+    iput-object v3, v9, Lj$/util/concurrent/l;->d:Lj$/util/concurrent/l;
 
     goto :goto_4
 
     :cond_8
-    invoke-static {v2, v6, v3}, Lj$/util/concurrent/ConcurrentHashMap;->setTabAt([Lj$/util/concurrent/ConcurrentHashMap$l;ILj$/util/concurrent/ConcurrentHashMap$l;)V
+    invoke-static {v2, v6, v3}, Lj$/util/concurrent/ConcurrentHashMap;->setTabAt([Lj$/util/concurrent/l;ILj$/util/concurrent/l;)V
 
     :goto_4
     move v3, v10
@@ -3155,7 +3143,7 @@
     goto :goto_5
 
     :cond_9
-    iget-object v9, v4, Lj$/util/concurrent/ConcurrentHashMap$l;->d:Lj$/util/concurrent/ConcurrentHashMap$l;
+    iget-object v9, v4, Lj$/util/concurrent/l;->d:Lj$/util/concurrent/l;
 
     if-nez v9, :cond_b
 
@@ -3165,11 +3153,11 @@
 
     if-eqz v9, :cond_a
 
-    new-instance v3, Lj$/util/concurrent/ConcurrentHashMap$l;
+    new-instance v3, Lj$/util/concurrent/l;
 
-    invoke-direct {v3, v1, p1, v9, v0}, Lj$/util/concurrent/ConcurrentHashMap$l;-><init>(ILjava/lang/Object;Ljava/lang/Object;Lj$/util/concurrent/ConcurrentHashMap$l;)V
+    invoke-direct {v3, v1, p1, v9, v0}, Lj$/util/concurrent/l;-><init>(ILjava/lang/Object;Ljava/lang/Object;Lj$/util/concurrent/l;)V
 
-    iput-object v3, v4, Lj$/util/concurrent/ConcurrentHashMap$l;->d:Lj$/util/concurrent/ConcurrentHashMap$l;
+    iput-object v3, v4, Lj$/util/concurrent/l;->d:Lj$/util/concurrent/l;
 
     move v3, v8
 
@@ -3195,19 +3183,19 @@
     goto :goto_3
 
     :cond_c
-    instance-of v9, v7, Lj$/util/concurrent/ConcurrentHashMap$q;
+    instance-of v9, v7, Lj$/util/concurrent/q;
 
     if-eqz v9, :cond_13
 
     move-object v4, v7
 
-    check-cast v4, Lj$/util/concurrent/ConcurrentHashMap$q;
+    check-cast v4, Lj$/util/concurrent/q;
 
-    iget-object v5, v4, Lj$/util/concurrent/ConcurrentHashMap$q;->e:Lj$/util/concurrent/ConcurrentHashMap$r;
+    iget-object v5, v4, Lj$/util/concurrent/q;->e:Lj$/util/concurrent/r;
 
     if-eqz v5, :cond_d
 
-    invoke-virtual {v5, v1, p1, v0}, Lj$/util/concurrent/ConcurrentHashMap$r;->b(ILjava/lang/Object;Ljava/lang/Class;)Lj$/util/concurrent/ConcurrentHashMap$r;
+    invoke-virtual {v5, v1, p1, v0}, Lj$/util/concurrent/r;->b(ILjava/lang/Object;Ljava/lang/Class;)Lj$/util/concurrent/r;
 
     move-result-object v5
 
@@ -3224,7 +3212,7 @@
     goto :goto_7
 
     :cond_e
-    iget-object v9, v5, Lj$/util/concurrent/ConcurrentHashMap$l;->c:Ljava/lang/Object;
+    iget-object v9, v5, Lj$/util/concurrent/l;->c:Ljava/lang/Object;
 
     :goto_7
     invoke-interface {p2, p1, v9}, Lj$/util/function/BiFunction;->apply(Ljava/lang/Object;Ljava/lang/Object;)Ljava/lang/Object;
@@ -3235,12 +3223,12 @@
 
     if-eqz v5, :cond_f
 
-    iput-object v9, v5, Lj$/util/concurrent/ConcurrentHashMap$l;->c:Ljava/lang/Object;
+    iput-object v9, v5, Lj$/util/concurrent/l;->c:Ljava/lang/Object;
 
     goto :goto_8
 
     :cond_f
-    invoke-virtual {v4, v1, p1, v9}, Lj$/util/concurrent/ConcurrentHashMap$q;->f(ILjava/lang/Object;Ljava/lang/Object;)Lj$/util/concurrent/ConcurrentHashMap$r;
+    invoke-virtual {v4, v1, p1, v9}, Lj$/util/concurrent/q;->f(ILjava/lang/Object;Ljava/lang/Object;)Lj$/util/concurrent/r;
 
     move v3, v8
 
@@ -3249,22 +3237,28 @@
     :cond_10
     if-eqz v5, :cond_12
 
-    invoke-virtual {v4, v5}, Lj$/util/concurrent/ConcurrentHashMap$q;->g(Lj$/util/concurrent/ConcurrentHashMap$r;)Z
+    invoke-virtual {v4, v5}, Lj$/util/concurrent/q;->g(Lj$/util/concurrent/r;)Z
 
     move-result v3
 
     if-eqz v3, :cond_11
 
-    iget-object v3, v4, Lj$/util/concurrent/ConcurrentHashMap$q;->f:Lj$/util/concurrent/ConcurrentHashMap$r;
+    iget-object v3, v4, Lj$/util/concurrent/q;->f:Lj$/util/concurrent/r;
 
-    invoke-static {v3}, Lj$/util/concurrent/ConcurrentHashMap;->untreeify(Lj$/util/concurrent/ConcurrentHashMap$l;)Lj$/util/concurrent/ConcurrentHashMap$l;
+    invoke-static {v3}, Lj$/util/concurrent/ConcurrentHashMap;->untreeify(Lj$/util/concurrent/l;)Lj$/util/concurrent/l;
 
     move-result-object v3
 
-    invoke-static {v2, v6, v3}, Lj$/util/concurrent/ConcurrentHashMap;->setTabAt([Lj$/util/concurrent/ConcurrentHashMap$l;ILj$/util/concurrent/ConcurrentHashMap$l;)V
+    invoke-static {v2, v6, v3}, Lj$/util/concurrent/ConcurrentHashMap;->setTabAt([Lj$/util/concurrent/l;ILj$/util/concurrent/l;)V
 
     :cond_11
+    move v4, v8
+
+    move-object v5, v9
+
     move v3, v10
+
+    goto :goto_9
 
     :cond_12
     :goto_8
@@ -3284,7 +3278,7 @@
 
     if-lt v4, p1, :cond_14
 
-    invoke-direct {p0, v2, v6}, Lj$/util/concurrent/ConcurrentHashMap;->treeifyBin([Lj$/util/concurrent/ConcurrentHashMap$l;I)V
+    invoke-direct {p0, v2, v6}, Lj$/util/concurrent/ConcurrentHashMap;->treeifyBin([Lj$/util/concurrent/l;I)V
 
     :cond_14
     :goto_a
@@ -3309,7 +3303,7 @@
 
     :cond_16
     :goto_b
-    invoke-direct {p0}, Lj$/util/concurrent/ConcurrentHashMap;->initTable()[Lj$/util/concurrent/ConcurrentHashMap$l;
+    invoke-direct {p0}, Lj$/util/concurrent/ConcurrentHashMap;->initTable()[Lj$/util/concurrent/l;
 
     move-result-object v2
 
@@ -3322,7 +3316,7 @@
 .method public synthetic compute(Ljava/lang/Object;Ljava/util/function/BiFunction;)Ljava/lang/Object;
     .locals 0
 
-    invoke-static {p2}, Lj$/wrappers/$r8$wrapper$java$util$function$BiFunction$-V-WRP;->convert(Ljava/util/function/BiFunction;)Lj$/util/function/BiFunction;
+    invoke-static {p2}, Lj$/util/function/BiFunction$VivifiedWrapper;->convert(Ljava/util/function/BiFunction;)Lj$/util/function/BiFunction;
 
     move-result-object p2
 
@@ -3345,9 +3339,9 @@
 
     const/4 v0, 0x0
 
-    if-eqz p1, :cond_11
+    if-eqz p1, :cond_12
 
-    if-eqz p2, :cond_11
+    if-eqz p2, :cond_12
 
     invoke-virtual {p1}, Ljava/lang/Object;->hashCode()I
 
@@ -3357,7 +3351,7 @@
 
     move-result v1
 
-    iget-object v2, p0, Lj$/util/concurrent/ConcurrentHashMap;->table:[Lj$/util/concurrent/ConcurrentHashMap$l;
+    iget-object v2, p0, Lj$/util/concurrent/ConcurrentHashMap;->table:[Lj$/util/concurrent/l;
 
     const/4 v3, 0x0
 
@@ -3367,20 +3361,20 @@
 
     :cond_0
     :goto_0
-    if-eqz v2, :cond_10
+    if-eqz v2, :cond_11
 
     array-length v6, v2
 
     if-nez v6, :cond_1
 
-    goto/16 :goto_8
+    goto/16 :goto_a
 
     :cond_1
     add-int/lit8 v6, v6, -0x1
 
     and-int/2addr v6, v1
 
-    invoke-static {v2, v6}, Lj$/util/concurrent/ConcurrentHashMap;->tabAt([Lj$/util/concurrent/ConcurrentHashMap$l;I)Lj$/util/concurrent/ConcurrentHashMap$l;
+    invoke-static {v2, v6}, Lj$/util/concurrent/ConcurrentHashMap;->tabAt([Lj$/util/concurrent/l;I)Lj$/util/concurrent/l;
 
     move-result-object v7
 
@@ -3388,14 +3382,14 @@
 
     if-nez v7, :cond_4
 
-    new-instance v9, Lj$/util/concurrent/ConcurrentHashMap$m;
+    new-instance v9, Lj$/util/concurrent/m;
 
-    invoke-direct {v9}, Lj$/util/concurrent/ConcurrentHashMap$m;-><init>()V
+    invoke-direct {v9}, Lj$/util/concurrent/m;-><init>()V
 
     monitor-enter v9
 
     :try_start_0
-    invoke-static {v2, v6, v0, v9}, Lj$/util/concurrent/ConcurrentHashMap;->casTabAt([Lj$/util/concurrent/ConcurrentHashMap$l;ILj$/util/concurrent/ConcurrentHashMap$l;Lj$/util/concurrent/ConcurrentHashMap$l;)Z
+    invoke-static {v2, v6, v0, v9}, Lj$/util/concurrent/ConcurrentHashMap;->casTabAt([Lj$/util/concurrent/l;ILj$/util/concurrent/l;Lj$/util/concurrent/l;)Z
 
     move-result v7
     :try_end_0
@@ -3410,9 +3404,9 @@
 
     if-eqz v4, :cond_2
 
-    new-instance v5, Lj$/util/concurrent/ConcurrentHashMap$l;
+    new-instance v5, Lj$/util/concurrent/l;
 
-    invoke-direct {v5, v1, p1, v4, v0}, Lj$/util/concurrent/ConcurrentHashMap$l;-><init>(ILjava/lang/Object;Ljava/lang/Object;Lj$/util/concurrent/ConcurrentHashMap$l;)V
+    invoke-direct {v5, v1, p1, v4, v0}, Lj$/util/concurrent/l;-><init>(ILjava/lang/Object;Ljava/lang/Object;Lj$/util/concurrent/l;)V
     :try_end_1
     .catchall {:try_start_1 .. :try_end_1} :catchall_0
 
@@ -3423,7 +3417,7 @@
 
     :goto_1
     :try_start_2
-    invoke-static {v2, v6, v5}, Lj$/util/concurrent/ConcurrentHashMap;->setTabAt([Lj$/util/concurrent/ConcurrentHashMap$l;ILj$/util/concurrent/ConcurrentHashMap$l;)V
+    invoke-static {v2, v6, v5}, Lj$/util/concurrent/ConcurrentHashMap;->setTabAt([Lj$/util/concurrent/l;ILj$/util/concurrent/l;)V
 
     move-object v5, v4
 
@@ -3434,7 +3428,7 @@
     :catchall_0
     move-exception p1
 
-    invoke-static {v2, v6, v0}, Lj$/util/concurrent/ConcurrentHashMap;->setTabAt([Lj$/util/concurrent/ConcurrentHashMap$l;ILj$/util/concurrent/ConcurrentHashMap$l;)V
+    invoke-static {v2, v6, v0}, Lj$/util/concurrent/ConcurrentHashMap;->setTabAt([Lj$/util/concurrent/l;ILj$/util/concurrent/l;)V
 
     throw p1
 
@@ -3444,7 +3438,7 @@
 
     if-eqz v4, :cond_0
 
-    goto/16 :goto_7
+    goto/16 :goto_9
 
     :catchall_1
     move-exception p1
@@ -3456,13 +3450,13 @@
     throw p1
 
     :cond_4
-    iget v9, v7, Lj$/util/concurrent/ConcurrentHashMap$l;->a:I
+    iget v9, v7, Lj$/util/concurrent/l;->a:I
 
     const/4 v10, -0x1
 
     if-ne v9, v10, :cond_5
 
-    invoke-virtual {p0, v2, v7}, Lj$/util/concurrent/ConcurrentHashMap;->helpTransfer([Lj$/util/concurrent/ConcurrentHashMap$l;Lj$/util/concurrent/ConcurrentHashMap$l;)[Lj$/util/concurrent/ConcurrentHashMap$l;
+    invoke-virtual {p0, v2, v7}, Lj$/util/concurrent/ConcurrentHashMap;->helpTransfer([Lj$/util/concurrent/l;Lj$/util/concurrent/l;)[Lj$/util/concurrent/l;
 
     move-result-object v2
 
@@ -3472,24 +3466,24 @@
     monitor-enter v7
 
     :try_start_3
-    invoke-static {v2, v6}, Lj$/util/concurrent/ConcurrentHashMap;->tabAt([Lj$/util/concurrent/ConcurrentHashMap$l;I)Lj$/util/concurrent/ConcurrentHashMap$l;
+    invoke-static {v2, v6}, Lj$/util/concurrent/ConcurrentHashMap;->tabAt([Lj$/util/concurrent/l;I)Lj$/util/concurrent/l;
 
     move-result-object v10
 
-    if-ne v10, v7, :cond_c
+    if-ne v10, v7, :cond_d
 
-    if-ltz v9, :cond_9
+    if-ltz v9, :cond_a
 
     move-object v4, v7
 
     move v5, v8
 
     :goto_3
-    iget v9, v4, Lj$/util/concurrent/ConcurrentHashMap$l;->a:I
+    iget v9, v4, Lj$/util/concurrent/l;->a:I
 
     if-ne v9, v1, :cond_7
 
-    iget-object v9, v4, Lj$/util/concurrent/ConcurrentHashMap$l;->b:Ljava/lang/Object;
+    iget-object v9, v4, Lj$/util/concurrent/l;->b:Ljava/lang/Object;
 
     if-eq v9, p1, :cond_6
 
@@ -3502,88 +3496,86 @@
     if-eqz v9, :cond_7
 
     :cond_6
-    iget-object v4, v4, Lj$/util/concurrent/ConcurrentHashMap$l;->c:Ljava/lang/Object;
+    iget-object v4, v4, Lj$/util/concurrent/l;->c:Ljava/lang/Object;
 
-    goto :goto_4
+    move v8, v3
+
+    goto :goto_5
 
     :cond_7
-    iget-object v9, v4, Lj$/util/concurrent/ConcurrentHashMap$l;->d:Lj$/util/concurrent/ConcurrentHashMap$l;
+    iget-object v9, v4, Lj$/util/concurrent/l;->d:Lj$/util/concurrent/l;
 
-    if-nez v9, :cond_8
+    if-nez v9, :cond_9
 
     invoke-interface {p2, p1}, Lj$/util/function/Function;->apply(Ljava/lang/Object;)Ljava/lang/Object;
 
     move-result-object v9
 
-    if-eqz v9, :cond_b
+    if-eqz v9, :cond_8
 
-    new-instance v10, Lj$/util/concurrent/ConcurrentHashMap$l;
+    new-instance v10, Lj$/util/concurrent/l;
 
-    invoke-direct {v10, v1, p1, v9, v0}, Lj$/util/concurrent/ConcurrentHashMap$l;-><init>(ILjava/lang/Object;Ljava/lang/Object;Lj$/util/concurrent/ConcurrentHashMap$l;)V
+    invoke-direct {v10, v1, p1, v9, v0}, Lj$/util/concurrent/l;-><init>(ILjava/lang/Object;Ljava/lang/Object;Lj$/util/concurrent/l;)V
 
-    iput-object v10, v4, Lj$/util/concurrent/ConcurrentHashMap$l;->d:Lj$/util/concurrent/ConcurrentHashMap$l;
+    iput-object v10, v4, Lj$/util/concurrent/l;->d:Lj$/util/concurrent/l;
 
-    goto :goto_5
+    goto :goto_4
 
     :cond_8
-    add-int/lit8 v5, v5, 0x1
-
-    move-object v4, v9
-
-    goto :goto_3
-
-    :cond_9
-    instance-of v9, v7, Lj$/util/concurrent/ConcurrentHashMap$q;
-
-    if-eqz v9, :cond_c
-
-    const/4 v5, 0x2
-
-    move-object v4, v7
-
-    check-cast v4, Lj$/util/concurrent/ConcurrentHashMap$q;
-
-    iget-object v9, v4, Lj$/util/concurrent/ConcurrentHashMap$q;->e:Lj$/util/concurrent/ConcurrentHashMap$r;
-
-    if-eqz v9, :cond_a
-
-    invoke-virtual {v9, v1, p1, v0}, Lj$/util/concurrent/ConcurrentHashMap$r;->b(ILjava/lang/Object;Ljava/lang/Class;)Lj$/util/concurrent/ConcurrentHashMap$r;
-
-    move-result-object v9
-
-    if-eqz v9, :cond_a
-
-    iget-object v4, v9, Lj$/util/concurrent/ConcurrentHashMap$l;->c:Ljava/lang/Object;
-
-    :goto_4
     move v8, v3
 
+    :goto_4
+    move-object v4, v9
+
+    :goto_5
     move v11, v5
 
     move-object v5, v4
 
     move v4, v11
 
-    goto :goto_6
+    goto :goto_8
+
+    :cond_9
+    add-int/lit8 v5, v5, 0x1
+
+    move-object v4, v9
+
+    goto :goto_3
 
     :cond_a
-    invoke-interface {p2, p1}, Lj$/util/function/Function;->apply(Ljava/lang/Object;)Ljava/lang/Object;
+    instance-of v9, v7, Lj$/util/concurrent/q;
+
+    if-eqz v9, :cond_d
+
+    const/4 v4, 0x2
+
+    move-object v5, v7
+
+    check-cast v5, Lj$/util/concurrent/q;
+
+    iget-object v9, v5, Lj$/util/concurrent/q;->e:Lj$/util/concurrent/r;
+
+    if-eqz v9, :cond_b
+
+    invoke-virtual {v9, v1, p1, v0}, Lj$/util/concurrent/r;->b(ILjava/lang/Object;Ljava/lang/Class;)Lj$/util/concurrent/r;
 
     move-result-object v9
 
     if-eqz v9, :cond_b
 
-    invoke-virtual {v4, v1, p1, v9}, Lj$/util/concurrent/ConcurrentHashMap$q;->f(ILjava/lang/Object;Ljava/lang/Object;)Lj$/util/concurrent/ConcurrentHashMap$r;
+    iget-object v5, v9, Lj$/util/concurrent/l;->c:Ljava/lang/Object;
 
-    goto :goto_5
+    goto :goto_7
 
     :cond_b
-    move v8, v3
+    invoke-interface {p2, p1}, Lj$/util/function/Function;->apply(Ljava/lang/Object;)Ljava/lang/Object;
 
-    :goto_5
-    move v4, v5
+    move-result-object v9
 
-    move-object v5, v9
+    if-eqz v9, :cond_c
+
+    invoke-virtual {v5, v1, p1, v9}, Lj$/util/concurrent/q;->f(ILjava/lang/Object;Ljava/lang/Object;)Lj$/util/concurrent/r;
 
     goto :goto_6
 
@@ -3591,6 +3583,15 @@
     move v8, v3
 
     :goto_6
+    move-object v5, v9
+
+    goto :goto_8
+
+    :cond_d
+    :goto_7
+    move v8, v3
+
+    :goto_8
     monitor-exit v7
     :try_end_3
     .catchall {:try_start_3 .. :try_end_3} :catchall_2
@@ -3599,24 +3600,24 @@
 
     const/16 p1, 0x8
 
-    if-lt v4, p1, :cond_d
+    if-lt v4, p1, :cond_e
 
-    invoke-direct {p0, v2, v6}, Lj$/util/concurrent/ConcurrentHashMap;->treeifyBin([Lj$/util/concurrent/ConcurrentHashMap$l;I)V
+    invoke-direct {p0, v2, v6}, Lj$/util/concurrent/ConcurrentHashMap;->treeifyBin([Lj$/util/concurrent/l;I)V
 
-    :cond_d
-    if-nez v8, :cond_e
+    :cond_e
+    if-nez v8, :cond_f
 
     return-object v5
 
-    :cond_e
-    :goto_7
-    if-eqz v5, :cond_f
+    :cond_f
+    :goto_9
+    if-eqz v5, :cond_10
 
     const-wide/16 p1, 0x1
 
     invoke-direct {p0, p1, p2, v4}, Lj$/util/concurrent/ConcurrentHashMap;->addCount(JI)V
 
-    :cond_f
+    :cond_10
     return-object v5
 
     :catchall_2
@@ -3629,22 +3630,22 @@
 
     throw p1
 
-    :cond_10
-    :goto_8
-    invoke-direct {p0}, Lj$/util/concurrent/ConcurrentHashMap;->initTable()[Lj$/util/concurrent/ConcurrentHashMap$l;
+    :cond_11
+    :goto_a
+    invoke-direct {p0}, Lj$/util/concurrent/ConcurrentHashMap;->initTable()[Lj$/util/concurrent/l;
 
     move-result-object v2
 
     goto/16 :goto_0
 
-    :cond_11
+    :cond_12
     throw v0
 .end method
 
 .method public synthetic computeIfAbsent(Ljava/lang/Object;Ljava/util/function/Function;)Ljava/lang/Object;
     .locals 0
 
-    invoke-static {p2}, Lj$/wrappers/k;->c(Ljava/util/function/Function;)Lj$/util/function/Function;
+    invoke-static {p2}, Lj$/util/function/Function$VivifiedWrapper;->convert(Ljava/util/function/Function;)Lj$/util/function/Function;
 
     move-result-object p2
 
@@ -3679,7 +3680,7 @@
 
     move-result v1
 
-    iget-object v2, p0, Lj$/util/concurrent/ConcurrentHashMap;->table:[Lj$/util/concurrent/ConcurrentHashMap$l;
+    iget-object v2, p0, Lj$/util/concurrent/ConcurrentHashMap;->table:[Lj$/util/concurrent/l;
 
     const/4 v3, 0x0
 
@@ -3695,29 +3696,29 @@
 
     if-nez v6, :cond_1
 
-    goto/16 :goto_6
+    goto/16 :goto_5
 
     :cond_1
     add-int/lit8 v6, v6, -0x1
 
     and-int/2addr v6, v1
 
-    invoke-static {v2, v6}, Lj$/util/concurrent/ConcurrentHashMap;->tabAt([Lj$/util/concurrent/ConcurrentHashMap$l;I)Lj$/util/concurrent/ConcurrentHashMap$l;
+    invoke-static {v2, v6}, Lj$/util/concurrent/ConcurrentHashMap;->tabAt([Lj$/util/concurrent/l;I)Lj$/util/concurrent/l;
 
     move-result-object v7
 
     if-nez v7, :cond_2
 
-    goto/16 :goto_5
+    goto/16 :goto_4
 
     :cond_2
-    iget v8, v7, Lj$/util/concurrent/ConcurrentHashMap$l;->a:I
+    iget v8, v7, Lj$/util/concurrent/l;->a:I
 
     const/4 v9, -0x1
 
     if-ne v8, v9, :cond_3
 
-    invoke-virtual {p0, v2, v7}, Lj$/util/concurrent/ConcurrentHashMap;->helpTransfer([Lj$/util/concurrent/ConcurrentHashMap$l;Lj$/util/concurrent/ConcurrentHashMap$l;)[Lj$/util/concurrent/ConcurrentHashMap$l;
+    invoke-virtual {p0, v2, v7}, Lj$/util/concurrent/ConcurrentHashMap;->helpTransfer([Lj$/util/concurrent/l;Lj$/util/concurrent/l;)[Lj$/util/concurrent/l;
 
     move-result-object v2
 
@@ -3727,13 +3728,13 @@
     monitor-enter v7
 
     :try_start_0
-    invoke-static {v2, v6}, Lj$/util/concurrent/ConcurrentHashMap;->tabAt([Lj$/util/concurrent/ConcurrentHashMap$l;I)Lj$/util/concurrent/ConcurrentHashMap$l;
+    invoke-static {v2, v6}, Lj$/util/concurrent/ConcurrentHashMap;->tabAt([Lj$/util/concurrent/l;I)Lj$/util/concurrent/l;
 
     move-result-object v10
 
     if-ne v10, v7, :cond_c
 
-    if-ltz v8, :cond_a
+    if-ltz v8, :cond_8
 
     const/4 v4, 0x1
 
@@ -3742,24 +3743,24 @@
     move-object v8, v7
 
     :goto_1
-    iget v11, v8, Lj$/util/concurrent/ConcurrentHashMap$l;->a:I
+    iget v11, v8, Lj$/util/concurrent/l;->a:I
 
-    if-ne v11, v1, :cond_8
+    if-ne v11, v1, :cond_6
 
-    iget-object v11, v8, Lj$/util/concurrent/ConcurrentHashMap$l;->b:Ljava/lang/Object;
+    iget-object v11, v8, Lj$/util/concurrent/l;->b:Ljava/lang/Object;
 
     if-eq v11, p1, :cond_4
 
-    if-eqz v11, :cond_8
+    if-eqz v11, :cond_6
 
     invoke-virtual {p1, v11}, Ljava/lang/Object;->equals(Ljava/lang/Object;)Z
 
     move-result v11
 
-    if-eqz v11, :cond_8
+    if-eqz v11, :cond_6
 
     :cond_4
-    iget-object v5, v8, Lj$/util/concurrent/ConcurrentHashMap$l;->c:Ljava/lang/Object;
+    iget-object v5, v8, Lj$/util/concurrent/l;->c:Ljava/lang/Object;
 
     invoke-interface {p2, p1, v5}, Lj$/util/function/BiFunction;->apply(Ljava/lang/Object;Ljava/lang/Object;)Ljava/lang/Object;
 
@@ -3767,37 +3768,27 @@
 
     if-eqz v5, :cond_5
 
-    iput-object v5, v8, Lj$/util/concurrent/ConcurrentHashMap$l;->c:Ljava/lang/Object;
-
-    goto :goto_4
-
-    :cond_5
-    iget-object v3, v8, Lj$/util/concurrent/ConcurrentHashMap$l;->d:Lj$/util/concurrent/ConcurrentHashMap$l;
-
-    if-eqz v10, :cond_6
-
-    iput-object v3, v10, Lj$/util/concurrent/ConcurrentHashMap$l;->d:Lj$/util/concurrent/ConcurrentHashMap$l;
+    iput-object v5, v8, Lj$/util/concurrent/l;->c:Ljava/lang/Object;
 
     goto :goto_3
 
+    :cond_5
+    iget-object v3, v8, Lj$/util/concurrent/l;->d:Lj$/util/concurrent/l;
+
+    if-eqz v10, :cond_a
+
+    iput-object v3, v10, Lj$/util/concurrent/l;->d:Lj$/util/concurrent/l;
+
+    goto :goto_2
+
     :cond_6
-    :goto_2
-    invoke-static {v2, v6, v3}, Lj$/util/concurrent/ConcurrentHashMap;->setTabAt([Lj$/util/concurrent/ConcurrentHashMap$l;ILj$/util/concurrent/ConcurrentHashMap$l;)V
+    iget-object v10, v8, Lj$/util/concurrent/l;->d:Lj$/util/concurrent/l;
+
+    if-nez v10, :cond_7
+
+    goto :goto_3
 
     :cond_7
-    :goto_3
-    move v3, v9
-
-    goto :goto_4
-
-    :cond_8
-    iget-object v10, v8, Lj$/util/concurrent/ConcurrentHashMap$l;->d:Lj$/util/concurrent/ConcurrentHashMap$l;
-
-    if-nez v10, :cond_9
-
-    goto :goto_4
-
-    :cond_9
     add-int/lit8 v4, v4, 0x1
 
     move-object v12, v10
@@ -3808,8 +3799,8 @@
 
     goto :goto_1
 
-    :cond_a
-    instance-of v8, v7, Lj$/util/concurrent/ConcurrentHashMap$q;
+    :cond_8
+    instance-of v8, v7, Lj$/util/concurrent/q;
 
     if-eqz v8, :cond_c
 
@@ -3817,54 +3808,59 @@
 
     move-object v8, v7
 
-    check-cast v8, Lj$/util/concurrent/ConcurrentHashMap$q;
+    check-cast v8, Lj$/util/concurrent/q;
 
-    iget-object v10, v8, Lj$/util/concurrent/ConcurrentHashMap$q;->e:Lj$/util/concurrent/ConcurrentHashMap$r;
+    iget-object v10, v8, Lj$/util/concurrent/q;->e:Lj$/util/concurrent/r;
 
     if-eqz v10, :cond_c
 
-    invoke-virtual {v10, v1, p1, v0}, Lj$/util/concurrent/ConcurrentHashMap$r;->b(ILjava/lang/Object;Ljava/lang/Class;)Lj$/util/concurrent/ConcurrentHashMap$r;
+    invoke-virtual {v10, v1, p1, v0}, Lj$/util/concurrent/r;->b(ILjava/lang/Object;Ljava/lang/Class;)Lj$/util/concurrent/r;
 
     move-result-object v10
 
     if-eqz v10, :cond_c
 
-    iget-object v5, v10, Lj$/util/concurrent/ConcurrentHashMap$l;->c:Ljava/lang/Object;
+    iget-object v5, v10, Lj$/util/concurrent/l;->c:Ljava/lang/Object;
 
     invoke-interface {p2, p1, v5}, Lj$/util/function/BiFunction;->apply(Ljava/lang/Object;Ljava/lang/Object;)Ljava/lang/Object;
 
     move-result-object v5
 
-    if-eqz v5, :cond_b
+    if-eqz v5, :cond_9
 
-    iput-object v5, v10, Lj$/util/concurrent/ConcurrentHashMap$l;->c:Ljava/lang/Object;
+    iput-object v5, v10, Lj$/util/concurrent/l;->c:Ljava/lang/Object;
 
-    goto :goto_4
+    goto :goto_3
 
-    :cond_b
-    invoke-virtual {v8, v10}, Lj$/util/concurrent/ConcurrentHashMap$q;->g(Lj$/util/concurrent/ConcurrentHashMap$r;)Z
+    :cond_9
+    invoke-virtual {v8, v10}, Lj$/util/concurrent/q;->g(Lj$/util/concurrent/r;)Z
 
     move-result v3
 
-    if-eqz v3, :cond_7
+    if-eqz v3, :cond_b
 
-    iget-object v3, v8, Lj$/util/concurrent/ConcurrentHashMap$q;->f:Lj$/util/concurrent/ConcurrentHashMap$r;
+    iget-object v3, v8, Lj$/util/concurrent/q;->f:Lj$/util/concurrent/r;
 
-    invoke-static {v3}, Lj$/util/concurrent/ConcurrentHashMap;->untreeify(Lj$/util/concurrent/ConcurrentHashMap$l;)Lj$/util/concurrent/ConcurrentHashMap$l;
+    invoke-static {v3}, Lj$/util/concurrent/ConcurrentHashMap;->untreeify(Lj$/util/concurrent/l;)Lj$/util/concurrent/l;
 
     move-result-object v3
 
-    goto :goto_2
+    :cond_a
+    invoke-static {v2, v6, v3}, Lj$/util/concurrent/ConcurrentHashMap;->setTabAt([Lj$/util/concurrent/l;ILj$/util/concurrent/l;)V
+
+    :cond_b
+    :goto_2
+    move v3, v9
 
     :cond_c
-    :goto_4
+    :goto_3
     monitor-exit v7
     :try_end_0
     .catchall {:try_start_0 .. :try_end_0} :catchall_0
 
     if-eqz v4, :cond_0
 
-    :goto_5
+    :goto_4
     if-eqz v3, :cond_d
 
     int-to-long p1, v3
@@ -3885,8 +3881,8 @@
     throw p1
 
     :cond_e
-    :goto_6
-    invoke-direct {p0}, Lj$/util/concurrent/ConcurrentHashMap;->initTable()[Lj$/util/concurrent/ConcurrentHashMap$l;
+    :goto_5
+    invoke-direct {p0}, Lj$/util/concurrent/ConcurrentHashMap;->initTable()[Lj$/util/concurrent/l;
 
     move-result-object v2
 
@@ -3899,7 +3895,7 @@
 .method public synthetic computeIfPresent(Ljava/lang/Object;Ljava/util/function/BiFunction;)Ljava/lang/Object;
     .locals 0
 
-    invoke-static {p2}, Lj$/wrappers/$r8$wrapper$java$util$function$BiFunction$-V-WRP;->convert(Ljava/util/function/BiFunction;)Lj$/util/function/BiFunction;
+    invoke-static {p2}, Lj$/util/function/BiFunction$VivifiedWrapper;->convert(Ljava/util/function/BiFunction;)Lj$/util/function/BiFunction;
 
     move-result-object p2
 
@@ -3945,28 +3941,28 @@
 
     invoke-static {p1}, Ljava/util/Objects;->requireNonNull(Ljava/lang/Object;)Ljava/lang/Object;
 
-    iget-object v0, p0, Lj$/util/concurrent/ConcurrentHashMap;->table:[Lj$/util/concurrent/ConcurrentHashMap$l;
+    iget-object v0, p0, Lj$/util/concurrent/ConcurrentHashMap;->table:[Lj$/util/concurrent/l;
 
     const/4 v1, 0x0
 
     if-eqz v0, :cond_2
 
-    new-instance v2, Lj$/util/concurrent/ConcurrentHashMap$p;
+    new-instance v2, Lj$/util/concurrent/p;
 
     array-length v3, v0
 
     array-length v4, v0
 
-    invoke-direct {v2, v0, v3, v1, v4}, Lj$/util/concurrent/ConcurrentHashMap$p;-><init>([Lj$/util/concurrent/ConcurrentHashMap$l;III)V
+    invoke-direct {v2, v0, v3, v1, v4}, Lj$/util/concurrent/p;-><init>([Lj$/util/concurrent/l;III)V
 
     :cond_0
-    invoke-virtual {v2}, Lj$/util/concurrent/ConcurrentHashMap$p;->a()Lj$/util/concurrent/ConcurrentHashMap$l;
+    invoke-virtual {v2}, Lj$/util/concurrent/p;->b()Lj$/util/concurrent/l;
 
     move-result-object v0
 
     if-eqz v0, :cond_2
 
-    iget-object v0, v0, Lj$/util/concurrent/ConcurrentHashMap$l;->c:Ljava/lang/Object;
+    iget-object v0, v0, Lj$/util/concurrent/l;->c:Ljava/lang/Object;
 
     if-eq v0, p1, :cond_1
 
@@ -3988,7 +3984,7 @@
 .end method
 
 .method public elements()Ljava/util/Enumeration;
-    .locals 7
+    .locals 8
     .annotation system Ldalvik/annotation/Signature;
         value = {
             "()",
@@ -3997,7 +3993,7 @@
         }
     .end annotation
 
-    iget-object v1, p0, Lj$/util/concurrent/ConcurrentHashMap;->table:[Lj$/util/concurrent/ConcurrentHashMap$l;
+    iget-object v1, p0, Lj$/util/concurrent/ConcurrentHashMap;->table:[Lj$/util/concurrent/l;
 
     if-nez v1, :cond_0
 
@@ -4011,19 +4007,21 @@
     :goto_0
     move v4, v0
 
-    new-instance v6, Lj$/util/concurrent/ConcurrentHashMap$s;
+    new-instance v7, Lj$/util/concurrent/h;
 
     const/4 v3, 0x0
 
-    move-object v0, v6
+    const/4 v6, 0x1
+
+    move-object v0, v7
 
     move v2, v4
 
     move-object v5, p0
 
-    invoke-direct/range {v0 .. v5}, Lj$/util/concurrent/ConcurrentHashMap$s;-><init>([Lj$/util/concurrent/ConcurrentHashMap$l;IIILj$/util/concurrent/ConcurrentHashMap;)V
+    invoke-direct/range {v0 .. v6}, Lj$/util/concurrent/h;-><init>([Lj$/util/concurrent/l;IIILj$/util/concurrent/ConcurrentHashMap;I)V
 
-    return-object v6
+    return-object v7
 .end method
 
 .method public entrySet()Ljava/util/Set;
@@ -4037,18 +4035,18 @@
         }
     .end annotation
 
-    iget-object v0, p0, Lj$/util/concurrent/ConcurrentHashMap;->entrySet:Lj$/util/concurrent/ConcurrentHashMap$e;
+    iget-object v0, p0, Lj$/util/concurrent/ConcurrentHashMap;->entrySet:Lj$/util/concurrent/e;
 
     if-eqz v0, :cond_0
 
     goto :goto_0
 
     :cond_0
-    new-instance v0, Lj$/util/concurrent/ConcurrentHashMap$e;
+    new-instance v0, Lj$/util/concurrent/e;
 
-    invoke-direct {v0, p0}, Lj$/util/concurrent/ConcurrentHashMap$e;-><init>(Lj$/util/concurrent/ConcurrentHashMap;)V
+    invoke-direct {v0, p0}, Lj$/util/concurrent/e;-><init>(Lj$/util/concurrent/ConcurrentHashMap;)V
 
-    iput-object v0, p0, Lj$/util/concurrent/ConcurrentHashMap;->entrySet:Lj$/util/concurrent/ConcurrentHashMap$e;
+    iput-object v0, p0, Lj$/util/concurrent/ConcurrentHashMap;->entrySet:Lj$/util/concurrent/e;
 
     :goto_0
     return-object v0
@@ -4070,7 +4068,7 @@
     :cond_0
     check-cast p1, Ljava/util/Map;
 
-    iget-object v0, p0, Lj$/util/concurrent/ConcurrentHashMap;->table:[Lj$/util/concurrent/ConcurrentHashMap$l;
+    iget-object v0, p0, Lj$/util/concurrent/ConcurrentHashMap;->table:[Lj$/util/concurrent/l;
 
     if-nez v0, :cond_1
 
@@ -4082,20 +4080,20 @@
     array-length v2, v0
 
     :goto_0
-    new-instance v3, Lj$/util/concurrent/ConcurrentHashMap$p;
+    new-instance v3, Lj$/util/concurrent/p;
 
-    invoke-direct {v3, v0, v2, v1, v2}, Lj$/util/concurrent/ConcurrentHashMap$p;-><init>([Lj$/util/concurrent/ConcurrentHashMap$l;III)V
+    invoke-direct {v3, v0, v2, v1, v2}, Lj$/util/concurrent/p;-><init>([Lj$/util/concurrent/l;III)V
 
     :cond_2
-    invoke-virtual {v3}, Lj$/util/concurrent/ConcurrentHashMap$p;->a()Lj$/util/concurrent/ConcurrentHashMap$l;
+    invoke-virtual {v3}, Lj$/util/concurrent/p;->b()Lj$/util/concurrent/l;
 
     move-result-object v0
 
     if-eqz v0, :cond_4
 
-    iget-object v2, v0, Lj$/util/concurrent/ConcurrentHashMap$l;->c:Ljava/lang/Object;
+    iget-object v2, v0, Lj$/util/concurrent/l;->c:Ljava/lang/Object;
 
-    iget-object v0, v0, Lj$/util/concurrent/ConcurrentHashMap$l;->b:Ljava/lang/Object;
+    iget-object v0, v0, Lj$/util/concurrent/l;->b:Ljava/lang/Object;
 
     invoke-interface {p1, v0}, Ljava/util/Map;->get(Ljava/lang/Object;)Ljava/lang/Object;
 
@@ -4183,32 +4181,32 @@
 
     invoke-static {p1}, Ljava/util/Objects;->requireNonNull(Ljava/lang/Object;)Ljava/lang/Object;
 
-    iget-object v0, p0, Lj$/util/concurrent/ConcurrentHashMap;->table:[Lj$/util/concurrent/ConcurrentHashMap$l;
+    iget-object v0, p0, Lj$/util/concurrent/ConcurrentHashMap;->table:[Lj$/util/concurrent/l;
 
     if-eqz v0, :cond_0
 
-    new-instance v1, Lj$/util/concurrent/ConcurrentHashMap$p;
+    new-instance v1, Lj$/util/concurrent/p;
 
     array-length v2, v0
 
-    array-length v3, v0
+    const/4 v3, 0x0
 
-    const/4 v4, 0x0
+    array-length v4, v0
 
-    invoke-direct {v1, v0, v2, v4, v3}, Lj$/util/concurrent/ConcurrentHashMap$p;-><init>([Lj$/util/concurrent/ConcurrentHashMap$l;III)V
+    invoke-direct {v1, v0, v2, v3, v4}, Lj$/util/concurrent/p;-><init>([Lj$/util/concurrent/l;III)V
 
     :goto_0
-    invoke-virtual {v1}, Lj$/util/concurrent/ConcurrentHashMap$p;->a()Lj$/util/concurrent/ConcurrentHashMap$l;
+    invoke-virtual {v1}, Lj$/util/concurrent/p;->b()Lj$/util/concurrent/l;
 
     move-result-object v0
 
     if-eqz v0, :cond_0
 
-    iget-object v2, v0, Lj$/util/concurrent/ConcurrentHashMap$l;->b:Ljava/lang/Object;
+    iget-object v2, v0, Lj$/util/concurrent/l;->b:Ljava/lang/Object;
 
-    iget-object v0, v0, Lj$/util/concurrent/ConcurrentHashMap$l;->c:Ljava/lang/Object;
+    iget-object v0, v0, Lj$/util/concurrent/l;->c:Ljava/lang/Object;
 
-    invoke-interface {p1, v2, v0}, Lj$/util/function/BiConsumer;->y(Ljava/lang/Object;Ljava/lang/Object;)V
+    invoke-interface {p1, v2, v0}, Lj$/util/function/BiConsumer;->n(Ljava/lang/Object;Ljava/lang/Object;)V
 
     goto :goto_0
 
@@ -4219,7 +4217,7 @@
 .method public synthetic forEach(Ljava/util/function/BiConsumer;)V
     .locals 0
 
-    invoke-static {p1}, Lj$/wrappers/i;->G(Ljava/util/function/BiConsumer;)Lj$/util/function/BiConsumer;
+    invoke-static {p1}, Lj$/util/function/BiConsumer$VivifiedWrapper;->convert(Ljava/util/function/BiConsumer;)Lj$/util/function/BiConsumer;
 
     move-result-object p1
 
@@ -4246,7 +4244,7 @@
 
     move-result v0
 
-    iget-object v1, p0, Lj$/util/concurrent/ConcurrentHashMap;->table:[Lj$/util/concurrent/ConcurrentHashMap$l;
+    iget-object v1, p0, Lj$/util/concurrent/ConcurrentHashMap;->table:[Lj$/util/concurrent/l;
 
     const/4 v2, 0x0
 
@@ -4260,17 +4258,17 @@
 
     and-int/2addr v3, v0
 
-    invoke-static {v1, v3}, Lj$/util/concurrent/ConcurrentHashMap;->tabAt([Lj$/util/concurrent/ConcurrentHashMap$l;I)Lj$/util/concurrent/ConcurrentHashMap$l;
+    invoke-static {v1, v3}, Lj$/util/concurrent/ConcurrentHashMap;->tabAt([Lj$/util/concurrent/l;I)Lj$/util/concurrent/l;
 
     move-result-object v1
 
     if-eqz v1, :cond_5
 
-    iget v3, v1, Lj$/util/concurrent/ConcurrentHashMap$l;->a:I
+    iget v3, v1, Lj$/util/concurrent/l;->a:I
 
     if-ne v3, v0, :cond_1
 
-    iget-object v3, v1, Lj$/util/concurrent/ConcurrentHashMap$l;->b:Ljava/lang/Object;
+    iget-object v3, v1, Lj$/util/concurrent/l;->b:Ljava/lang/Object;
 
     if-eq v3, p1, :cond_0
 
@@ -4283,34 +4281,34 @@
     if-eqz v3, :cond_3
 
     :cond_0
-    iget-object p1, v1, Lj$/util/concurrent/ConcurrentHashMap$l;->c:Ljava/lang/Object;
+    iget-object p1, v1, Lj$/util/concurrent/l;->c:Ljava/lang/Object;
 
     return-object p1
 
     :cond_1
     if-gez v3, :cond_3
 
-    invoke-virtual {v1, v0, p1}, Lj$/util/concurrent/ConcurrentHashMap$l;->a(ILjava/lang/Object;)Lj$/util/concurrent/ConcurrentHashMap$l;
+    invoke-virtual {v1, v0, p1}, Lj$/util/concurrent/l;->a(ILjava/lang/Object;)Lj$/util/concurrent/l;
 
     move-result-object p1
 
     if-eqz p1, :cond_2
 
-    iget-object v2, p1, Lj$/util/concurrent/ConcurrentHashMap$l;->c:Ljava/lang/Object;
+    iget-object v2, p1, Lj$/util/concurrent/l;->c:Ljava/lang/Object;
 
     :cond_2
     return-object v2
 
     :cond_3
-    iget-object v1, v1, Lj$/util/concurrent/ConcurrentHashMap$l;->d:Lj$/util/concurrent/ConcurrentHashMap$l;
+    iget-object v1, v1, Lj$/util/concurrent/l;->d:Lj$/util/concurrent/l;
 
     if-eqz v1, :cond_5
 
-    iget v3, v1, Lj$/util/concurrent/ConcurrentHashMap$l;->a:I
+    iget v3, v1, Lj$/util/concurrent/l;->a:I
 
     if-ne v3, v0, :cond_3
 
-    iget-object v3, v1, Lj$/util/concurrent/ConcurrentHashMap$l;->b:Ljava/lang/Object;
+    iget-object v3, v1, Lj$/util/concurrent/l;->b:Ljava/lang/Object;
 
     if-eq v3, p1, :cond_4
 
@@ -4323,7 +4321,7 @@
     if-eqz v3, :cond_3
 
     :cond_4
-    iget-object p1, v1, Lj$/util/concurrent/ConcurrentHashMap$l;->c:Ljava/lang/Object;
+    iget-object p1, v1, Lj$/util/concurrent/l;->c:Ljava/lang/Object;
 
     return-object p1
 
@@ -4359,34 +4357,34 @@
 .method public hashCode()I
     .locals 5
 
-    iget-object v0, p0, Lj$/util/concurrent/ConcurrentHashMap;->table:[Lj$/util/concurrent/ConcurrentHashMap$l;
+    iget-object v0, p0, Lj$/util/concurrent/ConcurrentHashMap;->table:[Lj$/util/concurrent/l;
 
     const/4 v1, 0x0
 
     if-eqz v0, :cond_0
 
-    new-instance v2, Lj$/util/concurrent/ConcurrentHashMap$p;
+    new-instance v2, Lj$/util/concurrent/p;
 
     array-length v3, v0
 
     array-length v4, v0
 
-    invoke-direct {v2, v0, v3, v1, v4}, Lj$/util/concurrent/ConcurrentHashMap$p;-><init>([Lj$/util/concurrent/ConcurrentHashMap$l;III)V
+    invoke-direct {v2, v0, v3, v1, v4}, Lj$/util/concurrent/p;-><init>([Lj$/util/concurrent/l;III)V
 
     :goto_0
-    invoke-virtual {v2}, Lj$/util/concurrent/ConcurrentHashMap$p;->a()Lj$/util/concurrent/ConcurrentHashMap$l;
+    invoke-virtual {v2}, Lj$/util/concurrent/p;->b()Lj$/util/concurrent/l;
 
     move-result-object v0
 
     if-eqz v0, :cond_0
 
-    iget-object v3, v0, Lj$/util/concurrent/ConcurrentHashMap$l;->b:Ljava/lang/Object;
+    iget-object v3, v0, Lj$/util/concurrent/l;->b:Ljava/lang/Object;
 
     invoke-virtual {v3}, Ljava/lang/Object;->hashCode()I
 
     move-result v3
 
-    iget-object v0, v0, Lj$/util/concurrent/ConcurrentHashMap$l;->c:Ljava/lang/Object;
+    iget-object v0, v0, Lj$/util/concurrent/l;->c:Ljava/lang/Object;
 
     invoke-virtual {v0}, Ljava/lang/Object;->hashCode()I
 
@@ -4402,29 +4400,27 @@
     return v1
 .end method
 
-.method final helpTransfer([Lj$/util/concurrent/ConcurrentHashMap$l;Lj$/util/concurrent/ConcurrentHashMap$l;)[Lj$/util/concurrent/ConcurrentHashMap$l;
+.method final helpTransfer([Lj$/util/concurrent/l;Lj$/util/concurrent/l;)[Lj$/util/concurrent/l;
     .locals 8
     .annotation system Ldalvik/annotation/Signature;
         value = {
             "([",
-            "Lj$/util/concurrent/ConcurrentHashMap$l<",
-            "TK;TV;>;",
-            "Lj$/util/concurrent/ConcurrentHashMap$l;",
+            "Lj$/util/concurrent/l;",
+            "Lj$/util/concurrent/l;",
             ")[",
-            "Lj$/util/concurrent/ConcurrentHashMap$l<",
-            "TK;TV;>;"
+            "Lj$/util/concurrent/l;"
         }
     .end annotation
 
     if-eqz p1, :cond_3
 
-    instance-of v0, p2, Lj$/util/concurrent/ConcurrentHashMap$g;
+    instance-of v0, p2, Lj$/util/concurrent/g;
 
     if-eqz v0, :cond_3
 
-    check-cast p2, Lj$/util/concurrent/ConcurrentHashMap$g;
+    check-cast p2, Lj$/util/concurrent/g;
 
-    iget-object p2, p2, Lj$/util/concurrent/ConcurrentHashMap$g;->e:[Lj$/util/concurrent/ConcurrentHashMap$l;
+    iget-object p2, p2, Lj$/util/concurrent/g;->e:[Lj$/util/concurrent/l;
 
     if-eqz p2, :cond_3
 
@@ -4435,11 +4431,11 @@
     move-result v0
 
     :cond_0
-    iget-object v1, p0, Lj$/util/concurrent/ConcurrentHashMap;->nextTable:[Lj$/util/concurrent/ConcurrentHashMap$l;
+    iget-object v1, p0, Lj$/util/concurrent/ConcurrentHashMap;->nextTable:[Lj$/util/concurrent/l;
 
     if-ne p2, v1, :cond_2
 
-    iget-object v1, p0, Lj$/util/concurrent/ConcurrentHashMap;->table:[Lj$/util/concurrent/ConcurrentHashMap$l;
+    iget-object v1, p0, Lj$/util/concurrent/ConcurrentHashMap;->table:[Lj$/util/concurrent/l;
 
     if-ne v1, p1, :cond_2
 
@@ -4484,14 +4480,14 @@
 
     if-eqz v1, :cond_0
 
-    invoke-direct {p0, p1, p2}, Lj$/util/concurrent/ConcurrentHashMap;->transfer([Lj$/util/concurrent/ConcurrentHashMap$l;[Lj$/util/concurrent/ConcurrentHashMap$l;)V
+    invoke-direct {p0, p1, p2}, Lj$/util/concurrent/ConcurrentHashMap;->transfer([Lj$/util/concurrent/l;[Lj$/util/concurrent/l;)V
 
     :cond_2
     :goto_0
     return-object p2
 
     :cond_3
-    iget-object p1, p0, Lj$/util/concurrent/ConcurrentHashMap;->table:[Lj$/util/concurrent/ConcurrentHashMap$l;
+    iget-object p1, p0, Lj$/util/concurrent/ConcurrentHashMap;->table:[Lj$/util/concurrent/l;
 
     return-object p1
 .end method
@@ -4530,27 +4526,27 @@
         }
     .end annotation
 
-    iget-object v0, p0, Lj$/util/concurrent/ConcurrentHashMap;->keySet:Lj$/util/concurrent/ConcurrentHashMap$i;
+    iget-object v0, p0, Lj$/util/concurrent/ConcurrentHashMap;->keySet:Lj$/util/concurrent/i;
 
     if-eqz v0, :cond_0
 
     goto :goto_0
 
     :cond_0
-    new-instance v0, Lj$/util/concurrent/ConcurrentHashMap$i;
+    new-instance v0, Lj$/util/concurrent/i;
 
     const/4 v1, 0x0
 
-    invoke-direct {v0, p0, v1}, Lj$/util/concurrent/ConcurrentHashMap$i;-><init>(Lj$/util/concurrent/ConcurrentHashMap;Ljava/lang/Object;)V
+    invoke-direct {v0, p0, v1}, Lj$/util/concurrent/i;-><init>(Lj$/util/concurrent/ConcurrentHashMap;Ljava/lang/Object;)V
 
-    iput-object v0, p0, Lj$/util/concurrent/ConcurrentHashMap;->keySet:Lj$/util/concurrent/ConcurrentHashMap$i;
+    iput-object v0, p0, Lj$/util/concurrent/ConcurrentHashMap;->keySet:Lj$/util/concurrent/i;
 
     :goto_0
     return-object v0
 .end method
 
 .method public keys()Ljava/util/Enumeration;
-    .locals 7
+    .locals 8
     .annotation system Ldalvik/annotation/Signature;
         value = {
             "()",
@@ -4559,7 +4555,7 @@
         }
     .end annotation
 
-    iget-object v1, p0, Lj$/util/concurrent/ConcurrentHashMap;->table:[Lj$/util/concurrent/ConcurrentHashMap$l;
+    iget-object v1, p0, Lj$/util/concurrent/ConcurrentHashMap;->table:[Lj$/util/concurrent/l;
 
     if-nez v1, :cond_0
 
@@ -4573,19 +4569,21 @@
     :goto_0
     move v4, v0
 
-    new-instance v6, Lj$/util/concurrent/ConcurrentHashMap$h;
+    new-instance v7, Lj$/util/concurrent/h;
 
     const/4 v3, 0x0
 
-    move-object v0, v6
+    const/4 v6, 0x0
+
+    move-object v0, v7
 
     move v2, v4
 
     move-object v5, p0
 
-    invoke-direct/range {v0 .. v5}, Lj$/util/concurrent/ConcurrentHashMap$h;-><init>([Lj$/util/concurrent/ConcurrentHashMap$l;IIILj$/util/concurrent/ConcurrentHashMap;)V
+    invoke-direct/range {v0 .. v6}, Lj$/util/concurrent/h;-><init>([Lj$/util/concurrent/l;IIILj$/util/concurrent/ConcurrentHashMap;I)V
 
-    return-object v6
+    return-object v7
 .end method
 
 .method public mappingCount()J
@@ -4641,7 +4639,7 @@
 
     move-result v5
 
-    iget-object v6, v1, Lj$/util/concurrent/ConcurrentHashMap;->table:[Lj$/util/concurrent/ConcurrentHashMap$l;
+    iget-object v6, v1, Lj$/util/concurrent/ConcurrentHashMap;->table:[Lj$/util/concurrent/l;
 
     const/4 v7, 0x0
 
@@ -4657,14 +4655,14 @@
 
     if-nez v10, :cond_1
 
-    goto/16 :goto_a
+    goto/16 :goto_9
 
     :cond_1
     add-int/lit8 v10, v10, -0x1
 
     and-int/2addr v10, v5
 
-    invoke-static {v6, v10}, Lj$/util/concurrent/ConcurrentHashMap;->tabAt([Lj$/util/concurrent/ConcurrentHashMap$l;I)Lj$/util/concurrent/ConcurrentHashMap$l;
+    invoke-static {v6, v10}, Lj$/util/concurrent/ConcurrentHashMap;->tabAt([Lj$/util/concurrent/l;I)Lj$/util/concurrent/l;
 
     move-result-object v11
 
@@ -4672,26 +4670,26 @@
 
     if-nez v11, :cond_2
 
-    new-instance v11, Lj$/util/concurrent/ConcurrentHashMap$l;
+    new-instance v11, Lj$/util/concurrent/l;
 
-    invoke-direct {v11, v5, v0, v2, v4}, Lj$/util/concurrent/ConcurrentHashMap$l;-><init>(ILjava/lang/Object;Ljava/lang/Object;Lj$/util/concurrent/ConcurrentHashMap$l;)V
+    invoke-direct {v11, v5, v0, v2, v4}, Lj$/util/concurrent/l;-><init>(ILjava/lang/Object;Ljava/lang/Object;Lj$/util/concurrent/l;)V
 
-    invoke-static {v6, v10, v4, v11}, Lj$/util/concurrent/ConcurrentHashMap;->casTabAt([Lj$/util/concurrent/ConcurrentHashMap$l;ILj$/util/concurrent/ConcurrentHashMap$l;Lj$/util/concurrent/ConcurrentHashMap$l;)Z
+    invoke-static {v6, v10, v4, v11}, Lj$/util/concurrent/ConcurrentHashMap;->casTabAt([Lj$/util/concurrent/l;ILj$/util/concurrent/l;Lj$/util/concurrent/l;)Z
 
     move-result v10
 
     if-eqz v10, :cond_0
 
-    goto/16 :goto_9
+    goto/16 :goto_8
 
     :cond_2
-    iget v13, v11, Lj$/util/concurrent/ConcurrentHashMap$l;->a:I
+    iget v13, v11, Lj$/util/concurrent/l;->a:I
 
     const/4 v14, -0x1
 
     if-ne v13, v14, :cond_3
 
-    invoke-virtual {v1, v6, v11}, Lj$/util/concurrent/ConcurrentHashMap;->helpTransfer([Lj$/util/concurrent/ConcurrentHashMap$l;Lj$/util/concurrent/ConcurrentHashMap$l;)[Lj$/util/concurrent/ConcurrentHashMap$l;
+    invoke-virtual {v1, v6, v11}, Lj$/util/concurrent/ConcurrentHashMap;->helpTransfer([Lj$/util/concurrent/l;Lj$/util/concurrent/l;)[Lj$/util/concurrent/l;
 
     move-result-object v6
 
@@ -4701,7 +4699,7 @@
     monitor-enter v11
 
     :try_start_0
-    invoke-static {v6, v10}, Lj$/util/concurrent/ConcurrentHashMap;->tabAt([Lj$/util/concurrent/ConcurrentHashMap$l;I)Lj$/util/concurrent/ConcurrentHashMap$l;
+    invoke-static {v6, v10}, Lj$/util/concurrent/ConcurrentHashMap;->tabAt([Lj$/util/concurrent/l;I)Lj$/util/concurrent/l;
 
     move-result-object v15
 
@@ -4711,16 +4709,16 @@
 
     move-object v13, v4
 
-    move-object v8, v11
+    move-object v7, v11
 
     move v9, v12
 
     :goto_1
-    iget v15, v8, Lj$/util/concurrent/ConcurrentHashMap$l;->a:I
+    iget v15, v7, Lj$/util/concurrent/l;->a:I
 
     if-ne v15, v5, :cond_7
 
-    iget-object v15, v8, Lj$/util/concurrent/ConcurrentHashMap$l;->b:Ljava/lang/Object;
+    iget-object v15, v7, Lj$/util/concurrent/l;->b:Ljava/lang/Object;
 
     if-eq v15, v0, :cond_4
 
@@ -4733,7 +4731,7 @@
     if-eqz v15, :cond_7
 
     :cond_4
-    iget-object v12, v8, Lj$/util/concurrent/ConcurrentHashMap$l;->c:Ljava/lang/Object;
+    iget-object v12, v7, Lj$/util/concurrent/l;->c:Ljava/lang/Object;
 
     invoke-interface {v3, v12, v2}, Lj$/util/function/BiFunction;->apply(Ljava/lang/Object;Ljava/lang/Object;)Ljava/lang/Object;
 
@@ -4741,170 +4739,163 @@
 
     if-eqz v12, :cond_5
 
-    iput-object v12, v8, Lj$/util/concurrent/ConcurrentHashMap$l;->c:Ljava/lang/Object;
+    iput-object v12, v7, Lj$/util/concurrent/l;->c:Ljava/lang/Object;
 
     goto :goto_3
 
     :cond_5
-    iget-object v7, v8, Lj$/util/concurrent/ConcurrentHashMap$l;->d:Lj$/util/concurrent/ConcurrentHashMap$l;
+    iget-object v7, v7, Lj$/util/concurrent/l;->d:Lj$/util/concurrent/l;
 
     if-eqz v13, :cond_6
 
-    iput-object v7, v13, Lj$/util/concurrent/ConcurrentHashMap$l;->d:Lj$/util/concurrent/ConcurrentHashMap$l;
+    iput-object v7, v13, Lj$/util/concurrent/l;->d:Lj$/util/concurrent/l;
 
     goto :goto_2
 
     :cond_6
-    invoke-static {v6, v10, v7}, Lj$/util/concurrent/ConcurrentHashMap;->setTabAt([Lj$/util/concurrent/ConcurrentHashMap$l;ILj$/util/concurrent/ConcurrentHashMap$l;)V
+    invoke-static {v6, v10, v7}, Lj$/util/concurrent/ConcurrentHashMap;->setTabAt([Lj$/util/concurrent/l;ILj$/util/concurrent/l;)V
 
     :goto_2
-    move v7, v14
+    move v8, v14
 
-    :goto_3
-    move-object/from16 v16, v12
-
-    move v12, v7
-
-    move-object/from16 v7, v16
-
-    goto :goto_4
+    goto :goto_3
 
     :cond_7
-    iget-object v13, v8, Lj$/util/concurrent/ConcurrentHashMap$l;->d:Lj$/util/concurrent/ConcurrentHashMap$l;
+    iget-object v13, v7, Lj$/util/concurrent/l;->d:Lj$/util/concurrent/l;
 
     if-nez v13, :cond_8
 
-    new-instance v7, Lj$/util/concurrent/ConcurrentHashMap$l;
+    new-instance v8, Lj$/util/concurrent/l;
 
-    invoke-direct {v7, v5, v0, v2, v4}, Lj$/util/concurrent/ConcurrentHashMap$l;-><init>(ILjava/lang/Object;Ljava/lang/Object;Lj$/util/concurrent/ConcurrentHashMap$l;)V
+    invoke-direct {v8, v5, v0, v2, v4}, Lj$/util/concurrent/l;-><init>(ILjava/lang/Object;Ljava/lang/Object;Lj$/util/concurrent/l;)V
 
-    iput-object v7, v8, Lj$/util/concurrent/ConcurrentHashMap$l;->d:Lj$/util/concurrent/ConcurrentHashMap$l;
+    iput-object v8, v7, Lj$/util/concurrent/l;->d:Lj$/util/concurrent/l;
 
-    move-object v7, v2
+    move v8, v12
 
-    :goto_4
-    move v8, v9
+    move-object v12, v2
 
-    move-object v9, v7
+    :goto_3
+    move v7, v9
 
-    move v7, v12
+    move-object v9, v12
 
-    goto :goto_8
+    goto :goto_7
 
     :cond_8
     add-int/lit8 v9, v9, 0x1
 
     move-object/from16 v16, v13
 
-    move-object v13, v8
+    move-object v13, v7
 
-    move-object/from16 v8, v16
+    move-object/from16 v7, v16
 
     goto :goto_1
 
     :cond_9
-    instance-of v13, v11, Lj$/util/concurrent/ConcurrentHashMap$q;
+    instance-of v13, v11, Lj$/util/concurrent/q;
 
     if-eqz v13, :cond_10
 
-    const/4 v8, 0x2
+    const/4 v7, 0x2
 
     move-object v9, v11
 
-    check-cast v9, Lj$/util/concurrent/ConcurrentHashMap$q;
+    check-cast v9, Lj$/util/concurrent/q;
 
-    iget-object v13, v9, Lj$/util/concurrent/ConcurrentHashMap$q;->e:Lj$/util/concurrent/ConcurrentHashMap$r;
+    iget-object v13, v9, Lj$/util/concurrent/q;->e:Lj$/util/concurrent/r;
 
     if-nez v13, :cond_a
 
     move-object v13, v4
 
-    goto :goto_5
+    goto :goto_4
 
     :cond_a
-    invoke-virtual {v13, v5, v0, v4}, Lj$/util/concurrent/ConcurrentHashMap$r;->b(ILjava/lang/Object;Ljava/lang/Class;)Lj$/util/concurrent/ConcurrentHashMap$r;
+    invoke-virtual {v13, v5, v0, v4}, Lj$/util/concurrent/r;->b(ILjava/lang/Object;Ljava/lang/Class;)Lj$/util/concurrent/r;
 
     move-result-object v13
 
-    :goto_5
+    :goto_4
     if-nez v13, :cond_b
 
     move-object v15, v2
 
-    goto :goto_6
+    goto :goto_5
 
     :cond_b
-    iget-object v15, v13, Lj$/util/concurrent/ConcurrentHashMap$l;->c:Ljava/lang/Object;
+    iget-object v15, v13, Lj$/util/concurrent/l;->c:Ljava/lang/Object;
 
     invoke-interface {v3, v15, v2}, Lj$/util/function/BiFunction;->apply(Ljava/lang/Object;Ljava/lang/Object;)Ljava/lang/Object;
 
     move-result-object v15
 
-    :goto_6
+    :goto_5
     if-eqz v15, :cond_d
 
     if-eqz v13, :cond_c
 
-    iput-object v15, v13, Lj$/util/concurrent/ConcurrentHashMap$l;->c:Ljava/lang/Object;
+    iput-object v15, v13, Lj$/util/concurrent/l;->c:Ljava/lang/Object;
 
-    goto :goto_7
+    goto :goto_6
 
     :cond_c
-    invoke-virtual {v9, v5, v0, v15}, Lj$/util/concurrent/ConcurrentHashMap$q;->f(ILjava/lang/Object;Ljava/lang/Object;)Lj$/util/concurrent/ConcurrentHashMap$r;
+    invoke-virtual {v9, v5, v0, v15}, Lj$/util/concurrent/q;->f(ILjava/lang/Object;Ljava/lang/Object;)Lj$/util/concurrent/r;
 
-    move v7, v12
+    move v8, v12
 
-    goto :goto_7
+    goto :goto_6
 
     :cond_d
     if-eqz v13, :cond_f
 
-    invoke-virtual {v9, v13}, Lj$/util/concurrent/ConcurrentHashMap$q;->g(Lj$/util/concurrent/ConcurrentHashMap$r;)Z
+    invoke-virtual {v9, v13}, Lj$/util/concurrent/q;->g(Lj$/util/concurrent/r;)Z
 
-    move-result v7
+    move-result v8
 
-    if-eqz v7, :cond_e
+    if-eqz v8, :cond_e
 
-    iget-object v7, v9, Lj$/util/concurrent/ConcurrentHashMap$q;->f:Lj$/util/concurrent/ConcurrentHashMap$r;
+    iget-object v8, v9, Lj$/util/concurrent/q;->f:Lj$/util/concurrent/r;
 
-    invoke-static {v7}, Lj$/util/concurrent/ConcurrentHashMap;->untreeify(Lj$/util/concurrent/ConcurrentHashMap$l;)Lj$/util/concurrent/ConcurrentHashMap$l;
+    invoke-static {v8}, Lj$/util/concurrent/ConcurrentHashMap;->untreeify(Lj$/util/concurrent/l;)Lj$/util/concurrent/l;
 
-    move-result-object v7
+    move-result-object v8
 
-    invoke-static {v6, v10, v7}, Lj$/util/concurrent/ConcurrentHashMap;->setTabAt([Lj$/util/concurrent/ConcurrentHashMap$l;ILj$/util/concurrent/ConcurrentHashMap$l;)V
+    invoke-static {v6, v10, v8}, Lj$/util/concurrent/ConcurrentHashMap;->setTabAt([Lj$/util/concurrent/l;ILj$/util/concurrent/l;)V
 
     :cond_e
-    move v7, v14
+    move v8, v14
 
     :cond_f
-    :goto_7
+    :goto_6
     move-object v9, v15
 
     :cond_10
-    :goto_8
+    :goto_7
     monitor-exit v11
     :try_end_0
     .catchall {:try_start_0 .. :try_end_0} :catchall_0
 
-    if-eqz v8, :cond_0
+    if-eqz v7, :cond_0
 
     const/16 v0, 0x8
 
-    if-lt v8, v0, :cond_11
+    if-lt v7, v0, :cond_11
 
-    invoke-direct {v1, v6, v10}, Lj$/util/concurrent/ConcurrentHashMap;->treeifyBin([Lj$/util/concurrent/ConcurrentHashMap$l;I)V
+    invoke-direct {v1, v6, v10}, Lj$/util/concurrent/ConcurrentHashMap;->treeifyBin([Lj$/util/concurrent/l;I)V
 
     :cond_11
-    move v12, v7
+    move v12, v8
 
     move-object v2, v9
 
-    :goto_9
+    :goto_8
     if-eqz v12, :cond_12
 
     int-to-long v3, v12
 
-    invoke-direct {v1, v3, v4, v8}, Lj$/util/concurrent/ConcurrentHashMap;->addCount(JI)V
+    invoke-direct {v1, v3, v4, v7}, Lj$/util/concurrent/ConcurrentHashMap;->addCount(JI)V
 
     :cond_12
     return-object v2
@@ -4920,8 +4911,8 @@
     throw v0
 
     :cond_13
-    :goto_a
-    invoke-direct/range {p0 .. p0}, Lj$/util/concurrent/ConcurrentHashMap;->initTable()[Lj$/util/concurrent/ConcurrentHashMap$l;
+    :goto_9
+    invoke-direct/range {p0 .. p0}, Lj$/util/concurrent/ConcurrentHashMap;->initTable()[Lj$/util/concurrent/l;
 
     move-result-object v6
 
@@ -4934,7 +4925,7 @@
 .method public synthetic merge(Ljava/lang/Object;Ljava/lang/Object;Ljava/util/function/BiFunction;)Ljava/lang/Object;
     .locals 0
 
-    invoke-static {p3}, Lj$/wrappers/$r8$wrapper$java$util$function$BiFunction$-V-WRP;->convert(Ljava/util/function/BiFunction;)Lj$/util/function/BiFunction;
+    invoke-static {p3}, Lj$/util/function/BiFunction$VivifiedWrapper;->convert(Ljava/util/function/BiFunction;)Lj$/util/function/BiFunction;
 
     move-result-object p3
 
@@ -5058,7 +5049,7 @@
 
     const/4 v2, 0x0
 
-    iget-object v3, p0, Lj$/util/concurrent/ConcurrentHashMap;->table:[Lj$/util/concurrent/ConcurrentHashMap$l;
+    iget-object v3, p0, Lj$/util/concurrent/ConcurrentHashMap;->table:[Lj$/util/concurrent/l;
 
     :cond_0
     :goto_0
@@ -5075,17 +5066,17 @@
 
     and-int/2addr v4, v1
 
-    invoke-static {v3, v4}, Lj$/util/concurrent/ConcurrentHashMap;->tabAt([Lj$/util/concurrent/ConcurrentHashMap$l;I)Lj$/util/concurrent/ConcurrentHashMap$l;
+    invoke-static {v3, v4}, Lj$/util/concurrent/ConcurrentHashMap;->tabAt([Lj$/util/concurrent/l;I)Lj$/util/concurrent/l;
 
     move-result-object v5
 
     if-nez v5, :cond_2
 
-    new-instance v5, Lj$/util/concurrent/ConcurrentHashMap$l;
+    new-instance v5, Lj$/util/concurrent/l;
 
-    invoke-direct {v5, v1, p1, p2, v0}, Lj$/util/concurrent/ConcurrentHashMap$l;-><init>(ILjava/lang/Object;Ljava/lang/Object;Lj$/util/concurrent/ConcurrentHashMap$l;)V
+    invoke-direct {v5, v1, p1, p2, v0}, Lj$/util/concurrent/l;-><init>(ILjava/lang/Object;Ljava/lang/Object;Lj$/util/concurrent/l;)V
 
-    invoke-static {v3, v4, v0, v5}, Lj$/util/concurrent/ConcurrentHashMap;->casTabAt([Lj$/util/concurrent/ConcurrentHashMap$l;ILj$/util/concurrent/ConcurrentHashMap$l;Lj$/util/concurrent/ConcurrentHashMap$l;)Z
+    invoke-static {v3, v4, v0, v5}, Lj$/util/concurrent/ConcurrentHashMap;->casTabAt([Lj$/util/concurrent/l;ILj$/util/concurrent/l;Lj$/util/concurrent/l;)Z
 
     move-result v4
 
@@ -5094,13 +5085,13 @@
     goto :goto_5
 
     :cond_2
-    iget v6, v5, Lj$/util/concurrent/ConcurrentHashMap$l;->a:I
+    iget v6, v5, Lj$/util/concurrent/l;->a:I
 
     const/4 v7, -0x1
 
     if-ne v6, v7, :cond_3
 
-    invoke-virtual {p0, v3, v5}, Lj$/util/concurrent/ConcurrentHashMap;->helpTransfer([Lj$/util/concurrent/ConcurrentHashMap$l;Lj$/util/concurrent/ConcurrentHashMap$l;)[Lj$/util/concurrent/ConcurrentHashMap$l;
+    invoke-virtual {p0, v3, v5}, Lj$/util/concurrent/ConcurrentHashMap;->helpTransfer([Lj$/util/concurrent/l;Lj$/util/concurrent/l;)[Lj$/util/concurrent/l;
 
     move-result-object v3
 
@@ -5110,7 +5101,7 @@
     monitor-enter v5
 
     :try_start_0
-    invoke-static {v3, v4}, Lj$/util/concurrent/ConcurrentHashMap;->tabAt([Lj$/util/concurrent/ConcurrentHashMap$l;I)Lj$/util/concurrent/ConcurrentHashMap$l;
+    invoke-static {v3, v4}, Lj$/util/concurrent/ConcurrentHashMap;->tabAt([Lj$/util/concurrent/l;I)Lj$/util/concurrent/l;
 
     move-result-object v7
 
@@ -5123,11 +5114,11 @@
     move-object v6, v5
 
     :goto_1
-    iget v7, v6, Lj$/util/concurrent/ConcurrentHashMap$l;->a:I
+    iget v7, v6, Lj$/util/concurrent/l;->a:I
 
     if-ne v7, v1, :cond_5
 
-    iget-object v7, v6, Lj$/util/concurrent/ConcurrentHashMap$l;->b:Ljava/lang/Object;
+    iget-object v7, v6, Lj$/util/concurrent/l;->b:Ljava/lang/Object;
 
     if-eq v7, p1, :cond_4
 
@@ -5140,25 +5131,25 @@
     if-eqz v7, :cond_5
 
     :cond_4
-    iget-object v7, v6, Lj$/util/concurrent/ConcurrentHashMap$l;->c:Ljava/lang/Object;
+    iget-object v7, v6, Lj$/util/concurrent/l;->c:Ljava/lang/Object;
 
     if-nez p3, :cond_9
 
     :goto_2
-    iput-object p2, v6, Lj$/util/concurrent/ConcurrentHashMap$l;->c:Ljava/lang/Object;
+    iput-object p2, v6, Lj$/util/concurrent/l;->c:Ljava/lang/Object;
 
     goto :goto_4
 
     :cond_5
-    iget-object v7, v6, Lj$/util/concurrent/ConcurrentHashMap$l;->d:Lj$/util/concurrent/ConcurrentHashMap$l;
+    iget-object v7, v6, Lj$/util/concurrent/l;->d:Lj$/util/concurrent/l;
 
     if-nez v7, :cond_6
 
-    new-instance v7, Lj$/util/concurrent/ConcurrentHashMap$l;
+    new-instance v7, Lj$/util/concurrent/l;
 
-    invoke-direct {v7, v1, p1, p2, v0}, Lj$/util/concurrent/ConcurrentHashMap$l;-><init>(ILjava/lang/Object;Ljava/lang/Object;Lj$/util/concurrent/ConcurrentHashMap$l;)V
+    invoke-direct {v7, v1, p1, p2, v0}, Lj$/util/concurrent/l;-><init>(ILjava/lang/Object;Ljava/lang/Object;Lj$/util/concurrent/l;)V
 
-    iput-object v7, v6, Lj$/util/concurrent/ConcurrentHashMap$l;->d:Lj$/util/concurrent/ConcurrentHashMap$l;
+    iput-object v7, v6, Lj$/util/concurrent/l;->d:Lj$/util/concurrent/l;
 
     goto :goto_3
 
@@ -5170,7 +5161,7 @@
     goto :goto_1
 
     :cond_7
-    instance-of v6, v5, Lj$/util/concurrent/ConcurrentHashMap$q;
+    instance-of v6, v5, Lj$/util/concurrent/q;
 
     if-eqz v6, :cond_8
 
@@ -5178,15 +5169,15 @@
 
     move-object v6, v5
 
-    check-cast v6, Lj$/util/concurrent/ConcurrentHashMap$q;
+    check-cast v6, Lj$/util/concurrent/q;
 
-    invoke-virtual {v6, v1, p1, p2}, Lj$/util/concurrent/ConcurrentHashMap$q;->f(ILjava/lang/Object;Ljava/lang/Object;)Lj$/util/concurrent/ConcurrentHashMap$r;
+    invoke-virtual {v6, v1, p1, p2}, Lj$/util/concurrent/q;->f(ILjava/lang/Object;Ljava/lang/Object;)Lj$/util/concurrent/r;
 
     move-result-object v6
 
     if-eqz v6, :cond_8
 
-    iget-object v7, v6, Lj$/util/concurrent/ConcurrentHashMap$l;->c:Ljava/lang/Object;
+    iget-object v7, v6, Lj$/util/concurrent/l;->c:Ljava/lang/Object;
 
     if-nez p3, :cond_9
 
@@ -5208,7 +5199,7 @@
 
     if-lt v2, p1, :cond_a
 
-    invoke-direct {p0, v3, v4}, Lj$/util/concurrent/ConcurrentHashMap;->treeifyBin([Lj$/util/concurrent/ConcurrentHashMap$l;I)V
+    invoke-direct {p0, v3, v4}, Lj$/util/concurrent/ConcurrentHashMap;->treeifyBin([Lj$/util/concurrent/l;I)V
 
     :cond_a
     if-eqz v7, :cond_b
@@ -5235,7 +5226,7 @@
 
     :cond_c
     :goto_6
-    invoke-direct {p0}, Lj$/util/concurrent/ConcurrentHashMap;->initTable()[Lj$/util/concurrent/ConcurrentHashMap$l;
+    invoke-direct {p0}, Lj$/util/concurrent/ConcurrentHashMap;->initTable()[Lj$/util/concurrent/l;
 
     move-result-object v3
 
@@ -5362,31 +5353,31 @@
 
     invoke-static {p1}, Ljava/util/Objects;->requireNonNull(Ljava/lang/Object;)Ljava/lang/Object;
 
-    iget-object v0, p0, Lj$/util/concurrent/ConcurrentHashMap;->table:[Lj$/util/concurrent/ConcurrentHashMap$l;
+    iget-object v0, p0, Lj$/util/concurrent/ConcurrentHashMap;->table:[Lj$/util/concurrent/l;
 
     if-eqz v0, :cond_2
 
-    new-instance v1, Lj$/util/concurrent/ConcurrentHashMap$p;
+    new-instance v1, Lj$/util/concurrent/p;
 
     array-length v2, v0
 
-    array-length v3, v0
+    const/4 v3, 0x0
 
-    const/4 v4, 0x0
+    array-length v4, v0
 
-    invoke-direct {v1, v0, v2, v4, v3}, Lj$/util/concurrent/ConcurrentHashMap$p;-><init>([Lj$/util/concurrent/ConcurrentHashMap$l;III)V
+    invoke-direct {v1, v0, v2, v3, v4}, Lj$/util/concurrent/p;-><init>([Lj$/util/concurrent/l;III)V
 
     :cond_0
     :goto_0
-    invoke-virtual {v1}, Lj$/util/concurrent/ConcurrentHashMap$p;->a()Lj$/util/concurrent/ConcurrentHashMap$l;
+    invoke-virtual {v1}, Lj$/util/concurrent/p;->b()Lj$/util/concurrent/l;
 
     move-result-object v0
 
     if-eqz v0, :cond_2
 
-    iget-object v2, v0, Lj$/util/concurrent/ConcurrentHashMap$l;->c:Ljava/lang/Object;
+    iget-object v2, v0, Lj$/util/concurrent/l;->c:Ljava/lang/Object;
 
-    iget-object v0, v0, Lj$/util/concurrent/ConcurrentHashMap$l;->b:Ljava/lang/Object;
+    iget-object v0, v0, Lj$/util/concurrent/l;->b:Ljava/lang/Object;
 
     :cond_1
     invoke-interface {p1, v0, v2}, Lj$/util/function/BiFunction;->apply(Ljava/lang/Object;Ljava/lang/Object;)Ljava/lang/Object;
@@ -5416,7 +5407,7 @@
 .method public synthetic replaceAll(Ljava/util/function/BiFunction;)V
     .locals 0
 
-    invoke-static {p1}, Lj$/wrappers/$r8$wrapper$java$util$function$BiFunction$-V-WRP;->convert(Ljava/util/function/BiFunction;)Lj$/util/function/BiFunction;
+    invoke-static {p1}, Lj$/util/function/BiFunction$VivifiedWrapper;->convert(Ljava/util/function/BiFunction;)Lj$/util/function/BiFunction;
 
     move-result-object p1
 
@@ -5445,7 +5436,7 @@
 
     move-result v0
 
-    iget-object v1, p0, Lj$/util/concurrent/ConcurrentHashMap;->table:[Lj$/util/concurrent/ConcurrentHashMap$l;
+    iget-object v1, p0, Lj$/util/concurrent/ConcurrentHashMap;->table:[Lj$/util/concurrent/l;
 
     :cond_0
     :goto_0
@@ -5461,22 +5452,22 @@
 
     and-int/2addr v3, v0
 
-    invoke-static {v1, v3}, Lj$/util/concurrent/ConcurrentHashMap;->tabAt([Lj$/util/concurrent/ConcurrentHashMap$l;I)Lj$/util/concurrent/ConcurrentHashMap$l;
+    invoke-static {v1, v3}, Lj$/util/concurrent/ConcurrentHashMap;->tabAt([Lj$/util/concurrent/l;I)Lj$/util/concurrent/l;
 
     move-result-object v4
 
     if-nez v4, :cond_1
 
-    goto/16 :goto_5
+    goto/16 :goto_6
 
     :cond_1
-    iget v5, v4, Lj$/util/concurrent/ConcurrentHashMap$l;->a:I
+    iget v5, v4, Lj$/util/concurrent/l;->a:I
 
     const/4 v6, -0x1
 
     if-ne v5, v6, :cond_2
 
-    invoke-virtual {p0, v1, v4}, Lj$/util/concurrent/ConcurrentHashMap;->helpTransfer([Lj$/util/concurrent/ConcurrentHashMap$l;Lj$/util/concurrent/ConcurrentHashMap$l;)[Lj$/util/concurrent/ConcurrentHashMap$l;
+    invoke-virtual {p0, v1, v4}, Lj$/util/concurrent/ConcurrentHashMap;->helpTransfer([Lj$/util/concurrent/l;Lj$/util/concurrent/l;)[Lj$/util/concurrent/l;
 
     move-result-object v1
 
@@ -5488,7 +5479,7 @@
     monitor-enter v4
 
     :try_start_0
-    invoke-static {v1, v3}, Lj$/util/concurrent/ConcurrentHashMap;->tabAt([Lj$/util/concurrent/ConcurrentHashMap$l;I)Lj$/util/concurrent/ConcurrentHashMap$l;
+    invoke-static {v1, v3}, Lj$/util/concurrent/ConcurrentHashMap;->tabAt([Lj$/util/concurrent/l;I)Lj$/util/concurrent/l;
 
     move-result-object v8
 
@@ -5496,18 +5487,18 @@
 
     if-ne v8, v4, :cond_e
 
-    if-ltz v5, :cond_b
+    if-ltz v5, :cond_9
 
     move-object v7, v2
 
     move-object v5, v4
 
     :goto_1
-    iget v8, v5, Lj$/util/concurrent/ConcurrentHashMap$l;->a:I
+    iget v8, v5, Lj$/util/concurrent/l;->a:I
 
     if-ne v8, v0, :cond_7
 
-    iget-object v8, v5, Lj$/util/concurrent/ConcurrentHashMap$l;->b:Ljava/lang/Object;
+    iget-object v8, v5, Lj$/util/concurrent/l;->b:Ljava/lang/Object;
 
     if-eq v8, p1, :cond_3
 
@@ -5520,59 +5511,52 @@
     if-eqz v8, :cond_7
 
     :cond_3
-    iget-object v8, v5, Lj$/util/concurrent/ConcurrentHashMap$l;->c:Ljava/lang/Object;
+    iget-object v8, v5, Lj$/util/concurrent/l;->c:Ljava/lang/Object;
 
     if-eqz p3, :cond_4
 
     if-eq p3, v8, :cond_4
 
-    if-eqz v8, :cond_8
+    if-eqz v8, :cond_c
 
     invoke-virtual {p3, v8}, Ljava/lang/Object;->equals(Ljava/lang/Object;)Z
 
     move-result v10
 
-    if-eqz v10, :cond_8
+    if-eqz v10, :cond_c
 
     :cond_4
     if-eqz p2, :cond_5
 
-    iput-object p2, v5, Lj$/util/concurrent/ConcurrentHashMap$l;->c:Ljava/lang/Object;
+    iput-object p2, v5, Lj$/util/concurrent/l;->c:Ljava/lang/Object;
 
-    goto :goto_3
+    goto :goto_4
 
     :cond_5
     if-eqz v7, :cond_6
 
-    iget-object v3, v5, Lj$/util/concurrent/ConcurrentHashMap$l;->d:Lj$/util/concurrent/ConcurrentHashMap$l;
+    iget-object v3, v5, Lj$/util/concurrent/l;->d:Lj$/util/concurrent/l;
 
-    iput-object v3, v7, Lj$/util/concurrent/ConcurrentHashMap$l;->d:Lj$/util/concurrent/ConcurrentHashMap$l;
-
-    goto :goto_3
-
-    :cond_6
-    iget-object v5, v5, Lj$/util/concurrent/ConcurrentHashMap$l;->d:Lj$/util/concurrent/ConcurrentHashMap$l;
-
-    :goto_2
-    invoke-static {v1, v3, v5}, Lj$/util/concurrent/ConcurrentHashMap;->setTabAt([Lj$/util/concurrent/ConcurrentHashMap$l;ILj$/util/concurrent/ConcurrentHashMap$l;)V
-
-    goto :goto_3
-
-    :cond_7
-    iget-object v7, v5, Lj$/util/concurrent/ConcurrentHashMap$l;->d:Lj$/util/concurrent/ConcurrentHashMap$l;
-
-    if-nez v7, :cond_a
-
-    :cond_8
-    move-object v8, v2
-
-    :cond_9
-    :goto_3
-    move v7, v9
+    iput-object v3, v7, Lj$/util/concurrent/l;->d:Lj$/util/concurrent/l;
 
     goto :goto_4
 
-    :cond_a
+    :cond_6
+    iget-object v5, v5, Lj$/util/concurrent/l;->d:Lj$/util/concurrent/l;
+
+    :goto_2
+    invoke-static {v1, v3, v5}, Lj$/util/concurrent/ConcurrentHashMap;->setTabAt([Lj$/util/concurrent/l;ILj$/util/concurrent/l;)V
+
+    goto :goto_4
+
+    :cond_7
+    iget-object v7, v5, Lj$/util/concurrent/l;->d:Lj$/util/concurrent/l;
+
+    if-nez v7, :cond_8
+
+    goto :goto_3
+
+    :cond_8
     move-object v11, v7
 
     move-object v7, v5
@@ -5581,65 +5565,75 @@
 
     goto :goto_1
 
-    :cond_b
-    instance-of v5, v4, Lj$/util/concurrent/ConcurrentHashMap$q;
+    :cond_9
+    instance-of v5, v4, Lj$/util/concurrent/q;
 
     if-eqz v5, :cond_e
 
     move-object v5, v4
 
-    check-cast v5, Lj$/util/concurrent/ConcurrentHashMap$q;
+    check-cast v5, Lj$/util/concurrent/q;
 
-    iget-object v7, v5, Lj$/util/concurrent/ConcurrentHashMap$q;->e:Lj$/util/concurrent/ConcurrentHashMap$r;
+    iget-object v7, v5, Lj$/util/concurrent/q;->e:Lj$/util/concurrent/r;
 
-    if-eqz v7, :cond_8
+    if-eqz v7, :cond_c
 
-    invoke-virtual {v7, v0, p1, v2}, Lj$/util/concurrent/ConcurrentHashMap$r;->b(ILjava/lang/Object;Ljava/lang/Class;)Lj$/util/concurrent/ConcurrentHashMap$r;
+    invoke-virtual {v7, v0, p1, v2}, Lj$/util/concurrent/r;->b(ILjava/lang/Object;Ljava/lang/Class;)Lj$/util/concurrent/r;
 
     move-result-object v7
 
-    if-eqz v7, :cond_8
+    if-eqz v7, :cond_c
 
-    iget-object v8, v7, Lj$/util/concurrent/ConcurrentHashMap$l;->c:Ljava/lang/Object;
+    iget-object v8, v7, Lj$/util/concurrent/l;->c:Ljava/lang/Object;
 
-    if-eqz p3, :cond_c
+    if-eqz p3, :cond_a
 
-    if-eq p3, v8, :cond_c
+    if-eq p3, v8, :cond_a
 
-    if-eqz v8, :cond_8
+    if-eqz v8, :cond_c
 
     invoke-virtual {p3, v8}, Ljava/lang/Object;->equals(Ljava/lang/Object;)Z
 
     move-result v10
 
-    if-eqz v10, :cond_8
+    if-eqz v10, :cond_c
 
-    :cond_c
-    if-eqz p2, :cond_d
+    :cond_a
+    if-eqz p2, :cond_b
 
-    iput-object p2, v7, Lj$/util/concurrent/ConcurrentHashMap$l;->c:Ljava/lang/Object;
+    iput-object p2, v7, Lj$/util/concurrent/l;->c:Ljava/lang/Object;
 
-    goto :goto_3
+    goto :goto_4
 
-    :cond_d
-    invoke-virtual {v5, v7}, Lj$/util/concurrent/ConcurrentHashMap$q;->g(Lj$/util/concurrent/ConcurrentHashMap$r;)Z
+    :cond_b
+    invoke-virtual {v5, v7}, Lj$/util/concurrent/q;->g(Lj$/util/concurrent/r;)Z
 
     move-result v7
 
-    if-eqz v7, :cond_9
+    if-eqz v7, :cond_d
 
-    iget-object v5, v5, Lj$/util/concurrent/ConcurrentHashMap$q;->f:Lj$/util/concurrent/ConcurrentHashMap$r;
+    iget-object v5, v5, Lj$/util/concurrent/q;->f:Lj$/util/concurrent/r;
 
-    invoke-static {v5}, Lj$/util/concurrent/ConcurrentHashMap;->untreeify(Lj$/util/concurrent/ConcurrentHashMap$l;)Lj$/util/concurrent/ConcurrentHashMap$l;
+    invoke-static {v5}, Lj$/util/concurrent/ConcurrentHashMap;->untreeify(Lj$/util/concurrent/l;)Lj$/util/concurrent/l;
 
     move-result-object v5
 
     goto :goto_2
 
+    :cond_c
+    :goto_3
+    move-object v8, v2
+
+    :cond_d
+    :goto_4
+    move v7, v9
+
+    goto :goto_5
+
     :cond_e
     move-object v8, v2
 
-    :goto_4
+    :goto_5
     monitor-exit v4
     :try_end_0
     .catchall {:try_start_0 .. :try_end_0} :catchall_0
@@ -5668,7 +5662,7 @@
     throw p1
 
     :cond_10
-    :goto_5
+    :goto_6
     return-object v2
 .end method
 
@@ -5710,7 +5704,7 @@
 .method final sumCount()J
     .locals 6
 
-    iget-object v0, p0, Lj$/util/concurrent/ConcurrentHashMap;->counterCells:[Lj$/util/concurrent/ConcurrentHashMap$c;
+    iget-object v0, p0, Lj$/util/concurrent/ConcurrentHashMap;->counterCells:[Lj$/util/concurrent/c;
 
     iget-wide v1, p0, Lj$/util/concurrent/ConcurrentHashMap;->baseCount:J
 
@@ -5727,7 +5721,7 @@
 
     if-eqz v4, :cond_0
 
-    iget-wide v4, v4, Lj$/util/concurrent/ConcurrentHashMap$c;->value:J
+    iget-wide v4, v4, Lj$/util/concurrent/c;->value:J
 
     add-long/2addr v1, v4
 
@@ -5743,7 +5737,7 @@
 .method public toString()Ljava/lang/String;
     .locals 5
 
-    iget-object v0, p0, Lj$/util/concurrent/ConcurrentHashMap;->table:[Lj$/util/concurrent/ConcurrentHashMap$l;
+    iget-object v0, p0, Lj$/util/concurrent/ConcurrentHashMap;->table:[Lj$/util/concurrent/l;
 
     const/4 v1, 0x0
 
@@ -5757,9 +5751,9 @@
     array-length v2, v0
 
     :goto_0
-    new-instance v3, Lj$/util/concurrent/ConcurrentHashMap$p;
+    new-instance v3, Lj$/util/concurrent/p;
 
-    invoke-direct {v3, v0, v2, v1, v2}, Lj$/util/concurrent/ConcurrentHashMap$p;-><init>([Lj$/util/concurrent/ConcurrentHashMap$l;III)V
+    invoke-direct {v3, v0, v2, v1, v2}, Lj$/util/concurrent/p;-><init>([Lj$/util/concurrent/l;III)V
 
     new-instance v0, Ljava/lang/StringBuilder;
 
@@ -5769,16 +5763,16 @@
 
     invoke-virtual {v0, v1}, Ljava/lang/StringBuilder;->append(C)Ljava/lang/StringBuilder;
 
-    invoke-virtual {v3}, Lj$/util/concurrent/ConcurrentHashMap$p;->a()Lj$/util/concurrent/ConcurrentHashMap$l;
+    invoke-virtual {v3}, Lj$/util/concurrent/p;->b()Lj$/util/concurrent/l;
 
     move-result-object v1
 
     if-eqz v1, :cond_4
 
     :goto_1
-    iget-object v2, v1, Lj$/util/concurrent/ConcurrentHashMap$l;->b:Ljava/lang/Object;
+    iget-object v2, v1, Lj$/util/concurrent/l;->b:Ljava/lang/Object;
 
-    iget-object v1, v1, Lj$/util/concurrent/ConcurrentHashMap$l;->c:Ljava/lang/Object;
+    iget-object v1, v1, Lj$/util/concurrent/l;->c:Ljava/lang/Object;
 
     const-string v4, "(this Map)"
 
@@ -5800,7 +5794,7 @@
     :cond_2
     invoke-virtual {v0, v1}, Ljava/lang/StringBuilder;->append(Ljava/lang/Object;)Ljava/lang/StringBuilder;
 
-    invoke-virtual {v3}, Lj$/util/concurrent/ConcurrentHashMap$p;->a()Lj$/util/concurrent/ConcurrentHashMap$l;
+    invoke-virtual {v3}, Lj$/util/concurrent/p;->b()Lj$/util/concurrent/l;
 
     move-result-object v1
 
@@ -5842,18 +5836,18 @@
         }
     .end annotation
 
-    iget-object v0, p0, Lj$/util/concurrent/ConcurrentHashMap;->values:Lj$/util/concurrent/ConcurrentHashMap$u;
+    iget-object v0, p0, Lj$/util/concurrent/ConcurrentHashMap;->values:Lj$/util/concurrent/s;
 
     if-eqz v0, :cond_0
 
     goto :goto_0
 
     :cond_0
-    new-instance v0, Lj$/util/concurrent/ConcurrentHashMap$u;
+    new-instance v0, Lj$/util/concurrent/s;
 
-    invoke-direct {v0, p0}, Lj$/util/concurrent/ConcurrentHashMap$u;-><init>(Lj$/util/concurrent/ConcurrentHashMap;)V
+    invoke-direct {v0, p0}, Lj$/util/concurrent/s;-><init>(Lj$/util/concurrent/ConcurrentHashMap;)V
 
-    iput-object v0, p0, Lj$/util/concurrent/ConcurrentHashMap;->values:Lj$/util/concurrent/ConcurrentHashMap$u;
+    iput-object v0, p0, Lj$/util/concurrent/ConcurrentHashMap;->values:Lj$/util/concurrent/s;
 
     :goto_0
     return-object v0

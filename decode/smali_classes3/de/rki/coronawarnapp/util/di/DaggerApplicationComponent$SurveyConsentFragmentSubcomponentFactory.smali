@@ -24,14 +24,6 @@
 # direct methods
 .method public constructor <init>(Lde/rki/coronawarnapp/util/di/DaggerApplicationComponent;Lde/rki/coronawarnapp/util/di/DaggerApplicationComponent$SurveyConsentFragmentSubcomponentFactory-IA;)V
     .locals 0
-    .annotation system Ldalvik/annotation/MethodParameters;
-        accessFlags = {
-            0x0
-        }
-        names = {
-            "applicationComponent"
-        }
-    .end annotation
 
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
@@ -63,7 +55,7 @@
 
     const/4 v2, 0x0
 
-    invoke-direct {v0, v1, p1, v2}, Lde/rki/coronawarnapp/util/di/DaggerApplicationComponent$SurveyConsentFragmentSubcomponentImpl;-><init>(Lde/rki/coronawarnapp/util/di/DaggerApplicationComponent;Lde/rki/coronawarnapp/datadonation/survey/consent/SurveyConsentFragment;Lde/rki/coronawarnapp/util/di/DaggerApplicationComponent$SurveyConsentFragmentSubcomponentImpl-IA;)V
+    invoke-direct {v0, v1, p1, v2}, Lde/rki/coronawarnapp/util/di/DaggerApplicationComponent$SurveyConsentFragmentSubcomponentImpl;-><init>(Lde/rki/coronawarnapp/util/di/DaggerApplicationComponent;Lde/rki/coronawarnapp/datadonation/survey/consent/SurveyConsentFragment;Lboofcv/struct/PackedSetsPoint2D_I32$$ExternalSyntheticLambda1;)V
 
     return-object v0
 .end method

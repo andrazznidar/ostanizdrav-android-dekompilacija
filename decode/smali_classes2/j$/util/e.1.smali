@@ -132,7 +132,7 @@
 .method public synthetic thenComparing(Ljava/util/function/Function;)Ljava/util/Comparator;
     .locals 0
 
-    invoke-static {p1}, Lj$/wrappers/k;->c(Ljava/util/function/Function;)Lj$/util/function/Function;
+    invoke-static {p1}, Lj$/util/function/Function$VivifiedWrapper;->convert(Ljava/util/function/Function;)Lj$/util/function/Function;
 
     move-result-object p1
 
@@ -146,7 +146,7 @@
 .method public synthetic thenComparing(Ljava/util/function/Function;Ljava/util/Comparator;)Ljava/util/Comparator;
     .locals 0
 
-    invoke-static {p1}, Lj$/wrappers/k;->c(Ljava/util/function/Function;)Lj$/util/function/Function;
+    invoke-static {p1}, Lj$/util/function/Function$VivifiedWrapper;->convert(Ljava/util/function/Function;)Lj$/util/function/Function;
 
     move-result-object p1
 
@@ -168,22 +168,12 @@
 .end method
 
 .method public synthetic thenComparingDouble(Ljava/util/function/ToDoubleFunction;)Ljava/util/Comparator;
-    .locals 1
+    .locals 0
 
-    if-nez p1, :cond_0
+    invoke-static {p1}, Lj$/util/function/ToDoubleFunction$VivifiedWrapper;->convert(Ljava/util/function/ToDoubleFunction;)Lj$/util/function/ToDoubleFunction;
 
-    const/4 p1, 0x0
+    move-result-object p1
 
-    goto :goto_0
-
-    :cond_0
-    new-instance v0, Lj$/wrappers/i;
-
-    invoke-direct {v0, p1}, Lj$/wrappers/i;-><init>(Ljava/util/function/ToDoubleFunction;)V
-
-    move-object p1, v0
-
-    :goto_0
     invoke-static {p0, p1}, Lj$/util/Comparator$-CC;->$default$thenComparingDouble(Ljava/util/Comparator;Lj$/util/function/ToDoubleFunction;)Ljava/util/Comparator;
 
     move-result-object p1
@@ -202,22 +192,12 @@
 .end method
 
 .method public synthetic thenComparingInt(Ljava/util/function/ToIntFunction;)Ljava/util/Comparator;
-    .locals 1
+    .locals 0
 
-    if-nez p1, :cond_0
+    invoke-static {p1}, Lj$/util/function/ToIntFunction$VivifiedWrapper;->convert(Ljava/util/function/ToIntFunction;)Lj$/util/function/ToIntFunction;
 
-    const/4 p1, 0x0
+    move-result-object p1
 
-    goto :goto_0
-
-    :cond_0
-    new-instance v0, Lj$/wrappers/i;
-
-    invoke-direct {v0, p1}, Lj$/wrappers/i;-><init>(Ljava/util/function/ToIntFunction;)V
-
-    move-object p1, v0
-
-    :goto_0
     invoke-static {p0, p1}, Lj$/util/Comparator$-CC;->$default$thenComparingInt(Ljava/util/Comparator;Lj$/util/function/ToIntFunction;)Ljava/util/Comparator;
 
     move-result-object p1
@@ -236,22 +216,12 @@
 .end method
 
 .method public synthetic thenComparingLong(Ljava/util/function/ToLongFunction;)Ljava/util/Comparator;
-    .locals 1
+    .locals 0
 
-    if-nez p1, :cond_0
+    invoke-static {p1}, Lj$/util/function/ToLongFunction$VivifiedWrapper;->convert(Ljava/util/function/ToLongFunction;)Lj$/util/function/ToLongFunction;
 
-    const/4 p1, 0x0
+    move-result-object p1
 
-    goto :goto_0
-
-    :cond_0
-    new-instance v0, Lj$/wrappers/i;
-
-    invoke-direct {v0, p1}, Lj$/wrappers/i;-><init>(Ljava/util/function/ToLongFunction;)V
-
-    move-object p1, v0
-
-    :goto_0
     invoke-static {p0, p1}, Lj$/util/Comparator$-CC;->$default$thenComparingLong(Ljava/util/Comparator;Lj$/util/function/ToLongFunction;)Ljava/util/Comparator;
 
     move-result-object p1

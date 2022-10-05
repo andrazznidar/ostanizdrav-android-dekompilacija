@@ -1,547 +1,232 @@
-.class final Lj$/util/stream/B3;
-.super Lj$/util/stream/d;
+.class abstract Lj$/util/stream/B3;
+.super Ljava/lang/Object;
 
 
 # instance fields
-.field private final j:Lj$/util/stream/c;
+.field final a:J
 
-.field private final k:Lj$/util/function/j;
+.field final b:J
 
-.field private final l:J
+.field c:Lj$/util/Spliterator;
 
-.field private final m:J
+.field d:J
 
-.field private n:J
-
-.field private volatile o:Z
+.field e:J
 
 
 # direct methods
-.method constructor <init>(Lj$/util/stream/B3;Lj$/util/Spliterator;)V
-    .locals 2
-
-    invoke-direct {p0, p1, p2}, Lj$/util/stream/d;-><init>(Lj$/util/stream/d;Lj$/util/Spliterator;)V
-
-    iget-object p2, p1, Lj$/util/stream/B3;->j:Lj$/util/stream/c;
-
-    iput-object p2, p0, Lj$/util/stream/B3;->j:Lj$/util/stream/c;
-
-    iget-object p2, p1, Lj$/util/stream/B3;->k:Lj$/util/function/j;
-
-    iput-object p2, p0, Lj$/util/stream/B3;->k:Lj$/util/function/j;
-
-    iget-wide v0, p1, Lj$/util/stream/B3;->l:J
-
-    iput-wide v0, p0, Lj$/util/stream/B3;->l:J
-
-    iget-wide p1, p1, Lj$/util/stream/B3;->m:J
-
-    iput-wide p1, p0, Lj$/util/stream/B3;->m:J
-
-    return-void
-.end method
-
-.method constructor <init>(Lj$/util/stream/c;Lj$/util/stream/z2;Lj$/util/Spliterator;Lj$/util/function/j;JJ)V
+.method constructor <init>(Lj$/util/Spliterator;JJJJ)V
     .locals 0
 
-    invoke-direct {p0, p2, p3}, Lj$/util/stream/d;-><init>(Lj$/util/stream/z2;Lj$/util/Spliterator;)V
+    invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
-    iput-object p1, p0, Lj$/util/stream/B3;->j:Lj$/util/stream/c;
+    iput-object p1, p0, Lj$/util/stream/B3;->c:Lj$/util/Spliterator;
 
-    iput-object p4, p0, Lj$/util/stream/B3;->k:Lj$/util/function/j;
+    iput-wide p2, p0, Lj$/util/stream/B3;->a:J
 
-    iput-wide p5, p0, Lj$/util/stream/B3;->l:J
+    iput-wide p4, p0, Lj$/util/stream/B3;->b:J
 
-    iput-wide p7, p0, Lj$/util/stream/B3;->m:J
+    iput-wide p6, p0, Lj$/util/stream/B3;->d:J
+
+    iput-wide p8, p0, Lj$/util/stream/B3;->e:J
 
     return-void
-.end method
-
-.method private m(J)J
-    .locals 4
-
-    iget-boolean v0, p0, Lj$/util/stream/B3;->o:Z
-
-    if-eqz v0, :cond_0
-
-    iget-wide p1, p0, Lj$/util/stream/B3;->n:J
-
-    return-wide p1
-
-    :cond_0
-    iget-object v0, p0, Lj$/util/stream/f;->d:Lj$/util/stream/f;
-
-    check-cast v0, Lj$/util/stream/B3;
-
-    iget-object v1, p0, Lj$/util/stream/f;->e:Lj$/util/stream/f;
-
-    check-cast v1, Lj$/util/stream/B3;
-
-    if-eqz v0, :cond_3
-
-    if-nez v1, :cond_1
-
-    goto :goto_1
-
-    :cond_1
-    invoke-direct {v0, p1, p2}, Lj$/util/stream/B3;->m(J)J
-
-    move-result-wide v2
-
-    cmp-long v0, v2, p1
-
-    if-ltz v0, :cond_2
-
-    goto :goto_0
-
-    :cond_2
-    invoke-direct {v1, p1, p2}, Lj$/util/stream/B3;->m(J)J
-
-    move-result-wide p1
-
-    add-long/2addr v2, p1
-
-    :goto_0
-    return-wide v2
-
-    :cond_3
-    :goto_1
-    iget-wide p1, p0, Lj$/util/stream/B3;->n:J
-
-    return-wide p1
 .end method
 
 
 # virtual methods
-.method protected a()Ljava/lang/Object;
-    .locals 4
+.method protected abstract b(Lj$/util/Spliterator;JJJJ)Lj$/util/Spliterator;
+.end method
 
-    invoke-virtual {p0}, Lj$/util/stream/f;->e()Z
+.method public characteristics()I
+    .locals 1
 
-    move-result v0
+    iget-object v0, p0, Lj$/util/stream/B3;->c:Lj$/util/Spliterator;
 
-    const-wide/16 v1, -0x1
-
-    if-eqz v0, :cond_1
-
-    sget-object v0, Lj$/util/stream/f4;->SIZED:Lj$/util/stream/f4;
-
-    iget-object v3, p0, Lj$/util/stream/B3;->j:Lj$/util/stream/c;
-
-    iget v3, v3, Lj$/util/stream/c;->c:I
-
-    invoke-virtual {v0, v3}, Lj$/util/stream/f4;->e(I)Z
+    invoke-interface {v0}, Lj$/util/Spliterator;->characteristics()I
 
     move-result v0
 
-    if-eqz v0, :cond_0
+    return v0
+.end method
 
-    iget-object v0, p0, Lj$/util/stream/B3;->j:Lj$/util/stream/c;
+.method public estimateSize()J
+    .locals 6
 
-    iget-object v1, p0, Lj$/util/stream/f;->b:Lj$/util/Spliterator;
+    iget-wide v0, p0, Lj$/util/stream/B3;->a:J
 
-    invoke-virtual {v0, v1}, Lj$/util/stream/c;->n0(Lj$/util/Spliterator;)J
+    iget-wide v2, p0, Lj$/util/stream/B3;->e:J
 
-    move-result-wide v1
+    cmp-long v4, v0, v2
 
-    :cond_0
-    iget-object v0, p0, Lj$/util/stream/B3;->j:Lj$/util/stream/c;
+    if-gez v4, :cond_0
 
-    iget-object v3, p0, Lj$/util/stream/B3;->k:Lj$/util/function/j;
+    iget-wide v4, p0, Lj$/util/stream/B3;->d:J
 
-    invoke-virtual {v0, v1, v2, v3}, Lj$/util/stream/z2;->q0(JLj$/util/function/j;)Lj$/util/stream/t1;
+    invoke-static {v0, v1, v4, v5}, Ljava/lang/Math;->max(JJ)J
 
-    move-result-object v0
+    move-result-wide v0
 
-    iget-object v1, p0, Lj$/util/stream/B3;->j:Lj$/util/stream/c;
-
-    iget-object v2, p0, Lj$/util/stream/f;->a:Lj$/util/stream/z2;
-
-    invoke-virtual {v2}, Lj$/util/stream/z2;->p0()I
-
-    move-result v2
-
-    invoke-virtual {v1, v2, v0}, Lj$/util/stream/c;->E0(ILj$/util/stream/n3;)Lj$/util/stream/n3;
-
-    move-result-object v1
-
-    iget-object v2, p0, Lj$/util/stream/f;->a:Lj$/util/stream/z2;
-
-    invoke-virtual {v2, v1}, Lj$/util/stream/z2;->s0(Lj$/util/stream/n3;)Lj$/util/stream/n3;
-
-    move-result-object v1
-
-    iget-object v3, p0, Lj$/util/stream/f;->b:Lj$/util/Spliterator;
-
-    invoke-virtual {v2, v1, v3}, Lj$/util/stream/z2;->l0(Lj$/util/stream/n3;Lj$/util/Spliterator;)V
-
-    invoke-interface {v0}, Lj$/util/stream/t1;->a()Lj$/util/stream/B1;
-
-    move-result-object v0
+    sub-long/2addr v2, v0
 
     goto :goto_0
 
-    :cond_1
-    iget-object v0, p0, Lj$/util/stream/f;->a:Lj$/util/stream/z2;
+    :cond_0
+    const-wide/16 v2, 0x0
 
-    iget-object v3, p0, Lj$/util/stream/B3;->k:Lj$/util/function/j;
+    :goto_0
+    return-wide v2
+.end method
 
-    invoke-virtual {v0, v1, v2, v3}, Lj$/util/stream/z2;->q0(JLj$/util/function/j;)Lj$/util/stream/t1;
+.method public bridge synthetic trySplit()Lj$/util/B;
+    .locals 1
 
-    move-result-object v1
-
-    iget-object v2, p0, Lj$/util/stream/f;->b:Lj$/util/Spliterator;
-
-    invoke-virtual {v0, v1, v2}, Lj$/util/stream/z2;->r0(Lj$/util/stream/n3;Lj$/util/Spliterator;)Lj$/util/stream/n3;
-
-    invoke-interface {v1}, Lj$/util/stream/t1;->a()Lj$/util/stream/B1;
+    invoke-virtual {p0}, Lj$/util/stream/B3;->trySplit()Lj$/util/Spliterator;
 
     move-result-object v0
 
-    invoke-interface {v0}, Lj$/util/stream/B1;->count()J
+    check-cast v0, Lj$/util/B;
 
-    move-result-wide v1
+    return-object v0
+.end method
 
-    iput-wide v1, p0, Lj$/util/stream/B3;->n:J
+.method public bridge synthetic trySplit()Lj$/util/D;
+    .locals 1
 
-    const/4 v1, 0x1
+    invoke-virtual {p0}, Lj$/util/stream/B3;->trySplit()Lj$/util/Spliterator;
 
-    iput-boolean v1, p0, Lj$/util/stream/B3;->o:Z
+    move-result-object v0
+
+    check-cast v0, Lj$/util/D;
+
+    return-object v0
+.end method
+
+.method public trySplit()Lj$/util/Spliterator;
+    .locals 12
+
+    iget-wide v0, p0, Lj$/util/stream/B3;->a:J
+
+    iget-wide v2, p0, Lj$/util/stream/B3;->e:J
+
+    cmp-long v0, v0, v2
 
     const/4 v1, 0x0
 
-    iput-object v1, p0, Lj$/util/stream/f;->b:Lj$/util/Spliterator;
+    if-ltz v0, :cond_0
 
-    :goto_0
-    return-object v0
-.end method
-
-.method protected f(Lj$/util/Spliterator;)Lj$/util/stream/f;
-    .locals 1
-
-    new-instance v0, Lj$/util/stream/B3;
-
-    invoke-direct {v0, p0, p1}, Lj$/util/stream/B3;-><init>(Lj$/util/stream/B3;Lj$/util/Spliterator;)V
-
-    return-object v0
-.end method
-
-.method protected i()V
-    .locals 1
-
-    const/4 v0, 0x1
-
-    iput-boolean v0, p0, Lj$/util/stream/d;->i:Z
-
-    iget-boolean v0, p0, Lj$/util/stream/B3;->o:Z
-
-    if-eqz v0, :cond_0
-
-    invoke-virtual {p0}, Lj$/util/stream/B3;->n()Lj$/util/stream/B1;
-
-    move-result-object v0
-
-    invoke-virtual {p0, v0}, Lj$/util/stream/d;->g(Ljava/lang/Object;)V
+    return-object v1
 
     :cond_0
-    return-void
-.end method
+    iget-wide v4, p0, Lj$/util/stream/B3;->d:J
 
-.method protected bridge synthetic k()Ljava/lang/Object;
-    .locals 1
+    cmp-long v0, v4, v2
 
-    invoke-virtual {p0}, Lj$/util/stream/B3;->n()Lj$/util/stream/B1;
+    if-ltz v0, :cond_1
 
-    move-result-object v0
+    return-object v1
 
-    return-object v0
-.end method
-
-.method protected final n()Lj$/util/stream/B1;
-    .locals 1
-
-    iget-object v0, p0, Lj$/util/stream/B3;->j:Lj$/util/stream/c;
-
-    invoke-virtual {v0}, Lj$/util/stream/c;->y0()Lj$/util/stream/g4;
-
-    move-result-object v0
-
-    invoke-static {v0}, Lj$/util/stream/y2;->k(Lj$/util/stream/g4;)Lj$/util/stream/B1;
-
-    move-result-object v0
-
-    return-object v0
-.end method
-
-.method public final onCompletion(Ljava/util/concurrent/CountedCompleter;)V
-    .locals 11
-
-    invoke-virtual {p0}, Lj$/util/stream/f;->d()Z
-
-    move-result p1
-
-    const/4 v0, 0x1
-
-    const-wide/16 v1, 0x0
-
-    if-nez p1, :cond_5
-
-    iget-object p1, p0, Lj$/util/stream/f;->d:Lj$/util/stream/f;
-
-    check-cast p1, Lj$/util/stream/B3;
-
-    iget-wide v3, p1, Lj$/util/stream/B3;->n:J
-
-    iget-object p1, p0, Lj$/util/stream/f;->e:Lj$/util/stream/f;
-
-    check-cast p1, Lj$/util/stream/B3;
-
-    iget-wide v5, p1, Lj$/util/stream/B3;->n:J
-
-    add-long/2addr v3, v5
-
-    iput-wide v3, p0, Lj$/util/stream/B3;->n:J
-
-    iget-boolean p1, p0, Lj$/util/stream/d;->i:Z
-
-    if-eqz p1, :cond_0
-
-    iput-wide v1, p0, Lj$/util/stream/B3;->n:J
-
+    :cond_1
     :goto_0
-    invoke-virtual {p0}, Lj$/util/stream/B3;->n()Lj$/util/stream/B1;
+    iget-object v0, p0, Lj$/util/stream/B3;->c:Lj$/util/Spliterator;
 
-    move-result-object p1
+    invoke-interface {v0}, Lj$/util/Spliterator;->trySplit()Lj$/util/Spliterator;
 
-    :goto_1
-    move-object v3, p1
+    move-result-object v3
 
-    goto :goto_2
+    if-nez v3, :cond_2
 
-    :cond_0
-    iget-wide v3, p0, Lj$/util/stream/B3;->n:J
+    return-object v1
 
-    cmp-long p1, v3, v1
+    :cond_2
+    iget-wide v4, p0, Lj$/util/stream/B3;->d:J
 
-    if-nez p1, :cond_1
+    invoke-interface {v3}, Lj$/util/Spliterator;->estimateSize()J
+
+    move-result-wide v6
+
+    add-long/2addr v6, v4
+
+    iget-wide v4, p0, Lj$/util/stream/B3;->b:J
+
+    invoke-static {v6, v7, v4, v5}, Ljava/lang/Math;->min(JJ)J
+
+    move-result-wide v10
+
+    iget-wide v4, p0, Lj$/util/stream/B3;->a:J
+
+    cmp-long v0, v4, v10
+
+    if-ltz v0, :cond_3
+
+    iput-wide v10, p0, Lj$/util/stream/B3;->d:J
 
     goto :goto_0
 
-    :cond_1
-    iget-object p1, p0, Lj$/util/stream/f;->d:Lj$/util/stream/f;
-
-    check-cast p1, Lj$/util/stream/B3;
-
-    iget-wide v3, p1, Lj$/util/stream/B3;->n:J
-
-    cmp-long p1, v3, v1
-
-    if-nez p1, :cond_2
-
-    iget-object p1, p0, Lj$/util/stream/f;->e:Lj$/util/stream/f;
-
-    check-cast p1, Lj$/util/stream/B3;
-
-    invoke-virtual {p1}, Lj$/util/stream/d;->b()Ljava/lang/Object;
-
-    move-result-object p1
-
-    check-cast p1, Lj$/util/stream/B1;
-
-    goto :goto_1
-
-    :cond_2
-    iget-object p1, p0, Lj$/util/stream/B3;->j:Lj$/util/stream/c;
-
-    invoke-virtual {p1}, Lj$/util/stream/c;->y0()Lj$/util/stream/g4;
-
-    move-result-object p1
-
-    iget-object v3, p0, Lj$/util/stream/f;->d:Lj$/util/stream/f;
-
-    check-cast v3, Lj$/util/stream/B3;
-
-    invoke-virtual {v3}, Lj$/util/stream/d;->b()Ljava/lang/Object;
-
-    move-result-object v3
-
-    check-cast v3, Lj$/util/stream/B1;
-
-    iget-object v4, p0, Lj$/util/stream/f;->e:Lj$/util/stream/f;
-
-    check-cast v4, Lj$/util/stream/B3;
-
-    invoke-virtual {v4}, Lj$/util/stream/d;->b()Ljava/lang/Object;
-
-    move-result-object v4
-
-    check-cast v4, Lj$/util/stream/B1;
-
-    invoke-static {p1, v3, v4}, Lj$/util/stream/y2;->i(Lj$/util/stream/g4;Lj$/util/stream/B1;Lj$/util/stream/B1;)Lj$/util/stream/B1;
-
-    move-result-object p1
-
-    goto :goto_1
-
-    :goto_2
-    invoke-virtual {p0}, Lj$/util/stream/f;->e()Z
-
-    move-result p1
-
-    if-eqz p1, :cond_4
-
-    iget-wide v4, p0, Lj$/util/stream/B3;->m:J
-
-    cmp-long p1, v4, v1
-
-    if-ltz p1, :cond_3
-
-    invoke-interface {v3}, Lj$/util/stream/B1;->count()J
-
-    move-result-wide v4
-
-    iget-wide v6, p0, Lj$/util/stream/B3;->l:J
-
-    iget-wide v8, p0, Lj$/util/stream/B3;->m:J
-
-    add-long/2addr v6, v8
-
-    invoke-static {v4, v5, v6, v7}, Ljava/lang/Math;->min(JJ)J
-
-    move-result-wide v4
-
-    goto :goto_3
-
     :cond_3
-    iget-wide v4, p0, Lj$/util/stream/B3;->n:J
+    iget-wide v8, p0, Lj$/util/stream/B3;->b:J
 
-    :goto_3
-    move-wide v6, v4
+    cmp-long v0, v10, v8
 
-    iget-wide v4, p0, Lj$/util/stream/B3;->l:J
+    if-ltz v0, :cond_4
 
-    iget-object v8, p0, Lj$/util/stream/B3;->k:Lj$/util/function/j;
+    iput-object v3, p0, Lj$/util/stream/B3;->c:Lj$/util/Spliterator;
 
-    invoke-interface/range {v3 .. v8}, Lj$/util/stream/B1;->p(JJLj$/util/function/j;)Lj$/util/stream/B1;
+    iput-wide v10, p0, Lj$/util/stream/B3;->e:J
 
-    move-result-object v3
+    goto :goto_0
 
     :cond_4
-    invoke-virtual {p0, v3}, Lj$/util/stream/d;->g(Ljava/lang/Object;)V
+    iget-wide v0, p0, Lj$/util/stream/B3;->d:J
 
-    iput-boolean v0, p0, Lj$/util/stream/B3;->o:Z
+    cmp-long v2, v0, v4
+
+    if-ltz v2, :cond_5
+
+    cmp-long v2, v6, v8
+
+    if-gtz v2, :cond_5
+
+    iput-wide v10, p0, Lj$/util/stream/B3;->d:J
+
+    return-object v3
 
     :cond_5
-    iget-wide v3, p0, Lj$/util/stream/B3;->m:J
+    iput-wide v10, p0, Lj$/util/stream/B3;->d:J
 
-    cmp-long p1, v3, v1
+    move-object v2, p0
 
-    if-ltz p1, :cond_b
+    move-wide v6, v8
 
-    invoke-virtual {p0}, Lj$/util/stream/f;->e()Z
+    move-wide v8, v0
 
-    move-result p1
+    invoke-virtual/range {v2 .. v11}, Lj$/util/stream/B3;->b(Lj$/util/Spliterator;JJJJ)Lj$/util/Spliterator;
 
-    if-nez p1, :cond_b
+    move-result-object v0
 
-    iget-wide v1, p0, Lj$/util/stream/B3;->l:J
+    return-object v0
+.end method
 
-    iget-wide v3, p0, Lj$/util/stream/B3;->m:J
+.method public bridge synthetic trySplit()Lj$/util/x;
+    .locals 1
 
-    add-long/2addr v1, v3
+    invoke-virtual {p0}, Lj$/util/stream/B3;->trySplit()Lj$/util/Spliterator;
 
-    iget-boolean p1, p0, Lj$/util/stream/B3;->o:Z
+    move-result-object v0
 
-    if-eqz p1, :cond_6
+    check-cast v0, Lj$/util/x;
 
-    iget-wide v3, p0, Lj$/util/stream/B3;->n:J
+    return-object v0
+.end method
 
-    goto :goto_4
+.method public bridge synthetic trySplit()Lj$/util/z;
+    .locals 1
 
-    :cond_6
-    invoke-direct {p0, v1, v2}, Lj$/util/stream/B3;->m(J)J
+    invoke-virtual {p0}, Lj$/util/stream/B3;->trySplit()Lj$/util/Spliterator;
 
-    move-result-wide v3
+    move-result-object v0
 
-    :goto_4
-    cmp-long p1, v3, v1
+    check-cast v0, Lj$/util/z;
 
-    if-ltz p1, :cond_7
-
-    goto :goto_6
-
-    :cond_7
-    invoke-virtual {p0}, Lj$/util/stream/f;->c()Lj$/util/stream/f;
-
-    move-result-object p1
-
-    check-cast p1, Lj$/util/stream/B3;
-
-    move-object v5, p0
-
-    :goto_5
-    if-eqz p1, :cond_9
-
-    iget-object v6, p1, Lj$/util/stream/f;->e:Lj$/util/stream/f;
-
-    if-ne v5, v6, :cond_8
-
-    iget-object v5, p1, Lj$/util/stream/f;->d:Lj$/util/stream/f;
-
-    check-cast v5, Lj$/util/stream/B3;
-
-    if-eqz v5, :cond_8
-
-    invoke-direct {v5, v1, v2}, Lj$/util/stream/B3;->m(J)J
-
-    move-result-wide v5
-
-    add-long/2addr v3, v5
-
-    cmp-long v5, v3, v1
-
-    if-ltz v5, :cond_8
-
-    goto :goto_6
-
-    :cond_8
-    invoke-virtual {p1}, Lj$/util/stream/f;->c()Lj$/util/stream/f;
-
-    move-result-object v5
-
-    check-cast v5, Lj$/util/stream/B3;
-
-    move-object v10, v5
-
-    move-object v5, p1
-
-    move-object p1, v10
-
-    goto :goto_5
-
-    :cond_9
-    cmp-long p1, v3, v1
-
-    if-ltz p1, :cond_a
-
-    goto :goto_6
-
-    :cond_a
-    const/4 v0, 0x0
-
-    :goto_6
-    if-eqz v0, :cond_b
-
-    invoke-virtual {p0}, Lj$/util/stream/d;->j()V
-
-    :cond_b
-    const/4 p1, 0x0
-
-    iput-object p1, p0, Lj$/util/stream/f;->b:Lj$/util/Spliterator;
-
-    iput-object p1, p0, Lj$/util/stream/f;->e:Lj$/util/stream/f;
-
-    iput-object p1, p0, Lj$/util/stream/f;->d:Lj$/util/stream/f;
-
-    return-void
+    return-object v0
 .end method

@@ -21,7 +21,8 @@
         "Lcom/google/crypto/tink/shaded/protobuf/GeneratedMessageLite$Builder<",
         "Lcom/google/crypto/tink/proto/AesEaxKeyFormat;",
         "Lcom/google/crypto/tink/proto/AesEaxKeyFormat$Builder;",
-        ">;"
+        ">;",
+        "Lcom/google/crypto/tink/shaded/protobuf/MessageLiteOrBuilder;"
     }
 .end annotation
 

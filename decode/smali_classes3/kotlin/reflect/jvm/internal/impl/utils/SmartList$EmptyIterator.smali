@@ -1,4 +1,4 @@
-.class public Lkotlin/reflect/jvm/internal/impl/utils/SmartList$EmptyIterator;
+.class Lkotlin/reflect/jvm/internal/impl/utils/SmartList$EmptyIterator;
 .super Ljava/lang/Object;
 .source "SmartList.java"
 
@@ -31,7 +31,7 @@
 
 
 # static fields
-.field public static final INSTANCE:Lkotlin/reflect/jvm/internal/impl/utils/SmartList$EmptyIterator;
+.field private static final INSTANCE:Lkotlin/reflect/jvm/internal/impl/utils/SmartList$EmptyIterator;
 
 
 # direct methods
@@ -47,12 +47,29 @@
     return-void
 .end method
 
-.method public constructor <init>()V
+.method private constructor <init>()V
     .locals 0
 
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
     return-void
+.end method
+
+.method public static getInstance()Lkotlin/reflect/jvm/internal/impl/utils/SmartList$EmptyIterator;
+    .locals 1
+    .annotation system Ldalvik/annotation/Signature;
+        value = {
+            "<T:",
+            "Ljava/lang/Object;",
+            ">()",
+            "Lkotlin/reflect/jvm/internal/impl/utils/SmartList$EmptyIterator<",
+            "TT;>;"
+        }
+    .end annotation
+
+    sget-object v0, Lkotlin/reflect/jvm/internal/impl/utils/SmartList$EmptyIterator;->INSTANCE:Lkotlin/reflect/jvm/internal/impl/utils/SmartList$EmptyIterator;
+
+    return-object v0
 .end method
 
 
@@ -61,6 +78,18 @@
     .locals 0
 
     invoke-static {p0, p1}, Lj$/util/Iterator$-CC;->$default$forEachRemaining(Ljava/util/Iterator;Lj$/util/function/Consumer;)V
+
+    return-void
+.end method
+
+.method public synthetic forEachRemaining(Ljava/util/function/Consumer;)V
+    .locals 0
+
+    invoke-static {p1}, Lj$/util/function/Consumer$VivifiedWrapper;->convert(Ljava/util/function/Consumer;)Lj$/util/function/Consumer;
+
+    move-result-object p1
+
+    invoke-virtual {p0, p1}, Lkotlin/reflect/jvm/internal/impl/utils/SmartList$EmptyIterator;->forEachRemaining(Lj$/util/function/Consumer;)V
 
     return-void
 .end method

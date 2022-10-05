@@ -18,6 +18,9 @@
 .method public abstract getSavedStateKey()Ljava/lang/String;
 .end method
 
+.method public abstract onInitialPostBind()Z
+.end method
+
 .method public abstract onSaveState()Landroid/os/Parcelable;
 .end method
 

@@ -24,7 +24,7 @@
 
 # direct methods
 .method public static constructor <clinit>()V
-    .locals 11
+    .locals 10
 
     const-class v0, Ljava/lang/Throwable;
 
@@ -42,85 +42,71 @@
 
     move v4, v3
 
-    :goto_0
-    const-string v5, "it"
-
-    const/4 v6, 0x0
+    :cond_0
+    const/4 v5, 0x0
 
     if-ge v4, v2, :cond_3
 
-    aget-object v7, v1, v4
+    aget-object v6, v1, v4
 
-    invoke-static {v7, v5}, Lkotlin/jvm/internal/Intrinsics;->checkNotNullExpressionValue(Ljava/lang/Object;Ljava/lang/String;)V
+    add-int/lit8 v4, v4, 0x1
 
-    invoke-virtual {v7}, Ljava/lang/reflect/Method;->getName()Ljava/lang/String;
+    invoke-virtual {v6}, Ljava/lang/reflect/Method;->getName()Ljava/lang/String;
 
-    move-result-object v8
+    move-result-object v7
 
-    const-string v9, "addSuppressed"
+    const-string v8, "addSuppressed"
 
-    invoke-static {v8, v9}, Lkotlin/jvm/internal/Intrinsics;->areEqual(Ljava/lang/Object;Ljava/lang/Object;)Z
+    invoke-static {v7, v8}, Lkotlin/jvm/internal/Intrinsics;->areEqual(Ljava/lang/Object;Ljava/lang/Object;)Z
 
-    move-result v8
+    move-result v7
 
-    const/4 v9, 0x1
+    const/4 v8, 0x1
 
-    if-eqz v8, :cond_1
+    if-eqz v7, :cond_2
 
-    invoke-virtual {v7}, Ljava/lang/reflect/Method;->getParameterTypes()[Ljava/lang/Class;
+    invoke-virtual {v6}, Ljava/lang/reflect/Method;->getParameterTypes()[Ljava/lang/Class;
 
-    move-result-object v8
+    move-result-object v7
 
-    const-string v10, "it.parameterTypes"
+    const-string v9, "it.parameterTypes"
 
-    invoke-static {v8, v10}, Lkotlin/jvm/internal/Intrinsics;->checkNotNullExpressionValue(Ljava/lang/Object;Ljava/lang/String;)V
+    invoke-static {v7, v9}, Lkotlin/jvm/internal/Intrinsics;->checkNotNullExpressionValue(Ljava/lang/Object;Ljava/lang/String;)V
 
-    const-string v10, "$this$singleOrNull"
+    array-length v9, v7
 
-    invoke-static {v8, v10}, Lkotlin/jvm/internal/Intrinsics;->checkNotNullParameter(Ljava/lang/Object;Ljava/lang/String;)V
+    if-ne v9, v8, :cond_1
 
-    array-length v10, v8
-
-    if-ne v10, v9, :cond_0
-
-    aget-object v6, v8, v3
-
-    :cond_0
-    invoke-static {v6, v0}, Lkotlin/jvm/internal/Intrinsics;->areEqual(Ljava/lang/Object;Ljava/lang/Object;)Z
-
-    move-result v6
-
-    if-eqz v6, :cond_1
-
-    goto :goto_1
+    aget-object v5, v7, v3
 
     :cond_1
-    move v9, v3
+    invoke-static {v5, v0}, Lkotlin/jvm/internal/Intrinsics;->areEqual(Ljava/lang/Object;Ljava/lang/Object;)Z
 
-    :goto_1
-    if-eqz v9, :cond_2
+    move-result v5
 
-    move-object v6, v7
-
-    goto :goto_2
-
-    :cond_2
-    add-int/lit8 v4, v4, 0x1
+    if-eqz v5, :cond_2
 
     goto :goto_0
 
+    :cond_2
+    move v8, v3
+
+    :goto_0
+    if-eqz v8, :cond_0
+
+    move-object v5, v6
+
     :cond_3
-    :goto_2
-    sput-object v6, Lkotlin/internal/PlatformImplementations$ReflectThrowable;->addSuppressed:Ljava/lang/reflect/Method;
+    sput-object v5, Lkotlin/internal/PlatformImplementations$ReflectThrowable;->addSuppressed:Ljava/lang/reflect/Method;
 
     array-length v0, v1
 
-    :goto_3
+    :cond_4
     if-ge v3, v0, :cond_5
 
     aget-object v2, v1, v3
 
-    invoke-static {v2, v5}, Lkotlin/jvm/internal/Intrinsics;->checkNotNullExpressionValue(Ljava/lang/Object;Ljava/lang/String;)V
+    add-int/lit8 v3, v3, 0x1
 
     invoke-virtual {v2}, Ljava/lang/reflect/Method;->getName()Ljava/lang/String;
 
@@ -134,14 +120,6 @@
 
     if-eqz v2, :cond_4
 
-    goto :goto_4
-
-    :cond_4
-    add-int/lit8 v3, v3, 0x1
-
-    goto :goto_3
-
     :cond_5
-    :goto_4
     return-void
 .end method

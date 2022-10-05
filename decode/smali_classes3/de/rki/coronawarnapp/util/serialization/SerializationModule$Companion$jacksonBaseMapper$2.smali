@@ -20,7 +20,7 @@
     value = {
         "Lkotlin/jvm/internal/Lambda;",
         "Lkotlin/jvm/functions/Function0<",
-        "Lcom/fasterxml/jackson/databind/ObjectMapper;",
+        "Lcom/fasterxml/jackson/databind/json/JsonMapper;",
         ">;"
     }
 .end annotation
@@ -56,13 +56,23 @@
 
 # virtual methods
 .method public invoke()Ljava/lang/Object;
-    .locals 2
+    .locals 3
 
-    new-instance v0, Lcom/fasterxml/jackson/databind/ObjectMapper;
+    sget-object v0, Lde/rki/coronawarnapp/util/serialization/SerializationModule$Companion$jacksonBaseMapper$2$1;->INSTANCE:Lde/rki/coronawarnapp/util/serialization/SerializationModule$Companion$jacksonBaseMapper$2$1;
 
-    const/4 v1, 0x0
+    const-string v1, "initializer"
 
-    invoke-direct {v0, v1, v1, v1}, Lcom/fasterxml/jackson/databind/ObjectMapper;-><init>(Lcom/fasterxml/jackson/core/JsonFactory;Lcom/fasterxml/jackson/databind/ser/DefaultSerializerProvider;Lcom/fasterxml/jackson/databind/deser/DefaultDeserializationContext;)V
+    invoke-static {v0, v1}, Lkotlin/jvm/internal/Intrinsics;->checkNotNullParameter(Ljava/lang/Object;Ljava/lang/String;)V
 
-    return-object v0
+    new-instance v1, Lcom/fasterxml/jackson/databind/json/JsonMapper$Builder;
+
+    new-instance v2, Lcom/fasterxml/jackson/databind/json/JsonMapper;
+
+    invoke-direct {v2}, Lcom/fasterxml/jackson/databind/json/JsonMapper;-><init>()V
+
+    invoke-direct {v1, v2}, Lcom/fasterxml/jackson/databind/json/JsonMapper$Builder;-><init>(Lcom/fasterxml/jackson/databind/json/JsonMapper;)V
+
+    invoke-virtual {v0, v1}, Lde/rki/coronawarnapp/util/serialization/SerializationModule$Companion$jacksonBaseMapper$2$1;->invoke(Ljava/lang/Object;)Ljava/lang/Object;
+
+    return-object v2
 .end method

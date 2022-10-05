@@ -8,7 +8,7 @@
 
 # annotations
 .annotation system Ldalvik/annotation/SourceDebugExtension;
-    value = "SMAP\nTestCertificateContainer.kt\nKotlin\n*S Kotlin\n*F\n+ 1 TestCertificateContainer.kt\nde/rki/coronawarnapp/covidcertificate/test/core/storage/TestCertificateContainer$toTestCertificate$1\n+ 2 fake.kt\nkotlin/jvm/internal/FakeKt\n*L\n1#1,174:1\n1#2:175\n*E\n"
+    value = "SMAP\nTestCertificateContainer.kt\nKotlin\n*S Kotlin\n*F\n+ 1 TestCertificateContainer.kt\nde/rki/coronawarnapp/covidcertificate/test/core/storage/TestCertificateContainer$toTestCertificate$1\n+ 2 fake.kt\nkotlin/jvm/internal/FakeKt\n*L\n1#1,190:1\n1#2:191\n*E\n"
 .end annotation
 
 
@@ -24,6 +24,8 @@
 .field public final synthetic $userLocale:Ljava/util/Locale;
 
 .field public final synthetic $valueSet:Lde/rki/coronawarnapp/covidcertificate/valueset/valuesets/TestCertificateValueSets;
+
+.field public final qrCodeHash$delegate:Lkotlin/Lazy;
 
 .field public final qrCodeToDisplay:Lde/rki/coronawarnapp/util/qrcode/coil/CoilQrCode;
 
@@ -49,6 +51,16 @@
     iput-object p7, p0, Lde/rki/coronawarnapp/covidcertificate/test/core/storage/TestCertificateContainer$toTestCertificate$1;->$header:Lde/rki/coronawarnapp/covidcertificate/common/certificate/DccHeader;
 
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
+
+    new-instance p2, Lde/rki/coronawarnapp/covidcertificate/test/core/storage/TestCertificateContainer$toTestCertificate$1$qrCodeHash$2;
+
+    invoke-direct {p2, p1}, Lde/rki/coronawarnapp/covidcertificate/test/core/storage/TestCertificateContainer$toTestCertificate$1$qrCodeHash$2;-><init>(Lde/rki/coronawarnapp/covidcertificate/test/core/storage/TestCertificateContainer;)V
+
+    invoke-static {p2}, Lkotlin/LazyKt__LazyJVMKt;->lazy(Lkotlin/jvm/functions/Function0;)Lkotlin/Lazy;
+
+    move-result-object p2
+
+    iput-object p2, p0, Lde/rki/coronawarnapp/covidcertificate/test/core/storage/TestCertificateContainer$toTestCertificate$1;->qrCodeHash$delegate:Lkotlin/Lazy;
 
     iget-object p2, p1, Lde/rki/coronawarnapp/covidcertificate/test/core/storage/TestCertificateContainer;->data:Lde/rki/coronawarnapp/covidcertificate/test/core/storage/types/BaseTestCertificateData;
 
@@ -86,17 +98,13 @@
 
     move-result-object v2
 
-    const-string v3, "null cannot be cast to non-null type java.lang.String"
-
-    invoke-static {v2, v3}, Ljava/util/Objects;->requireNonNull(Ljava/lang/Object;Ljava/lang/String;)Ljava/lang/Object;
-
     sget-object v3, Ljava/util/Locale;->ROOT:Ljava/util/Locale;
 
     invoke-virtual {v2, v3}, Ljava/lang/String;->toUpperCase(Ljava/util/Locale;)Ljava/lang/String;
 
     move-result-object v2
 
-    const-string v3, "(this as java.lang.Strin\u2026.toUpperCase(Locale.ROOT)"
+    const-string/jumbo v3, "this as java.lang.String).toUpperCase(Locale.ROOT)"
 
     invoke-static {v2, v3}, Lkotlin/jvm/internal/Intrinsics;->checkNotNullExpressionValue(Ljava/lang/Object;Ljava/lang/String;)V
 
@@ -111,18 +119,6 @@
     const-string v1, "Locale(userLocale.langua\u2026isplayCountry(userLocale)"
 
     invoke-static {v0, v1}, Lkotlin/jvm/internal/Intrinsics;->checkNotNullExpressionValue(Ljava/lang/Object;Ljava/lang/String;)V
-
-    return-object v0
-.end method
-
-.method public getCertificateId()Ljava/lang/String;
-    .locals 1
-
-    iget-object v0, p0, Lde/rki/coronawarnapp/covidcertificate/test/core/storage/TestCertificateContainer$toTestCertificate$1;->$testCertificate:Lde/rki/coronawarnapp/covidcertificate/common/certificate/DccV1$TestCertificateData;
-
-    invoke-virtual {v0}, Lde/rki/coronawarnapp/covidcertificate/common/certificate/DccV1$TestCertificateData;->getUniqueCertificateIdentifier()Ljava/lang/String;
-
-    move-result-object v0
 
     return-object v0
 .end method
@@ -314,6 +310,16 @@
     return-object v0
 .end method
 
+.method public getHeaderIssuer()Ljava/lang/String;
+    .locals 1
+
+    iget-object v0, p0, Lde/rki/coronawarnapp/covidcertificate/test/core/storage/TestCertificateContainer$toTestCertificate$1;->$header:Lde/rki/coronawarnapp/covidcertificate/common/certificate/DccHeader;
+
+    iget-object v0, v0, Lde/rki/coronawarnapp/covidcertificate/common/certificate/DccHeader;->issuer:Ljava/lang/String;
+
+    return-object v0
+.end method
+
 .method public getLastName()Ljava/lang/String;
     .locals 1
 
@@ -328,12 +334,22 @@
     return-object v0
 .end method
 
-.method public getNotifiedExpiredAt()Lorg/joda/time/Instant;
+.method public getNotifiedBlockedAt()Lorg/joda/time/Instant;
     .locals 1
 
-    const-string/jumbo v0, "this"
+    iget-object v0, p0, Lde/rki/coronawarnapp/covidcertificate/test/core/storage/TestCertificateContainer$toTestCertificate$1;->this$0:Lde/rki/coronawarnapp/covidcertificate/test/core/storage/TestCertificateContainer;
 
-    invoke-static {p0, v0}, Lkotlin/jvm/internal/Intrinsics;->checkNotNullParameter(Ljava/lang/Object;Ljava/lang/String;)V
+    iget-object v0, v0, Lde/rki/coronawarnapp/covidcertificate/test/core/storage/TestCertificateContainer;->data:Lde/rki/coronawarnapp/covidcertificate/test/core/storage/types/BaseTestCertificateData;
+
+    invoke-virtual {v0}, Lde/rki/coronawarnapp/covidcertificate/test/core/storage/types/BaseTestCertificateData;->getNotifiedBlockedAt()Lorg/joda/time/Instant;
+
+    move-result-object v0
+
+    return-object v0
+.end method
+
+.method public getNotifiedExpiredAt()Lorg/joda/time/Instant;
+    .locals 1
 
     const/4 v0, 0x0
 
@@ -342,10 +358,6 @@
 
 .method public getNotifiedExpiresSoonAt()Lorg/joda/time/Instant;
     .locals 1
-
-    const-string/jumbo v0, "this"
-
-    invoke-static {p0, v0}, Lkotlin/jvm/internal/Intrinsics;->checkNotNullParameter(Ljava/lang/Object;Ljava/lang/String;)V
 
     const/4 v0, 0x0
 
@@ -376,6 +388,20 @@
     return-object v0
 .end method
 
+.method public getQrCodeHash()Ljava/lang/String;
+    .locals 1
+
+    iget-object v0, p0, Lde/rki/coronawarnapp/covidcertificate/test/core/storage/TestCertificateContainer$toTestCertificate$1;->qrCodeHash$delegate:Lkotlin/Lazy;
+
+    invoke-interface {v0}, Lkotlin/Lazy;->getValue()Ljava/lang/Object;
+
+    move-result-object v0
+
+    check-cast v0, Ljava/lang/String;
+
+    return-object v0
+.end method
+
 .method public getQrCodeToDisplay()Lde/rki/coronawarnapp/util/qrcode/coil/CoilQrCode;
     .locals 1
 
@@ -384,10 +410,32 @@
     return-object v0
 .end method
 
+.method public getRawCertificate()Lde/rki/coronawarnapp/covidcertificate/common/certificate/DccV1$MetaData;
+    .locals 1
+
+    iget-object v0, p0, Lde/rki/coronawarnapp/covidcertificate/test/core/storage/TestCertificateContainer$toTestCertificate$1;->$certificate:Lde/rki/coronawarnapp/covidcertificate/common/certificate/TestDccV1;
+
+    return-object v0
+.end method
+
 .method public getRawCertificate()Lde/rki/coronawarnapp/covidcertificate/common/certificate/TestDccV1;
     .locals 1
 
     iget-object v0, p0, Lde/rki/coronawarnapp/covidcertificate/test/core/storage/TestCertificateContainer$toTestCertificate$1;->$certificate:Lde/rki/coronawarnapp/covidcertificate/common/certificate/TestDccV1;
+
+    return-object v0
+.end method
+
+.method public getRecycledAt()Lorg/joda/time/Instant;
+    .locals 1
+
+    iget-object v0, p0, Lde/rki/coronawarnapp/covidcertificate/test/core/storage/TestCertificateContainer$toTestCertificate$1;->this$0:Lde/rki/coronawarnapp/covidcertificate/test/core/storage/TestCertificateContainer;
+
+    iget-object v0, v0, Lde/rki/coronawarnapp/covidcertificate/test/core/storage/TestCertificateContainer;->data:Lde/rki/coronawarnapp/covidcertificate/test/core/storage/types/BaseTestCertificateData;
+
+    invoke-virtual {v0}, Lde/rki/coronawarnapp/covidcertificate/test/core/storage/types/BaseTestCertificateData;->getRecycledAt()Lorg/joda/time/Instant;
+
+    move-result-object v0
 
     return-object v0
 .end method
@@ -617,12 +665,34 @@
     return-object v0
 .end method
 
+.method public getUniqueCertificateIdentifier()Ljava/lang/String;
+    .locals 1
+
+    iget-object v0, p0, Lde/rki/coronawarnapp/covidcertificate/test/core/storage/TestCertificateContainer$toTestCertificate$1;->$testCertificate:Lde/rki/coronawarnapp/covidcertificate/common/certificate/DccV1$TestCertificateData;
+
+    invoke-virtual {v0}, Lde/rki/coronawarnapp/covidcertificate/common/certificate/DccV1$TestCertificateData;->getUniqueCertificateIdentifier()Ljava/lang/String;
+
+    move-result-object v0
+
+    return-object v0
+.end method
+
 .method public isCertificateRetrievalPending()Z
     .locals 1
 
     iget-object v0, p0, Lde/rki/coronawarnapp/covidcertificate/test/core/storage/TestCertificateContainer$toTestCertificate$1;->this$0:Lde/rki/coronawarnapp/covidcertificate/test/core/storage/TestCertificateContainer;
 
     invoke-virtual {v0}, Lde/rki/coronawarnapp/covidcertificate/test/core/storage/TestCertificateContainer;->isCertificateRetrievalPending()Z
+
+    move-result v0
+
+    return v0
+.end method
+
+.method public isDisplayValid()Z
+    .locals 1
+
+    invoke-static {p0}, Lde/rki/coronawarnapp/covidcertificate/common/certificate/CwaCovidCertificate$DefaultImpls;->isDisplayValid(Lde/rki/coronawarnapp/covidcertificate/common/certificate/CwaCovidCertificate;)Z
 
     move-result v0
 
@@ -661,14 +731,54 @@
     return v0
 .end method
 
-.method public isValid()Z
+.method public isNotBlocked()Z
     .locals 1
 
-    const-string/jumbo v0, "this"
+    invoke-static {p0}, Lde/rki/coronawarnapp/covidcertificate/common/certificate/CwaCovidCertificate$DefaultImpls;->isNotBlocked(Lde/rki/coronawarnapp/covidcertificate/common/certificate/CwaCovidCertificate;)Z
 
-    invoke-static {p0, v0}, Lkotlin/jvm/internal/Intrinsics;->checkNotNullParameter(Ljava/lang/Object;Ljava/lang/String;)V
+    move-result v0
 
-    invoke-static {p0}, Lde/rki/coronawarnapp/covidcertificate/common/certificate/CwaCovidCertificate$DefaultImpls;->isValid(Lde/rki/coronawarnapp/covidcertificate/common/certificate/CwaCovidCertificate;)Z
+    return v0
+.end method
+
+.method public isPCRTestCertificate()Z
+    .locals 2
+
+    invoke-interface {p0}, Lde/rki/coronawarnapp/covidcertificate/test/core/TestCertificate;->getRawCertificate()Lde/rki/coronawarnapp/covidcertificate/common/certificate/TestDccV1;
+
+    move-result-object v0
+
+    iget-object v0, v0, Lde/rki/coronawarnapp/covidcertificate/common/certificate/TestDccV1;->test:Lde/rki/coronawarnapp/covidcertificate/common/certificate/DccV1$TestCertificateData;
+
+    invoke-virtual {v0}, Lde/rki/coronawarnapp/covidcertificate/common/certificate/DccV1$TestCertificateData;->getTestType()Ljava/lang/String;
+
+    move-result-object v0
+
+    const-string v1, "LP6464-4"
+
+    invoke-static {v0, v1}, Lkotlin/jvm/internal/Intrinsics;->areEqual(Ljava/lang/Object;Ljava/lang/Object;)Z
+
+    move-result v0
+
+    return v0
+.end method
+
+.method public isRapidAntigenTestCertificate()Z
+    .locals 2
+
+    invoke-interface {p0}, Lde/rki/coronawarnapp/covidcertificate/test/core/TestCertificate;->getRawCertificate()Lde/rki/coronawarnapp/covidcertificate/common/certificate/TestDccV1;
+
+    move-result-object v0
+
+    iget-object v0, v0, Lde/rki/coronawarnapp/covidcertificate/common/certificate/TestDccV1;->test:Lde/rki/coronawarnapp/covidcertificate/common/certificate/DccV1$TestCertificateData;
+
+    invoke-virtual {v0}, Lde/rki/coronawarnapp/covidcertificate/common/certificate/DccV1$TestCertificateData;->getTestType()Ljava/lang/String;
+
+    move-result-object v0
+
+    const-string v1, "LP217198-3"
+
+    invoke-static {v0, v1}, Lkotlin/jvm/internal/Intrinsics;->areEqual(Ljava/lang/Object;Ljava/lang/Object;)Z
 
     move-result v0
 

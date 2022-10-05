@@ -9,30 +9,49 @@
 # annotations
 .annotation system Ldalvik/annotation/MemberClasses;
     value = {
+        Lkotlin/reflect/jvm/internal/impl/descriptors/impl/ValueParameterDescriptorImpl$Companion;,
         Lkotlin/reflect/jvm/internal/impl/descriptors/impl/ValueParameterDescriptorImpl$WithDestructuringDeclaration;
     }
 .end annotation
 
 .annotation system Ldalvik/annotation/SourceDebugExtension;
-    value = "SMAP\nValueParameterDescriptorImpl.kt\nKotlin\n*S Kotlin\n*F\n+ 1 ValueParameterDescriptorImpl.kt\norg/jetbrains/kotlin/descriptors/impl/ValueParameterDescriptorImpl\n+ 2 _Collections.kt\nkotlin/collections/CollectionsKt___CollectionsKt\n*L\n1#1,131:1\n1517#2:132\n1588#2,3:133\n*E\n*S KotlinDebug\n*F\n+ 1 ValueParameterDescriptorImpl.kt\norg/jetbrains/kotlin/descriptors/impl/ValueParameterDescriptorImpl\n*L\n126#1:132\n126#1,3:133\n*E\n"
+    value = "SMAP\nValueParameterDescriptorImpl.kt\nKotlin\n*S Kotlin\n*F\n+ 1 ValueParameterDescriptorImpl.kt\norg/jetbrains/kotlin/descriptors/impl/ValueParameterDescriptorImpl\n+ 2 _Collections.kt\nkotlin/collections/CollectionsKt___CollectionsKt\n*L\n1#1,131:1\n1547#2:132\n1618#2,3:133\n*S KotlinDebug\n*F\n+ 1 ValueParameterDescriptorImpl.kt\norg/jetbrains/kotlin/descriptors/impl/ValueParameterDescriptorImpl\n*L\n126#1:132\n126#1:133,3\n*E\n"
 .end annotation
 
 
+# static fields
+.field public static final Companion:Lkotlin/reflect/jvm/internal/impl/descriptors/impl/ValueParameterDescriptorImpl$Companion;
+
+
 # instance fields
-.field public final declaresDefaultValue:Z
+.field private final declaresDefaultValue:Z
 
-.field public final index:I
+.field private final index:I
 
-.field public final isCrossinline:Z
+.field private final isCrossinline:Z
 
-.field public final isNoinline:Z
+.field private final isNoinline:Z
 
-.field public final original:Lkotlin/reflect/jvm/internal/impl/descriptors/ValueParameterDescriptor;
+.field private final original:Lkotlin/reflect/jvm/internal/impl/descriptors/ValueParameterDescriptor;
 
-.field public final varargElementType:Lkotlin/reflect/jvm/internal/impl/types/KotlinType;
+.field private final varargElementType:Lkotlin/reflect/jvm/internal/impl/types/KotlinType;
 
 
 # direct methods
+.method public static constructor <clinit>()V
+    .locals 2
+
+    new-instance v0, Lkotlin/reflect/jvm/internal/impl/descriptors/impl/ValueParameterDescriptorImpl$Companion;
+
+    const/4 v1, 0x0
+
+    invoke-direct {v0, v1}, Lkotlin/reflect/jvm/internal/impl/descriptors/impl/ValueParameterDescriptorImpl$Companion;-><init>(Lkotlin/jvm/internal/DefaultConstructorMarker;)V
+
+    sput-object v0, Lkotlin/reflect/jvm/internal/impl/descriptors/impl/ValueParameterDescriptorImpl;->Companion:Lkotlin/reflect/jvm/internal/impl/descriptors/impl/ValueParameterDescriptorImpl$Companion;
+
+    return-void
+.end method
+
 .method public constructor <init>(Lkotlin/reflect/jvm/internal/impl/descriptors/CallableDescriptor;Lkotlin/reflect/jvm/internal/impl/descriptors/ValueParameterDescriptor;ILkotlin/reflect/jvm/internal/impl/descriptors/annotations/Annotations;Lkotlin/reflect/jvm/internal/impl/name/Name;Lkotlin/reflect/jvm/internal/impl/types/KotlinType;ZZZLkotlin/reflect/jvm/internal/impl/types/KotlinType;Lkotlin/reflect/jvm/internal/impl/descriptors/SourceElement;)V
     .locals 7
 
@@ -107,6 +126,66 @@
     return-void
 .end method
 
+.method public static final createWithDestructuringDeclarations(Lkotlin/reflect/jvm/internal/impl/descriptors/CallableDescriptor;Lkotlin/reflect/jvm/internal/impl/descriptors/ValueParameterDescriptor;ILkotlin/reflect/jvm/internal/impl/descriptors/annotations/Annotations;Lkotlin/reflect/jvm/internal/impl/name/Name;Lkotlin/reflect/jvm/internal/impl/types/KotlinType;ZZZLkotlin/reflect/jvm/internal/impl/types/KotlinType;Lkotlin/reflect/jvm/internal/impl/descriptors/SourceElement;Lkotlin/jvm/functions/Function0;)Lkotlin/reflect/jvm/internal/impl/descriptors/impl/ValueParameterDescriptorImpl;
+    .locals 13
+    .annotation system Ldalvik/annotation/Signature;
+        value = {
+            "(",
+            "Lkotlin/reflect/jvm/internal/impl/descriptors/CallableDescriptor;",
+            "Lkotlin/reflect/jvm/internal/impl/descriptors/ValueParameterDescriptor;",
+            "I",
+            "Lkotlin/reflect/jvm/internal/impl/descriptors/annotations/Annotations;",
+            "Lkotlin/reflect/jvm/internal/impl/name/Name;",
+            "Lkotlin/reflect/jvm/internal/impl/types/KotlinType;",
+            "ZZZ",
+            "Lkotlin/reflect/jvm/internal/impl/types/KotlinType;",
+            "Lkotlin/reflect/jvm/internal/impl/descriptors/SourceElement;",
+            "Lkotlin/jvm/functions/Function0<",
+            "+",
+            "Ljava/util/List<",
+            "+",
+            "Lkotlin/reflect/jvm/internal/impl/descriptors/VariableDescriptor;",
+            ">;>;)",
+            "Lkotlin/reflect/jvm/internal/impl/descriptors/impl/ValueParameterDescriptorImpl;"
+        }
+    .end annotation
+
+    .annotation runtime Lkotlin/jvm/JvmStatic;
+    .end annotation
+
+    sget-object v0, Lkotlin/reflect/jvm/internal/impl/descriptors/impl/ValueParameterDescriptorImpl;->Companion:Lkotlin/reflect/jvm/internal/impl/descriptors/impl/ValueParameterDescriptorImpl$Companion;
+
+    move-object v1, p0
+
+    move-object v2, p1
+
+    move v3, p2
+
+    move-object/from16 v4, p3
+
+    move-object/from16 v5, p4
+
+    move-object/from16 v6, p5
+
+    move/from16 v7, p6
+
+    move/from16 v8, p7
+
+    move/from16 v9, p8
+
+    move-object/from16 v10, p9
+
+    move-object/from16 v11, p10
+
+    move-object/from16 v12, p11
+
+    invoke-virtual/range {v0 .. v12}, Lkotlin/reflect/jvm/internal/impl/descriptors/impl/ValueParameterDescriptorImpl$Companion;->createWithDestructuringDeclarations(Lkotlin/reflect/jvm/internal/impl/descriptors/CallableDescriptor;Lkotlin/reflect/jvm/internal/impl/descriptors/ValueParameterDescriptor;ILkotlin/reflect/jvm/internal/impl/descriptors/annotations/Annotations;Lkotlin/reflect/jvm/internal/impl/name/Name;Lkotlin/reflect/jvm/internal/impl/types/KotlinType;ZZZLkotlin/reflect/jvm/internal/impl/types/KotlinType;Lkotlin/reflect/jvm/internal/impl/descriptors/SourceElement;Lkotlin/jvm/functions/Function0;)Lkotlin/reflect/jvm/internal/impl/descriptors/impl/ValueParameterDescriptorImpl;
+
+    move-result-object v0
+
+    return-object v0
+.end method
+
 
 # virtual methods
 .method public accept(Lkotlin/reflect/jvm/internal/impl/descriptors/DeclarationDescriptorVisitor;Ljava/lang/Object;)Ljava/lang/Object;
@@ -135,11 +214,21 @@
 .end method
 
 .method public copy(Lkotlin/reflect/jvm/internal/impl/descriptors/CallableDescriptor;Lkotlin/reflect/jvm/internal/impl/name/Name;I)Lkotlin/reflect/jvm/internal/impl/descriptors/ValueParameterDescriptor;
-    .locals 14
+    .locals 13
 
-    move-object v0, p0
+    const-string v0, "newOwner"
 
-    new-instance v13, Lkotlin/reflect/jvm/internal/impl/descriptors/impl/ValueParameterDescriptorImpl;
+    move-object v2, p1
+
+    invoke-static {p1, v0}, Lkotlin/jvm/internal/Intrinsics;->checkNotNullParameter(Ljava/lang/Object;Ljava/lang/String;)V
+
+    const-string v0, "newName"
+
+    move-object v6, p2
+
+    invoke-static {p2, v0}, Lkotlin/jvm/internal/Intrinsics;->checkNotNullParameter(Ljava/lang/Object;Ljava/lang/String;)V
+
+    new-instance v0, Lkotlin/reflect/jvm/internal/impl/descriptors/impl/ValueParameterDescriptorImpl;
 
     invoke-virtual {p0}, Lkotlin/reflect/jvm/internal/impl/descriptors/annotations/AnnotatedImpl;->getAnnotations()Lkotlin/reflect/jvm/internal/impl/descriptors/annotations/Annotations;
 
@@ -161,27 +250,33 @@
 
     move-result v8
 
-    iget-boolean v9, v0, Lkotlin/reflect/jvm/internal/impl/descriptors/impl/ValueParameterDescriptorImpl;->isCrossinline:Z
+    invoke-virtual {p0}, Lkotlin/reflect/jvm/internal/impl/descriptors/impl/ValueParameterDescriptorImpl;->isCrossinline()Z
 
-    iget-boolean v10, v0, Lkotlin/reflect/jvm/internal/impl/descriptors/impl/ValueParameterDescriptorImpl;->isNoinline:Z
+    move-result v9
 
-    iget-object v11, v0, Lkotlin/reflect/jvm/internal/impl/descriptors/impl/ValueParameterDescriptorImpl;->varargElementType:Lkotlin/reflect/jvm/internal/impl/types/KotlinType;
+    invoke-virtual {p0}, Lkotlin/reflect/jvm/internal/impl/descriptors/impl/ValueParameterDescriptorImpl;->isNoinline()Z
+
+    move-result v10
+
+    invoke-virtual {p0}, Lkotlin/reflect/jvm/internal/impl/descriptors/impl/ValueParameterDescriptorImpl;->getVarargElementType()Lkotlin/reflect/jvm/internal/impl/types/KotlinType;
+
+    move-result-object v11
 
     sget-object v12, Lkotlin/reflect/jvm/internal/impl/descriptors/SourceElement;->NO_SOURCE:Lkotlin/reflect/jvm/internal/impl/descriptors/SourceElement;
 
+    const-string v1, "NO_SOURCE"
+
+    invoke-static {v12, v1}, Lkotlin/jvm/internal/Intrinsics;->checkNotNullExpressionValue(Ljava/lang/Object;Ljava/lang/String;)V
+
     const/4 v3, 0x0
 
-    move-object v1, v13
-
-    move-object v2, p1
+    move-object v1, v0
 
     move/from16 v4, p3
 
-    move-object/from16 v6, p2
-
     invoke-direct/range {v1 .. v12}, Lkotlin/reflect/jvm/internal/impl/descriptors/impl/ValueParameterDescriptorImpl;-><init>(Lkotlin/reflect/jvm/internal/impl/descriptors/CallableDescriptor;Lkotlin/reflect/jvm/internal/impl/descriptors/ValueParameterDescriptor;ILkotlin/reflect/jvm/internal/impl/descriptors/annotations/Annotations;Lkotlin/reflect/jvm/internal/impl/name/Name;Lkotlin/reflect/jvm/internal/impl/types/KotlinType;ZZZLkotlin/reflect/jvm/internal/impl/types/KotlinType;Lkotlin/reflect/jvm/internal/impl/descriptors/SourceElement;)V
 
-    return-object v13
+    return-object v0
 .end method
 
 .method public declaresDefaultValue()Z
@@ -218,10 +313,22 @@
     return v0
 .end method
 
-.method public bridge synthetic getCompileTimeInitializer()Lkotlin/reflect/jvm/internal/impl/resolve/constants/ConstantValue;
+.method public getCompileTimeInitializer()Ljava/lang/Void;
     .locals 1
 
     const/4 v0, 0x0
+
+    return-object v0
+.end method
+
+.method public bridge synthetic getCompileTimeInitializer()Lkotlin/reflect/jvm/internal/impl/resolve/constants/ConstantValue;
+    .locals 1
+
+    invoke-virtual {p0}, Lkotlin/reflect/jvm/internal/impl/descriptors/impl/ValueParameterDescriptorImpl;->getCompileTimeInitializer()Ljava/lang/Void;
+
+    move-result-object v0
+
+    check-cast v0, Lkotlin/reflect/jvm/internal/impl/resolve/constants/ConstantValue;
 
     return-object v0
 .end method
@@ -370,7 +477,9 @@
 
     move-result-object v2
 
-    iget v3, p0, Lkotlin/reflect/jvm/internal/impl/descriptors/impl/ValueParameterDescriptorImpl;->index:I
+    invoke-virtual {p0}, Lkotlin/reflect/jvm/internal/impl/descriptors/impl/ValueParameterDescriptorImpl;->getIndex()I
+
+    move-result v3
 
     invoke-interface {v2, v3}, Ljava/util/List;->get(I)Ljava/lang/Object;
 
@@ -414,6 +523,16 @@
     return v0
 .end method
 
+.method public isLateInit()Z
+    .locals 1
+
+    invoke-static {p0}, Lkotlin/reflect/jvm/internal/impl/descriptors/ValueParameterDescriptor$DefaultImpls;->isLateInit(Lkotlin/reflect/jvm/internal/impl/descriptors/ValueParameterDescriptor;)Z
+
+    move-result v0
+
+    return v0
+.end method
+
 .method public isNoinline()Z
     .locals 1
 
@@ -430,7 +549,17 @@
     return v0
 .end method
 
-.method public substitute(Lkotlin/reflect/jvm/internal/impl/types/TypeSubstitutor;)Lkotlin/reflect/jvm/internal/impl/descriptors/DeclarationDescriptorNonRoot;
+.method public bridge synthetic substitute(Lkotlin/reflect/jvm/internal/impl/types/TypeSubstitutor;)Lkotlin/reflect/jvm/internal/impl/descriptors/DeclarationDescriptorNonRoot;
+    .locals 0
+
+    invoke-virtual {p0, p1}, Lkotlin/reflect/jvm/internal/impl/descriptors/impl/ValueParameterDescriptorImpl;->substitute(Lkotlin/reflect/jvm/internal/impl/types/TypeSubstitutor;)Lkotlin/reflect/jvm/internal/impl/descriptors/ValueParameterDescriptor;
+
+    move-result-object p1
+
+    return-object p1
+.end method
+
+.method public substitute(Lkotlin/reflect/jvm/internal/impl/types/TypeSubstitutor;)Lkotlin/reflect/jvm/internal/impl/descriptors/ValueParameterDescriptor;
     .locals 1
 
     const-string v0, "substitutor"

@@ -1,4 +1,4 @@
-.class public final Lkotlin/reflect/jvm/internal/impl/serialization/deserialization/ErrorReporter$1;
+.class final Lkotlin/reflect/jvm/internal/impl/serialization/deserialization/ErrorReporter$1;
 .super Ljava/lang/Object;
 .source "ErrorReporter.java"
 
@@ -18,7 +18,7 @@
 
 
 # direct methods
-.method public static synthetic $$$reportNull$$$0(I)V
+.method private static synthetic $$$reportNull$$$0(I)V
     .locals 4
 
     const/4 v0, 0x3
@@ -89,18 +89,14 @@
 .method public reportCannotInferVisibility(Lkotlin/reflect/jvm/internal/impl/descriptors/CallableMemberDescriptor;)V
     .locals 0
 
-    if-eqz p1, :cond_0
+    if-nez p1, :cond_0
 
-    return-void
-
-    :cond_0
     const/4 p1, 0x2
 
     invoke-static {p1}, Lkotlin/reflect/jvm/internal/impl/serialization/deserialization/ErrorReporter$1;->$$$reportNull$$$0(I)V
 
-    const/4 p1, 0x0
-
-    throw p1
+    :cond_0
+    return-void
 .end method
 
 .method public reportIncompleteHierarchy(Lkotlin/reflect/jvm/internal/impl/descriptors/ClassDescriptor;Ljava/util/List;)V
@@ -115,16 +111,19 @@
         }
     .end annotation
 
-    if-eqz p1, :cond_0
+    if-nez p1, :cond_0
 
-    return-void
-
-    :cond_0
     const/4 p1, 0x0
 
     invoke-static {p1}, Lkotlin/reflect/jvm/internal/impl/serialization/deserialization/ErrorReporter$1;->$$$reportNull$$$0(I)V
 
-    const/4 p1, 0x0
+    :cond_0
+    if-nez p2, :cond_1
 
-    throw p1
+    const/4 p1, 0x1
+
+    invoke-static {p1}, Lkotlin/reflect/jvm/internal/impl/serialization/deserialization/ErrorReporter$1;->$$$reportNull$$$0(I)V
+
+    :cond_1
+    return-void
 .end method

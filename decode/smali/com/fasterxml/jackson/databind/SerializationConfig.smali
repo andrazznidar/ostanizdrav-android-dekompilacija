@@ -9,8 +9,7 @@
         "Lcom/fasterxml/jackson/databind/cfg/MapperConfigBase<",
         "Lcom/fasterxml/jackson/databind/SerializationFeature;",
         "Lcom/fasterxml/jackson/databind/SerializationConfig;",
-        ">;",
-        "Ljava/io/Serializable;"
+        ">;"
     }
 .end annotation
 
@@ -56,24 +55,24 @@
     return-void
 .end method
 
-.method public constructor <init>(Lcom/fasterxml/jackson/databind/SerializationConfig;IIIIII)V
+.method public constructor <init>(Lcom/fasterxml/jackson/databind/SerializationConfig;JIIIII)V
     .locals 0
 
-    invoke-direct {p0, p1, p2}, Lcom/fasterxml/jackson/databind/cfg/MapperConfigBase;-><init>(Lcom/fasterxml/jackson/databind/cfg/MapperConfigBase;I)V
+    invoke-direct {p0, p1, p2, p3}, Lcom/fasterxml/jackson/databind/cfg/MapperConfigBase;-><init>(Lcom/fasterxml/jackson/databind/cfg/MapperConfigBase;J)V
 
-    iput p3, p0, Lcom/fasterxml/jackson/databind/SerializationConfig;->_serFeatures:I
+    iput p4, p0, Lcom/fasterxml/jackson/databind/SerializationConfig;->_serFeatures:I
 
     iget-object p1, p1, Lcom/fasterxml/jackson/databind/SerializationConfig;->_defaultPrettyPrinter:Lcom/fasterxml/jackson/core/PrettyPrinter;
 
     iput-object p1, p0, Lcom/fasterxml/jackson/databind/SerializationConfig;->_defaultPrettyPrinter:Lcom/fasterxml/jackson/core/PrettyPrinter;
 
-    iput p4, p0, Lcom/fasterxml/jackson/databind/SerializationConfig;->_generatorFeatures:I
+    iput p5, p0, Lcom/fasterxml/jackson/databind/SerializationConfig;->_generatorFeatures:I
 
-    iput p5, p0, Lcom/fasterxml/jackson/databind/SerializationConfig;->_generatorFeaturesToChange:I
+    iput p6, p0, Lcom/fasterxml/jackson/databind/SerializationConfig;->_generatorFeaturesToChange:I
 
-    iput p6, p0, Lcom/fasterxml/jackson/databind/SerializationConfig;->_formatWriteFeatures:I
+    iput p7, p0, Lcom/fasterxml/jackson/databind/SerializationConfig;->_formatWriteFeatures:I
 
-    iput p7, p0, Lcom/fasterxml/jackson/databind/SerializationConfig;->_formatWriteFeaturesToChange:I
+    iput p8, p0, Lcom/fasterxml/jackson/databind/SerializationConfig;->_formatWriteFeaturesToChange:I
 
     return-void
 .end method
@@ -110,10 +109,10 @@
     return-void
 .end method
 
-.method public constructor <init>(Lcom/fasterxml/jackson/databind/cfg/BaseSettings;Lcom/fasterxml/jackson/databind/jsontype/SubtypeResolver;Lcom/fasterxml/jackson/databind/introspect/SimpleMixInResolver;Lcom/fasterxml/jackson/databind/util/RootNameLookup;Lcom/fasterxml/jackson/databind/cfg/ConfigOverrides;)V
+.method public constructor <init>(Lcom/fasterxml/jackson/databind/cfg/BaseSettings;Lorg/joda/time/Chronology;Lcom/fasterxml/jackson/databind/introspect/SimpleMixInResolver;Lcom/fasterxml/jackson/databind/util/RootNameLookup;Lcom/fasterxml/jackson/databind/cfg/ConfigOverrides;)V
     .locals 0
 
-    invoke-direct/range {p0 .. p5}, Lcom/fasterxml/jackson/databind/cfg/MapperConfigBase;-><init>(Lcom/fasterxml/jackson/databind/cfg/BaseSettings;Lcom/fasterxml/jackson/databind/jsontype/SubtypeResolver;Lcom/fasterxml/jackson/databind/introspect/SimpleMixInResolver;Lcom/fasterxml/jackson/databind/util/RootNameLookup;Lcom/fasterxml/jackson/databind/cfg/ConfigOverrides;)V
+    invoke-direct/range {p0 .. p5}, Lcom/fasterxml/jackson/databind/cfg/MapperConfigBase;-><init>(Lcom/fasterxml/jackson/databind/cfg/BaseSettings;Lorg/joda/time/Chronology;Lcom/fasterxml/jackson/databind/introspect/SimpleMixInResolver;Lcom/fasterxml/jackson/databind/util/RootNameLookup;Lcom/fasterxml/jackson/databind/cfg/ConfigOverrides;)V
 
     sget p1, Lcom/fasterxml/jackson/databind/SerializationConfig;->SER_FEATURE_DEFAULTS:I
 
@@ -158,30 +157,30 @@
     return-object v0
 .end method
 
-.method public _withMapperFeatures(I)Lcom/fasterxml/jackson/databind/cfg/MapperConfigBase;
-    .locals 9
+.method public _withMapperFeatures(J)Lcom/fasterxml/jackson/databind/cfg/MapperConfigBase;
+    .locals 10
 
-    new-instance v8, Lcom/fasterxml/jackson/databind/SerializationConfig;
+    new-instance v9, Lcom/fasterxml/jackson/databind/SerializationConfig;
 
-    iget v3, p0, Lcom/fasterxml/jackson/databind/SerializationConfig;->_serFeatures:I
+    iget v4, p0, Lcom/fasterxml/jackson/databind/SerializationConfig;->_serFeatures:I
 
-    iget v4, p0, Lcom/fasterxml/jackson/databind/SerializationConfig;->_generatorFeatures:I
+    iget v5, p0, Lcom/fasterxml/jackson/databind/SerializationConfig;->_generatorFeatures:I
 
-    iget v5, p0, Lcom/fasterxml/jackson/databind/SerializationConfig;->_generatorFeaturesToChange:I
+    iget v6, p0, Lcom/fasterxml/jackson/databind/SerializationConfig;->_generatorFeaturesToChange:I
 
-    iget v6, p0, Lcom/fasterxml/jackson/databind/SerializationConfig;->_formatWriteFeatures:I
+    iget v7, p0, Lcom/fasterxml/jackson/databind/SerializationConfig;->_formatWriteFeatures:I
 
-    iget v7, p0, Lcom/fasterxml/jackson/databind/SerializationConfig;->_formatWriteFeaturesToChange:I
+    iget v8, p0, Lcom/fasterxml/jackson/databind/SerializationConfig;->_formatWriteFeaturesToChange:I
 
-    move-object v0, v8
+    move-object v0, v9
 
     move-object v1, p0
 
-    move v2, p1
+    move-wide v2, p1
 
-    invoke-direct/range {v0 .. v7}, Lcom/fasterxml/jackson/databind/SerializationConfig;-><init>(Lcom/fasterxml/jackson/databind/SerializationConfig;IIIIII)V
+    invoke-direct/range {v0 .. v8}, Lcom/fasterxml/jackson/databind/SerializationConfig;-><init>(Lcom/fasterxml/jackson/databind/SerializationConfig;JIIIII)V
 
-    return-object v8
+    return-object v9
 .end method
 
 .method public initialize(Lcom/fasterxml/jackson/core/JsonGenerator;)V

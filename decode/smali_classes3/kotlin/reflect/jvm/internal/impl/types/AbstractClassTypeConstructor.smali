@@ -3,12 +3,8 @@
 .source "AbstractClassTypeConstructor.java"
 
 
-# instance fields
-.field public hashCode:I
-
-
 # direct methods
-.method public static synthetic $$$reportNull$$$0(I)V
+.method private static synthetic $$$reportNull$$$0(I)V
     .locals 9
 
     const/4 v0, 0x4
@@ -68,7 +64,7 @@
     goto :goto_2
 
     :cond_2
-    const-string v8, "descriptor"
+    const-string v8, "classifier"
 
     aput-object v8, v5, v7
 
@@ -116,7 +112,7 @@
     goto :goto_4
 
     :cond_6
-    const-string v6, "hasMeaningfulFqName"
+    const-string v6, "isSameClassifier"
 
     aput-object v6, v5, v4
 
@@ -150,59 +146,16 @@
 .method public constructor <init>(Lkotlin/reflect/jvm/internal/impl/storage/StorageManager;)V
     .locals 1
 
+    if-nez p1, :cond_0
+
     const/4 v0, 0x0
 
-    if-eqz p1, :cond_0
-
-    invoke-direct {p0, p1}, Lkotlin/reflect/jvm/internal/impl/types/AbstractTypeConstructor;-><init>(Lkotlin/reflect/jvm/internal/impl/storage/StorageManager;)V
-
-    iput v0, p0, Lkotlin/reflect/jvm/internal/impl/types/AbstractClassTypeConstructor;->hashCode:I
-
-    return-void
-
-    :cond_0
     invoke-static {v0}, Lkotlin/reflect/jvm/internal/impl/types/AbstractClassTypeConstructor;->$$$reportNull$$$0(I)V
 
-    const/4 p1, 0x0
-
-    throw p1
-.end method
-
-.method public static hasMeaningfulFqName(Lkotlin/reflect/jvm/internal/impl/descriptors/ClassifierDescriptor;)Z
-    .locals 1
-
-    if-eqz p0, :cond_1
-
-    invoke-static {p0}, Lkotlin/reflect/jvm/internal/impl/types/ErrorUtils;->isError(Lkotlin/reflect/jvm/internal/impl/descriptors/DeclarationDescriptor;)Z
-
-    move-result v0
-
-    if-nez v0, :cond_0
-
-    invoke-static {p0}, Lkotlin/reflect/jvm/internal/impl/resolve/DescriptorUtils;->isLocal(Lkotlin/reflect/jvm/internal/impl/descriptors/DeclarationDescriptor;)Z
-
-    move-result p0
-
-    if-nez p0, :cond_0
-
-    const/4 p0, 0x1
-
-    goto :goto_0
-
     :cond_0
-    const/4 p0, 0x0
+    invoke-direct {p0, p1}, Lkotlin/reflect/jvm/internal/impl/types/AbstractTypeConstructor;-><init>(Lkotlin/reflect/jvm/internal/impl/storage/StorageManager;)V
 
-    :goto_0
-    return p0
-
-    :cond_1
-    const/4 p0, 0x2
-
-    invoke-static {p0}, Lkotlin/reflect/jvm/internal/impl/types/AbstractClassTypeConstructor;->$$$reportNull$$$0(I)V
-
-    const/4 p0, 0x0
-
-    throw p0
+    return-void
 .end method
 
 
@@ -236,216 +189,6 @@
     return-object v0
 .end method
 
-.method public final equals(Ljava/lang/Object;)Z
-    .locals 5
-
-    const/4 v0, 0x1
-
-    if-ne p0, p1, :cond_0
-
-    return v0
-
-    :cond_0
-    instance-of v1, p1, Lkotlin/reflect/jvm/internal/impl/types/TypeConstructor;
-
-    const/4 v2, 0x0
-
-    if-nez v1, :cond_1
-
-    return v2
-
-    :cond_1
-    invoke-virtual {p1}, Ljava/lang/Object;->hashCode()I
-
-    move-result v1
-
-    invoke-virtual {p0}, Lkotlin/reflect/jvm/internal/impl/types/AbstractClassTypeConstructor;->hashCode()I
-
-    move-result v3
-
-    if-eq v1, v3, :cond_2
-
-    return v2
-
-    :cond_2
-    check-cast p1, Lkotlin/reflect/jvm/internal/impl/types/TypeConstructor;
-
-    invoke-interface {p1}, Lkotlin/reflect/jvm/internal/impl/types/TypeConstructor;->getParameters()Ljava/util/List;
-
-    move-result-object v1
-
-    invoke-interface {v1}, Ljava/util/List;->size()I
-
-    move-result v1
-
-    invoke-interface {p0}, Lkotlin/reflect/jvm/internal/impl/types/TypeConstructor;->getParameters()Ljava/util/List;
-
-    move-result-object v3
-
-    invoke-interface {v3}, Ljava/util/List;->size()I
-
-    move-result v3
-
-    if-eq v1, v3, :cond_3
-
-    return v2
-
-    :cond_3
-    invoke-virtual {p0}, Lkotlin/reflect/jvm/internal/impl/types/AbstractClassTypeConstructor;->getDeclarationDescriptor()Lkotlin/reflect/jvm/internal/impl/descriptors/ClassDescriptor;
-
-    move-result-object v1
-
-    invoke-interface {p1}, Lkotlin/reflect/jvm/internal/impl/types/TypeConstructor;->getDeclarationDescriptor()Lkotlin/reflect/jvm/internal/impl/descriptors/ClassifierDescriptor;
-
-    move-result-object p1
-
-    invoke-static {v1}, Lkotlin/reflect/jvm/internal/impl/types/AbstractClassTypeConstructor;->hasMeaningfulFqName(Lkotlin/reflect/jvm/internal/impl/descriptors/ClassifierDescriptor;)Z
-
-    move-result v3
-
-    if-eqz v3, :cond_d
-
-    if-eqz p1, :cond_4
-
-    invoke-static {p1}, Lkotlin/reflect/jvm/internal/impl/types/AbstractClassTypeConstructor;->hasMeaningfulFqName(Lkotlin/reflect/jvm/internal/impl/descriptors/ClassifierDescriptor;)Z
-
-    move-result v3
-
-    if-nez v3, :cond_4
-
-    goto/16 :goto_3
-
-    :cond_4
-    instance-of v3, p1, Lkotlin/reflect/jvm/internal/impl/descriptors/ClassDescriptor;
-
-    if-eqz v3, :cond_d
-
-    check-cast p1, Lkotlin/reflect/jvm/internal/impl/descriptors/ClassDescriptor;
-
-    invoke-interface {v1}, Lkotlin/reflect/jvm/internal/impl/descriptors/DeclarationDescriptor;->getName()Lkotlin/reflect/jvm/internal/impl/name/Name;
-
-    move-result-object v3
-
-    invoke-interface {p1}, Lkotlin/reflect/jvm/internal/impl/descriptors/DeclarationDescriptor;->getName()Lkotlin/reflect/jvm/internal/impl/name/Name;
-
-    move-result-object v4
-
-    invoke-virtual {v3, v4}, Lkotlin/reflect/jvm/internal/impl/name/Name;->equals(Ljava/lang/Object;)Z
-
-    move-result v3
-
-    if-nez v3, :cond_5
-
-    goto :goto_1
-
-    :cond_5
-    invoke-interface {v1}, Lkotlin/reflect/jvm/internal/impl/descriptors/ClassDescriptor;->getContainingDeclaration()Lkotlin/reflect/jvm/internal/impl/descriptors/DeclarationDescriptor;
-
-    move-result-object v1
-
-    invoke-interface {p1}, Lkotlin/reflect/jvm/internal/impl/descriptors/ClassDescriptor;->getContainingDeclaration()Lkotlin/reflect/jvm/internal/impl/descriptors/DeclarationDescriptor;
-
-    move-result-object p1
-
-    :goto_0
-    if-eqz v1, :cond_c
-
-    if-eqz p1, :cond_c
-
-    instance-of v3, v1, Lkotlin/reflect/jvm/internal/impl/descriptors/ModuleDescriptor;
-
-    if-eqz v3, :cond_6
-
-    instance-of v0, p1, Lkotlin/reflect/jvm/internal/impl/descriptors/ModuleDescriptor;
-
-    goto :goto_2
-
-    :cond_6
-    instance-of v3, p1, Lkotlin/reflect/jvm/internal/impl/descriptors/ModuleDescriptor;
-
-    if-eqz v3, :cond_7
-
-    goto :goto_1
-
-    :cond_7
-    instance-of v3, v1, Lkotlin/reflect/jvm/internal/impl/descriptors/PackageFragmentDescriptor;
-
-    if-eqz v3, :cond_9
-
-    instance-of v3, p1, Lkotlin/reflect/jvm/internal/impl/descriptors/PackageFragmentDescriptor;
-
-    if-eqz v3, :cond_8
-
-    check-cast v1, Lkotlin/reflect/jvm/internal/impl/descriptors/PackageFragmentDescriptor;
-
-    invoke-interface {v1}, Lkotlin/reflect/jvm/internal/impl/descriptors/PackageFragmentDescriptor;->getFqName()Lkotlin/reflect/jvm/internal/impl/name/FqName;
-
-    move-result-object v1
-
-    check-cast p1, Lkotlin/reflect/jvm/internal/impl/descriptors/PackageFragmentDescriptor;
-
-    invoke-interface {p1}, Lkotlin/reflect/jvm/internal/impl/descriptors/PackageFragmentDescriptor;->getFqName()Lkotlin/reflect/jvm/internal/impl/name/FqName;
-
-    move-result-object p1
-
-    invoke-virtual {v1, p1}, Lkotlin/reflect/jvm/internal/impl/name/FqName;->equals(Ljava/lang/Object;)Z
-
-    move-result p1
-
-    if-eqz p1, :cond_8
-
-    goto :goto_2
-
-    :cond_8
-    :goto_1
-    move v0, v2
-
-    goto :goto_2
-
-    :cond_9
-    instance-of v3, p1, Lkotlin/reflect/jvm/internal/impl/descriptors/PackageFragmentDescriptor;
-
-    if-eqz v3, :cond_a
-
-    goto :goto_1
-
-    :cond_a
-    invoke-interface {v1}, Lkotlin/reflect/jvm/internal/impl/descriptors/DeclarationDescriptor;->getName()Lkotlin/reflect/jvm/internal/impl/name/Name;
-
-    move-result-object v3
-
-    invoke-interface {p1}, Lkotlin/reflect/jvm/internal/impl/descriptors/DeclarationDescriptor;->getName()Lkotlin/reflect/jvm/internal/impl/name/Name;
-
-    move-result-object v4
-
-    invoke-virtual {v3, v4}, Lkotlin/reflect/jvm/internal/impl/name/Name;->equals(Ljava/lang/Object;)Z
-
-    move-result v3
-
-    if-nez v3, :cond_b
-
-    goto :goto_1
-
-    :cond_b
-    invoke-interface {v1}, Lkotlin/reflect/jvm/internal/impl/descriptors/DeclarationDescriptor;->getContainingDeclaration()Lkotlin/reflect/jvm/internal/impl/descriptors/DeclarationDescriptor;
-
-    move-result-object v1
-
-    invoke-interface {p1}, Lkotlin/reflect/jvm/internal/impl/descriptors/DeclarationDescriptor;->getContainingDeclaration()Lkotlin/reflect/jvm/internal/impl/descriptors/DeclarationDescriptor;
-
-    move-result-object p1
-
-    goto :goto_0
-
-    :cond_c
-    :goto_2
-    return v0
-
-    :cond_d
-    :goto_3
-    return v2
-.end method
-
 .method public getAdditionalNeighboursInSupertypeGraph(Z)Ljava/util/Collection;
     .locals 3
     .annotation system Ldalvik/annotation/Signature;
@@ -473,18 +216,14 @@
 
     move-result-object p1
 
-    if-eqz p1, :cond_0
+    if-nez p1, :cond_0
 
-    return-object p1
+    const/4 v0, 0x3
+
+    invoke-static {v0}, Lkotlin/reflect/jvm/internal/impl/types/AbstractClassTypeConstructor;->$$$reportNull$$$0(I)V
 
     :cond_0
-    const/4 p1, 0x3
-
-    invoke-static {p1}, Lkotlin/reflect/jvm/internal/impl/types/AbstractClassTypeConstructor;->$$$reportNull$$$0(I)V
-
-    const/4 p1, 0x0
-
-    throw p1
+    return-object p1
 
     :cond_1
     new-instance v1, Lkotlin/reflect/jvm/internal/impl/utils/SmartList;
@@ -497,7 +236,7 @@
 
     move-result-object v2
 
-    invoke-virtual {v1, v2}, Lkotlin/reflect/jvm/internal/impl/utils/SmartList;->add(Ljava/lang/Object;)Z
+    invoke-interface {v1, v2}, Ljava/util/Collection;->add(Ljava/lang/Object;)Z
 
     invoke-interface {v0}, Lkotlin/reflect/jvm/internal/impl/descriptors/ClassDescriptor;->getCompanionObjectDescriptor()Lkotlin/reflect/jvm/internal/impl/descriptors/ClassDescriptor;
 
@@ -511,14 +250,14 @@
 
     move-result-object p1
 
-    invoke-virtual {v1, p1}, Lkotlin/reflect/jvm/internal/impl/utils/SmartList;->add(Ljava/lang/Object;)Z
+    invoke-interface {v1, p1}, Ljava/util/Collection;->add(Ljava/lang/Object;)Z
 
     :cond_2
     return-object v1
 .end method
 
 .method public getBuiltIns()Lkotlin/reflect/jvm/internal/impl/builtins/KotlinBuiltIns;
-    .locals 1
+    .locals 2
 
     invoke-virtual {p0}, Lkotlin/reflect/jvm/internal/impl/types/AbstractClassTypeConstructor;->getDeclarationDescriptor()Lkotlin/reflect/jvm/internal/impl/descriptors/ClassDescriptor;
 
@@ -528,18 +267,14 @@
 
     move-result-object v0
 
-    if-eqz v0, :cond_0
+    if-nez v0, :cond_0
 
-    return-object v0
+    const/4 v1, 0x1
+
+    invoke-static {v1}, Lkotlin/reflect/jvm/internal/impl/types/AbstractClassTypeConstructor;->$$$reportNull$$$0(I)V
 
     :cond_0
-    const/4 v0, 0x1
-
-    invoke-static {v0}, Lkotlin/reflect/jvm/internal/impl/types/AbstractClassTypeConstructor;->$$$reportNull$$$0(I)V
-
-    const/4 v0, 0x0
-
-    throw v0
+    return-object v0
 .end method
 
 .method public abstract getDeclarationDescriptor()Lkotlin/reflect/jvm/internal/impl/descriptors/ClassDescriptor;
@@ -555,43 +290,37 @@
     return-object v0
 .end method
 
-.method public final hashCode()I
-    .locals 2
+.method public isSameClassifier(Lkotlin/reflect/jvm/internal/impl/descriptors/ClassifierDescriptor;)Z
+    .locals 1
 
-    iget v0, p0, Lkotlin/reflect/jvm/internal/impl/types/AbstractClassTypeConstructor;->hashCode:I
+    if-nez p1, :cond_0
 
-    if-eqz v0, :cond_0
+    const/4 v0, 0x2
 
-    return v0
+    invoke-static {v0}, Lkotlin/reflect/jvm/internal/impl/types/AbstractClassTypeConstructor;->$$$reportNull$$$0(I)V
 
     :cond_0
+    instance-of v0, p1, Lkotlin/reflect/jvm/internal/impl/descriptors/ClassDescriptor;
+
+    if-eqz v0, :cond_1
+
     invoke-virtual {p0}, Lkotlin/reflect/jvm/internal/impl/types/AbstractClassTypeConstructor;->getDeclarationDescriptor()Lkotlin/reflect/jvm/internal/impl/descriptors/ClassDescriptor;
 
     move-result-object v0
 
-    invoke-static {v0}, Lkotlin/reflect/jvm/internal/impl/types/AbstractClassTypeConstructor;->hasMeaningfulFqName(Lkotlin/reflect/jvm/internal/impl/descriptors/ClassifierDescriptor;)Z
+    invoke-virtual {p0, v0, p1}, Lkotlin/reflect/jvm/internal/impl/types/ClassifierBasedTypeConstructor;->areFqNamesEqual(Lkotlin/reflect/jvm/internal/impl/descriptors/ClassifierDescriptor;Lkotlin/reflect/jvm/internal/impl/descriptors/ClassifierDescriptor;)Z
 
-    move-result v1
+    move-result p1
 
-    if-eqz v1, :cond_1
+    if-eqz p1, :cond_1
 
-    invoke-static {v0}, Lkotlin/reflect/jvm/internal/impl/resolve/DescriptorUtils;->getFqName(Lkotlin/reflect/jvm/internal/impl/descriptors/DeclarationDescriptor;)Lkotlin/reflect/jvm/internal/impl/name/FqNameUnsafe;
-
-    move-result-object v0
-
-    invoke-virtual {v0}, Lkotlin/reflect/jvm/internal/impl/name/FqNameUnsafe;->hashCode()I
-
-    move-result v0
+    const/4 p1, 0x1
 
     goto :goto_0
 
     :cond_1
-    invoke-static {p0}, Ljava/lang/System;->identityHashCode(Ljava/lang/Object;)I
-
-    move-result v0
+    const/4 p1, 0x0
 
     :goto_0
-    iput v0, p0, Lkotlin/reflect/jvm/internal/impl/types/AbstractClassTypeConstructor;->hashCode:I
-
-    return v0
+    return p1
 .end method

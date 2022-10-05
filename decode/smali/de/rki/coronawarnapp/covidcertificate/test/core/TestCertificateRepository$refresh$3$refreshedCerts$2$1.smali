@@ -34,7 +34,7 @@
     c = "de.rki.coronawarnapp.covidcertificate.test.core.TestCertificateRepository$refresh$3$refreshedCerts$2$1"
     f = "TestCertificateRepository.kt"
     l = {
-        0x115
+        0x125
     }
     m = "invokeSuspend"
 .end annotation

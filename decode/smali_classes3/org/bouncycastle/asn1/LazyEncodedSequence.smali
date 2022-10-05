@@ -1,9 +1,9 @@
-.class public Lorg/bouncycastle/asn1/LazyEncodedSequence;
+.class Lorg/bouncycastle/asn1/LazyEncodedSequence;
 .super Lorg/bouncycastle/asn1/ASN1Sequence;
 
 
 # instance fields
-.field public encoded:[B
+.field private encoded:[B
 
 
 # direct methods
@@ -19,6 +19,55 @@
 
     iput-object p1, p0, Lorg/bouncycastle/asn1/LazyEncodedSequence;->encoded:[B
 
+    return-void
+.end method
+
+.method private force()V
+    .locals 3
+
+    iget-object v0, p0, Lorg/bouncycastle/asn1/LazyEncodedSequence;->encoded:[B
+
+    if-eqz v0, :cond_1
+
+    new-instance v0, Lorg/bouncycastle/asn1/ASN1EncodableVector;
+
+    invoke-direct {v0}, Lorg/bouncycastle/asn1/ASN1EncodableVector;-><init>()V
+
+    new-instance v1, Lorg/bouncycastle/asn1/LazyConstructionEnumeration;
+
+    iget-object v2, p0, Lorg/bouncycastle/asn1/LazyEncodedSequence;->encoded:[B
+
+    invoke-direct {v1, v2}, Lorg/bouncycastle/asn1/LazyConstructionEnumeration;-><init>([B)V
+
+    :goto_0
+    invoke-interface {v1}, Ljava/util/Enumeration;->hasMoreElements()Z
+
+    move-result v2
+
+    if-eqz v2, :cond_0
+
+    invoke-interface {v1}, Ljava/util/Enumeration;->nextElement()Ljava/lang/Object;
+
+    move-result-object v2
+
+    check-cast v2, Lorg/bouncycastle/asn1/ASN1Primitive;
+
+    invoke-virtual {v0, v2}, Lorg/bouncycastle/asn1/ASN1EncodableVector;->add(Lorg/bouncycastle/asn1/ASN1Encodable;)V
+
+    goto :goto_0
+
+    :cond_0
+    invoke-virtual {v0}, Lorg/bouncycastle/asn1/ASN1EncodableVector;->takeElements()[Lorg/bouncycastle/asn1/ASN1Encodable;
+
+    move-result-object v0
+
+    iput-object v0, p0, Lorg/bouncycastle/asn1/ASN1Sequence;->elements:[Lorg/bouncycastle/asn1/ASN1Encodable;
+
+    const/4 v0, 0x0
+
+    iput-object v0, p0, Lorg/bouncycastle/asn1/LazyEncodedSequence;->encoded:[B
+
+    :cond_1
     return-void
 .end method
 
@@ -126,126 +175,17 @@
     throw v0
 .end method
 
-.method public final force()V
-    .locals 8
-
-    iget-object v0, p0, Lorg/bouncycastle/asn1/LazyEncodedSequence;->encoded:[B
-
-    if-eqz v0, :cond_5
-
-    const/16 v1, 0xa
-
-    new-array v1, v1, [Lorg/bouncycastle/asn1/ASN1Encodable;
-
-    new-instance v2, Lorg/bouncycastle/asn1/LazyConstructionEnumeration;
-
-    invoke-direct {v2, v0}, Lorg/bouncycastle/asn1/LazyConstructionEnumeration;-><init>([B)V
-
-    const/4 v0, 0x0
-
-    move v3, v0
-
-    :goto_0
-    invoke-virtual {v2}, Lorg/bouncycastle/asn1/LazyConstructionEnumeration;->hasMoreElements()Z
-
-    move-result v4
-
-    if-eqz v4, :cond_2
-
-    invoke-virtual {v2}, Lorg/bouncycastle/asn1/LazyConstructionEnumeration;->nextElement()Ljava/lang/Object;
-
-    move-result-object v4
-
-    check-cast v4, Lorg/bouncycastle/asn1/ASN1Primitive;
-
-    const-string v5, "\'element\' cannot be null"
-
-    invoke-static {v4, v5}, Ljava/util/Objects;->requireNonNull(Ljava/lang/Object;Ljava/lang/String;)Ljava/lang/Object;
-
-    array-length v5, v1
-
-    add-int/lit8 v6, v3, 0x1
-
-    if-le v6, v5, :cond_0
-
-    const/4 v5, 0x1
-
-    goto :goto_1
-
-    :cond_0
-    move v5, v0
-
-    :goto_1
-    or-int/2addr v5, v0
-
-    if-eqz v5, :cond_1
-
-    array-length v5, v1
-
-    shr-int/lit8 v7, v6, 0x1
-
-    add-int/2addr v7, v6
-
-    invoke-static {v5, v7}, Ljava/lang/Math;->max(II)I
-
-    move-result v5
-
-    new-array v5, v5, [Lorg/bouncycastle/asn1/ASN1Encodable;
-
-    invoke-static {v1, v0, v5, v0, v3}, Ljava/lang/System;->arraycopy(Ljava/lang/Object;ILjava/lang/Object;II)V
-
-    move-object v1, v5
-
-    :cond_1
-    aput-object v4, v1, v3
-
-    move v3, v6
-
-    goto :goto_0
-
-    :cond_2
-    if-nez v3, :cond_3
-
-    sget-object v1, Lorg/bouncycastle/asn1/ASN1EncodableVector;->EMPTY_ELEMENTS:[Lorg/bouncycastle/asn1/ASN1Encodable;
-
-    goto :goto_2
-
-    :cond_3
-    array-length v2, v1
-
-    if-ne v2, v3, :cond_4
-
-    goto :goto_2
-
-    :cond_4
-    new-array v2, v3, [Lorg/bouncycastle/asn1/ASN1Encodable;
-
-    invoke-static {v1, v0, v2, v0, v3}, Ljava/lang/System;->arraycopy(Ljava/lang/Object;ILjava/lang/Object;II)V
-
-    move-object v1, v2
-
-    :goto_2
-    iput-object v1, p0, Lorg/bouncycastle/asn1/ASN1Sequence;->elements:[Lorg/bouncycastle/asn1/ASN1Encodable;
-
-    const/4 v0, 0x0
-
-    iput-object v0, p0, Lorg/bouncycastle/asn1/LazyEncodedSequence;->encoded:[B
-
-    :cond_5
-    return-void
-.end method
-
 .method public declared-synchronized getObjectAt(I)Lorg/bouncycastle/asn1/ASN1Encodable;
-    .locals 1
+    .locals 0
 
     monitor-enter p0
 
     :try_start_0
-    invoke-virtual {p0}, Lorg/bouncycastle/asn1/LazyEncodedSequence;->force()V
+    invoke-direct {p0}, Lorg/bouncycastle/asn1/LazyEncodedSequence;->force()V
 
-    iget-object v0, p0, Lorg/bouncycastle/asn1/ASN1Sequence;->elements:[Lorg/bouncycastle/asn1/ASN1Encodable;
+    invoke-super {p0, p1}, Lorg/bouncycastle/asn1/ASN1Sequence;->getObjectAt(I)Lorg/bouncycastle/asn1/ASN1Encodable;
 
-    aget-object p1, v0, p1
+    move-result-object p1
     :try_end_0
     .catchall {:try_start_0 .. :try_end_0} :catchall_0
 
@@ -283,9 +223,9 @@
 
     :cond_0
     :try_start_1
-    new-instance v0, Lorg/bouncycastle/asn1/ASN1Sequence$1;
+    invoke-super {p0}, Lorg/bouncycastle/asn1/ASN1Sequence;->getObjects()Ljava/util/Enumeration;
 
-    invoke-direct {v0, p0}, Lorg/bouncycastle/asn1/ASN1Sequence$1;-><init>(Lorg/bouncycastle/asn1/ASN1Sequence;)V
+    move-result-object v0
     :try_end_1
     .catchall {:try_start_1 .. :try_end_1} :catchall_0
 
@@ -307,7 +247,7 @@
     monitor-enter p0
 
     :try_start_0
-    invoke-virtual {p0}, Lorg/bouncycastle/asn1/LazyEncodedSequence;->force()V
+    invoke-direct {p0}, Lorg/bouncycastle/asn1/LazyEncodedSequence;->force()V
 
     invoke-super {p0}, Lorg/bouncycastle/asn1/ASN1Sequence;->hashCode()I
 
@@ -341,7 +281,7 @@
     monitor-enter p0
 
     :try_start_0
-    invoke-virtual {p0}, Lorg/bouncycastle/asn1/LazyEncodedSequence;->force()V
+    invoke-direct {p0}, Lorg/bouncycastle/asn1/LazyEncodedSequence;->force()V
 
     invoke-super {p0}, Lorg/bouncycastle/asn1/ASN1Sequence;->iterator()Ljava/util/Iterator;
 
@@ -367,11 +307,11 @@
     monitor-enter p0
 
     :try_start_0
-    invoke-virtual {p0}, Lorg/bouncycastle/asn1/LazyEncodedSequence;->force()V
+    invoke-direct {p0}, Lorg/bouncycastle/asn1/LazyEncodedSequence;->force()V
 
-    iget-object v0, p0, Lorg/bouncycastle/asn1/ASN1Sequence;->elements:[Lorg/bouncycastle/asn1/ASN1Encodable;
+    invoke-super {p0}, Lorg/bouncycastle/asn1/ASN1Sequence;->size()I
 
-    array-length v0, v0
+    move-result v0
     :try_end_0
     .catchall {:try_start_0 .. :try_end_0} :catchall_0
 
@@ -387,12 +327,40 @@
     throw v0
 .end method
 
+.method public declared-synchronized toArray()[Lorg/bouncycastle/asn1/ASN1Encodable;
+    .locals 1
+
+    monitor-enter p0
+
+    :try_start_0
+    invoke-direct {p0}, Lorg/bouncycastle/asn1/LazyEncodedSequence;->force()V
+
+    invoke-super {p0}, Lorg/bouncycastle/asn1/ASN1Sequence;->toArray()[Lorg/bouncycastle/asn1/ASN1Encodable;
+
+    move-result-object v0
+    :try_end_0
+    .catchall {:try_start_0 .. :try_end_0} :catchall_0
+
+    monitor-exit p0
+
+    return-object v0
+
+    :catchall_0
+    move-exception v0
+
+    monitor-exit p0
+
+    throw v0
+.end method
+
 .method public toArrayInternal()[Lorg/bouncycastle/asn1/ASN1Encodable;
     .locals 1
 
-    invoke-virtual {p0}, Lorg/bouncycastle/asn1/LazyEncodedSequence;->force()V
+    invoke-direct {p0}, Lorg/bouncycastle/asn1/LazyEncodedSequence;->force()V
 
-    iget-object v0, p0, Lorg/bouncycastle/asn1/ASN1Sequence;->elements:[Lorg/bouncycastle/asn1/ASN1Encodable;
+    invoke-super {p0}, Lorg/bouncycastle/asn1/ASN1Sequence;->toArrayInternal()[Lorg/bouncycastle/asn1/ASN1Encodable;
+
+    move-result-object v0
 
     return-object v0
 .end method
@@ -403,7 +371,7 @@
     monitor-enter p0
 
     :try_start_0
-    invoke-virtual {p0}, Lorg/bouncycastle/asn1/LazyEncodedSequence;->force()V
+    invoke-direct {p0}, Lorg/bouncycastle/asn1/LazyEncodedSequence;->force()V
 
     invoke-super {p0}, Lorg/bouncycastle/asn1/ASN1Sequence;->toDERObject()Lorg/bouncycastle/asn1/ASN1Primitive;
 
@@ -429,7 +397,7 @@
     monitor-enter p0
 
     :try_start_0
-    invoke-virtual {p0}, Lorg/bouncycastle/asn1/LazyEncodedSequence;->force()V
+    invoke-direct {p0}, Lorg/bouncycastle/asn1/LazyEncodedSequence;->force()V
 
     invoke-super {p0}, Lorg/bouncycastle/asn1/ASN1Sequence;->toDLObject()Lorg/bouncycastle/asn1/ASN1Primitive;
 

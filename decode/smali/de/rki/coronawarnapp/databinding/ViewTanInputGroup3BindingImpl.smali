@@ -21,19 +21,19 @@
 
     sput-object v0, Lde/rki/coronawarnapp/databinding/ViewTanInputGroup3BindingImpl;->sViewsWithIds:Landroid/util/SparseIntArray;
 
-    const v1, 0x7f0a0783
+    const v1, 0x7f0a07d0
 
     const/4 v2, 0x1
 
     invoke-virtual {v0, v1, v2}, Landroid/util/SparseIntArray;->put(II)V
 
-    const v1, 0x7f0a0784
+    const v1, 0x7f0a07d1
 
     const/4 v2, 0x2
 
     invoke-virtual {v0, v1, v2}, Landroid/util/SparseIntArray;->put(II)V
 
-    const v1, 0x7f0a0785
+    const v1, 0x7f0a07d2
 
     const/4 v2, 0x3
 

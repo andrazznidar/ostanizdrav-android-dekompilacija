@@ -3,6 +3,12 @@
 .source "KotlinNamesAnnotationIntrospector.kt"
 
 
+# annotations
+.annotation system Ldalvik/annotation/SourceDebugExtension;
+    value = "SMAP\nKotlinNamesAnnotationIntrospector.kt\nKotlin\n*S Kotlin\n*F\n+ 1 KotlinNamesAnnotationIntrospector.kt\ncom/fasterxml/jackson/module/kotlin/KotlinNamesAnnotationIntrospector\n+ 2 fake.kt\nkotlin/jvm/internal/FakeKt\n*L\n1#1,168:1\n1#2:169\n*E\n"
+.end annotation
+
+
 # instance fields
 .field public final cache:Lcom/fasterxml/jackson/module/kotlin/ReflectionCache;
 
@@ -48,7 +54,7 @@
 
 # virtual methods
 .method public findImplicitPropertyName(Lcom/fasterxml/jackson/databind/introspect/AnnotatedMember;)Ljava/lang/String;
-    .locals 11
+    .locals 8
 
     const-string v0, "member"
 
@@ -62,185 +68,176 @@
 
     const/4 v3, 0x0
 
-    if-eqz v0, :cond_3
+    if-eqz v0, :cond_6
 
-    move-object v0, p1
+    check-cast p1, Lcom/fasterxml/jackson/databind/introspect/AnnotatedMethod;
 
-    check-cast v0, Lcom/fasterxml/jackson/databind/introspect/AnnotatedMethod;
+    invoke-virtual {p1}, Lcom/fasterxml/jackson/databind/introspect/AnnotatedMethod;->getName()Ljava/lang/String;
 
-    invoke-virtual {v0}, Lcom/fasterxml/jackson/databind/introspect/AnnotatedMethod;->getDeclaringClass()Ljava/lang/Class;
+    move-result-object v0
 
-    move-result-object v4
+    const-string v4, "member.name"
 
-    const-string v5, "declaringClass"
+    invoke-static {v0, v4}, Lkotlin/jvm/internal/Intrinsics;->checkNotNullExpressionValue(Ljava/lang/Object;Ljava/lang/String;)V
 
-    invoke-static {v4, v5}, Lkotlin/jvm/internal/Intrinsics;->checkNotNullExpressionValue(Ljava/lang/Object;Ljava/lang/String;)V
+    const/16 v5, 0x2d
 
-    invoke-virtual {v4}, Ljava/lang/Class;->getDeclaredMethods()[Ljava/lang/reflect/Method;
+    const/4 v6, 0x2
 
-    move-result-object v4
+    invoke-static {v0, v5, v2, v6}, Lkotlin/text/StringsKt__StringsKt;->contains$default(Ljava/lang/CharSequence;CZI)Z
 
-    const-string v5, "declaringClass.declaredMethods"
+    move-result v0
 
-    invoke-static {v4, v5}, Lkotlin/jvm/internal/Intrinsics;->checkNotNullExpressionValue(Ljava/lang/Object;Ljava/lang/String;)V
+    if-eqz v0, :cond_16
 
-    array-length v5, v4
+    invoke-virtual {p1}, Lcom/fasterxml/jackson/databind/introspect/AnnotatedMethod;->getParameterCount()I
 
-    move v6, v3
+    move-result v0
 
-    :goto_0
-    const/16 v7, 0x2d
+    if-nez v0, :cond_16
 
-    const/4 v8, 0x2
+    invoke-virtual {p1}, Lcom/fasterxml/jackson/databind/introspect/AnnotatedMethod;->getName()Ljava/lang/String;
 
-    if-ge v6, v5, :cond_1
+    move-result-object v0
 
-    aget-object v9, v4, v6
+    invoke-static {v0, v4}, Lkotlin/jvm/internal/Intrinsics;->checkNotNullExpressionValue(Ljava/lang/Object;Ljava/lang/String;)V
 
-    const-string v10, "it"
+    const-string v7, "get"
 
-    invoke-static {v9, v10}, Lkotlin/jvm/internal/Intrinsics;->checkNotNullExpressionValue(Ljava/lang/Object;Ljava/lang/String;)V
+    invoke-static {v0, v7, v2, v6}, Lkotlin/text/StringsKt__StringsJVMKt;->startsWith$default(Ljava/lang/String;Ljava/lang/String;ZI)Z
 
-    invoke-virtual {v9}, Ljava/lang/reflect/Method;->getName()Ljava/lang/String;
+    move-result v0
 
-    move-result-object v9
+    if-eqz v0, :cond_0
 
-    const-string v10, "it.name"
+    invoke-virtual {p1}, Lcom/fasterxml/jackson/databind/introspect/AnnotatedMethod;->getName()Ljava/lang/String;
 
-    invoke-static {v9, v10}, Lkotlin/jvm/internal/Intrinsics;->checkNotNullExpressionValue(Ljava/lang/Object;Ljava/lang/String;)V
+    move-result-object p1
 
-    invoke-static {v9, v7, v3, v8}, Lkotlin/text/StringsKt__StringsKt;->contains$default(Ljava/lang/CharSequence;CZI)Z
+    invoke-static {p1, v4}, Lkotlin/jvm/internal/Intrinsics;->checkNotNullExpressionValue(Ljava/lang/Object;Ljava/lang/String;)V
 
-    move-result v9
+    invoke-static {p1, v7, v3, v6}, Lkotlin/text/StringsKt__StringsKt;->substringAfter$default(Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;I)Ljava/lang/String;
 
-    if-eqz v9, :cond_0
+    move-result-object p1
 
-    move v4, v1
-
-    goto :goto_1
+    goto :goto_0
 
     :cond_0
-    add-int/lit8 v6, v6, 0x1
+    invoke-virtual {p1}, Lcom/fasterxml/jackson/databind/introspect/AnnotatedMethod;->getName()Ljava/lang/String;
+
+    move-result-object v0
+
+    invoke-static {v0, v4}, Lkotlin/jvm/internal/Intrinsics;->checkNotNullExpressionValue(Ljava/lang/Object;Ljava/lang/String;)V
+
+    const-string v7, "is"
+
+    invoke-static {v0, v7, v2, v6}, Lkotlin/text/StringsKt__StringsJVMKt;->startsWith$default(Ljava/lang/String;Ljava/lang/String;ZI)Z
+
+    move-result v0
+
+    if-eqz v0, :cond_1
+
+    invoke-virtual {p1}, Lcom/fasterxml/jackson/databind/introspect/AnnotatedMethod;->getName()Ljava/lang/String;
+
+    move-result-object p1
+
+    invoke-static {p1, v4}, Lkotlin/jvm/internal/Intrinsics;->checkNotNullExpressionValue(Ljava/lang/Object;Ljava/lang/String;)V
+
+    invoke-static {p1, v7, v3, v6}, Lkotlin/text/StringsKt__StringsKt;->substringAfter$default(Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;I)Ljava/lang/String;
+
+    move-result-object p1
 
     goto :goto_0
 
     :cond_1
-    move v4, v3
+    move-object p1, v3
 
-    :goto_1
-    if-eqz v4, :cond_3
-
-    invoke-virtual {v0}, Lcom/fasterxml/jackson/databind/introspect/AnnotatedMethod;->getName()Ljava/lang/String;
-
-    move-result-object p1
-
-    const-string v1, "member.name"
-
-    invoke-static {p1, v1}, Lkotlin/jvm/internal/Intrinsics;->checkNotNullExpressionValue(Ljava/lang/Object;Ljava/lang/String;)V
-
-    const-string v4, "get"
-
-    invoke-static {p1, v4, v3, v8}, Lkotlin/text/StringsKt__StringsJVMKt;->startsWith$default(Ljava/lang/String;Ljava/lang/String;ZI)Z
-
-    move-result p1
-
-    if-eqz p1, :cond_2
-
-    invoke-virtual {v0}, Lcom/fasterxml/jackson/databind/introspect/AnnotatedMethod;->getName()Ljava/lang/String;
-
-    move-result-object p1
-
-    invoke-static {p1, v1}, Lkotlin/jvm/internal/Intrinsics;->checkNotNullExpressionValue(Ljava/lang/Object;Ljava/lang/String;)V
-
-    invoke-static {p1, v7, v3, v8}, Lkotlin/text/StringsKt__StringsKt;->contains$default(Ljava/lang/CharSequence;CZI)Z
-
-    move-result p1
-
-    if-eqz p1, :cond_2
-
-    invoke-virtual {v0}, Lcom/fasterxml/jackson/databind/introspect/AnnotatedMethod;->getParameterCount()I
-
-    move-result p1
-
+    :goto_0
     if-nez p1, :cond_2
 
-    invoke-virtual {v0}, Lcom/fasterxml/jackson/databind/introspect/AnnotatedMethod;->getName()Ljava/lang/String;
-
-    move-result-object p1
-
-    invoke-static {p1, v1}, Lkotlin/jvm/internal/Intrinsics;->checkNotNullExpressionValue(Ljava/lang/Object;Ljava/lang/String;)V
-
-    invoke-static {p1, v4, v2, v8}, Lkotlin/text/StringsKt__StringsKt;->substringAfter$default(Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;I)Ljava/lang/String;
-
-    move-result-object p1
-
-    invoke-static {p1}, Lkotlin/text/StringsKt__StringsJVMKt;->decapitalize(Ljava/lang/String;)Ljava/lang/String;
-
-    move-result-object p1
-
-    invoke-static {p1, v7, v2, v8}, Lkotlin/text/StringsKt__StringsKt;->substringBefore$default(Ljava/lang/String;CLjava/lang/String;I)Ljava/lang/String;
-
-    move-result-object p1
-
-    return-object p1
+    goto/16 :goto_8
 
     :cond_2
-    invoke-virtual {v0}, Lcom/fasterxml/jackson/databind/introspect/AnnotatedMethod;->getName()Ljava/lang/String;
+    invoke-interface {p1}, Ljava/lang/CharSequence;->length()I
 
-    move-result-object p1
+    move-result v0
 
-    invoke-static {p1, v1}, Lkotlin/jvm/internal/Intrinsics;->checkNotNullExpressionValue(Ljava/lang/Object;Ljava/lang/String;)V
+    if-lez v0, :cond_3
 
-    const-string v4, "is"
+    move v0, v1
 
-    invoke-static {p1, v4, v3, v8}, Lkotlin/text/StringsKt__StringsJVMKt;->startsWith$default(Ljava/lang/String;Ljava/lang/String;ZI)Z
-
-    move-result p1
-
-    if-eqz p1, :cond_9
-
-    invoke-virtual {v0}, Lcom/fasterxml/jackson/databind/introspect/AnnotatedMethod;->getName()Ljava/lang/String;
-
-    move-result-object p1
-
-    invoke-static {p1, v1}, Lkotlin/jvm/internal/Intrinsics;->checkNotNullExpressionValue(Ljava/lang/Object;Ljava/lang/String;)V
-
-    invoke-static {p1, v7, v3, v8}, Lkotlin/text/StringsKt__StringsKt;->contains$default(Ljava/lang/CharSequence;CZI)Z
-
-    move-result p1
-
-    if-eqz p1, :cond_9
-
-    invoke-virtual {v0}, Lcom/fasterxml/jackson/databind/introspect/AnnotatedMethod;->getParameterCount()I
-
-    move-result p1
-
-    if-nez p1, :cond_9
-
-    invoke-virtual {v0}, Lcom/fasterxml/jackson/databind/introspect/AnnotatedMethod;->getName()Ljava/lang/String;
-
-    move-result-object p1
-
-    invoke-static {p1, v1}, Lkotlin/jvm/internal/Intrinsics;->checkNotNullExpressionValue(Ljava/lang/Object;Ljava/lang/String;)V
-
-    invoke-static {p1, v4, v2, v8}, Lkotlin/text/StringsKt__StringsKt;->substringAfter$default(Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;I)Ljava/lang/String;
-
-    move-result-object p1
-
-    invoke-static {p1}, Lkotlin/text/StringsKt__StringsJVMKt;->decapitalize(Ljava/lang/String;)Ljava/lang/String;
-
-    move-result-object p1
-
-    invoke-static {p1, v7, v2, v8}, Lkotlin/text/StringsKt__StringsKt;->substringBefore$default(Ljava/lang/String;CLjava/lang/String;I)Ljava/lang/String;
-
-    move-result-object p1
-
-    return-object p1
+    goto :goto_1
 
     :cond_3
+    move v0, v2
+
+    :goto_1
+    if-eqz v0, :cond_4
+
+    new-instance v0, Ljava/lang/StringBuilder;
+
+    invoke-direct {v0}, Ljava/lang/StringBuilder;-><init>()V
+
+    invoke-virtual {p1, v2}, Ljava/lang/String;->charAt(I)C
+
+    move-result v2
+
+    invoke-static {}, Ljava/util/Locale;->getDefault()Ljava/util/Locale;
+
+    move-result-object v4
+
+    const-string v7, "getDefault()"
+
+    invoke-static {v4, v7}, Lkotlin/jvm/internal/Intrinsics;->checkNotNullExpressionValue(Ljava/lang/Object;Ljava/lang/String;)V
+
+    invoke-static {v2}, Ljava/lang/String;->valueOf(C)Ljava/lang/String;
+
+    move-result-object v2
+
+    invoke-virtual {v2, v4}, Ljava/lang/String;->toLowerCase(Ljava/util/Locale;)Ljava/lang/String;
+
+    move-result-object v2
+
+    const-string/jumbo v4, "this as java.lang.String).toLowerCase(locale)"
+
+    invoke-static {v2, v4}, Lkotlin/jvm/internal/Intrinsics;->checkNotNullExpressionValue(Ljava/lang/Object;Ljava/lang/String;)V
+
+    invoke-virtual {v2}, Ljava/lang/Object;->toString()Ljava/lang/String;
+
+    move-result-object v2
+
+    invoke-virtual {v0, v2}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+
+    invoke-virtual {p1, v1}, Ljava/lang/String;->substring(I)Ljava/lang/String;
+
+    move-result-object p1
+
+    const-string v1, "(this as java.lang.String).substring(startIndex)"
+
+    invoke-static {p1, v1}, Lkotlin/jvm/internal/Intrinsics;->checkNotNullExpressionValue(Ljava/lang/Object;Ljava/lang/String;)V
+
+    invoke-virtual {v0, p1}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+
+    invoke-virtual {v0}, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
+
+    move-result-object p1
+
+    :cond_4
+    if-nez p1, :cond_5
+
+    goto/16 :goto_8
+
+    :cond_5
+    invoke-static {p1, v5, v3, v6}, Lkotlin/text/StringsKt__StringsKt;->substringBefore$default(Ljava/lang/String;CLjava/lang/String;I)Ljava/lang/String;
+
+    move-result-object v3
+
+    goto/16 :goto_8
+
+    :cond_6
     instance-of v0, p1, Lcom/fasterxml/jackson/databind/introspect/AnnotatedParameter;
 
-    if-eqz v0, :cond_9
+    if-eqz v0, :cond_16
 
     check-cast p1, Lcom/fasterxml/jackson/databind/introspect/AnnotatedParameter;
 
@@ -256,13 +253,9 @@
 
     move-result v0
 
-    if-eqz v0, :cond_9
+    if-eqz v0, :cond_16
 
     iget-object v0, p1, Lcom/fasterxml/jackson/databind/introspect/AnnotatedParameter;->_owner:Lcom/fasterxml/jackson/databind/introspect/AnnotatedWithParams;
-
-    const-string v4, "param.owner"
-
-    invoke-static {v0, v4}, Lkotlin/jvm/internal/Intrinsics;->checkNotNullExpressionValue(Ljava/lang/Object;Ljava/lang/String;)V
 
     invoke-virtual {v0}, Lcom/fasterxml/jackson/databind/introspect/AnnotatedMember;->getMember()Ljava/lang/reflect/Member;
 
@@ -270,7 +263,7 @@
 
     instance-of v4, v0, Ljava/lang/reflect/Constructor;
 
-    if-eqz v4, :cond_5
+    if-eqz v4, :cond_c
 
     check-cast v0, Ljava/lang/reflect/Constructor;
 
@@ -285,39 +278,51 @@
 
     move-result-object v4
 
-    if-eqz v4, :cond_4
+    if-nez v4, :cond_7
 
+    goto :goto_2
+
+    :cond_7
     invoke-interface {v4}, Lkotlin/reflect/KCallable;->getParameters()Ljava/util/List;
 
     move-result-object v4
 
-    if-eqz v4, :cond_4
+    if-nez v4, :cond_8
 
+    goto :goto_2
+
+    :cond_8
     invoke-interface {v4}, Ljava/util/List;->size()I
 
-    move-result v3
+    move-result v2
     :try_end_0
     .catch Lkotlin/reflect/jvm/internal/KotlinReflectionInternalError; {:try_start_0 .. :try_end_0} :catch_0
     .catch Ljava/lang/UnsupportedOperationException; {:try_start_0 .. :try_end_0} :catch_0
 
     :catch_0
-    :cond_4
-    if-lez v3, :cond_9
+    :goto_2
+    if-lez v2, :cond_16
 
-    if-ne v3, v1, :cond_9
+    if-ne v2, v1, :cond_16
 
     invoke-static {v0}, Lkotlin/reflect/jvm/ReflectJvmMapping;->getKotlinFunction(Ljava/lang/reflect/Constructor;)Lkotlin/reflect/KFunction;
 
     move-result-object v0
 
-    if-eqz v0, :cond_9
+    if-nez v0, :cond_9
 
+    goto/16 :goto_8
+
+    :cond_9
     invoke-interface {v0}, Lkotlin/reflect/KCallable;->getParameters()Ljava/util/List;
 
     move-result-object v0
 
-    if-eqz v0, :cond_9
+    if-nez v0, :cond_a
 
+    goto/16 :goto_8
+
+    :cond_a
     iget p1, p1, Lcom/fasterxml/jackson/databind/introspect/AnnotatedParameter;->_index:I
 
     invoke-interface {v0, p1}, Ljava/util/List;->get(I)Ljava/lang/Object;
@@ -326,18 +331,24 @@
 
     check-cast p1, Lkotlin/reflect/KParameter;
 
-    if-eqz p1, :cond_9
+    if-nez p1, :cond_b
 
+    goto/16 :goto_8
+
+    :cond_b
     invoke-interface {p1}, Lkotlin/reflect/KParameter;->getName()Ljava/lang/String;
 
-    move-result-object v2
+    move-result-object p1
 
-    goto :goto_4
+    :goto_3
+    move-object v3, p1
 
-    :cond_5
+    goto :goto_8
+
+    :cond_c
     instance-of v4, v0, Ljava/lang/reflect/Method;
 
-    if-eqz v4, :cond_9
+    if-eqz v4, :cond_16
 
     :try_start_1
     check-cast v0, Ljava/lang/reflect/Method;
@@ -346,87 +357,111 @@
 
     move-result-object v0
 
-    if-eqz v0, :cond_6
+    if-nez v0, :cond_d
 
+    goto :goto_4
+
+    :cond_d
     invoke-interface {v0}, Lkotlin/reflect/KCallable;->getParameters()Ljava/util/List;
 
     move-result-object v4
 
-    if-eqz v4, :cond_6
+    if-nez v4, :cond_e
 
+    goto :goto_4
+
+    :cond_e
     invoke-static {v4}, Lkotlin/collections/CollectionsKt___CollectionsKt;->firstOrNull(Ljava/util/List;)Ljava/lang/Object;
 
     move-result-object v4
 
     check-cast v4, Lkotlin/reflect/KParameter;
 
-    if-eqz v4, :cond_6
+    if-nez v4, :cond_f
 
+    :goto_4
+    move-object v4, v3
+
+    goto :goto_5
+
+    :cond_f
     invoke-interface {v4}, Lkotlin/reflect/KParameter;->getKind()Lkotlin/reflect/KParameter$Kind;
 
     move-result-object v4
 
-    goto :goto_2
-
-    :cond_6
-    move-object v4, v2
-
-    :goto_2
+    :goto_5
     sget-object v5, Lkotlin/reflect/KParameter$Kind;->VALUE:Lkotlin/reflect/KParameter$Kind;
 
-    if-eq v4, v5, :cond_7
+    if-eq v4, v5, :cond_10
 
     iget p1, p1, Lcom/fasterxml/jackson/databind/introspect/AnnotatedParameter;->_index:I
 
     add-int/2addr p1, v1
 
-    goto :goto_3
+    goto :goto_6
 
-    :cond_7
+    :cond_10
     iget p1, p1, Lcom/fasterxml/jackson/databind/introspect/AnnotatedParameter;->_index:I
 
-    :goto_3
-    if-eqz v0, :cond_8
+    :goto_6
+    if-nez v0, :cond_11
 
+    goto :goto_7
+
+    :cond_11
     invoke-interface {v0}, Lkotlin/reflect/KCallable;->getParameters()Ljava/util/List;
 
     move-result-object v1
 
-    if-eqz v1, :cond_8
+    if-nez v1, :cond_12
 
+    goto :goto_7
+
+    :cond_12
     invoke-interface {v1}, Ljava/util/List;->size()I
 
-    move-result v3
+    move-result v2
 
-    :cond_8
-    if-le v3, p1, :cond_9
+    :goto_7
+    if-le v2, p1, :cond_16
 
-    if-eqz v0, :cond_9
+    if-nez v0, :cond_13
 
+    goto :goto_8
+
+    :cond_13
     invoke-interface {v0}, Lkotlin/reflect/KCallable;->getParameters()Ljava/util/List;
 
     move-result-object v0
 
-    if-eqz v0, :cond_9
+    if-nez v0, :cond_14
 
+    goto :goto_8
+
+    :cond_14
     invoke-interface {v0, p1}, Ljava/util/List;->get(I)Ljava/lang/Object;
 
     move-result-object p1
 
     check-cast p1, Lkotlin/reflect/KParameter;
 
-    if-eqz p1, :cond_9
+    if-nez p1, :cond_15
 
+    goto :goto_8
+
+    :cond_15
     invoke-interface {p1}, Lkotlin/reflect/KParameter;->getName()Ljava/lang/String;
 
-    move-result-object v2
+    move-result-object p1
     :try_end_1
     .catch Lkotlin/reflect/jvm/internal/KotlinReflectionInternalError; {:try_start_1 .. :try_end_1} :catch_1
 
+    goto :goto_3
+
     :catch_1
-    :cond_9
-    :goto_4
-    return-object v2
+    :cond_16
+    :goto_8
+    return-object v3
 .end method
 
 .method public findRenameByField(Lcom/fasterxml/jackson/databind/cfg/MapperConfig;Lcom/fasterxml/jackson/databind/introspect/AnnotatedField;Lcom/fasterxml/jackson/databind/PropertyName;)Lcom/fasterxml/jackson/databind/PropertyName;
@@ -571,7 +606,7 @@
     return-object p3
 .end method
 
-.method public hasCreatorAnnotation(Lcom/fasterxml/jackson/databind/introspect/Annotated;)Z
+.method public hasCreatorAnnotation(Lorg/joda/time/Chronology;)Z
     .locals 3
 
     const-string v0, "member"
@@ -590,10 +625,6 @@
 
     move-result-object v1
 
-    const-string v2, "member.declaringClass"
-
-    invoke-static {v1, v2}, Lkotlin/jvm/internal/Intrinsics;->checkNotNullExpressionValue(Ljava/lang/Object;Ljava/lang/String;)V
-
     invoke-virtual {v1}, Ljava/lang/Class;->isEnum()Z
 
     move-result v1
@@ -610,6 +641,8 @@
 
     move-result-object v1
 
+    const-string v2, "member.declaringClass"
+
     invoke-static {v1, v2}, Lkotlin/jvm/internal/Intrinsics;->checkNotNullExpressionValue(Ljava/lang/Object;Ljava/lang/String;)V
 
     invoke-static {v1}, Lcom/fasterxml/jackson/module/kotlin/KotlinModuleKt;->isKotlinClass(Ljava/lang/Class;)Z
@@ -622,17 +655,9 @@
 
     new-instance v2, Lcom/fasterxml/jackson/module/kotlin/KotlinNamesAnnotationIntrospector$hasCreatorAnnotation$1;
 
-    invoke-direct {v2, p0, p1}, Lcom/fasterxml/jackson/module/kotlin/KotlinNamesAnnotationIntrospector$hasCreatorAnnotation$1;-><init>(Lcom/fasterxml/jackson/module/kotlin/KotlinNamesAnnotationIntrospector;Lcom/fasterxml/jackson/databind/introspect/Annotated;)V
+    invoke-direct {v2, p0, p1}, Lcom/fasterxml/jackson/module/kotlin/KotlinNamesAnnotationIntrospector$hasCreatorAnnotation$1;-><init>(Lcom/fasterxml/jackson/module/kotlin/KotlinNamesAnnotationIntrospector;Lorg/joda/time/Chronology;)V
 
     invoke-static {v1}, Ljava/util/Objects;->requireNonNull(Ljava/lang/Object;)Ljava/lang/Object;
-
-    const-string p1, "key"
-
-    invoke-static {v0, p1}, Lkotlin/jvm/internal/Intrinsics;->checkNotNullParameter(Ljava/lang/Object;Ljava/lang/String;)V
-
-    const-string p1, "calc"
-
-    invoke-static {v2, p1}, Lkotlin/jvm/internal/Intrinsics;->checkNotNullParameter(Ljava/lang/Object;Ljava/lang/String;)V
 
     iget-object p1, v1, Lcom/fasterxml/jackson/module/kotlin/ReflectionCache;->javaConstructorIsCreatorAnnotated:Lcom/fasterxml/jackson/databind/util/LRUMap;
 
@@ -644,15 +669,8 @@
 
     check-cast p1, Ljava/lang/Boolean;
 
-    if-eqz p1, :cond_0
+    if-nez p1, :cond_1
 
-    invoke-virtual {p1}, Ljava/lang/Boolean;->booleanValue()Z
-
-    move-result p1
-
-    goto :goto_0
-
-    :cond_0
     invoke-interface {v2, v0}, Lkotlin/jvm/functions/Function1;->invoke(Ljava/lang/Object;)Ljava/lang/Object;
 
     move-result-object p1
@@ -675,13 +693,22 @@
 
     check-cast v0, Ljava/lang/Boolean;
 
-    if-eqz v0, :cond_1
+    if-nez v0, :cond_0
 
+    goto :goto_0
+
+    :cond_0
     invoke-virtual {v0}, Ljava/lang/Boolean;->booleanValue()Z
 
     move-result p1
 
+    goto :goto_0
+
     :cond_1
+    invoke-virtual {p1}, Ljava/lang/Boolean;->booleanValue()Z
+
+    move-result p1
+
     :goto_0
     return p1
 

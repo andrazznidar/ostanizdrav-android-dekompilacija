@@ -7,15 +7,6 @@
 
 
 # annotations
-.annotation system Ldalvik/annotation/EnclosingMethod;
-    value = Lde/rki/coronawarnapp/presencetracing/risk/execution/PresenceTracingWarningTaskProgress$Downloading;-><init>(Lde/rki/coronawarnapp/util/ui/LazyString;I)V
-.end annotation
-
-.annotation system Ldalvik/annotation/InnerClass;
-    accessFlags = 0x19
-    name = null
-.end annotation
-
 .annotation system Ldalvik/annotation/Signature;
     value = {
         "Lkotlin/jvm/internal/Lambda;",

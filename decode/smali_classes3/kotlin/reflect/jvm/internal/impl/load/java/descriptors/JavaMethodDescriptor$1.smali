@@ -1,4 +1,4 @@
-.class public final Lkotlin/reflect/jvm/internal/impl/load/java/descriptors/JavaMethodDescriptor$1;
+.class final Lkotlin/reflect/jvm/internal/impl/load/java/descriptors/JavaMethodDescriptor$1;
 .super Ljava/lang/Object;
 .source "JavaMethodDescriptor.java"
 

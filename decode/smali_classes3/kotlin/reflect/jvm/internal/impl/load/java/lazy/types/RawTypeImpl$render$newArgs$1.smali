@@ -1,4 +1,4 @@
-.class public final Lkotlin/reflect/jvm/internal/impl/load/java/lazy/types/RawTypeImpl$render$newArgs$1;
+.class final Lkotlin/reflect/jvm/internal/impl/load/java/lazy/types/RawTypeImpl$render$newArgs$1;
 .super Lkotlin/jvm/internal/Lambda;
 .source "RawType.kt"
 
@@ -56,10 +56,8 @@
 
 
 # virtual methods
-.method public invoke(Ljava/lang/Object;)Ljava/lang/Object;
+.method public final invoke(Ljava/lang/String;)Ljava/lang/CharSequence;
     .locals 1
-
-    check-cast p1, Ljava/lang/String;
 
     const-string v0, "it"
 
@@ -68,6 +66,18 @@
     const-string v0, "(raw) "
 
     invoke-static {v0, p1}, Lkotlin/jvm/internal/Intrinsics;->stringPlus(Ljava/lang/String;Ljava/lang/Object;)Ljava/lang/String;
+
+    move-result-object p1
+
+    return-object p1
+.end method
+
+.method public bridge synthetic invoke(Ljava/lang/Object;)Ljava/lang/Object;
+    .locals 0
+
+    check-cast p1, Ljava/lang/String;
+
+    invoke-virtual {p0, p1}, Lkotlin/reflect/jvm/internal/impl/load/java/lazy/types/RawTypeImpl$render$newArgs$1;->invoke(Ljava/lang/String;)Ljava/lang/CharSequence;
 
     move-result-object p1
 

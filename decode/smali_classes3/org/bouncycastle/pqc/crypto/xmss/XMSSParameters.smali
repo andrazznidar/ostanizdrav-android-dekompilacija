@@ -3,7 +3,7 @@
 
 
 # static fields
-.field public static final paramsLookupTable:Ljava/util/Map;
+.field private static final paramsLookupTable:Ljava/util/Map;
     .annotation system Ldalvik/annotation/Signature;
         value = {
             "Ljava/util/Map<",
@@ -16,21 +16,21 @@
 
 
 # instance fields
-.field public final height:I
+.field private final height:I
 
-.field public final k:I
+.field private final k:I
 
-.field public final oid:Lorg/bouncycastle/pqc/crypto/xmss/XMSSOid;
+.field private final oid:Lorg/bouncycastle/pqc/crypto/xmss/XMSSOid;
 
-.field public final treeDigest:Ljava/lang/String;
+.field private final treeDigest:Ljava/lang/String;
 
-.field public final treeDigestOID:Lorg/bouncycastle/asn1/ASN1ObjectIdentifier;
+.field private final treeDigestOID:Lorg/bouncycastle/asn1/ASN1ObjectIdentifier;
 
-.field public final treeDigestSize:I
+.field private final treeDigestSize:I
 
-.field public final winternitzParameter:I
+.field private final winternitzParameter:I
 
-.field public final wotsPlusParams:Lorg/bouncycastle/pqc/crypto/xmss/WOTSPlusParameters;
+.field private final wotsPlusParams:Lorg/bouncycastle/pqc/crypto/xmss/WOTSPlusParameters;
 
 
 # direct methods
@@ -207,46 +207,29 @@
 .end method
 
 .method public constructor <init>(ILorg/bouncycastle/asn1/ASN1ObjectIdentifier;)V
-    .locals 4
+    .locals 3
 
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
     const/4 v0, 0x2
 
-    if-lt p1, v0, :cond_3
+    if-lt p1, v0, :cond_0
 
-    const-string v1, "digest == null"
+    const-string v0, "digest == null"
 
-    invoke-static {p2, v1}, Ljava/util/Objects;->requireNonNull(Ljava/lang/Object;Ljava/lang/String;)Ljava/lang/Object;
+    invoke-static {p2, v0}, Ljava/util/Objects;->requireNonNull(Ljava/lang/Object;Ljava/lang/String;)Ljava/lang/Object;
 
     iput p1, p0, Lorg/bouncycastle/pqc/crypto/xmss/XMSSParameters;->height:I
 
-    move v1, v0
+    invoke-direct {p0}, Lorg/bouncycastle/pqc/crypto/xmss/XMSSParameters;->determineMinK()I
 
-    :goto_0
-    iget v2, p0, Lorg/bouncycastle/pqc/crypto/xmss/XMSSParameters;->height:I
+    move-result v0
 
-    if-gt v1, v2, :cond_2
+    iput v0, p0, Lorg/bouncycastle/pqc/crypto/xmss/XMSSParameters;->k:I
 
-    sub-int/2addr v2, v1
-
-    rem-int/2addr v2, v0
-
-    if-nez v2, :cond_1
-
-    iput v1, p0, Lorg/bouncycastle/pqc/crypto/xmss/XMSSParameters;->k:I
-
-    sget-object v0, Lorg/bouncycastle/pqc/crypto/xmss/DigestUtil;->oidToName:Ljava/util/Map;
-
-    check-cast v0, Ljava/util/HashMap;
-
-    invoke-virtual {v0, p2}, Ljava/util/HashMap;->get(Ljava/lang/Object;)Ljava/lang/Object;
+    invoke-static {p2}, Lorg/bouncycastle/pqc/crypto/xmss/DigestUtil;->getDigestName(Lorg/bouncycastle/asn1/ASN1ObjectIdentifier;)Ljava/lang/String;
 
     move-result-object v0
-
-    check-cast v0, Ljava/lang/String;
-
-    if-eqz v0, :cond_0
 
     iput-object v0, p0, Lorg/bouncycastle/pqc/crypto/xmss/XMSSParameters;->treeDigest:Ljava/lang/String;
 
@@ -258,74 +241,31 @@
 
     iput-object v1, p0, Lorg/bouncycastle/pqc/crypto/xmss/XMSSParameters;->wotsPlusParams:Lorg/bouncycastle/pqc/crypto/xmss/WOTSPlusParameters;
 
-    iget p2, v1, Lorg/bouncycastle/pqc/crypto/xmss/WOTSPlusParameters;->digestSize:I
+    invoke-virtual {v1}, Lorg/bouncycastle/pqc/crypto/xmss/WOTSPlusParameters;->getTreeDigestSize()I
+
+    move-result p2
 
     iput p2, p0, Lorg/bouncycastle/pqc/crypto/xmss/XMSSParameters;->treeDigestSize:I
 
-    iget v2, v1, Lorg/bouncycastle/pqc/crypto/xmss/WOTSPlusParameters;->winternitzParameter:I
+    invoke-virtual {v1}, Lorg/bouncycastle/pqc/crypto/xmss/WOTSPlusParameters;->getWinternitzParameter()I
+
+    move-result v2
 
     iput v2, p0, Lorg/bouncycastle/pqc/crypto/xmss/XMSSParameters;->winternitzParameter:I
 
-    iget v1, v1, Lorg/bouncycastle/pqc/crypto/xmss/WOTSPlusParameters;->len:I
+    invoke-virtual {v1}, Lorg/bouncycastle/pqc/crypto/xmss/WOTSPlusParameters;->getLen()I
 
-    sget-object v3, Lorg/bouncycastle/pqc/crypto/xmss/DefaultXMSSOid;->oidLookupTable:Ljava/util/Map;
+    move-result v1
 
-    const-string v3, "algorithmName == null"
-
-    invoke-static {v0, v3}, Ljava/util/Objects;->requireNonNull(Ljava/lang/Object;Ljava/lang/String;)Ljava/lang/Object;
-
-    sget-object v3, Lorg/bouncycastle/pqc/crypto/xmss/DefaultXMSSOid;->oidLookupTable:Ljava/util/Map;
-
-    invoke-static {v0, p2, v2, v1, p1}, Lorg/bouncycastle/pqc/crypto/xmss/DefaultXMSSOid;->createKey(Ljava/lang/String;IIII)Ljava/lang/String;
+    invoke-static {v0, p2, v2, v1, p1}, Lorg/bouncycastle/pqc/crypto/xmss/DefaultXMSSOid;->lookup(Ljava/lang/String;IIII)Lorg/bouncycastle/pqc/crypto/xmss/DefaultXMSSOid;
 
     move-result-object p1
-
-    invoke-interface {v3, p1}, Ljava/util/Map;->get(Ljava/lang/Object;)Ljava/lang/Object;
-
-    move-result-object p1
-
-    check-cast p1, Lorg/bouncycastle/pqc/crypto/xmss/DefaultXMSSOid;
 
     iput-object p1, p0, Lorg/bouncycastle/pqc/crypto/xmss/XMSSParameters;->oid:Lorg/bouncycastle/pqc/crypto/xmss/XMSSOid;
 
     return-void
 
     :cond_0
-    new-instance p1, Ljava/lang/IllegalArgumentException;
-
-    new-instance v0, Ljava/lang/StringBuilder;
-
-    invoke-direct {v0}, Ljava/lang/StringBuilder;-><init>()V
-
-    const-string v1, "unrecognized digest oid: "
-
-    invoke-virtual {v0, v1}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
-
-    invoke-virtual {v0, p2}, Ljava/lang/StringBuilder;->append(Ljava/lang/Object;)Ljava/lang/StringBuilder;
-
-    invoke-virtual {v0}, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
-
-    move-result-object p2
-
-    invoke-direct {p1, p2}, Ljava/lang/IllegalArgumentException;-><init>(Ljava/lang/String;)V
-
-    throw p1
-
-    :cond_1
-    add-int/lit8 v1, v1, 0x1
-
-    goto :goto_0
-
-    :cond_2
-    new-instance p1, Ljava/lang/IllegalStateException;
-
-    const-string p2, "should never happen..."
-
-    invoke-direct {p1, p2}, Ljava/lang/IllegalStateException;-><init>(Ljava/lang/String;)V
-
-    throw p1
-
-    :cond_3
     new-instance p1, Ljava/lang/IllegalArgumentException;
 
     const-string p2, "height must be >= 2"
@@ -335,8 +275,137 @@
     throw p1
 .end method
 
+.method public constructor <init>(ILorg/bouncycastle/crypto/Digest;)V
+    .locals 0
+
+    invoke-interface {p2}, Lorg/bouncycastle/crypto/Digest;->getAlgorithmName()Ljava/lang/String;
+
+    move-result-object p2
+
+    invoke-static {p2}, Lorg/bouncycastle/pqc/crypto/xmss/DigestUtil;->getDigestOID(Ljava/lang/String;)Lorg/bouncycastle/asn1/ASN1ObjectIdentifier;
+
+    move-result-object p2
+
+    invoke-direct {p0, p1, p2}, Lorg/bouncycastle/pqc/crypto/xmss/XMSSParameters;-><init>(ILorg/bouncycastle/asn1/ASN1ObjectIdentifier;)V
+
+    return-void
+.end method
+
+.method private determineMinK()I
+    .locals 3
+
+    const/4 v0, 0x2
+
+    move v1, v0
+
+    :goto_0
+    iget v2, p0, Lorg/bouncycastle/pqc/crypto/xmss/XMSSParameters;->height:I
+
+    if-gt v1, v2, :cond_1
+
+    sub-int/2addr v2, v1
+
+    rem-int/2addr v2, v0
+
+    if-nez v2, :cond_0
+
+    return v1
+
+    :cond_0
+    add-int/lit8 v1, v1, 0x1
+
+    goto :goto_0
+
+    :cond_1
+    new-instance v0, Ljava/lang/IllegalStateException;
+
+    const-string v1, "should never happen..."
+
+    invoke-direct {v0, v1}, Ljava/lang/IllegalStateException;-><init>(Ljava/lang/String;)V
+
+    throw v0
+.end method
+
+.method public static lookupByOID(I)Lorg/bouncycastle/pqc/crypto/xmss/XMSSParameters;
+    .locals 1
+
+    sget-object v0, Lorg/bouncycastle/pqc/crypto/xmss/XMSSParameters;->paramsLookupTable:Ljava/util/Map;
+
+    invoke-static {p0}, Ljava/lang/Integer;->valueOf(I)Ljava/lang/Integer;
+
+    move-result-object p0
+
+    invoke-interface {v0, p0}, Ljava/util/Map;->get(Ljava/lang/Object;)Ljava/lang/Object;
+
+    move-result-object p0
+
+    check-cast p0, Lorg/bouncycastle/pqc/crypto/xmss/XMSSParameters;
+
+    return-object p0
+.end method
+
 
 # virtual methods
+.method public getHeight()I
+    .locals 1
+
+    iget v0, p0, Lorg/bouncycastle/pqc/crypto/xmss/XMSSParameters;->height:I
+
+    return v0
+.end method
+
+.method public getK()I
+    .locals 1
+
+    iget v0, p0, Lorg/bouncycastle/pqc/crypto/xmss/XMSSParameters;->k:I
+
+    return v0
+.end method
+
+.method public getLen()I
+    .locals 1
+
+    iget-object v0, p0, Lorg/bouncycastle/pqc/crypto/xmss/XMSSParameters;->wotsPlusParams:Lorg/bouncycastle/pqc/crypto/xmss/WOTSPlusParameters;
+
+    invoke-virtual {v0}, Lorg/bouncycastle/pqc/crypto/xmss/WOTSPlusParameters;->getLen()I
+
+    move-result v0
+
+    return v0
+.end method
+
+.method public getOid()Lorg/bouncycastle/pqc/crypto/xmss/XMSSOid;
+    .locals 1
+
+    iget-object v0, p0, Lorg/bouncycastle/pqc/crypto/xmss/XMSSParameters;->oid:Lorg/bouncycastle/pqc/crypto/xmss/XMSSOid;
+
+    return-object v0
+.end method
+
+.method public getTreeDigest()Ljava/lang/String;
+    .locals 1
+
+    iget-object v0, p0, Lorg/bouncycastle/pqc/crypto/xmss/XMSSParameters;->treeDigest:Ljava/lang/String;
+
+    return-object v0
+.end method
+
+.method public getTreeDigestOID()Lorg/bouncycastle/asn1/ASN1ObjectIdentifier;
+    .locals 1
+
+    iget-object v0, p0, Lorg/bouncycastle/pqc/crypto/xmss/XMSSParameters;->treeDigestOID:Lorg/bouncycastle/asn1/ASN1ObjectIdentifier;
+
+    return-object v0
+.end method
+
+.method public getTreeDigestSize()I
+    .locals 1
+
+    iget v0, p0, Lorg/bouncycastle/pqc/crypto/xmss/XMSSParameters;->treeDigestSize:I
+
+    return v0
+.end method
+
 .method public getWOTSPlus()Lorg/bouncycastle/pqc/crypto/xmss/WOTSPlus;
     .locals 2
 
@@ -347,4 +416,12 @@
     invoke-direct {v0, v1}, Lorg/bouncycastle/pqc/crypto/xmss/WOTSPlus;-><init>(Lorg/bouncycastle/pqc/crypto/xmss/WOTSPlusParameters;)V
 
     return-object v0
+.end method
+
+.method public getWinternitzParameter()I
+    .locals 1
+
+    iget v0, p0, Lorg/bouncycastle/pqc/crypto/xmss/XMSSParameters;->winternitzParameter:I
+
+    return v0
 .end method

@@ -21,19 +21,19 @@
 
     sput-object v0, Lde/rki/coronawarnapp/databinding/HomeFragmentLayoutBindingImpl;->sViewsWithIds:Landroid/util/SparseIntArray;
 
-    const v1, 0x7f0a07e4
+    const v1, 0x7f0a082c
 
     const/4 v2, 0x4
 
     invoke-virtual {v0, v1, v2}, Landroid/util/SparseIntArray;->put(II)V
 
-    const v1, 0x7f0a0439
+    const v1, 0x7f0a047e
 
     const/4 v2, 0x5
 
     invoke-virtual {v0, v1, v2}, Landroid/util/SparseIntArray;->put(II)V
 
-    const v1, 0x7f0a059a
+    const v1, 0x7f0a05e6
 
     const/4 v2, 0x6
 
@@ -274,7 +274,7 @@
 
     move-result-object v1
 
-    invoke-static {v0, v1}, Lcom/google/android/gms/nearby/connection/zzq;->setCWAContentDescription(Landroid/widget/ImageView;Ljava/lang/String;)V
+    invoke-static {v0, v1}, Lboofcv/core/image/impl/ImplConvertPlanarToGray;->setCWAContentDescription(Landroid/widget/ImageView;Ljava/lang/String;)V
 
     :cond_1
     if-eqz v6, :cond_3
@@ -296,7 +296,7 @@
 
     iget-object v0, p0, Lde/rki/coronawarnapp/databinding/HomeFragmentLayoutBinding;->mainTracingIcon:Lcom/airbnb/lottie/LottieAnimationView;
 
-    invoke-static {v0, v8}, Ldagger/android/AndroidInjection;->setAnimation(Lcom/airbnb/lottie/LottieAnimationView;Ljava/lang/Integer;)V
+    invoke-static {v0, v8}, Lorg/ejml/sparse/csc/CommonOps_DSCC;->setAnimation(Lcom/airbnb/lottie/LottieAnimationView;Ljava/lang/Integer;)V
 
     iget-object v0, p0, Lde/rki/coronawarnapp/databinding/HomeFragmentLayoutBinding;->mainTracingIcon:Lcom/airbnb/lottie/LottieAnimationView;
 
@@ -304,7 +304,7 @@
 
     move-result-object v1
 
-    invoke-static {v0, v1}, Ldagger/android/AndroidInjection;->setAnimationColor(Lcom/airbnb/lottie/LottieAnimationView;Ljava/lang/Integer;)V
+    invoke-static {v0, v1}, Lorg/ejml/sparse/csc/CommonOps_DSCC;->setAnimationColor(Lcom/airbnb/lottie/LottieAnimationView;Ljava/lang/Integer;)V
 
     :cond_3
     return-void
@@ -414,7 +414,7 @@
     :try_end_0
     .catchall {:try_start_0 .. :try_end_0} :catchall_0
 
-    const/16 p1, 0x31
+    const/16 p1, 0x2f
 
     invoke-virtual {p0, p1}, Landroidx/databinding/BaseObservable;->notifyPropertyChanged(I)V
 

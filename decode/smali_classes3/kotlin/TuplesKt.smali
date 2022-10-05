@@ -4,74 +4,170 @@
 
 
 # direct methods
-.method public static final toEntity(Lde/rki/coronawarnapp/presencetracing/checkins/CheckIn;)Lde/rki/coronawarnapp/presencetracing/storage/entity/TraceLocationCheckInEntity;
-    .locals 22
+.method public static checkAsmExperimental(Ljava/lang/Object;)V
+    .locals 3
 
-    move-object/from16 v0, p0
+    invoke-virtual {p0}, Ljava/lang/Object;->getClass()Ljava/lang/Class;
 
-    const-string v1, "<this>"
+    move-result-object p0
 
-    invoke-static {v0, v1}, Lkotlin/jvm/internal/Intrinsics;->checkNotNullParameter(Ljava/lang/Object;Ljava/lang/String;)V
+    invoke-virtual {p0}, Ljava/lang/Class;->getName()Ljava/lang/String;
 
-    new-instance v1, Lde/rki/coronawarnapp/presencetracing/storage/entity/TraceLocationCheckInEntity;
+    move-result-object v0
 
-    move-object v2, v1
+    const/16 v1, 0x2e
 
-    iget-wide v3, v0, Lde/rki/coronawarnapp/presencetracing/checkins/CheckIn;->id:J
+    const/16 v2, 0x2f
 
-    iget-object v5, v0, Lde/rki/coronawarnapp/presencetracing/checkins/CheckIn;->traceLocationId:Lokio/ByteString;
+    invoke-virtual {v0, v1, v2}, Ljava/lang/String;->replace(CC)Ljava/lang/String;
 
-    invoke-virtual {v5}, Lokio/ByteString;->base64()Ljava/lang/String;
+    move-result-object v0
 
-    move-result-object v5
+    const-string v1, "com/nimbusds/jose/shaded/ow2asm/"
 
-    iget v6, v0, Lde/rki/coronawarnapp/presencetracing/checkins/CheckIn;->version:I
+    invoke-virtual {v0, v1}, Ljava/lang/String;->startsWith(Ljava/lang/String;)Z
 
-    iget v7, v0, Lde/rki/coronawarnapp/presencetracing/checkins/CheckIn;->type:I
+    move-result v1
 
-    iget-object v8, v0, Lde/rki/coronawarnapp/presencetracing/checkins/CheckIn;->description:Ljava/lang/String;
+    if-nez v1, :cond_0
 
-    iget-object v9, v0, Lde/rki/coronawarnapp/presencetracing/checkins/CheckIn;->address:Ljava/lang/String;
+    goto :goto_0
 
-    iget-object v10, v0, Lde/rki/coronawarnapp/presencetracing/checkins/CheckIn;->traceLocationStart:Lorg/joda/time/Instant;
+    :cond_0
+    const-string v1, "Test$"
 
-    iget-object v11, v0, Lde/rki/coronawarnapp/presencetracing/checkins/CheckIn;->traceLocationEnd:Lorg/joda/time/Instant;
+    invoke-virtual {v0, v1}, Ljava/lang/String;->contains(Ljava/lang/CharSequence;)Z
 
-    iget-object v12, v0, Lde/rki/coronawarnapp/presencetracing/checkins/CheckIn;->defaultCheckInLengthInMinutes:Ljava/lang/Integer;
+    move-result v1
 
-    iget-object v13, v0, Lde/rki/coronawarnapp/presencetracing/checkins/CheckIn;->cryptographicSeed:Lokio/ByteString;
+    if-nez v1, :cond_2
 
-    invoke-virtual {v13}, Lokio/ByteString;->base64()Ljava/lang/String;
+    const-string v1, "com/nimbusds/jose/shaded/ow2asm/util/Trace(Annotation|Class|Field|Method|Module|RecordComponent|Signature)Visitor(\\$.*)?"
 
-    move-result-object v13
+    invoke-static {v1, v0}, Ljava/util/regex/Pattern;->matches(Ljava/lang/String;Ljava/lang/CharSequence;)Z
 
-    iget-object v14, v0, Lde/rki/coronawarnapp/presencetracing/checkins/CheckIn;->cnPublicKey:Ljava/lang/String;
+    move-result v1
 
-    iget-object v15, v0, Lde/rki/coronawarnapp/presencetracing/checkins/CheckIn;->checkInStart:Lorg/joda/time/Instant;
+    if-nez v1, :cond_2
 
-    move-object/from16 v21, v1
+    const-string v1, "com/nimbusds/jose/shaded/ow2asm/util/Check(Annotation|Class|Field|Method|Module|RecordComponent|Signature)Adapter(\\$.*)?"
 
-    iget-object v1, v0, Lde/rki/coronawarnapp/presencetracing/checkins/CheckIn;->checkInEnd:Lorg/joda/time/Instant;
+    invoke-static {v1, v0}, Ljava/util/regex/Pattern;->matches(Ljava/lang/String;Ljava/lang/CharSequence;)Z
 
-    move-object/from16 v16, v1
+    move-result v1
 
-    iget-boolean v1, v0, Lde/rki/coronawarnapp/presencetracing/checkins/CheckIn;->completed:Z
+    if-eqz v1, :cond_1
 
-    move/from16 v17, v1
+    goto :goto_1
 
-    iget-boolean v1, v0, Lde/rki/coronawarnapp/presencetracing/checkins/CheckIn;->createJournalEntry:Z
+    :cond_1
+    :goto_0
+    const/4 v1, 0x0
 
-    move/from16 v18, v1
+    goto :goto_2
 
-    iget-boolean v1, v0, Lde/rki/coronawarnapp/presencetracing/checkins/CheckIn;->isSubmitted:Z
+    :cond_2
+    :goto_1
+    const/4 v1, 0x1
 
-    move/from16 v19, v1
+    :goto_2
+    if-nez v1, :cond_5
 
-    iget-boolean v0, v0, Lde/rki/coronawarnapp/presencetracing/checkins/CheckIn;->hasSubmissionConsent:Z
+    invoke-virtual {p0}, Ljava/lang/Class;->getClassLoader()Ljava/lang/ClassLoader;
 
-    move/from16 v20, v0
+    move-result-object p0
 
-    invoke-direct/range {v2 .. v20}, Lde/rki/coronawarnapp/presencetracing/storage/entity/TraceLocationCheckInEntity;-><init>(JLjava/lang/String;IILjava/lang/String;Ljava/lang/String;Lorg/joda/time/Instant;Lorg/joda/time/Instant;Ljava/lang/Integer;Ljava/lang/String;Ljava/lang/String;Lorg/joda/time/Instant;Lorg/joda/time/Instant;ZZZZ)V
+    new-instance v1, Ljava/lang/StringBuilder;
 
-    return-object v21
+    invoke-direct {v1}, Ljava/lang/StringBuilder;-><init>()V
+
+    invoke-virtual {v1, v0}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+
+    const-string v0, ".class"
+
+    invoke-virtual {v1, v0}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+
+    invoke-virtual {v1}, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
+
+    move-result-object v0
+
+    invoke-virtual {p0, v0}, Ljava/lang/ClassLoader;->getResourceAsStream(Ljava/lang/String;)Ljava/io/InputStream;
+
+    move-result-object p0
+
+    if-eqz p0, :cond_4
+
+    :try_start_0
+    new-instance v0, Ljava/io/DataInputStream;
+
+    invoke-direct {v0, p0}, Ljava/io/DataInputStream;-><init>(Ljava/io/InputStream;)V
+    :try_end_0
+    .catch Ljava/io/IOException; {:try_start_0 .. :try_end_0} :catch_0
+
+    :try_start_1
+    invoke-virtual {v0}, Ljava/io/DataInputStream;->readInt()I
+
+    invoke-virtual {v0}, Ljava/io/DataInputStream;->readUnsignedShort()I
+
+    move-result p0
+    :try_end_1
+    .catchall {:try_start_1 .. :try_end_1} :catchall_0
+
+    :try_start_2
+    invoke-virtual {v0}, Ljava/io/DataInputStream;->close()V
+    :try_end_2
+    .catch Ljava/io/IOException; {:try_start_2 .. :try_end_2} :catch_0
+
+    const v0, 0xffff
+
+    if-ne p0, v0, :cond_3
+
+    goto :goto_3
+
+    :cond_3
+    new-instance p0, Ljava/lang/IllegalStateException;
+
+    const-string v0, "ASM9_EXPERIMENTAL can only be used by classes compiled with --enable-preview"
+
+    invoke-direct {p0, v0}, Ljava/lang/IllegalStateException;-><init>(Ljava/lang/String;)V
+
+    throw p0
+
+    :catchall_0
+    move-exception p0
+
+    :try_start_3
+    invoke-virtual {v0}, Ljava/io/DataInputStream;->close()V
+    :try_end_3
+    .catchall {:try_start_3 .. :try_end_3} :catchall_1
+
+    :catchall_1
+    :try_start_4
+    throw p0
+    :try_end_4
+    .catch Ljava/io/IOException; {:try_start_4 .. :try_end_4} :catch_0
+
+    :catch_0
+    move-exception p0
+
+    new-instance v0, Ljava/lang/IllegalStateException;
+
+    const-string v1, "I/O error, can\'t check class version"
+
+    invoke-direct {v0, v1, p0}, Ljava/lang/IllegalStateException;-><init>(Ljava/lang/String;Ljava/lang/Throwable;)V
+
+    throw v0
+
+    :cond_4
+    new-instance p0, Ljava/lang/IllegalStateException;
+
+    const-string v0, "Bytecode not available, can\'t check class version"
+
+    invoke-direct {p0, v0}, Ljava/lang/IllegalStateException;-><init>(Ljava/lang/String;)V
+
+    throw p0
+
+    :cond_5
+    :goto_3
+    return-void
 .end method

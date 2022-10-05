@@ -1,139 +1,221 @@
-.class Lj$/util/stream/p3;
-.super Lj$/util/stream/j3;
+.class public final synthetic Lj$/util/stream/p3;
+.super Ljava/lang/Object;
+
+# interfaces
+.implements Lj$/util/stream/o2;
 
 
 # instance fields
-.field b:J
+.field public final synthetic a:I
 
-.field c:J
-
-.field final synthetic d:Lj$/util/stream/q3;
+.field public final synthetic b:Ljava/lang/Object;
 
 
 # direct methods
-.method constructor <init>(Lj$/util/stream/q3;Lj$/util/stream/n3;)V
-    .locals 2
+.method public synthetic constructor <init>(Ljava/lang/Object;I)V
+    .locals 0
 
-    iput-object p1, p0, Lj$/util/stream/p3;->d:Lj$/util/stream/q3;
+    iput p2, p0, Lj$/util/stream/p3;->a:I
 
-    invoke-direct {p0, p2}, Lj$/util/stream/j3;-><init>(Lj$/util/stream/n3;)V
+    iput-object p1, p0, Lj$/util/stream/p3;->b:Ljava/lang/Object;
 
-    iget-wide v0, p1, Lj$/util/stream/q3;->l:J
-
-    iput-wide v0, p0, Lj$/util/stream/p3;->b:J
-
-    iget-wide p1, p1, Lj$/util/stream/q3;->m:J
-
-    const-wide/16 v0, 0x0
-
-    cmp-long v0, p1, v0
-
-    if-ltz v0, :cond_0
-
-    goto :goto_0
-
-    :cond_0
-    const-wide p1, 0x7fffffffffffffffL
-
-    :goto_0
-    iput-wide p1, p0, Lj$/util/stream/p3;->c:J
+    invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
     return-void
 .end method
 
 
 # virtual methods
-.method public i(Ljava/lang/Object;)V
-    .locals 7
+.method public synthetic a(Ljava/lang/Integer;)V
+    .locals 1
 
-    iget-wide v0, p0, Lj$/util/stream/p3;->b:J
+    iget v0, p0, Lj$/util/stream/p3;->a:I
 
-    const-wide/16 v2, 0x0
-
-    cmp-long v4, v0, v2
-
-    const-wide/16 v5, 0x1
-
-    if-nez v4, :cond_0
-
-    iget-wide v0, p0, Lj$/util/stream/p3;->c:J
-
-    cmp-long v2, v0, v2
-
-    if-lez v2, :cond_1
-
-    sub-long/2addr v0, v5
-
-    iput-wide v0, p0, Lj$/util/stream/p3;->c:J
-
-    iget-object v0, p0, Lj$/util/stream/j3;->a:Lj$/util/stream/n3;
-
-    invoke-interface {v0, p1}, Lj$/util/function/Consumer;->i(Ljava/lang/Object;)V
+    packed-switch v0, :pswitch_data_0
 
     goto :goto_0
 
-    :cond_0
-    sub-long/2addr v0, v5
+    :pswitch_0
+    invoke-static {p0, p1}, Lj$/util/stream/D0;->M(Lj$/util/stream/o2;Ljava/lang/Integer;)V
 
-    iput-wide v0, p0, Lj$/util/stream/p3;->b:J
+    return-void
 
-    :cond_1
     :goto_0
-    return-void
-.end method
-
-.method public x(J)V
-    .locals 8
-
-    iget-object v0, p0, Lj$/util/stream/j3;->a:Lj$/util/stream/n3;
-
-    iget-object v1, p0, Lj$/util/stream/p3;->d:Lj$/util/stream/q3;
-
-    iget-wide v4, v1, Lj$/util/stream/q3;->l:J
-
-    iget-wide v6, p0, Lj$/util/stream/p3;->c:J
-
-    move-wide v2, p1
-
-    invoke-static/range {v2 .. v7}, Lj$/util/stream/C3;->c(JJJ)J
-
-    move-result-wide p1
-
-    invoke-interface {v0, p1, p2}, Lj$/util/stream/n3;->x(J)V
+    invoke-static {p0, p1}, Lj$/util/stream/D0;->M(Lj$/util/stream/o2;Ljava/lang/Integer;)V
 
     return-void
+
+    :pswitch_data_0
+    .packed-switch 0x0
+        :pswitch_0
+    .end packed-switch
 .end method
 
-.method public z()Z
-    .locals 4
+.method public final accept(I)V
+    .locals 1
 
-    iget-wide v0, p0, Lj$/util/stream/p3;->c:J
+    iget v0, p0, Lj$/util/stream/p3;->a:I
 
-    const-wide/16 v2, 0x0
-
-    cmp-long v0, v0, v2
-
-    if-eqz v0, :cond_1
-
-    iget-object v0, p0, Lj$/util/stream/j3;->a:Lj$/util/stream/n3;
-
-    invoke-interface {v0}, Lj$/util/stream/n3;->z()Z
-
-    move-result v0
-
-    if-eqz v0, :cond_0
+    packed-switch v0, :pswitch_data_0
 
     goto :goto_0
 
-    :cond_0
+    :pswitch_0
+    iget-object v0, p0, Lj$/util/stream/p3;->b:Ljava/lang/Object;
+
+    check-cast v0, Lj$/util/stream/V2;
+
+    invoke-virtual {v0, p1}, Lj$/util/stream/V2;->accept(I)V
+
+    return-void
+
+    :goto_0
+    iget-object v0, p0, Lj$/util/stream/p3;->b:Ljava/lang/Object;
+
+    check-cast v0, Lj$/util/function/IntConsumer;
+
+    invoke-interface {v0, p1}, Lj$/util/function/IntConsumer;->accept(I)V
+
+    return-void
+
+    :pswitch_data_0
+    .packed-switch 0x0
+        :pswitch_0
+    .end packed-switch
+.end method
+
+.method public synthetic andThen(Lj$/util/function/IntConsumer;)Lj$/util/function/IntConsumer;
+    .locals 1
+
+    iget v0, p0, Lj$/util/stream/p3;->a:I
+
+    packed-switch v0, :pswitch_data_0
+
+    goto :goto_0
+
+    :pswitch_0
+    invoke-static {p0, p1}, Lj$/util/function/IntConsumer$-CC;->$default$andThen(Lj$/util/function/IntConsumer;Lj$/util/function/IntConsumer;)Lj$/util/function/IntConsumer;
+
+    move-result-object p1
+
+    return-object p1
+
+    :goto_0
+    invoke-static {p0, p1}, Lj$/util/function/IntConsumer$-CC;->$default$andThen(Lj$/util/function/IntConsumer;Lj$/util/function/IntConsumer;)Lj$/util/function/IntConsumer;
+
+    move-result-object p1
+
+    return-object p1
+
+    :pswitch_data_0
+    .packed-switch 0x0
+        :pswitch_0
+    .end packed-switch
+.end method
+
+.method public synthetic c(D)V
+    .locals 0
+
+    iget p1, p0, Lj$/util/stream/p3;->a:I
+
+    const/4 p2, 0x0
+
+    packed-switch p1, :pswitch_data_0
+
+    goto :goto_0
+
+    :pswitch_0
+    invoke-static {}, Lj$/util/stream/D0;->K()V
+
+    throw p2
+
+    :goto_0
+    invoke-static {}, Lj$/util/stream/D0;->K()V
+
+    throw p2
+
+    nop
+
+    :pswitch_data_0
+    .packed-switch 0x0
+        :pswitch_0
+    .end packed-switch
+.end method
+
+.method public synthetic d(J)V
+    .locals 0
+
+    iget p1, p0, Lj$/util/stream/p3;->a:I
+
+    const/4 p2, 0x0
+
+    packed-switch p1, :pswitch_data_0
+
+    goto :goto_0
+
+    :pswitch_0
+    invoke-static {}, Lj$/util/stream/D0;->P()V
+
+    throw p2
+
+    :goto_0
+    invoke-static {}, Lj$/util/stream/D0;->P()V
+
+    throw p2
+
+    nop
+
+    :pswitch_data_0
+    .packed-switch 0x0
+        :pswitch_0
+    .end packed-switch
+.end method
+
+.method public synthetic g()V
+    .locals 0
+
+    return-void
+.end method
+
+.method public synthetic i(J)V
+    .locals 0
+
+    return-void
+.end method
+
+.method public bridge synthetic j(Ljava/lang/Object;)V
+    .locals 1
+
+    iget v0, p0, Lj$/util/stream/p3;->a:I
+
+    packed-switch v0, :pswitch_data_0
+
+    goto :goto_0
+
+    :pswitch_0
+    check-cast p1, Ljava/lang/Integer;
+
+    invoke-virtual {p0, p1}, Lj$/util/stream/p3;->a(Ljava/lang/Integer;)V
+
+    return-void
+
+    :goto_0
+    check-cast p1, Ljava/lang/Integer;
+
+    invoke-virtual {p0, p1}, Lj$/util/stream/p3;->a(Ljava/lang/Integer;)V
+
+    return-void
+
+    :pswitch_data_0
+    .packed-switch 0x0
+        :pswitch_0
+    .end packed-switch
+.end method
+
+.method public synthetic r()Z
+    .locals 1
+
     const/4 v0, 0x0
 
-    goto :goto_1
-
-    :cond_1
-    :goto_0
-    const/4 v0, 0x1
-
-    :goto_1
     return v0
 .end method

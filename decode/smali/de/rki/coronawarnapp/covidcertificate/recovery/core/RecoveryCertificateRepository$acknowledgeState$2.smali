@@ -27,15 +27,15 @@
 .end annotation
 
 .annotation system Ldalvik/annotation/SourceDebugExtension;
-    value = "SMAP\nRecoveryCertificateRepository.kt\nKotlin\n*S Kotlin\n*F\n+ 1 RecoveryCertificateRepository.kt\nde/rki/coronawarnapp/covidcertificate/recovery/core/RecoveryCertificateRepository$acknowledgeState$2\n+ 2 _Collections.kt\nkotlin/collections/CollectionsKt___CollectionsKt\n*L\n1#1,219:1\n659#2,11:220\n*S KotlinDebug\n*F\n+ 1 RecoveryCertificateRepository.kt\nde/rki/coronawarnapp/covidcertificate/recovery/core/RecoveryCertificateRepository$acknowledgeState$2\n*L\n170#1:220,11\n*E\n"
+    value = "SMAP\nRecoveryCertificateRepository.kt\nKotlin\n*S Kotlin\n*F\n+ 1 RecoveryCertificateRepository.kt\nde/rki/coronawarnapp/covidcertificate/recovery/core/RecoveryCertificateRepository$acknowledgeState$2\n+ 2 _Collections.kt\nkotlin/collections/CollectionsKt___CollectionsKt\n*L\n1#1,282:1\n659#2,11:283\n*S KotlinDebug\n*F\n+ 1 RecoveryCertificateRepository.kt\nde/rki/coronawarnapp/covidcertificate/recovery/core/RecoveryCertificateRepository$acknowledgeState$2\n*L\n191#1:283,11\n*E\n"
 .end annotation
 
 .annotation runtime Lkotlin/coroutines/jvm/internal/DebugMetadata;
     c = "de.rki.coronawarnapp.covidcertificate.recovery.core.RecoveryCertificateRepository$acknowledgeState$2"
     f = "RecoveryCertificateRepository.kt"
     l = {
-        0xb0,
-        0xb0
+        0xc5,
+        0xc5
     }
     m = "invokeSuspend"
 .end annotation
@@ -135,7 +135,7 @@
 .end method
 
 .method public final invokeSuspend(Ljava/lang/Object;)Ljava/lang/Object;
-    .locals 17
+    .locals 19
 
     move-object/from16 v0, p0
 
@@ -331,9 +331,9 @@
     move-object v2, v8
 
     :goto_3
-    move-object v13, v7
+    move-object v14, v7
 
-    check-cast v13, Lde/rki/coronawarnapp/covidcertificate/common/certificate/CwaCovidCertificate$State;
+    check-cast v14, Lde/rki/coronawarnapp/covidcertificate/common/certificate/CwaCovidCertificate$State;
 
     iget-object v7, v1, Lde/rki/coronawarnapp/covidcertificate/recovery/core/storage/RecoveryCertificateContainer;->data:Lde/rki/coronawarnapp/covidcertificate/recovery/core/storage/StoredRecoveryCertificateData;
 
@@ -341,7 +341,7 @@
 
     move-result-object v7
 
-    invoke-static {v13, v7}, Lkotlin/jvm/internal/Intrinsics;->areEqual(Ljava/lang/Object;Ljava/lang/Object;)Z
+    invoke-static {v14, v7}, Lkotlin/jvm/internal/Intrinsics;->areEqual(Ljava/lang/Object;Ljava/lang/Object;)Z
 
     move-result v7
 
@@ -378,7 +378,7 @@
 
     aput-object v8, v4, v6
 
-    aput-object v13, v4, v3
+    aput-object v14, v4, v3
 
     const-string v8, "Acknowledging state change to %s -> %s."
 
@@ -394,25 +394,29 @@
 
     const/4 v12, 0x0
 
+    const/4 v13, 0x0
+
     iget-object v4, v0, Lde/rki/coronawarnapp/covidcertificate/recovery/core/RecoveryCertificateRepository$acknowledgeState$2;->this$0:Lde/rki/coronawarnapp/covidcertificate/recovery/core/RecoveryCertificateRepository;
 
     iget-object v4, v4, Lde/rki/coronawarnapp/covidcertificate/recovery/core/RecoveryCertificateRepository;->timeStamper:Lde/rki/coronawarnapp/util/TimeStamper;
 
     invoke-static {v4}, Ljava/util/Objects;->requireNonNull(Ljava/lang/Object;)Ljava/lang/Object;
 
-    new-instance v14, Lorg/joda/time/Instant;
+    new-instance v4, Lorg/joda/time/Instant;
 
-    invoke-direct {v14}, Lorg/joda/time/Instant;-><init>()V
+    invoke-direct {v4}, Lorg/joda/time/Instant;-><init>()V
 
-    const/4 v4, 0x0
+    const/16 v16, 0x0
 
-    const/16 v16, 0x4f
+    const/16 v17, 0x0
+
+    const/16 v18, 0x19f
 
     move-object v3, v15
 
-    move v15, v4
+    move-object v15, v4
 
-    invoke-static/range {v8 .. v16}, Lde/rki/coronawarnapp/covidcertificate/recovery/core/storage/StoredRecoveryCertificateData;->copy$default(Lde/rki/coronawarnapp/covidcertificate/recovery/core/storage/StoredRecoveryCertificateData;Ljava/lang/String;Lorg/joda/time/Instant;Lorg/joda/time/Instant;Lorg/joda/time/Instant;Lde/rki/coronawarnapp/covidcertificate/common/certificate/CwaCovidCertificate$State;Lorg/joda/time/Instant;ZI)Lde/rki/coronawarnapp/covidcertificate/recovery/core/storage/StoredRecoveryCertificateData;
+    invoke-static/range {v8 .. v18}, Lde/rki/coronawarnapp/covidcertificate/recovery/core/storage/StoredRecoveryCertificateData;->copy$default(Lde/rki/coronawarnapp/covidcertificate/recovery/core/storage/StoredRecoveryCertificateData;Ljava/lang/String;Lorg/joda/time/Instant;Lorg/joda/time/Instant;Lorg/joda/time/Instant;Lorg/joda/time/Instant;Lde/rki/coronawarnapp/covidcertificate/common/certificate/CwaCovidCertificate$State;Lorg/joda/time/Instant;ZLorg/joda/time/Instant;I)Lde/rki/coronawarnapp/covidcertificate/recovery/core/storage/StoredRecoveryCertificateData;
 
     move-result-object v4
 

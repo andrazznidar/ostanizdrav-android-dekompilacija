@@ -23,19 +23,19 @@
 
     sput-object v0, Lde/rki/coronawarnapp/databinding/TracingDetailsItemPeriodloggedViewBindingImpl;->sViewsWithIds:Landroid/util/SparseIntArray;
 
-    const v1, 0x7f0a05d0
+    const v1, 0x7f0a061b
 
     const/4 v2, 0x2
 
     invoke-virtual {v0, v1, v2}, Landroid/util/SparseIntArray;->put(II)V
 
-    const v1, 0x7f0a05d1
+    const v1, 0x7f0a061c
 
     const/4 v2, 0x3
 
     invoke-virtual {v0, v1, v2}, Landroid/util/SparseIntArray;->put(II)V
 
-    const v1, 0x7f0a05ce
+    const v1, 0x7f0a0619
 
     const/4 v2, 0x4
 
@@ -289,7 +289,7 @@
     :try_end_0
     .catchall {:try_start_0 .. :try_end_0} :catchall_0
 
-    const/16 p1, 0x22
+    const/16 p1, 0x21
 
     invoke-virtual {p0, p1}, Landroidx/databinding/BaseObservable;->notifyPropertyChanged(I)V
 

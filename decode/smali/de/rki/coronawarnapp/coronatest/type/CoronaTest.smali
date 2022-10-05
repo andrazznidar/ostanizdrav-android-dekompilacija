@@ -2,6 +2,9 @@
 .super Ljava/lang/Object;
 .source "CoronaTest.kt"
 
+# interfaces
+.implements Lde/rki/coronawarnapp/reyclebin/common/Recyclable;
+
 
 # annotations
 .annotation system Ldalvik/annotation/MemberClasses;
@@ -22,6 +25,9 @@
 .end method
 
 .method public abstract getLastError()Ljava/lang/Throwable;
+.end method
+
+.method public abstract getQrCodeHash()Ljava/lang/String;
 .end method
 
 .method public abstract getRegisteredAt()Lorg/joda/time/Instant;
@@ -49,6 +55,9 @@
 .end method
 
 .method public abstract isNegative()Z
+.end method
+
+.method public abstract isPending()Z
 .end method
 
 .method public abstract isPositive()Z

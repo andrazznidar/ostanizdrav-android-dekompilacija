@@ -1,4 +1,4 @@
-.class public final Lorg/bouncycastle/pqc/crypto/xmss/WOTSPlusOid;
+.class final Lorg/bouncycastle/pqc/crypto/xmss/WOTSPlusOid;
 .super Ljava/lang/Object;
 
 # interfaces
@@ -6,7 +6,7 @@
 
 
 # static fields
-.field public static final oidLookupTable:Ljava/util/Map;
+.field private static final oidLookupTable:Ljava/util/Map;
     .annotation system Ldalvik/annotation/Signature;
         value = {
             "Ljava/util/Map<",
@@ -19,9 +19,9 @@
 
 
 # instance fields
-.field public final oid:I
+.field private final oid:I
 
-.field public final stringRepresentation:Ljava/lang/String;
+.field private final stringRepresentation:Ljava/lang/String;
 
 
 # direct methods
@@ -115,7 +115,7 @@
     return-void
 .end method
 
-.method public constructor <init>(ILjava/lang/String;)V
+.method private constructor <init>(ILjava/lang/String;)V
     .locals 0
 
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
@@ -127,8 +127,12 @@
     return-void
 .end method
 
-.method public static createKey(Ljava/lang/String;III)Ljava/lang/String;
+.method private static createKey(Ljava/lang/String;III)Ljava/lang/String;
     .locals 1
+
+    const-string v0, "algorithmName == null"
+
+    invoke-static {p0, v0}, Ljava/util/Objects;->requireNonNull(Ljava/lang/Object;Ljava/lang/String;)Ljava/lang/Object;
 
     new-instance v0, Ljava/lang/StringBuilder;
 
@@ -153,6 +157,28 @@
     invoke-virtual {v0}, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
 
     move-result-object p0
+
+    return-object p0
+.end method
+
+.method public static lookup(Ljava/lang/String;III)Lorg/bouncycastle/pqc/crypto/xmss/WOTSPlusOid;
+    .locals 1
+
+    const-string v0, "algorithmName == null"
+
+    invoke-static {p0, v0}, Ljava/util/Objects;->requireNonNull(Ljava/lang/Object;Ljava/lang/String;)Ljava/lang/Object;
+
+    sget-object v0, Lorg/bouncycastle/pqc/crypto/xmss/WOTSPlusOid;->oidLookupTable:Ljava/util/Map;
+
+    invoke-static {p0, p1, p2, p3}, Lorg/bouncycastle/pqc/crypto/xmss/WOTSPlusOid;->createKey(Ljava/lang/String;III)Ljava/lang/String;
+
+    move-result-object p0
+
+    invoke-interface {v0, p0}, Ljava/util/Map;->get(Ljava/lang/Object;)Ljava/lang/Object;
+
+    move-result-object p0
+
+    check-cast p0, Lorg/bouncycastle/pqc/crypto/xmss/WOTSPlusOid;
 
     return-object p0
 .end method

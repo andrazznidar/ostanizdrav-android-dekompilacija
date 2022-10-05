@@ -5,7 +5,7 @@
 
 # annotations
 .annotation system Ldalvik/annotation/SourceDebugExtension;
-    value = "SMAP\nAppConfigStorage.kt\nKotlin\n*S Kotlin\n*F\n+ 1 AppConfigStorage.kt\nde/rki/coronawarnapp/appconfig/sources/local/AppConfigStorage\n+ 2 Mutex.kt\nkotlinx/coroutines/sync/MutexKt\n+ 3 GsonExtensions.kt\nde/rki/coronawarnapp/util/serialization/GsonExtensionsKt\n*L\n1#1,103:1\n109#2,8:104\n118#2,2:126\n109#2,10:128\n119#2:142\n21#3,14:112\n39#3,4:138\n*S KotlinDebug\n*F\n+ 1 AppConfigStorage.kt\nde/rki/coronawarnapp/appconfig/sources/local/AppConfigStorage\n*L\n44#1:104,8\n44#1:126,2\n75#1:128,10\n75#1:142\n64#1:112,14\n94#1:138,4\n*E\n"
+    value = "SMAP\nAppConfigStorage.kt\nKotlin\n*S Kotlin\n*F\n+ 1 AppConfigStorage.kt\nde/rki/coronawarnapp/appconfig/sources/local/AppConfigStorage\n+ 2 Mutex.kt\nkotlinx/coroutines/sync/MutexKt\n+ 3 GsonExtensions.kt\nde/rki/coronawarnapp/util/serialization/GsonExtensionsKt\n*L\n1#1,103:1\n109#2,8:104\n118#2,2:126\n109#2,10:128\n119#2:142\n27#3,14:112\n45#3,4:138\n*S KotlinDebug\n*F\n+ 1 AppConfigStorage.kt\nde/rki/coronawarnapp/appconfig/sources/local/AppConfigStorage\n*L\n44#1:104,8\n44#1:126,2\n75#1:128,10\n75#1:142\n64#1:112,14\n94#1:138,4\n*E\n"
 .end annotation
 
 
@@ -47,7 +47,7 @@
 
     invoke-direct {p2, p0}, Lde/rki/coronawarnapp/appconfig/sources/local/AppConfigStorage$gson$2;-><init>(Lde/rki/coronawarnapp/appconfig/sources/local/AppConfigStorage;)V
 
-    invoke-static {p2}, Lkotlin/LazyKt__LazyKt;->lazy(Lkotlin/jvm/functions/Function0;)Lkotlin/Lazy;
+    invoke-static {p2}, Lkotlin/LazyKt__LazyJVMKt;->lazy(Lkotlin/jvm/functions/Function0;)Lkotlin/Lazy;
 
     move-result-object p2
 
@@ -260,18 +260,6 @@
     new-instance p1, Lde/rki/coronawarnapp/appconfig/internal/InternalConfigData;
 
     const-string v8, "legacy.migration"
-
-    const-string v0, "ofEpochMilli(legacyConfigFile.lastModified())"
-
-    invoke-static {v9, v0}, Lkotlin/jvm/internal/Intrinsics;->checkNotNullExpressionValue(Ljava/lang/Object;Ljava/lang/String;)V
-
-    const-string v0, "ZERO"
-
-    invoke-static {v10, v0}, Lkotlin/jvm/internal/Intrinsics;->checkNotNullExpressionValue(Ljava/lang/Object;Ljava/lang/String;)V
-
-    const-string/jumbo v0, "standardSeconds(0)"
-
-    invoke-static {v11, v0}, Lkotlin/jvm/internal/Intrinsics;->checkNotNullExpressionValue(Ljava/lang/Object;Ljava/lang/String;)V
 
     move-object v6, p1
 
@@ -577,13 +565,13 @@
 
     iget v2, v0, Lde/rki/coronawarnapp/appconfig/sources/local/AppConfigStorage$setStoredConfig$1;->label:I
 
-    const/4 v3, 0x1
+    const/4 v3, 0x0
 
-    const/4 v4, 0x0
+    const/4 v4, 0x1
 
     if-eqz v2, :cond_2
 
-    if-ne v2, v3, :cond_1
+    if-ne v2, v4, :cond_1
 
     iget-object p1, v0, Lde/rki/coronawarnapp/appconfig/sources/local/AppConfigStorage$setStoredConfig$1;->L$2:Ljava/lang/Object;
 
@@ -625,9 +613,9 @@
 
     iput-object p2, v0, Lde/rki/coronawarnapp/appconfig/sources/local/AppConfigStorage$setStoredConfig$1;->L$2:Ljava/lang/Object;
 
-    iput v3, v0, Lde/rki/coronawarnapp/appconfig/sources/local/AppConfigStorage$setStoredConfig$1;->label:I
+    iput v4, v0, Lde/rki/coronawarnapp/appconfig/sources/local/AppConfigStorage$setStoredConfig$1;->label:I
 
-    invoke-interface {p2, v4, v0}, Lkotlinx/coroutines/sync/Mutex;->lock(Ljava/lang/Object;Lkotlin/coroutines/Continuation;)Ljava/lang/Object;
+    invoke-interface {p2, v3, v0}, Lkotlinx/coroutines/sync/Mutex;->lock(Ljava/lang/Object;Lkotlin/coroutines/Continuation;)Ljava/lang/Object;
 
     move-result-object v0
 
@@ -644,7 +632,7 @@
 
     const-string v2, "set(...) AppConfig: %s"
 
-    new-array v5, v3, [Ljava/lang/Object;
+    new-array v5, v4, [Ljava/lang/Object;
 
     const/4 v6, 0x0
 
@@ -703,7 +691,7 @@
 
     invoke-direct {v9, v7, v8}, Ljava/lang/Long;-><init>(J)V
 
-    aput-object v9, v5, v3
+    aput-object v9, v5, v4
 
     invoke-virtual {v1, v2, v5}, Ltimber/log/Timber$Forest;->v(Ljava/lang/String;[Ljava/lang/Object;)V
 
@@ -726,9 +714,9 @@
 
     const-string v2, "Legacy config file deleted, superseeded."
 
-    new-array v3, v6, [Ljava/lang/Object;
+    new-array v4, v6, [Ljava/lang/Object;
 
-    invoke-virtual {v1, v2, v3}, Ltimber/log/Timber$Forest;->i(Ljava/lang/String;[Ljava/lang/Object;)V
+    invoke-virtual {v1, v2, v4}, Ltimber/log/Timber$Forest;->i(Ljava/lang/String;[Ljava/lang/Object;)V
 
     :cond_6
     if-nez p1, :cond_8
@@ -752,7 +740,7 @@
     :try_end_0
     .catchall {:try_start_0 .. :try_end_0} :catchall_2
 
-    invoke-interface {p2, v4}, Lkotlinx/coroutines/sync/Mutex;->unlock(Ljava/lang/Object;)V
+    invoke-interface {p2, v3}, Lkotlinx/coroutines/sync/Mutex;->unlock(Ljava/lang/Object;)V
 
     return-object p1
 
@@ -774,7 +762,7 @@
 
     sget-object v2, Lkotlin/text/Charsets;->UTF_8:Ljava/nio/charset/Charset;
 
-    const/16 v3, 0x2000
+    const/16 v4, 0x2000
 
     new-instance v5, Ljava/io/FileOutputStream;
 
@@ -795,7 +783,7 @@
     :cond_9
     new-instance v2, Ljava/io/BufferedWriter;
 
-    invoke-direct {v2, v0, v3}, Ljava/io/BufferedWriter;-><init>(Ljava/io/Writer;I)V
+    invoke-direct {v2, v0, v4}, Ljava/io/BufferedWriter;-><init>(Ljava/io/Writer;I)V
     :try_end_1
     .catch Ljava/lang/Exception; {:try_start_1 .. :try_end_1} :catch_0
     .catchall {:try_start_1 .. :try_end_1} :catchall_2
@@ -813,7 +801,7 @@
     .catchall {:try_start_2 .. :try_end_2} :catchall_0
 
     :try_start_3
-    invoke-static {v0, v4}, Lkotlin/io/CloseableKt;->closeFinally(Ljava/io/Closeable;Ljava/lang/Throwable;)V
+    invoke-static {v0, v3}, Lkotlin/io/CloseableKt;->closeFinally(Ljava/io/Closeable;Ljava/lang/Throwable;)V
     :try_end_3
     .catch Ljava/lang/Exception; {:try_start_3 .. :try_end_3} :catch_0
     .catchall {:try_start_3 .. :try_end_3} :catchall_2
@@ -851,23 +839,23 @@
 
     invoke-virtual {v0, p1, v1, v2}, Ltimber/log/Timber$Forest;->e(Ljava/lang/Throwable;Ljava/lang/String;[Ljava/lang/Object;)V
 
-    sget-object v0, Lde/rki/coronawarnapp/exception/ExceptionCategory;->INTERNAL:Lde/rki/coronawarnapp/exception/ExceptionCategory;
+    const/4 v0, 0x4
 
-    invoke-static {p1, v0, v4, v4}, Lde/rki/coronawarnapp/exception/reporting/ExceptionReporterKt;->report(Ljava/lang/Throwable;Lde/rki/coronawarnapp/exception/ExceptionCategory;Ljava/lang/String;Ljava/lang/String;)V
+    invoke-static {p1, v0}, Lde/rki/coronawarnapp/exception/reporting/ExceptionReporterKt;->report(Ljava/lang/Throwable;I)V
 
     :goto_3
     sget-object p1, Lkotlin/Unit;->INSTANCE:Lkotlin/Unit;
     :try_end_6
     .catchall {:try_start_6 .. :try_end_6} :catchall_2
 
-    invoke-interface {p2, v4}, Lkotlinx/coroutines/sync/Mutex;->unlock(Ljava/lang/Object;)V
+    invoke-interface {p2, v3}, Lkotlinx/coroutines/sync/Mutex;->unlock(Ljava/lang/Object;)V
 
     return-object p1
 
     :catchall_2
     move-exception p1
 
-    invoke-interface {p2, v4}, Lkotlinx/coroutines/sync/Mutex;->unlock(Ljava/lang/Object;)V
+    invoke-interface {p2, v3}, Lkotlinx/coroutines/sync/Mutex;->unlock(Ljava/lang/Object;)V
 
     throw p1
 .end method

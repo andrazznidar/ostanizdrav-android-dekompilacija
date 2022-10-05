@@ -5,7 +5,7 @@
 
 # annotations
 .annotation system Ldalvik/annotation/EnclosingMethod;
-    value = Lde/rki/coronawarnapp/covidcertificate/signature/core/DscSignatureValidator;->validateSignature(Lde/rki/coronawarnapp/covidcertificate/common/certificate/DccData;Lde/rki/coronawarnapp/covidcertificate/signature/core/DscData;Lkotlin/coroutines/Continuation;)Ljava/lang/Object;
+    value = Lde/rki/coronawarnapp/covidcertificate/signature/core/DscSignatureValidator;->validateSignature(Lde/rki/coronawarnapp/covidcertificate/common/certificate/DccData;Lde/rki/coronawarnapp/covidcertificate/signature/core/DscData;Ljava/util/Date;Lkotlin/coroutines/Continuation;)Ljava/lang/Object;
 .end annotation
 
 .annotation system Ldalvik/annotation/InnerClass;
@@ -17,7 +17,7 @@
     c = "de.rki.coronawarnapp.covidcertificate.signature.core.DscSignatureValidator"
     f = "DscSignatureValidator.kt"
     l = {
-        0x40
+        0x45
     }
     m = "validateSignature"
 .end annotation
@@ -27,6 +27,8 @@
 .field public L$0:Ljava/lang/Object;
 
 .field public L$1:Ljava/lang/Object;
+
+.field public L$2:Ljava/lang/Object;
 
 .field public label:I
 
@@ -75,7 +77,7 @@
 
     const/4 v0, 0x0
 
-    invoke-virtual {p1, v0, v0, p0}, Lde/rki/coronawarnapp/covidcertificate/signature/core/DscSignatureValidator;->validateSignature(Lde/rki/coronawarnapp/covidcertificate/common/certificate/DccData;Lde/rki/coronawarnapp/covidcertificate/signature/core/DscData;Lkotlin/coroutines/Continuation;)Ljava/lang/Object;
+    invoke-virtual {p1, v0, v0, v0, p0}, Lde/rki/coronawarnapp/covidcertificate/signature/core/DscSignatureValidator;->validateSignature(Lde/rki/coronawarnapp/covidcertificate/common/certificate/DccData;Lde/rki/coronawarnapp/covidcertificate/signature/core/DscData;Ljava/util/Date;Lkotlin/coroutines/Continuation;)Ljava/lang/Object;
 
     move-result-object p1
 

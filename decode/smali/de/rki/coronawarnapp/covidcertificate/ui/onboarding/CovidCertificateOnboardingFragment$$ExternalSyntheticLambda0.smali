@@ -1,5 +1,6 @@
 .class public final synthetic Lde/rki/coronawarnapp/covidcertificate/ui/onboarding/CovidCertificateOnboardingFragment$$ExternalSyntheticLambda0;
 .super Ljava/lang/Object;
+.source "R8$$SyntheticClass"
 
 # interfaces
 .implements Landroidx/lifecycle/Observer;
@@ -23,7 +24,7 @@
 
 # virtual methods
 .method public final onChanged(Ljava/lang/Object;)V
-    .locals 13
+    .locals 12
 
     iget-object v0, p0, Lde/rki/coronawarnapp/covidcertificate/ui/onboarding/CovidCertificateOnboardingFragment$$ExternalSyntheticLambda0;->f$0:Lde/rki/coronawarnapp/covidcertificate/ui/onboarding/CovidCertificateOnboardingFragment;
 
@@ -45,11 +46,7 @@
 
     const-string v3, "NavHostFragment.findNavController(this)"
 
-    const-string v4, "$this$findNavController"
-
     if-eqz v1, :cond_0
-
-    invoke-static {v0, v4}, Lkotlin/jvm/internal/Intrinsics;->checkParameterIsNotNull(Ljava/lang/Object;Ljava/lang/String;)V
 
     invoke-static {v0}, Landroidx/navigation/fragment/NavHostFragment;->findNavController(Landroidx/fragment/app/Fragment;)Landroidx/navigation/NavController;
 
@@ -57,7 +54,7 @@
 
     invoke-static {p1, v3}, Lkotlin/jvm/internal/Intrinsics;->checkExpressionValueIsNotNull(Ljava/lang/Object;Ljava/lang/String;)V
 
-    const v0, 0x7f0a0054
+    const v0, 0x7f0a0056
 
     invoke-virtual {p1, v0, v2, v2, v2}, Landroidx/navigation/NavController;->navigate(ILandroid/os/Bundle;Landroidx/navigation/NavOptions;Landroidx/navigation/Navigator$Extras;)V
 
@@ -72,15 +69,13 @@
 
     if-eqz v1, :cond_1
 
-    invoke-static {v0, v4}, Lkotlin/jvm/internal/Intrinsics;->checkParameterIsNotNull(Ljava/lang/Object;Ljava/lang/String;)V
-
     invoke-static {v0}, Landroidx/navigation/fragment/NavHostFragment;->findNavController(Landroidx/fragment/app/Fragment;)Landroidx/navigation/NavController;
 
     move-result-object p1
 
     invoke-static {p1, v3}, Lkotlin/jvm/internal/Intrinsics;->checkExpressionValueIsNotNull(Ljava/lang/Object;Ljava/lang/String;)V
 
-    const v0, 0x7f0a0053
+    const v0, 0x7f0a0055
 
     invoke-virtual {p1, v0, v2, v2, v2}, Landroidx/navigation/NavController;->navigate(ILandroid/os/Bundle;Landroidx/navigation/NavOptions;Landroidx/navigation/Navigator$Extras;)V
 
@@ -101,7 +96,7 @@
 
     sget-object v1, Lde/rki/coronawarnapp/covidcertificate/vaccination/ui/details/VaccinationDetailsFragment;->Companion:Lde/rki/coronawarnapp/covidcertificate/vaccination/ui/details/VaccinationDetailsFragment$Companion;
 
-    invoke-virtual {p1}, Lde/rki/coronawarnapp/covidcertificate/common/repository/CertificateContainerId;->getIdentifier()Ljava/lang/String;
+    invoke-virtual {p1}, Lde/rki/coronawarnapp/covidcertificate/common/repository/CertificateContainerId;->getQrCodeHash()Ljava/lang/String;
 
     move-result-object p1
 
@@ -118,7 +113,7 @@
 
     sget-object v1, Lde/rki/coronawarnapp/covidcertificate/test/ui/details/TestCertificateDetailsFragment;->Companion:Lde/rki/coronawarnapp/covidcertificate/test/ui/details/TestCertificateDetailsFragment$Companion;
 
-    invoke-virtual {p1}, Lde/rki/coronawarnapp/covidcertificate/common/repository/CertificateContainerId;->getIdentifier()Ljava/lang/String;
+    invoke-virtual {p1}, Lde/rki/coronawarnapp/covidcertificate/common/repository/CertificateContainerId;->getQrCodeHash()Ljava/lang/String;
 
     move-result-object p1
 
@@ -135,7 +130,7 @@
 
     sget-object v1, Lde/rki/coronawarnapp/covidcertificate/recovery/ui/details/RecoveryCertificateDetailsFragment;->Companion:Lde/rki/coronawarnapp/covidcertificate/recovery/ui/details/RecoveryCertificateDetailsFragment$Companion;
 
-    invoke-virtual {p1}, Lde/rki/coronawarnapp/covidcertificate/common/repository/CertificateContainerId;->getIdentifier()Ljava/lang/String;
+    invoke-virtual {p1}, Lde/rki/coronawarnapp/covidcertificate/common/repository/CertificateContainerId;->getQrCodeHash()Ljava/lang/String;
 
     move-result-object p1
 
@@ -144,27 +139,25 @@
     move-result-object p1
 
     :goto_0
-    const/4 v6, 0x0
+    const/4 v5, 0x0
 
-    const/4 v12, -0x1
+    const/4 v11, -0x1
 
-    const v7, 0x7f0a023d
+    const v6, 0x7f0a025c
 
-    const/4 v8, 0x1
+    const/4 v7, 0x1
 
     new-instance v1, Landroidx/navigation/NavOptions;
 
-    move-object v5, v1
+    move-object v4, v1
 
-    move v9, v12
+    move v8, v11
 
-    move v10, v12
+    move v9, v11
 
-    move v11, v12
+    move v10, v11
 
-    invoke-direct/range {v5 .. v12}, Landroidx/navigation/NavOptions;-><init>(ZIZIIII)V
-
-    invoke-static {v0, v4}, Lkotlin/jvm/internal/Intrinsics;->checkParameterIsNotNull(Ljava/lang/Object;Ljava/lang/String;)V
+    invoke-direct/range {v4 .. v11}, Landroidx/navigation/NavOptions;-><init>(ZIZIIII)V
 
     invoke-static {v0}, Landroidx/navigation/fragment/NavHostFragment;->findNavController(Landroidx/fragment/app/Fragment;)Landroidx/navigation/NavController;
 
@@ -172,7 +165,7 @@
 
     invoke-static {v0, v3}, Lkotlin/jvm/internal/Intrinsics;->checkExpressionValueIsNotNull(Ljava/lang/Object;Ljava/lang/String;)V
 
-    invoke-static {p1, v2, v2, v0, v1}, Landroidx/navigation/NavController$$ExternalSyntheticOutline0;->m(Landroid/net/Uri;Ljava/lang/String;Ljava/lang/String;Landroidx/navigation/NavController;Landroidx/navigation/NavOptions;)V
+    invoke-virtual {v0, p1, v1}, Landroidx/navigation/NavController;->navigate(Landroid/net/Uri;Landroidx/navigation/NavOptions;)V
 
     goto :goto_1
 
@@ -200,7 +193,7 @@
 
     invoke-static {v0, v1}, Lkotlin/jvm/internal/Intrinsics;->checkNotNullExpressionValue(Ljava/lang/Object;Ljava/lang/String;)V
 
-    invoke-static {p1, v0}, Lokio/-Platform;->toQrCodeErrorDialogBuilder(Ljava/lang/Throwable;Landroid/content/Context;)Lcom/google/android/material/dialog/MaterialAlertDialogBuilder;
+    invoke-static {p1, v0}, Lcom/google/common/collect/Sets;->toQrCodeErrorDialogBuilder(Ljava/lang/Throwable;Landroid/content/Context;)Lcom/google/android/material/dialog/MaterialAlertDialogBuilder;
 
     move-result-object p1
 

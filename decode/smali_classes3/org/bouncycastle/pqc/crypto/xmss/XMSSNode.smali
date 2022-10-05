@@ -5,10 +5,14 @@
 .implements Ljava/io/Serializable;
 
 
-# instance fields
-.field public final height:I
+# static fields
+.field private static final serialVersionUID:J = 0x1L
 
-.field public final value:[B
+
+# instance fields
+.field private final height:I
+
+.field private final value:[B
 
 
 # direct methods
@@ -26,6 +30,14 @@
 
 
 # virtual methods
+.method public getHeight()I
+    .locals 1
+
+    iget v0, p0, Lorg/bouncycastle/pqc/crypto/xmss/XMSSNode;->height:I
+
+    return v0
+.end method
+
 .method public getValue()[B
     .locals 1
 

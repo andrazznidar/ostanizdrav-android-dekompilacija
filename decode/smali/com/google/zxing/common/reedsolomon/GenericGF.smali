@@ -4,20 +4,6 @@
 
 
 # static fields
-.field public static final AZTEC_DATA_10:Lcom/google/zxing/common/reedsolomon/GenericGF;
-
-.field public static final AZTEC_DATA_12:Lcom/google/zxing/common/reedsolomon/GenericGF;
-
-.field public static final AZTEC_DATA_6:Lcom/google/zxing/common/reedsolomon/GenericGF;
-
-.field public static final AZTEC_DATA_8:Lcom/google/zxing/common/reedsolomon/GenericGF;
-
-.field public static final AZTEC_PARAM:Lcom/google/zxing/common/reedsolomon/GenericGF;
-
-.field public static final DATA_MATRIX_FIELD_256:Lcom/google/zxing/common/reedsolomon/GenericGF;
-
-.field public static final MAXICODE_FIELD_64:Lcom/google/zxing/common/reedsolomon/GenericGF;
-
 .field public static final QR_CODE_FIELD_256:Lcom/google/zxing/common/reedsolomon/GenericGF;
 
 
@@ -39,7 +25,7 @@
 
 # direct methods
 .method public static constructor <clinit>()V
-    .locals 6
+    .locals 5
 
     new-instance v0, Lcom/google/zxing/common/reedsolomon/GenericGF;
 
@@ -51,8 +37,6 @@
 
     invoke-direct {v0, v1, v2, v3}, Lcom/google/zxing/common/reedsolomon/GenericGF;-><init>(III)V
 
-    sput-object v0, Lcom/google/zxing/common/reedsolomon/GenericGF;->AZTEC_DATA_12:Lcom/google/zxing/common/reedsolomon/GenericGF;
-
     new-instance v0, Lcom/google/zxing/common/reedsolomon/GenericGF;
 
     const/16 v1, 0x409
@@ -60,8 +44,6 @@
     const/16 v2, 0x400
 
     invoke-direct {v0, v1, v2, v3}, Lcom/google/zxing/common/reedsolomon/GenericGF;-><init>(III)V
-
-    sput-object v0, Lcom/google/zxing/common/reedsolomon/GenericGF;->AZTEC_DATA_10:Lcom/google/zxing/common/reedsolomon/GenericGF;
 
     new-instance v0, Lcom/google/zxing/common/reedsolomon/GenericGF;
 
@@ -71,41 +53,31 @@
 
     invoke-direct {v0, v1, v2, v3}, Lcom/google/zxing/common/reedsolomon/GenericGF;-><init>(III)V
 
-    sput-object v0, Lcom/google/zxing/common/reedsolomon/GenericGF;->AZTEC_DATA_6:Lcom/google/zxing/common/reedsolomon/GenericGF;
+    new-instance v0, Lcom/google/zxing/common/reedsolomon/GenericGF;
 
-    new-instance v1, Lcom/google/zxing/common/reedsolomon/GenericGF;
+    const/16 v1, 0x13
 
-    const/16 v2, 0x13
+    const/16 v2, 0x10
 
-    const/16 v4, 0x10
+    invoke-direct {v0, v1, v2, v3}, Lcom/google/zxing/common/reedsolomon/GenericGF;-><init>(III)V
 
-    invoke-direct {v1, v2, v4, v3}, Lcom/google/zxing/common/reedsolomon/GenericGF;-><init>(III)V
+    new-instance v0, Lcom/google/zxing/common/reedsolomon/GenericGF;
 
-    sput-object v1, Lcom/google/zxing/common/reedsolomon/GenericGF;->AZTEC_PARAM:Lcom/google/zxing/common/reedsolomon/GenericGF;
+    const/16 v1, 0x11d
 
-    new-instance v1, Lcom/google/zxing/common/reedsolomon/GenericGF;
+    const/16 v2, 0x100
 
-    const/16 v2, 0x11d
+    const/4 v4, 0x0
 
-    const/16 v4, 0x100
+    invoke-direct {v0, v1, v2, v4}, Lcom/google/zxing/common/reedsolomon/GenericGF;-><init>(III)V
 
-    const/4 v5, 0x0
+    sput-object v0, Lcom/google/zxing/common/reedsolomon/GenericGF;->QR_CODE_FIELD_256:Lcom/google/zxing/common/reedsolomon/GenericGF;
 
-    invoke-direct {v1, v2, v4, v5}, Lcom/google/zxing/common/reedsolomon/GenericGF;-><init>(III)V
+    new-instance v0, Lcom/google/zxing/common/reedsolomon/GenericGF;
 
-    sput-object v1, Lcom/google/zxing/common/reedsolomon/GenericGF;->QR_CODE_FIELD_256:Lcom/google/zxing/common/reedsolomon/GenericGF;
+    const/16 v1, 0x12d
 
-    new-instance v1, Lcom/google/zxing/common/reedsolomon/GenericGF;
-
-    const/16 v2, 0x12d
-
-    invoke-direct {v1, v2, v4, v3}, Lcom/google/zxing/common/reedsolomon/GenericGF;-><init>(III)V
-
-    sput-object v1, Lcom/google/zxing/common/reedsolomon/GenericGF;->DATA_MATRIX_FIELD_256:Lcom/google/zxing/common/reedsolomon/GenericGF;
-
-    sput-object v1, Lcom/google/zxing/common/reedsolomon/GenericGF;->AZTEC_DATA_8:Lcom/google/zxing/common/reedsolomon/GenericGF;
-
-    sput-object v0, Lcom/google/zxing/common/reedsolomon/GenericGF;->MAXICODE_FIELD_64:Lcom/google/zxing/common/reedsolomon/GenericGF;
+    invoke-direct {v0, v1, v2, v3}, Lcom/google/zxing/common/reedsolomon/GenericGF;-><init>(III)V
 
     return-void
 .end method

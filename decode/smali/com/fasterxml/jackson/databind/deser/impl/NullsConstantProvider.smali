@@ -68,6 +68,16 @@
 
 
 # virtual methods
+.method public getAbsentValue(Lcom/fasterxml/jackson/databind/DeserializationContext;)Ljava/lang/Object;
+    .locals 0
+
+    invoke-virtual {p0, p1}, Lcom/fasterxml/jackson/databind/deser/impl/NullsConstantProvider;->getNullValue(Lcom/fasterxml/jackson/databind/DeserializationContext;)Ljava/lang/Object;
+
+    move-result-object p1
+
+    return-object p1
+.end method
+
 .method public getNullValue(Lcom/fasterxml/jackson/databind/DeserializationContext;)Ljava/lang/Object;
     .locals 0
 

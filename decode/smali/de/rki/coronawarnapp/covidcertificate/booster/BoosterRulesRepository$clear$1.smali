@@ -17,8 +17,8 @@
     c = "de.rki.coronawarnapp.covidcertificate.booster.BoosterRulesRepository"
     f = "BoosterRulesRepository.kt"
     l = {
-        0x44,
-        0x45
+        0x5a,
+        0x5b
     }
     m = "clear"
 .end annotation

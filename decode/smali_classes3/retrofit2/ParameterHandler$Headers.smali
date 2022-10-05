@@ -61,10 +61,6 @@
 
     invoke-static {p1}, Ljava/util/Objects;->requireNonNull(Ljava/lang/Object;)Ljava/lang/Object;
 
-    const-string v1, "headers"
-
-    invoke-static {p2, v1}, Lkotlin/jvm/internal/Intrinsics;->checkNotNullParameter(Ljava/lang/Object;Ljava/lang/String;)V
-
     invoke-virtual {p2}, Lokhttp3/Headers;->size()I
 
     move-result v1

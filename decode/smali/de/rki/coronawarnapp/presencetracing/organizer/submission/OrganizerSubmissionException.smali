@@ -46,31 +46,25 @@
 .end method
 
 .method public toHumanReadableError(Landroid/content/Context;)Lde/rki/coronawarnapp/util/HumanReadableError;
-    .locals 4
+    .locals 3
 
     const-string v0, "context"
 
     invoke-static {p1, v0}, Lkotlin/jvm/internal/Intrinsics;->checkNotNullParameter(Ljava/lang/Object;Ljava/lang/String;)V
 
-    new-instance v1, Lde/rki/coronawarnapp/util/HumanReadableError;
+    new-instance v0, Lde/rki/coronawarnapp/util/HumanReadableError;
 
-    new-instance v2, Lde/rki/coronawarnapp/presencetracing/organizer/submission/OrganizerSubmissionException$errorMessage$1;
+    new-instance v1, Lde/rki/coronawarnapp/presencetracing/organizer/submission/OrganizerSubmissionException$errorMessage$1;
 
-    invoke-direct {v2, p0}, Lde/rki/coronawarnapp/presencetracing/organizer/submission/OrganizerSubmissionException$errorMessage$1;-><init>(Lde/rki/coronawarnapp/presencetracing/organizer/submission/OrganizerSubmissionException;)V
+    invoke-direct {v1, p0}, Lde/rki/coronawarnapp/presencetracing/organizer/submission/OrganizerSubmissionException$errorMessage$1;-><init>(Lde/rki/coronawarnapp/presencetracing/organizer/submission/OrganizerSubmissionException;)V
 
-    const-string v3, "provider"
-
-    invoke-static {v2, v3}, Lkotlin/jvm/internal/Intrinsics;->checkNotNullParameter(Ljava/lang/Object;Ljava/lang/String;)V
-
-    invoke-static {p1, v0}, Lkotlin/jvm/internal/Intrinsics;->checkNotNullParameter(Ljava/lang/Object;Ljava/lang/String;)V
-
-    invoke-interface {v2, p1}, Lkotlin/jvm/functions/Function1;->invoke(Ljava/lang/Object;)Ljava/lang/Object;
+    invoke-virtual {v1, p1}, Lde/rki/coronawarnapp/presencetracing/organizer/submission/OrganizerSubmissionException$errorMessage$1;->invoke(Ljava/lang/Object;)Ljava/lang/Object;
 
     move-result-object p1
 
     check-cast p1, Ljava/lang/String;
 
-    iget-object v0, p0, Lde/rki/coronawarnapp/presencetracing/organizer/submission/OrganizerSubmissionException;->errorCode:Lde/rki/coronawarnapp/presencetracing/organizer/submission/OrganizerSubmissionException$ErrorCode;
+    iget-object v1, p0, Lde/rki/coronawarnapp/presencetracing/organizer/submission/OrganizerSubmissionException;->errorCode:Lde/rki/coronawarnapp/presencetracing/organizer/submission/OrganizerSubmissionException$ErrorCode;
 
     new-instance v2, Ljava/lang/StringBuilder;
 
@@ -82,7 +76,7 @@
 
     invoke-virtual {v2, p1}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
 
-    invoke-virtual {v2, v0}, Ljava/lang/StringBuilder;->append(Ljava/lang/Object;)Ljava/lang/StringBuilder;
+    invoke-virtual {v2, v1}, Ljava/lang/StringBuilder;->append(Ljava/lang/Object;)Ljava/lang/StringBuilder;
 
     const-string p1, ")"
 
@@ -92,11 +86,9 @@
 
     move-result-object p1
 
-    const/4 v0, 0x1
+    const/4 v1, 0x0
 
-    const/4 v2, 0x0
+    invoke-direct {v0, v1, p1}, Lde/rki/coronawarnapp/util/HumanReadableError;-><init>(Ljava/lang/String;Ljava/lang/String;)V
 
-    invoke-direct {v1, v2, p1, v0}, Lde/rki/coronawarnapp/util/HumanReadableError;-><init>(Ljava/lang/String;Ljava/lang/String;I)V
-
-    return-object v1
+    return-object v0
 .end method

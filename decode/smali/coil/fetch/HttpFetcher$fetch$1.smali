@@ -4,15 +4,6 @@
 
 
 # annotations
-.annotation system Ldalvik/annotation/EnclosingMethod;
-    value = Lcoil/fetch/HttpFetcher;->fetch$suspendImpl(Lcoil/fetch/HttpFetcher;Ljava/lang/Object;Lcoil/decode/Options;Lkotlin/coroutines/Continuation;)Ljava/lang/Object;
-.end annotation
-
-.annotation system Ldalvik/annotation/InnerClass;
-    accessFlags = 0x19
-    name = null
-.end annotation
-
 .annotation runtime Lkotlin/coroutines/jvm/internal/DebugMetadata;
     c = "coil.fetch.HttpFetcher"
     f = "HttpFetcher.kt"
@@ -38,7 +29,8 @@
     .annotation system Ldalvik/annotation/Signature;
         value = {
             "Lcoil/fetch/HttpFetcher<",
-            "TT;>;"
+            "Ljava/lang/Object;",
+            ">;"
         }
     .end annotation
 .end field
@@ -51,7 +43,8 @@
         value = {
             "(",
             "Lcoil/fetch/HttpFetcher<",
-            "TT;>;",
+            "Ljava/lang/Object;",
+            ">;",
             "Lkotlin/coroutines/Continuation<",
             "-",
             "Lcoil/fetch/HttpFetcher$fetch$1;",

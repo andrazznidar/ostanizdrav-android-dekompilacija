@@ -11,10 +11,14 @@
 .end annotation
 
 
-# instance fields
-.field public final annotations:Lkotlin/reflect/jvm/internal/impl/descriptors/annotations/Annotations;
+# static fields
+.field public static final synthetic $assertionsDisabled:Z
 
-.field public final enumMemberNames:Lkotlin/reflect/jvm/internal/impl/storage/NotNullLazyValue;
+
+# instance fields
+.field private final annotations:Lkotlin/reflect/jvm/internal/impl/descriptors/annotations/Annotations;
+
+.field private final enumMemberNames:Lkotlin/reflect/jvm/internal/impl/storage/NotNullLazyValue;
     .annotation system Ldalvik/annotation/Signature;
         value = {
             "Lkotlin/reflect/jvm/internal/impl/storage/NotNullLazyValue<",
@@ -25,13 +29,13 @@
     .end annotation
 .end field
 
-.field public final scope:Lkotlin/reflect/jvm/internal/impl/resolve/scopes/MemberScope;
+.field private final scope:Lkotlin/reflect/jvm/internal/impl/resolve/scopes/MemberScope;
 
-.field public final typeConstructor:Lkotlin/reflect/jvm/internal/impl/types/TypeConstructor;
+.field private final typeConstructor:Lkotlin/reflect/jvm/internal/impl/types/TypeConstructor;
 
 
 # direct methods
-.method public static synthetic $$$reportNull$$$0(I)V
+.method private static synthetic $$$reportNull$$$0(I)V
     .locals 6
 
     packed-switch p0, :pswitch_data_0
@@ -354,7 +358,7 @@
     .end packed-switch
 .end method
 
-.method public constructor <init>(Lkotlin/reflect/jvm/internal/impl/storage/StorageManager;Lkotlin/reflect/jvm/internal/impl/descriptors/ClassDescriptor;Lkotlin/reflect/jvm/internal/impl/types/KotlinType;Lkotlin/reflect/jvm/internal/impl/name/Name;Lkotlin/reflect/jvm/internal/impl/storage/NotNullLazyValue;Lkotlin/reflect/jvm/internal/impl/descriptors/annotations/Annotations;Lkotlin/reflect/jvm/internal/impl/descriptors/SourceElement;)V
+.method private constructor <init>(Lkotlin/reflect/jvm/internal/impl/storage/StorageManager;Lkotlin/reflect/jvm/internal/impl/descriptors/ClassDescriptor;Lkotlin/reflect/jvm/internal/impl/types/KotlinType;Lkotlin/reflect/jvm/internal/impl/name/Name;Lkotlin/reflect/jvm/internal/impl/storage/NotNullLazyValue;Lkotlin/reflect/jvm/internal/impl/descriptors/annotations/Annotations;Lkotlin/reflect/jvm/internal/impl/descriptors/SourceElement;)V
     .locals 7
     .annotation system Ldalvik/annotation/Signature;
         value = {
@@ -373,20 +377,55 @@
         }
     .end annotation
 
-    const/4 v0, 0x0
+    if-nez p1, :cond_0
 
-    if-eqz p1, :cond_5
+    const/4 v0, 0x6
 
-    if-eqz p3, :cond_4
+    invoke-static {v0}, Lkotlin/reflect/jvm/internal/impl/descriptors/impl/EnumEntrySyntheticClassDescriptor;->$$$reportNull$$$0(I)V
 
-    if-eqz p4, :cond_3
+    :cond_0
+    if-nez p2, :cond_1
 
-    if-eqz p5, :cond_2
+    const/4 v0, 0x7
 
-    if-eqz p6, :cond_1
+    invoke-static {v0}, Lkotlin/reflect/jvm/internal/impl/descriptors/impl/EnumEntrySyntheticClassDescriptor;->$$$reportNull$$$0(I)V
 
-    if-eqz p7, :cond_0
+    :cond_1
+    if-nez p3, :cond_2
 
+    const/16 v0, 0x8
+
+    invoke-static {v0}, Lkotlin/reflect/jvm/internal/impl/descriptors/impl/EnumEntrySyntheticClassDescriptor;->$$$reportNull$$$0(I)V
+
+    :cond_2
+    if-nez p4, :cond_3
+
+    const/16 v0, 0x9
+
+    invoke-static {v0}, Lkotlin/reflect/jvm/internal/impl/descriptors/impl/EnumEntrySyntheticClassDescriptor;->$$$reportNull$$$0(I)V
+
+    :cond_3
+    if-nez p5, :cond_4
+
+    const/16 v0, 0xa
+
+    invoke-static {v0}, Lkotlin/reflect/jvm/internal/impl/descriptors/impl/EnumEntrySyntheticClassDescriptor;->$$$reportNull$$$0(I)V
+
+    :cond_4
+    if-nez p6, :cond_5
+
+    const/16 v0, 0xb
+
+    invoke-static {v0}, Lkotlin/reflect/jvm/internal/impl/descriptors/impl/EnumEntrySyntheticClassDescriptor;->$$$reportNull$$$0(I)V
+
+    :cond_5
+    if-nez p7, :cond_6
+
+    const/16 v0, 0xc
+
+    invoke-static {v0}, Lkotlin/reflect/jvm/internal/impl/descriptors/impl/EnumEntrySyntheticClassDescriptor;->$$$reportNull$$$0(I)V
+
+    :cond_6
     const/4 v6, 0x0
 
     move-object v1, p0
@@ -426,48 +465,14 @@
     iput-object p5, p0, Lkotlin/reflect/jvm/internal/impl/descriptors/impl/EnumEntrySyntheticClassDescriptor;->enumMemberNames:Lkotlin/reflect/jvm/internal/impl/storage/NotNullLazyValue;
 
     return-void
+.end method
 
-    :cond_0
-    const/16 p1, 0xc
+.method public static synthetic access$300(Lkotlin/reflect/jvm/internal/impl/descriptors/impl/EnumEntrySyntheticClassDescriptor;)Lkotlin/reflect/jvm/internal/impl/storage/NotNullLazyValue;
+    .locals 0
 
-    invoke-static {p1}, Lkotlin/reflect/jvm/internal/impl/descriptors/impl/EnumEntrySyntheticClassDescriptor;->$$$reportNull$$$0(I)V
+    iget-object p0, p0, Lkotlin/reflect/jvm/internal/impl/descriptors/impl/EnumEntrySyntheticClassDescriptor;->enumMemberNames:Lkotlin/reflect/jvm/internal/impl/storage/NotNullLazyValue;
 
-    throw v0
-
-    :cond_1
-    const/16 p1, 0xb
-
-    invoke-static {p1}, Lkotlin/reflect/jvm/internal/impl/descriptors/impl/EnumEntrySyntheticClassDescriptor;->$$$reportNull$$$0(I)V
-
-    throw v0
-
-    :cond_2
-    const/16 p1, 0xa
-
-    invoke-static {p1}, Lkotlin/reflect/jvm/internal/impl/descriptors/impl/EnumEntrySyntheticClassDescriptor;->$$$reportNull$$$0(I)V
-
-    throw v0
-
-    :cond_3
-    const/16 p1, 0x9
-
-    invoke-static {p1}, Lkotlin/reflect/jvm/internal/impl/descriptors/impl/EnumEntrySyntheticClassDescriptor;->$$$reportNull$$$0(I)V
-
-    throw v0
-
-    :cond_4
-    const/16 p1, 0x8
-
-    invoke-static {p1}, Lkotlin/reflect/jvm/internal/impl/descriptors/impl/EnumEntrySyntheticClassDescriptor;->$$$reportNull$$$0(I)V
-
-    throw v0
-
-    :cond_5
-    const/4 p1, 0x6
-
-    invoke-static {p1}, Lkotlin/reflect/jvm/internal/impl/descriptors/impl/EnumEntrySyntheticClassDescriptor;->$$$reportNull$$$0(I)V
-
-    throw v0
+    return-object p0
 .end method
 
 .method public static create(Lkotlin/reflect/jvm/internal/impl/storage/StorageManager;Lkotlin/reflect/jvm/internal/impl/descriptors/ClassDescriptor;Lkotlin/reflect/jvm/internal/impl/name/Name;Lkotlin/reflect/jvm/internal/impl/storage/NotNullLazyValue;Lkotlin/reflect/jvm/internal/impl/descriptors/annotations/Annotations;Lkotlin/reflect/jvm/internal/impl/descriptors/SourceElement;)Lkotlin/reflect/jvm/internal/impl/descriptors/impl/EnumEntrySyntheticClassDescriptor;
@@ -489,16 +494,48 @@
         }
     .end annotation
 
+    if-nez p0, :cond_0
+
     const/4 v0, 0x0
 
-    if-eqz p0, :cond_3
+    invoke-static {v0}, Lkotlin/reflect/jvm/internal/impl/descriptors/impl/EnumEntrySyntheticClassDescriptor;->$$$reportNull$$$0(I)V
 
-    if-eqz p1, :cond_2
+    :cond_0
+    if-nez p1, :cond_1
 
-    if-eqz p3, :cond_1
+    const/4 v0, 0x1
 
-    if-eqz p5, :cond_0
+    invoke-static {v0}, Lkotlin/reflect/jvm/internal/impl/descriptors/impl/EnumEntrySyntheticClassDescriptor;->$$$reportNull$$$0(I)V
 
+    :cond_1
+    if-nez p2, :cond_2
+
+    const/4 v0, 0x2
+
+    invoke-static {v0}, Lkotlin/reflect/jvm/internal/impl/descriptors/impl/EnumEntrySyntheticClassDescriptor;->$$$reportNull$$$0(I)V
+
+    :cond_2
+    if-nez p3, :cond_3
+
+    const/4 v0, 0x3
+
+    invoke-static {v0}, Lkotlin/reflect/jvm/internal/impl/descriptors/impl/EnumEntrySyntheticClassDescriptor;->$$$reportNull$$$0(I)V
+
+    :cond_3
+    if-nez p4, :cond_4
+
+    const/4 v0, 0x4
+
+    invoke-static {v0}, Lkotlin/reflect/jvm/internal/impl/descriptors/impl/EnumEntrySyntheticClassDescriptor;->$$$reportNull$$$0(I)V
+
+    :cond_4
+    if-nez p5, :cond_5
+
+    const/4 v0, 0x5
+
+    invoke-static {v0}, Lkotlin/reflect/jvm/internal/impl/descriptors/impl/EnumEntrySyntheticClassDescriptor;->$$$reportNull$$$0(I)V
+
+    :cond_5
     invoke-interface {p1}, Lkotlin/reflect/jvm/internal/impl/descriptors/ClassDescriptor;->getDefaultType()Lkotlin/reflect/jvm/internal/impl/types/SimpleType;
 
     move-result-object v4
@@ -522,55 +559,23 @@
     invoke-direct/range {v1 .. v8}, Lkotlin/reflect/jvm/internal/impl/descriptors/impl/EnumEntrySyntheticClassDescriptor;-><init>(Lkotlin/reflect/jvm/internal/impl/storage/StorageManager;Lkotlin/reflect/jvm/internal/impl/descriptors/ClassDescriptor;Lkotlin/reflect/jvm/internal/impl/types/KotlinType;Lkotlin/reflect/jvm/internal/impl/name/Name;Lkotlin/reflect/jvm/internal/impl/storage/NotNullLazyValue;Lkotlin/reflect/jvm/internal/impl/descriptors/annotations/Annotations;Lkotlin/reflect/jvm/internal/impl/descriptors/SourceElement;)V
 
     return-object v0
-
-    :cond_0
-    const/4 p0, 0x5
-
-    invoke-static {p0}, Lkotlin/reflect/jvm/internal/impl/descriptors/impl/EnumEntrySyntheticClassDescriptor;->$$$reportNull$$$0(I)V
-
-    throw v0
-
-    :cond_1
-    const/4 p0, 0x3
-
-    invoke-static {p0}, Lkotlin/reflect/jvm/internal/impl/descriptors/impl/EnumEntrySyntheticClassDescriptor;->$$$reportNull$$$0(I)V
-
-    throw v0
-
-    :cond_2
-    const/4 p0, 0x1
-
-    invoke-static {p0}, Lkotlin/reflect/jvm/internal/impl/descriptors/impl/EnumEntrySyntheticClassDescriptor;->$$$reportNull$$$0(I)V
-
-    throw v0
-
-    :cond_3
-    const/4 p0, 0x0
-
-    invoke-static {p0}, Lkotlin/reflect/jvm/internal/impl/descriptors/impl/EnumEntrySyntheticClassDescriptor;->$$$reportNull$$$0(I)V
-
-    throw v0
 .end method
 
 
 # virtual methods
 .method public getAnnotations()Lkotlin/reflect/jvm/internal/impl/descriptors/annotations/Annotations;
-    .locals 1
+    .locals 2
 
     iget-object v0, p0, Lkotlin/reflect/jvm/internal/impl/descriptors/impl/EnumEntrySyntheticClassDescriptor;->annotations:Lkotlin/reflect/jvm/internal/impl/descriptors/annotations/Annotations;
 
-    if-eqz v0, :cond_0
+    if-nez v0, :cond_0
 
-    return-object v0
+    const/16 v1, 0x15
+
+    invoke-static {v1}, Lkotlin/reflect/jvm/internal/impl/descriptors/impl/EnumEntrySyntheticClassDescriptor;->$$$reportNull$$$0(I)V
 
     :cond_0
-    const/16 v0, 0x15
-
-    invoke-static {v0}, Lkotlin/reflect/jvm/internal/impl/descriptors/impl/EnumEntrySyntheticClassDescriptor;->$$$reportNull$$$0(I)V
-
-    const/4 v0, 0x0
-
-    throw v0
+    return-object v0
 .end method
 
 .method public getCompanionObjectDescriptor()Lkotlin/reflect/jvm/internal/impl/descriptors/ClassDescriptor;
@@ -582,7 +587,7 @@
 .end method
 
 .method public getConstructors()Ljava/util/Collection;
-    .locals 1
+    .locals 2
     .annotation system Ldalvik/annotation/Signature;
         value = {
             "()",
@@ -596,22 +601,18 @@
 
     move-result-object v0
 
-    if-eqz v0, :cond_0
+    if-nez v0, :cond_0
 
-    return-object v0
+    const/16 v1, 0x10
+
+    invoke-static {v1}, Lkotlin/reflect/jvm/internal/impl/descriptors/impl/EnumEntrySyntheticClassDescriptor;->$$$reportNull$$$0(I)V
 
     :cond_0
-    const/16 v0, 0x10
-
-    invoke-static {v0}, Lkotlin/reflect/jvm/internal/impl/descriptors/impl/EnumEntrySyntheticClassDescriptor;->$$$reportNull$$$0(I)V
-
-    const/4 v0, 0x0
-
-    throw v0
+    return-object v0
 .end method
 
 .method public getDeclaredTypeParameters()Ljava/util/List;
-    .locals 1
+    .locals 2
     .annotation system Ldalvik/annotation/Signature;
         value = {
             "()",
@@ -625,38 +626,64 @@
 
     move-result-object v0
 
-    if-eqz v0, :cond_0
+    if-nez v0, :cond_0
 
-    return-object v0
+    const/16 v1, 0x16
+
+    invoke-static {v1}, Lkotlin/reflect/jvm/internal/impl/descriptors/impl/EnumEntrySyntheticClassDescriptor;->$$$reportNull$$$0(I)V
 
     :cond_0
-    const/16 v0, 0x16
+    return-object v0
+.end method
 
-    invoke-static {v0}, Lkotlin/reflect/jvm/internal/impl/descriptors/impl/EnumEntrySyntheticClassDescriptor;->$$$reportNull$$$0(I)V
+.method public getInlineClassRepresentation()Lkotlin/reflect/jvm/internal/impl/descriptors/InlineClassRepresentation;
+    .locals 1
+    .annotation system Ldalvik/annotation/Signature;
+        value = {
+            "()",
+            "Lkotlin/reflect/jvm/internal/impl/descriptors/InlineClassRepresentation<",
+            "Lkotlin/reflect/jvm/internal/impl/types/SimpleType;",
+            ">;"
+        }
+    .end annotation
 
     const/4 v0, 0x0
 
-    throw v0
+    return-object v0
 .end method
 
 .method public getKind()Lkotlin/reflect/jvm/internal/impl/descriptors/ClassKind;
-    .locals 1
+    .locals 2
 
     sget-object v0, Lkotlin/reflect/jvm/internal/impl/descriptors/ClassKind;->ENUM_ENTRY:Lkotlin/reflect/jvm/internal/impl/descriptors/ClassKind;
 
+    if-nez v0, :cond_0
+
+    const/16 v1, 0x12
+
+    invoke-static {v1}, Lkotlin/reflect/jvm/internal/impl/descriptors/impl/EnumEntrySyntheticClassDescriptor;->$$$reportNull$$$0(I)V
+
+    :cond_0
     return-object v0
 .end method
 
 .method public getModality()Lkotlin/reflect/jvm/internal/impl/descriptors/Modality;
-    .locals 1
+    .locals 2
 
     sget-object v0, Lkotlin/reflect/jvm/internal/impl/descriptors/Modality;->FINAL:Lkotlin/reflect/jvm/internal/impl/descriptors/Modality;
 
+    if-nez v0, :cond_0
+
+    const/16 v1, 0x13
+
+    invoke-static {v1}, Lkotlin/reflect/jvm/internal/impl/descriptors/impl/EnumEntrySyntheticClassDescriptor;->$$$reportNull$$$0(I)V
+
+    :cond_0
     return-object v0
 .end method
 
 .method public getSealedSubclasses()Ljava/util/Collection;
-    .locals 1
+    .locals 2
     .annotation system Ldalvik/annotation/Signature;
         value = {
             "()",
@@ -670,73 +697,66 @@
 
     move-result-object v0
 
-    if-eqz v0, :cond_0
+    if-nez v0, :cond_0
 
-    return-object v0
+    const/16 v1, 0x17
+
+    invoke-static {v1}, Lkotlin/reflect/jvm/internal/impl/descriptors/impl/EnumEntrySyntheticClassDescriptor;->$$$reportNull$$$0(I)V
 
     :cond_0
-    const/16 v0, 0x17
-
-    invoke-static {v0}, Lkotlin/reflect/jvm/internal/impl/descriptors/impl/EnumEntrySyntheticClassDescriptor;->$$$reportNull$$$0(I)V
-
-    const/4 v0, 0x0
-
-    throw v0
+    return-object v0
 .end method
 
 .method public getStaticScope()Lkotlin/reflect/jvm/internal/impl/resolve/scopes/MemberScope;
-    .locals 1
+    .locals 2
 
     sget-object v0, Lkotlin/reflect/jvm/internal/impl/resolve/scopes/MemberScope$Empty;->INSTANCE:Lkotlin/reflect/jvm/internal/impl/resolve/scopes/MemberScope$Empty;
 
+    if-nez v0, :cond_0
+
+    const/16 v1, 0xf
+
+    invoke-static {v1}, Lkotlin/reflect/jvm/internal/impl/descriptors/impl/EnumEntrySyntheticClassDescriptor;->$$$reportNull$$$0(I)V
+
+    :cond_0
     return-object v0
 .end method
 
 .method public getTypeConstructor()Lkotlin/reflect/jvm/internal/impl/types/TypeConstructor;
-    .locals 1
+    .locals 2
 
     iget-object v0, p0, Lkotlin/reflect/jvm/internal/impl/descriptors/impl/EnumEntrySyntheticClassDescriptor;->typeConstructor:Lkotlin/reflect/jvm/internal/impl/types/TypeConstructor;
 
-    if-eqz v0, :cond_0
+    if-nez v0, :cond_0
 
-    return-object v0
+    const/16 v1, 0x11
+
+    invoke-static {v1}, Lkotlin/reflect/jvm/internal/impl/descriptors/impl/EnumEntrySyntheticClassDescriptor;->$$$reportNull$$$0(I)V
 
     :cond_0
-    const/16 v0, 0x11
-
-    invoke-static {v0}, Lkotlin/reflect/jvm/internal/impl/descriptors/impl/EnumEntrySyntheticClassDescriptor;->$$$reportNull$$$0(I)V
-
-    const/4 v0, 0x0
-
-    throw v0
+    return-object v0
 .end method
 
 .method public getUnsubstitutedMemberScope(Lkotlin/reflect/jvm/internal/impl/types/checker/KotlinTypeRefiner;)Lkotlin/reflect/jvm/internal/impl/resolve/scopes/MemberScope;
     .locals 1
 
-    const/4 v0, 0x0
+    if-nez p1, :cond_0
 
-    if-eqz p1, :cond_1
-
-    iget-object p1, p0, Lkotlin/reflect/jvm/internal/impl/descriptors/impl/EnumEntrySyntheticClassDescriptor;->scope:Lkotlin/reflect/jvm/internal/impl/resolve/scopes/MemberScope;
-
-    if-eqz p1, :cond_0
-
-    return-object p1
-
-    :cond_0
-    const/16 p1, 0xe
-
-    invoke-static {p1}, Lkotlin/reflect/jvm/internal/impl/descriptors/impl/EnumEntrySyntheticClassDescriptor;->$$$reportNull$$$0(I)V
-
-    throw v0
-
-    :cond_1
     const/16 p1, 0xd
 
     invoke-static {p1}, Lkotlin/reflect/jvm/internal/impl/descriptors/impl/EnumEntrySyntheticClassDescriptor;->$$$reportNull$$$0(I)V
 
-    throw v0
+    :cond_0
+    iget-object p1, p0, Lkotlin/reflect/jvm/internal/impl/descriptors/impl/EnumEntrySyntheticClassDescriptor;->scope:Lkotlin/reflect/jvm/internal/impl/resolve/scopes/MemberScope;
+
+    if-nez p1, :cond_1
+
+    const/16 v0, 0xe
+
+    invoke-static {v0}, Lkotlin/reflect/jvm/internal/impl/descriptors/impl/EnumEntrySyntheticClassDescriptor;->$$$reportNull$$$0(I)V
+
+    :cond_1
+    return-object p1
 .end method
 
 .method public getUnsubstitutedPrimaryConstructor()Lkotlin/reflect/jvm/internal/impl/descriptors/ClassConstructorDescriptor;
@@ -748,22 +768,18 @@
 .end method
 
 .method public getVisibility()Lkotlin/reflect/jvm/internal/impl/descriptors/DescriptorVisibility;
-    .locals 1
+    .locals 2
 
     sget-object v0, Lkotlin/reflect/jvm/internal/impl/descriptors/DescriptorVisibilities;->PUBLIC:Lkotlin/reflect/jvm/internal/impl/descriptors/DescriptorVisibility;
 
-    if-eqz v0, :cond_0
+    if-nez v0, :cond_0
 
-    return-object v0
+    const/16 v1, 0x14
+
+    invoke-static {v1}, Lkotlin/reflect/jvm/internal/impl/descriptors/impl/EnumEntrySyntheticClassDescriptor;->$$$reportNull$$$0(I)V
 
     :cond_0
-    const/16 v0, 0x14
-
-    invoke-static {v0}, Lkotlin/reflect/jvm/internal/impl/descriptors/impl/EnumEntrySyntheticClassDescriptor;->$$$reportNull$$$0(I)V
-
-    const/4 v0, 0x0
-
-    throw v0
+    return-object v0
 .end method
 
 .method public isActual()Z

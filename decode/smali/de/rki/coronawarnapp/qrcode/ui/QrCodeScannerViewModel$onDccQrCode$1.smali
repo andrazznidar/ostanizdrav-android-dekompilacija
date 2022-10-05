@@ -8,7 +8,10 @@
     c = "de.rki.coronawarnapp.qrcode.ui.QrCodeScannerViewModel"
     f = "QrCodeScannerViewModel.kt"
     l = {
-        0x54
+        0x9c,
+        0xa3,
+        0xa5,
+        0xaa
     }
     m = "onDccQrCode"
 .end annotation
@@ -16,6 +19,8 @@
 
 # instance fields
 .field public L$0:Ljava/lang/Object;
+
+.field public L$1:Ljava/lang/Object;
 
 .field public label:I
 

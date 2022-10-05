@@ -150,7 +150,7 @@
 
     invoke-direct {v0, v1, p1}, Lkotlinx/coroutines/CompletionHandlerException;-><init>(Ljava/lang/String;Ljava/lang/Throwable;)V
 
-    invoke-static {p2, v0}, Lkotlinx/coroutines/YieldKt;->handleCoroutineException(Lkotlin/coroutines/CoroutineContext;Ljava/lang/Throwable;)V
+    invoke-static {p2, v0}, Lkotlinx/coroutines/CoroutineExceptionHandlerKt;->handleCoroutineException(Lkotlin/coroutines/CoroutineContext;Ljava/lang/Throwable;)V
 
     :goto_0
     return-void
@@ -181,7 +181,7 @@
 
     invoke-direct {v0, v1, p1}, Lkotlinx/coroutines/CompletionHandlerException;-><init>(Ljava/lang/String;Ljava/lang/Throwable;)V
 
-    invoke-static {p2, v0}, Lkotlinx/coroutines/YieldKt;->handleCoroutineException(Lkotlin/coroutines/CoroutineContext;Ljava/lang/Throwable;)V
+    invoke-static {p2, v0}, Lkotlinx/coroutines/CoroutineExceptionHandlerKt;->handleCoroutineException(Lkotlin/coroutines/CoroutineContext;Ljava/lang/Throwable;)V
 
     :goto_0
     return-void
@@ -224,7 +224,7 @@
 
     invoke-direct {v0, v1, p1}, Lkotlinx/coroutines/CompletionHandlerException;-><init>(Ljava/lang/String;Ljava/lang/Throwable;)V
 
-    invoke-static {p2, v0}, Lkotlinx/coroutines/YieldKt;->handleCoroutineException(Lkotlin/coroutines/CoroutineContext;Ljava/lang/Throwable;)V
+    invoke-static {p2, v0}, Lkotlinx/coroutines/CoroutineExceptionHandlerKt;->handleCoroutineException(Lkotlin/coroutines/CoroutineContext;Ljava/lang/Throwable;)V
 
     :goto_0
     return-void
@@ -1346,26 +1346,6 @@
     return v0
 .end method
 
-.method public resume(Ljava/lang/Object;Lkotlin/jvm/functions/Function1;)V
-    .locals 1
-    .annotation system Ldalvik/annotation/Signature;
-        value = {
-            "(TT;",
-            "Lkotlin/jvm/functions/Function1<",
-            "-",
-            "Ljava/lang/Throwable;",
-            "Lkotlin/Unit;",
-            ">;)V"
-        }
-    .end annotation
-
-    iget v0, p0, Lkotlinx/coroutines/DispatchedTask;->resumeMode:I
-
-    invoke-virtual {p0, p1, v0, p2}, Lkotlinx/coroutines/CancellableContinuationImpl;->resumeImpl(Ljava/lang/Object;ILkotlin/jvm/functions/Function1;)V
-
-    return-void
-.end method
-
 .method public final resumeImpl(Ljava/lang/Object;ILkotlin/jvm/functions/Function1;)V
     .locals 8
     .annotation system Ldalvik/annotation/Signature;
@@ -1818,7 +1798,7 @@
     :cond_0
     invoke-virtual {p0}, Lkotlinx/coroutines/CancellableContinuationImpl;->detachChildIfNonResuable()V
 
-    sget-object p1, Lkotlinx/coroutines/CancellableContinuationImplKt;->RESUME_TOKEN:Lkotlinx/coroutines/internal/Symbol;
+    sget-object p1, Lcom/upokecenter/cbor/CBORDoubleBits;->RESUME_TOKEN:Lkotlinx/coroutines/internal/Symbol;
 
     return-object p1
 
@@ -1837,7 +1817,7 @@
 
     if-ne p1, p2, :cond_2
 
-    sget-object p3, Lkotlinx/coroutines/CancellableContinuationImplKt;->RESUME_TOKEN:Lkotlinx/coroutines/internal/Symbol;
+    sget-object p3, Lcom/upokecenter/cbor/CBORDoubleBits;->RESUME_TOKEN:Lkotlinx/coroutines/internal/Symbol;
 
     :cond_2
     return-object p3

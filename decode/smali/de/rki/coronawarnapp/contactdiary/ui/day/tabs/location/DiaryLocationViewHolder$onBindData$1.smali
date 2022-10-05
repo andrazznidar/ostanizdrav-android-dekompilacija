@@ -114,9 +114,11 @@
 
     move-result-object v1
 
-    new-instance v3, Lde/rki/coronawarnapp/submission/ui/homecards/RapidTestReadyCard$onBindData$1$$ExternalSyntheticLambda0;
+    new-instance v3, Lde/rki/coronawarnapp/submission/ui/homecards/RapidTestPendingCard$onBindData$1$$ExternalSyntheticLambda0;
 
-    invoke-direct {v3, p2, v0}, Lde/rki/coronawarnapp/submission/ui/homecards/RapidTestReadyCard$onBindData$1$$ExternalSyntheticLambda0;-><init>(Lde/rki/coronawarnapp/contactdiary/ui/day/tabs/location/DiaryLocationListItem;Lde/rki/coronawarnapp/contactdiary/ui/day/tabs/common/ExpandingDiaryListItemView;)V
+    const/4 v4, 0x1
+
+    invoke-direct {v3, p2, v0, v4}, Lde/rki/coronawarnapp/submission/ui/homecards/RapidTestPendingCard$onBindData$1$$ExternalSyntheticLambda0;-><init>(Ljava/lang/Object;Ljava/lang/Object;I)V
 
     invoke-virtual {v1, v3}, Landroid/view/ViewGroup;->setOnClickListener(Landroid/view/View$OnClickListener;)V
 
@@ -139,8 +141,6 @@
     move-result v1
 
     const/4 v3, 0x0
-
-    const/4 v4, 0x1
 
     if-eqz v1, :cond_2
 
@@ -287,7 +287,7 @@
     goto :goto_6
 
     :cond_8
-    invoke-static {v0}, Lde/rki/coronawarnapp/ui/durationpicker/DurationExtensionKt;->toContactDiaryFormat(Lorg/joda/time/Duration;)Ljava/lang/String;
+    invoke-static {v0}, Landroidx/lifecycle/ViewModelKt;->toContactDiaryFormat(Lorg/joda/time/Duration;)Ljava/lang/String;
 
     move-result-object v2
 
@@ -307,11 +307,11 @@
     goto :goto_7
 
     :cond_9
-    const v0, 0x7f0800bb
+    const v0, 0x7f0800aa
 
     invoke-virtual {p3, v0}, Landroid/widget/TextView;->setBackgroundResource(I)V
 
-    const v0, 0x7f140322
+    const v0, 0x7f140324
 
     invoke-virtual {p3, v0}, Landroid/widget/TextView;->setTextAppearance(I)V
 
@@ -323,7 +323,7 @@
 
     move-result-object v0
 
-    const v1, 0x7f1301aa
+    const v1, 0x7f1301d7
 
     invoke-virtual {v0, v1}, Landroid/content/Context;->getString(I)Ljava/lang/String;
 
@@ -331,20 +331,20 @@
 
     invoke-virtual {p3, v0}, Landroid/widget/TextView;->setText(Ljava/lang/CharSequence;)V
 
-    const v0, 0x7f0800ba
+    const v0, 0x7f0800a9
 
     invoke-virtual {p3, v0}, Landroid/widget/TextView;->setBackgroundResource(I)V
 
-    const v0, 0x7f140328
+    const v0, 0x7f14032a
 
     invoke-virtual {p3, v0}, Landroid/widget/TextView;->setTextAppearance(I)V
 
     :goto_8
     iget-object p3, p1, Lde/rki/coronawarnapp/databinding/ContactDiaryLocationListItemBinding;->durationInput:Landroid/widget/TextView;
 
-    new-instance v0, Lde/rki/coronawarnapp/ui/main/home/items/FAQCard$onBindData$1$$ExternalSyntheticLambda0;
+    new-instance v0, Lde/rki/coronawarnapp/contactdiary/ui/day/tabs/location/DiaryLocationViewHolder$onBindData$1$$ExternalSyntheticLambda0;
 
-    invoke-direct {v0, p1, p2}, Lde/rki/coronawarnapp/ui/main/home/items/FAQCard$onBindData$1$$ExternalSyntheticLambda0;-><init>(Lde/rki/coronawarnapp/databinding/ContactDiaryLocationListItemBinding;Lde/rki/coronawarnapp/contactdiary/ui/day/tabs/location/DiaryLocationListItem;)V
+    invoke-direct {v0, p1, p2}, Lde/rki/coronawarnapp/contactdiary/ui/day/tabs/location/DiaryLocationViewHolder$onBindData$1$$ExternalSyntheticLambda0;-><init>(Lde/rki/coronawarnapp/databinding/ContactDiaryLocationListItemBinding;Lde/rki/coronawarnapp/contactdiary/ui/day/tabs/location/DiaryLocationListItem;)V
 
     invoke-virtual {p3, v0}, Landroid/widget/TextView;->setOnClickListener(Landroid/view/View$OnClickListener;)V
 

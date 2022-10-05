@@ -34,15 +34,15 @@
     .annotation system Ldalvik/annotation/Throws;
         value = {
             Ljava/io/IOException;,
-            Lcom/fasterxml/jackson/core/JsonProcessingException;
+            Lcom/fasterxml/jackson/core/JacksonException;
         }
     .end annotation
 
+    invoke-static {p2}, Ljava/util/Objects;->requireNonNull(Ljava/lang/Object;)Ljava/lang/Object;
+
     new-instance v0, Lcom/fasterxml/jackson/databind/util/TokenBuffer;
 
-    const/4 v1, 0x0
-
-    invoke-direct {v0, p1, v1}, Lcom/fasterxml/jackson/databind/util/TokenBuffer;-><init>(Lcom/fasterxml/jackson/core/JsonParser;Lcom/fasterxml/jackson/databind/DeserializationContext;)V
+    invoke-direct {v0, p1, p2}, Lcom/fasterxml/jackson/databind/util/TokenBuffer;-><init>(Lcom/fasterxml/jackson/core/JsonParser;Lcom/fasterxml/jackson/databind/DeserializationContext;)V
 
     sget-object v1, Lcom/fasterxml/jackson/core/JsonToken;->FIELD_NAME:Lcom/fasterxml/jackson/core/JsonToken;
 

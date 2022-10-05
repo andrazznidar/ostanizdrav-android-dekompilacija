@@ -12,3 +12,17 @@
     accessFlags = 0x19
     name = "ClassFileContent"
 .end annotation
+
+
+# instance fields
+.field private final content:[B
+
+
+# virtual methods
+.method public final getContent()[B
+    .locals 1
+
+    iget-object v0, p0, Lkotlin/reflect/jvm/internal/impl/load/kotlin/KotlinClassFinder$Result$ClassFileContent;->content:[B
+
+    return-object v0
+.end method

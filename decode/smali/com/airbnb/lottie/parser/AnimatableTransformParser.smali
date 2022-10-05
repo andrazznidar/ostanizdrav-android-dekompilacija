@@ -70,13 +70,13 @@
 
     move-object/from16 v8, p1
 
-    invoke-virtual/range {p0 .. p0}, Lcom/airbnb/lottie/parser/moshi/JsonReader;->peek()Lcom/airbnb/lottie/parser/moshi/JsonReader$Token;
+    invoke-virtual/range {p0 .. p0}, Lcom/airbnb/lottie/parser/moshi/JsonReader;->peek$enumunboxing$()I
 
-    move-result-object v1
-
-    sget-object v2, Lcom/airbnb/lottie/parser/moshi/JsonReader$Token;->BEGIN_OBJECT:Lcom/airbnb/lottie/parser/moshi/JsonReader$Token;
+    move-result v1
 
     const/4 v10, 0x0
+
+    const/4 v2, 0x3
 
     if-ne v1, v2, :cond_0
 
@@ -185,7 +185,9 @@
 
     move-result-object v5
 
-    iget-object v1, v5, Lcom/airbnb/lottie/model/animatable/BaseAnimatableValue;->keyframes:Ljava/util/List;
+    iget-object v1, v5, Lboofcv/struct/border/ImageBorder;->image:Ljava/lang/Object;
+
+    check-cast v1, Ljava/util/List;
 
     invoke-interface {v1}, Ljava/util/List;->isEmpty()Z
 
@@ -193,7 +195,11 @@
 
     if-eqz v1, :cond_2
 
-    iget-object v4, v5, Lcom/airbnb/lottie/model/animatable/BaseAnimatableValue;->keyframes:Ljava/util/List;
+    iget-object v1, v5, Lboofcv/struct/border/ImageBorder;->image:Ljava/lang/Object;
+
+    move-object v4, v1
+
+    check-cast v4, Ljava/util/List;
 
     new-instance v2, Lcom/airbnb/lottie/value/Keyframe;
 
@@ -258,7 +264,9 @@
 
     move-object v13, v7
 
-    iget-object v1, v10, Lcom/airbnb/lottie/model/animatable/BaseAnimatableValue;->keyframes:Ljava/util/List;
+    iget-object v1, v10, Lboofcv/struct/border/ImageBorder;->image:Ljava/lang/Object;
+
+    check-cast v1, Ljava/util/List;
 
     const/4 v2, 0x0
 
@@ -272,7 +280,11 @@
 
     if-nez v1, :cond_3
 
-    iget-object v9, v10, Lcom/airbnb/lottie/model/animatable/BaseAnimatableValue;->keyframes:Ljava/util/List;
+    iget-object v1, v10, Lboofcv/struct/border/ImageBorder;->image:Ljava/lang/Object;
+
+    move-object v9, v1
+
+    check-cast v9, Ljava/util/List;
 
     new-instance v12, Lcom/airbnb/lottie/value/Keyframe;
 
@@ -382,7 +394,7 @@
     goto :goto_4
 
     :cond_4
-    invoke-static/range {p0 .. p1}, Lcom/airbnb/lottie/parser/AnimatablePathValueParser;->parse(Lcom/airbnb/lottie/parser/moshi/JsonReader;Lcom/airbnb/lottie/LottieComposition;)Lokhttp3/ConnectionPool;
+    invoke-static/range {p0 .. p1}, Lcom/airbnb/lottie/parser/AnimatablePathValueParser;->parse(Lcom/airbnb/lottie/parser/moshi/JsonReader;Lcom/airbnb/lottie/LottieComposition;)Lcom/airbnb/lottie/model/animatable/AnimatablePathValue;
 
     move-result-object v15
 
@@ -417,15 +429,13 @@
     :cond_7
     if-eqz v15, :cond_9
 
-    invoke-virtual {v15}, Lokhttp3/ConnectionPool;->isStatic()Z
+    invoke-virtual {v15}, Lcom/airbnb/lottie/model/animatable/AnimatablePathValue;->isStatic()Z
 
     move-result v0
 
     if-eqz v0, :cond_8
 
-    iget-object v0, v15, Lokhttp3/ConnectionPool;->delegate:Ljava/lang/Object;
-
-    check-cast v0, Ljava/util/List;
+    iget-object v0, v15, Lcom/airbnb/lottie/model/animatable/AnimatablePathValue;->keyframes:Ljava/util/List;
 
     const/4 v2, 0x0
 
@@ -515,13 +525,15 @@
     :cond_d
     if-eqz v1, :cond_f
 
-    invoke-virtual {v1}, Lcom/airbnb/lottie/model/animatable/BaseAnimatableValue;->isStatic()Z
+    invoke-virtual {v1}, Lboofcv/struct/border/ImageBorder;->isStatic()Z
 
     move-result v0
 
     if-eqz v0, :cond_e
 
-    iget-object v0, v1, Lcom/airbnb/lottie/model/animatable/BaseAnimatableValue;->keyframes:Ljava/util/List;
+    iget-object v0, v1, Lboofcv/struct/border/ImageBorder;->image:Ljava/lang/Object;
+
+    check-cast v0, Ljava/util/List;
 
     const/4 v2, 0x0
 
@@ -571,13 +583,15 @@
     :goto_d
     if-eqz v6, :cond_13
 
-    invoke-virtual {v6}, Lcom/airbnb/lottie/model/animatable/BaseAnimatableValue;->isStatic()Z
+    invoke-virtual {v6}, Lboofcv/struct/border/ImageBorder;->isStatic()Z
 
     move-result v0
 
     if-eqz v0, :cond_12
 
-    iget-object v0, v6, Lcom/airbnb/lottie/model/animatable/BaseAnimatableValue;->keyframes:Ljava/util/List;
+    iget-object v0, v6, Lboofcv/struct/border/ImageBorder;->image:Ljava/lang/Object;
+
+    check-cast v0, Ljava/util/List;
 
     const/4 v1, 0x0
 
@@ -639,13 +653,15 @@
     :goto_11
     if-eqz v14, :cond_16
 
-    invoke-virtual {v14}, Lcom/airbnb/lottie/model/animatable/BaseAnimatableValue;->isStatic()Z
+    invoke-virtual {v14}, Lboofcv/struct/border/ImageBorder;->isStatic()Z
 
     move-result v0
 
     if-eqz v0, :cond_15
 
-    iget-object v0, v14, Lcom/airbnb/lottie/model/animatable/BaseAnimatableValue;->keyframes:Ljava/util/List;
+    iget-object v0, v14, Lboofcv/struct/border/ImageBorder;->image:Ljava/lang/Object;
+
+    check-cast v0, Ljava/util/List;
 
     const/4 v1, 0x0
 
@@ -686,7 +702,7 @@
     :cond_17
     if-eqz v18, :cond_1a
 
-    invoke-virtual/range {v18 .. v18}, Lcom/airbnb/lottie/model/animatable/BaseAnimatableValue;->isStatic()Z
+    invoke-virtual/range {v18 .. v18}, Lboofcv/struct/border/ImageBorder;->isStatic()Z
 
     move-result v0
 
@@ -694,7 +710,9 @@
 
     if-eqz v0, :cond_18
 
-    iget-object v0, v12, Lcom/airbnb/lottie/model/animatable/BaseAnimatableValue;->keyframes:Ljava/util/List;
+    iget-object v0, v12, Lboofcv/struct/border/ImageBorder;->image:Ljava/lang/Object;
+
+    check-cast v0, Ljava/util/List;
 
     const/4 v1, 0x0
 
@@ -753,9 +771,11 @@
 
     move-object/from16 v24, v14
 
-    invoke-direct/range {v16 .. v25}, Lcom/airbnb/lottie/model/animatable/AnimatableTransform;-><init>(Lokhttp3/ConnectionPool;Lcom/airbnb/lottie/model/animatable/AnimatableValue;Lcom/airbnb/lottie/model/animatable/AnimatableScaleValue;Lcom/airbnb/lottie/model/animatable/AnimatableFloatValue;Lcom/airbnb/lottie/model/animatable/AnimatableIntegerValue;Lcom/airbnb/lottie/model/animatable/AnimatableFloatValue;Lcom/airbnb/lottie/model/animatable/AnimatableFloatValue;Lcom/airbnb/lottie/model/animatable/AnimatableFloatValue;Lcom/airbnb/lottie/model/animatable/AnimatableFloatValue;)V
+    invoke-direct/range {v16 .. v25}, Lcom/airbnb/lottie/model/animatable/AnimatableTransform;-><init>(Lcom/airbnb/lottie/model/animatable/AnimatablePathValue;Lcom/airbnb/lottie/model/animatable/AnimatableValue;Lcom/airbnb/lottie/model/animatable/AnimatableScaleValue;Lcom/airbnb/lottie/model/animatable/AnimatableFloatValue;Lcom/airbnb/lottie/model/animatable/AnimatableIntegerValue;Lcom/airbnb/lottie/model/animatable/AnimatableFloatValue;Lcom/airbnb/lottie/model/animatable/AnimatableFloatValue;Lcom/airbnb/lottie/model/animatable/AnimatableFloatValue;Lcom/airbnb/lottie/model/animatable/AnimatableFloatValue;)V
 
     return-object v0
+
+    nop
 
     :pswitch_data_0
     .packed-switch 0x0

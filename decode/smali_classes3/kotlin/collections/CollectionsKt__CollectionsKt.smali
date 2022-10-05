@@ -5,11 +5,36 @@
 
 # annotations
 .annotation system Ldalvik/annotation/SourceDebugExtension;
-    value = "SMAP\nCollections.kt\nKotlin\n*S Kotlin\n*F\n+ 1 Collections.kt\nkotlin/collections/CollectionsKt__CollectionsKt\n+ 2 fake.kt\nkotlin/jvm/internal/FakeKt\n*L\n1#1,467:1\n1#2:468\n*E\n"
+    value = "SMAP\nCollections.kt\nKotlin\n*S Kotlin\n*F\n+ 1 Collections.kt\nkotlin/collections/CollectionsKt__CollectionsKt\n+ 2 fake.kt\nkotlin/jvm/internal/FakeKt\n*L\n1#1,469:1\n392#1:471\n1#2:470\n*S KotlinDebug\n*F\n+ 1 Collections.kt\nkotlin/collections/CollectionsKt__CollectionsKt\n*L\n386#1:471\n*E\n"
 .end annotation
 
 
 # direct methods
+.method public static final build(Ljava/util/List;)Ljava/util/List;
+    .locals 1
+
+    check-cast p0, Lkotlin/collections/builders/ListBuilder;
+
+    iget-object v0, p0, Lkotlin/collections/builders/ListBuilder;->backing:Lkotlin/collections/builders/ListBuilder;
+
+    if-nez v0, :cond_0
+
+    invoke-virtual {p0}, Lkotlin/collections/builders/ListBuilder;->checkIsMutable()V
+
+    const/4 v0, 0x1
+
+    iput-boolean v0, p0, Lkotlin/collections/builders/ListBuilder;->isReadOnly:Z
+
+    return-object p0
+
+    :cond_0
+    new-instance p0, Ljava/lang/IllegalStateException;
+
+    invoke-direct {p0}, Ljava/lang/IllegalStateException;-><init>()V
+
+    throw p0
+.end method
+
 .method public static final getLastIndex(Ljava/util/List;)I
     .locals 1
     .annotation system Ldalvik/annotation/Signature;
@@ -22,7 +47,7 @@
         }
     .end annotation
 
-    const-string v0, "$this$lastIndex"
+    const-string v0, "<this>"
 
     invoke-static {p0, v0}, Lkotlin/jvm/internal/Intrinsics;->checkNotNullParameter(Ljava/lang/Object;Ljava/lang/String;)V
 
@@ -37,21 +62,12 @@
 
 .method public static final listOf(Ljava/lang/Object;)Ljava/util/List;
     .locals 1
-    .annotation system Ldalvik/annotation/Signature;
-        value = {
-            "<T:",
-            "Ljava/lang/Object;",
-            ">(TT;)",
-            "Ljava/util/List<",
-            "TT;>;"
-        }
-    .end annotation
 
     invoke-static {p0}, Ljava/util/Collections;->singletonList(Ljava/lang/Object;)Ljava/util/List;
 
     move-result-object p0
 
-    const-string v0, "java.util.Collections.singletonList(element)"
+    const-string v0, "singletonList(element)"
 
     invoke-static {p0, v0}, Lkotlin/jvm/internal/Intrinsics;->checkNotNullExpressionValue(Ljava/lang/Object;Ljava/lang/String;)V
 
@@ -224,6 +240,18 @@
 
     :goto_0
     return-object p0
+.end method
+
+.method public static final throwCountOverflow()V
+    .locals 2
+
+    new-instance v0, Ljava/lang/ArithmeticException;
+
+    const-string v1, "Count overflow has happened."
+
+    invoke-direct {v0, v1}, Ljava/lang/ArithmeticException;-><init>(Ljava/lang/String;)V
+
+    throw v0
 .end method
 
 .method public static final throwIndexOverflow()V

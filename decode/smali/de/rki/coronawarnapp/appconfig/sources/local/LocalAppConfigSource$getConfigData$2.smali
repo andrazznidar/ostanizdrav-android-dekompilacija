@@ -148,7 +148,7 @@
 
     const-string v5, "retrieveConfig()"
 
-    invoke-virtual {p1, v5, v1}, Ltimber/log/Timber$Tree;->v(Ljava/lang/String;[Ljava/lang/Object;)V
+    invoke-virtual {p1, v5, v1}, Ltimber/log/Timber$Forest;->v(Ljava/lang/String;[Ljava/lang/Object;)V
 
     iget-object p1, p0, Lde/rki/coronawarnapp/appconfig/sources/local/LocalAppConfigSource$getConfigData$2;->this$0:Lde/rki/coronawarnapp/appconfig/sources/local/LocalAppConfigSource;
 
@@ -180,7 +180,7 @@
 
     const-string v2, "No stored config available."
 
-    invoke-virtual {p1, v2, v1}, Ltimber/log/Timber$Tree;->d(Ljava/lang/String;[Ljava/lang/Object;)V
+    invoke-virtual {p1, v2, v1}, Ltimber/log/Timber$Forest;->d(Ljava/lang/String;[Ljava/lang/Object;)V
 
     return-object v0
 
@@ -210,7 +210,7 @@
 
     move-result-object v9
 
-    sget-object v11, Lde/rki/coronawarnapp/appconfig/ConfigData$Type;->LAST_RETRIEVED:Lde/rki/coronawarnapp/appconfig/ConfigData$Type;
+    const/4 v11, 0x2
 
     invoke-virtual {p1}, Lde/rki/coronawarnapp/appconfig/internal/InternalConfigData;->getCacheValidity()Lorg/joda/time/Duration;
 
@@ -220,7 +220,7 @@
 
     move-object v5, p1
 
-    invoke-direct/range {v5 .. v11}, Lde/rki/coronawarnapp/appconfig/internal/ConfigDataContainer;-><init>(Lorg/joda/time/Instant;Lorg/joda/time/Duration;Lde/rki/coronawarnapp/appconfig/mapping/ConfigMapping;Ljava/lang/String;Lorg/joda/time/Duration;Lde/rki/coronawarnapp/appconfig/ConfigData$Type;)V
+    invoke-direct/range {v5 .. v11}, Lde/rki/coronawarnapp/appconfig/internal/ConfigDataContainer;-><init>(Lorg/joda/time/Instant;Lorg/joda/time/Duration;Lde/rki/coronawarnapp/appconfig/mapping/ConfigMapping;Ljava/lang/String;Lorg/joda/time/Duration;I)V
     :try_end_0
     .catch Ljava/lang/Exception; {:try_start_0 .. :try_end_0} :catch_0
 
@@ -239,7 +239,7 @@
 
     const-string v3, "Fallback config exists but could not be parsed!"
 
-    invoke-virtual {v1, p1, v3, v2}, Ltimber/log/Timber$Tree;->e(Ljava/lang/Throwable;Ljava/lang/String;[Ljava/lang/Object;)V
+    invoke-virtual {v1, p1, v3, v2}, Ltimber/log/Timber$Forest;->e(Ljava/lang/Throwable;Ljava/lang/String;[Ljava/lang/Object;)V
 
     :goto_1
     return-object v0

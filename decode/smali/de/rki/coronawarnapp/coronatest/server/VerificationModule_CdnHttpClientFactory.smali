@@ -39,11 +39,11 @@
     .end annotation
 .end field
 
-.field public final module:Lde/rki/coronawarnapp/coronatest/server/VerificationModule;
+.field public final module:Lorg/bouncycastle/crypto/modes/kgcm/KGCMUtil_512;
 
 
 # direct methods
-.method public constructor <init>(Lde/rki/coronawarnapp/coronatest/server/VerificationModule;Ljavax/inject/Provider;Ljavax/inject/Provider;)V
+.method public constructor <init>(Lorg/bouncycastle/crypto/modes/kgcm/KGCMUtil_512;Ljavax/inject/Provider;Ljavax/inject/Provider;)V
     .locals 0
     .annotation system Ldalvik/annotation/MethodParameters;
         accessFlags = {
@@ -61,7 +61,7 @@
     .annotation system Ldalvik/annotation/Signature;
         value = {
             "(",
-            "Lde/rki/coronawarnapp/coronatest/server/VerificationModule;",
+            "Lorg/bouncycastle/crypto/modes/kgcm/KGCMUtil_512;",
             "Ljavax/inject/Provider<",
             "Lokhttp3/OkHttpClient;",
             ">;",
@@ -74,7 +74,7 @@
 
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
-    iput-object p1, p0, Lde/rki/coronawarnapp/coronatest/server/VerificationModule_CdnHttpClientFactory;->module:Lde/rki/coronawarnapp/coronatest/server/VerificationModule;
+    iput-object p1, p0, Lde/rki/coronawarnapp/coronatest/server/VerificationModule_CdnHttpClientFactory;->module:Lorg/bouncycastle/crypto/modes/kgcm/KGCMUtil_512;
 
     iput-object p2, p0, Lde/rki/coronawarnapp/coronatest/server/VerificationModule_CdnHttpClientFactory;->defaultHttpClientProvider:Ljavax/inject/Provider;
 
@@ -88,7 +88,7 @@
 .method public get()Ljava/lang/Object;
     .locals 3
 
-    iget-object v0, p0, Lde/rki/coronawarnapp/coronatest/server/VerificationModule_CdnHttpClientFactory;->module:Lde/rki/coronawarnapp/coronatest/server/VerificationModule;
+    iget-object v0, p0, Lde/rki/coronawarnapp/coronatest/server/VerificationModule_CdnHttpClientFactory;->module:Lorg/bouncycastle/crypto/modes/kgcm/KGCMUtil_512;
 
     iget-object v1, p0, Lde/rki/coronawarnapp/coronatest/server/VerificationModule_CdnHttpClientFactory;->defaultHttpClientProvider:Ljavax/inject/Provider;
 

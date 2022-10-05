@@ -5,7 +5,7 @@
 
 # annotations
 .annotation system Ldalvik/annotation/SourceDebugExtension;
-    value = "SMAP\nExposureDetectionTrackerStorage.kt\nKotlin\n*S Kotlin\n*F\n+ 1 ExposureDetectionTrackerStorage.kt\nde/rki/coronawarnapp/nearby/modules/detectiontracker/ExposureDetectionTrackerStorage\n+ 2 Mutex.kt\nkotlinx/coroutines/sync/MutexKt\n+ 3 GsonExtensions.kt\nde/rki/coronawarnapp/util/serialization/GsonExtensionsKt\n*L\n1#1,72:1\n109#2,8:73\n118#2,2:95\n109#2,8:97\n118#2,2:109\n21#3,14:81\n39#3,4:105\n*S KotlinDebug\n*F\n+ 1 ExposureDetectionTrackerStorage.kt\nde/rki/coronawarnapp/nearby/modules/detectiontracker/ExposureDetectionTrackerStorage\n*L\n44#1:73,8\n44#1:95,2\n58#1:97,8\n58#1:109,2\n46#1:81,14\n65#1:105,4\n*E\n"
+    value = "SMAP\nExposureDetectionTrackerStorage.kt\nKotlin\n*S Kotlin\n*F\n+ 1 ExposureDetectionTrackerStorage.kt\nde/rki/coronawarnapp/nearby/modules/detectiontracker/ExposureDetectionTrackerStorage\n+ 2 Mutex.kt\nkotlinx/coroutines/sync/MutexKt\n+ 3 GsonExtensions.kt\nde/rki/coronawarnapp/util/serialization/GsonExtensionsKt\n*L\n1#1,72:1\n109#2,8:73\n118#2,2:95\n109#2,8:97\n118#2,2:109\n27#3,14:81\n45#3,4:105\n*S KotlinDebug\n*F\n+ 1 ExposureDetectionTrackerStorage.kt\nde/rki/coronawarnapp/nearby/modules/detectiontracker/ExposureDetectionTrackerStorage\n*L\n44#1:73,8\n44#1:95,2\n58#1:97,8\n58#1:109,2\n46#1:81,14\n65#1:105,4\n*E\n"
 .end annotation
 
 
@@ -52,7 +52,7 @@
 
     invoke-direct {p1, p2}, Lde/rki/coronawarnapp/nearby/modules/detectiontracker/ExposureDetectionTrackerStorage$gson$2;-><init>(Lcom/google/gson/Gson;)V
 
-    invoke-static {p1}, Lkotlin/LazyKt__LazyKt;->lazy(Lkotlin/jvm/functions/Function0;)Lkotlin/Lazy;
+    invoke-static {p1}, Lkotlin/LazyKt__LazyJVMKt;->lazy(Lkotlin/jvm/functions/Function0;)Lkotlin/Lazy;
 
     move-result-object p1
 
@@ -72,7 +72,7 @@
 
     invoke-direct {p2, p0}, Lde/rki/coronawarnapp/nearby/modules/detectiontracker/ExposureDetectionTrackerStorage$storageDir$2;-><init>(Lde/rki/coronawarnapp/nearby/modules/detectiontracker/ExposureDetectionTrackerStorage;)V
 
-    invoke-static {p2}, Lkotlin/LazyKt__LazyKt;->lazy(Lkotlin/jvm/functions/Function0;)Lkotlin/Lazy;
+    invoke-static {p2}, Lkotlin/LazyKt__LazyJVMKt;->lazy(Lkotlin/jvm/functions/Function0;)Lkotlin/Lazy;
 
     move-result-object p2
 
@@ -82,7 +82,7 @@
 
     invoke-direct {p2, p0}, Lde/rki/coronawarnapp/nearby/modules/detectiontracker/ExposureDetectionTrackerStorage$storageFile$2;-><init>(Lde/rki/coronawarnapp/nearby/modules/detectiontracker/ExposureDetectionTrackerStorage;)V
 
-    invoke-static {p2}, Lkotlin/LazyKt__LazyKt;->lazy(Lkotlin/jvm/functions/Function0;)Lkotlin/Lazy;
+    invoke-static {p2}, Lkotlin/LazyKt__LazyJVMKt;->lazy(Lkotlin/jvm/functions/Function0;)Lkotlin/Lazy;
 
     move-result-object p2
 
@@ -529,13 +529,13 @@
 
     iget v2, v0, Lde/rki/coronawarnapp/nearby/modules/detectiontracker/ExposureDetectionTrackerStorage$save$1;->label:I
 
-    const/4 v3, 0x1
+    const/4 v3, 0x0
 
-    const/4 v4, 0x0
+    const/4 v4, 0x1
 
     if-eqz v2, :cond_2
 
-    if-ne v2, v3, :cond_1
+    if-ne v2, v4, :cond_1
 
     iget-object p1, v0, Lde/rki/coronawarnapp/nearby/modules/detectiontracker/ExposureDetectionTrackerStorage$save$1;->L$2:Ljava/lang/Object;
 
@@ -577,9 +577,9 @@
 
     iput-object p2, v0, Lde/rki/coronawarnapp/nearby/modules/detectiontracker/ExposureDetectionTrackerStorage$save$1;->L$2:Ljava/lang/Object;
 
-    iput v3, v0, Lde/rki/coronawarnapp/nearby/modules/detectiontracker/ExposureDetectionTrackerStorage$save$1;->label:I
+    iput v4, v0, Lde/rki/coronawarnapp/nearby/modules/detectiontracker/ExposureDetectionTrackerStorage$save$1;->label:I
 
-    invoke-interface {p2, v4, v0}, Lkotlinx/coroutines/sync/Mutex;->lock(Ljava/lang/Object;Lkotlin/coroutines/Continuation;)Ljava/lang/Object;
+    invoke-interface {p2, v3, v0}, Lkotlinx/coroutines/sync/Mutex;->lock(Ljava/lang/Object;Lkotlin/coroutines/Continuation;)Ljava/lang/Object;
 
     move-result-object v0
 
@@ -617,11 +617,11 @@
 
     const-string v5, "Storing detection data: %s"
 
-    new-array v3, v3, [Ljava/lang/Object;
+    new-array v4, v4, [Ljava/lang/Object;
 
-    aput-object p1, v3, v2
+    aput-object p1, v4, v2
 
-    invoke-virtual {v1, v5, v3}, Ltimber/log/Timber$Forest;->v(Ljava/lang/String;[Ljava/lang/Object;)V
+    invoke-virtual {v1, v5, v4}, Ltimber/log/Timber$Forest;->v(Ljava/lang/String;[Ljava/lang/Object;)V
     :try_end_0
     .catchall {:try_start_0 .. :try_end_0} :catchall_2
 
@@ -634,15 +634,15 @@
 
     check-cast v1, Lcom/google/gson/Gson;
 
-    const-string v3, "gson"
+    const-string v4, "gson"
 
-    invoke-static {v1, v3}, Lkotlin/jvm/internal/Intrinsics;->checkNotNullExpressionValue(Ljava/lang/Object;Ljava/lang/String;)V
+    invoke-static {v1, v4}, Lkotlin/jvm/internal/Intrinsics;->checkNotNullExpressionValue(Ljava/lang/Object;Ljava/lang/String;)V
 
     invoke-virtual {v0}, Lde/rki/coronawarnapp/nearby/modules/detectiontracker/ExposureDetectionTrackerStorage;->getStorageFile()Ljava/io/File;
 
     move-result-object v0
 
-    sget-object v3, Lkotlin/text/Charsets;->UTF_8:Ljava/nio/charset/Charset;
+    sget-object v4, Lkotlin/text/Charsets;->UTF_8:Ljava/nio/charset/Charset;
 
     const/16 v5, 0x2000
 
@@ -652,25 +652,25 @@
 
     new-instance v0, Ljava/io/OutputStreamWriter;
 
-    invoke-direct {v0, v6, v3}, Ljava/io/OutputStreamWriter;-><init>(Ljava/io/OutputStream;Ljava/nio/charset/Charset;)V
+    invoke-direct {v0, v6, v4}, Ljava/io/OutputStreamWriter;-><init>(Ljava/io/OutputStream;Ljava/nio/charset/Charset;)V
 
-    instance-of v3, v0, Ljava/io/BufferedWriter;
+    instance-of v4, v0, Ljava/io/BufferedWriter;
 
-    if-eqz v3, :cond_5
+    if-eqz v4, :cond_5
 
     check-cast v0, Ljava/io/BufferedWriter;
 
     goto :goto_2
 
     :cond_5
-    new-instance v3, Ljava/io/BufferedWriter;
+    new-instance v4, Ljava/io/BufferedWriter;
 
-    invoke-direct {v3, v0, v5}, Ljava/io/BufferedWriter;-><init>(Ljava/io/Writer;I)V
+    invoke-direct {v4, v0, v5}, Ljava/io/BufferedWriter;-><init>(Ljava/io/Writer;I)V
     :try_end_1
     .catch Ljava/lang/Exception; {:try_start_1 .. :try_end_1} :catch_0
     .catchall {:try_start_1 .. :try_end_1} :catchall_2
 
-    move-object v0, v3
+    move-object v0, v4
 
     :goto_2
     if-eqz p1, :cond_6
@@ -678,9 +678,9 @@
     :try_start_2
     invoke-virtual {p1}, Ljava/lang/Object;->getClass()Ljava/lang/Class;
 
-    move-result-object v3
+    move-result-object v4
 
-    invoke-virtual {v1, p1, v3, v0}, Lcom/google/gson/Gson;->toJson(Ljava/lang/Object;Ljava/lang/reflect/Type;Ljava/lang/Appendable;)V
+    invoke-virtual {v1, p1, v4, v0}, Lcom/google/gson/Gson;->toJson(Ljava/lang/Object;Ljava/lang/reflect/Type;Ljava/lang/Appendable;)V
 
     goto :goto_3
 
@@ -695,7 +695,7 @@
     .catchall {:try_start_2 .. :try_end_2} :catchall_0
 
     :try_start_3
-    invoke-static {v0, v4}, Lkotlin/io/CloseableKt;->closeFinally(Ljava/io/Closeable;Ljava/lang/Throwable;)V
+    invoke-static {v0, v3}, Lkotlin/io/CloseableKt;->closeFinally(Ljava/io/Closeable;Ljava/lang/Throwable;)V
     :try_end_3
     .catch Ljava/lang/Exception; {:try_start_3 .. :try_end_3} :catch_0
     .catchall {:try_start_3 .. :try_end_3} :catchall_2
@@ -733,23 +733,23 @@
 
     invoke-virtual {v0, p1, v1, v2}, Ltimber/log/Timber$Forest;->e(Ljava/lang/Throwable;Ljava/lang/String;[Ljava/lang/Object;)V
 
-    sget-object v0, Lde/rki/coronawarnapp/exception/ExceptionCategory;->INTERNAL:Lde/rki/coronawarnapp/exception/ExceptionCategory;
+    const/4 v0, 0x4
 
-    invoke-static {p1, v0, v4, v4}, Lde/rki/coronawarnapp/exception/reporting/ExceptionReporterKt;->report(Ljava/lang/Throwable;Lde/rki/coronawarnapp/exception/ExceptionCategory;Ljava/lang/String;Ljava/lang/String;)V
+    invoke-static {p1, v0}, Lde/rki/coronawarnapp/exception/reporting/ExceptionReporterKt;->report(Ljava/lang/Throwable;I)V
 
     :goto_4
     sget-object p1, Lkotlin/Unit;->INSTANCE:Lkotlin/Unit;
     :try_end_6
     .catchall {:try_start_6 .. :try_end_6} :catchall_2
 
-    invoke-interface {p2, v4}, Lkotlinx/coroutines/sync/Mutex;->unlock(Ljava/lang/Object;)V
+    invoke-interface {p2, v3}, Lkotlinx/coroutines/sync/Mutex;->unlock(Ljava/lang/Object;)V
 
     return-object p1
 
     :catchall_2
     move-exception p1
 
-    invoke-interface {p2, v4}, Lkotlinx/coroutines/sync/Mutex;->unlock(Ljava/lang/Object;)V
+    invoke-interface {p2, v3}, Lkotlinx/coroutines/sync/Mutex;->unlock(Ljava/lang/Object;)V
 
     throw p1
 .end method

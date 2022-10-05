@@ -69,7 +69,7 @@
 .method public onFinishInflate()V
     .locals 1
 
-    invoke-super {p0}, Landroid/view/View;->onFinishInflate()V
+    invoke-super {p0}, Landroid/widget/LinearLayout;->onFinishInflate()V
 
     sget v0, Lcom/google/android/material/R$id;->snackbar_text:I
 

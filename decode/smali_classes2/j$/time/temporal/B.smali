@@ -2,7 +2,7 @@
 .super Ljava/lang/Enum;
 
 # interfaces
-.implements Lj$/time/temporal/y;
+.implements Lj$/time/temporal/x;
 
 
 # static fields
@@ -485,7 +485,7 @@
 .method public b(Lj$/time/temporal/k;J)Lj$/time/temporal/k;
     .locals 0
 
-    invoke-interface {p1, p2, p3, p0}, Lj$/time/temporal/k;->f(JLj$/time/temporal/y;)Lj$/time/temporal/k;
+    invoke-interface {p1, p2, p3, p0}, Lj$/time/temporal/k;->h(JLj$/time/temporal/x;)Lj$/time/temporal/k;
 
     move-result-object p1
 

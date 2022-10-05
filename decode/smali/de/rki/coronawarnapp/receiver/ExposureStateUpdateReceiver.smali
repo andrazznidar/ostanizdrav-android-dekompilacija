@@ -9,11 +9,7 @@
 .end annotation
 
 .annotation runtime Lkotlin/Metadata;
-    bv = {
-        0x1,
-        0x0,
-        0x3
-    }
+    bv = {}
     d1 = {
         "\u0000\u000c\n\u0002\u0018\u0002\n\u0002\u0018\u0002\n\u0002\u0008\u0003\u0018\u00002\u00020\u0001B\u0007\u00a2\u0006\u0004\u0008\u0002\u0010\u0003\u00a8\u0006\u0004"
     }
@@ -27,8 +23,8 @@
     k = 0x1
     mv = {
         0x1,
-        0x5,
-        0x1
+        0x6,
+        0x0
     }
 .end annotation
 
@@ -53,7 +49,7 @@
 
     const-class v0, Lde/rki/coronawarnapp/receiver/ExposureStateUpdateReceiver;
 
-    invoke-static {v0}, Lde/rki/coronawarnapp/contactdiary/retention/ContactDiaryCleanTask$$ExternalSyntheticOutline0;->m(Ljava/lang/Class;)Ljava/lang/String;
+    invoke-static {v0}, Lorg/bouncycastle/crypto/digests/MD5Digest$$ExternalSyntheticOutline0;->m(Ljava/lang/Class;)Ljava/lang/String;
 
     move-result-object v0
 
@@ -170,7 +166,7 @@
 
     invoke-virtual {v0, v5, v2}, Ltimber/log/Timber$Forest;->d(Ljava/lang/String;[Ljava/lang/Object;)V
 
-    invoke-static {p0, p1}, Ldagger/android/AndroidInjection;->inject(Landroid/content/BroadcastReceiver;Landroid/content/Context;)V
+    invoke-static {p0, p1}, Lkotlin/jvm/JvmClassMappingKt;->inject(Landroid/content/BroadcastReceiver;Landroid/content/Context;)V
 
     invoke-virtual {p2}, Landroid/content/Intent;->getAction()Ljava/lang/String;
 

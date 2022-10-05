@@ -32,11 +32,7 @@
 .end annotation
 
 .annotation runtime Lkotlin/Metadata;
-    bv = {
-        0x1,
-        0x0,
-        0x3
-    }
+    bv = {}
     d1 = {
         "\u0000\u0010\n\u0002\u0018\u0002\n\u0002\u0018\u0002\n\u0002\u0018\u0002\n\u0002\u0008\u0003\u0018\u00002\u0008\u0012\u0004\u0012\u00020\u00020\u0001B\u0007\u00a2\u0006\u0004\u0008\u0003\u0010\u0004\u00a8\u0006\u0005"
     }
@@ -51,8 +47,8 @@
     k = 0x1
     mv = {
         0x1,
-        0x5,
-        0x1
+        0x6,
+        0x0
     }
 .end annotation
 
@@ -103,7 +99,7 @@
 
     invoke-virtual {p1}, Lcom/google/gson/stream/JsonReader;->nextNull()V
 
-    goto :goto_4
+    goto :goto_3
 
     :cond_1
     invoke-virtual {p1}, Lcom/google/gson/stream/JsonReader;->nextInt()I
@@ -122,34 +118,37 @@
 
     move v6, v5
 
+    :cond_2
     :goto_1
     if-ge v5, v3, :cond_5
 
     aget-object v7, v0, v5
 
+    add-int/lit8 v5, v5, 0x1
+
     iget v8, v7, Lde/rki/coronawarnapp/coronatest/server/CoronaTestResult;->value:I
 
-    if-ne v8, p1, :cond_2
+    if-ne v8, p1, :cond_3
 
     move v8, v2
 
     goto :goto_2
 
-    :cond_2
+    :cond_3
     move v8, v4
 
     :goto_2
-    if-eqz v8, :cond_4
+    if-eqz v8, :cond_2
 
-    if-nez v6, :cond_3
+    if-nez v6, :cond_4
 
     move v6, v2
 
     move-object v1, v7
 
-    goto :goto_3
+    goto :goto_1
 
-    :cond_3
+    :cond_4
     new-instance p1, Ljava/lang/IllegalArgumentException;
 
     const-string v0, "Array contains more than one matching element."
@@ -158,16 +157,10 @@
 
     throw p1
 
-    :cond_4
-    :goto_3
-    add-int/lit8 v5, v5, 0x1
-
-    goto :goto_1
-
     :cond_5
     if-eqz v6, :cond_6
 
-    :goto_4
+    :goto_3
     return-object v1
 
     :cond_6

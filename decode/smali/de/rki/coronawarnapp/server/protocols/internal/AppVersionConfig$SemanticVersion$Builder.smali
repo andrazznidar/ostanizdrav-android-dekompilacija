@@ -40,7 +40,7 @@
     return-void
 .end method
 
-.method public synthetic constructor <init>(Lde/rki/coronawarnapp/server/protocols/internal/AppVersionConfig$SemanticVersion$Builder-IA;)V
+.method public synthetic constructor <init>(Lcom/google/crypto/tink/subtle/Field25519$$ExternalSyntheticOutline0;)V
     .locals 0
 
     invoke-direct {p0}, Lde/rki/coronawarnapp/server/protocols/internal/AppVersionConfig$SemanticVersion$Builder;-><init>()V

@@ -90,7 +90,7 @@
 
     const-string v4, " ms"
 
-    invoke-static {v3, v0, v1, v4}, Landroidx/work/impl/utils/futures/AbstractFuture$$ExternalSyntheticOutline0;->m(Ljava/lang/String;JLjava/lang/String;)Ljava/lang/String;
+    invoke-static {v3, v0, v1, v4}, Landroidx/concurrent/futures/AbstractResolvableFuture$$ExternalSyntheticOutline0;->m(Ljava/lang/String;JLjava/lang/String;)Ljava/lang/String;
 
     move-result-object v0
 

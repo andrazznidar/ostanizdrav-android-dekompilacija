@@ -84,9 +84,9 @@
 
     iget-object p3, p0, Lde/rki/coronawarnapp/contactdiary/ui/edit/adapter/LocationEditAdapter$ViewHolder$onBindData$1;->this$0:Lde/rki/coronawarnapp/contactdiary/ui/edit/adapter/LocationEditAdapter;
 
-    new-instance v0, Lde/rki/coronawarnapp/submission/ui/homecards/PcrTestNegativeCard$onBindData$1$$ExternalSyntheticLambda0;
+    new-instance v0, Lde/rki/coronawarnapp/contactdiary/ui/edit/adapter/LocationEditAdapter$ViewHolder$onBindData$1$$ExternalSyntheticLambda0;
 
-    invoke-direct {v0, p3, p2}, Lde/rki/coronawarnapp/submission/ui/homecards/PcrTestNegativeCard$onBindData$1$$ExternalSyntheticLambda0;-><init>(Lde/rki/coronawarnapp/contactdiary/ui/edit/adapter/LocationEditAdapter;Lde/rki/coronawarnapp/contactdiary/model/ContactDiaryLocation;)V
+    invoke-direct {v0, p3, p2}, Lde/rki/coronawarnapp/contactdiary/ui/edit/adapter/LocationEditAdapter$ViewHolder$onBindData$1$$ExternalSyntheticLambda0;-><init>(Lde/rki/coronawarnapp/contactdiary/ui/edit/adapter/LocationEditAdapter;Lde/rki/coronawarnapp/contactdiary/model/ContactDiaryLocation;)V
 
     invoke-virtual {p1, v0}, Landroid/view/ViewGroup;->setOnClickListener(Landroid/view/View$OnClickListener;)V
 

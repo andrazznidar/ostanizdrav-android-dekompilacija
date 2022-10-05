@@ -26,18 +26,6 @@
 # direct methods
 .method public constructor <init>(Lde/rki/coronawarnapp/util/di/DaggerApplicationComponent;Lde/rki/coronawarnapp/util/di/DaggerApplicationComponent$MainActivitySubcomponentImpl;Lde/rki/coronawarnapp/ui/main/home/HomeFragment;Lde/rki/coronawarnapp/util/di/DaggerApplicationComponent$HomeFragmentSubcomponentImpl-IA;)V
     .locals 0
-    .annotation system Ldalvik/annotation/MethodParameters;
-        accessFlags = {
-            0x0,
-            0x0,
-            0x0
-        }
-        names = {
-            "applicationComponent",
-            "mainActivitySubcomponentImpl",
-            "arg0Param"
-        }
-    .end annotation
 
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
@@ -65,7 +53,7 @@
 
     iget-object v0, p0, Lde/rki/coronawarnapp/util/di/DaggerApplicationComponent$HomeFragmentSubcomponentImpl;->mainActivitySubcomponentImpl:Lde/rki/coronawarnapp/util/di/DaggerApplicationComponent$MainActivitySubcomponentImpl;
 
-    iget-object v0, v0, Lde/rki/coronawarnapp/util/di/DaggerApplicationComponent$MainActivitySubcomponentImpl;->factoryProvider28:Ljavax/inject/Provider;
+    iget-object v0, v0, Lde/rki/coronawarnapp/util/di/DaggerApplicationComponent$MainActivitySubcomponentImpl;->factoryProvider29:Ljavax/inject/Provider;
 
     invoke-interface {v0}, Ljavax/inject/Provider;->get()Ljava/lang/Object;
 
@@ -83,13 +71,13 @@
 
     iput-object v0, p1, Lde/rki/coronawarnapp/ui/main/home/HomeFragment;->tracingExplanationDialog:Lde/rki/coronawarnapp/tracing/ui/TracingExplanationDialog;
 
-    new-instance v0, Lcom/google/android/play/core/appupdate/zzh;
+    new-instance v0, Lcom/google/android/play/core/splitinstall/zzt;
 
     iget-object v1, p0, Lde/rki/coronawarnapp/util/di/DaggerApplicationComponent$HomeFragmentSubcomponentImpl;->arg0:Lde/rki/coronawarnapp/ui/main/home/HomeFragment;
 
-    invoke-direct {v0, v1}, Lcom/google/android/play/core/appupdate/zzh;-><init>(Lde/rki/coronawarnapp/ui/main/home/HomeFragment;)V
+    invoke-direct {v0, v1}, Lcom/google/android/play/core/splitinstall/zzt;-><init>(Lde/rki/coronawarnapp/ui/main/home/HomeFragment;)V
 
-    iput-object v0, p1, Lde/rki/coronawarnapp/ui/main/home/HomeFragment;->deviceTimeIncorrectDialog:Lcom/google/android/play/core/appupdate/zzh;
+    iput-object v0, p1, Lde/rki/coronawarnapp/ui/main/home/HomeFragment;->deviceTimeIncorrectDialog:Lcom/google/android/play/core/splitinstall/zzt;
 
     return-void
 .end method

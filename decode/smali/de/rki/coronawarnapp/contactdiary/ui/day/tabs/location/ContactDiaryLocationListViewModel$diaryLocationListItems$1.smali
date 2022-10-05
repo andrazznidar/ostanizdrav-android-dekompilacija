@@ -113,157 +113,161 @@
 .end method
 
 .method public final invokeSuspend(Ljava/lang/Object;)Ljava/lang/Object;
-    .locals 14
+    .locals 17
 
-    invoke-static {p1}, Lkotlin/ResultKt;->throwOnFailure(Ljava/lang/Object;)V
+    move-object/from16 v0, p0
 
-    iget-object p1, p0, Lde/rki/coronawarnapp/contactdiary/ui/day/tabs/location/ContactDiaryLocationListViewModel$diaryLocationListItems$1;->L$0:Ljava/lang/Object;
+    invoke-static/range {p1 .. p1}, Lkotlin/ResultKt;->throwOnFailure(Ljava/lang/Object;)V
 
-    check-cast p1, Ljava/util/List;
+    iget-object v1, v0, Lde/rki/coronawarnapp/contactdiary/ui/day/tabs/location/ContactDiaryLocationListViewModel$diaryLocationListItems$1;->L$0:Ljava/lang/Object;
 
-    iget-object v0, p0, Lde/rki/coronawarnapp/contactdiary/ui/day/tabs/location/ContactDiaryLocationListViewModel$diaryLocationListItems$1;->L$1:Ljava/lang/Object;
+    check-cast v1, Ljava/util/List;
 
-    check-cast v0, Ljava/util/List;
+    iget-object v2, v0, Lde/rki/coronawarnapp/contactdiary/ui/day/tabs/location/ContactDiaryLocationListViewModel$diaryLocationListItems$1;->L$1:Ljava/lang/Object;
 
-    iget-object v1, p0, Lde/rki/coronawarnapp/contactdiary/ui/day/tabs/location/ContactDiaryLocationListViewModel$diaryLocationListItems$1;->this$0:Lde/rki/coronawarnapp/contactdiary/ui/day/tabs/location/ContactDiaryLocationListViewModel;
+    check-cast v2, Ljava/util/List;
 
-    new-instance v2, Ljava/util/ArrayList;
+    iget-object v3, v0, Lde/rki/coronawarnapp/contactdiary/ui/day/tabs/location/ContactDiaryLocationListViewModel$diaryLocationListItems$1;->this$0:Lde/rki/coronawarnapp/contactdiary/ui/day/tabs/location/ContactDiaryLocationListViewModel;
 
-    const/16 v3, 0xa
+    new-instance v4, Ljava/util/ArrayList;
 
-    invoke-static {p1, v3}, Lkotlin/collections/CollectionsKt__IteratorsJVMKt;->collectionSizeOrDefault(Ljava/lang/Iterable;I)I
+    const/16 v5, 0xa
 
-    move-result v3
+    invoke-static {v1, v5}, Lkotlin/collections/CollectionsKt__IteratorsJVMKt;->collectionSizeOrDefault(Ljava/lang/Iterable;I)I
 
-    invoke-direct {v2, v3}, Ljava/util/ArrayList;-><init>(I)V
+    move-result v5
 
-    invoke-interface {p1}, Ljava/lang/Iterable;->iterator()Ljava/util/Iterator;
+    invoke-direct {v4, v5}, Ljava/util/ArrayList;-><init>(I)V
 
-    move-result-object p1
+    invoke-interface {v1}, Ljava/lang/Iterable;->iterator()Ljava/util/Iterator;
+
+    move-result-object v1
 
     :goto_0
-    invoke-interface {p1}, Ljava/util/Iterator;->hasNext()Z
+    invoke-interface {v1}, Ljava/util/Iterator;->hasNext()Z
 
-    move-result v3
+    move-result v5
 
-    if-eqz v3, :cond_5
+    if-eqz v5, :cond_5
 
-    invoke-interface {p1}, Ljava/util/Iterator;->next()Ljava/lang/Object;
+    invoke-interface {v1}, Ljava/util/Iterator;->next()Ljava/lang/Object;
 
-    move-result-object v3
+    move-result-object v5
 
-    move-object v5, v3
+    move-object v7, v5
 
-    check-cast v5, Lde/rki/coronawarnapp/contactdiary/model/ContactDiaryLocation;
+    check-cast v7, Lde/rki/coronawarnapp/contactdiary/model/ContactDiaryLocation;
 
-    invoke-interface {v0}, Ljava/lang/Iterable;->iterator()Ljava/util/Iterator;
+    invoke-interface {v2}, Ljava/lang/Iterable;->iterator()Ljava/util/Iterator;
 
-    move-result-object v3
+    move-result-object v5
 
-    const/4 v4, 0x0
+    const/4 v6, 0x1
 
-    const/4 v6, 0x0
+    const/4 v8, 0x0
 
-    move v7, v4
+    const/4 v9, 0x0
 
-    move-object v8, v6
+    move v10, v8
+
+    move-object v11, v9
 
     :cond_0
     :goto_1
-    invoke-interface {v3}, Ljava/util/Iterator;->hasNext()Z
+    invoke-interface {v5}, Ljava/util/Iterator;->hasNext()Z
 
-    move-result v9
+    move-result v12
 
-    if-eqz v9, :cond_3
+    if-eqz v12, :cond_3
 
-    invoke-interface {v3}, Ljava/util/Iterator;->next()Ljava/lang/Object;
+    invoke-interface {v5}, Ljava/util/Iterator;->next()Ljava/lang/Object;
 
-    move-result-object v9
+    move-result-object v12
 
-    move-object v10, v9
+    move-object v13, v12
 
-    check-cast v10, Lde/rki/coronawarnapp/contactdiary/model/ContactDiaryLocationVisit;
+    check-cast v13, Lde/rki/coronawarnapp/contactdiary/model/ContactDiaryLocationVisit;
 
-    invoke-interface {v10}, Lde/rki/coronawarnapp/contactdiary/model/ContactDiaryLocationVisit;->getContactDiaryLocation()Lde/rki/coronawarnapp/contactdiary/model/ContactDiaryLocation;
+    invoke-interface {v13}, Lde/rki/coronawarnapp/contactdiary/model/ContactDiaryLocationVisit;->getContactDiaryLocation()Lde/rki/coronawarnapp/contactdiary/model/ContactDiaryLocation;
 
-    move-result-object v10
+    move-result-object v13
 
-    invoke-interface {v10}, Lde/rki/coronawarnapp/contactdiary/model/ContactDiaryLocation;->getLocationId()J
+    invoke-interface {v13}, Lde/rki/coronawarnapp/contactdiary/model/ContactDiaryLocation;->getLocationId()J
 
-    move-result-wide v10
+    move-result-wide v13
 
-    invoke-interface {v5}, Lde/rki/coronawarnapp/contactdiary/model/ContactDiaryLocation;->getLocationId()J
+    invoke-interface {v7}, Lde/rki/coronawarnapp/contactdiary/model/ContactDiaryLocation;->getLocationId()J
 
-    move-result-wide v12
+    move-result-wide v15
 
-    cmp-long v10, v10, v12
+    cmp-long v13, v13, v15
 
-    const/4 v11, 0x1
+    if-nez v13, :cond_1
 
-    if-nez v10, :cond_1
-
-    move v10, v11
+    move v13, v6
 
     goto :goto_2
 
     :cond_1
-    move v10, v4
+    move v13, v8
 
     :goto_2
-    if-eqz v10, :cond_0
+    if-eqz v13, :cond_0
 
-    if-eqz v7, :cond_2
+    if-eqz v10, :cond_2
 
     goto :goto_3
 
     :cond_2
-    move-object v8, v9
+    move v10, v6
 
-    move v7, v11
+    move-object v11, v12
 
     goto :goto_1
 
     :cond_3
-    if-nez v7, :cond_4
+    if-nez v10, :cond_4
 
     goto :goto_3
 
     :cond_4
-    move-object v6, v8
+    move-object v9, v11
 
     :goto_3
-    check-cast v6, Lde/rki/coronawarnapp/contactdiary/model/ContactDiaryLocationVisit;
+    move-object v8, v9
 
-    new-instance v3, Lde/rki/coronawarnapp/contactdiary/ui/day/tabs/location/DiaryLocationListItem;
+    check-cast v8, Lde/rki/coronawarnapp/contactdiary/model/ContactDiaryLocationVisit;
 
-    new-instance v7, Lde/rki/coronawarnapp/contactdiary/ui/day/tabs/location/ContactDiaryLocationListViewModel$diaryLocationListItems$1$1$1;
+    new-instance v5, Lde/rki/coronawarnapp/contactdiary/ui/day/tabs/location/DiaryLocationListItem;
 
-    invoke-direct {v7, v1}, Lde/rki/coronawarnapp/contactdiary/ui/day/tabs/location/ContactDiaryLocationListViewModel$diaryLocationListItems$1$1$1;-><init>(Lde/rki/coronawarnapp/contactdiary/ui/day/tabs/location/ContactDiaryLocationListViewModel;)V
+    new-instance v9, Lde/rki/coronawarnapp/contactdiary/ui/day/tabs/location/ContactDiaryLocationListViewModel$diaryLocationListItems$1$1$1;
 
-    new-instance v8, Lde/rki/coronawarnapp/contactdiary/ui/day/tabs/location/ContactDiaryLocationListViewModel$diaryLocationListItems$1$1$2;
+    invoke-direct {v9, v3}, Lde/rki/coronawarnapp/contactdiary/ui/day/tabs/location/ContactDiaryLocationListViewModel$diaryLocationListItems$1$1$1;-><init>(Lde/rki/coronawarnapp/contactdiary/ui/day/tabs/location/ContactDiaryLocationListViewModel;)V
 
-    invoke-direct {v8, v1}, Lde/rki/coronawarnapp/contactdiary/ui/day/tabs/location/ContactDiaryLocationListViewModel$diaryLocationListItems$1$1$2;-><init>(Lde/rki/coronawarnapp/contactdiary/ui/day/tabs/location/ContactDiaryLocationListViewModel;)V
+    new-instance v10, Lde/rki/coronawarnapp/contactdiary/ui/day/tabs/location/ContactDiaryLocationListViewModel$diaryLocationListItems$1$1$2;
 
-    new-instance v9, Lde/rki/coronawarnapp/contactdiary/ui/day/tabs/location/ContactDiaryLocationListViewModel$diaryLocationListItems$1$1$3;
+    invoke-direct {v10, v3}, Lde/rki/coronawarnapp/contactdiary/ui/day/tabs/location/ContactDiaryLocationListViewModel$diaryLocationListItems$1$1$2;-><init>(Lde/rki/coronawarnapp/contactdiary/ui/day/tabs/location/ContactDiaryLocationListViewModel;)V
 
-    invoke-direct {v9, v1}, Lde/rki/coronawarnapp/contactdiary/ui/day/tabs/location/ContactDiaryLocationListViewModel$diaryLocationListItems$1$1$3;-><init>(Lde/rki/coronawarnapp/contactdiary/ui/day/tabs/location/ContactDiaryLocationListViewModel;)V
+    new-instance v11, Lde/rki/coronawarnapp/contactdiary/ui/day/tabs/location/ContactDiaryLocationListViewModel$diaryLocationListItems$1$1$3;
 
-    new-instance v10, Lde/rki/coronawarnapp/contactdiary/ui/day/tabs/location/ContactDiaryLocationListViewModel$diaryLocationListItems$1$1$4;
+    invoke-direct {v11, v3}, Lde/rki/coronawarnapp/contactdiary/ui/day/tabs/location/ContactDiaryLocationListViewModel$diaryLocationListItems$1$1$3;-><init>(Lde/rki/coronawarnapp/contactdiary/ui/day/tabs/location/ContactDiaryLocationListViewModel;)V
 
-    invoke-direct {v10, v1}, Lde/rki/coronawarnapp/contactdiary/ui/day/tabs/location/ContactDiaryLocationListViewModel$diaryLocationListItems$1$1$4;-><init>(Lde/rki/coronawarnapp/contactdiary/ui/day/tabs/location/ContactDiaryLocationListViewModel;)V
+    new-instance v12, Lde/rki/coronawarnapp/contactdiary/ui/day/tabs/location/ContactDiaryLocationListViewModel$diaryLocationListItems$1$1$4;
 
-    new-instance v11, Lde/rki/coronawarnapp/contactdiary/ui/day/tabs/location/ContactDiaryLocationListViewModel$diaryLocationListItems$1$1$5;
+    invoke-direct {v12, v3}, Lde/rki/coronawarnapp/contactdiary/ui/day/tabs/location/ContactDiaryLocationListViewModel$diaryLocationListItems$1$1$4;-><init>(Lde/rki/coronawarnapp/contactdiary/ui/day/tabs/location/ContactDiaryLocationListViewModel;)V
 
-    invoke-direct {v11, v1}, Lde/rki/coronawarnapp/contactdiary/ui/day/tabs/location/ContactDiaryLocationListViewModel$diaryLocationListItems$1$1$5;-><init>(Lde/rki/coronawarnapp/contactdiary/ui/day/tabs/location/ContactDiaryLocationListViewModel;)V
+    new-instance v13, Lde/rki/coronawarnapp/contactdiary/ui/day/tabs/location/ContactDiaryLocationListViewModel$diaryLocationListItems$1$1$5;
 
-    move-object v4, v3
+    invoke-direct {v13, v3}, Lde/rki/coronawarnapp/contactdiary/ui/day/tabs/location/ContactDiaryLocationListViewModel$diaryLocationListItems$1$1$5;-><init>(Lde/rki/coronawarnapp/contactdiary/ui/day/tabs/location/ContactDiaryLocationListViewModel;)V
 
-    invoke-direct/range {v4 .. v11}, Lde/rki/coronawarnapp/contactdiary/ui/day/tabs/location/DiaryLocationListItem;-><init>(Lde/rki/coronawarnapp/contactdiary/model/ContactDiaryLocation;Lde/rki/coronawarnapp/contactdiary/model/ContactDiaryLocationVisit;Lkotlin/jvm/functions/Function1;Lkotlin/jvm/functions/Function2;Lkotlin/jvm/functions/Function2;Lkotlin/jvm/functions/Function0;Lkotlin/jvm/functions/Function2;)V
+    move-object v6, v5
 
-    invoke-interface {v2, v3}, Ljava/util/Collection;->add(Ljava/lang/Object;)Z
+    invoke-direct/range {v6 .. v13}, Lde/rki/coronawarnapp/contactdiary/ui/day/tabs/location/DiaryLocationListItem;-><init>(Lde/rki/coronawarnapp/contactdiary/model/ContactDiaryLocation;Lde/rki/coronawarnapp/contactdiary/model/ContactDiaryLocationVisit;Lkotlin/jvm/functions/Function1;Lkotlin/jvm/functions/Function2;Lkotlin/jvm/functions/Function2;Lkotlin/jvm/functions/Function0;Lkotlin/jvm/functions/Function2;)V
+
+    invoke-interface {v4, v5}, Ljava/util/Collection;->add(Ljava/lang/Object;)Z
 
     goto :goto_0
 
     :cond_5
-    return-object v2
+    return-object v4
 .end method

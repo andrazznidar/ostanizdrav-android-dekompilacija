@@ -21,7 +21,8 @@
         "Lcom/google/crypto/tink/shaded/protobuf/GeneratedMessageLite$Builder<",
         "Lcom/google/crypto/tink/proto/EcdsaParams;",
         "Lcom/google/crypto/tink/proto/EcdsaParams$Builder;",
-        ">;"
+        ">;",
+        "Lcom/google/crypto/tink/shaded/protobuf/MessageLiteOrBuilder;"
     }
 .end annotation
 

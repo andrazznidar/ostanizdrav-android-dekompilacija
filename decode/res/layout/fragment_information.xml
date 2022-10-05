@@ -14,7 +14,8 @@
             <include android:id="@id/information_debuglog" android:visibility="gone" android:layout_width="fill_parent" android:layout_height="wrap_content" layout="@layout/include_row" />
             <include android:id="@id/information_legal" android:layout_width="fill_parent" android:layout_height="wrap_content" layout="@layout/include_row" />
             <TextView android:id="@id/information_version" android:focusable="true" android:layout_width="fill_parent" android:layout_height="wrap_content" android:layout_marginTop="@dimen/spacing_small" android:layout_marginStart="@dimen/guideline_body_title_padding" style="@style/body2Medium" />
-            <TextView android:id="@id/information_enf_version" android:background="?selectableItemBackground" android:paddingTop="@dimen/spacing_tiny" android:paddingBottom="@dimen/spacing_tiny" android:focusable="true" android:layout_width="fill_parent" android:layout_height="wrap_content" android:layout_marginStart="@dimen/guideline_body_title_padding" style="@style/body2Medium" />
+            <TextView android:id="@id/information_enf_version" android:background="?selectableItemBackground" android:focusable="true" android:layout_width="fill_parent" android:layout_height="wrap_content" android:layout_marginTop="@dimen/spacing_tiny" android:layout_marginStart="@dimen/guideline_body_title_padding" style="@style/body2Medium" />
+            <TextView android:id="@id/ccl_version" android:focusable="true" android:visibility="gone" android:layout_width="fill_parent" android:layout_height="wrap_content" android:layout_marginTop="@dimen/spacing_tiny" android:layout_marginStart="@dimen/guideline_body_title_padding" style="@style/body2Medium" />
             <Space android:layout_width="fill_parent" android:layout_height="@dimen/spacing_huge" />
         </LinearLayout>
     </ScrollView>

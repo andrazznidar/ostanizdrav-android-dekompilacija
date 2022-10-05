@@ -74,14 +74,12 @@
 
     iput-object v0, p0, Lcoil/ImageLoader$Builder;->logger:Lcoil/util/Logger;
 
-    const-wide v0, 0x3fc999999999999aL    # 0.2
-
     :try_start_0
-    const-class v2, Landroid/app/ActivityManager;
+    const-class v0, Landroid/app/ActivityManager;
 
-    sget-object v3, Landroidx/core/content/ContextCompat;->sLock:Ljava/lang/Object;
+    sget-object v1, Landroidx/core/content/ContextCompat;->sLock:Ljava/lang/Object;
 
-    invoke-static {p1, v2}, Landroidx/core/content/ContextCompat$Api23Impl;->getSystemService(Landroid/content/Context;Ljava/lang/Class;)Ljava/lang/Object;
+    invoke-static {p1, v0}, Landroidx/core/content/ContextCompat$Api23Impl;->getSystemService(Landroid/content/Context;Ljava/lang/Class;)Ljava/lang/Object;
 
     move-result-object p1
 
@@ -104,36 +102,38 @@
 
     invoke-direct {p1}, Ljava/lang/StringBuilder;-><init>()V
 
-    const-string v2, "System service of type "
+    const-string v0, "System service of type "
 
-    invoke-virtual {p1, v2}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+    invoke-virtual {p1, v0}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
 
-    const-class v2, Landroid/app/ActivityManager;
+    const-class v0, Landroid/app/ActivityManager;
 
-    invoke-virtual {p1, v2}, Ljava/lang/StringBuilder;->append(Ljava/lang/Object;)Ljava/lang/StringBuilder;
+    invoke-virtual {p1, v0}, Ljava/lang/StringBuilder;->append(Ljava/lang/Object;)Ljava/lang/StringBuilder;
 
-    const-string v2, " was not found."
+    const-string v0, " was not found."
 
-    invoke-virtual {p1, v2}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+    invoke-virtual {p1, v0}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
 
     invoke-virtual {p1}, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
 
     move-result-object p1
 
-    new-instance v2, Ljava/lang/IllegalStateException;
+    new-instance v0, Ljava/lang/IllegalStateException;
 
     invoke-virtual {p1}, Ljava/lang/Object;->toString()Ljava/lang/String;
 
     move-result-object p1
 
-    invoke-direct {v2, p1}, Ljava/lang/IllegalStateException;-><init>(Ljava/lang/String;)V
+    invoke-direct {v0, p1}, Ljava/lang/IllegalStateException;-><init>(Ljava/lang/String;)V
 
-    throw v2
+    throw v0
     :try_end_0
     .catch Ljava/lang/Exception; {:try_start_0 .. :try_end_0} :catch_0
 
     :catch_0
     :cond_1
+    const-wide v0, 0x3fc999999999999aL    # 0.2
+
     :goto_0
     iput-wide v0, p0, Lcoil/ImageLoader$Builder;->availableMemoryPercentage:D
 
@@ -360,14 +360,6 @@
 
     iget-object v5, v0, Lcoil/ImageLoader$Builder;->logger:Lcoil/util/Logger;
 
-    const-string/jumbo v6, "weakMemoryCache"
-
-    invoke-static {v3, v6}, Lkotlin/jvm/internal/Intrinsics;->checkNotNullParameter(Ljava/lang/Object;Ljava/lang/String;)V
-
-    const-string v6, "referenceCounter"
-
-    invoke-static {v4, v6}, Lkotlin/jvm/internal/Intrinsics;->checkNotNullParameter(Ljava/lang/Object;Ljava/lang/String;)V
-
     if-lez v1, :cond_7
 
     new-instance v6, Lcoil/memory/RealStrongMemoryCache;
@@ -409,11 +401,7 @@
 
     sget-object v3, Lcoil/util/-Extensions;->EMPTY_HEADERS:Lokhttp3/Headers;
 
-    const-string v3, "initializer"
-
-    invoke-static {v2, v3}, Lkotlin/jvm/internal/Intrinsics;->checkNotNullParameter(Ljava/lang/Object;Ljava/lang/String;)V
-
-    invoke-static {v2}, Lkotlin/LazyKt__LazyKt;->lazy(Lkotlin/jvm/functions/Function0;)Lkotlin/Lazy;
+    invoke-static {v2}, Lkotlin/LazyKt__LazyJVMKt;->lazy(Lkotlin/jvm/functions/Function0;)Lkotlin/Lazy;
 
     move-result-object v2
 

@@ -168,15 +168,15 @@
 
     move-result v1
 
-    invoke-static {p0, p1}, Ldagger/android/AndroidInjection;->getColor(Landroid/view/View;I)I
+    invoke-static {p0, p1}, Lkotlin/math/MathKt__MathJVMKt;->getColor(Landroid/view/View;I)I
 
     move-result p1
 
-    invoke-static {p0, v0}, Ldagger/android/AndroidInjection;->getColor(Landroid/view/View;I)I
+    invoke-static {p0, v0}, Lkotlin/math/MathKt__MathJVMKt;->getColor(Landroid/view/View;I)I
 
     move-result v0
 
-    invoke-static {p1, v0, v1}, Ldagger/android/AndroidInjection;->layer(IIF)I
+    invoke-static {p1, v0, v1}, Lkotlin/math/MathKt__MathJVMKt;->layer(IIF)I
 
     move-result p1
 
@@ -226,7 +226,7 @@
 .method public onAttachedToWindow()V
     .locals 1
 
-    invoke-super {p0}, Landroid/view/ViewGroup;->onAttachedToWindow()V
+    invoke-super {p0}, Landroid/widget/FrameLayout;->onAttachedToWindow()V
 
     iget-object v0, p0, Lcom/google/android/material/snackbar/BaseTransientBottomBar$SnackbarBaseLayout;->onAttachStateChangeListener:Lcom/google/android/material/snackbar/BaseTransientBottomBar$OnAttachStateChangeListener;
 
@@ -245,7 +245,7 @@
 .method public onDetachedFromWindow()V
     .locals 1
 
-    invoke-super {p0}, Landroid/view/ViewGroup;->onDetachedFromWindow()V
+    invoke-super {p0}, Landroid/widget/FrameLayout;->onDetachedFromWindow()V
 
     iget-object v0, p0, Lcom/google/android/material/snackbar/BaseTransientBottomBar$SnackbarBaseLayout;->onAttachStateChangeListener:Lcom/google/android/material/snackbar/BaseTransientBottomBar$OnAttachStateChangeListener;
 
@@ -320,7 +320,7 @@
     invoke-virtual {p1, v0}, Landroid/graphics/drawable/Drawable;->setTintMode(Landroid/graphics/PorterDuff$Mode;)V
 
     :cond_0
-    invoke-super {p0, p1}, Landroid/view/View;->setBackgroundDrawable(Landroid/graphics/drawable/Drawable;)V
+    invoke-super {p0, p1}, Landroid/widget/FrameLayout;->setBackgroundDrawable(Landroid/graphics/drawable/Drawable;)V
 
     return-void
 .end method
@@ -356,7 +356,7 @@
 
     if-eq v0, p1, :cond_0
 
-    invoke-super {p0, v0}, Landroid/view/View;->setBackgroundDrawable(Landroid/graphics/drawable/Drawable;)V
+    invoke-super {p0, v0}, Landroid/widget/FrameLayout;->setBackgroundDrawable(Landroid/graphics/drawable/Drawable;)V
 
     :cond_0
     return-void
@@ -389,7 +389,7 @@
 
     if-eq v0, p1, :cond_0
 
-    invoke-super {p0, v0}, Landroid/view/View;->setBackgroundDrawable(Landroid/graphics/drawable/Drawable;)V
+    invoke-super {p0, v0}, Landroid/widget/FrameLayout;->setBackgroundDrawable(Landroid/graphics/drawable/Drawable;)V
 
     :cond_0
     return-void
@@ -418,7 +418,7 @@
     :goto_0
     invoke-virtual {p0, v0}, Landroid/widget/FrameLayout;->setOnTouchListener(Landroid/view/View$OnTouchListener;)V
 
-    invoke-super {p0, p1}, Landroid/view/View;->setOnClickListener(Landroid/view/View$OnClickListener;)V
+    invoke-super {p0, p1}, Landroid/widget/FrameLayout;->setOnClickListener(Landroid/view/View$OnClickListener;)V
 
     return-void
 .end method

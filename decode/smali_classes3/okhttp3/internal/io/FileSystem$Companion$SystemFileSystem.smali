@@ -54,7 +54,7 @@
 .end method
 
 .method public delete(Ljava/io/File;)V
-    .locals 2
+    .locals 3
     .annotation system Ldalvik/annotation/Throws;
         value = {
             Ljava/io/IOException;
@@ -82,9 +82,17 @@
     :cond_0
     new-instance v0, Ljava/io/IOException;
 
-    const-string v1, "failed to delete "
+    new-instance v1, Ljava/lang/StringBuilder;
 
-    invoke-static {v1, p1}, Landroidx/core/content/FileProvider$SimplePathStrategy$$ExternalSyntheticOutline0;->m(Ljava/lang/String;Ljava/io/File;)Ljava/lang/String;
+    invoke-direct {v1}, Ljava/lang/StringBuilder;-><init>()V
+
+    const-string v2, "failed to delete "
+
+    invoke-virtual {v1, v2}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+
+    invoke-virtual {v1, p1}, Ljava/lang/StringBuilder;->append(Ljava/lang/Object;)Ljava/lang/StringBuilder;
+
+    invoke-virtual {v1}, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
 
     move-result-object p1
 
@@ -150,9 +158,17 @@
     :cond_1
     new-instance p1, Ljava/io/IOException;
 
-    const-string v0, "failed to delete "
+    new-instance v0, Ljava/lang/StringBuilder;
 
-    invoke-static {v0, v2}, Landroidx/core/content/FileProvider$SimplePathStrategy$$ExternalSyntheticOutline0;->m(Ljava/lang/String;Ljava/io/File;)Ljava/lang/String;
+    invoke-direct {v0}, Ljava/lang/StringBuilder;-><init>()V
+
+    const-string v1, "failed to delete "
+
+    invoke-virtual {v0, v1}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+
+    invoke-virtual {v0, v2}, Ljava/lang/StringBuilder;->append(Ljava/lang/Object;)Ljava/lang/StringBuilder;
+
+    invoke-virtual {v0}, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
 
     move-result-object v0
 
@@ -166,9 +182,17 @@
     :cond_3
     new-instance v0, Ljava/io/IOException;
 
-    const-string v1, "not a readable directory: "
+    new-instance v1, Ljava/lang/StringBuilder;
 
-    invoke-static {v1, p1}, Landroidx/core/content/FileProvider$SimplePathStrategy$$ExternalSyntheticOutline0;->m(Ljava/lang/String;Ljava/io/File;)Ljava/lang/String;
+    invoke-direct {v1}, Ljava/lang/StringBuilder;-><init>()V
+
+    const-string v2, "not a readable directory: "
+
+    invoke-virtual {v1, v2}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+
+    invoke-virtual {v1, p1}, Ljava/lang/StringBuilder;->append(Ljava/lang/Object;)Ljava/lang/StringBuilder;
+
+    invoke-virtual {v1}, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
 
     move-result-object p1
 

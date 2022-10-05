@@ -1,4 +1,4 @@
-.class public final synthetic Lkotlin/reflect/jvm/internal/impl/types/checker/TypeIntersector$intersectTypesWithoutIntersectionType$filteredSuperAndEqualTypes$1;
+.class final synthetic Lkotlin/reflect/jvm/internal/impl/types/checker/TypeIntersector$intersectTypesWithoutIntersectionType$filteredSuperAndEqualTypes$1;
 .super Lkotlin/jvm/internal/FunctionReference;
 .source "IntersectionType.kt"
 
@@ -7,6 +7,15 @@
 
 
 # annotations
+.annotation system Ldalvik/annotation/EnclosingMethod;
+    value = Lkotlin/reflect/jvm/internal/impl/types/checker/TypeIntersector;->intersectTypesWithoutIntersectionType(Ljava/util/Set;)Lkotlin/reflect/jvm/internal/impl/types/SimpleType;
+.end annotation
+
+.annotation system Ldalvik/annotation/InnerClass;
+    accessFlags = 0x1001
+    name = null
+.end annotation
+
 .annotation system Ldalvik/annotation/Signature;
     value = {
         "Lkotlin/jvm/internal/FunctionReference;",
@@ -20,7 +29,7 @@
 
 
 # direct methods
-.method public constructor <init>(Lkotlin/reflect/jvm/internal/impl/types/checker/NewKotlinTypeCheckerImpl;)V
+.method public constructor <init>(Ljava/lang/Object;)V
     .locals 1
 
     const/4 v0, 0x2
@@ -60,12 +69,8 @@
     return-object v0
 .end method
 
-.method public invoke(Ljava/lang/Object;Ljava/lang/Object;)Ljava/lang/Object;
+.method public final invoke(Lkotlin/reflect/jvm/internal/impl/types/KotlinType;Lkotlin/reflect/jvm/internal/impl/types/KotlinType;)Ljava/lang/Boolean;
     .locals 1
-
-    check-cast p1, Lkotlin/reflect/jvm/internal/impl/types/KotlinType;
-
-    check-cast p2, Lkotlin/reflect/jvm/internal/impl/types/KotlinType;
 
     const-string v0, "p0"
 
@@ -84,6 +89,20 @@
     move-result p1
 
     invoke-static {p1}, Ljava/lang/Boolean;->valueOf(Z)Ljava/lang/Boolean;
+
+    move-result-object p1
+
+    return-object p1
+.end method
+
+.method public bridge synthetic invoke(Ljava/lang/Object;Ljava/lang/Object;)Ljava/lang/Object;
+    .locals 0
+
+    check-cast p1, Lkotlin/reflect/jvm/internal/impl/types/KotlinType;
+
+    check-cast p2, Lkotlin/reflect/jvm/internal/impl/types/KotlinType;
+
+    invoke-virtual {p0, p1, p2}, Lkotlin/reflect/jvm/internal/impl/types/checker/TypeIntersector$intersectTypesWithoutIntersectionType$filteredSuperAndEqualTypes$1;->invoke(Lkotlin/reflect/jvm/internal/impl/types/KotlinType;Lkotlin/reflect/jvm/internal/impl/types/KotlinType;)Ljava/lang/Boolean;
 
     move-result-object p1
 

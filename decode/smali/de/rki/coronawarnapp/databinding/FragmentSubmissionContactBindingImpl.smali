@@ -57,13 +57,13 @@
 
     sput-object v0, Lde/rki/coronawarnapp/databinding/FragmentSubmissionContactBindingImpl;->sViewsWithIds:Landroid/util/SparseIntArray;
 
-    const v1, 0x7f0a06d6
+    const v1, 0x7f0a0729
 
     const/4 v2, 0x4
 
     invoke-virtual {v0, v1, v2}, Landroid/util/SparseIntArray;->put(II)V
 
-    const v1, 0x7f0a0342
+    const v1, 0x7f0a0371
 
     const/4 v2, 0x5
 
@@ -82,9 +82,9 @@
 
     :array_1
     .array-data 4
-        0x7f0d00d8
-        0x7f0d00ec
-        0x7f0d010a
+        0x7f0d00e9
+        0x7f0d00fb
+        0x7f0d0115
     .end array-data
 .end method
 
@@ -237,17 +237,17 @@
 
     iget-object v1, p0, Landroidx/databinding/ViewDataBinding;->mRoot:Landroid/view/View;
 
-    const v2, 0x7f0800d0
+    const v2, 0x7f0800c1
 
-    invoke-static {v1, v2, v0}, Lde/rki/coronawarnapp/databinding/FragmentInformationAboutBindingImpl$$ExternalSyntheticOutline0;->m(Landroid/view/View;ILde/rki/coronawarnapp/databinding/IncludeHeaderBinding;)V
+    invoke-static {v1, v2, v0}, Landroidx/constraintlayout/core/widgets/analyzer/DependencyNode$Type$EnumUnboxingLocalUtility;->m(Landroid/view/View;ILde/rki/coronawarnapp/databinding/IncludeHeaderBinding;)V
 
     iget-object v0, p0, Lde/rki/coronawarnapp/databinding/FragmentSubmissionContactBinding;->submissionContactHeader:Lde/rki/coronawarnapp/databinding/IncludeHeaderBinding;
 
     iget-object v1, p0, Landroidx/databinding/ViewDataBinding;->mRoot:Landroid/view/View;
 
-    const v2, 0x7f130519
+    const v2, 0x7f13051e
 
-    invoke-static {v1, v2, v0}, Lde/rki/coronawarnapp/databinding/FragmentInformationAboutBindingImpl$$ExternalSyntheticOutline1;->m(Landroid/view/View;ILde/rki/coronawarnapp/databinding/IncludeHeaderBinding;)V
+    invoke-static {v1, v2, v0}, Lde/rki/coronawarnapp/server/protocols/internal/ppdd/PpaData$ExposureRiskMetadata$Builder-IA;->m(Landroid/view/View;ILde/rki/coronawarnapp/databinding/IncludeHeaderBinding;)V
 
     :cond_0
     iget-object v0, p0, Lde/rki/coronawarnapp/databinding/FragmentSubmissionContactBinding;->submissionContactHeader:Lde/rki/coronawarnapp/databinding/IncludeHeaderBinding;

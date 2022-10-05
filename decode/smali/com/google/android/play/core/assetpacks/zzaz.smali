@@ -42,9 +42,11 @@
 
     iget-object v3, v0, Lcom/google/android/play/core/assetpacks/zzbb;->zzc:Lcom/google/android/play/core/assetpacks/zzdb;
 
-    new-instance v4, Lcom/google/android/gms/internal/nearby/zzaf;
+    invoke-static {v3}, Ljava/util/Objects;->requireNonNull(Ljava/lang/Object;)Ljava/lang/Object;
 
-    invoke-direct {v4, v3, v1}, Lcom/google/android/gms/internal/nearby/zzaf;-><init>(Lcom/google/android/play/core/assetpacks/zzdb;Landroid/os/Bundle;)V
+    new-instance v4, Lcom/google/android/play/core/assetpacks/zzcq;
+
+    invoke-direct {v4, v3, v1}, Lcom/google/android/play/core/assetpacks/zzcq;-><init>(Lcom/google/android/play/core/assetpacks/zzdb;Landroid/os/Bundle;)V
 
     invoke-virtual {v3, v4}, Lcom/google/android/play/core/assetpacks/zzdb;->zzr(Lcom/google/android/play/core/assetpacks/zzda;)Ljava/lang/Object;
 

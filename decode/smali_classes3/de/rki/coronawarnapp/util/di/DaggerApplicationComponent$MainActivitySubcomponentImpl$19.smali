@@ -55,7 +55,7 @@
 
     const/4 v3, 0x0
 
-    invoke-direct {v0, v2, v1, v3}, Lde/rki/coronawarnapp/util/di/DaggerApplicationComponent$SubmissionSymptomIntroductionFragmentSubcomponentFactory;-><init>(Lde/rki/coronawarnapp/util/di/DaggerApplicationComponent;Lde/rki/coronawarnapp/util/di/DaggerApplicationComponent$MainActivitySubcomponentImpl;Lde/rki/coronawarnapp/util/di/DaggerApplicationComponent$SubmissionSymptomIntroductionFragmentSubcomponentFactory-IA;)V
+    invoke-direct {v0, v2, v1, v3}, Lde/rki/coronawarnapp/util/di/DaggerApplicationComponent$SubmissionSymptomIntroductionFragmentSubcomponentFactory;-><init>(Lde/rki/coronawarnapp/util/di/DaggerApplicationComponent;Lde/rki/coronawarnapp/util/di/DaggerApplicationComponent$MainActivitySubcomponentImpl;Lorg/bouncycastle/jcajce/provider/asymmetric/EC$Mappings$$ExternalSyntheticOutline0;)V
 
     return-object v0
 .end method

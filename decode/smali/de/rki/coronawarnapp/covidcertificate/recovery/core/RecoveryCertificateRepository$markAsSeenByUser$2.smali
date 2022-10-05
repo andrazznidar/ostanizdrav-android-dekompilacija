@@ -27,7 +27,7 @@
 .end annotation
 
 .annotation system Ldalvik/annotation/SourceDebugExtension;
-    value = "SMAP\nRecoveryCertificateRepository.kt\nKotlin\n*S Kotlin\n*F\n+ 1 RecoveryCertificateRepository.kt\nde/rki/coronawarnapp/covidcertificate/recovery/core/RecoveryCertificateRepository$markAsSeenByUser$2\n+ 2 _Collections.kt\nkotlin/collections/CollectionsKt___CollectionsKt\n*L\n1#1,219:1\n659#2,11:220\n*S KotlinDebug\n*F\n+ 1 RecoveryCertificateRepository.kt\nde/rki/coronawarnapp/covidcertificate/recovery/core/RecoveryCertificateRepository$markAsSeenByUser$2\n*L\n201#1:220,11\n*E\n"
+    value = "SMAP\nRecoveryCertificateRepository.kt\nKotlin\n*S Kotlin\n*F\n+ 1 RecoveryCertificateRepository.kt\nde/rki/coronawarnapp/covidcertificate/recovery/core/RecoveryCertificateRepository$markAsSeenByUser$2\n+ 2 _Collections.kt\nkotlin/collections/CollectionsKt___CollectionsKt\n*L\n1#1,282:1\n659#2,11:283\n*S KotlinDebug\n*F\n+ 1 RecoveryCertificateRepository.kt\nde/rki/coronawarnapp/covidcertificate/recovery/core/RecoveryCertificateRepository$markAsSeenByUser$2\n*L\n222#1:283,11\n*E\n"
 .end annotation
 
 .annotation runtime Lkotlin/coroutines/jvm/internal/DebugMetadata;
@@ -119,7 +119,7 @@
 .end method
 
 .method public final invokeSuspend(Ljava/lang/Object;)Ljava/lang/Object;
-    .locals 19
+    .locals 20
 
     move-object/from16 v0, p0
 
@@ -135,29 +135,29 @@
 
     move-result-object v3
 
-    const/4 v4, 0x0
+    const/4 v4, 0x1
 
     const/4 v5, 0x0
 
-    move v6, v4
+    const/4 v6, 0x0
 
-    move-object v7, v5
+    move v7, v5
+
+    move-object v8, v6
 
     :cond_0
     :goto_0
     invoke-interface {v3}, Ljava/util/Iterator;->hasNext()Z
 
-    move-result v8
+    move-result v9
 
-    const/4 v9, 0x1
-
-    if-eqz v8, :cond_2
+    if-eqz v9, :cond_2
 
     invoke-interface {v3}, Ljava/util/Iterator;->next()Ljava/lang/Object;
 
-    move-result-object v8
+    move-result-object v9
 
-    move-object v10, v8
+    move-object v10, v9
 
     check-cast v10, Lde/rki/coronawarnapp/covidcertificate/recovery/core/storage/RecoveryCertificateContainer;
 
@@ -171,27 +171,27 @@
 
     if-eqz v10, :cond_0
 
-    if-eqz v6, :cond_1
+    if-eqz v7, :cond_1
 
     goto :goto_1
 
     :cond_1
-    move-object v7, v8
+    move v7, v4
 
-    move v6, v9
+    move-object v8, v9
 
     goto :goto_0
 
     :cond_2
-    if-nez v6, :cond_3
+    if-nez v7, :cond_3
 
     :goto_1
-    move-object v7, v5
+    move-object v8, v6
 
     :cond_3
-    check-cast v7, Lde/rki/coronawarnapp/covidcertificate/recovery/core/storage/RecoveryCertificateContainer;
+    check-cast v8, Lde/rki/coronawarnapp/covidcertificate/recovery/core/storage/RecoveryCertificateContainer;
 
-    if-nez v7, :cond_4
+    if-nez v8, :cond_4
 
     sget-object v2, Ltimber/log/Timber;->Forest:Ltimber/log/Timber$Forest;
 
@@ -199,11 +199,11 @@
 
     invoke-virtual {v2, v3}, Ltimber/log/Timber$Forest;->tag(Ljava/lang/String;)Ltimber/log/Timber$Tree;
 
-    new-array v3, v9, [Ljava/lang/Object;
+    new-array v3, v4, [Ljava/lang/Object;
 
-    iget-object v5, v0, Lde/rki/coronawarnapp/covidcertificate/recovery/core/RecoveryCertificateRepository$markAsSeenByUser$2;->$containerId:Lde/rki/coronawarnapp/covidcertificate/common/repository/RecoveryCertificateContainerId;
+    iget-object v4, v0, Lde/rki/coronawarnapp/covidcertificate/recovery/core/RecoveryCertificateRepository$markAsSeenByUser$2;->$containerId:Lde/rki/coronawarnapp/covidcertificate/common/repository/RecoveryCertificateContainerId;
 
-    aput-object v5, v3, v4
+    aput-object v4, v3, v5
 
     const-string v4, "markAsSeenByUser Couldn\'t find %s"
 
@@ -212,11 +212,13 @@
     return-object v1
 
     :cond_4
-    invoke-static {v1, v7}, Lkotlin/collections/SetsKt;->minus(Ljava/util/Set;Ljava/lang/Object;)Ljava/util/Set;
+    invoke-static {v1, v8}, Lkotlin/collections/SetsKt;->minus(Ljava/util/Set;Ljava/lang/Object;)Ljava/util/Set;
 
     move-result-object v1
 
-    iget-object v10, v7, Lde/rki/coronawarnapp/covidcertificate/recovery/core/storage/RecoveryCertificateContainer;->data:Lde/rki/coronawarnapp/covidcertificate/recovery/core/storage/StoredRecoveryCertificateData;
+    iget-object v9, v8, Lde/rki/coronawarnapp/covidcertificate/recovery/core/storage/RecoveryCertificateContainer;->data:Lde/rki/coronawarnapp/covidcertificate/recovery/core/storage/StoredRecoveryCertificateData;
+
+    const/4 v10, 0x0
 
     const/4 v11, 0x0
 
@@ -232,31 +234,33 @@
 
     const/16 v17, 0x1
 
-    const/16 v18, 0x3f
+    const/16 v18, 0x0
 
-    invoke-static/range {v10 .. v18}, Lde/rki/coronawarnapp/covidcertificate/recovery/core/storage/StoredRecoveryCertificateData;->copy$default(Lde/rki/coronawarnapp/covidcertificate/recovery/core/storage/StoredRecoveryCertificateData;Ljava/lang/String;Lorg/joda/time/Instant;Lorg/joda/time/Instant;Lorg/joda/time/Instant;Lde/rki/coronawarnapp/covidcertificate/common/certificate/CwaCovidCertificate$State;Lorg/joda/time/Instant;ZI)Lde/rki/coronawarnapp/covidcertificate/recovery/core/storage/StoredRecoveryCertificateData;
+    const/16 v19, 0x17f
+
+    invoke-static/range {v9 .. v19}, Lde/rki/coronawarnapp/covidcertificate/recovery/core/storage/StoredRecoveryCertificateData;->copy$default(Lde/rki/coronawarnapp/covidcertificate/recovery/core/storage/StoredRecoveryCertificateData;Ljava/lang/String;Lorg/joda/time/Instant;Lorg/joda/time/Instant;Lorg/joda/time/Instant;Lorg/joda/time/Instant;Lde/rki/coronawarnapp/covidcertificate/common/certificate/CwaCovidCertificate$State;Lorg/joda/time/Instant;ZLorg/joda/time/Instant;I)Lde/rki/coronawarnapp/covidcertificate/recovery/core/storage/StoredRecoveryCertificateData;
 
     move-result-object v2
 
     const/4 v3, 0x6
 
-    invoke-static {v7, v2, v5, v4, v3}, Lde/rki/coronawarnapp/covidcertificate/recovery/core/storage/RecoveryCertificateContainer;->copy$default(Lde/rki/coronawarnapp/covidcertificate/recovery/core/storage/RecoveryCertificateContainer;Lde/rki/coronawarnapp/covidcertificate/recovery/core/storage/StoredRecoveryCertificateData;Lde/rki/coronawarnapp/covidcertificate/common/certificate/DccQrCodeExtractor;ZI)Lde/rki/coronawarnapp/covidcertificate/recovery/core/storage/RecoveryCertificateContainer;
+    invoke-static {v8, v2, v6, v5, v3}, Lde/rki/coronawarnapp/covidcertificate/recovery/core/storage/RecoveryCertificateContainer;->copy$default(Lde/rki/coronawarnapp/covidcertificate/recovery/core/storage/RecoveryCertificateContainer;Lde/rki/coronawarnapp/covidcertificate/recovery/core/storage/StoredRecoveryCertificateData;Lde/rki/coronawarnapp/covidcertificate/common/certificate/DccQrCodeExtractor;ZI)Lde/rki/coronawarnapp/covidcertificate/recovery/core/storage/RecoveryCertificateContainer;
 
     move-result-object v2
 
     sget-object v3, Ltimber/log/Timber;->Forest:Ltimber/log/Timber$Forest;
 
-    sget-object v5, Lde/rki/coronawarnapp/covidcertificate/recovery/core/RecoveryCertificateRepository;->TAG:Ljava/lang/String;
+    sget-object v6, Lde/rki/coronawarnapp/covidcertificate/recovery/core/RecoveryCertificateRepository;->TAG:Ljava/lang/String;
 
-    invoke-virtual {v3, v5}, Ltimber/log/Timber$Forest;->tag(Ljava/lang/String;)Ltimber/log/Timber$Tree;
+    invoke-virtual {v3, v6}, Ltimber/log/Timber$Forest;->tag(Ljava/lang/String;)Ltimber/log/Timber$Tree;
 
-    new-array v5, v9, [Ljava/lang/Object;
+    new-array v4, v4, [Ljava/lang/Object;
 
-    aput-object v2, v5, v4
+    aput-object v2, v4, v5
 
-    const-string v4, "markAsSeenByUser Updated %s"
+    const-string v5, "markAsSeenByUser Updated %s"
 
-    invoke-virtual {v3, v4, v5}, Ltimber/log/Timber$Tree;->d(Ljava/lang/String;[Ljava/lang/Object;)V
+    invoke-virtual {v3, v5, v4}, Ltimber/log/Timber$Tree;->d(Ljava/lang/String;[Ljava/lang/Object;)V
 
     invoke-static {v1, v2}, Lkotlin/collections/SetsKt;->plus(Ljava/util/Set;Ljava/lang/Object;)Ljava/util/Set;
 

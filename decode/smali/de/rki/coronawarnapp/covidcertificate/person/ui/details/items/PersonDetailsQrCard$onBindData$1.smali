@@ -32,7 +32,7 @@
 .end annotation
 
 .annotation system Ldalvik/annotation/SourceDebugExtension;
-    value = "SMAP\nPersonDetailsQrCard.kt\nKotlin\n*S Kotlin\n*F\n+ 1 PersonDetailsQrCard.kt\nde/rki/coronawarnapp/covidcertificate/person/ui/details/items/PersonDetailsQrCard$onBindData$1\n+ 2 _Collections.kt\nkotlin/collections/CollectionsKt___CollectionsKt\n+ 3 ImageViews.kt\ncoil/ImageViews\n+ 4 Contexts.kt\ncoil/Contexts\n*L\n1#1,56:1\n798#2,11:57\n92#3,3:68\n97#3,6:72\n12#4:71\n*S KotlinDebug\n*F\n+ 1 PersonDetailsQrCard.kt\nde/rki/coronawarnapp/covidcertificate/person/ui/details/items/PersonDetailsQrCard$onBindData$1\n*L\n29#1:57,11\n32#1:68,3\n32#1:72,6\n32#1:71\n*E\n"
+    value = "SMAP\nPersonDetailsQrCard.kt\nKotlin\n*S Kotlin\n*F\n+ 1 PersonDetailsQrCard.kt\nde/rki/coronawarnapp/covidcertificate/person/ui/details/items/PersonDetailsQrCard$onBindData$1\n+ 2 _Collections.kt\nkotlin/collections/CollectionsKt___CollectionsKt\n+ 3 ImageViews.kt\ncoil/ImageViews\n+ 4 Contexts.kt\ncoil/Contexts\n*L\n1#1,59:1\n798#2,11:60\n92#3,3:71\n97#3,6:75\n12#4:74\n*S KotlinDebug\n*F\n+ 1 PersonDetailsQrCard.kt\nde/rki/coronawarnapp/covidcertificate/person/ui/details/items/PersonDetailsQrCard$onBindData$1\n*L\n28#1:60,11\n31#1:71,3\n31#1:75,6\n31#1:74\n*E\n"
 .end annotation
 
 
@@ -66,7 +66,7 @@
 
 # virtual methods
 .method public invoke(Ljava/lang/Object;Ljava/lang/Object;Ljava/lang/Object;)Ljava/lang/Object;
-    .locals 8
+    .locals 7
 
     move-object v0, p1
 
@@ -117,7 +117,7 @@
     goto :goto_0
 
     :cond_1
-    invoke-static {p1}, Lkotlin/collections/CollectionsKt___CollectionsKt;->singleOrNull(Ljava/util/List;)Ljava/lang/Object;
+    invoke-static {p1}, Lkotlin/collections/CollectionsKt___CollectionsKt;->lastOrNull(Ljava/util/List;)Ljava/lang/Object;
 
     move-result-object p1
 
@@ -139,19 +139,13 @@
 
     iget-object v1, p2, Lde/rki/coronawarnapp/covidcertificate/person/ui/details/items/PersonDetailsQrCard$Item;->certificate:Lde/rki/coronawarnapp/covidcertificate/common/certificate/CwaCovidCertificate;
 
-    invoke-static {}, Ljava/util/Locale;->getDefault()Ljava/util/Locale;
+    const/4 v2, 0x0
 
-    move-result-object v2
+    const/4 v3, 0x0
 
-    invoke-virtual {v2}, Ljava/util/Locale;->getLanguage()Ljava/lang/String;
+    const/4 v4, 0x3
 
-    move-result-object v2
-
-    const-string v3, "getDefault().language"
-
-    invoke-static {v2, v3}, Lkotlin/jvm/internal/Intrinsics;->checkNotNullExpressionValue(Ljava/lang/Object;Ljava/lang/String;)V
-
-    invoke-static {v1, v2}, Lde/rki/coronawarnapp/covidcertificate/common/certificate/CwaCovidCertificateUIKt;->getValidQrCode(Lde/rki/coronawarnapp/covidcertificate/common/certificate/CwaCovidCertificate;Ljava/lang/String;)Lde/rki/coronawarnapp/util/qrcode/coil/CoilQrCode;
+    invoke-static {v1, v2, v3, v4}, Lde/rki/coronawarnapp/covidcertificate/common/certificate/CwaCovidCertificateUIKt;->getValidQrCode$default(Lde/rki/coronawarnapp/covidcertificate/common/certificate/CwaCovidCertificate;Ljava/util/Locale;ZI)Lde/rki/coronawarnapp/util/qrcode/coil/CoilQrCode;
 
     move-result-object v1
 
@@ -187,35 +181,35 @@
 
     invoke-virtual {v3, p1}, Lcoil/request/ImageRequest$Builder;->crossfade(Z)Lcoil/request/ImageRequest$Builder;
 
-    iget-object p1, v0, Lde/rki/coronawarnapp/databinding/IncludeCertificateQrcodeCardBinding;->image:Lcom/google/android/material/imageview/ShapeableImageView;
+    iget-object v1, v0, Lde/rki/coronawarnapp/databinding/IncludeCertificateQrcodeCardBinding;->image:Lcom/google/android/material/imageview/ShapeableImageView;
 
-    invoke-static {p1, p3}, Lkotlin/jvm/internal/Intrinsics;->checkNotNullExpressionValue(Ljava/lang/Object;Ljava/lang/String;)V
+    invoke-static {v1, p3}, Lkotlin/jvm/internal/Intrinsics;->checkNotNullExpressionValue(Ljava/lang/Object;Ljava/lang/String;)V
 
     iget-object p3, v0, Lde/rki/coronawarnapp/databinding/IncludeCertificateQrcodeCardBinding;->progressBar:Lcom/google/android/material/progressindicator/LinearProgressIndicator;
 
-    const-string v1, "progressBar"
+    const-string v4, "progressBar"
 
-    invoke-static {p3, v1}, Lkotlin/jvm/internal/Intrinsics;->checkNotNullExpressionValue(Ljava/lang/Object;Ljava/lang/String;)V
+    invoke-static {p3, v4}, Lkotlin/jvm/internal/Intrinsics;->checkNotNullExpressionValue(Ljava/lang/Object;Ljava/lang/String;)V
 
-    invoke-static {v3, p1, p3}, Lde/rki/coronawarnapp/util/coil/CoilExtensionsKt;->loadingView(Lcoil/request/ImageRequest$Builder;Landroid/view/View;Landroid/view/View;)V
+    invoke-static {v3, v1, p3}, Lde/rki/coronawarnapp/util/coil/CoilExtensionsKt;->loadingView(Lcoil/request/ImageRequest$Builder;Landroid/view/View;Landroid/view/View;)V
 
     invoke-virtual {v3}, Lcoil/request/ImageRequest$Builder;->build()Lcoil/request/ImageRequest;
 
-    move-result-object p1
+    move-result-object p3
 
-    invoke-interface {v2, p1}, Lcoil/ImageLoader;->enqueue(Lcoil/request/ImageRequest;)Lcoil/request/Disposable;
+    invoke-interface {v2, p3}, Lcoil/ImageLoader;->enqueue(Lcoil/request/ImageRequest;)Lcoil/request/Disposable;
 
-    iget-object p1, v0, Lde/rki/coronawarnapp/databinding/IncludeCertificateQrcodeCardBinding;->startValidationCheckButton:Lde/rki/coronawarnapp/ui/view/ProgressLoadingButton;
+    iget-object p3, v0, Lde/rki/coronawarnapp/databinding/IncludeCertificateQrcodeCardBinding;->startValidationCheckButton:Lde/rki/coronawarnapp/ui/view/ProgressLoadingButton;
 
-    invoke-virtual {p1}, Lde/rki/coronawarnapp/ui/view/ProgressLoadingButton;->getDefaultButton()Landroid/widget/Button;
+    invoke-virtual {p3}, Lde/rki/coronawarnapp/ui/view/ProgressLoadingButton;->getDefaultButton()Landroid/widget/Button;
 
-    move-result-object p1
+    move-result-object p3
 
-    new-instance p3, Lde/rki/coronawarnapp/ui/settings/SettingsResetFragment$$ExternalSyntheticLambda0;
+    new-instance v1, Lde/rki/coronawarnapp/ui/main/MainActivity$$ExternalSyntheticLambda0;
 
-    invoke-direct {p3, p2}, Lde/rki/coronawarnapp/ui/settings/SettingsResetFragment$$ExternalSyntheticLambda0;-><init>(Lde/rki/coronawarnapp/covidcertificate/person/ui/details/items/PersonDetailsQrCard$Item;)V
+    invoke-direct {v1, p2, p1}, Lde/rki/coronawarnapp/ui/main/MainActivity$$ExternalSyntheticLambda0;-><init>(Ljava/lang/Object;I)V
 
-    invoke-virtual {p1, p3}, Landroid/widget/Button;->setOnClickListener(Landroid/view/View$OnClickListener;)V
+    invoke-virtual {p3, v1}, Landroid/widget/Button;->setOnClickListener(Landroid/view/View$OnClickListener;)V
 
     iget-object p1, v0, Lde/rki/coronawarnapp/databinding/IncludeCertificateQrcodeCardBinding;->startValidationCheckButton:Lde/rki/coronawarnapp/ui/view/ProgressLoadingButton;
 
@@ -223,21 +217,41 @@
 
     invoke-virtual {p1, p3}, Lde/rki/coronawarnapp/ui/view/ProgressLoadingButton;->setLoading(Z)V
 
+    iget-object p1, v0, Lde/rki/coronawarnapp/databinding/IncludeCertificateQrcodeCardBinding;->startValidationCheckButton:Lde/rki/coronawarnapp/ui/view/ProgressLoadingButton;
+
+    iget-object p3, p2, Lde/rki/coronawarnapp/covidcertificate/person/ui/details/items/PersonDetailsQrCard$Item;->certificate:Lde/rki/coronawarnapp/covidcertificate/common/certificate/CwaCovidCertificate;
+
+    invoke-interface {p3}, Lde/rki/coronawarnapp/covidcertificate/common/certificate/CwaCovidCertificate;->isNotBlocked()Z
+
+    move-result p3
+
+    invoke-virtual {p1, p3}, Landroid/view/ViewGroup;->setEnabled(Z)V
+
+    invoke-virtual {p1}, Lde/rki/coronawarnapp/ui/view/ProgressLoadingButton;->getDefaultButton()Landroid/widget/Button;
+
+    move-result-object p1
+
+    iget-object p3, p2, Lde/rki/coronawarnapp/covidcertificate/person/ui/details/items/PersonDetailsQrCard$Item;->certificate:Lde/rki/coronawarnapp/covidcertificate/common/certificate/CwaCovidCertificate;
+
+    invoke-interface {p3}, Lde/rki/coronawarnapp/covidcertificate/common/certificate/CwaCovidCertificate;->isNotBlocked()Z
+
+    move-result p3
+
+    invoke-virtual {p1, p3}, Landroid/widget/Button;->setEnabled(Z)V
+
     iget-object v1, p2, Lde/rki/coronawarnapp/covidcertificate/person/ui/details/items/PersonDetailsQrCard$Item;->certificate:Lde/rki/coronawarnapp/covidcertificate/common/certificate/CwaCovidCertificate;
 
-    const/4 v2, 0x0
+    const/4 v2, 0x1
 
-    const/4 v3, 0x1
+    const/4 v3, 0x0
 
     const/4 v4, 0x0
 
-    const/4 v5, 0x0
+    iget-object v5, p2, Lde/rki/coronawarnapp/covidcertificate/person/ui/details/items/PersonDetailsQrCard$Item;->onCovPassInfoAction:Lkotlin/jvm/functions/Function0;
 
-    iget-object v6, p2, Lde/rki/coronawarnapp/covidcertificate/person/ui/details/items/PersonDetailsQrCard$Item;->onCovPassInfoAction:Lkotlin/jvm/functions/Function0;
+    const/16 v6, 0xc
 
-    const/16 v7, 0x1a
-
-    invoke-static/range {v0 .. v7}, Lde/rki/coronawarnapp/util/CertificateStateHelperKt;->bindValidityViews$default(Lde/rki/coronawarnapp/databinding/IncludeCertificateQrcodeCardBinding;Lde/rki/coronawarnapp/covidcertificate/common/certificate/CwaCovidCertificate;ZZZILkotlin/jvm/functions/Function0;I)V
+    invoke-static/range {v0 .. v6}, Lde/rki/coronawarnapp/util/CertificateStateHelperKt;->bindValidityViews$default(Lde/rki/coronawarnapp/databinding/IncludeCertificateQrcodeCardBinding;Lde/rki/coronawarnapp/covidcertificate/common/certificate/CwaCovidCertificate;ZZILkotlin/jvm/functions/Function0;I)V
 
     sget-object p1, Lkotlin/Unit;->INSTANCE:Lkotlin/Unit;
 

@@ -202,7 +202,7 @@
 
     invoke-direct {v1, v0}, Lokhttp3/OkHttpClient;-><init>(Lokhttp3/OkHttpClient$Builder;)V
 
-    invoke-static {v1, v3}, Lde/rki/coronawarnapp/appconfig/AppConfigModule$$ExternalSyntheticOutline1;->m(Lokhttp3/OkHttpClient;Ljava/lang/String;)Lretrofit2/Retrofit$Builder;
+    invoke-static {v1, v3}, Landroidx/room/InvalidationTracker$$ExternalSyntheticOutline0;->m(Lokhttp3/OkHttpClient;Ljava/lang/String;)Lretrofit2/Retrofit$Builder;
 
     move-result-object v0
 

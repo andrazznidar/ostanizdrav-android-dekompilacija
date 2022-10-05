@@ -65,9 +65,9 @@
 
     iget-object v1, v1, Lde/rki/coronawarnapp/databinding/CertificatePosterFragmentBinding;->toolbar:Lcom/google/android/material/appbar/MaterialToolbar;
 
-    new-instance v2, Lde/rki/coronawarnapp/covidcertificate/pdf/ui/poster/CertificatePosterFragment$$ExternalSyntheticLambda0;
+    new-instance v2, Lde/rki/coronawarnapp/covidcertificate/pdf/ui/poster/CertificatePosterFragment$$ExternalSyntheticLambda1;
 
-    invoke-direct {v2, v0, p1}, Lde/rki/coronawarnapp/covidcertificate/pdf/ui/poster/CertificatePosterFragment$$ExternalSyntheticLambda0;-><init>(Lde/rki/coronawarnapp/covidcertificate/pdf/ui/poster/CertificatePosterFragment;Lde/rki/coronawarnapp/util/files/FileSharing$FileIntentProvider;)V
+    invoke-direct {v2, v0, p1}, Lde/rki/coronawarnapp/covidcertificate/pdf/ui/poster/CertificatePosterFragment$$ExternalSyntheticLambda1;-><init>(Lde/rki/coronawarnapp/covidcertificate/pdf/ui/poster/CertificatePosterFragment;Lde/rki/coronawarnapp/util/files/FileSharing$FileIntentProvider;)V
 
     invoke-virtual {v1, v2}, Landroidx/appcompat/widget/Toolbar;->setOnMenuItemClickListener(Landroidx/appcompat/widget/Toolbar$OnMenuItemClickListener;)V
 

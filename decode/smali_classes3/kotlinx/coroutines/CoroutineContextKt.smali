@@ -13,7 +13,7 @@
 
     const-string v0, "kotlinx.coroutines.scheduler"
 
-    invoke-static {v0}, Lkotlinx/coroutines/internal/SystemPropsKt;->systemProp(Ljava/lang/String;)Ljava/lang/String;
+    invoke-static {v0}, Lorg/ejml/dense/row/CommonOps_ZDRM;->systemProp(Ljava/lang/String;)Ljava/lang/String;
 
     move-result-object v0
 

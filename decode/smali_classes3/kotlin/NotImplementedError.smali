@@ -15,3 +15,23 @@
 
     return-void
 .end method
+
+.method public synthetic constructor <init>(Ljava/lang/String;I)V
+    .locals 0
+
+    and-int/lit8 p1, p2, 0x1
+
+    if-eqz p1, :cond_0
+
+    const-string p1, "An operation is not implemented."
+
+    goto :goto_0
+
+    :cond_0
+    const/4 p1, 0x0
+
+    :goto_0
+    invoke-direct {p0, p1}, Lkotlin/NotImplementedError;-><init>(Ljava/lang/String;)V
+
+    return-void
+.end method

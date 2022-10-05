@@ -10877,9 +10877,11 @@
 
     sget-object v0, Lj$/time/format/H;->d:Ljava/util/Map;
 
-    check-cast v0, Ljava/util/HashMap;
+    move-object v1, v0
 
-    invoke-virtual {v0, p0}, Ljava/util/HashMap;->get(Ljava/lang/Object;)Ljava/lang/Object;
+    check-cast v1, Ljava/util/HashMap;
+
+    invoke-virtual {v1, p0}, Ljava/util/HashMap;->get(Ljava/lang/Object;)Ljava/lang/Object;
 
     move-result-object v1
 
@@ -10889,21 +10891,27 @@
 
     sget-object v2, Lj$/time/format/H;->g:Ljava/util/Map;
 
-    check-cast v2, Ljava/util/HashMap;
+    move-object v3, v2
 
-    invoke-virtual {v2, p0}, Ljava/util/HashMap;->containsKey(Ljava/lang/Object;)Z
+    check-cast v3, Ljava/util/HashMap;
+
+    invoke-virtual {v3, p0}, Ljava/util/HashMap;->containsKey(Ljava/lang/Object;)Z
 
     move-result v3
 
     if-eqz v3, :cond_0
 
-    invoke-interface {v2, p0}, Ljava/util/Map;->get(Ljava/lang/Object;)Ljava/lang/Object;
+    check-cast v2, Ljava/util/HashMap;
+
+    invoke-virtual {v2, p0}, Ljava/util/HashMap;->get(Ljava/lang/Object;)Ljava/lang/Object;
 
     move-result-object p0
 
     check-cast p0, Ljava/lang/String;
 
-    invoke-interface {v0, p0}, Ljava/util/Map;->get(Ljava/lang/Object;)Ljava/lang/Object;
+    check-cast v0, Ljava/util/HashMap;
+
+    invoke-virtual {v0, p0}, Ljava/util/HashMap;->get(Ljava/lang/Object;)Ljava/lang/Object;
 
     move-result-object v0
 
@@ -10969,7 +10977,7 @@
 
     if-eqz v0, :cond_3
 
-    invoke-interface {p1, p0}, Ljava/util/Map;->get(Ljava/lang/Object;)Ljava/lang/Object;
+    invoke-virtual {p1, p0}, Ljava/util/HashMap;->get(Ljava/lang/Object;)Ljava/lang/Object;
 
     move-result-object p0
 

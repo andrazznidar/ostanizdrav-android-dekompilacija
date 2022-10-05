@@ -14,20 +14,62 @@
 
 
 # static fields
-.field public static final synthetic $VALUES:[Lkotlin/reflect/jvm/internal/impl/builtins/UnsignedType;
+.field private static final synthetic $VALUES:[Lkotlin/reflect/jvm/internal/impl/builtins/UnsignedType;
+
+.field public static final enum UBYTE:Lkotlin/reflect/jvm/internal/impl/builtins/UnsignedType;
+
+.field public static final enum UINT:Lkotlin/reflect/jvm/internal/impl/builtins/UnsignedType;
+
+.field public static final enum ULONG:Lkotlin/reflect/jvm/internal/impl/builtins/UnsignedType;
+
+.field public static final enum USHORT:Lkotlin/reflect/jvm/internal/impl/builtins/UnsignedType;
 
 
 # instance fields
-.field public final arrayClassId:Lkotlin/reflect/jvm/internal/impl/name/ClassId;
+.field private final arrayClassId:Lkotlin/reflect/jvm/internal/impl/name/ClassId;
 
-.field public final classId:Lkotlin/reflect/jvm/internal/impl/name/ClassId;
+.field private final classId:Lkotlin/reflect/jvm/internal/impl/name/ClassId;
 
-.field public final typeName:Lkotlin/reflect/jvm/internal/impl/name/Name;
+.field private final typeName:Lkotlin/reflect/jvm/internal/impl/name/Name;
 
 
 # direct methods
+.method private static final synthetic $values()[Lkotlin/reflect/jvm/internal/impl/builtins/UnsignedType;
+    .locals 3
+
+    const/4 v0, 0x4
+
+    new-array v0, v0, [Lkotlin/reflect/jvm/internal/impl/builtins/UnsignedType;
+
+    sget-object v1, Lkotlin/reflect/jvm/internal/impl/builtins/UnsignedType;->UBYTE:Lkotlin/reflect/jvm/internal/impl/builtins/UnsignedType;
+
+    const/4 v2, 0x0
+
+    aput-object v1, v0, v2
+
+    sget-object v1, Lkotlin/reflect/jvm/internal/impl/builtins/UnsignedType;->USHORT:Lkotlin/reflect/jvm/internal/impl/builtins/UnsignedType;
+
+    const/4 v2, 0x1
+
+    aput-object v1, v0, v2
+
+    sget-object v1, Lkotlin/reflect/jvm/internal/impl/builtins/UnsignedType;->UINT:Lkotlin/reflect/jvm/internal/impl/builtins/UnsignedType;
+
+    const/4 v2, 0x2
+
+    aput-object v1, v0, v2
+
+    sget-object v1, Lkotlin/reflect/jvm/internal/impl/builtins/UnsignedType;->ULONG:Lkotlin/reflect/jvm/internal/impl/builtins/UnsignedType;
+
+    const/4 v2, 0x3
+
+    aput-object v1, v0, v2
+
+    return-object v0
+.end method
+
 .method public static constructor <clinit>()V
-    .locals 10
+    .locals 4
 
     new-instance v0, Lkotlin/reflect/jvm/internal/impl/builtins/UnsignedType;
 
@@ -37,72 +79,88 @@
 
     move-result-object v1
 
+    const-string v2, "fromString(\"kotlin/UByte\")"
+
+    invoke-static {v1, v2}, Lkotlin/jvm/internal/Intrinsics;->checkNotNullExpressionValue(Ljava/lang/Object;Ljava/lang/String;)V
+
     const-string v2, "UBYTE"
 
     const/4 v3, 0x0
 
     invoke-direct {v0, v2, v3, v1}, Lkotlin/reflect/jvm/internal/impl/builtins/UnsignedType;-><init>(Ljava/lang/String;ILkotlin/reflect/jvm/internal/impl/name/ClassId;)V
 
-    new-instance v1, Lkotlin/reflect/jvm/internal/impl/builtins/UnsignedType;
+    sput-object v0, Lkotlin/reflect/jvm/internal/impl/builtins/UnsignedType;->UBYTE:Lkotlin/reflect/jvm/internal/impl/builtins/UnsignedType;
 
-    const-string v2, "kotlin/UShort"
+    new-instance v0, Lkotlin/reflect/jvm/internal/impl/builtins/UnsignedType;
 
-    invoke-static {v2}, Lkotlin/reflect/jvm/internal/impl/name/ClassId;->fromString(Ljava/lang/String;)Lkotlin/reflect/jvm/internal/impl/name/ClassId;
+    const-string v1, "kotlin/UShort"
 
-    move-result-object v2
+    invoke-static {v1}, Lkotlin/reflect/jvm/internal/impl/name/ClassId;->fromString(Ljava/lang/String;)Lkotlin/reflect/jvm/internal/impl/name/ClassId;
 
-    const-string v4, "USHORT"
+    move-result-object v1
 
-    const/4 v5, 0x1
+    const-string v2, "fromString(\"kotlin/UShort\")"
 
-    invoke-direct {v1, v4, v5, v2}, Lkotlin/reflect/jvm/internal/impl/builtins/UnsignedType;-><init>(Ljava/lang/String;ILkotlin/reflect/jvm/internal/impl/name/ClassId;)V
+    invoke-static {v1, v2}, Lkotlin/jvm/internal/Intrinsics;->checkNotNullExpressionValue(Ljava/lang/Object;Ljava/lang/String;)V
 
-    new-instance v2, Lkotlin/reflect/jvm/internal/impl/builtins/UnsignedType;
+    const-string v2, "USHORT"
 
-    const-string v4, "kotlin/UInt"
+    const/4 v3, 0x1
 
-    invoke-static {v4}, Lkotlin/reflect/jvm/internal/impl/name/ClassId;->fromString(Ljava/lang/String;)Lkotlin/reflect/jvm/internal/impl/name/ClassId;
+    invoke-direct {v0, v2, v3, v1}, Lkotlin/reflect/jvm/internal/impl/builtins/UnsignedType;-><init>(Ljava/lang/String;ILkotlin/reflect/jvm/internal/impl/name/ClassId;)V
 
-    move-result-object v4
+    sput-object v0, Lkotlin/reflect/jvm/internal/impl/builtins/UnsignedType;->USHORT:Lkotlin/reflect/jvm/internal/impl/builtins/UnsignedType;
 
-    const-string v6, "UINT"
+    new-instance v0, Lkotlin/reflect/jvm/internal/impl/builtins/UnsignedType;
 
-    const/4 v7, 0x2
+    const-string v1, "kotlin/UInt"
 
-    invoke-direct {v2, v6, v7, v4}, Lkotlin/reflect/jvm/internal/impl/builtins/UnsignedType;-><init>(Ljava/lang/String;ILkotlin/reflect/jvm/internal/impl/name/ClassId;)V
+    invoke-static {v1}, Lkotlin/reflect/jvm/internal/impl/name/ClassId;->fromString(Ljava/lang/String;)Lkotlin/reflect/jvm/internal/impl/name/ClassId;
 
-    new-instance v4, Lkotlin/reflect/jvm/internal/impl/builtins/UnsignedType;
+    move-result-object v1
 
-    const-string v6, "kotlin/ULong"
+    const-string v2, "fromString(\"kotlin/UInt\")"
 
-    invoke-static {v6}, Lkotlin/reflect/jvm/internal/impl/name/ClassId;->fromString(Ljava/lang/String;)Lkotlin/reflect/jvm/internal/impl/name/ClassId;
+    invoke-static {v1, v2}, Lkotlin/jvm/internal/Intrinsics;->checkNotNullExpressionValue(Ljava/lang/Object;Ljava/lang/String;)V
 
-    move-result-object v6
+    const-string v2, "UINT"
 
-    const-string v8, "ULONG"
+    const/4 v3, 0x2
 
-    const/4 v9, 0x3
+    invoke-direct {v0, v2, v3, v1}, Lkotlin/reflect/jvm/internal/impl/builtins/UnsignedType;-><init>(Ljava/lang/String;ILkotlin/reflect/jvm/internal/impl/name/ClassId;)V
 
-    invoke-direct {v4, v8, v9, v6}, Lkotlin/reflect/jvm/internal/impl/builtins/UnsignedType;-><init>(Ljava/lang/String;ILkotlin/reflect/jvm/internal/impl/name/ClassId;)V
+    sput-object v0, Lkotlin/reflect/jvm/internal/impl/builtins/UnsignedType;->UINT:Lkotlin/reflect/jvm/internal/impl/builtins/UnsignedType;
 
-    const/4 v6, 0x4
+    new-instance v0, Lkotlin/reflect/jvm/internal/impl/builtins/UnsignedType;
 
-    new-array v6, v6, [Lkotlin/reflect/jvm/internal/impl/builtins/UnsignedType;
+    const-string v1, "kotlin/ULong"
 
-    aput-object v0, v6, v3
+    invoke-static {v1}, Lkotlin/reflect/jvm/internal/impl/name/ClassId;->fromString(Ljava/lang/String;)Lkotlin/reflect/jvm/internal/impl/name/ClassId;
 
-    aput-object v1, v6, v5
+    move-result-object v1
 
-    aput-object v2, v6, v7
+    const-string v2, "fromString(\"kotlin/ULong\")"
 
-    aput-object v4, v6, v9
+    invoke-static {v1, v2}, Lkotlin/jvm/internal/Intrinsics;->checkNotNullExpressionValue(Ljava/lang/Object;Ljava/lang/String;)V
 
-    sput-object v6, Lkotlin/reflect/jvm/internal/impl/builtins/UnsignedType;->$VALUES:[Lkotlin/reflect/jvm/internal/impl/builtins/UnsignedType;
+    const-string v2, "ULONG"
+
+    const/4 v3, 0x3
+
+    invoke-direct {v0, v2, v3, v1}, Lkotlin/reflect/jvm/internal/impl/builtins/UnsignedType;-><init>(Ljava/lang/String;ILkotlin/reflect/jvm/internal/impl/name/ClassId;)V
+
+    sput-object v0, Lkotlin/reflect/jvm/internal/impl/builtins/UnsignedType;->ULONG:Lkotlin/reflect/jvm/internal/impl/builtins/UnsignedType;
+
+    invoke-static {}, Lkotlin/reflect/jvm/internal/impl/builtins/UnsignedType;->$values()[Lkotlin/reflect/jvm/internal/impl/builtins/UnsignedType;
+
+    move-result-object v0
+
+    sput-object v0, Lkotlin/reflect/jvm/internal/impl/builtins/UnsignedType;->$VALUES:[Lkotlin/reflect/jvm/internal/impl/builtins/UnsignedType;
 
     return-void
 .end method
 
-.method public constructor <init>(Ljava/lang/String;ILkotlin/reflect/jvm/internal/impl/name/ClassId;)V
+.method private constructor <init>(Ljava/lang/String;ILkotlin/reflect/jvm/internal/impl/name/ClassId;)V
     .locals 1
     .annotation system Ldalvik/annotation/Signature;
         value = {
@@ -156,10 +214,6 @@
 .method public static valueOf(Ljava/lang/String;)Lkotlin/reflect/jvm/internal/impl/builtins/UnsignedType;
     .locals 1
 
-    const-string v0, "value"
-
-    invoke-static {p0, v0}, Lkotlin/jvm/internal/Intrinsics;->checkNotNullParameter(Ljava/lang/Object;Ljava/lang/String;)V
-
     const-class v0, Lkotlin/reflect/jvm/internal/impl/builtins/UnsignedType;
 
     invoke-static {v0, p0}, Ljava/lang/Enum;->valueOf(Ljava/lang/Class;Ljava/lang/String;)Ljava/lang/Enum;
@@ -172,19 +226,41 @@
 .end method
 
 .method public static values()[Lkotlin/reflect/jvm/internal/impl/builtins/UnsignedType;
-    .locals 4
+    .locals 1
 
     sget-object v0, Lkotlin/reflect/jvm/internal/impl/builtins/UnsignedType;->$VALUES:[Lkotlin/reflect/jvm/internal/impl/builtins/UnsignedType;
 
-    array-length v1, v0
+    invoke-virtual {v0}, [Ljava/lang/Object;->clone()Ljava/lang/Object;
 
-    new-array v1, v1, [Lkotlin/reflect/jvm/internal/impl/builtins/UnsignedType;
+    move-result-object v0
 
-    array-length v2, v0
+    check-cast v0, [Lkotlin/reflect/jvm/internal/impl/builtins/UnsignedType;
 
-    const/4 v3, 0x0
+    return-object v0
+.end method
 
-    invoke-static {v0, v3, v1, v3, v2}, Ljava/lang/System;->arraycopy(Ljava/lang/Object;ILjava/lang/Object;II)V
 
-    return-object v1
+# virtual methods
+.method public final getArrayClassId()Lkotlin/reflect/jvm/internal/impl/name/ClassId;
+    .locals 1
+
+    iget-object v0, p0, Lkotlin/reflect/jvm/internal/impl/builtins/UnsignedType;->arrayClassId:Lkotlin/reflect/jvm/internal/impl/name/ClassId;
+
+    return-object v0
+.end method
+
+.method public final getClassId()Lkotlin/reflect/jvm/internal/impl/name/ClassId;
+    .locals 1
+
+    iget-object v0, p0, Lkotlin/reflect/jvm/internal/impl/builtins/UnsignedType;->classId:Lkotlin/reflect/jvm/internal/impl/name/ClassId;
+
+    return-object v0
+.end method
+
+.method public final getTypeName()Lkotlin/reflect/jvm/internal/impl/name/Name;
+    .locals 1
+
+    iget-object v0, p0, Lkotlin/reflect/jvm/internal/impl/builtins/UnsignedType;->typeName:Lkotlin/reflect/jvm/internal/impl/name/Name;
+
+    return-object v0
 .end method

@@ -17,7 +17,7 @@
     c = "de.rki.coronawarnapp.coronatest.CoronaTestRepository"
     f = "CoronaTestRepository.kt"
     l = {
-        0x6d
+        0x7f
     }
     m = "registerTest"
 .end annotation

@@ -2,20 +2,48 @@
 .super Ljava/lang/Object;
 
 # interfaces
-.implements Lj$/time/format/h;
+.implements Lj$/time/format/g;
 
 
 # instance fields
-.field private final a:C
+.field private final a:[Lj$/time/format/g;
+
+.field private final b:Z
 
 
 # direct methods
-.method constructor <init>(C)V
+.method constructor <init>(Ljava/util/List;Z)V
+    .locals 1
+
+    invoke-interface {p1}, Ljava/util/List;->size()I
+
+    move-result v0
+
+    new-array v0, v0, [Lj$/time/format/g;
+
+    invoke-interface {p1, v0}, Ljava/util/List;->toArray([Ljava/lang/Object;)[Ljava/lang/Object;
+
+    move-result-object p1
+
+    check-cast p1, [Lj$/time/format/g;
+
+    invoke-direct {p0}, Ljava/lang/Object;-><init>()V
+
+    iput-object p1, p0, Lj$/time/format/f;->a:[Lj$/time/format/g;
+
+    iput-boolean p2, p0, Lj$/time/format/f;->b:Z
+
+    return-void
+.end method
+
+.method constructor <init>([Lj$/time/format/g;Z)V
     .locals 0
 
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
-    iput-char p1, p0, Lj$/time/format/f;->a:C
+    iput-object p1, p0, Lj$/time/format/f;->a:[Lj$/time/format/g;
+
+    iput-boolean p2, p0, Lj$/time/format/f;->b:Z
 
     return-void
 .end method
@@ -23,107 +51,232 @@
 
 # virtual methods
 .method public a(Lj$/time/format/z;Ljava/lang/StringBuilder;)Z
-    .locals 0
+    .locals 6
 
-    iget-char p1, p0, Lj$/time/format/f;->a:C
+    invoke-virtual {p2}, Ljava/lang/StringBuilder;->length()I
 
-    invoke-virtual {p2, p1}, Ljava/lang/StringBuilder;->append(C)Ljava/lang/StringBuilder;
+    move-result v0
 
-    const/4 p1, 0x1
+    iget-boolean v1, p0, Lj$/time/format/f;->b:Z
 
-    return p1
+    if-eqz v1, :cond_0
+
+    invoke-virtual {p1}, Lj$/time/format/z;->g()V
+
+    :cond_0
+    :try_start_0
+    iget-object v1, p0, Lj$/time/format/f;->a:[Lj$/time/format/g;
+
+    array-length v2, v1
+
+    const/4 v3, 0x0
+
+    :goto_0
+    const/4 v4, 0x1
+
+    if-ge v3, v2, :cond_3
+
+    aget-object v5, v1, v3
+
+    invoke-interface {v5, p1, p2}, Lj$/time/format/g;->a(Lj$/time/format/z;Ljava/lang/StringBuilder;)Z
+
+    move-result v5
+
+    if-nez v5, :cond_2
+
+    invoke-virtual {p2, v0}, Ljava/lang/StringBuilder;->setLength(I)V
+    :try_end_0
+    .catchall {:try_start_0 .. :try_end_0} :catchall_0
+
+    iget-boolean p2, p0, Lj$/time/format/f;->b:Z
+
+    if-eqz p2, :cond_1
+
+    invoke-virtual {p1}, Lj$/time/format/z;->a()V
+
+    :cond_1
+    return v4
+
+    :cond_2
+    add-int/lit8 v3, v3, 0x1
+
+    goto :goto_0
+
+    :cond_3
+    iget-boolean p2, p0, Lj$/time/format/f;->b:Z
+
+    if-eqz p2, :cond_4
+
+    invoke-virtual {p1}, Lj$/time/format/z;->a()V
+
+    :cond_4
+    return v4
+
+    :catchall_0
+    move-exception p2
+
+    iget-boolean v0, p0, Lj$/time/format/f;->b:Z
+
+    if-eqz v0, :cond_5
+
+    invoke-virtual {p1}, Lj$/time/format/z;->a()V
+
+    :cond_5
+    throw p2
 .end method
 
 .method public b(Lj$/time/format/x;Ljava/lang/CharSequence;I)I
-    .locals 1
+    .locals 6
 
-    invoke-interface {p2}, Ljava/lang/CharSequence;->length()I
+    iget-boolean v0, p0, Lj$/time/format/f;->b:Z
 
-    move-result v0
+    const/4 v1, 0x0
 
-    if-ne p3, v0, :cond_0
+    if-eqz v0, :cond_2
 
-    not-int p1, p3
+    invoke-virtual {p1}, Lj$/time/format/x;->r()V
 
-    return p1
+    iget-object v0, p0, Lj$/time/format/f;->a:[Lj$/time/format/g;
+
+    array-length v2, v0
+
+    move v4, p3
+
+    move v3, v1
+
+    :goto_0
+    if-ge v3, v2, :cond_1
+
+    aget-object v5, v0, v3
+
+    invoke-interface {v5, p1, p2, v4}, Lj$/time/format/g;->b(Lj$/time/format/x;Ljava/lang/CharSequence;I)I
+
+    move-result v4
+
+    if-gez v4, :cond_0
+
+    invoke-virtual {p1, v1}, Lj$/time/format/x;->f(Z)V
+
+    return p3
 
     :cond_0
-    invoke-interface {p2, p3}, Ljava/lang/CharSequence;->charAt(I)C
+    add-int/lit8 v3, v3, 0x1
 
-    move-result p2
-
-    iget-char v0, p0, Lj$/time/format/f;->a:C
-
-    if-eq p2, v0, :cond_2
-
-    invoke-virtual {p1}, Lj$/time/format/x;->k()Z
-
-    move-result p1
-
-    if-nez p1, :cond_1
-
-    invoke-static {p2}, Ljava/lang/Character;->toUpperCase(C)C
-
-    move-result p1
-
-    iget-char v0, p0, Lj$/time/format/f;->a:C
-
-    invoke-static {v0}, Ljava/lang/Character;->toUpperCase(C)C
-
-    move-result v0
-
-    if-eq p1, v0, :cond_2
-
-    invoke-static {p2}, Ljava/lang/Character;->toLowerCase(C)C
-
-    move-result p1
-
-    iget-char p2, p0, Lj$/time/format/f;->a:C
-
-    invoke-static {p2}, Ljava/lang/Character;->toLowerCase(C)C
-
-    move-result p2
-
-    if-eq p1, p2, :cond_2
+    goto :goto_0
 
     :cond_1
-    not-int p1, p3
+    const/4 p2, 0x1
 
-    return p1
+    invoke-virtual {p1, p2}, Lj$/time/format/x;->f(Z)V
+
+    return v4
 
     :cond_2
-    add-int/lit8 p3, p3, 0x1
+    iget-object v0, p0, Lj$/time/format/f;->a:[Lj$/time/format/g;
 
+    array-length v2, v0
+
+    :goto_1
+    if-ge v1, v2, :cond_4
+
+    aget-object v3, v0, v1
+
+    invoke-interface {v3, p1, p2, p3}, Lj$/time/format/g;->b(Lj$/time/format/x;Ljava/lang/CharSequence;I)I
+
+    move-result p3
+
+    if-gez p3, :cond_3
+
+    goto :goto_2
+
+    :cond_3
+    add-int/lit8 v1, v1, 0x1
+
+    goto :goto_1
+
+    :cond_4
+    :goto_2
     return p3
 .end method
 
-.method public toString()Ljava/lang/String;
-    .locals 3
+.method public c(Z)Lj$/time/format/f;
+    .locals 2
 
-    iget-char v0, p0, Lj$/time/format/f;->a:C
+    iget-boolean v0, p0, Lj$/time/format/f;->b:Z
 
-    const/16 v1, 0x27
+    if-ne p1, v0, :cond_0
 
-    if-ne v0, v1, :cond_0
-
-    const-string v0, "\'\'"
-
-    return-object v0
+    return-object p0
 
     :cond_0
-    const-string v0, "\'"
+    new-instance v0, Lj$/time/format/f;
 
-    invoke-static {v0}, Lj$/time/a;->a(Ljava/lang/String;)Ljava/lang/StringBuilder;
+    iget-object v1, p0, Lj$/time/format/f;->a:[Lj$/time/format/g;
 
-    move-result-object v1
+    invoke-direct {v0, v1, p1}, Lj$/time/format/f;-><init>([Lj$/time/format/g;Z)V
 
-    iget-char v2, p0, Lj$/time/format/f;->a:C
+    return-object v0
+.end method
 
-    invoke-virtual {v1, v2}, Ljava/lang/StringBuilder;->append(C)Ljava/lang/StringBuilder;
+.method public toString()Ljava/lang/String;
+    .locals 5
 
-    invoke-virtual {v1, v0}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+    new-instance v0, Ljava/lang/StringBuilder;
 
-    invoke-virtual {v1}, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
+    invoke-direct {v0}, Ljava/lang/StringBuilder;-><init>()V
+
+    iget-object v1, p0, Lj$/time/format/f;->a:[Lj$/time/format/g;
+
+    if-eqz v1, :cond_3
+
+    iget-boolean v1, p0, Lj$/time/format/f;->b:Z
+
+    if-eqz v1, :cond_0
+
+    const-string v1, "["
+
+    goto :goto_0
+
+    :cond_0
+    const-string v1, "("
+
+    :goto_0
+    invoke-virtual {v0, v1}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+
+    iget-object v1, p0, Lj$/time/format/f;->a:[Lj$/time/format/g;
+
+    array-length v2, v1
+
+    const/4 v3, 0x0
+
+    :goto_1
+    if-ge v3, v2, :cond_1
+
+    aget-object v4, v1, v3
+
+    invoke-virtual {v0, v4}, Ljava/lang/StringBuilder;->append(Ljava/lang/Object;)Ljava/lang/StringBuilder;
+
+    add-int/lit8 v3, v3, 0x1
+
+    goto :goto_1
+
+    :cond_1
+    iget-boolean v1, p0, Lj$/time/format/f;->b:Z
+
+    if-eqz v1, :cond_2
+
+    const-string v1, "]"
+
+    goto :goto_2
+
+    :cond_2
+    const-string v1, ")"
+
+    :goto_2
+    invoke-virtual {v0, v1}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+
+    :cond_3
+    invoke-virtual {v0}, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
 
     move-result-object v0
 

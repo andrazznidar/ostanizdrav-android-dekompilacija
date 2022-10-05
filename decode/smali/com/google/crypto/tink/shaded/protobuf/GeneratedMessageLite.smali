@@ -1676,7 +1676,7 @@
 
 
 # virtual methods
-.method public buildMessageInfo()Ljava/lang/Object;
+.method buildMessageInfo()Ljava/lang/Object;
     .locals 1
     .annotation system Ldalvik/annotation/Throws;
         value = {
@@ -1841,7 +1841,7 @@
     return-object v0
 .end method
 
-.method public getMemoizedSerializedSize()I
+.method getMemoizedSerializedSize()I
     .locals 1
 
     iget v0, p0, Lcom/google/crypto/tink/shaded/protobuf/GeneratedMessageLite;->memoizedSerializedSize:I
@@ -2085,7 +2085,7 @@
     return p1
 .end method
 
-.method public setMemoizedSerializedSize(I)V
+.method setMemoizedSerializedSize(I)V
     .locals 0
 
     iput p1, p0, Lcom/google/crypto/tink/shaded/protobuf/GeneratedMessageLite;->memoizedSerializedSize:I

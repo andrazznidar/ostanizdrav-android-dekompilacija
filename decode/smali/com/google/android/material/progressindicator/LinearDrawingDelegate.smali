@@ -445,7 +445,7 @@
 
     iget v1, v1, Lcom/google/android/material/progressindicator/DrawableWithAnimatedVisibilityChange;->totalAlpha:I
 
-    invoke-static {v0, v1}, Ldagger/android/AndroidInjection;->compositeARGBWithAlpha(II)I
+    invoke-static {v0, v1}, Lkotlin/math/MathKt__MathJVMKt;->compositeARGBWithAlpha(II)I
 
     move-result v0
 

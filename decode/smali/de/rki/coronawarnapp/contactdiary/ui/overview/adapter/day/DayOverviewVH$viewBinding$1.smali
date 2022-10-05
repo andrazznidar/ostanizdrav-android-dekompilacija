@@ -54,7 +54,7 @@
 
     iget-object v1, v1, Landroidx/recyclerview/widget/RecyclerView$ViewHolder;->itemView:Landroid/view/View;
 
-    const v2, 0x7f0a0264
+    const v2, 0x7f0a0284
 
     invoke-static {v1, v2}, Landroidx/viewbinding/ViewBindings;->findChildViewById(Landroid/view/View;I)Landroid/view/View;
 
@@ -64,7 +64,7 @@
 
     if-eqz v3, :cond_b
 
-    const v2, 0x7f0a059a
+    const v2, 0x7f0a05e6
 
     invoke-static {v3, v2}, Landroidx/viewbinding/ViewBindings;->findChildViewById(Landroid/view/View;I)Landroid/view/View;
 
@@ -84,7 +84,7 @@
 
     check-cast v9, Landroidx/constraintlayout/widget/ConstraintLayout;
 
-    const v3, 0x7f0a0266
+    const v3, 0x7f0a0286
 
     invoke-static {v1, v3}, Landroidx/viewbinding/ViewBindings;->findChildViewById(Landroid/view/View;I)Landroid/view/View;
 
@@ -92,7 +92,7 @@
 
     if-eqz v5, :cond_9
 
-    const v3, 0x7f0a0114
+    const v3, 0x7f0a012b
 
     invoke-static {v5, v3}, Landroidx/viewbinding/ViewBindings;->findChildViewById(Landroid/view/View;I)Landroid/view/View;
 
@@ -102,7 +102,7 @@
 
     if-eqz v6, :cond_8
 
-    const v3, 0x7f0a0258
+    const v3, 0x7f0a0278
 
     invoke-static {v5, v3}, Landroidx/viewbinding/ViewBindings;->findChildViewById(Landroid/view/View;I)Landroid/view/View;
 
@@ -114,11 +114,11 @@
 
     check-cast v5, Landroidx/constraintlayout/widget/ConstraintLayout;
 
-    new-instance v10, Lde/rki/coronawarnapp/databinding/FabTooltipBinding;
+    new-instance v10, Lde/rki/coronawarnapp/databinding/ContactDiaryOverviewDayListItemHeaderBinding;
 
-    invoke-direct {v10, v5, v6, v7, v5}, Lde/rki/coronawarnapp/databinding/FabTooltipBinding;-><init>(Landroidx/constraintlayout/widget/ConstraintLayout;Landroid/widget/ImageView;Landroid/widget/TextView;Landroidx/constraintlayout/widget/ConstraintLayout;)V
+    invoke-direct {v10, v5, v6, v7, v5}, Lde/rki/coronawarnapp/databinding/ContactDiaryOverviewDayListItemHeaderBinding;-><init>(Landroidx/constraintlayout/widget/ConstraintLayout;Landroid/widget/ImageView;Landroid/widget/TextView;Landroidx/constraintlayout/widget/ConstraintLayout;)V
 
-    const v3, 0x7f0a0267
+    const v3, 0x7f0a0287
 
     invoke-static {v1, v3}, Landroidx/viewbinding/ViewBindings;->findChildViewById(Landroid/view/View;I)Landroid/view/View;
 
@@ -126,7 +126,7 @@
 
     if-eqz v5, :cond_9
 
-    const v3, 0x7f0a0201
+    const v3, 0x7f0a0221
 
     invoke-static {v5, v3}, Landroidx/viewbinding/ViewBindings;->findChildViewById(Landroid/view/View;I)Landroid/view/View;
 
@@ -136,9 +136,9 @@
 
     check-cast v13, Landroid/widget/TextView;
 
-    const v6, 0x7f0a0206
+    const v6, 0x7f0a0226
 
-    const v7, 0x7f0a0203
+    const v7, 0x7f0a0223
 
     if-eqz v13, :cond_7
 
@@ -166,15 +166,15 @@
 
     if-eqz v16, :cond_5
 
-    new-instance v5, Lde/rki/coronawarnapp/databinding/IncludeDebuglogLegalPrivacyCardBinding;
+    new-instance v5, Lde/rki/coronawarnapp/databinding/ContactDiaryOverviewDayListItemRiskEnfBinding;
 
     move-object v11, v5
 
     move-object v12, v15
 
-    invoke-direct/range {v11 .. v16}, Lde/rki/coronawarnapp/databinding/IncludeDebuglogLegalPrivacyCardBinding;-><init>(Landroidx/constraintlayout/widget/ConstraintLayout;Landroid/widget/TextView;Landroid/widget/TextView;Landroidx/constraintlayout/widget/ConstraintLayout;Landroid/widget/ImageView;)V
+    invoke-direct/range {v11 .. v16}, Lde/rki/coronawarnapp/databinding/ContactDiaryOverviewDayListItemRiskEnfBinding;-><init>(Landroidx/constraintlayout/widget/ConstraintLayout;Landroid/widget/TextView;Landroid/widget/TextView;Landroidx/constraintlayout/widget/ConstraintLayout;Landroid/widget/ImageView;)V
 
-    const v11, 0x7f0a0268
+    const v11, 0x7f0a0288
 
     invoke-static {v1, v11}, Landroidx/viewbinding/ViewBindings;->findChildViewById(Landroid/view/View;I)Landroid/view/View;
 
@@ -192,7 +192,7 @@
 
     if-eqz v15, :cond_3
 
-    const v3, 0x7f0a0202
+    const v3, 0x7f0a0222
 
     invoke-static {v12, v3}, Landroidx/viewbinding/ViewBindings;->findChildViewById(Landroid/view/View;I)Landroid/view/View;
 
@@ -228,15 +228,15 @@
 
     if-eqz v19, :cond_1
 
-    new-instance v12, Lde/rki/coronawarnapp/databinding/ViewMoreInformationBinding;
+    new-instance v12, Lde/rki/coronawarnapp/databinding/ContactDiaryOverviewDayListItemRiskEventBinding;
 
     move-object v13, v12
 
     move-object/from16 v14, v18
 
-    invoke-direct/range {v13 .. v19}, Lde/rki/coronawarnapp/databinding/ViewMoreInformationBinding;-><init>(Landroidx/constraintlayout/widget/ConstraintLayout;Landroid/widget/TextView;Landroidx/recyclerview/widget/RecyclerView;Landroid/widget/TextView;Landroidx/constraintlayout/widget/ConstraintLayout;Landroid/widget/ImageView;)V
+    invoke-direct/range {v13 .. v19}, Lde/rki/coronawarnapp/databinding/ContactDiaryOverviewDayListItemRiskEventBinding;-><init>(Landroidx/constraintlayout/widget/ConstraintLayout;Landroid/widget/TextView;Landroidx/recyclerview/widget/RecyclerView;Landroid/widget/TextView;Landroidx/constraintlayout/widget/ConstraintLayout;Landroid/widget/ImageView;)V
 
-    const v3, 0x7f0a0269
+    const v3, 0x7f0a0289
 
     invoke-static {v1, v3}, Landroidx/viewbinding/ViewBindings;->findChildViewById(Landroid/view/View;I)Landroid/view/View;
 
@@ -266,7 +266,7 @@
 
     move-object v11, v5
 
-    invoke-direct/range {v6 .. v13}, Lde/rki/coronawarnapp/databinding/ContactDiaryOverviewListItemBinding;-><init>(Landroidx/constraintlayout/widget/ConstraintLayout;Lde/rki/coronawarnapp/databinding/ContactDiaryOverviewDayListItemContactBinding;Landroidx/constraintlayout/widget/ConstraintLayout;Lde/rki/coronawarnapp/databinding/FabTooltipBinding;Lde/rki/coronawarnapp/databinding/IncludeDebuglogLegalPrivacyCardBinding;Lde/rki/coronawarnapp/databinding/ViewMoreInformationBinding;Lde/rki/coronawarnapp/databinding/ContactDiaryOverviewDayListItemTestResultsBinding;)V
+    invoke-direct/range {v6 .. v13}, Lde/rki/coronawarnapp/databinding/ContactDiaryOverviewListItemBinding;-><init>(Landroidx/constraintlayout/widget/ConstraintLayout;Lde/rki/coronawarnapp/databinding/ContactDiaryOverviewDayListItemContactBinding;Landroidx/constraintlayout/widget/ConstraintLayout;Lde/rki/coronawarnapp/databinding/ContactDiaryOverviewDayListItemHeaderBinding;Lde/rki/coronawarnapp/databinding/ContactDiaryOverviewDayListItemRiskEnfBinding;Lde/rki/coronawarnapp/databinding/ContactDiaryOverviewDayListItemRiskEventBinding;Lde/rki/coronawarnapp/databinding/ContactDiaryOverviewDayListItemTestResultsBinding;)V
 
     return-object v1
 

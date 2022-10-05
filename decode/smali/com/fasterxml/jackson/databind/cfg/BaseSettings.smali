@@ -68,7 +68,7 @@
             "Lcom/fasterxml/jackson/databind/jsontype/TypeResolverBuilder<",
             "*>;",
             "Ljava/text/DateFormat;",
-            "Ljava/lang/Object;",
+            "Lorg/bouncycastle/util/Pack;",
             "Ljava/util/Locale;",
             "Ljava/util/TimeZone;",
             "Lcom/fasterxml/jackson/core/Base64Variant;",

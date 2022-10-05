@@ -96,73 +96,75 @@
 
     invoke-static {p0}, Ljava/util/Objects;->requireNonNull(Ljava/lang/Object;)Ljava/lang/Object;
 
-    sget-object v0, Lde/rki/coronawarnapp/covidcertificate/validation/core/DccValidation$State;->FAILURE:Lde/rki/coronawarnapp/covidcertificate/validation/core/DccValidation$State;
+    instance-of v0, p1, Lde/rki/coronawarnapp/covidcertificate/validation/ui/validationresult/failed/DccValidationFailedViewModel$generateItems$1;
 
-    instance-of v1, p1, Lde/rki/coronawarnapp/covidcertificate/validation/ui/validationresult/failed/DccValidationFailedViewModel$generateItems$1;
+    if-eqz v0, :cond_0
 
-    if-eqz v1, :cond_0
+    move-object v0, p1
 
-    move-object v1, p1
+    check-cast v0, Lde/rki/coronawarnapp/covidcertificate/validation/ui/validationresult/failed/DccValidationFailedViewModel$generateItems$1;
 
-    check-cast v1, Lde/rki/coronawarnapp/covidcertificate/validation/ui/validationresult/failed/DccValidationFailedViewModel$generateItems$1;
+    iget v1, v0, Lde/rki/coronawarnapp/covidcertificate/validation/ui/validationresult/failed/DccValidationFailedViewModel$generateItems$1;->label:I
 
-    iget v2, v1, Lde/rki/coronawarnapp/covidcertificate/validation/ui/validationresult/failed/DccValidationFailedViewModel$generateItems$1;->label:I
+    const/high16 v2, -0x80000000
 
-    const/high16 v3, -0x80000000
+    and-int v3, v1, v2
 
-    and-int v4, v2, v3
+    if-eqz v3, :cond_0
 
-    if-eqz v4, :cond_0
+    sub-int/2addr v1, v2
 
-    sub-int/2addr v2, v3
-
-    iput v2, v1, Lde/rki/coronawarnapp/covidcertificate/validation/ui/validationresult/failed/DccValidationFailedViewModel$generateItems$1;->label:I
+    iput v1, v0, Lde/rki/coronawarnapp/covidcertificate/validation/ui/validationresult/failed/DccValidationFailedViewModel$generateItems$1;->label:I
 
     goto :goto_0
 
     :cond_0
-    new-instance v1, Lde/rki/coronawarnapp/covidcertificate/validation/ui/validationresult/failed/DccValidationFailedViewModel$generateItems$1;
+    new-instance v0, Lde/rki/coronawarnapp/covidcertificate/validation/ui/validationresult/failed/DccValidationFailedViewModel$generateItems$1;
 
-    invoke-direct {v1, p0, p1}, Lde/rki/coronawarnapp/covidcertificate/validation/ui/validationresult/failed/DccValidationFailedViewModel$generateItems$1;-><init>(Lde/rki/coronawarnapp/covidcertificate/validation/ui/validationresult/failed/DccValidationFailedViewModel;Lkotlin/coroutines/Continuation;)V
+    invoke-direct {v0, p0, p1}, Lde/rki/coronawarnapp/covidcertificate/validation/ui/validationresult/failed/DccValidationFailedViewModel$generateItems$1;-><init>(Lde/rki/coronawarnapp/covidcertificate/validation/ui/validationresult/failed/DccValidationFailedViewModel;Lkotlin/coroutines/Continuation;)V
 
     :goto_0
-    iget-object p1, v1, Lde/rki/coronawarnapp/covidcertificate/validation/ui/validationresult/failed/DccValidationFailedViewModel$generateItems$1;->result:Ljava/lang/Object;
+    iget-object p1, v0, Lde/rki/coronawarnapp/covidcertificate/validation/ui/validationresult/failed/DccValidationFailedViewModel$generateItems$1;->result:Ljava/lang/Object;
 
-    sget-object v2, Lkotlin/coroutines/intrinsics/CoroutineSingletons;->COROUTINE_SUSPENDED:Lkotlin/coroutines/intrinsics/CoroutineSingletons;
+    sget-object v1, Lkotlin/coroutines/intrinsics/CoroutineSingletons;->COROUTINE_SUSPENDED:Lkotlin/coroutines/intrinsics/CoroutineSingletons;
 
-    iget v3, v1, Lde/rki/coronawarnapp/covidcertificate/validation/ui/validationresult/failed/DccValidationFailedViewModel$generateItems$1;->label:I
+    iget v2, v0, Lde/rki/coronawarnapp/covidcertificate/validation/ui/validationresult/failed/DccValidationFailedViewModel$generateItems$1;->label:I
 
-    const/4 v4, 0x6
+    const/4 v3, 0x6
 
-    const/4 v5, 0x2
+    const/4 v4, 0x1
 
-    const/4 v6, 0x1
+    const/4 v5, 0x0
 
-    const/4 v7, 0x0
+    const/4 v6, 0x3
 
-    if-eqz v3, :cond_3
+    const/4 v7, 0x2
 
-    if-eq v3, v6, :cond_2
+    const/4 v8, 0x4
 
-    if-ne v3, v5, :cond_1
+    if-eqz v2, :cond_3
 
-    iget-object p0, v1, Lde/rki/coronawarnapp/covidcertificate/validation/ui/validationresult/failed/DccValidationFailedViewModel$generateItems$1;->L$2:Ljava/lang/Object;
+    if-eq v2, v4, :cond_2
+
+    if-ne v2, v7, :cond_1
+
+    iget-object p0, v0, Lde/rki/coronawarnapp/covidcertificate/validation/ui/validationresult/failed/DccValidationFailedViewModel$generateItems$1;->L$2:Ljava/lang/Object;
 
     check-cast p0, Ljava/util/List;
 
-    iget-object v2, v1, Lde/rki/coronawarnapp/covidcertificate/validation/ui/validationresult/failed/DccValidationFailedViewModel$generateItems$1;->L$1:Ljava/lang/Object;
+    iget-object v1, v0, Lde/rki/coronawarnapp/covidcertificate/validation/ui/validationresult/failed/DccValidationFailedViewModel$generateItems$1;->L$1:Ljava/lang/Object;
 
-    check-cast v2, Lde/rki/coronawarnapp/covidcertificate/validation/ui/validationresult/common/ValidationResultItemCreator;
+    check-cast v1, Lde/rki/coronawarnapp/covidcertificate/validation/ui/validationresult/common/ValidationResultItemCreator;
 
-    iget-object v1, v1, Lde/rki/coronawarnapp/covidcertificate/validation/ui/validationresult/failed/DccValidationFailedViewModel$generateItems$1;->L$0:Ljava/lang/Object;
+    iget-object v0, v0, Lde/rki/coronawarnapp/covidcertificate/validation/ui/validationresult/failed/DccValidationFailedViewModel$generateItems$1;->L$0:Ljava/lang/Object;
 
-    check-cast v1, Lde/rki/coronawarnapp/covidcertificate/validation/ui/validationresult/failed/DccValidationFailedViewModel;
+    check-cast v0, Lde/rki/coronawarnapp/covidcertificate/validation/ui/validationresult/failed/DccValidationFailedViewModel;
 
     invoke-static {p1}, Lkotlin/ResultKt;->throwOnFailure(Ljava/lang/Object;)V
 
-    move-object v3, p0
+    move-object v2, p0
 
-    move-object p0, v1
+    move-object p0, v0
 
     goto/16 :goto_1
 
@@ -176,17 +178,17 @@
     throw p0
 
     :cond_2
-    iget-object p0, v1, Lde/rki/coronawarnapp/covidcertificate/validation/ui/validationresult/failed/DccValidationFailedViewModel$generateItems$1;->L$2:Ljava/lang/Object;
+    iget-object p0, v0, Lde/rki/coronawarnapp/covidcertificate/validation/ui/validationresult/failed/DccValidationFailedViewModel$generateItems$1;->L$2:Ljava/lang/Object;
 
     check-cast p0, Ljava/util/List;
 
-    iget-object v0, v1, Lde/rki/coronawarnapp/covidcertificate/validation/ui/validationresult/failed/DccValidationFailedViewModel$generateItems$1;->L$1:Ljava/lang/Object;
+    iget-object v1, v0, Lde/rki/coronawarnapp/covidcertificate/validation/ui/validationresult/failed/DccValidationFailedViewModel$generateItems$1;->L$1:Ljava/lang/Object;
 
-    check-cast v0, Lde/rki/coronawarnapp/covidcertificate/validation/ui/validationresult/common/ValidationResultItemCreator;
+    check-cast v1, Lde/rki/coronawarnapp/covidcertificate/validation/ui/validationresult/common/ValidationResultItemCreator;
 
-    iget-object v1, v1, Lde/rki/coronawarnapp/covidcertificate/validation/ui/validationresult/failed/DccValidationFailedViewModel$generateItems$1;->L$0:Ljava/lang/Object;
+    iget-object v0, v0, Lde/rki/coronawarnapp/covidcertificate/validation/ui/validationresult/failed/DccValidationFailedViewModel$generateItems$1;->L$0:Ljava/lang/Object;
 
-    check-cast v1, Lde/rki/coronawarnapp/covidcertificate/validation/ui/validationresult/failed/DccValidationFailedViewModel;
+    check-cast v0, Lde/rki/coronawarnapp/covidcertificate/validation/ui/validationresult/failed/DccValidationFailedViewModel;
 
     invoke-static {p1}, Lkotlin/ResultKt;->throwOnFailure(Ljava/lang/Object;)V
 
@@ -197,215 +199,213 @@
 
     iget-object p1, p0, Lde/rki/coronawarnapp/covidcertificate/validation/ui/validationresult/failed/DccValidationFailedViewModel;->itemCreator:Lde/rki/coronawarnapp/covidcertificate/validation/ui/validationresult/common/ValidationResultItemCreator;
 
-    new-array v3, v5, [Ljava/lang/Object;
-
-    iget-object v8, p0, Lde/rki/coronawarnapp/covidcertificate/validation/ui/validationresult/failed/DccValidationFailedViewModel;->validation:Lde/rki/coronawarnapp/covidcertificate/validation/core/DccValidation;
-
-    iget-object v9, v8, Lde/rki/coronawarnapp/covidcertificate/validation/core/DccValidation;->userInput:Lde/rki/coronawarnapp/covidcertificate/validation/core/ValidationUserInput;
-
-    iget-object v8, v8, Lde/rki/coronawarnapp/covidcertificate/validation/core/DccValidation;->validatedAt:Lorg/joda/time/Instant;
-
-    invoke-virtual {p1, v9, v8}, Lde/rki/coronawarnapp/covidcertificate/validation/ui/validationresult/common/ValidationResultItemCreator;->validationInputVHItem(Lde/rki/coronawarnapp/covidcertificate/validation/core/ValidationUserInput;Lorg/joda/time/Instant;)Lde/rki/coronawarnapp/covidcertificate/validation/ui/validationresult/common/listitem/ValidationInputVH$Item;
-
-    move-result-object v8
-
-    aput-object v8, v3, v7
-
-    invoke-virtual {p1, v0, v7}, Lde/rki/coronawarnapp/covidcertificate/validation/ui/validationresult/common/ValidationResultItemCreator;->validationOverallResultVHItem(Lde/rki/coronawarnapp/covidcertificate/validation/core/DccValidation$State;I)Lde/rki/coronawarnapp/covidcertificate/validation/ui/validationresult/common/listitem/ValidationOverallResultVH$Item;
-
-    move-result-object v8
-
-    aput-object v8, v3, v6
-
-    invoke-static {v3}, Lkotlin/collections/CollectionsKt__CollectionsKt;->mutableListOf([Ljava/lang/Object;)Ljava/util/List;
-
-    move-result-object v3
-
-    sget-object v8, Lde/rki/coronawarnapp/covidcertificate/validation/ui/validationresult/common/listitem/ValidationFaqVH$Item;->INSTANCE:Lde/rki/coronawarnapp/covidcertificate/validation/ui/validationresult/common/listitem/ValidationFaqVH$Item;
-
-    invoke-interface {v3, v8}, Ljava/util/List;->add(Ljava/lang/Object;)Z
-
-    sget-object v8, Ltimber/log/Timber;->Forest:Ltimber/log/Timber$Forest;
+    new-array v2, v7, [Ljava/lang/Object;
 
     iget-object v9, p0, Lde/rki/coronawarnapp/covidcertificate/validation/ui/validationresult/failed/DccValidationFailedViewModel;->validation:Lde/rki/coronawarnapp/covidcertificate/validation/core/DccValidation;
 
-    invoke-virtual {v9}, Lde/rki/coronawarnapp/covidcertificate/validation/core/DccValidation;->getState()Lde/rki/coronawarnapp/covidcertificate/validation/core/DccValidation$State;
+    iget-object v10, v9, Lde/rki/coronawarnapp/covidcertificate/validation/core/DccValidation;->userInput:Lde/rki/coronawarnapp/covidcertificate/validation/core/ValidationUserInput;
+
+    iget-object v9, v9, Lde/rki/coronawarnapp/covidcertificate/validation/core/DccValidation;->validatedAt:Lorg/joda/time/Instant;
+
+    invoke-virtual {p1, v10, v9}, Lde/rki/coronawarnapp/covidcertificate/validation/ui/validationresult/common/ValidationResultItemCreator;->validationInputVHItem(Lde/rki/coronawarnapp/covidcertificate/validation/core/ValidationUserInput;Lorg/joda/time/Instant;)Lde/rki/coronawarnapp/covidcertificate/validation/ui/validationresult/common/listitem/ValidationInputVH$Item;
 
     move-result-object v9
 
-    new-instance v10, Ljava/lang/StringBuilder;
+    aput-object v9, v2, v5
 
-    invoke-direct {v10}, Ljava/lang/StringBuilder;-><init>()V
+    invoke-virtual {p1, v8, v5}, Lde/rki/coronawarnapp/covidcertificate/validation/ui/validationresult/common/ValidationResultItemCreator;->validationOverallResultVHItem$enumunboxing$(II)Lde/rki/coronawarnapp/covidcertificate/validation/ui/validationresult/common/listitem/ValidationOverallResultVH$Item;
+
+    move-result-object v9
+
+    aput-object v9, v2, v4
+
+    invoke-static {v2}, Lkotlin/collections/CollectionsKt__CollectionsKt;->mutableListOf([Ljava/lang/Object;)Ljava/util/List;
+
+    move-result-object v2
+
+    sget-object v9, Lde/rki/coronawarnapp/covidcertificate/validation/ui/validationresult/common/listitem/ValidationFaqVH$Item;->INSTANCE:Lde/rki/coronawarnapp/covidcertificate/validation/ui/validationresult/common/listitem/ValidationFaqVH$Item;
+
+    invoke-interface {v2, v9}, Ljava/util/List;->add(Ljava/lang/Object;)Z
+
+    sget-object v9, Ltimber/log/Timber;->Forest:Ltimber/log/Timber$Forest;
+
+    iget-object v10, p0, Lde/rki/coronawarnapp/covidcertificate/validation/ui/validationresult/failed/DccValidationFailedViewModel;->validation:Lde/rki/coronawarnapp/covidcertificate/validation/core/DccValidation;
+
+    invoke-virtual {v10}, Lde/rki/coronawarnapp/covidcertificate/validation/core/DccValidation;->getState$enumunboxing$()I
+
+    move-result v10
 
     const-string v11, "Generating items for state "
 
-    invoke-virtual {v10, v11}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+    invoke-static {v11}, Landroid/support/v4/media/RatingCompat$$ExternalSyntheticOutline0;->m(Ljava/lang/String;)Ljava/lang/StringBuilder;
 
-    invoke-virtual {v10, v9}, Ljava/lang/StringBuilder;->append(Ljava/lang/Object;)Ljava/lang/StringBuilder;
+    move-result-object v11
 
-    invoke-virtual {v10}, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
+    invoke-static {v10}, Lde/rki/coronawarnapp/covidcertificate/validation/core/DccValidation$State$EnumUnboxingLocalUtility;->stringValueOf(I)Ljava/lang/String;
 
-    move-result-object v9
+    move-result-object v10
 
-    new-array v10, v7, [Ljava/lang/Object;
+    invoke-virtual {v11, v10}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
 
-    invoke-virtual {v8, v9, v10}, Ltimber/log/Timber$Forest;->d(Ljava/lang/String;[Ljava/lang/Object;)V
+    invoke-virtual {v11}, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
 
-    iget-object v8, p0, Lde/rki/coronawarnapp/covidcertificate/validation/ui/validationresult/failed/DccValidationFailedViewModel;->validation:Lde/rki/coronawarnapp/covidcertificate/validation/core/DccValidation;
+    move-result-object v10
 
-    invoke-virtual {v8}, Lde/rki/coronawarnapp/covidcertificate/validation/core/DccValidation;->getState()Lde/rki/coronawarnapp/covidcertificate/validation/core/DccValidation$State;
+    new-array v11, v5, [Ljava/lang/Object;
 
-    move-result-object v8
+    invoke-virtual {v9, v10, v11}, Ltimber/log/Timber$Forest;->d(Ljava/lang/String;[Ljava/lang/Object;)V
 
-    invoke-virtual {v8}, Ljava/lang/Enum;->ordinal()I
+    iget-object v9, p0, Lde/rki/coronawarnapp/covidcertificate/validation/ui/validationresult/failed/DccValidationFailedViewModel;->validation:Lde/rki/coronawarnapp/covidcertificate/validation/core/DccValidation;
 
-    move-result v8
+    invoke-virtual {v9}, Lde/rki/coronawarnapp/covidcertificate/validation/core/DccValidation;->getState$enumunboxing$()I
 
-    if-eqz v8, :cond_12
+    move-result v9
 
-    if-eq v8, v6, :cond_12
+    invoke-static {v9}, Landroidx/camera/camera2/internal/Camera2CameraImpl$InternalState$EnumUnboxingSharedUtility;->ordinal(I)I
 
-    if-eq v8, v5, :cond_f
+    move-result v9
 
-    const/4 v9, 0x3
+    if-eqz v9, :cond_12
 
-    if-eq v8, v9, :cond_4
+    if-eq v9, v4, :cond_12
+
+    if-eq v9, v7, :cond_f
+
+    if-eq v9, v6, :cond_4
 
     goto/16 :goto_9
 
     :cond_4
-    iget-object v8, p0, Lde/rki/coronawarnapp/covidcertificate/validation/ui/validationresult/failed/DccValidationFailedViewModel;->certificateProvider:Lde/rki/coronawarnapp/covidcertificate/common/certificate/CertificateProvider;
+    iget-object v9, p0, Lde/rki/coronawarnapp/covidcertificate/validation/ui/validationresult/failed/DccValidationFailedViewModel;->certificateProvider:Lde/rki/coronawarnapp/covidcertificate/common/certificate/CertificateProvider;
 
-    iget-object v9, p0, Lde/rki/coronawarnapp/covidcertificate/validation/ui/validationresult/failed/DccValidationFailedViewModel;->containerId:Lde/rki/coronawarnapp/covidcertificate/common/repository/CertificateContainerId;
+    iget-object v10, p0, Lde/rki/coronawarnapp/covidcertificate/validation/ui/validationresult/failed/DccValidationFailedViewModel;->containerId:Lde/rki/coronawarnapp/covidcertificate/common/repository/CertificateContainerId;
 
-    iput-object p0, v1, Lde/rki/coronawarnapp/covidcertificate/validation/ui/validationresult/failed/DccValidationFailedViewModel$generateItems$1;->L$0:Ljava/lang/Object;
+    iput-object p0, v0, Lde/rki/coronawarnapp/covidcertificate/validation/ui/validationresult/failed/DccValidationFailedViewModel$generateItems$1;->L$0:Ljava/lang/Object;
 
-    iput-object p1, v1, Lde/rki/coronawarnapp/covidcertificate/validation/ui/validationresult/failed/DccValidationFailedViewModel$generateItems$1;->L$1:Ljava/lang/Object;
+    iput-object p1, v0, Lde/rki/coronawarnapp/covidcertificate/validation/ui/validationresult/failed/DccValidationFailedViewModel$generateItems$1;->L$1:Ljava/lang/Object;
 
-    iput-object v3, v1, Lde/rki/coronawarnapp/covidcertificate/validation/ui/validationresult/failed/DccValidationFailedViewModel$generateItems$1;->L$2:Ljava/lang/Object;
+    iput-object v2, v0, Lde/rki/coronawarnapp/covidcertificate/validation/ui/validationresult/failed/DccValidationFailedViewModel$generateItems$1;->L$2:Ljava/lang/Object;
 
-    iput v5, v1, Lde/rki/coronawarnapp/covidcertificate/validation/ui/validationresult/failed/DccValidationFailedViewModel$generateItems$1;->label:I
+    iput v7, v0, Lde/rki/coronawarnapp/covidcertificate/validation/ui/validationresult/failed/DccValidationFailedViewModel$generateItems$1;->label:I
 
-    invoke-virtual {v8, v9, v1}, Lde/rki/coronawarnapp/covidcertificate/common/certificate/CertificateProvider;->findCertificate(Lde/rki/coronawarnapp/covidcertificate/common/repository/CertificateContainerId;Lkotlin/coroutines/Continuation;)Ljava/lang/Object;
+    invoke-virtual {v9, v10, v0}, Lde/rki/coronawarnapp/covidcertificate/common/certificate/CertificateProvider;->findCertificate(Lde/rki/coronawarnapp/covidcertificate/common/repository/CertificateContainerId;Lkotlin/coroutines/Continuation;)Ljava/lang/Object;
 
-    move-result-object v1
+    move-result-object v0
 
-    if-ne v1, v2, :cond_5
+    if-ne v0, v1, :cond_5
 
     goto/16 :goto_a
 
     :cond_5
-    move-object v2, p1
+    move-object v1, p1
 
-    move-object p1, v1
+    move-object p1, v0
 
     :goto_1
     check-cast p1, Lde/rki/coronawarnapp/covidcertificate/common/certificate/CwaCovidCertificate;
 
-    iget-object v1, p0, Lde/rki/coronawarnapp/covidcertificate/validation/ui/validationresult/failed/DccValidationFailedViewModel;->validation:Lde/rki/coronawarnapp/covidcertificate/validation/core/DccValidation;
+    iget-object v0, p0, Lde/rki/coronawarnapp/covidcertificate/validation/ui/validationresult/failed/DccValidationFailedViewModel;->validation:Lde/rki/coronawarnapp/covidcertificate/validation/core/DccValidation;
 
-    iget-object v1, v1, Lde/rki/coronawarnapp/covidcertificate/validation/core/DccValidation;->rules:Ljava/util/Set;
+    iget-object v0, v0, Lde/rki/coronawarnapp/covidcertificate/validation/core/DccValidation;->rules:Ljava/util/Set;
 
-    new-instance v5, Ljava/util/ArrayList;
+    new-instance v9, Ljava/util/ArrayList;
 
-    invoke-direct {v5}, Ljava/util/ArrayList;-><init>()V
+    invoke-direct {v9}, Ljava/util/ArrayList;-><init>()V
 
-    invoke-interface {v1}, Ljava/lang/Iterable;->iterator()Ljava/util/Iterator;
+    invoke-interface {v0}, Ljava/lang/Iterable;->iterator()Ljava/util/Iterator;
 
-    move-result-object v1
+    move-result-object v0
 
     :cond_6
     :goto_2
-    invoke-interface {v1}, Ljava/util/Iterator;->hasNext()Z
+    invoke-interface {v0}, Ljava/util/Iterator;->hasNext()Z
 
-    move-result v8
+    move-result v10
 
-    if-eqz v8, :cond_8
+    if-eqz v10, :cond_8
 
-    invoke-interface {v1}, Ljava/util/Iterator;->next()Ljava/lang/Object;
+    invoke-interface {v0}, Ljava/util/Iterator;->next()Ljava/lang/Object;
 
-    move-result-object v8
+    move-result-object v10
 
-    move-object v9, v8
+    move-object v11, v10
 
-    check-cast v9, Lde/rki/coronawarnapp/covidcertificate/validation/core/rule/EvaluatedDccRule;
+    check-cast v11, Lde/rki/coronawarnapp/covidcertificate/validation/core/rule/EvaluatedDccRule;
 
-    iget-object v9, v9, Lde/rki/coronawarnapp/covidcertificate/validation/core/rule/EvaluatedDccRule;->result:Lde/rki/coronawarnapp/covidcertificate/validation/core/rule/DccValidationRule$Result;
+    iget v11, v11, Lde/rki/coronawarnapp/covidcertificate/validation/core/rule/EvaluatedDccRule;->result:I
 
-    sget-object v10, Lde/rki/coronawarnapp/covidcertificate/validation/core/rule/DccValidationRule$Result;->FAILED:Lde/rki/coronawarnapp/covidcertificate/validation/core/rule/DccValidationRule$Result;
+    if-ne v11, v7, :cond_7
 
-    if-ne v9, v10, :cond_7
-
-    move v9, v6
+    move v11, v4
 
     goto :goto_3
 
     :cond_7
-    move v9, v7
+    move v11, v5
 
     :goto_3
-    if-eqz v9, :cond_6
+    if-eqz v11, :cond_6
 
-    invoke-virtual {v5, v8}, Ljava/util/ArrayList;->add(Ljava/lang/Object;)Z
+    invoke-virtual {v9, v10}, Ljava/util/ArrayList;->add(Ljava/lang/Object;)Z
 
     goto :goto_2
 
     :cond_8
-    new-instance v1, Ljava/util/ArrayList;
+    new-instance v0, Ljava/util/ArrayList;
 
-    const/16 v8, 0xa
+    const/16 v10, 0xa
 
-    invoke-static {v5, v8}, Lkotlin/collections/CollectionsKt__IteratorsJVMKt;->collectionSizeOrDefault(Ljava/lang/Iterable;I)I
+    invoke-static {v9, v10}, Lkotlin/collections/CollectionsKt__IteratorsJVMKt;->collectionSizeOrDefault(Ljava/lang/Iterable;I)I
 
-    move-result v9
+    move-result v11
 
-    invoke-direct {v1, v9}, Ljava/util/ArrayList;-><init>(I)V
+    invoke-direct {v0, v11}, Ljava/util/ArrayList;-><init>(I)V
 
-    invoke-virtual {v5}, Ljava/util/ArrayList;->iterator()Ljava/util/Iterator;
+    invoke-virtual {v9}, Ljava/util/ArrayList;->iterator()Ljava/util/Iterator;
 
-    move-result-object v5
+    move-result-object v9
 
     :goto_4
-    invoke-interface {v5}, Ljava/util/Iterator;->hasNext()Z
+    invoke-interface {v9}, Ljava/util/Iterator;->hasNext()Z
 
-    move-result v9
+    move-result v11
 
-    if-eqz v9, :cond_9
+    if-eqz v11, :cond_9
 
-    invoke-interface {v5}, Ljava/util/Iterator;->next()Ljava/lang/Object;
+    invoke-interface {v9}, Ljava/util/Iterator;->next()Ljava/lang/Object;
 
-    move-result-object v9
+    move-result-object v11
 
-    check-cast v9, Lde/rki/coronawarnapp/covidcertificate/validation/core/rule/EvaluatedDccRule;
+    check-cast v11, Lde/rki/coronawarnapp/covidcertificate/validation/core/rule/EvaluatedDccRule;
 
-    iget-object v10, v9, Lde/rki/coronawarnapp/covidcertificate/validation/core/rule/EvaluatedDccRule;->rule:Lde/rki/coronawarnapp/covidcertificate/validation/core/rule/DccValidationRule;
+    iget-object v12, v11, Lde/rki/coronawarnapp/covidcertificate/validation/core/rule/EvaluatedDccRule;->rule:Lde/rki/coronawarnapp/covidcertificate/validation/core/rule/DccValidationRule;
 
-    iget-object v9, v9, Lde/rki/coronawarnapp/covidcertificate/validation/core/rule/EvaluatedDccRule;->result:Lde/rki/coronawarnapp/covidcertificate/validation/core/rule/DccValidationRule$Result;
+    iget v11, v11, Lde/rki/coronawarnapp/covidcertificate/validation/core/rule/EvaluatedDccRule;->result:I
 
-    invoke-virtual {v2, v10, v9, p1}, Lde/rki/coronawarnapp/covidcertificate/validation/ui/validationresult/common/ValidationResultItemCreator;->businessRuleVHItem(Lde/rki/coronawarnapp/covidcertificate/validation/core/rule/DccValidationRule;Lde/rki/coronawarnapp/covidcertificate/validation/core/rule/DccValidationRule$Result;Lde/rki/coronawarnapp/covidcertificate/common/certificate/CwaCovidCertificate;)Lde/rki/coronawarnapp/covidcertificate/validation/ui/validationresult/common/listitem/businessrule/BusinessRuleVH$Item;
+    invoke-virtual {v1, v12, v11, p1}, Lde/rki/coronawarnapp/covidcertificate/validation/ui/validationresult/common/ValidationResultItemCreator;->businessRuleVHItem$enumunboxing$(Lde/rki/coronawarnapp/covidcertificate/validation/core/rule/DccValidationRule;ILde/rki/coronawarnapp/covidcertificate/common/certificate/CwaCovidCertificate;)Lde/rki/coronawarnapp/covidcertificate/validation/ui/validationresult/common/listitem/businessrule/BusinessRuleVH$Item;
 
-    move-result-object v9
+    move-result-object v11
 
-    invoke-virtual {v1, v9}, Ljava/util/ArrayList;->add(Ljava/lang/Object;)Z
+    invoke-virtual {v0, v11}, Ljava/util/ArrayList;->add(Ljava/lang/Object;)Z
 
     goto :goto_4
 
     :cond_9
-    invoke-virtual {v1}, Ljava/util/ArrayList;->isEmpty()Z
+    invoke-virtual {v0}, Ljava/util/ArrayList;->isEmpty()Z
 
-    move-result v5
+    move-result v9
 
-    xor-int/2addr v5, v6
+    xor-int/2addr v9, v4
 
-    if-eqz v5, :cond_a
+    if-eqz v9, :cond_a
 
-    invoke-static {v2, v0, v7, v7, v4}, Lde/rki/coronawarnapp/covidcertificate/validation/ui/validationresult/common/ValidationResultItemCreator;->ruleHeaderVHItem$default(Lde/rki/coronawarnapp/covidcertificate/validation/ui/validationresult/common/ValidationResultItemCreator;Lde/rki/coronawarnapp/covidcertificate/validation/core/DccValidation$State;ZII)Lde/rki/coronawarnapp/covidcertificate/validation/ui/validationresult/common/listitem/RuleHeaderVH$Item;
+    invoke-static {v1, v8, v5, v5, v3}, Lde/rki/coronawarnapp/covidcertificate/validation/ui/validationresult/common/ValidationResultItemCreator;->ruleHeaderVHItem$default(Lde/rki/coronawarnapp/covidcertificate/validation/ui/validationresult/common/ValidationResultItemCreator;IZII)Lde/rki/coronawarnapp/covidcertificate/validation/ui/validationresult/common/listitem/RuleHeaderVH$Item;
 
-    move-result-object v0
+    move-result-object v8
 
-    invoke-interface {v3, v0}, Ljava/util/List;->add(Ljava/lang/Object;)Z
+    invoke-interface {v2, v8}, Ljava/util/List;->add(Ljava/lang/Object;)Z
 
-    invoke-interface {v3, v1}, Ljava/util/List;->addAll(Ljava/util/Collection;)Z
+    invoke-interface {v2, v0}, Ljava/util/List;->addAll(Ljava/util/Collection;)Z
 
     :cond_a
     iget-object p0, p0, Lde/rki/coronawarnapp/covidcertificate/validation/ui/validationresult/failed/DccValidationFailedViewModel;->validation:Lde/rki/coronawarnapp/covidcertificate/validation/core/DccValidation;
@@ -424,46 +424,44 @@
     :goto_5
     invoke-interface {p0}, Ljava/util/Iterator;->hasNext()Z
 
-    move-result v1
+    move-result v8
 
-    if-eqz v1, :cond_d
+    if-eqz v8, :cond_d
 
     invoke-interface {p0}, Ljava/util/Iterator;->next()Ljava/lang/Object;
 
-    move-result-object v1
+    move-result-object v8
 
-    move-object v5, v1
+    move-object v9, v8
 
-    check-cast v5, Lde/rki/coronawarnapp/covidcertificate/validation/core/rule/EvaluatedDccRule;
+    check-cast v9, Lde/rki/coronawarnapp/covidcertificate/validation/core/rule/EvaluatedDccRule;
 
-    iget-object v5, v5, Lde/rki/coronawarnapp/covidcertificate/validation/core/rule/EvaluatedDccRule;->result:Lde/rki/coronawarnapp/covidcertificate/validation/core/rule/DccValidationRule$Result;
+    iget v9, v9, Lde/rki/coronawarnapp/covidcertificate/validation/core/rule/EvaluatedDccRule;->result:I
 
-    sget-object v9, Lde/rki/coronawarnapp/covidcertificate/validation/core/rule/DccValidationRule$Result;->OPEN:Lde/rki/coronawarnapp/covidcertificate/validation/core/rule/DccValidationRule$Result;
+    if-ne v9, v6, :cond_c
 
-    if-ne v5, v9, :cond_c
-
-    move v5, v6
+    move v9, v4
 
     goto :goto_6
 
     :cond_c
-    move v5, v7
+    move v9, v5
 
     :goto_6
-    if-eqz v5, :cond_b
+    if-eqz v9, :cond_b
 
-    invoke-virtual {v0, v1}, Ljava/util/ArrayList;->add(Ljava/lang/Object;)Z
+    invoke-virtual {v0, v8}, Ljava/util/ArrayList;->add(Ljava/lang/Object;)Z
 
     goto :goto_5
 
     :cond_d
     new-instance p0, Ljava/util/ArrayList;
 
-    invoke-static {v0, v8}, Lkotlin/collections/CollectionsKt__IteratorsJVMKt;->collectionSizeOrDefault(Ljava/lang/Iterable;I)I
+    invoke-static {v0, v10}, Lkotlin/collections/CollectionsKt__IteratorsJVMKt;->collectionSizeOrDefault(Ljava/lang/Iterable;I)I
 
-    move-result v1
+    move-result v6
 
-    invoke-direct {p0, v1}, Ljava/util/ArrayList;-><init>(I)V
+    invoke-direct {p0, v6}, Ljava/util/ArrayList;-><init>(I)V
 
     invoke-virtual {v0}, Ljava/util/ArrayList;->iterator()Ljava/util/Iterator;
 
@@ -472,25 +470,25 @@
     :goto_7
     invoke-interface {v0}, Ljava/util/Iterator;->hasNext()Z
 
-    move-result v1
+    move-result v6
 
-    if-eqz v1, :cond_e
+    if-eqz v6, :cond_e
 
     invoke-interface {v0}, Ljava/util/Iterator;->next()Ljava/lang/Object;
 
-    move-result-object v1
+    move-result-object v6
 
-    check-cast v1, Lde/rki/coronawarnapp/covidcertificate/validation/core/rule/EvaluatedDccRule;
+    check-cast v6, Lde/rki/coronawarnapp/covidcertificate/validation/core/rule/EvaluatedDccRule;
 
-    iget-object v5, v1, Lde/rki/coronawarnapp/covidcertificate/validation/core/rule/EvaluatedDccRule;->rule:Lde/rki/coronawarnapp/covidcertificate/validation/core/rule/DccValidationRule;
+    iget-object v8, v6, Lde/rki/coronawarnapp/covidcertificate/validation/core/rule/EvaluatedDccRule;->rule:Lde/rki/coronawarnapp/covidcertificate/validation/core/rule/DccValidationRule;
 
-    iget-object v1, v1, Lde/rki/coronawarnapp/covidcertificate/validation/core/rule/EvaluatedDccRule;->result:Lde/rki/coronawarnapp/covidcertificate/validation/core/rule/DccValidationRule$Result;
+    iget v6, v6, Lde/rki/coronawarnapp/covidcertificate/validation/core/rule/EvaluatedDccRule;->result:I
 
-    invoke-virtual {v2, v5, v1, p1}, Lde/rki/coronawarnapp/covidcertificate/validation/ui/validationresult/common/ValidationResultItemCreator;->businessRuleVHItem(Lde/rki/coronawarnapp/covidcertificate/validation/core/rule/DccValidationRule;Lde/rki/coronawarnapp/covidcertificate/validation/core/rule/DccValidationRule$Result;Lde/rki/coronawarnapp/covidcertificate/common/certificate/CwaCovidCertificate;)Lde/rki/coronawarnapp/covidcertificate/validation/ui/validationresult/common/listitem/businessrule/BusinessRuleVH$Item;
+    invoke-virtual {v1, v8, v6, p1}, Lde/rki/coronawarnapp/covidcertificate/validation/ui/validationresult/common/ValidationResultItemCreator;->businessRuleVHItem$enumunboxing$(Lde/rki/coronawarnapp/covidcertificate/validation/core/rule/DccValidationRule;ILde/rki/coronawarnapp/covidcertificate/common/certificate/CwaCovidCertificate;)Lde/rki/coronawarnapp/covidcertificate/validation/ui/validationresult/common/listitem/businessrule/BusinessRuleVH$Item;
 
-    move-result-object v1
+    move-result-object v6
 
-    invoke-virtual {p0, v1}, Ljava/util/ArrayList;->add(Ljava/lang/Object;)Z
+    invoke-virtual {p0, v6}, Ljava/util/ArrayList;->add(Ljava/lang/Object;)Z
 
     goto :goto_7
 
@@ -499,66 +497,60 @@
 
     move-result p1
 
-    xor-int/2addr p1, v6
+    xor-int/2addr p1, v4
 
     if-eqz p1, :cond_11
 
-    sget-object p1, Lde/rki/coronawarnapp/covidcertificate/validation/core/DccValidation$State;->OPEN:Lde/rki/coronawarnapp/covidcertificate/validation/core/DccValidation$State;
-
-    invoke-static {v2, p1, v7, v7, v4}, Lde/rki/coronawarnapp/covidcertificate/validation/ui/validationresult/common/ValidationResultItemCreator;->ruleHeaderVHItem$default(Lde/rki/coronawarnapp/covidcertificate/validation/ui/validationresult/common/ValidationResultItemCreator;Lde/rki/coronawarnapp/covidcertificate/validation/core/DccValidation$State;ZII)Lde/rki/coronawarnapp/covidcertificate/validation/ui/validationresult/common/listitem/RuleHeaderVH$Item;
+    invoke-static {v1, v7, v5, v5, v3}, Lde/rki/coronawarnapp/covidcertificate/validation/ui/validationresult/common/ValidationResultItemCreator;->ruleHeaderVHItem$default(Lde/rki/coronawarnapp/covidcertificate/validation/ui/validationresult/common/ValidationResultItemCreator;IZII)Lde/rki/coronawarnapp/covidcertificate/validation/ui/validationresult/common/listitem/RuleHeaderVH$Item;
 
     move-result-object p1
 
-    invoke-interface {v3, p1}, Ljava/util/List;->add(Ljava/lang/Object;)Z
+    invoke-interface {v2, p1}, Ljava/util/List;->add(Ljava/lang/Object;)Z
 
-    invoke-interface {v3, p0}, Ljava/util/List;->addAll(Ljava/util/Collection;)Z
+    invoke-interface {v2, p0}, Ljava/util/List;->addAll(Ljava/util/Collection;)Z
 
     goto :goto_9
 
     :cond_f
-    iget-object v0, p0, Lde/rki/coronawarnapp/covidcertificate/validation/ui/validationresult/failed/DccValidationFailedViewModel;->certificateProvider:Lde/rki/coronawarnapp/covidcertificate/common/certificate/CertificateProvider;
+    iget-object v7, p0, Lde/rki/coronawarnapp/covidcertificate/validation/ui/validationresult/failed/DccValidationFailedViewModel;->certificateProvider:Lde/rki/coronawarnapp/covidcertificate/common/certificate/CertificateProvider;
 
-    iget-object v5, p0, Lde/rki/coronawarnapp/covidcertificate/validation/ui/validationresult/failed/DccValidationFailedViewModel;->containerId:Lde/rki/coronawarnapp/covidcertificate/common/repository/CertificateContainerId;
+    iget-object v8, p0, Lde/rki/coronawarnapp/covidcertificate/validation/ui/validationresult/failed/DccValidationFailedViewModel;->containerId:Lde/rki/coronawarnapp/covidcertificate/common/repository/CertificateContainerId;
 
-    iput-object p0, v1, Lde/rki/coronawarnapp/covidcertificate/validation/ui/validationresult/failed/DccValidationFailedViewModel$generateItems$1;->L$0:Ljava/lang/Object;
+    iput-object p0, v0, Lde/rki/coronawarnapp/covidcertificate/validation/ui/validationresult/failed/DccValidationFailedViewModel$generateItems$1;->L$0:Ljava/lang/Object;
 
-    iput-object p1, v1, Lde/rki/coronawarnapp/covidcertificate/validation/ui/validationresult/failed/DccValidationFailedViewModel$generateItems$1;->L$1:Ljava/lang/Object;
+    iput-object p1, v0, Lde/rki/coronawarnapp/covidcertificate/validation/ui/validationresult/failed/DccValidationFailedViewModel$generateItems$1;->L$1:Ljava/lang/Object;
 
-    iput-object v3, v1, Lde/rki/coronawarnapp/covidcertificate/validation/ui/validationresult/failed/DccValidationFailedViewModel$generateItems$1;->L$2:Ljava/lang/Object;
+    iput-object v2, v0, Lde/rki/coronawarnapp/covidcertificate/validation/ui/validationresult/failed/DccValidationFailedViewModel$generateItems$1;->L$2:Ljava/lang/Object;
 
-    iput v6, v1, Lde/rki/coronawarnapp/covidcertificate/validation/ui/validationresult/failed/DccValidationFailedViewModel$generateItems$1;->label:I
+    iput v4, v0, Lde/rki/coronawarnapp/covidcertificate/validation/ui/validationresult/failed/DccValidationFailedViewModel$generateItems$1;->label:I
 
-    invoke-virtual {v0, v5, v1}, Lde/rki/coronawarnapp/covidcertificate/common/certificate/CertificateProvider;->findCertificate(Lde/rki/coronawarnapp/covidcertificate/common/repository/CertificateContainerId;Lkotlin/coroutines/Continuation;)Ljava/lang/Object;
+    invoke-virtual {v7, v8, v0}, Lde/rki/coronawarnapp/covidcertificate/common/certificate/CertificateProvider;->findCertificate(Lde/rki/coronawarnapp/covidcertificate/common/repository/CertificateContainerId;Lkotlin/coroutines/Continuation;)Ljava/lang/Object;
 
     move-result-object v0
 
-    if-ne v0, v2, :cond_10
+    if-ne v0, v1, :cond_10
 
     goto :goto_a
 
     :cond_10
-    move-object v1, p0
+    move-object v1, p1
 
-    move-object p0, v3
+    move-object p1, v0
 
-    move-object v12, v0
+    move-object v0, p0
 
-    move-object v0, p1
-
-    move-object p1, v12
+    move-object p0, v2
 
     :goto_8
     check-cast p1, Lde/rki/coronawarnapp/covidcertificate/common/certificate/CwaCovidCertificate;
 
-    sget-object v2, Lde/rki/coronawarnapp/covidcertificate/validation/core/DccValidation$State;->TECHNICAL_FAILURE:Lde/rki/coronawarnapp/covidcertificate/validation/core/DccValidation$State;
+    invoke-static {v1, v6, v5, v5, v3}, Lde/rki/coronawarnapp/covidcertificate/validation/ui/validationresult/common/ValidationResultItemCreator;->ruleHeaderVHItem$default(Lde/rki/coronawarnapp/covidcertificate/validation/ui/validationresult/common/ValidationResultItemCreator;IZII)Lde/rki/coronawarnapp/covidcertificate/validation/ui/validationresult/common/listitem/RuleHeaderVH$Item;
 
-    invoke-static {v0, v2, v7, v7, v4}, Lde/rki/coronawarnapp/covidcertificate/validation/ui/validationresult/common/ValidationResultItemCreator;->ruleHeaderVHItem$default(Lde/rki/coronawarnapp/covidcertificate/validation/ui/validationresult/common/ValidationResultItemCreator;Lde/rki/coronawarnapp/covidcertificate/validation/core/DccValidation$State;ZII)Lde/rki/coronawarnapp/covidcertificate/validation/ui/validationresult/common/listitem/RuleHeaderVH$Item;
+    move-result-object v1
 
-    move-result-object v0
+    invoke-interface {p0, v1}, Ljava/util/List;->add(Ljava/lang/Object;)Z
 
-    invoke-interface {p0, v0}, Ljava/util/List;->add(Ljava/lang/Object;)Z
-
-    iget-object v0, v1, Lde/rki/coronawarnapp/covidcertificate/validation/ui/validationresult/failed/DccValidationFailedViewModel;->validation:Lde/rki/coronawarnapp/covidcertificate/validation/core/DccValidation;
+    iget-object v0, v0, Lde/rki/coronawarnapp/covidcertificate/validation/ui/validationresult/failed/DccValidationFailedViewModel;->validation:Lde/rki/coronawarnapp/covidcertificate/validation/core/DccValidation;
 
     const-string/jumbo v1, "validation"
 
@@ -584,27 +576,27 @@
 
     invoke-interface {p0, v1}, Ljava/util/List;->add(Ljava/lang/Object;)Z
 
-    move-object v3, p0
+    move-object v2, p0
 
     :cond_11
     :goto_9
-    invoke-static {v3}, Lkotlin/collections/CollectionsKt___CollectionsKt;->toList(Ljava/lang/Iterable;)Ljava/util/List;
+    invoke-static {v2}, Lkotlin/collections/CollectionsKt___CollectionsKt;->toList(Ljava/lang/Iterable;)Ljava/util/List;
 
-    move-result-object v2
+    move-result-object v1
 
     :goto_a
-    return-object v2
+    return-object v1
 
     :cond_12
     new-instance p1, Ljava/lang/IllegalArgumentException;
 
     iget-object p0, p0, Lde/rki/coronawarnapp/covidcertificate/validation/ui/validationresult/failed/DccValidationFailedViewModel;->validation:Lde/rki/coronawarnapp/covidcertificate/validation/core/DccValidation;
 
-    invoke-virtual {p0}, Lde/rki/coronawarnapp/covidcertificate/validation/core/DccValidation;->getState()Lde/rki/coronawarnapp/covidcertificate/validation/core/DccValidation$State;
+    invoke-virtual {p0}, Lde/rki/coronawarnapp/covidcertificate/validation/core/DccValidation;->getState$enumunboxing$()I
 
-    move-result-object p0
+    move-result p0
 
-    invoke-virtual {p0}, Ljava/lang/Enum;->name()Ljava/lang/String;
+    invoke-static {p0}, Lde/rki/coronawarnapp/covidcertificate/validation/core/DccValidation$State$EnumUnboxingLocalUtility;->name(I)Ljava/lang/String;
 
     move-result-object p0
 

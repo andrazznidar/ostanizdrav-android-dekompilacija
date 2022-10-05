@@ -81,74 +81,70 @@
 .method public final charset(Ljava/nio/charset/Charset;)Ljava/nio/charset/Charset;
     .locals 6
 
-    const-string v0, "charset"
+    iget-object v0, p0, Lokhttp3/MediaType;->parameterNamesAndValues:[Ljava/lang/String;
 
-    const-string v1, "name"
+    const-string v1, "<this>"
 
     invoke-static {v0, v1}, Lkotlin/jvm/internal/Intrinsics;->checkNotNullParameter(Ljava/lang/Object;Ljava/lang/String;)V
 
-    iget-object v1, p0, Lokhttp3/MediaType;->parameterNamesAndValues:[Ljava/lang/String;
+    new-instance v1, Lkotlin/ranges/IntRange;
 
-    const-string v2, "$this$indices"
+    invoke-static {v0}, Lkotlin/collections/ArraysKt___ArraysKt;->getLastIndex([Ljava/lang/Object;)I
 
-    invoke-static {v1, v2}, Lkotlin/jvm/internal/Intrinsics;->checkNotNullParameter(Ljava/lang/Object;Ljava/lang/String;)V
+    move-result v0
 
-    new-instance v2, Lkotlin/ranges/IntRange;
+    const/4 v2, 0x0
 
-    invoke-static {v1}, Lkotlin/collections/ArraysKt___ArraysKt;->getLastIndex([Ljava/lang/Object;)I
+    invoke-direct {v1, v2, v0}, Lkotlin/ranges/IntRange;-><init>(II)V
 
-    move-result v1
+    const/4 v0, 0x2
 
-    const/4 v3, 0x0
+    invoke-static {v1, v0}, Lkotlin/ranges/RangesKt___RangesKt;->step(Lkotlin/ranges/IntProgression;I)Lkotlin/ranges/IntProgression;
 
-    invoke-direct {v2, v3, v1}, Lkotlin/ranges/IntRange;-><init>(II)V
+    move-result-object v0
 
-    const/4 v1, 0x2
+    iget v1, v0, Lkotlin/ranges/IntProgression;->first:I
 
-    invoke-static {v2, v1}, Lkotlin/ranges/RangesKt___RangesKt;->step(Lkotlin/ranges/IntProgression;I)Lkotlin/ranges/IntProgression;
+    iget v2, v0, Lkotlin/ranges/IntProgression;->last:I
 
-    move-result-object v1
+    iget v0, v0, Lkotlin/ranges/IntProgression;->step:I
 
-    iget v2, v1, Lkotlin/ranges/IntProgression;->first:I
+    if-ltz v0, :cond_0
 
-    iget v3, v1, Lkotlin/ranges/IntProgression;->last:I
-
-    iget v1, v1, Lkotlin/ranges/IntProgression;->step:I
-
-    if-ltz v1, :cond_0
-
-    if-gt v2, v3, :cond_2
+    if-gt v1, v2, :cond_2
 
     goto :goto_0
 
     :cond_0
-    if-lt v2, v3, :cond_2
+    if-lt v1, v2, :cond_2
 
     :goto_0
-    iget-object v4, p0, Lokhttp3/MediaType;->parameterNamesAndValues:[Ljava/lang/String;
+    iget-object v3, p0, Lokhttp3/MediaType;->parameterNamesAndValues:[Ljava/lang/String;
 
-    aget-object v4, v4, v2
+    aget-object v3, v3, v1
 
-    const/4 v5, 0x1
+    const/4 v4, 0x1
 
-    invoke-static {v4, v0, v5}, Lkotlin/text/StringsKt__StringsJVMKt;->equals(Ljava/lang/String;Ljava/lang/String;Z)Z
+    const-string v5, "charset"
 
-    move-result v4
+    invoke-static {v3, v5, v4}, Lkotlin/text/StringsKt__StringsJVMKt;->equals(Ljava/lang/String;Ljava/lang/String;Z)Z
 
-    if-eqz v4, :cond_1
+    move-result v3
+
+    if-eqz v3, :cond_1
 
     iget-object v0, p0, Lokhttp3/MediaType;->parameterNamesAndValues:[Ljava/lang/String;
 
-    add-int/2addr v2, v5
+    add-int/2addr v1, v4
 
-    aget-object v0, v0, v2
+    aget-object v0, v0, v1
 
     goto :goto_1
 
     :cond_1
-    if-eq v2, v3, :cond_2
+    if-eq v1, v2, :cond_2
 
-    add-int/2addr v2, v1
+    add-int/2addr v1, v0
 
     goto :goto_0
 

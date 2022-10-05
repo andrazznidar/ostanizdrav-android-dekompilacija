@@ -1,4 +1,4 @@
-.class public final Lkotlin/reflect/jvm/internal/impl/descriptors/DescriptorVisibilities$11;
+.class final Lkotlin/reflect/jvm/internal/impl/descriptors/DescriptorVisibilities$11;
 .super Ljava/lang/Object;
 .source "DescriptorVisibilities.java"
 

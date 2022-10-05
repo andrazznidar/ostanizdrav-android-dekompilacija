@@ -1,21 +1,25 @@
-.class public final Lkotlin/reflect/jvm/internal/impl/load/java/typeEnhancement/TypeAndDefaultQualifiers;
+.class final Lkotlin/reflect/jvm/internal/impl/load/java/typeEnhancement/TypeAndDefaultQualifiers;
 .super Ljava/lang/Object;
 .source "signatureEnhancement.kt"
 
 
 # instance fields
-.field public final defaultQualifiers:Lkotlin/reflect/jvm/internal/impl/load/java/JavaDefaultQualifiers;
+.field private final defaultQualifiers:Lkotlin/reflect/jvm/internal/impl/load/java/JavaDefaultQualifiers;
 
-.field public final isFromStarProjection:Z
+.field private final isFromStarProjection:Z
 
-.field public final type:Lkotlin/reflect/jvm/internal/impl/types/KotlinType;
+.field private final type:Lkotlin/reflect/jvm/internal/impl/types/KotlinType;
 
-.field public final typeParameterForArgument:Lkotlin/reflect/jvm/internal/impl/descriptors/TypeParameterDescriptor;
+.field private final typeParameterForArgument:Lkotlin/reflect/jvm/internal/impl/descriptors/TypeParameterDescriptor;
 
 
 # direct methods
 .method public constructor <init>(Lkotlin/reflect/jvm/internal/impl/types/KotlinType;Lkotlin/reflect/jvm/internal/impl/load/java/JavaDefaultQualifiers;Lkotlin/reflect/jvm/internal/impl/descriptors/TypeParameterDescriptor;Z)V
-    .locals 0
+    .locals 1
+
+    const-string v0, "type"
+
+    invoke-static {p1, v0}, Lkotlin/jvm/internal/Intrinsics;->checkNotNullParameter(Ljava/lang/Object;Ljava/lang/String;)V
 
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
@@ -32,6 +36,38 @@
 
 
 # virtual methods
+.method public final component1()Lkotlin/reflect/jvm/internal/impl/types/KotlinType;
+    .locals 1
+
+    iget-object v0, p0, Lkotlin/reflect/jvm/internal/impl/load/java/typeEnhancement/TypeAndDefaultQualifiers;->type:Lkotlin/reflect/jvm/internal/impl/types/KotlinType;
+
+    return-object v0
+.end method
+
+.method public final component2()Lkotlin/reflect/jvm/internal/impl/load/java/JavaDefaultQualifiers;
+    .locals 1
+
+    iget-object v0, p0, Lkotlin/reflect/jvm/internal/impl/load/java/typeEnhancement/TypeAndDefaultQualifiers;->defaultQualifiers:Lkotlin/reflect/jvm/internal/impl/load/java/JavaDefaultQualifiers;
+
+    return-object v0
+.end method
+
+.method public final component3()Lkotlin/reflect/jvm/internal/impl/descriptors/TypeParameterDescriptor;
+    .locals 1
+
+    iget-object v0, p0, Lkotlin/reflect/jvm/internal/impl/load/java/typeEnhancement/TypeAndDefaultQualifiers;->typeParameterForArgument:Lkotlin/reflect/jvm/internal/impl/descriptors/TypeParameterDescriptor;
+
+    return-object v0
+.end method
+
+.method public final component4()Z
+    .locals 1
+
+    iget-boolean v0, p0, Lkotlin/reflect/jvm/internal/impl/load/java/typeEnhancement/TypeAndDefaultQualifiers;->isFromStarProjection:Z
+
+    return v0
+.end method
+
 .method public equals(Ljava/lang/Object;)Z
     .locals 4
 
@@ -102,6 +138,14 @@
 
     :cond_5
     return v0
+.end method
+
+.method public final getType()Lkotlin/reflect/jvm/internal/impl/types/KotlinType;
+    .locals 1
+
+    iget-object v0, p0, Lkotlin/reflect/jvm/internal/impl/load/java/typeEnhancement/TypeAndDefaultQualifiers;->type:Lkotlin/reflect/jvm/internal/impl/types/KotlinType;
+
+    return-object v0
 .end method
 
 .method public hashCode()I

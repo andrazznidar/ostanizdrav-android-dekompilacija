@@ -1,109 +1,113 @@
-.class public interface abstract Lj$/util/stream/f1;
-.super Ljava/lang/Object;
+.class final Lj$/util/stream/f1;
+.super Lj$/util/stream/i1;
 
 # interfaces
-.implements Lj$/util/stream/g;
+.implements Lj$/util/stream/L0;
+
+
+# direct methods
+.method constructor <init>()V
+    .locals 0
+
+    invoke-direct {p0}, Lj$/util/stream/i1;-><init>()V
+
+    return-void
+.end method
 
 
 # virtual methods
-.method public abstract A(JLj$/util/function/l;)J
+.method public a(I)Lj$/util/stream/O0;
+    .locals 0
+
+    new-instance p1, Ljava/lang/IndexOutOfBoundsException;
+
+    invoke-direct {p1}, Ljava/lang/IndexOutOfBoundsException;-><init>()V
+
+    throw p1
 .end method
 
-.method public abstract C(Lj$/wrappers/i;)Lj$/util/stream/M0;
+.method public bridge synthetic a(I)Lj$/util/stream/P0;
+    .locals 0
+
+    invoke-virtual {p0, p1}, Lj$/util/stream/f1;->a(I)Lj$/util/stream/O0;
+
+    const/4 p1, 0x0
+
+    throw p1
 .end method
 
-.method public abstract H(Lj$/wrappers/i;)Z
+.method public synthetic b([Ljava/lang/Integer;I)V
+    .locals 0
+
+    invoke-static {p0, p1, p2}, Lj$/util/stream/D0;->S(Lj$/util/stream/L0;[Ljava/lang/Integer;I)V
+
+    return-void
 .end method
 
-.method public abstract O(Lj$/util/function/n;)Lj$/util/stream/c4;
+.method public synthetic c(JJLj$/util/function/p;)Lj$/util/stream/L0;
+    .locals 0
+
+    invoke-static {p0, p1, p2, p3, p4}, Lj$/util/stream/D0;->Y(Lj$/util/stream/L0;JJ)Lj$/util/stream/L0;
+
+    move-result-object p1
+
+    return-object p1
 .end method
 
-.method public abstract V(Lj$/util/function/m;)V
+.method public synthetic forEach(Lj$/util/function/Consumer;)V
+    .locals 0
+
+    invoke-static {p0, p1}, Lj$/util/stream/D0;->V(Lj$/util/stream/L0;Lj$/util/function/Consumer;)V
+
+    return-void
 .end method
 
-.method public abstract a(Lj$/wrappers/i;)Lj$/util/stream/f1;
+.method public k()Ljava/lang/Object;
+    .locals 1
+
+    invoke-static {}, Lj$/util/stream/D0;->e0()[I
+
+    move-result-object v0
+
+    return-object v0
 .end method
 
-.method public abstract a0(Lj$/util/function/t;Lj$/util/function/r;Lj$/util/function/BiConsumer;)Ljava/lang/Object;
+.method public bridge synthetic m([Ljava/lang/Object;I)V
+    .locals 0
+
+    check-cast p1, [Ljava/lang/Integer;
+
+    invoke-virtual {p0, p1, p2}, Lj$/util/stream/f1;->b([Ljava/lang/Integer;I)V
+
+    return-void
 .end method
 
-.method public abstract asDoubleStream()Lj$/util/stream/U;
+.method public bridge synthetic p(JJLj$/util/function/p;)Lj$/util/stream/P0;
+    .locals 0
+
+    invoke-virtual/range {p0 .. p5}, Lj$/util/stream/f1;->c(JJLj$/util/function/p;)Lj$/util/stream/L0;
+
+    move-result-object p1
+
+    return-object p1
 .end method
 
-.method public abstract average()Lj$/util/i;
+.method public spliterator()Lj$/util/D;
+    .locals 1
+
+    invoke-static {}, Lj$/util/S;->c()Lj$/util/z;
+
+    move-result-object v0
+
+    return-object v0
 .end method
 
-.method public abstract boxed()Lj$/util/stream/c4;
-.end method
+.method public spliterator()Lj$/util/Spliterator;
+    .locals 1
 
-.method public abstract count()J
-.end method
+    invoke-static {}, Lj$/util/S;->c()Lj$/util/z;
 
-.method public abstract distinct()Lj$/util/stream/f1;
-.end method
+    move-result-object v0
 
-.method public abstract f0(Lj$/wrappers/i;)Z
-.end method
-
-.method public abstract findAny()Lj$/util/k;
-.end method
-
-.method public abstract findFirst()Lj$/util/k;
-.end method
-
-.method public abstract g(Lj$/util/function/m;)V
-.end method
-
-.method public abstract i0(Lj$/wrappers/i;)Lj$/util/stream/U;
-.end method
-
-.method public abstract iterator()Lj$/util/q;
-.end method
-
-.method public abstract j(Lj$/util/function/l;)Lj$/util/k;
-.end method
-
-.method public abstract k(Lj$/wrappers/i;)Z
-.end method
-
-.method public abstract limit(J)Lj$/util/stream/f1;
-.end method
-
-.method public abstract max()Lj$/util/k;
-.end method
-
-.method public abstract min()Lj$/util/k;
-.end method
-
-.method public abstract parallel()Lj$/util/stream/f1;
-.end method
-
-.method public abstract s(Lj$/util/function/m;)Lj$/util/stream/f1;
-.end method
-
-.method public abstract sequential()Lj$/util/stream/f1;
-.end method
-
-.method public abstract skip(J)Lj$/util/stream/f1;
-.end method
-
-.method public abstract sorted()Lj$/util/stream/f1;
-.end method
-
-.method public abstract spliterator()Lj$/util/Spliterator$c;
-.end method
-
-.method public abstract sum()J
-.end method
-
-.method public abstract summaryStatistics()Lj$/util/h;
-.end method
-
-.method public abstract t(Lj$/util/function/n;)Lj$/util/stream/f1;
-.end method
-
-.method public abstract toArray()[J
-.end method
-
-.method public abstract y(Lj$/util/function/o;)Lj$/util/stream/f1;
+    return-object v0
 .end method

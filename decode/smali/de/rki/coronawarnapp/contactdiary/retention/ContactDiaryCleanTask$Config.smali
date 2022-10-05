@@ -18,9 +18,9 @@
 
 
 # instance fields
-.field public final collisionBehavior:Lde/rki/coronawarnapp/task/TaskFactory$Config$CollisionBehavior;
+.field public final collisionBehavior:I
 
-.field public final errorHandling:Lde/rki/coronawarnapp/task/TaskFactory$Config$ErrorHandling;
+.field public final errorHandling:I
 
 .field public final executionTimeout:Lorg/joda/time/Duration;
 
@@ -39,33 +39,33 @@
 
     iput-object v0, p0, Lde/rki/coronawarnapp/contactdiary/retention/ContactDiaryCleanTask$Config;->executionTimeout:Lorg/joda/time/Duration;
 
-    sget-object v0, Lde/rki/coronawarnapp/task/TaskFactory$Config$CollisionBehavior;->SKIP_IF_SIBLING_RUNNING:Lde/rki/coronawarnapp/task/TaskFactory$Config$CollisionBehavior;
+    const/4 v0, 0x2
 
-    iput-object v0, p0, Lde/rki/coronawarnapp/contactdiary/retention/ContactDiaryCleanTask$Config;->collisionBehavior:Lde/rki/coronawarnapp/task/TaskFactory$Config$CollisionBehavior;
+    iput v0, p0, Lde/rki/coronawarnapp/contactdiary/retention/ContactDiaryCleanTask$Config;->collisionBehavior:I
 
-    sget-object v0, Lde/rki/coronawarnapp/task/TaskFactory$Config$ErrorHandling;->SILENT:Lde/rki/coronawarnapp/task/TaskFactory$Config$ErrorHandling;
+    const/4 v0, 0x1
 
-    iput-object v0, p0, Lde/rki/coronawarnapp/contactdiary/retention/ContactDiaryCleanTask$Config;->errorHandling:Lde/rki/coronawarnapp/task/TaskFactory$Config$ErrorHandling;
+    iput v0, p0, Lde/rki/coronawarnapp/contactdiary/retention/ContactDiaryCleanTask$Config;->errorHandling:I
 
     return-void
 .end method
 
 
 # virtual methods
-.method public getCollisionBehavior()Lde/rki/coronawarnapp/task/TaskFactory$Config$CollisionBehavior;
+.method public getCollisionBehavior$enumunboxing$()I
     .locals 1
 
-    iget-object v0, p0, Lde/rki/coronawarnapp/contactdiary/retention/ContactDiaryCleanTask$Config;->collisionBehavior:Lde/rki/coronawarnapp/task/TaskFactory$Config$CollisionBehavior;
+    iget v0, p0, Lde/rki/coronawarnapp/contactdiary/retention/ContactDiaryCleanTask$Config;->collisionBehavior:I
 
-    return-object v0
+    return v0
 .end method
 
-.method public getErrorHandling()Lde/rki/coronawarnapp/task/TaskFactory$Config$ErrorHandling;
+.method public getErrorHandling$enumunboxing$()I
     .locals 1
 
-    iget-object v0, p0, Lde/rki/coronawarnapp/contactdiary/retention/ContactDiaryCleanTask$Config;->errorHandling:Lde/rki/coronawarnapp/task/TaskFactory$Config$ErrorHandling;
+    iget v0, p0, Lde/rki/coronawarnapp/contactdiary/retention/ContactDiaryCleanTask$Config;->errorHandling:I
 
-    return-object v0
+    return v0
 .end method
 
 .method public getExecutionTimeout()Lorg/joda/time/Duration;

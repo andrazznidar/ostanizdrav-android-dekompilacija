@@ -1,5 +1,5 @@
 .class public final Lcom/google/crypto/tink/subtle/AesCtrHmacStreaming;
-.super Lcom/google/crypto/tink/subtle/NonceBasedStreamingAead;
+.super Lorg/joda/time/Chronology;
 .source "AesCtrHmacStreaming.java"
 
 
@@ -33,9 +33,7 @@
         }
     .end annotation
 
-    const/4 p2, 0x0
-
-    invoke-direct {p0, p2}, Lcom/google/crypto/tink/subtle/NonceBasedStreamingAead;-><init>(I)V
+    invoke-direct {p0}, Lorg/joda/time/Chronology;-><init>()V
 
     array-length p2, p1
 

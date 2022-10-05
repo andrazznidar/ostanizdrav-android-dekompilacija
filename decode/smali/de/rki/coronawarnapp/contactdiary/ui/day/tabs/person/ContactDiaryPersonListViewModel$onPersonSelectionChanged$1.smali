@@ -480,7 +480,7 @@
 
     const-string v4, "No item found for id "
 
-    invoke-static {v4, v1, v2}, Landroidx/viewpager2/adapter/FragmentStateAdapter$$ExternalSyntheticOutline0;->m(Ljava/lang/String;J)Ljava/lang/String;
+    invoke-static {v4, v1, v2}, Landroidx/camera/core/impl/DeferrableSurfaces$$ExternalSyntheticOutline0;->m(Ljava/lang/String;J)Ljava/lang/String;
 
     move-result-object v1
 

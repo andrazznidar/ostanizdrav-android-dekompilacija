@@ -365,8 +365,6 @@
 
     new-instance v0, Lorg/joda/time/field/RemainderDateTimeField;
 
-    check-cast v1, Lorg/joda/time/field/DividedDateTimeField;
-
     iget-object v2, v1, Lorg/joda/time/field/BaseDateTimeField;->iType:Lorg/joda/time/DateTimeFieldType;
 
     invoke-direct {v0, v1, v2}, Lorg/joda/time/field/RemainderDateTimeField;-><init>(Lorg/joda/time/field/DividedDateTimeField;Lorg/joda/time/DateTimeFieldType;)V
@@ -548,7 +546,7 @@
 .end method
 
 .method public getDateMidnightMillis(III)J
-    .locals 4
+    .locals 7
 
     sget-object v0, Lorg/joda/time/DateTimeFieldType;->ERA_TYPE:Lorg/joda/time/DateTimeFieldType;
 
@@ -576,13 +574,13 @@
 
     invoke-static {v0, p2, v2, v1}, Lorg/joda/time/field/FieldUtils;->verifyValueBounds(Lorg/joda/time/DateTimeFieldType;III)V
 
-    sget-object v0, Lorg/joda/time/DateTimeFieldType;->DAY_OF_MONTH_TYPE:Lorg/joda/time/DateTimeFieldType;
-
     invoke-virtual {p0, p1, p2}, Lorg/joda/time/chrono/BasicChronology;->getDaysInYearMonth(II)I
 
-    move-result v1
+    move-result v0
 
-    invoke-static {v0, p3, v2, v1}, Lorg/joda/time/field/FieldUtils;->verifyValueBounds(Lorg/joda/time/DateTimeFieldType;III)V
+    if-lt p3, v2, :cond_2
+
+    if-gt p3, v0, :cond_2
 
     invoke-virtual {p0, p1, p2, p3}, Lorg/joda/time/chrono/BasicChronology;->getYearMonthDayMillis(III)J
 
@@ -623,6 +621,39 @@
 
     :cond_1
     return-wide p2
+
+    :cond_2
+    new-instance v6, Lorg/joda/time/IllegalFieldValueException;
+
+    sget-object v1, Lorg/joda/time/DateTimeFieldType;->DAY_OF_MONTH_TYPE:Lorg/joda/time/DateTimeFieldType;
+
+    invoke-static {p3}, Ljava/lang/Integer;->valueOf(I)Ljava/lang/Integer;
+
+    move-result-object p3
+
+    invoke-static {v2}, Ljava/lang/Integer;->valueOf(I)Ljava/lang/Integer;
+
+    move-result-object v3
+
+    invoke-static {v0}, Ljava/lang/Integer;->valueOf(I)Ljava/lang/Integer;
+
+    move-result-object v4
+
+    const-string v0, "year: "
+
+    const-string v2, " month: "
+
+    invoke-static {v0, p1, v2, p2}, Landroidx/camera/camera2/internal/Camera2CameraImpl$$ExternalSyntheticOutline0;->m(Ljava/lang/String;ILjava/lang/String;I)Ljava/lang/String;
+
+    move-result-object v5
+
+    move-object v0, v6
+
+    move-object v2, p3
+
+    invoke-direct/range {v0 .. v5}, Lorg/joda/time/IllegalFieldValueException;-><init>(Lorg/joda/time/DateTimeFieldType;Ljava/lang/Number;Ljava/lang/Number;Ljava/lang/Number;Ljava/lang/String;)V
+
+    throw v6
 .end method
 
 .method public getDateTimeMillis(IIII)J
@@ -730,13 +761,13 @@
 
     add-int/2addr p5, p4
 
-    mul-int/lit16 p6, p6, 0x3e8
+    const/16 p4, 0x3e8
 
-    add-int/2addr p6, p5
+    invoke-static {p6, p4, p5, p7}, Lboofcv/abst/fiducial/QrCodePreciseDetector$$ExternalSyntheticOutline0;->m(IIII)I
 
-    add-int/2addr p6, p7
+    move-result p4
 
-    int-to-long p4, p6
+    int-to-long p4, p4
 
     long-to-int p4, p4
 

@@ -10,9 +10,9 @@
 
 
 # instance fields
-.field public final _context:Lkotlin/coroutines/CoroutineContext;
+.field private final _context:Lkotlin/coroutines/CoroutineContext;
 
-.field public transient intercepted:Lkotlin/coroutines/Continuation;
+.field private transient intercepted:Lkotlin/coroutines/Continuation;
     .annotation system Ldalvik/annotation/Signature;
         value = {
             "Lkotlin/coroutines/Continuation<",
@@ -35,21 +35,19 @@
         }
     .end annotation
 
-    if-eqz p1, :cond_0
+    if-nez p1, :cond_0
 
-    invoke-interface {p1}, Lkotlin/coroutines/Continuation;->getContext()Lkotlin/coroutines/CoroutineContext;
-
-    move-result-object v0
+    const/4 v0, 0x0
 
     goto :goto_0
 
     :cond_0
-    const/4 v0, 0x0
+    invoke-interface {p1}, Lkotlin/coroutines/Continuation;->getContext()Lkotlin/coroutines/CoroutineContext;
+
+    move-result-object v0
 
     :goto_0
-    invoke-direct {p0, p1}, Lkotlin/coroutines/jvm/internal/BaseContinuationImpl;-><init>(Lkotlin/coroutines/Continuation;)V
-
-    iput-object v0, p0, Lkotlin/coroutines/jvm/internal/ContinuationImpl;->_context:Lkotlin/coroutines/CoroutineContext;
+    invoke-direct {p0, p1, v0}, Lkotlin/coroutines/jvm/internal/ContinuationImpl;-><init>(Lkotlin/coroutines/Continuation;Lkotlin/coroutines/CoroutineContext;)V
 
     return-void
 .end method
@@ -83,6 +81,53 @@
 
     invoke-static {v0}, Lkotlin/jvm/internal/Intrinsics;->checkNotNull(Ljava/lang/Object;)V
 
+    return-object v0
+.end method
+
+.method public final intercepted()Lkotlin/coroutines/Continuation;
+    .locals 2
+    .annotation system Ldalvik/annotation/Signature;
+        value = {
+            "()",
+            "Lkotlin/coroutines/Continuation<",
+            "Ljava/lang/Object;",
+            ">;"
+        }
+    .end annotation
+
+    iget-object v0, p0, Lkotlin/coroutines/jvm/internal/ContinuationImpl;->intercepted:Lkotlin/coroutines/Continuation;
+
+    if-nez v0, :cond_1
+
+    invoke-virtual {p0}, Lkotlin/coroutines/jvm/internal/ContinuationImpl;->getContext()Lkotlin/coroutines/CoroutineContext;
+
+    move-result-object v0
+
+    sget v1, Lkotlin/coroutines/ContinuationInterceptor;->$r8$clinit:I
+
+    sget-object v1, Lkotlin/coroutines/ContinuationInterceptor$Key;->$$INSTANCE:Lkotlin/coroutines/ContinuationInterceptor$Key;
+
+    invoke-interface {v0, v1}, Lkotlin/coroutines/CoroutineContext;->get(Lkotlin/coroutines/CoroutineContext$Key;)Lkotlin/coroutines/CoroutineContext$Element;
+
+    move-result-object v0
+
+    check-cast v0, Lkotlin/coroutines/ContinuationInterceptor;
+
+    if-nez v0, :cond_0
+
+    move-object v0, p0
+
+    goto :goto_0
+
+    :cond_0
+    invoke-interface {v0, p0}, Lkotlin/coroutines/ContinuationInterceptor;->interceptContinuation(Lkotlin/coroutines/Continuation;)Lkotlin/coroutines/Continuation;
+
+    move-result-object v0
+
+    :goto_0
+    iput-object v0, p0, Lkotlin/coroutines/jvm/internal/ContinuationImpl;->intercepted:Lkotlin/coroutines/Continuation;
+
+    :cond_1
     return-object v0
 .end method
 

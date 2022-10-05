@@ -58,7 +58,7 @@
     return-void
 .end method
 
-.method public synthetic constructor <init>(Lorg/joda/time/field/FieldUtils;)V
+.method public synthetic constructor <init>(Lorg/bouncycastle/crypto/prng/EntropyUtil;)V
     .locals 0
 
     invoke-direct {p0}, Lcom/google/android/gms/common/internal/safeparcel/AbstractSafeParcelable;-><init>()V

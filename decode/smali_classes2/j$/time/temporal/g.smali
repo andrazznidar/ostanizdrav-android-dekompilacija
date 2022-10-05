@@ -15,19 +15,7 @@
 
 
 # virtual methods
-.method public b()Lj$/time/temporal/A;
-    .locals 1
-
-    sget-object v0, Lj$/time/temporal/a;->YEAR:Lj$/time/temporal/a;
-
-    invoke-virtual {v0}, Lj$/time/temporal/a;->b()Lj$/time/temporal/A;
-
-    move-result-object v0
-
-    return-object v0
-.end method
-
-.method public e(Lj$/time/temporal/TemporalAccessor;)J
+.method public c(Lj$/time/temporal/TemporalAccessor;)J
     .locals 2
 
     invoke-virtual {p0, p1}, Lj$/time/temporal/g;->f(Lj$/time/temporal/TemporalAccessor;)Z
@@ -49,13 +37,25 @@
     return-wide v0
 
     :cond_0
-    new-instance p1, Lj$/time/temporal/z;
+    new-instance p1, Lj$/time/temporal/y;
 
     const-string v0, "Unsupported field: WeekBasedYear"
 
-    invoke-direct {p1, v0}, Lj$/time/temporal/z;-><init>(Ljava/lang/String;)V
+    invoke-direct {p1, v0}, Lj$/time/temporal/y;-><init>(Ljava/lang/String;)V
 
     throw p1
+.end method
+
+.method public d()Lj$/time/temporal/z;
+    .locals 1
+
+    sget-object v0, Lj$/time/temporal/a;->YEAR:Lj$/time/temporal/a;
+
+    invoke-virtual {v0}, Lj$/time/temporal/a;->d()Lj$/time/temporal/z;
+
+    move-result-object v0
+
+    return-object v0
 .end method
 
 .method public f(Lj$/time/temporal/TemporalAccessor;)Z
@@ -63,7 +63,7 @@
 
     sget-object v0, Lj$/time/temporal/a;->EPOCH_DAY:Lj$/time/temporal/a;
 
-    invoke-interface {p1, v0}, Lj$/time/temporal/TemporalAccessor;->i(Lj$/time/temporal/o;)Z
+    invoke-interface {p1, v0}, Lj$/time/temporal/TemporalAccessor;->e(Lj$/time/temporal/o;)Z
 
     move-result v0
 
@@ -103,13 +103,13 @@
 
     if-eqz v0, :cond_1
 
-    invoke-virtual {p0}, Lj$/time/temporal/g;->b()Lj$/time/temporal/A;
+    invoke-virtual {p0}, Lj$/time/temporal/g;->d()Lj$/time/temporal/z;
 
     move-result-object v0
 
     sget-object v1, Lj$/time/temporal/h;->WEEK_BASED_YEAR:Lj$/time/temporal/h;
 
-    invoke-virtual {v0, p2, p3, v1}, Lj$/time/temporal/A;->a(JLj$/time/temporal/o;)I
+    invoke-virtual {v0, p2, p3, v1}, Lj$/time/temporal/z;->a(JLj$/time/temporal/o;)I
 
     move-result p2
 
@@ -119,7 +119,7 @@
 
     sget-object v0, Lj$/time/temporal/a;->DAY_OF_WEEK:Lj$/time/temporal/a;
 
-    invoke-virtual {p3, v0}, Lj$/time/LocalDate;->c(Lj$/time/temporal/o;)I
+    invoke-virtual {p3, v0}, Lj$/time/LocalDate;->d(Lj$/time/temporal/o;)I
 
     move-result v1
 
@@ -150,7 +150,7 @@
 
     move-result-object p2
 
-    invoke-virtual {p2, v0}, Lj$/time/LocalDate;->c(Lj$/time/temporal/o;)I
+    invoke-virtual {p2, v0}, Lj$/time/LocalDate;->d(Lj$/time/temporal/o;)I
 
     move-result v0
 
@@ -168,18 +168,18 @@
 
     move-result-object p2
 
-    invoke-interface {p1, p2}, Lj$/time/temporal/k;->a(Lj$/time/temporal/l;)Lj$/time/temporal/k;
+    invoke-interface {p1, p2}, Lj$/time/temporal/k;->b(Lj$/time/temporal/l;)Lj$/time/temporal/k;
 
     move-result-object p1
 
     return-object p1
 
     :cond_1
-    new-instance p1, Lj$/time/temporal/z;
+    new-instance p1, Lj$/time/temporal/y;
 
     const-string p2, "Unsupported field: WeekBasedYear"
 
-    invoke-direct {p1, p2}, Lj$/time/temporal/z;-><init>(Ljava/lang/String;)V
+    invoke-direct {p1, p2}, Lj$/time/temporal/y;-><init>(Ljava/lang/String;)V
 
     throw p1
 .end method

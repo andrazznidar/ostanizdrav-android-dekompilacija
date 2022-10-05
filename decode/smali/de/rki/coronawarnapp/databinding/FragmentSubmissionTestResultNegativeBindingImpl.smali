@@ -19,7 +19,7 @@
 
     new-instance v0, Landroidx/databinding/ViewDataBinding$IncludedLayouts;
 
-    const/16 v1, 0x13
+    const/16 v1, 0x16
 
     invoke-direct {v0, v1}, Landroidx/databinding/ViewDataBinding$IncludedLayouts;-><init>(I)V
 
@@ -41,7 +41,7 @@
 
     new-array v2, v2, [I
 
-    const v5, 0x7f0d00d8
+    const v5, 0x7f0d00e9
 
     aput v5, v2, v4
 
@@ -53,105 +53,123 @@
 
     sput-object v0, Lde/rki/coronawarnapp/databinding/FragmentSubmissionTestResultNegativeBindingImpl;->sViewsWithIds:Landroid/util/SparseIntArray;
 
-    const v1, 0x7f0a0741
+    const v1, 0x7f0a078e
 
     const/4 v2, 0x2
 
     invoke-virtual {v0, v1, v2}, Landroid/util/SparseIntArray;->put(II)V
 
-    const v1, 0x7f0a074e
+    const v1, 0x7f0a079b
 
     const/4 v2, 0x3
 
     invoke-virtual {v0, v1, v2}, Landroid/util/SparseIntArray;->put(II)V
 
-    const v1, 0x7f0a0793
+    const v1, 0x7f0a07e0
 
     const/4 v2, 0x4
 
     invoke-virtual {v0, v1, v2}, Landroid/util/SparseIntArray;->put(II)V
 
-    const v1, 0x7f0a0176
+    const v1, 0x7f0a0194
 
     const/4 v2, 0x5
 
     invoke-virtual {v0, v1, v2}, Landroid/util/SparseIntArray;->put(II)V
 
-    const v1, 0x7f0a017a
+    const v1, 0x7f0a0199
 
     const/4 v2, 0x6
 
     invoke-virtual {v0, v1, v2}, Landroid/util/SparseIntArray;->put(II)V
 
-    const v1, 0x7f0a0794
+    const v1, 0x7f0a07e1
 
     const/4 v2, 0x7
 
     invoke-virtual {v0, v1, v2}, Landroid/util/SparseIntArray;->put(II)V
 
-    const v1, 0x7f0a0795
+    const v1, 0x7f0a07e2
 
     const/16 v2, 0x8
 
     invoke-virtual {v0, v1, v2}, Landroid/util/SparseIntArray;->put(II)V
 
-    const v1, 0x7f0a0178
+    const v1, 0x7f0a0196
 
     const/16 v2, 0x9
 
     invoke-virtual {v0, v1, v2}, Landroid/util/SparseIntArray;->put(II)V
 
-    const v1, 0x7f0a0750
+    const v1, 0x7f0a04e5
 
     const/16 v2, 0xa
 
     invoke-virtual {v0, v1, v2}, Landroid/util/SparseIntArray;->put(II)V
 
-    const v1, 0x7f0a07ae
+    const v1, 0x7f0a04e4
 
     const/16 v2, 0xb
 
     invoke-virtual {v0, v1, v2}, Landroid/util/SparseIntArray;->put(II)V
 
-    const v1, 0x7f0a07b0
+    const v1, 0x7f0a079d
 
     const/16 v2, 0xc
 
     invoke-virtual {v0, v1, v2}, Landroid/util/SparseIntArray;->put(II)V
 
-    const v1, 0x7f0a07b1
+    const v1, 0x7f0a07f6
 
     const/16 v2, 0xd
 
     invoke-virtual {v0, v1, v2}, Landroid/util/SparseIntArray;->put(II)V
 
-    const v1, 0x7f0a07af
+    const v1, 0x7f0a07f8
 
     const/16 v2, 0xe
 
     invoke-virtual {v0, v1, v2}, Landroid/util/SparseIntArray;->put(II)V
 
-    const v1, 0x7f0a032e
+    const v1, 0x7f0a07f9
 
     const/16 v2, 0xf
 
     invoke-virtual {v0, v1, v2}, Landroid/util/SparseIntArray;->put(II)V
 
-    const v1, 0x7f0a0330
+    const v1, 0x7f0a07f7
 
     const/16 v2, 0x10
 
     invoke-virtual {v0, v1, v2}, Landroid/util/SparseIntArray;->put(II)V
 
-    const v1, 0x7f0a032f
+    const v1, 0x7f0a035c
 
     const/16 v2, 0x11
 
     invoke-virtual {v0, v1, v2}, Landroid/util/SparseIntArray;->put(II)V
 
-    const v1, 0x7f0a073a
+    const v1, 0x7f0a035f
 
     const/16 v2, 0x12
+
+    invoke-virtual {v0, v1, v2}, Landroid/util/SparseIntArray;->put(II)V
+
+    const v1, 0x7f0a035d
+
+    const/16 v2, 0x13
+
+    invoke-virtual {v0, v1, v2}, Landroid/util/SparseIntArray;->put(II)V
+
+    const v1, 0x7f0a035e
+
+    const/16 v2, 0x14
+
+    invoke-virtual {v0, v1, v2}, Landroid/util/SparseIntArray;->put(II)V
+
+    const v1, 0x7f0a0787
+
+    const/16 v2, 0x15
 
     invoke-virtual {v0, v1, v2}, Landroid/util/SparseIntArray;->put(II)V
 
@@ -159,7 +177,7 @@
 .end method
 
 .method public constructor <init>(Landroidx/databinding/DataBindingComponent;Landroid/view/View;)V
-    .locals 23
+    .locals 26
     .annotation system Ldalvik/annotation/MethodParameters;
         accessFlags = {
             0x0,
@@ -179,7 +197,7 @@
 
     sget-object v3, Lde/rki/coronawarnapp/databinding/FragmentSubmissionTestResultNegativeBindingImpl;->sViewsWithIds:Landroid/util/SparseIntArray;
 
-    const/16 v4, 0x13
+    const/16 v4, 0x16
 
     move-object/from16 v15, p1
 
@@ -211,7 +229,7 @@
 
     check-cast v6, Landroid/widget/ImageView;
 
-    const/16 v3, 0xf
+    const/16 v3, 0x11
 
     aget-object v3, v0, v3
 
@@ -219,21 +237,21 @@
 
     check-cast v7, Landroid/widget/LinearLayout;
 
-    const/16 v3, 0x11
+    const/16 v3, 0x13
 
     aget-object v3, v0, v3
 
     move-object v8, v3
 
-    check-cast v8, Lde/rki/coronawarnapp/ui/view/BulletPointList;
+    check-cast v8, Landroid/widget/TextView;
 
-    const/16 v3, 0x10
+    const/16 v3, 0x14
 
     aget-object v3, v0, v3
 
     move-object v9, v3
 
-    check-cast v9, Landroid/widget/TextView;
+    check-cast v9, Lde/rki/coronawarnapp/ui/view/BulletPointList;
 
     const/16 v3, 0x12
 
@@ -241,65 +259,65 @@
 
     move-object v10, v3
 
-    check-cast v10, Landroid/widget/Button;
+    check-cast v10, Landroid/widget/TextView;
 
-    const/4 v3, 0x0
+    const/16 v3, 0xb
 
     aget-object v3, v0, v3
 
     move-object v11, v3
 
-    check-cast v11, Landroidx/constraintlayout/widget/ConstraintLayout;
-
-    const/4 v3, 0x2
-
-    aget-object v3, v0, v3
-
-    move-object v12, v3
-
-    check-cast v12, Landroid/widget/ScrollView;
-
-    const/4 v3, 0x1
-
-    aget-object v3, v0, v3
-
-    move-object v13, v3
-
-    check-cast v13, Lde/rki/coronawarnapp/databinding/IncludeHeaderBinding;
-
-    const/4 v3, 0x3
-
-    aget-object v3, v0, v3
-
-    move-object v14, v3
-
-    check-cast v14, Lde/rki/coronawarnapp/ui/view/TestResultSectionView;
+    check-cast v11, Landroid/widget/TextView;
 
     const/16 v3, 0xa
 
     aget-object v3, v0, v3
 
-    check-cast v3, Landroid/widget/TextView;
+    move-object v12, v3
+
+    check-cast v12, Landroid/widget/TextView;
+
+    const/16 v3, 0x15
+
+    aget-object v3, v0, v3
+
+    move-object v13, v3
+
+    check-cast v13, Landroid/widget/Button;
+
+    const/4 v3, 0x0
+
+    aget-object v3, v0, v3
+
+    move-object v14, v3
+
+    check-cast v14, Landroidx/constraintlayout/widget/ConstraintLayout;
+
+    const/4 v3, 0x2
+
+    aget-object v3, v0, v3
+
+    check-cast v3, Landroid/widget/ScrollView;
 
     move-object v15, v3
 
-    const/4 v3, 0x4
+    const/4 v3, 0x1
 
     aget-object v3, v0, v3
 
     move-object/from16 v16, v3
 
-    check-cast v16, Landroidx/constraintlayout/widget/ConstraintLayout;
+    check-cast v16, Lde/rki/coronawarnapp/databinding/IncludeHeaderBinding;
 
-    const/4 v3, 0x7
+    const/4 v3, 0x3
 
     aget-object v3, v0, v3
 
     move-object/from16 v17, v3
 
-    check-cast v17, Landroid/widget/TextView;
+    check-cast v17, Lde/rki/coronawarnapp/ui/view/TestResultSectionView;
 
-    const/16 v3, 0x8
+    const/16 v3, 0xc
 
     aget-object v3, v0, v3
 
@@ -307,37 +325,61 @@
 
     check-cast v18, Landroid/widget/TextView;
 
-    const/16 v3, 0xb
+    const/4 v3, 0x4
 
     aget-object v3, v0, v3
 
     move-object/from16 v19, v3
 
-    check-cast v19, Lde/rki/coronawarnapp/ui/view/SimpleStepEntry;
+    check-cast v19, Landroidx/constraintlayout/widget/ConstraintLayout;
 
-    const/16 v3, 0xe
+    const/4 v3, 0x7
 
     aget-object v3, v0, v3
 
     move-object/from16 v20, v3
 
-    check-cast v20, Lde/rki/coronawarnapp/ui/view/SimpleStepEntry;
+    check-cast v20, Landroid/widget/TextView;
 
-    const/16 v3, 0xc
+    const/16 v3, 0x8
 
     aget-object v3, v0, v3
 
     move-object/from16 v21, v3
 
-    check-cast v21, Lde/rki/coronawarnapp/ui/view/SimpleStepEntry;
+    check-cast v21, Landroid/widget/TextView;
 
     const/16 v3, 0xd
 
-    aget-object v0, v0, v3
+    aget-object v3, v0, v3
 
-    move-object/from16 v22, v0
+    move-object/from16 v22, v3
 
     check-cast v22, Lde/rki/coronawarnapp/ui/view/SimpleStepEntry;
+
+    const/16 v3, 0x10
+
+    aget-object v3, v0, v3
+
+    move-object/from16 v23, v3
+
+    check-cast v23, Lde/rki/coronawarnapp/ui/view/SimpleStepEntry;
+
+    const/16 v3, 0xe
+
+    aget-object v3, v0, v3
+
+    move-object/from16 v24, v3
+
+    check-cast v24, Lde/rki/coronawarnapp/ui/view/SimpleStepEntry;
+
+    const/16 v3, 0xf
+
+    aget-object v0, v0, v3
+
+    move-object/from16 v25, v0
+
+    check-cast v25, Lde/rki/coronawarnapp/ui/view/SimpleStepEntry;
 
     const/4 v3, 0x1
 
@@ -347,7 +389,7 @@
 
     move-object/from16 v2, p2
 
-    invoke-direct/range {v0 .. v22}, Lde/rki/coronawarnapp/databinding/FragmentSubmissionTestResultNegativeBinding;-><init>(Ljava/lang/Object;Landroid/view/View;ILandroid/widget/ImageView;Landroid/widget/TextView;Landroid/widget/ImageView;Landroid/widget/LinearLayout;Lde/rki/coronawarnapp/ui/view/BulletPointList;Landroid/widget/TextView;Landroid/widget/Button;Landroidx/constraintlayout/widget/ConstraintLayout;Landroid/widget/ScrollView;Lde/rki/coronawarnapp/databinding/IncludeHeaderBinding;Lde/rki/coronawarnapp/ui/view/TestResultSectionView;Landroid/widget/TextView;Landroidx/constraintlayout/widget/ConstraintLayout;Landroid/widget/TextView;Landroid/widget/TextView;Lde/rki/coronawarnapp/ui/view/SimpleStepEntry;Lde/rki/coronawarnapp/ui/view/SimpleStepEntry;Lde/rki/coronawarnapp/ui/view/SimpleStepEntry;Lde/rki/coronawarnapp/ui/view/SimpleStepEntry;)V
+    invoke-direct/range {v0 .. v25}, Lde/rki/coronawarnapp/databinding/FragmentSubmissionTestResultNegativeBinding;-><init>(Ljava/lang/Object;Landroid/view/View;ILandroid/widget/ImageView;Landroid/widget/TextView;Landroid/widget/ImageView;Landroid/widget/LinearLayout;Landroid/widget/TextView;Lde/rki/coronawarnapp/ui/view/BulletPointList;Landroid/widget/TextView;Landroid/widget/TextView;Landroid/widget/TextView;Landroid/widget/Button;Landroidx/constraintlayout/widget/ConstraintLayout;Landroid/widget/ScrollView;Lde/rki/coronawarnapp/databinding/IncludeHeaderBinding;Lde/rki/coronawarnapp/ui/view/TestResultSectionView;Landroid/widget/TextView;Landroidx/constraintlayout/widget/ConstraintLayout;Landroid/widget/TextView;Landroid/widget/TextView;Lde/rki/coronawarnapp/ui/view/SimpleStepEntry;Lde/rki/coronawarnapp/ui/view/SimpleStepEntry;Lde/rki/coronawarnapp/ui/view/SimpleStepEntry;Lde/rki/coronawarnapp/ui/view/SimpleStepEntry;)V
 
     const-wide/16 v0, -0x1
 
@@ -409,17 +451,17 @@
 
     iget-object v1, p0, Landroidx/databinding/ViewDataBinding;->mRoot:Landroid/view/View;
 
-    const v2, 0x7f0800dd
+    const v2, 0x7f0800d3
 
-    invoke-static {v1, v2, v0}, Lde/rki/coronawarnapp/databinding/FragmentInformationAboutBindingImpl$$ExternalSyntheticOutline0;->m(Landroid/view/View;ILde/rki/coronawarnapp/databinding/IncludeHeaderBinding;)V
+    invoke-static {v1, v2, v0}, Landroidx/constraintlayout/core/widgets/analyzer/DependencyNode$Type$EnumUnboxingLocalUtility;->m(Landroid/view/View;ILde/rki/coronawarnapp/databinding/IncludeHeaderBinding;)V
 
     iget-object v0, p0, Lde/rki/coronawarnapp/databinding/FragmentSubmissionTestResultNegativeBinding;->submissionTestResultHeader:Lde/rki/coronawarnapp/databinding/IncludeHeaderBinding;
 
     iget-object v1, p0, Landroidx/databinding/ViewDataBinding;->mRoot:Landroid/view/View;
 
-    const v2, 0x7f13060f
+    const v2, 0x7f1305d1
 
-    invoke-static {v1, v2, v0}, Lde/rki/coronawarnapp/databinding/FragmentInformationAboutBindingImpl$$ExternalSyntheticOutline1;->m(Landroid/view/View;ILde/rki/coronawarnapp/databinding/IncludeHeaderBinding;)V
+    invoke-static {v1, v2, v0}, Lde/rki/coronawarnapp/server/protocols/internal/ppdd/PpaData$ExposureRiskMetadata$Builder-IA;->m(Landroid/view/View;ILde/rki/coronawarnapp/databinding/IncludeHeaderBinding;)V
 
     :cond_0
     iget-object v0, p0, Lde/rki/coronawarnapp/databinding/FragmentSubmissionTestResultNegativeBinding;->submissionTestResultHeader:Lde/rki/coronawarnapp/databinding/IncludeHeaderBinding;

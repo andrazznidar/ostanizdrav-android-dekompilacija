@@ -11,12 +11,10 @@
 
 .field public final __db:Landroidx/room/RoomDatabase;
 
-.field public final __deletionAdapterOfPersistedAggregatedRiskPerDateResult:Landroidx/room/EntityDeletionOrUpdateAdapter;
+.field public final __deletionAdapterOfPersistedAggregatedRiskPerDateResult:Landroidx/room/EntityInsertionAdapter;
     .annotation system Ldalvik/annotation/Signature;
         value = {
-            "Landroidx/room/EntityDeletionOrUpdateAdapter<",
-            "Lde/rki/coronawarnapp/risk/storage/internal/riskresults/PersistedAggregatedRiskPerDateResult;",
-            ">;"
+            "Landroidx/room/EntityInsertionAdapter;"
         }
     .end annotation
 .end field
@@ -24,9 +22,7 @@
 .field public final __insertionAdapterOfPersistedAggregatedRiskPerDateResult:Landroidx/room/EntityInsertionAdapter;
     .annotation system Ldalvik/annotation/Signature;
         value = {
-            "Landroidx/room/EntityInsertionAdapter<",
-            "Lde/rki/coronawarnapp/risk/storage/internal/riskresults/PersistedAggregatedRiskPerDateResult;",
-            ">;"
+            "Landroidx/room/EntityInsertionAdapter;"
         }
     .end annotation
 .end field
@@ -64,7 +60,7 @@
 
     invoke-direct {v0, p0, p1}, Lde/rki/coronawarnapp/risk/storage/internal/RiskResultDatabaseAggregatedRiskPerDateResultDao_Impl$2;-><init>(Lde/rki/coronawarnapp/risk/storage/internal/RiskResultDatabaseAggregatedRiskPerDateResultDao_Impl;Landroidx/room/RoomDatabase;)V
 
-    iput-object v0, p0, Lde/rki/coronawarnapp/risk/storage/internal/RiskResultDatabaseAggregatedRiskPerDateResultDao_Impl;->__deletionAdapterOfPersistedAggregatedRiskPerDateResult:Landroidx/room/EntityDeletionOrUpdateAdapter;
+    iput-object v0, p0, Lde/rki/coronawarnapp/risk/storage/internal/RiskResultDatabaseAggregatedRiskPerDateResultDao_Impl;->__deletionAdapterOfPersistedAggregatedRiskPerDateResult:Landroidx/room/EntityInsertionAdapter;
 
     return-void
 .end method

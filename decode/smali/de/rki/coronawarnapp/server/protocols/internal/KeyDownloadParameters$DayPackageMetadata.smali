@@ -134,7 +134,7 @@
     return-void
 .end method
 
-.method public static synthetic -$$Nest$sfgetDEFAULT_INSTANCE()Lde/rki/coronawarnapp/server/protocols/internal/KeyDownloadParameters$DayPackageMetadata;
+.method public static bridge synthetic -$$Nest$sfgetDEFAULT_INSTANCE()Lde/rki/coronawarnapp/server/protocols/internal/KeyDownloadParameters$DayPackageMetadata;
     .locals 1
 
     sget-object v0, Lde/rki/coronawarnapp/server/protocols/internal/KeyDownloadParameters$DayPackageMetadata;->DEFAULT_INSTANCE:Lde/rki/coronawarnapp/server/protocols/internal/KeyDownloadParameters$DayPackageMetadata;
@@ -819,7 +819,7 @@
     :pswitch_4
     new-instance p1, Lde/rki/coronawarnapp/server/protocols/internal/KeyDownloadParameters$DayPackageMetadata$Builder;
 
-    invoke-direct {p1, v0}, Lde/rki/coronawarnapp/server/protocols/internal/KeyDownloadParameters$DayPackageMetadata$Builder;-><init>(Lde/rki/coronawarnapp/server/protocols/internal/KeyDownloadParameters$DayPackageMetadata$Builder-IA;)V
+    invoke-direct {p1, v0}, Lde/rki/coronawarnapp/server/protocols/internal/KeyDownloadParameters$DayPackageMetadata$Builder;-><init>(Lde/rki/jfn/operators/ArrayOperator$Filter$$ExternalSyntheticOutline0;)V
 
     return-object p1
 

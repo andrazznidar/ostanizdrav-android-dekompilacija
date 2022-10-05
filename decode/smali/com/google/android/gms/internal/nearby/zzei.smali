@@ -54,7 +54,7 @@
     return-void
 .end method
 
-.method public synthetic constructor <init>(Lcom/google/android/gms/internal/nearby/zzeg;)V
+.method public synthetic constructor <init>(Lboofcv/misc/CircularIndex;)V
     .locals 0
 
     invoke-direct {p0}, Lcom/google/android/gms/common/internal/safeparcel/AbstractSafeParcelable;-><init>()V

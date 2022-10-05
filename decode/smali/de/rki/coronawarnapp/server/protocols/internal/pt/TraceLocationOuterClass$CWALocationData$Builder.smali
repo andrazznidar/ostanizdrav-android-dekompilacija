@@ -40,7 +40,7 @@
     return-void
 .end method
 
-.method public synthetic constructor <init>(Lde/rki/coronawarnapp/server/protocols/internal/pt/TraceLocationOuterClass$CWALocationData$Builder-IA;)V
+.method public synthetic constructor <init>(Lpabeles/concurrency/GrowArray$$ExternalSyntheticLambda0;)V
     .locals 0
 
     invoke-direct {p0}, Lde/rki/coronawarnapp/server/protocols/internal/pt/TraceLocationOuterClass$CWALocationData$Builder;-><init>()V

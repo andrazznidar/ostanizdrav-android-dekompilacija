@@ -10,7 +10,7 @@
 # instance fields
 .field public final cacheValidity:Lorg/joda/time/Duration;
 
-.field public final configType:Lde/rki/coronawarnapp/appconfig/ConfigData$Type;
+.field public final configType:I
 
 .field public final identifier:Ljava/lang/String;
 
@@ -24,7 +24,7 @@
 
 
 # direct methods
-.method public constructor <init>(Lorg/joda/time/Instant;Lorg/joda/time/Duration;Lde/rki/coronawarnapp/appconfig/mapping/ConfigMapping;Ljava/lang/String;Lorg/joda/time/Duration;Lde/rki/coronawarnapp/appconfig/ConfigData$Type;)V
+.method public constructor <init>(Lorg/joda/time/Instant;Lorg/joda/time/Duration;Lde/rki/coronawarnapp/appconfig/mapping/ConfigMapping;Ljava/lang/String;Lorg/joda/time/Duration;I)V
     .locals 1
 
     const-string v0, "serverTime"
@@ -47,6 +47,10 @@
 
     invoke-static {p5, v0}, Lkotlin/jvm/internal/Intrinsics;->checkNotNullParameter(Ljava/lang/Object;Ljava/lang/String;)V
 
+    const-string v0, "configType"
+
+    invoke-static {p6, v0}, Lkotlin/jvm/internal/Intrinsics$$ExternalSyntheticCheckNotZero0;->m(ILjava/lang/String;)V
+
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
     iput-object p1, p0, Lde/rki/coronawarnapp/appconfig/internal/ConfigDataContainer;->serverTime:Lorg/joda/time/Instant;
@@ -59,7 +63,7 @@
 
     iput-object p5, p0, Lde/rki/coronawarnapp/appconfig/internal/ConfigDataContainer;->localOffset:Lorg/joda/time/Duration;
 
-    iput-object p6, p0, Lde/rki/coronawarnapp/appconfig/internal/ConfigDataContainer;->configType:Lde/rki/coronawarnapp/appconfig/ConfigData$Type;
+    iput p6, p0, Lde/rki/coronawarnapp/appconfig/internal/ConfigDataContainer;->configType:I
 
     const/4 p2, 0x1
 
@@ -160,9 +164,9 @@
     return v2
 
     :cond_6
-    iget-object v1, p0, Lde/rki/coronawarnapp/appconfig/internal/ConfigDataContainer;->configType:Lde/rki/coronawarnapp/appconfig/ConfigData$Type;
+    iget v1, p0, Lde/rki/coronawarnapp/appconfig/internal/ConfigDataContainer;->configType:I
 
-    iget-object p1, p1, Lde/rki/coronawarnapp/appconfig/internal/ConfigDataContainer;->configType:Lde/rki/coronawarnapp/appconfig/ConfigData$Type;
+    iget p1, p1, Lde/rki/coronawarnapp/appconfig/internal/ConfigDataContainer;->configType:I
 
     if-eq v1, p1, :cond_7
 
@@ -206,6 +210,30 @@
     move-result-object v0
 
     return-object v0
+.end method
+
+.method public getDccPersonCountMax()I
+    .locals 1
+
+    iget-object v0, p0, Lde/rki/coronawarnapp/appconfig/internal/ConfigDataContainer;->mappedConfig:Lde/rki/coronawarnapp/appconfig/mapping/ConfigMapping;
+
+    invoke-interface {v0}, Lde/rki/coronawarnapp/appconfig/CWAConfig;->getDccPersonCountMax()I
+
+    move-result v0
+
+    return v0
+.end method
+
+.method public getDccPersonWarnThreshold()I
+    .locals 1
+
+    iget-object v0, p0, Lde/rki/coronawarnapp/appconfig/internal/ConfigDataContainer;->mappedConfig:Lde/rki/coronawarnapp/appconfig/mapping/ConfigMapping;
+
+    invoke-interface {v0}, Lde/rki/coronawarnapp/appconfig/CWAConfig;->getDccPersonWarnThreshold()I
+
+    move-result v0
+
+    return v0
 .end method
 
 .method public getDeviceTimeState()Lde/rki/coronawarnapp/appconfig/ConfigData$DeviceTimeState;
@@ -599,6 +627,18 @@
     return-object v0
 .end method
 
+.method public getValidationServiceMinVersion()I
+    .locals 1
+
+    iget-object v0, p0, Lde/rki/coronawarnapp/appconfig/internal/ConfigDataContainer;->mappedConfig:Lde/rki/coronawarnapp/appconfig/mapping/ConfigMapping;
+
+    invoke-interface {v0}, Lde/rki/coronawarnapp/appconfig/CWAConfig;->getValidationServiceMinVersion()I
+
+    move-result v0
+
+    return v0
+.end method
+
 .method public hashCode()I
     .locals 3
 
@@ -648,9 +688,9 @@
 
     mul-int/lit8 v1, v1, 0x1f
 
-    iget-object v0, p0, Lde/rki/coronawarnapp/appconfig/internal/ConfigDataContainer;->configType:Lde/rki/coronawarnapp/appconfig/ConfigData$Type;
+    iget v0, p0, Lde/rki/coronawarnapp/appconfig/internal/ConfigDataContainer;->configType:I
 
-    invoke-virtual {v0}, Ljava/lang/Enum;->hashCode()I
+    invoke-static {v0}, Landroidx/camera/camera2/internal/Camera2CameraImpl$InternalState$EnumUnboxingSharedUtility;->ordinal(I)I
 
     move-result v0
 
@@ -718,7 +758,7 @@
 
     iget-object v4, p0, Lde/rki/coronawarnapp/appconfig/internal/ConfigDataContainer;->localOffset:Lorg/joda/time/Duration;
 
-    iget-object v5, p0, Lde/rki/coronawarnapp/appconfig/internal/ConfigDataContainer;->configType:Lde/rki/coronawarnapp/appconfig/ConfigData$Type;
+    iget v5, p0, Lde/rki/coronawarnapp/appconfig/internal/ConfigDataContainer;->configType:I
 
     new-instance v6, Ljava/lang/StringBuilder;
 
@@ -758,7 +798,11 @@
 
     invoke-virtual {v6, v0}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
 
-    invoke-virtual {v6, v5}, Ljava/lang/StringBuilder;->append(Ljava/lang/Object;)Ljava/lang/StringBuilder;
+    invoke-static {v5}, Lde/rki/coronawarnapp/appconfig/ConfigData$Type$EnumUnboxingLocalUtility;->stringValueOf(I)Ljava/lang/String;
+
+    move-result-object v0
+
+    invoke-virtual {v6, v0}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
 
     const-string v0, ")"
 

@@ -1,4 +1,4 @@
-.class public final Lkotlin/reflect/jvm/internal/impl/metadata/ProtoBuf$Class$1;
+.class final Lkotlin/reflect/jvm/internal/impl/metadata/ProtoBuf$Class$1;
 .super Lkotlin/reflect/jvm/internal/impl/protobuf/AbstractParser;
 .source "ProtoBuf.java"
 
@@ -33,8 +33,23 @@
 
 
 # virtual methods
-.method public parsePartialFrom(Lkotlin/reflect/jvm/internal/impl/protobuf/CodedInputStream;Lkotlin/reflect/jvm/internal/impl/protobuf/ExtensionRegistryLite;)Ljava/lang/Object;
-    .locals 1
+.method public bridge synthetic parsePartialFrom(Lkotlin/reflect/jvm/internal/impl/protobuf/CodedInputStream;Lkotlin/reflect/jvm/internal/impl/protobuf/ExtensionRegistryLite;)Ljava/lang/Object;
+    .locals 0
+    .annotation system Ldalvik/annotation/Throws;
+        value = {
+            Lkotlin/reflect/jvm/internal/impl/protobuf/InvalidProtocolBufferException;
+        }
+    .end annotation
+
+    invoke-virtual {p0, p1, p2}, Lkotlin/reflect/jvm/internal/impl/metadata/ProtoBuf$Class$1;->parsePartialFrom(Lkotlin/reflect/jvm/internal/impl/protobuf/CodedInputStream;Lkotlin/reflect/jvm/internal/impl/protobuf/ExtensionRegistryLite;)Lkotlin/reflect/jvm/internal/impl/metadata/ProtoBuf$Class;
+
+    move-result-object p1
+
+    return-object p1
+.end method
+
+.method public parsePartialFrom(Lkotlin/reflect/jvm/internal/impl/protobuf/CodedInputStream;Lkotlin/reflect/jvm/internal/impl/protobuf/ExtensionRegistryLite;)Lkotlin/reflect/jvm/internal/impl/metadata/ProtoBuf$Class;
+    .locals 2
     .annotation system Ldalvik/annotation/Throws;
         value = {
             Lkotlin/reflect/jvm/internal/impl/protobuf/InvalidProtocolBufferException;
@@ -43,7 +58,9 @@
 
     new-instance v0, Lkotlin/reflect/jvm/internal/impl/metadata/ProtoBuf$Class;
 
-    invoke-direct {v0, p1, p2}, Lkotlin/reflect/jvm/internal/impl/metadata/ProtoBuf$Class;-><init>(Lkotlin/reflect/jvm/internal/impl/protobuf/CodedInputStream;Lkotlin/reflect/jvm/internal/impl/protobuf/ExtensionRegistryLite;)V
+    const/4 v1, 0x0
+
+    invoke-direct {v0, p1, p2, v1}, Lkotlin/reflect/jvm/internal/impl/metadata/ProtoBuf$Class;-><init>(Lkotlin/reflect/jvm/internal/impl/protobuf/CodedInputStream;Lkotlin/reflect/jvm/internal/impl/protobuf/ExtensionRegistryLite;Lkotlin/reflect/jvm/internal/impl/metadata/ProtoBuf$1;)V
 
     return-object v0
 .end method

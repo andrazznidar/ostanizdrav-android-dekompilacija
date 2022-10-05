@@ -190,9 +190,9 @@
 
     if-eqz v0, :cond_2
 
-    iget-object v0, p0, Landroidx/transition/Transition;->mPropagation:Landroidx/transition/TransitionPropagation;
+    iget-object v0, p0, Landroidx/transition/Transition;->mPropagation:Lorg/joda/time/Chronology;
 
-    invoke-virtual {p1, v0}, Landroidx/transition/Transition;->setPropagation(Landroidx/transition/TransitionPropagation;)V
+    invoke-virtual {p1, v0}, Landroidx/transition/Transition;->setPropagation(Lorg/joda/time/Chronology;)V
 
     :cond_2
     iget v0, p0, Landroidx/transition/TransitionSet;->mChangeFlags:I
@@ -201,9 +201,9 @@
 
     if-eqz v0, :cond_3
 
-    iget-object v0, p0, Landroidx/transition/Transition;->mPathMotion:Landroidx/transition/PathMotion;
+    iget-object v0, p0, Landroidx/transition/Transition;->mPathMotion:Lorg/joda/time/Chronology;
 
-    invoke-virtual {p1, v0}, Landroidx/transition/Transition;->setPathMotion(Landroidx/transition/PathMotion;)V
+    invoke-virtual {p1, v0}, Landroidx/transition/Transition;->setPathMotion(Lorg/joda/time/Chronology;)V
 
     :cond_3
     iget v0, p0, Landroidx/transition/TransitionSet;->mChangeFlags:I
@@ -457,14 +457,14 @@
     return-object v0
 .end method
 
-.method public createAnimators(Landroid/view/ViewGroup;Landroidx/constraintlayout/core/Cache;Landroidx/constraintlayout/core/Cache;Ljava/util/ArrayList;Ljava/util/ArrayList;)V
+.method public createAnimators(Landroid/view/ViewGroup;Landroidx/transition/TransitionValuesMaps;Landroidx/transition/TransitionValuesMaps;Ljava/util/ArrayList;Ljava/util/ArrayList;)V
     .locals 12
     .annotation system Ldalvik/annotation/Signature;
         value = {
             "(",
             "Landroid/view/ViewGroup;",
-            "Landroidx/constraintlayout/core/Cache;",
-            "Landroidx/constraintlayout/core/Cache;",
+            "Landroidx/transition/TransitionValuesMaps;",
+            "Landroidx/transition/TransitionValuesMaps;",
             "Ljava/util/ArrayList<",
             "Landroidx/transition/TransitionValues;",
             ">;",
@@ -539,7 +539,7 @@
 
     move-object/from16 v11, p5
 
-    invoke-virtual/range {v6 .. v11}, Landroidx/transition/Transition;->createAnimators(Landroid/view/ViewGroup;Landroidx/constraintlayout/core/Cache;Landroidx/constraintlayout/core/Cache;Ljava/util/ArrayList;Ljava/util/ArrayList;)V
+    invoke-virtual/range {v6 .. v11}, Landroidx/transition/Transition;->createAnimators(Landroid/view/ViewGroup;Landroidx/transition/TransitionValuesMaps;Landroidx/transition/TransitionValuesMaps;Ljava/util/ArrayList;Ljava/util/ArrayList;)V
 
     add-int/lit8 v4, v4, 0x1
 
@@ -1012,19 +1012,19 @@
     return-object p0
 .end method
 
-.method public setPathMotion(Landroidx/transition/PathMotion;)V
+.method public setPathMotion(Lorg/joda/time/Chronology;)V
     .locals 2
 
     if-nez p1, :cond_0
 
-    sget-object v0, Landroidx/transition/Transition;->STRAIGHT_PATH_MOTION:Landroidx/transition/PathMotion;
+    sget-object v0, Landroidx/transition/Transition;->STRAIGHT_PATH_MOTION:Lorg/joda/time/Chronology;
 
-    iput-object v0, p0, Landroidx/transition/Transition;->mPathMotion:Landroidx/transition/PathMotion;
+    iput-object v0, p0, Landroidx/transition/Transition;->mPathMotion:Lorg/joda/time/Chronology;
 
     goto :goto_0
 
     :cond_0
-    iput-object p1, p0, Landroidx/transition/Transition;->mPathMotion:Landroidx/transition/PathMotion;
+    iput-object p1, p0, Landroidx/transition/Transition;->mPathMotion:Lorg/joda/time/Chronology;
 
     :goto_0
     iget v0, p0, Landroidx/transition/TransitionSet;->mChangeFlags:I
@@ -1056,7 +1056,7 @@
 
     check-cast v1, Landroidx/transition/Transition;
 
-    invoke-virtual {v1, p1}, Landroidx/transition/Transition;->setPathMotion(Landroidx/transition/PathMotion;)V
+    invoke-virtual {v1, p1}, Landroidx/transition/Transition;->setPathMotion(Lorg/joda/time/Chronology;)V
 
     add-int/lit8 v0, v0, 0x1
 
@@ -1066,10 +1066,10 @@
     return-void
 .end method
 
-.method public setPropagation(Landroidx/transition/TransitionPropagation;)V
+.method public setPropagation(Lorg/joda/time/Chronology;)V
     .locals 3
 
-    iput-object p1, p0, Landroidx/transition/Transition;->mPropagation:Landroidx/transition/TransitionPropagation;
+    iput-object p1, p0, Landroidx/transition/Transition;->mPropagation:Lorg/joda/time/Chronology;
 
     iget v0, p0, Landroidx/transition/TransitionSet;->mChangeFlags:I
 
@@ -1096,7 +1096,7 @@
 
     check-cast v2, Landroidx/transition/Transition;
 
-    invoke-virtual {v2, p1}, Landroidx/transition/Transition;->setPropagation(Landroidx/transition/TransitionPropagation;)V
+    invoke-virtual {v2, p1}, Landroidx/transition/Transition;->setPropagation(Lorg/joda/time/Chronology;)V
 
     add-int/lit8 v1, v1, 0x1
 

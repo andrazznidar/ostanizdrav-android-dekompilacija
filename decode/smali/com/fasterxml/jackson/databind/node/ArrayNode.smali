@@ -8,8 +8,7 @@
     value = {
         "Lcom/fasterxml/jackson/databind/node/ContainerNode<",
         "Lcom/fasterxml/jackson/databind/node/ArrayNode;",
-        ">;",
-        "Ljava/io/Serializable;"
+        ">;"
     }
 .end annotation
 
@@ -37,6 +36,27 @@
     invoke-direct {p1}, Ljava/util/ArrayList;-><init>()V
 
     iput-object p1, p0, Lcom/fasterxml/jackson/databind/node/ArrayNode;->_children:Ljava/util/List;
+
+    return-void
+.end method
+
+.method public constructor <init>(Lcom/fasterxml/jackson/databind/node/JsonNodeFactory;Ljava/util/List;)V
+    .locals 0
+    .annotation system Ldalvik/annotation/Signature;
+        value = {
+            "(",
+            "Lcom/fasterxml/jackson/databind/node/JsonNodeFactory;",
+            "Ljava/util/List<",
+            "Lcom/fasterxml/jackson/databind/JsonNode;",
+            ">;)V"
+        }
+    .end annotation
+
+    const/4 p1, 0x0
+
+    invoke-direct {p0, p1}, Lcom/fasterxml/jackson/databind/node/ContainerNode;-><init>(Lcom/fasterxml/jackson/databind/node/JsonNodeFactory;)V
+
+    iput-object p2, p0, Lcom/fasterxml/jackson/databind/node/ArrayNode;->_children:Ljava/util/List;
 
     return-void
 .end method
@@ -69,6 +89,44 @@
 
     invoke-interface {v0, p1}, Ljava/util/List;->add(Ljava/lang/Object;)Z
 
+    return-object p0
+.end method
+
+.method public addAll(Ljava/util/Collection;)Lcom/fasterxml/jackson/databind/node/ArrayNode;
+    .locals 1
+    .annotation system Ldalvik/annotation/Signature;
+        value = {
+            "(",
+            "Ljava/util/Collection<",
+            "+",
+            "Lcom/fasterxml/jackson/databind/JsonNode;",
+            ">;)",
+            "Lcom/fasterxml/jackson/databind/node/ArrayNode;"
+        }
+    .end annotation
+
+    invoke-interface {p1}, Ljava/util/Collection;->iterator()Ljava/util/Iterator;
+
+    move-result-object p1
+
+    :goto_0
+    invoke-interface {p1}, Ljava/util/Iterator;->hasNext()Z
+
+    move-result v0
+
+    if-eqz v0, :cond_0
+
+    invoke-interface {p1}, Ljava/util/Iterator;->next()Ljava/lang/Object;
+
+    move-result-object v0
+
+    check-cast v0, Lcom/fasterxml/jackson/databind/JsonNode;
+
+    invoke-virtual {p0, v0}, Lcom/fasterxml/jackson/databind/node/ArrayNode;->add(Lcom/fasterxml/jackson/databind/JsonNode;)Lcom/fasterxml/jackson/databind/node/ArrayNode;
+
+    goto :goto_0
+
+    :cond_0
     return-object p0
 .end method
 
@@ -463,6 +521,16 @@
 
     :cond_0
     return-object p2
+.end method
+
+.method public bridge synthetic get(I)Lcom/fasterxml/jackson/core/TreeNode;
+    .locals 0
+
+    invoke-virtual {p0, p1}, Lcom/fasterxml/jackson/databind/node/ArrayNode;->get(I)Lcom/fasterxml/jackson/databind/JsonNode;
+
+    move-result-object p1
+
+    return-object p1
 .end method
 
 .method public bridge synthetic get(Ljava/lang/String;)Lcom/fasterxml/jackson/core/TreeNode;

@@ -7,7 +7,7 @@
 
 
 # instance fields
-.field public final correspondingProperty:Lkotlin/reflect/jvm/internal/impl/descriptors/PropertyDescriptor;
+.field private final correspondingProperty:Lkotlin/reflect/jvm/internal/impl/descriptors/PropertyDescriptor;
 
 
 # direct methods
@@ -17,6 +17,10 @@
     const-string v0, "annotations"
 
     invoke-static {p1, v0}, Lkotlin/jvm/internal/Intrinsics;->checkNotNullParameter(Ljava/lang/Object;Ljava/lang/String;)V
+
+    const-string v0, "correspondingProperty"
+
+    invoke-static {p2, v0}, Lkotlin/jvm/internal/Intrinsics;->checkNotNullParameter(Ljava/lang/Object;Ljava/lang/String;)V
 
     invoke-direct {p0, p1}, Lkotlin/reflect/jvm/internal/impl/descriptors/annotations/AnnotatedImpl;-><init>(Lkotlin/reflect/jvm/internal/impl/descriptors/annotations/Annotations;)V
 

@@ -4,11 +4,19 @@
 
 
 # annotations
+.annotation system Ldalvik/annotation/EnclosingMethod;
+    value = Lkotlin/reflect/jvm/internal/impl/renderer/DescriptorRendererOptionsImpl;->property(Ljava/lang/Object;)Lkotlin/properties/ReadWriteProperty;
+.end annotation
+
+.annotation system Ldalvik/annotation/InnerClass;
+    accessFlags = 0x19
+    name = null
+.end annotation
+
 .annotation system Ldalvik/annotation/Signature;
     value = {
         "Lkotlin/properties/ObservableProperty<",
-        "Ljava/lang/Object;",
-        ">;"
+        "TT;>;"
     }
 .end annotation
 
@@ -44,16 +52,19 @@
         value = {
             "(",
             "Lkotlin/reflect/KProperty<",
-            "*>;",
-            "Ljava/lang/Object;",
-            "Ljava/lang/Object;",
-            ")Z"
+            "*>;TT;TT;)Z"
         }
     .end annotation
 
+    const-string p2, "property"
+
+    invoke-static {p1, p2}, Lkotlin/jvm/internal/Intrinsics;->checkNotNullParameter(Ljava/lang/Object;Ljava/lang/String;)V
+
     iget-object p1, p0, Lkotlin/reflect/jvm/internal/impl/renderer/DescriptorRendererOptionsImpl$property$$inlined$vetoable$1;->this$0:Lkotlin/reflect/jvm/internal/impl/renderer/DescriptorRendererOptionsImpl;
 
-    iget-boolean p1, p1, Lkotlin/reflect/jvm/internal/impl/renderer/DescriptorRendererOptionsImpl;->isLocked:Z
+    invoke-virtual {p1}, Lkotlin/reflect/jvm/internal/impl/renderer/DescriptorRendererOptionsImpl;->isLocked()Z
+
+    move-result p1
 
     if-nez p1, :cond_0
 

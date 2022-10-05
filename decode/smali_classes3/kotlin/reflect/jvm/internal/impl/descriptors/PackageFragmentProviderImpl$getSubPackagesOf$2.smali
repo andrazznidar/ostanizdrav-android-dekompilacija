@@ -1,4 +1,4 @@
-.class public final Lkotlin/reflect/jvm/internal/impl/descriptors/PackageFragmentProviderImpl$getSubPackagesOf$2;
+.class final Lkotlin/reflect/jvm/internal/impl/descriptors/PackageFragmentProviderImpl$getSubPackagesOf$2;
 .super Lkotlin/jvm/internal/Lambda;
 .source "PackageFragmentProviderImpl.kt"
 
@@ -46,10 +46,8 @@
 
 
 # virtual methods
-.method public invoke(Ljava/lang/Object;)Ljava/lang/Object;
+.method public final invoke(Lkotlin/reflect/jvm/internal/impl/name/FqName;)Ljava/lang/Boolean;
     .locals 1
-
-    check-cast p1, Lkotlin/reflect/jvm/internal/impl/name/FqName;
 
     const-string v0, "it"
 
@@ -82,6 +80,18 @@
 
     :goto_0
     invoke-static {p1}, Ljava/lang/Boolean;->valueOf(Z)Ljava/lang/Boolean;
+
+    move-result-object p1
+
+    return-object p1
+.end method
+
+.method public bridge synthetic invoke(Ljava/lang/Object;)Ljava/lang/Object;
+    .locals 0
+
+    check-cast p1, Lkotlin/reflect/jvm/internal/impl/name/FqName;
+
+    invoke-virtual {p0, p1}, Lkotlin/reflect/jvm/internal/impl/descriptors/PackageFragmentProviderImpl$getSubPackagesOf$2;->invoke(Lkotlin/reflect/jvm/internal/impl/name/FqName;)Ljava/lang/Boolean;
 
     move-result-object p1
 

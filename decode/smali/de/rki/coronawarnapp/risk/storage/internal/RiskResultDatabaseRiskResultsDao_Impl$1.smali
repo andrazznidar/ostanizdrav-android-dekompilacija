@@ -15,9 +15,7 @@
 
 .annotation system Ldalvik/annotation/Signature;
     value = {
-        "Landroidx/room/EntityInsertionAdapter<",
-        "Lde/rki/coronawarnapp/risk/storage/internal/riskresults/PersistedRiskLevelResultDao;",
-        ">;"
+        "Landroidx/room/EntityInsertionAdapter;"
     }
 .end annotation
 
@@ -120,7 +118,7 @@
 
     iget-object v0, v0, Lde/rki/coronawarnapp/risk/storage/internal/RiskResultDatabaseRiskResultsDao_Impl;->__converter:Lde/rki/coronawarnapp/risk/storage/internal/riskresults/PersistedRiskLevelResultDao$Converter;
 
-    iget-object v1, p2, Lde/rki/coronawarnapp/risk/storage/internal/riskresults/PersistedRiskLevelResultDao;->failureReason:Lde/rki/coronawarnapp/risk/EwRiskLevelResult$FailureReason;
+    iget v1, p2, Lde/rki/coronawarnapp/risk/storage/internal/riskresults/PersistedRiskLevelResultDao;->failureReason:I
 
     invoke-static {v0}, Ljava/util/Objects;->requireNonNull(Ljava/lang/Object;)Ljava/lang/Object;
 
@@ -133,7 +131,9 @@
     goto :goto_2
 
     :cond_2
-    iget-object v1, v1, Lde/rki/coronawarnapp/risk/EwRiskLevelResult$FailureReason;->failureCode:Ljava/lang/String;
+    invoke-static {v1}, Lde/rki/coronawarnapp/risk/EwRiskLevelResult$FailureReason$EnumUnboxingLocalUtility;->getFailureCode(I)Ljava/lang/String;
+
+    move-result-object v1
 
     :goto_2
     const/4 v2, 0x4

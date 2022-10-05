@@ -4,12 +4,6 @@
 
 
 # annotations
-.annotation system Ldalvik/annotation/MemberClasses;
-    value = {
-        Lde/rki/coronawarnapp/contactdiary/ui/ContactDiarySettings$OnboardingStatus;
-    }
-.end annotation
-
 .annotation system Ldalvik/annotation/SourceDebugExtension;
     value = "SMAP\nContactDiarySettings.kt\nKotlin\n*S Kotlin\n*F\n+ 1 ContactDiarySettings.kt\nde/rki/coronawarnapp/contactdiary/ui/ContactDiarySettings\n+ 2 fake.kt\nkotlin/jvm/internal/FakeKt\n*L\n1#1,24:1\n1#2:25\n*E\n"
 .end annotation

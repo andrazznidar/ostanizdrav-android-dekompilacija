@@ -90,36 +90,33 @@
 
     move v2, v0
 
-    :goto_0
+    :cond_0
     if-ge v2, v1, :cond_2
 
     aget-object v3, p2, v2
 
+    add-int/lit8 v2, v2, 0x1
+
     iget v4, v3, Lde/rki/coronawarnapp/presencetracing/TraceLocationSettings$OnboardingStatus;->order:I
 
-    if-ne v4, p1, :cond_0
+    if-ne v4, p1, :cond_1
 
     const/4 v4, 0x1
 
-    goto :goto_1
-
-    :cond_0
-    move v4, v0
-
-    :goto_1
-    if-eqz v4, :cond_1
-
-    goto :goto_2
+    goto :goto_0
 
     :cond_1
-    add-int/lit8 v2, v2, 0x1
+    move v4, v0
 
-    goto :goto_0
+    :goto_0
+    if-eqz v4, :cond_0
+
+    goto :goto_1
 
     :cond_2
     const/4 v3, 0x0
 
-    :goto_2
+    :goto_1
     if-nez v3, :cond_3
 
     sget-object v3, Lde/rki/coronawarnapp/presencetracing/TraceLocationSettings$OnboardingStatus;->NOT_ONBOARDED:Lde/rki/coronawarnapp/presencetracing/TraceLocationSettings$OnboardingStatus;

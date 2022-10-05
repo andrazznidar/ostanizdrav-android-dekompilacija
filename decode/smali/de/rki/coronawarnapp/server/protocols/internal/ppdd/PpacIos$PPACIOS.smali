@@ -106,7 +106,7 @@
     return-void
 .end method
 
-.method public static synthetic -$$Nest$sfgetDEFAULT_INSTANCE()Lde/rki/coronawarnapp/server/protocols/internal/ppdd/PpacIos$PPACIOS;
+.method public static bridge synthetic -$$Nest$sfgetDEFAULT_INSTANCE()Lde/rki/coronawarnapp/server/protocols/internal/ppdd/PpacIos$PPACIOS;
     .locals 1
 
     sget-object v0, Lde/rki/coronawarnapp/server/protocols/internal/ppdd/PpacIos$PPACIOS;->DEFAULT_INSTANCE:Lde/rki/coronawarnapp/server/protocols/internal/ppdd/PpacIos$PPACIOS;
@@ -708,7 +708,7 @@
     :pswitch_4
     new-instance p1, Lde/rki/coronawarnapp/server/protocols/internal/ppdd/PpacIos$PPACIOS$Builder;
 
-    invoke-direct {p1, v0}, Lde/rki/coronawarnapp/server/protocols/internal/ppdd/PpacIos$PPACIOS$Builder;-><init>(Lde/rki/coronawarnapp/server/protocols/internal/ppdd/PpacIos$PPACIOS$Builder-IA;)V
+    invoke-direct {p1, v0}, Lde/rki/coronawarnapp/server/protocols/internal/ppdd/PpacIos$PPACIOS$Builder;-><init>(Lcom/nimbusds/jose/crypto/ECDSAVerifier$$ExternalSyntheticOutline4;)V
 
     return-object p1
 

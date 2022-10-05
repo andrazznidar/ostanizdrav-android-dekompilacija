@@ -5,8 +5,12 @@
 
 # annotations
 .annotation system Ldalvik/annotation/SourceDebugExtension;
-    value = "SMAP\nKotlinAnnotationIntrospector.kt\nKotlin\n*S Kotlin\n*F\n+ 1 KotlinAnnotationIntrospector.kt\ncom/fasterxml/jackson/module/kotlin/KotlinAnnotationIntrospector\n+ 2 _Collections.kt\nkotlin/collections/CollectionsKt___CollectionsKt\n+ 3 _Arrays.kt\nkotlin/collections/ArraysKt___ArraysKt\n+ 4 fake.kt\nkotlin/jvm/internal/FakeKt\n*L\n1#1,196:1\n1517#2:197\n1588#2,3:198\n1245#3,2:201\n1245#3,2:204\n1#4:203\n*E\n*S KotlinDebug\n*F\n+ 1 KotlinAnnotationIntrospector.kt\ncom/fasterxml/jackson/module/kotlin/KotlinAnnotationIntrospector\n*L\n73#1:197\n73#1,3:198\n90#1,2:201\n104#1,2:204\n*E\n"
+    value = "SMAP\nKotlinAnnotationIntrospector.kt\nKotlin\n*S Kotlin\n*F\n+ 1 KotlinAnnotationIntrospector.kt\ncom/fasterxml/jackson/module/kotlin/KotlinAnnotationIntrospector\n+ 2 fake.kt\nkotlin/jvm/internal/FakeKt\n+ 3 _Collections.kt\nkotlin/collections/CollectionsKt___CollectionsKt\n+ 4 _Arrays.kt\nkotlin/collections/ArraysKt___ArraysKt\n*L\n1#1,173:1\n1#2:174\n1547#3:175\n1618#3,3:176\n1849#3,2:183\n1275#4,2:179\n1275#4,2:181\n*S KotlinDebug\n*F\n+ 1 KotlinAnnotationIntrospector.kt\ncom/fasterxml/jackson/module/kotlin/KotlinAnnotationIntrospector\n*L\n70#1:175\n70#1:176,3\n110#1:183,2\n83#1:179,2\n97#1:181,2\n*E\n"
 .end annotation
+
+
+# static fields
+.field public static final UNIT_TYPE:Lkotlin/reflect/KType;
 
 
 # instance fields
@@ -20,6 +24,34 @@
 
 
 # direct methods
+.method public static constructor <clinit>()V
+    .locals 7
+
+    const-class v0, Lkotlin/Unit;
+
+    invoke-static {v0}, Lkotlin/jvm/internal/Reflection;->getOrCreateKotlinClass(Ljava/lang/Class;)Lkotlin/reflect/KClass;
+
+    move-result-object v1
+
+    const/4 v2, 0x0
+
+    const/4 v3, 0x0
+
+    const/4 v4, 0x0
+
+    const/4 v5, 0x7
+
+    const/4 v6, 0x0
+
+    invoke-static/range {v1 .. v6}, Lkotlin/reflect/full/KClassifiers;->createType$default(Lkotlin/reflect/KClassifier;Ljava/util/List;ZLjava/util/List;ILjava/lang/Object;)Lkotlin/reflect/KType;
+
+    move-result-object v0
+
+    sput-object v0, Lcom/fasterxml/jackson/module/kotlin/KotlinAnnotationIntrospector;->UNIT_TYPE:Lkotlin/reflect/KType;
+
+    return-void
+.end method
+
 .method public constructor <init>(Lcom/fasterxml/jackson/databind/Module$SetupContext;Lcom/fasterxml/jackson/module/kotlin/ReflectionCache;ZZZ)V
     .locals 0
 
@@ -53,14 +85,17 @@
 
     const/4 v2, 0x0
 
-    if-eqz v0, :cond_2
+    if-nez v0, :cond_0
 
+    goto :goto_2
+
+    :cond_0
     array-length v3, v0
 
     const/4 v4, 0x0
 
     :goto_0
-    if-ge v4, v3, :cond_1
+    if-ge v4, v3, :cond_2
 
     aget-object v5, v0, v4
 
@@ -78,21 +113,27 @@
 
     move-result v6
 
-    if-eqz v6, :cond_0
+    if-eqz v6, :cond_1
 
     goto :goto_1
 
-    :cond_0
+    :cond_1
     add-int/lit8 v4, v4, 0x1
 
     goto :goto_0
 
-    :cond_1
+    :cond_2
     move-object v5, v2
 
     :goto_1
-    if-eqz v5, :cond_2
+    if-nez v5, :cond_3
 
+    :goto_2
+    move-object v0, v2
+
+    goto :goto_3
+
+    :cond_3
     check-cast v5, Lcom/fasterxml/jackson/annotation/JsonProperty;
 
     invoke-interface {v5}, Lcom/fasterxml/jackson/annotation/JsonProperty;->required()Z
@@ -103,176 +144,29 @@
 
     move-result-object v0
 
-    goto :goto_2
-
-    :cond_2
-    move-object v0, v2
-
-    :goto_2
+    :goto_3
     iget-object p1, p1, Lcom/fasterxml/jackson/databind/introspect/AnnotatedField;->_field:Ljava/lang/reflect/Field;
 
     invoke-static {p1, v1}, Ljava/util/Objects;->requireNonNull(Ljava/lang/Object;Ljava/lang/String;)Ljava/lang/Object;
 
-    const-string v1, "$this$kotlinProperty"
-
-    invoke-static {p1, v1}, Lkotlin/jvm/internal/Intrinsics;->checkNotNullParameter(Ljava/lang/Object;Ljava/lang/String;)V
-
-    invoke-virtual {p1}, Ljava/lang/reflect/Field;->isSynthetic()Z
-
-    move-result v1
-
-    if-eqz v1, :cond_3
-
-    move-object v3, v2
-
-    goto/16 :goto_6
-
-    :cond_3
-    invoke-static {p1}, Lkotlin/reflect/jvm/ReflectJvmMapping;->getKPackage(Ljava/lang/reflect/Member;)Lkotlin/reflect/KDeclarationContainer;
-
-    move-result-object v1
-
-    if-eqz v1, :cond_8
-
-    check-cast v1, Lkotlin/reflect/jvm/internal/KPackageImpl;
-
-    invoke-virtual {v1}, Lkotlin/reflect/jvm/internal/KPackageImpl;->getMembers()Ljava/util/Collection;
-
-    move-result-object v1
-
-    new-instance v3, Ljava/util/ArrayList;
-
-    invoke-direct {v3}, Ljava/util/ArrayList;-><init>()V
-
-    invoke-interface {v1}, Ljava/lang/Iterable;->iterator()Ljava/util/Iterator;
-
-    move-result-object v1
-
-    :cond_4
-    :goto_3
-    invoke-interface {v1}, Ljava/util/Iterator;->hasNext()Z
-
-    move-result v4
-
-    if-eqz v4, :cond_5
-
-    invoke-interface {v1}, Ljava/util/Iterator;->next()Ljava/lang/Object;
-
-    move-result-object v4
-
-    instance-of v5, v4, Lkotlin/reflect/KProperty;
-
-    if-eqz v5, :cond_4
-
-    invoke-virtual {v3, v4}, Ljava/util/ArrayList;->add(Ljava/lang/Object;)Z
-
-    goto :goto_3
-
-    :cond_5
-    invoke-virtual {v3}, Ljava/util/ArrayList;->iterator()Ljava/util/Iterator;
-
-    move-result-object v1
-
-    :cond_6
-    invoke-interface {v1}, Ljava/util/Iterator;->hasNext()Z
-
-    move-result v3
-
-    if-eqz v3, :cond_7
-
-    invoke-interface {v1}, Ljava/util/Iterator;->next()Ljava/lang/Object;
-
-    move-result-object v3
-
-    move-object v4, v3
-
-    check-cast v4, Lkotlin/reflect/KProperty;
-
-    invoke-static {v4}, Lkotlin/reflect/jvm/ReflectJvmMapping;->getJavaField(Lkotlin/reflect/KProperty;)Ljava/lang/reflect/Field;
-
-    move-result-object v4
-
-    invoke-static {v4, p1}, Lkotlin/jvm/internal/Intrinsics;->areEqual(Ljava/lang/Object;Ljava/lang/Object;)Z
-
-    move-result v4
-
-    if-eqz v4, :cond_6
-
-    goto :goto_4
-
-    :cond_7
-    move-object v3, v2
-
-    :goto_4
-    check-cast v3, Lkotlin/reflect/KProperty;
-
-    goto :goto_6
-
-    :cond_8
-    invoke-virtual {p1}, Ljava/lang/reflect/Field;->getDeclaringClass()Ljava/lang/Class;
-
-    move-result-object v1
-
-    const-string v3, "declaringClass"
-
-    invoke-static {v1, v3}, Lkotlin/jvm/internal/Intrinsics;->checkNotNullExpressionValue(Ljava/lang/Object;Ljava/lang/String;)V
-
-    invoke-static {v1}, Lkotlin/jvm/JvmClassMappingKt;->getKotlinClass(Ljava/lang/Class;)Lkotlin/reflect/KClass;
-
-    move-result-object v1
-
-    invoke-static {v1}, Lkotlin/reflect/full/KClasses;->getMemberProperties(Lkotlin/reflect/KClass;)Ljava/util/Collection;
-
-    move-result-object v1
-
-    check-cast v1, Ljava/util/ArrayList;
-
-    invoke-virtual {v1}, Ljava/util/ArrayList;->iterator()Ljava/util/Iterator;
-
-    move-result-object v1
-
-    :cond_9
-    invoke-interface {v1}, Ljava/util/Iterator;->hasNext()Z
-
-    move-result v3
-
-    if-eqz v3, :cond_a
-
-    invoke-interface {v1}, Ljava/util/Iterator;->next()Ljava/lang/Object;
-
-    move-result-object v3
-
-    move-object v4, v3
-
-    check-cast v4, Lkotlin/reflect/KProperty1;
-
-    invoke-static {v4}, Lkotlin/reflect/jvm/ReflectJvmMapping;->getJavaField(Lkotlin/reflect/KProperty;)Ljava/lang/reflect/Field;
-
-    move-result-object v4
-
-    invoke-static {v4, p1}, Lkotlin/jvm/internal/Intrinsics;->areEqual(Ljava/lang/Object;Ljava/lang/Object;)Z
-
-    move-result v4
-
-    if-eqz v4, :cond_9
-
-    goto :goto_5
-
-    :cond_a
-    move-object v3, v2
-
-    :goto_5
-    check-cast v3, Lkotlin/reflect/KProperty;
-
-    :goto_6
-    if-eqz v3, :cond_b
-
-    invoke-interface {v3}, Lkotlin/reflect/KCallable;->getReturnType()Lkotlin/reflect/KType;
+    invoke-static {p1}, Lkotlin/reflect/jvm/ReflectJvmMapping;->getKotlinProperty(Ljava/lang/reflect/Field;)Lkotlin/reflect/KProperty;
 
     move-result-object p1
 
-    if-eqz p1, :cond_b
+    if-nez p1, :cond_4
 
+    goto :goto_4
+
+    :cond_4
+    invoke-interface {p1}, Lkotlin/reflect/KCallable;->getReturnType()Lkotlin/reflect/KType;
+
+    move-result-object p1
+
+    if-nez p1, :cond_5
+
+    goto :goto_4
+
+    :cond_5
     invoke-virtual {p0, p1}, Lcom/fasterxml/jackson/module/kotlin/KotlinAnnotationIntrospector;->isRequired(Lkotlin/reflect/KType;)Z
 
     move-result p1
@@ -281,7 +175,7 @@
 
     move-result-object v2
 
-    :cond_b
+    :goto_4
     invoke-virtual {p0, v0, v2}, Lcom/fasterxml/jackson/module/kotlin/KotlinAnnotationIntrospector;->requiredAnnotationOrNullability(Ljava/lang/Boolean;Ljava/lang/Boolean;)Ljava/lang/Boolean;
 
     move-result-object p0
@@ -290,23 +184,19 @@
 .end method
 
 .method public static final access$hasRequiredMarker(Lcom/fasterxml/jackson/module/kotlin/KotlinAnnotationIntrospector;Lcom/fasterxml/jackson/databind/introspect/AnnotatedMethod;)Ljava/lang/Boolean;
-    .locals 14
+    .locals 6
 
     invoke-static {p0}, Ljava/util/Objects;->requireNonNull(Ljava/lang/Object;)Ljava/lang/Object;
 
     iget-object v0, p1, Lcom/fasterxml/jackson/databind/introspect/AnnotatedMethod;->_method:Ljava/lang/reflect/Method;
 
-    const-string v1, "member"
-
-    invoke-static {v0, v1}, Lkotlin/jvm/internal/Intrinsics;->checkNotNullExpressionValue(Ljava/lang/Object;Ljava/lang/String;)V
-
     invoke-virtual {v0}, Ljava/lang/reflect/Method;->getDeclaringClass()Ljava/lang/Class;
 
     move-result-object v0
 
-    const-string v2, "member.declaringClass"
+    const-string v1, "member.declaringClass"
 
-    invoke-static {v0, v2}, Lkotlin/jvm/internal/Intrinsics;->checkNotNullExpressionValue(Ljava/lang/Object;Ljava/lang/String;)V
+    invoke-static {v0, v1}, Lkotlin/jvm/internal/Intrinsics;->checkNotNullExpressionValue(Ljava/lang/Object;Ljava/lang/String;)V
 
     invoke-static {v0}, Lkotlin/jvm/JvmClassMappingKt;->getKotlinClass(Ljava/lang/Class;)Lkotlin/reflect/KClass;
 
@@ -316,491 +206,217 @@
 
     move-result-object v0
 
-    check-cast v0, Ljava/util/ArrayList;
-
-    invoke-virtual {v0}, Ljava/util/ArrayList;->iterator()Ljava/util/Iterator;
+    invoke-interface {v0}, Ljava/lang/Iterable;->iterator()Ljava/util/Iterator;
 
     move-result-object v0
 
     :cond_0
     invoke-interface {v0}, Ljava/util/Iterator;->hasNext()Z
 
-    move-result v3
-
-    const/4 v4, 0x0
-
-    if-eqz v3, :cond_1
-
-    invoke-interface {v0}, Ljava/util/Iterator;->next()Ljava/lang/Object;
-
-    move-result-object v3
-
-    move-object v5, v3
-
-    check-cast v5, Lkotlin/reflect/KProperty1;
-
-    invoke-interface {v5}, Lkotlin/reflect/KProperty1;->getGetter()Lkotlin/reflect/KProperty1$Getter;
-
-    move-result-object v5
-
-    invoke-static {v5}, Lkotlin/reflect/jvm/ReflectJvmMapping;->getJavaMethod(Lkotlin/reflect/KFunction;)Ljava/lang/reflect/Method;
-
-    move-result-object v5
-
-    iget-object v6, p1, Lcom/fasterxml/jackson/databind/introspect/AnnotatedMethod;->_method:Ljava/lang/reflect/Method;
-
-    invoke-static {v5, v6}, Lkotlin/jvm/internal/Intrinsics;->areEqual(Ljava/lang/Object;Ljava/lang/Object;)Z
-
-    move-result v5
-
-    if-eqz v5, :cond_0
-
-    goto :goto_0
-
-    :cond_1
-    move-object v3, v4
-
-    :goto_0
-    check-cast v3, Lkotlin/reflect/KProperty1;
-
-    if-eqz v3, :cond_3
-
-    invoke-static {v3}, Lkotlin/reflect/jvm/ReflectJvmMapping;->getJavaGetter(Lkotlin/reflect/KProperty;)Ljava/lang/reflect/Method;
-
-    move-result-object p1
-
-    if-eqz p1, :cond_2
-
-    invoke-virtual {p0, p1}, Lcom/fasterxml/jackson/module/kotlin/KotlinAnnotationIntrospector;->isRequiredByAnnotation(Ljava/lang/reflect/Method;)Ljava/lang/Boolean;
-
-    move-result-object v4
-
-    :cond_2
-    invoke-interface {v3}, Lkotlin/reflect/KCallable;->getReturnType()Lkotlin/reflect/KType;
-
-    move-result-object p1
-
-    invoke-virtual {p0, p1}, Lcom/fasterxml/jackson/module/kotlin/KotlinAnnotationIntrospector;->isRequired(Lkotlin/reflect/KType;)Z
-
-    move-result p1
-
-    invoke-static {p1}, Ljava/lang/Boolean;->valueOf(Z)Ljava/lang/Boolean;
-
-    move-result-object p1
-
-    invoke-virtual {p0, v4, p1}, Lcom/fasterxml/jackson/module/kotlin/KotlinAnnotationIntrospector;->requiredAnnotationOrNullability(Ljava/lang/Boolean;Ljava/lang/Boolean;)Ljava/lang/Boolean;
-
-    move-result-object v4
-
-    goto/16 :goto_8
-
-    :cond_3
-    iget-object v0, p1, Lcom/fasterxml/jackson/databind/introspect/AnnotatedMethod;->_method:Ljava/lang/reflect/Method;
-
-    invoke-static {v0, v1}, Lkotlin/jvm/internal/Intrinsics;->checkNotNullExpressionValue(Ljava/lang/Object;Ljava/lang/String;)V
-
-    invoke-virtual {v0}, Ljava/lang/reflect/Method;->getDeclaringClass()Ljava/lang/Class;
-
-    move-result-object v0
-
-    invoke-static {v0, v2}, Lkotlin/jvm/internal/Intrinsics;->checkNotNullExpressionValue(Ljava/lang/Object;Ljava/lang/String;)V
-
-    invoke-static {v0}, Lkotlin/jvm/JvmClassMappingKt;->getKotlinClass(Ljava/lang/Class;)Lkotlin/reflect/KClass;
-
-    move-result-object v0
-
-    invoke-static {v0}, Lkotlin/reflect/full/KClasses;->getDeclaredMemberProperties(Lkotlin/reflect/KClass;)Ljava/util/Collection;
-
-    move-result-object v0
-
-    check-cast v0, Ljava/util/ArrayList;
-
-    invoke-virtual {v0}, Ljava/util/ArrayList;->iterator()Ljava/util/Iterator;
-
-    move-result-object v0
-
-    :cond_4
-    invoke-interface {v0}, Ljava/util/Iterator;->hasNext()Z
-
     move-result v1
 
-    const/4 v2, 0x0
+    const-string/jumbo v2, "this.member"
 
-    if-eqz v1, :cond_6
+    const/4 v3, 0x0
+
+    if-eqz v1, :cond_4
 
     invoke-interface {v0}, Ljava/util/Iterator;->next()Ljava/lang/Object;
 
     move-result-object v1
 
-    move-object v3, v1
+    check-cast v1, Lkotlin/reflect/KProperty1;
 
-    check-cast v3, Lkotlin/reflect/KProperty1;
+    invoke-static {v1}, Lkotlin/reflect/jvm/ReflectJvmMapping;->getJavaGetter(Lkotlin/reflect/KProperty;)Ljava/lang/reflect/Method;
 
-    instance-of v5, v3, Lkotlin/reflect/KMutableProperty1;
-
-    if-eqz v5, :cond_5
-
-    check-cast v3, Lkotlin/reflect/KMutableProperty;
-
-    invoke-static {v3}, Lkotlin/reflect/jvm/ReflectJvmMapping;->getJavaSetter(Lkotlin/reflect/KMutableProperty;)Ljava/lang/reflect/Method;
-
-    move-result-object v3
+    move-result-object v4
 
     iget-object v5, p1, Lcom/fasterxml/jackson/databind/introspect/AnnotatedMethod;->_method:Ljava/lang/reflect/Method;
 
-    invoke-static {v3, v5}, Lkotlin/jvm/internal/Intrinsics;->areEqual(Ljava/lang/Object;Ljava/lang/Object;)Z
+    invoke-static {v4, v5}, Lkotlin/jvm/internal/Intrinsics;->areEqual(Ljava/lang/Object;Ljava/lang/Object;)Z
 
-    move-result v3
+    move-result v4
+
+    if-nez v4, :cond_3
+
+    instance-of v4, v1, Lkotlin/reflect/KMutableProperty1;
+
+    if-eqz v4, :cond_1
+
+    move-object v4, v1
+
+    check-cast v4, Lkotlin/reflect/KMutableProperty1;
+
+    goto :goto_0
+
+    :cond_1
+    move-object v4, v3
+
+    :goto_0
+    if-nez v4, :cond_2
+
+    move-object v4, v3
 
     goto :goto_1
 
-    :cond_5
-    move v3, v2
+    :cond_2
+    invoke-static {v4}, Lkotlin/reflect/jvm/ReflectJvmMapping;->getJavaSetter(Lkotlin/reflect/KMutableProperty;)Ljava/lang/reflect/Method;
+
+    move-result-object v4
 
     :goto_1
-    if-eqz v3, :cond_4
+    iget-object v5, p1, Lcom/fasterxml/jackson/databind/introspect/AnnotatedMethod;->_method:Ljava/lang/reflect/Method;
 
-    goto :goto_2
+    invoke-static {v4, v5}, Lkotlin/jvm/internal/Intrinsics;->areEqual(Ljava/lang/Object;Ljava/lang/Object;)Z
 
-    :cond_6
-    move-object v1, v4
+    move-result v4
 
-    :goto_2
-    check-cast v1, Lkotlin/reflect/KProperty1;
+    if-eqz v4, :cond_0
 
-    instance-of v0, v1, Lkotlin/reflect/KMutableProperty1;
+    :cond_3
+    iget-object v0, p1, Lcom/fasterxml/jackson/databind/introspect/AnnotatedMethod;->_method:Ljava/lang/reflect/Method;
 
-    if-nez v0, :cond_7
-
-    move-object v1, v4
-
-    :cond_7
-    check-cast v1, Lkotlin/reflect/KMutableProperty1;
-
-    if-eqz v1, :cond_8
-
-    invoke-interface {v1}, Lkotlin/reflect/KMutableProperty1;->getSetter()Lkotlin/reflect/KMutableProperty1$Setter;
-
-    move-result-object v0
-
-    goto :goto_3
-
-    :cond_8
-    move-object v0, v4
-
-    :goto_3
-    const/4 v1, 0x1
-
-    if-eqz v0, :cond_a
-
-    invoke-static {v0}, Lkotlin/reflect/jvm/ReflectJvmMapping;->getJavaMethod(Lkotlin/reflect/KFunction;)Ljava/lang/reflect/Method;
-
-    move-result-object p1
-
-    if-eqz p1, :cond_9
-
-    invoke-virtual {p0, p1}, Lcom/fasterxml/jackson/module/kotlin/KotlinAnnotationIntrospector;->isRequiredByAnnotation(Ljava/lang/reflect/Method;)Ljava/lang/Boolean;
-
-    move-result-object v4
-
-    :cond_9
-    invoke-virtual {p0, v0, v1}, Lcom/fasterxml/jackson/module/kotlin/KotlinAnnotationIntrospector;->isParameterRequired(Lkotlin/reflect/KFunction;I)Z
-
-    move-result p1
-
-    invoke-static {p1}, Ljava/lang/Boolean;->valueOf(Z)Ljava/lang/Boolean;
-
-    move-result-object p1
-
-    invoke-virtual {p0, v4, p1}, Lcom/fasterxml/jackson/module/kotlin/KotlinAnnotationIntrospector;->requiredAnnotationOrNullability(Ljava/lang/Boolean;Ljava/lang/Boolean;)Ljava/lang/Boolean;
-
-    move-result-object v4
-
-    goto/16 :goto_8
-
-    :cond_a
-    iget-object p1, p1, Lcom/fasterxml/jackson/databind/introspect/AnnotatedMethod;->_method:Ljava/lang/reflect/Method;
-
-    const-string/jumbo v0, "this.member"
-
-    invoke-static {p1, v0}, Lkotlin/jvm/internal/Intrinsics;->checkNotNullExpressionValue(Ljava/lang/Object;Ljava/lang/String;)V
-
-    invoke-static {p1}, Lkotlin/reflect/jvm/ReflectJvmMapping;->getKotlinFunction(Ljava/lang/reflect/Method;)Lkotlin/reflect/KFunction;
-
-    move-result-object p1
-
-    if-eqz p1, :cond_12
-
-    invoke-static {p1}, Lkotlin/reflect/jvm/ReflectJvmMapping;->getJavaMethod(Lkotlin/reflect/KFunction;)Ljava/lang/reflect/Method;
-
-    move-result-object v0
-
-    if-eqz v0, :cond_b
+    invoke-static {v0, v2}, Lkotlin/jvm/internal/Intrinsics;->checkNotNullExpressionValue(Ljava/lang/Object;Ljava/lang/String;)V
 
     invoke-virtual {p0, v0}, Lcom/fasterxml/jackson/module/kotlin/KotlinAnnotationIntrospector;->isRequiredByAnnotation(Ljava/lang/reflect/Method;)Ljava/lang/Boolean;
 
     move-result-object v0
 
-    goto :goto_4
+    invoke-interface {v1}, Lkotlin/reflect/KCallable;->getReturnType()Lkotlin/reflect/KType;
 
-    :cond_b
-    move-object v0, v4
+    move-result-object v1
 
-    :goto_4
-    invoke-interface {p1}, Lkotlin/reflect/KCallable;->getParameters()Ljava/util/List;
+    invoke-virtual {p0, v1}, Lcom/fasterxml/jackson/module/kotlin/KotlinAnnotationIntrospector;->isRequired(Lkotlin/reflect/KType;)Z
 
-    move-result-object v3
+    move-result v1
 
-    invoke-interface {v3}, Ljava/util/List;->size()I
+    invoke-static {v1}, Ljava/lang/Boolean;->valueOf(Z)Ljava/lang/Boolean;
 
-    move-result v3
+    move-result-object v1
 
-    if-ne v3, v1, :cond_c
-
-    move v3, v1
-
-    goto :goto_5
-
-    :cond_c
-    move v3, v2
-
-    :goto_5
-    if-eqz v3, :cond_d
-
-    invoke-interface {p1}, Lkotlin/reflect/KCallable;->getReturnType()Lkotlin/reflect/KType;
-
-    move-result-object p1
-
-    invoke-virtual {p0, p1}, Lcom/fasterxml/jackson/module/kotlin/KotlinAnnotationIntrospector;->isRequired(Lkotlin/reflect/KType;)Z
-
-    move-result p1
-
-    invoke-static {p1}, Ljava/lang/Boolean;->valueOf(Z)Ljava/lang/Boolean;
-
-    move-result-object p1
-
-    invoke-virtual {p0, v0, p1}, Lcom/fasterxml/jackson/module/kotlin/KotlinAnnotationIntrospector;->requiredAnnotationOrNullability(Ljava/lang/Boolean;Ljava/lang/Boolean;)Ljava/lang/Boolean;
-
-    move-result-object v4
-
-    goto/16 :goto_8
-
-    :cond_d
-    invoke-interface {p1}, Lkotlin/reflect/KCallable;->getParameters()Ljava/util/List;
-
-    move-result-object v3
-
-    invoke-interface {v3}, Ljava/util/List;->size()I
-
-    move-result v3
-
-    const/4 v5, 0x2
-
-    if-ne v3, v5, :cond_11
-
-    invoke-interface {p1}, Lkotlin/reflect/KCallable;->getReturnType()Lkotlin/reflect/KType;
-
-    move-result-object v3
-
-    const-class v5, Lkotlin/Unit;
-
-    invoke-static {v5}, Lkotlin/jvm/internal/Reflection;->getOrCreateKotlinClass(Ljava/lang/Class;)Lkotlin/reflect/KClass;
-
-    move-result-object v5
-
-    sget-object v6, Lkotlin/collections/EmptyList;->INSTANCE:Lkotlin/collections/EmptyList;
-
-    const/4 v10, 0x0
-
-    const-string v7, "$this$createType"
-
-    invoke-static {v5, v7}, Lkotlin/jvm/internal/Intrinsics;->checkNotNullParameter(Ljava/lang/Object;Ljava/lang/String;)V
-
-    const-string v7, "arguments"
-
-    invoke-static {v6, v7}, Lkotlin/jvm/internal/Intrinsics;->checkNotNullParameter(Ljava/lang/Object;Ljava/lang/String;)V
-
-    const-string v7, "annotations"
-
-    invoke-static {v6, v7}, Lkotlin/jvm/internal/Intrinsics;->checkNotNullParameter(Ljava/lang/Object;Ljava/lang/String;)V
-
-    instance-of v7, v5, Lkotlin/reflect/jvm/internal/KClassifierImpl;
-
-    if-nez v7, :cond_e
-
-    move-object v7, v4
-
-    goto :goto_6
-
-    :cond_e
-    move-object v7, v5
-
-    :goto_6
-    check-cast v7, Lkotlin/reflect/jvm/internal/KClassifierImpl;
-
-    if-eqz v7, :cond_10
-
-    invoke-interface {v7}, Lkotlin/reflect/jvm/internal/KClassifierImpl;->getDescriptor()Lkotlin/reflect/jvm/internal/impl/descriptors/ClassifierDescriptor;
-
-    move-result-object v7
-
-    if-eqz v7, :cond_10
-
-    invoke-interface {v7}, Lkotlin/reflect/jvm/internal/impl/descriptors/ClassifierDescriptor;->getTypeConstructor()Lkotlin/reflect/jvm/internal/impl/types/TypeConstructor;
-
-    move-result-object v8
-
-    const-string v5, "descriptor.typeConstructor"
-
-    invoke-static {v8, v5}, Lkotlin/jvm/internal/Intrinsics;->checkNotNullExpressionValue(Ljava/lang/Object;Ljava/lang/String;)V
-
-    invoke-interface {v8}, Lkotlin/reflect/jvm/internal/impl/types/TypeConstructor;->getParameters()Ljava/util/List;
-
-    move-result-object v5
-
-    const-string/jumbo v7, "typeConstructor.parameters"
-
-    invoke-static {v5, v7}, Lkotlin/jvm/internal/Intrinsics;->checkNotNullExpressionValue(Ljava/lang/Object;Ljava/lang/String;)V
-
-    invoke-interface {v5}, Ljava/util/List;->size()I
-
-    move-result v9
-
-    if-nez v9, :cond_f
-
-    sget-object v5, Lkotlin/reflect/jvm/internal/impl/descriptors/annotations/Annotations$Companion;->EMPTY:Lkotlin/reflect/jvm/internal/impl/descriptors/annotations/Annotations;
-
-    new-instance v13, Lkotlin/reflect/jvm/internal/KTypeImpl;
-
-    invoke-interface {v8}, Lkotlin/reflect/jvm/internal/impl/types/TypeConstructor;->getParameters()Ljava/util/List;
-
-    move-result-object v9
-
-    invoke-static {v9, v7}, Lkotlin/jvm/internal/Intrinsics;->checkNotNullExpressionValue(Ljava/lang/Object;Ljava/lang/String;)V
-
-    new-instance v9, Ljava/util/ArrayList;
-
-    const/16 v7, 0xa
-
-    invoke-static {v6, v7}, Lkotlin/collections/CollectionsKt__IteratorsJVMKt;->collectionSizeOrDefault(Ljava/lang/Iterable;I)I
-
-    move-result v6
-
-    invoke-direct {v9, v6}, Ljava/util/ArrayList;-><init>(I)V
-
-    const/4 v11, 0x0
-
-    const/16 v12, 0x10
-
-    move-object v7, v5
-
-    invoke-static/range {v7 .. v12}, Lkotlin/reflect/jvm/internal/impl/types/KotlinTypeFactory;->simpleType$default(Lkotlin/reflect/jvm/internal/impl/descriptors/annotations/Annotations;Lkotlin/reflect/jvm/internal/impl/types/TypeConstructor;Ljava/util/List;ZLkotlin/reflect/jvm/internal/impl/types/checker/KotlinTypeRefiner;I)Lkotlin/reflect/jvm/internal/impl/types/SimpleType;
-
-    move-result-object v5
-
-    invoke-direct {v13, v5, v4}, Lkotlin/reflect/jvm/internal/KTypeImpl;-><init>(Lkotlin/reflect/jvm/internal/impl/types/KotlinType;Lkotlin/jvm/functions/Function0;)V
-
-    invoke-static {v3, v13}, Lkotlin/jvm/internal/Intrinsics;->areEqual(Ljava/lang/Object;Ljava/lang/Object;)Z
-
-    move-result v3
-
-    if-eqz v3, :cond_11
-
-    move v2, v1
-
-    goto :goto_7
-
-    :cond_f
-    new-instance p0, Ljava/lang/IllegalArgumentException;
-
-    const-string p1, "Class declares "
-
-    invoke-static {p1}, Landroid/support/v4/media/RatingCompat$$ExternalSyntheticOutline0;->m(Ljava/lang/String;)Ljava/lang/StringBuilder;
-
-    move-result-object p1
-
-    invoke-interface {v5}, Ljava/util/List;->size()I
-
-    move-result v0
-
-    invoke-virtual {p1, v0}, Ljava/lang/StringBuilder;->append(I)Ljava/lang/StringBuilder;
-
-    const-string v0, " type parameters, but "
-
-    invoke-virtual {p1, v0}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
-
-    invoke-virtual {p1, v2}, Ljava/lang/StringBuilder;->append(I)Ljava/lang/StringBuilder;
-
-    const-string v0, " were provided."
-
-    invoke-virtual {p1, v0}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
-
-    invoke-virtual {p1}, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
-
-    move-result-object p1
-
-    invoke-direct {p0, p1}, Ljava/lang/IllegalArgumentException;-><init>(Ljava/lang/String;)V
-
-    throw p0
-
-    :cond_10
-    new-instance p0, Lkotlin/reflect/jvm/internal/KotlinReflectionInternalError;
-
-    new-instance p1, Ljava/lang/StringBuilder;
-
-    invoke-direct {p1}, Ljava/lang/StringBuilder;-><init>()V
-
-    const-string v0, "Cannot create type for an unsupported classifier: "
-
-    invoke-virtual {p1, v0}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
-
-    invoke-virtual {p1, v5}, Ljava/lang/StringBuilder;->append(Ljava/lang/Object;)Ljava/lang/StringBuilder;
-
-    const-string v0, " ("
-
-    invoke-virtual {p1, v0}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
-
-    invoke-virtual {v5}, Ljava/lang/Object;->getClass()Ljava/lang/Class;
+    invoke-virtual {p0, v0, v1}, Lcom/fasterxml/jackson/module/kotlin/KotlinAnnotationIntrospector;->requiredAnnotationOrNullability(Ljava/lang/Boolean;Ljava/lang/Boolean;)Ljava/lang/Boolean;
 
     move-result-object v0
 
-    invoke-virtual {p1, v0}, Ljava/lang/StringBuilder;->append(Ljava/lang/Object;)Ljava/lang/StringBuilder;
+    goto :goto_2
 
-    const/16 v0, 0x29
+    :cond_4
+    move-object v0, v3
 
-    invoke-virtual {p1, v0}, Ljava/lang/StringBuilder;->append(C)Ljava/lang/StringBuilder;
+    :goto_2
+    if-nez v0, :cond_a
 
-    invoke-virtual {p1}, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
+    iget-object p1, p1, Lcom/fasterxml/jackson/databind/introspect/AnnotatedMethod;->_method:Ljava/lang/reflect/Method;
+
+    invoke-static {p1, v2}, Lkotlin/jvm/internal/Intrinsics;->checkNotNullExpressionValue(Ljava/lang/Object;Ljava/lang/String;)V
+
+    invoke-static {p1}, Lkotlin/reflect/jvm/ReflectJvmMapping;->getKotlinFunction(Ljava/lang/reflect/Method;)Lkotlin/reflect/KFunction;
+
+    move-result-object v0
+
+    if-nez v0, :cond_5
+
+    goto :goto_4
+
+    :cond_5
+    invoke-virtual {p0, p1}, Lcom/fasterxml/jackson/module/kotlin/KotlinAnnotationIntrospector;->isRequiredByAnnotation(Ljava/lang/reflect/Method;)Ljava/lang/Boolean;
 
     move-result-object p1
 
-    invoke-direct {p0, p1}, Lkotlin/reflect/jvm/internal/KotlinReflectionInternalError;-><init>(Ljava/lang/String;)V
+    invoke-interface {v0}, Lkotlin/reflect/KCallable;->getParameters()Ljava/util/List;
 
-    throw p0
+    move-result-object v1
 
-    :cond_11
-    :goto_7
-    if-eqz v2, :cond_12
+    invoke-interface {v1}, Ljava/util/List;->size()I
 
-    invoke-virtual {p0, p1, v1}, Lcom/fasterxml/jackson/module/kotlin/KotlinAnnotationIntrospector;->isParameterRequired(Lkotlin/reflect/KFunction;I)Z
+    move-result v1
 
-    move-result p1
+    const/4 v2, 0x0
 
-    invoke-static {p1}, Ljava/lang/Boolean;->valueOf(Z)Ljava/lang/Boolean;
+    const/4 v4, 0x1
 
-    move-result-object p1
+    if-ne v1, v4, :cond_6
 
-    invoke-virtual {p0, v0, p1}, Lcom/fasterxml/jackson/module/kotlin/KotlinAnnotationIntrospector;->requiredAnnotationOrNullability(Ljava/lang/Boolean;Ljava/lang/Boolean;)Ljava/lang/Boolean;
+    move v1, v4
 
-    move-result-object v4
+    goto :goto_3
 
-    :cond_12
-    :goto_8
-    return-object v4
+    :cond_6
+    move v1, v2
+
+    :goto_3
+    if-eqz v1, :cond_7
+
+    invoke-interface {v0}, Lkotlin/reflect/KCallable;->getReturnType()Lkotlin/reflect/KType;
+
+    move-result-object v0
+
+    invoke-virtual {p0, v0}, Lcom/fasterxml/jackson/module/kotlin/KotlinAnnotationIntrospector;->isRequired(Lkotlin/reflect/KType;)Z
+
+    move-result v0
+
+    invoke-static {v0}, Ljava/lang/Boolean;->valueOf(Z)Ljava/lang/Boolean;
+
+    move-result-object v0
+
+    invoke-virtual {p0, p1, v0}, Lcom/fasterxml/jackson/module/kotlin/KotlinAnnotationIntrospector;->requiredAnnotationOrNullability(Ljava/lang/Boolean;Ljava/lang/Boolean;)Ljava/lang/Boolean;
+
+    move-result-object v3
+
+    goto :goto_4
+
+    :cond_7
+    invoke-interface {v0}, Lkotlin/reflect/KCallable;->getParameters()Ljava/util/List;
+
+    move-result-object v1
+
+    invoke-interface {v1}, Ljava/util/List;->size()I
+
+    move-result v1
+
+    const/4 v5, 0x2
+
+    if-ne v1, v5, :cond_8
+
+    invoke-interface {v0}, Lkotlin/reflect/KCallable;->getReturnType()Lkotlin/reflect/KType;
+
+    move-result-object v1
+
+    sget-object v5, Lcom/fasterxml/jackson/module/kotlin/KotlinAnnotationIntrospector;->UNIT_TYPE:Lkotlin/reflect/KType;
+
+    invoke-static {v1, v5}, Lkotlin/jvm/internal/Intrinsics;->areEqual(Ljava/lang/Object;Ljava/lang/Object;)Z
+
+    move-result v1
+
+    if-eqz v1, :cond_8
+
+    move v2, v4
+
+    :cond_8
+    if-eqz v2, :cond_9
+
+    invoke-virtual {p0, v0, v4}, Lcom/fasterxml/jackson/module/kotlin/KotlinAnnotationIntrospector;->isParameterRequired(Lkotlin/reflect/KFunction;I)Z
+
+    move-result v0
+
+    invoke-static {v0}, Ljava/lang/Boolean;->valueOf(Z)Ljava/lang/Boolean;
+
+    move-result-object v0
+
+    invoke-virtual {p0, p1, v0}, Lcom/fasterxml/jackson/module/kotlin/KotlinAnnotationIntrospector;->requiredAnnotationOrNullability(Ljava/lang/Boolean;Ljava/lang/Boolean;)Ljava/lang/Boolean;
+
+    move-result-object v3
+
+    :cond_9
+    :goto_4
+    move-object v0, v3
+
+    :cond_a
+    return-object v0
 .end method
 
 .method public static final access$hasRequiredMarker(Lcom/fasterxml/jackson/module/kotlin/KotlinAnnotationIntrospector;Lcom/fasterxml/jackson/databind/introspect/AnnotatedParameter;)Ljava/lang/Boolean;
-    .locals 4
+    .locals 5
 
     invoke-static {p0}, Ljava/util/Objects;->requireNonNull(Ljava/lang/Object;)Ljava/lang/Object;
 
@@ -810,26 +426,21 @@
 
     const-class v1, Lcom/fasterxml/jackson/annotation/JsonProperty;
 
-    iget-object v2, p1, Lcom/fasterxml/jackson/databind/introspect/AnnotatedMember;->_annotations:Lokhttp3/ConnectionPool;
+    invoke-virtual {p1, v1}, Lcom/fasterxml/jackson/databind/introspect/AnnotatedMember;->getAnnotation(Ljava/lang/Class;)Ljava/lang/annotation/Annotation;
 
-    const/4 v3, 0x0
+    move-result-object v1
 
-    if-nez v2, :cond_0
+    check-cast v1, Lcom/fasterxml/jackson/annotation/JsonProperty;
 
-    move-object v1, v3
+    const/4 v2, 0x0
+
+    if-nez v1, :cond_0
+
+    move-object v1, v2
 
     goto :goto_0
 
     :cond_0
-    invoke-virtual {v2, v1}, Lokhttp3/ConnectionPool;->get(Ljava/lang/Class;)Ljava/lang/annotation/Annotation;
-
-    move-result-object v1
-
-    :goto_0
-    check-cast v1, Lcom/fasterxml/jackson/annotation/JsonProperty;
-
-    if-eqz v1, :cond_1
-
     invoke-interface {v1}, Lcom/fasterxml/jackson/annotation/JsonProperty;->required()Z
 
     move-result v1
@@ -838,15 +449,14 @@
 
     move-result-object v1
 
-    goto :goto_1
+    :goto_0
+    instance-of v3, v0, Ljava/lang/reflect/Constructor;
 
-    :cond_1
-    move-object v1, v3
+    const-string v4, "member"
 
-    :goto_1
-    instance-of v2, v0, Ljava/lang/reflect/Constructor;
+    if-eqz v3, :cond_2
 
-    if-eqz v2, :cond_2
+    invoke-static {v0, v4}, Lkotlin/jvm/internal/Intrinsics;->checkNotNullExpressionValue(Ljava/lang/Object;Ljava/lang/String;)V
 
     check-cast v0, Ljava/lang/reflect/Constructor;
 
@@ -854,8 +464,11 @@
 
     move-result-object v0
 
-    if-eqz v0, :cond_3
+    if-nez v0, :cond_1
 
+    goto :goto_1
+
+    :cond_1
     iget p1, p1, Lcom/fasterxml/jackson/databind/introspect/AnnotatedParameter;->_index:I
 
     invoke-virtual {p0, v0, p1}, Lcom/fasterxml/jackson/module/kotlin/KotlinAnnotationIntrospector;->isParameterRequired(Lkotlin/reflect/KFunction;I)Z
@@ -864,14 +477,16 @@
 
     invoke-static {p1}, Ljava/lang/Boolean;->valueOf(Z)Ljava/lang/Boolean;
 
-    move-result-object v3
+    move-result-object v2
 
-    goto :goto_2
+    goto :goto_1
 
     :cond_2
-    instance-of v2, v0, Ljava/lang/reflect/Method;
+    instance-of v3, v0, Ljava/lang/reflect/Method;
 
-    if-eqz v2, :cond_3
+    if-eqz v3, :cond_4
+
+    invoke-static {v0, v4}, Lkotlin/jvm/internal/Intrinsics;->checkNotNullExpressionValue(Ljava/lang/Object;Ljava/lang/String;)V
 
     check-cast v0, Ljava/lang/reflect/Method;
 
@@ -879,8 +494,11 @@
 
     move-result-object v0
 
-    if-eqz v0, :cond_3
+    if-nez v0, :cond_3
 
+    goto :goto_1
+
+    :cond_3
     iget p1, p1, Lcom/fasterxml/jackson/databind/introspect/AnnotatedParameter;->_index:I
 
     add-int/lit8 p1, p1, 0x1
@@ -891,11 +509,11 @@
 
     invoke-static {p1}, Ljava/lang/Boolean;->valueOf(Z)Ljava/lang/Boolean;
 
-    move-result-object v3
+    move-result-object v2
 
-    :cond_3
-    :goto_2
-    invoke-virtual {p0, v1, v3}, Lcom/fasterxml/jackson/module/kotlin/KotlinAnnotationIntrospector;->requiredAnnotationOrNullability(Ljava/lang/Boolean;Ljava/lang/Boolean;)Ljava/lang/Boolean;
+    :cond_4
+    :goto_1
+    invoke-virtual {p0, v1, v2}, Lcom/fasterxml/jackson/module/kotlin/KotlinAnnotationIntrospector;->requiredAnnotationOrNullability(Ljava/lang/Boolean;Ljava/lang/Boolean;)Ljava/lang/Boolean;
 
     move-result-object p0
 
@@ -904,14 +522,14 @@
 
 
 # virtual methods
-.method public findCreatorAnnotation(Lcom/fasterxml/jackson/databind/cfg/MapperConfig;Lcom/fasterxml/jackson/databind/introspect/Annotated;)Lcom/fasterxml/jackson/annotation/JsonCreator$Mode;
+.method public findCreatorAnnotation(Lcom/fasterxml/jackson/databind/cfg/MapperConfig;Lorg/joda/time/Chronology;)Lcom/fasterxml/jackson/annotation/JsonCreator$Mode;
     .locals 1
     .annotation system Ldalvik/annotation/Signature;
         value = {
             "(",
             "Lcom/fasterxml/jackson/databind/cfg/MapperConfig<",
             "*>;",
-            "Lcom/fasterxml/jackson/databind/introspect/Annotated;",
+            "Lorg/joda/time/Chronology;",
             ")",
             "Lcom/fasterxml/jackson/annotation/JsonCreator$Mode;"
         }
@@ -925,19 +543,19 @@
 
     invoke-static {p2, v0}, Lkotlin/jvm/internal/Intrinsics;->checkNotNullParameter(Ljava/lang/Object;Ljava/lang/String;)V
 
-    invoke-super {p0, p1, p2}, Lcom/fasterxml/jackson/databind/AnnotationIntrospector;->findCreatorAnnotation(Lcom/fasterxml/jackson/databind/cfg/MapperConfig;Lcom/fasterxml/jackson/databind/introspect/Annotated;)Lcom/fasterxml/jackson/annotation/JsonCreator$Mode;
+    invoke-super {p0, p1, p2}, Lcom/fasterxml/jackson/databind/AnnotationIntrospector;->findCreatorAnnotation(Lcom/fasterxml/jackson/databind/cfg/MapperConfig;Lorg/joda/time/Chronology;)Lcom/fasterxml/jackson/annotation/JsonCreator$Mode;
 
     move-result-object p1
 
     return-object p1
 .end method
 
-.method public findSubtypes(Lcom/fasterxml/jackson/databind/introspect/Annotated;)Ljava/util/List;
+.method public findSubtypes(Lorg/joda/time/Chronology;)Ljava/util/List;
     .locals 4
     .annotation system Ldalvik/annotation/Signature;
         value = {
             "(",
-            "Lcom/fasterxml/jackson/databind/introspect/Annotated;",
+            "Lorg/joda/time/Chronology;",
             ")",
             "Ljava/util/List<",
             "Lcom/fasterxml/jackson/databind/jsontype/NamedType;",
@@ -949,11 +567,11 @@
 
     invoke-static {p1, v0}, Lkotlin/jvm/internal/Intrinsics;->checkNotNullParameter(Ljava/lang/Object;Ljava/lang/String;)V
 
-    invoke-virtual {p1}, Lcom/fasterxml/jackson/databind/introspect/Annotated;->getRawType()Ljava/lang/Class;
+    invoke-virtual {p1}, Lorg/joda/time/Chronology;->getRawType()Ljava/lang/Class;
 
     move-result-object p1
 
-    const-string v0, "rawType"
+    const-string v0, "it"
 
     invoke-static {p1, v0}, Lkotlin/jvm/internal/Intrinsics;->checkNotNullExpressionValue(Ljava/lang/Object;Ljava/lang/String;)V
 
@@ -963,17 +581,22 @@
 
     const/4 v1, 0x0
 
-    if-eqz v0, :cond_1
+    if-eqz v0, :cond_0
 
+    goto :goto_0
+
+    :cond_0
+    move-object p1, v1
+
+    :goto_0
+    if-nez p1, :cond_1
+
+    goto :goto_2
+
+    :cond_1
     invoke-static {p1}, Lkotlin/jvm/JvmClassMappingKt;->getKotlinClass(Ljava/lang/Class;)Lkotlin/reflect/KClass;
 
     move-result-object p1
-
-    invoke-interface {p1}, Lkotlin/reflect/KClass;->isSealed()Z
-
-    move-result v0
-
-    if-eqz v0, :cond_1
 
     invoke-interface {p1}, Lkotlin/reflect/KClass;->getSealedSubclasses()Ljava/util/List;
 
@@ -993,12 +616,12 @@
 
     move-result-object p1
 
-    :goto_0
+    :goto_1
     invoke-interface {p1}, Ljava/util/Iterator;->hasNext()Z
 
     move-result v2
 
-    if-eqz v2, :cond_0
+    if-eqz v2, :cond_2
 
     invoke-interface {p1}, Ljava/util/Iterator;->next()Ljava/lang/Object;
 
@@ -1016,16 +639,25 @@
 
     invoke-interface {v0, v3}, Ljava/util/Collection;->add(Ljava/lang/Object;)Z
 
-    goto :goto_0
+    goto :goto_1
 
-    :cond_0
+    :cond_2
     invoke-static {v0}, Lkotlin/collections/CollectionsKt___CollectionsKt;->toMutableList(Ljava/util/Collection;)Ljava/util/List;
 
     move-result-object p1
 
-    return-object p1
+    invoke-interface {p1}, Ljava/util/Collection;->isEmpty()Z
 
-    :cond_1
+    move-result v0
+
+    if-eqz v0, :cond_3
+
+    goto :goto_2
+
+    :cond_3
+    move-object v1, p1
+
+    :goto_2
     return-object v1
 .end method
 
@@ -1044,14 +676,6 @@
 
     invoke-static {v0}, Ljava/util/Objects;->requireNonNull(Ljava/lang/Object;)Ljava/lang/Object;
 
-    const-string v2, "key"
-
-    invoke-static {p1, v2}, Lkotlin/jvm/internal/Intrinsics;->checkNotNullParameter(Ljava/lang/Object;Ljava/lang/String;)V
-
-    const-string v2, "calc"
-
-    invoke-static {v1, v2}, Lkotlin/jvm/internal/Intrinsics;->checkNotNullParameter(Ljava/lang/Object;Ljava/lang/String;)V
-
     iget-object v2, v0, Lcom/fasterxml/jackson/module/kotlin/ReflectionCache;->javaMemberIsRequired:Lcom/fasterxml/jackson/databind/util/LRUMap;
 
     iget-object v2, v2, Lcom/fasterxml/jackson/databind/util/LRUMap;->_map:Lj$/util/concurrent/ConcurrentHashMap;
@@ -1062,15 +686,18 @@
 
     check-cast v2, Lcom/fasterxml/jackson/module/kotlin/ReflectionCache$BooleanTriState;
 
-    if-eqz v2, :cond_0
+    if-nez v2, :cond_0
 
-    iget-object v2, v2, Lcom/fasterxml/jackson/module/kotlin/ReflectionCache$BooleanTriState;->value:Ljava/lang/Boolean;
+    const/4 v2, 0x0
 
-    if-eqz v2, :cond_0
-
-    goto :goto_1
+    goto :goto_0
 
     :cond_0
+    iget-object v2, v2, Lcom/fasterxml/jackson/module/kotlin/ReflectionCache$BooleanTriState;->value:Ljava/lang/Boolean;
+
+    :goto_0
+    if-nez v2, :cond_6
+
     invoke-interface {v1, p1}, Lkotlin/jvm/functions/Function1;->invoke(Ljava/lang/Object;)Ljava/lang/Object;
 
     move-result-object v1
@@ -1085,11 +712,11 @@
 
     if-nez v2, :cond_1
 
-    sget-object v1, Lcom/fasterxml/jackson/module/kotlin/ReflectionCache$BooleanTriState;->TRUE:Lcom/fasterxml/jackson/module/kotlin/ReflectionCache$BooleanTriState$True;
+    sget-object v1, Lcom/fasterxml/jackson/module/kotlin/ReflectionCache$BooleanTriState;->Companion:Lcom/fasterxml/jackson/module/kotlin/ReflectionCache$BooleanTriState;
 
     sget-object v1, Lcom/fasterxml/jackson/module/kotlin/ReflectionCache$BooleanTriState;->EMPTY:Lcom/fasterxml/jackson/module/kotlin/ReflectionCache$BooleanTriState$Empty;
 
-    goto :goto_0
+    goto :goto_1
 
     :cond_1
     sget-object v1, Ljava/lang/Boolean;->TRUE:Ljava/lang/Boolean;
@@ -1100,11 +727,11 @@
 
     if-eqz v1, :cond_2
 
-    sget-object v1, Lcom/fasterxml/jackson/module/kotlin/ReflectionCache$BooleanTriState;->TRUE:Lcom/fasterxml/jackson/module/kotlin/ReflectionCache$BooleanTriState$True;
+    sget-object v1, Lcom/fasterxml/jackson/module/kotlin/ReflectionCache$BooleanTriState;->Companion:Lcom/fasterxml/jackson/module/kotlin/ReflectionCache$BooleanTriState;
 
     sget-object v1, Lcom/fasterxml/jackson/module/kotlin/ReflectionCache$BooleanTriState;->TRUE:Lcom/fasterxml/jackson/module/kotlin/ReflectionCache$BooleanTriState$True;
 
-    goto :goto_0
+    goto :goto_1
 
     :cond_2
     sget-object v1, Ljava/lang/Boolean;->FALSE:Ljava/lang/Boolean;
@@ -1113,37 +740,45 @@
 
     move-result v1
 
-    if-eqz v1, :cond_4
+    if-eqz v1, :cond_5
 
-    sget-object v1, Lcom/fasterxml/jackson/module/kotlin/ReflectionCache$BooleanTriState;->TRUE:Lcom/fasterxml/jackson/module/kotlin/ReflectionCache$BooleanTriState$True;
+    sget-object v1, Lcom/fasterxml/jackson/module/kotlin/ReflectionCache$BooleanTriState;->Companion:Lcom/fasterxml/jackson/module/kotlin/ReflectionCache$BooleanTriState;
 
     sget-object v1, Lcom/fasterxml/jackson/module/kotlin/ReflectionCache$BooleanTriState;->FALSE:Lcom/fasterxml/jackson/module/kotlin/ReflectionCache$BooleanTriState$False;
 
-    :goto_0
+    :goto_1
     invoke-virtual {v0, p1, v1}, Lcom/fasterxml/jackson/databind/util/LRUMap;->putIfAbsent(Ljava/lang/Object;Ljava/lang/Object;)Ljava/lang/Object;
 
     move-result-object p1
 
     check-cast p1, Lcom/fasterxml/jackson/module/kotlin/ReflectionCache$BooleanTriState;
 
-    if-eqz p1, :cond_3
+    if-nez p1, :cond_3
 
-    iget-object p1, p1, Lcom/fasterxml/jackson/module/kotlin/ReflectionCache$BooleanTriState;->value:Ljava/lang/Boolean;
-
-    if-eqz p1, :cond_3
-
-    move-object v2, p1
+    goto :goto_2
 
     :cond_3
-    :goto_1
-    return-object v2
+    iget-object p1, p1, Lcom/fasterxml/jackson/module/kotlin/ReflectionCache$BooleanTriState;->value:Ljava/lang/Boolean;
+
+    if-nez p1, :cond_4
+
+    goto :goto_2
 
     :cond_4
+    move-object v2, p1
+
+    goto :goto_2
+
+    :cond_5
     new-instance p1, Lkotlin/NoWhenBranchMatchedException;
 
     invoke-direct {p1}, Lkotlin/NoWhenBranchMatchedException;-><init>()V
 
     throw p1
+
+    :cond_6
+    :goto_2
+    return-object v2
 .end method
 
 .method public final isParameterRequired(Lkotlin/reflect/KFunction;I)Z
@@ -1292,15 +927,21 @@
     :goto_1
     instance-of p1, v3, Lcom/fasterxml/jackson/annotation/JsonProperty;
 
-    if-nez p1, :cond_2
+    if-eqz p1, :cond_2
 
-    move-object v3, v2
-
-    :cond_2
     check-cast v3, Lcom/fasterxml/jackson/annotation/JsonProperty;
 
-    if-eqz v3, :cond_3
+    goto :goto_2
 
+    :cond_2
+    move-object v3, v2
+
+    :goto_2
+    if-nez v3, :cond_3
+
+    goto :goto_3
+
+    :cond_3
     invoke-interface {v3}, Lcom/fasterxml/jackson/annotation/JsonProperty;->required()Z
 
     move-result p1
@@ -1309,7 +950,7 @@
 
     move-result-object v2
 
-    :cond_3
+    :goto_3
     return-object v2
 .end method
 

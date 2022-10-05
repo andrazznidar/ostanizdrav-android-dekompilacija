@@ -12,9 +12,7 @@
 .field public final __insertionAdapterOfTraceTimeIntervalMatchEntity:Landroidx/room/EntityInsertionAdapter;
     .annotation system Ldalvik/annotation/Signature;
         value = {
-            "Landroidx/room/EntityInsertionAdapter<",
-            "Lde/rki/coronawarnapp/presencetracing/risk/storage/TraceTimeIntervalMatchEntity;",
-            ">;"
+            "Landroidx/room/EntityInsertionAdapter;"
         }
     .end annotation
 .end field

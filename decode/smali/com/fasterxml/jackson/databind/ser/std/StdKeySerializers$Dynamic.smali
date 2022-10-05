@@ -94,7 +94,7 @@
 
     const/4 v4, 0x0
 
-    invoke-virtual {v2, v4, v0, v3}, Lcom/fasterxml/jackson/databind/type/TypeFactory;->_fromAny(Landroidx/fragment/app/FragmentStore;Ljava/lang/reflect/Type;Lcom/fasterxml/jackson/databind/type/TypeBindings;)Lcom/fasterxml/jackson/databind/JavaType;
+    invoke-virtual {v2, v4, v0, v3}, Lcom/fasterxml/jackson/databind/type/TypeFactory;->_fromAny(Lcom/fasterxml/jackson/databind/type/ClassStack;Ljava/lang/reflect/Type;Lcom/fasterxml/jackson/databind/type/TypeBindings;)Lcom/fasterxml/jackson/databind/JavaType;
 
     move-result-object v2
 

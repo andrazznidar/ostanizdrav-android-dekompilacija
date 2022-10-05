@@ -1,4 +1,4 @@
-.class public final Lkotlin/reflect/jvm/internal/calls/AnnotationConstructorCallerKt$createAnnotationInstance$toString$2$1$1;
+.class final Lkotlin/reflect/jvm/internal/calls/AnnotationConstructorCallerKt$createAnnotationInstance$toString$2$1$1;
 .super Lkotlin/jvm/internal/Lambda;
 .source "AnnotationConstructorCaller.kt"
 
@@ -7,6 +7,15 @@
 
 
 # annotations
+.annotation system Ldalvik/annotation/EnclosingMethod;
+    value = Lkotlin/reflect/jvm/internal/calls/AnnotationConstructorCallerKt$createAnnotationInstance$toString$2;->invoke()Ljava/lang/String;
+.end annotation
+
+.annotation system Ldalvik/annotation/InnerClass;
+    accessFlags = 0x19
+    name = null
+.end annotation
+
 .annotation system Ldalvik/annotation/Signature;
     value = {
         "Lkotlin/jvm/internal/Lambda;",
@@ -19,6 +28,28 @@
         ">;",
         "Ljava/lang/CharSequence;",
         ">;"
+    }
+.end annotation
+
+.annotation runtime Lkotlin/Metadata;
+    d1 = {
+        "\u0000\u0018\n\u0000\n\u0002\u0010\r\n\u0000\n\u0002\u0010\u0000\n\u0000\n\u0002\u0010&\n\u0002\u0010\u000e\n\u0000\u0010\u0000\u001a\u00020\u0001\"\u0008\u0008\u0000\u0010\u0002*\u00020\u00032\u0012\u0010\u0004\u001a\u000e\u0012\u0004\u0012\u00020\u0006\u0012\u0004\u0012\u00020\u00030\u0005H\n\u00a2\u0006\u0002\u0008\u0007"
+    }
+    d2 = {
+        "<anonymous>",
+        "",
+        "T",
+        "",
+        "entry",
+        "",
+        "",
+        "invoke"
+    }
+    k = 0x3
+    mv = {
+        0x1,
+        0x5,
+        0x1
     }
 .end annotation
 
@@ -52,10 +83,19 @@
 
 
 # virtual methods
-.method public invoke(Ljava/lang/Object;)Ljava/lang/Object;
+.method public final invoke(Ljava/util/Map$Entry;)Ljava/lang/CharSequence;
     .locals 2
-
-    check-cast p1, Ljava/util/Map$Entry;
+    .annotation system Ldalvik/annotation/Signature;
+        value = {
+            "(",
+            "Ljava/util/Map$Entry<",
+            "Ljava/lang/String;",
+            "+",
+            "Ljava/lang/Object;",
+            ">;)",
+            "Ljava/lang/CharSequence;"
+        }
+    .end annotation
 
     const-string v0, "entry"
 
@@ -206,6 +246,18 @@
     invoke-virtual {v1, p1}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
 
     invoke-virtual {v1}, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
+
+    move-result-object p1
+
+    return-object p1
+.end method
+
+.method public bridge synthetic invoke(Ljava/lang/Object;)Ljava/lang/Object;
+    .locals 0
+
+    check-cast p1, Ljava/util/Map$Entry;
+
+    invoke-virtual {p0, p1}, Lkotlin/reflect/jvm/internal/calls/AnnotationConstructorCallerKt$createAnnotationInstance$toString$2$1$1;->invoke(Ljava/util/Map$Entry;)Ljava/lang/CharSequence;
 
     move-result-object p1
 

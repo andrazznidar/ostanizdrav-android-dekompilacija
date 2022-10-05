@@ -32,7 +32,7 @@
 .end annotation
 
 .annotation system Ldalvik/annotation/SourceDebugExtension;
-    value = "SMAP\nCovidTestCertificatePendingCard.kt\nKotlin\n*S Kotlin\n*F\n+ 1 CovidTestCertificatePendingCard.kt\nde/rki/coronawarnapp/covidcertificate/person/ui/overview/items/CovidTestCertificatePendingCard$onBindData$1\n+ 2 _Collections.kt\nkotlin/collections/CollectionsKt___CollectionsKt\n+ 3 View.kt\nandroidx/core/view/ViewKt\n*L\n1#1,67:1\n798#2,11:68\n296#3,2:79\n275#3,2:81\n275#3,2:83\n296#3,2:85\n275#3,2:87\n275#3,2:89\n*S KotlinDebug\n*F\n+ 1 CovidTestCertificatePendingCard.kt\nde/rki/coronawarnapp/covidcertificate/person/ui/overview/items/CovidTestCertificatePendingCard$onBindData$1\n*L\n29#1:68,11\n43#1:79,2\n45#1:81,2\n46#1:83,2\n49#1:85,2\n51#1:87,2\n52#1:89,2\n*E\n"
+    value = "SMAP\nCovidTestCertificatePendingCard.kt\nKotlin\n*S Kotlin\n*F\n+ 1 CovidTestCertificatePendingCard.kt\nde/rki/coronawarnapp/covidcertificate/person/ui/overview/items/CovidTestCertificatePendingCard$onBindData$1\n+ 2 _Collections.kt\nkotlin/collections/CollectionsKt___CollectionsKt\n+ 3 View.kt\nandroidx/core/view/ViewKt\n*L\n1#1,66:1\n798#2,11:67\n296#3,2:78\n275#3,2:80\n275#3,2:82\n296#3,2:84\n275#3,2:86\n275#3,2:88\n*S KotlinDebug\n*F\n+ 1 CovidTestCertificatePendingCard.kt\nde/rki/coronawarnapp/covidcertificate/person/ui/overview/items/CovidTestCertificatePendingCard$onBindData$1\n*L\n29#1:67,11\n43#1:78,2\n45#1:80,2\n46#1:82,2\n49#1:84,2\n51#1:86,2\n52#1:88,2\n*E\n"
 .end annotation
 
 
@@ -105,7 +105,7 @@
     goto :goto_0
 
     :cond_1
-    invoke-static {v0}, Lkotlin/collections/CollectionsKt___CollectionsKt;->singleOrNull(Ljava/util/List;)Ljava/lang/Object;
+    invoke-static {v0}, Lkotlin/collections/CollectionsKt___CollectionsKt;->lastOrNull(Ljava/util/List;)Ljava/lang/Object;
 
     move-result-object p3
 
@@ -140,7 +140,7 @@
 
     move-result-object v2
 
-    const v3, 0x7f13064b
+    const v3, 0x7f1305fa
 
     const/4 v4, 0x2
 
@@ -154,11 +154,11 @@
 
     aput-object v5, v4, v6
 
-    const/4 v5, 0x1
-
     invoke-static {v0}, Lde/rki/coronawarnapp/util/TimeAndDateExtensions;->toShortTimeFormat(Lorg/joda/time/DateTime;)Ljava/lang/String;
 
     move-result-object v0
+
+    const/4 v5, 0x1
 
     aput-object v0, v4, v5
 
@@ -170,9 +170,9 @@
 
     iget-object v0, p1, Lde/rki/coronawarnapp/databinding/CovidTestErrorCardBinding;->retryButton:Lcom/google/android/material/button/MaterialButton;
 
-    new-instance v1, Lde/rki/coronawarnapp/ui/information/InformationFragment$$ExternalSyntheticLambda4;
+    new-instance v1, Lde/rki/coronawarnapp/ui/submission/testresult/negative/SubmissionTestResultNegativeFragment$$ExternalSyntheticLambda0;
 
-    invoke-direct {v1, p2}, Lde/rki/coronawarnapp/ui/information/InformationFragment$$ExternalSyntheticLambda4;-><init>(Lde/rki/coronawarnapp/covidcertificate/person/ui/overview/items/CovidTestCertificatePendingCard$Item;)V
+    invoke-direct {v1, p2, v5}, Lde/rki/coronawarnapp/ui/submission/testresult/negative/SubmissionTestResultNegativeFragment$$ExternalSyntheticLambda0;-><init>(Ljava/lang/Object;I)V
 
     invoke-virtual {v0, v1}, Landroid/widget/Button;->setOnClickListener(Landroid/view/View$OnClickListener;)V
 
@@ -222,7 +222,7 @@
 
     move-result-object v0
 
-    const v1, 0x7f130642
+    const v1, 0x7f1305f1
 
     invoke-virtual {v0, v1}, Landroid/content/Context;->getString(I)Ljava/lang/String;
 
@@ -265,7 +265,7 @@
 
     move-result-object v0
 
-    const v1, 0x7f130641
+    const v1, 0x7f1305f0
 
     invoke-virtual {v0, v1}, Landroid/content/Context;->getString(I)Ljava/lang/String;
 
@@ -276,9 +276,9 @@
     :goto_1
     iget-object p1, p1, Lde/rki/coronawarnapp/databinding/CovidTestErrorCardBinding;->deleteButton:Landroid/widget/Button;
 
-    new-instance p3, Lde/rki/coronawarnapp/ui/information/InformationFragment$$ExternalSyntheticLambda3;
+    new-instance p3, Lde/rki/coronawarnapp/qrcode/ui/QrCodeScannerFragment$$ExternalSyntheticLambda17;
 
-    invoke-direct {p3, p2}, Lde/rki/coronawarnapp/ui/information/InformationFragment$$ExternalSyntheticLambda3;-><init>(Lde/rki/coronawarnapp/covidcertificate/person/ui/overview/items/CovidTestCertificatePendingCard$Item;)V
+    invoke-direct {p3, p2, v5}, Lde/rki/coronawarnapp/qrcode/ui/QrCodeScannerFragment$$ExternalSyntheticLambda17;-><init>(Ljava/lang/Object;I)V
 
     invoke-virtual {p1, p3}, Landroid/widget/Button;->setOnClickListener(Landroid/view/View$OnClickListener;)V
 

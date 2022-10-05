@@ -59,7 +59,7 @@
 
     const-string v5, "durationInSeconds: "
 
-    invoke-static {v5, v3, v4}, Landroidx/viewpager2/adapter/FragmentStateAdapter$$ExternalSyntheticOutline0;->m(Ljava/lang/String;J)Ljava/lang/String;
+    invoke-static {v5, v3, v4}, Landroidx/camera/core/impl/DeferrableSurfaces$$ExternalSyntheticOutline0;->m(Ljava/lang/String;J)Ljava/lang/String;
 
     move-result-object v5
 
@@ -75,7 +75,7 @@
 
     const-string v7, "durationInMinutes: "
 
-    invoke-static {v7, v5, v6}, Landroidx/viewpager2/adapter/FragmentStateAdapter$$ExternalSyntheticOutline0;->m(Ljava/lang/String;J)Ljava/lang/String;
+    invoke-static {v7, v5, v6}, Landroidx/camera/core/impl/DeferrableSurfaces$$ExternalSyntheticOutline0;->m(Ljava/lang/String;J)Ljava/lang/String;
 
     move-result-object v7
 
@@ -536,7 +536,7 @@
 
     const-string v0, "overlapWithStartInterval: "
 
-    invoke-static {v0, v11, v12}, Landroidx/viewpager2/adapter/FragmentStateAdapter$$ExternalSyntheticOutline0;->m(Ljava/lang/String;J)Ljava/lang/String;
+    invoke-static {v0, v11, v12}, Landroidx/camera/core/impl/DeferrableSurfaces$$ExternalSyntheticOutline0;->m(Ljava/lang/String;J)Ljava/lang/String;
 
     move-result-object v0
 
@@ -580,7 +580,7 @@
 
     const-string/jumbo v0, "targetDurationInSeconds:"
 
-    invoke-static {v0, v2, v3}, Landroidx/viewpager2/adapter/FragmentStateAdapter$$ExternalSyntheticOutline0;->m(Ljava/lang/String;J)Ljava/lang/String;
+    invoke-static {v0, v2, v3}, Landroidx/camera/core/impl/DeferrableSurfaces$$ExternalSyntheticOutline0;->m(Ljava/lang/String;J)Ljava/lang/String;
 
     move-result-object v0
 

@@ -14,8 +14,6 @@
         ">",
         "Ljava/util/AbstractList<",
         "TE;>;",
-        "Ljava/util/List<",
-        "TE;>;",
         "Lkotlin/jvm/internal/markers/KMutableList;"
     }
 .end annotation

@@ -55,7 +55,7 @@
 
     const/4 v3, 0x0
 
-    invoke-direct {v0, v2, v1, v3}, Lde/rki/coronawarnapp/util/di/DaggerApplicationComponent$TracingDetailsFragmentSubcomponentFactory;-><init>(Lde/rki/coronawarnapp/util/di/DaggerApplicationComponent;Lde/rki/coronawarnapp/util/di/DaggerApplicationComponent$MainActivitySubcomponentImpl;Lde/rki/coronawarnapp/util/di/DaggerApplicationComponent$TracingDetailsFragmentSubcomponentFactory-IA;)V
+    invoke-direct {v0, v2, v1, v3}, Lde/rki/coronawarnapp/util/di/DaggerApplicationComponent$TracingDetailsFragmentSubcomponentFactory;-><init>(Lde/rki/coronawarnapp/util/di/DaggerApplicationComponent;Lde/rki/coronawarnapp/util/di/DaggerApplicationComponent$MainActivitySubcomponentImpl;Lcoil/bitmap/SizeStrategy$$ExternalSyntheticOutline0;)V
 
     return-object v0
 .end method

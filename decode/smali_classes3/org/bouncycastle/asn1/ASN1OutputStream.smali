@@ -3,7 +3,7 @@
 
 
 # instance fields
-.field public os:Ljava/io/OutputStream;
+.field private os:Ljava/io/OutputStream;
 
 
 # direct methods
@@ -15,6 +15,16 @@
     iput-object p1, p0, Lorg/bouncycastle/asn1/ASN1OutputStream;->os:Ljava/io/OutputStream;
 
     return-void
+.end method
+
+.method public static create(Ljava/io/OutputStream;)Lorg/bouncycastle/asn1/ASN1OutputStream;
+    .locals 1
+
+    new-instance v0, Lorg/bouncycastle/asn1/ASN1OutputStream;
+
+    invoke-direct {v0, p0}, Lorg/bouncycastle/asn1/ASN1OutputStream;-><init>(Ljava/io/OutputStream;)V
+
+    return-object v0
 .end method
 
 .method public static create(Ljava/io/OutputStream;Ljava/lang/String;)Lorg/bouncycastle/asn1/ASN1OutputStream;
@@ -59,6 +69,47 @@
 
 
 # virtual methods
+.method public close()V
+    .locals 1
+    .annotation system Ldalvik/annotation/Throws;
+        value = {
+            Ljava/io/IOException;
+        }
+    .end annotation
+
+    iget-object v0, p0, Lorg/bouncycastle/asn1/ASN1OutputStream;->os:Ljava/io/OutputStream;
+
+    invoke-virtual {v0}, Ljava/io/OutputStream;->close()V
+
+    return-void
+.end method
+
+.method public flush()V
+    .locals 1
+    .annotation system Ldalvik/annotation/Throws;
+        value = {
+            Ljava/io/IOException;
+        }
+    .end annotation
+
+    iget-object v0, p0, Lorg/bouncycastle/asn1/ASN1OutputStream;->os:Ljava/io/OutputStream;
+
+    invoke-virtual {v0}, Ljava/io/OutputStream;->flush()V
+
+    return-void
+.end method
+
+.method public flushInternal()V
+    .locals 0
+    .annotation system Ldalvik/annotation/Throws;
+        value = {
+            Ljava/io/IOException;
+        }
+    .end annotation
+
+    return-void
+.end method
+
 .method public getDERSubStream()Lorg/bouncycastle/asn1/DEROutputStream;
     .locals 2
 
@@ -81,6 +132,36 @@
     invoke-direct {v0, v1}, Lorg/bouncycastle/asn1/DLOutputStream;-><init>(Ljava/io/OutputStream;)V
 
     return-object v0
+.end method
+
+.method public final write(I)V
+    .locals 1
+    .annotation system Ldalvik/annotation/Throws;
+        value = {
+            Ljava/io/IOException;
+        }
+    .end annotation
+
+    iget-object v0, p0, Lorg/bouncycastle/asn1/ASN1OutputStream;->os:Ljava/io/OutputStream;
+
+    invoke-virtual {v0, p1}, Ljava/io/OutputStream;->write(I)V
+
+    return-void
+.end method
+
+.method public final write([BII)V
+    .locals 1
+    .annotation system Ldalvik/annotation/Throws;
+        value = {
+            Ljava/io/IOException;
+        }
+    .end annotation
+
+    iget-object v0, p0, Lorg/bouncycastle/asn1/ASN1OutputStream;->os:Ljava/io/OutputStream;
+
+    invoke-virtual {v0, p1, p2, p3}, Ljava/io/OutputStream;->write([BII)V
+
+    return-void
 .end method
 
 .method public final writeElements(Ljava/util/Enumeration;)V
@@ -118,6 +199,61 @@
     return-void
 .end method
 
+.method public final writeElements([Lorg/bouncycastle/asn1/ASN1Encodable;)V
+    .locals 4
+    .annotation system Ldalvik/annotation/Throws;
+        value = {
+            Ljava/io/IOException;
+        }
+    .end annotation
+
+    array-length v0, p1
+
+    const/4 v1, 0x0
+
+    :goto_0
+    if-ge v1, v0, :cond_0
+
+    aget-object v2, p1, v1
+
+    invoke-interface {v2}, Lorg/bouncycastle/asn1/ASN1Encodable;->toASN1Primitive()Lorg/bouncycastle/asn1/ASN1Primitive;
+
+    move-result-object v2
+
+    const/4 v3, 0x1
+
+    invoke-virtual {p0, v2, v3}, Lorg/bouncycastle/asn1/ASN1OutputStream;->writePrimitive(Lorg/bouncycastle/asn1/ASN1Primitive;Z)V
+
+    add-int/lit8 v1, v1, 0x1
+
+    goto :goto_0
+
+    :cond_0
+    return-void
+.end method
+
+.method public final writeEncoded(ZIB)V
+    .locals 0
+    .annotation system Ldalvik/annotation/Throws;
+        value = {
+            Ljava/io/IOException;
+        }
+    .end annotation
+
+    if-eqz p1, :cond_0
+
+    invoke-virtual {p0, p2}, Lorg/bouncycastle/asn1/ASN1OutputStream;->write(I)V
+
+    :cond_0
+    const/4 p1, 0x1
+
+    invoke-virtual {p0, p1}, Lorg/bouncycastle/asn1/ASN1OutputStream;->writeLength(I)V
+
+    invoke-virtual {p0, p3}, Lorg/bouncycastle/asn1/ASN1OutputStream;->write(I)V
+
+    return-void
+.end method
+
 .method public final writeEncoded(ZIB[B)V
     .locals 0
     .annotation system Ldalvik/annotation/Throws;
@@ -128,9 +264,7 @@
 
     if-eqz p1, :cond_0
 
-    iget-object p1, p0, Lorg/bouncycastle/asn1/ASN1OutputStream;->os:Ljava/io/OutputStream;
-
-    invoke-virtual {p1, p2}, Ljava/io/OutputStream;->write(I)V
+    invoke-virtual {p0, p2}, Lorg/bouncycastle/asn1/ASN1OutputStream;->write(I)V
 
     :cond_0
     array-length p1, p4
@@ -139,17 +273,39 @@
 
     invoke-virtual {p0, p1}, Lorg/bouncycastle/asn1/ASN1OutputStream;->writeLength(I)V
 
-    iget-object p1, p0, Lorg/bouncycastle/asn1/ASN1OutputStream;->os:Ljava/io/OutputStream;
-
-    invoke-virtual {p1, p3}, Ljava/io/OutputStream;->write(I)V
+    invoke-virtual {p0, p3}, Lorg/bouncycastle/asn1/ASN1OutputStream;->write(I)V
 
     const/4 p1, 0x0
 
     array-length p2, p4
 
-    iget-object p3, p0, Lorg/bouncycastle/asn1/ASN1OutputStream;->os:Ljava/io/OutputStream;
+    invoke-virtual {p0, p4, p1, p2}, Lorg/bouncycastle/asn1/ASN1OutputStream;->write([BII)V
 
-    invoke-virtual {p3, p4, p1, p2}, Ljava/io/OutputStream;->write([BII)V
+    return-void
+.end method
+
+.method public final writeEncoded(ZIB[BIIB)V
+    .locals 0
+    .annotation system Ldalvik/annotation/Throws;
+        value = {
+            Ljava/io/IOException;
+        }
+    .end annotation
+
+    if-eqz p1, :cond_0
+
+    invoke-virtual {p0, p2}, Lorg/bouncycastle/asn1/ASN1OutputStream;->write(I)V
+
+    :cond_0
+    add-int/lit8 p1, p6, 0x2
+
+    invoke-virtual {p0, p1}, Lorg/bouncycastle/asn1/ASN1OutputStream;->writeLength(I)V
+
+    invoke-virtual {p0, p3}, Lorg/bouncycastle/asn1/ASN1OutputStream;->write(I)V
+
+    invoke-virtual {p0, p4, p5, p6}, Lorg/bouncycastle/asn1/ASN1OutputStream;->write([BII)V
+
+    invoke-virtual {p0, p7}, Lorg/bouncycastle/asn1/ASN1OutputStream;->write(I)V
 
     return-void
 .end method
@@ -170,17 +326,15 @@
 
     array-length p1, p4
 
-    iget-object p2, p0, Lorg/bouncycastle/asn1/ASN1OutputStream;->os:Ljava/io/OutputStream;
+    const/4 p2, 0x0
 
-    const/4 p3, 0x0
-
-    invoke-virtual {p2, p4, p3, p1}, Ljava/io/OutputStream;->write([BII)V
+    invoke-virtual {p0, p4, p2, p1}, Lorg/bouncycastle/asn1/ASN1OutputStream;->write([BII)V
 
     return-void
 .end method
 
 .method public final writeEncoded(ZI[B)V
-    .locals 1
+    .locals 0
     .annotation system Ldalvik/annotation/Throws;
         value = {
             Ljava/io/IOException;
@@ -189,9 +343,7 @@
 
     if-eqz p1, :cond_0
 
-    iget-object p1, p0, Lorg/bouncycastle/asn1/ASN1OutputStream;->os:Ljava/io/OutputStream;
-
-    invoke-virtual {p1, p2}, Ljava/io/OutputStream;->write(I)V
+    invoke-virtual {p0, p2}, Lorg/bouncycastle/asn1/ASN1OutputStream;->write(I)V
 
     :cond_0
     array-length p1, p3
@@ -202,9 +354,27 @@
 
     array-length p2, p3
 
-    iget-object v0, p0, Lorg/bouncycastle/asn1/ASN1OutputStream;->os:Ljava/io/OutputStream;
+    invoke-virtual {p0, p3, p1, p2}, Lorg/bouncycastle/asn1/ASN1OutputStream;->write([BII)V
 
-    invoke-virtual {v0, p3, p1, p2}, Ljava/io/OutputStream;->write([BII)V
+    return-void
+.end method
+
+.method public final writeEncoded(ZI[BII)V
+    .locals 0
+    .annotation system Ldalvik/annotation/Throws;
+        value = {
+            Ljava/io/IOException;
+        }
+    .end annotation
+
+    if-eqz p1, :cond_0
+
+    invoke-virtual {p0, p2}, Lorg/bouncycastle/asn1/ASN1OutputStream;->write(I)V
+
+    :cond_0
+    invoke-virtual {p0, p5}, Lorg/bouncycastle/asn1/ASN1OutputStream;->writeLength(I)V
+
+    invoke-virtual {p0, p3, p4, p5}, Lorg/bouncycastle/asn1/ASN1OutputStream;->write([BII)V
 
     return-void
 .end method
@@ -219,33 +389,25 @@
 
     invoke-virtual {p0, p1, p2, p3}, Lorg/bouncycastle/asn1/ASN1OutputStream;->writeTag(ZII)V
 
-    iget-object p1, p0, Lorg/bouncycastle/asn1/ASN1OutputStream;->os:Ljava/io/OutputStream;
+    const/16 p1, 0x80
 
-    const/16 p2, 0x80
-
-    invoke-virtual {p1, p2}, Ljava/io/OutputStream;->write(I)V
+    invoke-virtual {p0, p1}, Lorg/bouncycastle/asn1/ASN1OutputStream;->write(I)V
 
     array-length p1, p4
 
-    iget-object p2, p0, Lorg/bouncycastle/asn1/ASN1OutputStream;->os:Ljava/io/OutputStream;
+    const/4 p2, 0x0
 
-    const/4 p3, 0x0
+    invoke-virtual {p0, p4, p2, p1}, Lorg/bouncycastle/asn1/ASN1OutputStream;->write([BII)V
 
-    invoke-virtual {p2, p4, p3, p1}, Ljava/io/OutputStream;->write([BII)V
+    invoke-virtual {p0, p2}, Lorg/bouncycastle/asn1/ASN1OutputStream;->write(I)V
 
-    iget-object p1, p0, Lorg/bouncycastle/asn1/ASN1OutputStream;->os:Ljava/io/OutputStream;
-
-    invoke-virtual {p1, p3}, Ljava/io/OutputStream;->write(I)V
-
-    iget-object p1, p0, Lorg/bouncycastle/asn1/ASN1OutputStream;->os:Ljava/io/OutputStream;
-
-    invoke-virtual {p1, p3}, Ljava/io/OutputStream;->write(I)V
+    invoke-virtual {p0, p2}, Lorg/bouncycastle/asn1/ASN1OutputStream;->write(I)V
 
     return-void
 .end method
 
-.method public final writeEncodedIndef(ZI[Lorg/bouncycastle/asn1/ASN1Encodable;)V
-    .locals 3
+.method public final writeEncodedIndef(ZILjava/util/Enumeration;)V
+    .locals 0
     .annotation system Ldalvik/annotation/Throws;
         value = {
             Ljava/io/IOException;
@@ -254,54 +416,54 @@
 
     if-eqz p1, :cond_0
 
-    iget-object p1, p0, Lorg/bouncycastle/asn1/ASN1OutputStream;->os:Ljava/io/OutputStream;
-
-    invoke-virtual {p1, p2}, Ljava/io/OutputStream;->write(I)V
+    invoke-virtual {p0, p2}, Lorg/bouncycastle/asn1/ASN1OutputStream;->write(I)V
 
     :cond_0
     const/16 p1, 0x80
 
-    iget-object p2, p0, Lorg/bouncycastle/asn1/ASN1OutputStream;->os:Ljava/io/OutputStream;
+    invoke-virtual {p0, p1}, Lorg/bouncycastle/asn1/ASN1OutputStream;->write(I)V
 
-    invoke-virtual {p2, p1}, Ljava/io/OutputStream;->write(I)V
+    invoke-virtual {p0, p3}, Lorg/bouncycastle/asn1/ASN1OutputStream;->writeElements(Ljava/util/Enumeration;)V
 
-    array-length p1, p3
+    const/4 p1, 0x0
 
-    const/4 p2, 0x0
+    invoke-virtual {p0, p1}, Lorg/bouncycastle/asn1/ASN1OutputStream;->write(I)V
 
-    move v0, p2
+    invoke-virtual {p0, p1}, Lorg/bouncycastle/asn1/ASN1OutputStream;->write(I)V
 
-    :goto_0
-    if-ge v0, p1, :cond_1
+    return-void
+.end method
 
-    aget-object v1, p3, v0
+.method public final writeEncodedIndef(ZI[Lorg/bouncycastle/asn1/ASN1Encodable;)V
+    .locals 0
+    .annotation system Ldalvik/annotation/Throws;
+        value = {
+            Ljava/io/IOException;
+        }
+    .end annotation
 
-    invoke-interface {v1}, Lorg/bouncycastle/asn1/ASN1Encodable;->toASN1Primitive()Lorg/bouncycastle/asn1/ASN1Primitive;
+    if-eqz p1, :cond_0
 
-    move-result-object v1
+    invoke-virtual {p0, p2}, Lorg/bouncycastle/asn1/ASN1OutputStream;->write(I)V
 
-    const/4 v2, 0x1
+    :cond_0
+    const/16 p1, 0x80
 
-    invoke-virtual {p0, v1, v2}, Lorg/bouncycastle/asn1/ASN1OutputStream;->writePrimitive(Lorg/bouncycastle/asn1/ASN1Primitive;Z)V
+    invoke-virtual {p0, p1}, Lorg/bouncycastle/asn1/ASN1OutputStream;->write(I)V
 
-    add-int/lit8 v0, v0, 0x1
+    invoke-virtual {p0, p3}, Lorg/bouncycastle/asn1/ASN1OutputStream;->writeElements([Lorg/bouncycastle/asn1/ASN1Encodable;)V
 
-    goto :goto_0
+    const/4 p1, 0x0
 
-    :cond_1
-    iget-object p1, p0, Lorg/bouncycastle/asn1/ASN1OutputStream;->os:Ljava/io/OutputStream;
+    invoke-virtual {p0, p1}, Lorg/bouncycastle/asn1/ASN1OutputStream;->write(I)V
 
-    invoke-virtual {p1, p2}, Ljava/io/OutputStream;->write(I)V
-
-    iget-object p1, p0, Lorg/bouncycastle/asn1/ASN1OutputStream;->os:Ljava/io/OutputStream;
-
-    invoke-virtual {p1, p2}, Ljava/io/OutputStream;->write(I)V
+    invoke-virtual {p0, p1}, Lorg/bouncycastle/asn1/ASN1OutputStream;->write(I)V
 
     return-void
 .end method
 
 .method public final writeLength(I)V
-    .locals 4
+    .locals 3
     .annotation system Ldalvik/annotation/Throws;
         value = {
             Ljava/io/IOException;
@@ -332,9 +494,7 @@
 
     int-to-byte v1, v1
 
-    iget-object v3, p0, Lorg/bouncycastle/asn1/ASN1OutputStream;->os:Ljava/io/OutputStream;
-
-    invoke-virtual {v3, v1}, Ljava/io/OutputStream;->write(I)V
+    invoke-virtual {p0, v1}, Lorg/bouncycastle/asn1/ASN1OutputStream;->write(I)V
 
     sub-int/2addr v2, v0
 
@@ -347,9 +507,7 @@
 
     int-to-byte v0, v0
 
-    iget-object v1, p0, Lorg/bouncycastle/asn1/ASN1OutputStream;->os:Ljava/io/OutputStream;
-
-    invoke-virtual {v1, v0}, Ljava/io/OutputStream;->write(I)V
+    invoke-virtual {p0, v0}, Lorg/bouncycastle/asn1/ASN1OutputStream;->write(I)V
 
     add-int/lit8 v2, v2, -0x8
 
@@ -358,9 +516,7 @@
     :cond_1
     int-to-byte p1, p1
 
-    iget-object v0, p0, Lorg/bouncycastle/asn1/ASN1OutputStream;->os:Ljava/io/OutputStream;
-
-    invoke-virtual {v0, p1}, Ljava/io/OutputStream;->write(I)V
+    invoke-virtual {p0, p1}, Lorg/bouncycastle/asn1/ASN1OutputStream;->write(I)V
 
     :cond_2
     return-void
@@ -374,6 +530,8 @@
         }
     .end annotation
 
+    if-eqz p1, :cond_0
+
     invoke-interface {p1}, Lorg/bouncycastle/asn1/ASN1Encodable;->toASN1Primitive()Lorg/bouncycastle/asn1/ASN1Primitive;
 
     move-result-object p1
@@ -382,7 +540,46 @@
 
     invoke-virtual {p0, p1, v0}, Lorg/bouncycastle/asn1/ASN1OutputStream;->writePrimitive(Lorg/bouncycastle/asn1/ASN1Primitive;Z)V
 
+    invoke-virtual {p0}, Lorg/bouncycastle/asn1/ASN1OutputStream;->flushInternal()V
+
     return-void
+
+    :cond_0
+    new-instance p1, Ljava/io/IOException;
+
+    const-string v0, "null object detected"
+
+    invoke-direct {p1, v0}, Ljava/io/IOException;-><init>(Ljava/lang/String;)V
+
+    throw p1
+.end method
+
+.method public writeObject(Lorg/bouncycastle/asn1/ASN1Primitive;)V
+    .locals 1
+    .annotation system Ldalvik/annotation/Throws;
+        value = {
+            Ljava/io/IOException;
+        }
+    .end annotation
+
+    if-eqz p1, :cond_0
+
+    const/4 v0, 0x1
+
+    invoke-virtual {p0, p1, v0}, Lorg/bouncycastle/asn1/ASN1OutputStream;->writePrimitive(Lorg/bouncycastle/asn1/ASN1Primitive;Z)V
+
+    invoke-virtual {p0}, Lorg/bouncycastle/asn1/ASN1OutputStream;->flushInternal()V
+
+    return-void
+
+    :cond_0
+    new-instance p1, Ljava/io/IOException;
+
+    const-string v0, "null object detected"
+
+    invoke-direct {p1, v0}, Ljava/io/IOException;-><init>(Ljava/lang/String;)V
+
+    throw p1
 .end method
 
 .method public writePrimitive(Lorg/bouncycastle/asn1/ASN1Primitive;Z)V
@@ -417,26 +614,20 @@
 
     or-int p1, p2, p3
 
-    iget-object p2, p0, Lorg/bouncycastle/asn1/ASN1OutputStream;->os:Ljava/io/OutputStream;
-
-    invoke-virtual {p2, p1}, Ljava/io/OutputStream;->write(I)V
+    invoke-virtual {p0, p1}, Lorg/bouncycastle/asn1/ASN1OutputStream;->write(I)V
 
     goto :goto_0
 
     :cond_1
     or-int/2addr p1, p2
 
-    iget-object p2, p0, Lorg/bouncycastle/asn1/ASN1OutputStream;->os:Ljava/io/OutputStream;
-
-    invoke-virtual {p2, p1}, Ljava/io/OutputStream;->write(I)V
+    invoke-virtual {p0, p1}, Lorg/bouncycastle/asn1/ASN1OutputStream;->write(I)V
 
     const/16 p1, 0x80
 
     if-ge p3, p1, :cond_2
 
-    iget-object p1, p0, Lorg/bouncycastle/asn1/ASN1OutputStream;->os:Ljava/io/OutputStream;
-
-    invoke-virtual {p1, p3}, Ljava/io/OutputStream;->write(I)V
+    invoke-virtual {p0, p3}, Lorg/bouncycastle/asn1/ASN1OutputStream;->write(I)V
 
     goto :goto_0
 
@@ -472,9 +663,7 @@
 
     rsub-int/lit8 p1, v0, 0x5
 
-    iget-object p3, p0, Lorg/bouncycastle/asn1/ASN1OutputStream;->os:Ljava/io/OutputStream;
-
-    invoke-virtual {p3, p2, v0, p1}, Ljava/io/OutputStream;->write([BII)V
+    invoke-virtual {p0, p2, v0, p1}, Lorg/bouncycastle/asn1/ASN1OutputStream;->write([BII)V
 
     :goto_0
     return-void

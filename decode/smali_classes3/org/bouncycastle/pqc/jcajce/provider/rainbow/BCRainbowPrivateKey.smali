@@ -5,49 +5,89 @@
 .implements Ljava/security/PrivateKey;
 
 
+# static fields
+.field private static final serialVersionUID:J = 0x1L
+
+
 # instance fields
-.field public A1inv:[[S
+.field private A1inv:[[S
 
-.field public A2inv:[[S
+.field private A2inv:[[S
 
-.field public b1:[S
+.field private b1:[S
 
-.field public b2:[S
+.field private b2:[S
 
-.field public layers:[Lorg/bouncycastle/pqc/crypto/rainbow/Layer;
+.field private layers:[Lorg/bouncycastle/pqc/crypto/rainbow/Layer;
 
-.field public vi:[I
+.field private vi:[I
 
 
 # direct methods
+.method public constructor <init>(Lorg/bouncycastle/pqc/crypto/rainbow/RainbowPrivateKeyParameters;)V
+    .locals 7
+
+    invoke-virtual {p1}, Lorg/bouncycastle/pqc/crypto/rainbow/RainbowPrivateKeyParameters;->getInvA1()[[S
+
+    move-result-object v1
+
+    invoke-virtual {p1}, Lorg/bouncycastle/pqc/crypto/rainbow/RainbowPrivateKeyParameters;->getB1()[S
+
+    move-result-object v2
+
+    invoke-virtual {p1}, Lorg/bouncycastle/pqc/crypto/rainbow/RainbowPrivateKeyParameters;->getInvA2()[[S
+
+    move-result-object v3
+
+    invoke-virtual {p1}, Lorg/bouncycastle/pqc/crypto/rainbow/RainbowPrivateKeyParameters;->getB2()[S
+
+    move-result-object v4
+
+    invoke-virtual {p1}, Lorg/bouncycastle/pqc/crypto/rainbow/RainbowPrivateKeyParameters;->getVi()[I
+
+    move-result-object v5
+
+    invoke-virtual {p1}, Lorg/bouncycastle/pqc/crypto/rainbow/RainbowPrivateKeyParameters;->getLayers()[Lorg/bouncycastle/pqc/crypto/rainbow/Layer;
+
+    move-result-object v6
+
+    move-object v0, p0
+
+    invoke-direct/range {v0 .. v6}, Lorg/bouncycastle/pqc/jcajce/provider/rainbow/BCRainbowPrivateKey;-><init>([[S[S[[S[S[I[Lorg/bouncycastle/pqc/crypto/rainbow/Layer;)V
+
+    return-void
+.end method
+
 .method public constructor <init>(Lorg/bouncycastle/pqc/jcajce/spec/RainbowPrivateKeySpec;)V
-    .locals 5
+    .locals 7
 
-    iget-object v0, p1, Lorg/bouncycastle/pqc/jcajce/spec/RainbowPrivateKeySpec;->A1inv:[[S
+    invoke-virtual {p1}, Lorg/bouncycastle/pqc/jcajce/spec/RainbowPrivateKeySpec;->getInvA1()[[S
 
-    iget-object v1, p1, Lorg/bouncycastle/pqc/jcajce/spec/RainbowPrivateKeySpec;->b1:[S
+    move-result-object v1
 
-    iget-object v2, p1, Lorg/bouncycastle/pqc/jcajce/spec/RainbowPrivateKeySpec;->A2inv:[[S
+    invoke-virtual {p1}, Lorg/bouncycastle/pqc/jcajce/spec/RainbowPrivateKeySpec;->getB1()[S
 
-    iget-object v3, p1, Lorg/bouncycastle/pqc/jcajce/spec/RainbowPrivateKeySpec;->b2:[S
+    move-result-object v2
 
-    iget-object v4, p1, Lorg/bouncycastle/pqc/jcajce/spec/RainbowPrivateKeySpec;->vi:[I
+    invoke-virtual {p1}, Lorg/bouncycastle/pqc/jcajce/spec/RainbowPrivateKeySpec;->getInvA2()[[S
 
-    iget-object p1, p1, Lorg/bouncycastle/pqc/jcajce/spec/RainbowPrivateKeySpec;->layers:[Lorg/bouncycastle/pqc/crypto/rainbow/Layer;
+    move-result-object v3
 
-    invoke-direct {p0}, Ljava/lang/Object;-><init>()V
+    invoke-virtual {p1}, Lorg/bouncycastle/pqc/jcajce/spec/RainbowPrivateKeySpec;->getB2()[S
 
-    iput-object v0, p0, Lorg/bouncycastle/pqc/jcajce/provider/rainbow/BCRainbowPrivateKey;->A1inv:[[S
+    move-result-object v4
 
-    iput-object v1, p0, Lorg/bouncycastle/pqc/jcajce/provider/rainbow/BCRainbowPrivateKey;->b1:[S
+    invoke-virtual {p1}, Lorg/bouncycastle/pqc/jcajce/spec/RainbowPrivateKeySpec;->getVi()[I
 
-    iput-object v2, p0, Lorg/bouncycastle/pqc/jcajce/provider/rainbow/BCRainbowPrivateKey;->A2inv:[[S
+    move-result-object v5
 
-    iput-object v3, p0, Lorg/bouncycastle/pqc/jcajce/provider/rainbow/BCRainbowPrivateKey;->b2:[S
+    invoke-virtual {p1}, Lorg/bouncycastle/pqc/jcajce/spec/RainbowPrivateKeySpec;->getLayers()[Lorg/bouncycastle/pqc/crypto/rainbow/Layer;
 
-    iput-object v4, p0, Lorg/bouncycastle/pqc/jcajce/provider/rainbow/BCRainbowPrivateKey;->vi:[I
+    move-result-object v6
 
-    iput-object p1, p0, Lorg/bouncycastle/pqc/jcajce/provider/rainbow/BCRainbowPrivateKey;->layers:[Lorg/bouncycastle/pqc/crypto/rainbow/Layer;
+    move-object v0, p0
+
+    invoke-direct/range {v0 .. v6}, Lorg/bouncycastle/pqc/jcajce/provider/rainbow/BCRainbowPrivateKey;-><init>([[S[S[[S[S[I[Lorg/bouncycastle/pqc/crypto/rainbow/Layer;)V
 
     return-void
 .end method
@@ -75,40 +115,32 @@
 
 # virtual methods
 .method public equals(Ljava/lang/Object;)Z
-    .locals 6
+    .locals 5
 
     const/4 v0, 0x0
 
-    if-eqz p1, :cond_7
+    if-eqz p1, :cond_8
 
     instance-of v1, p1, Lorg/bouncycastle/pqc/jcajce/provider/rainbow/BCRainbowPrivateKey;
 
     if-nez v1, :cond_0
 
-    goto/16 :goto_5
+    goto/16 :goto_6
 
     :cond_0
     check-cast p1, Lorg/bouncycastle/pqc/jcajce/provider/rainbow/BCRainbowPrivateKey;
 
     iget-object v1, p0, Lorg/bouncycastle/pqc/jcajce/provider/rainbow/BCRainbowPrivateKey;->A1inv:[[S
 
-    iget-object v2, p1, Lorg/bouncycastle/pqc/jcajce/provider/rainbow/BCRainbowPrivateKey;->A1inv:[[S
+    invoke-virtual {p1}, Lorg/bouncycastle/pqc/jcajce/provider/rainbow/BCRainbowPrivateKey;->getInvA1()[[S
 
-    invoke-static {v1, v2}, Landroidx/lifecycle/ViewModelKt;->equals([[S[[S)Z
+    move-result-object v2
+
+    invoke-static {v1, v2}, Lorg/bouncycastle/pqc/crypto/rainbow/util/RainbowUtil;->equals([[S[[S)Z
 
     move-result v1
 
     const/4 v2, 0x1
-
-    if-eqz v1, :cond_1
-
-    iget-object v1, p0, Lorg/bouncycastle/pqc/jcajce/provider/rainbow/BCRainbowPrivateKey;->A2inv:[[S
-
-    iget-object v3, p1, Lorg/bouncycastle/pqc/jcajce/provider/rainbow/BCRainbowPrivateKey;->A2inv:[[S
-
-    invoke-static {v1, v3}, Landroidx/lifecycle/ViewModelKt;->equals([[S[[S)Z
-
-    move-result v1
 
     if-eqz v1, :cond_1
 
@@ -122,11 +154,13 @@
     :goto_0
     if-eqz v1, :cond_2
 
-    iget-object v1, p0, Lorg/bouncycastle/pqc/jcajce/provider/rainbow/BCRainbowPrivateKey;->b1:[S
+    iget-object v1, p0, Lorg/bouncycastle/pqc/jcajce/provider/rainbow/BCRainbowPrivateKey;->A2inv:[[S
 
-    iget-object v3, p1, Lorg/bouncycastle/pqc/jcajce/provider/rainbow/BCRainbowPrivateKey;->b1:[S
+    invoke-virtual {p1}, Lorg/bouncycastle/pqc/jcajce/provider/rainbow/BCRainbowPrivateKey;->getInvA2()[[S
 
-    invoke-static {v1, v3}, Landroidx/lifecycle/ViewModelKt;->equals([S[S)Z
+    move-result-object v3
+
+    invoke-static {v1, v3}, Lorg/bouncycastle/pqc/crypto/rainbow/util/RainbowUtil;->equals([[S[[S)Z
 
     move-result v1
 
@@ -142,11 +176,13 @@
     :goto_1
     if-eqz v1, :cond_3
 
-    iget-object v1, p0, Lorg/bouncycastle/pqc/jcajce/provider/rainbow/BCRainbowPrivateKey;->b2:[S
+    iget-object v1, p0, Lorg/bouncycastle/pqc/jcajce/provider/rainbow/BCRainbowPrivateKey;->b1:[S
 
-    iget-object v3, p1, Lorg/bouncycastle/pqc/jcajce/provider/rainbow/BCRainbowPrivateKey;->b2:[S
+    invoke-virtual {p1}, Lorg/bouncycastle/pqc/jcajce/provider/rainbow/BCRainbowPrivateKey;->getB1()[S
 
-    invoke-static {v1, v3}, Landroidx/lifecycle/ViewModelKt;->equals([S[S)Z
+    move-result-object v3
+
+    invoke-static {v1, v3}, Lorg/bouncycastle/pqc/crypto/rainbow/util/RainbowUtil;->equals([S[S)Z
 
     move-result v1
 
@@ -162,11 +198,13 @@
     :goto_2
     if-eqz v1, :cond_4
 
-    iget-object v1, p0, Lorg/bouncycastle/pqc/jcajce/provider/rainbow/BCRainbowPrivateKey;->vi:[I
+    iget-object v1, p0, Lorg/bouncycastle/pqc/jcajce/provider/rainbow/BCRainbowPrivateKey;->b2:[S
 
-    iget-object v3, p1, Lorg/bouncycastle/pqc/jcajce/provider/rainbow/BCRainbowPrivateKey;->vi:[I
+    invoke-virtual {p1}, Lorg/bouncycastle/pqc/jcajce/provider/rainbow/BCRainbowPrivateKey;->getB2()[S
 
-    invoke-static {v1, v3}, Ljava/util/Arrays;->equals([I[I)Z
+    move-result-object v3
+
+    invoke-static {v1, v3}, Lorg/bouncycastle/pqc/crypto/rainbow/util/RainbowUtil;->equals([S[S)Z
 
     move-result v1
 
@@ -180,31 +218,59 @@
     move v1, v0
 
     :goto_3
+    if-eqz v1, :cond_5
+
+    iget-object v1, p0, Lorg/bouncycastle/pqc/jcajce/provider/rainbow/BCRainbowPrivateKey;->vi:[I
+
+    invoke-virtual {p1}, Lorg/bouncycastle/pqc/jcajce/provider/rainbow/BCRainbowPrivateKey;->getVi()[I
+
+    move-result-object v3
+
+    invoke-static {v1, v3}, Ljava/util/Arrays;->equals([I[I)Z
+
+    move-result v1
+
+    if-eqz v1, :cond_5
+
+    move v1, v2
+
+    goto :goto_4
+
+    :cond_5
+    move v1, v0
+
+    :goto_4
     iget-object v3, p0, Lorg/bouncycastle/pqc/jcajce/provider/rainbow/BCRainbowPrivateKey;->layers:[Lorg/bouncycastle/pqc/crypto/rainbow/Layer;
 
-    array-length v4, v3
+    array-length v3, v3
 
-    iget-object v5, p1, Lorg/bouncycastle/pqc/jcajce/provider/rainbow/BCRainbowPrivateKey;->layers:[Lorg/bouncycastle/pqc/crypto/rainbow/Layer;
+    invoke-virtual {p1}, Lorg/bouncycastle/pqc/jcajce/provider/rainbow/BCRainbowPrivateKey;->getLayers()[Lorg/bouncycastle/pqc/crypto/rainbow/Layer;
 
-    array-length v5, v5
+    move-result-object v4
 
-    if-eq v4, v5, :cond_5
+    array-length v4, v4
+
+    if-eq v3, v4, :cond_6
 
     return v0
 
-    :cond_5
-    array-length v0, v3
+    :cond_6
+    iget-object v0, p0, Lorg/bouncycastle/pqc/jcajce/provider/rainbow/BCRainbowPrivateKey;->layers:[Lorg/bouncycastle/pqc/crypto/rainbow/Layer;
+
+    array-length v0, v0
 
     sub-int/2addr v0, v2
 
-    :goto_4
-    if-ltz v0, :cond_6
+    :goto_5
+    if-ltz v0, :cond_7
 
     iget-object v2, p0, Lorg/bouncycastle/pqc/jcajce/provider/rainbow/BCRainbowPrivateKey;->layers:[Lorg/bouncycastle/pqc/crypto/rainbow/Layer;
 
     aget-object v2, v2, v0
 
-    iget-object v3, p1, Lorg/bouncycastle/pqc/jcajce/provider/rainbow/BCRainbowPrivateKey;->layers:[Lorg/bouncycastle/pqc/crypto/rainbow/Layer;
+    invoke-virtual {p1}, Lorg/bouncycastle/pqc/jcajce/provider/rainbow/BCRainbowPrivateKey;->getLayers()[Lorg/bouncycastle/pqc/crypto/rainbow/Layer;
+
+    move-result-object v3
 
     aget-object v3, v3, v0
 
@@ -216,13 +282,13 @@
 
     add-int/lit8 v0, v0, -0x1
 
-    goto :goto_4
-
-    :cond_6
-    return v1
+    goto :goto_5
 
     :cond_7
-    :goto_5
+    return v1
+
+    :cond_8
+    :goto_6
     return v0
 .end method
 
@@ -230,6 +296,22 @@
     .locals 1
 
     const-string v0, "Rainbow"
+
+    return-object v0
+.end method
+
+.method public getB1()[S
+    .locals 1
+
+    iget-object v0, p0, Lorg/bouncycastle/pqc/jcajce/provider/rainbow/BCRainbowPrivateKey;->b1:[S
+
+    return-object v0
+.end method
+
+.method public getB2()[S
+    .locals 1
+
+    iget-object v0, p0, Lorg/bouncycastle/pqc/jcajce/provider/rainbow/BCRainbowPrivateKey;->b2:[S
 
     return-object v0
 .end method
@@ -268,7 +350,7 @@
 
     new-instance v2, Lorg/bouncycastle/asn1/pkcs/PrivateKeyInfo;
 
-    invoke-direct {v2, v1, v7, v0, v0}, Lorg/bouncycastle/asn1/pkcs/PrivateKeyInfo;-><init>(Lorg/bouncycastle/asn1/x509/AlgorithmIdentifier;Lorg/bouncycastle/asn1/ASN1Encodable;Lorg/bouncycastle/asn1/ASN1Set;[B)V
+    invoke-direct {v2, v1, v7}, Lorg/bouncycastle/asn1/pkcs/PrivateKeyInfo;-><init>(Lorg/bouncycastle/asn1/x509/AlgorithmIdentifier;Lorg/bouncycastle/asn1/ASN1Encodable;)V
     :try_end_0
     .catch Ljava/io/IOException; {:try_start_0 .. :try_end_0} :catch_0
 
@@ -287,6 +369,38 @@
     .locals 1
 
     const-string v0, "PKCS#8"
+
+    return-object v0
+.end method
+
+.method public getInvA1()[[S
+    .locals 1
+
+    iget-object v0, p0, Lorg/bouncycastle/pqc/jcajce/provider/rainbow/BCRainbowPrivateKey;->A1inv:[[S
+
+    return-object v0
+.end method
+
+.method public getInvA2()[[S
+    .locals 1
+
+    iget-object v0, p0, Lorg/bouncycastle/pqc/jcajce/provider/rainbow/BCRainbowPrivateKey;->A2inv:[[S
+
+    return-object v0
+.end method
+
+.method public getLayers()[Lorg/bouncycastle/pqc/crypto/rainbow/Layer;
+    .locals 1
+
+    iget-object v0, p0, Lorg/bouncycastle/pqc/jcajce/provider/rainbow/BCRainbowPrivateKey;->layers:[Lorg/bouncycastle/pqc/crypto/rainbow/Layer;
+
+    return-object v0
+.end method
+
+.method public getVi()[I
+    .locals 1
+
+    iget-object v0, p0, Lorg/bouncycastle/pqc/jcajce/provider/rainbow/BCRainbowPrivateKey;->vi:[I
 
     return-object v0
 .end method

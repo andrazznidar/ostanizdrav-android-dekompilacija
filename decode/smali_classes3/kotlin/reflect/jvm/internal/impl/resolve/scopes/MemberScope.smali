@@ -10,7 +10,8 @@
 .annotation system Ldalvik/annotation/MemberClasses;
     value = {
         Lkotlin/reflect/jvm/internal/impl/resolve/scopes/MemberScope$Empty;,
-        Lkotlin/reflect/jvm/internal/impl/resolve/scopes/MemberScope$Companion;
+        Lkotlin/reflect/jvm/internal/impl/resolve/scopes/MemberScope$Companion;,
+        Lkotlin/reflect/jvm/internal/impl/resolve/scopes/MemberScope$DefaultImpls;
     }
 .end annotation
 

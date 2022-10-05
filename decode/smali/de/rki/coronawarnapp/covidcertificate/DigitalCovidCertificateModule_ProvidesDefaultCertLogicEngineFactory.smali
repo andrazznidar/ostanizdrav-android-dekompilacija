@@ -28,7 +28,7 @@
     .end annotation
 .end field
 
-.field public final module:Lde/rki/coronawarnapp/covidcertificate/DigitalCovidCertificateModule;
+.field public final module:Lcom/google/android/play/core/assetpacks/zzbf;
 
 .field public final objectMapperProvider:Ljavax/inject/Provider;
     .annotation system Ldalvik/annotation/Signature;
@@ -42,7 +42,7 @@
 
 
 # direct methods
-.method public constructor <init>(Lde/rki/coronawarnapp/covidcertificate/DigitalCovidCertificateModule;Ljavax/inject/Provider;Ljavax/inject/Provider;)V
+.method public constructor <init>(Lcom/google/android/play/core/assetpacks/zzbf;Ljavax/inject/Provider;Ljavax/inject/Provider;)V
     .locals 0
     .annotation system Ldalvik/annotation/MethodParameters;
         accessFlags = {
@@ -60,7 +60,7 @@
     .annotation system Ldalvik/annotation/Signature;
         value = {
             "(",
-            "Lde/rki/coronawarnapp/covidcertificate/DigitalCovidCertificateModule;",
+            "Lcom/google/android/play/core/assetpacks/zzbf;",
             "Ljavax/inject/Provider<",
             "Lde/rki/coronawarnapp/covidcertificate/common/certificate/DccJsonSchema;",
             ">;",
@@ -72,7 +72,7 @@
 
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
-    iput-object p1, p0, Lde/rki/coronawarnapp/covidcertificate/DigitalCovidCertificateModule_ProvidesDefaultCertLogicEngineFactory;->module:Lde/rki/coronawarnapp/covidcertificate/DigitalCovidCertificateModule;
+    iput-object p1, p0, Lde/rki/coronawarnapp/covidcertificate/DigitalCovidCertificateModule_ProvidesDefaultCertLogicEngineFactory;->module:Lcom/google/android/play/core/assetpacks/zzbf;
 
     iput-object p2, p0, Lde/rki/coronawarnapp/covidcertificate/DigitalCovidCertificateModule_ProvidesDefaultCertLogicEngineFactory;->dccJsonSchemaProvider:Ljavax/inject/Provider;
 
@@ -86,7 +86,7 @@
 .method public get()Ljava/lang/Object;
     .locals 5
 
-    iget-object v0, p0, Lde/rki/coronawarnapp/covidcertificate/DigitalCovidCertificateModule_ProvidesDefaultCertLogicEngineFactory;->module:Lde/rki/coronawarnapp/covidcertificate/DigitalCovidCertificateModule;
+    iget-object v0, p0, Lde/rki/coronawarnapp/covidcertificate/DigitalCovidCertificateModule_ProvidesDefaultCertLogicEngineFactory;->module:Lcom/google/android/play/core/assetpacks/zzbf;
 
     iget-object v1, p0, Lde/rki/coronawarnapp/covidcertificate/DigitalCovidCertificateModule_ProvidesDefaultCertLogicEngineFactory;->dccJsonSchemaProvider:Ljavax/inject/Provider;
 

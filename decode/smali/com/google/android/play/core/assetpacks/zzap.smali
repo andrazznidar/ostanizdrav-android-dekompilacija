@@ -57,13 +57,13 @@
 
     if-nez p2, :cond_0
 
-    sget-object p2, Lcom/google/android/play/core/assetpacks/zzaw;->zza:Lkotlin/jvm/internal/SpreadBuilder;
+    sget-object p2, Lcom/google/android/play/core/assetpacks/zzaw;->zza:Lcom/google/android/play/core/internal/zzag;
 
     new-array v0, v1, [Ljava/lang/Object;
 
     const-string v1, "Expected keepingAlive to be true, but was false."
 
-    invoke-virtual {p2, v1, v0}, Lkotlin/jvm/internal/SpreadBuilder;->zze(Ljava/lang/String;[Ljava/lang/Object;)I
+    invoke-virtual {p2, v1, v0}, Lcom/google/android/play/core/internal/zzag;->zze(Ljava/lang/String;[Ljava/lang/Object;)I
 
     :cond_0
     const-string p2, "keep_alive"

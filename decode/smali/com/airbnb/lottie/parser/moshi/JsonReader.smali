@@ -9,7 +9,6 @@
 # annotations
 .annotation system Ldalvik/annotation/MemberClasses;
     value = {
-        Lcom/airbnb/lottie/parser/moshi/JsonReader$Token;,
         Lcom/airbnb/lottie/parser/moshi/JsonReader$Options;
     }
 .end annotation
@@ -312,7 +311,7 @@
     .end annotation
 .end method
 
-.method public abstract peek()Lcom/airbnb/lottie/parser/moshi/JsonReader$Token;
+.method public abstract peek$enumunboxing$()I
     .annotation system Ldalvik/annotation/Throws;
         value = {
             Ljava/io/IOException;
@@ -374,7 +373,7 @@
     goto :goto_0
 
     :cond_0
-    new-instance p1, Lkotlin/NoWhenBranchMatchedException;
+    new-instance p1, Lcom/airbnb/lottie/parser/moshi/JsonDataException;
 
     const-string v0, "Nesting too deep at "
 
@@ -392,7 +391,7 @@
 
     move-result-object v0
 
-    invoke-direct {p1, v0}, Lkotlin/NoWhenBranchMatchedException;-><init>(Ljava/lang/String;)V
+    invoke-direct {p1, v0}, Lcom/airbnb/lottie/parser/moshi/JsonDataException;-><init>(Ljava/lang/String;)V
 
     throw p1
 

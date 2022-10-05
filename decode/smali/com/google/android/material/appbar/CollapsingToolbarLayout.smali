@@ -491,7 +491,7 @@
 .method public draw(Landroid/graphics/Canvas;)V
     .locals 6
 
-    invoke-super {p0, p1}, Landroid/view/View;->draw(Landroid/graphics/Canvas;)V
+    invoke-super {p0, p1}, Landroid/widget/FrameLayout;->draw(Landroid/graphics/Canvas;)V
 
     invoke-virtual {p0}, Lcom/google/android/material/appbar/CollapsingToolbarLayout;->ensureToolbar()V
 
@@ -722,7 +722,7 @@
     move v0, v2
 
     :goto_3
-    invoke-super {p0, p1, p2, p3, p4}, Landroid/view/ViewGroup;->drawChild(Landroid/graphics/Canvas;Landroid/view/View;J)Z
+    invoke-super {p0, p1, p2, p3, p4}, Landroid/widget/FrameLayout;->drawChild(Landroid/graphics/Canvas;Landroid/view/View;J)Z
 
     move-result p1
 
@@ -743,7 +743,7 @@
 .method public drawableStateChanged()V
     .locals 4
 
-    invoke-super {p0}, Landroid/view/ViewGroup;->drawableStateChanged()V
+    invoke-super {p0}, Landroid/widget/FrameLayout;->drawableStateChanged()V
 
     invoke-virtual {p0}, Landroid/widget/FrameLayout;->getDrawableState()[I
 
@@ -1323,7 +1323,7 @@
 .method public onAttachedToWindow()V
     .locals 2
 
-    invoke-super {p0}, Landroid/view/ViewGroup;->onAttachedToWindow()V
+    invoke-super {p0}, Landroid/widget/FrameLayout;->onAttachedToWindow()V
 
     invoke-virtual {p0}, Landroid/widget/FrameLayout;->getParent()Landroid/view/ViewParent;
 
@@ -1401,7 +1401,7 @@
     invoke-interface {v0, v1}, Ljava/util/List;->remove(Ljava/lang/Object;)Z
 
     :cond_0
-    invoke-super {p0}, Landroid/view/ViewGroup;->onDetachedFromWindow()V
+    invoke-super {p0}, Landroid/widget/FrameLayout;->onDetachedFromWindow()V
 
     return-void
 .end method
@@ -1729,7 +1729,7 @@
 .method public onSizeChanged(IIII)V
     .locals 0
 
-    invoke-super {p0, p1, p2, p3, p4}, Landroid/view/View;->onSizeChanged(IIII)V
+    invoke-super {p0, p1, p2, p3, p4}, Landroid/widget/FrameLayout;->onSizeChanged(IIII)V
 
     iget-object p3, p0, Lcom/google/android/material/appbar/CollapsingToolbarLayout;->contentScrim:Landroid/graphics/drawable/Drawable;
 
@@ -2499,7 +2499,7 @@
 .method public setVisibility(I)V
     .locals 2
 
-    invoke-super {p0, p1}, Landroid/view/View;->setVisibility(I)V
+    invoke-super {p0, p1}, Landroid/widget/FrameLayout;->setVisibility(I)V
 
     const/4 v0, 0x0
 
@@ -3016,7 +3016,7 @@
 .method public verifyDrawable(Landroid/graphics/drawable/Drawable;)Z
     .locals 1
 
-    invoke-super {p0, p1}, Landroid/view/View;->verifyDrawable(Landroid/graphics/drawable/Drawable;)Z
+    invoke-super {p0, p1}, Landroid/widget/FrameLayout;->verifyDrawable(Landroid/graphics/drawable/Drawable;)Z
 
     move-result v0
 

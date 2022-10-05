@@ -245,7 +245,7 @@
     .annotation system Ldalvik/annotation/Throws;
         value = {
             Ljava/io/IOException;,
-            Lcom/fasterxml/jackson/core/JsonProcessingException;
+            Lcom/fasterxml/jackson/core/JacksonException;
         }
     .end annotation
 
@@ -437,9 +437,9 @@
     :catch_0
     move-exception p1
 
-    const-class p2, Ljava/util/Map$Entry;
+    const-class v0, Ljava/util/Map$Entry;
 
-    invoke-virtual {p0, p1, p2, v6}, Lcom/fasterxml/jackson/databind/deser/std/ContainerDeserializerBase;->wrapAndThrow(Ljava/lang/Throwable;Ljava/lang/Object;Ljava/lang/String;)Ljava/lang/Object;
+    invoke-virtual {p0, p2, p1, v0, v6}, Lcom/fasterxml/jackson/databind/deser/std/ContainerDeserializerBase;->wrapAndThrow(Lcom/fasterxml/jackson/databind/DeserializationContext;Ljava/lang/Throwable;Ljava/lang/Object;Ljava/lang/String;)Ljava/lang/Object;
 
     throw v2
 .end method
@@ -448,7 +448,8 @@
     .locals 0
     .annotation system Ldalvik/annotation/Throws;
         value = {
-            Ljava/io/IOException;
+            Ljava/io/IOException;,
+            Lcom/fasterxml/jackson/core/JacksonException;
         }
     .end annotation
 

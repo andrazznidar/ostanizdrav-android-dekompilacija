@@ -1,4 +1,4 @@
-.class public final Lkotlin/reflect/jvm/internal/impl/utils/SmartSet$SingletonIterator;
+.class final Lkotlin/reflect/jvm/internal/impl/utils/SmartSet$SingletonIterator;
 .super Ljava/lang/Object;
 .source "SmartSet.kt"
 
@@ -26,13 +26,14 @@
         "Ljava/lang/Object;",
         "Ljava/util/Iterator<",
         "TT;>;",
+        "Lkotlin/jvm/internal/markers/KMappedMarker;",
         "Lj$/util/Iterator;"
     }
 .end annotation
 
 
 # instance fields
-.field public final element:Ljava/lang/Object;
+.field private final element:Ljava/lang/Object;
     .annotation system Ldalvik/annotation/Signature;
         value = {
             "TT;"
@@ -40,7 +41,7 @@
     .end annotation
 .end field
 
-.field public hasNext:Z
+.field private hasNext:Z
 
 
 # direct methods
@@ -67,6 +68,18 @@
 # virtual methods
 .method public synthetic forEachRemaining(Lj$/util/function/Consumer;)V
     .locals 0
+
+    invoke-static {p0, p1}, Lj$/util/Iterator$-CC;->$default$forEachRemaining(Ljava/util/Iterator;Lj$/util/function/Consumer;)V
+
+    return-void
+.end method
+
+.method public synthetic forEachRemaining(Ljava/util/function/Consumer;)V
+    .locals 0
+
+    invoke-static {p1}, Lj$/util/function/Consumer$VivifiedWrapper;->convert(Ljava/util/function/Consumer;)Lj$/util/function/Consumer;
+
+    move-result-object p1
 
     invoke-static {p0, p1}, Lj$/util/Iterator$-CC;->$default$forEachRemaining(Ljava/util/Iterator;Lj$/util/function/Consumer;)V
 
@@ -109,7 +122,7 @@
     throw v0
 .end method
 
-.method public remove()V
+.method public remove()Ljava/lang/Void;
     .locals 1
 
     new-instance v0, Ljava/lang/UnsupportedOperationException;
@@ -117,4 +130,12 @@
     invoke-direct {v0}, Ljava/lang/UnsupportedOperationException;-><init>()V
 
     throw v0
+.end method
+
+.method public bridge synthetic remove()V
+    .locals 0
+
+    invoke-virtual {p0}, Lkotlin/reflect/jvm/internal/impl/utils/SmartSet$SingletonIterator;->remove()Ljava/lang/Void;
+
+    return-void
 .end method

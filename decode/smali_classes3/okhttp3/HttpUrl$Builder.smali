@@ -411,10 +411,6 @@
 
     invoke-static {v0}, Lkotlin/jvm/internal/Intrinsics;->checkNotNull(Ljava/lang/Object;)V
 
-    const-string v2, "scheme"
-
-    invoke-static {v0, v2}, Lkotlin/jvm/internal/Intrinsics;->checkNotNullParameter(Ljava/lang/Object;Ljava/lang/String;)V
-
     invoke-virtual {v0}, Ljava/lang/String;->hashCode()I
 
     move-result v2
@@ -512,7 +508,7 @@
 .end method
 
 .method public final parse$okhttp(Lokhttp3/HttpUrl;Ljava/lang/String;)Lokhttp3/HttpUrl$Builder;
-    .locals 26
+    .locals 25
 
     move-object/from16 v0, p0
 
@@ -542,15 +538,15 @@
 
     sub-int v4, v13, v2
 
-    const/4 v5, 0x2
-
-    const/4 v6, -0x1
+    const/4 v5, -0x1
 
     const/16 v14, 0x3a
 
-    const/4 v7, 0x1
+    const/4 v6, 0x1
 
-    if-ge v4, v5, :cond_0
+    const/4 v7, 0x2
+
+    if-ge v4, v7, :cond_0
 
     goto/16 :goto_5
 
@@ -598,7 +594,7 @@
     move v4, v2
 
     :goto_0
-    add-int/2addr v4, v7
+    add-int/2addr v4, v6
 
     if-ge v4, v13, :cond_c
 
@@ -675,16 +671,16 @@
 
     :cond_c
     :goto_5
-    move v4, v6
+    move v4, v5
 
     :goto_6
     const-string v15, "(this as java.lang.Strin\u2026ing(startIndex, endIndex)"
 
-    if-eq v4, v6, :cond_f
+    if-eq v4, v5, :cond_f
 
     const-string v8, "https:"
 
-    invoke-static {v12, v8, v2, v7}, Lkotlin/text/StringsKt__StringsJVMKt;->startsWith(Ljava/lang/String;Ljava/lang/String;IZ)Z
+    invoke-static {v12, v8, v2, v6}, Lkotlin/text/StringsKt__StringsJVMKt;->startsWith(Ljava/lang/String;Ljava/lang/String;IZ)Z
 
     move-result v8
 
@@ -701,7 +697,7 @@
     :cond_d
     const-string v8, "http:"
 
-    invoke-static {v12, v8, v2, v7}, Lkotlin/text/StringsKt__StringsJVMKt;->startsWith(Ljava/lang/String;Ljava/lang/String;IZ)Z
+    invoke-static {v12, v8, v2, v6}, Lkotlin/text/StringsKt__StringsJVMKt;->startsWith(Ljava/lang/String;Ljava/lang/String;IZ)Z
 
     move-result v8
 
@@ -781,21 +777,21 @@
 
     const/16 v10, 0x23
 
-    if-ge v3, v5, :cond_15
+    if-ge v3, v7, :cond_15
 
     if-eqz v1, :cond_15
 
-    iget-object v5, v1, Lokhttp3/HttpUrl;->scheme:Ljava/lang/String;
+    iget-object v7, v1, Lokhttp3/HttpUrl;->scheme:Ljava/lang/String;
 
     iget-object v11, v0, Lokhttp3/HttpUrl$Builder;->scheme:Ljava/lang/String;
 
-    invoke-static {v5, v11}, Lkotlin/jvm/internal/Intrinsics;->areEqual(Ljava/lang/Object;Ljava/lang/Object;)Z
+    invoke-static {v7, v11}, Lkotlin/jvm/internal/Intrinsics;->areEqual(Ljava/lang/Object;Ljava/lang/Object;)Z
 
-    move-result v5
+    move-result v7
 
-    xor-int/2addr v5, v7
+    xor-int/2addr v7, v6
 
-    if-eqz v5, :cond_12
+    if-eqz v7, :cond_12
 
     goto :goto_9
 
@@ -882,10 +878,10 @@
     goto :goto_b
 
     :cond_16
-    move v1, v6
+    move v1, v5
 
     :goto_b
-    if-eq v1, v6, :cond_1b
+    if-eq v1, v5, :cond_1b
 
     if-eq v1, v10, :cond_1b
 
@@ -1079,7 +1075,7 @@
 
     const/16 v8, 0x5c
 
-    const/4 v6, -0x1
+    const/4 v5, -0x1
 
     move/from16 v13, v20
 
@@ -1133,21 +1129,21 @@
     :cond_1e
     const/4 v1, 0x1
 
-    move v10, v1
+    move v14, v1
 
-    move v14, v7
+    move v10, v7
 
     goto :goto_10
 
     :cond_1f
     const/4 v1, 0x1
 
-    move v10, v1
+    move v14, v1
 
-    move v14, v13
+    move v10, v13
 
     :goto_10
-    add-int/lit8 v9, v14, 0x1
+    add-int/lit8 v9, v10, 0x1
 
     const/16 v7, 0x22
 
@@ -1165,7 +1161,7 @@
 
     move v3, v11
 
-    move v4, v14
+    move v4, v10
 
     invoke-static/range {v1 .. v6}, Lokhttp3/HttpUrl$Companion;->percentDecode$okhttp$default(Lokhttp3/HttpUrl$Companion;Ljava/lang/String;IIZI)Ljava/lang/String;
 
@@ -1180,7 +1176,7 @@
     :try_start_0
     const-string v5, ""
     :try_end_0
-    .catch Ljava/lang/NumberFormatException; {:try_start_0 .. :try_end_0} :catch_1
+    .catch Ljava/lang/NumberFormatException; {:try_start_0 .. :try_end_0} :catch_0
 
     const/4 v6, 0x0
 
@@ -1210,11 +1206,11 @@
 
     move/from16 v9, v17
 
-    move/from16 v25, v10
+    move/from16 p1, v10
 
     move-object/from16 v10, v18
 
-    move/from16 p1, v11
+    move/from16 v16, v11
 
     move/from16 v11, v19
 
@@ -1227,13 +1223,11 @@
 
     move-result v1
     :try_end_1
-    .catch Ljava/lang/NumberFormatException; {:try_start_1 .. :try_end_1} :catch_0
+    .catch Ljava/lang/NumberFormatException; {:try_start_1 .. :try_end_1} :catch_1
 
     const v2, 0xffff
 
-    move/from16 v8, v25
-
-    if-le v8, v1, :cond_20
+    if-le v14, v1, :cond_20
 
     goto :goto_11
 
@@ -1243,17 +1237,13 @@
     goto :goto_12
 
     :catch_0
-    move/from16 v8, v25
-
-    goto :goto_11
-
-    :catch_1
     move/from16 v24, v9
 
-    move v8, v10
+    move/from16 p1, v10
 
-    move/from16 p1, v11
+    move/from16 v16, v11
 
+    :catch_1
     :cond_21
     :goto_11
     const/4 v1, -0x1
@@ -1265,15 +1255,15 @@
 
     if-eq v1, v2, :cond_22
 
-    move v10, v8
+    move v1, v14
 
     goto :goto_13
 
     :cond_22
-    const/4 v10, 0x0
+    const/4 v1, 0x0
 
     :goto_13
-    if-eqz v10, :cond_23
+    if-eqz v1, :cond_23
 
     const/16 v7, 0x22
 
@@ -1286,9 +1276,9 @@
 
     move-result-object v1
 
-    move/from16 v14, v24
+    move/from16 v10, v24
 
-    invoke-virtual {v12, v14, v13}, Ljava/lang/String;->substring(II)Ljava/lang/String;
+    invoke-virtual {v12, v10, v13}, Ljava/lang/String;->substring(II)Ljava/lang/String;
 
     move-result-object v2
 
@@ -1315,23 +1305,23 @@
     throw v2
 
     :cond_24
-    move v8, v10
+    move/from16 p1, v10
 
-    move/from16 p1, v11
+    move/from16 v16, v11
 
-    sget-object v9, Lokhttp3/HttpUrl;->Companion:Lokhttp3/HttpUrl$Companion;
+    sget-object v8, Lokhttp3/HttpUrl;->Companion:Lokhttp3/HttpUrl$Companion;
 
     const/4 v5, 0x0
 
     const/4 v6, 0x4
 
-    move-object v1, v9
+    move-object v1, v8
 
     move-object/from16 v2, p2
 
-    move/from16 v3, p1
+    move/from16 v3, v16
 
-    move v4, v14
+    move/from16 v4, p1
 
     invoke-static/range {v1 .. v6}, Lokhttp3/HttpUrl$Companion;->percentDecode$okhttp$default(Lokhttp3/HttpUrl$Companion;Ljava/lang/String;IIZI)Ljava/lang/String;
 
@@ -1347,7 +1337,7 @@
 
     invoke-static {v1}, Lkotlin/jvm/internal/Intrinsics;->checkNotNull(Ljava/lang/Object;)V
 
-    invoke-virtual {v9, v1}, Lokhttp3/HttpUrl$Companion;->defaultPort(Ljava/lang/String;)I
+    invoke-virtual {v8, v1}, Lokhttp3/HttpUrl$Companion;->defaultPort(Ljava/lang/String;)I
 
     move-result v1
 
@@ -1358,19 +1348,19 @@
 
     if-eqz v1, :cond_25
 
-    move v10, v8
+    move v1, v14
 
     goto :goto_15
 
     :cond_25
-    const/4 v10, 0x0
+    const/4 v1, 0x0
 
     :goto_15
-    if-eqz v10, :cond_39
-
-    move v7, v8
+    if-eqz v1, :cond_39
 
     move v2, v13
+
+    move v6, v14
 
     :goto_16
     const-string v1, "?#"
@@ -1398,13 +1388,13 @@
 
     const-string v5, ""
 
-    const/16 v6, 0x2f
+    const/16 v7, 0x2f
 
-    if-eq v4, v6, :cond_28
+    if-eq v4, v7, :cond_28
 
-    const/16 v6, 0x5c
+    const/16 v7, 0x5c
 
-    if-ne v4, v6, :cond_27
+    if-ne v4, v7, :cond_27
 
     goto :goto_17
 
@@ -1413,11 +1403,11 @@
 
     invoke-interface {v4}, Ljava/util/List;->size()I
 
-    move-result v6
+    move-result v7
 
-    sub-int/2addr v6, v7
+    sub-int/2addr v7, v6
 
-    invoke-interface {v4, v6, v5}, Ljava/util/List;->set(ILjava/lang/Object;)Ljava/lang/Object;
+    invoke-interface {v4, v7, v5}, Ljava/util/List;->set(ILjava/lang/Object;)Ljava/lang/Object;
 
     move-object v8, v0
 
@@ -1427,13 +1417,15 @@
 
     move v13, v3
 
-    move-object v6, v5
+    move v7, v6
 
     move v3, v4
 
-    move v5, v2
+    move-object v6, v5
 
     move-object v1, v12
+
+    move v5, v2
 
     move-object v2, v1
 
@@ -1457,13 +1449,15 @@
 
     move v13, v3
 
-    move-object v6, v5
+    move v7, v6
 
     move v3, v4
 
-    move v5, v2
+    move-object v6, v5
 
     move-object v1, v12
+
+    move v5, v2
 
     move-object v2, v1
 
@@ -1834,9 +1828,11 @@
 
     move-result-object v0
 
-    move/from16 v2, p1
+    move/from16 v13, p1
 
-    invoke-virtual {v12, v2, v14}, Ljava/lang/String;->substring(II)Ljava/lang/String;
+    move/from16 v2, v16
+
+    invoke-virtual {v12, v2, v13}, Ljava/lang/String;->substring(II)Ljava/lang/String;
 
     move-result-object v1
 
@@ -2026,10 +2022,6 @@
 
     invoke-static {v6}, Lkotlin/jvm/internal/Intrinsics;->checkNotNull(Ljava/lang/Object;)V
 
-    const-string v7, "scheme"
-
-    invoke-static {v6, v7}, Lkotlin/jvm/internal/Intrinsics;->checkNotNullParameter(Ljava/lang/Object;Ljava/lang/String;)V
-
     invoke-virtual {v6}, Ljava/lang/String;->hashCode()I
 
     move-result v7
@@ -2084,32 +2076,28 @@
 
     invoke-static {v1, v4}, Lkotlin/jvm/internal/Intrinsics;->checkNotNullParameter(Ljava/lang/Object;Ljava/lang/String;)V
 
-    const-string v4, "out"
-
-    invoke-static {v0, v4}, Lkotlin/jvm/internal/Intrinsics;->checkNotNullParameter(Ljava/lang/Object;Ljava/lang/String;)V
-
     invoke-interface {v1}, Ljava/util/List;->size()I
 
-    move-result v5
+    move-result v4
 
-    move v6, v3
+    move v5, v3
 
     :goto_6
-    if-ge v6, v5, :cond_f
+    if-ge v5, v4, :cond_f
 
-    const/16 v7, 0x2f
+    const/16 v6, 0x2f
 
-    invoke-virtual {v0, v7}, Ljava/lang/StringBuilder;->append(C)Ljava/lang/StringBuilder;
+    invoke-virtual {v0, v6}, Ljava/lang/StringBuilder;->append(C)Ljava/lang/StringBuilder;
 
-    invoke-interface {v1, v6}, Ljava/util/List;->get(I)Ljava/lang/Object;
+    invoke-interface {v1, v5}, Ljava/util/List;->get(I)Ljava/lang/Object;
 
-    move-result-object v7
+    move-result-object v6
 
-    check-cast v7, Ljava/lang/String;
+    check-cast v6, Ljava/lang/String;
 
-    invoke-virtual {v0, v7}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+    invoke-virtual {v0, v6}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
 
-    add-int/lit8 v6, v6, 0x1
+    add-int/lit8 v5, v5, 0x1
 
     goto :goto_6
 
@@ -2125,12 +2113,6 @@
     iget-object v1, p0, Lokhttp3/HttpUrl$Builder;->encodedQueryNamesAndValues:Ljava/util/List;
 
     invoke-static {v1}, Lkotlin/jvm/internal/Intrinsics;->checkNotNull(Ljava/lang/Object;)V
-
-    const-string v5, "$this$toQueryString"
-
-    invoke-static {v1, v5}, Lkotlin/jvm/internal/Intrinsics;->checkNotNullParameter(Ljava/lang/Object;Ljava/lang/String;)V
-
-    invoke-static {v0, v4}, Lkotlin/jvm/internal/Intrinsics;->checkNotNullParameter(Ljava/lang/Object;Ljava/lang/String;)V
 
     invoke-interface {v1}, Ljava/util/List;->size()I
 

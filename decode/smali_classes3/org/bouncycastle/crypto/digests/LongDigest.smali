@@ -2,7 +2,8 @@
 .super Ljava/lang/Object;
 
 # interfaces
-.implements Lorg/bouncycastle/crypto/Digest;
+.implements Lorg/bouncycastle/crypto/ExtendedDigest;
+.implements Lorg/bouncycastle/util/Memoable;
 
 
 # static fields
@@ -164,6 +165,28 @@
     return-void
 .end method
 
+.method public constructor <init>(Lorg/bouncycastle/crypto/digests/LongDigest;)V
+    .locals 1
+
+    invoke-direct {p0}, Ljava/lang/Object;-><init>()V
+
+    const/16 v0, 0x8
+
+    new-array v0, v0, [B
+
+    iput-object v0, p0, Lorg/bouncycastle/crypto/digests/LongDigest;->xBuf:[B
+
+    const/16 v0, 0x50
+
+    new-array v0, v0, [J
+
+    iput-object v0, p0, Lorg/bouncycastle/crypto/digests/LongDigest;->W:[J
+
+    invoke-virtual {p0, p1}, Lorg/bouncycastle/crypto/digests/LongDigest;->copyIn(Lorg/bouncycastle/crypto/digests/LongDigest;)V
+
+    return-void
+.end method
+
 
 # virtual methods
 .method public final Ch(JJJ)J
@@ -305,6 +328,78 @@
     return-void
 .end method
 
+.method public copyIn(Lorg/bouncycastle/crypto/digests/LongDigest;)V
+    .locals 4
+
+    iget-object v0, p1, Lorg/bouncycastle/crypto/digests/LongDigest;->xBuf:[B
+
+    iget-object v1, p0, Lorg/bouncycastle/crypto/digests/LongDigest;->xBuf:[B
+
+    array-length v2, v0
+
+    const/4 v3, 0x0
+
+    invoke-static {v0, v3, v1, v3, v2}, Ljava/lang/System;->arraycopy(Ljava/lang/Object;ILjava/lang/Object;II)V
+
+    iget v0, p1, Lorg/bouncycastle/crypto/digests/LongDigest;->xBufOff:I
+
+    iput v0, p0, Lorg/bouncycastle/crypto/digests/LongDigest;->xBufOff:I
+
+    iget-wide v0, p1, Lorg/bouncycastle/crypto/digests/LongDigest;->byteCount1:J
+
+    iput-wide v0, p0, Lorg/bouncycastle/crypto/digests/LongDigest;->byteCount1:J
+
+    iget-wide v0, p1, Lorg/bouncycastle/crypto/digests/LongDigest;->byteCount2:J
+
+    iput-wide v0, p0, Lorg/bouncycastle/crypto/digests/LongDigest;->byteCount2:J
+
+    iget-wide v0, p1, Lorg/bouncycastle/crypto/digests/LongDigest;->H1:J
+
+    iput-wide v0, p0, Lorg/bouncycastle/crypto/digests/LongDigest;->H1:J
+
+    iget-wide v0, p1, Lorg/bouncycastle/crypto/digests/LongDigest;->H2:J
+
+    iput-wide v0, p0, Lorg/bouncycastle/crypto/digests/LongDigest;->H2:J
+
+    iget-wide v0, p1, Lorg/bouncycastle/crypto/digests/LongDigest;->H3:J
+
+    iput-wide v0, p0, Lorg/bouncycastle/crypto/digests/LongDigest;->H3:J
+
+    iget-wide v0, p1, Lorg/bouncycastle/crypto/digests/LongDigest;->H4:J
+
+    iput-wide v0, p0, Lorg/bouncycastle/crypto/digests/LongDigest;->H4:J
+
+    iget-wide v0, p1, Lorg/bouncycastle/crypto/digests/LongDigest;->H5:J
+
+    iput-wide v0, p0, Lorg/bouncycastle/crypto/digests/LongDigest;->H5:J
+
+    iget-wide v0, p1, Lorg/bouncycastle/crypto/digests/LongDigest;->H6:J
+
+    iput-wide v0, p0, Lorg/bouncycastle/crypto/digests/LongDigest;->H6:J
+
+    iget-wide v0, p1, Lorg/bouncycastle/crypto/digests/LongDigest;->H7:J
+
+    iput-wide v0, p0, Lorg/bouncycastle/crypto/digests/LongDigest;->H7:J
+
+    iget-wide v0, p1, Lorg/bouncycastle/crypto/digests/LongDigest;->H8:J
+
+    iput-wide v0, p0, Lorg/bouncycastle/crypto/digests/LongDigest;->H8:J
+
+    iget-object v0, p1, Lorg/bouncycastle/crypto/digests/LongDigest;->W:[J
+
+    iget-object v1, p0, Lorg/bouncycastle/crypto/digests/LongDigest;->W:[J
+
+    array-length v2, v0
+
+    invoke-static {v0, v3, v1, v3, v2}, Ljava/lang/System;->arraycopy(Ljava/lang/Object;ILjava/lang/Object;II)V
+
+    iget p1, p1, Lorg/bouncycastle/crypto/digests/LongDigest;->wOff:I
+
+    iput p1, p0, Lorg/bouncycastle/crypto/digests/LongDigest;->wOff:I
+
+    return-void
+.end method
+
 .method public finish()V
     .locals 6
 
@@ -352,6 +447,14 @@
     invoke-virtual {p0}, Lorg/bouncycastle/crypto/digests/LongDigest;->processBlock()V
 
     return-void
+.end method
+
+.method public getByteLength()I
+    .locals 1
+
+    const/16 v0, 0x80
+
+    return v0
 .end method
 
 .method public processBlock()V
@@ -1081,37 +1184,15 @@
 .end method
 
 .method public processWord([BI)V
-    .locals 6
+    .locals 2
 
     iget-object v0, p0, Lorg/bouncycastle/crypto/digests/LongDigest;->W:[J
 
     iget v1, p0, Lorg/bouncycastle/crypto/digests/LongDigest;->wOff:I
 
-    invoke-static {p1, p2}, Lorg/bouncycastle/util/Pack;->bigEndianToInt([BI)I
+    invoke-static {p1, p2}, Lorg/bouncycastle/util/Pack;->bigEndianToLong([BI)J
 
-    move-result v2
-
-    add-int/lit8 p2, p2, 0x4
-
-    invoke-static {p1, p2}, Lorg/bouncycastle/util/Pack;->bigEndianToInt([BI)I
-
-    move-result p1
-
-    int-to-long v2, v2
-
-    const-wide v4, 0xffffffffL
-
-    and-long/2addr v2, v4
-
-    const/16 p2, 0x20
-
-    shl-long/2addr v2, p2
-
-    int-to-long p1, p1
-
-    and-long/2addr p1, v4
-
-    or-long/2addr p1, v2
+    move-result-wide p1
 
     aput-wide p1, v0, v1
 

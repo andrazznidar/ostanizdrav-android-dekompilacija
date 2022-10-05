@@ -50,10 +50,6 @@
 
     invoke-static {v0, v1}, Lkotlin/jvm/internal/Intrinsics;->checkNotNullExpressionValue(Ljava/lang/Object;Ljava/lang/String;)V
 
-    const-string v1, "boundary"
-
-    invoke-static {v0, v1}, Lkotlin/jvm/internal/Intrinsics;->checkNotNullParameter(Ljava/lang/Object;Ljava/lang/String;)V
-
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
     sget-object v1, Lokio/ByteString;->Companion:Lokio/ByteString$Companion;

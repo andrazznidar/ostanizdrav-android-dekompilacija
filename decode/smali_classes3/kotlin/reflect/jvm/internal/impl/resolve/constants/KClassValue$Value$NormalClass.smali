@@ -15,12 +15,16 @@
 
 
 # instance fields
-.field public final value:Lkotlin/reflect/jvm/internal/impl/resolve/constants/ClassLiteralValue;
+.field private final value:Lkotlin/reflect/jvm/internal/impl/resolve/constants/ClassLiteralValue;
 
 
 # direct methods
 .method public constructor <init>(Lkotlin/reflect/jvm/internal/impl/resolve/constants/ClassLiteralValue;)V
     .locals 1
+
+    const-string v0, "value"
+
+    invoke-static {p1, v0}, Lkotlin/jvm/internal/Intrinsics;->checkNotNullParameter(Ljava/lang/Object;Ljava/lang/String;)V
 
     const/4 v0, 0x0
 
@@ -68,6 +72,38 @@
 
     :cond_2
     return v0
+.end method
+
+.method public final getArrayDimensions()I
+    .locals 1
+
+    iget-object v0, p0, Lkotlin/reflect/jvm/internal/impl/resolve/constants/KClassValue$Value$NormalClass;->value:Lkotlin/reflect/jvm/internal/impl/resolve/constants/ClassLiteralValue;
+
+    invoke-virtual {v0}, Lkotlin/reflect/jvm/internal/impl/resolve/constants/ClassLiteralValue;->getArrayNestedness()I
+
+    move-result v0
+
+    return v0
+.end method
+
+.method public final getClassId()Lkotlin/reflect/jvm/internal/impl/name/ClassId;
+    .locals 1
+
+    iget-object v0, p0, Lkotlin/reflect/jvm/internal/impl/resolve/constants/KClassValue$Value$NormalClass;->value:Lkotlin/reflect/jvm/internal/impl/resolve/constants/ClassLiteralValue;
+
+    invoke-virtual {v0}, Lkotlin/reflect/jvm/internal/impl/resolve/constants/ClassLiteralValue;->getClassId()Lkotlin/reflect/jvm/internal/impl/name/ClassId;
+
+    move-result-object v0
+
+    return-object v0
+.end method
+
+.method public final getValue()Lkotlin/reflect/jvm/internal/impl/resolve/constants/ClassLiteralValue;
+    .locals 1
+
+    iget-object v0, p0, Lkotlin/reflect/jvm/internal/impl/resolve/constants/KClassValue$Value$NormalClass;->value:Lkotlin/reflect/jvm/internal/impl/resolve/constants/ClassLiteralValue;
+
+    return-object v0
 .end method
 
 .method public hashCode()I

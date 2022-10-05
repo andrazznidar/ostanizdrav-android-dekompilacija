@@ -1,86 +1,34 @@
-.class abstract synthetic Lj$/util/stream/C1;
-.super Ljava/lang/Object;
-
-
-# static fields
-.field static final synthetic a:[I
+.class final Lj$/util/stream/C1;
+.super Lj$/util/stream/D1;
 
 
 # direct methods
-.method static constructor <clinit>()V
-    .locals 3
+.method public synthetic constructor <init>(Lj$/util/stream/J0;[DILj$/util/stream/Q0;)V
+    .locals 0
 
-    invoke-static {}, Lj$/util/stream/g4;->values()[Lj$/util/stream/g4;
+    const/4 p4, 0x0
 
-    move-result-object v0
+    invoke-direct {p0, p1, p2, p3, p4}, Lj$/util/stream/D1;-><init>(Lj$/util/stream/O0;Ljava/lang/Object;ILj$/util/stream/Q0;)V
 
-    array-length v0, v0
+    return-void
+.end method
 
-    new-array v0, v0, [I
+.method public synthetic constructor <init>(Lj$/util/stream/L0;[IILj$/util/stream/Q0;)V
+    .locals 0
 
-    sput-object v0, Lj$/util/stream/C1;->a:[I
+    const/4 p4, 0x0
 
-    :try_start_0
-    sget-object v1, Lj$/util/stream/g4;->REFERENCE:Lj$/util/stream/g4;
+    invoke-direct {p0, p1, p2, p3, p4}, Lj$/util/stream/D1;-><init>(Lj$/util/stream/O0;Ljava/lang/Object;ILj$/util/stream/Q0;)V
 
-    invoke-virtual {v1}, Ljava/lang/Enum;->ordinal()I
+    return-void
+.end method
 
-    move-result v1
+.method public synthetic constructor <init>(Lj$/util/stream/N0;[JILj$/util/stream/Q0;)V
+    .locals 0
 
-    const/4 v2, 0x1
+    const/4 p4, 0x0
 
-    aput v2, v0, v1
-    :try_end_0
-    .catch Ljava/lang/NoSuchFieldError; {:try_start_0 .. :try_end_0} :catch_0
+    invoke-direct {p0, p1, p2, p3, p4}, Lj$/util/stream/D1;-><init>(Lj$/util/stream/O0;Ljava/lang/Object;ILj$/util/stream/Q0;)V
 
-    :catch_0
-    :try_start_1
-    sget-object v0, Lj$/util/stream/C1;->a:[I
-
-    sget-object v1, Lj$/util/stream/g4;->INT_VALUE:Lj$/util/stream/g4;
-
-    invoke-virtual {v1}, Ljava/lang/Enum;->ordinal()I
-
-    move-result v1
-
-    const/4 v2, 0x2
-
-    aput v2, v0, v1
-    :try_end_1
-    .catch Ljava/lang/NoSuchFieldError; {:try_start_1 .. :try_end_1} :catch_1
-
-    :catch_1
-    :try_start_2
-    sget-object v0, Lj$/util/stream/C1;->a:[I
-
-    sget-object v1, Lj$/util/stream/g4;->LONG_VALUE:Lj$/util/stream/g4;
-
-    invoke-virtual {v1}, Ljava/lang/Enum;->ordinal()I
-
-    move-result v1
-
-    const/4 v2, 0x3
-
-    aput v2, v0, v1
-    :try_end_2
-    .catch Ljava/lang/NoSuchFieldError; {:try_start_2 .. :try_end_2} :catch_2
-
-    :catch_2
-    :try_start_3
-    sget-object v0, Lj$/util/stream/C1;->a:[I
-
-    sget-object v1, Lj$/util/stream/g4;->DOUBLE_VALUE:Lj$/util/stream/g4;
-
-    invoke-virtual {v1}, Ljava/lang/Enum;->ordinal()I
-
-    move-result v1
-
-    const/4 v2, 0x4
-
-    aput v2, v0, v1
-    :try_end_3
-    .catch Ljava/lang/NoSuchFieldError; {:try_start_3 .. :try_end_3} :catch_3
-
-    :catch_3
     return-void
 .end method

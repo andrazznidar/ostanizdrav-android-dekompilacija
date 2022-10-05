@@ -179,7 +179,7 @@
 
     const/16 v1, 0x18
 
-    invoke-static {v0, v1}, Lcom/airbnb/lottie/utils/GammaEvaluator;->hasAPILevel(Lde/rki/coronawarnapp/util/BuildVersionWrap;I)Z
+    invoke-static {v0, v1}, Lokhttp3/CookieJar$Companion$NoCookies;->hasAPILevel(Lde/rki/coronawarnapp/util/BuildVersionWrap;I)Z
 
     move-result v0
 

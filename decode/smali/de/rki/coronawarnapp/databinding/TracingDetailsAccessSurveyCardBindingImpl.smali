@@ -21,31 +21,31 @@
 
     sput-object v0, Lde/rki/coronawarnapp/databinding/TracingDetailsAccessSurveyCardBindingImpl;->sViewsWithIds:Landroid/util/SparseIntArray;
 
-    const v1, 0x7f0a0812
+    const v1, 0x7f0a085a
 
     const/4 v2, 0x1
 
     invoke-virtual {v0, v1, v2}, Landroid/util/SparseIntArray;->put(II)V
 
-    const v1, 0x7f0a080e
+    const v1, 0x7f0a0856
 
     const/4 v2, 0x2
 
     invoke-virtual {v0, v1, v2}, Landroid/util/SparseIntArray;->put(II)V
 
-    const v1, 0x7f0a0811
+    const v1, 0x7f0a0859
 
     const/4 v2, 0x3
 
     invoke-virtual {v0, v1, v2}, Landroid/util/SparseIntArray;->put(II)V
 
-    const v1, 0x7f0a080d
+    const v1, 0x7f0a0855
 
     const/4 v2, 0x4
 
     invoke-virtual {v0, v1, v2}, Landroid/util/SparseIntArray;->put(II)V
 
-    const v1, 0x7f0a080f
+    const v1, 0x7f0a0857
 
     const/4 v2, 0x5
 

@@ -3,7 +3,7 @@
 
 
 # static fields
-.field public static final paramsLookupTable:Ljava/util/Map;
+.field private static final paramsLookupTable:Ljava/util/Map;
     .annotation system Ldalvik/annotation/Signature;
         value = {
             "Ljava/util/Map<",
@@ -16,13 +16,13 @@
 
 
 # instance fields
-.field public final height:I
+.field private final height:I
 
-.field public final layers:I
+.field private final layers:I
 
-.field public final oid:Lorg/bouncycastle/pqc/crypto/xmss/XMSSOid;
+.field private final oid:Lorg/bouncycastle/pqc/crypto/xmss/XMSSOid;
 
-.field public final xmssParams:Lorg/bouncycastle/pqc/crypto/xmss/XMSSParameters;
+.field private final xmssParams:Lorg/bouncycastle/pqc/crypto/xmss/XMSSParameters;
 
 
 # direct methods
@@ -55,89 +55,61 @@
 
     move-result-object v1
 
-    new-instance v2, Lorg/bouncycastle/pqc/crypto/xmss/XMSSMTParameters;
+    const/4 v2, 0x4
 
-    const/4 v6, 0x4
-
-    invoke-direct {v2, v4, v6, v3}, Lorg/bouncycastle/pqc/crypto/xmss/XMSSMTParameters;-><init>(IILorg/bouncycastle/asn1/ASN1ObjectIdentifier;)V
-
-    invoke-virtual {v0, v1, v2}, Ljava/util/HashMap;->put(Ljava/lang/Object;Ljava/lang/Object;)Ljava/lang/Object;
+    invoke-static {v4, v2, v3, v0, v1}, Lorg/bouncycastle/pqc/crypto/xmss/XMSSMTParameters$$ExternalSyntheticOutline0;->m(IILorg/bouncycastle/asn1/ASN1ObjectIdentifier;Ljava/util/HashMap;Ljava/lang/Integer;)V
 
     const/4 v1, 0x3
 
     invoke-static {v1}, Ljava/lang/Integer;->valueOf(I)Ljava/lang/Integer;
 
-    move-result-object v2
+    move-result-object v6
 
-    new-instance v7, Lorg/bouncycastle/pqc/crypto/xmss/XMSSMTParameters;
+    const/16 v7, 0x28
 
-    const/16 v8, 0x28
+    invoke-static {v7, v5, v3, v0, v6}, Lorg/bouncycastle/pqc/crypto/xmss/XMSSMTParameters$$ExternalSyntheticOutline0;->m(IILorg/bouncycastle/asn1/ASN1ObjectIdentifier;Ljava/util/HashMap;Ljava/lang/Integer;)V
 
-    invoke-direct {v7, v8, v5, v3}, Lorg/bouncycastle/pqc/crypto/xmss/XMSSMTParameters;-><init>(IILorg/bouncycastle/asn1/ASN1ObjectIdentifier;)V
+    invoke-static {v2}, Ljava/lang/Integer;->valueOf(I)Ljava/lang/Integer;
 
-    invoke-virtual {v0, v2, v7}, Ljava/util/HashMap;->put(Ljava/lang/Object;Ljava/lang/Object;)Ljava/lang/Object;
+    move-result-object v6
+
+    invoke-static {v7, v2, v3, v0, v6}, Lorg/bouncycastle/pqc/crypto/xmss/XMSSMTParameters$$ExternalSyntheticOutline0;->m(IILorg/bouncycastle/asn1/ASN1ObjectIdentifier;Ljava/util/HashMap;Ljava/lang/Integer;)V
+
+    const/4 v6, 0x5
 
     invoke-static {v6}, Ljava/lang/Integer;->valueOf(I)Ljava/lang/Integer;
 
-    move-result-object v2
+    move-result-object v6
 
-    new-instance v7, Lorg/bouncycastle/pqc/crypto/xmss/XMSSMTParameters;
+    const/16 v8, 0x8
 
-    invoke-direct {v7, v8, v6, v3}, Lorg/bouncycastle/pqc/crypto/xmss/XMSSMTParameters;-><init>(IILorg/bouncycastle/asn1/ASN1ObjectIdentifier;)V
+    invoke-static {v7, v8, v3, v0, v6}, Lorg/bouncycastle/pqc/crypto/xmss/XMSSMTParameters$$ExternalSyntheticOutline0;->m(IILorg/bouncycastle/asn1/ASN1ObjectIdentifier;Ljava/util/HashMap;Ljava/lang/Integer;)V
 
-    invoke-virtual {v0, v2, v7}, Ljava/util/HashMap;->put(Ljava/lang/Object;Ljava/lang/Object;)Ljava/lang/Object;
+    const/4 v6, 0x6
 
-    const/4 v2, 0x5
+    invoke-static {v6}, Ljava/lang/Integer;->valueOf(I)Ljava/lang/Integer;
 
-    invoke-static {v2}, Ljava/lang/Integer;->valueOf(I)Ljava/lang/Integer;
+    move-result-object v9
 
-    move-result-object v2
+    const/16 v10, 0x3c
 
-    new-instance v7, Lorg/bouncycastle/pqc/crypto/xmss/XMSSMTParameters;
+    invoke-static {v10, v1, v3, v0, v9}, Lorg/bouncycastle/pqc/crypto/xmss/XMSSMTParameters$$ExternalSyntheticOutline0;->m(IILorg/bouncycastle/asn1/ASN1ObjectIdentifier;Ljava/util/HashMap;Ljava/lang/Integer;)V
 
-    const/16 v9, 0x8
-
-    invoke-direct {v7, v8, v9, v3}, Lorg/bouncycastle/pqc/crypto/xmss/XMSSMTParameters;-><init>(IILorg/bouncycastle/asn1/ASN1ObjectIdentifier;)V
-
-    invoke-virtual {v0, v2, v7}, Ljava/util/HashMap;->put(Ljava/lang/Object;Ljava/lang/Object;)Ljava/lang/Object;
-
-    const/4 v2, 0x6
-
-    invoke-static {v2}, Ljava/lang/Integer;->valueOf(I)Ljava/lang/Integer;
-
-    move-result-object v7
-
-    new-instance v10, Lorg/bouncycastle/pqc/crypto/xmss/XMSSMTParameters;
-
-    const/16 v11, 0x3c
-
-    invoke-direct {v10, v11, v1, v3}, Lorg/bouncycastle/pqc/crypto/xmss/XMSSMTParameters;-><init>(IILorg/bouncycastle/asn1/ASN1ObjectIdentifier;)V
-
-    invoke-virtual {v0, v7, v10}, Ljava/util/HashMap;->put(Ljava/lang/Object;Ljava/lang/Object;)Ljava/lang/Object;
-
-    const/4 v7, 0x7
-
-    invoke-static {v7}, Ljava/lang/Integer;->valueOf(I)Ljava/lang/Integer;
-
-    move-result-object v7
-
-    new-instance v10, Lorg/bouncycastle/pqc/crypto/xmss/XMSSMTParameters;
-
-    invoke-direct {v10, v11, v2, v3}, Lorg/bouncycastle/pqc/crypto/xmss/XMSSMTParameters;-><init>(IILorg/bouncycastle/asn1/ASN1ObjectIdentifier;)V
-
-    invoke-virtual {v0, v7, v10}, Ljava/util/HashMap;->put(Ljava/lang/Object;Ljava/lang/Object;)Ljava/lang/Object;
+    const/4 v9, 0x7
 
     invoke-static {v9}, Ljava/lang/Integer;->valueOf(I)Ljava/lang/Integer;
 
-    move-result-object v7
+    move-result-object v9
 
-    new-instance v10, Lorg/bouncycastle/pqc/crypto/xmss/XMSSMTParameters;
+    invoke-static {v10, v6, v3, v0, v9}, Lorg/bouncycastle/pqc/crypto/xmss/XMSSMTParameters$$ExternalSyntheticOutline0;->m(IILorg/bouncycastle/asn1/ASN1ObjectIdentifier;Ljava/util/HashMap;Ljava/lang/Integer;)V
 
-    const/16 v12, 0xc
+    invoke-static {v8}, Ljava/lang/Integer;->valueOf(I)Ljava/lang/Integer;
 
-    invoke-direct {v10, v11, v12, v3}, Lorg/bouncycastle/pqc/crypto/xmss/XMSSMTParameters;-><init>(IILorg/bouncycastle/asn1/ASN1ObjectIdentifier;)V
+    move-result-object v9
 
-    invoke-virtual {v0, v7, v10}, Ljava/util/HashMap;->put(Ljava/lang/Object;Ljava/lang/Object;)Ljava/lang/Object;
+    const/16 v11, 0xc
+
+    invoke-static {v10, v11, v3, v0, v9}, Lorg/bouncycastle/pqc/crypto/xmss/XMSSMTParameters$$ExternalSyntheticOutline0;->m(IILorg/bouncycastle/asn1/ASN1ObjectIdentifier;Ljava/util/HashMap;Ljava/lang/Integer;)V
 
     const/16 v3, 0x9
 
@@ -145,13 +117,13 @@
 
     move-result-object v3
 
-    new-instance v7, Lorg/bouncycastle/pqc/crypto/xmss/XMSSMTParameters;
+    new-instance v9, Lorg/bouncycastle/pqc/crypto/xmss/XMSSMTParameters;
 
-    sget-object v10, Lorg/bouncycastle/asn1/nist/NISTObjectIdentifiers;->id_sha512:Lorg/bouncycastle/asn1/ASN1ObjectIdentifier;
+    sget-object v12, Lorg/bouncycastle/asn1/nist/NISTObjectIdentifiers;->id_sha512:Lorg/bouncycastle/asn1/ASN1ObjectIdentifier;
 
-    invoke-direct {v7, v4, v5, v10}, Lorg/bouncycastle/pqc/crypto/xmss/XMSSMTParameters;-><init>(IILorg/bouncycastle/asn1/ASN1ObjectIdentifier;)V
+    invoke-direct {v9, v4, v5, v12}, Lorg/bouncycastle/pqc/crypto/xmss/XMSSMTParameters;-><init>(IILorg/bouncycastle/asn1/ASN1ObjectIdentifier;)V
 
-    invoke-virtual {v0, v3, v7}, Ljava/util/HashMap;->put(Ljava/lang/Object;Ljava/lang/Object;)Ljava/lang/Object;
+    invoke-virtual {v0, v3, v9}, Ljava/util/HashMap;->put(Ljava/lang/Object;Ljava/lang/Object;)Ljava/lang/Object;
 
     const/16 v3, 0xa
 
@@ -159,11 +131,7 @@
 
     move-result-object v3
 
-    new-instance v7, Lorg/bouncycastle/pqc/crypto/xmss/XMSSMTParameters;
-
-    invoke-direct {v7, v4, v6, v10}, Lorg/bouncycastle/pqc/crypto/xmss/XMSSMTParameters;-><init>(IILorg/bouncycastle/asn1/ASN1ObjectIdentifier;)V
-
-    invoke-virtual {v0, v3, v7}, Ljava/util/HashMap;->put(Ljava/lang/Object;Ljava/lang/Object;)Ljava/lang/Object;
+    invoke-static {v4, v2, v12, v0, v3}, Lorg/bouncycastle/pqc/crypto/xmss/XMSSMTParameters$$ExternalSyntheticOutline0;->m(IILorg/bouncycastle/asn1/ASN1ObjectIdentifier;Ljava/util/HashMap;Ljava/lang/Integer;)V
 
     const/16 v3, 0xb
 
@@ -171,21 +139,13 @@
 
     move-result-object v3
 
-    new-instance v7, Lorg/bouncycastle/pqc/crypto/xmss/XMSSMTParameters;
+    invoke-static {v7, v5, v12, v0, v3}, Lorg/bouncycastle/pqc/crypto/xmss/XMSSMTParameters$$ExternalSyntheticOutline0;->m(IILorg/bouncycastle/asn1/ASN1ObjectIdentifier;Ljava/util/HashMap;Ljava/lang/Integer;)V
 
-    invoke-direct {v7, v8, v5, v10}, Lorg/bouncycastle/pqc/crypto/xmss/XMSSMTParameters;-><init>(IILorg/bouncycastle/asn1/ASN1ObjectIdentifier;)V
-
-    invoke-virtual {v0, v3, v7}, Ljava/util/HashMap;->put(Ljava/lang/Object;Ljava/lang/Object;)Ljava/lang/Object;
-
-    invoke-static {v12}, Ljava/lang/Integer;->valueOf(I)Ljava/lang/Integer;
+    invoke-static {v11}, Ljava/lang/Integer;->valueOf(I)Ljava/lang/Integer;
 
     move-result-object v3
 
-    new-instance v7, Lorg/bouncycastle/pqc/crypto/xmss/XMSSMTParameters;
-
-    invoke-direct {v7, v8, v6, v10}, Lorg/bouncycastle/pqc/crypto/xmss/XMSSMTParameters;-><init>(IILorg/bouncycastle/asn1/ASN1ObjectIdentifier;)V
-
-    invoke-virtual {v0, v3, v7}, Ljava/util/HashMap;->put(Ljava/lang/Object;Ljava/lang/Object;)Ljava/lang/Object;
+    invoke-static {v7, v2, v12, v0, v3}, Lorg/bouncycastle/pqc/crypto/xmss/XMSSMTParameters$$ExternalSyntheticOutline0;->m(IILorg/bouncycastle/asn1/ASN1ObjectIdentifier;Ljava/util/HashMap;Ljava/lang/Integer;)V
 
     const/16 v3, 0xd
 
@@ -193,11 +153,7 @@
 
     move-result-object v3
 
-    new-instance v7, Lorg/bouncycastle/pqc/crypto/xmss/XMSSMTParameters;
-
-    invoke-direct {v7, v8, v9, v10}, Lorg/bouncycastle/pqc/crypto/xmss/XMSSMTParameters;-><init>(IILorg/bouncycastle/asn1/ASN1ObjectIdentifier;)V
-
-    invoke-virtual {v0, v3, v7}, Ljava/util/HashMap;->put(Ljava/lang/Object;Ljava/lang/Object;)Ljava/lang/Object;
+    invoke-static {v7, v8, v12, v0, v3}, Lorg/bouncycastle/pqc/crypto/xmss/XMSSMTParameters$$ExternalSyntheticOutline0;->m(IILorg/bouncycastle/asn1/ASN1ObjectIdentifier;Ljava/util/HashMap;Ljava/lang/Integer;)V
 
     const/16 v3, 0xe
 
@@ -205,11 +161,7 @@
 
     move-result-object v3
 
-    new-instance v7, Lorg/bouncycastle/pqc/crypto/xmss/XMSSMTParameters;
-
-    invoke-direct {v7, v11, v1, v10}, Lorg/bouncycastle/pqc/crypto/xmss/XMSSMTParameters;-><init>(IILorg/bouncycastle/asn1/ASN1ObjectIdentifier;)V
-
-    invoke-virtual {v0, v3, v7}, Ljava/util/HashMap;->put(Ljava/lang/Object;Ljava/lang/Object;)Ljava/lang/Object;
+    invoke-static {v10, v1, v12, v0, v3}, Lorg/bouncycastle/pqc/crypto/xmss/XMSSMTParameters$$ExternalSyntheticOutline0;->m(IILorg/bouncycastle/asn1/ASN1ObjectIdentifier;Ljava/util/HashMap;Ljava/lang/Integer;)V
 
     const/16 v3, 0xf
 
@@ -217,11 +169,7 @@
 
     move-result-object v3
 
-    new-instance v7, Lorg/bouncycastle/pqc/crypto/xmss/XMSSMTParameters;
-
-    invoke-direct {v7, v11, v2, v10}, Lorg/bouncycastle/pqc/crypto/xmss/XMSSMTParameters;-><init>(IILorg/bouncycastle/asn1/ASN1ObjectIdentifier;)V
-
-    invoke-virtual {v0, v3, v7}, Ljava/util/HashMap;->put(Ljava/lang/Object;Ljava/lang/Object;)Ljava/lang/Object;
+    invoke-static {v10, v6, v12, v0, v3}, Lorg/bouncycastle/pqc/crypto/xmss/XMSSMTParameters$$ExternalSyntheticOutline0;->m(IILorg/bouncycastle/asn1/ASN1ObjectIdentifier;Ljava/util/HashMap;Ljava/lang/Integer;)V
 
     const/16 v3, 0x10
 
@@ -229,11 +177,7 @@
 
     move-result-object v3
 
-    new-instance v7, Lorg/bouncycastle/pqc/crypto/xmss/XMSSMTParameters;
-
-    invoke-direct {v7, v11, v12, v10}, Lorg/bouncycastle/pqc/crypto/xmss/XMSSMTParameters;-><init>(IILorg/bouncycastle/asn1/ASN1ObjectIdentifier;)V
-
-    invoke-virtual {v0, v3, v7}, Ljava/util/HashMap;->put(Ljava/lang/Object;Ljava/lang/Object;)Ljava/lang/Object;
+    invoke-static {v10, v11, v12, v0, v3}, Lorg/bouncycastle/pqc/crypto/xmss/XMSSMTParameters$$ExternalSyntheticOutline0;->m(IILorg/bouncycastle/asn1/ASN1ObjectIdentifier;Ljava/util/HashMap;Ljava/lang/Integer;)V
 
     const/16 v3, 0x11
 
@@ -241,13 +185,13 @@
 
     move-result-object v3
 
-    new-instance v7, Lorg/bouncycastle/pqc/crypto/xmss/XMSSMTParameters;
+    new-instance v9, Lorg/bouncycastle/pqc/crypto/xmss/XMSSMTParameters;
 
-    sget-object v10, Lorg/bouncycastle/asn1/nist/NISTObjectIdentifiers;->id_shake128:Lorg/bouncycastle/asn1/ASN1ObjectIdentifier;
+    sget-object v12, Lorg/bouncycastle/asn1/nist/NISTObjectIdentifiers;->id_shake128:Lorg/bouncycastle/asn1/ASN1ObjectIdentifier;
 
-    invoke-direct {v7, v4, v5, v10}, Lorg/bouncycastle/pqc/crypto/xmss/XMSSMTParameters;-><init>(IILorg/bouncycastle/asn1/ASN1ObjectIdentifier;)V
+    invoke-direct {v9, v4, v5, v12}, Lorg/bouncycastle/pqc/crypto/xmss/XMSSMTParameters;-><init>(IILorg/bouncycastle/asn1/ASN1ObjectIdentifier;)V
 
-    invoke-virtual {v0, v3, v7}, Ljava/util/HashMap;->put(Ljava/lang/Object;Ljava/lang/Object;)Ljava/lang/Object;
+    invoke-virtual {v0, v3, v9}, Ljava/util/HashMap;->put(Ljava/lang/Object;Ljava/lang/Object;)Ljava/lang/Object;
 
     const/16 v3, 0x12
 
@@ -255,11 +199,7 @@
 
     move-result-object v3
 
-    new-instance v7, Lorg/bouncycastle/pqc/crypto/xmss/XMSSMTParameters;
-
-    invoke-direct {v7, v4, v6, v10}, Lorg/bouncycastle/pqc/crypto/xmss/XMSSMTParameters;-><init>(IILorg/bouncycastle/asn1/ASN1ObjectIdentifier;)V
-
-    invoke-virtual {v0, v3, v7}, Ljava/util/HashMap;->put(Ljava/lang/Object;Ljava/lang/Object;)Ljava/lang/Object;
+    invoke-static {v4, v2, v12, v0, v3}, Lorg/bouncycastle/pqc/crypto/xmss/XMSSMTParameters$$ExternalSyntheticOutline0;->m(IILorg/bouncycastle/asn1/ASN1ObjectIdentifier;Ljava/util/HashMap;Ljava/lang/Integer;)V
 
     const/16 v3, 0x13
 
@@ -267,21 +207,13 @@
 
     move-result-object v3
 
-    new-instance v7, Lorg/bouncycastle/pqc/crypto/xmss/XMSSMTParameters;
-
-    invoke-direct {v7, v8, v5, v10}, Lorg/bouncycastle/pqc/crypto/xmss/XMSSMTParameters;-><init>(IILorg/bouncycastle/asn1/ASN1ObjectIdentifier;)V
-
-    invoke-virtual {v0, v3, v7}, Ljava/util/HashMap;->put(Ljava/lang/Object;Ljava/lang/Object;)Ljava/lang/Object;
+    invoke-static {v7, v5, v12, v0, v3}, Lorg/bouncycastle/pqc/crypto/xmss/XMSSMTParameters$$ExternalSyntheticOutline0;->m(IILorg/bouncycastle/asn1/ASN1ObjectIdentifier;Ljava/util/HashMap;Ljava/lang/Integer;)V
 
     invoke-static {v4}, Ljava/lang/Integer;->valueOf(I)Ljava/lang/Integer;
 
     move-result-object v3
 
-    new-instance v7, Lorg/bouncycastle/pqc/crypto/xmss/XMSSMTParameters;
-
-    invoke-direct {v7, v8, v6, v10}, Lorg/bouncycastle/pqc/crypto/xmss/XMSSMTParameters;-><init>(IILorg/bouncycastle/asn1/ASN1ObjectIdentifier;)V
-
-    invoke-virtual {v0, v3, v7}, Ljava/util/HashMap;->put(Ljava/lang/Object;Ljava/lang/Object;)Ljava/lang/Object;
+    invoke-static {v7, v2, v12, v0, v3}, Lorg/bouncycastle/pqc/crypto/xmss/XMSSMTParameters$$ExternalSyntheticOutline0;->m(IILorg/bouncycastle/asn1/ASN1ObjectIdentifier;Ljava/util/HashMap;Ljava/lang/Integer;)V
 
     const/16 v3, 0x15
 
@@ -289,11 +221,7 @@
 
     move-result-object v3
 
-    new-instance v7, Lorg/bouncycastle/pqc/crypto/xmss/XMSSMTParameters;
-
-    invoke-direct {v7, v8, v9, v10}, Lorg/bouncycastle/pqc/crypto/xmss/XMSSMTParameters;-><init>(IILorg/bouncycastle/asn1/ASN1ObjectIdentifier;)V
-
-    invoke-virtual {v0, v3, v7}, Ljava/util/HashMap;->put(Ljava/lang/Object;Ljava/lang/Object;)Ljava/lang/Object;
+    invoke-static {v7, v8, v12, v0, v3}, Lorg/bouncycastle/pqc/crypto/xmss/XMSSMTParameters$$ExternalSyntheticOutline0;->m(IILorg/bouncycastle/asn1/ASN1ObjectIdentifier;Ljava/util/HashMap;Ljava/lang/Integer;)V
 
     const/16 v3, 0x16
 
@@ -301,11 +229,7 @@
 
     move-result-object v3
 
-    new-instance v7, Lorg/bouncycastle/pqc/crypto/xmss/XMSSMTParameters;
-
-    invoke-direct {v7, v11, v1, v10}, Lorg/bouncycastle/pqc/crypto/xmss/XMSSMTParameters;-><init>(IILorg/bouncycastle/asn1/ASN1ObjectIdentifier;)V
-
-    invoke-virtual {v0, v3, v7}, Ljava/util/HashMap;->put(Ljava/lang/Object;Ljava/lang/Object;)Ljava/lang/Object;
+    invoke-static {v10, v1, v12, v0, v3}, Lorg/bouncycastle/pqc/crypto/xmss/XMSSMTParameters$$ExternalSyntheticOutline0;->m(IILorg/bouncycastle/asn1/ASN1ObjectIdentifier;Ljava/util/HashMap;Ljava/lang/Integer;)V
 
     const/16 v3, 0x17
 
@@ -313,11 +237,7 @@
 
     move-result-object v3
 
-    new-instance v7, Lorg/bouncycastle/pqc/crypto/xmss/XMSSMTParameters;
-
-    invoke-direct {v7, v11, v2, v10}, Lorg/bouncycastle/pqc/crypto/xmss/XMSSMTParameters;-><init>(IILorg/bouncycastle/asn1/ASN1ObjectIdentifier;)V
-
-    invoke-virtual {v0, v3, v7}, Ljava/util/HashMap;->put(Ljava/lang/Object;Ljava/lang/Object;)Ljava/lang/Object;
+    invoke-static {v10, v6, v12, v0, v3}, Lorg/bouncycastle/pqc/crypto/xmss/XMSSMTParameters$$ExternalSyntheticOutline0;->m(IILorg/bouncycastle/asn1/ASN1ObjectIdentifier;Ljava/util/HashMap;Ljava/lang/Integer;)V
 
     const/16 v3, 0x18
 
@@ -325,11 +245,7 @@
 
     move-result-object v3
 
-    new-instance v7, Lorg/bouncycastle/pqc/crypto/xmss/XMSSMTParameters;
-
-    invoke-direct {v7, v11, v12, v10}, Lorg/bouncycastle/pqc/crypto/xmss/XMSSMTParameters;-><init>(IILorg/bouncycastle/asn1/ASN1ObjectIdentifier;)V
-
-    invoke-virtual {v0, v3, v7}, Ljava/util/HashMap;->put(Ljava/lang/Object;Ljava/lang/Object;)Ljava/lang/Object;
+    invoke-static {v10, v11, v12, v0, v3}, Lorg/bouncycastle/pqc/crypto/xmss/XMSSMTParameters$$ExternalSyntheticOutline0;->m(IILorg/bouncycastle/asn1/ASN1ObjectIdentifier;Ljava/util/HashMap;Ljava/lang/Integer;)V
 
     const/16 v3, 0x19
 
@@ -337,13 +253,13 @@
 
     move-result-object v3
 
-    new-instance v7, Lorg/bouncycastle/pqc/crypto/xmss/XMSSMTParameters;
+    new-instance v9, Lorg/bouncycastle/pqc/crypto/xmss/XMSSMTParameters;
 
-    sget-object v10, Lorg/bouncycastle/asn1/nist/NISTObjectIdentifiers;->id_shake256:Lorg/bouncycastle/asn1/ASN1ObjectIdentifier;
+    sget-object v12, Lorg/bouncycastle/asn1/nist/NISTObjectIdentifiers;->id_shake256:Lorg/bouncycastle/asn1/ASN1ObjectIdentifier;
 
-    invoke-direct {v7, v4, v5, v10}, Lorg/bouncycastle/pqc/crypto/xmss/XMSSMTParameters;-><init>(IILorg/bouncycastle/asn1/ASN1ObjectIdentifier;)V
+    invoke-direct {v9, v4, v5, v12}, Lorg/bouncycastle/pqc/crypto/xmss/XMSSMTParameters;-><init>(IILorg/bouncycastle/asn1/ASN1ObjectIdentifier;)V
 
-    invoke-virtual {v0, v3, v7}, Ljava/util/HashMap;->put(Ljava/lang/Object;Ljava/lang/Object;)Ljava/lang/Object;
+    invoke-virtual {v0, v3, v9}, Ljava/util/HashMap;->put(Ljava/lang/Object;Ljava/lang/Object;)Ljava/lang/Object;
 
     const/16 v3, 0x1a
 
@@ -351,11 +267,7 @@
 
     move-result-object v3
 
-    new-instance v7, Lorg/bouncycastle/pqc/crypto/xmss/XMSSMTParameters;
-
-    invoke-direct {v7, v4, v6, v10}, Lorg/bouncycastle/pqc/crypto/xmss/XMSSMTParameters;-><init>(IILorg/bouncycastle/asn1/ASN1ObjectIdentifier;)V
-
-    invoke-virtual {v0, v3, v7}, Ljava/util/HashMap;->put(Ljava/lang/Object;Ljava/lang/Object;)Ljava/lang/Object;
+    invoke-static {v4, v2, v12, v0, v3}, Lorg/bouncycastle/pqc/crypto/xmss/XMSSMTParameters$$ExternalSyntheticOutline0;->m(IILorg/bouncycastle/asn1/ASN1ObjectIdentifier;Ljava/util/HashMap;Ljava/lang/Integer;)V
 
     const/16 v3, 0x1b
 
@@ -363,11 +275,7 @@
 
     move-result-object v3
 
-    new-instance v4, Lorg/bouncycastle/pqc/crypto/xmss/XMSSMTParameters;
-
-    invoke-direct {v4, v8, v5, v10}, Lorg/bouncycastle/pqc/crypto/xmss/XMSSMTParameters;-><init>(IILorg/bouncycastle/asn1/ASN1ObjectIdentifier;)V
-
-    invoke-virtual {v0, v3, v4}, Ljava/util/HashMap;->put(Ljava/lang/Object;Ljava/lang/Object;)Ljava/lang/Object;
+    invoke-static {v7, v5, v12, v0, v3}, Lorg/bouncycastle/pqc/crypto/xmss/XMSSMTParameters$$ExternalSyntheticOutline0;->m(IILorg/bouncycastle/asn1/ASN1ObjectIdentifier;Ljava/util/HashMap;Ljava/lang/Integer;)V
 
     const/16 v3, 0x1c
 
@@ -375,35 +283,23 @@
 
     move-result-object v3
 
-    new-instance v4, Lorg/bouncycastle/pqc/crypto/xmss/XMSSMTParameters;
+    invoke-static {v7, v2, v12, v0, v3}, Lorg/bouncycastle/pqc/crypto/xmss/XMSSMTParameters$$ExternalSyntheticOutline0;->m(IILorg/bouncycastle/asn1/ASN1ObjectIdentifier;Ljava/util/HashMap;Ljava/lang/Integer;)V
 
-    invoke-direct {v4, v8, v6, v10}, Lorg/bouncycastle/pqc/crypto/xmss/XMSSMTParameters;-><init>(IILorg/bouncycastle/asn1/ASN1ObjectIdentifier;)V
+    const/16 v2, 0x1d
 
-    invoke-virtual {v0, v3, v4}, Ljava/util/HashMap;->put(Ljava/lang/Object;Ljava/lang/Object;)Ljava/lang/Object;
+    invoke-static {v2}, Ljava/lang/Integer;->valueOf(I)Ljava/lang/Integer;
 
-    const/16 v3, 0x1d
+    move-result-object v2
 
-    invoke-static {v3}, Ljava/lang/Integer;->valueOf(I)Ljava/lang/Integer;
+    invoke-static {v7, v8, v12, v0, v2}, Lorg/bouncycastle/pqc/crypto/xmss/XMSSMTParameters$$ExternalSyntheticOutline0;->m(IILorg/bouncycastle/asn1/ASN1ObjectIdentifier;Ljava/util/HashMap;Ljava/lang/Integer;)V
 
-    move-result-object v3
+    const/16 v2, 0x1e
 
-    new-instance v4, Lorg/bouncycastle/pqc/crypto/xmss/XMSSMTParameters;
+    invoke-static {v2}, Ljava/lang/Integer;->valueOf(I)Ljava/lang/Integer;
 
-    invoke-direct {v4, v8, v9, v10}, Lorg/bouncycastle/pqc/crypto/xmss/XMSSMTParameters;-><init>(IILorg/bouncycastle/asn1/ASN1ObjectIdentifier;)V
+    move-result-object v2
 
-    invoke-virtual {v0, v3, v4}, Ljava/util/HashMap;->put(Ljava/lang/Object;Ljava/lang/Object;)Ljava/lang/Object;
-
-    const/16 v3, 0x1e
-
-    invoke-static {v3}, Ljava/lang/Integer;->valueOf(I)Ljava/lang/Integer;
-
-    move-result-object v3
-
-    new-instance v4, Lorg/bouncycastle/pqc/crypto/xmss/XMSSMTParameters;
-
-    invoke-direct {v4, v11, v1, v10}, Lorg/bouncycastle/pqc/crypto/xmss/XMSSMTParameters;-><init>(IILorg/bouncycastle/asn1/ASN1ObjectIdentifier;)V
-
-    invoke-virtual {v0, v3, v4}, Ljava/util/HashMap;->put(Ljava/lang/Object;Ljava/lang/Object;)Ljava/lang/Object;
+    invoke-static {v10, v1, v12, v0, v2}, Lorg/bouncycastle/pqc/crypto/xmss/XMSSMTParameters$$ExternalSyntheticOutline0;->m(IILorg/bouncycastle/asn1/ASN1ObjectIdentifier;Ljava/util/HashMap;Ljava/lang/Integer;)V
 
     const/16 v1, 0x1f
 
@@ -411,11 +307,7 @@
 
     move-result-object v1
 
-    new-instance v3, Lorg/bouncycastle/pqc/crypto/xmss/XMSSMTParameters;
-
-    invoke-direct {v3, v11, v2, v10}, Lorg/bouncycastle/pqc/crypto/xmss/XMSSMTParameters;-><init>(IILorg/bouncycastle/asn1/ASN1ObjectIdentifier;)V
-
-    invoke-virtual {v0, v1, v3}, Ljava/util/HashMap;->put(Ljava/lang/Object;Ljava/lang/Object;)Ljava/lang/Object;
+    invoke-static {v10, v6, v12, v0, v1}, Lorg/bouncycastle/pqc/crypto/xmss/XMSSMTParameters$$ExternalSyntheticOutline0;->m(IILorg/bouncycastle/asn1/ASN1ObjectIdentifier;Ljava/util/HashMap;Ljava/lang/Integer;)V
 
     const/16 v1, 0x20
 
@@ -423,11 +315,7 @@
 
     move-result-object v1
 
-    new-instance v2, Lorg/bouncycastle/pqc/crypto/xmss/XMSSMTParameters;
-
-    invoke-direct {v2, v11, v12, v10}, Lorg/bouncycastle/pqc/crypto/xmss/XMSSMTParameters;-><init>(IILorg/bouncycastle/asn1/ASN1ObjectIdentifier;)V
-
-    invoke-virtual {v0, v1, v2}, Ljava/util/HashMap;->put(Ljava/lang/Object;Ljava/lang/Object;)Ljava/lang/Object;
+    invoke-static {v10, v11, v12, v0, v1}, Lorg/bouncycastle/pqc/crypto/xmss/XMSSMTParameters$$ExternalSyntheticOutline0;->m(IILorg/bouncycastle/asn1/ASN1ObjectIdentifier;Ljava/util/HashMap;Ljava/lang/Integer;)V
 
     invoke-static {v0}, Ljava/util/Collections;->unmodifiableMap(Ljava/util/Map;)Ljava/util/Map;
 
@@ -439,7 +327,7 @@
 .end method
 
 .method public constructor <init>(IILorg/bouncycastle/asn1/ASN1ObjectIdentifier;)V
-    .locals 9
+    .locals 7
 
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
@@ -449,84 +337,233 @@
 
     new-instance v0, Lorg/bouncycastle/pqc/crypto/xmss/XMSSParameters;
 
-    const/4 v1, 0x2
+    invoke-static {p1, p2}, Lorg/bouncycastle/pqc/crypto/xmss/XMSSMTParameters;->xmssTreeHeight(II)I
 
-    if-lt p1, v1, :cond_2
+    move-result p1
 
-    rem-int v1, p1, p2
-
-    if-nez v1, :cond_1
-
-    div-int v1, p1, p2
-
-    const/4 v2, 0x1
-
-    if-eq v1, v2, :cond_0
-
-    invoke-direct {v0, v1, p3}, Lorg/bouncycastle/pqc/crypto/xmss/XMSSParameters;-><init>(ILorg/bouncycastle/asn1/ASN1ObjectIdentifier;)V
+    invoke-direct {v0, p1, p3}, Lorg/bouncycastle/pqc/crypto/xmss/XMSSParameters;-><init>(ILorg/bouncycastle/asn1/ASN1ObjectIdentifier;)V
 
     iput-object v0, p0, Lorg/bouncycastle/pqc/crypto/xmss/XMSSMTParameters;->xmssParams:Lorg/bouncycastle/pqc/crypto/xmss/XMSSParameters;
 
-    iget-object v3, v0, Lorg/bouncycastle/pqc/crypto/xmss/XMSSParameters;->treeDigest:Ljava/lang/String;
+    invoke-virtual {p0}, Lorg/bouncycastle/pqc/crypto/xmss/XMSSMTParameters;->getTreeDigest()Ljava/lang/String;
 
-    iget v4, v0, Lorg/bouncycastle/pqc/crypto/xmss/XMSSParameters;->treeDigestSize:I
+    move-result-object v1
 
-    iget v5, v0, Lorg/bouncycastle/pqc/crypto/xmss/XMSSParameters;->winternitzParameter:I
+    invoke-virtual {p0}, Lorg/bouncycastle/pqc/crypto/xmss/XMSSMTParameters;->getTreeDigestSize()I
 
-    iget-object p3, v0, Lorg/bouncycastle/pqc/crypto/xmss/XMSSParameters;->wotsPlusParams:Lorg/bouncycastle/pqc/crypto/xmss/WOTSPlusParameters;
+    move-result v2
 
-    iget v6, p3, Lorg/bouncycastle/pqc/crypto/xmss/WOTSPlusParameters;->len:I
+    invoke-virtual {p0}, Lorg/bouncycastle/pqc/crypto/xmss/XMSSMTParameters;->getWinternitzParameter()I
 
-    sget-object p3, Lorg/bouncycastle/pqc/crypto/xmss/DefaultXMSSMTOid;->oidLookupTable:Ljava/util/Map;
+    move-result v3
 
-    const-string p3, "algorithmName == null"
+    invoke-virtual {p0}, Lorg/bouncycastle/pqc/crypto/xmss/XMSSMTParameters;->getLen()I
 
-    invoke-static {v3, p3}, Ljava/util/Objects;->requireNonNull(Ljava/lang/Object;Ljava/lang/String;)Ljava/lang/Object;
+    move-result v4
 
-    sget-object p3, Lorg/bouncycastle/pqc/crypto/xmss/DefaultXMSSMTOid;->oidLookupTable:Ljava/util/Map;
+    invoke-virtual {p0}, Lorg/bouncycastle/pqc/crypto/xmss/XMSSMTParameters;->getHeight()I
 
-    move v7, p1
+    move-result v5
 
-    move v8, p2
+    move v6, p2
 
-    invoke-static/range {v3 .. v8}, Lorg/bouncycastle/pqc/crypto/xmss/DefaultXMSSMTOid;->createKey(Ljava/lang/String;IIIII)Ljava/lang/String;
-
-    move-result-object p1
-
-    invoke-interface {p3, p1}, Ljava/util/Map;->get(Ljava/lang/Object;)Ljava/lang/Object;
+    invoke-static/range {v1 .. v6}, Lorg/bouncycastle/pqc/crypto/xmss/DefaultXMSSMTOid;->lookup(Ljava/lang/String;IIIII)Lorg/bouncycastle/pqc/crypto/xmss/DefaultXMSSMTOid;
 
     move-result-object p1
-
-    check-cast p1, Lorg/bouncycastle/pqc/crypto/xmss/DefaultXMSSMTOid;
 
     iput-object p1, p0, Lorg/bouncycastle/pqc/crypto/xmss/XMSSMTParameters;->oid:Lorg/bouncycastle/pqc/crypto/xmss/XMSSOid;
 
     return-void
+.end method
+
+.method public constructor <init>(IILorg/bouncycastle/crypto/Digest;)V
+    .locals 0
+
+    invoke-interface {p3}, Lorg/bouncycastle/crypto/Digest;->getAlgorithmName()Ljava/lang/String;
+
+    move-result-object p3
+
+    invoke-static {p3}, Lorg/bouncycastle/pqc/crypto/xmss/DigestUtil;->getDigestOID(Ljava/lang/String;)Lorg/bouncycastle/asn1/ASN1ObjectIdentifier;
+
+    move-result-object p3
+
+    invoke-direct {p0, p1, p2, p3}, Lorg/bouncycastle/pqc/crypto/xmss/XMSSMTParameters;-><init>(IILorg/bouncycastle/asn1/ASN1ObjectIdentifier;)V
+
+    return-void
+.end method
+
+.method public static lookupByOID(I)Lorg/bouncycastle/pqc/crypto/xmss/XMSSMTParameters;
+    .locals 1
+
+    sget-object v0, Lorg/bouncycastle/pqc/crypto/xmss/XMSSMTParameters;->paramsLookupTable:Ljava/util/Map;
+
+    invoke-static {p0}, Ljava/lang/Integer;->valueOf(I)Ljava/lang/Integer;
+
+    move-result-object p0
+
+    invoke-interface {v0, p0}, Ljava/util/Map;->get(Ljava/lang/Object;)Ljava/lang/Object;
+
+    move-result-object p0
+
+    check-cast p0, Lorg/bouncycastle/pqc/crypto/xmss/XMSSMTParameters;
+
+    return-object p0
+.end method
+
+.method private static xmssTreeHeight(II)I
+    .locals 1
+    .annotation system Ldalvik/annotation/Throws;
+        value = {
+            Ljava/lang/IllegalArgumentException;
+        }
+    .end annotation
+
+    const/4 v0, 0x2
+
+    if-lt p0, v0, :cond_2
+
+    rem-int v0, p0, p1
+
+    if-nez v0, :cond_1
+
+    div-int/2addr p0, p1
+
+    const/4 p1, 0x1
+
+    if-eq p0, p1, :cond_0
+
+    return p0
 
     :cond_0
-    new-instance p1, Ljava/lang/IllegalArgumentException;
+    new-instance p0, Ljava/lang/IllegalArgumentException;
 
-    const-string p2, "height / layers must be greater than 1"
+    const-string p1, "height / layers must be greater than 1"
 
-    invoke-direct {p1, p2}, Ljava/lang/IllegalArgumentException;-><init>(Ljava/lang/String;)V
+    invoke-direct {p0, p1}, Ljava/lang/IllegalArgumentException;-><init>(Ljava/lang/String;)V
 
-    throw p1
+    throw p0
 
     :cond_1
-    new-instance p1, Ljava/lang/IllegalArgumentException;
+    new-instance p0, Ljava/lang/IllegalArgumentException;
 
-    const-string p2, "layers must divide totalHeight without remainder"
+    const-string p1, "layers must divide totalHeight without remainder"
 
-    invoke-direct {p1, p2}, Ljava/lang/IllegalArgumentException;-><init>(Ljava/lang/String;)V
+    invoke-direct {p0, p1}, Ljava/lang/IllegalArgumentException;-><init>(Ljava/lang/String;)V
 
-    throw p1
+    throw p0
 
     :cond_2
-    new-instance p1, Ljava/lang/IllegalArgumentException;
+    new-instance p0, Ljava/lang/IllegalArgumentException;
 
-    const-string p2, "totalHeight must be > 1"
+    const-string p1, "totalHeight must be > 1"
 
-    invoke-direct {p1, p2}, Ljava/lang/IllegalArgumentException;-><init>(Ljava/lang/String;)V
+    invoke-direct {p0, p1}, Ljava/lang/IllegalArgumentException;-><init>(Ljava/lang/String;)V
 
-    throw p1
+    throw p0
+.end method
+
+
+# virtual methods
+.method public getHeight()I
+    .locals 1
+
+    iget v0, p0, Lorg/bouncycastle/pqc/crypto/xmss/XMSSMTParameters;->height:I
+
+    return v0
+.end method
+
+.method public getLayers()I
+    .locals 1
+
+    iget v0, p0, Lorg/bouncycastle/pqc/crypto/xmss/XMSSMTParameters;->layers:I
+
+    return v0
+.end method
+
+.method public getLen()I
+    .locals 1
+
+    iget-object v0, p0, Lorg/bouncycastle/pqc/crypto/xmss/XMSSMTParameters;->xmssParams:Lorg/bouncycastle/pqc/crypto/xmss/XMSSParameters;
+
+    invoke-virtual {v0}, Lorg/bouncycastle/pqc/crypto/xmss/XMSSParameters;->getLen()I
+
+    move-result v0
+
+    return v0
+.end method
+
+.method public getOid()Lorg/bouncycastle/pqc/crypto/xmss/XMSSOid;
+    .locals 1
+
+    iget-object v0, p0, Lorg/bouncycastle/pqc/crypto/xmss/XMSSMTParameters;->oid:Lorg/bouncycastle/pqc/crypto/xmss/XMSSOid;
+
+    return-object v0
+.end method
+
+.method public getTreeDigest()Ljava/lang/String;
+    .locals 1
+
+    iget-object v0, p0, Lorg/bouncycastle/pqc/crypto/xmss/XMSSMTParameters;->xmssParams:Lorg/bouncycastle/pqc/crypto/xmss/XMSSParameters;
+
+    invoke-virtual {v0}, Lorg/bouncycastle/pqc/crypto/xmss/XMSSParameters;->getTreeDigest()Ljava/lang/String;
+
+    move-result-object v0
+
+    return-object v0
+.end method
+
+.method public getTreeDigestOID()Lorg/bouncycastle/asn1/ASN1ObjectIdentifier;
+    .locals 1
+
+    iget-object v0, p0, Lorg/bouncycastle/pqc/crypto/xmss/XMSSMTParameters;->xmssParams:Lorg/bouncycastle/pqc/crypto/xmss/XMSSParameters;
+
+    invoke-virtual {v0}, Lorg/bouncycastle/pqc/crypto/xmss/XMSSParameters;->getTreeDigestOID()Lorg/bouncycastle/asn1/ASN1ObjectIdentifier;
+
+    move-result-object v0
+
+    return-object v0
+.end method
+
+.method public getTreeDigestSize()I
+    .locals 1
+
+    iget-object v0, p0, Lorg/bouncycastle/pqc/crypto/xmss/XMSSMTParameters;->xmssParams:Lorg/bouncycastle/pqc/crypto/xmss/XMSSParameters;
+
+    invoke-virtual {v0}, Lorg/bouncycastle/pqc/crypto/xmss/XMSSParameters;->getTreeDigestSize()I
+
+    move-result v0
+
+    return v0
+.end method
+
+.method public getWOTSPlus()Lorg/bouncycastle/pqc/crypto/xmss/WOTSPlus;
+    .locals 1
+
+    iget-object v0, p0, Lorg/bouncycastle/pqc/crypto/xmss/XMSSMTParameters;->xmssParams:Lorg/bouncycastle/pqc/crypto/xmss/XMSSParameters;
+
+    invoke-virtual {v0}, Lorg/bouncycastle/pqc/crypto/xmss/XMSSParameters;->getWOTSPlus()Lorg/bouncycastle/pqc/crypto/xmss/WOTSPlus;
+
+    move-result-object v0
+
+    return-object v0
+.end method
+
+.method public getWinternitzParameter()I
+    .locals 1
+
+    iget-object v0, p0, Lorg/bouncycastle/pqc/crypto/xmss/XMSSMTParameters;->xmssParams:Lorg/bouncycastle/pqc/crypto/xmss/XMSSParameters;
+
+    invoke-virtual {v0}, Lorg/bouncycastle/pqc/crypto/xmss/XMSSParameters;->getWinternitzParameter()I
+
+    move-result v0
+
+    return v0
+.end method
+
+.method public getXMSSParameters()Lorg/bouncycastle/pqc/crypto/xmss/XMSSParameters;
+    .locals 1
+
+    iget-object v0, p0, Lorg/bouncycastle/pqc/crypto/xmss/XMSSMTParameters;->xmssParams:Lorg/bouncycastle/pqc/crypto/xmss/XMSSParameters;
+
+    return-object v0
 .end method

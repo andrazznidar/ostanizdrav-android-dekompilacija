@@ -38,6 +38,8 @@
 
 .field public _enumsByIndex:[Ljava/lang/Object;
 
+.field public final _isFromIntValue:Z
+
 .field public final _lookupByName:Lcom/fasterxml/jackson/databind/util/CompactStringObjectMap;
 
 .field public _lookupByToString:Lcom/fasterxml/jackson/databind/util/CompactStringObjectMap;
@@ -57,11 +59,15 @@
 
     iput-object v0, p0, Lcom/fasterxml/jackson/databind/deser/std/EnumDeserializer;->_enumsByIndex:[Ljava/lang/Object;
 
-    iget-object p1, p1, Lcom/fasterxml/jackson/databind/deser/std/EnumDeserializer;->_enumDefaultValue:Ljava/lang/Enum;
+    iget-object v0, p1, Lcom/fasterxml/jackson/databind/deser/std/EnumDeserializer;->_enumDefaultValue:Ljava/lang/Enum;
 
-    iput-object p1, p0, Lcom/fasterxml/jackson/databind/deser/std/EnumDeserializer;->_enumDefaultValue:Ljava/lang/Enum;
+    iput-object v0, p0, Lcom/fasterxml/jackson/databind/deser/std/EnumDeserializer;->_enumDefaultValue:Ljava/lang/Enum;
 
     iput-object p2, p0, Lcom/fasterxml/jackson/databind/deser/std/EnumDeserializer;->_caseInsensitive:Ljava/lang/Boolean;
+
+    iget-boolean p1, p1, Lcom/fasterxml/jackson/databind/deser/std/EnumDeserializer;->_isFromIntValue:Z
+
+    iput-boolean p1, p0, Lcom/fasterxml/jackson/databind/deser/std/EnumDeserializer;->_isFromIntValue:Z
 
     return-void
 .end method
@@ -83,11 +89,15 @@
 
     iput-object v0, p0, Lcom/fasterxml/jackson/databind/deser/std/EnumDeserializer;->_enumsByIndex:[Ljava/lang/Object;
 
-    iget-object p1, p1, Lcom/fasterxml/jackson/databind/util/EnumResolver;->_defaultValue:Ljava/lang/Enum;
+    iget-object v0, p1, Lcom/fasterxml/jackson/databind/util/EnumResolver;->_defaultValue:Ljava/lang/Enum;
 
-    iput-object p1, p0, Lcom/fasterxml/jackson/databind/deser/std/EnumDeserializer;->_enumDefaultValue:Ljava/lang/Enum;
+    iput-object v0, p0, Lcom/fasterxml/jackson/databind/deser/std/EnumDeserializer;->_enumDefaultValue:Ljava/lang/Enum;
 
     iput-object p2, p0, Lcom/fasterxml/jackson/databind/deser/std/EnumDeserializer;->_caseInsensitive:Ljava/lang/Boolean;
+
+    iget-boolean p1, p1, Lcom/fasterxml/jackson/databind/util/EnumResolver;->_isFromIntValue:Z
+
+    iput-boolean p1, p0, Lcom/fasterxml/jackson/databind/deser/std/EnumDeserializer;->_isFromIntValue:Z
 
     return-void
 .end method
@@ -156,7 +166,7 @@
 
     move-result-object v0
 
-    if-nez v0, :cond_f
+    if-nez v0, :cond_11
 
     invoke-virtual {p3}, Ljava/lang/String;->trim()Ljava/lang/String;
 
@@ -168,7 +178,7 @@
 
     move-result-object v0
 
-    if-nez v0, :cond_f
+    if-nez v0, :cond_11
 
     :cond_2
     const/16 p3, 0x9
@@ -185,13 +195,41 @@
 
     const/4 v8, 0x0
 
-    if-eqz v1, :cond_5
+    if-eqz v1, :cond_7
 
-    invoke-virtual {v5}, Ljava/lang/String;->isEmpty()Z
+    iget-object p1, p0, Lcom/fasterxml/jackson/databind/deser/std/EnumDeserializer;->_enumDefaultValue:Ljava/lang/Enum;
+
+    if-eqz p1, :cond_3
+
+    sget-object p1, Lcom/fasterxml/jackson/databind/DeserializationFeature;->READ_UNKNOWN_ENUM_VALUES_USING_DEFAULT_VALUE:Lcom/fasterxml/jackson/databind/DeserializationFeature;
+
+    invoke-virtual {p2, p1}, Lcom/fasterxml/jackson/databind/DeserializationContext;->isEnabled(Lcom/fasterxml/jackson/databind/DeserializationFeature;)Z
 
     move-result p1
 
     if-eqz p1, :cond_3
+
+    iget-object v8, p0, Lcom/fasterxml/jackson/databind/deser/std/EnumDeserializer;->_enumDefaultValue:Ljava/lang/Enum;
+
+    goto/16 :goto_4
+
+    :cond_3
+    sget-object p1, Lcom/fasterxml/jackson/databind/DeserializationFeature;->READ_UNKNOWN_ENUM_VALUES_AS_NULL:Lcom/fasterxml/jackson/databind/DeserializationFeature;
+
+    invoke-virtual {p2, p1}, Lcom/fasterxml/jackson/databind/DeserializationContext;->isEnabled(Lcom/fasterxml/jackson/databind/DeserializationFeature;)Z
+
+    move-result p1
+
+    if-eqz p1, :cond_4
+
+    goto/16 :goto_4
+
+    :cond_4
+    invoke-virtual {v5}, Ljava/lang/String;->isEmpty()Z
+
+    move-result p1
+
+    if-eqz p1, :cond_5
 
     iget-object p1, p0, Lcom/fasterxml/jackson/databind/deser/std/StdDeserializer;->_valueClass:Ljava/lang/Class;
 
@@ -215,7 +253,7 @@
 
     goto :goto_1
 
-    :cond_3
+    :cond_5
     iget-object p1, p0, Lcom/fasterxml/jackson/databind/deser/std/StdDeserializer;->_valueClass:Ljava/lang/Class;
 
     invoke-virtual {p2, p3, p1, v7}, Lcom/fasterxml/jackson/databind/DeserializationContext;->findCoercionFromBlankString$enumunboxing$(ILjava/lang/Class;I)I
@@ -235,24 +273,24 @@
     invoke-virtual/range {v1 .. v6}, Lcom/fasterxml/jackson/databind/deser/std/StdDeserializer;->_checkCoercionFail$enumunboxing$(Lcom/fasterxml/jackson/databind/DeserializationContext;ILjava/lang/Class;Ljava/lang/Object;Ljava/lang/String;)I
 
     :goto_1
-    invoke-static {p1}, Landroidx/constraintlayout/core/SolverVariable$Type$r8$EnumUnboxingUtility;->$enumboxing$ordinal(I)I
+    invoke-static {p1}, Landroidx/camera/camera2/internal/Camera2CameraImpl$InternalState$EnumUnboxingSharedUtility;->ordinal(I)I
 
     move-result p1
 
-    if-eq p1, v7, :cond_4
+    if-eq p1, v7, :cond_6
 
     const/4 p2, 0x3
 
-    if-eq p1, p2, :cond_4
+    if-eq p1, p2, :cond_6
 
-    goto/16 :goto_5
+    goto/16 :goto_4
 
-    :cond_4
+    :cond_6
     iget-object v8, p0, Lcom/fasterxml/jackson/databind/deser/std/EnumDeserializer;->_enumDefaultValue:Ljava/lang/Enum;
 
-    goto/16 :goto_5
+    goto/16 :goto_4
 
-    :cond_5
+    :cond_7
     sget-object p3, Ljava/lang/Boolean;->TRUE:Ljava/lang/Boolean;
 
     iget-object v1, p0, Lcom/fasterxml/jackson/databind/deser/std/EnumDeserializer;->_caseInsensitive:Ljava/lang/Boolean;
@@ -263,7 +301,7 @@
 
     const/4 v1, 0x0
 
-    if-eqz p3, :cond_8
+    if-eqz p3, :cond_a
 
     iget-object p3, p1, Lcom/fasterxml/jackson/databind/util/CompactStringObjectMap;->_hashArea:[Ljava/lang/Object;
 
@@ -272,13 +310,13 @@
     move v2, v1
 
     :goto_2
-    if-ge v2, p3, :cond_7
+    if-ge v2, p3, :cond_9
 
     iget-object v3, p1, Lcom/fasterxml/jackson/databind/util/CompactStringObjectMap;->_hashArea:[Ljava/lang/Object;
 
     aget-object v3, v3, v2
 
-    if-eqz v3, :cond_6
+    if-eqz v3, :cond_8
 
     check-cast v3, Ljava/lang/String;
 
@@ -286,7 +324,7 @@
 
     move-result v3
 
-    if-eqz v3, :cond_6
+    if-eqz v3, :cond_8
 
     iget-object p3, p1, Lcom/fasterxml/jackson/databind/util/CompactStringObjectMap;->_hashArea:[Ljava/lang/Object;
 
@@ -296,29 +334,33 @@
 
     goto :goto_3
 
-    :cond_6
+    :cond_8
     add-int/lit8 v2, v2, 0x2
 
     goto :goto_2
 
-    :cond_7
+    :cond_9
     move-object p3, v8
 
     :goto_3
-    if-eqz p3, :cond_a
+    if-eqz p3, :cond_c
 
     move-object v8, p3
 
-    goto/16 :goto_5
+    goto :goto_4
 
-    :cond_8
+    :cond_a
     sget-object p3, Lcom/fasterxml/jackson/databind/DeserializationFeature;->FAIL_ON_NUMBERS_FOR_ENUMS:Lcom/fasterxml/jackson/databind/DeserializationFeature;
 
     invoke-virtual {p2, p3}, Lcom/fasterxml/jackson/databind/DeserializationContext;->isEnabled(Lcom/fasterxml/jackson/databind/DeserializationFeature;)Z
 
     move-result p3
 
-    if-nez p3, :cond_a
+    if-nez p3, :cond_c
+
+    iget-boolean p3, p0, Lcom/fasterxml/jackson/databind/deser/std/EnumDeserializer;->_isFromIntValue:Z
+
+    if-nez p3, :cond_c
 
     invoke-virtual {v0, v1}, Ljava/lang/String;->charAt(I)C
 
@@ -326,11 +368,11 @@
 
     const/16 v2, 0x30
 
-    if-lt p3, v2, :cond_a
+    if-lt p3, v2, :cond_c
 
     const/16 v2, 0x39
 
-    if-gt p3, v2, :cond_a
+    if-gt p3, v2, :cond_c
 
     :try_start_2
     invoke-static {v0}, Ljava/lang/Integer;->parseInt(Ljava/lang/String;)I
@@ -343,21 +385,21 @@
 
     move-result v2
 
-    if-eqz v2, :cond_9
+    if-eqz v2, :cond_b
 
-    if-ltz p3, :cond_a
+    if-ltz p3, :cond_c
 
     iget-object v2, p0, Lcom/fasterxml/jackson/databind/deser/std/EnumDeserializer;->_enumsByIndex:[Ljava/lang/Object;
 
     array-length v3, v2
 
-    if-ge p3, v3, :cond_a
+    if-ge p3, v3, :cond_c
 
     aget-object v8, v2, p3
 
-    goto :goto_5
+    goto :goto_4
 
-    :cond_9
+    :cond_b
     iget-object p3, p0, Lcom/fasterxml/jackson/databind/deser/std/StdDeserializer;->_valueClass:Ljava/lang/Class;
 
     const-string/jumbo v2, "value looks like quoted Enum index, but `MapperFeature.ALLOW_COERCION_OF_SCALARS` prevents use"
@@ -371,10 +413,10 @@
     .catch Ljava/lang/NumberFormatException; {:try_start_2 .. :try_end_2} :catch_0
 
     :catch_0
-    :cond_a
+    :cond_c
     iget-object p3, p0, Lcom/fasterxml/jackson/databind/deser/std/EnumDeserializer;->_enumDefaultValue:Ljava/lang/Enum;
 
-    if-eqz p3, :cond_b
+    if-eqz p3, :cond_d
 
     sget-object p3, Lcom/fasterxml/jackson/databind/DeserializationFeature;->READ_UNKNOWN_ENUM_VALUES_USING_DEFAULT_VALUE:Lcom/fasterxml/jackson/databind/DeserializationFeature;
 
@@ -382,21 +424,25 @@
 
     move-result p3
 
-    if-eqz p3, :cond_b
+    if-eqz p3, :cond_d
 
     iget-object v8, p0, Lcom/fasterxml/jackson/databind/deser/std/EnumDeserializer;->_enumDefaultValue:Ljava/lang/Enum;
 
-    goto :goto_5
+    goto :goto_4
 
-    :cond_b
+    :cond_d
     sget-object p3, Lcom/fasterxml/jackson/databind/DeserializationFeature;->READ_UNKNOWN_ENUM_VALUES_AS_NULL:Lcom/fasterxml/jackson/databind/DeserializationFeature;
 
     invoke-virtual {p2, p3}, Lcom/fasterxml/jackson/databind/DeserializationContext;->isEnabled(Lcom/fasterxml/jackson/databind/DeserializationFeature;)Z
 
     move-result p3
 
-    if-nez p3, :cond_e
+    if-eqz p3, :cond_e
 
+    :goto_4
+    return-object v8
+
+    :cond_e
     iget-object p3, p0, Lcom/fasterxml/jackson/databind/deser/std/StdDeserializer;->_valueClass:Ljava/lang/Class;
 
     new-array v2, v7, [Ljava/lang/Object;
@@ -413,25 +459,25 @@
 
     move v5, v1
 
-    :goto_4
-    if-ge v5, v3, :cond_d
+    :goto_5
+    if-ge v5, v3, :cond_10
 
     iget-object v6, p1, Lcom/fasterxml/jackson/databind/util/CompactStringObjectMap;->_hashArea:[Ljava/lang/Object;
 
     aget-object v6, v6, v5
 
-    if-eqz v6, :cond_c
+    if-eqz v6, :cond_f
 
     check-cast v6, Ljava/lang/String;
 
     invoke-virtual {v4, v6}, Ljava/util/ArrayList;->add(Ljava/lang/Object;)Z
 
-    :cond_c
+    :cond_f
     add-int/lit8 v5, v5, 0x2
 
-    goto :goto_4
+    goto :goto_5
 
-    :cond_d
+    :cond_10
     aput-object v4, v2, v1
 
     const-string p1, "not one of the values accepted for Enum class: %s"
@@ -440,11 +486,7 @@
 
     throw v8
 
-    :cond_e
-    :goto_5
-    return-object v8
-
-    :cond_f
+    :cond_11
     return-object v0
 .end method
 
@@ -548,8 +590,23 @@
 
     const/4 v1, 0x0
 
-    if-eqz v0, :cond_8
+    if-eqz v0, :cond_9
 
+    iget-boolean v0, p0, Lcom/fasterxml/jackson/databind/deser/std/EnumDeserializer;->_isFromIntValue:Z
+
+    if-eqz v0, :cond_1
+
+    invoke-virtual {p1}, Lcom/fasterxml/jackson/core/JsonParser;->getText()Ljava/lang/String;
+
+    move-result-object v0
+
+    invoke-virtual {p0, p1, p2, v0}, Lcom/fasterxml/jackson/databind/deser/std/EnumDeserializer;->_fromString(Lcom/fasterxml/jackson/core/JsonParser;Lcom/fasterxml/jackson/databind/DeserializationContext;Ljava/lang/String;)Ljava/lang/Object;
+
+    move-result-object p1
+
+    return-object p1
+
+    :cond_1
     invoke-virtual {p1}, Lcom/fasterxml/jackson/core/JsonParser;->getIntValue()I
 
     move-result p1
@@ -568,7 +625,7 @@
 
     const/4 v10, 0x1
 
-    if-ne v0, v10, :cond_2
+    if-ne v0, v10, :cond_3
 
     sget-object v4, Lcom/fasterxml/jackson/databind/DeserializationFeature;->FAIL_ON_NUMBERS_FOR_ENUMS:Lcom/fasterxml/jackson/databind/DeserializationFeature;
 
@@ -576,7 +633,7 @@
 
     move-result v4
 
-    if-nez v4, :cond_1
+    if-nez v4, :cond_2
 
     iget-object v7, p0, Lcom/fasterxml/jackson/databind/deser/std/StdDeserializer;->_valueClass:Ljava/lang/Class;
 
@@ -602,7 +659,7 @@
 
     goto :goto_0
 
-    :cond_1
+    :cond_2
     iget-object v0, p0, Lcom/fasterxml/jackson/databind/deser/std/StdDeserializer;->_valueClass:Ljava/lang/Class;
 
     invoke-static {p1}, Ljava/lang/Integer;->valueOf(I)Ljava/lang/Integer;
@@ -617,34 +674,34 @@
 
     throw v1
 
-    :cond_2
+    :cond_3
     :goto_0
-    invoke-static {v0}, Landroidx/constraintlayout/core/SolverVariable$Type$r8$EnumUnboxingUtility;->$enumboxing$ordinal(I)I
+    invoke-static {v0}, Landroidx/camera/camera2/internal/Camera2CameraImpl$InternalState$EnumUnboxingSharedUtility;->ordinal(I)I
 
     move-result v0
 
     const/4 v4, 0x2
 
-    if-eq v0, v4, :cond_7
+    if-eq v0, v4, :cond_8
 
-    if-eq v0, v3, :cond_6
+    if-eq v0, v3, :cond_7
 
-    if-ltz p1, :cond_3
+    if-ltz p1, :cond_4
 
     iget-object v0, p0, Lcom/fasterxml/jackson/databind/deser/std/EnumDeserializer;->_enumsByIndex:[Ljava/lang/Object;
 
     array-length v3, v0
 
-    if-ge p1, v3, :cond_3
+    if-ge p1, v3, :cond_4
 
     aget-object v1, v0, p1
 
     goto :goto_1
 
-    :cond_3
+    :cond_4
     iget-object v0, p0, Lcom/fasterxml/jackson/databind/deser/std/EnumDeserializer;->_enumDefaultValue:Ljava/lang/Enum;
 
-    if-eqz v0, :cond_4
+    if-eqz v0, :cond_5
 
     sget-object v0, Lcom/fasterxml/jackson/databind/DeserializationFeature;->READ_UNKNOWN_ENUM_VALUES_USING_DEFAULT_VALUE:Lcom/fasterxml/jackson/databind/DeserializationFeature;
 
@@ -652,24 +709,24 @@
 
     move-result v0
 
-    if-eqz v0, :cond_4
+    if-eqz v0, :cond_5
 
     iget-object v1, p0, Lcom/fasterxml/jackson/databind/deser/std/EnumDeserializer;->_enumDefaultValue:Ljava/lang/Enum;
 
     goto :goto_1
 
-    :cond_4
+    :cond_5
     sget-object v0, Lcom/fasterxml/jackson/databind/DeserializationFeature;->READ_UNKNOWN_ENUM_VALUES_AS_NULL:Lcom/fasterxml/jackson/databind/DeserializationFeature;
 
     invoke-virtual {p2, v0}, Lcom/fasterxml/jackson/databind/DeserializationContext;->isEnabled(Lcom/fasterxml/jackson/databind/DeserializationFeature;)Z
 
     move-result v0
 
-    if-eqz v0, :cond_5
+    if-eqz v0, :cond_6
 
     goto :goto_1
 
-    :cond_5
+    :cond_6
     iget-object v0, p0, Lcom/fasterxml/jackson/databind/deser/std/StdDeserializer;->_valueClass:Ljava/lang/Class;
 
     invoke-static {p1}, Ljava/lang/Integer;->valueOf(I)Ljava/lang/Integer;
@@ -696,19 +753,19 @@
 
     throw v1
 
-    :cond_6
+    :cond_7
     iget-object v1, p0, Lcom/fasterxml/jackson/databind/deser/std/EnumDeserializer;->_enumDefaultValue:Ljava/lang/Enum;
 
-    :cond_7
+    :cond_8
     :goto_1
     return-object v1
 
-    :cond_8
+    :cond_9
     invoke-virtual {p1}, Lcom/fasterxml/jackson/core/JsonParser;->isExpectedStartObjectToken()Z
 
     move-result v0
 
-    if-nez v0, :cond_a
+    if-nez v0, :cond_b
 
     sget-object v0, Lcom/fasterxml/jackson/core/JsonToken;->START_ARRAY:Lcom/fasterxml/jackson/core/JsonToken;
 
@@ -716,7 +773,7 @@
 
     move-result v0
 
-    if-eqz v0, :cond_9
+    if-eqz v0, :cond_a
 
     invoke-virtual {p0, p1, p2}, Lcom/fasterxml/jackson/databind/deser/std/StdDeserializer;->_deserializeFromArray(Lcom/fasterxml/jackson/core/JsonParser;Lcom/fasterxml/jackson/databind/DeserializationContext;)Ljava/lang/Object;
 
@@ -724,14 +781,14 @@
 
     return-object p1
 
-    :cond_9
+    :cond_a
     iget-object v0, p0, Lcom/fasterxml/jackson/databind/deser/std/StdDeserializer;->_valueClass:Ljava/lang/Class;
 
     invoke-virtual {p2, v0, p1}, Lcom/fasterxml/jackson/databind/DeserializationContext;->handleUnexpectedToken(Ljava/lang/Class;Lcom/fasterxml/jackson/core/JsonParser;)Ljava/lang/Object;
 
     throw v1
 
-    :cond_a
+    :cond_b
     iget-object v0, p0, Lcom/fasterxml/jackson/databind/deser/std/StdDeserializer;->_valueClass:Ljava/lang/Class;
 
     invoke-virtual {p2, v0, p1}, Lcom/fasterxml/jackson/databind/DeserializationContext;->handleUnexpectedToken(Ljava/lang/Class;Lcom/fasterxml/jackson/core/JsonParser;)Ljava/lang/Object;

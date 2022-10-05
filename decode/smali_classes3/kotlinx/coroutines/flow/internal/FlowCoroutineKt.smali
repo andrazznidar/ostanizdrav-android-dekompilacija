@@ -39,7 +39,7 @@
 
     const/4 v1, 0x6
 
-    invoke-static {p2, v0, v0, v1}, Lkotlin/collections/SetsKt__SetsKt;->Channel$default(ILkotlinx/coroutines/channels/BufferOverflow;Lkotlin/jvm/functions/Function1;I)Lkotlinx/coroutines/channels/Channel;
+    invoke-static {p2, v0, v0, v1}, Landroidx/core/provider/CalleeHandler;->Channel$default(ILkotlinx/coroutines/channels/BufferOverflow;Lkotlin/jvm/functions/Function1;I)Lkotlinx/coroutines/channels/Channel;
 
     move-result-object p2
 

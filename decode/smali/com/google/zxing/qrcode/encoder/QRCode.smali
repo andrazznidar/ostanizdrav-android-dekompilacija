@@ -4,11 +4,11 @@
 
 
 # instance fields
-.field public ecLevel:Lcom/google/zxing/qrcode/decoder/ErrorCorrectionLevel;
+.field public ecLevel:I
 
 .field public maskPattern:I
 
-.field public matrix:Lkotlinx/coroutines/internal/ArrayQueue;
+.field public matrix:Lcom/google/zxing/qrcode/encoder/ByteMatrix;
 
 .field public mode:Lcom/google/zxing/qrcode/decoder/Mode;
 
@@ -55,9 +55,13 @@
 
     invoke-virtual {v0, v1}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
 
-    iget-object v1, p0, Lcom/google/zxing/qrcode/encoder/QRCode;->ecLevel:Lcom/google/zxing/qrcode/decoder/ErrorCorrectionLevel;
+    iget v1, p0, Lcom/google/zxing/qrcode/encoder/QRCode;->ecLevel:I
 
-    invoke-virtual {v0, v1}, Ljava/lang/StringBuilder;->append(Ljava/lang/Object;)Ljava/lang/StringBuilder;
+    invoke-static {v1}, Lcom/google/zxing/qrcode/decoder/ErrorCorrectionLevel$EnumUnboxingLocalUtility;->stringValueOf(I)Ljava/lang/String;
+
+    move-result-object v1
+
+    invoke-virtual {v0, v1}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
 
     const-string v1, "\n version: "
 
@@ -75,7 +79,7 @@
 
     invoke-virtual {v0, v1}, Ljava/lang/StringBuilder;->append(I)Ljava/lang/StringBuilder;
 
-    iget-object v1, p0, Lcom/google/zxing/qrcode/encoder/QRCode;->matrix:Lkotlinx/coroutines/internal/ArrayQueue;
+    iget-object v1, p0, Lcom/google/zxing/qrcode/encoder/QRCode;->matrix:Lcom/google/zxing/qrcode/encoder/ByteMatrix;
 
     if-nez v1, :cond_0
 
@@ -90,7 +94,7 @@
 
     invoke-virtual {v0, v1}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
 
-    iget-object v1, p0, Lcom/google/zxing/qrcode/encoder/QRCode;->matrix:Lkotlinx/coroutines/internal/ArrayQueue;
+    iget-object v1, p0, Lcom/google/zxing/qrcode/encoder/QRCode;->matrix:Lcom/google/zxing/qrcode/encoder/ByteMatrix;
 
     invoke-virtual {v0, v1}, Ljava/lang/StringBuilder;->append(Ljava/lang/Object;)Ljava/lang/StringBuilder;
 

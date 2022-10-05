@@ -37,7 +37,7 @@
 .method public drawableStateChanged()V
     .locals 3
 
-    invoke-super {p0}, Landroid/widget/AbsSeekBar;->drawableStateChanged()V
+    invoke-super {p0}, Landroid/widget/SeekBar;->drawableStateChanged()V
 
     iget-object v0, p0, Landroidx/appcompat/widget/AppCompatSeekBar;->mAppCompatSeekBarHelper:Landroidx/appcompat/widget/AppCompatSeekBarHelper;
 
@@ -74,7 +74,7 @@
 .method public jumpDrawablesToCurrentState()V
     .locals 1
 
-    invoke-super {p0}, Landroid/widget/AbsSeekBar;->jumpDrawablesToCurrentState()V
+    invoke-super {p0}, Landroid/widget/SeekBar;->jumpDrawablesToCurrentState()V
 
     iget-object v0, p0, Landroidx/appcompat/widget/AppCompatSeekBar;->mAppCompatSeekBarHelper:Landroidx/appcompat/widget/AppCompatSeekBarHelper;
 
@@ -94,7 +94,7 @@
     monitor-enter p0
 
     :try_start_0
-    invoke-super {p0, p1}, Landroid/widget/AbsSeekBar;->onDraw(Landroid/graphics/Canvas;)V
+    invoke-super {p0, p1}, Landroid/widget/SeekBar;->onDraw(Landroid/graphics/Canvas;)V
 
     iget-object v0, p0, Landroidx/appcompat/widget/AppCompatSeekBar;->mAppCompatSeekBarHelper:Landroidx/appcompat/widget/AppCompatSeekBarHelper;
 

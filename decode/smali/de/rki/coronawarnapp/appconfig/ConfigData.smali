@@ -9,7 +9,6 @@
 # annotations
 .annotation system Ldalvik/annotation/MemberClasses;
     value = {
-        Lde/rki/coronawarnapp/appconfig/ConfigData$Type;,
         Lde/rki/coronawarnapp/appconfig/ConfigData$DeviceTimeState;,
         Lde/rki/coronawarnapp/appconfig/ConfigData$Companion;
     }

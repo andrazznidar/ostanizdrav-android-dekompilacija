@@ -54,7 +54,7 @@
 
     new-array v5, v3, [I
 
-    const v7, 0x7f0d010a
+    const v7, 0x7f0d0115
 
     aput v7, v5, v6
 
@@ -86,37 +86,37 @@
 
     sput-object v0, Lde/rki/coronawarnapp/databinding/FragmentSubmissionConsentBindingImpl;->sViewsWithIds:Landroid/util/SparseIntArray;
 
-    const v1, 0x7f0a06c0
+    const v1, 0x7f0a0713
 
     const/16 v2, 0x9
 
     invoke-virtual {v0, v1, v2}, Landroid/util/SparseIntArray;->put(II)V
 
-    const v1, 0x7f0a06c5
+    const v1, 0x7f0a0718
 
     const/16 v2, 0xa
 
     invoke-virtual {v0, v1, v2}, Landroid/util/SparseIntArray;->put(II)V
 
-    const v1, 0x7f0a06c3
+    const v1, 0x7f0a0716
 
     const/16 v2, 0xb
 
     invoke-virtual {v0, v1, v2}, Landroid/util/SparseIntArray;->put(II)V
 
-    const v1, 0x7f0a02be
+    const v1, 0x7f0a02e3
 
     const/16 v2, 0xc
 
     invoke-virtual {v0, v1, v2}, Landroid/util/SparseIntArray;->put(II)V
 
-    const v1, 0x7f0a033e
+    const v1, 0x7f0a036d
 
     const/16 v2, 0xd
 
     invoke-virtual {v0, v1, v2}, Landroid/util/SparseIntArray;->put(II)V
 
-    const v1, 0x7f0a0552
+    const v1, 0x7f0a059a
 
     const/16 v2, 0xe
 
@@ -135,9 +135,9 @@
 
     :array_1
     .array-data 4
-        0x7f0d00eb
-        0x7f0d00ea
-        0x7f0d010a
+        0x7f0d00fa
+        0x7f0d00f9
+        0x7f0d0115
     .end array-data
 .end method
 
@@ -709,7 +709,7 @@
     :try_end_0
     .catchall {:try_start_0 .. :try_end_0} :catchall_0
 
-    const/16 p1, 0x34
+    const/16 p1, 0x32
 
     invoke-virtual {p0, p1}, Landroidx/databinding/BaseObservable;->notifyPropertyChanged(I)V
 

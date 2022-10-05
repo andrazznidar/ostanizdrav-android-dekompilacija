@@ -1,475 +1,222 @@
-.class final Lj$/time/format/r;
-.super Lj$/time/format/l;
+.class final enum Lj$/time/format/r;
+.super Ljava/lang/Enum;
+
+# interfaces
+.implements Lj$/time/format/g;
 
 
 # static fields
-.field static final i:Lj$/time/LocalDate;
+.field public static final enum INSENSITIVE:Lj$/time/format/r;
 
+.field public static final enum LENIENT:Lj$/time/format/r;
 
-# instance fields
-.field private final g:I
+.field public static final enum SENSITIVE:Lj$/time/format/r;
 
-.field private final h:Lj$/time/chrono/b;
+.field public static final enum STRICT:Lj$/time/format/r;
+
+.field private static final synthetic a:[Lj$/time/format/r;
 
 
 # direct methods
 .method static constructor <clinit>()V
-    .locals 2
+    .locals 9
 
-    const/16 v0, 0x7d0
+    new-instance v0, Lj$/time/format/r;
 
-    const/4 v1, 0x1
+    const-string v1, "SENSITIVE"
 
-    invoke-static {v0, v1, v1}, Lj$/time/LocalDate;->s(III)Lj$/time/LocalDate;
+    const/4 v2, 0x0
+
+    invoke-direct {v0, v1, v2}, Lj$/time/format/r;-><init>(Ljava/lang/String;I)V
+
+    sput-object v0, Lj$/time/format/r;->SENSITIVE:Lj$/time/format/r;
+
+    new-instance v1, Lj$/time/format/r;
+
+    const-string v3, "INSENSITIVE"
+
+    const/4 v4, 0x1
+
+    invoke-direct {v1, v3, v4}, Lj$/time/format/r;-><init>(Ljava/lang/String;I)V
+
+    sput-object v1, Lj$/time/format/r;->INSENSITIVE:Lj$/time/format/r;
+
+    new-instance v3, Lj$/time/format/r;
+
+    const-string v5, "STRICT"
+
+    const/4 v6, 0x2
+
+    invoke-direct {v3, v5, v6}, Lj$/time/format/r;-><init>(Ljava/lang/String;I)V
+
+    sput-object v3, Lj$/time/format/r;->STRICT:Lj$/time/format/r;
+
+    new-instance v5, Lj$/time/format/r;
+
+    const-string v7, "LENIENT"
+
+    const/4 v8, 0x3
+
+    invoke-direct {v5, v7, v8}, Lj$/time/format/r;-><init>(Ljava/lang/String;I)V
+
+    sput-object v5, Lj$/time/format/r;->LENIENT:Lj$/time/format/r;
+
+    const/4 v7, 0x4
+
+    new-array v7, v7, [Lj$/time/format/r;
+
+    aput-object v0, v7, v2
+
+    aput-object v1, v7, v4
+
+    aput-object v3, v7, v6
+
+    aput-object v5, v7, v8
+
+    sput-object v7, Lj$/time/format/r;->a:[Lj$/time/format/r;
+
+    return-void
+.end method
+
+.method private constructor <init>(Ljava/lang/String;I)V
+    .locals 0
+
+    invoke-direct {p0, p1, p2}, Ljava/lang/Enum;-><init>(Ljava/lang/String;I)V
+
+    return-void
+.end method
+
+.method public static valueOf(Ljava/lang/String;)Lj$/time/format/r;
+    .locals 1
+
+    const-class v0, Lj$/time/format/r;
+
+    invoke-static {v0, p0}, Ljava/lang/Enum;->valueOf(Ljava/lang/Class;Ljava/lang/String;)Ljava/lang/Enum;
+
+    move-result-object p0
+
+    check-cast p0, Lj$/time/format/r;
+
+    return-object p0
+.end method
+
+.method public static values()[Lj$/time/format/r;
+    .locals 1
+
+    sget-object v0, Lj$/time/format/r;->a:[Lj$/time/format/r;
+
+    invoke-virtual {v0}, [Lj$/time/format/r;->clone()Ljava/lang/Object;
 
     move-result-object v0
 
-    sput-object v0, Lj$/time/format/r;->i:Lj$/time/LocalDate;
+    check-cast v0, [Lj$/time/format/r;
 
-    return-void
-.end method
-
-.method constructor <init>(Lj$/time/temporal/o;IIILj$/time/chrono/b;)V
-    .locals 7
-
-    const/4 v6, 0x0
-
-    move-object v0, p0
-
-    move-object v1, p1
-
-    move v2, p2
-
-    move v3, p3
-
-    move v4, p4
-
-    move-object v5, p5
-
-    invoke-direct/range {v0 .. v6}, Lj$/time/format/r;-><init>(Lj$/time/temporal/o;IIILj$/time/chrono/b;I)V
-
-    const/4 p1, 0x1
-
-    if-lt p2, p1, :cond_2
-
-    const/16 p4, 0xa
-
-    if-gt p2, p4, :cond_2
-
-    if-lt p3, p1, :cond_1
-
-    if-gt p3, p4, :cond_1
-
-    if-lt p3, p2, :cond_0
-
-    return-void
-
-    :cond_0
-    new-instance p1, Ljava/lang/IllegalArgumentException;
-
-    new-instance p4, Ljava/lang/StringBuilder;
-
-    invoke-direct {p4}, Ljava/lang/StringBuilder;-><init>()V
-
-    const-string p5, "Maximum width must exceed or equal the minimum width but "
-
-    invoke-virtual {p4, p5}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
-
-    invoke-virtual {p4, p3}, Ljava/lang/StringBuilder;->append(I)Ljava/lang/StringBuilder;
-
-    const-string p3, " < "
-
-    invoke-virtual {p4, p3}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
-
-    invoke-virtual {p4, p2}, Ljava/lang/StringBuilder;->append(I)Ljava/lang/StringBuilder;
-
-    invoke-virtual {p4}, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
-
-    move-result-object p2
-
-    invoke-direct {p1, p2}, Ljava/lang/IllegalArgumentException;-><init>(Ljava/lang/String;)V
-
-    throw p1
-
-    :cond_1
-    new-instance p1, Ljava/lang/IllegalArgumentException;
-
-    new-instance p3, Ljava/lang/StringBuilder;
-
-    invoke-direct {p3}, Ljava/lang/StringBuilder;-><init>()V
-
-    const-string p4, "The maxWidth must be from 1 to 10 inclusive but was "
-
-    invoke-virtual {p3, p4}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
-
-    invoke-virtual {p3, p2}, Ljava/lang/StringBuilder;->append(I)Ljava/lang/StringBuilder;
-
-    invoke-virtual {p3}, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
-
-    move-result-object p2
-
-    invoke-direct {p1, p2}, Ljava/lang/IllegalArgumentException;-><init>(Ljava/lang/String;)V
-
-    throw p1
-
-    :cond_2
-    new-instance p1, Ljava/lang/IllegalArgumentException;
-
-    new-instance p3, Ljava/lang/StringBuilder;
-
-    invoke-direct {p3}, Ljava/lang/StringBuilder;-><init>()V
-
-    const-string p4, "The minWidth must be from 1 to 10 inclusive but was "
-
-    invoke-virtual {p3, p4}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
-
-    invoke-virtual {p3, p2}, Ljava/lang/StringBuilder;->append(I)Ljava/lang/StringBuilder;
-
-    invoke-virtual {p3}, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
-
-    move-result-object p2
-
-    invoke-direct {p1, p2}, Ljava/lang/IllegalArgumentException;-><init>(Ljava/lang/String;)V
-
-    throw p1
-.end method
-
-.method private constructor <init>(Lj$/time/temporal/o;IIILj$/time/chrono/b;I)V
-    .locals 6
-
-    sget-object v4, Lj$/time/format/F;->NOT_NEGATIVE:Lj$/time/format/F;
-
-    move-object v0, p0
-
-    move-object v1, p1
-
-    move v2, p2
-
-    move v3, p3
-
-    move v5, p6
-
-    invoke-direct/range {v0 .. v5}, Lj$/time/format/l;-><init>(Lj$/time/temporal/o;IILj$/time/format/F;I)V
-
-    iput p4, p0, Lj$/time/format/r;->g:I
-
-    iput-object p5, p0, Lj$/time/format/r;->h:Lj$/time/chrono/b;
-
-    return-void
-.end method
-
-.method synthetic constructor <init>(Lj$/time/temporal/o;IIILj$/time/chrono/b;ILj$/time/format/c;)V
-    .locals 0
-
-    invoke-direct/range {p0 .. p6}, Lj$/time/format/r;-><init>(Lj$/time/temporal/o;IIILj$/time/chrono/b;I)V
-
-    return-void
+    return-object v0
 .end method
 
 
 # virtual methods
-.method d(Lj$/time/format/z;J)J
-    .locals 7
+.method public a(Lj$/time/format/z;Ljava/lang/StringBuilder;)Z
+    .locals 0
 
-    invoke-static {p2, p3}, Ljava/lang/Math;->abs(J)J
-
-    move-result-wide v0
-
-    iget v2, p0, Lj$/time/format/r;->g:I
-
-    iget-object v3, p0, Lj$/time/format/r;->h:Lj$/time/chrono/b;
-
-    if-eqz v3, :cond_0
-
-    invoke-virtual {p1}, Lj$/time/format/z;->d()Lj$/time/temporal/TemporalAccessor;
-
-    move-result-object p1
-
-    invoke-static {p1}, Lj$/time/chrono/d;->b(Lj$/time/temporal/TemporalAccessor;)Lj$/time/chrono/g;
-
-    iget-object p1, p0, Lj$/time/format/r;->h:Lj$/time/chrono/b;
-
-    invoke-static {p1}, Lj$/time/LocalDate;->l(Lj$/time/temporal/TemporalAccessor;)Lj$/time/LocalDate;
-
-    move-result-object p1
-
-    iget-object v2, p0, Lj$/time/format/l;->a:Lj$/time/temporal/o;
-
-    invoke-virtual {p1, v2}, Lj$/time/LocalDate;->c(Lj$/time/temporal/o;)I
-
-    move-result v2
-
-    :cond_0
-    int-to-long v2, v2
-
-    cmp-long p1, p2, v2
-
-    if-ltz p1, :cond_1
-
-    sget-object p1, Lj$/time/format/l;->f:[J
-
-    iget v4, p0, Lj$/time/format/l;->b:I
-
-    aget-wide v5, p1, v4
-
-    add-long/2addr v2, v5
-
-    cmp-long p2, p2, v2
-
-    if-gez p2, :cond_1
-
-    aget-wide p2, p1, v4
-
-    goto :goto_0
-
-    :cond_1
-    sget-object p1, Lj$/time/format/l;->f:[J
-
-    iget p2, p0, Lj$/time/format/l;->c:I
-
-    aget-wide p2, p1, p2
-
-    :goto_0
-    rem-long/2addr v0, p2
-
-    return-wide v0
-.end method
-
-.method e(Lj$/time/format/x;)Z
-    .locals 1
-
-    invoke-virtual {p1}, Lj$/time/format/x;->l()Z
-
-    move-result v0
-
-    if-nez v0, :cond_0
-
-    const/4 p1, 0x0
-
-    return p1
-
-    :cond_0
-    invoke-super {p0, p1}, Lj$/time/format/l;->e(Lj$/time/format/x;)Z
-
-    move-result p1
+    const/4 p1, 0x1
 
     return p1
 .end method
 
-.method f(Lj$/time/format/x;JII)I
-    .locals 9
+.method public b(Lj$/time/format/x;Ljava/lang/CharSequence;I)I
+    .locals 3
 
-    iget v0, p0, Lj$/time/format/r;->g:I
+    invoke-virtual {p0}, Ljava/lang/Enum;->ordinal()I
 
-    iget-object v1, p0, Lj$/time/format/r;->h:Lj$/time/chrono/b;
+    move-result p2
 
-    if-eqz v1, :cond_0
+    const/4 v0, 0x1
 
-    invoke-virtual {p1}, Lj$/time/format/x;->h()Lj$/time/chrono/g;
+    if-eqz p2, :cond_3
 
-    iget-object v0, p0, Lj$/time/format/r;->h:Lj$/time/chrono/b;
+    const/4 v1, 0x0
 
-    invoke-static {v0}, Lj$/time/LocalDate;->l(Lj$/time/temporal/TemporalAccessor;)Lj$/time/LocalDate;
+    if-eq p2, v0, :cond_2
 
-    move-result-object v0
+    const/4 v2, 0x2
 
-    iget-object v1, p0, Lj$/time/format/l;->a:Lj$/time/temporal/o;
+    if-eq p2, v2, :cond_1
 
-    invoke-virtual {v0, v1}, Lj$/time/LocalDate;->c(Lj$/time/temporal/o;)I
+    const/4 v0, 0x3
 
-    move-result v0
+    if-eq p2, v0, :cond_0
 
-    new-instance v8, Lj$/time/format/q;
-
-    move-object v1, v8
-
-    move-object v2, p0
-
-    move-object v3, p1
-
-    move-wide v4, p2
-
-    move v6, p4
-
-    move v7, p5
-
-    invoke-direct/range {v1 .. v7}, Lj$/time/format/q;-><init>(Lj$/time/format/r;Lj$/time/format/x;JII)V
-
-    invoke-virtual {p1, v8}, Lj$/time/format/x;->a(Lj$/util/function/Consumer;)V
+    goto :goto_0
 
     :cond_0
-    sub-int v1, p5, p4
-
-    iget v2, p0, Lj$/time/format/l;->b:I
-
-    if-ne v1, v2, :cond_2
-
-    const-wide/16 v3, 0x0
-
-    cmp-long v1, p2, v3
-
-    if-ltz v1, :cond_2
-
-    sget-object v1, Lj$/time/format/l;->f:[J
-
-    aget-wide v2, v1, v2
-
-    int-to-long v4, v0
-
-    rem-long v6, v4, v2
-
-    sub-long v6, v4, v6
-
-    if-lez v0, :cond_1
-
-    add-long/2addr v6, p2
+    invoke-virtual {p1, v1}, Lj$/time/format/x;->q(Z)V
 
     goto :goto_0
 
     :cond_1
-    sub-long/2addr v6, p2
+    invoke-virtual {p1, v0}, Lj$/time/format/x;->q(Z)V
 
-    :goto_0
-    move-wide p2, v6
-
-    cmp-long v0, p2, v4
-
-    if-gez v0, :cond_2
-
-    add-long/2addr p2, v2
+    goto :goto_0
 
     :cond_2
-    move-wide v2, p2
-
-    iget-object v1, p0, Lj$/time/format/l;->a:Lj$/time/temporal/o;
-
-    move-object v0, p1
-
-    move v4, p4
-
-    move v5, p5
-
-    invoke-virtual/range {v0 .. v5}, Lj$/time/format/x;->o(Lj$/time/temporal/o;JII)I
-
-    move-result p1
-
-    return p1
-.end method
-
-.method g()Lj$/time/format/l;
-    .locals 9
-
-    iget v0, p0, Lj$/time/format/l;->e:I
-
-    const/4 v1, -0x1
-
-    if-ne v0, v1, :cond_0
-
-    move-object v0, p0
+    invoke-virtual {p1, v1}, Lj$/time/format/x;->m(Z)V
 
     goto :goto_0
 
-    :cond_0
-    new-instance v0, Lj$/time/format/r;
-
-    iget-object v3, p0, Lj$/time/format/l;->a:Lj$/time/temporal/o;
-
-    iget v4, p0, Lj$/time/format/l;->b:I
-
-    iget v5, p0, Lj$/time/format/l;->c:I
-
-    iget v6, p0, Lj$/time/format/r;->g:I
-
-    iget-object v7, p0, Lj$/time/format/r;->h:Lj$/time/chrono/b;
-
-    const/4 v8, -0x1
-
-    move-object v2, v0
-
-    invoke-direct/range {v2 .. v8}, Lj$/time/format/r;-><init>(Lj$/time/temporal/o;IIILj$/time/chrono/b;I)V
+    :cond_3
+    invoke-virtual {p1, v0}, Lj$/time/format/x;->m(Z)V
 
     :goto_0
-    return-object v0
-.end method
-
-.method h(I)Lj$/time/format/l;
-    .locals 8
-
-    new-instance v7, Lj$/time/format/r;
-
-    iget-object v1, p0, Lj$/time/format/l;->a:Lj$/time/temporal/o;
-
-    iget v2, p0, Lj$/time/format/l;->b:I
-
-    iget v3, p0, Lj$/time/format/l;->c:I
-
-    iget v4, p0, Lj$/time/format/r;->g:I
-
-    iget-object v5, p0, Lj$/time/format/r;->h:Lj$/time/chrono/b;
-
-    iget v0, p0, Lj$/time/format/l;->e:I
-
-    add-int v6, v0, p1
-
-    move-object v0, v7
-
-    invoke-direct/range {v0 .. v6}, Lj$/time/format/r;-><init>(Lj$/time/temporal/o;IIILj$/time/chrono/b;I)V
-
-    return-object v7
+    return p3
 .end method
 
 .method public toString()Ljava/lang/String;
-    .locals 3
+    .locals 2
 
-    const-string v0, "ReducedValue("
+    invoke-virtual {p0}, Ljava/lang/Enum;->ordinal()I
 
-    invoke-static {v0}, Lj$/time/a;->a(Ljava/lang/String;)Ljava/lang/StringBuilder;
+    move-result v0
 
-    move-result-object v0
+    if-eqz v0, :cond_3
 
-    iget-object v1, p0, Lj$/time/format/l;->a:Lj$/time/temporal/o;
+    const/4 v1, 0x1
 
-    invoke-virtual {v0, v1}, Ljava/lang/StringBuilder;->append(Ljava/lang/Object;)Ljava/lang/StringBuilder;
+    if-eq v0, v1, :cond_2
 
-    const-string v1, ","
+    const/4 v1, 0x2
 
-    invoke-virtual {v0, v1}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+    if-eq v0, v1, :cond_1
 
-    iget v2, p0, Lj$/time/format/l;->b:I
+    const/4 v1, 0x3
 
-    invoke-virtual {v0, v2}, Ljava/lang/StringBuilder;->append(I)Ljava/lang/StringBuilder;
+    if-ne v0, v1, :cond_0
 
-    invoke-virtual {v0, v1}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+    const-string v0, "ParseStrict(false)"
 
-    iget v2, p0, Lj$/time/format/l;->c:I
-
-    invoke-virtual {v0, v2}, Ljava/lang/StringBuilder;->append(I)Ljava/lang/StringBuilder;
-
-    invoke-virtual {v0, v1}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
-
-    iget-object v1, p0, Lj$/time/format/r;->h:Lj$/time/chrono/b;
-
-    if-eqz v1, :cond_0
-
-    goto :goto_0
+    return-object v0
 
     :cond_0
-    iget v1, p0, Lj$/time/format/r;->g:I
+    new-instance v0, Ljava/lang/IllegalStateException;
 
-    invoke-static {v1}, Ljava/lang/Integer;->valueOf(I)Ljava/lang/Integer;
+    const-string v1, "Unreachable"
 
-    move-result-object v1
+    invoke-direct {v0, v1}, Ljava/lang/IllegalStateException;-><init>(Ljava/lang/String;)V
 
-    :goto_0
-    invoke-virtual {v0, v1}, Ljava/lang/StringBuilder;->append(Ljava/lang/Object;)Ljava/lang/StringBuilder;
+    throw v0
 
-    const-string v1, ")"
+    :cond_1
+    const-string v0, "ParseStrict(true)"
 
-    invoke-virtual {v0, v1}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+    return-object v0
 
-    invoke-virtual {v0}, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
+    :cond_2
+    const-string v0, "ParseCaseSensitive(false)"
 
-    move-result-object v0
+    return-object v0
+
+    :cond_3
+    const-string v0, "ParseCaseSensitive(true)"
 
     return-object v0
 .end method

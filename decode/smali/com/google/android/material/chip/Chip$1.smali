@@ -1,5 +1,5 @@
 .class public Lcom/google/android/material/chip/Chip$1;
-.super Lcom/google/android/material/resources/TextAppearanceFontCallback;
+.super Lorg/joda/time/Chronology;
 .source "Chip.java"
 
 
@@ -24,7 +24,7 @@
 
     iput-object p1, p0, Lcom/google/android/material/chip/Chip$1;->this$0:Lcom/google/android/material/chip/Chip;
 
-    invoke-direct {p0}, Lcom/google/android/material/resources/TextAppearanceFontCallback;-><init>()V
+    invoke-direct {p0}, Lorg/joda/time/Chronology;-><init>()V
 
     return-void
 .end method

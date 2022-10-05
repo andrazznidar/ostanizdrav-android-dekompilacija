@@ -6,7 +6,33 @@
 .implements Lkotlin/reflect/jvm/internal/impl/load/java/structure/JavaType;
 
 
+# annotations
+.annotation system Ldalvik/annotation/MemberClasses;
+    value = {
+        Lkotlin/reflect/jvm/internal/impl/descriptors/runtime/structure/ReflectJavaType$Factory;
+    }
+.end annotation
+
+
+# static fields
+.field public static final Factory:Lkotlin/reflect/jvm/internal/impl/descriptors/runtime/structure/ReflectJavaType$Factory;
+
+
 # direct methods
+.method public static constructor <clinit>()V
+    .locals 2
+
+    new-instance v0, Lkotlin/reflect/jvm/internal/impl/descriptors/runtime/structure/ReflectJavaType$Factory;
+
+    const/4 v1, 0x0
+
+    invoke-direct {v0, v1}, Lkotlin/reflect/jvm/internal/impl/descriptors/runtime/structure/ReflectJavaType$Factory;-><init>(Lkotlin/jvm/internal/DefaultConstructorMarker;)V
+
+    sput-object v0, Lkotlin/reflect/jvm/internal/impl/descriptors/runtime/structure/ReflectJavaType;->Factory:Lkotlin/reflect/jvm/internal/impl/descriptors/runtime/structure/ReflectJavaType$Factory;
+
+    return-void
+.end method
+
 .method public constructor <init>()V
     .locals 0
 
@@ -52,59 +78,13 @@
 .end method
 
 .method public findAnnotation(Lkotlin/reflect/jvm/internal/impl/name/FqName;)Lkotlin/reflect/jvm/internal/impl/load/java/structure/JavaAnnotation;
-    .locals 4
+    .locals 0
 
-    invoke-interface {p0}, Lkotlin/reflect/jvm/internal/impl/load/java/structure/JavaAnnotationOwner;->getAnnotations()Ljava/util/Collection;
+    invoke-static {p0, p1}, Lkotlin/reflect/jvm/internal/impl/load/java/structure/JavaType$DefaultImpls;->findAnnotation(Lkotlin/reflect/jvm/internal/impl/load/java/structure/JavaType;Lkotlin/reflect/jvm/internal/impl/name/FqName;)Lkotlin/reflect/jvm/internal/impl/load/java/structure/JavaAnnotation;
 
-    move-result-object v0
+    move-result-object p1
 
-    invoke-interface {v0}, Ljava/lang/Iterable;->iterator()Ljava/util/Iterator;
-
-    move-result-object v0
-
-    :cond_0
-    invoke-interface {v0}, Ljava/util/Iterator;->hasNext()Z
-
-    move-result v1
-
-    const/4 v2, 0x0
-
-    if-eqz v1, :cond_2
-
-    invoke-interface {v0}, Ljava/util/Iterator;->next()Ljava/lang/Object;
-
-    move-result-object v1
-
-    move-object v3, v1
-
-    check-cast v3, Lkotlin/reflect/jvm/internal/impl/load/java/structure/JavaAnnotation;
-
-    invoke-interface {v3}, Lkotlin/reflect/jvm/internal/impl/load/java/structure/JavaAnnotation;->getClassId()Lkotlin/reflect/jvm/internal/impl/name/ClassId;
-
-    move-result-object v3
-
-    if-nez v3, :cond_1
-
-    goto :goto_0
-
-    :cond_1
-    invoke-virtual {v3}, Lkotlin/reflect/jvm/internal/impl/name/ClassId;->asSingleFqName()Lkotlin/reflect/jvm/internal/impl/name/FqName;
-
-    move-result-object v2
-
-    :goto_0
-    invoke-static {v2, p1}, Lkotlin/jvm/internal/Intrinsics;->areEqual(Ljava/lang/Object;Ljava/lang/Object;)Z
-
-    move-result v2
-
-    if-eqz v2, :cond_0
-
-    move-object v2, v1
-
-    :cond_2
-    check-cast v2, Lkotlin/reflect/jvm/internal/impl/load/java/structure/JavaAnnotation;
-
-    return-object v2
+    return-object p1
 .end method
 
 .method public abstract getReflectType()Ljava/lang/reflect/Type;

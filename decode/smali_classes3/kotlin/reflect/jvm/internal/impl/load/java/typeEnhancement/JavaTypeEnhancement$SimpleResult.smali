@@ -1,4 +1,4 @@
-.class public final Lkotlin/reflect/jvm/internal/impl/load/java/typeEnhancement/JavaTypeEnhancement$SimpleResult;
+.class final Lkotlin/reflect/jvm/internal/impl/load/java/typeEnhancement/JavaTypeEnhancement$SimpleResult;
 .super Lkotlin/reflect/jvm/internal/impl/load/java/typeEnhancement/JavaTypeEnhancement$Result;
 .source "typeEnhancement.kt"
 
@@ -15,7 +15,7 @@
 
 
 # instance fields
-.field public final type:Lkotlin/reflect/jvm/internal/impl/types/SimpleType;
+.field private final type:Lkotlin/reflect/jvm/internal/impl/types/SimpleType;
 
 
 # direct methods
@@ -35,7 +35,17 @@
 
 
 # virtual methods
-.method public getType()Lkotlin/reflect/jvm/internal/impl/types/KotlinType;
+.method public bridge synthetic getType()Lkotlin/reflect/jvm/internal/impl/types/KotlinType;
+    .locals 1
+
+    invoke-virtual {p0}, Lkotlin/reflect/jvm/internal/impl/load/java/typeEnhancement/JavaTypeEnhancement$SimpleResult;->getType()Lkotlin/reflect/jvm/internal/impl/types/SimpleType;
+
+    move-result-object v0
+
+    return-object v0
+.end method
+
+.method public getType()Lkotlin/reflect/jvm/internal/impl/types/SimpleType;
     .locals 1
 
     iget-object v0, p0, Lkotlin/reflect/jvm/internal/impl/load/java/typeEnhancement/JavaTypeEnhancement$SimpleResult;->type:Lkotlin/reflect/jvm/internal/impl/types/SimpleType;

@@ -69,15 +69,13 @@
     :catch_0
     move-exception p1
 
-    sget-object v0, Lde/rki/coronawarnapp/exception/ExceptionCategory;->INTERNAL:Lde/rki/coronawarnapp/exception/ExceptionCategory;
+    const/4 v0, 0x0
 
-    const/4 v1, 0x0
+    const/4 v1, 0x4
 
-    const/4 v2, 0x4
+    const-string v2, "Migration 2->3 failed. Could not create new table riskperdate"
 
-    const-string v3, "Migration 2->3 failed. Could not create new table riskperdate"
-
-    invoke-static {p1, v0, v3, v1, v2}, Lde/rki/coronawarnapp/exception/reporting/ExceptionReporterKt;->report$default(Ljava/lang/Throwable;Lde/rki/coronawarnapp/exception/ExceptionCategory;Ljava/lang/String;Ljava/lang/String;I)V
+    invoke-static {p1, v1, v2, v0, v1}, Lde/rki/coronawarnapp/exception/reporting/ExceptionReporterKt;->report$default(Ljava/lang/Throwable;ILjava/lang/String;Ljava/lang/String;I)V
 
     throw p1
 .end method

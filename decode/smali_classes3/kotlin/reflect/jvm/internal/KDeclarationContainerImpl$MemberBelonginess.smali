@@ -21,9 +21,33 @@
     }
 .end annotation
 
+.annotation runtime Lkotlin/Metadata;
+    d1 = {
+        "\u0000\u001a\n\u0002\u0018\u0002\n\u0002\u0010\u0010\n\u0002\u0008\u0002\n\u0002\u0010\u000b\n\u0000\n\u0002\u0018\u0002\n\u0002\u0008\u0003\u0008\u0084\u0001\u0018\u00002\u0008\u0012\u0004\u0012\u00020\u00000\u0001B\u0007\u0008\u0002\u00a2\u0006\u0002\u0010\u0002J\u000e\u0010\u0003\u001a\u00020\u00042\u0006\u0010\u0005\u001a\u00020\u0006j\u0002\u0008\u0007j\u0002\u0008\u0008\u00a8\u0006\t"
+    }
+    d2 = {
+        "Lkotlin/reflect/jvm/internal/KDeclarationContainerImpl$MemberBelonginess;",
+        "",
+        "(Ljava/lang/String;I)V",
+        "accept",
+        "",
+        "member",
+        "Lkotlin/reflect/jvm/internal/impl/descriptors/CallableMemberDescriptor;",
+        "DECLARED",
+        "INHERITED",
+        "kotlin-reflection"
+    }
+    k = 0x1
+    mv = {
+        0x1,
+        0x5,
+        0x1
+    }
+.end annotation
+
 
 # static fields
-.field public static final synthetic $VALUES:[Lkotlin/reflect/jvm/internal/KDeclarationContainerImpl$MemberBelonginess;
+.field private static final synthetic $VALUES:[Lkotlin/reflect/jvm/internal/KDeclarationContainerImpl$MemberBelonginess;
 
 .field public static final enum DECLARED:Lkotlin/reflect/jvm/internal/KDeclarationContainerImpl$MemberBelonginess;
 
@@ -67,7 +91,7 @@
     return-void
 .end method
 
-.method public constructor <init>(Ljava/lang/String;I)V
+.method private constructor <init>(Ljava/lang/String;I)V
     .locals 0
     .annotation system Ldalvik/annotation/Signature;
         value = {
@@ -106,4 +130,52 @@
     check-cast v0, [Lkotlin/reflect/jvm/internal/KDeclarationContainerImpl$MemberBelonginess;
 
     return-object v0
+.end method
+
+
+# virtual methods
+.method public final accept(Lkotlin/reflect/jvm/internal/impl/descriptors/CallableMemberDescriptor;)Z
+    .locals 3
+
+    const-string v0, "member"
+
+    invoke-static {p1, v0}, Lkotlin/jvm/internal/Intrinsics;->checkNotNullParameter(Ljava/lang/Object;Ljava/lang/String;)V
+
+    invoke-interface {p1}, Lkotlin/reflect/jvm/internal/impl/descriptors/CallableMemberDescriptor;->getKind()Lkotlin/reflect/jvm/internal/impl/descriptors/CallableMemberDescriptor$Kind;
+
+    move-result-object p1
+
+    const-string v0, "member.kind"
+
+    invoke-static {p1, v0}, Lkotlin/jvm/internal/Intrinsics;->checkNotNullExpressionValue(Ljava/lang/Object;Ljava/lang/String;)V
+
+    invoke-virtual {p1}, Lkotlin/reflect/jvm/internal/impl/descriptors/CallableMemberDescriptor$Kind;->isReal()Z
+
+    move-result p1
+
+    sget-object v0, Lkotlin/reflect/jvm/internal/KDeclarationContainerImpl$MemberBelonginess;->DECLARED:Lkotlin/reflect/jvm/internal/KDeclarationContainerImpl$MemberBelonginess;
+
+    const/4 v1, 0x1
+
+    const/4 v2, 0x0
+
+    if-ne p0, v0, :cond_0
+
+    move v0, v1
+
+    goto :goto_0
+
+    :cond_0
+    move v0, v2
+
+    :goto_0
+    if-ne p1, v0, :cond_1
+
+    goto :goto_1
+
+    :cond_1
+    move v1, v2
+
+    :goto_1
+    return v1
 .end method

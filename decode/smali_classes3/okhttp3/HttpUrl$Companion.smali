@@ -442,7 +442,7 @@
 
     const-string v1, " < "
 
-    invoke-static {v0, v8, v1, v10}, Lcom/airbnb/lottie/utils/GammaEvaluator$$ExternalSyntheticOutline0;->m(Ljava/lang/String;ILjava/lang/String;I)Ljava/lang/String;
+    invoke-static {v0, v8, v1, v10}, Landroidx/camera/camera2/internal/Camera2CameraImpl$$ExternalSyntheticOutline0;->m(Ljava/lang/String;ILjava/lang/String;I)Ljava/lang/String;
 
     move-result-object v0
 

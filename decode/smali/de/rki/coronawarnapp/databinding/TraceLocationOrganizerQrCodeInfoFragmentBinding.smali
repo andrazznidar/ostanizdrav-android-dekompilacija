@@ -96,7 +96,7 @@
 
     move-object/from16 v0, p0
 
-    const v1, 0x7f0a0543
+    const v1, 0x7f0a058b
 
     invoke-static {v0, v1}, Landroidx/viewbinding/ViewBindings;->findChildViewById(Landroid/view/View;I)Landroid/view/View;
 
@@ -106,7 +106,7 @@
 
     if-eqz v2, :cond_1
 
-    const v1, 0x7f0a0150
+    const v1, 0x7f0a016b
 
     invoke-static {v2, v1}, Landroidx/viewbinding/ViewBindings;->findChildViewById(Landroid/view/View;I)Landroid/view/View;
 
@@ -118,7 +118,7 @@
 
     move-result-object v7
 
-    const v1, 0x7f0a0151
+    const v1, 0x7f0a016c
 
     invoke-static {v2, v1}, Landroidx/viewbinding/ViewBindings;->findChildViewById(Landroid/view/View;I)Landroid/view/View;
 
@@ -130,7 +130,7 @@
 
     move-result-object v8
 
-    const v1, 0x7f0a0152
+    const v1, 0x7f0a016d
 
     invoke-static {v2, v1}, Landroidx/viewbinding/ViewBindings;->findChildViewById(Landroid/view/View;I)Landroid/view/View;
 
@@ -142,7 +142,7 @@
 
     move-result-object v9
 
-    const v1, 0x7f0a0153
+    const v1, 0x7f0a016e
 
     invoke-static {v2, v1}, Landroidx/viewbinding/ViewBindings;->findChildViewById(Landroid/view/View;I)Landroid/view/View;
 
@@ -154,7 +154,7 @@
 
     move-result-object v10
 
-    const v1, 0x7f0a0316
+    const v1, 0x7f0a0341
 
     invoke-static {v2, v1}, Landroidx/viewbinding/ViewBindings;->findChildViewById(Landroid/view/View;I)Landroid/view/View;
 
@@ -166,7 +166,7 @@
 
     if-eqz v11, :cond_0
 
-    const v1, 0x7f0a0318
+    const v1, 0x7f0a0343
 
     invoke-static {v2, v1}, Landroidx/viewbinding/ViewBindings;->findChildViewById(Landroid/view/View;I)Landroid/view/View;
 
@@ -178,7 +178,7 @@
 
     if-eqz v12, :cond_0
 
-    const v1, 0x7f0a032a
+    const v1, 0x7f0a0358
 
     invoke-static {v2, v1}, Landroidx/viewbinding/ViewBindings;->findChildViewById(Landroid/view/View;I)Landroid/view/View;
 
@@ -190,7 +190,7 @@
 
     if-eqz v13, :cond_0
 
-    const v1, 0x7f0a0619
+    const v1, 0x7f0a0667
 
     invoke-static {v2, v1}, Landroidx/viewbinding/ViewBindings;->findChildViewById(Landroid/view/View;I)Landroid/view/View;
 
@@ -202,7 +202,7 @@
 
     if-eqz v14, :cond_0
 
-    const v1, 0x7f0a061b
+    const v1, 0x7f0a0669
 
     invoke-static {v2, v1}, Landroidx/viewbinding/ViewBindings;->findChildViewById(Landroid/view/View;I)Landroid/view/View;
 
@@ -214,7 +214,7 @@
 
     if-eqz v15, :cond_0
 
-    const v1, 0x7f0a07d9
+    const v1, 0x7f0a0821
 
     invoke-static {v2, v1}, Landroidx/viewbinding/ViewBindings;->findChildViewById(Landroid/view/View;I)Landroid/view/View;
 
@@ -226,7 +226,7 @@
 
     if-eqz v16, :cond_0
 
-    const v1, 0x7f0a07f8
+    const v1, 0x7f0a0840
 
     invoke-static {v2, v1}, Landroidx/viewbinding/ViewBindings;->findChildViewById(Landroid/view/View;I)Landroid/view/View;
 
@@ -238,7 +238,7 @@
 
     if-eqz v17, :cond_0
 
-    const v1, 0x7f0a07f9
+    const v1, 0x7f0a0841
 
     invoke-static {v2, v1}, Landroidx/viewbinding/ViewBindings;->findChildViewById(Landroid/view/View;I)Landroid/view/View;
 
@@ -262,7 +262,7 @@
 
     invoke-direct/range {v5 .. v19}, Lde/rki/coronawarnapp/databinding/TraceLocationPrivacyCardBinding;-><init>(Landroidx/constraintlayout/widget/ConstraintLayout;Lde/rki/coronawarnapp/databinding/IncludeBulletPointBinding;Lde/rki/coronawarnapp/databinding/IncludeBulletPointBinding;Lde/rki/coronawarnapp/databinding/IncludeBulletPointBinding;Lde/rki/coronawarnapp/databinding/IncludeBulletPointBinding;Landroid/widget/TextView;Landroid/widget/TextView;Landroid/widget/TextView;Landroid/widget/TextView;Landroid/widget/TextView;Landroid/widget/TextView;Landroid/widget/TextView;Landroid/widget/TextView;Landroidx/constraintlayout/widget/ConstraintLayout;)V
 
-    const v1, 0x7f0a054a
+    const v1, 0x7f0a0592
 
     invoke-static {v0, v1}, Landroidx/viewbinding/ViewBindings;->findChildViewById(Landroid/view/View;I)Landroid/view/View;
 
@@ -274,7 +274,7 @@
 
     if-eqz v23, :cond_1
 
-    const v1, 0x7f0a060e
+    const v1, 0x7f0a065b
 
     invoke-static {v0, v1}, Landroidx/viewbinding/ViewBindings;->findChildViewById(Landroid/view/View;I)Landroid/view/View;
 
@@ -286,7 +286,7 @@
 
     if-eqz v24, :cond_1
 
-    const v1, 0x7f0a07e4
+    const v1, 0x7f0a082c
 
     invoke-static {v0, v1}, Landroidx/viewbinding/ViewBindings;->findChildViewById(Landroid/view/View;I)Landroid/view/View;
 
@@ -298,7 +298,7 @@
 
     if-eqz v25, :cond_1
 
-    const v1, 0x7f0a07fb
+    const v1, 0x7f0a0843
 
     invoke-static {v0, v1}, Landroidx/viewbinding/ViewBindings;->findChildViewById(Landroid/view/View;I)Landroid/view/View;
 
@@ -310,7 +310,7 @@
 
     if-eqz v26, :cond_1
 
-    const v1, 0x7f0a07fc
+    const v1, 0x7f0a0844
 
     invoke-static {v0, v1}, Landroidx/viewbinding/ViewBindings;->findChildViewById(Landroid/view/View;I)Landroid/view/View;
 
@@ -322,7 +322,7 @@
 
     if-eqz v27, :cond_1
 
-    const v1, 0x7f0a07fd
+    const v1, 0x7f0a0845
 
     invoke-static {v0, v1}, Landroidx/viewbinding/ViewBindings;->findChildViewById(Landroid/view/View;I)Landroid/view/View;
 
@@ -334,7 +334,7 @@
 
     if-eqz v28, :cond_1
 
-    const v1, 0x7f0a07fe
+    const v1, 0x7f0a0846
 
     invoke-static {v0, v1}, Landroidx/viewbinding/ViewBindings;->findChildViewById(Landroid/view/View;I)Landroid/view/View;
 
@@ -346,7 +346,7 @@
 
     if-eqz v29, :cond_1
 
-    const v1, 0x7f0a07ff
+    const v1, 0x7f0a0847
 
     invoke-static {v0, v1}, Landroidx/viewbinding/ViewBindings;->findChildViewById(Landroid/view/View;I)Landroid/view/View;
 
@@ -358,7 +358,7 @@
 
     if-eqz v30, :cond_1
 
-    const v1, 0x7f0a0800
+    const v1, 0x7f0a0848
 
     invoke-static {v0, v1}, Landroidx/viewbinding/ViewBindings;->findChildViewById(Landroid/view/View;I)Landroid/view/View;
 
@@ -370,7 +370,7 @@
 
     if-eqz v31, :cond_1
 
-    const v1, 0x7f0a0801
+    const v1, 0x7f0a0849
 
     invoke-static {v0, v1}, Landroidx/viewbinding/ViewBindings;->findChildViewById(Landroid/view/View;I)Landroid/view/View;
 
@@ -382,7 +382,7 @@
 
     if-eqz v32, :cond_1
 
-    const v1, 0x7f0a0802
+    const v1, 0x7f0a084a
 
     invoke-static {v0, v1}, Landroidx/viewbinding/ViewBindings;->findChildViewById(Landroid/view/View;I)Landroid/view/View;
 
@@ -394,7 +394,7 @@
 
     if-eqz v33, :cond_1
 
-    const v1, 0x7f0a0803
+    const v1, 0x7f0a084b
 
     invoke-static {v0, v1}, Landroidx/viewbinding/ViewBindings;->findChildViewById(Landroid/view/View;I)Landroid/view/View;
 
@@ -406,7 +406,7 @@
 
     if-eqz v34, :cond_1
 
-    const v1, 0x7f0a0805
+    const v1, 0x7f0a084d
 
     invoke-static {v0, v1}, Landroidx/viewbinding/ViewBindings;->findChildViewById(Landroid/view/View;I)Landroid/view/View;
 
@@ -418,7 +418,7 @@
 
     if-eqz v35, :cond_1
 
-    const v1, 0x7f0a0806
+    const v1, 0x7f0a084e
 
     invoke-static {v0, v1}, Landroidx/viewbinding/ViewBindings;->findChildViewById(Landroid/view/View;I)Landroid/view/View;
 
@@ -430,7 +430,7 @@
 
     if-eqz v36, :cond_1
 
-    const v1, 0x7f0a0807
+    const v1, 0x7f0a084f
 
     invoke-static {v0, v1}, Landroidx/viewbinding/ViewBindings;->findChildViewById(Landroid/view/View;I)Landroid/view/View;
 

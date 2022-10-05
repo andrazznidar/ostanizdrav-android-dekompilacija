@@ -43,7 +43,7 @@
 
     new-array v5, v3, [I
 
-    const v7, 0x7f0d00ce
+    const v7, 0x7f0d00de
 
     aput v7, v5, v6
 
@@ -127,37 +127,37 @@
 
     sput-object v0, Lde/rki/coronawarnapp/databinding/IncludeDebuglogPrivacyCardBindingImpl;->sViewsWithIds:Landroid/util/SparseIntArray;
 
-    const v1, 0x7f0a0281
+    const v1, 0x7f0a02a6
 
     const/16 v2, 0xb
 
     invoke-virtual {v0, v1, v2}, Landroid/util/SparseIntArray;->put(II)V
 
-    const v1, 0x7f0a027c
+    const v1, 0x7f0a02a1
 
     const/16 v2, 0xc
 
     invoke-virtual {v0, v1, v2}, Landroid/util/SparseIntArray;->put(II)V
 
-    const v1, 0x7f0a027d
+    const v1, 0x7f0a02a2
 
     const/16 v2, 0xd
 
     invoke-virtual {v0, v1, v2}, Landroid/util/SparseIntArray;->put(II)V
 
-    const v1, 0x7f0a027f
+    const v1, 0x7f0a02a4
 
     const/16 v2, 0xe
 
     invoke-virtual {v0, v1, v2}, Landroid/util/SparseIntArray;->put(II)V
 
-    const v1, 0x7f0a0280
+    const v1, 0x7f0a02a5
 
     const/16 v2, 0xf
 
     invoke-virtual {v0, v1, v2}, Landroid/util/SparseIntArray;->put(II)V
 
-    const v1, 0x7f0a027e
+    const v1, 0x7f0a02a3
 
     const/16 v2, 0x10
 

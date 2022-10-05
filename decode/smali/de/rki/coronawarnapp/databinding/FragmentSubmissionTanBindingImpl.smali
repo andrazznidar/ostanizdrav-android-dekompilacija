@@ -57,13 +57,13 @@
 
     sput-object v0, Lde/rki/coronawarnapp/databinding/FragmentSubmissionTanBindingImpl;->sViewsWithIds:Landroid/util/SparseIntArray;
 
-    const v1, 0x7f0a0731
+    const v1, 0x7f0a077e
 
     const/4 v2, 0x5
 
     invoke-virtual {v0, v1, v2}, Landroid/util/SparseIntArray;->put(II)V
 
-    const v1, 0x7f0a033e
+    const v1, 0x7f0a036d
 
     const/4 v2, 0x6
 
@@ -82,9 +82,9 @@
 
     :array_1
     .array-data 4
-        0x7f0d00d8
-        0x7f0d00f4
-        0x7f0d010a
+        0x7f0d00e9
+        0x7f0d0102
+        0x7f0d0115
     .end array-data
 .end method
 
@@ -273,17 +273,17 @@
 
     iget-object v1, p0, Landroidx/databinding/ViewDataBinding;->mRoot:Landroid/view/View;
 
-    const v2, 0x7f0800dd
+    const v2, 0x7f0800d3
 
-    invoke-static {v1, v2, v0}, Lde/rki/coronawarnapp/databinding/FragmentInformationAboutBindingImpl$$ExternalSyntheticOutline0;->m(Landroid/view/View;ILde/rki/coronawarnapp/databinding/IncludeHeaderBinding;)V
+    invoke-static {v1, v2, v0}, Landroidx/constraintlayout/core/widgets/analyzer/DependencyNode$Type$EnumUnboxingLocalUtility;->m(Landroid/view/View;ILde/rki/coronawarnapp/databinding/IncludeHeaderBinding;)V
 
     iget-object v0, p0, Lde/rki/coronawarnapp/databinding/FragmentSubmissionTanBinding;->submissionTanHeader:Lde/rki/coronawarnapp/databinding/IncludeHeaderBinding;
 
     iget-object v1, p0, Landroidx/databinding/ViewDataBinding;->mRoot:Landroid/view/View;
 
-    const v2, 0x7f1305be
+    const v2, 0x7f130591
 
-    invoke-static {v1, v2, v0}, Lde/rki/coronawarnapp/databinding/FragmentInformationAboutBindingImpl$$ExternalSyntheticOutline1;->m(Landroid/view/View;ILde/rki/coronawarnapp/databinding/IncludeHeaderBinding;)V
+    invoke-static {v1, v2, v0}, Lde/rki/coronawarnapp/server/protocols/internal/ppdd/PpaData$ExposureRiskMetadata$Builder-IA;->m(Landroid/view/View;ILde/rki/coronawarnapp/databinding/IncludeHeaderBinding;)V
 
     :cond_2
     iget-object v0, p0, Lde/rki/coronawarnapp/databinding/FragmentSubmissionTanBinding;->submissionTanHeader:Lde/rki/coronawarnapp/databinding/IncludeHeaderBinding;
@@ -481,7 +481,7 @@
     :try_end_0
     .catchall {:try_start_0 .. :try_end_0} :catchall_0
 
-    const/16 p1, 0x33
+    const/16 p1, 0x31
 
     invoke-virtual {p0, p1}, Landroidx/databinding/BaseObservable;->notifyPropertyChanged(I)V
 

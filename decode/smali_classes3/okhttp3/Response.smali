@@ -260,10 +260,6 @@
 
     move-result-wide p1
 
-    const-string v2, "source"
-
-    invoke-static {v0, v2}, Lkotlin/jvm/internal/Intrinsics;->checkNotNullParameter(Ljava/lang/Object;Ljava/lang/String;)V
-
     :goto_0
     const-wide/16 v2, 0x0
 
@@ -300,10 +296,6 @@
     move-result-object p1
 
     iget-wide v2, v1, Lokio/Buffer;->size:J
-
-    const-string p2, "$this$asResponseBody"
-
-    invoke-static {v1, p2}, Lkotlin/jvm/internal/Intrinsics;->checkNotNullParameter(Ljava/lang/Object;Ljava/lang/String;)V
 
     new-instance p2, Lokhttp3/ResponseBody$Companion$asResponseBody$1;
 

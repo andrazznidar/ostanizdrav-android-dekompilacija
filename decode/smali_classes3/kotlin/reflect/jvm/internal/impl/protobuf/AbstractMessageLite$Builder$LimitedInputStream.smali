@@ -1,4 +1,4 @@
-.class public final Lkotlin/reflect/jvm/internal/impl/protobuf/AbstractMessageLite$Builder$LimitedInputStream;
+.class final Lkotlin/reflect/jvm/internal/impl/protobuf/AbstractMessageLite$Builder$LimitedInputStream;
 .super Ljava/io/FilterInputStream;
 .source "AbstractMessageLite.java"
 
@@ -15,7 +15,7 @@
 
 
 # instance fields
-.field public limit:I
+.field private limit:I
 
 
 # direct methods

@@ -54,7 +54,7 @@
 
     sget-object v1, Lde/rki/coronawarnapp/coronatest/type/common/DateOfBirthKey;->DOB_FORMATTER:Lorg/joda/time/format/DateTimeFormatter;
 
-    invoke-virtual {v0, v1}, Lorg/joda/time/base/BaseLocal;->toString(Lorg/joda/time/format/DateTimeFormatter;)Ljava/lang/String;
+    invoke-virtual {v0, v1}, Lorg/joda/time/base/AbstractPartial;->toString(Lorg/joda/time/format/DateTimeFormatter;)Ljava/lang/String;
 
     move-result-object v0
 
@@ -80,19 +80,15 @@
 
     const/4 v3, 0x1
 
-    invoke-static {v1, v0, v2, v3}, Lde/rki/coronawarnapp/util/HashExtensions;->toSHA256$default(Lde/rki/coronawarnapp/util/HashExtensions;Ljava/lang/String;Lde/rki/coronawarnapp/util/HashExtensions$Format;I)Ljava/lang/String;
+    invoke-static {v1, v0, v2, v3}, Lde/rki/coronawarnapp/util/HashExtensions;->toSHA256$default(Lde/rki/coronawarnapp/util/HashExtensions;Ljava/lang/String;II)Ljava/lang/String;
 
     move-result-object v0
-
-    const-string v1, "null cannot be cast to non-null type java.lang.String"
-
-    invoke-static {v0, v1}, Ljava/util/Objects;->requireNonNull(Ljava/lang/Object;Ljava/lang/String;)Ljava/lang/Object;
 
     invoke-virtual {v0, v3}, Ljava/lang/String;->substring(I)Ljava/lang/String;
 
     move-result-object v0
 
-    const-string v1, "(this as java.lang.String).substring(startIndex)"
+    const-string/jumbo v1, "this as java.lang.String).substring(startIndex)"
 
     invoke-static {v0, v1}, Lkotlin/jvm/internal/Intrinsics;->checkNotNullExpressionValue(Ljava/lang/Object;Ljava/lang/String;)V
 

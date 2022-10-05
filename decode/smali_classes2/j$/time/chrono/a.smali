@@ -114,13 +114,13 @@
 
     check-cast p1, Lj$/time/LocalDate;
 
-    invoke-virtual {p1, p2, p3, v0}, Lj$/time/LocalDate;->v(JLj$/time/temporal/y;)Lj$/time/LocalDate;
+    invoke-virtual {p1, p2, p3, v0}, Lj$/time/LocalDate;->v(JLj$/time/temporal/x;)Lj$/time/LocalDate;
 
     move-result-object p1
 
     sget-object p2, Lj$/time/temporal/b;->WEEKS:Lj$/time/temporal/b;
 
-    invoke-virtual {p1, p4, p5, p2}, Lj$/time/LocalDate;->v(JLj$/time/temporal/y;)Lj$/time/LocalDate;
+    invoke-virtual {p1, p4, p5, p2}, Lj$/time/LocalDate;->v(JLj$/time/temporal/x;)Lj$/time/LocalDate;
 
     move-result-object p1
 
@@ -136,7 +136,7 @@
 
     div-long v2, p6, p3
 
-    invoke-virtual {p1, v2, v3, p2}, Lj$/time/LocalDate;->v(JLj$/time/temporal/y;)Lj$/time/LocalDate;
+    invoke-virtual {p1, v2, v3, p2}, Lj$/time/LocalDate;->v(JLj$/time/temporal/x;)Lj$/time/LocalDate;
 
     move-result-object p1
 
@@ -147,13 +147,13 @@
 
     if-gez p5, :cond_1
 
-    invoke-static {p6, p7, p3, p4}, Lj$/lang/d;->g(JJ)J
+    invoke-static {p6, p7, p3, p4}, Lj$/time/c;->f(JJ)J
 
     move-result-wide v2
 
     div-long/2addr v2, p3
 
-    invoke-virtual {p1, v2, v3, p2}, Lj$/time/LocalDate;->v(JLj$/time/temporal/y;)Lj$/time/LocalDate;
+    invoke-virtual {p1, v2, v3, p2}, Lj$/time/LocalDate;->v(JLj$/time/temporal/x;)Lj$/time/LocalDate;
 
     move-result-object p1
 
@@ -173,7 +173,7 @@
 
     move-result-object p2
 
-    invoke-static {p2}, Lj$/time/temporal/n;->e(Lj$/time/e;)Lj$/time/temporal/l;
+    invoke-static {p2}, Lj$/time/temporal/n;->f(Lj$/time/e;)Lj$/time/temporal/l;
 
     move-result-object p2
 

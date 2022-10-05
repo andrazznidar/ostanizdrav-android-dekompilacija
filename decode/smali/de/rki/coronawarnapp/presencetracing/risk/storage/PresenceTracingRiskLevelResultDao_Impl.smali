@@ -12,9 +12,7 @@
 .field public final __insertionAdapterOfPresenceTracingRiskLevelResultEntity:Landroidx/room/EntityInsertionAdapter;
     .annotation system Ldalvik/annotation/Signature;
         value = {
-            "Landroidx/room/EntityInsertionAdapter<",
-            "Lde/rki/coronawarnapp/presencetracing/risk/storage/PresenceTracingRiskLevelResultEntity;",
-            ">;"
+            "Landroidx/room/EntityInsertionAdapter;"
         }
     .end annotation
 .end field
@@ -23,7 +21,7 @@
 
 .field public final __preparedStmtOfDeleteOlderThan:Landroidx/room/SharedSQLiteStatement;
 
-.field public final __riskStateConverter:Lde/rki/coronawarnapp/presencetracing/risk/storage/RiskStateConverter;
+.field public final __riskStateConverter:Lcom/google/android/play/core/assetpacks/zzbf;
 
 
 # direct methods
@@ -40,11 +38,11 @@
 
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
-    new-instance v0, Lde/rki/coronawarnapp/presencetracing/risk/storage/RiskStateConverter;
+    new-instance v0, Lcom/google/android/play/core/assetpacks/zzbf;
 
-    invoke-direct {v0}, Lde/rki/coronawarnapp/presencetracing/risk/storage/RiskStateConverter;-><init>()V
+    invoke-direct {v0}, Lcom/google/android/play/core/assetpacks/zzbf;-><init>()V
 
-    iput-object v0, p0, Lde/rki/coronawarnapp/presencetracing/risk/storage/PresenceTracingRiskLevelResultDao_Impl;->__riskStateConverter:Lde/rki/coronawarnapp/presencetracing/risk/storage/RiskStateConverter;
+    iput-object v0, p0, Lde/rki/coronawarnapp/presencetracing/risk/storage/PresenceTracingRiskLevelResultDao_Impl;->__riskStateConverter:Lcom/google/android/play/core/assetpacks/zzbf;
 
     iput-object p1, p0, Lde/rki/coronawarnapp/presencetracing/risk/storage/PresenceTracingRiskLevelResultDao_Impl;->__db:Landroidx/room/RoomDatabase;
 
@@ -230,58 +228,4 @@
     invoke-virtual {v0}, Landroidx/room/RoomDatabase;->endTransaction()V
 
     throw p1
-.end method
-
-.method public latestEntries(I)Lkotlinx/coroutines/flow/Flow;
-    .locals 4
-    .annotation system Ldalvik/annotation/MethodParameters;
-        accessFlags = {
-            0x10
-        }
-        names = {
-            "limit"
-        }
-    .end annotation
-
-    .annotation system Ldalvik/annotation/Signature;
-        value = {
-            "(I)",
-            "Lkotlinx/coroutines/flow/Flow<",
-            "Ljava/util/List<",
-            "Lde/rki/coronawarnapp/presencetracing/risk/storage/PresenceTracingRiskLevelResultEntity;",
-            ">;>;"
-        }
-    .end annotation
-
-    const-string v0, "SELECT * FROM PresenceTracingRiskLevelResultEntity ORDER BY calculatedAtMillis DESC LIMIT ?"
-
-    const/4 v1, 0x1
-
-    invoke-static {v0, v1}, Landroidx/room/RoomSQLiteQuery;->acquire(Ljava/lang/String;I)Landroidx/room/RoomSQLiteQuery;
-
-    move-result-object v0
-
-    int-to-long v2, p1
-
-    invoke-virtual {v0, v1, v2, v3}, Landroidx/room/RoomSQLiteQuery;->bindLong(IJ)V
-
-    iget-object p1, p0, Lde/rki/coronawarnapp/presencetracing/risk/storage/PresenceTracingRiskLevelResultDao_Impl;->__db:Landroidx/room/RoomDatabase;
-
-    const-string v1, "PresenceTracingRiskLevelResultEntity"
-
-    filled-new-array {v1}, [Ljava/lang/String;
-
-    move-result-object v1
-
-    new-instance v2, Lde/rki/coronawarnapp/presencetracing/risk/storage/PresenceTracingRiskLevelResultDao_Impl$6;
-
-    invoke-direct {v2, p0, v0}, Lde/rki/coronawarnapp/presencetracing/risk/storage/PresenceTracingRiskLevelResultDao_Impl$6;-><init>(Lde/rki/coronawarnapp/presencetracing/risk/storage/PresenceTracingRiskLevelResultDao_Impl;Landroidx/room/RoomSQLiteQuery;)V
-
-    const/4 v0, 0x0
-
-    invoke-static {p1, v0, v1, v2}, Landroidx/room/CoroutinesRoom;->createFlow(Landroidx/room/RoomDatabase;Z[Ljava/lang/String;Ljava/util/concurrent/Callable;)Lkotlinx/coroutines/flow/Flow;
-
-    move-result-object p1
-
-    return-object p1
 .end method

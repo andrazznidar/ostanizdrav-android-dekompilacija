@@ -1,5 +1,5 @@
 .class public final Lcom/google/android/material/transition/MaterialArcMotion;
-.super Landroidx/transition/PathMotion;
+.super Lorg/joda/time/Chronology;
 .source "MaterialArcMotion.java"
 
 
@@ -7,7 +7,7 @@
 .method public constructor <init>()V
     .locals 0
 
-    invoke-direct {p0}, Landroidx/transition/PathMotion;-><init>()V
+    invoke-direct {p0}, Lorg/joda/time/Chronology;-><init>()V
 
     return-void
 .end method

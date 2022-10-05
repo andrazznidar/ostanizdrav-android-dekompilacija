@@ -188,7 +188,7 @@
 
     sget-object v14, Lde/rki/coronawarnapp/contactdiary/ui/overview/adapter/subheader/OverviewSubHeaderItem;->INSTANCE:Lde/rki/coronawarnapp/contactdiary/ui/overview/adapter/subheader/OverviewSubHeaderItem;
 
-    invoke-interface {v13, v14}, Ljava/util/List;->add(Ljava/lang/Object;)Z
+    invoke-virtual {v13, v14}, Ljava/util/ArrayList;->add(Ljava/lang/Object;)Z
 
     iget-object v14, v0, Lde/rki/coronawarnapp/contactdiary/ui/overview/ContactDiaryOverviewViewModel$special$$inlined$combine$1$3;->this$0:Lde/rki/coronawarnapp/contactdiary/ui/overview/ContactDiaryOverviewViewModel;
 
@@ -529,7 +529,7 @@
     goto :goto_7
 
     :cond_b
-    const v1, 0x7f1300f9
+    const v1, 0x7f1300ec
 
     invoke-static {v1}, Ljava/lang/Integer;->valueOf(I)Ljava/lang/Integer;
 
@@ -540,7 +540,7 @@
     goto :goto_7
 
     :cond_c
-    const v1, 0x7f1300fb
+    const v1, 0x7f1300ed
 
     invoke-static {v1}, Ljava/lang/Integer;->valueOf(I)Ljava/lang/Integer;
 
@@ -561,7 +561,7 @@
 
     if-eqz v16, :cond_d
 
-    const v1, 0x7f1300ff
+    const v1, 0x7f1300f0
 
     invoke-static {v1}, Ljava/lang/Integer;->valueOf(I)Ljava/lang/Integer;
 
@@ -584,7 +584,7 @@
 
     if-eqz v1, :cond_e
 
-    const v1, 0x7f130100
+    const v1, 0x7f1300f1
 
     invoke-static {v1}, Ljava/lang/Integer;->valueOf(I)Ljava/lang/Integer;
 
@@ -604,7 +604,7 @@
 
     if-eqz v2, :cond_f
 
-    const v1, 0x7f1300fe
+    const v1, 0x7f1300ef
 
     invoke-static {v1}, Ljava/lang/Integer;->valueOf(I)Ljava/lang/Integer;
 
@@ -623,7 +623,7 @@
 
     if-eqz v1, :cond_10
 
-    const v1, 0x7f1300fd
+    const v1, 0x7f1300ee
 
     invoke-static {v1}, Ljava/lang/Integer;->valueOf(I)Ljava/lang/Integer;
 
@@ -637,9 +637,9 @@
 
     move-result-object v20
 
-    sget-object v21, Lde/rki/coronawarnapp/contactdiary/ui/overview/adapter/day/contact/ContactItem$Type;->PERSON:Lde/rki/coronawarnapp/contactdiary/ui/overview/adapter/day/contact/ContactItem$Type;
+    const/16 v21, 0x2
 
-    const v16, 0x7f0800e7
+    const v16, 0x7f0800dd
 
     const/4 v1, 0x0
 
@@ -651,7 +651,7 @@
 
     move-object/from16 v19, v5
 
-    invoke-direct/range {v15 .. v21}, Lde/rki/coronawarnapp/contactdiary/ui/overview/adapter/day/contact/ContactItem$Data;-><init>(ILjava/lang/String;Lorg/joda/time/Duration;Ljava/util/List;Ljava/lang/String;Lde/rki/coronawarnapp/contactdiary/ui/overview/adapter/day/contact/ContactItem$Type;)V
+    invoke-direct/range {v15 .. v21}, Lde/rki/coronawarnapp/contactdiary/ui/overview/adapter/day/contact/ContactItem$Data;-><init>(ILjava/lang/String;Lorg/joda/time/Duration;Ljava/util/List;Ljava/lang/String;I)V
 
     invoke-virtual {v4, v2}, Ljava/util/ArrayList;->add(Ljava/lang/Object;)Z
 
@@ -713,15 +713,15 @@
 
     move-result-object v20
 
-    sget-object v21, Lde/rki/coronawarnapp/contactdiary/ui/overview/adapter/day/contact/ContactItem$Type;->LOCATION:Lde/rki/coronawarnapp/contactdiary/ui/overview/adapter/day/contact/ContactItem$Type;
+    const/16 v21, 0x1
 
-    const v16, 0x7f0800e4
+    const v16, 0x7f0800da
 
     const/16 v19, 0x0
 
     move-object v15, v10
 
-    invoke-direct/range {v15 .. v21}, Lde/rki/coronawarnapp/contactdiary/ui/overview/adapter/day/contact/ContactItem$Data;-><init>(ILjava/lang/String;Lorg/joda/time/Duration;Ljava/util/List;Ljava/lang/String;Lde/rki/coronawarnapp/contactdiary/ui/overview/adapter/day/contact/ContactItem$Type;)V
+    invoke-direct/range {v15 .. v21}, Lde/rki/coronawarnapp/contactdiary/ui/overview/adapter/day/contact/ContactItem$Data;-><init>(ILjava/lang/String;Lorg/joda/time/Duration;Ljava/util/List;Ljava/lang/String;I)V
 
     invoke-virtual {v1, v10}, Ljava/util/ArrayList;->add(Ljava/lang/Object;)Z
 
@@ -816,7 +816,7 @@
 
     if-ne v2, v5, :cond_17
 
-    const v2, 0x7f130105
+    const v2, 0x7f1300f6
 
     invoke-static {v2}, Ljava/lang/Integer;->valueOf(I)Ljava/lang/Integer;
 
@@ -834,7 +834,7 @@
 
     sget-object v10, Lde/rki/coronawarnapp/server/protocols/internal/v2/RiskCalculationParametersOuterClass$NormalizedTimeToRiskLevelMapping$RiskLevel;->HIGH:Lde/rki/coronawarnapp/server/protocols/internal/v2/RiskCalculationParametersOuterClass$NormalizedTimeToRiskLevelMapping$RiskLevel;
 
-    const v12, 0x7f130104
+    const v12, 0x7f1300f5
 
     if-ne v5, v10, :cond_19
 
@@ -842,21 +842,21 @@
 
     if-nez v4, :cond_18
 
-    const v4, 0x7f130106
+    const v4, 0x7f1300f7
 
     move v12, v4
 
     :cond_18
-    const v4, 0x7f1300d7
+    const v4, 0x7f1300d0
 
-    const v5, 0x7f080122
+    const v5, 0x7f080117
 
     goto :goto_e
 
     :cond_19
-    const v5, 0x7f080142
+    const v4, 0x7f1300d7
 
-    const v4, 0x7f1300e2
+    const v5, 0x7f080138
 
     :goto_e
     new-instance v10, Lde/rki/coronawarnapp/contactdiary/ui/overview/adapter/day/riskenf/RiskEnfItem;
@@ -874,7 +874,6 @@
 
     move-result-object v4
 
-    :cond_1a
     :goto_10
     invoke-interface {v4}, Ljava/util/Iterator;->hasNext()Z
 
@@ -897,7 +896,7 @@
 
     move-result v10
 
-    if-eqz v10, :cond_1d
+    if-eqz v10, :cond_1c
 
     invoke-interface {v7}, Ljava/util/Iterator;->next()Ljava/lang/Object;
 
@@ -917,26 +916,26 @@
 
     cmp-long v1, v1, v20
 
-    if-nez v1, :cond_1b
+    if-nez v1, :cond_1a
 
     const/4 v1, 0x1
 
     goto :goto_12
 
-    :cond_1b
+    :cond_1a
     const/4 v1, 0x0
 
     :goto_12
-    if-eqz v1, :cond_1c
+    if-eqz v1, :cond_1b
 
     goto :goto_13
 
-    :cond_1c
+    :cond_1b
     move-object/from16 v2, v16
 
     goto :goto_11
 
-    :cond_1d
+    :cond_1c
     move-object/from16 v16, v2
 
     const/4 v10, 0x0
@@ -944,21 +943,26 @@
     :goto_13
     check-cast v10, Lde/rki/coronawarnapp/presencetracing/checkins/CheckIn;
 
-    if-nez v10, :cond_1e
+    if-nez v10, :cond_1d
 
     const/4 v1, 0x0
 
     goto :goto_14
 
-    :cond_1e
+    :cond_1d
     new-instance v1, Lde/rki/coronawarnapp/contactdiary/ui/overview/ContactDiaryOverviewViewModel$RiskEventDataHolder;
 
     invoke-direct {v1, v5, v10}, Lde/rki/coronawarnapp/contactdiary/ui/overview/ContactDiaryOverviewViewModel$RiskEventDataHolder;-><init>(Lde/rki/coronawarnapp/presencetracing/risk/TraceLocationCheckInRisk;Lde/rki/coronawarnapp/presencetracing/checkins/CheckIn;)V
 
     :goto_14
+    if-nez v1, :cond_1e
+
     move-object/from16 v2, v16
 
-    if-eqz v1, :cond_1a
+    goto :goto_10
+
+    :cond_1e
+    move-object/from16 v2, v16
 
     invoke-virtual {v2, v1}, Ljava/util/ArrayList;->add(Ljava/lang/Object;)Z
 
@@ -1039,20 +1043,20 @@
 
     if-ne v4, v5, :cond_25
 
-    const v4, 0x7f080122
+    const v4, 0x7f1300d0
 
-    const v5, 0x7f1300d7
-
-    move v15, v5
+    const v15, 0x7f080117
 
     goto :goto_18
 
     :cond_25
     if-nez v4, :cond_32
 
-    const v4, 0x7f080142
+    const v4, 0x7f1300d7
 
-    const v15, 0x7f1300e2
+    const v5, 0x7f080138
+
+    move v15, v5
 
     :goto_18
     new-instance v5, Ljava/util/ArrayList;
@@ -1086,7 +1090,7 @@
 
     move-object/from16 v16, v7
 
-    invoke-static {v12}, Ldagger/android/AndroidInjection;->getLocationName(Lde/rki/coronawarnapp/presencetracing/checkins/CheckIn;)Ljava/lang/String;
+    invoke-static {v12}, Lgeoregression/geometry/UtilPoint2D_F64;->getLocationName(Lde/rki/coronawarnapp/presencetracing/checkins/CheckIn;)Ljava/lang/String;
 
     move-result-object v7
 
@@ -1118,9 +1122,9 @@
 
     if-ne v1, v10, :cond_27
 
-    const v1, 0x7f060045
+    const v1, 0x7f060046
 
-    const v10, 0x7f130109
+    const v10, 0x7f1300fa
 
     invoke-static {v10}, Ljava/lang/Integer;->valueOf(I)Ljava/lang/Integer;
 
@@ -1131,9 +1135,9 @@
     :cond_27
     if-nez v1, :cond_29
 
-    const v1, 0x7f060046
+    const v1, 0x7f060047
 
-    const v10, 0x7f13010a
+    const v10, 0x7f1300fb
 
     invoke-static {v10}, Ljava/lang/Integer;->valueOf(I)Ljava/lang/Integer;
 
@@ -1185,17 +1189,13 @@
 
     new-instance v1, Lde/rki/coronawarnapp/contactdiary/ui/overview/adapter/day/riskevent/RiskEventItem;
 
-    const v2, 0x7f130108
+    const v2, 0x7f1300f9
 
-    invoke-direct {v1, v15, v2, v4, v5}, Lde/rki/coronawarnapp/contactdiary/ui/overview/adapter/day/riskevent/RiskEventItem;-><init>(IIILjava/util/List;)V
+    invoke-direct {v1, v4, v2, v15, v5}, Lde/rki/coronawarnapp/contactdiary/ui/overview/adapter/day/riskevent/RiskEventItem;-><init>(IIILjava/util/List;)V
 
     move-object/from16 v18, v1
 
     :goto_1c
-    const-string v1, "<this>"
-
-    invoke-static {v8, v1}, Lkotlin/jvm/internal/Intrinsics;->checkNotNullParameter(Ljava/lang/Object;Ljava/lang/String;)V
-
     new-instance v1, Ljava/util/ArrayList;
 
     const/16 v2, 0xa
@@ -1225,11 +1225,11 @@
 
     new-instance v5, Lde/rki/coronawarnapp/contactdiary/ui/overview/adapter/day/coronatest/CoronaTestItem$Data;
 
-    iget-object v7, v4, Lde/rki/coronawarnapp/contactdiary/storage/entity/ContactDiaryCoronaTestEntity;->result:Lde/rki/coronawarnapp/contactdiary/storage/entity/ContactDiaryCoronaTestEntity$TestResult;
+    iget v7, v4, Lde/rki/coronawarnapp/contactdiary/storage/entity/ContactDiaryCoronaTestEntity;->result:I
 
     sget-object v8, Lde/rki/coronawarnapp/contactdiary/ui/overview/ContactDiaryOverviewViewModel$WhenMappings;->$EnumSwitchMapping$0:[I
 
-    invoke-virtual {v7}, Ljava/lang/Enum;->ordinal()I
+    invoke-static {v7}, Landroidx/camera/camera2/internal/Camera2CameraImpl$InternalState$EnumUnboxingSharedUtility;->ordinal(I)I
 
     move-result v7
 
@@ -1243,7 +1243,7 @@
 
     if-ne v7, v9, :cond_2b
 
-    const v7, 0x7f0800ea
+    const v7, 0x7f0800e0
 
     goto :goto_1e
 
@@ -1255,14 +1255,14 @@
     throw v1
 
     :cond_2c
-    const v7, 0x7f0800eb
+    const v7, 0x7f0800e1
 
     :goto_1e
-    iget-object v9, v4, Lde/rki/coronawarnapp/contactdiary/storage/entity/ContactDiaryCoronaTestEntity;->testType:Lde/rki/coronawarnapp/contactdiary/storage/entity/ContactDiaryCoronaTestEntity$TestType;
+    iget v9, v4, Lde/rki/coronawarnapp/contactdiary/storage/entity/ContactDiaryCoronaTestEntity;->testType:I
 
     sget-object v10, Lde/rki/coronawarnapp/contactdiary/ui/overview/ContactDiaryOverviewViewModel$WhenMappings;->$EnumSwitchMapping$1:[I
 
-    invoke-virtual {v9}, Ljava/lang/Enum;->ordinal()I
+    invoke-static {v9}, Landroidx/camera/camera2/internal/Camera2CameraImpl$InternalState$EnumUnboxingSharedUtility;->ordinal(I)I
 
     move-result v9
 
@@ -1276,7 +1276,7 @@
 
     if-ne v9, v10, :cond_2d
 
-    const v9, 0x7f1300b3
+    const v9, 0x7f1300ae
 
     goto :goto_1f
 
@@ -1288,12 +1288,12 @@
     throw v1
 
     :cond_2e
-    const v9, 0x7f1300b1
+    const v9, 0x7f1300ac
 
     :goto_1f
-    iget-object v4, v4, Lde/rki/coronawarnapp/contactdiary/storage/entity/ContactDiaryCoronaTestEntity;->result:Lde/rki/coronawarnapp/contactdiary/storage/entity/ContactDiaryCoronaTestEntity$TestResult;
+    iget v4, v4, Lde/rki/coronawarnapp/contactdiary/storage/entity/ContactDiaryCoronaTestEntity;->result:I
 
-    invoke-virtual {v4}, Ljava/lang/Enum;->ordinal()I
+    invoke-static {v4}, Landroidx/camera/camera2/internal/Camera2CameraImpl$InternalState$EnumUnboxingSharedUtility;->ordinal(I)I
 
     move-result v4
 
@@ -1307,7 +1307,7 @@
 
     if-ne v4, v8, :cond_2f
 
-    const v4, 0x7f1300b0
+    const v4, 0x7f1300ab
 
     goto :goto_20
 
@@ -1319,7 +1319,7 @@
     throw v1
 
     :cond_30
-    const v4, 0x7f1300b2
+    const v4, 0x7f1300ad
 
     :goto_20
     invoke-direct {v5, v7, v9, v4}, Lde/rki/coronawarnapp/contactdiary/ui/overview/adapter/day/coronatest/CoronaTestItem$Data;-><init>(III)V
@@ -1395,7 +1395,7 @@
 
     move-object/from16 v28, v2
 
-    invoke-interface {v13, v3}, Ljava/util/List;->addAll(Ljava/util/Collection;)Z
+    invoke-virtual {v13, v3}, Ljava/util/ArrayList;->addAll(Ljava/util/Collection;)Z
 
     invoke-static {v13}, Lkotlin/collections/CollectionsKt___CollectionsKt;->toList(Ljava/lang/Iterable;)Ljava/util/List;
 

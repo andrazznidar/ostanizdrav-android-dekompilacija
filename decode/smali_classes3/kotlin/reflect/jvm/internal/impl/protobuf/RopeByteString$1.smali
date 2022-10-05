@@ -1,4 +1,4 @@
-.class public synthetic Lkotlin/reflect/jvm/internal/impl/protobuf/RopeByteString$1;
+.class synthetic Lkotlin/reflect/jvm/internal/impl/protobuf/RopeByteString$1;
 .super Ljava/lang/Object;
 .source "RopeByteString.java"
 

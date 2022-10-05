@@ -2,19 +2,22 @@
 .super Ljava/lang/Object;
 
 # interfaces
-.implements Ljava/security/Key;
-.implements Ljava/security/PrivateKey;
+.implements Lorg/bouncycastle/pqc/jcajce/interfaces/NHPrivateKey;
+
+
+# static fields
+.field private static final serialVersionUID:J = 0x1L
 
 
 # instance fields
-.field public transient attributes:Lorg/bouncycastle/asn1/ASN1Set;
+.field private transient attributes:Lorg/bouncycastle/asn1/ASN1Set;
 
-.field public transient params:Lorg/bouncycastle/pqc/crypto/newhope/NHPrivateKeyParameters;
+.field private transient params:Lorg/bouncycastle/pqc/crypto/newhope/NHPrivateKeyParameters;
 
 
 # direct methods
 .method public constructor <init>(Lorg/bouncycastle/asn1/pkcs/PrivateKeyInfo;)V
-    .locals 1
+    .locals 0
     .annotation system Ldalvik/annotation/Throws;
         value = {
             Ljava/io/IOException;
@@ -23,7 +26,32 @@
 
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
-    iget-object v0, p1, Lorg/bouncycastle/asn1/pkcs/PrivateKeyInfo;->attributes:Lorg/bouncycastle/asn1/ASN1Set;
+    invoke-direct {p0, p1}, Lorg/bouncycastle/pqc/jcajce/provider/newhope/BCNHPrivateKey;->init(Lorg/bouncycastle/asn1/pkcs/PrivateKeyInfo;)V
+
+    return-void
+.end method
+
+.method public constructor <init>(Lorg/bouncycastle/pqc/crypto/newhope/NHPrivateKeyParameters;)V
+    .locals 0
+
+    invoke-direct {p0}, Ljava/lang/Object;-><init>()V
+
+    iput-object p1, p0, Lorg/bouncycastle/pqc/jcajce/provider/newhope/BCNHPrivateKey;->params:Lorg/bouncycastle/pqc/crypto/newhope/NHPrivateKeyParameters;
+
+    return-void
+.end method
+
+.method private init(Lorg/bouncycastle/asn1/pkcs/PrivateKeyInfo;)V
+    .locals 1
+    .annotation system Ldalvik/annotation/Throws;
+        value = {
+            Ljava/io/IOException;
+        }
+    .end annotation
+
+    invoke-virtual {p1}, Lorg/bouncycastle/asn1/pkcs/PrivateKeyInfo;->getAttributes()Lorg/bouncycastle/asn1/ASN1Set;
+
+    move-result-object v0
 
     iput-object v0, p0, Lorg/bouncycastle/pqc/jcajce/provider/newhope/BCNHPrivateKey;->attributes:Lorg/bouncycastle/asn1/ASN1Set;
 
@@ -34,6 +62,51 @@
     check-cast p1, Lorg/bouncycastle/pqc/crypto/newhope/NHPrivateKeyParameters;
 
     iput-object p1, p0, Lorg/bouncycastle/pqc/jcajce/provider/newhope/BCNHPrivateKey;->params:Lorg/bouncycastle/pqc/crypto/newhope/NHPrivateKeyParameters;
+
+    return-void
+.end method
+
+.method private readObject(Ljava/io/ObjectInputStream;)V
+    .locals 0
+    .annotation system Ldalvik/annotation/Throws;
+        value = {
+            Ljava/io/IOException;,
+            Ljava/lang/ClassNotFoundException;
+        }
+    .end annotation
+
+    invoke-virtual {p1}, Ljava/io/ObjectInputStream;->defaultReadObject()V
+
+    invoke-virtual {p1}, Ljava/io/ObjectInputStream;->readObject()Ljava/lang/Object;
+
+    move-result-object p1
+
+    check-cast p1, [B
+
+    invoke-static {p1}, Lorg/bouncycastle/asn1/pkcs/PrivateKeyInfo;->getInstance(Ljava/lang/Object;)Lorg/bouncycastle/asn1/pkcs/PrivateKeyInfo;
+
+    move-result-object p1
+
+    invoke-direct {p0, p1}, Lorg/bouncycastle/pqc/jcajce/provider/newhope/BCNHPrivateKey;->init(Lorg/bouncycastle/asn1/pkcs/PrivateKeyInfo;)V
+
+    return-void
+.end method
+
+.method private writeObject(Ljava/io/ObjectOutputStream;)V
+    .locals 1
+    .annotation system Ldalvik/annotation/Throws;
+        value = {
+            Ljava/io/IOException;
+        }
+    .end annotation
+
+    invoke-virtual {p1}, Ljava/io/ObjectOutputStream;->defaultWriteObject()V
+
+    invoke-virtual {p0}, Lorg/bouncycastle/pqc/jcajce/provider/newhope/BCNHPrivateKey;->getEncoded()[B
+
+    move-result-object v0
+
+    invoke-virtual {p1, v0}, Ljava/io/ObjectOutputStream;->writeObject(Ljava/lang/Object;)V
 
     return-void
 .end method
@@ -111,6 +184,26 @@
     .locals 1
 
     const-string v0, "PKCS#8"
+
+    return-object v0
+.end method
+
+.method public getKeyParams()Lorg/bouncycastle/crypto/CipherParameters;
+    .locals 1
+
+    iget-object v0, p0, Lorg/bouncycastle/pqc/jcajce/provider/newhope/BCNHPrivateKey;->params:Lorg/bouncycastle/pqc/crypto/newhope/NHPrivateKeyParameters;
+
+    return-object v0
+.end method
+
+.method public getSecretData()[S
+    .locals 1
+
+    iget-object v0, p0, Lorg/bouncycastle/pqc/jcajce/provider/newhope/BCNHPrivateKey;->params:Lorg/bouncycastle/pqc/crypto/newhope/NHPrivateKeyParameters;
+
+    invoke-virtual {v0}, Lorg/bouncycastle/pqc/crypto/newhope/NHPrivateKeyParameters;->getSecData()[S
+
+    move-result-object v0
 
     return-object v0
 .end method

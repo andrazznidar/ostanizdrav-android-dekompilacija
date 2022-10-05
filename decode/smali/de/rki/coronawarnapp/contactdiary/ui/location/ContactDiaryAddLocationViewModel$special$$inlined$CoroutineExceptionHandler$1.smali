@@ -39,7 +39,7 @@
 
 # virtual methods
 .method public handleException(Lkotlin/coroutines/CoroutineContext;Ljava/lang/Throwable;)V
-    .locals 3
+    .locals 2
 
     iget-object p1, p0, Lde/rki/coronawarnapp/contactdiary/ui/location/ContactDiaryAddLocationViewModel$special$$inlined$CoroutineExceptionHandler$1;->this$0:Lde/rki/coronawarnapp/contactdiary/ui/location/ContactDiaryAddLocationViewModel;
 
@@ -49,13 +49,11 @@
 
     invoke-virtual {p1, v0}, Landroidx/lifecycle/MutableLiveData;->postValue(Ljava/lang/Object;)V
 
-    sget-object p1, Lde/rki/coronawarnapp/exception/ExceptionCategory;->INTERNAL:Lde/rki/coronawarnapp/exception/ExceptionCategory;
+    const/4 p1, 0x4
 
-    const/4 v1, 0x4
+    const-string v1, "ContactDiaryAddLocationViewModel"
 
-    const-string v2, "ContactDiaryAddLocationViewModel"
-
-    invoke-static {p2, p1, v2, v0, v1}, Lde/rki/coronawarnapp/exception/reporting/ExceptionReporterKt;->report$default(Ljava/lang/Throwable;Lde/rki/coronawarnapp/exception/ExceptionCategory;Ljava/lang/String;Ljava/lang/String;I)V
+    invoke-static {p2, p1, v1, v0, p1}, Lde/rki/coronawarnapp/exception/reporting/ExceptionReporterKt;->report$default(Ljava/lang/Throwable;ILjava/lang/String;Ljava/lang/String;I)V
 
     return-void
 .end method

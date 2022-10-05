@@ -14,7 +14,7 @@
 
 
 # direct methods
-.method public static synthetic $$$reportNull$$$0(I)V
+.method private static synthetic $$$reportNull$$$0(I)V
     .locals 3
 
     const/4 v0, 0x3
@@ -78,6 +78,13 @@
         }
     .end annotation
 
+    if-nez p0, :cond_0
+
+    const/4 v0, 0x0
+
+    invoke-static {v0}, Lkotlin/reflect/jvm/internal/ReflectProperties;->$$$reportNull$$$0(I)V
+
+    :cond_0
     new-instance v0, Lkotlin/reflect/jvm/internal/ReflectProperties$LazyVal;
 
     invoke-direct {v0, p0}, Lkotlin/reflect/jvm/internal/ReflectProperties$LazyVal;-><init>(Lkotlin/jvm/functions/Function0;)V
@@ -99,22 +106,18 @@
         }
     .end annotation
 
-    if-eqz p1, :cond_0
+    if-nez p1, :cond_0
 
+    const/4 v0, 0x1
+
+    invoke-static {v0}, Lkotlin/reflect/jvm/internal/ReflectProperties;->$$$reportNull$$$0(I)V
+
+    :cond_0
     new-instance v0, Lkotlin/reflect/jvm/internal/ReflectProperties$LazySoftVal;
 
     invoke-direct {v0, p0, p1}, Lkotlin/reflect/jvm/internal/ReflectProperties$LazySoftVal;-><init>(Ljava/lang/Object;Lkotlin/jvm/functions/Function0;)V
 
     return-object v0
-
-    :cond_0
-    const/4 p0, 0x1
-
-    invoke-static {p0}, Lkotlin/reflect/jvm/internal/ReflectProperties;->$$$reportNull$$$0(I)V
-
-    const/4 p0, 0x0
-
-    throw p0
 .end method
 
 .method public static lazySoft(Lkotlin/jvm/functions/Function0;)Lkotlin/reflect/jvm/internal/ReflectProperties$LazySoftVal;
@@ -131,6 +134,13 @@
         }
     .end annotation
 
+    if-nez p0, :cond_0
+
+    const/4 v0, 0x2
+
+    invoke-static {v0}, Lkotlin/reflect/jvm/internal/ReflectProperties;->$$$reportNull$$$0(I)V
+
+    :cond_0
     const/4 v0, 0x0
 
     invoke-static {v0, p0}, Lkotlin/reflect/jvm/internal/ReflectProperties;->lazySoft(Ljava/lang/Object;Lkotlin/jvm/functions/Function0;)Lkotlin/reflect/jvm/internal/ReflectProperties$LazySoftVal;

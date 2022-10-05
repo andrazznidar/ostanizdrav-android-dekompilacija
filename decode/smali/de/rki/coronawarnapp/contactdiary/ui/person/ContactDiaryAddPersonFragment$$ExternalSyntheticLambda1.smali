@@ -1,5 +1,6 @@
 .class public final synthetic Lde/rki/coronawarnapp/contactdiary/ui/person/ContactDiaryAddPersonFragment$$ExternalSyntheticLambda1;
 .super Ljava/lang/Object;
+.source "R8$$SyntheticClass"
 
 # interfaces
 .implements Landroid/widget/TextView$OnEditorActionListener;

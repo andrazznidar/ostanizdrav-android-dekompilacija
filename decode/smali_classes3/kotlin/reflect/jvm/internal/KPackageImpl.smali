@@ -10,9 +10,69 @@
     }
 .end annotation
 
+.annotation runtime Lkotlin/Metadata;
+    d1 = {
+        "\u0000f\n\u0002\u0018\u0002\n\u0002\u0018\u0002\n\u0000\n\u0002\u0018\u0002\n\u0000\n\u0002\u0010\u000e\n\u0002\u0008\u0002\n\u0002\u0010\u001e\n\u0002\u0018\u0002\n\u0002\u0008\u0003\n\u0002\u0018\u0002\n\u0002\u0018\u0002\n\u0002\u0008\u0004\n\u0002\u0018\u0002\n\u0002\u0008\u0004\n\u0002\u0018\u0002\n\u0002\u0008\u0005\n\u0002\u0010\u000b\n\u0000\n\u0002\u0010\u0000\n\u0000\n\u0002\u0018\u0002\n\u0000\n\u0002\u0018\u0002\n\u0000\n\u0002\u0018\u0002\n\u0000\n\u0002\u0010\u0008\n\u0002\u0008\u0005\u0008\u0000\u0018\u00002\u00020\u0001:\u0001,B\u001d\u0012\n\u0010\u0002\u001a\u0006\u0012\u0002\u0008\u00030\u0003\u0012\n\u0008\u0002\u0010\u0004\u001a\u0004\u0018\u00010\u0005\u00a2\u0006\u0002\u0010\u0006J\u0013\u0010\u001d\u001a\u00020\u001e2\u0008\u0010\u001f\u001a\u0004\u0018\u00010 H\u0096\u0002J\u0016\u0010!\u001a\u0008\u0012\u0004\u0012\u00020\"0\u00082\u0006\u0010#\u001a\u00020$H\u0016J\u0012\u0010%\u001a\u0004\u0018\u00010&2\u0006\u0010\'\u001a\u00020(H\u0016J\u0016\u0010)\u001a\u0008\u0012\u0004\u0012\u00020&0\u00082\u0006\u0010#\u001a\u00020$H\u0016J\u0008\u0010*\u001a\u00020(H\u0016J\u0008\u0010+\u001a\u00020\u0005H\u0016R\u001a\u0010\u0007\u001a\u0008\u0012\u0004\u0012\u00020\t0\u00088VX\u0096\u0004\u00a2\u0006\u0006\u001a\u0004\u0008\n\u0010\u000bR$\u0010\u000c\u001a\u0018\u0012\u0014\u0012\u0012 \u000f*\u0008\u0018\u00010\u000eR\u00020\u00000\u000eR\u00020\u00000\rX\u0082\u0004\u00a2\u0006\u0002\n\u0000R\u0018\u0010\u0002\u001a\u0006\u0012\u0002\u0008\u00030\u0003X\u0096\u0004\u00a2\u0006\u0008\n\u0000\u001a\u0004\u0008\u0010\u0010\u0011R\u001e\u0010\u0012\u001a\u000c\u0012\u0008\u0012\u0006\u0012\u0002\u0008\u00030\u00130\u00088VX\u0096\u0004\u00a2\u0006\u0006\u001a\u0004\u0008\u0014\u0010\u000bR\u0018\u0010\u0015\u001a\u0006\u0012\u0002\u0008\u00030\u00038TX\u0094\u0004\u00a2\u0006\u0006\u001a\u0004\u0008\u0016\u0010\u0011R\u0014\u0010\u0017\u001a\u00020\u00188BX\u0082\u0004\u00a2\u0006\u0006\u001a\u0004\u0008\u0019\u0010\u001aR\u0013\u0010\u0004\u001a\u0004\u0018\u00010\u0005\u00a2\u0006\u0008\n\u0000\u001a\u0004\u0008\u001b\u0010\u001c\u00a8\u0006-"
+    }
+    d2 = {
+        "Lkotlin/reflect/jvm/internal/KPackageImpl;",
+        "Lkotlin/reflect/jvm/internal/KDeclarationContainerImpl;",
+        "jClass",
+        "Ljava/lang/Class;",
+        "usageModuleName",
+        "",
+        "(Ljava/lang/Class;Ljava/lang/String;)V",
+        "constructorDescriptors",
+        "",
+        "Lkotlin/reflect/jvm/internal/impl/descriptors/ConstructorDescriptor;",
+        "getConstructorDescriptors",
+        "()Ljava/util/Collection;",
+        "data",
+        "Lkotlin/reflect/jvm/internal/ReflectProperties$LazyVal;",
+        "Lkotlin/reflect/jvm/internal/KPackageImpl$Data;",
+        "kotlin.jvm.PlatformType",
+        "getJClass",
+        "()Ljava/lang/Class;",
+        "members",
+        "Lkotlin/reflect/KCallable;",
+        "getMembers",
+        "methodOwner",
+        "getMethodOwner",
+        "scope",
+        "Lkotlin/reflect/jvm/internal/impl/resolve/scopes/MemberScope;",
+        "getScope",
+        "()Lorg/jetbrains/kotlin/resolve/scopes/MemberScope;",
+        "getUsageModuleName",
+        "()Ljava/lang/String;",
+        "equals",
+        "",
+        "other",
+        "",
+        "getFunctions",
+        "Lkotlin/reflect/jvm/internal/impl/descriptors/FunctionDescriptor;",
+        "name",
+        "Lkotlin/reflect/jvm/internal/impl/name/Name;",
+        "getLocalProperty",
+        "Lkotlin/reflect/jvm/internal/impl/descriptors/PropertyDescriptor;",
+        "index",
+        "",
+        "getProperties",
+        "hashCode",
+        "toString",
+        "Data",
+        "kotlin-reflection"
+    }
+    k = 0x1
+    mv = {
+        0x1,
+        0x5,
+        0x1
+    }
+.end annotation
+
 
 # instance fields
-.field public final data:Lkotlin/reflect/jvm/internal/ReflectProperties$LazyVal;
+.field private final data:Lkotlin/reflect/jvm/internal/ReflectProperties$LazyVal;
     .annotation system Ldalvik/annotation/Signature;
         value = {
             "Lkotlin/reflect/jvm/internal/ReflectProperties$LazyVal<",
@@ -22,7 +82,7 @@
     .end annotation
 .end field
 
-.field public final jClass:Ljava/lang/Class;
+.field private final jClass:Ljava/lang/Class;
     .annotation system Ldalvik/annotation/Signature;
         value = {
             "Ljava/lang/Class<",
@@ -31,10 +91,12 @@
     .end annotation
 .end field
 
+.field private final usageModuleName:Ljava/lang/String;
+
 
 # direct methods
 .method public constructor <init>(Ljava/lang/Class;Ljava/lang/String;)V
-    .locals 0
+    .locals 1
     .annotation system Ldalvik/annotation/Signature;
         value = {
             "(",
@@ -45,13 +107,15 @@
         }
     .end annotation
 
-    const-string p2, "jClass"
+    const-string v0, "jClass"
 
-    invoke-static {p1, p2}, Lkotlin/jvm/internal/Intrinsics;->checkNotNullParameter(Ljava/lang/Object;Ljava/lang/String;)V
+    invoke-static {p1, v0}, Lkotlin/jvm/internal/Intrinsics;->checkNotNullParameter(Ljava/lang/Object;Ljava/lang/String;)V
 
     invoke-direct {p0}, Lkotlin/reflect/jvm/internal/KDeclarationContainerImpl;-><init>()V
 
     iput-object p1, p0, Lkotlin/reflect/jvm/internal/KPackageImpl;->jClass:Ljava/lang/Class;
+
+    iput-object p2, p0, Lkotlin/reflect/jvm/internal/KPackageImpl;->usageModuleName:Ljava/lang/String;
 
     new-instance p1, Lkotlin/reflect/jvm/internal/KPackageImpl$data$1;
 
@@ -61,29 +125,46 @@
 
     move-result-object p1
 
+    const-string p2, "ReflectProperties.lazy { Data() }"
+
+    invoke-static {p1, p2}, Lkotlin/jvm/internal/Intrinsics;->checkNotNullExpressionValue(Ljava/lang/Object;Ljava/lang/String;)V
+
     iput-object p1, p0, Lkotlin/reflect/jvm/internal/KPackageImpl;->data:Lkotlin/reflect/jvm/internal/ReflectProperties$LazyVal;
 
     return-void
 .end method
 
-.method public constructor <init>(Ljava/lang/Class;Ljava/lang/String;I)V
+.method public synthetic constructor <init>(Ljava/lang/Class;Ljava/lang/String;ILkotlin/jvm/internal/DefaultConstructorMarker;)V
     .locals 0
 
-    invoke-direct {p0}, Lkotlin/reflect/jvm/internal/KDeclarationContainerImpl;-><init>()V
+    and-int/lit8 p3, p3, 0x2
 
-    iput-object p1, p0, Lkotlin/reflect/jvm/internal/KPackageImpl;->jClass:Ljava/lang/Class;
+    if-eqz p3, :cond_0
 
-    new-instance p1, Lkotlin/reflect/jvm/internal/KPackageImpl$data$1;
+    const/4 p2, 0x0
 
-    invoke-direct {p1, p0}, Lkotlin/reflect/jvm/internal/KPackageImpl$data$1;-><init>(Lkotlin/reflect/jvm/internal/KPackageImpl;)V
-
-    new-instance p2, Lkotlin/reflect/jvm/internal/ReflectProperties$LazyVal;
-
-    invoke-direct {p2, p1}, Lkotlin/reflect/jvm/internal/ReflectProperties$LazyVal;-><init>(Lkotlin/jvm/functions/Function0;)V
-
-    iput-object p2, p0, Lkotlin/reflect/jvm/internal/KPackageImpl;->data:Lkotlin/reflect/jvm/internal/ReflectProperties$LazyVal;
+    :cond_0
+    invoke-direct {p0, p1, p2}, Lkotlin/reflect/jvm/internal/KPackageImpl;-><init>(Ljava/lang/Class;Ljava/lang/String;)V
 
     return-void
+.end method
+
+.method private final getScope()Lkotlin/reflect/jvm/internal/impl/resolve/scopes/MemberScope;
+    .locals 1
+
+    iget-object v0, p0, Lkotlin/reflect/jvm/internal/KPackageImpl;->data:Lkotlin/reflect/jvm/internal/ReflectProperties$LazyVal;
+
+    invoke-virtual {v0}, Lkotlin/reflect/jvm/internal/ReflectProperties$LazyVal;->invoke()Ljava/lang/Object;
+
+    move-result-object v0
+
+    check-cast v0, Lkotlin/reflect/jvm/internal/KPackageImpl$Data;
+
+    invoke-virtual {v0}, Lkotlin/reflect/jvm/internal/KPackageImpl$Data;->getScope()Lkotlin/reflect/jvm/internal/impl/resolve/scopes/MemberScope;
+
+    move-result-object v0
+
+    return-object v0
 .end method
 
 
@@ -95,11 +176,15 @@
 
     if-eqz v0, :cond_0
 
-    iget-object v0, p0, Lkotlin/reflect/jvm/internal/KPackageImpl;->jClass:Ljava/lang/Class;
+    invoke-virtual {p0}, Lkotlin/reflect/jvm/internal/KPackageImpl;->getJClass()Ljava/lang/Class;
+
+    move-result-object v0
 
     check-cast p1, Lkotlin/reflect/jvm/internal/KPackageImpl;
 
-    iget-object p1, p1, Lkotlin/reflect/jvm/internal/KPackageImpl;->jClass:Ljava/lang/Class;
+    invoke-virtual {p1}, Lkotlin/reflect/jvm/internal/KPackageImpl;->getJClass()Ljava/lang/Class;
+
+    move-result-object p1
 
     invoke-static {v0, p1}, Lkotlin/jvm/internal/Intrinsics;->areEqual(Ljava/lang/Object;Ljava/lang/Object;)Z
 
@@ -147,7 +232,11 @@
         }
     .end annotation
 
-    invoke-virtual {p0}, Lkotlin/reflect/jvm/internal/KPackageImpl;->getScope()Lkotlin/reflect/jvm/internal/impl/resolve/scopes/MemberScope;
+    const-string v0, "name"
+
+    invoke-static {p1, v0}, Lkotlin/jvm/internal/Intrinsics;->checkNotNullParameter(Ljava/lang/Object;Ljava/lang/String;)V
+
+    invoke-direct {p0}, Lkotlin/reflect/jvm/internal/KPackageImpl;->getScope()Lkotlin/reflect/jvm/internal/impl/resolve/scopes/MemberScope;
 
     move-result-object v0
 
@@ -186,19 +275,9 @@
 
     check-cast v0, Lkotlin/reflect/jvm/internal/KPackageImpl$Data;
 
-    iget-object v0, v0, Lkotlin/reflect/jvm/internal/KPackageImpl$Data;->metadata$delegate:Lkotlin/reflect/jvm/internal/ReflectProperties$LazyVal;
-
-    sget-object v1, Lkotlin/reflect/jvm/internal/KPackageImpl$Data;->$$delegatedProperties:[Lkotlin/reflect/KProperty;
-
-    const/4 v2, 0x3
-
-    aget-object v1, v1, v2
-
-    invoke-virtual {v0}, Lkotlin/reflect/jvm/internal/ReflectProperties$LazyVal;->invoke()Ljava/lang/Object;
+    invoke-virtual {v0}, Lkotlin/reflect/jvm/internal/KPackageImpl$Data;->getMetadata()Lkotlin/Triple;
 
     move-result-object v0
-
-    check-cast v0, Lkotlin/Triple;
 
     const/4 v1, 0x0
 
@@ -236,11 +315,15 @@
 
     if-eqz v4, :cond_0
 
-    iget-object v3, p0, Lkotlin/reflect/jvm/internal/KPackageImpl;->jClass:Ljava/lang/Class;
+    invoke-virtual {p0}, Lkotlin/reflect/jvm/internal/KPackageImpl;->getJClass()Ljava/lang/Class;
+
+    move-result-object v3
 
     new-instance v6, Lkotlin/reflect/jvm/internal/impl/metadata/deserialization/TypeTable;
 
-    iget-object p1, v2, Lkotlin/reflect/jvm/internal/impl/metadata/ProtoBuf$Package;->typeTable_:Lkotlin/reflect/jvm/internal/impl/metadata/ProtoBuf$TypeTable;
+    invoke-virtual {v2}, Lkotlin/reflect/jvm/internal/impl/metadata/ProtoBuf$Package;->getTypeTable()Lkotlin/reflect/jvm/internal/impl/metadata/ProtoBuf$TypeTable;
+
+    move-result-object p1
 
     const-string v0, "packageProto.typeTable"
 
@@ -263,7 +346,7 @@
 .end method
 
 .method public getMembers()Ljava/util/Collection;
-    .locals 3
+    .locals 1
     .annotation system Ldalvik/annotation/Signature;
         value = {
             "()",
@@ -281,25 +364,15 @@
 
     check-cast v0, Lkotlin/reflect/jvm/internal/KPackageImpl$Data;
 
-    iget-object v0, v0, Lkotlin/reflect/jvm/internal/KPackageImpl$Data;->members$delegate:Lkotlin/reflect/jvm/internal/ReflectProperties$LazySoftVal;
-
-    sget-object v1, Lkotlin/reflect/jvm/internal/KPackageImpl$Data;->$$delegatedProperties:[Lkotlin/reflect/KProperty;
-
-    const/4 v2, 0x4
-
-    aget-object v1, v1, v2
-
-    invoke-virtual {v0}, Lkotlin/reflect/jvm/internal/ReflectProperties$LazySoftVal;->invoke()Ljava/lang/Object;
+    invoke-virtual {v0}, Lkotlin/reflect/jvm/internal/KPackageImpl$Data;->getMembers()Ljava/util/Collection;
 
     move-result-object v0
-
-    check-cast v0, Ljava/util/Collection;
 
     return-object v0
 .end method
 
 .method public getMethodOwner()Ljava/lang/Class;
-    .locals 3
+    .locals 1
     .annotation system Ldalvik/annotation/Signature;
         value = {
             "()",
@@ -316,26 +389,18 @@
 
     check-cast v0, Lkotlin/reflect/jvm/internal/KPackageImpl$Data;
 
-    iget-object v0, v0, Lkotlin/reflect/jvm/internal/KPackageImpl$Data;->multifileFacade$delegate:Lkotlin/reflect/jvm/internal/ReflectProperties$LazyVal;
-
-    sget-object v1, Lkotlin/reflect/jvm/internal/KPackageImpl$Data;->$$delegatedProperties:[Lkotlin/reflect/KProperty;
-
-    const/4 v2, 0x2
-
-    aget-object v1, v1, v2
-
-    invoke-virtual {v0}, Lkotlin/reflect/jvm/internal/ReflectProperties$LazyVal;->invoke()Ljava/lang/Object;
+    invoke-virtual {v0}, Lkotlin/reflect/jvm/internal/KPackageImpl$Data;->getMultifileFacade()Ljava/lang/Class;
 
     move-result-object v0
-
-    check-cast v0, Ljava/lang/Class;
 
     if-eqz v0, :cond_0
 
     goto :goto_0
 
     :cond_0
-    iget-object v0, p0, Lkotlin/reflect/jvm/internal/KPackageImpl;->jClass:Ljava/lang/Class;
+    invoke-virtual {p0}, Lkotlin/reflect/jvm/internal/KPackageImpl;->getJClass()Ljava/lang/Class;
+
+    move-result-object v0
 
     :goto_0
     return-object v0
@@ -354,7 +419,11 @@
         }
     .end annotation
 
-    invoke-virtual {p0}, Lkotlin/reflect/jvm/internal/KPackageImpl;->getScope()Lkotlin/reflect/jvm/internal/impl/resolve/scopes/MemberScope;
+    const-string v0, "name"
+
+    invoke-static {p1, v0}, Lkotlin/jvm/internal/Intrinsics;->checkNotNullParameter(Ljava/lang/Object;Ljava/lang/String;)V
+
+    invoke-direct {p0}, Lkotlin/reflect/jvm/internal/KPackageImpl;->getScope()Lkotlin/reflect/jvm/internal/impl/resolve/scopes/MemberScope;
 
     move-result-object v0
 
@@ -367,38 +436,12 @@
     return-object p1
 .end method
 
-.method public final getScope()Lkotlin/reflect/jvm/internal/impl/resolve/scopes/MemberScope;
-    .locals 3
-
-    iget-object v0, p0, Lkotlin/reflect/jvm/internal/KPackageImpl;->data:Lkotlin/reflect/jvm/internal/ReflectProperties$LazyVal;
-
-    invoke-virtual {v0}, Lkotlin/reflect/jvm/internal/ReflectProperties$LazyVal;->invoke()Ljava/lang/Object;
-
-    move-result-object v0
-
-    check-cast v0, Lkotlin/reflect/jvm/internal/KPackageImpl$Data;
-
-    iget-object v0, v0, Lkotlin/reflect/jvm/internal/KPackageImpl$Data;->scope$delegate:Lkotlin/reflect/jvm/internal/ReflectProperties$LazySoftVal;
-
-    sget-object v1, Lkotlin/reflect/jvm/internal/KPackageImpl$Data;->$$delegatedProperties:[Lkotlin/reflect/KProperty;
-
-    const/4 v2, 0x1
-
-    aget-object v1, v1, v2
-
-    invoke-virtual {v0}, Lkotlin/reflect/jvm/internal/ReflectProperties$LazySoftVal;->invoke()Ljava/lang/Object;
-
-    move-result-object v0
-
-    check-cast v0, Lkotlin/reflect/jvm/internal/impl/resolve/scopes/MemberScope;
-
-    return-object v0
-.end method
-
 .method public hashCode()I
     .locals 1
 
-    iget-object v0, p0, Lkotlin/reflect/jvm/internal/KPackageImpl;->jClass:Ljava/lang/Class;
+    invoke-virtual {p0}, Lkotlin/reflect/jvm/internal/KPackageImpl;->getJClass()Ljava/lang/Class;
+
+    move-result-object v0
 
     invoke-virtual {v0}, Ljava/lang/Class;->hashCode()I
 
@@ -416,7 +459,9 @@
 
     move-result-object v0
 
-    iget-object v1, p0, Lkotlin/reflect/jvm/internal/KPackageImpl;->jClass:Ljava/lang/Class;
+    invoke-virtual {p0}, Lkotlin/reflect/jvm/internal/KPackageImpl;->getJClass()Ljava/lang/Class;
+
+    move-result-object v1
 
     invoke-static {v1}, Lkotlin/reflect/jvm/internal/impl/descriptors/runtime/structure/ReflectClassUtilKt;->getClassId(Ljava/lang/Class;)Lkotlin/reflect/jvm/internal/impl/name/ClassId;
 

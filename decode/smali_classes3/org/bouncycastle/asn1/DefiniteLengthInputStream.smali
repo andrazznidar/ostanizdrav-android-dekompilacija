@@ -1,15 +1,15 @@
-.class public Lorg/bouncycastle/asn1/DefiniteLengthInputStream;
+.class Lorg/bouncycastle/asn1/DefiniteLengthInputStream;
 .super Lorg/bouncycastle/asn1/LimitedInputStream;
 
 
 # static fields
-.field public static final EMPTY_BYTES:[B
+.field private static final EMPTY_BYTES:[B
 
 
 # instance fields
-.field public final _originalLength:I
+.field private final _originalLength:I
 
-.field public _remaining:I
+.field private _remaining:I
 
 
 # direct methods
@@ -57,6 +57,14 @@
 
 
 # virtual methods
+.method public getRemaining()I
+    .locals 1
+
+    iget v0, p0, Lorg/bouncycastle/asn1/DefiniteLengthInputStream;->_remaining:I
+
+    return v0
+.end method
+
 .method public read()I
     .locals 3
     .annotation system Ldalvik/annotation/Throws;
@@ -201,6 +209,121 @@
     throw p1
 .end method
 
+.method public readAllIntoByteArray([B)V
+    .locals 4
+    .annotation system Ldalvik/annotation/Throws;
+        value = {
+            Ljava/io/IOException;
+        }
+    .end annotation
+
+    iget v0, p0, Lorg/bouncycastle/asn1/DefiniteLengthInputStream;->_remaining:I
+
+    array-length v1, p1
+
+    if-ne v0, v1, :cond_3
+
+    if-nez v0, :cond_0
+
+    return-void
+
+    :cond_0
+    invoke-virtual {p0}, Lorg/bouncycastle/asn1/LimitedInputStream;->getLimit()I
+
+    move-result v0
+
+    iget v1, p0, Lorg/bouncycastle/asn1/DefiniteLengthInputStream;->_remaining:I
+
+    if-ge v1, v0, :cond_2
+
+    iget-object v0, p0, Lorg/bouncycastle/asn1/LimitedInputStream;->_in:Ljava/io/InputStream;
+
+    array-length v2, p1
+
+    const/4 v3, 0x0
+
+    invoke-static {v0, p1, v3, v2}, Lorg/bouncycastle/util/io/Streams;->readFully(Ljava/io/InputStream;[BII)I
+
+    move-result p1
+
+    sub-int/2addr v1, p1
+
+    iput v1, p0, Lorg/bouncycastle/asn1/DefiniteLengthInputStream;->_remaining:I
+
+    if-nez v1, :cond_1
+
+    const/4 p1, 0x1
+
+    invoke-virtual {p0, p1}, Lorg/bouncycastle/asn1/LimitedInputStream;->setParentEofDetect(Z)V
+
+    return-void
+
+    :cond_1
+    new-instance p1, Ljava/io/EOFException;
+
+    const-string v0, "DEF length "
+
+    invoke-static {v0}, Landroid/support/v4/media/RatingCompat$$ExternalSyntheticOutline0;->m(Ljava/lang/String;)Ljava/lang/StringBuilder;
+
+    move-result-object v0
+
+    iget v1, p0, Lorg/bouncycastle/asn1/DefiniteLengthInputStream;->_originalLength:I
+
+    invoke-virtual {v0, v1}, Ljava/lang/StringBuilder;->append(I)Ljava/lang/StringBuilder;
+
+    const-string v1, " object truncated by "
+
+    invoke-virtual {v0, v1}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+
+    iget v1, p0, Lorg/bouncycastle/asn1/DefiniteLengthInputStream;->_remaining:I
+
+    invoke-virtual {v0, v1}, Ljava/lang/StringBuilder;->append(I)Ljava/lang/StringBuilder;
+
+    invoke-virtual {v0}, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
+
+    move-result-object v0
+
+    invoke-direct {p1, v0}, Ljava/io/EOFException;-><init>(Ljava/lang/String;)V
+
+    throw p1
+
+    :cond_2
+    new-instance p1, Ljava/io/IOException;
+
+    const-string v1, "corrupted stream - out of bounds length found: "
+
+    invoke-static {v1}, Landroid/support/v4/media/RatingCompat$$ExternalSyntheticOutline0;->m(Ljava/lang/String;)Ljava/lang/StringBuilder;
+
+    move-result-object v1
+
+    iget v2, p0, Lorg/bouncycastle/asn1/DefiniteLengthInputStream;->_remaining:I
+
+    invoke-virtual {v1, v2}, Ljava/lang/StringBuilder;->append(I)Ljava/lang/StringBuilder;
+
+    const-string v2, " >= "
+
+    invoke-virtual {v1, v2}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+
+    invoke-virtual {v1, v0}, Ljava/lang/StringBuilder;->append(I)Ljava/lang/StringBuilder;
+
+    invoke-virtual {v1}, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
+
+    move-result-object v0
+
+    invoke-direct {p1, v0}, Ljava/io/IOException;-><init>(Ljava/lang/String;)V
+
+    throw p1
+
+    :cond_3
+    new-instance p1, Ljava/lang/IllegalArgumentException;
+
+    const-string v0, "buffer length not right for data"
+
+    invoke-direct {p1, v0}, Ljava/lang/IllegalArgumentException;-><init>(Ljava/lang/String;)V
+
+    throw p1
+.end method
+
 .method public toByteArray()[B
     .locals 4
     .annotation system Ldalvik/annotation/Throws;
@@ -218,31 +341,35 @@
     return-object v0
 
     :cond_0
-    iget v1, p0, Lorg/bouncycastle/asn1/LimitedInputStream;->_limit:I
+    invoke-virtual {p0}, Lorg/bouncycastle/asn1/LimitedInputStream;->getLimit()I
 
-    if-ge v0, v1, :cond_2
+    move-result v0
 
-    new-array v1, v0, [B
+    iget v1, p0, Lorg/bouncycastle/asn1/DefiniteLengthInputStream;->_remaining:I
+
+    if-ge v1, v0, :cond_2
+
+    new-array v0, v1, [B
 
     iget-object v2, p0, Lorg/bouncycastle/asn1/LimitedInputStream;->_in:Ljava/io/InputStream;
 
     const/4 v3, 0x0
 
-    invoke-static {v2, v1, v3, v0}, Lorg/bouncycastle/util/io/Streams;->readFully(Ljava/io/InputStream;[BII)I
+    invoke-static {v2, v0, v3, v1}, Lorg/bouncycastle/util/io/Streams;->readFully(Ljava/io/InputStream;[BII)I
 
     move-result v2
 
-    sub-int/2addr v0, v2
+    sub-int/2addr v1, v2
 
-    iput v0, p0, Lorg/bouncycastle/asn1/DefiniteLengthInputStream;->_remaining:I
+    iput v1, p0, Lorg/bouncycastle/asn1/DefiniteLengthInputStream;->_remaining:I
 
-    if-nez v0, :cond_1
+    if-nez v1, :cond_1
 
-    const/4 v0, 0x1
+    const/4 v1, 0x1
 
-    invoke-virtual {p0, v0}, Lorg/bouncycastle/asn1/LimitedInputStream;->setParentEofDetect(Z)V
+    invoke-virtual {p0, v1}, Lorg/bouncycastle/asn1/LimitedInputStream;->setParentEofDetect(Z)V
 
-    return-object v1
+    return-object v0
 
     :cond_1
     new-instance v0, Ljava/io/EOFException;
@@ -274,7 +401,7 @@
     throw v0
 
     :cond_2
-    new-instance v0, Ljava/io/IOException;
+    new-instance v1, Ljava/io/IOException;
 
     const-string v2, "corrupted stream - out of bounds length found: "
 
@@ -290,13 +417,13 @@
 
     invoke-virtual {v2, v3}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
 
-    invoke-virtual {v2, v1}, Ljava/lang/StringBuilder;->append(I)Ljava/lang/StringBuilder;
+    invoke-virtual {v2, v0}, Ljava/lang/StringBuilder;->append(I)Ljava/lang/StringBuilder;
 
     invoke-virtual {v2}, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
 
-    move-result-object v1
+    move-result-object v0
 
-    invoke-direct {v0, v1}, Ljava/io/IOException;-><init>(Ljava/lang/String;)V
+    invoke-direct {v1, v0}, Ljava/io/IOException;-><init>(Ljava/lang/String;)V
 
-    throw v0
+    throw v1
 .end method

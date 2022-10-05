@@ -77,9 +77,9 @@
 
     iget-object v1, p0, Lcom/google/crypto/tink/subtle/prf/HkdfStreamingPrf$HkdfInputStream;->this$0:Lcom/google/crypto/tink/subtle/prf/HkdfStreamingPrf;
 
-    iget-object v1, v1, Lcom/google/crypto/tink/subtle/prf/HkdfStreamingPrf;->hashType:Lcom/google/crypto/tink/subtle/Enums$HashType;
+    iget v1, v1, Lcom/google/crypto/tink/subtle/prf/HkdfStreamingPrf;->hashType:I
 
-    invoke-static {v1}, Lcom/google/crypto/tink/subtle/prf/HkdfStreamingPrf;->access$100(Lcom/google/crypto/tink/subtle/Enums$HashType;)Ljava/lang/String;
+    invoke-static {v1}, Lcom/google/crypto/tink/subtle/prf/HkdfStreamingPrf;->access$100(I)Ljava/lang/String;
 
     move-result-object v1
 
@@ -112,9 +112,9 @@
 
     iget-object v3, v2, Lcom/google/crypto/tink/subtle/prf/HkdfStreamingPrf;->salt:[B
 
-    iget-object v2, v2, Lcom/google/crypto/tink/subtle/prf/HkdfStreamingPrf;->hashType:Lcom/google/crypto/tink/subtle/Enums$HashType;
+    iget v2, v2, Lcom/google/crypto/tink/subtle/prf/HkdfStreamingPrf;->hashType:I
 
-    invoke-static {v2}, Lcom/google/crypto/tink/subtle/prf/HkdfStreamingPrf;->access$100(Lcom/google/crypto/tink/subtle/Enums$HashType;)Ljava/lang/String;
+    invoke-static {v2}, Lcom/google/crypto/tink/subtle/prf/HkdfStreamingPrf;->access$100(I)Ljava/lang/String;
 
     move-result-object v2
 
@@ -138,9 +138,9 @@
 
     iget-object v3, p0, Lcom/google/crypto/tink/subtle/prf/HkdfStreamingPrf$HkdfInputStream;->this$0:Lcom/google/crypto/tink/subtle/prf/HkdfStreamingPrf;
 
-    iget-object v3, v3, Lcom/google/crypto/tink/subtle/prf/HkdfStreamingPrf;->hashType:Lcom/google/crypto/tink/subtle/Enums$HashType;
+    iget v3, v3, Lcom/google/crypto/tink/subtle/prf/HkdfStreamingPrf;->hashType:I
 
-    invoke-static {v3}, Lcom/google/crypto/tink/subtle/prf/HkdfStreamingPrf;->access$100(Lcom/google/crypto/tink/subtle/Enums$HashType;)Ljava/lang/String;
+    invoke-static {v3}, Lcom/google/crypto/tink/subtle/prf/HkdfStreamingPrf;->access$100(I)Ljava/lang/String;
 
     move-result-object v3
 
@@ -378,9 +378,9 @@
 
     iget-object v3, p0, Lcom/google/crypto/tink/subtle/prf/HkdfStreamingPrf$HkdfInputStream;->this$0:Lcom/google/crypto/tink/subtle/prf/HkdfStreamingPrf;
 
-    iget-object v3, v3, Lcom/google/crypto/tink/subtle/prf/HkdfStreamingPrf;->hashType:Lcom/google/crypto/tink/subtle/Enums$HashType;
+    iget v3, v3, Lcom/google/crypto/tink/subtle/prf/HkdfStreamingPrf;->hashType:I
 
-    invoke-static {v3}, Lcom/google/crypto/tink/subtle/prf/HkdfStreamingPrf;->access$100(Lcom/google/crypto/tink/subtle/Enums$HashType;)Ljava/lang/String;
+    invoke-static {v3}, Lcom/google/crypto/tink/subtle/prf/HkdfStreamingPrf;->access$100(I)Ljava/lang/String;
 
     move-result-object v3
 

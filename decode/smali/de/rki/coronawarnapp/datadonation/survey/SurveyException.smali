@@ -57,7 +57,7 @@
 
 # virtual methods
 .method public toHumanReadableError(Landroid/content/Context;)Lde/rki/coronawarnapp/util/HumanReadableError;
-    .locals 7
+    .locals 5
 
     const-string v0, "context"
 
@@ -75,7 +75,7 @@
 
     if-ne v0, v1, :cond_0
 
-    const v0, 0x7f130156
+    const v0, 0x7f130145
 
     goto :goto_0
 
@@ -87,22 +87,20 @@
     throw p1
 
     :cond_1
-    const v0, 0x7f130151
+    const v0, 0x7f130141
 
     :goto_0
     new-instance v2, Lde/rki/coronawarnapp/util/HumanReadableError;
 
+    new-array v1, v1, [Ljava/lang/Object;
+
     const/4 v3, 0x0
 
-    new-array v4, v1, [Ljava/lang/Object;
+    iget-object v4, p0, Lde/rki/coronawarnapp/datadonation/survey/SurveyException;->type:Lde/rki/coronawarnapp/datadonation/survey/SurveyException$Type;
 
-    const/4 v5, 0x0
+    aput-object v4, v1, v3
 
-    iget-object v6, p0, Lde/rki/coronawarnapp/datadonation/survey/SurveyException;->type:Lde/rki/coronawarnapp/datadonation/survey/SurveyException$Type;
-
-    aput-object v6, v4, v5
-
-    invoke-virtual {p1, v0, v4}, Landroid/content/Context;->getString(I[Ljava/lang/Object;)Ljava/lang/String;
+    invoke-virtual {p1, v0, v1}, Landroid/content/Context;->getString(I[Ljava/lang/Object;)Ljava/lang/String;
 
     move-result-object p1
 
@@ -110,7 +108,9 @@
 
     invoke-static {p1, v0}, Lkotlin/jvm/internal/Intrinsics;->checkNotNullExpressionValue(Ljava/lang/Object;Ljava/lang/String;)V
 
-    invoke-direct {v2, v3, p1, v1}, Lde/rki/coronawarnapp/util/HumanReadableError;-><init>(Ljava/lang/String;Ljava/lang/String;I)V
+    const/4 v0, 0x0
+
+    invoke-direct {v2, v0, p1}, Lde/rki/coronawarnapp/util/HumanReadableError;-><init>(Ljava/lang/String;Ljava/lang/String;)V
 
     return-object v2
 .end method

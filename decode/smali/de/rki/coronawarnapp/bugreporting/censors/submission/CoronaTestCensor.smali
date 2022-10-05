@@ -86,7 +86,7 @@
 
     aput-object p3, v2, v0
 
-    iget-object p2, p2, Lde/rki/coronawarnapp/coronatest/CoronaTestRepository;->coronaTests:Lkotlinx/coroutines/flow/Flow;
+    iget-object p2, p2, Lde/rki/coronawarnapp/coronatest/CoronaTestRepository;->allCoronaTests:Lkotlinx/coroutines/flow/Flow;
 
     aput-object p2, v2, v1
 

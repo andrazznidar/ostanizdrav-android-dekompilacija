@@ -92,6 +92,24 @@
     return-object v0
 .end method
 
+.method public getMembers()Ljava/util/Collection;
+    .locals 1
+    .annotation system Ldalvik/annotation/Signature;
+        value = {
+            "()",
+            "Ljava/util/Collection<",
+            "Lkotlin/reflect/KCallable<",
+            "*>;>;"
+        }
+    .end annotation
+
+    new-instance v0, Lkotlin/jvm/KotlinReflectionNotSupportedError;
+
+    invoke-direct {v0}, Lkotlin/jvm/KotlinReflectionNotSupportedError;-><init>()V
+
+    throw v0
+.end method
+
 .method public hashCode()I
     .locals 1
 
@@ -107,23 +125,15 @@
 .method public toString()Ljava/lang/String;
     .locals 2
 
-    new-instance v0, Ljava/lang/StringBuilder;
+    iget-object v0, p0, Lkotlin/jvm/internal/PackageReference;->jClass:Ljava/lang/Class;
 
-    invoke-direct {v0}, Ljava/lang/StringBuilder;-><init>()V
+    invoke-virtual {v0}, Ljava/lang/Class;->toString()Ljava/lang/String;
 
-    iget-object v1, p0, Lkotlin/jvm/internal/PackageReference;->jClass:Ljava/lang/Class;
-
-    invoke-virtual {v1}, Ljava/lang/Class;->toString()Ljava/lang/String;
-
-    move-result-object v1
-
-    invoke-virtual {v0, v1}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+    move-result-object v0
 
     const-string v1, " (Kotlin reflection is not available)"
 
-    invoke-virtual {v0, v1}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
-
-    invoke-virtual {v0}, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
+    invoke-static {v0, v1}, Lkotlin/jvm/internal/Intrinsics;->stringPlus(Ljava/lang/String;Ljava/lang/Object;)Ljava/lang/String;
 
     move-result-object v0
 

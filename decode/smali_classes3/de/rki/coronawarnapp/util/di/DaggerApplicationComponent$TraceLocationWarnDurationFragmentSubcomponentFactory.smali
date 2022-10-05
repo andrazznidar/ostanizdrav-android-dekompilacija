@@ -24,18 +24,8 @@
 
 
 # direct methods
-.method public constructor <init>(Lde/rki/coronawarnapp/util/di/DaggerApplicationComponent;Lde/rki/coronawarnapp/util/di/DaggerApplicationComponent$MainActivitySubcomponentImpl;Lde/rki/coronawarnapp/util/di/DaggerApplicationComponent$TraceLocationWarnDurationFragmentSubcomponentFactory-IA;)V
+.method public constructor <init>(Lde/rki/coronawarnapp/util/di/DaggerApplicationComponent;Lde/rki/coronawarnapp/util/di/DaggerApplicationComponent$MainActivitySubcomponentImpl;Landroidx/camera/core/AutoValue_ImmutableImageInfo$$ExternalSyntheticOutline0;)V
     .locals 0
-    .annotation system Ldalvik/annotation/MethodParameters;
-        accessFlags = {
-            0x0,
-            0x0
-        }
-        names = {
-            "applicationComponent",
-            "mainActivitySubcomponentImpl"
-        }
-    .end annotation
 
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 

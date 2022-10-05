@@ -15,16 +15,28 @@
 
 
 # instance fields
-.field public final javaClass:Lkotlin/reflect/jvm/internal/impl/name/ClassId;
+.field private final javaClass:Lkotlin/reflect/jvm/internal/impl/name/ClassId;
 
-.field public final kotlinMutable:Lkotlin/reflect/jvm/internal/impl/name/ClassId;
+.field private final kotlinMutable:Lkotlin/reflect/jvm/internal/impl/name/ClassId;
 
-.field public final kotlinReadOnly:Lkotlin/reflect/jvm/internal/impl/name/ClassId;
+.field private final kotlinReadOnly:Lkotlin/reflect/jvm/internal/impl/name/ClassId;
 
 
 # direct methods
 .method public constructor <init>(Lkotlin/reflect/jvm/internal/impl/name/ClassId;Lkotlin/reflect/jvm/internal/impl/name/ClassId;Lkotlin/reflect/jvm/internal/impl/name/ClassId;)V
-    .locals 0
+    .locals 1
+
+    const-string v0, "javaClass"
+
+    invoke-static {p1, v0}, Lkotlin/jvm/internal/Intrinsics;->checkNotNullParameter(Ljava/lang/Object;Ljava/lang/String;)V
+
+    const-string v0, "kotlinReadOnly"
+
+    invoke-static {p2, v0}, Lkotlin/jvm/internal/Intrinsics;->checkNotNullParameter(Ljava/lang/Object;Ljava/lang/String;)V
+
+    const-string v0, "kotlinMutable"
+
+    invoke-static {p3, v0}, Lkotlin/jvm/internal/Intrinsics;->checkNotNullParameter(Ljava/lang/Object;Ljava/lang/String;)V
 
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
@@ -39,6 +51,30 @@
 
 
 # virtual methods
+.method public final component1()Lkotlin/reflect/jvm/internal/impl/name/ClassId;
+    .locals 1
+
+    iget-object v0, p0, Lkotlin/reflect/jvm/internal/impl/builtins/jvm/JavaToKotlinClassMap$PlatformMutabilityMapping;->javaClass:Lkotlin/reflect/jvm/internal/impl/name/ClassId;
+
+    return-object v0
+.end method
+
+.method public final component2()Lkotlin/reflect/jvm/internal/impl/name/ClassId;
+    .locals 1
+
+    iget-object v0, p0, Lkotlin/reflect/jvm/internal/impl/builtins/jvm/JavaToKotlinClassMap$PlatformMutabilityMapping;->kotlinReadOnly:Lkotlin/reflect/jvm/internal/impl/name/ClassId;
+
+    return-object v0
+.end method
+
+.method public final component3()Lkotlin/reflect/jvm/internal/impl/name/ClassId;
+    .locals 1
+
+    iget-object v0, p0, Lkotlin/reflect/jvm/internal/impl/builtins/jvm/JavaToKotlinClassMap$PlatformMutabilityMapping;->kotlinMutable:Lkotlin/reflect/jvm/internal/impl/name/ClassId;
+
+    return-object v0
+.end method
+
 .method public equals(Ljava/lang/Object;)Z
     .locals 4
 
@@ -100,6 +136,14 @@
 
     :cond_4
     return v0
+.end method
+
+.method public final getJavaClass()Lkotlin/reflect/jvm/internal/impl/name/ClassId;
+    .locals 1
+
+    iget-object v0, p0, Lkotlin/reflect/jvm/internal/impl/builtins/jvm/JavaToKotlinClassMap$PlatformMutabilityMapping;->javaClass:Lkotlin/reflect/jvm/internal/impl/name/ClassId;
+
+    return-object v0
 .end method
 
 .method public hashCode()I

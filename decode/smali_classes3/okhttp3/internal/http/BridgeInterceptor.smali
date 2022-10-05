@@ -111,7 +111,9 @@
     :goto_0
     const-string v4, "Host"
 
-    invoke-virtual {v2, v4}, Lokhttp3/Request;->header(Ljava/lang/String;)Ljava/lang/String;
+    iget-object v9, v2, Lokhttp3/Request;->headers:Lokhttp3/Headers;
+
+    invoke-virtual {v9, v4}, Lokhttp3/Headers;->get(Ljava/lang/String;)Ljava/lang/String;
 
     move-result-object v9
 
@@ -130,7 +132,9 @@
     :cond_3
     const-string v4, "Connection"
 
-    invoke-virtual {v2, v4}, Lokhttp3/Request;->header(Ljava/lang/String;)Ljava/lang/String;
+    iget-object v9, v2, Lokhttp3/Request;->headers:Lokhttp3/Headers;
+
+    invoke-virtual {v9, v4}, Lokhttp3/Headers;->get(Ljava/lang/String;)Ljava/lang/String;
 
     move-result-object v9
 
@@ -143,7 +147,9 @@
     :cond_4
     const-string v4, "Accept-Encoding"
 
-    invoke-virtual {v2, v4}, Lokhttp3/Request;->header(Ljava/lang/String;)Ljava/lang/String;
+    iget-object v9, v2, Lokhttp3/Request;->headers:Lokhttp3/Headers;
+
+    invoke-virtual {v9, v4}, Lokhttp3/Headers;->get(Ljava/lang/String;)Ljava/lang/String;
 
     move-result-object v9
 
@@ -153,9 +159,11 @@
 
     if-nez v9, :cond_5
 
-    const-string v9, "Range"
+    iget-object v9, v2, Lokhttp3/Request;->headers:Lokhttp3/Headers;
 
-    invoke-virtual {v2, v9}, Lokhttp3/Request;->header(Ljava/lang/String;)Ljava/lang/String;
+    const-string v13, "Range"
+
+    invoke-virtual {v9, v13}, Lokhttp3/Headers;->get(Ljava/lang/String;)Ljava/lang/String;
 
     move-result-object v9
 
@@ -258,7 +266,9 @@
     :cond_9
     const-string v9, "User-Agent"
 
-    invoke-virtual {v2, v9}, Lokhttp3/Request;->header(Ljava/lang/String;)Ljava/lang/String;
+    iget-object v10, v2, Lokhttp3/Request;->headers:Lokhttp3/Headers;
+
+    invoke-virtual {v10, v9}, Lokhttp3/Headers;->get(Ljava/lang/String;)Ljava/lang/String;
 
     move-result-object v10
 

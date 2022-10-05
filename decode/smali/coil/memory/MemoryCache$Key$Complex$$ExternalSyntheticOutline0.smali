@@ -1,5 +1,6 @@
 .class public final synthetic Lcoil/memory/MemoryCache$Key$Complex$$ExternalSyntheticOutline0;
 .super Ljava/lang/Object;
+.source "R8$$SyntheticClass"
 
 
 # direct methods

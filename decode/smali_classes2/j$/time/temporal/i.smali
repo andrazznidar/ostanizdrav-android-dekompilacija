@@ -2,7 +2,7 @@
 .super Ljava/lang/Enum;
 
 # interfaces
-.implements Lj$/time/temporal/y;
+.implements Lj$/time/temporal/x;
 
 
 # static fields
@@ -143,7 +143,7 @@
 
     sget-object v4, Lj$/time/temporal/b;->YEARS:Lj$/time/temporal/b;
 
-    invoke-interface {p1, v2, v3, v4}, Lj$/time/temporal/k;->f(JLj$/time/temporal/y;)Lj$/time/temporal/k;
+    invoke-interface {p1, v2, v3, v4}, Lj$/time/temporal/k;->h(JLj$/time/temporal/x;)Lj$/time/temporal/k;
 
     move-result-object p1
 
@@ -155,7 +155,7 @@
 
     sget-object v0, Lj$/time/temporal/b;->MONTHS:Lj$/time/temporal/b;
 
-    invoke-interface {p1, p2, p3, v0}, Lj$/time/temporal/k;->f(JLj$/time/temporal/y;)Lj$/time/temporal/k;
+    invoke-interface {p1, p2, p3, v0}, Lj$/time/temporal/k;->h(JLj$/time/temporal/x;)Lj$/time/temporal/k;
 
     move-result-object p1
 
@@ -173,17 +173,17 @@
     :cond_1
     sget-object v0, Lj$/time/temporal/j;->c:Lj$/time/temporal/o;
 
-    invoke-interface {p1, v0}, Lj$/time/temporal/TemporalAccessor;->c(Lj$/time/temporal/o;)I
+    invoke-interface {p1, v0}, Lj$/time/temporal/TemporalAccessor;->d(Lj$/time/temporal/o;)I
 
     move-result v1
 
     int-to-long v1, v1
 
-    invoke-static {v1, v2, p2, p3}, Lj$/lang/d;->c(JJ)J
+    invoke-static {v1, v2, p2, p3}, Lj$/time/c;->b(JJ)J
 
     move-result-wide p2
 
-    invoke-interface {p1, v0, p2, p3}, Lj$/time/temporal/k;->b(Lj$/time/temporal/o;J)Lj$/time/temporal/k;
+    invoke-interface {p1, v0, p2, p3}, Lj$/time/temporal/k;->c(Lj$/time/temporal/o;J)Lj$/time/temporal/k;
 
     move-result-object p1
 

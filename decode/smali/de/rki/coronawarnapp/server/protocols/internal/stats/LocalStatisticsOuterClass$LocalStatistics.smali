@@ -108,15 +108,6 @@
 
 .method public static bridge synthetic -$$Nest$maddAllAdministrativeUnitData(Lde/rki/coronawarnapp/server/protocols/internal/stats/LocalStatisticsOuterClass$LocalStatistics;Ljava/lang/Iterable;)V
     .locals 0
-    .annotation system Ldalvik/annotation/Signature;
-        value = {
-            "(",
-            "Ljava/lang/Iterable<",
-            "+",
-            "Lde/rki/coronawarnapp/server/protocols/internal/stats/LocalStatisticsOuterClass$AdministrativeUnitData;",
-            ">;)V"
-        }
-    .end annotation
 
     invoke-direct {p0, p1}, Lde/rki/coronawarnapp/server/protocols/internal/stats/LocalStatisticsOuterClass$LocalStatistics;->addAllAdministrativeUnitData(Ljava/lang/Iterable;)V
 
@@ -125,15 +116,6 @@
 
 .method public static bridge synthetic -$$Nest$maddAllFederalStateData(Lde/rki/coronawarnapp/server/protocols/internal/stats/LocalStatisticsOuterClass$LocalStatistics;Ljava/lang/Iterable;)V
     .locals 0
-    .annotation system Ldalvik/annotation/Signature;
-        value = {
-            "(",
-            "Ljava/lang/Iterable<",
-            "+",
-            "Lde/rki/coronawarnapp/server/protocols/internal/stats/LocalStatisticsOuterClass$FederalStateData;",
-            ">;)V"
-        }
-    .end annotation
 
     invoke-direct {p0, p1}, Lde/rki/coronawarnapp/server/protocols/internal/stats/LocalStatisticsOuterClass$LocalStatistics;->addAllFederalStateData(Ljava/lang/Iterable;)V
 
@@ -236,7 +218,7 @@
     return-void
 .end method
 
-.method public static synthetic -$$Nest$sfgetDEFAULT_INSTANCE()Lde/rki/coronawarnapp/server/protocols/internal/stats/LocalStatisticsOuterClass$LocalStatistics;
+.method public static bridge synthetic -$$Nest$sfgetDEFAULT_INSTANCE()Lde/rki/coronawarnapp/server/protocols/internal/stats/LocalStatisticsOuterClass$LocalStatistics;
     .locals 1
 
     sget-object v0, Lde/rki/coronawarnapp/server/protocols/internal/stats/LocalStatisticsOuterClass$LocalStatistics;->DEFAULT_INSTANCE:Lde/rki/coronawarnapp/server/protocols/internal/stats/LocalStatisticsOuterClass$LocalStatistics;

@@ -8,6 +8,8 @@
 
 .field public final headline:Landroid/widget/TextView;
 
+.field public final newReleaseInfoBottom:Landroid/widget/TextView;
+
 .field public final newReleaseInfoNextButton:Landroid/widget/Button;
 
 .field public final recyclerView:Landroidx/recyclerview/widget/RecyclerView;
@@ -55,6 +57,8 @@
 
     iput-object p5, p0, Lde/rki/coronawarnapp/databinding/NewReleaseInfoScreenFragmentBinding;->headline:Landroid/widget/TextView;
 
+    iput-object p7, p0, Lde/rki/coronawarnapp/databinding/NewReleaseInfoScreenFragmentBinding;->newReleaseInfoBottom:Landroid/widget/TextView;
+
     iput-object p9, p0, Lde/rki/coronawarnapp/databinding/NewReleaseInfoScreenFragmentBinding;->newReleaseInfoNextButton:Landroid/widget/Button;
 
     iput-object p10, p0, Lde/rki/coronawarnapp/databinding/NewReleaseInfoScreenFragmentBinding;->recyclerView:Landroidx/recyclerview/widget/RecyclerView;
@@ -77,7 +81,7 @@
 
     sget-object v0, Landroidx/databinding/DataBindingUtil;->sMapper:Landroidx/databinding/DataBinderMapper;
 
-    const v0, 0x7f0d0129
+    const v0, 0x7f0d0134
 
     const/4 v1, 0x0
 

@@ -123,13 +123,18 @@
 
     check-cast v0, Lkotlin/io/FileTreeWalk$WalkState;
 
-    if-eqz v0, :cond_2
+    if-nez v0, :cond_0
 
+    const/4 v0, 0x0
+
+    goto :goto_2
+
+    :cond_0
     invoke-virtual {v0}, Lkotlin/io/FileTreeWalk$WalkState;->step()Ljava/io/File;
 
     move-result-object v1
 
-    if-nez v1, :cond_0
+    if-nez v1, :cond_1
 
     iget-object v0, p0, Lkotlin/io/FileTreeWalk$FileTreeWalkIterator;->state:Ljava/util/ArrayDeque;
 
@@ -137,7 +142,7 @@
 
     goto :goto_0
 
-    :cond_0
+    :cond_1
     iget-object v0, v0, Lkotlin/io/FileTreeWalk$WalkState;->root:Ljava/io/File;
 
     invoke-static {v1, v0}, Lkotlin/jvm/internal/Intrinsics;->areEqual(Ljava/lang/Object;Ljava/lang/Object;)Z
@@ -162,11 +167,11 @@
 
     iget v2, v2, Lkotlin/io/FileTreeWalk;->maxDepth:I
 
-    if-lt v0, v2, :cond_1
+    if-lt v0, v2, :cond_2
 
     goto :goto_1
 
-    :cond_1
+    :cond_2
     iget-object v0, p0, Lkotlin/io/FileTreeWalk$FileTreeWalkIterator;->state:Ljava/util/ArrayDeque;
 
     invoke-virtual {p0, v1}, Lkotlin/io/FileTreeWalk$FileTreeWalkIterator;->directoryState(Ljava/io/File;)Lkotlin/io/FileTreeWalk$DirectoryState;
@@ -177,27 +182,27 @@
 
     goto :goto_0
 
-    :cond_2
-    const/4 v1, 0x0
-
     :cond_3
     :goto_1
-    if-eqz v1, :cond_4
+    move-object v0, v1
 
-    iput-object v1, p0, Lkotlin/collections/AbstractIterator;->nextValue:Ljava/lang/Object;
+    :goto_2
+    if-eqz v0, :cond_4
+
+    iput-object v0, p0, Lkotlin/collections/AbstractIterator;->nextValue:Ljava/lang/Object;
 
     const/4 v0, 0x1
 
     iput v0, p0, Lkotlin/collections/AbstractIterator;->state:I
 
-    goto :goto_2
+    goto :goto_3
 
     :cond_4
     const/4 v0, 0x3
 
     iput v0, p0, Lkotlin/collections/AbstractIterator;->state:I
 
-    :goto_2
+    :goto_3
     return-void
 .end method
 
@@ -206,9 +211,9 @@
 
     iget-object v0, p0, Lkotlin/io/FileTreeWalk$FileTreeWalkIterator;->this$0:Lkotlin/io/FileTreeWalk;
 
-    iget-object v0, v0, Lkotlin/io/FileTreeWalk;->direction:Lkotlin/io/FileWalkDirection;
+    iget v0, v0, Lkotlin/io/FileTreeWalk;->direction:I
 
-    invoke-virtual {v0}, Ljava/lang/Enum;->ordinal()I
+    invoke-static {v0}, Landroidx/camera/camera2/internal/Camera2CameraImpl$InternalState$EnumUnboxingSharedUtility;->ordinal(I)I
 
     move-result v0
 

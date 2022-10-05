@@ -1,4 +1,4 @@
-.class public final Lkotlin/reflect/jvm/internal/impl/descriptors/DescriptorVisibilities$6;
+.class final Lkotlin/reflect/jvm/internal/impl/descriptors/DescriptorVisibilities$6;
 .super Lkotlin/reflect/jvm/internal/impl/descriptors/DelegatedDescriptorVisibility;
 .source "DescriptorVisibilities.java"
 
@@ -15,7 +15,7 @@
 
 
 # direct methods
-.method public static synthetic $$$reportNull$$$0(I)V
+.method private static synthetic $$$reportNull$$$0(I)V
     .locals 3
 
     const/4 v0, 0x3
@@ -76,31 +76,25 @@
 .method public isVisible(Lkotlin/reflect/jvm/internal/impl/resolve/scopes/receivers/ReceiverValue;Lkotlin/reflect/jvm/internal/impl/descriptors/DeclarationDescriptorWithVisibility;Lkotlin/reflect/jvm/internal/impl/descriptors/DeclarationDescriptor;)Z
     .locals 0
 
+    if-nez p2, :cond_0
+
     const/4 p1, 0x0
 
-    if-eqz p2, :cond_1
-
-    if-nez p3, :cond_0
-
-    const/4 p2, 0x1
-
-    invoke-static {p2}, Lkotlin/reflect/jvm/internal/impl/descriptors/DescriptorVisibilities$6;->$$$reportNull$$$0(I)V
-
-    throw p1
+    invoke-static {p1}, Lkotlin/reflect/jvm/internal/impl/descriptors/DescriptorVisibilities$6;->$$$reportNull$$$0(I)V
 
     :cond_0
+    if-nez p3, :cond_1
+
+    const/4 p1, 0x1
+
+    invoke-static {p1}, Lkotlin/reflect/jvm/internal/impl/descriptors/DescriptorVisibilities$6;->$$$reportNull$$$0(I)V
+
+    :cond_1
     new-instance p1, Ljava/lang/IllegalStateException;
 
     const-string p2, "This method shouldn\'t be invoked for LOCAL visibility"
 
     invoke-direct {p1, p2}, Ljava/lang/IllegalStateException;-><init>(Ljava/lang/String;)V
-
-    throw p1
-
-    :cond_1
-    const/4 p2, 0x0
-
-    invoke-static {p2}, Lkotlin/reflect/jvm/internal/impl/descriptors/DescriptorVisibilities$6;->$$$reportNull$$$0(I)V
 
     throw p1
 .end method

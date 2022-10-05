@@ -1,5 +1,5 @@
 .class public Landroidx/transition/PatternPathMotion;
-.super Landroidx/transition/PathMotion;
+.super Lorg/joda/time/Chronology;
 .source "PatternPathMotion.java"
 
 
@@ -13,7 +13,7 @@
 .method public constructor <init>(Landroid/graphics/Path;)V
     .locals 10
 
-    invoke-direct {p0}, Landroidx/transition/PathMotion;-><init>()V
+    invoke-direct {p0}, Lorg/joda/time/Chronology;-><init>()V
 
     new-instance v0, Landroid/graphics/Path;
 

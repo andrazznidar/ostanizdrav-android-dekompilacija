@@ -478,9 +478,7 @@
 
     iget-object v3, p0, Landroidx/constraintlayout/core/ArrayLinkedVariables;->mCache:Landroidx/constraintlayout/core/Cache;
 
-    iget-object v3, v3, Landroidx/constraintlayout/core/Cache;->mIndexedVariables:Ljava/lang/Object;
-
-    check-cast v3, [Landroidx/constraintlayout/core/SolverVariable;
+    iget-object v3, v3, Landroidx/constraintlayout/core/Cache;->mIndexedVariables:[Landroidx/constraintlayout/core/SolverVariable;
 
     iget-object v4, p0, Landroidx/constraintlayout/core/ArrayLinkedVariables;->mArrayIndices:[I
 
@@ -672,9 +670,7 @@
 
     iget-object p1, p0, Landroidx/constraintlayout/core/ArrayLinkedVariables;->mCache:Landroidx/constraintlayout/core/Cache;
 
-    iget-object p1, p1, Landroidx/constraintlayout/core/Cache;->mIndexedVariables:Ljava/lang/Object;
-
-    check-cast p1, [Landroidx/constraintlayout/core/SolverVariable;
+    iget-object p1, p1, Landroidx/constraintlayout/core/Cache;->mIndexedVariables:[Landroidx/constraintlayout/core/SolverVariable;
 
     iget-object v1, p0, Landroidx/constraintlayout/core/ArrayLinkedVariables;->mArrayIndices:[I
 
@@ -1254,9 +1250,7 @@
 
     iget-object v3, p0, Landroidx/constraintlayout/core/ArrayLinkedVariables;->mCache:Landroidx/constraintlayout/core/Cache;
 
-    iget-object v3, v3, Landroidx/constraintlayout/core/Cache;->mIndexedVariables:Ljava/lang/Object;
-
-    check-cast v3, [Landroidx/constraintlayout/core/SolverVariable;
+    iget-object v3, v3, Landroidx/constraintlayout/core/Cache;->mIndexedVariables:[Landroidx/constraintlayout/core/SolverVariable;
 
     iget-object v4, p0, Landroidx/constraintlayout/core/ArrayLinkedVariables;->mArrayIndices:[I
 

@@ -46,7 +46,7 @@
 
     invoke-virtual {p2}, Lcom/google/android/play/core/internal/zzas;->zzs()V
 
-    sget-object p2, Lcom/google/android/play/core/assetpacks/zzaw;->zza:Lkotlin/jvm/internal/SpreadBuilder;
+    sget-object p2, Lcom/google/android/play/core/assetpacks/zzaw;->zza:Lcom/google/android/play/core/internal/zzag;
 
     const/4 v0, 0x0
 
@@ -54,7 +54,7 @@
 
     const-string v1, "onGetChunkFileDescriptor"
 
-    invoke-virtual {p2, v1, v0}, Lkotlin/jvm/internal/SpreadBuilder;->zzd(Ljava/lang/String;[Ljava/lang/Object;)I
+    invoke-virtual {p2, v1, v0}, Lcom/google/android/play/core/internal/zzag;->zzd(Ljava/lang/String;[Ljava/lang/Object;)I
 
     const-string p2, "chunk_file_descriptor"
 

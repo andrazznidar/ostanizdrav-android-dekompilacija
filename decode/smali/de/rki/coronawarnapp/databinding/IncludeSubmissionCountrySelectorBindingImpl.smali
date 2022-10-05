@@ -47,7 +47,7 @@
 
     new-array v2, v2, [I
 
-    const v4, 0x7f0d010a
+    const v4, 0x7f0d0115
 
     aput v4, v2, v5
 
@@ -59,7 +59,7 @@
 
     sput-object v0, Lde/rki/coronawarnapp/databinding/IncludeSubmissionCountrySelectorBindingImpl;->sViewsWithIds:Landroid/util/SparseIntArray;
 
-    const v1, 0x7f0a06ef
+    const v1, 0x7f0a0741
 
     const/4 v2, 0x3
 
@@ -205,11 +205,11 @@
 
     move-result v3
 
-    const v5, 0x7f06007c
+    const v5, 0x7f060082
 
-    const v6, 0x7f060057
+    const v6, 0x7f06005b
 
-    invoke-static {v1, v3, v5, v6}, Lcom/google/android/gms/internal/nearby/zzfc;->formatColor(Landroid/content/Context;ZII)I
+    invoke-static {v1, v3, v5, v6}, Lorg/ejml/dense/row/misc/ImplCommonOps_DDMA;->formatColor(Landroid/content/Context;ZII)I
 
     move-result v1
 
@@ -227,11 +227,11 @@
 
     move-result v2
 
-    const v4, 0x7f060085
+    const v4, 0x7f06008b
 
-    const v5, 0x7f060036
+    const v5, 0x7f060035
 
-    invoke-static {v3, v2, v4, v5}, Lcom/google/android/gms/internal/nearby/zzfc;->formatColor(Landroid/content/Context;ZII)I
+    invoke-static {v3, v2, v4, v5}, Lorg/ejml/dense/row/misc/ImplCommonOps_DDMA;->formatColor(Landroid/content/Context;ZII)I
 
     move-result v2
 
@@ -434,7 +434,7 @@
         value = {
             "(",
             "Ljava/util/List<",
-            "Lde/rki/coronawarnapp/ui/submission/SubmissionCountry;",
+            "Ljava/lang/Object;",
             ">;)V"
         }
     .end annotation

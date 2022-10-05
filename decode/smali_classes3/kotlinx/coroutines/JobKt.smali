@@ -2,12 +2,6 @@
 .super Ljava/lang/Object;
 
 
-# annotations
-.annotation system Ldalvik/annotation/SourceDebugExtension;
-    value = "SMAP\nBuilders.kt\nKotlin\n*S Kotlin\n*F\n+ 1 Builders.kt\nkotlinx/coroutines/BuildersKt__BuildersKt\n+ 2 fake.kt\nkotlin/jvm/internal/FakeKt\n*L\n1#1,102:1\n1#2:103\n*E\n"
-.end annotation
-
-
 # direct methods
 .method public static Job$default(Lkotlinx/coroutines/Job;ILjava/lang/Object;)Lkotlinx/coroutines/CompletableJob;
     .locals 0
@@ -23,8 +17,6 @@
 
 .method public static final cancel(Lkotlin/coroutines/CoroutineContext;Ljava/util/concurrent/CancellationException;)V
     .locals 1
-
-    sget v0, Lkotlinx/coroutines/Job;->$r8$clinit:I
 
     sget-object v0, Lkotlinx/coroutines/Job$Key;->$$INSTANCE:Lkotlinx/coroutines/Job$Key;
 
@@ -49,8 +41,6 @@
     .locals 0
 
     const/4 p1, 0x0
-
-    sget p2, Lkotlinx/coroutines/Job;->$r8$clinit:I
 
     sget-object p2, Lkotlinx/coroutines/Job$Key;->$$INSTANCE:Lkotlinx/coroutines/Job$Key;
 

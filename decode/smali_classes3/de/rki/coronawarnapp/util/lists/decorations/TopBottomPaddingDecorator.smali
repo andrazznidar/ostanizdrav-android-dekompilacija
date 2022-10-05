@@ -74,7 +74,7 @@
 
     if-nez p2, :cond_1
 
-    const p2, 0x7f0701ef
+    const p2, 0x7f0701e3
 
     invoke-virtual {v0, p2}, Landroid/content/res/Resources;->getDimensionPixelSize(I)I
 

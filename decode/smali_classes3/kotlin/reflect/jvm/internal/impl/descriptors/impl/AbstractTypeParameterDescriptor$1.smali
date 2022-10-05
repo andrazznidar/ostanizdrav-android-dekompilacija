@@ -1,4 +1,4 @@
-.class public Lkotlin/reflect/jvm/internal/impl/descriptors/impl/AbstractTypeParameterDescriptor$1;
+.class Lkotlin/reflect/jvm/internal/impl/descriptors/impl/AbstractTypeParameterDescriptor$1;
 .super Ljava/lang/Object;
 .source "AbstractTypeParameterDescriptor.java"
 
@@ -51,7 +51,17 @@
 
 
 # virtual methods
-.method public invoke()Ljava/lang/Object;
+.method public bridge synthetic invoke()Ljava/lang/Object;
+    .locals 1
+
+    invoke-virtual {p0}, Lkotlin/reflect/jvm/internal/impl/descriptors/impl/AbstractTypeParameterDescriptor$1;->invoke()Lkotlin/reflect/jvm/internal/impl/types/TypeConstructor;
+
+    move-result-object v0
+
+    return-object v0
+.end method
+
+.method public invoke()Lkotlin/reflect/jvm/internal/impl/types/TypeConstructor;
     .locals 4
 
     new-instance v0, Lkotlin/reflect/jvm/internal/impl/descriptors/impl/AbstractTypeParameterDescriptor$TypeParameterTypeConstructor;

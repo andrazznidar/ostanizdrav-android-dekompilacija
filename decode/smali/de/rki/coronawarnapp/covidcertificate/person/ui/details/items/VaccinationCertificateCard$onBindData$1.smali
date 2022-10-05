@@ -16,12 +16,6 @@
     name = null
 .end annotation
 
-.annotation system Ldalvik/annotation/MemberClasses;
-    value = {
-        Lde/rki/coronawarnapp/covidcertificate/person/ui/details/items/VaccinationCertificateCard$onBindData$1$WhenMappings;
-    }
-.end annotation
-
 .annotation system Ldalvik/annotation/Signature;
     value = {
         "Lkotlin/jvm/internal/Lambda;",
@@ -38,7 +32,7 @@
 .end annotation
 
 .annotation system Ldalvik/annotation/SourceDebugExtension;
-    value = "SMAP\nVaccinationCertificateCard.kt\nKotlin\n*S Kotlin\n*F\n+ 1 VaccinationCertificateCard.kt\nde/rki/coronawarnapp/covidcertificate/person/ui/details/items/VaccinationCertificateCard$onBindData$1\n+ 2 _Collections.kt\nkotlin/collections/CollectionsKt___CollectionsKt\n+ 3 View.kt\nandroidx/core/view/ViewKt\n+ 4 fake.kt\nkotlin/jvm/internal/FakeKt\n*L\n1#1,88:1\n798#2,11:89\n254#3,2:100\n254#3,2:103\n1#4:102\n*S KotlinDebug\n*F\n+ 1 VaccinationCertificateCard.kt\nde/rki/coronawarnapp/covidcertificate/person/ui/details/items/VaccinationCertificateCard$onBindData$1\n*L\n31#1:89,11\n45#1:100,2\n72#1:103,2\n*E\n"
+    value = "SMAP\nVaccinationCertificateCard.kt\nKotlin\n*S Kotlin\n*F\n+ 1 VaccinationCertificateCard.kt\nde/rki/coronawarnapp/covidcertificate/person/ui/details/items/VaccinationCertificateCard$onBindData$1\n+ 2 _Collections.kt\nkotlin/collections/CollectionsKt___CollectionsKt\n+ 3 View.kt\nandroidx/core/view/ViewKt\n+ 4 fake.kt\nkotlin/jvm/internal/FakeKt\n*L\n1#1,82:1\n798#2,11:83\n254#3,2:94\n254#3,2:97\n1#4:96\n*S KotlinDebug\n*F\n+ 1 VaccinationCertificateCard.kt\nde/rki/coronawarnapp/covidcertificate/person/ui/details/items/VaccinationCertificateCard$onBindData$1\n*L\n29#1:83,11\n44#1:94,2\n68#1:97,2\n*E\n"
 .end annotation
 
 
@@ -111,7 +105,7 @@
     goto :goto_0
 
     :cond_1
-    invoke-static {v0}, Lkotlin/collections/CollectionsKt___CollectionsKt;->singleOrNull(Ljava/util/List;)Ljava/lang/Object;
+    invoke-static {v0}, Lkotlin/collections/CollectionsKt___CollectionsKt;->lastOrNull(Ljava/util/List;)Ljava/lang/Object;
 
     move-result-object p3
 
@@ -129,9 +123,9 @@
 
     iget-object v0, p1, Lde/rki/coronawarnapp/databinding/VaccinationCertificateCardBinding;->rootView:Landroidx/constraintlayout/widget/ConstraintLayout;
 
-    new-instance v1, Lde/rki/coronawarnapp/ui/settings/start/SettingsFragment$$ExternalSyntheticLambda0;
+    new-instance v1, Lde/rki/coronawarnapp/covidcertificate/person/ui/details/items/VaccinationCertificateCard$onBindData$1$$ExternalSyntheticLambda0;
 
-    invoke-direct {v1, p2}, Lde/rki/coronawarnapp/ui/settings/start/SettingsFragment$$ExternalSyntheticLambda0;-><init>(Lde/rki/coronawarnapp/covidcertificate/person/ui/details/items/VaccinationCertificateCard$Item;)V
+    invoke-direct {v1, p2}, Lde/rki/coronawarnapp/covidcertificate/person/ui/details/items/VaccinationCertificateCard$onBindData$1$$ExternalSyntheticLambda0;-><init>(Lde/rki/coronawarnapp/covidcertificate/person/ui/details/items/VaccinationCertificateCard$Item;)V
 
     invoke-virtual {v0, v1}, Landroid/view/ViewGroup;->setOnClickListener(Landroid/view/View$OnClickListener;)V
 
@@ -143,7 +137,7 @@
 
     move-result-object v1
 
-    const v2, 0x7f130707
+    const v2, 0x7f1306a6
 
     const/4 v3, 0x2
 
@@ -187,7 +181,7 @@
 
     move-result-object v1
 
-    const v2, 0x7f13070d
+    const v2, 0x7f1306ab
 
     new-array v3, v6, [Ljava/lang/Object;
 
@@ -211,18 +205,20 @@
 
     iget-object v0, p2, Lde/rki/coronawarnapp/covidcertificate/person/ui/details/items/VaccinationCertificateCard$Item;->certificate:Lde/rki/coronawarnapp/covidcertificate/vaccination/core/VaccinationCertificate;
 
-    invoke-interface {v0}, Lde/rki/coronawarnapp/covidcertificate/common/certificate/CwaCovidCertificate;->isValid()Z
+    invoke-interface {v0}, Lde/rki/coronawarnapp/covidcertificate/common/certificate/CwaCovidCertificate;->isDisplayValid()Z
 
     move-result v0
 
     if-eqz v0, :cond_3
 
-    const v0, 0x7f0800d6
+    iget-object v0, p2, Lde/rki/coronawarnapp/covidcertificate/person/ui/details/items/VaccinationCertificateCard$Item;->colorShade:Lde/rki/coronawarnapp/covidcertificate/person/ui/overview/PersonColorShade;
+
+    iget v0, v0, Lde/rki/coronawarnapp/covidcertificate/person/ui/overview/PersonColorShade;->bookmarkIcon:I
 
     goto :goto_2
 
     :cond_3
-    const v0, 0x7f0800d5
+    const v0, 0x7f0800c6
 
     :goto_2
     iget-object v1, p1, Lde/rki/coronawarnapp/databinding/VaccinationCertificateCardBinding;->currentCertificate:Landroidx/constraintlayout/widget/Group;
@@ -253,7 +249,7 @@
 
     iget-object v0, p2, Lde/rki/coronawarnapp/covidcertificate/person/ui/details/items/VaccinationCertificateCard$Item;->certificate:Lde/rki/coronawarnapp/covidcertificate/vaccination/core/VaccinationCertificate;
 
-    invoke-interface {v0}, Lde/rki/coronawarnapp/covidcertificate/common/certificate/CwaCovidCertificate;->isValid()Z
+    invoke-interface {v0}, Lde/rki/coronawarnapp/covidcertificate/common/certificate/CwaCovidCertificate;->isDisplayValid()Z
 
     move-result v0
 
@@ -267,46 +263,29 @@
     sget-object v0, Lde/rki/coronawarnapp/covidcertificate/person/ui/overview/PersonColorShade;->COLOR_INVALID:Lde/rki/coronawarnapp/covidcertificate/person/ui/overview/PersonColorShade;
 
     :goto_4
-    invoke-interface {p3}, Lde/rki/coronawarnapp/covidcertificate/common/certificate/CwaCovidCertificate;->isValid()Z
+    invoke-interface {p3}, Lde/rki/coronawarnapp/covidcertificate/common/certificate/CwaCovidCertificate;->isDisplayValid()Z
 
     move-result v1
 
     if-nez v1, :cond_6
 
-    const p3, 0x7f0800da
+    const p3, 0x7f0800cf
 
     goto :goto_5
 
     :cond_6
-    invoke-interface {p3}, Lde/rki/coronawarnapp/covidcertificate/vaccination/core/VaccinationCertificate;->isFinalShot()Z
+    invoke-interface {p3}, Lde/rki/coronawarnapp/covidcertificate/vaccination/core/VaccinationCertificate;->isSeriesCompletingShot()Z
 
     move-result p3
 
-    if-eqz p3, :cond_8
+    if-eqz p3, :cond_7
 
-    iget-object p3, p2, Lde/rki/coronawarnapp/covidcertificate/person/ui/details/items/VaccinationCertificateCard$Item;->status:Lde/rki/coronawarnapp/covidcertificate/vaccination/core/VaccinatedPerson$Status;
-
-    sget-object v1, Lde/rki/coronawarnapp/covidcertificate/person/ui/details/items/VaccinationCertificateCard$onBindData$1$WhenMappings;->$EnumSwitchMapping$0:[I
-
-    invoke-virtual {p3}, Ljava/lang/Enum;->ordinal()I
-
-    move-result p3
-
-    aget p3, v1, p3
-
-    if-ne p3, v6, :cond_7
-
-    const p3, 0x7f0801e6
+    const p3, 0x7f0801dc
 
     goto :goto_5
 
     :cond_7
-    const p3, 0x7f0801e4
-
-    goto :goto_5
-
-    :cond_8
-    const p3, 0x7f0801e7
+    const p3, 0x7f0801dd
 
     :goto_5
     iget-object v1, p1, Lde/rki/coronawarnapp/databinding/VaccinationCertificateCardBinding;->certificateIcon:Landroid/widget/ImageView;
@@ -315,16 +294,16 @@
 
     iget-boolean p3, p2, Lde/rki/coronawarnapp/covidcertificate/person/ui/details/items/VaccinationCertificateCard$Item;->isCurrentCertificate:Z
 
-    if-eqz p3, :cond_9
+    if-eqz p3, :cond_8
 
     iget p3, v0, Lde/rki/coronawarnapp/covidcertificate/person/ui/overview/PersonColorShade;->currentCertificateBg:I
 
     goto :goto_6
 
-    :cond_9
+    :cond_8
     invoke-static {v0}, Ljava/util/Objects;->requireNonNull(Ljava/lang/Object;)Ljava/lang/Object;
 
-    const p3, 0x7f08007c
+    const p3, 0x7f08006c
 
     :goto_6
     iget-object v0, p1, Lde/rki/coronawarnapp/databinding/VaccinationCertificateCardBinding;->certificateBg:Landroid/widget/ImageView;
@@ -343,11 +322,11 @@
 
     move-result v0
 
-    if-eqz v0, :cond_a
+    if-eqz v0, :cond_9
 
     goto :goto_7
 
-    :cond_a
+    :cond_9
     move v5, v3
 
     :goto_7

@@ -1,298 +1,140 @@
 .class Lj$/util/stream/U1;
-.super Ljava/lang/Object;
+.super Lj$/util/stream/Z1;
 
 # interfaces
-.implements Lj$/util/stream/v1;
+.implements Lj$/util/stream/Y1;
+.implements Lj$/util/stream/o2;
 
 
 # instance fields
-.field final a:[D
+.field final synthetic b:Lj$/util/function/C;
 
-.field b:I
+.field final synthetic c:Lj$/util/function/x;
+
+.field final synthetic d:Lj$/util/function/c;
 
 
 # direct methods
-.method constructor <init>(J)V
-    .locals 2
-
-    invoke-direct {p0}, Ljava/lang/Object;-><init>()V
-
-    const-wide/32 v0, 0x7ffffff7
-
-    cmp-long v0, p1, v0
-
-    if-gez v0, :cond_0
-
-    long-to-int p1, p1
-
-    new-array p1, p1, [D
-
-    iput-object p1, p0, Lj$/util/stream/U1;->a:[D
-
-    const/4 p1, 0x0
-
-    iput p1, p0, Lj$/util/stream/U1;->b:I
-
-    return-void
-
-    :cond_0
-    new-instance p1, Ljava/lang/IllegalArgumentException;
-
-    const-string p2, "Stream size exceeds max array size"
-
-    invoke-direct {p1, p2}, Ljava/lang/IllegalArgumentException;-><init>(Ljava/lang/String;)V
-
-    throw p1
-.end method
-
-.method constructor <init>([D)V
+.method constructor <init>(Lj$/util/function/C;Lj$/util/function/x;Lj$/util/function/c;)V
     .locals 0
 
-    invoke-direct {p0}, Ljava/lang/Object;-><init>()V
+    iput-object p1, p0, Lj$/util/stream/U1;->b:Lj$/util/function/C;
 
-    iput-object p1, p0, Lj$/util/stream/U1;->a:[D
+    iput-object p2, p0, Lj$/util/stream/U1;->c:Lj$/util/function/x;
 
-    array-length p1, p1
+    iput-object p3, p0, Lj$/util/stream/U1;->d:Lj$/util/function/c;
 
-    iput p1, p0, Lj$/util/stream/U1;->b:I
+    invoke-direct {p0}, Lj$/util/stream/Z1;-><init>()V
 
     return-void
 .end method
 
 
 # virtual methods
-.method public b(I)Lj$/util/stream/A1;
+.method public synthetic a(Ljava/lang/Integer;)V
     .locals 0
 
-    new-instance p1, Ljava/lang/IndexOutOfBoundsException;
+    invoke-static {p0, p1}, Lj$/util/stream/D0;->M(Lj$/util/stream/o2;Ljava/lang/Integer;)V
 
-    invoke-direct {p1}, Ljava/lang/IndexOutOfBoundsException;-><init>()V
-
-    throw p1
+    return-void
 .end method
 
-.method public bridge synthetic b(I)Lj$/util/stream/B1;
+.method public accept(I)V
+    .locals 2
+
+    iget-object v0, p0, Lj$/util/stream/U1;->c:Lj$/util/function/x;
+
+    iget-object v1, p0, Lj$/util/stream/Z1;->a:Ljava/lang/Object;
+
+    invoke-interface {v0, v1, p1}, Lj$/util/function/x;->m(Ljava/lang/Object;I)V
+
+    return-void
+.end method
+
+.method public synthetic andThen(Lj$/util/function/IntConsumer;)Lj$/util/function/IntConsumer;
     .locals 0
 
-    invoke-virtual {p0, p1}, Lj$/util/stream/U1;->b(I)Lj$/util/stream/A1;
+    invoke-static {p0, p1}, Lj$/util/function/IntConsumer$-CC;->$default$andThen(Lj$/util/function/IntConsumer;Lj$/util/function/IntConsumer;)Lj$/util/function/IntConsumer;
+
+    move-result-object p1
+
+    return-object p1
+.end method
+
+.method public synthetic c(D)V
+    .locals 0
+
+    invoke-static {}, Lj$/util/stream/D0;->K()V
 
     const/4 p1, 0x0
 
     throw p1
 .end method
 
-.method public count()J
+.method public synthetic d(J)V
+    .locals 0
+
+    invoke-static {}, Lj$/util/stream/D0;->P()V
+
+    const/4 p1, 0x0
+
+    throw p1
+.end method
+
+.method public synthetic g()V
+    .locals 0
+
+    return-void
+.end method
+
+.method public i(J)V
+    .locals 0
+
+    iget-object p1, p0, Lj$/util/stream/U1;->b:Lj$/util/function/C;
+
+    invoke-interface {p1}, Lj$/util/function/C;->get()Ljava/lang/Object;
+
+    move-result-object p1
+
+    iput-object p1, p0, Lj$/util/stream/Z1;->a:Ljava/lang/Object;
+
+    return-void
+.end method
+
+.method public bridge synthetic j(Ljava/lang/Object;)V
+    .locals 0
+
+    check-cast p1, Ljava/lang/Integer;
+
+    invoke-virtual {p0, p1}, Lj$/util/stream/U1;->a(Ljava/lang/Integer;)V
+
+    return-void
+.end method
+
+.method public q(Lj$/util/stream/Y1;)V
     .locals 2
 
-    iget v0, p0, Lj$/util/stream/U1;->b:I
+    check-cast p1, Lj$/util/stream/U1;
 
-    int-to-long v0, v0
+    iget-object v0, p0, Lj$/util/stream/U1;->d:Lj$/util/function/c;
 
-    return-wide v0
-.end method
+    iget-object v1, p0, Lj$/util/stream/Z1;->a:Ljava/lang/Object;
 
-.method public synthetic forEach(Lj$/util/function/Consumer;)V
-    .locals 0
+    iget-object p1, p1, Lj$/util/stream/Z1;->a:Ljava/lang/Object;
 
-    invoke-static {p0, p1}, Lj$/util/stream/p1;->k(Lj$/util/stream/v1;Lj$/util/function/Consumer;)V
+    invoke-interface {v0, v1, p1}, Lj$/util/function/BiFunction;->apply(Ljava/lang/Object;Ljava/lang/Object;)Ljava/lang/Object;
 
-    return-void
-.end method
+    move-result-object p1
 
-.method public g(Ljava/lang/Object;I)V
-    .locals 3
-
-    check-cast p1, [D
-
-    iget-object v0, p0, Lj$/util/stream/U1;->a:[D
-
-    iget v1, p0, Lj$/util/stream/U1;->b:I
-
-    const/4 v2, 0x0
-
-    invoke-static {v0, v2, p1, p2, v1}, Ljava/lang/System;->arraycopy(Ljava/lang/Object;ILjava/lang/Object;II)V
+    iput-object p1, p0, Lj$/util/stream/Z1;->a:Ljava/lang/Object;
 
     return-void
 .end method
 
-.method public h()Ljava/lang/Object;
-    .locals 3
-
-    iget-object v0, p0, Lj$/util/stream/U1;->a:[D
-
-    array-length v1, v0
-
-    iget v2, p0, Lj$/util/stream/U1;->b:I
-
-    if-ne v1, v2, :cond_0
-
-    goto :goto_0
-
-    :cond_0
-    invoke-static {v0, v2}, Ljava/util/Arrays;->copyOf([DI)[D
-
-    move-result-object v0
-
-    :goto_0
-    return-object v0
-.end method
-
-.method public j(Ljava/lang/Object;)V
-    .locals 4
-
-    check-cast p1, Lj$/util/function/e;
-
-    const/4 v0, 0x0
-
-    :goto_0
-    iget v1, p0, Lj$/util/stream/U1;->b:I
-
-    if-ge v0, v1, :cond_0
-
-    iget-object v1, p0, Lj$/util/stream/U1;->a:[D
-
-    aget-wide v2, v1, v0
-
-    invoke-interface {p1, v2, v3}, Lj$/util/function/e;->c(D)V
-
-    add-int/lit8 v0, v0, 0x1
-
-    goto :goto_0
-
-    :cond_0
-    return-void
-.end method
-
-.method public bridge synthetic k([Ljava/lang/Object;I)V
-    .locals 0
-
-    check-cast p1, [Ljava/lang/Double;
-
-    invoke-virtual {p0, p1, p2}, Lj$/util/stream/U1;->l([Ljava/lang/Double;I)V
-
-    return-void
-.end method
-
-.method public synthetic l([Ljava/lang/Double;I)V
-    .locals 0
-
-    invoke-static {p0, p1, p2}, Lj$/util/stream/p1;->h(Lj$/util/stream/v1;[Ljava/lang/Double;I)V
-
-    return-void
-.end method
-
-.method public synthetic m()I
+.method public synthetic r()Z
     .locals 1
 
     const/4 v0, 0x0
 
     return v0
-.end method
-
-.method public synthetic o(Lj$/util/function/j;)[Ljava/lang/Object;
-    .locals 0
-
-    invoke-static {p0, p1}, Lj$/util/stream/p1;->g(Lj$/util/stream/A1;Lj$/util/function/j;)[Ljava/lang/Object;
-
-    move-result-object p1
-
-    return-object p1
-.end method
-
-.method public bridge synthetic p(JJLj$/util/function/j;)Lj$/util/stream/B1;
-    .locals 0
-
-    invoke-virtual/range {p0 .. p5}, Lj$/util/stream/U1;->q(JJLj$/util/function/j;)Lj$/util/stream/v1;
-
-    move-result-object p1
-
-    return-object p1
-.end method
-
-.method public synthetic q(JJLj$/util/function/j;)Lj$/util/stream/v1;
-    .locals 0
-
-    invoke-static/range {p0 .. p5}, Lj$/util/stream/p1;->n(Lj$/util/stream/v1;JJLj$/util/function/j;)Lj$/util/stream/v1;
-
-    move-result-object p1
-
-    return-object p1
-.end method
-
-.method public spliterator()Lj$/util/Spliterator$d;
-    .locals 4
-
-    iget-object v0, p0, Lj$/util/stream/U1;->a:[D
-
-    iget v1, p0, Lj$/util/stream/U1;->b:I
-
-    const/4 v2, 0x0
-
-    const/16 v3, 0x410
-
-    invoke-static {v0, v2, v1, v3}, Lj$/util/H;->j([DIII)Lj$/util/Spliterator$a;
-
-    move-result-object v0
-
-    return-object v0
-.end method
-
-.method public spliterator()Lj$/util/Spliterator;
-    .locals 4
-
-    iget-object v0, p0, Lj$/util/stream/U1;->a:[D
-
-    iget v1, p0, Lj$/util/stream/U1;->b:I
-
-    const/4 v2, 0x0
-
-    const/16 v3, 0x410
-
-    invoke-static {v0, v2, v1, v3}, Lj$/util/H;->j([DIII)Lj$/util/Spliterator$a;
-
-    move-result-object v0
-
-    return-object v0
-.end method
-
-.method public toString()Ljava/lang/String;
-    .locals 3
-
-    const/4 v0, 0x2
-
-    new-array v0, v0, [Ljava/lang/Object;
-
-    iget-object v1, p0, Lj$/util/stream/U1;->a:[D
-
-    array-length v1, v1
-
-    iget v2, p0, Lj$/util/stream/U1;->b:I
-
-    sub-int/2addr v1, v2
-
-    invoke-static {v1}, Ljava/lang/Integer;->valueOf(I)Ljava/lang/Integer;
-
-    move-result-object v1
-
-    const/4 v2, 0x0
-
-    aput-object v1, v0, v2
-
-    iget-object v1, p0, Lj$/util/stream/U1;->a:[D
-
-    invoke-static {v1}, Ljava/util/Arrays;->toString([D)Ljava/lang/String;
-
-    move-result-object v1
-
-    const/4 v2, 0x1
-
-    aput-object v1, v0, v2
-
-    const-string v1, "DoubleArrayNode[%d][%s]"
-
-    invoke-static {v1, v0}, Ljava/lang/String;->format(Ljava/lang/String;[Ljava/lang/Object;)Ljava/lang/String;
-
-    move-result-object v0
-
-    return-object v0
 .end method

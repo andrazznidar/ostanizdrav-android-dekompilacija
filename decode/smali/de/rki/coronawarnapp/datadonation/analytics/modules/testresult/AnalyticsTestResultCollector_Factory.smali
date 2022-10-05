@@ -28,6 +28,16 @@
     .end annotation
 .end field
 
+.field public final exposureWindowsSettingsProvider:Ljavax/inject/Provider;
+    .annotation system Ldalvik/annotation/Signature;
+        value = {
+            "Ljavax/inject/Provider<",
+            "Lde/rki/coronawarnapp/datadonation/analytics/modules/testresult/AnalyticsExposureWindowsSettings;",
+            ">;"
+        }
+    .end annotation
+.end field
+
 .field public final pcrSettingsProvider:Ljavax/inject/Provider;
     .annotation system Ldalvik/annotation/Signature;
         value = {
@@ -70,10 +80,11 @@
 
 
 # direct methods
-.method public constructor <init>(Ljavax/inject/Provider;Ljavax/inject/Provider;Ljavax/inject/Provider;Ljavax/inject/Provider;Ljavax/inject/Provider;)V
+.method public constructor <init>(Ljavax/inject/Provider;Ljavax/inject/Provider;Ljavax/inject/Provider;Ljavax/inject/Provider;Ljavax/inject/Provider;Ljavax/inject/Provider;)V
     .locals 0
     .annotation system Ldalvik/annotation/MethodParameters;
         accessFlags = {
+            0x0,
             0x0,
             0x0,
             0x0,
@@ -85,7 +96,8 @@
             "pcrSettingsProvider",
             "raSettingsProvider",
             "riskLevelStorageProvider",
-            "timeStamperProvider"
+            "timeStamperProvider",
+            "exposureWindowsSettingsProvider"
         }
     .end annotation
 
@@ -106,6 +118,9 @@
             ">;",
             "Ljavax/inject/Provider<",
             "Lde/rki/coronawarnapp/util/TimeStamper;",
+            ">;",
+            "Ljavax/inject/Provider<",
+            "Lde/rki/coronawarnapp/datadonation/analytics/modules/testresult/AnalyticsExposureWindowsSettings;",
             ">;)V"
         }
     .end annotation
@@ -122,13 +137,15 @@
 
     iput-object p5, p0, Lde/rki/coronawarnapp/datadonation/analytics/modules/testresult/AnalyticsTestResultCollector_Factory;->timeStamperProvider:Ljavax/inject/Provider;
 
+    iput-object p6, p0, Lde/rki/coronawarnapp/datadonation/analytics/modules/testresult/AnalyticsTestResultCollector_Factory;->exposureWindowsSettingsProvider:Ljavax/inject/Provider;
+
     return-void
 .end method
 
 
 # virtual methods
 .method public get()Ljava/lang/Object;
-    .locals 7
+    .locals 8
 
     iget-object v0, p0, Lde/rki/coronawarnapp/datadonation/analytics/modules/testresult/AnalyticsTestResultCollector_Factory;->analyticsSettingsProvider:Ljavax/inject/Provider;
 
@@ -180,11 +197,21 @@
 
     check-cast v6, Lde/rki/coronawarnapp/util/TimeStamper;
 
+    iget-object v0, p0, Lde/rki/coronawarnapp/datadonation/analytics/modules/testresult/AnalyticsTestResultCollector_Factory;->exposureWindowsSettingsProvider:Ljavax/inject/Provider;
+
+    invoke-interface {v0}, Ljavax/inject/Provider;->get()Ljava/lang/Object;
+
+    move-result-object v0
+
+    move-object v7, v0
+
+    check-cast v7, Lde/rki/coronawarnapp/datadonation/analytics/modules/testresult/AnalyticsExposureWindowsSettings;
+
     new-instance v0, Lde/rki/coronawarnapp/datadonation/analytics/modules/testresult/AnalyticsTestResultCollector;
 
     move-object v1, v0
 
-    invoke-direct/range {v1 .. v6}, Lde/rki/coronawarnapp/datadonation/analytics/modules/testresult/AnalyticsTestResultCollector;-><init>(Lde/rki/coronawarnapp/datadonation/analytics/storage/AnalyticsSettings;Lde/rki/coronawarnapp/datadonation/analytics/modules/testresult/AnalyticsPCRTestResultSettings;Lde/rki/coronawarnapp/datadonation/analytics/modules/testresult/AnalyticsRATestResultSettings;Lde/rki/coronawarnapp/risk/storage/RiskLevelStorage;Lde/rki/coronawarnapp/util/TimeStamper;)V
+    invoke-direct/range {v1 .. v7}, Lde/rki/coronawarnapp/datadonation/analytics/modules/testresult/AnalyticsTestResultCollector;-><init>(Lde/rki/coronawarnapp/datadonation/analytics/storage/AnalyticsSettings;Lde/rki/coronawarnapp/datadonation/analytics/modules/testresult/AnalyticsPCRTestResultSettings;Lde/rki/coronawarnapp/datadonation/analytics/modules/testresult/AnalyticsRATestResultSettings;Lde/rki/coronawarnapp/risk/storage/RiskLevelStorage;Lde/rki/coronawarnapp/util/TimeStamper;Lde/rki/coronawarnapp/datadonation/analytics/modules/testresult/AnalyticsExposureWindowsSettings;)V
 
     return-object v0
 .end method

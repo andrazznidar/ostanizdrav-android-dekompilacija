@@ -10,7 +10,7 @@
     .annotation system Ldalvik/annotation/Signature;
         value = {
             "Ljava/util/List<",
-            "Lde/rki/coronawarnapp/ui/submission/SubmissionCountry;",
+            "Ljava/lang/Object;",
             ">;"
         }
     .end annotation
@@ -73,7 +73,7 @@
         value = {
             "(",
             "Ljava/util/List<",
-            "Lde/rki/coronawarnapp/ui/submission/SubmissionCountry;",
+            "Ljava/lang/Object;",
             ">;)V"
         }
     .end annotation

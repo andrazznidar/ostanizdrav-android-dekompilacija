@@ -1,9 +1,6 @@
 .class public abstract Lkotlin/reflect/jvm/internal/impl/types/AbstractTypeConstructor;
-.super Ljava/lang/Object;
+.super Lkotlin/reflect/jvm/internal/impl/types/ClassifierBasedTypeConstructor;
 .source "AbstractTypeConstructor.kt"
-
-# interfaces
-.implements Lkotlin/reflect/jvm/internal/impl/types/TypeConstructor;
 
 
 # annotations
@@ -16,7 +13,9 @@
 
 
 # instance fields
-.field public final supertypes:Lkotlin/reflect/jvm/internal/impl/storage/NotNullLazyValue;
+.field private final shouldReportCyclicScopeWithCompanionWarning:Z
+
+.field private final supertypes:Lkotlin/reflect/jvm/internal/impl/storage/NotNullLazyValue;
     .annotation system Ldalvik/annotation/Signature;
         value = {
             "Lkotlin/reflect/jvm/internal/impl/storage/NotNullLazyValue<",
@@ -35,7 +34,7 @@
 
     invoke-static {p1, v0}, Lkotlin/jvm/internal/Intrinsics;->checkNotNullParameter(Ljava/lang/Object;Ljava/lang/String;)V
 
-    invoke-direct {p0}, Ljava/lang/Object;-><init>()V
+    invoke-direct {p0}, Lkotlin/reflect/jvm/internal/impl/types/ClassifierBasedTypeConstructor;-><init>()V
 
     new-instance v0, Lkotlin/reflect/jvm/internal/impl/types/AbstractTypeConstructor$supertypes$1;
 
@@ -56,63 +55,83 @@
     return-void
 .end method
 
-.method public static final access$computeNeighbours(Lkotlin/reflect/jvm/internal/impl/types/AbstractTypeConstructor;Lkotlin/reflect/jvm/internal/impl/types/TypeConstructor;Z)Ljava/util/Collection;
-    .locals 1
+.method public static final synthetic access$computeNeighbours(Lkotlin/reflect/jvm/internal/impl/types/AbstractTypeConstructor;Lkotlin/reflect/jvm/internal/impl/types/TypeConstructor;Z)Ljava/util/Collection;
+    .locals 0
 
-    invoke-static {p0}, Ljava/util/Objects;->requireNonNull(Ljava/lang/Object;)Ljava/lang/Object;
+    invoke-direct {p0, p1, p2}, Lkotlin/reflect/jvm/internal/impl/types/AbstractTypeConstructor;->computeNeighbours(Lkotlin/reflect/jvm/internal/impl/types/TypeConstructor;Z)Ljava/util/Collection;
 
-    instance-of p0, p1, Lkotlin/reflect/jvm/internal/impl/types/AbstractTypeConstructor;
+    move-result-object p0
 
-    const/4 v0, 0x0
+    return-object p0
+.end method
 
-    if-eqz p0, :cond_0
+.method private final computeNeighbours(Lkotlin/reflect/jvm/internal/impl/types/TypeConstructor;Z)Ljava/util/Collection;
+    .locals 2
+    .annotation system Ldalvik/annotation/Signature;
+        value = {
+            "(",
+            "Lkotlin/reflect/jvm/internal/impl/types/TypeConstructor;",
+            "Z)",
+            "Ljava/util/Collection<",
+            "Lkotlin/reflect/jvm/internal/impl/types/KotlinType;",
+            ">;"
+        }
+    .end annotation
 
-    move-object p0, p1
+    instance-of v0, p1, Lkotlin/reflect/jvm/internal/impl/types/AbstractTypeConstructor;
 
-    check-cast p0, Lkotlin/reflect/jvm/internal/impl/types/AbstractTypeConstructor;
+    const/4 v1, 0x0
+
+    if-eqz v0, :cond_0
+
+    move-object v0, p1
+
+    check-cast v0, Lkotlin/reflect/jvm/internal/impl/types/AbstractTypeConstructor;
 
     goto :goto_0
 
     :cond_0
-    move-object p0, v0
+    move-object v0, v1
 
     :goto_0
-    if-nez p0, :cond_1
+    if-nez v0, :cond_1
 
     goto :goto_1
 
     :cond_1
-    iget-object v0, p0, Lkotlin/reflect/jvm/internal/impl/types/AbstractTypeConstructor;->supertypes:Lkotlin/reflect/jvm/internal/impl/storage/NotNullLazyValue;
+    iget-object v1, v0, Lkotlin/reflect/jvm/internal/impl/types/AbstractTypeConstructor;->supertypes:Lkotlin/reflect/jvm/internal/impl/storage/NotNullLazyValue;
 
-    invoke-interface {v0}, Lkotlin/jvm/functions/Function0;->invoke()Ljava/lang/Object;
+    invoke-interface {v1}, Lkotlin/reflect/jvm/internal/impl/storage/NotNullLazyValue;->invoke()Ljava/lang/Object;
 
-    move-result-object v0
+    move-result-object v1
 
-    check-cast v0, Lkotlin/reflect/jvm/internal/impl/types/AbstractTypeConstructor$Supertypes;
+    check-cast v1, Lkotlin/reflect/jvm/internal/impl/types/AbstractTypeConstructor$Supertypes;
 
-    iget-object v0, v0, Lkotlin/reflect/jvm/internal/impl/types/AbstractTypeConstructor$Supertypes;->allSupertypes:Ljava/util/Collection;
+    invoke-virtual {v1}, Lkotlin/reflect/jvm/internal/impl/types/AbstractTypeConstructor$Supertypes;->getAllSupertypes()Ljava/util/Collection;
 
-    invoke-virtual {p0, p2}, Lkotlin/reflect/jvm/internal/impl/types/AbstractTypeConstructor;->getAdditionalNeighboursInSupertypeGraph(Z)Ljava/util/Collection;
+    move-result-object v1
 
-    move-result-object p0
+    invoke-virtual {v0, p2}, Lkotlin/reflect/jvm/internal/impl/types/AbstractTypeConstructor;->getAdditionalNeighboursInSupertypeGraph(Z)Ljava/util/Collection;
 
-    invoke-static {v0, p0}, Lkotlin/collections/CollectionsKt___CollectionsKt;->plus(Ljava/util/Collection;Ljava/lang/Iterable;)Ljava/util/List;
+    move-result-object p2
 
-    move-result-object v0
+    invoke-static {v1, p2}, Lkotlin/collections/CollectionsKt___CollectionsKt;->plus(Ljava/util/Collection;Ljava/lang/Iterable;)Ljava/util/List;
+
+    move-result-object v1
 
     :goto_1
-    if-nez v0, :cond_2
+    if-nez v1, :cond_2
 
     invoke-interface {p1}, Lkotlin/reflect/jvm/internal/impl/types/TypeConstructor;->getSupertypes()Ljava/util/Collection;
 
-    move-result-object v0
+    move-result-object v1
 
-    const-string p0, "supertypes"
+    const-string p1, "supertypes"
 
-    invoke-static {v0, p0}, Lkotlin/jvm/internal/Intrinsics;->checkNotNullExpressionValue(Ljava/lang/Object;Ljava/lang/String;)V
+    invoke-static {v1, p1}, Lkotlin/jvm/internal/Intrinsics;->checkNotNullExpressionValue(Ljava/lang/Object;Ljava/lang/String;)V
 
     :cond_2
-    return-object v0
+    return-object v1
 .end method
 
 
@@ -152,7 +171,12 @@
     return-object p1
 .end method
 
-.method public abstract getDeclarationDescriptor()Lkotlin/reflect/jvm/internal/impl/descriptors/ClassifierDescriptor;
+.method public getShouldReportCyclicScopeWithCompanionWarning()Z
+    .locals 1
+
+    iget-boolean v0, p0, Lkotlin/reflect/jvm/internal/impl/types/AbstractTypeConstructor;->shouldReportCyclicScopeWithCompanionWarning:Z
+
+    return v0
 .end method
 
 .method public abstract getSupertypeLoopChecker()Lkotlin/reflect/jvm/internal/impl/descriptors/SupertypeLoopChecker;
@@ -181,19 +205,21 @@
 
     iget-object v0, p0, Lkotlin/reflect/jvm/internal/impl/types/AbstractTypeConstructor;->supertypes:Lkotlin/reflect/jvm/internal/impl/storage/NotNullLazyValue;
 
-    invoke-interface {v0}, Lkotlin/jvm/functions/Function0;->invoke()Ljava/lang/Object;
+    invoke-interface {v0}, Lkotlin/reflect/jvm/internal/impl/storage/NotNullLazyValue;->invoke()Ljava/lang/Object;
 
     move-result-object v0
 
     check-cast v0, Lkotlin/reflect/jvm/internal/impl/types/AbstractTypeConstructor$Supertypes;
 
-    iget-object v0, v0, Lkotlin/reflect/jvm/internal/impl/types/AbstractTypeConstructor$Supertypes;->supertypesWithoutCycles:Ljava/util/List;
+    invoke-virtual {v0}, Lkotlin/reflect/jvm/internal/impl/types/AbstractTypeConstructor$Supertypes;->getSupertypesWithoutCycles()Ljava/util/List;
+
+    move-result-object v0
 
     return-object v0
 .end method
 
 .method public processSupertypesWithoutCycles(Ljava/util/List;)Ljava/util/List;
-    .locals 0
+    .locals 1
     .annotation system Ldalvik/annotation/Signature;
         value = {
             "(",
@@ -205,6 +231,10 @@
             ">;"
         }
     .end annotation
+
+    const-string v0, "supertypes"
+
+    invoke-static {p1, v0}, Lkotlin/jvm/internal/Intrinsics;->checkNotNullParameter(Ljava/lang/Object;Ljava/lang/String;)V
 
     return-object p1
 .end method
@@ -223,8 +253,22 @@
     return-object v0
 .end method
 
+.method public reportScopesLoopError(Lkotlin/reflect/jvm/internal/impl/types/KotlinType;)V
+    .locals 1
+
+    const-string v0, "type"
+
+    invoke-static {p1, v0}, Lkotlin/jvm/internal/Intrinsics;->checkNotNullParameter(Ljava/lang/Object;Ljava/lang/String;)V
+
+    return-void
+.end method
+
 .method public reportSupertypeLoopError(Lkotlin/reflect/jvm/internal/impl/types/KotlinType;)V
-    .locals 0
+    .locals 1
+
+    const-string v0, "type"
+
+    invoke-static {p1, v0}, Lkotlin/jvm/internal/Intrinsics;->checkNotNullParameter(Ljava/lang/Object;Ljava/lang/String;)V
 
     return-void
 .end method

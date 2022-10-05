@@ -3,6 +3,10 @@
 .source "Period.java"
 
 
+# static fields
+.field public static final ZERO:Lorg/joda/time/Period;
+
+
 # direct methods
 .method public static constructor <clinit>()V
     .locals 1
@@ -10,6 +14,8 @@
     new-instance v0, Lorg/joda/time/Period;
 
     invoke-direct {v0}, Lorg/joda/time/Period;-><init>()V
+
+    sput-object v0, Lorg/joda/time/Period;->ZERO:Lorg/joda/time/Period;
 
     return-void
 .end method
@@ -50,6 +56,14 @@
     const/4 v0, 0x0
 
     invoke-direct {p0, p1, v0, v0}, Lorg/joda/time/base/BasePeriod;-><init>(Ljava/lang/Object;Lorg/joda/time/PeriodType;Lorg/joda/time/Chronology;)V
+
+    return-void
+.end method
+
+.method public constructor <init>([ILorg/joda/time/PeriodType;)V
+    .locals 0
+
+    invoke-direct {p0, p1, p2}, Lorg/joda/time/base/BasePeriod;-><init>([ILorg/joda/time/PeriodType;)V
 
     return-void
 .end method

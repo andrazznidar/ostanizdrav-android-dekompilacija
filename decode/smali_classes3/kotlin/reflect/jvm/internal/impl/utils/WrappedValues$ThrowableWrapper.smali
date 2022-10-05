@@ -1,4 +1,4 @@
-.class public final Lkotlin/reflect/jvm/internal/impl/utils/WrappedValues$ThrowableWrapper;
+.class final Lkotlin/reflect/jvm/internal/impl/utils/WrappedValues$ThrowableWrapper;
 .super Ljava/lang/Object;
 .source "WrappedValues.java"
 
@@ -15,11 +15,11 @@
 
 
 # instance fields
-.field public final throwable:Ljava/lang/Throwable;
+.field private final throwable:Ljava/lang/Throwable;
 
 
 # direct methods
-.method public static synthetic $$$reportNull$$$0(I)V
+.method private static synthetic $$$reportNull$$$0(I)V
     .locals 7
 
     const/4 v0, 0x1
@@ -104,29 +104,48 @@
     throw p0
 .end method
 
-.method public constructor <init>(Ljava/lang/Throwable;Lkotlin/reflect/jvm/internal/impl/utils/WrappedValues$1;)V
-    .locals 0
+.method private constructor <init>(Ljava/lang/Throwable;)V
+    .locals 1
 
-    if-eqz p1, :cond_0
+    if-nez p1, :cond_0
 
+    const/4 v0, 0x0
+
+    invoke-static {v0}, Lkotlin/reflect/jvm/internal/impl/utils/WrappedValues$ThrowableWrapper;->$$$reportNull$$$0(I)V
+
+    :cond_0
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
     iput-object p1, p0, Lkotlin/reflect/jvm/internal/impl/utils/WrappedValues$ThrowableWrapper;->throwable:Ljava/lang/Throwable;
 
     return-void
+.end method
 
-    :cond_0
-    const/4 p1, 0x0
+.method public synthetic constructor <init>(Ljava/lang/Throwable;Lkotlin/reflect/jvm/internal/impl/utils/WrappedValues$1;)V
+    .locals 0
 
-    invoke-static {p1}, Lkotlin/reflect/jvm/internal/impl/utils/WrappedValues$ThrowableWrapper;->$$$reportNull$$$0(I)V
+    invoke-direct {p0, p1}, Lkotlin/reflect/jvm/internal/impl/utils/WrappedValues$ThrowableWrapper;-><init>(Ljava/lang/Throwable;)V
 
-    const/4 p1, 0x0
-
-    throw p1
+    return-void
 .end method
 
 
 # virtual methods
+.method public getThrowable()Ljava/lang/Throwable;
+    .locals 2
+
+    iget-object v0, p0, Lkotlin/reflect/jvm/internal/impl/utils/WrappedValues$ThrowableWrapper;->throwable:Ljava/lang/Throwable;
+
+    if-nez v0, :cond_0
+
+    const/4 v1, 0x1
+
+    invoke-static {v1}, Lkotlin/reflect/jvm/internal/impl/utils/WrappedValues$ThrowableWrapper;->$$$reportNull$$$0(I)V
+
+    :cond_0
+    return-object v0
+.end method
+
 .method public toString()Ljava/lang/String;
     .locals 1
 

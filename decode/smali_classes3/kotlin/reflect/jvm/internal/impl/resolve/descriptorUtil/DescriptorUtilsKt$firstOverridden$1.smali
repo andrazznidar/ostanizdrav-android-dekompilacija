@@ -1,4 +1,4 @@
-.class public final Lkotlin/reflect/jvm/internal/impl/resolve/descriptorUtil/DescriptorUtilsKt$firstOverridden$1;
+.class final Lkotlin/reflect/jvm/internal/impl/resolve/descriptorUtil/DescriptorUtilsKt$firstOverridden$1;
 .super Ljava/lang/Object;
 .source "DescriptorUtils.kt"
 
@@ -7,12 +7,22 @@
 
 
 # annotations
+.annotation system Ldalvik/annotation/EnclosingMethod;
+    value = Lkotlin/reflect/jvm/internal/impl/resolve/descriptorUtil/DescriptorUtilsKt;->firstOverridden(Lkotlin/reflect/jvm/internal/impl/descriptors/CallableMemberDescriptor;ZLkotlin/jvm/functions/Function1;)Lkotlin/reflect/jvm/internal/impl/descriptors/CallableMemberDescriptor;
+.end annotation
+
+.annotation system Ldalvik/annotation/InnerClass;
+    accessFlags = 0x19
+    name = null
+.end annotation
+
 .annotation system Ldalvik/annotation/Signature;
     value = {
+        "<N:",
         "Ljava/lang/Object;",
-        "Lkotlin/reflect/jvm/internal/impl/utils/DFS$Neighbors<",
-        "Lkotlin/reflect/jvm/internal/impl/descriptors/CallableMemberDescriptor;",
-        ">;"
+        ">",
+        "Ljava/lang/Object;",
+        "Lkotlin/reflect/jvm/internal/impl/utils/DFS$Neighbors;"
     }
 .end annotation
 
@@ -34,10 +44,30 @@
 
 
 # virtual methods
-.method public getNeighbors(Ljava/lang/Object;)Ljava/lang/Iterable;
-    .locals 2
+.method public bridge synthetic getNeighbors(Ljava/lang/Object;)Ljava/lang/Iterable;
+    .locals 0
 
     check-cast p1, Lkotlin/reflect/jvm/internal/impl/descriptors/CallableMemberDescriptor;
+
+    invoke-virtual {p0, p1}, Lkotlin/reflect/jvm/internal/impl/resolve/descriptorUtil/DescriptorUtilsKt$firstOverridden$1;->getNeighbors(Lkotlin/reflect/jvm/internal/impl/descriptors/CallableMemberDescriptor;)Ljava/lang/Iterable;
+
+    move-result-object p1
+
+    return-object p1
+.end method
+
+.method public final getNeighbors(Lkotlin/reflect/jvm/internal/impl/descriptors/CallableMemberDescriptor;)Ljava/lang/Iterable;
+    .locals 2
+    .annotation system Ldalvik/annotation/Signature;
+        value = {
+            "(",
+            "Lkotlin/reflect/jvm/internal/impl/descriptors/CallableMemberDescriptor;",
+            ")",
+            "Ljava/lang/Iterable<",
+            "Lkotlin/reflect/jvm/internal/impl/descriptors/CallableMemberDescriptor;",
+            ">;"
+        }
+    .end annotation
 
     iget-boolean v0, p0, Lkotlin/reflect/jvm/internal/impl/resolve/descriptorUtil/DescriptorUtilsKt$firstOverridden$1;->$useOriginal:Z
 

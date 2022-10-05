@@ -47,17 +47,9 @@
 
     iget-object v0, p0, Lde/rki/coronawarnapp/util/serialization/SerializationModule_JacksonObjectMapperFactory;->module:Lde/rki/coronawarnapp/util/serialization/SerializationModule;
 
-    invoke-static {v0}, Ljava/util/Objects;->requireNonNull(Ljava/lang/Object;)Ljava/lang/Object;
-
-    sget-object v0, Lde/rki/coronawarnapp/util/serialization/SerializationModule;->jacksonBaseMapper$delegate:Lkotlin/Lazy;
-
-    check-cast v0, Lkotlin/SynchronizedLazyImpl;
-
-    invoke-virtual {v0}, Lkotlin/SynchronizedLazyImpl;->getValue()Ljava/lang/Object;
+    invoke-virtual {v0}, Lde/rki/coronawarnapp/util/serialization/SerializationModule;->jacksonObjectMapper()Lcom/fasterxml/jackson/databind/ObjectMapper;
 
     move-result-object v0
-
-    check-cast v0, Lcom/fasterxml/jackson/databind/ObjectMapper;
 
     const-string v1, "Cannot return null from a non-@Nullable @Provides method"
 

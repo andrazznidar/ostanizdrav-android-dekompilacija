@@ -1,197 +1,143 @@
-.class final Lj$/util/stream/F1;
-.super Ljava/lang/Object;
-
-# interfaces
-.implements Lj$/util/stream/B1;
+.class Lj$/util/stream/F1;
+.super Lj$/util/stream/a2;
 
 
 # instance fields
-.field private final a:Ljava/util/Collection;
+.field public final synthetic b:I
+
+.field final synthetic c:Ljava/lang/Object;
+
+.field final synthetic d:Ljava/lang/Object;
+
+.field final synthetic e:Ljava/lang/Object;
 
 
 # direct methods
-.method constructor <init>(Ljava/util/Collection;)V
+.method public synthetic constructor <init>(ILjava/lang/Object;Ljava/lang/Object;Ljava/lang/Object;I)V
     .locals 0
 
-    invoke-direct {p0}, Ljava/lang/Object;-><init>()V
+    iput p5, p0, Lj$/util/stream/F1;->b:I
 
-    iput-object p1, p0, Lj$/util/stream/F1;->a:Ljava/util/Collection;
+    iput-object p2, p0, Lj$/util/stream/F1;->c:Ljava/lang/Object;
+
+    iput-object p3, p0, Lj$/util/stream/F1;->e:Ljava/lang/Object;
+
+    iput-object p4, p0, Lj$/util/stream/F1;->d:Ljava/lang/Object;
+
+    invoke-direct {p0, p1}, Lj$/util/stream/a2;-><init>(I)V
 
     return-void
 .end method
 
 
 # virtual methods
-.method public b(I)Lj$/util/stream/B1;
-    .locals 0
+.method public b()Lj$/util/stream/Y1;
+    .locals 4
 
-    new-instance p1, Ljava/lang/IndexOutOfBoundsException;
+    iget v0, p0, Lj$/util/stream/F1;->b:I
 
-    invoke-direct {p1}, Ljava/lang/IndexOutOfBoundsException;-><init>()V
-
-    throw p1
-.end method
-
-.method public count()J
-    .locals 2
-
-    iget-object v0, p0, Lj$/util/stream/F1;->a:Ljava/util/Collection;
-
-    invoke-interface {v0}, Ljava/util/Collection;->size()I
-
-    move-result v0
-
-    int-to-long v0, v0
-
-    return-wide v0
-.end method
-
-.method public forEach(Lj$/util/function/Consumer;)V
-    .locals 1
-
-    iget-object v0, p0, Lj$/util/stream/F1;->a:Ljava/util/Collection;
-
-    invoke-static {v0, p1}, Lj$/util/Collection$-EL;->a(Ljava/util/Collection;Lj$/util/function/Consumer;)V
-
-    return-void
-.end method
-
-.method public k([Ljava/lang/Object;I)V
-    .locals 3
-
-    iget-object v0, p0, Lj$/util/stream/F1;->a:Ljava/util/Collection;
-
-    invoke-interface {v0}, Ljava/util/Collection;->iterator()Ljava/util/Iterator;
-
-    move-result-object v0
-
-    :goto_0
-    invoke-interface {v0}, Ljava/util/Iterator;->hasNext()Z
-
-    move-result v1
-
-    if-eqz v1, :cond_0
-
-    invoke-interface {v0}, Ljava/util/Iterator;->next()Ljava/lang/Object;
-
-    move-result-object v1
-
-    add-int/lit8 v2, p2, 0x1
-
-    aput-object v1, p1, p2
-
-    move p2, v2
+    packed-switch v0, :pswitch_data_0
 
     goto :goto_0
 
-    :cond_0
-    return-void
-.end method
+    :pswitch_0
+    new-instance v0, Lj$/util/stream/Q1;
 
-.method public synthetic m()I
-    .locals 1
+    iget-object v1, p0, Lj$/util/stream/F1;->d:Ljava/lang/Object;
 
-    const/4 v0, 0x0
+    check-cast v1, Lj$/util/function/C;
 
-    return v0
-.end method
+    iget-object v2, p0, Lj$/util/stream/F1;->e:Ljava/lang/Object;
 
-.method public o(Lj$/util/function/j;)[Ljava/lang/Object;
-    .locals 2
+    check-cast v2, Lj$/util/function/BiConsumer;
 
-    iget-object v0, p0, Lj$/util/stream/F1;->a:Ljava/util/Collection;
+    iget-object v3, p0, Lj$/util/stream/F1;->c:Ljava/lang/Object;
 
-    invoke-interface {v0}, Ljava/util/Collection;->size()I
+    check-cast v3, Lj$/util/function/BiConsumer;
 
-    move-result v1
+    invoke-direct {v0, v1, v2, v3}, Lj$/util/stream/Q1;-><init>(Lj$/util/function/C;Lj$/util/function/BiConsumer;Lj$/util/function/BiConsumer;)V
 
-    invoke-interface {p1, v1}, Lj$/util/function/j;->p(I)Ljava/lang/Object;
+    return-object v0
 
-    move-result-object p1
+    :pswitch_1
+    new-instance v0, Lj$/util/stream/M1;
 
-    check-cast p1, [Ljava/lang/Object;
+    iget-object v1, p0, Lj$/util/stream/F1;->d:Ljava/lang/Object;
 
-    invoke-interface {v0, p1}, Ljava/util/Collection;->toArray([Ljava/lang/Object;)[Ljava/lang/Object;
+    iget-object v2, p0, Lj$/util/stream/F1;->e:Ljava/lang/Object;
 
-    move-result-object p1
+    check-cast v2, Lj$/util/function/BiFunction;
 
-    return-object p1
-.end method
+    iget-object v3, p0, Lj$/util/stream/F1;->c:Ljava/lang/Object;
 
-.method public synthetic p(JJLj$/util/function/j;)Lj$/util/stream/B1;
-    .locals 0
+    check-cast v3, Lj$/util/function/c;
 
-    invoke-static/range {p0 .. p5}, Lj$/util/stream/p1;->q(Lj$/util/stream/B1;JJLj$/util/function/j;)Lj$/util/stream/B1;
+    invoke-direct {v0, v1, v2, v3}, Lj$/util/stream/M1;-><init>(Ljava/lang/Object;Lj$/util/function/BiFunction;Lj$/util/function/c;)V
 
-    move-result-object p1
+    return-object v0
 
-    return-object p1
-.end method
+    :pswitch_2
+    new-instance v0, Lj$/util/stream/L1;
 
-.method public spliterator()Lj$/util/Spliterator;
-    .locals 2
+    iget-object v1, p0, Lj$/util/stream/F1;->d:Ljava/lang/Object;
 
-    iget-object v0, p0, Lj$/util/stream/F1;->a:Ljava/util/Collection;
+    check-cast v1, Lj$/util/function/C;
 
-    instance-of v1, v0, Lj$/util/b;
+    iget-object v2, p0, Lj$/util/stream/F1;->e:Ljava/lang/Object;
 
-    if-eqz v1, :cond_0
+    check-cast v2, Lj$/util/function/w;
 
-    check-cast v0, Lj$/util/b;
+    iget-object v3, p0, Lj$/util/stream/F1;->c:Ljava/lang/Object;
 
-    invoke-interface {v0}, Lj$/util/b;->stream()Lj$/util/stream/c4;
+    check-cast v3, Lj$/util/function/c;
 
-    move-result-object v0
+    invoke-direct {v0, v1, v2, v3}, Lj$/util/stream/L1;-><init>(Lj$/util/function/C;Lj$/util/function/w;Lj$/util/function/c;)V
 
-    goto :goto_0
+    return-object v0
 
-    :cond_0
-    invoke-static {v0}, Lj$/util/a;->i(Ljava/util/Collection;)Lj$/util/stream/c4;
+    :pswitch_3
+    new-instance v0, Lj$/util/stream/G1;
 
-    move-result-object v0
+    iget-object v1, p0, Lj$/util/stream/F1;->d:Ljava/lang/Object;
+
+    check-cast v1, Lj$/util/function/C;
+
+    iget-object v2, p0, Lj$/util/stream/F1;->e:Ljava/lang/Object;
+
+    check-cast v2, Lj$/util/function/y;
+
+    iget-object v3, p0, Lj$/util/stream/F1;->c:Ljava/lang/Object;
+
+    check-cast v3, Lj$/util/function/c;
+
+    invoke-direct {v0, v1, v2, v3}, Lj$/util/stream/G1;-><init>(Lj$/util/function/C;Lj$/util/function/y;Lj$/util/function/c;)V
+
+    return-object v0
 
     :goto_0
-    check-cast v0, Lj$/util/stream/c;
+    new-instance v0, Lj$/util/stream/U1;
 
-    invoke-virtual {v0}, Lj$/util/stream/c;->spliterator()Lj$/util/Spliterator;
+    iget-object v1, p0, Lj$/util/stream/F1;->d:Ljava/lang/Object;
 
-    move-result-object v0
+    check-cast v1, Lj$/util/function/C;
 
-    return-object v0
-.end method
+    iget-object v2, p0, Lj$/util/stream/F1;->e:Ljava/lang/Object;
 
-.method public toString()Ljava/lang/String;
-    .locals 3
+    check-cast v2, Lj$/util/function/x;
 
-    const/4 v0, 0x2
+    iget-object v3, p0, Lj$/util/stream/F1;->c:Ljava/lang/Object;
 
-    new-array v0, v0, [Ljava/lang/Object;
+    check-cast v3, Lj$/util/function/c;
 
-    iget-object v1, p0, Lj$/util/stream/F1;->a:Ljava/util/Collection;
-
-    invoke-interface {v1}, Ljava/util/Collection;->size()I
-
-    move-result v1
-
-    invoke-static {v1}, Ljava/lang/Integer;->valueOf(I)Ljava/lang/Integer;
-
-    move-result-object v1
-
-    const/4 v2, 0x0
-
-    aput-object v1, v0, v2
-
-    iget-object v1, p0, Lj$/util/stream/F1;->a:Ljava/util/Collection;
-
-    const/4 v2, 0x1
-
-    aput-object v1, v0, v2
-
-    const-string v1, "CollectionNode[%d][%s]"
-
-    invoke-static {v1, v0}, Ljava/lang/String;->format(Ljava/lang/String;[Ljava/lang/Object;)Ljava/lang/String;
-
-    move-result-object v0
+    invoke-direct {v0, v1, v2, v3}, Lj$/util/stream/U1;-><init>(Lj$/util/function/C;Lj$/util/function/x;Lj$/util/function/c;)V
 
     return-object v0
+
+    :pswitch_data_0
+    .packed-switch 0x0
+        :pswitch_3
+        :pswitch_2
+        :pswitch_1
+        :pswitch_0
+    .end packed-switch
 .end method

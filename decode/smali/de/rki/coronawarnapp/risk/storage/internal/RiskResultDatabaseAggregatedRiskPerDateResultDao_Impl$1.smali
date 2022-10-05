@@ -15,9 +15,7 @@
 
 .annotation system Ldalvik/annotation/Signature;
     value = {
-        "Landroidx/room/EntityInsertionAdapter<",
-        "Lde/rki/coronawarnapp/risk/storage/internal/riskresults/PersistedAggregatedRiskPerDateResult;",
-        ">;"
+        "Landroidx/room/EntityInsertionAdapter;"
     }
 .end annotation
 

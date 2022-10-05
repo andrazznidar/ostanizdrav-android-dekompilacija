@@ -16,7 +16,7 @@
 .annotation system Ldalvik/annotation/Signature;
     value = {
         "Lcom/google/gson/TypeAdapter<",
-        "Ljava/lang/StringBuilder;",
+        "Ljava/lang/StringBuffer;",
         ">;"
     }
 .end annotation
@@ -56,13 +56,13 @@
     goto :goto_0
 
     :cond_0
-    new-instance v0, Ljava/lang/StringBuilder;
+    new-instance v0, Ljava/lang/StringBuffer;
 
     invoke-virtual {p1}, Lcom/google/gson/stream/JsonReader;->nextString()Ljava/lang/String;
 
     move-result-object p1
 
-    invoke-direct {v0, p1}, Ljava/lang/StringBuilder;-><init>(Ljava/lang/String;)V
+    invoke-direct {v0, p1}, Ljava/lang/StringBuffer;-><init>(Ljava/lang/String;)V
 
     move-object p1, v0
 
@@ -78,7 +78,7 @@
         }
     .end annotation
 
-    check-cast p2, Ljava/lang/StringBuilder;
+    check-cast p2, Ljava/lang/StringBuffer;
 
     if-nez p2, :cond_0
 
@@ -87,7 +87,7 @@
     goto :goto_0
 
     :cond_0
-    invoke-virtual {p2}, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
+    invoke-virtual {p2}, Ljava/lang/StringBuffer;->toString()Ljava/lang/String;
 
     move-result-object p2
 

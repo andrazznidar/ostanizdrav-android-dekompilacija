@@ -83,7 +83,7 @@
 
     :cond_3
     :goto_2
-    invoke-static {v3}, Lcom/google/gson/internal/$Gson$Preconditions;->checkArgument(Z)V
+    invoke-static {v3}, Lkotlinx/coroutines/flow/FlowKt;->checkArgument(Z)V
 
     :cond_4
     if-nez p1, :cond_5

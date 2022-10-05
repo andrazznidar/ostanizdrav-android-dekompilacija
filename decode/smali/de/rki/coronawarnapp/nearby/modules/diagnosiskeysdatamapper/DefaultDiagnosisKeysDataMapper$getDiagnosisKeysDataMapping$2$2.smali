@@ -6,17 +6,6 @@
 .implements Lcom/google/android/gms/tasks/OnFailureListener;
 
 
-# annotations
-.annotation system Ldalvik/annotation/EnclosingMethod;
-    value = Lde/rki/coronawarnapp/nearby/modules/diagnosiskeysdatamapper/DefaultDiagnosisKeysDataMapper;->getDiagnosisKeysDataMapping(Lkotlin/coroutines/Continuation;)Ljava/lang/Object;
-.end annotation
-
-.annotation system Ldalvik/annotation/InnerClass;
-    accessFlags = 0x19
-    name = null
-.end annotation
-
-
 # instance fields
 .field public final synthetic $cont:Lkotlin/coroutines/Continuation;
     .annotation system Ldalvik/annotation/Signature;

@@ -121,7 +121,7 @@
 .end method
 
 .method public setPeriod(Lorg/joda/time/ReadablePeriod;)V
-    .locals 8
+    .locals 6
 
     const/4 v0, 0x0
 
@@ -139,7 +139,7 @@
 
     invoke-static {p1, v0, v1, v0, v2}, Ljava/lang/System;->arraycopy(Ljava/lang/Object;ILjava/lang/Object;II)V
 
-    goto :goto_2
+    goto :goto_1
 
     :cond_0
     invoke-virtual {p0}, Lorg/joda/time/base/AbstractPeriod;->size()I
@@ -155,7 +155,7 @@
     move v3, v0
 
     :goto_0
-    if-ge v3, v2, :cond_3
+    if-ge v3, v2, :cond_1
 
     invoke-interface {p1, v3}, Lorg/joda/time/ReadablePeriod;->getFieldType(I)Lorg/joda/time/DurationFieldType;
 
@@ -165,59 +165,20 @@
 
     move-result v5
 
-    invoke-virtual {p0}, Lorg/joda/time/base/BasePeriod;->getPeriodType()Lorg/joda/time/PeriodType;
+    invoke-virtual {p0, v4, v1, v5}, Lorg/joda/time/base/BasePeriod;->checkAndUpdate(Lorg/joda/time/DurationFieldType;[II)V
 
-    move-result-object v6
-
-    invoke-virtual {v6, v4}, Lorg/joda/time/PeriodType;->indexOf(Lorg/joda/time/DurationFieldType;)I
-
-    move-result v6
-
-    const/4 v7, -0x1
-
-    if-ne v6, v7, :cond_2
-
-    if-nez v5, :cond_1
-
-    goto :goto_1
-
-    :cond_1
-    new-instance p1, Ljava/lang/IllegalArgumentException;
-
-    const-string v0, "Period does not support field \'"
-
-    invoke-static {v0}, Landroid/support/v4/media/RatingCompat$$ExternalSyntheticOutline0;->m(Ljava/lang/String;)Ljava/lang/StringBuilder;
-
-    move-result-object v0
-
-    iget-object v1, v4, Lorg/joda/time/DurationFieldType;->iName:Ljava/lang/String;
-
-    const-string v2, "\'"
-
-    invoke-static {v0, v1, v2}, Landroidx/constraintlayout/core/widgets/Barrier$$ExternalSyntheticOutline0;->m(Ljava/lang/StringBuilder;Ljava/lang/String;Ljava/lang/String;)Ljava/lang/String;
-
-    move-result-object v0
-
-    invoke-direct {p1, v0}, Ljava/lang/IllegalArgumentException;-><init>(Ljava/lang/String;)V
-
-    throw p1
-
-    :cond_2
-    aput v5, v1, v6
-
-    :goto_1
     add-int/lit8 v3, v3, 0x1
 
     goto :goto_0
 
-    :cond_3
+    :cond_1
     iget-object p1, p0, Lorg/joda/time/base/BasePeriod;->iValues:[I
 
     array-length v2, p1
 
     invoke-static {v1, v0, p1, v0, v2}, Ljava/lang/System;->arraycopy(Ljava/lang/Object;ILjava/lang/Object;II)V
 
-    :goto_2
+    :goto_1
     return-void
 .end method
 

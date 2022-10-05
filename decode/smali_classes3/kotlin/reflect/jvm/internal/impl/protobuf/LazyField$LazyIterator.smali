@@ -1,4 +1,4 @@
-.class public Lkotlin/reflect/jvm/internal/impl/protobuf/LazyField$LazyIterator;
+.class Lkotlin/reflect/jvm/internal/impl/protobuf/LazyField$LazyIterator;
 .super Ljava/lang/Object;
 .source "LazyField.java"
 
@@ -34,7 +34,7 @@
 
 
 # instance fields
-.field public iterator:Ljava/util/Iterator;
+.field private iterator:Ljava/util/Iterator;
     .annotation system Ldalvik/annotation/Signature;
         value = {
             "Ljava/util/Iterator<",
@@ -78,6 +78,18 @@
     return-void
 .end method
 
+.method public synthetic forEachRemaining(Ljava/util/function/Consumer;)V
+    .locals 0
+
+    invoke-static {p1}, Lj$/util/function/Consumer$VivifiedWrapper;->convert(Ljava/util/function/Consumer;)Lj$/util/function/Consumer;
+
+    move-result-object p1
+
+    invoke-virtual {p0, p1}, Lkotlin/reflect/jvm/internal/impl/protobuf/LazyField$LazyIterator;->forEachRemaining(Lj$/util/function/Consumer;)V
+
+    return-void
+.end method
+
 .method public hasNext()Z
     .locals 1
 
@@ -90,8 +102,27 @@
     return v0
 .end method
 
-.method public next()Ljava/lang/Object;
+.method public bridge synthetic next()Ljava/lang/Object;
+    .locals 1
+
+    invoke-virtual {p0}, Lkotlin/reflect/jvm/internal/impl/protobuf/LazyField$LazyIterator;->next()Ljava/util/Map$Entry;
+
+    move-result-object v0
+
+    return-object v0
+.end method
+
+.method public next()Ljava/util/Map$Entry;
     .locals 3
+    .annotation system Ldalvik/annotation/Signature;
+        value = {
+            "()",
+            "Ljava/util/Map$Entry<",
+            "TK;",
+            "Ljava/lang/Object;",
+            ">;"
+        }
+    .end annotation
 
     iget-object v0, p0, Lkotlin/reflect/jvm/internal/impl/protobuf/LazyField$LazyIterator;->iterator:Ljava/util/Iterator;
 
@@ -115,7 +146,7 @@
 
     invoke-direct {v1, v0, v2}, Lkotlin/reflect/jvm/internal/impl/protobuf/LazyField$LazyEntry;-><init>(Ljava/util/Map$Entry;Lkotlin/reflect/jvm/internal/impl/protobuf/LazyField$1;)V
 
-    move-object v0, v1
+    return-object v1
 
     :cond_0
     return-object v0

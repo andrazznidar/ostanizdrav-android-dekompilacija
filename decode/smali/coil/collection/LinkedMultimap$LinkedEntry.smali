@@ -105,10 +105,6 @@
     goto :goto_0
 
     :cond_0
-    const-string v2, "$this$removeLastOrNull"
-
-    invoke-static {v0, v2}, Lkotlin/jvm/internal/Intrinsics;->checkNotNullParameter(Ljava/lang/Object;Ljava/lang/String;)V
-
     invoke-interface {v0}, Ljava/util/List;->isEmpty()Z
 
     move-result v2

@@ -15,11 +15,11 @@
 
 
 # instance fields
-.field public final name:Ljava/lang/String;
+.field private final name:Ljava/lang/String;
 
 
 # direct methods
-.method public static synthetic $$$reportNull$$$0(I)V
+.method private static synthetic $$$reportNull$$$0(I)V
     .locals 9
 
     const/4 v0, 0x4
@@ -203,9 +203,9 @@
 
     invoke-virtual {p0, p1}, Lkotlin/reflect/jvm/internal/impl/types/TypeUtils$SpecialType;->makeNullableAsSpecified(Z)Lkotlin/reflect/jvm/internal/impl/types/SimpleType;
 
-    const/4 p1, 0x0
+    move-result-object p1
 
-    throw p1
+    return-object p1
 .end method
 
 .method public bridge synthetic refine(Lkotlin/reflect/jvm/internal/impl/types/checker/KotlinTypeRefiner;)Lkotlin/reflect/jvm/internal/impl/types/KotlinType;
@@ -213,7 +213,9 @@
 
     invoke-virtual {p0, p1}, Lkotlin/reflect/jvm/internal/impl/types/TypeUtils$SpecialType;->refine(Lkotlin/reflect/jvm/internal/impl/types/checker/KotlinTypeRefiner;)Lkotlin/reflect/jvm/internal/impl/types/TypeUtils$SpecialType;
 
-    return-object p0
+    move-result-object p1
+
+    return-object p1
 .end method
 
 .method public bridge synthetic refine(Lkotlin/reflect/jvm/internal/impl/types/checker/KotlinTypeRefiner;)Lkotlin/reflect/jvm/internal/impl/types/SimpleType;
@@ -221,24 +223,22 @@
 
     invoke-virtual {p0, p1}, Lkotlin/reflect/jvm/internal/impl/types/TypeUtils$SpecialType;->refine(Lkotlin/reflect/jvm/internal/impl/types/checker/KotlinTypeRefiner;)Lkotlin/reflect/jvm/internal/impl/types/TypeUtils$SpecialType;
 
-    return-object p0
+    move-result-object p1
+
+    return-object p1
 .end method
 
 .method public refine(Lkotlin/reflect/jvm/internal/impl/types/checker/KotlinTypeRefiner;)Lkotlin/reflect/jvm/internal/impl/types/TypeUtils$SpecialType;
     .locals 0
 
-    if-eqz p1, :cond_0
+    if-nez p1, :cond_0
 
-    return-object p0
-
-    :cond_0
     const/4 p1, 0x3
 
     invoke-static {p1}, Lkotlin/reflect/jvm/internal/impl/types/TypeUtils$SpecialType;->$$$reportNull$$$0(I)V
 
-    const/4 p1, 0x0
-
-    throw p1
+    :cond_0
+    return-object p0
 .end method
 
 .method public bridge synthetic refine(Lkotlin/reflect/jvm/internal/impl/types/checker/KotlinTypeRefiner;)Lkotlin/reflect/jvm/internal/impl/types/UnwrappedType;
@@ -246,7 +246,9 @@
 
     invoke-virtual {p0, p1}, Lkotlin/reflect/jvm/internal/impl/types/TypeUtils$SpecialType;->refine(Lkotlin/reflect/jvm/internal/impl/types/checker/KotlinTypeRefiner;)Lkotlin/reflect/jvm/internal/impl/types/TypeUtils$SpecialType;
 
-    return-object p0
+    move-result-object p1
+
+    return-object p1
 .end method
 
 .method public replaceAnnotations(Lkotlin/reflect/jvm/internal/impl/descriptors/annotations/Annotations;)Lkotlin/reflect/jvm/internal/impl/types/SimpleType;
@@ -257,10 +259,6 @@
     const/4 p1, 0x0
 
     invoke-static {p1}, Lkotlin/reflect/jvm/internal/impl/types/TypeUtils$SpecialType;->$$$reportNull$$$0(I)V
-
-    const/4 p1, 0x0
-
-    throw p1
 
     :cond_0
     new-instance p1, Ljava/lang/IllegalStateException;
@@ -277,9 +275,9 @@
 
     invoke-virtual {p0, p1}, Lkotlin/reflect/jvm/internal/impl/types/TypeUtils$SpecialType;->replaceAnnotations(Lkotlin/reflect/jvm/internal/impl/descriptors/annotations/Annotations;)Lkotlin/reflect/jvm/internal/impl/types/SimpleType;
 
-    const/4 p1, 0x0
+    move-result-object p1
 
-    throw p1
+    return-object p1
 .end method
 
 .method public replaceDelegate(Lkotlin/reflect/jvm/internal/impl/types/SimpleType;)Lkotlin/reflect/jvm/internal/impl/types/DelegatingSimpleType;
@@ -290,10 +288,6 @@
     const/4 p1, 0x2
 
     invoke-static {p1}, Lkotlin/reflect/jvm/internal/impl/types/TypeUtils$SpecialType;->$$$reportNull$$$0(I)V
-
-    const/4 p1, 0x0
-
-    throw p1
 
     :cond_0
     new-instance p1, Ljava/lang/IllegalStateException;
@@ -306,20 +300,16 @@
 .end method
 
 .method public toString()Ljava/lang/String;
-    .locals 1
+    .locals 2
 
     iget-object v0, p0, Lkotlin/reflect/jvm/internal/impl/types/TypeUtils$SpecialType;->name:Ljava/lang/String;
 
-    if-eqz v0, :cond_0
+    if-nez v0, :cond_0
 
-    return-object v0
+    const/4 v1, 0x1
+
+    invoke-static {v1}, Lkotlin/reflect/jvm/internal/impl/types/TypeUtils$SpecialType;->$$$reportNull$$$0(I)V
 
     :cond_0
-    const/4 v0, 0x1
-
-    invoke-static {v0}, Lkotlin/reflect/jvm/internal/impl/types/TypeUtils$SpecialType;->$$$reportNull$$$0(I)V
-
-    const/4 v0, 0x0
-
-    throw v0
+    return-object v0
 .end method

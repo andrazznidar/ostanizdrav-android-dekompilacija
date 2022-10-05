@@ -11,7 +11,7 @@
 .end annotation
 
 .annotation system Ldalvik/annotation/SourceDebugExtension;
-    value = "SMAP\nTestCertificateRepository.kt\nKotlin\n*S Kotlin\n*F\n+ 1 TestCertificateRepository.kt\nde/rki/coronawarnapp/covidcertificate/test/core/TestCertificateRepository\n+ 2 FlowExtensions.kt\nde/rki/coronawarnapp/util/flow/FlowExtensionsKt\n+ 3 Zip.kt\nkotlinx/coroutines/flow/FlowKt__ZipKt\n+ 4 SafeCollector.common.kt\nkotlinx/coroutines/flow/internal/SafeCollector_commonKt\n+ 5 _Collections.kt\nkotlin/collections/CollectionsKt___CollectionsKt\n*L\n1#1,496:1\n67#2,3:497\n66#2:500\n76#2:504\n237#3:501\n239#3:503\n106#4:502\n616#5,12:505\n616#5,12:517\n*S KotlinDebug\n*F\n+ 1 TestCertificateRepository.kt\nde/rki/coronawarnapp/covidcertificate/test/core/TestCertificateRepository\n*L\n79#1:497,3\n79#1:500\n79#1:504\n79#1:501\n79#1:503\n79#1:502\n185#1:505,12\n221#1:517,12\n*E\n"
+    value = "SMAP\nTestCertificateRepository.kt\nKotlin\n*S Kotlin\n*F\n+ 1 TestCertificateRepository.kt\nde/rki/coronawarnapp/covidcertificate/test/core/TestCertificateRepository\n+ 2 FlowExtensions.kt\nde/rki/coronawarnapp/util/flow/FlowExtensionsKt\n+ 3 Zip.kt\nkotlinx/coroutines/flow/FlowKt__ZipKt\n+ 4 SafeCollector.common.kt\nkotlinx/coroutines/flow/internal/SafeCollector_commonKt\n+ 5 Transform.kt\nkotlinx/coroutines/flow/FlowKt__TransformKt\n+ 6 Emitters.kt\nkotlinx/coroutines/flow/FlowKt__EmittersKt\n+ 7 _Collections.kt\nkotlin/collections/CollectionsKt___CollectionsKt\n*L\n1#1,590:1\n67#2,3:591\n66#2:594\n76#2:598\n237#3:595\n239#3:597\n106#4:596\n106#4:601\n47#5:599\n49#5:603\n50#6:600\n55#6:602\n616#7,12:604\n616#7,12:616\n*S KotlinDebug\n*F\n+ 1 TestCertificateRepository.kt\nde/rki/coronawarnapp/covidcertificate/test/core/TestCertificateRepository\n*L\n79#1:591,3\n79#1:594\n79#1:598\n79#1:595\n79#1:597\n79#1:596\n110#1:601\n110#1:599\n110#1:603\n110#1:600\n110#1:602\n202#1:604,12\n237#1:616,12\n*E\n"
 .end annotation
 
 
@@ -52,6 +52,17 @@
 .field public final processor:Lde/rki/coronawarnapp/covidcertificate/test/core/TestCertificateProcessor;
 
 .field public final qrCodeExtractor:Lde/rki/coronawarnapp/covidcertificate/common/certificate/DccQrCodeExtractor;
+
+.field public final recycledCertificates:Lkotlinx/coroutines/flow/Flow;
+    .annotation system Ldalvik/annotation/Signature;
+        value = {
+            "Lkotlinx/coroutines/flow/Flow<",
+            "Ljava/util/Set<",
+            "Lde/rki/coronawarnapp/covidcertificate/test/core/TestCertificate;",
+            ">;>;"
+        }
+    .end annotation
+.end field
 
 .field public final rsaKeyPairGenerator:Lde/rki/coronawarnapp/util/encryption/rsa/RSAKeyPairGenerator;
 
@@ -184,8 +195,6 @@
 
     invoke-direct {v14, v5}, Lkotlinx/coroutines/internal/ContextScope;-><init>(Lkotlin/coroutines/CoroutineContext;)V
 
-    sget v5, Lkotlinx/coroutines/flow/SharingStarted;->$r8$clinit:I
-
     sget-object v16, Lkotlinx/coroutines/flow/SharingStarted$Companion;->Eagerly:Lkotlinx/coroutines/flow/SharingStarted;
 
     new-instance v5, Lde/rki/coronawarnapp/covidcertificate/test/core/TestCertificateRepository$internalData$1;
@@ -244,9 +253,21 @@
 
     invoke-static {v7, v4, v1, v6, v8}, Lde/rki/coronawarnapp/util/flow/FlowExtensionsKt;->shareLatest$default(Lkotlinx/coroutines/flow/Flow;Ljava/lang/String;Lkotlinx/coroutines/CoroutineScope;Lkotlinx/coroutines/flow/SharingStarted;I)Lkotlinx/coroutines/flow/Flow;
 
+    move-result-object v7
+
+    iput-object v7, v0, Lde/rki/coronawarnapp/covidcertificate/test/core/TestCertificateRepository;->certificates:Lkotlinx/coroutines/flow/Flow;
+
+    iget-object v7, v3, Lde/rki/coronawarnapp/util/flow/HotDataFlow;->data:Lkotlinx/coroutines/flow/Flow;
+
+    new-instance v9, Lde/rki/coronawarnapp/covidcertificate/test/core/TestCertificateRepository$special$$inlined$map$1;
+
+    invoke-direct {v9, v7}, Lde/rki/coronawarnapp/covidcertificate/test/core/TestCertificateRepository$special$$inlined$map$1;-><init>(Lkotlinx/coroutines/flow/Flow;)V
+
+    invoke-static {v9, v4, v1, v6, v8}, Lde/rki/coronawarnapp/util/flow/FlowExtensionsKt;->shareLatest$default(Lkotlinx/coroutines/flow/Flow;Ljava/lang/String;Lkotlinx/coroutines/CoroutineScope;Lkotlinx/coroutines/flow/SharingStarted;I)Lkotlinx/coroutines/flow/Flow;
+
     move-result-object v4
 
-    iput-object v4, v0, Lde/rki/coronawarnapp/covidcertificate/test/core/TestCertificateRepository;->certificates:Lkotlinx/coroutines/flow/Flow;
+    iput-object v4, v0, Lde/rki/coronawarnapp/covidcertificate/test/core/TestCertificateRepository;->recycledCertificates:Lkotlinx/coroutines/flow/Flow;
 
     iget-object v3, v3, Lde/rki/coronawarnapp/util/flow/HotDataFlow;->data:Lkotlinx/coroutines/flow/Flow;
 
@@ -297,6 +318,160 @@
     invoke-static {v4, v3}, Lkotlinx/coroutines/flow/FlowKt;->launchIn(Lkotlinx/coroutines/flow/Flow;Lkotlinx/coroutines/CoroutineScope;)Lkotlinx/coroutines/Job;
 
     return-void
+.end method
+
+.method public static final access$updateRecycledAt(Lde/rki/coronawarnapp/covidcertificate/test/core/TestCertificateRepository;Lde/rki/coronawarnapp/covidcertificate/test/core/storage/types/BaseTestCertificateData;Lorg/joda/time/Instant;)Lde/rki/coronawarnapp/covidcertificate/test/core/storage/types/BaseTestCertificateData;
+    .locals 21
+
+    move-object/from16 v0, p1
+
+    invoke-static/range {p0 .. p0}, Ljava/util/Objects;->requireNonNull(Ljava/lang/Object;)Ljava/lang/Object;
+
+    instance-of v1, v0, Lde/rki/coronawarnapp/covidcertificate/test/core/storage/types/PCRCertificateData;
+
+    if-eqz v1, :cond_0
+
+    move-object v2, v0
+
+    check-cast v2, Lde/rki/coronawarnapp/covidcertificate/test/core/storage/types/PCRCertificateData;
+
+    const/4 v3, 0x0
+
+    const/4 v4, 0x0
+
+    const/4 v5, 0x0
+
+    const/4 v6, 0x0
+
+    const/4 v7, 0x0
+
+    const/4 v8, 0x0
+
+    const/4 v9, 0x0
+
+    const/4 v10, 0x0
+
+    const/4 v11, 0x0
+
+    const/4 v12, 0x0
+
+    const/4 v13, 0x0
+
+    const/4 v14, 0x0
+
+    const/4 v15, 0x0
+
+    const/16 v16, 0x0
+
+    const/16 v17, 0x0
+
+    const/16 v18, 0x0
+
+    const v20, 0xffff
+
+    move-object/from16 v19, p2
+
+    invoke-static/range {v2 .. v20}, Lde/rki/coronawarnapp/covidcertificate/test/core/storage/types/PCRCertificateData;->copy$default(Lde/rki/coronawarnapp/covidcertificate/test/core/storage/types/PCRCertificateData;Ljava/lang/String;Ljava/lang/String;Lorg/joda/time/Instant;Lorg/joda/time/Instant;Lorg/joda/time/Instant;Lde/rki/coronawarnapp/covidcertificate/common/certificate/CwaCovidCertificate$State;Lorg/joda/time/Instant;Lorg/joda/time/Instant;Lde/rki/coronawarnapp/util/encryption/rsa/RSAKey$Public;Lde/rki/coronawarnapp/util/encryption/rsa/RSAKey$Private;Lorg/joda/time/Instant;Lokio/ByteString;Lokio/ByteString;Ljava/lang/String;Ljava/lang/String;ZLorg/joda/time/Instant;I)Lde/rki/coronawarnapp/covidcertificate/test/core/storage/types/PCRCertificateData;
+
+    move-result-object v0
+
+    goto :goto_0
+
+    :cond_0
+    instance-of v1, v0, Lde/rki/coronawarnapp/covidcertificate/test/core/storage/types/RACertificateData;
+
+    if-eqz v1, :cond_1
+
+    move-object v2, v0
+
+    check-cast v2, Lde/rki/coronawarnapp/covidcertificate/test/core/storage/types/RACertificateData;
+
+    const/4 v3, 0x0
+
+    const/4 v4, 0x0
+
+    const/4 v5, 0x0
+
+    const/4 v6, 0x0
+
+    const/4 v7, 0x0
+
+    const/4 v8, 0x0
+
+    const/4 v9, 0x0
+
+    const/4 v10, 0x0
+
+    const/4 v11, 0x0
+
+    const/4 v12, 0x0
+
+    const/4 v13, 0x0
+
+    const/4 v14, 0x0
+
+    const/4 v15, 0x0
+
+    const/16 v16, 0x0
+
+    const/16 v17, 0x0
+
+    const/16 v18, 0x0
+
+    const v20, 0xffff
+
+    move-object/from16 v19, p2
+
+    invoke-static/range {v2 .. v20}, Lde/rki/coronawarnapp/covidcertificate/test/core/storage/types/RACertificateData;->copy$default(Lde/rki/coronawarnapp/covidcertificate/test/core/storage/types/RACertificateData;Ljava/lang/String;Ljava/lang/String;Lorg/joda/time/Instant;Lorg/joda/time/Instant;Lorg/joda/time/Instant;Lde/rki/coronawarnapp/covidcertificate/common/certificate/CwaCovidCertificate$State;Lorg/joda/time/Instant;Lorg/joda/time/Instant;Lde/rki/coronawarnapp/util/encryption/rsa/RSAKey$Public;Lde/rki/coronawarnapp/util/encryption/rsa/RSAKey$Private;Lorg/joda/time/Instant;Lokio/ByteString;Lokio/ByteString;Ljava/lang/String;Ljava/lang/String;ZLorg/joda/time/Instant;I)Lde/rki/coronawarnapp/covidcertificate/test/core/storage/types/RACertificateData;
+
+    move-result-object v0
+
+    goto :goto_0
+
+    :cond_1
+    instance-of v1, v0, Lde/rki/coronawarnapp/covidcertificate/test/core/storage/types/GenericTestCertificateData;
+
+    if-eqz v1, :cond_2
+
+    move-object v2, v0
+
+    check-cast v2, Lde/rki/coronawarnapp/covidcertificate/test/core/storage/types/GenericTestCertificateData;
+
+    const/4 v3, 0x0
+
+    const/4 v4, 0x0
+
+    const/4 v5, 0x0
+
+    const/4 v6, 0x0
+
+    const/4 v7, 0x0
+
+    const/4 v8, 0x0
+
+    const/4 v9, 0x0
+
+    const/4 v10, 0x0
+
+    const/4 v11, 0x0
+
+    const/16 v13, 0x1ff
+
+    move-object/from16 v12, p2
+
+    invoke-static/range {v2 .. v13}, Lde/rki/coronawarnapp/covidcertificate/test/core/storage/types/GenericTestCertificateData;->copy$default(Lde/rki/coronawarnapp/covidcertificate/test/core/storage/types/GenericTestCertificateData;Ljava/lang/String;Lorg/joda/time/Instant;Lorg/joda/time/Instant;Lorg/joda/time/Instant;Lde/rki/coronawarnapp/covidcertificate/common/certificate/CwaCovidCertificate$State;Lorg/joda/time/Instant;Lorg/joda/time/Instant;Ljava/lang/String;ZLorg/joda/time/Instant;I)Lde/rki/coronawarnapp/covidcertificate/test/core/storage/types/GenericTestCertificateData;
+
+    move-result-object v0
+
+    :goto_0
+    return-object v0
+
+    :cond_2
+    new-instance v0, Lkotlin/NoWhenBranchMatchedException;
+
+    invoke-direct {v0}, Lkotlin/NoWhenBranchMatchedException;-><init>()V
+
+    throw v0
 .end method
 
 
@@ -877,11 +1052,13 @@
 
     check-cast v1, Lde/rki/coronawarnapp/covidcertificate/test/core/storage/TestCertificateContainer;
 
-    invoke-virtual {v1}, Lde/rki/coronawarnapp/covidcertificate/test/core/storage/TestCertificateContainer;->getCertificateId()Ljava/lang/String;
+    invoke-virtual {v1}, Lde/rki/coronawarnapp/covidcertificate/test/core/storage/TestCertificateContainer;->getQrCodeHash()Ljava/lang/String;
 
     move-result-object v1
 
-    invoke-virtual {p1}, Lde/rki/coronawarnapp/covidcertificate/test/core/qrcode/TestCertificateQRCode;->getUniqueCertificateIdentifier()Ljava/lang/String;
+    invoke-static {p1}, Ljava/util/Objects;->requireNonNull(Ljava/lang/Object;)Ljava/lang/Object;
+
+    invoke-static {p1}, Lde/rki/coronawarnapp/covidcertificate/common/qrcode/DccQrCode$DefaultImpls;->getHash(Lde/rki/coronawarnapp/covidcertificate/common/qrcode/DccQrCode;)Ljava/lang/String;
 
     move-result-object v2
 

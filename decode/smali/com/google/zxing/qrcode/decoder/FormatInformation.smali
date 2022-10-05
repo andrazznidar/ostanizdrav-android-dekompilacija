@@ -10,7 +10,7 @@
 # instance fields
 .field public final dataMask:B
 
-.field public final errorCorrectionLevel:Lcom/google/zxing/qrcode/decoder/ErrorCorrectionLevel;
+.field public final errorCorrectionLevel:I
 
 
 # direct methods
@@ -487,15 +487,15 @@
 
     if-ltz v0, :cond_0
 
-    sget-object v1, Lcom/google/zxing/qrcode/decoder/ErrorCorrectionLevel;->FOR_BITS:[Lcom/google/zxing/qrcode/decoder/ErrorCorrectionLevel;
+    sget-object v1, Lcom/google/zxing/qrcode/decoder/ErrorCorrectionLevel$EnumUnboxingLocalUtility;->FOR_BITS:[I
 
     array-length v2, v1
 
     if-ge v0, v2, :cond_0
 
-    aget-object v0, v1, v0
+    aget v0, v1, v0
 
-    iput-object v0, p0, Lcom/google/zxing/qrcode/decoder/FormatInformation;->errorCorrectionLevel:Lcom/google/zxing/qrcode/decoder/ErrorCorrectionLevel;
+    iput v0, p0, Lcom/google/zxing/qrcode/decoder/FormatInformation;->errorCorrectionLevel:I
 
     and-int/lit8 p1, p1, 0x7
 
@@ -629,9 +629,9 @@
     :cond_0
     check-cast p1, Lcom/google/zxing/qrcode/decoder/FormatInformation;
 
-    iget-object v0, p0, Lcom/google/zxing/qrcode/decoder/FormatInformation;->errorCorrectionLevel:Lcom/google/zxing/qrcode/decoder/ErrorCorrectionLevel;
+    iget v0, p0, Lcom/google/zxing/qrcode/decoder/FormatInformation;->errorCorrectionLevel:I
 
-    iget-object v2, p1, Lcom/google/zxing/qrcode/decoder/FormatInformation;->errorCorrectionLevel:Lcom/google/zxing/qrcode/decoder/ErrorCorrectionLevel;
+    iget v2, p1, Lcom/google/zxing/qrcode/decoder/FormatInformation;->errorCorrectionLevel:I
 
     if-ne v0, v2, :cond_1
 
@@ -652,9 +652,9 @@
 .method public hashCode()I
     .locals 2
 
-    iget-object v0, p0, Lcom/google/zxing/qrcode/decoder/FormatInformation;->errorCorrectionLevel:Lcom/google/zxing/qrcode/decoder/ErrorCorrectionLevel;
+    iget v0, p0, Lcom/google/zxing/qrcode/decoder/FormatInformation;->errorCorrectionLevel:I
 
-    invoke-virtual {v0}, Ljava/lang/Enum;->ordinal()I
+    invoke-static {v0}, Landroidx/camera/camera2/internal/Camera2CameraImpl$InternalState$EnumUnboxingSharedUtility;->ordinal(I)I
 
     move-result v0
 

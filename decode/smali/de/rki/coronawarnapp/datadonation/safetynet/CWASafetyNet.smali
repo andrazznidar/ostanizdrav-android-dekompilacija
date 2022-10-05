@@ -214,7 +214,7 @@
     move v1, v8
 
     :goto_1
-    if-eqz v1, :cond_b
+    if-eqz v1, :cond_c
 
     invoke-interface/range {p1 .. p1}, Lde/rki/coronawarnapp/datadonation/safetynet/DeviceAttestation$Request;->getCheckDeviceTime()Z
 
@@ -293,7 +293,7 @@
 
     sget-object v13, Lde/rki/coronawarnapp/util/HashExtensions;->INSTANCE:Lde/rki/coronawarnapp/util/HashExtensions;
 
-    invoke-static {v13, v11, v9, v7}, Lde/rki/coronawarnapp/util/HashExtensions;->toSHA256$default(Lde/rki/coronawarnapp/util/HashExtensions;[BLde/rki/coronawarnapp/util/HashExtensions$Format;I)Ljava/lang/String;
+    invoke-static {v13, v11, v8, v7}, Lde/rki/coronawarnapp/util/HashExtensions;->toSHA256$default(Lde/rki/coronawarnapp/util/HashExtensions;[BII)Ljava/lang/String;
 
     move-result-object v11
 
@@ -343,7 +343,7 @@
 
     invoke-virtual {v11}, Lokio/ByteString;->toByteArray()[B
 
-    move-result-object v12
+    move-result-object v7
 
     iput-object v10, v2, Lde/rki/coronawarnapp/datadonation/safetynet/CWASafetyNet$attest$1;->L$0:Ljava/lang/Object;
 
@@ -353,7 +353,7 @@
 
     iput v5, v2, Lde/rki/coronawarnapp/datadonation/safetynet/CWASafetyNet$attest$1;->label:I
 
-    invoke-virtual {v4, v12, v2}, Lde/rki/coronawarnapp/datadonation/safetynet/SafetyNetClientWrapper;->attest([BLkotlin/coroutines/Continuation;)Ljava/lang/Object;
+    invoke-virtual {v4, v7, v2}, Lde/rki/coronawarnapp/datadonation/safetynet/SafetyNetClientWrapper;->attest([BLkotlin/coroutines/Continuation;)Ljava/lang/Object;
 
     move-result-object v2
 
@@ -380,17 +380,35 @@
     goto :goto_4
 
     :cond_8
-    sget-object v10, Ltimber/log/Timber;->Forest:Ltimber/log/Timber$Forest;
+    sget-object v7, Ltimber/log/Timber;->Forest:Ltimber/log/Timber$Forest;
 
-    invoke-virtual {v10, v6}, Ltimber/log/Timber$Forest;->tag(Ljava/lang/String;)Ltimber/log/Timber$Tree;
+    invoke-virtual {v7, v6}, Ltimber/log/Timber$Forest;->tag(Ljava/lang/String;)Ltimber/log/Timber$Tree;
 
-    new-array v6, v7, [Ljava/lang/Object;
+    new-instance v6, Ljava/lang/StringBuilder;
 
-    aput-object v5, v6, v8
+    invoke-direct {v6}, Ljava/lang/StringBuilder;-><init>()V
 
-    const-string v5, "SafetyNet Response has an error message: %s"
+    const-string v10, "SafetyNet Response has an error message: "
 
-    invoke-virtual {v10, v5, v6}, Ltimber/log/Timber$Forest;->w(Ljava/lang/String;[Ljava/lang/Object;)V
+    invoke-virtual {v6, v10}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+
+    invoke-virtual {v6, v5}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+
+    invoke-virtual {v6}, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
+
+    move-result-object v6
+
+    new-array v8, v8, [Ljava/lang/Object;
+
+    invoke-virtual {v7, v6, v8}, Ltimber/log/Timber$Forest;->w(Ljava/lang/String;[Ljava/lang/Object;)V
+
+    const-string v6, "internal_error"
+
+    invoke-static {v5, v6}, Lkotlin/jvm/internal/Intrinsics;->areEqual(Ljava/lang/Object;Ljava/lang/Object;)Z
+
+    move-result v5
+
+    if-nez v5, :cond_b
 
     :goto_4
     iget-object v5, v1, Lde/rki/coronawarnapp/datadonation/safetynet/SafetyNetClientWrapper$Report;->nonce:Lokio/ByteString;
@@ -440,7 +458,7 @@
 
     const-string v5, "Our APK name doesn\'t match response ("
 
-    invoke-static {v5, v2, v7, v1, v6}, Landroidx/fragment/app/FragmentContainerView$$ExternalSyntheticOutline0;->m(Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;)Ljava/lang/String;
+    invoke-static {v5, v2, v7, v1, v6}, Landroidx/camera/camera2/internal/compat/CameraDeviceCompatBaseImpl$$ExternalSyntheticOutline0;->m(Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;)Ljava/lang/String;
 
     move-result-object v1
 
@@ -480,6 +498,17 @@
     throw v2
 
     :cond_b
+    new-instance v1, Lde/rki/coronawarnapp/datadonation/safetynet/SafetyNetException;
+
+    sget-object v2, Lde/rki/coronawarnapp/datadonation/safetynet/SafetyNetException$Type;->INTERNAL_ERROR:Lde/rki/coronawarnapp/datadonation/safetynet/SafetyNetException$Type;
+
+    const-string v3, "Internal error occurred. Retry."
+
+    invoke-direct {v1, v2, v3, v9}, Lde/rki/coronawarnapp/datadonation/safetynet/SafetyNetException;-><init>(Lde/rki/coronawarnapp/datadonation/safetynet/SafetyNetException$Type;Ljava/lang/String;Ljava/lang/Throwable;)V
+
+    throw v1
+
+    :cond_c
     new-instance v1, Lde/rki/coronawarnapp/datadonation/safetynet/SafetyNetException;
 
     sget-object v2, Lde/rki/coronawarnapp/datadonation/safetynet/SafetyNetException$Type;->PLAY_SERVICES_VERSION_MISMATCH:Lde/rki/coronawarnapp/datadonation/safetynet/SafetyNetException$Type;

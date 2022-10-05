@@ -6,14 +6,18 @@
 .implements Lkotlin/reflect/jvm/internal/impl/descriptors/PropertySetterDescriptor;
 
 
-# instance fields
-.field public final original:Lkotlin/reflect/jvm/internal/impl/descriptors/PropertySetterDescriptor;
+# static fields
+.field public static final synthetic $assertionsDisabled:Z
 
-.field public parameter:Lkotlin/reflect/jvm/internal/impl/descriptors/ValueParameterDescriptor;
+
+# instance fields
+.field private final original:Lkotlin/reflect/jvm/internal/impl/descriptors/PropertySetterDescriptor;
+
+.field private parameter:Lkotlin/reflect/jvm/internal/impl/descriptors/ValueParameterDescriptor;
 
 
 # direct methods
-.method public static synthetic $$$reportNull$$$0(I)V
+.method private static synthetic $$$reportNull$$$0(I)V
     .locals 6
 
     packed-switch p0, :pswitch_data_0
@@ -252,27 +256,57 @@
 .end method
 
 .method public constructor <init>(Lkotlin/reflect/jvm/internal/impl/descriptors/PropertyDescriptor;Lkotlin/reflect/jvm/internal/impl/descriptors/annotations/Annotations;Lkotlin/reflect/jvm/internal/impl/descriptors/Modality;Lkotlin/reflect/jvm/internal/impl/descriptors/DescriptorVisibility;ZZZLkotlin/reflect/jvm/internal/impl/descriptors/CallableMemberDescriptor$Kind;Lkotlin/reflect/jvm/internal/impl/descriptors/PropertySetterDescriptor;Lkotlin/reflect/jvm/internal/impl/descriptors/SourceElement;)V
-    .locals 12
+    .locals 11
+
+    if-nez p1, :cond_0
 
     const/4 v0, 0x0
 
-    if-eqz p2, :cond_5
+    invoke-static {v0}, Lkotlin/reflect/jvm/internal/impl/descriptors/impl/PropertySetterDescriptorImpl;->$$$reportNull$$$0(I)V
 
-    if-eqz p3, :cond_4
+    :cond_0
+    if-nez p2, :cond_1
 
-    if-eqz p4, :cond_3
+    const/4 v0, 0x1
 
-    if-eqz p8, :cond_2
+    invoke-static {v0}, Lkotlin/reflect/jvm/internal/impl/descriptors/impl/PropertySetterDescriptorImpl;->$$$reportNull$$$0(I)V
 
-    if-eqz p10, :cond_1
+    :cond_1
+    if-nez p3, :cond_2
 
+    const/4 v0, 0x2
+
+    invoke-static {v0}, Lkotlin/reflect/jvm/internal/impl/descriptors/impl/PropertySetterDescriptorImpl;->$$$reportNull$$$0(I)V
+
+    :cond_2
+    if-nez p4, :cond_3
+
+    const/4 v0, 0x3
+
+    invoke-static {v0}, Lkotlin/reflect/jvm/internal/impl/descriptors/impl/PropertySetterDescriptorImpl;->$$$reportNull$$$0(I)V
+
+    :cond_3
+    if-nez p8, :cond_4
+
+    const/4 v0, 0x4
+
+    invoke-static {v0}, Lkotlin/reflect/jvm/internal/impl/descriptors/impl/PropertySetterDescriptorImpl;->$$$reportNull$$$0(I)V
+
+    :cond_4
+    if-nez p10, :cond_5
+
+    const/4 v0, 0x5
+
+    invoke-static {v0}, Lkotlin/reflect/jvm/internal/impl/descriptors/impl/PropertySetterDescriptorImpl;->$$$reportNull$$$0(I)V
+
+    :cond_5
     const-string v0, "<set-"
 
     invoke-static {v0}, Landroid/support/v4/media/RatingCompat$$ExternalSyntheticOutline0;->m(Ljava/lang/String;)Ljava/lang/StringBuilder;
 
     move-result-object v0
 
-    invoke-interface {p1}, Lkotlin/reflect/jvm/internal/impl/descriptors/DeclarationDescriptor;->getName()Lkotlin/reflect/jvm/internal/impl/name/Name;
+    invoke-interface {p1}, Lkotlin/reflect/jvm/internal/impl/descriptors/Named;->getName()Lkotlin/reflect/jvm/internal/impl/name/Name;
 
     move-result-object v1
 
@@ -288,31 +322,31 @@
 
     invoke-static {v0}, Lkotlin/reflect/jvm/internal/impl/name/Name;->special(Ljava/lang/String;)Lkotlin/reflect/jvm/internal/impl/name/Name;
 
-    move-result-object v6
+    move-result-object v5
 
-    move-object v1, p0
+    move-object v0, p0
 
-    move-object v2, p3
+    move-object v1, p3
 
-    move-object/from16 v3, p4
+    move-object v2, p4
 
-    move-object v4, p1
+    move-object v3, p1
 
-    move-object v5, p2
+    move-object v4, p2
 
-    move/from16 v7, p5
+    move/from16 v6, p5
 
-    move/from16 v8, p6
+    move/from16 v7, p6
 
-    move/from16 v9, p7
+    move/from16 v8, p7
 
-    move-object/from16 v10, p8
+    move-object/from16 v9, p8
 
-    move-object/from16 v11, p10
+    move-object/from16 v10, p10
 
-    invoke-direct/range {v1 .. v11}, Lkotlin/reflect/jvm/internal/impl/descriptors/impl/PropertyAccessorDescriptorImpl;-><init>(Lkotlin/reflect/jvm/internal/impl/descriptors/Modality;Lkotlin/reflect/jvm/internal/impl/descriptors/DescriptorVisibility;Lkotlin/reflect/jvm/internal/impl/descriptors/PropertyDescriptor;Lkotlin/reflect/jvm/internal/impl/descriptors/annotations/Annotations;Lkotlin/reflect/jvm/internal/impl/name/Name;ZZZLkotlin/reflect/jvm/internal/impl/descriptors/CallableMemberDescriptor$Kind;Lkotlin/reflect/jvm/internal/impl/descriptors/SourceElement;)V
+    invoke-direct/range {v0 .. v10}, Lkotlin/reflect/jvm/internal/impl/descriptors/impl/PropertyAccessorDescriptorImpl;-><init>(Lkotlin/reflect/jvm/internal/impl/descriptors/Modality;Lkotlin/reflect/jvm/internal/impl/descriptors/DescriptorVisibility;Lkotlin/reflect/jvm/internal/impl/descriptors/PropertyDescriptor;Lkotlin/reflect/jvm/internal/impl/descriptors/annotations/Annotations;Lkotlin/reflect/jvm/internal/impl/name/Name;ZZZLkotlin/reflect/jvm/internal/impl/descriptors/CallableMemberDescriptor$Kind;Lkotlin/reflect/jvm/internal/impl/descriptors/SourceElement;)V
 
-    if-eqz p9, :cond_0
+    if-eqz p9, :cond_6
 
     move-object v1, p0
 
@@ -320,7 +354,7 @@
 
     goto :goto_0
 
-    :cond_0
+    :cond_6
     move-object v0, p0
 
     move-object v1, v0
@@ -329,62 +363,32 @@
     iput-object v0, v1, Lkotlin/reflect/jvm/internal/impl/descriptors/impl/PropertySetterDescriptorImpl;->original:Lkotlin/reflect/jvm/internal/impl/descriptors/PropertySetterDescriptor;
 
     return-void
-
-    :cond_1
-    move-object v1, p0
-
-    const/4 v2, 0x5
-
-    invoke-static {v2}, Lkotlin/reflect/jvm/internal/impl/descriptors/impl/PropertySetterDescriptorImpl;->$$$reportNull$$$0(I)V
-
-    throw v0
-
-    :cond_2
-    move-object v1, p0
-
-    const/4 v2, 0x4
-
-    invoke-static {v2}, Lkotlin/reflect/jvm/internal/impl/descriptors/impl/PropertySetterDescriptorImpl;->$$$reportNull$$$0(I)V
-
-    throw v0
-
-    :cond_3
-    move-object v1, p0
-
-    const/4 v2, 0x3
-
-    invoke-static {v2}, Lkotlin/reflect/jvm/internal/impl/descriptors/impl/PropertySetterDescriptorImpl;->$$$reportNull$$$0(I)V
-
-    throw v0
-
-    :cond_4
-    move-object v1, p0
-
-    const/4 v2, 0x2
-
-    invoke-static {v2}, Lkotlin/reflect/jvm/internal/impl/descriptors/impl/PropertySetterDescriptorImpl;->$$$reportNull$$$0(I)V
-
-    throw v0
-
-    :cond_5
-    move-object v1, p0
-
-    const/4 v2, 0x1
-
-    invoke-static {v2}, Lkotlin/reflect/jvm/internal/impl/descriptors/impl/PropertySetterDescriptorImpl;->$$$reportNull$$$0(I)V
-
-    throw v0
 .end method
 
 .method public static createSetterParameter(Lkotlin/reflect/jvm/internal/impl/descriptors/PropertySetterDescriptor;Lkotlin/reflect/jvm/internal/impl/types/KotlinType;Lkotlin/reflect/jvm/internal/impl/descriptors/annotations/Annotations;)Lkotlin/reflect/jvm/internal/impl/descriptors/impl/ValueParameterDescriptorImpl;
     .locals 13
 
-    const/4 v0, 0x0
+    if-nez p0, :cond_0
 
-    if-eqz p1, :cond_1
+    const/4 v0, 0x7
 
-    if-eqz p2, :cond_0
+    invoke-static {v0}, Lkotlin/reflect/jvm/internal/impl/descriptors/impl/PropertySetterDescriptorImpl;->$$$reportNull$$$0(I)V
 
+    :cond_0
+    if-nez p1, :cond_1
+
+    const/16 v0, 0x8
+
+    invoke-static {v0}, Lkotlin/reflect/jvm/internal/impl/descriptors/impl/PropertySetterDescriptorImpl;->$$$reportNull$$$0(I)V
+
+    :cond_1
+    if-nez p2, :cond_2
+
+    const/16 v0, 0x9
+
+    invoke-static {v0}, Lkotlin/reflect/jvm/internal/impl/descriptors/impl/PropertySetterDescriptorImpl;->$$$reportNull$$$0(I)V
+
+    :cond_2
     new-instance v0, Lkotlin/reflect/jvm/internal/impl/descriptors/impl/ValueParameterDescriptorImpl;
 
     const/4 v3, 0x0
@@ -418,20 +422,6 @@
     invoke-direct/range {v1 .. v12}, Lkotlin/reflect/jvm/internal/impl/descriptors/impl/ValueParameterDescriptorImpl;-><init>(Lkotlin/reflect/jvm/internal/impl/descriptors/CallableDescriptor;Lkotlin/reflect/jvm/internal/impl/descriptors/ValueParameterDescriptor;ILkotlin/reflect/jvm/internal/impl/descriptors/annotations/Annotations;Lkotlin/reflect/jvm/internal/impl/name/Name;Lkotlin/reflect/jvm/internal/impl/types/KotlinType;ZZZLkotlin/reflect/jvm/internal/impl/types/KotlinType;Lkotlin/reflect/jvm/internal/impl/descriptors/SourceElement;)V
 
     return-object v0
-
-    :cond_0
-    const/16 p0, 0x9
-
-    invoke-static {p0}, Lkotlin/reflect/jvm/internal/impl/descriptors/impl/PropertySetterDescriptorImpl;->$$$reportNull$$$0(I)V
-
-    throw v0
-
-    :cond_1
-    const/16 p0, 0x8
-
-    invoke-static {p0}, Lkotlin/reflect/jvm/internal/impl/descriptors/impl/PropertySetterDescriptorImpl;->$$$reportNull$$$0(I)V
-
-    throw v0
 .end method
 
 
@@ -518,26 +508,22 @@
 .end method
 
 .method public getOriginal()Lkotlin/reflect/jvm/internal/impl/descriptors/PropertySetterDescriptor;
-    .locals 1
+    .locals 2
 
     iget-object v0, p0, Lkotlin/reflect/jvm/internal/impl/descriptors/impl/PropertySetterDescriptorImpl;->original:Lkotlin/reflect/jvm/internal/impl/descriptors/PropertySetterDescriptor;
 
-    if-eqz v0, :cond_0
+    if-nez v0, :cond_0
 
-    return-object v0
+    const/16 v1, 0xd
+
+    invoke-static {v1}, Lkotlin/reflect/jvm/internal/impl/descriptors/impl/PropertySetterDescriptorImpl;->$$$reportNull$$$0(I)V
 
     :cond_0
-    const/16 v0, 0xd
-
-    invoke-static {v0}, Lkotlin/reflect/jvm/internal/impl/descriptors/impl/PropertySetterDescriptorImpl;->$$$reportNull$$$0(I)V
-
-    const/4 v0, 0x0
-
-    throw v0
+    return-object v0
 .end method
 
 .method public getOverriddenDescriptors()Ljava/util/Collection;
-    .locals 1
+    .locals 2
     .annotation system Ldalvik/annotation/Signature;
         value = {
             "()",
@@ -550,15 +536,22 @@
 
     const/4 v0, 0x0
 
-    invoke-virtual {p0, v0}, Lkotlin/reflect/jvm/internal/impl/descriptors/impl/PropertyAccessorDescriptorImpl;->getOverriddenDescriptors(Z)Ljava/util/Collection;
+    invoke-super {p0, v0}, Lkotlin/reflect/jvm/internal/impl/descriptors/impl/PropertyAccessorDescriptorImpl;->getOverriddenDescriptors(Z)Ljava/util/Collection;
 
     move-result-object v0
 
+    if-nez v0, :cond_0
+
+    const/16 v1, 0xa
+
+    invoke-static {v1}, Lkotlin/reflect/jvm/internal/impl/descriptors/impl/PropertySetterDescriptorImpl;->$$$reportNull$$$0(I)V
+
+    :cond_0
     return-object v0
 .end method
 
 .method public getReturnType()Lkotlin/reflect/jvm/internal/impl/types/KotlinType;
-    .locals 1
+    .locals 2
 
     invoke-static {p0}, Lkotlin/reflect/jvm/internal/impl/resolve/descriptorUtil/DescriptorUtilsKt;->getBuiltIns(Lkotlin/reflect/jvm/internal/impl/descriptors/DeclarationDescriptor;)Lkotlin/reflect/jvm/internal/impl/builtins/KotlinBuiltIns;
 
@@ -568,22 +561,18 @@
 
     move-result-object v0
 
-    if-eqz v0, :cond_0
+    if-nez v0, :cond_0
 
-    return-object v0
+    const/16 v1, 0xc
+
+    invoke-static {v1}, Lkotlin/reflect/jvm/internal/impl/descriptors/impl/PropertySetterDescriptorImpl;->$$$reportNull$$$0(I)V
 
     :cond_0
-    const/16 v0, 0xc
-
-    invoke-static {v0}, Lkotlin/reflect/jvm/internal/impl/descriptors/impl/PropertySetterDescriptorImpl;->$$$reportNull$$$0(I)V
-
-    const/4 v0, 0x0
-
-    throw v0
+    return-object v0
 .end method
 
 .method public getValueParameters()Ljava/util/List;
-    .locals 1
+    .locals 2
     .annotation system Ldalvik/annotation/Signature;
         value = {
             "()",
@@ -601,18 +590,14 @@
 
     move-result-object v0
 
-    if-eqz v0, :cond_0
+    if-nez v0, :cond_0
 
-    return-object v0
+    const/16 v1, 0xb
+
+    invoke-static {v1}, Lkotlin/reflect/jvm/internal/impl/descriptors/impl/PropertySetterDescriptorImpl;->$$$reportNull$$$0(I)V
 
     :cond_0
-    const/16 v0, 0xb
-
-    invoke-static {v0}, Lkotlin/reflect/jvm/internal/impl/descriptors/impl/PropertySetterDescriptorImpl;->$$$reportNull$$$0(I)V
-
-    const/4 v0, 0x0
-
-    throw v0
+    return-object v0
 
     :cond_1
     new-instance v0, Ljava/lang/IllegalStateException;
@@ -623,20 +608,16 @@
 .end method
 
 .method public initialize(Lkotlin/reflect/jvm/internal/impl/descriptors/ValueParameterDescriptor;)V
-    .locals 0
+    .locals 1
 
-    if-eqz p1, :cond_0
+    if-nez p1, :cond_0
 
+    const/4 v0, 0x6
+
+    invoke-static {v0}, Lkotlin/reflect/jvm/internal/impl/descriptors/impl/PropertySetterDescriptorImpl;->$$$reportNull$$$0(I)V
+
+    :cond_0
     iput-object p1, p0, Lkotlin/reflect/jvm/internal/impl/descriptors/impl/PropertySetterDescriptorImpl;->parameter:Lkotlin/reflect/jvm/internal/impl/descriptors/ValueParameterDescriptor;
 
     return-void
-
-    :cond_0
-    const/4 p1, 0x6
-
-    invoke-static {p1}, Lkotlin/reflect/jvm/internal/impl/descriptors/impl/PropertySetterDescriptorImpl;->$$$reportNull$$$0(I)V
-
-    const/4 p1, 0x0
-
-    throw p1
 .end method

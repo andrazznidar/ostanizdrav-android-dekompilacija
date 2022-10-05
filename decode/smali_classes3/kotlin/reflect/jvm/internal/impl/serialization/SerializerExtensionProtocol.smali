@@ -4,7 +4,7 @@
 
 
 # instance fields
-.field public final classAnnotation:Lkotlin/reflect/jvm/internal/impl/protobuf/GeneratedMessageLite$GeneratedExtension;
+.field private final classAnnotation:Lkotlin/reflect/jvm/internal/impl/protobuf/GeneratedMessageLite$GeneratedExtension;
     .annotation system Ldalvik/annotation/Signature;
         value = {
             "Lkotlin/reflect/jvm/internal/impl/protobuf/GeneratedMessageLite$GeneratedExtension<",
@@ -16,7 +16,7 @@
     .end annotation
 .end field
 
-.field public final compileTimeValue:Lkotlin/reflect/jvm/internal/impl/protobuf/GeneratedMessageLite$GeneratedExtension;
+.field private final compileTimeValue:Lkotlin/reflect/jvm/internal/impl/protobuf/GeneratedMessageLite$GeneratedExtension;
     .annotation system Ldalvik/annotation/Signature;
         value = {
             "Lkotlin/reflect/jvm/internal/impl/protobuf/GeneratedMessageLite$GeneratedExtension<",
@@ -27,7 +27,7 @@
     .end annotation
 .end field
 
-.field public final constructorAnnotation:Lkotlin/reflect/jvm/internal/impl/protobuf/GeneratedMessageLite$GeneratedExtension;
+.field private final constructorAnnotation:Lkotlin/reflect/jvm/internal/impl/protobuf/GeneratedMessageLite$GeneratedExtension;
     .annotation system Ldalvik/annotation/Signature;
         value = {
             "Lkotlin/reflect/jvm/internal/impl/protobuf/GeneratedMessageLite$GeneratedExtension<",
@@ -39,7 +39,7 @@
     .end annotation
 .end field
 
-.field public final enumEntryAnnotation:Lkotlin/reflect/jvm/internal/impl/protobuf/GeneratedMessageLite$GeneratedExtension;
+.field private final enumEntryAnnotation:Lkotlin/reflect/jvm/internal/impl/protobuf/GeneratedMessageLite$GeneratedExtension;
     .annotation system Ldalvik/annotation/Signature;
         value = {
             "Lkotlin/reflect/jvm/internal/impl/protobuf/GeneratedMessageLite$GeneratedExtension<",
@@ -51,9 +51,9 @@
     .end annotation
 .end field
 
-.field public final extensionRegistry:Lkotlin/reflect/jvm/internal/impl/protobuf/ExtensionRegistryLite;
+.field private final extensionRegistry:Lkotlin/reflect/jvm/internal/impl/protobuf/ExtensionRegistryLite;
 
-.field public final functionAnnotation:Lkotlin/reflect/jvm/internal/impl/protobuf/GeneratedMessageLite$GeneratedExtension;
+.field private final functionAnnotation:Lkotlin/reflect/jvm/internal/impl/protobuf/GeneratedMessageLite$GeneratedExtension;
     .annotation system Ldalvik/annotation/Signature;
         value = {
             "Lkotlin/reflect/jvm/internal/impl/protobuf/GeneratedMessageLite$GeneratedExtension<",
@@ -65,7 +65,18 @@
     .end annotation
 .end field
 
-.field public final parameterAnnotation:Lkotlin/reflect/jvm/internal/impl/protobuf/GeneratedMessageLite$GeneratedExtension;
+.field private final packageFqName:Lkotlin/reflect/jvm/internal/impl/protobuf/GeneratedMessageLite$GeneratedExtension;
+    .annotation system Ldalvik/annotation/Signature;
+        value = {
+            "Lkotlin/reflect/jvm/internal/impl/protobuf/GeneratedMessageLite$GeneratedExtension<",
+            "Lkotlin/reflect/jvm/internal/impl/metadata/ProtoBuf$Package;",
+            "Ljava/lang/Integer;",
+            ">;"
+        }
+    .end annotation
+.end field
+
+.field private final parameterAnnotation:Lkotlin/reflect/jvm/internal/impl/protobuf/GeneratedMessageLite$GeneratedExtension;
     .annotation system Ldalvik/annotation/Signature;
         value = {
             "Lkotlin/reflect/jvm/internal/impl/protobuf/GeneratedMessageLite$GeneratedExtension<",
@@ -77,7 +88,7 @@
     .end annotation
 .end field
 
-.field public final propertyAnnotation:Lkotlin/reflect/jvm/internal/impl/protobuf/GeneratedMessageLite$GeneratedExtension;
+.field private final propertyAnnotation:Lkotlin/reflect/jvm/internal/impl/protobuf/GeneratedMessageLite$GeneratedExtension;
     .annotation system Ldalvik/annotation/Signature;
         value = {
             "Lkotlin/reflect/jvm/internal/impl/protobuf/GeneratedMessageLite$GeneratedExtension<",
@@ -89,7 +100,7 @@
     .end annotation
 .end field
 
-.field public final propertyGetterAnnotation:Lkotlin/reflect/jvm/internal/impl/protobuf/GeneratedMessageLite$GeneratedExtension;
+.field private final propertyGetterAnnotation:Lkotlin/reflect/jvm/internal/impl/protobuf/GeneratedMessageLite$GeneratedExtension;
     .annotation system Ldalvik/annotation/Signature;
         value = {
             "Lkotlin/reflect/jvm/internal/impl/protobuf/GeneratedMessageLite$GeneratedExtension<",
@@ -101,7 +112,7 @@
     .end annotation
 .end field
 
-.field public final propertySetterAnnotation:Lkotlin/reflect/jvm/internal/impl/protobuf/GeneratedMessageLite$GeneratedExtension;
+.field private final propertySetterAnnotation:Lkotlin/reflect/jvm/internal/impl/protobuf/GeneratedMessageLite$GeneratedExtension;
     .annotation system Ldalvik/annotation/Signature;
         value = {
             "Lkotlin/reflect/jvm/internal/impl/protobuf/GeneratedMessageLite$GeneratedExtension<",
@@ -113,7 +124,7 @@
     .end annotation
 .end field
 
-.field public final typeAnnotation:Lkotlin/reflect/jvm/internal/impl/protobuf/GeneratedMessageLite$GeneratedExtension;
+.field private final typeAnnotation:Lkotlin/reflect/jvm/internal/impl/protobuf/GeneratedMessageLite$GeneratedExtension;
     .annotation system Ldalvik/annotation/Signature;
         value = {
             "Lkotlin/reflect/jvm/internal/impl/protobuf/GeneratedMessageLite$GeneratedExtension<",
@@ -125,7 +136,7 @@
     .end annotation
 .end field
 
-.field public final typeParameterAnnotation:Lkotlin/reflect/jvm/internal/impl/protobuf/GeneratedMessageLite$GeneratedExtension;
+.field private final typeParameterAnnotation:Lkotlin/reflect/jvm/internal/impl/protobuf/GeneratedMessageLite$GeneratedExtension;
     .annotation system Ldalvik/annotation/Signature;
         value = {
             "Lkotlin/reflect/jvm/internal/impl/protobuf/GeneratedMessageLite$GeneratedExtension<",
@@ -140,7 +151,7 @@
 
 # direct methods
 .method public constructor <init>(Lkotlin/reflect/jvm/internal/impl/protobuf/ExtensionRegistryLite;Lkotlin/reflect/jvm/internal/impl/protobuf/GeneratedMessageLite$GeneratedExtension;Lkotlin/reflect/jvm/internal/impl/protobuf/GeneratedMessageLite$GeneratedExtension;Lkotlin/reflect/jvm/internal/impl/protobuf/GeneratedMessageLite$GeneratedExtension;Lkotlin/reflect/jvm/internal/impl/protobuf/GeneratedMessageLite$GeneratedExtension;Lkotlin/reflect/jvm/internal/impl/protobuf/GeneratedMessageLite$GeneratedExtension;Lkotlin/reflect/jvm/internal/impl/protobuf/GeneratedMessageLite$GeneratedExtension;Lkotlin/reflect/jvm/internal/impl/protobuf/GeneratedMessageLite$GeneratedExtension;Lkotlin/reflect/jvm/internal/impl/protobuf/GeneratedMessageLite$GeneratedExtension;Lkotlin/reflect/jvm/internal/impl/protobuf/GeneratedMessageLite$GeneratedExtension;Lkotlin/reflect/jvm/internal/impl/protobuf/GeneratedMessageLite$GeneratedExtension;Lkotlin/reflect/jvm/internal/impl/protobuf/GeneratedMessageLite$GeneratedExtension;Lkotlin/reflect/jvm/internal/impl/protobuf/GeneratedMessageLite$GeneratedExtension;)V
-    .locals 0
+    .locals 1
     .annotation system Ldalvik/annotation/Signature;
         value = {
             "(",
@@ -206,9 +217,63 @@
         }
     .end annotation
 
+    const-string v0, "extensionRegistry"
+
+    invoke-static {p1, v0}, Lkotlin/jvm/internal/Intrinsics;->checkNotNullParameter(Ljava/lang/Object;Ljava/lang/String;)V
+
+    const-string v0, "packageFqName"
+
+    invoke-static {p2, v0}, Lkotlin/jvm/internal/Intrinsics;->checkNotNullParameter(Ljava/lang/Object;Ljava/lang/String;)V
+
+    const-string v0, "constructorAnnotation"
+
+    invoke-static {p3, v0}, Lkotlin/jvm/internal/Intrinsics;->checkNotNullParameter(Ljava/lang/Object;Ljava/lang/String;)V
+
+    const-string v0, "classAnnotation"
+
+    invoke-static {p4, v0}, Lkotlin/jvm/internal/Intrinsics;->checkNotNullParameter(Ljava/lang/Object;Ljava/lang/String;)V
+
+    const-string v0, "functionAnnotation"
+
+    invoke-static {p5, v0}, Lkotlin/jvm/internal/Intrinsics;->checkNotNullParameter(Ljava/lang/Object;Ljava/lang/String;)V
+
+    const-string v0, "propertyAnnotation"
+
+    invoke-static {p6, v0}, Lkotlin/jvm/internal/Intrinsics;->checkNotNullParameter(Ljava/lang/Object;Ljava/lang/String;)V
+
+    const-string v0, "propertyGetterAnnotation"
+
+    invoke-static {p7, v0}, Lkotlin/jvm/internal/Intrinsics;->checkNotNullParameter(Ljava/lang/Object;Ljava/lang/String;)V
+
+    const-string v0, "propertySetterAnnotation"
+
+    invoke-static {p8, v0}, Lkotlin/jvm/internal/Intrinsics;->checkNotNullParameter(Ljava/lang/Object;Ljava/lang/String;)V
+
+    const-string v0, "enumEntryAnnotation"
+
+    invoke-static {p9, v0}, Lkotlin/jvm/internal/Intrinsics;->checkNotNullParameter(Ljava/lang/Object;Ljava/lang/String;)V
+
+    const-string v0, "compileTimeValue"
+
+    invoke-static {p10, v0}, Lkotlin/jvm/internal/Intrinsics;->checkNotNullParameter(Ljava/lang/Object;Ljava/lang/String;)V
+
+    const-string v0, "parameterAnnotation"
+
+    invoke-static {p11, v0}, Lkotlin/jvm/internal/Intrinsics;->checkNotNullParameter(Ljava/lang/Object;Ljava/lang/String;)V
+
+    const-string v0, "typeAnnotation"
+
+    invoke-static {p12, v0}, Lkotlin/jvm/internal/Intrinsics;->checkNotNullParameter(Ljava/lang/Object;Ljava/lang/String;)V
+
+    const-string v0, "typeParameterAnnotation"
+
+    invoke-static {p13, v0}, Lkotlin/jvm/internal/Intrinsics;->checkNotNullParameter(Ljava/lang/Object;Ljava/lang/String;)V
+
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
     iput-object p1, p0, Lkotlin/reflect/jvm/internal/impl/serialization/SerializerExtensionProtocol;->extensionRegistry:Lkotlin/reflect/jvm/internal/impl/protobuf/ExtensionRegistryLite;
+
+    iput-object p2, p0, Lkotlin/reflect/jvm/internal/impl/serialization/SerializerExtensionProtocol;->packageFqName:Lkotlin/reflect/jvm/internal/impl/protobuf/GeneratedMessageLite$GeneratedExtension;
 
     iput-object p3, p0, Lkotlin/reflect/jvm/internal/impl/serialization/SerializerExtensionProtocol;->constructorAnnotation:Lkotlin/reflect/jvm/internal/impl/protobuf/GeneratedMessageLite$GeneratedExtension;
 
@@ -233,4 +298,211 @@
     iput-object p13, p0, Lkotlin/reflect/jvm/internal/impl/serialization/SerializerExtensionProtocol;->typeParameterAnnotation:Lkotlin/reflect/jvm/internal/impl/protobuf/GeneratedMessageLite$GeneratedExtension;
 
     return-void
+.end method
+
+
+# virtual methods
+.method public final getClassAnnotation()Lkotlin/reflect/jvm/internal/impl/protobuf/GeneratedMessageLite$GeneratedExtension;
+    .locals 1
+    .annotation system Ldalvik/annotation/Signature;
+        value = {
+            "()",
+            "Lkotlin/reflect/jvm/internal/impl/protobuf/GeneratedMessageLite$GeneratedExtension<",
+            "Lkotlin/reflect/jvm/internal/impl/metadata/ProtoBuf$Class;",
+            "Ljava/util/List<",
+            "Lkotlin/reflect/jvm/internal/impl/metadata/ProtoBuf$Annotation;",
+            ">;>;"
+        }
+    .end annotation
+
+    iget-object v0, p0, Lkotlin/reflect/jvm/internal/impl/serialization/SerializerExtensionProtocol;->classAnnotation:Lkotlin/reflect/jvm/internal/impl/protobuf/GeneratedMessageLite$GeneratedExtension;
+
+    return-object v0
+.end method
+
+.method public final getCompileTimeValue()Lkotlin/reflect/jvm/internal/impl/protobuf/GeneratedMessageLite$GeneratedExtension;
+    .locals 1
+    .annotation system Ldalvik/annotation/Signature;
+        value = {
+            "()",
+            "Lkotlin/reflect/jvm/internal/impl/protobuf/GeneratedMessageLite$GeneratedExtension<",
+            "Lkotlin/reflect/jvm/internal/impl/metadata/ProtoBuf$Property;",
+            "Lkotlin/reflect/jvm/internal/impl/metadata/ProtoBuf$Annotation$Argument$Value;",
+            ">;"
+        }
+    .end annotation
+
+    iget-object v0, p0, Lkotlin/reflect/jvm/internal/impl/serialization/SerializerExtensionProtocol;->compileTimeValue:Lkotlin/reflect/jvm/internal/impl/protobuf/GeneratedMessageLite$GeneratedExtension;
+
+    return-object v0
+.end method
+
+.method public final getConstructorAnnotation()Lkotlin/reflect/jvm/internal/impl/protobuf/GeneratedMessageLite$GeneratedExtension;
+    .locals 1
+    .annotation system Ldalvik/annotation/Signature;
+        value = {
+            "()",
+            "Lkotlin/reflect/jvm/internal/impl/protobuf/GeneratedMessageLite$GeneratedExtension<",
+            "Lkotlin/reflect/jvm/internal/impl/metadata/ProtoBuf$Constructor;",
+            "Ljava/util/List<",
+            "Lkotlin/reflect/jvm/internal/impl/metadata/ProtoBuf$Annotation;",
+            ">;>;"
+        }
+    .end annotation
+
+    iget-object v0, p0, Lkotlin/reflect/jvm/internal/impl/serialization/SerializerExtensionProtocol;->constructorAnnotation:Lkotlin/reflect/jvm/internal/impl/protobuf/GeneratedMessageLite$GeneratedExtension;
+
+    return-object v0
+.end method
+
+.method public final getEnumEntryAnnotation()Lkotlin/reflect/jvm/internal/impl/protobuf/GeneratedMessageLite$GeneratedExtension;
+    .locals 1
+    .annotation system Ldalvik/annotation/Signature;
+        value = {
+            "()",
+            "Lkotlin/reflect/jvm/internal/impl/protobuf/GeneratedMessageLite$GeneratedExtension<",
+            "Lkotlin/reflect/jvm/internal/impl/metadata/ProtoBuf$EnumEntry;",
+            "Ljava/util/List<",
+            "Lkotlin/reflect/jvm/internal/impl/metadata/ProtoBuf$Annotation;",
+            ">;>;"
+        }
+    .end annotation
+
+    iget-object v0, p0, Lkotlin/reflect/jvm/internal/impl/serialization/SerializerExtensionProtocol;->enumEntryAnnotation:Lkotlin/reflect/jvm/internal/impl/protobuf/GeneratedMessageLite$GeneratedExtension;
+
+    return-object v0
+.end method
+
+.method public final getExtensionRegistry()Lkotlin/reflect/jvm/internal/impl/protobuf/ExtensionRegistryLite;
+    .locals 1
+
+    iget-object v0, p0, Lkotlin/reflect/jvm/internal/impl/serialization/SerializerExtensionProtocol;->extensionRegistry:Lkotlin/reflect/jvm/internal/impl/protobuf/ExtensionRegistryLite;
+
+    return-object v0
+.end method
+
+.method public final getFunctionAnnotation()Lkotlin/reflect/jvm/internal/impl/protobuf/GeneratedMessageLite$GeneratedExtension;
+    .locals 1
+    .annotation system Ldalvik/annotation/Signature;
+        value = {
+            "()",
+            "Lkotlin/reflect/jvm/internal/impl/protobuf/GeneratedMessageLite$GeneratedExtension<",
+            "Lkotlin/reflect/jvm/internal/impl/metadata/ProtoBuf$Function;",
+            "Ljava/util/List<",
+            "Lkotlin/reflect/jvm/internal/impl/metadata/ProtoBuf$Annotation;",
+            ">;>;"
+        }
+    .end annotation
+
+    iget-object v0, p0, Lkotlin/reflect/jvm/internal/impl/serialization/SerializerExtensionProtocol;->functionAnnotation:Lkotlin/reflect/jvm/internal/impl/protobuf/GeneratedMessageLite$GeneratedExtension;
+
+    return-object v0
+.end method
+
+.method public final getParameterAnnotation()Lkotlin/reflect/jvm/internal/impl/protobuf/GeneratedMessageLite$GeneratedExtension;
+    .locals 1
+    .annotation system Ldalvik/annotation/Signature;
+        value = {
+            "()",
+            "Lkotlin/reflect/jvm/internal/impl/protobuf/GeneratedMessageLite$GeneratedExtension<",
+            "Lkotlin/reflect/jvm/internal/impl/metadata/ProtoBuf$ValueParameter;",
+            "Ljava/util/List<",
+            "Lkotlin/reflect/jvm/internal/impl/metadata/ProtoBuf$Annotation;",
+            ">;>;"
+        }
+    .end annotation
+
+    iget-object v0, p0, Lkotlin/reflect/jvm/internal/impl/serialization/SerializerExtensionProtocol;->parameterAnnotation:Lkotlin/reflect/jvm/internal/impl/protobuf/GeneratedMessageLite$GeneratedExtension;
+
+    return-object v0
+.end method
+
+.method public final getPropertyAnnotation()Lkotlin/reflect/jvm/internal/impl/protobuf/GeneratedMessageLite$GeneratedExtension;
+    .locals 1
+    .annotation system Ldalvik/annotation/Signature;
+        value = {
+            "()",
+            "Lkotlin/reflect/jvm/internal/impl/protobuf/GeneratedMessageLite$GeneratedExtension<",
+            "Lkotlin/reflect/jvm/internal/impl/metadata/ProtoBuf$Property;",
+            "Ljava/util/List<",
+            "Lkotlin/reflect/jvm/internal/impl/metadata/ProtoBuf$Annotation;",
+            ">;>;"
+        }
+    .end annotation
+
+    iget-object v0, p0, Lkotlin/reflect/jvm/internal/impl/serialization/SerializerExtensionProtocol;->propertyAnnotation:Lkotlin/reflect/jvm/internal/impl/protobuf/GeneratedMessageLite$GeneratedExtension;
+
+    return-object v0
+.end method
+
+.method public final getPropertyGetterAnnotation()Lkotlin/reflect/jvm/internal/impl/protobuf/GeneratedMessageLite$GeneratedExtension;
+    .locals 1
+    .annotation system Ldalvik/annotation/Signature;
+        value = {
+            "()",
+            "Lkotlin/reflect/jvm/internal/impl/protobuf/GeneratedMessageLite$GeneratedExtension<",
+            "Lkotlin/reflect/jvm/internal/impl/metadata/ProtoBuf$Property;",
+            "Ljava/util/List<",
+            "Lkotlin/reflect/jvm/internal/impl/metadata/ProtoBuf$Annotation;",
+            ">;>;"
+        }
+    .end annotation
+
+    iget-object v0, p0, Lkotlin/reflect/jvm/internal/impl/serialization/SerializerExtensionProtocol;->propertyGetterAnnotation:Lkotlin/reflect/jvm/internal/impl/protobuf/GeneratedMessageLite$GeneratedExtension;
+
+    return-object v0
+.end method
+
+.method public final getPropertySetterAnnotation()Lkotlin/reflect/jvm/internal/impl/protobuf/GeneratedMessageLite$GeneratedExtension;
+    .locals 1
+    .annotation system Ldalvik/annotation/Signature;
+        value = {
+            "()",
+            "Lkotlin/reflect/jvm/internal/impl/protobuf/GeneratedMessageLite$GeneratedExtension<",
+            "Lkotlin/reflect/jvm/internal/impl/metadata/ProtoBuf$Property;",
+            "Ljava/util/List<",
+            "Lkotlin/reflect/jvm/internal/impl/metadata/ProtoBuf$Annotation;",
+            ">;>;"
+        }
+    .end annotation
+
+    iget-object v0, p0, Lkotlin/reflect/jvm/internal/impl/serialization/SerializerExtensionProtocol;->propertySetterAnnotation:Lkotlin/reflect/jvm/internal/impl/protobuf/GeneratedMessageLite$GeneratedExtension;
+
+    return-object v0
+.end method
+
+.method public final getTypeAnnotation()Lkotlin/reflect/jvm/internal/impl/protobuf/GeneratedMessageLite$GeneratedExtension;
+    .locals 1
+    .annotation system Ldalvik/annotation/Signature;
+        value = {
+            "()",
+            "Lkotlin/reflect/jvm/internal/impl/protobuf/GeneratedMessageLite$GeneratedExtension<",
+            "Lkotlin/reflect/jvm/internal/impl/metadata/ProtoBuf$Type;",
+            "Ljava/util/List<",
+            "Lkotlin/reflect/jvm/internal/impl/metadata/ProtoBuf$Annotation;",
+            ">;>;"
+        }
+    .end annotation
+
+    iget-object v0, p0, Lkotlin/reflect/jvm/internal/impl/serialization/SerializerExtensionProtocol;->typeAnnotation:Lkotlin/reflect/jvm/internal/impl/protobuf/GeneratedMessageLite$GeneratedExtension;
+
+    return-object v0
+.end method
+
+.method public final getTypeParameterAnnotation()Lkotlin/reflect/jvm/internal/impl/protobuf/GeneratedMessageLite$GeneratedExtension;
+    .locals 1
+    .annotation system Ldalvik/annotation/Signature;
+        value = {
+            "()",
+            "Lkotlin/reflect/jvm/internal/impl/protobuf/GeneratedMessageLite$GeneratedExtension<",
+            "Lkotlin/reflect/jvm/internal/impl/metadata/ProtoBuf$TypeParameter;",
+            "Ljava/util/List<",
+            "Lkotlin/reflect/jvm/internal/impl/metadata/ProtoBuf$Annotation;",
+            ">;>;"
+        }
+    .end annotation
+
+    iget-object v0, p0, Lkotlin/reflect/jvm/internal/impl/serialization/SerializerExtensionProtocol;->typeParameterAnnotation:Lkotlin/reflect/jvm/internal/impl/protobuf/GeneratedMessageLite$GeneratedExtension;
+
+    return-object v0
 .end method

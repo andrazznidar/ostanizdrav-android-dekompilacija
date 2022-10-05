@@ -19,6 +19,8 @@
 
 
 # instance fields
+.field public final synthetic $type:Ljava/lang/reflect/Type;
+
 .field public final nextConverter:Lretrofit2/Converter;
     .annotation system Ldalvik/annotation/Signature;
         value = {
@@ -34,6 +36,8 @@
 # direct methods
 .method public constructor <init>(Lretrofit2/Retrofit;Lde/rki/coronawarnapp/covidcertificate/test/core/server/TestCertificateServerModule$nullConverter$1;Ljava/lang/reflect/Type;[Ljava/lang/annotation/Annotation;)V
     .locals 0
+
+    iput-object p3, p0, Lde/rki/coronawarnapp/covidcertificate/test/core/server/TestCertificateServerModule$nullConverter$1$responseBodyConverter$1;->$type:Ljava/lang/reflect/Type;
 
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 

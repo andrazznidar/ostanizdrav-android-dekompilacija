@@ -4,7 +4,7 @@
 
 
 # direct methods
-.method public static toCurveType(Lcom/google/crypto/tink/proto/EllipticCurveType;)Lcom/google/crypto/tink/subtle/EllipticCurves$CurveType;
+.method public static toCurveType(Lcom/google/crypto/tink/proto/EllipticCurveType;)I
     .locals 3
     .annotation system Ldalvik/annotation/MethodParameters;
         accessFlags = {
@@ -27,7 +27,7 @@
 
     const/4 v1, 0x1
 
-    if-eq v0, v1, :cond_2
+    if-eq v0, v1, :cond_1
 
     const/4 v1, 0x2
 
@@ -37,9 +37,7 @@
 
     if-ne v0, v1, :cond_0
 
-    sget-object p0, Lcom/google/crypto/tink/subtle/EllipticCurves$CurveType;->NIST_P521:Lcom/google/crypto/tink/subtle/EllipticCurves$CurveType;
-
-    return-object p0
+    return v1
 
     :cond_0
     new-instance v0, Ljava/security/GeneralSecurityException;
@@ -63,14 +61,7 @@
     throw v0
 
     :cond_1
-    sget-object p0, Lcom/google/crypto/tink/subtle/EllipticCurves$CurveType;->NIST_P384:Lcom/google/crypto/tink/subtle/EllipticCurves$CurveType;
-
-    return-object p0
-
-    :cond_2
-    sget-object p0, Lcom/google/crypto/tink/subtle/EllipticCurves$CurveType;->NIST_P256:Lcom/google/crypto/tink/subtle/EllipticCurves$CurveType;
-
-    return-object p0
+    return v1
 .end method
 
 .method public static toHmacAlgo(Lcom/google/crypto/tink/proto/HashType;)Ljava/lang/String;
@@ -227,11 +218,11 @@
 
     move-result-object v0
 
-    invoke-static {v0}, Lcom/google/crypto/tink/hybrid/HybridUtil;->toCurveType(Lcom/google/crypto/tink/proto/EllipticCurveType;)Lcom/google/crypto/tink/subtle/EllipticCurves$CurveType;
+    invoke-static {v0}, Lcom/google/crypto/tink/hybrid/HybridUtil;->toCurveType(Lcom/google/crypto/tink/proto/EllipticCurveType;)I
 
-    move-result-object v0
+    move-result v0
 
-    invoke-static {v0}, Lcom/google/crypto/tink/subtle/EllipticCurves;->getCurveSpec(Lcom/google/crypto/tink/subtle/EllipticCurves$CurveType;)Ljava/security/spec/ECParameterSpec;
+    invoke-static {v0}, Lcom/google/crypto/tink/subtle/EllipticCurves;->getCurveSpec(I)Ljava/security/spec/ECParameterSpec;
 
     invoke-virtual {p0}, Lcom/google/crypto/tink/proto/EciesAeadHkdfParams;->getKemParams()Lcom/google/crypto/tink/proto/EciesHkdfKemParams;
 

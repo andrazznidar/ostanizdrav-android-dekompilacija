@@ -96,12 +96,12 @@
     :cond_1
     sget-object p2, Lcom/fasterxml/jackson/databind/util/ClassUtil$EnumTypeLocator;->instance:Lcom/fasterxml/jackson/databind/util/ClassUtil$EnumTypeLocator;
 
-    iget-object p2, p2, Lcom/fasterxml/jackson/databind/util/ClassUtil$EnumTypeLocator;->enumSetTypeField:Ljava/lang/reflect/Field;
+    iget-object v0, p2, Lcom/fasterxml/jackson/databind/util/ClassUtil$EnumTypeLocator;->enumSetTypeField:Ljava/lang/reflect/Field;
 
-    if-eqz p2, :cond_2
+    if-eqz v0, :cond_2
 
     :try_start_0
-    invoke-virtual {p2, p1}, Ljava/lang/reflect/Field;->get(Ljava/lang/Object;)Ljava/lang/Object;
+    invoke-virtual {v0, p1}, Ljava/lang/reflect/Field;->get(Ljava/lang/Object;)Ljava/lang/Object;
 
     move-result-object p1
     :try_end_0
@@ -114,7 +114,7 @@
 
     sget-object v0, Lcom/fasterxml/jackson/databind/type/TypeFactory;->EMPTY_BINDINGS:Lcom/fasterxml/jackson/databind/type/TypeBindings;
 
-    invoke-virtual {p3, v1, p1, v0}, Lcom/fasterxml/jackson/databind/type/TypeFactory;->_fromClass(Landroidx/fragment/app/FragmentStore;Ljava/lang/Class;Lcom/fasterxml/jackson/databind/type/TypeBindings;)Lcom/fasterxml/jackson/databind/JavaType;
+    invoke-virtual {p3, v1, p1, v0}, Lcom/fasterxml/jackson/databind/type/TypeFactory;->_fromClass(Lcom/fasterxml/jackson/databind/type/ClassStack;Ljava/lang/Class;Lcom/fasterxml/jackson/databind/type/TypeBindings;)Lcom/fasterxml/jackson/databind/JavaType;
 
     move-result-object p1
 
@@ -140,7 +140,19 @@
     :cond_2
     new-instance p1, Ljava/lang/IllegalStateException;
 
-    const-string p2, "Cannot figure out type for EnumSet (odd JDK platform?)"
+    const-string p3, "Cannot figure out type parameter for `EnumSet` (odd JDK platform?), problem: "
+
+    invoke-static {p3}, Landroid/support/v4/media/RatingCompat$$ExternalSyntheticOutline0;->m(Ljava/lang/String;)Ljava/lang/StringBuilder;
+
+    move-result-object p3
+
+    iget-object p2, p2, Lcom/fasterxml/jackson/databind/util/ClassUtil$EnumTypeLocator;->failForEnumSet:Ljava/lang/String;
+
+    invoke-virtual {p3, p2}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+
+    invoke-virtual {p3}, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
+
+    move-result-object p2
 
     invoke-direct {p1, p2}, Ljava/lang/IllegalStateException;-><init>(Ljava/lang/String;)V
 
@@ -182,12 +194,12 @@
     :cond_4
     sget-object p2, Lcom/fasterxml/jackson/databind/util/ClassUtil$EnumTypeLocator;->instance:Lcom/fasterxml/jackson/databind/util/ClassUtil$EnumTypeLocator;
 
-    iget-object p2, p2, Lcom/fasterxml/jackson/databind/util/ClassUtil$EnumTypeLocator;->enumMapTypeField:Ljava/lang/reflect/Field;
+    iget-object v0, p2, Lcom/fasterxml/jackson/databind/util/ClassUtil$EnumTypeLocator;->enumMapTypeField:Ljava/lang/reflect/Field;
 
-    if-eqz p2, :cond_6
+    if-eqz v0, :cond_6
 
     :try_start_1
-    invoke-virtual {p2, p1}, Ljava/lang/reflect/Field;->get(Ljava/lang/Object;)Ljava/lang/Object;
+    invoke-virtual {v0, p1}, Ljava/lang/reflect/Field;->get(Ljava/lang/Object;)Ljava/lang/Object;
 
     move-result-object p1
     :try_end_1
@@ -215,11 +227,11 @@
     :cond_5
     sget-object v2, Lcom/fasterxml/jackson/databind/type/TypeFactory;->EMPTY_BINDINGS:Lcom/fasterxml/jackson/databind/type/TypeBindings;
 
-    invoke-virtual {p3, v1, p1, v2}, Lcom/fasterxml/jackson/databind/type/TypeFactory;->_fromClass(Landroidx/fragment/app/FragmentStore;Ljava/lang/Class;Lcom/fasterxml/jackson/databind/type/TypeBindings;)Lcom/fasterxml/jackson/databind/JavaType;
+    invoke-virtual {p3, v1, p1, v2}, Lcom/fasterxml/jackson/databind/type/TypeFactory;->_fromClass(Lcom/fasterxml/jackson/databind/type/ClassStack;Ljava/lang/Class;Lcom/fasterxml/jackson/databind/type/TypeBindings;)Lcom/fasterxml/jackson/databind/JavaType;
 
     move-result-object p1
 
-    invoke-virtual {p3, v1, p2, v2}, Lcom/fasterxml/jackson/databind/type/TypeFactory;->_fromClass(Landroidx/fragment/app/FragmentStore;Ljava/lang/Class;Lcom/fasterxml/jackson/databind/type/TypeBindings;)Lcom/fasterxml/jackson/databind/JavaType;
+    invoke-virtual {p3, v1, p2, v2}, Lcom/fasterxml/jackson/databind/type/TypeFactory;->_fromClass(Lcom/fasterxml/jackson/databind/type/ClassStack;Ljava/lang/Class;Lcom/fasterxml/jackson/databind/type/TypeBindings;)Lcom/fasterxml/jackson/databind/JavaType;
 
     move-result-object p2
 
@@ -246,7 +258,19 @@
     :cond_6
     new-instance p1, Ljava/lang/IllegalStateException;
 
-    const-string p2, "Cannot figure out type for EnumMap (odd JDK platform?)"
+    const-string p3, "Cannot figure out type parameter for `EnumMap` (odd JDK platform?), problem: "
+
+    invoke-static {p3}, Landroid/support/v4/media/RatingCompat$$ExternalSyntheticOutline0;->m(Ljava/lang/String;)Ljava/lang/StringBuilder;
+
+    move-result-object p3
+
+    iget-object p2, p2, Lcom/fasterxml/jackson/databind/util/ClassUtil$EnumTypeLocator;->failForEnumMap:Ljava/lang/String;
+
+    invoke-virtual {p3, p2}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+
+    invoke-virtual {p3}, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
+
+    move-result-object p2
 
     invoke-direct {p1, p2}, Ljava/lang/IllegalStateException;-><init>(Ljava/lang/String;)V
 

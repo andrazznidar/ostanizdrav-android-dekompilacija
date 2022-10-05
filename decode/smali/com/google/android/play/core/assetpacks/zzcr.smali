@@ -1,40 +1,355 @@
-.class public final synthetic Lcom/google/android/play/core/assetpacks/zzcr;
+.class public synthetic Lcom/google/android/play/core/assetpacks/zzcr;
 .super Ljava/lang/Object;
 .source "com.google.android.play:core@@1.10.1"
 
 # interfaces
 .implements Lcom/google/android/play/core/assetpacks/zzda;
+.implements Lorg/bouncycastle/crypto/DSAExt;
 
 
 # instance fields
-.field public final synthetic zza:Lcom/google/android/play/core/assetpacks/zzdb;
+.field public zza:Ljava/lang/Object;
 
-.field public final synthetic zzb:Landroid/os/Bundle;
+.field public zzb:Ljava/lang/Object;
 
 
 # direct methods
+.method public synthetic constructor <init>()V
+    .locals 0
+
+    invoke-direct {p0}, Ljava/lang/Object;-><init>()V
+
+    return-void
+.end method
+
 .method public synthetic constructor <init>(Lcom/google/android/play/core/assetpacks/zzdb;Landroid/os/Bundle;)V
     .locals 0
 
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
-    iput-object p1, p0, Lcom/google/android/play/core/assetpacks/zzcr;->zza:Lcom/google/android/play/core/assetpacks/zzdb;
+    iput-object p1, p0, Lcom/google/android/play/core/assetpacks/zzcr;->zza:Ljava/lang/Object;
 
-    iput-object p2, p0, Lcom/google/android/play/core/assetpacks/zzcr;->zzb:Landroid/os/Bundle;
+    iput-object p2, p0, Lcom/google/android/play/core/assetpacks/zzcr;->zzb:Ljava/lang/Object;
 
     return-void
 .end method
 
 
 # virtual methods
-.method public final zza()Ljava/lang/Object;
+.method public generateSignature([B)[Ljava/math/BigInteger;
+    .locals 9
+
+    invoke-static {p1}, Lorg/bouncycastle/util/Arrays;->reverse([B)[B
+
+    move-result-object p1
+
+    new-instance v0, Ljava/math/BigInteger;
+
+    const/4 v1, 0x1
+
+    invoke-direct {v0, v1, p1}, Ljava/math/BigInteger;-><init>(I[B)V
+
+    iget-object p1, p0, Lcom/google/android/play/core/assetpacks/zzcr;->zza:Ljava/lang/Object;
+
+    check-cast p1, Lorg/bouncycastle/crypto/params/ECKeyParameters;
+
+    iget-object v2, p1, Lorg/bouncycastle/crypto/params/ECKeyParameters;->parameters:Lorg/bouncycastle/crypto/params/ECDomainParameters;
+
+    iget-object v3, v2, Lorg/bouncycastle/crypto/params/ECDomainParameters;->n:Ljava/math/BigInteger;
+
+    check-cast p1, Lorg/bouncycastle/crypto/params/ECPrivateKeyParameters;
+
+    iget-object p1, p1, Lorg/bouncycastle/crypto/params/ECPrivateKeyParameters;->d:Ljava/math/BigInteger;
+
+    new-instance v4, Lorg/bouncycastle/math/ec/FixedPointCombMultiplier;
+
+    invoke-direct {v4}, Lorg/bouncycastle/math/ec/FixedPointCombMultiplier;-><init>()V
+
+    :cond_0
+    invoke-virtual {v3}, Ljava/math/BigInteger;->bitLength()I
+
+    move-result v5
+
+    iget-object v6, p0, Lcom/google/android/play/core/assetpacks/zzcr;->zzb:Ljava/lang/Object;
+
+    check-cast v6, Ljava/security/SecureRandom;
+
+    invoke-static {v5, v6}, Lorg/bouncycastle/util/BigIntegers;->createRandomBigInteger(ILjava/security/SecureRandom;)Ljava/math/BigInteger;
+
+    move-result-object v5
+
+    sget-object v6, Lorg/bouncycastle/math/ec/ECConstants;->ZERO:Ljava/math/BigInteger;
+
+    invoke-virtual {v5, v6}, Ljava/math/BigInteger;->equals(Ljava/lang/Object;)Z
+
+    move-result v7
+
+    if-nez v7, :cond_0
+
+    iget-object v7, v2, Lorg/bouncycastle/crypto/params/ECDomainParameters;->G:Lorg/bouncycastle/math/ec/ECPoint;
+
+    invoke-virtual {v4, v7, v5}, Lorg/joda/time/Chronology;->multiply(Lorg/bouncycastle/math/ec/ECPoint;Ljava/math/BigInteger;)Lorg/bouncycastle/math/ec/ECPoint;
+
+    move-result-object v7
+
+    invoke-virtual {v7}, Lorg/bouncycastle/math/ec/ECPoint;->normalize()Lorg/bouncycastle/math/ec/ECPoint;
+
+    move-result-object v7
+
+    invoke-virtual {v7}, Lorg/bouncycastle/math/ec/ECPoint;->getAffineXCoord()Lorg/bouncycastle/math/ec/ECFieldElement;
+
+    move-result-object v7
+
+    invoke-virtual {v7}, Lorg/bouncycastle/math/ec/ECFieldElement;->toBigInteger()Ljava/math/BigInteger;
+
+    move-result-object v7
+
+    invoke-virtual {v7, v3}, Ljava/math/BigInteger;->mod(Ljava/math/BigInteger;)Ljava/math/BigInteger;
+
+    move-result-object v7
+
+    invoke-virtual {v7, v6}, Ljava/math/BigInteger;->equals(Ljava/lang/Object;)Z
+
+    move-result v8
+
+    if-nez v8, :cond_0
+
+    invoke-virtual {v5, v0}, Ljava/math/BigInteger;->multiply(Ljava/math/BigInteger;)Ljava/math/BigInteger;
+
+    move-result-object v5
+
+    invoke-virtual {p1, v7}, Ljava/math/BigInteger;->multiply(Ljava/math/BigInteger;)Ljava/math/BigInteger;
+
+    move-result-object v8
+
+    invoke-virtual {v5, v8}, Ljava/math/BigInteger;->add(Ljava/math/BigInteger;)Ljava/math/BigInteger;
+
+    move-result-object v5
+
+    invoke-virtual {v5, v3}, Ljava/math/BigInteger;->mod(Ljava/math/BigInteger;)Ljava/math/BigInteger;
+
+    move-result-object v5
+
+    invoke-virtual {v5, v6}, Ljava/math/BigInteger;->equals(Ljava/lang/Object;)Z
+
+    move-result v6
+
+    if-nez v6, :cond_0
+
+    const/4 p1, 0x2
+
+    new-array p1, p1, [Ljava/math/BigInteger;
+
+    const/4 v0, 0x0
+
+    aput-object v7, p1, v0
+
+    aput-object v5, p1, v1
+
+    return-object p1
+.end method
+
+.method public getOrder()Ljava/math/BigInteger;
+    .locals 1
+
+    iget-object v0, p0, Lcom/google/android/play/core/assetpacks/zzcr;->zza:Ljava/lang/Object;
+
+    check-cast v0, Lorg/bouncycastle/crypto/params/ECKeyParameters;
+
+    iget-object v0, v0, Lorg/bouncycastle/crypto/params/ECKeyParameters;->parameters:Lorg/bouncycastle/crypto/params/ECDomainParameters;
+
+    iget-object v0, v0, Lorg/bouncycastle/crypto/params/ECDomainParameters;->n:Ljava/math/BigInteger;
+
+    return-object v0
+.end method
+
+.method public init(ZLorg/bouncycastle/crypto/CipherParameters;)V
+    .locals 0
+
+    if-eqz p1, :cond_1
+
+    instance-of p1, p2, Lorg/bouncycastle/crypto/params/ParametersWithRandom;
+
+    if-eqz p1, :cond_0
+
+    check-cast p2, Lorg/bouncycastle/crypto/params/ParametersWithRandom;
+
+    iget-object p1, p2, Lorg/bouncycastle/crypto/params/ParametersWithRandom;->random:Ljava/security/SecureRandom;
+
+    iput-object p1, p0, Lcom/google/android/play/core/assetpacks/zzcr;->zzb:Ljava/lang/Object;
+
+    iget-object p1, p2, Lorg/bouncycastle/crypto/params/ParametersWithRandom;->parameters:Lorg/bouncycastle/crypto/CipherParameters;
+
+    check-cast p1, Lorg/bouncycastle/crypto/params/ECPrivateKeyParameters;
+
+    iput-object p1, p0, Lcom/google/android/play/core/assetpacks/zzcr;->zza:Ljava/lang/Object;
+
+    goto :goto_1
+
+    :cond_0
+    invoke-static {}, Lorg/bouncycastle/crypto/CryptoServicesRegistrar;->getSecureRandom()Ljava/security/SecureRandom;
+
+    move-result-object p1
+
+    iput-object p1, p0, Lcom/google/android/play/core/assetpacks/zzcr;->zzb:Ljava/lang/Object;
+
+    check-cast p2, Lorg/bouncycastle/crypto/params/ECPrivateKeyParameters;
+
+    goto :goto_0
+
+    :cond_1
+    check-cast p2, Lorg/bouncycastle/crypto/params/ECPublicKeyParameters;
+
+    :goto_0
+    iput-object p2, p0, Lcom/google/android/play/core/assetpacks/zzcr;->zza:Ljava/lang/Object;
+
+    :goto_1
+    return-void
+.end method
+
+.method public verifySignature([BLjava/math/BigInteger;Ljava/math/BigInteger;)Z
+    .locals 4
+
+    invoke-static {p1}, Lorg/bouncycastle/util/Arrays;->reverse([B)[B
+
+    move-result-object p1
+
+    new-instance v0, Ljava/math/BigInteger;
+
+    const/4 v1, 0x1
+
+    invoke-direct {v0, v1, p1}, Ljava/math/BigInteger;-><init>(I[B)V
+
+    iget-object p1, p0, Lcom/google/android/play/core/assetpacks/zzcr;->zza:Ljava/lang/Object;
+
+    check-cast p1, Lorg/bouncycastle/crypto/params/ECKeyParameters;
+
+    iget-object p1, p1, Lorg/bouncycastle/crypto/params/ECKeyParameters;->parameters:Lorg/bouncycastle/crypto/params/ECDomainParameters;
+
+    iget-object p1, p1, Lorg/bouncycastle/crypto/params/ECDomainParameters;->n:Ljava/math/BigInteger;
+
+    sget-object v1, Lorg/bouncycastle/math/ec/ECConstants;->ONE:Ljava/math/BigInteger;
+
+    invoke-virtual {p2, v1}, Ljava/math/BigInteger;->compareTo(Ljava/math/BigInteger;)I
+
+    move-result v2
+
+    const/4 v3, 0x0
+
+    if-ltz v2, :cond_3
+
+    invoke-virtual {p2, p1}, Ljava/math/BigInteger;->compareTo(Ljava/math/BigInteger;)I
+
+    move-result v2
+
+    if-ltz v2, :cond_0
+
+    goto :goto_0
+
+    :cond_0
+    invoke-virtual {p3, v1}, Ljava/math/BigInteger;->compareTo(Ljava/math/BigInteger;)I
+
+    move-result v1
+
+    if-ltz v1, :cond_3
+
+    invoke-virtual {p3, p1}, Ljava/math/BigInteger;->compareTo(Ljava/math/BigInteger;)I
+
+    move-result v1
+
+    if-ltz v1, :cond_1
+
+    goto :goto_0
+
+    :cond_1
+    invoke-static {p1, v0}, Lorg/bouncycastle/util/BigIntegers;->modOddInverseVar(Ljava/math/BigInteger;Ljava/math/BigInteger;)Ljava/math/BigInteger;
+
+    move-result-object v0
+
+    invoke-virtual {p3, v0}, Ljava/math/BigInteger;->multiply(Ljava/math/BigInteger;)Ljava/math/BigInteger;
+
+    move-result-object p3
+
+    invoke-virtual {p3, p1}, Ljava/math/BigInteger;->mod(Ljava/math/BigInteger;)Ljava/math/BigInteger;
+
+    move-result-object p3
+
+    invoke-virtual {p1, p2}, Ljava/math/BigInteger;->subtract(Ljava/math/BigInteger;)Ljava/math/BigInteger;
+
+    move-result-object v1
+
+    invoke-virtual {v1, v0}, Ljava/math/BigInteger;->multiply(Ljava/math/BigInteger;)Ljava/math/BigInteger;
+
+    move-result-object v0
+
+    invoke-virtual {v0, p1}, Ljava/math/BigInteger;->mod(Ljava/math/BigInteger;)Ljava/math/BigInteger;
+
+    move-result-object v0
+
+    iget-object v1, p0, Lcom/google/android/play/core/assetpacks/zzcr;->zza:Ljava/lang/Object;
+
+    check-cast v1, Lorg/bouncycastle/crypto/params/ECKeyParameters;
+
+    iget-object v2, v1, Lorg/bouncycastle/crypto/params/ECKeyParameters;->parameters:Lorg/bouncycastle/crypto/params/ECDomainParameters;
+
+    iget-object v2, v2, Lorg/bouncycastle/crypto/params/ECDomainParameters;->G:Lorg/bouncycastle/math/ec/ECPoint;
+
+    check-cast v1, Lorg/bouncycastle/crypto/params/ECPublicKeyParameters;
+
+    iget-object v1, v1, Lorg/bouncycastle/crypto/params/ECPublicKeyParameters;->q:Lorg/bouncycastle/math/ec/ECPoint;
+
+    invoke-static {v2, p3, v1, v0}, Lorg/bouncycastle/math/ec/ECAlgorithms;->sumOfTwoMultiplies(Lorg/bouncycastle/math/ec/ECPoint;Ljava/math/BigInteger;Lorg/bouncycastle/math/ec/ECPoint;Ljava/math/BigInteger;)Lorg/bouncycastle/math/ec/ECPoint;
+
+    move-result-object p3
+
+    invoke-virtual {p3}, Lorg/bouncycastle/math/ec/ECPoint;->normalize()Lorg/bouncycastle/math/ec/ECPoint;
+
+    move-result-object p3
+
+    invoke-virtual {p3}, Lorg/bouncycastle/math/ec/ECPoint;->isInfinity()Z
+
+    move-result v0
+
+    if-eqz v0, :cond_2
+
+    return v3
+
+    :cond_2
+    invoke-virtual {p3}, Lorg/bouncycastle/math/ec/ECPoint;->getAffineXCoord()Lorg/bouncycastle/math/ec/ECFieldElement;
+
+    move-result-object p3
+
+    invoke-virtual {p3}, Lorg/bouncycastle/math/ec/ECFieldElement;->toBigInteger()Ljava/math/BigInteger;
+
+    move-result-object p3
+
+    invoke-virtual {p3, p1}, Ljava/math/BigInteger;->mod(Ljava/math/BigInteger;)Ljava/math/BigInteger;
+
+    move-result-object p1
+
+    invoke-virtual {p1, p2}, Ljava/math/BigInteger;->equals(Ljava/lang/Object;)Z
+
+    move-result p1
+
+    return p1
+
+    :cond_3
+    :goto_0
+    return v3
+.end method
+
+.method public zza()Ljava/lang/Object;
     .locals 27
 
     move-object/from16 v0, p0
 
-    iget-object v1, v0, Lcom/google/android/play/core/assetpacks/zzcr;->zza:Lcom/google/android/play/core/assetpacks/zzdb;
+    iget-object v1, v0, Lcom/google/android/play/core/assetpacks/zzcr;->zza:Ljava/lang/Object;
 
-    iget-object v2, v0, Lcom/google/android/play/core/assetpacks/zzcr;->zzb:Landroid/os/Bundle;
+    check-cast v1, Lcom/google/android/play/core/assetpacks/zzdb;
+
+    iget-object v2, v0, Lcom/google/android/play/core/assetpacks/zzcr;->zzb:Ljava/lang/Object;
+
+    check-cast v2, Landroid/os/Bundle;
 
     invoke-static {v1}, Ljava/util/Objects;->requireNonNull(Ljava/lang/Object;)Ljava/lang/Object;
 
@@ -79,7 +394,7 @@
 
     iget-object v10, v10, Lcom/google/android/play/core/assetpacks/zzcx;->zza:Ljava/lang/String;
 
-    invoke-static {v7, v10}, Lkotlinx/coroutines/flow/FlowKt;->zza(Ljava/lang/String;Ljava/lang/String;)Ljava/lang/String;
+    invoke-static {v7, v10}, Lcom/google/android/play/core/assetpacks/model/zzb;->zza(Ljava/lang/String;Ljava/lang/String;)Ljava/lang/String;
 
     move-result-object v7
 
@@ -91,13 +406,13 @@
 
     iget v10, v10, Lcom/google/android/play/core/assetpacks/zzcx;->zzd:I
 
-    invoke-static {v10, v7}, Lkotlin/io/ByteStreamsKt;->zzc(II)Z
+    invoke-static {v10, v7}, Landroidx/databinding/adapters/Converters;->zzc(II)Z
 
     move-result v10
 
     if-eqz v10, :cond_3
 
-    sget-object v2, Lcom/google/android/play/core/assetpacks/zzdb;->zza:Lkotlin/jvm/internal/SpreadBuilder;
+    sget-object v2, Lcom/google/android/play/core/assetpacks/zzdb;->zza:Lcom/google/android/play/core/internal/zzag;
 
     const/4 v6, 0x2
 
@@ -117,7 +432,7 @@
 
     const-string v5, "Found stale update for session %s with status %d."
 
-    invoke-virtual {v2, v5, v6}, Lkotlin/jvm/internal/SpreadBuilder;->zza(Ljava/lang/String;[Ljava/lang/Object;)I
+    invoke-virtual {v2, v5, v6}, Lcom/google/android/play/core/internal/zzag;->zza(Ljava/lang/String;[Ljava/lang/Object;)I
 
     iget-object v2, v4, Lcom/google/android/play/core/assetpacks/zzcy;->zzc:Lcom/google/android/play/core/assetpacks/zzcx;
 
@@ -188,7 +503,7 @@
 
     iput v7, v5, Lcom/google/android/play/core/assetpacks/zzcx;->zzd:I
 
-    invoke-static {v7}, Lkotlin/io/ByteStreamsKt;->zzd(I)Z
+    invoke-static {v7}, Landroidx/databinding/adapters/Converters;->zzd(I)Z
 
     move-result v5
 
@@ -196,7 +511,7 @@
 
     new-instance v2, Lcom/google/android/play/core/assetpacks/zzco;
 
-    invoke-direct {v2, v1, v3, v9}, Lcom/google/android/play/core/assetpacks/zzco;-><init>(Lcom/google/android/play/core/assetpacks/zzdb;II)V
+    invoke-direct {v2, v1, v3}, Lcom/google/android/play/core/assetpacks/zzco;-><init>(Lcom/google/android/play/core/assetpacks/zzdb;I)V
 
     invoke-virtual {v1, v2}, Lcom/google/android/play/core/assetpacks/zzdb;->zzr(Lcom/google/android/play/core/assetpacks/zzda;)Ljava/lang/Object;
 
@@ -238,7 +553,7 @@
 
     iget-object v7, v3, Lcom/google/android/play/core/assetpacks/zzcz;->zza:Ljava/lang/String;
 
-    invoke-static {v6, v5, v7}, Lkotlinx/coroutines/flow/FlowKt;->zzb(Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;)Ljava/lang/String;
+    invoke-static {v6, v5, v7}, Lcom/google/android/play/core/assetpacks/model/zzb;->zzb(Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;)Ljava/lang/String;
 
     move-result-object v5
 
@@ -297,7 +612,7 @@
 
     const-string v4, "pack_version"
 
-    invoke-static {v4, v11}, Lkotlinx/coroutines/flow/FlowKt;->zza(Ljava/lang/String;Ljava/lang/String;)Ljava/lang/String;
+    invoke-static {v4, v11}, Lcom/google/android/play/core/assetpacks/model/zzb;->zza(Ljava/lang/String;Ljava/lang/String;)Ljava/lang/String;
 
     move-result-object v4
 
@@ -307,7 +622,7 @@
 
     const-string v4, "pack_version_tag"
 
-    invoke-static {v4, v11}, Lkotlinx/coroutines/flow/FlowKt;->zza(Ljava/lang/String;Ljava/lang/String;)Ljava/lang/String;
+    invoke-static {v4, v11}, Lcom/google/android/play/core/assetpacks/model/zzb;->zza(Ljava/lang/String;Ljava/lang/String;)Ljava/lang/String;
 
     move-result-object v4
 
@@ -317,7 +632,7 @@
 
     move-result-object v18
 
-    invoke-static {v7, v11}, Lkotlinx/coroutines/flow/FlowKt;->zza(Ljava/lang/String;Ljava/lang/String;)Ljava/lang/String;
+    invoke-static {v7, v11}, Lcom/google/android/play/core/assetpacks/model/zzb;->zza(Ljava/lang/String;Ljava/lang/String;)Ljava/lang/String;
 
     move-result-object v4
 
@@ -327,7 +642,7 @@
 
     const-string/jumbo v4, "total_bytes_to_download"
 
-    invoke-static {v4, v11}, Lkotlinx/coroutines/flow/FlowKt;->zza(Ljava/lang/String;Ljava/lang/String;)Ljava/lang/String;
+    invoke-static {v4, v11}, Lcom/google/android/play/core/assetpacks/model/zzb;->zza(Ljava/lang/String;Ljava/lang/String;)Ljava/lang/String;
 
     move-result-object v4
 
@@ -337,7 +652,7 @@
 
     const-string/jumbo v4, "slice_ids"
 
-    invoke-static {v4, v11}, Lkotlinx/coroutines/flow/FlowKt;->zza(Ljava/lang/String;Ljava/lang/String;)Ljava/lang/String;
+    invoke-static {v4, v11}, Lcom/google/android/play/core/assetpacks/model/zzb;->zza(Ljava/lang/String;Ljava/lang/String;)Ljava/lang/String;
 
     move-result-object v4
 
@@ -373,7 +688,7 @@
 
     check-cast v7, Ljava/lang/String;
 
-    invoke-static {v6, v11, v7}, Lkotlinx/coroutines/flow/FlowKt;->zzb(Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;)Ljava/lang/String;
+    invoke-static {v6, v11, v7}, Lcom/google/android/play/core/assetpacks/model/zzb;->zzb(Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;)Ljava/lang/String;
 
     move-result-object v10
 
@@ -429,7 +744,7 @@
     :cond_b
     const-string/jumbo v0, "uncompressed_hash_sha256"
 
-    invoke-static {v0, v11, v7}, Lkotlinx/coroutines/flow/FlowKt;->zzb(Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;)Ljava/lang/String;
+    invoke-static {v0, v11, v7}, Lcom/google/android/play/core/assetpacks/model/zzb;->zzb(Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;)Ljava/lang/String;
 
     move-result-object v0
 
@@ -439,7 +754,7 @@
 
     const-string/jumbo v0, "uncompressed_size"
 
-    invoke-static {v0, v11, v7}, Lkotlinx/coroutines/flow/FlowKt;->zzb(Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;)Ljava/lang/String;
+    invoke-static {v0, v11, v7}, Lcom/google/android/play/core/assetpacks/model/zzb;->zzb(Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;)Ljava/lang/String;
 
     move-result-object v0
 
@@ -449,7 +764,7 @@
 
     const-string v0, "patch_format"
 
-    invoke-static {v0, v11, v7}, Lkotlinx/coroutines/flow/FlowKt;->zzb(Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;)Ljava/lang/String;
+    invoke-static {v0, v11, v7}, Lcom/google/android/play/core/assetpacks/model/zzb;->zzb(Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;)Ljava/lang/String;
 
     move-result-object v0
 
@@ -480,7 +795,7 @@
     :cond_c
     const-string v0, "compression_format"
 
-    invoke-static {v0, v11, v7}, Lkotlinx/coroutines/flow/FlowKt;->zzb(Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;)Ljava/lang/String;
+    invoke-static {v0, v11, v7}, Lcom/google/android/play/core/assetpacks/model/zzb;->zzb(Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;)Ljava/lang/String;
 
     move-result-object v0
 

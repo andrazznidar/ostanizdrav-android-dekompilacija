@@ -39,7 +39,7 @@
 
 # virtual methods
 .method public final getDelayInMinutes(Lkotlin/coroutines/Continuation;)Ljava/lang/Object;
-    .locals 10
+    .locals 7
     .annotation system Ldalvik/annotation/Signature;
         value = {
             "(",
@@ -53,23 +53,23 @@
 
     instance-of v0, p1, Lde/rki/coronawarnapp/deadman/DeadmanNotificationTimeCalculation$getDelayInMinutes$1;
 
-    const/high16 v1, -0x80000000
-
     if-eqz v0, :cond_0
 
     move-object v0, p1
 
     check-cast v0, Lde/rki/coronawarnapp/deadman/DeadmanNotificationTimeCalculation$getDelayInMinutes$1;
 
-    iget v2, v0, Lde/rki/coronawarnapp/deadman/DeadmanNotificationTimeCalculation$getDelayInMinutes$1;->label:I
+    iget v1, v0, Lde/rki/coronawarnapp/deadman/DeadmanNotificationTimeCalculation$getDelayInMinutes$1;->label:I
 
-    and-int v3, v2, v1
+    const/high16 v2, -0x80000000
+
+    and-int v3, v1, v2
 
     if-eqz v3, :cond_0
 
-    sub-int/2addr v2, v1
+    sub-int/2addr v1, v2
 
-    iput v2, v0, Lde/rki/coronawarnapp/deadman/DeadmanNotificationTimeCalculation$getDelayInMinutes$1;->label:I
+    iput v1, v0, Lde/rki/coronawarnapp/deadman/DeadmanNotificationTimeCalculation$getDelayInMinutes$1;->label:I
 
     goto :goto_0
 
@@ -81,19 +81,19 @@
     :goto_0
     iget-object p1, v0, Lde/rki/coronawarnapp/deadman/DeadmanNotificationTimeCalculation$getDelayInMinutes$1;->result:Ljava/lang/Object;
 
-    sget-object v2, Lkotlin/coroutines/intrinsics/CoroutineSingletons;->COROUTINE_SUSPENDED:Lkotlin/coroutines/intrinsics/CoroutineSingletons;
+    sget-object v1, Lkotlin/coroutines/intrinsics/CoroutineSingletons;->COROUTINE_SUSPENDED:Lkotlin/coroutines/intrinsics/CoroutineSingletons;
 
-    iget v3, v0, Lde/rki/coronawarnapp/deadman/DeadmanNotificationTimeCalculation$getDelayInMinutes$1;->label:I
+    iget v2, v0, Lde/rki/coronawarnapp/deadman/DeadmanNotificationTimeCalculation$getDelayInMinutes$1;->label:I
 
-    const/4 v4, 0x2
+    const/4 v3, 0x2
 
-    const/4 v5, 0x1
+    const/4 v4, 0x1
 
-    if-eqz v3, :cond_3
+    if-eqz v2, :cond_3
 
-    if-eq v3, v5, :cond_2
+    if-eq v2, v4, :cond_2
 
-    if-ne v3, v4, :cond_1
+    if-ne v2, v3, :cond_1
 
     iget-object v0, v0, Lde/rki/coronawarnapp/deadman/DeadmanNotificationTimeCalculation$getDelayInMinutes$1;->L$0:Ljava/lang/Object;
 
@@ -113,9 +113,9 @@
     throw p1
 
     :cond_2
-    iget-object v3, v0, Lde/rki/coronawarnapp/deadman/DeadmanNotificationTimeCalculation$getDelayInMinutes$1;->L$0:Ljava/lang/Object;
+    iget-object v2, v0, Lde/rki/coronawarnapp/deadman/DeadmanNotificationTimeCalculation$getDelayInMinutes$1;->L$0:Ljava/lang/Object;
 
-    check-cast v3, Lde/rki/coronawarnapp/deadman/DeadmanNotificationTimeCalculation;
+    check-cast v2, Lde/rki/coronawarnapp/deadman/DeadmanNotificationTimeCalculation;
 
     invoke-static {p1}, Lkotlin/ResultKt;->throwOnFailure(Ljava/lang/Object;)V
 
@@ -128,43 +128,43 @@
 
     iput-object p0, v0, Lde/rki/coronawarnapp/deadman/DeadmanNotificationTimeCalculation$getDelayInMinutes$1;->L$0:Ljava/lang/Object;
 
-    iput v5, v0, Lde/rki/coronawarnapp/deadman/DeadmanNotificationTimeCalculation$getDelayInMinutes$1;->label:I
+    iput v4, v0, Lde/rki/coronawarnapp/deadman/DeadmanNotificationTimeCalculation$getDelayInMinutes$1;->label:I
 
     invoke-virtual {p1, v0}, Lde/rki/coronawarnapp/diagnosiskeys/storage/KeyCacheRepository;->allCachedKeys(Lkotlin/coroutines/Continuation;)Ljava/lang/Object;
 
     move-result-object p1
 
-    if-ne p1, v2, :cond_4
+    if-ne p1, v1, :cond_4
 
-    return-object v2
+    return-object v1
 
     :cond_4
-    move-object v3, p0
+    move-object v2, p0
 
     :goto_1
     check-cast p1, Lkotlinx/coroutines/flow/Flow;
 
-    iput-object v3, v0, Lde/rki/coronawarnapp/deadman/DeadmanNotificationTimeCalculation$getDelayInMinutes$1;->L$0:Ljava/lang/Object;
+    iput-object v2, v0, Lde/rki/coronawarnapp/deadman/DeadmanNotificationTimeCalculation$getDelayInMinutes$1;->L$0:Ljava/lang/Object;
 
-    iput v4, v0, Lde/rki/coronawarnapp/deadman/DeadmanNotificationTimeCalculation$getDelayInMinutes$1;->label:I
+    iput v3, v0, Lde/rki/coronawarnapp/deadman/DeadmanNotificationTimeCalculation$getDelayInMinutes$1;->label:I
 
     invoke-static {p1, v0}, Lkotlinx/coroutines/flow/FlowKt;->first(Lkotlinx/coroutines/flow/Flow;Lkotlin/coroutines/Continuation;)Ljava/lang/Object;
 
     move-result-object p1
 
-    if-ne p1, v2, :cond_5
+    if-ne p1, v1, :cond_5
 
-    return-object v2
+    return-object v1
 
     :cond_5
-    move-object v0, v3
+    move-object v0, v2
 
     :goto_2
     check-cast p1, Ljava/lang/Iterable;
 
-    new-instance v2, Ljava/util/ArrayList;
+    new-instance v1, Ljava/util/ArrayList;
 
-    invoke-direct {v2}, Ljava/util/ArrayList;-><init>()V
+    invoke-direct {v1}, Ljava/util/ArrayList;-><init>()V
 
     invoke-interface {p1}, Ljava/lang/Iterable;->iterator()Ljava/util/Iterator;
 
@@ -174,147 +174,147 @@
     :goto_3
     invoke-interface {p1}, Ljava/util/Iterator;->hasNext()Z
 
-    move-result v3
+    move-result v2
 
-    if-eqz v3, :cond_7
+    if-eqz v2, :cond_7
 
     invoke-interface {p1}, Ljava/util/Iterator;->next()Ljava/lang/Object;
 
-    move-result-object v3
+    move-result-object v2
 
-    move-object v6, v3
+    move-object v3, v2
 
-    check-cast v6, Lde/rki/coronawarnapp/diagnosiskeys/storage/CachedKey;
+    check-cast v3, Lde/rki/coronawarnapp/diagnosiskeys/storage/CachedKey;
 
-    iget-object v6, v6, Lde/rki/coronawarnapp/diagnosiskeys/storage/CachedKey;->info:Lde/rki/coronawarnapp/diagnosiskeys/storage/CachedKeyInfo;
+    iget-object v3, v3, Lde/rki/coronawarnapp/diagnosiskeys/storage/CachedKey;->info:Lde/rki/coronawarnapp/diagnosiskeys/storage/CachedKeyInfo;
 
-    iget-boolean v6, v6, Lde/rki/coronawarnapp/diagnosiskeys/storage/CachedKeyInfo;->isDownloadComplete:Z
+    iget-boolean v3, v3, Lde/rki/coronawarnapp/diagnosiskeys/storage/CachedKeyInfo;->isDownloadComplete:Z
 
-    if-eqz v6, :cond_6
+    if-eqz v3, :cond_6
 
-    invoke-virtual {v2, v3}, Ljava/util/ArrayList;->add(Ljava/lang/Object;)Z
+    invoke-virtual {v1, v2}, Ljava/util/ArrayList;->add(Ljava/lang/Object;)Z
 
     goto :goto_3
 
     :cond_7
-    invoke-virtual {v2}, Ljava/util/ArrayList;->iterator()Ljava/util/Iterator;
+    invoke-virtual {v1}, Ljava/util/ArrayList;->iterator()Ljava/util/Iterator;
 
     move-result-object p1
 
     invoke-interface {p1}, Ljava/util/Iterator;->hasNext()Z
 
-    move-result v2
+    move-result v1
 
-    const/4 v3, 0x0
+    const/4 v2, 0x0
 
-    if-nez v2, :cond_8
+    if-nez v1, :cond_8
 
-    move-object v2, v3
+    move-object v1, v2
 
     goto :goto_4
 
     :cond_8
     invoke-interface {p1}, Ljava/util/Iterator;->next()Ljava/lang/Object;
 
-    move-result-object v2
+    move-result-object v1
 
     invoke-interface {p1}, Ljava/util/Iterator;->hasNext()Z
 
-    move-result v6
+    move-result v3
 
-    if-nez v6, :cond_9
+    if-nez v3, :cond_9
 
     goto :goto_4
 
     :cond_9
-    move-object v6, v2
+    move-object v3, v1
 
-    check-cast v6, Lde/rki/coronawarnapp/diagnosiskeys/storage/CachedKey;
+    check-cast v3, Lde/rki/coronawarnapp/diagnosiskeys/storage/CachedKey;
 
-    iget-object v6, v6, Lde/rki/coronawarnapp/diagnosiskeys/storage/CachedKey;->info:Lde/rki/coronawarnapp/diagnosiskeys/storage/CachedKeyInfo;
+    iget-object v3, v3, Lde/rki/coronawarnapp/diagnosiskeys/storage/CachedKey;->info:Lde/rki/coronawarnapp/diagnosiskeys/storage/CachedKeyInfo;
 
-    invoke-static {v6}, Lde/rki/coronawarnapp/diagnosiskeys/storage/CachedKeyInfoKt;->getSortDateTime(Lde/rki/coronawarnapp/diagnosiskeys/storage/CachedKeyInfo;)Lorg/joda/time/DateTime;
+    invoke-static {v3}, Lde/rki/coronawarnapp/diagnosiskeys/storage/CachedKeyInfoKt;->getSortDateTime(Lde/rki/coronawarnapp/diagnosiskeys/storage/CachedKeyInfo;)Lorg/joda/time/DateTime;
 
-    move-result-object v6
+    move-result-object v3
 
     :cond_a
     invoke-interface {p1}, Ljava/util/Iterator;->next()Ljava/lang/Object;
 
-    move-result-object v7
+    move-result-object v4
 
-    move-object v8, v7
+    move-object v5, v4
 
-    check-cast v8, Lde/rki/coronawarnapp/diagnosiskeys/storage/CachedKey;
+    check-cast v5, Lde/rki/coronawarnapp/diagnosiskeys/storage/CachedKey;
 
-    iget-object v8, v8, Lde/rki/coronawarnapp/diagnosiskeys/storage/CachedKey;->info:Lde/rki/coronawarnapp/diagnosiskeys/storage/CachedKeyInfo;
+    iget-object v5, v5, Lde/rki/coronawarnapp/diagnosiskeys/storage/CachedKey;->info:Lde/rki/coronawarnapp/diagnosiskeys/storage/CachedKeyInfo;
 
-    invoke-static {v8}, Lde/rki/coronawarnapp/diagnosiskeys/storage/CachedKeyInfoKt;->getSortDateTime(Lde/rki/coronawarnapp/diagnosiskeys/storage/CachedKeyInfo;)Lorg/joda/time/DateTime;
+    invoke-static {v5}, Lde/rki/coronawarnapp/diagnosiskeys/storage/CachedKeyInfoKt;->getSortDateTime(Lde/rki/coronawarnapp/diagnosiskeys/storage/CachedKeyInfo;)Lorg/joda/time/DateTime;
 
-    move-result-object v8
+    move-result-object v5
 
-    invoke-virtual {v6, v8}, Lorg/joda/time/base/AbstractInstant;->compareTo(Ljava/lang/Object;)I
+    invoke-virtual {v3, v5}, Lorg/joda/time/base/AbstractInstant;->compareTo(Ljava/lang/Object;)I
 
-    move-result v9
+    move-result v6
 
-    if-gez v9, :cond_b
+    if-gez v6, :cond_b
 
-    move-object v2, v7
+    move-object v1, v4
 
-    move-object v6, v8
+    move-object v3, v5
 
     :cond_b
     invoke-interface {p1}, Ljava/util/Iterator;->hasNext()Z
 
-    move-result v7
+    move-result v4
 
-    if-nez v7, :cond_a
+    if-nez v4, :cond_a
 
     :goto_4
-    check-cast v2, Lde/rki/coronawarnapp/diagnosiskeys/storage/CachedKey;
+    check-cast v1, Lde/rki/coronawarnapp/diagnosiskeys/storage/CachedKey;
 
-    if-nez v2, :cond_c
+    if-nez v1, :cond_c
 
-    move-object p1, v3
+    move-object p1, v2
 
     goto :goto_5
 
     :cond_c
-    iget-object p1, v2, Lde/rki/coronawarnapp/diagnosiskeys/storage/CachedKey;->info:Lde/rki/coronawarnapp/diagnosiskeys/storage/CachedKeyInfo;
+    iget-object p1, v1, Lde/rki/coronawarnapp/diagnosiskeys/storage/CachedKey;->info:Lde/rki/coronawarnapp/diagnosiskeys/storage/CachedKeyInfo;
 
     :goto_5
-    sget-object v2, Ltimber/log/Timber;->Forest:Ltimber/log/Timber$Forest;
+    sget-object v1, Ltimber/log/Timber;->Forest:Ltimber/log/Timber$Forest;
 
-    new-instance v6, Ljava/lang/StringBuilder;
+    new-instance v3, Ljava/lang/StringBuilder;
 
-    invoke-direct {v6}, Ljava/lang/StringBuilder;-><init>()V
+    invoke-direct {v3}, Ljava/lang/StringBuilder;-><init>()V
 
-    const-string v7, "Last successful diagnosis key package download: "
+    const-string v4, "Last successful diagnosis key package download: "
 
-    invoke-virtual {v6, v7}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+    invoke-virtual {v3, v4}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
 
-    invoke-virtual {v6, p1}, Ljava/lang/StringBuilder;->append(Ljava/lang/Object;)Ljava/lang/StringBuilder;
+    invoke-virtual {v3, p1}, Ljava/lang/StringBuilder;->append(Ljava/lang/Object;)Ljava/lang/StringBuilder;
 
-    invoke-virtual {v6}, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
+    invoke-virtual {v3}, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
 
-    move-result-object v6
+    move-result-object v3
 
-    const/4 v7, 0x0
+    const/4 v4, 0x0
 
-    new-array v8, v7, [Ljava/lang/Object;
+    new-array v5, v4, [Ljava/lang/Object;
 
-    invoke-virtual {v2, v6, v8}, Ltimber/log/Timber$Forest;->d(Ljava/lang/String;[Ljava/lang/Object;)V
+    invoke-virtual {v1, v3, v5}, Ltimber/log/Timber$Forest;->d(Ljava/lang/String;[Ljava/lang/Object;)V
 
     if-nez p1, :cond_d
 
     goto :goto_6
 
     :cond_d
-    iget-object v3, p1, Lde/rki/coronawarnapp/diagnosiskeys/storage/CachedKeyInfo;->createdAt:Lorg/joda/time/Instant;
+    iget-object v2, p1, Lde/rki/coronawarnapp/diagnosiskeys/storage/CachedKeyInfo;->createdAt:Lorg/joda/time/Instant;
 
     :goto_6
     invoke-static {v0}, Ljava/util/Objects;->requireNonNull(Ljava/lang/Object;)Ljava/lang/Object;
 
-    if-eqz v3, :cond_15
+    if-eqz v2, :cond_e
 
     iget-object p1, v0, Lde/rki/coronawarnapp/deadman/DeadmanNotificationTimeCalculation;->timeStamper:Lde/rki/coronawarnapp/util/TimeStamper;
 
@@ -324,86 +324,34 @@
 
     invoke-static {}, Ljava/lang/System;->currentTimeMillis()J
 
-    move-result-wide v6
+    move-result-wide v0
 
     sget-object p1, Lorg/joda/time/Minutes;->ZERO:Lorg/joda/time/Minutes;
 
     sget-object p1, Lorg/joda/time/DurationFieldType;->MINUTES_TYPE:Lorg/joda/time/DurationFieldType;
 
-    sget-object v0, Lorg/joda/time/chrono/ISOChronology;->INSTANCE_UTC:Lorg/joda/time/chrono/ISOChronology;
+    invoke-static {v2}, Lorg/joda/time/DateTimeUtils;->getInstantChronology(Lorg/joda/time/ReadableInstant;)Lorg/joda/time/Chronology;
 
-    if-nez v0, :cond_e
+    move-result-object v3
 
-    invoke-static {}, Lorg/joda/time/chrono/ISOChronology;->getInstance()Lorg/joda/time/chrono/ISOChronology;
-
-    move-result-object v0
-
-    :cond_e
-    invoke-virtual {p1, v0}, Lorg/joda/time/DurationFieldType;->getField(Lorg/joda/time/Chronology;)Lorg/joda/time/DurationField;
+    invoke-virtual {p1, v3}, Lorg/joda/time/DurationFieldType;->getField(Lorg/joda/time/Chronology;)Lorg/joda/time/DurationField;
 
     move-result-object p1
 
-    iget-wide v2, v3, Lorg/joda/time/Instant;->iMillis:J
+    iget-wide v2, v2, Lorg/joda/time/Instant;->iMillis:J
 
-    invoke-virtual {p1, v6, v7, v2, v3}, Lorg/joda/time/DurationField;->getDifference(JJ)I
+    invoke-virtual {p1, v0, v1, v2, v3}, Lorg/joda/time/DurationField;->getDifference(JJ)I
 
     move-result p1
 
-    if-eq p1, v1, :cond_14
+    invoke-static {p1}, Lorg/joda/time/Minutes;->minutes(I)Lorg/joda/time/Minutes;
 
-    const v0, 0x7fffffff
+    move-result-object p1
 
-    if-eq p1, v0, :cond_13
+    iget v4, p1, Lorg/joda/time/base/BaseSingleFieldPeriod;->iPeriod:I
 
-    if-eqz p1, :cond_12
-
-    if-eq p1, v5, :cond_11
-
-    if-eq p1, v4, :cond_10
-
-    const/4 v0, 0x3
-
-    if-eq p1, v0, :cond_f
-
-    new-instance v0, Lorg/joda/time/Minutes;
-
-    invoke-direct {v0, p1}, Lorg/joda/time/Minutes;-><init>(I)V
-
-    goto :goto_7
-
-    :cond_f
-    sget-object v0, Lorg/joda/time/Minutes;->THREE:Lorg/joda/time/Minutes;
-
-    goto :goto_7
-
-    :cond_10
-    sget-object v0, Lorg/joda/time/Minutes;->TWO:Lorg/joda/time/Minutes;
-
-    goto :goto_7
-
-    :cond_11
-    sget-object v0, Lorg/joda/time/Minutes;->ONE:Lorg/joda/time/Minutes;
-
-    goto :goto_7
-
-    :cond_12
-    sget-object v0, Lorg/joda/time/Minutes;->ZERO:Lorg/joda/time/Minutes;
-
-    goto :goto_7
-
-    :cond_13
-    sget-object v0, Lorg/joda/time/Minutes;->MAX_VALUE:Lorg/joda/time/Minutes;
-
-    goto :goto_7
-
-    :cond_14
-    sget-object v0, Lorg/joda/time/Minutes;->MIN_VALUE:Lorg/joda/time/Minutes;
-
-    :goto_7
-    iget v7, v0, Lorg/joda/time/base/BaseSingleFieldPeriod;->iPeriod:I
-
-    :cond_15
-    rsub-int p1, v7, 0x870
+    :cond_e
+    rsub-int p1, v4, 0x870
 
     int-to-long v0, p1
 

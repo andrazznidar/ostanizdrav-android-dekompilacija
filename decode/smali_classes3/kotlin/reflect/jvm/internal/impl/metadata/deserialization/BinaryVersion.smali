@@ -4,21 +4,31 @@
 
 
 # annotations
+.annotation system Ldalvik/annotation/MemberClasses;
+    value = {
+        Lkotlin/reflect/jvm/internal/impl/metadata/deserialization/BinaryVersion$Companion;
+    }
+.end annotation
+
 .annotation system Ldalvik/annotation/SourceDebugExtension;
-    value = "SMAP\nBinaryVersion.kt\nKotlin\n*S Kotlin\n*F\n+ 1 BinaryVersion.kt\norg/jetbrains/kotlin/metadata/deserialization/BinaryVersion\n+ 2 _Arrays.kt\nkotlin/collections/ArraysKt___ArraysKt\n*L\n1#1,92:1\n5269#2,7:93\n*E\n*S KotlinDebug\n*F\n+ 1 BinaryVersion.kt\norg/jetbrains/kotlin/metadata/deserialization/BinaryVersion\n*L\n65#1,7:93\n*E\n"
+    value = "SMAP\nBinaryVersion.kt\nKotlin\n*S Kotlin\n*F\n+ 1 BinaryVersion.kt\norg/jetbrains/kotlin/metadata/deserialization/BinaryVersion\n+ 2 _Arrays.kt\nkotlin/collections/ArraysKt___ArraysKt\n*L\n1#1,92:1\n5299#2,7:93\n*S KotlinDebug\n*F\n+ 1 BinaryVersion.kt\norg/jetbrains/kotlin/metadata/deserialization/BinaryVersion\n*L\n65#1:93,7\n*E\n"
 .end annotation
 
 
+# static fields
+.field public static final Companion:Lkotlin/reflect/jvm/internal/impl/metadata/deserialization/BinaryVersion$Companion;
+
+
 # instance fields
-.field public final major:I
+.field private final major:I
 
-.field public final minor:I
+.field private final minor:I
 
-.field public final numbers:[I
+.field private final numbers:[I
 
-.field public final patch:I
+.field private final patch:I
 
-.field public final rest:Ljava/util/List;
+.field private final rest:Ljava/util/List;
     .annotation system Ldalvik/annotation/Signature;
         value = {
             "Ljava/util/List<",
@@ -30,8 +40,26 @@
 
 
 # direct methods
+.method static constructor <clinit>()V
+    .locals 2
+
+    new-instance v0, Lkotlin/reflect/jvm/internal/impl/metadata/deserialization/BinaryVersion$Companion;
+
+    const/4 v1, 0x0
+
+    invoke-direct {v0, v1}, Lkotlin/reflect/jvm/internal/impl/metadata/deserialization/BinaryVersion$Companion;-><init>(Lkotlin/jvm/internal/DefaultConstructorMarker;)V
+
+    sput-object v0, Lkotlin/reflect/jvm/internal/impl/metadata/deserialization/BinaryVersion;->Companion:Lkotlin/reflect/jvm/internal/impl/metadata/deserialization/BinaryVersion$Companion;
+
+    return-void
+.end method
+
 .method public varargs constructor <init>([I)V
-    .locals 3
+    .locals 2
+
+    const-string v0, "numbers"
+
+    invoke-static {p1, v0}, Lkotlin/jvm/internal/Intrinsics;->checkNotNullParameter(Ljava/lang/Object;Ljava/lang/String;)V
 
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
@@ -109,11 +137,11 @@
 
     array-length p1, p1
 
-    new-instance v2, Lkotlin/collections/AbstractList$SubList;
+    invoke-virtual {v0, v1, p1}, Lkotlin/collections/AbstractList;->subList(II)Ljava/util/List;
 
-    invoke-direct {v2, v0, v1, p1}, Lkotlin/collections/AbstractList$SubList;-><init>(Lkotlin/collections/AbstractList;II)V
+    move-result-object p1
 
-    invoke-static {v2}, Lkotlin/collections/CollectionsKt___CollectionsKt;->toList(Ljava/lang/Iterable;)Ljava/util/List;
+    invoke-static {p1}, Lkotlin/collections/CollectionsKt___CollectionsKt;->toList(Ljava/lang/Iterable;)Ljava/util/List;
 
     move-result-object p1
 
@@ -188,6 +216,22 @@
 
     :goto_0
     return p1
+.end method
+
+.method public final getMajor()I
+    .locals 1
+
+    iget v0, p0, Lkotlin/reflect/jvm/internal/impl/metadata/deserialization/BinaryVersion;->major:I
+
+    return v0
+.end method
+
+.method public final getMinor()I
+    .locals 1
+
+    iget v0, p0, Lkotlin/reflect/jvm/internal/impl/metadata/deserialization/BinaryVersion;->minor:I
+
+    return v0
 .end method
 
 .method public hashCode()I
@@ -270,6 +314,70 @@
     return v1
 .end method
 
+.method public final isAtLeast(Lkotlin/reflect/jvm/internal/impl/metadata/deserialization/BinaryVersion;)Z
+    .locals 2
+
+    const-string v0, "version"
+
+    invoke-static {p1, v0}, Lkotlin/jvm/internal/Intrinsics;->checkNotNullParameter(Ljava/lang/Object;Ljava/lang/String;)V
+
+    iget v0, p1, Lkotlin/reflect/jvm/internal/impl/metadata/deserialization/BinaryVersion;->major:I
+
+    iget v1, p1, Lkotlin/reflect/jvm/internal/impl/metadata/deserialization/BinaryVersion;->minor:I
+
+    iget p1, p1, Lkotlin/reflect/jvm/internal/impl/metadata/deserialization/BinaryVersion;->patch:I
+
+    invoke-virtual {p0, v0, v1, p1}, Lkotlin/reflect/jvm/internal/impl/metadata/deserialization/BinaryVersion;->isAtLeast(III)Z
+
+    move-result p1
+
+    return p1
+.end method
+
+.method public final isAtMost(III)Z
+    .locals 3
+
+    iget v0, p0, Lkotlin/reflect/jvm/internal/impl/metadata/deserialization/BinaryVersion;->major:I
+
+    const/4 v1, 0x1
+
+    if-ge v0, p1, :cond_0
+
+    return v1
+
+    :cond_0
+    const/4 v2, 0x0
+
+    if-le v0, p1, :cond_1
+
+    return v2
+
+    :cond_1
+    iget p1, p0, Lkotlin/reflect/jvm/internal/impl/metadata/deserialization/BinaryVersion;->minor:I
+
+    if-ge p1, p2, :cond_2
+
+    return v1
+
+    :cond_2
+    if-le p1, p2, :cond_3
+
+    return v2
+
+    :cond_3
+    iget p1, p0, Lkotlin/reflect/jvm/internal/impl/metadata/deserialization/BinaryVersion;->patch:I
+
+    if-gt p1, p3, :cond_4
+
+    goto :goto_0
+
+    :cond_4
+    move v1, v2
+
+    :goto_0
+    return v1
+.end method
+
 .method public final isCompatibleTo(Lkotlin/reflect/jvm/internal/impl/metadata/deserialization/BinaryVersion;)Z
     .locals 4
 
@@ -317,10 +425,20 @@
     return v1
 .end method
 
+.method public final toArray()[I
+    .locals 1
+
+    iget-object v0, p0, Lkotlin/reflect/jvm/internal/impl/metadata/deserialization/BinaryVersion;->numbers:[I
+
+    return-object v0
+.end method
+
 .method public toString()Ljava/lang/String;
     .locals 9
 
-    iget-object v0, p0, Lkotlin/reflect/jvm/internal/impl/metadata/deserialization/BinaryVersion;->numbers:[I
+    invoke-virtual {p0}, Lkotlin/reflect/jvm/internal/impl/metadata/deserialization/BinaryVersion;->toArray()[I
+
+    move-result-object v0
 
     new-instance v1, Ljava/util/ArrayList;
 

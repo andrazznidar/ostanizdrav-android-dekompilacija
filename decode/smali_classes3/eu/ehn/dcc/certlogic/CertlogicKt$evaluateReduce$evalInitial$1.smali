@@ -17,11 +17,7 @@
 .end annotation
 
 .annotation runtime Lkotlin/Metadata;
-    bv = {
-        0x1,
-        0x0,
-        0x3
-    }
+    bv = {}
     d1 = {
         "\u0000\u0006\n\u0002\u0018\u0002\n\u0000\u0010\u0001\u001a\u00020\u0000H\n"
     }

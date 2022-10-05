@@ -86,15 +86,6 @@
 # direct methods
 .method public static bridge synthetic -$$Nest$maddAllRevokedDayPackages(Lde/rki/coronawarnapp/server/protocols/internal/KeyDownloadParameters$KeyDownloadParametersAndroid;Ljava/lang/Iterable;)V
     .locals 0
-    .annotation system Ldalvik/annotation/Signature;
-        value = {
-            "(",
-            "Ljava/lang/Iterable<",
-            "+",
-            "Lde/rki/coronawarnapp/server/protocols/internal/KeyDownloadParameters$DayPackageMetadata;",
-            ">;)V"
-        }
-    .end annotation
 
     invoke-direct {p0, p1}, Lde/rki/coronawarnapp/server/protocols/internal/KeyDownloadParameters$KeyDownloadParametersAndroid;->addAllRevokedDayPackages(Ljava/lang/Iterable;)V
 
@@ -103,15 +94,6 @@
 
 .method public static bridge synthetic -$$Nest$maddAllRevokedHourPackages(Lde/rki/coronawarnapp/server/protocols/internal/KeyDownloadParameters$KeyDownloadParametersAndroid;Ljava/lang/Iterable;)V
     .locals 0
-    .annotation system Ldalvik/annotation/Signature;
-        value = {
-            "(",
-            "Ljava/lang/Iterable<",
-            "+",
-            "Lde/rki/coronawarnapp/server/protocols/internal/KeyDownloadParameters$HourPackageMetadata;",
-            ">;)V"
-        }
-    .end annotation
 
     invoke-direct {p0, p1}, Lde/rki/coronawarnapp/server/protocols/internal/KeyDownloadParameters$KeyDownloadParametersAndroid;->addAllRevokedHourPackages(Ljava/lang/Iterable;)V
 
@@ -278,7 +260,7 @@
     return-void
 .end method
 
-.method public static synthetic -$$Nest$sfgetDEFAULT_INSTANCE()Lde/rki/coronawarnapp/server/protocols/internal/KeyDownloadParameters$KeyDownloadParametersAndroid;
+.method public static bridge synthetic -$$Nest$sfgetDEFAULT_INSTANCE()Lde/rki/coronawarnapp/server/protocols/internal/KeyDownloadParameters$KeyDownloadParametersAndroid;
     .locals 1
 
     sget-object v0, Lde/rki/coronawarnapp/server/protocols/internal/KeyDownloadParameters$KeyDownloadParametersAndroid;->DEFAULT_INSTANCE:Lde/rki/coronawarnapp/server/protocols/internal/KeyDownloadParameters$KeyDownloadParametersAndroid;

@@ -1,4 +1,4 @@
-.class public Lkotlin/reflect/jvm/internal/impl/utils/SmartList$SingletonIterator;
+.class Lkotlin/reflect/jvm/internal/impl/utils/SmartList$SingletonIterator;
 .super Lkotlin/reflect/jvm/internal/impl/utils/SmartList$SingletonIteratorBase;
 .source "SmartList.java"
 
@@ -26,7 +26,7 @@
 
 
 # instance fields
-.field public final myInitialModCount:I
+.field private final myInitialModCount:I
 
 .field public final synthetic this$0:Lkotlin/reflect/jvm/internal/impl/utils/SmartList;
 
@@ -107,6 +107,35 @@
     invoke-static {p0, p1}, Lj$/util/Iterator$-CC;->$default$forEachRemaining(Ljava/util/Iterator;Lj$/util/function/Consumer;)V
 
     return-void
+.end method
+
+.method public synthetic forEachRemaining(Ljava/util/function/Consumer;)V
+    .locals 0
+
+    invoke-static {p1}, Lj$/util/function/Consumer$VivifiedWrapper;->convert(Ljava/util/function/Consumer;)Lj$/util/function/Consumer;
+
+    move-result-object p1
+
+    invoke-virtual {p0, p1}, Lkotlin/reflect/jvm/internal/impl/utils/SmartList$SingletonIterator;->forEachRemaining(Lj$/util/function/Consumer;)V
+
+    return-void
+.end method
+
+.method public getElement()Ljava/lang/Object;
+    .locals 1
+    .annotation system Ldalvik/annotation/Signature;
+        value = {
+            "()TE;"
+        }
+    .end annotation
+
+    iget-object v0, p0, Lkotlin/reflect/jvm/internal/impl/utils/SmartList$SingletonIterator;->this$0:Lkotlin/reflect/jvm/internal/impl/utils/SmartList;
+
+    invoke-static {v0}, Lkotlin/reflect/jvm/internal/impl/utils/SmartList;->access$200(Lkotlin/reflect/jvm/internal/impl/utils/SmartList;)Ljava/lang/Object;
+
+    move-result-object v0
+
+    return-object v0
 .end method
 
 .method public remove()V

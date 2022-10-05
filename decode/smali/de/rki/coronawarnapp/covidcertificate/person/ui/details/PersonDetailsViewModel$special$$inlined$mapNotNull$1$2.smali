@@ -28,7 +28,7 @@
 .end annotation
 
 .annotation system Ldalvik/annotation/SourceDebugExtension;
-    value = "SMAP\nCollect.kt\nKotlin\n*S Kotlin\n*F\n+ 1 Collect.kt\nkotlinx/coroutines/flow/FlowKt__CollectKt$collect$3\n+ 2 Emitters.kt\nkotlinx/coroutines/flow/FlowKt__EmittersKt\n+ 3 Transform.kt\nkotlinx/coroutines/flow/FlowKt__TransformKt\n+ 4 PersonDetailsViewModel.kt\nde/rki/coronawarnapp/covidcertificate/person/ui/details/PersonDetailsViewModel\n+ 5 _Collections.kt\nkotlin/collections/CollectionsKt___CollectionsKt\n*L\n1#1,134:1\n53#2:135\n55#3:136\n56#3:140\n59#4:137\n221#5,2:138\n*S KotlinDebug\n*F\n+ 1 PersonDetailsViewModel.kt\nde/rki/coronawarnapp/covidcertificate/person/ui/details/PersonDetailsViewModel\n*L\n59#1:138,2\n*E\n"
+    value = "SMAP\nCollect.kt\nKotlin\n*S Kotlin\n*F\n+ 1 Collect.kt\nkotlinx/coroutines/flow/FlowKt__CollectKt$collect$3\n+ 2 Emitters.kt\nkotlinx/coroutines/flow/FlowKt__EmittersKt\n+ 3 Transform.kt\nkotlinx/coroutines/flow/FlowKt__TransformKt\n+ 4 PersonDetailsViewModel.kt\nde/rki/coronawarnapp/covidcertificate/person/ui/details/PersonDetailsViewModel\n+ 5 _Collections.kt\nkotlin/collections/CollectionsKt___CollectionsKt\n*L\n1#1,134:1\n53#2:135\n55#3:136\n56#3:140\n58#4:137\n221#5,2:138\n*S KotlinDebug\n*F\n+ 1 PersonDetailsViewModel.kt\nde/rki/coronawarnapp/covidcertificate/person/ui/details/PersonDetailsViewModel\n*L\n58#1:138,2\n*E\n"
 .end annotation
 
 
@@ -98,7 +98,7 @@
 
     invoke-static {p2}, Lkotlin/ResultKt;->throwOnFailure(Ljava/lang/Object;)V
 
-    goto :goto_1
+    goto :goto_2
 
     :cond_1
     new-instance p1, Ljava/lang/IllegalStateException;
@@ -125,7 +125,7 @@
 
     move-result v2
 
-    if-eqz v2, :cond_6
+    if-eqz v2, :cond_7
 
     invoke-interface {p1}, Ljava/util/Iterator;->next()Ljava/lang/Object;
 
@@ -139,10 +139,18 @@
 
     move-result-object v4
 
+    if-nez v4, :cond_4
+
+    const/4 v4, 0x0
+
+    goto :goto_1
+
+    :cond_4
     invoke-virtual {v4}, Lde/rki/coronawarnapp/covidcertificate/common/certificate/CertificatePersonIdentifier;->getCodeSHA256()Ljava/lang/String;
 
     move-result-object v4
 
+    :goto_1
     iget-object v5, p0, Lde/rki/coronawarnapp/covidcertificate/person/ui/details/PersonDetailsViewModel$special$$inlined$mapNotNull$1$2;->this$0:Lde/rki/coronawarnapp/covidcertificate/person/ui/details/PersonDetailsViewModel;
 
     iget-object v5, v5, Lde/rki/coronawarnapp/covidcertificate/person/ui/details/PersonDetailsViewModel;->personIdentifierCode:Ljava/lang/String;
@@ -153,28 +161,28 @@
 
     if-eqz v4, :cond_3
 
-    if-nez v2, :cond_4
+    if-nez v2, :cond_5
 
-    goto :goto_1
+    goto :goto_2
 
-    :cond_4
+    :cond_5
     iput v3, v0, Lde/rki/coronawarnapp/covidcertificate/person/ui/details/PersonDetailsViewModel$special$$inlined$mapNotNull$1$2$1;->label:I
 
     invoke-interface {p2, v2, v0}, Lkotlinx/coroutines/flow/FlowCollector;->emit(Ljava/lang/Object;Lkotlin/coroutines/Continuation;)Ljava/lang/Object;
 
     move-result-object p1
 
-    if-ne p1, v1, :cond_5
+    if-ne p1, v1, :cond_6
 
     return-object v1
 
-    :cond_5
-    :goto_1
+    :cond_6
+    :goto_2
     sget-object p1, Lkotlin/Unit;->INSTANCE:Lkotlin/Unit;
 
     return-object p1
 
-    :cond_6
+    :cond_7
     new-instance p1, Ljava/util/NoSuchElementException;
 
     const-string p2, "Collection contains no element matching the predicate."

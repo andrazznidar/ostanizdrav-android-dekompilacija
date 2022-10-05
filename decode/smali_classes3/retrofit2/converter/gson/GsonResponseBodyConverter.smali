@@ -57,7 +57,7 @@
 
 # virtual methods
 .method public convert(Ljava/lang/Object;)Ljava/lang/Object;
-    .locals 5
+    .locals 3
     .annotation system Ldalvik/annotation/Throws;
         value = {
             Ljava/io/IOException;
@@ -68,44 +68,10 @@
 
     iget-object v0, p0, Lretrofit2/converter/gson/GsonResponseBodyConverter;->gson:Lcom/google/gson/Gson;
 
-    iget-object v1, p1, Lokhttp3/ResponseBody;->reader:Ljava/io/Reader;
+    invoke-virtual {p1}, Lokhttp3/ResponseBody;->charStream()Ljava/io/Reader;
 
-    if-eqz v1, :cond_0
+    move-result-object v1
 
-    goto :goto_1
-
-    :cond_0
-    new-instance v1, Lokhttp3/ResponseBody$BomAwareReader;
-
-    invoke-virtual {p1}, Lokhttp3/ResponseBody;->source()Lokio/BufferedSource;
-
-    move-result-object v2
-
-    invoke-virtual {p1}, Lokhttp3/ResponseBody;->contentType()Lokhttp3/MediaType;
-
-    move-result-object v3
-
-    if-eqz v3, :cond_1
-
-    sget-object v4, Lkotlin/text/Charsets;->UTF_8:Ljava/nio/charset/Charset;
-
-    invoke-virtual {v3, v4}, Lokhttp3/MediaType;->charset(Ljava/nio/charset/Charset;)Ljava/nio/charset/Charset;
-
-    move-result-object v3
-
-    if-eqz v3, :cond_1
-
-    goto :goto_0
-
-    :cond_1
-    sget-object v3, Lkotlin/text/Charsets;->UTF_8:Ljava/nio/charset/Charset;
-
-    :goto_0
-    invoke-direct {v1, v2, v3}, Lokhttp3/ResponseBody$BomAwareReader;-><init>(Lokio/BufferedSource;Ljava/nio/charset/Charset;)V
-
-    iput-object v1, p1, Lokhttp3/ResponseBody;->reader:Ljava/io/Reader;
-
-    :goto_1
     invoke-static {v0}, Ljava/util/Objects;->requireNonNull(Ljava/lang/Object;)Ljava/lang/Object;
 
     new-instance v2, Lcom/google/gson/stream/JsonReader;
@@ -131,13 +97,13 @@
     :try_end_0
     .catchall {:try_start_0 .. :try_end_0} :catchall_0
 
-    if-ne v1, v2, :cond_2
+    if-ne v1, v2, :cond_0
 
     invoke-virtual {p1}, Lokhttp3/ResponseBody;->close()V
 
     return-object v0
 
-    :cond_2
+    :cond_0
     :try_start_1
     new-instance v0, Lcom/google/gson/JsonIOException;
 

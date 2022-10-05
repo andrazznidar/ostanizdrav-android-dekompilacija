@@ -167,7 +167,7 @@
     .end annotation
 .end method
 
-.method public final setBackoffCriteria(Landroidx/work/BackoffPolicy;JLjava/util/concurrent/TimeUnit;)Landroidx/work/WorkRequest$Builder;
+.method public final setBackoffCriteria$enumunboxing$(IJLjava/util/concurrent/TimeUnit;)Landroidx/work/WorkRequest$Builder;
     .locals 4
     .annotation system Ldalvik/annotation/MethodParameters;
         accessFlags = {
@@ -185,7 +185,7 @@
     .annotation system Ldalvik/annotation/Signature;
         value = {
             "(",
-            "Landroidx/work/BackoffPolicy;",
+            "Ljava/lang/Object;",
             "J",
             "Ljava/util/concurrent/TimeUnit;",
             ")TB;"
@@ -198,7 +198,7 @@
 
     iget-object v0, p0, Landroidx/work/WorkRequest$Builder;->mWorkSpec:Landroidx/work/impl/model/WorkSpec;
 
-    iput-object p1, v0, Landroidx/work/impl/model/WorkSpec;->backoffPolicy:Landroidx/work/BackoffPolicy;
+    iput p1, v0, Landroidx/work/impl/model/WorkSpec;->backoffPolicy:I
 
     invoke-virtual {p4, p2, p3}, Ljava/util/concurrent/TimeUnit;->toMillis(J)J
 

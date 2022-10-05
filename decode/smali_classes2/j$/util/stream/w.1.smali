@@ -2,28 +2,22 @@
 .super Ljava/lang/Object;
 
 # interfaces
-.implements Lj$/util/function/p;
+.implements Lj$/util/function/g;
 
 
-# static fields
-.field public static final synthetic a:Lj$/util/stream/w;
+# instance fields
+.field public final synthetic a:I
+
+.field public final synthetic b:Ljava/lang/Object;
 
 
 # direct methods
-.method static synthetic constructor <clinit>()V
-    .locals 1
-
-    new-instance v0, Lj$/util/stream/w;
-
-    invoke-direct {v0}, Lj$/util/stream/w;-><init>()V
-
-    sput-object v0, Lj$/util/stream/w;->a:Lj$/util/stream/w;
-
-    return-void
-.end method
-
-.method private synthetic constructor <init>()V
+.method public synthetic constructor <init>(Ljava/lang/Object;I)V
     .locals 0
+
+    iput p2, p0, Lj$/util/stream/w;->a:I
+
+    iput-object p1, p0, Lj$/util/stream/w;->b:Ljava/lang/Object;
 
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
@@ -32,20 +26,37 @@
 
 
 # virtual methods
-.method public final f(Ljava/lang/Object;D)V
-    .locals 3
+.method public final c(D)V
+    .locals 1
 
-    check-cast p1, [D
+    iget v0, p0, Lj$/util/stream/w;->a:I
 
-    invoke-static {p1, p2, p3}, Lj$/util/stream/l;->b([DD)[D
+    packed-switch v0, :pswitch_data_0
 
-    const/4 v0, 0x2
+    goto :goto_0
 
-    aget-wide v1, p1, v0
+    :pswitch_0
+    iget-object v0, p0, Lj$/util/stream/w;->b:Ljava/lang/Object;
 
-    add-double/2addr v1, p2
+    check-cast v0, Lj$/util/stream/q2;
 
-    aput-wide v1, p1, v0
+    invoke-interface {v0, p1, p2}, Lj$/util/stream/q2;->c(D)V
 
     return-void
+
+    :goto_0
+    iget-object v0, p0, Lj$/util/stream/w;->b:Ljava/lang/Object;
+
+    check-cast v0, Lj$/util/stream/x;
+
+    iget-object v0, v0, Lj$/util/stream/j2;->a:Lj$/util/stream/q2;
+
+    invoke-interface {v0, p1, p2}, Lj$/util/stream/q2;->c(D)V
+
+    return-void
+
+    :pswitch_data_0
+    .packed-switch 0x0
+        :pswitch_0
+    .end packed-switch
 .end method

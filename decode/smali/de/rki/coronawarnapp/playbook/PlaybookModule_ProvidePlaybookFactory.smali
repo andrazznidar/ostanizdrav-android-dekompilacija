@@ -28,11 +28,11 @@
     .end annotation
 .end field
 
-.field public final module:Lcom/upokecenter/cbor/CBORInteger;
+.field public final module:Lde/rki/coronawarnapp/playbook/PlaybookModule;
 
 
 # direct methods
-.method public constructor <init>(Lcom/upokecenter/cbor/CBORInteger;Ljavax/inject/Provider;)V
+.method public constructor <init>(Lde/rki/coronawarnapp/playbook/PlaybookModule;Ljavax/inject/Provider;)V
     .locals 0
     .annotation system Ldalvik/annotation/MethodParameters;
         accessFlags = {
@@ -48,7 +48,7 @@
     .annotation system Ldalvik/annotation/Signature;
         value = {
             "(",
-            "Lcom/upokecenter/cbor/CBORInteger;",
+            "Lde/rki/coronawarnapp/playbook/PlaybookModule;",
             "Ljavax/inject/Provider<",
             "Lde/rki/coronawarnapp/playbook/DefaultPlaybook;",
             ">;)V"
@@ -57,7 +57,7 @@
 
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
-    iput-object p1, p0, Lde/rki/coronawarnapp/playbook/PlaybookModule_ProvidePlaybookFactory;->module:Lcom/upokecenter/cbor/CBORInteger;
+    iput-object p1, p0, Lde/rki/coronawarnapp/playbook/PlaybookModule_ProvidePlaybookFactory;->module:Lde/rki/coronawarnapp/playbook/PlaybookModule;
 
     iput-object p2, p0, Lde/rki/coronawarnapp/playbook/PlaybookModule_ProvidePlaybookFactory;->defaultPlayBookProvider:Ljavax/inject/Provider;
 
@@ -69,7 +69,7 @@
 .method public get()Ljava/lang/Object;
     .locals 2
 
-    iget-object v0, p0, Lde/rki/coronawarnapp/playbook/PlaybookModule_ProvidePlaybookFactory;->module:Lcom/upokecenter/cbor/CBORInteger;
+    iget-object v0, p0, Lde/rki/coronawarnapp/playbook/PlaybookModule_ProvidePlaybookFactory;->module:Lde/rki/coronawarnapp/playbook/PlaybookModule;
 
     iget-object v1, p0, Lde/rki/coronawarnapp/playbook/PlaybookModule_ProvidePlaybookFactory;->defaultPlayBookProvider:Ljavax/inject/Provider;
 

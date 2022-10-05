@@ -21,19 +21,19 @@
 
     sput-object v0, Lde/rki/coronawarnapp/databinding/NewReleaseInfoItemBindingImpl;->sViewsWithIds:Landroid/util/SparseIntArray;
 
-    const v1, 0x7f0a07db
+    const v1, 0x7f0a0823
 
     const/4 v2, 0x1
 
     invoke-virtual {v0, v1, v2}, Landroid/util/SparseIntArray;->put(II)V
 
-    const v1, 0x7f0a013d
+    const v1, 0x7f0a0158
 
     const/4 v2, 0x2
 
     invoke-virtual {v0, v1, v2}, Landroid/util/SparseIntArray;->put(II)V
 
-    const v1, 0x7f0a0129
+    const v1, 0x7f0a0142
 
     const/4 v2, 0x3
 

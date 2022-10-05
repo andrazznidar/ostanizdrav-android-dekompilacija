@@ -122,7 +122,7 @@
     return-void
 .end method
 
-.method public static synthetic -$$Nest$sfgetDEFAULT_INSTANCE()Lde/rki/coronawarnapp/server/protocols/internal/ppdd/PpaDataRequestIos$PPADataRequestIOS;
+.method public static bridge synthetic -$$Nest$sfgetDEFAULT_INSTANCE()Lde/rki/coronawarnapp/server/protocols/internal/ppdd/PpaDataRequestIos$PPADataRequestIOS;
     .locals 1
 
     sget-object v0, Lde/rki/coronawarnapp/server/protocols/internal/ppdd/PpaDataRequestIos$PPADataRequestIOS;->DEFAULT_INSTANCE:Lde/rki/coronawarnapp/server/protocols/internal/ppdd/PpaDataRequestIos$PPADataRequestIOS;
@@ -826,7 +826,7 @@
     :pswitch_4
     new-instance p1, Lde/rki/coronawarnapp/server/protocols/internal/ppdd/PpaDataRequestIos$PPADataRequestIOS$Builder;
 
-    invoke-direct {p1, v0}, Lde/rki/coronawarnapp/server/protocols/internal/ppdd/PpaDataRequestIos$PPADataRequestIOS$Builder;-><init>(Lde/rki/coronawarnapp/server/protocols/internal/ppdd/PpaDataRequestIos$PPADataRequestIOS$Builder-IA;)V
+    invoke-direct {p1, v0}, Lde/rki/coronawarnapp/server/protocols/internal/ppdd/PpaDataRequestIos$PPADataRequestIOS$Builder;-><init>(Lcom/nimbusds/jose/crypto/ECDSAVerifier$$ExternalSyntheticOutline2;)V
 
     return-object p1
 

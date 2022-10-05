@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="utf-8"?>
 <LinearLayout android:orientation="vertical" android:padding="16.0dip" android:layout_width="fill_parent" android:layout_height="fill_parent" android:layout_marginLeft="24.0dip" android:layout_marginTop="8.0dip" android:layout_marginRight="24.0dip" android:layout_marginHorizontal="24.0dip" style="@style/Card.GreenCertificate"
   xmlns:android="http://schemas.android.com/apk/res/android">
-    <TextView android:textStyle="bold" android:id="@id/expiration_date_title" android:layout_width="fill_parent" android:layout_height="wrap_content" android:text="@string/expiration_date_title" style="@style/body2" />
+    <TextView android:id="@id/expiration_date_title" android:layout_width="fill_parent" android:layout_height="wrap_content" android:text="@string/expiration_date_title" style="@style/subtitleBoldSixteen" />
     <TextView android:id="@id/expiration_date" android:layout_width="fill_parent" android:layout_height="wrap_content" android:layout_marginTop="4.0dip" style="@style/body2" />
     <TextView android:id="@id/expiration_info_text" android:layout_width="fill_parent" android:layout_height="wrap_content" android:layout_marginTop="8.0dip" android:text="@string/expiration_info" style="@style/body2Medium" />
 </LinearLayout>

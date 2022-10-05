@@ -60,12 +60,12 @@
     return-object v0
 .end method
 
-.method public getFailureReason()Lde/rki/coronawarnapp/risk/EwRiskLevelResult$FailureReason;
+.method public getFailureReason$enumunboxing$()I
     .locals 1
 
     const/4 v0, 0x0
 
-    return-object v0
+    return v0
 .end method
 
 .method public getMatchedKeyCount()I

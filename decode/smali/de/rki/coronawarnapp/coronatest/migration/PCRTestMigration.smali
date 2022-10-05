@@ -203,7 +203,7 @@
 .end method
 
 .method public final startMigration(Lkotlin/coroutines/Continuation;)Ljava/lang/Object;
-    .locals 28
+    .locals 30
     .annotation system Ldalvik/annotation/Signature;
         value = {
             "(",
@@ -655,7 +655,11 @@
 
     const/16 v26, 0x0
 
-    const v27, 0xf820
+    const/16 v27, 0x0
+
+    const/16 v28, 0x0
+
+    const v29, 0x3f820
 
     move-object v10, v5
 
@@ -663,9 +667,9 @@
 
     move-object/from16 v19, v21
 
-    invoke-direct/range {v10 .. v27}, Lde/rki/coronawarnapp/coronatest/type/pcr/PCRCoronaTest;-><init>(Ljava/lang/String;Lorg/joda/time/Instant;Ljava/lang/String;ZZZZZLorg/joda/time/Instant;Lde/rki/coronawarnapp/coronatest/server/CoronaTestResult;Lorg/joda/time/Instant;ZLjava/lang/Throwable;ZZLjava/lang/String;I)V
+    invoke-direct/range {v10 .. v29}, Lde/rki/coronawarnapp/coronatest/type/pcr/PCRCoronaTest;-><init>(Ljava/lang/String;Lorg/joda/time/Instant;Ljava/lang/String;ZZZZZLorg/joda/time/Instant;Lde/rki/coronawarnapp/coronatest/server/CoronaTestResult;Lorg/joda/time/Instant;ZLjava/lang/Throwable;ZZLjava/lang/String;Ljava/lang/String;Lorg/joda/time/Instant;I)V
 
-    invoke-static {v5}, Lkotlin/collections/SetsKt__SetsKt;->setOf(Ljava/lang/Object;)Ljava/util/Set;
+    invoke-static {v5}, Lorg/bouncycastle/util/IPAddress;->setOf(Ljava/lang/Object;)Ljava/util/Set;
 
     move-result-object v3
 

@@ -645,7 +645,7 @@
 
     add-int/lit8 p1, p1, 0x1
 
-    invoke-super {p0, p1}, Landroid/view/ViewGroup;->onCreateDrawableState(I)[I
+    invoke-super {p0, p1}, Landroid/widget/FrameLayout;->onCreateDrawableState(I)[I
 
     move-result-object p1
 
@@ -678,7 +678,7 @@
 .method public onInitializeAccessibilityNodeInfo(Landroid/view/accessibility/AccessibilityNodeInfo;)V
     .locals 7
 
-    invoke-super {p0, p1}, Landroid/view/View;->onInitializeAccessibilityNodeInfo(Landroid/view/accessibility/AccessibilityNodeInfo;)V
+    invoke-super {p0, p1}, Landroid/widget/FrameLayout;->onInitializeAccessibilityNodeInfo(Landroid/view/accessibility/AccessibilityNodeInfo;)V
 
     iget-object v0, p0, Lcom/google/android/material/navigation/NavigationBarItemView;->badgeDrawable:Lcom/google/android/material/badge/BadgeDrawable;
 
@@ -1219,7 +1219,7 @@
 .method public setEnabled(Z)V
     .locals 1
 
-    invoke-super {p0, p1}, Landroid/view/View;->setEnabled(Z)V
+    invoke-super {p0, p1}, Landroid/widget/FrameLayout;->setEnabled(Z)V
 
     iget-object v0, p0, Lcom/google/android/material/navigation/NavigationBarItemView;->smallLabel:Landroid/widget/TextView;
 

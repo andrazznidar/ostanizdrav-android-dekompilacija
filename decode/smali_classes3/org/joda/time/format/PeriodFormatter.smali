@@ -117,12 +117,30 @@
     throw v0
 .end method
 
+.method public parsePeriod(Ljava/lang/String;)Lorg/joda/time/Period;
+    .locals 1
+
+    invoke-virtual {p0}, Lorg/joda/time/format/PeriodFormatter;->checkParser()V
+
+    invoke-virtual {p0, p1}, Lorg/joda/time/format/PeriodFormatter;->parseMutablePeriod(Ljava/lang/String;)Lorg/joda/time/MutablePeriod;
+
+    move-result-object p1
+
+    new-instance v0, Lorg/joda/time/Period;
+
+    invoke-direct {v0, p1}, Lorg/joda/time/Period;-><init>(Ljava/lang/Object;)V
+
+    return-object v0
+.end method
+
 .method public print(Lorg/joda/time/ReadablePeriod;)Ljava/lang/String;
     .locals 3
 
     iget-object v0, p0, Lorg/joda/time/format/PeriodFormatter;->iPrinter:Lorg/joda/time/format/PeriodPrinter;
 
-    if-eqz v0, :cond_0
+    if-eqz v0, :cond_1
+
+    if-eqz p1, :cond_0
 
     new-instance v1, Ljava/lang/StringBuffer;
 
@@ -145,6 +163,15 @@
     return-object p1
 
     :cond_0
+    new-instance p1, Ljava/lang/IllegalArgumentException;
+
+    const-string v0, "Period must not be null"
+
+    invoke-direct {p1, v0}, Ljava/lang/IllegalArgumentException;-><init>(Ljava/lang/String;)V
+
+    throw p1
+
+    :cond_1
     new-instance p1, Ljava/lang/UnsupportedOperationException;
 
     const-string v0, "Printing not supported"

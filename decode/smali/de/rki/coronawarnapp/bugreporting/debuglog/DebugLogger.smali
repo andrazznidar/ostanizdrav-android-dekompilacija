@@ -1,5 +1,5 @@
 .class public final Lde/rki/coronawarnapp/bugreporting/debuglog/DebugLogger;
-.super Lde/rki/coronawarnapp/bugreporting/debuglog/DebugLoggerBase;
+.super Lboofcv/struct/border/ImageBorder;
 .source "DebugLogger.kt"
 
 
@@ -130,7 +130,9 @@
 
     invoke-static {p4, p5}, Lkotlin/jvm/internal/Intrinsics;->checkNotNullParameter(Ljava/lang/Object;Ljava/lang/String;)V
 
-    invoke-direct {p0}, Lde/rki/coronawarnapp/bugreporting/debuglog/DebugLoggerBase;-><init>()V
+    const/4 p5, 0x3
+
+    invoke-direct {p0, p5}, Lboofcv/struct/border/ImageBorder;-><init>(I)V
 
     iput-object p1, p0, Lde/rki/coronawarnapp/bugreporting/debuglog/DebugLogger;->scope:Lkotlinx/coroutines/CoroutineScope;
 

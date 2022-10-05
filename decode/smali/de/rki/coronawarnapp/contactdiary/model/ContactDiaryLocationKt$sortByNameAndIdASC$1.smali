@@ -60,17 +60,13 @@
 
     move-result-object p1
 
-    const-string v0, "null cannot be cast to non-null type java.lang.String"
-
-    invoke-static {p1, v0}, Ljava/util/Objects;->requireNonNull(Ljava/lang/Object;Ljava/lang/String;)Ljava/lang/Object;
-
     sget-object v0, Ljava/util/Locale;->ROOT:Ljava/util/Locale;
 
     invoke-virtual {p1, v0}, Ljava/lang/String;->toLowerCase(Ljava/util/Locale;)Ljava/lang/String;
 
     move-result-object p1
 
-    const-string v0, "(this as java.lang.Strin\u2026.toLowerCase(Locale.ROOT)"
+    const-string/jumbo v0, "this as java.lang.String).toLowerCase(Locale.ROOT)"
 
     invoke-static {p1, v0}, Lkotlin/jvm/internal/Intrinsics;->checkNotNullExpressionValue(Ljava/lang/Object;Ljava/lang/String;)V
 

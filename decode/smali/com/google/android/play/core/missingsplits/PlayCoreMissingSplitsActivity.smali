@@ -167,7 +167,7 @@
 
     const-string v2, "Couldn\'t start missing splits activity for %s"
 
-    invoke-static {v0, v2, v1}, Lkotlin/jvm/internal/SpreadBuilder;->zzf(Ljava/lang/String;Ljava/lang/String;[Ljava/lang/Object;)Ljava/lang/String;
+    invoke-static {v0, v2, v1}, Lcom/google/android/play/core/internal/zzag;->zzf(Ljava/lang/String;Ljava/lang/String;[Ljava/lang/Object;)Ljava/lang/String;
 
     move-result-object v0
 

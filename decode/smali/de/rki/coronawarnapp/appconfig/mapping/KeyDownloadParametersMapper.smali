@@ -185,7 +185,7 @@
 
     const-string/jumbo v9, "this.revokedDayPackagesList"
 
-    invoke-static {v0, v9}, Lde/rki/coronawarnapp/appconfig/mapping/KeyDownloadParametersMapper$$ExternalSyntheticOutline0;->m(Ljava/util/List;Ljava/lang/String;)Ljava/util/ArrayList;
+    invoke-static {v0, v9}, Landroidx/window/ExtensionAdapter$$ExternalSyntheticOutline0;->m(Ljava/util/List;Ljava/lang/String;)Ljava/util/ArrayList;
 
     move-result-object v9
 
@@ -193,7 +193,6 @@
 
     move-result-object v10
 
-    :cond_6
     :goto_5
     invoke-interface {v10}, Ljava/util/Iterator;->hasNext()Z
 
@@ -260,8 +259,11 @@
     const/4 v0, 0x0
 
     :goto_6
-    if-eqz v0, :cond_6
+    if-nez v0, :cond_6
 
+    goto :goto_5
+
+    :cond_6
     invoke-virtual {v9, v0}, Ljava/util/ArrayList;->add(Ljava/lang/Object;)Z
 
     goto :goto_5
@@ -283,7 +285,7 @@
 
     const-string/jumbo v6, "this.revokedHourPackagesList"
 
-    invoke-static {v0, v6}, Lde/rki/coronawarnapp/appconfig/mapping/KeyDownloadParametersMapper$$ExternalSyntheticOutline0;->m(Ljava/util/List;Ljava/lang/String;)Ljava/util/ArrayList;
+    invoke-static {v0, v6}, Landroidx/window/ExtensionAdapter$$ExternalSyntheticOutline0;->m(Ljava/util/List;Ljava/lang/String;)Ljava/util/ArrayList;
 
     move-result-object v6
 
@@ -291,7 +293,6 @@
 
     move-result-object v7
 
-    :cond_9
     :goto_8
     invoke-interface {v7}, Ljava/util/Iterator;->hasNext()Z
 
@@ -376,8 +377,11 @@
     const/4 v0, 0x0
 
     :goto_9
-    if-eqz v0, :cond_9
+    if-nez v0, :cond_9
 
+    goto :goto_8
+
+    :cond_9
     invoke-virtual {v6, v0}, Ljava/util/ArrayList;->add(Ljava/lang/Object;)Z
 
     goto :goto_8
@@ -399,7 +403,7 @@
 
     const-string/jumbo v1, "this.revokedTraceWarningPackagesList"
 
-    invoke-static {v0, v1}, Lde/rki/coronawarnapp/appconfig/mapping/KeyDownloadParametersMapper$$ExternalSyntheticOutline0;->m(Ljava/util/List;Ljava/lang/String;)Ljava/util/ArrayList;
+    invoke-static {v0, v1}, Landroidx/window/ExtensionAdapter$$ExternalSyntheticOutline0;->m(Ljava/util/List;Ljava/lang/String;)Ljava/util/ArrayList;
 
     move-result-object v1
 
@@ -407,7 +411,6 @@
 
     move-result-object v0
 
-    :cond_c
     :goto_b
     invoke-interface {v0}, Ljava/util/Iterator;->hasNext()Z
 
@@ -425,7 +428,7 @@
 
     move-result-object v7
 
-    if-nez v7, :cond_d
+    if-nez v7, :cond_c
 
     sget-object v7, Ltimber/log/Timber;->Forest:Ltimber/log/Timber$Forest;
 
@@ -445,7 +448,7 @@
 
     goto :goto_c
 
-    :cond_d
+    :cond_c
     new-instance v7, Lde/rki/coronawarnapp/appconfig/mapping/RevokedKeyPackage$TraceWarning;
 
     invoke-virtual {v2}, Lde/rki/coronawarnapp/server/protocols/internal/v2/KeyDownloadParameters$TraceWarningPackageMetadata;->getEtag()Ljava/lang/String;
@@ -465,8 +468,11 @@
     move-object v2, v7
 
     :goto_c
-    if-eqz v2, :cond_c
+    if-nez v2, :cond_d
 
+    goto :goto_b
+
+    :cond_d
     invoke-virtual {v1, v2}, Ljava/util/ArrayList;->add(Ljava/lang/Object;)Z
 
     goto :goto_b

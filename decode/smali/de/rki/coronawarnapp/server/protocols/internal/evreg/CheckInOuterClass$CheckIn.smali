@@ -146,7 +146,7 @@
     return-void
 .end method
 
-.method public static synthetic -$$Nest$sfgetDEFAULT_INSTANCE()Lde/rki/coronawarnapp/server/protocols/internal/evreg/CheckInOuterClass$CheckIn;
+.method public static bridge synthetic -$$Nest$sfgetDEFAULT_INSTANCE()Lde/rki/coronawarnapp/server/protocols/internal/evreg/CheckInOuterClass$CheckIn;
     .locals 1
 
     sget-object v0, Lde/rki/coronawarnapp/server/protocols/internal/evreg/CheckInOuterClass$CheckIn;->DEFAULT_INSTANCE:Lde/rki/coronawarnapp/server/protocols/internal/evreg/CheckInOuterClass$CheckIn;
@@ -893,7 +893,7 @@
     :pswitch_4
     new-instance p1, Lde/rki/coronawarnapp/server/protocols/internal/evreg/CheckInOuterClass$CheckIn$Builder;
 
-    invoke-direct {p1, v0}, Lde/rki/coronawarnapp/server/protocols/internal/evreg/CheckInOuterClass$CheckIn$Builder;-><init>(Lde/rki/coronawarnapp/server/protocols/internal/evreg/CheckInOuterClass$CheckIn$Builder-IA;)V
+    invoke-direct {p1, v0}, Lde/rki/coronawarnapp/server/protocols/internal/evreg/CheckInOuterClass$CheckIn$Builder;-><init>(Lcom/fasterxml/jackson/core/JsonGenerator$$ExternalSyntheticOutline0;)V
 
     return-object p1
 

@@ -990,12 +990,12 @@
 
     invoke-static {v2}, Lkotlin/ResultKt;->throwOnFailure(Ljava/lang/Object;)V
 
-    goto/16 :goto_9
+    goto/16 :goto_a
 
     :pswitch_1
     invoke-static {v2}, Lkotlin/ResultKt;->throwOnFailure(Ljava/lang/Object;)V
 
-    goto/16 :goto_8
+    goto/16 :goto_9
 
     :pswitch_2
     iget-object v0, v3, Lde/rki/coronawarnapp/diagnosiskeys/download/DayPackageSyncTool$syncMissingDayPackages$1;->L$2:Ljava/lang/Object;
@@ -1012,7 +1012,7 @@
 
     invoke-static {v2}, Lkotlin/ResultKt;->throwOnFailure(Ljava/lang/Object;)V
 
-    goto/16 :goto_7
+    goto/16 :goto_8
 
     :pswitch_3
     iget-boolean v0, v3, Lde/rki/coronawarnapp/diagnosiskeys/download/DayPackageSyncTool$syncMissingDayPackages$1;->Z$1:Z
@@ -1051,7 +1051,7 @@
     :catch_0
     move-exception v0
 
-    goto/16 :goto_b
+    goto/16 :goto_c
 
     :pswitch_4
     iget-boolean v0, v3, Lde/rki/coronawarnapp/diagnosiskeys/download/DayPackageSyncTool$syncMissingDayPackages$1;->Z$0:Z
@@ -1260,11 +1260,14 @@
     :goto_6
     check-cast v2, Lde/rki/coronawarnapp/diagnosiskeys/download/LocationDays;
 
-    if-eqz v2, :cond_6
+    if-nez v2, :cond_6
 
-    invoke-interface {v13, v2}, Ljava/util/Collection;->add(Ljava/lang/Object;)Z
+    goto :goto_7
 
     :cond_6
+    invoke-interface {v13, v2}, Ljava/util/Collection;->add(Ljava/lang/Object;)Z
+
+    :goto_7
     move v2, v5
 
     move-object v5, v12
@@ -1340,7 +1343,7 @@
     :cond_9
     move-object v10, v11
 
-    :goto_7
+    :goto_8
     iput-object v7, v3, Lde/rki/coronawarnapp/diagnosiskeys/download/DayPackageSyncTool$syncMissingDayPackages$1;->L$0:Ljava/lang/Object;
 
     iput-object v7, v3, Lde/rki/coronawarnapp/diagnosiskeys/download/DayPackageSyncTool$syncMissingDayPackages$1;->L$1:Ljava/lang/Object;
@@ -1360,7 +1363,7 @@
     return-object v4
 
     :cond_a
-    :goto_8
+    :goto_9
     move-object v0, v2
 
     check-cast v0, Ljava/util/Collection;
@@ -1400,7 +1403,7 @@
     return-object v4
 
     :cond_b
-    :goto_9
+    :goto_a
     check-cast v2, Ljava/lang/Iterable;
 
     invoke-static {v2}, Lkotlin/collections/CollectionsKt___CollectionsKt;->filterNotNull(Ljava/lang/Iterable;)Ljava/util/List;
@@ -1457,7 +1460,7 @@
 
     const-string v10, "/"
 
-    invoke-static {v7, v5, v10, v6}, Lcom/airbnb/lottie/utils/GammaEvaluator$$ExternalSyntheticOutline0;->m(Ljava/lang/String;ILjava/lang/String;I)Ljava/lang/String;
+    invoke-static {v7, v5, v10, v6}, Landroidx/camera/camera2/internal/Camera2CameraImpl$$ExternalSyntheticOutline0;->m(Ljava/lang/String;ILjava/lang/String;I)Ljava/lang/String;
 
     move-result-object v5
 
@@ -1477,17 +1480,17 @@
 
     if-ne v0, v4, :cond_c
 
-    goto :goto_a
+    goto :goto_b
 
     :cond_c
     move v8, v9
 
-    :goto_a
+    :goto_b
     invoke-direct {v3, v8, v2}, Lde/rki/coronawarnapp/diagnosiskeys/download/BaseKeyPackageSyncTool$SyncResult;-><init>(ZLjava/util/List;)V
 
     return-object v3
 
-    :goto_b
+    :goto_c
     sget-object v2, Ltimber/log/Timber;->Forest:Ltimber/log/Timber$Forest;
 
     invoke-virtual {v2, v6}, Ltimber/log/Timber$Forest;->tag(Ljava/lang/String;)Ltimber/log/Timber$Tree;
@@ -1505,8 +1508,6 @@
     invoke-direct {v0, v9, v2}, Lde/rki/coronawarnapp/diagnosiskeys/download/BaseKeyPackageSyncTool$SyncResult;-><init>(ZLjava/util/List;)V
 
     return-object v0
-
-    nop
 
     :pswitch_data_0
     .packed-switch 0x0

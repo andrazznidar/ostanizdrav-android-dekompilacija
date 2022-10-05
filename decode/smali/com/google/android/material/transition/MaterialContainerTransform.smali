@@ -837,12 +837,12 @@
     :goto_5
     if-eqz v2, :cond_d
 
-    invoke-virtual {v6, v2}, Lcom/google/android/material/transition/MaterialContainerTransform;->setPathMotion(Landroidx/transition/PathMotion;)V
+    invoke-virtual {v6, v2}, Lcom/google/android/material/transition/MaterialContainerTransform;->setPathMotion(Lorg/joda/time/Chronology;)V
 
     :cond_d
     new-instance v2, Lcom/google/android/material/transition/MaterialContainerTransform$TransitionDrawable;
 
-    iget-object v0, v6, Landroidx/transition/Transition;->mPathMotion:Landroidx/transition/PathMotion;
+    iget-object v0, v6, Landroidx/transition/Transition;->mPathMotion:Lorg/joda/time/Chronology;
 
     iget v7, v6, Lcom/google/android/material/transition/MaterialContainerTransform;->startElevation:F
 
@@ -957,7 +957,7 @@
     :goto_a
     move-object/from16 v24, v8
 
-    iget-object v8, v6, Landroidx/transition/Transition;->mPathMotion:Landroidx/transition/PathMotion;
+    iget-object v8, v6, Landroidx/transition/Transition;->mPathMotion:Lorg/joda/time/Chronology;
 
     instance-of v8, v8, Lcom/google/android/material/transition/MaterialArcMotion;
 
@@ -1015,7 +1015,7 @@
 
     move/from16 v20, v0
 
-    invoke-direct/range {v7 .. v27}, Lcom/google/android/material/transition/MaterialContainerTransform$TransitionDrawable;-><init>(Landroidx/transition/PathMotion;Landroid/view/View;Landroid/graphics/RectF;Lcom/google/android/material/shape/ShapeAppearanceModel;FLandroid/view/View;Landroid/graphics/RectF;Lcom/google/android/material/shape/ShapeAppearanceModel;FIIIIZZLcom/google/android/material/transition/FadeModeEvaluator;Lcom/google/android/material/transition/FitModeEvaluator;Lcom/google/android/material/transition/MaterialContainerTransform$ProgressThresholdsGroup;ZLcom/google/android/material/transition/MaterialContainerTransform$1;)V
+    invoke-direct/range {v7 .. v27}, Lcom/google/android/material/transition/MaterialContainerTransform$TransitionDrawable;-><init>(Lorg/joda/time/Chronology;Landroid/view/View;Landroid/graphics/RectF;Lcom/google/android/material/shape/ShapeAppearanceModel;FLandroid/view/View;Landroid/graphics/RectF;Lcom/google/android/material/shape/ShapeAppearanceModel;FIIIIZZLcom/google/android/material/transition/FadeModeEvaluator;Lcom/google/android/material/transition/FitModeEvaluator;Lcom/google/android/material/transition/MaterialContainerTransform$ProgressThresholdsGroup;ZLcom/google/android/material/transition/MaterialContainerTransform$1;)V
 
     iget v0, v1, Landroid/graphics/RectF;->left:F
 
@@ -1142,19 +1142,19 @@
     return-object v0
 .end method
 
-.method public setPathMotion(Landroidx/transition/PathMotion;)V
+.method public setPathMotion(Lorg/joda/time/Chronology;)V
     .locals 0
 
     if-nez p1, :cond_0
 
-    sget-object p1, Landroidx/transition/Transition;->STRAIGHT_PATH_MOTION:Landroidx/transition/PathMotion;
+    sget-object p1, Landroidx/transition/Transition;->STRAIGHT_PATH_MOTION:Lorg/joda/time/Chronology;
 
-    iput-object p1, p0, Landroidx/transition/Transition;->mPathMotion:Landroidx/transition/PathMotion;
+    iput-object p1, p0, Landroidx/transition/Transition;->mPathMotion:Lorg/joda/time/Chronology;
 
     goto :goto_0
 
     :cond_0
-    iput-object p1, p0, Landroidx/transition/Transition;->mPathMotion:Landroidx/transition/PathMotion;
+    iput-object p1, p0, Landroidx/transition/Transition;->mPathMotion:Lorg/joda/time/Chronology;
 
     :goto_0
     const/4 p1, 0x1

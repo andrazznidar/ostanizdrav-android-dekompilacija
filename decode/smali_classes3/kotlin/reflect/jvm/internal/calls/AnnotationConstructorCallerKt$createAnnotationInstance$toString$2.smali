@@ -1,4 +1,4 @@
-.class public final Lkotlin/reflect/jvm/internal/calls/AnnotationConstructorCallerKt$createAnnotationInstance$toString$2;
+.class final Lkotlin/reflect/jvm/internal/calls/AnnotationConstructorCallerKt$createAnnotationInstance$toString$2;
 .super Lkotlin/jvm/internal/Lambda;
 .source "AnnotationConstructorCaller.kt"
 
@@ -22,6 +22,25 @@
         "Lkotlin/jvm/functions/Function0<",
         "Ljava/lang/String;",
         ">;"
+    }
+.end annotation
+
+.annotation runtime Lkotlin/Metadata;
+    d1 = {
+        "\u0000\u000e\n\u0000\n\u0002\u0010\u000e\n\u0000\n\u0002\u0010\u0000\n\u0000\u0010\u0000\u001a\u00020\u0001\"\u0008\u0008\u0000\u0010\u0002*\u00020\u0003H\n\u00a2\u0006\u0002\u0008\u0004"
+    }
+    d2 = {
+        "<anonymous>",
+        "",
+        "T",
+        "",
+        "invoke"
+    }
+    k = 0x3
+    mv = {
+        0x1,
+        0x5,
+        0x1
     }
 .end annotation
 
@@ -49,7 +68,17 @@
 
 
 # virtual methods
-.method public invoke()Ljava/lang/Object;
+.method public bridge synthetic invoke()Ljava/lang/Object;
+    .locals 1
+
+    invoke-virtual {p0}, Lkotlin/reflect/jvm/internal/calls/AnnotationConstructorCallerKt$createAnnotationInstance$toString$2;->invoke()Ljava/lang/String;
+
+    move-result-object v0
+
+    return-object v0
+.end method
+
+.method public final invoke()Ljava/lang/String;
     .locals 10
 
     const/16 v0, 0x40
@@ -74,17 +103,17 @@
 
     sget-object v8, Lkotlin/reflect/jvm/internal/calls/AnnotationConstructorCallerKt$createAnnotationInstance$toString$2$1$1;->INSTANCE:Lkotlin/reflect/jvm/internal/calls/AnnotationConstructorCallerKt$createAnnotationInstance$toString$2$1$1;
 
-    const/4 v6, 0x0
-
-    const/4 v7, 0x0
-
-    const/16 v9, 0x30
-
     const-string v3, ", "
 
     const-string v4, "("
 
     const-string v5, ")"
+
+    const/4 v6, 0x0
+
+    const/4 v7, 0x0
+
+    const/16 v9, 0x30
 
     move-object v2, v0
 

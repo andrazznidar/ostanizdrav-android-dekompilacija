@@ -1,4 +1,4 @@
-.class public abstract Lkotlin/reflect/jvm/internal/impl/load/java/lazy/descriptors/LazyJavaPackageScope$KotlinClassLookupResult;
+.class abstract Lkotlin/reflect/jvm/internal/impl/load/java/lazy/descriptors/LazyJavaPackageScope$KotlinClassLookupResult;
 .super Ljava/lang/Object;
 .source "LazyJavaPackageScope.kt"
 
@@ -23,10 +23,18 @@
 
 
 # direct methods
-.method public constructor <init>(Lkotlin/jvm/internal/DefaultConstructorMarker;)V
+.method private constructor <init>()V
     .locals 0
 
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
+
+    return-void
+.end method
+
+.method public synthetic constructor <init>(Lkotlin/jvm/internal/DefaultConstructorMarker;)V
+    .locals 0
+
+    invoke-direct {p0}, Lkotlin/reflect/jvm/internal/impl/load/java/lazy/descriptors/LazyJavaPackageScope$KotlinClassLookupResult;-><init>()V
 
     return-void
 .end method

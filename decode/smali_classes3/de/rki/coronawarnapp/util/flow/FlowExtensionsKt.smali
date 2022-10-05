@@ -84,17 +84,9 @@
 
     move-result-object p1
 
-    iget-object v0, p0, Lkotlinx/coroutines/flow/SharingConfig;->context:Ljava/lang/Object;
+    iget-object v3, p0, Lkotlinx/coroutines/flow/SharingConfig;->context:Lkotlin/coroutines/CoroutineContext;
 
-    move-object v3, v0
-
-    check-cast v3, Lkotlin/coroutines/CoroutineContext;
-
-    iget-object p0, p0, Lkotlinx/coroutines/flow/SharingConfig;->upstream:Ljava/lang/Object;
-
-    move-object v4, p0
-
-    check-cast v4, Lkotlinx/coroutines/flow/Flow;
+    iget-object v4, p0, Lkotlinx/coroutines/flow/SharingConfig;->upstream:Lkotlinx/coroutines/flow/Flow;
 
     const/4 v7, 0x0
 
@@ -134,8 +126,6 @@
     and-int/lit8 p3, p4, 0x4
 
     if-eqz p3, :cond_1
-
-    sget p3, Lkotlinx/coroutines/flow/SharingStarted;->$r8$clinit:I
 
     new-instance v0, Lkotlinx/coroutines/flow/StartedWhileSubscribed;
 

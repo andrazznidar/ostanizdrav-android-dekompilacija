@@ -2,28 +2,22 @@
 .super Ljava/lang/Object;
 
 # interfaces
-.implements Lj$/util/function/p;
+.implements Lj$/util/function/c;
 
 
-# static fields
-.field public static final synthetic a:Lj$/util/stream/v;
+# instance fields
+.field public final synthetic a:I
+
+.field public final synthetic b:Lj$/util/function/BiConsumer;
 
 
 # direct methods
-.method static synthetic constructor <clinit>()V
-    .locals 1
-
-    new-instance v0, Lj$/util/stream/v;
-
-    invoke-direct {v0}, Lj$/util/stream/v;-><init>()V
-
-    sput-object v0, Lj$/util/stream/v;->a:Lj$/util/stream/v;
-
-    return-void
-.end method
-
-.method private synthetic constructor <init>()V
+.method public synthetic constructor <init>(Lj$/util/function/BiConsumer;I)V
     .locals 0
+
+    iput p2, p0, Lj$/util/stream/v;->a:I
+
+    iput-object p1, p0, Lj$/util/stream/v;->b:Lj$/util/function/BiConsumer;
 
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
@@ -32,30 +26,88 @@
 
 
 # virtual methods
-.method public final f(Ljava/lang/Object;D)V
-    .locals 5
+.method public andThen(Lj$/util/function/Function;)Lj$/util/function/BiFunction;
+    .locals 1
 
-    check-cast p1, [D
+    iget v0, p0, Lj$/util/stream/v;->a:I
 
-    const/4 v0, 0x2
+    packed-switch v0, :pswitch_data_0
 
-    aget-wide v1, p1, v0
+    goto :goto_0
 
-    const-wide/high16 v3, 0x3ff0000000000000L    # 1.0
+    :pswitch_0
+    invoke-static {p1}, Ljava/util/Objects;->requireNonNull(Ljava/lang/Object;)Ljava/lang/Object;
 
-    add-double/2addr v1, v3
+    new-instance v0, Lj$/util/concurrent/t;
 
-    aput-wide v1, p1, v0
+    invoke-direct {v0, p0, p1}, Lj$/util/concurrent/t;-><init>(Lj$/util/function/BiFunction;Lj$/util/function/Function;)V
 
-    invoke-static {p1, p2, p3}, Lj$/util/stream/l;->b([DD)[D
+    return-object v0
 
-    const/4 v0, 0x3
+    :pswitch_1
+    invoke-static {p1}, Ljava/util/Objects;->requireNonNull(Ljava/lang/Object;)Ljava/lang/Object;
 
-    aget-wide v1, p1, v0
+    new-instance v0, Lj$/util/concurrent/t;
 
-    add-double/2addr v1, p2
+    invoke-direct {v0, p0, p1}, Lj$/util/concurrent/t;-><init>(Lj$/util/function/BiFunction;Lj$/util/function/Function;)V
 
-    aput-wide v1, p1, v0
+    return-object v0
 
-    return-void
+    :goto_0
+    invoke-static {p1}, Ljava/util/Objects;->requireNonNull(Ljava/lang/Object;)Ljava/lang/Object;
+
+    new-instance v0, Lj$/util/concurrent/t;
+
+    invoke-direct {v0, p0, p1}, Lj$/util/concurrent/t;-><init>(Lj$/util/function/BiFunction;Lj$/util/function/Function;)V
+
+    return-object v0
+
+    nop
+
+    :pswitch_data_0
+    .packed-switch 0x0
+        :pswitch_1
+        :pswitch_0
+    .end packed-switch
+.end method
+
+.method public final apply(Ljava/lang/Object;Ljava/lang/Object;)Ljava/lang/Object;
+    .locals 2
+
+    iget v0, p0, Lj$/util/stream/v;->a:I
+
+    packed-switch v0, :pswitch_data_0
+
+    goto :goto_0
+
+    :pswitch_0
+    iget-object v0, p0, Lj$/util/stream/v;->b:Lj$/util/function/BiConsumer;
+
+    sget v1, Lj$/util/stream/k0;->t:I
+
+    invoke-interface {v0, p1, p2}, Lj$/util/function/BiConsumer;->n(Ljava/lang/Object;Ljava/lang/Object;)V
+
+    return-object p1
+
+    :pswitch_1
+    iget-object v0, p0, Lj$/util/stream/v;->b:Lj$/util/function/BiConsumer;
+
+    invoke-interface {v0, p1, p2}, Lj$/util/function/BiConsumer;->n(Ljava/lang/Object;Ljava/lang/Object;)V
+
+    return-object p1
+
+    :goto_0
+    iget-object v0, p0, Lj$/util/stream/v;->b:Lj$/util/function/BiConsumer;
+
+    sget v1, Lj$/util/stream/s0;->t:I
+
+    invoke-interface {v0, p1, p2}, Lj$/util/function/BiConsumer;->n(Ljava/lang/Object;Ljava/lang/Object;)V
+
+    return-object p1
+
+    :pswitch_data_0
+    .packed-switch 0x0
+        :pswitch_1
+        :pswitch_0
+    .end packed-switch
 .end method

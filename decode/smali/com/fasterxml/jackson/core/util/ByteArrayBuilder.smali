@@ -295,6 +295,18 @@
     return-void
 .end method
 
+.method public completeAndCoalesce(I)[B
+    .locals 0
+
+    iput p1, p0, Lcom/fasterxml/jackson/core/util/ByteArrayBuilder;->_currBlockPtr:I
+
+    invoke-virtual {p0}, Lcom/fasterxml/jackson/core/util/ByteArrayBuilder;->toByteArray()[B
+
+    move-result-object p1
+
+    return-object p1
+.end method
+
 .method public flush()V
     .locals 0
 

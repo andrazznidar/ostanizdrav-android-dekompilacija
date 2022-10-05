@@ -5,7 +5,7 @@
 
 # annotations
 .annotation system Ldalvik/annotation/SourceDebugExtension;
-    value = "SMAP\nVaccinationRepository.kt\nKotlin\n*S Kotlin\n*F\n+ 1 VaccinationRepository.kt\nde/rki/coronawarnapp/covidcertificate/vaccination/core/repository/VaccinationRepository\n+ 2 FlowExtensions.kt\nde/rki/coronawarnapp/util/flow/FlowExtensionsKt\n+ 3 Zip.kt\nkotlinx/coroutines/flow/FlowKt__ZipKt\n+ 4 SafeCollector.common.kt\nkotlinx/coroutines/flow/internal/SafeCollector_commonKt\n+ 5 _Collections.kt\nkotlin/collections/CollectionsKt___CollectionsKt\n*L\n1#1,368:1\n67#2,3:369\n66#2:372\n76#2:376\n237#3:373\n239#3:375\n106#4:374\n616#5,12:377\n616#5,12:389\n1177#5,2:401\n1251#5,4:403\n*S KotlinDebug\n*F\n+ 1 VaccinationRepository.kt\nde/rki/coronawarnapp/covidcertificate/vaccination/core/repository/VaccinationRepository\n*L\n86#1:369,3\n86#1:372\n86#1:376\n86#1:373\n86#1:375\n86#1:374\n143#1:377,12\n145#1:389,12\n199#1:401,2\n199#1:403,4\n*E\n"
+    value = "SMAP\nVaccinationRepository.kt\nKotlin\n*S Kotlin\n*F\n+ 1 VaccinationRepository.kt\nde/rki/coronawarnapp/covidcertificate/vaccination/core/repository/VaccinationRepository\n+ 2 Transform.kt\nkotlinx/coroutines/flow/FlowKt__TransformKt\n+ 3 Emitters.kt\nkotlinx/coroutines/flow/FlowKt__EmittersKt\n+ 4 SafeCollector.common.kt\nkotlinx/coroutines/flow/internal/SafeCollector_commonKt\n+ 5 _Collections.kt\nkotlin/collections/CollectionsKt___CollectionsKt\n*L\n1#1,439:1\n47#2:440\n49#2:444\n50#3:441\n55#3:443\n106#4:442\n616#5,12:445\n616#5,12:457\n1177#5,2:469\n1251#5,4:471\n*S KotlinDebug\n*F\n+ 1 VaccinationRepository.kt\nde/rki/coronawarnapp/covidcertificate/vaccination/core/repository/VaccinationRepository\n*L\n109#1:440\n109#1:444\n109#1:441\n109#1:443\n109#1:442\n160#1:445,12\n162#1:457,12\n216#1:469,2\n216#1:471,4\n*E\n"
 .end annotation
 
 
@@ -37,6 +37,17 @@
 .end field
 
 .field public final qrCodeExtractor:Lde/rki/coronawarnapp/covidcertificate/common/certificate/DccQrCodeExtractor;
+
+.field public final recycledCertificates:Lkotlinx/coroutines/flow/Flow;
+    .annotation system Ldalvik/annotation/Signature;
+        value = {
+            "Lkotlinx/coroutines/flow/Flow<",
+            "Ljava/util/Set<",
+            "Lde/rki/coronawarnapp/covidcertificate/vaccination/core/VaccinationCertificate;",
+            ">;>;"
+        }
+    .end annotation
+.end field
 
 .field public final storage:Lde/rki/coronawarnapp/covidcertificate/vaccination/core/repository/storage/VaccinationStorage;
 
@@ -138,8 +149,6 @@
 
     invoke-direct {v12, v2}, Lkotlinx/coroutines/internal/ContextScope;-><init>(Lkotlin/coroutines/CoroutineContext;)V
 
-    sget v2, Lkotlinx/coroutines/flow/SharingStarted;->$r8$clinit:I
-
     sget-object v14, Lkotlinx/coroutines/flow/SharingStarted$Companion;->Lazily:Lkotlinx/coroutines/flow/SharingStarted;
 
     new-instance v15, Lde/rki/coronawarnapp/covidcertificate/vaccination/core/repository/VaccinationRepository$internalData$1;
@@ -170,83 +179,77 @@
 
     invoke-direct {v7, v4, v3}, Lkotlinx/coroutines/flow/FlowKt__EmittersKt$onStart$$inlined$unsafeFlow$1;-><init>(Lkotlin/jvm/functions/Function2;Lkotlinx/coroutines/flow/Flow;)V
 
-    const/4 v3, 0x1
+    new-instance v3, Lde/rki/coronawarnapp/covidcertificate/vaccination/core/repository/VaccinationRepository$2;
 
-    invoke-static {v7, v3}, Lkotlinx/coroutines/flow/FlowKt;->drop(Lkotlinx/coroutines/flow/Flow;I)Lkotlinx/coroutines/flow/Flow;
+    invoke-direct {v3, v0, v2}, Lde/rki/coronawarnapp/covidcertificate/vaccination/core/repository/VaccinationRepository$2;-><init>(Lde/rki/coronawarnapp/covidcertificate/vaccination/core/repository/VaccinationRepository;Lkotlin/coroutines/Continuation;)V
 
-    move-result-object v4
+    new-instance v4, Lkotlinx/coroutines/flow/FlowKt__TransformKt$onEach$$inlined$unsafeTransform$1;
 
-    new-instance v7, Lde/rki/coronawarnapp/covidcertificate/vaccination/core/repository/VaccinationRepository$2;
+    invoke-direct {v4, v7, v3}, Lkotlinx/coroutines/flow/FlowKt__TransformKt$onEach$$inlined$unsafeTransform$1;-><init>(Lkotlinx/coroutines/flow/Flow;Lkotlin/jvm/functions/Function2;)V
 
-    invoke-direct {v7, v0, v2}, Lde/rki/coronawarnapp/covidcertificate/vaccination/core/repository/VaccinationRepository$2;-><init>(Lde/rki/coronawarnapp/covidcertificate/vaccination/core/repository/VaccinationRepository;Lkotlin/coroutines/Continuation;)V
+    new-instance v3, Lde/rki/coronawarnapp/covidcertificate/vaccination/core/repository/VaccinationRepository$3;
 
-    new-instance v10, Lkotlinx/coroutines/flow/FlowKt__TransformKt$onEach$$inlined$unsafeTransform$1;
-
-    invoke-direct {v10, v4, v7}, Lkotlinx/coroutines/flow/FlowKt__TransformKt$onEach$$inlined$unsafeTransform$1;-><init>(Lkotlinx/coroutines/flow/Flow;Lkotlin/jvm/functions/Function2;)V
-
-    new-instance v4, Lde/rki/coronawarnapp/covidcertificate/vaccination/core/repository/VaccinationRepository$3;
-
-    invoke-direct {v4, v2}, Lde/rki/coronawarnapp/covidcertificate/vaccination/core/repository/VaccinationRepository$3;-><init>(Lkotlin/coroutines/Continuation;)V
+    invoke-direct {v3, v2}, Lde/rki/coronawarnapp/covidcertificate/vaccination/core/repository/VaccinationRepository$3;-><init>(Lkotlin/coroutines/Continuation;)V
 
     new-instance v7, Lkotlinx/coroutines/flow/FlowKt__ErrorsKt$catch$$inlined$unsafeFlow$1;
 
-    invoke-direct {v7, v10, v4}, Lkotlinx/coroutines/flow/FlowKt__ErrorsKt$catch$$inlined$unsafeFlow$1;-><init>(Lkotlinx/coroutines/flow/Flow;Lkotlin/jvm/functions/Function3;)V
+    invoke-direct {v7, v4, v3}, Lkotlinx/coroutines/flow/FlowKt__ErrorsKt$catch$$inlined$unsafeFlow$1;-><init>(Lkotlinx/coroutines/flow/Flow;Lkotlin/jvm/functions/Function3;)V
 
     invoke-interface/range {p1 .. p1}, Lde/rki/coronawarnapp/util/coroutine/DispatcherProvider;->getIO()Lkotlin/coroutines/CoroutineContext;
 
-    move-result-object v4
+    move-result-object v3
 
-    new-instance v8, Lkotlinx/coroutines/internal/ContextScope;
+    new-instance v4, Lkotlinx/coroutines/internal/ContextScope;
 
     invoke-interface/range {p7 .. p7}, Lkotlinx/coroutines/CoroutineScope;->getCoroutineContext()Lkotlin/coroutines/CoroutineContext;
 
-    move-result-object v10
+    move-result-object v8
 
-    invoke-interface {v10, v4}, Lkotlin/coroutines/CoroutineContext;->plus(Lkotlin/coroutines/CoroutineContext;)Lkotlin/coroutines/CoroutineContext;
+    invoke-interface {v8, v3}, Lkotlin/coroutines/CoroutineContext;->plus(Lkotlin/coroutines/CoroutineContext;)Lkotlin/coroutines/CoroutineContext;
 
-    move-result-object v4
+    move-result-object v3
 
-    invoke-direct {v8, v4}, Lkotlinx/coroutines/internal/ContextScope;-><init>(Lkotlin/coroutines/CoroutineContext;)V
+    invoke-direct {v4, v3}, Lkotlinx/coroutines/internal/ContextScope;-><init>(Lkotlin/coroutines/CoroutineContext;)V
 
-    invoke-static {v7, v8}, Lkotlinx/coroutines/flow/FlowKt;->launchIn(Lkotlinx/coroutines/flow/Flow;Lkotlinx/coroutines/CoroutineScope;)Lkotlinx/coroutines/Job;
+    invoke-static {v7, v4}, Lkotlinx/coroutines/flow/FlowKt;->launchIn(Lkotlinx/coroutines/flow/Flow;Lkotlinx/coroutines/CoroutineScope;)Lkotlinx/coroutines/Job;
 
     iget-object v1, v1, Lde/rki/coronawarnapp/util/flow/HotDataFlow;->data:Lkotlinx/coroutines/flow/Flow;
 
     invoke-virtual/range {p2 .. p2}, Lde/rki/coronawarnapp/covidcertificate/valueset/ValueSetsRepository;->getLatestVaccinationValueSets()Lkotlinx/coroutines/flow/Flow;
 
-    move-result-object v4
+    move-result-object v3
 
-    iget-object v6, v6, Lde/rki/coronawarnapp/covidcertificate/signature/core/DscRepository;->dscData:Lkotlinx/coroutines/flow/Flow;
+    iget-object v4, v6, Lde/rki/coronawarnapp/covidcertificate/signature/core/DscRepository;->dscData:Lkotlinx/coroutines/flow/Flow;
 
-    const/4 v7, 0x3
+    new-instance v6, Lde/rki/coronawarnapp/covidcertificate/vaccination/core/repository/VaccinationRepository$freshVaccinationInfos$1;
 
-    new-array v7, v7, [Lkotlinx/coroutines/flow/Flow;
+    invoke-direct {v6, v0, v2}, Lde/rki/coronawarnapp/covidcertificate/vaccination/core/repository/VaccinationRepository$freshVaccinationInfos$1;-><init>(Lde/rki/coronawarnapp/covidcertificate/vaccination/core/repository/VaccinationRepository;Lkotlin/coroutines/Continuation;)V
 
-    const/4 v8, 0x0
+    invoke-static {v1, v3, v4, v6}, Lkotlinx/coroutines/flow/FlowKt;->combine(Lkotlinx/coroutines/flow/Flow;Lkotlinx/coroutines/flow/Flow;Lkotlinx/coroutines/flow/Flow;Lkotlin/jvm/functions/Function4;)Lkotlinx/coroutines/flow/Flow;
 
-    aput-object v1, v7, v8
-
-    aput-object v4, v7, v3
-
-    const/4 v1, 0x2
-
-    aput-object v6, v7, v1
-
-    new-instance v1, Lde/rki/coronawarnapp/covidcertificate/vaccination/core/repository/VaccinationRepository$special$$inlined$combine$1;
-
-    invoke-direct {v1, v7, v0}, Lde/rki/coronawarnapp/covidcertificate/vaccination/core/repository/VaccinationRepository$special$$inlined$combine$1;-><init>([Lkotlinx/coroutines/flow/Flow;Lde/rki/coronawarnapp/covidcertificate/vaccination/core/repository/VaccinationRepository;)V
+    move-result-object v1
 
     iput-object v1, v0, Lde/rki/coronawarnapp/covidcertificate/vaccination/core/repository/VaccinationRepository;->freshVaccinationInfos:Lkotlinx/coroutines/flow/Flow;
 
-    const/4 v3, 0x4
+    const-string v3, "VaccinationRepository"
 
-    const-string v4, "VaccinationRepository"
+    const/4 v4, 0x4
 
-    invoke-static {v1, v4, v5, v2, v3}, Lde/rki/coronawarnapp/util/flow/FlowExtensionsKt;->shareLatest$default(Lkotlinx/coroutines/flow/Flow;Ljava/lang/String;Lkotlinx/coroutines/CoroutineScope;Lkotlinx/coroutines/flow/SharingStarted;I)Lkotlinx/coroutines/flow/Flow;
+    invoke-static {v1, v3, v5, v2, v4}, Lde/rki/coronawarnapp/util/flow/FlowExtensionsKt;->shareLatest$default(Lkotlinx/coroutines/flow/Flow;Ljava/lang/String;Lkotlinx/coroutines/CoroutineScope;Lkotlinx/coroutines/flow/SharingStarted;I)Lkotlinx/coroutines/flow/Flow;
 
     move-result-object v1
 
     iput-object v1, v0, Lde/rki/coronawarnapp/covidcertificate/vaccination/core/repository/VaccinationRepository;->vaccinationInfos:Lkotlinx/coroutines/flow/Flow;
+
+    new-instance v6, Lde/rki/coronawarnapp/covidcertificate/vaccination/core/repository/VaccinationRepository$special$$inlined$map$1;
+
+    invoke-direct {v6, v1}, Lde/rki/coronawarnapp/covidcertificate/vaccination/core/repository/VaccinationRepository$special$$inlined$map$1;-><init>(Lkotlinx/coroutines/flow/Flow;)V
+
+    invoke-static {v6, v3, v5, v2, v4}, Lde/rki/coronawarnapp/util/flow/FlowExtensionsKt;->shareLatest$default(Lkotlinx/coroutines/flow/Flow;Ljava/lang/String;Lkotlinx/coroutines/CoroutineScope;Lkotlinx/coroutines/flow/SharingStarted;I)Lkotlinx/coroutines/flow/Flow;
+
+    move-result-object v1
+
+    iput-object v1, v0, Lde/rki/coronawarnapp/covidcertificate/vaccination/core/repository/VaccinationRepository;->recycledCertificates:Lkotlinx/coroutines/flow/Flow;
 
     return-void
 .end method
@@ -492,6 +495,62 @@
 
 
 # virtual methods
+.method public final clearBoosterRuleInfo(Lde/rki/coronawarnapp/covidcertificate/common/certificate/CertificatePersonIdentifier;Lkotlin/coroutines/Continuation;)Ljava/lang/Object;
+    .locals 3
+    .annotation system Ldalvik/annotation/Signature;
+        value = {
+            "(",
+            "Lde/rki/coronawarnapp/covidcertificate/common/certificate/CertificatePersonIdentifier;",
+            "Lkotlin/coroutines/Continuation<",
+            "-",
+            "Lkotlin/Unit;",
+            ">;)",
+            "Ljava/lang/Object;"
+        }
+    .end annotation
+
+    sget-object v0, Ltimber/log/Timber;->Forest:Ltimber/log/Timber$Forest;
+
+    const-string v1, "VaccinationRepository"
+
+    invoke-virtual {v0, v1}, Ltimber/log/Timber$Forest;->tag(Ljava/lang/String;)Ltimber/log/Timber$Tree;
+
+    const/4 v1, 0x1
+
+    new-array v1, v1, [Ljava/lang/Object;
+
+    const/4 v2, 0x0
+
+    aput-object p1, v1, v2
+
+    const-string v2, "clearBoosterRuleInfo(personIdentifier=%s)"
+
+    invoke-virtual {v0, v2, v1}, Ltimber/log/Timber$Forest;->d(Ljava/lang/String;[Ljava/lang/Object;)V
+
+    iget-object v0, p0, Lde/rki/coronawarnapp/covidcertificate/vaccination/core/repository/VaccinationRepository;->internalData:Lde/rki/coronawarnapp/util/flow/HotDataFlow;
+
+    new-instance v1, Lde/rki/coronawarnapp/covidcertificate/vaccination/core/repository/VaccinationRepository$clearBoosterRuleInfo$2;
+
+    const/4 v2, 0x0
+
+    invoke-direct {v1, p1, v2}, Lde/rki/coronawarnapp/covidcertificate/vaccination/core/repository/VaccinationRepository$clearBoosterRuleInfo$2;-><init>(Lde/rki/coronawarnapp/covidcertificate/common/certificate/CertificatePersonIdentifier;Lkotlin/coroutines/Continuation;)V
+
+    invoke-virtual {v0, v1, p2}, Lde/rki/coronawarnapp/util/flow/HotDataFlow;->updateBlocking(Lkotlin/jvm/functions/Function2;Lkotlin/coroutines/Continuation;)Ljava/lang/Object;
+
+    move-result-object p1
+
+    sget-object p2, Lkotlin/coroutines/intrinsics/CoroutineSingletons;->COROUTINE_SUSPENDED:Lkotlin/coroutines/intrinsics/CoroutineSingletons;
+
+    if-ne p1, p2, :cond_0
+
+    return-object p1
+
+    :cond_0
+    sget-object p1, Lkotlin/Unit;->INSTANCE:Lkotlin/Unit;
+
+    return-object p1
+.end method
+
 .method public final deleteCertificate(Lde/rki/coronawarnapp/covidcertificate/common/repository/VaccinationCertificateContainerId;Lkotlin/coroutines/Continuation;)Ljava/lang/Object;
     .locals 8
     .annotation system Ldalvik/annotation/Signature;
@@ -791,11 +850,7 @@
 
     invoke-static {p1}, Ljava/util/Objects;->requireNonNull(Ljava/lang/Object;)Ljava/lang/Object;
 
-    iget-object v8, p1, Lde/rki/coronawarnapp/covidcertificate/vaccination/core/qrcode/VaccinationCertificateQRCode;->data:Lde/rki/coronawarnapp/covidcertificate/common/certificate/DccData;
-
-    iget-object v8, v8, Lde/rki/coronawarnapp/covidcertificate/common/certificate/DccData;->certificate:Lde/rki/coronawarnapp/covidcertificate/common/certificate/DccV1$MetaData;
-
-    invoke-interface {v8}, Lde/rki/coronawarnapp/covidcertificate/common/certificate/DccV1$MetaData;->getPersonIdentifier()Lde/rki/coronawarnapp/covidcertificate/common/certificate/CertificatePersonIdentifier;
+    invoke-static {p1}, Lde/rki/coronawarnapp/covidcertificate/common/qrcode/DccQrCode$DefaultImpls;->getPersonIdentifier(Lde/rki/coronawarnapp/covidcertificate/common/qrcode/DccQrCode;)Lde/rki/coronawarnapp/covidcertificate/common/certificate/CertificatePersonIdentifier;
 
     move-result-object v8
 
@@ -851,11 +906,13 @@
 
     check-cast v2, Lde/rki/coronawarnapp/covidcertificate/vaccination/core/VaccinationCertificate;
 
-    invoke-interface {v2}, Lde/rki/coronawarnapp/covidcertificate/common/certificate/CwaCovidCertificate;->getCertificateId()Ljava/lang/String;
+    invoke-interface {v2}, Lde/rki/coronawarnapp/covidcertificate/common/certificate/CwaCovidCertificate;->getQrCodeHash()Ljava/lang/String;
 
     move-result-object v2
 
-    invoke-virtual {p1}, Lde/rki/coronawarnapp/covidcertificate/vaccination/core/qrcode/VaccinationCertificateQRCode;->getUniqueCertificateIdentifier()Ljava/lang/String;
+    invoke-static {p1}, Ljava/util/Objects;->requireNonNull(Ljava/lang/Object;)Ljava/lang/Object;
+
+    invoke-static {p1}, Lde/rki/coronawarnapp/covidcertificate/common/qrcode/DccQrCode$DefaultImpls;->getHash(Lde/rki/coronawarnapp/covidcertificate/common/qrcode/DccQrCode;)Ljava/lang/String;
 
     move-result-object v7
 
@@ -898,77 +955,4 @@
     invoke-direct {p1, p2}, Ljava/util/NoSuchElementException;-><init>(Ljava/lang/String;)V
 
     throw p1
-.end method
-
-.method public final updateBoosterRule(Lde/rki/coronawarnapp/covidcertificate/common/certificate/CertificatePersonIdentifier;Lde/rki/coronawarnapp/covidcertificate/validation/core/rule/DccValidationRule;Lkotlin/coroutines/Continuation;)Ljava/lang/Object;
-    .locals 5
-    .annotation system Ldalvik/annotation/Signature;
-        value = {
-            "(",
-            "Lde/rki/coronawarnapp/covidcertificate/common/certificate/CertificatePersonIdentifier;",
-            "Lde/rki/coronawarnapp/covidcertificate/validation/core/rule/DccValidationRule;",
-            "Lkotlin/coroutines/Continuation<",
-            "-",
-            "Lkotlin/Unit;",
-            ">;)",
-            "Ljava/lang/Object;"
-        }
-    .end annotation
-
-    sget-object v0, Ltimber/log/Timber;->Forest:Ltimber/log/Timber$Forest;
-
-    const-string v1, "VaccinationRepository"
-
-    invoke-virtual {v0, v1}, Ltimber/log/Timber$Forest;->tag(Ljava/lang/String;)Ltimber/log/Timber$Tree;
-
-    const/4 v1, 0x2
-
-    new-array v1, v1, [Ljava/lang/Object;
-
-    const/4 v2, 0x0
-
-    aput-object p1, v1, v2
-
-    const/4 v2, 0x0
-
-    if-nez p2, :cond_0
-
-    move-object v3, v2
-
-    goto :goto_0
-
-    :cond_0
-    invoke-virtual {p2}, Lde/rki/coronawarnapp/covidcertificate/validation/core/rule/DccValidationRule;->getIdentifier()Ljava/lang/String;
-
-    move-result-object v3
-
-    :goto_0
-    const/4 v4, 0x1
-
-    aput-object v3, v1, v4
-
-    const-string/jumbo v3, "updateBoosterRule(personIdentifier=%s, ruleIdentifier=%s)"
-
-    invoke-virtual {v0, v3, v1}, Ltimber/log/Timber$Forest;->d(Ljava/lang/String;[Ljava/lang/Object;)V
-
-    iget-object v0, p0, Lde/rki/coronawarnapp/covidcertificate/vaccination/core/repository/VaccinationRepository;->internalData:Lde/rki/coronawarnapp/util/flow/HotDataFlow;
-
-    new-instance v1, Lde/rki/coronawarnapp/covidcertificate/vaccination/core/repository/VaccinationRepository$updateBoosterRule$2;
-
-    invoke-direct {v1, p1, p2, v2}, Lde/rki/coronawarnapp/covidcertificate/vaccination/core/repository/VaccinationRepository$updateBoosterRule$2;-><init>(Lde/rki/coronawarnapp/covidcertificate/common/certificate/CertificatePersonIdentifier;Lde/rki/coronawarnapp/covidcertificate/validation/core/rule/DccValidationRule;Lkotlin/coroutines/Continuation;)V
-
-    invoke-virtual {v0, v1, p3}, Lde/rki/coronawarnapp/util/flow/HotDataFlow;->updateBlocking(Lkotlin/jvm/functions/Function2;Lkotlin/coroutines/Continuation;)Ljava/lang/Object;
-
-    move-result-object p1
-
-    sget-object p2, Lkotlin/coroutines/intrinsics/CoroutineSingletons;->COROUTINE_SUSPENDED:Lkotlin/coroutines/intrinsics/CoroutineSingletons;
-
-    if-ne p1, p2, :cond_1
-
-    return-object p1
-
-    :cond_1
-    sget-object p1, Lkotlin/Unit;->INSTANCE:Lkotlin/Unit;
-
-    return-object p1
 .end method

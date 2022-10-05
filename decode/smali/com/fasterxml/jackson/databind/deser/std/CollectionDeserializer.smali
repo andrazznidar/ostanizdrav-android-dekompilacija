@@ -652,7 +652,7 @@
     .annotation system Ldalvik/annotation/Throws;
         value = {
             Ljava/io/IOException;,
-            Lcom/fasterxml/jackson/core/JsonProcessingException;
+            Lcom/fasterxml/jackson/core/JacksonException;
         }
     .end annotation
 
@@ -672,7 +672,7 @@
 
     check-cast p1, Ljava/util/Collection;
 
-    goto :goto_0
+    goto/16 :goto_0
 
     :cond_0
     invoke-virtual {p1}, Lcom/fasterxml/jackson/core/JsonParser;->isExpectedStartArrayToken()Z
@@ -698,21 +698,21 @@
 
     move-result v0
 
-    if-eqz v0, :cond_3
+    if-eqz v0, :cond_4
 
     invoke-virtual {p1}, Lcom/fasterxml/jackson/core/JsonParser;->getText()Ljava/lang/String;
 
     move-result-object v5
 
+    const/4 v0, 0x2
+
     iget-object v10, p0, Lcom/fasterxml/jackson/databind/deser/std/StdDeserializer;->_valueClass:Ljava/lang/Class;
 
     invoke-virtual {v5}, Ljava/lang/String;->isEmpty()Z
 
-    move-result v0
+    move-result v1
 
-    if-eqz v0, :cond_2
-
-    const/4 v0, 0x2
+    if-eqz v1, :cond_2
 
     const/16 v1, 0xa
 
@@ -732,7 +732,7 @@
 
     invoke-virtual/range {v1 .. v6}, Lcom/fasterxml/jackson/databind/deser/std/StdDeserializer;->_checkCoercionFail$enumunboxing$(Lcom/fasterxml/jackson/databind/DeserializationContext;ILjava/lang/Class;Ljava/lang/Object;Ljava/lang/String;)I
 
-    if-eqz v9, :cond_2
+    if-eqz v9, :cond_3
 
     const-string v11, "empty String (\"\")"
 
@@ -751,6 +751,35 @@
     goto :goto_0
 
     :cond_2
+    invoke-static {v5}, Lcom/fasterxml/jackson/databind/deser/std/StdDeserializer;->_isBlank(Ljava/lang/String;)Z
+
+    move-result v1
+
+    if-eqz v1, :cond_3
+
+    const/4 v1, 0x1
+
+    invoke-virtual {p2, v0, v10, v1}, Lcom/fasterxml/jackson/databind/DeserializationContext;->findCoercionFromBlankString$enumunboxing$(ILjava/lang/Class;I)I
+
+    move-result v9
+
+    const-string v11, "blank String (all whitespace)"
+
+    move-object v6, p0
+
+    move-object v7, p1
+
+    move-object v8, p2
+
+    invoke-virtual/range {v6 .. v11}, Lcom/fasterxml/jackson/databind/deser/std/StdDeserializer;->_deserializeFromEmptyString$enumunboxing$(Lcom/fasterxml/jackson/core/JsonParser;Lcom/fasterxml/jackson/databind/DeserializationContext;ILjava/lang/Class;Ljava/lang/String;)Ljava/lang/Object;
+
+    move-result-object p1
+
+    check-cast p1, Ljava/util/Collection;
+
+    goto :goto_0
+
+    :cond_3
     invoke-virtual {p0, p2}, Lcom/fasterxml/jackson/databind/deser/std/CollectionDeserializer;->createDefaultInstance(Lcom/fasterxml/jackson/databind/DeserializationContext;)Ljava/util/Collection;
 
     move-result-object v0
@@ -761,7 +790,7 @@
 
     goto :goto_0
 
-    :cond_3
+    :cond_4
     invoke-virtual {p0, p2}, Lcom/fasterxml/jackson/databind/deser/std/CollectionDeserializer;->createDefaultInstance(Lcom/fasterxml/jackson/databind/DeserializationContext;)Ljava/util/Collection;
 
     move-result-object v0
@@ -778,7 +807,8 @@
     .locals 1
     .annotation system Ldalvik/annotation/Throws;
         value = {
-            Ljava/io/IOException;
+            Ljava/io/IOException;,
+            Lcom/fasterxml/jackson/core/JacksonException;
         }
     .end annotation
 

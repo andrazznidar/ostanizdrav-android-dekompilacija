@@ -27,11 +27,22 @@
 
 # instance fields
 .field public final synthetic $seed:Ljava/lang/Object;
+    .annotation system Ldalvik/annotation/Signature;
+        value = {
+            "TT;"
+        }
+    .end annotation
+.end field
 
 
 # direct methods
 .method public constructor <init>(Ljava/lang/Object;)V
     .locals 0
+    .annotation system Ldalvik/annotation/Signature;
+        value = {
+            "(TT;)V"
+        }
+    .end annotation
 
     iput-object p1, p0, Lkotlin/sequences/SequencesKt__SequencesKt$generateSequence$2;->$seed:Ljava/lang/Object;
 

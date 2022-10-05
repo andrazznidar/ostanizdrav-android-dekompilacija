@@ -15,7 +15,7 @@
             <TextView android:id="@id/data_processing_title" android:focusable="true" android:layout_width="fill_parent" android:layout_height="wrap_content" android:layout_marginTop="@dimen/spacing_large" android:text="@string/onboarding_ppa_more_info_data_processing_title" android:contentDescription="@string/onboarding_ppa_more_info_data_processing_title" style="@style/subtitleBoldSixteen" />
             <TextView android:id="@id/data_processing_body" android:focusable="true" android:layout_width="fill_parent" android:layout_height="wrap_content" android:layout_marginTop="@dimen/spacing_small" android:text="@string/onboarding_ppa_more_info_data_processing_body" android:contentDescription="@string/onboarding_ppa_more_info_data_processing_body" style="@style/body1" />
             <TableLayout android:layout_width="fill_parent" android:layout_height="wrap_content" android:layout_marginTop="@dimen/spacing_small">
-                <TableRow android:layout_marginTop="@dimen/spacing_small">
+                <TableRow android:visibility="gone" android:layout_marginTop="@dimen/spacing_small">
                     <ImageView android:id="@id/data_processing_point_1" android:layout_width="@dimen/bullet_point_size" android:layout_height="@dimen/bullet_point_size" android:layout_marginTop="@dimen/spacing_tiny" android:importantForAccessibility="no" app:srcCompat="@drawable/bullet_point" />
                     <TextView android:id="@id/data_processing_point_1_text" android:focusable="true" android:text="@string/onboarding_ppa_more_info_data_processing_point_1_text" android:layout_weight="1.0" android:layout_marginStart="13.0dip" style="@style/subtitle" />
                 </TableRow>
@@ -27,7 +27,7 @@
                     <ImageView android:id="@id/data_processing_point_3" android:layout_width="@dimen/bullet_point_size" android:layout_height="@dimen/bullet_point_size" android:layout_marginTop="@dimen/spacing_tiny" android:importantForAccessibility="no" app:srcCompat="@drawable/bullet_point" />
                     <TextView android:id="@id/data_processing_point_3_text" android:focusable="true" android:text="@string/onboarding_ppa_more_info_data_processing_point_3_text" android:layout_weight="1.0" android:layout_marginStart="13.0dip" style="@style/subtitle" />
                 </TableRow>
-                <TableRow android:layout_marginTop="@dimen/spacing_small">
+                <TableRow android:visibility="gone" android:layout_marginTop="@dimen/spacing_small">
                     <ImageView android:id="@id/data_processing_point_4" android:layout_width="@dimen/bullet_point_size" android:layout_height="@dimen/bullet_point_size" android:layout_marginTop="@dimen/spacing_tiny" android:importantForAccessibility="no" app:srcCompat="@drawable/bullet_point" />
                     <TextView android:id="@id/data_processing_point_4_text" android:focusable="true" android:text="@string/onboarding_ppa_more_info_data_processing_point_4_text" android:layout_weight="1.0" android:layout_marginStart="13.0dip" style="@style/subtitle" />
                 </TableRow>
@@ -51,32 +51,32 @@
                     <TextView android:id="@id/rki_data_point_4_text" android:focusable="true" android:text="@string/onboarding_ppa_more_info_rki_data_point_4_text" android:layout_weight="1.0" android:layout_marginStart="13.0dip" style="@style/subtitle" />
                 </TableRow>
             </TableLayout>
-            <TextView android:id="@id/rki_data_body_1" android:focusable="true" android:layout_width="fill_parent" android:layout_height="wrap_content" android:layout_marginTop="@dimen/spacing_normal" android:text="@string/onboarding_ppa_more_info_rki_data_body_1" android:contentDescription="@string/onboarding_ppa_more_info_rki_data_body_1" style="@style/body1" />
+            <TextView android:id="@id/rki_data_body_1" android:focusable="true" android:visibility="gone" android:layout_width="fill_parent" android:layout_height="wrap_content" android:layout_marginTop="@dimen/spacing_normal" android:text="@string/onboarding_ppa_more_info_rki_data_body_1" android:contentDescription="@string/onboarding_ppa_more_info_rki_data_body_1" style="@style/body1" />
             <TableLayout android:layout_width="fill_parent" android:layout_height="wrap_content" android:layout_marginTop="@dimen/spacing_small">
-                <TableRow android:layout_marginTop="@dimen/spacing_small">
+                <TableRow android:visibility="gone" android:layout_marginTop="@dimen/spacing_small">
                     <ImageView android:id="@id/rki_data_point_5" android:layout_width="@dimen/bullet_point_size" android:layout_height="@dimen/bullet_point_size" android:layout_marginTop="@dimen/spacing_tiny" android:importantForAccessibility="no" app:srcCompat="@drawable/bullet_point" />
                     <TextView android:id="@id/rki_data_point_5_text" android:focusable="true" android:text="@string/onboarding_ppa_more_info_rki_data_point_5_text" android:layout_weight="1.0" android:layout_marginStart="13.0dip" style="@style/subtitle" />
                 </TableRow>
-                <TableRow android:layout_marginTop="@dimen/spacing_small">
+                <TableRow android:visibility="gone" android:layout_marginTop="@dimen/spacing_small">
                     <ImageView android:id="@id/rki_data_point_6" android:layout_width="@dimen/bullet_point_size" android:layout_height="@dimen/bullet_point_size" android:layout_marginTop="@dimen/spacing_tiny" android:importantForAccessibility="no" app:srcCompat="@drawable/bullet_point" />
                     <TextView android:id="@id/rki_data_point_6_text" android:focusable="true" android:text="@string/onboarding_ppa_more_info_rki_data_point_6_text" android:layout_weight="1.0" android:layout_marginStart="13.0dip" style="@style/subtitle" />
                 </TableRow>
-                <TableRow android:layout_marginTop="@dimen/spacing_small">
+                <TableRow android:visibility="gone" android:layout_marginTop="@dimen/spacing_small">
                     <ImageView android:id="@id/rki_data_point_7" android:layout_width="@dimen/bullet_point_size" android:layout_height="@dimen/bullet_point_size" android:layout_marginTop="@dimen/spacing_tiny" android:importantForAccessibility="no" app:srcCompat="@drawable/bullet_point" />
                     <TextView android:id="@id/rki_data_point_7_text" android:focusable="true" android:text="@string/onboarding_ppa_more_info_rki_data_point_7_text" android:layout_weight="1.0" android:layout_marginStart="13.0dip" style="@style/subtitle" />
                 </TableRow>
-                <TableRow android:layout_marginTop="@dimen/spacing_small">
+                <TableRow android:visibility="gone" android:layout_marginTop="@dimen/spacing_small">
                     <ImageView android:id="@id/rki_data_point_8" android:layout_width="@dimen/bullet_point_size" android:layout_height="@dimen/bullet_point_size" android:layout_marginTop="@dimen/spacing_tiny" android:importantForAccessibility="no" app:srcCompat="@drawable/bullet_point" />
                     <TextView android:id="@id/rki_data_point_8_text" android:focusable="true" android:text="@string/onboarding_ppa_more_info_rki_data_point_8_text" android:layout_weight="1.0" android:layout_marginStart="13.0dip" style="@style/subtitle" />
                 </TableRow>
-                <TableRow android:layout_marginTop="@dimen/spacing_small">
+                <TableRow android:visibility="gone" android:layout_marginTop="@dimen/spacing_small">
                     <ImageView android:id="@id/rki_data_point_9" android:layout_width="@dimen/bullet_point_size" android:layout_height="@dimen/bullet_point_size" android:layout_marginTop="@dimen/spacing_tiny" android:importantForAccessibility="no" app:srcCompat="@drawable/bullet_point" />
                     <TextView android:id="@id/rki_data_point_9_text" android:focusable="true" android:text="@string/onboarding_ppa_more_info_rki_data_point_9_text" android:layout_weight="1.0" android:layout_marginStart="13.0dip" style="@style/subtitle" />
                 </TableRow>
             </TableLayout>
             <TextView android:id="@id/rki_data_body_2" android:focusable="true" android:layout_width="fill_parent" android:layout_height="wrap_content" android:layout_marginTop="@dimen/spacing_normal" android:text="@string/onboarding_ppa_more_info_rki_data_body_2" android:contentDescription="@string/onboarding_ppa_more_info_rki_data_body_2" style="@style/body1" />
             <TableLayout android:layout_width="fill_parent" android:layout_height="wrap_content" android:layout_marginTop="@dimen/spacing_small">
-                <TableRow android:layout_marginTop="@dimen/spacing_small">
+                <TableRow android:visibility="gone" android:layout_marginTop="@dimen/spacing_small">
                     <ImageView android:id="@id/rki_data_point_10" android:layout_width="@dimen/bullet_point_size" android:layout_height="@dimen/bullet_point_size" android:layout_marginTop="@dimen/spacing_tiny" android:importantForAccessibility="no" app:srcCompat="@drawable/bullet_point" />
                     <TextView android:id="@id/rki_data_point_10_text" android:focusable="true" android:text="@string/onboarding_ppa_more_info_rki_data_point_10_text" android:layout_weight="1.0" android:layout_marginStart="13.0dip" style="@style/subtitle" />
                 </TableRow>
@@ -84,7 +84,7 @@
                     <ImageView android:id="@id/rki_data_point_11" android:layout_width="@dimen/bullet_point_size" android:layout_height="@dimen/bullet_point_size" android:layout_marginTop="@dimen/spacing_tiny" android:importantForAccessibility="no" app:srcCompat="@drawable/bullet_point" />
                     <TextView android:id="@id/rki_data_point_11_text" android:focusable="true" android:text="@string/onboarding_ppa_more_info_rki_data_point_11_text" android:layout_weight="1.0" android:layout_marginStart="13.0dip" style="@style/subtitle" />
                 </TableRow>
-                <TableRow android:layout_marginTop="@dimen/spacing_small">
+                <TableRow android:visibility="gone" android:layout_marginTop="@dimen/spacing_small">
                     <ImageView android:id="@id/rki_data_point_12" android:layout_width="@dimen/bullet_point_size" android:layout_height="@dimen/bullet_point_size" android:layout_marginTop="@dimen/spacing_tiny" android:importantForAccessibility="no" app:srcCompat="@drawable/bullet_point" />
                     <TextView android:id="@id/rki_data_point_12_text" android:focusable="true" android:text="@string/onboarding_ppa_more_info_rki_data_point_12_text" android:layout_weight="1.0" android:layout_marginStart="13.0dip" style="@style/subtitle" />
                 </TableRow>
@@ -92,7 +92,7 @@
                     <ImageView android:id="@id/rki_data_point_13" android:layout_width="@dimen/bullet_point_size" android:layout_height="@dimen/bullet_point_size" android:layout_marginTop="@dimen/spacing_tiny" android:importantForAccessibility="no" app:srcCompat="@drawable/bullet_point" />
                     <TextView android:id="@id/rki_data_point_13_text" android:focusable="true" android:text="@string/onboarding_ppa_more_info_rki_data_point_13_text" android:layout_weight="1.0" android:layout_marginStart="13.0dip" style="@style/subtitle" />
                 </TableRow>
-                <TableRow android:layout_marginTop="@dimen/spacing_small">
+                <TableRow android:visibility="gone" android:layout_marginTop="@dimen/spacing_small">
                     <ImageView android:id="@id/rki_data_point_14" android:layout_width="@dimen/bullet_point_size" android:layout_height="@dimen/bullet_point_size" android:layout_marginTop="@dimen/spacing_tiny" android:importantForAccessibility="no" app:srcCompat="@drawable/bullet_point" />
                     <TextView android:id="@id/rki_data_point_14_text" android:focusable="true" android:text="@string/onboarding_ppa_more_info_rki_data_point_14_text" android:layout_weight="1.0" android:layout_marginStart="13.0dip" style="@style/subtitle" />
                 </TableRow>
@@ -100,7 +100,7 @@
                     <ImageView android:id="@id/rki_data_point_15" android:layout_width="@dimen/bullet_point_size" android:layout_height="@dimen/bullet_point_size" android:layout_marginTop="@dimen/spacing_tiny" android:importantForAccessibility="no" app:srcCompat="@drawable/bullet_point" />
                     <TextView android:id="@id/rki_data_point_15_text" android:focusable="true" android:text="@string/onboarding_ppa_more_info_rki_data_point_15_text" android:layout_weight="1.0" android:layout_marginStart="13.0dip" style="@style/subtitle" />
                 </TableRow>
-                <TableRow android:layout_marginTop="@dimen/spacing_small">
+                <TableRow android:visibility="gone" android:layout_marginTop="@dimen/spacing_small">
                     <ImageView android:id="@id/rki_data_point_16" android:layout_width="@dimen/bullet_point_size" android:layout_height="@dimen/bullet_point_size" android:layout_marginTop="@dimen/spacing_tiny" android:importantForAccessibility="no" app:srcCompat="@drawable/bullet_point" />
                     <TextView android:id="@id/rki_data_point_16_text" android:focusable="true" android:text="@string/onboarding_ppa_more_info_rki_data_point_16_text" android:layout_weight="1.0" android:layout_marginStart="13.0dip" style="@style/subtitle" />
                 </TableRow>

@@ -32,3 +32,33 @@
 
     return-object p0
 .end method
+
+.method public static isNotRecycled(Lde/rki/coronawarnapp/covidcertificate/common/repository/CertificateRepoContainer;)Z
+    .locals 0
+
+    invoke-static {p0}, Lde/rki/coronawarnapp/reyclebin/common/Recyclable$DefaultImpls;->isNotRecycled(Lde/rki/coronawarnapp/reyclebin/common/Recyclable;)Z
+
+    move-result p0
+
+    return p0
+.end method
+
+.method public static isRecycled(Lde/rki/coronawarnapp/covidcertificate/common/repository/CertificateRepoContainer;)Z
+    .locals 0
+
+    invoke-interface {p0}, Lde/rki/coronawarnapp/reyclebin/common/Recyclable;->getRecycledAt()Lorg/joda/time/Instant;
+
+    move-result-object p0
+
+    if-eqz p0, :cond_0
+
+    const/4 p0, 0x1
+
+    goto :goto_0
+
+    :cond_0
+    const/4 p0, 0x0
+
+    :goto_0
+    return p0
+.end method

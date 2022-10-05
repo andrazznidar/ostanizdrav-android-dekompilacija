@@ -27,10 +27,19 @@
 .method public abstract getFederalStateValue()I
 .end method
 
+.method public abstract getSevenDayHospitalizationIncidence()Lde/rki/coronawarnapp/server/protocols/internal/stats/LocalStatisticsOuterClass$SevenDayIncidenceData;
+.end method
+
+.method public abstract getSevenDayHospitalizationIncidenceUpdatedAt()J
+.end method
+
 .method public abstract getSevenDayIncidence()Lde/rki/coronawarnapp/server/protocols/internal/stats/LocalStatisticsOuterClass$SevenDayIncidenceData;
 .end method
 
 .method public abstract getUpdatedAt()J
+.end method
+
+.method public abstract hasSevenDayHospitalizationIncidence()Z
 .end method
 
 .method public abstract hasSevenDayIncidence()Z

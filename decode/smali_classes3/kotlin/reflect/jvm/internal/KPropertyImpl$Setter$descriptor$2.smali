@@ -1,4 +1,4 @@
-.class public final Lkotlin/reflect/jvm/internal/KPropertyImpl$Setter$descriptor$2;
+.class final Lkotlin/reflect/jvm/internal/KPropertyImpl$Setter$descriptor$2;
 .super Lkotlin/jvm/internal/Lambda;
 .source "KPropertyImpl.kt"
 
@@ -25,6 +25,25 @@
     }
 .end annotation
 
+.annotation runtime Lkotlin/Metadata;
+    d1 = {
+        "\u0000\n\n\u0000\n\u0002\u0018\u0002\n\u0002\u0008\u0003\u0010\u0000\u001a\n \u0002*\u0004\u0018\u00010\u00010\u0001\"\u0004\u0008\u0000\u0010\u0003\"\u0006\u0008\u0001\u0010\u0003 \u0001H\n\u00a2\u0006\u0002\u0008\u0004"
+    }
+    d2 = {
+        "<anonymous>",
+        "Lkotlin/reflect/jvm/internal/impl/descriptors/PropertySetterDescriptor;",
+        "kotlin.jvm.PlatformType",
+        "V",
+        "invoke"
+    }
+    k = 0x3
+    mv = {
+        0x1,
+        0x5,
+        0x1
+    }
+.end annotation
+
 
 # instance fields
 .field public final synthetic this$0:Lkotlin/reflect/jvm/internal/KPropertyImpl$Setter;
@@ -45,8 +64,18 @@
 
 
 # virtual methods
-.method public invoke()Ljava/lang/Object;
-    .locals 2
+.method public bridge synthetic invoke()Ljava/lang/Object;
+    .locals 1
+
+    invoke-virtual {p0}, Lkotlin/reflect/jvm/internal/KPropertyImpl$Setter$descriptor$2;->invoke()Lkotlin/reflect/jvm/internal/impl/descriptors/PropertySetterDescriptor;
+
+    move-result-object v0
+
+    return-object v0
+.end method
+
+.method public final invoke()Lkotlin/reflect/jvm/internal/impl/descriptors/PropertySetterDescriptor;
+    .locals 3
 
     iget-object v0, p0, Lkotlin/reflect/jvm/internal/KPropertyImpl$Setter$descriptor$2;->this$0:Lkotlin/reflect/jvm/internal/KPropertyImpl$Setter;
 
@@ -77,11 +106,17 @@
 
     move-result-object v0
 
-    sget v1, Lkotlin/reflect/jvm/internal/impl/descriptors/annotations/Annotations;->$r8$clinit:I
+    sget-object v1, Lkotlin/reflect/jvm/internal/impl/descriptors/annotations/Annotations;->Companion:Lkotlin/reflect/jvm/internal/impl/descriptors/annotations/Annotations$Companion;
 
-    sget-object v1, Lkotlin/reflect/jvm/internal/impl/descriptors/annotations/Annotations$Companion;->EMPTY:Lkotlin/reflect/jvm/internal/impl/descriptors/annotations/Annotations;
+    invoke-virtual {v1}, Lkotlin/reflect/jvm/internal/impl/descriptors/annotations/Annotations$Companion;->getEMPTY()Lkotlin/reflect/jvm/internal/impl/descriptors/annotations/Annotations;
 
-    invoke-static {v0, v1, v1}, Lkotlin/reflect/jvm/internal/impl/resolve/DescriptorFactory;->createDefaultSetter(Lkotlin/reflect/jvm/internal/impl/descriptors/PropertyDescriptor;Lkotlin/reflect/jvm/internal/impl/descriptors/annotations/Annotations;Lkotlin/reflect/jvm/internal/impl/descriptors/annotations/Annotations;)Lkotlin/reflect/jvm/internal/impl/descriptors/impl/PropertySetterDescriptorImpl;
+    move-result-object v2
+
+    invoke-virtual {v1}, Lkotlin/reflect/jvm/internal/impl/descriptors/annotations/Annotations$Companion;->getEMPTY()Lkotlin/reflect/jvm/internal/impl/descriptors/annotations/Annotations;
+
+    move-result-object v1
+
+    invoke-static {v0, v2, v1}, Lkotlin/reflect/jvm/internal/impl/resolve/DescriptorFactory;->createDefaultSetter(Lkotlin/reflect/jvm/internal/impl/descriptors/PropertyDescriptor;Lkotlin/reflect/jvm/internal/impl/descriptors/annotations/Annotations;Lkotlin/reflect/jvm/internal/impl/descriptors/annotations/Annotations;)Lkotlin/reflect/jvm/internal/impl/descriptors/impl/PropertySetterDescriptorImpl;
 
     move-result-object v0
 

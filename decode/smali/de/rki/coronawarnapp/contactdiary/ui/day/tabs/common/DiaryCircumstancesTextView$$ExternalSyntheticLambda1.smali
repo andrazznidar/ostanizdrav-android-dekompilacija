@@ -1,63 +1,75 @@
 .class public final synthetic Lde/rki/coronawarnapp/contactdiary/ui/day/tabs/common/DiaryCircumstancesTextView$$ExternalSyntheticLambda1;
 .super Ljava/lang/Object;
+.source "R8$$SyntheticClass"
 
 # interfaces
-.implements Landroid/view/ViewTreeObserver$OnWindowFocusChangeListener;
+.implements Landroid/view/View$OnFocusChangeListener;
 
 
 # instance fields
-.field public final synthetic f$0:Landroid/widget/EditText;
+.field public final synthetic f$0:Lde/rki/coronawarnapp/contactdiary/ui/day/tabs/common/DiaryCircumstancesTextView;
 
-.field public final synthetic f$1:Lde/rki/coronawarnapp/contactdiary/ui/day/tabs/common/DiaryCircumstancesTextView;
+.field public final synthetic f$1:Landroid/widget/EditText;
 
 
 # direct methods
-.method public synthetic constructor <init>(Landroid/widget/EditText;Lde/rki/coronawarnapp/contactdiary/ui/day/tabs/common/DiaryCircumstancesTextView;)V
+.method public synthetic constructor <init>(Lde/rki/coronawarnapp/contactdiary/ui/day/tabs/common/DiaryCircumstancesTextView;Landroid/widget/EditText;)V
     .locals 0
 
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
-    iput-object p1, p0, Lde/rki/coronawarnapp/contactdiary/ui/day/tabs/common/DiaryCircumstancesTextView$$ExternalSyntheticLambda1;->f$0:Landroid/widget/EditText;
+    iput-object p1, p0, Lde/rki/coronawarnapp/contactdiary/ui/day/tabs/common/DiaryCircumstancesTextView$$ExternalSyntheticLambda1;->f$0:Lde/rki/coronawarnapp/contactdiary/ui/day/tabs/common/DiaryCircumstancesTextView;
 
-    iput-object p2, p0, Lde/rki/coronawarnapp/contactdiary/ui/day/tabs/common/DiaryCircumstancesTextView$$ExternalSyntheticLambda1;->f$1:Lde/rki/coronawarnapp/contactdiary/ui/day/tabs/common/DiaryCircumstancesTextView;
+    iput-object p2, p0, Lde/rki/coronawarnapp/contactdiary/ui/day/tabs/common/DiaryCircumstancesTextView$$ExternalSyntheticLambda1;->f$1:Landroid/widget/EditText;
 
     return-void
 .end method
 
 
 # virtual methods
-.method public final onWindowFocusChanged(Z)V
+.method public final onFocusChange(Landroid/view/View;Z)V
     .locals 4
 
-    iget-object v0, p0, Lde/rki/coronawarnapp/contactdiary/ui/day/tabs/common/DiaryCircumstancesTextView$$ExternalSyntheticLambda1;->f$0:Landroid/widget/EditText;
+    iget-object v0, p0, Lde/rki/coronawarnapp/contactdiary/ui/day/tabs/common/DiaryCircumstancesTextView$$ExternalSyntheticLambda1;->f$0:Lde/rki/coronawarnapp/contactdiary/ui/day/tabs/common/DiaryCircumstancesTextView;
 
-    iget-object v1, p0, Lde/rki/coronawarnapp/contactdiary/ui/day/tabs/common/DiaryCircumstancesTextView$$ExternalSyntheticLambda1;->f$1:Lde/rki/coronawarnapp/contactdiary/ui/day/tabs/common/DiaryCircumstancesTextView;
+    iget-object v1, p0, Lde/rki/coronawarnapp/contactdiary/ui/day/tabs/common/DiaryCircumstancesTextView$$ExternalSyntheticLambda1;->f$1:Landroid/widget/EditText;
 
     sget v2, Lde/rki/coronawarnapp/contactdiary/ui/day/tabs/common/DiaryCircumstancesTextView;->$r8$clinit:I
 
     const-string/jumbo v2, "this$0"
 
-    invoke-static {v1, v2}, Lkotlin/jvm/internal/Intrinsics;->checkNotNullParameter(Ljava/lang/Object;Ljava/lang/String;)V
-
-    invoke-virtual {v0}, Landroid/widget/EditText;->hasFocus()Z
-
-    move-result v2
-
-    if-eqz v2, :cond_0
-
-    if-nez p1, :cond_0
-
-    sget-object p1, Ltimber/log/Timber;->Forest:Ltimber/log/Timber$Forest;
+    invoke-static {v0, v2}, Lkotlin/jvm/internal/Intrinsics;->checkNotNullParameter(Ljava/lang/Object;Ljava/lang/String;)V
 
     const/4 v2, 0x0
 
-    new-array v2, v2, [Ljava/lang/Object;
+    const/4 v3, 0x1
 
-    const-string v3, "User has left app, input had focus, triggering notifyTextChanged"
+    if-eqz p2, :cond_0
 
-    invoke-virtual {p1, v3, v2}, Ltimber/log/Timber$Forest;->v(Ljava/lang/String;[Ljava/lang/Object;)V
+    sget-object p2, Ltimber/log/Timber;->Forest:Ltimber/log/Timber$Forest;
 
-    invoke-virtual {v0}, Landroid/widget/EditText;->getText()Landroid/text/Editable;
+    new-array v0, v3, [Ljava/lang/Object;
+
+    aput-object p1, v0, v2
+
+    const-string p1, "Focused on %s"
+
+    invoke-virtual {p2, p1, v0}, Ltimber/log/Timber$Forest;->v(Ljava/lang/String;[Ljava/lang/Object;)V
+
+    goto :goto_0
+
+    :cond_0
+    sget-object p2, Ltimber/log/Timber;->Forest:Ltimber/log/Timber$Forest;
+
+    new-array v3, v3, [Ljava/lang/Object;
+
+    aput-object p1, v3, v2
+
+    const-string p1, "Lost focus on %s"
+
+    invoke-virtual {p2, p1, v3}, Ltimber/log/Timber$Forest;->v(Ljava/lang/String;[Ljava/lang/Object;)V
+
+    invoke-virtual {v1}, Landroid/widget/EditText;->getText()Landroid/text/Editable;
 
     move-result-object p1
 
@@ -65,8 +77,8 @@
 
     move-result-object p1
 
-    invoke-virtual {v1, p1}, Lde/rki/coronawarnapp/contactdiary/ui/day/tabs/common/DiaryCircumstancesTextView;->notifyTextChanged(Ljava/lang/String;)V
+    invoke-virtual {v0, p1}, Lde/rki/coronawarnapp/contactdiary/ui/day/tabs/common/DiaryCircumstancesTextView;->notifyTextChanged(Ljava/lang/String;)V
 
-    :cond_0
+    :goto_0
     return-void
 .end method

@@ -182,7 +182,7 @@
     return-object v0
 
     :cond_0
-    invoke-super {p0}, Landroid/widget/TextView;->getHint()Ljava/lang/CharSequence;
+    invoke-super {p0}, Landroid/widget/AutoCompleteTextView;->getHint()Ljava/lang/CharSequence;
 
     move-result-object v0
 
@@ -204,7 +204,7 @@
 
     if-eqz v0, :cond_0
 
-    invoke-super {p0}, Landroid/widget/TextView;->getHint()Ljava/lang/CharSequence;
+    invoke-super {p0}, Landroid/widget/AutoCompleteTextView;->getHint()Ljava/lang/CharSequence;
 
     move-result-object v0
 
@@ -237,7 +237,7 @@
 .method public onMeasure(II)V
     .locals 12
 
-    invoke-super {p0, p1, p2}, Landroid/widget/TextView;->onMeasure(II)V
+    invoke-super {p0, p1, p2}, Landroid/widget/AutoCompleteTextView;->onMeasure(II)V
 
     invoke-static {p1}, Landroid/view/View$MeasureSpec;->getMode(I)I
 

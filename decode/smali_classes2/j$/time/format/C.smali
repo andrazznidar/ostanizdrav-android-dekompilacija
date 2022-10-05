@@ -84,15 +84,7 @@
 .method public d()C
     .locals 1
 
-    const/16 v0, 0x2d
-
-    return v0
-.end method
-
-.method public e()C
-    .locals 1
-
-    const/16 v0, 0x2b
+    const/16 v0, 0x30
 
     return v0
 .end method
@@ -121,14 +113,6 @@
 
     :cond_1
     return v2
-.end method
-
-.method public f()C
-    .locals 1
-
-    const/16 v0, 0x30
-
-    return v0
 .end method
 
 .method public hashCode()I

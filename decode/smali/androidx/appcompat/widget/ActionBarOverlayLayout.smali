@@ -303,7 +303,7 @@
 .method public draw(Landroid/graphics/Canvas;)V
     .locals 5
 
-    invoke-super {p0, p1}, Landroid/view/View;->draw(Landroid/graphics/Canvas;)V
+    invoke-super {p0, p1}, Landroid/view/ViewGroup;->draw(Landroid/graphics/Canvas;)V
 
     iget-object v0, p0, Landroidx/appcompat/widget/ActionBarOverlayLayout;->mWindowContentOverlay:Landroid/graphics/drawable/Drawable;
 
@@ -378,7 +378,7 @@
 .method public fitSystemWindows(Landroid/graphics/Rect;)Z
     .locals 0
 
-    invoke-super {p0, p1}, Landroid/view/View;->fitSystemWindows(Landroid/graphics/Rect;)Z
+    invoke-super {p0, p1}, Landroid/view/ViewGroup;->fitSystemWindows(Landroid/graphics/Rect;)Z
 
     move-result p1
 
@@ -786,7 +786,7 @@
 .method public onConfigurationChanged(Landroid/content/res/Configuration;)V
     .locals 0
 
-    invoke-super {p0, p1}, Landroid/view/View;->onConfigurationChanged(Landroid/content/res/Configuration;)V
+    invoke-super {p0, p1}, Landroid/view/ViewGroup;->onConfigurationChanged(Landroid/content/res/Configuration;)V
 
     invoke-virtual {p0}, Landroid/view/ViewGroup;->getContext()Landroid/content/Context;
 
@@ -1592,7 +1592,7 @@
     .annotation runtime Ljava/lang/Deprecated;
     .end annotation
 
-    invoke-super {p0, p1}, Landroid/view/View;->onWindowSystemUiVisibilityChanged(I)V
+    invoke-super {p0, p1}, Landroid/view/ViewGroup;->onWindowSystemUiVisibilityChanged(I)V
 
     invoke-virtual {p0}, Landroidx/appcompat/widget/ActionBarOverlayLayout;->pullChildren()V
 
@@ -1694,7 +1694,7 @@
 .method public onWindowVisibilityChanged(I)V
     .locals 1
 
-    invoke-super {p0, p1}, Landroid/view/View;->onWindowVisibilityChanged(I)V
+    invoke-super {p0, p1}, Landroid/view/ViewGroup;->onWindowVisibilityChanged(I)V
 
     iput p1, p0, Landroidx/appcompat/widget/ActionBarOverlayLayout;->mWindowVisibility:I
 

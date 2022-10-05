@@ -93,7 +93,7 @@
 
 # virtual methods
 .method public createConfig(Lkotlin/coroutines/Continuation;)Ljava/lang/Object;
-    .locals 3
+    .locals 4
     .annotation system Ldalvik/annotation/Signature;
         value = {
             "(",
@@ -111,9 +111,11 @@
 
     const/4 v1, 0x0
 
-    const/4 v2, 0x6
+    const/4 v2, 0x0
 
-    invoke-direct {p1, v0, v1, v1, v2}, Lde/rki/coronawarnapp/risk/RiskLevelTask$Config;-><init>(Lde/rki/coronawarnapp/nearby/modules/detectiontracker/ExposureDetectionTracker;Lorg/joda/time/Duration;Lde/rki/coronawarnapp/task/TaskFactory$Config$CollisionBehavior;I)V
+    const/4 v3, 0x6
+
+    invoke-direct {p1, v0, v1, v2, v3}, Lde/rki/coronawarnapp/risk/RiskLevelTask$Config;-><init>(Lde/rki/coronawarnapp/nearby/modules/detectiontracker/ExposureDetectionTracker;Lorg/joda/time/Duration;II)V
 
     return-object p1
 .end method

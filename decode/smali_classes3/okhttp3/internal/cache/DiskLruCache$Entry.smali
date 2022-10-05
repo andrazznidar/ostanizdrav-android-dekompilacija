@@ -103,14 +103,14 @@
 
     move-result p2
 
-    const/4 v1, 0x0
+    iget v1, p1, Lokhttp3/internal/cache/DiskLruCache;->valueCount:I
 
-    iget v2, p1, Lokhttp3/internal/cache/DiskLruCache;->valueCount:I
+    const/4 v2, 0x0
 
     :goto_0
-    if-ge v1, v2, :cond_0
+    if-ge v2, v1, :cond_0
 
-    invoke-virtual {v0, v1}, Ljava/lang/StringBuilder;->append(I)Ljava/lang/StringBuilder;
+    invoke-virtual {v0, v2}, Ljava/lang/StringBuilder;->append(I)Ljava/lang/StringBuilder;
 
     iget-object v3, p0, Lokhttp3/internal/cache/DiskLruCache$Entry;->cleanFiles:Ljava/util/List;
 
@@ -146,7 +146,7 @@
 
     invoke-virtual {v0, p2}, Ljava/lang/StringBuilder;->setLength(I)V
 
-    add-int/lit8 v1, v1, 0x1
+    add-int/lit8 v2, v2, 0x1
 
     goto :goto_0
 

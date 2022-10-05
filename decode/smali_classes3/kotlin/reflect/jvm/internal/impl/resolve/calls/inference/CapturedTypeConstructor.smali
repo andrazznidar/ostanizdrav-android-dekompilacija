@@ -4,7 +4,7 @@
 
 # interfaces
 .implements Lkotlin/reflect/jvm/internal/impl/types/TypeConstructor;
-.implements Lkotlin/reflect/jvm/internal/impl/types/model/TypeConstructorMarker;
+.implements Lkotlin/reflect/jvm/internal/impl/types/model/CapturedTypeConstructorMarker;
 
 
 # virtual methods

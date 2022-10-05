@@ -118,7 +118,7 @@
 
     if-eq v1, v5, :cond_6
 
-    invoke-static {v4}, Landroidx/constraintlayout/core/SolverVariable$Type$r8$EnumUnboxingUtility;->$enumboxing$zeroCheck(I)V
+    invoke-static {v4}, Landroidx/camera/camera2/internal/Camera2CameraImpl$InternalState$EnumUnboxingSharedUtility;->checkNotZero(I)V
 
     if-eq v4, v7, :cond_4
 
@@ -135,7 +135,7 @@
     move v4, v2
 
     :cond_6
-    invoke-static {v4}, Landroidx/constraintlayout/core/SolverVariable$Type$r8$EnumUnboxingUtility;->$enumboxing$ordinal(I)I
+    invoke-static {v4}, Landroidx/camera/camera2/internal/Camera2CameraImpl$InternalState$EnumUnboxingSharedUtility;->ordinal(I)I
 
     move-result v3
 
@@ -232,7 +232,7 @@
 
     iget v0, p2, Lcom/fasterxml/jackson/core/type/WritableTypeId;->include:I
 
-    invoke-static {v0}, Landroidx/constraintlayout/core/SolverVariable$Type$r8$EnumUnboxingUtility;->$enumboxing$ordinal(I)I
+    invoke-static {v0}, Landroidx/camera/camera2/internal/Camera2CameraImpl$InternalState$EnumUnboxingSharedUtility;->ordinal(I)I
 
     move-result v0
 

@@ -169,7 +169,7 @@
 
 # direct methods
 .method public constructor <init>(Landroid/content/Context;Ljava/lang/String;)V
-    .locals 8
+    .locals 7
 
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
@@ -181,7 +181,7 @@
 
     invoke-direct {p1, p0}, Lde/rki/coronawarnapp/datadonation/analytics/modules/keysubmission/AnalyticsKeySubmissionStorage$prefs$2;-><init>(Lde/rki/coronawarnapp/datadonation/analytics/modules/keysubmission/AnalyticsKeySubmissionStorage;)V
 
-    invoke-static {p1}, Lkotlin/LazyKt__LazyKt;->lazy(Lkotlin/jvm/functions/Function0;)Lkotlin/Lazy;
+    invoke-static {p1}, Lkotlin/LazyKt__LazyJVMKt;->lazy(Lkotlin/jvm/functions/Function0;)Lkotlin/Lazy;
 
     move-result-object p1
 
@@ -195,7 +195,7 @@
 
     const-string v1, "analytics_key_submission_testResultReceivedAt"
 
-    invoke-static {p1, v0, v1, p2}, Lde/rki/coronawarnapp/datadonation/analytics/modules/keysubmission/AnalyticsKeySubmissionStorage$$ExternalSyntheticOutline0;->m(Landroid/content/SharedPreferences;Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;)Ljava/lang/String;
+    invoke-static {p1, v0, v1, p2}, Lkotlin/reflect/jvm/internal/UtilKt$$ExternalSyntheticOutline0;->m(Landroid/content/SharedPreferences;Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;)Ljava/lang/String;
 
     move-result-object v1
 
@@ -211,7 +211,7 @@
 
     invoke-direct {v4, v2}, Lde/rki/coronawarnapp/datadonation/analytics/modules/keysubmission/AnalyticsKeySubmissionStorage$special$$inlined$createFlowPreference$1;-><init>(Ljava/lang/Object;)V
 
-    sget-object v5, Lde/rki/coronawarnapp/util/preferences/FlowPreference$Companion$basicWriter$1;->INSTANCE:Lde/rki/coronawarnapp/util/preferences/FlowPreference$Companion$basicWriter$1;
+    sget-object v5, Lde/rki/coronawarnapp/datadonation/analytics/modules/keysubmission/AnalyticsKeySubmissionStorage$special$$inlined$createFlowPreference$2;->INSTANCE:Lde/rki/coronawarnapp/datadonation/analytics/modules/keysubmission/AnalyticsKeySubmissionStorage$special$$inlined$createFlowPreference$2;
 
     invoke-direct {v3, p1, v1, v4, v5}, Lde/rki/coronawarnapp/util/preferences/FlowPreference;-><init>(Landroid/content/SharedPreferences;Ljava/lang/String;Lkotlin/jvm/functions/Function2;Lkotlin/jvm/functions/Function3;)V
 
@@ -223,15 +223,17 @@
 
     const-string v1, "analytics_key_submission_testRegisteredAt"
 
-    invoke-static {p1, v0, v1, p2}, Lde/rki/coronawarnapp/datadonation/analytics/modules/keysubmission/AnalyticsKeySubmissionStorage$$ExternalSyntheticOutline0;->m(Landroid/content/SharedPreferences;Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;)Ljava/lang/String;
+    invoke-static {p1, v0, v1, p2}, Lkotlin/reflect/jvm/internal/UtilKt$$ExternalSyntheticOutline0;->m(Landroid/content/SharedPreferences;Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;)Ljava/lang/String;
 
     move-result-object v1
 
     new-instance v3, Lde/rki/coronawarnapp/util/preferences/FlowPreference;
 
-    new-instance v4, Lde/rki/coronawarnapp/datadonation/analytics/modules/keysubmission/AnalyticsKeySubmissionStorage$special$$inlined$createFlowPreference$2;
+    new-instance v4, Lde/rki/coronawarnapp/datadonation/analytics/modules/keysubmission/AnalyticsKeySubmissionStorage$special$$inlined$createFlowPreference$3;
 
-    invoke-direct {v4, v2}, Lde/rki/coronawarnapp/datadonation/analytics/modules/keysubmission/AnalyticsKeySubmissionStorage$special$$inlined$createFlowPreference$2;-><init>(Ljava/lang/Object;)V
+    invoke-direct {v4, v2}, Lde/rki/coronawarnapp/datadonation/analytics/modules/keysubmission/AnalyticsKeySubmissionStorage$special$$inlined$createFlowPreference$3;-><init>(Ljava/lang/Object;)V
+
+    sget-object v5, Lde/rki/coronawarnapp/datadonation/analytics/modules/keysubmission/AnalyticsKeySubmissionStorage$special$$inlined$createFlowPreference$4;->INSTANCE:Lde/rki/coronawarnapp/datadonation/analytics/modules/keysubmission/AnalyticsKeySubmissionStorage$special$$inlined$createFlowPreference$4;
 
     invoke-direct {v3, p1, v1, v4, v5}, Lde/rki/coronawarnapp/util/preferences/FlowPreference;-><init>(Landroid/content/SharedPreferences;Ljava/lang/String;Lkotlin/jvm/functions/Function2;Lkotlin/jvm/functions/Function3;)V
 
@@ -243,7 +245,7 @@
 
     const-string v1, "analytics_key_submission_submitted"
 
-    invoke-static {p1, v0, v1, p2}, Lde/rki/coronawarnapp/datadonation/analytics/modules/keysubmission/AnalyticsKeySubmissionStorage$$ExternalSyntheticOutline0;->m(Landroid/content/SharedPreferences;Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;)Ljava/lang/String;
+    invoke-static {p1, v0, v1, p2}, Lkotlin/reflect/jvm/internal/UtilKt$$ExternalSyntheticOutline0;->m(Landroid/content/SharedPreferences;Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;)Ljava/lang/String;
 
     move-result-object v1
 
@@ -251,11 +253,13 @@
 
     new-instance v4, Lde/rki/coronawarnapp/util/preferences/FlowPreference;
 
-    new-instance v6, Lde/rki/coronawarnapp/datadonation/analytics/modules/keysubmission/AnalyticsKeySubmissionStorage$special$$inlined$createFlowPreference$3;
+    new-instance v5, Lde/rki/coronawarnapp/datadonation/analytics/modules/keysubmission/AnalyticsKeySubmissionStorage$special$$inlined$createFlowPreference$5;
 
-    invoke-direct {v6, v3}, Lde/rki/coronawarnapp/datadonation/analytics/modules/keysubmission/AnalyticsKeySubmissionStorage$special$$inlined$createFlowPreference$3;-><init>(Ljava/lang/Object;)V
+    invoke-direct {v5, v3}, Lde/rki/coronawarnapp/datadonation/analytics/modules/keysubmission/AnalyticsKeySubmissionStorage$special$$inlined$createFlowPreference$5;-><init>(Ljava/lang/Object;)V
 
-    invoke-direct {v4, p1, v1, v6, v5}, Lde/rki/coronawarnapp/util/preferences/FlowPreference;-><init>(Landroid/content/SharedPreferences;Ljava/lang/String;Lkotlin/jvm/functions/Function2;Lkotlin/jvm/functions/Function3;)V
+    sget-object v6, Lde/rki/coronawarnapp/datadonation/analytics/modules/keysubmission/AnalyticsKeySubmissionStorage$special$$inlined$createFlowPreference$6;->INSTANCE:Lde/rki/coronawarnapp/datadonation/analytics/modules/keysubmission/AnalyticsKeySubmissionStorage$special$$inlined$createFlowPreference$6;
+
+    invoke-direct {v4, p1, v1, v5, v6}, Lde/rki/coronawarnapp/util/preferences/FlowPreference;-><init>(Landroid/content/SharedPreferences;Ljava/lang/String;Lkotlin/jvm/functions/Function2;Lkotlin/jvm/functions/Function3;)V
 
     iput-object v4, p0, Lde/rki/coronawarnapp/datadonation/analytics/modules/keysubmission/AnalyticsKeySubmissionStorage;->submitted:Lde/rki/coronawarnapp/util/preferences/FlowPreference;
 
@@ -265,17 +269,19 @@
 
     const-string v1, "analytics_key_submission_submittedAt"
 
-    invoke-static {p1, v0, v1, p2}, Lde/rki/coronawarnapp/datadonation/analytics/modules/keysubmission/AnalyticsKeySubmissionStorage$$ExternalSyntheticOutline0;->m(Landroid/content/SharedPreferences;Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;)Ljava/lang/String;
+    invoke-static {p1, v0, v1, p2}, Lkotlin/reflect/jvm/internal/UtilKt$$ExternalSyntheticOutline0;->m(Landroid/content/SharedPreferences;Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;)Ljava/lang/String;
 
     move-result-object v1
 
     new-instance v4, Lde/rki/coronawarnapp/util/preferences/FlowPreference;
 
-    new-instance v6, Lde/rki/coronawarnapp/datadonation/analytics/modules/keysubmission/AnalyticsKeySubmissionStorage$special$$inlined$createFlowPreference$4;
+    new-instance v5, Lde/rki/coronawarnapp/datadonation/analytics/modules/keysubmission/AnalyticsKeySubmissionStorage$special$$inlined$createFlowPreference$7;
 
-    invoke-direct {v6, v2}, Lde/rki/coronawarnapp/datadonation/analytics/modules/keysubmission/AnalyticsKeySubmissionStorage$special$$inlined$createFlowPreference$4;-><init>(Ljava/lang/Object;)V
+    invoke-direct {v5, v2}, Lde/rki/coronawarnapp/datadonation/analytics/modules/keysubmission/AnalyticsKeySubmissionStorage$special$$inlined$createFlowPreference$7;-><init>(Ljava/lang/Object;)V
 
-    invoke-direct {v4, p1, v1, v6, v5}, Lde/rki/coronawarnapp/util/preferences/FlowPreference;-><init>(Landroid/content/SharedPreferences;Ljava/lang/String;Lkotlin/jvm/functions/Function2;Lkotlin/jvm/functions/Function3;)V
+    sget-object v2, Lde/rki/coronawarnapp/datadonation/analytics/modules/keysubmission/AnalyticsKeySubmissionStorage$special$$inlined$createFlowPreference$8;->INSTANCE:Lde/rki/coronawarnapp/datadonation/analytics/modules/keysubmission/AnalyticsKeySubmissionStorage$special$$inlined$createFlowPreference$8;
+
+    invoke-direct {v4, p1, v1, v5, v2}, Lde/rki/coronawarnapp/util/preferences/FlowPreference;-><init>(Landroid/content/SharedPreferences;Ljava/lang/String;Lkotlin/jvm/functions/Function2;Lkotlin/jvm/functions/Function3;)V
 
     iput-object v4, p0, Lde/rki/coronawarnapp/datadonation/analytics/modules/keysubmission/AnalyticsKeySubmissionStorage;->submittedAt:Lde/rki/coronawarnapp/util/preferences/FlowPreference;
 
@@ -285,15 +291,17 @@
 
     const-string v1, "analytics_key_submission_submittedInBackground"
 
-    invoke-static {p1, v0, v1, p2}, Lde/rki/coronawarnapp/datadonation/analytics/modules/keysubmission/AnalyticsKeySubmissionStorage$$ExternalSyntheticOutline0;->m(Landroid/content/SharedPreferences;Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;)Ljava/lang/String;
+    invoke-static {p1, v0, v1, p2}, Lkotlin/reflect/jvm/internal/UtilKt$$ExternalSyntheticOutline0;->m(Landroid/content/SharedPreferences;Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;)Ljava/lang/String;
 
     move-result-object v1
 
     new-instance v2, Lde/rki/coronawarnapp/util/preferences/FlowPreference;
 
-    new-instance v4, Lde/rki/coronawarnapp/datadonation/analytics/modules/keysubmission/AnalyticsKeySubmissionStorage$special$$inlined$createFlowPreference$5;
+    new-instance v4, Lde/rki/coronawarnapp/datadonation/analytics/modules/keysubmission/AnalyticsKeySubmissionStorage$special$$inlined$createFlowPreference$9;
 
-    invoke-direct {v4, v3}, Lde/rki/coronawarnapp/datadonation/analytics/modules/keysubmission/AnalyticsKeySubmissionStorage$special$$inlined$createFlowPreference$5;-><init>(Ljava/lang/Object;)V
+    invoke-direct {v4, v3}, Lde/rki/coronawarnapp/datadonation/analytics/modules/keysubmission/AnalyticsKeySubmissionStorage$special$$inlined$createFlowPreference$9;-><init>(Ljava/lang/Object;)V
+
+    sget-object v5, Lde/rki/coronawarnapp/datadonation/analytics/modules/keysubmission/AnalyticsKeySubmissionStorage$special$$inlined$createFlowPreference$10;->INSTANCE:Lde/rki/coronawarnapp/datadonation/analytics/modules/keysubmission/AnalyticsKeySubmissionStorage$special$$inlined$createFlowPreference$10;
 
     invoke-direct {v2, p1, v1, v4, v5}, Lde/rki/coronawarnapp/util/preferences/FlowPreference;-><init>(Landroid/content/SharedPreferences;Ljava/lang/String;Lkotlin/jvm/functions/Function2;Lkotlin/jvm/functions/Function3;)V
 
@@ -305,15 +313,17 @@
 
     const-string v1, "analytics_key_submission_submittedAfterCancel"
 
-    invoke-static {p1, v0, v1, p2}, Lde/rki/coronawarnapp/datadonation/analytics/modules/keysubmission/AnalyticsKeySubmissionStorage$$ExternalSyntheticOutline0;->m(Landroid/content/SharedPreferences;Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;)Ljava/lang/String;
+    invoke-static {p1, v0, v1, p2}, Lkotlin/reflect/jvm/internal/UtilKt$$ExternalSyntheticOutline0;->m(Landroid/content/SharedPreferences;Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;)Ljava/lang/String;
 
     move-result-object v1
 
     new-instance v2, Lde/rki/coronawarnapp/util/preferences/FlowPreference;
 
-    new-instance v4, Lde/rki/coronawarnapp/datadonation/analytics/modules/keysubmission/AnalyticsKeySubmissionStorage$special$$inlined$createFlowPreference$6;
+    new-instance v4, Lde/rki/coronawarnapp/datadonation/analytics/modules/keysubmission/AnalyticsKeySubmissionStorage$special$$inlined$createFlowPreference$11;
 
-    invoke-direct {v4, v3}, Lde/rki/coronawarnapp/datadonation/analytics/modules/keysubmission/AnalyticsKeySubmissionStorage$special$$inlined$createFlowPreference$6;-><init>(Ljava/lang/Object;)V
+    invoke-direct {v4, v3}, Lde/rki/coronawarnapp/datadonation/analytics/modules/keysubmission/AnalyticsKeySubmissionStorage$special$$inlined$createFlowPreference$11;-><init>(Ljava/lang/Object;)V
+
+    sget-object v5, Lde/rki/coronawarnapp/datadonation/analytics/modules/keysubmission/AnalyticsKeySubmissionStorage$special$$inlined$createFlowPreference$12;->INSTANCE:Lde/rki/coronawarnapp/datadonation/analytics/modules/keysubmission/AnalyticsKeySubmissionStorage$special$$inlined$createFlowPreference$12;
 
     invoke-direct {v2, p1, v1, v4, v5}, Lde/rki/coronawarnapp/util/preferences/FlowPreference;-><init>(Landroid/content/SharedPreferences;Ljava/lang/String;Lkotlin/jvm/functions/Function2;Lkotlin/jvm/functions/Function3;)V
 
@@ -325,15 +335,17 @@
 
     const-string v1, "analytics_key_submission_submittedAfterSymptomFlow"
 
-    invoke-static {p1, v0, v1, p2}, Lde/rki/coronawarnapp/datadonation/analytics/modules/keysubmission/AnalyticsKeySubmissionStorage$$ExternalSyntheticOutline0;->m(Landroid/content/SharedPreferences;Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;)Ljava/lang/String;
+    invoke-static {p1, v0, v1, p2}, Lkotlin/reflect/jvm/internal/UtilKt$$ExternalSyntheticOutline0;->m(Landroid/content/SharedPreferences;Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;)Ljava/lang/String;
 
     move-result-object v1
 
     new-instance v2, Lde/rki/coronawarnapp/util/preferences/FlowPreference;
 
-    new-instance v4, Lde/rki/coronawarnapp/datadonation/analytics/modules/keysubmission/AnalyticsKeySubmissionStorage$special$$inlined$createFlowPreference$7;
+    new-instance v4, Lde/rki/coronawarnapp/datadonation/analytics/modules/keysubmission/AnalyticsKeySubmissionStorage$special$$inlined$createFlowPreference$13;
 
-    invoke-direct {v4, v3}, Lde/rki/coronawarnapp/datadonation/analytics/modules/keysubmission/AnalyticsKeySubmissionStorage$special$$inlined$createFlowPreference$7;-><init>(Ljava/lang/Object;)V
+    invoke-direct {v4, v3}, Lde/rki/coronawarnapp/datadonation/analytics/modules/keysubmission/AnalyticsKeySubmissionStorage$special$$inlined$createFlowPreference$13;-><init>(Ljava/lang/Object;)V
+
+    sget-object v5, Lde/rki/coronawarnapp/datadonation/analytics/modules/keysubmission/AnalyticsKeySubmissionStorage$special$$inlined$createFlowPreference$14;->INSTANCE:Lde/rki/coronawarnapp/datadonation/analytics/modules/keysubmission/AnalyticsKeySubmissionStorage$special$$inlined$createFlowPreference$14;
 
     invoke-direct {v2, p1, v1, v4, v5}, Lde/rki/coronawarnapp/util/preferences/FlowPreference;-><init>(Landroid/content/SharedPreferences;Ljava/lang/String;Lkotlin/jvm/functions/Function2;Lkotlin/jvm/functions/Function3;)V
 
@@ -345,7 +357,7 @@
 
     const-string v1, "analytics_key_submission_lastSubmissionFlowScreen"
 
-    invoke-static {p1, v0, v1, p2}, Lde/rki/coronawarnapp/datadonation/analytics/modules/keysubmission/AnalyticsKeySubmissionStorage$$ExternalSyntheticOutline0;->m(Landroid/content/SharedPreferences;Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;)Ljava/lang/String;
+    invoke-static {p1, v0, v1, p2}, Lkotlin/reflect/jvm/internal/UtilKt$$ExternalSyntheticOutline0;->m(Landroid/content/SharedPreferences;Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;)Ljava/lang/String;
 
     move-result-object v1
 
@@ -357,11 +369,13 @@
 
     new-instance v4, Lde/rki/coronawarnapp/util/preferences/FlowPreference;
 
-    new-instance v6, Lde/rki/coronawarnapp/datadonation/analytics/modules/keysubmission/AnalyticsKeySubmissionStorage$special$$inlined$createFlowPreference$8;
+    new-instance v5, Lde/rki/coronawarnapp/datadonation/analytics/modules/keysubmission/AnalyticsKeySubmissionStorage$special$$inlined$createFlowPreference$15;
 
-    invoke-direct {v6, v2}, Lde/rki/coronawarnapp/datadonation/analytics/modules/keysubmission/AnalyticsKeySubmissionStorage$special$$inlined$createFlowPreference$8;-><init>(Ljava/lang/Object;)V
+    invoke-direct {v5, v2}, Lde/rki/coronawarnapp/datadonation/analytics/modules/keysubmission/AnalyticsKeySubmissionStorage$special$$inlined$createFlowPreference$15;-><init>(Ljava/lang/Object;)V
 
-    invoke-direct {v4, p1, v1, v6, v5}, Lde/rki/coronawarnapp/util/preferences/FlowPreference;-><init>(Landroid/content/SharedPreferences;Ljava/lang/String;Lkotlin/jvm/functions/Function2;Lkotlin/jvm/functions/Function3;)V
+    sget-object v2, Lde/rki/coronawarnapp/datadonation/analytics/modules/keysubmission/AnalyticsKeySubmissionStorage$special$$inlined$createFlowPreference$16;->INSTANCE:Lde/rki/coronawarnapp/datadonation/analytics/modules/keysubmission/AnalyticsKeySubmissionStorage$special$$inlined$createFlowPreference$16;
+
+    invoke-direct {v4, p1, v1, v5, v2}, Lde/rki/coronawarnapp/util/preferences/FlowPreference;-><init>(Landroid/content/SharedPreferences;Ljava/lang/String;Lkotlin/jvm/functions/Function2;Lkotlin/jvm/functions/Function3;)V
 
     iput-object v4, p0, Lde/rki/coronawarnapp/datadonation/analytics/modules/keysubmission/AnalyticsKeySubmissionStorage;->lastSubmissionFlowScreen:Lde/rki/coronawarnapp/util/preferences/FlowPreference;
 
@@ -371,15 +385,17 @@
 
     const-string v1, "analytics_key_submission_advancedConsentGiven"
 
-    invoke-static {p1, v0, v1, p2}, Lde/rki/coronawarnapp/datadonation/analytics/modules/keysubmission/AnalyticsKeySubmissionStorage$$ExternalSyntheticOutline0;->m(Landroid/content/SharedPreferences;Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;)Ljava/lang/String;
+    invoke-static {p1, v0, v1, p2}, Lkotlin/reflect/jvm/internal/UtilKt$$ExternalSyntheticOutline0;->m(Landroid/content/SharedPreferences;Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;)Ljava/lang/String;
 
     move-result-object v1
 
     new-instance v2, Lde/rki/coronawarnapp/util/preferences/FlowPreference;
 
-    new-instance v4, Lde/rki/coronawarnapp/datadonation/analytics/modules/keysubmission/AnalyticsKeySubmissionStorage$special$$inlined$createFlowPreference$9;
+    new-instance v4, Lde/rki/coronawarnapp/datadonation/analytics/modules/keysubmission/AnalyticsKeySubmissionStorage$special$$inlined$createFlowPreference$17;
 
-    invoke-direct {v4, v3}, Lde/rki/coronawarnapp/datadonation/analytics/modules/keysubmission/AnalyticsKeySubmissionStorage$special$$inlined$createFlowPreference$9;-><init>(Ljava/lang/Object;)V
+    invoke-direct {v4, v3}, Lde/rki/coronawarnapp/datadonation/analytics/modules/keysubmission/AnalyticsKeySubmissionStorage$special$$inlined$createFlowPreference$17;-><init>(Ljava/lang/Object;)V
+
+    sget-object v5, Lde/rki/coronawarnapp/datadonation/analytics/modules/keysubmission/AnalyticsKeySubmissionStorage$special$$inlined$createFlowPreference$18;->INSTANCE:Lde/rki/coronawarnapp/datadonation/analytics/modules/keysubmission/AnalyticsKeySubmissionStorage$special$$inlined$createFlowPreference$18;
 
     invoke-direct {v2, p1, v1, v4, v5}, Lde/rki/coronawarnapp/util/preferences/FlowPreference;-><init>(Landroid/content/SharedPreferences;Ljava/lang/String;Lkotlin/jvm/functions/Function2;Lkotlin/jvm/functions/Function3;)V
 
@@ -391,15 +407,17 @@
 
     const-string v1, "analytics_key_submission_registeredWithTeleTAN"
 
-    invoke-static {p1, v0, v1, p2}, Lde/rki/coronawarnapp/datadonation/analytics/modules/keysubmission/AnalyticsKeySubmissionStorage$$ExternalSyntheticOutline0;->m(Landroid/content/SharedPreferences;Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;)Ljava/lang/String;
+    invoke-static {p1, v0, v1, p2}, Lkotlin/reflect/jvm/internal/UtilKt$$ExternalSyntheticOutline0;->m(Landroid/content/SharedPreferences;Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;)Ljava/lang/String;
 
     move-result-object v1
 
     new-instance v2, Lde/rki/coronawarnapp/util/preferences/FlowPreference;
 
-    new-instance v4, Lde/rki/coronawarnapp/datadonation/analytics/modules/keysubmission/AnalyticsKeySubmissionStorage$special$$inlined$createFlowPreference$10;
+    new-instance v4, Lde/rki/coronawarnapp/datadonation/analytics/modules/keysubmission/AnalyticsKeySubmissionStorage$special$$inlined$createFlowPreference$19;
 
-    invoke-direct {v4, v3}, Lde/rki/coronawarnapp/datadonation/analytics/modules/keysubmission/AnalyticsKeySubmissionStorage$special$$inlined$createFlowPreference$10;-><init>(Ljava/lang/Object;)V
+    invoke-direct {v4, v3}, Lde/rki/coronawarnapp/datadonation/analytics/modules/keysubmission/AnalyticsKeySubmissionStorage$special$$inlined$createFlowPreference$19;-><init>(Ljava/lang/Object;)V
+
+    sget-object v5, Lde/rki/coronawarnapp/datadonation/analytics/modules/keysubmission/AnalyticsKeySubmissionStorage$special$$inlined$createFlowPreference$20;->INSTANCE:Lde/rki/coronawarnapp/datadonation/analytics/modules/keysubmission/AnalyticsKeySubmissionStorage$special$$inlined$createFlowPreference$20;
 
     invoke-direct {v2, p1, v1, v4, v5}, Lde/rki/coronawarnapp/util/preferences/FlowPreference;-><init>(Landroid/content/SharedPreferences;Ljava/lang/String;Lkotlin/jvm/functions/Function2;Lkotlin/jvm/functions/Function3;)V
 
@@ -411,7 +429,7 @@
 
     const-string v1, "analytics_key_submission_hoursSinceHighRiskWarningAtTestRegistration"
 
-    invoke-static {p1, v0, v1, p2}, Lde/rki/coronawarnapp/datadonation/analytics/modules/keysubmission/AnalyticsKeySubmissionStorage$$ExternalSyntheticOutline0;->m(Landroid/content/SharedPreferences;Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;)Ljava/lang/String;
+    invoke-static {p1, v0, v1, p2}, Lkotlin/reflect/jvm/internal/UtilKt$$ExternalSyntheticOutline0;->m(Landroid/content/SharedPreferences;Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;)Ljava/lang/String;
 
     move-result-object v1
 
@@ -419,17 +437,19 @@
 
     invoke-static {v2}, Ljava/lang/Integer;->valueOf(I)Ljava/lang/Integer;
 
-    move-result-object v4
+    move-result-object v2
 
-    new-instance v6, Lde/rki/coronawarnapp/util/preferences/FlowPreference;
+    new-instance v4, Lde/rki/coronawarnapp/util/preferences/FlowPreference;
 
-    new-instance v7, Lde/rki/coronawarnapp/datadonation/analytics/modules/keysubmission/AnalyticsKeySubmissionStorage$special$$inlined$createFlowPreference$11;
+    new-instance v5, Lde/rki/coronawarnapp/datadonation/analytics/modules/keysubmission/AnalyticsKeySubmissionStorage$special$$inlined$createFlowPreference$21;
 
-    invoke-direct {v7, v4}, Lde/rki/coronawarnapp/datadonation/analytics/modules/keysubmission/AnalyticsKeySubmissionStorage$special$$inlined$createFlowPreference$11;-><init>(Ljava/lang/Object;)V
+    invoke-direct {v5, v2}, Lde/rki/coronawarnapp/datadonation/analytics/modules/keysubmission/AnalyticsKeySubmissionStorage$special$$inlined$createFlowPreference$21;-><init>(Ljava/lang/Object;)V
 
-    invoke-direct {v6, p1, v1, v7, v5}, Lde/rki/coronawarnapp/util/preferences/FlowPreference;-><init>(Landroid/content/SharedPreferences;Ljava/lang/String;Lkotlin/jvm/functions/Function2;Lkotlin/jvm/functions/Function3;)V
+    sget-object v6, Lde/rki/coronawarnapp/datadonation/analytics/modules/keysubmission/AnalyticsKeySubmissionStorage$special$$inlined$createFlowPreference$22;->INSTANCE:Lde/rki/coronawarnapp/datadonation/analytics/modules/keysubmission/AnalyticsKeySubmissionStorage$special$$inlined$createFlowPreference$22;
 
-    iput-object v6, p0, Lde/rki/coronawarnapp/datadonation/analytics/modules/keysubmission/AnalyticsKeySubmissionStorage;->ewHoursSinceHighRiskWarningAtTestRegistration:Lde/rki/coronawarnapp/util/preferences/FlowPreference;
+    invoke-direct {v4, p1, v1, v5, v6}, Lde/rki/coronawarnapp/util/preferences/FlowPreference;-><init>(Landroid/content/SharedPreferences;Ljava/lang/String;Lkotlin/jvm/functions/Function2;Lkotlin/jvm/functions/Function3;)V
+
+    iput-object v4, p0, Lde/rki/coronawarnapp/datadonation/analytics/modules/keysubmission/AnalyticsKeySubmissionStorage;->ewHoursSinceHighRiskWarningAtTestRegistration:Lde/rki/coronawarnapp/util/preferences/FlowPreference;
 
     invoke-virtual {p0}, Lde/rki/coronawarnapp/datadonation/analytics/modules/keysubmission/AnalyticsKeySubmissionStorage;->getPrefs()Landroid/content/SharedPreferences;
 
@@ -437,23 +457,21 @@
 
     const-string v1, "analytics_key_submission_daysSinceMostRecentDateAtRiskLevelAtTestRegistration"
 
-    invoke-static {p1, v0, v1, p2}, Lde/rki/coronawarnapp/datadonation/analytics/modules/keysubmission/AnalyticsKeySubmissionStorage$$ExternalSyntheticOutline0;->m(Landroid/content/SharedPreferences;Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;)Ljava/lang/String;
+    invoke-static {p1, v0, v1, p2}, Lkotlin/reflect/jvm/internal/UtilKt$$ExternalSyntheticOutline0;->m(Landroid/content/SharedPreferences;Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;)Ljava/lang/String;
 
     move-result-object v1
 
-    invoke-static {v2}, Ljava/lang/Integer;->valueOf(I)Ljava/lang/Integer;
+    new-instance v4, Lde/rki/coronawarnapp/util/preferences/FlowPreference;
 
-    move-result-object v4
+    new-instance v5, Lde/rki/coronawarnapp/datadonation/analytics/modules/keysubmission/AnalyticsKeySubmissionStorage$special$$inlined$createFlowPreference$23;
 
-    new-instance v6, Lde/rki/coronawarnapp/util/preferences/FlowPreference;
+    invoke-direct {v5, v2}, Lde/rki/coronawarnapp/datadonation/analytics/modules/keysubmission/AnalyticsKeySubmissionStorage$special$$inlined$createFlowPreference$23;-><init>(Ljava/lang/Object;)V
 
-    new-instance v7, Lde/rki/coronawarnapp/datadonation/analytics/modules/keysubmission/AnalyticsKeySubmissionStorage$special$$inlined$createFlowPreference$12;
+    sget-object v6, Lde/rki/coronawarnapp/datadonation/analytics/modules/keysubmission/AnalyticsKeySubmissionStorage$special$$inlined$createFlowPreference$24;->INSTANCE:Lde/rki/coronawarnapp/datadonation/analytics/modules/keysubmission/AnalyticsKeySubmissionStorage$special$$inlined$createFlowPreference$24;
 
-    invoke-direct {v7, v4}, Lde/rki/coronawarnapp/datadonation/analytics/modules/keysubmission/AnalyticsKeySubmissionStorage$special$$inlined$createFlowPreference$12;-><init>(Ljava/lang/Object;)V
+    invoke-direct {v4, p1, v1, v5, v6}, Lde/rki/coronawarnapp/util/preferences/FlowPreference;-><init>(Landroid/content/SharedPreferences;Ljava/lang/String;Lkotlin/jvm/functions/Function2;Lkotlin/jvm/functions/Function3;)V
 
-    invoke-direct {v6, p1, v1, v7, v5}, Lde/rki/coronawarnapp/util/preferences/FlowPreference;-><init>(Landroid/content/SharedPreferences;Ljava/lang/String;Lkotlin/jvm/functions/Function2;Lkotlin/jvm/functions/Function3;)V
-
-    iput-object v6, p0, Lde/rki/coronawarnapp/datadonation/analytics/modules/keysubmission/AnalyticsKeySubmissionStorage;->ewDaysSinceMostRecentDateAtRiskLevelAtTestRegistration:Lde/rki/coronawarnapp/util/preferences/FlowPreference;
+    iput-object v4, p0, Lde/rki/coronawarnapp/datadonation/analytics/modules/keysubmission/AnalyticsKeySubmissionStorage;->ewDaysSinceMostRecentDateAtRiskLevelAtTestRegistration:Lde/rki/coronawarnapp/util/preferences/FlowPreference;
 
     invoke-virtual {p0}, Lde/rki/coronawarnapp/datadonation/analytics/modules/keysubmission/AnalyticsKeySubmissionStorage;->getPrefs()Landroid/content/SharedPreferences;
 
@@ -461,23 +479,21 @@
 
     const-string v1, "analytics_key_submission_hoursSincePtHighRiskWarningAtTestRegistration"
 
-    invoke-static {p1, v0, v1, p2}, Lde/rki/coronawarnapp/datadonation/analytics/modules/keysubmission/AnalyticsKeySubmissionStorage$$ExternalSyntheticOutline0;->m(Landroid/content/SharedPreferences;Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;)Ljava/lang/String;
+    invoke-static {p1, v0, v1, p2}, Lkotlin/reflect/jvm/internal/UtilKt$$ExternalSyntheticOutline0;->m(Landroid/content/SharedPreferences;Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;)Ljava/lang/String;
 
     move-result-object v1
 
-    invoke-static {v2}, Ljava/lang/Integer;->valueOf(I)Ljava/lang/Integer;
+    new-instance v4, Lde/rki/coronawarnapp/util/preferences/FlowPreference;
 
-    move-result-object v4
+    new-instance v5, Lde/rki/coronawarnapp/datadonation/analytics/modules/keysubmission/AnalyticsKeySubmissionStorage$special$$inlined$createFlowPreference$25;
 
-    new-instance v6, Lde/rki/coronawarnapp/util/preferences/FlowPreference;
+    invoke-direct {v5, v2}, Lde/rki/coronawarnapp/datadonation/analytics/modules/keysubmission/AnalyticsKeySubmissionStorage$special$$inlined$createFlowPreference$25;-><init>(Ljava/lang/Object;)V
 
-    new-instance v7, Lde/rki/coronawarnapp/datadonation/analytics/modules/keysubmission/AnalyticsKeySubmissionStorage$special$$inlined$createFlowPreference$13;
+    sget-object v6, Lde/rki/coronawarnapp/datadonation/analytics/modules/keysubmission/AnalyticsKeySubmissionStorage$special$$inlined$createFlowPreference$26;->INSTANCE:Lde/rki/coronawarnapp/datadonation/analytics/modules/keysubmission/AnalyticsKeySubmissionStorage$special$$inlined$createFlowPreference$26;
 
-    invoke-direct {v7, v4}, Lde/rki/coronawarnapp/datadonation/analytics/modules/keysubmission/AnalyticsKeySubmissionStorage$special$$inlined$createFlowPreference$13;-><init>(Ljava/lang/Object;)V
+    invoke-direct {v4, p1, v1, v5, v6}, Lde/rki/coronawarnapp/util/preferences/FlowPreference;-><init>(Landroid/content/SharedPreferences;Ljava/lang/String;Lkotlin/jvm/functions/Function2;Lkotlin/jvm/functions/Function3;)V
 
-    invoke-direct {v6, p1, v1, v7, v5}, Lde/rki/coronawarnapp/util/preferences/FlowPreference;-><init>(Landroid/content/SharedPreferences;Ljava/lang/String;Lkotlin/jvm/functions/Function2;Lkotlin/jvm/functions/Function3;)V
-
-    iput-object v6, p0, Lde/rki/coronawarnapp/datadonation/analytics/modules/keysubmission/AnalyticsKeySubmissionStorage;->ptHoursSinceHighRiskWarningAtTestRegistration:Lde/rki/coronawarnapp/util/preferences/FlowPreference;
+    iput-object v4, p0, Lde/rki/coronawarnapp/datadonation/analytics/modules/keysubmission/AnalyticsKeySubmissionStorage;->ptHoursSinceHighRiskWarningAtTestRegistration:Lde/rki/coronawarnapp/util/preferences/FlowPreference;
 
     invoke-virtual {p0}, Lde/rki/coronawarnapp/datadonation/analytics/modules/keysubmission/AnalyticsKeySubmissionStorage;->getPrefs()Landroid/content/SharedPreferences;
 
@@ -485,21 +501,19 @@
 
     const-string v1, "analytics_key_submission_daysSinceMostRecentDateAtPtRiskLevelAtTestRegistration"
 
-    invoke-static {p1, v0, v1, p2}, Lde/rki/coronawarnapp/datadonation/analytics/modules/keysubmission/AnalyticsKeySubmissionStorage$$ExternalSyntheticOutline0;->m(Landroid/content/SharedPreferences;Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;)Ljava/lang/String;
+    invoke-static {p1, v0, v1, p2}, Lkotlin/reflect/jvm/internal/UtilKt$$ExternalSyntheticOutline0;->m(Landroid/content/SharedPreferences;Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;)Ljava/lang/String;
 
     move-result-object v1
 
-    invoke-static {v2}, Ljava/lang/Integer;->valueOf(I)Ljava/lang/Integer;
-
-    move-result-object v2
-
     new-instance v4, Lde/rki/coronawarnapp/util/preferences/FlowPreference;
 
-    new-instance v6, Lde/rki/coronawarnapp/datadonation/analytics/modules/keysubmission/AnalyticsKeySubmissionStorage$special$$inlined$createFlowPreference$14;
+    new-instance v5, Lde/rki/coronawarnapp/datadonation/analytics/modules/keysubmission/AnalyticsKeySubmissionStorage$special$$inlined$createFlowPreference$27;
 
-    invoke-direct {v6, v2}, Lde/rki/coronawarnapp/datadonation/analytics/modules/keysubmission/AnalyticsKeySubmissionStorage$special$$inlined$createFlowPreference$14;-><init>(Ljava/lang/Object;)V
+    invoke-direct {v5, v2}, Lde/rki/coronawarnapp/datadonation/analytics/modules/keysubmission/AnalyticsKeySubmissionStorage$special$$inlined$createFlowPreference$27;-><init>(Ljava/lang/Object;)V
 
-    invoke-direct {v4, p1, v1, v6, v5}, Lde/rki/coronawarnapp/util/preferences/FlowPreference;-><init>(Landroid/content/SharedPreferences;Ljava/lang/String;Lkotlin/jvm/functions/Function2;Lkotlin/jvm/functions/Function3;)V
+    sget-object v2, Lde/rki/coronawarnapp/datadonation/analytics/modules/keysubmission/AnalyticsKeySubmissionStorage$special$$inlined$createFlowPreference$28;->INSTANCE:Lde/rki/coronawarnapp/datadonation/analytics/modules/keysubmission/AnalyticsKeySubmissionStorage$special$$inlined$createFlowPreference$28;
+
+    invoke-direct {v4, p1, v1, v5, v2}, Lde/rki/coronawarnapp/util/preferences/FlowPreference;-><init>(Landroid/content/SharedPreferences;Ljava/lang/String;Lkotlin/jvm/functions/Function2;Lkotlin/jvm/functions/Function3;)V
 
     iput-object v4, p0, Lde/rki/coronawarnapp/datadonation/analytics/modules/keysubmission/AnalyticsKeySubmissionStorage;->ptDaysSinceMostRecentDateAtRiskLevelAtTestRegistration:Lde/rki/coronawarnapp/util/preferences/FlowPreference;
 
@@ -509,17 +523,19 @@
 
     const-string v1, "analytics_key_submission_submittedWithCheckIns"
 
-    invoke-static {p1, v0, v1, p2}, Lde/rki/coronawarnapp/datadonation/analytics/modules/keysubmission/AnalyticsKeySubmissionStorage$$ExternalSyntheticOutline0;->m(Landroid/content/SharedPreferences;Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;)Ljava/lang/String;
+    invoke-static {p1, v0, v1, p2}, Lkotlin/reflect/jvm/internal/UtilKt$$ExternalSyntheticOutline0;->m(Landroid/content/SharedPreferences;Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;)Ljava/lang/String;
 
     move-result-object p2
 
     new-instance v0, Lde/rki/coronawarnapp/util/preferences/FlowPreference;
 
-    new-instance v1, Lde/rki/coronawarnapp/datadonation/analytics/modules/keysubmission/AnalyticsKeySubmissionStorage$special$$inlined$createFlowPreference$15;
+    new-instance v1, Lde/rki/coronawarnapp/datadonation/analytics/modules/keysubmission/AnalyticsKeySubmissionStorage$special$$inlined$createFlowPreference$29;
 
-    invoke-direct {v1, v3}, Lde/rki/coronawarnapp/datadonation/analytics/modules/keysubmission/AnalyticsKeySubmissionStorage$special$$inlined$createFlowPreference$15;-><init>(Ljava/lang/Object;)V
+    invoke-direct {v1, v3}, Lde/rki/coronawarnapp/datadonation/analytics/modules/keysubmission/AnalyticsKeySubmissionStorage$special$$inlined$createFlowPreference$29;-><init>(Ljava/lang/Object;)V
 
-    invoke-direct {v0, p1, p2, v1, v5}, Lde/rki/coronawarnapp/util/preferences/FlowPreference;-><init>(Landroid/content/SharedPreferences;Ljava/lang/String;Lkotlin/jvm/functions/Function2;Lkotlin/jvm/functions/Function3;)V
+    sget-object v2, Lde/rki/coronawarnapp/datadonation/analytics/modules/keysubmission/AnalyticsKeySubmissionStorage$special$$inlined$createFlowPreference$30;->INSTANCE:Lde/rki/coronawarnapp/datadonation/analytics/modules/keysubmission/AnalyticsKeySubmissionStorage$special$$inlined$createFlowPreference$30;
+
+    invoke-direct {v0, p1, p2, v1, v2}, Lde/rki/coronawarnapp/util/preferences/FlowPreference;-><init>(Landroid/content/SharedPreferences;Ljava/lang/String;Lkotlin/jvm/functions/Function2;Lkotlin/jvm/functions/Function3;)V
 
     iput-object v0, p0, Lde/rki/coronawarnapp/datadonation/analytics/modules/keysubmission/AnalyticsKeySubmissionStorage;->submittedWithCheckIns:Lde/rki/coronawarnapp/util/preferences/FlowPreference;
 

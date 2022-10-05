@@ -146,7 +146,7 @@
 
     move-result-object v3
 
-    invoke-virtual {v0, v3}, Lcom/fasterxml/jackson/databind/AnnotationIntrospector;->findPropertyAliases(Lcom/fasterxml/jackson/databind/introspect/Annotated;)Ljava/util/List;
+    invoke-virtual {v0, v3}, Lcom/fasterxml/jackson/databind/AnnotationIntrospector;->findPropertyAliases(Lorg/joda/time/Chronology;)Ljava/util/List;
 
     move-result-object v3
 

@@ -8,7 +8,7 @@
 
 # annotations
 .annotation system Ldalvik/annotation/EnclosingMethod;
-    value = Lde/rki/coronawarnapp/datadonation/analytics/modules/testresult/AnalyticsTestResultSettings;-><init>(Landroid/content/Context;Lde/rki/coronawarnapp/util/TimeStamper;Ljava/lang/String;)V
+    value = Lde/rki/coronawarnapp/datadonation/analytics/modules/testresult/AnalyticsTestResultSettings;-><init>(Landroid/content/Context;Lcom/google/gson/Gson;Ljava/lang/String;)V
 .end annotation
 
 .annotation system Ldalvik/annotation/InnerClass;
@@ -82,7 +82,7 @@
 
     if-ne p1, v0, :cond_0
 
-    goto :goto_3
+    goto :goto_2
 
     :cond_0
     invoke-static {}, Lde/rki/coronawarnapp/coronatest/server/CoronaTestResult;->values()[Lde/rki/coronawarnapp/coronatest/server/CoronaTestResult;
@@ -93,40 +93,43 @@
 
     const/4 v2, 0x0
 
-    move v3, v2
+    const/4 v3, 0x1
 
-    move v4, v3
+    move v4, v2
 
+    move v5, v4
+
+    :cond_1
     :goto_0
-    if-ge v3, v1, :cond_4
+    if-ge v4, v1, :cond_4
 
-    aget-object v5, v0, v3
+    aget-object v6, v0, v4
 
-    iget v6, v5, Lde/rki/coronawarnapp/coronatest/server/CoronaTestResult;->value:I
+    add-int/lit8 v4, v4, 0x1
 
-    const/4 v7, 0x1
+    iget v7, v6, Lde/rki/coronawarnapp/coronatest/server/CoronaTestResult;->value:I
 
-    if-ne v6, p1, :cond_1
+    if-ne v7, p1, :cond_2
 
-    move v6, v7
+    move v7, v3
 
     goto :goto_1
 
-    :cond_1
-    move v6, v2
+    :cond_2
+    move v7, v2
 
     :goto_1
-    if-eqz v6, :cond_3
+    if-eqz v7, :cond_1
 
-    if-nez v4, :cond_2
+    if-nez v5, :cond_3
 
-    move-object p2, v5
+    move v5, v3
 
-    move v4, v7
+    move-object p2, v6
 
-    goto :goto_2
+    goto :goto_0
 
-    :cond_2
+    :cond_3
     new-instance p1, Ljava/lang/IllegalArgumentException;
 
     const-string p2, "Array contains more than one matching element."
@@ -135,16 +138,10 @@
 
     throw p1
 
-    :cond_3
-    :goto_2
-    add-int/lit8 v3, v3, 0x1
-
-    goto :goto_0
-
     :cond_4
-    if-eqz v4, :cond_5
+    if-eqz v5, :cond_5
 
-    :goto_3
+    :goto_2
     return-object p2
 
     :cond_5

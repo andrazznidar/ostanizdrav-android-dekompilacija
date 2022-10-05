@@ -3,8 +3,40 @@
 .source "RuntimeTypeMapper.kt"
 
 
+# annotations
+.annotation runtime Lkotlin/Metadata;
+    d1 = {
+        "\u0000\u000e\n\u0000\n\u0002\u0010\u000e\n\u0002\u0018\u0002\n\u0002\u0008\u0003\"\u0018\u0010\u0000\u001a\u00020\u0001*\u00020\u00028BX\u0082\u0004\u00a2\u0006\u0006\u001a\u0004\u0008\u0003\u0010\u0004\u00a8\u0006\u0005"
+    }
+    d2 = {
+        "signature",
+        "",
+        "Ljava/lang/reflect/Method;",
+        "getSignature",
+        "(Ljava/lang/reflect/Method;)Ljava/lang/String;",
+        "kotlin-reflection"
+    }
+    k = 0x2
+    mv = {
+        0x1,
+        0x5,
+        0x1
+    }
+.end annotation
+
+
 # direct methods
-.method public static final access$getSignature$p(Ljava/lang/reflect/Method;)Ljava/lang/String;
+.method public static final synthetic access$getSignature$p(Ljava/lang/reflect/Method;)Ljava/lang/String;
+    .locals 0
+
+    invoke-static {p0}, Lkotlin/reflect/jvm/internal/RuntimeTypeMapperKt;->getSignature(Ljava/lang/reflect/Method;)Ljava/lang/String;
+
+    move-result-object p0
+
+    return-object p0
+.end method
+
+.method private static final getSignature(Ljava/lang/reflect/Method;)Ljava/lang/String;
     .locals 10
 
     new-instance v0, Ljava/lang/StringBuilder;
@@ -27,17 +59,17 @@
 
     sget-object v8, Lkotlin/reflect/jvm/internal/RuntimeTypeMapperKt$signature$1;->INSTANCE:Lkotlin/reflect/jvm/internal/RuntimeTypeMapperKt$signature$1;
 
-    const/4 v6, 0x0
-
-    const/4 v7, 0x0
-
-    const/16 v9, 0x18
-
     const-string v3, ""
 
     const-string v4, "("
 
     const-string v5, ")"
+
+    const/4 v6, 0x0
+
+    const/4 v7, 0x0
+
+    const/16 v9, 0x18
 
     invoke-static/range {v2 .. v9}, Lkotlin/collections/ArraysKt___ArraysKt;->joinToString$default([Ljava/lang/Object;Ljava/lang/CharSequence;Ljava/lang/CharSequence;Ljava/lang/CharSequence;ILjava/lang/CharSequence;Lkotlin/jvm/functions/Function1;I)Ljava/lang/String;
 

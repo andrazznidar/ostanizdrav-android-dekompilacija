@@ -1,4 +1,4 @@
-.class public final Lkotlin/reflect/jvm/internal/impl/descriptors/DescriptorVisibilities$1;
+.class final Lkotlin/reflect/jvm/internal/impl/descriptors/DescriptorVisibilities$1;
 .super Lkotlin/reflect/jvm/internal/impl/descriptors/DelegatedDescriptorVisibility;
 .source "DescriptorVisibilities.java"
 
@@ -15,7 +15,7 @@
 
 
 # direct methods
-.method public static synthetic $$$reportNull$$$0(I)V
+.method private static synthetic $$$reportNull$$$0(I)V
     .locals 5
 
     const/4 v0, 0x3
@@ -92,46 +92,60 @@
     return-void
 .end method
 
+.method private hasContainingSourceFile(Lkotlin/reflect/jvm/internal/impl/descriptors/DeclarationDescriptor;)Z
+    .locals 2
 
-# virtual methods
-.method public isVisible(Lkotlin/reflect/jvm/internal/impl/resolve/scopes/receivers/ReceiverValue;Lkotlin/reflect/jvm/internal/impl/descriptors/DeclarationDescriptorWithVisibility;Lkotlin/reflect/jvm/internal/impl/descriptors/DeclarationDescriptor;)Z
-    .locals 3
+    const/4 v0, 0x0
 
-    const/4 p1, 0x0
+    if-nez p1, :cond_0
 
-    const/4 v0, 0x1
+    invoke-static {v0}, Lkotlin/reflect/jvm/internal/impl/descriptors/DescriptorVisibilities$1;->$$$reportNull$$$0(I)V
 
-    if-eqz p2, :cond_c
-
-    if-eqz p3, :cond_b
-
-    invoke-static {p2}, Lkotlin/reflect/jvm/internal/impl/resolve/DescriptorUtils;->isTopLevelDeclaration(Lkotlin/reflect/jvm/internal/impl/descriptors/DeclarationDescriptor;)Z
-
-    move-result v1
-
-    const/4 v2, 0x0
-
-    if-eqz v1, :cond_2
-
-    if-eqz p3, :cond_1
-
-    invoke-static {p3}, Lkotlin/reflect/jvm/internal/impl/resolve/DescriptorUtils;->getContainingSourceFile(Lkotlin/reflect/jvm/internal/impl/descriptors/DeclarationDescriptor;)Lkotlin/reflect/jvm/internal/impl/descriptors/SourceFile;
+    :cond_0
+    invoke-static {p1}, Lkotlin/reflect/jvm/internal/impl/resolve/DescriptorUtils;->getContainingSourceFile(Lkotlin/reflect/jvm/internal/impl/descriptors/DeclarationDescriptor;)Lkotlin/reflect/jvm/internal/impl/descriptors/SourceFile;
 
     move-result-object p1
 
     sget-object v1, Lkotlin/reflect/jvm/internal/impl/descriptors/SourceFile;->NO_SOURCE_FILE:Lkotlin/reflect/jvm/internal/impl/descriptors/SourceFile;
 
-    if-eq p1, v1, :cond_0
+    if-eq p1, v1, :cond_1
 
-    move p1, v0
+    const/4 v0, 0x1
 
-    goto :goto_0
+    :cond_1
+    return v0
+.end method
+
+
+# virtual methods
+.method public isVisible(Lkotlin/reflect/jvm/internal/impl/resolve/scopes/receivers/ReceiverValue;Lkotlin/reflect/jvm/internal/impl/descriptors/DeclarationDescriptorWithVisibility;Lkotlin/reflect/jvm/internal/impl/descriptors/DeclarationDescriptor;)Z
+    .locals 3
+
+    const/4 p1, 0x1
+
+    if-nez p2, :cond_0
+
+    invoke-static {p1}, Lkotlin/reflect/jvm/internal/impl/descriptors/DescriptorVisibilities$1;->$$$reportNull$$$0(I)V
 
     :cond_0
-    move p1, v2
+    if-nez p3, :cond_1
 
-    :goto_0
-    if-eqz p1, :cond_2
+    const/4 v0, 0x2
+
+    invoke-static {v0}, Lkotlin/reflect/jvm/internal/impl/descriptors/DescriptorVisibilities$1;->$$$reportNull$$$0(I)V
+
+    :cond_1
+    invoke-static {p2}, Lkotlin/reflect/jvm/internal/impl/resolve/DescriptorUtils;->isTopLevelDeclaration(Lkotlin/reflect/jvm/internal/impl/descriptors/DeclarationDescriptor;)Z
+
+    move-result v0
+
+    if-eqz v0, :cond_2
+
+    invoke-direct {p0, p3}, Lkotlin/reflect/jvm/internal/impl/descriptors/DescriptorVisibilities$1;->hasContainingSourceFile(Lkotlin/reflect/jvm/internal/impl/descriptors/DeclarationDescriptor;)Z
+
+    move-result v0
+
+    if-eqz v0, :cond_2
 
     invoke-static {p2, p3}, Lkotlin/reflect/jvm/internal/impl/descriptors/DescriptorVisibilities;->inSameFile(Lkotlin/reflect/jvm/internal/impl/descriptors/DeclarationDescriptor;Lkotlin/reflect/jvm/internal/impl/descriptors/DeclarationDescriptor;)Z
 
@@ -139,57 +153,52 @@
 
     return p1
 
-    :cond_1
-    invoke-static {v2}, Lkotlin/reflect/jvm/internal/impl/descriptors/DescriptorVisibilities$1;->$$$reportNull$$$0(I)V
-
-    throw p1
-
     :cond_2
-    instance-of p1, p2, Lkotlin/reflect/jvm/internal/impl/descriptors/ConstructorDescriptor;
+    instance-of v0, p2, Lkotlin/reflect/jvm/internal/impl/descriptors/ConstructorDescriptor;
 
-    if-eqz p1, :cond_3
+    if-eqz v0, :cond_3
 
-    move-object p1, p2
+    move-object v0, p2
 
-    check-cast p1, Lkotlin/reflect/jvm/internal/impl/descriptors/ConstructorDescriptor;
+    check-cast v0, Lkotlin/reflect/jvm/internal/impl/descriptors/ConstructorDescriptor;
 
-    invoke-interface {p1}, Lkotlin/reflect/jvm/internal/impl/descriptors/ConstructorDescriptor;->getContainingDeclaration()Lkotlin/reflect/jvm/internal/impl/descriptors/ClassifierDescriptorWithTypeParameters;
+    invoke-interface {v0}, Lkotlin/reflect/jvm/internal/impl/descriptors/ConstructorDescriptor;->getContainingDeclaration()Lkotlin/reflect/jvm/internal/impl/descriptors/ClassifierDescriptorWithTypeParameters;
 
-    move-result-object p1
+    move-result-object v0
 
-    invoke-static {p1}, Lkotlin/reflect/jvm/internal/impl/resolve/DescriptorUtils;->isSealedClass(Lkotlin/reflect/jvm/internal/impl/descriptors/DeclarationDescriptor;)Z
+    invoke-static {v0}, Lkotlin/reflect/jvm/internal/impl/resolve/DescriptorUtils;->isSealedClass(Lkotlin/reflect/jvm/internal/impl/descriptors/DeclarationDescriptor;)Z
 
     move-result v1
 
     if-eqz v1, :cond_3
 
-    invoke-static {p1}, Lkotlin/reflect/jvm/internal/impl/resolve/DescriptorUtils;->isTopLevelDeclaration(Lkotlin/reflect/jvm/internal/impl/descriptors/DeclarationDescriptor;)Z
+    invoke-static {v0}, Lkotlin/reflect/jvm/internal/impl/resolve/DescriptorUtils;->isTopLevelDeclaration(Lkotlin/reflect/jvm/internal/impl/descriptors/DeclarationDescriptor;)Z
 
-    move-result p1
+    move-result v0
 
-    if-eqz p1, :cond_3
+    if-eqz v0, :cond_3
 
-    instance-of p1, p3, Lkotlin/reflect/jvm/internal/impl/descriptors/ConstructorDescriptor;
+    instance-of v0, p3, Lkotlin/reflect/jvm/internal/impl/descriptors/ConstructorDescriptor;
 
-    if-eqz p1, :cond_3
+    if-eqz v0, :cond_3
 
     invoke-interface {p3}, Lkotlin/reflect/jvm/internal/impl/descriptors/DeclarationDescriptor;->getContainingDeclaration()Lkotlin/reflect/jvm/internal/impl/descriptors/DeclarationDescriptor;
 
-    move-result-object p1
+    move-result-object v0
 
-    invoke-static {p1}, Lkotlin/reflect/jvm/internal/impl/resolve/DescriptorUtils;->isTopLevelDeclaration(Lkotlin/reflect/jvm/internal/impl/descriptors/DeclarationDescriptor;)Z
+    invoke-static {v0}, Lkotlin/reflect/jvm/internal/impl/resolve/DescriptorUtils;->isTopLevelDeclaration(Lkotlin/reflect/jvm/internal/impl/descriptors/DeclarationDescriptor;)Z
 
-    move-result p1
+    move-result v0
 
-    if-eqz p1, :cond_3
+    if-eqz v0, :cond_3
 
     invoke-static {p2, p3}, Lkotlin/reflect/jvm/internal/impl/descriptors/DescriptorVisibilities;->inSameFile(Lkotlin/reflect/jvm/internal/impl/descriptors/DeclarationDescriptor;Lkotlin/reflect/jvm/internal/impl/descriptors/DeclarationDescriptor;)Z
 
-    move-result p1
+    move-result v0
 
-    if-eqz p1, :cond_3
+    if-eqz v0, :cond_3
 
-    return v0
+    return p1
 
     :cond_3
     if-eqz p2, :cond_5
@@ -198,52 +207,46 @@
 
     move-result-object p2
 
-    instance-of p1, p2, Lkotlin/reflect/jvm/internal/impl/descriptors/ClassDescriptor;
+    instance-of v0, p2, Lkotlin/reflect/jvm/internal/impl/descriptors/ClassDescriptor;
 
-    if-eqz p1, :cond_4
+    if-eqz v0, :cond_4
 
     invoke-static {p2}, Lkotlin/reflect/jvm/internal/impl/resolve/DescriptorUtils;->isCompanionObject(Lkotlin/reflect/jvm/internal/impl/descriptors/DeclarationDescriptor;)Z
 
-    move-result p1
+    move-result v0
 
-    if-eqz p1, :cond_5
+    if-eqz v0, :cond_5
 
     :cond_4
-    instance-of p1, p2, Lkotlin/reflect/jvm/internal/impl/descriptors/PackageFragmentDescriptor;
+    instance-of v0, p2, Lkotlin/reflect/jvm/internal/impl/descriptors/PackageFragmentDescriptor;
 
-    if-eqz p1, :cond_3
+    if-eqz v0, :cond_3
 
     :cond_5
+    const/4 v0, 0x0
+
     if-nez p2, :cond_6
 
-    return v2
+    return v0
 
     :cond_6
-    :goto_1
+    :goto_0
     if-eqz p3, :cond_a
 
     if-ne p2, p3, :cond_7
 
-    return v0
+    return p1
 
     :cond_7
-    instance-of p1, p3, Lkotlin/reflect/jvm/internal/impl/descriptors/PackageFragmentDescriptor;
+    instance-of v1, p3, Lkotlin/reflect/jvm/internal/impl/descriptors/PackageFragmentDescriptor;
 
-    if-eqz p1, :cond_9
+    if-eqz v1, :cond_9
 
-    instance-of p1, p2, Lkotlin/reflect/jvm/internal/impl/descriptors/PackageFragmentDescriptor;
+    instance-of v1, p2, Lkotlin/reflect/jvm/internal/impl/descriptors/PackageFragmentDescriptor;
 
-    if-eqz p1, :cond_8
+    if-eqz v1, :cond_8
 
-    move-object p1, p2
-
-    check-cast p1, Lkotlin/reflect/jvm/internal/impl/descriptors/PackageFragmentDescriptor;
-
-    invoke-interface {p1}, Lkotlin/reflect/jvm/internal/impl/descriptors/PackageFragmentDescriptor;->getFqName()Lkotlin/reflect/jvm/internal/impl/name/FqName;
-
-    move-result-object p1
-
-    move-object v1, p3
+    move-object v1, p2
 
     check-cast v1, Lkotlin/reflect/jvm/internal/impl/descriptors/PackageFragmentDescriptor;
 
@@ -251,53 +254,41 @@
 
     move-result-object v1
 
-    invoke-virtual {p1, v1}, Lkotlin/reflect/jvm/internal/impl/name/FqName;->equals(Ljava/lang/Object;)Z
+    move-object v2, p3
 
-    move-result p1
+    check-cast v2, Lkotlin/reflect/jvm/internal/impl/descriptors/PackageFragmentDescriptor;
 
-    if-eqz p1, :cond_8
+    invoke-interface {v2}, Lkotlin/reflect/jvm/internal/impl/descriptors/PackageFragmentDescriptor;->getFqName()Lkotlin/reflect/jvm/internal/impl/name/FqName;
 
-    invoke-static {p3}, Lkotlin/reflect/jvm/internal/impl/resolve/DescriptorUtils;->getContainingModule(Lkotlin/reflect/jvm/internal/impl/descriptors/DeclarationDescriptor;)Lkotlin/reflect/jvm/internal/impl/descriptors/ModuleDescriptor;
+    move-result-object v2
 
-    move-result-object p1
+    invoke-virtual {v1, v2}, Lkotlin/reflect/jvm/internal/impl/name/FqName;->equals(Ljava/lang/Object;)Z
 
-    invoke-static {p2}, Lkotlin/reflect/jvm/internal/impl/resolve/DescriptorUtils;->getContainingModule(Lkotlin/reflect/jvm/internal/impl/descriptors/DeclarationDescriptor;)Lkotlin/reflect/jvm/internal/impl/descriptors/ModuleDescriptor;
+    move-result v1
 
-    move-result-object p2
+    if-eqz v1, :cond_8
 
-    invoke-virtual {p1, p2}, Ljava/lang/Object;->equals(Ljava/lang/Object;)Z
+    invoke-static {p3, p2}, Lkotlin/reflect/jvm/internal/impl/resolve/DescriptorUtils;->areInSameModule(Lkotlin/reflect/jvm/internal/impl/descriptors/DeclarationDescriptor;Lkotlin/reflect/jvm/internal/impl/descriptors/DeclarationDescriptor;)Z
 
-    move-result p1
+    move-result p2
 
-    if-eqz p1, :cond_8
+    if-eqz p2, :cond_8
 
-    goto :goto_2
+    goto :goto_1
 
     :cond_8
-    move v0, v2
+    move p1, v0
 
-    :goto_2
-    return v0
+    :goto_1
+    return p1
 
     :cond_9
     invoke-interface {p3}, Lkotlin/reflect/jvm/internal/impl/descriptors/DeclarationDescriptor;->getContainingDeclaration()Lkotlin/reflect/jvm/internal/impl/descriptors/DeclarationDescriptor;
 
     move-result-object p3
 
-    goto :goto_1
+    goto :goto_0
 
     :cond_a
-    return v2
-
-    :cond_b
-    const/4 p2, 0x2
-
-    invoke-static {p2}, Lkotlin/reflect/jvm/internal/impl/descriptors/DescriptorVisibilities$1;->$$$reportNull$$$0(I)V
-
-    throw p1
-
-    :cond_c
-    invoke-static {v0}, Lkotlin/reflect/jvm/internal/impl/descriptors/DescriptorVisibilities$1;->$$$reportNull$$$0(I)V
-
-    throw p1
+    return v0
 .end method

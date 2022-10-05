@@ -45,7 +45,7 @@
 .end method
 
 .method public onTabSelected(Lcom/google/android/material/tabs/TabLayout$Tab;)V
-    .locals 2
+    .locals 3
 
     iget-object v0, p0, Lcom/google/android/material/tabs/TabLayoutMediator$ViewPagerOnTabSelectedListener;->viewPager:Landroidx/viewpager2/widget/ViewPager2;
 
@@ -53,9 +53,26 @@
 
     iget-boolean v1, p0, Lcom/google/android/material/tabs/TabLayoutMediator$ViewPagerOnTabSelectedListener;->smoothScroll:Z
 
-    invoke-virtual {v0, p1, v1}, Landroidx/viewpager2/widget/ViewPager2;->setCurrentItem(IZ)V
+    iget-object v2, v0, Landroidx/viewpager2/widget/ViewPager2;->mFakeDragger:Landroidx/viewpager2/widget/FakeDrag;
+
+    iget-object v2, v2, Landroidx/viewpager2/widget/FakeDrag;->mScrollEventAdapter:Landroidx/viewpager2/widget/ScrollEventAdapter;
+
+    iget-boolean v2, v2, Landroidx/viewpager2/widget/ScrollEventAdapter;->mFakeDragging:Z
+
+    if-nez v2, :cond_0
+
+    invoke-virtual {v0, p1, v1}, Landroidx/viewpager2/widget/ViewPager2;->setCurrentItemInternal(IZ)V
 
     return-void
+
+    :cond_0
+    new-instance p1, Ljava/lang/IllegalStateException;
+
+    const-string v0, "Cannot change current item when ViewPager2 is fake dragging"
+
+    invoke-direct {p1, v0}, Ljava/lang/IllegalStateException;-><init>(Ljava/lang/String;)V
+
+    throw p1
 .end method
 
 .method public onTabUnselected(Lcom/google/android/material/tabs/TabLayout$Tab;)V

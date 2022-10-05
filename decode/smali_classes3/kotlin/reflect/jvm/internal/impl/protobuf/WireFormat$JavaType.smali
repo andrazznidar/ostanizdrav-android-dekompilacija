@@ -4,6 +4,15 @@
 
 
 # annotations
+.annotation system Ldalvik/annotation/EnclosingClass;
+    value = Lkotlin/reflect/jvm/internal/impl/protobuf/WireFormat;
+.end annotation
+
+.annotation system Ldalvik/annotation/InnerClass;
+    accessFlags = 0x4019
+    name = "JavaType"
+.end annotation
+
 .annotation system Ldalvik/annotation/Signature;
     value = {
         "Ljava/lang/Enum<",
@@ -14,7 +23,7 @@
 
 
 # static fields
-.field public static final synthetic $VALUES:[Lkotlin/reflect/jvm/internal/impl/protobuf/WireFormat$JavaType;
+.field private static final synthetic $VALUES:[Lkotlin/reflect/jvm/internal/impl/protobuf/WireFormat$JavaType;
 
 .field public static final enum BOOLEAN:Lkotlin/reflect/jvm/internal/impl/protobuf/WireFormat$JavaType;
 
@@ -36,7 +45,7 @@
 
 
 # instance fields
-.field public final defaultDefault:Ljava/lang/Object;
+.field private final defaultDefault:Ljava/lang/Object;
 
 
 # direct methods
@@ -198,7 +207,7 @@
     return-void
 .end method
 
-.method public constructor <init>(Ljava/lang/String;ILjava/lang/Object;)V
+.method private constructor <init>(Ljava/lang/String;ILjava/lang/Object;)V
     .locals 0
     .annotation system Ldalvik/annotation/Signature;
         value = {

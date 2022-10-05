@@ -200,7 +200,7 @@
 
     const/4 v4, 0x6
 
-    invoke-static {v1, v3, v3, v4}, Lkotlin/collections/SetsKt__SetsKt;->Channel$default(ILkotlinx/coroutines/channels/BufferOverflow;Lkotlin/jvm/functions/Function1;I)Lkotlinx/coroutines/channels/Channel;
+    invoke-static {v1, v3, v3, v4}, Landroidx/core/provider/CalleeHandler;->Channel$default(ILkotlinx/coroutines/channels/BufferOverflow;Lkotlin/jvm/functions/Function1;I)Lkotlinx/coroutines/channels/Channel;
 
     move-result-object v1
 
@@ -218,9 +218,9 @@
 
     invoke-virtual {v4, v3}, Lkotlinx/coroutines/channels/AbstractSendChannel;->offer(Ljava/lang/Object;)Z
 
-    iget-object v11, p0, Lkotlin/coroutines/jvm/internal/ContinuationImpl;->_context:Lkotlin/coroutines/CoroutineContext;
+    invoke-interface {p0}, Lkotlin/coroutines/Continuation;->getContext()Lkotlin/coroutines/CoroutineContext;
 
-    invoke-static {v11}, Lkotlin/jvm/internal/Intrinsics;->checkNotNull(Ljava/lang/Object;)V
+    move-result-object v11
 
     iget-boolean v3, p0, Landroidx/room/CoroutinesRoom$Companion$createFlow$1;->$inTransaction:Z
 

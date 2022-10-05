@@ -1,4 +1,4 @@
-.class public final Lkotlin/reflect/jvm/internal/pcollections/MapEntry;
+.class final Lkotlin/reflect/jvm/internal/pcollections/MapEntry;
 .super Ljava/lang/Object;
 .source "MapEntry.java"
 

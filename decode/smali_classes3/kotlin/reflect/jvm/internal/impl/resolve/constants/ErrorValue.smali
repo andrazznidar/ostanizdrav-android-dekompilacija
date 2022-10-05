@@ -6,7 +6,8 @@
 # annotations
 .annotation system Ldalvik/annotation/MemberClasses;
     value = {
-        Lkotlin/reflect/jvm/internal/impl/resolve/constants/ErrorValue$ErrorValueWithMessage;
+        Lkotlin/reflect/jvm/internal/impl/resolve/constants/ErrorValue$ErrorValueWithMessage;,
+        Lkotlin/reflect/jvm/internal/impl/resolve/constants/ErrorValue$Companion;
     }
 .end annotation
 
@@ -19,7 +20,25 @@
 .end annotation
 
 
+# static fields
+.field public static final Companion:Lkotlin/reflect/jvm/internal/impl/resolve/constants/ErrorValue$Companion;
+
+
 # direct methods
+.method public static constructor <clinit>()V
+    .locals 2
+
+    new-instance v0, Lkotlin/reflect/jvm/internal/impl/resolve/constants/ErrorValue$Companion;
+
+    const/4 v1, 0x0
+
+    invoke-direct {v0, v1}, Lkotlin/reflect/jvm/internal/impl/resolve/constants/ErrorValue$Companion;-><init>(Lkotlin/jvm/internal/DefaultConstructorMarker;)V
+
+    sput-object v0, Lkotlin/reflect/jvm/internal/impl/resolve/constants/ErrorValue;->Companion:Lkotlin/reflect/jvm/internal/impl/resolve/constants/ErrorValue$Companion;
+
+    return-void
+.end method
+
 .method public constructor <init>()V
     .locals 1
 
@@ -32,7 +51,17 @@
 
 
 # virtual methods
-.method public getValue()Ljava/lang/Object;
+.method public bridge synthetic getValue()Ljava/lang/Object;
+    .locals 1
+
+    invoke-virtual {p0}, Lkotlin/reflect/jvm/internal/impl/resolve/constants/ErrorValue;->getValue()Lkotlin/Unit;
+
+    move-result-object v0
+
+    return-object v0
+.end method
+
+.method public getValue()Lkotlin/Unit;
     .locals 1
 
     new-instance v0, Ljava/lang/UnsupportedOperationException;

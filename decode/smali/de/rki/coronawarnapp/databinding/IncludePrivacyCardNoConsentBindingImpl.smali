@@ -21,31 +21,31 @@
 
     sput-object v0, Lde/rki/coronawarnapp/databinding/IncludePrivacyCardNoConsentBindingImpl;->sViewsWithIds:Landroid/util/SparseIntArray;
 
-    const v1, 0x7f0a0549
+    const v1, 0x7f0a0591
 
     const/4 v2, 0x1
 
     invoke-virtual {v0, v1, v2}, Landroid/util/SparseIntArray;->put(II)V
 
-    const v1, 0x7f0a0545
+    const v1, 0x7f0a058d
 
     const/4 v2, 0x2
 
     invoke-virtual {v0, v1, v2}, Landroid/util/SparseIntArray;->put(II)V
 
-    const v1, 0x7f0a0547
+    const v1, 0x7f0a058f
 
     const/4 v2, 0x3
 
     invoke-virtual {v0, v1, v2}, Landroid/util/SparseIntArray;->put(II)V
 
-    const v1, 0x7f0a0548
+    const v1, 0x7f0a0590
 
     const/4 v2, 0x4
 
     invoke-virtual {v0, v1, v2}, Landroid/util/SparseIntArray;->put(II)V
 
-    const v1, 0x7f0a0546
+    const v1, 0x7f0a058e
 
     const/4 v2, 0x5
 

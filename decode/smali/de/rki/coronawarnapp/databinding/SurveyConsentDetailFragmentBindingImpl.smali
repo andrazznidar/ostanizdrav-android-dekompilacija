@@ -45,7 +45,7 @@
 
     new-array v4, v2, [I
 
-    const v6, 0x7f0d00d8
+    const v6, 0x7f0d00e9
 
     aput v6, v4, v5
 
@@ -65,7 +65,7 @@
 
     new-array v4, v2, [I
 
-    const v6, 0x7f0d0109
+    const v6, 0x7f0d0114
 
     aput v6, v4, v5
 
@@ -77,49 +77,49 @@
 
     sput-object v0, Lde/rki/coronawarnapp/databinding/SurveyConsentDetailFragmentBindingImpl;->sViewsWithIds:Landroid/util/SparseIntArray;
 
-    const v1, 0x7f0a0769
+    const v1, 0x7f0a07b6
 
     const/4 v2, 0x4
 
     invoke-virtual {v0, v1, v2}, Landroid/util/SparseIntArray;->put(II)V
 
-    const v1, 0x7f0a01cf
+    const v1, 0x7f0a01f3
 
     const/4 v2, 0x5
 
     invoke-virtual {v0, v1, v2}, Landroid/util/SparseIntArray;->put(II)V
 
-    const v1, 0x7f0a03ed
+    const v1, 0x7f0a042d
 
     const/4 v2, 0x6
 
     invoke-virtual {v0, v1, v2}, Landroid/util/SparseIntArray;->put(II)V
 
-    const v1, 0x7f0a03e5
+    const v1, 0x7f0a0419
 
     const/4 v2, 0x7
 
     invoke-virtual {v0, v1, v2}, Landroid/util/SparseIntArray;->put(II)V
 
-    const v1, 0x7f0a0768
+    const v1, 0x7f0a07b5
 
     const/16 v2, 0x8
 
     invoke-virtual {v0, v1, v2}, Landroid/util/SparseIntArray;->put(II)V
 
-    const v1, 0x7f0a0767
+    const v1, 0x7f0a07b4
 
     const/16 v2, 0x9
 
     invoke-virtual {v0, v1, v2}, Landroid/util/SparseIntArray;->put(II)V
 
-    const v1, 0x7f0a0348
+    const v1, 0x7f0a0377
 
     const/16 v2, 0xa
 
     invoke-virtual {v0, v1, v2}, Landroid/util/SparseIntArray;->put(II)V
 
-    const v1, 0x7f0a0345
+    const v1, 0x7f0a0374
 
     const/16 v2, 0xb
 
@@ -326,9 +326,9 @@
 
     iget-object v1, p0, Landroidx/databinding/ViewDataBinding;->mRoot:Landroid/view/View;
 
-    const v2, 0x7f0800dd
+    const v2, 0x7f0800d3
 
-    invoke-static {v1, v2, v0}, Lde/rki/coronawarnapp/databinding/FragmentInformationAboutBindingImpl$$ExternalSyntheticOutline0;->m(Landroid/view/View;ILde/rki/coronawarnapp/databinding/IncludeHeaderBinding;)V
+    invoke-static {v1, v2, v0}, Landroidx/constraintlayout/core/widgets/analyzer/DependencyNode$Type$EnumUnboxingLocalUtility;->m(Landroid/view/View;ILde/rki/coronawarnapp/databinding/IncludeHeaderBinding;)V
 
     :cond_0
     iget-object v0, p0, Lde/rki/coronawarnapp/databinding/SurveyConsentDetailFragmentBinding;->toolbar:Lde/rki/coronawarnapp/databinding/IncludeHeaderBinding;

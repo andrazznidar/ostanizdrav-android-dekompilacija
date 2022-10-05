@@ -7,7 +7,7 @@
 
 
 # instance fields
-.field private final a:Lj$/time/h;
+.field private final a:Lj$/time/j;
 
 .field private final b:Lj$/time/ZoneOffset;
 
@@ -22,11 +22,11 @@
 
     const/4 v0, 0x0
 
-    invoke-static {p1, p2, v0, p3}, Lj$/time/h;->u(JILj$/time/ZoneOffset;)Lj$/time/h;
+    invoke-static {p1, p2, v0, p3}, Lj$/time/j;->u(JILj$/time/ZoneOffset;)Lj$/time/j;
 
     move-result-object p1
 
-    iput-object p1, p0, Lj$/time/zone/a;->a:Lj$/time/h;
+    iput-object p1, p0, Lj$/time/zone/a;->a:Lj$/time/j;
 
     iput-object p3, p0, Lj$/time/zone/a;->b:Lj$/time/ZoneOffset;
 
@@ -35,12 +35,12 @@
     return-void
 .end method
 
-.method constructor <init>(Lj$/time/h;Lj$/time/ZoneOffset;Lj$/time/ZoneOffset;)V
+.method constructor <init>(Lj$/time/j;Lj$/time/ZoneOffset;Lj$/time/ZoneOffset;)V
     .locals 0
 
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
-    iput-object p1, p0, Lj$/time/zone/a;->a:Lj$/time/h;
+    iput-object p1, p0, Lj$/time/zone/a;->a:Lj$/time/j;
 
     iput-object p2, p0, Lj$/time/zone/a;->b:Lj$/time/ZoneOffset;
 
@@ -51,10 +51,10 @@
 
 
 # virtual methods
-.method public a()Lj$/time/h;
+.method public a()Lj$/time/j;
     .locals 3
 
-    iget-object v0, p0, Lj$/time/zone/a;->a:Lj$/time/h;
+    iget-object v0, p0, Lj$/time/zone/a;->a:Lj$/time/j;
 
     iget-object v1, p0, Lj$/time/zone/a;->c:Lj$/time/ZoneOffset;
 
@@ -72,17 +72,17 @@
 
     int-to-long v1, v1
 
-    invoke-virtual {v0, v1, v2}, Lj$/time/h;->A(J)Lj$/time/h;
+    invoke-virtual {v0, v1, v2}, Lj$/time/j;->A(J)Lj$/time/j;
 
     move-result-object v0
 
     return-object v0
 .end method
 
-.method public b()Lj$/time/h;
+.method public b()Lj$/time/j;
     .locals 1
 
-    iget-object v0, p0, Lj$/time/zone/a;->a:Lj$/time/h;
+    iget-object v0, p0, Lj$/time/zone/a;->a:Lj$/time/j;
 
     return-object v0
 .end method
@@ -136,19 +136,19 @@
 .method public d()Lj$/time/Instant;
     .locals 5
 
-    iget-object v0, p0, Lj$/time/zone/a;->a:Lj$/time/h;
+    iget-object v0, p0, Lj$/time/zone/a;->a:Lj$/time/j;
 
     iget-object v1, p0, Lj$/time/zone/a;->b:Lj$/time/ZoneOffset;
 
-    invoke-virtual {v0, v1}, Lj$/time/h;->D(Lj$/time/ZoneOffset;)J
+    invoke-virtual {v0, v1}, Lj$/time/j;->D(Lj$/time/ZoneOffset;)J
 
     move-result-wide v1
 
-    invoke-virtual {v0}, Lj$/time/h;->G()Lj$/time/j;
+    invoke-virtual {v0}, Lj$/time/j;->G()Lj$/time/l;
 
     move-result-object v0
 
-    invoke-virtual {v0}, Lj$/time/j;->n()I
+    invoke-virtual {v0}, Lj$/time/l;->n()I
 
     move-result v0
 
@@ -187,11 +187,11 @@
 
     check-cast p1, Lj$/time/zone/a;
 
-    iget-object v1, p0, Lj$/time/zone/a;->a:Lj$/time/h;
+    iget-object v1, p0, Lj$/time/zone/a;->a:Lj$/time/j;
 
-    iget-object v3, p1, Lj$/time/zone/a;->a:Lj$/time/h;
+    iget-object v3, p1, Lj$/time/zone/a;->a:Lj$/time/j;
 
-    invoke-virtual {v1, v3}, Lj$/time/h;->equals(Ljava/lang/Object;)Z
+    invoke-virtual {v1, v3}, Lj$/time/j;->equals(Ljava/lang/Object;)Z
 
     move-result v1
 
@@ -257,17 +257,17 @@
 
     new-array v0, v0, [Lj$/time/ZoneOffset;
 
-    iget-object v1, p0, Lj$/time/zone/a;->b:Lj$/time/ZoneOffset;
+    const/4 v1, 0x0
 
-    const/4 v2, 0x0
+    iget-object v2, p0, Lj$/time/zone/a;->b:Lj$/time/ZoneOffset;
 
-    aput-object v1, v0, v2
+    aput-object v2, v0, v1
 
-    iget-object v1, p0, Lj$/time/zone/a;->c:Lj$/time/ZoneOffset;
+    const/4 v1, 0x1
 
-    const/4 v2, 0x1
+    iget-object v2, p0, Lj$/time/zone/a;->c:Lj$/time/ZoneOffset;
 
-    aput-object v1, v0, v2
+    aput-object v2, v0, v1
 
     invoke-static {v0}, Ljava/util/Arrays;->asList([Ljava/lang/Object;)Ljava/util/List;
 
@@ -307,9 +307,9 @@
 .method public hashCode()I
     .locals 3
 
-    iget-object v0, p0, Lj$/time/zone/a;->a:Lj$/time/h;
+    iget-object v0, p0, Lj$/time/zone/a;->a:Lj$/time/j;
 
-    invoke-virtual {v0}, Lj$/time/h;->hashCode()I
+    invoke-virtual {v0}, Lj$/time/j;->hashCode()I
 
     move-result v0
 
@@ -341,11 +341,11 @@
 .method public i()J
     .locals 2
 
-    iget-object v0, p0, Lj$/time/zone/a;->a:Lj$/time/h;
+    iget-object v0, p0, Lj$/time/zone/a;->a:Lj$/time/j;
 
     iget-object v1, p0, Lj$/time/zone/a;->b:Lj$/time/ZoneOffset;
 
-    invoke-virtual {v0, v1}, Lj$/time/h;->D(Lj$/time/ZoneOffset;)J
+    invoke-virtual {v0, v1}, Lj$/time/j;->D(Lj$/time/ZoneOffset;)J
 
     move-result-wide v0
 
@@ -357,7 +357,7 @@
 
     const-string v0, "Transition["
 
-    invoke-static {v0}, Lj$/time/a;->a(Ljava/lang/String;)Ljava/lang/StringBuilder;
+    invoke-static {v0}, Lj$/time/a;->b(Ljava/lang/String;)Ljava/lang/StringBuilder;
 
     move-result-object v0
 
@@ -381,7 +381,7 @@
 
     invoke-virtual {v0, v1}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
 
-    iget-object v1, p0, Lj$/time/zone/a;->a:Lj$/time/h;
+    iget-object v1, p0, Lj$/time/zone/a;->a:Lj$/time/j;
 
     invoke-virtual {v0, v1}, Ljava/lang/StringBuilder;->append(Ljava/lang/Object;)Ljava/lang/StringBuilder;
 

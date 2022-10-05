@@ -270,10 +270,8 @@
     return v0
 .end method
 
-.method public final getAdapterPosition()I
+.method public final getBindingAdapterPosition()I
     .locals 4
-    .annotation runtime Ljava/lang/Deprecated;
-    .end annotation
 
     iget-object v0, p0, Landroidx/recyclerview/widget/RecyclerView$ViewHolder;->mBindingAdapter:Landroidx/recyclerview/widget/RecyclerView$Adapter;
 
@@ -281,14 +279,14 @@
 
     if-nez v0, :cond_0
 
-    goto :goto_0
+    return v1
 
     :cond_0
     iget-object v0, p0, Landroidx/recyclerview/widget/RecyclerView$ViewHolder;->mOwnerRecyclerView:Landroidx/recyclerview/widget/RecyclerView;
 
     if-nez v0, :cond_1
 
-    goto :goto_0
+    return v1
 
     :cond_1
     invoke-virtual {v0}, Landroidx/recyclerview/widget/RecyclerView;->getAdapter()Landroidx/recyclerview/widget/RecyclerView$Adapter;
@@ -297,7 +295,7 @@
 
     if-nez v0, :cond_2
 
-    goto :goto_0
+    return v1
 
     :cond_2
     iget-object v2, p0, Landroidx/recyclerview/widget/RecyclerView$ViewHolder;->mOwnerRecyclerView:Landroidx/recyclerview/widget/RecyclerView;
@@ -308,7 +306,7 @@
 
     if-ne v2, v1, :cond_3
 
-    goto :goto_0
+    return v1
 
     :cond_3
     iget-object v3, p0, Landroidx/recyclerview/widget/RecyclerView$ViewHolder;->mBindingAdapter:Landroidx/recyclerview/widget/RecyclerView$Adapter;
@@ -318,7 +316,6 @@
     move v1, v2
 
     :cond_4
-    :goto_0
     return v1
 .end method
 

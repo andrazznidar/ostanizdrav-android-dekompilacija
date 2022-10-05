@@ -73,7 +73,7 @@
     :catch_0
     move-exception v0
 
-    sget-object v1, Lcom/google/android/play/core/assetpacks/zzaw;->zza:Lkotlin/jvm/internal/SpreadBuilder;
+    sget-object v1, Lcom/google/android/play/core/assetpacks/zzaw;->zza:Lcom/google/android/play/core/internal/zzag;
 
     const/4 v2, 0x0
 
@@ -81,7 +81,7 @@
 
     const-string v3, "notifySessionFailed"
 
-    invoke-virtual {v1, v0, v3, v2}, Lkotlin/jvm/internal/SpreadBuilder;->zzc(Ljava/lang/Throwable;Ljava/lang/String;[Ljava/lang/Object;)I
+    invoke-virtual {v1, v0, v3, v2}, Lcom/google/android/play/core/internal/zzag;->zzc(Ljava/lang/Throwable;Ljava/lang/String;[Ljava/lang/Object;)I
 
     return-void
 .end method

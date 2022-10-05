@@ -122,7 +122,7 @@
     return-void
 .end method
 
-.method public static synthetic -$$Nest$sfgetDEFAULT_INSTANCE()Lde/rki/coronawarnapp/server/protocols/internal/ppdd/ElsOtpRequestAndroid$ELSOneTimePasswordRequestAndroid;
+.method public static bridge synthetic -$$Nest$sfgetDEFAULT_INSTANCE()Lde/rki/coronawarnapp/server/protocols/internal/ppdd/ElsOtpRequestAndroid$ELSOneTimePasswordRequestAndroid;
     .locals 1
 
     sget-object v0, Lde/rki/coronawarnapp/server/protocols/internal/ppdd/ElsOtpRequestAndroid$ELSOneTimePasswordRequestAndroid;->DEFAULT_INSTANCE:Lde/rki/coronawarnapp/server/protocols/internal/ppdd/ElsOtpRequestAndroid$ELSOneTimePasswordRequestAndroid;
@@ -826,7 +826,7 @@
     :pswitch_4
     new-instance p1, Lde/rki/coronawarnapp/server/protocols/internal/ppdd/ElsOtpRequestAndroid$ELSOneTimePasswordRequestAndroid$Builder;
 
-    invoke-direct {p1, v0}, Lde/rki/coronawarnapp/server/protocols/internal/ppdd/ElsOtpRequestAndroid$ELSOneTimePasswordRequestAndroid$Builder;-><init>(Lde/rki/coronawarnapp/server/protocols/internal/ppdd/ElsOtpRequestAndroid$ELSOneTimePasswordRequestAndroid$Builder-IA;)V
+    invoke-direct {p1, v0}, Lde/rki/coronawarnapp/server/protocols/internal/ppdd/ElsOtpRequestAndroid$ELSOneTimePasswordRequestAndroid$Builder;-><init>(Landroidx/constraintlayout/core/widgets/analyzer/DependencyGraph$$ExternalSyntheticOutline0;)V
 
     return-object p1
 

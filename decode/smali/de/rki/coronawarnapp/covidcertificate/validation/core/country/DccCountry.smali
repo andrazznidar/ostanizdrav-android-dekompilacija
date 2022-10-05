@@ -84,17 +84,13 @@
 
     iget-object p0, p0, Lde/rki/coronawarnapp/covidcertificate/validation/core/country/DccCountry;->countryCode:Ljava/lang/String;
 
-    const-string v1, "null cannot be cast to non-null type java.lang.String"
-
-    invoke-static {p0, v1}, Ljava/util/Objects;->requireNonNull(Ljava/lang/Object;Ljava/lang/String;)Ljava/lang/Object;
-
     sget-object v1, Ljava/util/Locale;->ROOT:Ljava/util/Locale;
 
     invoke-virtual {p0, v1}, Ljava/lang/String;->toUpperCase(Ljava/util/Locale;)Ljava/lang/String;
 
     move-result-object p0
 
-    const-string v1, "(this as java.lang.Strin\u2026.toUpperCase(Locale.ROOT)"
+    const-string/jumbo v1, "this as java.lang.String).toUpperCase(Locale.ROOT)"
 
     invoke-static {p0, v1}, Lkotlin/jvm/internal/Intrinsics;->checkNotNullExpressionValue(Ljava/lang/Object;Ljava/lang/String;)V
 

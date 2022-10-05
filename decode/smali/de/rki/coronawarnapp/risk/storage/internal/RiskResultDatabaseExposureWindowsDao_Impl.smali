@@ -152,7 +152,7 @@
 
     move-result v4
 
-    invoke-static {v3, v4}, Landroidx/room/util/StringUtil;->appendPlaceholders(Ljava/lang/StringBuilder;I)V
+    invoke-static {v3, v4}, Lkotlinx/coroutines/YieldKt;->appendPlaceholders(Ljava/lang/StringBuilder;I)V
 
     const-string v6, ")"
 
@@ -450,7 +450,7 @@
 
     move-result v1
 
-    invoke-static {v0, v1}, Landroidx/room/util/StringUtil;->appendPlaceholders(Ljava/lang/StringBuilder;I)V
+    invoke-static {v0, v1}, Lkotlinx/coroutines/YieldKt;->appendPlaceholders(Ljava/lang/StringBuilder;I)V
 
     const-string v2, ")"
 

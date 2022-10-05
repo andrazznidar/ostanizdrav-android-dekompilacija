@@ -1,38 +1,43 @@
-.class public abstract Lj$/time/o;
+.class public final synthetic Lj$/time/o;
 .super Ljava/lang/Object;
 
 # interfaces
-.implements Lj$/time/temporal/k;
-.implements Lj$/time/temporal/l;
-.implements Ljava/lang/Comparable;
-.implements Ljava/io/Serializable;
+.implements Lj$/time/temporal/w;
 
 
 # static fields
-.field public static final synthetic a:I
+.field public static final synthetic a:Lj$/time/o;
 
 
 # direct methods
-.method static constructor <clinit>()V
-    .locals 5
+.method static synthetic constructor <clinit>()V
+    .locals 1
 
-    new-instance v0, Lj$/time/format/g;
+    new-instance v0, Lj$/time/o;
 
-    invoke-direct {v0}, Lj$/time/format/g;-><init>()V
+    invoke-direct {v0}, Lj$/time/o;-><init>()V
 
-    sget-object v1, Lj$/time/temporal/a;->YEAR:Lj$/time/temporal/a;
-
-    sget-object v2, Lj$/time/format/F;->EXCEEDS_PAD:Lj$/time/format/F;
-
-    const/4 v3, 0x4
-
-    const/16 v4, 0xa
-
-    invoke-virtual {v0, v1, v3, v4, v2}, Lj$/time/format/g;->p(Lj$/time/temporal/o;IILj$/time/format/F;)Lj$/time/format/g;
-
-    move-result-object v0
-
-    invoke-virtual {v0}, Lj$/time/format/g;->w()Lj$/time/format/DateTimeFormatter;
+    sput-object v0, Lj$/time/o;->a:Lj$/time/o;
 
     return-void
+.end method
+
+.method private synthetic constructor <init>()V
+    .locals 0
+
+    invoke-direct {p0}, Ljava/lang/Object;-><init>()V
+
+    return-void
+.end method
+
+
+# virtual methods
+.method public final a(Lj$/time/temporal/TemporalAccessor;)Ljava/lang/Object;
+    .locals 0
+
+    invoke-static {p1}, Lj$/time/OffsetDateTime;->j(Lj$/time/temporal/TemporalAccessor;)Lj$/time/OffsetDateTime;
+
+    move-result-object p1
+
+    return-object p1
 .end method

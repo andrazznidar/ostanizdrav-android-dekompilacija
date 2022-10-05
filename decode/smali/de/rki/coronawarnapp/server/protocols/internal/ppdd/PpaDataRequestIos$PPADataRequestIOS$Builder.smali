@@ -40,7 +40,7 @@
     return-void
 .end method
 
-.method public synthetic constructor <init>(Lde/rki/coronawarnapp/server/protocols/internal/ppdd/PpaDataRequestIos$PPADataRequestIOS$Builder-IA;)V
+.method public synthetic constructor <init>(Lcom/nimbusds/jose/crypto/ECDSAVerifier$$ExternalSyntheticOutline2;)V
     .locals 0
 
     invoke-direct {p0}, Lde/rki/coronawarnapp/server/protocols/internal/ppdd/PpaDataRequestIos$PPADataRequestIOS$Builder;-><init>()V

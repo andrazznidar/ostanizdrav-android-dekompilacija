@@ -63,15 +63,15 @@
 
     iput-object p1, v0, Lcom/google/android/material/transformation/FabTransformationBehavior$FabTransformationSpec;->timings:Lcom/google/android/material/animation/MotionSpec;
 
-    new-instance p1, Lcom/google/android/material/animation/Positioning;
+    new-instance p1, Lde/rki/coronawarnapp/nearby/ENFModule;
 
     const/16 p2, 0x11
 
     const/4 v1, 0x0
 
-    invoke-direct {p1, p2, v1, v1}, Lcom/google/android/material/animation/Positioning;-><init>(IFF)V
+    invoke-direct {p1, p2, v1, v1}, Lde/rki/coronawarnapp/nearby/ENFModule;-><init>(IFF)V
 
-    iput-object p1, v0, Lcom/google/android/material/transformation/FabTransformationBehavior$FabTransformationSpec;->positioning:Lcom/google/android/material/animation/Positioning;
+    iput-object p1, v0, Lcom/google/android/material/transformation/FabTransformationBehavior$FabTransformationSpec;->positioning:Lde/rki/coronawarnapp/nearby/ENFModule;
 
     return-object v0
 .end method

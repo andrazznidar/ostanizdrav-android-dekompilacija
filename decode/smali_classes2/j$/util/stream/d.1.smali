@@ -9,28 +9,28 @@
 
 
 # direct methods
-.method protected constructor <init>(Lj$/util/stream/d;Lj$/util/Spliterator;)V
+.method protected constructor <init>(Lj$/util/stream/D0;Lj$/util/Spliterator;)V
     .locals 0
 
-    invoke-direct {p0, p1, p2}, Lj$/util/stream/f;-><init>(Lj$/util/stream/f;Lj$/util/Spliterator;)V
-
-    iget-object p1, p1, Lj$/util/stream/d;->h:Ljava/util/concurrent/atomic/AtomicReference;
-
-    iput-object p1, p0, Lj$/util/stream/d;->h:Ljava/util/concurrent/atomic/AtomicReference;
-
-    return-void
-.end method
-
-.method protected constructor <init>(Lj$/util/stream/z2;Lj$/util/Spliterator;)V
-    .locals 0
-
-    invoke-direct {p0, p1, p2}, Lj$/util/stream/f;-><init>(Lj$/util/stream/z2;Lj$/util/Spliterator;)V
+    invoke-direct {p0, p1, p2}, Lj$/util/stream/f;-><init>(Lj$/util/stream/D0;Lj$/util/Spliterator;)V
 
     new-instance p1, Ljava/util/concurrent/atomic/AtomicReference;
 
     const/4 p2, 0x0
 
     invoke-direct {p1, p2}, Ljava/util/concurrent/atomic/AtomicReference;-><init>(Ljava/lang/Object;)V
+
+    iput-object p1, p0, Lj$/util/stream/d;->h:Ljava/util/concurrent/atomic/AtomicReference;
+
+    return-void
+.end method
+
+.method protected constructor <init>(Lj$/util/stream/d;Lj$/util/Spliterator;)V
+    .locals 0
+
+    invoke-direct {p0, p1, p2}, Lj$/util/stream/f;-><init>(Lj$/util/stream/f;Lj$/util/Spliterator;)V
+
+    iget-object p1, p1, Lj$/util/stream/d;->h:Ljava/util/concurrent/atomic/AtomicReference;
 
     iput-object p1, p0, Lj$/util/stream/d;->h:Ljava/util/concurrent/atomic/AtomicReference;
 

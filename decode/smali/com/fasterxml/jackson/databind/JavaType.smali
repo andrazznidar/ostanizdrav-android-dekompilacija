@@ -1,5 +1,5 @@
 .class public abstract Lcom/fasterxml/jackson/databind/JavaType;
-.super Lcom/fasterxml/jackson/core/type/ResolvedType;
+.super Lorg/joda/time/Chronology;
 .source "JavaType.java"
 
 # interfaces
@@ -40,7 +40,7 @@
         }
     .end annotation
 
-    invoke-direct {p0}, Lcom/fasterxml/jackson/core/type/ResolvedType;-><init>()V
+    invoke-direct {p0}, Lorg/joda/time/Chronology;-><init>()V
 
     iput-object p1, p0, Lcom/fasterxml/jackson/databind/JavaType;->_class:Ljava/lang/Class;
 
@@ -140,20 +140,20 @@
     return-object v0
 .end method
 
-.method public bridge synthetic getReferencedType()Lcom/fasterxml/jackson/core/type/ResolvedType;
+.method public getReferencedType()Lcom/fasterxml/jackson/databind/JavaType;
+    .locals 1
+
+    const/4 v0, 0x0
+
+    return-object v0
+.end method
+
+.method public bridge synthetic getReferencedType()Lorg/joda/time/Chronology;
     .locals 1
 
     invoke-virtual {p0}, Lcom/fasterxml/jackson/databind/JavaType;->getReferencedType()Lcom/fasterxml/jackson/databind/JavaType;
 
     move-result-object v0
-
-    return-object v0
-.end method
-
-.method public getReferencedType()Lcom/fasterxml/jackson/databind/JavaType;
-    .locals 1
-
-    const/4 v0, 0x0
 
     return-object v0
 .end method

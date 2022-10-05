@@ -35,14 +35,14 @@
 .end annotation
 
 .annotation system Ldalvik/annotation/SourceDebugExtension;
-    value = "SMAP\nTestCertificateRepository.kt\nKotlin\n*S Kotlin\n*F\n+ 1 TestCertificateRepository.kt\nde/rki/coronawarnapp/covidcertificate/test/core/TestCertificateRepository$2\n+ 2 _Collections.kt\nkotlin/collections/CollectionsKt___CollectionsKt\n*L\n1#1,496:1\n1547#2:497\n1618#2,3:498\n*S KotlinDebug\n*F\n+ 1 TestCertificateRepository.kt\nde/rki/coronawarnapp/covidcertificate/test/core/TestCertificateRepository$2\n*L\n111#1:497\n111#1:498,3\n*E\n"
+    value = "SMAP\nTestCertificateRepository.kt\nKotlin\n*S Kotlin\n*F\n+ 1 TestCertificateRepository.kt\nde/rki/coronawarnapp/covidcertificate/test/core/TestCertificateRepository$2\n+ 2 _Collections.kt\nkotlin/collections/CollectionsKt___CollectionsKt\n*L\n1#1,590:1\n1547#2:591\n1618#2,3:592\n*S KotlinDebug\n*F\n+ 1 TestCertificateRepository.kt\nde/rki/coronawarnapp/covidcertificate/test/core/TestCertificateRepository$2\n*L\n128#1:591\n128#1:592,3\n*E\n"
 .end annotation
 
 .annotation runtime Lkotlin/coroutines/jvm/internal/DebugMetadata;
     c = "de.rki.coronawarnapp.covidcertificate.test.core.TestCertificateRepository$2"
     f = "TestCertificateRepository.kt"
     l = {
-        0x6f
+        0x80
     }
     m = "invokeSuspend"
 .end annotation
@@ -131,7 +131,7 @@
 .end method
 
 .method public final invokeSuspend(Ljava/lang/Object;)Ljava/lang/Object;
-    .locals 5
+    .locals 7
 
     sget-object v0, Lkotlin/coroutines/intrinsics/CoroutineSingletons;->COROUTINE_SUSPENDED:Lkotlin/coroutines/intrinsics/CoroutineSingletons;
 
@@ -177,9 +177,17 @@
 
     const/4 v4, 0x0
 
-    aput-object p1, v3, v4
+    invoke-interface {p1}, Ljava/util/Collection;->size()I
 
-    const-string v4, "TestCertificateContainer data changed: %s"
+    move-result v5
+
+    new-instance v6, Ljava/lang/Integer;
+
+    invoke-direct {v6, v5}, Ljava/lang/Integer;-><init>(I)V
+
+    aput-object v6, v3, v4
+
+    const-string v4, "TestCertificateContainer data changed: %d items"
 
     invoke-virtual {v1, v4, v3}, Ltimber/log/Timber$Forest;->v(Ljava/lang/String;[Ljava/lang/Object;)V
 

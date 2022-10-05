@@ -21,7 +21,7 @@
 
     new-instance v0, Landroidx/databinding/ViewDataBinding$IncludedLayouts;
 
-    const/16 v1, 0x15
+    const/16 v1, 0x14
 
     invoke-direct {v0, v1}, Landroidx/databinding/ViewDataBinding$IncludedLayouts;-><init>(I)V
 
@@ -45,7 +45,7 @@
 
     new-array v4, v2, [I
 
-    const v6, 0x7f0d010a
+    const v6, 0x7f0d0115
 
     aput v6, v4, v5
 
@@ -65,7 +65,7 @@
 
     new-array v4, v2, [I
 
-    const v6, 0x7f0d00cf
+    const v6, 0x7f0d00df
 
     aput v6, v4, v5
 
@@ -77,105 +77,99 @@
 
     sput-object v0, Lde/rki/coronawarnapp/databinding/FragmentStatisticsExplanationBindingImpl;->sViewsWithIds:Landroid/util/SparseIntArray;
 
-    const v1, 0x7f0a0692
+    const v1, 0x7f0a06e3
 
     const/4 v2, 0x4
 
     invoke-virtual {v0, v1, v2}, Landroid/util/SparseIntArray;->put(II)V
 
-    const v1, 0x7f0a0690
+    const v1, 0x7f0a06e1
 
     const/4 v2, 0x5
 
     invoke-virtual {v0, v1, v2}, Landroid/util/SparseIntArray;->put(II)V
 
-    const v1, 0x7f0a0691
+    const v1, 0x7f0a06e2
 
     const/4 v2, 0x6
 
     invoke-virtual {v0, v1, v2}, Landroid/util/SparseIntArray;->put(II)V
 
-    const v1, 0x7f0a0348
+    const v1, 0x7f0a0377
 
     const/4 v2, 0x7
 
     invoke-virtual {v0, v1, v2}, Landroid/util/SparseIntArray;->put(II)V
 
-    const v1, 0x7f0a0345
+    const v1, 0x7f0a0374
 
     const/16 v2, 0x8
 
     invoke-virtual {v0, v1, v2}, Landroid/util/SparseIntArray;->put(II)V
 
-    const v1, 0x7f0a0340
+    const v1, 0x7f0a036f
 
     const/16 v2, 0x9
 
     invoke-virtual {v0, v1, v2}, Landroid/util/SparseIntArray;->put(II)V
 
-    const v1, 0x7f0a03bf
+    const v1, 0x7f0a03f3
 
     const/16 v2, 0xa
 
     invoke-virtual {v0, v1, v2}, Landroid/util/SparseIntArray;->put(II)V
 
-    const v1, 0x7f0a069c
+    const v1, 0x7f0a06ec
 
     const/16 v2, 0xb
 
     invoke-virtual {v0, v1, v2}, Landroid/util/SparseIntArray;->put(II)V
 
-    const v1, 0x7f0a069b
+    const v1, 0x7f0a06eb
 
     const/16 v2, 0xc
 
     invoke-virtual {v0, v1, v2}, Landroid/util/SparseIntArray;->put(II)V
 
-    const v1, 0x7f0a069a
+    const v1, 0x7f0a06e7
 
     const/16 v2, 0xd
 
     invoke-virtual {v0, v1, v2}, Landroid/util/SparseIntArray;->put(II)V
 
-    const v1, 0x7f0a0696
+    const v1, 0x7f0a06e8
 
     const/16 v2, 0xe
 
     invoke-virtual {v0, v1, v2}, Landroid/util/SparseIntArray;->put(II)V
 
-    const v1, 0x7f0a0697
+    const v1, 0x7f0a06e5
 
     const/16 v2, 0xf
 
     invoke-virtual {v0, v1, v2}, Landroid/util/SparseIntArray;->put(II)V
 
-    const v1, 0x7f0a0694
+    const v1, 0x7f0a06e6
 
     const/16 v2, 0x10
 
     invoke-virtual {v0, v1, v2}, Landroid/util/SparseIntArray;->put(II)V
 
-    const v1, 0x7f0a0695
+    const v1, 0x7f0a06e9
 
     const/16 v2, 0x11
 
     invoke-virtual {v0, v1, v2}, Landroid/util/SparseIntArray;->put(II)V
 
-    const v1, 0x7f0a0698
+    const v1, 0x7f0a06ea
 
     const/16 v2, 0x12
 
     invoke-virtual {v0, v1, v2}, Landroid/util/SparseIntArray;->put(II)V
 
-    const v1, 0x7f0a0699
+    const v1, 0x7f0a0141
 
     const/16 v2, 0x13
-
-    invoke-virtual {v0, v1, v2}, Landroid/util/SparseIntArray;->put(II)V
-
-    const v1, 0x7f0a0128
-
-    const/16 v2, 0x14
 
     invoke-virtual {v0, v1, v2}, Landroid/util/SparseIntArray;->put(II)V
 
@@ -183,7 +177,7 @@
 .end method
 
 .method public constructor <init>(Landroidx/databinding/DataBindingComponent;Landroid/view/View;)V
-    .locals 25
+    .locals 24
     .annotation system Ldalvik/annotation/MethodParameters;
         accessFlags = {
             0x0,
@@ -203,17 +197,17 @@
 
     sget-object v3, Lde/rki/coronawarnapp/databinding/FragmentStatisticsExplanationBindingImpl;->sViewsWithIds:Landroid/util/SparseIntArray;
 
-    const/16 v4, 0x15
+    const/16 v4, 0x14
 
     move-object/from16 v15, p1
 
     invoke-static {v15, v1, v4, v0, v3}, Landroidx/databinding/ViewDataBinding;->mapBindings(Landroidx/databinding/DataBindingComponent;Landroid/view/View;ILandroidx/databinding/ViewDataBinding$IncludedLayouts;Landroid/util/SparseIntArray;)[Ljava/lang/Object;
 
-    move-result-object v24
+    move-result-object v23
 
-    const/16 v0, 0x14
+    const/16 v0, 0x13
 
-    aget-object v0, v24, v0
+    aget-object v0, v23, v0
 
     move-object v4, v0
 
@@ -221,7 +215,7 @@
 
     const/16 v0, 0x9
 
-    aget-object v0, v24, v0
+    aget-object v0, v23, v0
 
     move-object v5, v0
 
@@ -229,7 +223,7 @@
 
     const/16 v0, 0x8
 
-    aget-object v0, v24, v0
+    aget-object v0, v23, v0
 
     move-object v6, v0
 
@@ -237,7 +231,7 @@
 
     const/4 v0, 0x7
 
-    aget-object v0, v24, v0
+    aget-object v0, v23, v0
 
     move-object v7, v0
 
@@ -245,7 +239,7 @@
 
     const/16 v0, 0xa
 
-    aget-object v0, v24, v0
+    aget-object v0, v23, v0
 
     move-object v8, v0
 
@@ -253,7 +247,7 @@
 
     const/4 v0, 0x0
 
-    aget-object v0, v24, v0
+    aget-object v0, v23, v0
 
     move-object v9, v0
 
@@ -261,7 +255,7 @@
 
     const/4 v0, 0x2
 
-    aget-object v0, v24, v0
+    aget-object v0, v23, v0
 
     move-object v10, v0
 
@@ -269,7 +263,7 @@
 
     const/4 v0, 0x5
 
-    aget-object v0, v24, v0
+    aget-object v0, v23, v0
 
     move-object v11, v0
 
@@ -277,7 +271,7 @@
 
     const/4 v0, 0x6
 
-    aget-object v0, v24, v0
+    aget-object v0, v23, v0
 
     move-object v12, v0
 
@@ -285,7 +279,7 @@
 
     const/4 v0, 0x4
 
-    aget-object v0, v24, v0
+    aget-object v0, v23, v0
 
     move-object v13, v0
 
@@ -293,83 +287,75 @@
 
     const/4 v0, 0x1
 
-    aget-object v0, v24, v0
+    aget-object v0, v23, v0
 
     move-object v14, v0
 
     check-cast v14, Landroidx/constraintlayout/widget/ConstraintLayout;
 
-    const/16 v0, 0x10
+    const/16 v0, 0xf
 
-    aget-object v0, v24, v0
+    aget-object v0, v23, v0
 
     check-cast v0, Landroid/widget/ImageView;
 
     move-object v15, v0
 
-    const/16 v0, 0x11
+    const/16 v0, 0x10
 
-    aget-object v0, v24, v0
+    aget-object v0, v23, v0
 
     move-object/from16 v16, v0
 
     check-cast v16, Landroid/widget/TextView;
 
-    const/16 v0, 0xe
+    const/16 v0, 0xd
 
-    aget-object v0, v24, v0
+    aget-object v0, v23, v0
 
     move-object/from16 v17, v0
 
     check-cast v17, Landroid/widget/ImageView;
 
-    const/16 v0, 0xf
+    const/16 v0, 0xe
 
-    aget-object v0, v24, v0
+    aget-object v0, v23, v0
 
     move-object/from16 v18, v0
 
     check-cast v18, Landroid/widget/TextView;
 
-    const/16 v0, 0x12
+    const/16 v0, 0x11
 
-    aget-object v0, v24, v0
+    aget-object v0, v23, v0
 
     move-object/from16 v19, v0
 
     check-cast v19, Landroid/widget/ImageView;
 
-    const/16 v0, 0x13
+    const/16 v0, 0x12
 
-    aget-object v0, v24, v0
+    aget-object v0, v23, v0
 
     move-object/from16 v20, v0
 
     check-cast v20, Landroid/widget/TextView;
 
-    const/16 v0, 0xd
+    const/16 v0, 0xc
 
-    aget-object v0, v24, v0
+    aget-object v0, v23, v0
 
     move-object/from16 v21, v0
 
     check-cast v21, Landroid/widget/TextView;
 
-    const/16 v0, 0xc
+    const/16 v0, 0xb
 
-    aget-object v0, v24, v0
+    aget-object v0, v23, v0
 
     move-object/from16 v22, v0
 
     check-cast v22, Landroid/widget/TextView;
-
-    const/16 v0, 0xb
-
-    aget-object v0, v24, v0
-
-    move-object/from16 v23, v0
-
-    check-cast v23, Landroid/widget/TextView;
 
     const/4 v3, 0x1
 
@@ -379,7 +365,7 @@
 
     move-object/from16 v2, p2
 
-    invoke-direct/range {v0 .. v23}, Lde/rki/coronawarnapp/databinding/FragmentStatisticsExplanationBinding;-><init>(Ljava/lang/Object;Landroid/view/View;ILandroid/widget/TextView;Landroidx/constraintlayout/widget/Guideline;Landroidx/constraintlayout/widget/Guideline;Landroidx/constraintlayout/widget/Guideline;Landroid/widget/ImageView;Landroidx/constraintlayout/widget/ConstraintLayout;Lde/rki/coronawarnapp/databinding/IncludeButtonIconBinding;Landroid/widget/TextView;Landroid/view/View;Landroid/widget/TextView;Landroidx/constraintlayout/widget/ConstraintLayout;Landroid/widget/ImageView;Landroid/widget/TextView;Landroid/widget/ImageView;Landroid/widget/TextView;Landroid/widget/ImageView;Landroid/widget/TextView;Landroid/widget/TextView;Landroid/widget/TextView;Landroid/widget/TextView;)V
+    invoke-direct/range {v0 .. v22}, Lde/rki/coronawarnapp/databinding/FragmentStatisticsExplanationBinding;-><init>(Ljava/lang/Object;Landroid/view/View;ILandroid/widget/TextView;Landroidx/constraintlayout/widget/Guideline;Landroidx/constraintlayout/widget/Guideline;Landroidx/constraintlayout/widget/Guideline;Landroid/widget/ImageView;Landroidx/constraintlayout/widget/ConstraintLayout;Lde/rki/coronawarnapp/databinding/IncludeButtonIconBinding;Landroid/widget/TextView;Landroid/view/View;Landroid/widget/TextView;Landroidx/constraintlayout/widget/ConstraintLayout;Landroid/widget/ImageView;Landroid/widget/TextView;Landroid/widget/ImageView;Landroid/widget/TextView;Landroid/widget/ImageView;Landroid/widget/TextView;Landroid/widget/TextView;Landroid/widget/TextView;)V
 
     const-wide/16 v0, -0x1
 
@@ -389,7 +375,7 @@
 
     const/4 v0, 0x3
 
-    aget-object v0, v24, v0
+    aget-object v0, v23, v0
 
     check-cast v0, Lde/rki/coronawarnapp/databinding/MergeGuidelinesSideBinding;
 
@@ -462,7 +448,7 @@
 
     move-result-object v1
 
-    const v2, 0x7f0800dd
+    const v2, 0x7f0800d3
 
     invoke-static {v1, v2}, Landroidx/appcompat/content/res/AppCompatResources;->getDrawable(Landroid/content/Context;I)Landroid/graphics/drawable/Drawable;
 

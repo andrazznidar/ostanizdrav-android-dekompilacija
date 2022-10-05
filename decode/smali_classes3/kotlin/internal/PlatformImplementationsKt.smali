@@ -19,8 +19,11 @@
 
     move-result-object v1
 
-    if-eqz v1, :cond_2
+    if-nez v1, :cond_0
 
+    goto :goto_0
+
+    :cond_0
     const/4 v2, 0x6
 
     const/16 v3, 0x2e
@@ -33,7 +36,7 @@
 
     const/high16 v5, 0x10000
 
-    if-gez v2, :cond_0
+    if-gez v2, :cond_1
 
     :try_start_0
     invoke-static {v1}, Ljava/lang/Integer;->parseInt(Ljava/lang/String;)I
@@ -44,9 +47,9 @@
 
     mul-int/2addr v1, v5
 
-    goto :goto_0
+    goto :goto_1
 
-    :cond_0
+    :cond_1
     add-int/lit8 v6, v2, 0x1
 
     const/4 v7, 0x4
@@ -55,18 +58,18 @@
 
     move-result v3
 
-    if-gez v3, :cond_1
+    if-gez v3, :cond_2
 
     invoke-virtual {v1}, Ljava/lang/String;->length()I
 
     move-result v3
 
-    :cond_1
+    :cond_2
     invoke-virtual {v1, v4, v2}, Ljava/lang/String;->substring(II)Ljava/lang/String;
 
     move-result-object v2
 
-    const-string v4, "(this as java.lang.Strin\u2026ing(startIndex, endIndex)"
+    const-string v4, "this as java.lang.String\u2026ing(startIndex, endIndex)"
 
     invoke-static {v2, v4}, Lkotlin/jvm/internal/Intrinsics;->checkNotNullExpressionValue(Ljava/lang/Object;Ljava/lang/String;)V
 
@@ -91,13 +94,13 @@
 
     add-int/2addr v1, v2
 
-    goto :goto_0
+    goto :goto_1
 
     :catch_0
-    :cond_2
+    :goto_0
     const v1, 0x10006
 
-    :goto_0
+    :goto_1
     const v2, 0x10008
 
     const-string v3, "ClassCastException(\"Inst\u2026baseTypeCL\").initCause(e)"
@@ -106,7 +109,7 @@
 
     const-string v5, "Instance classloader: "
 
-    const-string v6, "Class.forName(\"kotlin.in\u2026entations\").newInstance()"
+    const-string v6, "forName(\"kotlin.internal\u2026entations\").newInstance()"
 
     if-lt v1, v2, :cond_3
 
@@ -127,7 +130,7 @@
     .catch Ljava/lang/ClassCastException; {:try_start_3 .. :try_end_3} :catch_1
     .catch Ljava/lang/ClassNotFoundException; {:try_start_3 .. :try_end_3} :catch_2
 
-    goto/16 :goto_1
+    goto/16 :goto_2
 
     :catch_1
     move-exception v7
@@ -197,7 +200,7 @@
     .catch Ljava/lang/ClassCastException; {:try_start_6 .. :try_end_6} :catch_3
     .catch Ljava/lang/ClassNotFoundException; {:try_start_6 .. :try_end_6} :catch_4
 
-    goto/16 :goto_1
+    goto/16 :goto_2
 
     :catch_3
     move-exception v7
@@ -270,7 +273,7 @@
     .catch Ljava/lang/ClassCastException; {:try_start_9 .. :try_end_9} :catch_5
     .catch Ljava/lang/ClassNotFoundException; {:try_start_9 .. :try_end_9} :catch_6
 
-    goto :goto_1
+    goto :goto_2
 
     :catch_5
     move-exception v2
@@ -342,7 +345,7 @@
     .catch Ljava/lang/ClassCastException; {:try_start_c .. :try_end_c} :catch_7
     .catch Ljava/lang/ClassNotFoundException; {:try_start_c .. :try_end_c} :catch_8
 
-    goto :goto_1
+    goto :goto_2
 
     :catch_7
     move-exception v2
@@ -396,7 +399,7 @@
 
     invoke-direct {v2}, Lkotlin/internal/PlatformImplementations;-><init>()V
 
-    :goto_1
+    :goto_2
     sput-object v2, Lkotlin/internal/PlatformImplementationsKt;->IMPLEMENTATIONS:Lkotlin/internal/PlatformImplementations;
 
     return-void

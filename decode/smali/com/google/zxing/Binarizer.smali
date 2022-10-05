@@ -20,18 +20,7 @@
 
 
 # virtual methods
-.method public abstract createBinarizer(Lcom/google/zxing/LuminanceSource;)Lcom/google/zxing/Binarizer;
-.end method
-
 .method public abstract getBlackMatrix()Lcom/google/zxing/common/BitMatrix;
-    .annotation system Ldalvik/annotation/Throws;
-        value = {
-            Lcom/google/zxing/NotFoundException;
-        }
-    .end annotation
-.end method
-
-.method public abstract getBlackRow(ILcom/google/zxing/common/BitArray;)Lcom/google/zxing/common/BitArray;
     .annotation system Ldalvik/annotation/Throws;
         value = {
             Lcom/google/zxing/NotFoundException;

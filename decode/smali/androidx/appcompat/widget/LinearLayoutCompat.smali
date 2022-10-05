@@ -398,7 +398,7 @@
 
     if-gez v0, :cond_0
 
-    invoke-super {p0}, Landroid/view/View;->getBaseline()I
+    invoke-super {p0}, Landroid/view/ViewGroup;->getBaseline()I
 
     move-result v0
 
@@ -969,7 +969,7 @@
 .method public onInitializeAccessibilityEvent(Landroid/view/accessibility/AccessibilityEvent;)V
     .locals 1
 
-    invoke-super {p0, p1}, Landroid/view/View;->onInitializeAccessibilityEvent(Landroid/view/accessibility/AccessibilityEvent;)V
+    invoke-super {p0, p1}, Landroid/view/ViewGroup;->onInitializeAccessibilityEvent(Landroid/view/accessibility/AccessibilityEvent;)V
 
     const-string v0, "androidx.appcompat.widget.LinearLayoutCompat"
 
@@ -981,7 +981,7 @@
 .method public onInitializeAccessibilityNodeInfo(Landroid/view/accessibility/AccessibilityNodeInfo;)V
     .locals 1
 
-    invoke-super {p0, p1}, Landroid/view/View;->onInitializeAccessibilityNodeInfo(Landroid/view/accessibility/AccessibilityNodeInfo;)V
+    invoke-super {p0, p1}, Landroid/view/ViewGroup;->onInitializeAccessibilityNodeInfo(Landroid/view/accessibility/AccessibilityNodeInfo;)V
 
     const-string v0, "androidx.appcompat.widget.LinearLayoutCompat"
 

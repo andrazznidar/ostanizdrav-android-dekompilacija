@@ -52,7 +52,7 @@
 
     iget-object v0, v0, Landroidx/recyclerview/widget/RecyclerView$ViewHolder;->itemView:Landroid/view/View;
 
-    const v1, 0x7f0a024b
+    const v1, 0x7f0a026a
 
     invoke-static {v0, v1}, Landroidx/viewbinding/ViewBindings;->findChildViewById(Landroid/view/View;I)Landroid/view/View;
 
@@ -64,7 +64,7 @@
 
     if-eqz v5, :cond_0
 
-    const v1, 0x7f0a025f
+    const v1, 0x7f0a027f
 
     invoke-static {v0, v1}, Landroidx/viewbinding/ViewBindings;->findChildViewById(Landroid/view/View;I)Landroid/view/View;
 
@@ -76,7 +76,7 @@
 
     if-eqz v6, :cond_0
 
-    const v1, 0x7f0a02a5
+    const v1, 0x7f0a02ca
 
     invoke-static {v0, v1}, Landroidx/viewbinding/ViewBindings;->findChildViewById(Landroid/view/View;I)Landroid/view/View;
 
@@ -88,7 +88,7 @@
 
     if-eqz v7, :cond_0
 
-    const v1, 0x7f0a0830
+    const v1, 0x7f0a0879
 
     invoke-static {v0, v1}, Landroidx/viewbinding/ViewBindings;->findChildViewById(Landroid/view/View;I)Landroid/view/View;
 

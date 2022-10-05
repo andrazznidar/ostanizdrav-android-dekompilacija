@@ -55,7 +55,7 @@
 
     sput-object v0, Lde/rki/coronawarnapp/databinding/IncludeSubmissionDoneBindingImpl;->sViewsWithIds:Landroid/util/SparseIntArray;
 
-    const v1, 0x7f0a0703
+    const v1, 0x7f0a0752
 
     const/4 v2, 0x5
 
@@ -71,8 +71,8 @@
 
     :array_1
     .array-data 4
-        0x7f0d00f1
-        0x7f0d010a
+        0x7f0d0100
+        0x7f0d0115
     .end array-data
 .end method
 
@@ -222,7 +222,7 @@
 
     move-result-object v1
 
-    const v2, 0x7f13053b
+    const v2, 0x7f130539
 
     invoke-virtual {v1, v2}, Landroid/content/res/Resources;->getString(I)Ljava/lang/String;
 
@@ -240,7 +240,7 @@
 
     move-result-object v1
 
-    invoke-static {v0, v1}, Lcom/google/android/gms/nearby/connection/zzq;->setCWAContentDescription(Landroid/widget/ImageView;Ljava/lang/String;)V
+    invoke-static {v0, v1}, Lboofcv/core/image/impl/ImplConvertPlanarToGray;->setCWAContentDescription(Landroid/widget/ImageView;Ljava/lang/String;)V
 
     :cond_0
     iget-object v0, p0, Lde/rki/coronawarnapp/databinding/IncludeSubmissionDoneBinding;->submissionDoneContent:Lde/rki/coronawarnapp/databinding/IncludeSubmissionDoneContentBinding;

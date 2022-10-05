@@ -3,7 +3,7 @@
 
 
 # direct methods
-.method public static synthetic a(Ljava/util/Collection;Lj$/util/function/Consumer;)V
+.method public static a(Ljava/util/Collection;Lj$/util/function/Consumer;)V
     .locals 1
 
     instance-of v0, p0, Lj$/util/b;
@@ -17,8 +17,28 @@
     return-void
 
     :cond_0
-    invoke-static {p0, p1}, Lj$/util/a;->a(Ljava/util/Collection;Lj$/util/function/Consumer;)V
+    invoke-static {p1}, Ljava/util/Objects;->requireNonNull(Ljava/lang/Object;)Ljava/lang/Object;
 
+    invoke-interface {p0}, Ljava/util/Collection;->iterator()Ljava/util/Iterator;
+
+    move-result-object p0
+
+    :goto_0
+    invoke-interface {p0}, Ljava/util/Iterator;->hasNext()Z
+
+    move-result v0
+
+    if-eqz v0, :cond_1
+
+    invoke-interface {p0}, Ljava/util/Iterator;->next()Ljava/lang/Object;
+
+    move-result-object v0
+
+    invoke-interface {p1, v0}, Lj$/util/function/Consumer;->j(Ljava/lang/Object;)V
+
+    goto :goto_0
+
+    :cond_1
     return-void
 .end method
 
@@ -44,13 +64,13 @@
 
     check-cast p0, Ljava/util/LinkedHashSet;
 
-    new-instance v0, Lj$/util/F;
+    new-instance v0, Lj$/util/P;
 
     invoke-static {p0}, Ljava/util/Objects;->requireNonNull(Ljava/lang/Object;)Ljava/lang/Object;
 
     const/16 v1, 0x11
 
-    invoke-direct {v0, p0, v1}, Lj$/util/F;-><init>(Ljava/util/Collection;I)V
+    invoke-direct {v0, p0, v1}, Lj$/util/P;-><init>(Ljava/util/Collection;I)V
 
     return-object v0
 
@@ -61,11 +81,11 @@
 
     check-cast p0, Ljava/util/SortedSet;
 
-    new-instance v0, Lj$/util/s;
+    new-instance v0, Lj$/util/v;
 
     const/16 v1, 0x15
 
-    invoke-direct {v0, p0, p0, v1}, Lj$/util/s;-><init>(Ljava/util/SortedSet;Ljava/util/Collection;I)V
+    invoke-direct {v0, p0, p0, v1}, Lj$/util/v;-><init>(Ljava/util/SortedSet;Ljava/util/Collection;I)V
 
     return-object v0
 
@@ -76,13 +96,13 @@
 
     check-cast p0, Ljava/util/Set;
 
-    new-instance v0, Lj$/util/F;
+    new-instance v0, Lj$/util/P;
 
     invoke-static {p0}, Ljava/util/Objects;->requireNonNull(Ljava/lang/Object;)Ljava/lang/Object;
 
     const/4 v1, 0x1
 
-    invoke-direct {v0, p0, v1}, Lj$/util/F;-><init>(Ljava/util/Collection;I)V
+    invoke-direct {v0, p0, v1}, Lj$/util/P;-><init>(Ljava/util/Collection;I)V
 
     return-object v0
 
@@ -93,24 +113,24 @@
 
     check-cast p0, Ljava/util/List;
 
-    new-instance v0, Lj$/util/F;
+    new-instance v0, Lj$/util/P;
 
     invoke-static {p0}, Ljava/util/Objects;->requireNonNull(Ljava/lang/Object;)Ljava/lang/Object;
 
     const/16 v1, 0x10
 
-    invoke-direct {v0, p0, v1}, Lj$/util/F;-><init>(Ljava/util/Collection;I)V
+    invoke-direct {v0, p0, v1}, Lj$/util/P;-><init>(Ljava/util/Collection;I)V
 
     return-object v0
 
     :cond_4
-    new-instance v0, Lj$/util/F;
+    new-instance v0, Lj$/util/P;
 
     invoke-static {p0}, Ljava/util/Objects;->requireNonNull(Ljava/lang/Object;)Ljava/lang/Object;
 
     const/4 v1, 0x0
 
-    invoke-direct {v0, p0, v1}, Lj$/util/F;-><init>(Ljava/util/Collection;I)V
+    invoke-direct {v0, p0, v1}, Lj$/util/P;-><init>(Ljava/util/Collection;I)V
 
     return-object v0
 .end method
@@ -124,16 +144,39 @@
 
     check-cast p0, Lj$/util/b;
 
-    invoke-interface {p0, p1}, Lj$/util/b;->l(Lj$/util/function/Predicate;)Z
+    invoke-interface {p0, p1}, Lj$/util/b;->e(Lj$/util/function/Predicate;)Z
 
     move-result p0
 
     return p0
 
     :cond_0
-    invoke-static {p0, p1}, Lj$/util/a;->h(Ljava/util/Collection;Lj$/util/function/Predicate;)Z
+    invoke-static {p0, p1}, Lj$/util/a;->o(Ljava/util/Collection;Lj$/util/function/Predicate;)Z
 
     move-result p0
 
     return p0
+.end method
+
+.method public static synthetic stream(Ljava/util/Collection;)Lj$/util/stream/Stream;
+    .locals 1
+
+    instance-of v0, p0, Lj$/util/b;
+
+    if-eqz v0, :cond_0
+
+    check-cast p0, Lj$/util/b;
+
+    invoke-interface {p0}, Lj$/util/b;->stream()Lj$/util/stream/Stream;
+
+    move-result-object p0
+
+    return-object p0
+
+    :cond_0
+    invoke-static {p0}, Lj$/util/a;->p(Ljava/util/Collection;)Lj$/util/stream/Stream;
+
+    move-result-object p0
+
+    return-object p0
 .end method

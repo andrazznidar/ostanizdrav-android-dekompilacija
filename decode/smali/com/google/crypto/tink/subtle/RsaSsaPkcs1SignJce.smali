@@ -15,7 +15,7 @@
 
 
 # direct methods
-.method public constructor <init>(Ljava/security/interfaces/RSAPrivateCrtKey;Lcom/google/crypto/tink/subtle/Enums$HashType;)V
+.method public constructor <init>(Ljava/security/interfaces/RSAPrivateCrtKey;I)V
     .locals 2
     .annotation system Ldalvik/annotation/MethodParameters;
         accessFlags = {
@@ -36,7 +36,7 @@
 
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
-    invoke-static {p2}, Lcom/google/crypto/tink/subtle/Validators;->validateSignatureHash(Lcom/google/crypto/tink/subtle/Enums$HashType;)V
+    invoke-static {p2}, Lcom/google/crypto/tink/subtle/Validators;->validateSignatureHash(I)V
 
     invoke-interface {p1}, Ljava/security/interfaces/RSAPrivateCrtKey;->getModulus()Ljava/math/BigInteger;
 
@@ -50,13 +50,17 @@
 
     iput-object p1, p0, Lcom/google/crypto/tink/subtle/RsaSsaPkcs1SignJce;->privateKey:Ljava/security/interfaces/RSAPrivateCrtKey;
 
-    invoke-static {p2}, Lcom/google/crypto/tink/subtle/Validators;->validateSignatureHash(Lcom/google/crypto/tink/subtle/Enums$HashType;)V
+    invoke-static {p2}, Lcom/google/crypto/tink/subtle/Validators;->validateSignatureHash(I)V
 
     new-instance v0, Ljava/lang/StringBuilder;
 
     invoke-direct {v0}, Ljava/lang/StringBuilder;-><init>()V
 
-    invoke-virtual {v0, p2}, Ljava/lang/StringBuilder;->append(Ljava/lang/Object;)Ljava/lang/StringBuilder;
+    invoke-static {p2}, Lcom/google/crypto/tink/subtle/Enums$HashType$EnumUnboxingLocalUtility;->stringValueOf(I)Ljava/lang/String;
+
+    move-result-object p2
+
+    invoke-virtual {v0, p2}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
 
     const-string/jumbo p2, "withRSA"
 

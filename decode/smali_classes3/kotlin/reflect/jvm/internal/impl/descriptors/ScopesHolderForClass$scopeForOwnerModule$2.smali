@@ -1,4 +1,4 @@
-.class public final Lkotlin/reflect/jvm/internal/impl/descriptors/ScopesHolderForClass$scopeForOwnerModule$2;
+.class final Lkotlin/reflect/jvm/internal/impl/descriptors/ScopesHolderForClass$scopeForOwnerModule$2;
 .super Lkotlin/jvm/internal/Lambda;
 .source "ScopesHolderForClass.kt"
 
@@ -7,12 +7,20 @@
 
 
 # annotations
+.annotation system Ldalvik/annotation/EnclosingMethod;
+    value = Lkotlin/reflect/jvm/internal/impl/descriptors/ScopesHolderForClass;-><init>(Lkotlin/reflect/jvm/internal/impl/descriptors/ClassDescriptor;Lkotlin/reflect/jvm/internal/impl/storage/StorageManager;Lkotlin/jvm/functions/Function1;Lkotlin/reflect/jvm/internal/impl/types/checker/KotlinTypeRefiner;)V
+.end annotation
+
+.annotation system Ldalvik/annotation/InnerClass;
+    accessFlags = 0x19
+    name = null
+.end annotation
+
 .annotation system Ldalvik/annotation/Signature;
     value = {
         "Lkotlin/jvm/internal/Lambda;",
         "Lkotlin/jvm/functions/Function0<",
-        "Lkotlin/reflect/jvm/internal/impl/resolve/scopes/MemberScope;",
-        ">;"
+        "TT;>;"
     }
 .end annotation
 
@@ -22,8 +30,7 @@
     .annotation system Ldalvik/annotation/Signature;
         value = {
             "Lkotlin/reflect/jvm/internal/impl/descriptors/ScopesHolderForClass<",
-            "Lkotlin/reflect/jvm/internal/impl/resolve/scopes/MemberScope;",
-            ">;"
+            "TT;>;"
         }
     .end annotation
 .end field
@@ -36,8 +43,7 @@
         value = {
             "(",
             "Lkotlin/reflect/jvm/internal/impl/descriptors/ScopesHolderForClass<",
-            "Lkotlin/reflect/jvm/internal/impl/resolve/scopes/MemberScope;",
-            ">;)V"
+            "TT;>;)V"
         }
     .end annotation
 
@@ -52,16 +58,37 @@
 
 
 # virtual methods
-.method public invoke()Ljava/lang/Object;
+.method public bridge synthetic invoke()Ljava/lang/Object;
+    .locals 1
+
+    invoke-virtual {p0}, Lkotlin/reflect/jvm/internal/impl/descriptors/ScopesHolderForClass$scopeForOwnerModule$2;->invoke()Lkotlin/reflect/jvm/internal/impl/resolve/scopes/MemberScope;
+
+    move-result-object v0
+
+    return-object v0
+.end method
+
+.method public final invoke()Lkotlin/reflect/jvm/internal/impl/resolve/scopes/MemberScope;
     .locals 2
+    .annotation system Ldalvik/annotation/Signature;
+        value = {
+            "()TT;"
+        }
+    .end annotation
 
     iget-object v0, p0, Lkotlin/reflect/jvm/internal/impl/descriptors/ScopesHolderForClass$scopeForOwnerModule$2;->this$0:Lkotlin/reflect/jvm/internal/impl/descriptors/ScopesHolderForClass;
 
-    iget-object v1, v0, Lkotlin/reflect/jvm/internal/impl/descriptors/ScopesHolderForClass;->scopeFactory:Lkotlin/jvm/functions/Function1;
+    invoke-static {v0}, Lkotlin/reflect/jvm/internal/impl/descriptors/ScopesHolderForClass;->access$getScopeFactory$p(Lkotlin/reflect/jvm/internal/impl/descriptors/ScopesHolderForClass;)Lkotlin/jvm/functions/Function1;
 
-    iget-object v0, v0, Lkotlin/reflect/jvm/internal/impl/descriptors/ScopesHolderForClass;->kotlinTypeRefinerForOwnerModule:Lkotlin/reflect/jvm/internal/impl/types/checker/KotlinTypeRefiner;
+    move-result-object v0
 
-    invoke-interface {v1, v0}, Lkotlin/jvm/functions/Function1;->invoke(Ljava/lang/Object;)Ljava/lang/Object;
+    iget-object v1, p0, Lkotlin/reflect/jvm/internal/impl/descriptors/ScopesHolderForClass$scopeForOwnerModule$2;->this$0:Lkotlin/reflect/jvm/internal/impl/descriptors/ScopesHolderForClass;
+
+    invoke-static {v1}, Lkotlin/reflect/jvm/internal/impl/descriptors/ScopesHolderForClass;->access$getKotlinTypeRefinerForOwnerModule$p(Lkotlin/reflect/jvm/internal/impl/descriptors/ScopesHolderForClass;)Lkotlin/reflect/jvm/internal/impl/types/checker/KotlinTypeRefiner;
+
+    move-result-object v1
+
+    invoke-interface {v0, v1}, Lkotlin/jvm/functions/Function1;->invoke(Ljava/lang/Object;)Ljava/lang/Object;
 
     move-result-object v0
 

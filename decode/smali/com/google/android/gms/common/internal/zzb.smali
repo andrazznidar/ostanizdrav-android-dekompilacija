@@ -432,7 +432,7 @@
 
     const-string v1, "Don\'t know how to handle message: "
 
-    invoke-static {v0, v1, p1}, Lcom/google/android/gms/common/api/internal/BasePendingResult$CallbackHandler$$ExternalSyntheticOutline0;->m(ILjava/lang/String;I)Ljava/lang/String;
+    invoke-static {v0, v1, p1}, Lboofcv/alg/misc/HistogramStatistics$$ExternalSyntheticOutline0;->m(ILjava/lang/String;I)Ljava/lang/String;
 
     move-result-object p1
 

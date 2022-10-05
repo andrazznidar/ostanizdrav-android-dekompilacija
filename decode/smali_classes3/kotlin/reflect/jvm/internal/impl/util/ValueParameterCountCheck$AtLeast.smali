@@ -15,7 +15,7 @@
 
 
 # instance fields
-.field public final n:I
+.field private final n:I
 
 
 # direct methods
@@ -61,6 +61,10 @@
 # virtual methods
 .method public check(Lkotlin/reflect/jvm/internal/impl/descriptors/FunctionDescriptor;)Z
     .locals 1
+
+    const-string v0, "functionDescriptor"
+
+    invoke-static {p1, v0}, Lkotlin/jvm/internal/Intrinsics;->checkNotNullParameter(Ljava/lang/Object;Ljava/lang/String;)V
 
     invoke-interface {p1}, Lkotlin/reflect/jvm/internal/impl/descriptors/CallableDescriptor;->getValueParameters()Ljava/util/List;
 

@@ -5,7 +5,7 @@
 
 # annotations
 .annotation system Ldalvik/annotation/SourceDebugExtension;
-    value = "SMAP\nListBuilder.kt\nKotlin\n*S Kotlin\n*F\n+ 1 ListBuilder.kt\nkotlin/collections/builders/ListBuilderKt\n+ 2 fake.kt\nkotlin/jvm/internal/FakeKt\n*L\n1#1,370:1\n1#2:371\n*E\n"
+    value = "SMAP\nListBuilder.kt\nKotlin\n*S Kotlin\n*F\n+ 1 ListBuilder.kt\nkotlin/collections/builders/ListBuilderKt\n+ 2 fake.kt\nkotlin/jvm/internal/FakeKt\n*L\n1#1,429:1\n1#2:430\n*E\n"
 .end annotation
 
 
@@ -60,7 +60,7 @@
         }
     .end annotation
 
-    const-string v0, "$this$copyOfUninitializedElements"
+    const-string v0, "<this>"
 
     invoke-static {p0, v0}, Lkotlin/jvm/internal/Intrinsics;->checkNotNullParameter(Ljava/lang/Object;Ljava/lang/String;)V
 
@@ -68,7 +68,7 @@
 
     move-result-object p0
 
-    const-string p1, "java.util.Arrays.copyOf(this, newSize)"
+    const-string p1, "copyOf(this, newSize)"
 
     invoke-static {p0, p1}, Lkotlin/jvm/internal/Intrinsics;->checkNotNullExpressionValue(Ljava/lang/Object;Ljava/lang/String;)V
 
@@ -85,7 +85,7 @@
         }
     .end annotation
 
-    const-string v0, "$this$resetAt"
+    const-string v0, "<this>"
 
     invoke-static {p0, v0}, Lkotlin/jvm/internal/Intrinsics;->checkNotNullParameter(Ljava/lang/Object;Ljava/lang/String;)V
 
@@ -106,16 +106,18 @@
         }
     .end annotation
 
-    const-string v0, "$this$resetRange"
+    const-string v0, "<this>"
 
     invoke-static {p0, v0}, Lkotlin/jvm/internal/Intrinsics;->checkNotNullParameter(Ljava/lang/Object;Ljava/lang/String;)V
 
     :goto_0
     if-ge p1, p2, :cond_0
 
+    add-int/lit8 v0, p1, 0x1
+
     invoke-static {p0, p1}, Lkotlin/collections/builders/ListBuilderKt;->resetAt([Ljava/lang/Object;I)V
 
-    add-int/lit8 p1, p1, 0x1
+    move p1, v0
 
     goto :goto_0
 

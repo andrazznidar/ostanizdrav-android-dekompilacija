@@ -36,7 +36,7 @@
     c = "de.rki.coronawarnapp.covidcertificate.booster.BoosterRulesRepository$internalData$1"
     f = "BoosterRulesRepository.kt"
     l = {
-        0x20
+        0x23
     }
     m = "invokeSuspend"
 .end annotation

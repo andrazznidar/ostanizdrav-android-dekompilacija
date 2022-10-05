@@ -128,7 +128,7 @@
 
     const/16 v1, 0x10
 
-    invoke-static {v0, v1}, Lcom/google/android/material/math/MathUtils;->trimToLength(Ljava/lang/String;I)Ljava/lang/String;
+    invoke-static {v0, v1}, Lkotlinx/coroutines/channels/ChannelsKt;->trimToLength(Ljava/lang/String;I)Ljava/lang/String;
 
     move-result-object v0
 

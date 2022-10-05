@@ -13,7 +13,7 @@
 
     sget-object v0, Lde/rki/coronawarnapp/covidcertificate/valueset/valuesets/ValueSetsContainerKt$emptyValueSetsContainer$2;->INSTANCE:Lde/rki/coronawarnapp/covidcertificate/valueset/valuesets/ValueSetsContainerKt$emptyValueSetsContainer$2;
 
-    invoke-static {v0}, Lkotlin/LazyKt__LazyKt;->lazy(Lkotlin/jvm/functions/Function0;)Lkotlin/Lazy;
+    invoke-static {v0}, Lkotlin/LazyKt__LazyJVMKt;->lazy(Lkotlin/jvm/functions/Function0;)Lkotlin/Lazy;
 
     move-result-object v0
 

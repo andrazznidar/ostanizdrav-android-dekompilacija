@@ -252,7 +252,7 @@
 
     const-string v1, "Invalid input length "
 
-    invoke-static {v0, v1, p2}, Lcom/google/android/gms/common/api/internal/BasePendingResult$CallbackHandler$$ExternalSyntheticOutline0;->m(ILjava/lang/String;I)Ljava/lang/String;
+    invoke-static {v0, v1, p2}, Lboofcv/alg/misc/HistogramStatistics$$ExternalSyntheticOutline0;->m(ILjava/lang/String;I)Ljava/lang/String;
 
     move-result-object p2
 

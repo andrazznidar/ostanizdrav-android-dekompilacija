@@ -1,4 +1,4 @@
-.class public final Landroidx/fragment/app/ViewKt;
+.class public Landroidx/fragment/app/ViewKt;
 .super Ljava/lang/Object;
 .source "View.kt"
 
@@ -6,15 +6,6 @@
 # direct methods
 .method public static final findFragment(Landroid/view/View;)Landroidx/fragment/app/Fragment;
     .locals 3
-    .annotation system Ldalvik/annotation/Signature;
-        value = {
-            "<F:",
-            "Landroidx/fragment/app/Fragment;",
-            ">(",
-            "Landroid/view/View;",
-            ")TF;"
-        }
-    .end annotation
 
     move-object v0, p0
 
@@ -83,187 +74,165 @@
     throw v0
 .end method
 
-.method public static final record(Lkotlin/reflect/jvm/internal/impl/incremental/components/LookupTracker;Lkotlin/reflect/jvm/internal/impl/incremental/components/LookupLocation;Lkotlin/reflect/jvm/internal/impl/descriptors/ClassDescriptor;Lkotlin/reflect/jvm/internal/impl/name/Name;)V
-    .locals 7
+.method public static intersection(Lgeoregression/struct/line/LineGeneral2D_F64;Lgeoregression/struct/line/LineGeneral2D_F64;Lgeoregression/struct/point/Point2D_F64;)Lgeoregression/struct/point/Point2D_F64;
+    .locals 12
 
-    const-string v0, "<this>"
+    if-nez p2, :cond_0
 
-    invoke-static {p0, v0}, Lkotlin/jvm/internal/Intrinsics;->checkNotNullParameter(Ljava/lang/Object;Ljava/lang/String;)V
+    new-instance p2, Lgeoregression/struct/point/Point2D_F64;
 
-    const-string v0, "scopeOwner"
-
-    invoke-static {p2, v0}, Lkotlin/jvm/internal/Intrinsics;->checkNotNullParameter(Ljava/lang/Object;Ljava/lang/String;)V
-
-    sget-object v0, Lkotlin/reflect/jvm/internal/impl/incremental/components/LookupTracker$DO_NOTHING;->INSTANCE:Lkotlin/reflect/jvm/internal/impl/incremental/components/LookupTracker$DO_NOTHING;
-
-    if-ne p0, v0, :cond_0
-
-    return-void
+    invoke-direct {p2}, Lgeoregression/struct/point/Point2D_F64;-><init>()V
 
     :cond_0
-    invoke-interface {p1}, Lkotlin/reflect/jvm/internal/impl/incremental/components/LookupLocation;->getLocation()Lkotlin/reflect/jvm/internal/impl/incremental/components/LocationInfo;
+    iget-wide v0, p0, Lgeoregression/struct/line/LineGeneral2D_F64;->B:D
 
-    move-result-object p1
+    iget-wide v2, p1, Lgeoregression/struct/line/LineGeneral2D_F64;->C:D
 
-    if-nez p1, :cond_1
+    mul-double v4, v0, v2
 
-    return-void
+    iget-wide v6, p0, Lgeoregression/struct/line/LineGeneral2D_F64;->C:D
+
+    iget-wide v8, p1, Lgeoregression/struct/line/LineGeneral2D_F64;->B:D
+
+    mul-double v10, v6, v8
+
+    sub-double/2addr v4, v10
+
+    iput-wide v4, p2, Lgeoregression/struct/GeoTuple2D_F64;->x:D
+
+    iget-wide v10, p1, Lgeoregression/struct/line/LineGeneral2D_F64;->A:D
+
+    mul-double/2addr v6, v10
+
+    iget-wide p0, p0, Lgeoregression/struct/line/LineGeneral2D_F64;->A:D
+
+    mul-double/2addr v2, p0
+
+    sub-double/2addr v6, v2
+
+    iput-wide v6, p2, Lgeoregression/struct/GeoTuple2D_F64;->y:D
+
+    mul-double/2addr p0, v8
+
+    mul-double/2addr v0, v10
+
+    sub-double/2addr p0, v0
+
+    const-wide/16 v0, 0x0
+
+    cmpl-double v0, p0, v0
+
+    if-nez v0, :cond_1
+
+    const/4 p0, 0x0
+
+    return-object p0
 
     :cond_1
-    invoke-interface {p0}, Lkotlin/reflect/jvm/internal/impl/incremental/components/LookupTracker;->getRequiresPosition()Z
+    div-double/2addr v4, p0
 
-    move-result v0
+    iput-wide v4, p2, Lgeoregression/struct/GeoTuple2D_F64;->x:D
 
-    if-eqz v0, :cond_2
+    div-double/2addr v6, p0
 
-    invoke-interface {p1}, Lkotlin/reflect/jvm/internal/impl/incremental/components/LocationInfo;->getPosition()Lkotlin/reflect/jvm/internal/impl/incremental/components/Position;
+    iput-wide v6, p2, Lgeoregression/struct/GeoTuple2D_F64;->y:D
 
-    move-result-object v0
+    return-object p2
+.end method
+
+.method public static intersection(Lgeoregression/struct/point/Point2D_F64;Lgeoregression/struct/point/Point2D_F64;Lgeoregression/struct/point/Point2D_F64;Lgeoregression/struct/point/Point2D_F64;Lgeoregression/struct/point/Point2D_F64;)Lgeoregression/struct/point/Point2D_F64;
+    .locals 23
+
+    move-object/from16 v0, p0
+
+    move-object/from16 v1, p1
+
+    move-object/from16 v2, p2
+
+    move-object/from16 v3, p3
+
+    if-nez p4, :cond_0
+
+    new-instance v4, Lgeoregression/struct/point/Point2D_F64;
+
+    invoke-direct {v4}, Lgeoregression/struct/point/Point2D_F64;-><init>()V
 
     goto :goto_0
 
-    :cond_2
-    sget-object v0, Lkotlin/reflect/jvm/internal/impl/incremental/components/Position;->NO_POSITION:Lkotlin/reflect/jvm/internal/impl/incremental/components/Position;
+    :cond_0
+    move-object/from16 v4, p4
 
     :goto_0
-    move-object v3, v0
+    iget-wide v5, v1, Lgeoregression/struct/GeoTuple2D_F64;->x:D
 
-    invoke-interface {p1}, Lkotlin/reflect/jvm/internal/impl/incremental/components/LocationInfo;->getFilePath()Ljava/lang/String;
+    iget-wide v7, v0, Lgeoregression/struct/GeoTuple2D_F64;->x:D
 
-    move-result-object v2
+    sub-double/2addr v5, v7
 
-    invoke-static {p2}, Lkotlin/reflect/jvm/internal/impl/resolve/DescriptorUtils;->getFqName(Lkotlin/reflect/jvm/internal/impl/descriptors/DeclarationDescriptor;)Lkotlin/reflect/jvm/internal/impl/name/FqNameUnsafe;
+    iget-wide v9, v1, Lgeoregression/struct/GeoTuple2D_F64;->y:D
 
-    move-result-object p1
+    iget-wide v0, v0, Lgeoregression/struct/GeoTuple2D_F64;->y:D
 
-    invoke-virtual {p1}, Lkotlin/reflect/jvm/internal/impl/name/FqNameUnsafe;->asString()Ljava/lang/String;
+    sub-double v17, v9, v0
 
-    move-result-object v4
+    iget-wide v9, v3, Lgeoregression/struct/GeoTuple2D_F64;->x:D
 
-    const-string p1, "getFqName(scopeOwner).asString()"
+    iget-wide v13, v2, Lgeoregression/struct/GeoTuple2D_F64;->x:D
 
-    invoke-static {v4, p1}, Lkotlin/jvm/internal/Intrinsics;->checkNotNullExpressionValue(Ljava/lang/Object;Ljava/lang/String;)V
+    sub-double v19, v9, v13
 
-    sget-object v5, Lkotlin/reflect/jvm/internal/impl/incremental/components/ScopeKind;->CLASSIFIER:Lkotlin/reflect/jvm/internal/impl/incremental/components/ScopeKind;
+    iget-wide v9, v3, Lgeoregression/struct/GeoTuple2D_F64;->y:D
 
-    invoke-virtual {p3}, Lkotlin/reflect/jvm/internal/impl/name/Name;->asString()Ljava/lang/String;
+    iget-wide v2, v2, Lgeoregression/struct/GeoTuple2D_F64;->y:D
 
-    move-result-object v6
+    sub-double v21, v9, v2
 
-    const-string p1, "name.asString()"
+    sub-double v7, v13, v7
 
-    invoke-static {v6, p1}, Lkotlin/jvm/internal/Intrinsics;->checkNotNullExpressionValue(Ljava/lang/Object;Ljava/lang/String;)V
+    mul-double v15, v7, v17
 
-    move-object v1, p0
+    move-wide v9, v0
 
-    invoke-interface/range {v1 .. v6}, Lkotlin/reflect/jvm/internal/impl/incremental/components/LookupTracker;->record(Ljava/lang/String;Lkotlin/reflect/jvm/internal/impl/incremental/components/Position;Ljava/lang/String;Lkotlin/reflect/jvm/internal/impl/incremental/components/ScopeKind;Ljava/lang/String;)V
+    move-wide v11, v2
 
-    return-void
-.end method
+    move-wide v0, v13
 
-.method public static final record(Lkotlin/reflect/jvm/internal/impl/incremental/components/LookupTracker;Lkotlin/reflect/jvm/internal/impl/incremental/components/LookupLocation;Lkotlin/reflect/jvm/internal/impl/descriptors/PackageFragmentDescriptor;Lkotlin/reflect/jvm/internal/impl/name/Name;)V
-    .locals 6
+    move-wide v13, v5
 
-    const-string v0, "<this>"
+    invoke-static/range {v9 .. v16}, Landroidx/constraintlayout/core/motion/utils/ArcCurveFit$Arc$$ExternalSyntheticOutline0;->m(DDDD)D
 
-    invoke-static {p0, v0}, Lkotlin/jvm/internal/Intrinsics;->checkNotNullParameter(Ljava/lang/Object;Ljava/lang/String;)V
+    move-result-wide v7
 
-    const-string v0, "scopeOwner"
+    mul-double v5, v5, v21
 
-    invoke-static {p2, v0}, Lkotlin/jvm/internal/Intrinsics;->checkNotNullParameter(Ljava/lang/Object;Ljava/lang/String;)V
+    mul-double v17, v17, v19
 
-    invoke-interface {p2}, Lkotlin/reflect/jvm/internal/impl/descriptors/PackageFragmentDescriptor;->getFqName()Lkotlin/reflect/jvm/internal/impl/name/FqName;
+    sub-double v5, v5, v17
 
-    move-result-object p2
+    const-wide/16 v9, 0x0
 
-    invoke-virtual {p2}, Lkotlin/reflect/jvm/internal/impl/name/FqName;->asString()Ljava/lang/String;
+    cmpl-double v9, v5, v9
 
-    move-result-object v3
+    if-nez v9, :cond_1
 
-    const-string p2, "scopeOwner.fqName.asString()"
+    const/4 v0, 0x0
 
-    invoke-static {v3, p2}, Lkotlin/jvm/internal/Intrinsics;->checkNotNullExpressionValue(Ljava/lang/Object;Ljava/lang/String;)V
-
-    invoke-virtual {p3}, Lkotlin/reflect/jvm/internal/impl/name/Name;->asString()Ljava/lang/String;
-
-    move-result-object v5
-
-    const-string p2, "name.asString()"
-
-    invoke-static {v5, p2}, Lkotlin/jvm/internal/Intrinsics;->checkNotNullExpressionValue(Ljava/lang/Object;Ljava/lang/String;)V
-
-    sget-object p2, Lkotlin/reflect/jvm/internal/impl/incremental/components/LookupTracker$DO_NOTHING;->INSTANCE:Lkotlin/reflect/jvm/internal/impl/incremental/components/LookupTracker$DO_NOTHING;
-
-    if-ne p0, p2, :cond_0
-
-    goto :goto_1
-
-    :cond_0
-    invoke-interface {p1}, Lkotlin/reflect/jvm/internal/impl/incremental/components/LookupLocation;->getLocation()Lkotlin/reflect/jvm/internal/impl/incremental/components/LocationInfo;
-
-    move-result-object p1
-
-    if-nez p1, :cond_1
-
-    goto :goto_1
+    return-object v0
 
     :cond_1
-    invoke-interface {p0}, Lkotlin/reflect/jvm/internal/impl/incremental/components/LookupTracker;->getRequiresPosition()Z
+    div-double/2addr v7, v5
 
-    move-result p2
+    mul-double v19, v19, v7
 
-    if-eqz p2, :cond_2
+    add-double v0, v19, v0
 
-    invoke-interface {p1}, Lkotlin/reflect/jvm/internal/impl/incremental/components/LocationInfo;->getPosition()Lkotlin/reflect/jvm/internal/impl/incremental/components/Position;
+    iput-wide v0, v4, Lgeoregression/struct/GeoTuple2D_F64;->x:D
 
-    move-result-object p2
+    mul-double v7, v7, v21
 
-    goto :goto_0
+    add-double/2addr v7, v2
 
-    :cond_2
-    sget-object p2, Lkotlin/reflect/jvm/internal/impl/incremental/components/Position;->NO_POSITION:Lkotlin/reflect/jvm/internal/impl/incremental/components/Position;
+    iput-wide v7, v4, Lgeoregression/struct/GeoTuple2D_F64;->y:D
 
-    :goto_0
-    move-object v2, p2
-
-    invoke-interface {p1}, Lkotlin/reflect/jvm/internal/impl/incremental/components/LocationInfo;->getFilePath()Ljava/lang/String;
-
-    move-result-object v1
-
-    sget-object v4, Lkotlin/reflect/jvm/internal/impl/incremental/components/ScopeKind;->PACKAGE:Lkotlin/reflect/jvm/internal/impl/incremental/components/ScopeKind;
-
-    move-object v0, p0
-
-    invoke-interface/range {v0 .. v5}, Lkotlin/reflect/jvm/internal/impl/incremental/components/LookupTracker;->record(Ljava/lang/String;Lkotlin/reflect/jvm/internal/impl/incremental/components/Position;Ljava/lang/String;Lkotlin/reflect/jvm/internal/impl/incremental/components/ScopeKind;Ljava/lang/String;)V
-
-    :goto_1
-    return-void
-.end method
-
-.method public static smear(I)I
-    .locals 4
-
-    int-to-long v0, p0
-
-    const-wide/32 v2, -0x3361d2af
-
-    mul-long/2addr v0, v2
-
-    long-to-int p0, v0
-
-    const/16 v0, 0xf
-
-    invoke-static {p0, v0}, Ljava/lang/Integer;->rotateLeft(II)I
-
-    move-result p0
-
-    int-to-long v0, p0
-
-    const-wide/32 v2, 0x1b873593
-
-    mul-long/2addr v0, v2
-
-    long-to-int p0, v0
-
-    return p0
+    return-object v4
 .end method

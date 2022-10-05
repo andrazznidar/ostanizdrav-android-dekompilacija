@@ -8,8 +8,7 @@
     c = "de.rki.coronawarnapp.risk.changedetection.CombinedRiskLevelChangeDetector"
     f = "CombinedRiskLevelChangeDetector.kt"
     l = {
-        0x57,
-        0x5b
+        0x55
     }
     m = "checkForRiskLevelChanges"
 .end annotation

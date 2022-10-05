@@ -1,4 +1,4 @@
-.class public final Lkotlin/reflect/jvm/internal/impl/load/java/components/JavaResolverCache$1;
+.class final Lkotlin/reflect/jvm/internal/impl/load/java/components/JavaResolverCache$1;
 .super Ljava/lang/Object;
 .source "JavaResolverCache.java"
 
@@ -18,7 +18,7 @@
 
 
 # direct methods
-.method public static synthetic $$$reportNull$$$0(I)V
+.method private static synthetic $$$reportNull$$$0(I)V
     .locals 3
 
     const/4 v0, 0x3
@@ -161,19 +161,97 @@
 
 
 # virtual methods
+.method public getClassResolvedFromSource(Lkotlin/reflect/jvm/internal/impl/name/FqName;)Lkotlin/reflect/jvm/internal/impl/descriptors/ClassDescriptor;
+    .locals 0
+
+    if-nez p1, :cond_0
+
+    const/4 p1, 0x0
+
+    invoke-static {p1}, Lkotlin/reflect/jvm/internal/impl/load/java/components/JavaResolverCache$1;->$$$reportNull$$$0(I)V
+
+    :cond_0
+    const/4 p1, 0x0
+
+    return-object p1
+.end method
+
+.method public recordClass(Lkotlin/reflect/jvm/internal/impl/load/java/structure/JavaClass;Lkotlin/reflect/jvm/internal/impl/descriptors/ClassDescriptor;)V
+    .locals 0
+
+    if-nez p1, :cond_0
+
+    const/4 p1, 0x7
+
+    invoke-static {p1}, Lkotlin/reflect/jvm/internal/impl/load/java/components/JavaResolverCache$1;->$$$reportNull$$$0(I)V
+
+    :cond_0
+    if-nez p2, :cond_1
+
+    const/16 p1, 0x8
+
+    invoke-static {p1}, Lkotlin/reflect/jvm/internal/impl/load/java/components/JavaResolverCache$1;->$$$reportNull$$$0(I)V
+
+    :cond_1
+    return-void
+.end method
+
 .method public recordConstructor(Lkotlin/reflect/jvm/internal/impl/load/java/structure/JavaElement;Lkotlin/reflect/jvm/internal/impl/descriptors/ConstructorDescriptor;)V
     .locals 0
 
-    if-eqz p1, :cond_0
+    if-nez p1, :cond_0
 
-    return-void
-
-    :cond_0
     const/4 p1, 0x3
 
     invoke-static {p1}, Lkotlin/reflect/jvm/internal/impl/load/java/components/JavaResolverCache$1;->$$$reportNull$$$0(I)V
 
-    const/4 p1, 0x0
+    :cond_0
+    if-nez p2, :cond_1
 
-    throw p1
+    const/4 p1, 0x4
+
+    invoke-static {p1}, Lkotlin/reflect/jvm/internal/impl/load/java/components/JavaResolverCache$1;->$$$reportNull$$$0(I)V
+
+    :cond_1
+    return-void
+.end method
+
+.method public recordField(Lkotlin/reflect/jvm/internal/impl/load/java/structure/JavaField;Lkotlin/reflect/jvm/internal/impl/descriptors/PropertyDescriptor;)V
+    .locals 0
+
+    if-nez p1, :cond_0
+
+    const/4 p1, 0x5
+
+    invoke-static {p1}, Lkotlin/reflect/jvm/internal/impl/load/java/components/JavaResolverCache$1;->$$$reportNull$$$0(I)V
+
+    :cond_0
+    if-nez p2, :cond_1
+
+    const/4 p1, 0x6
+
+    invoke-static {p1}, Lkotlin/reflect/jvm/internal/impl/load/java/components/JavaResolverCache$1;->$$$reportNull$$$0(I)V
+
+    :cond_1
+    return-void
+.end method
+
+.method public recordMethod(Lkotlin/reflect/jvm/internal/impl/load/java/structure/JavaMember;Lkotlin/reflect/jvm/internal/impl/descriptors/SimpleFunctionDescriptor;)V
+    .locals 0
+
+    if-nez p1, :cond_0
+
+    const/4 p1, 0x1
+
+    invoke-static {p1}, Lkotlin/reflect/jvm/internal/impl/load/java/components/JavaResolverCache$1;->$$$reportNull$$$0(I)V
+
+    :cond_0
+    if-nez p2, :cond_1
+
+    const/4 p1, 0x2
+
+    invoke-static {p1}, Lkotlin/reflect/jvm/internal/impl/load/java/components/JavaResolverCache$1;->$$$reportNull$$$0(I)V
+
+    :cond_1
+    return-void
 .end method

@@ -1,5 +1,6 @@
 .class public final Lde/rki/coronawarnapp/bugreporting/debuglog/DebugLogger$startNewLogJob$1$invokeSuspend$$inlined$collect$1$1;
 .super Lkotlin/coroutines/jvm/internal/ContinuationImpl;
+.source "Collect.kt"
 
 
 # annotations
@@ -10,6 +11,10 @@
 .annotation system Ldalvik/annotation/InnerClass;
     accessFlags = 0x19
     name = null
+.end annotation
+
+.annotation system Ldalvik/annotation/SourceDebugExtension;
+    value = "SMAP\nCollect.kt\nKotlin\n*S Kotlin\n*F\n+ 1 Collect.kt\nkotlinx/coroutines/flow/FlowKt__CollectKt$collect$3$emit$1\n*L\n1#1,134:1\n*E\n"
 .end annotation
 
 .annotation runtime Lkotlin/coroutines/jvm/internal/DebugMetadata;

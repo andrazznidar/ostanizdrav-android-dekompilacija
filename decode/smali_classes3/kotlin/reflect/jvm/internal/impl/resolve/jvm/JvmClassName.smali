@@ -4,11 +4,13 @@
 
 
 # instance fields
-.field public final internalName:Ljava/lang/String;
+.field private fqName:Lkotlin/reflect/jvm/internal/impl/name/FqName;
+
+.field private final internalName:Ljava/lang/String;
 
 
 # direct methods
-.method public static synthetic $$$reportNull$$$0(I)V
+.method private static synthetic $$$reportNull$$$0(I)V
     .locals 10
 
     const/16 v0, 0x8
@@ -205,32 +207,33 @@
     .end packed-switch
 .end method
 
-.method public constructor <init>(Ljava/lang/String;)V
-    .locals 0
+.method private constructor <init>(Ljava/lang/String;)V
+    .locals 1
 
-    if-eqz p1, :cond_0
+    if-nez p1, :cond_0
 
+    const/4 v0, 0x5
+
+    invoke-static {v0}, Lkotlin/reflect/jvm/internal/impl/resolve/jvm/JvmClassName;->$$$reportNull$$$0(I)V
+
+    :cond_0
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
     iput-object p1, p0, Lkotlin/reflect/jvm/internal/impl/resolve/jvm/JvmClassName;->internalName:Ljava/lang/String;
 
     return-void
-
-    :cond_0
-    const/4 p1, 0x5
-
-    invoke-static {p1}, Lkotlin/reflect/jvm/internal/impl/resolve/jvm/JvmClassName;->$$$reportNull$$$0(I)V
-
-    const/4 p1, 0x0
-
-    throw p1
 .end method
 
 .method public static byClassId(Lkotlin/reflect/jvm/internal/impl/name/ClassId;)Lkotlin/reflect/jvm/internal/impl/resolve/jvm/JvmClassName;
     .locals 5
 
-    if-eqz p0, :cond_1
+    if-nez p0, :cond_0
 
+    const/4 v0, 0x1
+
+    invoke-static {v0}, Lkotlin/reflect/jvm/internal/impl/resolve/jvm/JvmClassName;->$$$reportNull$$$0(I)V
+
+    :cond_0
     invoke-virtual {p0}, Lkotlin/reflect/jvm/internal/impl/name/ClassId;->getPackageFqName()Lkotlin/reflect/jvm/internal/impl/name/FqName;
 
     move-result-object v0
@@ -255,7 +258,7 @@
 
     move-result v1
 
-    if-eqz v1, :cond_0
+    if-eqz v1, :cond_1
 
     new-instance v0, Lkotlin/reflect/jvm/internal/impl/resolve/jvm/JvmClassName;
 
@@ -263,7 +266,7 @@
 
     goto :goto_0
 
-    :cond_0
+    :cond_1
     new-instance v1, Lkotlin/reflect/jvm/internal/impl/resolve/jvm/JvmClassName;
 
     new-instance v3, Ljava/lang/StringBuilder;
@@ -298,69 +301,54 @@
 
     :goto_0
     return-object v0
-
-    :cond_1
-    const/4 p0, 0x1
-
-    invoke-static {p0}, Lkotlin/reflect/jvm/internal/impl/resolve/jvm/JvmClassName;->$$$reportNull$$$0(I)V
-
-    const/4 p0, 0x0
-
-    throw p0
 .end method
 
 .method public static byFqNameWithoutInnerClasses(Lkotlin/reflect/jvm/internal/impl/name/FqName;)Lkotlin/reflect/jvm/internal/impl/resolve/jvm/JvmClassName;
-    .locals 3
+    .locals 4
 
-    if-eqz p0, :cond_0
+    if-nez p0, :cond_0
 
+    const/4 v0, 0x2
+
+    invoke-static {v0}, Lkotlin/reflect/jvm/internal/impl/resolve/jvm/JvmClassName;->$$$reportNull$$$0(I)V
+
+    :cond_0
     new-instance v0, Lkotlin/reflect/jvm/internal/impl/resolve/jvm/JvmClassName;
 
     invoke-virtual {p0}, Lkotlin/reflect/jvm/internal/impl/name/FqName;->asString()Ljava/lang/String;
 
-    move-result-object p0
+    move-result-object v1
 
-    const/16 v1, 0x2e
+    const/16 v2, 0x2e
 
-    const/16 v2, 0x2f
+    const/16 v3, 0x2f
 
-    invoke-virtual {p0, v1, v2}, Ljava/lang/String;->replace(CC)Ljava/lang/String;
+    invoke-virtual {v1, v2, v3}, Ljava/lang/String;->replace(CC)Ljava/lang/String;
 
-    move-result-object p0
+    move-result-object v1
 
-    invoke-direct {v0, p0}, Lkotlin/reflect/jvm/internal/impl/resolve/jvm/JvmClassName;-><init>(Ljava/lang/String;)V
+    invoke-direct {v0, v1}, Lkotlin/reflect/jvm/internal/impl/resolve/jvm/JvmClassName;-><init>(Ljava/lang/String;)V
+
+    iput-object p0, v0, Lkotlin/reflect/jvm/internal/impl/resolve/jvm/JvmClassName;->fqName:Lkotlin/reflect/jvm/internal/impl/name/FqName;
 
     return-object v0
-
-    :cond_0
-    const/4 p0, 0x2
-
-    invoke-static {p0}, Lkotlin/reflect/jvm/internal/impl/resolve/jvm/JvmClassName;->$$$reportNull$$$0(I)V
-
-    const/4 p0, 0x0
-
-    throw p0
 .end method
 
 .method public static byInternalName(Ljava/lang/String;)Lkotlin/reflect/jvm/internal/impl/resolve/jvm/JvmClassName;
     .locals 1
 
-    if-eqz p0, :cond_0
+    if-nez p0, :cond_0
 
+    const/4 v0, 0x0
+
+    invoke-static {v0}, Lkotlin/reflect/jvm/internal/impl/resolve/jvm/JvmClassName;->$$$reportNull$$$0(I)V
+
+    :cond_0
     new-instance v0, Lkotlin/reflect/jvm/internal/impl/resolve/jvm/JvmClassName;
 
     invoke-direct {v0, p0}, Lkotlin/reflect/jvm/internal/impl/resolve/jvm/JvmClassName;-><init>(Ljava/lang/String;)V
 
     return-object v0
-
-    :cond_0
-    const/4 p0, 0x0
-
-    invoke-static {p0}, Lkotlin/reflect/jvm/internal/impl/resolve/jvm/JvmClassName;->$$$reportNull$$$0(I)V
-
-    const/4 p0, 0x0
-
-    throw p0
 .end method
 
 
@@ -377,7 +365,9 @@
     :cond_0
     if-eqz p1, :cond_2
 
-    const-class v0, Lkotlin/reflect/jvm/internal/impl/resolve/jvm/JvmClassName;
+    invoke-virtual {p0}, Ljava/lang/Object;->getClass()Ljava/lang/Class;
+
+    move-result-object v0
 
     invoke-virtual {p1}, Ljava/lang/Object;->getClass()Ljava/lang/Class;
 
@@ -407,23 +397,89 @@
     return p1
 .end method
 
+.method public getFqNameForTopLevelClassMaybeWithDollars()Lkotlin/reflect/jvm/internal/impl/name/FqName;
+    .locals 4
+
+    new-instance v0, Lkotlin/reflect/jvm/internal/impl/name/FqName;
+
+    iget-object v1, p0, Lkotlin/reflect/jvm/internal/impl/resolve/jvm/JvmClassName;->internalName:Ljava/lang/String;
+
+    const/16 v2, 0x2f
+
+    const/16 v3, 0x2e
+
+    invoke-virtual {v1, v2, v3}, Ljava/lang/String;->replace(CC)Ljava/lang/String;
+
+    move-result-object v1
+
+    invoke-direct {v0, v1}, Lkotlin/reflect/jvm/internal/impl/name/FqName;-><init>(Ljava/lang/String;)V
+
+    return-object v0
+.end method
+
 .method public getInternalName()Ljava/lang/String;
-    .locals 1
+    .locals 2
 
     iget-object v0, p0, Lkotlin/reflect/jvm/internal/impl/resolve/jvm/JvmClassName;->internalName:Ljava/lang/String;
 
-    if-eqz v0, :cond_0
+    if-nez v0, :cond_0
 
-    return-object v0
+    const/16 v1, 0x8
+
+    invoke-static {v1}, Lkotlin/reflect/jvm/internal/impl/resolve/jvm/JvmClassName;->$$$reportNull$$$0(I)V
 
     :cond_0
-    const/16 v0, 0x8
+    return-object v0
+.end method
 
-    invoke-static {v0}, Lkotlin/reflect/jvm/internal/impl/resolve/jvm/JvmClassName;->$$$reportNull$$$0(I)V
+.method public getPackageFqName()Lkotlin/reflect/jvm/internal/impl/name/FqName;
+    .locals 4
 
-    const/4 v0, 0x0
+    iget-object v0, p0, Lkotlin/reflect/jvm/internal/impl/resolve/jvm/JvmClassName;->internalName:Ljava/lang/String;
 
-    throw v0
+    const-string v1, "/"
+
+    invoke-virtual {v0, v1}, Ljava/lang/String;->lastIndexOf(Ljava/lang/String;)I
+
+    move-result v0
+
+    const/4 v1, -0x1
+
+    if-ne v0, v1, :cond_1
+
+    sget-object v0, Lkotlin/reflect/jvm/internal/impl/name/FqName;->ROOT:Lkotlin/reflect/jvm/internal/impl/name/FqName;
+
+    if-nez v0, :cond_0
+
+    const/4 v1, 0x7
+
+    invoke-static {v1}, Lkotlin/reflect/jvm/internal/impl/resolve/jvm/JvmClassName;->$$$reportNull$$$0(I)V
+
+    :cond_0
+    return-object v0
+
+    :cond_1
+    new-instance v1, Lkotlin/reflect/jvm/internal/impl/name/FqName;
+
+    iget-object v2, p0, Lkotlin/reflect/jvm/internal/impl/resolve/jvm/JvmClassName;->internalName:Ljava/lang/String;
+
+    const/4 v3, 0x0
+
+    invoke-virtual {v2, v3, v0}, Ljava/lang/String;->substring(II)Ljava/lang/String;
+
+    move-result-object v0
+
+    const/16 v2, 0x2f
+
+    const/16 v3, 0x2e
+
+    invoke-virtual {v0, v2, v3}, Ljava/lang/String;->replace(CC)Ljava/lang/String;
+
+    move-result-object v0
+
+    invoke-direct {v1, v0}, Lkotlin/reflect/jvm/internal/impl/name/FqName;-><init>(Ljava/lang/String;)V
+
+    return-object v1
 .end method
 
 .method public hashCode()I

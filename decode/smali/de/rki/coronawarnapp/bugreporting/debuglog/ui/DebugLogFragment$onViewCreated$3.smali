@@ -73,25 +73,25 @@
 
     invoke-direct {v0, v1}, Lcom/google/android/material/dialog/MaterialAlertDialogBuilder;-><init>(Landroid/content/Context;)V
 
-    const v1, 0x7f13019b
+    const v1, 0x7f1301cf
 
     invoke-virtual {v0, v1}, Lcom/google/android/material/dialog/MaterialAlertDialogBuilder;->setTitle(I)Lcom/google/android/material/dialog/MaterialAlertDialogBuilder;
 
-    const v1, 0x7f13019a
+    const v1, 0x7f1301ce
 
     invoke-virtual {v0, v1}, Lcom/google/android/material/dialog/MaterialAlertDialogBuilder;->setMessage(I)Lcom/google/android/material/dialog/MaterialAlertDialogBuilder;
 
-    new-instance v1, Lde/rki/coronawarnapp/bugreporting/debuglog/ui/DebugLogFragment$$ExternalSyntheticLambda2;
+    new-instance v1, Lde/rki/coronawarnapp/bugreporting/debuglog/ui/DebugLogFragment$$ExternalSyntheticLambda1;
 
-    invoke-direct {v1, p1}, Lde/rki/coronawarnapp/bugreporting/debuglog/ui/DebugLogFragment$$ExternalSyntheticLambda2;-><init>(Lde/rki/coronawarnapp/bugreporting/debuglog/ui/DebugLogFragment;)V
+    invoke-direct {v1, p1}, Lde/rki/coronawarnapp/bugreporting/debuglog/ui/DebugLogFragment$$ExternalSyntheticLambda1;-><init>(Lde/rki/coronawarnapp/bugreporting/debuglog/ui/DebugLogFragment;)V
 
-    const p1, 0x7f130198
+    const p1, 0x7f1301cc
 
     invoke-virtual {v0, p1, v1}, Lcom/google/android/material/dialog/MaterialAlertDialogBuilder;->setPositiveButton(ILandroid/content/DialogInterface$OnClickListener;)Lcom/google/android/material/dialog/MaterialAlertDialogBuilder;
 
     sget-object p1, Lde/rki/coronawarnapp/bugreporting/debuglog/ui/DebugLogFragment$$ExternalSyntheticLambda3;->INSTANCE:Lde/rki/coronawarnapp/bugreporting/debuglog/ui/DebugLogFragment$$ExternalSyntheticLambda3;
 
-    const v1, 0x7f130199
+    const v1, 0x7f1301cd
 
     invoke-virtual {v0, v1, p1}, Lcom/google/android/material/dialog/MaterialAlertDialogBuilder;->setNegativeButton(ILandroid/content/DialogInterface$OnClickListener;)Lcom/google/android/material/dialog/MaterialAlertDialogBuilder;
 
@@ -112,7 +112,7 @@
 
     new-instance v0, Landroidx/navigation/ActionOnlyNavDirections;
 
-    const v1, 0x7f0a0057
+    const v1, 0x7f0a005c
 
     invoke-direct {v0, v1}, Landroidx/navigation/ActionOnlyNavDirections;-><init>(I)V
 
@@ -133,7 +133,7 @@
 
     new-instance v0, Landroidx/navigation/ActionOnlyNavDirections;
 
-    const v1, 0x7f0a0056
+    const v1, 0x7f0a005b
 
     invoke-direct {v0, v1}, Landroidx/navigation/ActionOnlyNavDirections;-><init>(I)V
 
@@ -154,7 +154,7 @@
 
     new-instance v0, Landroidx/navigation/ActionOnlyNavDirections;
 
-    const v1, 0x7f0a0058
+    const v1, 0x7f0a005d
 
     invoke-direct {v0, v1}, Landroidx/navigation/ActionOnlyNavDirections;-><init>(I)V
 
@@ -210,11 +210,11 @@
 
     invoke-direct {v0, v1}, Lcom/google/android/material/dialog/MaterialAlertDialogBuilder;-><init>(Landroid/content/Context;)V
 
-    const v1, 0x7f1301ce
+    const v1, 0x7f1301fa
 
     invoke-virtual {v0, v1}, Lcom/google/android/material/dialog/MaterialAlertDialogBuilder;->setTitle(I)Lcom/google/android/material/dialog/MaterialAlertDialogBuilder;
 
-    const v1, 0x7f130193
+    const v1, 0x7f1301c7
 
     invoke-virtual {v0, v1}, Lcom/google/android/material/dialog/MaterialAlertDialogBuilder;->setMessage(I)Lcom/google/android/material/dialog/MaterialAlertDialogBuilder;
 
@@ -224,11 +224,11 @@
 
     invoke-virtual {v0, v2, v1}, Lcom/google/android/material/dialog/MaterialAlertDialogBuilder;->setPositiveButton(ILandroid/content/DialogInterface$OnClickListener;)Lcom/google/android/material/dialog/MaterialAlertDialogBuilder;
 
-    new-instance v1, Lde/rki/coronawarnapp/bugreporting/debuglog/ui/DebugLogFragment$$ExternalSyntheticLambda1;
+    new-instance v1, Lde/rki/coronawarnapp/bugreporting/debuglog/ui/DebugLogFragment$$ExternalSyntheticLambda2;
 
-    invoke-direct {v1, p1}, Lde/rki/coronawarnapp/bugreporting/debuglog/ui/DebugLogFragment$$ExternalSyntheticLambda1;-><init>(Lde/rki/coronawarnapp/bugreporting/debuglog/ui/DebugLogFragment;)V
+    invoke-direct {v1, p1}, Lde/rki/coronawarnapp/bugreporting/debuglog/ui/DebugLogFragment$$ExternalSyntheticLambda2;-><init>(Lde/rki/coronawarnapp/bugreporting/debuglog/ui/DebugLogFragment;)V
 
-    const p1, 0x7f13028d
+    const p1, 0x7f1302a2
 
     invoke-virtual {v0, p1, v1}, Lcom/google/android/material/dialog/MaterialAlertDialogBuilder;->setNeutralButton(ILandroid/content/DialogInterface$OnClickListener;)Lcom/google/android/material/dialog/MaterialAlertDialogBuilder;
 
@@ -263,14 +263,6 @@
 
     invoke-static {v4, v5}, Lkotlin/jvm/internal/Intrinsics;->checkNotNullExpressionValue(Ljava/lang/Object;Ljava/lang/String;)V
 
-    const-string v5, "path"
-
-    invoke-static {p1, v5}, Lkotlin/jvm/internal/Intrinsics;->checkNotNullParameter(Ljava/lang/Object;Ljava/lang/String;)V
-
-    const-string/jumbo v5, "title"
-
-    invoke-static {v4, v5}, Lkotlin/jvm/internal/Intrinsics;->checkNotNullParameter(Ljava/lang/Object;Ljava/lang/String;)V
-
     invoke-virtual {v0}, Landroidx/fragment/app/Fragment;->requireActivity()Landroidx/fragment/app/FragmentActivity;
 
     move-result-object v5
@@ -279,15 +271,11 @@
 
     invoke-static {v5, v6}, Lkotlin/jvm/internal/Intrinsics;->checkNotNullExpressionValue(Ljava/lang/Object;Ljava/lang/String;)V
 
-    const-string v6, "activity"
-
-    invoke-static {v5, v6}, Lkotlin/jvm/internal/Intrinsics;->checkNotNullParameter(Ljava/lang/Object;Ljava/lang/String;)V
-
     new-instance v6, Landroidx/core/app/ShareCompat$IntentBuilder;
 
     invoke-direct {v6, v5}, Landroidx/core/app/ShareCompat$IntentBuilder;-><init>(Landroid/content/Context;)V
 
-    invoke-static {p1}, Lorg/joda/time/format/ISOPeriodFormat;->determineMimeType(Ljava/io/File;)Ljava/lang/String;
+    invoke-static {p1}, Lcom/google/common/base/Preconditions;->determineMimeType(Ljava/io/File;)Ljava/lang/String;
 
     move-result-object v5
 

@@ -18,11 +18,15 @@
 
 
 # static fields
-.field public static final synthetic $VALUES:[Lkotlin/reflect/jvm/internal/impl/incremental/components/NoLookupLocation;
+.field private static final synthetic $VALUES:[Lkotlin/reflect/jvm/internal/impl/incremental/components/NoLookupLocation;
 
 .field public static final enum FOR_ALREADY_TRACKED:Lkotlin/reflect/jvm/internal/impl/incremental/components/NoLookupLocation;
 
+.field public static final enum FOR_DEFAULT_IMPORTS:Lkotlin/reflect/jvm/internal/impl/incremental/components/NoLookupLocation;
+
 .field public static final enum FOR_NON_TRACKED_SCOPE:Lkotlin/reflect/jvm/internal/impl/incremental/components/NoLookupLocation;
+
+.field public static final enum FOR_SCRIPT:Lkotlin/reflect/jvm/internal/impl/incremental/components/NoLookupLocation;
 
 .field public static final enum FROM_BACKEND:Lkotlin/reflect/jvm/internal/impl/incremental/components/NoLookupLocation;
 
@@ -30,18 +34,190 @@
 
 .field public static final enum FROM_DESERIALIZATION:Lkotlin/reflect/jvm/internal/impl/incremental/components/NoLookupLocation;
 
+.field public static final enum FROM_IDE:Lkotlin/reflect/jvm/internal/impl/incremental/components/NoLookupLocation;
+
 .field public static final enum FROM_JAVA_LOADER:Lkotlin/reflect/jvm/internal/impl/incremental/components/NoLookupLocation;
 
 .field public static final enum FROM_REFLECTION:Lkotlin/reflect/jvm/internal/impl/incremental/components/NoLookupLocation;
 
+.field public static final enum FROM_SYNTHETIC_SCOPE:Lkotlin/reflect/jvm/internal/impl/incremental/components/NoLookupLocation;
+
+.field public static final enum FROM_TEST:Lkotlin/reflect/jvm/internal/impl/incremental/components/NoLookupLocation;
+
+.field public static final enum WHEN_CHECK_DECLARATION_CONFLICTS:Lkotlin/reflect/jvm/internal/impl/incremental/components/NoLookupLocation;
+
+.field public static final enum WHEN_CHECK_OVERRIDES:Lkotlin/reflect/jvm/internal/impl/incremental/components/NoLookupLocation;
+
+.field public static final enum WHEN_FIND_BY_FQNAME:Lkotlin/reflect/jvm/internal/impl/incremental/components/NoLookupLocation;
+
 .field public static final enum WHEN_GET_ALL_DESCRIPTORS:Lkotlin/reflect/jvm/internal/impl/incremental/components/NoLookupLocation;
+
+.field public static final enum WHEN_GET_COMPANION_OBJECT:Lkotlin/reflect/jvm/internal/impl/incremental/components/NoLookupLocation;
+
+.field public static final enum WHEN_GET_DECLARATION_SCOPE:Lkotlin/reflect/jvm/internal/impl/incremental/components/NoLookupLocation;
+
+.field public static final enum WHEN_GET_LOCAL_VARIABLE:Lkotlin/reflect/jvm/internal/impl/incremental/components/NoLookupLocation;
 
 .field public static final enum WHEN_GET_SUPER_MEMBERS:Lkotlin/reflect/jvm/internal/impl/incremental/components/NoLookupLocation;
 
+.field public static final enum WHEN_RESOLVE_DECLARATION:Lkotlin/reflect/jvm/internal/impl/incremental/components/NoLookupLocation;
+
+.field public static final enum WHEN_RESOLVING_DEFAULT_TYPE_ARGUMENTS:Lkotlin/reflect/jvm/internal/impl/incremental/components/NoLookupLocation;
+
+.field public static final enum WHEN_TYPING:Lkotlin/reflect/jvm/internal/impl/incremental/components/NoLookupLocation;
+
 
 # direct methods
+.method private static final synthetic $values()[Lkotlin/reflect/jvm/internal/impl/incremental/components/NoLookupLocation;
+    .locals 3
+
+    const/16 v0, 0x17
+
+    new-array v0, v0, [Lkotlin/reflect/jvm/internal/impl/incremental/components/NoLookupLocation;
+
+    sget-object v1, Lkotlin/reflect/jvm/internal/impl/incremental/components/NoLookupLocation;->FROM_IDE:Lkotlin/reflect/jvm/internal/impl/incremental/components/NoLookupLocation;
+
+    const/4 v2, 0x0
+
+    aput-object v1, v0, v2
+
+    sget-object v1, Lkotlin/reflect/jvm/internal/impl/incremental/components/NoLookupLocation;->FROM_BACKEND:Lkotlin/reflect/jvm/internal/impl/incremental/components/NoLookupLocation;
+
+    const/4 v2, 0x1
+
+    aput-object v1, v0, v2
+
+    sget-object v1, Lkotlin/reflect/jvm/internal/impl/incremental/components/NoLookupLocation;->FROM_TEST:Lkotlin/reflect/jvm/internal/impl/incremental/components/NoLookupLocation;
+
+    const/4 v2, 0x2
+
+    aput-object v1, v0, v2
+
+    sget-object v1, Lkotlin/reflect/jvm/internal/impl/incremental/components/NoLookupLocation;->FROM_BUILTINS:Lkotlin/reflect/jvm/internal/impl/incremental/components/NoLookupLocation;
+
+    const/4 v2, 0x3
+
+    aput-object v1, v0, v2
+
+    sget-object v1, Lkotlin/reflect/jvm/internal/impl/incremental/components/NoLookupLocation;->WHEN_CHECK_DECLARATION_CONFLICTS:Lkotlin/reflect/jvm/internal/impl/incremental/components/NoLookupLocation;
+
+    const/4 v2, 0x4
+
+    aput-object v1, v0, v2
+
+    sget-object v1, Lkotlin/reflect/jvm/internal/impl/incremental/components/NoLookupLocation;->WHEN_CHECK_OVERRIDES:Lkotlin/reflect/jvm/internal/impl/incremental/components/NoLookupLocation;
+
+    const/4 v2, 0x5
+
+    aput-object v1, v0, v2
+
+    sget-object v1, Lkotlin/reflect/jvm/internal/impl/incremental/components/NoLookupLocation;->FOR_SCRIPT:Lkotlin/reflect/jvm/internal/impl/incremental/components/NoLookupLocation;
+
+    const/4 v2, 0x6
+
+    aput-object v1, v0, v2
+
+    sget-object v1, Lkotlin/reflect/jvm/internal/impl/incremental/components/NoLookupLocation;->FROM_REFLECTION:Lkotlin/reflect/jvm/internal/impl/incremental/components/NoLookupLocation;
+
+    const/4 v2, 0x7
+
+    aput-object v1, v0, v2
+
+    sget-object v1, Lkotlin/reflect/jvm/internal/impl/incremental/components/NoLookupLocation;->WHEN_RESOLVE_DECLARATION:Lkotlin/reflect/jvm/internal/impl/incremental/components/NoLookupLocation;
+
+    const/16 v2, 0x8
+
+    aput-object v1, v0, v2
+
+    sget-object v1, Lkotlin/reflect/jvm/internal/impl/incremental/components/NoLookupLocation;->WHEN_GET_DECLARATION_SCOPE:Lkotlin/reflect/jvm/internal/impl/incremental/components/NoLookupLocation;
+
+    const/16 v2, 0x9
+
+    aput-object v1, v0, v2
+
+    sget-object v1, Lkotlin/reflect/jvm/internal/impl/incremental/components/NoLookupLocation;->WHEN_RESOLVING_DEFAULT_TYPE_ARGUMENTS:Lkotlin/reflect/jvm/internal/impl/incremental/components/NoLookupLocation;
+
+    const/16 v2, 0xa
+
+    aput-object v1, v0, v2
+
+    sget-object v1, Lkotlin/reflect/jvm/internal/impl/incremental/components/NoLookupLocation;->FOR_ALREADY_TRACKED:Lkotlin/reflect/jvm/internal/impl/incremental/components/NoLookupLocation;
+
+    const/16 v2, 0xb
+
+    aput-object v1, v0, v2
+
+    sget-object v1, Lkotlin/reflect/jvm/internal/impl/incremental/components/NoLookupLocation;->WHEN_GET_ALL_DESCRIPTORS:Lkotlin/reflect/jvm/internal/impl/incremental/components/NoLookupLocation;
+
+    const/16 v2, 0xc
+
+    aput-object v1, v0, v2
+
+    sget-object v1, Lkotlin/reflect/jvm/internal/impl/incremental/components/NoLookupLocation;->WHEN_TYPING:Lkotlin/reflect/jvm/internal/impl/incremental/components/NoLookupLocation;
+
+    const/16 v2, 0xd
+
+    aput-object v1, v0, v2
+
+    sget-object v1, Lkotlin/reflect/jvm/internal/impl/incremental/components/NoLookupLocation;->WHEN_GET_SUPER_MEMBERS:Lkotlin/reflect/jvm/internal/impl/incremental/components/NoLookupLocation;
+
+    const/16 v2, 0xe
+
+    aput-object v1, v0, v2
+
+    sget-object v1, Lkotlin/reflect/jvm/internal/impl/incremental/components/NoLookupLocation;->FOR_NON_TRACKED_SCOPE:Lkotlin/reflect/jvm/internal/impl/incremental/components/NoLookupLocation;
+
+    const/16 v2, 0xf
+
+    aput-object v1, v0, v2
+
+    sget-object v1, Lkotlin/reflect/jvm/internal/impl/incremental/components/NoLookupLocation;->FROM_SYNTHETIC_SCOPE:Lkotlin/reflect/jvm/internal/impl/incremental/components/NoLookupLocation;
+
+    const/16 v2, 0x10
+
+    aput-object v1, v0, v2
+
+    sget-object v1, Lkotlin/reflect/jvm/internal/impl/incremental/components/NoLookupLocation;->FROM_DESERIALIZATION:Lkotlin/reflect/jvm/internal/impl/incremental/components/NoLookupLocation;
+
+    const/16 v2, 0x11
+
+    aput-object v1, v0, v2
+
+    sget-object v1, Lkotlin/reflect/jvm/internal/impl/incremental/components/NoLookupLocation;->FROM_JAVA_LOADER:Lkotlin/reflect/jvm/internal/impl/incremental/components/NoLookupLocation;
+
+    const/16 v2, 0x12
+
+    aput-object v1, v0, v2
+
+    sget-object v1, Lkotlin/reflect/jvm/internal/impl/incremental/components/NoLookupLocation;->WHEN_GET_LOCAL_VARIABLE:Lkotlin/reflect/jvm/internal/impl/incremental/components/NoLookupLocation;
+
+    const/16 v2, 0x13
+
+    aput-object v1, v0, v2
+
+    sget-object v1, Lkotlin/reflect/jvm/internal/impl/incremental/components/NoLookupLocation;->WHEN_FIND_BY_FQNAME:Lkotlin/reflect/jvm/internal/impl/incremental/components/NoLookupLocation;
+
+    const/16 v2, 0x14
+
+    aput-object v1, v0, v2
+
+    sget-object v1, Lkotlin/reflect/jvm/internal/impl/incremental/components/NoLookupLocation;->WHEN_GET_COMPANION_OBJECT:Lkotlin/reflect/jvm/internal/impl/incremental/components/NoLookupLocation;
+
+    const/16 v2, 0x15
+
+    aput-object v1, v0, v2
+
+    sget-object v1, Lkotlin/reflect/jvm/internal/impl/incremental/components/NoLookupLocation;->FOR_DEFAULT_IMPORTS:Lkotlin/reflect/jvm/internal/impl/incremental/components/NoLookupLocation;
+
+    const/16 v2, 0x16
+
+    aput-object v1, v0, v2
+
+    return-object v0
+.end method
+
 .method public static constructor <clinit>()V
-    .locals 25
+    .locals 3
 
     new-instance v0, Lkotlin/reflect/jvm/internal/impl/incremental/components/NoLookupLocation;
 
@@ -51,320 +227,238 @@
 
     invoke-direct {v0, v1, v2}, Lkotlin/reflect/jvm/internal/impl/incremental/components/NoLookupLocation;-><init>(Ljava/lang/String;I)V
 
-    new-instance v1, Lkotlin/reflect/jvm/internal/impl/incremental/components/NoLookupLocation;
+    sput-object v0, Lkotlin/reflect/jvm/internal/impl/incremental/components/NoLookupLocation;->FROM_IDE:Lkotlin/reflect/jvm/internal/impl/incremental/components/NoLookupLocation;
 
-    const-string v3, "FROM_BACKEND"
+    new-instance v0, Lkotlin/reflect/jvm/internal/impl/incremental/components/NoLookupLocation;
 
-    const/4 v4, 0x1
+    const-string v1, "FROM_BACKEND"
 
-    invoke-direct {v1, v3, v4}, Lkotlin/reflect/jvm/internal/impl/incremental/components/NoLookupLocation;-><init>(Ljava/lang/String;I)V
+    const/4 v2, 0x1
 
-    sput-object v1, Lkotlin/reflect/jvm/internal/impl/incremental/components/NoLookupLocation;->FROM_BACKEND:Lkotlin/reflect/jvm/internal/impl/incremental/components/NoLookupLocation;
+    invoke-direct {v0, v1, v2}, Lkotlin/reflect/jvm/internal/impl/incremental/components/NoLookupLocation;-><init>(Ljava/lang/String;I)V
 
-    new-instance v3, Lkotlin/reflect/jvm/internal/impl/incremental/components/NoLookupLocation;
+    sput-object v0, Lkotlin/reflect/jvm/internal/impl/incremental/components/NoLookupLocation;->FROM_BACKEND:Lkotlin/reflect/jvm/internal/impl/incremental/components/NoLookupLocation;
 
-    const-string v5, "FROM_TEST"
+    new-instance v0, Lkotlin/reflect/jvm/internal/impl/incremental/components/NoLookupLocation;
 
-    const/4 v6, 0x2
+    const-string v1, "FROM_TEST"
 
-    invoke-direct {v3, v5, v6}, Lkotlin/reflect/jvm/internal/impl/incremental/components/NoLookupLocation;-><init>(Ljava/lang/String;I)V
+    const/4 v2, 0x2
 
-    new-instance v5, Lkotlin/reflect/jvm/internal/impl/incremental/components/NoLookupLocation;
+    invoke-direct {v0, v1, v2}, Lkotlin/reflect/jvm/internal/impl/incremental/components/NoLookupLocation;-><init>(Ljava/lang/String;I)V
 
-    const-string v7, "FROM_BUILTINS"
+    sput-object v0, Lkotlin/reflect/jvm/internal/impl/incremental/components/NoLookupLocation;->FROM_TEST:Lkotlin/reflect/jvm/internal/impl/incremental/components/NoLookupLocation;
 
-    const/4 v8, 0x3
+    new-instance v0, Lkotlin/reflect/jvm/internal/impl/incremental/components/NoLookupLocation;
 
-    invoke-direct {v5, v7, v8}, Lkotlin/reflect/jvm/internal/impl/incremental/components/NoLookupLocation;-><init>(Ljava/lang/String;I)V
+    const-string v1, "FROM_BUILTINS"
 
-    sput-object v5, Lkotlin/reflect/jvm/internal/impl/incremental/components/NoLookupLocation;->FROM_BUILTINS:Lkotlin/reflect/jvm/internal/impl/incremental/components/NoLookupLocation;
+    const/4 v2, 0x3
 
-    new-instance v7, Lkotlin/reflect/jvm/internal/impl/incremental/components/NoLookupLocation;
+    invoke-direct {v0, v1, v2}, Lkotlin/reflect/jvm/internal/impl/incremental/components/NoLookupLocation;-><init>(Ljava/lang/String;I)V
 
-    const-string v9, "WHEN_CHECK_DECLARATION_CONFLICTS"
+    sput-object v0, Lkotlin/reflect/jvm/internal/impl/incremental/components/NoLookupLocation;->FROM_BUILTINS:Lkotlin/reflect/jvm/internal/impl/incremental/components/NoLookupLocation;
 
-    const/4 v10, 0x4
+    new-instance v0, Lkotlin/reflect/jvm/internal/impl/incremental/components/NoLookupLocation;
 
-    invoke-direct {v7, v9, v10}, Lkotlin/reflect/jvm/internal/impl/incremental/components/NoLookupLocation;-><init>(Ljava/lang/String;I)V
+    const-string v1, "WHEN_CHECK_DECLARATION_CONFLICTS"
 
-    new-instance v9, Lkotlin/reflect/jvm/internal/impl/incremental/components/NoLookupLocation;
+    const/4 v2, 0x4
 
-    const-string v11, "WHEN_CHECK_OVERRIDES"
+    invoke-direct {v0, v1, v2}, Lkotlin/reflect/jvm/internal/impl/incremental/components/NoLookupLocation;-><init>(Ljava/lang/String;I)V
 
-    const/4 v12, 0x5
+    sput-object v0, Lkotlin/reflect/jvm/internal/impl/incremental/components/NoLookupLocation;->WHEN_CHECK_DECLARATION_CONFLICTS:Lkotlin/reflect/jvm/internal/impl/incremental/components/NoLookupLocation;
 
-    invoke-direct {v9, v11, v12}, Lkotlin/reflect/jvm/internal/impl/incremental/components/NoLookupLocation;-><init>(Ljava/lang/String;I)V
+    new-instance v0, Lkotlin/reflect/jvm/internal/impl/incremental/components/NoLookupLocation;
 
-    new-instance v11, Lkotlin/reflect/jvm/internal/impl/incremental/components/NoLookupLocation;
+    const-string v1, "WHEN_CHECK_OVERRIDES"
 
-    const-string v13, "FOR_SCRIPT"
+    const/4 v2, 0x5
 
-    const/4 v14, 0x6
+    invoke-direct {v0, v1, v2}, Lkotlin/reflect/jvm/internal/impl/incremental/components/NoLookupLocation;-><init>(Ljava/lang/String;I)V
 
-    invoke-direct {v11, v13, v14}, Lkotlin/reflect/jvm/internal/impl/incremental/components/NoLookupLocation;-><init>(Ljava/lang/String;I)V
+    sput-object v0, Lkotlin/reflect/jvm/internal/impl/incremental/components/NoLookupLocation;->WHEN_CHECK_OVERRIDES:Lkotlin/reflect/jvm/internal/impl/incremental/components/NoLookupLocation;
 
-    new-instance v13, Lkotlin/reflect/jvm/internal/impl/incremental/components/NoLookupLocation;
+    new-instance v0, Lkotlin/reflect/jvm/internal/impl/incremental/components/NoLookupLocation;
 
-    const-string v15, "FROM_REFLECTION"
+    const-string v1, "FOR_SCRIPT"
 
-    const/4 v14, 0x7
+    const/4 v2, 0x6
 
-    invoke-direct {v13, v15, v14}, Lkotlin/reflect/jvm/internal/impl/incremental/components/NoLookupLocation;-><init>(Ljava/lang/String;I)V
+    invoke-direct {v0, v1, v2}, Lkotlin/reflect/jvm/internal/impl/incremental/components/NoLookupLocation;-><init>(Ljava/lang/String;I)V
 
-    sput-object v13, Lkotlin/reflect/jvm/internal/impl/incremental/components/NoLookupLocation;->FROM_REFLECTION:Lkotlin/reflect/jvm/internal/impl/incremental/components/NoLookupLocation;
+    sput-object v0, Lkotlin/reflect/jvm/internal/impl/incremental/components/NoLookupLocation;->FOR_SCRIPT:Lkotlin/reflect/jvm/internal/impl/incremental/components/NoLookupLocation;
 
-    new-instance v15, Lkotlin/reflect/jvm/internal/impl/incremental/components/NoLookupLocation;
+    new-instance v0, Lkotlin/reflect/jvm/internal/impl/incremental/components/NoLookupLocation;
 
-    const-string v14, "WHEN_RESOLVE_DECLARATION"
+    const-string v1, "FROM_REFLECTION"
 
-    const/16 v12, 0x8
+    const/4 v2, 0x7
 
-    invoke-direct {v15, v14, v12}, Lkotlin/reflect/jvm/internal/impl/incremental/components/NoLookupLocation;-><init>(Ljava/lang/String;I)V
+    invoke-direct {v0, v1, v2}, Lkotlin/reflect/jvm/internal/impl/incremental/components/NoLookupLocation;-><init>(Ljava/lang/String;I)V
 
-    new-instance v14, Lkotlin/reflect/jvm/internal/impl/incremental/components/NoLookupLocation;
+    sput-object v0, Lkotlin/reflect/jvm/internal/impl/incremental/components/NoLookupLocation;->FROM_REFLECTION:Lkotlin/reflect/jvm/internal/impl/incremental/components/NoLookupLocation;
 
-    const-string v12, "WHEN_GET_DECLARATION_SCOPE"
+    new-instance v0, Lkotlin/reflect/jvm/internal/impl/incremental/components/NoLookupLocation;
 
-    const/16 v10, 0x9
+    const-string v1, "WHEN_RESOLVE_DECLARATION"
 
-    invoke-direct {v14, v12, v10}, Lkotlin/reflect/jvm/internal/impl/incremental/components/NoLookupLocation;-><init>(Ljava/lang/String;I)V
+    const/16 v2, 0x8
 
-    new-instance v12, Lkotlin/reflect/jvm/internal/impl/incremental/components/NoLookupLocation;
+    invoke-direct {v0, v1, v2}, Lkotlin/reflect/jvm/internal/impl/incremental/components/NoLookupLocation;-><init>(Ljava/lang/String;I)V
 
-    const-string v10, "WHEN_RESOLVING_DEFAULT_TYPE_ARGUMENTS"
+    sput-object v0, Lkotlin/reflect/jvm/internal/impl/incremental/components/NoLookupLocation;->WHEN_RESOLVE_DECLARATION:Lkotlin/reflect/jvm/internal/impl/incremental/components/NoLookupLocation;
 
-    const/16 v8, 0xa
+    new-instance v0, Lkotlin/reflect/jvm/internal/impl/incremental/components/NoLookupLocation;
 
-    invoke-direct {v12, v10, v8}, Lkotlin/reflect/jvm/internal/impl/incremental/components/NoLookupLocation;-><init>(Ljava/lang/String;I)V
+    const-string v1, "WHEN_GET_DECLARATION_SCOPE"
 
-    new-instance v10, Lkotlin/reflect/jvm/internal/impl/incremental/components/NoLookupLocation;
+    const/16 v2, 0x9
 
-    const-string v8, "FOR_ALREADY_TRACKED"
+    invoke-direct {v0, v1, v2}, Lkotlin/reflect/jvm/internal/impl/incremental/components/NoLookupLocation;-><init>(Ljava/lang/String;I)V
 
-    const/16 v6, 0xb
+    sput-object v0, Lkotlin/reflect/jvm/internal/impl/incremental/components/NoLookupLocation;->WHEN_GET_DECLARATION_SCOPE:Lkotlin/reflect/jvm/internal/impl/incremental/components/NoLookupLocation;
 
-    invoke-direct {v10, v8, v6}, Lkotlin/reflect/jvm/internal/impl/incremental/components/NoLookupLocation;-><init>(Ljava/lang/String;I)V
+    new-instance v0, Lkotlin/reflect/jvm/internal/impl/incremental/components/NoLookupLocation;
 
-    sput-object v10, Lkotlin/reflect/jvm/internal/impl/incremental/components/NoLookupLocation;->FOR_ALREADY_TRACKED:Lkotlin/reflect/jvm/internal/impl/incremental/components/NoLookupLocation;
+    const-string v1, "WHEN_RESOLVING_DEFAULT_TYPE_ARGUMENTS"
 
-    new-instance v8, Lkotlin/reflect/jvm/internal/impl/incremental/components/NoLookupLocation;
+    const/16 v2, 0xa
 
-    const-string v6, "WHEN_GET_ALL_DESCRIPTORS"
+    invoke-direct {v0, v1, v2}, Lkotlin/reflect/jvm/internal/impl/incremental/components/NoLookupLocation;-><init>(Ljava/lang/String;I)V
 
-    const/16 v4, 0xc
+    sput-object v0, Lkotlin/reflect/jvm/internal/impl/incremental/components/NoLookupLocation;->WHEN_RESOLVING_DEFAULT_TYPE_ARGUMENTS:Lkotlin/reflect/jvm/internal/impl/incremental/components/NoLookupLocation;
 
-    invoke-direct {v8, v6, v4}, Lkotlin/reflect/jvm/internal/impl/incremental/components/NoLookupLocation;-><init>(Ljava/lang/String;I)V
+    new-instance v0, Lkotlin/reflect/jvm/internal/impl/incremental/components/NoLookupLocation;
 
-    sput-object v8, Lkotlin/reflect/jvm/internal/impl/incremental/components/NoLookupLocation;->WHEN_GET_ALL_DESCRIPTORS:Lkotlin/reflect/jvm/internal/impl/incremental/components/NoLookupLocation;
+    const-string v1, "FOR_ALREADY_TRACKED"
 
-    new-instance v6, Lkotlin/reflect/jvm/internal/impl/incremental/components/NoLookupLocation;
+    const/16 v2, 0xb
 
-    const-string v4, "WHEN_TYPING"
+    invoke-direct {v0, v1, v2}, Lkotlin/reflect/jvm/internal/impl/incremental/components/NoLookupLocation;-><init>(Ljava/lang/String;I)V
+
+    sput-object v0, Lkotlin/reflect/jvm/internal/impl/incremental/components/NoLookupLocation;->FOR_ALREADY_TRACKED:Lkotlin/reflect/jvm/internal/impl/incremental/components/NoLookupLocation;
+
+    new-instance v0, Lkotlin/reflect/jvm/internal/impl/incremental/components/NoLookupLocation;
+
+    const-string v1, "WHEN_GET_ALL_DESCRIPTORS"
+
+    const/16 v2, 0xc
+
+    invoke-direct {v0, v1, v2}, Lkotlin/reflect/jvm/internal/impl/incremental/components/NoLookupLocation;-><init>(Ljava/lang/String;I)V
+
+    sput-object v0, Lkotlin/reflect/jvm/internal/impl/incremental/components/NoLookupLocation;->WHEN_GET_ALL_DESCRIPTORS:Lkotlin/reflect/jvm/internal/impl/incremental/components/NoLookupLocation;
+
+    new-instance v0, Lkotlin/reflect/jvm/internal/impl/incremental/components/NoLookupLocation;
+
+    const-string v1, "WHEN_TYPING"
 
     const/16 v2, 0xd
 
-    invoke-direct {v6, v4, v2}, Lkotlin/reflect/jvm/internal/impl/incremental/components/NoLookupLocation;-><init>(Ljava/lang/String;I)V
+    invoke-direct {v0, v1, v2}, Lkotlin/reflect/jvm/internal/impl/incremental/components/NoLookupLocation;-><init>(Ljava/lang/String;I)V
 
-    new-instance v4, Lkotlin/reflect/jvm/internal/impl/incremental/components/NoLookupLocation;
+    sput-object v0, Lkotlin/reflect/jvm/internal/impl/incremental/components/NoLookupLocation;->WHEN_TYPING:Lkotlin/reflect/jvm/internal/impl/incremental/components/NoLookupLocation;
 
-    const-string v2, "WHEN_GET_SUPER_MEMBERS"
+    new-instance v0, Lkotlin/reflect/jvm/internal/impl/incremental/components/NoLookupLocation;
 
-    move-object/from16 v16, v6
+    const-string v1, "WHEN_GET_SUPER_MEMBERS"
 
-    const/16 v6, 0xe
+    const/16 v2, 0xe
 
-    invoke-direct {v4, v2, v6}, Lkotlin/reflect/jvm/internal/impl/incremental/components/NoLookupLocation;-><init>(Ljava/lang/String;I)V
+    invoke-direct {v0, v1, v2}, Lkotlin/reflect/jvm/internal/impl/incremental/components/NoLookupLocation;-><init>(Ljava/lang/String;I)V
 
-    sput-object v4, Lkotlin/reflect/jvm/internal/impl/incremental/components/NoLookupLocation;->WHEN_GET_SUPER_MEMBERS:Lkotlin/reflect/jvm/internal/impl/incremental/components/NoLookupLocation;
+    sput-object v0, Lkotlin/reflect/jvm/internal/impl/incremental/components/NoLookupLocation;->WHEN_GET_SUPER_MEMBERS:Lkotlin/reflect/jvm/internal/impl/incremental/components/NoLookupLocation;
 
-    new-instance v2, Lkotlin/reflect/jvm/internal/impl/incremental/components/NoLookupLocation;
+    new-instance v0, Lkotlin/reflect/jvm/internal/impl/incremental/components/NoLookupLocation;
 
-    const-string v6, "FOR_NON_TRACKED_SCOPE"
+    const-string v1, "FOR_NON_TRACKED_SCOPE"
 
-    move-object/from16 v17, v4
+    const/16 v2, 0xf
 
-    const/16 v4, 0xf
+    invoke-direct {v0, v1, v2}, Lkotlin/reflect/jvm/internal/impl/incremental/components/NoLookupLocation;-><init>(Ljava/lang/String;I)V
 
-    invoke-direct {v2, v6, v4}, Lkotlin/reflect/jvm/internal/impl/incremental/components/NoLookupLocation;-><init>(Ljava/lang/String;I)V
+    sput-object v0, Lkotlin/reflect/jvm/internal/impl/incremental/components/NoLookupLocation;->FOR_NON_TRACKED_SCOPE:Lkotlin/reflect/jvm/internal/impl/incremental/components/NoLookupLocation;
 
-    sput-object v2, Lkotlin/reflect/jvm/internal/impl/incremental/components/NoLookupLocation;->FOR_NON_TRACKED_SCOPE:Lkotlin/reflect/jvm/internal/impl/incremental/components/NoLookupLocation;
+    new-instance v0, Lkotlin/reflect/jvm/internal/impl/incremental/components/NoLookupLocation;
 
-    new-instance v6, Lkotlin/reflect/jvm/internal/impl/incremental/components/NoLookupLocation;
-
-    const-string v4, "FROM_SYNTHETIC_SCOPE"
-
-    move-object/from16 v18, v2
+    const-string v1, "FROM_SYNTHETIC_SCOPE"
 
     const/16 v2, 0x10
 
-    invoke-direct {v6, v4, v2}, Lkotlin/reflect/jvm/internal/impl/incremental/components/NoLookupLocation;-><init>(Ljava/lang/String;I)V
+    invoke-direct {v0, v1, v2}, Lkotlin/reflect/jvm/internal/impl/incremental/components/NoLookupLocation;-><init>(Ljava/lang/String;I)V
 
-    new-instance v4, Lkotlin/reflect/jvm/internal/impl/incremental/components/NoLookupLocation;
+    sput-object v0, Lkotlin/reflect/jvm/internal/impl/incremental/components/NoLookupLocation;->FROM_SYNTHETIC_SCOPE:Lkotlin/reflect/jvm/internal/impl/incremental/components/NoLookupLocation;
 
-    const-string v2, "FROM_DESERIALIZATION"
+    new-instance v0, Lkotlin/reflect/jvm/internal/impl/incremental/components/NoLookupLocation;
 
-    move-object/from16 v19, v6
+    const-string v1, "FROM_DESERIALIZATION"
 
-    const/16 v6, 0x11
+    const/16 v2, 0x11
 
-    invoke-direct {v4, v2, v6}, Lkotlin/reflect/jvm/internal/impl/incremental/components/NoLookupLocation;-><init>(Ljava/lang/String;I)V
+    invoke-direct {v0, v1, v2}, Lkotlin/reflect/jvm/internal/impl/incremental/components/NoLookupLocation;-><init>(Ljava/lang/String;I)V
 
-    sput-object v4, Lkotlin/reflect/jvm/internal/impl/incremental/components/NoLookupLocation;->FROM_DESERIALIZATION:Lkotlin/reflect/jvm/internal/impl/incremental/components/NoLookupLocation;
+    sput-object v0, Lkotlin/reflect/jvm/internal/impl/incremental/components/NoLookupLocation;->FROM_DESERIALIZATION:Lkotlin/reflect/jvm/internal/impl/incremental/components/NoLookupLocation;
 
-    new-instance v2, Lkotlin/reflect/jvm/internal/impl/incremental/components/NoLookupLocation;
+    new-instance v0, Lkotlin/reflect/jvm/internal/impl/incremental/components/NoLookupLocation;
 
-    const-string v6, "FROM_JAVA_LOADER"
+    const-string v1, "FROM_JAVA_LOADER"
 
-    move-object/from16 v20, v4
+    const/16 v2, 0x12
 
-    const/16 v4, 0x12
+    invoke-direct {v0, v1, v2}, Lkotlin/reflect/jvm/internal/impl/incremental/components/NoLookupLocation;-><init>(Ljava/lang/String;I)V
 
-    invoke-direct {v2, v6, v4}, Lkotlin/reflect/jvm/internal/impl/incremental/components/NoLookupLocation;-><init>(Ljava/lang/String;I)V
+    sput-object v0, Lkotlin/reflect/jvm/internal/impl/incremental/components/NoLookupLocation;->FROM_JAVA_LOADER:Lkotlin/reflect/jvm/internal/impl/incremental/components/NoLookupLocation;
 
-    sput-object v2, Lkotlin/reflect/jvm/internal/impl/incremental/components/NoLookupLocation;->FROM_JAVA_LOADER:Lkotlin/reflect/jvm/internal/impl/incremental/components/NoLookupLocation;
+    new-instance v0, Lkotlin/reflect/jvm/internal/impl/incremental/components/NoLookupLocation;
 
-    new-instance v6, Lkotlin/reflect/jvm/internal/impl/incremental/components/NoLookupLocation;
-
-    const-string v4, "WHEN_GET_LOCAL_VARIABLE"
-
-    move-object/from16 v21, v2
+    const-string v1, "WHEN_GET_LOCAL_VARIABLE"
 
     const/16 v2, 0x13
 
-    invoke-direct {v6, v4, v2}, Lkotlin/reflect/jvm/internal/impl/incremental/components/NoLookupLocation;-><init>(Ljava/lang/String;I)V
+    invoke-direct {v0, v1, v2}, Lkotlin/reflect/jvm/internal/impl/incremental/components/NoLookupLocation;-><init>(Ljava/lang/String;I)V
 
-    new-instance v4, Lkotlin/reflect/jvm/internal/impl/incremental/components/NoLookupLocation;
+    sput-object v0, Lkotlin/reflect/jvm/internal/impl/incremental/components/NoLookupLocation;->WHEN_GET_LOCAL_VARIABLE:Lkotlin/reflect/jvm/internal/impl/incremental/components/NoLookupLocation;
 
-    const-string v2, "WHEN_FIND_BY_FQNAME"
+    new-instance v0, Lkotlin/reflect/jvm/internal/impl/incremental/components/NoLookupLocation;
 
-    move-object/from16 v22, v6
+    const-string v1, "WHEN_FIND_BY_FQNAME"
 
-    const/16 v6, 0x14
+    const/16 v2, 0x14
 
-    invoke-direct {v4, v2, v6}, Lkotlin/reflect/jvm/internal/impl/incremental/components/NoLookupLocation;-><init>(Ljava/lang/String;I)V
+    invoke-direct {v0, v1, v2}, Lkotlin/reflect/jvm/internal/impl/incremental/components/NoLookupLocation;-><init>(Ljava/lang/String;I)V
 
-    new-instance v2, Lkotlin/reflect/jvm/internal/impl/incremental/components/NoLookupLocation;
+    sput-object v0, Lkotlin/reflect/jvm/internal/impl/incremental/components/NoLookupLocation;->WHEN_FIND_BY_FQNAME:Lkotlin/reflect/jvm/internal/impl/incremental/components/NoLookupLocation;
 
-    const-string v6, "WHEN_GET_COMPANION_OBJECT"
+    new-instance v0, Lkotlin/reflect/jvm/internal/impl/incremental/components/NoLookupLocation;
 
-    move-object/from16 v23, v4
+    const-string v1, "WHEN_GET_COMPANION_OBJECT"
 
-    const/16 v4, 0x15
+    const/16 v2, 0x15
 
-    invoke-direct {v2, v6, v4}, Lkotlin/reflect/jvm/internal/impl/incremental/components/NoLookupLocation;-><init>(Ljava/lang/String;I)V
+    invoke-direct {v0, v1, v2}, Lkotlin/reflect/jvm/internal/impl/incremental/components/NoLookupLocation;-><init>(Ljava/lang/String;I)V
 
-    new-instance v6, Lkotlin/reflect/jvm/internal/impl/incremental/components/NoLookupLocation;
+    sput-object v0, Lkotlin/reflect/jvm/internal/impl/incremental/components/NoLookupLocation;->WHEN_GET_COMPANION_OBJECT:Lkotlin/reflect/jvm/internal/impl/incremental/components/NoLookupLocation;
 
-    const-string v4, "FOR_DEFAULT_IMPORTS"
+    new-instance v0, Lkotlin/reflect/jvm/internal/impl/incremental/components/NoLookupLocation;
 
-    move-object/from16 v24, v2
+    const-string v1, "FOR_DEFAULT_IMPORTS"
 
     const/16 v2, 0x16
 
-    invoke-direct {v6, v4, v2}, Lkotlin/reflect/jvm/internal/impl/incremental/components/NoLookupLocation;-><init>(Ljava/lang/String;I)V
+    invoke-direct {v0, v1, v2}, Lkotlin/reflect/jvm/internal/impl/incremental/components/NoLookupLocation;-><init>(Ljava/lang/String;I)V
 
-    const/16 v2, 0x17
+    sput-object v0, Lkotlin/reflect/jvm/internal/impl/incremental/components/NoLookupLocation;->FOR_DEFAULT_IMPORTS:Lkotlin/reflect/jvm/internal/impl/incremental/components/NoLookupLocation;
 
-    new-array v2, v2, [Lkotlin/reflect/jvm/internal/impl/incremental/components/NoLookupLocation;
+    invoke-static {}, Lkotlin/reflect/jvm/internal/impl/incremental/components/NoLookupLocation;->$values()[Lkotlin/reflect/jvm/internal/impl/incremental/components/NoLookupLocation;
 
-    const/4 v4, 0x0
+    move-result-object v0
 
-    aput-object v0, v2, v4
-
-    const/4 v0, 0x1
-
-    aput-object v1, v2, v0
-
-    const/4 v0, 0x2
-
-    aput-object v3, v2, v0
-
-    const/4 v0, 0x3
-
-    aput-object v5, v2, v0
-
-    const/4 v0, 0x4
-
-    aput-object v7, v2, v0
-
-    const/4 v0, 0x5
-
-    aput-object v9, v2, v0
-
-    const/4 v0, 0x6
-
-    aput-object v11, v2, v0
-
-    const/4 v0, 0x7
-
-    aput-object v13, v2, v0
-
-    const/16 v0, 0x8
-
-    aput-object v15, v2, v0
-
-    const/16 v0, 0x9
-
-    aput-object v14, v2, v0
-
-    const/16 v0, 0xa
-
-    aput-object v12, v2, v0
-
-    const/16 v0, 0xb
-
-    aput-object v10, v2, v0
-
-    const/16 v0, 0xc
-
-    aput-object v8, v2, v0
-
-    const/16 v0, 0xd
-
-    aput-object v16, v2, v0
-
-    const/16 v0, 0xe
-
-    aput-object v17, v2, v0
-
-    const/16 v0, 0xf
-
-    aput-object v18, v2, v0
-
-    const/16 v0, 0x10
-
-    aput-object v19, v2, v0
-
-    const/16 v0, 0x11
-
-    aput-object v20, v2, v0
-
-    const/16 v0, 0x12
-
-    aput-object v21, v2, v0
-
-    const/16 v0, 0x13
-
-    aput-object v22, v2, v0
-
-    const/16 v0, 0x14
-
-    aput-object v23, v2, v0
-
-    const/16 v0, 0x15
-
-    aput-object v24, v2, v0
-
-    const/16 v0, 0x16
-
-    aput-object v6, v2, v0
-
-    sput-object v2, Lkotlin/reflect/jvm/internal/impl/incremental/components/NoLookupLocation;->$VALUES:[Lkotlin/reflect/jvm/internal/impl/incremental/components/NoLookupLocation;
+    sput-object v0, Lkotlin/reflect/jvm/internal/impl/incremental/components/NoLookupLocation;->$VALUES:[Lkotlin/reflect/jvm/internal/impl/incremental/components/NoLookupLocation;
 
     return-void
 .end method
 
-.method public constructor <init>(Ljava/lang/String;I)V
+.method private constructor <init>(Ljava/lang/String;I)V
     .locals 0
     .annotation system Ldalvik/annotation/Signature;
         value = {
@@ -380,10 +474,6 @@
 .method public static valueOf(Ljava/lang/String;)Lkotlin/reflect/jvm/internal/impl/incremental/components/NoLookupLocation;
     .locals 1
 
-    const-string v0, "value"
-
-    invoke-static {p0, v0}, Lkotlin/jvm/internal/Intrinsics;->checkNotNullParameter(Ljava/lang/Object;Ljava/lang/String;)V
-
     const-class v0, Lkotlin/reflect/jvm/internal/impl/incremental/components/NoLookupLocation;
 
     invoke-static {v0, p0}, Ljava/lang/Enum;->valueOf(Ljava/lang/Class;Ljava/lang/String;)Ljava/lang/Enum;
@@ -396,21 +486,17 @@
 .end method
 
 .method public static values()[Lkotlin/reflect/jvm/internal/impl/incremental/components/NoLookupLocation;
-    .locals 4
+    .locals 1
 
     sget-object v0, Lkotlin/reflect/jvm/internal/impl/incremental/components/NoLookupLocation;->$VALUES:[Lkotlin/reflect/jvm/internal/impl/incremental/components/NoLookupLocation;
 
-    array-length v1, v0
+    invoke-virtual {v0}, [Ljava/lang/Object;->clone()Ljava/lang/Object;
 
-    new-array v1, v1, [Lkotlin/reflect/jvm/internal/impl/incremental/components/NoLookupLocation;
+    move-result-object v0
 
-    array-length v2, v0
+    check-cast v0, [Lkotlin/reflect/jvm/internal/impl/incremental/components/NoLookupLocation;
 
-    const/4 v3, 0x0
-
-    invoke-static {v0, v3, v1, v3, v2}, Ljava/lang/System;->arraycopy(Ljava/lang/Object;ILjava/lang/Object;II)V
-
-    return-object v1
+    return-object v0
 .end method
 
 

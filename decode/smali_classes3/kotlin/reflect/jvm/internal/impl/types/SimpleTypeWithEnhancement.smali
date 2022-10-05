@@ -7,9 +7,9 @@
 
 
 # instance fields
-.field public final delegate:Lkotlin/reflect/jvm/internal/impl/types/SimpleType;
+.field private final delegate:Lkotlin/reflect/jvm/internal/impl/types/SimpleType;
 
-.field public final enhancement:Lkotlin/reflect/jvm/internal/impl/types/KotlinType;
+.field private final enhancement:Lkotlin/reflect/jvm/internal/impl/types/KotlinType;
 
 
 # direct methods
@@ -51,10 +51,22 @@
     return-object v0
 .end method
 
-.method public getOrigin()Lkotlin/reflect/jvm/internal/impl/types/UnwrappedType;
+.method public getOrigin()Lkotlin/reflect/jvm/internal/impl/types/SimpleType;
     .locals 1
 
-    iget-object v0, p0, Lkotlin/reflect/jvm/internal/impl/types/SimpleTypeWithEnhancement;->delegate:Lkotlin/reflect/jvm/internal/impl/types/SimpleType;
+    invoke-virtual {p0}, Lkotlin/reflect/jvm/internal/impl/types/SimpleTypeWithEnhancement;->getDelegate()Lkotlin/reflect/jvm/internal/impl/types/SimpleType;
+
+    move-result-object v0
+
+    return-object v0
+.end method
+
+.method public bridge synthetic getOrigin()Lkotlin/reflect/jvm/internal/impl/types/UnwrappedType;
+    .locals 1
+
+    invoke-virtual {p0}, Lkotlin/reflect/jvm/internal/impl/types/SimpleTypeWithEnhancement;->getOrigin()Lkotlin/reflect/jvm/internal/impl/types/SimpleType;
+
+    move-result-object v0
 
     return-object v0
 .end method
@@ -62,13 +74,17 @@
 .method public makeNullableAsSpecified(Z)Lkotlin/reflect/jvm/internal/impl/types/SimpleType;
     .locals 2
 
-    iget-object v0, p0, Lkotlin/reflect/jvm/internal/impl/types/SimpleTypeWithEnhancement;->delegate:Lkotlin/reflect/jvm/internal/impl/types/SimpleType;
-
-    invoke-virtual {v0, p1}, Lkotlin/reflect/jvm/internal/impl/types/UnwrappedType;->makeNullableAsSpecified(Z)Lkotlin/reflect/jvm/internal/impl/types/UnwrappedType;
+    invoke-virtual {p0}, Lkotlin/reflect/jvm/internal/impl/types/SimpleTypeWithEnhancement;->getOrigin()Lkotlin/reflect/jvm/internal/impl/types/SimpleType;
 
     move-result-object v0
 
-    iget-object v1, p0, Lkotlin/reflect/jvm/internal/impl/types/SimpleTypeWithEnhancement;->enhancement:Lkotlin/reflect/jvm/internal/impl/types/KotlinType;
+    invoke-virtual {v0, p1}, Lkotlin/reflect/jvm/internal/impl/types/SimpleType;->makeNullableAsSpecified(Z)Lkotlin/reflect/jvm/internal/impl/types/SimpleType;
+
+    move-result-object v0
+
+    invoke-virtual {p0}, Lkotlin/reflect/jvm/internal/impl/types/SimpleTypeWithEnhancement;->getEnhancement()Lkotlin/reflect/jvm/internal/impl/types/KotlinType;
+
+    move-result-object v1
 
     invoke-virtual {v1}, Lkotlin/reflect/jvm/internal/impl/types/KotlinType;->unwrap()Lkotlin/reflect/jvm/internal/impl/types/UnwrappedType;
 
@@ -78,11 +94,21 @@
 
     move-result-object p1
 
-    invoke-static {v0, p1}, Lcom/google/android/gms/internal/nearby/zznp;->wrapEnhancement(Lkotlin/reflect/jvm/internal/impl/types/UnwrappedType;Lkotlin/reflect/jvm/internal/impl/types/KotlinType;)Lkotlin/reflect/jvm/internal/impl/types/UnwrappedType;
+    invoke-static {v0, p1}, Lkotlin/reflect/jvm/internal/impl/types/TypeWithEnhancementKt;->wrapEnhancement(Lkotlin/reflect/jvm/internal/impl/types/UnwrappedType;Lkotlin/reflect/jvm/internal/impl/types/KotlinType;)Lkotlin/reflect/jvm/internal/impl/types/UnwrappedType;
 
     move-result-object p1
 
     check-cast p1, Lkotlin/reflect/jvm/internal/impl/types/SimpleType;
+
+    return-object p1
+.end method
+
+.method public bridge synthetic makeNullableAsSpecified(Z)Lkotlin/reflect/jvm/internal/impl/types/UnwrappedType;
+    .locals 0
+
+    invoke-virtual {p0, p1}, Lkotlin/reflect/jvm/internal/impl/types/SimpleTypeWithEnhancement;->makeNullableAsSpecified(Z)Lkotlin/reflect/jvm/internal/impl/types/SimpleType;
+
+    move-result-object p1
 
     return-object p1
 .end method
@@ -116,7 +142,9 @@
 
     new-instance v0, Lkotlin/reflect/jvm/internal/impl/types/SimpleTypeWithEnhancement;
 
-    iget-object v1, p0, Lkotlin/reflect/jvm/internal/impl/types/SimpleTypeWithEnhancement;->delegate:Lkotlin/reflect/jvm/internal/impl/types/SimpleType;
+    invoke-virtual {p0}, Lkotlin/reflect/jvm/internal/impl/types/SimpleTypeWithEnhancement;->getDelegate()Lkotlin/reflect/jvm/internal/impl/types/SimpleType;
+
+    move-result-object v1
 
     invoke-virtual {p1, v1}, Lkotlin/reflect/jvm/internal/impl/types/checker/KotlinTypeRefiner;->refineType(Lkotlin/reflect/jvm/internal/impl/types/KotlinType;)Lkotlin/reflect/jvm/internal/impl/types/KotlinType;
 
@@ -124,7 +152,9 @@
 
     check-cast v1, Lkotlin/reflect/jvm/internal/impl/types/SimpleType;
 
-    iget-object v2, p0, Lkotlin/reflect/jvm/internal/impl/types/SimpleTypeWithEnhancement;->enhancement:Lkotlin/reflect/jvm/internal/impl/types/KotlinType;
+    invoke-virtual {p0}, Lkotlin/reflect/jvm/internal/impl/types/SimpleTypeWithEnhancement;->getEnhancement()Lkotlin/reflect/jvm/internal/impl/types/KotlinType;
+
+    move-result-object v2
 
     invoke-virtual {p1, v2}, Lkotlin/reflect/jvm/internal/impl/types/checker/KotlinTypeRefiner;->refineType(Lkotlin/reflect/jvm/internal/impl/types/KotlinType;)Lkotlin/reflect/jvm/internal/impl/types/KotlinType;
 
@@ -152,15 +182,19 @@
 
     invoke-static {p1, v0}, Lkotlin/jvm/internal/Intrinsics;->checkNotNullParameter(Ljava/lang/Object;Ljava/lang/String;)V
 
-    iget-object v0, p0, Lkotlin/reflect/jvm/internal/impl/types/SimpleTypeWithEnhancement;->delegate:Lkotlin/reflect/jvm/internal/impl/types/SimpleType;
+    invoke-virtual {p0}, Lkotlin/reflect/jvm/internal/impl/types/SimpleTypeWithEnhancement;->getOrigin()Lkotlin/reflect/jvm/internal/impl/types/SimpleType;
 
-    invoke-virtual {v0, p1}, Lkotlin/reflect/jvm/internal/impl/types/UnwrappedType;->replaceAnnotations(Lkotlin/reflect/jvm/internal/impl/descriptors/annotations/Annotations;)Lkotlin/reflect/jvm/internal/impl/types/UnwrappedType;
+    move-result-object v0
+
+    invoke-virtual {v0, p1}, Lkotlin/reflect/jvm/internal/impl/types/SimpleType;->replaceAnnotations(Lkotlin/reflect/jvm/internal/impl/descriptors/annotations/Annotations;)Lkotlin/reflect/jvm/internal/impl/types/SimpleType;
 
     move-result-object p1
 
-    iget-object v0, p0, Lkotlin/reflect/jvm/internal/impl/types/SimpleTypeWithEnhancement;->enhancement:Lkotlin/reflect/jvm/internal/impl/types/KotlinType;
+    invoke-virtual {p0}, Lkotlin/reflect/jvm/internal/impl/types/SimpleTypeWithEnhancement;->getEnhancement()Lkotlin/reflect/jvm/internal/impl/types/KotlinType;
 
-    invoke-static {p1, v0}, Lcom/google/android/gms/internal/nearby/zznp;->wrapEnhancement(Lkotlin/reflect/jvm/internal/impl/types/UnwrappedType;Lkotlin/reflect/jvm/internal/impl/types/KotlinType;)Lkotlin/reflect/jvm/internal/impl/types/UnwrappedType;
+    move-result-object v0
+
+    invoke-static {p1, v0}, Lkotlin/reflect/jvm/internal/impl/types/TypeWithEnhancementKt;->wrapEnhancement(Lkotlin/reflect/jvm/internal/impl/types/UnwrappedType;Lkotlin/reflect/jvm/internal/impl/types/KotlinType;)Lkotlin/reflect/jvm/internal/impl/types/UnwrappedType;
 
     move-result-object p1
 
@@ -179,7 +213,17 @@
     return-object p1
 .end method
 
-.method public replaceDelegate(Lkotlin/reflect/jvm/internal/impl/types/SimpleType;)Lkotlin/reflect/jvm/internal/impl/types/DelegatingSimpleType;
+.method public bridge synthetic replaceDelegate(Lkotlin/reflect/jvm/internal/impl/types/SimpleType;)Lkotlin/reflect/jvm/internal/impl/types/DelegatingSimpleType;
+    .locals 0
+
+    invoke-virtual {p0, p1}, Lkotlin/reflect/jvm/internal/impl/types/SimpleTypeWithEnhancement;->replaceDelegate(Lkotlin/reflect/jvm/internal/impl/types/SimpleType;)Lkotlin/reflect/jvm/internal/impl/types/SimpleTypeWithEnhancement;
+
+    move-result-object p1
+
+    return-object p1
+.end method
+
+.method public replaceDelegate(Lkotlin/reflect/jvm/internal/impl/types/SimpleType;)Lkotlin/reflect/jvm/internal/impl/types/SimpleTypeWithEnhancement;
     .locals 2
 
     const-string v0, "delegate"
@@ -188,7 +232,9 @@
 
     new-instance v0, Lkotlin/reflect/jvm/internal/impl/types/SimpleTypeWithEnhancement;
 
-    iget-object v1, p0, Lkotlin/reflect/jvm/internal/impl/types/SimpleTypeWithEnhancement;->enhancement:Lkotlin/reflect/jvm/internal/impl/types/KotlinType;
+    invoke-virtual {p0}, Lkotlin/reflect/jvm/internal/impl/types/SimpleTypeWithEnhancement;->getEnhancement()Lkotlin/reflect/jvm/internal/impl/types/KotlinType;
+
+    move-result-object v1
 
     invoke-direct {v0, p1, v1}, Lkotlin/reflect/jvm/internal/impl/types/SimpleTypeWithEnhancement;-><init>(Lkotlin/reflect/jvm/internal/impl/types/SimpleType;Lkotlin/reflect/jvm/internal/impl/types/KotlinType;)V
 

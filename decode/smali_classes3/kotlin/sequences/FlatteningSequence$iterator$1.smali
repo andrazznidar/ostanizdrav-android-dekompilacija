@@ -49,6 +49,13 @@
 .end field
 
 .field public final synthetic this$0:Lkotlin/sequences/FlatteningSequence;
+    .annotation system Ldalvik/annotation/Signature;
+        value = {
+            "Lkotlin/sequences/FlatteningSequence<",
+            "TT;TR;TE;>;"
+        }
+    .end annotation
+.end field
 
 
 # direct methods
@@ -56,7 +63,9 @@
     .locals 0
     .annotation system Ldalvik/annotation/Signature;
         value = {
-            "()V"
+            "(",
+            "Lkotlin/sequences/FlatteningSequence<",
+            "TT;TR;TE;>;)V"
         }
     .end annotation
 
@@ -78,28 +87,41 @@
 
 # virtual methods
 .method public final ensureItemIterator()Z
-    .locals 4
+    .locals 5
 
     iget-object v0, p0, Lkotlin/sequences/FlatteningSequence$iterator$1;->itemIterator:Ljava/util/Iterator;
 
-    if-eqz v0, :cond_0
+    const/4 v1, 0x1
 
+    const/4 v2, 0x0
+
+    if-nez v0, :cond_1
+
+    :cond_0
+    move v0, v2
+
+    goto :goto_0
+
+    :cond_1
     invoke-interface {v0}, Ljava/util/Iterator;->hasNext()Z
 
     move-result v0
 
     if-nez v0, :cond_0
 
+    move v0, v1
+
+    :goto_0
+    if-eqz v0, :cond_2
+
     const/4 v0, 0x0
 
     iput-object v0, p0, Lkotlin/sequences/FlatteningSequence$iterator$1;->itemIterator:Ljava/util/Iterator;
 
-    :cond_0
+    :cond_2
     iget-object v0, p0, Lkotlin/sequences/FlatteningSequence$iterator$1;->itemIterator:Ljava/util/Iterator;
 
-    const/4 v1, 0x1
-
-    if-nez v0, :cond_2
+    if-nez v0, :cond_4
 
     iget-object v0, p0, Lkotlin/sequences/FlatteningSequence$iterator$1;->iterator:Ljava/util/Iterator;
 
@@ -107,30 +129,28 @@
 
     move-result v0
 
-    if-nez v0, :cond_1
+    if-nez v0, :cond_3
 
-    const/4 v0, 0x0
+    return v2
 
-    return v0
-
-    :cond_1
+    :cond_3
     iget-object v0, p0, Lkotlin/sequences/FlatteningSequence$iterator$1;->iterator:Ljava/util/Iterator;
 
     invoke-interface {v0}, Ljava/util/Iterator;->next()Ljava/lang/Object;
 
     move-result-object v0
 
-    iget-object v2, p0, Lkotlin/sequences/FlatteningSequence$iterator$1;->this$0:Lkotlin/sequences/FlatteningSequence;
+    iget-object v3, p0, Lkotlin/sequences/FlatteningSequence$iterator$1;->this$0:Lkotlin/sequences/FlatteningSequence;
 
-    iget-object v3, v2, Lkotlin/sequences/FlatteningSequence;->iterator:Lkotlin/jvm/functions/Function1;
+    iget-object v4, v3, Lkotlin/sequences/FlatteningSequence;->iterator:Lkotlin/jvm/functions/Function1;
 
-    iget-object v2, v2, Lkotlin/sequences/FlatteningSequence;->transformer:Lkotlin/jvm/functions/Function1;
+    iget-object v3, v3, Lkotlin/sequences/FlatteningSequence;->transformer:Lkotlin/jvm/functions/Function1;
 
-    invoke-interface {v2, v0}, Lkotlin/jvm/functions/Function1;->invoke(Ljava/lang/Object;)Ljava/lang/Object;
+    invoke-interface {v3, v0}, Lkotlin/jvm/functions/Function1;->invoke(Ljava/lang/Object;)Ljava/lang/Object;
 
     move-result-object v0
 
-    invoke-interface {v3, v0}, Lkotlin/jvm/functions/Function1;->invoke(Ljava/lang/Object;)Ljava/lang/Object;
+    invoke-interface {v4, v0}, Lkotlin/jvm/functions/Function1;->invoke(Ljava/lang/Object;)Ljava/lang/Object;
 
     move-result-object v0
 
@@ -138,18 +158,30 @@
 
     invoke-interface {v0}, Ljava/util/Iterator;->hasNext()Z
 
-    move-result v2
+    move-result v3
 
-    if-eqz v2, :cond_0
+    if-eqz v3, :cond_2
 
     iput-object v0, p0, Lkotlin/sequences/FlatteningSequence$iterator$1;->itemIterator:Ljava/util/Iterator;
 
-    :cond_2
+    :cond_4
     return v1
 .end method
 
 .method public synthetic forEachRemaining(Lj$/util/function/Consumer;)V
     .locals 0
+
+    invoke-static {p0, p1}, Lj$/util/Iterator$-CC;->$default$forEachRemaining(Ljava/util/Iterator;Lj$/util/function/Consumer;)V
+
+    return-void
+.end method
+
+.method public synthetic forEachRemaining(Ljava/util/function/Consumer;)V
+    .locals 0
+
+    invoke-static {p1}, Lj$/util/function/Consumer$VivifiedWrapper;->convert(Ljava/util/function/Consumer;)Lj$/util/function/Consumer;
+
+    move-result-object p1
 
     invoke-static {p0, p1}, Lj$/util/Iterator$-CC;->$default$forEachRemaining(Ljava/util/Iterator;Lj$/util/function/Consumer;)V
 

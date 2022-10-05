@@ -78,7 +78,7 @@
 
     if-nez p1, :cond_0
 
-    sget-object p1, Lkotlinx/coroutines/internal/LockFreeLinkedList_commonKt;->REMOVE_PREPARED:Ljava/lang/Object;
+    sget-object p1, Lde/rki/coronawarnapp/submission/SubmissionModule;->REMOVE_PREPARED:Ljava/lang/Object;
 
     return-object p1
 

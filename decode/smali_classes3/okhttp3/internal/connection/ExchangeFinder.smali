@@ -154,19 +154,15 @@
     invoke-static {v5}, Lokhttp3/internal/Util;->closeQuietly(Ljava/net/Socket;)V
 
     :cond_5
-    iget-object v5, v1, Lokhttp3/internal/connection/ExchangeFinder;->eventListener:Lokhttp3/EventListener;
+    iget-object v2, v1, Lokhttp3/internal/connection/ExchangeFinder;->eventListener:Lokhttp3/EventListener;
 
-    iget-object v6, v1, Lokhttp3/internal/connection/ExchangeFinder;->call:Lokhttp3/internal/connection/RealCall;
+    iget-object v5, v1, Lokhttp3/internal/connection/ExchangeFinder;->call:Lokhttp3/internal/connection/RealCall;
 
-    invoke-static {v5}, Ljava/util/Objects;->requireNonNull(Ljava/lang/Object;)Ljava/lang/Object;
+    invoke-static {v2}, Ljava/util/Objects;->requireNonNull(Ljava/lang/Object;)Ljava/lang/Object;
 
-    const-string v5, "call"
+    const-string v2, "call"
 
-    invoke-static {v6, v5}, Lkotlin/jvm/internal/Intrinsics;->checkNotNullParameter(Ljava/lang/Object;Ljava/lang/String;)V
-
-    const-string v5, "connection"
-
-    invoke-static {v2, v5}, Lkotlin/jvm/internal/Intrinsics;->checkNotNullParameter(Ljava/lang/Object;Ljava/lang/String;)V
+    invoke-static {v5, v2}, Lkotlin/jvm/internal/Intrinsics;->checkNotNullParameter(Ljava/lang/Object;Ljava/lang/String;)V
 
     goto :goto_3
 
@@ -219,8 +215,6 @@
 
     if-eqz v2, :cond_8
 
-    invoke-static {v2}, Lkotlin/jvm/internal/Intrinsics;->checkNotNull(Ljava/lang/Object;)V
-
     iput-object v3, v1, Lokhttp3/internal/connection/ExchangeFinder;->nextRouteToTry:Lokhttp3/Route;
 
     goto :goto_5
@@ -229,8 +223,6 @@
     iget-object v2, v1, Lokhttp3/internal/connection/ExchangeFinder;->routeSelection:Lokhttp3/internal/connection/RouteSelector$Selection;
 
     if-eqz v2, :cond_9
-
-    invoke-static {v2}, Lkotlin/jvm/internal/Intrinsics;->checkNotNull(Ljava/lang/Object;)V
 
     invoke-virtual {v2}, Lokhttp3/internal/connection/RouteSelector$Selection;->hasNext()Z
 
@@ -458,35 +450,29 @@
 
     invoke-static {v10, v11}, Lkotlin/jvm/internal/Intrinsics;->checkNotNullParameter(Ljava/lang/Object;Ljava/lang/String;)V
 
-    iget-object v12, v2, Lokhttp3/internal/connection/RouteSelector;->address:Lokhttp3/Address;
+    iget-object v11, v2, Lokhttp3/internal/connection/RouteSelector;->address:Lokhttp3/Address;
 
-    iget-object v12, v12, Lokhttp3/Address;->dns:Lokhttp3/Dns;
+    iget-object v11, v11, Lokhttp3/Address;->dns:Lokhttp3/Dns;
 
-    invoke-interface {v12, v10}, Lokhttp3/Dns;->lookup(Ljava/lang/String;)Ljava/util/List;
+    invoke-interface {v11, v10}, Lokhttp3/Dns;->lookup(Ljava/lang/String;)Ljava/util/List;
 
-    move-result-object v12
+    move-result-object v11
 
-    invoke-interface {v12}, Ljava/util/List;->isEmpty()Z
+    invoke-interface {v11}, Ljava/util/List;->isEmpty()Z
 
-    move-result v13
+    move-result v12
 
-    if-nez v13, :cond_14
+    if-nez v12, :cond_14
 
-    iget-object v13, v2, Lokhttp3/internal/connection/RouteSelector;->eventListener:Lokhttp3/EventListener;
+    iget-object v10, v2, Lokhttp3/internal/connection/RouteSelector;->eventListener:Lokhttp3/EventListener;
 
-    iget-object v14, v2, Lokhttp3/internal/connection/RouteSelector;->call:Lokhttp3/Call;
+    iget-object v12, v2, Lokhttp3/internal/connection/RouteSelector;->call:Lokhttp3/Call;
 
-    invoke-static {v13}, Ljava/util/Objects;->requireNonNull(Ljava/lang/Object;)Ljava/lang/Object;
-
-    invoke-static {v14, v7}, Lkotlin/jvm/internal/Intrinsics;->checkNotNullParameter(Ljava/lang/Object;Ljava/lang/String;)V
-
-    invoke-static {v10, v11}, Lkotlin/jvm/internal/Intrinsics;->checkNotNullParameter(Ljava/lang/Object;Ljava/lang/String;)V
-
-    const-string v7, "inetAddressList"
+    invoke-static {v10}, Ljava/util/Objects;->requireNonNull(Ljava/lang/Object;)Ljava/lang/Object;
 
     invoke-static {v12, v7}, Lkotlin/jvm/internal/Intrinsics;->checkNotNullParameter(Ljava/lang/Object;Ljava/lang/String;)V
 
-    invoke-interface {v12}, Ljava/util/List;->iterator()Ljava/util/Iterator;
+    invoke-interface {v11}, Ljava/util/List;->iterator()Ljava/util/Iterator;
 
     move-result-object v7
 
@@ -543,10 +529,6 @@
     monitor-enter v8
 
     :try_start_1
-    const-string v10, "route"
-
-    invoke-static {v9, v10}, Lkotlin/jvm/internal/Intrinsics;->checkNotNullParameter(Ljava/lang/Object;Ljava/lang/String;)V
-
     iget-object v10, v8, Lokhttp3/internal/connection/RouteDatabase;->failedRoutes:Ljava/util/Set;
 
     invoke-interface {v10, v9}, Ljava/util/Set;->contains(Ljava/lang/Object;)Z
@@ -839,10 +821,6 @@
     iget-object v0, v1, Lokhttp3/internal/connection/ExchangeFinder;->connectionPool:Lokhttp3/internal/connection/RealConnectionPool;
 
     invoke-static {v0}, Ljava/util/Objects;->requireNonNull(Ljava/lang/Object;)Ljava/lang/Object;
-
-    const-string v2, "connection"
-
-    invoke-static {v14, v2}, Lkotlin/jvm/internal/Intrinsics;->checkNotNullParameter(Ljava/lang/Object;Ljava/lang/String;)V
 
     sget-object v2, Lokhttp3/internal/Util;->EMPTY_BYTE_ARRAY:[B
 

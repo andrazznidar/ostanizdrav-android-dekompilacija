@@ -181,7 +181,7 @@
 
     iget-object v1, p0, Lcom/fasterxml/jackson/databind/type/TypeParser;->_factory:Lcom/fasterxml/jackson/databind/type/TypeFactory;
 
-    invoke-virtual {v1, v3, v0, p1}, Lcom/fasterxml/jackson/databind/type/TypeFactory;->_fromClass(Landroidx/fragment/app/FragmentStore;Ljava/lang/Class;Lcom/fasterxml/jackson/databind/type/TypeBindings;)Lcom/fasterxml/jackson/databind/JavaType;
+    invoke-virtual {v1, v3, v0, p1}, Lcom/fasterxml/jackson/databind/type/TypeFactory;->_fromClass(Lcom/fasterxml/jackson/databind/type/ClassStack;Ljava/lang/Class;Lcom/fasterxml/jackson/databind/type/TypeBindings;)Lcom/fasterxml/jackson/databind/JavaType;
 
     move-result-object p1
 
@@ -238,7 +238,7 @@
 
     sget-object v1, Lcom/fasterxml/jackson/databind/type/TypeBindings;->EMPTY:Lcom/fasterxml/jackson/databind/type/TypeBindings;
 
-    invoke-virtual {p1, v3, v0, v1}, Lcom/fasterxml/jackson/databind/type/TypeFactory;->_fromClass(Landroidx/fragment/app/FragmentStore;Ljava/lang/Class;Lcom/fasterxml/jackson/databind/type/TypeBindings;)Lcom/fasterxml/jackson/databind/JavaType;
+    invoke-virtual {p1, v3, v0, v1}, Lcom/fasterxml/jackson/databind/type/TypeFactory;->_fromClass(Lcom/fasterxml/jackson/databind/type/ClassStack;Ljava/lang/Class;Lcom/fasterxml/jackson/databind/type/TypeBindings;)Lcom/fasterxml/jackson/databind/JavaType;
 
     move-result-object p1
 

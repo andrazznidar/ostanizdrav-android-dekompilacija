@@ -550,12 +550,12 @@
     return-void
 .end method
 
-.method public serializerInstance(Lcom/fasterxml/jackson/databind/introspect/Annotated;Ljava/lang/Object;)Lcom/fasterxml/jackson/databind/JsonSerializer;
+.method public serializerInstance(Lorg/joda/time/Chronology;Ljava/lang/Object;)Lcom/fasterxml/jackson/databind/JsonSerializer;
     .locals 2
     .annotation system Ldalvik/annotation/Signature;
         value = {
             "(",
-            "Lcom/fasterxml/jackson/databind/introspect/Annotated;",
+            "Lorg/joda/time/Chronology;",
             "Ljava/lang/Object;",
             ")",
             "Lcom/fasterxml/jackson/databind/JsonSerializer<",
@@ -643,7 +643,7 @@
     return-object p2
 
     :cond_3
-    invoke-virtual {p1}, Lcom/fasterxml/jackson/databind/introspect/Annotated;->getType()Lcom/fasterxml/jackson/databind/JavaType;
+    invoke-virtual {p1}, Lorg/joda/time/Chronology;->getType()Lcom/fasterxml/jackson/databind/JavaType;
 
     move-result-object p1
 
@@ -676,7 +676,7 @@
     return-object v1
 
     :cond_5
-    invoke-virtual {p1}, Lcom/fasterxml/jackson/databind/introspect/Annotated;->getType()Lcom/fasterxml/jackson/databind/JavaType;
+    invoke-virtual {p1}, Lorg/joda/time/Chronology;->getType()Lcom/fasterxml/jackson/databind/JavaType;
 
     move-result-object p1
 

@@ -3,6 +3,17 @@
 .source "JavaVisibilities.kt"
 
 
+# annotations
+.annotation system Ldalvik/annotation/EnclosingClass;
+    value = Lkotlin/reflect/jvm/internal/impl/descriptors/java/JavaVisibilities;
+.end annotation
+
+.annotation system Ldalvik/annotation/InnerClass;
+    accessFlags = 0x19
+    name = "ProtectedStaticVisibility"
+.end annotation
+
+
 # static fields
 .field public static final INSTANCE:Lkotlin/reflect/jvm/internal/impl/descriptors/java/JavaVisibilities$ProtectedStaticVisibility;
 
@@ -20,7 +31,7 @@
     return-void
 .end method
 
-.method public constructor <init>()V
+.method private constructor <init>()V
     .locals 2
 
     const-string v0, "protected_static"

@@ -56,7 +56,7 @@
 
     iget-object p1, p0, Lde/rki/coronawarnapp/util/files/FileSharing$getFileIntentProvider$1;->$path:Ljava/io/File;
 
-    invoke-static {p1}, Lorg/joda/time/format/ISOPeriodFormat;->determineMimeType(Ljava/io/File;)Ljava/lang/String;
+    invoke-static {p1}, Lcom/google/common/base/Preconditions;->determineMimeType(Ljava/io/File;)Ljava/lang/String;
 
     move-result-object p1
 

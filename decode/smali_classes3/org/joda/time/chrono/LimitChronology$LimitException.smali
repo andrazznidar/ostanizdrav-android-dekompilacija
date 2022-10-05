@@ -48,7 +48,7 @@
 
     invoke-virtual {v0, v1}, Ljava/lang/StringBuffer;->append(Ljava/lang/String;)Ljava/lang/StringBuffer;
 
-    invoke-super {p0}, Ljava/lang/Throwable;->getMessage()Ljava/lang/String;
+    invoke-super {p0}, Ljava/lang/IllegalArgumentException;->getMessage()Ljava/lang/String;
 
     move-result-object v1
 

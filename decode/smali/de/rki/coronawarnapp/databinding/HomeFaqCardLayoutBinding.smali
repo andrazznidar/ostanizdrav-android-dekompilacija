@@ -8,10 +8,11 @@
 
 
 # direct methods
-.method public constructor <init>(Ljava/lang/Object;Landroid/view/View;ILandroid/widget/TextView;Landroid/widget/TextView;Landroid/widget/ImageView;Landroid/widget/ImageView;)V
+.method public constructor <init>(Ljava/lang/Object;Landroid/view/View;ILandroid/widget/TextView;Landroid/widget/TextView;Landroid/widget/ImageView;Landroid/widget/ImageView;Landroidx/constraintlayout/widget/Barrier;)V
     .locals 0
     .annotation system Ldalvik/annotation/MethodParameters;
         accessFlags = {
+            0x0,
             0x0,
             0x0,
             0x0,
@@ -27,7 +28,8 @@
             "mainCardContentBody",
             "mainCardHeaderHeadline",
             "mainCardHeaderIcon",
-            "mainCardHeaderIconEnd"
+            "mainCardHeaderIconEnd",
+            "topBarrier"
         }
     .end annotation
 

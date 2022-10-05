@@ -51,8 +51,6 @@
 
     invoke-static {v1, v2}, Lkotlin/jvm/internal/Intrinsics;->checkNotNullParameter(Ljava/lang/Object;Ljava/lang/String;)V
 
-    invoke-static {v1, v2}, Lkotlin/jvm/internal/Intrinsics;->checkNotNullParameter(Ljava/lang/Object;Ljava/lang/String;)V
-
     new-instance v2, Ljava/io/File;
 
     invoke-virtual {v1}, Landroid/content/Context;->getCacheDir()Ljava/io/File;
@@ -64,10 +62,6 @@
     invoke-direct {v2, v1, v3}, Ljava/io/File;-><init>(Ljava/io/File;Ljava/lang/String;)V
 
     invoke-virtual {v2}, Ljava/io/File;->mkdirs()Z
-
-    const-string v1, "cacheDirectory"
-
-    invoke-static {v2, v1}, Lkotlin/jvm/internal/Intrinsics;->checkNotNullParameter(Ljava/lang/Object;Ljava/lang/String;)V
 
     :try_start_0
     new-instance v1, Landroid/os/StatFs;

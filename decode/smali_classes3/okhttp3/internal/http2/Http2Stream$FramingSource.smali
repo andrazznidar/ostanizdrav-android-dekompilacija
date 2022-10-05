@@ -390,7 +390,7 @@
     :cond_a
     const-string v0, "byteCount < 0: "
 
-    invoke-static {v0, v2, v3}, Landroidx/viewpager2/adapter/FragmentStateAdapter$$ExternalSyntheticOutline0;->m(Ljava/lang/String;J)Ljava/lang/String;
+    invoke-static {v0, v2, v3}, Landroidx/camera/core/impl/DeferrableSurfaces$$ExternalSyntheticOutline0;->m(Ljava/lang/String;J)Ljava/lang/String;
 
     move-result-object v0
 

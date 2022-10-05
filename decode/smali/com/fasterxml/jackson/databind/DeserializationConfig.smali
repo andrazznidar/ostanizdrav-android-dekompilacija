@@ -9,8 +9,7 @@
         "Lcom/fasterxml/jackson/databind/cfg/MapperConfigBase<",
         "Lcom/fasterxml/jackson/databind/DeserializationFeature;",
         "Lcom/fasterxml/jackson/databind/DeserializationConfig;",
-        ">;",
-        "Ljava/io/Serializable;"
+        ">;"
     }
 .end annotation
 
@@ -36,10 +35,12 @@
 
 .field public final _parserFeaturesToChange:I
 
-.field public final _problemHandlers:Lcom/google/zxing/common/DetectorResult;
+.field public final _problemHandlers:Lcom/fasterxml/jackson/databind/util/LinkedNode;
     .annotation system Ldalvik/annotation/Signature;
         value = {
-            "Lcom/google/zxing/common/DetectorResult;"
+            "Lcom/fasterxml/jackson/databind/util/LinkedNode<",
+            "Lcom/fasterxml/jackson/databind/deser/DeserializationProblemHandler;",
+            ">;"
         }
     .end annotation
 .end field
@@ -60,16 +61,16 @@
     return-void
 .end method
 
-.method public constructor <init>(Lcom/fasterxml/jackson/databind/DeserializationConfig;IIIIII)V
+.method public constructor <init>(Lcom/fasterxml/jackson/databind/DeserializationConfig;JIIIII)V
     .locals 0
 
-    invoke-direct {p0, p1, p2}, Lcom/fasterxml/jackson/databind/cfg/MapperConfigBase;-><init>(Lcom/fasterxml/jackson/databind/cfg/MapperConfigBase;I)V
+    invoke-direct {p0, p1, p2, p3}, Lcom/fasterxml/jackson/databind/cfg/MapperConfigBase;-><init>(Lcom/fasterxml/jackson/databind/cfg/MapperConfigBase;J)V
 
-    iput p3, p0, Lcom/fasterxml/jackson/databind/DeserializationConfig;->_deserFeatures:I
+    iput p4, p0, Lcom/fasterxml/jackson/databind/DeserializationConfig;->_deserFeatures:I
 
-    iget-object p2, p1, Lcom/fasterxml/jackson/databind/DeserializationConfig;->_problemHandlers:Lcom/google/zxing/common/DetectorResult;
+    iget-object p2, p1, Lcom/fasterxml/jackson/databind/DeserializationConfig;->_problemHandlers:Lcom/fasterxml/jackson/databind/util/LinkedNode;
 
-    iput-object p2, p0, Lcom/fasterxml/jackson/databind/DeserializationConfig;->_problemHandlers:Lcom/google/zxing/common/DetectorResult;
+    iput-object p2, p0, Lcom/fasterxml/jackson/databind/DeserializationConfig;->_problemHandlers:Lcom/fasterxml/jackson/databind/util/LinkedNode;
 
     iget-object p2, p1, Lcom/fasterxml/jackson/databind/DeserializationConfig;->_nodeFactory:Lcom/fasterxml/jackson/databind/node/JsonNodeFactory;
 
@@ -83,13 +84,13 @@
 
     iput-object p1, p0, Lcom/fasterxml/jackson/databind/DeserializationConfig;->_ctorDetector:Lcom/fasterxml/jackson/databind/cfg/ConstructorDetector;
 
-    iput p4, p0, Lcom/fasterxml/jackson/databind/DeserializationConfig;->_parserFeatures:I
+    iput p5, p0, Lcom/fasterxml/jackson/databind/DeserializationConfig;->_parserFeatures:I
 
-    iput p5, p0, Lcom/fasterxml/jackson/databind/DeserializationConfig;->_parserFeaturesToChange:I
+    iput p6, p0, Lcom/fasterxml/jackson/databind/DeserializationConfig;->_parserFeaturesToChange:I
 
-    iput p6, p0, Lcom/fasterxml/jackson/databind/DeserializationConfig;->_formatReadFeatures:I
+    iput p7, p0, Lcom/fasterxml/jackson/databind/DeserializationConfig;->_formatReadFeatures:I
 
-    iput p7, p0, Lcom/fasterxml/jackson/databind/DeserializationConfig;->_formatReadFeaturesToChange:I
+    iput p8, p0, Lcom/fasterxml/jackson/databind/DeserializationConfig;->_formatReadFeaturesToChange:I
 
     return-void
 .end method
@@ -103,9 +104,9 @@
 
     iput p2, p0, Lcom/fasterxml/jackson/databind/DeserializationConfig;->_deserFeatures:I
 
-    iget-object p2, p1, Lcom/fasterxml/jackson/databind/DeserializationConfig;->_problemHandlers:Lcom/google/zxing/common/DetectorResult;
+    iget-object p2, p1, Lcom/fasterxml/jackson/databind/DeserializationConfig;->_problemHandlers:Lcom/fasterxml/jackson/databind/util/LinkedNode;
 
-    iput-object p2, p0, Lcom/fasterxml/jackson/databind/DeserializationConfig;->_problemHandlers:Lcom/google/zxing/common/DetectorResult;
+    iput-object p2, p0, Lcom/fasterxml/jackson/databind/DeserializationConfig;->_problemHandlers:Lcom/fasterxml/jackson/databind/util/LinkedNode;
 
     iget-object p2, p1, Lcom/fasterxml/jackson/databind/DeserializationConfig;->_nodeFactory:Lcom/fasterxml/jackson/databind/node/JsonNodeFactory;
 
@@ -138,10 +139,10 @@
     return-void
 .end method
 
-.method public constructor <init>(Lcom/fasterxml/jackson/databind/cfg/BaseSettings;Lcom/fasterxml/jackson/databind/jsontype/SubtypeResolver;Lcom/fasterxml/jackson/databind/introspect/SimpleMixInResolver;Lcom/fasterxml/jackson/databind/util/RootNameLookup;Lcom/fasterxml/jackson/databind/cfg/ConfigOverrides;Lcom/fasterxml/jackson/databind/cfg/CoercionConfigs;)V
+.method public constructor <init>(Lcom/fasterxml/jackson/databind/cfg/BaseSettings;Lorg/joda/time/Chronology;Lcom/fasterxml/jackson/databind/introspect/SimpleMixInResolver;Lcom/fasterxml/jackson/databind/util/RootNameLookup;Lcom/fasterxml/jackson/databind/cfg/ConfigOverrides;Lcom/fasterxml/jackson/databind/cfg/CoercionConfigs;)V
     .locals 0
 
-    invoke-direct/range {p0 .. p5}, Lcom/fasterxml/jackson/databind/cfg/MapperConfigBase;-><init>(Lcom/fasterxml/jackson/databind/cfg/BaseSettings;Lcom/fasterxml/jackson/databind/jsontype/SubtypeResolver;Lcom/fasterxml/jackson/databind/introspect/SimpleMixInResolver;Lcom/fasterxml/jackson/databind/util/RootNameLookup;Lcom/fasterxml/jackson/databind/cfg/ConfigOverrides;)V
+    invoke-direct/range {p0 .. p5}, Lcom/fasterxml/jackson/databind/cfg/MapperConfigBase;-><init>(Lcom/fasterxml/jackson/databind/cfg/BaseSettings;Lorg/joda/time/Chronology;Lcom/fasterxml/jackson/databind/introspect/SimpleMixInResolver;Lcom/fasterxml/jackson/databind/util/RootNameLookup;Lcom/fasterxml/jackson/databind/cfg/ConfigOverrides;)V
 
     sget p1, Lcom/fasterxml/jackson/databind/DeserializationConfig;->DESER_FEATURE_DEFAULTS:I
 
@@ -149,7 +150,7 @@
 
     const/4 p1, 0x0
 
-    iput-object p1, p0, Lcom/fasterxml/jackson/databind/DeserializationConfig;->_problemHandlers:Lcom/google/zxing/common/DetectorResult;
+    iput-object p1, p0, Lcom/fasterxml/jackson/databind/DeserializationConfig;->_problemHandlers:Lcom/fasterxml/jackson/databind/util/LinkedNode;
 
     sget-object p2, Lcom/fasterxml/jackson/databind/node/JsonNodeFactory;->instance:Lcom/fasterxml/jackson/databind/node/JsonNodeFactory;
 
@@ -194,30 +195,30 @@
     return-object v0
 .end method
 
-.method public _withMapperFeatures(I)Lcom/fasterxml/jackson/databind/cfg/MapperConfigBase;
-    .locals 9
+.method public _withMapperFeatures(J)Lcom/fasterxml/jackson/databind/cfg/MapperConfigBase;
+    .locals 10
 
-    new-instance v8, Lcom/fasterxml/jackson/databind/DeserializationConfig;
+    new-instance v9, Lcom/fasterxml/jackson/databind/DeserializationConfig;
 
-    iget v3, p0, Lcom/fasterxml/jackson/databind/DeserializationConfig;->_deserFeatures:I
+    iget v4, p0, Lcom/fasterxml/jackson/databind/DeserializationConfig;->_deserFeatures:I
 
-    iget v4, p0, Lcom/fasterxml/jackson/databind/DeserializationConfig;->_parserFeatures:I
+    iget v5, p0, Lcom/fasterxml/jackson/databind/DeserializationConfig;->_parserFeatures:I
 
-    iget v5, p0, Lcom/fasterxml/jackson/databind/DeserializationConfig;->_parserFeaturesToChange:I
+    iget v6, p0, Lcom/fasterxml/jackson/databind/DeserializationConfig;->_parserFeaturesToChange:I
 
-    iget v6, p0, Lcom/fasterxml/jackson/databind/DeserializationConfig;->_formatReadFeatures:I
+    iget v7, p0, Lcom/fasterxml/jackson/databind/DeserializationConfig;->_formatReadFeatures:I
 
-    iget v7, p0, Lcom/fasterxml/jackson/databind/DeserializationConfig;->_formatReadFeaturesToChange:I
+    iget v8, p0, Lcom/fasterxml/jackson/databind/DeserializationConfig;->_formatReadFeaturesToChange:I
 
-    move-object v0, v8
+    move-object v0, v9
 
     move-object v1, p0
 
-    move v2, p1
+    move-wide v2, p1
 
-    invoke-direct/range {v0 .. v7}, Lcom/fasterxml/jackson/databind/DeserializationConfig;-><init>(Lcom/fasterxml/jackson/databind/DeserializationConfig;IIIIII)V
+    invoke-direct/range {v0 .. v8}, Lcom/fasterxml/jackson/databind/DeserializationConfig;-><init>(Lcom/fasterxml/jackson/databind/DeserializationConfig;JIIIII)V
 
-    return-object v8
+    return-object v9
 .end method
 
 .method public getConstructorDetector()Lcom/fasterxml/jackson/databind/cfg/ConstructorDetector;
@@ -231,6 +232,30 @@
 
     :cond_0
     return-object v0
+.end method
+
+.method public initialize(Lcom/fasterxml/jackson/core/JsonParser;)Lcom/fasterxml/jackson/core/JsonParser;
+    .locals 2
+
+    iget v0, p0, Lcom/fasterxml/jackson/databind/DeserializationConfig;->_parserFeaturesToChange:I
+
+    if-eqz v0, :cond_0
+
+    iget v1, p0, Lcom/fasterxml/jackson/databind/DeserializationConfig;->_parserFeatures:I
+
+    invoke-virtual {p1, v1, v0}, Lcom/fasterxml/jackson/core/JsonParser;->overrideStdFeatures(II)Lcom/fasterxml/jackson/core/JsonParser;
+
+    :cond_0
+    iget v0, p0, Lcom/fasterxml/jackson/databind/DeserializationConfig;->_formatReadFeaturesToChange:I
+
+    if-eqz v0, :cond_1
+
+    iget v1, p0, Lcom/fasterxml/jackson/databind/DeserializationConfig;->_formatReadFeatures:I
+
+    invoke-virtual {p1, v1, v0}, Lcom/fasterxml/jackson/core/JsonParser;->overrideFormatFeatures(II)Lcom/fasterxml/jackson/core/JsonParser;
+
+    :cond_1
+    return-object p1
 .end method
 
 .method public introspect(Lcom/fasterxml/jackson/databind/JavaType;)Lcom/fasterxml/jackson/databind/BeanDescription;

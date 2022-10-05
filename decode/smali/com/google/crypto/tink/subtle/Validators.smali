@@ -227,7 +227,7 @@
     throw v0
 .end method
 
-.method public static validateSignatureHash(Lcom/google/crypto/tink/subtle/Enums$HashType;)V
+.method public static validateSignatureHash(I)V
     .locals 2
     .annotation system Ldalvik/annotation/MethodParameters;
         accessFlags = {
@@ -244,9 +244,9 @@
         }
     .end annotation
 
-    invoke-virtual {p0}, Ljava/lang/Enum;->ordinal()I
+    if-eqz p0, :cond_2
 
-    move-result v0
+    add-int/lit8 v0, p0, -0x1
 
     const/4 v1, 0x1
 
@@ -271,7 +271,7 @@
 
     move-result-object v1
 
-    invoke-virtual {p0}, Ljava/lang/Enum;->name()Ljava/lang/String;
+    invoke-static {p0}, Lcom/google/crypto/tink/subtle/Enums$HashType$EnumUnboxingLocalUtility;->name(I)Ljava/lang/String;
 
     move-result-object p0
 
@@ -288,6 +288,11 @@
     :cond_1
     :goto_0
     return-void
+
+    :cond_2
+    const/4 p0, 0x0
+
+    throw p0
 .end method
 
 .method public static validateVersion(II)V

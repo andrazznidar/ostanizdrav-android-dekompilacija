@@ -56,14 +56,6 @@
 
     move-result-wide v2
 
-    const-string p0, "content"
-
-    invoke-static {v0, p0}, Lkotlin/jvm/internal/Intrinsics;->checkNotNullParameter(Ljava/lang/Object;Ljava/lang/String;)V
-
-    const-string p0, "$this$asResponseBody"
-
-    invoke-static {v0, p0}, Lkotlin/jvm/internal/Intrinsics;->checkNotNullParameter(Ljava/lang/Object;Ljava/lang/String;)V
-
     new-instance p0, Lokhttp3/ResponseBody$Companion$asResponseBody$1;
 
     invoke-direct {p0, v0, v1, v2, v3}, Lokhttp3/ResponseBody$Companion$asResponseBody$1;-><init>(Lokio/BufferedSource;Lokhttp3/MediaType;J)V

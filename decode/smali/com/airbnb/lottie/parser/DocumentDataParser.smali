@@ -212,7 +212,7 @@
     goto :goto_1
 
     :cond_0
-    invoke-static {}, Landroidx/constraintlayout/core/SolverVariable$Type$r8$EnumUnboxingUtility;->com$airbnb$lottie$model$DocumentData$Justification$s$values()[I
+    invoke-static {}, Lcom/airbnb/lottie/model/DocumentData$Justification$EnumUnboxingLocalUtility;->_values()[I
 
     move-result-object v3
 

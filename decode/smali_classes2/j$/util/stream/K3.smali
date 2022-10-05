@@ -1,107 +1,68 @@
-.class final Lj$/util/stream/K3;
-.super Lj$/util/stream/Q;
+.class Lj$/util/stream/K3;
+.super Ljava/lang/Object;
+
+# interfaces
+.implements Ljava/lang/Runnable;
+
+
+# instance fields
+.field final synthetic a:Ljava/lang/Runnable;
+
+.field final synthetic b:Ljava/lang/Runnable;
 
 
 # direct methods
-.method constructor <init>(Lj$/util/stream/c;)V
-    .locals 3
+.method constructor <init>(Ljava/lang/Runnable;Ljava/lang/Runnable;)V
+    .locals 0
 
-    sget-object v0, Lj$/util/stream/g4;->DOUBLE_VALUE:Lj$/util/stream/g4;
+    iput-object p1, p0, Lj$/util/stream/K3;->a:Ljava/lang/Runnable;
 
-    sget v1, Lj$/util/stream/f4;->q:I
+    iput-object p2, p0, Lj$/util/stream/K3;->b:Ljava/lang/Runnable;
 
-    sget v2, Lj$/util/stream/f4;->o:I
-
-    or-int/2addr v1, v2
-
-    invoke-direct {p0, p1, v0, v1}, Lj$/util/stream/Q;-><init>(Lj$/util/stream/c;Lj$/util/stream/g4;I)V
+    invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
     return-void
 .end method
 
 
 # virtual methods
-.method public B0(Lj$/util/stream/z2;Lj$/util/Spliterator;Lj$/util/function/j;)Lj$/util/stream/B1;
+.method public run()V
     .locals 2
 
-    sget-object v0, Lj$/util/stream/f4;->SORTED:Lj$/util/stream/f4;
+    :try_start_0
+    iget-object v0, p0, Lj$/util/stream/K3;->a:Ljava/lang/Runnable;
 
-    invoke-virtual {p1}, Lj$/util/stream/z2;->p0()I
+    invoke-interface {v0}, Ljava/lang/Runnable;->run()V
+    :try_end_0
+    .catchall {:try_start_0 .. :try_end_0} :catchall_0
 
-    move-result v1
+    iget-object v0, p0, Lj$/util/stream/K3;->b:Ljava/lang/Runnable;
 
-    invoke-virtual {v0, v1}, Lj$/util/stream/f4;->d(I)Z
+    invoke-interface {v0}, Ljava/lang/Runnable;->run()V
 
-    move-result v0
+    return-void
 
-    if-eqz v0, :cond_0
+    :catchall_0
+    move-exception v0
 
-    const/4 v0, 0x0
+    :try_start_1
+    iget-object v1, p0, Lj$/util/stream/K3;->b:Ljava/lang/Runnable;
 
-    invoke-virtual {p1, p2, v0, p3}, Lj$/util/stream/z2;->m0(Lj$/util/Spliterator;ZLj$/util/function/j;)Lj$/util/stream/B1;
+    invoke-interface {v1}, Ljava/lang/Runnable;->run()V
+    :try_end_1
+    .catchall {:try_start_1 .. :try_end_1} :catchall_1
 
-    move-result-object p1
+    goto :goto_0
 
-    return-object p1
+    :catchall_1
+    move-exception v1
 
-    :cond_0
-    const/4 v0, 0x1
+    :try_start_2
+    invoke-virtual {v0, v1}, Ljava/lang/Throwable;->addSuppressed(Ljava/lang/Throwable;)V
+    :try_end_2
+    .catchall {:try_start_2 .. :try_end_2} :catchall_2
 
-    invoke-virtual {p1, p2, v0, p3}, Lj$/util/stream/z2;->m0(Lj$/util/Spliterator;ZLj$/util/function/j;)Lj$/util/stream/B1;
-
-    move-result-object p1
-
-    check-cast p1, Lj$/util/stream/v1;
-
-    invoke-interface {p1}, Lj$/util/stream/A1;->h()Ljava/lang/Object;
-
-    move-result-object p1
-
-    check-cast p1, [D
-
-    invoke-static {p1}, Ljava/util/Arrays;->sort([D)V
-
-    new-instance p2, Lj$/util/stream/U1;
-
-    invoke-direct {p2, p1}, Lj$/util/stream/U1;-><init>([D)V
-
-    return-object p2
-.end method
-
-.method public E0(ILj$/util/stream/n3;)Lj$/util/stream/n3;
-    .locals 1
-
-    invoke-static {p2}, Ljava/util/Objects;->requireNonNull(Ljava/lang/Object;)Ljava/lang/Object;
-
-    sget-object v0, Lj$/util/stream/f4;->SORTED:Lj$/util/stream/f4;
-
-    invoke-virtual {v0, p1}, Lj$/util/stream/f4;->d(I)Z
-
-    move-result v0
-
-    if-eqz v0, :cond_0
-
-    return-object p2
-
-    :cond_0
-    sget-object v0, Lj$/util/stream/f4;->SIZED:Lj$/util/stream/f4;
-
-    invoke-virtual {v0, p1}, Lj$/util/stream/f4;->d(I)Z
-
-    move-result p1
-
-    if-eqz p1, :cond_1
-
-    new-instance p1, Lj$/util/stream/P3;
-
-    invoke-direct {p1, p2}, Lj$/util/stream/P3;-><init>(Lj$/util/stream/n3;)V
-
-    return-object p1
-
-    :cond_1
-    new-instance p1, Lj$/util/stream/H3;
-
-    invoke-direct {p1, p2}, Lj$/util/stream/H3;-><init>(Lj$/util/stream/n3;)V
-
-    return-object p1
+    :catchall_2
+    :goto_0
+    throw v0
 .end method

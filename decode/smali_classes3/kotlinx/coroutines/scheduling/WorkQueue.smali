@@ -463,7 +463,7 @@
     return-wide v1
 
     :cond_3
-    sget-object v1, Lkotlinx/coroutines/scheduling/TasksKt;->schedulerTimeSource:Lkotlinx/coroutines/scheduling/SchedulerTimeSource;
+    sget-object v1, Lkotlinx/coroutines/scheduling/TasksKt;->schedulerTimeSource:Lorg/joda/time/Chronology;
 
     check-cast v1, Lkotlinx/coroutines/scheduling/NanoTimeSource;
 

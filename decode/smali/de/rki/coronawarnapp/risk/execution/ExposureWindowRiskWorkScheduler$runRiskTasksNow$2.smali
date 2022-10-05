@@ -173,13 +173,13 @@
 
     move-result-object v8
 
-    const/4 v9, 0x0
-
     const/16 v10, 0x14
+
+    const/4 v9, 0x0
 
     move-object v4, v1
 
-    invoke-direct/range {v4 .. v10}, Lde/rki/coronawarnapp/task/common/DefaultTaskRequest;-><init>(Lkotlin/reflect/KClass;Lde/rki/coronawarnapp/task/Task$Arguments;Ljava/util/UUID;Ljava/lang/String;Lde/rki/coronawarnapp/task/TaskFactory$Config$ErrorHandling;I)V
+    invoke-direct/range {v4 .. v10}, Lde/rki/coronawarnapp/task/common/DefaultTaskRequest;-><init>(Lkotlin/reflect/KClass;Lde/rki/coronawarnapp/task/Task$Arguments;Ljava/util/UUID;Ljava/lang/String;II)V
 
     iput v3, p0, Lde/rki/coronawarnapp/risk/execution/ExposureWindowRiskWorkScheduler$runRiskTasksNow$2;->label:I
 
@@ -215,13 +215,13 @@
 
     move-result-object v7
 
-    const/4 v8, 0x0
-
     const/16 v9, 0x16
+
+    const/4 v8, 0x0
 
     move-object v3, v0
 
-    invoke-direct/range {v3 .. v9}, Lde/rki/coronawarnapp/task/common/DefaultTaskRequest;-><init>(Lkotlin/reflect/KClass;Lde/rki/coronawarnapp/task/Task$Arguments;Ljava/util/UUID;Ljava/lang/String;Lde/rki/coronawarnapp/task/TaskFactory$Config$ErrorHandling;I)V
+    invoke-direct/range {v3 .. v9}, Lde/rki/coronawarnapp/task/common/DefaultTaskRequest;-><init>(Lkotlin/reflect/KClass;Lde/rki/coronawarnapp/task/Task$Arguments;Ljava/util/UUID;Ljava/lang/String;II)V
 
     invoke-virtual {p1, v0}, Lde/rki/coronawarnapp/task/TaskController;->submit(Lde/rki/coronawarnapp/task/TaskRequest;)V
 

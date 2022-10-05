@@ -29,7 +29,7 @@
 .end method
 
 .method public static ToStringHelper(Lcom/upokecenter/cbor/CBORObject;I)Ljava/lang/String;
-    .locals 9
+    .locals 10
 
     invoke-virtual {p0}, Lcom/upokecenter/cbor/CBORObject;->getType$enumunboxing$()I
 
@@ -106,7 +106,7 @@
     const/4 v2, 0x0
 
     :cond_2
-    invoke-static {v0}, Landroidx/constraintlayout/core/SolverVariable$Type$r8$EnumUnboxingUtility;->$enumboxing$ordinal(I)I
+    invoke-static {v0}, Landroidx/camera/camera2/internal/Camera2CameraImpl$InternalState$EnumUnboxingSharedUtility;->ordinal(I)I
 
     move-result v0
 
@@ -120,11 +120,13 @@
 
     const/4 v6, 0x0
 
-    const/4 v7, 0x1
+    const-string v7, "0123456789ABCDEF"
+
+    const/4 v8, 0x1
 
     packed-switch v0, :pswitch_data_0
 
-    if-nez v2, :cond_18
+    if-nez v2, :cond_1c
 
     new-instance p1, Ljava/lang/StringBuilder;
 
@@ -132,7 +134,7 @@
 
     move-object v2, p1
 
-    goto/16 :goto_8
+    goto/16 :goto_b
 
     :pswitch_0
     invoke-virtual {p0}, Lcom/upokecenter/cbor/CBORObject;->AsDoubleBits()J
@@ -188,7 +190,7 @@
     :cond_6
     invoke-virtual {v2, p1}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
 
-    goto/16 :goto_9
+    goto/16 :goto_c
 
     :pswitch_1
     if-nez v2, :cond_7
@@ -219,7 +221,7 @@
 
     move-result-object v0
 
-    move v4, v7
+    move v4, v8
 
     :goto_3
     invoke-interface {v0}, Ljava/util/Iterator;->hasNext()Z
@@ -236,9 +238,9 @@
 
     invoke-interface {v5}, Ljava/util/Map$Entry;->getKey()Ljava/lang/Object;
 
-    move-result-object v8
+    move-result-object v7
 
-    check-cast v8, Lcom/upokecenter/cbor/CBORObject;
+    check-cast v7, Lcom/upokecenter/cbor/CBORObject;
 
     invoke-interface {v5}, Ljava/util/Map$Entry;->getValue()Ljava/lang/Object;
 
@@ -253,15 +255,15 @@
     :cond_9
     add-int/lit8 v4, p1, 0x1
 
-    invoke-static {v8, v4}, Lcom/upokecenter/cbor/CBORDataUtilities;->ToStringHelper(Lcom/upokecenter/cbor/CBORObject;I)Ljava/lang/String;
+    invoke-static {v7, v4}, Lcom/upokecenter/cbor/CBORDataUtilities;->ToStringHelper(Lcom/upokecenter/cbor/CBORObject;I)Ljava/lang/String;
 
-    move-result-object v8
+    move-result-object v7
 
-    invoke-virtual {v2, v8}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+    invoke-virtual {v2, v7}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
 
-    const-string v8, ": "
+    const-string v7, ": "
 
-    invoke-virtual {v2, v8}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+    invoke-virtual {v2, v7}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
 
     invoke-static {v5, v4}, Lcom/upokecenter/cbor/CBORDataUtilities;->ToStringHelper(Lcom/upokecenter/cbor/CBORObject;I)Ljava/lang/String;
 
@@ -279,7 +281,7 @@
 
     invoke-virtual {v2, p1}, Ljava/lang/StringBuilder;->append(C)Ljava/lang/StringBuilder;
 
-    goto/16 :goto_9
+    goto/16 :goto_c
 
     :pswitch_2
     if-nez v2, :cond_b
@@ -304,7 +306,7 @@
     :cond_c
     move v0, v6
 
-    move v4, v7
+    move v4, v8
 
     :goto_5
     invoke-virtual {p0}, Lcom/upokecenter/cbor/CBORObject;->size()I
@@ -342,7 +344,7 @@
 
     invoke-virtual {v2, p1}, Ljava/lang/StringBuilder;->append(C)Ljava/lang/StringBuilder;
 
-    goto/16 :goto_9
+    goto/16 :goto_c
 
     :pswitch_3
     if-nez v2, :cond_f
@@ -362,14 +364,169 @@
 
     move-result-object v0
 
-    invoke-virtual {v2, v0}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+    invoke-virtual {v0}, Ljava/lang/String;->length()I
 
+    move-result v1
+
+    move v4, v6
+
+    :goto_7
+    if-ge v4, v1, :cond_13
+
+    invoke-static {v0, v4, v6}, Lcom/upokecenter/util/DataUtilities;->CodePointAt(Ljava/lang/String;II)I
+
+    move-result v5
+
+    const/high16 v9, 0x10000
+
+    if-lt v5, v9, :cond_10
+
+    const-string v9, "\\U"
+
+    invoke-virtual {v2, v9}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+
+    shr-int/lit8 v9, v5, 0x14
+
+    and-int/lit8 v9, v9, 0xf
+
+    invoke-virtual {v7, v9}, Ljava/lang/String;->charAt(I)C
+
+    move-result v9
+
+    invoke-virtual {v2, v9}, Ljava/lang/StringBuilder;->append(C)Ljava/lang/StringBuilder;
+
+    shr-int/lit8 v9, v5, 0x10
+
+    and-int/lit8 v9, v9, 0xf
+
+    invoke-virtual {v7, v9}, Ljava/lang/String;->charAt(I)C
+
+    move-result v9
+
+    invoke-virtual {v2, v9}, Ljava/lang/StringBuilder;->append(C)Ljava/lang/StringBuilder;
+
+    shr-int/lit8 v9, v5, 0xc
+
+    and-int/lit8 v9, v9, 0xf
+
+    invoke-virtual {v7, v9}, Ljava/lang/String;->charAt(I)C
+
+    move-result v9
+
+    invoke-virtual {v2, v9}, Ljava/lang/StringBuilder;->append(C)Ljava/lang/StringBuilder;
+
+    shr-int/lit8 v9, v5, 0x8
+
+    and-int/lit8 v9, v9, 0xf
+
+    invoke-virtual {v7, v9}, Ljava/lang/String;->charAt(I)C
+
+    move-result v9
+
+    invoke-virtual {v2, v9}, Ljava/lang/StringBuilder;->append(C)Ljava/lang/StringBuilder;
+
+    shr-int/lit8 v9, v5, 0x4
+
+    and-int/lit8 v9, v9, 0xf
+
+    invoke-virtual {v7, v9}, Ljava/lang/String;->charAt(I)C
+
+    move-result v9
+
+    invoke-virtual {v2, v9}, Ljava/lang/StringBuilder;->append(C)Ljava/lang/StringBuilder;
+
+    and-int/lit8 v5, v5, 0xf
+
+    invoke-virtual {v7, v5}, Ljava/lang/String;->charAt(I)C
+
+    move-result v5
+
+    invoke-virtual {v2, v5}, Ljava/lang/StringBuilder;->append(C)Ljava/lang/StringBuilder;
+
+    add-int/lit8 v4, v4, 0x1
+
+    goto :goto_9
+
+    :cond_10
+    const/16 v9, 0x7f
+
+    if-ge v5, v9, :cond_12
+
+    const/16 v9, 0x20
+
+    if-lt v5, v9, :cond_12
+
+    const/16 v9, 0x5c
+
+    if-eq v5, v9, :cond_12
+
+    if-ne v5, p1, :cond_11
+
+    goto :goto_8
+
+    :cond_11
+    int-to-char v5, v5
+
+    invoke-virtual {v2, v5}, Ljava/lang/StringBuilder;->append(C)Ljava/lang/StringBuilder;
+
+    goto :goto_9
+
+    :cond_12
+    :goto_8
+    const-string v9, "\\u"
+
+    invoke-virtual {v2, v9}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+
+    shr-int/lit8 v9, v5, 0xc
+
+    and-int/lit8 v9, v9, 0xf
+
+    invoke-virtual {v7, v9}, Ljava/lang/String;->charAt(I)C
+
+    move-result v9
+
+    invoke-virtual {v2, v9}, Ljava/lang/StringBuilder;->append(C)Ljava/lang/StringBuilder;
+
+    shr-int/lit8 v9, v5, 0x8
+
+    and-int/lit8 v9, v9, 0xf
+
+    invoke-virtual {v7, v9}, Ljava/lang/String;->charAt(I)C
+
+    move-result v9
+
+    invoke-virtual {v2, v9}, Ljava/lang/StringBuilder;->append(C)Ljava/lang/StringBuilder;
+
+    shr-int/lit8 v9, v5, 0x4
+
+    and-int/lit8 v9, v9, 0xf
+
+    invoke-virtual {v7, v9}, Ljava/lang/String;->charAt(I)C
+
+    move-result v9
+
+    invoke-virtual {v2, v9}, Ljava/lang/StringBuilder;->append(C)Ljava/lang/StringBuilder;
+
+    and-int/lit8 v5, v5, 0xf
+
+    invoke-virtual {v7, v5}, Ljava/lang/String;->charAt(I)C
+
+    move-result v5
+
+    invoke-virtual {v2, v5}, Ljava/lang/StringBuilder;->append(C)Ljava/lang/StringBuilder;
+
+    :goto_9
+    add-int/2addr v4, v8
+
+    goto/16 :goto_7
+
+    :cond_13
     invoke-virtual {v2, p1}, Ljava/lang/StringBuilder;->append(C)Ljava/lang/StringBuilder;
 
-    goto/16 :goto_9
+    goto/16 :goto_c
 
     :pswitch_4
-    if-nez v2, :cond_10
+    if-nez v2, :cond_14
 
     new-instance p1, Ljava/lang/StringBuilder;
 
@@ -377,7 +534,7 @@
 
     move-object v2, p1
 
-    :cond_10
+    :cond_14
     const-string p1, "h\'"
 
     invoke-virtual {v2, p1}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
@@ -388,8 +545,8 @@
 
     array-length v0, p1
 
-    :goto_7
-    if-ge v6, v0, :cond_11
+    :goto_a
+    if-ge v6, v0, :cond_15
 
     aget-byte v1, p1, v6
 
@@ -397,9 +554,7 @@
 
     and-int/lit8 v1, v1, 0xf
 
-    const-string v4, "0123456789ABCDEF"
-
-    invoke-virtual {v4, v1}, Ljava/lang/String;->charAt(I)C
+    invoke-virtual {v7, v1}, Ljava/lang/String;->charAt(I)C
 
     move-result v1
 
@@ -409,7 +564,7 @@
 
     and-int/lit8 v1, v1, 0xf
 
-    invoke-virtual {v4, v1}, Ljava/lang/String;->charAt(I)C
+    invoke-virtual {v7, v1}, Ljava/lang/String;->charAt(I)C
 
     move-result v1
 
@@ -417,17 +572,17 @@
 
     add-int/lit8 v6, v6, 0x1
 
-    goto :goto_7
+    goto :goto_a
 
-    :cond_11
+    :cond_15
     const/16 p1, 0x27
 
     invoke-virtual {v2, p1}, Ljava/lang/StringBuilder;->append(C)Ljava/lang/StringBuilder;
 
-    goto :goto_9
+    goto :goto_c
 
     :pswitch_5
-    if-nez v2, :cond_12
+    if-nez v2, :cond_16
 
     new-instance p1, Ljava/lang/StringBuilder;
 
@@ -435,33 +590,33 @@
 
     move-object v2, p1
 
-    :cond_12
+    :cond_16
     invoke-virtual {p0}, Lcom/upokecenter/cbor/CBORObject;->isUndefined()Z
 
     move-result p1
 
-    if-eqz p1, :cond_13
+    if-eqz p1, :cond_17
 
     const-string/jumbo p1, "undefined"
 
     invoke-virtual {v2, p1}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
 
-    goto :goto_9
+    goto :goto_c
 
-    :cond_13
+    :cond_17
     invoke-virtual {p0}, Lcom/upokecenter/cbor/CBORObject;->isNull()Z
 
     move-result p1
 
-    if-eqz p1, :cond_14
+    if-eqz p1, :cond_18
 
     const-string p1, "null"
 
     invoke-virtual {v2, p1}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
 
-    goto :goto_9
+    goto :goto_c
 
-    :cond_14
+    :cond_18
     const-string/jumbo p1, "simple("
 
     invoke-virtual {v2, p1}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
@@ -474,7 +629,7 @@
 
     const/16 v1, 0x64
 
-    if-lt p1, v1, :cond_15
+    if-lt p1, v1, :cond_19
 
     div-int/lit8 v1, p1, 0x64
 
@@ -486,8 +641,8 @@
 
     invoke-virtual {v2, v1}, Ljava/lang/StringBuilder;->append(C)Ljava/lang/StringBuilder;
 
-    :cond_15
-    if-lt p1, v0, :cond_16
+    :cond_19
+    if-lt p1, v0, :cond_1a
 
     div-int/lit8 v1, p1, 0xa
 
@@ -501,7 +656,7 @@
 
     rem-int/2addr p1, v0
 
-    :cond_16
+    :cond_1a
     add-int/lit8 p1, p1, 0x30
 
     int-to-char p1, p1
@@ -510,7 +665,7 @@
 
     invoke-virtual {v2, v3}, Ljava/lang/StringBuilder;->append(C)Ljava/lang/StringBuilder;
 
-    goto :goto_9
+    goto :goto_c
 
     :pswitch_6
     invoke-virtual {p0}, Lcom/upokecenter/cbor/CBORObject;->Untag()Lcom/upokecenter/cbor/CBORObject;
@@ -521,27 +676,27 @@
 
     move-result-object p1
 
-    if-nez v2, :cond_17
+    if-nez v2, :cond_1b
 
     return-object p1
 
-    :cond_17
+    :cond_1b
     invoke-virtual {v2, p1}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
 
-    goto :goto_9
+    goto :goto_c
 
-    :cond_18
-    :goto_8
+    :cond_1c
+    :goto_b
     const-string p1, "???"
 
     invoke-virtual {v2, p1}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
 
-    :goto_9
+    :goto_c
     invoke-virtual {p0}, Lcom/upokecenter/cbor/CBORObject;->isTagged()Z
 
     move-result p1
 
-    if-eqz p1, :cond_19
+    if-eqz p1, :cond_1d
 
     invoke-virtual {v2, v3}, Ljava/lang/StringBuilder;->append(C)Ljava/lang/StringBuilder;
 
@@ -549,9 +704,9 @@
 
     move-result-object p0
 
-    goto :goto_9
+    goto :goto_c
 
-    :cond_19
+    :cond_1d
     invoke-virtual {v2}, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
 
     move-result-object p0

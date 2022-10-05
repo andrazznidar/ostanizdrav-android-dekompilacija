@@ -10,7 +10,7 @@
 
 .field public zzc:Landroid/app/NotificationManager;
 
-.field public final zzd:Lkotlin/jvm/internal/SpreadBuilder;
+.field public final zzd:Lcom/google/android/play/core/internal/zzag;
 
 
 # direct methods
@@ -19,13 +19,13 @@
 
     invoke-direct {p0}, Landroid/app/Service;-><init>()V
 
-    new-instance v0, Lkotlin/jvm/internal/SpreadBuilder;
+    new-instance v0, Lcom/google/android/play/core/internal/zzag;
 
     const-string v1, "ExtractionForegroundService"
 
-    invoke-direct {v0, v1}, Lkotlin/jvm/internal/SpreadBuilder;-><init>(Ljava/lang/String;)V
+    invoke-direct {v0, v1}, Lcom/google/android/play/core/internal/zzag;-><init>(Ljava/lang/String;)V
 
-    iput-object v0, p0, Lcom/google/android/play/core/assetpacks/ExtractionForegroundService;->zzd:Lkotlin/jvm/internal/SpreadBuilder;
+    iput-object v0, p0, Lcom/google/android/play/core/assetpacks/ExtractionForegroundService;->zzd:Lcom/google/android/play/core/internal/zzag;
 
     return-void
 .end method
@@ -49,7 +49,7 @@
 
     move-result-object v0
 
-    invoke-static {v0}, Lcom/google/android/play/core/assetpacks/zzd;->zza(Landroid/content/Context;)Lcom/google/android/play/core/assetpacks/zzcd;
+    invoke-static {v0}, Lorg/bouncycastle/crypto/util/DerUtil;->zza(Landroid/content/Context;)Lcom/google/android/play/core/assetpacks/zzcd;
 
     move-result-object v0
 
@@ -215,13 +215,13 @@
 
     move-result-object p2
 
-    iget-object p3, p0, Lcom/google/android/play/core/assetpacks/ExtractionForegroundService;->zzd:Lkotlin/jvm/internal/SpreadBuilder;
+    iget-object p3, p0, Lcom/google/android/play/core/assetpacks/ExtractionForegroundService;->zzd:Lcom/google/android/play/core/internal/zzag;
 
     const-string v0, "Starting foreground installation service."
 
     new-array v1, v2, [Ljava/lang/Object;
 
-    invoke-virtual {p3, v0, v1}, Lkotlin/jvm/internal/SpreadBuilder;->zzd(Ljava/lang/String;[Ljava/lang/Object;)I
+    invoke-virtual {p3, v0, v1}, Lcom/google/android/play/core/internal/zzag;->zzd(Ljava/lang/String;[Ljava/lang/Object;)I
 
     iget-object p3, p0, Lcom/google/android/play/core/assetpacks/ExtractionForegroundService;->zzb:Lcom/google/android/play/core/assetpacks/zzl;
 
@@ -294,13 +294,13 @@
     monitor-enter p0
 
     :try_start_3
-    iget-object p1, p0, Lcom/google/android/play/core/assetpacks/ExtractionForegroundService;->zzd:Lkotlin/jvm/internal/SpreadBuilder;
+    iget-object p1, p0, Lcom/google/android/play/core/assetpacks/ExtractionForegroundService;->zzd:Lcom/google/android/play/core/internal/zzag;
 
     const-string p2, "Stopping service."
 
     new-array v1, v2, [Ljava/lang/Object;
 
-    invoke-virtual {p1, p2, v1}, Lkotlin/jvm/internal/SpreadBuilder;->zzd(Ljava/lang/String;[Ljava/lang/Object;)I
+    invoke-virtual {p1, p2, v1}, Lcom/google/android/play/core/internal/zzag;->zzd(Ljava/lang/String;[Ljava/lang/Object;)I
 
     iget-object p1, p0, Lcom/google/android/play/core/assetpacks/ExtractionForegroundService;->zzb:Lcom/google/android/play/core/assetpacks/zzl;
 
@@ -324,7 +324,7 @@
     throw p1
 
     :cond_7
-    iget-object p2, p0, Lcom/google/android/play/core/assetpacks/ExtractionForegroundService;->zzd:Lkotlin/jvm/internal/SpreadBuilder;
+    iget-object p2, p0, Lcom/google/android/play/core/assetpacks/ExtractionForegroundService;->zzd:Lcom/google/android/play/core/internal/zzag;
 
     new-array v0, v0, [Ljava/lang/Object;
 
@@ -336,7 +336,7 @@
 
     const-string p1, "Unknown action type received: %d"
 
-    invoke-virtual {p2, p1, v0}, Lkotlin/jvm/internal/SpreadBuilder;->zzb(Ljava/lang/String;[Ljava/lang/Object;)I
+    invoke-virtual {p2, p1, v0}, Lcom/google/android/play/core/internal/zzag;->zzb(Ljava/lang/String;[Ljava/lang/Object;)I
 
     :goto_3
     return p3

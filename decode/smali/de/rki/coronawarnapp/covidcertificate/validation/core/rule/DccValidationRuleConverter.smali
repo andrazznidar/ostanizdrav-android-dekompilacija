@@ -5,7 +5,7 @@
 
 # annotations
 .annotation system Ldalvik/annotation/SourceDebugExtension;
-    value = "SMAP\nDccValidationRuleConverter.kt\nKotlin\n*S Kotlin\n*F\n+ 1 DccValidationRuleConverter.kt\nde/rki/coronawarnapp/covidcertificate/validation/core/rule/DccValidationRuleConverter\n+ 2 fake.kt\nkotlin/jvm/internal/FakeKt\n+ 3 GsonExtensions.kt\nde/rki/coronawarnapp/util/serialization/GsonExtensionsKt\n*L\n1#1,15:1\n1#2:16\n10#3,4:17\n*S KotlinDebug\n*F\n+ 1 DccValidationRuleConverter.kt\nde/rki/coronawarnapp/covidcertificate/validation/core/rule/DccValidationRuleConverter\n*L\n13#1:17,4\n*E\n"
+    value = "SMAP\nDccValidationRuleConverter.kt\nKotlin\n*S Kotlin\n*F\n+ 1 DccValidationRuleConverter.kt\nde/rki/coronawarnapp/covidcertificate/validation/core/rule/DccValidationRuleConverter\n+ 2 fake.kt\nkotlin/jvm/internal/FakeKt\n+ 3 GsonExtensions.kt\nde/rki/coronawarnapp/util/serialization/GsonExtensionsKt\n*L\n1#1,15:1\n1#2:16\n11#3,4:17\n*S KotlinDebug\n*F\n+ 1 DccValidationRuleConverter.kt\nde/rki/coronawarnapp/covidcertificate/validation/core/rule/DccValidationRuleConverter\n*L\n13#1:17,4\n*E\n"
 .end annotation
 
 

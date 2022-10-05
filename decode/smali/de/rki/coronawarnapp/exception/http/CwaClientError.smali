@@ -15,9 +15,9 @@
 
     if-gt p3, p1, :cond_0
 
-    const/16 p3, 0x1f3
+    const/16 p3, 0x1f4
 
-    if-gt p1, p3, :cond_0
+    if-ge p1, p3, :cond_0
 
     const/4 p2, 0x1
 

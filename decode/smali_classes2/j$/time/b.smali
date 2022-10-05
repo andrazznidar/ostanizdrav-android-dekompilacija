@@ -22,24 +22,6 @@
 
 
 # virtual methods
-.method public a()J
-    .locals 2
-
-    invoke-static {}, Ljava/lang/System;->currentTimeMillis()J
-
-    move-result-wide v0
-
-    return-wide v0
-.end method
-
-.method public c()Lj$/time/ZoneId;
-    .locals 1
-
-    iget-object v0, p0, Lj$/time/b;->a:Lj$/time/ZoneId;
-
-    return-object v0
-.end method
-
 .method public equals(Ljava/lang/Object;)Z
     .locals 1
 
@@ -65,6 +47,16 @@
     return p1
 .end method
 
+.method public g()J
+    .locals 2
+
+    invoke-static {}, Ljava/lang/System;->currentTimeMillis()J
+
+    move-result-wide v0
+
+    return-wide v0
+.end method
+
 .method public hashCode()I
     .locals 1
 
@@ -84,7 +76,7 @@
 
     const-string v0, "SystemClock["
 
-    invoke-static {v0}, Lj$/time/a;->a(Ljava/lang/String;)Ljava/lang/StringBuilder;
+    invoke-static {v0}, Lj$/time/a;->b(Ljava/lang/String;)Ljava/lang/StringBuilder;
 
     move-result-object v0
 

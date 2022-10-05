@@ -11,7 +11,7 @@
 
 
 # direct methods
-.method public static synthetic constructor <clinit>()V
+.method static synthetic constructor <clinit>()V
     .locals 1
 
     new-instance v0, Lcom/google/android/play/core/assetpacks/zzbf;
@@ -33,7 +33,7 @@
 
 
 # virtual methods
-.method public final zza(ILjava/lang/String;)I
+.method public zza(ILjava/lang/String;)I
     .locals 0
 
     return p1

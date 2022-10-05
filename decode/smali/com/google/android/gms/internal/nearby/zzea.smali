@@ -110,7 +110,7 @@
     return-void
 .end method
 
-.method public synthetic constructor <init>(Lcom/google/gson/internal/Primitives;)V
+.method public synthetic constructor <init>(Lcom/google/gson/FieldAttributes;)V
     .locals 0
 
     invoke-direct {p0}, Lcom/google/android/gms/common/internal/safeparcel/AbstractSafeParcelable;-><init>()V

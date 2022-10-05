@@ -335,7 +335,7 @@
     goto :goto_0
 
     :cond_0
-    invoke-super {p0, p1}, Ljava/net/Socket;->bind(Ljava/net/SocketAddress;)V
+    invoke-super {p0, p1}, Ljavax/net/ssl/SSLSocket;->bind(Ljava/net/SocketAddress;)V
 
     :goto_0
     return-void
@@ -400,13 +400,13 @@
     goto :goto_0
 
     :cond_0
-    invoke-super {p0}, Ljava/net/Socket;->isClosed()Z
+    invoke-super {p0}, Ljavax/net/ssl/SSLSocket;->isClosed()Z
 
     move-result v0
 
     if-nez v0, :cond_1
 
-    invoke-super {p0}, Ljava/net/Socket;->close()V
+    invoke-super {p0}, Ljavax/net/ssl/SSLSocket;->close()V
 
     :cond_1
     :goto_0
@@ -468,7 +468,7 @@
     goto :goto_0
 
     :cond_1
-    invoke-super {p0, p1, p2}, Ljava/net/Socket;->connect(Ljava/net/SocketAddress;I)V
+    invoke-super {p0, p1, p2}, Ljavax/net/ssl/SSLSocket;->connect(Ljava/net/SocketAddress;I)V
 
     :goto_0
     return-void
@@ -597,7 +597,7 @@
     return-object v0
 
     :cond_0
-    invoke-super {p0}, Ljava/net/Socket;->getInetAddress()Ljava/net/InetAddress;
+    invoke-super {p0}, Ljavax/net/ssl/SSLSocket;->getInetAddress()Ljava/net/InetAddress;
 
     move-result-object v0
 
@@ -627,7 +627,7 @@
     return-object v0
 
     :cond_0
-    invoke-super {p0}, Ljava/net/Socket;->getInputStream()Ljava/io/InputStream;
+    invoke-super {p0}, Ljavax/net/ssl/SSLSocket;->getInputStream()Ljava/io/InputStream;
 
     move-result-object v0
 
@@ -657,7 +657,7 @@
     return v0
 
     :cond_0
-    invoke-super {p0}, Ljava/net/Socket;->getKeepAlive()Z
+    invoke-super {p0}, Ljavax/net/ssl/SSLSocket;->getKeepAlive()Z
 
     move-result v0
 
@@ -682,7 +682,7 @@
     return-object v0
 
     :cond_0
-    invoke-super {p0}, Ljava/net/Socket;->getLocalAddress()Ljava/net/InetAddress;
+    invoke-super {p0}, Ljavax/net/ssl/SSLSocket;->getLocalAddress()Ljava/net/InetAddress;
 
     move-result-object v0
 
@@ -707,7 +707,7 @@
     return v0
 
     :cond_0
-    invoke-super {p0}, Ljava/net/Socket;->getLocalPort()I
+    invoke-super {p0}, Ljavax/net/ssl/SSLSocket;->getLocalPort()I
 
     move-result v0
 
@@ -732,7 +732,7 @@
     return-object v0
 
     :cond_0
-    invoke-super {p0}, Ljava/net/Socket;->getLocalSocketAddress()Ljava/net/SocketAddress;
+    invoke-super {p0}, Ljavax/net/ssl/SSLSocket;->getLocalSocketAddress()Ljava/net/SocketAddress;
 
     move-result-object v0
 
@@ -785,7 +785,7 @@
     return-object v0
 
     :cond_0
-    invoke-super {p0}, Ljava/net/Socket;->getOutputStream()Ljava/io/OutputStream;
+    invoke-super {p0}, Ljavax/net/ssl/SSLSocket;->getOutputStream()Ljava/io/OutputStream;
 
     move-result-object v0
 
@@ -819,7 +819,7 @@
     return v0
 
     :cond_1
-    invoke-super {p0}, Ljava/net/Socket;->getPort()I
+    invoke-super {p0}, Ljavax/net/ssl/SSLSocket;->getPort()I
 
     move-result v0
 
@@ -849,7 +849,7 @@
     return v0
 
     :cond_0
-    invoke-super {p0}, Ljava/net/Socket;->getReceiveBufferSize()I
+    invoke-super {p0}, Ljavax/net/ssl/SSLSocket;->getReceiveBufferSize()I
 
     move-result v0
 
@@ -874,7 +874,7 @@
     return-object v0
 
     :cond_0
-    invoke-super {p0}, Ljava/net/Socket;->getRemoteSocketAddress()Ljava/net/SocketAddress;
+    invoke-super {p0}, Ljavax/net/ssl/SSLSocket;->getRemoteSocketAddress()Ljava/net/SocketAddress;
 
     move-result-object v0
 
@@ -904,7 +904,7 @@
     return v0
 
     :cond_0
-    invoke-super {p0}, Ljava/net/Socket;->getReuseAddress()Z
+    invoke-super {p0}, Ljavax/net/ssl/SSLSocket;->getReuseAddress()Z
 
     move-result v0
 
@@ -934,7 +934,7 @@
     return v0
 
     :cond_0
-    invoke-super {p0}, Ljava/net/Socket;->getSendBufferSize()I
+    invoke-super {p0}, Ljavax/net/ssl/SSLSocket;->getSendBufferSize()I
 
     move-result v0
 
@@ -964,7 +964,7 @@
     return v0
 
     :cond_0
-    invoke-super {p0}, Ljava/net/Socket;->getSoLinger()I
+    invoke-super {p0}, Ljavax/net/ssl/SSLSocket;->getSoLinger()I
 
     move-result v0
 
@@ -1035,7 +1035,7 @@
     return v0
 
     :cond_0
-    invoke-super {p0}, Ljava/net/Socket;->getTcpNoDelay()Z
+    invoke-super {p0}, Ljavax/net/ssl/SSLSocket;->getTcpNoDelay()Z
 
     move-result v0
 
@@ -1068,7 +1068,7 @@
     return v0
 
     :cond_0
-    invoke-super {p0}, Ljava/net/Socket;->getTrafficClass()I
+    invoke-super {p0}, Ljavax/net/ssl/SSLSocket;->getTrafficClass()I
 
     move-result v0
 
@@ -1093,7 +1093,7 @@
     return v0
 
     :cond_0
-    invoke-super {p0}, Ljava/net/Socket;->isBound()Z
+    invoke-super {p0}, Ljavax/net/ssl/SSLSocket;->isBound()Z
 
     move-result v0
 
@@ -1118,7 +1118,7 @@
     return v0
 
     :cond_0
-    invoke-super {p0}, Ljava/net/Socket;->isClosed()Z
+    invoke-super {p0}, Ljavax/net/ssl/SSLSocket;->isClosed()Z
 
     move-result v0
 
@@ -1143,7 +1143,7 @@
     return v0
 
     :cond_0
-    invoke-super {p0}, Ljava/net/Socket;->isConnected()Z
+    invoke-super {p0}, Ljavax/net/ssl/SSLSocket;->isConnected()Z
 
     move-result v0
 
@@ -1168,7 +1168,7 @@
     return v0
 
     :cond_0
-    invoke-super {p0}, Ljava/net/Socket;->isInputShutdown()Z
+    invoke-super {p0}, Ljavax/net/ssl/SSLSocket;->isInputShutdown()Z
 
     move-result v0
 
@@ -1193,7 +1193,7 @@
     return v0
 
     :cond_0
-    invoke-super {p0}, Ljava/net/Socket;->isOutputShutdown()Z
+    invoke-super {p0}, Ljavax/net/ssl/SSLSocket;->isOutputShutdown()Z
 
     move-result v0
 
@@ -1399,7 +1399,7 @@
     goto :goto_0
 
     :cond_0
-    invoke-super {p0, p1}, Ljava/net/Socket;->setKeepAlive(Z)V
+    invoke-super {p0, p1}, Ljavax/net/ssl/SSLSocket;->setKeepAlive(Z)V
 
     :goto_0
     return-void
@@ -1446,7 +1446,7 @@
     goto :goto_0
 
     :cond_0
-    invoke-super {p0, p1, p2, p3}, Ljava/net/Socket;->setPerformancePreferences(III)V
+    invoke-super {p0, p1, p2, p3}, Ljavax/net/ssl/SSLSocket;->setPerformancePreferences(III)V
 
     :goto_0
     return-void
@@ -1473,7 +1473,7 @@
     goto :goto_0
 
     :cond_0
-    invoke-super {p0, p1}, Ljava/net/Socket;->setReceiveBufferSize(I)V
+    invoke-super {p0, p1}, Ljavax/net/ssl/SSLSocket;->setReceiveBufferSize(I)V
 
     :goto_0
     return-void
@@ -1500,7 +1500,7 @@
     goto :goto_0
 
     :cond_0
-    invoke-super {p0, p1}, Ljava/net/Socket;->setReuseAddress(Z)V
+    invoke-super {p0, p1}, Ljavax/net/ssl/SSLSocket;->setReuseAddress(Z)V
 
     :goto_0
     return-void
@@ -1527,7 +1527,7 @@
     goto :goto_0
 
     :cond_0
-    invoke-super {p0, p1}, Ljava/net/Socket;->setSendBufferSize(I)V
+    invoke-super {p0, p1}, Ljavax/net/ssl/SSLSocket;->setSendBufferSize(I)V
 
     :goto_0
     return-void
@@ -1554,7 +1554,7 @@
     goto :goto_0
 
     :cond_0
-    invoke-super {p0, p1, p2}, Ljava/net/Socket;->setSoLinger(ZI)V
+    invoke-super {p0, p1, p2}, Ljavax/net/ssl/SSLSocket;->setSoLinger(ZI)V
 
     :goto_0
     return-void
@@ -1581,7 +1581,7 @@
     goto :goto_0
 
     :cond_0
-    invoke-super {p0, p1}, Ljava/net/Socket;->setSoTimeout(I)V
+    invoke-super {p0, p1}, Ljavax/net/ssl/SSLSocket;->setSoTimeout(I)V
 
     iput p1, p0, Lorg/conscrypt/AbstractConscryptSocket;->readTimeoutMilliseconds:I
 
@@ -1627,7 +1627,7 @@
     goto :goto_0
 
     :cond_0
-    invoke-super {p0, p1}, Ljava/net/Socket;->setTcpNoDelay(Z)V
+    invoke-super {p0, p1}, Ljavax/net/ssl/SSLSocket;->setTcpNoDelay(Z)V
 
     :goto_0
     return-void
@@ -1654,7 +1654,7 @@
     goto :goto_0
 
     :cond_0
-    invoke-super {p0, p1}, Ljava/net/Socket;->setTrafficClass(I)V
+    invoke-super {p0, p1}, Ljavax/net/ssl/SSLSocket;->setTrafficClass(I)V
 
     :goto_0
     return-void
@@ -1684,7 +1684,7 @@
     goto :goto_0
 
     :cond_0
-    invoke-super {p0}, Ljava/net/Socket;->shutdownInput()V
+    invoke-super {p0}, Ljavax/net/ssl/SSLSocket;->shutdownInput()V
 
     :goto_0
     return-void
@@ -1711,7 +1711,7 @@
     goto :goto_0
 
     :cond_0
-    invoke-super {p0}, Ljava/net/Socket;->shutdownOutput()V
+    invoke-super {p0}, Ljavax/net/ssl/SSLSocket;->shutdownOutput()V
 
     :goto_0
     return-void

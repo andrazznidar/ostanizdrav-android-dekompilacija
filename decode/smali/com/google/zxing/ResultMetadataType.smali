@@ -20,21 +20,9 @@
 
 .field public static final enum ERROR_CORRECTION_LEVEL:Lcom/google/zxing/ResultMetadataType;
 
-.field public static final enum ISSUE_NUMBER:Lcom/google/zxing/ResultMetadataType;
-
-.field public static final enum ORIENTATION:Lcom/google/zxing/ResultMetadataType;
-
-.field public static final enum PDF417_EXTRA_METADATA:Lcom/google/zxing/ResultMetadataType;
-
-.field public static final enum POSSIBLE_COUNTRY:Lcom/google/zxing/ResultMetadataType;
-
 .field public static final enum STRUCTURED_APPEND_PARITY:Lcom/google/zxing/ResultMetadataType;
 
 .field public static final enum STRUCTURED_APPEND_SEQUENCE:Lcom/google/zxing/ResultMetadataType;
-
-.field public static final enum SUGGESTED_PRICE:Lcom/google/zxing/ResultMetadataType;
-
-.field public static final enum UPC_EAN_EXTENSION:Lcom/google/zxing/ResultMetadataType;
 
 
 # direct methods
@@ -56,8 +44,6 @@
     const/4 v4, 0x1
 
     invoke-direct {v1, v3, v4}, Lcom/google/zxing/ResultMetadataType;-><init>(Ljava/lang/String;I)V
-
-    sput-object v1, Lcom/google/zxing/ResultMetadataType;->ORIENTATION:Lcom/google/zxing/ResultMetadataType;
 
     new-instance v3, Lcom/google/zxing/ResultMetadataType;
 
@@ -87,8 +73,6 @@
 
     invoke-direct {v7, v9, v10}, Lcom/google/zxing/ResultMetadataType;-><init>(Ljava/lang/String;I)V
 
-    sput-object v7, Lcom/google/zxing/ResultMetadataType;->ISSUE_NUMBER:Lcom/google/zxing/ResultMetadataType;
-
     new-instance v9, Lcom/google/zxing/ResultMetadataType;
 
     const-string v11, "SUGGESTED_PRICE"
@@ -96,8 +80,6 @@
     const/4 v12, 0x5
 
     invoke-direct {v9, v11, v12}, Lcom/google/zxing/ResultMetadataType;-><init>(Ljava/lang/String;I)V
-
-    sput-object v9, Lcom/google/zxing/ResultMetadataType;->SUGGESTED_PRICE:Lcom/google/zxing/ResultMetadataType;
 
     new-instance v11, Lcom/google/zxing/ResultMetadataType;
 
@@ -107,8 +89,6 @@
 
     invoke-direct {v11, v13, v14}, Lcom/google/zxing/ResultMetadataType;-><init>(Ljava/lang/String;I)V
 
-    sput-object v11, Lcom/google/zxing/ResultMetadataType;->POSSIBLE_COUNTRY:Lcom/google/zxing/ResultMetadataType;
-
     new-instance v13, Lcom/google/zxing/ResultMetadataType;
 
     const-string v15, "UPC_EAN_EXTENSION"
@@ -117,8 +97,6 @@
 
     invoke-direct {v13, v15, v14}, Lcom/google/zxing/ResultMetadataType;-><init>(Ljava/lang/String;I)V
 
-    sput-object v13, Lcom/google/zxing/ResultMetadataType;->UPC_EAN_EXTENSION:Lcom/google/zxing/ResultMetadataType;
-
     new-instance v15, Lcom/google/zxing/ResultMetadataType;
 
     const-string v14, "PDF417_EXTRA_METADATA"
@@ -126,8 +104,6 @@
     const/16 v12, 0x8
 
     invoke-direct {v15, v14, v12}, Lcom/google/zxing/ResultMetadataType;-><init>(Ljava/lang/String;I)V
-
-    sput-object v15, Lcom/google/zxing/ResultMetadataType;->PDF417_EXTRA_METADATA:Lcom/google/zxing/ResultMetadataType;
 
     new-instance v14, Lcom/google/zxing/ResultMetadataType;
 

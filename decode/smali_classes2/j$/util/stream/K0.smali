@@ -1,46 +1,49 @@
-.class abstract Lj$/util/stream/K0;
-.super Lj$/util/stream/L0;
+.class public final synthetic Lj$/util/stream/K0;
+.super Ljava/lang/Object;
+
+# interfaces
+.implements Lj$/util/function/IntConsumer;
+
+
+# static fields
+.field public static final synthetic a:Lj$/util/stream/K0;
 
 
 # direct methods
-.method constructor <init>(Lj$/util/stream/c;Lj$/util/stream/g4;I)V
+.method static synthetic constructor <clinit>()V
+    .locals 1
+
+    new-instance v0, Lj$/util/stream/K0;
+
+    invoke-direct {v0}, Lj$/util/stream/K0;-><init>()V
+
+    sput-object v0, Lj$/util/stream/K0;->a:Lj$/util/stream/K0;
+
+    return-void
+.end method
+
+.method private synthetic constructor <init>()V
     .locals 0
 
-    invoke-direct {p0, p1, p3}, Lj$/util/stream/L0;-><init>(Lj$/util/stream/c;I)V
+    invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
     return-void
 .end method
 
 
 # virtual methods
-.method final D0()Z
-    .locals 1
+.method public final accept(I)V
+    .locals 0
 
-    const/4 v0, 0x0
-
-    return v0
+    return-void
 .end method
 
-.method public bridge synthetic parallel()Lj$/util/stream/M0;
-    .locals 1
+.method public synthetic andThen(Lj$/util/function/IntConsumer;)Lj$/util/function/IntConsumer;
+    .locals 0
 
-    invoke-virtual {p0}, Lj$/util/stream/c;->parallel()Lj$/util/stream/g;
+    invoke-static {p0, p1}, Lj$/util/function/IntConsumer$-CC;->$default$andThen(Lj$/util/function/IntConsumer;Lj$/util/function/IntConsumer;)Lj$/util/function/IntConsumer;
 
-    move-object v0, p0
+    move-result-object p1
 
-    check-cast v0, Lj$/util/stream/M0;
-
-    return-object v0
-.end method
-
-.method public bridge synthetic sequential()Lj$/util/stream/M0;
-    .locals 1
-
-    invoke-virtual {p0}, Lj$/util/stream/c;->sequential()Lj$/util/stream/g;
-
-    move-object v0, p0
-
-    check-cast v0, Lj$/util/stream/M0;
-
-    return-object v0
+    return-object p1
 .end method

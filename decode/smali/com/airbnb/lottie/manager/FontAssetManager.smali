@@ -23,9 +23,7 @@
     .annotation system Ldalvik/annotation/Signature;
         value = {
             "Ljava/util/Map<",
-            "Lcom/airbnb/lottie/model/MutablePair<",
-            "Ljava/lang/String;",
-            ">;",
+            "Lcom/airbnb/lottie/model/MutablePair;",
             "Landroid/graphics/Typeface;",
             ">;"
         }
@@ -35,9 +33,7 @@
 .field public final tempPair:Lcom/airbnb/lottie/model/MutablePair;
     .annotation system Ldalvik/annotation/Signature;
         value = {
-            "Lcom/airbnb/lottie/model/MutablePair<",
-            "Ljava/lang/String;",
-            ">;"
+            "Lcom/airbnb/lottie/model/MutablePair;"
         }
     .end annotation
 .end field
@@ -45,15 +41,13 @@
 
 # direct methods
 .method public constructor <init>(Landroid/graphics/drawable/Drawable$Callback;)V
-    .locals 2
+    .locals 1
 
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
     new-instance v0, Lcom/airbnb/lottie/model/MutablePair;
 
-    const/4 v1, 0x0
-
-    invoke-direct {v0, v1}, Lcom/airbnb/lottie/model/MutablePair;-><init>(I)V
+    invoke-direct {v0}, Lcom/airbnb/lottie/model/MutablePair;-><init>()V
 
     iput-object v0, p0, Lcom/airbnb/lottie/manager/FontAssetManager;->tempPair:Lcom/airbnb/lottie/model/MutablePair;
 

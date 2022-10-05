@@ -8,16 +8,16 @@
 
 
 # instance fields
-.field public final arity:I
+.field private final arity:I
 
-.field public final flags:I
+.field private final flags:I
 
 
 # direct methods
 .method public constructor <init>(I)V
     .locals 7
 
-    sget-object v2, Lkotlin/jvm/internal/CallableReference$NoReceiver;->INSTANCE:Lkotlin/jvm/internal/CallableReference$NoReceiver;
+    sget-object v2, Lkotlin/jvm/internal/CallableReference;->NO_RECEIVER:Ljava/lang/Object;
 
     const/4 v3, 0x0
 
@@ -184,9 +184,13 @@
 
     if-ne v1, v3, :cond_1
 
-    iget-object v1, p0, Lkotlin/jvm/internal/CallableReference;->receiver:Ljava/lang/Object;
+    invoke-virtual {p0}, Lkotlin/jvm/internal/CallableReference;->getBoundReceiver()Ljava/lang/Object;
 
-    iget-object p1, p1, Lkotlin/jvm/internal/CallableReference;->receiver:Ljava/lang/Object;
+    move-result-object v1
+
+    invoke-virtual {p1}, Lkotlin/jvm/internal/CallableReference;->getBoundReceiver()Ljava/lang/Object;
+
+    move-result-object p1
 
     invoke-static {v1, p1}, Lkotlin/jvm/internal/Intrinsics;->areEqual(Ljava/lang/Object;Ljava/lang/Object;)Z
 
@@ -229,25 +233,26 @@
     return v0
 .end method
 
-.method public getReflected()Lkotlin/reflect/KCallable;
+.method public bridge synthetic getReflected()Lkotlin/reflect/KCallable;
     .locals 1
 
-    invoke-virtual {p0}, Lkotlin/jvm/internal/CallableReference;->compute()Lkotlin/reflect/KCallable;
+    invoke-virtual {p0}, Lkotlin/jvm/internal/FunctionReference;->getReflected()Lkotlin/reflect/KFunction;
 
     move-result-object v0
 
-    if-eq v0, p0, :cond_0
+    return-object v0
+.end method
+
+.method public getReflected()Lkotlin/reflect/KFunction;
+    .locals 1
+
+    invoke-super {p0}, Lkotlin/jvm/internal/CallableReference;->getReflected()Lkotlin/reflect/KCallable;
+
+    move-result-object v0
 
     check-cast v0, Lkotlin/reflect/KFunction;
 
     return-object v0
-
-    :cond_0
-    new-instance v0, Lkotlin/jvm/KotlinReflectionNotSupportedError;
-
-    invoke-direct {v0}, Lkotlin/jvm/KotlinReflectionNotSupportedError;-><init>()V
-
-    throw v0
 .end method
 
 .method public hashCode()I
@@ -296,6 +301,76 @@
     move-result v0
 
     add-int/2addr v0, v1
+
+    return v0
+.end method
+
+.method public isExternal()Z
+    .locals 1
+
+    invoke-virtual {p0}, Lkotlin/jvm/internal/FunctionReference;->getReflected()Lkotlin/reflect/KFunction;
+
+    move-result-object v0
+
+    invoke-interface {v0}, Lkotlin/reflect/KFunction;->isExternal()Z
+
+    move-result v0
+
+    return v0
+.end method
+
+.method public isInfix()Z
+    .locals 1
+
+    invoke-virtual {p0}, Lkotlin/jvm/internal/FunctionReference;->getReflected()Lkotlin/reflect/KFunction;
+
+    move-result-object v0
+
+    invoke-interface {v0}, Lkotlin/reflect/KFunction;->isInfix()Z
+
+    move-result v0
+
+    return v0
+.end method
+
+.method public isInline()Z
+    .locals 1
+
+    invoke-virtual {p0}, Lkotlin/jvm/internal/FunctionReference;->getReflected()Lkotlin/reflect/KFunction;
+
+    move-result-object v0
+
+    invoke-interface {v0}, Lkotlin/reflect/KFunction;->isInline()Z
+
+    move-result v0
+
+    return v0
+.end method
+
+.method public isOperator()Z
+    .locals 1
+
+    invoke-virtual {p0}, Lkotlin/jvm/internal/FunctionReference;->getReflected()Lkotlin/reflect/KFunction;
+
+    move-result-object v0
+
+    invoke-interface {v0}, Lkotlin/reflect/KFunction;->isOperator()Z
+
+    move-result v0
+
+    return v0
+.end method
+
+.method public isSuspend()Z
+    .locals 1
+
+    invoke-virtual {p0}, Lkotlin/jvm/internal/FunctionReference;->getReflected()Lkotlin/reflect/KFunction;
+
+    move-result-object v0
+
+    invoke-interface {v0}, Lkotlin/reflect/KFunction;->isSuspend()Z
+
+    move-result v0
 
     return v0
 .end method

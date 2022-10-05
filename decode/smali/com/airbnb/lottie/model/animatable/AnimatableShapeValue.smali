@@ -1,22 +1,19 @@
 .class public Lcom/airbnb/lottie/model/animatable/AnimatableShapeValue;
-.super Lcom/airbnb/lottie/model/animatable/BaseAnimatableValue;
+.super Lboofcv/struct/border/ImageBorder;
 .source "AnimatableShapeValue.java"
 
 
 # annotations
 .annotation system Ldalvik/annotation/Signature;
     value = {
-        "Lcom/airbnb/lottie/model/animatable/BaseAnimatableValue<",
-        "Lcom/airbnb/lottie/model/content/ShapeData;",
-        "Landroid/graphics/Path;",
-        ">;"
+        "Lboofcv/struct/border/ImageBorder;"
     }
 .end annotation
 
 
 # direct methods
 .method public constructor <init>(Ljava/util/List;)V
-    .locals 0
+    .locals 1
     .annotation system Ldalvik/annotation/Signature;
         value = {
             "(",
@@ -27,7 +24,9 @@
         }
     .end annotation
 
-    invoke-direct {p0, p1}, Lcom/airbnb/lottie/model/animatable/BaseAnimatableValue;-><init>(Ljava/util/List;)V
+    const/4 v0, 0x2
+
+    invoke-direct {p0, p1, v0}, Lboofcv/struct/border/ImageBorder;-><init>(Ljava/lang/Object;I)V
 
     return-void
 .end method
@@ -48,7 +47,9 @@
 
     new-instance v0, Lcom/airbnb/lottie/animation/keyframe/ShapeKeyframeAnimation;
 
-    iget-object v1, p0, Lcom/airbnb/lottie/model/animatable/BaseAnimatableValue;->keyframes:Ljava/util/List;
+    iget-object v1, p0, Lboofcv/struct/border/ImageBorder;->image:Ljava/lang/Object;
+
+    check-cast v1, Ljava/util/List;
 
     invoke-direct {v0, v1}, Lcom/airbnb/lottie/animation/keyframe/ShapeKeyframeAnimation;-><init>(Ljava/util/List;)V
 

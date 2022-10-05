@@ -5,7 +5,7 @@
 
 # annotations
 .annotation system Ldalvik/annotation/SourceDebugExtension;
-    value = "SMAP\nCWASettings.kt\nKotlin\n*S Kotlin\n*F\n+ 1 CWASettings.kt\nde/rki/coronawarnapp/main/CWASettings\n+ 2 FlowPreference.kt\nde/rki/coronawarnapp/util/preferences/FlowPreferenceKt\n+ 3 FlowPreference.kt\nde/rki/coronawarnapp/util/preferences/FlowPreference$Companion\n+ 4 SharedPreferences.kt\nandroidx/core/content/SharedPreferencesKt\n+ 5 fake.kt\nkotlin/jvm/internal/FakeKt\n+ 6 _Arrays.kt\nkotlin/collections/ArraysKt___ArraysKt\n*L\n1#1,104:1\n91#2,4:105\n95#2:115\n96#2:118\n91#2,4:119\n95#2:129\n96#2:132\n66#3,6:109\n73#3:116\n84#3:117\n66#3,6:123\n73#3:130\n84#3:131\n39#4,12:133\n39#4,12:145\n39#4,12:157\n39#4,12:169\n39#4,12:181\n39#4,12:206\n39#4,12:218\n39#4,12:230\n39#4,12:242\n39#4,12:254\n1#5:193\n2901#6,12:194\n*S KotlinDebug\n*F\n+ 1 CWASettings.kt\nde/rki/coronawarnapp/main/CWASettings\n*L\n68#1:105,4\n68#1:115\n68#1:118\n73#1:119,4\n73#1:129\n73#1:132\n68#1:109,6\n68#1:116\n68#1:117\n73#1:123,6\n73#1:130\n73#1:131\n27#1:133,12\n31#1:145,12\n35#1:157,12\n39#1:169,12\n43#1:181,12\n50#1:206,12\n54#1:218,12\n58#1:230,12\n62#1:242,12\n66#1:254,12\n49#1:194,12\n*E\n"
+    value = "SMAP\nCWASettings.kt\nKotlin\n*S Kotlin\n*F\n+ 1 CWASettings.kt\nde/rki/coronawarnapp/main/CWASettings\n+ 2 FlowPreference.kt\nde/rki/coronawarnapp/util/preferences/FlowPreferenceKt\n+ 3 FlowPreference.kt\nde/rki/coronawarnapp/util/preferences/FlowPreference$Companion\n+ 4 SharedPreferences.kt\nandroidx/core/content/SharedPreferencesKt\n+ 5 fake.kt\nkotlin/jvm/internal/FakeKt\n+ 6 _Arrays.kt\nkotlin/collections/ArraysKt___ArraysKt\n*L\n1#1,109:1\n91#2,4:110\n95#2:120\n96#2:123\n91#2,4:124\n95#2:134\n96#2:137\n91#2,4:138\n95#2:148\n96#2:151\n66#3,6:114\n73#3:121\n84#3:122\n66#3,6:128\n73#3:135\n84#3:136\n66#3,6:142\n73#3:149\n84#3:150\n39#4,12:152\n39#4,12:164\n39#4,12:176\n39#4,12:188\n39#4,12:200\n39#4,12:225\n39#4,12:237\n39#4,12:249\n39#4,12:261\n39#4,12:273\n1#5:212\n2901#6,12:213\n*S KotlinDebug\n*F\n+ 1 CWASettings.kt\nde/rki/coronawarnapp/main/CWASettings\n*L\n68#1:110,4\n68#1:120\n68#1:123\n73#1:124,4\n73#1:134\n73#1:137\n78#1:138,4\n78#1:148\n78#1:151\n68#1:114,6\n68#1:121\n68#1:122\n73#1:128,6\n73#1:135\n73#1:136\n78#1:142,6\n78#1:149\n78#1:150\n27#1:152,12\n31#1:164,12\n35#1:176,12\n39#1:188,12\n43#1:200,12\n50#1:225,12\n54#1:237,12\n58#1:249,12\n62#1:261,12\n66#1:273,12\n49#1:213,12\n*E\n"
 .end annotation
 
 
@@ -32,12 +32,22 @@
     .end annotation
 .end field
 
+.field public final lastSuppressRootInfoVersionCode:Lde/rki/coronawarnapp/util/preferences/FlowPreference;
+    .annotation system Ldalvik/annotation/Signature;
+        value = {
+            "Lde/rki/coronawarnapp/util/preferences/FlowPreference<",
+            "Ljava/lang/Long;",
+            ">;"
+        }
+    .end annotation
+.end field
+
 .field public final prefs$delegate:Lkotlin/Lazy;
 
 
 # direct methods
 .method public constructor <init>(Landroid/content/Context;)V
-    .locals 5
+    .locals 6
 
     const-string v0, "context"
 
@@ -51,7 +61,7 @@
 
     invoke-direct {p1, p0}, Lde/rki/coronawarnapp/main/CWASettings$prefs$2;-><init>(Lde/rki/coronawarnapp/main/CWASettings;)V
 
-    invoke-static {p1}, Lkotlin/LazyKt__LazyKt;->lazy(Lkotlin/jvm/functions/Function0;)Lkotlin/Lazy;
+    invoke-static {p1}, Lkotlin/LazyKt__LazyJVMKt;->lazy(Lkotlin/jvm/functions/Function0;)Lkotlin/Lazy;
 
     move-result-object p1
 
@@ -77,7 +87,7 @@
 
     invoke-direct {v3, v1}, Lde/rki/coronawarnapp/main/CWASettings$special$$inlined$createFlowPreference$1;-><init>(Ljava/lang/Object;)V
 
-    sget-object v1, Lde/rki/coronawarnapp/util/preferences/FlowPreference$Companion$basicWriter$1;->INSTANCE:Lde/rki/coronawarnapp/util/preferences/FlowPreference$Companion$basicWriter$1;
+    sget-object v1, Lde/rki/coronawarnapp/main/CWASettings$special$$inlined$createFlowPreference$2;->INSTANCE:Lde/rki/coronawarnapp/main/CWASettings$special$$inlined$createFlowPreference$2;
 
     const-string/jumbo v4, "update.changelog.lastversion"
 
@@ -91,23 +101,45 @@
 
     invoke-static {p1, v0}, Lkotlin/jvm/internal/Intrinsics;->checkNotNullExpressionValue(Ljava/lang/Object;Ljava/lang/String;)V
 
-    const-wide/16 v2, 0x0
+    const-wide/16 v1, 0x0
 
-    invoke-static {v2, v3}, Ljava/lang/Long;->valueOf(J)Ljava/lang/Long;
+    invoke-static {v1, v2}, Ljava/lang/Long;->valueOf(J)Ljava/lang/Long;
 
-    move-result-object v0
+    move-result-object v1
 
     new-instance v2, Lde/rki/coronawarnapp/util/preferences/FlowPreference;
 
-    new-instance v3, Lde/rki/coronawarnapp/main/CWASettings$special$$inlined$createFlowPreference$2;
+    new-instance v3, Lde/rki/coronawarnapp/main/CWASettings$special$$inlined$createFlowPreference$3;
 
-    invoke-direct {v3, v0}, Lde/rki/coronawarnapp/main/CWASettings$special$$inlined$createFlowPreference$2;-><init>(Ljava/lang/Object;)V
+    invoke-direct {v3, v1}, Lde/rki/coronawarnapp/main/CWASettings$special$$inlined$createFlowPreference$3;-><init>(Ljava/lang/Object;)V
 
-    const-string v0, "notifications.onboarding.versionCode"
+    sget-object v4, Lde/rki/coronawarnapp/main/CWASettings$special$$inlined$createFlowPreference$4;->INSTANCE:Lde/rki/coronawarnapp/main/CWASettings$special$$inlined$createFlowPreference$4;
 
-    invoke-direct {v2, p1, v0, v3, v1}, Lde/rki/coronawarnapp/util/preferences/FlowPreference;-><init>(Landroid/content/SharedPreferences;Ljava/lang/String;Lkotlin/jvm/functions/Function2;Lkotlin/jvm/functions/Function3;)V
+    const-string v5, "notifications.onboarding.versionCode"
+
+    invoke-direct {v2, p1, v5, v3, v4}, Lde/rki/coronawarnapp/util/preferences/FlowPreference;-><init>(Landroid/content/SharedPreferences;Ljava/lang/String;Lkotlin/jvm/functions/Function2;Lkotlin/jvm/functions/Function3;)V
 
     iput-object v2, p0, Lde/rki/coronawarnapp/main/CWASettings;->lastNotificationsOnboardingVersionCode:Lde/rki/coronawarnapp/util/preferences/FlowPreference;
+
+    invoke-virtual {p0}, Lde/rki/coronawarnapp/main/CWASettings;->getPrefs()Landroid/content/SharedPreferences;
+
+    move-result-object p1
+
+    invoke-static {p1, v0}, Lkotlin/jvm/internal/Intrinsics;->checkNotNullExpressionValue(Ljava/lang/Object;Ljava/lang/String;)V
+
+    new-instance v0, Lde/rki/coronawarnapp/util/preferences/FlowPreference;
+
+    new-instance v2, Lde/rki/coronawarnapp/main/CWASettings$special$$inlined$createFlowPreference$5;
+
+    invoke-direct {v2, v1}, Lde/rki/coronawarnapp/main/CWASettings$special$$inlined$createFlowPreference$5;-><init>(Ljava/lang/Object;)V
+
+    sget-object v1, Lde/rki/coronawarnapp/main/CWASettings$special$$inlined$createFlowPreference$6;->INSTANCE:Lde/rki/coronawarnapp/main/CWASettings$special$$inlined$createFlowPreference$6;
+
+    const-string/jumbo v3, "suppress.root.info.versionCode"
+
+    invoke-direct {v0, p1, v3, v2, v1}, Lde/rki/coronawarnapp/util/preferences/FlowPreference;-><init>(Landroid/content/SharedPreferences;Ljava/lang/String;Lkotlin/jvm/functions/Function2;Lkotlin/jvm/functions/Function3;)V
+
+    iput-object v0, p0, Lde/rki/coronawarnapp/main/CWASettings;->lastSuppressRootInfoVersionCode:Lde/rki/coronawarnapp/util/preferences/FlowPreference;
 
     return-void
 .end method
@@ -177,10 +209,13 @@
 
     move v5, v4
 
+    :cond_0
     :goto_0
     if-ge v4, v3, :cond_2
 
     aget-object v6, v1, v4
+
+    add-int/lit8 v4, v4, 0x1
 
     iget-object v7, v6, Lde/rki/coronawarnapp/appconfig/ConfigData$DeviceTimeState;->key:Ljava/lang/String;
 
@@ -188,19 +223,17 @@
 
     move-result v7
 
-    if-eqz v7, :cond_1
+    if-eqz v7, :cond_0
 
-    if-nez v5, :cond_0
+    if-nez v5, :cond_1
 
-    const/4 v2, 0x1
-
-    move v5, v2
+    const/4 v5, 0x1
 
     move-object v2, v6
 
-    goto :goto_1
+    goto :goto_0
 
-    :cond_0
+    :cond_1
     new-instance v0, Ljava/lang/IllegalArgumentException;
 
     const-string v1, "Array contains more than one matching element."
@@ -208,12 +241,6 @@
     invoke-direct {v0, v1}, Ljava/lang/IllegalArgumentException;-><init>(Ljava/lang/String;)V
 
     throw v0
-
-    :cond_1
-    :goto_1
-    add-int/lit8 v4, v4, 0x1
-
-    goto :goto_0
 
     :cond_2
     if-eqz v5, :cond_3

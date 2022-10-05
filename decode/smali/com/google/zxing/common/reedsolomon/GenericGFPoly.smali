@@ -219,7 +219,7 @@
 
     aget v3, p1, v0
 
-    sget-object v4, Lcom/google/zxing/common/reedsolomon/GenericGF;->AZTEC_DATA_12:Lcom/google/zxing/common/reedsolomon/GenericGF;
+    sget-object v4, Lcom/google/zxing/common/reedsolomon/GenericGF;->QR_CODE_FIELD_256:Lcom/google/zxing/common/reedsolomon/GenericGF;
 
     xor-int/2addr v2, v3
 

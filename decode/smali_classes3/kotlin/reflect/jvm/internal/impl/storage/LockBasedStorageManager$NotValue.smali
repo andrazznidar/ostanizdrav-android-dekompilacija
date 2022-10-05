@@ -1,4 +1,4 @@
-.class public final enum Lkotlin/reflect/jvm/internal/impl/storage/LockBasedStorageManager$NotValue;
+.class final enum Lkotlin/reflect/jvm/internal/impl/storage/LockBasedStorageManager$NotValue;
 .super Ljava/lang/Enum;
 .source "LockBasedStorageManager.java"
 
@@ -23,7 +23,7 @@
 
 
 # static fields
-.field public static final synthetic $VALUES:[Lkotlin/reflect/jvm/internal/impl/storage/LockBasedStorageManager$NotValue;
+.field private static final synthetic $VALUES:[Lkotlin/reflect/jvm/internal/impl/storage/LockBasedStorageManager$NotValue;
 
 .field public static final enum COMPUTING:Lkotlin/reflect/jvm/internal/impl/storage/LockBasedStorageManager$NotValue;
 
@@ -81,7 +81,7 @@
     return-void
 .end method
 
-.method public constructor <init>(Ljava/lang/String;I)V
+.method private constructor <init>(Ljava/lang/String;I)V
     .locals 0
     .annotation system Ldalvik/annotation/Signature;
         value = {

@@ -118,7 +118,7 @@
     goto :goto_3
 
     :cond_4
-    invoke-virtual {v1, v0}, Lorg/joda/time/base/BaseLocal;->isAfter(Lorg/joda/time/ReadablePartial;)Z
+    invoke-virtual {v1, v0}, Lorg/joda/time/base/AbstractPartial;->isAfter(Lorg/joda/time/ReadablePartial;)Z
 
     move-result v2
 
@@ -176,7 +176,7 @@
     goto :goto_3
 
     :cond_9
-    invoke-virtual {v1, v0}, Lorg/joda/time/base/BaseLocal;->isAfter(Lorg/joda/time/ReadablePartial;)Z
+    invoke-virtual {v1, v0}, Lorg/joda/time/base/AbstractPartial;->isAfter(Lorg/joda/time/ReadablePartial;)Z
 
     move-result v2
 

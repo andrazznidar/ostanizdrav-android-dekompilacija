@@ -6,14 +6,14 @@
 
 
 # virtual methods
-.method public abstract forEach(Lj$/util/function/Consumer;)V
+.method public abstract e(Lj$/util/function/Predicate;)Z
 .end method
 
-.method public abstract l(Lj$/util/function/Predicate;)Z
+.method public abstract forEach(Lj$/util/function/Consumer;)V
 .end method
 
 .method public abstract spliterator()Lj$/util/Spliterator;
 .end method
 
-.method public abstract stream()Lj$/util/stream/c4;
+.method public abstract stream()Lj$/util/stream/Stream;
 .end method

@@ -1,4 +1,4 @@
-.class public final Lkotlin/reflect/jvm/internal/impl/descriptors/runtime/structure/ReflectJavaClass$methods$1;
+.class final Lkotlin/reflect/jvm/internal/impl/descriptors/runtime/structure/ReflectJavaClass$methods$1;
 .super Lkotlin/jvm/internal/Lambda;
 .source "ReflectJavaClass.kt"
 
@@ -7,6 +7,15 @@
 
 
 # annotations
+.annotation system Ldalvik/annotation/EnclosingMethod;
+    value = Lkotlin/reflect/jvm/internal/impl/descriptors/runtime/structure/ReflectJavaClass;->getMethods()Ljava/util/List;
+.end annotation
+
+.annotation system Ldalvik/annotation/InnerClass;
+    accessFlags = 0x19
+    name = null
+.end annotation
+
 .annotation system Ldalvik/annotation/Signature;
     value = {
         "Lkotlin/jvm/internal/Lambda;",
@@ -37,10 +46,8 @@
 
 
 # virtual methods
-.method public invoke(Ljava/lang/Object;)Ljava/lang/Object;
-    .locals 4
-
-    check-cast p1, Ljava/lang/reflect/Method;
+.method public final invoke(Ljava/lang/reflect/Method;)Ljava/lang/Boolean;
+    .locals 3
 
     invoke-virtual {p1}, Ljava/lang/reflect/Method;->isSynthetic()Z
 
@@ -50,91 +57,45 @@
 
     const/4 v2, 0x0
 
-    if-eqz v0, :cond_0
-
-    goto :goto_1
+    if-eqz v0, :cond_1
 
     :cond_0
+    move v1, v2
+
+    goto :goto_0
+
+    :cond_1
     iget-object v0, p0, Lkotlin/reflect/jvm/internal/impl/descriptors/runtime/structure/ReflectJavaClass$methods$1;->this$0:Lkotlin/reflect/jvm/internal/impl/descriptors/runtime/structure/ReflectJavaClass;
 
     invoke-virtual {v0}, Lkotlin/reflect/jvm/internal/impl/descriptors/runtime/structure/ReflectJavaClass;->isEnum()Z
 
     move-result v0
 
-    if-eqz v0, :cond_4
+    if-eqz v0, :cond_2
 
     iget-object v0, p0, Lkotlin/reflect/jvm/internal/impl/descriptors/runtime/structure/ReflectJavaClass$methods$1;->this$0:Lkotlin/reflect/jvm/internal/impl/descriptors/runtime/structure/ReflectJavaClass;
 
-    invoke-static {v0}, Ljava/util/Objects;->requireNonNull(Ljava/lang/Object;)Ljava/lang/Object;
-
-    invoke-virtual {p1}, Ljava/lang/reflect/Method;->getName()Ljava/lang/String;
-
-    move-result-object v0
-
-    const-string v3, "values"
-
-    invoke-static {v0, v3}, Lkotlin/jvm/internal/Intrinsics;->areEqual(Ljava/lang/Object;Ljava/lang/Object;)Z
-
-    move-result v3
-
-    if-eqz v3, :cond_1
-
-    invoke-virtual {p1}, Ljava/lang/reflect/Method;->getParameterTypes()[Ljava/lang/Class;
-
-    move-result-object p1
-
-    const-string v0, "method.parameterTypes"
-
-    invoke-static {p1, v0}, Lkotlin/jvm/internal/Intrinsics;->checkNotNullExpressionValue(Ljava/lang/Object;Ljava/lang/String;)V
-
-    array-length p1, p1
-
-    if-nez p1, :cond_2
-
-    move p1, v1
-
-    goto :goto_0
-
-    :cond_1
-    const-string v3, "valueOf"
-
-    invoke-static {v0, v3}, Lkotlin/jvm/internal/Intrinsics;->areEqual(Ljava/lang/Object;Ljava/lang/Object;)Z
-
-    move-result v0
-
-    if-eqz v0, :cond_2
-
-    invoke-virtual {p1}, Ljava/lang/reflect/Method;->getParameterTypes()[Ljava/lang/Class;
-
-    move-result-object p1
-
-    new-array v0, v1, [Ljava/lang/Class;
-
-    const-class v3, Ljava/lang/String;
-
-    aput-object v3, v0, v2
-
-    invoke-static {p1, v0}, Ljava/util/Arrays;->equals([Ljava/lang/Object;[Ljava/lang/Object;)Z
+    invoke-static {v0, p1}, Lkotlin/reflect/jvm/internal/impl/descriptors/runtime/structure/ReflectJavaClass;->access$isEnumValuesOrValueOf(Lkotlin/reflect/jvm/internal/impl/descriptors/runtime/structure/ReflectJavaClass;Ljava/lang/reflect/Method;)Z
 
     move-result p1
 
-    goto :goto_0
+    if-nez p1, :cond_0
 
     :cond_2
-    move p1, v2
-
     :goto_0
-    if-nez p1, :cond_3
-
-    goto :goto_2
-
-    :cond_3
-    :goto_1
-    move v1, v2
-
-    :cond_4
-    :goto_2
     invoke-static {v1}, Ljava/lang/Boolean;->valueOf(Z)Ljava/lang/Boolean;
+
+    move-result-object p1
+
+    return-object p1
+.end method
+
+.method public bridge synthetic invoke(Ljava/lang/Object;)Ljava/lang/Object;
+    .locals 0
+
+    check-cast p1, Ljava/lang/reflect/Method;
+
+    invoke-virtual {p0, p1}, Lkotlin/reflect/jvm/internal/impl/descriptors/runtime/structure/ReflectJavaClass$methods$1;->invoke(Ljava/lang/reflect/Method;)Ljava/lang/Boolean;
 
     move-result-object p1
 

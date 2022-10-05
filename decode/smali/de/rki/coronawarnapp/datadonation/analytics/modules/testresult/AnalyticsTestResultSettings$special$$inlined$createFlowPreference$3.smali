@@ -8,7 +8,7 @@
 
 # annotations
 .annotation system Ldalvik/annotation/EnclosingMethod;
-    value = Lde/rki/coronawarnapp/datadonation/analytics/modules/testresult/AnalyticsTestResultSettings;-><init>(Landroid/content/Context;Lde/rki/coronawarnapp/util/TimeStamper;Ljava/lang/String;)V
+    value = Lde/rki/coronawarnapp/datadonation/analytics/modules/testresult/AnalyticsTestResultSettings;-><init>(Landroid/content/Context;Lcom/google/gson/Gson;Ljava/lang/String;)V
 .end annotation
 
 .annotation system Ldalvik/annotation/InnerClass;
@@ -64,7 +64,7 @@
 
     const-class v2, Ljava/lang/Integer;
 
-    invoke-static {p1, v0, p2, v1, v2}, Lde/rki/coronawarnapp/contactdiary/storage/ContactDiaryPreferences$special$$inlined$createFlowPreference$1$$ExternalSyntheticOutline0;->m(Landroid/content/SharedPreferences;Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;Ljava/lang/Class;)Lkotlin/reflect/KClass;
+    invoke-static {p1, v0, p2, v1, v2}, Lde/rki/coronawarnapp/util/di/DaggerApplicationComponent$ContactDiaryOverviewFragmentSubcomponentImpl-IA;->m(Landroid/content/SharedPreferences;Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;Ljava/lang/Class;)Lkotlin/reflect/KClass;
 
     move-result-object v0
 

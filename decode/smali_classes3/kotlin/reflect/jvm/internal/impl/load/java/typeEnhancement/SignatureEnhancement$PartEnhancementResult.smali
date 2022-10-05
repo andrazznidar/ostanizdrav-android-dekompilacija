@@ -1,4 +1,4 @@
-.class public Lkotlin/reflect/jvm/internal/impl/load/java/typeEnhancement/SignatureEnhancement$PartEnhancementResult;
+.class Lkotlin/reflect/jvm/internal/impl/load/java/typeEnhancement/SignatureEnhancement$PartEnhancementResult;
 .super Ljava/lang/Object;
 .source "signatureEnhancement.kt"
 
@@ -15,11 +15,11 @@
 
 
 # instance fields
-.field public final containsFunctionN:Z
+.field private final containsFunctionN:Z
 
-.field public final type:Lkotlin/reflect/jvm/internal/impl/types/KotlinType;
+.field private final type:Lkotlin/reflect/jvm/internal/impl/types/KotlinType;
 
-.field public final wereChanges:Z
+.field private final wereChanges:Z
 
 
 # direct methods
@@ -39,4 +39,30 @@
     iput-boolean p3, p0, Lkotlin/reflect/jvm/internal/impl/load/java/typeEnhancement/SignatureEnhancement$PartEnhancementResult;->containsFunctionN:Z
 
     return-void
+.end method
+
+
+# virtual methods
+.method public final getContainsFunctionN()Z
+    .locals 1
+
+    iget-boolean v0, p0, Lkotlin/reflect/jvm/internal/impl/load/java/typeEnhancement/SignatureEnhancement$PartEnhancementResult;->containsFunctionN:Z
+
+    return v0
+.end method
+
+.method public final getType()Lkotlin/reflect/jvm/internal/impl/types/KotlinType;
+    .locals 1
+
+    iget-object v0, p0, Lkotlin/reflect/jvm/internal/impl/load/java/typeEnhancement/SignatureEnhancement$PartEnhancementResult;->type:Lkotlin/reflect/jvm/internal/impl/types/KotlinType;
+
+    return-object v0
+.end method
+
+.method public final getWereChanges()Z
+    .locals 1
+
+    iget-boolean v0, p0, Lkotlin/reflect/jvm/internal/impl/load/java/typeEnhancement/SignatureEnhancement$PartEnhancementResult;->wereChanges:Z
+
+    return v0
 .end method

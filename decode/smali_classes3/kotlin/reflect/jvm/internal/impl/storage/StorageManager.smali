@@ -4,6 +4,18 @@
 
 
 # virtual methods
+.method public abstract compute(Lkotlin/jvm/functions/Function0;)Ljava/lang/Object;
+    .annotation system Ldalvik/annotation/Signature;
+        value = {
+            "<T:",
+            "Ljava/lang/Object;",
+            ">(",
+            "Lkotlin/jvm/functions/Function0<",
+            "+TT;>;)TT;"
+        }
+    .end annotation
+.end method
+
 .method public abstract createCacheWithNotNullValues()Lkotlin/reflect/jvm/internal/impl/storage/CacheWithNotNullValues;
     .annotation system Ldalvik/annotation/Signature;
         value = {

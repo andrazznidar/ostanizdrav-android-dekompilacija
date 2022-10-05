@@ -1086,7 +1086,7 @@
 
     new-instance v0, Lkotlinx/coroutines/CancellableContinuationImpl;
 
-    invoke-static {p5}, Lkotlinx/coroutines/flow/FlowKt;->intercepted(Lkotlin/coroutines/Continuation;)Lkotlin/coroutines/Continuation;
+    invoke-static {p5}, Lcom/google/android/gms/nearby/messages/internal/zzag;->intercepted(Lkotlin/coroutines/Continuation;)Lkotlin/coroutines/Continuation;
 
     move-result-object p5
 

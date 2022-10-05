@@ -21,13 +21,14 @@
         "Lcom/google/protobuf/GeneratedMessageLite$Builder<",
         "Lde/rki/coronawarnapp/server/protocols/external/exposurenotification/TemporaryExposureKeySignatureList$TEKSignature;",
         "Lde/rki/coronawarnapp/server/protocols/external/exposurenotification/TemporaryExposureKeySignatureList$TEKSignature$Builder;",
-        ">;"
+        ">;",
+        "Lcom/google/protobuf/MessageLiteOrBuilder;"
     }
 .end annotation
 
 
 # direct methods
-.method public constructor <init>(Lde/rki/coronawarnapp/server/protocols/external/exposurenotification/TemporaryExposureKeySignatureList$TEKSignature$Builder-IA;)V
+.method public constructor <init>(Landroidx/camera/core/impl/SurfaceConfig$ConfigType$EnumUnboxingLocalUtility;)V
     .locals 0
 
     sget-object p1, Lde/rki/coronawarnapp/server/protocols/external/exposurenotification/TemporaryExposureKeySignatureList$TEKSignature;->DEFAULT_INSTANCE:Lde/rki/coronawarnapp/server/protocols/external/exposurenotification/TemporaryExposureKeySignatureList$TEKSignature;

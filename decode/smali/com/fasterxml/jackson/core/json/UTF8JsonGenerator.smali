@@ -321,7 +321,7 @@
 .end method
 
 .method public final _outputRawMultiByteChar(I[CII)I
-    .locals 3
+    .locals 4
     .annotation system Ldalvik/annotation/Throws;
         value = {
             Ljava/io/IOException;
@@ -336,7 +336,9 @@
 
     if-gt p1, v1, :cond_3
 
-    const/4 v2, 0x1
+    const/4 v2, 0x0
+
+    const/4 v3, 0x1
 
     if-ge p3, p4, :cond_2
 
@@ -429,34 +431,30 @@
 
     aput-byte p2, p1, v0
 
-    add-int/2addr p3, v2
+    add-int/2addr p3, v3
 
     return p3
 
     :cond_1
-    const-string p3, "Incomplete surrogate pair: first char 0x"
+    const/4 p3, 0x2
 
-    invoke-static {p3}, Landroid/support/v4/media/RatingCompat$$ExternalSyntheticOutline0;->m(Ljava/lang/String;)Ljava/lang/StringBuilder;
+    new-array p3, p3, [Ljava/lang/Object;
 
-    move-result-object p3
-
-    invoke-static {p1}, Ljava/lang/Integer;->toHexString(I)Ljava/lang/String;
+    invoke-static {p1}, Ljava/lang/Integer;->valueOf(I)Ljava/lang/Integer;
 
     move-result-object p1
 
-    invoke-virtual {p3, p1}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+    aput-object p1, p3, v2
 
-    const-string p1, ", second 0x"
-
-    invoke-virtual {p3, p1}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
-
-    invoke-static {p2}, Ljava/lang/Integer;->toHexString(I)Ljava/lang/String;
+    invoke-static {p2}, Ljava/lang/Integer;->valueOf(I)Ljava/lang/Integer;
 
     move-result-object p1
 
-    invoke-virtual {p3, p1}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+    aput-object p1, p3, v3
 
-    invoke-virtual {p3}, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
+    const-string p1, "Incomplete surrogate pair: first char 0x%04X, second 0x%04X"
+
+    invoke-static {p1, p3}, Ljava/lang/String;->format(Ljava/lang/String;[Ljava/lang/Object;)Ljava/lang/String;
 
     move-result-object p1
 
@@ -467,15 +465,13 @@
     throw p2
 
     :cond_2
-    new-array p2, v2, [Ljava/lang/Object;
-
-    const/4 p3, 0x0
+    new-array p2, v3, [Ljava/lang/Object;
 
     invoke-static {p1}, Ljava/lang/Integer;->valueOf(I)Ljava/lang/Integer;
 
     move-result-object p1
 
-    aput-object p1, p2, p3
+    aput-object p1, p2, v2
 
     const-string p1, "Split surrogate on writeRaw() input (last character): first character 0x%4x"
 

@@ -483,7 +483,7 @@
 .method public onFinishInflate()V
     .locals 2
 
-    invoke-super {p0}, Landroid/view/View;->onFinishInflate()V
+    invoke-super {p0}, Landroid/view/ViewGroup;->onFinishInflate()V
 
     iget v0, p0, Lcom/google/android/material/chip/ChipGroup;->checkedId:I
 
@@ -506,7 +506,7 @@
 .method public onInitializeAccessibilityNodeInfo(Landroid/view/accessibility/AccessibilityNodeInfo;)V
     .locals 4
 
-    invoke-super {p0, p1}, Landroid/view/View;->onInitializeAccessibilityNodeInfo(Landroid/view/accessibility/AccessibilityNodeInfo;)V
+    invoke-super {p0, p1}, Landroid/view/ViewGroup;->onInitializeAccessibilityNodeInfo(Landroid/view/accessibility/AccessibilityNodeInfo;)V
 
     iget-boolean v0, p0, Lcom/google/android/material/internal/FlowLayout;->singleLine:Z
 

@@ -1,49 +1,80 @@
-.class Lj$/time/format/d;
+.class abstract synthetic Lj$/time/format/d;
 .super Ljava/lang/Object;
 
-# interfaces
-.implements Ljava/util/Comparator;
+
+# static fields
+.field static final synthetic a:[I
 
 
 # direct methods
-.method public constructor <init>(I)V
-    .locals 0
+.method static constructor <clinit>()V
+    .locals 4
 
-    invoke-direct {p0}, Ljava/lang/Object;-><init>()V
+    invoke-static {}, Lj$/time/format/F;->b()[I
 
+    move-result-object v0
+
+    array-length v0, v0
+
+    new-array v0, v0, [I
+
+    sput-object v0, Lj$/time/format/d;->a:[I
+
+    const/4 v1, 0x5
+
+    const/4 v2, 0x1
+
+    :try_start_0
+    invoke-static {v1}, Lj$/time/format/F;->d(I)I
+
+    move-result v1
+
+    aput v2, v0, v1
+    :try_end_0
+    .catch Ljava/lang/NoSuchFieldError; {:try_start_0 .. :try_end_0} :catch_0
+
+    :catch_0
+    :try_start_1
+    sget-object v0, Lj$/time/format/d;->a:[I
+
+    const/4 v1, 0x2
+
+    invoke-static {v1}, Lj$/time/format/F;->d(I)I
+
+    move-result v3
+
+    aput v1, v0, v3
+    :try_end_1
+    .catch Ljava/lang/NoSuchFieldError; {:try_start_1 .. :try_end_1} :catch_1
+
+    :catch_1
+    :try_start_2
+    sget-object v0, Lj$/time/format/d;->a:[I
+
+    invoke-static {v2}, Lj$/time/format/F;->d(I)I
+
+    move-result v1
+
+    const/4 v2, 0x3
+
+    aput v2, v0, v1
+    :try_end_2
+    .catch Ljava/lang/NoSuchFieldError; {:try_start_2 .. :try_end_2} :catch_2
+
+    :catch_2
+    :try_start_3
+    sget-object v0, Lj$/time/format/d;->a:[I
+
+    const/4 v1, 0x4
+
+    invoke-static {v1}, Lj$/time/format/F;->d(I)I
+
+    move-result v2
+
+    aput v1, v0, v2
+    :try_end_3
+    .catch Ljava/lang/NoSuchFieldError; {:try_start_3 .. :try_end_3} :catch_3
+
+    :catch_3
     return-void
-.end method
-
-
-# virtual methods
-.method public compare(Ljava/lang/Object;Ljava/lang/Object;)I
-    .locals 0
-
-    check-cast p1, Ljava/util/Map$Entry;
-
-    check-cast p2, Ljava/util/Map$Entry;
-
-    invoke-interface {p2}, Ljava/util/Map$Entry;->getKey()Ljava/lang/Object;
-
-    move-result-object p2
-
-    check-cast p2, Ljava/lang/String;
-
-    invoke-virtual {p2}, Ljava/lang/String;->length()I
-
-    move-result p2
-
-    invoke-interface {p1}, Ljava/util/Map$Entry;->getKey()Ljava/lang/Object;
-
-    move-result-object p1
-
-    check-cast p1, Ljava/lang/String;
-
-    invoke-virtual {p1}, Ljava/lang/String;->length()I
-
-    move-result p1
-
-    sub-int/2addr p2, p1
-
-    return p2
 .end method

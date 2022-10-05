@@ -11,10 +11,6 @@
 .end annotation
 
 
-# static fields
-.field public static final synthetic $r8$clinit:I
-
-
 # virtual methods
 .method public abstract command(Lkotlinx/coroutines/flow/StateFlow;)Lkotlinx/coroutines/flow/Flow;
     .annotation system Ldalvik/annotation/Signature;

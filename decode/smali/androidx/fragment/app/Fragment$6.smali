@@ -47,6 +47,8 @@
 .method public apply(Ljava/lang/Object;)Ljava/lang/Object;
     .locals 2
 
+    check-cast p1, Ljava/lang/Void;
+
     iget-object p1, p0, Landroidx/fragment/app/Fragment$6;->this$0:Landroidx/fragment/app/Fragment;
 
     iget-object v0, p1, Landroidx/fragment/app/Fragment;->mHost:Landroidx/fragment/app/FragmentHostCallback;

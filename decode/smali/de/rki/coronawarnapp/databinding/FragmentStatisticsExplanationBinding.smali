@@ -14,15 +14,14 @@
 
 .field public final statisticsExplanationTrendText:Landroid/widget/TextView;
 
-.field public final statisticsFaqLink:Landroid/widget/TextView;
+.field public final statisticsFaq:Landroid/widget/TextView;
 
 
 # direct methods
-.method public constructor <init>(Ljava/lang/Object;Landroid/view/View;ILandroid/widget/TextView;Landroidx/constraintlayout/widget/Guideline;Landroidx/constraintlayout/widget/Guideline;Landroidx/constraintlayout/widget/Guideline;Landroid/widget/ImageView;Landroidx/constraintlayout/widget/ConstraintLayout;Lde/rki/coronawarnapp/databinding/IncludeButtonIconBinding;Landroid/widget/TextView;Landroid/view/View;Landroid/widget/TextView;Landroidx/constraintlayout/widget/ConstraintLayout;Landroid/widget/ImageView;Landroid/widget/TextView;Landroid/widget/ImageView;Landroid/widget/TextView;Landroid/widget/ImageView;Landroid/widget/TextView;Landroid/widget/TextView;Landroid/widget/TextView;Landroid/widget/TextView;)V
+.method public constructor <init>(Ljava/lang/Object;Landroid/view/View;ILandroid/widget/TextView;Landroidx/constraintlayout/widget/Guideline;Landroidx/constraintlayout/widget/Guideline;Landroidx/constraintlayout/widget/Guideline;Landroid/widget/ImageView;Landroidx/constraintlayout/widget/ConstraintLayout;Lde/rki/coronawarnapp/databinding/IncludeButtonIconBinding;Landroid/widget/TextView;Landroid/view/View;Landroid/widget/TextView;Landroidx/constraintlayout/widget/ConstraintLayout;Landroid/widget/ImageView;Landroid/widget/TextView;Landroid/widget/ImageView;Landroid/widget/TextView;Landroid/widget/ImageView;Landroid/widget/TextView;Landroid/widget/TextView;Landroid/widget/TextView;)V
     .locals 2
     .annotation system Ldalvik/annotation/MethodParameters;
         accessFlags = {
-            0x0,
             0x0,
             0x0,
             0x0,
@@ -68,8 +67,7 @@
             "statisticsExplanationTrendStableArrow",
             "statisticsExplanationTrendStableTitle",
             "statisticsExplanationTrendText",
-            "statisticsFaqLink",
-            "statisticsFaqText"
+            "statisticsFaq"
         }
     .end annotation
 
@@ -99,7 +97,7 @@
 
     move-object/from16 v1, p22
 
-    iput-object v1, v0, Lde/rki/coronawarnapp/databinding/FragmentStatisticsExplanationBinding;->statisticsFaqLink:Landroid/widget/TextView;
+    iput-object v1, v0, Lde/rki/coronawarnapp/databinding/FragmentStatisticsExplanationBinding;->statisticsFaq:Landroid/widget/TextView;
 
     return-void
 .end method
@@ -117,7 +115,7 @@
 
     sget-object v0, Landroidx/databinding/DataBindingUtil;->sMapper:Landroidx/databinding/DataBinderMapper;
 
-    const v0, 0x7f0d008d
+    const v0, 0x7f0d009b
 
     const/4 v1, 0x0
 

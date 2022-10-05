@@ -35,7 +35,7 @@
 
     move-result-object v0
 
-    const-string v1, "java.util.regex.Pattern.compile(this, flags)"
+    const-string v1, "compile(this, flags)"
 
     invoke-static {v0, v1}, Lkotlin/jvm/internal/Intrinsics;->checkNotNullExpressionValue(Ljava/lang/Object;Ljava/lang/String;)V
 
@@ -76,7 +76,7 @@
 .end method
 
 .method public extract(Ljava/lang/String;Lkotlin/coroutines/Continuation;)Ljava/lang/Object;
-    .locals 2
+    .locals 3
     .annotation system Ldalvik/annotation/Signature;
         value = {
             "(",
@@ -117,33 +117,33 @@
 
     invoke-virtual {p2, p1}, Ljava/util/regex/Pattern;->matcher(Ljava/lang/CharSequence;)Ljava/util/regex/Matcher;
 
-    move-result-object p1
+    move-result-object p2
 
-    invoke-virtual {p1}, Ljava/util/regex/Matcher;->matches()Z
+    invoke-virtual {p2}, Ljava/util/regex/Matcher;->matches()Z
 
-    move-result p2
+    move-result v2
 
-    if-eqz p2, :cond_0
+    if-eqz v2, :cond_0
 
-    const/4 p2, 0x1
+    const/4 v0, 0x1
 
-    invoke-virtual {p1, p2}, Ljava/util/regex/Matcher;->group(I)Ljava/lang/String;
+    invoke-virtual {p2, v0}, Ljava/util/regex/Matcher;->group(I)Ljava/lang/String;
 
-    move-result-object p1
+    move-result-object p2
 
-    const-string p2, "null cannot be cast to non-null type kotlin.String{ de.rki.coronawarnapp.coronatest.qrcode.CoronaTestQRCodeKt.CoronaTestGUID }"
+    const-string v0, "null cannot be cast to non-null type kotlin.String{ de.rki.coronawarnapp.coronatest.qrcode.CoronaTestQRCodeKt.CoronaTestGUID }"
 
-    invoke-static {p1, p2}, Ljava/util/Objects;->requireNonNull(Ljava/lang/Object;Ljava/lang/String;)Ljava/lang/Object;
+    invoke-static {p2, v0}, Ljava/util/Objects;->requireNonNull(Ljava/lang/Object;Ljava/lang/String;)Ljava/lang/Object;
 
-    sput-object p1, Lde/rki/coronawarnapp/bugreporting/censors/submission/PcrQrCodeCensor;->lastGUID:Ljava/lang/String;
+    sput-object p2, Lde/rki/coronawarnapp/bugreporting/censors/submission/PcrQrCodeCensor;->lastGUID:Ljava/lang/String;
 
-    new-instance p2, Lde/rki/coronawarnapp/coronatest/qrcode/CoronaTestQRCode$PCR;
+    new-instance v0, Lde/rki/coronawarnapp/coronatest/qrcode/CoronaTestQRCode$PCR;
 
-    const/4 v0, 0x0
+    const/4 v2, 0x0
 
-    invoke-direct {p2, p1, v0, v1}, Lde/rki/coronawarnapp/coronatest/qrcode/CoronaTestQRCode$PCR;-><init>(Ljava/lang/String;ZLorg/joda/time/LocalDate;)V
+    invoke-direct {v0, p2, v2, v1, p1}, Lde/rki/coronawarnapp/coronatest/qrcode/CoronaTestQRCode$PCR;-><init>(Ljava/lang/String;ZLorg/joda/time/LocalDate;Ljava/lang/String;)V
 
-    return-object p2
+    return-object v0
 
     :cond_0
     new-instance p1, Lde/rki/coronawarnapp/coronatest/qrcode/InvalidQRCodeException;

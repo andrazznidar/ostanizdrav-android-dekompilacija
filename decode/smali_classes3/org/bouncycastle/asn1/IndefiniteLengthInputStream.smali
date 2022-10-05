@@ -1,15 +1,15 @@
-.class public Lorg/bouncycastle/asn1/IndefiniteLengthInputStream;
+.class Lorg/bouncycastle/asn1/IndefiniteLengthInputStream;
 .super Lorg/bouncycastle/asn1/LimitedInputStream;
 
 
 # instance fields
-.field public _b1:I
+.field private _b1:I
 
-.field public _b2:I
+.field private _b2:I
 
-.field public _eofOn00:Z
+.field private _eofOn00:Z
 
-.field public _eofReached:Z
+.field private _eofReached:Z
 
 
 # direct methods
@@ -45,7 +45,7 @@
 
     if-ltz p1, :cond_0
 
-    invoke-virtual {p0}, Lorg/bouncycastle/asn1/IndefiniteLengthInputStream;->checkForEof()Z
+    invoke-direct {p0}, Lorg/bouncycastle/asn1/IndefiniteLengthInputStream;->checkForEof()Z
 
     return-void
 
@@ -57,9 +57,7 @@
     throw p1
 .end method
 
-
-# virtual methods
-.method public final checkForEof()Z
+.method private checkForEof()Z
     .locals 1
 
     iget-boolean v0, p0, Lorg/bouncycastle/asn1/IndefiniteLengthInputStream;->_eofReached:Z
@@ -90,6 +88,8 @@
     return v0
 .end method
 
+
+# virtual methods
 .method public read()I
     .locals 3
     .annotation system Ldalvik/annotation/Throws;
@@ -98,7 +98,7 @@
         }
     .end annotation
 
-    invoke-virtual {p0}, Lorg/bouncycastle/asn1/IndefiniteLengthInputStream;->checkForEof()Z
+    invoke-direct {p0}, Lorg/bouncycastle/asn1/IndefiniteLengthInputStream;->checkForEof()Z
 
     move-result v0
 
@@ -232,4 +232,14 @@
     move-result p1
 
     return p1
+.end method
+
+.method public setEofOn00(Z)V
+    .locals 0
+
+    iput-boolean p1, p0, Lorg/bouncycastle/asn1/IndefiniteLengthInputStream;->_eofOn00:Z
+
+    invoke-direct {p0}, Lorg/bouncycastle/asn1/IndefiniteLengthInputStream;->checkForEof()Z
+
+    return-void
 .end method

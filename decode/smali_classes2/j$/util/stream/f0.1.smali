@@ -1,57 +1,47 @@
-.class final Lj$/util/stream/f0;
-.super Lj$/util/stream/i0;
+.class Lj$/util/stream/f0;
+.super Lj$/util/stream/r0;
 
-# interfaces
-.implements Lj$/util/stream/l3;
+
+# instance fields
+.field public final synthetic u:I
 
 
 # direct methods
-.method constructor <init>()V
+.method public synthetic constructor <init>(Lj$/util/stream/c;Lj$/util/stream/c;III)V
     .locals 0
 
-    invoke-direct {p0}, Lj$/util/stream/i0;-><init>()V
+    iput p5, p0, Lj$/util/stream/f0;->u:I
+
+    invoke-direct {p0, p2, p3, p4}, Lj$/util/stream/r0;-><init>(Lj$/util/stream/c;II)V
 
     return-void
 .end method
 
 
 # virtual methods
-.method public d(I)V
-    .locals 0
-
-    invoke-static {p1}, Ljava/lang/Integer;->valueOf(I)Ljava/lang/Integer;
-
-    move-result-object p1
-
-    invoke-virtual {p0, p1}, Lj$/util/stream/i0;->i(Ljava/lang/Object;)V
-
-    return-void
-.end method
-
-.method public get()Ljava/lang/Object;
+.method f1(ILj$/util/stream/q2;)Lj$/util/stream/q2;
     .locals 1
 
-    iget-boolean v0, p0, Lj$/util/stream/i0;->a:Z
+    iget p1, p0, Lj$/util/stream/f0;->u:I
 
-    if-eqz v0, :cond_0
-
-    iget-object v0, p0, Lj$/util/stream/i0;->b:Ljava/lang/Object;
-
-    check-cast v0, Ljava/lang/Integer;
-
-    invoke-virtual {v0}, Ljava/lang/Integer;->intValue()I
-
-    move-result v0
-
-    invoke-static {v0}, Lj$/util/j;->d(I)Lj$/util/j;
-
-    move-result-object v0
+    packed-switch p1, :pswitch_data_0
 
     goto :goto_0
 
-    :cond_0
+    :pswitch_0
+    new-instance p1, Lj$/util/stream/e0;
+
     const/4 v0, 0x0
 
+    invoke-direct {p1, p0, p2, v0}, Lj$/util/stream/e0;-><init>(Lj$/util/stream/c;Lj$/util/stream/q2;I)V
+
+    return-object p1
+
     :goto_0
-    return-object v0
+    return-object p2
+
+    :pswitch_data_0
+    .packed-switch 0x0
+        :pswitch_0
+    .end packed-switch
 .end method

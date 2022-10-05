@@ -99,7 +99,7 @@
     goto :goto_0
 
     :cond_0
-    invoke-static {v2, v0}, Lkotlinx/coroutines/YieldKt;->handleCoroutineException(Lkotlin/coroutines/CoroutineContext;Ljava/lang/Throwable;)V
+    invoke-static {v2, v0}, Lkotlinx/coroutines/CoroutineExceptionHandlerKt;->handleCoroutineException(Lkotlin/coroutines/CoroutineContext;Ljava/lang/Throwable;)V
 
     :goto_0
     return-void

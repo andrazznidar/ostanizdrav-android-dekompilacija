@@ -1,5 +1,6 @@
 .class public final synthetic Lorg/conscrypt/OpenSSLProvider$$ExternalSyntheticOutline1;
 .super Ljava/lang/Object;
+.source "R8$$SyntheticClass"
 
 
 # direct methods

@@ -64,21 +64,9 @@
 
     add-int/2addr p3, p2
 
-    const-string p4, "$this$copyOfRangeImpl"
-
-    invoke-static {p1, p4}, Lkotlin/jvm/internal/Intrinsics;->checkNotNullParameter(Ljava/lang/Object;Ljava/lang/String;)V
-
-    array-length p4, p1
-
-    invoke-static {p3, p4}, Lkotlin/collections/ArraysKt__ArraysKt;->copyOfRangeToIndexCheck(II)V
-
-    invoke-static {p1, p2, p3}, Ljava/util/Arrays;->copyOfRange([BII)[B
+    invoke-static {p1, p2, p3}, Lkotlin/collections/ArraysKt___ArraysJvmKt;->copyOfRange([BII)[B
 
     move-result-object p1
-
-    const-string p2, "java.util.Arrays.copyOfR\u2026this, fromIndex, toIndex)"
-
-    invoke-static {p1, p2}, Lkotlin/jvm/internal/Intrinsics;->checkNotNullExpressionValue(Ljava/lang/Object;Ljava/lang/String;)V
 
     invoke-direct {p0, p1}, Lokio/ByteString;-><init>([B)V
 
@@ -99,10 +87,6 @@
     invoke-static {v0, v1}, Lkotlin/jvm/internal/Intrinsics;->checkNotNullParameter(Ljava/lang/Object;Ljava/lang/String;)V
 
     sget-object v1, Lokio/-Base64;->BASE64:[B
-
-    const-string v1, "$this$decodeBase64ToArray"
-
-    invoke-static {v0, v1}, Lkotlin/jvm/internal/Intrinsics;->checkNotNullParameter(Ljava/lang/Object;Ljava/lang/String;)V
 
     invoke-virtual/range {p1 .. p1}, Ljava/lang/String;->length()I
 
@@ -489,6 +473,34 @@
     invoke-direct {v0, p1}, Ljava/lang/IllegalArgumentException;-><init>(Ljava/lang/String;)V
 
     throw v0
+.end method
+
+.method public final encodeString(Ljava/lang/String;Ljava/nio/charset/Charset;)Lokio/ByteString;
+    .locals 1
+    .annotation runtime Lkotlin/jvm/JvmStatic;
+    .end annotation
+
+    const-string v0, "$this$encode"
+
+    invoke-static {p1, v0}, Lkotlin/jvm/internal/Intrinsics;->checkNotNullParameter(Ljava/lang/Object;Ljava/lang/String;)V
+
+    const-string v0, "charset"
+
+    invoke-static {p2, v0}, Lkotlin/jvm/internal/Intrinsics;->checkNotNullParameter(Ljava/lang/Object;Ljava/lang/String;)V
+
+    new-instance v0, Lokio/ByteString;
+
+    invoke-virtual {p1, p2}, Ljava/lang/String;->getBytes(Ljava/nio/charset/Charset;)[B
+
+    move-result-object p1
+
+    const-string p2, "(this as java.lang.String).getBytes(charset)"
+
+    invoke-static {p1, p2}, Lkotlin/jvm/internal/Intrinsics;->checkNotNullExpressionValue(Ljava/lang/Object;Ljava/lang/String;)V
+
+    invoke-direct {v0, p1}, Lokio/ByteString;-><init>([B)V
+
+    return-object v0
 .end method
 
 .method public final encodeUtf8(Ljava/lang/String;)Lokio/ByteString;

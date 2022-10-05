@@ -1,154 +1,107 @@
-.class Lj$/util/stream/I2;
-.super Ljava/lang/Object;
-
-# interfaces
-.implements Lj$/util/stream/T2;
-
-
-# instance fields
-.field private a:Z
-
-.field private b:Ljava/lang/Object;
-
-.field final synthetic c:Lj$/util/function/b;
+.class final Lj$/util/stream/I2;
+.super Lj$/util/stream/E;
 
 
 # direct methods
-.method constructor <init>(Lj$/util/function/b;)V
-    .locals 0
+.method constructor <init>(Lj$/util/stream/c;)V
+    .locals 2
 
-    iput-object p1, p0, Lj$/util/stream/I2;->c:Lj$/util/function/b;
+    sget v0, Lj$/util/stream/e3;->q:I
 
-    invoke-direct {p0}, Ljava/lang/Object;-><init>()V
+    sget v1, Lj$/util/stream/e3;->o:I
+
+    or-int/2addr v0, v1
+
+    const/4 v1, 0x4
+
+    invoke-direct {p0, p1, v1, v0}, Lj$/util/stream/E;-><init>(Lj$/util/stream/c;II)V
 
     return-void
 .end method
 
 
 # virtual methods
-.method public synthetic c(D)V
-    .locals 0
-
-    invoke-static {p0}, Lj$/util/stream/p1;->f(Lj$/util/stream/n3;)V
-
-    const/4 p1, 0x0
-
-    throw p1
-.end method
-
-.method public synthetic d(I)V
-    .locals 0
-
-    invoke-static {p0}, Lj$/util/stream/p1;->d(Lj$/util/stream/n3;)V
-
-    const/4 p1, 0x0
-
-    throw p1
-.end method
-
-.method public synthetic e(J)V
-    .locals 0
-
-    invoke-static {p0}, Lj$/util/stream/p1;->e(Lj$/util/stream/n3;)V
-
-    const/4 p1, 0x0
-
-    throw p1
-.end method
-
-.method public get()Ljava/lang/Object;
-    .locals 1
-
-    iget-boolean v0, p0, Lj$/util/stream/I2;->a:Z
-
-    if-eqz v0, :cond_0
-
-    invoke-static {}, Lj$/util/Optional;->a()Lj$/util/Optional;
-
-    move-result-object v0
-
-    goto :goto_0
-
-    :cond_0
-    iget-object v0, p0, Lj$/util/stream/I2;->b:Ljava/lang/Object;
-
-    invoke-static {v0}, Lj$/util/Optional;->d(Ljava/lang/Object;)Lj$/util/Optional;
-
-    move-result-object v0
-
-    :goto_0
-    return-object v0
-.end method
-
-.method public i(Ljava/lang/Object;)V
+.method public c1(Lj$/util/stream/D0;Lj$/util/Spliterator;Lj$/util/function/p;)Lj$/util/stream/P0;
     .locals 2
 
-    iget-boolean v0, p0, Lj$/util/stream/I2;->a:Z
+    sget-object v0, Lj$/util/stream/e3;->SORTED:Lj$/util/stream/e3;
+
+    invoke-virtual {p1}, Lj$/util/stream/D0;->B0()I
+
+    move-result v1
+
+    invoke-virtual {v0, v1}, Lj$/util/stream/e3;->d(I)Z
+
+    move-result v0
 
     if-eqz v0, :cond_0
 
     const/4 v0, 0x0
 
-    iput-boolean v0, p0, Lj$/util/stream/I2;->a:Z
-
-    goto :goto_0
-
-    :cond_0
-    iget-object v0, p0, Lj$/util/stream/I2;->c:Lj$/util/function/b;
-
-    iget-object v1, p0, Lj$/util/stream/I2;->b:Ljava/lang/Object;
-
-    invoke-interface {v0, v1, p1}, Lj$/util/function/BiFunction;->apply(Ljava/lang/Object;Ljava/lang/Object;)Ljava/lang/Object;
+    invoke-virtual {p1, p2, v0, p3}, Lj$/util/stream/D0;->t0(Lj$/util/Spliterator;ZLj$/util/function/p;)Lj$/util/stream/P0;
 
     move-result-object p1
 
-    :goto_0
-    iput-object p1, p0, Lj$/util/stream/I2;->b:Ljava/lang/Object;
-
-    return-void
-.end method
-
-.method public n(Lj$/util/stream/T2;)V
-    .locals 1
-
-    check-cast p1, Lj$/util/stream/I2;
-
-    iget-boolean v0, p1, Lj$/util/stream/I2;->a:Z
-
-    if-nez v0, :cond_0
-
-    iget-object p1, p1, Lj$/util/stream/I2;->b:Ljava/lang/Object;
-
-    invoke-virtual {p0, p1}, Lj$/util/stream/I2;->i(Ljava/lang/Object;)V
+    return-object p1
 
     :cond_0
-    return-void
+    const/4 v0, 0x1
+
+    invoke-virtual {p1, p2, v0, p3}, Lj$/util/stream/D0;->t0(Lj$/util/Spliterator;ZLj$/util/function/p;)Lj$/util/stream/P0;
+
+    move-result-object p1
+
+    check-cast p1, Lj$/util/stream/J0;
+
+    invoke-interface {p1}, Lj$/util/stream/O0;->k()Ljava/lang/Object;
+
+    move-result-object p1
+
+    check-cast p1, [D
+
+    invoke-static {p1}, Ljava/util/Arrays;->sort([D)V
+
+    new-instance p2, Lj$/util/stream/b1;
+
+    invoke-direct {p2, p1}, Lj$/util/stream/b1;-><init>([D)V
+
+    return-object p2
 .end method
 
-.method public synthetic w()V
-    .locals 0
-
-    return-void
-.end method
-
-.method public x(J)V
-    .locals 0
-
-    const/4 p1, 0x1
-
-    iput-boolean p1, p0, Lj$/util/stream/I2;->a:Z
-
-    const/4 p1, 0x0
-
-    iput-object p1, p0, Lj$/util/stream/I2;->b:Ljava/lang/Object;
-
-    return-void
-.end method
-
-.method public synthetic z()Z
+.method public f1(ILj$/util/stream/q2;)Lj$/util/stream/q2;
     .locals 1
 
-    const/4 v0, 0x0
+    invoke-static {p2}, Ljava/util/Objects;->requireNonNull(Ljava/lang/Object;)Ljava/lang/Object;
 
-    return v0
+    sget-object v0, Lj$/util/stream/e3;->SORTED:Lj$/util/stream/e3;
+
+    invoke-virtual {v0, p1}, Lj$/util/stream/e3;->d(I)Z
+
+    move-result v0
+
+    if-eqz v0, :cond_0
+
+    return-object p2
+
+    :cond_0
+    sget-object v0, Lj$/util/stream/e3;->SIZED:Lj$/util/stream/e3;
+
+    invoke-virtual {v0, p1}, Lj$/util/stream/e3;->d(I)Z
+
+    move-result p1
+
+    if-eqz p1, :cond_1
+
+    new-instance p1, Lj$/util/stream/N2;
+
+    invoke-direct {p1, p2}, Lj$/util/stream/N2;-><init>(Lj$/util/stream/q2;)V
+
+    return-object p1
+
+    :cond_1
+    new-instance p1, Lj$/util/stream/F2;
+
+    invoke-direct {p1, p2}, Lj$/util/stream/F2;-><init>(Lj$/util/stream/q2;)V
+
+    return-object p1
 .end method

@@ -146,7 +146,7 @@
     return-void
 
     :cond_1
-    new-instance v0, Lkotlin/NoWhenBranchMatchedException;
+    new-instance v0, Lcom/airbnb/lottie/parser/moshi/JsonDataException;
 
     const-string v1, "Expected BEGIN_ARRAY but was "
 
@@ -154,11 +154,15 @@
 
     move-result-object v1
 
-    invoke-virtual {p0}, Lcom/airbnb/lottie/parser/moshi/JsonUtf8Reader;->peek()Lcom/airbnb/lottie/parser/moshi/JsonReader$Token;
+    invoke-virtual {p0}, Lcom/airbnb/lottie/parser/moshi/JsonUtf8Reader;->peek$enumunboxing$()I
+
+    move-result v2
+
+    invoke-static {v2}, Lcom/airbnb/lottie/parser/moshi/JsonReader$Token$EnumUnboxingLocalUtility;->stringValueOf(I)Ljava/lang/String;
 
     move-result-object v2
 
-    invoke-virtual {v1, v2}, Ljava/lang/StringBuilder;->append(Ljava/lang/Object;)Ljava/lang/StringBuilder;
+    invoke-virtual {v1, v2}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
 
     const-string v2, " at path "
 
@@ -174,7 +178,7 @@
 
     move-result-object v1
 
-    invoke-direct {v0, v1}, Lkotlin/NoWhenBranchMatchedException;-><init>(Ljava/lang/String;)V
+    invoke-direct {v0, v1}, Lcom/airbnb/lottie/parser/moshi/JsonDataException;-><init>(Ljava/lang/String;)V
 
     throw v0
 .end method
@@ -211,7 +215,7 @@
     return-void
 
     :cond_1
-    new-instance v0, Lkotlin/NoWhenBranchMatchedException;
+    new-instance v0, Lcom/airbnb/lottie/parser/moshi/JsonDataException;
 
     const-string v1, "Expected BEGIN_OBJECT but was "
 
@@ -219,11 +223,15 @@
 
     move-result-object v1
 
-    invoke-virtual {p0}, Lcom/airbnb/lottie/parser/moshi/JsonUtf8Reader;->peek()Lcom/airbnb/lottie/parser/moshi/JsonReader$Token;
+    invoke-virtual {p0}, Lcom/airbnb/lottie/parser/moshi/JsonUtf8Reader;->peek$enumunboxing$()I
+
+    move-result v2
+
+    invoke-static {v2}, Lcom/airbnb/lottie/parser/moshi/JsonReader$Token$EnumUnboxingLocalUtility;->stringValueOf(I)Ljava/lang/String;
 
     move-result-object v2
 
-    invoke-virtual {v1, v2}, Ljava/lang/StringBuilder;->append(Ljava/lang/Object;)Ljava/lang/StringBuilder;
+    invoke-virtual {v1, v2}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
 
     const-string v2, " at path "
 
@@ -239,7 +247,7 @@
 
     move-result-object v1
 
-    invoke-direct {v0, v1}, Lkotlin/NoWhenBranchMatchedException;-><init>(Ljava/lang/String;)V
+    invoke-direct {v0, v1}, Lcom/airbnb/lottie/parser/moshi/JsonDataException;-><init>(Ljava/lang/String;)V
 
     throw v0
 .end method
@@ -1262,7 +1270,7 @@
     return-void
 
     :cond_1
-    new-instance v0, Lkotlin/NoWhenBranchMatchedException;
+    new-instance v0, Lcom/airbnb/lottie/parser/moshi/JsonDataException;
 
     const-string v1, "Expected END_ARRAY but was "
 
@@ -1270,11 +1278,15 @@
 
     move-result-object v1
 
-    invoke-virtual {p0}, Lcom/airbnb/lottie/parser/moshi/JsonUtf8Reader;->peek()Lcom/airbnb/lottie/parser/moshi/JsonReader$Token;
+    invoke-virtual {p0}, Lcom/airbnb/lottie/parser/moshi/JsonUtf8Reader;->peek$enumunboxing$()I
+
+    move-result v2
+
+    invoke-static {v2}, Lcom/airbnb/lottie/parser/moshi/JsonReader$Token$EnumUnboxingLocalUtility;->stringValueOf(I)Ljava/lang/String;
 
     move-result-object v2
 
-    invoke-virtual {v1, v2}, Ljava/lang/StringBuilder;->append(Ljava/lang/Object;)Ljava/lang/StringBuilder;
+    invoke-virtual {v1, v2}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
 
     const-string v2, " at path "
 
@@ -1290,7 +1302,7 @@
 
     move-result-object v1
 
-    invoke-direct {v0, v1}, Lkotlin/NoWhenBranchMatchedException;-><init>(Ljava/lang/String;)V
+    invoke-direct {v0, v1}, Lcom/airbnb/lottie/parser/moshi/JsonDataException;-><init>(Ljava/lang/String;)V
 
     throw v0
 .end method
@@ -1345,7 +1357,7 @@
     return-void
 
     :cond_1
-    new-instance v0, Lkotlin/NoWhenBranchMatchedException;
+    new-instance v0, Lcom/airbnb/lottie/parser/moshi/JsonDataException;
 
     const-string v1, "Expected END_OBJECT but was "
 
@@ -1353,11 +1365,15 @@
 
     move-result-object v1
 
-    invoke-virtual {p0}, Lcom/airbnb/lottie/parser/moshi/JsonUtf8Reader;->peek()Lcom/airbnb/lottie/parser/moshi/JsonReader$Token;
+    invoke-virtual {p0}, Lcom/airbnb/lottie/parser/moshi/JsonUtf8Reader;->peek$enumunboxing$()I
+
+    move-result v2
+
+    invoke-static {v2}, Lcom/airbnb/lottie/parser/moshi/JsonReader$Token$EnumUnboxingLocalUtility;->stringValueOf(I)Ljava/lang/String;
 
     move-result-object v2
 
-    invoke-virtual {v1, v2}, Ljava/lang/StringBuilder;->append(Ljava/lang/Object;)Ljava/lang/StringBuilder;
+    invoke-virtual {v1, v2}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
 
     const-string v2, " at path "
 
@@ -1373,7 +1389,7 @@
 
     move-result-object v1
 
-    invoke-direct {v0, v1}, Lkotlin/NoWhenBranchMatchedException;-><init>(Ljava/lang/String;)V
+    invoke-direct {v0, v1}, Lcom/airbnb/lottie/parser/moshi/JsonDataException;-><init>(Ljava/lang/String;)V
 
     throw v0
 .end method
@@ -1616,7 +1632,7 @@
     return v2
 
     :cond_2
-    new-instance v0, Lkotlin/NoWhenBranchMatchedException;
+    new-instance v0, Lcom/airbnb/lottie/parser/moshi/JsonDataException;
 
     const-string v1, "Expected a boolean but was "
 
@@ -1624,11 +1640,15 @@
 
     move-result-object v1
 
-    invoke-virtual {p0}, Lcom/airbnb/lottie/parser/moshi/JsonUtf8Reader;->peek()Lcom/airbnb/lottie/parser/moshi/JsonReader$Token;
+    invoke-virtual {p0}, Lcom/airbnb/lottie/parser/moshi/JsonUtf8Reader;->peek$enumunboxing$()I
+
+    move-result v2
+
+    invoke-static {v2}, Lcom/airbnb/lottie/parser/moshi/JsonReader$Token$EnumUnboxingLocalUtility;->stringValueOf(I)Ljava/lang/String;
 
     move-result-object v2
 
-    invoke-virtual {v1, v2}, Ljava/lang/StringBuilder;->append(Ljava/lang/Object;)Ljava/lang/StringBuilder;
+    invoke-virtual {v1, v2}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
 
     const-string v2, " at path "
 
@@ -1644,7 +1664,7 @@
 
     move-result-object v1
 
-    invoke-direct {v0, v1}, Lkotlin/NoWhenBranchMatchedException;-><init>(Ljava/lang/String;)V
+    invoke-direct {v0, v1}, Lcom/airbnb/lottie/parser/moshi/JsonDataException;-><init>(Ljava/lang/String;)V
 
     throw v0
 .end method
@@ -1837,7 +1857,7 @@
     throw v2
 
     :catch_0
-    new-instance v0, Lkotlin/NoWhenBranchMatchedException;
+    new-instance v0, Lcom/airbnb/lottie/parser/moshi/JsonDataException;
 
     invoke-static {v3}, Landroid/support/v4/media/RatingCompat$$ExternalSyntheticOutline0;->m(Ljava/lang/String;)Ljava/lang/StringBuilder;
 
@@ -1859,22 +1879,26 @@
 
     move-result-object v1
 
-    invoke-direct {v0, v1}, Lkotlin/NoWhenBranchMatchedException;-><init>(Ljava/lang/String;)V
+    invoke-direct {v0, v1}, Lcom/airbnb/lottie/parser/moshi/JsonDataException;-><init>(Ljava/lang/String;)V
 
     throw v0
 
     :cond_7
-    new-instance v0, Lkotlin/NoWhenBranchMatchedException;
+    new-instance v0, Lcom/airbnb/lottie/parser/moshi/JsonDataException;
 
     invoke-static {v3}, Landroid/support/v4/media/RatingCompat$$ExternalSyntheticOutline0;->m(Ljava/lang/String;)Ljava/lang/StringBuilder;
 
     move-result-object v1
 
-    invoke-virtual {p0}, Lcom/airbnb/lottie/parser/moshi/JsonUtf8Reader;->peek()Lcom/airbnb/lottie/parser/moshi/JsonReader$Token;
+    invoke-virtual {p0}, Lcom/airbnb/lottie/parser/moshi/JsonUtf8Reader;->peek$enumunboxing$()I
+
+    move-result v2
+
+    invoke-static {v2}, Lcom/airbnb/lottie/parser/moshi/JsonReader$Token$EnumUnboxingLocalUtility;->stringValueOf(I)Ljava/lang/String;
 
     move-result-object v2
 
-    invoke-virtual {v1, v2}, Ljava/lang/StringBuilder;->append(Ljava/lang/Object;)Ljava/lang/StringBuilder;
+    invoke-virtual {v1, v2}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
 
     invoke-virtual {v1, v5}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
 
@@ -1888,7 +1912,7 @@
 
     move-result-object v1
 
-    invoke-direct {v0, v1}, Lkotlin/NoWhenBranchMatchedException;-><init>(Ljava/lang/String;)V
+    invoke-direct {v0, v1}, Lcom/airbnb/lottie/parser/moshi/JsonDataException;-><init>(Ljava/lang/String;)V
 
     throw v0
 .end method
@@ -1947,7 +1971,7 @@
     return v5
 
     :cond_1
-    new-instance v0, Lkotlin/NoWhenBranchMatchedException;
+    new-instance v0, Lcom/airbnb/lottie/parser/moshi/JsonDataException;
 
     invoke-static {v4}, Landroid/support/v4/media/RatingCompat$$ExternalSyntheticOutline0;->m(Ljava/lang/String;)Ljava/lang/StringBuilder;
 
@@ -1969,7 +1993,7 @@
 
     move-result-object v1
 
-    invoke-direct {v0, v1}, Lkotlin/NoWhenBranchMatchedException;-><init>(Ljava/lang/String;)V
+    invoke-direct {v0, v1}, Lcom/airbnb/lottie/parser/moshi/JsonDataException;-><init>(Ljava/lang/String;)V
 
     throw v0
 
@@ -2011,17 +2035,21 @@
     goto :goto_2
 
     :cond_5
-    new-instance v0, Lkotlin/NoWhenBranchMatchedException;
+    new-instance v0, Lcom/airbnb/lottie/parser/moshi/JsonDataException;
 
     invoke-static {v4}, Landroid/support/v4/media/RatingCompat$$ExternalSyntheticOutline0;->m(Ljava/lang/String;)Ljava/lang/StringBuilder;
 
     move-result-object v1
 
-    invoke-virtual {p0}, Lcom/airbnb/lottie/parser/moshi/JsonUtf8Reader;->peek()Lcom/airbnb/lottie/parser/moshi/JsonReader$Token;
+    invoke-virtual {p0}, Lcom/airbnb/lottie/parser/moshi/JsonUtf8Reader;->peek$enumunboxing$()I
+
+    move-result v2
+
+    invoke-static {v2}, Lcom/airbnb/lottie/parser/moshi/JsonReader$Token$EnumUnboxingLocalUtility;->stringValueOf(I)Ljava/lang/String;
 
     move-result-object v2
 
-    invoke-virtual {v1, v2}, Ljava/lang/StringBuilder;->append(Ljava/lang/Object;)Ljava/lang/StringBuilder;
+    invoke-virtual {v1, v2}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
 
     invoke-virtual {v1, v3}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
 
@@ -2035,7 +2063,7 @@
 
     move-result-object v1
 
-    invoke-direct {v0, v1}, Lkotlin/NoWhenBranchMatchedException;-><init>(Ljava/lang/String;)V
+    invoke-direct {v0, v1}, Lcom/airbnb/lottie/parser/moshi/JsonDataException;-><init>(Ljava/lang/String;)V
 
     throw v0
 
@@ -2126,7 +2154,7 @@
     return v5
 
     :cond_8
-    new-instance v0, Lkotlin/NoWhenBranchMatchedException;
+    new-instance v0, Lcom/airbnb/lottie/parser/moshi/JsonDataException;
 
     invoke-static {v4}, Landroid/support/v4/media/RatingCompat$$ExternalSyntheticOutline0;->m(Ljava/lang/String;)Ljava/lang/StringBuilder;
 
@@ -2148,12 +2176,12 @@
 
     move-result-object v1
 
-    invoke-direct {v0, v1}, Lkotlin/NoWhenBranchMatchedException;-><init>(Ljava/lang/String;)V
+    invoke-direct {v0, v1}, Lcom/airbnb/lottie/parser/moshi/JsonDataException;-><init>(Ljava/lang/String;)V
 
     throw v0
 
     :catch_1
-    new-instance v0, Lkotlin/NoWhenBranchMatchedException;
+    new-instance v0, Lcom/airbnb/lottie/parser/moshi/JsonDataException;
 
     invoke-static {v4}, Landroid/support/v4/media/RatingCompat$$ExternalSyntheticOutline0;->m(Ljava/lang/String;)Ljava/lang/StringBuilder;
 
@@ -2175,7 +2203,7 @@
 
     move-result-object v1
 
-    invoke-direct {v0, v1}, Lkotlin/NoWhenBranchMatchedException;-><init>(Ljava/lang/String;)V
+    invoke-direct {v0, v1}, Lcom/airbnb/lottie/parser/moshi/JsonDataException;-><init>(Ljava/lang/String;)V
 
     throw v0
 .end method
@@ -2256,7 +2284,7 @@
     return-object v0
 
     :cond_4
-    new-instance v0, Lkotlin/NoWhenBranchMatchedException;
+    new-instance v0, Lcom/airbnb/lottie/parser/moshi/JsonDataException;
 
     const-string v1, "Expected a name but was "
 
@@ -2264,11 +2292,15 @@
 
     move-result-object v1
 
-    invoke-virtual {p0}, Lcom/airbnb/lottie/parser/moshi/JsonUtf8Reader;->peek()Lcom/airbnb/lottie/parser/moshi/JsonReader$Token;
+    invoke-virtual {p0}, Lcom/airbnb/lottie/parser/moshi/JsonUtf8Reader;->peek$enumunboxing$()I
+
+    move-result v2
+
+    invoke-static {v2}, Lcom/airbnb/lottie/parser/moshi/JsonReader$Token$EnumUnboxingLocalUtility;->stringValueOf(I)Ljava/lang/String;
 
     move-result-object v2
 
-    invoke-virtual {v1, v2}, Ljava/lang/StringBuilder;->append(Ljava/lang/Object;)Ljava/lang/StringBuilder;
+    invoke-virtual {v1, v2}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
 
     const-string v2, " at path "
 
@@ -2284,7 +2316,7 @@
 
     move-result-object v1
 
-    invoke-direct {v0, v1}, Lkotlin/NoWhenBranchMatchedException;-><init>(Ljava/lang/String;)V
+    invoke-direct {v0, v1}, Lcom/airbnb/lottie/parser/moshi/JsonDataException;-><init>(Ljava/lang/String;)V
 
     throw v0
 .end method
@@ -2623,7 +2655,7 @@
     return-object v0
 
     :cond_6
-    new-instance v0, Lkotlin/NoWhenBranchMatchedException;
+    new-instance v0, Lcom/airbnb/lottie/parser/moshi/JsonDataException;
 
     const-string v1, "Expected a string but was "
 
@@ -2631,11 +2663,15 @@
 
     move-result-object v1
 
-    invoke-virtual {p0}, Lcom/airbnb/lottie/parser/moshi/JsonUtf8Reader;->peek()Lcom/airbnb/lottie/parser/moshi/JsonReader$Token;
+    invoke-virtual {p0}, Lcom/airbnb/lottie/parser/moshi/JsonUtf8Reader;->peek$enumunboxing$()I
+
+    move-result v2
+
+    invoke-static {v2}, Lcom/airbnb/lottie/parser/moshi/JsonReader$Token$EnumUnboxingLocalUtility;->stringValueOf(I)Ljava/lang/String;
 
     move-result-object v2
 
-    invoke-virtual {v1, v2}, Ljava/lang/StringBuilder;->append(Ljava/lang/Object;)Ljava/lang/StringBuilder;
+    invoke-virtual {v1, v2}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
 
     const-string v2, " at path "
 
@@ -2651,7 +2687,7 @@
 
     move-result-object v1
 
-    invoke-direct {v0, v1}, Lkotlin/NoWhenBranchMatchedException;-><init>(Ljava/lang/String;)V
+    invoke-direct {v0, v1}, Lcom/airbnb/lottie/parser/moshi/JsonDataException;-><init>(Ljava/lang/String;)V
 
     throw v0
 .end method
@@ -2697,7 +2733,7 @@
     return-object v0
 .end method
 
-.method public peek()Lcom/airbnb/lottie/parser/moshi/JsonReader$Token;
+.method public peek$enumunboxing$()I
     .locals 1
     .annotation system Ldalvik/annotation/Throws;
         value = {
@@ -2723,56 +2759,54 @@
     throw v0
 
     :pswitch_0
-    sget-object v0, Lcom/airbnb/lottie/parser/moshi/JsonReader$Token;->END_DOCUMENT:Lcom/airbnb/lottie/parser/moshi/JsonReader$Token;
+    const/16 v0, 0xa
 
-    return-object v0
+    return v0
 
     :pswitch_1
-    sget-object v0, Lcom/airbnb/lottie/parser/moshi/JsonReader$Token;->NUMBER:Lcom/airbnb/lottie/parser/moshi/JsonReader$Token;
+    const/4 v0, 0x7
 
-    return-object v0
+    return v0
 
     :pswitch_2
-    sget-object v0, Lcom/airbnb/lottie/parser/moshi/JsonReader$Token;->NAME:Lcom/airbnb/lottie/parser/moshi/JsonReader$Token;
+    const/4 v0, 0x5
 
-    return-object v0
+    return v0
 
     :pswitch_3
-    sget-object v0, Lcom/airbnb/lottie/parser/moshi/JsonReader$Token;->STRING:Lcom/airbnb/lottie/parser/moshi/JsonReader$Token;
+    const/4 v0, 0x6
 
-    return-object v0
+    return v0
 
     :pswitch_4
-    sget-object v0, Lcom/airbnb/lottie/parser/moshi/JsonReader$Token;->NULL:Lcom/airbnb/lottie/parser/moshi/JsonReader$Token;
+    const/16 v0, 0x9
 
-    return-object v0
+    return v0
 
     :pswitch_5
-    sget-object v0, Lcom/airbnb/lottie/parser/moshi/JsonReader$Token;->BOOLEAN:Lcom/airbnb/lottie/parser/moshi/JsonReader$Token;
+    const/16 v0, 0x8
 
-    return-object v0
+    return v0
 
     :pswitch_6
-    sget-object v0, Lcom/airbnb/lottie/parser/moshi/JsonReader$Token;->END_ARRAY:Lcom/airbnb/lottie/parser/moshi/JsonReader$Token;
+    const/4 v0, 0x2
 
-    return-object v0
+    return v0
 
     :pswitch_7
-    sget-object v0, Lcom/airbnb/lottie/parser/moshi/JsonReader$Token;->BEGIN_ARRAY:Lcom/airbnb/lottie/parser/moshi/JsonReader$Token;
+    const/4 v0, 0x1
 
-    return-object v0
+    return v0
 
     :pswitch_8
-    sget-object v0, Lcom/airbnb/lottie/parser/moshi/JsonReader$Token;->END_OBJECT:Lcom/airbnb/lottie/parser/moshi/JsonReader$Token;
+    const/4 v0, 0x4
 
-    return-object v0
+    return v0
 
     :pswitch_9
-    sget-object v0, Lcom/airbnb/lottie/parser/moshi/JsonReader$Token;->BEGIN_OBJECT:Lcom/airbnb/lottie/parser/moshi/JsonReader$Token;
+    const/4 v0, 0x3
 
-    return-object v0
-
-    nop
+    return v0
 
     :pswitch_data_0
     .packed-switch 0x1
@@ -3230,7 +3264,7 @@
     return-void
 
     :cond_4
-    new-instance v0, Lkotlin/NoWhenBranchMatchedException;
+    new-instance v0, Lcom/airbnb/lottie/parser/moshi/JsonDataException;
 
     const-string v1, "Expected a name but was "
 
@@ -3238,11 +3272,15 @@
 
     move-result-object v1
 
-    invoke-virtual {p0}, Lcom/airbnb/lottie/parser/moshi/JsonUtf8Reader;->peek()Lcom/airbnb/lottie/parser/moshi/JsonReader$Token;
+    invoke-virtual {p0}, Lcom/airbnb/lottie/parser/moshi/JsonUtf8Reader;->peek$enumunboxing$()I
+
+    move-result v2
+
+    invoke-static {v2}, Lcom/airbnb/lottie/parser/moshi/JsonReader$Token$EnumUnboxingLocalUtility;->stringValueOf(I)Ljava/lang/String;
 
     move-result-object v2
 
-    invoke-virtual {v1, v2}, Ljava/lang/StringBuilder;->append(Ljava/lang/Object;)Ljava/lang/StringBuilder;
+    invoke-virtual {v1, v2}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
 
     const-string v2, " at path "
 
@@ -3258,7 +3296,7 @@
 
     move-result-object v1
 
-    invoke-direct {v0, v1}, Lkotlin/NoWhenBranchMatchedException;-><init>(Ljava/lang/String;)V
+    invoke-direct {v0, v1}, Lcom/airbnb/lottie/parser/moshi/JsonDataException;-><init>(Ljava/lang/String;)V
 
     throw v0
 .end method
@@ -3424,17 +3462,21 @@
     goto/16 :goto_4
 
     :cond_4
-    new-instance v0, Lkotlin/NoWhenBranchMatchedException;
+    new-instance v0, Lcom/airbnb/lottie/parser/moshi/JsonDataException;
 
     invoke-static {v6}, Landroid/support/v4/media/RatingCompat$$ExternalSyntheticOutline0;->m(Ljava/lang/String;)Ljava/lang/StringBuilder;
 
     move-result-object v1
 
-    invoke-virtual {p0}, Lcom/airbnb/lottie/parser/moshi/JsonUtf8Reader;->peek()Lcom/airbnb/lottie/parser/moshi/JsonReader$Token;
+    invoke-virtual {p0}, Lcom/airbnb/lottie/parser/moshi/JsonUtf8Reader;->peek$enumunboxing$()I
+
+    move-result v2
+
+    invoke-static {v2}, Lcom/airbnb/lottie/parser/moshi/JsonReader$Token$EnumUnboxingLocalUtility;->stringValueOf(I)Ljava/lang/String;
 
     move-result-object v2
 
-    invoke-virtual {v1, v2}, Ljava/lang/StringBuilder;->append(Ljava/lang/Object;)Ljava/lang/StringBuilder;
+    invoke-virtual {v1, v2}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
 
     invoke-virtual {v1, v5}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
 
@@ -3448,7 +3490,7 @@
 
     move-result-object v1
 
-    invoke-direct {v0, v1}, Lkotlin/NoWhenBranchMatchedException;-><init>(Ljava/lang/String;)V
+    invoke-direct {v0, v1}, Lcom/airbnb/lottie/parser/moshi/JsonDataException;-><init>(Ljava/lang/String;)V
 
     throw v0
 
@@ -3470,17 +3512,21 @@
     goto/16 :goto_4
 
     :cond_6
-    new-instance v0, Lkotlin/NoWhenBranchMatchedException;
+    new-instance v0, Lcom/airbnb/lottie/parser/moshi/JsonDataException;
 
     invoke-static {v6}, Landroid/support/v4/media/RatingCompat$$ExternalSyntheticOutline0;->m(Ljava/lang/String;)Ljava/lang/StringBuilder;
 
     move-result-object v1
 
-    invoke-virtual {p0}, Lcom/airbnb/lottie/parser/moshi/JsonUtf8Reader;->peek()Lcom/airbnb/lottie/parser/moshi/JsonReader$Token;
+    invoke-virtual {p0}, Lcom/airbnb/lottie/parser/moshi/JsonUtf8Reader;->peek$enumunboxing$()I
+
+    move-result v2
+
+    invoke-static {v2}, Lcom/airbnb/lottie/parser/moshi/JsonReader$Token$EnumUnboxingLocalUtility;->stringValueOf(I)Ljava/lang/String;
 
     move-result-object v2
 
-    invoke-virtual {v1, v2}, Ljava/lang/StringBuilder;->append(Ljava/lang/Object;)Ljava/lang/StringBuilder;
+    invoke-virtual {v1, v2}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
 
     invoke-virtual {v1, v5}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
 
@@ -3494,7 +3540,7 @@
 
     move-result-object v1
 
-    invoke-direct {v0, v1}, Lkotlin/NoWhenBranchMatchedException;-><init>(Ljava/lang/String;)V
+    invoke-direct {v0, v1}, Lcom/airbnb/lottie/parser/moshi/JsonDataException;-><init>(Ljava/lang/String;)V
 
     throw v0
 
@@ -3554,17 +3600,21 @@
     goto :goto_4
 
     :cond_c
-    new-instance v0, Lkotlin/NoWhenBranchMatchedException;
+    new-instance v0, Lcom/airbnb/lottie/parser/moshi/JsonDataException;
 
     invoke-static {v6}, Landroid/support/v4/media/RatingCompat$$ExternalSyntheticOutline0;->m(Ljava/lang/String;)Ljava/lang/StringBuilder;
 
     move-result-object v1
 
-    invoke-virtual {p0}, Lcom/airbnb/lottie/parser/moshi/JsonUtf8Reader;->peek()Lcom/airbnb/lottie/parser/moshi/JsonReader$Token;
+    invoke-virtual {p0}, Lcom/airbnb/lottie/parser/moshi/JsonUtf8Reader;->peek$enumunboxing$()I
+
+    move-result v2
+
+    invoke-static {v2}, Lcom/airbnb/lottie/parser/moshi/JsonReader$Token$EnumUnboxingLocalUtility;->stringValueOf(I)Ljava/lang/String;
 
     move-result-object v2
 
-    invoke-virtual {v1, v2}, Ljava/lang/StringBuilder;->append(Ljava/lang/Object;)Ljava/lang/StringBuilder;
+    invoke-virtual {v1, v2}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
 
     invoke-virtual {v1, v5}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
 
@@ -3578,7 +3628,7 @@
 
     move-result-object v1
 
-    invoke-direct {v0, v1}, Lkotlin/NoWhenBranchMatchedException;-><init>(Ljava/lang/String;)V
+    invoke-direct {v0, v1}, Lcom/airbnb/lottie/parser/moshi/JsonDataException;-><init>(Ljava/lang/String;)V
 
     throw v0
 

@@ -86,6 +86,11 @@
 
 .method public contains(Ljava/lang/Object;)Z
     .locals 3
+    .annotation system Ldalvik/annotation/Signature;
+        value = {
+            "(TE;)Z"
+        }
+    .end annotation
 
     invoke-interface {p0}, Ljava/util/Collection;->isEmpty()Z
 

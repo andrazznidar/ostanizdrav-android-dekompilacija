@@ -22,14 +22,14 @@
 
 
 # virtual methods
-.method public final h(Lj$/time/temporal/k;)Lj$/time/temporal/k;
+.method public final a(Lj$/time/temporal/k;)Lj$/time/temporal/k;
     .locals 3
 
     iget v0, p0, Lj$/time/temporal/m;->a:I
 
     sget-object v1, Lj$/time/temporal/a;->DAY_OF_WEEK:Lj$/time/temporal/a;
 
-    invoke-interface {p1, v1}, Lj$/time/temporal/TemporalAccessor;->c(Lj$/time/temporal/o;)I
+    invoke-interface {p1, v1}, Lj$/time/temporal/TemporalAccessor;->d(Lj$/time/temporal/o;)I
 
     move-result v1
 
@@ -54,7 +54,7 @@
 
     sget-object v2, Lj$/time/temporal/b;->DAYS:Lj$/time/temporal/b;
 
-    invoke-interface {p1, v0, v1, v2}, Lj$/time/temporal/k;->f(JLj$/time/temporal/y;)Lj$/time/temporal/k;
+    invoke-interface {p1, v0, v1, v2}, Lj$/time/temporal/k;->h(JLj$/time/temporal/x;)Lj$/time/temporal/k;
 
     move-result-object p1
 

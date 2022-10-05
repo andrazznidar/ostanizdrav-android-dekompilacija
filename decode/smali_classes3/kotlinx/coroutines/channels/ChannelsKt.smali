@@ -1,19 +1,10 @@
-.class public Lkotlinx/coroutines/channels/ChannelsKt;
+.class public final Lkotlinx/coroutines/channels/ChannelsKt;
 .super Ljava/lang/Object;
 
 
 # direct methods
 .method public static final cancelConsumed(Lkotlinx/coroutines/channels/ReceiveChannel;Ljava/lang/Throwable;)V
     .locals 2
-    .annotation system Ldalvik/annotation/Signature;
-        value = {
-            "(",
-            "Lkotlinx/coroutines/channels/ReceiveChannel<",
-            "*>;",
-            "Ljava/lang/Throwable;",
-            ")V"
-        }
-    .end annotation
 
     const/4 v0, 0x0
 
@@ -48,85 +39,48 @@
     return-void
 .end method
 
-.method public static final reportProblem(Ljava/lang/Throwable;Ljava/lang/String;Ljava/lang/String;)V
-    .locals 2
+.method public static final trimToLength(Ljava/lang/String;I)Ljava/lang/String;
+    .locals 1
 
     const-string v0, "<this>"
 
     invoke-static {p0, v0}, Lkotlin/jvm/internal/Intrinsics;->checkNotNullParameter(Ljava/lang/Object;Ljava/lang/String;)V
 
-    sget-object v0, Ltimber/log/Timber;->Forest:Ltimber/log/Timber$Forest;
-
-    if-nez p1, :cond_0
-
-    const-string v1, "BugReporter"
-
-    goto :goto_0
-
-    :cond_0
-    move-object v1, p1
-
-    :goto_0
-    invoke-virtual {v0, v1}, Ltimber/log/Timber$Forest;->tag(Ljava/lang/String;)Ltimber/log/Timber$Tree;
-
-    const/4 v1, 0x0
-
-    new-array v1, v1, [Ljava/lang/Object;
-
-    invoke-virtual {v0, p0, p2, v1}, Ltimber/log/Timber$Tree;->e(Ljava/lang/Throwable;Ljava/lang/String;[Ljava/lang/Object;)V
-
-    sget-object v0, Lde/rki/coronawarnapp/util/CWADebug;->INSTANCE:Lde/rki/coronawarnapp/util/CWADebug;
-
-    invoke-static {}, Lde/rki/coronawarnapp/util/CWADebug;->isAUnitTest()Z
+    invoke-virtual {p0}, Ljava/lang/String;->length()I
 
     move-result v0
 
-    if-eqz v0, :cond_1
+    invoke-static {v0, p1}, Ljava/lang/Math;->min(II)I
 
-    return-void
+    move-result p1
 
-    :cond_1
-    sget-object v0, Lde/rki/coronawarnapp/util/di/AppInjector;->component:Lde/rki/coronawarnapp/util/di/ApplicationComponent;
+    const/4 v0, 0x0
 
-    if-eqz v0, :cond_2
+    invoke-virtual {p0, v0, p1}, Ljava/lang/String;->substring(II)Ljava/lang/String;
 
-    check-cast v0, Lde/rki/coronawarnapp/util/di/DaggerApplicationComponent;
+    move-result-object p0
 
-    iget-object v0, v0, Lde/rki/coronawarnapp/util/di/DaggerApplicationComponent;->reporterProvider:Ljavax/inject/Provider;
+    const-string p1, "this as java.lang.String\u2026ing(startIndex, endIndex)"
 
-    invoke-interface {v0}, Ljavax/inject/Provider;->get()Ljava/lang/Object;
+    invoke-static {p0, p1}, Lkotlin/jvm/internal/Intrinsics;->checkNotNullExpressionValue(Ljava/lang/Object;Ljava/lang/String;)V
 
-    move-result-object v0
-
-    check-cast v0, Lde/rki/coronawarnapp/bugreporting/BugReporter;
-
-    invoke-interface {v0, p0, p1, p2}, Lde/rki/coronawarnapp/bugreporting/BugReporter;->report(Ljava/lang/Throwable;Ljava/lang/String;Ljava/lang/String;)V
-
-    return-void
-
-    :cond_2
-    const-string p0, "component"
-
-    invoke-static {p0}, Lkotlin/jvm/internal/Intrinsics;->throwUninitializedPropertyAccessException(Ljava/lang/String;)V
-
-    const/4 p0, 0x0
-
-    throw p0
+    return-object p0
 .end method
 
-.method public static synthetic reportProblem$default(Ljava/lang/Throwable;Ljava/lang/String;Ljava/lang/String;I)V
+.method public static final viewBinding(Landroidx/fragment/app/Fragment;Lkotlin/jvm/functions/Function1;Lkotlin/jvm/functions/Function1;)Lde/rki/coronawarnapp/util/ui/ViewBindingProperty;
     .locals 0
 
-    and-int/lit8 p2, p3, 0x1
+    const-string p0, "bindingProvider"
 
-    const/4 p3, 0x0
+    invoke-static {p1, p0}, Lkotlin/jvm/internal/Intrinsics;->checkNotNullParameter(Ljava/lang/Object;Ljava/lang/String;)V
 
-    if-eqz p2, :cond_0
+    const-string p0, "lifecycleOwnerProvider"
 
-    move-object p1, p3
+    invoke-static {p2, p0}, Lkotlin/jvm/internal/Intrinsics;->checkNotNullParameter(Ljava/lang/Object;Ljava/lang/String;)V
 
-    :cond_0
-    invoke-static {p0, p1, p3}, Lkotlinx/coroutines/channels/ChannelsKt;->reportProblem(Ljava/lang/Throwable;Ljava/lang/String;Ljava/lang/String;)V
+    new-instance p0, Lde/rki/coronawarnapp/util/ui/ViewBindingProperty;
 
-    return-void
+    invoke-direct {p0, p1, p2}, Lde/rki/coronawarnapp/util/ui/ViewBindingProperty;-><init>(Lkotlin/jvm/functions/Function1;Lkotlin/jvm/functions/Function1;)V
+
+    return-object p0
 .end method

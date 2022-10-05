@@ -99,7 +99,7 @@
 
     invoke-static {v1, v2}, Lkotlin/jvm/internal/Intrinsics;->checkNotNullExpressionValue(Ljava/lang/Object;Ljava/lang/String;)V
 
-    invoke-virtual {v0, v1}, Lde/rki/coronawarnapp/task/internal/TaskModule;->requireValidUrl(Ljava/lang/String;)Ljava/lang/String;
+    invoke-virtual {v0, v1}, Lcom/google/android/gms/internal/nearby/zzaf;->requireValidUrl(Ljava/lang/String;)Ljava/lang/String;
 
     return-object v1
 .end method

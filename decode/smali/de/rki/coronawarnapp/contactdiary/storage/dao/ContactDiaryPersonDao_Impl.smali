@@ -6,12 +6,10 @@
 # instance fields
 .field public final __db:Landroidx/room/RoomDatabase;
 
-.field public final __deletionAdapterOfContactDiaryPersonEntity:Landroidx/room/EntityDeletionOrUpdateAdapter;
+.field public final __deletionAdapterOfContactDiaryPersonEntity:Landroidx/room/EntityInsertionAdapter;
     .annotation system Ldalvik/annotation/Signature;
         value = {
-            "Landroidx/room/EntityDeletionOrUpdateAdapter<",
-            "Lde/rki/coronawarnapp/contactdiary/storage/entity/ContactDiaryPersonEntity;",
-            ">;"
+            "Landroidx/room/EntityInsertionAdapter;"
         }
     .end annotation
 .end field
@@ -19,21 +17,17 @@
 .field public final __insertionAdapterOfContactDiaryPersonEntity:Landroidx/room/EntityInsertionAdapter;
     .annotation system Ldalvik/annotation/Signature;
         value = {
-            "Landroidx/room/EntityInsertionAdapter<",
-            "Lde/rki/coronawarnapp/contactdiary/storage/entity/ContactDiaryPersonEntity;",
-            ">;"
+            "Landroidx/room/EntityInsertionAdapter;"
         }
     .end annotation
 .end field
 
 .field public final __preparedStmtOfDeleteAll:Landroidx/room/SharedSQLiteStatement;
 
-.field public final __updateAdapterOfContactDiaryPersonEntity:Landroidx/room/EntityDeletionOrUpdateAdapter;
+.field public final __updateAdapterOfContactDiaryPersonEntity:Landroidx/room/EntityInsertionAdapter;
     .annotation system Ldalvik/annotation/Signature;
         value = {
-            "Landroidx/room/EntityDeletionOrUpdateAdapter<",
-            "Lde/rki/coronawarnapp/contactdiary/storage/entity/ContactDiaryPersonEntity;",
-            ">;"
+            "Landroidx/room/EntityInsertionAdapter;"
         }
     .end annotation
 .end field
@@ -65,13 +59,13 @@
 
     invoke-direct {v0, p0, p1}, Lde/rki/coronawarnapp/contactdiary/storage/dao/ContactDiaryPersonDao_Impl$2;-><init>(Lde/rki/coronawarnapp/contactdiary/storage/dao/ContactDiaryPersonDao_Impl;Landroidx/room/RoomDatabase;)V
 
-    iput-object v0, p0, Lde/rki/coronawarnapp/contactdiary/storage/dao/ContactDiaryPersonDao_Impl;->__deletionAdapterOfContactDiaryPersonEntity:Landroidx/room/EntityDeletionOrUpdateAdapter;
+    iput-object v0, p0, Lde/rki/coronawarnapp/contactdiary/storage/dao/ContactDiaryPersonDao_Impl;->__deletionAdapterOfContactDiaryPersonEntity:Landroidx/room/EntityInsertionAdapter;
 
     new-instance v0, Lde/rki/coronawarnapp/contactdiary/storage/dao/ContactDiaryPersonDao_Impl$3;
 
     invoke-direct {v0, p0, p1}, Lde/rki/coronawarnapp/contactdiary/storage/dao/ContactDiaryPersonDao_Impl$3;-><init>(Lde/rki/coronawarnapp/contactdiary/storage/dao/ContactDiaryPersonDao_Impl;Landroidx/room/RoomDatabase;)V
 
-    iput-object v0, p0, Lde/rki/coronawarnapp/contactdiary/storage/dao/ContactDiaryPersonDao_Impl;->__updateAdapterOfContactDiaryPersonEntity:Landroidx/room/EntityDeletionOrUpdateAdapter;
+    iput-object v0, p0, Lde/rki/coronawarnapp/contactdiary/storage/dao/ContactDiaryPersonDao_Impl;->__updateAdapterOfContactDiaryPersonEntity:Landroidx/room/EntityInsertionAdapter;
 
     new-instance v0, Lde/rki/coronawarnapp/contactdiary/storage/dao/ContactDiaryPersonDao_Impl$4;
 

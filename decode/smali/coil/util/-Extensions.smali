@@ -86,19 +86,19 @@
     :cond_2
     const/16 v0, 0x23
 
-    invoke-static {p1, v0, p1}, Lkotlin/text/StringsKt__StringsKt;->substringBeforeLast(Ljava/lang/String;CLjava/lang/String;)Ljava/lang/String;
+    const/4 v2, 0x2
+
+    invoke-static {p1, v0, v1, v2}, Lkotlin/text/StringsKt__StringsKt;->substringBeforeLast$default(Ljava/lang/String;CLjava/lang/String;I)Ljava/lang/String;
 
     move-result-object p1
 
     const/16 v0, 0x3f
 
-    invoke-static {p1, v0, p1}, Lkotlin/text/StringsKt__StringsKt;->substringBeforeLast(Ljava/lang/String;CLjava/lang/String;)Ljava/lang/String;
+    invoke-static {p1, v0, v1, v2}, Lkotlin/text/StringsKt__StringsKt;->substringBeforeLast$default(Ljava/lang/String;CLjava/lang/String;I)Ljava/lang/String;
 
     move-result-object p1
 
     const/16 v0, 0x2f
-
-    const/4 v2, 0x2
 
     invoke-static {p1, v0, v1, v2}, Lkotlin/text/StringsKt__StringsKt;->substringAfterLast$default(Ljava/lang/String;CLjava/lang/String;I)Ljava/lang/String;
 

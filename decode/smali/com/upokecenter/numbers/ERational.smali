@@ -22,9 +22,13 @@
 
 .field public static final NegativeInfinity:Lcom/upokecenter/numbers/ERational;
 
+.field public static final NegativeZero:Lcom/upokecenter/numbers/ERational;
+
 .field public static final PositiveInfinity:Lcom/upokecenter/numbers/ERational;
 
 .field public static final SignalingNaN:Lcom/upokecenter/numbers/ERational;
+
+.field public static final Zero:Lcom/upokecenter/numbers/ERational;
 
 
 # instance fields
@@ -59,9 +63,15 @@
 
     sput-object v0, Lcom/upokecenter/numbers/ERational;->NegativeInfinity:Lcom/upokecenter/numbers/ERational;
 
-    const/4 v0, 0x1
+    new-instance v0, Lcom/upokecenter/numbers/ERational;
 
-    invoke-static {v0}, Lcom/upokecenter/numbers/EInteger;->FromInt32(I)Lcom/upokecenter/numbers/EInteger;
+    const/4 v3, 0x1
+
+    invoke-direct {v0, v1, v2, v3}, Lcom/upokecenter/numbers/ERational;-><init>(Lcom/upokecenter/numbers/FastIntegerFixed;Lcom/upokecenter/numbers/FastIntegerFixed;B)V
+
+    sput-object v0, Lcom/upokecenter/numbers/ERational;->NegativeZero:Lcom/upokecenter/numbers/ERational;
+
+    invoke-static {v3}, Lcom/upokecenter/numbers/EInteger;->FromInt32(I)Lcom/upokecenter/numbers/EInteger;
 
     move-result-object v0
 
@@ -98,6 +108,10 @@
     move-result-object v0
 
     invoke-static {v0}, Lcom/upokecenter/numbers/ERational;->FromEInteger(Lcom/upokecenter/numbers/EInteger;)Lcom/upokecenter/numbers/ERational;
+
+    move-result-object v0
+
+    sput-object v0, Lcom/upokecenter/numbers/ERational;->Zero:Lcom/upokecenter/numbers/ERational;
 
     return-void
 .end method
@@ -296,7 +310,7 @@
 .end method
 
 .method public static FromEDecimal(Lcom/upokecenter/numbers/EDecimal;)Lcom/upokecenter/numbers/ERational;
-    .locals 4
+    .locals 5
 
     const-string v0, "ef"
 
@@ -356,9 +370,15 @@
 
     invoke-virtual {p0}, Lcom/upokecenter/numbers/EDecimal;->getExponent()Lcom/upokecenter/numbers/EInteger;
 
-    move-result-object p0
+    move-result-object v1
 
-    invoke-virtual {p0}, Lcom/upokecenter/numbers/EInteger;->isZero()Z
+    invoke-virtual {v1}, Lcom/upokecenter/numbers/EInteger;->isZero()Z
+
+    move-result v2
+
+    if-eqz v2, :cond_5
+
+    invoke-virtual {v0}, Lcom/upokecenter/numbers/EInteger;->signum()I
 
     move-result v1
 
@@ -371,72 +391,106 @@
     return-object p0
 
     :cond_3
-    invoke-virtual {v0}, Lcom/upokecenter/numbers/EInteger;->signum()I
+    invoke-virtual {p0}, Lcom/upokecenter/numbers/EDecimal;->isNegative()Z
 
-    move-result v1
+    move-result p0
 
-    const/4 v2, 0x1
+    if-eqz p0, :cond_4
 
-    if-gez v1, :cond_4
-
-    move v1, v2
+    sget-object p0, Lcom/upokecenter/numbers/ERational;->NegativeZero:Lcom/upokecenter/numbers/ERational;
 
     goto :goto_1
 
     :cond_4
-    const/4 v1, 0x0
+    sget-object p0, Lcom/upokecenter/numbers/ERational;->Zero:Lcom/upokecenter/numbers/ERational;
 
     :goto_1
+    return-object p0
+
+    :cond_5
+    invoke-virtual {v0}, Lcom/upokecenter/numbers/EInteger;->signum()I
+
+    move-result v2
+
+    const/4 v3, 0x1
+
+    if-gez v2, :cond_6
+
+    move v2, v3
+
+    goto :goto_2
+
+    :cond_6
+    const/4 v2, 0x0
+
+    :goto_2
     invoke-virtual {v0}, Lcom/upokecenter/numbers/EInteger;->Abs()Lcom/upokecenter/numbers/EInteger;
 
     move-result-object v0
 
-    invoke-static {v2}, Lcom/upokecenter/numbers/EInteger;->FromInt32(I)Lcom/upokecenter/numbers/EInteger;
+    invoke-static {v3}, Lcom/upokecenter/numbers/EInteger;->FromInt32(I)Lcom/upokecenter/numbers/EInteger;
 
-    move-result-object v2
+    move-result-object v3
 
-    invoke-virtual {p0}, Lcom/upokecenter/numbers/EInteger;->signum()I
+    invoke-virtual {v1}, Lcom/upokecenter/numbers/EInteger;->signum()I
 
-    move-result v3
+    move-result v4
 
-    if-gez v3, :cond_5
+    if-gez v4, :cond_7
 
-    invoke-virtual {p0}, Lcom/upokecenter/numbers/EInteger;->Negate()Lcom/upokecenter/numbers/EInteger;
+    invoke-virtual {v1}, Lcom/upokecenter/numbers/EInteger;->Negate()Lcom/upokecenter/numbers/EInteger;
 
-    move-result-object p0
+    move-result-object v1
 
-    invoke-static {p0}, Lcom/upokecenter/numbers/NumberUtility;->FindPowerOfTenFromBig(Lcom/upokecenter/numbers/EInteger;)Lcom/upokecenter/numbers/EInteger;
+    invoke-static {v1}, Lcom/upokecenter/numbers/NumberUtility;->FindPowerOfTenFromBig(Lcom/upokecenter/numbers/EInteger;)Lcom/upokecenter/numbers/EInteger;
 
-    move-result-object v2
+    move-result-object v3
 
-    goto :goto_2
+    goto :goto_3
 
-    :cond_5
-    invoke-static {p0}, Lcom/upokecenter/numbers/NumberUtility;->FindPowerOfTenFromBig(Lcom/upokecenter/numbers/EInteger;)Lcom/upokecenter/numbers/EInteger;
+    :cond_7
+    invoke-static {v1}, Lcom/upokecenter/numbers/NumberUtility;->FindPowerOfTenFromBig(Lcom/upokecenter/numbers/EInteger;)Lcom/upokecenter/numbers/EInteger;
 
-    move-result-object p0
+    move-result-object v1
 
-    invoke-virtual {v0, p0}, Lcom/upokecenter/numbers/EInteger;->Multiply(Lcom/upokecenter/numbers/EInteger;)Lcom/upokecenter/numbers/EInteger;
+    invoke-virtual {v0, v1}, Lcom/upokecenter/numbers/EInteger;->Multiply(Lcom/upokecenter/numbers/EInteger;)Lcom/upokecenter/numbers/EInteger;
 
     move-result-object v0
 
-    :goto_2
-    if-eqz v1, :cond_6
+    :goto_3
+    if-eqz v2, :cond_8
 
     invoke-virtual {v0}, Lcom/upokecenter/numbers/EInteger;->Negate()Lcom/upokecenter/numbers/EInteger;
 
     move-result-object v0
 
-    :cond_6
-    invoke-static {v0, v2}, Lcom/upokecenter/numbers/ERational;->Create(Lcom/upokecenter/numbers/EInteger;Lcom/upokecenter/numbers/EInteger;)Lcom/upokecenter/numbers/ERational;
+    :cond_8
+    invoke-static {v0, v3}, Lcom/upokecenter/numbers/ERational;->Create(Lcom/upokecenter/numbers/EInteger;Lcom/upokecenter/numbers/EInteger;)Lcom/upokecenter/numbers/ERational;
 
-    move-result-object p0
+    move-result-object v1
 
-    return-object p0
+    invoke-virtual {p0}, Lcom/upokecenter/numbers/EDecimal;->isNegative()Z
+
+    move-result p0
+
+    if-eqz p0, :cond_9
+
+    invoke-virtual {v0}, Lcom/upokecenter/numbers/EInteger;->signum()I
+
+    move-result p0
+
+    if-nez p0, :cond_9
+
+    invoke-virtual {v1}, Lcom/upokecenter/numbers/ERational;->Negate()Lcom/upokecenter/numbers/ERational;
+
+    move-result-object v1
+
+    :cond_9
+    return-object v1
 .end method
 
 .method public static FromEFloat(Lcom/upokecenter/numbers/EFloat;)Lcom/upokecenter/numbers/ERational;
-    .locals 4
+    .locals 5
 
     const-string v0, "ef"
 
@@ -496,9 +550,15 @@
 
     invoke-virtual {p0}, Lcom/upokecenter/numbers/EFloat;->getExponent()Lcom/upokecenter/numbers/EInteger;
 
-    move-result-object p0
+    move-result-object v1
 
-    invoke-virtual {p0}, Lcom/upokecenter/numbers/EInteger;->isZero()Z
+    invoke-virtual {v1}, Lcom/upokecenter/numbers/EInteger;->isZero()Z
+
+    move-result v2
+
+    if-eqz v2, :cond_5
+
+    invoke-virtual {v0}, Lcom/upokecenter/numbers/EInteger;->signum()I
 
     move-result v1
 
@@ -511,64 +571,98 @@
     return-object p0
 
     :cond_3
-    invoke-virtual {v0}, Lcom/upokecenter/numbers/EInteger;->signum()I
+    invoke-virtual {p0}, Lcom/upokecenter/numbers/EFloat;->isNegative()Z
 
-    move-result v1
+    move-result p0
 
-    const/4 v2, 0x1
+    if-eqz p0, :cond_4
 
-    if-gez v1, :cond_4
-
-    move v1, v2
+    sget-object p0, Lcom/upokecenter/numbers/ERational;->NegativeZero:Lcom/upokecenter/numbers/ERational;
 
     goto :goto_1
 
     :cond_4
-    const/4 v1, 0x0
+    sget-object p0, Lcom/upokecenter/numbers/ERational;->Zero:Lcom/upokecenter/numbers/ERational;
 
     :goto_1
+    return-object p0
+
+    :cond_5
+    invoke-virtual {v0}, Lcom/upokecenter/numbers/EInteger;->signum()I
+
+    move-result v2
+
+    const/4 v3, 0x1
+
+    if-gez v2, :cond_6
+
+    move v2, v3
+
+    goto :goto_2
+
+    :cond_6
+    const/4 v2, 0x0
+
+    :goto_2
     invoke-virtual {v0}, Lcom/upokecenter/numbers/EInteger;->Abs()Lcom/upokecenter/numbers/EInteger;
 
     move-result-object v0
 
-    invoke-static {v2}, Lcom/upokecenter/numbers/EInteger;->FromInt32(I)Lcom/upokecenter/numbers/EInteger;
+    invoke-static {v3}, Lcom/upokecenter/numbers/EInteger;->FromInt32(I)Lcom/upokecenter/numbers/EInteger;
 
-    move-result-object v2
+    move-result-object v3
 
-    invoke-virtual {p0}, Lcom/upokecenter/numbers/EInteger;->signum()I
+    invoke-virtual {v1}, Lcom/upokecenter/numbers/EInteger;->signum()I
 
-    move-result v3
+    move-result v4
 
-    if-gez v3, :cond_5
+    if-gez v4, :cond_7
 
-    invoke-virtual {p0}, Lcom/upokecenter/numbers/EInteger;->Negate()Lcom/upokecenter/numbers/EInteger;
+    invoke-virtual {v1}, Lcom/upokecenter/numbers/EInteger;->Negate()Lcom/upokecenter/numbers/EInteger;
 
-    move-result-object p0
+    move-result-object v1
 
-    invoke-virtual {v2, p0}, Lcom/upokecenter/numbers/EInteger;->ShiftLeft(Lcom/upokecenter/numbers/EInteger;)Lcom/upokecenter/numbers/EInteger;
+    invoke-virtual {v3, v1}, Lcom/upokecenter/numbers/EInteger;->ShiftLeft(Lcom/upokecenter/numbers/EInteger;)Lcom/upokecenter/numbers/EInteger;
 
-    move-result-object v2
+    move-result-object v3
 
-    goto :goto_2
+    goto :goto_3
 
-    :cond_5
-    invoke-virtual {v0, p0}, Lcom/upokecenter/numbers/EInteger;->ShiftLeft(Lcom/upokecenter/numbers/EInteger;)Lcom/upokecenter/numbers/EInteger;
+    :cond_7
+    invoke-virtual {v0, v1}, Lcom/upokecenter/numbers/EInteger;->ShiftLeft(Lcom/upokecenter/numbers/EInteger;)Lcom/upokecenter/numbers/EInteger;
 
     move-result-object v0
 
-    :goto_2
-    if-eqz v1, :cond_6
+    :goto_3
+    if-eqz v2, :cond_8
 
     invoke-virtual {v0}, Lcom/upokecenter/numbers/EInteger;->Negate()Lcom/upokecenter/numbers/EInteger;
 
     move-result-object v0
 
-    :cond_6
-    invoke-static {v0, v2}, Lcom/upokecenter/numbers/ERational;->Create(Lcom/upokecenter/numbers/EInteger;Lcom/upokecenter/numbers/EInteger;)Lcom/upokecenter/numbers/ERational;
+    :cond_8
+    invoke-static {v0, v3}, Lcom/upokecenter/numbers/ERational;->Create(Lcom/upokecenter/numbers/EInteger;Lcom/upokecenter/numbers/EInteger;)Lcom/upokecenter/numbers/ERational;
 
-    move-result-object p0
+    move-result-object v1
 
-    return-object p0
+    invoke-virtual {p0}, Lcom/upokecenter/numbers/EFloat;->isNegative()Z
+
+    move-result p0
+
+    if-eqz p0, :cond_9
+
+    invoke-virtual {v0}, Lcom/upokecenter/numbers/EInteger;->signum()I
+
+    move-result p0
+
+    if-nez p0, :cond_9
+
+    invoke-virtual {v1}, Lcom/upokecenter/numbers/ERational;->Negate()Lcom/upokecenter/numbers/ERational;
+
+    move-result-object v1
+
+    :cond_9
+    return-object v1
 .end method
 
 .method public static FromEInteger(Lcom/upokecenter/numbers/EInteger;)Lcom/upokecenter/numbers/ERational;
@@ -877,9 +971,9 @@
 
     const/16 v5, 0x100
 
-    sget-object v6, Lcom/upokecenter/numbers/ERounding;->Down:Lcom/upokecenter/numbers/ERounding;
+    const/4 v6, 0x3
 
-    invoke-static {v5, v6}, Lcom/upokecenter/numbers/EContext;->ForPrecisionAndRounding(ILcom/upokecenter/numbers/ERounding;)Lcom/upokecenter/numbers/EContext;
+    invoke-static {v5, v6}, Lcom/upokecenter/numbers/EContext;->ForPrecisionAndRounding(II)Lcom/upokecenter/numbers/EContext;
 
     move-result-object v5
 
@@ -1152,7 +1246,7 @@
 
     if-eqz v1, :cond_c
 
-    invoke-virtual {v5, v4}, Lcom/upokecenter/numbers/EDecimal;->CompareToValue(Lcom/upokecenter/numbers/EDecimal;)I
+    invoke-virtual {v5, v4}, Lcom/upokecenter/numbers/EDecimal;->compareTo(Lcom/upokecenter/numbers/EDecimal;)I
 
     move-result p1
 
@@ -1168,7 +1262,7 @@
     return p1
 
     :cond_c
-    invoke-virtual {v5, v4}, Lcom/upokecenter/numbers/EDecimal;->CompareToValue(Lcom/upokecenter/numbers/EDecimal;)I
+    invoke-virtual {v5, v4}, Lcom/upokecenter/numbers/EDecimal;->compareTo(Lcom/upokecenter/numbers/EDecimal;)I
 
     move-result v1
 
@@ -1198,7 +1292,7 @@
 
     move-result-object v1
 
-    invoke-virtual {v1, v4}, Lcom/upokecenter/numbers/EDecimal;->CompareToValue(Lcom/upokecenter/numbers/EDecimal;)I
+    invoke-virtual {v1, v4}, Lcom/upokecenter/numbers/EDecimal;->compareTo(Lcom/upokecenter/numbers/EDecimal;)I
 
     move-result v1
 
@@ -1237,9 +1331,9 @@
 
     const/16 v5, 0x14
 
-    sget-object v6, Lcom/upokecenter/numbers/ERounding;->Down:Lcom/upokecenter/numbers/ERounding;
+    const/4 v6, 0x3
 
-    invoke-static {v5, v6}, Lcom/upokecenter/numbers/EContext;->ForPrecisionAndRounding(ILcom/upokecenter/numbers/ERounding;)Lcom/upokecenter/numbers/EContext;
+    invoke-static {v5, v6}, Lcom/upokecenter/numbers/EContext;->ForPrecisionAndRounding(II)Lcom/upokecenter/numbers/EContext;
 
     move-result-object v5
 
@@ -1247,7 +1341,7 @@
 
     move-result-object v1
 
-    invoke-virtual {v1, v4}, Lcom/upokecenter/numbers/EDecimal;->CompareToValue(Lcom/upokecenter/numbers/EDecimal;)I
+    invoke-virtual {v1, v4}, Lcom/upokecenter/numbers/EDecimal;->compareTo(Lcom/upokecenter/numbers/EDecimal;)I
 
     move-result v1
 
@@ -1755,6 +1849,26 @@
 
     :goto_0
     return v0
+.end method
+
+.method public Negate()Lcom/upokecenter/numbers/ERational;
+    .locals 4
+
+    new-instance v0, Lcom/upokecenter/numbers/ERational;
+
+    iget-object v1, p0, Lcom/upokecenter/numbers/ERational;->unsignedNumerator:Lcom/upokecenter/numbers/FastIntegerFixed;
+
+    iget-object v2, p0, Lcom/upokecenter/numbers/ERational;->denominator:Lcom/upokecenter/numbers/FastIntegerFixed;
+
+    iget-byte v3, p0, Lcom/upokecenter/numbers/ERational;->flags:B
+
+    xor-int/lit8 v3, v3, 0x1
+
+    int-to-byte v3, v3
+
+    invoke-direct {v0, v1, v2, v3}, Lcom/upokecenter/numbers/ERational;-><init>(Lcom/upokecenter/numbers/FastIntegerFixed;Lcom/upokecenter/numbers/FastIntegerFixed;B)V
+
+    return-object v0
 .end method
 
 .method public ToEDecimalExactIfPossible(Lcom/upokecenter/numbers/EContext;)Lcom/upokecenter/numbers/EDecimal;

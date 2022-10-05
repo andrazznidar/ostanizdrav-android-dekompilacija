@@ -54,7 +54,7 @@
 
     iget-object v1, v1, Landroidx/recyclerview/widget/RecyclerView$ViewHolder;->itemView:Landroid/view/View;
 
-    const v2, 0x7f0a01b2
+    const v2, 0x7f0a01d5
 
     invoke-static {v1, v2}, Landroidx/viewbinding/ViewBindings;->findChildViewById(Landroid/view/View;I)Landroid/view/View;
 
@@ -66,7 +66,7 @@
 
     if-eqz v6, :cond_0
 
-    const v2, 0x7f0a02cb
+    const v2, 0x7f0a02f0
 
     invoke-static {v1, v2}, Landroidx/viewbinding/ViewBindings;->findChildViewById(Landroid/view/View;I)Landroid/view/View;
 
@@ -78,7 +78,7 @@
 
     if-eqz v7, :cond_0
 
-    const v2, 0x7f0a02cc
+    const v2, 0x7f0a02f1
 
     invoke-static {v1, v2}, Landroidx/viewbinding/ViewBindings;->findChildViewById(Landroid/view/View;I)Landroid/view/View;
 
@@ -90,7 +90,7 @@
 
     if-eqz v8, :cond_0
 
-    const v2, 0x7f0a02ce
+    const v2, 0x7f0a02f3
 
     invoke-static {v1, v2}, Landroidx/viewbinding/ViewBindings;->findChildViewById(Landroid/view/View;I)Landroid/view/View;
 
@@ -102,7 +102,7 @@
 
     if-eqz v9, :cond_0
 
-    const v2, 0x7f0a02f0
+    const v2, 0x7f0a0315
 
     invoke-static {v1, v2}, Landroidx/viewbinding/ViewBindings;->findChildViewById(Landroid/view/View;I)Landroid/view/View;
 
@@ -114,7 +114,7 @@
 
     if-eqz v10, :cond_0
 
-    const v2, 0x7f0a02f1
+    const v2, 0x7f0a0316
 
     invoke-static {v1, v2}, Landroidx/viewbinding/ViewBindings;->findChildViewById(Landroid/view/View;I)Landroid/view/View;
 
@@ -126,7 +126,7 @@
 
     if-eqz v11, :cond_0
 
-    const v2, 0x7f0a02f2
+    const v2, 0x7f0a0317
 
     invoke-static {v1, v2}, Landroidx/viewbinding/ViewBindings;->findChildViewById(Landroid/view/View;I)Landroid/view/View;
 
@@ -142,7 +142,7 @@
 
     check-cast v13, Lde/rki/coronawarnapp/contactdiary/ui/day/tabs/common/ExpandingDiaryListItemView;
 
-    const v2, 0x7f0a043c
+    const v2, 0x7f0a0481
 
     invoke-static {v1, v2}, Landroidx/viewbinding/ViewBindings;->findChildViewById(Landroid/view/View;I)Landroid/view/View;
 
@@ -154,7 +154,7 @@
 
     if-eqz v14, :cond_0
 
-    const v2, 0x7f0a043d
+    const v2, 0x7f0a0482
 
     invoke-static {v1, v2}, Landroidx/viewbinding/ViewBindings;->findChildViewById(Landroid/view/View;I)Landroid/view/View;
 
@@ -166,7 +166,7 @@
 
     if-eqz v15, :cond_0
 
-    const v2, 0x7f0a043e
+    const v2, 0x7f0a0483
 
     invoke-static {v1, v2}, Landroidx/viewbinding/ViewBindings;->findChildViewById(Landroid/view/View;I)Landroid/view/View;
 

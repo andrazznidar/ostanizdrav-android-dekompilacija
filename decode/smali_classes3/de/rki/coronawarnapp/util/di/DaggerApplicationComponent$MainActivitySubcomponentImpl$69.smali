@@ -45,7 +45,7 @@
 .method public get()Ljava/lang/Object;
     .locals 4
 
-    new-instance v0, Lde/rki/coronawarnapp/util/di/DaggerApplicationComponent$SettingsResetFragmentSubcomponentFactory;
+    new-instance v0, Lde/rki/coronawarnapp/util/di/DaggerApplicationComponent$RecyclerBinOverviewFragmentSubcomponentFactory;
 
     iget-object v1, p0, Lde/rki/coronawarnapp/util/di/DaggerApplicationComponent$MainActivitySubcomponentImpl$69;->this$0:Lde/rki/coronawarnapp/util/di/DaggerApplicationComponent$MainActivitySubcomponentImpl;
 
@@ -55,7 +55,7 @@
 
     const/4 v3, 0x0
 
-    invoke-direct {v0, v2, v1, v3}, Lde/rki/coronawarnapp/util/di/DaggerApplicationComponent$SettingsResetFragmentSubcomponentFactory;-><init>(Lde/rki/coronawarnapp/util/di/DaggerApplicationComponent;Lde/rki/coronawarnapp/util/di/DaggerApplicationComponent$MainActivitySubcomponentImpl;Lde/rki/coronawarnapp/util/di/DaggerApplicationComponent$SettingsResetFragmentSubcomponentFactory-IA;)V
+    invoke-direct {v0, v2, v1, v3}, Lde/rki/coronawarnapp/util/di/DaggerApplicationComponent$RecyclerBinOverviewFragmentSubcomponentFactory;-><init>(Lde/rki/coronawarnapp/util/di/DaggerApplicationComponent;Lde/rki/coronawarnapp/util/di/DaggerApplicationComponent$MainActivitySubcomponentImpl;Lboofcv/core/image/border/FactoryImageBorder$$ExternalSyntheticLambda2;)V
 
     return-object v0
 .end method

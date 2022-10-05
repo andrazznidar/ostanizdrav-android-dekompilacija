@@ -95,6 +95,8 @@
 
     aget-object v7, p2, v6
 
+    add-int/lit8 v6, v6, 0x1
+
     iget-object v8, v7, LTextViewUrlSet;->label:Lde/rki/coronawarnapp/util/ui/LazyString;
 
     invoke-virtual {p0}, Landroid/widget/TextView;->getContext()Landroid/content/Context;
@@ -125,8 +127,6 @@
 
     invoke-virtual {v4, v9}, Ljava/util/ArrayList;->add(Ljava/lang/Object;)Z
 
-    add-int/lit8 v6, v6, 0x1
-
     goto :goto_1
 
     :cond_2
@@ -155,31 +155,25 @@
 
     check-cast v2, Ljava/lang/String;
 
-    const-string v5, "null cannot be cast to non-null type java.lang.String"
+    sget-object v5, Ljava/util/Locale;->ROOT:Ljava/util/Locale;
 
-    invoke-static {v0, v5}, Ljava/util/Objects;->requireNonNull(Ljava/lang/Object;Ljava/lang/String;)Ljava/lang/Object;
+    invoke-virtual {v0, v5}, Ljava/lang/String;->toLowerCase(Ljava/util/Locale;)Ljava/lang/String;
 
-    sget-object v6, Ljava/util/Locale;->ROOT:Ljava/util/Locale;
+    move-result-object v6
 
-    invoke-virtual {v0, v6}, Ljava/lang/String;->toLowerCase(Ljava/util/Locale;)Ljava/lang/String;
+    const-string/jumbo v7, "this as java.lang.String).toLowerCase(Locale.ROOT)"
 
-    move-result-object v7
+    invoke-static {v6, v7}, Lkotlin/jvm/internal/Intrinsics;->checkNotNullExpressionValue(Ljava/lang/Object;Ljava/lang/String;)V
 
-    const-string v8, "(this as java.lang.Strin\u2026.toLowerCase(Locale.ROOT)"
-
-    invoke-static {v7, v8}, Lkotlin/jvm/internal/Intrinsics;->checkNotNullExpressionValue(Ljava/lang/Object;Ljava/lang/String;)V
-
-    invoke-static {v4, v5}, Ljava/util/Objects;->requireNonNull(Ljava/lang/Object;Ljava/lang/String;)Ljava/lang/Object;
-
-    invoke-virtual {v4, v6}, Ljava/lang/String;->toLowerCase(Ljava/util/Locale;)Ljava/lang/String;
+    invoke-virtual {v4, v5}, Ljava/lang/String;->toLowerCase(Ljava/util/Locale;)Ljava/lang/String;
 
     move-result-object v5
 
-    invoke-static {v5, v8}, Lkotlin/jvm/internal/Intrinsics;->checkNotNullExpressionValue(Ljava/lang/Object;Ljava/lang/String;)V
+    invoke-static {v5, v7}, Lkotlin/jvm/internal/Intrinsics;->checkNotNullExpressionValue(Ljava/lang/Object;Ljava/lang/String;)V
 
-    const/4 v6, 0x6
+    const/4 v7, 0x6
 
-    invoke-static {v7, v5, v1, v1, v6}, Lkotlin/text/StringsKt__StringsKt;->indexOf$default(Ljava/lang/CharSequence;Ljava/lang/String;IZI)I
+    invoke-static {v6, v5, v1, v1, v7}, Lkotlin/text/StringsKt__StringsKt;->indexOf$default(Ljava/lang/CharSequence;Ljava/lang/String;IZI)I
 
     move-result v5
 

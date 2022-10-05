@@ -2,7 +2,7 @@
 .super Ljava/lang/Object;
 
 # interfaces
-.implements Lorg/bouncycastle/crypto/Digest;
+.implements Lorg/bouncycastle/crypto/ExtendedDigest;
 
 
 # static fields
@@ -24,7 +24,7 @@
 
 
 # direct methods
-.method public static constructor <clinit>()V
+.method static constructor <clinit>()V
     .locals 1
 
     const/16 v0, 0x18
@@ -66,6 +66,16 @@
     .end array-data
 .end method
 
+.method public constructor <init>()V
+    .locals 1
+
+    const/16 v0, 0x120
+
+    invoke-direct {p0, v0}, Lorg/bouncycastle/crypto/digests/KeccakDigest;-><init>(I)V
+
+    return-void
+.end method
+
 .method public constructor <init>(I)V
     .locals 1
 
@@ -84,6 +94,58 @@
     iput-object v0, p0, Lorg/bouncycastle/crypto/digests/KeccakDigest;->dataQueue:[B
 
     invoke-virtual {p0, p1}, Lorg/bouncycastle/crypto/digests/KeccakDigest;->init(I)V
+
+    return-void
+.end method
+
+.method public constructor <init>(Lorg/bouncycastle/crypto/digests/KeccakDigest;)V
+    .locals 4
+
+    invoke-direct {p0}, Ljava/lang/Object;-><init>()V
+
+    const/16 v0, 0x19
+
+    new-array v0, v0, [J
+
+    iput-object v0, p0, Lorg/bouncycastle/crypto/digests/KeccakDigest;->state:[J
+
+    const/16 v1, 0xc0
+
+    new-array v1, v1, [B
+
+    iput-object v1, p0, Lorg/bouncycastle/crypto/digests/KeccakDigest;->dataQueue:[B
+
+    iget-object v1, p1, Lorg/bouncycastle/crypto/digests/KeccakDigest;->state:[J
+
+    array-length v2, v1
+
+    const/4 v3, 0x0
+
+    invoke-static {v1, v3, v0, v3, v2}, Ljava/lang/System;->arraycopy(Ljava/lang/Object;ILjava/lang/Object;II)V
+
+    iget-object v0, p1, Lorg/bouncycastle/crypto/digests/KeccakDigest;->dataQueue:[B
+
+    iget-object v1, p0, Lorg/bouncycastle/crypto/digests/KeccakDigest;->dataQueue:[B
+
+    array-length v2, v0
+
+    invoke-static {v0, v3, v1, v3, v2}, Ljava/lang/System;->arraycopy(Ljava/lang/Object;ILjava/lang/Object;II)V
+
+    iget v0, p1, Lorg/bouncycastle/crypto/digests/KeccakDigest;->rate:I
+
+    iput v0, p0, Lorg/bouncycastle/crypto/digests/KeccakDigest;->rate:I
+
+    iget v0, p1, Lorg/bouncycastle/crypto/digests/KeccakDigest;->bitsInQueue:I
+
+    iput v0, p0, Lorg/bouncycastle/crypto/digests/KeccakDigest;->bitsInQueue:I
+
+    iget v0, p1, Lorg/bouncycastle/crypto/digests/KeccakDigest;->fixedOutputLength:I
+
+    iput v0, p0, Lorg/bouncycastle/crypto/digests/KeccakDigest;->fixedOutputLength:I
+
+    iget-boolean p1, p1, Lorg/bouncycastle/crypto/digests/KeccakDigest;->squeezing:Z
+
+    iput-boolean p1, p0, Lorg/bouncycastle/crypto/digests/KeccakDigest;->squeezing:Z
 
     return-void
 .end method
@@ -131,11 +193,7 @@
 
     array-length p2, p1
 
-    invoke-static {p1, v1, p2}, Lorg/bouncycastle/util/encoders/Hex;->encode([BII)[B
-
-    move-result-object p1
-
-    invoke-static {p1}, Lorg/bouncycastle/util/Strings;->fromByteArray([B)Ljava/lang/String;
+    invoke-static {p1, v1, p2}, Lorg/bouncycastle/util/encoders/Hex;->toHexString([BII)Ljava/lang/String;
 
     move-result-object p1
 
@@ -1006,6 +1064,107 @@
     return-void
 .end method
 
+.method public absorb([BII)V
+    .locals 5
+
+    iget v0, p0, Lorg/bouncycastle/crypto/digests/KeccakDigest;->bitsInQueue:I
+
+    rem-int/lit8 v1, v0, 0x8
+
+    if-nez v1, :cond_4
+
+    iget-boolean v1, p0, Lorg/bouncycastle/crypto/digests/KeccakDigest;->squeezing:Z
+
+    if-nez v1, :cond_3
+
+    ushr-int/lit8 v0, v0, 0x3
+
+    iget v1, p0, Lorg/bouncycastle/crypto/digests/KeccakDigest;->rate:I
+
+    ushr-int/lit8 v1, v1, 0x3
+
+    sub-int v2, v1, v0
+
+    if-ge p3, v2, :cond_0
+
+    iget-object v1, p0, Lorg/bouncycastle/crypto/digests/KeccakDigest;->dataQueue:[B
+
+    invoke-static {p1, p2, v1, v0, p3}, Ljava/lang/System;->arraycopy(Ljava/lang/Object;ILjava/lang/Object;II)V
+
+    iget p1, p0, Lorg/bouncycastle/crypto/digests/KeccakDigest;->bitsInQueue:I
+
+    shl-int/lit8 p2, p3, 0x3
+
+    add-int/2addr p1, p2
+
+    :goto_0
+    iput p1, p0, Lorg/bouncycastle/crypto/digests/KeccakDigest;->bitsInQueue:I
+
+    return-void
+
+    :cond_0
+    const/4 v3, 0x0
+
+    if-lez v0, :cond_1
+
+    iget-object v4, p0, Lorg/bouncycastle/crypto/digests/KeccakDigest;->dataQueue:[B
+
+    invoke-static {p1, p2, v4, v0, v2}, Ljava/lang/System;->arraycopy(Ljava/lang/Object;ILjava/lang/Object;II)V
+
+    add-int/2addr v2, v3
+
+    iget-object v0, p0, Lorg/bouncycastle/crypto/digests/KeccakDigest;->dataQueue:[B
+
+    invoke-virtual {p0, v0, v3}, Lorg/bouncycastle/crypto/digests/KeccakDigest;->KeccakAbsorb([BI)V
+
+    goto :goto_1
+
+    :cond_1
+    move v2, v3
+
+    :goto_1
+    sub-int v0, p3, v2
+
+    if-lt v0, v1, :cond_2
+
+    add-int v0, p2, v2
+
+    invoke-virtual {p0, p1, v0}, Lorg/bouncycastle/crypto/digests/KeccakDigest;->KeccakAbsorb([BI)V
+
+    add-int/2addr v2, v1
+
+    goto :goto_1
+
+    :cond_2
+    add-int/2addr p2, v2
+
+    iget-object p3, p0, Lorg/bouncycastle/crypto/digests/KeccakDigest;->dataQueue:[B
+
+    invoke-static {p1, p2, p3, v3, v0}, Ljava/lang/System;->arraycopy(Ljava/lang/Object;ILjava/lang/Object;II)V
+
+    shl-int/lit8 p1, v0, 0x3
+
+    goto :goto_0
+
+    :cond_3
+    new-instance p1, Ljava/lang/IllegalStateException;
+
+    const-string p2, "attempt to absorb while squeezing"
+
+    invoke-direct {p1, p2}, Ljava/lang/IllegalStateException;-><init>(Ljava/lang/String;)V
+
+    throw p1
+
+    :cond_4
+    new-instance p1, Ljava/lang/IllegalStateException;
+
+    const-string p2, "attempt to absorb with odd length queue"
+
+    invoke-direct {p1, p2}, Ljava/lang/IllegalStateException;-><init>(Ljava/lang/String;)V
+
+    throw p1
+.end method
+
 .method public absorbBits(II)V
     .locals 4
 
@@ -1075,8 +1234,26 @@
     throw p1
 .end method
 
+.method public doFinal([BI)I
+    .locals 2
+
+    iget v0, p0, Lorg/bouncycastle/crypto/digests/KeccakDigest;->fixedOutputLength:I
+
+    int-to-long v0, v0
+
+    invoke-virtual {p0, p1, p2, v0, v1}, Lorg/bouncycastle/crypto/digests/KeccakDigest;->squeeze([BIJ)V
+
+    invoke-virtual {p0}, Lorg/bouncycastle/crypto/digests/KeccakDigest;->reset()V
+
+    invoke-virtual {p0}, Lorg/bouncycastle/crypto/digests/KeccakDigest;->getDigestSize()I
+
+    move-result p1
+
+    return p1
+.end method
+
 .method public dumpState()[B
-    .locals 8
+    .locals 6
 
     iget-object v0, p0, Lorg/bouncycastle/crypto/digests/KeccakDigest;->state:[J
 
@@ -1099,23 +1276,7 @@
 
     aget-wide v4, v3, v1
 
-    const-wide v6, 0xffffffffL
-
-    and-long/2addr v6, v4
-
-    long-to-int v3, v6
-
-    invoke-static {v3, v0, v2}, Lorg/bouncycastle/util/Pack;->intToLittleEndian(I[BI)V
-
-    const/16 v3, 0x20
-
-    ushr-long v3, v4, v3
-
-    long-to-int v3, v3
-
-    add-int/lit8 v4, v2, 0x4
-
-    invoke-static {v3, v0, v4}, Lorg/bouncycastle/util/Pack;->intToLittleEndian(I[BI)V
+    invoke-static {v4, v5, v0, v2}, Lorg/bouncycastle/util/Pack;->longToLittleEndian(J[BI)V
 
     add-int/lit8 v2, v2, 0x8
 
@@ -1125,6 +1286,36 @@
 
     :cond_0
     return-object v0
+.end method
+
+.method public getAlgorithmName()Ljava/lang/String;
+    .locals 2
+
+    const-string v0, "Keccak-"
+
+    invoke-static {v0}, Landroid/support/v4/media/RatingCompat$$ExternalSyntheticOutline0;->m(Ljava/lang/String;)Ljava/lang/StringBuilder;
+
+    move-result-object v0
+
+    iget v1, p0, Lorg/bouncycastle/crypto/digests/KeccakDigest;->fixedOutputLength:I
+
+    invoke-virtual {v0, v1}, Ljava/lang/StringBuilder;->append(I)Ljava/lang/StringBuilder;
+
+    invoke-virtual {v0}, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
+
+    move-result-object v0
+
+    return-object v0
+.end method
+
+.method public getByteLength()I
+    .locals 1
+
+    iget v0, p0, Lorg/bouncycastle/crypto/digests/KeccakDigest;->rate:I
+
+    div-int/lit8 v0, v0, 0x8
+
+    return v0
 .end method
 
 .method public getDigestSize()I
@@ -1239,8 +1430,18 @@
     throw p1
 .end method
 
+.method public reset()V
+    .locals 1
+
+    iget v0, p0, Lorg/bouncycastle/crypto/digests/KeccakDigest;->fixedOutputLength:I
+
+    invoke-virtual {p0, v0}, Lorg/bouncycastle/crypto/digests/KeccakDigest;->init(I)V
+
+    return-void
+.end method
+
 .method public squeeze([BIJ)V
-    .locals 15
+    .locals 13
 
     move-object v0, p0
 
@@ -1410,23 +1611,7 @@
 
     aget-wide v11, v1, v11
 
-    const-wide v13, 0xffffffffL
-
-    and-long/2addr v13, v11
-
-    long-to-int v13, v13
-
-    invoke-static {v13, v6, v10}, Lorg/bouncycastle/util/Pack;->intToLittleEndian(I[BI)V
-
-    const/16 v13, 0x20
-
-    ushr-long/2addr v11, v13
-
-    long-to-int v11, v11
-
-    add-int/lit8 v12, v10, 0x4
-
-    invoke-static {v11, v6, v12}, Lorg/bouncycastle/util/Pack;->intToLittleEndian(I[BI)V
+    invoke-static {v11, v12, v6, v10}, Lorg/bouncycastle/util/Pack;->longToLittleEndian(J[BI)V
 
     add-int/lit8 v10, v10, 0x8
 
@@ -1466,13 +1651,13 @@
 
     long-to-int v9, v9
 
-    add-int v9, p2, v9
+    add-int/2addr v9, p2
 
     div-int/lit8 v10, v1, 0x8
 
-    move-object/from16 v11, p1
+    move-object v11, p1
 
-    invoke-static {v5, v6, v11, v9, v10}, Ljava/lang/System;->arraycopy(Ljava/lang/Object;ILjava/lang/Object;II)V
+    invoke-static {v5, v6, p1, v9, v10}, Ljava/lang/System;->arraycopy(Ljava/lang/Object;ILjava/lang/Object;II)V
 
     iget v5, v0, Lorg/bouncycastle/crypto/digests/KeccakDigest;->bitsInQueue:I
 
@@ -1557,102 +1742,9 @@
 .end method
 
 .method public update([BII)V
-    .locals 5
+    .locals 0
 
-    iget v0, p0, Lorg/bouncycastle/crypto/digests/KeccakDigest;->bitsInQueue:I
-
-    rem-int/lit8 v1, v0, 0x8
-
-    if-nez v1, :cond_4
-
-    iget-boolean v1, p0, Lorg/bouncycastle/crypto/digests/KeccakDigest;->squeezing:Z
-
-    if-nez v1, :cond_3
-
-    ushr-int/lit8 v0, v0, 0x3
-
-    iget v1, p0, Lorg/bouncycastle/crypto/digests/KeccakDigest;->rate:I
-
-    ushr-int/lit8 v1, v1, 0x3
-
-    sub-int v2, v1, v0
-
-    if-ge p3, v2, :cond_0
-
-    iget-object v1, p0, Lorg/bouncycastle/crypto/digests/KeccakDigest;->dataQueue:[B
-
-    invoke-static {p1, p2, v1, v0, p3}, Ljava/lang/System;->arraycopy(Ljava/lang/Object;ILjava/lang/Object;II)V
-
-    iget p1, p0, Lorg/bouncycastle/crypto/digests/KeccakDigest;->bitsInQueue:I
-
-    shl-int/lit8 p2, p3, 0x3
-
-    add-int/2addr p1, p2
-
-    goto :goto_1
-
-    :cond_0
-    const/4 v3, 0x0
-
-    if-lez v0, :cond_1
-
-    iget-object v4, p0, Lorg/bouncycastle/crypto/digests/KeccakDigest;->dataQueue:[B
-
-    invoke-static {p1, p2, v4, v0, v2}, Ljava/lang/System;->arraycopy(Ljava/lang/Object;ILjava/lang/Object;II)V
-
-    add-int/2addr v2, v3
-
-    iget-object v0, p0, Lorg/bouncycastle/crypto/digests/KeccakDigest;->dataQueue:[B
-
-    invoke-virtual {p0, v0, v3}, Lorg/bouncycastle/crypto/digests/KeccakDigest;->KeccakAbsorb([BI)V
-
-    goto :goto_0
-
-    :cond_1
-    move v2, v3
-
-    :goto_0
-    sub-int v0, p3, v2
-
-    if-lt v0, v1, :cond_2
-
-    add-int v0, p2, v2
-
-    invoke-virtual {p0, p1, v0}, Lorg/bouncycastle/crypto/digests/KeccakDigest;->KeccakAbsorb([BI)V
-
-    add-int/2addr v2, v1
-
-    goto :goto_0
-
-    :cond_2
-    add-int/2addr p2, v2
-
-    iget-object p3, p0, Lorg/bouncycastle/crypto/digests/KeccakDigest;->dataQueue:[B
-
-    invoke-static {p1, p2, p3, v3, v0}, Ljava/lang/System;->arraycopy(Ljava/lang/Object;ILjava/lang/Object;II)V
-
-    shl-int/lit8 p1, v0, 0x3
-
-    :goto_1
-    iput p1, p0, Lorg/bouncycastle/crypto/digests/KeccakDigest;->bitsInQueue:I
+    invoke-virtual {p0, p1, p2, p3}, Lorg/bouncycastle/crypto/digests/KeccakDigest;->absorb([BII)V
 
     return-void
-
-    :cond_3
-    new-instance p1, Ljava/lang/IllegalStateException;
-
-    const-string p2, "attempt to absorb while squeezing"
-
-    invoke-direct {p1, p2}, Ljava/lang/IllegalStateException;-><init>(Ljava/lang/String;)V
-
-    throw p1
-
-    :cond_4
-    new-instance p1, Ljava/lang/IllegalStateException;
-
-    const-string p2, "attempt to absorb with odd length queue"
-
-    invoke-direct {p1, p2}, Ljava/lang/IllegalStateException;-><init>(Ljava/lang/String;)V
-
-    throw p1
 .end method

@@ -1033,7 +1033,7 @@
     invoke-virtual {v0, v1, v2, v5, v4}, Landroid/graphics/drawable/Drawable;->setHotspotBounds(IIII)V
 
     :cond_7
-    invoke-super {p0, p1}, Landroid/view/View;->draw(Landroid/graphics/Canvas;)V
+    invoke-super {p0, p1}, Landroid/widget/CompoundButton;->draw(Landroid/graphics/Canvas;)V
 
     return-void
 .end method
@@ -1609,7 +1609,7 @@
 .method public onInitializeAccessibilityEvent(Landroid/view/accessibility/AccessibilityEvent;)V
     .locals 1
 
-    invoke-super {p0, p1}, Landroid/view/View;->onInitializeAccessibilityEvent(Landroid/view/accessibility/AccessibilityEvent;)V
+    invoke-super {p0, p1}, Landroid/widget/CompoundButton;->onInitializeAccessibilityEvent(Landroid/view/accessibility/AccessibilityEvent;)V
 
     const-string v0, "android.widget.Switch"
 
@@ -1621,7 +1621,7 @@
 .method public onInitializeAccessibilityNodeInfo(Landroid/view/accessibility/AccessibilityNodeInfo;)V
     .locals 3
 
-    invoke-super {p0, p1}, Landroid/view/View;->onInitializeAccessibilityNodeInfo(Landroid/view/accessibility/AccessibilityNodeInfo;)V
+    invoke-super {p0, p1}, Landroid/widget/CompoundButton;->onInitializeAccessibilityNodeInfo(Landroid/view/accessibility/AccessibilityNodeInfo;)V
 
     const-string v0, "android.widget.Switch"
 
@@ -1690,7 +1690,7 @@
 .method public onLayout(ZIIII)V
     .locals 1
 
-    invoke-super/range {p0 .. p5}, Landroid/widget/TextView;->onLayout(ZIIII)V
+    invoke-super/range {p0 .. p5}, Landroid/widget/CompoundButton;->onLayout(ZIIII)V
 
     iget-object p1, p0, Landroidx/appcompat/widget/SwitchCompat;->mThumbDrawable:Landroid/graphics/drawable/Drawable;
 
@@ -2048,7 +2048,7 @@
 
     iput v1, p0, Landroidx/appcompat/widget/SwitchCompat;->mSwitchHeight:I
 
-    invoke-super {p0, p1, p2}, Landroid/widget/TextView;->onMeasure(II)V
+    invoke-super {p0, p1, p2}, Landroid/widget/CompoundButton;->onMeasure(II)V
 
     invoke-virtual {p0}, Landroid/widget/CompoundButton;->getMeasuredHeight()I
 
@@ -2069,7 +2069,7 @@
 .method public onPopulateAccessibilityEvent(Landroid/view/accessibility/AccessibilityEvent;)V
     .locals 1
 
-    invoke-super {p0, p1}, Landroid/view/View;->onPopulateAccessibilityEvent(Landroid/view/accessibility/AccessibilityEvent;)V
+    invoke-super {p0, p1}, Landroid/widget/CompoundButton;->onPopulateAccessibilityEvent(Landroid/view/accessibility/AccessibilityEvent;)V
 
     invoke-virtual {p0}, Landroid/widget/CompoundButton;->isChecked()Z
 
@@ -2382,11 +2382,11 @@
 
     invoke-virtual {v0, v3}, Landroid/view/MotionEvent;->setAction(I)V
 
-    invoke-super {p0, v0}, Landroid/widget/TextView;->onTouchEvent(Landroid/view/MotionEvent;)Z
+    invoke-super {p0, v0}, Landroid/widget/CompoundButton;->onTouchEvent(Landroid/view/MotionEvent;)Z
 
     invoke-virtual {v0}, Landroid/view/MotionEvent;->recycle()V
 
-    invoke-super {p0, p1}, Landroid/widget/TextView;->onTouchEvent(Landroid/view/MotionEvent;)Z
+    invoke-super {p0, p1}, Landroid/widget/CompoundButton;->onTouchEvent(Landroid/view/MotionEvent;)Z
 
     return v2
 
@@ -2501,7 +2501,7 @@
 
     :cond_15
     :goto_6
-    invoke-super {p0, p1}, Landroid/widget/TextView;->onTouchEvent(Landroid/view/MotionEvent;)Z
+    invoke-super {p0, p1}, Landroid/widget/CompoundButton;->onTouchEvent(Landroid/view/MotionEvent;)Z
 
     move-result p1
 
@@ -2612,7 +2612,7 @@
 
     move-result-object p1
 
-    invoke-super {p0, p1}, Landroid/widget/TextView;->setCustomSelectionActionModeCallback(Landroid/view/ActionMode$Callback;)V
+    invoke-super {p0, p1}, Landroid/widget/CompoundButton;->setCustomSelectionActionModeCallback(Landroid/view/ActionMode$Callback;)V
 
     return-void
 .end method

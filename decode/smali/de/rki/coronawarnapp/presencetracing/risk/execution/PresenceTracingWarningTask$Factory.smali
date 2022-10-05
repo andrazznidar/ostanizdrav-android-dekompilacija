@@ -181,15 +181,15 @@
 
     move-result-object p1
 
-    const/4 v0, 0x0
+    const/4 v0, 0x2
 
-    const/4 v1, 0x2
+    new-instance v1, Lde/rki/coronawarnapp/presencetracing/risk/execution/PresenceTracingWarningTask$Config;
 
-    new-instance v2, Lde/rki/coronawarnapp/presencetracing/risk/execution/PresenceTracingWarningTask$Config;
+    const/4 v2, 0x0
 
-    invoke-direct {v2, p1, v0, v1}, Lde/rki/coronawarnapp/presencetracing/risk/execution/PresenceTracingWarningTask$Config;-><init>(Lorg/joda/time/Duration;Lde/rki/coronawarnapp/task/TaskFactory$Config$CollisionBehavior;I)V
+    invoke-direct {v1, p1, v2, v0}, Lde/rki/coronawarnapp/presencetracing/risk/execution/PresenceTracingWarningTask$Config;-><init>(Lorg/joda/time/Duration;II)V
 
-    return-object v2
+    return-object v1
 .end method
 
 .method public getTaskProvider()Lkotlin/jvm/functions/Function0;

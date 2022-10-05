@@ -17,8 +17,8 @@
     c = "de.rki.coronawarnapp.covidcertificate.expiration.DccExpirationNotificationService"
     f = "DccExpirationNotificationService.kt"
     l = {
-        0x62,
-        0x64
+        0x6f,
+        0x71
     }
     m = "getCertificates"
 .end annotation
@@ -71,6 +71,8 @@
     iput p1, p0, Lde/rki/coronawarnapp/covidcertificate/expiration/DccExpirationNotificationService$getCertificates$1;->label:I
 
     iget-object p1, p0, Lde/rki/coronawarnapp/covidcertificate/expiration/DccExpirationNotificationService$getCertificates$1;->this$0:Lde/rki/coronawarnapp/covidcertificate/expiration/DccExpirationNotificationService;
+
+    sget-object v0, Lde/rki/coronawarnapp/covidcertificate/expiration/DccExpirationNotificationService;->TAG:Ljava/lang/String;
 
     invoke-virtual {p1, p0}, Lde/rki/coronawarnapp/covidcertificate/expiration/DccExpirationNotificationService;->getCertificates(Lkotlin/coroutines/Continuation;)Ljava/lang/Object;
 

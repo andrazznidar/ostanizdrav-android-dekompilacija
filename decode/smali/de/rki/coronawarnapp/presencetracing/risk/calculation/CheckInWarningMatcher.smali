@@ -284,7 +284,7 @@
 
     invoke-static {v12, v13}, Lkotlin/jvm/internal/Intrinsics;->checkNotNullExpressionValue(Ljava/lang/Object;Ljava/lang/String;)V
 
-    invoke-static {v12}, Lkotlinx/coroutines/CoroutineScopeKt;->toOkioByteString(Lcom/google/protobuf/ByteString;)Lokio/ByteString;
+    invoke-static {v12}, Lde/rki/coronawarnapp/util/ProtoBufKt;->toOkioByteString(Lcom/google/protobuf/ByteString;)Lokio/ByteString;
 
     move-result-object v12
 
@@ -307,7 +307,6 @@
 
     move-result-object v10
 
-    :cond_8
     :goto_4
     invoke-interface {v10}, Ljava/util/Iterator;->hasNext()Z
 
@@ -342,7 +341,7 @@
 
     invoke-static {v13, v14}, Lkotlin/jvm/internal/Intrinsics;->checkNotNullExpressionValue(Ljava/lang/Object;Ljava/lang/String;)V
 
-    invoke-static {v13}, Lkotlinx/coroutines/CoroutineScopeKt;->toOkioByteString(Lcom/google/protobuf/ByteString;)Lokio/ByteString;
+    invoke-static {v13}, Lde/rki/coronawarnapp/util/ProtoBufKt;->toOkioByteString(Lcom/google/protobuf/ByteString;)Lokio/ByteString;
 
     move-result-object v13
 
@@ -366,43 +365,43 @@
 
     move-result v14
 
-    if-ltz v14, :cond_a
+    if-ltz v14, :cond_9
 
     invoke-virtual {v13}, Lde/rki/coronawarnapp/server/protocols/internal/pt/TraceWarning$TraceTimeIntervalWarning;->getPeriod()I
 
     move-result v14
 
-    if-lez v14, :cond_a
+    if-lez v14, :cond_9
 
     invoke-virtual {v13}, Lde/rki/coronawarnapp/server/protocols/internal/pt/TraceWarning$TraceTimeIntervalWarning;->getTransmissionRiskLevel()I
 
     move-result v14
 
-    if-gt v6, v14, :cond_9
+    if-gt v6, v14, :cond_8
 
-    const/16 v15, 0x8
+    const/16 v15, 0x9
 
-    if-gt v14, v15, :cond_9
+    if-ge v14, v15, :cond_8
 
     move v14, v6
 
     goto :goto_5
 
-    :cond_9
+    :cond_8
     move v14, v8
 
     :goto_5
-    if-eqz v14, :cond_a
+    if-eqz v14, :cond_9
 
     move v14, v6
 
     goto :goto_6
 
-    :cond_a
+    :cond_9
     move v14, v8
 
     :goto_6
-    if-eqz v14, :cond_b
+    if-eqz v14, :cond_a
 
     const-string v14, "Driven traceWarning %s"
 
@@ -414,7 +413,7 @@
 
     goto :goto_8
 
-    :cond_b
+    :cond_a
     const-string v14, "TraceWarning=%s is invalid"
 
     new-array v15, v6, [Ljava/lang/Object;
@@ -444,8 +443,11 @@
     const/4 v13, 0x0
 
     :goto_8
-    if-eqz v13, :cond_8
+    if-nez v13, :cond_b
 
+    goto :goto_4
+
+    :cond_b
     invoke-virtual {v11, v13}, Ljava/util/ArrayList;->add(Ljava/lang/Object;)Z
 
     goto :goto_4
@@ -589,7 +591,7 @@
 
     invoke-static {v9, v10}, Lkotlin/jvm/internal/Intrinsics;->checkNotNullExpressionValue(Ljava/lang/Object;Ljava/lang/String;)V
 
-    invoke-static {v9}, Lkotlinx/coroutines/CoroutineScopeKt;->toOkioByteString(Lcom/google/protobuf/ByteString;)Lokio/ByteString;
+    invoke-static {v9}, Lde/rki/coronawarnapp/util/ProtoBufKt;->toOkioByteString(Lcom/google/protobuf/ByteString;)Lokio/ByteString;
 
     move-result-object v9
 
@@ -847,11 +849,14 @@
     invoke-virtual {v4, v0, v3}, Ltimber/log/Timber$Forest;->w(Ljava/lang/String;[Ljava/lang/Object;)V
 
     :goto_e
-    if-eqz v1, :cond_13
+    if-nez v1, :cond_13
 
-    invoke-virtual {v6, v1}, Ljava/util/ArrayList;->add(Ljava/lang/Object;)Z
+    goto :goto_f
 
     :cond_13
+    invoke-virtual {v6, v1}, Ljava/util/ArrayList;->add(Ljava/lang/Object;)Z
+
+    :goto_f
     move-object/from16 v1, p0
 
     move-object/from16 v0, p1
@@ -1227,7 +1232,7 @@
 
     add-int/2addr v5, v7
 
-    const-string v8, "$this$chunked"
+    const-string v8, "<this>"
 
     invoke-static {v1, v8}, Lkotlin/jvm/internal/Intrinsics;->checkNotNullParameter(Ljava/lang/Object;Ljava/lang/String;)V
 
@@ -1266,43 +1271,52 @@
     move v10, v9
 
     :goto_2
-    if-gez v10, :cond_5
+    if-ltz v10, :cond_5
 
-    goto :goto_6
+    if-ge v10, v8, :cond_5
+
+    move v12, v7
+
+    goto :goto_3
 
     :cond_5
-    if-le v8, v10, :cond_9
+    move v12, v9
+
+    :goto_3
+    if-eqz v12, :cond_9
 
     sub-int v12, v8, v10
 
     if-le v5, v12, :cond_6
 
-    goto :goto_3
+    goto :goto_4
 
     :cond_6
     move v12, v5
 
-    :goto_3
+    :goto_4
     new-instance v13, Ljava/util/ArrayList;
 
     invoke-direct {v13, v12}, Ljava/util/ArrayList;-><init>(I)V
 
     move v14, v9
 
-    :goto_4
+    :goto_5
     if-ge v14, v12, :cond_7
 
-    add-int v15, v14, v10
+    add-int/lit8 v15, v14, 0x1
 
-    invoke-interface {v1, v15}, Ljava/util/List;->get(I)Ljava/lang/Object;
+    add-int/2addr v14, v10
 
-    move-result-object v15
+    invoke-interface {v1, v14}, Ljava/util/List;->get(I)Ljava/lang/Object;
 
-    invoke-virtual {v13, v15}, Ljava/util/ArrayList;->add(Ljava/lang/Object;)Z
+    move-result-object v14
 
-    add-int/lit8 v14, v14, 0x1
+    invoke-virtual {v13, v14}, Ljava/util/ArrayList;->add(Ljava/lang/Object;)Z
 
-    goto :goto_4
+    move v14, v15
+
+    goto :goto_5
 
     :cond_7
     invoke-virtual {v11, v13}, Ljava/util/ArrayList;->add(Ljava/lang/Object;)Z
@@ -1324,7 +1338,7 @@
 
     move-result-object v1
 
-    :goto_5
+    :goto_6
     invoke-interface {v1}, Ljava/util/Iterator;->hasNext()Z
 
     move-result v5
@@ -1339,10 +1353,9 @@
 
     invoke-virtual {v11, v5}, Ljava/util/ArrayList;->add(Ljava/lang/Object;)Z
 
-    goto :goto_5
+    goto :goto_6
 
     :cond_9
-    :goto_6
     new-instance v1, Ljava/util/ArrayList;
 
     const/16 v5, 0xa

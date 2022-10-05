@@ -14,8 +14,7 @@
         ">",
         "Lkotlin/coroutines/jvm/internal/ContinuationImpl;",
         "Lkotlinx/coroutines/flow/FlowCollector<",
-        "TT;>;",
-        "Lkotlin/coroutines/jvm/internal/CoroutineStackFrame;"
+        "TT;>;"
     }
 .end annotation
 

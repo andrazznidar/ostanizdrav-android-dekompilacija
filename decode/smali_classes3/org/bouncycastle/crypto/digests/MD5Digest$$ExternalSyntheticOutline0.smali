@@ -1,5 +1,6 @@
 .class public final synthetic Lorg/bouncycastle/crypto/digests/MD5Digest$$ExternalSyntheticOutline0;
 .super Ljava/lang/Object;
+.source "R8$$SyntheticClass"
 
 
 # direct methods
@@ -17,4 +18,22 @@
     add-int/2addr p0, p5
 
     return p0
+.end method
+
+.method public static m(Ljava/lang/Class;)Ljava/lang/String;
+    .locals 0
+
+    invoke-static {p0}, Lkotlin/jvm/internal/Reflection;->getOrCreateKotlinClass(Ljava/lang/Class;)Lkotlin/reflect/KClass;
+
+    move-result-object p0
+
+    invoke-interface {p0}, Lkotlin/reflect/KClass;->getSimpleName()Ljava/lang/String;
+
+    move-result-object p0
+
+    invoke-static {p0}, Ljava/lang/String;->valueOf(Ljava/lang/Object;)Ljava/lang/String;
+
+    move-result-object p0
+
+    return-object p0
 .end method

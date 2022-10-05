@@ -86,7 +86,7 @@
 
     const-string v0, "expectedSize"
 
-    invoke-static {p0, v0}, Lcom/google/common/collect/CollectPreconditions;->checkNonnegative(ILjava/lang/String;)I
+    invoke-static {p0, v0}, Lorg/ejml/dense/row/misc/ImplCommonOps_DDMA;->checkNonnegative(ILjava/lang/String;)I
 
     new-instance v0, Lcom/google/common/collect/ImmutableMap$Builder;
 
@@ -119,6 +119,20 @@
     return-object p1
 .end method
 
+.method public synthetic compute(Ljava/lang/Object;Ljava/util/function/BiFunction;)Ljava/lang/Object;
+    .locals 0
+
+    invoke-static {p2}, Lj$/util/function/BiFunction$VivifiedWrapper;->convert(Ljava/util/function/BiFunction;)Lj$/util/function/BiFunction;
+
+    move-result-object p2
+
+    invoke-static {p0, p1, p2}, Lj$/util/Map$-CC;->$default$compute(Ljava/util/Map;Ljava/lang/Object;Lj$/util/function/BiFunction;)Ljava/lang/Object;
+
+    move-result-object p1
+
+    return-object p1
+.end method
+
 .method public synthetic computeIfAbsent(Ljava/lang/Object;Lj$/util/function/Function;)Ljava/lang/Object;
     .locals 0
 
@@ -129,8 +143,36 @@
     return-object p1
 .end method
 
+.method public synthetic computeIfAbsent(Ljava/lang/Object;Ljava/util/function/Function;)Ljava/lang/Object;
+    .locals 0
+
+    invoke-static {p2}, Lj$/util/function/Function$VivifiedWrapper;->convert(Ljava/util/function/Function;)Lj$/util/function/Function;
+
+    move-result-object p2
+
+    invoke-static {p0, p1, p2}, Lj$/util/Map$-CC;->$default$computeIfAbsent(Ljava/util/Map;Ljava/lang/Object;Lj$/util/function/Function;)Ljava/lang/Object;
+
+    move-result-object p1
+
+    return-object p1
+.end method
+
 .method public synthetic computeIfPresent(Ljava/lang/Object;Lj$/util/function/BiFunction;)Ljava/lang/Object;
     .locals 0
+
+    invoke-static {p0, p1, p2}, Lj$/util/Map$-CC;->$default$computeIfPresent(Ljava/util/Map;Ljava/lang/Object;Lj$/util/function/BiFunction;)Ljava/lang/Object;
+
+    move-result-object p1
+
+    return-object p1
+.end method
+
+.method public synthetic computeIfPresent(Ljava/lang/Object;Ljava/util/function/BiFunction;)Ljava/lang/Object;
+    .locals 0
+
+    invoke-static {p2}, Lj$/util/function/BiFunction$VivifiedWrapper;->convert(Ljava/util/function/BiFunction;)Lj$/util/function/BiFunction;
+
+    move-result-object p2
 
     invoke-static {p0, p1, p2}, Lj$/util/Map$-CC;->$default$computeIfPresent(Ljava/util/Map;Ljava/lang/Object;Lj$/util/function/BiFunction;)Ljava/lang/Object;
 
@@ -265,6 +307,18 @@
     return-void
 .end method
 
+.method public synthetic forEach(Ljava/util/function/BiConsumer;)V
+    .locals 0
+
+    invoke-static {p1}, Lj$/util/function/BiConsumer$VivifiedWrapper;->convert(Ljava/util/function/BiConsumer;)Lj$/util/function/BiConsumer;
+
+    move-result-object p1
+
+    invoke-static {p0, p1}, Lj$/util/Map$-CC;->$default$forEach(Ljava/util/Map;Lj$/util/function/BiConsumer;)V
+
+    return-void
+.end method
+
 .method public abstract get(Ljava/lang/Object;)Ljava/lang/Object;
     .annotation system Ldalvik/annotation/Signature;
         value = {
@@ -304,7 +358,7 @@
 
     move-result-object v0
 
-    invoke-static {v0}, Landroidx/lifecycle/LifecycleKt;->hashCodeImpl(Ljava/util/Set;)I
+    invoke-static {v0}, Lcom/google/common/collect/Sets;->hashCodeImpl(Ljava/util/Set;)I
 
     move-result v0
 
@@ -370,6 +424,20 @@
 
 .method public synthetic merge(Ljava/lang/Object;Ljava/lang/Object;Lj$/util/function/BiFunction;)Ljava/lang/Object;
     .locals 0
+
+    invoke-static {p0, p1, p2, p3}, Lj$/util/Map$-CC;->$default$merge(Ljava/util/Map;Ljava/lang/Object;Ljava/lang/Object;Lj$/util/function/BiFunction;)Ljava/lang/Object;
+
+    move-result-object p1
+
+    return-object p1
+.end method
+
+.method public synthetic merge(Ljava/lang/Object;Ljava/lang/Object;Ljava/util/function/BiFunction;)Ljava/lang/Object;
+    .locals 0
+
+    invoke-static {p3}, Lj$/util/function/BiFunction$VivifiedWrapper;->convert(Ljava/util/function/BiFunction;)Lj$/util/function/BiFunction;
+
+    move-result-object p3
 
     invoke-static {p0, p1, p2, p3}, Lj$/util/Map$-CC;->$default$merge(Ljava/util/Map;Ljava/lang/Object;Ljava/lang/Object;Lj$/util/function/BiFunction;)Ljava/lang/Object;
 
@@ -484,6 +552,18 @@
     return-void
 .end method
 
+.method public synthetic replaceAll(Ljava/util/function/BiFunction;)V
+    .locals 0
+
+    invoke-static {p1}, Lj$/util/function/BiFunction$VivifiedWrapper;->convert(Ljava/util/function/BiFunction;)Lj$/util/function/BiFunction;
+
+    move-result-object p1
+
+    invoke-static {p0, p1}, Lj$/util/Map$-CC;->$default$replaceAll(Ljava/util/Map;Lj$/util/function/BiFunction;)V
+
+    return-void
+.end method
+
 .method public toString()Ljava/lang/String;
     .locals 6
 
@@ -497,7 +577,7 @@
 
     const-string/jumbo v1, "size"
 
-    invoke-static {v0, v1}, Lcom/google/common/collect/CollectPreconditions;->checkNonnegative(ILjava/lang/String;)I
+    invoke-static {v0, v1}, Lorg/ejml/dense/row/misc/ImplCommonOps_DDMA;->checkNonnegative(ILjava/lang/String;)I
 
     new-instance v1, Ljava/lang/StringBuilder;
 

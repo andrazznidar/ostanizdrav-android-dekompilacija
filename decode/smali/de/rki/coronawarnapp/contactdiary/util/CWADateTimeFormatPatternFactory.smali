@@ -23,7 +23,7 @@
 
     const-string v1, "dd.MM.yy"
 
-    goto/16 :goto_1
+    goto :goto_0
 
     :cond_0
     sget-object v0, Ljava/util/Locale;->UK:Ljava/util/Locale;
@@ -36,7 +36,7 @@
 
     const-string v1, "dd/MM/yyyy"
 
-    goto/16 :goto_1
+    goto :goto_0
 
     :cond_1
     sget-object v0, Ljava/util/Locale;->US:Ljava/util/Locale;
@@ -49,7 +49,7 @@
 
     const-string v1, "M/d/yy"
 
-    goto/16 :goto_1
+    goto :goto_0
 
     :cond_2
     new-instance v0, Ljava/util/Locale;
@@ -68,7 +68,7 @@
 
     const-string v1, "d.MM.yy \'\u0433\'."
 
-    goto :goto_1
+    goto :goto_0
 
     :cond_3
     new-instance v0, Ljava/util/Locale;
@@ -85,7 +85,7 @@
 
     if-eqz v0, :cond_4
 
-    goto :goto_1
+    goto :goto_0
 
     :cond_4
     new-instance v0, Ljava/util/Locale;
@@ -102,7 +102,7 @@
 
     if-eqz v0, :cond_5
 
-    goto :goto_1
+    goto :goto_0
 
     :cond_5
     new-instance v0, Ljava/util/Locale;
@@ -121,53 +121,12 @@
 
     const-string v1, "d.MM.yyyy"
 
-    goto :goto_1
+    goto :goto_0
 
     :cond_6
     const-string v0, "S-"
 
-    sget-object v1, Lorg/joda/time/format/DateTimeFormat;->cPatternCache:Lj$/util/concurrent/ConcurrentHashMap;
-
-    const/4 v1, 0x0
-
-    invoke-virtual {v0, v1}, Ljava/lang/String;->charAt(I)C
-
-    move-result v1
-
-    invoke-static {v1}, Lorg/joda/time/format/DateTimeFormat;->selectStyle(C)I
-
-    move-result v1
-
-    const/4 v2, 0x1
-
-    invoke-virtual {v0, v2}, Ljava/lang/String;->charAt(I)C
-
-    move-result v0
-
-    invoke-static {v0}, Lorg/joda/time/format/DateTimeFormat;->selectStyle(C)I
-
-    move-result v0
-
-    const/4 v2, 0x4
-
-    if-ne v1, v2, :cond_8
-
-    if-eq v0, v2, :cond_7
-
-    goto :goto_0
-
-    :cond_7
-    new-instance p0, Ljava/lang/IllegalArgumentException;
-
-    const-string v0, "Style \'--\' is invalid"
-
-    invoke-direct {p0, v0}, Ljava/lang/IllegalArgumentException;-><init>(Ljava/lang/String;)V
-
-    throw p0
-
-    :cond_8
-    :goto_0
-    invoke-static {v1, v0}, Lorg/joda/time/format/DateTimeFormat;->createFormatterForStyleIndex(II)Lorg/joda/time/format/DateTimeFormatter;
+    invoke-static {v0}, Lorg/joda/time/format/DateTimeFormat;->createFormatterForStyle(Ljava/lang/String;)Lorg/joda/time/format/DateTimeFormatter;
 
     move-result-object v0
 
@@ -179,6 +138,6 @@
 
     move-result-object v1
 
-    :goto_1
+    :goto_0
     return-object v1
 .end method

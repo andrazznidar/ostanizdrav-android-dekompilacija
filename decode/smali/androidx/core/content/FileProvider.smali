@@ -411,9 +411,17 @@
 
     new-instance p1, Ljava/lang/IllegalArgumentException;
 
-    const-string v0, "Failed to resolve canonical path for "
+    new-instance v0, Ljava/lang/StringBuilder;
 
-    invoke-static {v0, v3}, Landroidx/core/content/FileProvider$SimplePathStrategy$$ExternalSyntheticOutline0;->m(Ljava/lang/String;Ljava/io/File;)Ljava/lang/String;
+    invoke-direct {v0}, Ljava/lang/StringBuilder;-><init>()V
+
+    const-string v1, "Failed to resolve canonical path for "
+
+    invoke-virtual {v0, v1}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+
+    invoke-virtual {v0, v3}, Ljava/lang/StringBuilder;->append(Ljava/lang/Object;)Ljava/lang/StringBuilder;
+
+    invoke-virtual {v0}, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
 
     move-result-object v0
 

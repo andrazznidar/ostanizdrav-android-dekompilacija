@@ -17,19 +17,27 @@
 .end annotation
 
 .annotation system Ldalvik/annotation/SourceDebugExtension;
-    value = "SMAP\nconstantValues.kt\nKotlin\n*S Kotlin\n*F\n+ 1 constantValues.kt\norg/jetbrains/kotlin/resolve/constants/EnumValue\n+ 2 fake.kt\nkotlin/jvm/internal/FakeKt\n*L\n1#1,320:1\n1#2:321\n*E\n"
+    value = "SMAP\nconstantValues.kt\nKotlin\n*S Kotlin\n*F\n+ 1 constantValues.kt\norg/jetbrains/kotlin/resolve/constants/EnumValue\n+ 2 fake.kt\nkotlin/jvm/internal/FakeKt\n*L\n1#1,313:1\n1#2:314\n*E\n"
 .end annotation
 
 
 # instance fields
-.field public final enumClassId:Lkotlin/reflect/jvm/internal/impl/name/ClassId;
+.field private final enumClassId:Lkotlin/reflect/jvm/internal/impl/name/ClassId;
 
-.field public final enumEntryName:Lkotlin/reflect/jvm/internal/impl/name/Name;
+.field private final enumEntryName:Lkotlin/reflect/jvm/internal/impl/name/Name;
 
 
 # direct methods
 .method public constructor <init>(Lkotlin/reflect/jvm/internal/impl/name/ClassId;Lkotlin/reflect/jvm/internal/impl/name/Name;)V
     .locals 1
+
+    const-string v0, "enumClassId"
+
+    invoke-static {p1, v0}, Lkotlin/jvm/internal/Intrinsics;->checkNotNullParameter(Ljava/lang/Object;Ljava/lang/String;)V
+
+    const-string v0, "enumEntryName"
+
+    invoke-static {p2, v0}, Lkotlin/jvm/internal/Intrinsics;->checkNotNullParameter(Ljava/lang/Object;Ljava/lang/String;)V
 
     new-instance v0, Lkotlin/Pair;
 
@@ -46,6 +54,14 @@
 
 
 # virtual methods
+.method public final getEnumEntryName()Lkotlin/reflect/jvm/internal/impl/name/Name;
+    .locals 1
+
+    iget-object v0, p0, Lkotlin/reflect/jvm/internal/impl/resolve/constants/EnumValue;->enumEntryName:Lkotlin/reflect/jvm/internal/impl/name/Name;
+
+    return-object v0
+.end method
+
 .method public getType(Lkotlin/reflect/jvm/internal/impl/descriptors/ModuleDescriptor;)Lkotlin/reflect/jvm/internal/impl/types/KotlinType;
     .locals 2
 
@@ -115,6 +131,10 @@
     invoke-static {p1}, Lkotlin/reflect/jvm/internal/impl/types/ErrorUtils;->createErrorType(Ljava/lang/String;)Lkotlin/reflect/jvm/internal/impl/types/SimpleType;
 
     move-result-object v0
+
+    const-string p1, "createErrorType(\"Contain\u2026mClassId.$enumEntryName\")"
+
+    invoke-static {v0, p1}, Lkotlin/jvm/internal/Intrinsics;->checkNotNullExpressionValue(Ljava/lang/Object;Ljava/lang/String;)V
 
     :cond_3
     return-object v0

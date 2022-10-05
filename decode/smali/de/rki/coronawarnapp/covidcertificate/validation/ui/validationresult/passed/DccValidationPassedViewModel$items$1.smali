@@ -176,13 +176,11 @@
 
     iget-object v3, v1, Lde/rki/coronawarnapp/covidcertificate/validation/ui/validationresult/passed/DccValidationPassedViewModel;->validation:Lde/rki/coronawarnapp/covidcertificate/validation/core/DccValidation;
 
-    invoke-virtual {v3}, Lde/rki/coronawarnapp/covidcertificate/validation/core/DccValidation;->getState()Lde/rki/coronawarnapp/covidcertificate/validation/core/DccValidation$State;
+    invoke-virtual {v3}, Lde/rki/coronawarnapp/covidcertificate/validation/core/DccValidation;->getState$enumunboxing$()I
 
-    move-result-object v3
+    move-result v3
 
-    sget-object v5, Lde/rki/coronawarnapp/covidcertificate/validation/core/DccValidation$State;->PASSED:Lde/rki/coronawarnapp/covidcertificate/validation/core/DccValidation$State;
-
-    if-ne v3, v5, :cond_3
+    if-ne v3, v2, :cond_3
 
     iget-object v3, v1, Lde/rki/coronawarnapp/covidcertificate/validation/ui/validationresult/passed/DccValidationPassedViewModel;->itemCreator:Lde/rki/coronawarnapp/covidcertificate/validation/ui/validationresult/common/ValidationResultItemCreator;
 
@@ -204,9 +202,9 @@
 
     iget-object v4, v1, Lde/rki/coronawarnapp/covidcertificate/validation/ui/validationresult/passed/DccValidationPassedViewModel;->validation:Lde/rki/coronawarnapp/covidcertificate/validation/core/DccValidation;
 
-    invoke-virtual {v4}, Lde/rki/coronawarnapp/covidcertificate/validation/core/DccValidation;->getState()Lde/rki/coronawarnapp/covidcertificate/validation/core/DccValidation$State;
+    invoke-virtual {v4}, Lde/rki/coronawarnapp/covidcertificate/validation/core/DccValidation;->getState$enumunboxing$()I
 
-    move-result-object v4
+    move-result v4
 
     iget-object v6, v1, Lde/rki/coronawarnapp/covidcertificate/validation/ui/validationresult/passed/DccValidationPassedViewModel;->validation:Lde/rki/coronawarnapp/covidcertificate/validation/core/DccValidation;
 
@@ -216,7 +214,7 @@
 
     move-result v6
 
-    invoke-virtual {v3, v4, v6}, Lde/rki/coronawarnapp/covidcertificate/validation/ui/validationresult/common/ValidationResultItemCreator;->validationOverallResultVHItem(Lde/rki/coronawarnapp/covidcertificate/validation/core/DccValidation$State;I)Lde/rki/coronawarnapp/covidcertificate/validation/ui/validationresult/common/listitem/ValidationOverallResultVH$Item;
+    invoke-virtual {v3, v4, v6}, Lde/rki/coronawarnapp/covidcertificate/validation/ui/validationresult/common/ValidationResultItemCreator;->validationOverallResultVHItem$enumunboxing$(II)Lde/rki/coronawarnapp/covidcertificate/validation/ui/validationresult/common/listitem/ValidationOverallResultVH$Item;
 
     move-result-object v4
 
@@ -226,9 +224,9 @@
 
     iget-object v6, v1, Lde/rki/coronawarnapp/covidcertificate/validation/ui/validationresult/passed/DccValidationPassedViewModel;->validation:Lde/rki/coronawarnapp/covidcertificate/validation/core/DccValidation;
 
-    invoke-virtual {v6}, Lde/rki/coronawarnapp/covidcertificate/validation/core/DccValidation;->getState()Lde/rki/coronawarnapp/covidcertificate/validation/core/DccValidation$State;
+    invoke-virtual {v6}, Lde/rki/coronawarnapp/covidcertificate/validation/core/DccValidation;->getState$enumunboxing$()I
 
-    move-result-object v6
+    move-result v6
 
     iget-object v1, v1, Lde/rki/coronawarnapp/covidcertificate/validation/ui/validationresult/passed/DccValidationPassedViewModel;->validation:Lde/rki/coronawarnapp/covidcertificate/validation/core/DccValidation;
 
@@ -238,7 +236,7 @@
 
     move-result v1
 
-    invoke-virtual {v3, v6, v2, v1}, Lde/rki/coronawarnapp/covidcertificate/validation/ui/validationresult/common/ValidationResultItemCreator;->ruleHeaderVHItem(Lde/rki/coronawarnapp/covidcertificate/validation/core/DccValidation$State;ZI)Lde/rki/coronawarnapp/covidcertificate/validation/ui/validationresult/common/listitem/RuleHeaderVH$Item;
+    invoke-virtual {v3, v6, v2, v1}, Lde/rki/coronawarnapp/covidcertificate/validation/ui/validationresult/common/ValidationResultItemCreator;->ruleHeaderVHItem$enumunboxing$(IZI)Lde/rki/coronawarnapp/covidcertificate/validation/ui/validationresult/common/listitem/RuleHeaderVH$Item;
 
     move-result-object v1
 
@@ -281,33 +279,21 @@
 
     iget-object v0, v1, Lde/rki/coronawarnapp/covidcertificate/validation/ui/validationresult/passed/DccValidationPassedViewModel;->validation:Lde/rki/coronawarnapp/covidcertificate/validation/core/DccValidation;
 
-    invoke-virtual {v0}, Lde/rki/coronawarnapp/covidcertificate/validation/core/DccValidation;->getState()Lde/rki/coronawarnapp/covidcertificate/validation/core/DccValidation$State;
+    invoke-virtual {v0}, Lde/rki/coronawarnapp/covidcertificate/validation/core/DccValidation;->getState$enumunboxing$()I
+
+    move-result v0
+
+    invoke-static {v0}, Lde/rki/coronawarnapp/covidcertificate/validation/core/DccValidation$State$EnumUnboxingLocalUtility;->name(I)Ljava/lang/String;
 
     move-result-object v0
 
-    invoke-virtual {v0}, Ljava/lang/Enum;->name()Ljava/lang/String;
-
-    move-result-object v0
-
-    new-instance v1, Ljava/lang/StringBuilder;
-
-    invoke-direct {v1}, Ljava/lang/StringBuilder;-><init>()V
-
-    const-string v2, "Expected validation state to be "
-
-    invoke-virtual {v1, v2}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+    const-string v1, "Expected validation state to be "
 
     const-string v2, "PASSED"
 
-    invoke-virtual {v1, v2}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+    const-string v3, " but was "
 
-    const-string v2, " but was "
-
-    invoke-virtual {v1, v2}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
-
-    invoke-virtual {v1, v0}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
-
-    invoke-virtual {v1}, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
+    invoke-static {v1, v2, v3, v0}, Landroidx/fragment/app/FragmentManager$$ExternalSyntheticOutline0;->m(Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;)Ljava/lang/String;
 
     move-result-object v0
 

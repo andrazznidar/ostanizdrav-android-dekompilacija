@@ -75,6 +75,30 @@
 
 
 # virtual methods
+.method public final create(Lkotlin/coroutines/Continuation;)Lkotlin/coroutines/Continuation;
+    .locals 3
+    .annotation system Ldalvik/annotation/Signature;
+        value = {
+            "(",
+            "Lkotlin/coroutines/Continuation<",
+            "*>;)",
+            "Lkotlin/coroutines/Continuation<",
+            "Lkotlin/Unit;",
+            ">;"
+        }
+    .end annotation
+
+    new-instance v0, Lde/rki/coronawarnapp/covidcertificate/test/core/TestCertificateProcessor$obtainCertificate$executeRequest$1;
+
+    iget-object v1, p0, Lde/rki/coronawarnapp/covidcertificate/test/core/TestCertificateProcessor$obtainCertificate$executeRequest$1;->this$0:Lde/rki/coronawarnapp/covidcertificate/test/core/TestCertificateProcessor;
+
+    iget-object v2, p0, Lde/rki/coronawarnapp/covidcertificate/test/core/TestCertificateProcessor$obtainCertificate$executeRequest$1;->$data:Lde/rki/coronawarnapp/covidcertificate/test/core/storage/types/RetrievedTestCertificate;
+
+    invoke-direct {v0, v1, v2, p1}, Lde/rki/coronawarnapp/covidcertificate/test/core/TestCertificateProcessor$obtainCertificate$executeRequest$1;-><init>(Lde/rki/coronawarnapp/covidcertificate/test/core/TestCertificateProcessor;Lde/rki/coronawarnapp/covidcertificate/test/core/storage/types/RetrievedTestCertificate;Lkotlin/coroutines/Continuation;)V
+
+    return-object v0
+.end method
+
 .method public invoke(Ljava/lang/Object;)Ljava/lang/Object;
     .locals 3
 

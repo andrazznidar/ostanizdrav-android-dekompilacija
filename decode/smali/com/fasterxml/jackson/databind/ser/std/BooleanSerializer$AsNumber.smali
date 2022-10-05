@@ -18,9 +18,7 @@
 
 .annotation system Ldalvik/annotation/Signature;
     value = {
-        "Lcom/fasterxml/jackson/databind/ser/std/StdScalarSerializer<",
-        "Ljava/lang/Object;",
-        ">;",
+        "Lcom/fasterxml/jackson/databind/ser/std/StdScalarSerializer;",
         "Lcom/fasterxml/jackson/databind/ser/ContextualSerializer;"
     }
 .end annotation

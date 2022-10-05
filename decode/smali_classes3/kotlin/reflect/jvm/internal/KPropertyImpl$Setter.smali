@@ -30,15 +30,59 @@
     }
 .end annotation
 
+.annotation runtime Lkotlin/Metadata;
+    d1 = {
+        "\u0000B\n\u0002\u0018\u0002\n\u0000\n\u0002\u0018\u0002\n\u0002\u0010\u0002\n\u0002\u0018\u0002\n\u0002\u0008\u0002\n\u0002\u0018\u0002\n\u0002\u0008\u0005\n\u0002\u0018\u0002\n\u0002\u0008\u0005\n\u0002\u0010\u000e\n\u0002\u0008\u0003\n\u0002\u0010\u000b\n\u0000\n\u0002\u0010\u0000\n\u0000\n\u0002\u0010\u0008\n\u0002\u0008\u0002\u0008&\u0018\u0000*\u0004\u0008\u0001\u0010\u00012\u000e\u0012\u0004\u0012\u0002H\u0001\u0012\u0004\u0012\u00020\u00030\u00022\u0008\u0012\u0004\u0012\u0002H\u00010\u0004B\u0005\u00a2\u0006\u0002\u0010\u0005J\u0013\u0010\u0016\u001a\u00020\u00172\u0008\u0010\u0018\u001a\u0004\u0018\u00010\u0019H\u0096\u0002J\u0008\u0010\u001a\u001a\u00020\u001bH\u0016J\u0008\u0010\u001c\u001a\u00020\u0013H\u0016R\u001f\u0010\u0006\u001a\u0006\u0012\u0002\u0008\u00030\u00078VX\u0096\u0084\u0002\u00a2\u0006\u000c\n\u0004\u0008\n\u0010\u000b\u001a\u0004\u0008\u0008\u0010\tR\u001b\u0010\u000c\u001a\u00020\r8VX\u0096\u0084\u0002\u00a2\u0006\u000c\n\u0004\u0008\u0010\u0010\u0011\u001a\u0004\u0008\u000e\u0010\u000fR\u0014\u0010\u0012\u001a\u00020\u00138VX\u0096\u0004\u00a2\u0006\u0006\u001a\u0004\u0008\u0014\u0010\u0015\u00a8\u0006\u001d"
+    }
+    d2 = {
+        "Lkotlin/reflect/jvm/internal/KPropertyImpl$Setter;",
+        "V",
+        "Lkotlin/reflect/jvm/internal/KPropertyImpl$Accessor;",
+        "",
+        "Lkotlin/reflect/KMutableProperty$Setter;",
+        "()V",
+        "caller",
+        "Lkotlin/reflect/jvm/internal/calls/Caller;",
+        "getCaller",
+        "()Lkotlin/reflect/jvm/internal/calls/Caller;",
+        "caller$delegate",
+        "Lkotlin/reflect/jvm/internal/ReflectProperties$LazyVal;",
+        "descriptor",
+        "Lkotlin/reflect/jvm/internal/impl/descriptors/PropertySetterDescriptor;",
+        "getDescriptor",
+        "()Lorg/jetbrains/kotlin/descriptors/PropertySetterDescriptor;",
+        "descriptor$delegate",
+        "Lkotlin/reflect/jvm/internal/ReflectProperties$LazySoftVal;",
+        "name",
+        "",
+        "getName",
+        "()Ljava/lang/String;",
+        "equals",
+        "",
+        "other",
+        "",
+        "hashCode",
+        "",
+        "toString",
+        "kotlin-reflection"
+    }
+    k = 0x1
+    mv = {
+        0x1,
+        0x5,
+        0x1
+    }
+.end annotation
+
 
 # static fields
 .field public static final synthetic $$delegatedProperties:[Lkotlin/reflect/KProperty;
 
 
 # instance fields
-.field public final caller$delegate:Lkotlin/reflect/jvm/internal/ReflectProperties$LazyVal;
+.field private final caller$delegate:Lkotlin/reflect/jvm/internal/ReflectProperties$LazyVal;
 
-.field public final descriptor$delegate:Lkotlin/reflect/jvm/internal/ReflectProperties$LazySoftVal;
+.field private final descriptor$delegate:Lkotlin/reflect/jvm/internal/ReflectProperties$LazySoftVal;
 
 
 # direct methods
@@ -97,7 +141,7 @@
 .end method
 
 .method public constructor <init>()V
-    .locals 2
+    .locals 1
 
     invoke-direct {p0}, Lkotlin/reflect/jvm/internal/KPropertyImpl$Accessor;-><init>()V
 
@@ -115,17 +159,51 @@
 
     invoke-direct {v0, p0}, Lkotlin/reflect/jvm/internal/KPropertyImpl$Setter$caller$2;-><init>(Lkotlin/reflect/jvm/internal/KPropertyImpl$Setter;)V
 
-    new-instance v1, Lkotlin/reflect/jvm/internal/ReflectProperties$LazyVal;
+    invoke-static {v0}, Lkotlin/reflect/jvm/internal/ReflectProperties;->lazy(Lkotlin/jvm/functions/Function0;)Lkotlin/reflect/jvm/internal/ReflectProperties$LazyVal;
 
-    invoke-direct {v1, v0}, Lkotlin/reflect/jvm/internal/ReflectProperties$LazyVal;-><init>(Lkotlin/jvm/functions/Function0;)V
+    move-result-object v0
 
-    iput-object v1, p0, Lkotlin/reflect/jvm/internal/KPropertyImpl$Setter;->caller$delegate:Lkotlin/reflect/jvm/internal/ReflectProperties$LazyVal;
+    iput-object v0, p0, Lkotlin/reflect/jvm/internal/KPropertyImpl$Setter;->caller$delegate:Lkotlin/reflect/jvm/internal/ReflectProperties$LazyVal;
 
     return-void
 .end method
 
 
 # virtual methods
+.method public equals(Ljava/lang/Object;)Z
+    .locals 1
+
+    instance-of v0, p1, Lkotlin/reflect/jvm/internal/KPropertyImpl$Setter;
+
+    if-eqz v0, :cond_0
+
+    invoke-virtual {p0}, Lkotlin/reflect/jvm/internal/KPropertyImpl$Accessor;->getProperty()Lkotlin/reflect/jvm/internal/KPropertyImpl;
+
+    move-result-object v0
+
+    check-cast p1, Lkotlin/reflect/jvm/internal/KPropertyImpl$Setter;
+
+    invoke-virtual {p1}, Lkotlin/reflect/jvm/internal/KPropertyImpl$Accessor;->getProperty()Lkotlin/reflect/jvm/internal/KPropertyImpl;
+
+    move-result-object p1
+
+    invoke-static {v0, p1}, Lkotlin/jvm/internal/Intrinsics;->areEqual(Ljava/lang/Object;Ljava/lang/Object;)Z
+
+    move-result p1
+
+    if-eqz p1, :cond_0
+
+    const/4 p1, 0x1
+
+    goto :goto_0
+
+    :cond_0
+    const/4 p1, 0x0
+
+    :goto_0
+    return p1
+.end method
+
 .method public getCaller()Lkotlin/reflect/jvm/internal/calls/Caller;
     .locals 3
     .annotation system Ldalvik/annotation/Signature;
@@ -144,7 +222,7 @@
 
     aget-object v1, v1, v2
 
-    invoke-virtual {v0}, Lkotlin/reflect/jvm/internal/ReflectProperties$LazyVal;->invoke()Ljava/lang/Object;
+    invoke-virtual {v0, p0, v1}, Lkotlin/reflect/jvm/internal/ReflectProperties$Val;->getValue(Ljava/lang/Object;Ljava/lang/Object;)Ljava/lang/Object;
 
     move-result-object v0
 
@@ -153,27 +231,27 @@
     return-object v0
 .end method
 
-.method public getDescriptor()Lkotlin/reflect/jvm/internal/impl/descriptors/CallableMemberDescriptor;
-    .locals 3
+.method public bridge synthetic getDescriptor()Lkotlin/reflect/jvm/internal/impl/descriptors/CallableMemberDescriptor;
+    .locals 1
 
-    iget-object v0, p0, Lkotlin/reflect/jvm/internal/KPropertyImpl$Setter;->descriptor$delegate:Lkotlin/reflect/jvm/internal/ReflectProperties$LazySoftVal;
-
-    sget-object v1, Lkotlin/reflect/jvm/internal/KPropertyImpl$Setter;->$$delegatedProperties:[Lkotlin/reflect/KProperty;
-
-    const/4 v2, 0x0
-
-    aget-object v1, v1, v2
-
-    invoke-virtual {v0}, Lkotlin/reflect/jvm/internal/ReflectProperties$LazySoftVal;->invoke()Ljava/lang/Object;
+    invoke-virtual {p0}, Lkotlin/reflect/jvm/internal/KPropertyImpl$Setter;->getDescriptor()Lkotlin/reflect/jvm/internal/impl/descriptors/PropertySetterDescriptor;
 
     move-result-object v0
-
-    check-cast v0, Lkotlin/reflect/jvm/internal/impl/descriptors/PropertySetterDescriptor;
 
     return-object v0
 .end method
 
-.method public getDescriptor()Lkotlin/reflect/jvm/internal/impl/descriptors/PropertyAccessorDescriptor;
+.method public bridge synthetic getDescriptor()Lkotlin/reflect/jvm/internal/impl/descriptors/PropertyAccessorDescriptor;
+    .locals 1
+
+    invoke-virtual {p0}, Lkotlin/reflect/jvm/internal/KPropertyImpl$Setter;->getDescriptor()Lkotlin/reflect/jvm/internal/impl/descriptors/PropertySetterDescriptor;
+
+    move-result-object v0
+
+    return-object v0
+.end method
+
+.method public getDescriptor()Lkotlin/reflect/jvm/internal/impl/descriptors/PropertySetterDescriptor;
     .locals 3
 
     iget-object v0, p0, Lkotlin/reflect/jvm/internal/KPropertyImpl$Setter;->descriptor$delegate:Lkotlin/reflect/jvm/internal/ReflectProperties$LazySoftVal;
@@ -184,7 +262,7 @@
 
     aget-object v1, v1, v2
 
-    invoke-virtual {v0}, Lkotlin/reflect/jvm/internal/ReflectProperties$LazySoftVal;->invoke()Ljava/lang/Object;
+    invoke-virtual {v0, p0, v1}, Lkotlin/reflect/jvm/internal/ReflectProperties$Val;->getValue(Ljava/lang/Object;Ljava/lang/Object;)Ljava/lang/Object;
 
     move-result-object v0
 
@@ -194,7 +272,7 @@
 .end method
 
 .method public getName()Ljava/lang/String;
-    .locals 3
+    .locals 2
 
     const-string v0, "<set-"
 
@@ -206,11 +284,53 @@
 
     move-result-object v1
 
-    iget-object v1, v1, Lkotlin/reflect/jvm/internal/KPropertyImpl;->name:Ljava/lang/String;
+    invoke-virtual {v1}, Lkotlin/reflect/jvm/internal/KPropertyImpl;->getName()Ljava/lang/String;
 
-    const/16 v2, 0x3e
+    move-result-object v1
 
-    invoke-static {v0, v1, v2}, Lcom/airbnb/lottie/manager/ImageAssetManager$$ExternalSyntheticOutline0;->m(Ljava/lang/StringBuilder;Ljava/lang/String;C)Ljava/lang/String;
+    invoke-virtual {v0, v1}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+
+    const/16 v1, 0x3e
+
+    invoke-virtual {v0, v1}, Ljava/lang/StringBuilder;->append(C)Ljava/lang/StringBuilder;
+
+    invoke-virtual {v0}, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
+
+    move-result-object v0
+
+    return-object v0
+.end method
+
+.method public hashCode()I
+    .locals 1
+
+    invoke-virtual {p0}, Lkotlin/reflect/jvm/internal/KPropertyImpl$Accessor;->getProperty()Lkotlin/reflect/jvm/internal/KPropertyImpl;
+
+    move-result-object v0
+
+    invoke-virtual {v0}, Lkotlin/reflect/jvm/internal/KPropertyImpl;->hashCode()I
+
+    move-result v0
+
+    return v0
+.end method
+
+.method public toString()Ljava/lang/String;
+    .locals 2
+
+    const-string v0, "setter of "
+
+    invoke-static {v0}, Landroid/support/v4/media/RatingCompat$$ExternalSyntheticOutline0;->m(Ljava/lang/String;)Ljava/lang/StringBuilder;
+
+    move-result-object v0
+
+    invoke-virtual {p0}, Lkotlin/reflect/jvm/internal/KPropertyImpl$Accessor;->getProperty()Lkotlin/reflect/jvm/internal/KPropertyImpl;
+
+    move-result-object v1
+
+    invoke-virtual {v0, v1}, Ljava/lang/StringBuilder;->append(Ljava/lang/Object;)Ljava/lang/StringBuilder;
+
+    invoke-virtual {v0}, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
 
     move-result-object v0
 

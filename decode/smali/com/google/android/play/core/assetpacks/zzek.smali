@@ -4,7 +4,7 @@
 
 
 # static fields
-.field public static final zza:Lkotlin/jvm/internal/SpreadBuilder;
+.field public static final zza:Lcom/google/android/play/core/internal/zzag;
 
 
 # instance fields
@@ -27,13 +27,13 @@
 .method public static constructor <clinit>()V
     .locals 2
 
-    new-instance v0, Lkotlin/jvm/internal/SpreadBuilder;
+    new-instance v0, Lcom/google/android/play/core/internal/zzag;
 
     const-string v1, "SliceMetadataManager"
 
-    invoke-direct {v0, v1}, Lkotlin/jvm/internal/SpreadBuilder;-><init>(Ljava/lang/String;)V
+    invoke-direct {v0, v1}, Lcom/google/android/play/core/internal/zzag;-><init>(Ljava/lang/String;)V
 
-    sput-object v0, Lcom/google/android/play/core/assetpacks/zzek;->zza:Lkotlin/jvm/internal/SpreadBuilder;
+    sput-object v0, Lcom/google/android/play/core/assetpacks/zzek;->zza:Lcom/google/android/play/core/internal/zzag;
 
     return-void
 .end method

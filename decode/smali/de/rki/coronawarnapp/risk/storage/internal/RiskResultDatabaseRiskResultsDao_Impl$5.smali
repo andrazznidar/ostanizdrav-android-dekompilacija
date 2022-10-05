@@ -192,9 +192,9 @@
 
     iget-object v15, v15, Lde/rki/coronawarnapp/risk/storage/internal/RiskResultDatabaseRiskResultsDao_Impl;->__converter:Lde/rki/coronawarnapp/risk/storage/internal/riskresults/PersistedRiskLevelResultDao$Converter;
 
-    invoke-virtual {v15, v4}, Lde/rki/coronawarnapp/risk/storage/internal/riskresults/PersistedRiskLevelResultDao$Converter;->toType(Ljava/lang/String;)Lde/rki/coronawarnapp/risk/EwRiskLevelResult$FailureReason;
+    invoke-virtual {v15, v4}, Lde/rki/coronawarnapp/risk/storage/internal/riskresults/PersistedRiskLevelResultDao$Converter;->toType$enumunboxing$(Ljava/lang/String;)I
 
-    move-result-object v21
+    move-result v21
 
     invoke-interface {v2, v7}, Landroid/database/Cursor;->isNull(I)Z
 
@@ -328,7 +328,7 @@
 
     move-object/from16 v16, v4
 
-    invoke-direct/range {v16 .. v22}, Lde/rki/coronawarnapp/risk/storage/internal/riskresults/PersistedRiskLevelResultDao;-><init>(JLjava/lang/String;Lorg/joda/time/Instant;Lde/rki/coronawarnapp/risk/EwRiskLevelResult$FailureReason;Lde/rki/coronawarnapp/risk/storage/internal/riskresults/PersistedRiskLevelResultDao$PersistedAggregatedRiskResult;)V
+    invoke-direct/range {v16 .. v22}, Lde/rki/coronawarnapp/risk/storage/internal/riskresults/PersistedRiskLevelResultDao;-><init>(JLjava/lang/String;Lorg/joda/time/Instant;ILde/rki/coronawarnapp/risk/storage/internal/riskresults/PersistedRiskLevelResultDao$PersistedAggregatedRiskResult;)V
 
     invoke-virtual {v14, v4}, Ljava/util/ArrayList;->add(Ljava/lang/Object;)Z
     :try_end_0

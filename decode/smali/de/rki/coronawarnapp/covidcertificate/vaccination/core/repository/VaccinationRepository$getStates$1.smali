@@ -8,8 +8,8 @@
     c = "de.rki.coronawarnapp.covidcertificate.vaccination.core.repository.VaccinationRepository"
     f = "VaccinationRepository.kt"
     l = {
-        0xc8,
-        0xc8
+        0xd9,
+        0xd9
     }
     m = "getStates"
 .end annotation

@@ -157,7 +157,7 @@
 
     invoke-virtual {p1, p0}, Landroidx/lifecycle/CoroutineLiveData;->clearSource$lifecycle_livedata_ktx_release(Lkotlin/coroutines/Continuation;)Ljava/lang/Object;
 
-    move-result-object p1
+    sget-object p1, Lkotlin/Unit;->INSTANCE:Lkotlin/Unit;
 
     if-ne p1, v0, :cond_2
 

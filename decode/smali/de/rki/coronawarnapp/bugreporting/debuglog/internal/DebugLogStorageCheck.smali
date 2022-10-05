@@ -331,11 +331,9 @@
 
     check-cast v8, Lde/rki/coronawarnapp/bugreporting/debuglog/internal/DebugLogStorageCheck$Companion$createLowStorageLogLine$1;
 
-    invoke-virtual {v8}, Lde/rki/coronawarnapp/bugreporting/debuglog/internal/DebugLogStorageCheck$Companion$createLowStorageLogLine$1;->invoke()Ljava/lang/Object;
+    invoke-static {v8}, Ljava/util/Objects;->requireNonNull(Ljava/lang/Object;)Ljava/lang/Object;
 
-    move-result-object v8
-
-    check-cast v8, Ljava/lang/String;
+    invoke-static {}, Ljava/lang/System;->currentTimeMillis()J
 
     iput-wide p1, v0, Lde/rki/coronawarnapp/bugreporting/debuglog/internal/DebugLogStorageCheck$isLowStorage$1;->J$0:J
 
@@ -343,7 +341,9 @@
 
     iput v5, v0, Lde/rki/coronawarnapp/bugreporting/debuglog/internal/DebugLogStorageCheck$isLowStorage$1;->label:I
 
-    invoke-virtual {v7, v8, v0}, Lde/rki/coronawarnapp/bugreporting/debuglog/internal/LogWriter;->write(Ljava/lang/String;Lkotlin/coroutines/Continuation;)Ljava/lang/Object;
+    const-string v5, "Low storage, debug logger halted."
+
+    invoke-virtual {v7, v5, v0}, Lde/rki/coronawarnapp/bugreporting/debuglog/internal/LogWriter;->write(Ljava/lang/String;Lkotlin/coroutines/Continuation;)Ljava/lang/Object;
 
     move-result-object v0
 

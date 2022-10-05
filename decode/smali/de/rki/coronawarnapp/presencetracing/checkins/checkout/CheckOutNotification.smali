@@ -129,7 +129,7 @@
 
     const-string v5, ")"
 
-    invoke-static {v2, p1, p2, v5}, Landroidx/work/impl/utils/futures/AbstractFuture$$ExternalSyntheticOutline0;->m(Ljava/lang/String;JLjava/lang/String;)Ljava/lang/String;
+    invoke-static {v2, p1, p2, v5}, Landroidx/concurrent/futures/AbstractResolvableFuture$$ExternalSyntheticOutline0;->m(Ljava/lang/String;JLjava/lang/String;)Ljava/lang/String;
 
     move-result-object p1
 
@@ -188,7 +188,7 @@
 
     move-result-object p2
 
-    const p3, 0x7f100002
+    const p3, 0x7f100003
 
     invoke-virtual {p2, p3}, Landroidx/navigation/NavDeepLinkBuilder;->setGraph(I)Landroidx/navigation/NavDeepLinkBuilder;
 
@@ -196,7 +196,7 @@
 
     invoke-virtual {p2, p3}, Landroidx/navigation/NavDeepLinkBuilder;->setComponentName(Ljava/lang/Class;)Landroidx/navigation/NavDeepLinkBuilder;
 
-    const p3, 0x7f0a0187
+    const p3, 0x7f0a01ac
 
     invoke-virtual {p2, p3}, Landroidx/navigation/NavDeepLinkBuilder;->setDestination(I)Landroidx/navigation/NavDeepLinkBuilder;
 
@@ -220,7 +220,7 @@
 
     iget-object v2, v1, Landroidx/core/app/NotificationCompat$Builder;->mNotification:Landroid/app/Notification;
 
-    const v5, 0x7f080166
+    const v5, 0x7f08015f
 
     iput v5, v2, Landroid/app/Notification;->icon:I
 
@@ -232,7 +232,7 @@
 
     invoke-direct {v2, v5}, Landroidx/navigation/NavDeepLinkBuilder;-><init>(Landroid/content/Context;)V
 
-    const v5, 0x7f100006
+    const v5, 0x7f100007
 
     invoke-virtual {v2, v5}, Landroidx/navigation/NavDeepLinkBuilder;->setGraph(I)Landroidx/navigation/NavDeepLinkBuilder;
 
@@ -258,7 +258,7 @@
 
     iget-object p3, v0, Lde/rki/coronawarnapp/presencetracing/common/PresenceTracingNotifications;->context:Landroid/content/Context;
 
-    const v2, 0x7f1302c9
+    const v2, 0x7f1302dc
 
     invoke-virtual {p3, v2}, Landroid/content/Context;->getString(I)Ljava/lang/String;
 
@@ -268,7 +268,7 @@
 
     iget-object p3, v0, Lde/rki/coronawarnapp/presencetracing/common/PresenceTracingNotifications;->context:Landroid/content/Context;
 
-    const v0, 0x7f1302c3
+    const v0, 0x7f1302d8
 
     invoke-virtual {p3, v0}, Landroid/content/Context;->getString(I)Ljava/lang/String;
 
@@ -278,7 +278,7 @@
 
     invoke-static {p3, v0}, Lkotlin/jvm/internal/Intrinsics;->checkNotNullExpressionValue(Ljava/lang/Object;Ljava/lang/String;)V
 
-    invoke-static {v1, p3}, Lcom/google/android/gms/internal/nearby/zznn;->setContentTextExpandable(Landroidx/core/app/NotificationCompat$Builder;Ljava/lang/String;)Landroidx/core/app/NotificationCompat$Builder;
+    invoke-static {v1, p3}, Lorg/ejml/ops/DConvertMatrixStruct;->setContentTextExpandable(Landroidx/core/app/NotificationCompat$Builder;Ljava/lang/String;)Landroidx/core/app/NotificationCompat$Builder;
 
     invoke-virtual {v1}, Landroidx/core/app/NotificationCompat$Builder;->build()Landroid/app/Notification;
 
@@ -298,7 +298,7 @@
 
     iget-object p2, p1, Lde/rki/coronawarnapp/presencetracing/checkins/checkout/CheckOutNotification;->context:Landroid/content/Context;
 
-    const p3, 0x7f1306d1
+    const p3, 0x7f130676
 
     invoke-virtual {p2, p3}, Landroid/content/Context;->getString(I)Ljava/lang/String;
 
@@ -308,7 +308,7 @@
 
     iget-object p2, p1, Lde/rki/coronawarnapp/presencetracing/checkins/checkout/CheckOutNotification;->context:Landroid/content/Context;
 
-    const p3, 0x7f1306d0
+    const p3, 0x7f130675
 
     invoke-virtual {p2, p3}, Landroid/content/Context;->getString(I)Ljava/lang/String;
 
@@ -318,7 +318,7 @@
 
     invoke-static {p2, p3}, Lkotlin/jvm/internal/Intrinsics;->checkNotNullExpressionValue(Ljava/lang/Object;Ljava/lang/String;)V
 
-    invoke-static {v1, p2}, Lcom/google/android/gms/internal/nearby/zznn;->setContentTextExpandable(Landroidx/core/app/NotificationCompat$Builder;Ljava/lang/String;)Landroidx/core/app/NotificationCompat$Builder;
+    invoke-static {v1, p2}, Lorg/ejml/ops/DConvertMatrixStruct;->setContentTextExpandable(Landroidx/core/app/NotificationCompat$Builder;Ljava/lang/String;)Landroidx/core/app/NotificationCompat$Builder;
 
     invoke-virtual {v1}, Landroidx/core/app/NotificationCompat$Builder;->build()Landroid/app/Notification;
 
@@ -338,7 +338,7 @@
 
     const/16 v1, 0x1a
 
-    invoke-static {v0, v1}, Lcom/airbnb/lottie/utils/GammaEvaluator;->hasAPILevel(Lde/rki/coronawarnapp/util/BuildVersionWrap;I)Z
+    invoke-static {v0, v1}, Lokhttp3/CookieJar$Companion$NoCookies;->hasAPILevel(Lde/rki/coronawarnapp/util/BuildVersionWrap;I)Z
 
     move-result v0
 

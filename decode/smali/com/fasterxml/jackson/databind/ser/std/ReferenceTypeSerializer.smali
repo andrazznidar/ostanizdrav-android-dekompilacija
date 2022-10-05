@@ -258,13 +258,13 @@
 
     if-eqz v3, :cond_1
 
-    invoke-virtual {v4, v3}, Lcom/fasterxml/jackson/databind/AnnotationIntrospector;->findContentSerializer(Lcom/fasterxml/jackson/databind/introspect/Annotated;)Ljava/lang/Object;
+    invoke-virtual {v4, v3}, Lcom/fasterxml/jackson/databind/AnnotationIntrospector;->findContentSerializer(Lorg/joda/time/Chronology;)Ljava/lang/Object;
 
     move-result-object v4
 
     if-eqz v4, :cond_1
 
-    invoke-virtual {p1, v3, v4}, Lcom/fasterxml/jackson/databind/SerializerProvider;->serializerInstance(Lcom/fasterxml/jackson/databind/introspect/Annotated;Ljava/lang/Object;)Lcom/fasterxml/jackson/databind/JsonSerializer;
+    invoke-virtual {p1, v3, v4}, Lcom/fasterxml/jackson/databind/SerializerProvider;->serializerInstance(Lorg/joda/time/Chronology;Ljava/lang/Object;)Lcom/fasterxml/jackson/databind/JsonSerializer;
 
     move-result-object v3
 
@@ -335,7 +335,7 @@
 
     move-result-object v7
 
-    invoke-virtual {v6, v7}, Lcom/fasterxml/jackson/databind/AnnotationIntrospector;->findSerializationTyping(Lcom/fasterxml/jackson/databind/introspect/Annotated;)Lcom/fasterxml/jackson/databind/annotation/JsonSerialize$Typing;
+    invoke-virtual {v6, v7}, Lcom/fasterxml/jackson/databind/AnnotationIntrospector;->findSerializationTyping(Lorg/joda/time/Chronology;)Lcom/fasterxml/jackson/databind/annotation/JsonSerialize$Typing;
 
     move-result-object v6
 
@@ -495,7 +495,7 @@
     :cond_e
     iget-object p1, p0, Lcom/fasterxml/jackson/databind/ser/std/ReferenceTypeSerializer;->_referredType:Lcom/fasterxml/jackson/databind/JavaType;
 
-    invoke-virtual {p1}, Lcom/fasterxml/jackson/core/type/ResolvedType;->isReferenceType()Z
+    invoke-virtual {p1}, Lorg/joda/time/Chronology;->isReferenceType()Z
 
     move-result p1
 

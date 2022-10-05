@@ -1,30 +1,25 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
     <string-array name="new_release_body">
-        <item>"Nacionalni inštitut za javno zdravje pripravlja raziskavo o aplikaciji za obveščanje stikov #OstaniZdrav. Cilj raziskave je pridobiti mnenja o uporabnosti in učinkovitosti aplikacije ter njeni vlogi pri spremembah vedenja.
- Kot uporabnika aplikacije vas prosimo, da si vzamete 5 minut časa in rešite anketo na tej povezavi.
- Vaše sodelovanje je prostovoljno in anonimno."</item>
+        <item>Users can provide data voluntarily to help improve the #OstaniZdrav app further and help experts evaluate its effectiveness. It is not possible to draw any conclusions about individual persons, so that the privacy of the users is protected.</item>
+        <item>Certificates can now be moved to the Trash when deleted, where they will remain stored for 30 days. During this time you can also restore them.</item>
     </string-array>
     <string-array name="new_release_linkified_labels">
-        <item>na tej povezavi</item>
+        <item></item>
+        <item></item>
     </string-array>
     <string-array name="new_release_target_urls">
-        <item>https://anketa.nijz.si/ostanizdrav_1</item>
+        <item></item>
+        <item></item>
     </string-array>
     <string-array name="new_release_title">
-        <item>Vabilo za sodelovanje v raziskavi</item>
+        <item>Privacy preserving analytics</item>
+        <item>Trash and certificate recovery</item>
     </string-array>
     <string-array name="submission_done_further_info_bullet_points">
         <item>The duration of isolation is at the discretion of your treating physician.</item>
         <item>In case of worsening of the disease, consult your chosen personal or on-duty doctor by phone. In an emergency, call 112. Inform them that you have been diagnosed with SARS-CoV-2.</item>
         <item>Exposure logging has stopped because you have been diagnosed with SARS-CoV-2 infection. When the isolation is finished, press the Reactivate button and the exposure log will be activated.</item>
-        <item></item>
-    </string-array>
-    <string-array name="submission_intro_bullet_points">
-        <item>If you have been diagnosed with SARS-CoV-2 infection, you can inform others by entering the TAN code. You received the TAN code via SMS.</item>
-        <item>If you have not yet received the TAN code or it has expired, you can obtain it via the online form in the next step.</item>
-        <item></item>
-        <item></item>
     </string-array>
     <string-array name="submission_symptom_symptom_bullets">
         <item>Feeling unwell</item>
@@ -35,12 +30,10 @@
         <item>Headache</item>
         <item>Muscle pains</item>
         <item>Loss of smell ortaste</item>
-        <item>Sore throat</item>
     </string-array>
     <string-array name="test_result_card_negative_further_info_bullet_points">
         <item>Still feeling unwell? If you feel very poorly and/or your symptoms have worsened, please contact your general practitioner.</item>
         <item>Remain at home until you feel well again. If you were to get infected with coronavirus (SARS-CoV-2) whilst weakened from another infection, this could lead to a serious illness.</item>
         <item>Do not go to work if you feel unwell to ensure you do not put other people at risk.</item>
-        <item>If your symptoms worsen, you might need another SARS-CoV-2 test.</item>
     </string-array>
 </resources>

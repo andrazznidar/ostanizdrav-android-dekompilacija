@@ -115,11 +115,12 @@
 
     move-result v2
 
-    add-int/2addr v2, v1
+    add-int/2addr v1, v2
 
-    add-int/2addr v2, v0
+    :goto_0
+    add-int/2addr v1, v0
 
-    return v2
+    return v1
 
     :cond_0
     add-int/lit8 v0, v0, -0x1
@@ -130,9 +131,7 @@
 
     move-result v1
 
-    add-int/2addr v1, v0
-
-    return v1
+    goto :goto_0
 .end method
 
 .method public isConstructed()Z

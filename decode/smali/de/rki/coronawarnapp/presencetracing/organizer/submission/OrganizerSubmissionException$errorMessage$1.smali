@@ -67,22 +67,22 @@
     throw p1
 
     :pswitch_0
-    const v0, 0x7f13056e
+    const v0, 0x7f13055f
 
     goto :goto_0
 
     :pswitch_1
-    const v0, 0x7f13056f
+    const v0, 0x7f130560
 
     goto :goto_0
 
     :pswitch_2
-    const v0, 0x7f130571
+    const v0, 0x7f130562
 
     goto :goto_0
 
     :pswitch_3
-    const v0, 0x7f130570
+    const v0, 0x7f130561
 
     :goto_0
     invoke-virtual {p1, v0}, Landroid/content/Context;->getString(I)Ljava/lang/String;

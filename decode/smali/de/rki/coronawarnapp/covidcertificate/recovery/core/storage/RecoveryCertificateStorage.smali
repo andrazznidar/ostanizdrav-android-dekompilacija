@@ -61,7 +61,7 @@
 
     invoke-direct {p1, p0}, Lde/rki/coronawarnapp/covidcertificate/recovery/core/storage/RecoveryCertificateStorage$gson$2;-><init>(Lde/rki/coronawarnapp/covidcertificate/recovery/core/storage/RecoveryCertificateStorage;)V
 
-    invoke-static {p1}, Lkotlin/LazyKt__LazyKt;->lazy(Lkotlin/jvm/functions/Function0;)Lkotlin/Lazy;
+    invoke-static {p1}, Lkotlin/LazyKt__LazyJVMKt;->lazy(Lkotlin/jvm/functions/Function0;)Lkotlin/Lazy;
 
     move-result-object p1
 
@@ -81,7 +81,7 @@
 
     invoke-direct {p1, p0}, Lde/rki/coronawarnapp/covidcertificate/recovery/core/storage/RecoveryCertificateStorage$prefs$2;-><init>(Lde/rki/coronawarnapp/covidcertificate/recovery/core/storage/RecoveryCertificateStorage;)V
 
-    invoke-static {p1}, Lkotlin/LazyKt__LazyKt;->lazy(Lkotlin/jvm/functions/Function0;)Lkotlin/Lazy;
+    invoke-static {p1}, Lkotlin/LazyKt__LazyJVMKt;->lazy(Lkotlin/jvm/functions/Function0;)Lkotlin/Lazy;
 
     move-result-object p1
 
@@ -298,7 +298,7 @@
 .end method
 
 .method public final save(Ljava/util/Set;Lkotlin/coroutines/Continuation;)Ljava/lang/Object;
-    .locals 6
+    .locals 8
     .annotation system Ldalvik/annotation/Signature;
         value = {
             "(",
@@ -422,7 +422,15 @@
 
     const/4 v5, 0x0
 
-    aput-object p1, v4, v5
+    invoke-interface {p1}, Ljava/util/Set;->size()I
+
+    move-result v6
+
+    new-instance v7, Ljava/lang/Integer;
+
+    invoke-direct {v7, v6}, Ljava/lang/Integer;-><init>(I)V
+
+    aput-object v7, v4, v5
 
     invoke-virtual {v1, v2, v4}, Ltimber/log/Timber$Forest;->d(Ljava/lang/String;[Ljava/lang/Object;)V
 

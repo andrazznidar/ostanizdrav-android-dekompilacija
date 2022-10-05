@@ -5,7 +5,7 @@
 
 # annotations
 .annotation system Ldalvik/annotation/SourceDebugExtension;
-    value = "SMAP\nDccValidationRepository.kt\nKotlin\n*S Kotlin\n*F\n+ 1 DccValidationRepository.kt\nde/rki/coronawarnapp/covidcertificate/validation/core/DccValidationRepository\n+ 2 Transform.kt\nkotlinx/coroutines/flow/FlowKt__TransformKt\n+ 3 Emitters.kt\nkotlinx/coroutines/flow/FlowKt__EmittersKt\n+ 4 SafeCollector.common.kt\nkotlinx/coroutines/flow/internal/SafeCollector_commonKt\n+ 5 GsonExtensions.kt\nde/rki/coronawarnapp/util/serialization/GsonExtensionsKt\n+ 6 _Collections.kt\nkotlin/collections/CollectionsKt___CollectionsKt\n*L\n1#1,139:1\n47#2:140\n49#2:144\n47#2:145\n49#2:149\n47#2:150\n49#2:154\n50#3:141\n55#3:143\n50#3:146\n55#3:148\n50#3:151\n55#3:153\n106#4:142\n106#4:147\n106#4:152\n10#5,4:155\n1547#6:159\n1618#6,3:160\n*S KotlinDebug\n*F\n+ 1 DccValidationRepository.kt\nde/rki/coronawarnapp/covidcertificate/validation/core/DccValidationRepository\n*L\n77#1:140\n77#1:144\n79#1:145\n79#1:149\n81#1:150\n81#1:154\n77#1:141\n77#1:143\n79#1:146\n79#1:148\n81#1:151\n81#1:153\n77#1:142\n79#1:147\n81#1:152\n118#1:155,4\n120#1:159\n120#1:160,3\n*E\n"
+    value = "SMAP\nDccValidationRepository.kt\nKotlin\n*S Kotlin\n*F\n+ 1 DccValidationRepository.kt\nde/rki/coronawarnapp/covidcertificate/validation/core/DccValidationRepository\n+ 2 Transform.kt\nkotlinx/coroutines/flow/FlowKt__TransformKt\n+ 3 Emitters.kt\nkotlinx/coroutines/flow/FlowKt__EmittersKt\n+ 4 SafeCollector.common.kt\nkotlinx/coroutines/flow/internal/SafeCollector_commonKt\n+ 5 GsonExtensions.kt\nde/rki/coronawarnapp/util/serialization/GsonExtensionsKt\n+ 6 _Collections.kt\nkotlin/collections/CollectionsKt___CollectionsKt\n*L\n1#1,141:1\n47#2:142\n49#2:146\n47#2:147\n49#2:151\n47#2:152\n49#2:156\n50#3:143\n55#3:145\n50#3:148\n55#3:150\n50#3:153\n55#3:155\n106#4:144\n106#4:149\n106#4:154\n11#5,4:157\n1547#6:161\n1618#6,3:162\n*S KotlinDebug\n*F\n+ 1 DccValidationRepository.kt\nde/rki/coronawarnapp/covidcertificate/validation/core/DccValidationRepository\n*L\n77#1:142\n77#1:146\n79#1:147\n79#1:151\n81#1:152\n81#1:156\n77#1:143\n77#1:145\n79#1:148\n79#1:150\n81#1:153\n81#1:155\n77#1:144\n79#1:149\n81#1:154\n120#1:157,4\n122#1:161\n122#1:162,3\n*E\n"
 .end annotation
 
 
@@ -35,8 +35,6 @@
         }
     .end annotation
 .end field
-
-.field public final dispatcherProvider:Lde/rki/coronawarnapp/util/coroutine/DispatcherProvider;
 
 .field public final gson:Lcom/google/gson/Gson;
 
@@ -98,8 +96,6 @@
 
     iput-object p1, p0, Lde/rki/coronawarnapp/covidcertificate/validation/core/DccValidationRepository;->appScope:Lkotlinx/coroutines/CoroutineScope;
 
-    iput-object p2, p0, Lde/rki/coronawarnapp/covidcertificate/validation/core/DccValidationRepository;->dispatcherProvider:Lde/rki/coronawarnapp/util/coroutine/DispatcherProvider;
-
     iput-object p3, p0, Lde/rki/coronawarnapp/covidcertificate/validation/core/DccValidationRepository;->gson:Lcom/google/gson/Gson;
 
     iput-object p4, p0, Lde/rki/coronawarnapp/covidcertificate/validation/core/DccValidationRepository;->server:Lde/rki/coronawarnapp/covidcertificate/validation/core/server/DccValidationServer;
@@ -125,8 +121,6 @@
     move-result-object p1
 
     invoke-direct {v3, p1}, Lkotlinx/coroutines/internal/ContextScope;-><init>(Lkotlin/coroutines/CoroutineContext;)V
-
-    sget p1, Lkotlinx/coroutines/flow/SharingStarted;->$r8$clinit:I
 
     const-wide/16 p1, 0x5
 
@@ -248,9 +242,9 @@
 
     new-instance p1, Lde/rki/coronawarnapp/covidcertificate/validation/core/common/exception/DccValidationException;
 
-    sget-object v0, Lde/rki/coronawarnapp/covidcertificate/validation/core/common/exception/DccValidationException$ErrorCode;->ONBOARDED_COUNTRIES_JSON_DECODING_FAILED:Lde/rki/coronawarnapp/covidcertificate/validation/core/common/exception/DccValidationException$ErrorCode;
+    const/16 v0, 0x16
 
-    invoke-direct {p1, v0, p0}, Lde/rki/coronawarnapp/covidcertificate/validation/core/common/exception/DccValidationException;-><init>(Lde/rki/coronawarnapp/covidcertificate/validation/core/common/exception/DccValidationException$ErrorCode;Ljava/lang/Throwable;)V
+    invoke-direct {p1, v0, p0}, Lde/rki/coronawarnapp/covidcertificate/validation/core/common/exception/DccValidationException;-><init>(ILjava/lang/Throwable;)V
 
     throw p1
 .end method

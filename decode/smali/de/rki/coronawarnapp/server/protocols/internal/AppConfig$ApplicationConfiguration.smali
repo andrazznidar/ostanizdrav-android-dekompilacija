@@ -106,14 +106,6 @@
 # direct methods
 .method public static bridge synthetic -$$Nest$maddAllSupportedCountries(Lde/rki/coronawarnapp/server/protocols/internal/AppConfig$ApplicationConfiguration;Ljava/lang/Iterable;)V
     .locals 0
-    .annotation system Ldalvik/annotation/Signature;
-        value = {
-            "(",
-            "Ljava/lang/Iterable<",
-            "Ljava/lang/String;",
-            ">;)V"
-        }
-    .end annotation
 
     invoke-direct {p0, p1}, Lde/rki/coronawarnapp/server/protocols/internal/AppConfig$ApplicationConfiguration;->addAllSupportedCountries(Ljava/lang/Iterable;)V
 
@@ -456,7 +448,7 @@
     return-void
 .end method
 
-.method public static synthetic -$$Nest$sfgetDEFAULT_INSTANCE()Lde/rki/coronawarnapp/server/protocols/internal/AppConfig$ApplicationConfiguration;
+.method public static bridge synthetic -$$Nest$sfgetDEFAULT_INSTANCE()Lde/rki/coronawarnapp/server/protocols/internal/AppConfig$ApplicationConfiguration;
     .locals 1
 
     sget-object v0, Lde/rki/coronawarnapp/server/protocols/internal/AppConfig$ApplicationConfiguration;->DEFAULT_INSTANCE:Lde/rki/coronawarnapp/server/protocols/internal/AppConfig$ApplicationConfiguration;
@@ -2293,7 +2285,7 @@
     :pswitch_4
     new-instance p1, Lde/rki/coronawarnapp/server/protocols/internal/AppConfig$ApplicationConfiguration$Builder;
 
-    invoke-direct {p1, v2}, Lde/rki/coronawarnapp/server/protocols/internal/AppConfig$ApplicationConfiguration$Builder;-><init>(Lde/rki/coronawarnapp/server/protocols/internal/AppConfig$ApplicationConfiguration$Builder-IA;)V
+    invoke-direct {p1, v2}, Lde/rki/coronawarnapp/server/protocols/internal/AppConfig$ApplicationConfiguration$Builder;-><init>(Lcom/airbnb/lottie/model/content/PolystarShape$Type$EnumUnboxingLocalUtility;)V
 
     return-object p1
 

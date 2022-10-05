@@ -24,7 +24,7 @@
 
 
 # static fields
-.field public static final NULL_VALUE:Ljava/lang/Object;
+.field private static final NULL_VALUE:Ljava/lang/Object;
 
 
 # direct methods
@@ -46,4 +46,69 @@
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
     return-void
+.end method
+
+
+# virtual methods
+.method public escape(Ljava/lang/Object;)Ljava/lang/Object;
+    .locals 0
+    .annotation system Ldalvik/annotation/Signature;
+        value = {
+            "(TT;)",
+            "Ljava/lang/Object;"
+        }
+    .end annotation
+
+    if-nez p1, :cond_0
+
+    sget-object p1, Lkotlin/reflect/jvm/internal/ReflectProperties$Val;->NULL_VALUE:Ljava/lang/Object;
+
+    :cond_0
+    return-object p1
+.end method
+
+.method public final getValue(Ljava/lang/Object;Ljava/lang/Object;)Ljava/lang/Object;
+    .locals 0
+    .annotation system Ldalvik/annotation/Signature;
+        value = {
+            "(",
+            "Ljava/lang/Object;",
+            "Ljava/lang/Object;",
+            ")TT;"
+        }
+    .end annotation
+
+    invoke-virtual {p0}, Lkotlin/reflect/jvm/internal/ReflectProperties$Val;->invoke()Ljava/lang/Object;
+
+    move-result-object p1
+
+    return-object p1
+.end method
+
+.method public abstract invoke()Ljava/lang/Object;
+    .annotation system Ldalvik/annotation/Signature;
+        value = {
+            "()TT;"
+        }
+    .end annotation
+.end method
+
+.method public unescape(Ljava/lang/Object;)Ljava/lang/Object;
+    .locals 1
+    .annotation system Ldalvik/annotation/Signature;
+        value = {
+            "(",
+            "Ljava/lang/Object;",
+            ")TT;"
+        }
+    .end annotation
+
+    sget-object v0, Lkotlin/reflect/jvm/internal/ReflectProperties$Val;->NULL_VALUE:Ljava/lang/Object;
+
+    if-ne p1, v0, :cond_0
+
+    const/4 p1, 0x0
+
+    :cond_0
+    return-object p1
 .end method

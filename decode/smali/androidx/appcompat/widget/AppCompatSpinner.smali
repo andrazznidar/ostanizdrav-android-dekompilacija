@@ -443,7 +443,7 @@
 .method public drawableStateChanged()V
     .locals 1
 
-    invoke-super {p0}, Landroid/view/ViewGroup;->drawableStateChanged()V
+    invoke-super {p0}, Landroid/widget/Spinner;->drawableStateChanged()V
 
     iget-object v0, p0, Landroidx/appcompat/widget/AppCompatSpinner;->mBackgroundTintHelper:Landroidx/appcompat/widget/AppCompatBackgroundHelper;
 
@@ -867,7 +867,7 @@
 .method public setBackgroundDrawable(Landroid/graphics/drawable/Drawable;)V
     .locals 0
 
-    invoke-super {p0, p1}, Landroid/view/View;->setBackgroundDrawable(Landroid/graphics/drawable/Drawable;)V
+    invoke-super {p0, p1}, Landroid/widget/Spinner;->setBackgroundDrawable(Landroid/graphics/drawable/Drawable;)V
 
     iget-object p1, p0, Landroidx/appcompat/widget/AppCompatSpinner;->mBackgroundTintHelper:Landroidx/appcompat/widget/AppCompatBackgroundHelper;
 
@@ -882,7 +882,7 @@
 .method public setBackgroundResource(I)V
     .locals 1
 
-    invoke-super {p0, p1}, Landroid/view/View;->setBackgroundResource(I)V
+    invoke-super {p0, p1}, Landroid/widget/Spinner;->setBackgroundResource(I)V
 
     iget-object v0, p0, Landroidx/appcompat/widget/AppCompatSpinner;->mBackgroundTintHelper:Landroidx/appcompat/widget/AppCompatBackgroundHelper;
 

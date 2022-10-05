@@ -27,7 +27,7 @@
 
     invoke-direct {p1, p0}, Lde/rki/coronawarnapp/util/device/PowerManagement$powerManager$2;-><init>(Lde/rki/coronawarnapp/util/device/PowerManagement;)V
 
-    invoke-static {p1}, Lkotlin/LazyKt__LazyKt;->lazy(Lkotlin/jvm/functions/Function0;)Lkotlin/Lazy;
+    invoke-static {p1}, Lkotlin/LazyKt__LazyJVMKt;->lazy(Lkotlin/jvm/functions/Function0;)Lkotlin/Lazy;
 
     move-result-object p1
 
@@ -53,7 +53,7 @@
 
     const/16 v1, 0x17
 
-    invoke-static {v0, v1}, Lcom/airbnb/lottie/utils/GammaEvaluator;->hasAPILevel(Lde/rki/coronawarnapp/util/BuildVersionWrap;I)Z
+    invoke-static {v0, v1}, Lokhttp3/CookieJar$Companion$NoCookies;->hasAPILevel(Lde/rki/coronawarnapp/util/BuildVersionWrap;I)Z
 
     move-result v0
 

@@ -1,5 +1,5 @@
 .class public final Lde/rki/coronawarnapp/presencetracing/risk/execution/PresenceTracingRiskWorkScheduler;
-.super Lde/rki/coronawarnapp/risk/execution/RiskWorkScheduler;
+.super Lcom/nimbusds/jose/crypto/impl/BaseJWSProvider;
 .source "PresenceTracingRiskWorkScheduler.kt"
 
 
@@ -57,7 +57,7 @@
 
     const-string v0, "PTRiskWorkScheduler"
 
-    invoke-direct {p0, p2, v0}, Lde/rki/coronawarnapp/risk/execution/RiskWorkScheduler;-><init>(Landroidx/work/WorkManager;Ljava/lang/String;)V
+    invoke-direct {p0, p2, v0}, Lcom/nimbusds/jose/crypto/impl/BaseJWSProvider;-><init>(Landroidx/work/WorkManager;Ljava/lang/String;)V
 
     iput-object p1, p0, Lde/rki/coronawarnapp/presencetracing/risk/execution/PresenceTracingRiskWorkScheduler;->appScope:Lkotlinx/coroutines/CoroutineScope;
 
@@ -105,7 +105,7 @@
 
     move-object v1, v8
 
-    invoke-direct/range {v1 .. v7}, Lde/rki/coronawarnapp/task/common/DefaultTaskRequest;-><init>(Lkotlin/reflect/KClass;Lde/rki/coronawarnapp/task/Task$Arguments;Ljava/util/UUID;Ljava/lang/String;Lde/rki/coronawarnapp/task/TaskFactory$Config$ErrorHandling;I)V
+    invoke-direct/range {v1 .. v7}, Lde/rki/coronawarnapp/task/common/DefaultTaskRequest;-><init>(Lkotlin/reflect/KClass;Lde/rki/coronawarnapp/task/Task$Arguments;Ljava/util/UUID;Ljava/lang/String;II)V
 
     invoke-virtual {v0, v8}, Lde/rki/coronawarnapp/task/TaskController;->submit(Lde/rki/coronawarnapp/task/TaskRequest;)V
 

@@ -46,13 +46,13 @@
 
 # virtual methods
 .method public invoke()Ljava/lang/Object;
-    .locals 10
+    .locals 9
 
     iget-object v0, p0, Lde/rki/coronawarnapp/covidcertificate/person/ui/details/items/VaccinationInfoCard$viewBinding$1;->this$0:Lde/rki/coronawarnapp/covidcertificate/person/ui/details/items/VaccinationInfoCard;
 
     iget-object v0, v0, Landroidx/recyclerview/widget/RecyclerView$ViewHolder;->itemView:Landroid/view/View;
 
-    const v1, 0x7f0a0129
+    const v1, 0x7f0a0142
 
     invoke-static {v0, v1}, Landroidx/viewbinding/ViewBindings;->findChildViewById(Landroid/view/View;I)Landroid/view/View;
 
@@ -64,7 +64,7 @@
 
     if-eqz v5, :cond_0
 
-    const v1, 0x7f0a012a
+    const v1, 0x7f0a032f
 
     invoke-static {v0, v1}, Landroidx/viewbinding/ViewBindings;->findChildViewById(Landroid/view/View;I)Landroid/view/View;
 
@@ -76,7 +76,7 @@
 
     if-eqz v6, :cond_0
 
-    const v1, 0x7f0a0130
+    const v1, 0x7f0a07ab
 
     invoke-static {v0, v1}, Landroidx/viewbinding/ViewBindings;->findChildViewById(Landroid/view/View;I)Landroid/view/View;
 
@@ -84,11 +84,11 @@
 
     move-object v7, v2
 
-    check-cast v7, Landroid/widget/ImageView;
+    check-cast v7, Landroid/widget/TextView;
 
     if-eqz v7, :cond_0
 
-    const v1, 0x7f0a075e
+    const v1, 0x7f0a0823
 
     invoke-static {v0, v1}, Landroidx/viewbinding/ViewBindings;->findChildViewById(Landroid/view/View;I)Landroid/view/View;
 
@@ -100,18 +100,6 @@
 
     if-eqz v8, :cond_0
 
-    const v1, 0x7f0a07db
-
-    invoke-static {v0, v1}, Landroidx/viewbinding/ViewBindings;->findChildViewById(Landroid/view/View;I)Landroid/view/View;
-
-    move-result-object v2
-
-    move-object v9, v2
-
-    check-cast v9, Landroid/widget/TextView;
-
-    if-eqz v9, :cond_0
-
     new-instance v1, Lde/rki/coronawarnapp/databinding/VaccinationInfoCardBinding;
 
     move-object v4, v0
@@ -120,7 +108,7 @@
 
     move-object v3, v1
 
-    invoke-direct/range {v3 .. v9}, Lde/rki/coronawarnapp/databinding/VaccinationInfoCardBinding;-><init>(Landroid/widget/LinearLayout;Landroid/widget/TextView;Landroid/widget/TextView;Landroid/widget/ImageView;Landroid/widget/TextView;Landroid/widget/TextView;)V
+    invoke-direct/range {v3 .. v8}, Lde/rki/coronawarnapp/databinding/VaccinationInfoCardBinding;-><init>(Landroid/widget/LinearLayout;Landroid/widget/TextView;Landroid/widget/TextView;Landroid/widget/TextView;Landroid/widget/TextView;)V
 
     return-object v1
 

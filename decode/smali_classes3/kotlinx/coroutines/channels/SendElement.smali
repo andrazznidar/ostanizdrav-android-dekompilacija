@@ -67,7 +67,7 @@
 
     iget-object v0, p0, Lkotlinx/coroutines/channels/SendElement;->cont:Lkotlinx/coroutines/CancellableContinuation;
 
-    sget-object v1, Lkotlinx/coroutines/CancellableContinuationImplKt;->RESUME_TOKEN:Lkotlinx/coroutines/internal/Symbol;
+    sget-object v1, Lcom/upokecenter/cbor/CBORDoubleBits;->RESUME_TOKEN:Lkotlinx/coroutines/internal/Symbol;
 
     invoke-interface {v0, v1}, Lkotlinx/coroutines/CancellableContinuation;->completeResume(Ljava/lang/Object;)V
 
@@ -196,7 +196,7 @@
     invoke-virtual {v0, p1}, Lkotlinx/coroutines/internal/LockFreeLinkedListNode$AbstractAtomicDesc;->finishPrepare(Lkotlinx/coroutines/internal/LockFreeLinkedListNode$PrepareOp;)V
 
     :goto_1
-    sget-object p1, Lkotlinx/coroutines/CancellableContinuationImplKt;->RESUME_TOKEN:Lkotlinx/coroutines/internal/Symbol;
+    sget-object p1, Lcom/upokecenter/cbor/CBORDoubleBits;->RESUME_TOKEN:Lkotlinx/coroutines/internal/Symbol;
 
     return-object p1
 .end method

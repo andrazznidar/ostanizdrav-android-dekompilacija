@@ -63,7 +63,7 @@
 .method public drawableStateChanged()V
     .locals 1
 
-    invoke-super {p0}, Landroid/widget/TextView;->drawableStateChanged()V
+    invoke-super {p0}, Landroid/widget/Button;->drawableStateChanged()V
 
     iget-object v0, p0, Landroidx/appcompat/widget/AppCompatButton;->mBackgroundTintHelper:Landroidx/appcompat/widget/AppCompatBackgroundHelper;
 
@@ -89,7 +89,7 @@
 
     if-eqz v0, :cond_0
 
-    invoke-super {p0}, Landroid/widget/TextView;->getAutoSizeMaxTextSize()I
+    invoke-super {p0}, Landroid/widget/Button;->getAutoSizeMaxTextSize()I
 
     move-result v0
 
@@ -123,7 +123,7 @@
 
     if-eqz v0, :cond_0
 
-    invoke-super {p0}, Landroid/widget/TextView;->getAutoSizeMinTextSize()I
+    invoke-super {p0}, Landroid/widget/Button;->getAutoSizeMinTextSize()I
 
     move-result v0
 
@@ -157,7 +157,7 @@
 
     if-eqz v0, :cond_0
 
-    invoke-super {p0}, Landroid/widget/TextView;->getAutoSizeStepGranularity()I
+    invoke-super {p0}, Landroid/widget/Button;->getAutoSizeStepGranularity()I
 
     move-result v0
 
@@ -191,7 +191,7 @@
 
     if-eqz v0, :cond_0
 
-    invoke-super {p0}, Landroid/widget/TextView;->getAutoSizeTextAvailableSizes()[I
+    invoke-super {p0}, Landroid/widget/Button;->getAutoSizeTextAvailableSizes()[I
 
     move-result-object v0
 
@@ -230,7 +230,7 @@
 
     if-eqz v0, :cond_1
 
-    invoke-super {p0}, Landroid/widget/TextView;->getAutoSizeTextType()I
+    invoke-super {p0}, Landroid/widget/Button;->getAutoSizeTextType()I
 
     move-result v0
 
@@ -341,7 +341,7 @@
 .method public onInitializeAccessibilityEvent(Landroid/view/accessibility/AccessibilityEvent;)V
     .locals 1
 
-    invoke-super {p0, p1}, Landroid/view/View;->onInitializeAccessibilityEvent(Landroid/view/accessibility/AccessibilityEvent;)V
+    invoke-super {p0, p1}, Landroid/widget/Button;->onInitializeAccessibilityEvent(Landroid/view/accessibility/AccessibilityEvent;)V
 
     const-class v0, Landroid/widget/Button;
 
@@ -357,7 +357,7 @@
 .method public onInitializeAccessibilityNodeInfo(Landroid/view/accessibility/AccessibilityNodeInfo;)V
     .locals 1
 
-    invoke-super {p0, p1}, Landroid/view/View;->onInitializeAccessibilityNodeInfo(Landroid/view/accessibility/AccessibilityNodeInfo;)V
+    invoke-super {p0, p1}, Landroid/widget/Button;->onInitializeAccessibilityNodeInfo(Landroid/view/accessibility/AccessibilityNodeInfo;)V
 
     const-class v0, Landroid/widget/Button;
 
@@ -373,7 +373,7 @@
 .method public onLayout(ZIIII)V
     .locals 0
 
-    invoke-super/range {p0 .. p5}, Landroid/widget/TextView;->onLayout(ZIIII)V
+    invoke-super/range {p0 .. p5}, Landroid/widget/Button;->onLayout(ZIIII)V
 
     iget-object p1, p0, Landroidx/appcompat/widget/AppCompatButton;->mTextHelper:Landroidx/appcompat/widget/AppCompatTextHelper;
 
@@ -394,7 +394,7 @@
 .method public onTextChanged(Ljava/lang/CharSequence;III)V
     .locals 0
 
-    invoke-super {p0, p1, p2, p3, p4}, Landroid/widget/TextView;->onTextChanged(Ljava/lang/CharSequence;III)V
+    invoke-super {p0, p1, p2, p3, p4}, Landroid/widget/Button;->onTextChanged(Ljava/lang/CharSequence;III)V
 
     iget-object p1, p0, Landroidx/appcompat/widget/AppCompatButton;->mTextHelper:Landroidx/appcompat/widget/AppCompatTextHelper;
 
@@ -432,7 +432,7 @@
 
     if-eqz v0, :cond_0
 
-    invoke-super {p0, p1, p2, p3, p4}, Landroid/widget/TextView;->setAutoSizeTextTypeUniformWithConfiguration(IIII)V
+    invoke-super {p0, p1, p2, p3, p4}, Landroid/widget/Button;->setAutoSizeTextTypeUniformWithConfiguration(IIII)V
 
     goto :goto_0
 
@@ -460,7 +460,7 @@
 
     if-eqz v0, :cond_0
 
-    invoke-super {p0, p1, p2}, Landroid/widget/TextView;->setAutoSizeTextTypeUniformWithPresetSizes([II)V
+    invoke-super {p0, p1, p2}, Landroid/widget/Button;->setAutoSizeTextTypeUniformWithPresetSizes([II)V
 
     goto :goto_0
 
@@ -483,7 +483,7 @@
 
     if-eqz v0, :cond_0
 
-    invoke-super {p0, p1}, Landroid/widget/TextView;->setAutoSizeTextTypeWithDefaults(I)V
+    invoke-super {p0, p1}, Landroid/widget/Button;->setAutoSizeTextTypeWithDefaults(I)V
 
     goto :goto_0
 
@@ -502,7 +502,7 @@
 .method public setBackgroundDrawable(Landroid/graphics/drawable/Drawable;)V
     .locals 0
 
-    invoke-super {p0, p1}, Landroid/view/View;->setBackgroundDrawable(Landroid/graphics/drawable/Drawable;)V
+    invoke-super {p0, p1}, Landroid/widget/Button;->setBackgroundDrawable(Landroid/graphics/drawable/Drawable;)V
 
     iget-object p1, p0, Landroidx/appcompat/widget/AppCompatButton;->mBackgroundTintHelper:Landroidx/appcompat/widget/AppCompatBackgroundHelper;
 
@@ -517,7 +517,7 @@
 .method public setBackgroundResource(I)V
     .locals 1
 
-    invoke-super {p0, p1}, Landroid/view/View;->setBackgroundResource(I)V
+    invoke-super {p0, p1}, Landroid/widget/Button;->setBackgroundResource(I)V
 
     iget-object v0, p0, Landroidx/appcompat/widget/AppCompatButton;->mBackgroundTintHelper:Landroidx/appcompat/widget/AppCompatBackgroundHelper;
 
@@ -536,7 +536,7 @@
 
     move-result-object p1
 
-    invoke-super {p0, p1}, Landroid/widget/TextView;->setCustomSelectionActionModeCallback(Landroid/view/ActionMode$Callback;)V
+    invoke-super {p0, p1}, Landroid/widget/Button;->setCustomSelectionActionModeCallback(Landroid/view/ActionMode$Callback;)V
 
     return-void
 .end method
@@ -613,7 +613,7 @@
 .method public setTextAppearance(Landroid/content/Context;I)V
     .locals 1
 
-    invoke-super {p0, p1, p2}, Landroid/widget/TextView;->setTextAppearance(Landroid/content/Context;I)V
+    invoke-super {p0, p1, p2}, Landroid/widget/Button;->setTextAppearance(Landroid/content/Context;I)V
 
     iget-object v0, p0, Landroidx/appcompat/widget/AppCompatButton;->mTextHelper:Landroidx/appcompat/widget/AppCompatTextHelper;
 
@@ -632,7 +632,7 @@
 
     if-eqz v0, :cond_0
 
-    invoke-super {p0, p1, p2}, Landroid/widget/TextView;->setTextSize(IF)V
+    invoke-super {p0, p1, p2}, Landroid/widget/Button;->setTextSize(IF)V
 
     goto :goto_0
 

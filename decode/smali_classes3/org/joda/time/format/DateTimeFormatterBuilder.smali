@@ -349,6 +349,54 @@
     return-object p0
 .end method
 
+.method public appendDayOfMonth(I)Lorg/joda/time/format/DateTimeFormatterBuilder;
+    .locals 2
+
+    sget-object v0, Lorg/joda/time/DateTimeFieldType;->ERA_TYPE:Lorg/joda/time/DateTimeFieldType;
+
+    sget-object v0, Lorg/joda/time/DateTimeFieldType;->DAY_OF_MONTH_TYPE:Lorg/joda/time/DateTimeFieldType;
+
+    const/4 v1, 0x2
+
+    invoke-virtual {p0, v0, p1, v1}, Lorg/joda/time/format/DateTimeFormatterBuilder;->appendDecimal(Lorg/joda/time/DateTimeFieldType;II)Lorg/joda/time/format/DateTimeFormatterBuilder;
+
+    move-result-object p1
+
+    return-object p1
+.end method
+
+.method public appendDayOfWeek(I)Lorg/joda/time/format/DateTimeFormatterBuilder;
+    .locals 2
+
+    sget-object v0, Lorg/joda/time/DateTimeFieldType;->ERA_TYPE:Lorg/joda/time/DateTimeFieldType;
+
+    sget-object v0, Lorg/joda/time/DateTimeFieldType;->DAY_OF_WEEK_TYPE:Lorg/joda/time/DateTimeFieldType;
+
+    const/4 v1, 0x1
+
+    invoke-virtual {p0, v0, p1, v1}, Lorg/joda/time/format/DateTimeFormatterBuilder;->appendDecimal(Lorg/joda/time/DateTimeFieldType;II)Lorg/joda/time/format/DateTimeFormatterBuilder;
+
+    move-result-object p1
+
+    return-object p1
+.end method
+
+.method public appendDayOfYear(I)Lorg/joda/time/format/DateTimeFormatterBuilder;
+    .locals 2
+
+    sget-object v0, Lorg/joda/time/DateTimeFieldType;->ERA_TYPE:Lorg/joda/time/DateTimeFieldType;
+
+    sget-object v0, Lorg/joda/time/DateTimeFieldType;->DAY_OF_YEAR_TYPE:Lorg/joda/time/DateTimeFieldType;
+
+    const/4 v1, 0x3
+
+    invoke-virtual {p0, v0, p1, v1}, Lorg/joda/time/format/DateTimeFormatterBuilder;->appendDecimal(Lorg/joda/time/DateTimeFieldType;II)Lorg/joda/time/format/DateTimeFormatterBuilder;
+
+    move-result-object p1
+
+    return-object p1
+.end method
+
 .method public appendDecimal(Lorg/joda/time/DateTimeFieldType;II)Lorg/joda/time/format/DateTimeFormatterBuilder;
     .locals 3
 
@@ -499,6 +547,22 @@
     return-object p0
 .end method
 
+.method public appendHourOfDay(I)Lorg/joda/time/format/DateTimeFormatterBuilder;
+    .locals 2
+
+    sget-object v0, Lorg/joda/time/DateTimeFieldType;->ERA_TYPE:Lorg/joda/time/DateTimeFieldType;
+
+    sget-object v0, Lorg/joda/time/DateTimeFieldType;->HOUR_OF_DAY_TYPE:Lorg/joda/time/DateTimeFieldType;
+
+    const/4 v1, 0x2
+
+    invoke-virtual {p0, v0, p1, v1}, Lorg/joda/time/format/DateTimeFormatterBuilder;->appendDecimal(Lorg/joda/time/DateTimeFieldType;II)Lorg/joda/time/format/DateTimeFormatterBuilder;
+
+    move-result-object p1
+
+    return-object p1
+.end method
+
 .method public appendLiteral(C)Lorg/joda/time/format/DateTimeFormatterBuilder;
     .locals 1
 
@@ -577,6 +641,38 @@
     return-object p0
 .end method
 
+.method public appendMinuteOfHour(I)Lorg/joda/time/format/DateTimeFormatterBuilder;
+    .locals 2
+
+    sget-object v0, Lorg/joda/time/DateTimeFieldType;->ERA_TYPE:Lorg/joda/time/DateTimeFieldType;
+
+    sget-object v0, Lorg/joda/time/DateTimeFieldType;->MINUTE_OF_HOUR_TYPE:Lorg/joda/time/DateTimeFieldType;
+
+    const/4 v1, 0x2
+
+    invoke-virtual {p0, v0, p1, v1}, Lorg/joda/time/format/DateTimeFormatterBuilder;->appendDecimal(Lorg/joda/time/DateTimeFieldType;II)Lorg/joda/time/format/DateTimeFormatterBuilder;
+
+    move-result-object p1
+
+    return-object p1
+.end method
+
+.method public appendMonthOfYear(I)Lorg/joda/time/format/DateTimeFormatterBuilder;
+    .locals 2
+
+    sget-object v0, Lorg/joda/time/DateTimeFieldType;->ERA_TYPE:Lorg/joda/time/DateTimeFieldType;
+
+    sget-object v0, Lorg/joda/time/DateTimeFieldType;->MONTH_OF_YEAR_TYPE:Lorg/joda/time/DateTimeFieldType;
+
+    const/4 v1, 0x2
+
+    invoke-virtual {p0, v0, p1, v1}, Lorg/joda/time/format/DateTimeFormatterBuilder;->appendDecimal(Lorg/joda/time/DateTimeFieldType;II)Lorg/joda/time/format/DateTimeFormatterBuilder;
+
+    move-result-object p1
+
+    return-object p1
+.end method
+
 .method public appendOptional(Lorg/joda/time/format/DateTimeParser;)Lorg/joda/time/format/DateTimeFormatterBuilder;
     .locals 2
 
@@ -616,6 +712,22 @@
     invoke-direct {p1, v0}, Ljava/lang/IllegalArgumentException;-><init>(Ljava/lang/String;)V
 
     throw p1
+.end method
+
+.method public appendSecondOfMinute(I)Lorg/joda/time/format/DateTimeFormatterBuilder;
+    .locals 2
+
+    sget-object v0, Lorg/joda/time/DateTimeFieldType;->ERA_TYPE:Lorg/joda/time/DateTimeFieldType;
+
+    sget-object v0, Lorg/joda/time/DateTimeFieldType;->SECOND_OF_MINUTE_TYPE:Lorg/joda/time/DateTimeFieldType;
+
+    const/4 v1, 0x2
+
+    invoke-virtual {p0, v0, p1, v1}, Lorg/joda/time/format/DateTimeFormatterBuilder;->appendDecimal(Lorg/joda/time/DateTimeFieldType;II)Lorg/joda/time/format/DateTimeFormatterBuilder;
+
+    move-result-object p1
+
+    return-object p1
 .end method
 
 .method public appendShortText(Lorg/joda/time/DateTimeFieldType;)Lorg/joda/time/format/DateTimeFormatterBuilder;
@@ -793,6 +905,22 @@
     return-object p0
 .end method
 
+.method public appendWeekOfWeekyear(I)Lorg/joda/time/format/DateTimeFormatterBuilder;
+    .locals 2
+
+    sget-object v0, Lorg/joda/time/DateTimeFieldType;->ERA_TYPE:Lorg/joda/time/DateTimeFieldType;
+
+    sget-object v0, Lorg/joda/time/DateTimeFieldType;->WEEK_OF_WEEKYEAR_TYPE:Lorg/joda/time/DateTimeFieldType;
+
+    const/4 v1, 0x2
+
+    invoke-virtual {p0, v0, p1, v1}, Lorg/joda/time/format/DateTimeFormatterBuilder;->appendDecimal(Lorg/joda/time/DateTimeFieldType;II)Lorg/joda/time/format/DateTimeFormatterBuilder;
+
+    move-result-object p1
+
+    return-object p1
+.end method
+
 .method public appendWeekyear(II)Lorg/joda/time/format/DateTimeFormatterBuilder;
     .locals 1
 
@@ -918,6 +1046,39 @@
     return v1
 .end method
 
+.method public final isPrinter(Ljava/lang/Object;)Z
+    .locals 3
+
+    instance-of v0, p1, Lorg/joda/time/format/InternalPrinter;
+
+    const/4 v1, 0x0
+
+    if-eqz v0, :cond_2
+
+    instance-of v0, p1, Lorg/joda/time/format/DateTimeFormatterBuilder$Composite;
+
+    const/4 v2, 0x1
+
+    if-eqz v0, :cond_1
+
+    check-cast p1, Lorg/joda/time/format/DateTimeFormatterBuilder$Composite;
+
+    iget-object p1, p1, Lorg/joda/time/format/DateTimeFormatterBuilder$Composite;->iPrinters:[Lorg/joda/time/format/InternalPrinter;
+
+    if-eqz p1, :cond_0
+
+    move v1, v2
+
+    :cond_0
+    return v1
+
+    :cond_1
+    return v2
+
+    :cond_2
+    return v1
+.end method
+
 .method public toFormatter()Lorg/joda/time/format/DateTimeFormatter;
     .locals 4
 
@@ -925,62 +1086,42 @@
 
     move-result-object v0
 
-    instance-of v1, v0, Lorg/joda/time/format/InternalPrinter;
+    invoke-virtual {p0, v0}, Lorg/joda/time/format/DateTimeFormatterBuilder;->isPrinter(Ljava/lang/Object;)Z
+
+    move-result v1
 
     const/4 v2, 0x0
-
-    if-eqz v1, :cond_1
-
-    instance-of v1, v0, Lorg/joda/time/format/DateTimeFormatterBuilder$Composite;
-
-    const/4 v3, 0x1
 
     if-eqz v1, :cond_0
 
     move-object v1, v0
 
-    check-cast v1, Lorg/joda/time/format/DateTimeFormatterBuilder$Composite;
-
-    iget-object v1, v1, Lorg/joda/time/format/DateTimeFormatterBuilder$Composite;->iPrinters:[Lorg/joda/time/format/InternalPrinter;
-
-    if-eqz v1, :cond_1
-
-    :cond_0
-    move v2, v3
-
-    :cond_1
-    const/4 v1, 0x0
-
-    if-eqz v2, :cond_2
-
-    move-object v2, v0
-
-    check-cast v2, Lorg/joda/time/format/InternalPrinter;
+    check-cast v1, Lorg/joda/time/format/InternalPrinter;
 
     goto :goto_0
 
-    :cond_2
-    move-object v2, v1
+    :cond_0
+    move-object v1, v2
 
     :goto_0
     invoke-virtual {p0, v0}, Lorg/joda/time/format/DateTimeFormatterBuilder;->isParser(Ljava/lang/Object;)Z
 
     move-result v3
 
-    if-eqz v3, :cond_3
+    if-eqz v3, :cond_1
 
-    move-object v1, v0
+    move-object v2, v0
 
-    check-cast v1, Lorg/joda/time/format/InternalParser;
+    check-cast v2, Lorg/joda/time/format/InternalParser;
 
-    :cond_3
-    if-nez v2, :cond_5
+    :cond_1
+    if-nez v1, :cond_3
 
-    if-eqz v1, :cond_4
+    if-eqz v2, :cond_2
 
     goto :goto_1
 
-    :cond_4
+    :cond_2
     new-instance v0, Ljava/lang/UnsupportedOperationException;
 
     const-string v1, "Both printing and parsing not supported"
@@ -989,11 +1130,11 @@
 
     throw v0
 
-    :cond_5
+    :cond_3
     :goto_1
     new-instance v0, Lorg/joda/time/format/DateTimeFormatter;
 
-    invoke-direct {v0, v2, v1}, Lorg/joda/time/format/DateTimeFormatter;-><init>(Lorg/joda/time/format/InternalPrinter;Lorg/joda/time/format/InternalParser;)V
+    invoke-direct {v0, v1, v2}, Lorg/joda/time/format/DateTimeFormatter;-><init>(Lorg/joda/time/format/InternalPrinter;Lorg/joda/time/format/InternalParser;)V
 
     return-object v0
 .end method

@@ -15,23 +15,7 @@
 
 
 # virtual methods
-.method public b()Lj$/time/temporal/A;
-    .locals 6
-
-    const-wide/16 v0, 0x1
-
-    const-wide/16 v2, 0x34
-
-    const-wide/16 v4, 0x35
-
-    invoke-static/range {v0 .. v5}, Lj$/time/temporal/A;->j(JJJ)Lj$/time/temporal/A;
-
-    move-result-object v0
-
-    return-object v0
-.end method
-
-.method public d(Ljava/util/Map;Lj$/time/temporal/TemporalAccessor;Lj$/time/format/E;)Lj$/time/temporal/TemporalAccessor;
+.method public b(Ljava/util/Map;Lj$/time/temporal/TemporalAccessor;Lj$/time/format/E;)Lj$/time/temporal/TemporalAccessor;
     .locals 18
 
     move-object/from16 v0, p0
@@ -63,7 +47,7 @@
     goto/16 :goto_7
 
     :cond_0
-    invoke-interface {v3}, Lj$/time/temporal/o;->b()Lj$/time/temporal/A;
+    invoke-interface {v3}, Lj$/time/temporal/o;->d()Lj$/time/temporal/z;
 
     move-result-object v7
 
@@ -71,7 +55,7 @@
 
     move-result-wide v8
 
-    invoke-virtual {v7, v8, v9, v3}, Lj$/time/temporal/A;->a(JLj$/time/temporal/o;)I
+    invoke-virtual {v7, v8, v9, v3}, Lj$/time/temporal/z;->a(JLj$/time/temporal/o;)I
 
     move-result v4
 
@@ -133,7 +117,7 @@
 
     if-gez v2, :cond_2
 
-    invoke-static {v12, v13, v14, v15}, Lj$/lang/d;->g(JJ)J
+    invoke-static {v12, v13, v14, v15}, Lj$/time/c;->f(JJ)J
 
     move-result-wide v16
 
@@ -157,7 +141,7 @@
     add-long/2addr v12, v9
 
     :cond_2
-    invoke-static {v7, v8, v9, v10}, Lj$/lang/d;->g(JJ)J
+    invoke-static {v7, v8, v9, v10}, Lj$/time/c;->f(JJ)J
 
     move-result-wide v6
 
@@ -206,19 +190,19 @@
 
     if-ne v2, v9, :cond_6
 
-    invoke-static {v4}, Lj$/time/temporal/h;->k(Lj$/time/LocalDate;)Lj$/time/temporal/A;
+    invoke-static {v4}, Lj$/time/temporal/h;->k(Lj$/time/LocalDate;)Lj$/time/temporal/z;
 
     move-result-object v2
 
     goto :goto_4
 
     :cond_6
-    invoke-virtual/range {p0 .. p0}, Lj$/time/temporal/f;->b()Lj$/time/temporal/A;
+    invoke-virtual/range {p0 .. p0}, Lj$/time/temporal/f;->d()Lj$/time/temporal/z;
 
     move-result-object v2
 
     :goto_4
-    invoke-virtual {v2, v7, v8, v0}, Lj$/time/temporal/A;->b(JLj$/time/temporal/o;)J
+    invoke-virtual {v2, v7, v8, v0}, Lj$/time/temporal/z;->b(JLj$/time/temporal/o;)J
 
     goto :goto_2
 
@@ -252,7 +236,7 @@
     return-object v2
 .end method
 
-.method public e(Lj$/time/temporal/TemporalAccessor;)J
+.method public c(Lj$/time/temporal/TemporalAccessor;)J
     .locals 2
 
     invoke-virtual {p0, p1}, Lj$/time/temporal/f;->f(Lj$/time/temporal/TemporalAccessor;)Z
@@ -274,13 +258,29 @@
     return-wide v0
 
     :cond_0
-    new-instance p1, Lj$/time/temporal/z;
+    new-instance p1, Lj$/time/temporal/y;
 
     const-string v0, "Unsupported field: WeekOfWeekBasedYear"
 
-    invoke-direct {p1, v0}, Lj$/time/temporal/z;-><init>(Ljava/lang/String;)V
+    invoke-direct {p1, v0}, Lj$/time/temporal/y;-><init>(Ljava/lang/String;)V
 
     throw p1
+.end method
+
+.method public d()Lj$/time/temporal/z;
+    .locals 6
+
+    const-wide/16 v0, 0x1
+
+    const-wide/16 v2, 0x34
+
+    const-wide/16 v4, 0x35
+
+    invoke-static/range {v0 .. v5}, Lj$/time/temporal/z;->j(JJJ)Lj$/time/temporal/z;
+
+    move-result-object v0
+
+    return-object v0
 .end method
 
 .method public f(Lj$/time/temporal/TemporalAccessor;)Z
@@ -288,7 +288,7 @@
 
     sget-object v0, Lj$/time/temporal/a;->EPOCH_DAY:Lj$/time/temporal/a;
 
-    invoke-interface {p1, v0}, Lj$/time/temporal/TemporalAccessor;->i(Lj$/time/temporal/o;)Z
+    invoke-interface {p1, v0}, Lj$/time/temporal/TemporalAccessor;->e(Lj$/time/temporal/o;)Z
 
     move-result v0
 
@@ -322,30 +322,30 @@
 .method public g(Lj$/time/temporal/k;J)Lj$/time/temporal/k;
     .locals 2
 
-    invoke-virtual {p0}, Lj$/time/temporal/f;->b()Lj$/time/temporal/A;
+    invoke-virtual {p0}, Lj$/time/temporal/f;->d()Lj$/time/temporal/z;
 
     move-result-object v0
 
-    invoke-virtual {v0, p2, p3, p0}, Lj$/time/temporal/A;->b(JLj$/time/temporal/o;)J
+    invoke-virtual {v0, p2, p3, p0}, Lj$/time/temporal/z;->b(JLj$/time/temporal/o;)J
 
-    invoke-virtual {p0, p1}, Lj$/time/temporal/f;->e(Lj$/time/temporal/TemporalAccessor;)J
+    invoke-virtual {p0, p1}, Lj$/time/temporal/f;->c(Lj$/time/temporal/TemporalAccessor;)J
 
     move-result-wide v0
 
-    invoke-static {p2, p3, v0, v1}, Lj$/lang/d;->g(JJ)J
+    invoke-static {p2, p3, v0, v1}, Lj$/time/c;->f(JJ)J
 
     move-result-wide p2
 
     sget-object v0, Lj$/time/temporal/b;->WEEKS:Lj$/time/temporal/b;
 
-    invoke-interface {p1, p2, p3, v0}, Lj$/time/temporal/k;->f(JLj$/time/temporal/y;)Lj$/time/temporal/k;
+    invoke-interface {p1, p2, p3, v0}, Lj$/time/temporal/k;->h(JLj$/time/temporal/x;)Lj$/time/temporal/k;
 
     move-result-object p1
 
     return-object p1
 .end method
 
-.method public h(Lj$/time/temporal/TemporalAccessor;)Lj$/time/temporal/A;
+.method public h(Lj$/time/temporal/TemporalAccessor;)Lj$/time/temporal/z;
     .locals 1
 
     invoke-virtual {p0, p1}, Lj$/time/temporal/f;->f(Lj$/time/temporal/TemporalAccessor;)Z
@@ -358,18 +358,18 @@
 
     move-result-object p1
 
-    invoke-static {p1}, Lj$/time/temporal/h;->k(Lj$/time/LocalDate;)Lj$/time/temporal/A;
+    invoke-static {p1}, Lj$/time/temporal/h;->k(Lj$/time/LocalDate;)Lj$/time/temporal/z;
 
     move-result-object p1
 
     return-object p1
 
     :cond_0
-    new-instance p1, Lj$/time/temporal/z;
+    new-instance p1, Lj$/time/temporal/y;
 
     const-string v0, "Unsupported field: WeekOfWeekBasedYear"
 
-    invoke-direct {p1, v0}, Lj$/time/temporal/z;-><init>(Ljava/lang/String;)V
+    invoke-direct {p1, v0}, Lj$/time/temporal/y;-><init>(Ljava/lang/String;)V
 
     throw p1
 .end method

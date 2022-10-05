@@ -15,8 +15,7 @@
         "Lj$/time/temporal/l;",
         "Ljava/lang/Comparable<",
         "Lj$/time/ZoneOffset;",
-        ">;",
-        "Ljava/io/Serializable;"
+        ">;"
     }
 .end annotation
 
@@ -196,11 +195,11 @@
 
     invoke-static {p0, v0}, Ljava/util/Objects;->requireNonNull(Ljava/lang/Object;Ljava/lang/String;)Ljava/lang/Object;
 
-    sget v0, Lj$/time/temporal/w;->a:I
+    sget v0, Lj$/time/temporal/n;->a:I
 
     sget-object v0, Lj$/time/temporal/s;->a:Lj$/time/temporal/s;
 
-    invoke-interface {p0, v0}, Lj$/time/temporal/TemporalAccessor;->g(Lj$/time/temporal/x;)Ljava/lang/Object;
+    invoke-interface {p0, v0}, Lj$/time/temporal/TemporalAccessor;->i(Lj$/time/temporal/w;)Ljava/lang/Object;
 
     move-result-object v0
 
@@ -826,56 +825,20 @@
 
 
 # virtual methods
-.method public c(Lj$/time/temporal/o;)I
+.method public a(Lj$/time/temporal/k;)Lj$/time/temporal/k;
     .locals 3
 
     sget-object v0, Lj$/time/temporal/a;->OFFSET_SECONDS:Lj$/time/temporal/a;
 
-    if-ne p1, v0, :cond_0
+    iget v1, p0, Lj$/time/ZoneOffset;->a:I
 
-    iget p1, p0, Lj$/time/ZoneOffset;->a:I
+    int-to-long v1, v1
 
-    return p1
-
-    :cond_0
-    instance-of v0, p1, Lj$/time/temporal/a;
-
-    if-nez v0, :cond_1
-
-    invoke-static {p0, p1}, Lj$/time/temporal/n;->c(Lj$/time/temporal/TemporalAccessor;Lj$/time/temporal/o;)Lj$/time/temporal/A;
-
-    move-result-object v0
-
-    invoke-virtual {p0, p1}, Lj$/time/ZoneOffset;->e(Lj$/time/temporal/o;)J
-
-    move-result-wide v1
-
-    invoke-virtual {v0, v1, v2, p1}, Lj$/time/temporal/A;->a(JLj$/time/temporal/o;)I
-
-    move-result p1
-
-    return p1
-
-    :cond_1
-    new-instance v0, Lj$/time/temporal/z;
-
-    new-instance v1, Ljava/lang/StringBuilder;
-
-    invoke-direct {v1}, Ljava/lang/StringBuilder;-><init>()V
-
-    const-string v2, "Unsupported field: "
-
-    invoke-virtual {v1, v2}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
-
-    invoke-virtual {v1, p1}, Ljava/lang/StringBuilder;->append(Ljava/lang/Object;)Ljava/lang/StringBuilder;
-
-    invoke-virtual {v1}, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
+    invoke-interface {p1, v0, v1, v2}, Lj$/time/temporal/k;->c(Lj$/time/temporal/o;J)Lj$/time/temporal/k;
 
     move-result-object p1
 
-    invoke-direct {v0, p1}, Lj$/time/temporal/z;-><init>(Ljava/lang/String;)V
-
-    throw v0
+    return-object p1
 .end method
 
 .method public compareTo(Ljava/lang/Object;)I
@@ -892,17 +855,7 @@
     return p1
 .end method
 
-.method public d(Lj$/time/temporal/o;)Lj$/time/temporal/A;
-    .locals 0
-
-    invoke-static {p0, p1}, Lj$/time/temporal/n;->c(Lj$/time/temporal/TemporalAccessor;Lj$/time/temporal/o;)Lj$/time/temporal/A;
-
-    move-result-object p1
-
-    return-object p1
-.end method
-
-.method public e(Lj$/time/temporal/o;)J
+.method public d(Lj$/time/temporal/o;)I
     .locals 3
 
     sget-object v0, Lj$/time/temporal/a;->OFFSET_SECONDS:Lj$/time/temporal/a;
@@ -911,23 +864,29 @@
 
     iget p1, p0, Lj$/time/ZoneOffset;->a:I
 
-    int-to-long v0, p1
-
-    return-wide v0
+    return p1
 
     :cond_0
     instance-of v0, p1, Lj$/time/temporal/a;
 
     if-nez v0, :cond_1
 
-    invoke-interface {p1, p0}, Lj$/time/temporal/o;->e(Lj$/time/temporal/TemporalAccessor;)J
+    invoke-static {p0, p1}, Lj$/time/temporal/n;->d(Lj$/time/temporal/TemporalAccessor;Lj$/time/temporal/o;)Lj$/time/temporal/z;
 
-    move-result-wide v0
+    move-result-object v0
 
-    return-wide v0
+    invoke-virtual {p0, p1}, Lj$/time/ZoneOffset;->g(Lj$/time/temporal/o;)J
+
+    move-result-wide v1
+
+    invoke-virtual {v0, v1, v2, p1}, Lj$/time/temporal/z;->a(JLj$/time/temporal/o;)I
+
+    move-result p1
+
+    return p1
 
     :cond_1
-    new-instance v0, Lj$/time/temporal/z;
+    new-instance v0, Lj$/time/temporal/y;
 
     new-instance v1, Ljava/lang/StringBuilder;
 
@@ -943,99 +902,12 @@
 
     move-result-object p1
 
-    invoke-direct {v0, p1}, Lj$/time/temporal/z;-><init>(Ljava/lang/String;)V
+    invoke-direct {v0, p1}, Lj$/time/temporal/y;-><init>(Ljava/lang/String;)V
 
     throw v0
 .end method
 
-.method public equals(Ljava/lang/Object;)Z
-    .locals 3
-
-    const/4 v0, 0x1
-
-    if-ne p0, p1, :cond_0
-
-    return v0
-
-    :cond_0
-    instance-of v1, p1, Lj$/time/ZoneOffset;
-
-    const/4 v2, 0x0
-
-    if-eqz v1, :cond_2
-
-    iget v1, p0, Lj$/time/ZoneOffset;->a:I
-
-    check-cast p1, Lj$/time/ZoneOffset;
-
-    iget p1, p1, Lj$/time/ZoneOffset;->a:I
-
-    if-ne v1, p1, :cond_1
-
-    goto :goto_0
-
-    :cond_1
-    move v0, v2
-
-    :goto_0
-    return v0
-
-    :cond_2
-    return v2
-.end method
-
-.method public g(Lj$/time/temporal/x;)Ljava/lang/Object;
-    .locals 1
-
-    sget v0, Lj$/time/temporal/w;->a:I
-
-    sget-object v0, Lj$/time/temporal/s;->a:Lj$/time/temporal/s;
-
-    if-eq p1, v0, :cond_1
-
-    sget-object v0, Lj$/time/temporal/t;->a:Lj$/time/temporal/t;
-
-    if-ne p1, v0, :cond_0
-
-    goto :goto_0
-
-    :cond_0
-    invoke-static {p0, p1}, Lj$/time/temporal/n;->b(Lj$/time/temporal/TemporalAccessor;Lj$/time/temporal/x;)Ljava/lang/Object;
-
-    move-result-object p1
-
-    return-object p1
-
-    :cond_1
-    :goto_0
-    return-object p0
-.end method
-
-.method public h(Lj$/time/temporal/k;)Lj$/time/temporal/k;
-    .locals 3
-
-    sget-object v0, Lj$/time/temporal/a;->OFFSET_SECONDS:Lj$/time/temporal/a;
-
-    iget v1, p0, Lj$/time/ZoneOffset;->a:I
-
-    int-to-long v1, v1
-
-    invoke-interface {p1, v0, v1, v2}, Lj$/time/temporal/k;->b(Lj$/time/temporal/o;J)Lj$/time/temporal/k;
-
-    move-result-object p1
-
-    return-object p1
-.end method
-
-.method public hashCode()I
-    .locals 1
-
-    iget v0, p0, Lj$/time/ZoneOffset;->a:I
-
-    return v0
-.end method
-
-.method public i(Lj$/time/temporal/o;)Z
+.method public e(Lj$/time/temporal/o;)Z
     .locals 3
 
     instance-of v0, p1, Lj$/time/temporal/a;
@@ -1074,6 +946,133 @@
 
     :goto_1
     return v1
+.end method
+
+.method public equals(Ljava/lang/Object;)Z
+    .locals 3
+
+    const/4 v0, 0x1
+
+    if-ne p0, p1, :cond_0
+
+    return v0
+
+    :cond_0
+    instance-of v1, p1, Lj$/time/ZoneOffset;
+
+    const/4 v2, 0x0
+
+    if-eqz v1, :cond_2
+
+    iget v1, p0, Lj$/time/ZoneOffset;->a:I
+
+    check-cast p1, Lj$/time/ZoneOffset;
+
+    iget p1, p1, Lj$/time/ZoneOffset;->a:I
+
+    if-ne v1, p1, :cond_1
+
+    goto :goto_0
+
+    :cond_1
+    move v0, v2
+
+    :goto_0
+    return v0
+
+    :cond_2
+    return v2
+.end method
+
+.method public f(Lj$/time/temporal/o;)Lj$/time/temporal/z;
+    .locals 0
+
+    invoke-static {p0, p1}, Lj$/time/temporal/n;->d(Lj$/time/temporal/TemporalAccessor;Lj$/time/temporal/o;)Lj$/time/temporal/z;
+
+    move-result-object p1
+
+    return-object p1
+.end method
+
+.method public g(Lj$/time/temporal/o;)J
+    .locals 3
+
+    sget-object v0, Lj$/time/temporal/a;->OFFSET_SECONDS:Lj$/time/temporal/a;
+
+    if-ne p1, v0, :cond_0
+
+    iget p1, p0, Lj$/time/ZoneOffset;->a:I
+
+    int-to-long v0, p1
+
+    return-wide v0
+
+    :cond_0
+    instance-of v0, p1, Lj$/time/temporal/a;
+
+    if-nez v0, :cond_1
+
+    invoke-interface {p1, p0}, Lj$/time/temporal/o;->c(Lj$/time/temporal/TemporalAccessor;)J
+
+    move-result-wide v0
+
+    return-wide v0
+
+    :cond_1
+    new-instance v0, Lj$/time/temporal/y;
+
+    new-instance v1, Ljava/lang/StringBuilder;
+
+    invoke-direct {v1}, Ljava/lang/StringBuilder;-><init>()V
+
+    const-string v2, "Unsupported field: "
+
+    invoke-virtual {v1, v2}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+
+    invoke-virtual {v1, p1}, Ljava/lang/StringBuilder;->append(Ljava/lang/Object;)Ljava/lang/StringBuilder;
+
+    invoke-virtual {v1}, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
+
+    move-result-object p1
+
+    invoke-direct {v0, p1}, Lj$/time/temporal/y;-><init>(Ljava/lang/String;)V
+
+    throw v0
+.end method
+
+.method public hashCode()I
+    .locals 1
+
+    iget v0, p0, Lj$/time/ZoneOffset;->a:I
+
+    return v0
+.end method
+
+.method public i(Lj$/time/temporal/w;)Ljava/lang/Object;
+    .locals 1
+
+    sget v0, Lj$/time/temporal/n;->a:I
+
+    sget-object v0, Lj$/time/temporal/s;->a:Lj$/time/temporal/s;
+
+    if-eq p1, v0, :cond_1
+
+    sget-object v0, Lj$/time/temporal/t;->a:Lj$/time/temporal/t;
+
+    if-ne p1, v0, :cond_0
+
+    goto :goto_0
+
+    :cond_0
+    invoke-static {p0, p1}, Lj$/time/temporal/n;->c(Lj$/time/temporal/TemporalAccessor;Lj$/time/temporal/w;)Ljava/lang/Object;
+
+    move-result-object p1
+
+    return-object p1
+
+    :cond_1
+    :goto_0
+    return-object p0
 .end method
 
 .method public k()Ljava/lang/String;

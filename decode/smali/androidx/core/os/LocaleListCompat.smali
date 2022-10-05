@@ -125,6 +125,26 @@
     return p1
 .end method
 
+.method public get(I)Ljava/util/Locale;
+    .locals 1
+    .annotation system Ldalvik/annotation/MethodParameters;
+        accessFlags = {
+            0x0
+        }
+        names = {
+            "index"
+        }
+    .end annotation
+
+    iget-object v0, p0, Landroidx/core/os/LocaleListCompat;->mImpl:Landroidx/core/os/LocaleListInterface;
+
+    invoke-interface {v0, p1}, Landroidx/core/os/LocaleListInterface;->get(I)Ljava/util/Locale;
+
+    move-result-object p1
+
+    return-object p1
+.end method
+
 .method public hashCode()I
     .locals 1
 

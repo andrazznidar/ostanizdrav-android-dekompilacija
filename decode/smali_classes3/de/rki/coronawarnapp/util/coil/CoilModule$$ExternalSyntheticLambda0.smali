@@ -1,5 +1,6 @@
 .class public final synthetic Lde/rki/coronawarnapp/util/coil/CoilModule$$ExternalSyntheticLambda0;
 .super Ljava/lang/Object;
+.source "R8$$SyntheticClass"
 
 # interfaces
 .implements Lcoil/ImageLoaderFactory;

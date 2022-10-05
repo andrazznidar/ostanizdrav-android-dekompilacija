@@ -9,7 +9,7 @@
 
 .field public static final c:Lj$/time/temporal/o;
 
-.field public static final d:Lj$/time/temporal/y;
+.field public static final d:Lj$/time/temporal/x;
 
 
 # direct methods
@@ -32,7 +32,7 @@
 
     sget-object v0, Lj$/time/temporal/i;->WEEK_BASED_YEARS:Lj$/time/temporal/i;
 
-    sput-object v0, Lj$/time/temporal/j;->d:Lj$/time/temporal/y;
+    sput-object v0, Lj$/time/temporal/j;->d:Lj$/time/temporal/x;
 
     sget-object v0, Lj$/time/temporal/i;->QUARTER_YEARS:Lj$/time/temporal/i;
 

@@ -2,6 +2,9 @@
 .super Ljava/lang/Object;
 .source "DccV1.kt"
 
+# interfaces
+.implements Lde/rki/coronawarnapp/covidcertificate/common/certificate/DccV1$Payload;
+
 
 # annotations
 .annotation system Ldalvik/annotation/EnclosingClass;
@@ -198,24 +201,12 @@
     return-object v0
 .end method
 
-.method public final getTestedPositiveOn()Lorg/joda/time/LocalDate;
-    .locals 1
-
-    iget-object v0, p0, Lde/rki/coronawarnapp/covidcertificate/common/certificate/DccV1$RecoveryCertificateData;->fr:Ljava/lang/String;
-
-    invoke-static {v0}, Lkotlin/reflect/jvm/internal/impl/descriptors/PackageFragmentProviderKt;->parseLocalDate(Ljava/lang/String;)Lorg/joda/time/LocalDate;
-
-    move-result-object v0
-
-    return-object v0
-.end method
-
 .method public final getTestedPositiveOnFormatted()Ljava/lang/String;
     .locals 1
 
     iget-object v0, p0, Lde/rki/coronawarnapp/covidcertificate/common/certificate/DccV1$RecoveryCertificateData;->fr:Ljava/lang/String;
 
-    invoke-static {v0}, Lkotlin/reflect/jvm/internal/impl/descriptors/PackageFragmentProviderKt;->formatDate(Ljava/lang/String;)Ljava/lang/String;
+    invoke-static {v0}, Lcom/google/android/gms/internal/nearby/zzew;->formatDate(Ljava/lang/String;)Ljava/lang/String;
 
     move-result-object v0
 
@@ -230,26 +221,12 @@
     return-object v0
 .end method
 
-.method public final getValidFrom()Lorg/joda/time/LocalDate;
-    .locals 1
-
-    invoke-virtual {p0}, Lde/rki/coronawarnapp/covidcertificate/common/certificate/DccV1$RecoveryCertificateData;->getValidFromFormatted()Ljava/lang/String;
-
-    move-result-object v0
-
-    invoke-static {v0}, Lkotlin/reflect/jvm/internal/impl/descriptors/PackageFragmentProviderKt;->parseLocalDate(Ljava/lang/String;)Lorg/joda/time/LocalDate;
-
-    move-result-object v0
-
-    return-object v0
-.end method
-
 .method public final getValidFromFormatted()Ljava/lang/String;
     .locals 1
 
     iget-object v0, p0, Lde/rki/coronawarnapp/covidcertificate/common/certificate/DccV1$RecoveryCertificateData;->df:Ljava/lang/String;
 
-    invoke-static {v0}, Lkotlin/reflect/jvm/internal/impl/descriptors/PackageFragmentProviderKt;->formatDate(Ljava/lang/String;)Ljava/lang/String;
+    invoke-static {v0}, Lcom/google/android/gms/internal/nearby/zzew;->formatDate(Ljava/lang/String;)Ljava/lang/String;
 
     move-result-object v0
 
@@ -261,7 +238,7 @@
 
     iget-object v0, p0, Lde/rki/coronawarnapp/covidcertificate/common/certificate/DccV1$RecoveryCertificateData;->du:Ljava/lang/String;
 
-    invoke-static {v0}, Lkotlin/reflect/jvm/internal/impl/descriptors/PackageFragmentProviderKt;->formatDate(Ljava/lang/String;)Ljava/lang/String;
+    invoke-static {v0}, Lcom/google/android/gms/internal/nearby/zzew;->formatDate(Ljava/lang/String;)Ljava/lang/String;
 
     move-result-object v0
 
@@ -363,7 +340,7 @@
 
     const-string v1, ")"
 
-    invoke-static {v0, v6, v1}, Landroidx/constraintlayout/core/widgets/Barrier$$ExternalSyntheticOutline0;->m(Ljava/lang/StringBuilder;Ljava/lang/String;Ljava/lang/String;)Ljava/lang/String;
+    invoke-static {v0, v6, v1}, Landroidx/activity/ComponentActivity$2$$ExternalSyntheticOutline0;->m(Ljava/lang/StringBuilder;Ljava/lang/String;Ljava/lang/String;)Ljava/lang/String;
 
     move-result-object v0
 

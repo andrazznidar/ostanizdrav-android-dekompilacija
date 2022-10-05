@@ -5,7 +5,7 @@
 
 # annotations
 .annotation system Ldalvik/annotation/SourceDebugExtension;
-    value = "SMAP\noverridingUtils.kt\nKotlin\n*S Kotlin\n*F\n+ 1 overridingUtils.kt\norg/jetbrains/kotlin/resolve/OverridingUtilsKt\n+ 2 _Collections.kt\nkotlin/collections/CollectionsKt___CollectionsKt\n*L\n1#1,84:1\n1588#2,3:85\n815#2,2:88\n*E\n*S KotlinDebug\n*F\n+ 1 overridingUtils.kt\norg/jetbrains/kotlin/resolve/OverridingUtilsKt\n*L\n40#1,3:85\n72#1,2:88\n*E\n"
+    value = "SMAP\noverridingUtils.kt\nKotlin\n*S Kotlin\n*F\n+ 1 overridingUtils.kt\norg/jetbrains/kotlin/resolve/OverridingUtilsKt\n+ 2 _Collections.kt\nkotlin/collections/CollectionsKt___CollectionsKt\n*L\n1#1,84:1\n1618#2,3:85\n845#2,2:88\n*S KotlinDebug\n*F\n+ 1 overridingUtils.kt\norg/jetbrains/kotlin/resolve/OverridingUtilsKt\n*L\n40#1:85,3\n72#1:88,2\n*E\n"
 .end annotation
 
 
@@ -51,7 +51,9 @@
 
     invoke-direct {v0, p0}, Ljava/util/LinkedList;-><init>(Ljava/util/Collection;)V
 
-    invoke-static {}, Lkotlin/reflect/jvm/internal/impl/utils/SmartSet$Companion;->create()Lkotlin/reflect/jvm/internal/impl/utils/SmartSet;
+    sget-object p0, Lkotlin/reflect/jvm/internal/impl/utils/SmartSet;->Companion:Lkotlin/reflect/jvm/internal/impl/utils/SmartSet$Companion;
+
+    invoke-virtual {p0}, Lkotlin/reflect/jvm/internal/impl/utils/SmartSet$Companion;->create()Lkotlin/reflect/jvm/internal/impl/utils/SmartSet;
 
     move-result-object p0
 
@@ -68,7 +70,9 @@
 
     move-result-object v2
 
-    invoke-static {}, Lkotlin/reflect/jvm/internal/impl/utils/SmartSet$Companion;->create()Lkotlin/reflect/jvm/internal/impl/utils/SmartSet;
+    sget-object v3, Lkotlin/reflect/jvm/internal/impl/utils/SmartSet;->Companion:Lkotlin/reflect/jvm/internal/impl/utils/SmartSet$Companion;
+
+    invoke-virtual {v3}, Lkotlin/reflect/jvm/internal/impl/utils/SmartSet$Companion;->create()Lkotlin/reflect/jvm/internal/impl/utils/SmartSet;
 
     move-result-object v3
 
@@ -80,21 +84,21 @@
 
     move-result-object v2
 
-    move-object v4, v2
+    const-string v4, "val conflictedHandles = \u2026nflictedHandles.add(it) }"
 
-    check-cast v4, Ljava/util/ArrayList;
+    invoke-static {v2, v4}, Lkotlin/jvm/internal/Intrinsics;->checkNotNullExpressionValue(Ljava/lang/Object;Ljava/lang/String;)V
 
-    invoke-virtual {v4}, Ljava/util/ArrayList;->size()I
+    invoke-interface {v2}, Ljava/util/Collection;->size()I
 
-    move-result v5
+    move-result v4
 
-    if-ne v5, v1, :cond_1
+    if-ne v4, v1, :cond_1
 
     invoke-virtual {v3}, Ljava/util/AbstractSet;->isEmpty()Z
 
-    move-result v5
+    move-result v4
 
-    if-eqz v5, :cond_1
+    if-eqz v4, :cond_1
 
     invoke-static {v2}, Lkotlin/collections/CollectionsKt___CollectionsKt;->single(Ljava/lang/Iterable;)Ljava/lang/Object;
 
@@ -111,31 +115,31 @@
     :cond_1
     invoke-static {v2, p1}, Lkotlin/reflect/jvm/internal/impl/resolve/OverridingUtil;->selectMostSpecificMember(Ljava/util/Collection;Lkotlin/jvm/functions/Function1;)Ljava/lang/Object;
 
-    move-result-object v2
+    move-result-object v4
 
-    const-string v5, "selectMostSpecificMember(overridableGroup, descriptorByHandle)"
+    const-string v5, "selectMostSpecificMember\u2026roup, descriptorByHandle)"
 
-    invoke-static {v2, v5}, Lkotlin/jvm/internal/Intrinsics;->checkNotNullExpressionValue(Ljava/lang/Object;Ljava/lang/String;)V
+    invoke-static {v4, v5}, Lkotlin/jvm/internal/Intrinsics;->checkNotNullExpressionValue(Ljava/lang/Object;Ljava/lang/String;)V
 
-    invoke-interface {p1, v2}, Lkotlin/jvm/functions/Function1;->invoke(Ljava/lang/Object;)Ljava/lang/Object;
+    invoke-interface {p1, v4}, Lkotlin/jvm/functions/Function1;->invoke(Ljava/lang/Object;)Ljava/lang/Object;
 
     move-result-object v5
 
     check-cast v5, Lkotlin/reflect/jvm/internal/impl/descriptors/CallableDescriptor;
 
-    invoke-virtual {v4}, Ljava/util/ArrayList;->iterator()Ljava/util/Iterator;
+    invoke-interface {v2}, Ljava/lang/Iterable;->iterator()Ljava/util/Iterator;
 
-    move-result-object v4
+    move-result-object v2
 
     :cond_2
     :goto_1
-    invoke-interface {v4}, Ljava/util/Iterator;->hasNext()Z
+    invoke-interface {v2}, Ljava/util/Iterator;->hasNext()Z
 
     move-result v6
 
     if-eqz v6, :cond_3
 
-    invoke-interface {v4}, Ljava/util/Iterator;->next()Ljava/lang/Object;
+    invoke-interface {v2}, Ljava/util/Iterator;->next()Ljava/lang/Object;
 
     move-result-object v6
 
@@ -155,23 +159,23 @@
 
     if-nez v7, :cond_2
 
-    invoke-virtual {v3, v6}, Lkotlin/reflect/jvm/internal/impl/utils/SmartSet;->add(Ljava/lang/Object;)Z
+    invoke-interface {v3, v6}, Ljava/util/Collection;->add(Ljava/lang/Object;)Z
 
     goto :goto_1
 
     :cond_3
-    invoke-virtual {v3}, Ljava/util/AbstractCollection;->isEmpty()Z
+    invoke-interface {v3}, Ljava/util/Collection;->isEmpty()Z
 
-    move-result v4
+    move-result v2
 
-    xor-int/2addr v4, v1
+    xor-int/2addr v2, v1
 
-    if-eqz v4, :cond_4
+    if-eqz v2, :cond_4
 
     invoke-virtual {p0, v3}, Ljava/util/AbstractSet;->addAll(Ljava/util/Collection;)Z
 
     :cond_4
-    invoke-virtual {p0, v2}, Lkotlin/reflect/jvm/internal/impl/utils/SmartSet;->add(Ljava/lang/Object;)Z
+    invoke-virtual {p0, v4}, Lkotlin/reflect/jvm/internal/impl/utils/SmartSet;->add(Ljava/lang/Object;)Z
 
     goto :goto_0
 

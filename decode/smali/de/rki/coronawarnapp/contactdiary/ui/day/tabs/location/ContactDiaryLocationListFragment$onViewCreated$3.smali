@@ -112,7 +112,7 @@
 
     move-result-object v8
 
-    const-string v9, "java.lang.String.format(this, *args)"
+    const-string v9, "format(this, *args)"
 
     invoke-static {v8, v9}, Lkotlin/jvm/internal/Intrinsics;->checkNotNullExpressionValue(Ljava/lang/Object;Ljava/lang/String;)V
 
@@ -150,7 +150,7 @@
 
     move-result-object v1
 
-    const-string v2, "null cannot be cast to non-null type kotlin.Array<T>"
+    const-string v2, "null cannot be cast to non-null type kotlin.Array<T of kotlin.collections.ArraysKt__ArraysJVMKt.toTypedArray>"
 
     invoke-static {v1, v2}, Ljava/util/Objects;->requireNonNull(Ljava/lang/Object;Ljava/lang/String;)Ljava/lang/Object;
 
@@ -167,7 +167,7 @@
 
     iget-object p1, p0, Lde/rki/coronawarnapp/contactdiary/ui/day/tabs/location/ContactDiaryLocationListFragment$onViewCreated$3;->this$0:Lde/rki/coronawarnapp/contactdiary/ui/day/tabs/location/ContactDiaryLocationListFragment;
 
-    const v1, 0x7f1301ac
+    const v1, 0x7f1301d9
 
     invoke-virtual {p1, v1}, Landroidx/fragment/app/Fragment;->getString(I)Ljava/lang/String;
 

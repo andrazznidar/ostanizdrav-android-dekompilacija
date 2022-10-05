@@ -46,13 +46,13 @@
 
 # virtual methods
 .method public invoke()Ljava/lang/Object;
-    .locals 15
+    .locals 13
 
     iget-object v0, p0, Lde/rki/coronawarnapp/covidcertificate/validation/ui/validationresult/common/listitem/ValidationPassedHintVH$viewBinding$1;->this$0:Lde/rki/coronawarnapp/covidcertificate/validation/ui/validationresult/common/listitem/ValidationPassedHintVH;
 
     iget-object v0, v0, Landroidx/recyclerview/widget/RecyclerView$ViewHolder;->itemView:Landroid/view/View;
 
-    const v1, 0x7f0a0150
+    const v1, 0x7f0a016b
 
     invoke-static {v0, v1}, Landroidx/viewbinding/ViewBindings;->findChildViewById(Landroid/view/View;I)Landroid/view/View;
 
@@ -64,7 +64,7 @@
 
     move-result-object v5
 
-    const v1, 0x7f0a0151
+    const v1, 0x7f0a016c
 
     invoke-static {v0, v1}, Landroidx/viewbinding/ViewBindings;->findChildViewById(Landroid/view/View;I)Landroid/view/View;
 
@@ -76,7 +76,7 @@
 
     move-result-object v6
 
-    const v1, 0x7f0a0152
+    const v1, 0x7f0a016e
 
     invoke-static {v0, v1}, Landroidx/viewbinding/ViewBindings;->findChildViewById(Landroid/view/View;I)Landroid/view/View;
 
@@ -88,19 +88,19 @@
 
     move-result-object v7
 
-    const v1, 0x7f0a0153
+    const v1, 0x7f0a0342
 
     invoke-static {v0, v1}, Landroidx/viewbinding/ViewBindings;->findChildViewById(Landroid/view/View;I)Landroid/view/View;
 
     move-result-object v2
 
-    if-eqz v2, :cond_0
+    move-object v8, v2
 
-    invoke-static {v2}, Lde/rki/coronawarnapp/databinding/IncludeBulletPointBinding;->bind(Landroid/view/View;)Lde/rki/coronawarnapp/databinding/IncludeBulletPointBinding;
+    check-cast v8, Landroid/widget/TextView;
 
-    move-result-object v8
+    if-eqz v8, :cond_0
 
-    const v1, 0x7f0a0317
+    const v1, 0x7f0a0358
 
     invoke-static {v0, v1}, Landroidx/viewbinding/ViewBindings;->findChildViewById(Landroid/view/View;I)Landroid/view/View;
 
@@ -112,7 +112,7 @@
 
     if-eqz v9, :cond_0
 
-    const v1, 0x7f0a032a
+    const v1, 0x7f0a0668
 
     invoke-static {v0, v1}, Landroidx/viewbinding/ViewBindings;->findChildViewById(Landroid/view/View;I)Landroid/view/View;
 
@@ -124,19 +124,11 @@
 
     if-eqz v10, :cond_0
 
-    const v1, 0x7f0a061a
+    move-object v11, v0
 
-    invoke-static {v0, v1}, Landroidx/viewbinding/ViewBindings;->findChildViewById(Landroid/view/View;I)Landroid/view/View;
+    check-cast v11, Landroidx/constraintlayout/widget/ConstraintLayout;
 
-    move-result-object v2
-
-    move-object v11, v2
-
-    check-cast v11, Landroid/widget/TextView;
-
-    if-eqz v11, :cond_0
-
-    const v1, 0x7f0a07d9
+    const v1, 0x7f0a0895
 
     invoke-static {v0, v1}, Landroidx/viewbinding/ViewBindings;->findChildViewById(Landroid/view/View;I)Landroid/view/View;
 
@@ -148,29 +140,13 @@
 
     if-eqz v12, :cond_0
 
-    move-object v13, v0
-
-    check-cast v13, Landroidx/constraintlayout/widget/ConstraintLayout;
-
-    const v1, 0x7f0a084b
-
-    invoke-static {v0, v1}, Landroidx/viewbinding/ViewBindings;->findChildViewById(Landroid/view/View;I)Landroid/view/View;
-
-    move-result-object v2
-
-    move-object v14, v2
-
-    check-cast v14, Landroid/widget/TextView;
-
-    if-eqz v14, :cond_0
-
     new-instance v0, Lde/rki/coronawarnapp/databinding/CovidCertificateValidationResultPassedHintItemBinding;
 
     move-object v3, v0
 
-    move-object v4, v13
+    move-object v4, v11
 
-    invoke-direct/range {v3 .. v14}, Lde/rki/coronawarnapp/databinding/CovidCertificateValidationResultPassedHintItemBinding;-><init>(Landroidx/constraintlayout/widget/ConstraintLayout;Lde/rki/coronawarnapp/databinding/IncludeBulletPointBinding;Lde/rki/coronawarnapp/databinding/IncludeBulletPointBinding;Lde/rki/coronawarnapp/databinding/IncludeBulletPointBinding;Lde/rki/coronawarnapp/databinding/IncludeBulletPointBinding;Landroid/widget/TextView;Landroid/widget/TextView;Landroid/widget/TextView;Landroid/widget/TextView;Landroidx/constraintlayout/widget/ConstraintLayout;Landroid/widget/TextView;)V
+    invoke-direct/range {v3 .. v12}, Lde/rki/coronawarnapp/databinding/CovidCertificateValidationResultPassedHintItemBinding;-><init>(Landroidx/constraintlayout/widget/ConstraintLayout;Lde/rki/coronawarnapp/databinding/IncludeBulletPointBinding;Lde/rki/coronawarnapp/databinding/IncludeBulletPointBinding;Lde/rki/coronawarnapp/databinding/IncludeBulletPointBinding;Landroid/widget/TextView;Landroid/widget/TextView;Landroid/widget/TextView;Landroidx/constraintlayout/widget/ConstraintLayout;Landroid/widget/TextView;)V
 
     return-object v0
 

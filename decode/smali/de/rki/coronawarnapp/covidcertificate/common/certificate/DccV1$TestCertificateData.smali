@@ -2,6 +2,9 @@
 .super Ljava/lang/Object;
 .source "DccV1.kt"
 
+# interfaces
+.implements Lde/rki/coronawarnapp/covidcertificate/common/certificate/DccV1$Payload;
+
 
 # annotations
 .annotation system Ldalvik/annotation/EnclosingClass;
@@ -275,10 +278,6 @@
     const-string v2, "<this>"
 
     invoke-static {v0, v2}, Lkotlin/jvm/internal/Intrinsics;->checkNotNullParameter(Ljava/lang/Object;Ljava/lang/String;)V
-
-    const-string/jumbo v2, "tz"
-
-    invoke-static {v1, v2}, Lkotlin/jvm/internal/Intrinsics;->checkNotNullParameter(Ljava/lang/Object;Ljava/lang/String;)V
 
     :try_start_0
     const-string/jumbo v2, "yyyy-MM-dd HH:mm \'UTC\' ZZ"

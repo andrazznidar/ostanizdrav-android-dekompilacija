@@ -1,4 +1,4 @@
-.class public final Lkotlin/reflect/jvm/internal/impl/utils/FunctionsKt$IDENTITY$1;
+.class final Lkotlin/reflect/jvm/internal/impl/utils/FunctionsKt$IDENTITY$1;
 .super Lkotlin/jvm/internal/Lambda;
 .source "functions.kt"
 

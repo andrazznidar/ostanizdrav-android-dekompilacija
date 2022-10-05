@@ -17,7 +17,7 @@
     c = "de.rki.coronawarnapp.coronatest.type.rapidantigen.RATestProcessor"
     f = "RATestProcessor.kt"
     l = {
-        0x30
+        0x31
     }
     m = "create"
 .end annotation

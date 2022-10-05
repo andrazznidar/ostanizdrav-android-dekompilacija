@@ -10,7 +10,10 @@
 .annotation system Ldalvik/annotation/MemberClasses;
     value = {
         Lde/rki/coronawarnapp/qrcode/ui/DccResult$Details;,
-        Lde/rki/coronawarnapp/qrcode/ui/DccResult$Onboarding;
+        Lde/rki/coronawarnapp/qrcode/ui/DccResult$Onboarding;,
+        Lde/rki/coronawarnapp/qrcode/ui/DccResult$InRecycleBin;,
+        Lde/rki/coronawarnapp/qrcode/ui/DccResult$MaxPersonsWarning;,
+        Lde/rki/coronawarnapp/qrcode/ui/DccResult$MaxPersonsBlock;
     }
 .end annotation
 

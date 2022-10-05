@@ -12,7 +12,7 @@
 .end annotation
 
 .annotation system Ldalvik/annotation/InnerClass;
-    accessFlags = 0x1019
+    accessFlags = 0x1001
     name = null
 .end annotation
 
@@ -72,7 +72,7 @@
 
     check-cast p1, Lkotlin/sequences/Sequence;
 
-    const-string v0, "p1"
+    const-string v0, "p0"
 
     invoke-static {p1, v0}, Lkotlin/jvm/internal/Intrinsics;->checkNotNullParameter(Ljava/lang/Object;Ljava/lang/String;)V
 

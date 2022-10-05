@@ -1,4 +1,4 @@
-.class public final Lkotlin/reflect/jvm/internal/impl/types/AbstractTypeConstructor$Supertypes;
+.class final Lkotlin/reflect/jvm/internal/impl/types/AbstractTypeConstructor$Supertypes;
 .super Ljava/lang/Object;
 .source "AbstractTypeConstructor.kt"
 
@@ -15,7 +15,7 @@
 
 
 # instance fields
-.field public final allSupertypes:Ljava/util/Collection;
+.field private final allSupertypes:Ljava/util/Collection;
     .annotation system Ldalvik/annotation/Signature;
         value = {
             "Ljava/util/Collection<",
@@ -25,7 +25,7 @@
     .end annotation
 .end field
 
-.field public supertypesWithoutCycles:Ljava/util/List;
+.field private supertypesWithoutCycles:Ljava/util/List;
     .annotation system Ldalvik/annotation/Signature;
         value = {
             "Ljava/util/List<",
@@ -63,6 +63,61 @@
     invoke-static {p1}, Lkotlin/collections/CollectionsKt__CollectionsKt;->listOf(Ljava/lang/Object;)Ljava/util/List;
 
     move-result-object p1
+
+    iput-object p1, p0, Lkotlin/reflect/jvm/internal/impl/types/AbstractTypeConstructor$Supertypes;->supertypesWithoutCycles:Ljava/util/List;
+
+    return-void
+.end method
+
+
+# virtual methods
+.method public final getAllSupertypes()Ljava/util/Collection;
+    .locals 1
+    .annotation system Ldalvik/annotation/Signature;
+        value = {
+            "()",
+            "Ljava/util/Collection<",
+            "Lkotlin/reflect/jvm/internal/impl/types/KotlinType;",
+            ">;"
+        }
+    .end annotation
+
+    iget-object v0, p0, Lkotlin/reflect/jvm/internal/impl/types/AbstractTypeConstructor$Supertypes;->allSupertypes:Ljava/util/Collection;
+
+    return-object v0
+.end method
+
+.method public final getSupertypesWithoutCycles()Ljava/util/List;
+    .locals 1
+    .annotation system Ldalvik/annotation/Signature;
+        value = {
+            "()",
+            "Ljava/util/List<",
+            "Lkotlin/reflect/jvm/internal/impl/types/KotlinType;",
+            ">;"
+        }
+    .end annotation
+
+    iget-object v0, p0, Lkotlin/reflect/jvm/internal/impl/types/AbstractTypeConstructor$Supertypes;->supertypesWithoutCycles:Ljava/util/List;
+
+    return-object v0
+.end method
+
+.method public final setSupertypesWithoutCycles(Ljava/util/List;)V
+    .locals 1
+    .annotation system Ldalvik/annotation/Signature;
+        value = {
+            "(",
+            "Ljava/util/List<",
+            "+",
+            "Lkotlin/reflect/jvm/internal/impl/types/KotlinType;",
+            ">;)V"
+        }
+    .end annotation
+
+    const-string v0, "<set-?>"
+
+    invoke-static {p1, v0}, Lkotlin/jvm/internal/Intrinsics;->checkNotNullParameter(Ljava/lang/Object;Ljava/lang/String;)V
 
     iput-object p1, p0, Lkotlin/reflect/jvm/internal/impl/types/AbstractTypeConstructor$Supertypes;->supertypesWithoutCycles:Ljava/util/List;
 

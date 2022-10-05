@@ -43,7 +43,7 @@
 
     new-array v4, v2, [I
 
-    const v6, 0x7f0d00dd
+    const v6, 0x7f0d00ee
 
     aput v6, v4, v5
 
@@ -63,7 +63,7 @@
 
     new-array v4, v2, [I
 
-    const v6, 0x7f0d00cf
+    const v6, 0x7f0d00df
 
     aput v6, v4, v5
 
@@ -75,37 +75,37 @@
 
     sput-object v0, Lde/rki/coronawarnapp/databinding/FragmentOnboardingDeltaInteroperabilityBindingImpl;->sViewsWithIds:Landroid/util/SparseIntArray;
 
-    const v1, 0x7f0a0340
+    const v1, 0x7f0a036f
 
     const/4 v2, 0x4
 
     invoke-virtual {v0, v1, v2}, Landroid/util/SparseIntArray;->put(II)V
 
-    const v1, 0x7f0a04e7
+    const v1, 0x7f0a052b
 
     const/4 v2, 0x5
 
     invoke-virtual {v0, v1, v2}, Landroid/util/SparseIntArray;->put(II)V
 
-    const v1, 0x7f0a034a
+    const v1, 0x7f0a0379
 
     const/4 v2, 0x6
 
     invoke-virtual {v0, v1, v2}, Landroid/util/SparseIntArray;->put(II)V
 
-    const v1, 0x7f0a0342
+    const v1, 0x7f0a0371
 
     const/4 v2, 0x7
 
     invoke-virtual {v0, v1, v2}, Landroid/util/SparseIntArray;->put(II)V
 
-    const v1, 0x7f0a0348
+    const v1, 0x7f0a0377
 
     const/16 v2, 0x8
 
     invoke-virtual {v0, v1, v2}, Landroid/util/SparseIntArray;->put(II)V
 
-    const v1, 0x7f0a0345
+    const v1, 0x7f0a0374
 
     const/16 v2, 0x9
 
@@ -314,7 +314,7 @@
 
     move-result-object v1
 
-    const v2, 0x7f0800dd
+    const v2, 0x7f0800d3
 
     invoke-static {v1, v2}, Landroidx/appcompat/content/res/AppCompatResources;->getDrawable(Landroid/content/Context;I)Landroid/graphics/drawable/Drawable;
 
@@ -346,7 +346,7 @@
 
     move-result-object v1
 
-    const v2, 0x7f130238
+    const v2, 0x7f130257
 
     invoke-virtual {v1, v2}, Landroid/content/res/Resources;->getString(I)Ljava/lang/String;
 
@@ -362,7 +362,7 @@
 
     move-result-object v1
 
-    const v2, 0x7f130236
+    const v2, 0x7f130255
 
     invoke-virtual {v1, v2}, Landroid/content/res/Resources;->getString(I)Ljava/lang/String;
 
@@ -378,7 +378,7 @@
 
     move-result-object v1
 
-    const v2, 0x7f130240
+    const v2, 0x7f13025f
 
     invoke-virtual {v1, v2}, Landroid/content/res/Resources;->getString(I)Ljava/lang/String;
 
@@ -394,7 +394,7 @@
 
     move-result-object v1
 
-    const v2, 0x7f13023d
+    const v2, 0x7f13025c
 
     invoke-virtual {v1, v2}, Landroid/content/res/Resources;->getString(I)Ljava/lang/String;
 
@@ -426,7 +426,7 @@
 
     move-result-object v1
 
-    const v2, 0x7f130233
+    const v2, 0x7f130254
 
     invoke-virtual {v1, v2}, Landroid/content/res/Resources;->getString(I)Ljava/lang/String;
 
@@ -442,7 +442,7 @@
 
     move-result-object v1
 
-    const v2, 0x7f130232
+    const v2, 0x7f130253
 
     invoke-virtual {v1, v2}, Landroid/content/res/Resources;->getString(I)Ljava/lang/String;
 

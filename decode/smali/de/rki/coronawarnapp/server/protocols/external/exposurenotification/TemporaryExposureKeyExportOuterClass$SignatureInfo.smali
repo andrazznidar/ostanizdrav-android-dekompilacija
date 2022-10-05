@@ -18,7 +18,8 @@
         "Lcom/google/protobuf/GeneratedMessageLite<",
         "Lde/rki/coronawarnapp/server/protocols/external/exposurenotification/TemporaryExposureKeyExportOuterClass$SignatureInfo;",
         "Lde/rki/coronawarnapp/server/protocols/external/exposurenotification/TemporaryExposureKeyExportOuterClass$SignatureInfo$Builder;",
-        ">;"
+        ">;",
+        "Lcom/google/protobuf/MessageLiteOrBuilder;"
     }
 .end annotation
 
@@ -162,7 +163,7 @@
     :pswitch_1
     new-instance p1, Lde/rki/coronawarnapp/server/protocols/external/exposurenotification/TemporaryExposureKeyExportOuterClass$SignatureInfo$Builder;
 
-    invoke-direct {p1, v0}, Lde/rki/coronawarnapp/server/protocols/external/exposurenotification/TemporaryExposureKeyExportOuterClass$SignatureInfo$Builder;-><init>(Lde/rki/coronawarnapp/server/protocols/external/exposurenotification/TemporaryExposureKeyExportOuterClass$SignatureInfo$Builder-IA;)V
+    invoke-direct {p1, v0}, Lde/rki/coronawarnapp/server/protocols/external/exposurenotification/TemporaryExposureKeyExportOuterClass$SignatureInfo$Builder;-><init>(Lorg/conscrypt/OpenSSLProvider$$ExternalSyntheticOutline1;)V
 
     return-object p1
 

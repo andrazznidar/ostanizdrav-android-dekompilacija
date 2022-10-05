@@ -6,7 +6,6 @@
 # annotations
 .annotation system Ldalvik/annotation/MemberClasses;
     value = {
-        Lde/rki/coronawarnapp/risk/EwRiskLevelResult$FailureReason;,
         Lde/rki/coronawarnapp/risk/EwRiskLevelResult$DefaultImpls;
     }
 .end annotation
@@ -30,7 +29,7 @@
     .end annotation
 .end method
 
-.method public abstract getFailureReason()Lde/rki/coronawarnapp/risk/EwRiskLevelResult$FailureReason;
+.method public abstract getFailureReason$enumunboxing$()I
 .end method
 
 .method public abstract getMatchedKeyCount()I

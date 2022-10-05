@@ -480,7 +480,7 @@
 .method public invalidate()V
     .locals 1
 
-    invoke-super {p0}, Landroid/view/View;->invalidate()V
+    invoke-super {p0}, Landroid/widget/ProgressBar;->invalidate()V
 
     invoke-virtual {p0}, Lcom/google/android/material/progressindicator/BaseProgressIndicator;->getCurrentDrawable()Landroid/graphics/drawable/Drawable;
 
@@ -519,11 +519,11 @@
 
     move-result-object v0
 
-    iget-object v0, v0, Lcom/google/android/material/progressindicator/IndeterminateDrawable;->animatorDelegate:Lcom/google/android/material/progressindicator/IndeterminateAnimatorDelegate;
+    iget-object v0, v0, Lcom/google/android/material/progressindicator/IndeterminateDrawable;->animatorDelegate:Landroidx/appcompat/view/menu/BaseMenuWrapper;
 
     iget-object v1, p0, Lcom/google/android/material/progressindicator/BaseProgressIndicator;->switchIndeterminateModeCallback:Landroidx/vectordrawable/graphics/drawable/Animatable2Compat$AnimationCallback;
 
-    invoke-virtual {v0, v1}, Lcom/google/android/material/progressindicator/IndeterminateAnimatorDelegate;->registerAnimatorsCompleteCallback(Landroidx/vectordrawable/graphics/drawable/Animatable2Compat$AnimationCallback;)V
+    invoke-virtual {v0, v1}, Landroidx/appcompat/view/menu/BaseMenuWrapper;->registerAnimatorsCompleteCallback(Landroidx/vectordrawable/graphics/drawable/Animatable2Compat$AnimationCallback;)V
 
     :cond_0
     invoke-virtual {p0}, Lcom/google/android/material/progressindicator/BaseProgressIndicator;->getProgressDrawable()Lcom/google/android/material/progressindicator/DeterminateDrawable;
@@ -618,9 +618,9 @@
 
     move-result-object v0
 
-    iget-object v0, v0, Lcom/google/android/material/progressindicator/IndeterminateDrawable;->animatorDelegate:Lcom/google/android/material/progressindicator/IndeterminateAnimatorDelegate;
+    iget-object v0, v0, Lcom/google/android/material/progressindicator/IndeterminateDrawable;->animatorDelegate:Landroidx/appcompat/view/menu/BaseMenuWrapper;
 
-    invoke-virtual {v0}, Lcom/google/android/material/progressindicator/IndeterminateAnimatorDelegate;->unregisterAnimatorsCompleteCallback()V
+    invoke-virtual {v0}, Landroidx/appcompat/view/menu/BaseMenuWrapper;->unregisterAnimatorsCompleteCallback()V
 
     :cond_0
     invoke-virtual {p0}, Lcom/google/android/material/progressindicator/BaseProgressIndicator;->getProgressDrawable()Lcom/google/android/material/progressindicator/DeterminateDrawable;
@@ -846,7 +846,7 @@
 .method public onVisibilityChanged(Landroid/view/View;I)V
     .locals 0
 
-    invoke-super {p0, p1, p2}, Landroid/view/View;->onVisibilityChanged(Landroid/view/View;I)V
+    invoke-super {p0, p1, p2}, Landroid/widget/ProgressBar;->onVisibilityChanged(Landroid/view/View;I)V
 
     if-nez p2, :cond_0
 
@@ -866,7 +866,7 @@
 .method public onWindowVisibilityChanged(I)V
     .locals 0
 
-    invoke-super {p0, p1}, Landroid/view/View;->onWindowVisibilityChanged(I)V
+    invoke-super {p0, p1}, Landroid/widget/ProgressBar;->onWindowVisibilityChanged(I)V
 
     const/4 p1, 0x0
 
@@ -1065,7 +1065,7 @@
 
     const/4 v3, -0x1
 
-    invoke-static {v1, v2, v3}, Ldagger/android/AndroidInjection;->getColor(Landroid/content/Context;II)I
+    invoke-static {v1, v2, v3}, Lkotlin/math/MathKt__MathJVMKt;->getColor(Landroid/content/Context;II)I
 
     move-result v1
 
@@ -1090,9 +1090,9 @@
 
     move-result-object p1
 
-    iget-object p1, p1, Lcom/google/android/material/progressindicator/IndeterminateDrawable;->animatorDelegate:Lcom/google/android/material/progressindicator/IndeterminateAnimatorDelegate;
+    iget-object p1, p1, Lcom/google/android/material/progressindicator/IndeterminateDrawable;->animatorDelegate:Landroidx/appcompat/view/menu/BaseMenuWrapper;
 
-    invoke-virtual {p1}, Lcom/google/android/material/progressindicator/IndeterminateAnimatorDelegate;->invalidateSpecValues()V
+    invoke-virtual {p1}, Landroidx/appcompat/view/menu/BaseMenuWrapper;->invalidateSpecValues()V
 
     invoke-virtual {p0}, Lcom/google/android/material/progressindicator/BaseProgressIndicator;->invalidate()V
 
@@ -1198,9 +1198,9 @@
 
     move-result-object p1
 
-    iget-object p1, p1, Lcom/google/android/material/progressindicator/IndeterminateDrawable;->animatorDelegate:Lcom/google/android/material/progressindicator/IndeterminateAnimatorDelegate;
+    iget-object p1, p1, Lcom/google/android/material/progressindicator/IndeterminateDrawable;->animatorDelegate:Landroidx/appcompat/view/menu/BaseMenuWrapper;
 
-    invoke-virtual {p1}, Lcom/google/android/material/progressindicator/IndeterminateAnimatorDelegate;->requestCancelAnimatorAfterCurrentCycle()V
+    invoke-virtual {p1}, Landroidx/appcompat/view/menu/BaseMenuWrapper;->requestCancelAnimatorAfterCurrentCycle()V
 
     goto :goto_1
 

@@ -1,4 +1,4 @@
-.class public final synthetic Lkotlin/reflect/jvm/internal/impl/load/java/lazy/descriptors/LazyJavaClassMemberScope$computeNonDeclaredFunctions$4;
+.class final synthetic Lkotlin/reflect/jvm/internal/impl/load/java/lazy/descriptors/LazyJavaClassMemberScope$computeNonDeclaredFunctions$4;
 .super Lkotlin/jvm/internal/FunctionReference;
 .source "LazyJavaClassMemberScope.kt"
 
@@ -30,7 +30,7 @@
 
 
 # direct methods
-.method public constructor <init>(Lkotlin/reflect/jvm/internal/impl/load/java/lazy/descriptors/LazyJavaClassMemberScope;)V
+.method public constructor <init>(Ljava/lang/Object;)V
     .locals 1
 
     const/4 v0, 0x1
@@ -70,10 +70,30 @@
     return-object v0
 .end method
 
-.method public invoke(Ljava/lang/Object;)Ljava/lang/Object;
-    .locals 1
+.method public bridge synthetic invoke(Ljava/lang/Object;)Ljava/lang/Object;
+    .locals 0
 
     check-cast p1, Lkotlin/reflect/jvm/internal/impl/name/Name;
+
+    invoke-virtual {p0, p1}, Lkotlin/reflect/jvm/internal/impl/load/java/lazy/descriptors/LazyJavaClassMemberScope$computeNonDeclaredFunctions$4;->invoke(Lkotlin/reflect/jvm/internal/impl/name/Name;)Ljava/util/Collection;
+
+    move-result-object p1
+
+    return-object p1
+.end method
+
+.method public final invoke(Lkotlin/reflect/jvm/internal/impl/name/Name;)Ljava/util/Collection;
+    .locals 1
+    .annotation system Ldalvik/annotation/Signature;
+        value = {
+            "(",
+            "Lkotlin/reflect/jvm/internal/impl/name/Name;",
+            ")",
+            "Ljava/util/Collection<",
+            "Lkotlin/reflect/jvm/internal/impl/descriptors/SimpleFunctionDescriptor;",
+            ">;"
+        }
+    .end annotation
 
     const-string v0, "p0"
 

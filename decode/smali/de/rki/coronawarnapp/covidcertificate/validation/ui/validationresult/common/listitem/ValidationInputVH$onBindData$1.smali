@@ -32,7 +32,7 @@
 .end annotation
 
 .annotation system Ldalvik/annotation/SourceDebugExtension;
-    value = "SMAP\nValidationInputVH.kt\nKotlin\n*S Kotlin\n*F\n+ 1 ValidationInputVH.kt\nde/rki/coronawarnapp/covidcertificate/validation/ui/validationresult/common/listitem/ValidationInputVH$onBindData$1\n+ 2 _Collections.kt\nkotlin/collections/CollectionsKt___CollectionsKt\n*L\n1#1,36:1\n798#2,11:37\n*S KotlinDebug\n*F\n+ 1 ValidationInputVH.kt\nde/rki/coronawarnapp/covidcertificate/validation/ui/validationresult/common/listitem/ValidationInputVH$onBindData$1\n*L\n24#1:37,11\n*E\n"
+    value = "SMAP\nValidationInputVH.kt\nKotlin\n*S Kotlin\n*F\n+ 1 ValidationInputVH.kt\nde/rki/coronawarnapp/covidcertificate/validation/ui/validationresult/common/listitem/ValidationInputVH$onBindData$1\n+ 2 _Collections.kt\nkotlin/collections/CollectionsKt___CollectionsKt\n*L\n1#1,34:1\n798#2,11:35\n*S KotlinDebug\n*F\n+ 1 ValidationInputVH.kt\nde/rki/coronawarnapp/covidcertificate/validation/ui/validationresult/common/listitem/ValidationInputVH$onBindData$1\n*L\n24#1:35,11\n*E\n"
 .end annotation
 
 
@@ -105,7 +105,7 @@
     goto :goto_0
 
     :cond_1
-    invoke-static {v0}, Lkotlin/collections/CollectionsKt___CollectionsKt;->singleOrNull(Ljava/util/List;)Ljava/lang/Object;
+    invoke-static {v0}, Lkotlin/collections/CollectionsKt___CollectionsKt;->lastOrNull(Ljava/util/List;)Ljava/lang/Object;
 
     move-result-object p3
 

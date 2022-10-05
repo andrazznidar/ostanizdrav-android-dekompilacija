@@ -503,7 +503,7 @@
 .end method
 
 .method public static zai(Landroid/content/Context;Ljava/lang/String;)Ljava/lang/String;
-    .locals 5
+    .locals 4
 
     sget-object v0, Lcom/google/android/gms/common/internal/zac;->zaa:Landroidx/collection/SimpleArrayMap;
 
@@ -518,50 +518,13 @@
 
     move-result-object v1
 
-    sget v2, Landroid/os/Build$VERSION;->SDK_INT:I
-
-    const/16 v3, 0x18
-
-    const/4 v4, 0x0
-
-    if-lt v2, v3, :cond_0
-
-    invoke-virtual {v1}, Landroid/content/res/Configuration;->getLocales()Landroid/os/LocaleList;
+    invoke-static {v1}, Landroidx/core/os/ConfigurationCompat;->getLocales(Landroid/content/res/Configuration;)Landroidx/core/os/LocaleListCompat;
 
     move-result-object v1
 
-    new-instance v2, Landroidx/core/os/LocaleListCompat;
+    const/4 v2, 0x0
 
-    new-instance v3, Landroidx/core/os/LocaleListPlatformWrapper;
-
-    invoke-direct {v3, v1}, Landroidx/core/os/LocaleListPlatformWrapper;-><init>(Landroid/os/LocaleList;)V
-
-    invoke-direct {v2, v3}, Landroidx/core/os/LocaleListCompat;-><init>(Landroidx/core/os/LocaleListInterface;)V
-
-    goto :goto_0
-
-    :catchall_0
-    move-exception p0
-
-    goto/16 :goto_4
-
-    :cond_0
-    const/4 v2, 0x1
-
-    new-array v2, v2, [Ljava/util/Locale;
-
-    iget-object v1, v1, Landroid/content/res/Configuration;->locale:Ljava/util/Locale;
-
-    aput-object v1, v2, v4
-
-    invoke-static {v2}, Landroidx/core/os/LocaleListCompat;->create([Ljava/util/Locale;)Landroidx/core/os/LocaleListCompat;
-
-    move-result-object v2
-
-    :goto_0
-    iget-object v1, v2, Landroidx/core/os/LocaleListCompat;->mImpl:Landroidx/core/os/LocaleListInterface;
-
-    invoke-interface {v1, v4}, Landroidx/core/os/LocaleListInterface;->get(I)Ljava/util/Locale;
+    invoke-virtual {v1, v2}, Landroidx/core/os/LocaleListCompat;->get(I)Ljava/util/Locale;
 
     move-result-object v1
 
@@ -571,13 +534,13 @@
 
     move-result v2
 
-    if-nez v2, :cond_1
+    if-nez v2, :cond_0
 
     invoke-virtual {v0}, Landroidx/collection/SimpleArrayMap;->clear()V
 
     sput-object v1, Lcom/google/android/gms/common/internal/zac;->zab:Ljava/util/Locale;
 
-    :cond_1
+    :cond_0
     const/4 v1, 0x0
 
     invoke-virtual {v0, p1, v1}, Landroidx/collection/SimpleArrayMap;->getOrDefault(Ljava/lang/Object;Ljava/lang/Object;)Ljava/lang/Object;
@@ -586,13 +549,13 @@
 
     check-cast v2, Ljava/lang/String;
 
-    if-eqz v2, :cond_2
+    if-eqz v2, :cond_1
 
     monitor-exit v0
 
     return-object v2
 
-    :cond_2
+    :cond_1
     sget v2, Lcom/google/android/gms/common/GooglePlayServicesUtil;->$r8$clinit:I
     :try_end_0
     .catchall {:try_start_0 .. :try_end_0} :catchall_0
@@ -611,20 +574,25 @@
     .catch Landroid/content/pm/PackageManager$NameNotFoundException; {:try_start_1 .. :try_end_1} :catch_0
     .catchall {:try_start_1 .. :try_end_1} :catchall_0
 
-    goto :goto_1
+    goto :goto_0
+
+    :catchall_0
+    move-exception p0
+
+    goto :goto_3
 
     :catch_0
     move-object p0, v1
 
-    :goto_1
-    if-nez p0, :cond_3
+    :goto_0
+    if-nez p0, :cond_2
 
     :try_start_2
     monitor-exit v0
 
     return-object v1
 
-    :cond_3
+    :cond_2
     const-string/jumbo v2, "string"
 
     const-string v3, "com.google.android.gms"
@@ -633,7 +601,7 @@
 
     move-result v2
 
-    if-nez v2, :cond_5
+    if-nez v2, :cond_4
 
     const-string p0, "GoogleApiAvailability"
 
@@ -643,7 +611,46 @@
 
     move-result v3
 
-    if-eqz v3, :cond_4
+    if-eqz v3, :cond_3
+
+    invoke-virtual {v2, p1}, Ljava/lang/String;->concat(Ljava/lang/String;)Ljava/lang/String;
+
+    move-result-object p1
+
+    goto :goto_1
+
+    :cond_3
+    new-instance p1, Ljava/lang/String;
+
+    invoke-direct {p1, v2}, Ljava/lang/String;-><init>(Ljava/lang/String;)V
+
+    :goto_1
+    invoke-static {p0, p1}, Landroid/util/Log;->w(Ljava/lang/String;Ljava/lang/String;)I
+
+    monitor-exit v0
+
+    return-object v1
+
+    :cond_4
+    invoke-virtual {p0, v2}, Landroid/content/res/Resources;->getString(I)Ljava/lang/String;
+
+    move-result-object p0
+
+    invoke-static {p0}, Landroid/text/TextUtils;->isEmpty(Ljava/lang/CharSequence;)Z
+
+    move-result v2
+
+    if-eqz v2, :cond_6
+
+    const-string p0, "GoogleApiAvailability"
+
+    const-string v2, "Got empty resource: "
+
+    invoke-virtual {p1}, Ljava/lang/String;->length()I
+
+    move-result v3
+
+    if-eqz v3, :cond_5
 
     invoke-virtual {v2, p1}, Ljava/lang/String;->concat(Ljava/lang/String;)Ljava/lang/String;
 
@@ -651,7 +658,7 @@
 
     goto :goto_2
 
-    :cond_4
+    :cond_5
     new-instance p1, Ljava/lang/String;
 
     invoke-direct {p1, v2}, Ljava/lang/String;-><init>(Ljava/lang/String;)V
@@ -663,46 +670,7 @@
 
     return-object v1
 
-    :cond_5
-    invoke-virtual {p0, v2}, Landroid/content/res/Resources;->getString(I)Ljava/lang/String;
-
-    move-result-object p0
-
-    invoke-static {p0}, Landroid/text/TextUtils;->isEmpty(Ljava/lang/CharSequence;)Z
-
-    move-result v2
-
-    if-eqz v2, :cond_7
-
-    const-string p0, "GoogleApiAvailability"
-
-    const-string v2, "Got empty resource: "
-
-    invoke-virtual {p1}, Ljava/lang/String;->length()I
-
-    move-result v3
-
-    if-eqz v3, :cond_6
-
-    invoke-virtual {v2, p1}, Ljava/lang/String;->concat(Ljava/lang/String;)Ljava/lang/String;
-
-    move-result-object p1
-
-    goto :goto_3
-
     :cond_6
-    new-instance p1, Ljava/lang/String;
-
-    invoke-direct {p1, v2}, Ljava/lang/String;-><init>(Ljava/lang/String;)V
-
-    :goto_3
-    invoke-static {p0, p1}, Landroid/util/Log;->w(Ljava/lang/String;Ljava/lang/String;)I
-
-    monitor-exit v0
-
-    return-object v1
-
-    :cond_7
     sget-object v1, Lcom/google/android/gms/common/internal/zac;->zaa:Landroidx/collection/SimpleArrayMap;
 
     invoke-virtual {v1, p1, p0}, Landroidx/collection/SimpleArrayMap;->put(Ljava/lang/Object;Ljava/lang/Object;)Ljava/lang/Object;
@@ -711,7 +679,7 @@
 
     return-object p0
 
-    :goto_4
+    :goto_3
     monitor-exit v0
     :try_end_2
     .catchall {:try_start_2 .. :try_end_2} :catchall_0

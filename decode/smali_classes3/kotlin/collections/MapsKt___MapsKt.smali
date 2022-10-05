@@ -12,23 +12,8 @@
 # direct methods
 .method public static final getValue(Ljava/util/Map;Ljava/lang/Object;)Ljava/lang/Object;
     .locals 2
-    .annotation system Ldalvik/annotation/Signature;
-        value = {
-            "<K:",
-            "Ljava/lang/Object;",
-            "V:",
-            "Ljava/lang/Object;",
-            ">(",
-            "Ljava/util/Map<",
-            "TK;+TV;>;TK;)TV;"
-        }
-    .end annotation
 
-    const-string v0, "$this$getValue"
-
-    invoke-static {p0, v0}, Lkotlin/jvm/internal/Intrinsics;->checkNotNullParameter(Ljava/lang/Object;Ljava/lang/String;)V
-
-    const-string v0, "$this$getOrImplicitDefault"
+    const-string v0, "<this>"
 
     invoke-static {p0, v0}, Lkotlin/jvm/internal/Intrinsics;->checkNotNullParameter(Ljava/lang/Object;Ljava/lang/String;)V
 
@@ -94,19 +79,6 @@
 
 .method public static final varargs mapOf([Lkotlin/Pair;)Ljava/util/Map;
     .locals 2
-    .annotation system Ldalvik/annotation/Signature;
-        value = {
-            "<K:",
-            "Ljava/lang/Object;",
-            "V:",
-            "Ljava/lang/Object;",
-            ">([",
-            "Lkotlin/Pair<",
-            "+TK;+TV;>;)",
-            "Ljava/util/Map<",
-            "TK;TV;>;"
-        }
-    .end annotation
 
     array-length v0, p0
 
@@ -135,19 +107,6 @@
 
 .method public static final putAll(Ljava/util/Map;[Lkotlin/Pair;)V
     .locals 4
-    .annotation system Ldalvik/annotation/Signature;
-        value = {
-            "<K:",
-            "Ljava/lang/Object;",
-            "V:",
-            "Ljava/lang/Object;",
-            ">(",
-            "Ljava/util/Map<",
-            "-TK;-TV;>;[",
-            "Lkotlin/Pair<",
-            "+TK;+TV;>;)V"
-        }
-    .end annotation
 
     array-length v0, p1
 
@@ -158,13 +117,13 @@
 
     aget-object v2, p1, v1
 
+    add-int/lit8 v1, v1, 0x1
+
     iget-object v3, v2, Lkotlin/Pair;->first:Ljava/lang/Object;
 
     iget-object v2, v2, Lkotlin/Pair;->second:Ljava/lang/Object;
 
     invoke-interface {p0, v3, v2}, Ljava/util/Map;->put(Ljava/lang/Object;Ljava/lang/Object;)Ljava/lang/Object;
-
-    add-int/lit8 v1, v1, 0x1
 
     goto :goto_0
 
@@ -174,49 +133,34 @@
 
 .method public static final toMap(Ljava/lang/Iterable;)Ljava/util/Map;
     .locals 3
-    .annotation system Ldalvik/annotation/Signature;
-        value = {
-            "<K:",
-            "Ljava/lang/Object;",
-            "V:",
-            "Ljava/lang/Object;",
-            ">(",
-            "Ljava/lang/Iterable<",
-            "+",
-            "Lkotlin/Pair<",
-            "+TK;+TV;>;>;)",
-            "Ljava/util/Map<",
-            "TK;TV;>;"
-        }
-    .end annotation
 
-    const/4 v0, 0x1
+    move-object v0, p0
 
-    move-object v1, p0
+    check-cast v0, Ljava/util/Collection;
 
-    check-cast v1, Ljava/util/Collection;
-
-    invoke-interface {v1}, Ljava/util/Collection;->size()I
-
-    move-result v2
-
-    if-eqz v2, :cond_1
-
-    if-eq v2, v0, :cond_0
-
-    new-instance v0, Ljava/util/LinkedHashMap;
-
-    invoke-interface {v1}, Ljava/util/Collection;->size()I
+    invoke-interface {v0}, Ljava/util/Collection;->size()I
 
     move-result v1
 
-    invoke-static {v1}, Lkotlin/collections/MapsKt__MapsJVMKt;->mapCapacity(I)I
+    if-eqz v1, :cond_1
 
-    move-result v1
+    const/4 v2, 0x1
 
-    invoke-direct {v0, v1}, Ljava/util/LinkedHashMap;-><init>(I)V
+    if-eq v1, v2, :cond_0
 
-    invoke-static {p0, v0}, Lkotlin/collections/MapsKt___MapsKt;->toMap(Ljava/lang/Iterable;Ljava/util/Map;)Ljava/util/Map;
+    new-instance v1, Ljava/util/LinkedHashMap;
+
+    invoke-interface {v0}, Ljava/util/Collection;->size()I
+
+    move-result v0
+
+    invoke-static {v0}, Lkotlin/collections/MapsKt__MapsJVMKt;->mapCapacity(I)I
+
+    move-result v0
+
+    invoke-direct {v1, v0}, Ljava/util/LinkedHashMap;-><init>(I)V
+
+    invoke-static {p0, v1}, Lkotlin/collections/MapsKt___MapsKt;->toMap(Ljava/lang/Iterable;Ljava/util/Map;)Ljava/util/Map;
 
     goto :goto_0
 
@@ -233,34 +177,19 @@
 
     invoke-static {p0}, Lkotlin/collections/MapsKt__MapsJVMKt;->mapOf(Lkotlin/Pair;)Ljava/util/Map;
 
-    move-result-object v0
+    move-result-object v1
 
     goto :goto_0
 
     :cond_1
-    sget-object v0, Lkotlin/collections/EmptyMap;->INSTANCE:Lkotlin/collections/EmptyMap;
+    sget-object v1, Lkotlin/collections/EmptyMap;->INSTANCE:Lkotlin/collections/EmptyMap;
 
     :goto_0
-    return-object v0
+    return-object v1
 .end method
 
 .method public static final toMap(Ljava/lang/Iterable;Ljava/util/Map;)Ljava/util/Map;
     .locals 2
-    .annotation system Ldalvik/annotation/Signature;
-        value = {
-            "<K:",
-            "Ljava/lang/Object;",
-            "V:",
-            "Ljava/lang/Object;",
-            "M::",
-            "Ljava/util/Map<",
-            "-TK;-TV;>;>(",
-            "Ljava/lang/Iterable<",
-            "+",
-            "Lkotlin/Pair<",
-            "+TK;+TV;>;>;TM;)TM;"
-        }
-    .end annotation
 
     invoke-interface {p0}, Ljava/lang/Iterable;->iterator()Ljava/util/Iterator;
 
@@ -293,21 +222,8 @@
 
 .method public static final toMap(Ljava/util/Map;)Ljava/util/Map;
     .locals 2
-    .annotation system Ldalvik/annotation/Signature;
-        value = {
-            "<K:",
-            "Ljava/lang/Object;",
-            "V:",
-            "Ljava/lang/Object;",
-            ">(",
-            "Ljava/util/Map<",
-            "+TK;+TV;>;)",
-            "Ljava/util/Map<",
-            "TK;TV;>;"
-        }
-    .end annotation
 
-    const-string v0, "$this$toMap"
+    const-string v0, "<this>"
 
     invoke-static {p0, v0}, Lkotlin/jvm/internal/Intrinsics;->checkNotNullParameter(Ljava/lang/Object;Ljava/lang/String;)V
 
@@ -343,21 +259,8 @@
 
 .method public static final toMutableMap(Ljava/util/Map;)Ljava/util/Map;
     .locals 1
-    .annotation system Ldalvik/annotation/Signature;
-        value = {
-            "<K:",
-            "Ljava/lang/Object;",
-            "V:",
-            "Ljava/lang/Object;",
-            ">(",
-            "Ljava/util/Map<",
-            "+TK;+TV;>;)",
-            "Ljava/util/Map<",
-            "TK;TV;>;"
-        }
-    .end annotation
 
-    const-string v0, "$this$toMutableMap"
+    const-string v0, "<this>"
 
     invoke-static {p0, v0}, Lkotlin/jvm/internal/Intrinsics;->checkNotNullParameter(Ljava/lang/Object;Ljava/lang/String;)V
 

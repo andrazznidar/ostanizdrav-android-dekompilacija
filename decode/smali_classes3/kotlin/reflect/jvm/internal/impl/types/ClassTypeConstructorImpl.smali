@@ -4,9 +4,9 @@
 
 
 # instance fields
-.field public final classDescriptor:Lkotlin/reflect/jvm/internal/impl/descriptors/ClassDescriptor;
+.field private final classDescriptor:Lkotlin/reflect/jvm/internal/impl/descriptors/ClassDescriptor;
 
-.field public final parameters:Ljava/util/List;
+.field private final parameters:Ljava/util/List;
     .annotation system Ldalvik/annotation/Signature;
         value = {
             "Ljava/util/List<",
@@ -16,7 +16,7 @@
     .end annotation
 .end field
 
-.field public final supertypes:Ljava/util/Collection;
+.field private final supertypes:Ljava/util/Collection;
     .annotation system Ldalvik/annotation/Signature;
         value = {
             "Ljava/util/Collection<",
@@ -28,7 +28,7 @@
 
 
 # direct methods
-.method public static synthetic $$$reportNull$$$0(I)V
+.method private static synthetic $$$reportNull$$$0(I)V
     .locals 10
 
     const/4 v0, 0x7
@@ -222,14 +222,34 @@
         }
     .end annotation
 
+    if-nez p1, :cond_0
+
     const/4 v0, 0x0
 
-    if-eqz p2, :cond_2
+    invoke-static {v0}, Lkotlin/reflect/jvm/internal/impl/types/ClassTypeConstructorImpl;->$$$reportNull$$$0(I)V
 
-    if-eqz p3, :cond_1
+    :cond_0
+    if-nez p2, :cond_1
 
-    if-eqz p4, :cond_0
+    const/4 v0, 0x1
 
+    invoke-static {v0}, Lkotlin/reflect/jvm/internal/impl/types/ClassTypeConstructorImpl;->$$$reportNull$$$0(I)V
+
+    :cond_1
+    if-nez p3, :cond_2
+
+    const/4 v0, 0x2
+
+    invoke-static {v0}, Lkotlin/reflect/jvm/internal/impl/types/ClassTypeConstructorImpl;->$$$reportNull$$$0(I)V
+
+    :cond_2
+    if-nez p4, :cond_3
+
+    const/4 v0, 0x3
+
+    invoke-static {v0}, Lkotlin/reflect/jvm/internal/impl/types/ClassTypeConstructorImpl;->$$$reportNull$$$0(I)V
+
+    :cond_3
     invoke-direct {p0, p4}, Lkotlin/reflect/jvm/internal/impl/types/AbstractClassTypeConstructor;-><init>(Lkotlin/reflect/jvm/internal/impl/storage/StorageManager;)V
 
     iput-object p1, p0, Lkotlin/reflect/jvm/internal/impl/types/ClassTypeConstructorImpl;->classDescriptor:Lkotlin/reflect/jvm/internal/impl/descriptors/ClassDescriptor;
@@ -251,33 +271,12 @@
     iput-object p1, p0, Lkotlin/reflect/jvm/internal/impl/types/ClassTypeConstructorImpl;->supertypes:Ljava/util/Collection;
 
     return-void
-
-    :cond_0
-    const/4 p1, 0x3
-
-    invoke-static {p1}, Lkotlin/reflect/jvm/internal/impl/types/ClassTypeConstructorImpl;->$$$reportNull$$$0(I)V
-
-    throw v0
-
-    :cond_1
-    const/4 p1, 0x2
-
-    invoke-static {p1}, Lkotlin/reflect/jvm/internal/impl/types/ClassTypeConstructorImpl;->$$$reportNull$$$0(I)V
-
-    throw v0
-
-    :cond_2
-    const/4 p1, 0x1
-
-    invoke-static {p1}, Lkotlin/reflect/jvm/internal/impl/types/ClassTypeConstructorImpl;->$$$reportNull$$$0(I)V
-
-    throw v0
 .end method
 
 
 # virtual methods
 .method public computeSupertypes()Ljava/util/Collection;
-    .locals 1
+    .locals 2
     .annotation system Ldalvik/annotation/Signature;
         value = {
             "()",
@@ -289,41 +288,43 @@
 
     iget-object v0, p0, Lkotlin/reflect/jvm/internal/impl/types/ClassTypeConstructorImpl;->supertypes:Ljava/util/Collection;
 
-    if-eqz v0, :cond_0
+    if-nez v0, :cond_0
 
-    return-object v0
+    const/4 v1, 0x6
+
+    invoke-static {v1}, Lkotlin/reflect/jvm/internal/impl/types/ClassTypeConstructorImpl;->$$$reportNull$$$0(I)V
 
     :cond_0
-    const/4 v0, 0x6
-
-    invoke-static {v0}, Lkotlin/reflect/jvm/internal/impl/types/ClassTypeConstructorImpl;->$$$reportNull$$$0(I)V
-
-    const/4 v0, 0x0
-
-    throw v0
+    return-object v0
 .end method
 
 .method public getDeclarationDescriptor()Lkotlin/reflect/jvm/internal/impl/descriptors/ClassDescriptor;
-    .locals 1
+    .locals 2
 
     iget-object v0, p0, Lkotlin/reflect/jvm/internal/impl/types/ClassTypeConstructorImpl;->classDescriptor:Lkotlin/reflect/jvm/internal/impl/descriptors/ClassDescriptor;
 
-    if-eqz v0, :cond_0
+    if-nez v0, :cond_0
 
-    return-object v0
+    const/4 v1, 0x5
+
+    invoke-static {v1}, Lkotlin/reflect/jvm/internal/impl/types/ClassTypeConstructorImpl;->$$$reportNull$$$0(I)V
 
     :cond_0
-    const/4 v0, 0x5
+    return-object v0
+.end method
 
-    invoke-static {v0}, Lkotlin/reflect/jvm/internal/impl/types/ClassTypeConstructorImpl;->$$$reportNull$$$0(I)V
+.method public bridge synthetic getDeclarationDescriptor()Lkotlin/reflect/jvm/internal/impl/descriptors/ClassifierDescriptor;
+    .locals 1
 
-    const/4 v0, 0x0
+    invoke-virtual {p0}, Lkotlin/reflect/jvm/internal/impl/types/ClassTypeConstructorImpl;->getDeclarationDescriptor()Lkotlin/reflect/jvm/internal/impl/descriptors/ClassDescriptor;
 
-    throw v0
+    move-result-object v0
+
+    return-object v0
 .end method
 
 .method public getParameters()Ljava/util/List;
-    .locals 1
+    .locals 2
     .annotation system Ldalvik/annotation/Signature;
         value = {
             "()",
@@ -335,25 +336,28 @@
 
     iget-object v0, p0, Lkotlin/reflect/jvm/internal/impl/types/ClassTypeConstructorImpl;->parameters:Ljava/util/List;
 
-    if-eqz v0, :cond_0
+    if-nez v0, :cond_0
 
-    return-object v0
+    const/4 v1, 0x4
+
+    invoke-static {v1}, Lkotlin/reflect/jvm/internal/impl/types/ClassTypeConstructorImpl;->$$$reportNull$$$0(I)V
 
     :cond_0
-    const/4 v0, 0x4
-
-    invoke-static {v0}, Lkotlin/reflect/jvm/internal/impl/types/ClassTypeConstructorImpl;->$$$reportNull$$$0(I)V
-
-    const/4 v0, 0x0
-
-    throw v0
+    return-object v0
 .end method
 
 .method public getSupertypeLoopChecker()Lkotlin/reflect/jvm/internal/impl/descriptors/SupertypeLoopChecker;
-    .locals 1
+    .locals 2
 
     sget-object v0, Lkotlin/reflect/jvm/internal/impl/descriptors/SupertypeLoopChecker$EMPTY;->INSTANCE:Lkotlin/reflect/jvm/internal/impl/descriptors/SupertypeLoopChecker$EMPTY;
 
+    if-nez v0, :cond_0
+
+    const/4 v1, 0x7
+
+    invoke-static {v1}, Lkotlin/reflect/jvm/internal/impl/types/ClassTypeConstructorImpl;->$$$reportNull$$$0(I)V
+
+    :cond_0
     return-object v0
 .end method
 

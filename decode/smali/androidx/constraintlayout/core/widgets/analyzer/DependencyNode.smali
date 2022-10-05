@@ -6,14 +6,6 @@
 .implements Landroidx/constraintlayout/core/widgets/analyzer/Dependency;
 
 
-# annotations
-.annotation system Ldalvik/annotation/MemberClasses;
-    value = {
-        Landroidx/constraintlayout/core/widgets/analyzer/DependencyNode$Type;
-    }
-.end annotation
-
-
 # instance fields
 .field public delegateToWidgetRun:Z
 
@@ -49,7 +41,7 @@
     .end annotation
 .end field
 
-.field public type:Landroidx/constraintlayout/core/widgets/analyzer/DependencyNode$Type;
+.field public type:I
 
 .field public updateDelegate:Landroidx/constraintlayout/core/widgets/analyzer/Dependency;
 
@@ -72,11 +64,9 @@
 
     iput-boolean v1, p0, Landroidx/constraintlayout/core/widgets/analyzer/DependencyNode;->readyToSolve:Z
 
-    sget-object v2, Landroidx/constraintlayout/core/widgets/analyzer/DependencyNode$Type;->UNKNOWN:Landroidx/constraintlayout/core/widgets/analyzer/DependencyNode$Type;
-
-    iput-object v2, p0, Landroidx/constraintlayout/core/widgets/analyzer/DependencyNode;->type:Landroidx/constraintlayout/core/widgets/analyzer/DependencyNode$Type;
-
     const/4 v2, 0x1
+
+    iput v2, p0, Landroidx/constraintlayout/core/widgets/analyzer/DependencyNode;->type:I
 
     iput v2, p0, Landroidx/constraintlayout/core/widgets/analyzer/DependencyNode;->marginFactor:I
 
@@ -189,9 +179,13 @@
 
     invoke-virtual {v0, v1}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
 
-    iget-object v1, p0, Landroidx/constraintlayout/core/widgets/analyzer/DependencyNode;->type:Landroidx/constraintlayout/core/widgets/analyzer/DependencyNode$Type;
+    iget v1, p0, Landroidx/constraintlayout/core/widgets/analyzer/DependencyNode;->type:I
 
-    invoke-virtual {v0, v1}, Ljava/lang/StringBuilder;->append(Ljava/lang/Object;)Ljava/lang/StringBuilder;
+    invoke-static {v1}, Landroidx/constraintlayout/core/widgets/analyzer/DependencyNode$Type$EnumUnboxingLocalUtility;->stringValueOf(I)Ljava/lang/String;
+
+    move-result-object v1
+
+    invoke-virtual {v0, v1}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
 
     const-string v1, "("
 

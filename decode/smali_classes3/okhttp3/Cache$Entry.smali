@@ -130,7 +130,7 @@
 
     sget-object v7, Ljava/lang/String;->CASE_INSENSITIVE_ORDER:Ljava/util/Comparator;
 
-    const-string v9, "java.lang.String.CASE_INSENSITIVE_ORDER"
+    const-string v9, "CASE_INSENSITIVE_ORDER"
 
     invoke-static {v7, v9}, Lkotlin/jvm/internal/Intrinsics;->checkNotNullExpressionValue(Ljava/lang/Object;Ljava/lang/String;)V
 
@@ -976,11 +976,7 @@
 
     const/16 v0, 0xa
 
-    move-object v1, p1
-
-    check-cast v1, Lokio/RealBufferedSink;
-
-    invoke-virtual {v1, v0}, Lokio/RealBufferedSink;->writeByte(I)Lokio/BufferedSink;
+    invoke-virtual {p1, v0}, Lokio/RealBufferedSink;->writeByte(I)Lokio/BufferedSink;
 
     invoke-interface {p2}, Ljava/util/List;->size()I
 

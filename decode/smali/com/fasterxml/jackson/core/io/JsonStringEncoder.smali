@@ -140,7 +140,23 @@
 
     move-result v0
 
-    const/16 v1, 0xc8
+    add-int/lit8 v1, v0, 0x6
+
+    shr-int/lit8 v2, v0, 0x1
+
+    add-int/2addr v1, v2
+
+    const/16 v2, 0x18
+
+    invoke-static {v2, v1}, Ljava/lang/Math;->max(II)I
+
+    move-result v1
+
+    const/16 v2, 0x7d00
+
+    invoke-static {v1, v2}, Ljava/lang/Math;->min(II)I
+
+    move-result v1
 
     new-array v2, v1, [B
 
@@ -456,9 +472,7 @@
     return-object p1
 
     :cond_11
-    iput v6, v7, Lcom/fasterxml/jackson/core/util/ByteArrayBuilder;->_currBlockPtr:I
-
-    invoke-virtual {v7}, Lcom/fasterxml/jackson/core/util/ByteArrayBuilder;->toByteArray()[B
+    invoke-virtual {v7, v6}, Lcom/fasterxml/jackson/core/util/ByteArrayBuilder;->completeAndCoalesce(I)[B
 
     move-result-object p1
 
@@ -470,195 +484,217 @@
 
     move-object/from16 v0, p1
 
-    const/16 v1, 0x78
-
-    new-array v1, v1, [C
-
-    sget-object v2, Lcom/fasterxml/jackson/core/io/CharTypes;->sOutputEscapes128:[I
-
-    array-length v3, v2
-
     invoke-virtual/range {p1 .. p1}, Ljava/lang/String;->length()I
 
-    move-result v4
+    move-result v1
 
-    const/4 v5, 0x0
+    shr-int/lit8 v2, v1, 0x3
+
+    const/4 v3, 0x6
+
+    add-int/2addr v2, v3
+
+    const/16 v4, 0x3e8
+
+    invoke-static {v2, v4}, Ljava/lang/Math;->min(II)I
+
+    move-result v2
+
+    add-int/2addr v2, v1
+
+    const/16 v4, 0x10
+
+    invoke-static {v4, v2}, Ljava/lang/Math;->max(II)I
+
+    move-result v2
+
+    const/16 v4, 0x7d00
+
+    invoke-static {v2, v4}, Ljava/lang/Math;->min(II)I
+
+    move-result v2
+
+    new-array v2, v2, [C
+
+    sget-object v4, Lcom/fasterxml/jackson/core/io/CharTypes;->sOutputEscapes128:[I
+
+    array-length v5, v4
 
     const/4 v6, 0x0
 
-    move-object v8, v5
+    const/4 v7, 0x0
 
-    move-object v10, v8
+    move-object v9, v6
 
-    move v7, v6
+    move-object v11, v9
 
-    move v9, v7
+    move v8, v7
+
+    move v10, v8
 
     :goto_0
-    if-ge v7, v4, :cond_9
+    if-ge v8, v1, :cond_9
 
     :cond_0
-    invoke-virtual {v0, v7}, Ljava/lang/String;->charAt(I)C
+    invoke-virtual {v0, v8}, Ljava/lang/String;->charAt(I)C
 
-    move-result v11
+    move-result v12
 
-    if-ge v11, v3, :cond_6
+    if-ge v12, v5, :cond_6
 
-    aget v12, v2, v11
+    aget v13, v4, v12
 
-    if-eqz v12, :cond_6
+    if-eqz v13, :cond_6
 
-    const/4 v11, 0x2
+    const/4 v12, 0x2
 
-    const/4 v12, 0x6
+    if-nez v11, :cond_1
 
-    if-nez v10, :cond_1
-
-    new-array v10, v12, [C
+    new-array v11, v3, [C
 
     const/16 v13, 0x5c
 
-    aput-char v13, v10, v6
+    aput-char v13, v11, v7
 
     const/16 v13, 0x30
 
-    aput-char v13, v10, v11
+    aput-char v13, v11, v12
 
     const/4 v14, 0x3
 
-    aput-char v13, v10, v14
+    aput-char v13, v11, v14
 
     :cond_1
-    add-int/lit8 v13, v7, 0x1
+    add-int/lit8 v13, v8, 0x1
 
-    invoke-virtual {v0, v7}, Ljava/lang/String;->charAt(I)C
+    invoke-virtual {v0, v8}, Ljava/lang/String;->charAt(I)C
 
-    move-result v7
+    move-result v8
 
-    aget v14, v2, v7
+    aget v14, v4, v8
 
     const/4 v15, 0x1
 
     if-gez v14, :cond_2
 
-    const/16 v11, 0x75
+    const/16 v12, 0x75
 
-    aput-char v11, v10, v15
+    aput-char v12, v11, v15
 
-    sget-object v11, Lcom/fasterxml/jackson/core/io/JsonStringEncoder;->HC:[C
+    sget-object v12, Lcom/fasterxml/jackson/core/io/JsonStringEncoder;->HC:[C
 
-    shr-int/lit8 v14, v7, 0x4
+    shr-int/lit8 v14, v8, 0x4
 
-    aget-char v14, v11, v14
+    aget-char v14, v12, v14
 
     const/4 v15, 0x4
 
-    aput-char v14, v10, v15
+    aput-char v14, v11, v15
 
-    and-int/lit8 v7, v7, 0xf
+    and-int/lit8 v8, v8, 0xf
 
-    aget-char v7, v11, v7
+    aget-char v8, v12, v8
 
-    const/4 v11, 0x5
+    const/4 v12, 0x5
 
-    aput-char v7, v10, v11
+    aput-char v8, v11, v12
 
-    move v11, v12
+    move v12, v3
 
     goto :goto_1
 
     :cond_2
-    int-to-char v7, v14
+    int-to-char v8, v14
 
-    aput-char v7, v10, v15
+    aput-char v8, v11, v15
 
     :goto_1
-    add-int v7, v9, v11
+    add-int v8, v10, v12
 
-    array-length v12, v1
+    array-length v14, v2
 
-    if-le v7, v12, :cond_5
+    if-le v8, v14, :cond_5
 
-    array-length v7, v1
+    array-length v8, v2
 
-    sub-int/2addr v7, v9
+    sub-int/2addr v8, v10
 
-    if-lez v7, :cond_3
+    if-lez v8, :cond_3
 
-    invoke-static {v10, v6, v1, v9, v7}, Ljava/lang/System;->arraycopy(Ljava/lang/Object;ILjava/lang/Object;II)V
+    invoke-static {v11, v7, v2, v10, v8}, Ljava/lang/System;->arraycopy(Ljava/lang/Object;ILjava/lang/Object;II)V
 
     :cond_3
-    if-nez v8, :cond_4
+    if-nez v9, :cond_4
 
-    new-instance v8, Lcom/fasterxml/jackson/core/util/TextBuffer;
+    new-instance v9, Lcom/fasterxml/jackson/core/util/TextBuffer;
 
-    invoke-direct {v8, v5, v1}, Lcom/fasterxml/jackson/core/util/TextBuffer;-><init>(Lcom/fasterxml/jackson/core/util/BufferRecycler;[C)V
+    invoke-direct {v9, v6, v2}, Lcom/fasterxml/jackson/core/util/TextBuffer;-><init>(Lcom/fasterxml/jackson/core/util/BufferRecycler;[C)V
 
     :cond_4
-    invoke-virtual {v8}, Lcom/fasterxml/jackson/core/util/TextBuffer;->finishCurrentSegment()[C
+    invoke-virtual {v9}, Lcom/fasterxml/jackson/core/util/TextBuffer;->finishCurrentSegment()[C
 
-    move-result-object v1
+    move-result-object v2
 
-    sub-int/2addr v11, v7
+    sub-int/2addr v12, v8
 
-    invoke-static {v10, v7, v1, v6, v11}, Ljava/lang/System;->arraycopy(Ljava/lang/Object;ILjava/lang/Object;II)V
+    invoke-static {v11, v8, v2, v7, v12}, Ljava/lang/System;->arraycopy(Ljava/lang/Object;ILjava/lang/Object;II)V
 
-    move v9, v11
+    move v10, v12
 
     goto :goto_2
 
     :cond_5
-    invoke-static {v10, v6, v1, v9, v11}, Ljava/lang/System;->arraycopy(Ljava/lang/Object;ILjava/lang/Object;II)V
+    invoke-static {v11, v7, v2, v10, v12}, Ljava/lang/System;->arraycopy(Ljava/lang/Object;ILjava/lang/Object;II)V
 
-    move v9, v7
+    move v10, v8
 
     :goto_2
-    move v7, v13
+    move v8, v13
 
     goto :goto_0
 
     :cond_6
-    array-length v12, v1
+    array-length v13, v2
 
-    if-lt v9, v12, :cond_8
+    if-lt v10, v13, :cond_8
 
-    if-nez v8, :cond_7
+    if-nez v9, :cond_7
 
-    new-instance v8, Lcom/fasterxml/jackson/core/util/TextBuffer;
+    new-instance v9, Lcom/fasterxml/jackson/core/util/TextBuffer;
 
-    invoke-direct {v8, v5, v1}, Lcom/fasterxml/jackson/core/util/TextBuffer;-><init>(Lcom/fasterxml/jackson/core/util/BufferRecycler;[C)V
+    invoke-direct {v9, v6, v2}, Lcom/fasterxml/jackson/core/util/TextBuffer;-><init>(Lcom/fasterxml/jackson/core/util/BufferRecycler;[C)V
 
     :cond_7
-    invoke-virtual {v8}, Lcom/fasterxml/jackson/core/util/TextBuffer;->finishCurrentSegment()[C
+    invoke-virtual {v9}, Lcom/fasterxml/jackson/core/util/TextBuffer;->finishCurrentSegment()[C
 
-    move-result-object v1
+    move-result-object v2
 
-    move v9, v6
+    move v10, v7
 
     :cond_8
-    add-int/lit8 v12, v9, 0x1
+    add-int/lit8 v13, v10, 0x1
 
-    aput-char v11, v1, v9
+    aput-char v12, v2, v10
 
-    add-int/lit8 v7, v7, 0x1
+    add-int/lit8 v8, v8, 0x1
 
-    move v9, v12
+    move v10, v13
 
-    if-lt v7, v4, :cond_0
+    if-lt v8, v1, :cond_0
 
     :cond_9
-    if-nez v8, :cond_a
+    if-nez v9, :cond_a
 
-    invoke-static {v1, v6, v9}, Ljava/util/Arrays;->copyOfRange([CII)[C
+    invoke-static {v2, v7, v10}, Ljava/util/Arrays;->copyOfRange([CII)[C
 
     move-result-object v0
 
     return-object v0
 
     :cond_a
-    iput v9, v8, Lcom/fasterxml/jackson/core/util/TextBuffer;->_currentSize:I
+    iput v10, v9, Lcom/fasterxml/jackson/core/util/TextBuffer;->_currentSize:I
 
-    invoke-virtual {v8}, Lcom/fasterxml/jackson/core/util/TextBuffer;->contentsAsArray()[C
+    invoke-virtual {v9}, Lcom/fasterxml/jackson/core/util/TextBuffer;->contentsAsArray()[C
 
     move-result-object v0
 
@@ -672,7 +708,23 @@
 
     move-result v0
 
-    const/16 v1, 0xc8
+    add-int/lit8 v1, v0, 0x6
+
+    shr-int/lit8 v2, v0, 0x1
+
+    add-int/2addr v1, v2
+
+    const/16 v2, 0x18
+
+    invoke-static {v2, v1}, Ljava/lang/Math;->max(II)I
+
+    move-result v1
+
+    const/16 v2, 0x7d00
+
+    invoke-static {v1, v2}, Ljava/lang/Math;->min(II)I
+
+    move-result v1
 
     new-array v1, v1, [B
 
@@ -1058,9 +1110,7 @@
     return-object p1
 
     :cond_15
-    iput v5, v6, Lcom/fasterxml/jackson/core/util/ByteArrayBuilder;->_currBlockPtr:I
-
-    invoke-virtual {v6}, Lcom/fasterxml/jackson/core/util/ByteArrayBuilder;->toByteArray()[B
+    invoke-virtual {v6, v5}, Lcom/fasterxml/jackson/core/util/ByteArrayBuilder;->completeAndCoalesce(I)[B
 
     move-result-object p1
 

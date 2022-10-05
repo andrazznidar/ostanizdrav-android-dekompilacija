@@ -61,7 +61,7 @@
 
     const-string/jumbo v3, "status"
 
-    invoke-static {v3, v1}, Lkotlinx/coroutines/flow/FlowKt;->zza(Ljava/lang/String;Ljava/lang/String;)Ljava/lang/String;
+    invoke-static {v3, v1}, Lcom/google/android/play/core/assetpacks/model/zzb;->zza(Ljava/lang/String;Ljava/lang/String;)Ljava/lang/String;
 
     move-result-object v3
 
@@ -77,7 +77,7 @@
 
     const-string v4, "error_code"
 
-    invoke-static {v4, v1}, Lkotlinx/coroutines/flow/FlowKt;->zza(Ljava/lang/String;Ljava/lang/String;)Ljava/lang/String;
+    invoke-static {v4, v1}, Lcom/google/android/play/core/assetpacks/model/zzb;->zza(Ljava/lang/String;Ljava/lang/String;)Ljava/lang/String;
 
     move-result-object v4
 
@@ -87,7 +87,7 @@
 
     const-string v5, "bytes_downloaded"
 
-    invoke-static {v5, v1}, Lkotlinx/coroutines/flow/FlowKt;->zza(Ljava/lang/String;Ljava/lang/String;)Ljava/lang/String;
+    invoke-static {v5, v1}, Lcom/google/android/play/core/assetpacks/model/zzb;->zza(Ljava/lang/String;Ljava/lang/String;)Ljava/lang/String;
 
     move-result-object v5
 
@@ -97,7 +97,7 @@
 
     const-string/jumbo v7, "total_bytes_to_download"
 
-    invoke-static {v7, v1}, Lkotlinx/coroutines/flow/FlowKt;->zza(Ljava/lang/String;Ljava/lang/String;)Ljava/lang/String;
+    invoke-static {v7, v1}, Lcom/google/android/play/core/assetpacks/model/zzb;->zza(Ljava/lang/String;Ljava/lang/String;)Ljava/lang/String;
 
     move-result-object v7
 
@@ -139,7 +139,7 @@
     :goto_0
     const-string v2, "pack_version"
 
-    invoke-static {v2, v1}, Lkotlinx/coroutines/flow/FlowKt;->zza(Ljava/lang/String;Ljava/lang/String;)Ljava/lang/String;
+    invoke-static {v2, v1}, Lcom/google/android/play/core/assetpacks/model/zzb;->zza(Ljava/lang/String;Ljava/lang/String;)Ljava/lang/String;
 
     move-result-object v2
 
@@ -149,7 +149,7 @@
 
     const-string v2, "pack_base_version"
 
-    invoke-static {v2, v1}, Lkotlinx/coroutines/flow/FlowKt;->zza(Ljava/lang/String;Ljava/lang/String;)Ljava/lang/String;
+    invoke-static {v2, v1}, Lcom/google/android/play/core/assetpacks/model/zzb;->zza(Ljava/lang/String;Ljava/lang/String;)Ljava/lang/String;
 
     move-result-object v2
 
@@ -188,7 +188,7 @@
     :goto_1
     const-string v2, "pack_version_tag"
 
-    invoke-static {v2, v1}, Lkotlinx/coroutines/flow/FlowKt;->zza(Ljava/lang/String;Ljava/lang/String;)Ljava/lang/String;
+    invoke-static {v2, v1}, Lcom/google/android/play/core/assetpacks/model/zzb;->zza(Ljava/lang/String;Ljava/lang/String;)Ljava/lang/String;
 
     move-result-object v2
 

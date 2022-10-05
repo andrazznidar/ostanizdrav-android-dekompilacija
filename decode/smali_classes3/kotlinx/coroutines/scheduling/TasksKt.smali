@@ -12,7 +12,7 @@
 
 .field public static final WORK_STEALING_TIME_RESOLUTION_NS:J
 
-.field public static schedulerTimeSource:Lkotlinx/coroutines/scheduling/SchedulerTimeSource;
+.field public static schedulerTimeSource:Lorg/joda/time/Chronology;
 
 
 # direct methods
@@ -31,7 +31,7 @@
 
     const/4 v8, 0x0
 
-    invoke-static/range {v0 .. v8}, Lkotlinx/coroutines/internal/SystemPropsKt;->systemProp$default(Ljava/lang/String;JJJILjava/lang/Object;)J
+    invoke-static/range {v0 .. v8}, Lorg/ejml/dense/row/CommonOps_ZDRM;->systemProp$default(Ljava/lang/String;JJJILjava/lang/Object;)J
 
     move-result-wide v0
 
@@ -49,7 +49,7 @@
 
     const/4 v7, 0x0
 
-    invoke-static/range {v2 .. v7}, Lkotlinx/coroutines/internal/SystemPropsKt;->systemProp$default(Ljava/lang/String;IIIILjava/lang/Object;)I
+    invoke-static/range {v2 .. v7}, Lorg/ejml/dense/row/CommonOps_ZDRM;->systemProp$default(Ljava/lang/String;IIIILjava/lang/Object;)I
 
     sget v0, Lkotlinx/coroutines/internal/SystemPropsKt__SystemPropsKt;->AVAILABLE_PROCESSORS:I
 
@@ -75,7 +75,7 @@
 
     const-string v2, "kotlinx.coroutines.scheduler.core.pool.size"
 
-    invoke-static/range {v2 .. v7}, Lkotlinx/coroutines/internal/SystemPropsKt;->systemProp$default(Ljava/lang/String;IIIILjava/lang/Object;)I
+    invoke-static/range {v2 .. v7}, Lorg/ejml/dense/row/CommonOps_ZDRM;->systemProp$default(Ljava/lang/String;IIIILjava/lang/Object;)I
 
     move-result v1
 
@@ -99,7 +99,7 @@
 
     const-string v3, "kotlinx.coroutines.scheduler.max.pool.size"
 
-    invoke-static/range {v3 .. v8}, Lkotlinx/coroutines/internal/SystemPropsKt;->systemProp$default(Ljava/lang/String;IIIILjava/lang/Object;)I
+    invoke-static/range {v3 .. v8}, Lorg/ejml/dense/row/CommonOps_ZDRM;->systemProp$default(Ljava/lang/String;IIIILjava/lang/Object;)I
 
     move-result v0
 
@@ -119,7 +119,7 @@
 
     const-string v1, "kotlinx.coroutines.scheduler.keep.alive.sec"
 
-    invoke-static/range {v1 .. v9}, Lkotlinx/coroutines/internal/SystemPropsKt;->systemProp$default(Ljava/lang/String;JJJILjava/lang/Object;)J
+    invoke-static/range {v1 .. v9}, Lorg/ejml/dense/row/CommonOps_ZDRM;->systemProp$default(Ljava/lang/String;JJJILjava/lang/Object;)J
 
     move-result-wide v1
 
@@ -131,7 +131,7 @@
 
     sget-object v0, Lkotlinx/coroutines/scheduling/NanoTimeSource;->INSTANCE:Lkotlinx/coroutines/scheduling/NanoTimeSource;
 
-    sput-object v0, Lkotlinx/coroutines/scheduling/TasksKt;->schedulerTimeSource:Lkotlinx/coroutines/scheduling/SchedulerTimeSource;
+    sput-object v0, Lkotlinx/coroutines/scheduling/TasksKt;->schedulerTimeSource:Lorg/joda/time/Chronology;
 
     return-void
 .end method

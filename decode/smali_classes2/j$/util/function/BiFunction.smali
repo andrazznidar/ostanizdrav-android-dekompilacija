@@ -18,13 +18,13 @@
 
 
 # virtual methods
+.method public abstract andThen(Lj$/util/function/Function;)Lj$/util/function/BiFunction;
+.end method
+
 .method public abstract apply(Ljava/lang/Object;Ljava/lang/Object;)Ljava/lang/Object;
     .annotation system Ldalvik/annotation/Signature;
         value = {
             "(TT;TU;)TR;"
         }
     .end annotation
-.end method
-
-.method public abstract b(Lj$/util/function/Function;)Lj$/util/function/BiFunction;
 .end method

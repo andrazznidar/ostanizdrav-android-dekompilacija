@@ -109,11 +109,51 @@
 
     invoke-direct {p0}, Lkotlin/sequences/SequenceBuilderIterator;-><init>()V
 
-    invoke-static {v7, p0, p0}, Lkotlinx/coroutines/flow/FlowKt;->createCoroutineUnintercepted(Lkotlin/jvm/functions/Function2;Ljava/lang/Object;Lkotlin/coroutines/Continuation;)Lkotlin/coroutines/Continuation;
+    invoke-static {v7, p0, p0}, Lcom/google/android/gms/nearby/messages/internal/zzag;->createCoroutineUnintercepted(Lkotlin/jvm/functions/Function2;Ljava/lang/Object;Lkotlin/coroutines/Continuation;)Lkotlin/coroutines/Continuation;
 
     move-result-object p1
 
     iput-object p1, p0, Lkotlin/sequences/SequenceBuilderIterator;->nextStep:Lkotlin/coroutines/Continuation;
 
     return-object p0
+.end method
+
+.method public static final windowedSequence(Lkotlin/sequences/Sequence;IIZZ)Lkotlin/sequences/Sequence;
+    .locals 7
+    .annotation system Ldalvik/annotation/Signature;
+        value = {
+            "<T:",
+            "Ljava/lang/Object;",
+            ">(",
+            "Lkotlin/sequences/Sequence<",
+            "+TT;>;IIZZ)",
+            "Lkotlin/sequences/Sequence<",
+            "Ljava/util/List<",
+            "TT;>;>;"
+        }
+    .end annotation
+
+    const-string v0, "<this>"
+
+    invoke-static {p0, v0}, Lkotlin/jvm/internal/Intrinsics;->checkNotNullParameter(Ljava/lang/Object;Ljava/lang/String;)V
+
+    invoke-static {p1, p2}, Lkotlin/collections/SlidingWindowKt;->checkWindowSizeStep(II)V
+
+    new-instance v0, Lkotlin/collections/SlidingWindowKt$windowedSequence$$inlined$Sequence$1;
+
+    move-object v1, v0
+
+    move-object v2, p0
+
+    move v3, p1
+
+    move v4, p2
+
+    move v5, p3
+
+    move v6, p4
+
+    invoke-direct/range {v1 .. v6}, Lkotlin/collections/SlidingWindowKt$windowedSequence$$inlined$Sequence$1;-><init>(Lkotlin/sequences/Sequence;IIZZ)V
+
+    return-object v0
 .end method

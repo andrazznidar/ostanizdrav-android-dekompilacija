@@ -23,13 +23,13 @@
 
 
 # instance fields
-.field public keyAndMask:I
+.field private keyAndMask:I
 
-.field public layerAddress:I
+.field private layerAddress:I
 
-.field public treeAddress:J
+.field private treeAddress:J
 
-.field public final type:I
+.field private final type:I
 
 
 # direct methods
@@ -53,8 +53,43 @@
     return-void
 .end method
 
+.method public static synthetic access$000(Lorg/bouncycastle/pqc/crypto/xmss/XMSSAddress$Builder;)I
+    .locals 0
+
+    iget p0, p0, Lorg/bouncycastle/pqc/crypto/xmss/XMSSAddress$Builder;->layerAddress:I
+
+    return p0
+.end method
+
+.method public static synthetic access$100(Lorg/bouncycastle/pqc/crypto/xmss/XMSSAddress$Builder;)J
+    .locals 2
+
+    iget-wide v0, p0, Lorg/bouncycastle/pqc/crypto/xmss/XMSSAddress$Builder;->treeAddress:J
+
+    return-wide v0
+.end method
+
+.method public static synthetic access$200(Lorg/bouncycastle/pqc/crypto/xmss/XMSSAddress$Builder;)I
+    .locals 0
+
+    iget p0, p0, Lorg/bouncycastle/pqc/crypto/xmss/XMSSAddress$Builder;->type:I
+
+    return p0
+.end method
+
+.method public static synthetic access$300(Lorg/bouncycastle/pqc/crypto/xmss/XMSSAddress$Builder;)I
+    .locals 0
+
+    iget p0, p0, Lorg/bouncycastle/pqc/crypto/xmss/XMSSAddress$Builder;->keyAndMask:I
+
+    return p0
+.end method
+
 
 # virtual methods
+.method public abstract build()Lorg/bouncycastle/pqc/crypto/xmss/XMSSAddress;
+.end method
+
 .method public abstract getThis()Lorg/bouncycastle/pqc/crypto/xmss/XMSSAddress$Builder;
     .annotation system Ldalvik/annotation/Signature;
         value = {

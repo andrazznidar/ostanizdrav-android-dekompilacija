@@ -38,7 +38,7 @@
 
 # virtual methods
 .method public createFromParcel(Landroid/os/Parcel;)Ljava/lang/Object;
-    .locals 3
+    .locals 4
 
     const-string v0, "parcel"
 
@@ -66,11 +66,15 @@
     :goto_0
     invoke-virtual {p1}, Landroid/os/Parcel;->readSerializable()Ljava/io/Serializable;
 
+    move-result-object v3
+
+    check-cast v3, Lorg/joda/time/LocalDate;
+
+    invoke-virtual {p1}, Landroid/os/Parcel;->readString()Ljava/lang/String;
+
     move-result-object p1
 
-    check-cast p1, Lorg/joda/time/LocalDate;
-
-    invoke-direct {v0, v1, v2, p1}, Lde/rki/coronawarnapp/coronatest/qrcode/CoronaTestQRCode$PCR;-><init>(Ljava/lang/String;ZLorg/joda/time/LocalDate;)V
+    invoke-direct {v0, v1, v2, v3, p1}, Lde/rki/coronawarnapp/coronatest/qrcode/CoronaTestQRCode$PCR;-><init>(Ljava/lang/String;ZLorg/joda/time/LocalDate;Ljava/lang/String;)V
 
     return-object v0
 .end method

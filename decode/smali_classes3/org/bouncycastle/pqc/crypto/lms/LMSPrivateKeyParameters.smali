@@ -1,6 +1,9 @@
 .class public Lorg/bouncycastle/pqc/crypto/lms/LMSPrivateKeyParameters;
 .super Lorg/bouncycastle/pqc/crypto/lms/LMSKeyParameters;
 
+# interfaces
+.implements Lorg/bouncycastle/pqc/crypto/lms/LMSContextBasedSigner;
+
 
 # annotations
 .annotation system Ldalvik/annotation/MemberClasses;
@@ -11,29 +14,29 @@
 
 
 # static fields
-.field public static T1:Lorg/bouncycastle/pqc/crypto/lms/LMSPrivateKeyParameters$CacheKey;
+.field private static T1:Lorg/bouncycastle/pqc/crypto/lms/LMSPrivateKeyParameters$CacheKey;
 
-.field public static internedKeys:[Lorg/bouncycastle/pqc/crypto/lms/LMSPrivateKeyParameters$CacheKey;
+.field private static internedKeys:[Lorg/bouncycastle/pqc/crypto/lms/LMSPrivateKeyParameters$CacheKey;
 
 
 # instance fields
-.field public final I:[B
+.field private final I:[B
 
-.field public final masterSecret:[B
+.field private final masterSecret:[B
 
-.field public final maxCacheR:I
+.field private final maxCacheR:I
 
-.field public final maxQ:I
+.field private final maxQ:I
 
-.field public final otsParameters:Lorg/bouncycastle/pqc/crypto/lms/LMOtsParameters;
+.field private final otsParameters:Lorg/bouncycastle/pqc/crypto/lms/LMOtsParameters;
 
-.field public final parameters:Lorg/bouncycastle/pqc/crypto/lms/LMSigParameters;
+.field private final parameters:Lorg/bouncycastle/pqc/crypto/lms/LMSigParameters;
 
-.field public publicKey:Lorg/bouncycastle/pqc/crypto/lms/LMSPublicKeyParameters;
+.field private publicKey:Lorg/bouncycastle/pqc/crypto/lms/LMSPublicKeyParameters;
 
-.field public q:I
+.field private q:I
 
-.field public final tCache:Ljava/util/Map;
+.field private final tCache:Ljava/util/Map;
     .annotation system Ldalvik/annotation/Signature;
         value = {
             "Ljava/util/Map<",
@@ -43,7 +46,7 @@
     .end annotation
 .end field
 
-.field public final tDigest:Lorg/bouncycastle/crypto/Digest;
+.field private final tDigest:Lorg/bouncycastle/crypto/Digest;
 
 
 # direct methods
@@ -89,6 +92,62 @@
     return-void
 .end method
 
+.method private constructor <init>(Lorg/bouncycastle/pqc/crypto/lms/LMSPrivateKeyParameters;II)V
+    .locals 3
+
+    const/4 v0, 0x1
+
+    invoke-direct {p0, v0}, Lorg/bouncycastle/pqc/crypto/lms/LMSKeyParameters;-><init>(Z)V
+
+    iget-object v1, p1, Lorg/bouncycastle/pqc/crypto/lms/LMSPrivateKeyParameters;->parameters:Lorg/bouncycastle/pqc/crypto/lms/LMSigParameters;
+
+    iput-object v1, p0, Lorg/bouncycastle/pqc/crypto/lms/LMSPrivateKeyParameters;->parameters:Lorg/bouncycastle/pqc/crypto/lms/LMSigParameters;
+
+    iget-object v2, p1, Lorg/bouncycastle/pqc/crypto/lms/LMSPrivateKeyParameters;->otsParameters:Lorg/bouncycastle/pqc/crypto/lms/LMOtsParameters;
+
+    iput-object v2, p0, Lorg/bouncycastle/pqc/crypto/lms/LMSPrivateKeyParameters;->otsParameters:Lorg/bouncycastle/pqc/crypto/lms/LMOtsParameters;
+
+    iput p2, p0, Lorg/bouncycastle/pqc/crypto/lms/LMSPrivateKeyParameters;->q:I
+
+    iget-object p2, p1, Lorg/bouncycastle/pqc/crypto/lms/LMSPrivateKeyParameters;->I:[B
+
+    iput-object p2, p0, Lorg/bouncycastle/pqc/crypto/lms/LMSPrivateKeyParameters;->I:[B
+
+    iput p3, p0, Lorg/bouncycastle/pqc/crypto/lms/LMSPrivateKeyParameters;->maxQ:I
+
+    iget-object p2, p1, Lorg/bouncycastle/pqc/crypto/lms/LMSPrivateKeyParameters;->masterSecret:[B
+
+    iput-object p2, p0, Lorg/bouncycastle/pqc/crypto/lms/LMSPrivateKeyParameters;->masterSecret:[B
+
+    invoke-virtual {v1}, Lorg/bouncycastle/pqc/crypto/lms/LMSigParameters;->getH()I
+
+    move-result p2
+
+    shl-int p2, v0, p2
+
+    iput p2, p0, Lorg/bouncycastle/pqc/crypto/lms/LMSPrivateKeyParameters;->maxCacheR:I
+
+    iget-object p2, p1, Lorg/bouncycastle/pqc/crypto/lms/LMSPrivateKeyParameters;->tCache:Ljava/util/Map;
+
+    iput-object p2, p0, Lorg/bouncycastle/pqc/crypto/lms/LMSPrivateKeyParameters;->tCache:Ljava/util/Map;
+
+    invoke-virtual {v1}, Lorg/bouncycastle/pqc/crypto/lms/LMSigParameters;->getDigestOID()Lorg/bouncycastle/asn1/ASN1ObjectIdentifier;
+
+    move-result-object p2
+
+    invoke-static {p2}, Lorg/bouncycastle/pqc/crypto/lms/DigestUtil;->getDigest(Lorg/bouncycastle/asn1/ASN1ObjectIdentifier;)Lorg/bouncycastle/crypto/Digest;
+
+    move-result-object p2
+
+    iput-object p2, p0, Lorg/bouncycastle/pqc/crypto/lms/LMSPrivateKeyParameters;->tDigest:Lorg/bouncycastle/crypto/Digest;
+
+    iget-object p1, p1, Lorg/bouncycastle/pqc/crypto/lms/LMSPrivateKeyParameters;->publicKey:Lorg/bouncycastle/pqc/crypto/lms/LMSPublicKeyParameters;
+
+    iput-object p1, p0, Lorg/bouncycastle/pqc/crypto/lms/LMSPrivateKeyParameters;->publicKey:Lorg/bouncycastle/pqc/crypto/lms/LMSPublicKeyParameters;
+
+    return-void
+.end method
+
 .method public constructor <init>(Lorg/bouncycastle/pqc/crypto/lms/LMSigParameters;Lorg/bouncycastle/pqc/crypto/lms/LMOtsParameters;I[BI[B)V
     .locals 1
 
@@ -116,7 +175,9 @@
 
     iput-object p2, p0, Lorg/bouncycastle/pqc/crypto/lms/LMSPrivateKeyParameters;->masterSecret:[B
 
-    iget p2, p1, Lorg/bouncycastle/pqc/crypto/lms/LMSigParameters;->h:I
+    invoke-virtual {p1}, Lorg/bouncycastle/pqc/crypto/lms/LMSigParameters;->getH()I
+
+    move-result p2
 
     add-int/2addr p2, v0
 
@@ -130,7 +191,9 @@
 
     iput-object p2, p0, Lorg/bouncycastle/pqc/crypto/lms/LMSPrivateKeyParameters;->tCache:Ljava/util/Map;
 
-    iget-object p1, p1, Lorg/bouncycastle/pqc/crypto/lms/LMSigParameters;->digestOid:Lorg/bouncycastle/asn1/ASN1ObjectIdentifier;
+    invoke-virtual {p1}, Lorg/bouncycastle/pqc/crypto/lms/LMSigParameters;->getDigestOID()Lorg/bouncycastle/asn1/ASN1ObjectIdentifier;
+
+    move-result-object p1
 
     invoke-static {p1}, Lorg/bouncycastle/pqc/crypto/lms/DigestUtil;->getDigest(Lorg/bouncycastle/asn1/ASN1ObjectIdentifier;)Lorg/bouncycastle/crypto/Digest;
 
@@ -139,6 +202,182 @@
     iput-object p1, p0, Lorg/bouncycastle/pqc/crypto/lms/LMSPrivateKeyParameters;->tDigest:Lorg/bouncycastle/crypto/Digest;
 
     return-void
+.end method
+
+.method private calcT(I)[B
+    .locals 5
+
+    invoke-virtual {p0}, Lorg/bouncycastle/pqc/crypto/lms/LMSPrivateKeyParameters;->getSigParameters()Lorg/bouncycastle/pqc/crypto/lms/LMSigParameters;
+
+    move-result-object v0
+
+    invoke-virtual {v0}, Lorg/bouncycastle/pqc/crypto/lms/LMSigParameters;->getH()I
+
+    move-result v0
+
+    const/4 v1, 0x1
+
+    shl-int v0, v1, v0
+
+    const/4 v2, 0x0
+
+    if-lt p1, v0, :cond_0
+
+    invoke-virtual {p0}, Lorg/bouncycastle/pqc/crypto/lms/LMSPrivateKeyParameters;->getI()[B
+
+    move-result-object v1
+
+    iget-object v3, p0, Lorg/bouncycastle/pqc/crypto/lms/LMSPrivateKeyParameters;->tDigest:Lorg/bouncycastle/crypto/Digest;
+
+    invoke-static {v1, v3}, Lorg/bouncycastle/pqc/crypto/lms/LmsUtils;->byteArray([BLorg/bouncycastle/crypto/Digest;)V
+
+    iget-object v1, p0, Lorg/bouncycastle/pqc/crypto/lms/LMSPrivateKeyParameters;->tDigest:Lorg/bouncycastle/crypto/Digest;
+
+    invoke-static {p1, v1}, Lorg/bouncycastle/pqc/crypto/lms/LmsUtils;->u32str(ILorg/bouncycastle/crypto/Digest;)V
+
+    const/16 v1, -0x7d7e
+
+    iget-object v3, p0, Lorg/bouncycastle/pqc/crypto/lms/LMSPrivateKeyParameters;->tDigest:Lorg/bouncycastle/crypto/Digest;
+
+    invoke-static {v1, v3}, Lorg/bouncycastle/pqc/crypto/lms/LmsUtils;->u16str(SLorg/bouncycastle/crypto/Digest;)V
+
+    invoke-virtual {p0}, Lorg/bouncycastle/pqc/crypto/lms/LMSPrivateKeyParameters;->getOtsParameters()Lorg/bouncycastle/pqc/crypto/lms/LMOtsParameters;
+
+    move-result-object v1
+
+    invoke-virtual {p0}, Lorg/bouncycastle/pqc/crypto/lms/LMSPrivateKeyParameters;->getI()[B
+
+    move-result-object v3
+
+    sub-int/2addr p1, v0
+
+    invoke-virtual {p0}, Lorg/bouncycastle/pqc/crypto/lms/LMSPrivateKeyParameters;->getMasterSecret()[B
+
+    move-result-object v0
+
+    invoke-static {v1, v3, p1, v0}, Lorg/bouncycastle/pqc/crypto/lms/LM_OTS;->lms_ots_generatePublicKey(Lorg/bouncycastle/pqc/crypto/lms/LMOtsParameters;[BI[B)[B
+
+    move-result-object p1
+
+    iget-object v0, p0, Lorg/bouncycastle/pqc/crypto/lms/LMSPrivateKeyParameters;->tDigest:Lorg/bouncycastle/crypto/Digest;
+
+    invoke-static {p1, v0}, Lorg/bouncycastle/pqc/crypto/lms/LmsUtils;->byteArray([BLorg/bouncycastle/crypto/Digest;)V
+
+    iget-object p1, p0, Lorg/bouncycastle/pqc/crypto/lms/LMSPrivateKeyParameters;->tDigest:Lorg/bouncycastle/crypto/Digest;
+
+    invoke-interface {p1}, Lorg/bouncycastle/crypto/Digest;->getDigestSize()I
+
+    move-result p1
+
+    new-array p1, p1, [B
+
+    iget-object v0, p0, Lorg/bouncycastle/pqc/crypto/lms/LMSPrivateKeyParameters;->tDigest:Lorg/bouncycastle/crypto/Digest;
+
+    invoke-interface {v0, p1, v2}, Lorg/bouncycastle/crypto/Digest;->doFinal([BI)I
+
+    return-object p1
+
+    :cond_0
+    mul-int/lit8 v0, p1, 0x2
+
+    invoke-virtual {p0, v0}, Lorg/bouncycastle/pqc/crypto/lms/LMSPrivateKeyParameters;->findT(I)[B
+
+    move-result-object v3
+
+    add-int/2addr v0, v1
+
+    invoke-virtual {p0, v0}, Lorg/bouncycastle/pqc/crypto/lms/LMSPrivateKeyParameters;->findT(I)[B
+
+    move-result-object v0
+
+    invoke-virtual {p0}, Lorg/bouncycastle/pqc/crypto/lms/LMSPrivateKeyParameters;->getI()[B
+
+    move-result-object v1
+
+    iget-object v4, p0, Lorg/bouncycastle/pqc/crypto/lms/LMSPrivateKeyParameters;->tDigest:Lorg/bouncycastle/crypto/Digest;
+
+    invoke-static {v1, v4}, Lorg/bouncycastle/pqc/crypto/lms/LmsUtils;->byteArray([BLorg/bouncycastle/crypto/Digest;)V
+
+    iget-object v1, p0, Lorg/bouncycastle/pqc/crypto/lms/LMSPrivateKeyParameters;->tDigest:Lorg/bouncycastle/crypto/Digest;
+
+    invoke-static {p1, v1}, Lorg/bouncycastle/pqc/crypto/lms/LmsUtils;->u32str(ILorg/bouncycastle/crypto/Digest;)V
+
+    const/16 p1, -0x7c7d
+
+    iget-object v1, p0, Lorg/bouncycastle/pqc/crypto/lms/LMSPrivateKeyParameters;->tDigest:Lorg/bouncycastle/crypto/Digest;
+
+    invoke-static {p1, v1}, Lorg/bouncycastle/pqc/crypto/lms/LmsUtils;->u16str(SLorg/bouncycastle/crypto/Digest;)V
+
+    iget-object p1, p0, Lorg/bouncycastle/pqc/crypto/lms/LMSPrivateKeyParameters;->tDigest:Lorg/bouncycastle/crypto/Digest;
+
+    invoke-static {v3, p1}, Lorg/bouncycastle/pqc/crypto/lms/LmsUtils;->byteArray([BLorg/bouncycastle/crypto/Digest;)V
+
+    iget-object p1, p0, Lorg/bouncycastle/pqc/crypto/lms/LMSPrivateKeyParameters;->tDigest:Lorg/bouncycastle/crypto/Digest;
+
+    invoke-static {v0, p1}, Lorg/bouncycastle/pqc/crypto/lms/LmsUtils;->byteArray([BLorg/bouncycastle/crypto/Digest;)V
+
+    iget-object p1, p0, Lorg/bouncycastle/pqc/crypto/lms/LMSPrivateKeyParameters;->tDigest:Lorg/bouncycastle/crypto/Digest;
+
+    invoke-interface {p1}, Lorg/bouncycastle/crypto/Digest;->getDigestSize()I
+
+    move-result p1
+
+    new-array p1, p1, [B
+
+    iget-object v0, p0, Lorg/bouncycastle/pqc/crypto/lms/LMSPrivateKeyParameters;->tDigest:Lorg/bouncycastle/crypto/Digest;
+
+    invoke-interface {v0, p1, v2}, Lorg/bouncycastle/crypto/Digest;->doFinal([BI)I
+
+    return-object p1
+.end method
+
+.method private findT(Lorg/bouncycastle/pqc/crypto/lms/LMSPrivateKeyParameters$CacheKey;)[B
+    .locals 3
+
+    iget-object v0, p0, Lorg/bouncycastle/pqc/crypto/lms/LMSPrivateKeyParameters;->tCache:Ljava/util/Map;
+
+    monitor-enter v0
+
+    :try_start_0
+    iget-object v1, p0, Lorg/bouncycastle/pqc/crypto/lms/LMSPrivateKeyParameters;->tCache:Ljava/util/Map;
+
+    invoke-interface {v1, p1}, Ljava/util/Map;->get(Ljava/lang/Object;)Ljava/lang/Object;
+
+    move-result-object v1
+
+    check-cast v1, [B
+
+    if-eqz v1, :cond_0
+
+    monitor-exit v0
+
+    return-object v1
+
+    :cond_0
+    invoke-static {p1}, Lorg/bouncycastle/pqc/crypto/lms/LMSPrivateKeyParameters$CacheKey;->access$000(Lorg/bouncycastle/pqc/crypto/lms/LMSPrivateKeyParameters$CacheKey;)I
+
+    move-result v1
+
+    invoke-direct {p0, v1}, Lorg/bouncycastle/pqc/crypto/lms/LMSPrivateKeyParameters;->calcT(I)[B
+
+    move-result-object v1
+
+    iget-object v2, p0, Lorg/bouncycastle/pqc/crypto/lms/LMSPrivateKeyParameters;->tCache:Ljava/util/Map;
+
+    invoke-interface {v2, p1, v1}, Ljava/util/Map;->put(Ljava/lang/Object;Ljava/lang/Object;)Ljava/lang/Object;
+
+    monitor-exit v0
+
+    return-object v1
+
+    :catchall_0
+    move-exception p1
+
+    monitor-exit v0
+    :try_end_0
+    .catchall {:try_start_0 .. :try_end_0} :catchall_0
+
+    throw p1
 .end method
 
 .method public static getInstance(Ljava/lang/Object;)Lorg/bouncycastle/pqc/crypto/lms/LMSPrivateKeyParameters;
@@ -345,437 +584,29 @@
     throw v0
 .end method
 
+.method public static getInstance([B[B)Lorg/bouncycastle/pqc/crypto/lms/LMSPrivateKeyParameters;
+    .locals 0
+    .annotation system Ldalvik/annotation/Throws;
+        value = {
+            Ljava/io/IOException;
+        }
+    .end annotation
 
-# virtual methods
-.method public final calcT(I)[B
-    .locals 16
+    invoke-static {p0}, Lorg/bouncycastle/pqc/crypto/lms/LMSPrivateKeyParameters;->getInstance(Ljava/lang/Object;)Lorg/bouncycastle/pqc/crypto/lms/LMSPrivateKeyParameters;
 
-    move-object/from16 v0, p0
+    move-result-object p0
 
-    move/from16 v1, p1
+    invoke-static {p1}, Lorg/bouncycastle/pqc/crypto/lms/LMSPublicKeyParameters;->getInstance(Ljava/lang/Object;)Lorg/bouncycastle/pqc/crypto/lms/LMSPublicKeyParameters;
 
-    iget-object v2, v0, Lorg/bouncycastle/pqc/crypto/lms/LMSPrivateKeyParameters;->parameters:Lorg/bouncycastle/pqc/crypto/lms/LMSigParameters;
+    move-result-object p1
 
-    iget v2, v2, Lorg/bouncycastle/pqc/crypto/lms/LMSigParameters;->h:I
+    iput-object p1, p0, Lorg/bouncycastle/pqc/crypto/lms/LMSPrivateKeyParameters;->publicKey:Lorg/bouncycastle/pqc/crypto/lms/LMSPublicKeyParameters;
 
-    const/4 v3, 0x1
-
-    shl-int v2, v3, v2
-
-    const/4 v4, 0x0
-
-    if-lt v1, v2, :cond_7
-
-    invoke-virtual/range {p0 .. p0}, Lorg/bouncycastle/pqc/crypto/lms/LMSPrivateKeyParameters;->getI()[B
-
-    move-result-object v5
-
-    iget-object v6, v0, Lorg/bouncycastle/pqc/crypto/lms/LMSPrivateKeyParameters;->tDigest:Lorg/bouncycastle/crypto/Digest;
-
-    invoke-static {v5, v6}, Lcom/google/common/collect/Platform;->byteArray([BLorg/bouncycastle/crypto/Digest;)V
-
-    iget-object v5, v0, Lorg/bouncycastle/pqc/crypto/lms/LMSPrivateKeyParameters;->tDigest:Lorg/bouncycastle/crypto/Digest;
-
-    invoke-static {v1, v5}, Lcom/google/common/collect/Platform;->u32str(ILorg/bouncycastle/crypto/Digest;)V
-
-    const/16 v5, -0x7d7e
-
-    iget-object v6, v0, Lorg/bouncycastle/pqc/crypto/lms/LMSPrivateKeyParameters;->tDigest:Lorg/bouncycastle/crypto/Digest;
-
-    const v7, 0xffff82
-
-    int-to-byte v7, v7
-
-    invoke-interface {v6, v7}, Lorg/bouncycastle/crypto/Digest;->update(B)V
-
-    int-to-byte v5, v5
-
-    invoke-interface {v6, v5}, Lorg/bouncycastle/crypto/Digest;->update(B)V
-
-    iget-object v5, v0, Lorg/bouncycastle/pqc/crypto/lms/LMSPrivateKeyParameters;->otsParameters:Lorg/bouncycastle/pqc/crypto/lms/LMOtsParameters;
-
-    invoke-virtual/range {p0 .. p0}, Lorg/bouncycastle/pqc/crypto/lms/LMSPrivateKeyParameters;->getI()[B
-
-    move-result-object v6
-
-    sub-int/2addr v1, v2
-
-    iget-object v2, v0, Lorg/bouncycastle/pqc/crypto/lms/LMSPrivateKeyParameters;->masterSecret:[B
-
-    invoke-static {v2}, Lorg/bouncycastle/util/Arrays;->clone([B)[B
-
-    move-result-object v2
-
-    iget-object v7, v5, Lorg/bouncycastle/pqc/crypto/lms/LMOtsParameters;->digestOID:Lorg/bouncycastle/asn1/ASN1ObjectIdentifier;
-
-    invoke-static {v7}, Lorg/bouncycastle/pqc/crypto/lms/DigestUtil;->getDigest(Lorg/bouncycastle/asn1/ASN1ObjectIdentifier;)Lorg/bouncycastle/crypto/Digest;
-
-    move-result-object v7
-
-    invoke-static {}, Lorg/bouncycastle/pqc/crypto/lms/Composer;->compose()Lorg/bouncycastle/pqc/crypto/lms/Composer;
-
-    move-result-object v8
-
-    invoke-virtual {v8, v6}, Lorg/bouncycastle/pqc/crypto/lms/Composer;->bytes([B)Lorg/bouncycastle/pqc/crypto/lms/Composer;
-
-    invoke-virtual {v8, v1}, Lorg/bouncycastle/pqc/crypto/lms/Composer;->u32str(I)Lorg/bouncycastle/pqc/crypto/lms/Composer;
-
-    const v9, 0x8080
-
-    iget-object v10, v8, Lorg/bouncycastle/pqc/crypto/lms/Composer;->bos:Ljava/lang/Object;
-
-    check-cast v10, Ljava/io/ByteArrayOutputStream;
-
-    const/16 v11, 0x80
-
-    int-to-byte v11, v11
-
-    invoke-virtual {v10, v11}, Ljava/io/ByteArrayOutputStream;->write(I)V
-
-    iget-object v10, v8, Lorg/bouncycastle/pqc/crypto/lms/Composer;->bos:Ljava/lang/Object;
-
-    check-cast v10, Ljava/io/ByteArrayOutputStream;
-
-    int-to-byte v9, v9
-
-    invoke-virtual {v10, v9}, Ljava/io/ByteArrayOutputStream;->write(I)V
-
-    :goto_0
-    iget-object v9, v8, Lorg/bouncycastle/pqc/crypto/lms/Composer;->bos:Ljava/lang/Object;
-
-    check-cast v9, Ljava/io/ByteArrayOutputStream;
-
-    invoke-virtual {v9}, Ljava/io/ByteArrayOutputStream;->size()I
-
-    move-result v9
-
-    const/16 v10, 0x16
-
-    if-ge v9, v10, :cond_0
-
-    iget-object v9, v8, Lorg/bouncycastle/pqc/crypto/lms/Composer;->bos:Ljava/lang/Object;
-
-    check-cast v9, Ljava/io/ByteArrayOutputStream;
-
-    invoke-virtual {v9, v4}, Ljava/io/ByteArrayOutputStream;->write(I)V
-
-    goto :goto_0
-
-    :cond_0
-    invoke-virtual {v8}, Lorg/bouncycastle/pqc/crypto/lms/Composer;->build()[B
-
-    move-result-object v8
-
-    array-length v9, v8
-
-    invoke-interface {v7, v8, v4, v9}, Lorg/bouncycastle/crypto/Digest;->update([BII)V
-
-    iget-object v8, v5, Lorg/bouncycastle/pqc/crypto/lms/LMOtsParameters;->digestOID:Lorg/bouncycastle/asn1/ASN1ObjectIdentifier;
-
-    invoke-static {v8}, Lorg/bouncycastle/pqc/crypto/lms/DigestUtil;->getDigest(Lorg/bouncycastle/asn1/ASN1ObjectIdentifier;)Lorg/bouncycastle/crypto/Digest;
-
-    move-result-object v8
-
-    invoke-static {}, Lorg/bouncycastle/pqc/crypto/lms/Composer;->compose()Lorg/bouncycastle/pqc/crypto/lms/Composer;
-
-    move-result-object v9
-
-    invoke-virtual {v9, v6}, Lorg/bouncycastle/pqc/crypto/lms/Composer;->bytes([B)Lorg/bouncycastle/pqc/crypto/lms/Composer;
-
-    invoke-virtual {v9, v1}, Lorg/bouncycastle/pqc/crypto/lms/Composer;->u32str(I)Lorg/bouncycastle/pqc/crypto/lms/Composer;
-
-    invoke-interface {v8}, Lorg/bouncycastle/crypto/Digest;->getDigestSize()I
-
-    move-result v11
-
-    const/16 v12, 0x17
-
-    add-int/2addr v11, v12
-
-    :goto_1
-    iget-object v13, v9, Lorg/bouncycastle/pqc/crypto/lms/Composer;->bos:Ljava/lang/Object;
-
-    check-cast v13, Ljava/io/ByteArrayOutputStream;
-
-    invoke-virtual {v13}, Ljava/io/ByteArrayOutputStream;->size()I
-
-    move-result v13
-
-    if-ge v13, v11, :cond_1
-
-    iget-object v13, v9, Lorg/bouncycastle/pqc/crypto/lms/Composer;->bos:Ljava/lang/Object;
-
-    check-cast v13, Ljava/io/ByteArrayOutputStream;
-
-    invoke-virtual {v13, v4}, Ljava/io/ByteArrayOutputStream;->write(I)V
-
-    goto :goto_1
-
-    :cond_1
-    invoke-virtual {v9}, Lorg/bouncycastle/pqc/crypto/lms/Composer;->build()[B
-
-    move-result-object v9
-
-    iget-object v11, v5, Lorg/bouncycastle/pqc/crypto/lms/LMOtsParameters;->digestOID:Lorg/bouncycastle/asn1/ASN1ObjectIdentifier;
-
-    invoke-static {v11}, Lorg/bouncycastle/pqc/crypto/lms/DigestUtil;->getDigest(Lorg/bouncycastle/asn1/ASN1ObjectIdentifier;)Lorg/bouncycastle/crypto/Digest;
-
-    move-result-object v11
-
-    iget v13, v5, Lorg/bouncycastle/pqc/crypto/lms/LMOtsParameters;->p:I
-
-    iget v14, v5, Lorg/bouncycastle/pqc/crypto/lms/LMOtsParameters;->n:I
-
-    iget v5, v5, Lorg/bouncycastle/pqc/crypto/lms/LMOtsParameters;->w:I
-
-    shl-int v5, v3, v5
-
-    sub-int/2addr v5, v3
-
-    move v3, v4
-
-    move v15, v3
-
-    :goto_2
-    if-ge v15, v13, :cond_6
-
-    add-int/lit8 v10, v13, -0x1
-
-    if-ge v15, v10, :cond_2
-
-    const/4 v10, 0x1
-
-    goto :goto_3
-
-    :cond_2
-    move v10, v4
-
-    :goto_3
-    array-length v12, v9
-
-    invoke-interface {v11}, Lorg/bouncycastle/crypto/Digest;->getDigestSize()I
-
-    move-result v4
-
-    if-lt v12, v4, :cond_5
-
-    array-length v4, v6
-
-    const/4 v12, 0x0
-
-    invoke-interface {v11, v6, v12, v4}, Lorg/bouncycastle/crypto/Digest;->update([BII)V
-
-    ushr-int/lit8 v4, v1, 0x18
-
-    int-to-byte v4, v4
-
-    invoke-interface {v11, v4}, Lorg/bouncycastle/crypto/Digest;->update(B)V
-
-    ushr-int/lit8 v4, v1, 0x10
-
-    int-to-byte v4, v4
-
-    invoke-interface {v11, v4}, Lorg/bouncycastle/crypto/Digest;->update(B)V
-
-    ushr-int/lit8 v4, v1, 0x8
-
-    int-to-byte v4, v4
-
-    invoke-interface {v11, v4}, Lorg/bouncycastle/crypto/Digest;->update(B)V
-
-    int-to-byte v4, v1
-
-    invoke-interface {v11, v4}, Lorg/bouncycastle/crypto/Digest;->update(B)V
-
-    ushr-int/lit8 v4, v3, 0x8
-
-    int-to-byte v4, v4
-
-    invoke-interface {v11, v4}, Lorg/bouncycastle/crypto/Digest;->update(B)V
-
-    int-to-byte v4, v3
-
-    invoke-interface {v11, v4}, Lorg/bouncycastle/crypto/Digest;->update(B)V
-
-    const/4 v4, -0x1
-
-    invoke-interface {v11, v4}, Lorg/bouncycastle/crypto/Digest;->update(B)V
-
-    array-length v4, v2
-
-    const/4 v12, 0x0
-
-    invoke-interface {v11, v2, v12, v4}, Lorg/bouncycastle/crypto/Digest;->update([BII)V
-
-    const/16 v4, 0x17
-
-    invoke-interface {v11, v9, v4}, Lorg/bouncycastle/crypto/Digest;->doFinal([BI)I
-
-    if-eqz v10, :cond_3
-
-    add-int/lit8 v3, v3, 0x1
-
-    :cond_3
-    int-to-short v4, v15
-
-    const/16 v10, 0x14
-
-    ushr-int/lit8 v12, v4, 0x8
-
-    int-to-byte v12, v12
-
-    aput-byte v12, v9, v10
-
-    const/16 v10, 0x15
-
-    int-to-byte v4, v4
-
-    aput-byte v4, v9, v10
-
-    const/4 v4, 0x0
-
-    :goto_4
-    if-ge v4, v5, :cond_4
-
-    int-to-byte v10, v4
-
-    const/16 v12, 0x16
-
-    aput-byte v10, v9, v12
-
-    array-length v10, v9
-
-    const/4 v12, 0x0
-
-    invoke-interface {v8, v9, v12, v10}, Lorg/bouncycastle/crypto/Digest;->update([BII)V
-
-    const/16 v10, 0x17
-
-    invoke-interface {v8, v9, v10}, Lorg/bouncycastle/crypto/Digest;->doFinal([BI)I
-
-    add-int/lit8 v4, v4, 0x1
-
-    goto :goto_4
-
-    :cond_4
-    const/16 v10, 0x17
-
-    invoke-interface {v7, v9, v10, v14}, Lorg/bouncycastle/crypto/Digest;->update([BII)V
-
-    add-int/lit8 v15, v15, 0x1
-
-    move v12, v10
-
-    const/4 v4, 0x0
-
-    const/16 v10, 0x16
-
-    goto :goto_2
-
-    :cond_5
-    new-instance v1, Ljava/lang/IllegalArgumentException;
-
-    const-string v2, "target length is less than digest size."
-
-    invoke-direct {v1, v2}, Ljava/lang/IllegalArgumentException;-><init>(Ljava/lang/String;)V
-
-    throw v1
-
-    :cond_6
-    invoke-interface {v7}, Lorg/bouncycastle/crypto/Digest;->getDigestSize()I
-
-    move-result v1
-
-    new-array v2, v1, [B
-
-    const/4 v3, 0x0
-
-    invoke-interface {v7, v2, v3}, Lorg/bouncycastle/crypto/Digest;->doFinal([BI)I
-
-    iget-object v4, v0, Lorg/bouncycastle/pqc/crypto/lms/LMSPrivateKeyParameters;->tDigest:Lorg/bouncycastle/crypto/Digest;
-
-    invoke-interface {v4, v2, v3, v1}, Lorg/bouncycastle/crypto/Digest;->update([BII)V
-
-    iget-object v1, v0, Lorg/bouncycastle/pqc/crypto/lms/LMSPrivateKeyParameters;->tDigest:Lorg/bouncycastle/crypto/Digest;
-
-    invoke-interface {v1}, Lorg/bouncycastle/crypto/Digest;->getDigestSize()I
-
-    move-result v1
-
-    new-array v1, v1, [B
-
-    iget-object v2, v0, Lorg/bouncycastle/pqc/crypto/lms/LMSPrivateKeyParameters;->tDigest:Lorg/bouncycastle/crypto/Digest;
-
-    invoke-interface {v2, v1, v3}, Lorg/bouncycastle/crypto/Digest;->doFinal([BI)I
-
-    return-object v1
-
-    :cond_7
-    mul-int/lit8 v2, v1, 0x2
-
-    invoke-virtual {v0, v2}, Lorg/bouncycastle/pqc/crypto/lms/LMSPrivateKeyParameters;->findT(I)[B
-
-    move-result-object v3
-
-    const/4 v4, 0x1
-
-    add-int/2addr v2, v4
-
-    invoke-virtual {v0, v2}, Lorg/bouncycastle/pqc/crypto/lms/LMSPrivateKeyParameters;->findT(I)[B
-
-    move-result-object v2
-
-    invoke-virtual/range {p0 .. p0}, Lorg/bouncycastle/pqc/crypto/lms/LMSPrivateKeyParameters;->getI()[B
-
-    move-result-object v4
-
-    iget-object v5, v0, Lorg/bouncycastle/pqc/crypto/lms/LMSPrivateKeyParameters;->tDigest:Lorg/bouncycastle/crypto/Digest;
-
-    invoke-static {v4, v5}, Lcom/google/common/collect/Platform;->byteArray([BLorg/bouncycastle/crypto/Digest;)V
-
-    iget-object v4, v0, Lorg/bouncycastle/pqc/crypto/lms/LMSPrivateKeyParameters;->tDigest:Lorg/bouncycastle/crypto/Digest;
-
-    invoke-static {v1, v4}, Lcom/google/common/collect/Platform;->u32str(ILorg/bouncycastle/crypto/Digest;)V
-
-    const/16 v1, -0x7c7d
-
-    iget-object v4, v0, Lorg/bouncycastle/pqc/crypto/lms/LMSPrivateKeyParameters;->tDigest:Lorg/bouncycastle/crypto/Digest;
-
-    const v5, 0xffff83
-
-    int-to-byte v5, v5
-
-    invoke-interface {v4, v5}, Lorg/bouncycastle/crypto/Digest;->update(B)V
-
-    int-to-byte v1, v1
-
-    invoke-interface {v4, v1}, Lorg/bouncycastle/crypto/Digest;->update(B)V
-
-    iget-object v1, v0, Lorg/bouncycastle/pqc/crypto/lms/LMSPrivateKeyParameters;->tDigest:Lorg/bouncycastle/crypto/Digest;
-
-    invoke-static {v3, v1}, Lcom/google/common/collect/Platform;->byteArray([BLorg/bouncycastle/crypto/Digest;)V
-
-    iget-object v1, v0, Lorg/bouncycastle/pqc/crypto/lms/LMSPrivateKeyParameters;->tDigest:Lorg/bouncycastle/crypto/Digest;
-
-    invoke-static {v2, v1}, Lcom/google/common/collect/Platform;->byteArray([BLorg/bouncycastle/crypto/Digest;)V
-
-    iget-object v1, v0, Lorg/bouncycastle/pqc/crypto/lms/LMSPrivateKeyParameters;->tDigest:Lorg/bouncycastle/crypto/Digest;
-
-    invoke-interface {v1}, Lorg/bouncycastle/crypto/Digest;->getDigestSize()I
-
-    move-result v1
-
-    new-array v1, v1, [B
-
-    iget-object v2, v0, Lorg/bouncycastle/pqc/crypto/lms/LMSPrivateKeyParameters;->tDigest:Lorg/bouncycastle/crypto/Digest;
-
-    const/4 v3, 0x0
-
-    invoke-interface {v2, v1, v3}, Lorg/bouncycastle/crypto/Digest;->doFinal([BI)I
-
-    return-object v1
+    return-object p0
 .end method
 
+
+# virtual methods
 .method public equals(Ljava/lang/Object;)Z
     .locals 4
 
@@ -790,7 +621,9 @@
 
     if-eqz p1, :cond_b
 
-    const-class v2, Lorg/bouncycastle/pqc/crypto/lms/LMSPrivateKeyParameters;
+    invoke-virtual {p0}, Ljava/lang/Object;->getClass()Ljava/lang/Class;
+
+    move-result-object v2
 
     invoke-virtual {p1}, Ljava/lang/Object;->getClass()Ljava/lang/Class;
 
@@ -915,6 +748,55 @@
     return v1
 .end method
 
+.method public extractKeyShard(I)Lorg/bouncycastle/pqc/crypto/lms/LMSPrivateKeyParameters;
+    .locals 3
+
+    monitor-enter p0
+
+    :try_start_0
+    iget v0, p0, Lorg/bouncycastle/pqc/crypto/lms/LMSPrivateKeyParameters;->q:I
+
+    add-int v1, v0, p1
+
+    iget v2, p0, Lorg/bouncycastle/pqc/crypto/lms/LMSPrivateKeyParameters;->maxQ:I
+
+    if-ge v1, v2, :cond_0
+
+    new-instance v1, Lorg/bouncycastle/pqc/crypto/lms/LMSPrivateKeyParameters;
+
+    add-int v2, v0, p1
+
+    invoke-direct {v1, p0, v0, v2}, Lorg/bouncycastle/pqc/crypto/lms/LMSPrivateKeyParameters;-><init>(Lorg/bouncycastle/pqc/crypto/lms/LMSPrivateKeyParameters;II)V
+
+    iget v0, p0, Lorg/bouncycastle/pqc/crypto/lms/LMSPrivateKeyParameters;->q:I
+
+    add-int/2addr v0, p1
+
+    iput v0, p0, Lorg/bouncycastle/pqc/crypto/lms/LMSPrivateKeyParameters;->q:I
+
+    monitor-exit p0
+
+    return-object v1
+
+    :cond_0
+    new-instance p1, Ljava/lang/IllegalArgumentException;
+
+    const-string v0, "usageCount exceeds usages remaining"
+
+    invoke-direct {p1, v0}, Ljava/lang/IllegalArgumentException;-><init>(Ljava/lang/String;)V
+
+    throw p1
+
+    :catchall_0
+    move-exception p1
+
+    monitor-exit p0
+    :try_end_0
+    .catchall {:try_start_0 .. :try_end_0} :catchall_0
+
+    throw p1
+.end method
+
 .method public findT(I)[B
     .locals 2
 
@@ -940,65 +822,159 @@
     move-object p1, v0
 
     :goto_0
-    invoke-virtual {p0, p1}, Lorg/bouncycastle/pqc/crypto/lms/LMSPrivateKeyParameters;->findT(Lorg/bouncycastle/pqc/crypto/lms/LMSPrivateKeyParameters$CacheKey;)[B
+    invoke-direct {p0, p1}, Lorg/bouncycastle/pqc/crypto/lms/LMSPrivateKeyParameters;->findT(Lorg/bouncycastle/pqc/crypto/lms/LMSPrivateKeyParameters$CacheKey;)[B
 
     move-result-object p1
 
     return-object p1
 
     :cond_1
-    invoke-virtual {p0, p1}, Lorg/bouncycastle/pqc/crypto/lms/LMSPrivateKeyParameters;->calcT(I)[B
+    invoke-direct {p0, p1}, Lorg/bouncycastle/pqc/crypto/lms/LMSPrivateKeyParameters;->calcT(I)[B
 
     move-result-object p1
 
     return-object p1
 .end method
 
-.method public final findT(Lorg/bouncycastle/pqc/crypto/lms/LMSPrivateKeyParameters$CacheKey;)[B
-    .locals 3
+.method public generateLMSContext()Lorg/bouncycastle/pqc/crypto/lms/LMSContext;
+    .locals 7
 
-    iget-object v0, p0, Lorg/bouncycastle/pqc/crypto/lms/LMSPrivateKeyParameters;->tCache:Ljava/util/Map;
+    invoke-virtual {p0}, Lorg/bouncycastle/pqc/crypto/lms/LMSPrivateKeyParameters;->getSigParameters()Lorg/bouncycastle/pqc/crypto/lms/LMSigParameters;
 
-    monitor-enter v0
+    move-result-object v0
+
+    invoke-virtual {v0}, Lorg/bouncycastle/pqc/crypto/lms/LMSigParameters;->getH()I
+
+    move-result v0
+
+    invoke-virtual {p0}, Lorg/bouncycastle/pqc/crypto/lms/LMSPrivateKeyParameters;->getIndex()I
+
+    move-result v1
+
+    invoke-virtual {p0}, Lorg/bouncycastle/pqc/crypto/lms/LMSPrivateKeyParameters;->getNextOtsPrivateKey()Lorg/bouncycastle/pqc/crypto/lms/LMOtsPrivateKey;
+
+    move-result-object v2
+
+    const/4 v3, 0x1
+
+    shl-int v4, v3, v0
+
+    add-int/2addr v4, v1
+
+    new-array v1, v0, [[B
+
+    const/4 v5, 0x0
+
+    :goto_0
+    if-ge v5, v0, :cond_0
+
+    shl-int v6, v3, v5
+
+    div-int v6, v4, v6
+
+    xor-int/2addr v6, v3
+
+    invoke-virtual {p0, v6}, Lorg/bouncycastle/pqc/crypto/lms/LMSPrivateKeyParameters;->findT(I)[B
+
+    move-result-object v6
+
+    aput-object v6, v1, v5
+
+    add-int/lit8 v5, v5, 0x1
+
+    goto :goto_0
+
+    :cond_0
+    invoke-virtual {p0}, Lorg/bouncycastle/pqc/crypto/lms/LMSPrivateKeyParameters;->getSigParameters()Lorg/bouncycastle/pqc/crypto/lms/LMSigParameters;
+
+    move-result-object v0
+
+    invoke-virtual {v2, v0, v1}, Lorg/bouncycastle/pqc/crypto/lms/LMOtsPrivateKey;->getSignatureContext(Lorg/bouncycastle/pqc/crypto/lms/LMSigParameters;[[B)Lorg/bouncycastle/pqc/crypto/lms/LMSContext;
+
+    move-result-object v0
+
+    return-object v0
+.end method
+
+.method public generateSignature(Lorg/bouncycastle/pqc/crypto/lms/LMSContext;)[B
+    .locals 2
 
     :try_start_0
-    iget-object v1, p0, Lorg/bouncycastle/pqc/crypto/lms/LMSPrivateKeyParameters;->tCache:Ljava/util/Map;
+    invoke-static {p1}, Lorg/bouncycastle/pqc/crypto/lms/LMS;->generateSign(Lorg/bouncycastle/pqc/crypto/lms/LMSContext;)Lorg/bouncycastle/pqc/crypto/lms/LMSSignature;
 
-    invoke-interface {v1, p1}, Ljava/util/Map;->get(Ljava/lang/Object;)Ljava/lang/Object;
+    move-result-object p1
+
+    invoke-virtual {p1}, Lorg/bouncycastle/pqc/crypto/lms/LMSSignature;->getEncoded()[B
+
+    move-result-object p1
+    :try_end_0
+    .catch Ljava/io/IOException; {:try_start_0 .. :try_end_0} :catch_0
+
+    return-object p1
+
+    :catch_0
+    move-exception p1
+
+    new-instance v0, Ljava/lang/IllegalStateException;
+
+    const-string v1, "unable to encode signature: "
+
+    invoke-static {v1}, Landroid/support/v4/media/RatingCompat$$ExternalSyntheticOutline0;->m(Ljava/lang/String;)Ljava/lang/StringBuilder;
 
     move-result-object v1
 
-    check-cast v1, [B
+    invoke-static {p1, v1}, Lorg/bouncycastle/asn1/ASN1ApplicationSpecific$$ExternalSyntheticOutline0;->m(Ljava/io/IOException;Ljava/lang/StringBuilder;)Ljava/lang/String;
 
-    if-eqz v1, :cond_0
+    move-result-object v1
 
-    monitor-exit v0
+    invoke-direct {v0, v1, p1}, Ljava/lang/IllegalStateException;-><init>(Ljava/lang/String;Ljava/lang/Throwable;)V
+
+    throw v0
+.end method
+
+.method public getCurrentOTSKey()Lorg/bouncycastle/pqc/crypto/lms/LMOtsPrivateKey;
+    .locals 5
+
+    monitor-enter p0
+
+    :try_start_0
+    iget v0, p0, Lorg/bouncycastle/pqc/crypto/lms/LMSPrivateKeyParameters;->q:I
+
+    iget v1, p0, Lorg/bouncycastle/pqc/crypto/lms/LMSPrivateKeyParameters;->maxQ:I
+
+    if-ge v0, v1, :cond_0
+
+    new-instance v1, Lorg/bouncycastle/pqc/crypto/lms/LMOtsPrivateKey;
+
+    iget-object v2, p0, Lorg/bouncycastle/pqc/crypto/lms/LMSPrivateKeyParameters;->otsParameters:Lorg/bouncycastle/pqc/crypto/lms/LMOtsParameters;
+
+    iget-object v3, p0, Lorg/bouncycastle/pqc/crypto/lms/LMSPrivateKeyParameters;->I:[B
+
+    iget-object v4, p0, Lorg/bouncycastle/pqc/crypto/lms/LMSPrivateKeyParameters;->masterSecret:[B
+
+    invoke-direct {v1, v2, v3, v0, v4}, Lorg/bouncycastle/pqc/crypto/lms/LMOtsPrivateKey;-><init>(Lorg/bouncycastle/pqc/crypto/lms/LMOtsParameters;[BI[B)V
+
+    monitor-exit p0
 
     return-object v1
 
     :cond_0
-    iget v1, p1, Lorg/bouncycastle/pqc/crypto/lms/LMSPrivateKeyParameters$CacheKey;->index:I
+    new-instance v0, Lorg/bouncycastle/pqc/crypto/ExhaustedPrivateKeyException;
 
-    invoke-virtual {p0, v1}, Lorg/bouncycastle/pqc/crypto/lms/LMSPrivateKeyParameters;->calcT(I)[B
+    const-string v1, "ots private keys expired"
 
-    move-result-object v1
+    invoke-direct {v0, v1}, Lorg/bouncycastle/pqc/crypto/ExhaustedPrivateKeyException;-><init>(Ljava/lang/String;)V
 
-    iget-object v2, p0, Lorg/bouncycastle/pqc/crypto/lms/LMSPrivateKeyParameters;->tCache:Ljava/util/Map;
-
-    invoke-interface {v2, p1, v1}, Ljava/util/Map;->put(Ljava/lang/Object;Ljava/lang/Object;)Ljava/lang/Object;
-
-    monitor-exit v0
-
-    return-object v1
+    throw v0
 
     :catchall_0
-    move-exception p1
+    move-exception v0
 
-    monitor-exit v0
+    monitor-exit p0
     :try_end_0
     .catchall {:try_start_0 .. :try_end_0} :catchall_0
 
-    throw p1
+    throw v0
 .end method
 
 .method public getEncoded()[B
@@ -1017,29 +993,45 @@
 
     invoke-virtual {v0, v1}, Lorg/bouncycastle/pqc/crypto/lms/Composer;->u32str(I)Lorg/bouncycastle/pqc/crypto/lms/Composer;
 
+    move-result-object v0
+
     iget-object v1, p0, Lorg/bouncycastle/pqc/crypto/lms/LMSPrivateKeyParameters;->parameters:Lorg/bouncycastle/pqc/crypto/lms/LMSigParameters;
 
-    iget v1, v1, Lorg/bouncycastle/pqc/crypto/lms/LMSigParameters;->type:I
+    invoke-virtual {v1}, Lorg/bouncycastle/pqc/crypto/lms/LMSigParameters;->getType()I
+
+    move-result v1
 
     invoke-virtual {v0, v1}, Lorg/bouncycastle/pqc/crypto/lms/Composer;->u32str(I)Lorg/bouncycastle/pqc/crypto/lms/Composer;
+
+    move-result-object v0
 
     iget-object v1, p0, Lorg/bouncycastle/pqc/crypto/lms/LMSPrivateKeyParameters;->otsParameters:Lorg/bouncycastle/pqc/crypto/lms/LMOtsParameters;
 
-    iget v1, v1, Lorg/bouncycastle/pqc/crypto/lms/LMOtsParameters;->type:I
+    invoke-virtual {v1}, Lorg/bouncycastle/pqc/crypto/lms/LMOtsParameters;->getType()I
+
+    move-result v1
 
     invoke-virtual {v0, v1}, Lorg/bouncycastle/pqc/crypto/lms/Composer;->u32str(I)Lorg/bouncycastle/pqc/crypto/lms/Composer;
+
+    move-result-object v0
 
     iget-object v1, p0, Lorg/bouncycastle/pqc/crypto/lms/LMSPrivateKeyParameters;->I:[B
 
     invoke-virtual {v0, v1}, Lorg/bouncycastle/pqc/crypto/lms/Composer;->bytes([B)Lorg/bouncycastle/pqc/crypto/lms/Composer;
 
+    move-result-object v0
+
     iget v1, p0, Lorg/bouncycastle/pqc/crypto/lms/LMSPrivateKeyParameters;->q:I
 
     invoke-virtual {v0, v1}, Lorg/bouncycastle/pqc/crypto/lms/Composer;->u32str(I)Lorg/bouncycastle/pqc/crypto/lms/Composer;
 
+    move-result-object v0
+
     iget v1, p0, Lorg/bouncycastle/pqc/crypto/lms/LMSPrivateKeyParameters;->maxQ:I
 
     invoke-virtual {v0, v1}, Lorg/bouncycastle/pqc/crypto/lms/Composer;->u32str(I)Lorg/bouncycastle/pqc/crypto/lms/Composer;
+
+    move-result-object v0
 
     iget-object v1, p0, Lorg/bouncycastle/pqc/crypto/lms/LMSPrivateKeyParameters;->masterSecret:[B
 
@@ -1047,9 +1039,13 @@
 
     invoke-virtual {v0, v1}, Lorg/bouncycastle/pqc/crypto/lms/Composer;->u32str(I)Lorg/bouncycastle/pqc/crypto/lms/Composer;
 
+    move-result-object v0
+
     iget-object v1, p0, Lorg/bouncycastle/pqc/crypto/lms/LMSPrivateKeyParameters;->masterSecret:[B
 
     invoke-virtual {v0, v1}, Lorg/bouncycastle/pqc/crypto/lms/Composer;->bytes([B)Lorg/bouncycastle/pqc/crypto/lms/Composer;
+
+    move-result-object v0
 
     invoke-virtual {v0}, Lorg/bouncycastle/pqc/crypto/lms/Composer;->build()[B
 
@@ -1066,6 +1062,95 @@
     invoke-static {v0}, Lorg/bouncycastle/util/Arrays;->clone([B)[B
 
     move-result-object v0
+
+    return-object v0
+.end method
+
+.method public declared-synchronized getIndex()I
+    .locals 1
+
+    monitor-enter p0
+
+    :try_start_0
+    iget v0, p0, Lorg/bouncycastle/pqc/crypto/lms/LMSPrivateKeyParameters;->q:I
+    :try_end_0
+    .catchall {:try_start_0 .. :try_end_0} :catchall_0
+
+    monitor-exit p0
+
+    return v0
+
+    :catchall_0
+    move-exception v0
+
+    monitor-exit p0
+
+    throw v0
+.end method
+
+.method public getMasterSecret()[B
+    .locals 1
+
+    iget-object v0, p0, Lorg/bouncycastle/pqc/crypto/lms/LMSPrivateKeyParameters;->masterSecret:[B
+
+    invoke-static {v0}, Lorg/bouncycastle/util/Arrays;->clone([B)[B
+
+    move-result-object v0
+
+    return-object v0
+.end method
+
+.method public getNextOtsPrivateKey()Lorg/bouncycastle/pqc/crypto/lms/LMOtsPrivateKey;
+    .locals 5
+
+    monitor-enter p0
+
+    :try_start_0
+    iget v0, p0, Lorg/bouncycastle/pqc/crypto/lms/LMSPrivateKeyParameters;->q:I
+
+    iget v1, p0, Lorg/bouncycastle/pqc/crypto/lms/LMSPrivateKeyParameters;->maxQ:I
+
+    if-ge v0, v1, :cond_0
+
+    new-instance v1, Lorg/bouncycastle/pqc/crypto/lms/LMOtsPrivateKey;
+
+    iget-object v2, p0, Lorg/bouncycastle/pqc/crypto/lms/LMSPrivateKeyParameters;->otsParameters:Lorg/bouncycastle/pqc/crypto/lms/LMOtsParameters;
+
+    iget-object v3, p0, Lorg/bouncycastle/pqc/crypto/lms/LMSPrivateKeyParameters;->I:[B
+
+    iget-object v4, p0, Lorg/bouncycastle/pqc/crypto/lms/LMSPrivateKeyParameters;->masterSecret:[B
+
+    invoke-direct {v1, v2, v3, v0, v4}, Lorg/bouncycastle/pqc/crypto/lms/LMOtsPrivateKey;-><init>(Lorg/bouncycastle/pqc/crypto/lms/LMOtsParameters;[BI[B)V
+
+    invoke-virtual {p0}, Lorg/bouncycastle/pqc/crypto/lms/LMSPrivateKeyParameters;->incIndex()V
+
+    monitor-exit p0
+
+    return-object v1
+
+    :cond_0
+    new-instance v0, Lorg/bouncycastle/pqc/crypto/ExhaustedPrivateKeyException;
+
+    const-string v1, "ots private key exhausted"
+
+    invoke-direct {v0, v1}, Lorg/bouncycastle/pqc/crypto/ExhaustedPrivateKeyException;-><init>(Ljava/lang/String;)V
+
+    throw v0
+
+    :catchall_0
+    move-exception v0
+
+    monitor-exit p0
+    :try_end_0
+    .catchall {:try_start_0 .. :try_end_0} :catchall_0
+
+    throw v0
+.end method
+
+.method public getOtsParameters()Lorg/bouncycastle/pqc/crypto/lms/LMOtsParameters;
+    .locals 1
+
+    iget-object v0, p0, Lorg/bouncycastle/pqc/crypto/lms/LMSPrivateKeyParameters;->otsParameters:Lorg/bouncycastle/pqc/crypto/lms/LMOtsParameters;
 
     return-object v0
 .end method
@@ -1088,7 +1173,7 @@
 
     sget-object v3, Lorg/bouncycastle/pqc/crypto/lms/LMSPrivateKeyParameters;->T1:Lorg/bouncycastle/pqc/crypto/lms/LMSPrivateKeyParameters$CacheKey;
 
-    invoke-virtual {p0, v3}, Lorg/bouncycastle/pqc/crypto/lms/LMSPrivateKeyParameters;->findT(Lorg/bouncycastle/pqc/crypto/lms/LMSPrivateKeyParameters$CacheKey;)[B
+    invoke-direct {p0, v3}, Lorg/bouncycastle/pqc/crypto/lms/LMSPrivateKeyParameters;->findT(Lorg/bouncycastle/pqc/crypto/lms/LMSPrivateKeyParameters$CacheKey;)[B
 
     move-result-object v3
 
@@ -1113,6 +1198,28 @@
     .catchall {:try_start_0 .. :try_end_0} :catchall_0
 
     throw v0
+.end method
+
+.method public getSigParameters()Lorg/bouncycastle/pqc/crypto/lms/LMSigParameters;
+    .locals 1
+
+    iget-object v0, p0, Lorg/bouncycastle/pqc/crypto/lms/LMSPrivateKeyParameters;->parameters:Lorg/bouncycastle/pqc/crypto/lms/LMSigParameters;
+
+    return-object v0
+.end method
+
+.method public getUsagesRemaining()J
+    .locals 2
+
+    iget v0, p0, Lorg/bouncycastle/pqc/crypto/lms/LMSPrivateKeyParameters;->maxQ:I
+
+    iget v1, p0, Lorg/bouncycastle/pqc/crypto/lms/LMSPrivateKeyParameters;->q:I
+
+    sub-int/2addr v0, v1
+
+    int-to-long v0, v0
+
+    return-wide v0
 .end method
 
 .method public hashCode()I
@@ -1198,4 +1305,30 @@
     add-int/2addr v0, v2
 
     return v0
+.end method
+
+.method public declared-synchronized incIndex()V
+    .locals 1
+
+    monitor-enter p0
+
+    :try_start_0
+    iget v0, p0, Lorg/bouncycastle/pqc/crypto/lms/LMSPrivateKeyParameters;->q:I
+
+    add-int/lit8 v0, v0, 0x1
+
+    iput v0, p0, Lorg/bouncycastle/pqc/crypto/lms/LMSPrivateKeyParameters;->q:I
+    :try_end_0
+    .catchall {:try_start_0 .. :try_end_0} :catchall_0
+
+    monitor-exit p0
+
+    return-void
+
+    :catchall_0
+    move-exception v0
+
+    monitor-exit p0
+
+    throw v0
 .end method

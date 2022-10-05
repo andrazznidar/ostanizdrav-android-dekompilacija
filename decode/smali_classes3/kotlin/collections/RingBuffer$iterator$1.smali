@@ -31,6 +31,13 @@
 .field public index:I
 
 .field public final synthetic this$0:Lkotlin/collections/RingBuffer;
+    .annotation system Ldalvik/annotation/Signature;
+        value = {
+            "Lkotlin/collections/RingBuffer<",
+            "TT;>;"
+        }
+    .end annotation
+.end field
 
 
 # direct methods
@@ -38,7 +45,9 @@
     .locals 1
     .annotation system Ldalvik/annotation/Signature;
         value = {
-            "()V"
+            "(",
+            "Lkotlin/collections/RingBuffer<",
+            "TT;>;)V"
         }
     .end annotation
 

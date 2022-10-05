@@ -39,7 +39,7 @@
 
 .field public final memoryCache:Lcoil/memory/RealMemoryCache;
 
-.field public final memoryCacheService:Lcoil/memory/DelegateService;
+.field public final memoryCacheService:Lcoil/memory/MemoryCacheService;
 
 .field public final options:Lcoil/util/ImageLoaderOptions;
 
@@ -112,7 +112,7 @@
 
     const/4 v6, 0x1
 
-    invoke-static {v2, v6}, Lkotlinx/coroutines/SupervisorKt;->SupervisorJob$default(Lkotlinx/coroutines/Job;I)Lkotlinx/coroutines/CompletableJob;
+    invoke-static {v2, v6}, Landroidx/core/os/BundleKt;->SupervisorJob$default(Lkotlinx/coroutines/Job;I)Lkotlinx/coroutines/CompletableJob;
 
     move-result-object v2
 
@@ -154,7 +154,7 @@
 
     iput-object v2, v0, Lcoil/RealImageLoader;->delegateService:Lcoil/memory/DelegateService;
 
-    new-instance v6, Lcoil/memory/DelegateService;
+    new-instance v6, Lcoil/memory/MemoryCacheService;
 
     iget-object v2, v4, Lcoil/memory/RealMemoryCache;->referenceCounter:Lcoil/bitmap/BitmapReferenceCounter;
 
@@ -162,9 +162,9 @@
 
     iget-object v11, v4, Lcoil/memory/RealMemoryCache;->weakMemoryCache:Lcoil/memory/WeakMemoryCache;
 
-    invoke-direct {v6, v2, v9, v11}, Lcoil/memory/DelegateService;-><init>(Lcoil/bitmap/BitmapReferenceCounter;Lcoil/memory/StrongMemoryCache;Lcoil/memory/WeakMemoryCache;)V
+    invoke-direct {v6, v2, v9, v11}, Lcoil/memory/MemoryCacheService;-><init>(Lcoil/bitmap/BitmapReferenceCounter;Lcoil/memory/StrongMemoryCache;Lcoil/memory/WeakMemoryCache;)V
 
-    iput-object v6, v0, Lcoil/RealImageLoader;->memoryCacheService:Lcoil/memory/DelegateService;
+    iput-object v6, v0, Lcoil/RealImageLoader;->memoryCacheService:Lcoil/memory/MemoryCacheService;
 
     new-instance v9, Lcoil/memory/RequestService;
 
@@ -408,7 +408,7 @@
 
     move-object/from16 v10, p9
 
-    invoke-direct/range {v1 .. v10}, Lcoil/intercept/EngineInterceptor;-><init>(Lcoil/ComponentRegistry;Lcoil/bitmap/BitmapPool;Lcoil/bitmap/BitmapReferenceCounter;Lcoil/memory/StrongMemoryCache;Lcoil/memory/DelegateService;Lcoil/memory/RequestService;Lcoil/util/SystemCallbacks;Lcoil/decode/DrawableDecoderService;Lcoil/util/Logger;)V
+    invoke-direct/range {v1 .. v10}, Lcoil/intercept/EngineInterceptor;-><init>(Lcoil/ComponentRegistry;Lcoil/bitmap/BitmapPool;Lcoil/bitmap/BitmapReferenceCounter;Lcoil/memory/StrongMemoryCache;Lcoil/memory/MemoryCacheService;Lcoil/memory/RequestService;Lcoil/util/SystemCallbacks;Lcoil/decode/DrawableDecoderService;Lcoil/util/Logger;)V
 
     invoke-static {v13, v14}, Lkotlin/collections/CollectionsKt___CollectionsKt;->plus(Ljava/util/Collection;Ljava/lang/Object;)Ljava/util/List;
 
@@ -836,11 +836,7 @@
 
     check-cast v0, Lcoil/EventListener$Factory$Companion$$ExternalSyntheticLambda0;
 
-    iget-object v0, v0, Lcoil/EventListener$Factory$Companion$$ExternalSyntheticLambda0;->f$0:Ljava/lang/Object;
-
-    move-object v6, v0
-
-    check-cast v6, Lcoil/EventListener;
+    iget-object v6, v0, Lcoil/EventListener$Factory$Companion$$ExternalSyntheticLambda0;->f$0:Lcoil/EventListener;
 
     const-string v0, "$listener"
 
@@ -871,9 +867,7 @@
 
     iget-object v15, v0, Lcoil/memory/DelegateService;->referenceCounter:Lcoil/bitmap/BitmapReferenceCounter;
 
-    iget-object v0, v0, Lcoil/memory/DelegateService;->logger:Ljava/lang/Object;
-
-    check-cast v0, Lcoil/util/Logger;
+    iget-object v0, v0, Lcoil/memory/DelegateService;->logger:Lcoil/util/Logger;
 
     invoke-direct {v14, v13, v15, v6, v0}, Lcoil/memory/InvalidatableTargetDelegate;-><init>(Lcoil/target/Target;Lcoil/bitmap/BitmapReferenceCounter;Lcoil/EventListener;Lcoil/util/Logger;)V
 
@@ -910,9 +904,7 @@
 
     iget-object v15, v0, Lcoil/memory/DelegateService;->referenceCounter:Lcoil/bitmap/BitmapReferenceCounter;
 
-    iget-object v0, v0, Lcoil/memory/DelegateService;->logger:Ljava/lang/Object;
-
-    check-cast v0, Lcoil/util/Logger;
+    iget-object v0, v0, Lcoil/memory/DelegateService;->logger:Lcoil/util/Logger;
 
     invoke-direct {v14, v13, v15, v6, v0}, Lcoil/memory/PoolableTargetDelegate;-><init>(Lcoil/target/PoolableViewTarget;Lcoil/bitmap/BitmapReferenceCounter;Lcoil/EventListener;Lcoil/util/Logger;)V
 
@@ -923,9 +915,7 @@
 
     iget-object v15, v0, Lcoil/memory/DelegateService;->referenceCounter:Lcoil/bitmap/BitmapReferenceCounter;
 
-    iget-object v0, v0, Lcoil/memory/DelegateService;->logger:Ljava/lang/Object;
-
-    check-cast v0, Lcoil/util/Logger;
+    iget-object v0, v0, Lcoil/memory/DelegateService;->logger:Lcoil/util/Logger;
 
     invoke-direct {v14, v13, v15, v6, v0}, Lcoil/memory/InvalidatableTargetDelegate;-><init>(Lcoil/target/Target;Lcoil/bitmap/BitmapReferenceCounter;Lcoil/EventListener;Lcoil/util/Logger;)V
 
@@ -935,11 +925,9 @@
     :goto_3
     iget-object v0, v1, Lcoil/RealImageLoader;->delegateService:Lcoil/memory/DelegateService;
 
-    iget-object v14, v4, Lkotlin/coroutines/jvm/internal/ContinuationImpl;->_context:Lkotlin/coroutines/CoroutineContext;
+    invoke-interface {v4}, Lkotlin/coroutines/Continuation;->getContext()Lkotlin/coroutines/CoroutineContext;
 
-    invoke-static {v14}, Lkotlin/jvm/internal/Intrinsics;->checkNotNull(Ljava/lang/Object;)V
-
-    sget v15, Lkotlinx/coroutines/Job;->$r8$clinit:I
+    move-result-object v14
 
     sget-object v15, Lkotlinx/coroutines/Job$Key;->$$INSTANCE:Lkotlinx/coroutines/Job$Key;
 
@@ -965,9 +953,7 @@
 
     new-instance v10, Lcoil/memory/ViewTargetRequestDelegate;
 
-    iget-object v0, v0, Lcoil/memory/DelegateService;->imageLoader:Ljava/lang/Object;
-
-    check-cast v0, Lcoil/ImageLoader;
+    iget-object v0, v0, Lcoil/memory/DelegateService;->imageLoader:Lcoil/ImageLoader;
 
     invoke-direct {v10, v0, v3, v13, v14}, Lcoil/memory/ViewTargetRequestDelegate;-><init>(Lcoil/ImageLoader;Lcoil/request/ImageRequest;Lcoil/memory/TargetDelegate;Lkotlinx/coroutines/Job;)V
 
@@ -1141,11 +1127,11 @@
 
     :goto_7
     :try_start_8
-    iget-object v3, v14, Lcoil/RealImageLoader;->memoryCacheService:Lcoil/memory/DelegateService;
+    iget-object v3, v14, Lcoil/RealImageLoader;->memoryCacheService:Lcoil/memory/MemoryCacheService;
 
     iget-object v10, v13, Lcoil/request/ImageRequest;->placeholderMemoryCacheKey:Lcoil/memory/MemoryCache$Key;
 
-    invoke-virtual {v3, v10}, Lcoil/memory/DelegateService;->get(Lcoil/memory/MemoryCache$Key;)Lcoil/memory/RealMemoryCache$Value;
+    invoke-virtual {v3, v10}, Lcoil/memory/MemoryCacheService;->get(Lcoil/memory/MemoryCache$Key;)Lcoil/memory/RealMemoryCache$Value;
 
     move-result-object v3
 

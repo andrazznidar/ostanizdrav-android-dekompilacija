@@ -12,9 +12,7 @@
 .field public final __insertionAdapterOfSystemIdInfo:Landroidx/room/EntityInsertionAdapter;
     .annotation system Ldalvik/annotation/Signature;
         value = {
-            "Landroidx/room/EntityInsertionAdapter<",
-            "Landroidx/work/impl/model/SystemIdInfo;",
-            ">;"
+            "Landroidx/room/EntityInsertionAdapter;"
         }
     .end annotation
 .end field

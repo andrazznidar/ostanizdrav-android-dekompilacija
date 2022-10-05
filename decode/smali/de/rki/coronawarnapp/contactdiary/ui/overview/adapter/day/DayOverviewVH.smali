@@ -60,7 +60,7 @@
 
     sget-object p1, Lde/rki/coronawarnapp/contactdiary/ui/overview/adapter/day/DayOverviewVH$riskEventAdapter$2;->INSTANCE:Lde/rki/coronawarnapp/contactdiary/ui/overview/adapter/day/DayOverviewVH$riskEventAdapter$2;
 
-    invoke-static {p1}, Lkotlin/LazyKt__LazyKt;->lazy(Lkotlin/jvm/functions/Function0;)Lkotlin/Lazy;
+    invoke-static {p1}, Lkotlin/LazyKt__LazyJVMKt;->lazy(Lkotlin/jvm/functions/Function0;)Lkotlin/Lazy;
 
     move-result-object p1
 
@@ -68,7 +68,7 @@
 
     sget-object p1, Lde/rki/coronawarnapp/contactdiary/ui/overview/adapter/day/DayOverviewVH$contactAdapter$2;->INSTANCE:Lde/rki/coronawarnapp/contactdiary/ui/overview/adapter/day/DayOverviewVH$contactAdapter$2;
 
-    invoke-static {p1}, Lkotlin/LazyKt__LazyKt;->lazy(Lkotlin/jvm/functions/Function0;)Lkotlin/Lazy;
+    invoke-static {p1}, Lkotlin/LazyKt__LazyJVMKt;->lazy(Lkotlin/jvm/functions/Function0;)Lkotlin/Lazy;
 
     move-result-object p1
 
@@ -78,7 +78,7 @@
 
     invoke-direct {p1, p0}, Lde/rki/coronawarnapp/contactdiary/ui/overview/adapter/day/DayOverviewVH$viewBinding$1;-><init>(Lde/rki/coronawarnapp/contactdiary/ui/overview/adapter/day/DayOverviewVH;)V
 
-    invoke-static {p1}, Lkotlin/LazyKt__LazyKt;->lazy(Lkotlin/jvm/functions/Function0;)Lkotlin/Lazy;
+    invoke-static {p1}, Lkotlin/LazyKt__LazyJVMKt;->lazy(Lkotlin/jvm/functions/Function0;)Lkotlin/Lazy;
 
     move-result-object p1
 

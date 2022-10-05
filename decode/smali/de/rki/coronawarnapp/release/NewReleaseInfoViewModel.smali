@@ -57,11 +57,11 @@
 
     const/4 p2, 0x0
 
-    const-string v0, "2.13.1"
+    const-string v0, "2.18.1"
 
     aput-object v0, p1, p2
 
-    const p2, 0x7f1303bf
+    const p2, 0x7f1303d6
 
     invoke-static {p2, p1}, Lde/rki/coronawarnapp/util/ui/LazyStringKt;->toResolvingString(I[Ljava/lang/Object;)Lde/rki/coronawarnapp/util/ui/LazyString;
 

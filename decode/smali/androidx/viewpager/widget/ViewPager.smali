@@ -834,7 +834,7 @@
 
     if-ne v0, v1, :cond_0
 
-    invoke-super {p0, p1}, Landroid/view/View;->dispatchPopulateAccessibilityEvent(Landroid/view/accessibility/AccessibilityEvent;)Z
+    invoke-super {p0, p1}, Landroid/view/ViewGroup;->dispatchPopulateAccessibilityEvent(Landroid/view/accessibility/AccessibilityEvent;)Z
 
     move-result p1
 
@@ -878,7 +878,7 @@
 .method public draw(Landroid/graphics/Canvas;)V
     .locals 2
 
-    invoke-super {p0, p1}, Landroid/view/View;->draw(Landroid/graphics/Canvas;)V
+    invoke-super {p0, p1}, Landroid/view/ViewGroup;->draw(Landroid/graphics/Canvas;)V
 
     invoke-virtual {p0}, Landroid/view/ViewGroup;->getOverScrollMode()I
 
@@ -1125,7 +1125,7 @@
 .method public onDraw(Landroid/graphics/Canvas;)V
     .locals 0
 
-    invoke-super {p0, p1}, Landroid/view/View;->onDraw(Landroid/graphics/Canvas;)V
+    invoke-super {p0, p1}, Landroid/view/ViewGroup;->onDraw(Landroid/graphics/Canvas;)V
 
     iget p1, p0, Landroidx/viewpager/widget/ViewPager;->mPageMargin:I
 
@@ -2065,7 +2065,7 @@
 
     if-nez v0, :cond_0
 
-    invoke-super {p0, p1}, Landroid/view/View;->onRestoreInstanceState(Landroid/os/Parcelable;)V
+    invoke-super {p0, p1}, Landroid/view/ViewGroup;->onRestoreInstanceState(Landroid/os/Parcelable;)V
 
     return-void
 
@@ -2074,7 +2074,7 @@
 
     iget-object v0, p1, Landroidx/customview/view/AbsSavedState;->mSuperState:Landroid/os/Parcelable;
 
-    invoke-super {p0, v0}, Landroid/view/View;->onRestoreInstanceState(Landroid/os/Parcelable;)V
+    invoke-super {p0, v0}, Landroid/view/ViewGroup;->onRestoreInstanceState(Landroid/os/Parcelable;)V
 
     iget-object p1, p1, Landroidx/viewpager/widget/ViewPager$SavedState;->adapterState:Landroid/os/Parcelable;
 
@@ -2086,7 +2086,7 @@
 .method public onSaveInstanceState()Landroid/os/Parcelable;
     .locals 2
 
-    invoke-super {p0}, Landroid/view/View;->onSaveInstanceState()Landroid/os/Parcelable;
+    invoke-super {p0}, Landroid/view/ViewGroup;->onSaveInstanceState()Landroid/os/Parcelable;
 
     move-result-object v0
 
@@ -2151,7 +2151,7 @@
 .method public onSizeChanged(IIII)V
     .locals 0
 
-    invoke-super {p0, p1, p2, p3, p4}, Landroid/view/View;->onSizeChanged(IIII)V
+    invoke-super {p0, p1, p2, p3, p4}, Landroid/view/ViewGroup;->onSizeChanged(IIII)V
 
     if-eq p1, p3, :cond_1
 
@@ -2473,7 +2473,7 @@
 .method public verifyDrawable(Landroid/graphics/drawable/Drawable;)Z
     .locals 1
 
-    invoke-super {p0, p1}, Landroid/view/View;->verifyDrawable(Landroid/graphics/drawable/Drawable;)Z
+    invoke-super {p0, p1}, Landroid/view/ViewGroup;->verifyDrawable(Landroid/graphics/drawable/Drawable;)Z
 
     move-result v0
 

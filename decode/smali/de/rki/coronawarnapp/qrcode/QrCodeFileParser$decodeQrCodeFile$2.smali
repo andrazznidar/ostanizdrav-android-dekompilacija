@@ -113,399 +113,405 @@
 .end method
 
 .method public final invokeSuspend(Ljava/lang/Object;)Ljava/lang/Object;
-    .locals 13
+    .locals 17
 
-    invoke-static {p1}, Lkotlin/ResultKt;->throwOnFailure(Ljava/lang/Object;)V
+    move-object/from16 v1, p0
 
-    iget-object p1, p0, Lde/rki/coronawarnapp/qrcode/QrCodeFileParser$decodeQrCodeFile$2;->this$0:Lde/rki/coronawarnapp/qrcode/QrCodeFileParser;
+    invoke-static/range {p1 .. p1}, Lkotlin/ResultKt;->throwOnFailure(Ljava/lang/Object;)V
 
-    iget-object p1, p1, Lde/rki/coronawarnapp/qrcode/QrCodeFileParser;->qrCodeBitmapProvider:Lde/rki/coronawarnapp/qrcode/provider/QRCodeBitmapProvider;
+    iget-object v0, v1, Lde/rki/coronawarnapp/qrcode/QrCodeFileParser$decodeQrCodeFile$2;->this$0:Lde/rki/coronawarnapp/qrcode/QrCodeFileParser;
 
-    iget-object v0, p0, Lde/rki/coronawarnapp/qrcode/QrCodeFileParser$decodeQrCodeFile$2;->$fileUri:Landroid/net/Uri;
+    iget-object v0, v0, Lde/rki/coronawarnapp/qrcode/QrCodeFileParser;->qrCodeBitmapProvider:Lde/rki/coronawarnapp/qrcode/provider/QRCodeBitmapProvider;
 
-    invoke-static {p1}, Ljava/util/Objects;->requireNonNull(Ljava/lang/Object;)Ljava/lang/Object;
+    iget-object v2, v1, Lde/rki/coronawarnapp/qrcode/QrCodeFileParser$decodeQrCodeFile$2;->$fileUri:Landroid/net/Uri;
 
-    sget-object v1, Lde/rki/coronawarnapp/qrcode/scanner/ImportDocumentException$ErrorCode;->FILE_FORMAT_NOT_SUPPORTED:Lde/rki/coronawarnapp/qrcode/scanner/ImportDocumentException$ErrorCode;
+    invoke-static {v0}, Ljava/util/Objects;->requireNonNull(Ljava/lang/Object;)Ljava/lang/Object;
 
-    const-string/jumbo v2, "uri"
+    const-string/jumbo v3, "uri"
 
-    invoke-static {v0, v2}, Lkotlin/jvm/internal/Intrinsics;->checkNotNullParameter(Ljava/lang/Object;Ljava/lang/String;)V
+    invoke-static {v2, v3}, Lkotlin/jvm/internal/Intrinsics;->checkNotNullParameter(Ljava/lang/Object;Ljava/lang/String;)V
 
-    iget-object v2, p1, Lde/rki/coronawarnapp/qrcode/provider/QRCodeBitmapProvider;->context:Landroid/content/Context;
+    iget-object v3, v0, Lde/rki/coronawarnapp/qrcode/provider/QRCodeBitmapProvider;->context:Landroid/content/Context;
 
-    invoke-virtual {v2}, Landroid/content/Context;->getContentResolver()Landroid/content/ContentResolver;
+    invoke-virtual {v3}, Landroid/content/Context;->getContentResolver()Landroid/content/ContentResolver;
 
-    move-result-object v2
+    move-result-object v3
 
-    invoke-virtual {v2, v0}, Landroid/content/ContentResolver;->getType(Landroid/net/Uri;)Ljava/lang/String;
+    invoke-virtual {v3, v2}, Landroid/content/ContentResolver;->getType(Landroid/net/Uri;)Ljava/lang/String;
 
-    move-result-object v2
+    move-result-object v3
 
-    const/4 v3, 0x4
+    const/4 v4, 0x2
 
-    const/4 v4, 0x0
+    const/4 v5, 0x1
 
-    if-nez v2, :cond_0
+    const/4 v6, 0x4
 
-    new-instance p1, Lde/rki/coronawarnapp/qrcode/provider/QRCodeBitmapProvider$BitmapResult$Failed;
+    const/4 v7, 0x0
 
-    new-instance v0, Lde/rki/coronawarnapp/qrcode/scanner/ImportDocumentException;
+    if-nez v3, :cond_0
 
-    invoke-direct {v0, v1}, Lde/rki/coronawarnapp/qrcode/scanner/ImportDocumentException;-><init>(Lde/rki/coronawarnapp/qrcode/scanner/ImportDocumentException$ErrorCode;)V
+    new-instance v0, Lde/rki/coronawarnapp/qrcode/provider/QRCodeBitmapProvider$BitmapResult$Failed;
 
-    invoke-direct {p1, v0}, Lde/rki/coronawarnapp/qrcode/provider/QRCodeBitmapProvider$BitmapResult$Failed;-><init>(Ljava/lang/Exception;)V
+    new-instance v2, Lde/rki/coronawarnapp/qrcode/scanner/ImportDocumentException;
+
+    invoke-direct {v2, v5}, Lde/rki/coronawarnapp/qrcode/scanner/ImportDocumentException;-><init>(I)V
+
+    invoke-direct {v0, v2}, Lde/rki/coronawarnapp/qrcode/provider/QRCodeBitmapProvider$BitmapResult$Failed;-><init>(Ljava/lang/Exception;)V
 
     goto :goto_1
 
     :cond_0
     :try_start_0
-    const-string v5, "image/"
+    const-string v8, "image/"
 
-    const/4 v6, 0x2
+    invoke-static {v3, v8, v7, v4}, Lkotlin/text/StringsKt__StringsJVMKt;->startsWith$default(Ljava/lang/String;Ljava/lang/String;ZI)Z
 
-    invoke-static {v2, v5, v4, v6}, Lkotlin/text/StringsKt__StringsJVMKt;->startsWith$default(Ljava/lang/String;Ljava/lang/String;ZI)Z
+    move-result v8
 
-    move-result v5
+    if-eqz v8, :cond_1
 
-    if-eqz v5, :cond_1
+    new-instance v3, Lde/rki/coronawarnapp/qrcode/provider/QRCodeBitmapProvider$BitmapResult$Success;
 
-    new-instance v1, Lde/rki/coronawarnapp/qrcode/provider/QRCodeBitmapProvider$BitmapResult$Success;
+    iget-object v8, v0, Lde/rki/coronawarnapp/qrcode/provider/QRCodeBitmapProvider;->imageUriResolver:Lde/rki/coronawarnapp/qrcode/provider/image/ImageUriResolver;
 
-    iget-object v2, p1, Lde/rki/coronawarnapp/qrcode/provider/QRCodeBitmapProvider;->imageUriResolver:Lde/rki/coronawarnapp/qrcode/provider/image/ImageUriResolver;
+    iget-object v0, v0, Lde/rki/coronawarnapp/qrcode/provider/QRCodeBitmapProvider;->context:Landroid/content/Context;
 
-    iget-object p1, p1, Lde/rki/coronawarnapp/qrcode/provider/QRCodeBitmapProvider;->context:Landroid/content/Context;
+    invoke-interface {v8, v2, v0}, Lde/rki/coronawarnapp/qrcode/provider/image/ImageUriResolver;->resolve(Landroid/net/Uri;Landroid/content/Context;)Lkotlin/sequences/Sequence;
 
-    invoke-interface {v2, v0, p1}, Lde/rki/coronawarnapp/qrcode/provider/image/ImageUriResolver;->resolve(Landroid/net/Uri;Landroid/content/Context;)Lkotlin/sequences/Sequence;
+    move-result-object v0
 
-    move-result-object p1
-
-    invoke-direct {v1, p1}, Lde/rki/coronawarnapp/qrcode/provider/QRCodeBitmapProvider$BitmapResult$Success;-><init>(Lkotlin/sequences/Sequence;)V
+    invoke-direct {v3, v0}, Lde/rki/coronawarnapp/qrcode/provider/QRCodeBitmapProvider$BitmapResult$Success;-><init>(Lkotlin/sequences/Sequence;)V
 
     :goto_0
-    move-object p1, v1
+    move-object v0, v3
 
     goto :goto_1
 
     :cond_1
-    const-string v5, "application/pdf"
+    const-string v8, "application/pdf"
 
-    invoke-static {v2, v5}, Lkotlin/jvm/internal/Intrinsics;->areEqual(Ljava/lang/Object;Ljava/lang/Object;)Z
+    invoke-static {v3, v8}, Lkotlin/jvm/internal/Intrinsics;->areEqual(Ljava/lang/Object;Ljava/lang/Object;)Z
 
-    move-result v2
+    move-result v3
 
-    if-eqz v2, :cond_2
+    if-eqz v3, :cond_2
 
-    new-instance v1, Lde/rki/coronawarnapp/qrcode/provider/QRCodeBitmapProvider$BitmapResult$Success;
+    new-instance v3, Lde/rki/coronawarnapp/qrcode/provider/QRCodeBitmapProvider$BitmapResult$Success;
 
-    iget-object v2, p1, Lde/rki/coronawarnapp/qrcode/provider/QRCodeBitmapProvider;->pdfUriResolver:Lde/rki/coronawarnapp/qrcode/provider/pdf/PdfUriResolver;
+    iget-object v8, v0, Lde/rki/coronawarnapp/qrcode/provider/QRCodeBitmapProvider;->pdfUriResolver:Lde/rki/coronawarnapp/qrcode/provider/pdf/PdfUriResolver;
 
-    iget-object p1, p1, Lde/rki/coronawarnapp/qrcode/provider/QRCodeBitmapProvider;->context:Landroid/content/Context;
+    iget-object v0, v0, Lde/rki/coronawarnapp/qrcode/provider/QRCodeBitmapProvider;->context:Landroid/content/Context;
 
-    invoke-static {v2}, Ljava/util/Objects;->requireNonNull(Ljava/lang/Object;)Ljava/lang/Object;
+    invoke-static {v8}, Ljava/util/Objects;->requireNonNull(Ljava/lang/Object;)Ljava/lang/Object;
 
-    const-string v5, "context"
+    const-string v9, "context"
 
-    invoke-static {p1, v5}, Lkotlin/jvm/internal/Intrinsics;->checkNotNullParameter(Ljava/lang/Object;Ljava/lang/String;)V
+    invoke-static {v0, v9}, Lkotlin/jvm/internal/Intrinsics;->checkNotNullParameter(Ljava/lang/Object;Ljava/lang/String;)V
 
-    new-instance v5, Lkotlin/jvm/internal/Ref$IntRef;
+    new-instance v9, Lkotlin/jvm/internal/Ref$IntRef;
 
-    invoke-direct {v5}, Lkotlin/jvm/internal/Ref$IntRef;-><init>()V
+    invoke-direct {v9}, Lkotlin/jvm/internal/Ref$IntRef;-><init>()V
 
-    iput v3, v5, Lkotlin/jvm/internal/Ref$IntRef;->element:I
+    iput v6, v9, Lkotlin/jvm/internal/Ref$IntRef;->element:I
 
-    new-instance v6, Lde/rki/coronawarnapp/qrcode/provider/pdf/PdfUriResolver$resolve$1;
+    new-instance v10, Lde/rki/coronawarnapp/qrcode/provider/pdf/PdfUriResolver$resolve$1;
 
-    invoke-direct {v6, v5, v2, v0, p1}, Lde/rki/coronawarnapp/qrcode/provider/pdf/PdfUriResolver$resolve$1;-><init>(Lkotlin/jvm/internal/Ref$IntRef;Lde/rki/coronawarnapp/qrcode/provider/pdf/PdfUriResolver;Landroid/net/Uri;Landroid/content/Context;)V
+    invoke-direct {v10, v9, v8, v2, v0}, Lde/rki/coronawarnapp/qrcode/provider/pdf/PdfUriResolver$resolve$1;-><init>(Lkotlin/jvm/internal/Ref$IntRef;Lde/rki/coronawarnapp/qrcode/provider/pdf/PdfUriResolver;Landroid/net/Uri;Landroid/content/Context;)V
 
-    invoke-static {v6}, Lkotlin/sequences/SequencesKt__SequencesKt;->generateSequence(Lkotlin/jvm/functions/Function0;)Lkotlin/sequences/Sequence;
+    invoke-static {v10}, Lkotlin/sequences/SequencesKt__SequencesKt;->generateSequence(Lkotlin/jvm/functions/Function0;)Lkotlin/sequences/Sequence;
 
-    move-result-object p1
+    move-result-object v0
 
-    sget-object v0, Lde/rki/coronawarnapp/qrcode/provider/pdf/PdfUriResolver$resolve$2;->INSTANCE:Lde/rki/coronawarnapp/qrcode/provider/pdf/PdfUriResolver$resolve$2;
+    sget-object v2, Lde/rki/coronawarnapp/qrcode/provider/pdf/PdfUriResolver$resolve$2;->INSTANCE:Lde/rki/coronawarnapp/qrcode/provider/pdf/PdfUriResolver$resolve$2;
 
-    invoke-static {p1, v0}, Lkotlin/sequences/SequencesKt___SequencesKt;->flatMap(Lkotlin/sequences/Sequence;Lkotlin/jvm/functions/Function1;)Lkotlin/sequences/Sequence;
+    invoke-static {v0, v2}, Lkotlin/sequences/SequencesKt___SequencesKt;->flatMap(Lkotlin/sequences/Sequence;Lkotlin/jvm/functions/Function1;)Lkotlin/sequences/Sequence;
 
-    move-result-object p1
+    move-result-object v0
 
-    invoke-direct {v1, p1}, Lde/rki/coronawarnapp/qrcode/provider/QRCodeBitmapProvider$BitmapResult$Success;-><init>(Lkotlin/sequences/Sequence;)V
+    invoke-direct {v3, v0}, Lde/rki/coronawarnapp/qrcode/provider/QRCodeBitmapProvider$BitmapResult$Success;-><init>(Lkotlin/sequences/Sequence;)V
 
     goto :goto_0
 
     :cond_2
-    new-instance p1, Lde/rki/coronawarnapp/qrcode/provider/QRCodeBitmapProvider$BitmapResult$Failed;
+    new-instance v0, Lde/rki/coronawarnapp/qrcode/provider/QRCodeBitmapProvider$BitmapResult$Failed;
 
-    new-instance v0, Lde/rki/coronawarnapp/qrcode/scanner/ImportDocumentException;
+    new-instance v2, Lde/rki/coronawarnapp/qrcode/scanner/ImportDocumentException;
 
-    invoke-direct {v0, v1}, Lde/rki/coronawarnapp/qrcode/scanner/ImportDocumentException;-><init>(Lde/rki/coronawarnapp/qrcode/scanner/ImportDocumentException$ErrorCode;)V
+    invoke-direct {v2, v5}, Lde/rki/coronawarnapp/qrcode/scanner/ImportDocumentException;-><init>(I)V
 
-    invoke-direct {p1, v0}, Lde/rki/coronawarnapp/qrcode/provider/QRCodeBitmapProvider$BitmapResult$Failed;-><init>(Ljava/lang/Exception;)V
+    invoke-direct {v0, v2}, Lde/rki/coronawarnapp/qrcode/provider/QRCodeBitmapProvider$BitmapResult$Failed;-><init>(Ljava/lang/Exception;)V
     :try_end_0
     .catch Ljava/lang/Exception; {:try_start_0 .. :try_end_0} :catch_0
 
     goto :goto_1
 
     :catch_0
-    move-exception p1
+    move-exception v0
 
-    new-instance v0, Lde/rki/coronawarnapp/qrcode/provider/QRCodeBitmapProvider$BitmapResult$Failed;
+    new-instance v2, Lde/rki/coronawarnapp/qrcode/provider/QRCodeBitmapProvider$BitmapResult$Failed;
 
-    invoke-direct {v0, p1}, Lde/rki/coronawarnapp/qrcode/provider/QRCodeBitmapProvider$BitmapResult$Failed;-><init>(Ljava/lang/Exception;)V
+    invoke-direct {v2, v0}, Lde/rki/coronawarnapp/qrcode/provider/QRCodeBitmapProvider$BitmapResult$Failed;-><init>(Ljava/lang/Exception;)V
 
-    move-object p1, v0
+    move-object v0, v2
 
     :goto_1
     nop
 
-    instance-of v0, p1, Lde/rki/coronawarnapp/qrcode/provider/QRCodeBitmapProvider$BitmapResult$Success;
+    instance-of v2, v0, Lde/rki/coronawarnapp/qrcode/provider/QRCodeBitmapProvider$BitmapResult$Success;
 
-    if-eqz v0, :cond_5
+    if-eqz v2, :cond_5
 
-    check-cast p1, Lde/rki/coronawarnapp/qrcode/provider/QRCodeBitmapProvider$BitmapResult$Success;
+    check-cast v0, Lde/rki/coronawarnapp/qrcode/provider/QRCodeBitmapProvider$BitmapResult$Success;
 
-    iget-object p1, p1, Lde/rki/coronawarnapp/qrcode/provider/QRCodeBitmapProvider$BitmapResult$Success;->bitmaps:Lkotlin/sequences/Sequence;
+    iget-object v0, v0, Lde/rki/coronawarnapp/qrcode/provider/QRCodeBitmapProvider$BitmapResult$Success;->bitmaps:Lkotlin/sequences/Sequence;
 
-    invoke-interface {p1}, Lkotlin/sequences/Sequence;->iterator()Ljava/util/Iterator;
+    invoke-interface {v0}, Lkotlin/sequences/Sequence;->iterator()Ljava/util/Iterator;
 
-    move-result-object p1
+    move-result-object v2
 
     :goto_2
-    invoke-interface {p1}, Ljava/util/Iterator;->hasNext()Z
+    invoke-interface {v2}, Ljava/util/Iterator;->hasNext()Z
 
     move-result v0
 
     if-eqz v0, :cond_4
 
-    invoke-interface {p1}, Ljava/util/Iterator;->next()Ljava/lang/Object;
+    invoke-interface {v2}, Ljava/util/Iterator;->next()Ljava/lang/Object;
 
     move-result-object v0
 
-    check-cast v0, Landroid/graphics/Bitmap;
+    move-object v3, v0
+
+    check-cast v3, Landroid/graphics/Bitmap;
 
     invoke-static {}, Ljava/lang/Runtime;->getRuntime()Ljava/lang/Runtime;
 
-    move-result-object v1
+    move-result-object v0
 
-    invoke-virtual {v1}, Ljava/lang/Runtime;->totalMemory()J
+    invoke-virtual {v0}, Ljava/lang/Runtime;->totalMemory()J
 
-    move-result-wide v1
-
-    invoke-static {}, Ljava/lang/Runtime;->getRuntime()Ljava/lang/Runtime;
-
-    move-result-object v5
-
-    invoke-virtual {v5}, Ljava/lang/Runtime;->freeMemory()J
-
-    move-result-wide v5
-
-    sub-long/2addr v1, v5
+    move-result-wide v8
 
     invoke-static {}, Ljava/lang/Runtime;->getRuntime()Ljava/lang/Runtime;
 
-    move-result-object v5
+    move-result-object v0
 
-    invoke-virtual {v5}, Ljava/lang/Runtime;->maxMemory()J
+    invoke-virtual {v0}, Ljava/lang/Runtime;->freeMemory()J
 
-    move-result-wide v5
+    move-result-wide v10
 
-    sub-long/2addr v5, v1
+    sub-long/2addr v8, v10
 
-    invoke-virtual {v0}, Landroid/graphics/Bitmap;->getByteCount()I
+    invoke-static {}, Ljava/lang/Runtime;->getRuntime()Ljava/lang/Runtime;
 
-    move-result v1
+    move-result-object v0
 
-    mul-int/2addr v1, v3
+    invoke-virtual {v0}, Ljava/lang/Runtime;->maxMemory()J
 
-    sget-object v2, Ltimber/log/Timber;->Forest:Ltimber/log/Timber$Forest;
+    move-result-wide v10
 
-    new-instance v7, Ljava/lang/StringBuilder;
+    sub-long/2addr v10, v8
 
-    invoke-direct {v7}, Ljava/lang/StringBuilder;-><init>()V
+    invoke-virtual {v3}, Landroid/graphics/Bitmap;->getByteCount()I
 
-    const-string v8, "decodeQrCodeFile() bitmap size = "
+    move-result v0
 
-    invoke-virtual {v7, v8}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+    mul-int/2addr v0, v6
 
-    invoke-virtual {v7, v1}, Ljava/lang/StringBuilder;->append(I)Ljava/lang/StringBuilder;
+    sget-object v15, Ltimber/log/Timber;->Forest:Ltimber/log/Timber$Forest;
 
-    const-string v8, "B,free memory = "
+    new-instance v8, Ljava/lang/StringBuilder;
 
-    invoke-virtual {v7, v8}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+    invoke-direct {v8}, Ljava/lang/StringBuilder;-><init>()V
 
-    invoke-virtual {v7, v5, v6}, Ljava/lang/StringBuilder;->append(J)Ljava/lang/StringBuilder;
+    const-string v9, "decodeQrCodeFile() bitmap size = "
 
-    const-string v8, "B"
+    invoke-virtual {v8, v9}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
 
-    invoke-virtual {v7, v8}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+    invoke-virtual {v8, v0}, Ljava/lang/StringBuilder;->append(I)Ljava/lang/StringBuilder;
 
-    invoke-virtual {v7}, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
+    const-string v9, "B,free memory = "
 
-    move-result-object v7
+    invoke-virtual {v8, v9}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
 
-    new-array v8, v4, [Ljava/lang/Object;
+    invoke-virtual {v8, v10, v11}, Ljava/lang/StringBuilder;->append(J)Ljava/lang/StringBuilder;
 
-    invoke-virtual {v2, v7, v8}, Ltimber/log/Timber$Forest;->d(Ljava/lang/String;[Ljava/lang/Object;)V
+    const-string v9, "B"
 
-    int-to-long v7, v1
+    invoke-virtual {v8, v9}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
 
-    cmp-long v1, v5, v7
+    invoke-virtual {v8}, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
 
-    if-lez v1, :cond_3
+    move-result-object v8
 
-    invoke-virtual {v0}, Landroid/graphics/Bitmap;->getByteCount()I
+    new-array v9, v7, [Ljava/lang/Object;
 
-    move-result v1
+    invoke-virtual {v15, v8, v9}, Ltimber/log/Timber$Forest;->d(Ljava/lang/String;[Ljava/lang/Object;)V
 
-    new-array v1, v1, [I
+    int-to-long v8, v0
 
-    const/4 v7, 0x0
+    cmp-long v0, v10, v8
 
-    invoke-virtual {v0}, Landroid/graphics/Bitmap;->getWidth()I
+    if-lez v0, :cond_3
 
-    move-result v8
+    invoke-virtual {v3}, Landroid/graphics/Bitmap;->getByteCount()I
 
-    const/4 v9, 0x0
+    move-result v0
+
+    new-array v0, v0, [I
 
     const/4 v10, 0x0
 
-    invoke-virtual {v0}, Landroid/graphics/Bitmap;->getWidth()I
+    invoke-virtual {v3}, Landroid/graphics/Bitmap;->getWidth()I
 
     move-result v11
 
-    invoke-virtual {v0}, Landroid/graphics/Bitmap;->getHeight()I
+    const/4 v12, 0x0
 
-    move-result v12
+    const/4 v13, 0x0
 
-    move-object v5, v0
+    invoke-virtual {v3}, Landroid/graphics/Bitmap;->getWidth()I
 
-    move-object v6, v1
+    move-result v14
 
-    invoke-virtual/range {v5 .. v12}, Landroid/graphics/Bitmap;->getPixels([IIIIIII)V
+    invoke-virtual {v3}, Landroid/graphics/Bitmap;->getHeight()I
 
-    new-instance v5, Lcom/google/zxing/RGBLuminanceSource;
+    move-result v16
 
-    invoke-virtual {v0}, Landroid/graphics/Bitmap;->getWidth()I
+    move-object v8, v3
 
-    move-result v6
+    move-object v9, v0
 
-    invoke-virtual {v0}, Landroid/graphics/Bitmap;->getHeight()I
+    move-object v6, v15
 
-    move-result v7
+    move/from16 v15, v16
 
-    invoke-direct {v5, v6, v7, v1}, Lcom/google/zxing/RGBLuminanceSource;-><init>(II[I)V
+    invoke-virtual/range {v8 .. v15}, Landroid/graphics/Bitmap;->getPixels([IIIIIII)V
 
-    new-instance v1, Lcom/google/zxing/BinaryBitmap;
+    new-instance v8, Lcom/google/zxing/RGBLuminanceSource;
 
-    new-instance v6, Lcom/google/zxing/common/HybridBinarizer;
+    invoke-virtual {v3}, Landroid/graphics/Bitmap;->getWidth()I
 
-    invoke-direct {v6, v5}, Lcom/google/zxing/common/HybridBinarizer;-><init>(Lcom/google/zxing/LuminanceSource;)V
+    move-result v9
 
-    invoke-direct {v1, v6}, Lcom/google/zxing/BinaryBitmap;-><init>(Lcom/google/zxing/Binarizer;)V
+    invoke-virtual {v3}, Landroid/graphics/Bitmap;->getHeight()I
+
+    move-result v10
+
+    invoke-direct {v8, v9, v10, v0}, Lcom/google/zxing/RGBLuminanceSource;-><init>(II[I)V
+
+    new-instance v0, Lcom/google/zxing/BinaryBitmap;
+
+    new-instance v9, Lcom/google/zxing/common/HybridBinarizer;
+
+    invoke-direct {v9, v8}, Lcom/google/zxing/common/HybridBinarizer;-><init>(Lcom/google/zxing/LuminanceSource;)V
+
+    invoke-direct {v0, v9}, Lcom/google/zxing/BinaryBitmap;-><init>(Lcom/google/zxing/Binarizer;)V
 
     :try_start_1
-    iget-object v5, p0, Lde/rki/coronawarnapp/qrcode/QrCodeFileParser$decodeQrCodeFile$2;->this$0:Lde/rki/coronawarnapp/qrcode/QrCodeFileParser;
+    iget-object v8, v1, Lde/rki/coronawarnapp/qrcode/QrCodeFileParser$decodeQrCodeFile$2;->this$0:Lde/rki/coronawarnapp/qrcode/QrCodeFileParser;
 
-    iget-object v5, v5, Lde/rki/coronawarnapp/qrcode/QrCodeFileParser;->qrCodeReader:Lcom/google/zxing/qrcode/QRCodeReader;
+    iget-object v8, v8, Lde/rki/coronawarnapp/qrcode/QrCodeFileParser;->qrCodeReader:Lcom/google/zxing/qrcode/QRCodeReader;
 
-    const/4 v6, 0x0
+    invoke-virtual {v8, v0}, Lcom/google/zxing/qrcode/QRCodeReader;->decode(Lcom/google/zxing/BinaryBitmap;)Lcom/google/zxing/Result;
 
-    invoke-virtual {v5, v1, v6}, Lcom/google/zxing/qrcode/QRCodeReader;->decode(Lcom/google/zxing/BinaryBitmap;Ljava/util/Map;)Lcom/google/zxing/Result;
+    move-result-object v0
 
-    move-result-object v1
+    iget-object v0, v0, Lcom/google/zxing/Result;->text:Ljava/lang/String;
 
-    iget-object v1, v1, Lcom/google/zxing/Result;->text:Ljava/lang/String;
+    const-string v8, "Parsed qr code from image: %s"
 
-    const-string v5, "Parsed qr code from image: %s"
+    new-array v9, v5, [Ljava/lang/Object;
 
-    const/4 v6, 0x1
+    aput-object v0, v9, v7
 
-    new-array v6, v6, [Ljava/lang/Object;
+    invoke-virtual {v6, v8, v9}, Ltimber/log/Timber$Forest;->d(Ljava/lang/String;[Ljava/lang/Object;)V
 
-    aput-object v1, v6, v4
+    new-instance v6, Lde/rki/coronawarnapp/qrcode/QrCodeFileParser$ParseResult$Success;
 
-    invoke-virtual {v2, v5, v6}, Ltimber/log/Timber$Forest;->d(Ljava/lang/String;[Ljava/lang/Object;)V
+    const-string v8, "content"
 
-    new-instance v2, Lde/rki/coronawarnapp/qrcode/QrCodeFileParser$ParseResult$Success;
+    invoke-static {v0, v8}, Lkotlin/jvm/internal/Intrinsics;->checkNotNullExpressionValue(Ljava/lang/Object;Ljava/lang/String;)V
 
-    const-string v5, "content"
-
-    invoke-static {v1, v5}, Lkotlin/jvm/internal/Intrinsics;->checkNotNullExpressionValue(Ljava/lang/Object;Ljava/lang/String;)V
-
-    invoke-direct {v2, v1}, Lde/rki/coronawarnapp/qrcode/QrCodeFileParser$ParseResult$Success;-><init>(Ljava/lang/String;)V
+    invoke-direct {v6, v0}, Lde/rki/coronawarnapp/qrcode/QrCodeFileParser$ParseResult$Success;-><init>(Ljava/lang/String;)V
     :try_end_1
     .catch Lcom/google/zxing/ReaderException; {:try_start_1 .. :try_end_1} :catch_1
     .catchall {:try_start_1 .. :try_end_1} :catchall_0
 
-    invoke-virtual {v0}, Landroid/graphics/Bitmap;->recycle()V
+    invoke-virtual {v3}, Landroid/graphics/Bitmap;->recycle()V
 
-    return-object v2
+    return-object v6
 
     :catchall_0
-    move-exception p1
+    move-exception v0
 
     goto :goto_3
 
     :catch_1
-    move-exception v1
+    move-exception v0
 
     :try_start_2
-    sget-object v2, Ltimber/log/Timber;->Forest:Ltimber/log/Timber$Forest;
+    sget-object v6, Ltimber/log/Timber;->Forest:Ltimber/log/Timber$Forest;
 
-    const-string v5, "Failed to Parse QR Code from bitmap"
+    const-string v8, "Failed to Parse QR Code from bitmap"
 
-    new-array v6, v4, [Ljava/lang/Object;
+    new-array v9, v7, [Ljava/lang/Object;
 
-    invoke-virtual {v2, v1, v5, v6}, Ltimber/log/Timber$Forest;->d(Ljava/lang/Throwable;Ljava/lang/String;[Ljava/lang/Object;)V
+    invoke-virtual {v6, v0, v8, v9}, Ltimber/log/Timber$Forest;->d(Ljava/lang/Throwable;Ljava/lang/String;[Ljava/lang/Object;)V
     :try_end_2
     .catchall {:try_start_2 .. :try_end_2} :catchall_0
 
-    invoke-virtual {v0}, Landroid/graphics/Bitmap;->recycle()V
+    invoke-virtual {v3}, Landroid/graphics/Bitmap;->recycle()V
+
+    const/4 v6, 0x4
 
     goto/16 :goto_2
 
     :goto_3
-    invoke-virtual {v0}, Landroid/graphics/Bitmap;->recycle()V
+    invoke-virtual {v3}, Landroid/graphics/Bitmap;->recycle()V
 
-    throw p1
+    throw v0
 
     :cond_3
-    new-array p1, v4, [Ljava/lang/Object;
+    move-object v6, v15
 
-    const-string v0, "Not enough memory to convert the Bitmap!"
+    new-array v0, v7, [Ljava/lang/Object;
 
-    invoke-virtual {v2, v0, p1}, Ltimber/log/Timber$Forest;->d(Ljava/lang/String;[Ljava/lang/Object;)V
+    const-string v2, "Not enough memory to convert the Bitmap!"
+
+    invoke-virtual {v6, v2, v0}, Ltimber/log/Timber$Forest;->d(Ljava/lang/String;[Ljava/lang/Object;)V
 
     :cond_4
-    new-instance p1, Lde/rki/coronawarnapp/qrcode/QrCodeFileParser$ParseResult$Failure;
-
-    new-instance v0, Lde/rki/coronawarnapp/qrcode/scanner/ImportDocumentException;
-
-    sget-object v1, Lde/rki/coronawarnapp/qrcode/scanner/ImportDocumentException$ErrorCode;->QR_CODE_NOT_FOUND:Lde/rki/coronawarnapp/qrcode/scanner/ImportDocumentException$ErrorCode;
-
-    invoke-direct {v0, v1}, Lde/rki/coronawarnapp/qrcode/scanner/ImportDocumentException;-><init>(Lde/rki/coronawarnapp/qrcode/scanner/ImportDocumentException$ErrorCode;)V
-
-    invoke-direct {p1, v0}, Lde/rki/coronawarnapp/qrcode/QrCodeFileParser$ParseResult$Failure;-><init>(Ljava/lang/Exception;)V
-
-    return-object p1
-
-    :cond_5
-    instance-of v0, p1, Lde/rki/coronawarnapp/qrcode/provider/QRCodeBitmapProvider$BitmapResult$Failed;
-
-    if-eqz v0, :cond_6
-
     new-instance v0, Lde/rki/coronawarnapp/qrcode/QrCodeFileParser$ParseResult$Failure;
 
-    check-cast p1, Lde/rki/coronawarnapp/qrcode/provider/QRCodeBitmapProvider$BitmapResult$Failed;
+    new-instance v2, Lde/rki/coronawarnapp/qrcode/scanner/ImportDocumentException;
 
-    iget-object p1, p1, Lde/rki/coronawarnapp/qrcode/provider/QRCodeBitmapProvider$BitmapResult$Failed;->error:Ljava/lang/Exception;
+    invoke-direct {v2, v4}, Lde/rki/coronawarnapp/qrcode/scanner/ImportDocumentException;-><init>(I)V
 
-    invoke-direct {v0, p1}, Lde/rki/coronawarnapp/qrcode/QrCodeFileParser$ParseResult$Failure;-><init>(Ljava/lang/Exception;)V
+    invoke-direct {v0, v2}, Lde/rki/coronawarnapp/qrcode/QrCodeFileParser$ParseResult$Failure;-><init>(Ljava/lang/Exception;)V
 
     return-object v0
 
+    :cond_5
+    instance-of v2, v0, Lde/rki/coronawarnapp/qrcode/provider/QRCodeBitmapProvider$BitmapResult$Failed;
+
+    if-eqz v2, :cond_6
+
+    new-instance v2, Lde/rki/coronawarnapp/qrcode/QrCodeFileParser$ParseResult$Failure;
+
+    check-cast v0, Lde/rki/coronawarnapp/qrcode/provider/QRCodeBitmapProvider$BitmapResult$Failed;
+
+    iget-object v0, v0, Lde/rki/coronawarnapp/qrcode/provider/QRCodeBitmapProvider$BitmapResult$Failed;->error:Ljava/lang/Exception;
+
+    invoke-direct {v2, v0}, Lde/rki/coronawarnapp/qrcode/QrCodeFileParser$ParseResult$Failure;-><init>(Ljava/lang/Exception;)V
+
+    return-object v2
+
     :cond_6
-    new-instance p1, Lkotlin/NoWhenBranchMatchedException;
+    new-instance v0, Lkotlin/NoWhenBranchMatchedException;
 
-    invoke-direct {p1}, Lkotlin/NoWhenBranchMatchedException;-><init>()V
+    invoke-direct {v0}, Lkotlin/NoWhenBranchMatchedException;-><init>()V
 
-    throw p1
+    throw v0
 .end method

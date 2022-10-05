@@ -52,6 +52,12 @@
     .end annotation
 .end field
 
+.field private final notifiedBlockedAt:Lorg/joda/time/Instant;
+    .annotation runtime Lcom/google/gson/annotations/SerializedName;
+        value = "notifiedBlockedAt"
+    .end annotation
+.end field
+
 .field private final notifiedInvalidAt:Lorg/joda/time/Instant;
     .annotation runtime Lcom/google/gson/annotations/SerializedName;
         value = "notifiedInvalidAt"
@@ -61,6 +67,12 @@
 .field private final publicKeyRegisteredAt:Lorg/joda/time/Instant;
     .annotation runtime Lcom/google/gson/annotations/SerializedName;
         value = "publicKeyRegisteredAt"
+    .end annotation
+.end field
+
+.field private final recycledAt:Lorg/joda/time/Instant;
+    .annotation runtime Lcom/google/gson/annotations/SerializedName;
+        value = "recycledAt"
     .end annotation
 .end field
 
@@ -97,9 +109,15 @@
 
 # direct methods
 .method public constructor <init>()V
-    .locals 17
+    .locals 19
+
+    move-object/from16 v0, p0
 
     sget-object v3, Lorg/joda/time/Instant;->EPOCH:Lorg/joda/time/Instant;
+
+    const-string v1, ""
+
+    const-string v2, ""
 
     const/4 v4, 0x0
 
@@ -125,20 +143,18 @@
 
     const/4 v15, 0x0
 
-    const/16 v16, 0x7ff8
+    const/16 v16, 0x0
 
-    const-string v1, ""
+    const/16 v17, 0x0
 
-    const-string v2, ""
+    const v18, 0x1fff8
 
-    move-object/from16 v0, p0
-
-    invoke-direct/range {v0 .. v16}, Lde/rki/coronawarnapp/covidcertificate/test/core/storage/types/RACertificateData;-><init>(Ljava/lang/String;Ljava/lang/String;Lorg/joda/time/Instant;Lorg/joda/time/Instant;Lde/rki/coronawarnapp/covidcertificate/common/certificate/CwaCovidCertificate$State;Lorg/joda/time/Instant;Lorg/joda/time/Instant;Lde/rki/coronawarnapp/util/encryption/rsa/RSAKey$Public;Lde/rki/coronawarnapp/util/encryption/rsa/RSAKey$Private;Lorg/joda/time/Instant;Lokio/ByteString;Lokio/ByteString;Ljava/lang/String;Ljava/lang/String;ZI)V
+    invoke-direct/range {v0 .. v18}, Lde/rki/coronawarnapp/covidcertificate/test/core/storage/types/RACertificateData;-><init>(Ljava/lang/String;Ljava/lang/String;Lorg/joda/time/Instant;Lorg/joda/time/Instant;Lorg/joda/time/Instant;Lde/rki/coronawarnapp/covidcertificate/common/certificate/CwaCovidCertificate$State;Lorg/joda/time/Instant;Lorg/joda/time/Instant;Lde/rki/coronawarnapp/util/encryption/rsa/RSAKey$Public;Lde/rki/coronawarnapp/util/encryption/rsa/RSAKey$Private;Lorg/joda/time/Instant;Lokio/ByteString;Lokio/ByteString;Ljava/lang/String;Ljava/lang/String;ZLorg/joda/time/Instant;I)V
 
     return-void
 .end method
 
-.method public constructor <init>(Ljava/lang/String;Ljava/lang/String;Lorg/joda/time/Instant;Lorg/joda/time/Instant;Lde/rki/coronawarnapp/covidcertificate/common/certificate/CwaCovidCertificate$State;Lorg/joda/time/Instant;Lorg/joda/time/Instant;Lde/rki/coronawarnapp/util/encryption/rsa/RSAKey$Public;Lde/rki/coronawarnapp/util/encryption/rsa/RSAKey$Private;Lorg/joda/time/Instant;Lokio/ByteString;Lokio/ByteString;Ljava/lang/String;Ljava/lang/String;Z)V
+.method public constructor <init>(Ljava/lang/String;Ljava/lang/String;Lorg/joda/time/Instant;Lorg/joda/time/Instant;Lorg/joda/time/Instant;Lde/rki/coronawarnapp/covidcertificate/common/certificate/CwaCovidCertificate$State;Lorg/joda/time/Instant;Lorg/joda/time/Instant;Lde/rki/coronawarnapp/util/encryption/rsa/RSAKey$Public;Lde/rki/coronawarnapp/util/encryption/rsa/RSAKey$Private;Lorg/joda/time/Instant;Lokio/ByteString;Lokio/ByteString;Ljava/lang/String;Ljava/lang/String;ZLorg/joda/time/Instant;)V
     .locals 5
 
     move-object v0, p0
@@ -177,55 +193,63 @@
 
     move-object v1, p5
 
-    iput-object v1, v0, Lde/rki/coronawarnapp/covidcertificate/test/core/storage/types/RACertificateData;->lastSeenStateChange:Lde/rki/coronawarnapp/covidcertificate/common/certificate/CwaCovidCertificate$State;
+    iput-object v1, v0, Lde/rki/coronawarnapp/covidcertificate/test/core/storage/types/RACertificateData;->notifiedBlockedAt:Lorg/joda/time/Instant;
 
     move-object v1, p6
 
-    iput-object v1, v0, Lde/rki/coronawarnapp/covidcertificate/test/core/storage/types/RACertificateData;->lastSeenStateChangeAt:Lorg/joda/time/Instant;
+    iput-object v1, v0, Lde/rki/coronawarnapp/covidcertificate/test/core/storage/types/RACertificateData;->lastSeenStateChange:Lde/rki/coronawarnapp/covidcertificate/common/certificate/CwaCovidCertificate$State;
 
     move-object v1, p7
 
-    iput-object v1, v0, Lde/rki/coronawarnapp/covidcertificate/test/core/storage/types/RACertificateData;->publicKeyRegisteredAt:Lorg/joda/time/Instant;
+    iput-object v1, v0, Lde/rki/coronawarnapp/covidcertificate/test/core/storage/types/RACertificateData;->lastSeenStateChangeAt:Lorg/joda/time/Instant;
 
     move-object v1, p8
 
-    iput-object v1, v0, Lde/rki/coronawarnapp/covidcertificate/test/core/storage/types/RACertificateData;->rsaPublicKey:Lde/rki/coronawarnapp/util/encryption/rsa/RSAKey$Public;
+    iput-object v1, v0, Lde/rki/coronawarnapp/covidcertificate/test/core/storage/types/RACertificateData;->publicKeyRegisteredAt:Lorg/joda/time/Instant;
 
     move-object v1, p9
 
-    iput-object v1, v0, Lde/rki/coronawarnapp/covidcertificate/test/core/storage/types/RACertificateData;->rsaPrivateKey:Lde/rki/coronawarnapp/util/encryption/rsa/RSAKey$Private;
+    iput-object v1, v0, Lde/rki/coronawarnapp/covidcertificate/test/core/storage/types/RACertificateData;->rsaPublicKey:Lde/rki/coronawarnapp/util/encryption/rsa/RSAKey$Public;
 
     move-object v1, p10
 
-    iput-object v1, v0, Lde/rki/coronawarnapp/covidcertificate/test/core/storage/types/RACertificateData;->certificateReceivedAt:Lorg/joda/time/Instant;
+    iput-object v1, v0, Lde/rki/coronawarnapp/covidcertificate/test/core/storage/types/RACertificateData;->rsaPrivateKey:Lde/rki/coronawarnapp/util/encryption/rsa/RSAKey$Private;
 
     move-object/from16 v1, p11
 
-    iput-object v1, v0, Lde/rki/coronawarnapp/covidcertificate/test/core/storage/types/RACertificateData;->encryptedDataEncryptionkey:Lokio/ByteString;
+    iput-object v1, v0, Lde/rki/coronawarnapp/covidcertificate/test/core/storage/types/RACertificateData;->certificateReceivedAt:Lorg/joda/time/Instant;
 
     move-object/from16 v1, p12
 
-    iput-object v1, v0, Lde/rki/coronawarnapp/covidcertificate/test/core/storage/types/RACertificateData;->encryptedDccCose:Lokio/ByteString;
+    iput-object v1, v0, Lde/rki/coronawarnapp/covidcertificate/test/core/storage/types/RACertificateData;->encryptedDataEncryptionkey:Lokio/ByteString;
 
     move-object/from16 v1, p13
 
-    iput-object v1, v0, Lde/rki/coronawarnapp/covidcertificate/test/core/storage/types/RACertificateData;->testCertificateQrCode:Ljava/lang/String;
+    iput-object v1, v0, Lde/rki/coronawarnapp/covidcertificate/test/core/storage/types/RACertificateData;->encryptedDccCose:Lokio/ByteString;
 
     move-object/from16 v1, p14
 
+    iput-object v1, v0, Lde/rki/coronawarnapp/covidcertificate/test/core/storage/types/RACertificateData;->testCertificateQrCode:Ljava/lang/String;
+
+    move-object/from16 v1, p15
+
     iput-object v1, v0, Lde/rki/coronawarnapp/covidcertificate/test/core/storage/types/RACertificateData;->labId:Ljava/lang/String;
 
-    move/from16 v1, p15
+    move/from16 v1, p16
 
     iput-boolean v1, v0, Lde/rki/coronawarnapp/covidcertificate/test/core/storage/types/RACertificateData;->certificateSeenByUser:Z
+
+    move-object/from16 v1, p17
+
+    iput-object v1, v0, Lde/rki/coronawarnapp/covidcertificate/test/core/storage/types/RACertificateData;->recycledAt:Lorg/joda/time/Instant;
 
     return-void
 .end method
 
-.method public synthetic constructor <init>(Ljava/lang/String;Ljava/lang/String;Lorg/joda/time/Instant;Lorg/joda/time/Instant;Lde/rki/coronawarnapp/covidcertificate/common/certificate/CwaCovidCertificate$State;Lorg/joda/time/Instant;Lorg/joda/time/Instant;Lde/rki/coronawarnapp/util/encryption/rsa/RSAKey$Public;Lde/rki/coronawarnapp/util/encryption/rsa/RSAKey$Private;Lorg/joda/time/Instant;Lokio/ByteString;Lokio/ByteString;Ljava/lang/String;Ljava/lang/String;ZI)V
-    .locals 16
+.method public synthetic constructor <init>(Ljava/lang/String;Ljava/lang/String;Lorg/joda/time/Instant;Lorg/joda/time/Instant;Lorg/joda/time/Instant;Lde/rki/coronawarnapp/covidcertificate/common/certificate/CwaCovidCertificate$State;Lorg/joda/time/Instant;Lorg/joda/time/Instant;Lde/rki/coronawarnapp/util/encryption/rsa/RSAKey$Public;Lde/rki/coronawarnapp/util/encryption/rsa/RSAKey$Private;Lorg/joda/time/Instant;Lokio/ByteString;Lokio/ByteString;Ljava/lang/String;Ljava/lang/String;ZLorg/joda/time/Instant;I)V
+    .locals 18
 
-    move/from16 v0, p16
+    move/from16 v0, p18
 
     const/4 v4, 0x0
 
@@ -235,66 +259,72 @@
 
     const/4 v7, 0x0
 
-    and-int/lit16 v1, v0, 0x80
+    const/4 v8, 0x0
+
+    and-int/lit16 v1, v0, 0x100
 
     const/4 v2, 0x0
 
     if-eqz v1, :cond_0
 
-    move-object v8, v2
+    move-object v9, v2
 
     goto :goto_0
 
     :cond_0
-    move-object/from16 v8, p8
+    move-object/from16 v9, p9
 
     :goto_0
-    and-int/lit16 v1, v0, 0x100
+    and-int/lit16 v1, v0, 0x200
 
     if-eqz v1, :cond_1
 
-    move-object v9, v2
+    move-object v10, v2
 
     goto :goto_1
 
     :cond_1
-    move-object/from16 v9, p9
+    move-object/from16 v10, p10
 
     :goto_1
-    const/4 v10, 0x0
-
     const/4 v11, 0x0
 
     const/4 v12, 0x0
 
     const/4 v13, 0x0
 
-    and-int/lit16 v1, v0, 0x2000
+    const/4 v14, 0x0
+
+    and-int/lit16 v1, v0, 0x4000
 
     if-eqz v1, :cond_2
 
-    move-object v14, v2
+    move-object v15, v2
 
     goto :goto_2
 
     :cond_2
-    move-object/from16 v14, p14
+    move-object/from16 v15, p15
 
     :goto_2
-    and-int/lit16 v0, v0, 0x4000
+    const v1, 0x8000
+
+    and-int/2addr v0, v1
 
     if-eqz v0, :cond_3
 
     const/4 v0, 0x0
 
-    move v15, v0
+    move/from16 v16, v0
 
     goto :goto_3
 
     :cond_3
-    move/from16 v15, p15
+    move/from16 v16, p16
 
     :goto_3
+    const/16 v17, 0x0
+
     move-object/from16 v0, p0
 
     move-object/from16 v1, p1
@@ -303,17 +333,17 @@
 
     move-object/from16 v3, p3
 
-    invoke-direct/range {v0 .. v15}, Lde/rki/coronawarnapp/covidcertificate/test/core/storage/types/RACertificateData;-><init>(Ljava/lang/String;Ljava/lang/String;Lorg/joda/time/Instant;Lorg/joda/time/Instant;Lde/rki/coronawarnapp/covidcertificate/common/certificate/CwaCovidCertificate$State;Lorg/joda/time/Instant;Lorg/joda/time/Instant;Lde/rki/coronawarnapp/util/encryption/rsa/RSAKey$Public;Lde/rki/coronawarnapp/util/encryption/rsa/RSAKey$Private;Lorg/joda/time/Instant;Lokio/ByteString;Lokio/ByteString;Ljava/lang/String;Ljava/lang/String;Z)V
+    invoke-direct/range {v0 .. v17}, Lde/rki/coronawarnapp/covidcertificate/test/core/storage/types/RACertificateData;-><init>(Ljava/lang/String;Ljava/lang/String;Lorg/joda/time/Instant;Lorg/joda/time/Instant;Lorg/joda/time/Instant;Lde/rki/coronawarnapp/covidcertificate/common/certificate/CwaCovidCertificate$State;Lorg/joda/time/Instant;Lorg/joda/time/Instant;Lde/rki/coronawarnapp/util/encryption/rsa/RSAKey$Public;Lde/rki/coronawarnapp/util/encryption/rsa/RSAKey$Private;Lorg/joda/time/Instant;Lokio/ByteString;Lokio/ByteString;Ljava/lang/String;Ljava/lang/String;ZLorg/joda/time/Instant;)V
 
     return-void
 .end method
 
-.method public static copy$default(Lde/rki/coronawarnapp/covidcertificate/test/core/storage/types/RACertificateData;Ljava/lang/String;Ljava/lang/String;Lorg/joda/time/Instant;Lorg/joda/time/Instant;Lde/rki/coronawarnapp/covidcertificate/common/certificate/CwaCovidCertificate$State;Lorg/joda/time/Instant;Lorg/joda/time/Instant;Lde/rki/coronawarnapp/util/encryption/rsa/RSAKey$Public;Lde/rki/coronawarnapp/util/encryption/rsa/RSAKey$Private;Lorg/joda/time/Instant;Lokio/ByteString;Lokio/ByteString;Ljava/lang/String;Ljava/lang/String;ZI)Lde/rki/coronawarnapp/covidcertificate/test/core/storage/types/RACertificateData;
-    .locals 16
+.method public static copy$default(Lde/rki/coronawarnapp/covidcertificate/test/core/storage/types/RACertificateData;Ljava/lang/String;Ljava/lang/String;Lorg/joda/time/Instant;Lorg/joda/time/Instant;Lorg/joda/time/Instant;Lde/rki/coronawarnapp/covidcertificate/common/certificate/CwaCovidCertificate$State;Lorg/joda/time/Instant;Lorg/joda/time/Instant;Lde/rki/coronawarnapp/util/encryption/rsa/RSAKey$Public;Lde/rki/coronawarnapp/util/encryption/rsa/RSAKey$Private;Lorg/joda/time/Instant;Lokio/ByteString;Lokio/ByteString;Ljava/lang/String;Ljava/lang/String;ZLorg/joda/time/Instant;I)Lde/rki/coronawarnapp/covidcertificate/test/core/storage/types/RACertificateData;
+    .locals 17
 
     move-object/from16 v0, p0
 
-    move/from16 v1, p16
+    move/from16 v1, p18
 
     and-int/lit8 v2, v1, 0x1
 
@@ -367,7 +397,7 @@
 
     if-eqz v7, :cond_4
 
-    iget-object v7, v0, Lde/rki/coronawarnapp/covidcertificate/test/core/storage/types/RACertificateData;->lastSeenStateChange:Lde/rki/coronawarnapp/covidcertificate/common/certificate/CwaCovidCertificate$State;
+    iget-object v7, v0, Lde/rki/coronawarnapp/covidcertificate/test/core/storage/types/RACertificateData;->notifiedBlockedAt:Lorg/joda/time/Instant;
 
     goto :goto_4
 
@@ -379,7 +409,7 @@
 
     if-eqz v8, :cond_5
 
-    iget-object v8, v0, Lde/rki/coronawarnapp/covidcertificate/test/core/storage/types/RACertificateData;->lastSeenStateChangeAt:Lorg/joda/time/Instant;
+    iget-object v8, v0, Lde/rki/coronawarnapp/covidcertificate/test/core/storage/types/RACertificateData;->lastSeenStateChange:Lde/rki/coronawarnapp/covidcertificate/common/certificate/CwaCovidCertificate$State;
 
     goto :goto_5
 
@@ -391,7 +421,7 @@
 
     if-eqz v9, :cond_6
 
-    iget-object v9, v0, Lde/rki/coronawarnapp/covidcertificate/test/core/storage/types/RACertificateData;->publicKeyRegisteredAt:Lorg/joda/time/Instant;
+    iget-object v9, v0, Lde/rki/coronawarnapp/covidcertificate/test/core/storage/types/RACertificateData;->lastSeenStateChangeAt:Lorg/joda/time/Instant;
 
     goto :goto_6
 
@@ -403,7 +433,7 @@
 
     if-eqz v10, :cond_7
 
-    iget-object v10, v0, Lde/rki/coronawarnapp/covidcertificate/test/core/storage/types/RACertificateData;->rsaPublicKey:Lde/rki/coronawarnapp/util/encryption/rsa/RSAKey$Public;
+    iget-object v10, v0, Lde/rki/coronawarnapp/covidcertificate/test/core/storage/types/RACertificateData;->publicKeyRegisteredAt:Lorg/joda/time/Instant;
 
     goto :goto_7
 
@@ -415,7 +445,7 @@
 
     if-eqz v11, :cond_8
 
-    iget-object v11, v0, Lde/rki/coronawarnapp/covidcertificate/test/core/storage/types/RACertificateData;->rsaPrivateKey:Lde/rki/coronawarnapp/util/encryption/rsa/RSAKey$Private;
+    iget-object v11, v0, Lde/rki/coronawarnapp/covidcertificate/test/core/storage/types/RACertificateData;->rsaPublicKey:Lde/rki/coronawarnapp/util/encryption/rsa/RSAKey$Public;
 
     goto :goto_8
 
@@ -427,7 +457,7 @@
 
     if-eqz v12, :cond_9
 
-    iget-object v12, v0, Lde/rki/coronawarnapp/covidcertificate/test/core/storage/types/RACertificateData;->certificateReceivedAt:Lorg/joda/time/Instant;
+    iget-object v12, v0, Lde/rki/coronawarnapp/covidcertificate/test/core/storage/types/RACertificateData;->rsaPrivateKey:Lde/rki/coronawarnapp/util/encryption/rsa/RSAKey$Private;
 
     goto :goto_9
 
@@ -439,19 +469,19 @@
 
     if-eqz v13, :cond_a
 
-    iget-object v13, v0, Lde/rki/coronawarnapp/covidcertificate/test/core/storage/types/RACertificateData;->encryptedDataEncryptionkey:Lokio/ByteString;
+    iget-object v13, v0, Lde/rki/coronawarnapp/covidcertificate/test/core/storage/types/RACertificateData;->certificateReceivedAt:Lorg/joda/time/Instant;
 
     goto :goto_a
 
     :cond_a
-    const/4 v13, 0x0
+    move-object/from16 v13, p11
 
     :goto_a
     and-int/lit16 v14, v1, 0x800
 
     if-eqz v14, :cond_b
 
-    iget-object v14, v0, Lde/rki/coronawarnapp/covidcertificate/test/core/storage/types/RACertificateData;->encryptedDccCose:Lokio/ByteString;
+    iget-object v14, v0, Lde/rki/coronawarnapp/covidcertificate/test/core/storage/types/RACertificateData;->encryptedDataEncryptionkey:Lokio/ByteString;
 
     goto :goto_b
 
@@ -463,38 +493,72 @@
 
     if-eqz v15, :cond_c
 
-    iget-object v15, v0, Lde/rki/coronawarnapp/covidcertificate/test/core/storage/types/RACertificateData;->testCertificateQrCode:Ljava/lang/String;
+    iget-object v15, v0, Lde/rki/coronawarnapp/covidcertificate/test/core/storage/types/RACertificateData;->encryptedDccCose:Lokio/ByteString;
 
     goto :goto_c
 
     :cond_c
-    move-object/from16 v15, p13
+    const/4 v15, 0x0
 
     :goto_c
     and-int/lit16 v3, v1, 0x2000
 
     if-eqz v3, :cond_d
 
-    iget-object v3, v0, Lde/rki/coronawarnapp/covidcertificate/test/core/storage/types/RACertificateData;->labId:Ljava/lang/String;
+    iget-object v3, v0, Lde/rki/coronawarnapp/covidcertificate/test/core/storage/types/RACertificateData;->testCertificateQrCode:Ljava/lang/String;
 
     goto :goto_d
 
     :cond_d
-    const/4 v3, 0x0
+    move-object/from16 v3, p14
 
     :goto_d
-    and-int/lit16 v1, v1, 0x4000
+    move-object/from16 p14, v3
 
-    if-eqz v1, :cond_e
+    and-int/lit16 v3, v1, 0x4000
 
-    iget-boolean v1, v0, Lde/rki/coronawarnapp/covidcertificate/test/core/storage/types/RACertificateData;->certificateSeenByUser:Z
+    if-eqz v3, :cond_e
+
+    iget-object v3, v0, Lde/rki/coronawarnapp/covidcertificate/test/core/storage/types/RACertificateData;->labId:Ljava/lang/String;
 
     goto :goto_e
 
     :cond_e
-    move/from16 v1, p15
+    const/4 v3, 0x0
 
     :goto_e
+    const v16, 0x8000
+
+    and-int v16, v1, v16
+
+    if-eqz v16, :cond_f
+
+    move-object/from16 p15, v3
+
+    iget-boolean v3, v0, Lde/rki/coronawarnapp/covidcertificate/test/core/storage/types/RACertificateData;->certificateSeenByUser:Z
+
+    goto :goto_f
+
+    :cond_f
+    move-object/from16 p15, v3
+
+    move/from16 v3, p16
+
+    :goto_f
+    const/high16 v16, 0x10000
+
+    and-int v1, v1, v16
+
+    if-eqz v1, :cond_10
+
+    iget-object v1, v0, Lde/rki/coronawarnapp/covidcertificate/test/core/storage/types/RACertificateData;->recycledAt:Lorg/joda/time/Instant;
+
+    goto :goto_10
+
+    :cond_10
+    move-object/from16 v1, p17
+
+    :goto_10
     invoke-static/range {p0 .. p0}, Ljava/util/Objects;->requireNonNull(Ljava/lang/Object;)Ljava/lang/Object;
 
     const-string v0, "identifier"
@@ -539,11 +603,11 @@
 
     move-object/from16 p13, v15
 
-    move-object/from16 p14, v3
+    move/from16 p16, v3
 
-    move/from16 p15, v1
+    move-object/from16 p17, v1
 
-    invoke-direct/range {p0 .. p15}, Lde/rki/coronawarnapp/covidcertificate/test/core/storage/types/RACertificateData;-><init>(Ljava/lang/String;Ljava/lang/String;Lorg/joda/time/Instant;Lorg/joda/time/Instant;Lde/rki/coronawarnapp/covidcertificate/common/certificate/CwaCovidCertificate$State;Lorg/joda/time/Instant;Lorg/joda/time/Instant;Lde/rki/coronawarnapp/util/encryption/rsa/RSAKey$Public;Lde/rki/coronawarnapp/util/encryption/rsa/RSAKey$Private;Lorg/joda/time/Instant;Lokio/ByteString;Lokio/ByteString;Ljava/lang/String;Ljava/lang/String;Z)V
+    invoke-direct/range {p0 .. p17}, Lde/rki/coronawarnapp/covidcertificate/test/core/storage/types/RACertificateData;-><init>(Ljava/lang/String;Ljava/lang/String;Lorg/joda/time/Instant;Lorg/joda/time/Instant;Lorg/joda/time/Instant;Lde/rki/coronawarnapp/covidcertificate/common/certificate/CwaCovidCertificate$State;Lorg/joda/time/Instant;Lorg/joda/time/Instant;Lde/rki/coronawarnapp/util/encryption/rsa/RSAKey$Public;Lde/rki/coronawarnapp/util/encryption/rsa/RSAKey$Private;Lorg/joda/time/Instant;Lokio/ByteString;Lokio/ByteString;Ljava/lang/String;Ljava/lang/String;ZLorg/joda/time/Instant;)V
 
     return-object v0
 .end method
@@ -623,9 +687,9 @@
     return v2
 
     :cond_5
-    iget-object v1, p0, Lde/rki/coronawarnapp/covidcertificate/test/core/storage/types/RACertificateData;->lastSeenStateChange:Lde/rki/coronawarnapp/covidcertificate/common/certificate/CwaCovidCertificate$State;
+    iget-object v1, p0, Lde/rki/coronawarnapp/covidcertificate/test/core/storage/types/RACertificateData;->notifiedBlockedAt:Lorg/joda/time/Instant;
 
-    iget-object v3, p1, Lde/rki/coronawarnapp/covidcertificate/test/core/storage/types/RACertificateData;->lastSeenStateChange:Lde/rki/coronawarnapp/covidcertificate/common/certificate/CwaCovidCertificate$State;
+    iget-object v3, p1, Lde/rki/coronawarnapp/covidcertificate/test/core/storage/types/RACertificateData;->notifiedBlockedAt:Lorg/joda/time/Instant;
 
     invoke-static {v1, v3}, Lkotlin/jvm/internal/Intrinsics;->areEqual(Ljava/lang/Object;Ljava/lang/Object;)Z
 
@@ -636,9 +700,9 @@
     return v2
 
     :cond_6
-    iget-object v1, p0, Lde/rki/coronawarnapp/covidcertificate/test/core/storage/types/RACertificateData;->lastSeenStateChangeAt:Lorg/joda/time/Instant;
+    iget-object v1, p0, Lde/rki/coronawarnapp/covidcertificate/test/core/storage/types/RACertificateData;->lastSeenStateChange:Lde/rki/coronawarnapp/covidcertificate/common/certificate/CwaCovidCertificate$State;
 
-    iget-object v3, p1, Lde/rki/coronawarnapp/covidcertificate/test/core/storage/types/RACertificateData;->lastSeenStateChangeAt:Lorg/joda/time/Instant;
+    iget-object v3, p1, Lde/rki/coronawarnapp/covidcertificate/test/core/storage/types/RACertificateData;->lastSeenStateChange:Lde/rki/coronawarnapp/covidcertificate/common/certificate/CwaCovidCertificate$State;
 
     invoke-static {v1, v3}, Lkotlin/jvm/internal/Intrinsics;->areEqual(Ljava/lang/Object;Ljava/lang/Object;)Z
 
@@ -649,9 +713,9 @@
     return v2
 
     :cond_7
-    iget-object v1, p0, Lde/rki/coronawarnapp/covidcertificate/test/core/storage/types/RACertificateData;->publicKeyRegisteredAt:Lorg/joda/time/Instant;
+    iget-object v1, p0, Lde/rki/coronawarnapp/covidcertificate/test/core/storage/types/RACertificateData;->lastSeenStateChangeAt:Lorg/joda/time/Instant;
 
-    iget-object v3, p1, Lde/rki/coronawarnapp/covidcertificate/test/core/storage/types/RACertificateData;->publicKeyRegisteredAt:Lorg/joda/time/Instant;
+    iget-object v3, p1, Lde/rki/coronawarnapp/covidcertificate/test/core/storage/types/RACertificateData;->lastSeenStateChangeAt:Lorg/joda/time/Instant;
 
     invoke-static {v1, v3}, Lkotlin/jvm/internal/Intrinsics;->areEqual(Ljava/lang/Object;Ljava/lang/Object;)Z
 
@@ -662,9 +726,9 @@
     return v2
 
     :cond_8
-    iget-object v1, p0, Lde/rki/coronawarnapp/covidcertificate/test/core/storage/types/RACertificateData;->rsaPublicKey:Lde/rki/coronawarnapp/util/encryption/rsa/RSAKey$Public;
+    iget-object v1, p0, Lde/rki/coronawarnapp/covidcertificate/test/core/storage/types/RACertificateData;->publicKeyRegisteredAt:Lorg/joda/time/Instant;
 
-    iget-object v3, p1, Lde/rki/coronawarnapp/covidcertificate/test/core/storage/types/RACertificateData;->rsaPublicKey:Lde/rki/coronawarnapp/util/encryption/rsa/RSAKey$Public;
+    iget-object v3, p1, Lde/rki/coronawarnapp/covidcertificate/test/core/storage/types/RACertificateData;->publicKeyRegisteredAt:Lorg/joda/time/Instant;
 
     invoke-static {v1, v3}, Lkotlin/jvm/internal/Intrinsics;->areEqual(Ljava/lang/Object;Ljava/lang/Object;)Z
 
@@ -675,9 +739,9 @@
     return v2
 
     :cond_9
-    iget-object v1, p0, Lde/rki/coronawarnapp/covidcertificate/test/core/storage/types/RACertificateData;->rsaPrivateKey:Lde/rki/coronawarnapp/util/encryption/rsa/RSAKey$Private;
+    iget-object v1, p0, Lde/rki/coronawarnapp/covidcertificate/test/core/storage/types/RACertificateData;->rsaPublicKey:Lde/rki/coronawarnapp/util/encryption/rsa/RSAKey$Public;
 
-    iget-object v3, p1, Lde/rki/coronawarnapp/covidcertificate/test/core/storage/types/RACertificateData;->rsaPrivateKey:Lde/rki/coronawarnapp/util/encryption/rsa/RSAKey$Private;
+    iget-object v3, p1, Lde/rki/coronawarnapp/covidcertificate/test/core/storage/types/RACertificateData;->rsaPublicKey:Lde/rki/coronawarnapp/util/encryption/rsa/RSAKey$Public;
 
     invoke-static {v1, v3}, Lkotlin/jvm/internal/Intrinsics;->areEqual(Ljava/lang/Object;Ljava/lang/Object;)Z
 
@@ -688,9 +752,9 @@
     return v2
 
     :cond_a
-    iget-object v1, p0, Lde/rki/coronawarnapp/covidcertificate/test/core/storage/types/RACertificateData;->certificateReceivedAt:Lorg/joda/time/Instant;
+    iget-object v1, p0, Lde/rki/coronawarnapp/covidcertificate/test/core/storage/types/RACertificateData;->rsaPrivateKey:Lde/rki/coronawarnapp/util/encryption/rsa/RSAKey$Private;
 
-    iget-object v3, p1, Lde/rki/coronawarnapp/covidcertificate/test/core/storage/types/RACertificateData;->certificateReceivedAt:Lorg/joda/time/Instant;
+    iget-object v3, p1, Lde/rki/coronawarnapp/covidcertificate/test/core/storage/types/RACertificateData;->rsaPrivateKey:Lde/rki/coronawarnapp/util/encryption/rsa/RSAKey$Private;
 
     invoke-static {v1, v3}, Lkotlin/jvm/internal/Intrinsics;->areEqual(Ljava/lang/Object;Ljava/lang/Object;)Z
 
@@ -701,9 +765,9 @@
     return v2
 
     :cond_b
-    iget-object v1, p0, Lde/rki/coronawarnapp/covidcertificate/test/core/storage/types/RACertificateData;->encryptedDataEncryptionkey:Lokio/ByteString;
+    iget-object v1, p0, Lde/rki/coronawarnapp/covidcertificate/test/core/storage/types/RACertificateData;->certificateReceivedAt:Lorg/joda/time/Instant;
 
-    iget-object v3, p1, Lde/rki/coronawarnapp/covidcertificate/test/core/storage/types/RACertificateData;->encryptedDataEncryptionkey:Lokio/ByteString;
+    iget-object v3, p1, Lde/rki/coronawarnapp/covidcertificate/test/core/storage/types/RACertificateData;->certificateReceivedAt:Lorg/joda/time/Instant;
 
     invoke-static {v1, v3}, Lkotlin/jvm/internal/Intrinsics;->areEqual(Ljava/lang/Object;Ljava/lang/Object;)Z
 
@@ -714,9 +778,9 @@
     return v2
 
     :cond_c
-    iget-object v1, p0, Lde/rki/coronawarnapp/covidcertificate/test/core/storage/types/RACertificateData;->encryptedDccCose:Lokio/ByteString;
+    iget-object v1, p0, Lde/rki/coronawarnapp/covidcertificate/test/core/storage/types/RACertificateData;->encryptedDataEncryptionkey:Lokio/ByteString;
 
-    iget-object v3, p1, Lde/rki/coronawarnapp/covidcertificate/test/core/storage/types/RACertificateData;->encryptedDccCose:Lokio/ByteString;
+    iget-object v3, p1, Lde/rki/coronawarnapp/covidcertificate/test/core/storage/types/RACertificateData;->encryptedDataEncryptionkey:Lokio/ByteString;
 
     invoke-static {v1, v3}, Lkotlin/jvm/internal/Intrinsics;->areEqual(Ljava/lang/Object;Ljava/lang/Object;)Z
 
@@ -727,9 +791,9 @@
     return v2
 
     :cond_d
-    iget-object v1, p0, Lde/rki/coronawarnapp/covidcertificate/test/core/storage/types/RACertificateData;->testCertificateQrCode:Ljava/lang/String;
+    iget-object v1, p0, Lde/rki/coronawarnapp/covidcertificate/test/core/storage/types/RACertificateData;->encryptedDccCose:Lokio/ByteString;
 
-    iget-object v3, p1, Lde/rki/coronawarnapp/covidcertificate/test/core/storage/types/RACertificateData;->testCertificateQrCode:Ljava/lang/String;
+    iget-object v3, p1, Lde/rki/coronawarnapp/covidcertificate/test/core/storage/types/RACertificateData;->encryptedDccCose:Lokio/ByteString;
 
     invoke-static {v1, v3}, Lkotlin/jvm/internal/Intrinsics;->areEqual(Ljava/lang/Object;Ljava/lang/Object;)Z
 
@@ -740,9 +804,9 @@
     return v2
 
     :cond_e
-    iget-object v1, p0, Lde/rki/coronawarnapp/covidcertificate/test/core/storage/types/RACertificateData;->labId:Ljava/lang/String;
+    iget-object v1, p0, Lde/rki/coronawarnapp/covidcertificate/test/core/storage/types/RACertificateData;->testCertificateQrCode:Ljava/lang/String;
 
-    iget-object v3, p1, Lde/rki/coronawarnapp/covidcertificate/test/core/storage/types/RACertificateData;->labId:Ljava/lang/String;
+    iget-object v3, p1, Lde/rki/coronawarnapp/covidcertificate/test/core/storage/types/RACertificateData;->testCertificateQrCode:Ljava/lang/String;
 
     invoke-static {v1, v3}, Lkotlin/jvm/internal/Intrinsics;->areEqual(Ljava/lang/Object;Ljava/lang/Object;)Z
 
@@ -753,15 +817,41 @@
     return v2
 
     :cond_f
-    iget-boolean v1, p0, Lde/rki/coronawarnapp/covidcertificate/test/core/storage/types/RACertificateData;->certificateSeenByUser:Z
+    iget-object v1, p0, Lde/rki/coronawarnapp/covidcertificate/test/core/storage/types/RACertificateData;->labId:Ljava/lang/String;
 
-    iget-boolean p1, p1, Lde/rki/coronawarnapp/covidcertificate/test/core/storage/types/RACertificateData;->certificateSeenByUser:Z
+    iget-object v3, p1, Lde/rki/coronawarnapp/covidcertificate/test/core/storage/types/RACertificateData;->labId:Ljava/lang/String;
 
-    if-eq v1, p1, :cond_10
+    invoke-static {v1, v3}, Lkotlin/jvm/internal/Intrinsics;->areEqual(Ljava/lang/Object;Ljava/lang/Object;)Z
+
+    move-result v1
+
+    if-nez v1, :cond_10
 
     return v2
 
     :cond_10
+    iget-boolean v1, p0, Lde/rki/coronawarnapp/covidcertificate/test/core/storage/types/RACertificateData;->certificateSeenByUser:Z
+
+    iget-boolean v3, p1, Lde/rki/coronawarnapp/covidcertificate/test/core/storage/types/RACertificateData;->certificateSeenByUser:Z
+
+    if-eq v1, v3, :cond_11
+
+    return v2
+
+    :cond_11
+    iget-object v1, p0, Lde/rki/coronawarnapp/covidcertificate/test/core/storage/types/RACertificateData;->recycledAt:Lorg/joda/time/Instant;
+
+    iget-object p1, p1, Lde/rki/coronawarnapp/covidcertificate/test/core/storage/types/RACertificateData;->recycledAt:Lorg/joda/time/Instant;
+
+    invoke-static {v1, p1}, Lkotlin/jvm/internal/Intrinsics;->areEqual(Ljava/lang/Object;Ljava/lang/Object;)Z
+
+    move-result p1
+
+    if-nez p1, :cond_12
+
+    return v2
+
+    :cond_12
     return v0
 .end method
 
@@ -805,6 +895,14 @@
     return-object v0
 .end method
 
+.method public getNotifiedBlockedAt()Lorg/joda/time/Instant;
+    .locals 1
+
+    iget-object v0, p0, Lde/rki/coronawarnapp/covidcertificate/test/core/storage/types/RACertificateData;->notifiedBlockedAt:Lorg/joda/time/Instant;
+
+    return-object v0
+.end method
+
 .method public getNotifiedInvalidAt()Lorg/joda/time/Instant;
     .locals 1
 
@@ -817,6 +915,14 @@
     .locals 1
 
     iget-object v0, p0, Lde/rki/coronawarnapp/covidcertificate/test/core/storage/types/RACertificateData;->publicKeyRegisteredAt:Lorg/joda/time/Instant;
+
+    return-object v0
+.end method
+
+.method public getRecycledAt()Lorg/joda/time/Instant;
+    .locals 1
+
+    iget-object v0, p0, Lde/rki/coronawarnapp/covidcertificate/test/core/storage/types/RACertificateData;->recycledAt:Lorg/joda/time/Instant;
 
     return-object v0
 .end method
@@ -906,7 +1012,7 @@
 
     mul-int/lit8 v0, v0, 0x1f
 
-    iget-object v1, p0, Lde/rki/coronawarnapp/covidcertificate/test/core/storage/types/RACertificateData;->lastSeenStateChange:Lde/rki/coronawarnapp/covidcertificate/common/certificate/CwaCovidCertificate$State;
+    iget-object v1, p0, Lde/rki/coronawarnapp/covidcertificate/test/core/storage/types/RACertificateData;->notifiedBlockedAt:Lorg/joda/time/Instant;
 
     if-nez v1, :cond_1
 
@@ -915,7 +1021,7 @@
     goto :goto_1
 
     :cond_1
-    invoke-virtual {v1}, Ljava/lang/Object;->hashCode()I
+    invoke-virtual {v1}, Lorg/joda/time/base/AbstractInstant;->hashCode()I
 
     move-result v1
 
@@ -924,7 +1030,7 @@
 
     mul-int/lit8 v0, v0, 0x1f
 
-    iget-object v1, p0, Lde/rki/coronawarnapp/covidcertificate/test/core/storage/types/RACertificateData;->lastSeenStateChangeAt:Lorg/joda/time/Instant;
+    iget-object v1, p0, Lde/rki/coronawarnapp/covidcertificate/test/core/storage/types/RACertificateData;->lastSeenStateChange:Lde/rki/coronawarnapp/covidcertificate/common/certificate/CwaCovidCertificate$State;
 
     if-nez v1, :cond_2
 
@@ -933,7 +1039,7 @@
     goto :goto_2
 
     :cond_2
-    invoke-virtual {v1}, Lorg/joda/time/base/AbstractInstant;->hashCode()I
+    invoke-virtual {v1}, Lde/rki/coronawarnapp/covidcertificate/common/certificate/CwaCovidCertificate$State;->hashCode()I
 
     move-result v1
 
@@ -942,7 +1048,7 @@
 
     mul-int/lit8 v0, v0, 0x1f
 
-    iget-object v1, p0, Lde/rki/coronawarnapp/covidcertificate/test/core/storage/types/RACertificateData;->publicKeyRegisteredAt:Lorg/joda/time/Instant;
+    iget-object v1, p0, Lde/rki/coronawarnapp/covidcertificate/test/core/storage/types/RACertificateData;->lastSeenStateChangeAt:Lorg/joda/time/Instant;
 
     if-nez v1, :cond_3
 
@@ -960,7 +1066,7 @@
 
     mul-int/lit8 v0, v0, 0x1f
 
-    iget-object v1, p0, Lde/rki/coronawarnapp/covidcertificate/test/core/storage/types/RACertificateData;->rsaPublicKey:Lde/rki/coronawarnapp/util/encryption/rsa/RSAKey$Public;
+    iget-object v1, p0, Lde/rki/coronawarnapp/covidcertificate/test/core/storage/types/RACertificateData;->publicKeyRegisteredAt:Lorg/joda/time/Instant;
 
     if-nez v1, :cond_4
 
@@ -969,7 +1075,7 @@
     goto :goto_4
 
     :cond_4
-    invoke-virtual {v1}, Lde/rki/coronawarnapp/util/encryption/rsa/RSAKey$Public;->hashCode()I
+    invoke-virtual {v1}, Lorg/joda/time/base/AbstractInstant;->hashCode()I
 
     move-result v1
 
@@ -978,7 +1084,7 @@
 
     mul-int/lit8 v0, v0, 0x1f
 
-    iget-object v1, p0, Lde/rki/coronawarnapp/covidcertificate/test/core/storage/types/RACertificateData;->rsaPrivateKey:Lde/rki/coronawarnapp/util/encryption/rsa/RSAKey$Private;
+    iget-object v1, p0, Lde/rki/coronawarnapp/covidcertificate/test/core/storage/types/RACertificateData;->rsaPublicKey:Lde/rki/coronawarnapp/util/encryption/rsa/RSAKey$Public;
 
     if-nez v1, :cond_5
 
@@ -987,7 +1093,7 @@
     goto :goto_5
 
     :cond_5
-    invoke-virtual {v1}, Lde/rki/coronawarnapp/util/encryption/rsa/RSAKey$Private;->hashCode()I
+    invoke-virtual {v1}, Lde/rki/coronawarnapp/util/encryption/rsa/RSAKey$Public;->hashCode()I
 
     move-result v1
 
@@ -996,7 +1102,7 @@
 
     mul-int/lit8 v0, v0, 0x1f
 
-    iget-object v1, p0, Lde/rki/coronawarnapp/covidcertificate/test/core/storage/types/RACertificateData;->certificateReceivedAt:Lorg/joda/time/Instant;
+    iget-object v1, p0, Lde/rki/coronawarnapp/covidcertificate/test/core/storage/types/RACertificateData;->rsaPrivateKey:Lde/rki/coronawarnapp/util/encryption/rsa/RSAKey$Private;
 
     if-nez v1, :cond_6
 
@@ -1005,7 +1111,7 @@
     goto :goto_6
 
     :cond_6
-    invoke-virtual {v1}, Lorg/joda/time/base/AbstractInstant;->hashCode()I
+    invoke-virtual {v1}, Lde/rki/coronawarnapp/util/encryption/rsa/RSAKey$Private;->hashCode()I
 
     move-result v1
 
@@ -1014,7 +1120,7 @@
 
     mul-int/lit8 v0, v0, 0x1f
 
-    iget-object v1, p0, Lde/rki/coronawarnapp/covidcertificate/test/core/storage/types/RACertificateData;->encryptedDataEncryptionkey:Lokio/ByteString;
+    iget-object v1, p0, Lde/rki/coronawarnapp/covidcertificate/test/core/storage/types/RACertificateData;->certificateReceivedAt:Lorg/joda/time/Instant;
 
     if-nez v1, :cond_7
 
@@ -1023,7 +1129,7 @@
     goto :goto_7
 
     :cond_7
-    invoke-virtual {v1}, Lokio/ByteString;->hashCode()I
+    invoke-virtual {v1}, Lorg/joda/time/base/AbstractInstant;->hashCode()I
 
     move-result v1
 
@@ -1032,7 +1138,7 @@
 
     mul-int/lit8 v0, v0, 0x1f
 
-    iget-object v1, p0, Lde/rki/coronawarnapp/covidcertificate/test/core/storage/types/RACertificateData;->encryptedDccCose:Lokio/ByteString;
+    iget-object v1, p0, Lde/rki/coronawarnapp/covidcertificate/test/core/storage/types/RACertificateData;->encryptedDataEncryptionkey:Lokio/ByteString;
 
     if-nez v1, :cond_8
 
@@ -1050,7 +1156,7 @@
 
     mul-int/lit8 v0, v0, 0x1f
 
-    iget-object v1, p0, Lde/rki/coronawarnapp/covidcertificate/test/core/storage/types/RACertificateData;->testCertificateQrCode:Ljava/lang/String;
+    iget-object v1, p0, Lde/rki/coronawarnapp/covidcertificate/test/core/storage/types/RACertificateData;->encryptedDccCose:Lokio/ByteString;
 
     if-nez v1, :cond_9
 
@@ -1059,7 +1165,7 @@
     goto :goto_9
 
     :cond_9
-    invoke-virtual {v1}, Ljava/lang/String;->hashCode()I
+    invoke-virtual {v1}, Lokio/ByteString;->hashCode()I
 
     move-result v1
 
@@ -1068,36 +1174,72 @@
 
     mul-int/lit8 v0, v0, 0x1f
 
-    iget-object v1, p0, Lde/rki/coronawarnapp/covidcertificate/test/core/storage/types/RACertificateData;->labId:Ljava/lang/String;
+    iget-object v1, p0, Lde/rki/coronawarnapp/covidcertificate/test/core/storage/types/RACertificateData;->testCertificateQrCode:Ljava/lang/String;
 
     if-nez v1, :cond_a
+
+    move v1, v2
 
     goto :goto_a
 
     :cond_a
     invoke-virtual {v1}, Ljava/lang/String;->hashCode()I
 
-    move-result v2
+    move-result v1
 
     :goto_a
-    add-int/2addr v0, v2
+    add-int/2addr v0, v1
+
+    mul-int/lit8 v0, v0, 0x1f
+
+    iget-object v1, p0, Lde/rki/coronawarnapp/covidcertificate/test/core/storage/types/RACertificateData;->labId:Ljava/lang/String;
+
+    if-nez v1, :cond_b
+
+    move v1, v2
+
+    goto :goto_b
+
+    :cond_b
+    invoke-virtual {v1}, Ljava/lang/String;->hashCode()I
+
+    move-result v1
+
+    :goto_b
+    add-int/2addr v0, v1
 
     mul-int/lit8 v0, v0, 0x1f
 
     iget-boolean v1, p0, Lde/rki/coronawarnapp/covidcertificate/test/core/storage/types/RACertificateData;->certificateSeenByUser:Z
 
-    if-eqz v1, :cond_b
+    if-eqz v1, :cond_c
 
     const/4 v1, 0x1
 
-    :cond_b
+    :cond_c
     add-int/2addr v0, v1
+
+    mul-int/lit8 v0, v0, 0x1f
+
+    iget-object v1, p0, Lde/rki/coronawarnapp/covidcertificate/test/core/storage/types/RACertificateData;->recycledAt:Lorg/joda/time/Instant;
+
+    if-nez v1, :cond_d
+
+    goto :goto_c
+
+    :cond_d
+    invoke-virtual {v1}, Lorg/joda/time/base/AbstractInstant;->hashCode()I
+
+    move-result v2
+
+    :goto_c
+    add-int/2addr v0, v2
 
     return v0
 .end method
 
 .method public toString()Ljava/lang/String;
-    .locals 18
+    .locals 20
 
     move-object/from16 v0, p0
 
@@ -1109,39 +1251,47 @@
 
     iget-object v4, v0, Lde/rki/coronawarnapp/covidcertificate/test/core/storage/types/RACertificateData;->notifiedInvalidAt:Lorg/joda/time/Instant;
 
-    iget-object v5, v0, Lde/rki/coronawarnapp/covidcertificate/test/core/storage/types/RACertificateData;->lastSeenStateChange:Lde/rki/coronawarnapp/covidcertificate/common/certificate/CwaCovidCertificate$State;
+    iget-object v5, v0, Lde/rki/coronawarnapp/covidcertificate/test/core/storage/types/RACertificateData;->notifiedBlockedAt:Lorg/joda/time/Instant;
 
-    iget-object v6, v0, Lde/rki/coronawarnapp/covidcertificate/test/core/storage/types/RACertificateData;->lastSeenStateChangeAt:Lorg/joda/time/Instant;
+    iget-object v6, v0, Lde/rki/coronawarnapp/covidcertificate/test/core/storage/types/RACertificateData;->lastSeenStateChange:Lde/rki/coronawarnapp/covidcertificate/common/certificate/CwaCovidCertificate$State;
 
-    iget-object v7, v0, Lde/rki/coronawarnapp/covidcertificate/test/core/storage/types/RACertificateData;->publicKeyRegisteredAt:Lorg/joda/time/Instant;
+    iget-object v7, v0, Lde/rki/coronawarnapp/covidcertificate/test/core/storage/types/RACertificateData;->lastSeenStateChangeAt:Lorg/joda/time/Instant;
 
-    iget-object v8, v0, Lde/rki/coronawarnapp/covidcertificate/test/core/storage/types/RACertificateData;->rsaPublicKey:Lde/rki/coronawarnapp/util/encryption/rsa/RSAKey$Public;
+    iget-object v8, v0, Lde/rki/coronawarnapp/covidcertificate/test/core/storage/types/RACertificateData;->publicKeyRegisteredAt:Lorg/joda/time/Instant;
 
-    iget-object v9, v0, Lde/rki/coronawarnapp/covidcertificate/test/core/storage/types/RACertificateData;->rsaPrivateKey:Lde/rki/coronawarnapp/util/encryption/rsa/RSAKey$Private;
+    iget-object v9, v0, Lde/rki/coronawarnapp/covidcertificate/test/core/storage/types/RACertificateData;->rsaPublicKey:Lde/rki/coronawarnapp/util/encryption/rsa/RSAKey$Public;
 
-    iget-object v10, v0, Lde/rki/coronawarnapp/covidcertificate/test/core/storage/types/RACertificateData;->certificateReceivedAt:Lorg/joda/time/Instant;
+    iget-object v10, v0, Lde/rki/coronawarnapp/covidcertificate/test/core/storage/types/RACertificateData;->rsaPrivateKey:Lde/rki/coronawarnapp/util/encryption/rsa/RSAKey$Private;
 
-    iget-object v11, v0, Lde/rki/coronawarnapp/covidcertificate/test/core/storage/types/RACertificateData;->encryptedDataEncryptionkey:Lokio/ByteString;
+    iget-object v11, v0, Lde/rki/coronawarnapp/covidcertificate/test/core/storage/types/RACertificateData;->certificateReceivedAt:Lorg/joda/time/Instant;
 
-    iget-object v12, v0, Lde/rki/coronawarnapp/covidcertificate/test/core/storage/types/RACertificateData;->encryptedDccCose:Lokio/ByteString;
+    iget-object v12, v0, Lde/rki/coronawarnapp/covidcertificate/test/core/storage/types/RACertificateData;->encryptedDataEncryptionkey:Lokio/ByteString;
 
-    iget-object v13, v0, Lde/rki/coronawarnapp/covidcertificate/test/core/storage/types/RACertificateData;->testCertificateQrCode:Ljava/lang/String;
+    iget-object v13, v0, Lde/rki/coronawarnapp/covidcertificate/test/core/storage/types/RACertificateData;->encryptedDccCose:Lokio/ByteString;
 
-    iget-object v14, v0, Lde/rki/coronawarnapp/covidcertificate/test/core/storage/types/RACertificateData;->labId:Ljava/lang/String;
+    iget-object v14, v0, Lde/rki/coronawarnapp/covidcertificate/test/core/storage/types/RACertificateData;->testCertificateQrCode:Ljava/lang/String;
+
+    iget-object v15, v0, Lde/rki/coronawarnapp/covidcertificate/test/core/storage/types/RACertificateData;->labId:Ljava/lang/String;
+
+    move-object/from16 v16, v15
 
     iget-boolean v15, v0, Lde/rki/coronawarnapp/covidcertificate/test/core/storage/types/RACertificateData;->certificateSeenByUser:Z
 
+    move/from16 v17, v15
+
+    iget-object v15, v0, Lde/rki/coronawarnapp/covidcertificate/test/core/storage/types/RACertificateData;->recycledAt:Lorg/joda/time/Instant;
+
     const-string v0, "RACertificateData(identifier="
 
-    move/from16 v16, v15
+    move-object/from16 v18, v15
 
     const-string v15, ", registrationToken="
 
-    move-object/from16 v17, v13
+    move-object/from16 v19, v14
 
-    const-string v13, ", registeredAt="
+    const-string v14, ", registeredAt="
 
-    invoke-static {v0, v1, v15, v2, v13}, Landroidx/navigation/NavInflater$$ExternalSyntheticOutline0;->m(Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;)Ljava/lang/StringBuilder;
+    invoke-static {v0, v1, v15, v2, v14}, Landroidx/navigation/NavInflater$$ExternalSyntheticOutline0;->m(Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;)Ljava/lang/StringBuilder;
 
     move-result-object v0
 
@@ -1153,71 +1303,97 @@
 
     invoke-virtual {v0, v4}, Ljava/lang/StringBuilder;->append(Ljava/lang/Object;)Ljava/lang/StringBuilder;
 
-    const-string v1, ", lastSeenStateChange="
+    const-string v1, ", notifiedBlockedAt="
 
     invoke-virtual {v0, v1}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
 
     invoke-virtual {v0, v5}, Ljava/lang/StringBuilder;->append(Ljava/lang/Object;)Ljava/lang/StringBuilder;
 
-    const-string v1, ", lastSeenStateChangeAt="
+    const-string v1, ", lastSeenStateChange="
 
     invoke-virtual {v0, v1}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
 
     invoke-virtual {v0, v6}, Ljava/lang/StringBuilder;->append(Ljava/lang/Object;)Ljava/lang/StringBuilder;
 
-    const-string v1, ", publicKeyRegisteredAt="
+    const-string v1, ", lastSeenStateChangeAt="
 
     invoke-virtual {v0, v1}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
 
     invoke-virtual {v0, v7}, Ljava/lang/StringBuilder;->append(Ljava/lang/Object;)Ljava/lang/StringBuilder;
 
-    const-string v1, ", rsaPublicKey="
+    const-string v1, ", publicKeyRegisteredAt="
 
     invoke-virtual {v0, v1}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
 
     invoke-virtual {v0, v8}, Ljava/lang/StringBuilder;->append(Ljava/lang/Object;)Ljava/lang/StringBuilder;
 
-    const-string v1, ", rsaPrivateKey="
+    const-string v1, ", rsaPublicKey="
 
     invoke-virtual {v0, v1}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
 
     invoke-virtual {v0, v9}, Ljava/lang/StringBuilder;->append(Ljava/lang/Object;)Ljava/lang/StringBuilder;
 
-    const-string v1, ", certificateReceivedAt="
+    const-string v1, ", rsaPrivateKey="
 
     invoke-virtual {v0, v1}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
 
     invoke-virtual {v0, v10}, Ljava/lang/StringBuilder;->append(Ljava/lang/Object;)Ljava/lang/StringBuilder;
 
-    const-string v1, ", encryptedDataEncryptionkey="
+    const-string v1, ", certificateReceivedAt="
 
     invoke-virtual {v0, v1}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
 
     invoke-virtual {v0, v11}, Ljava/lang/StringBuilder;->append(Ljava/lang/Object;)Ljava/lang/StringBuilder;
 
-    const-string v1, ", encryptedDccCose="
+    const-string v1, ", encryptedDataEncryptionkey="
 
     invoke-virtual {v0, v1}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
 
     invoke-virtual {v0, v12}, Ljava/lang/StringBuilder;->append(Ljava/lang/Object;)Ljava/lang/StringBuilder;
 
+    const-string v1, ", encryptedDccCose="
+
+    invoke-virtual {v0, v1}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+
+    invoke-virtual {v0, v13}, Ljava/lang/StringBuilder;->append(Ljava/lang/Object;)Ljava/lang/StringBuilder;
+
     const-string v1, ", testCertificateQrCode="
+
+    invoke-virtual {v0, v1}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+
+    move-object/from16 v1, v19
 
     invoke-virtual {v0, v1}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
 
     const-string v1, ", labId="
 
-    const-string v2, ", certificateSeenByUser="
+    invoke-virtual {v0, v1}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
 
-    move-object/from16 v3, v17
+    move-object/from16 v1, v16
 
-    invoke-static {v0, v3, v1, v14, v2}, Landroidx/room/InvalidationTracker$$ExternalSyntheticOutline1;->m(Ljava/lang/StringBuilder;Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;)V
+    invoke-virtual {v0, v1}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+
+    const-string v1, ", certificateSeenByUser="
+
+    invoke-virtual {v0, v1}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+
+    move/from16 v1, v17
+
+    invoke-virtual {v0, v1}, Ljava/lang/StringBuilder;->append(Z)Ljava/lang/StringBuilder;
+
+    const-string v1, ", recycledAt="
+
+    invoke-virtual {v0, v1}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+
+    move-object/from16 v1, v18
+
+    invoke-virtual {v0, v1}, Ljava/lang/StringBuilder;->append(Ljava/lang/Object;)Ljava/lang/StringBuilder;
 
     const-string v1, ")"
 
-    move/from16 v2, v16
+    invoke-virtual {v0, v1}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
 
-    invoke-static {v0, v2, v1}, Landroidx/appcompat/app/AppCompatDelegateImpl$$ExternalSyntheticOutline0;->m(Ljava/lang/StringBuilder;ZLjava/lang/String;)Ljava/lang/String;
+    invoke-virtual {v0}, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
 
     move-result-object v0
 

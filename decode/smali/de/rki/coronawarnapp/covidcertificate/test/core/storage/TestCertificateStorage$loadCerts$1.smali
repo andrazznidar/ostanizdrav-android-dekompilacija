@@ -4,15 +4,6 @@
 
 
 # annotations
-.annotation system Ldalvik/annotation/EnclosingMethod;
-    value = Lde/rki/coronawarnapp/covidcertificate/test/core/storage/TestCertificateStorage;->loadCerts(Lcom/google/gson/reflect/TypeToken;Ljava/lang/String;)Ljava/util/Set;
-.end annotation
-
-.annotation system Ldalvik/annotation/InnerClass;
-    accessFlags = 0x19
-    name = null
-.end annotation
-
 .annotation system Ldalvik/annotation/Signature;
     value = {
         "Lcom/google/gson/reflect/TypeToken<",

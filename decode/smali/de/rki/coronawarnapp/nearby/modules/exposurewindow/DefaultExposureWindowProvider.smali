@@ -28,7 +28,7 @@
 
 # virtual methods
 .method public exposureWindows(Lkotlin/coroutines/Continuation;)Ljava/lang/Object;
-    .locals 3
+    .locals 2
     .annotation system Ldalvik/annotation/Signature;
         value = {
             "(",
@@ -43,44 +43,35 @@
 
     new-instance v0, Lkotlin/coroutines/SafeContinuation;
 
-    invoke-static {p1}, Lkotlinx/coroutines/flow/FlowKt;->intercepted(Lkotlin/coroutines/Continuation;)Lkotlin/coroutines/Continuation;
+    invoke-static {p1}, Lcom/google/android/gms/nearby/messages/internal/zzag;->intercepted(Lkotlin/coroutines/Continuation;)Lkotlin/coroutines/Continuation;
 
-    move-result-object v1
+    move-result-object p1
 
-    invoke-direct {v0, v1}, Lkotlin/coroutines/SafeContinuation;-><init>(Lkotlin/coroutines/Continuation;)V
+    invoke-direct {v0, p1}, Lkotlin/coroutines/SafeContinuation;-><init>(Lkotlin/coroutines/Continuation;)V
 
-    iget-object v1, p0, Lde/rki/coronawarnapp/nearby/modules/exposurewindow/DefaultExposureWindowProvider;->client:Lcom/google/android/gms/nearby/exposurenotification/ExposureNotificationClient;
+    iget-object p1, p0, Lde/rki/coronawarnapp/nearby/modules/exposurewindow/DefaultExposureWindowProvider;->client:Lcom/google/android/gms/nearby/exposurenotification/ExposureNotificationClient;
 
-    invoke-interface {v1}, Lcom/google/android/gms/nearby/exposurenotification/ExposureNotificationClient;->getExposureWindows()Lcom/google/android/gms/tasks/Task;
+    invoke-interface {p1}, Lcom/google/android/gms/nearby/exposurenotification/ExposureNotificationClient;->getExposureWindows()Lcom/google/android/gms/tasks/Task;
 
-    move-result-object v1
+    move-result-object p1
 
-    new-instance v2, Lde/rki/coronawarnapp/nearby/modules/exposurewindow/DefaultExposureWindowProvider$exposureWindows$2$1;
+    new-instance v1, Lde/rki/coronawarnapp/nearby/modules/exposurewindow/DefaultExposureWindowProvider$exposureWindows$2$1;
 
-    invoke-direct {v2, v0}, Lde/rki/coronawarnapp/nearby/modules/exposurewindow/DefaultExposureWindowProvider$exposureWindows$2$1;-><init>(Lkotlin/coroutines/Continuation;)V
+    invoke-direct {v1, v0}, Lde/rki/coronawarnapp/nearby/modules/exposurewindow/DefaultExposureWindowProvider$exposureWindows$2$1;-><init>(Lkotlin/coroutines/Continuation;)V
 
-    invoke-virtual {v1, v2}, Lcom/google/android/gms/tasks/Task;->addOnSuccessListener(Lcom/google/android/gms/tasks/OnSuccessListener;)Lcom/google/android/gms/tasks/Task;
+    invoke-virtual {p1, v1}, Lcom/google/android/gms/tasks/Task;->addOnSuccessListener(Lcom/google/android/gms/tasks/OnSuccessListener;)Lcom/google/android/gms/tasks/Task;
 
-    move-result-object v1
+    move-result-object p1
 
-    new-instance v2, Lde/rki/coronawarnapp/nearby/modules/exposurewindow/DefaultExposureWindowProvider$exposureWindows$2$2;
+    new-instance v1, Lde/rki/coronawarnapp/nearby/modules/exposurewindow/DefaultExposureWindowProvider$exposureWindows$2$2;
 
-    invoke-direct {v2, v0}, Lde/rki/coronawarnapp/nearby/modules/exposurewindow/DefaultExposureWindowProvider$exposureWindows$2$2;-><init>(Lkotlin/coroutines/Continuation;)V
+    invoke-direct {v1, v0}, Lde/rki/coronawarnapp/nearby/modules/exposurewindow/DefaultExposureWindowProvider$exposureWindows$2$2;-><init>(Lkotlin/coroutines/Continuation;)V
 
-    invoke-virtual {v1, v2}, Lcom/google/android/gms/tasks/Task;->addOnFailureListener(Lcom/google/android/gms/tasks/OnFailureListener;)Lcom/google/android/gms/tasks/Task;
+    invoke-virtual {p1, v1}, Lcom/google/android/gms/tasks/Task;->addOnFailureListener(Lcom/google/android/gms/tasks/OnFailureListener;)Lcom/google/android/gms/tasks/Task;
 
     invoke-virtual {v0}, Lkotlin/coroutines/SafeContinuation;->getOrThrow()Ljava/lang/Object;
 
-    move-result-object v0
+    move-result-object p1
 
-    sget-object v1, Lkotlin/coroutines/intrinsics/CoroutineSingletons;->COROUTINE_SUSPENDED:Lkotlin/coroutines/intrinsics/CoroutineSingletons;
-
-    if-ne v0, v1, :cond_0
-
-    const-string v1, "frame"
-
-    invoke-static {p1, v1}, Lkotlin/jvm/internal/Intrinsics;->checkNotNullParameter(Ljava/lang/Object;Ljava/lang/String;)V
-
-    :cond_0
-    return-object v0
+    return-object p1
 .end method

@@ -91,7 +91,7 @@
 
     const-class v0, Lde/rki/coronawarnapp/util/lists/modular/ModularAdapter$Module$Typing;
 
-    const-string v1, "$this$filterIsInstance"
+    const-string v1, "<this>"
 
     invoke-static {p1, v1}, Lkotlin/jvm/internal/Intrinsics;->checkNotNullParameter(Ljava/lang/Object;Ljava/lang/String;)V
 

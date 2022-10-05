@@ -63,17 +63,13 @@
 .end method
 
 .method public static final access$detachTimeout(Lokhttp3/internal/http1/Http1ExchangeCodec;Lokio/ForwardingTimeout;)V
-    .locals 2
+    .locals 1
 
     invoke-static {p0}, Ljava/util/Objects;->requireNonNull(Ljava/lang/Object;)Ljava/lang/Object;
 
     iget-object p0, p1, Lokio/ForwardingTimeout;->delegate:Lokio/Timeout;
 
     sget-object v0, Lokio/Timeout;->NONE:Lokio/Timeout;
-
-    const-string v1, "delegate"
-
-    invoke-static {v0, v1}, Lkotlin/jvm/internal/Intrinsics;->checkNotNullParameter(Ljava/lang/Object;Ljava/lang/String;)V
 
     iput-object v0, p1, Lokio/ForwardingTimeout;->delegate:Lokio/Timeout;
 
@@ -104,9 +100,11 @@
 .method public createRequestBody(Lokhttp3/Request;J)Lokio/Sink;
     .locals 6
 
+    iget-object p1, p1, Lokhttp3/Request;->headers:Lokhttp3/Headers;
+
     const-string v0, "Transfer-Encoding"
 
-    invoke-virtual {p1, v0}, Lokhttp3/Request;->header(Ljava/lang/String;)Ljava/lang/String;
+    invoke-virtual {p1, v0}, Lokhttp3/Headers;->get(Ljava/lang/String;)Ljava/lang/String;
 
     move-result-object p1
 

@@ -18,11 +18,7 @@
 .end annotation
 
 .annotation runtime Lkotlin/Metadata;
-    bv = {
-        0x1,
-        0x0,
-        0x3
-    }
+    bv = {}
     d1 = {
         "\u0000\u0010\n\u0002\u0018\u0002\n\u0002\u0018\u0002\n\u0002\u0018\u0002\n\u0002\u0008\u0004\u0018\u00002\u00020\u00012\u00020\u0002:\u0001\u0005B\u0007\u00a2\u0006\u0004\u0008\u0003\u0010\u0004\u00a8\u0006\u0006"
     }
@@ -38,8 +34,8 @@
     k = 0x1
     mv = {
         0x1,
-        0x5,
-        0x1
+        0x6,
+        0x0
     }
 .end annotation
 
@@ -143,19 +139,17 @@
 
     const/4 v0, 0x0
 
-    invoke-static {p0, v3, v0, v2, v4}, Lde/rki/coronawarnapp/util/viewmodel/ViewModelLazyKeyedKt;->createViewModelLazyKeyed(Landroidx/fragment/app/Fragment;Lkotlin/reflect/KClass;Lkotlin/jvm/functions/Function0;Lkotlin/jvm/functions/Function0;Lkotlin/jvm/functions/Function0;)Lkotlin/Lazy;
+    invoke-static {p0, v3, v0, v2, v4}, Lcom/google/android/gms/internal/nearby/zzbf;->createViewModelLazyKeyed(Landroidx/fragment/app/Fragment;Lkotlin/reflect/KClass;Lkotlin/jvm/functions/Function0;Lkotlin/jvm/functions/Function0;Lkotlin/jvm/functions/Function0;)Lkotlin/Lazy;
 
     move-result-object v0
 
     iput-object v0, p0, Lde/rki/coronawarnapp/datadonation/analytics/ui/input/AnalyticsUserInputFragment;->vm$delegate:Lkotlin/Lazy;
 
-    new-instance v0, Lde/rki/coronawarnapp/datadonation/analytics/ui/input/AnalyticsUserInputFragment$special$$inlined$viewBinding$1;
-
-    invoke-direct {v0}, Lde/rki/coronawarnapp/datadonation/analytics/ui/input/AnalyticsUserInputFragment$special$$inlined$viewBinding$1;-><init>()V
+    sget-object v0, Lde/rki/coronawarnapp/datadonation/analytics/ui/input/AnalyticsUserInputFragment$special$$inlined$viewBinding$1;->INSTANCE:Lde/rki/coronawarnapp/datadonation/analytics/ui/input/AnalyticsUserInputFragment$special$$inlined$viewBinding$1;
 
     sget-object v1, Lde/rki/coronawarnapp/util/ui/ViewBindingExtensionsKt$viewBinding$2;->INSTANCE:Lde/rki/coronawarnapp/util/ui/ViewBindingExtensionsKt$viewBinding$2;
 
-    invoke-static {p0, v0, v1}, Lkotlin/sequences/SequencesKt__SequencesJVMKt;->viewBinding(Landroidx/fragment/app/Fragment;Lkotlin/jvm/functions/Function1;Lkotlin/jvm/functions/Function1;)Lde/rki/coronawarnapp/util/ui/ViewBindingProperty;
+    invoke-static {p0, v0, v1}, Lkotlinx/coroutines/channels/ChannelsKt;->viewBinding(Landroidx/fragment/app/Fragment;Lkotlin/jvm/functions/Function1;Lkotlin/jvm/functions/Function1;)Lde/rki/coronawarnapp/util/ui/ViewBindingProperty;
 
     move-result-object v0
 
@@ -200,7 +194,7 @@
 .end method
 
 .method public onViewCreated(Landroid/view/View;Landroid/os/Bundle;)V
-    .locals 3
+    .locals 4
 
     const-string/jumbo v0, "view"
 
@@ -222,17 +216,17 @@
 
     move-result p1
 
-    if-eqz p1, :cond_2
-
     const/4 p2, 0x1
+
+    if-eqz p1, :cond_2
 
     if-eq p1, p2, :cond_1
 
-    const/4 p2, 0x2
+    const/4 v0, 0x2
 
-    if-ne p1, p2, :cond_0
+    if-ne p1, v0, :cond_0
 
-    const p1, 0x7f130051
+    const p1, 0x7f13004c
 
     goto :goto_0
 
@@ -244,41 +238,41 @@
     throw p1
 
     :cond_1
-    const p1, 0x7f130063
+    const p1, 0x7f13005e
 
     goto :goto_0
 
     :cond_2
-    const p1, 0x7f13004f
+    const p1, 0x7f13004a
 
     :goto_0
-    iget-object p2, p0, Lde/rki/coronawarnapp/datadonation/analytics/ui/input/AnalyticsUserInputFragment;->binding$delegate:Lde/rki/coronawarnapp/util/ui/ViewBindingProperty;
+    iget-object v0, p0, Lde/rki/coronawarnapp/datadonation/analytics/ui/input/AnalyticsUserInputFragment;->binding$delegate:Lde/rki/coronawarnapp/util/ui/ViewBindingProperty;
 
-    sget-object v0, Lde/rki/coronawarnapp/datadonation/analytics/ui/input/AnalyticsUserInputFragment;->$$delegatedProperties:[Lkotlin/reflect/KProperty;
+    sget-object v1, Lde/rki/coronawarnapp/datadonation/analytics/ui/input/AnalyticsUserInputFragment;->$$delegatedProperties:[Lkotlin/reflect/KProperty;
 
-    const/4 v1, 0x0
+    const/4 v2, 0x0
 
-    aget-object v2, v0, v1
+    aget-object v3, v1, v2
 
-    invoke-virtual {p2, p0, v2}, Lde/rki/coronawarnapp/util/ui/ViewBindingProperty;->getValue(Landroidx/lifecycle/LifecycleOwner;Lkotlin/reflect/KProperty;)Landroidx/viewbinding/ViewBinding;
+    invoke-virtual {v0, p0, v3}, Lde/rki/coronawarnapp/util/ui/ViewBindingProperty;->getValue(Landroidx/lifecycle/LifecycleOwner;Lkotlin/reflect/KProperty;)Landroidx/viewbinding/ViewBinding;
 
-    move-result-object p2
+    move-result-object v0
 
-    check-cast p2, Lde/rki/coronawarnapp/databinding/AnalyticsPpaUserinfoInputFragmentBinding;
+    check-cast v0, Lde/rki/coronawarnapp/databinding/AnalyticsPpaUserinfoInputFragmentBinding;
 
-    iget-object p2, p2, Lde/rki/coronawarnapp/databinding/AnalyticsPpaUserinfoInputFragmentBinding;->toolbar:Lcom/google/android/material/appbar/MaterialToolbar;
+    iget-object v0, v0, Lde/rki/coronawarnapp/databinding/AnalyticsPpaUserinfoInputFragmentBinding;->toolbar:Lcom/google/android/material/appbar/MaterialToolbar;
 
-    invoke-virtual {p2, p1}, Landroidx/appcompat/widget/Toolbar;->setTitle(I)V
+    invoke-virtual {v0, p1}, Landroidx/appcompat/widget/Toolbar;->setTitle(I)V
 
-    new-instance p1, Lde/rki/coronawarnapp/ui/submission/tan/TanInput$$ExternalSyntheticLambda2;
+    new-instance p1, Lde/rki/coronawarnapp/contactdiary/ui/edit/ContactDiaryEditLocationsFragment$$ExternalSyntheticLambda0;
 
-    invoke-direct {p1, p0}, Lde/rki/coronawarnapp/ui/submission/tan/TanInput$$ExternalSyntheticLambda2;-><init>(Lde/rki/coronawarnapp/datadonation/analytics/ui/input/AnalyticsUserInputFragment;)V
+    invoke-direct {p1, p0, p2}, Lde/rki/coronawarnapp/contactdiary/ui/edit/ContactDiaryEditLocationsFragment$$ExternalSyntheticLambda0;-><init>(Ljava/lang/Object;I)V
 
-    invoke-virtual {p2, p1}, Landroidx/appcompat/widget/Toolbar;->setNavigationOnClickListener(Landroid/view/View$OnClickListener;)V
+    invoke-virtual {v0, p1}, Landroidx/appcompat/widget/Toolbar;->setNavigationOnClickListener(Landroid/view/View$OnClickListener;)V
 
     iget-object p1, p0, Lde/rki/coronawarnapp/datadonation/analytics/ui/input/AnalyticsUserInputFragment;->binding$delegate:Lde/rki/coronawarnapp/util/ui/ViewBindingProperty;
 
-    aget-object p2, v0, v1
+    aget-object p2, v1, v2
 
     invoke-virtual {p1, p0, p2}, Lde/rki/coronawarnapp/util/ui/ViewBindingProperty;->getValue(Landroidx/lifecycle/LifecycleOwner;Lkotlin/reflect/KProperty;)Landroidx/viewbinding/ViewBinding;
 

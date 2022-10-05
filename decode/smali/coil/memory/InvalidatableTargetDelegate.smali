@@ -112,7 +112,7 @@
 
     move-object p1, v0
 
-    goto/16 :goto_2
+    goto :goto_2
 
     :cond_1
     new-instance p1, Ljava/lang/IllegalStateException;
@@ -135,8 +135,6 @@
     iget-object v5, p1, Lcoil/request/ErrorResult;->request:Lcoil/request/ImageRequest;
 
     iget-object v6, v5, Lcoil/request/ImageRequest;->transition:Lcoil/transition/Transition;
-
-    sget v7, Lcoil/transition/Transition;->$r8$clinit:I
 
     sget-object v7, Lcoil/transition/NoneTransition;->INSTANCE:Lcoil/transition/NoneTransition;
 
@@ -396,8 +394,6 @@
     iget-object v6, p1, Lcoil/request/SuccessResult;->request:Lcoil/request/ImageRequest;
 
     iget-object v7, v6, Lcoil/request/ImageRequest;->transition:Lcoil/transition/Transition;
-
-    sget v8, Lcoil/transition/Transition;->$r8$clinit:I
 
     sget-object v8, Lcoil/transition/NoneTransition;->INSTANCE:Lcoil/transition/NoneTransition;
 

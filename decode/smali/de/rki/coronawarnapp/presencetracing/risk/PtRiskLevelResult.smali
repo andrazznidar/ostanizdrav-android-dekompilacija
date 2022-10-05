@@ -82,7 +82,7 @@
 
     invoke-direct {p1, p0}, Lde/rki/coronawarnapp/presencetracing/risk/PtRiskLevelResult$wasSuccessfullyCalculated$2;-><init>(Lde/rki/coronawarnapp/presencetracing/risk/PtRiskLevelResult;)V
 
-    invoke-static {p1}, Lkotlin/LazyKt__LazyKt;->lazy(Lkotlin/jvm/functions/Function0;)Lkotlin/Lazy;
+    invoke-static {p1}, Lkotlin/LazyKt__LazyJVMKt;->lazy(Lkotlin/jvm/functions/Function0;)Lkotlin/Lazy;
 
     move-result-object p1
 
@@ -92,7 +92,7 @@
 
     invoke-direct {p1, p0}, Lde/rki/coronawarnapp/presencetracing/risk/PtRiskLevelResult$daysWithHighRisk$2;-><init>(Lde/rki/coronawarnapp/presencetracing/risk/PtRiskLevelResult;)V
 
-    invoke-static {p1}, Lkotlin/LazyKt__LazyKt;->lazy(Lkotlin/jvm/functions/Function0;)Lkotlin/Lazy;
+    invoke-static {p1}, Lkotlin/LazyKt__LazyJVMKt;->lazy(Lkotlin/jvm/functions/Function0;)Lkotlin/Lazy;
 
     move-result-object p1
 
@@ -102,7 +102,7 @@
 
     invoke-direct {p1, p0}, Lde/rki/coronawarnapp/presencetracing/risk/PtRiskLevelResult$daysWithLowRisk$2;-><init>(Lde/rki/coronawarnapp/presencetracing/risk/PtRiskLevelResult;)V
 
-    invoke-static {p1}, Lkotlin/LazyKt__LazyKt;->lazy(Lkotlin/jvm/functions/Function0;)Lkotlin/Lazy;
+    invoke-static {p1}, Lkotlin/LazyKt__LazyJVMKt;->lazy(Lkotlin/jvm/functions/Function0;)Lkotlin/Lazy;
 
     move-result-object p1
 
@@ -112,7 +112,7 @@
 
     invoke-direct {p1, p0}, Lde/rki/coronawarnapp/presencetracing/risk/PtRiskLevelResult$mostRecentDateWithHighRisk$2;-><init>(Lde/rki/coronawarnapp/presencetracing/risk/PtRiskLevelResult;)V
 
-    invoke-static {p1}, Lkotlin/LazyKt__LazyKt;->lazy(Lkotlin/jvm/functions/Function0;)Lkotlin/Lazy;
+    invoke-static {p1}, Lkotlin/LazyKt__LazyJVMKt;->lazy(Lkotlin/jvm/functions/Function0;)Lkotlin/Lazy;
 
     move-result-object p1
 
@@ -122,7 +122,7 @@
 
     invoke-direct {p1, p0}, Lde/rki/coronawarnapp/presencetracing/risk/PtRiskLevelResult$mostRecentDateWithLowRisk$2;-><init>(Lde/rki/coronawarnapp/presencetracing/risk/PtRiskLevelResult;)V
 
-    invoke-static {p1}, Lkotlin/LazyKt__LazyKt;->lazy(Lkotlin/jvm/functions/Function0;)Lkotlin/Lazy;
+    invoke-static {p1}, Lkotlin/LazyKt__LazyJVMKt;->lazy(Lkotlin/jvm/functions/Function0;)Lkotlin/Lazy;
 
     move-result-object p1
 
@@ -132,7 +132,7 @@
 
     invoke-direct {p1, p0}, Lde/rki/coronawarnapp/presencetracing/risk/PtRiskLevelResult$mostRecentDateAtRiskState$2;-><init>(Lde/rki/coronawarnapp/presencetracing/risk/PtRiskLevelResult;)V
 
-    invoke-static {p1}, Lkotlin/LazyKt__LazyKt;->lazy(Lkotlin/jvm/functions/Function0;)Lkotlin/Lazy;
+    invoke-static {p1}, Lkotlin/LazyKt__LazyJVMKt;->lazy(Lkotlin/jvm/functions/Function0;)Lkotlin/Lazy;
 
     move-result-object p1
 
@@ -142,7 +142,7 @@
 
     invoke-direct {p1, p0}, Lde/rki/coronawarnapp/presencetracing/risk/PtRiskLevelResult$checkInOverlapCount$2;-><init>(Lde/rki/coronawarnapp/presencetracing/risk/PtRiskLevelResult;)V
 
-    invoke-static {p1}, Lkotlin/LazyKt__LazyKt;->lazy(Lkotlin/jvm/functions/Function0;)Lkotlin/Lazy;
+    invoke-static {p1}, Lkotlin/LazyKt__LazyJVMKt;->lazy(Lkotlin/jvm/functions/Function0;)Lkotlin/Lazy;
 
     move-result-object p1
 

@@ -4,13 +4,15 @@
 
 
 # instance fields
+.field public final icon:Landroid/widget/ImageView;
+
 .field public mBody:Ljava/lang/String;
 
 .field public mIcon:Landroid/graphics/drawable/Drawable;
 
 
 # direct methods
-.method public constructor <init>(Ljava/lang/Object;Landroid/view/View;ILandroidx/constraintlayout/widget/ConstraintLayout;)V
+.method public constructor <init>(Ljava/lang/Object;Landroid/view/View;ILandroid/widget/ImageView;)V
     .locals 0
     .annotation system Ldalvik/annotation/MethodParameters;
         accessFlags = {
@@ -23,11 +25,13 @@
             "_bindingComponent",
             "_root",
             "_localFieldCount",
-            "iconBackground"
+            "icon"
         }
     .end annotation
 
     invoke-direct {p0, p1, p2, p3}, Landroidx/databinding/ViewDataBinding;-><init>(Ljava/lang/Object;Landroid/view/View;I)V
+
+    iput-object p4, p0, Lde/rki/coronawarnapp/databinding/IncludeSubmissionBehaviourRowBinding;->icon:Landroid/widget/ImageView;
 
     return-void
 .end method

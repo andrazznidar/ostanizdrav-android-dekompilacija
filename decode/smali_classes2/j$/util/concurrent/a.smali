@@ -1,102 +1,87 @@
-.class public final synthetic Lj$/util/concurrent/a;
-.super Ljava/lang/Object;
-
-# interfaces
-.implements Lj$/util/function/BiConsumer;
-.implements Lj$/util/function/BiFunction;
+.class abstract Lj$/util/concurrent/a;
+.super Lj$/util/concurrent/p;
 
 
 # instance fields
-.field public final synthetic a:Ljava/lang/Object;
+.field final i:Lj$/util/concurrent/ConcurrentHashMap;
 
-.field public final synthetic b:Lj$/util/function/BiFunction;
+.field j:Lj$/util/concurrent/l;
 
 
 # direct methods
-.method public synthetic constructor <init>(Lj$/util/function/BiFunction;Lj$/util/function/Function;)V
+.method constructor <init>([Lj$/util/concurrent/l;IIILj$/util/concurrent/ConcurrentHashMap;)V
     .locals 0
 
-    invoke-direct {p0}, Ljava/lang/Object;-><init>()V
+    invoke-direct {p0, p1, p2, p3, p4}, Lj$/util/concurrent/p;-><init>([Lj$/util/concurrent/l;III)V
 
-    iput-object p1, p0, Lj$/util/concurrent/a;->b:Lj$/util/function/BiFunction;
+    iput-object p5, p0, Lj$/util/concurrent/a;->i:Lj$/util/concurrent/ConcurrentHashMap;
 
-    iput-object p2, p0, Lj$/util/concurrent/a;->a:Ljava/lang/Object;
-
-    return-void
-.end method
-
-.method public synthetic constructor <init>(Ljava/util/concurrent/ConcurrentMap;Lj$/util/function/BiFunction;)V
-    .locals 0
-
-    invoke-direct {p0}, Ljava/lang/Object;-><init>()V
-
-    iput-object p1, p0, Lj$/util/concurrent/a;->a:Ljava/lang/Object;
-
-    iput-object p2, p0, Lj$/util/concurrent/a;->b:Lj$/util/function/BiFunction;
+    invoke-virtual {p0}, Lj$/util/concurrent/p;->b()Lj$/util/concurrent/l;
 
     return-void
 .end method
 
 
 # virtual methods
-.method public apply(Ljava/lang/Object;Ljava/lang/Object;)Ljava/lang/Object;
-    .locals 2
-
-    iget-object v0, p0, Lj$/util/concurrent/a;->b:Lj$/util/function/BiFunction;
-
-    iget-object v1, p0, Lj$/util/concurrent/a;->a:Ljava/lang/Object;
-
-    check-cast v1, Lj$/util/function/Function;
-
-    invoke-interface {v0, p1, p2}, Lj$/util/function/BiFunction;->apply(Ljava/lang/Object;Ljava/lang/Object;)Ljava/lang/Object;
-
-    move-result-object p1
-
-    invoke-interface {v1, p1}, Lj$/util/function/Function;->apply(Ljava/lang/Object;)Ljava/lang/Object;
-
-    move-result-object p1
-
-    return-object p1
-.end method
-
-.method public b(Lj$/util/function/Function;)Lj$/util/function/BiFunction;
+.method public final hasMoreElements()Z
     .locals 1
 
-    invoke-static {p1}, Ljava/util/Objects;->requireNonNull(Ljava/lang/Object;)Ljava/lang/Object;
+    iget-object v0, p0, Lj$/util/concurrent/p;->b:Lj$/util/concurrent/l;
 
-    new-instance v0, Lj$/util/concurrent/a;
+    if-eqz v0, :cond_0
 
-    invoke-direct {v0, p0, p1}, Lj$/util/concurrent/a;-><init>(Lj$/util/function/BiFunction;Lj$/util/function/Function;)V
+    const/4 v0, 0x1
 
-    return-object v0
-.end method
-
-.method public y(Ljava/lang/Object;Ljava/lang/Object;)V
-    .locals 3
-
-    iget-object v0, p0, Lj$/util/concurrent/a;->a:Ljava/lang/Object;
-
-    check-cast v0, Ljava/util/concurrent/ConcurrentMap;
-
-    iget-object v1, p0, Lj$/util/concurrent/a;->b:Lj$/util/function/BiFunction;
+    goto :goto_0
 
     :cond_0
-    invoke-interface {v1, p1, p2}, Lj$/util/function/BiFunction;->apply(Ljava/lang/Object;Ljava/lang/Object;)Ljava/lang/Object;
+    const/4 v0, 0x0
 
-    move-result-object v2
+    :goto_0
+    return v0
+.end method
 
-    invoke-interface {v0, p1, p2, v2}, Ljava/util/concurrent/ConcurrentMap;->replace(Ljava/lang/Object;Ljava/lang/Object;Ljava/lang/Object;)Z
+.method public final hasNext()Z
+    .locals 1
 
-    move-result p2
+    iget-object v0, p0, Lj$/util/concurrent/p;->b:Lj$/util/concurrent/l;
 
-    if-nez p2, :cond_1
+    if-eqz v0, :cond_0
 
-    invoke-interface {v0, p1}, Ljava/util/concurrent/ConcurrentMap;->get(Ljava/lang/Object;)Ljava/lang/Object;
+    const/4 v0, 0x1
 
-    move-result-object p2
+    goto :goto_0
 
-    if-nez p2, :cond_0
+    :cond_0
+    const/4 v0, 0x0
 
-    :cond_1
+    :goto_0
+    return v0
+.end method
+
+.method public final remove()V
+    .locals 3
+
+    iget-object v0, p0, Lj$/util/concurrent/a;->j:Lj$/util/concurrent/l;
+
+    if-eqz v0, :cond_0
+
+    const/4 v1, 0x0
+
+    iput-object v1, p0, Lj$/util/concurrent/a;->j:Lj$/util/concurrent/l;
+
+    iget-object v2, p0, Lj$/util/concurrent/a;->i:Lj$/util/concurrent/ConcurrentHashMap;
+
+    iget-object v0, v0, Lj$/util/concurrent/l;->b:Ljava/lang/Object;
+
+    invoke-virtual {v2, v0, v1, v1}, Lj$/util/concurrent/ConcurrentHashMap;->replaceNode(Ljava/lang/Object;Ljava/lang/Object;Ljava/lang/Object;)Ljava/lang/Object;
+
     return-void
+
+    :cond_0
+    new-instance v0, Ljava/lang/IllegalStateException;
+
+    invoke-direct {v0}, Ljava/lang/IllegalStateException;-><init>()V
+
+    throw v0
 .end method

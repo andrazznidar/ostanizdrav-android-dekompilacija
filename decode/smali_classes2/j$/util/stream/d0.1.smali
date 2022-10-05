@@ -1,111 +1,91 @@
-.class final Lj$/util/stream/d0;
+.class public final synthetic Lj$/util/stream/d0;
 .super Ljava/lang/Object;
 
 # interfaces
-.implements Lj$/util/stream/P4;
+.implements Lj$/util/function/IntConsumer;
 
 
 # instance fields
-.field private final a:Lj$/util/stream/g4;
+.field public final synthetic a:I
 
-.field final b:Z
-
-.field final c:Ljava/lang/Object;
-
-.field final d:Lj$/util/function/Predicate;
-
-.field final e:Lj$/util/function/t;
+.field public final synthetic b:Ljava/lang/Object;
 
 
 # direct methods
-.method constructor <init>(ZLj$/util/stream/g4;Ljava/lang/Object;Lj$/util/function/Predicate;Lj$/util/function/t;)V
+.method public synthetic constructor <init>(Ljava/lang/Object;I)V
     .locals 0
 
+    iput p2, p0, Lj$/util/stream/d0;->a:I
+
+    iput-object p1, p0, Lj$/util/stream/d0;->b:Ljava/lang/Object;
+
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
-
-    iput-boolean p1, p0, Lj$/util/stream/d0;->b:Z
-
-    iput-object p2, p0, Lj$/util/stream/d0;->a:Lj$/util/stream/g4;
-
-    iput-object p3, p0, Lj$/util/stream/d0;->c:Ljava/lang/Object;
-
-    iput-object p4, p0, Lj$/util/stream/d0;->d:Lj$/util/function/Predicate;
-
-    iput-object p5, p0, Lj$/util/stream/d0;->e:Lj$/util/function/t;
 
     return-void
 .end method
 
 
 # virtual methods
-.method public b()I
-    .locals 2
-
-    sget v0, Lj$/util/stream/f4;->u:I
-
-    iget-boolean v1, p0, Lj$/util/stream/d0;->b:Z
-
-    if-eqz v1, :cond_0
-
-    const/4 v1, 0x0
-
-    goto :goto_0
-
-    :cond_0
-    sget v1, Lj$/util/stream/f4;->r:I
-
-    :goto_0
-    or-int/2addr v0, v1
-
-    return v0
-.end method
-
-.method public f(Lj$/util/stream/z2;Lj$/util/Spliterator;)Ljava/lang/Object;
+.method public final accept(I)V
     .locals 1
 
-    new-instance v0, Lj$/util/stream/j0;
+    iget v0, p0, Lj$/util/stream/d0;->a:I
 
-    invoke-direct {v0, p0, p1, p2}, Lj$/util/stream/j0;-><init>(Lj$/util/stream/d0;Lj$/util/stream/z2;Lj$/util/Spliterator;)V
-
-    invoke-virtual {v0}, Ljava/util/concurrent/CountedCompleter;->invoke()Ljava/lang/Object;
-
-    move-result-object p1
-
-    return-object p1
-.end method
-
-.method public g(Lj$/util/stream/z2;Lj$/util/Spliterator;)Ljava/lang/Object;
-    .locals 2
-
-    iget-object v0, p0, Lj$/util/stream/d0;->e:Lj$/util/function/t;
-
-    invoke-interface {v0}, Lj$/util/function/t;->get()Ljava/lang/Object;
-
-    move-result-object v0
-
-    check-cast v0, Lj$/util/stream/Q4;
-
-    check-cast p1, Lj$/util/stream/c;
-
-    invoke-static {v0}, Ljava/util/Objects;->requireNonNull(Ljava/lang/Object;)Ljava/lang/Object;
-
-    invoke-virtual {p1, v0}, Lj$/util/stream/c;->s0(Lj$/util/stream/n3;)Lj$/util/stream/n3;
-
-    move-result-object v1
-
-    invoke-virtual {p1, v1, p2}, Lj$/util/stream/c;->k0(Lj$/util/stream/n3;Lj$/util/Spliterator;)V
-
-    invoke-interface {v0}, Lj$/util/function/t;->get()Ljava/lang/Object;
-
-    move-result-object p1
-
-    if-eqz p1, :cond_0
+    packed-switch v0, :pswitch_data_0
 
     goto :goto_0
 
-    :cond_0
-    iget-object p1, p0, Lj$/util/stream/d0;->c:Ljava/lang/Object;
+    :pswitch_0
+    iget-object v0, p0, Lj$/util/stream/d0;->b:Ljava/lang/Object;
+
+    check-cast v0, Lj$/util/stream/q2;
+
+    invoke-interface {v0, p1}, Lj$/util/stream/q2;->accept(I)V
+
+    return-void
 
     :goto_0
+    iget-object v0, p0, Lj$/util/stream/d0;->b:Ljava/lang/Object;
+
+    check-cast v0, Lj$/util/stream/e0;
+
+    iget-object v0, v0, Lj$/util/stream/k2;->a:Lj$/util/stream/q2;
+
+    invoke-interface {v0, p1}, Lj$/util/stream/q2;->accept(I)V
+
+    return-void
+
+    :pswitch_data_0
+    .packed-switch 0x0
+        :pswitch_0
+    .end packed-switch
+.end method
+
+.method public synthetic andThen(Lj$/util/function/IntConsumer;)Lj$/util/function/IntConsumer;
+    .locals 1
+
+    iget v0, p0, Lj$/util/stream/d0;->a:I
+
+    packed-switch v0, :pswitch_data_0
+
+    goto :goto_0
+
+    :pswitch_0
+    invoke-static {p0, p1}, Lj$/util/function/IntConsumer$-CC;->$default$andThen(Lj$/util/function/IntConsumer;Lj$/util/function/IntConsumer;)Lj$/util/function/IntConsumer;
+
+    move-result-object p1
+
     return-object p1
+
+    :goto_0
+    invoke-static {p0, p1}, Lj$/util/function/IntConsumer$-CC;->$default$andThen(Lj$/util/function/IntConsumer;Lj$/util/function/IntConsumer;)Lj$/util/function/IntConsumer;
+
+    move-result-object p1
+
+    return-object p1
+
+    :pswitch_data_0
+    .packed-switch 0x0
+        :pswitch_0
+    .end packed-switch
 .end method

@@ -1,5 +1,6 @@
 .class public final synthetic Lcom/fasterxml/jackson/databind/jsontype/impl/SubTypeValidator$$ExternalSyntheticOutline0;
 .super Ljava/lang/Object;
+.source "R8$$SyntheticClass"
 
 
 # direct methods

@@ -125,8 +125,6 @@
 
     iput-object p4, p0, Lde/rki/coronawarnapp/contactdiary/ui/day/tabs/location/ContactDiaryLocationListViewModel;->contactDiaryRepository:Lde/rki/coronawarnapp/contactdiary/storage/repo/ContactDiaryRepository;
 
-    sget p2, Lkotlinx/coroutines/CoroutineExceptionHandler;->$r8$clinit:I
-
     sget-object p2, Lkotlinx/coroutines/CoroutineExceptionHandler$Key;->$$INSTANCE:Lkotlinx/coroutines/CoroutineExceptionHandler$Key;
 
     new-instance v2, Lde/rki/coronawarnapp/contactdiary/ui/day/tabs/location/ContactDiaryLocationListViewModel$special$$inlined$CoroutineExceptionHandler$1;
@@ -181,7 +179,7 @@
 
     const-wide/16 p2, 0x0
 
-    invoke-static {v0, p1, p2, p3, v1}, Landroidx/lifecycle/FlowLiveDataConversions;->asLiveData$default(Lkotlinx/coroutines/flow/Flow;Lkotlin/coroutines/CoroutineContext;JI)Landroidx/lifecycle/LiveData;
+    invoke-static {v0, p1, p2, p3, v1}, Lcom/upokecenter/cbor/URIUtility;->asLiveData$default(Lkotlinx/coroutines/flow/Flow;Lkotlin/coroutines/CoroutineContext;JI)Landroidx/lifecycle/LiveData;
 
     move-result-object p1
 

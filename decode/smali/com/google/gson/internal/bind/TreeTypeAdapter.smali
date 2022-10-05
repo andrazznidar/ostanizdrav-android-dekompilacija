@@ -293,11 +293,11 @@
 
     sget-object v0, Lcom/google/gson/internal/bind/TypeAdapters;->JSON_ELEMENT:Lcom/google/gson/TypeAdapter;
 
-    check-cast v0, Lcom/google/gson/internal/bind/TypeAdapters$29;
+    check-cast v0, Lcom/google/gson/internal/bind/TypeAdapters$27;
 
     invoke-static {v0}, Ljava/util/Objects;->requireNonNull(Ljava/lang/Object;)Ljava/lang/Object;
 
-    invoke-virtual {v0, p1, p2}, Lcom/google/gson/internal/bind/TypeAdapters$29;->write(Lcom/google/gson/stream/JsonWriter;Lcom/google/gson/JsonElement;)V
+    invoke-virtual {v0, p1, p2}, Lcom/google/gson/internal/bind/TypeAdapters$27;->write(Lcom/google/gson/stream/JsonWriter;Lcom/google/gson/JsonElement;)V
 
     return-void
 .end method

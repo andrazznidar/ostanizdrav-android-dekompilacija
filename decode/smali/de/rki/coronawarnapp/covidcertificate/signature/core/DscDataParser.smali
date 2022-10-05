@@ -80,7 +80,7 @@
 
     invoke-static {v3, v4}, Lkotlin/jvm/internal/Intrinsics;->checkNotNullExpressionValue(Ljava/lang/Object;Ljava/lang/String;)V
 
-    invoke-static {v3}, Lkotlinx/coroutines/CoroutineScopeKt;->toOkioByteString(Lcom/google/protobuf/ByteString;)Lokio/ByteString;
+    invoke-static {v3}, Lde/rki/coronawarnapp/util/ProtoBufKt;->toOkioByteString(Lcom/google/protobuf/ByteString;)Lokio/ByteString;
 
     move-result-object v3
 
@@ -96,7 +96,7 @@
 
     invoke-static {v1, v4}, Lkotlin/jvm/internal/Intrinsics;->checkNotNullExpressionValue(Ljava/lang/Object;Ljava/lang/String;)V
 
-    invoke-static {v1}, Lkotlinx/coroutines/CoroutineScopeKt;->toOkioByteString(Lcom/google/protobuf/ByteString;)Lokio/ByteString;
+    invoke-static {v1}, Lde/rki/coronawarnapp/util/ProtoBufKt;->toOkioByteString(Lcom/google/protobuf/ByteString;)Lokio/ByteString;
 
     move-result-object v1
 

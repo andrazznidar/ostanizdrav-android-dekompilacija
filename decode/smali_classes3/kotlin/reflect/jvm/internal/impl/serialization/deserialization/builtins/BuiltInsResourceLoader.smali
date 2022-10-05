@@ -3,6 +3,12 @@
 .source "BuiltInsResourceLoader.kt"
 
 
+# annotations
+.annotation system Ldalvik/annotation/SourceDebugExtension;
+    value = "SMAP\nBuiltInsResourceLoader.kt\nKotlin\n*S Kotlin\n*F\n+ 1 BuiltInsResourceLoader.kt\norg/jetbrains/kotlin/serialization/deserialization/builtins/BuiltInsResourceLoader\n+ 2 fake.kt\nkotlin/jvm/internal/FakeKt\n*L\n1#1,21:1\n1#2:22\n*E\n"
+.end annotation
+
+
 # direct methods
 .method public constructor <init>()V
     .locals 0
@@ -29,22 +35,35 @@
 
     if-nez v0, :cond_0
 
-    const/4 v0, 0x0
-
-    goto :goto_0
-
-    :cond_0
-    invoke-virtual {v0, p1}, Ljava/lang/ClassLoader;->getResourceAsStream(Ljava/lang/String;)Ljava/io/InputStream;
-
-    move-result-object v0
-
-    :goto_0
-    if-nez v0, :cond_1
-
     invoke-static {p1}, Ljava/lang/ClassLoader;->getSystemResourceAsStream(Ljava/lang/String;)Ljava/io/InputStream;
 
-    move-result-object v0
+    move-result-object p1
+
+    return-object p1
+
+    :cond_0
+    invoke-virtual {v0, p1}, Ljava/lang/ClassLoader;->getResource(Ljava/lang/String;)Ljava/net/URL;
+
+    move-result-object p1
+
+    if-nez p1, :cond_1
+
+    const/4 p1, 0x0
+
+    return-object p1
 
     :cond_1
-    return-object v0
+    invoke-virtual {p1}, Ljava/net/URL;->openConnection()Ljava/net/URLConnection;
+
+    move-result-object p1
+
+    const/4 v0, 0x0
+
+    invoke-virtual {p1, v0}, Ljava/net/URLConnection;->setUseCaches(Z)V
+
+    invoke-virtual {p1}, Ljava/net/URLConnection;->getInputStream()Ljava/io/InputStream;
+
+    move-result-object p1
+
+    return-object p1
 .end method

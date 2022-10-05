@@ -63,10 +63,13 @@
 
     move v4, v3
 
+    :cond_2
     :goto_0
     if-ge v3, v2, :cond_4
 
     aget-object v6, v0, v3
+
+    add-int/lit8 v3, v3, 0x1
 
     iget-object v7, v6, Lde/rki/coronawarnapp/contactdiary/model/ContactDiaryPersonEncounter$DurationClassification;->key:Ljava/lang/String;
 
@@ -74,19 +77,16 @@
 
     move-result v7
 
-    if-eqz v7, :cond_3
+    if-eqz v7, :cond_2
 
-    if-eqz v4, :cond_2
+    if-eqz v4, :cond_3
 
     goto :goto_1
 
-    :cond_2
+    :cond_3
     const/4 v4, 0x1
 
     move-object v5, v6
-
-    :cond_3
-    add-int/lit8 v3, v3, 0x1
 
     goto :goto_0
 

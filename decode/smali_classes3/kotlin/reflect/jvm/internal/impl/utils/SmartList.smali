@@ -28,13 +28,13 @@
 
 
 # instance fields
-.field public myElem:Ljava/lang/Object;
+.field private myElem:Ljava/lang/Object;
 
-.field public mySize:I
+.field private mySize:I
 
 
 # direct methods
-.method public static synthetic $$$reportNull$$$0(I)V
+.method private static synthetic $$$reportNull$$$0(I)V
     .locals 10
 
     const/4 v0, 0x7
@@ -213,6 +213,14 @@
     iget p0, p0, Ljava/util/AbstractList;->modCount:I
 
     return p0
+.end method
+
+.method public static synthetic access$200(Lkotlin/reflect/jvm/internal/impl/utils/SmartList;)Ljava/lang/Object;
+    .locals 0
+
+    iget-object p0, p0, Lkotlin/reflect/jvm/internal/impl/utils/SmartList;->myElem:Ljava/lang/Object;
+
+    return-object p0
 .end method
 
 .method public static synthetic access$300(Lkotlin/reflect/jvm/internal/impl/utils/SmartList;)I
@@ -396,7 +404,7 @@
 
     const/4 v6, 0x3
 
-    invoke-static {v5, v6, v2, v1}, Lcom/google/crypto/tink/shaded/protobuf/BooleanArrayList$$ExternalSyntheticOutline0;->m(IIII)I
+    invoke-static {v5, v6, v2, v1}, Landroidx/datastore/preferences/protobuf/BooleanArrayList$$ExternalSyntheticOutline0;->m(IIII)I
 
     move-result v2
 
@@ -523,16 +531,25 @@
 
     iget v0, p0, Lkotlin/reflect/jvm/internal/impl/utils/SmartList;->mySize:I
 
+    if-nez v0, :cond_1
+
+    invoke-static {}, Lkotlin/reflect/jvm/internal/impl/utils/SmartList$EmptyIterator;->getInstance()Lkotlin/reflect/jvm/internal/impl/utils/SmartList$EmptyIterator;
+
+    move-result-object v0
+
     if-nez v0, :cond_0
 
-    sget-object v0, Lkotlin/reflect/jvm/internal/impl/utils/SmartList$EmptyIterator;->INSTANCE:Lkotlin/reflect/jvm/internal/impl/utils/SmartList$EmptyIterator;
+    const/4 v1, 0x2
 
-    return-object v0
+    invoke-static {v1}, Lkotlin/reflect/jvm/internal/impl/utils/SmartList;->$$$reportNull$$$0(I)V
 
     :cond_0
+    return-object v0
+
+    :cond_1
     const/4 v1, 0x1
 
-    if-ne v0, v1, :cond_1
+    if-ne v0, v1, :cond_2
 
     new-instance v0, Lkotlin/reflect/jvm/internal/impl/utils/SmartList$SingletonIterator;
 
@@ -540,23 +557,19 @@
 
     return-object v0
 
-    :cond_1
+    :cond_2
     invoke-super {p0}, Ljava/util/AbstractList;->iterator()Ljava/util/Iterator;
 
     move-result-object v0
 
-    if-eqz v0, :cond_2
+    if-nez v0, :cond_3
 
+    const/4 v1, 0x3
+
+    invoke-static {v1}, Lkotlin/reflect/jvm/internal/impl/utils/SmartList;->$$$reportNull$$$0(I)V
+
+    :cond_3
     return-object v0
-
-    :cond_2
-    const/4 v0, 0x3
-
-    invoke-static {v0}, Lkotlin/reflect/jvm/internal/impl/utils/SmartList;->$$$reportNull$$$0(I)V
-
-    const/4 v0, 0x0
-
-    throw v0
 .end method
 
 .method public remove(I)Ljava/lang/Object;
@@ -735,7 +748,7 @@
 .end method
 
 .method public toArray([Ljava/lang/Object;)[Ljava/lang/Object;
-    .locals 5
+    .locals 4
     .annotation system Ldalvik/annotation/Signature;
         value = {
             "<T:",
@@ -744,29 +757,32 @@
         }
     .end annotation
 
-    const/4 v0, 0x0
+    if-nez p1, :cond_0
 
-    if-eqz p1, :cond_6
+    const/4 v0, 0x4
 
-    array-length v1, p1
+    invoke-static {v0}, Lkotlin/reflect/jvm/internal/impl/utils/SmartList;->$$$reportNull$$$0(I)V
 
-    iget v2, p0, Lkotlin/reflect/jvm/internal/impl/utils/SmartList;->mySize:I
+    :cond_0
+    array-length v0, p1
 
-    const/4 v3, 0x1
+    iget v1, p0, Lkotlin/reflect/jvm/internal/impl/utils/SmartList;->mySize:I
 
-    const/4 v4, 0x0
+    const/4 v2, 0x1
 
-    if-ne v2, v3, :cond_1
+    const/4 v3, 0x0
 
-    if-eqz v1, :cond_0
+    if-ne v1, v2, :cond_2
 
-    iget-object v2, p0, Lkotlin/reflect/jvm/internal/impl/utils/SmartList;->myElem:Ljava/lang/Object;
+    if-eqz v0, :cond_1
 
-    aput-object v2, p1, v4
+    iget-object v1, p0, Lkotlin/reflect/jvm/internal/impl/utils/SmartList;->myElem:Ljava/lang/Object;
+
+    aput-object v1, p1, v3
 
     goto :goto_0
 
-    :cond_0
+    :cond_1
     invoke-virtual {p1}, Ljava/lang/Object;->getClass()Ljava/lang/Class;
 
     move-result-object p1
@@ -775,7 +791,7 @@
 
     move-result-object p1
 
-    invoke-static {p1, v3}, Ljava/lang/reflect/Array;->newInstance(Ljava/lang/Class;I)Ljava/lang/Object;
+    invoke-static {p1, v2}, Ljava/lang/reflect/Array;->newInstance(Ljava/lang/Class;I)Ljava/lang/Object;
 
     move-result-object p1
 
@@ -783,58 +799,51 @@
 
     iget-object v0, p0, Lkotlin/reflect/jvm/internal/impl/utils/SmartList;->myElem:Ljava/lang/Object;
 
-    aput-object v0, p1, v4
+    aput-object v0, p1, v3
 
     return-object p1
 
-    :cond_1
-    if-ge v1, v2, :cond_3
+    :cond_2
+    if-ge v0, v1, :cond_4
 
-    iget-object v1, p0, Lkotlin/reflect/jvm/internal/impl/utils/SmartList;->myElem:Ljava/lang/Object;
+    iget-object v0, p0, Lkotlin/reflect/jvm/internal/impl/utils/SmartList;->myElem:Ljava/lang/Object;
 
-    check-cast v1, [Ljava/lang/Object;
+    check-cast v0, [Ljava/lang/Object;
 
     invoke-virtual {p1}, Ljava/lang/Object;->getClass()Ljava/lang/Class;
 
     move-result-object p1
 
-    invoke-static {v1, v2, p1}, Ljava/util/Arrays;->copyOf([Ljava/lang/Object;ILjava/lang/Class;)[Ljava/lang/Object;
+    invoke-static {v0, v1, p1}, Ljava/util/Arrays;->copyOf([Ljava/lang/Object;ILjava/lang/Class;)[Ljava/lang/Object;
 
     move-result-object p1
 
-    if-eqz p1, :cond_2
+    if-nez p1, :cond_3
 
-    return-object p1
+    const/4 v0, 0x6
 
-    :cond_2
-    const/4 p1, 0x6
-
-    invoke-static {p1}, Lkotlin/reflect/jvm/internal/impl/utils/SmartList;->$$$reportNull$$$0(I)V
-
-    throw v0
+    invoke-static {v0}, Lkotlin/reflect/jvm/internal/impl/utils/SmartList;->$$$reportNull$$$0(I)V
 
     :cond_3
-    if-eqz v2, :cond_4
-
-    iget-object v3, p0, Lkotlin/reflect/jvm/internal/impl/utils/SmartList;->myElem:Ljava/lang/Object;
-
-    invoke-static {v3, v4, p1, v4, v2}, Ljava/lang/System;->arraycopy(Ljava/lang/Object;ILjava/lang/Object;II)V
-
-    :cond_4
-    :goto_0
-    iget v2, p0, Lkotlin/reflect/jvm/internal/impl/utils/SmartList;->mySize:I
-
-    if-le v1, v2, :cond_5
-
-    aput-object v0, p1, v2
-
-    :cond_5
     return-object p1
 
+    :cond_4
+    if-eqz v1, :cond_5
+
+    iget-object v2, p0, Lkotlin/reflect/jvm/internal/impl/utils/SmartList;->myElem:Ljava/lang/Object;
+
+    invoke-static {v2, v3, p1, v3, v1}, Ljava/lang/System;->arraycopy(Ljava/lang/Object;ILjava/lang/Object;II)V
+
+    :cond_5
+    :goto_0
+    iget v1, p0, Lkotlin/reflect/jvm/internal/impl/utils/SmartList;->mySize:I
+
+    if-le v0, v1, :cond_6
+
+    const/4 v0, 0x0
+
+    aput-object v0, p1, v1
+
     :cond_6
-    const/4 p1, 0x4
-
-    invoke-static {p1}, Lkotlin/reflect/jvm/internal/impl/utils/SmartList;->$$$reportNull$$$0(I)V
-
-    throw v0
+    return-object p1
 .end method

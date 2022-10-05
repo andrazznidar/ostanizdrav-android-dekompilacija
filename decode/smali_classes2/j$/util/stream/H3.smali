@@ -1,149 +1,314 @@
-.class final Lj$/util/stream/H3;
-.super Lj$/util/stream/D3;
+.class abstract Lj$/util/stream/H3;
+.super Ljava/lang/Object;
 
 
 # instance fields
-.field private c:Lj$/util/stream/V3;
+.field protected final a:Lj$/util/Spliterator;
+
+.field protected final b:Z
+
+.field private final c:J
+
+.field private final d:Ljava/util/concurrent/atomic/AtomicLong;
 
 
 # direct methods
-.method constructor <init>(Lj$/util/stream/n3;)V
+.method constructor <init>(Lj$/util/Spliterator;JJ)V
+    .locals 3
+
+    invoke-direct {p0}, Ljava/lang/Object;-><init>()V
+
+    iput-object p1, p0, Lj$/util/stream/H3;->a:Lj$/util/Spliterator;
+
+    const-wide/16 v0, 0x0
+
+    cmp-long p1, p4, v0
+
+    if-gez p1, :cond_0
+
+    const/4 v2, 0x1
+
+    goto :goto_0
+
+    :cond_0
+    const/4 v2, 0x0
+
+    :goto_0
+    iput-boolean v2, p0, Lj$/util/stream/H3;->b:Z
+
+    if-ltz p1, :cond_1
+
+    move-wide v0, p4
+
+    :cond_1
+    iput-wide v0, p0, Lj$/util/stream/H3;->c:J
+
+    new-instance v0, Ljava/util/concurrent/atomic/AtomicLong;
+
+    if-ltz p1, :cond_2
+
+    add-long/2addr p2, p4
+
+    :cond_2
+    invoke-direct {v0, p2, p3}, Ljava/util/concurrent/atomic/AtomicLong;-><init>(J)V
+
+    iput-object v0, p0, Lj$/util/stream/H3;->d:Ljava/util/concurrent/atomic/AtomicLong;
+
+    return-void
+.end method
+
+.method constructor <init>(Lj$/util/Spliterator;Lj$/util/stream/H3;)V
     .locals 0
 
-    invoke-direct {p0, p1}, Lj$/util/stream/D3;-><init>(Lj$/util/stream/n3;)V
+    invoke-direct {p0}, Ljava/lang/Object;-><init>()V
+
+    iput-object p1, p0, Lj$/util/stream/H3;->a:Lj$/util/Spliterator;
+
+    iget-boolean p1, p2, Lj$/util/stream/H3;->b:Z
+
+    iput-boolean p1, p0, Lj$/util/stream/H3;->b:Z
+
+    iget-object p1, p2, Lj$/util/stream/H3;->d:Ljava/util/concurrent/atomic/AtomicLong;
+
+    iput-object p1, p0, Lj$/util/stream/H3;->d:Ljava/util/concurrent/atomic/AtomicLong;
+
+    iget-wide p1, p2, Lj$/util/stream/H3;->c:J
+
+    iput-wide p1, p0, Lj$/util/stream/H3;->c:J
 
     return-void
 .end method
 
 
 # virtual methods
-.method public c(D)V
+.method public final characteristics()I
     .locals 1
 
-    iget-object v0, p0, Lj$/util/stream/H3;->c:Lj$/util/stream/V3;
+    iget-object v0, p0, Lj$/util/stream/H3;->a:Lj$/util/Spliterator;
 
-    invoke-virtual {v0, p1, p2}, Lj$/util/stream/V3;->c(D)V
+    invoke-interface {v0}, Lj$/util/Spliterator;->characteristics()I
 
-    return-void
+    move-result v0
+
+    and-int/lit16 v0, v0, -0x4051
+
+    return v0
 .end method
 
-.method public w()V
-    .locals 6
+.method public final estimateSize()J
+    .locals 2
 
-    iget-object v0, p0, Lj$/util/stream/H3;->c:Lj$/util/stream/V3;
+    iget-object v0, p0, Lj$/util/stream/H3;->a:Lj$/util/Spliterator;
 
-    invoke-virtual {v0}, Lj$/util/stream/a4;->h()Ljava/lang/Object;
+    invoke-interface {v0}, Lj$/util/Spliterator;->estimateSize()J
 
-    move-result-object v0
+    move-result-wide v0
 
-    check-cast v0, [D
+    return-wide v0
+.end method
 
-    invoke-static {v0}, Ljava/util/Arrays;->sort([D)V
+.method protected final n(J)J
+    .locals 9
 
-    iget-object v1, p0, Lj$/util/stream/g3;->a:Lj$/util/stream/n3;
+    :cond_0
+    iget-object v0, p0, Lj$/util/stream/H3;->d:Ljava/util/concurrent/atomic/AtomicLong;
 
-    array-length v2, v0
+    invoke-virtual {v0}, Ljava/util/concurrent/atomic/AtomicLong;->get()J
 
-    int-to-long v2, v2
+    move-result-wide v0
 
-    invoke-interface {v1, v2, v3}, Lj$/util/stream/n3;->x(J)V
+    const-wide/16 v2, 0x0
 
-    iget-boolean v1, p0, Lj$/util/stream/D3;->b:Z
+    cmp-long v4, v0, v2
 
-    const/4 v2, 0x0
+    if-nez v4, :cond_2
 
-    if-nez v1, :cond_0
+    iget-boolean v0, p0, Lj$/util/stream/H3;->b:Z
 
-    array-length v1, v0
-
-    :goto_0
-    if-ge v2, v1, :cond_2
-
-    aget-wide v3, v0, v2
-
-    iget-object v5, p0, Lj$/util/stream/g3;->a:Lj$/util/stream/n3;
-
-    invoke-interface {v5, v3, v4}, Lj$/util/stream/n3;->c(D)V
-
-    add-int/lit8 v2, v2, 0x1
+    if-eqz v0, :cond_1
 
     goto :goto_0
 
-    :cond_0
-    array-length v1, v0
-
-    :goto_1
-    if-ge v2, v1, :cond_2
-
-    aget-wide v3, v0, v2
-
-    iget-object v5, p0, Lj$/util/stream/g3;->a:Lj$/util/stream/n3;
-
-    invoke-interface {v5}, Lj$/util/stream/n3;->z()Z
-
-    move-result v5
-
-    if-eqz v5, :cond_1
-
-    goto :goto_2
-
     :cond_1
-    iget-object v5, p0, Lj$/util/stream/g3;->a:Lj$/util/stream/n3;
+    move-wide p1, v2
 
-    invoke-interface {v5, v3, v4}, Lj$/util/stream/n3;->c(D)V
-
-    add-int/lit8 v2, v2, 0x1
-
-    goto :goto_1
+    :goto_0
+    return-wide p1
 
     :cond_2
-    :goto_2
-    iget-object v0, p0, Lj$/util/stream/g3;->a:Lj$/util/stream/n3;
+    invoke-static {v0, v1, p1, p2}, Ljava/lang/Math;->min(JJ)J
 
-    invoke-interface {v0}, Lj$/util/stream/n3;->w()V
+    move-result-wide v4
 
-    return-void
+    cmp-long v6, v4, v2
+
+    if-lez v6, :cond_3
+
+    iget-object v6, p0, Lj$/util/stream/H3;->d:Ljava/util/concurrent/atomic/AtomicLong;
+
+    sub-long v7, v0, v4
+
+    invoke-virtual {v6, v0, v1, v7, v8}, Ljava/util/concurrent/atomic/AtomicLong;->compareAndSet(JJ)Z
+
+    move-result v6
+
+    if-eqz v6, :cond_0
+
+    :cond_3
+    iget-boolean v6, p0, Lj$/util/stream/H3;->b:Z
+
+    if-eqz v6, :cond_4
+
+    sub-long/2addr p1, v4
+
+    invoke-static {p1, p2, v2, v3}, Ljava/lang/Math;->max(JJ)J
+
+    move-result-wide p1
+
+    return-wide p1
+
+    :cond_4
+    iget-wide p1, p0, Lj$/util/stream/H3;->c:J
+
+    cmp-long v6, v0, p1
+
+    if-lez v6, :cond_5
+
+    sub-long/2addr v0, p1
+
+    sub-long/2addr v4, v0
+
+    invoke-static {v4, v5, v2, v3}, Ljava/lang/Math;->max(JJ)J
+
+    move-result-wide p1
+
+    return-wide p1
+
+    :cond_5
+    return-wide v4
 .end method
 
-.method public x(J)V
-    .locals 2
+.method protected abstract o(Lj$/util/Spliterator;)Lj$/util/Spliterator;
+.end method
 
-    const-wide/32 v0, 0x7ffffff7
+.method protected final p()I
+    .locals 4
 
-    cmp-long v0, p1, v0
+    iget-object v0, p0, Lj$/util/stream/H3;->d:Ljava/util/concurrent/atomic/AtomicLong;
 
-    if-gez v0, :cond_1
+    invoke-virtual {v0}, Ljava/util/concurrent/atomic/AtomicLong;->get()J
 
-    const-wide/16 v0, 0x0
+    move-result-wide v0
 
-    cmp-long v0, p1, v0
+    const-wide/16 v2, 0x0
+
+    cmp-long v0, v0, v2
 
     if-lez v0, :cond_0
 
-    new-instance v0, Lj$/util/stream/V3;
+    const/4 v0, 0x2
 
-    long-to-int p1, p1
+    return v0
 
-    invoke-direct {v0, p1}, Lj$/util/stream/V3;-><init>(I)V
+    :cond_0
+    iget-boolean v0, p0, Lj$/util/stream/H3;->b:Z
+
+    if-eqz v0, :cond_1
+
+    const/4 v0, 0x3
 
     goto :goto_0
 
-    :cond_0
-    new-instance v0, Lj$/util/stream/V3;
-
-    invoke-direct {v0}, Lj$/util/stream/V3;-><init>()V
+    :cond_1
+    const/4 v0, 0x1
 
     :goto_0
-    iput-object v0, p0, Lj$/util/stream/H3;->c:Lj$/util/stream/V3;
+    return v0
+.end method
 
-    return-void
+.method public bridge synthetic trySplit()Lj$/util/B;
+    .locals 1
+
+    invoke-virtual {p0}, Lj$/util/stream/H3;->trySplit()Lj$/util/Spliterator;
+
+    move-result-object v0
+
+    check-cast v0, Lj$/util/B;
+
+    return-object v0
+.end method
+
+.method public bridge synthetic trySplit()Lj$/util/D;
+    .locals 1
+
+    invoke-virtual {p0}, Lj$/util/stream/H3;->trySplit()Lj$/util/Spliterator;
+
+    move-result-object v0
+
+    check-cast v0, Lj$/util/D;
+
+    return-object v0
+.end method
+
+.method public final trySplit()Lj$/util/Spliterator;
+    .locals 4
+
+    iget-object v0, p0, Lj$/util/stream/H3;->d:Ljava/util/concurrent/atomic/AtomicLong;
+
+    invoke-virtual {v0}, Ljava/util/concurrent/atomic/AtomicLong;->get()J
+
+    move-result-wide v0
+
+    const-wide/16 v2, 0x0
+
+    cmp-long v0, v0, v2
+
+    const/4 v1, 0x0
+
+    if-nez v0, :cond_0
+
+    return-object v1
+
+    :cond_0
+    iget-object v0, p0, Lj$/util/stream/H3;->a:Lj$/util/Spliterator;
+
+    invoke-interface {v0}, Lj$/util/Spliterator;->trySplit()Lj$/util/Spliterator;
+
+    move-result-object v0
+
+    if-nez v0, :cond_1
+
+    goto :goto_0
 
     :cond_1
-    new-instance p1, Ljava/lang/IllegalArgumentException;
+    invoke-virtual {p0, v0}, Lj$/util/stream/H3;->o(Lj$/util/Spliterator;)Lj$/util/Spliterator;
 
-    const-string p2, "Stream size exceeds max array size"
+    move-result-object v1
 
-    invoke-direct {p1, p2}, Ljava/lang/IllegalArgumentException;-><init>(Ljava/lang/String;)V
+    :goto_0
+    return-object v1
+.end method
 
-    throw p1
+.method public bridge synthetic trySplit()Lj$/util/x;
+    .locals 1
+
+    invoke-virtual {p0}, Lj$/util/stream/H3;->trySplit()Lj$/util/Spliterator;
+
+    move-result-object v0
+
+    check-cast v0, Lj$/util/x;
+
+    return-object v0
+.end method
+
+.method public bridge synthetic trySplit()Lj$/util/z;
+    .locals 1
+
+    invoke-virtual {p0}, Lj$/util/stream/H3;->trySplit()Lj$/util/Spliterator;
+
+    move-result-object v0
+
+    check-cast v0, Lj$/util/z;
+
+    return-object v0
 .end method

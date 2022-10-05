@@ -1,5 +1,5 @@
 .class public Lcom/fasterxml/jackson/core/JsonProcessingException;
-.super Ljava/io/IOException;
+.super Lcom/fasterxml/jackson/core/JacksonException;
 .source "JsonProcessingException.java"
 
 
@@ -11,7 +11,7 @@
 .method public constructor <init>(Ljava/lang/String;)V
     .locals 0
 
-    invoke-direct {p0, p1}, Ljava/io/IOException;-><init>(Ljava/lang/String;)V
+    invoke-direct {p0, p1}, Lcom/fasterxml/jackson/core/JacksonException;-><init>(Ljava/lang/String;)V
 
     return-void
 .end method
@@ -21,7 +21,7 @@
 
     const/4 v0, 0x0
 
-    invoke-direct {p0, p1, v0}, Ljava/io/IOException;-><init>(Ljava/lang/String;Ljava/lang/Throwable;)V
+    invoke-direct {p0, p1, v0}, Lcom/fasterxml/jackson/core/JacksonException;-><init>(Ljava/lang/String;Ljava/lang/Throwable;)V
 
     iput-object p2, p0, Lcom/fasterxml/jackson/core/JsonProcessingException;->_location:Lcom/fasterxml/jackson/core/JsonLocation;
 
@@ -31,31 +31,27 @@
 .method public constructor <init>(Ljava/lang/String;Lcom/fasterxml/jackson/core/JsonLocation;Ljava/lang/Throwable;)V
     .locals 0
 
-    invoke-direct {p0, p1, p3}, Ljava/io/IOException;-><init>(Ljava/lang/String;Ljava/lang/Throwable;)V
+    invoke-direct {p0, p1, p3}, Lcom/fasterxml/jackson/core/JacksonException;-><init>(Ljava/lang/String;Ljava/lang/Throwable;)V
 
     iput-object p2, p0, Lcom/fasterxml/jackson/core/JsonProcessingException;->_location:Lcom/fasterxml/jackson/core/JsonLocation;
 
     return-void
 .end method
 
-.method public constructor <init>(Ljava/lang/String;Ljava/lang/Throwable;)V
-    .locals 0
-
-    invoke-direct {p0, p1, p2}, Ljava/io/IOException;-><init>(Ljava/lang/String;Ljava/lang/Throwable;)V
-
-    const/4 p1, 0x0
-
-    iput-object p1, p0, Lcom/fasterxml/jackson/core/JsonProcessingException;->_location:Lcom/fasterxml/jackson/core/JsonLocation;
-
-    return-void
-.end method
-
 
 # virtual methods
+.method public getLocation()Lcom/fasterxml/jackson/core/JsonLocation;
+    .locals 1
+
+    iget-object v0, p0, Lcom/fasterxml/jackson/core/JsonProcessingException;->_location:Lcom/fasterxml/jackson/core/JsonLocation;
+
+    return-object v0
+.end method
+
 .method public getMessage()Ljava/lang/String;
     .locals 5
 
-    invoke-super {p0}, Ljava/lang/Throwable;->getMessage()Ljava/lang/String;
+    invoke-super {p0}, Ljava/io/IOException;->getMessage()Ljava/lang/String;
 
     move-result-object v0
 
@@ -124,17 +120,9 @@
 .method public getOriginalMessage()Ljava/lang/String;
     .locals 1
 
-    invoke-super {p0}, Ljava/lang/Throwable;->getMessage()Ljava/lang/String;
+    invoke-super {p0}, Ljava/io/IOException;->getMessage()Ljava/lang/String;
 
     move-result-object v0
-
-    return-object v0
-.end method
-
-.method public getProcessor()Ljava/lang/Object;
-    .locals 1
-
-    const/4 v0, 0x0
 
     return-object v0
 .end method

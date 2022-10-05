@@ -31,7 +31,7 @@
 .end annotation
 
 .annotation system Ldalvik/annotation/SourceDebugExtension;
-    value = "SMAP\nDccValidationRepository.kt\nKotlin\n*S Kotlin\n*F\n+ 1 DccValidationRepository.kt\nde/rki/coronawarnapp/covidcertificate/validation/core/DccValidationRepository$refresh$2\n+ 2 fake.kt\nkotlin/jvm/internal/FakeKt\n*L\n1#1,139:1\n1#2:140\n*E\n"
+    value = "SMAP\nDccValidationRepository.kt\nKotlin\n*S Kotlin\n*F\n+ 1 DccValidationRepository.kt\nde/rki/coronawarnapp/covidcertificate/validation/core/DccValidationRepository$refresh$2\n+ 2 fake.kt\nkotlin/jvm/internal/FakeKt\n*L\n1#1,141:1\n1#2:142\n*E\n"
 .end annotation
 
 .annotation runtime Lkotlin/coroutines/jvm/internal/DebugMetadata;
@@ -41,9 +41,9 @@
         0x5b,
         0x5c,
         0x5f,
-        0x61,
-        0x66,
-        0x68
+        0x62,
+        0x67,
+        0x6a
     }
     m = "invokeSuspend"
 .end annotation
@@ -138,7 +138,9 @@
 
     iget v1, p0, Lde/rki/coronawarnapp/covidcertificate/validation/core/DccValidationRepository$refresh$2;->label:I
 
-    const/4 v2, 0x0
+    const/4 v2, 0x6
+
+    const/4 v3, 0x0
 
     packed-switch v1, :pswitch_data_0
 
@@ -180,9 +182,9 @@
 
     check-cast v1, Ljava/util/List;
 
-    iget-object v2, p0, Lde/rki/coronawarnapp/covidcertificate/validation/core/DccValidationRepository$refresh$2;->L$0:Ljava/lang/Object;
+    iget-object v3, p0, Lde/rki/coronawarnapp/covidcertificate/validation/core/DccValidationRepository$refresh$2;->L$0:Ljava/lang/Object;
 
-    check-cast v2, Ljava/util/List;
+    check-cast v3, Ljava/util/List;
 
     invoke-static {p1}, Lkotlin/ResultKt;->throwOnFailure(Ljava/lang/Object;)V
 
@@ -193,9 +195,9 @@
 
     check-cast v1, Ljava/util/List;
 
-    iget-object v2, p0, Lde/rki/coronawarnapp/covidcertificate/validation/core/DccValidationRepository$refresh$2;->L$0:Ljava/lang/Object;
+    iget-object v3, p0, Lde/rki/coronawarnapp/covidcertificate/validation/core/DccValidationRepository$refresh$2;->L$0:Ljava/lang/Object;
 
-    check-cast v2, Ljava/util/List;
+    check-cast v3, Ljava/util/List;
 
     :try_start_1
     invoke-static {p1}, Lkotlin/ResultKt;->throwOnFailure(Ljava/lang/Object;)V
@@ -216,7 +218,7 @@
 
     invoke-static {p1}, Lkotlin/ResultKt;->throwOnFailure(Ljava/lang/Object;)V
 
-    move-object v2, v1
+    move-object v3, v1
 
     goto :goto_3
 
@@ -225,9 +227,9 @@
 
     check-cast v1, Ljava/lang/String;
 
-    iget-object v3, p0, Lde/rki/coronawarnapp/covidcertificate/validation/core/DccValidationRepository$refresh$2;->L$0:Ljava/lang/Object;
+    iget-object v4, p0, Lde/rki/coronawarnapp/covidcertificate/validation/core/DccValidationRepository$refresh$2;->L$0:Ljava/lang/Object;
 
-    check-cast v3, Lde/rki/coronawarnapp/covidcertificate/validation/core/DccValidationRepository;
+    check-cast v4, Lde/rki/coronawarnapp/covidcertificate/validation/core/DccValidationRepository;
 
     invoke-static {p1}, Lkotlin/ResultKt;->throwOnFailure(Ljava/lang/Object;)V
 
@@ -255,11 +257,11 @@
 
     move-result-object v1
 
-    new-instance v3, Lde/rki/coronawarnapp/covidcertificate/validation/core/server/DccValidationServer$dccCountryJson$2;
+    new-instance v4, Lde/rki/coronawarnapp/covidcertificate/validation/core/server/DccValidationServer$dccCountryJson$2;
 
-    invoke-direct {v3, p1, v2}, Lde/rki/coronawarnapp/covidcertificate/validation/core/server/DccValidationServer$dccCountryJson$2;-><init>(Lde/rki/coronawarnapp/covidcertificate/validation/core/server/DccValidationServer;Lkotlin/coroutines/Continuation;)V
+    invoke-direct {v4, p1, v3}, Lde/rki/coronawarnapp/covidcertificate/validation/core/server/DccValidationServer$dccCountryJson$2;-><init>(Lde/rki/coronawarnapp/covidcertificate/validation/core/server/DccValidationServer;Lkotlin/coroutines/Continuation;)V
 
-    invoke-static {v1, v3, p0}, Lkotlinx/coroutines/BuildersKt;->withContext(Lkotlin/coroutines/CoroutineContext;Lkotlin/jvm/functions/Function2;Lkotlin/coroutines/Continuation;)Ljava/lang/Object;
+    invoke-static {v1, v4, p0}, Lkotlinx/coroutines/BuildersKt;->withContext(Lkotlin/coroutines/CoroutineContext;Lkotlin/jvm/functions/Function2;Lkotlin/coroutines/Continuation;)Ljava/lang/Object;
 
     move-result-object p1
 
@@ -269,25 +271,25 @@
 
     :cond_0
     :goto_0
-    iget-object v3, p0, Lde/rki/coronawarnapp/covidcertificate/validation/core/DccValidationRepository$refresh$2;->this$0:Lde/rki/coronawarnapp/covidcertificate/validation/core/DccValidationRepository;
+    iget-object v4, p0, Lde/rki/coronawarnapp/covidcertificate/validation/core/DccValidationRepository$refresh$2;->this$0:Lde/rki/coronawarnapp/covidcertificate/validation/core/DccValidationRepository;
 
     move-object v1, p1
 
     check-cast v1, Ljava/lang/String;
 
-    iget-object p1, v3, Lde/rki/coronawarnapp/covidcertificate/validation/core/DccValidationRepository;->localCache:Lde/rki/coronawarnapp/covidcertificate/validation/core/DccValidationCache;
+    iget-object p1, v4, Lde/rki/coronawarnapp/covidcertificate/validation/core/DccValidationRepository;->localCache:Lde/rki/coronawarnapp/covidcertificate/validation/core/DccValidationCache;
 
-    iput-object v3, p0, Lde/rki/coronawarnapp/covidcertificate/validation/core/DccValidationRepository$refresh$2;->L$0:Ljava/lang/Object;
+    iput-object v4, p0, Lde/rki/coronawarnapp/covidcertificate/validation/core/DccValidationRepository$refresh$2;->L$0:Ljava/lang/Object;
 
     iput-object v1, p0, Lde/rki/coronawarnapp/covidcertificate/validation/core/DccValidationRepository$refresh$2;->L$1:Ljava/lang/Object;
 
-    const/4 v4, 0x2
+    const/4 v5, 0x2
 
-    iput v4, p0, Lde/rki/coronawarnapp/covidcertificate/validation/core/DccValidationRepository$refresh$2;->label:I
+    iput v5, p0, Lde/rki/coronawarnapp/covidcertificate/validation/core/DccValidationRepository$refresh$2;->label:I
 
-    iget-object v4, p1, Lde/rki/coronawarnapp/covidcertificate/validation/core/DccValidationCache;->countryCacheFile:Ljava/io/File;
+    iget-object v5, p1, Lde/rki/coronawarnapp/covidcertificate/validation/core/DccValidationCache;->countryCacheFile:Ljava/io/File;
 
-    invoke-virtual {p1, v4, v1, p0}, Lde/rki/coronawarnapp/covidcertificate/validation/core/DccValidationCache;->save$Corona_Warn_App_deviceRelease(Ljava/io/File;Ljava/lang/String;Lkotlin/coroutines/Continuation;)Ljava/lang/Object;
+    invoke-virtual {p1, v5, v1, p0}, Lde/rki/coronawarnapp/covidcertificate/validation/core/DccValidationCache;->save$Corona_Warn_App_deviceRelease(Ljava/io/File;Ljava/lang/String;Lkotlin/coroutines/Continuation;)Ljava/lang/Object;
 
     move-result-object p1
 
@@ -305,7 +307,7 @@
 
     :cond_2
     :goto_2
-    invoke-static {v3, v1}, Lde/rki/coronawarnapp/covidcertificate/validation/core/DccValidationRepository;->access$mapCountries(Lde/rki/coronawarnapp/covidcertificate/validation/core/DccValidationRepository;Ljava/lang/String;)Ljava/util/List;
+    invoke-static {v4, v1}, Lde/rki/coronawarnapp/covidcertificate/validation/core/DccValidationRepository;->access$mapCountries(Lde/rki/coronawarnapp/covidcertificate/validation/core/DccValidationRepository;Ljava/lang/String;)Ljava/util/List;
 
     move-result-object p1
 
@@ -313,17 +315,17 @@
 
     iget-object v1, v1, Lde/rki/coronawarnapp/covidcertificate/validation/core/DccValidationRepository;->server:Lde/rki/coronawarnapp/covidcertificate/validation/core/server/DccValidationServer;
 
-    sget-object v3, Lde/rki/coronawarnapp/covidcertificate/validation/core/rule/DccValidationRule$Type;->ACCEPTANCE:Lde/rki/coronawarnapp/covidcertificate/validation/core/rule/DccValidationRule$Type;
+    sget-object v4, Lde/rki/coronawarnapp/covidcertificate/validation/core/rule/DccValidationRule$Type;->ACCEPTANCE:Lde/rki/coronawarnapp/covidcertificate/validation/core/rule/DccValidationRule$Type;
 
     iput-object p1, p0, Lde/rki/coronawarnapp/covidcertificate/validation/core/DccValidationRepository$refresh$2;->L$0:Ljava/lang/Object;
 
-    iput-object v2, p0, Lde/rki/coronawarnapp/covidcertificate/validation/core/DccValidationRepository$refresh$2;->L$1:Ljava/lang/Object;
+    iput-object v3, p0, Lde/rki/coronawarnapp/covidcertificate/validation/core/DccValidationRepository$refresh$2;->L$1:Ljava/lang/Object;
 
-    const/4 v2, 0x3
+    const/4 v3, 0x3
 
-    iput v2, p0, Lde/rki/coronawarnapp/covidcertificate/validation/core/DccValidationRepository$refresh$2;->label:I
+    iput v3, p0, Lde/rki/coronawarnapp/covidcertificate/validation/core/DccValidationRepository$refresh$2;->label:I
 
-    invoke-virtual {v1, v3, p0}, Lde/rki/coronawarnapp/covidcertificate/validation/core/server/DccValidationServer;->ruleSetJson(Lde/rki/coronawarnapp/covidcertificate/validation/core/rule/DccValidationRule$Type;Lkotlin/coroutines/Continuation;)Ljava/lang/Object;
+    invoke-virtual {v1, v4, p0}, Lde/rki/coronawarnapp/covidcertificate/validation/core/server/DccValidationServer;->ruleSetJson(Lde/rki/coronawarnapp/covidcertificate/validation/core/rule/DccValidationRule$Type;Lkotlin/coroutines/Continuation;)Ljava/lang/Object;
 
     move-result-object v1
 
@@ -332,33 +334,37 @@
     return-object v0
 
     :cond_3
-    move-object v2, p1
+    move-object v3, p1
 
     move-object p1, v1
 
     :goto_3
     iget-object v1, p0, Lde/rki/coronawarnapp/covidcertificate/validation/core/DccValidationRepository$refresh$2;->this$0:Lde/rki/coronawarnapp/covidcertificate/validation/core/DccValidationRepository;
 
-    check-cast p1, Ljava/lang/String;
+    check-cast p1, Lde/rki/coronawarnapp/covidcertificate/validation/core/server/DccValidationServer$RuleSetResult;
 
     :try_start_2
-    invoke-static {v1, p1}, Lde/rki/coronawarnapp/covidcertificate/validation/core/DccValidationRepository;->access$toRuleSet(Lde/rki/coronawarnapp/covidcertificate/validation/core/DccValidationRepository;Ljava/lang/String;)Ljava/util/List;
+    iget-object v4, p1, Lde/rki/coronawarnapp/covidcertificate/validation/core/server/DccValidationServer$RuleSetResult;->ruleSetJson:Ljava/lang/String;
 
-    move-result-object v3
+    invoke-static {v1, v4}, Lde/rki/coronawarnapp/covidcertificate/validation/core/DccValidationRepository;->access$toRuleSet(Lde/rki/coronawarnapp/covidcertificate/validation/core/DccValidationRepository;Ljava/lang/String;)Ljava/util/List;
+
+    move-result-object v4
 
     iget-object v1, v1, Lde/rki/coronawarnapp/covidcertificate/validation/core/DccValidationRepository;->localCache:Lde/rki/coronawarnapp/covidcertificate/validation/core/DccValidationCache;
 
-    iput-object v2, p0, Lde/rki/coronawarnapp/covidcertificate/validation/core/DccValidationRepository$refresh$2;->L$0:Ljava/lang/Object;
+    iget-object p1, p1, Lde/rki/coronawarnapp/covidcertificate/validation/core/server/DccValidationServer$RuleSetResult;->ruleSetJson:Ljava/lang/String;
 
-    iput-object v3, p0, Lde/rki/coronawarnapp/covidcertificate/validation/core/DccValidationRepository$refresh$2;->L$1:Ljava/lang/Object;
+    iput-object v3, p0, Lde/rki/coronawarnapp/covidcertificate/validation/core/DccValidationRepository$refresh$2;->L$0:Ljava/lang/Object;
 
-    const/4 v4, 0x4
+    iput-object v4, p0, Lde/rki/coronawarnapp/covidcertificate/validation/core/DccValidationRepository$refresh$2;->L$1:Ljava/lang/Object;
 
-    iput v4, p0, Lde/rki/coronawarnapp/covidcertificate/validation/core/DccValidationRepository$refresh$2;->label:I
+    const/4 v5, 0x4
 
-    iget-object v4, v1, Lde/rki/coronawarnapp/covidcertificate/validation/core/DccValidationCache;->acceptanceRulesCacheFile:Ljava/io/File;
+    iput v5, p0, Lde/rki/coronawarnapp/covidcertificate/validation/core/DccValidationRepository$refresh$2;->label:I
 
-    invoke-virtual {v1, v4, p1, p0}, Lde/rki/coronawarnapp/covidcertificate/validation/core/DccValidationCache;->save$Corona_Warn_App_deviceRelease(Ljava/io/File;Ljava/lang/String;Lkotlin/coroutines/Continuation;)Ljava/lang/Object;
+    iget-object v5, v1, Lde/rki/coronawarnapp/covidcertificate/validation/core/DccValidationCache;->acceptanceRulesCacheFile:Ljava/io/File;
+
+    invoke-virtual {v1, v5, p1, p0}, Lde/rki/coronawarnapp/covidcertificate/validation/core/DccValidationCache;->save$Corona_Warn_App_deviceRelease(Ljava/io/File;Ljava/lang/String;Lkotlin/coroutines/Continuation;)Ljava/lang/Object;
 
     move-result-object p1
 
@@ -377,24 +383,24 @@
     return-object v0
 
     :cond_5
-    move-object v1, v3
+    move-object v1, v4
 
     :goto_5
     iget-object p1, p0, Lde/rki/coronawarnapp/covidcertificate/validation/core/DccValidationRepository$refresh$2;->this$0:Lde/rki/coronawarnapp/covidcertificate/validation/core/DccValidationRepository;
 
     iget-object p1, p1, Lde/rki/coronawarnapp/covidcertificate/validation/core/DccValidationRepository;->server:Lde/rki/coronawarnapp/covidcertificate/validation/core/server/DccValidationServer;
 
-    sget-object v3, Lde/rki/coronawarnapp/covidcertificate/validation/core/rule/DccValidationRule$Type;->INVALIDATION:Lde/rki/coronawarnapp/covidcertificate/validation/core/rule/DccValidationRule$Type;
+    sget-object v4, Lde/rki/coronawarnapp/covidcertificate/validation/core/rule/DccValidationRule$Type;->INVALIDATION:Lde/rki/coronawarnapp/covidcertificate/validation/core/rule/DccValidationRule$Type;
 
-    iput-object v2, p0, Lde/rki/coronawarnapp/covidcertificate/validation/core/DccValidationRepository$refresh$2;->L$0:Ljava/lang/Object;
+    iput-object v3, p0, Lde/rki/coronawarnapp/covidcertificate/validation/core/DccValidationRepository$refresh$2;->L$0:Ljava/lang/Object;
 
     iput-object v1, p0, Lde/rki/coronawarnapp/covidcertificate/validation/core/DccValidationRepository$refresh$2;->L$1:Ljava/lang/Object;
 
-    const/4 v4, 0x5
+    const/4 v5, 0x5
 
-    iput v4, p0, Lde/rki/coronawarnapp/covidcertificate/validation/core/DccValidationRepository$refresh$2;->label:I
+    iput v5, p0, Lde/rki/coronawarnapp/covidcertificate/validation/core/DccValidationRepository$refresh$2;->label:I
 
-    invoke-virtual {p1, v3, p0}, Lde/rki/coronawarnapp/covidcertificate/validation/core/server/DccValidationServer;->ruleSetJson(Lde/rki/coronawarnapp/covidcertificate/validation/core/rule/DccValidationRule$Type;Lkotlin/coroutines/Continuation;)Ljava/lang/Object;
+    invoke-virtual {p1, v4, p0}, Lde/rki/coronawarnapp/covidcertificate/validation/core/server/DccValidationServer;->ruleSetJson(Lde/rki/coronawarnapp/covidcertificate/validation/core/rule/DccValidationRule$Type;Lkotlin/coroutines/Continuation;)Ljava/lang/Object;
 
     move-result-object p1
 
@@ -404,30 +410,32 @@
 
     :cond_6
     :goto_6
-    iget-object v3, p0, Lde/rki/coronawarnapp/covidcertificate/validation/core/DccValidationRepository$refresh$2;->this$0:Lde/rki/coronawarnapp/covidcertificate/validation/core/DccValidationRepository;
+    iget-object v4, p0, Lde/rki/coronawarnapp/covidcertificate/validation/core/DccValidationRepository$refresh$2;->this$0:Lde/rki/coronawarnapp/covidcertificate/validation/core/DccValidationRepository;
 
-    check-cast p1, Ljava/lang/String;
+    check-cast p1, Lde/rki/coronawarnapp/covidcertificate/validation/core/server/DccValidationServer$RuleSetResult;
 
     :try_start_3
-    invoke-static {v3, p1}, Lde/rki/coronawarnapp/covidcertificate/validation/core/DccValidationRepository;->access$toRuleSet(Lde/rki/coronawarnapp/covidcertificate/validation/core/DccValidationRepository;Ljava/lang/String;)Ljava/util/List;
+    iget-object v5, p1, Lde/rki/coronawarnapp/covidcertificate/validation/core/server/DccValidationServer$RuleSetResult;->ruleSetJson:Ljava/lang/String;
 
-    move-result-object v4
+    invoke-static {v4, v5}, Lde/rki/coronawarnapp/covidcertificate/validation/core/DccValidationRepository;->access$toRuleSet(Lde/rki/coronawarnapp/covidcertificate/validation/core/DccValidationRepository;Ljava/lang/String;)Ljava/util/List;
 
-    iget-object v3, v3, Lde/rki/coronawarnapp/covidcertificate/validation/core/DccValidationRepository;->localCache:Lde/rki/coronawarnapp/covidcertificate/validation/core/DccValidationCache;
+    move-result-object v5
 
-    iput-object v2, p0, Lde/rki/coronawarnapp/covidcertificate/validation/core/DccValidationRepository$refresh$2;->L$0:Ljava/lang/Object;
+    iget-object v4, v4, Lde/rki/coronawarnapp/covidcertificate/validation/core/DccValidationRepository;->localCache:Lde/rki/coronawarnapp/covidcertificate/validation/core/DccValidationCache;
+
+    iget-object p1, p1, Lde/rki/coronawarnapp/covidcertificate/validation/core/server/DccValidationServer$RuleSetResult;->ruleSetJson:Ljava/lang/String;
+
+    iput-object v3, p0, Lde/rki/coronawarnapp/covidcertificate/validation/core/DccValidationRepository$refresh$2;->L$0:Ljava/lang/Object;
 
     iput-object v1, p0, Lde/rki/coronawarnapp/covidcertificate/validation/core/DccValidationRepository$refresh$2;->L$1:Ljava/lang/Object;
 
-    iput-object v4, p0, Lde/rki/coronawarnapp/covidcertificate/validation/core/DccValidationRepository$refresh$2;->L$2:Ljava/lang/Object;
+    iput-object v5, p0, Lde/rki/coronawarnapp/covidcertificate/validation/core/DccValidationRepository$refresh$2;->L$2:Ljava/lang/Object;
 
-    const/4 v5, 0x6
+    iput v2, p0, Lde/rki/coronawarnapp/covidcertificate/validation/core/DccValidationRepository$refresh$2;->label:I
 
-    iput v5, p0, Lde/rki/coronawarnapp/covidcertificate/validation/core/DccValidationRepository$refresh$2;->label:I
+    iget-object v2, v4, Lde/rki/coronawarnapp/covidcertificate/validation/core/DccValidationCache;->invalidationRulesCacheFile:Ljava/io/File;
 
-    iget-object v5, v3, Lde/rki/coronawarnapp/covidcertificate/validation/core/DccValidationCache;->invalidationRulesCacheFile:Ljava/io/File;
-
-    invoke-virtual {v3, v5, p1, p0}, Lde/rki/coronawarnapp/covidcertificate/validation/core/DccValidationCache;->save$Corona_Warn_App_deviceRelease(Ljava/io/File;Ljava/lang/String;Lkotlin/coroutines/Continuation;)Ljava/lang/Object;
+    invoke-virtual {v4, v2, p1, p0}, Lde/rki/coronawarnapp/covidcertificate/validation/core/DccValidationCache;->save$Corona_Warn_App_deviceRelease(Ljava/io/File;Ljava/lang/String;Lkotlin/coroutines/Continuation;)Ljava/lang/Object;
 
     move-result-object p1
 
@@ -446,7 +454,9 @@
     return-object v0
 
     :cond_8
-    move-object v0, v4
+    move-object v2, v3
+
+    move-object v0, v5
 
     :goto_8
     new-instance p1, Lde/rki/coronawarnapp/covidcertificate/validation/core/DccValidationData;
@@ -458,20 +468,20 @@
     :goto_9
     new-instance v0, Lde/rki/coronawarnapp/covidcertificate/validation/core/common/exception/DccValidationException;
 
-    sget-object v1, Lde/rki/coronawarnapp/covidcertificate/validation/core/common/exception/DccValidationException$ErrorCode;->INVALIDATION_RULE_JSON_DECODING_FAILED:Lde/rki/coronawarnapp/covidcertificate/validation/core/common/exception/DccValidationException$ErrorCode;
+    const/16 v1, 0x10
 
-    invoke-direct {v0, v1, p1}, Lde/rki/coronawarnapp/covidcertificate/validation/core/common/exception/DccValidationException;-><init>(Lde/rki/coronawarnapp/covidcertificate/validation/core/common/exception/DccValidationException$ErrorCode;Ljava/lang/Throwable;)V
+    invoke-direct {v0, v1, p1}, Lde/rki/coronawarnapp/covidcertificate/validation/core/common/exception/DccValidationException;-><init>(ILjava/lang/Throwable;)V
 
     throw v0
 
     :goto_a
     new-instance v0, Lde/rki/coronawarnapp/covidcertificate/validation/core/common/exception/DccValidationException;
 
-    sget-object v1, Lde/rki/coronawarnapp/covidcertificate/validation/core/common/exception/DccValidationException$ErrorCode;->ACCEPTANCE_RULE_JSON_DECODING_FAILED:Lde/rki/coronawarnapp/covidcertificate/validation/core/common/exception/DccValidationException$ErrorCode;
-
-    invoke-direct {v0, v1, p1}, Lde/rki/coronawarnapp/covidcertificate/validation/core/common/exception/DccValidationException;-><init>(Lde/rki/coronawarnapp/covidcertificate/validation/core/common/exception/DccValidationException$ErrorCode;Ljava/lang/Throwable;)V
+    invoke-direct {v0, v2, p1}, Lde/rki/coronawarnapp/covidcertificate/validation/core/common/exception/DccValidationException;-><init>(ILjava/lang/Throwable;)V
 
     throw v0
+
+    nop
 
     :pswitch_data_0
     .packed-switch 0x0

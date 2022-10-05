@@ -38,7 +38,7 @@
 
 # virtual methods
 .method public CreateNewWithFlags(Lcom/upokecenter/numbers/EInteger;Lcom/upokecenter/numbers/EInteger;I)Ljava/lang/Object;
-    .locals 0
+    .locals 1
 
     invoke-static {p1}, Lcom/upokecenter/numbers/FastIntegerFixed;->FromBig(Lcom/upokecenter/numbers/EInteger;)Lcom/upokecenter/numbers/FastIntegerFixed;
 
@@ -48,21 +48,41 @@
 
     move-result-object p2
 
-    invoke-static {p1, p2, p3}, Lcom/upokecenter/numbers/EDecimal;->CreateWithFlags(Lcom/upokecenter/numbers/FastIntegerFixed;Lcom/upokecenter/numbers/FastIntegerFixed;I)Lcom/upokecenter/numbers/EDecimal;
+    const-string v0, "mantissa"
 
-    move-result-object p1
+    invoke-static {p1, v0}, Ljava/util/Objects;->requireNonNull(Ljava/lang/Object;Ljava/lang/String;)Ljava/lang/Object;
 
-    return-object p1
+    const-string v0, "exponent"
+
+    invoke-static {p2, v0}, Ljava/util/Objects;->requireNonNull(Ljava/lang/Object;Ljava/lang/String;)Ljava/lang/Object;
+
+    new-instance v0, Lcom/upokecenter/numbers/EDecimal;
+
+    int-to-byte p3, p3
+
+    invoke-direct {v0, p1, p2, p3}, Lcom/upokecenter/numbers/EDecimal;-><init>(Lcom/upokecenter/numbers/FastIntegerFixed;Lcom/upokecenter/numbers/FastIntegerFixed;B)V
+
+    return-object v0
 .end method
 
 .method public CreateNewWithFlagsFastInt(Lcom/upokecenter/numbers/FastIntegerFixed;Lcom/upokecenter/numbers/FastIntegerFixed;I)Ljava/lang/Object;
-    .locals 0
+    .locals 1
 
-    invoke-static {p1, p2, p3}, Lcom/upokecenter/numbers/EDecimal;->CreateWithFlags(Lcom/upokecenter/numbers/FastIntegerFixed;Lcom/upokecenter/numbers/FastIntegerFixed;I)Lcom/upokecenter/numbers/EDecimal;
+    const-string v0, "mantissa"
 
-    move-result-object p1
+    invoke-static {p1, v0}, Ljava/util/Objects;->requireNonNull(Ljava/lang/Object;Ljava/lang/String;)Ljava/lang/Object;
 
-    return-object p1
+    const-string v0, "exponent"
+
+    invoke-static {p2, v0}, Ljava/util/Objects;->requireNonNull(Ljava/lang/Object;Ljava/lang/String;)Ljava/lang/Object;
+
+    new-instance v0, Lcom/upokecenter/numbers/EDecimal;
+
+    int-to-byte p3, p3
+
+    invoke-direct {v0, p1, p2, p3}, Lcom/upokecenter/numbers/EDecimal;-><init>(Lcom/upokecenter/numbers/FastIntegerFixed;Lcom/upokecenter/numbers/FastIntegerFixed;B)V
+
+    return-object v0
 .end method
 
 .method public CreateShiftAccumulatorWithDigits(Lcom/upokecenter/numbers/EInteger;II)Lcom/upokecenter/numbers/IShiftAccumulator;

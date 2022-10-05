@@ -251,7 +251,7 @@
 
     iget-object v2, p0, Lokhttp3/Headers;->namesAndValues:[Ljava/lang/String;
 
-    const-string v3, "$this$addAll"
+    const-string v3, "<this>"
 
     invoke-static {v1, v3}, Lkotlin/jvm/internal/Intrinsics;->checkNotNullParameter(Ljava/lang/Object;Ljava/lang/String;)V
 

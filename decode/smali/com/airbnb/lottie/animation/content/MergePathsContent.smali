@@ -146,9 +146,9 @@
     return-object v0
 
     :cond_0
-    iget-object v0, v0, Lcom/airbnb/lottie/model/content/MergePaths;->mode:Lcom/airbnb/lottie/model/content/MergePaths$MergePathsMode;
+    iget v0, v0, Lcom/airbnb/lottie/model/content/MergePaths;->mode:I
 
-    invoke-virtual {v0}, Ljava/lang/Enum;->ordinal()I
+    invoke-static {v0}, Landroidx/camera/camera2/internal/Camera2CameraImpl$InternalState$EnumUnboxingSharedUtility;->ordinal(I)I
 
     move-result v0
 

@@ -101,3 +101,13 @@
         }
     .end annotation
 .end method
+
+.method public abstract withDefaultImpl(Ljava/lang/Class;)Lcom/fasterxml/jackson/databind/jsontype/TypeResolverBuilder;
+    .annotation system Ldalvik/annotation/Signature;
+        value = {
+            "(",
+            "Ljava/lang/Class<",
+            "*>;)TT;"
+        }
+    .end annotation
+.end method

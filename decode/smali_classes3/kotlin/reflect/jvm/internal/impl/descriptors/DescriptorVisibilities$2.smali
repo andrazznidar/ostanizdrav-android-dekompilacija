@@ -1,4 +1,4 @@
-.class public final Lkotlin/reflect/jvm/internal/impl/descriptors/DescriptorVisibilities$2;
+.class final Lkotlin/reflect/jvm/internal/impl/descriptors/DescriptorVisibilities$2;
 .super Lkotlin/reflect/jvm/internal/impl/descriptors/DelegatedDescriptorVisibility;
 .source "DescriptorVisibilities.java"
 
@@ -15,7 +15,7 @@
 
 
 # direct methods
-.method public static synthetic $$$reportNull$$$0(I)V
+.method private static synthetic $$$reportNull$$$0(I)V
     .locals 3
 
     const/4 v0, 0x3
@@ -78,47 +78,53 @@
 
     const/4 v0, 0x0
 
-    const/4 v1, 0x0
+    if-nez p2, :cond_0
 
-    if-eqz p2, :cond_4
+    invoke-static {v0}, Lkotlin/reflect/jvm/internal/impl/descriptors/DescriptorVisibilities$2;->$$$reportNull$$$0(I)V
 
-    const/4 v2, 0x1
+    :cond_0
+    const/4 v1, 0x1
 
-    if-eqz p3, :cond_3
+    if-nez p3, :cond_1
 
-    sget-object v0, Lkotlin/reflect/jvm/internal/impl/descriptors/DescriptorVisibilities;->PRIVATE:Lkotlin/reflect/jvm/internal/impl/descriptors/DescriptorVisibility;
+    invoke-static {v1}, Lkotlin/reflect/jvm/internal/impl/descriptors/DescriptorVisibilities$2;->$$$reportNull$$$0(I)V
 
-    invoke-virtual {v0, p1, p2, p3}, Lkotlin/reflect/jvm/internal/impl/descriptors/DescriptorVisibility;->isVisible(Lkotlin/reflect/jvm/internal/impl/resolve/scopes/receivers/ReceiverValue;Lkotlin/reflect/jvm/internal/impl/descriptors/DeclarationDescriptorWithVisibility;Lkotlin/reflect/jvm/internal/impl/descriptors/DeclarationDescriptor;)Z
+    :cond_1
+    sget-object v2, Lkotlin/reflect/jvm/internal/impl/descriptors/DescriptorVisibilities;->PRIVATE:Lkotlin/reflect/jvm/internal/impl/descriptors/DescriptorVisibility;
+
+    invoke-virtual {v2, p1, p2, p3}, Lkotlin/reflect/jvm/internal/impl/descriptors/DescriptorVisibility;->isVisible(Lkotlin/reflect/jvm/internal/impl/resolve/scopes/receivers/ReceiverValue;Lkotlin/reflect/jvm/internal/impl/descriptors/DeclarationDescriptorWithVisibility;Lkotlin/reflect/jvm/internal/impl/descriptors/DeclarationDescriptor;)Z
 
     move-result p3
 
-    if-eqz p3, :cond_2
+    if-eqz p3, :cond_4
 
     sget-object p3, Lkotlin/reflect/jvm/internal/impl/descriptors/DescriptorVisibilities;->ALWAYS_SUITABLE_RECEIVER:Lkotlin/reflect/jvm/internal/impl/resolve/scopes/receivers/ReceiverValue;
 
-    if-ne p1, p3, :cond_0
-
-    return v2
-
-    :cond_0
-    sget-object p3, Lkotlin/reflect/jvm/internal/impl/descriptors/DescriptorVisibilities;->IRRELEVANT_RECEIVER:Lkotlin/reflect/jvm/internal/impl/resolve/scopes/receivers/ReceiverValue;
-
-    if-ne p1, p3, :cond_1
+    if-ne p1, p3, :cond_2
 
     return v1
 
-    :cond_1
+    :cond_2
+    invoke-static {}, Lkotlin/reflect/jvm/internal/impl/descriptors/DescriptorVisibilities;->access$000()Lkotlin/reflect/jvm/internal/impl/resolve/scopes/receivers/ReceiverValue;
+
+    move-result-object p3
+
+    if-ne p1, p3, :cond_3
+
+    return v0
+
+    :cond_3
     const-class p3, Lkotlin/reflect/jvm/internal/impl/descriptors/ClassDescriptor;
 
     invoke-static {p2, p3}, Lkotlin/reflect/jvm/internal/impl/resolve/DescriptorUtils;->getParentOfType(Lkotlin/reflect/jvm/internal/impl/descriptors/DeclarationDescriptor;Ljava/lang/Class;)Lkotlin/reflect/jvm/internal/impl/descriptors/DeclarationDescriptor;
 
     move-result-object p2
 
-    if-eqz p2, :cond_2
+    if-eqz p2, :cond_4
 
     instance-of p3, p1, Lkotlin/reflect/jvm/internal/impl/resolve/scopes/receivers/ThisClassReceiver;
 
-    if-eqz p3, :cond_2
+    if-eqz p3, :cond_4
 
     check-cast p1, Lkotlin/reflect/jvm/internal/impl/resolve/scopes/receivers/ThisClassReceiver;
 
@@ -140,16 +146,6 @@
 
     return p1
 
-    :cond_2
-    return v1
-
-    :cond_3
-    invoke-static {v2}, Lkotlin/reflect/jvm/internal/impl/descriptors/DescriptorVisibilities$2;->$$$reportNull$$$0(I)V
-
-    throw v0
-
     :cond_4
-    invoke-static {v1}, Lkotlin/reflect/jvm/internal/impl/descriptors/DescriptorVisibilities$2;->$$$reportNull$$$0(I)V
-
-    throw v0
+    return v0
 .end method

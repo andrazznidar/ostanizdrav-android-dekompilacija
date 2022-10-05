@@ -34,7 +34,7 @@
 
 # virtual methods
 .method public read(Lcom/google/gson/stream/JsonReader;)Ljava/lang/Object;
-    .locals 6
+    .locals 7
     .annotation system Ldalvik/annotation/Throws;
         value = {
             Ljava/io/IOException;
@@ -65,6 +65,8 @@
     move-result v4
 
     const/4 v5, 0x5
+
+    const/4 v6, 0x1
 
     if-eq v4, v5, :cond_2
 
@@ -126,13 +128,13 @@
 
     if-eqz v1, :cond_3
 
-    :goto_1
-    const/4 v1, 0x1
-
-    goto :goto_2
+    goto :goto_1
 
     :cond_3
-    move v1, v2
+    move v6, v2
+
+    :goto_1
+    move v1, v6
 
     :goto_2
     if-eqz v1, :cond_4

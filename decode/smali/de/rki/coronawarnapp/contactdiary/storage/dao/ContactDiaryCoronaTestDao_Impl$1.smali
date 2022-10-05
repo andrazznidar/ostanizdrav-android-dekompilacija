@@ -15,9 +15,7 @@
 
 .annotation system Ldalvik/annotation/Signature;
     value = {
-        "Landroidx/room/EntityInsertionAdapter<",
-        "Lde/rki/coronawarnapp/contactdiary/storage/entity/ContactDiaryCoronaTestEntity;",
-        ">;"
+        "Landroidx/room/EntityInsertionAdapter;"
     }
 .end annotation
 
@@ -86,7 +84,7 @@
 
     iget-object v0, v0, Lde/rki/coronawarnapp/contactdiary/storage/dao/ContactDiaryCoronaTestDao_Impl;->__contactDiaryRoomConverters:Lde/rki/coronawarnapp/contactdiary/storage/internal/converters/ContactDiaryRoomConverters;
 
-    iget-object v1, p2, Lde/rki/coronawarnapp/contactdiary/storage/entity/ContactDiaryCoronaTestEntity;->testType:Lde/rki/coronawarnapp/contactdiary/storage/entity/ContactDiaryCoronaTestEntity$TestType;
+    iget v1, p2, Lde/rki/coronawarnapp/contactdiary/storage/entity/ContactDiaryCoronaTestEntity;->testType:I
 
     invoke-static {v0}, Ljava/util/Objects;->requireNonNull(Ljava/lang/Object;)Ljava/lang/Object;
 
@@ -99,7 +97,9 @@
     goto :goto_1
 
     :cond_1
-    iget-object v1, v1, Lde/rki/coronawarnapp/contactdiary/storage/entity/ContactDiaryCoronaTestEntity$TestType;->raw:Ljava/lang/String;
+    invoke-static {v1}, Lde/rki/coronawarnapp/util/di/DaggerApplicationComponent$DccValidationPassedFragmentSubcomponentFactory-IA;->getRaw(I)Ljava/lang/String;
+
+    move-result-object v1
 
     :goto_1
     const/4 v2, 0x2
@@ -122,7 +122,7 @@
 
     iget-object v1, v1, Lde/rki/coronawarnapp/contactdiary/storage/dao/ContactDiaryCoronaTestDao_Impl;->__contactDiaryRoomConverters:Lde/rki/coronawarnapp/contactdiary/storage/internal/converters/ContactDiaryRoomConverters;
 
-    iget-object v2, p2, Lde/rki/coronawarnapp/contactdiary/storage/entity/ContactDiaryCoronaTestEntity;->result:Lde/rki/coronawarnapp/contactdiary/storage/entity/ContactDiaryCoronaTestEntity$TestResult;
+    iget v2, p2, Lde/rki/coronawarnapp/contactdiary/storage/entity/ContactDiaryCoronaTestEntity;->result:I
 
     invoke-static {v1}, Ljava/util/Objects;->requireNonNull(Ljava/lang/Object;)Ljava/lang/Object;
 
@@ -131,7 +131,9 @@
     goto :goto_3
 
     :cond_3
-    iget-object v0, v2, Lde/rki/coronawarnapp/contactdiary/storage/entity/ContactDiaryCoronaTestEntity$TestResult;->raw:Ljava/lang/String;
+    invoke-static {v2}, Lde/rki/coronawarnapp/util/di/DaggerApplicationComponent$DccValidationOpenFragmentSubcomponentImpl-IA;->getRaw(I)Ljava/lang/String;
+
+    move-result-object v0
 
     :goto_3
     const/4 v1, 0x3

@@ -50,7 +50,7 @@
 
     iget-object v0, p0, Lde/rki/coronawarnapp/presencetracing/checkins/qrcode/TraceLocation$locationUrl$2;->this$0:Lde/rki/coronawarnapp/presencetracing/checkins/qrcode/TraceLocation;
 
-    invoke-static {v0}, Lcom/google/android/material/shape/MaterialShapeUtils;->qrCodePayload(Lde/rki/coronawarnapp/presencetracing/checkins/qrcode/TraceLocation;)Lde/rki/coronawarnapp/server/protocols/internal/pt/TraceLocationOuterClass$QRCodePayload;
+    invoke-static {v0}, Lgeoregression/struct/ConvertFloatType;->qrCodePayload(Lde/rki/coronawarnapp/presencetracing/checkins/qrcode/TraceLocation;)Lde/rki/coronawarnapp/server/protocols/internal/pt/TraceLocationOuterClass$QRCodePayload;
 
     move-result-object v0
 
@@ -121,7 +121,7 @@
 
     move-result-object v0
 
-    const-string v1, "https://e.coronawarn.app?v=1#"
+    const-string v1, "https://www.cepimose.si?v=1#"
 
     invoke-static {v1, v0}, Landroidx/appcompat/view/SupportMenuInflater$$ExternalSyntheticOutline0;->m(Ljava/lang/String;Ljava/lang/String;)Ljava/lang/String;
 

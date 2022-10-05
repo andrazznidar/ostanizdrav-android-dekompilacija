@@ -22,16 +22,8 @@
 
 
 # direct methods
-.method public constructor <init>(Lde/rki/coronawarnapp/util/di/DaggerApplicationComponent;Lde/rki/coronawarnapp/util/di/DaggerApplicationComponent$NotificationReceiverSubcomponentFactory-IA;)V
+.method public constructor <init>(Lde/rki/coronawarnapp/util/di/DaggerApplicationComponent;Lorg/bouncycastle/crypto/generators/RSAKeyPairGenerator$$ExternalSyntheticOutline0;)V
     .locals 0
-    .annotation system Ldalvik/annotation/MethodParameters;
-        accessFlags = {
-            0x0
-        }
-        names = {
-            "applicationComponent"
-        }
-    .end annotation
 
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 

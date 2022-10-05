@@ -36,7 +36,9 @@
 
     iget-object v0, v0, Lcom/google/android/play/core/assetpacks/zzeh;->zza:Lcom/google/android/play/core/assetpacks/zzbh;
 
-    iget-object v2, v1, Lorg/bouncycastle/asn1/OIDTokenizer;->oid:Ljava/lang/String;
+    iget-object v2, v1, Lorg/bouncycastle/crypto/util/SSHBuffer;->buffer:Ljava/lang/Object;
+
+    check-cast v2, Ljava/lang/String;
 
     iget v3, v1, Lcom/google/android/play/core/assetpacks/zzef;->zzb:I
 

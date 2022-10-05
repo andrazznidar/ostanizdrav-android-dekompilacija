@@ -415,7 +415,7 @@
 .end method
 
 .method public contentsAsDecimal()Ljava/math/BigDecimal;
-    .locals 3
+    .locals 4
     .annotation system Ldalvik/annotation/Throws;
         value = {
             Ljava/lang/NumberFormatException;
@@ -424,15 +424,11 @@
 
     iget-object v0, p0, Lcom/fasterxml/jackson/core/util/TextBuffer;->_resultArray:[C
 
-    const/4 v1, 0x0
-
     if-eqz v0, :cond_0
 
-    sget-object v2, Lcom/fasterxml/jackson/core/io/NumberInput;->MIN_LONG_STR_NO_SIGN:Ljava/lang/String;
+    sget-object v1, Lcom/fasterxml/jackson/core/io/NumberInput;->MIN_LONG_STR_NO_SIGN:Ljava/lang/String;
 
-    array-length v2, v0
-
-    invoke-static {v0, v1, v2}, Lcom/fasterxml/jackson/core/io/NumberInput;->parseBigDecimal([CII)Ljava/math/BigDecimal;
+    invoke-static {v0}, Lcom/fasterxml/jackson/core/io/BigDecimalParser;->parse([C)Ljava/math/BigDecimal;
 
     move-result-object v0
 
@@ -441,47 +437,76 @@
     :cond_0
     iget v0, p0, Lcom/fasterxml/jackson/core/util/TextBuffer;->_inputStart:I
 
-    if-ltz v0, :cond_1
+    if-ltz v0, :cond_3
 
-    iget-object v2, p0, Lcom/fasterxml/jackson/core/util/TextBuffer;->_inputBuffer:[C
+    iget-object v1, p0, Lcom/fasterxml/jackson/core/util/TextBuffer;->_inputBuffer:[C
 
-    if-eqz v2, :cond_1
+    if-eqz v1, :cond_3
 
-    iget v1, p0, Lcom/fasterxml/jackson/core/util/TextBuffer;->_inputLen:I
+    iget v2, p0, Lcom/fasterxml/jackson/core/util/TextBuffer;->_inputLen:I
 
-    invoke-static {v2, v0, v1}, Lcom/fasterxml/jackson/core/io/NumberInput;->parseBigDecimal([CII)Ljava/math/BigDecimal;
+    sget-object v3, Lcom/fasterxml/jackson/core/io/NumberInput;->MIN_LONG_STR_NO_SIGN:Ljava/lang/String;
+
+    if-gtz v0, :cond_1
+
+    array-length v3, v1
+
+    if-eq v2, v3, :cond_2
+
+    :cond_1
+    add-int/2addr v2, v0
+
+    invoke-static {v1, v0, v2}, Ljava/util/Arrays;->copyOfRange([CII)[C
+
+    move-result-object v1
+
+    :cond_2
+    invoke-static {v1}, Lcom/fasterxml/jackson/core/io/BigDecimalParser;->parse([C)Ljava/math/BigDecimal;
 
     move-result-object v0
 
     return-object v0
 
-    :cond_1
+    :cond_3
     iget v0, p0, Lcom/fasterxml/jackson/core/util/TextBuffer;->_segmentSize:I
 
-    if-nez v0, :cond_2
+    if-nez v0, :cond_5
 
     iget-object v0, p0, Lcom/fasterxml/jackson/core/util/TextBuffer;->_currentSegment:[C
 
-    if-eqz v0, :cond_2
+    if-eqz v0, :cond_5
+
+    const/4 v1, 0x0
 
     iget v2, p0, Lcom/fasterxml/jackson/core/util/TextBuffer;->_currentSize:I
 
-    invoke-static {v0, v1, v2}, Lcom/fasterxml/jackson/core/io/NumberInput;->parseBigDecimal([CII)Ljava/math/BigDecimal;
+    sget-object v3, Lcom/fasterxml/jackson/core/io/NumberInput;->MIN_LONG_STR_NO_SIGN:Ljava/lang/String;
+
+    array-length v3, v0
+
+    if-eq v2, v3, :cond_4
+
+    add-int/2addr v2, v1
+
+    invoke-static {v0, v1, v2}, Ljava/util/Arrays;->copyOfRange([CII)[C
+
+    move-result-object v0
+
+    :cond_4
+    invoke-static {v0}, Lcom/fasterxml/jackson/core/io/BigDecimalParser;->parse([C)Ljava/math/BigDecimal;
 
     move-result-object v0
 
     return-object v0
 
-    :cond_2
+    :cond_5
     invoke-virtual {p0}, Lcom/fasterxml/jackson/core/util/TextBuffer;->contentsAsArray()[C
 
     move-result-object v0
 
-    sget-object v2, Lcom/fasterxml/jackson/core/io/NumberInput;->MIN_LONG_STR_NO_SIGN:Ljava/lang/String;
+    sget-object v1, Lcom/fasterxml/jackson/core/io/NumberInput;->MIN_LONG_STR_NO_SIGN:Ljava/lang/String;
 
-    array-length v2, v0
-
-    invoke-static {v0, v1, v2}, Lcom/fasterxml/jackson/core/io/NumberInput;->parseBigDecimal([CII)Ljava/math/BigDecimal;
+    invoke-static {v0}, Lcom/fasterxml/jackson/core/io/BigDecimalParser;->parse([C)Ljava/math/BigDecimal;
 
     move-result-object v0
 

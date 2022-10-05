@@ -141,6 +141,8 @@
     return-void
 
     :cond_0
+    invoke-static {p2}, Ljava/util/Objects;->requireNonNull(Ljava/lang/Object;)Ljava/lang/Object;
+
     new-instance v0, Lcom/fasterxml/jackson/databind/util/TokenBuffer;
 
     invoke-direct {v0, p1, p2}, Lcom/fasterxml/jackson/databind/util/TokenBuffer;-><init>(Lcom/fasterxml/jackson/core/JsonParser;Lcom/fasterxml/jackson/databind/DeserializationContext;)V
@@ -293,7 +295,17 @@
 
     aget-object v4, v4, v3
 
-    if-nez v4, :cond_0
+    if-eqz v4, :cond_9
+
+    iget-object v4, v4, Lcom/fasterxml/jackson/databind/util/TokenBuffer;->_first:Lcom/fasterxml/jackson/databind/util/TokenBuffer$Segment;
+
+    invoke-virtual {v4, v2}, Lcom/fasterxml/jackson/databind/util/TokenBuffer$Segment;->type(I)Lcom/fasterxml/jackson/core/JsonToken;
+
+    move-result-object v4
+
+    sget-object v8, Lcom/fasterxml/jackson/core/JsonToken;->VALUE_NULL:Lcom/fasterxml/jackson/core/JsonToken;
+
+    if-ne v4, v8, :cond_0
 
     goto/16 :goto_5
 
@@ -410,6 +422,8 @@
     goto :goto_2
 
     :cond_5
+    invoke-static {p2}, Ljava/util/Objects;->requireNonNull(Ljava/lang/Object;)Ljava/lang/Object;
+
     new-instance v7, Lcom/fasterxml/jackson/databind/util/TokenBuffer;
 
     invoke-direct {v7, p1, p2}, Lcom/fasterxml/jackson/databind/util/TokenBuffer;-><init>(Lcom/fasterxml/jackson/core/JsonParser;Lcom/fasterxml/jackson/databind/DeserializationContext;)V
@@ -483,6 +497,8 @@
     goto :goto_4
 
     :cond_8
+    invoke-static {p2}, Ljava/util/Objects;->requireNonNull(Ljava/lang/Object;)Ljava/lang/Object;
+
     new-instance v6, Lcom/fasterxml/jackson/databind/util/TokenBuffer;
 
     invoke-direct {v6, p1, p2}, Lcom/fasterxml/jackson/databind/util/TokenBuffer;-><init>(Lcom/fasterxml/jackson/core/JsonParser;Lcom/fasterxml/jackson/databind/DeserializationContext;)V
@@ -859,40 +875,38 @@
     goto :goto_0
 
     :cond_1
-    new-instance p3, Lcom/fasterxml/jackson/databind/util/TokenBuffer;
+    invoke-virtual {p2, p1}, Lcom/fasterxml/jackson/databind/DeserializationContext;->bufferAsCopyOfValue(Lcom/fasterxml/jackson/core/JsonParser;)Lcom/fasterxml/jackson/databind/util/TokenBuffer;
 
-    invoke-direct {p3, p1, p2}, Lcom/fasterxml/jackson/databind/util/TokenBuffer;-><init>(Lcom/fasterxml/jackson/core/JsonParser;Lcom/fasterxml/jackson/databind/DeserializationContext;)V
+    move-result-object p1
 
-    invoke-virtual {p3, p1}, Lcom/fasterxml/jackson/databind/util/TokenBuffer;->copyCurrentStructure(Lcom/fasterxml/jackson/core/JsonParser;)V
-
-    iget-object p1, p0, Lcom/fasterxml/jackson/databind/deser/impl/ExternalTypeHandler;->_tokens:[Lcom/fasterxml/jackson/databind/util/TokenBuffer;
+    iget-object p2, p0, Lcom/fasterxml/jackson/databind/deser/impl/ExternalTypeHandler;->_tokens:[Lcom/fasterxml/jackson/databind/util/TokenBuffer;
 
     invoke-virtual {v0}, Ljava/lang/Integer;->intValue()I
 
-    move-result p2
+    move-result p3
 
-    aput-object p3, p1, p2
+    aput-object p1, p2, p3
 
     :goto_1
     invoke-interface {p4}, Ljava/util/Iterator;->hasNext()Z
 
-    move-result p1
+    move-result p2
 
-    if-eqz p1, :cond_2
+    if-eqz p2, :cond_2
 
-    iget-object p1, p0, Lcom/fasterxml/jackson/databind/deser/impl/ExternalTypeHandler;->_tokens:[Lcom/fasterxml/jackson/databind/util/TokenBuffer;
+    iget-object p2, p0, Lcom/fasterxml/jackson/databind/deser/impl/ExternalTypeHandler;->_tokens:[Lcom/fasterxml/jackson/databind/util/TokenBuffer;
 
     invoke-interface {p4}, Ljava/util/Iterator;->next()Ljava/lang/Object;
 
-    move-result-object p2
+    move-result-object p3
 
-    check-cast p2, Ljava/lang/Integer;
+    check-cast p3, Ljava/lang/Integer;
 
-    invoke-virtual {p2}, Ljava/lang/Integer;->intValue()I
+    invoke-virtual {p3}, Ljava/lang/Integer;->intValue()I
 
-    move-result p2
+    move-result p3
 
-    aput-object p3, p1, p2
+    aput-object p1, p2, p3
 
     goto :goto_1
 
@@ -920,7 +934,7 @@
 
     iget-object p3, p0, Lcom/fasterxml/jackson/databind/deser/impl/ExternalTypeHandler;->_typeIds:[Ljava/lang/String;
 
-    invoke-virtual {p1}, Lcom/fasterxml/jackson/core/JsonParser;->getText()Ljava/lang/String;
+    invoke-virtual {p1}, Lcom/fasterxml/jackson/core/JsonParser;->getValueAsString()Ljava/lang/String;
 
     move-result-object v2
 
@@ -939,11 +953,9 @@
     goto :goto_2
 
     :cond_4
-    new-instance p3, Lcom/fasterxml/jackson/databind/util/TokenBuffer;
+    invoke-virtual {p2, p1}, Lcom/fasterxml/jackson/databind/DeserializationContext;->bufferAsCopyOfValue(Lcom/fasterxml/jackson/core/JsonParser;)Lcom/fasterxml/jackson/databind/util/TokenBuffer;
 
-    invoke-direct {p3, p1, p2}, Lcom/fasterxml/jackson/databind/util/TokenBuffer;-><init>(Lcom/fasterxml/jackson/core/JsonParser;Lcom/fasterxml/jackson/databind/DeserializationContext;)V
-
-    invoke-virtual {p3, p1}, Lcom/fasterxml/jackson/databind/util/TokenBuffer;->copyCurrentStructure(Lcom/fasterxml/jackson/core/JsonParser;)V
+    move-result-object p3
 
     iget-object v2, p0, Lcom/fasterxml/jackson/databind/deser/impl/ExternalTypeHandler;->_tokens:[Lcom/fasterxml/jackson/databind/util/TokenBuffer;
 

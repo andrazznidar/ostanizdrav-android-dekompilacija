@@ -206,7 +206,9 @@
 
     new-instance v0, Lcom/airbnb/lottie/animation/keyframe/TextKeyframeAnimation;
 
-    iget-object p1, p1, Lcom/airbnb/lottie/model/animatable/BaseAnimatableValue;->keyframes:Ljava/util/List;
+    iget-object p1, p1, Lboofcv/struct/border/ImageBorder;->image:Ljava/lang/Object;
+
+    check-cast p1, Ljava/util/List;
 
     invoke-direct {v0, p1}, Lcom/airbnb/lottie/animation/keyframe/TextKeyframeAnimation;-><init>(Ljava/util/List;)V
 
@@ -218,13 +220,11 @@
 
     invoke-virtual {p0, v0}, Lcom/airbnb/lottie/model/layer/BaseLayer;->addAnimation(Lcom/airbnb/lottie/animation/keyframe/BaseKeyframeAnimation;)V
 
-    iget-object p1, p2, Lcom/airbnb/lottie/model/layer/Layer;->textProperties:Landroidx/constraintlayout/core/Cache;
+    iget-object p1, p2, Lcom/airbnb/lottie/model/layer/Layer;->textProperties:Lcom/airbnb/lottie/model/animatable/AnimatableTextProperties;
 
     if-eqz p1, :cond_0
 
-    iget-object p2, p1, Landroidx/constraintlayout/core/Cache;->optimizedArrayRowPool:Ljava/lang/Object;
-
-    check-cast p2, Lcom/airbnb/lottie/model/animatable/AnimatableColorValue;
+    iget-object p2, p1, Lcom/airbnb/lottie/model/animatable/AnimatableTextProperties;->color:Lcom/airbnb/lottie/model/animatable/AnimatableColorValue;
 
     if-eqz p2, :cond_0
 
@@ -245,9 +245,7 @@
     :cond_0
     if-eqz p1, :cond_1
 
-    iget-object p2, p1, Landroidx/constraintlayout/core/Cache;->arrayRowPool:Ljava/lang/Object;
-
-    check-cast p2, Lcom/airbnb/lottie/model/animatable/AnimatableColorValue;
+    iget-object p2, p1, Lcom/airbnb/lottie/model/animatable/AnimatableTextProperties;->stroke:Lcom/airbnb/lottie/model/animatable/AnimatableColorValue;
 
     if-eqz p2, :cond_1
 
@@ -268,9 +266,7 @@
     :cond_1
     if-eqz p1, :cond_2
 
-    iget-object p2, p1, Landroidx/constraintlayout/core/Cache;->solverVariablePool:Ljava/lang/Object;
-
-    check-cast p2, Lcom/airbnb/lottie/model/animatable/AnimatableFloatValue;
+    iget-object p2, p1, Lcom/airbnb/lottie/model/animatable/AnimatableTextProperties;->strokeWidth:Lcom/airbnb/lottie/model/animatable/AnimatableFloatValue;
 
     if-eqz p2, :cond_2
 
@@ -291,9 +287,7 @@
     :cond_2
     if-eqz p1, :cond_3
 
-    iget-object p1, p1, Landroidx/constraintlayout/core/Cache;->mIndexedVariables:Ljava/lang/Object;
-
-    check-cast p1, Lcom/airbnb/lottie/model/animatable/AnimatableFloatValue;
+    iget-object p1, p1, Lcom/airbnb/lottie/model/animatable/AnimatableTextProperties;->tracking:Lcom/airbnb/lottie/model/animatable/AnimatableFloatValue;
 
     if-eqz p1, :cond_3
 
@@ -525,9 +519,9 @@
 .method public final applyJustification$enumunboxing$(ILandroid/graphics/Canvas;F)V
     .locals 2
 
-    invoke-static {p1}, Landroidx/constraintlayout/core/SolverVariable$Type$r8$EnumUnboxingUtility;->$enumboxing$ordinal(I)I
+    if-eqz p1, :cond_2
 
-    move-result p1
+    add-int/lit8 p1, p1, -0x1
 
     const/4 v0, 0x1
 
@@ -559,6 +553,11 @@
 
     :goto_0
     return-void
+
+    :cond_2
+    const/4 p1, 0x0
+
+    throw p1
 .end method
 
 .method public final drawCharacter(Ljava/lang/String;Landroid/graphics/Paint;Landroid/graphics/Canvas;)V

@@ -221,13 +221,9 @@
     goto :goto_0
 
     :cond_1
-    iget-object v1, p0, Lde/rki/coronawarnapp/covidcertificate/common/exception/InvalidHealthCertificateException;->codesCertificateInvalid:Ljava/util/List;
+    const/4 v2, 0x3
 
-    invoke-interface {v1, v0}, Ljava/util/List;->contains(Ljava/lang/Object;)Z
-
-    move-result v1
-
-    if-eqz v1, :cond_2
+    if-ne v1, v2, :cond_2
 
     new-instance v0, Lde/rki/coronawarnapp/util/ui/CachedString;
 
@@ -238,13 +234,13 @@
     goto :goto_0
 
     :cond_2
-    iget-object v1, p0, Lde/rki/coronawarnapp/covidcertificate/common/exception/InvalidHealthCertificateException;->signatureErrorCodes:Ljava/util/List;
+    iget-object v1, p0, Lde/rki/coronawarnapp/covidcertificate/common/exception/InvalidHealthCertificateException;->codesCertificateInvalid:Ljava/util/List;
 
     invoke-interface {v1, v0}, Ljava/util/List;->contains(Ljava/lang/Object;)Z
 
-    move-result v0
+    move-result v1
 
-    if-eqz v0, :cond_3
+    if-eqz v1, :cond_3
 
     new-instance v0, Lde/rki/coronawarnapp/util/ui/CachedString;
 
@@ -255,9 +251,26 @@
     goto :goto_0
 
     :cond_3
+    iget-object v1, p0, Lde/rki/coronawarnapp/covidcertificate/common/exception/InvalidHealthCertificateException;->signatureErrorCodes:Ljava/util/List;
+
+    invoke-interface {v1, v0}, Ljava/util/List;->contains(Ljava/lang/Object;)Z
+
+    move-result v0
+
+    if-eqz v0, :cond_4
+
     new-instance v0, Lde/rki/coronawarnapp/util/ui/CachedString;
 
     sget-object v1, Lde/rki/coronawarnapp/covidcertificate/common/exception/InvalidHealthCertificateException$errorMessage$5;->INSTANCE:Lde/rki/coronawarnapp/covidcertificate/common/exception/InvalidHealthCertificateException$errorMessage$5;
+
+    invoke-direct {v0, v1}, Lde/rki/coronawarnapp/util/ui/CachedString;-><init>(Lkotlin/jvm/functions/Function1;)V
+
+    goto :goto_0
+
+    :cond_4
+    new-instance v0, Lde/rki/coronawarnapp/util/ui/CachedString;
+
+    sget-object v1, Lde/rki/coronawarnapp/covidcertificate/common/exception/InvalidHealthCertificateException$errorMessage$6;->INSTANCE:Lde/rki/coronawarnapp/covidcertificate/common/exception/InvalidHealthCertificateException$errorMessage$6;
 
     invoke-direct {v0, v1}, Lde/rki/coronawarnapp/util/ui/CachedString;-><init>(Lkotlin/jvm/functions/Function1;)V
 

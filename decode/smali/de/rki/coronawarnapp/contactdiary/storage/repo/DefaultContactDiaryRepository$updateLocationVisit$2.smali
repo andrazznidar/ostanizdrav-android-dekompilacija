@@ -33,8 +33,8 @@
     c = "de.rki.coronawarnapp.contactdiary.storage.repo.DefaultContactDiaryRepository$updateLocationVisit$2"
     f = "DefaultContactDiaryRepository.kt"
     l = {
-        0x80,
-        0x82
+        0x81,
+        0x84
     }
     m = "invokeSuspend"
 .end annotation
@@ -95,6 +95,36 @@
 
 
 # virtual methods
+.method public final create(Lkotlin/coroutines/Continuation;)Lkotlin/coroutines/Continuation;
+    .locals 7
+    .annotation system Ldalvik/annotation/Signature;
+        value = {
+            "(",
+            "Lkotlin/coroutines/Continuation<",
+            "*>;)",
+            "Lkotlin/coroutines/Continuation<",
+            "Lkotlin/Unit;",
+            ">;"
+        }
+    .end annotation
+
+    new-instance v6, Lde/rki/coronawarnapp/contactdiary/storage/repo/DefaultContactDiaryRepository$updateLocationVisit$2;
+
+    iget-object v1, p0, Lde/rki/coronawarnapp/contactdiary/storage/repo/DefaultContactDiaryRepository$updateLocationVisit$2;->this$0:Lde/rki/coronawarnapp/contactdiary/storage/repo/DefaultContactDiaryRepository;
+
+    iget-wide v2, p0, Lde/rki/coronawarnapp/contactdiary/storage/repo/DefaultContactDiaryRepository$updateLocationVisit$2;->$visitId:J
+
+    iget-object v4, p0, Lde/rki/coronawarnapp/contactdiary/storage/repo/DefaultContactDiaryRepository$updateLocationVisit$2;->$update:Lkotlin/jvm/functions/Function1;
+
+    move-object v0, v6
+
+    move-object v5, p1
+
+    invoke-direct/range {v0 .. v5}, Lde/rki/coronawarnapp/contactdiary/storage/repo/DefaultContactDiaryRepository$updateLocationVisit$2;-><init>(Lde/rki/coronawarnapp/contactdiary/storage/repo/DefaultContactDiaryRepository;JLkotlin/jvm/functions/Function1;Lkotlin/coroutines/Continuation;)V
+
+    return-object v6
+.end method
+
 .method public invoke(Ljava/lang/Object;)Ljava/lang/Object;
     .locals 6
 
@@ -183,7 +213,14 @@
     :goto_0
     check-cast p1, Lde/rki/coronawarnapp/contactdiary/storage/entity/ContactDiaryLocationVisitWrapper;
 
+    if-nez p1, :cond_4
+
+    goto :goto_1
+
+    :cond_4
     iget-object v1, p0, Lde/rki/coronawarnapp/contactdiary/storage/repo/DefaultContactDiaryRepository$updateLocationVisit$2;->$update:Lkotlin/jvm/functions/Function1;
+
+    iget-object v3, p0, Lde/rki/coronawarnapp/contactdiary/storage/repo/DefaultContactDiaryRepository$updateLocationVisit$2;->this$0:Lde/rki/coronawarnapp/contactdiary/storage/repo/DefaultContactDiaryRepository;
 
     invoke-static {p1}, Lde/rki/coronawarnapp/contactdiary/storage/entity/ContactDiaryLocationVisitWrapperKt;->toContactDiaryLocationVisit(Lde/rki/coronawarnapp/contactdiary/storage/entity/ContactDiaryLocationVisitWrapper;)Lde/rki/coronawarnapp/contactdiary/model/ContactDiaryLocationVisit;
 
@@ -195,27 +232,25 @@
 
     check-cast p1, Lde/rki/coronawarnapp/contactdiary/model/ContactDiaryLocationVisit;
 
-    iget-object v1, p0, Lde/rki/coronawarnapp/contactdiary/storage/repo/DefaultContactDiaryRepository$updateLocationVisit$2;->this$0:Lde/rki/coronawarnapp/contactdiary/storage/repo/DefaultContactDiaryRepository;
-
-    invoke-virtual {v1}, Lde/rki/coronawarnapp/contactdiary/storage/repo/DefaultContactDiaryRepository;->getContactDiaryLocationVisitDao()Lde/rki/coronawarnapp/contactdiary/storage/dao/ContactDiaryLocationVisitDao;
+    invoke-virtual {v3}, Lde/rki/coronawarnapp/contactdiary/storage/repo/DefaultContactDiaryRepository;->getContactDiaryLocationVisitDao()Lde/rki/coronawarnapp/contactdiary/storage/dao/ContactDiaryLocationVisitDao;
 
     move-result-object v1
 
-    invoke-static {p1}, Lkotlin/math/MathKt__MathJVMKt;->toContactDiaryLocationVisitEntity(Lde/rki/coronawarnapp/contactdiary/model/ContactDiaryLocationVisit;)Lde/rki/coronawarnapp/contactdiary/storage/entity/ContactDiaryLocationVisitEntity;
+    invoke-static {p1}, Lkotlin/io/ByteStreamsKt;->toContactDiaryLocationVisitEntity(Lde/rki/coronawarnapp/contactdiary/model/ContactDiaryLocationVisit;)Lde/rki/coronawarnapp/contactdiary/storage/entity/ContactDiaryLocationVisitEntity;
 
     move-result-object p1
 
     iput v2, p0, Lde/rki/coronawarnapp/contactdiary/storage/repo/DefaultContactDiaryRepository$updateLocationVisit$2;->label:I
 
-    invoke-virtual {v1, p1, p0}, Lde/rki/coronawarnapp/contactdiary/storage/dao/BaseRoomDao;->update(Ljava/lang/Object;Lkotlin/coroutines/Continuation;)Ljava/lang/Object;
+    invoke-virtual {v1, p1, p0}, Lorg/joda/time/Chronology;->update(Ljava/lang/Object;Lkotlin/coroutines/Continuation;)Ljava/lang/Object;
 
     move-result-object p1
 
-    if-ne p1, v0, :cond_4
+    if-ne p1, v0, :cond_5
 
     return-object v0
 
-    :cond_4
+    :cond_5
     :goto_1
     sget-object p1, Lkotlin/Unit;->INSTANCE:Lkotlin/Unit;
 

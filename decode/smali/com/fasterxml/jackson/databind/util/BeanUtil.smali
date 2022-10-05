@@ -11,34 +11,45 @@
 
     invoke-virtual {v0}, Ljava/lang/Class;->getName()Ljava/lang/String;
 
-    move-result-object v1
+    move-result-object v0
 
-    const-string v2, "java.time."
+    const-string v1, "java.time."
 
-    invoke-virtual {v1, v2}, Ljava/lang/String;->startsWith(Ljava/lang/String;)Z
+    invoke-virtual {v0, v1}, Ljava/lang/String;->startsWith(Ljava/lang/String;)Z
 
     move-result v1
 
-    if-eqz v1, :cond_0
+    const/4 v2, 0x0
 
+    if-eqz v1, :cond_1
+
+    const/16 v1, 0x2e
+
+    const/16 v3, 0xa
+
+    invoke-virtual {v0, v1, v3}, Ljava/lang/String;->indexOf(II)I
+
+    move-result v0
+
+    if-ltz v0, :cond_0
+
+    return-object v2
+
+    :cond_0
     const-string v0, "Java 8 date/time"
 
     const-string v1, "com.fasterxml.jackson.datatype:jackson-datatype-jsr310"
 
     goto :goto_0
 
-    :cond_0
-    invoke-virtual {v0}, Ljava/lang/Class;->getName()Ljava/lang/String;
-
-    move-result-object v0
-
+    :cond_1
     const-string v1, "org.joda.time."
 
     invoke-virtual {v0, v1}, Ljava/lang/String;->startsWith(Ljava/lang/String;)Z
 
     move-result v0
 
-    if-eqz v0, :cond_1
+    if-eqz v0, :cond_2
 
     const-string v0, "Joda date/time"
 
@@ -73,10 +84,8 @@
 
     return-object p0
 
-    :cond_1
-    const/4 p0, 0x0
-
-    return-object p0
+    :cond_2
+    return-object v2
 .end method
 
 .method public static getDefaultValue(Lcom/fasterxml/jackson/databind/JavaType;)Ljava/lang/Object;
@@ -210,7 +219,7 @@
 
     if-nez v1, :cond_d
 
-    invoke-virtual {p0}, Lcom/fasterxml/jackson/core/type/ResolvedType;->isReferenceType()Z
+    invoke-virtual {p0}, Lorg/joda/time/Chronology;->isReferenceType()Z
 
     move-result v1
 

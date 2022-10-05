@@ -41,7 +41,7 @@
 
     invoke-direct {p1, p0}, Lde/rki/coronawarnapp/contactdiary/storage/ContactDiaryPreferences$prefs$2;-><init>(Lde/rki/coronawarnapp/contactdiary/storage/ContactDiaryPreferences;)V
 
-    invoke-static {p1}, Lkotlin/LazyKt__LazyKt;->lazy(Lkotlin/jvm/functions/Function0;)Lkotlin/Lazy;
+    invoke-static {p1}, Lkotlin/LazyKt__LazyJVMKt;->lazy(Lkotlin/jvm/functions/Function0;)Lkotlin/Lazy;
 
     move-result-object p1
 
@@ -71,7 +71,7 @@
 
     invoke-direct {v2, v0}, Lde/rki/coronawarnapp/contactdiary/storage/ContactDiaryPreferences$special$$inlined$createFlowPreference$1;-><init>(Ljava/lang/Object;)V
 
-    sget-object v0, Lde/rki/coronawarnapp/util/preferences/FlowPreference$Companion$basicWriter$1;->INSTANCE:Lde/rki/coronawarnapp/util/preferences/FlowPreference$Companion$basicWriter$1;
+    sget-object v0, Lde/rki/coronawarnapp/contactdiary/storage/ContactDiaryPreferences$special$$inlined$createFlowPreference$2;->INSTANCE:Lde/rki/coronawarnapp/contactdiary/storage/ContactDiaryPreferences$special$$inlined$createFlowPreference$2;
 
     const-string v3, "contact_diary_onboardingstatus"
 

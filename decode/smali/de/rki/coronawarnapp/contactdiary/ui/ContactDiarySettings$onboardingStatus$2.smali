@@ -19,14 +19,14 @@
 
 
 # instance fields
-.field public final synthetic $value:Lde/rki/coronawarnapp/contactdiary/ui/ContactDiarySettings$OnboardingStatus;
+.field public final synthetic $value:I
 
 
 # direct methods
-.method public constructor <init>(Lde/rki/coronawarnapp/contactdiary/ui/ContactDiarySettings$OnboardingStatus;)V
+.method public constructor <init>(I)V
     .locals 0
 
-    iput-object p1, p0, Lde/rki/coronawarnapp/contactdiary/ui/ContactDiarySettings$onboardingStatus$2;->$value:Lde/rki/coronawarnapp/contactdiary/ui/ContactDiarySettings$OnboardingStatus;
+    iput p1, p0, Lde/rki/coronawarnapp/contactdiary/ui/ContactDiarySettings$onboardingStatus$2;->$value:I
 
     const/4 p1, 0x1
 
@@ -44,9 +44,11 @@
 
     invoke-virtual {p1}, Ljava/lang/Number;->intValue()I
 
-    iget-object p1, p0, Lde/rki/coronawarnapp/contactdiary/ui/ContactDiarySettings$onboardingStatus$2;->$value:Lde/rki/coronawarnapp/contactdiary/ui/ContactDiarySettings$OnboardingStatus;
+    iget p1, p0, Lde/rki/coronawarnapp/contactdiary/ui/ContactDiarySettings$onboardingStatus$2;->$value:I
 
-    iget p1, p1, Lde/rki/coronawarnapp/contactdiary/ui/ContactDiarySettings$OnboardingStatus;->order:I
+    invoke-static {p1}, Landroidx/camera/camera2/internal/Camera2CameraImpl$InternalState$EnumUnboxingSharedUtility;->ordinal(I)I
+
+    move-result p1
 
     invoke-static {p1}, Ljava/lang/Integer;->valueOf(I)Ljava/lang/Integer;
 

@@ -121,53 +121,51 @@
 .end method
 
 .method public final serializeAsArray(Ljava/lang/Object;Lcom/fasterxml/jackson/core/JsonGenerator;Lcom/fasterxml/jackson/databind/SerializerProvider;)V
-    .locals 5
+    .locals 4
     .annotation system Ldalvik/annotation/Throws;
         value = {
             Ljava/io/IOException;
         }
     .end annotation
 
-    const-string v0, "[anySetter]"
+    iget-object v0, p0, Lcom/fasterxml/jackson/databind/ser/std/BeanSerializerBase;->_filteredProps:[Lcom/fasterxml/jackson/databind/ser/BeanPropertyWriter;
 
-    iget-object v1, p0, Lcom/fasterxml/jackson/databind/ser/std/BeanSerializerBase;->_filteredProps:[Lcom/fasterxml/jackson/databind/ser/BeanPropertyWriter;
+    if-eqz v0, :cond_0
+
+    iget-object v1, p3, Lcom/fasterxml/jackson/databind/SerializerProvider;->_serializationView:Ljava/lang/Class;
 
     if-eqz v1, :cond_0
-
-    iget-object v2, p3, Lcom/fasterxml/jackson/databind/SerializerProvider;->_serializationView:Ljava/lang/Class;
-
-    if-eqz v2, :cond_0
 
     goto :goto_0
 
     :cond_0
-    iget-object v1, p0, Lcom/fasterxml/jackson/databind/ser/std/BeanSerializerBase;->_props:[Lcom/fasterxml/jackson/databind/ser/BeanPropertyWriter;
+    iget-object v0, p0, Lcom/fasterxml/jackson/databind/ser/std/BeanSerializerBase;->_props:[Lcom/fasterxml/jackson/databind/ser/BeanPropertyWriter;
 
     :goto_0
-    const/4 v2, 0x0
+    const/4 v1, 0x0
 
     :try_start_0
-    array-length v3, v1
+    array-length v2, v0
 
     :goto_1
-    if-ge v2, v3, :cond_2
+    if-ge v1, v2, :cond_2
 
-    aget-object v4, v1, v2
+    aget-object v3, v0, v1
 
-    if-nez v4, :cond_1
+    if-nez v3, :cond_1
 
     invoke-virtual {p2}, Lcom/fasterxml/jackson/core/JsonGenerator;->writeNull()V
 
     goto :goto_2
 
     :cond_1
-    invoke-virtual {v4, p1, p2, p3}, Lcom/fasterxml/jackson/databind/ser/BeanPropertyWriter;->serializeAsElement(Ljava/lang/Object;Lcom/fasterxml/jackson/core/JsonGenerator;Lcom/fasterxml/jackson/databind/SerializerProvider;)V
+    invoke-virtual {v3, p1, p2, p3}, Lcom/fasterxml/jackson/databind/ser/BeanPropertyWriter;->serializeAsElement(Ljava/lang/Object;Lcom/fasterxml/jackson/core/JsonGenerator;Lcom/fasterxml/jackson/databind/SerializerProvider;)V
     :try_end_0
     .catch Ljava/lang/Exception; {:try_start_0 .. :try_end_0} :catch_1
     .catch Ljava/lang/StackOverflowError; {:try_start_0 .. :try_end_0} :catch_0
 
     :goto_2
-    add-int/lit8 v2, v2, 0x1
+    add-int/lit8 v1, v1, 0x1
 
     goto :goto_1
 
@@ -177,51 +175,31 @@
     :catch_0
     move-exception p3
 
-    new-instance v3, Lcom/fasterxml/jackson/databind/JsonMappingException;
+    new-instance v2, Lcom/fasterxml/jackson/databind/JsonMappingException;
 
-    const-string v4, "Infinite recursion (StackOverflowError)"
+    const-string v3, "Infinite recursion (StackOverflowError)"
 
-    invoke-direct {v3, p2, v4, p3}, Lcom/fasterxml/jackson/databind/JsonMappingException;-><init>(Ljava/io/Closeable;Ljava/lang/String;Ljava/lang/Throwable;)V
+    invoke-direct {v2, p2, v3, p3}, Lcom/fasterxml/jackson/databind/JsonMappingException;-><init>(Ljava/io/Closeable;Ljava/lang/String;Ljava/lang/Throwable;)V
 
-    array-length p2, v1
-
-    if-ne v2, p2, :cond_3
-
-    goto :goto_3
-
-    :cond_3
-    aget-object p2, v1, v2
+    aget-object p2, v0, v1
 
     iget-object p2, p2, Lcom/fasterxml/jackson/databind/ser/BeanPropertyWriter;->_name:Lcom/fasterxml/jackson/core/io/SerializedString;
 
-    iget-object v0, p2, Lcom/fasterxml/jackson/core/io/SerializedString;->_value:Ljava/lang/String;
+    iget-object p2, p2, Lcom/fasterxml/jackson/core/io/SerializedString;->_value:Ljava/lang/String;
 
-    :goto_3
-    new-instance p2, Lcom/fasterxml/jackson/databind/JsonMappingException$Reference;
+    invoke-virtual {v2, p1, p2}, Lcom/fasterxml/jackson/databind/JsonMappingException;->prependPath(Ljava/lang/Object;Ljava/lang/String;)V
 
-    invoke-direct {p2, p1, v0}, Lcom/fasterxml/jackson/databind/JsonMappingException$Reference;-><init>(Ljava/lang/Object;Ljava/lang/String;)V
-
-    invoke-virtual {v3, p2}, Lcom/fasterxml/jackson/databind/JsonMappingException;->prependPath(Lcom/fasterxml/jackson/databind/JsonMappingException$Reference;)V
-
-    throw v3
+    throw v2
 
     :catch_1
     move-exception p2
 
-    array-length v3, v1
-
-    if-ne v2, v3, :cond_4
-
-    goto :goto_4
-
-    :cond_4
-    aget-object v0, v1, v2
+    aget-object v0, v0, v1
 
     iget-object v0, v0, Lcom/fasterxml/jackson/databind/ser/BeanPropertyWriter;->_name:Lcom/fasterxml/jackson/core/io/SerializedString;
 
     iget-object v0, v0, Lcom/fasterxml/jackson/core/io/SerializedString;->_value:Ljava/lang/String;
 
-    :goto_4
     invoke-virtual {p0, p3, p2, p1, v0}, Lcom/fasterxml/jackson/databind/ser/std/StdSerializer;->wrapAndThrow(Lcom/fasterxml/jackson/databind/SerializerProvider;Ljava/lang/Throwable;Ljava/lang/Object;Ljava/lang/String;)V
 
     const/4 p1, 0x0

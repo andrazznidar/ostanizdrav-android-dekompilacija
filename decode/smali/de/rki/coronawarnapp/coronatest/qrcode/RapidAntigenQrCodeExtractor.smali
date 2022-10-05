@@ -24,7 +24,7 @@
 .end annotation
 
 .annotation system Ldalvik/annotation/SourceDebugExtension;
-    value = "SMAP\nRapidAntigenQrCodeExtractor.kt\nKotlin\n*S Kotlin\n*F\n+ 1 RapidAntigenQrCodeExtractor.kt\nde/rki/coronawarnapp/coronatest/qrcode/RapidAntigenQrCodeExtractor\n+ 2 GsonExtensions.kt\nde/rki/coronawarnapp/util/serialization/GsonExtensionsKt\n*L\n1#1,166:1\n10#2,4:167\n*S KotlinDebug\n*F\n+ 1 RapidAntigenQrCodeExtractor.kt\nde/rki/coronawarnapp/coronatest/qrcode/RapidAntigenQrCodeExtractor\n*L\n73#1:167,4\n*E\n"
+    value = "SMAP\nRapidAntigenQrCodeExtractor.kt\nKotlin\n*S Kotlin\n*F\n+ 1 RapidAntigenQrCodeExtractor.kt\nde/rki/coronawarnapp/coronatest/qrcode/RapidAntigenQrCodeExtractor\n+ 2 GsonExtensions.kt\nde/rki/coronawarnapp/util/serialization/GsonExtensionsKt\n*L\n1#1,167:1\n11#2,4:168\n*S KotlinDebug\n*F\n+ 1 RapidAntigenQrCodeExtractor.kt\nde/rki/coronawarnapp/coronatest/qrcode/RapidAntigenQrCodeExtractor\n*L\n74#1:168,4\n*E\n"
 .end annotation
 
 
@@ -86,7 +86,7 @@
 .end method
 
 .method public extract(Ljava/lang/String;Lkotlin/coroutines/Continuation;)Ljava/lang/Object;
-    .locals 22
+    .locals 14
     .annotation system Ldalvik/annotation/Signature;
         value = {
             "(",
@@ -99,7 +99,7 @@
         }
     .end annotation
 
-    move-object/from16 v0, p1
+    move-object v0, p1
 
     sget-object v1, Ltimber/log/Timber;->Forest:Ltimber/log/Timber$Forest;
 
@@ -119,7 +119,7 @@
 
     const-string v1, "https://s.coronawarn.app?v=1#"
 
-    invoke-static {v0, v1}, Lkotlin/text/StringsKt__StringsKt;->removePrefix(Ljava/lang/String;Ljava/lang/CharSequence;)Ljava/lang/String;
+    invoke-static {p1, v1}, Lkotlin/text/StringsKt__StringsKt;->removePrefix(Ljava/lang/String;Ljava/lang/CharSequence;)Ljava/lang/String;
 
     move-result-object v1
 
@@ -129,14 +129,14 @@
 
     move-result-object v1
 
-    const/4 v10, 0x2
-
-    const/4 v11, 0x0
+    const/4 v10, 0x0
 
     :try_start_0
     const-string v2, "+"
 
-    invoke-static {v1, v2, v8, v10}, Lkotlin/text/StringsKt__StringsKt;->contains$default(Ljava/lang/CharSequence;Ljava/lang/CharSequence;ZI)Z
+    const/4 v11, 0x2
+
+    invoke-static {v1, v2, v8, v11}, Lkotlin/text/StringsKt__StringsKt;->contains$default(Ljava/lang/CharSequence;Ljava/lang/CharSequence;ZI)Z
 
     move-result v2
 
@@ -146,7 +146,7 @@
 
     const-string v2, "/"
 
-    invoke-static {v1, v2, v8, v10}, Lkotlin/text/StringsKt__StringsKt;->contains$default(Ljava/lang/CharSequence;Ljava/lang/CharSequence;ZI)Z
+    invoke-static {v1, v2, v8, v11}, Lkotlin/text/StringsKt__StringsKt;->contains$default(Ljava/lang/CharSequence;Ljava/lang/CharSequence;ZI)Z
 
     move-result v2
 
@@ -154,7 +154,7 @@
 
     const-string v2, "="
 
-    invoke-static {v1, v2, v8, v10}, Lkotlin/text/StringsKt__StringsKt;->contains$default(Ljava/lang/CharSequence;Ljava/lang/CharSequence;ZI)Z
+    invoke-static {v1, v2, v8, v11}, Lkotlin/text/StringsKt__StringsKt;->contains$default(Ljava/lang/CharSequence;Ljava/lang/CharSequence;ZI)Z
 
     move-result v2
 
@@ -231,97 +231,140 @@
 
     move-object v1, v13
 
-    move-object/from16 v2, p1
+    move-object v2, p1
 
     invoke-direct/range {v1 .. v6}, Lde/rki/coronawarnapp/bugreporting/censors/submission/RatQrCodeCensor$CensorData;-><init>(Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;Lorg/joda/time/LocalDate;)V
 
     sput-object v13, Lde/rki/coronawarnapp/bugreporting/censors/submission/RatQrCodeCensor;->dataToCensor:Lde/rki/coronawarnapp/bugreporting/censors/submission/RatQrCodeCensor$CensorData;
 
-    new-array v0, v12, [Ljava/lang/Boolean;
+    new-array v1, v12, [Ljava/lang/Boolean;
 
     invoke-virtual {v9}, Lde/rki/coronawarnapp/coronatest/qrcode/RapidAntigenQrCodeExtractor$CleanPayload;->getFirstName()Ljava/lang/String;
 
-    move-result-object v1
+    move-result-object v2
 
-    if-eqz v1, :cond_2
+    if-eqz v2, :cond_2
 
-    move v1, v7
+    move v2, v7
 
     goto :goto_2
 
     :cond_2
-    move v1, v8
+    move v2, v8
 
     :goto_2
-    invoke-static {v1}, Ljava/lang/Boolean;->valueOf(Z)Ljava/lang/Boolean;
+    invoke-static {v2}, Ljava/lang/Boolean;->valueOf(Z)Ljava/lang/Boolean;
 
-    move-result-object v1
+    move-result-object v2
 
-    aput-object v1, v0, v8
+    aput-object v2, v1, v8
 
     invoke-virtual {v9}, Lde/rki/coronawarnapp/coronatest/qrcode/RapidAntigenQrCodeExtractor$CleanPayload;->getLastName()Ljava/lang/String;
 
-    move-result-object v1
+    move-result-object v2
 
-    if-eqz v1, :cond_3
+    if-eqz v2, :cond_3
 
-    move v1, v7
+    move v2, v7
 
     goto :goto_3
 
     :cond_3
-    move v1, v8
+    move v2, v8
 
     :goto_3
-    invoke-static {v1}, Ljava/lang/Boolean;->valueOf(Z)Ljava/lang/Boolean;
+    invoke-static {v2}, Ljava/lang/Boolean;->valueOf(Z)Ljava/lang/Boolean;
 
-    move-result-object v1
+    move-result-object v2
 
-    aput-object v1, v0, v7
+    aput-object v2, v1, v7
 
     invoke-virtual {v9}, Lde/rki/coronawarnapp/coronatest/qrcode/RapidAntigenQrCodeExtractor$CleanPayload;->getDateOfBirth()Lorg/joda/time/LocalDate;
 
-    move-result-object v1
+    move-result-object v2
 
-    if-eqz v1, :cond_4
+    if-eqz v2, :cond_4
 
-    move v1, v7
+    move v2, v7
 
     goto :goto_4
 
     :cond_4
-    move v1, v8
+    move v2, v8
 
     :goto_4
-    invoke-static {v1}, Ljava/lang/Boolean;->valueOf(Z)Ljava/lang/Boolean;
+    invoke-static {v2}, Ljava/lang/Boolean;->valueOf(Z)Ljava/lang/Boolean;
+
+    move-result-object v2
+
+    aput-object v2, v1, v11
+
+    invoke-static {v1}, Lkotlin/collections/CollectionsKt__CollectionsKt;->listOf([Ljava/lang/Object;)Ljava/util/List;
 
     move-result-object v1
 
-    aput-object v1, v0, v10
+    invoke-interface {v1}, Ljava/util/Collection;->isEmpty()Z
 
-    invoke-static {v0}, Lkotlin/collections/CollectionsKt__CollectionsKt;->listOf([Ljava/lang/Object;)Ljava/util/List;
+    move-result v2
 
-    move-result-object v0
-
-    invoke-interface {v0}, Ljava/util/Collection;->isEmpty()Z
-
-    move-result v1
-
-    if-eqz v1, :cond_5
+    if-eqz v2, :cond_5
 
     goto :goto_5
 
     :cond_5
-    invoke-interface {v0}, Ljava/lang/Iterable;->iterator()Ljava/util/Iterator;
+    invoke-interface {v1}, Ljava/lang/Iterable;->iterator()Ljava/util/Iterator;
+
+    move-result-object v2
+
+    :cond_6
+    invoke-interface {v2}, Ljava/util/Iterator;->hasNext()Z
+
+    move-result v3
+
+    if-eqz v3, :cond_7
+
+    invoke-interface {v2}, Ljava/util/Iterator;->next()Ljava/lang/Object;
+
+    move-result-object v3
+
+    check-cast v3, Ljava/lang/Boolean;
+
+    invoke-virtual {v3}, Ljava/lang/Boolean;->booleanValue()Z
+
+    move-result v3
+
+    if-nez v3, :cond_6
+
+    move v2, v8
+
+    goto :goto_6
+
+    :cond_7
+    :goto_5
+    move v2, v7
+
+    :goto_6
+    if-nez v2, :cond_c
+
+    invoke-interface {v1}, Ljava/util/Collection;->isEmpty()Z
+
+    move-result v2
+
+    if-eqz v2, :cond_8
+
+    goto :goto_7
+
+    :cond_8
+    invoke-interface {v1}, Ljava/lang/Iterable;->iterator()Ljava/util/Iterator;
 
     move-result-object v1
 
-    :cond_6
+    :cond_9
     invoke-interface {v1}, Ljava/util/Iterator;->hasNext()Z
 
     move-result v2
 
-    if-eqz v2, :cond_7
+    if-eqz v2, :cond_a
 
     invoke-interface {v1}, Ljava/util/Iterator;->next()Ljava/lang/Object;
 
@@ -333,40 +376,222 @@
 
     move-result v2
 
-    if-nez v2, :cond_6
+    xor-int/2addr v2, v7
+
+    if-nez v2, :cond_9
 
     move v1, v8
 
-    goto :goto_6
+    goto :goto_8
 
-    :cond_7
-    :goto_5
+    :cond_a
+    :goto_7
     move v1, v7
 
-    :goto_6
-    if-nez v1, :cond_c
+    :goto_8
+    if-eqz v1, :cond_b
 
-    invoke-interface {v0}, Ljava/util/Collection;->isEmpty()Z
+    goto :goto_9
+
+    :cond_b
+    move v1, v8
+
+    goto :goto_a
+
+    :cond_c
+    :goto_9
+    move v1, v7
+
+    :goto_a
+    if-eqz v1, :cond_10
+
+    invoke-virtual {v9}, Lde/rki/coronawarnapp/coronatest/qrcode/RapidAntigenQrCodeExtractor$CleanPayload;->getFirstName()Ljava/lang/String;
+
+    move-result-object v1
+
+    if-eqz v1, :cond_d
+
+    invoke-virtual {v9}, Lde/rki/coronawarnapp/coronatest/qrcode/RapidAntigenQrCodeExtractor$CleanPayload;->getLastName()Ljava/lang/String;
+
+    move-result-object v1
+
+    if-eqz v1, :cond_d
+
+    invoke-virtual {v9}, Lde/rki/coronawarnapp/coronatest/qrcode/RapidAntigenQrCodeExtractor$CleanPayload;->getDateOfBirth()Lorg/joda/time/LocalDate;
+
+    move-result-object v1
+
+    if-eqz v1, :cond_d
+
+    move v1, v7
+
+    goto :goto_b
+
+    :cond_d
+    move v1, v8
+
+    :goto_b
+    const-string v2, "#"
+
+    if-eqz v1, :cond_e
+
+    sget-object v1, Lde/rki/coronawarnapp/util/HashExtensions;->INSTANCE:Lde/rki/coronawarnapp/util/HashExtensions;
+
+    iget-object v3, v9, Lde/rki/coronawarnapp/coronatest/qrcode/RapidAntigenQrCodeExtractor$CleanPayload;->raw:Lde/rki/coronawarnapp/coronatest/qrcode/RapidAntigenQrCodeExtractor$RawPayload;
+
+    invoke-virtual {v3}, Lde/rki/coronawarnapp/coronatest/qrcode/RapidAntigenQrCodeExtractor$RawPayload;->getDateOfBirth()Ljava/lang/String;
+
+    move-result-object v3
+
+    iget-object v4, v9, Lde/rki/coronawarnapp/coronatest/qrcode/RapidAntigenQrCodeExtractor$CleanPayload;->raw:Lde/rki/coronawarnapp/coronatest/qrcode/RapidAntigenQrCodeExtractor$RawPayload;
+
+    invoke-virtual {v4}, Lde/rki/coronawarnapp/coronatest/qrcode/RapidAntigenQrCodeExtractor$RawPayload;->getFirstName()Ljava/lang/String;
+
+    move-result-object v4
+
+    iget-object v5, v9, Lde/rki/coronawarnapp/coronatest/qrcode/RapidAntigenQrCodeExtractor$CleanPayload;->raw:Lde/rki/coronawarnapp/coronatest/qrcode/RapidAntigenQrCodeExtractor$RawPayload;
+
+    invoke-virtual {v5}, Lde/rki/coronawarnapp/coronatest/qrcode/RapidAntigenQrCodeExtractor$RawPayload;->getLastName()Ljava/lang/String;
+
+    move-result-object v5
+
+    iget-object v6, v9, Lde/rki/coronawarnapp/coronatest/qrcode/RapidAntigenQrCodeExtractor$CleanPayload;->raw:Lde/rki/coronawarnapp/coronatest/qrcode/RapidAntigenQrCodeExtractor$RawPayload;
+
+    invoke-virtual {v6}, Lde/rki/coronawarnapp/coronatest/qrcode/RapidAntigenQrCodeExtractor$RawPayload;->getTimestamp()Ljava/lang/Long;
+
+    move-result-object v6
+
+    iget-object v11, v9, Lde/rki/coronawarnapp/coronatest/qrcode/RapidAntigenQrCodeExtractor$CleanPayload;->raw:Lde/rki/coronawarnapp/coronatest/qrcode/RapidAntigenQrCodeExtractor$RawPayload;
+
+    invoke-virtual {v11}, Lde/rki/coronawarnapp/coronatest/qrcode/RapidAntigenQrCodeExtractor$RawPayload;->getTestid()Ljava/lang/String;
+
+    move-result-object v11
+
+    iget-object v12, v9, Lde/rki/coronawarnapp/coronatest/qrcode/RapidAntigenQrCodeExtractor$CleanPayload;->raw:Lde/rki/coronawarnapp/coronatest/qrcode/RapidAntigenQrCodeExtractor$RawPayload;
+
+    invoke-virtual {v12}, Lde/rki/coronawarnapp/coronatest/qrcode/RapidAntigenQrCodeExtractor$RawPayload;->getSalt()Ljava/lang/String;
+
+    move-result-object v12
+
+    invoke-static {v3, v2, v4, v2, v5}, Landroidx/navigation/NavInflater$$ExternalSyntheticOutline0;->m(Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;)Ljava/lang/StringBuilder;
+
+    move-result-object v3
+
+    invoke-virtual {v3, v2}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+
+    invoke-virtual {v3, v6}, Ljava/lang/StringBuilder;->append(Ljava/lang/Object;)Ljava/lang/StringBuilder;
+
+    invoke-virtual {v3, v2}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+
+    invoke-virtual {v3, v11}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+
+    invoke-static {v3, v2, v12}, Landroidx/activity/ComponentActivity$2$$ExternalSyntheticOutline0;->m(Ljava/lang/StringBuilder;Ljava/lang/String;Ljava/lang/String;)Ljava/lang/String;
+
+    move-result-object v2
+
+    invoke-static {v1, v2, v8, v7}, Lde/rki/coronawarnapp/util/HashExtensions;->toSHA256$default(Lde/rki/coronawarnapp/util/HashExtensions;Ljava/lang/String;II)Ljava/lang/String;
+
+    move-result-object v1
+
+    goto :goto_c
+
+    :cond_e
+    sget-object v1, Lde/rki/coronawarnapp/util/HashExtensions;->INSTANCE:Lde/rki/coronawarnapp/util/HashExtensions;
+
+    iget-object v3, v9, Lde/rki/coronawarnapp/coronatest/qrcode/RapidAntigenQrCodeExtractor$CleanPayload;->raw:Lde/rki/coronawarnapp/coronatest/qrcode/RapidAntigenQrCodeExtractor$RawPayload;
+
+    invoke-virtual {v3}, Lde/rki/coronawarnapp/coronatest/qrcode/RapidAntigenQrCodeExtractor$RawPayload;->getTimestamp()Ljava/lang/Long;
+
+    move-result-object v3
+
+    iget-object v4, v9, Lde/rki/coronawarnapp/coronatest/qrcode/RapidAntigenQrCodeExtractor$CleanPayload;->raw:Lde/rki/coronawarnapp/coronatest/qrcode/RapidAntigenQrCodeExtractor$RawPayload;
+
+    invoke-virtual {v4}, Lde/rki/coronawarnapp/coronatest/qrcode/RapidAntigenQrCodeExtractor$RawPayload;->getSalt()Ljava/lang/String;
+
+    move-result-object v4
+
+    new-instance v5, Ljava/lang/StringBuilder;
+
+    invoke-direct {v5}, Ljava/lang/StringBuilder;-><init>()V
+
+    invoke-virtual {v5, v3}, Ljava/lang/StringBuilder;->append(Ljava/lang/Object;)Ljava/lang/StringBuilder;
+
+    invoke-virtual {v5, v2}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+
+    invoke-virtual {v5, v4}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+
+    invoke-virtual {v5}, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
+
+    move-result-object v2
+
+    invoke-static {v1, v2, v8, v7}, Lde/rki/coronawarnapp/util/HashExtensions;->toSHA256$default(Lde/rki/coronawarnapp/util/HashExtensions;Ljava/lang/String;II)Ljava/lang/String;
+
+    move-result-object v1
+
+    :goto_c
+    invoke-virtual {v9}, Lde/rki/coronawarnapp/coronatest/qrcode/RapidAntigenQrCodeExtractor$CleanPayload;->getHash()Ljava/lang/String;
+
+    move-result-object v2
+
+    invoke-static {v1, v2, v7}, Lkotlin/text/StringsKt__StringsJVMKt;->equals(Ljava/lang/String;Ljava/lang/String;Z)Z
 
     move-result v1
 
-    if-eqz v1, :cond_8
+    if-eqz v1, :cond_f
 
-    goto :goto_7
+    invoke-virtual {v9}, Lde/rki/coronawarnapp/coronatest/qrcode/RapidAntigenQrCodeExtractor$CleanPayload;->getHash()Ljava/lang/String;
 
-    :cond_8
-    invoke-interface {v0}, Ljava/lang/Iterable;->iterator()Ljava/util/Iterator;
+    move-result-object v6
 
-    move-result-object v0
+    iget-object v1, v9, Lde/rki/coronawarnapp/coronatest/qrcode/RapidAntigenQrCodeExtractor$CleanPayload;->createdAt$delegate:Lkotlin/Lazy;
 
-    :cond_9
-    invoke-interface {v0}, Ljava/util/Iterator;->hasNext()Z
+    invoke-interface {v1}, Lkotlin/Lazy;->getValue()Ljava/lang/Object;
 
-    move-result v1
+    move-result-object v1
 
-    if-eqz v1, :cond_a
+    const-string v2, "<get-createdAt>(...)"
 
-    invoke-interface {v0}, Ljava/util/Iterator;->next()Ljava/lang/Object;
+    invoke-static {v1, v2}, Lkotlin/jvm/internal/Intrinsics;->checkNotNullExpressionValue(Ljava/lang/Object;Ljava/lang/String;)V
+
+    move-object v7, v1
+
+    check-cast v7, Lorg/joda/time/Instant;
+
+    invoke-virtual {v9}, Lde/rki/coronawarnapp/coronatest/qrcode/RapidAntigenQrCodeExtractor$CleanPayload;->getFirstName()Ljava/lang/String;
+
+    move-result-object v8
+
+    invoke-virtual {v9}, Lde/rki/coronawarnapp/coronatest/qrcode/RapidAntigenQrCodeExtractor$CleanPayload;->getLastName()Ljava/lang/String;
+
+    move-result-object v10
+
+    invoke-virtual {v9}, Lde/rki/coronawarnapp/coronatest/qrcode/RapidAntigenQrCodeExtractor$CleanPayload;->getDateOfBirth()Lorg/joda/time/LocalDate;
+
+    move-result-object v2
+
+    iget-object v1, v9, Lde/rki/coronawarnapp/coronatest/qrcode/RapidAntigenQrCodeExtractor$CleanPayload;->testId$delegate:Lkotlin/Lazy;
+
+    invoke-interface {v1}, Lkotlin/Lazy;->getValue()Ljava/lang/Object;
+
+    move-result-object v1
+
+    move-object v11, v1
+
+    check-cast v11, Ljava/lang/String;
+
+    iget-object v1, v9, Lde/rki/coronawarnapp/coronatest/qrcode/RapidAntigenQrCodeExtractor$CleanPayload;->salt$delegate:Lkotlin/Lazy;
+
+    invoke-interface {v1}, Lkotlin/Lazy;->getValue()Ljava/lang/Object;
+
+    move-result-object v1
+
+    move-object v12, v1
+
+    check-cast v12, Ljava/lang/String;
+
+    iget-object v1, v9, Lde/rki/coronawarnapp/coronatest/qrcode/RapidAntigenQrCodeExtractor$CleanPayload;->isDccSupportedByPoc$delegate:Lkotlin/Lazy;
+
+    invoke-interface {v1}, Lkotlin/Lazy;->getValue()Ljava/lang/Object;
 
     move-result-object v1
 
@@ -374,244 +599,32 @@
 
     invoke-virtual {v1}, Ljava/lang/Boolean;->booleanValue()Z
 
-    move-result v1
+    move-result v4
 
-    xor-int/2addr v1, v7
+    new-instance v13, Lde/rki/coronawarnapp/coronatest/qrcode/CoronaTestQRCode$RapidAntigen;
 
-    if-nez v1, :cond_9
+    const/4 v3, 0x0
 
-    move v0, v8
+    move-object v1, v13
 
-    goto :goto_8
+    move-object v5, p1
 
-    :cond_a
-    :goto_7
-    move v0, v7
+    move-object v9, v10
 
-    :goto_8
-    if-eqz v0, :cond_b
+    move-object v10, v11
 
-    goto :goto_9
+    move-object v11, v12
 
-    :cond_b
-    move v0, v8
+    invoke-direct/range {v1 .. v11}, Lde/rki/coronawarnapp/coronatest/qrcode/CoronaTestQRCode$RapidAntigen;-><init>(Lorg/joda/time/LocalDate;ZZLjava/lang/String;Ljava/lang/String;Lorg/joda/time/Instant;Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;)V
 
-    goto :goto_a
-
-    :cond_c
-    :goto_9
-    move v0, v7
-
-    :goto_a
-    if-eqz v0, :cond_10
-
-    invoke-virtual {v9}, Lde/rki/coronawarnapp/coronatest/qrcode/RapidAntigenQrCodeExtractor$CleanPayload;->getFirstName()Ljava/lang/String;
-
-    move-result-object v0
-
-    if-eqz v0, :cond_d
-
-    invoke-virtual {v9}, Lde/rki/coronawarnapp/coronatest/qrcode/RapidAntigenQrCodeExtractor$CleanPayload;->getLastName()Ljava/lang/String;
-
-    move-result-object v0
-
-    if-eqz v0, :cond_d
-
-    invoke-virtual {v9}, Lde/rki/coronawarnapp/coronatest/qrcode/RapidAntigenQrCodeExtractor$CleanPayload;->getDateOfBirth()Lorg/joda/time/LocalDate;
-
-    move-result-object v0
-
-    if-eqz v0, :cond_d
-
-    move v8, v7
-
-    :cond_d
-    const-string v0, "#"
-
-    if-eqz v8, :cond_e
-
-    sget-object v1, Lde/rki/coronawarnapp/util/HashExtensions;->INSTANCE:Lde/rki/coronawarnapp/util/HashExtensions;
-
-    iget-object v2, v9, Lde/rki/coronawarnapp/coronatest/qrcode/RapidAntigenQrCodeExtractor$CleanPayload;->raw:Lde/rki/coronawarnapp/coronatest/qrcode/RapidAntigenQrCodeExtractor$RawPayload;
-
-    invoke-virtual {v2}, Lde/rki/coronawarnapp/coronatest/qrcode/RapidAntigenQrCodeExtractor$RawPayload;->getDateOfBirth()Ljava/lang/String;
-
-    move-result-object v2
-
-    iget-object v3, v9, Lde/rki/coronawarnapp/coronatest/qrcode/RapidAntigenQrCodeExtractor$CleanPayload;->raw:Lde/rki/coronawarnapp/coronatest/qrcode/RapidAntigenQrCodeExtractor$RawPayload;
-
-    invoke-virtual {v3}, Lde/rki/coronawarnapp/coronatest/qrcode/RapidAntigenQrCodeExtractor$RawPayload;->getFirstName()Ljava/lang/String;
-
-    move-result-object v3
-
-    iget-object v4, v9, Lde/rki/coronawarnapp/coronatest/qrcode/RapidAntigenQrCodeExtractor$CleanPayload;->raw:Lde/rki/coronawarnapp/coronatest/qrcode/RapidAntigenQrCodeExtractor$RawPayload;
-
-    invoke-virtual {v4}, Lde/rki/coronawarnapp/coronatest/qrcode/RapidAntigenQrCodeExtractor$RawPayload;->getLastName()Ljava/lang/String;
-
-    move-result-object v4
-
-    iget-object v5, v9, Lde/rki/coronawarnapp/coronatest/qrcode/RapidAntigenQrCodeExtractor$CleanPayload;->raw:Lde/rki/coronawarnapp/coronatest/qrcode/RapidAntigenQrCodeExtractor$RawPayload;
-
-    invoke-virtual {v5}, Lde/rki/coronawarnapp/coronatest/qrcode/RapidAntigenQrCodeExtractor$RawPayload;->getTimestamp()Ljava/lang/Long;
-
-    move-result-object v5
-
-    iget-object v6, v9, Lde/rki/coronawarnapp/coronatest/qrcode/RapidAntigenQrCodeExtractor$CleanPayload;->raw:Lde/rki/coronawarnapp/coronatest/qrcode/RapidAntigenQrCodeExtractor$RawPayload;
-
-    invoke-virtual {v6}, Lde/rki/coronawarnapp/coronatest/qrcode/RapidAntigenQrCodeExtractor$RawPayload;->getTestid()Ljava/lang/String;
-
-    move-result-object v6
-
-    iget-object v8, v9, Lde/rki/coronawarnapp/coronatest/qrcode/RapidAntigenQrCodeExtractor$CleanPayload;->raw:Lde/rki/coronawarnapp/coronatest/qrcode/RapidAntigenQrCodeExtractor$RawPayload;
-
-    invoke-virtual {v8}, Lde/rki/coronawarnapp/coronatest/qrcode/RapidAntigenQrCodeExtractor$RawPayload;->getSalt()Ljava/lang/String;
-
-    move-result-object v8
-
-    invoke-static {v2, v0, v3, v0, v4}, Landroidx/navigation/NavInflater$$ExternalSyntheticOutline0;->m(Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;)Ljava/lang/StringBuilder;
-
-    move-result-object v2
-
-    invoke-virtual {v2, v0}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
-
-    invoke-virtual {v2, v5}, Ljava/lang/StringBuilder;->append(Ljava/lang/Object;)Ljava/lang/StringBuilder;
-
-    invoke-virtual {v2, v0}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
-
-    invoke-virtual {v2, v6}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
-
-    invoke-static {v2, v0, v8}, Landroidx/constraintlayout/core/widgets/Barrier$$ExternalSyntheticOutline0;->m(Ljava/lang/StringBuilder;Ljava/lang/String;Ljava/lang/String;)Ljava/lang/String;
-
-    move-result-object v0
-
-    invoke-static {v1, v0, v11, v7}, Lde/rki/coronawarnapp/util/HashExtensions;->toSHA256$default(Lde/rki/coronawarnapp/util/HashExtensions;Ljava/lang/String;Lde/rki/coronawarnapp/util/HashExtensions$Format;I)Ljava/lang/String;
-
-    move-result-object v0
-
-    goto :goto_b
-
-    :cond_e
-    sget-object v1, Lde/rki/coronawarnapp/util/HashExtensions;->INSTANCE:Lde/rki/coronawarnapp/util/HashExtensions;
-
-    iget-object v2, v9, Lde/rki/coronawarnapp/coronatest/qrcode/RapidAntigenQrCodeExtractor$CleanPayload;->raw:Lde/rki/coronawarnapp/coronatest/qrcode/RapidAntigenQrCodeExtractor$RawPayload;
-
-    invoke-virtual {v2}, Lde/rki/coronawarnapp/coronatest/qrcode/RapidAntigenQrCodeExtractor$RawPayload;->getTimestamp()Ljava/lang/Long;
-
-    move-result-object v2
-
-    iget-object v3, v9, Lde/rki/coronawarnapp/coronatest/qrcode/RapidAntigenQrCodeExtractor$CleanPayload;->raw:Lde/rki/coronawarnapp/coronatest/qrcode/RapidAntigenQrCodeExtractor$RawPayload;
-
-    invoke-virtual {v3}, Lde/rki/coronawarnapp/coronatest/qrcode/RapidAntigenQrCodeExtractor$RawPayload;->getSalt()Ljava/lang/String;
-
-    move-result-object v3
-
-    new-instance v4, Ljava/lang/StringBuilder;
-
-    invoke-direct {v4}, Ljava/lang/StringBuilder;-><init>()V
-
-    invoke-virtual {v4, v2}, Ljava/lang/StringBuilder;->append(Ljava/lang/Object;)Ljava/lang/StringBuilder;
-
-    invoke-virtual {v4, v0}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
-
-    invoke-virtual {v4, v3}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
-
-    invoke-virtual {v4}, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
-
-    move-result-object v0
-
-    invoke-static {v1, v0, v11, v7}, Lde/rki/coronawarnapp/util/HashExtensions;->toSHA256$default(Lde/rki/coronawarnapp/util/HashExtensions;Ljava/lang/String;Lde/rki/coronawarnapp/util/HashExtensions$Format;I)Ljava/lang/String;
-
-    move-result-object v0
-
-    :goto_b
-    invoke-virtual {v9}, Lde/rki/coronawarnapp/coronatest/qrcode/RapidAntigenQrCodeExtractor$CleanPayload;->getHash()Ljava/lang/String;
-
-    move-result-object v1
-
-    invoke-static {v0, v1, v7}, Lkotlin/text/StringsKt__StringsJVMKt;->equals(Ljava/lang/String;Ljava/lang/String;Z)Z
-
-    move-result v0
-
-    if-eqz v0, :cond_f
-
-    invoke-virtual {v9}, Lde/rki/coronawarnapp/coronatest/qrcode/RapidAntigenQrCodeExtractor$CleanPayload;->getHash()Ljava/lang/String;
-
-    move-result-object v16
-
-    iget-object v0, v9, Lde/rki/coronawarnapp/coronatest/qrcode/RapidAntigenQrCodeExtractor$CleanPayload;->createdAt$delegate:Lkotlin/Lazy;
-
-    invoke-interface {v0}, Lkotlin/Lazy;->getValue()Ljava/lang/Object;
-
-    move-result-object v0
-
-    const-string v1, "<get-createdAt>(...)"
-
-    invoke-static {v0, v1}, Lkotlin/jvm/internal/Intrinsics;->checkNotNullExpressionValue(Ljava/lang/Object;Ljava/lang/String;)V
-
-    move-object/from16 v17, v0
-
-    check-cast v17, Lorg/joda/time/Instant;
-
-    invoke-virtual {v9}, Lde/rki/coronawarnapp/coronatest/qrcode/RapidAntigenQrCodeExtractor$CleanPayload;->getFirstName()Ljava/lang/String;
-
-    move-result-object v18
-
-    invoke-virtual {v9}, Lde/rki/coronawarnapp/coronatest/qrcode/RapidAntigenQrCodeExtractor$CleanPayload;->getLastName()Ljava/lang/String;
-
-    move-result-object v19
-
-    invoke-virtual {v9}, Lde/rki/coronawarnapp/coronatest/qrcode/RapidAntigenQrCodeExtractor$CleanPayload;->getDateOfBirth()Lorg/joda/time/LocalDate;
-
-    move-result-object v13
-
-    iget-object v0, v9, Lde/rki/coronawarnapp/coronatest/qrcode/RapidAntigenQrCodeExtractor$CleanPayload;->testId$delegate:Lkotlin/Lazy;
-
-    invoke-interface {v0}, Lkotlin/Lazy;->getValue()Ljava/lang/Object;
-
-    move-result-object v0
-
-    move-object/from16 v20, v0
-
-    check-cast v20, Ljava/lang/String;
-
-    iget-object v0, v9, Lde/rki/coronawarnapp/coronatest/qrcode/RapidAntigenQrCodeExtractor$CleanPayload;->salt$delegate:Lkotlin/Lazy;
-
-    invoke-interface {v0}, Lkotlin/Lazy;->getValue()Ljava/lang/Object;
-
-    move-result-object v0
-
-    move-object/from16 v21, v0
-
-    check-cast v21, Ljava/lang/String;
-
-    iget-object v0, v9, Lde/rki/coronawarnapp/coronatest/qrcode/RapidAntigenQrCodeExtractor$CleanPayload;->isDccSupportedByPoc$delegate:Lkotlin/Lazy;
-
-    invoke-interface {v0}, Lkotlin/Lazy;->getValue()Ljava/lang/Object;
-
-    move-result-object v0
-
-    check-cast v0, Ljava/lang/Boolean;
-
-    invoke-virtual {v0}, Ljava/lang/Boolean;->booleanValue()Z
-
-    move-result v15
-
-    new-instance v0, Lde/rki/coronawarnapp/coronatest/qrcode/CoronaTestQRCode$RapidAntigen;
-
-    const/4 v14, 0x0
-
-    move-object v12, v0
-
-    invoke-direct/range {v12 .. v21}, Lde/rki/coronawarnapp/coronatest/qrcode/CoronaTestQRCode$RapidAntigen;-><init>(Lorg/joda/time/LocalDate;ZZLjava/lang/String;Lorg/joda/time/Instant;Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;)V
-
-    return-object v0
+    return-object v13
 
     :cond_f
     new-instance v0, Lde/rki/coronawarnapp/coronatest/qrcode/InvalidQRCodeException;
 
     const-string v1, "Generated hash doesn\'t match QRCode hash"
 
-    invoke-direct {v0, v1, v11, v10}, Lde/rki/coronawarnapp/coronatest/qrcode/InvalidQRCodeException;-><init>(Ljava/lang/String;Ljava/lang/Throwable;I)V
+    invoke-direct {v0, v1, v10}, Lde/rki/coronawarnapp/coronatest/qrcode/InvalidQRCodeException;-><init>(Ljava/lang/String;Ljava/lang/Throwable;)V
 
     throw v0
 
@@ -634,7 +647,7 @@
 
     move-result-object v1
 
-    invoke-direct {v0, v1, v11, v10}, Lde/rki/coronawarnapp/coronatest/qrcode/InvalidQRCodeException;-><init>(Ljava/lang/String;Ljava/lang/Throwable;I)V
+    invoke-direct {v0, v1, v10, v11}, Lde/rki/coronawarnapp/coronatest/qrcode/InvalidQRCodeException;-><init>(Ljava/lang/String;Ljava/lang/Throwable;I)V
 
     throw v0
 
@@ -649,7 +662,7 @@
 
     const-string v1, "Malformed payload."
 
-    invoke-direct {v0, v1, v11, v10}, Lde/rki/coronawarnapp/coronatest/qrcode/InvalidQRCodeException;-><init>(Ljava/lang/String;Ljava/lang/Throwable;I)V
+    invoke-direct {v0, v1, v10}, Lde/rki/coronawarnapp/coronatest/qrcode/InvalidQRCodeException;-><init>(Ljava/lang/String;Ljava/lang/Throwable;)V
 
     throw v0
 
@@ -664,7 +677,7 @@
 
     const-string v1, "Unsupported encoding. Supported encodings are base64 and base64url."
 
-    invoke-direct {v0, v1, v11, v10}, Lde/rki/coronawarnapp/coronatest/qrcode/InvalidQRCodeException;-><init>(Ljava/lang/String;Ljava/lang/Throwable;I)V
+    invoke-direct {v0, v1, v10}, Lde/rki/coronawarnapp/coronatest/qrcode/InvalidQRCodeException;-><init>(Ljava/lang/String;Ljava/lang/Throwable;)V
 
     throw v0
 .end method

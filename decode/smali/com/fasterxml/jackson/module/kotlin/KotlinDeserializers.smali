@@ -53,21 +53,81 @@
     goto :goto_0
 
     :cond_0
-    iget-object p1, p1, Lcom/fasterxml/jackson/databind/JavaType;->_class:Ljava/lang/Class;
+    iget-object p2, p1, Lcom/fasterxml/jackson/databind/JavaType;->_class:Ljava/lang/Class;
 
-    const-class p2, Lkotlin/text/Regex;
+    const-class p3, Lkotlin/text/Regex;
 
-    invoke-static {p1, p2}, Lkotlin/jvm/internal/Intrinsics;->areEqual(Ljava/lang/Object;Ljava/lang/Object;)Z
+    invoke-static {p2, p3}, Lkotlin/jvm/internal/Intrinsics;->areEqual(Ljava/lang/Object;Ljava/lang/Object;)Z
 
-    move-result p1
+    move-result p2
 
-    if-eqz p1, :cond_1
+    if-eqz p2, :cond_1
 
     sget-object p1, Lcom/fasterxml/jackson/module/kotlin/RegexDeserializer;->INSTANCE:Lcom/fasterxml/jackson/module/kotlin/RegexDeserializer;
 
     goto :goto_0
 
     :cond_1
+    iget-object p2, p1, Lcom/fasterxml/jackson/databind/JavaType;->_class:Ljava/lang/Class;
+
+    const-class p3, Lkotlin/UByte;
+
+    invoke-static {p2, p3}, Lkotlin/jvm/internal/Intrinsics;->areEqual(Ljava/lang/Object;Ljava/lang/Object;)Z
+
+    move-result p2
+
+    if-eqz p2, :cond_2
+
+    sget-object p1, Lcom/fasterxml/jackson/module/kotlin/UByteDeserializer;->INSTANCE:Lcom/fasterxml/jackson/module/kotlin/UByteDeserializer;
+
+    goto :goto_0
+
+    :cond_2
+    iget-object p2, p1, Lcom/fasterxml/jackson/databind/JavaType;->_class:Ljava/lang/Class;
+
+    const-class p3, Lkotlin/UShort;
+
+    invoke-static {p2, p3}, Lkotlin/jvm/internal/Intrinsics;->areEqual(Ljava/lang/Object;Ljava/lang/Object;)Z
+
+    move-result p2
+
+    if-eqz p2, :cond_3
+
+    sget-object p1, Lcom/fasterxml/jackson/module/kotlin/UShortDeserializer;->INSTANCE:Lcom/fasterxml/jackson/module/kotlin/UShortDeserializer;
+
+    goto :goto_0
+
+    :cond_3
+    iget-object p2, p1, Lcom/fasterxml/jackson/databind/JavaType;->_class:Ljava/lang/Class;
+
+    const-class p3, Lkotlin/UInt;
+
+    invoke-static {p2, p3}, Lkotlin/jvm/internal/Intrinsics;->areEqual(Ljava/lang/Object;Ljava/lang/Object;)Z
+
+    move-result p2
+
+    if-eqz p2, :cond_4
+
+    sget-object p1, Lcom/fasterxml/jackson/module/kotlin/UIntDeserializer;->INSTANCE:Lcom/fasterxml/jackson/module/kotlin/UIntDeserializer;
+
+    goto :goto_0
+
+    :cond_4
+    iget-object p1, p1, Lcom/fasterxml/jackson/databind/JavaType;->_class:Ljava/lang/Class;
+
+    const-class p2, Lkotlin/ULong;
+
+    invoke-static {p1, p2}, Lkotlin/jvm/internal/Intrinsics;->areEqual(Ljava/lang/Object;Ljava/lang/Object;)Z
+
+    move-result p1
+
+    if-eqz p1, :cond_5
+
+    sget-object p1, Lcom/fasterxml/jackson/module/kotlin/ULongDeserializer;->INSTANCE:Lcom/fasterxml/jackson/module/kotlin/ULongDeserializer;
+
+    goto :goto_0
+
+    :cond_5
     const/4 p1, 0x0
 
     :goto_0

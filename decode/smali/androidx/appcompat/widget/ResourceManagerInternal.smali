@@ -1062,8 +1062,6 @@
     goto :goto_0
 
     :cond_1
-    check-cast p1, Landroidx/appcompat/widget/AppCompatDrawableManager$1;
-
     sget p1, Landroidx/appcompat/R$drawable;->abc_switch_thumb_material:I
 
     if-ne p2, p1, :cond_2

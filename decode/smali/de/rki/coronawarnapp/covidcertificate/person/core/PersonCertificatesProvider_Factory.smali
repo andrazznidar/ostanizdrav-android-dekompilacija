@@ -28,6 +28,26 @@
     .end annotation
 .end field
 
+.field public final certificatesProvider:Ljavax/inject/Provider;
+    .annotation system Ldalvik/annotation/Signature;
+        value = {
+            "Ljavax/inject/Provider<",
+            "Lde/rki/coronawarnapp/covidcertificate/common/certificate/CertificateProvider;",
+            ">;"
+        }
+    .end annotation
+.end field
+
+.field public final dccWalletInfoRepositoryProvider:Ljavax/inject/Provider;
+    .annotation system Ldalvik/annotation/Signature;
+        value = {
+            "Ljavax/inject/Provider<",
+            "Lde/rki/coronawarnapp/ccl/dccwalletinfo/storage/DccWalletInfoRepository;",
+            ">;"
+        }
+    .end annotation
+.end field
+
 .field public final personCertificatesSettingsProvider:Ljavax/inject/Provider;
     .annotation system Ldalvik/annotation/Signature;
         value = {
@@ -38,43 +58,12 @@
     .end annotation
 .end field
 
-.field public final recoveryCertificateRepositoryProvider:Ljavax/inject/Provider;
-    .annotation system Ldalvik/annotation/Signature;
-        value = {
-            "Ljavax/inject/Provider<",
-            "Lde/rki/coronawarnapp/covidcertificate/recovery/core/RecoveryCertificateRepository;",
-            ">;"
-        }
-    .end annotation
-.end field
-
-.field public final testCertificateRepositoryProvider:Ljavax/inject/Provider;
-    .annotation system Ldalvik/annotation/Signature;
-        value = {
-            "Ljavax/inject/Provider<",
-            "Lde/rki/coronawarnapp/covidcertificate/test/core/TestCertificateRepository;",
-            ">;"
-        }
-    .end annotation
-.end field
-
-.field public final vaccinationRepositoryProvider:Ljavax/inject/Provider;
-    .annotation system Ldalvik/annotation/Signature;
-        value = {
-            "Ljavax/inject/Provider<",
-            "Lde/rki/coronawarnapp/covidcertificate/vaccination/core/repository/VaccinationRepository;",
-            ">;"
-        }
-    .end annotation
-.end field
-
 
 # direct methods
-.method public constructor <init>(Ljavax/inject/Provider;Ljavax/inject/Provider;Ljavax/inject/Provider;Ljavax/inject/Provider;Ljavax/inject/Provider;)V
+.method public constructor <init>(Ljavax/inject/Provider;Ljavax/inject/Provider;Ljavax/inject/Provider;Ljavax/inject/Provider;)V
     .locals 0
     .annotation system Ldalvik/annotation/MethodParameters;
         accessFlags = {
-            0x0,
             0x0,
             0x0,
             0x0,
@@ -82,9 +71,8 @@
         }
         names = {
             "personCertificatesSettingsProvider",
-            "vaccinationRepositoryProvider",
-            "testCertificateRepositoryProvider",
-            "recoveryCertificateRepositoryProvider",
+            "certificatesProvider",
+            "dccWalletInfoRepositoryProvider",
             "appScopeProvider"
         }
     .end annotation
@@ -96,13 +84,10 @@
             "Lde/rki/coronawarnapp/covidcertificate/person/core/PersonCertificatesSettings;",
             ">;",
             "Ljavax/inject/Provider<",
-            "Lde/rki/coronawarnapp/covidcertificate/vaccination/core/repository/VaccinationRepository;",
+            "Lde/rki/coronawarnapp/covidcertificate/common/certificate/CertificateProvider;",
             ">;",
             "Ljavax/inject/Provider<",
-            "Lde/rki/coronawarnapp/covidcertificate/test/core/TestCertificateRepository;",
-            ">;",
-            "Ljavax/inject/Provider<",
-            "Lde/rki/coronawarnapp/covidcertificate/recovery/core/RecoveryCertificateRepository;",
+            "Lde/rki/coronawarnapp/ccl/dccwalletinfo/storage/DccWalletInfoRepository;",
             ">;",
             "Ljavax/inject/Provider<",
             "Lkotlinx/coroutines/CoroutineScope;",
@@ -114,13 +99,11 @@
 
     iput-object p1, p0, Lde/rki/coronawarnapp/covidcertificate/person/core/PersonCertificatesProvider_Factory;->personCertificatesSettingsProvider:Ljavax/inject/Provider;
 
-    iput-object p2, p0, Lde/rki/coronawarnapp/covidcertificate/person/core/PersonCertificatesProvider_Factory;->vaccinationRepositoryProvider:Ljavax/inject/Provider;
+    iput-object p2, p0, Lde/rki/coronawarnapp/covidcertificate/person/core/PersonCertificatesProvider_Factory;->certificatesProvider:Ljavax/inject/Provider;
 
-    iput-object p3, p0, Lde/rki/coronawarnapp/covidcertificate/person/core/PersonCertificatesProvider_Factory;->testCertificateRepositoryProvider:Ljavax/inject/Provider;
+    iput-object p3, p0, Lde/rki/coronawarnapp/covidcertificate/person/core/PersonCertificatesProvider_Factory;->dccWalletInfoRepositoryProvider:Ljavax/inject/Provider;
 
-    iput-object p4, p0, Lde/rki/coronawarnapp/covidcertificate/person/core/PersonCertificatesProvider_Factory;->recoveryCertificateRepositoryProvider:Ljavax/inject/Provider;
-
-    iput-object p5, p0, Lde/rki/coronawarnapp/covidcertificate/person/core/PersonCertificatesProvider_Factory;->appScopeProvider:Ljavax/inject/Provider;
+    iput-object p4, p0, Lde/rki/coronawarnapp/covidcertificate/person/core/PersonCertificatesProvider_Factory;->appScopeProvider:Ljavax/inject/Provider;
 
     return-void
 .end method
@@ -128,7 +111,7 @@
 
 # virtual methods
 .method public get()Ljava/lang/Object;
-    .locals 7
+    .locals 5
 
     iget-object v0, p0, Lde/rki/coronawarnapp/covidcertificate/person/core/PersonCertificatesProvider_Factory;->personCertificatesSettingsProvider:Ljavax/inject/Provider;
 
@@ -136,55 +119,35 @@
 
     move-result-object v0
 
-    move-object v2, v0
+    check-cast v0, Lde/rki/coronawarnapp/covidcertificate/person/core/PersonCertificatesSettings;
 
-    check-cast v2, Lde/rki/coronawarnapp/covidcertificate/person/core/PersonCertificatesSettings;
+    iget-object v1, p0, Lde/rki/coronawarnapp/covidcertificate/person/core/PersonCertificatesProvider_Factory;->certificatesProvider:Ljavax/inject/Provider;
 
-    iget-object v0, p0, Lde/rki/coronawarnapp/covidcertificate/person/core/PersonCertificatesProvider_Factory;->vaccinationRepositoryProvider:Ljavax/inject/Provider;
+    invoke-interface {v1}, Ljavax/inject/Provider;->get()Ljava/lang/Object;
 
-    invoke-interface {v0}, Ljavax/inject/Provider;->get()Ljava/lang/Object;
+    move-result-object v1
 
-    move-result-object v0
+    check-cast v1, Lde/rki/coronawarnapp/covidcertificate/common/certificate/CertificateProvider;
 
-    move-object v3, v0
+    iget-object v2, p0, Lde/rki/coronawarnapp/covidcertificate/person/core/PersonCertificatesProvider_Factory;->dccWalletInfoRepositoryProvider:Ljavax/inject/Provider;
 
-    check-cast v3, Lde/rki/coronawarnapp/covidcertificate/vaccination/core/repository/VaccinationRepository;
+    invoke-interface {v2}, Ljavax/inject/Provider;->get()Ljava/lang/Object;
 
-    iget-object v0, p0, Lde/rki/coronawarnapp/covidcertificate/person/core/PersonCertificatesProvider_Factory;->testCertificateRepositoryProvider:Ljavax/inject/Provider;
+    move-result-object v2
 
-    invoke-interface {v0}, Ljavax/inject/Provider;->get()Ljava/lang/Object;
+    check-cast v2, Lde/rki/coronawarnapp/ccl/dccwalletinfo/storage/DccWalletInfoRepository;
 
-    move-result-object v0
+    iget-object v3, p0, Lde/rki/coronawarnapp/covidcertificate/person/core/PersonCertificatesProvider_Factory;->appScopeProvider:Ljavax/inject/Provider;
 
-    move-object v4, v0
+    invoke-interface {v3}, Ljavax/inject/Provider;->get()Ljava/lang/Object;
 
-    check-cast v4, Lde/rki/coronawarnapp/covidcertificate/test/core/TestCertificateRepository;
+    move-result-object v3
 
-    iget-object v0, p0, Lde/rki/coronawarnapp/covidcertificate/person/core/PersonCertificatesProvider_Factory;->recoveryCertificateRepositoryProvider:Ljavax/inject/Provider;
+    check-cast v3, Lkotlinx/coroutines/CoroutineScope;
 
-    invoke-interface {v0}, Ljavax/inject/Provider;->get()Ljava/lang/Object;
+    new-instance v4, Lde/rki/coronawarnapp/covidcertificate/person/core/PersonCertificatesProvider;
 
-    move-result-object v0
+    invoke-direct {v4, v0, v1, v2, v3}, Lde/rki/coronawarnapp/covidcertificate/person/core/PersonCertificatesProvider;-><init>(Lde/rki/coronawarnapp/covidcertificate/person/core/PersonCertificatesSettings;Lde/rki/coronawarnapp/covidcertificate/common/certificate/CertificateProvider;Lde/rki/coronawarnapp/ccl/dccwalletinfo/storage/DccWalletInfoRepository;Lkotlinx/coroutines/CoroutineScope;)V
 
-    move-object v5, v0
-
-    check-cast v5, Lde/rki/coronawarnapp/covidcertificate/recovery/core/RecoveryCertificateRepository;
-
-    iget-object v0, p0, Lde/rki/coronawarnapp/covidcertificate/person/core/PersonCertificatesProvider_Factory;->appScopeProvider:Ljavax/inject/Provider;
-
-    invoke-interface {v0}, Ljavax/inject/Provider;->get()Ljava/lang/Object;
-
-    move-result-object v0
-
-    move-object v6, v0
-
-    check-cast v6, Lkotlinx/coroutines/CoroutineScope;
-
-    new-instance v0, Lde/rki/coronawarnapp/covidcertificate/person/core/PersonCertificatesProvider;
-
-    move-object v1, v0
-
-    invoke-direct/range {v1 .. v6}, Lde/rki/coronawarnapp/covidcertificate/person/core/PersonCertificatesProvider;-><init>(Lde/rki/coronawarnapp/covidcertificate/person/core/PersonCertificatesSettings;Lde/rki/coronawarnapp/covidcertificate/vaccination/core/repository/VaccinationRepository;Lde/rki/coronawarnapp/covidcertificate/test/core/TestCertificateRepository;Lde/rki/coronawarnapp/covidcertificate/recovery/core/RecoveryCertificateRepository;Lkotlinx/coroutines/CoroutineScope;)V
-
-    return-object v0
+    return-object v4
 .end method

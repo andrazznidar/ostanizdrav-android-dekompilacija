@@ -45,7 +45,7 @@
 
     new-array v4, v2, [I
 
-    const v6, 0x7f0d010a
+    const v6, 0x7f0d0115
 
     aput v6, v4, v5
 
@@ -77,43 +77,43 @@
 
     sput-object v0, Lde/rki/coronawarnapp/databinding/IncludeSubmissionContactBindingImpl;->sViewsWithIds:Landroid/util/SparseIntArray;
 
-    const v1, 0x7f0a06d4
+    const v1, 0x7f0a0727
 
     const/4 v2, 0x7
 
     invoke-virtual {v0, v1, v2}, Landroid/util/SparseIntArray;->put(II)V
 
-    const v1, 0x7f0a06d8
+    const v1, 0x7f0a072b
 
     const/16 v2, 0x8
 
     invoke-virtual {v0, v1, v2}, Landroid/util/SparseIntArray;->put(II)V
 
-    const v1, 0x7f0a06de
+    const v1, 0x7f0a0731
 
     const/16 v2, 0x9
 
     invoke-virtual {v0, v1, v2}, Landroid/util/SparseIntArray;->put(II)V
 
-    const v1, 0x7f0a06df
+    const v1, 0x7f0a0732
 
     const/16 v2, 0xa
 
     invoke-virtual {v0, v1, v2}, Landroid/util/SparseIntArray;->put(II)V
 
-    const v1, 0x7f0a06dc
+    const v1, 0x7f0a072f
 
     const/16 v2, 0xb
 
     invoke-virtual {v0, v1, v2}, Landroid/util/SparseIntArray;->put(II)V
 
-    const v1, 0x7f0a06d5
+    const v1, 0x7f0a0728
 
     const/16 v2, 0xc
 
     invoke-virtual {v0, v1, v2}, Landroid/util/SparseIntArray;->put(II)V
 
-    const v1, 0x7f0a06e0
+    const v1, 0x7f0a0733
 
     const/16 v2, 0xd
 
@@ -129,8 +129,8 @@
 
     :array_1
     .array-data 4
-        0x7f0d00e1
-        0x7f0d00e1
+        0x7f0d00f2
+        0x7f0d00f2
     .end array-data
 .end method
 
@@ -357,13 +357,13 @@
 
     move-result-object v1
 
-    const v2, 0x7f13020a
+    const v2, 0x7f13022e
 
     invoke-virtual {v1, v2}, Landroid/content/res/Resources;->getString(I)Ljava/lang/String;
 
     move-result-object v1
 
-    invoke-static {v0, v1}, Lcom/google/android/gms/nearby/connection/zzq;->setCWAContentDescription(Landroid/widget/ImageView;Ljava/lang/String;)V
+    invoke-static {v0, v1}, Lboofcv/core/image/impl/ImplConvertPlanarToGray;->setCWAContentDescription(Landroid/widget/ImageView;Ljava/lang/String;)V
 
     iget-object v0, p0, Lde/rki/coronawarnapp/databinding/IncludeSubmissionContactBinding;->submissionContactNavigationRowInternationalPhone:Lde/rki/coronawarnapp/databinding/IncludeNavigationRowBinding;
 
@@ -373,7 +373,7 @@
 
     move-result-object v1
 
-    const v2, 0x7f130206
+    const v2, 0x7f13022a
 
     invoke-virtual {v1, v2}, Landroid/content/res/Resources;->getString(I)Ljava/lang/String;
 
@@ -389,7 +389,7 @@
 
     move-result-object v1
 
-    const v2, 0x7f130510
+    const v2, 0x7f130515
 
     invoke-virtual {v1, v2}, Landroid/content/res/Resources;->getString(I)Ljava/lang/String;
 
@@ -405,7 +405,7 @@
 
     move-result-object v1
 
-    const v2, 0x7f130208
+    const v2, 0x7f13022c
 
     invoke-virtual {v1, v2}, Landroid/content/res/Resources;->getString(I)Ljava/lang/String;
 
@@ -421,7 +421,7 @@
 
     move-result-object v1
 
-    const v2, 0x7f130513
+    const v2, 0x7f130518
 
     invoke-virtual {v1, v2}, Landroid/content/res/Resources;->getString(I)Ljava/lang/String;
 

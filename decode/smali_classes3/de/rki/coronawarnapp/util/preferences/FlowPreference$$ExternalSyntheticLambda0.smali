@@ -1,5 +1,6 @@
 .class public final synthetic Lde/rki/coronawarnapp/util/preferences/FlowPreference$$ExternalSyntheticLambda0;
 .super Ljava/lang/Object;
+.source "R8$$SyntheticClass"
 
 # interfaces
 .implements Landroid/content/SharedPreferences$OnSharedPreferenceChangeListener;

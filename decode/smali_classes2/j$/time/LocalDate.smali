@@ -139,11 +139,11 @@
 
     invoke-static {p0, v0}, Ljava/util/Objects;->requireNonNull(Ljava/lang/Object;Ljava/lang/String;)Ljava/lang/Object;
 
-    sget v0, Lj$/time/temporal/w;->a:I
+    sget v0, Lj$/time/temporal/n;->a:I
 
     sget-object v0, Lj$/time/temporal/u;->a:Lj$/time/temporal/u;
 
-    invoke-interface {p0, v0}, Lj$/time/temporal/TemporalAccessor;->g(Lj$/time/temporal/x;)Ljava/lang/Object;
+    invoke-interface {p0, v0}, Lj$/time/temporal/TemporalAccessor;->i(Lj$/time/temporal/w;)Ljava/lang/Object;
 
     move-result-object v0
 
@@ -192,7 +192,7 @@
 .method private m(Lj$/time/temporal/o;)I
     .locals 3
 
-    sget-object v0, Lj$/time/LocalDate$a;->a:[I
+    sget-object v0, Lj$/time/h;->a:[I
 
     move-object v1, p1
 
@@ -208,7 +208,7 @@
 
     packed-switch v0, :pswitch_data_0
 
-    new-instance v0, Lj$/time/temporal/z;
+    new-instance v0, Lj$/time/temporal/y;
 
     new-instance v1, Ljava/lang/StringBuilder;
 
@@ -224,7 +224,7 @@
 
     move-result-object p1
 
-    invoke-direct {v0, p1}, Lj$/time/temporal/z;-><init>(Ljava/lang/String;)V
+    invoke-direct {v0, p1}, Lj$/time/temporal/y;-><init>(Ljava/lang/String;)V
 
     throw v0
 
@@ -247,11 +247,11 @@
     return p1
 
     :pswitch_2
-    new-instance p1, Lj$/time/temporal/z;
+    new-instance p1, Lj$/time/temporal/y;
 
     const-string v0, "Invalid field \'ProlepticMonth\' for get() method, use getLong() instead"
 
-    invoke-direct {p1, v0}, Lj$/time/temporal/z;-><init>(Ljava/lang/String;)V
+    invoke-direct {p1, v0}, Lj$/time/temporal/y;-><init>(Ljava/lang/String;)V
 
     throw p1
 
@@ -274,11 +274,11 @@
     return p1
 
     :pswitch_5
-    new-instance p1, Lj$/time/temporal/z;
+    new-instance p1, Lj$/time/temporal/y;
 
     const-string v0, "Invalid field \'EpochDay\' for get() method, use getLong() instead"
 
-    invoke-direct {p1, v0}, Lj$/time/temporal/z;-><init>(Ljava/lang/String;)V
+    invoke-direct {p1, v0}, Lj$/time/temporal/y;-><init>(Ljava/lang/String;)V
 
     throw p1
 
@@ -420,12 +420,10 @@
 
     if-eq p1, v0, :cond_0
 
-    move v0, v3
-
     goto :goto_0
 
     :cond_0
-    const/16 v0, 0x1e
+    const/16 v3, 0x1e
 
     goto :goto_0
 
@@ -441,8 +439,10 @@
     move v0, v5
 
     :cond_2
+    move v3, v0
+
     :goto_0
-    if-le p2, v0, :cond_4
+    if-le p2, v3, :cond_4
 
     if-ne p2, v5, :cond_3
 
@@ -475,11 +475,11 @@
 
     const-string v0, "Invalid date \'"
 
-    invoke-static {v0}, Lj$/time/a;->a(Ljava/lang/String;)Ljava/lang/StringBuilder;
+    invoke-static {v0}, Lj$/time/a;->b(Ljava/lang/String;)Ljava/lang/StringBuilder;
 
     move-result-object v0
 
-    invoke-static {p1}, Lj$/time/l;->m(I)Lj$/time/l;
+    invoke-static {p1}, Lj$/time/n;->m(I)Lj$/time/n;
 
     move-result-object p1
 
@@ -720,15 +720,15 @@
 
     add-int/lit8 v1, v1, 0x1
 
-    invoke-static {v1}, Lj$/time/l;->m(I)Lj$/time/l;
+    invoke-static {v1}, Lj$/time/n;->m(I)Lj$/time/n;
 
     move-result-object v1
 
-    invoke-virtual {v1, v0}, Lj$/time/l;->j(Z)I
+    invoke-virtual {v1, v0}, Lj$/time/n;->j(Z)I
 
     move-result v2
 
-    invoke-virtual {v1, v0}, Lj$/time/l;->l(Z)I
+    invoke-virtual {v1, v0}, Lj$/time/n;->l(Z)I
 
     move-result v3
 
@@ -740,12 +740,12 @@
 
     const-wide/16 v2, 0x1
 
-    invoke-virtual {v1, v2, v3}, Lj$/time/l;->n(J)Lj$/time/l;
+    invoke-virtual {v1, v2, v3}, Lj$/time/n;->n(J)Lj$/time/n;
 
     move-result-object v1
 
     :cond_2
-    invoke-virtual {v1, v0}, Lj$/time/l;->j(Z)I
+    invoke-virtual {v1, v0}, Lj$/time/n;->j(Z)I
 
     move-result v0
 
@@ -755,7 +755,7 @@
 
     new-instance v0, Lj$/time/LocalDate;
 
-    invoke-virtual {v1}, Lj$/time/l;->k()I
+    invoke-virtual {v1}, Lj$/time/n;->k()I
 
     move-result v1
 
@@ -902,7 +902,7 @@
 
     invoke-virtual {v0, p2, p3}, Lj$/time/temporal/a;->j(J)J
 
-    sget-object v1, Lj$/time/LocalDate$a;->a:[I
+    sget-object v1, Lj$/time/h;->a:[I
 
     invoke-virtual {v0}, Ljava/lang/Enum;->ordinal()I
 
@@ -916,7 +916,7 @@
 
     packed-switch v0, :pswitch_data_0
 
-    new-instance p2, Lj$/time/temporal/z;
+    new-instance p2, Lj$/time/temporal/y;
 
     new-instance p3, Ljava/lang/StringBuilder;
 
@@ -932,14 +932,14 @@
 
     move-result-object p1
 
-    invoke-direct {p2, p1}, Lj$/time/temporal/z;-><init>(Ljava/lang/String;)V
+    invoke-direct {p2, p1}, Lj$/time/temporal/y;-><init>(Ljava/lang/String;)V
 
     throw p2
 
     :pswitch_0
     sget-object p1, Lj$/time/temporal/a;->ERA:Lj$/time/temporal/a;
 
-    invoke-virtual {p0, p1}, Lj$/time/LocalDate;->e(Lj$/time/temporal/o;)J
+    invoke-virtual {p0, p1}, Lj$/time/LocalDate;->g(Lj$/time/temporal/o;)J
 
     move-result-wide v0
 
@@ -964,6 +964,15 @@
     return-object p1
 
     :pswitch_1
+    long-to-int p1, p2
+
+    invoke-virtual {p0, p1}, Lj$/time/LocalDate;->F(I)Lj$/time/LocalDate;
+
+    move-result-object p1
+
+    return-object p1
+
+    :pswitch_2
     iget p1, p0, Lj$/time/LocalDate;->a:I
 
     int-to-long v3, p1
@@ -986,16 +995,18 @@
 
     move-result-object p1
 
-    goto/16 :goto_6
+    return-object p1
 
-    :pswitch_2
+    :pswitch_3
     long-to-int p1, p2
 
     iget-short p2, p0, Lj$/time/LocalDate;->b:S
 
     if-ne p2, p1, :cond_1
 
-    goto :goto_5
+    move-object p1, p0
+
+    goto :goto_1
 
     :cond_1
     sget-object p2, Lj$/time/temporal/a;->MONTH_OF_YEAR:Lj$/time/temporal/a;
@@ -1012,36 +1023,62 @@
 
     move-result-object p1
 
-    goto :goto_6
-
-    :pswitch_3
-    sget-object p1, Lj$/time/temporal/a;->ALIGNED_WEEK_OF_YEAR:Lj$/time/temporal/a;
-
-    goto :goto_4
+    :goto_1
+    return-object p1
 
     :pswitch_4
+    sget-object p1, Lj$/time/temporal/a;->ALIGNED_WEEK_OF_YEAR:Lj$/time/temporal/a;
+
+    invoke-virtual {p0, p1}, Lj$/time/LocalDate;->g(Lj$/time/temporal/o;)J
+
+    move-result-wide v0
+
+    sub-long/2addr p2, v0
+
+    invoke-virtual {p0, p2, p3}, Lj$/time/LocalDate;->y(J)Lj$/time/LocalDate;
+
+    move-result-object p1
+
+    return-object p1
+
+    :pswitch_5
     invoke-static {p2, p3}, Lj$/time/LocalDate;->t(J)Lj$/time/LocalDate;
 
     move-result-object p1
 
-    goto :goto_6
-
-    :pswitch_5
-    sget-object p1, Lj$/time/temporal/a;->ALIGNED_DAY_OF_WEEK_IN_YEAR:Lj$/time/temporal/a;
-
-    goto :goto_1
+    return-object p1
 
     :pswitch_6
-    sget-object p1, Lj$/time/temporal/a;->ALIGNED_DAY_OF_WEEK_IN_MONTH:Lj$/time/temporal/a;
+    sget-object p1, Lj$/time/temporal/a;->ALIGNED_DAY_OF_WEEK_IN_YEAR:Lj$/time/temporal/a;
 
-    :goto_1
-    invoke-virtual {p0, p1}, Lj$/time/LocalDate;->e(Lj$/time/temporal/o;)J
+    invoke-virtual {p0, p1}, Lj$/time/LocalDate;->g(Lj$/time/temporal/o;)J
 
     move-result-wide v0
 
-    goto :goto_2
+    sub-long/2addr p2, v0
+
+    invoke-virtual {p0, p2, p3}, Lj$/time/LocalDate;->w(J)Lj$/time/LocalDate;
+
+    move-result-object p1
+
+    return-object p1
 
     :pswitch_7
+    sget-object p1, Lj$/time/temporal/a;->ALIGNED_DAY_OF_WEEK_IN_MONTH:Lj$/time/temporal/a;
+
+    invoke-virtual {p0, p1}, Lj$/time/LocalDate;->g(Lj$/time/temporal/o;)J
+
+    move-result-wide v0
+
+    sub-long/2addr p2, v0
+
+    invoke-virtual {p0, p2, p3}, Lj$/time/LocalDate;->w(J)Lj$/time/LocalDate;
+
+    move-result-object p1
+
+    return-object p1
+
+    :pswitch_8
     invoke-virtual {p0}, Lj$/time/LocalDate;->n()Lj$/time/e;
 
     move-result-object p1
@@ -1052,40 +1089,37 @@
 
     int-to-long v0, p1
 
-    :goto_2
     sub-long/2addr p2, v0
 
     invoke-virtual {p0, p2, p3}, Lj$/time/LocalDate;->w(J)Lj$/time/LocalDate;
 
     move-result-object p1
 
-    goto :goto_6
+    return-object p1
 
-    :pswitch_8
+    :pswitch_9
     iget p1, p0, Lj$/time/LocalDate;->a:I
 
     if-lt p1, v3, :cond_2
 
-    goto :goto_3
+    goto :goto_2
 
     :cond_2
     sub-long p2, v1, p2
 
-    :goto_3
-    :pswitch_9
+    :goto_2
     long-to-int p1, p2
 
     invoke-virtual {p0, p1}, Lj$/time/LocalDate;->F(I)Lj$/time/LocalDate;
 
     move-result-object p1
 
-    goto :goto_6
+    return-object p1
 
     :pswitch_a
     sget-object p1, Lj$/time/temporal/a;->ALIGNED_WEEK_OF_MONTH:Lj$/time/temporal/a;
 
-    :goto_4
-    invoke-virtual {p0, p1}, Lj$/time/LocalDate;->e(Lj$/time/temporal/o;)J
+    invoke-virtual {p0, p1}, Lj$/time/LocalDate;->g(Lj$/time/temporal/o;)J
 
     move-result-wide v0
 
@@ -1095,7 +1129,7 @@
 
     move-result-object p1
 
-    goto :goto_6
+    return-object p1
 
     :pswitch_b
     long-to-int p1, p2
@@ -1106,7 +1140,9 @@
 
     if-ne p2, p1, :cond_3
 
-    goto :goto_5
+    move-object p1, p0
+
+    goto :goto_3
 
     :cond_3
     iget p2, p0, Lj$/time/LocalDate;->a:I
@@ -1115,7 +1151,8 @@
 
     move-result-object p1
 
-    goto :goto_6
+    :goto_3
+    return-object p1
 
     :pswitch_c
     long-to-int p1, p2
@@ -1124,10 +1161,9 @@
 
     if-ne p2, p1, :cond_4
 
-    :goto_5
     move-object p1, p0
 
-    goto :goto_6
+    goto :goto_4
 
     :cond_4
     iget p2, p0, Lj$/time/LocalDate;->a:I
@@ -1138,7 +1174,8 @@
 
     move-result-object p1
 
-    goto :goto_6
+    :goto_4
+    return-object p1
 
     :cond_5
     invoke-interface {p1, p0, p2, p3}, Lj$/time/temporal/o;->g(Lj$/time/temporal/k;J)Lj$/time/temporal/k;
@@ -1147,7 +1184,6 @@
 
     check-cast p1, Lj$/time/LocalDate;
 
-    :goto_6
     return-object p1
 
     :pswitch_data_0
@@ -1155,6 +1191,7 @@
         :pswitch_c
         :pswitch_b
         :pswitch_a
+        :pswitch_9
         :pswitch_8
         :pswitch_7
         :pswitch_6
@@ -1163,7 +1200,6 @@
         :pswitch_3
         :pswitch_2
         :pswitch_1
-        :pswitch_9
         :pswitch_0
     .end packed-switch
 .end method
@@ -1180,7 +1216,7 @@
     :cond_0
     check-cast p1, Lj$/time/temporal/m;
 
-    invoke-virtual {p1, p0}, Lj$/time/temporal/m;->h(Lj$/time/temporal/k;)Lj$/time/temporal/k;
+    invoke-virtual {p1, p0}, Lj$/time/temporal/m;->a(Lj$/time/temporal/k;)Lj$/time/temporal/k;
 
     move-result-object p1
 
@@ -1238,7 +1274,23 @@
     return-object p1
 .end method
 
-.method public a(Lj$/time/temporal/l;)Lj$/time/temporal/k;
+.method public a(Lj$/time/temporal/k;)Lj$/time/temporal/k;
+    .locals 3
+
+    sget-object v0, Lj$/time/temporal/a;->EPOCH_DAY:Lj$/time/temporal/a;
+
+    invoke-virtual {p0}, Lj$/time/LocalDate;->B()J
+
+    move-result-wide v1
+
+    invoke-interface {p1, v0, v1, v2}, Lj$/time/temporal/k;->c(Lj$/time/temporal/o;J)Lj$/time/temporal/k;
+
+    move-result-object p1
+
+    return-object p1
+.end method
+
+.method public b(Lj$/time/temporal/l;)Lj$/time/temporal/k;
     .locals 0
 
     check-cast p1, Lj$/time/LocalDate;
@@ -1246,7 +1298,7 @@
     return-object p1
 .end method
 
-.method public bridge synthetic b(Lj$/time/temporal/o;J)Lj$/time/temporal/k;
+.method public bridge synthetic c(Lj$/time/temporal/o;J)Lj$/time/temporal/k;
     .locals 0
 
     invoke-virtual {p0, p1, p2, p3}, Lj$/time/LocalDate;->C(Lj$/time/temporal/o;J)Lj$/time/LocalDate;
@@ -1254,27 +1306,6 @@
     move-result-object p1
 
     return-object p1
-.end method
-
-.method public c(Lj$/time/temporal/o;)I
-    .locals 1
-
-    instance-of v0, p1, Lj$/time/temporal/a;
-
-    if-eqz v0, :cond_0
-
-    invoke-direct {p0, p1}, Lj$/time/LocalDate;->m(Lj$/time/temporal/o;)I
-
-    move-result p1
-
-    return p1
-
-    :cond_0
-    invoke-static {p0, p1}, Lj$/time/temporal/n;->a(Lj$/time/temporal/TemporalAccessor;Lj$/time/temporal/o;)I
-
-    move-result p1
-
-    return p1
 .end method
 
 .method public bridge synthetic compareTo(Ljava/lang/Object;)I
@@ -1289,7 +1320,97 @@
     return p1
 .end method
 
-.method public d(Lj$/time/temporal/o;)Lj$/time/temporal/A;
+.method public d(Lj$/time/temporal/o;)I
+    .locals 1
+
+    instance-of v0, p1, Lj$/time/temporal/a;
+
+    if-eqz v0, :cond_0
+
+    invoke-direct {p0, p1}, Lj$/time/LocalDate;->m(Lj$/time/temporal/o;)I
+
+    move-result p1
+
+    return p1
+
+    :cond_0
+    invoke-static {p0, p1}, Lj$/time/temporal/n;->b(Lj$/time/temporal/TemporalAccessor;Lj$/time/temporal/o;)I
+
+    move-result p1
+
+    return p1
+.end method
+
+.method public e(Lj$/time/temporal/o;)Z
+    .locals 1
+
+    instance-of v0, p1, Lj$/time/temporal/a;
+
+    if-eqz v0, :cond_0
+
+    invoke-interface {p1}, Lj$/time/temporal/o;->a()Z
+
+    move-result p1
+
+    goto :goto_0
+
+    :cond_0
+    if-eqz p1, :cond_1
+
+    invoke-interface {p1, p0}, Lj$/time/temporal/o;->f(Lj$/time/temporal/TemporalAccessor;)Z
+
+    move-result p1
+
+    if-eqz p1, :cond_1
+
+    const/4 p1, 0x1
+
+    goto :goto_0
+
+    :cond_1
+    const/4 p1, 0x0
+
+    :goto_0
+    return p1
+.end method
+
+.method public equals(Ljava/lang/Object;)Z
+    .locals 3
+
+    const/4 v0, 0x1
+
+    if-ne p0, p1, :cond_0
+
+    return v0
+
+    :cond_0
+    instance-of v1, p1, Lj$/time/LocalDate;
+
+    const/4 v2, 0x0
+
+    if-eqz v1, :cond_2
+
+    check-cast p1, Lj$/time/LocalDate;
+
+    invoke-virtual {p0, p1}, Lj$/time/LocalDate;->k(Lj$/time/LocalDate;)I
+
+    move-result p1
+
+    if-nez p1, :cond_1
+
+    goto :goto_0
+
+    :cond_1
+    move v0, v2
+
+    :goto_0
+    return v0
+
+    :cond_2
+    return v2
+.end method
+
+.method public f(Lj$/time/temporal/o;)Lj$/time/temporal/z;
     .locals 6
 
     instance-of v0, p1, Lj$/time/temporal/a;
@@ -1306,7 +1427,7 @@
 
     if-eqz v1, :cond_a
 
-    sget-object v1, Lj$/time/LocalDate$a;->a:[I
+    sget-object v1, Lj$/time/h;->a:[I
 
     invoke-virtual {v0}, Ljava/lang/Enum;->ordinal()I
 
@@ -1332,7 +1453,7 @@
 
     if-eq v0, v2, :cond_0
 
-    invoke-interface {p1}, Lj$/time/temporal/o;->b()Lj$/time/temporal/A;
+    invoke-interface {p1}, Lj$/time/temporal/o;->d()Lj$/time/temporal/z;
 
     move-result-object p1
 
@@ -1351,7 +1472,7 @@
     const-wide/32 v0, 0x3b9ac9ff
 
     :goto_0
-    invoke-static {v4, v5, v0, v1}, Lj$/time/temporal/A;->i(JJ)Lj$/time/temporal/A;
+    invoke-static {v4, v5, v0, v1}, Lj$/time/temporal/z;->i(JJ)Lj$/time/temporal/z;
 
     move-result-object p1
 
@@ -1360,11 +1481,11 @@
     :cond_2
     iget-short p1, p0, Lj$/time/LocalDate;->b:S
 
-    invoke-static {p1}, Lj$/time/l;->m(I)Lj$/time/l;
+    invoke-static {p1}, Lj$/time/n;->m(I)Lj$/time/n;
 
     move-result-object p1
 
-    sget-object v0, Lj$/time/l;->FEBRUARY:Lj$/time/l;
+    sget-object v0, Lj$/time/n;->FEBRUARY:Lj$/time/n;
 
     if-ne p1, v0, :cond_3
 
@@ -1382,7 +1503,7 @@
     const-wide/16 v0, 0x5
 
     :goto_1
-    invoke-static {v4, v5, v0, v1}, Lj$/time/temporal/A;->i(JJ)Lj$/time/temporal/A;
+    invoke-static {v4, v5, v0, v1}, Lj$/time/temporal/z;->i(JJ)Lj$/time/temporal/z;
 
     move-result-object p1
 
@@ -1449,14 +1570,14 @@
     :goto_2
     int-to-long v0, p1
 
-    invoke-static {v4, v5, v0, v1}, Lj$/time/temporal/A;->i(JJ)Lj$/time/temporal/A;
+    invoke-static {v4, v5, v0, v1}, Lj$/time/temporal/z;->i(JJ)Lj$/time/temporal/z;
 
     move-result-object p1
 
     return-object p1
 
     :cond_a
-    new-instance v0, Lj$/time/temporal/z;
+    new-instance v0, Lj$/time/temporal/y;
 
     new-instance v1, Ljava/lang/StringBuilder;
 
@@ -1472,19 +1593,19 @@
 
     move-result-object p1
 
-    invoke-direct {v0, p1}, Lj$/time/temporal/z;-><init>(Ljava/lang/String;)V
+    invoke-direct {v0, p1}, Lj$/time/temporal/y;-><init>(Ljava/lang/String;)V
 
     throw v0
 
     :cond_b
-    invoke-interface {p1, p0}, Lj$/time/temporal/o;->h(Lj$/time/temporal/TemporalAccessor;)Lj$/time/temporal/A;
+    invoke-interface {p1, p0}, Lj$/time/temporal/o;->h(Lj$/time/temporal/TemporalAccessor;)Lj$/time/temporal/z;
 
     move-result-object p1
 
     return-object p1
 .end method
 
-.method public e(Lj$/time/temporal/o;)J
+.method public g(Lj$/time/temporal/o;)J
     .locals 4
 
     instance-of v0, p1, Lj$/time/temporal/a;
@@ -1536,63 +1657,51 @@
     return-wide v0
 
     :cond_2
-    invoke-interface {p1, p0}, Lj$/time/temporal/o;->e(Lj$/time/temporal/TemporalAccessor;)J
+    invoke-interface {p1, p0}, Lj$/time/temporal/o;->c(Lj$/time/temporal/TemporalAccessor;)J
 
     move-result-wide v0
 
     return-wide v0
 .end method
 
-.method public equals(Ljava/lang/Object;)Z
-    .locals 3
-
-    const/4 v0, 0x1
-
-    if-ne p0, p1, :cond_0
-
-    return v0
-
-    :cond_0
-    instance-of v1, p1, Lj$/time/LocalDate;
-
-    const/4 v2, 0x0
-
-    if-eqz v1, :cond_2
-
-    check-cast p1, Lj$/time/LocalDate;
-
-    invoke-virtual {p0, p1}, Lj$/time/LocalDate;->k(Lj$/time/LocalDate;)I
-
-    move-result p1
-
-    if-nez p1, :cond_1
-
-    goto :goto_0
-
-    :cond_1
-    move v0, v2
-
-    :goto_0
-    return v0
-
-    :cond_2
-    return v2
-.end method
-
-.method public bridge synthetic f(JLj$/time/temporal/y;)Lj$/time/temporal/k;
+.method public bridge synthetic h(JLj$/time/temporal/x;)Lj$/time/temporal/k;
     .locals 0
 
-    invoke-virtual {p0, p1, p2, p3}, Lj$/time/LocalDate;->v(JLj$/time/temporal/y;)Lj$/time/LocalDate;
+    invoke-virtual {p0, p1, p2, p3}, Lj$/time/LocalDate;->v(JLj$/time/temporal/x;)Lj$/time/LocalDate;
 
     move-result-object p1
 
     return-object p1
 .end method
 
-.method public g(Lj$/time/temporal/x;)Ljava/lang/Object;
+.method public hashCode()I
+    .locals 4
+
+    iget v0, p0, Lj$/time/LocalDate;->a:I
+
+    iget-short v1, p0, Lj$/time/LocalDate;->b:S
+
+    iget-short v2, p0, Lj$/time/LocalDate;->c:S
+
+    and-int/lit16 v3, v0, -0x800
+
+    shl-int/lit8 v0, v0, 0xb
+
+    shl-int/lit8 v1, v1, 0x6
+
+    add-int/2addr v0, v1
+
+    add-int/2addr v0, v2
+
+    xor-int/2addr v0, v3
+
+    return v0
+.end method
+
+.method public i(Lj$/time/temporal/w;)Ljava/lang/Object;
     .locals 2
 
-    sget v0, Lj$/time/temporal/w;->a:I
+    sget v0, Lj$/time/temporal/n;->a:I
 
     sget-object v0, Lj$/time/temporal/u;->a:Lj$/time/temporal/u;
 
@@ -1643,86 +1752,13 @@
     goto :goto_0
 
     :cond_4
-    invoke-interface {p1, p0}, Lj$/time/temporal/x;->a(Lj$/time/temporal/TemporalAccessor;)Ljava/lang/Object;
+    invoke-interface {p1, p0}, Lj$/time/temporal/w;->a(Lj$/time/temporal/TemporalAccessor;)Ljava/lang/Object;
 
     move-result-object v1
 
     :cond_5
     :goto_0
     return-object v1
-.end method
-
-.method public h(Lj$/time/temporal/k;)Lj$/time/temporal/k;
-    .locals 3
-
-    sget-object v0, Lj$/time/temporal/a;->EPOCH_DAY:Lj$/time/temporal/a;
-
-    invoke-virtual {p0}, Lj$/time/LocalDate;->B()J
-
-    move-result-wide v1
-
-    invoke-interface {p1, v0, v1, v2}, Lj$/time/temporal/k;->b(Lj$/time/temporal/o;J)Lj$/time/temporal/k;
-
-    move-result-object p1
-
-    return-object p1
-.end method
-
-.method public hashCode()I
-    .locals 4
-
-    iget v0, p0, Lj$/time/LocalDate;->a:I
-
-    iget-short v1, p0, Lj$/time/LocalDate;->b:S
-
-    iget-short v2, p0, Lj$/time/LocalDate;->c:S
-
-    and-int/lit16 v3, v0, -0x800
-
-    shl-int/lit8 v0, v0, 0xb
-
-    shl-int/lit8 v1, v1, 0x6
-
-    add-int/2addr v0, v1
-
-    add-int/2addr v0, v2
-
-    xor-int/2addr v0, v3
-
-    return v0
-.end method
-
-.method public i(Lj$/time/temporal/o;)Z
-    .locals 1
-
-    instance-of v0, p1, Lj$/time/temporal/a;
-
-    if-eqz v0, :cond_0
-
-    invoke-interface {p1}, Lj$/time/temporal/o;->a()Z
-
-    move-result p1
-
-    goto :goto_0
-
-    :cond_0
-    if-eqz p1, :cond_1
-
-    invoke-interface {p1, p0}, Lj$/time/temporal/o;->f(Lj$/time/temporal/TemporalAccessor;)Z
-
-    move-result p1
-
-    if-eqz p1, :cond_1
-
-    const/4 p1, 0x1
-
-    goto :goto_0
-
-    :cond_1
-    const/4 p1, 0x0
-
-    :goto_0
-    return p1
 .end method
 
 .method public j(Lj$/time/chrono/b;)I
@@ -1807,7 +1843,7 @@
 
     const-wide/16 v2, 0x7
 
-    invoke-static {v0, v1, v2, v3}, Lj$/lang/d;->d(JJ)J
+    invoke-static {v0, v1, v2, v3}, Lj$/time/c;->c(JJ)J
 
     move-result-wide v0
 
@@ -1827,7 +1863,7 @@
 
     iget-short v0, p0, Lj$/time/LocalDate;->b:S
 
-    invoke-static {v0}, Lj$/time/l;->m(I)Lj$/time/l;
+    invoke-static {v0}, Lj$/time/n;->m(I)Lj$/time/n;
 
     move-result-object v0
 
@@ -1835,7 +1871,7 @@
 
     move-result v1
 
-    invoke-virtual {v0, v1}, Lj$/time/l;->j(Z)I
+    invoke-virtual {v0, v1}, Lj$/time/n;->j(Z)I
 
     move-result v0
 
@@ -1872,7 +1908,7 @@
     return v0
 .end method
 
-.method public r(JLj$/time/temporal/y;)Lj$/time/chrono/b;
+.method public r(JLj$/time/temporal/x;)Lj$/time/chrono/b;
     .locals 2
 
     const-wide/high16 v0, -0x8000000000000000L
@@ -1883,13 +1919,13 @@
 
     const-wide p1, 0x7fffffffffffffffL
 
-    invoke-virtual {p0, p1, p2, p3}, Lj$/time/LocalDate;->v(JLj$/time/temporal/y;)Lj$/time/LocalDate;
+    invoke-virtual {p0, p1, p2, p3}, Lj$/time/LocalDate;->v(JLj$/time/temporal/x;)Lj$/time/LocalDate;
 
     move-result-object p1
 
     const-wide/16 v0, 0x1
 
-    invoke-virtual {p1, v0, v1, p3}, Lj$/time/LocalDate;->v(JLj$/time/temporal/y;)Lj$/time/LocalDate;
+    invoke-virtual {p1, v0, v1, p3}, Lj$/time/LocalDate;->v(JLj$/time/temporal/x;)Lj$/time/LocalDate;
 
     move-result-object p1
 
@@ -1898,7 +1934,7 @@
     :cond_0
     neg-long p1, p1
 
-    invoke-virtual {p0, p1, p2, p3}, Lj$/time/LocalDate;->v(JLj$/time/temporal/y;)Lj$/time/LocalDate;
+    invoke-virtual {p0, p1, p2, p3}, Lj$/time/LocalDate;->v(JLj$/time/temporal/x;)Lj$/time/LocalDate;
 
     move-result-object p1
 
@@ -2001,7 +2037,7 @@
     return-object v0
 .end method
 
-.method public v(JLj$/time/temporal/y;)Lj$/time/LocalDate;
+.method public v(JLj$/time/temporal/x;)Lj$/time/LocalDate;
     .locals 2
 
     instance-of v0, p3, Lj$/time/temporal/b;
@@ -2012,7 +2048,7 @@
 
     check-cast v0, Lj$/time/temporal/b;
 
-    sget-object v1, Lj$/time/LocalDate$a;->b:[I
+    sget-object v1, Lj$/time/h;->b:[I
 
     invoke-virtual {v0}, Ljava/lang/Enum;->ordinal()I
 
@@ -2022,7 +2058,7 @@
 
     packed-switch v0, :pswitch_data_0
 
-    new-instance p1, Lj$/time/temporal/z;
+    new-instance p1, Lj$/time/temporal/y;
 
     new-instance p2, Ljava/lang/StringBuilder;
 
@@ -2038,18 +2074,18 @@
 
     move-result-object p2
 
-    invoke-direct {p1, p2}, Lj$/time/temporal/z;-><init>(Ljava/lang/String;)V
+    invoke-direct {p1, p2}, Lj$/time/temporal/y;-><init>(Ljava/lang/String;)V
 
     throw p1
 
     :pswitch_0
     sget-object p3, Lj$/time/temporal/a;->ERA:Lj$/time/temporal/a;
 
-    invoke-virtual {p0, p3}, Lj$/time/LocalDate;->e(Lj$/time/temporal/o;)J
+    invoke-virtual {p0, p3}, Lj$/time/LocalDate;->g(Lj$/time/temporal/o;)J
 
     move-result-wide v0
 
-    invoke-static {v0, v1, p1, p2}, Lj$/lang/d;->c(JJ)J
+    invoke-static {v0, v1, p1, p2}, Lj$/time/c;->b(JJ)J
 
     move-result-wide p1
 
@@ -2062,7 +2098,7 @@
     :pswitch_1
     const-wide/16 v0, 0x3e8
 
-    invoke-static {p1, p2, v0, v1}, Lj$/lang/d;->f(JJ)J
+    invoke-static {p1, p2, v0, v1}, Lj$/time/c;->e(JJ)J
 
     move-result-wide p1
 
@@ -2075,7 +2111,7 @@
     :pswitch_2
     const-wide/16 v0, 0x64
 
-    invoke-static {p1, p2, v0, v1}, Lj$/lang/d;->f(JJ)J
+    invoke-static {p1, p2, v0, v1}, Lj$/time/c;->e(JJ)J
 
     move-result-wide p1
 
@@ -2088,7 +2124,7 @@
     :pswitch_3
     const-wide/16 v0, 0xa
 
-    invoke-static {p1, p2, v0, v1}, Lj$/lang/d;->f(JJ)J
+    invoke-static {p1, p2, v0, v1}, Lj$/time/c;->e(JJ)J
 
     move-result-wide p1
 
@@ -2127,7 +2163,7 @@
     return-object p1
 
     :cond_0
-    invoke-interface {p3, p0, p1, p2}, Lj$/time/temporal/y;->b(Lj$/time/temporal/k;J)Lj$/time/temporal/k;
+    invoke-interface {p3, p0, p1, p2}, Lj$/time/temporal/x;->b(Lj$/time/temporal/k;J)Lj$/time/temporal/k;
 
     move-result-object p1
 
@@ -2164,7 +2200,7 @@
 
     move-result-wide v0
 
-    invoke-static {v0, v1, p1, p2}, Lj$/lang/d;->c(JJ)J
+    invoke-static {v0, v1, p1, p2}, Lj$/time/c;->b(JJ)J
 
     move-result-wide p1
 
@@ -2207,7 +2243,7 @@
 
     sget-object p1, Lj$/time/temporal/a;->YEAR:Lj$/time/temporal/a;
 
-    invoke-static {v0, v1, v2, v3}, Lj$/lang/d;->e(JJ)J
+    invoke-static {v0, v1, v2, v3}, Lj$/time/c;->d(JJ)J
 
     move-result-wide v4
 
@@ -2215,7 +2251,7 @@
 
     move-result p1
 
-    invoke-static {v0, v1, v2, v3}, Lj$/lang/d;->d(JJ)J
+    invoke-static {v0, v1, v2, v3}, Lj$/time/c;->c(JJ)J
 
     move-result-wide v0
 
@@ -2237,7 +2273,7 @@
 
     const-wide/16 v0, 0x7
 
-    invoke-static {p1, p2, v0, v1}, Lj$/lang/d;->f(JJ)J
+    invoke-static {p1, p2, v0, v1}, Lj$/time/c;->e(JJ)J
 
     move-result-wide p1
 

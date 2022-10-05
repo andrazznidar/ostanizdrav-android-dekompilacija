@@ -31,7 +31,7 @@
 
     iget-object p1, p1, Lde/rki/coronawarnapp/presencetracing/checkins/qrcode/CheckInQrCode;->qrCodePayload:Lde/rki/coronawarnapp/server/protocols/internal/pt/TraceLocationOuterClass$QRCodePayload;
 
-    invoke-static {p1}, Lcom/google/android/material/shape/MaterialShapeUtils;->traceLocation(Lde/rki/coronawarnapp/server/protocols/internal/pt/TraceLocationOuterClass$QRCodePayload;)Lde/rki/coronawarnapp/presencetracing/checkins/qrcode/TraceLocation;
+    invoke-static {p1}, Lgeoregression/struct/ConvertFloatType;->traceLocation(Lde/rki/coronawarnapp/server/protocols/internal/pt/TraceLocationOuterClass$QRCodePayload;)Lde/rki/coronawarnapp/presencetracing/checkins/qrcode/TraceLocation;
 
     move-result-object v0
 
@@ -67,7 +67,7 @@
 
     move-result v2
 
-    const/16 v5, 0x64
+    const/16 v5, 0xff
 
     if-gt v2, v5, :cond_8
 

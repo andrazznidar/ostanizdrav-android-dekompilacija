@@ -8,12 +8,12 @@
 
 # annotations
 .annotation system Ldalvik/annotation/SourceDebugExtension;
-    value = "SMAP\nDeclaredMemberIndex.kt\nKotlin\n*S Kotlin\n*F\n+ 1 DeclaredMemberIndex.kt\norg/jetbrains/kotlin/load/java/lazy/descriptors/ClassDeclaredMemberIndex\n+ 2 _Sequences.kt\nkotlin/sequences/SequencesKt___SequencesKt\n+ 3 Maps.kt\nkotlin/collections/MapsKt__MapsKt\n+ 4 _Collections.kt\nkotlin/collections/CollectionsKt___CollectionsKt\n*L\n1#1,66:1\n935#2:67\n964#2,3:68\n967#2,3:78\n639#2:81\n669#2,4:82\n1102#2,3:95\n1102#2,3:98\n355#3,7:71\n734#4:86\n825#4,2:87\n1162#4,2:89\n1190#4,4:91\n*E\n*S KotlinDebug\n*F\n+ 1 DeclaredMemberIndex.kt\norg/jetbrains/kotlin/load/java/lazy/descriptors/ClassDeclaredMemberIndex\n*L\n52#1:67\n52#1,3:68\n52#1,3:78\n53#1:81\n53#1,4:82\n57#1,3:95\n60#1,3:98\n52#1,7:71\n54#1:86\n54#1,2:87\n54#1,2:89\n54#1,4:91\n*E\n"
+    value = "SMAP\nDeclaredMemberIndex.kt\nKotlin\n*S Kotlin\n*F\n+ 1 DeclaredMemberIndex.kt\norg/jetbrains/kotlin/load/java/lazy/descriptors/ClassDeclaredMemberIndex\n+ 2 _Sequences.kt\nkotlin/sequences/SequencesKt___SequencesKt\n+ 3 Maps.kt\nkotlin/collections/MapsKt__MapsKt\n+ 4 _Collections.kt\nkotlin/collections/CollectionsKt___CollectionsKt\n*L\n1#1,66:1\n969#2:67\n998#2,3:68\n1001#2,3:78\n673#2:81\n703#2,4:82\n1136#2,3:95\n1136#2,3:98\n355#3,7:71\n764#4:86\n855#4,2:87\n1192#4,2:89\n1220#4,4:91\n*S KotlinDebug\n*F\n+ 1 DeclaredMemberIndex.kt\norg/jetbrains/kotlin/load/java/lazy/descriptors/ClassDeclaredMemberIndex\n*L\n52#1:67\n52#1:68,3\n52#1:78,3\n53#1:81\n53#1:82,4\n57#1:95,3\n60#1:98,3\n52#1:71,7\n54#1:86\n54#1:87,2\n54#1:89,2\n54#1:91,4\n*E\n"
 .end annotation
 
 
 # instance fields
-.field public final components:Ljava/util/Map;
+.field private final components:Ljava/util/Map;
     .annotation system Ldalvik/annotation/Signature;
         value = {
             "Ljava/util/Map<",
@@ -24,7 +24,7 @@
     .end annotation
 .end field
 
-.field public final fields:Ljava/util/Map;
+.field private final fields:Ljava/util/Map;
     .annotation system Ldalvik/annotation/Signature;
         value = {
             "Ljava/util/Map<",
@@ -35,9 +35,9 @@
     .end annotation
 .end field
 
-.field public final jClass:Lkotlin/reflect/jvm/internal/impl/load/java/structure/JavaClass;
+.field private final jClass:Lkotlin/reflect/jvm/internal/impl/load/java/structure/JavaClass;
 
-.field public final memberFilter:Lkotlin/jvm/functions/Function1;
+.field private final memberFilter:Lkotlin/jvm/functions/Function1;
     .annotation system Ldalvik/annotation/Signature;
         value = {
             "Lkotlin/jvm/functions/Function1<",
@@ -48,7 +48,7 @@
     .end annotation
 .end field
 
-.field public final methodFilter:Lkotlin/jvm/functions/Function1;
+.field private final methodFilter:Lkotlin/jvm/functions/Function1;
     .annotation system Ldalvik/annotation/Signature;
         value = {
             "Lkotlin/jvm/functions/Function1<",
@@ -59,7 +59,7 @@
     .end annotation
 .end field
 
-.field public final methods:Ljava/util/Map;
+.field private final methods:Ljava/util/Map;
     .annotation system Ldalvik/annotation/Signature;
         value = {
             "Ljava/util/Map<",
@@ -148,7 +148,7 @@
 
     move-result-object v1
 
-    invoke-virtual {p2, v1}, Ljava/util/LinkedHashMap;->get(Ljava/lang/Object;)Ljava/lang/Object;
+    invoke-interface {p2, v1}, Ljava/util/Map;->get(Ljava/lang/Object;)Ljava/lang/Object;
 
     move-result-object v2
 
@@ -262,7 +262,7 @@
 
     if-eqz v2, :cond_3
 
-    invoke-virtual {v0, v1}, Ljava/util/ArrayList;->add(Ljava/lang/Object;)Z
+    invoke-interface {v0, v1}, Ljava/util/Collection;->add(Ljava/lang/Object;)Z
 
     goto :goto_2
 
@@ -288,7 +288,7 @@
 
     invoke-direct {p2, p1}, Ljava/util/LinkedHashMap;-><init>(I)V
 
-    invoke-virtual {v0}, Ljava/util/ArrayList;->iterator()Ljava/util/Iterator;
+    invoke-interface {v0}, Ljava/lang/Iterable;->iterator()Ljava/util/Iterator;
 
     move-result-object p1
 
@@ -321,10 +321,22 @@
     return-void
 .end method
 
+.method public static final synthetic access$getMemberFilter$p(Lkotlin/reflect/jvm/internal/impl/load/java/lazy/descriptors/ClassDeclaredMemberIndex;)Lkotlin/jvm/functions/Function1;
+    .locals 0
+
+    iget-object p0, p0, Lkotlin/reflect/jvm/internal/impl/load/java/lazy/descriptors/ClassDeclaredMemberIndex;->memberFilter:Lkotlin/jvm/functions/Function1;
+
+    return-object p0
+.end method
+
 
 # virtual methods
 .method public findFieldByName(Lkotlin/reflect/jvm/internal/impl/name/Name;)Lkotlin/reflect/jvm/internal/impl/load/java/structure/JavaField;
     .locals 1
+
+    const-string v0, "name"
+
+    invoke-static {p1, v0}, Lkotlin/jvm/internal/Intrinsics;->checkNotNullParameter(Ljava/lang/Object;Ljava/lang/String;)V
 
     iget-object v0, p0, Lkotlin/reflect/jvm/internal/impl/load/java/lazy/descriptors/ClassDeclaredMemberIndex;->fields:Ljava/util/Map;
 
@@ -436,7 +448,7 @@
 
     move-result-object v0
 
-    check-cast v0, Lkotlin/reflect/jvm/internal/impl/load/java/structure/JavaNamedElement;
+    check-cast v0, Lkotlin/reflect/jvm/internal/impl/load/java/structure/JavaField;
 
     invoke-interface {v0}, Lkotlin/reflect/jvm/internal/impl/load/java/structure/JavaNamedElement;->getName()Lkotlin/reflect/jvm/internal/impl/name/Name;
 
@@ -498,7 +510,7 @@
 
     move-result-object v0
 
-    check-cast v0, Lkotlin/reflect/jvm/internal/impl/load/java/structure/JavaNamedElement;
+    check-cast v0, Lkotlin/reflect/jvm/internal/impl/load/java/structure/JavaMethod;
 
     invoke-interface {v0}, Lkotlin/reflect/jvm/internal/impl/load/java/structure/JavaNamedElement;->getName()Lkotlin/reflect/jvm/internal/impl/name/Name;
 

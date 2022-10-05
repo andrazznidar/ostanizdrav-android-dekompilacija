@@ -10,10 +10,7 @@
         "Ljava/lang/Object;",
         ">",
         "Lkotlin/collections/AbstractMutableSet<",
-        "TE;>;",
-        "Ljava/util/Set<",
-        "TE;>;",
-        "Lkotlin/jvm/internal/markers/KMutableSet;"
+        "TE;>;"
     }
 .end annotation
 
@@ -229,7 +226,7 @@
 
     invoke-virtual {v0}, Lkotlin/collections/builders/MapBuilder;->checkIsMutable$kotlin_stdlib()V
 
-    invoke-super {p0, p1}, Ljava/util/AbstractCollection;->retainAll(Ljava/util/Collection;)Z
+    invoke-super {p0, p1}, Ljava/util/AbstractSet;->retainAll(Ljava/util/Collection;)Z
 
     move-result p1
 

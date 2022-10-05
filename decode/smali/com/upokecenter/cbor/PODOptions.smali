@@ -29,17 +29,17 @@
 
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
-    new-instance v0, Lokhttp3/ConnectionPool;
+    new-instance v0, Lcom/upokecenter/cbor/OptionsParser;
 
     const-string v1, ""
 
-    invoke-direct {v0, v1}, Lokhttp3/ConnectionPool;-><init>(Ljava/lang/String;)V
+    invoke-direct {v0, v1}, Lcom/upokecenter/cbor/OptionsParser;-><init>(Ljava/lang/String;)V
 
     const/4 v1, 0x1
 
     const-string/jumbo v2, "usecamelcase"
 
-    invoke-virtual {v0, v2, v1}, Lokhttp3/ConnectionPool;->GetBoolean(Ljava/lang/String;Z)Z
+    invoke-virtual {v0, v2, v1}, Lcom/upokecenter/cbor/OptionsParser;->GetBoolean(Ljava/lang/String;Z)Z
 
     move-result v0
 

@@ -75,7 +75,7 @@
     return-void
 .end method
 
-.method public static createWindowInsetsInstance()Landroid/view/WindowInsets;
+.method private static createWindowInsetsInstance()Landroid/view/WindowInsets;
     .locals 7
 
     sget-boolean v0, Landroidx/core/view/WindowInsetsCompat$BuilderImpl20;->sConsumedFieldFetched:Z

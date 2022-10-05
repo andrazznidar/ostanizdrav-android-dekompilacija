@@ -5,11 +5,22 @@
 
 # annotations
 .annotation system Ldalvik/annotation/SourceDebugExtension;
-    value = "SMAP\nCoronaTestRepository.kt\nKotlin\n*S Kotlin\n*F\n+ 1 CoronaTestRepository.kt\nde/rki/coronawarnapp/coronatest/CoronaTestRepository\n+ 2 Transform.kt\nkotlinx/coroutines/flow/FlowKt__TransformKt\n+ 3 Emitters.kt\nkotlinx/coroutines/flow/FlowKt__EmittersKt\n+ 4 SafeCollector.common.kt\nkotlinx/coroutines/flow/internal/SafeCollector_commonKt\n+ 5 _Collections.kt\nkotlin/collections/CollectionsKt___CollectionsKt\n*L\n1#1,293:1\n47#2:294\n49#2:298\n50#3:295\n55#3:297\n106#4:296\n616#5,12:299\n764#5:311\n855#5,2:312\n1547#5:314\n1618#5,3:315\n1849#5,2:318\n1849#5,2:320\n764#5:322\n855#5,2:323\n*S KotlinDebug\n*F\n+ 1 CoronaTestRepository.kt\nde/rki/coronawarnapp/coronatest/CoronaTestRepository\n*L\n58#1:294\n58#1:298\n58#1:295\n58#1:297\n58#1:296\n76#1:299,12\n170#1:311\n170#1:312,2\n171#1:314\n171#1:315,3\n175#1:318,2\n207#1:320,2\n213#1:322\n213#1:323,2\n*E\n"
+    value = "SMAP\nCoronaTestRepository.kt\nKotlin\n*S Kotlin\n*F\n+ 1 CoronaTestRepository.kt\nde/rki/coronawarnapp/coronatest/CoronaTestRepository\n+ 2 Transform.kt\nkotlinx/coroutines/flow/FlowKt__TransformKt\n+ 3 Emitters.kt\nkotlinx/coroutines/flow/FlowKt__EmittersKt\n+ 4 SafeCollector.common.kt\nkotlinx/coroutines/flow/internal/SafeCollector_commonKt\n+ 5 _Collections.kt\nkotlin/collections/CollectionsKt___CollectionsKt\n*L\n1#1,341:1\n47#2:342\n49#2:346\n47#2:347\n49#2:351\n47#2:352\n49#2:356\n50#3:343\n55#3:345\n50#3:348\n55#3:350\n50#3:353\n55#3:355\n106#4:344\n106#4:349\n106#4:354\n616#5,12:357\n764#5:369\n855#5,2:370\n1547#5:372\n1618#5,3:373\n1849#5,2:376\n1849#5,2:378\n764#5:380\n855#5,2:381\n*S KotlinDebug\n*F\n+ 1 CoronaTestRepository.kt\nde/rki/coronawarnapp/coronatest/CoronaTestRepository\n*L\n62#1:342\n62#1:346\n67#1:347\n67#1:351\n74#1:352\n74#1:356\n62#1:343\n62#1:345\n67#1:348\n67#1:350\n74#1:353\n74#1:355\n62#1:344\n67#1:349\n74#1:354\n94#1:357,12\n213#1:369\n213#1:370,2\n214#1:372\n214#1:373,3\n218#1:376,2\n250#1:378,2\n256#1:380\n256#1:381,2\n*E\n"
 .end annotation
 
 
 # instance fields
+.field public final allCoronaTests:Lkotlinx/coroutines/flow/Flow;
+    .annotation system Ldalvik/annotation/Signature;
+        value = {
+            "Lkotlinx/coroutines/flow/Flow<",
+            "Ljava/util/Set<",
+            "Lde/rki/coronawarnapp/coronatest/type/CoronaTest;",
+            ">;>;"
+        }
+    .end annotation
+.end field
+
 .field public final appScope:Lkotlinx/coroutines/CoroutineScope;
 
 .field public final contactDiaryRepository:Lde/rki/coronawarnapp/contactdiary/storage/repo/ContactDiaryRepository;
@@ -47,6 +58,17 @@
             "Ljava/util/Set<",
             "Lde/rki/coronawarnapp/coronatest/type/CoronaTestProcessor;",
             ">;"
+        }
+    .end annotation
+.end field
+
+.field public final recycledCoronaTests:Lkotlinx/coroutines/flow/Flow;
+    .annotation system Ldalvik/annotation/Signature;
+        value = {
+            "Lkotlinx/coroutines/flow/Flow<",
+            "Ljava/util/Set<",
+            "Lde/rki/coronawarnapp/coronatest/type/CoronaTest;",
+            ">;>;"
         }
     .end annotation
 .end field
@@ -128,8 +150,6 @@
 
     invoke-direct {v3, p4}, Lkotlinx/coroutines/internal/ContextScope;-><init>(Lkotlin/coroutines/CoroutineContext;)V
 
-    sget p4, Lkotlinx/coroutines/flow/SharingStarted;->$r8$clinit:I
-
     sget-object v5, Lkotlinx/coroutines/flow/SharingStarted$Companion;->Eagerly:Lkotlinx/coroutines/flow/SharingStarted;
 
     new-instance v6, Lde/rki/coronawarnapp/coronatest/CoronaTestRepository$internalData$1;
@@ -156,7 +176,19 @@
 
     invoke-direct {p5, p3}, Lde/rki/coronawarnapp/coronatest/CoronaTestRepository$special$$inlined$map$1;-><init>(Lkotlinx/coroutines/flow/Flow;)V
 
-    iput-object p5, p0, Lde/rki/coronawarnapp/coronatest/CoronaTestRepository;->coronaTests:Lkotlinx/coroutines/flow/Flow;
+    iput-object p5, p0, Lde/rki/coronawarnapp/coronatest/CoronaTestRepository;->allCoronaTests:Lkotlinx/coroutines/flow/Flow;
+
+    new-instance p6, Lde/rki/coronawarnapp/coronatest/CoronaTestRepository$special$$inlined$map$2;
+
+    invoke-direct {p6, p5}, Lde/rki/coronawarnapp/coronatest/CoronaTestRepository$special$$inlined$map$2;-><init>(Lkotlinx/coroutines/flow/Flow;)V
+
+    iput-object p6, p0, Lde/rki/coronawarnapp/coronatest/CoronaTestRepository;->coronaTests:Lkotlinx/coroutines/flow/Flow;
+
+    new-instance p6, Lde/rki/coronawarnapp/coronatest/CoronaTestRepository$special$$inlined$map$3;
+
+    invoke-direct {p6, p5}, Lde/rki/coronawarnapp/coronatest/CoronaTestRepository$special$$inlined$map$3;-><init>(Lkotlinx/coroutines/flow/Flow;)V
+
+    iput-object p6, p0, Lde/rki/coronawarnapp/coronatest/CoronaTestRepository;->recycledCoronaTests:Lkotlinx/coroutines/flow/Flow;
 
     new-instance p5, Lde/rki/coronawarnapp/coronatest/CoronaTestRepository$1;
 
@@ -214,51 +246,51 @@
 
     move-result-object v0
 
-    const/4 v1, 0x0
+    const/4 v1, 0x1
 
     const/4 v2, 0x0
 
-    move v3, v1
+    const/4 v3, 0x0
+
+    move v4, v2
 
     :cond_0
     :goto_0
     invoke-interface {v0}, Ljava/util/Iterator;->hasNext()Z
 
-    move-result v4
+    move-result v5
 
-    if-eqz v4, :cond_3
+    if-eqz v5, :cond_3
 
     invoke-interface {v0}, Ljava/util/Iterator;->next()Ljava/lang/Object;
 
-    move-result-object v4
-
-    move-object v5, v4
-
-    check-cast v5, Lde/rki/coronawarnapp/coronatest/type/CoronaTestProcessor;
-
-    invoke-interface {v5}, Lde/rki/coronawarnapp/coronatest/type/CoronaTestProcessor;->getType()Lde/rki/coronawarnapp/coronatest/type/CoronaTest$Type;
-
     move-result-object v5
 
-    const/4 v6, 0x1
+    move-object v6, v5
 
-    if-ne v5, p1, :cond_1
+    check-cast v6, Lde/rki/coronawarnapp/coronatest/type/CoronaTestProcessor;
 
-    move v5, v6
+    invoke-interface {v6}, Lde/rki/coronawarnapp/coronatest/type/CoronaTestProcessor;->getType()Lde/rki/coronawarnapp/coronatest/type/CoronaTest$Type;
+
+    move-result-object v6
+
+    if-ne v6, p1, :cond_1
+
+    move v6, v1
 
     goto :goto_1
 
     :cond_1
-    move v5, v1
+    move v6, v2
 
     :goto_1
-    if-eqz v5, :cond_0
+    if-eqz v6, :cond_0
 
-    if-nez v3, :cond_2
+    if-nez v4, :cond_2
 
-    move-object v2, v4
+    move v4, v1
 
-    move v3, v6
+    move-object v3, v5
 
     goto :goto_0
 
@@ -272,11 +304,11 @@
     throw p1
 
     :cond_3
-    if-eqz v3, :cond_4
+    if-eqz v4, :cond_4
 
-    check-cast v2, Lde/rki/coronawarnapp/coronatest/type/CoronaTestProcessor;
+    check-cast v3, Lde/rki/coronawarnapp/coronatest/type/CoronaTestProcessor;
 
-    return-object v2
+    return-object v3
 
     :cond_4
     new-instance p1, Ljava/util/NoSuchElementException;
@@ -396,6 +428,130 @@
     return-object p1
 
     :cond_0
+    sget-object p1, Lkotlin/Unit;->INSTANCE:Lkotlin/Unit;
+
+    return-object p1
+.end method
+
+.method public final recycleTest(Ljava/lang/String;Lkotlin/coroutines/Continuation;)Ljava/lang/Object;
+    .locals 7
+    .annotation system Ldalvik/annotation/Signature;
+        value = {
+            "(",
+            "Ljava/lang/String;",
+            "Lkotlin/coroutines/Continuation<",
+            "-",
+            "Lkotlin/Unit;",
+            ">;)",
+            "Ljava/lang/Object;"
+        }
+    .end annotation
+
+    instance-of v0, p2, Lde/rki/coronawarnapp/coronatest/CoronaTestRepository$recycleTest$1;
+
+    if-eqz v0, :cond_0
+
+    move-object v0, p2
+
+    check-cast v0, Lde/rki/coronawarnapp/coronatest/CoronaTestRepository$recycleTest$1;
+
+    iget v1, v0, Lde/rki/coronawarnapp/coronatest/CoronaTestRepository$recycleTest$1;->label:I
+
+    const/high16 v2, -0x80000000
+
+    and-int v3, v1, v2
+
+    if-eqz v3, :cond_0
+
+    sub-int/2addr v1, v2
+
+    iput v1, v0, Lde/rki/coronawarnapp/coronatest/CoronaTestRepository$recycleTest$1;->label:I
+
+    goto :goto_0
+
+    :cond_0
+    new-instance v0, Lde/rki/coronawarnapp/coronatest/CoronaTestRepository$recycleTest$1;
+
+    invoke-direct {v0, p0, p2}, Lde/rki/coronawarnapp/coronatest/CoronaTestRepository$recycleTest$1;-><init>(Lde/rki/coronawarnapp/coronatest/CoronaTestRepository;Lkotlin/coroutines/Continuation;)V
+
+    :goto_0
+    iget-object p2, v0, Lde/rki/coronawarnapp/coronatest/CoronaTestRepository$recycleTest$1;->result:Ljava/lang/Object;
+
+    sget-object v1, Lkotlin/coroutines/intrinsics/CoroutineSingletons;->COROUTINE_SUSPENDED:Lkotlin/coroutines/intrinsics/CoroutineSingletons;
+
+    iget v2, v0, Lde/rki/coronawarnapp/coronatest/CoronaTestRepository$recycleTest$1;->label:I
+
+    const-string v3, "CoronaTestRepository"
+
+    const/4 v4, 0x1
+
+    if-eqz v2, :cond_2
+
+    if-ne v2, v4, :cond_1
+
+    :try_start_0
+    invoke-static {p2}, Lkotlin/ResultKt;->throwOnFailure(Ljava/lang/Object;)V
+    :try_end_0
+    .catch Lde/rki/coronawarnapp/coronatest/errors/CoronaTestNotFoundException; {:try_start_0 .. :try_end_0} :catch_0
+
+    goto :goto_1
+
+    :cond_1
+    new-instance p1, Ljava/lang/IllegalStateException;
+
+    const-string p2, "call to \'resume\' before \'invoke\' with coroutine"
+
+    invoke-direct {p1, p2}, Ljava/lang/IllegalStateException;-><init>(Ljava/lang/String;)V
+
+    throw p1
+
+    :cond_2
+    invoke-static {p2}, Lkotlin/ResultKt;->throwOnFailure(Ljava/lang/Object;)V
+
+    :try_start_1
+    sget-object p2, Ltimber/log/Timber;->Forest:Ltimber/log/Timber$Forest;
+
+    invoke-virtual {p2, v3}, Ltimber/log/Timber$Forest;->tag(Ljava/lang/String;)Ltimber/log/Timber$Tree;
+
+    const-string v2, "recycleTest(identifier=%s)"
+
+    new-array v5, v4, [Ljava/lang/Object;
+
+    const/4 v6, 0x0
+
+    aput-object p1, v5, v6
+
+    invoke-virtual {p2, v2, v5}, Ltimber/log/Timber$Forest;->d(Ljava/lang/String;[Ljava/lang/Object;)V
+
+    new-instance p2, Lde/rki/coronawarnapp/coronatest/CoronaTestRepository$recycleTest$2;
+
+    const/4 v2, 0x0
+
+    invoke-direct {p2, v2}, Lde/rki/coronawarnapp/coronatest/CoronaTestRepository$recycleTest$2;-><init>(Lkotlin/coroutines/Continuation;)V
+
+    iput v4, v0, Lde/rki/coronawarnapp/coronatest/CoronaTestRepository$recycleTest$1;->label:I
+
+    invoke-virtual {p0, p1, p2, v0}, Lde/rki/coronawarnapp/coronatest/CoronaTestRepository;->modifyTest(Ljava/lang/String;Lkotlin/jvm/functions/Function3;Lkotlin/coroutines/Continuation;)Ljava/lang/Object;
+
+    move-result-object p1
+    :try_end_1
+    .catch Lde/rki/coronawarnapp/coronatest/errors/CoronaTestNotFoundException; {:try_start_1 .. :try_end_1} :catch_0
+
+    if-ne p1, v1, :cond_3
+
+    return-object v1
+
+    :catch_0
+    move-exception p1
+
+    sget-object p2, Ltimber/log/Timber;->Forest:Ltimber/log/Timber$Forest;
+
+    invoke-virtual {p2, v3}, Ltimber/log/Timber$Forest;->tag(Ljava/lang/String;)Ltimber/log/Timber$Tree;
+
+    invoke-virtual {p2, p1}, Ltimber/log/Timber$Forest;->e(Ljava/lang/Throwable;)V
+
+    :cond_3
+    :goto_1
     sget-object p1, Lkotlin/Unit;->INSTANCE:Lkotlin/Unit;
 
     return-object p1
@@ -576,9 +732,7 @@
 
     invoke-virtual {v2, v13, v5}, Ltimber/log/Timber$Forest;->d(Ljava/lang/String;[Ljava/lang/Object;)V
 
-    iget-object v2, v0, Lde/rki/coronawarnapp/coronatest/CoronaTestRepository;->internalData:Lde/rki/coronawarnapp/util/flow/HotDataFlow;
-
-    iget-object v2, v2, Lde/rki/coronawarnapp/util/flow/HotDataFlow;->data:Lkotlinx/coroutines/flow/Flow;
+    iget-object v2, v0, Lde/rki/coronawarnapp/coronatest/CoronaTestRepository;->coronaTests:Lkotlinx/coroutines/flow/Flow;
 
     iput-object v0, v3, Lde/rki/coronawarnapp/coronatest/CoronaTestRepository$refresh$1;->L$0:Ljava/lang/Object;
 
@@ -598,11 +752,7 @@
     move-object v5, v0
 
     :goto_1
-    check-cast v2, Ljava/util/Map;
-
-    invoke-interface {v2}, Ljava/util/Map;->values()Ljava/util/Collection;
-
-    move-result-object v2
+    check-cast v2, Ljava/lang/Iterable;
 
     new-instance v13, Ljava/util/ArrayList;
 
@@ -1166,6 +1316,130 @@
     iget-object p1, p1, Lkotlin/jvm/internal/Ref$ObjectRef;->element:Ljava/lang/Object;
 
     invoke-static {p1}, Lkotlin/jvm/internal/Intrinsics;->checkNotNull(Ljava/lang/Object;)V
+
+    return-object p1
+.end method
+
+.method public final restoreTest(Ljava/lang/String;Lkotlin/coroutines/Continuation;)Ljava/lang/Object;
+    .locals 7
+    .annotation system Ldalvik/annotation/Signature;
+        value = {
+            "(",
+            "Ljava/lang/String;",
+            "Lkotlin/coroutines/Continuation<",
+            "-",
+            "Lkotlin/Unit;",
+            ">;)",
+            "Ljava/lang/Object;"
+        }
+    .end annotation
+
+    instance-of v0, p2, Lde/rki/coronawarnapp/coronatest/CoronaTestRepository$restoreTest$1;
+
+    if-eqz v0, :cond_0
+
+    move-object v0, p2
+
+    check-cast v0, Lde/rki/coronawarnapp/coronatest/CoronaTestRepository$restoreTest$1;
+
+    iget v1, v0, Lde/rki/coronawarnapp/coronatest/CoronaTestRepository$restoreTest$1;->label:I
+
+    const/high16 v2, -0x80000000
+
+    and-int v3, v1, v2
+
+    if-eqz v3, :cond_0
+
+    sub-int/2addr v1, v2
+
+    iput v1, v0, Lde/rki/coronawarnapp/coronatest/CoronaTestRepository$restoreTest$1;->label:I
+
+    goto :goto_0
+
+    :cond_0
+    new-instance v0, Lde/rki/coronawarnapp/coronatest/CoronaTestRepository$restoreTest$1;
+
+    invoke-direct {v0, p0, p2}, Lde/rki/coronawarnapp/coronatest/CoronaTestRepository$restoreTest$1;-><init>(Lde/rki/coronawarnapp/coronatest/CoronaTestRepository;Lkotlin/coroutines/Continuation;)V
+
+    :goto_0
+    iget-object p2, v0, Lde/rki/coronawarnapp/coronatest/CoronaTestRepository$restoreTest$1;->result:Ljava/lang/Object;
+
+    sget-object v1, Lkotlin/coroutines/intrinsics/CoroutineSingletons;->COROUTINE_SUSPENDED:Lkotlin/coroutines/intrinsics/CoroutineSingletons;
+
+    iget v2, v0, Lde/rki/coronawarnapp/coronatest/CoronaTestRepository$restoreTest$1;->label:I
+
+    const-string v3, "CoronaTestRepository"
+
+    const/4 v4, 0x1
+
+    if-eqz v2, :cond_2
+
+    if-ne v2, v4, :cond_1
+
+    :try_start_0
+    invoke-static {p2}, Lkotlin/ResultKt;->throwOnFailure(Ljava/lang/Object;)V
+    :try_end_0
+    .catch Lde/rki/coronawarnapp/coronatest/errors/CoronaTestNotFoundException; {:try_start_0 .. :try_end_0} :catch_0
+
+    goto :goto_1
+
+    :cond_1
+    new-instance p1, Ljava/lang/IllegalStateException;
+
+    const-string p2, "call to \'resume\' before \'invoke\' with coroutine"
+
+    invoke-direct {p1, p2}, Ljava/lang/IllegalStateException;-><init>(Ljava/lang/String;)V
+
+    throw p1
+
+    :cond_2
+    invoke-static {p2}, Lkotlin/ResultKt;->throwOnFailure(Ljava/lang/Object;)V
+
+    :try_start_1
+    sget-object p2, Ltimber/log/Timber;->Forest:Ltimber/log/Timber$Forest;
+
+    invoke-virtual {p2, v3}, Ltimber/log/Timber$Forest;->tag(Ljava/lang/String;)Ltimber/log/Timber$Tree;
+
+    const-string v2, "restoreTest(identifier=%s)"
+
+    new-array v5, v4, [Ljava/lang/Object;
+
+    const/4 v6, 0x0
+
+    aput-object p1, v5, v6
+
+    invoke-virtual {p2, v2, v5}, Ltimber/log/Timber$Forest;->d(Ljava/lang/String;[Ljava/lang/Object;)V
+
+    new-instance p2, Lde/rki/coronawarnapp/coronatest/CoronaTestRepository$restoreTest$2;
+
+    const/4 v2, 0x0
+
+    invoke-direct {p2, v2}, Lde/rki/coronawarnapp/coronatest/CoronaTestRepository$restoreTest$2;-><init>(Lkotlin/coroutines/Continuation;)V
+
+    iput v4, v0, Lde/rki/coronawarnapp/coronatest/CoronaTestRepository$restoreTest$1;->label:I
+
+    invoke-virtual {p0, p1, p2, v0}, Lde/rki/coronawarnapp/coronatest/CoronaTestRepository;->modifyTest(Ljava/lang/String;Lkotlin/jvm/functions/Function3;Lkotlin/coroutines/Continuation;)Ljava/lang/Object;
+
+    move-result-object p1
+    :try_end_1
+    .catch Lde/rki/coronawarnapp/coronatest/errors/CoronaTestNotFoundException; {:try_start_1 .. :try_end_1} :catch_0
+
+    if-ne p1, v1, :cond_3
+
+    return-object v1
+
+    :catch_0
+    move-exception p1
+
+    sget-object p2, Ltimber/log/Timber;->Forest:Ltimber/log/Timber$Forest;
+
+    invoke-virtual {p2, v3}, Ltimber/log/Timber$Forest;->tag(Ljava/lang/String;)Ltimber/log/Timber$Tree;
+
+    invoke-virtual {p2, p1}, Ltimber/log/Timber$Forest;->e(Ljava/lang/Throwable;)V
+
+    :cond_3
+    :goto_1
+    sget-object p1, Lkotlin/Unit;->INSTANCE:Lkotlin/Unit;
 
     return-object p1
 .end method

@@ -7,7 +7,7 @@
 .method public constructor <init>(Ljava/lang/Class;Ljava/lang/String;Ljava/lang/String;I)V
     .locals 6
 
-    sget-object v1, Lkotlin/jvm/internal/CallableReference$NoReceiver;->INSTANCE:Lkotlin/jvm/internal/CallableReference$NoReceiver;
+    sget-object v1, Lkotlin/jvm/internal/CallableReference;->NO_RECEIVER:Ljava/lang/Object;
 
     move-object v0, p0
 
@@ -27,7 +27,7 @@
 .method public constructor <init>(Lkotlin/reflect/KDeclarationContainer;Ljava/lang/String;Ljava/lang/String;)V
     .locals 6
 
-    sget-object v1, Lkotlin/jvm/internal/CallableReference$NoReceiver;->INSTANCE:Lkotlin/jvm/internal/CallableReference$NoReceiver;
+    sget-object v1, Lkotlin/jvm/internal/CallableReference;->NO_RECEIVER:Ljava/lang/Object;
 
     move-object v0, p1
 
@@ -74,4 +74,28 @@
     move-result-object p1
 
     return-object p1
+.end method
+
+.method public set(Ljava/lang/Object;Ljava/lang/Object;)V
+    .locals 3
+
+    invoke-virtual {p0}, Lkotlin/jvm/internal/MutablePropertyReference1;->getSetter()Lkotlin/reflect/KMutableProperty1$Setter;
+
+    move-result-object v0
+
+    const/4 v1, 0x2
+
+    new-array v1, v1, [Ljava/lang/Object;
+
+    const/4 v2, 0x0
+
+    aput-object p1, v1, v2
+
+    const/4 p1, 0x1
+
+    aput-object p2, v1, p1
+
+    invoke-interface {v0, v1}, Lkotlin/reflect/KCallable;->call([Ljava/lang/Object;)Ljava/lang/Object;
+
+    return-void
 .end method

@@ -238,13 +238,7 @@
 
     invoke-virtual {v2, v3}, Landroid/graphics/Paint;->setAntiAlias(Z)V
 
-    new-instance v2, Lcom/google/android/material/shape/AbsoluteCornerSize;
-
-    int-to-float v3, v1
-
-    invoke-direct {v2, v3}, Lcom/google/android/material/shape/AbsoluteCornerSize;-><init>(F)V
-
-    invoke-static {p1, p2, v1, v0, v2}, Lcom/google/android/material/shape/ShapeAppearanceModel;->builder(Landroid/content/Context;Landroid/util/AttributeSet;IILcom/google/android/material/shape/CornerSize;)Lcom/google/android/material/shape/ShapeAppearanceModel$Builder;
+    invoke-static {p1, p2, v1, v0}, Lcom/google/android/material/shape/ShapeAppearanceModel;->builder(Landroid/content/Context;Landroid/util/AttributeSet;II)Lcom/google/android/material/shape/ShapeAppearanceModel$Builder;
 
     move-result-object p1
 
@@ -426,7 +420,7 @@
 .method public getPaddingBottom()I
     .locals 2
 
-    invoke-super {p0}, Landroid/view/View;->getPaddingBottom()I
+    invoke-super {p0}, Landroid/widget/ImageView;->getPaddingBottom()I
 
     move-result v0
 
@@ -442,7 +436,7 @@
 .method public getPaddingEnd()I
     .locals 2
 
-    invoke-super {p0}, Landroid/view/View;->getPaddingEnd()I
+    invoke-super {p0}, Landroid/widget/ImageView;->getPaddingEnd()I
 
     move-result v0
 
@@ -458,7 +452,7 @@
 .method public getPaddingLeft()I
     .locals 2
 
-    invoke-super {p0}, Landroid/view/View;->getPaddingLeft()I
+    invoke-super {p0}, Landroid/widget/ImageView;->getPaddingLeft()I
 
     move-result v0
 
@@ -474,7 +468,7 @@
 .method public getPaddingRight()I
     .locals 2
 
-    invoke-super {p0}, Landroid/view/View;->getPaddingRight()I
+    invoke-super {p0}, Landroid/widget/ImageView;->getPaddingRight()I
 
     move-result v0
 
@@ -490,7 +484,7 @@
 .method public getPaddingStart()I
     .locals 2
 
-    invoke-super {p0}, Landroid/view/View;->getPaddingStart()I
+    invoke-super {p0}, Landroid/widget/ImageView;->getPaddingStart()I
 
     move-result v0
 
@@ -506,7 +500,7 @@
 .method public getPaddingTop()I
     .locals 2
 
-    invoke-super {p0}, Landroid/view/View;->getPaddingTop()I
+    invoke-super {p0}, Landroid/widget/ImageView;->getPaddingTop()I
 
     move-result v0
 
@@ -724,19 +718,19 @@
     goto :goto_0
 
     :cond_2
-    invoke-super {p0}, Landroid/view/View;->getPaddingLeft()I
+    invoke-super {p0}, Landroid/widget/ImageView;->getPaddingLeft()I
 
     move-result p1
 
-    invoke-super {p0}, Landroid/view/View;->getPaddingTop()I
+    invoke-super {p0}, Landroid/widget/ImageView;->getPaddingTop()I
 
     move-result p2
 
-    invoke-super {p0}, Landroid/view/View;->getPaddingRight()I
+    invoke-super {p0}, Landroid/widget/ImageView;->getPaddingRight()I
 
     move-result v0
 
-    invoke-super {p0}, Landroid/view/View;->getPaddingBottom()I
+    invoke-super {p0}, Landroid/widget/ImageView;->getPaddingBottom()I
 
     move-result v1
 
@@ -746,19 +740,19 @@
 
     :cond_3
     :goto_0
-    invoke-super {p0}, Landroid/view/View;->getPaddingStart()I
+    invoke-super {p0}, Landroid/widget/ImageView;->getPaddingStart()I
 
     move-result p1
 
-    invoke-super {p0}, Landroid/view/View;->getPaddingTop()I
+    invoke-super {p0}, Landroid/widget/ImageView;->getPaddingTop()I
 
     move-result p2
 
-    invoke-super {p0}, Landroid/view/View;->getPaddingEnd()I
+    invoke-super {p0}, Landroid/widget/ImageView;->getPaddingEnd()I
 
     move-result v0
 
-    invoke-super {p0}, Landroid/view/View;->getPaddingBottom()I
+    invoke-super {p0}, Landroid/widget/ImageView;->getPaddingBottom()I
 
     move-result v1
 
@@ -770,7 +764,7 @@
 .method public onSizeChanged(IIII)V
     .locals 0
 
-    invoke-super {p0, p1, p2, p3, p4}, Landroid/view/View;->onSizeChanged(IIII)V
+    invoke-super {p0, p1, p2, p3, p4}, Landroid/widget/ImageView;->onSizeChanged(IIII)V
 
     invoke-virtual {p0, p1, p2}, Lcom/google/android/material/imageview/ShapeableImageView;->updateShapeMask(II)V
 
@@ -804,7 +798,7 @@
 
     add-int/2addr p3, p4
 
-    invoke-super {p0, v0, p1, p2, p3}, Landroid/view/View;->setPadding(IIII)V
+    invoke-super {p0, v0, p1, p2, p3}, Landroid/widget/ImageView;->setPadding(IIII)V
 
     return-void
 .end method
@@ -836,7 +830,7 @@
 
     add-int/2addr p3, p4
 
-    invoke-super {p0, v0, p1, p2, p3}, Landroid/view/View;->setPaddingRelative(IIII)V
+    invoke-super {p0, v0, p1, p2, p3}, Landroid/widget/ImageView;->setPaddingRelative(IIII)V
 
     return-void
 .end method

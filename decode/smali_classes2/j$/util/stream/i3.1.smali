@@ -1,85 +1,69 @@
-.class public abstract Lj$/util/stream/i3;
-.super Ljava/lang/Object;
+.class final Lj$/util/stream/i3;
+.super Lj$/util/stream/j3;
 
 # interfaces
-.implements Lj$/util/stream/m3;
+.implements Lj$/util/function/t;
 
 
 # instance fields
-.field protected final a:Lj$/util/stream/n3;
+.field final c:[J
 
 
 # direct methods
-.method public constructor <init>(Lj$/util/stream/n3;)V
+.method constructor <init>(I)V
     .locals 0
 
-    invoke-direct {p0}, Ljava/lang/Object;-><init>()V
+    invoke-direct {p0}, Lj$/util/stream/j3;-><init>()V
 
-    invoke-static {p1}, Ljava/util/Objects;->requireNonNull(Ljava/lang/Object;)Ljava/lang/Object;
+    new-array p1, p1, [J
 
-    iput-object p1, p0, Lj$/util/stream/i3;->a:Lj$/util/stream/n3;
+    iput-object p1, p0, Lj$/util/stream/i3;->c:[J
 
     return-void
 .end method
 
 
 # virtual methods
-.method public synthetic b(Ljava/lang/Long;)V
-    .locals 0
+.method public a(Ljava/lang/Object;J)V
+    .locals 4
 
-    invoke-static {p0, p1}, Lj$/util/stream/p1;->c(Lj$/util/stream/m3;Ljava/lang/Long;)V
+    check-cast p1, Lj$/util/function/t;
 
+    const/4 v0, 0x0
+
+    :goto_0
+    int-to-long v1, v0
+
+    cmp-long v1, v1, p2
+
+    if-gez v1, :cond_0
+
+    iget-object v1, p0, Lj$/util/stream/i3;->c:[J
+
+    aget-wide v2, v1, v0
+
+    invoke-interface {p1, v2, v3}, Lj$/util/function/t;->d(J)V
+
+    add-int/lit8 v0, v0, 0x1
+
+    goto :goto_0
+
+    :cond_0
     return-void
 .end method
 
-.method public synthetic c(D)V
-    .locals 0
+.method public d(J)V
+    .locals 3
 
-    invoke-static {p0}, Lj$/util/stream/p1;->f(Lj$/util/stream/n3;)V
+    iget-object v0, p0, Lj$/util/stream/i3;->c:[J
 
-    const/4 p1, 0x0
+    iget v1, p0, Lj$/util/stream/j3;->b:I
 
-    throw p1
-.end method
+    add-int/lit8 v2, v1, 0x1
 
-.method public synthetic d(I)V
-    .locals 0
+    iput v2, p0, Lj$/util/stream/j3;->b:I
 
-    invoke-static {p0}, Lj$/util/stream/p1;->d(Lj$/util/stream/n3;)V
-
-    const/4 p1, 0x0
-
-    throw p1
-.end method
-
-.method public bridge synthetic i(Ljava/lang/Object;)V
-    .locals 0
-
-    check-cast p1, Ljava/lang/Long;
-
-    invoke-virtual {p0, p1}, Lj$/util/stream/i3;->b(Ljava/lang/Long;)V
+    aput-wide p1, v0, v1
 
     return-void
-.end method
-
-.method public w()V
-    .locals 1
-
-    iget-object v0, p0, Lj$/util/stream/i3;->a:Lj$/util/stream/n3;
-
-    invoke-interface {v0}, Lj$/util/stream/n3;->w()V
-
-    return-void
-.end method
-
-.method public z()Z
-    .locals 1
-
-    iget-object v0, p0, Lj$/util/stream/i3;->a:Lj$/util/stream/n3;
-
-    invoke-interface {v0}, Lj$/util/stream/n3;->z()Z
-
-    move-result v0
-
-    return v0
 .end method

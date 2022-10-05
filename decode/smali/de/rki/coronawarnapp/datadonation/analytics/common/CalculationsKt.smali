@@ -20,15 +20,25 @@
     return v0
 
     :cond_0
-    invoke-virtual {p0, p1}, Lorg/joda/time/base/BaseLocal;->isAfter(Lorg/joda/time/ReadablePartial;)Z
+    invoke-virtual {p0, p1}, Lorg/joda/time/LocalDate;->compareTo(Lorg/joda/time/ReadablePartial;)I
 
     move-result v1
 
-    if-eqz v1, :cond_1
+    if-lez v1, :cond_1
+
+    const/4 v1, 0x1
+
+    goto :goto_0
+
+    :cond_1
+    const/4 v1, 0x0
+
+    :goto_0
+    if-eqz v1, :cond_2
 
     return v0
 
-    :cond_1
+    :cond_2
     invoke-static {p0, p1}, Lorg/joda/time/Days;->daysBetween(Lorg/joda/time/ReadablePartial;Lorg/joda/time/ReadablePartial;)Lorg/joda/time/Days;
 
     move-result-object p0

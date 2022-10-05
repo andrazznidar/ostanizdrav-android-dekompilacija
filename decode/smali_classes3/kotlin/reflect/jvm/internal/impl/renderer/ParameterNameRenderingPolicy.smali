@@ -14,7 +14,7 @@
 
 
 # static fields
-.field public static final synthetic $VALUES:[Lkotlin/reflect/jvm/internal/impl/renderer/ParameterNameRenderingPolicy;
+.field private static final synthetic $VALUES:[Lkotlin/reflect/jvm/internal/impl/renderer/ParameterNameRenderingPolicy;
 
 .field public static final enum ALL:Lkotlin/reflect/jvm/internal/impl/renderer/ParameterNameRenderingPolicy;
 
@@ -24,8 +24,36 @@
 
 
 # direct methods
+.method private static final synthetic $values()[Lkotlin/reflect/jvm/internal/impl/renderer/ParameterNameRenderingPolicy;
+    .locals 3
+
+    const/4 v0, 0x3
+
+    new-array v0, v0, [Lkotlin/reflect/jvm/internal/impl/renderer/ParameterNameRenderingPolicy;
+
+    sget-object v1, Lkotlin/reflect/jvm/internal/impl/renderer/ParameterNameRenderingPolicy;->ALL:Lkotlin/reflect/jvm/internal/impl/renderer/ParameterNameRenderingPolicy;
+
+    const/4 v2, 0x0
+
+    aput-object v1, v0, v2
+
+    sget-object v1, Lkotlin/reflect/jvm/internal/impl/renderer/ParameterNameRenderingPolicy;->ONLY_NON_SYNTHESIZED:Lkotlin/reflect/jvm/internal/impl/renderer/ParameterNameRenderingPolicy;
+
+    const/4 v2, 0x1
+
+    aput-object v1, v0, v2
+
+    sget-object v1, Lkotlin/reflect/jvm/internal/impl/renderer/ParameterNameRenderingPolicy;->NONE:Lkotlin/reflect/jvm/internal/impl/renderer/ParameterNameRenderingPolicy;
+
+    const/4 v2, 0x2
+
+    aput-object v1, v0, v2
+
+    return-object v0
+.end method
+
 .method public static constructor <clinit>()V
-    .locals 7
+    .locals 3
 
     new-instance v0, Lkotlin/reflect/jvm/internal/impl/renderer/ParameterNameRenderingPolicy;
 
@@ -37,42 +65,36 @@
 
     sput-object v0, Lkotlin/reflect/jvm/internal/impl/renderer/ParameterNameRenderingPolicy;->ALL:Lkotlin/reflect/jvm/internal/impl/renderer/ParameterNameRenderingPolicy;
 
-    new-instance v1, Lkotlin/reflect/jvm/internal/impl/renderer/ParameterNameRenderingPolicy;
+    new-instance v0, Lkotlin/reflect/jvm/internal/impl/renderer/ParameterNameRenderingPolicy;
 
-    const-string v3, "ONLY_NON_SYNTHESIZED"
+    const-string v1, "ONLY_NON_SYNTHESIZED"
 
-    const/4 v4, 0x1
+    const/4 v2, 0x1
 
-    invoke-direct {v1, v3, v4}, Lkotlin/reflect/jvm/internal/impl/renderer/ParameterNameRenderingPolicy;-><init>(Ljava/lang/String;I)V
+    invoke-direct {v0, v1, v2}, Lkotlin/reflect/jvm/internal/impl/renderer/ParameterNameRenderingPolicy;-><init>(Ljava/lang/String;I)V
 
-    sput-object v1, Lkotlin/reflect/jvm/internal/impl/renderer/ParameterNameRenderingPolicy;->ONLY_NON_SYNTHESIZED:Lkotlin/reflect/jvm/internal/impl/renderer/ParameterNameRenderingPolicy;
+    sput-object v0, Lkotlin/reflect/jvm/internal/impl/renderer/ParameterNameRenderingPolicy;->ONLY_NON_SYNTHESIZED:Lkotlin/reflect/jvm/internal/impl/renderer/ParameterNameRenderingPolicy;
 
-    new-instance v3, Lkotlin/reflect/jvm/internal/impl/renderer/ParameterNameRenderingPolicy;
+    new-instance v0, Lkotlin/reflect/jvm/internal/impl/renderer/ParameterNameRenderingPolicy;
 
-    const-string v5, "NONE"
+    const-string v1, "NONE"
 
-    const/4 v6, 0x2
+    const/4 v2, 0x2
 
-    invoke-direct {v3, v5, v6}, Lkotlin/reflect/jvm/internal/impl/renderer/ParameterNameRenderingPolicy;-><init>(Ljava/lang/String;I)V
+    invoke-direct {v0, v1, v2}, Lkotlin/reflect/jvm/internal/impl/renderer/ParameterNameRenderingPolicy;-><init>(Ljava/lang/String;I)V
 
-    sput-object v3, Lkotlin/reflect/jvm/internal/impl/renderer/ParameterNameRenderingPolicy;->NONE:Lkotlin/reflect/jvm/internal/impl/renderer/ParameterNameRenderingPolicy;
+    sput-object v0, Lkotlin/reflect/jvm/internal/impl/renderer/ParameterNameRenderingPolicy;->NONE:Lkotlin/reflect/jvm/internal/impl/renderer/ParameterNameRenderingPolicy;
 
-    const/4 v5, 0x3
+    invoke-static {}, Lkotlin/reflect/jvm/internal/impl/renderer/ParameterNameRenderingPolicy;->$values()[Lkotlin/reflect/jvm/internal/impl/renderer/ParameterNameRenderingPolicy;
 
-    new-array v5, v5, [Lkotlin/reflect/jvm/internal/impl/renderer/ParameterNameRenderingPolicy;
+    move-result-object v0
 
-    aput-object v0, v5, v2
-
-    aput-object v1, v5, v4
-
-    aput-object v3, v5, v6
-
-    sput-object v5, Lkotlin/reflect/jvm/internal/impl/renderer/ParameterNameRenderingPolicy;->$VALUES:[Lkotlin/reflect/jvm/internal/impl/renderer/ParameterNameRenderingPolicy;
+    sput-object v0, Lkotlin/reflect/jvm/internal/impl/renderer/ParameterNameRenderingPolicy;->$VALUES:[Lkotlin/reflect/jvm/internal/impl/renderer/ParameterNameRenderingPolicy;
 
     return-void
 .end method
 
-.method public constructor <init>(Ljava/lang/String;I)V
+.method private constructor <init>(Ljava/lang/String;I)V
     .locals 0
     .annotation system Ldalvik/annotation/Signature;
         value = {
@@ -88,10 +110,6 @@
 .method public static valueOf(Ljava/lang/String;)Lkotlin/reflect/jvm/internal/impl/renderer/ParameterNameRenderingPolicy;
     .locals 1
 
-    const-string v0, "value"
-
-    invoke-static {p0, v0}, Lkotlin/jvm/internal/Intrinsics;->checkNotNullParameter(Ljava/lang/Object;Ljava/lang/String;)V
-
     const-class v0, Lkotlin/reflect/jvm/internal/impl/renderer/ParameterNameRenderingPolicy;
 
     invoke-static {v0, p0}, Ljava/lang/Enum;->valueOf(Ljava/lang/Class;Ljava/lang/String;)Ljava/lang/Enum;
@@ -104,19 +122,15 @@
 .end method
 
 .method public static values()[Lkotlin/reflect/jvm/internal/impl/renderer/ParameterNameRenderingPolicy;
-    .locals 4
+    .locals 1
 
     sget-object v0, Lkotlin/reflect/jvm/internal/impl/renderer/ParameterNameRenderingPolicy;->$VALUES:[Lkotlin/reflect/jvm/internal/impl/renderer/ParameterNameRenderingPolicy;
 
-    array-length v1, v0
+    invoke-virtual {v0}, [Ljava/lang/Object;->clone()Ljava/lang/Object;
 
-    new-array v1, v1, [Lkotlin/reflect/jvm/internal/impl/renderer/ParameterNameRenderingPolicy;
+    move-result-object v0
 
-    array-length v2, v0
+    check-cast v0, [Lkotlin/reflect/jvm/internal/impl/renderer/ParameterNameRenderingPolicy;
 
-    const/4 v3, 0x0
-
-    invoke-static {v0, v3, v1, v3, v2}, Ljava/lang/System;->arraycopy(Ljava/lang/Object;ILjava/lang/Object;II)V
-
-    return-object v1
+    return-object v0
 .end method

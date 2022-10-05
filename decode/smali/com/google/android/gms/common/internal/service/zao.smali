@@ -97,9 +97,9 @@
 
     iput-boolean v3, v0, Lcom/google/android/gms/common/api/internal/TaskApiCall$Builder;->zab:Z
 
-    new-instance v1, Lcom/google/android/gms/internal/nearby/zzt;
+    new-instance v1, Lcom/google/android/gms/common/internal/service/zam;
 
-    invoke-direct {v1, p1}, Lcom/google/android/gms/internal/nearby/zzt;-><init>(Lcom/google/android/gms/common/internal/TelemetryData;)V
+    invoke-direct {v1, p1}, Lcom/google/android/gms/common/internal/service/zam;-><init>(Lcom/google/android/gms/common/internal/TelemetryData;)V
 
     iput-object v1, v0, Lcom/google/android/gms/common/api/internal/TaskApiCall$Builder;->zaa:Lcom/google/android/gms/common/api/internal/RemoteCall;
 

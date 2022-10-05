@@ -22,7 +22,7 @@
     .annotation system Ldalvik/annotation/Signature;
         value = {
             "Ljavax/inject/Provider<",
-            "Lde/rki/coronawarnapp/covidcertificate/common/cryptography/AesCryptography;",
+            "Lde/rki/coronawarnapp/util/encryption/aes/AesCryptography;",
             ">;"
         }
     .end annotation
@@ -60,7 +60,7 @@
             "Lkotlin/random/Random;",
             ">;",
             "Ljavax/inject/Provider<",
-            "Lde/rki/coronawarnapp/covidcertificate/common/cryptography/AesCryptography;",
+            "Lde/rki/coronawarnapp/util/encryption/aes/AesCryptography;",
             ">;)V"
         }
     .end annotation
@@ -93,11 +93,11 @@
 
     move-result-object v1
 
-    check-cast v1, Lde/rki/coronawarnapp/covidcertificate/common/cryptography/AesCryptography;
+    check-cast v1, Lde/rki/coronawarnapp/util/encryption/aes/AesCryptography;
 
     new-instance v2, Lde/rki/coronawarnapp/presencetracing/checkins/cryptography/CheckInCryptography;
 
-    invoke-direct {v2, v0, v1}, Lde/rki/coronawarnapp/presencetracing/checkins/cryptography/CheckInCryptography;-><init>(Lkotlin/random/Random;Lde/rki/coronawarnapp/covidcertificate/common/cryptography/AesCryptography;)V
+    invoke-direct {v2, v0, v1}, Lde/rki/coronawarnapp/presencetracing/checkins/cryptography/CheckInCryptography;-><init>(Lkotlin/random/Random;Lde/rki/coronawarnapp/util/encryption/aes/AesCryptography;)V
 
     return-object v2
 .end method

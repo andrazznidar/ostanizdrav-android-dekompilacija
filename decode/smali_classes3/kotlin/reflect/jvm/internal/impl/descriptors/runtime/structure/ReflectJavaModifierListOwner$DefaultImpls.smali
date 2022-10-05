@@ -18,6 +18,10 @@
 .method public static getVisibility(Lkotlin/reflect/jvm/internal/impl/descriptors/runtime/structure/ReflectJavaModifierListOwner;)Lkotlin/reflect/jvm/internal/impl/descriptors/Visibility;
     .locals 1
 
+    const-string v0, "this"
+
+    invoke-static {p0, v0}, Lkotlin/jvm/internal/Intrinsics;->checkNotNullParameter(Ljava/lang/Object;Ljava/lang/String;)V
+
     invoke-interface {p0}, Lkotlin/reflect/jvm/internal/impl/descriptors/runtime/structure/ReflectJavaModifierListOwner;->getModifiers()I
 
     move-result p0
@@ -70,4 +74,58 @@
 
     :goto_0
     return-object p0
+.end method
+
+.method public static isAbstract(Lkotlin/reflect/jvm/internal/impl/descriptors/runtime/structure/ReflectJavaModifierListOwner;)Z
+    .locals 1
+
+    const-string v0, "this"
+
+    invoke-static {p0, v0}, Lkotlin/jvm/internal/Intrinsics;->checkNotNullParameter(Ljava/lang/Object;Ljava/lang/String;)V
+
+    invoke-interface {p0}, Lkotlin/reflect/jvm/internal/impl/descriptors/runtime/structure/ReflectJavaModifierListOwner;->getModifiers()I
+
+    move-result p0
+
+    invoke-static {p0}, Ljava/lang/reflect/Modifier;->isAbstract(I)Z
+
+    move-result p0
+
+    return p0
+.end method
+
+.method public static isFinal(Lkotlin/reflect/jvm/internal/impl/descriptors/runtime/structure/ReflectJavaModifierListOwner;)Z
+    .locals 1
+
+    const-string v0, "this"
+
+    invoke-static {p0, v0}, Lkotlin/jvm/internal/Intrinsics;->checkNotNullParameter(Ljava/lang/Object;Ljava/lang/String;)V
+
+    invoke-interface {p0}, Lkotlin/reflect/jvm/internal/impl/descriptors/runtime/structure/ReflectJavaModifierListOwner;->getModifiers()I
+
+    move-result p0
+
+    invoke-static {p0}, Ljava/lang/reflect/Modifier;->isFinal(I)Z
+
+    move-result p0
+
+    return p0
+.end method
+
+.method public static isStatic(Lkotlin/reflect/jvm/internal/impl/descriptors/runtime/structure/ReflectJavaModifierListOwner;)Z
+    .locals 1
+
+    const-string v0, "this"
+
+    invoke-static {p0, v0}, Lkotlin/jvm/internal/Intrinsics;->checkNotNullParameter(Ljava/lang/Object;Ljava/lang/String;)V
+
+    invoke-interface {p0}, Lkotlin/reflect/jvm/internal/impl/descriptors/runtime/structure/ReflectJavaModifierListOwner;->getModifiers()I
+
+    move-result p0
+
+    invoke-static {p0}, Ljava/lang/reflect/Modifier;->isStatic(I)Z
+
+    move-result p0
+
+    return p0
 .end method

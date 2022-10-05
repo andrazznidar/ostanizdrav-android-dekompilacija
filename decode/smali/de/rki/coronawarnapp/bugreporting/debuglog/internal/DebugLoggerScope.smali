@@ -46,7 +46,7 @@
 
     const/4 v2, 0x1
 
-    invoke-static {v0, v2}, Lkotlinx/coroutines/SupervisorKt;->SupervisorJob$default(Lkotlinx/coroutines/Job;I)Lkotlinx/coroutines/CompletableJob;
+    invoke-static {v0, v2}, Landroidx/core/os/BundleKt;->SupervisorJob$default(Lkotlinx/coroutines/Job;I)Lkotlinx/coroutines/CompletableJob;
 
     move-result-object v0
 

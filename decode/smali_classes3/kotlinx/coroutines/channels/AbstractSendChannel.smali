@@ -675,7 +675,7 @@
 .end method
 
 .method public final send(Ljava/lang/Object;Lkotlin/coroutines/Continuation;)Ljava/lang/Object;
-    .locals 3
+    .locals 2
     .annotation system Ldalvik/annotation/Signature;
         value = {
             "(TE;",
@@ -700,102 +700,102 @@
     return-object p1
 
     :cond_0
-    invoke-static {p2}, Lkotlinx/coroutines/flow/FlowKt;->intercepted(Lkotlin/coroutines/Continuation;)Lkotlin/coroutines/Continuation;
+    invoke-static {p2}, Lcom/google/android/gms/nearby/messages/internal/zzag;->intercepted(Lkotlin/coroutines/Continuation;)Lkotlin/coroutines/Continuation;
 
-    move-result-object v0
+    move-result-object p2
 
-    invoke-static {v0}, Lkotlinx/coroutines/CancellableContinuationKt;->getOrCreateCancellableContinuation(Lkotlin/coroutines/Continuation;)Lkotlinx/coroutines/CancellableContinuationImpl;
+    invoke-static {p2}, Lkotlinx/coroutines/CancellableContinuationKt;->getOrCreateCancellableContinuation(Lkotlin/coroutines/Continuation;)Lkotlinx/coroutines/CancellableContinuationImpl;
 
-    move-result-object v0
+    move-result-object p2
 
     :goto_0
-    iget-object v1, p0, Lkotlinx/coroutines/channels/AbstractSendChannel;->queue:Lkotlinx/coroutines/internal/LockFreeLinkedListHead;
+    iget-object v0, p0, Lkotlinx/coroutines/channels/AbstractSendChannel;->queue:Lkotlinx/coroutines/internal/LockFreeLinkedListHead;
 
-    invoke-virtual {v1}, Lkotlinx/coroutines/internal/LockFreeLinkedListNode;->getNextNode()Lkotlinx/coroutines/internal/LockFreeLinkedListNode;
+    invoke-virtual {v0}, Lkotlinx/coroutines/internal/LockFreeLinkedListNode;->getNextNode()Lkotlinx/coroutines/internal/LockFreeLinkedListNode;
 
-    move-result-object v1
+    move-result-object v0
 
-    instance-of v1, v1, Lkotlinx/coroutines/channels/ReceiveOrClosed;
+    instance-of v0, v0, Lkotlinx/coroutines/channels/ReceiveOrClosed;
 
-    if-nez v1, :cond_1
+    if-nez v0, :cond_1
 
     invoke-virtual {p0}, Lkotlinx/coroutines/channels/AbstractSendChannel;->isBufferFull()Z
 
-    move-result v1
+    move-result v0
 
-    if-eqz v1, :cond_1
+    if-eqz v0, :cond_1
 
-    const/4 v1, 0x1
+    const/4 v0, 0x1
 
     goto :goto_1
 
     :cond_1
-    const/4 v1, 0x0
+    const/4 v0, 0x0
 
     :goto_1
-    if-eqz v1, :cond_7
+    if-eqz v0, :cond_7
 
-    iget-object v1, p0, Lkotlinx/coroutines/channels/AbstractSendChannel;->onUndeliveredElement:Lkotlin/jvm/functions/Function1;
+    iget-object v0, p0, Lkotlinx/coroutines/channels/AbstractSendChannel;->onUndeliveredElement:Lkotlin/jvm/functions/Function1;
 
-    if-nez v1, :cond_2
+    if-nez v0, :cond_2
 
-    new-instance v1, Lkotlinx/coroutines/channels/SendElement;
+    new-instance v0, Lkotlinx/coroutines/channels/SendElement;
 
-    invoke-direct {v1, p1, v0}, Lkotlinx/coroutines/channels/SendElement;-><init>(Ljava/lang/Object;Lkotlinx/coroutines/CancellableContinuation;)V
+    invoke-direct {v0, p1, p2}, Lkotlinx/coroutines/channels/SendElement;-><init>(Ljava/lang/Object;Lkotlinx/coroutines/CancellableContinuation;)V
 
     goto :goto_2
 
     :cond_2
-    new-instance v1, Lkotlinx/coroutines/channels/SendElementWithUndeliveredHandler;
+    new-instance v0, Lkotlinx/coroutines/channels/SendElementWithUndeliveredHandler;
 
-    iget-object v2, p0, Lkotlinx/coroutines/channels/AbstractSendChannel;->onUndeliveredElement:Lkotlin/jvm/functions/Function1;
+    iget-object v1, p0, Lkotlinx/coroutines/channels/AbstractSendChannel;->onUndeliveredElement:Lkotlin/jvm/functions/Function1;
 
-    invoke-direct {v1, p1, v0, v2}, Lkotlinx/coroutines/channels/SendElementWithUndeliveredHandler;-><init>(Ljava/lang/Object;Lkotlinx/coroutines/CancellableContinuation;Lkotlin/jvm/functions/Function1;)V
+    invoke-direct {v0, p1, p2, v1}, Lkotlinx/coroutines/channels/SendElementWithUndeliveredHandler;-><init>(Ljava/lang/Object;Lkotlinx/coroutines/CancellableContinuation;Lkotlin/jvm/functions/Function1;)V
 
     :goto_2
-    invoke-virtual {p0, v1}, Lkotlinx/coroutines/channels/AbstractSendChannel;->enqueueSend(Lkotlinx/coroutines/channels/Send;)Ljava/lang/Object;
+    invoke-virtual {p0, v0}, Lkotlinx/coroutines/channels/AbstractSendChannel;->enqueueSend(Lkotlinx/coroutines/channels/Send;)Ljava/lang/Object;
 
-    move-result-object v2
+    move-result-object v1
 
-    if-nez v2, :cond_3
+    if-nez v1, :cond_3
 
     new-instance p1, Lkotlinx/coroutines/RemoveOnCancel;
 
-    invoke-direct {p1, v1}, Lkotlinx/coroutines/RemoveOnCancel;-><init>(Lkotlinx/coroutines/internal/LockFreeLinkedListNode;)V
+    invoke-direct {p1, v0}, Lkotlinx/coroutines/RemoveOnCancel;-><init>(Lkotlinx/coroutines/internal/LockFreeLinkedListNode;)V
 
-    invoke-virtual {v0, p1}, Lkotlinx/coroutines/CancellableContinuationImpl;->invokeOnCancellation(Lkotlin/jvm/functions/Function1;)V
+    invoke-virtual {p2, p1}, Lkotlinx/coroutines/CancellableContinuationImpl;->invokeOnCancellation(Lkotlin/jvm/functions/Function1;)V
 
     goto :goto_4
 
     :cond_3
-    instance-of v1, v2, Lkotlinx/coroutines/channels/Closed;
+    instance-of v0, v1, Lkotlinx/coroutines/channels/Closed;
 
-    if-eqz v1, :cond_4
+    if-eqz v0, :cond_4
 
-    check-cast v2, Lkotlinx/coroutines/channels/Closed;
+    check-cast v1, Lkotlinx/coroutines/channels/Closed;
 
-    invoke-static {p0, v0, p1, v2}, Lkotlinx/coroutines/channels/AbstractSendChannel;->access$helpCloseAndResumeWithSendException(Lkotlinx/coroutines/channels/AbstractSendChannel;Lkotlin/coroutines/Continuation;Ljava/lang/Object;Lkotlinx/coroutines/channels/Closed;)V
+    invoke-static {p0, p2, p1, v1}, Lkotlinx/coroutines/channels/AbstractSendChannel;->access$helpCloseAndResumeWithSendException(Lkotlinx/coroutines/channels/AbstractSendChannel;Lkotlin/coroutines/Continuation;Ljava/lang/Object;Lkotlinx/coroutines/channels/Closed;)V
 
     goto :goto_4
 
     :cond_4
-    sget-object v1, Lkotlinx/coroutines/channels/AbstractChannelKt;->ENQUEUE_FAILED:Lkotlinx/coroutines/internal/Symbol;
+    sget-object v0, Lkotlinx/coroutines/channels/AbstractChannelKt;->ENQUEUE_FAILED:Lkotlinx/coroutines/internal/Symbol;
 
-    if-ne v2, v1, :cond_5
+    if-ne v1, v0, :cond_5
 
     goto :goto_3
 
     :cond_5
-    instance-of v1, v2, Lkotlinx/coroutines/channels/Receive;
+    instance-of v0, v1, Lkotlinx/coroutines/channels/Receive;
 
-    if-eqz v1, :cond_6
+    if-eqz v0, :cond_6
 
     goto :goto_3
 
     :cond_6
     const-string p1, "enqueueSend returned "
 
-    invoke-static {p1, v2}, Lkotlin/jvm/internal/Intrinsics;->stringPlus(Ljava/lang/String;Ljava/lang/Object;)Ljava/lang/String;
+    invoke-static {p1, v1}, Lkotlin/jvm/internal/Intrinsics;->stringPlus(Ljava/lang/String;Ljava/lang/Object;)Ljava/lang/String;
 
     move-result-object p1
 
@@ -813,69 +813,62 @@
     :goto_3
     invoke-virtual {p0, p1}, Lkotlinx/coroutines/channels/AbstractSendChannel;->offerInternal(Ljava/lang/Object;)Ljava/lang/Object;
 
-    move-result-object v1
+    move-result-object v0
 
-    sget-object v2, Lkotlinx/coroutines/channels/AbstractChannelKt;->OFFER_SUCCESS:Lkotlinx/coroutines/internal/Symbol;
+    sget-object v1, Lkotlinx/coroutines/channels/AbstractChannelKt;->OFFER_SUCCESS:Lkotlinx/coroutines/internal/Symbol;
 
-    if-ne v1, v2, :cond_8
+    if-ne v0, v1, :cond_8
 
     sget-object p1, Lkotlin/Unit;->INSTANCE:Lkotlin/Unit;
 
-    invoke-virtual {v0, p1}, Lkotlinx/coroutines/CancellableContinuationImpl;->resumeWith(Ljava/lang/Object;)V
+    invoke-virtual {p2, p1}, Lkotlinx/coroutines/CancellableContinuationImpl;->resumeWith(Ljava/lang/Object;)V
 
     goto :goto_4
 
     :cond_8
-    sget-object v2, Lkotlinx/coroutines/channels/AbstractChannelKt;->OFFER_FAILED:Lkotlinx/coroutines/internal/Symbol;
+    sget-object v1, Lkotlinx/coroutines/channels/AbstractChannelKt;->OFFER_FAILED:Lkotlinx/coroutines/internal/Symbol;
 
-    if-ne v1, v2, :cond_9
+    if-ne v0, v1, :cond_9
 
     goto :goto_0
 
     :cond_9
-    instance-of v2, v1, Lkotlinx/coroutines/channels/Closed;
+    instance-of v1, v0, Lkotlinx/coroutines/channels/Closed;
 
-    if-eqz v2, :cond_d
+    if-eqz v1, :cond_c
 
-    check-cast v1, Lkotlinx/coroutines/channels/Closed;
+    check-cast v0, Lkotlinx/coroutines/channels/Closed;
 
-    invoke-static {p0, v0, p1, v1}, Lkotlinx/coroutines/channels/AbstractSendChannel;->access$helpCloseAndResumeWithSendException(Lkotlinx/coroutines/channels/AbstractSendChannel;Lkotlin/coroutines/Continuation;Ljava/lang/Object;Lkotlinx/coroutines/channels/Closed;)V
+    invoke-static {p0, p2, p1, v0}, Lkotlinx/coroutines/channels/AbstractSendChannel;->access$helpCloseAndResumeWithSendException(Lkotlinx/coroutines/channels/AbstractSendChannel;Lkotlin/coroutines/Continuation;Ljava/lang/Object;Lkotlinx/coroutines/channels/Closed;)V
 
     :goto_4
-    invoke-virtual {v0}, Lkotlinx/coroutines/CancellableContinuationImpl;->getResult()Ljava/lang/Object;
+    invoke-virtual {p2}, Lkotlinx/coroutines/CancellableContinuationImpl;->getResult()Ljava/lang/Object;
 
     move-result-object p1
 
-    sget-object v0, Lkotlin/coroutines/intrinsics/CoroutineSingletons;->COROUTINE_SUSPENDED:Lkotlin/coroutines/intrinsics/CoroutineSingletons;
+    sget-object p2, Lkotlin/coroutines/intrinsics/CoroutineSingletons;->COROUTINE_SUSPENDED:Lkotlin/coroutines/intrinsics/CoroutineSingletons;
 
-    if-ne p1, v0, :cond_a
-
-    const-string v1, "frame"
-
-    invoke-static {p2, v1}, Lkotlin/jvm/internal/Intrinsics;->checkNotNullParameter(Ljava/lang/Object;Ljava/lang/String;)V
-
-    :cond_a
-    if-ne p1, v0, :cond_b
+    if-ne p1, p2, :cond_a
 
     goto :goto_5
+
+    :cond_a
+    sget-object p1, Lkotlin/Unit;->INSTANCE:Lkotlin/Unit;
+
+    :goto_5
+    if-ne p1, p2, :cond_b
+
+    return-object p1
 
     :cond_b
     sget-object p1, Lkotlin/Unit;->INSTANCE:Lkotlin/Unit;
 
-    :goto_5
-    if-ne p1, v0, :cond_c
-
     return-object p1
 
     :cond_c
-    sget-object p1, Lkotlin/Unit;->INSTANCE:Lkotlin/Unit;
-
-    return-object p1
-
-    :cond_d
     const-string p1, "offerInternal returned "
 
-    invoke-static {p1, v1}, Lkotlin/jvm/internal/Intrinsics;->stringPlus(Ljava/lang/String;Ljava/lang/Object;)Ljava/lang/String;
+    invoke-static {p1, v0}, Lkotlin/jvm/internal/Intrinsics;->stringPlus(Ljava/lang/String;Ljava/lang/Object;)Ljava/lang/String;
 
     move-result-object p1
 

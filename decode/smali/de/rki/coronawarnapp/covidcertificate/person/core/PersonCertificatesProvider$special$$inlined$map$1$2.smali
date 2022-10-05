@@ -22,13 +22,13 @@
         "Lkotlinx/coroutines/flow/FlowCollector<",
         "Ljava/util/Set<",
         "+",
-        "Lde/rki/coronawarnapp/covidcertificate/test/core/TestCertificateWrapper;",
+        "Lde/rki/coronawarnapp/covidcertificate/person/core/PersonCertificates;",
         ">;>;"
     }
 .end annotation
 
 .annotation system Ldalvik/annotation/SourceDebugExtension;
-    value = "SMAP\nCollect.kt\nKotlin\n*S Kotlin\n*F\n+ 1 Collect.kt\nkotlinx/coroutines/flow/FlowKt__CollectKt$collect$3\n+ 2 Emitters.kt\nkotlinx/coroutines/flow/FlowKt__EmittersKt\n+ 3 Transform.kt\nkotlinx/coroutines/flow/FlowKt__TransformKt\n+ 4 PersonCertificatesProvider.kt\nde/rki/coronawarnapp/covidcertificate/person/core/PersonCertificatesProvider\n+ 5 _Collections.kt\nkotlin/collections/CollectionsKt___CollectionsKt\n+ 6 fake.kt\nkotlin/jvm/internal/FakeKt\n*L\n1#1,134:1\n53#2:135\n48#3:136\n35#4:137\n1601#5,9:138\n1849#5:147\n1850#5:149\n1610#5:150\n1#6:148\n*S KotlinDebug\n*F\n+ 1 PersonCertificatesProvider.kt\nde/rki/coronawarnapp/covidcertificate/person/core/PersonCertificatesProvider\n*L\n35#1:138,9\n35#1:147\n35#1:149\n35#1:150\n35#1:148\n*E\n"
+    value = "SMAP\nCollect.kt\nKotlin\n*S Kotlin\n*F\n+ 1 Collect.kt\nkotlinx/coroutines/flow/FlowKt__CollectKt$collect$3\n+ 2 Emitters.kt\nkotlinx/coroutines/flow/FlowKt__EmittersKt\n+ 3 Transform.kt\nkotlinx/coroutines/flow/FlowKt__TransformKt\n+ 4 PersonCertificatesProvider.kt\nde/rki/coronawarnapp/covidcertificate/person/core/PersonCertificatesProvider\n+ 5 fake.kt\nkotlin/jvm/internal/FakeKt\n*L\n1#1,134:1\n53#2:135\n48#3:136\n80#4:137\n1#5:138\n*E\n"
 .end annotation
 
 
@@ -112,50 +112,47 @@
 
     check-cast p1, Ljava/util/Set;
 
-    new-instance v2, Ljava/util/ArrayList;
-
-    invoke-direct {v2}, Ljava/util/ArrayList;-><init>()V
+    const/4 v2, 0x0
 
     invoke-interface {p1}, Ljava/lang/Iterable;->iterator()Ljava/util/Iterator;
 
     move-result-object p1
 
-    :cond_3
     :goto_1
     invoke-interface {p1}, Ljava/util/Iterator;->hasNext()Z
 
     move-result v4
 
-    if-eqz v4, :cond_4
+    if-eqz v4, :cond_3
 
     invoke-interface {p1}, Ljava/util/Iterator;->next()Ljava/lang/Object;
 
     move-result-object v4
 
-    check-cast v4, Lde/rki/coronawarnapp/covidcertificate/test/core/TestCertificateWrapper;
+    check-cast v4, Lde/rki/coronawarnapp/covidcertificate/person/core/PersonCertificates;
 
-    invoke-virtual {v4}, Lde/rki/coronawarnapp/covidcertificate/test/core/TestCertificateWrapper;->getTestCertificate()Lde/rki/coronawarnapp/covidcertificate/test/core/TestCertificate;
+    iget v4, v4, Lde/rki/coronawarnapp/covidcertificate/person/core/PersonCertificates;->badgeCount:I
 
-    move-result-object v4
-
-    if-eqz v4, :cond_3
-
-    invoke-interface {v2, v4}, Ljava/util/Collection;->add(Ljava/lang/Object;)Z
+    add-int/2addr v2, v4
 
     goto :goto_1
 
-    :cond_4
+    :cond_3
+    new-instance p1, Ljava/lang/Integer;
+
+    invoke-direct {p1, v2}, Ljava/lang/Integer;-><init>(I)V
+
     iput v3, v0, Lde/rki/coronawarnapp/covidcertificate/person/core/PersonCertificatesProvider$special$$inlined$map$1$2$1;->label:I
 
-    invoke-interface {p2, v2, v0}, Lkotlinx/coroutines/flow/FlowCollector;->emit(Ljava/lang/Object;Lkotlin/coroutines/Continuation;)Ljava/lang/Object;
+    invoke-interface {p2, p1, v0}, Lkotlinx/coroutines/flow/FlowCollector;->emit(Ljava/lang/Object;Lkotlin/coroutines/Continuation;)Ljava/lang/Object;
 
     move-result-object p1
 
-    if-ne p1, v1, :cond_5
+    if-ne p1, v1, :cond_4
 
     return-object v1
 
-    :cond_5
+    :cond_4
     :goto_2
     sget-object p1, Lkotlin/Unit;->INSTANCE:Lkotlin/Unit;
 

@@ -17,9 +17,9 @@
     c = "de.rki.coronawarnapp.datadonation.analytics.modules.exposurewindows.AnalyticsExposureWindowRepository"
     f = "AnalyticsExposureWindowRepository.kt"
     l = {
-        0x1d,
-        0x1d,
-        0x1f
+        0x1c,
+        0x1c,
+        0x1e
     }
     m = "addNew"
 .end annotation

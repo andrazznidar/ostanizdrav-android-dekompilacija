@@ -1,5 +1,5 @@
 .class public Lkotlin/sequences/SequencesKt__SequencesKt;
-.super Lkotlin/sequences/SequencesKt__SequencesJVMKt;
+.super Lcom/airbnb/lottie/parser/moshi/JsonScope;
 .source "Sequences.kt"
 
 
@@ -18,7 +18,7 @@
         }
     .end annotation
 
-    const-string v0, "$this$asSequence"
+    const-string v0, "<this>"
 
     invoke-static {p0, v0}, Lkotlin/jvm/internal/Intrinsics;->checkNotNullParameter(Ljava/lang/Object;Ljava/lang/String;)V
 
@@ -68,6 +68,8 @@
     if-eqz v0, :cond_0
 
     check-cast p0, Lkotlin/sequences/TransformingSequence;
+
+    invoke-static {p0}, Ljava/util/Objects;->requireNonNull(Ljava/lang/Object;)Ljava/lang/Object;
 
     const-string v0, "iterator"
 

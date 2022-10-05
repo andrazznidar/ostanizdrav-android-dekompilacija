@@ -8,12 +8,10 @@
 
 .field public final __db:Landroidx/room/RoomDatabase;
 
-.field public final __deletionAdapterOfTraceLocationEntity:Landroidx/room/EntityDeletionOrUpdateAdapter;
+.field public final __deletionAdapterOfTraceLocationEntity:Landroidx/room/EntityInsertionAdapter;
     .annotation system Ldalvik/annotation/Signature;
         value = {
-            "Landroidx/room/EntityDeletionOrUpdateAdapter<",
-            "Lde/rki/coronawarnapp/presencetracing/storage/entity/TraceLocationEntity;",
-            ">;"
+            "Landroidx/room/EntityInsertionAdapter;"
         }
     .end annotation
 .end field
@@ -21,21 +19,19 @@
 .field public final __insertionAdapterOfTraceLocationEntity:Landroidx/room/EntityInsertionAdapter;
     .annotation system Ldalvik/annotation/Signature;
         value = {
-            "Landroidx/room/EntityInsertionAdapter<",
-            "Lde/rki/coronawarnapp/presencetracing/storage/entity/TraceLocationEntity;",
-            ">;"
+            "Landroidx/room/EntityInsertionAdapter;"
         }
     .end annotation
 .end field
 
 .field public final __preparedStmtOfDeleteAll:Landroidx/room/SharedSQLiteStatement;
 
-.field public final __traceLocationConverters:Lde/rki/coronawarnapp/contactdiary/storage/ContactDiaryStorageModule;
+.field public final __traceLocationConverters:Lcom/google/android/play/core/assetpacks/zzr;
 
 
 # direct methods
 .method public constructor <init>(Landroidx/room/RoomDatabase;)V
-    .locals 2
+    .locals 1
     .annotation system Ldalvik/annotation/MethodParameters;
         accessFlags = {
             0x0
@@ -47,13 +43,11 @@
 
     invoke-direct {p0}, Lde/rki/coronawarnapp/presencetracing/storage/dao/TraceLocationDao;-><init>()V
 
-    new-instance v0, Lde/rki/coronawarnapp/contactdiary/storage/ContactDiaryStorageModule;
+    new-instance v0, Lcom/google/android/play/core/assetpacks/zzr;
 
-    const/4 v1, 0x1
+    invoke-direct {v0}, Lcom/google/android/play/core/assetpacks/zzr;-><init>()V
 
-    invoke-direct {v0, v1}, Lde/rki/coronawarnapp/contactdiary/storage/ContactDiaryStorageModule;-><init>(I)V
-
-    iput-object v0, p0, Lde/rki/coronawarnapp/presencetracing/storage/dao/TraceLocationDao_Impl;->__traceLocationConverters:Lde/rki/coronawarnapp/contactdiary/storage/ContactDiaryStorageModule;
+    iput-object v0, p0, Lde/rki/coronawarnapp/presencetracing/storage/dao/TraceLocationDao_Impl;->__traceLocationConverters:Lcom/google/android/play/core/assetpacks/zzr;
 
     new-instance v0, Lde/rki/coronawarnapp/util/database/CommonConverters;
 
@@ -73,7 +67,7 @@
 
     invoke-direct {v0, p0, p1}, Lde/rki/coronawarnapp/presencetracing/storage/dao/TraceLocationDao_Impl$2;-><init>(Lde/rki/coronawarnapp/presencetracing/storage/dao/TraceLocationDao_Impl;Landroidx/room/RoomDatabase;)V
 
-    iput-object v0, p0, Lde/rki/coronawarnapp/presencetracing/storage/dao/TraceLocationDao_Impl;->__deletionAdapterOfTraceLocationEntity:Landroidx/room/EntityDeletionOrUpdateAdapter;
+    iput-object v0, p0, Lde/rki/coronawarnapp/presencetracing/storage/dao/TraceLocationDao_Impl;->__deletionAdapterOfTraceLocationEntity:Landroidx/room/EntityInsertionAdapter;
 
     new-instance v0, Lde/rki/coronawarnapp/presencetracing/storage/dao/TraceLocationDao_Impl$3;
 
@@ -369,9 +363,9 @@
 
     move-result v0
 
-    iget-object v5, v1, Lde/rki/coronawarnapp/presencetracing/storage/dao/TraceLocationDao_Impl;->__traceLocationConverters:Lde/rki/coronawarnapp/contactdiary/storage/ContactDiaryStorageModule;
+    iget-object v5, v1, Lde/rki/coronawarnapp/presencetracing/storage/dao/TraceLocationDao_Impl;->__traceLocationConverters:Lcom/google/android/play/core/assetpacks/zzr;
 
-    invoke-virtual {v5, v0}, Lde/rki/coronawarnapp/contactdiary/storage/ContactDiaryStorageModule;->toTraceLocationType(I)Lde/rki/coronawarnapp/server/protocols/internal/pt/TraceLocationOuterClass$TraceLocationType;
+    invoke-virtual {v5, v0}, Lcom/google/android/play/core/assetpacks/zzr;->toTraceLocationType(I)Lde/rki/coronawarnapp/server/protocols/internal/pt/TraceLocationOuterClass$TraceLocationType;
 
     move-result-object v19
 

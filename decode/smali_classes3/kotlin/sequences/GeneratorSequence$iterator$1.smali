@@ -41,6 +41,13 @@
 .field public nextState:I
 
 .field public final synthetic this$0:Lkotlin/sequences/GeneratorSequence;
+    .annotation system Ldalvik/annotation/Signature;
+        value = {
+            "Lkotlin/sequences/GeneratorSequence<",
+            "TT;>;"
+        }
+    .end annotation
+.end field
 
 
 # direct methods
@@ -48,7 +55,9 @@
     .locals 0
     .annotation system Ldalvik/annotation/Signature;
         value = {
-            "()V"
+            "(",
+            "Lkotlin/sequences/GeneratorSequence<",
+            "TT;>;)V"
         }
     .end annotation
 
@@ -123,6 +132,18 @@
     return-void
 .end method
 
+.method public synthetic forEachRemaining(Ljava/util/function/Consumer;)V
+    .locals 0
+
+    invoke-static {p1}, Lj$/util/function/Consumer$VivifiedWrapper;->convert(Ljava/util/function/Consumer;)Lj$/util/function/Consumer;
+
+    move-result-object p1
+
+    invoke-static {p0, p1}, Lj$/util/Iterator$-CC;->$default$forEachRemaining(Ljava/util/Iterator;Lj$/util/function/Consumer;)V
+
+    return-void
+.end method
+
 .method public hasNext()Z
     .locals 2
 
@@ -169,7 +190,7 @@
 
     iget-object v0, p0, Lkotlin/sequences/GeneratorSequence$iterator$1;->nextItem:Ljava/lang/Object;
 
-    const-string v1, "null cannot be cast to non-null type T"
+    const-string v1, "null cannot be cast to non-null type T of kotlin.sequences.GeneratorSequence"
 
     invoke-static {v0, v1}, Ljava/util/Objects;->requireNonNull(Ljava/lang/Object;Ljava/lang/String;)Ljava/lang/Object;
 

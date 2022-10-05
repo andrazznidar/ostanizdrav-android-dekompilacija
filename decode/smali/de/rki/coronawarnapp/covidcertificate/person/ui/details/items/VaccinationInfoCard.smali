@@ -52,7 +52,7 @@
 .method public constructor <init>(Landroid/view/ViewGroup;)V
     .locals 1
 
-    const v0, 0x7f0d019c
+    const v0, 0x7f0d01ac
 
     invoke-direct {p0, v0, p1}, Lde/rki/coronawarnapp/covidcertificate/person/ui/details/PersonDetailsAdapter$PersonDetailsItemVH;-><init>(ILandroid/view/ViewGroup;)V
 
@@ -60,15 +60,13 @@
 
     invoke-direct {p1, p0}, Lde/rki/coronawarnapp/covidcertificate/person/ui/details/items/VaccinationInfoCard$viewBinding$1;-><init>(Lde/rki/coronawarnapp/covidcertificate/person/ui/details/items/VaccinationInfoCard;)V
 
-    invoke-static {p1}, Lkotlin/LazyKt__LazyKt;->lazy(Lkotlin/jvm/functions/Function0;)Lkotlin/Lazy;
+    invoke-static {p1}, Lkotlin/LazyKt__LazyJVMKt;->lazy(Lkotlin/jvm/functions/Function0;)Lkotlin/Lazy;
 
     move-result-object p1
 
     iput-object p1, p0, Lde/rki/coronawarnapp/covidcertificate/person/ui/details/items/VaccinationInfoCard;->viewBinding:Lkotlin/Lazy;
 
-    new-instance p1, Lde/rki/coronawarnapp/covidcertificate/person/ui/details/items/VaccinationInfoCard$onBindData$1;
-
-    invoke-direct {p1, p0}, Lde/rki/coronawarnapp/covidcertificate/person/ui/details/items/VaccinationInfoCard$onBindData$1;-><init>(Lde/rki/coronawarnapp/covidcertificate/person/ui/details/items/VaccinationInfoCard;)V
+    sget-object p1, Lde/rki/coronawarnapp/covidcertificate/person/ui/details/items/VaccinationInfoCard$onBindData$1;->INSTANCE:Lde/rki/coronawarnapp/covidcertificate/person/ui/details/items/VaccinationInfoCard$onBindData$1;
 
     iput-object p1, p0, Lde/rki/coronawarnapp/covidcertificate/person/ui/details/items/VaccinationInfoCard;->onBindData:Lkotlin/jvm/functions/Function3;
 

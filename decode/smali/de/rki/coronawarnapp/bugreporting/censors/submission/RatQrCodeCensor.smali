@@ -207,7 +207,7 @@
     :cond_9
     iget-object p2, p0, Lde/rki/coronawarnapp/bugreporting/censors/submission/RatQrCodeCensor;->dayOfBirthFormatter:Lorg/joda/time/format/DateTimeFormatter;
 
-    invoke-virtual {p1, p2}, Lorg/joda/time/base/BaseLocal;->toString(Lorg/joda/time/format/DateTimeFormatter;)Ljava/lang/String;
+    invoke-virtual {p1, p2}, Lorg/joda/time/base/AbstractPartial;->toString(Lorg/joda/time/format/DateTimeFormatter;)Ljava/lang/String;
 
     move-result-object v0
 

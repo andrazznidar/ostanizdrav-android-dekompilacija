@@ -1,4 +1,4 @@
-.class public Lorg/bouncycastle/pqc/crypto/util/PublicKeyFactory$NHConverter;
+.class Lorg/bouncycastle/pqc/crypto/util/PublicKeyFactory$NHConverter;
 .super Lorg/bouncycastle/pqc/crypto/util/PublicKeyFactory$SubjectPublicKeyInfoConverter;
 
 
@@ -14,12 +14,20 @@
 
 
 # direct methods
-.method public constructor <init>(Lorg/bouncycastle/pqc/crypto/util/PublicKeyFactory$1;)V
+.method private constructor <init>()V
+    .locals 1
+
+    const/4 v0, 0x0
+
+    invoke-direct {p0, v0}, Lorg/bouncycastle/pqc/crypto/util/PublicKeyFactory$SubjectPublicKeyInfoConverter;-><init>(Lorg/bouncycastle/pqc/crypto/util/PublicKeyFactory$1;)V
+
+    return-void
+.end method
+
+.method public synthetic constructor <init>(Lorg/bouncycastle/pqc/crypto/util/PublicKeyFactory$1;)V
     .locals 0
 
-    const/4 p1, 0x0
-
-    invoke-direct {p0, p1}, Lorg/bouncycastle/pqc/crypto/util/PublicKeyFactory$SubjectPublicKeyInfoConverter;-><init>(Lorg/bouncycastle/pqc/crypto/util/PublicKeyFactory$1;)V
+    invoke-direct {p0}, Lorg/bouncycastle/pqc/crypto/util/PublicKeyFactory$NHConverter;-><init>()V
 
     return-void
 .end method
@@ -36,7 +44,9 @@
 
     new-instance p2, Lorg/bouncycastle/pqc/crypto/newhope/NHPublicKeyParameters;
 
-    iget-object p1, p1, Lorg/bouncycastle/asn1/x509/SubjectPublicKeyInfo;->keyData:Lorg/bouncycastle/asn1/DERBitString;
+    invoke-virtual {p1}, Lorg/bouncycastle/asn1/x509/SubjectPublicKeyInfo;->getPublicKeyData()Lorg/bouncycastle/asn1/DERBitString;
+
+    move-result-object p1
 
     invoke-virtual {p1}, Lorg/bouncycastle/asn1/ASN1BitString;->getBytes()[B
 

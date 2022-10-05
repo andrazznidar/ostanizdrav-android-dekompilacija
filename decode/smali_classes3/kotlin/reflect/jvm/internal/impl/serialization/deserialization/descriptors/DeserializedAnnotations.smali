@@ -20,7 +20,7 @@
 
 
 # instance fields
-.field public final annotations$delegate:Lkotlin/reflect/jvm/internal/impl/storage/NotNullLazyValue;
+.field private final annotations$delegate:Lkotlin/reflect/jvm/internal/impl/storage/NotNullLazyValue;
 
 
 # direct methods
@@ -77,6 +77,10 @@
 
     invoke-static {p1, v0}, Lkotlin/jvm/internal/Intrinsics;->checkNotNullParameter(Ljava/lang/Object;Ljava/lang/String;)V
 
+    const-string v0, "compute"
+
+    invoke-static {p2, v0}, Lkotlin/jvm/internal/Intrinsics;->checkNotNullParameter(Ljava/lang/Object;Ljava/lang/String;)V
+
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
     invoke-interface {p1, p2}, Lkotlin/reflect/jvm/internal/impl/storage/StorageManager;->createLazyValue(Lkotlin/jvm/functions/Function0;)Lkotlin/reflect/jvm/internal/impl/storage/NotNullLazyValue;
@@ -86,6 +90,34 @@
     iput-object p1, p0, Lkotlin/reflect/jvm/internal/impl/serialization/deserialization/descriptors/DeserializedAnnotations;->annotations$delegate:Lkotlin/reflect/jvm/internal/impl/storage/NotNullLazyValue;
 
     return-void
+.end method
+
+.method private final getAnnotations()Ljava/util/List;
+    .locals 3
+    .annotation system Ldalvik/annotation/Signature;
+        value = {
+            "()",
+            "Ljava/util/List<",
+            "Lkotlin/reflect/jvm/internal/impl/descriptors/annotations/AnnotationDescriptor;",
+            ">;"
+        }
+    .end annotation
+
+    iget-object v0, p0, Lkotlin/reflect/jvm/internal/impl/serialization/deserialization/descriptors/DeserializedAnnotations;->annotations$delegate:Lkotlin/reflect/jvm/internal/impl/storage/NotNullLazyValue;
+
+    sget-object v1, Lkotlin/reflect/jvm/internal/impl/serialization/deserialization/descriptors/DeserializedAnnotations;->$$delegatedProperties:[Lkotlin/reflect/KProperty;
+
+    const/4 v2, 0x0
+
+    aget-object v1, v1, v2
+
+    invoke-static {v0, p0, v1}, Lkotlin/reflect/jvm/internal/impl/storage/StorageKt;->getValue(Lkotlin/reflect/jvm/internal/impl/storage/NotNullLazyValue;Ljava/lang/Object;Lkotlin/reflect/KProperty;)Ljava/lang/Object;
+
+    move-result-object v0
+
+    check-cast v0, Ljava/util/List;
+
+    return-object v0
 .end method
 
 
@@ -111,21 +143,11 @@
 .end method
 
 .method public isEmpty()Z
-    .locals 3
+    .locals 1
 
-    iget-object v0, p0, Lkotlin/reflect/jvm/internal/impl/serialization/deserialization/descriptors/DeserializedAnnotations;->annotations$delegate:Lkotlin/reflect/jvm/internal/impl/storage/NotNullLazyValue;
-
-    sget-object v1, Lkotlin/reflect/jvm/internal/impl/serialization/deserialization/descriptors/DeserializedAnnotations;->$$delegatedProperties:[Lkotlin/reflect/KProperty;
-
-    const/4 v2, 0x0
-
-    aget-object v1, v1, v2
-
-    invoke-static {v0, v1}, Lcom/google/zxing/common/detector/MathUtils;->getValue(Lkotlin/reflect/jvm/internal/impl/storage/NotNullLazyValue;Lkotlin/reflect/KProperty;)Ljava/lang/Object;
+    invoke-direct {p0}, Lkotlin/reflect/jvm/internal/impl/serialization/deserialization/descriptors/DeserializedAnnotations;->getAnnotations()Ljava/util/List;
 
     move-result-object v0
-
-    check-cast v0, Ljava/util/List;
 
     invoke-interface {v0}, Ljava/util/List;->isEmpty()Z
 
@@ -135,7 +157,7 @@
 .end method
 
 .method public iterator()Ljava/util/Iterator;
-    .locals 3
+    .locals 1
     .annotation system Ldalvik/annotation/Signature;
         value = {
             "()",
@@ -145,19 +167,9 @@
         }
     .end annotation
 
-    iget-object v0, p0, Lkotlin/reflect/jvm/internal/impl/serialization/deserialization/descriptors/DeserializedAnnotations;->annotations$delegate:Lkotlin/reflect/jvm/internal/impl/storage/NotNullLazyValue;
-
-    sget-object v1, Lkotlin/reflect/jvm/internal/impl/serialization/deserialization/descriptors/DeserializedAnnotations;->$$delegatedProperties:[Lkotlin/reflect/KProperty;
-
-    const/4 v2, 0x0
-
-    aget-object v1, v1, v2
-
-    invoke-static {v0, v1}, Lcom/google/zxing/common/detector/MathUtils;->getValue(Lkotlin/reflect/jvm/internal/impl/storage/NotNullLazyValue;Lkotlin/reflect/KProperty;)Ljava/lang/Object;
+    invoke-direct {p0}, Lkotlin/reflect/jvm/internal/impl/serialization/deserialization/descriptors/DeserializedAnnotations;->getAnnotations()Ljava/util/List;
 
     move-result-object v0
-
-    check-cast v0, Ljava/util/List;
 
     invoke-interface {v0}, Ljava/util/List;->iterator()Ljava/util/Iterator;
 

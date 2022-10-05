@@ -80,9 +80,9 @@
 
     iget-object v4, p0, Lcom/google/android/material/tabs/TabLayoutMediator;->tabConfigurationStrategy:Lcom/google/android/material/tabs/TabLayoutMediator$TabConfigurationStrategy;
 
-    check-cast v4, Lde/rki/coronawarnapp/qrcode/ui/QrCodeScannerFragment$$ExternalSyntheticLambda6;
+    check-cast v4, Lde/rki/coronawarnapp/ui/main/home/HomeFragment$$ExternalSyntheticLambda1;
 
-    iget-object v4, v4, Lde/rki/coronawarnapp/qrcode/ui/QrCodeScannerFragment$$ExternalSyntheticLambda6;->f$0:Ljava/lang/Object;
+    iget-object v4, v4, Lde/rki/coronawarnapp/ui/main/home/HomeFragment$$ExternalSyntheticLambda1;->f$0:Ljava/lang/Object;
 
     check-cast v4, Lde/rki/coronawarnapp/contactdiary/ui/day/tabs/ContactDiaryDayFragmentsAdapter;
 
@@ -91,10 +91,6 @@
     const-string v5, "$adapter"
 
     invoke-static {v4, v5}, Lkotlin/jvm/internal/Intrinsics;->checkNotNullParameter(Ljava/lang/Object;Ljava/lang/String;)V
-
-    const-string/jumbo v5, "tab"
-
-    invoke-static {v3, v5}, Lkotlin/jvm/internal/Intrinsics;->checkNotNullParameter(Ljava/lang/Object;Ljava/lang/String;)V
 
     iget-object v4, v4, Lde/rki/coronawarnapp/contactdiary/ui/day/tabs/ContactDiaryDayFragmentsAdapter;->tabs:Ljava/util/List;
 

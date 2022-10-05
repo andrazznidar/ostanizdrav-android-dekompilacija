@@ -216,7 +216,7 @@
 .end method
 
 .method public createGenerator(Ljava/io/Writer;)Lcom/fasterxml/jackson/core/JsonGenerator;
-    .locals 4
+    .locals 5
     .annotation system Ldalvik/annotation/Throws;
         value = {
             Ljava/io/IOException;
@@ -225,17 +225,21 @@
 
     iget-object v0, p0, Lcom/fasterxml/jackson/databind/ObjectWriter;->_generatorFactory:Lcom/fasterxml/jackson/core/JsonFactory;
 
-    new-instance v1, Lcom/fasterxml/jackson/core/io/IOContext;
+    invoke-virtual {v0, p1}, Lcom/fasterxml/jackson/core/JsonFactory;->_createContentReference(Ljava/lang/Object;)Lcom/fasterxml/jackson/core/io/ContentReference;
+
+    move-result-object v1
+
+    new-instance v2, Lcom/fasterxml/jackson/core/io/IOContext;
 
     invoke-virtual {v0}, Lcom/fasterxml/jackson/core/JsonFactory;->_getBufferRecycler()Lcom/fasterxml/jackson/core/util/BufferRecycler;
 
-    move-result-object v2
+    move-result-object v3
 
-    const/4 v3, 0x0
+    const/4 v4, 0x0
 
-    invoke-direct {v1, v2, p1, v3}, Lcom/fasterxml/jackson/core/io/IOContext;-><init>(Lcom/fasterxml/jackson/core/util/BufferRecycler;Ljava/lang/Object;Z)V
+    invoke-direct {v2, v3, v1, v4}, Lcom/fasterxml/jackson/core/io/IOContext;-><init>(Lcom/fasterxml/jackson/core/util/BufferRecycler;Lcom/fasterxml/jackson/core/io/ContentReference;Z)V
 
-    invoke-virtual {v0, p1, v1}, Lcom/fasterxml/jackson/core/JsonFactory;->_createGenerator(Ljava/io/Writer;Lcom/fasterxml/jackson/core/io/IOContext;)Lcom/fasterxml/jackson/core/JsonGenerator;
+    invoke-virtual {v0, p1, v2}, Lcom/fasterxml/jackson/core/JsonFactory;->_createGenerator(Ljava/io/Writer;Lcom/fasterxml/jackson/core/io/IOContext;)Lcom/fasterxml/jackson/core/JsonGenerator;
 
     move-result-object p1
 
@@ -309,7 +313,7 @@
 
     move-result-object p1
 
-    aput-object p1, v2, v3
+    aput-object p1, v2, v4
 
     invoke-interface {v1}, Lcom/fasterxml/jackson/core/FormatSchema;->getSchemaType()Ljava/lang/String;
 

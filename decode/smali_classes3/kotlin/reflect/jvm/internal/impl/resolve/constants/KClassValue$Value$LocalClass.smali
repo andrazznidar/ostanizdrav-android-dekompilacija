@@ -15,12 +15,16 @@
 
 
 # instance fields
-.field public final type:Lkotlin/reflect/jvm/internal/impl/types/KotlinType;
+.field private final type:Lkotlin/reflect/jvm/internal/impl/types/KotlinType;
 
 
 # direct methods
 .method public constructor <init>(Lkotlin/reflect/jvm/internal/impl/types/KotlinType;)V
     .locals 1
+
+    const-string v0, "type"
+
+    invoke-static {p1, v0}, Lkotlin/jvm/internal/Intrinsics;->checkNotNullParameter(Ljava/lang/Object;Ljava/lang/String;)V
 
     const/4 v0, 0x0
 
@@ -68,6 +72,14 @@
 
     :cond_2
     return v0
+.end method
+
+.method public final getType()Lkotlin/reflect/jvm/internal/impl/types/KotlinType;
+    .locals 1
+
+    iget-object v0, p0, Lkotlin/reflect/jvm/internal/impl/resolve/constants/KClassValue$Value$LocalClass;->type:Lkotlin/reflect/jvm/internal/impl/types/KotlinType;
+
+    return-object v0
 .end method
 
 .method public hashCode()I

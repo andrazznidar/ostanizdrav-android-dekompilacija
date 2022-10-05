@@ -34,7 +34,7 @@
     c = "de.rki.coronawarnapp.coronatest.CoronaTestRepository$refresh$refreshedData$1$polling$3$1$1"
     f = "CoronaTestRepository.kt"
     l = {
-        0xc0
+        0xeb
     }
     m = "invokeSuspend"
 .end annotation

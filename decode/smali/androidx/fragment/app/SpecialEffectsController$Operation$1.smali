@@ -6,17 +6,6 @@
 .implements Landroidx/core/os/CancellationSignal$OnCancelListener;
 
 
-# annotations
-.annotation system Ldalvik/annotation/EnclosingMethod;
-    value = Landroidx/fragment/app/SpecialEffectsController$Operation;-><init>(Landroidx/fragment/app/SpecialEffectsController$Operation$State;Landroidx/fragment/app/SpecialEffectsController$Operation$LifecycleImpact;Landroidx/fragment/app/Fragment;Landroidx/core/os/CancellationSignal;)V
-.end annotation
-
-.annotation system Ldalvik/annotation/InnerClass;
-    accessFlags = 0x1
-    name = null
-.end annotation
-
-
 # instance fields
 .field public final synthetic this$0:Landroidx/fragment/app/SpecialEffectsController$Operation;
 

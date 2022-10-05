@@ -1,4 +1,4 @@
-.class public final Lkotlin/reflect/jvm/internal/impl/types/ErrorUtils$1;
+.class final Lkotlin/reflect/jvm/internal/impl/types/ErrorUtils$1;
 .super Ljava/lang/Object;
 .source "ErrorUtils.java"
 
@@ -18,7 +18,7 @@
 
 
 # direct methods
-.method public static synthetic $$$reportNull$$$0(I)V
+.method private static synthetic $$$reportNull$$$0(I)V
     .locals 12
 
     const/16 v0, 0xe
@@ -363,73 +363,76 @@
         }
     .end annotation
 
-    const/4 p2, 0x0
+    if-nez p1, :cond_0
 
-    if-eqz p1, :cond_0
-
-    return-object p2
-
-    :cond_0
     const/16 p1, 0xb
 
     invoke-static {p1}, Lkotlin/reflect/jvm/internal/impl/types/ErrorUtils$1;->$$$reportNull$$$0(I)V
 
-    throw p2
+    :cond_0
+    const/4 p1, 0x0
+
+    return-object p1
 .end method
 
 .method public getAnnotations()Lkotlin/reflect/jvm/internal/impl/descriptors/annotations/Annotations;
-    .locals 1
+    .locals 2
 
-    sget v0, Lkotlin/reflect/jvm/internal/impl/descriptors/annotations/Annotations;->$r8$clinit:I
+    sget-object v0, Lkotlin/reflect/jvm/internal/impl/descriptors/annotations/Annotations;->Companion:Lkotlin/reflect/jvm/internal/impl/descriptors/annotations/Annotations$Companion;
 
-    sget-object v0, Lkotlin/reflect/jvm/internal/impl/descriptors/annotations/Annotations$Companion;->EMPTY:Lkotlin/reflect/jvm/internal/impl/descriptors/annotations/Annotations;
+    invoke-virtual {v0}, Lkotlin/reflect/jvm/internal/impl/descriptors/annotations/Annotations$Companion;->getEMPTY()Lkotlin/reflect/jvm/internal/impl/descriptors/annotations/Annotations;
 
+    move-result-object v0
+
+    if-nez v0, :cond_0
+
+    const/4 v1, 0x1
+
+    invoke-static {v1}, Lkotlin/reflect/jvm/internal/impl/types/ErrorUtils$1;->$$$reportNull$$$0(I)V
+
+    :cond_0
     return-object v0
 .end method
 
 .method public getBuiltIns()Lkotlin/reflect/jvm/internal/impl/builtins/KotlinBuiltIns;
-    .locals 1
+    .locals 2
 
-    sget-object v0, Lkotlin/reflect/jvm/internal/impl/builtins/DefaultBuiltIns;->Instance:Lkotlin/reflect/jvm/internal/impl/builtins/DefaultBuiltIns;
+    invoke-static {}, Lkotlin/reflect/jvm/internal/impl/builtins/DefaultBuiltIns;->getInstance()Lkotlin/reflect/jvm/internal/impl/builtins/DefaultBuiltIns;
 
-    if-eqz v0, :cond_0
+    move-result-object v0
 
-    return-object v0
+    if-nez v0, :cond_0
+
+    const/16 v1, 0xe
+
+    invoke-static {v1}, Lkotlin/reflect/jvm/internal/impl/types/ErrorUtils$1;->$$$reportNull$$$0(I)V
 
     :cond_0
-    const/16 v0, 0xe
-
-    invoke-static {v0}, Lkotlin/reflect/jvm/internal/impl/types/ErrorUtils$1;->$$$reportNull$$$0(I)V
-
-    const/4 v0, 0x0
-
-    throw v0
+    return-object v0
 .end method
 
-.method public getCapability(Lcom/google/android/gms/internal/nearby/zzci;)Ljava/lang/Object;
-    .locals 1
+.method public getCapability(Lkotlin/reflect/jvm/internal/impl/descriptors/ModuleCapability;)Ljava/lang/Object;
+    .locals 0
     .annotation system Ldalvik/annotation/Signature;
         value = {
             "<T:",
             "Ljava/lang/Object;",
             ">(",
-            "Lcom/google/android/gms/internal/nearby/zzci;",
-            ")TT;"
+            "Lkotlin/reflect/jvm/internal/impl/descriptors/ModuleCapability<",
+            "TT;>;)TT;"
         }
     .end annotation
 
-    const/4 v0, 0x0
+    if-nez p1, :cond_0
 
-    if-eqz p1, :cond_0
-
-    return-object v0
-
-    :cond_0
     const/4 p1, 0x0
 
     invoke-static {p1}, Lkotlin/reflect/jvm/internal/impl/types/ErrorUtils$1;->$$$reportNull$$$0(I)V
 
-    throw v0
+    :cond_0
+    const/4 p1, 0x0
+
+    return-object p1
 .end method
 
 .method public getContainingDeclaration()Lkotlin/reflect/jvm/internal/impl/descriptors/DeclarationDescriptor;
@@ -457,7 +460,7 @@
 .end method
 
 .method public getName()Lkotlin/reflect/jvm/internal/impl/name/Name;
-    .locals 1
+    .locals 2
 
     const-string v0, "<ERROR MODULE>"
 
@@ -465,6 +468,13 @@
 
     move-result-object v0
 
+    if-nez v0, :cond_0
+
+    const/4 v1, 0x5
+
+    invoke-static {v1}, Lkotlin/reflect/jvm/internal/impl/types/ErrorUtils$1;->$$$reportNull$$$0(I)V
+
+    :cond_0
     return-object v0
 .end method
 
@@ -482,10 +492,6 @@
     const/4 p1, 0x7
 
     invoke-static {p1}, Lkotlin/reflect/jvm/internal/impl/types/ErrorUtils$1;->$$$reportNull$$$0(I)V
-
-    const/4 p1, 0x0
-
-    throw p1
 
     :cond_0
     new-instance p1, Ljava/lang/IllegalStateException;
@@ -514,37 +520,36 @@
         }
     .end annotation
 
-    if-eqz p1, :cond_0
+    if-nez p1, :cond_0
 
-    sget-object p1, Lkotlin/collections/EmptyList;->INSTANCE:Lkotlin/collections/EmptyList;
-
-    return-object p1
-
-    :cond_0
     const/4 p1, 0x2
 
     invoke-static {p1}, Lkotlin/reflect/jvm/internal/impl/types/ErrorUtils$1;->$$$reportNull$$$0(I)V
 
-    const/4 p1, 0x0
+    :cond_0
+    if-nez p2, :cond_1
 
-    throw p1
+    const/4 p1, 0x3
+
+    invoke-static {p1}, Lkotlin/reflect/jvm/internal/impl/types/ErrorUtils$1;->$$$reportNull$$$0(I)V
+
+    :cond_1
+    sget-object p1, Lkotlin/collections/EmptyList;->INSTANCE:Lkotlin/collections/EmptyList;
+
+    return-object p1
 .end method
 
 .method public shouldSeeInternalsOf(Lkotlin/reflect/jvm/internal/impl/descriptors/ModuleDescriptor;)Z
     .locals 0
 
-    if-eqz p1, :cond_0
+    if-nez p1, :cond_0
 
-    const/4 p1, 0x0
-
-    return p1
-
-    :cond_0
     const/16 p1, 0xc
 
     invoke-static {p1}, Lkotlin/reflect/jvm/internal/impl/types/ErrorUtils$1;->$$$reportNull$$$0(I)V
 
+    :cond_0
     const/4 p1, 0x0
 
-    throw p1
+    return p1
 .end method

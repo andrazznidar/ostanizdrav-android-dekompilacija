@@ -25,7 +25,7 @@
     c = "de.rki.coronawarnapp.covidcertificate.validation.core.server.DccValidationServer$dccCountryJson$2"
     f = "DccValidationServer.kt"
     l = {
-        0x50
+        0x6b
     }
     m = "invokeSuspend"
 .end annotation
@@ -158,7 +158,7 @@
 
     new-array v5, v2, [Ljava/lang/Object;
 
-    invoke-virtual {p1, v1, v5}, Ltimber/log/Timber$Tree;->v(Ljava/lang/String;[Ljava/lang/Object;)V
+    invoke-virtual {p1, v1, v5}, Ltimber/log/Timber$Forest;->v(Ljava/lang/String;[Ljava/lang/Object;)V
 
     iget-object p1, p0, Lde/rki/coronawarnapp/covidcertificate/validation/core/server/DccValidationServer$dccCountryJson$2;->this$0:Lde/rki/coronawarnapp/covidcertificate/validation/core/server/DccValidationServer;
 
@@ -194,13 +194,13 @@
     :goto_0
     check-cast p1, Lretrofit2/Response;
 
-    sget-object v1, Lde/rki/coronawarnapp/covidcertificate/validation/core/common/exception/DccValidationException$ErrorCode;->ONBOARDED_COUNTRIES_JSON_ARCHIVE_FILE_MISSING:Lde/rki/coronawarnapp/covidcertificate/validation/core/common/exception/DccValidationException$ErrorCode;
+    const/16 v1, 0x12
 
-    sget-object v4, Lde/rki/coronawarnapp/covidcertificate/validation/core/common/exception/DccValidationException$ErrorCode;->ONBOARDED_COUNTRIES_JSON_ARCHIVE_SIGNATURE_INVALID:Lde/rki/coronawarnapp/covidcertificate/validation/core/common/exception/DccValidationException$ErrorCode;
+    const/16 v4, 0x13
 
-    sget-object v5, Lde/rki/coronawarnapp/covidcertificate/validation/core/common/exception/DccValidationException$ErrorCode;->ONBOARDED_COUNTRIES_JSON_EXTRACTION_FAILED:Lde/rki/coronawarnapp/covidcertificate/validation/core/common/exception/DccValidationException$ErrorCode;
+    const/16 v5, 0x14
 
-    invoke-static {v0, p1, v1, v4, v5}, Lde/rki/coronawarnapp/covidcertificate/validation/core/server/DccValidationServer;->access$parseAndValidate(Lde/rki/coronawarnapp/covidcertificate/validation/core/server/DccValidationServer;Lretrofit2/Response;Lde/rki/coronawarnapp/covidcertificate/validation/core/common/exception/DccValidationException$ErrorCode;Lde/rki/coronawarnapp/covidcertificate/validation/core/common/exception/DccValidationException$ErrorCode;Lde/rki/coronawarnapp/covidcertificate/validation/core/common/exception/DccValidationException$ErrorCode;)Ljava/lang/String;
+    invoke-static {v0, p1, v1, v4, v5}, Lde/rki/coronawarnapp/covidcertificate/validation/core/server/DccValidationServer;->access$parseAndValidate(Lde/rki/coronawarnapp/covidcertificate/validation/core/server/DccValidationServer;Lretrofit2/Response;III)Ljava/lang/String;
 
     move-result-object p1
     :try_end_1
@@ -219,7 +219,7 @@
 
     const-string v2, "Getting dcc countries failed."
 
-    invoke-virtual {v0, p1, v2, v1}, Ltimber/log/Timber$Tree;->e(Ljava/lang/Throwable;Ljava/lang/String;[Ljava/lang/Object;)V
+    invoke-virtual {v0, p1, v2, v1}, Ltimber/log/Timber$Forest;->e(Ljava/lang/Throwable;Ljava/lang/String;[Ljava/lang/Object;)V
 
     instance-of v0, p1, Lde/rki/coronawarnapp/covidcertificate/validation/core/common/exception/DccValidationException;
 
@@ -231,18 +231,18 @@
 
     new-instance v0, Lde/rki/coronawarnapp/covidcertificate/validation/core/common/exception/DccValidationException;
 
-    sget-object v1, Lde/rki/coronawarnapp/covidcertificate/validation/core/common/exception/DccValidationException$ErrorCode;->NO_NETWORK:Lde/rki/coronawarnapp/covidcertificate/validation/core/common/exception/DccValidationException$ErrorCode;
+    const/16 v1, 0x17
 
-    invoke-direct {v0, v1, p1}, Lde/rki/coronawarnapp/covidcertificate/validation/core/common/exception/DccValidationException;-><init>(Lde/rki/coronawarnapp/covidcertificate/validation/core/common/exception/DccValidationException$ErrorCode;Ljava/lang/Throwable;)V
+    invoke-direct {v0, v1, p1}, Lde/rki/coronawarnapp/covidcertificate/validation/core/common/exception/DccValidationException;-><init>(ILjava/lang/Throwable;)V
 
     goto :goto_1
 
     :cond_3
     new-instance v0, Lde/rki/coronawarnapp/covidcertificate/validation/core/common/exception/DccValidationException;
 
-    sget-object v1, Lde/rki/coronawarnapp/covidcertificate/validation/core/common/exception/DccValidationException$ErrorCode;->ONBOARDED_COUNTRIES_SERVER_ERROR:Lde/rki/coronawarnapp/covidcertificate/validation/core/common/exception/DccValidationException$ErrorCode;
+    const/16 v1, 0x15
 
-    invoke-direct {v0, v1, p1}, Lde/rki/coronawarnapp/covidcertificate/validation/core/common/exception/DccValidationException;-><init>(Lde/rki/coronawarnapp/covidcertificate/validation/core/common/exception/DccValidationException$ErrorCode;Ljava/lang/Throwable;)V
+    invoke-direct {v0, v1, p1}, Lde/rki/coronawarnapp/covidcertificate/validation/core/common/exception/DccValidationException;-><init>(ILjava/lang/Throwable;)V
 
     :goto_1
     move-object p1, v0

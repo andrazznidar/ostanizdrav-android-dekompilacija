@@ -17,9 +17,9 @@
     c = "de.rki.coronawarnapp.datadonation.analytics.modules.testresult.AnalyticsTestResultCollector"
     f = "AnalyticsTestResultCollector.kt"
     l = {
-        0x26,
-        0x39,
-        0x47
+        0x36,
+        0x49,
+        0x57
     }
     m = "reportTestRegistered"
 .end annotation

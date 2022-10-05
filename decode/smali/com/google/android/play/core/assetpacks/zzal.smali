@@ -50,7 +50,7 @@
 
 # virtual methods
 .method public zzd(Landroid/os/Bundle;)V
-    .locals 5
+    .locals 4
 
     iget-object v0, p0, Lcom/google/android/play/core/assetpacks/zzal;->zzb:Lcom/google/android/play/core/assetpacks/zzaw;
 
@@ -64,31 +64,31 @@
 
     move-result p1
 
-    sget-object v0, Lcom/google/android/play/core/assetpacks/zzaw;->zza:Lkotlin/jvm/internal/SpreadBuilder;
+    sget-object v0, Lcom/google/android/play/core/assetpacks/zzaw;->zza:Lcom/google/android/play/core/internal/zzag;
 
     const/4 v1, 0x1
 
-    new-array v2, v1, [Ljava/lang/Object;
+    new-array v1, v1, [Ljava/lang/Object;
 
-    const/4 v3, 0x0
+    const/4 v2, 0x0
 
     invoke-static {p1}, Ljava/lang/Integer;->valueOf(I)Ljava/lang/Integer;
 
-    move-result-object v4
+    move-result-object v3
 
-    aput-object v4, v2, v3
+    aput-object v3, v1, v2
 
-    const-string v3, "onError(%d)"
+    const-string v2, "onError(%d)"
 
-    invoke-virtual {v0, v3, v2}, Lkotlin/jvm/internal/SpreadBuilder;->zzb(Ljava/lang/String;[Ljava/lang/Object;)I
+    invoke-virtual {v0, v2, v1}, Lcom/google/android/play/core/internal/zzag;->zzb(Ljava/lang/String;[Ljava/lang/Object;)I
 
     iget-object v0, p0, Lcom/google/android/play/core/assetpacks/zzal;->zza:Lcom/google/android/play/core/tasks/zzi;
 
-    new-instance v2, Lcom/google/android/play/core/install/InstallException;
+    new-instance v1, Lcom/google/android/play/core/assetpacks/AssetPackException;
 
-    invoke-direct {v2, p1, v1}, Lcom/google/android/play/core/install/InstallException;-><init>(II)V
+    invoke-direct {v1, p1}, Lcom/google/android/play/core/assetpacks/AssetPackException;-><init>(I)V
 
-    invoke-virtual {v0, v2}, Lcom/google/android/play/core/tasks/zzi;->zzd(Ljava/lang/Exception;)Z
+    invoke-virtual {v0, v1}, Lcom/google/android/play/core/tasks/zzi;->zzd(Ljava/lang/Exception;)Z
 
     return-void
 .end method
@@ -107,7 +107,7 @@
 
     invoke-virtual {p1}, Lcom/google/android/play/core/internal/zzas;->zzs()V
 
-    sget-object p1, Lcom/google/android/play/core/assetpacks/zzaw;->zza:Lkotlin/jvm/internal/SpreadBuilder;
+    sget-object p1, Lcom/google/android/play/core/assetpacks/zzaw;->zza:Lcom/google/android/play/core/internal/zzag;
 
     const/4 p2, 0x0
 
@@ -115,7 +115,7 @@
 
     const-string v0, "onGetChunkFileDescriptor"
 
-    invoke-virtual {p1, v0, p2}, Lkotlin/jvm/internal/SpreadBuilder;->zzd(Ljava/lang/String;[Ljava/lang/Object;)I
+    invoke-virtual {p1, v0, p2}, Lcom/google/android/play/core/internal/zzag;->zzd(Ljava/lang/String;[Ljava/lang/Object;)I
 
     return-void
 .end method
@@ -137,7 +137,7 @@
 
     invoke-virtual {p1}, Lcom/google/android/play/core/internal/zzas;->zzs()V
 
-    sget-object p1, Lcom/google/android/play/core/assetpacks/zzaw;->zza:Lkotlin/jvm/internal/SpreadBuilder;
+    sget-object p1, Lcom/google/android/play/core/assetpacks/zzaw;->zza:Lcom/google/android/play/core/internal/zzag;
 
     const/4 v0, 0x0
 
@@ -145,7 +145,7 @@
 
     const-string v1, "onGetSessionStates"
 
-    invoke-virtual {p1, v1, v0}, Lkotlin/jvm/internal/SpreadBuilder;->zzd(Ljava/lang/String;[Ljava/lang/Object;)I
+    invoke-virtual {p1, v1, v0}, Lcom/google/android/play/core/internal/zzag;->zzd(Ljava/lang/String;[Ljava/lang/Object;)I
 
     return-void
 .end method
@@ -159,7 +159,7 @@
 
     invoke-virtual {p2}, Lcom/google/android/play/core/internal/zzas;->zzs()V
 
-    sget-object p2, Lcom/google/android/play/core/assetpacks/zzaw;->zza:Lkotlin/jvm/internal/SpreadBuilder;
+    sget-object p2, Lcom/google/android/play/core/assetpacks/zzaw;->zza:Lcom/google/android/play/core/internal/zzag;
 
     const/4 v0, 0x1
 
@@ -181,7 +181,7 @@
 
     const-string p1, "onKeepAlive(%b)"
 
-    invoke-virtual {p2, p1, v0}, Lkotlin/jvm/internal/SpreadBuilder;->zzd(Ljava/lang/String;[Ljava/lang/Object;)I
+    invoke-virtual {p2, p1, v0}, Lcom/google/android/play/core/internal/zzag;->zzd(Ljava/lang/String;[Ljava/lang/Object;)I
 
     return-void
 .end method

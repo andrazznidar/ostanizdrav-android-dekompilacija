@@ -242,10 +242,6 @@
 
     check-cast p4, Ljava/lang/String;
 
-    const-string v0, "null cannot be cast to non-null type kotlin.CharSequence"
-
-    invoke-static {p4, v0}, Ljava/util/Objects;->requireNonNull(Ljava/lang/Object;Ljava/lang/String;)Ljava/lang/Object;
-
     invoke-static {p4}, Lkotlin/text/StringsKt__StringsKt;->trim(Ljava/lang/CharSequence;)Ljava/lang/CharSequence;
 
     move-result-object p4

@@ -237,7 +237,7 @@
 
     move-result-object v2
 
-    invoke-virtual {p1, v2, v0}, Lcom/fasterxml/jackson/databind/DatabindContext;->converterInstance(Lcom/fasterxml/jackson/databind/introspect/Annotated;Ljava/lang/Object;)Lcom/fasterxml/jackson/databind/util/Converter;
+    invoke-virtual {p1, v2, v0}, Lcom/fasterxml/jackson/databind/DatabindContext;->converterInstance(Lorg/joda/time/Chronology;Ljava/lang/Object;)Lcom/fasterxml/jackson/databind/util/Converter;
 
     move-result-object v0
 
@@ -371,9 +371,11 @@
 
     invoke-virtual {p1, p3, p2}, Lcom/fasterxml/jackson/databind/DatabindContext;->reportBadDefinition(Ljava/lang/Class;Ljava/lang/String;)Ljava/lang/Object;
 
-    const/4 p1, 0x0
+    move-result-object p1
 
-    throw p1
+    check-cast p1, Lcom/fasterxml/jackson/databind/ser/PropertyFilter;
+
+    return-object p1
 .end method
 
 .method public handledType()Ljava/lang/Class;
@@ -447,7 +449,7 @@
 
     if-eqz p1, :cond_3
 
-    instance-of p1, p2, Lcom/fasterxml/jackson/databind/JsonMappingException;
+    instance-of p1, p2, Lcom/fasterxml/jackson/core/JacksonException;
 
     if-nez p1, :cond_5
 
@@ -525,7 +527,7 @@
 
     if-eqz p1, :cond_3
 
-    instance-of p1, p2, Lcom/fasterxml/jackson/databind/JsonMappingException;
+    instance-of p1, p2, Lcom/fasterxml/jackson/core/JacksonException;
 
     if-nez p1, :cond_5
 

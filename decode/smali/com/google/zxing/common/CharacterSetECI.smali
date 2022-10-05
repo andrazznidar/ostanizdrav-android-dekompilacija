@@ -795,44 +795,6 @@
     return-void
 .end method
 
-.method public static getCharacterSetECIByValue(I)Lcom/google/zxing/common/CharacterSetECI;
-    .locals 1
-    .annotation system Ldalvik/annotation/Throws;
-        value = {
-            Lcom/google/zxing/FormatException;
-        }
-    .end annotation
-
-    if-ltz p0, :cond_0
-
-    const/16 v0, 0x384
-
-    if-ge p0, v0, :cond_0
-
-    sget-object v0, Lcom/google/zxing/common/CharacterSetECI;->VALUE_TO_ECI:Ljava/util/Map;
-
-    invoke-static {p0}, Ljava/lang/Integer;->valueOf(I)Ljava/lang/Integer;
-
-    move-result-object p0
-
-    check-cast v0, Ljava/util/HashMap;
-
-    invoke-virtual {v0, p0}, Ljava/util/HashMap;->get(Ljava/lang/Object;)Ljava/lang/Object;
-
-    move-result-object p0
-
-    check-cast p0, Lcom/google/zxing/common/CharacterSetECI;
-
-    return-object p0
-
-    :cond_0
-    invoke-static {}, Lcom/google/zxing/FormatException;->getFormatInstance()Lcom/google/zxing/FormatException;
-
-    move-result-object p0
-
-    throw p0
-.end method
-
 .method public static valueOf(Ljava/lang/String;)Lcom/google/zxing/common/CharacterSetECI;
     .locals 1
 

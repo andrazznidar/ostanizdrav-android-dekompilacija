@@ -30,7 +30,7 @@
 
 
 # instance fields
-.field public final initializer:Lkotlin/jvm/functions/Function0;
+.field private final initializer:Lkotlin/jvm/functions/Function0;
     .annotation system Ldalvik/annotation/Signature;
         value = {
             "Lkotlin/jvm/functions/Function0<",
@@ -39,7 +39,7 @@
     .end annotation
 .end field
 
-.field public volatile value:Ljava/lang/ref/SoftReference;
+.field private volatile value:Ljava/lang/ref/SoftReference;
     .annotation system Ldalvik/annotation/Signature;
         value = {
             "Ljava/lang/ref/SoftReference<",
@@ -51,6 +51,44 @@
 
 
 # direct methods
+.method private static synthetic $$$reportNull$$$0(I)V
+    .locals 2
+
+    const/4 p0, 0x3
+
+    new-array p0, p0, [Ljava/lang/Object;
+
+    const/4 v0, 0x0
+
+    const-string v1, "initializer"
+
+    aput-object v1, p0, v0
+
+    const/4 v0, 0x1
+
+    const-string v1, "kotlin/reflect/jvm/internal/ReflectProperties$LazySoftVal"
+
+    aput-object v1, p0, v0
+
+    const/4 v0, 0x2
+
+    const-string v1, "<init>"
+
+    aput-object v1, p0, v0
+
+    const-string v0, "Argument for @NotNull parameter \'%s\' of %s.%s must not be null"
+
+    invoke-static {v0, p0}, Ljava/lang/String;->format(Ljava/lang/String;[Ljava/lang/Object;)Ljava/lang/String;
+
+    move-result-object p0
+
+    new-instance v0, Ljava/lang/IllegalArgumentException;
+
+    invoke-direct {v0, p0}, Ljava/lang/IllegalArgumentException;-><init>(Ljava/lang/String;)V
+
+    throw v0
+.end method
+
 .method public constructor <init>(Ljava/lang/Object;Lkotlin/jvm/functions/Function0;)V
     .locals 1
     .annotation system Ldalvik/annotation/Signature;
@@ -61,8 +99,13 @@
         }
     .end annotation
 
-    if-eqz p2, :cond_1
+    if-nez p2, :cond_0
 
+    const/4 v0, 0x0
+
+    invoke-static {v0}, Lkotlin/reflect/jvm/internal/ReflectProperties$LazySoftVal;->$$$reportNull$$$0(I)V
+
+    :cond_0
     invoke-direct {p0}, Lkotlin/reflect/jvm/internal/ReflectProperties$Val;-><init>()V
 
     const/4 v0, 0x0
@@ -71,51 +114,20 @@
 
     iput-object p2, p0, Lkotlin/reflect/jvm/internal/ReflectProperties$LazySoftVal;->initializer:Lkotlin/jvm/functions/Function0;
 
-    if-eqz p1, :cond_0
+    if-eqz p1, :cond_1
 
     new-instance p2, Ljava/lang/ref/SoftReference;
+
+    invoke-virtual {p0, p1}, Lkotlin/reflect/jvm/internal/ReflectProperties$Val;->escape(Ljava/lang/Object;)Ljava/lang/Object;
+
+    move-result-object p1
 
     invoke-direct {p2, p1}, Ljava/lang/ref/SoftReference;-><init>(Ljava/lang/Object;)V
 
     iput-object p2, p0, Lkotlin/reflect/jvm/internal/ReflectProperties$LazySoftVal;->value:Ljava/lang/ref/SoftReference;
 
-    :cond_0
-    return-void
-
     :cond_1
-    const/4 p1, 0x3
-
-    new-array p1, p1, [Ljava/lang/Object;
-
-    const/4 p2, 0x0
-
-    const-string v0, "initializer"
-
-    aput-object v0, p1, p2
-
-    const/4 p2, 0x1
-
-    const-string v0, "kotlin/reflect/jvm/internal/ReflectProperties$LazySoftVal"
-
-    aput-object v0, p1, p2
-
-    const/4 p2, 0x2
-
-    const-string v0, "<init>"
-
-    aput-object v0, p1, p2
-
-    const-string p2, "Argument for @NotNull parameter \'%s\' of %s.%s must not be null"
-
-    invoke-static {p2, p1}, Ljava/lang/String;->format(Ljava/lang/String;[Ljava/lang/Object;)Ljava/lang/String;
-
-    move-result-object p1
-
-    new-instance p2, Ljava/lang/IllegalArgumentException;
-
-    invoke-direct {p2, p1}, Ljava/lang/IllegalArgumentException;-><init>(Ljava/lang/String;)V
-
-    throw p2
+    return-void
 .end method
 
 
@@ -130,24 +142,21 @@
 
     iget-object v0, p0, Lkotlin/reflect/jvm/internal/ReflectProperties$LazySoftVal;->value:Ljava/lang/ref/SoftReference;
 
-    if-eqz v0, :cond_1
+    if-eqz v0, :cond_0
 
     invoke-virtual {v0}, Ljava/lang/ref/SoftReference;->get()Ljava/lang/Object;
 
     move-result-object v0
 
-    if-eqz v0, :cond_1
+    if-eqz v0, :cond_0
 
-    sget-object v1, Lkotlin/reflect/jvm/internal/ReflectProperties$Val;->NULL_VALUE:Ljava/lang/Object;
+    invoke-virtual {p0, v0}, Lkotlin/reflect/jvm/internal/ReflectProperties$Val;->unescape(Ljava/lang/Object;)Ljava/lang/Object;
 
-    if-ne v0, v1, :cond_0
+    move-result-object v0
 
-    const/4 v0, 0x0
-
-    :cond_0
     return-object v0
 
-    :cond_1
+    :cond_0
     iget-object v0, p0, Lkotlin/reflect/jvm/internal/ReflectProperties$LazySoftVal;->initializer:Lkotlin/jvm/functions/Function0;
 
     invoke-interface {v0}, Lkotlin/jvm/functions/Function0;->invoke()Ljava/lang/Object;
@@ -156,16 +165,10 @@
 
     new-instance v1, Ljava/lang/ref/SoftReference;
 
-    if-nez v0, :cond_2
+    invoke-virtual {p0, v0}, Lkotlin/reflect/jvm/internal/ReflectProperties$Val;->escape(Ljava/lang/Object;)Ljava/lang/Object;
 
-    sget-object v2, Lkotlin/reflect/jvm/internal/ReflectProperties$Val;->NULL_VALUE:Ljava/lang/Object;
+    move-result-object v2
 
-    goto :goto_0
-
-    :cond_2
-    move-object v2, v0
-
-    :goto_0
     invoke-direct {v1, v2}, Ljava/lang/ref/SoftReference;-><init>(Ljava/lang/Object;)V
 
     iput-object v1, p0, Lkotlin/reflect/jvm/internal/ReflectProperties$LazySoftVal;->value:Ljava/lang/ref/SoftReference;

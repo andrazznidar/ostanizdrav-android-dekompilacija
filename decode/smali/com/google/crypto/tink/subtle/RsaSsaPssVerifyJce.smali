@@ -7,17 +7,17 @@
 
 
 # instance fields
-.field public final mgf1Hash:Lcom/google/crypto/tink/subtle/Enums$HashType;
+.field public final mgf1Hash:I
 
 .field public final publicKey:Ljava/security/interfaces/RSAPublicKey;
 
 .field public final saltLength:I
 
-.field public final sigHash:Lcom/google/crypto/tink/subtle/Enums$HashType;
+.field public final sigHash:I
 
 
 # direct methods
-.method public constructor <init>(Ljava/security/interfaces/RSAPublicKey;Lcom/google/crypto/tink/subtle/Enums$HashType;Lcom/google/crypto/tink/subtle/Enums$HashType;I)V
+.method public constructor <init>(Ljava/security/interfaces/RSAPublicKey;III)V
     .locals 1
     .annotation system Ldalvik/annotation/MethodParameters;
         accessFlags = {
@@ -42,7 +42,7 @@
 
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
-    invoke-static {p2}, Lcom/google/crypto/tink/subtle/Validators;->validateSignatureHash(Lcom/google/crypto/tink/subtle/Enums$HashType;)V
+    invoke-static {p2}, Lcom/google/crypto/tink/subtle/Validators;->validateSignatureHash(I)V
 
     invoke-interface {p1}, Ljava/security/interfaces/RSAPublicKey;->getModulus()Ljava/math/BigInteger;
 
@@ -56,9 +56,9 @@
 
     iput-object p1, p0, Lcom/google/crypto/tink/subtle/RsaSsaPssVerifyJce;->publicKey:Ljava/security/interfaces/RSAPublicKey;
 
-    iput-object p2, p0, Lcom/google/crypto/tink/subtle/RsaSsaPssVerifyJce;->sigHash:Lcom/google/crypto/tink/subtle/Enums$HashType;
+    iput p2, p0, Lcom/google/crypto/tink/subtle/RsaSsaPssVerifyJce;->sigHash:I
 
-    iput-object p3, p0, Lcom/google/crypto/tink/subtle/RsaSsaPssVerifyJce;->mgf1Hash:Lcom/google/crypto/tink/subtle/Enums$HashType;
+    iput p3, p0, Lcom/google/crypto/tink/subtle/RsaSsaPssVerifyJce;->mgf1Hash:I
 
     iput p4, p0, Lcom/google/crypto/tink/subtle/RsaSsaPssVerifyJce;->saltLength:I
 
@@ -152,15 +152,15 @@
 
     sub-int/2addr v2, v7
 
-    iget-object v3, v0, Lcom/google/crypto/tink/subtle/RsaSsaPssVerifyJce;->sigHash:Lcom/google/crypto/tink/subtle/Enums$HashType;
+    iget v3, v0, Lcom/google/crypto/tink/subtle/RsaSsaPssVerifyJce;->sigHash:I
 
-    invoke-static {v3}, Lcom/google/crypto/tink/subtle/Validators;->validateSignatureHash(Lcom/google/crypto/tink/subtle/Enums$HashType;)V
+    invoke-static {v3}, Lcom/google/crypto/tink/subtle/Validators;->validateSignatureHash(I)V
 
     sget-object v3, Lcom/google/crypto/tink/subtle/EngineFactory;->MESSAGE_DIGEST:Lcom/google/crypto/tink/subtle/EngineFactory;
 
-    iget-object v4, v0, Lcom/google/crypto/tink/subtle/RsaSsaPssVerifyJce;->sigHash:Lcom/google/crypto/tink/subtle/Enums$HashType;
+    iget v4, v0, Lcom/google/crypto/tink/subtle/RsaSsaPssVerifyJce;->sigHash:I
 
-    invoke-static {v4}, Lcom/google/crypto/tink/subtle/SubtleUtil;->toDigestAlgo(Lcom/google/crypto/tink/subtle/Enums$HashType;)Ljava/lang/String;
+    invoke-static {v4}, Lcom/google/crypto/tink/subtle/SubtleUtil;->toDigestAlgo(I)Ljava/lang/String;
 
     move-result-object v4
 
@@ -277,9 +277,9 @@
     throw v1
 
     :cond_1
-    iget-object v2, v0, Lcom/google/crypto/tink/subtle/RsaSsaPssVerifyJce;->mgf1Hash:Lcom/google/crypto/tink/subtle/Enums$HashType;
+    iget v2, v0, Lcom/google/crypto/tink/subtle/RsaSsaPssVerifyJce;->mgf1Hash:I
 
-    invoke-static {v1, v11, v2}, Lcom/google/crypto/tink/subtle/SubtleUtil;->mgf1([BILcom/google/crypto/tink/subtle/Enums$HashType;)[B
+    invoke-static {v1, v11, v2}, Lcom/google/crypto/tink/subtle/SubtleUtil;->mgf1([BII)[B
 
     move-result-object v2
 

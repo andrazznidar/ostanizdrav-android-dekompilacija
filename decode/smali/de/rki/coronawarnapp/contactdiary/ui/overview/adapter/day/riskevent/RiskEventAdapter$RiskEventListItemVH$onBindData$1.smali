@@ -91,10 +91,6 @@
 
     iget v1, p2, Lde/rki/coronawarnapp/contactdiary/ui/overview/adapter/day/riskevent/RiskEventItem$Event;->bulledPointColor:I
 
-    const-string v2, "<this>"
-
-    invoke-static {v0, v2}, Lkotlin/jvm/internal/Intrinsics;->checkNotNullParameter(Ljava/lang/Object;Ljava/lang/String;)V
-
     sget-object v2, Landroidx/core/content/ContextCompat;->sLock:Ljava/lang/Object;
 
     invoke-static {v0, v1}, Landroidx/core/content/ContextCompat$Api23Impl;->getColor(Landroid/content/Context;I)I

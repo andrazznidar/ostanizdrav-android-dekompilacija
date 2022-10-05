@@ -41,7 +41,7 @@
 
     const-class v0, Lde/rki/coronawarnapp/presencetracing/checkins/qrcode/CheckInQrCodeExtractor;
 
-    invoke-static {v0}, Lde/rki/coronawarnapp/contactdiary/retention/ContactDiaryCleanTask$$ExternalSyntheticOutline0;->m(Ljava/lang/Class;)Ljava/lang/String;
+    invoke-static {v0}, Lorg/bouncycastle/crypto/digests/MD5Digest$$ExternalSyntheticOutline0;->m(Ljava/lang/Class;)Ljava/lang/String;
 
     move-result-object v0
 
@@ -318,10 +318,6 @@
 
     invoke-static {v1, v3}, Lkotlin/jvm/internal/Intrinsics;->checkNotNullExpressionValue(Ljava/lang/Object;Ljava/lang/String;)V
 
-    const-string v3, "pattern"
-
-    invoke-static {v1, v3}, Lkotlin/jvm/internal/Intrinsics;->checkNotNullParameter(Ljava/lang/Object;Ljava/lang/String;)V
-
     const/4 v3, 0x2
 
     and-int v4, v3, v3
@@ -335,13 +331,9 @@
 
     move-result-object v1
 
-    const-string v3, "Pattern.compile(pattern,\u2026nicodeCase(option.value))"
+    const-string v3, "compile(pattern, ensureUnicodeCase(option.value))"
 
     invoke-static {v1, v3}, Lkotlin/jvm/internal/Intrinsics;->checkNotNullExpressionValue(Ljava/lang/Object;Ljava/lang/String;)V
-
-    const-string v3, "nativePattern"
-
-    invoke-static {v1, v3}, Lkotlin/jvm/internal/Intrinsics;->checkNotNullParameter(Ljava/lang/Object;Ljava/lang/String;)V
 
     const-string v3, "input"
 
@@ -393,7 +385,7 @@
 .end method
 
 .method public extract(Ljava/lang/String;Lkotlin/coroutines/Continuation;)Ljava/lang/Object;
-    .locals 9
+    .locals 8
     .annotation system Ldalvik/annotation/Signature;
         value = {
             "(",
@@ -514,7 +506,7 @@
 
     move-result-object v0
 
-    const-string v5, "Pattern.compile(pattern,\u2026nicodeCase(option.value))"
+    const-string v5, "compile(pattern, ensureUnicodeCase(option.value))"
 
     invoke-static {v0, v5}, Lkotlin/jvm/internal/Intrinsics;->checkNotNullExpressionValue(Ljava/lang/Object;Ljava/lang/String;)V
 
@@ -570,14 +562,11 @@
     move-result-object p1
 
     :goto_3
-    if-eqz p1, :cond_6
+    if-nez p1, :cond_6
 
-    goto :goto_4
-
-    :cond_6
     sget-object p1, Lkotlin/collections/EmptyList;->INSTANCE:Lkotlin/collections/EmptyList;
 
-    :goto_4
+    :cond_6
     sget-object v0, Ltimber/log/Timber;->Forest:Ltimber/log/Timber$Forest;
 
     sget-object v5, Lde/rki/coronawarnapp/presencetracing/checkins/qrcode/CheckInQrCodeExtractor;->TAG:Ljava/lang/String;
@@ -606,26 +595,22 @@
 
     move-result v6
 
-    const/4 v7, -0x1
-
-    add-int/2addr v6, v7
-
     invoke-interface {p2}, Lde/rki/coronawarnapp/server/protocols/internal/v2/PresenceTracingParametersOuterClass$PresenceTracingQRCodeDescriptorOrBuilder;->getEncodedPayloadGroupIndex()I
 
-    move-result v8
+    move-result v7
 
-    if-ltz v8, :cond_7
+    if-ltz v7, :cond_7
 
-    if-gt v8, v6, :cond_7
+    if-ge v7, v6, :cond_7
 
     move v6, v3
 
-    goto :goto_5
+    goto :goto_4
 
     :cond_7
     move v6, v4
 
-    :goto_5
+    :goto_4
     if-eqz v6, :cond_c
 
     invoke-interface {p2}, Lde/rki/coronawarnapp/server/protocols/internal/v2/PresenceTracingParametersOuterClass$PresenceTracingQRCodeDescriptorOrBuilder;->getEncodedPayloadGroupIndex()I
@@ -644,9 +629,9 @@
 
     invoke-direct {v6}, Ljava/lang/StringBuilder;-><init>()V
 
-    const-string v8, "payload="
+    const-string v7, "payload="
 
-    invoke-virtual {v6, v8}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+    invoke-virtual {v6, v7}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
 
     invoke-virtual {v6, p1}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
 
@@ -654,9 +639,9 @@
 
     move-result-object v6
 
-    new-array v8, v4, [Ljava/lang/Object;
+    new-array v7, v4, [Ljava/lang/Object;
 
-    invoke-virtual {v0, v6, v8}, Ltimber/log/Timber$Forest;->d(Ljava/lang/String;[Ljava/lang/Object;)V
+    invoke-virtual {v0, v6, v7}, Ltimber/log/Timber$Forest;->d(Ljava/lang/String;[Ljava/lang/Object;)V
 
     invoke-interface {p2}, Lde/rki/coronawarnapp/server/protocols/internal/v2/PresenceTracingParametersOuterClass$PresenceTracingQRCodeDescriptorOrBuilder;->getPayloadEncoding()Lde/rki/coronawarnapp/server/protocols/internal/v2/PresenceTracingParametersOuterClass$PresenceTracingQRCodeDescriptor$PayloadEncoding;
 
@@ -694,7 +679,9 @@
 
     if-nez p2, :cond_8
 
-    goto :goto_6
+    const/4 p2, -0x1
+
+    goto :goto_5
 
     :cond_8
     :try_start_0
@@ -704,52 +691,52 @@
 
     move-result p2
 
-    aget v7, v5, p2
+    aget p2, v5, p2
 
-    :goto_6
-    const/4 p2, 0x3
+    :goto_5
+    const/4 v5, 0x3
 
-    if-eq v7, v3, :cond_a
+    if-eq p2, v3, :cond_a
 
-    if-eq v7, v1, :cond_9
+    if-eq p2, v1, :cond_9
+
+    goto :goto_6
+
+    :cond_9
+    sget-object p2, Lokio/ByteString;->Companion:Lokio/ByteString$Companion;
+
+    sget-object v3, Lcom/google/common/io/BaseEncoding;->BASE64_URL:Lcom/google/common/io/BaseEncoding;
+
+    invoke-virtual {v3, p1}, Lcom/google/common/io/BaseEncoding;->decode(Ljava/lang/CharSequence;)[B
+
+    move-result-object p1
+
+    invoke-static {p2, p1, v4, v4, v5}, Lokio/ByteString$Companion;->of$default(Lokio/ByteString$Companion;[BIII)Lokio/ByteString;
+
+    move-result-object p1
 
     goto :goto_7
 
-    :cond_9
-    sget-object v3, Lokio/ByteString;->Companion:Lokio/ByteString$Companion;
-
-    sget-object v5, Lcom/google/common/io/BaseEncoding;->BASE64_URL:Lcom/google/common/io/BaseEncoding;
-
-    invoke-virtual {v5, p1}, Lcom/google/common/io/BaseEncoding;->decode(Ljava/lang/CharSequence;)[B
-
-    move-result-object p1
-
-    invoke-static {v3, p1, v4, v4, p2}, Lokio/ByteString$Companion;->of$default(Lokio/ByteString$Companion;[BIII)Lokio/ByteString;
-
-    move-result-object p1
-
-    goto :goto_8
-
     :cond_a
-    const-string v3, "<this>"
+    const-string p2, "<this>"
 
-    invoke-static {p1, v3}, Lkotlin/jvm/internal/Intrinsics;->checkNotNullParameter(Ljava/lang/Object;Ljava/lang/String;)V
+    invoke-static {p1, p2}, Lkotlin/jvm/internal/Intrinsics;->checkNotNullParameter(Ljava/lang/Object;Ljava/lang/String;)V
 
-    sget-object v3, Lokio/ByteString;->Companion:Lokio/ByteString$Companion;
+    sget-object p2, Lokio/ByteString;->Companion:Lokio/ByteString$Companion;
 
-    sget-object v5, Lcom/google/common/io/BaseEncoding;->BASE32:Lcom/google/common/io/BaseEncoding;
+    sget-object v3, Lcom/google/common/io/BaseEncoding;->BASE32:Lcom/google/common/io/BaseEncoding;
 
-    invoke-virtual {v5, p1}, Lcom/google/common/io/BaseEncoding;->decode(Ljava/lang/CharSequence;)[B
+    invoke-virtual {v3, p1}, Lcom/google/common/io/BaseEncoding;->decode(Ljava/lang/CharSequence;)[B
 
     move-result-object p1
 
-    invoke-static {v3, p1, v4, v4, p2}, Lokio/ByteString$Companion;->of$default(Lokio/ByteString$Companion;[BIII)Lokio/ByteString;
+    invoke-static {p2, p1, v4, v4, v5}, Lokio/ByteString$Companion;->of$default(Lokio/ByteString$Companion;[BIII)Lokio/ByteString;
 
     move-result-object p1
     :try_end_0
     .catch Ljava/lang/Exception; {:try_start_0 .. :try_end_0} :catch_0
 
-    goto :goto_8
+    goto :goto_7
 
     :catch_0
     move-exception p1
@@ -764,10 +751,10 @@
 
     invoke-virtual {p2, p1, v0, v3}, Ltimber/log/Timber$Forest;->d(Ljava/lang/Throwable;Ljava/lang/String;[Ljava/lang/Object;)V
 
-    :goto_7
+    :goto_6
     move-object p1, v2
 
-    :goto_8
+    :goto_7
     if-eqz p1, :cond_b
 
     new-instance p2, Lde/rki/coronawarnapp/presencetracing/checkins/qrcode/CheckInQrCode;

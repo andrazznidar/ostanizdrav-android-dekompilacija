@@ -103,9 +103,7 @@
 
     move-result-object v0
 
-    iget-object v0, v0, Lorg/joda/time/convert/ConverterManager;->iPeriodConverters:Ljava/lang/Object;
-
-    check-cast v0, Lorg/joda/time/convert/ConverterSet;
+    iget-object v0, v0, Lorg/joda/time/convert/ConverterManager;->iPeriodConverters:Lorg/joda/time/convert/ConverterSet;
 
     if-nez p1, :cond_0
 
@@ -125,7 +123,7 @@
 
     check-cast v0, Lorg/joda/time/convert/PeriodConverter;
 
-    if-eqz v0, :cond_5
+    if-eqz v0, :cond_4
 
     if-nez p2, :cond_1
 
@@ -167,41 +165,23 @@
 
     invoke-interface {v0, p3, p1, p2}, Lorg/joda/time/convert/PeriodConverter;->setInto(Lorg/joda/time/ReadWritablePeriod;Ljava/lang/Object;Lorg/joda/time/Chronology;)V
 
-    goto :goto_2
+    goto :goto_1
 
     :cond_3
     new-instance v0, Lorg/joda/time/MutablePeriod;
 
     invoke-direct {v0, p1, p2, p3}, Lorg/joda/time/MutablePeriod;-><init>(Ljava/lang/Object;Lorg/joda/time/PeriodType;Lorg/joda/time/Chronology;)V
 
-    invoke-virtual {v0}, Lorg/joda/time/base/AbstractPeriod;->size()I
+    invoke-virtual {v0}, Lorg/joda/time/base/AbstractPeriod;->getValues()[I
 
-    move-result p1
+    move-result-object p1
 
-    new-array p2, p1, [I
-
-    const/4 p3, 0x0
+    iput-object p1, p0, Lorg/joda/time/base/BasePeriod;->iValues:[I
 
     :goto_1
-    if-ge p3, p1, :cond_4
-
-    iget-object v1, v0, Lorg/joda/time/base/BasePeriod;->iValues:[I
-
-    aget v1, v1, p3
-
-    aput v1, p2, p3
-
-    add-int/lit8 p3, p3, 0x1
-
-    goto :goto_1
-
-    :cond_4
-    iput-object p2, p0, Lorg/joda/time/base/BasePeriod;->iValues:[I
-
-    :goto_2
     return-void
 
-    :cond_5
+    :cond_4
     new-instance p2, Ljava/lang/IllegalArgumentException;
 
     const-string p3, "No period converter found for type: "
@@ -210,13 +190,13 @@
 
     move-result-object p3
 
-    if-nez p1, :cond_6
+    if-nez p1, :cond_5
 
     const-string p1, "null"
 
-    goto :goto_3
+    goto :goto_2
 
-    :cond_6
+    :cond_5
     invoke-virtual {p1}, Ljava/lang/Object;->getClass()Ljava/lang/Class;
 
     move-result-object p1
@@ -225,7 +205,7 @@
 
     move-result-object p1
 
-    :goto_3
+    :goto_2
     invoke-virtual {p3, p1}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
 
     invoke-virtual {p3}, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
@@ -237,8 +217,67 @@
     throw p2
 .end method
 
+.method public constructor <init>([ILorg/joda/time/PeriodType;)V
+    .locals 0
+
+    invoke-direct {p0}, Lorg/joda/time/base/AbstractPeriod;-><init>()V
+
+    iput-object p2, p0, Lorg/joda/time/base/BasePeriod;->iType:Lorg/joda/time/PeriodType;
+
+    iput-object p1, p0, Lorg/joda/time/base/BasePeriod;->iValues:[I
+
+    return-void
+.end method
+
 
 # virtual methods
+.method public final checkAndUpdate(Lorg/joda/time/DurationFieldType;[II)V
+    .locals 2
+
+    invoke-virtual {p0}, Lorg/joda/time/base/BasePeriod;->getPeriodType()Lorg/joda/time/PeriodType;
+
+    move-result-object v0
+
+    invoke-virtual {v0, p1}, Lorg/joda/time/PeriodType;->indexOf(Lorg/joda/time/DurationFieldType;)I
+
+    move-result v0
+
+    const/4 v1, -0x1
+
+    if-ne v0, v1, :cond_1
+
+    if-nez p3, :cond_0
+
+    goto :goto_0
+
+    :cond_0
+    new-instance p2, Ljava/lang/IllegalArgumentException;
+
+    const-string p3, "Period does not support field \'"
+
+    invoke-static {p3}, Landroid/support/v4/media/RatingCompat$$ExternalSyntheticOutline0;->m(Ljava/lang/String;)Ljava/lang/StringBuilder;
+
+    move-result-object p3
+
+    iget-object p1, p1, Lorg/joda/time/DurationFieldType;->iName:Ljava/lang/String;
+
+    const-string v0, "\'"
+
+    invoke-static {p3, p1, v0}, Landroidx/activity/ComponentActivity$2$$ExternalSyntheticOutline0;->m(Ljava/lang/StringBuilder;Ljava/lang/String;Ljava/lang/String;)Ljava/lang/String;
+
+    move-result-object p1
+
+    invoke-direct {p2, p1}, Ljava/lang/IllegalArgumentException;-><init>(Ljava/lang/String;)V
+
+    throw p2
+
+    :cond_1
+    aput p3, p2, v0
+
+    :goto_0
+    return-void
+.end method
+
 .method public getPeriodType()Lorg/joda/time/PeriodType;
     .locals 1
 

@@ -179,30 +179,26 @@
 
     if-eqz v3, :cond_5
 
-    invoke-static {v3}, Lkotlin/jvm/internal/Intrinsics;->checkNotNull(Ljava/lang/Object;)V
-
     iget-wide v7, v3, Lokio/AsyncTimeout;->timeoutAt:J
 
     sub-long/2addr v7, v5
 
-    cmp-long v3, v0, v7
+    cmp-long v7, v0, v7
 
-    if-gez v3, :cond_4
+    if-gez v7, :cond_4
 
     goto :goto_2
 
     :cond_4
-    iget-object v2, v2, Lokio/AsyncTimeout;->next:Lokio/AsyncTimeout;
+    invoke-static {v3}, Lkotlin/jvm/internal/Intrinsics;->checkNotNull(Ljava/lang/Object;)V
 
-    invoke-static {v2}, Lkotlin/jvm/internal/Intrinsics;->checkNotNull(Ljava/lang/Object;)V
+    move-object v2, v3
 
     goto :goto_1
 
     :cond_5
     :goto_2
-    iget-object v0, v2, Lokio/AsyncTimeout;->next:Lokio/AsyncTimeout;
-
-    iput-object v0, p0, Lokio/AsyncTimeout;->next:Lokio/AsyncTimeout;
+    iput-object v3, p0, Lokio/AsyncTimeout;->next:Lokio/AsyncTimeout;
 
     iput-object p0, v2, Lokio/AsyncTimeout;->next:Lokio/AsyncTimeout;
 

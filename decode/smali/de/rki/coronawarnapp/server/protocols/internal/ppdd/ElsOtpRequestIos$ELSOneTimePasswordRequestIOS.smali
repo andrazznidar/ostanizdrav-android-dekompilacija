@@ -122,7 +122,7 @@
     return-void
 .end method
 
-.method public static synthetic -$$Nest$sfgetDEFAULT_INSTANCE()Lde/rki/coronawarnapp/server/protocols/internal/ppdd/ElsOtpRequestIos$ELSOneTimePasswordRequestIOS;
+.method public static bridge synthetic -$$Nest$sfgetDEFAULT_INSTANCE()Lde/rki/coronawarnapp/server/protocols/internal/ppdd/ElsOtpRequestIos$ELSOneTimePasswordRequestIOS;
     .locals 1
 
     sget-object v0, Lde/rki/coronawarnapp/server/protocols/internal/ppdd/ElsOtpRequestIos$ELSOneTimePasswordRequestIOS;->DEFAULT_INSTANCE:Lde/rki/coronawarnapp/server/protocols/internal/ppdd/ElsOtpRequestIos$ELSOneTimePasswordRequestIOS;
@@ -826,7 +826,7 @@
     :pswitch_4
     new-instance p1, Lde/rki/coronawarnapp/server/protocols/internal/ppdd/ElsOtpRequestIos$ELSOneTimePasswordRequestIOS$Builder;
 
-    invoke-direct {p1, v0}, Lde/rki/coronawarnapp/server/protocols/internal/ppdd/ElsOtpRequestIos$ELSOneTimePasswordRequestIOS$Builder;-><init>(Lde/rki/coronawarnapp/server/protocols/internal/ppdd/ElsOtpRequestIos$ELSOneTimePasswordRequestIOS$Builder-IA;)V
+    invoke-direct {p1, v0}, Lde/rki/coronawarnapp/server/protocols/internal/ppdd/ElsOtpRequestIos$ELSOneTimePasswordRequestIOS$Builder;-><init>(Landroidx/constraintlayout/core/widgets/analyzer/DependencyNode$Type$EnumUnboxingLocalUtility;)V
 
     return-object p1
 

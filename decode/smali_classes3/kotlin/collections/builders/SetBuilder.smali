@@ -2,6 +2,9 @@
 .super Lkotlin/collections/AbstractMutableSet;
 .source "SetBuilder.kt"
 
+# interfaces
+.implements Ljava/io/Serializable;
+
 
 # annotations
 .annotation system Ldalvik/annotation/Signature;
@@ -11,9 +14,7 @@
         ">",
         "Lkotlin/collections/AbstractMutableSet<",
         "TE;>;",
-        "Ljava/util/Set<",
-        "TE;>;",
-        "Lkotlin/jvm/internal/markers/KMutableSet;"
+        "Ljava/io/Serializable;"
     }
 .end annotation
 
@@ -31,15 +32,11 @@
 
 # direct methods
 .method public constructor <init>()V
-    .locals 2
+    .locals 1
 
     new-instance v0, Lkotlin/collections/builders/MapBuilder;
 
     invoke-direct {v0}, Lkotlin/collections/builders/MapBuilder;-><init>()V
-
-    const-string v1, "backing"
-
-    invoke-static {v0, v1}, Lkotlin/jvm/internal/Intrinsics;->checkNotNullParameter(Ljava/lang/Object;Ljava/lang/String;)V
 
     invoke-direct {p0}, Lkotlin/collections/AbstractMutableSet;-><init>()V
 
@@ -95,7 +92,7 @@
 
     invoke-virtual {v0}, Lkotlin/collections/builders/MapBuilder;->checkIsMutable$kotlin_stdlib()V
 
-    invoke-super {p0, p1}, Ljava/util/AbstractCollection;->addAll(Ljava/util/Collection;)Z
+    invoke-super {p0, p1}, Ljava/util/AbstractSet;->addAll(Ljava/util/Collection;)Z
 
     move-result p1
 
@@ -246,7 +243,7 @@
 
     invoke-virtual {v0}, Lkotlin/collections/builders/MapBuilder;->checkIsMutable$kotlin_stdlib()V
 
-    invoke-super {p0, p1}, Ljava/util/AbstractCollection;->retainAll(Ljava/util/Collection;)Z
+    invoke-super {p0, p1}, Ljava/util/AbstractSet;->retainAll(Ljava/util/Collection;)Z
 
     move-result p1
 

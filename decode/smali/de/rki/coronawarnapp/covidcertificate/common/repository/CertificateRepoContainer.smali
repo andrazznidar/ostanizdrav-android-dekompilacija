@@ -2,6 +2,9 @@
 .super Ljava/lang/Object;
 .source "CertificateRepoContainer.kt"
 
+# interfaces
+.implements Lde/rki/coronawarnapp/reyclebin/common/Recyclable;
+
 
 # annotations
 .annotation system Ldalvik/annotation/MemberClasses;

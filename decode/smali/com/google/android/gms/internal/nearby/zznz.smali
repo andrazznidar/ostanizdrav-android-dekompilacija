@@ -139,7 +139,7 @@
 
     const-string v2, "at index "
 
-    invoke-static {v0, v2, v1}, Lcom/google/android/gms/common/api/internal/BasePendingResult$CallbackHandler$$ExternalSyntheticOutline0;->m(ILjava/lang/String;I)Ljava/lang/String;
+    invoke-static {v0, v2, v1}, Lboofcv/alg/misc/HistogramStatistics$$ExternalSyntheticOutline0;->m(ILjava/lang/String;I)Ljava/lang/String;
 
     move-result-object v0
 
@@ -279,7 +279,7 @@
 
     move-result-object v5
 
-    invoke-static {v4, v5}, Lcom/google/android/gms/internal/nearby/zznn;->zza(Ljava/lang/Object;Ljava/lang/Object;)Z
+    invoke-static {v4, v5}, Lkotlin/collections/ArraysUtilJVM;->zza(Ljava/lang/Object;Ljava/lang/Object;)Z
 
     move-result v4
 
@@ -325,7 +325,7 @@
 
     move-result-object v4
 
-    invoke-static {v3, v4}, Lcom/google/android/gms/internal/nearby/zznn;->zza(Ljava/lang/Object;Ljava/lang/Object;)Z
+    invoke-static {v3, v4}, Lkotlin/collections/ArraysUtilJVM;->zza(Ljava/lang/Object;Ljava/lang/Object;)Z
 
     move-result v3
 

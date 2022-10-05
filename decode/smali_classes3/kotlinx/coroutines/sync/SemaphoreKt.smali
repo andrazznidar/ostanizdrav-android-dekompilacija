@@ -33,7 +33,7 @@
 
     const/4 v5, 0x0
 
-    invoke-static/range {v0 .. v5}, Lkotlinx/coroutines/internal/SystemPropsKt;->systemProp$default(Ljava/lang/String;IIIILjava/lang/Object;)I
+    invoke-static/range {v0 .. v5}, Lorg/ejml/dense/row/CommonOps_ZDRM;->systemProp$default(Ljava/lang/String;IIIILjava/lang/Object;)I
 
     move-result v0
 
@@ -83,7 +83,7 @@
 
     const/4 v7, 0x0
 
-    invoke-static/range {v2 .. v7}, Lkotlinx/coroutines/internal/SystemPropsKt;->systemProp$default(Ljava/lang/String;IIIILjava/lang/Object;)I
+    invoke-static/range {v2 .. v7}, Lorg/ejml/dense/row/CommonOps_ZDRM;->systemProp$default(Ljava/lang/String;IIIILjava/lang/Object;)I
 
     move-result v0
 

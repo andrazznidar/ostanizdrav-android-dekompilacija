@@ -1,4 +1,4 @@
-.class public Lcom/google/zxing/common/BitSource;
+.class public final Lcom/google/zxing/common/BitSource;
 .super Ljava/lang/Object;
 .source "BitSource.java"
 
@@ -8,7 +8,7 @@
 
 .field public byteOffset:I
 
-.field public bytes:[B
+.field public final bytes:[B
 
 
 # direct methods
@@ -18,20 +18,6 @@
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
     iput-object p1, p0, Lcom/google/zxing/common/BitSource;->bytes:[B
-
-    return-void
-.end method
-
-.method public constructor <init>([BII)V
-    .locals 0
-
-    invoke-direct {p0}, Ljava/lang/Object;-><init>()V
-
-    iput-object p1, p0, Lcom/google/zxing/common/BitSource;->bytes:[B
-
-    iput p2, p0, Lcom/google/zxing/common/BitSource;->byteOffset:I
-
-    iput p3, p0, Lcom/google/zxing/common/BitSource;->bitOffset:I
 
     return-void
 .end method

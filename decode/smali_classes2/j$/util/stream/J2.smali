@@ -1,76 +1,107 @@
-.class Lj$/util/stream/J2;
-.super Lj$/util/stream/V2;
-
-
-# instance fields
-.field final synthetic b:Lj$/util/function/b;
-
-.field final synthetic c:Lj$/util/function/BiConsumer;
-
-.field final synthetic d:Lj$/util/function/t;
-
-.field final synthetic e:Lj$/wrappers/r;
+.class final Lj$/util/stream/J2;
+.super Lj$/util/stream/i0;
 
 
 # direct methods
-.method constructor <init>(Lj$/util/stream/g4;Lj$/util/function/b;Lj$/util/function/BiConsumer;Lj$/util/function/t;Lj$/wrappers/r;)V
-    .locals 0
+.method constructor <init>(Lj$/util/stream/c;)V
+    .locals 2
 
-    iput-object p2, p0, Lj$/util/stream/J2;->b:Lj$/util/function/b;
+    sget v0, Lj$/util/stream/e3;->q:I
 
-    iput-object p3, p0, Lj$/util/stream/J2;->c:Lj$/util/function/BiConsumer;
+    sget v1, Lj$/util/stream/e3;->o:I
 
-    iput-object p4, p0, Lj$/util/stream/J2;->d:Lj$/util/function/t;
+    or-int/2addr v0, v1
 
-    iput-object p5, p0, Lj$/util/stream/J2;->e:Lj$/wrappers/r;
+    const/4 v1, 0x2
 
-    invoke-direct {p0, p1}, Lj$/util/stream/V2;-><init>(Lj$/util/stream/g4;)V
+    invoke-direct {p0, p1, v1, v0}, Lj$/util/stream/i0;-><init>(Lj$/util/stream/c;II)V
 
     return-void
 .end method
 
 
 # virtual methods
-.method public a()Lj$/util/stream/T2;
-    .locals 4
-
-    new-instance v0, Lj$/util/stream/K2;
-
-    iget-object v1, p0, Lj$/util/stream/J2;->d:Lj$/util/function/t;
-
-    iget-object v2, p0, Lj$/util/stream/J2;->c:Lj$/util/function/BiConsumer;
-
-    iget-object v3, p0, Lj$/util/stream/J2;->b:Lj$/util/function/b;
-
-    invoke-direct {v0, v1, v2, v3}, Lj$/util/stream/K2;-><init>(Lj$/util/function/t;Lj$/util/function/BiConsumer;Lj$/util/function/b;)V
-
-    return-object v0
-.end method
-
-.method public b()I
+.method public c1(Lj$/util/stream/D0;Lj$/util/Spliterator;Lj$/util/function/p;)Lj$/util/stream/P0;
     .locals 2
 
-    iget-object v0, p0, Lj$/util/stream/J2;->e:Lj$/wrappers/r;
+    sget-object v0, Lj$/util/stream/e3;->SORTED:Lj$/util/stream/e3;
 
-    invoke-virtual {v0}, Lj$/wrappers/r;->b()Ljava/util/Set;
+    invoke-virtual {p1}, Lj$/util/stream/D0;->B0()I
 
-    move-result-object v0
+    move-result v1
 
-    sget-object v1, Lj$/util/stream/h;->UNORDERED:Lj$/util/stream/h;
-
-    invoke-interface {v0, v1}, Ljava/util/Set;->contains(Ljava/lang/Object;)Z
+    invoke-virtual {v0, v1}, Lj$/util/stream/e3;->d(I)Z
 
     move-result v0
 
     if-eqz v0, :cond_0
 
-    sget v0, Lj$/util/stream/f4;->r:I
-
-    goto :goto_0
-
-    :cond_0
     const/4 v0, 0x0
 
-    :goto_0
-    return v0
+    invoke-virtual {p1, p2, v0, p3}, Lj$/util/stream/D0;->t0(Lj$/util/Spliterator;ZLj$/util/function/p;)Lj$/util/stream/P0;
+
+    move-result-object p1
+
+    return-object p1
+
+    :cond_0
+    const/4 v0, 0x1
+
+    invoke-virtual {p1, p2, v0, p3}, Lj$/util/stream/D0;->t0(Lj$/util/Spliterator;ZLj$/util/function/p;)Lj$/util/stream/P0;
+
+    move-result-object p1
+
+    check-cast p1, Lj$/util/stream/L0;
+
+    invoke-interface {p1}, Lj$/util/stream/O0;->k()Ljava/lang/Object;
+
+    move-result-object p1
+
+    check-cast p1, [I
+
+    invoke-static {p1}, Ljava/util/Arrays;->sort([I)V
+
+    new-instance p2, Lj$/util/stream/k1;
+
+    invoke-direct {p2, p1}, Lj$/util/stream/k1;-><init>([I)V
+
+    return-object p2
+.end method
+
+.method public f1(ILj$/util/stream/q2;)Lj$/util/stream/q2;
+    .locals 1
+
+    invoke-static {p2}, Ljava/util/Objects;->requireNonNull(Ljava/lang/Object;)Ljava/lang/Object;
+
+    sget-object v0, Lj$/util/stream/e3;->SORTED:Lj$/util/stream/e3;
+
+    invoke-virtual {v0, p1}, Lj$/util/stream/e3;->d(I)Z
+
+    move-result v0
+
+    if-eqz v0, :cond_0
+
+    return-object p2
+
+    :cond_0
+    sget-object v0, Lj$/util/stream/e3;->SIZED:Lj$/util/stream/e3;
+
+    invoke-virtual {v0, p1}, Lj$/util/stream/e3;->d(I)Z
+
+    move-result p1
+
+    if-eqz p1, :cond_1
+
+    new-instance p1, Lj$/util/stream/O2;
+
+    invoke-direct {p1, p2}, Lj$/util/stream/O2;-><init>(Lj$/util/stream/q2;)V
+
+    return-object p1
+
+    :cond_1
+    new-instance p1, Lj$/util/stream/G2;
+
+    invoke-direct {p1, p2}, Lj$/util/stream/G2;-><init>(Lj$/util/stream/q2;)V
+
+    return-object p1
 .end method

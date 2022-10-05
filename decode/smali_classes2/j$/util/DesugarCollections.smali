@@ -2,14 +2,6 @@
 .super Ljava/lang/Object;
 
 
-# annotations
-.annotation system Ldalvik/annotation/MemberClasses;
-    value = {
-        Lj$/util/DesugarCollections$a;
-    }
-.end annotation
-
-
 # static fields
 .field public static final a:Ljava/lang/Class;
 
@@ -26,7 +18,7 @@
 
 # direct methods
 .method static constructor <clinit>()V
-    .locals 9
+    .locals 8
 
     const-class v0, Ljava/lang/Object;
 
@@ -65,101 +57,105 @@
     :try_start_0
     invoke-virtual {v1, v2}, Ljava/lang/Class;->getDeclaredField(Ljava/lang/String;)Ljava/lang/reflect/Field;
 
-    move-result-object v2
+    move-result-object v1
     :try_end_0
     .catch Ljava/lang/NoSuchFieldException; {:try_start_0 .. :try_end_0} :catch_0
 
     goto :goto_0
 
     :catch_0
-    move-object v2, v3
+    move-object v1, v3
 
     :goto_0
-    sput-object v2, Lj$/util/DesugarCollections;->c:Ljava/lang/reflect/Field;
+    sput-object v1, Lj$/util/DesugarCollections;->c:Ljava/lang/reflect/Field;
 
-    const/4 v4, 0x1
+    const/4 v2, 0x1
 
-    if-eqz v2, :cond_0
+    if-eqz v1, :cond_0
 
-    invoke-virtual {v2, v4}, Ljava/lang/reflect/Field;->setAccessible(Z)V
+    invoke-virtual {v1, v2}, Ljava/lang/reflect/Field;->setAccessible(Z)V
 
     :cond_0
-    const-string v2, "c"
+    sget-object v1, Lj$/util/DesugarCollections;->a:Ljava/lang/Class;
+
+    const-string v4, "c"
 
     :try_start_1
-    invoke-virtual {v1, v2}, Ljava/lang/Class;->getDeclaredField(Ljava/lang/String;)Ljava/lang/reflect/Field;
+    invoke-virtual {v1, v4}, Ljava/lang/Class;->getDeclaredField(Ljava/lang/String;)Ljava/lang/reflect/Field;
 
-    move-result-object v2
+    move-result-object v1
     :try_end_1
     .catch Ljava/lang/NoSuchFieldException; {:try_start_1 .. :try_end_1} :catch_1
 
     goto :goto_1
 
     :catch_1
-    move-object v2, v3
+    move-object v1, v3
 
     :goto_1
-    sput-object v2, Lj$/util/DesugarCollections;->d:Ljava/lang/reflect/Field;
+    sput-object v1, Lj$/util/DesugarCollections;->d:Ljava/lang/reflect/Field;
 
-    if-eqz v2, :cond_1
+    if-eqz v1, :cond_1
 
-    invoke-virtual {v2, v4}, Ljava/lang/reflect/Field;->setAccessible(Z)V
+    invoke-virtual {v1, v2}, Ljava/lang/reflect/Field;->setAccessible(Z)V
 
     :cond_1
-    new-instance v2, Ljava/util/HashSet;
+    new-instance v1, Ljava/util/HashSet;
 
-    invoke-direct {v2}, Ljava/util/HashSet;-><init>()V
+    invoke-direct {v1}, Ljava/util/HashSet;-><init>()V
 
-    invoke-static {v2}, Ljava/util/Collections;->synchronizedSet(Ljava/util/Set;)Ljava/util/Set;
+    invoke-static {v1}, Ljava/util/Collections;->synchronizedSet(Ljava/util/Set;)Ljava/util/Set;
 
-    move-result-object v2
+    move-result-object v1
 
-    invoke-virtual {v2}, Ljava/lang/Object;->getClass()Ljava/lang/Class;
+    invoke-virtual {v1}, Ljava/lang/Object;->getClass()Ljava/lang/Class;
 
-    move-result-object v2
+    move-result-object v1
 
-    const/4 v5, 0x2
+    const/4 v4, 0x2
 
-    new-array v6, v5, [Ljava/lang/Class;
+    new-array v5, v4, [Ljava/lang/Class;
 
-    const-class v7, Ljava/util/Set;
+    const-class v6, Ljava/util/Set;
 
-    const/4 v8, 0x0
+    const/4 v7, 0x0
 
-    aput-object v7, v6, v8
+    aput-object v6, v5, v7
 
-    aput-object v0, v6, v4
+    aput-object v0, v5, v2
 
     :try_start_2
-    invoke-virtual {v2, v6}, Ljava/lang/Class;->getDeclaredConstructor([Ljava/lang/Class;)Ljava/lang/reflect/Constructor;
+    invoke-virtual {v1, v5}, Ljava/lang/Class;->getDeclaredConstructor([Ljava/lang/Class;)Ljava/lang/reflect/Constructor;
 
-    move-result-object v2
+    move-result-object v1
     :try_end_2
     .catch Ljava/lang/NoSuchMethodException; {:try_start_2 .. :try_end_2} :catch_2
 
     goto :goto_2
 
     :catch_2
-    move-object v2, v3
+    move-object v1, v3
 
     :goto_2
-    sput-object v2, Lj$/util/DesugarCollections;->f:Ljava/lang/reflect/Constructor;
+    sput-object v1, Lj$/util/DesugarCollections;->f:Ljava/lang/reflect/Constructor;
 
-    if-eqz v2, :cond_2
+    if-eqz v1, :cond_2
 
-    invoke-virtual {v2, v4}, Ljava/lang/reflect/Constructor;->setAccessible(Z)V
+    invoke-virtual {v1, v2}, Ljava/lang/reflect/Constructor;->setAccessible(Z)V
 
     :cond_2
-    new-array v2, v5, [Ljava/lang/Class;
+    sget-object v1, Lj$/util/DesugarCollections;->a:Ljava/lang/Class;
+
+    new-array v4, v4, [Ljava/lang/Class;
 
     const-class v5, Ljava/util/Collection;
 
-    aput-object v5, v2, v8
+    aput-object v5, v4, v7
 
-    aput-object v0, v2, v4
+    aput-object v0, v4, v2
 
     :try_start_3
-    invoke-virtual {v1, v2}, Ljava/lang/Class;->getDeclaredConstructor([Ljava/lang/Class;)Ljava/lang/reflect/Constructor;
+    invoke-virtual {v1, v4}, Ljava/lang/Class;->getDeclaredConstructor([Ljava/lang/Class;)Ljava/lang/reflect/Constructor;
 
     move-result-object v3
     :try_end_3
@@ -170,7 +166,7 @@
 
     if-eqz v3, :cond_3
 
-    invoke-virtual {v3, v4}, Ljava/lang/reflect/Constructor;->setAccessible(Z)V
+    invoke-virtual {v3, v2}, Ljava/lang/reflect/Constructor;->setAccessible(Z)V
 
     :cond_3
     return-void
@@ -376,7 +372,7 @@
 
     check-cast p0, Ljava/util/List;
 
-    invoke-static {p0, p1}, Lj$/util/a;->C(Ljava/util/List;Ljava/util/Comparator;)V
+    invoke-static {p0, p1}, Lj$/util/a;->J(Ljava/util/List;Ljava/util/Comparator;)V
     :try_end_0
     .catch Ljava/lang/IllegalAccessException; {:try_start_0 .. :try_end_0} :catch_0
 
@@ -412,7 +408,7 @@
 
     check-cast p0, Ljava/util/List;
 
-    invoke-static {p0, p1}, Lj$/util/a;->C(Ljava/util/List;Ljava/util/Comparator;)V
+    invoke-static {p0, p1}, Lj$/util/a;->J(Ljava/util/List;Ljava/util/Comparator;)V
 
     monitor-exit v0
 
@@ -458,9 +454,9 @@
         }
     .end annotation
 
-    new-instance v0, Lj$/util/DesugarCollections$a;
+    new-instance v0, Lj$/util/f;
 
-    invoke-direct {v0, p0}, Lj$/util/DesugarCollections$a;-><init>(Ljava/util/Map;)V
+    invoke-direct {v0, p0}, Lj$/util/f;-><init>(Ljava/util/Map;)V
 
     return-object v0
 .end method

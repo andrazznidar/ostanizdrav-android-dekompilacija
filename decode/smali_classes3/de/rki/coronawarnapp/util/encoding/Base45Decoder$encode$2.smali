@@ -7,15 +7,6 @@
 
 
 # annotations
-.annotation system Ldalvik/annotation/EnclosingMethod;
-    value = Lde/rki/coronawarnapp/util/encoding/Base45Decoder;->encode([B)Ljava/lang/String;
-.end annotation
-
-.annotation system Ldalvik/annotation/InnerClass;
-    accessFlags = 0x1001
-    name = null
-.end annotation
-
 .annotation system Ldalvik/annotation/Signature;
     value = {
         "Lkotlin/jvm/internal/FunctionReferenceImpl;",
@@ -58,7 +49,7 @@
 
 # virtual methods
 .method public invoke(Ljava/lang/Object;)Ljava/lang/Object;
-    .locals 9
+    .locals 8
 
     check-cast p1, Ljava/util/List;
 
@@ -74,62 +65,58 @@
 
     invoke-static {p1}, Lkotlin/collections/CollectionsKt___CollectionsKt;->reversed(Ljava/lang/Iterable;)Ljava/util/List;
 
-    move-result-object v1
+    move-result-object v0
 
-    invoke-interface {v1}, Ljava/lang/Iterable;->iterator()Ljava/util/Iterator;
+    invoke-interface {v0}, Ljava/lang/Iterable;->iterator()Ljava/util/Iterator;
 
-    move-result-object v1
+    move-result-object v0
 
-    const-wide/16 v2, 0x0
+    const-wide/16 v1, 0x0
 
-    const/4 v4, 0x0
+    const/4 v3, 0x0
 
     :goto_0
-    invoke-interface {v1}, Ljava/util/Iterator;->hasNext()Z
+    invoke-interface {v0}, Ljava/util/Iterator;->hasNext()Z
 
-    move-result v5
+    move-result v4
 
-    if-eqz v5, :cond_1
+    if-eqz v4, :cond_1
 
-    invoke-interface {v1}, Ljava/util/Iterator;->next()Ljava/lang/Object;
-
-    move-result-object v5
-
-    add-int/lit8 v6, v4, 0x1
-
-    if-ltz v4, :cond_0
-
-    check-cast v5, Lkotlin/UByte;
-
-    iget-byte v5, v5, Lkotlin/UByte;->data:B
-
-    sget-object v7, Lde/rki/coronawarnapp/util/encoding/Base45Decoder;->int256:Ljava/math/BigInteger;
-
-    const-string v8, "int256"
-
-    invoke-static {v7, v8}, Lkotlin/jvm/internal/Intrinsics;->checkNotNullExpressionValue(Ljava/lang/Object;Ljava/lang/String;)V
-
-    invoke-virtual {v7, v4}, Ljava/math/BigInteger;->pow(I)Ljava/math/BigInteger;
+    invoke-interface {v0}, Ljava/util/Iterator;->next()Ljava/lang/Object;
 
     move-result-object v4
 
-    invoke-virtual {v4}, Ljava/math/BigInteger;->longValue()J
+    add-int/lit8 v5, v3, 0x1
 
-    move-result-wide v7
+    if-ltz v3, :cond_0
 
-    int-to-short v4, v5
+    check-cast v4, Lkotlin/UByte;
 
-    and-int/lit16 v4, v4, 0xff
+    iget-byte v4, v4, Lkotlin/UByte;->data:B
 
-    int-to-short v4, v4
+    sget-object v6, Lde/rki/coronawarnapp/util/encoding/Base45DecoderKt;->int256:Ljava/math/BigInteger;
 
-    int-to-long v4, v4
+    invoke-virtual {v6, v3}, Ljava/math/BigInteger;->pow(I)Ljava/math/BigInteger;
 
-    mul-long/2addr v7, v4
+    move-result-object v3
 
-    add-long/2addr v2, v7
+    invoke-virtual {v3}, Ljava/math/BigInteger;->longValue()J
 
-    move v4, v6
+    move-result-wide v6
+
+    int-to-short v3, v4
+
+    and-int/lit16 v3, v3, 0xff
+
+    int-to-short v3, v3
+
+    int-to-long v3, v3
+
+    mul-long/2addr v6, v3
+
+    add-long/2addr v1, v6
+
+    move v3, v5
 
     goto :goto_0
 
@@ -141,9 +128,19 @@
     throw p1
 
     :cond_1
-    const/16 v1, 0x2d
+    invoke-static {v1, v2}, Ljava/lang/Long;->valueOf(J)Ljava/lang/Long;
 
-    invoke-virtual {v0, v2, v3, v1}, Lde/rki/coronawarnapp/util/encoding/Base45Decoder;->generateSequenceByDivRem(JI)Lkotlin/sequences/Sequence;
+    move-result-object v0
+
+    sget-object v1, Lde/rki/coronawarnapp/util/encoding/Base45Decoder$generateSequenceByDivRem$1;->INSTANCE:Lde/rki/coronawarnapp/util/encoding/Base45Decoder$generateSequenceByDivRem$1;
+
+    invoke-static {v0, v1}, Lkotlin/sequences/SequencesKt__SequencesKt;->generateSequence(Ljava/lang/Object;Lkotlin/jvm/functions/Function1;)Lkotlin/sequences/Sequence;
+
+    move-result-object v0
+
+    sget-object v1, Lde/rki/coronawarnapp/util/encoding/Base45Decoder$generateSequenceByDivRem$2;->INSTANCE:Lde/rki/coronawarnapp/util/encoding/Base45Decoder$generateSequenceByDivRem$2;
+
+    invoke-static {v0, v1}, Lkotlin/sequences/SequencesKt___SequencesKt;->map(Lkotlin/sequences/Sequence;Lkotlin/jvm/functions/Function1;)Lkotlin/sequences/Sequence;
 
     move-result-object v0
 

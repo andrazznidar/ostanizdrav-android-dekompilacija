@@ -1,4 +1,4 @@
-.class public Lkotlin/reflect/jvm/internal/impl/load/java/typeEnhancement/JavaTypeEnhancement$Result;
+.class Lkotlin/reflect/jvm/internal/impl/load/java/typeEnhancement/JavaTypeEnhancement$Result;
 .super Ljava/lang/Object;
 .source "typeEnhancement.kt"
 
@@ -14,16 +14,16 @@
 .end annotation
 
 .annotation system Ldalvik/annotation/SourceDebugExtension;
-    value = "SMAP\ntypeEnhancement.kt\nKotlin\n*S Kotlin\n*F\n+ 1 typeEnhancement.kt\norg/jetbrains/kotlin/load/java/typeEnhancement/JavaTypeEnhancement$Result\n+ 2 fake.kt\nkotlin/jvm/internal/FakeKt\n*L\n1#1,280:1\n1#2:281\n*E\n"
+    value = "SMAP\ntypeEnhancement.kt\nKotlin\n*S Kotlin\n*F\n+ 1 typeEnhancement.kt\norg/jetbrains/kotlin/load/java/typeEnhancement/JavaTypeEnhancement$Result\n+ 2 fake.kt\nkotlin/jvm/internal/FakeKt\n*L\n1#1,298:1\n1#2:299\n*E\n"
 .end annotation
 
 
 # instance fields
-.field public final subtreeSize:I
+.field private final subtreeSize:I
 
-.field public final type:Lkotlin/reflect/jvm/internal/impl/types/KotlinType;
+.field private final type:Lkotlin/reflect/jvm/internal/impl/types/KotlinType;
 
-.field public final wereChanges:Z
+.field private final wereChanges:Z
 
 
 # direct methods
@@ -47,10 +47,48 @@
 
 
 # virtual methods
+.method public final getSubtreeSize()I
+    .locals 1
+
+    iget v0, p0, Lkotlin/reflect/jvm/internal/impl/load/java/typeEnhancement/JavaTypeEnhancement$Result;->subtreeSize:I
+
+    return v0
+.end method
+
 .method public getType()Lkotlin/reflect/jvm/internal/impl/types/KotlinType;
     .locals 1
 
     iget-object v0, p0, Lkotlin/reflect/jvm/internal/impl/load/java/typeEnhancement/JavaTypeEnhancement$Result;->type:Lkotlin/reflect/jvm/internal/impl/types/KotlinType;
 
     return-object v0
+.end method
+
+.method public final getTypeIfChanged()Lkotlin/reflect/jvm/internal/impl/types/KotlinType;
+    .locals 2
+
+    invoke-virtual {p0}, Lkotlin/reflect/jvm/internal/impl/load/java/typeEnhancement/JavaTypeEnhancement$Result;->getType()Lkotlin/reflect/jvm/internal/impl/types/KotlinType;
+
+    move-result-object v0
+
+    invoke-virtual {p0}, Lkotlin/reflect/jvm/internal/impl/load/java/typeEnhancement/JavaTypeEnhancement$Result;->getWereChanges()Z
+
+    move-result v1
+
+    if-eqz v1, :cond_0
+
+    goto :goto_0
+
+    :cond_0
+    const/4 v0, 0x0
+
+    :goto_0
+    return-object v0
+.end method
+
+.method public final getWereChanges()Z
+    .locals 1
+
+    iget-boolean v0, p0, Lkotlin/reflect/jvm/internal/impl/load/java/typeEnhancement/JavaTypeEnhancement$Result;->wereChanges:Z
+
+    return v0
 .end method

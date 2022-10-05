@@ -55,7 +55,7 @@
 
 # virtual methods
 .method public invoke(Ljava/lang/Object;Ljava/lang/Object;)Ljava/lang/Object;
-    .locals 2
+    .locals 1
 
     check-cast p1, Lde/rki/coronawarnapp/util/viewmodel/CWAViewModelFactory;
 
@@ -101,10 +101,6 @@
     check-cast v0, Lde/rki/coronawarnapp/qrcode/ui/QrcodeSharedViewModel;
 
     invoke-static {v0}, Ljava/util/Objects;->requireNonNull(Ljava/lang/Object;)Ljava/lang/Object;
-
-    const-string v1, "certificateIdentifier"
-
-    invoke-static {p2, v1}, Lkotlin/jvm/internal/Intrinsics;->checkNotNullParameter(Ljava/lang/Object;Ljava/lang/String;)V
 
     iget-object v0, v0, Lde/rki/coronawarnapp/qrcode/ui/QrcodeSharedViewModel;->dccQrCodeCache:Ljava/util/Map;
 

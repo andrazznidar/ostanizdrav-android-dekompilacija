@@ -239,19 +239,13 @@
     return-wide v8
 
     :cond_5
-    new-instance p1, Ljava/lang/StringBuilder;
+    const-string p1, "fromIndex="
 
-    invoke-direct {p1}, Ljava/lang/StringBuilder;-><init>()V
+    const-string v0, " toIndex="
 
-    const-string v0, "fromIndex="
+    invoke-static {p1, p2, p3, v0}, Landroidx/camera/core/CameraX$$ExternalSyntheticOutline0;->m(Ljava/lang/String;JLjava/lang/String;)Ljava/lang/StringBuilder;
 
-    invoke-virtual {p1, v0}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
-
-    invoke-virtual {p1, p2, p3}, Ljava/lang/StringBuilder;->append(J)Ljava/lang/StringBuilder;
-
-    const-string p2, " toIndex="
-
-    invoke-virtual {p1, p2}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+    move-result-object p1
 
     invoke-virtual {p1, p4, p5}, Ljava/lang/StringBuilder;->append(J)Ljava/lang/StringBuilder;
 
@@ -287,8 +281,6 @@
     .locals 10
 
     const-string v0, "targetBytes"
-
-    invoke-static {p1, v0}, Lkotlin/jvm/internal/Intrinsics;->checkNotNullParameter(Ljava/lang/Object;Ljava/lang/String;)V
 
     invoke-static {p1, v0}, Lkotlin/jvm/internal/Intrinsics;->checkNotNullParameter(Ljava/lang/Object;Ljava/lang/String;)V
 
@@ -532,7 +524,7 @@
     :cond_3
     const-string p1, "byteCount < 0: "
 
-    invoke-static {p1, p2, p3}, Landroidx/viewpager2/adapter/FragmentStateAdapter$$ExternalSyntheticOutline0;->m(Ljava/lang/String;J)Ljava/lang/String;
+    invoke-static {p1, p2, p3}, Landroidx/camera/core/impl/DeferrableSurfaces$$ExternalSyntheticOutline0;->m(Ljava/lang/String;J)Ljava/lang/String;
 
     move-result-object p1
 
@@ -989,7 +981,7 @@
 .end method
 
 .method public readString(Ljava/nio/charset/Charset;)Ljava/lang/String;
-    .locals 2
+    .locals 3
 
     iget-object v0, p0, Lokio/RealBufferedSource;->bufferField:Lokio/Buffer;
 
@@ -999,7 +991,9 @@
 
     iget-object v0, p0, Lokio/RealBufferedSource;->bufferField:Lokio/Buffer;
 
-    invoke-virtual {v0, p1}, Lokio/Buffer;->readString(Ljava/nio/charset/Charset;)Ljava/lang/String;
+    iget-wide v1, v0, Lokio/Buffer;->size:J
+
+    invoke-virtual {v0, v1, v2, p1}, Lokio/Buffer;->readString(JLjava/nio/charset/Charset;)Ljava/lang/String;
 
     move-result-object p1
 
@@ -1203,7 +1197,7 @@
     :cond_4
     const-string v0, "limit < 0: "
 
-    invoke-static {v0, p1, p2}, Landroidx/viewpager2/adapter/FragmentStateAdapter$$ExternalSyntheticOutline0;->m(Ljava/lang/String;J)Ljava/lang/String;
+    invoke-static {v0, p1, p2}, Landroidx/camera/core/impl/DeferrableSurfaces$$ExternalSyntheticOutline0;->m(Ljava/lang/String;J)Ljava/lang/String;
 
     move-result-object p1
 
@@ -1296,7 +1290,7 @@
     :cond_4
     const-string v0, "byteCount < 0: "
 
-    invoke-static {v0, p1, p2}, Landroidx/viewpager2/adapter/FragmentStateAdapter$$ExternalSyntheticOutline0;->m(Ljava/lang/String;J)Ljava/lang/String;
+    invoke-static {v0, p1, p2}, Landroidx/camera/core/impl/DeferrableSurfaces$$ExternalSyntheticOutline0;->m(Ljava/lang/String;J)Ljava/lang/String;
 
     move-result-object p1
 

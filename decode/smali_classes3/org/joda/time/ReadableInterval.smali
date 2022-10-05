@@ -4,6 +4,9 @@
 
 
 # virtual methods
+.method public abstract getChronology()Lorg/joda/time/Chronology;
+.end method
+
 .method public abstract getEndMillis()J
 .end method
 

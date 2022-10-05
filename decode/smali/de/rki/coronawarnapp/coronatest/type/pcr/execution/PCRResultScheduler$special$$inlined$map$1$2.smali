@@ -117,7 +117,7 @@
     goto :goto_1
 
     :cond_3
-    invoke-virtual {p1}, Lde/rki/coronawarnapp/coronatest/type/pcr/PCRCoronaTest;->isFinal()Z
+    invoke-virtual {p1}, Lde/rki/coronawarnapp/coronatest/type/pcr/PCRCoronaTest;->isRedeemed()Z
 
     move-result p1
 

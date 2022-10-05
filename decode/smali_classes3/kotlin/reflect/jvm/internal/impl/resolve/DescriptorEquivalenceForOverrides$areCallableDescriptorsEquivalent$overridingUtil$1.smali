@@ -1,9 +1,20 @@
-.class public final Lkotlin/reflect/jvm/internal/impl/resolve/DescriptorEquivalenceForOverrides$areCallableDescriptorsEquivalent$overridingUtil$1;
+.class final Lkotlin/reflect/jvm/internal/impl/resolve/DescriptorEquivalenceForOverrides$areCallableDescriptorsEquivalent$overridingUtil$1;
 .super Ljava/lang/Object;
 .source "DescriptorEquivalenceForOverrides.kt"
 
 # interfaces
 .implements Lkotlin/reflect/jvm/internal/impl/types/checker/KotlinTypeChecker$TypeConstructorEquality;
+
+
+# annotations
+.annotation system Ldalvik/annotation/EnclosingMethod;
+    value = Lkotlin/reflect/jvm/internal/impl/resolve/DescriptorEquivalenceForOverrides;->areCallableDescriptorsEquivalent(Lkotlin/reflect/jvm/internal/impl/descriptors/CallableDescriptor;Lkotlin/reflect/jvm/internal/impl/descriptors/CallableDescriptor;ZZZLkotlin/reflect/jvm/internal/impl/types/checker/KotlinTypeRefiner;)Z
+.end annotation
+
+.annotation system Ldalvik/annotation/InnerClass;
+    accessFlags = 0x19
+    name = null
+.end annotation
 
 
 # instance fields
@@ -13,20 +24,16 @@
 
 .field public final synthetic $b:Lkotlin/reflect/jvm/internal/impl/descriptors/CallableDescriptor;
 
-.field public final synthetic this$0:Lkotlin/reflect/jvm/internal/impl/resolve/DescriptorEquivalenceForOverrides;
-
 
 # direct methods
-.method public constructor <init>(Lkotlin/reflect/jvm/internal/impl/resolve/DescriptorEquivalenceForOverrides;ZLkotlin/reflect/jvm/internal/impl/descriptors/CallableDescriptor;Lkotlin/reflect/jvm/internal/impl/descriptors/CallableDescriptor;)V
+.method public constructor <init>(ZLkotlin/reflect/jvm/internal/impl/descriptors/CallableDescriptor;Lkotlin/reflect/jvm/internal/impl/descriptors/CallableDescriptor;)V
     .locals 0
 
-    iput-object p1, p0, Lkotlin/reflect/jvm/internal/impl/resolve/DescriptorEquivalenceForOverrides$areCallableDescriptorsEquivalent$overridingUtil$1;->this$0:Lkotlin/reflect/jvm/internal/impl/resolve/DescriptorEquivalenceForOverrides;
+    iput-boolean p1, p0, Lkotlin/reflect/jvm/internal/impl/resolve/DescriptorEquivalenceForOverrides$areCallableDescriptorsEquivalent$overridingUtil$1;->$allowCopiesFromTheSameDeclaration:Z
 
-    iput-boolean p2, p0, Lkotlin/reflect/jvm/internal/impl/resolve/DescriptorEquivalenceForOverrides$areCallableDescriptorsEquivalent$overridingUtil$1;->$allowCopiesFromTheSameDeclaration:Z
+    iput-object p2, p0, Lkotlin/reflect/jvm/internal/impl/resolve/DescriptorEquivalenceForOverrides$areCallableDescriptorsEquivalent$overridingUtil$1;->$a:Lkotlin/reflect/jvm/internal/impl/descriptors/CallableDescriptor;
 
-    iput-object p3, p0, Lkotlin/reflect/jvm/internal/impl/resolve/DescriptorEquivalenceForOverrides$areCallableDescriptorsEquivalent$overridingUtil$1;->$a:Lkotlin/reflect/jvm/internal/impl/descriptors/CallableDescriptor;
-
-    iput-object p4, p0, Lkotlin/reflect/jvm/internal/impl/resolve/DescriptorEquivalenceForOverrides$areCallableDescriptorsEquivalent$overridingUtil$1;->$b:Lkotlin/reflect/jvm/internal/impl/descriptors/CallableDescriptor;
+    iput-object p3, p0, Lkotlin/reflect/jvm/internal/impl/resolve/DescriptorEquivalenceForOverrides$areCallableDescriptorsEquivalent$overridingUtil$1;->$b:Lkotlin/reflect/jvm/internal/impl/descriptors/CallableDescriptor;
 
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
@@ -76,7 +83,7 @@
     goto :goto_0
 
     :cond_1
-    iget-object v0, p0, Lkotlin/reflect/jvm/internal/impl/resolve/DescriptorEquivalenceForOverrides$areCallableDescriptorsEquivalent$overridingUtil$1;->this$0:Lkotlin/reflect/jvm/internal/impl/resolve/DescriptorEquivalenceForOverrides;
+    sget-object v0, Lkotlin/reflect/jvm/internal/impl/resolve/DescriptorEquivalenceForOverrides;->INSTANCE:Lkotlin/reflect/jvm/internal/impl/resolve/DescriptorEquivalenceForOverrides;
 
     check-cast p1, Lkotlin/reflect/jvm/internal/impl/descriptors/TypeParameterDescriptor;
 

@@ -18,13 +18,9 @@
 .end annotation
 
 .annotation runtime Lkotlin/Metadata;
-    bv = {
-        0x1,
-        0x0,
-        0x3
-    }
+    bv = {}
     d1 = {
-        "\u0000\u0010\n\u0002\u0018\u0002\n\u0002\u0018\u0002\n\u0002\u0018\u0002\n\u0002\u0008\u0004\u0018\u0000 \u00052\u00020\u00012\u00020\u0002:\u0001\u0005B\u0007\u00a2\u0006\u0004\u0008\u0003\u0010\u0004\u00a8\u0006\u0006"
+        "\u0000\u0010\n\u0002\u0018\u0002\n\u0002\u0018\u0002\n\u0002\u0018\u0002\n\u0002\u0008\u0004\u0018\u00002\u00020\u00012\u00020\u0002:\u0001\u0005B\u0007\u00a2\u0006\u0004\u0008\u0003\u0010\u0004\u00a8\u0006\u0006"
     }
     d2 = {
         "Lde/rki/coronawarnapp/covidcertificate/ui/onboarding/CovidCertificateOnboardingFragment;",
@@ -38,8 +34,8 @@
     k = 0x1
     mv = {
         0x1,
-        0x5,
-        0x1
+        0x6,
+        0x0
     }
 .end annotation
 
@@ -113,13 +109,11 @@
 
     invoke-direct {p0, v0}, Landroidx/fragment/app/Fragment;-><init>(I)V
 
-    new-instance v0, Lde/rki/coronawarnapp/covidcertificate/ui/onboarding/CovidCertificateOnboardingFragment$special$$inlined$viewBinding$1;
-
-    invoke-direct {v0}, Lde/rki/coronawarnapp/covidcertificate/ui/onboarding/CovidCertificateOnboardingFragment$special$$inlined$viewBinding$1;-><init>()V
+    sget-object v0, Lde/rki/coronawarnapp/covidcertificate/ui/onboarding/CovidCertificateOnboardingFragment$special$$inlined$viewBinding$1;->INSTANCE:Lde/rki/coronawarnapp/covidcertificate/ui/onboarding/CovidCertificateOnboardingFragment$special$$inlined$viewBinding$1;
 
     sget-object v1, Lde/rki/coronawarnapp/util/ui/ViewBindingExtensionsKt$viewBinding$2;->INSTANCE:Lde/rki/coronawarnapp/util/ui/ViewBindingExtensionsKt$viewBinding$2;
 
-    invoke-static {p0, v0, v1}, Lkotlin/sequences/SequencesKt__SequencesJVMKt;->viewBinding(Landroidx/fragment/app/Fragment;Lkotlin/jvm/functions/Function1;Lkotlin/jvm/functions/Function1;)Lde/rki/coronawarnapp/util/ui/ViewBindingProperty;
+    invoke-static {p0, v0, v1}, Lkotlinx/coroutines/channels/ChannelsKt;->viewBinding(Landroidx/fragment/app/Fragment;Lkotlin/jvm/functions/Function1;Lkotlin/jvm/functions/Function1;)Lde/rki/coronawarnapp/util/ui/ViewBindingProperty;
 
     move-result-object v0
 
@@ -143,11 +137,11 @@
 
     new-instance v0, Lde/rki/coronawarnapp/covidcertificate/ui/onboarding/CovidCertificateOnboardingFragment$special$$inlined$navGraphViewModels$default$1;
 
-    const v1, 0x7f0a0491
+    const v1, 0x7f0a04d7
 
     invoke-direct {v0, p0, v1}, Lde/rki/coronawarnapp/covidcertificate/ui/onboarding/CovidCertificateOnboardingFragment$special$$inlined$navGraphViewModels$default$1;-><init>(Landroidx/fragment/app/Fragment;I)V
 
-    invoke-static {v0}, Lkotlin/LazyKt__LazyKt;->lazy(Lkotlin/jvm/functions/Function0;)Lkotlin/Lazy;
+    invoke-static {v0}, Lkotlin/LazyKt__LazyJVMKt;->lazy(Lkotlin/jvm/functions/Function0;)Lkotlin/Lazy;
 
     move-result-object v0
 
@@ -167,7 +161,7 @@
 
     invoke-direct {v4, v2, v0, v2}, Lde/rki/coronawarnapp/covidcertificate/ui/onboarding/CovidCertificateOnboardingFragment$special$$inlined$navGraphViewModels$default$3;-><init>(Lkotlin/jvm/functions/Function0;Lkotlin/Lazy;Lkotlin/reflect/KProperty;)V
 
-    invoke-static {p0, v3, v1, v4}, Landroidx/fragment/app/FragmentViewModelLazyKt;->createViewModelLazy(Landroidx/fragment/app/Fragment;Lkotlin/reflect/KClass;Lkotlin/jvm/functions/Function0;Lkotlin/jvm/functions/Function0;)Lkotlin/Lazy;
+    invoke-static {p0, v3, v1, v4}, Lcom/scottyab/rootbeer/util/QLog;->createViewModelLazy(Landroidx/fragment/app/Fragment;Lkotlin/reflect/KClass;Lkotlin/jvm/functions/Function0;Lkotlin/jvm/functions/Function0;)Lkotlin/Lazy;
 
     move-result-object v0
 
@@ -195,7 +189,7 @@
 
     invoke-direct {v5, v0, p0, v1}, Lde/rki/coronawarnapp/util/viewmodel/CWAViewModelExtensionsKt$cwaViewModelsAssisted$2;-><init>(Lkotlin/jvm/functions/Function0;Landroidx/fragment/app/Fragment;Lkotlin/jvm/functions/Function2;)V
 
-    invoke-static {p0, v4, v2, v3, v5}, Lde/rki/coronawarnapp/util/viewmodel/ViewModelLazyKeyedKt;->createViewModelLazyKeyed(Landroidx/fragment/app/Fragment;Lkotlin/reflect/KClass;Lkotlin/jvm/functions/Function0;Lkotlin/jvm/functions/Function0;Lkotlin/jvm/functions/Function0;)Lkotlin/Lazy;
+    invoke-static {p0, v4, v2, v3, v5}, Lcom/google/android/gms/internal/nearby/zzbf;->createViewModelLazyKeyed(Landroidx/fragment/app/Fragment;Lkotlin/reflect/KClass;Lkotlin/jvm/functions/Function0;Lkotlin/jvm/functions/Function0;Lkotlin/jvm/functions/Function0;)Lkotlin/Lazy;
 
     move-result-object v0
 
@@ -289,7 +283,7 @@
 
     invoke-static {v0, v1}, Lkotlin/jvm/internal/Intrinsics;->checkNotNullExpressionValue(Ljava/lang/Object;Ljava/lang/String;)V
 
-    const v1, 0x7f0800dd
+    const v1, 0x7f0800d3
 
     sget-object v2, Landroidx/core/content/ContextCompat;->sLock:Ljava/lang/Object;
 
@@ -330,7 +324,7 @@
 
     move-result-object v0
 
-    const v1, 0x7f0701e8
+    const v1, 0x7f0701dc
 
     invoke-virtual {v0, v1}, Landroid/content/res/Resources;->getDimensionPixelSize(I)I
 
@@ -353,25 +347,27 @@
     :goto_0
     iget-object p2, p1, Lde/rki/coronawarnapp/databinding/CovidCertificateOnboardingFragmentBinding;->toolbar:Lcom/google/android/material/appbar/MaterialToolbar;
 
-    new-instance v0, Lde/rki/coronawarnapp/ui/view/MoreInformationView$$ExternalSyntheticLambda0;
+    new-instance v0, Lde/rki/coronawarnapp/contactdiary/ui/overview/ContactDiaryOverviewFragment$$ExternalSyntheticLambda0;
 
-    invoke-direct {v0, p0}, Lde/rki/coronawarnapp/ui/view/MoreInformationView$$ExternalSyntheticLambda0;-><init>(Lde/rki/coronawarnapp/covidcertificate/ui/onboarding/CovidCertificateOnboardingFragment;)V
+    const/4 v1, 0x1
+
+    invoke-direct {v0, p0, v1}, Lde/rki/coronawarnapp/contactdiary/ui/overview/ContactDiaryOverviewFragment$$ExternalSyntheticLambda0;-><init>(Landroidx/fragment/app/Fragment;I)V
 
     invoke-virtual {p2, v0}, Landroidx/appcompat/widget/Toolbar;->setNavigationOnClickListener(Landroid/view/View$OnClickListener;)V
 
     iget-object p2, p1, Lde/rki/coronawarnapp/databinding/CovidCertificateOnboardingFragmentBinding;->privacyInformation:Lde/rki/coronawarnapp/ui/view/MoreInformationView;
 
-    new-instance v0, Lde/rki/coronawarnapp/ui/information/InformationFragment$$ExternalSyntheticLambda1;
+    new-instance v0, Lde/rki/coronawarnapp/tracing/ui/details/home/HomeRulesFragment$$ExternalSyntheticLambda0;
 
-    invoke-direct {v0, p0}, Lde/rki/coronawarnapp/ui/information/InformationFragment$$ExternalSyntheticLambda1;-><init>(Lde/rki/coronawarnapp/covidcertificate/ui/onboarding/CovidCertificateOnboardingFragment;)V
+    invoke-direct {v0, p0, v1}, Lde/rki/coronawarnapp/tracing/ui/details/home/HomeRulesFragment$$ExternalSyntheticLambda0;-><init>(Landroidx/fragment/app/Fragment;I)V
 
     invoke-virtual {p2, v0}, Lde/rki/coronawarnapp/ui/view/MoreInformationView;->setOnClickListener(Landroid/view/View$OnClickListener;)V
 
     iget-object p1, p1, Lde/rki/coronawarnapp/databinding/CovidCertificateOnboardingFragmentBinding;->buttonContinue:Landroid/widget/Button;
 
-    new-instance p2, Lde/rki/coronawarnapp/ui/main/home/HomeFragment$$ExternalSyntheticLambda0;
+    new-instance p2, Lde/rki/coronawarnapp/ui/onboarding/OnboardingNotificationsFragment$$ExternalSyntheticLambda0;
 
-    invoke-direct {p2, p0}, Lde/rki/coronawarnapp/ui/main/home/HomeFragment$$ExternalSyntheticLambda0;-><init>(Lde/rki/coronawarnapp/covidcertificate/ui/onboarding/CovidCertificateOnboardingFragment;)V
+    invoke-direct {p2, p0, v1}, Lde/rki/coronawarnapp/ui/onboarding/OnboardingNotificationsFragment$$ExternalSyntheticLambda0;-><init>(Landroidx/fragment/app/Fragment;I)V
 
     invoke-virtual {p1, p2}, Landroid/widget/Button;->setOnClickListener(Landroid/view/View$OnClickListener;)V
 

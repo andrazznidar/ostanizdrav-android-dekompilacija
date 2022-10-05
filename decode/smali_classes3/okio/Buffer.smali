@@ -575,7 +575,8 @@
 
     aget-byte p1, v0, p1
 
-    goto :goto_2
+    :goto_2
+    return p1
 
     :cond_2
     iget-object v0, v0, Lokio/Segment;->next:Lokio/Segment;
@@ -587,28 +588,11 @@
     goto :goto_1
 
     :cond_3
-    const/4 v0, 0x0
+    const/4 p1, 0x0
 
-    const-wide/16 v1, -0x1
+    invoke-static {p1}, Lkotlin/jvm/internal/Intrinsics;->checkNotNull(Ljava/lang/Object;)V
 
-    invoke-static {v0}, Lkotlin/jvm/internal/Intrinsics;->checkNotNull(Ljava/lang/Object;)V
-
-    iget-object v3, v0, Lokio/Segment;->data:[B
-
-    iget v0, v0, Lokio/Segment;->pos:I
-
-    int-to-long v4, v0
-
-    add-long/2addr v4, p1
-
-    sub-long/2addr v4, v1
-
-    long-to-int p1, v4
-
-    aget-byte p1, v3, p1
-
-    :goto_2
-    return p1
+    throw p1
 .end method
 
 .method public hashCode()I
@@ -978,18 +962,18 @@
 
     cmp-long v2, p2, v0
 
-    const/4 v3, 0x0
+    const/4 v3, 0x1
 
-    const/4 v4, 0x1
+    const/4 v4, 0x0
 
     if-ltz v2, :cond_0
 
-    move v2, v4
+    move v2, v3
 
     goto :goto_0
 
     :cond_0
-    move v2, v3
+    move v2, v4
 
     :goto_0
     if-eqz v2, :cond_13
@@ -1038,11 +1022,11 @@
 
     if-ne v0, v10, :cond_5
 
-    invoke-virtual {p1, v3}, Lokio/ByteString;->internalGet$okio(I)B
+    invoke-virtual {p1, v4}, Lokio/ByteString;->internalGet$okio(I)B
 
     move-result v0
 
-    invoke-virtual {p1, v4}, Lokio/ByteString;->internalGet$okio(I)B
+    invoke-virtual {p1, v3}, Lokio/ByteString;->internalGet$okio(I)B
 
     move-result p1
 
@@ -1139,12 +1123,12 @@
 
     aget-byte v1, v0, p2
 
-    array-length v4, p1
+    array-length v3, p1
 
-    move v9, v3
+    move v9, v4
 
     :goto_7
-    if-ge v9, v4, :cond_7
+    if-ge v9, v3, :cond_7
 
     aget-byte v10, p1, v9
 
@@ -1212,22 +1196,22 @@
 
     if-ne v7, v10, :cond_d
 
-    invoke-virtual {p1, v3}, Lokio/ByteString;->internalGet$okio(I)B
-
-    move-result v3
-
     invoke-virtual {p1, v4}, Lokio/ByteString;->internalGet$okio(I)B
+
+    move-result v4
+
+    invoke-virtual {p1, v3}, Lokio/ByteString;->internalGet$okio(I)B
 
     move-result p1
 
     :goto_a
     iget-wide v7, p0, Lokio/Buffer;->size:J
 
-    cmp-long v4, v0, v7
+    cmp-long v3, v0, v7
 
-    if-gez v4, :cond_12
+    if-gez v3, :cond_12
 
-    iget-object v4, v2, Lokio/Segment;->data:[B
+    iget-object v3, v2, Lokio/Segment;->data:[B
 
     iget v7, v2, Lokio/Segment;->pos:I
 
@@ -1244,9 +1228,9 @@
     :goto_b
     if-ge p2, p3, :cond_c
 
-    aget-byte v7, v4, p2
+    aget-byte v7, v3, p2
 
-    if-eq v7, v3, :cond_b
+    if-eq v7, v4, :cond_b
 
     if-ne v7, p1, :cond_a
 
@@ -1290,11 +1274,11 @@
     :goto_d
     iget-wide v7, p0, Lokio/Buffer;->size:J
 
-    cmp-long v4, v0, v7
+    cmp-long v3, v0, v7
 
-    if-gez v4, :cond_12
+    if-gez v3, :cond_12
 
-    iget-object v4, v2, Lokio/Segment;->data:[B
+    iget-object v3, v2, Lokio/Segment;->data:[B
 
     iget v7, v2, Lokio/Segment;->pos:I
 
@@ -1311,11 +1295,11 @@
     :goto_e
     if-ge p2, p3, :cond_10
 
-    aget-byte v7, v4, p2
+    aget-byte v7, v3, p2
 
     array-length v8, p1
 
-    move v9, v3
+    move v9, v4
 
     :goto_f
     if-ge v9, v8, :cond_f
@@ -1380,7 +1364,7 @@
     :cond_13
     const-string p1, "fromIndex < 0: "
 
-    invoke-static {p1, p2, p3}, Landroidx/viewpager2/adapter/FragmentStateAdapter$$ExternalSyntheticOutline0;->m(Ljava/lang/String;J)Ljava/lang/String;
+    invoke-static {p1, p2, p3}, Landroidx/camera/core/impl/DeferrableSurfaces$$ExternalSyntheticOutline0;->m(Ljava/lang/String;J)Ljava/lang/String;
 
     move-result-object p1
 
@@ -1620,7 +1604,7 @@
     :cond_3
     const-string p1, "byteCount < 0: "
 
-    invoke-static {p1, p2, p3}, Landroidx/viewpager2/adapter/FragmentStateAdapter$$ExternalSyntheticOutline0;->m(Ljava/lang/String;J)Ljava/lang/String;
+    invoke-static {p1, p2, p3}, Landroidx/camera/core/impl/DeferrableSurfaces$$ExternalSyntheticOutline0;->m(Ljava/lang/String;J)Ljava/lang/String;
 
     move-result-object p1
 
@@ -1781,10 +1765,6 @@
 
     new-array p2, p1, [B
 
-    const-string v0, "sink"
-
-    invoke-static {p2, v0}, Lkotlin/jvm/internal/Intrinsics;->checkNotNullParameter(Ljava/lang/Object;Ljava/lang/String;)V
-
     :goto_1
     if-ge v1, p1, :cond_2
 
@@ -1822,7 +1802,7 @@
     :cond_4
     const-string v0, "byteCount: "
 
-    invoke-static {v0, p1, p2}, Landroidx/viewpager2/adapter/FragmentStateAdapter$$ExternalSyntheticOutline0;->m(Ljava/lang/String;J)Ljava/lang/String;
+    invoke-static {v0, p1, p2}, Landroidx/camera/core/impl/DeferrableSurfaces$$ExternalSyntheticOutline0;->m(Ljava/lang/String;J)Ljava/lang/String;
 
     move-result-object p1
 
@@ -1927,7 +1907,7 @@
     :cond_3
     const-string v0, "byteCount: "
 
-    invoke-static {v0, p1, p2}, Landroidx/viewpager2/adapter/FragmentStateAdapter$$ExternalSyntheticOutline0;->m(Ljava/lang/String;J)Ljava/lang/String;
+    invoke-static {v0, p1, p2}, Landroidx/camera/core/impl/DeferrableSurfaces$$ExternalSyntheticOutline0;->m(Ljava/lang/String;J)Ljava/lang/String;
 
     move-result-object p1
 
@@ -2801,7 +2781,7 @@
     :cond_5
     const-string p3, "byteCount: "
 
-    invoke-static {p3, p1, p2}, Landroidx/viewpager2/adapter/FragmentStateAdapter$$ExternalSyntheticOutline0;->m(Ljava/lang/String;J)Ljava/lang/String;
+    invoke-static {p3, p1, p2}, Landroidx/camera/core/impl/DeferrableSurfaces$$ExternalSyntheticOutline0;->m(Ljava/lang/String;J)Ljava/lang/String;
 
     move-result-object p1
 
@@ -3249,7 +3229,7 @@
     :cond_4
     const-string v0, "limit < 0: "
 
-    invoke-static {v0, p1, p2}, Landroidx/viewpager2/adapter/FragmentStateAdapter$$ExternalSyntheticOutline0;->m(Ljava/lang/String;J)Ljava/lang/String;
+    invoke-static {v0, p1, p2}, Landroidx/camera/core/impl/DeferrableSurfaces$$ExternalSyntheticOutline0;->m(Ljava/lang/String;J)Ljava/lang/String;
 
     move-result-object p1
 
@@ -5378,7 +5358,7 @@
 
     const-string v0, " < "
 
-    invoke-static {p1, p3, v0, p2}, Lcom/airbnb/lottie/utils/GammaEvaluator$$ExternalSyntheticOutline0;->m(Ljava/lang/String;ILjava/lang/String;I)Ljava/lang/String;
+    invoke-static {p1, p3, v0, p2}, Landroidx/camera/camera2/internal/Camera2CameraImpl$$ExternalSyntheticOutline0;->m(Ljava/lang/String;ILjava/lang/String;I)Ljava/lang/String;
 
     move-result-object p1
 

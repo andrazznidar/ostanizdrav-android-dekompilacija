@@ -569,7 +569,7 @@
 
     sget-object v9, Lcom/upokecenter/numbers/EDecimal;->One:Lcom/upokecenter/numbers/EDecimal;
 
-    invoke-virtual {v2, v9}, Lcom/upokecenter/numbers/EDecimal;->CompareToValue(Lcom/upokecenter/numbers/EDecimal;)I
+    invoke-virtual {v2, v9}, Lcom/upokecenter/numbers/EDecimal;->compareTo(Lcom/upokecenter/numbers/EDecimal;)I
 
     move-result v2
 
@@ -824,7 +824,13 @@
 
     move-result-object v2
 
-    invoke-virtual {v7, v2}, Lcom/upokecenter/numbers/EDecimal;->CompareToValue(Lcom/upokecenter/numbers/EDecimal;)I
+    invoke-static {v7}, Ljava/util/Objects;->requireNonNull(Ljava/lang/Object;)Ljava/lang/Object;
+
+    sget-object v9, Lcom/upokecenter/numbers/EDecimal;->ExtendedMathValue:Lcom/upokecenter/numbers/IRadixMath;
+
+    check-cast v9, Lcom/upokecenter/numbers/RadixMath;
+
+    invoke-virtual {v9, v7, v2}, Lcom/upokecenter/numbers/RadixMath;->compareTo(Ljava/lang/Object;Ljava/lang/Object;)I
 
     move-result v2
 
@@ -1002,7 +1008,7 @@
 
     move-result-object p1
 
-    invoke-virtual {p0, p1}, Lcom/upokecenter/numbers/EDecimal;->CompareToValue(Lcom/upokecenter/numbers/EDecimal;)I
+    invoke-virtual {p0, p1}, Lcom/upokecenter/numbers/EDecimal;->compareTo(Lcom/upokecenter/numbers/EDecimal;)I
 
     move-result p0
 
@@ -1332,26 +1338,6 @@
     invoke-static {p1}, Lcom/upokecenter/numbers/FastIntegerFixed;->FromBig(Lcom/upokecenter/numbers/EInteger;)Lcom/upokecenter/numbers/FastIntegerFixed;
 
     move-result-object p1
-
-    int-to-byte p2, p2
-
-    invoke-direct {v0, p0, p1, p2}, Lcom/upokecenter/numbers/EDecimal;-><init>(Lcom/upokecenter/numbers/FastIntegerFixed;Lcom/upokecenter/numbers/FastIntegerFixed;B)V
-
-    return-object v0
-.end method
-
-.method public static CreateWithFlags(Lcom/upokecenter/numbers/FastIntegerFixed;Lcom/upokecenter/numbers/FastIntegerFixed;I)Lcom/upokecenter/numbers/EDecimal;
-    .locals 1
-
-    const-string v0, "mantissa"
-
-    invoke-static {p0, v0}, Ljava/util/Objects;->requireNonNull(Ljava/lang/Object;Ljava/lang/String;)Ljava/lang/Object;
-
-    const-string v0, "exponent"
-
-    invoke-static {p1, v0}, Ljava/util/Objects;->requireNonNull(Ljava/lang/Object;Ljava/lang/String;)Ljava/lang/Object;
-
-    new-instance v0, Lcom/upokecenter/numbers/EDecimal;
 
     int-to-byte p2, p2
 
@@ -1976,49 +1962,6 @@
     return-object p0
 .end method
 
-.method public static IntegerToDoubleBits(JIZ)J
-    .locals 2
-
-    :goto_0
-    const-wide/high16 v0, 0x10000000000000L
-
-    cmp-long v0, p0, v0
-
-    if-gez v0, :cond_0
-
-    const/4 v0, 0x1
-
-    shl-long/2addr p0, v0
-
-    add-int/lit8 p2, p2, -0x1
-
-    goto :goto_0
-
-    :cond_0
-    const-wide v0, 0xfffffffffffffL
-
-    and-long/2addr p0, v0
-
-    add-int/lit16 p2, p2, 0x433
-
-    int-to-long v0, p2
-
-    const/16 p2, 0x34
-
-    shl-long/2addr v0, p2
-
-    or-long/2addr p0, v0
-
-    if-eqz p3, :cond_1
-
-    const-wide/high16 p2, -0x8000000000000000L
-
-    or-long/2addr p0, p2
-
-    :cond_1
-    return-wide p0
-.end method
-
 
 # virtual methods
 .method public Abs()Lcom/upokecenter/numbers/EDecimal;
@@ -2064,20 +2007,6 @@
     check-cast p1, Lcom/upokecenter/numbers/EDecimal;
 
     return-object p1
-.end method
-
-.method public CompareToValue(Lcom/upokecenter/numbers/EDecimal;)I
-    .locals 1
-
-    sget-object v0, Lcom/upokecenter/numbers/EDecimal;->ExtendedMathValue:Lcom/upokecenter/numbers/IRadixMath;
-
-    check-cast v0, Lcom/upokecenter/numbers/RadixMath;
-
-    invoke-virtual {v0, p0, p1}, Lcom/upokecenter/numbers/RadixMath;->compareTo(Ljava/lang/Object;Ljava/lang/Object;)I
-
-    move-result p1
-
-    return p1
 .end method
 
 .method public Divide(Lcom/upokecenter/numbers/EDecimal;Lcom/upokecenter/numbers/EContext;)Lcom/upokecenter/numbers/EDecimal;
@@ -4528,12 +4457,26 @@
     return-object v8
 .end method
 
-.method public compareTo(Ljava/lang/Object;)I
+.method public compareTo(Lcom/upokecenter/numbers/EDecimal;)I
+    .locals 1
+
+    sget-object v0, Lcom/upokecenter/numbers/EDecimal;->ExtendedMathValue:Lcom/upokecenter/numbers/IRadixMath;
+
+    check-cast v0, Lcom/upokecenter/numbers/RadixMath;
+
+    invoke-virtual {v0, p0, p1}, Lcom/upokecenter/numbers/RadixMath;->compareTo(Ljava/lang/Object;Ljava/lang/Object;)I
+
+    move-result p1
+
+    return p1
+.end method
+
+.method public bridge synthetic compareTo(Ljava/lang/Object;)I
     .locals 0
 
     check-cast p1, Lcom/upokecenter/numbers/EDecimal;
 
-    invoke-virtual {p0, p1}, Lcom/upokecenter/numbers/EDecimal;->CompareToValue(Lcom/upokecenter/numbers/EDecimal;)I
+    invoke-virtual {p0, p1}, Lcom/upokecenter/numbers/EDecimal;->compareTo(Lcom/upokecenter/numbers/EDecimal;)I
 
     move-result p1
 

@@ -6,17 +6,6 @@
 # direct methods
 .method public static final fetcher(Lcoil/request/ImageRequest;Ljava/lang/Object;)Lcoil/fetch/Fetcher;
     .locals 2
-    .annotation system Ldalvik/annotation/Signature;
-        value = {
-            "<T:",
-            "Ljava/lang/Object;",
-            ">(",
-            "Lcoil/request/ImageRequest;",
-            "TT;)",
-            "Lcoil/fetch/Fetcher<",
-            "TT;>;"
-        }
-    .end annotation
 
     const-string v0, "data"
 
@@ -230,4 +219,27 @@
 
     :goto_0
     return-object p1
+.end method
+
+.method public static intervalFlow$default(JZI)Lkotlinx/coroutines/flow/Flow;
+    .locals 1
+
+    and-int/lit8 p3, p3, 0x2
+
+    if-eqz p3, :cond_0
+
+    const/4 p2, 0x1
+
+    :cond_0
+    new-instance p3, Lde/rki/coronawarnapp/util/flow/IntervalFlowKt$intervalFlow$1;
+
+    const/4 v0, 0x0
+
+    invoke-direct {p3, p2, p0, p1, v0}, Lde/rki/coronawarnapp/util/flow/IntervalFlowKt$intervalFlow$1;-><init>(ZJLkotlin/coroutines/Continuation;)V
+
+    new-instance p0, Lkotlinx/coroutines/flow/SafeFlow;
+
+    invoke-direct {p0, p3}, Lkotlinx/coroutines/flow/SafeFlow;-><init>(Lkotlin/jvm/functions/Function2;)V
+
+    return-object p0
 .end method

@@ -4,6 +4,15 @@
 
 
 # annotations
+.annotation system Ldalvik/annotation/EnclosingMethod;
+    value = Lkotlin/reflect/jvm/internal/impl/resolve/descriptorUtil/DescriptorUtilsKt;->firstOverridden(Lkotlin/reflect/jvm/internal/impl/descriptors/CallableMemberDescriptor;ZLkotlin/jvm/functions/Function1;)Lkotlin/reflect/jvm/internal/impl/descriptors/CallableMemberDescriptor;
+.end annotation
+
+.annotation system Ldalvik/annotation/InnerClass;
+    accessFlags = 0x19
+    name = null
+.end annotation
+
 .annotation system Ldalvik/annotation/Signature;
     value = {
         "Lkotlin/reflect/jvm/internal/impl/utils/DFS$AbstractNodeHandler<",
@@ -65,10 +74,18 @@
 
 
 # virtual methods
-.method public afterChildren(Ljava/lang/Object;)V
-    .locals 1
+.method public bridge synthetic afterChildren(Ljava/lang/Object;)V
+    .locals 0
 
     check-cast p1, Lkotlin/reflect/jvm/internal/impl/descriptors/CallableMemberDescriptor;
+
+    invoke-virtual {p0, p1}, Lkotlin/reflect/jvm/internal/impl/resolve/descriptorUtil/DescriptorUtilsKt$firstOverridden$2;->afterChildren(Lkotlin/reflect/jvm/internal/impl/descriptors/CallableMemberDescriptor;)V
+
+    return-void
+.end method
+
+.method public afterChildren(Lkotlin/reflect/jvm/internal/impl/descriptors/CallableMemberDescriptor;)V
+    .locals 1
 
     const-string v0, "current"
 
@@ -102,10 +119,20 @@
     return-void
 .end method
 
-.method public beforeChildren(Ljava/lang/Object;)Z
-    .locals 1
+.method public bridge synthetic beforeChildren(Ljava/lang/Object;)Z
+    .locals 0
 
     check-cast p1, Lkotlin/reflect/jvm/internal/impl/descriptors/CallableMemberDescriptor;
+
+    invoke-virtual {p0, p1}, Lkotlin/reflect/jvm/internal/impl/resolve/descriptorUtil/DescriptorUtilsKt$firstOverridden$2;->beforeChildren(Lkotlin/reflect/jvm/internal/impl/descriptors/CallableMemberDescriptor;)Z
+
+    move-result p1
+
+    return p1
+.end method
+
+.method public beforeChildren(Lkotlin/reflect/jvm/internal/impl/descriptors/CallableMemberDescriptor;)Z
+    .locals 1
 
     const-string v0, "current"
 
@@ -128,7 +155,17 @@
     return p1
 .end method
 
-.method public result()Ljava/lang/Object;
+.method public bridge synthetic result()Ljava/lang/Object;
+    .locals 1
+
+    invoke-virtual {p0}, Lkotlin/reflect/jvm/internal/impl/resolve/descriptorUtil/DescriptorUtilsKt$firstOverridden$2;->result()Lkotlin/reflect/jvm/internal/impl/descriptors/CallableMemberDescriptor;
+
+    move-result-object v0
+
+    return-object v0
+.end method
+
+.method public result()Lkotlin/reflect/jvm/internal/impl/descriptors/CallableMemberDescriptor;
     .locals 1
 
     iget-object v0, p0, Lkotlin/reflect/jvm/internal/impl/resolve/descriptorUtil/DescriptorUtilsKt$firstOverridden$2;->$result:Lkotlin/jvm/internal/Ref$ObjectRef;

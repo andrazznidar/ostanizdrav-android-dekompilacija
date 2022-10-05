@@ -7,10 +7,6 @@
 
 
 # instance fields
-.field public final certificateBadgeCount:Landroid/widget/TextView;
-
-.field public final certificateBadgeText:Landroid/widget/TextView;
-
 .field public final expirationStatusBody:Landroid/widget/TextView;
 
 .field public final expirationStatusIcon:Landroid/widget/ImageView;
@@ -35,7 +31,7 @@
 
 
 # direct methods
-.method public constructor <init>(Landroidx/constraintlayout/widget/ConstraintLayout;Landroid/widget/TextView;Landroid/widget/TextView;Landroid/widget/ImageButton;Landroid/widget/TextView;Landroid/widget/TextView;Landroid/widget/ImageView;Landroid/widget/TextView;Lcom/google/android/material/imageview/ShapeableImageView;Landroidx/constraintlayout/widget/Group;Landroid/widget/ImageView;Landroid/widget/ImageView;Landroid/widget/ImageView;Lcom/google/android/material/progressindicator/LinearProgressIndicator;Landroid/widget/TextView;Landroid/widget/TextView;Lde/rki/coronawarnapp/ui/view/ProgressLoadingButton;)V
+.method public constructor <init>(Landroidx/constraintlayout/widget/ConstraintLayout;Landroid/widget/ImageButton;Landroid/widget/TextView;Landroid/widget/TextView;Landroid/widget/ImageView;Landroid/widget/TextView;Landroidx/constraintlayout/widget/Guideline;Landroidx/constraintlayout/widget/Guideline;Lcom/google/android/material/imageview/ShapeableImageView;Landroidx/constraintlayout/widget/Group;Landroid/widget/ImageView;Landroid/widget/ImageView;Landroid/widget/ImageView;Lcom/google/android/material/progressindicator/LinearProgressIndicator;Landroid/widget/TextView;Landroid/widget/TextView;Lde/rki/coronawarnapp/ui/view/ProgressLoadingButton;)V
     .locals 2
     .annotation system Ldalvik/annotation/MethodParameters;
         accessFlags = {
@@ -59,13 +55,13 @@
         }
         names = {
             "rootView",
-            "certificateBadgeCount",
-            "certificateBadgeText",
             "covpassInfoButton",
             "covpassInfoTitle",
             "expirationStatusBody",
             "expirationStatusIcon",
             "expirationStatusText",
+            "guidelineEnd",
+            "guidelineStart",
             "image",
             "invalidOverlay",
             "invalidQrCodeOverlay",
@@ -86,23 +82,15 @@
 
     iput-object v1, v0, Lde/rki/coronawarnapp/databinding/IncludeCertificateQrcodeCardBinding;->rootView:Landroidx/constraintlayout/widget/ConstraintLayout;
 
-    move-object v1, p2
-
-    iput-object v1, v0, Lde/rki/coronawarnapp/databinding/IncludeCertificateQrcodeCardBinding;->certificateBadgeCount:Landroid/widget/TextView;
-
-    move-object v1, p3
-
-    iput-object v1, v0, Lde/rki/coronawarnapp/databinding/IncludeCertificateQrcodeCardBinding;->certificateBadgeText:Landroid/widget/TextView;
-
-    move-object v1, p6
+    move-object v1, p4
 
     iput-object v1, v0, Lde/rki/coronawarnapp/databinding/IncludeCertificateQrcodeCardBinding;->expirationStatusBody:Landroid/widget/TextView;
 
-    move-object v1, p7
+    move-object v1, p5
 
     iput-object v1, v0, Lde/rki/coronawarnapp/databinding/IncludeCertificateQrcodeCardBinding;->expirationStatusIcon:Landroid/widget/ImageView;
 
-    move-object v1, p8
+    move-object v1, p6
 
     iput-object v1, v0, Lde/rki/coronawarnapp/databinding/IncludeCertificateQrcodeCardBinding;->expirationStatusText:Landroid/widget/TextView;
 
@@ -150,7 +138,7 @@
 
     move-object/from16 v0, p0
 
-    const v1, 0x7f0a0174
+    const v1, 0x7f0a025f
 
     invoke-static {v0, v1}, Landroidx/viewbinding/ViewBindings;->findChildViewById(Landroid/view/View;I)Landroid/view/View;
 
@@ -158,11 +146,11 @@
 
     move-object v5, v2
 
-    check-cast v5, Landroid/widget/TextView;
+    check-cast v5, Landroid/widget/ImageButton;
 
     if-eqz v5, :cond_0
 
-    const v1, 0x7f0a0175
+    const v1, 0x7f0a0260
 
     invoke-static {v0, v1}, Landroidx/viewbinding/ViewBindings;->findChildViewById(Landroid/view/View;I)Landroid/view/View;
 
@@ -174,7 +162,7 @@
 
     if-eqz v6, :cond_0
 
-    const v1, 0x7f0a0240
+    const v1, 0x7f0a0326
 
     invoke-static {v0, v1}, Landroidx/viewbinding/ViewBindings;->findChildViewById(Landroid/view/View;I)Landroid/view/View;
 
@@ -182,11 +170,11 @@
 
     move-object v7, v2
 
-    check-cast v7, Landroid/widget/ImageButton;
+    check-cast v7, Landroid/widget/TextView;
 
     if-eqz v7, :cond_0
 
-    const v1, 0x7f0a0241
+    const v1, 0x7f0a0327
 
     invoke-static {v0, v1}, Landroidx/viewbinding/ViewBindings;->findChildViewById(Landroid/view/View;I)Landroid/view/View;
 
@@ -194,11 +182,11 @@
 
     move-object v8, v2
 
-    check-cast v8, Landroid/widget/TextView;
+    check-cast v8, Landroid/widget/ImageView;
 
     if-eqz v8, :cond_0
 
-    const v1, 0x7f0a0301
+    const v1, 0x7f0a0328
 
     invoke-static {v0, v1}, Landroidx/viewbinding/ViewBindings;->findChildViewById(Landroid/view/View;I)Landroid/view/View;
 
@@ -210,7 +198,7 @@
 
     if-eqz v9, :cond_0
 
-    const v1, 0x7f0a0302
+    const v1, 0x7f0a0374
 
     invoke-static {v0, v1}, Landroidx/viewbinding/ViewBindings;->findChildViewById(Landroid/view/View;I)Landroid/view/View;
 
@@ -218,11 +206,11 @@
 
     move-object v10, v2
 
-    check-cast v10, Landroid/widget/ImageView;
+    check-cast v10, Landroidx/constraintlayout/widget/Guideline;
 
     if-eqz v10, :cond_0
 
-    const v1, 0x7f0a0303
+    const v1, 0x7f0a0377
 
     invoke-static {v0, v1}, Landroidx/viewbinding/ViewBindings;->findChildViewById(Landroid/view/View;I)Landroid/view/View;
 
@@ -230,11 +218,11 @@
 
     move-object v11, v2
 
-    check-cast v11, Landroid/widget/TextView;
+    check-cast v11, Landroidx/constraintlayout/widget/Guideline;
 
     if-eqz v11, :cond_0
 
-    const v1, 0x7f0a036c
+    const v1, 0x7f0a03a0
 
     invoke-static {v0, v1}, Landroidx/viewbinding/ViewBindings;->findChildViewById(Landroid/view/View;I)Landroid/view/View;
 
@@ -246,7 +234,7 @@
 
     if-eqz v12, :cond_0
 
-    const v1, 0x7f0a03c4
+    const v1, 0x7f0a03f8
 
     invoke-static {v0, v1}, Landroidx/viewbinding/ViewBindings;->findChildViewById(Landroid/view/View;I)Landroid/view/View;
 
@@ -258,7 +246,7 @@
 
     if-eqz v13, :cond_0
 
-    const v1, 0x7f0a03c5
+    const v1, 0x7f0a03f9
 
     invoke-static {v0, v1}, Landroidx/viewbinding/ViewBindings;->findChildViewById(Landroid/view/View;I)Landroid/view/View;
 
@@ -270,7 +258,7 @@
 
     if-eqz v14, :cond_0
 
-    const v1, 0x7f0a03c6
+    const v1, 0x7f0a03fa
 
     invoke-static {v0, v1}, Landroidx/viewbinding/ViewBindings;->findChildViewById(Landroid/view/View;I)Landroid/view/View;
 
@@ -282,7 +270,7 @@
 
     if-eqz v15, :cond_0
 
-    const v1, 0x7f0a04c0
+    const v1, 0x7f0a0504
 
     invoke-static {v0, v1}, Landroidx/viewbinding/ViewBindings;->findChildViewById(Landroid/view/View;I)Landroid/view/View;
 
@@ -294,7 +282,7 @@
 
     if-eqz v16, :cond_0
 
-    const v1, 0x7f0a054d
+    const v1, 0x7f0a0595
 
     invoke-static {v0, v1}, Landroidx/viewbinding/ViewBindings;->findChildViewById(Landroid/view/View;I)Landroid/view/View;
 
@@ -306,7 +294,7 @@
 
     if-eqz v17, :cond_0
 
-    const v1, 0x7f0a056b
+    const v1, 0x7f0a05b5
 
     invoke-static {v0, v1}, Landroidx/viewbinding/ViewBindings;->findChildViewById(Landroid/view/View;I)Landroid/view/View;
 
@@ -318,7 +306,7 @@
 
     if-eqz v18, :cond_0
 
-    const v1, 0x7f0a056c
+    const v1, 0x7f0a05b6
 
     invoke-static {v0, v1}, Landroidx/viewbinding/ViewBindings;->findChildViewById(Landroid/view/View;I)Landroid/view/View;
 
@@ -330,7 +318,7 @@
 
     if-eqz v19, :cond_0
 
-    const v1, 0x7f0a068a
+    const v1, 0x7f0a06db
 
     invoke-static {v0, v1}, Landroidx/viewbinding/ViewBindings;->findChildViewById(Landroid/view/View;I)Landroid/view/View;
 
@@ -350,7 +338,7 @@
 
     check-cast v4, Landroidx/constraintlayout/widget/ConstraintLayout;
 
-    invoke-direct/range {v3 .. v20}, Lde/rki/coronawarnapp/databinding/IncludeCertificateQrcodeCardBinding;-><init>(Landroidx/constraintlayout/widget/ConstraintLayout;Landroid/widget/TextView;Landroid/widget/TextView;Landroid/widget/ImageButton;Landroid/widget/TextView;Landroid/widget/TextView;Landroid/widget/ImageView;Landroid/widget/TextView;Lcom/google/android/material/imageview/ShapeableImageView;Landroidx/constraintlayout/widget/Group;Landroid/widget/ImageView;Landroid/widget/ImageView;Landroid/widget/ImageView;Lcom/google/android/material/progressindicator/LinearProgressIndicator;Landroid/widget/TextView;Landroid/widget/TextView;Lde/rki/coronawarnapp/ui/view/ProgressLoadingButton;)V
+    invoke-direct/range {v3 .. v20}, Lde/rki/coronawarnapp/databinding/IncludeCertificateQrcodeCardBinding;-><init>(Landroidx/constraintlayout/widget/ConstraintLayout;Landroid/widget/ImageButton;Landroid/widget/TextView;Landroid/widget/TextView;Landroid/widget/ImageView;Landroid/widget/TextView;Landroidx/constraintlayout/widget/Guideline;Landroidx/constraintlayout/widget/Guideline;Lcom/google/android/material/imageview/ShapeableImageView;Landroidx/constraintlayout/widget/Group;Landroid/widget/ImageView;Landroid/widget/ImageView;Landroid/widget/ImageView;Lcom/google/android/material/progressindicator/LinearProgressIndicator;Landroid/widget/TextView;Landroid/widget/TextView;Lde/rki/coronawarnapp/ui/view/ProgressLoadingButton;)V
 
     return-object v1
 

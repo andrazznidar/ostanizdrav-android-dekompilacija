@@ -119,7 +119,7 @@
 .method public tryResumeSend(Lkotlinx/coroutines/internal/LockFreeLinkedListNode$PrepareOp;)Lkotlinx/coroutines/internal/Symbol;
     .locals 2
 
-    sget-object v0, Lkotlinx/coroutines/CancellableContinuationImplKt;->RESUME_TOKEN:Lkotlinx/coroutines/internal/Symbol;
+    sget-object v0, Lcom/upokecenter/cbor/CBORDoubleBits;->RESUME_TOKEN:Lkotlinx/coroutines/internal/Symbol;
 
     if-nez p1, :cond_0
 

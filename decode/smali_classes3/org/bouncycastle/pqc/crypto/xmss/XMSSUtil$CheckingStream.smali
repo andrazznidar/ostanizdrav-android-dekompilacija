@@ -1,4 +1,4 @@
-.class public Lorg/bouncycastle/pqc/crypto/xmss/XMSSUtil$CheckingStream;
+.class Lorg/bouncycastle/pqc/crypto/xmss/XMSSUtil$CheckingStream;
 .super Ljava/io/ObjectInputStream;
 
 
@@ -14,13 +14,13 @@
 
 
 # static fields
-.field public static final components:Ljava/util/Set;
+.field private static final components:Ljava/util/Set;
 
 
 # instance fields
-.field public found:Z
+.field private found:Z
 
-.field public final mainClass:Ljava/lang/Class;
+.field private final mainClass:Ljava/lang/Class;
 
 
 # direct methods
@@ -170,9 +170,7 @@
 
     move-result-object v2
 
-    check-cast v0, Ljava/util/HashSet;
-
-    invoke-virtual {v0, v2}, Ljava/util/HashSet;->contains(Ljava/lang/Object;)Z
+    invoke-interface {v0, v2}, Ljava/util/Set;->contains(Ljava/lang/Object;)Z
 
     move-result v0
 

@@ -5,7 +5,7 @@
 
 # annotations
 .annotation system Ldalvik/annotation/SourceDebugExtension;
-    value = "SMAP\nQrCodeValidator.kt\nKotlin\n*S Kotlin\n*F\n+ 1 QrCodeValidator.kt\nde/rki/coronawarnapp/qrcode/scanner/QrCodeValidator\n+ 2 fake.kt\nkotlin/jvm/internal/FakeKt\n*L\n1#1,38:1\n1#2:39\n*E\n"
+    value = "SMAP\nQrCodeValidator.kt\nKotlin\n*S Kotlin\n*F\n+ 1 QrCodeValidator.kt\nde/rki/coronawarnapp/qrcode/scanner/QrCodeValidator\n+ 2 fake.kt\nkotlin/jvm/internal/FakeKt\n*L\n1#1,41:1\n1#2:42\n*E\n"
 .end annotation
 
 
@@ -22,7 +22,7 @@
 
 
 # direct methods
-.method public constructor <init>(Lde/rki/coronawarnapp/covidcertificate/common/certificate/DccQrCodeExtractor;Lde/rki/coronawarnapp/coronatest/qrcode/RapidAntigenQrCodeExtractor;Lde/rki/coronawarnapp/coronatest/qrcode/PcrQrCodeExtractor;Lde/rki/coronawarnapp/presencetracing/checkins/qrcode/CheckInQrCodeExtractor;)V
+.method public constructor <init>(Lde/rki/coronawarnapp/covidcertificate/common/certificate/DccQrCodeExtractor;Lde/rki/coronawarnapp/coronatest/qrcode/RapidAntigenQrCodeExtractor;Lde/rki/coronawarnapp/coronatest/qrcode/PcrQrCodeExtractor;Lde/rki/coronawarnapp/presencetracing/checkins/qrcode/CheckInQrCodeExtractor;Lde/rki/coronawarnapp/dccticketing/core/qrcode/DccTicketingQrCodeExtractor;)V
     .locals 3
 
     const-string v0, "dccQrCodeExtractor"
@@ -41,9 +41,13 @@
 
     invoke-static {p4, v0}, Lkotlin/jvm/internal/Intrinsics;->checkNotNullParameter(Ljava/lang/Object;Ljava/lang/String;)V
 
+    const-string v0, "dccTicketingQrCodeExtractor"
+
+    invoke-static {p5, v0}, Lkotlin/jvm/internal/Intrinsics;->checkNotNullParameter(Ljava/lang/Object;Ljava/lang/String;)V
+
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
-    const/4 v0, 0x4
+    const/4 v0, 0x5
 
     new-array v1, v0, [Lde/rki/coronawarnapp/qrcode/scanner/QrCodeExtractor;
 
@@ -63,9 +67,9 @@
 
     aput-object p4, v1, p1
 
-    const-string p1, "elements"
+    const/4 p1, 0x4
 
-    invoke-static {v1, p1}, Lkotlin/jvm/internal/Intrinsics;->checkNotNullParameter(Ljava/lang/Object;Ljava/lang/String;)V
+    aput-object p5, v1, p1
 
     new-instance p1, Ljava/util/LinkedHashSet;
 
@@ -231,7 +235,7 @@
 .end method
 
 .method public final validate(Ljava/lang/String;Lkotlin/coroutines/Continuation;)Ljava/lang/Object;
-    .locals 6
+    .locals 7
     .annotation system Ldalvik/annotation/Signature;
         value = {
             "(",
@@ -283,6 +287,8 @@
     const/4 v4, 0x1
 
     const/4 v5, 0x0
+
+    const/4 v6, 0x0
 
     if-eqz v2, :cond_3
 
@@ -354,10 +360,7 @@
 
     if-nez p2, :cond_7
 
-    :goto_3
-    move-object p2, v5
-
-    goto :goto_4
+    goto :goto_3
 
     :cond_7
     sget-object p1, Ltimber/log/Timber;->Forest:Ltimber/log/Timber$Forest;
@@ -378,25 +381,25 @@
 
     const-string v2, " QR code has been extracted"
 
-    invoke-static {v1, v0, v2}, Landroidx/core/graphics/PathParser$$ExternalSyntheticOutline0;->m(Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;)Ljava/lang/String;
+    invoke-static {v1, v0, v2}, Landroidx/concurrent/futures/AbstractResolvableFuture$$ExternalSyntheticOutline1;->m(Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;)Ljava/lang/String;
 
     move-result-object v0
 
-    const/4 v1, 0x0
-
-    new-array v1, v1, [Ljava/lang/Object;
+    new-array v1, v6, [Ljava/lang/Object;
 
     invoke-virtual {p1, v0, v1}, Ltimber/log/Timber$Forest;->i(Ljava/lang/String;[Ljava/lang/Object;)V
 
-    :goto_4
-    if-eqz p2, :cond_8
+    move-object v5, p2
 
-    return-object p2
+    :goto_3
+    if-eqz v5, :cond_8
+
+    return-object v5
 
     :cond_8
     new-instance p1, Lde/rki/coronawarnapp/qrcode/scanner/UnsupportedQrCodeException;
 
-    invoke-direct {p1, v5, v4}, Lde/rki/coronawarnapp/qrcode/scanner/UnsupportedQrCodeException;-><init>(Lde/rki/coronawarnapp/qrcode/scanner/UnsupportedQrCodeException$ErrorCode;I)V
+    invoke-direct {p1, v6, v4}, Lde/rki/coronawarnapp/qrcode/scanner/UnsupportedQrCodeException;-><init>(II)V
 
     throw p1
 .end method

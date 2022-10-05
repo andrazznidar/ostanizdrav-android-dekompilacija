@@ -59,7 +59,7 @@
 
     invoke-direct {p2, p1}, Lde/rki/coronawarnapp/presencetracing/checkins/CheckInRepository$traceLocationDatabase$2;-><init>(Lde/rki/coronawarnapp/presencetracing/storage/TraceLocationDatabase$Factory;)V
 
-    invoke-static {p2}, Lkotlin/LazyKt__LazyKt;->lazy(Lkotlin/jvm/functions/Function0;)Lkotlin/Lazy;
+    invoke-static {p2}, Lkotlin/LazyKt__LazyJVMKt;->lazy(Lkotlin/jvm/functions/Function0;)Lkotlin/Lazy;
 
     move-result-object p1
 
@@ -69,7 +69,7 @@
 
     invoke-direct {p1, p0}, Lde/rki/coronawarnapp/presencetracing/checkins/CheckInRepository$checkInDao$2;-><init>(Lde/rki/coronawarnapp/presencetracing/checkins/CheckInRepository;)V
 
-    invoke-static {p1}, Lkotlin/LazyKt__LazyKt;->lazy(Lkotlin/jvm/functions/Function0;)Lkotlin/Lazy;
+    invoke-static {p1}, Lkotlin/LazyKt__LazyJVMKt;->lazy(Lkotlin/jvm/functions/Function0;)Lkotlin/Lazy;
 
     move-result-object p1
 
@@ -193,7 +193,7 @@
 
     if-eqz p3, :cond_4
 
-    invoke-static {p3}, Lcom/google/android/play/core/assetpacks/zzd;->toCheckIn(Lde/rki/coronawarnapp/presencetracing/storage/entity/TraceLocationCheckInEntity;)Lde/rki/coronawarnapp/presencetracing/checkins/CheckIn;
+    invoke-static {p3}, Lboofcv/alg/misc/ImageStatistics;->toCheckIn(Lde/rki/coronawarnapp/presencetracing/storage/entity/TraceLocationCheckInEntity;)Lde/rki/coronawarnapp/presencetracing/checkins/CheckIn;
 
     move-result-object p1
 
@@ -204,7 +204,7 @@
 
     const-string v0, "No checkIn found for ID="
 
-    invoke-static {v0, p1, p2}, Landroidx/viewpager2/adapter/FragmentStateAdapter$$ExternalSyntheticOutline0;->m(Ljava/lang/String;J)Ljava/lang/String;
+    invoke-static {v0, p1, p2}, Landroidx/camera/core/impl/DeferrableSurfaces$$ExternalSyntheticOutline0;->m(Ljava/lang/String;J)Ljava/lang/String;
 
     move-result-object p1
 
@@ -365,7 +365,7 @@
 
     const-string v4, ")"
 
-    invoke-static {v2, p1, p2, v4}, Landroidx/work/impl/utils/futures/AbstractFuture$$ExternalSyntheticOutline0;->m(Ljava/lang/String;JLjava/lang/String;)Ljava/lang/String;
+    invoke-static {v2, p1, p2, v4}, Landroidx/concurrent/futures/AbstractResolvableFuture$$ExternalSyntheticOutline0;->m(Ljava/lang/String;JLjava/lang/String;)Ljava/lang/String;
 
     move-result-object v2
 
@@ -400,7 +400,7 @@
     goto :goto_2
 
     :cond_4
-    invoke-static {p3}, Lcom/google/android/play/core/assetpacks/zzd;->toCheckIn(Lde/rki/coronawarnapp/presencetracing/storage/entity/TraceLocationCheckInEntity;)Lde/rki/coronawarnapp/presencetracing/checkins/CheckIn;
+    invoke-static {p3}, Lboofcv/alg/misc/ImageStatistics;->toCheckIn(Lde/rki/coronawarnapp/presencetracing/storage/entity/TraceLocationCheckInEntity;)Lde/rki/coronawarnapp/presencetracing/checkins/CheckIn;
 
     move-result-object p1
 
@@ -491,7 +491,7 @@
 
     const-string v2, ")"
 
-    invoke-static {v1, p1, p2, v2}, Landroidx/work/impl/utils/futures/AbstractFuture$$ExternalSyntheticOutline0;->m(Ljava/lang/String;JLjava/lang/String;)Ljava/lang/String;
+    invoke-static {v1, p1, p2, v2}, Landroidx/concurrent/futures/AbstractResolvableFuture$$ExternalSyntheticOutline0;->m(Ljava/lang/String;JLjava/lang/String;)Ljava/lang/String;
 
     move-result-object v1
 

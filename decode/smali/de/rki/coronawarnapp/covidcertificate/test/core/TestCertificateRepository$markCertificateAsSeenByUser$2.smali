@@ -29,7 +29,7 @@
 .end annotation
 
 .annotation system Ldalvik/annotation/SourceDebugExtension;
-    value = "SMAP\nTestCertificateRepository.kt\nKotlin\n*S Kotlin\n*F\n+ 1 TestCertificateRepository.kt\nde/rki/coronawarnapp/covidcertificate/test/core/TestCertificateRepository$markCertificateAsSeenByUser$2\n+ 2 MapExtensions.kt\nde/rki/coronawarnapp/util/MapExtensionsKt\n*L\n1#1,496:1\n4#2:497\n*S KotlinDebug\n*F\n+ 1 TestCertificateRepository.kt\nde/rki/coronawarnapp/covidcertificate/test/core/TestCertificateRepository$markCertificateAsSeenByUser$2\n*L\n386#1:497\n*E\n"
+    value = "SMAP\nTestCertificateRepository.kt\nKotlin\n*S Kotlin\n*F\n+ 1 TestCertificateRepository.kt\nde/rki/coronawarnapp/covidcertificate/test/core/TestCertificateRepository$markCertificateAsSeenByUser$2\n+ 2 MapExtensions.kt\nde/rki/coronawarnapp/util/MapExtensionsKt\n*L\n1#1,590:1\n4#2:591\n*S KotlinDebug\n*F\n+ 1 TestCertificateRepository.kt\nde/rki/coronawarnapp/covidcertificate/test/core/TestCertificateRepository$markCertificateAsSeenByUser$2\n*L\n405#1:591\n*E\n"
 .end annotation
 
 .annotation runtime Lkotlin/coroutines/jvm/internal/DebugMetadata;
@@ -130,7 +130,7 @@
 .end method
 
 .method public final invokeSuspend(Ljava/lang/Object;)Ljava/lang/Object;
-    .locals 33
+    .locals 36
 
     move-object/from16 v0, p0
 
@@ -204,7 +204,7 @@
 
     iget-object v6, v2, Lde/rki/coronawarnapp/covidcertificate/test/core/storage/TestCertificateContainer;->data:Lde/rki/coronawarnapp/covidcertificate/test/core/storage/types/BaseTestCertificateData;
 
-    const/4 v15, 0x1
+    const/16 v16, 0x1
 
     invoke-static {v5}, Ljava/util/Objects;->requireNonNull(Ljava/lang/Object;)Ljava/lang/Object;
 
@@ -236,11 +236,9 @@
 
     if-eqz v3, :cond_2
 
-    move-object/from16 v16, v6
+    move-object/from16 v17, v6
 
-    check-cast v16, Lde/rki/coronawarnapp/covidcertificate/test/core/storage/types/PCRCertificateData;
-
-    const/16 v17, 0x0
+    check-cast v17, Lde/rki/coronawarnapp/covidcertificate/test/core/storage/types/PCRCertificateData;
 
     const/16 v18, 0x0
 
@@ -268,11 +266,17 @@
 
     const/16 v30, 0x0
 
-    const/16 v32, 0x3fff
+    const/16 v31, 0x0
 
-    const/16 v31, 0x1
+    const/16 v32, 0x0
 
-    invoke-static/range {v16 .. v32}, Lde/rki/coronawarnapp/covidcertificate/test/core/storage/types/PCRCertificateData;->copy$default(Lde/rki/coronawarnapp/covidcertificate/test/core/storage/types/PCRCertificateData;Ljava/lang/String;Ljava/lang/String;Lorg/joda/time/Instant;Lorg/joda/time/Instant;Lde/rki/coronawarnapp/covidcertificate/common/certificate/CwaCovidCertificate$State;Lorg/joda/time/Instant;Lorg/joda/time/Instant;Lde/rki/coronawarnapp/util/encryption/rsa/RSAKey$Public;Lde/rki/coronawarnapp/util/encryption/rsa/RSAKey$Private;Lorg/joda/time/Instant;Lokio/ByteString;Lokio/ByteString;Ljava/lang/String;Ljava/lang/String;ZI)Lde/rki/coronawarnapp/covidcertificate/test/core/storage/types/PCRCertificateData;
+    const/16 v34, 0x0
+
+    const v35, 0x17fff
+
+    const/16 v33, 0x1
+
+    invoke-static/range {v17 .. v35}, Lde/rki/coronawarnapp/covidcertificate/test/core/storage/types/PCRCertificateData;->copy$default(Lde/rki/coronawarnapp/covidcertificate/test/core/storage/types/PCRCertificateData;Ljava/lang/String;Ljava/lang/String;Lorg/joda/time/Instant;Lorg/joda/time/Instant;Lorg/joda/time/Instant;Lde/rki/coronawarnapp/covidcertificate/common/certificate/CwaCovidCertificate$State;Lorg/joda/time/Instant;Lorg/joda/time/Instant;Lde/rki/coronawarnapp/util/encryption/rsa/RSAKey$Public;Lde/rki/coronawarnapp/util/encryption/rsa/RSAKey$Private;Lorg/joda/time/Instant;Lokio/ByteString;Lokio/ByteString;Ljava/lang/String;Ljava/lang/String;ZLorg/joda/time/Instant;I)Lde/rki/coronawarnapp/covidcertificate/test/core/storage/types/PCRCertificateData;
 
     move-result-object v3
 
@@ -283,11 +287,9 @@
 
     if-eqz v3, :cond_3
 
-    move-object/from16 v16, v6
+    move-object/from16 v17, v6
 
-    check-cast v16, Lde/rki/coronawarnapp/covidcertificate/test/core/storage/types/RACertificateData;
-
-    const/16 v17, 0x0
+    check-cast v17, Lde/rki/coronawarnapp/covidcertificate/test/core/storage/types/RACertificateData;
 
     const/16 v18, 0x0
 
@@ -315,11 +317,17 @@
 
     const/16 v30, 0x0
 
-    const/16 v32, 0x3fff
+    const/16 v31, 0x0
 
-    const/16 v31, 0x1
+    const/16 v32, 0x0
 
-    invoke-static/range {v16 .. v32}, Lde/rki/coronawarnapp/covidcertificate/test/core/storage/types/RACertificateData;->copy$default(Lde/rki/coronawarnapp/covidcertificate/test/core/storage/types/RACertificateData;Ljava/lang/String;Ljava/lang/String;Lorg/joda/time/Instant;Lorg/joda/time/Instant;Lde/rki/coronawarnapp/covidcertificate/common/certificate/CwaCovidCertificate$State;Lorg/joda/time/Instant;Lorg/joda/time/Instant;Lde/rki/coronawarnapp/util/encryption/rsa/RSAKey$Public;Lde/rki/coronawarnapp/util/encryption/rsa/RSAKey$Private;Lorg/joda/time/Instant;Lokio/ByteString;Lokio/ByteString;Ljava/lang/String;Ljava/lang/String;ZI)Lde/rki/coronawarnapp/covidcertificate/test/core/storage/types/RACertificateData;
+    const/16 v34, 0x0
+
+    const v35, 0x17fff
+
+    const/16 v33, 0x1
+
+    invoke-static/range {v17 .. v35}, Lde/rki/coronawarnapp/covidcertificate/test/core/storage/types/RACertificateData;->copy$default(Lde/rki/coronawarnapp/covidcertificate/test/core/storage/types/RACertificateData;Ljava/lang/String;Ljava/lang/String;Lorg/joda/time/Instant;Lorg/joda/time/Instant;Lorg/joda/time/Instant;Lde/rki/coronawarnapp/covidcertificate/common/certificate/CwaCovidCertificate$State;Lorg/joda/time/Instant;Lorg/joda/time/Instant;Lde/rki/coronawarnapp/util/encryption/rsa/RSAKey$Public;Lde/rki/coronawarnapp/util/encryption/rsa/RSAKey$Private;Lorg/joda/time/Instant;Lokio/ByteString;Lokio/ByteString;Ljava/lang/String;Ljava/lang/String;ZLorg/joda/time/Instant;I)Lde/rki/coronawarnapp/covidcertificate/test/core/storage/types/RACertificateData;
 
     move-result-object v3
 
@@ -348,9 +356,13 @@
 
     const/4 v14, 0x0
 
-    const/16 v16, 0x7f
+    const/4 v15, 0x0
 
-    invoke-static/range {v7 .. v16}, Lde/rki/coronawarnapp/covidcertificate/test/core/storage/types/GenericTestCertificateData;->copy$default(Lde/rki/coronawarnapp/covidcertificate/test/core/storage/types/GenericTestCertificateData;Ljava/lang/String;Lorg/joda/time/Instant;Lorg/joda/time/Instant;Lorg/joda/time/Instant;Lde/rki/coronawarnapp/covidcertificate/common/certificate/CwaCovidCertificate$State;Lorg/joda/time/Instant;Ljava/lang/String;ZI)Lde/rki/coronawarnapp/covidcertificate/test/core/storage/types/GenericTestCertificateData;
+    const/16 v17, 0x0
+
+    const/16 v18, 0x2ff
+
+    invoke-static/range {v7 .. v18}, Lde/rki/coronawarnapp/covidcertificate/test/core/storage/types/GenericTestCertificateData;->copy$default(Lde/rki/coronawarnapp/covidcertificate/test/core/storage/types/GenericTestCertificateData;Ljava/lang/String;Lorg/joda/time/Instant;Lorg/joda/time/Instant;Lorg/joda/time/Instant;Lde/rki/coronawarnapp/covidcertificate/common/certificate/CwaCovidCertificate$State;Lorg/joda/time/Instant;Lorg/joda/time/Instant;Ljava/lang/String;ZLorg/joda/time/Instant;I)Lde/rki/coronawarnapp/covidcertificate/test/core/storage/types/GenericTestCertificateData;
 
     move-result-object v3
 

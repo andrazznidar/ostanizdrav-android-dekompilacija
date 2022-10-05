@@ -11,7 +11,8 @@
     value = {
         "Ljava/lang/Enum<",
         "Lcom/fasterxml/jackson/core/json/JsonReadFeature;",
-        ">;"
+        ">;",
+        "Lcom/fasterxml/jackson/core/util/JacksonFeature;"
     }
 .end annotation
 

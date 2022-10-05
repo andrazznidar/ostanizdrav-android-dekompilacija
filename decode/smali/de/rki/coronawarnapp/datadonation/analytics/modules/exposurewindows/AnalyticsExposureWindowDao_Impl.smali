@@ -9,32 +9,26 @@
 # instance fields
 .field public final __db:Landroidx/room/RoomDatabase;
 
-.field public final __deletionAdapterOfAnalyticsExposureWindowEntity:Landroidx/room/EntityDeletionOrUpdateAdapter;
+.field public final __deletionAdapterOfAnalyticsExposureWindowEntity:Landroidx/room/EntityInsertionAdapter;
     .annotation system Ldalvik/annotation/Signature;
         value = {
-            "Landroidx/room/EntityDeletionOrUpdateAdapter<",
-            "Lde/rki/coronawarnapp/datadonation/analytics/modules/exposurewindows/AnalyticsExposureWindowEntity;",
-            ">;"
+            "Landroidx/room/EntityInsertionAdapter;"
         }
     .end annotation
 .end field
 
-.field public final __deletionAdapterOfAnalyticsReportedExposureWindowEntity:Landroidx/room/EntityDeletionOrUpdateAdapter;
+.field public final __deletionAdapterOfAnalyticsReportedExposureWindowEntity:Landroidx/room/EntityInsertionAdapter;
     .annotation system Ldalvik/annotation/Signature;
         value = {
-            "Landroidx/room/EntityDeletionOrUpdateAdapter<",
-            "Lde/rki/coronawarnapp/datadonation/analytics/modules/exposurewindows/AnalyticsReportedExposureWindowEntity;",
-            ">;"
+            "Landroidx/room/EntityInsertionAdapter;"
         }
     .end annotation
 .end field
 
-.field public final __deletionAdapterOfAnalyticsScanInstanceEntity:Landroidx/room/EntityDeletionOrUpdateAdapter;
+.field public final __deletionAdapterOfAnalyticsScanInstanceEntity:Landroidx/room/EntityInsertionAdapter;
     .annotation system Ldalvik/annotation/Signature;
         value = {
-            "Landroidx/room/EntityDeletionOrUpdateAdapter<",
-            "Lde/rki/coronawarnapp/datadonation/analytics/modules/exposurewindows/AnalyticsScanInstanceEntity;",
-            ">;"
+            "Landroidx/room/EntityInsertionAdapter;"
         }
     .end annotation
 .end field
@@ -42,9 +36,7 @@
 .field public final __insertionAdapterOfAnalyticsExposureWindowEntity:Landroidx/room/EntityInsertionAdapter;
     .annotation system Ldalvik/annotation/Signature;
         value = {
-            "Landroidx/room/EntityInsertionAdapter<",
-            "Lde/rki/coronawarnapp/datadonation/analytics/modules/exposurewindows/AnalyticsExposureWindowEntity;",
-            ">;"
+            "Landroidx/room/EntityInsertionAdapter;"
         }
     .end annotation
 .end field
@@ -52,9 +44,7 @@
 .field public final __insertionAdapterOfAnalyticsReportedExposureWindowEntity:Landroidx/room/EntityInsertionAdapter;
     .annotation system Ldalvik/annotation/Signature;
         value = {
-            "Landroidx/room/EntityInsertionAdapter<",
-            "Lde/rki/coronawarnapp/datadonation/analytics/modules/exposurewindows/AnalyticsReportedExposureWindowEntity;",
-            ">;"
+            "Landroidx/room/EntityInsertionAdapter;"
         }
     .end annotation
 .end field
@@ -62,9 +52,7 @@
 .field public final __insertionAdapterOfAnalyticsScanInstanceEntity:Landroidx/room/EntityInsertionAdapter;
     .annotation system Ldalvik/annotation/Signature;
         value = {
-            "Landroidx/room/EntityInsertionAdapter<",
-            "Lde/rki/coronawarnapp/datadonation/analytics/modules/exposurewindows/AnalyticsScanInstanceEntity;",
-            ">;"
+            "Landroidx/room/EntityInsertionAdapter;"
         }
     .end annotation
 .end field
@@ -110,19 +98,19 @@
 
     invoke-direct {v0, p0, p1}, Lde/rki/coronawarnapp/datadonation/analytics/modules/exposurewindows/AnalyticsExposureWindowDao_Impl$4;-><init>(Lde/rki/coronawarnapp/datadonation/analytics/modules/exposurewindows/AnalyticsExposureWindowDao_Impl;Landroidx/room/RoomDatabase;)V
 
-    iput-object v0, p0, Lde/rki/coronawarnapp/datadonation/analytics/modules/exposurewindows/AnalyticsExposureWindowDao_Impl;->__deletionAdapterOfAnalyticsExposureWindowEntity:Landroidx/room/EntityDeletionOrUpdateAdapter;
+    iput-object v0, p0, Lde/rki/coronawarnapp/datadonation/analytics/modules/exposurewindows/AnalyticsExposureWindowDao_Impl;->__deletionAdapterOfAnalyticsExposureWindowEntity:Landroidx/room/EntityInsertionAdapter;
 
     new-instance v0, Lde/rki/coronawarnapp/datadonation/analytics/modules/exposurewindows/AnalyticsExposureWindowDao_Impl$5;
 
     invoke-direct {v0, p0, p1}, Lde/rki/coronawarnapp/datadonation/analytics/modules/exposurewindows/AnalyticsExposureWindowDao_Impl$5;-><init>(Lde/rki/coronawarnapp/datadonation/analytics/modules/exposurewindows/AnalyticsExposureWindowDao_Impl;Landroidx/room/RoomDatabase;)V
 
-    iput-object v0, p0, Lde/rki/coronawarnapp/datadonation/analytics/modules/exposurewindows/AnalyticsExposureWindowDao_Impl;->__deletionAdapterOfAnalyticsScanInstanceEntity:Landroidx/room/EntityDeletionOrUpdateAdapter;
+    iput-object v0, p0, Lde/rki/coronawarnapp/datadonation/analytics/modules/exposurewindows/AnalyticsExposureWindowDao_Impl;->__deletionAdapterOfAnalyticsScanInstanceEntity:Landroidx/room/EntityInsertionAdapter;
 
     new-instance v0, Lde/rki/coronawarnapp/datadonation/analytics/modules/exposurewindows/AnalyticsExposureWindowDao_Impl$6;
 
     invoke-direct {v0, p0, p1}, Lde/rki/coronawarnapp/datadonation/analytics/modules/exposurewindows/AnalyticsExposureWindowDao_Impl$6;-><init>(Lde/rki/coronawarnapp/datadonation/analytics/modules/exposurewindows/AnalyticsExposureWindowDao_Impl;Landroidx/room/RoomDatabase;)V
 
-    iput-object v0, p0, Lde/rki/coronawarnapp/datadonation/analytics/modules/exposurewindows/AnalyticsExposureWindowDao_Impl;->__deletionAdapterOfAnalyticsReportedExposureWindowEntity:Landroidx/room/EntityDeletionOrUpdateAdapter;
+    iput-object v0, p0, Lde/rki/coronawarnapp/datadonation/analytics/modules/exposurewindows/AnalyticsExposureWindowDao_Impl;->__deletionAdapterOfAnalyticsReportedExposureWindowEntity:Landroidx/room/EntityInsertionAdapter;
 
     new-instance v0, Lde/rki/coronawarnapp/datadonation/analytics/modules/exposurewindows/AnalyticsExposureWindowDao_Impl$7;
 
@@ -251,7 +239,7 @@
 
     move-result v5
 
-    invoke-static {v4, v5}, Landroidx/room/util/StringUtil;->appendPlaceholders(Ljava/lang/StringBuilder;I)V
+    invoke-static {v4, v5}, Lkotlinx/coroutines/YieldKt;->appendPlaceholders(Ljava/lang/StringBuilder;I)V
 
     const-string v7, ")"
 

@@ -1,46 +1,57 @@
-.class abstract Lj$/util/stream/Q;
+.class final Lj$/util/stream/Q;
 .super Lj$/util/stream/T;
+
+# interfaces
+.implements Lj$/util/stream/p2;
 
 
 # direct methods
-.method constructor <init>(Lj$/util/stream/c;Lj$/util/stream/g4;I)V
+.method constructor <init>()V
     .locals 0
 
-    invoke-direct {p0, p1, p3}, Lj$/util/stream/T;-><init>(Lj$/util/stream/c;I)V
+    invoke-direct {p0}, Lj$/util/stream/T;-><init>()V
 
     return-void
 .end method
 
 
 # virtual methods
-.method final D0()Z
-    .locals 1
+.method public d(J)V
+    .locals 0
 
-    const/4 v0, 0x1
+    invoke-static {p1, p2}, Ljava/lang/Long;->valueOf(J)Ljava/lang/Long;
 
-    return v0
+    move-result-object p1
+
+    invoke-virtual {p0, p1}, Lj$/util/stream/T;->j(Ljava/lang/Object;)V
+
+    return-void
 .end method
 
-.method public bridge synthetic parallel()Lj$/util/stream/U;
-    .locals 1
+.method public get()Ljava/lang/Object;
+    .locals 2
 
-    invoke-virtual {p0}, Lj$/util/stream/c;->parallel()Lj$/util/stream/g;
+    iget-boolean v0, p0, Lj$/util/stream/T;->a:Z
 
-    move-object v0, p0
+    if-eqz v0, :cond_0
 
-    check-cast v0, Lj$/util/stream/U;
+    iget-object v0, p0, Lj$/util/stream/T;->b:Ljava/lang/Object;
 
-    return-object v0
-.end method
+    check-cast v0, Ljava/lang/Long;
 
-.method public bridge synthetic sequential()Lj$/util/stream/U;
-    .locals 1
+    invoke-virtual {v0}, Ljava/lang/Long;->longValue()J
 
-    invoke-virtual {p0}, Lj$/util/stream/c;->sequential()Lj$/util/stream/g;
+    move-result-wide v0
 
-    move-object v0, p0
+    invoke-static {v0, v1}, Lj$/util/l;->d(J)Lj$/util/l;
 
-    check-cast v0, Lj$/util/stream/U;
+    move-result-object v0
 
+    goto :goto_0
+
+    :cond_0
+    const/4 v0, 0x0
+
+    :goto_0
     return-object v0
 .end method

@@ -31,7 +31,7 @@
     return-void
 .end method
 
-.method public constructor <init>()V
+.method private constructor <init>()V
     .locals 2
 
     const-string v0, "must have a single value parameter"
@@ -47,6 +47,10 @@
 # virtual methods
 .method public check(Lkotlin/reflect/jvm/internal/impl/descriptors/FunctionDescriptor;)Z
     .locals 1
+
+    const-string v0, "functionDescriptor"
+
+    invoke-static {p1, v0}, Lkotlin/jvm/internal/Intrinsics;->checkNotNullParameter(Ljava/lang/Object;Ljava/lang/String;)V
 
     invoke-interface {p1}, Lkotlin/reflect/jvm/internal/impl/descriptors/CallableDescriptor;->getValueParameters()Ljava/util/List;
 

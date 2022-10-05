@@ -52,7 +52,7 @@
 .method public abstract addOrOverride(Ljava/lang/annotation/Annotation;)Lcom/fasterxml/jackson/databind/introspect/AnnotationCollector;
 .end method
 
-.method public abstract asAnnotationMap()Lokhttp3/ConnectionPool;
+.method public abstract asAnnotationMap()Lcom/fasterxml/jackson/databind/introspect/AnnotationMap;
 .end method
 
 .method public abstract asAnnotations()Lcom/fasterxml/jackson/databind/util/Annotations;

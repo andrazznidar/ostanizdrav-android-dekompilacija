@@ -80,7 +80,7 @@
 
     invoke-direct {p1, p0, p5}, Lde/rki/coronawarnapp/datadonation/survey/Surveys$availableSurveys$2;-><init>(Lde/rki/coronawarnapp/datadonation/survey/Surveys;Lde/rki/coronawarnapp/util/coroutine/DispatcherProvider;)V
 
-    invoke-static {p1}, Lkotlin/LazyKt__LazyKt;->lazy(Lkotlin/jvm/functions/Function0;)Lkotlin/Lazy;
+    invoke-static {p1}, Lkotlin/LazyKt__LazyJVMKt;->lazy(Lkotlin/jvm/functions/Function0;)Lkotlin/Lazy;
 
     move-result-object p1
 

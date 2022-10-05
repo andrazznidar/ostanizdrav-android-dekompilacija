@@ -1,5 +1,6 @@
 .class public final synthetic Lde/rki/coronawarnapp/bugreporting/debuglog/ui/DebugLogFragment$onViewCreated$4$$ExternalSyntheticLambda1;
 .super Ljava/lang/Object;
+.source "R8$$SyntheticClass"
 
 # interfaces
 .implements Ljava/lang/Runnable;

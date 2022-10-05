@@ -11,11 +11,11 @@
 
 .field public final dayElementBody:Landroidx/constraintlayout/widget/ConstraintLayout;
 
-.field public final dayHeader:Lde/rki/coronawarnapp/databinding/FabTooltipBinding;
+.field public final dayHeader:Lde/rki/coronawarnapp/databinding/ContactDiaryOverviewDayListItemHeaderBinding;
 
-.field public final dayRiskEnf:Lde/rki/coronawarnapp/databinding/IncludeDebuglogLegalPrivacyCardBinding;
+.field public final dayRiskEnf:Lde/rki/coronawarnapp/databinding/ContactDiaryOverviewDayListItemRiskEnfBinding;
 
-.field public final dayRiskEvent:Lde/rki/coronawarnapp/databinding/ViewMoreInformationBinding;
+.field public final dayRiskEvent:Lde/rki/coronawarnapp/databinding/ContactDiaryOverviewDayListItemRiskEventBinding;
 
 .field public final dayTestResult:Lde/rki/coronawarnapp/databinding/ContactDiaryOverviewDayListItemTestResultsBinding;
 
@@ -23,7 +23,7 @@
 
 
 # direct methods
-.method public constructor <init>(Landroidx/constraintlayout/widget/ConstraintLayout;Lde/rki/coronawarnapp/databinding/ContactDiaryOverviewDayListItemContactBinding;Landroidx/constraintlayout/widget/ConstraintLayout;Lde/rki/coronawarnapp/databinding/FabTooltipBinding;Lde/rki/coronawarnapp/databinding/IncludeDebuglogLegalPrivacyCardBinding;Lde/rki/coronawarnapp/databinding/ViewMoreInformationBinding;Lde/rki/coronawarnapp/databinding/ContactDiaryOverviewDayListItemTestResultsBinding;)V
+.method public constructor <init>(Landroidx/constraintlayout/widget/ConstraintLayout;Lde/rki/coronawarnapp/databinding/ContactDiaryOverviewDayListItemContactBinding;Landroidx/constraintlayout/widget/ConstraintLayout;Lde/rki/coronawarnapp/databinding/ContactDiaryOverviewDayListItemHeaderBinding;Lde/rki/coronawarnapp/databinding/ContactDiaryOverviewDayListItemRiskEnfBinding;Lde/rki/coronawarnapp/databinding/ContactDiaryOverviewDayListItemRiskEventBinding;Lde/rki/coronawarnapp/databinding/ContactDiaryOverviewDayListItemTestResultsBinding;)V
     .locals 0
     .annotation system Ldalvik/annotation/MethodParameters;
         accessFlags = {
@@ -54,11 +54,11 @@
 
     iput-object p3, p0, Lde/rki/coronawarnapp/databinding/ContactDiaryOverviewListItemBinding;->dayElementBody:Landroidx/constraintlayout/widget/ConstraintLayout;
 
-    iput-object p4, p0, Lde/rki/coronawarnapp/databinding/ContactDiaryOverviewListItemBinding;->dayHeader:Lde/rki/coronawarnapp/databinding/FabTooltipBinding;
+    iput-object p4, p0, Lde/rki/coronawarnapp/databinding/ContactDiaryOverviewListItemBinding;->dayHeader:Lde/rki/coronawarnapp/databinding/ContactDiaryOverviewDayListItemHeaderBinding;
 
-    iput-object p5, p0, Lde/rki/coronawarnapp/databinding/ContactDiaryOverviewListItemBinding;->dayRiskEnf:Lde/rki/coronawarnapp/databinding/IncludeDebuglogLegalPrivacyCardBinding;
+    iput-object p5, p0, Lde/rki/coronawarnapp/databinding/ContactDiaryOverviewListItemBinding;->dayRiskEnf:Lde/rki/coronawarnapp/databinding/ContactDiaryOverviewDayListItemRiskEnfBinding;
 
-    iput-object p6, p0, Lde/rki/coronawarnapp/databinding/ContactDiaryOverviewListItemBinding;->dayRiskEvent:Lde/rki/coronawarnapp/databinding/ViewMoreInformationBinding;
+    iput-object p6, p0, Lde/rki/coronawarnapp/databinding/ContactDiaryOverviewListItemBinding;->dayRiskEvent:Lde/rki/coronawarnapp/databinding/ContactDiaryOverviewDayListItemRiskEventBinding;
 
     iput-object p7, p0, Lde/rki/coronawarnapp/databinding/ContactDiaryOverviewListItemBinding;->dayTestResult:Lde/rki/coronawarnapp/databinding/ContactDiaryOverviewDayListItemTestResultsBinding;
 

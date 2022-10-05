@@ -3,6 +3,14 @@
 .source "KotlinModule.kt"
 
 
+# annotations
+.annotation system Ldalvik/annotation/MemberClasses;
+    value = {
+        Lcom/fasterxml/jackson/module/kotlin/KotlinModule$Builder;
+    }
+.end annotation
+
+
 # instance fields
 .field public final ignoredClassesForImplyingJsonCreator:Ljava/util/Set;
     .annotation system Ldalvik/annotation/Signature;
@@ -22,44 +30,66 @@
 
 .field public final reflectionCacheSize:I
 
-.field public final singletonSupport:Lcom/fasterxml/jackson/module/kotlin/SingletonSupport;
+.field public final singletonSupport:I
 
 .field public final strictNullChecks:Z
 
 
 # direct methods
 .method public constructor <init>()V
-    .locals 3
+    .locals 7
 
-    const/16 v0, 0x200
+    const/16 v1, 0x200
 
-    sget-object v1, Lcom/fasterxml/jackson/module/kotlin/SingletonSupport;->DISABLED:Lcom/fasterxml/jackson/module/kotlin/SingletonSupport;
+    const/4 v2, 0x0
 
-    const-string/jumbo v2, "singletonSupport"
+    const/4 v3, 0x0
 
-    invoke-static {v1, v2}, Lkotlin/jvm/internal/Intrinsics;->checkNotNullParameter(Ljava/lang/Object;Ljava/lang/String;)V
+    const/4 v4, 0x0
 
-    sget-object v2, Lcom/fasterxml/jackson/module/kotlin/PackageVersion;->VERSION:Lcom/fasterxml/jackson/core/Version;
+    const/4 v5, 0x1
 
-    invoke-direct {p0, v2}, Lcom/fasterxml/jackson/databind/module/SimpleModule;-><init>(Lcom/fasterxml/jackson/core/Version;)V
+    const/4 v6, 0x0
 
-    iput v0, p0, Lcom/fasterxml/jackson/module/kotlin/KotlinModule;->reflectionCacheSize:I
+    move-object v0, p0
 
-    const/4 v0, 0x0
+    invoke-direct/range {v0 .. v6}, Lcom/fasterxml/jackson/module/kotlin/KotlinModule;-><init>(IZZZIZ)V
 
-    iput-boolean v0, p0, Lcom/fasterxml/jackson/module/kotlin/KotlinModule;->nullToEmptyCollection:Z
+    return-void
+.end method
 
-    iput-boolean v0, p0, Lcom/fasterxml/jackson/module/kotlin/KotlinModule;->nullToEmptyMap:Z
+.method public constructor <init>(IZZZIZ)V
+    .locals 2
 
-    iput-boolean v0, p0, Lcom/fasterxml/jackson/module/kotlin/KotlinModule;->nullIsSameAsDefault:Z
+    const-string/jumbo v0, "singletonSupport"
 
-    iput-object v1, p0, Lcom/fasterxml/jackson/module/kotlin/KotlinModule;->singletonSupport:Lcom/fasterxml/jackson/module/kotlin/SingletonSupport;
+    invoke-static {p5, v0}, Lkotlin/jvm/internal/Intrinsics$$ExternalSyntheticCheckNotZero0;->m(ILjava/lang/String;)V
 
-    iput-boolean v0, p0, Lcom/fasterxml/jackson/module/kotlin/KotlinModule;->strictNullChecks:Z
+    const-class v0, Lcom/fasterxml/jackson/module/kotlin/KotlinModule;
 
-    sget-object v0, Lkotlin/collections/EmptySet;->INSTANCE:Lkotlin/collections/EmptySet;
+    invoke-virtual {v0}, Ljava/lang/Class;->getName()Ljava/lang/String;
 
-    iput-object v0, p0, Lcom/fasterxml/jackson/module/kotlin/KotlinModule;->ignoredClassesForImplyingJsonCreator:Ljava/util/Set;
+    move-result-object v0
+
+    sget-object v1, Lcom/fasterxml/jackson/module/kotlin/PackageVersion;->VERSION:Lcom/fasterxml/jackson/core/Version;
+
+    invoke-direct {p0, v0, v1}, Lcom/fasterxml/jackson/databind/module/SimpleModule;-><init>(Ljava/lang/String;Lcom/fasterxml/jackson/core/Version;)V
+
+    iput p1, p0, Lcom/fasterxml/jackson/module/kotlin/KotlinModule;->reflectionCacheSize:I
+
+    iput-boolean p2, p0, Lcom/fasterxml/jackson/module/kotlin/KotlinModule;->nullToEmptyCollection:Z
+
+    iput-boolean p3, p0, Lcom/fasterxml/jackson/module/kotlin/KotlinModule;->nullToEmptyMap:Z
+
+    iput-boolean p4, p0, Lcom/fasterxml/jackson/module/kotlin/KotlinModule;->nullIsSameAsDefault:Z
+
+    iput p5, p0, Lcom/fasterxml/jackson/module/kotlin/KotlinModule;->singletonSupport:I
+
+    iput-boolean p6, p0, Lcom/fasterxml/jackson/module/kotlin/KotlinModule;->strictNullChecks:Z
+
+    sget-object p1, Lkotlin/collections/EmptySet;->INSTANCE:Lkotlin/collections/EmptySet;
+
+    iput-object p1, p0, Lcom/fasterxml/jackson/module/kotlin/KotlinModule;->ignoredClassesForImplyingJsonCreator:Ljava/util/Set;
 
     return-void
 .end method
@@ -69,7 +99,9 @@
 .method public setupModule(Lcom/fasterxml/jackson/databind/Module$SetupContext;)V
     .locals 10
 
-    const-class v0, Lcom/fasterxml/jackson/module/kotlin/ClosedRangeMixin;
+    const-class v0, Lorg/joda/time/Chronology;
+
+    invoke-super {p0, p1}, Lcom/fasterxml/jackson/databind/module/SimpleModule;->setupModule(Lcom/fasterxml/jackson/databind/Module$SetupContext;)V
 
     sget-object v1, Lcom/fasterxml/jackson/databind/MapperFeature;->USE_ANNOTATIONS:Lcom/fasterxml/jackson/databind/MapperFeature;
 
@@ -111,9 +143,9 @@
 
     invoke-virtual {v2, v9}, Lcom/fasterxml/jackson/databind/ObjectMapper$1;->addValueInstantiators(Lcom/fasterxml/jackson/databind/deser/ValueInstantiators;)V
 
-    iget-object v3, p0, Lcom/fasterxml/jackson/module/kotlin/KotlinModule;->singletonSupport:Lcom/fasterxml/jackson/module/kotlin/SingletonSupport;
+    iget v3, p0, Lcom/fasterxml/jackson/module/kotlin/KotlinModule;->singletonSupport:I
 
-    invoke-virtual {v3}, Ljava/lang/Enum;->ordinal()I
+    invoke-static {v3}, Landroidx/camera/camera2/internal/Camera2CameraImpl$InternalState$EnumUnboxingSharedUtility;->ordinal(I)I
 
     move-result v3
 
@@ -145,91 +177,97 @@
 
     invoke-direct/range {v3 .. v8}, Lcom/fasterxml/jackson/module/kotlin/KotlinAnnotationIntrospector;-><init>(Lcom/fasterxml/jackson/databind/Module$SetupContext;Lcom/fasterxml/jackson/module/kotlin/ReflectionCache;ZZZ)V
 
-    iget-object v3, v2, Lcom/fasterxml/jackson/databind/ObjectMapper$1;->this$0:Lcom/fasterxml/jackson/databind/ObjectMapper;
+    iget-object p1, v2, Lcom/fasterxml/jackson/databind/ObjectMapper$1;->this$0:Lcom/fasterxml/jackson/databind/ObjectMapper;
 
-    iget-object v4, v3, Lcom/fasterxml/jackson/databind/ObjectMapper;->_deserializationConfig:Lcom/fasterxml/jackson/databind/DeserializationConfig;
+    iget-object v3, p1, Lcom/fasterxml/jackson/databind/ObjectMapper;->_deserializationConfig:Lcom/fasterxml/jackson/databind/DeserializationConfig;
 
-    invoke-virtual {v4, v9}, Lcom/fasterxml/jackson/databind/cfg/MapperConfigBase;->withInsertedAnnotationIntrospector(Lcom/fasterxml/jackson/databind/AnnotationIntrospector;)Lcom/fasterxml/jackson/databind/cfg/MapperConfigBase;
+    invoke-virtual {v3, v9}, Lcom/fasterxml/jackson/databind/cfg/MapperConfigBase;->withInsertedAnnotationIntrospector(Lcom/fasterxml/jackson/databind/AnnotationIntrospector;)Lcom/fasterxml/jackson/databind/cfg/MapperConfigBase;
 
-    move-result-object v4
+    move-result-object v3
 
-    check-cast v4, Lcom/fasterxml/jackson/databind/DeserializationConfig;
+    check-cast v3, Lcom/fasterxml/jackson/databind/DeserializationConfig;
 
-    iput-object v4, v3, Lcom/fasterxml/jackson/databind/ObjectMapper;->_deserializationConfig:Lcom/fasterxml/jackson/databind/DeserializationConfig;
+    iput-object v3, p1, Lcom/fasterxml/jackson/databind/ObjectMapper;->_deserializationConfig:Lcom/fasterxml/jackson/databind/DeserializationConfig;
 
-    iget-object v3, v2, Lcom/fasterxml/jackson/databind/ObjectMapper$1;->this$0:Lcom/fasterxml/jackson/databind/ObjectMapper;
+    iget-object p1, v2, Lcom/fasterxml/jackson/databind/ObjectMapper$1;->this$0:Lcom/fasterxml/jackson/databind/ObjectMapper;
 
-    iget-object v4, v3, Lcom/fasterxml/jackson/databind/ObjectMapper;->_serializationConfig:Lcom/fasterxml/jackson/databind/SerializationConfig;
+    iget-object v3, p1, Lcom/fasterxml/jackson/databind/ObjectMapper;->_serializationConfig:Lcom/fasterxml/jackson/databind/SerializationConfig;
 
-    invoke-virtual {v4, v9}, Lcom/fasterxml/jackson/databind/cfg/MapperConfigBase;->withInsertedAnnotationIntrospector(Lcom/fasterxml/jackson/databind/AnnotationIntrospector;)Lcom/fasterxml/jackson/databind/cfg/MapperConfigBase;
-
-    move-result-object v4
-
-    check-cast v4, Lcom/fasterxml/jackson/databind/SerializationConfig;
-
-    iput-object v4, v3, Lcom/fasterxml/jackson/databind/ObjectMapper;->_serializationConfig:Lcom/fasterxml/jackson/databind/SerializationConfig;
-
-    new-instance v3, Lcom/fasterxml/jackson/module/kotlin/KotlinNamesAnnotationIntrospector;
-
-    iget-object v4, p0, Lcom/fasterxml/jackson/module/kotlin/KotlinModule;->ignoredClassesForImplyingJsonCreator:Ljava/util/Set;
-
-    invoke-direct {v3, p0, v1, v4}, Lcom/fasterxml/jackson/module/kotlin/KotlinNamesAnnotationIntrospector;-><init>(Lcom/fasterxml/jackson/module/kotlin/KotlinModule;Lcom/fasterxml/jackson/module/kotlin/ReflectionCache;Ljava/util/Set;)V
-
-    iget-object v1, v2, Lcom/fasterxml/jackson/databind/ObjectMapper$1;->this$0:Lcom/fasterxml/jackson/databind/ObjectMapper;
-
-    iget-object v4, v1, Lcom/fasterxml/jackson/databind/ObjectMapper;->_deserializationConfig:Lcom/fasterxml/jackson/databind/DeserializationConfig;
-
-    invoke-virtual {v4, v3}, Lcom/fasterxml/jackson/databind/cfg/MapperConfigBase;->withAppendedAnnotationIntrospector(Lcom/fasterxml/jackson/databind/AnnotationIntrospector;)Lcom/fasterxml/jackson/databind/cfg/MapperConfigBase;
-
-    move-result-object v4
-
-    check-cast v4, Lcom/fasterxml/jackson/databind/DeserializationConfig;
-
-    iput-object v4, v1, Lcom/fasterxml/jackson/databind/ObjectMapper;->_deserializationConfig:Lcom/fasterxml/jackson/databind/DeserializationConfig;
-
-    iget-object v1, v2, Lcom/fasterxml/jackson/databind/ObjectMapper$1;->this$0:Lcom/fasterxml/jackson/databind/ObjectMapper;
-
-    iget-object v4, v1, Lcom/fasterxml/jackson/databind/ObjectMapper;->_serializationConfig:Lcom/fasterxml/jackson/databind/SerializationConfig;
-
-    invoke-virtual {v4, v3}, Lcom/fasterxml/jackson/databind/cfg/MapperConfigBase;->withAppendedAnnotationIntrospector(Lcom/fasterxml/jackson/databind/AnnotationIntrospector;)Lcom/fasterxml/jackson/databind/cfg/MapperConfigBase;
+    invoke-virtual {v3, v9}, Lcom/fasterxml/jackson/databind/cfg/MapperConfigBase;->withInsertedAnnotationIntrospector(Lcom/fasterxml/jackson/databind/AnnotationIntrospector;)Lcom/fasterxml/jackson/databind/cfg/MapperConfigBase;
 
     move-result-object v3
 
     check-cast v3, Lcom/fasterxml/jackson/databind/SerializationConfig;
 
-    iput-object v3, v1, Lcom/fasterxml/jackson/databind/ObjectMapper;->_serializationConfig:Lcom/fasterxml/jackson/databind/SerializationConfig;
+    iput-object v3, p1, Lcom/fasterxml/jackson/databind/ObjectMapper;->_serializationConfig:Lcom/fasterxml/jackson/databind/SerializationConfig;
 
-    new-instance v1, Lcom/fasterxml/jackson/module/kotlin/KotlinDeserializers;
+    new-instance p1, Lcom/fasterxml/jackson/module/kotlin/KotlinNamesAnnotationIntrospector;
 
-    invoke-direct {v1}, Lcom/fasterxml/jackson/module/kotlin/KotlinDeserializers;-><init>()V
+    iget-object v3, p0, Lcom/fasterxml/jackson/module/kotlin/KotlinModule;->ignoredClassesForImplyingJsonCreator:Ljava/util/Set;
 
-    invoke-virtual {v2, v1}, Lcom/fasterxml/jackson/databind/ObjectMapper$1;->addDeserializers(Lcom/fasterxml/jackson/databind/deser/Deserializers;)V
+    invoke-direct {p1, p0, v1, v3}, Lcom/fasterxml/jackson/module/kotlin/KotlinNamesAnnotationIntrospector;-><init>(Lcom/fasterxml/jackson/module/kotlin/KotlinModule;Lcom/fasterxml/jackson/module/kotlin/ReflectionCache;Ljava/util/Set;)V
 
-    new-instance v1, Lcom/fasterxml/jackson/module/kotlin/KotlinSerializers;
+    iget-object v1, v2, Lcom/fasterxml/jackson/databind/ObjectMapper$1;->this$0:Lcom/fasterxml/jackson/databind/ObjectMapper;
 
-    invoke-direct {v1}, Lcom/fasterxml/jackson/module/kotlin/KotlinSerializers;-><init>()V
+    iget-object v3, v1, Lcom/fasterxml/jackson/databind/ObjectMapper;->_deserializationConfig:Lcom/fasterxml/jackson/databind/DeserializationConfig;
 
-    invoke-virtual {v2, v1}, Lcom/fasterxml/jackson/databind/ObjectMapper$1;->addSerializers(Lcom/fasterxml/jackson/databind/ser/Serializers;)V
+    invoke-virtual {v3, p1}, Lcom/fasterxml/jackson/databind/cfg/MapperConfigBase;->withAppendedAnnotationIntrospector(Lcom/fasterxml/jackson/databind/AnnotationIntrospector;)Lcom/fasterxml/jackson/databind/cfg/MapperConfigBase;
 
-    new-instance v1, Lcom/fasterxml/jackson/module/kotlin/KotlinModule$setupModule$1;
+    move-result-object v3
 
-    invoke-direct {v1, p1}, Lcom/fasterxml/jackson/module/kotlin/KotlinModule$setupModule$1;-><init>(Lcom/fasterxml/jackson/databind/Module$SetupContext;)V
+    check-cast v3, Lcom/fasterxml/jackson/databind/DeserializationConfig;
+
+    iput-object v3, v1, Lcom/fasterxml/jackson/databind/ObjectMapper;->_deserializationConfig:Lcom/fasterxml/jackson/databind/DeserializationConfig;
+
+    iget-object v1, v2, Lcom/fasterxml/jackson/databind/ObjectMapper$1;->this$0:Lcom/fasterxml/jackson/databind/ObjectMapper;
+
+    iget-object v3, v1, Lcom/fasterxml/jackson/databind/ObjectMapper;->_serializationConfig:Lcom/fasterxml/jackson/databind/SerializationConfig;
+
+    invoke-virtual {v3, p1}, Lcom/fasterxml/jackson/databind/cfg/MapperConfigBase;->withAppendedAnnotationIntrospector(Lcom/fasterxml/jackson/databind/AnnotationIntrospector;)Lcom/fasterxml/jackson/databind/cfg/MapperConfigBase;
+
+    move-result-object p1
+
+    check-cast p1, Lcom/fasterxml/jackson/databind/SerializationConfig;
+
+    iput-object p1, v1, Lcom/fasterxml/jackson/databind/ObjectMapper;->_serializationConfig:Lcom/fasterxml/jackson/databind/SerializationConfig;
+
+    new-instance p1, Lcom/fasterxml/jackson/module/kotlin/KotlinDeserializers;
+
+    invoke-direct {p1}, Lcom/fasterxml/jackson/module/kotlin/KotlinDeserializers;-><init>()V
+
+    invoke-virtual {v2, p1}, Lcom/fasterxml/jackson/databind/ObjectMapper$1;->addDeserializers(Lcom/fasterxml/jackson/databind/deser/Deserializers;)V
+
+    sget-object p1, Lcom/fasterxml/jackson/module/kotlin/KotlinKeyDeserializers;->INSTANCE:Lcom/fasterxml/jackson/module/kotlin/KotlinKeyDeserializers;
+
+    invoke-virtual {v2, p1}, Lcom/fasterxml/jackson/databind/ObjectMapper$1;->addKeyDeserializers(Lcom/fasterxml/jackson/databind/deser/KeyDeserializers;)V
+
+    new-instance p1, Lcom/fasterxml/jackson/module/kotlin/KotlinSerializers;
+
+    invoke-direct {p1}, Lcom/fasterxml/jackson/module/kotlin/KotlinSerializers;-><init>()V
+
+    invoke-virtual {v2, p1}, Lcom/fasterxml/jackson/databind/ObjectMapper$1;->addSerializers(Lcom/fasterxml/jackson/databind/ser/Serializers;)V
+
+    new-instance p1, Lcom/fasterxml/jackson/module/kotlin/KotlinKeySerializers;
+
+    invoke-direct {p1}, Lcom/fasterxml/jackson/module/kotlin/KotlinKeySerializers;-><init>()V
+
+    invoke-virtual {v2, p1}, Lcom/fasterxml/jackson/databind/ObjectMapper$1;->addKeySerializers(Lcom/fasterxml/jackson/databind/ser/Serializers;)V
 
     const-class p1, Lkotlin/ranges/IntRange;
 
-    invoke-virtual {v1, p1, v0}, Lcom/fasterxml/jackson/module/kotlin/KotlinModule$setupModule$1;->invoke(Ljava/lang/Class;Ljava/lang/Class;)V
+    invoke-virtual {v2, p1, v0}, Lcom/fasterxml/jackson/databind/ObjectMapper$1;->setMixInAnnotations(Ljava/lang/Class;Ljava/lang/Class;)V
 
     const-class p1, Lkotlin/ranges/CharRange;
 
-    invoke-virtual {v1, p1, v0}, Lcom/fasterxml/jackson/module/kotlin/KotlinModule$setupModule$1;->invoke(Ljava/lang/Class;Ljava/lang/Class;)V
+    invoke-virtual {v2, p1, v0}, Lcom/fasterxml/jackson/databind/ObjectMapper$1;->setMixInAnnotations(Ljava/lang/Class;Ljava/lang/Class;)V
 
     const-class p1, Lkotlin/ranges/LongRange;
 
-    invoke-virtual {v1, p1, v0}, Lcom/fasterxml/jackson/module/kotlin/KotlinModule$setupModule$1;->invoke(Ljava/lang/Class;Ljava/lang/Class;)V
+    invoke-virtual {v2, p1, v0}, Lcom/fasterxml/jackson/databind/ObjectMapper$1;->setMixInAnnotations(Ljava/lang/Class;Ljava/lang/Class;)V
 
     const-class p1, Lkotlin/ranges/ClosedRange;
 
-    invoke-virtual {v1, p1, v0}, Lcom/fasterxml/jackson/module/kotlin/KotlinModule$setupModule$1;->invoke(Ljava/lang/Class;Ljava/lang/Class;)V
+    invoke-virtual {v2, p1, v0}, Lcom/fasterxml/jackson/databind/ObjectMapper$1;->setMixInAnnotations(Ljava/lang/Class;Ljava/lang/Class;)V
 
     return-void
 

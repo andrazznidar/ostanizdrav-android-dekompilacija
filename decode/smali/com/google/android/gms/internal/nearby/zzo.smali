@@ -48,27 +48,19 @@
 
     check-cast p1, Lcom/google/android/gms/internal/nearby/zzdq;
 
-    new-instance v0, Lokhttp3/ConnectionPool;
+    new-instance v0, Lcom/google/android/gms/internal/nearby/zzeu;
 
-    const/4 v1, 0x3
+    const/4 v1, 0x0
 
-    invoke-direct {v0, v1}, Lokhttp3/ConnectionPool;-><init>(I)V
+    invoke-direct {v0, v1}, Lcom/google/android/gms/internal/nearby/zzeu;-><init>(Lorg/bouncycastle/crypto/prng/EntropyUtil;)V
 
     new-instance v1, Lcom/google/android/gms/internal/nearby/zzan;
 
     invoke-direct {v1, p2}, Lcom/google/android/gms/internal/nearby/zzan;-><init>(Lcom/google/android/gms/tasks/TaskCompletionSource;)V
 
-    iget-object p2, v0, Lokhttp3/ConnectionPool;->delegate:Ljava/lang/Object;
-
-    move-object v0, p2
-
-    check-cast v0, Lcom/google/android/gms/internal/nearby/zzeu;
-
     iput-object v1, v0, Lcom/google/android/gms/internal/nearby/zzeu;->zza:Lcom/google/android/gms/common/api/internal/IStatusCallback;
 
-    check-cast p2, Lcom/google/android/gms/internal/nearby/zzeu;
-
-    invoke-interface {p1, p2}, Lcom/google/android/gms/internal/nearby/zzdq;->zzd(Lcom/google/android/gms/internal/nearby/zzeu;)V
+    invoke-interface {p1, v0}, Lcom/google/android/gms/internal/nearby/zzdq;->zzd(Lcom/google/android/gms/internal/nearby/zzeu;)V
 
     return-void
 .end method

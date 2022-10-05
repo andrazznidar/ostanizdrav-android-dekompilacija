@@ -22,7 +22,7 @@
     .annotation system Ldalvik/annotation/Signature;
         value = {
             "Ljavax/inject/Provider<",
-            "Lde/rki/coronawarnapp/covidcertificate/common/cryptography/AesCryptography;",
+            "Lde/rki/coronawarnapp/util/encryption/aes/AesCryptography;",
             ">;"
         }
     .end annotation
@@ -45,7 +45,7 @@
         value = {
             "(",
             "Ljavax/inject/Provider<",
-            "Lde/rki/coronawarnapp/covidcertificate/common/cryptography/AesCryptography;",
+            "Lde/rki/coronawarnapp/util/encryption/aes/AesCryptography;",
             ">;)V"
         }
     .end annotation
@@ -68,11 +68,11 @@
 
     move-result-object v0
 
-    check-cast v0, Lde/rki/coronawarnapp/covidcertificate/common/cryptography/AesCryptography;
+    check-cast v0, Lde/rki/coronawarnapp/util/encryption/aes/AesCryptography;
 
     new-instance v1, Lde/rki/coronawarnapp/covidcertificate/common/decoder/DccCoseDecoder;
 
-    invoke-direct {v1, v0}, Lde/rki/coronawarnapp/covidcertificate/common/decoder/DccCoseDecoder;-><init>(Lde/rki/coronawarnapp/covidcertificate/common/cryptography/AesCryptography;)V
+    invoke-direct {v1, v0}, Lde/rki/coronawarnapp/covidcertificate/common/decoder/DccCoseDecoder;-><init>(Lde/rki/coronawarnapp/util/encryption/aes/AesCryptography;)V
 
     return-object v1
 .end method

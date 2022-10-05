@@ -38,7 +38,7 @@
 
 .field public ensureMinTouchTargetSize:Z
 
-.field public final fontCallback:Lcom/google/android/material/resources/TextAppearanceFontCallback;
+.field public final fontCallback:Lorg/joda/time/Chronology;
 
 .field public insetBackgroundDrawable:Landroid/graphics/drawable/InsetDrawable;
 
@@ -131,7 +131,7 @@
 
     invoke-direct {v1, v0}, Lcom/google/android/material/chip/Chip$1;-><init>(Lcom/google/android/material/chip/Chip;)V
 
-    iput-object v1, v0, Lcom/google/android/material/chip/Chip;->fontCallback:Lcom/google/android/material/resources/TextAppearanceFontCallback;
+    iput-object v1, v0, Lcom/google/android/material/chip/Chip;->fontCallback:Lorg/joda/time/Chronology;
 
     invoke-virtual/range {p0 .. p0}, Landroid/widget/CheckBox;->getContext()Landroid/content/Context;
 
@@ -1308,7 +1308,7 @@
     :goto_5
     if-nez v0, :cond_8
 
-    invoke-super {p0, p1}, Landroid/view/View;->dispatchHoverEvent(Landroid/view/MotionEvent;)Z
+    invoke-super {p0, p1}, Landroid/widget/CheckBox;->dispatchHoverEvent(Landroid/view/MotionEvent;)Z
 
     move-result p1
 
@@ -1488,7 +1488,7 @@
     return v2
 
     :cond_9
-    invoke-super {p0, p1}, Landroid/view/View;->dispatchKeyEvent(Landroid/view/KeyEvent;)Z
+    invoke-super {p0, p1}, Landroid/widget/CheckBox;->dispatchKeyEvent(Landroid/view/KeyEvent;)Z
 
     move-result p1
 
@@ -2197,7 +2197,7 @@
     goto :goto_0
 
     :cond_0
-    invoke-super {p0, p1}, Landroid/widget/TextView;->getFocusedRect(Landroid/graphics/Rect;)V
+    invoke-super {p0, p1}, Landroid/widget/CheckBox;->getFocusedRect(Landroid/graphics/Rect;)V
 
     goto :goto_1
 
@@ -2400,11 +2400,11 @@
 .method public onAttachedToWindow()V
     .locals 1
 
-    invoke-super {p0}, Landroid/widget/TextView;->onAttachedToWindow()V
+    invoke-super {p0}, Landroid/widget/CheckBox;->onAttachedToWindow()V
 
     iget-object v0, p0, Lcom/google/android/material/chip/Chip;->chipDrawable:Lcom/google/android/material/chip/ChipDrawable;
 
-    invoke-static {p0, v0}, Lcom/google/android/material/shape/MaterialShapeUtils;->setParentAbsoluteElevation(Landroid/view/View;Lcom/google/android/material/shape/MaterialShapeDrawable;)V
+    invoke-static {p0, v0}, Lcom/google/common/base/Preconditions;->setParentAbsoluteElevation(Landroid/view/View;Lcom/google/android/material/shape/MaterialShapeDrawable;)V
 
     return-void
 .end method
@@ -2428,7 +2428,7 @@
 
     add-int/lit8 p1, p1, 0x2
 
-    invoke-super {p0, p1}, Landroid/widget/CompoundButton;->onCreateDrawableState(I)[I
+    invoke-super {p0, p1}, Landroid/widget/CheckBox;->onCreateDrawableState(I)[I
 
     move-result-object p1
 
@@ -2460,7 +2460,7 @@
 .method public onFocusChanged(ZILandroid/graphics/Rect;)V
     .locals 3
 
-    invoke-super {p0, p1, p2, p3}, Landroid/widget/TextView;->onFocusChanged(ZILandroid/graphics/Rect;)V
+    invoke-super {p0, p1, p2, p3}, Landroid/widget/CheckBox;->onFocusChanged(ZILandroid/graphics/Rect;)V
 
     iget-object v0, p0, Lcom/google/android/material/chip/Chip;->touchHelper:Lcom/google/android/material/chip/Chip$ChipTouchHelper;
 
@@ -2525,7 +2525,7 @@
     invoke-direct {p0, v0}, Lcom/google/android/material/chip/Chip;->setCloseIconHovered(Z)V
 
     :goto_0
-    invoke-super {p0, p1}, Landroid/view/View;->onHoverEvent(Landroid/view/MotionEvent;)Z
+    invoke-super {p0, p1}, Landroid/widget/CheckBox;->onHoverEvent(Landroid/view/MotionEvent;)Z
 
     move-result p1
 
@@ -2535,7 +2535,7 @@
 .method public onInitializeAccessibilityNodeInfo(Landroid/view/accessibility/AccessibilityNodeInfo;)V
     .locals 10
 
-    invoke-super {p0, p1}, Landroid/view/View;->onInitializeAccessibilityNodeInfo(Landroid/view/accessibility/AccessibilityNodeInfo;)V
+    invoke-super {p0, p1}, Landroid/widget/CheckBox;->onInitializeAccessibilityNodeInfo(Landroid/view/accessibility/AccessibilityNodeInfo;)V
 
     invoke-virtual {p0}, Lcom/google/android/material/chip/Chip;->isCheckable()Z
 
@@ -2758,7 +2758,7 @@
         value = 0x11
     .end annotation
 
-    invoke-super {p0, p1}, Landroid/widget/TextView;->onRtlPropertiesChanged(I)V
+    invoke-super {p0, p1}, Landroid/widget/CheckBox;->onRtlPropertiesChanged(I)V
 
     iget v0, p0, Lcom/google/android/material/chip/Chip;->lastLayoutDirection:I
 
@@ -2877,7 +2877,7 @@
     :goto_3
     if-nez v0, :cond_7
 
-    invoke-super {p0, p1}, Landroid/widget/TextView;->onTouchEvent(Landroid/view/MotionEvent;)Z
+    invoke-super {p0, p1}, Landroid/widget/CheckBox;->onTouchEvent(Landroid/view/MotionEvent;)Z
 
     move-result p1
 
@@ -2941,7 +2941,7 @@
     goto :goto_0
 
     :cond_0
-    invoke-super {p0, p1}, Landroid/view/View;->setBackground(Landroid/graphics/drawable/Drawable;)V
+    invoke-super {p0, p1}, Landroid/widget/CheckBox;->setBackground(Landroid/graphics/drawable/Drawable;)V
 
     :goto_0
     return-void
@@ -3079,7 +3079,7 @@
 
     move-result v0
 
-    invoke-super {p0, p1}, Landroid/widget/CompoundButton;->setChecked(Z)V
+    invoke-super {p0, p1}, Landroid/widget/CheckBox;->setChecked(Z)V
 
     if-eq v0, p1, :cond_1
 
@@ -4001,7 +4001,7 @@
 
     if-nez p3, :cond_0
 
-    invoke-super {p0, p1, p2, p3, p4}, Landroid/widget/TextView;->setCompoundDrawables(Landroid/graphics/drawable/Drawable;Landroid/graphics/drawable/Drawable;Landroid/graphics/drawable/Drawable;Landroid/graphics/drawable/Drawable;)V
+    invoke-super {p0, p1, p2, p3, p4}, Landroid/widget/CheckBox;->setCompoundDrawables(Landroid/graphics/drawable/Drawable;Landroid/graphics/drawable/Drawable;Landroid/graphics/drawable/Drawable;Landroid/graphics/drawable/Drawable;)V
 
     return-void
 
@@ -4031,7 +4031,7 @@
 
     if-nez p3, :cond_0
 
-    invoke-super {p0, p1, p2, p3, p4}, Landroid/widget/TextView;->setCompoundDrawablesRelative(Landroid/graphics/drawable/Drawable;Landroid/graphics/drawable/Drawable;Landroid/graphics/drawable/Drawable;Landroid/graphics/drawable/Drawable;)V
+    invoke-super {p0, p1, p2, p3, p4}, Landroid/widget/CheckBox;->setCompoundDrawablesRelative(Landroid/graphics/drawable/Drawable;Landroid/graphics/drawable/Drawable;Landroid/graphics/drawable/Drawable;Landroid/graphics/drawable/Drawable;)V
 
     return-void
 
@@ -4061,7 +4061,7 @@
 
     if-nez p3, :cond_0
 
-    invoke-super {p0, p1, p2, p3, p4}, Landroid/widget/TextView;->setCompoundDrawablesRelativeWithIntrinsicBounds(IIII)V
+    invoke-super {p0, p1, p2, p3, p4}, Landroid/widget/CheckBox;->setCompoundDrawablesRelativeWithIntrinsicBounds(IIII)V
 
     return-void
 
@@ -4091,7 +4091,7 @@
 
     if-nez p3, :cond_0
 
-    invoke-super {p0, p1, p2, p3, p4}, Landroid/widget/TextView;->setCompoundDrawablesRelativeWithIntrinsicBounds(Landroid/graphics/drawable/Drawable;Landroid/graphics/drawable/Drawable;Landroid/graphics/drawable/Drawable;Landroid/graphics/drawable/Drawable;)V
+    invoke-super {p0, p1, p2, p3, p4}, Landroid/widget/CheckBox;->setCompoundDrawablesRelativeWithIntrinsicBounds(Landroid/graphics/drawable/Drawable;Landroid/graphics/drawable/Drawable;Landroid/graphics/drawable/Drawable;Landroid/graphics/drawable/Drawable;)V
 
     return-void
 
@@ -4121,7 +4121,7 @@
 
     if-nez p3, :cond_0
 
-    invoke-super {p0, p1, p2, p3, p4}, Landroid/widget/TextView;->setCompoundDrawablesWithIntrinsicBounds(IIII)V
+    invoke-super {p0, p1, p2, p3, p4}, Landroid/widget/CheckBox;->setCompoundDrawablesWithIntrinsicBounds(IIII)V
 
     return-void
 
@@ -4151,7 +4151,7 @@
 
     if-nez p3, :cond_0
 
-    invoke-super {p0, p1, p2, p3, p4}, Landroid/widget/TextView;->setCompoundDrawablesWithIntrinsicBounds(Landroid/graphics/drawable/Drawable;Landroid/graphics/drawable/Drawable;Landroid/graphics/drawable/Drawable;Landroid/graphics/drawable/Drawable;)V
+    invoke-super {p0, p1, p2, p3, p4}, Landroid/widget/CheckBox;->setCompoundDrawablesWithIntrinsicBounds(Landroid/graphics/drawable/Drawable;Landroid/graphics/drawable/Drawable;Landroid/graphics/drawable/Drawable;Landroid/graphics/drawable/Drawable;)V
 
     return-void
 
@@ -4177,7 +4177,7 @@
 .method public setElevation(F)V
     .locals 3
 
-    invoke-super {p0, p1}, Landroid/view/View;->setElevation(F)V
+    invoke-super {p0, p1}, Landroid/widget/CheckBox;->setElevation(F)V
 
     iget-object v0, p0, Lcom/google/android/material/chip/Chip;->chipDrawable:Lcom/google/android/material/chip/ChipDrawable;
 
@@ -4213,7 +4213,7 @@
 
     if-eq p1, v0, :cond_2
 
-    invoke-super {p0, p1}, Landroid/widget/TextView;->setEllipsize(Landroid/text/TextUtils$TruncateAt;)V
+    invoke-super {p0, p1}, Landroid/widget/CheckBox;->setEllipsize(Landroid/text/TextUtils$TruncateAt;)V
 
     iget-object v0, p0, Lcom/google/android/material/chip/Chip;->chipDrawable:Lcom/google/android/material/chip/ChipDrawable;
 
@@ -4262,7 +4262,7 @@
     goto :goto_0
 
     :cond_0
-    invoke-super {p0, p1}, Landroid/widget/TextView;->setGravity(I)V
+    invoke-super {p0, p1}, Landroid/widget/CheckBox;->setGravity(I)V
 
     :goto_0
     return-void
@@ -4382,7 +4382,7 @@
     return-void
 
     :cond_0
-    invoke-super {p0, p1}, Landroid/view/View;->setLayoutDirection(I)V
+    invoke-super {p0, p1}, Landroid/widget/CheckBox;->setLayoutDirection(I)V
 
     return-void
 .end method
@@ -4394,7 +4394,7 @@
 
     if-gt p1, v0, :cond_0
 
-    invoke-super {p0, p1}, Landroid/widget/TextView;->setLines(I)V
+    invoke-super {p0, p1}, Landroid/widget/CheckBox;->setLines(I)V
 
     return-void
 
@@ -4415,7 +4415,7 @@
 
     if-gt p1, v0, :cond_0
 
-    invoke-super {p0, p1}, Landroid/widget/TextView;->setMaxLines(I)V
+    invoke-super {p0, p1}, Landroid/widget/CheckBox;->setMaxLines(I)V
 
     return-void
 
@@ -4432,7 +4432,7 @@
 .method public setMaxWidth(I)V
     .locals 1
 
-    invoke-super {p0, p1}, Landroid/widget/TextView;->setMaxWidth(I)V
+    invoke-super {p0, p1}, Landroid/widget/CheckBox;->setMaxWidth(I)V
 
     iget-object v0, p0, Lcom/google/android/material/chip/Chip;->chipDrawable:Lcom/google/android/material/chip/ChipDrawable;
 
@@ -4451,7 +4451,7 @@
 
     if-gt p1, v0, :cond_0
 
-    invoke-super {p0, p1}, Landroid/widget/TextView;->setMinLines(I)V
+    invoke-super {p0, p1}, Landroid/widget/CheckBox;->setMinLines(I)V
 
     return-void
 
@@ -4585,7 +4585,7 @@
 
     if-eqz p1, :cond_0
 
-    invoke-super {p0, p1}, Landroid/widget/TextView;->setSingleLine(Z)V
+    invoke-super {p0, p1}, Landroid/widget/CheckBox;->setSingleLine(Z)V
 
     return-void
 
@@ -4626,7 +4626,7 @@
     move-object v0, p1
 
     :goto_0
-    invoke-super {p0, v0, p2}, Landroid/widget/TextView;->setText(Ljava/lang/CharSequence;Landroid/widget/TextView$BufferType;)V
+    invoke-super {p0, v0, p2}, Landroid/widget/CheckBox;->setText(Ljava/lang/CharSequence;Landroid/widget/TextView$BufferType;)V
 
     iget-object p2, p0, Lcom/google/android/material/chip/Chip;->chipDrawable:Lcom/google/android/material/chip/ChipDrawable;
 
@@ -4641,7 +4641,7 @@
 .method public setTextAppearance(I)V
     .locals 3
 
-    invoke-super {p0, p1}, Landroid/widget/TextView;->setTextAppearance(I)V
+    invoke-super {p0, p1}, Landroid/widget/CheckBox;->setTextAppearance(I)V
 
     iget-object v0, p0, Lcom/google/android/material/chip/Chip;->chipDrawable:Lcom/google/android/material/chip/ChipDrawable;
 
@@ -4668,7 +4668,7 @@
 .method public setTextAppearance(Landroid/content/Context;I)V
     .locals 2
 
-    invoke-super {p0, p1, p2}, Landroid/widget/TextView;->setTextAppearance(Landroid/content/Context;I)V
+    invoke-super {p0, p1, p2}, Landroid/widget/CheckBox;->setTextAppearance(Landroid/content/Context;I)V
 
     iget-object p1, p0, Lcom/google/android/material/chip/Chip;->chipDrawable:Lcom/google/android/material/chip/ChipDrawable;
 
@@ -5017,9 +5017,9 @@
 
     move-result-object v2
 
-    iget-object v3, p0, Lcom/google/android/material/chip/Chip;->fontCallback:Lcom/google/android/material/resources/TextAppearanceFontCallback;
+    iget-object v3, p0, Lcom/google/android/material/chip/Chip;->fontCallback:Lorg/joda/time/Chronology;
 
-    invoke-virtual {v1, v2, v0, v3}, Lcom/google/android/material/resources/TextAppearance;->updateDrawState(Landroid/content/Context;Landroid/text/TextPaint;Lcom/google/android/material/resources/TextAppearanceFontCallback;)V
+    invoke-virtual {v1, v2, v0, v3}, Lcom/google/android/material/resources/TextAppearance;->updateDrawState(Landroid/content/Context;Landroid/text/TextPaint;Lorg/joda/time/Chronology;)V
 
     :cond_1
     return-void

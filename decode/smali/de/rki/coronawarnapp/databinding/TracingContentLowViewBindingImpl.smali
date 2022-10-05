@@ -23,7 +23,7 @@
 
     sput-object v0, Lde/rki/coronawarnapp/databinding/TracingContentLowViewBindingImpl;->sViewsWithIds:Landroid/util/SparseIntArray;
 
-    const v1, 0x7f0a0354
+    const v1, 0x7f0a0384
 
     const/4 v2, 0x7
 
@@ -222,7 +222,7 @@
 
     iget v8, v0, Lde/rki/coronawarnapp/tracing/states/LowRisk;->daysWithEncounters:I
 
-    const v9, 0x7f1303ec
+    const v9, 0x7f1303fe
 
     if-nez v8, :cond_0
 
@@ -241,7 +241,7 @@
 
     move-result-object v7
 
-    const v8, 0x7f110006
+    const v8, 0x7f110003
 
     iget v10, v0, Lde/rki/coronawarnapp/tracing/states/LowRisk;->daysWithEncounters:I
 
@@ -302,7 +302,7 @@
 
     if-eq v14, v6, :cond_2
 
-    const v14, 0x7f1303d6
+    const v14, 0x7f1303ed
 
     invoke-virtual {v13, v14}, Landroid/content/Context;->getString(I)Ljava/lang/String;
 
@@ -322,16 +322,16 @@
 
     aput-object v15, v14, v5
 
-    const-string v15, "java.lang.String.format(this, *args)"
+    const-string v15, "format(this, *args)"
 
-    invoke-static {v14, v6, v13, v15}, Lde/rki/coronawarnapp/coronatest/server/VerificationServer$retrieveRegistrationToken$2$$ExternalSyntheticOutline0;->m([Ljava/lang/Object;ILjava/lang/String;Ljava/lang/String;)Ljava/lang/String;
+    invoke-static {v14, v6, v13, v15}, Landroidx/lifecycle/ViewModelKt$$ExternalSyntheticOutline0;->m([Ljava/lang/Object;ILjava/lang/String;Ljava/lang/String;)Ljava/lang/String;
 
     move-result-object v13
 
     goto :goto_2
 
     :cond_2
-    const v14, 0x7f1303d8
+    const v14, 0x7f1303ef
 
     invoke-virtual {v13, v14}, Landroid/content/Context;->getString(I)Ljava/lang/String;
 
@@ -344,7 +344,7 @@
     goto :goto_2
 
     :cond_3
-    const v14, 0x7f1303d7
+    const v14, 0x7f1303ee
 
     invoke-virtual {v13, v14}, Landroid/content/Context;->getString(I)Ljava/lang/String;
 
@@ -394,7 +394,7 @@
 
     aput-object v16, v15, v5
 
-    const v5, 0x7f110007
+    const v5, 0x7f110004
 
     invoke-virtual {v9, v5, v14, v15}, Landroid/content/res/Resources;->getQuantityString(II[Ljava/lang/Object;)Ljava/lang/String;
 
@@ -434,12 +434,12 @@
 
     if-ne v15, v6, :cond_6
 
-    const v15, 0x7f1303ea
+    const v15, 0x7f1303fc
 
     goto :goto_4
 
     :cond_6
-    const v15, 0x7f1303eb
+    const v15, 0x7f1303fd
 
     :goto_4
     new-array v6, v6, [Ljava/lang/Object;
@@ -450,7 +450,7 @@
 
     move-result-object v5
 
-    invoke-virtual {v14, v5}, Lorg/joda/time/base/BaseLocal;->toString(Lorg/joda/time/format/DateTimeFormatter;)Ljava/lang/String;
+    invoke-virtual {v14, v5}, Lorg/joda/time/base/AbstractPartial;->toString(Lorg/joda/time/format/DateTimeFormatter;)Ljava/lang/String;
 
     move-result-object v5
 
@@ -489,7 +489,7 @@
 
     aput-object v0, v15, v5
 
-    const v0, 0x7f1303dd
+    const v0, 0x7f1303f1
 
     invoke-virtual {v9, v0, v15}, Landroid/content/Context;->getString(I[Ljava/lang/Object;)Ljava/lang/String;
 
@@ -502,7 +502,7 @@
     goto :goto_6
 
     :cond_7
-    const v0, 0x7f1303d9
+    const v0, 0x7f1303f0
 
     invoke-virtual {v9, v0}, Landroid/content/Context;->getString(I)Ljava/lang/String;
 
@@ -614,12 +614,12 @@
 
     if-eqz v10, :cond_f
 
-    const v9, 0x7f060060
+    const v9, 0x7f060066
 
     goto :goto_b
 
     :cond_f
-    const v9, 0x7f06005e
+    const v9, 0x7f060064
 
     :goto_b
     invoke-static {v4, v9}, Landroidx/databinding/ViewDataBinding;->getColorFromResource(Landroid/view/View;I)I
@@ -843,7 +843,7 @@
     :try_end_0
     .catchall {:try_start_0 .. :try_end_0} :catchall_0
 
-    const/16 p1, 0x29
+    const/16 p1, 0x27
 
     invoke-virtual {p0, p1}, Landroidx/databinding/BaseObservable;->notifyPropertyChanged(I)V
 

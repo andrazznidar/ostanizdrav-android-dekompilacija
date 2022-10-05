@@ -26,11 +26,11 @@
 .method public constructor <init>(Lorg/joda/time/Instant;)V
     .locals 2
 
-    const/4 v0, 0x0
+    const-string v0, "ExpiringSoon"
 
-    const-string v1, "ExpiringSoon"
+    const/4 v1, 0x0
 
-    invoke-direct {p0, v1, v0}, Lde/rki/coronawarnapp/covidcertificate/common/certificate/CwaCovidCertificate$State;-><init>(Ljava/lang/String;Lkotlin/jvm/internal/DefaultConstructorMarker;)V
+    invoke-direct {p0, v0, v1}, Lde/rki/coronawarnapp/covidcertificate/common/certificate/CwaCovidCertificate$State;-><init>(Ljava/lang/String;Lkotlin/jvm/internal/DefaultConstructorMarker;)V
 
     iput-object p1, p0, Lde/rki/coronawarnapp/covidcertificate/common/certificate/CwaCovidCertificate$State$ExpiringSoon;->expiresAt:Lorg/joda/time/Instant;
 

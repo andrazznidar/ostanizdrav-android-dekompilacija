@@ -1,5 +1,5 @@
 .class public final Lcom/fasterxml/jackson/databind/ser/std/NumberSerializer$BigDecimalAsStringSerializer;
-.super Lcom/fasterxml/jackson/databind/ser/std/ToStringSerializerBase;
+.super Lcom/fasterxml/jackson/databind/ser/std/StdScalarSerializer;
 .source "NumberSerializer.java"
 
 
@@ -32,11 +32,13 @@
 .end method
 
 .method public constructor <init>()V
-    .locals 1
+    .locals 2
 
     const-class v0, Ljava/math/BigDecimal;
 
-    invoke-direct {p0, v0}, Lcom/fasterxml/jackson/databind/ser/std/ToStringSerializerBase;-><init>(Ljava/lang/Class;)V
+    const/4 v1, 0x1
+
+    invoke-direct {p0, v0, v1}, Lcom/fasterxml/jackson/databind/ser/std/StdScalarSerializer;-><init>(Ljava/lang/Class;I)V
 
     return-void
 .end method

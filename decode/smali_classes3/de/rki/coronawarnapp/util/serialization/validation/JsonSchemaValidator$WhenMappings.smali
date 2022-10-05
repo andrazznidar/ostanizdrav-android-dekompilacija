@@ -22,7 +22,7 @@
 .method public static constructor <clinit>()V
     .locals 3
 
-    invoke-static {}, Landroidx/constraintlayout/core/SolverVariable$Type$r8$EnumUnboxingUtility;->de$rki$coronawarnapp$util$serialization$validation$JsonSchemaSource$Version$s$values()[I
+    invoke-static {}, Lde/rki/coronawarnapp/util/serialization/validation/JsonSchemaSource$Version$EnumUnboxingLocalUtility;->_values()[I
 
     move-result-object v0
 

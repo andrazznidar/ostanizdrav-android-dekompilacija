@@ -22,7 +22,7 @@
 .method public static constructor <clinit>()V
     .locals 3
 
-    invoke-static {}, Lde/rki/coronawarnapp/covidcertificate/signature/core/common/exception/DscValidationException$ErrorCode;->values()[Lde/rki/coronawarnapp/covidcertificate/signature/core/common/exception/DscValidationException$ErrorCode;
+    invoke-static {}, Lde/rki/coronawarnapp/covidcertificate/signature/core/common/exception/DscValidationException$ErrorCode$EnumUnboxingLocalUtility;->_values()[I
 
     move-result-object v0
 

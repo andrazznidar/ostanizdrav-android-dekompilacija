@@ -49,7 +49,7 @@
 
     new-array v4, v2, [I
 
-    const v6, 0x7f0d010a
+    const v6, 0x7f0d0115
 
     aput v6, v4, v5
 
@@ -93,61 +93,61 @@
 
     sput-object v0, Lde/rki/coronawarnapp/databinding/FragmentSubmissionNoConsentPositiveOtherWarningBindingImpl;->sViewsWithIds:Landroid/util/SparseIntArray;
 
-    const v1, 0x7f0a07e4
+    const v1, 0x7f0a082c
 
     const/16 v2, 0xb
 
     invoke-virtual {v0, v1, v2}, Landroid/util/SparseIntArray;->put(II)V
 
-    const v1, 0x7f0a0226
+    const v1, 0x7f0a0245
 
     const/16 v2, 0xc
 
     invoke-virtual {v0, v1, v2}, Landroid/util/SparseIntArray;->put(II)V
 
-    const v1, 0x7f0a0715
+    const v1, 0x7f0a0764
 
     const/16 v2, 0xd
 
     invoke-virtual {v0, v1, v2}, Landroid/util/SparseIntArray;->put(II)V
 
-    const v1, 0x7f0a0714
+    const v1, 0x7f0a0763
 
     const/16 v2, 0xe
 
     invoke-virtual {v0, v1, v2}, Landroid/util/SparseIntArray;->put(II)V
 
-    const v1, 0x7f0a0718
+    const v1, 0x7f0a0766
 
     const/16 v2, 0xf
 
     invoke-virtual {v0, v1, v2}, Landroid/util/SparseIntArray;->put(II)V
 
-    const v1, 0x7f0a0232
+    const v1, 0x7f0a0251
 
     const/16 v2, 0x10
 
     invoke-virtual {v0, v1, v2}, Landroid/util/SparseIntArray;->put(II)V
 
-    const v1, 0x7f0a02be
+    const v1, 0x7f0a02e3
 
     const/16 v2, 0x11
 
     invoke-virtual {v0, v1, v2}, Landroid/util/SparseIntArray;->put(II)V
 
-    const v1, 0x7f0a06c6
+    const v1, 0x7f0a0719
 
     const/16 v2, 0x12
 
     invoke-virtual {v0, v1, v2}, Landroid/util/SparseIntArray;->put(II)V
 
-    const v1, 0x7f0a0716
+    const v1, 0x7f0a0765
 
     const/16 v2, 0x13
 
     invoke-virtual {v0, v1, v2}, Landroid/util/SparseIntArray;->put(II)V
 
-    const v1, 0x7f0a033e
+    const v1, 0x7f0a036d
 
     const/16 v2, 0x14
 
@@ -171,14 +171,14 @@
 
     :array_1
     .array-data 4
-        0x7f0d00e4
-        0x7f0d01a1
-        0x7f0d01a1
-        0x7f0d01a1
-        0x7f0d01a1
-        0x7f0d01a1
-        0x7f0d010a
-        0x7f0d0109
+        0x7f0d00f4
+        0x7f0d01b1
+        0x7f0d01b1
+        0x7f0d01b1
+        0x7f0d01b1
+        0x7f0d01b1
+        0x7f0d0115
+        0x7f0d0114
     .end array-data
 .end method
 
@@ -473,7 +473,7 @@
 
     move-result-object v1
 
-    const v2, 0x7f130565
+    const v2, 0x7f130556
 
     invoke-virtual {v1, v2}, Landroid/content/res/Resources;->getString(I)Ljava/lang/String;
 
@@ -489,7 +489,7 @@
 
     move-result-object v1
 
-    const v2, 0x7f130566
+    const v2, 0x7f130557
 
     invoke-virtual {v1, v2}, Landroid/content/res/Resources;->getString(I)Ljava/lang/String;
 
@@ -505,7 +505,7 @@
 
     move-result-object v1
 
-    const v2, 0x7f130567
+    const v2, 0x7f130558
 
     invoke-virtual {v1, v2}, Landroid/content/res/Resources;->getString(I)Ljava/lang/String;
 
@@ -521,7 +521,7 @@
 
     move-result-object v1
 
-    const v2, 0x7f130568
+    const v2, 0x7f130559
 
     invoke-virtual {v1, v2}, Landroid/content/res/Resources;->getString(I)Ljava/lang/String;
 
@@ -537,7 +537,7 @@
 
     move-result-object v1
 
-    const v2, 0x7f130569
+    const v2, 0x7f13055a
 
     invoke-virtual {v1, v2}, Landroid/content/res/Resources;->getString(I)Ljava/lang/String;
 

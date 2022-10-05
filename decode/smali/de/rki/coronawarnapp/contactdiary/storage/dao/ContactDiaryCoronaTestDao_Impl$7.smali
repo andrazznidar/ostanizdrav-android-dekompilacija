@@ -59,7 +59,7 @@
 
 # virtual methods
 .method public call()Ljava/lang/Object;
-    .locals 18
+    .locals 17
     .annotation system Ldalvik/annotation/Throws;
         value = {
             Ljava/lang/Exception;
@@ -89,95 +89,97 @@
 
     move-result v0
 
-    const-string/jumbo v5, "testType"
+    const-string/jumbo v4, "testType"
+
+    invoke-static {v2, v4}, Landroidx/room/util/CursorUtil;->getColumnIndexOrThrow(Landroid/database/Cursor;Ljava/lang/String;)I
+
+    move-result v4
+
+    const-string v5, "result"
 
     invoke-static {v2, v5}, Landroidx/room/util/CursorUtil;->getColumnIndexOrThrow(Landroid/database/Cursor;Ljava/lang/String;)I
 
     move-result v5
 
-    const-string v6, "result"
+    const-string/jumbo v6, "time"
 
     invoke-static {v2, v6}, Landroidx/room/util/CursorUtil;->getColumnIndexOrThrow(Landroid/database/Cursor;Ljava/lang/String;)I
 
     move-result v6
 
-    const-string/jumbo v7, "time"
-
-    invoke-static {v2, v7}, Landroidx/room/util/CursorUtil;->getColumnIndexOrThrow(Landroid/database/Cursor;Ljava/lang/String;)I
-
-    move-result v7
-
-    new-instance v8, Ljava/util/ArrayList;
+    new-instance v7, Ljava/util/ArrayList;
 
     invoke-interface {v2}, Landroid/database/Cursor;->getCount()I
 
-    move-result v9
+    move-result v8
 
-    invoke-direct {v8, v9}, Ljava/util/ArrayList;-><init>(I)V
+    invoke-direct {v7, v8}, Ljava/util/ArrayList;-><init>(I)V
 
     :goto_0
     invoke-interface {v2}, Landroid/database/Cursor;->moveToNext()Z
 
-    move-result v9
+    move-result v8
 
-    if-eqz v9, :cond_8
+    if-eqz v8, :cond_8
 
     invoke-interface {v2, v0}, Landroid/database/Cursor;->getString(I)Ljava/lang/String;
 
+    move-result-object v8
+
+    invoke-interface {v2, v4}, Landroid/database/Cursor;->getString(I)Ljava/lang/String;
+
     move-result-object v9
 
-    invoke-interface {v2, v5}, Landroid/database/Cursor;->getString(I)Ljava/lang/String;
+    iget-object v10, v1, Lde/rki/coronawarnapp/contactdiary/storage/dao/ContactDiaryCoronaTestDao_Impl$7;->this$0:Lde/rki/coronawarnapp/contactdiary/storage/dao/ContactDiaryCoronaTestDao_Impl;
+
+    iget-object v10, v10, Lde/rki/coronawarnapp/contactdiary/storage/dao/ContactDiaryCoronaTestDao_Impl;->__contactDiaryRoomConverters:Lde/rki/coronawarnapp/contactdiary/storage/internal/converters/ContactDiaryRoomConverters;
+
+    invoke-static {v10}, Ljava/util/Objects;->requireNonNull(Ljava/lang/Object;)Ljava/lang/Object;
+
+    invoke-static {}, Lde/rki/coronawarnapp/util/di/DaggerApplicationComponent$DccValidationPassedFragmentSubcomponentFactory-IA;->_values()[I
 
     move-result-object v10
 
-    iget-object v11, v1, Lde/rki/coronawarnapp/contactdiary/storage/dao/ContactDiaryCoronaTestDao_Impl$7;->this$0:Lde/rki/coronawarnapp/contactdiary/storage/dao/ContactDiaryCoronaTestDao_Impl;
-
-    iget-object v11, v11, Lde/rki/coronawarnapp/contactdiary/storage/dao/ContactDiaryCoronaTestDao_Impl;->__contactDiaryRoomConverters:Lde/rki/coronawarnapp/contactdiary/storage/internal/converters/ContactDiaryRoomConverters;
-
-    invoke-static {v11}, Ljava/util/Objects;->requireNonNull(Ljava/lang/Object;)Ljava/lang/Object;
-
-    invoke-static {}, Lde/rki/coronawarnapp/contactdiary/storage/entity/ContactDiaryCoronaTestEntity$TestType;->values()[Lde/rki/coronawarnapp/contactdiary/storage/entity/ContactDiaryCoronaTestEntity$TestType;
-
-    move-result-object v11
-
-    array-length v12, v11
+    array-length v11, v10
 
     move v13, v3
 
     move v14, v13
 
-    move-object v15, v4
+    move v15, v14
 
     :goto_1
-    const/16 v16, 0x1
+    if-ge v13, v11, :cond_2
 
-    if-ge v13, v12, :cond_2
+    aget v16, v10, v13
 
-    aget-object v3, v11, v13
+    add-int/lit8 v13, v13, 0x1
 
-    iget-object v4, v3, Lde/rki/coronawarnapp/contactdiary/storage/entity/ContactDiaryCoronaTestEntity$TestType;->raw:Ljava/lang/String;
+    invoke-static/range {v16 .. v16}, Lde/rki/coronawarnapp/util/di/DaggerApplicationComponent$DccValidationPassedFragmentSubcomponentFactory-IA;->getRaw(I)Ljava/lang/String;
 
-    invoke-static {v4, v10}, Lkotlin/jvm/internal/Intrinsics;->areEqual(Ljava/lang/Object;Ljava/lang/Object;)Z
+    move-result-object v3
 
-    move-result v4
+    invoke-static {v3, v9}, Lkotlin/jvm/internal/Intrinsics;->areEqual(Ljava/lang/Object;Ljava/lang/Object;)Z
 
-    if-eqz v4, :cond_1
+    move-result v3
+
+    if-eqz v3, :cond_1
 
     if-eqz v14, :cond_0
 
     goto :goto_2
 
     :cond_0
-    move-object v15, v3
-
-    move/from16 v14, v16
-
-    :cond_1
-    add-int/lit8 v13, v13, 0x1
+    move/from16 v15, v16
 
     const/4 v3, 0x0
 
-    const/4 v4, 0x0
+    const/4 v14, 0x1
+
+    goto :goto_1
+
+    :cond_1
+    const/4 v3, 0x0
 
     goto :goto_1
 
@@ -188,100 +190,92 @@
     const/4 v15, 0x0
 
     :cond_3
-    invoke-interface {v2, v6}, Landroid/database/Cursor;->getString(I)Ljava/lang/String;
+    invoke-interface {v2, v5}, Landroid/database/Cursor;->getString(I)Ljava/lang/String;
 
     move-result-object v3
 
-    iget-object v4, v1, Lde/rki/coronawarnapp/contactdiary/storage/dao/ContactDiaryCoronaTestDao_Impl$7;->this$0:Lde/rki/coronawarnapp/contactdiary/storage/dao/ContactDiaryCoronaTestDao_Impl;
+    iget-object v9, v1, Lde/rki/coronawarnapp/contactdiary/storage/dao/ContactDiaryCoronaTestDao_Impl$7;->this$0:Lde/rki/coronawarnapp/contactdiary/storage/dao/ContactDiaryCoronaTestDao_Impl;
 
-    iget-object v4, v4, Lde/rki/coronawarnapp/contactdiary/storage/dao/ContactDiaryCoronaTestDao_Impl;->__contactDiaryRoomConverters:Lde/rki/coronawarnapp/contactdiary/storage/internal/converters/ContactDiaryRoomConverters;
+    iget-object v9, v9, Lde/rki/coronawarnapp/contactdiary/storage/dao/ContactDiaryCoronaTestDao_Impl;->__contactDiaryRoomConverters:Lde/rki/coronawarnapp/contactdiary/storage/internal/converters/ContactDiaryRoomConverters;
 
-    invoke-static {v4}, Ljava/util/Objects;->requireNonNull(Ljava/lang/Object;)Ljava/lang/Object;
+    invoke-static {v9}, Ljava/util/Objects;->requireNonNull(Ljava/lang/Object;)Ljava/lang/Object;
 
-    invoke-static {}, Lde/rki/coronawarnapp/contactdiary/storage/entity/ContactDiaryCoronaTestEntity$TestResult;->values()[Lde/rki/coronawarnapp/contactdiary/storage/entity/ContactDiaryCoronaTestEntity$TestResult;
+    invoke-static {}, Lde/rki/coronawarnapp/util/di/DaggerApplicationComponent$DccValidationOpenFragmentSubcomponentImpl-IA;->_values()[I
 
-    move-result-object v4
+    move-result-object v9
 
-    array-length v10, v4
+    array-length v10, v9
 
     const/4 v11, 0x0
 
-    const/4 v12, 0x0
-
     const/4 v13, 0x0
 
+    const/4 v14, 0x0
+
+    :cond_4
     :goto_3
     if-ge v11, v10, :cond_6
 
-    aget-object v14, v4, v11
+    aget v16, v9, v11
 
-    move/from16 v17, v0
+    add-int/lit8 v11, v11, 0x1
 
-    iget-object v0, v14, Lde/rki/coronawarnapp/contactdiary/storage/entity/ContactDiaryCoronaTestEntity$TestResult;->raw:Ljava/lang/String;
+    invoke-static/range {v16 .. v16}, Lde/rki/coronawarnapp/util/di/DaggerApplicationComponent$DccValidationOpenFragmentSubcomponentImpl-IA;->getRaw(I)Ljava/lang/String;
 
-    invoke-static {v0, v3}, Lkotlin/jvm/internal/Intrinsics;->areEqual(Ljava/lang/Object;Ljava/lang/Object;)Z
+    move-result-object v12
 
-    move-result v0
+    invoke-static {v12, v3}, Lkotlin/jvm/internal/Intrinsics;->areEqual(Ljava/lang/Object;Ljava/lang/Object;)Z
 
-    if-eqz v0, :cond_5
+    move-result v12
 
     if-eqz v12, :cond_4
 
+    if-eqz v13, :cond_5
+
     goto :goto_4
 
-    :cond_4
-    move-object v13, v14
-
-    move/from16 v12, v16
-
     :cond_5
-    add-int/lit8 v11, v11, 0x1
+    move/from16 v14, v16
 
-    move/from16 v0, v17
+    const/4 v13, 0x1
 
     goto :goto_3
 
     :cond_6
-    move/from16 v17, v0
-
-    if-nez v12, :cond_7
+    if-nez v13, :cond_7
 
     :goto_4
-    const/4 v13, 0x0
+    const/4 v14, 0x0
 
     :cond_7
-    invoke-interface {v2, v7}, Landroid/database/Cursor;->getString(I)Ljava/lang/String;
+    invoke-interface {v2, v6}, Landroid/database/Cursor;->getString(I)Ljava/lang/String;
 
-    move-result-object v0
+    move-result-object v3
 
-    iget-object v3, v1, Lde/rki/coronawarnapp/contactdiary/storage/dao/ContactDiaryCoronaTestDao_Impl$7;->this$0:Lde/rki/coronawarnapp/contactdiary/storage/dao/ContactDiaryCoronaTestDao_Impl;
+    iget-object v9, v1, Lde/rki/coronawarnapp/contactdiary/storage/dao/ContactDiaryCoronaTestDao_Impl$7;->this$0:Lde/rki/coronawarnapp/contactdiary/storage/dao/ContactDiaryCoronaTestDao_Impl;
 
-    iget-object v3, v3, Lde/rki/coronawarnapp/contactdiary/storage/dao/ContactDiaryCoronaTestDao_Impl;->__commonConverters:Lde/rki/coronawarnapp/util/database/CommonConverters;
+    iget-object v9, v9, Lde/rki/coronawarnapp/contactdiary/storage/dao/ContactDiaryCoronaTestDao_Impl;->__commonConverters:Lde/rki/coronawarnapp/util/database/CommonConverters;
 
-    invoke-virtual {v3, v0}, Lde/rki/coronawarnapp/util/database/CommonConverters;->toInstant(Ljava/lang/String;)Lorg/joda/time/Instant;
+    invoke-virtual {v9, v3}, Lde/rki/coronawarnapp/util/database/CommonConverters;->toInstant(Ljava/lang/String;)Lorg/joda/time/Instant;
 
-    move-result-object v0
+    move-result-object v3
 
-    new-instance v3, Lde/rki/coronawarnapp/contactdiary/storage/entity/ContactDiaryCoronaTestEntity;
+    new-instance v9, Lde/rki/coronawarnapp/contactdiary/storage/entity/ContactDiaryCoronaTestEntity;
 
-    invoke-direct {v3, v9, v15, v13, v0}, Lde/rki/coronawarnapp/contactdiary/storage/entity/ContactDiaryCoronaTestEntity;-><init>(Ljava/lang/String;Lde/rki/coronawarnapp/contactdiary/storage/entity/ContactDiaryCoronaTestEntity$TestType;Lde/rki/coronawarnapp/contactdiary/storage/entity/ContactDiaryCoronaTestEntity$TestResult;Lorg/joda/time/Instant;)V
+    invoke-direct {v9, v8, v15, v14, v3}, Lde/rki/coronawarnapp/contactdiary/storage/entity/ContactDiaryCoronaTestEntity;-><init>(Ljava/lang/String;IILorg/joda/time/Instant;)V
 
-    invoke-virtual {v8, v3}, Ljava/util/ArrayList;->add(Ljava/lang/Object;)Z
+    invoke-virtual {v7, v9}, Ljava/util/ArrayList;->add(Ljava/lang/Object;)Z
     :try_end_0
     .catchall {:try_start_0 .. :try_end_0} :catchall_0
 
-    move/from16 v0, v17
-
     const/4 v3, 0x0
 
-    const/4 v4, 0x0
-
-    goto/16 :goto_0
+    goto :goto_0
 
     :cond_8
     invoke-interface {v2}, Landroid/database/Cursor;->close()V
 
-    return-object v8
+    return-object v7
 
     :catchall_0
     move-exception v0

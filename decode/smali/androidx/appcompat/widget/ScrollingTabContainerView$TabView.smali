@@ -24,7 +24,7 @@
 .method public onInitializeAccessibilityEvent(Landroid/view/accessibility/AccessibilityEvent;)V
     .locals 1
 
-    invoke-super {p0, p1}, Landroid/view/View;->onInitializeAccessibilityEvent(Landroid/view/accessibility/AccessibilityEvent;)V
+    invoke-super {p0, p1}, Landroid/widget/LinearLayout;->onInitializeAccessibilityEvent(Landroid/view/accessibility/AccessibilityEvent;)V
 
     const-string v0, "androidx.appcompat.app.ActionBar$Tab"
 
@@ -36,7 +36,7 @@
 .method public onInitializeAccessibilityNodeInfo(Landroid/view/accessibility/AccessibilityNodeInfo;)V
     .locals 1
 
-    invoke-super {p0, p1}, Landroid/view/View;->onInitializeAccessibilityNodeInfo(Landroid/view/accessibility/AccessibilityNodeInfo;)V
+    invoke-super {p0, p1}, Landroid/widget/LinearLayout;->onInitializeAccessibilityNodeInfo(Landroid/view/accessibility/AccessibilityNodeInfo;)V
 
     const-string v0, "androidx.appcompat.app.ActionBar$Tab"
 
@@ -74,7 +74,7 @@
     const/4 v0, 0x0
 
     :goto_0
-    invoke-super {p0, p1}, Landroid/view/View;->setSelected(Z)V
+    invoke-super {p0, p1}, Landroid/widget/LinearLayout;->setSelected(Z)V
 
     if-eqz v0, :cond_1
 

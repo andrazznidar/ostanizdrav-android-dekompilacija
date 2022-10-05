@@ -4,84 +4,79 @@
 
 
 # direct methods
-.method public static synthetic $$$reportNull$$$0(I)V
-    .locals 5
+.method private static synthetic $$$reportNull$$$0(I)V
+    .locals 2
 
     const/4 v0, 0x3
 
-    new-array v1, v0, [Ljava/lang/Object;
+    new-array v0, v0, [Ljava/lang/Object;
 
-    const/4 v2, 0x2
+    const/4 v1, 0x0
 
-    const/4 v3, 0x1
-
-    const/4 v4, 0x0
-
-    if-eq p0, v3, :cond_4
-
-    if-eq p0, v2, :cond_3
-
-    if-eq p0, v0, :cond_2
-
-    const/4 v0, 0x4
-
-    if-eq p0, v0, :cond_1
-
-    const/4 v0, 0x5
-
-    if-eq p0, v0, :cond_0
+    packed-switch p0, :pswitch_data_0
 
     const-string p0, "storageManager"
 
-    aput-object p0, v1, v4
+    aput-object p0, v0, v1
 
     goto :goto_0
 
-    :cond_0
+    :pswitch_0
     const-string p0, "supertypeLoopChecker"
 
-    aput-object p0, v1, v4
+    aput-object p0, v0, v1
 
     goto :goto_0
 
-    :cond_1
+    :pswitch_1
     const-string p0, "source"
 
-    aput-object p0, v1, v4
+    aput-object p0, v0, v1
 
     goto :goto_0
 
-    :cond_2
+    :pswitch_2
     const-string p0, "variance"
 
-    aput-object p0, v1, v4
+    aput-object p0, v0, v1
 
     goto :goto_0
 
-    :cond_3
+    :pswitch_3
     const-string p0, "name"
 
-    aput-object p0, v1, v4
+    aput-object p0, v0, v1
 
     goto :goto_0
 
-    :cond_4
+    :pswitch_4
+    const-string p0, "annotations"
+
+    aput-object p0, v0, v1
+
+    goto :goto_0
+
+    :pswitch_5
     const-string p0, "containingDeclaration"
 
-    aput-object p0, v1, v4
+    aput-object p0, v0, v1
 
     :goto_0
-    const-string p0, "kotlin/reflect/jvm/internal/impl/descriptors/impl/AbstractLazyTypeParameterDescriptor"
+    const/4 p0, 0x1
 
-    aput-object p0, v1, v3
+    const-string v1, "kotlin/reflect/jvm/internal/impl/descriptors/impl/AbstractLazyTypeParameterDescriptor"
 
-    const-string p0, "<init>"
+    aput-object v1, v0, p0
 
-    aput-object p0, v1, v2
+    const/4 p0, 0x2
+
+    const-string v1, "<init>"
+
+    aput-object v1, v0, p0
 
     const-string p0, "Argument for @NotNull parameter \'%s\' of %s.%s must not be null"
 
-    invoke-static {p0, v1}, Ljava/lang/String;->format(Ljava/lang/String;[Ljava/lang/Object;)Ljava/lang/String;
+    invoke-static {p0, v0}, Ljava/lang/String;->format(Ljava/lang/String;[Ljava/lang/Object;)Ljava/lang/String;
 
     move-result-object p0
 
@@ -90,74 +85,75 @@
     invoke-direct {v0, p0}, Ljava/lang/IllegalArgumentException;-><init>(Ljava/lang/String;)V
 
     throw v0
+
+    nop
+
+    :pswitch_data_0
+    .packed-switch 0x1
+        :pswitch_5
+        :pswitch_4
+        :pswitch_3
+        :pswitch_2
+        :pswitch_1
+        :pswitch_0
+    .end packed-switch
 .end method
 
-.method public constructor <init>(Lkotlin/reflect/jvm/internal/impl/storage/StorageManager;Lkotlin/reflect/jvm/internal/impl/descriptors/DeclarationDescriptor;Lkotlin/reflect/jvm/internal/impl/name/Name;Lkotlin/reflect/jvm/internal/impl/types/Variance;ZILkotlin/reflect/jvm/internal/impl/descriptors/SourceElement;Lkotlin/reflect/jvm/internal/impl/descriptors/SupertypeLoopChecker;)V
-    .locals 11
+.method public constructor <init>(Lkotlin/reflect/jvm/internal/impl/storage/StorageManager;Lkotlin/reflect/jvm/internal/impl/descriptors/DeclarationDescriptor;Lkotlin/reflect/jvm/internal/impl/descriptors/annotations/Annotations;Lkotlin/reflect/jvm/internal/impl/name/Name;Lkotlin/reflect/jvm/internal/impl/types/Variance;ZILkotlin/reflect/jvm/internal/impl/descriptors/SourceElement;Lkotlin/reflect/jvm/internal/impl/descriptors/SupertypeLoopChecker;)V
+    .locals 1
+
+    if-nez p1, :cond_0
 
     const/4 v0, 0x0
 
-    if-eqz p1, :cond_3
-
-    if-eqz p2, :cond_2
-
-    if-eqz p3, :cond_1
-
-    if-eqz p8, :cond_0
-
-    sget v0, Lkotlin/reflect/jvm/internal/impl/descriptors/annotations/Annotations;->$r8$clinit:I
-
-    sget-object v4, Lkotlin/reflect/jvm/internal/impl/descriptors/annotations/Annotations$Companion;->EMPTY:Lkotlin/reflect/jvm/internal/impl/descriptors/annotations/Annotations;
-
-    move-object v1, p0
-
-    move-object v2, p1
-
-    move-object v3, p2
-
-    move-object v5, p3
-
-    move-object v6, p4
-
-    move/from16 v7, p5
-
-    move/from16 v8, p6
-
-    move-object/from16 v9, p7
-
-    move-object/from16 v10, p8
-
-    invoke-direct/range {v1 .. v10}, Lkotlin/reflect/jvm/internal/impl/descriptors/impl/AbstractTypeParameterDescriptor;-><init>(Lkotlin/reflect/jvm/internal/impl/storage/StorageManager;Lkotlin/reflect/jvm/internal/impl/descriptors/DeclarationDescriptor;Lkotlin/reflect/jvm/internal/impl/descriptors/annotations/Annotations;Lkotlin/reflect/jvm/internal/impl/name/Name;Lkotlin/reflect/jvm/internal/impl/types/Variance;ZILkotlin/reflect/jvm/internal/impl/descriptors/SourceElement;Lkotlin/reflect/jvm/internal/impl/descriptors/SupertypeLoopChecker;)V
-
-    return-void
+    invoke-static {v0}, Lkotlin/reflect/jvm/internal/impl/descriptors/impl/AbstractLazyTypeParameterDescriptor;->$$$reportNull$$$0(I)V
 
     :cond_0
-    const/4 v1, 0x5
+    if-nez p2, :cond_1
 
-    invoke-static {v1}, Lkotlin/reflect/jvm/internal/impl/descriptors/impl/AbstractLazyTypeParameterDescriptor;->$$$reportNull$$$0(I)V
+    const/4 v0, 0x1
 
-    throw v0
+    invoke-static {v0}, Lkotlin/reflect/jvm/internal/impl/descriptors/impl/AbstractLazyTypeParameterDescriptor;->$$$reportNull$$$0(I)V
 
     :cond_1
-    const/4 v1, 0x2
+    if-nez p3, :cond_2
 
-    invoke-static {v1}, Lkotlin/reflect/jvm/internal/impl/descriptors/impl/AbstractLazyTypeParameterDescriptor;->$$$reportNull$$$0(I)V
+    const/4 v0, 0x2
 
-    throw v0
+    invoke-static {v0}, Lkotlin/reflect/jvm/internal/impl/descriptors/impl/AbstractLazyTypeParameterDescriptor;->$$$reportNull$$$0(I)V
 
     :cond_2
-    const/4 v1, 0x1
+    if-nez p4, :cond_3
 
-    invoke-static {v1}, Lkotlin/reflect/jvm/internal/impl/descriptors/impl/AbstractLazyTypeParameterDescriptor;->$$$reportNull$$$0(I)V
+    const/4 v0, 0x3
 
-    throw v0
+    invoke-static {v0}, Lkotlin/reflect/jvm/internal/impl/descriptors/impl/AbstractLazyTypeParameterDescriptor;->$$$reportNull$$$0(I)V
 
     :cond_3
-    const/4 v1, 0x0
+    if-nez p5, :cond_4
 
-    invoke-static {v1}, Lkotlin/reflect/jvm/internal/impl/descriptors/impl/AbstractLazyTypeParameterDescriptor;->$$$reportNull$$$0(I)V
+    const/4 v0, 0x4
 
-    throw v0
+    invoke-static {v0}, Lkotlin/reflect/jvm/internal/impl/descriptors/impl/AbstractLazyTypeParameterDescriptor;->$$$reportNull$$$0(I)V
+
+    :cond_4
+    if-nez p8, :cond_5
+
+    const/4 v0, 0x5
+
+    invoke-static {v0}, Lkotlin/reflect/jvm/internal/impl/descriptors/impl/AbstractLazyTypeParameterDescriptor;->$$$reportNull$$$0(I)V
+
+    :cond_5
+    if-nez p9, :cond_6
+
+    const/4 v0, 0x6
+
+    invoke-static {v0}, Lkotlin/reflect/jvm/internal/impl/descriptors/impl/AbstractLazyTypeParameterDescriptor;->$$$reportNull$$$0(I)V
+
+    :cond_6
+    invoke-direct/range {p0 .. p9}, Lkotlin/reflect/jvm/internal/impl/descriptors/impl/AbstractTypeParameterDescriptor;-><init>(Lkotlin/reflect/jvm/internal/impl/storage/StorageManager;Lkotlin/reflect/jvm/internal/impl/descriptors/DeclarationDescriptor;Lkotlin/reflect/jvm/internal/impl/descriptors/annotations/Annotations;Lkotlin/reflect/jvm/internal/impl/name/Name;Lkotlin/reflect/jvm/internal/impl/types/Variance;ZILkotlin/reflect/jvm/internal/impl/descriptors/SourceElement;Lkotlin/reflect/jvm/internal/impl/descriptors/SupertypeLoopChecker;)V
+
+    return-void
 .end method
 
 
@@ -169,7 +165,9 @@
 
     new-array v0, v0, [Ljava/lang/Object;
 
-    iget-boolean v1, p0, Lkotlin/reflect/jvm/internal/impl/descriptors/impl/AbstractTypeParameterDescriptor;->reified:Z
+    invoke-virtual {p0}, Lkotlin/reflect/jvm/internal/impl/descriptors/impl/AbstractTypeParameterDescriptor;->isReified()Z
+
+    move-result v1
 
     const-string v2, ""
 

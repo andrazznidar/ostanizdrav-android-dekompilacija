@@ -144,7 +144,7 @@
 
     if-eqz v10, :cond_0
 
-    invoke-static {v6}, Lcom/google/android/gms/internal/nearby/zzfc;->formatVisibilityText(Ljava/lang/String;)I
+    invoke-static {v6}, Lorg/ejml/dense/row/misc/ImplCommonOps_DDMA;->formatVisibilityText(Ljava/lang/String;)I
 
     move-result v12
 
@@ -175,7 +175,7 @@
     const/4 v11, 0x1
 
     :cond_1
-    invoke-static {v11}, Lcom/google/android/gms/internal/nearby/zzfc;->formatVisibility(Z)I
+    invoke-static {v11}, Lorg/ejml/dense/row/misc/ImplCommonOps_DDMA;->formatVisibility(Z)I
 
     move-result v11
 
@@ -213,7 +213,7 @@
 
     iget-object v0, p0, Lde/rki/coronawarnapp/databinding/IncludeInformationDetailsBinding;->informationDetailsHeaderIllustration:Landroid/widget/ImageView;
 
-    invoke-static {v0, v4}, Lcom/google/android/gms/nearby/connection/zzq;->setCWAContentDescription(Landroid/widget/ImageView;Ljava/lang/String;)V
+    invoke-static {v0, v4}, Lboofcv/core/image/impl/ImplConvertPlanarToGray;->setCWAContentDescription(Landroid/widget/ImageView;Ljava/lang/String;)V
 
     :cond_6
     return-void
@@ -370,7 +370,7 @@
     :try_end_0
     .catchall {:try_start_0 .. :try_end_0} :catchall_0
 
-    const/16 p1, 0x13
+    const/16 p1, 0x12
 
     invoke-virtual {p0, p1}, Landroidx/databinding/BaseObservable;->notifyPropertyChanged(I)V
 
@@ -417,7 +417,7 @@
     :try_end_0
     .catchall {:try_start_0 .. :try_end_0} :catchall_0
 
-    const/16 p1, 0x19
+    const/16 p1, 0x18
 
     invoke-virtual {p0, p1}, Landroidx/databinding/BaseObservable;->notifyPropertyChanged(I)V
 
@@ -464,7 +464,7 @@
     :try_end_0
     .catchall {:try_start_0 .. :try_end_0} :catchall_0
 
-    const/16 p1, 0x1a
+    const/16 p1, 0x19
 
     invoke-virtual {p0, p1}, Landroidx/databinding/BaseObservable;->notifyPropertyChanged(I)V
 

@@ -28,7 +28,7 @@
 .end annotation
 
 .annotation system Ldalvik/annotation/SourceDebugExtension;
-    value = "SMAP\nCollect.kt\nKotlin\n*S Kotlin\n*F\n+ 1 Collect.kt\nkotlinx/coroutines/flow/FlowKt__CollectKt$collect$3\n+ 2 Emitters.kt\nkotlinx/coroutines/flow/FlowKt__EmittersKt\n+ 3 Transform.kt\nkotlinx/coroutines/flow/FlowKt__TransformKt\n+ 4 CombinedRiskLevelChangeDetector.kt\nde/rki/coronawarnapp/risk/changedetection/CombinedRiskLevelChangeDetector\n+ 5 _Collections.kt\nkotlin/collections/CollectionsKt___CollectionsKt\n*L\n1#1,134:1\n53#2:135\n48#3:136\n51#4:137\n1043#5:138\n*S KotlinDebug\n*F\n+ 1 CombinedRiskLevelChangeDetector.kt\nde/rki/coronawarnapp/risk/changedetection/CombinedRiskLevelChangeDetector\n*L\n51#1:138\n*E\n"
+    value = "SMAP\nCollect.kt\nKotlin\n*S Kotlin\n*F\n+ 1 Collect.kt\nkotlinx/coroutines/flow/FlowKt__CollectKt$collect$3\n+ 2 Emitters.kt\nkotlinx/coroutines/flow/FlowKt__EmittersKt\n+ 3 Transform.kt\nkotlinx/coroutines/flow/FlowKt__TransformKt\n+ 4 CombinedRiskLevelChangeDetector.kt\nde/rki/coronawarnapp/risk/changedetection/CombinedRiskLevelChangeDetector\n+ 5 _Collections.kt\nkotlin/collections/CollectionsKt___CollectionsKt\n*L\n1#1,134:1\n53#2:135\n48#3:136\n46#4,2:137\n48#4:142\n49#4:144\n764#5:139\n855#5,2:140\n1043#5:143\n*S KotlinDebug\n*F\n+ 1 CombinedRiskLevelChangeDetector.kt\nde/rki/coronawarnapp/risk/changedetection/CombinedRiskLevelChangeDetector\n*L\n47#1:139\n47#1:140,2\n48#1:143\n*E\n"
 .end annotation
 
 
@@ -50,7 +50,7 @@
 
 # virtual methods
 .method public emit(Ljava/lang/Object;Lkotlin/coroutines/Continuation;)Ljava/lang/Object;
-    .locals 4
+    .locals 6
 
     instance-of v0, p2, Lde/rki/coronawarnapp/risk/changedetection/CombinedRiskLevelChangeDetector$launch$$inlined$map$1$2$1;
 
@@ -94,7 +94,7 @@
 
     invoke-static {p2}, Lkotlin/ResultKt;->throwOnFailure(Ljava/lang/Object;)V
 
-    goto :goto_1
+    goto :goto_2
 
     :cond_1
     new-instance p1, Ljava/lang/IllegalStateException;
@@ -112,11 +112,54 @@
 
     check-cast p1, Ljava/util/List;
 
-    new-instance v2, Lde/rki/coronawarnapp/risk/changedetection/CombinedRiskLevelChangeDetector$launch$lambda-1$$inlined$sortedBy$1;
+    new-instance v2, Ljava/util/ArrayList;
 
-    invoke-direct {v2}, Lde/rki/coronawarnapp/risk/changedetection/CombinedRiskLevelChangeDetector$launch$lambda-1$$inlined$sortedBy$1;-><init>()V
+    invoke-direct {v2}, Ljava/util/ArrayList;-><init>()V
 
-    invoke-static {p1, v2}, Lkotlin/collections/CollectionsKt___CollectionsKt;->sortedWith(Ljava/lang/Iterable;Ljava/util/Comparator;)Ljava/util/List;
+    invoke-interface {p1}, Ljava/lang/Iterable;->iterator()Ljava/util/Iterator;
+
+    move-result-object p1
+
+    :cond_3
+    :goto_1
+    invoke-interface {p1}, Ljava/util/Iterator;->hasNext()Z
+
+    move-result v4
+
+    if-eqz v4, :cond_4
+
+    invoke-interface {p1}, Ljava/util/Iterator;->next()Ljava/lang/Object;
+
+    move-result-object v4
+
+    move-object v5, v4
+
+    check-cast v5, Lde/rki/coronawarnapp/risk/CombinedEwPtRiskLevelResult;
+
+    iget-object v5, v5, Lde/rki/coronawarnapp/risk/CombinedEwPtRiskLevelResult;->wasSuccessfullyCalculated$delegate:Lkotlin/Lazy;
+
+    invoke-interface {v5}, Lkotlin/Lazy;->getValue()Ljava/lang/Object;
+
+    move-result-object v5
+
+    check-cast v5, Ljava/lang/Boolean;
+
+    invoke-virtual {v5}, Ljava/lang/Boolean;->booleanValue()Z
+
+    move-result v5
+
+    if-eqz v5, :cond_3
+
+    invoke-virtual {v2, v4}, Ljava/util/ArrayList;->add(Ljava/lang/Object;)Z
+
+    goto :goto_1
+
+    :cond_4
+    new-instance p1, Lde/rki/coronawarnapp/risk/changedetection/CombinedRiskLevelChangeDetector$launch$lambda-2$$inlined$sortedBy$1;
+
+    invoke-direct {p1}, Lde/rki/coronawarnapp/risk/changedetection/CombinedRiskLevelChangeDetector$launch$lambda-2$$inlined$sortedBy$1;-><init>()V
+
+    invoke-static {v2, p1}, Lkotlin/collections/CollectionsKt___CollectionsKt;->sortedWith(Ljava/lang/Iterable;Ljava/util/Comparator;)Ljava/util/List;
 
     move-result-object p1
 
@@ -132,12 +175,12 @@
 
     move-result-object p1
 
-    if-ne p1, v1, :cond_3
+    if-ne p1, v1, :cond_5
 
     return-object v1
 
-    :cond_3
-    :goto_1
+    :cond_5
+    :goto_2
     sget-object p1, Lkotlin/Unit;->INSTANCE:Lkotlin/Unit;
 
     return-object p1

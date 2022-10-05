@@ -26,7 +26,7 @@
 
 
 # instance fields
-.field public final direction:Lkotlin/io/FileWalkDirection;
+.field public final direction:I
 
 .field public final maxDepth:I
 
@@ -34,18 +34,26 @@
 
 
 # direct methods
-.method public constructor <init>(Ljava/io/File;Lkotlin/io/FileWalkDirection;)V
+.method public constructor <init>(Ljava/io/File;I)V
     .locals 1
 
-    const v0, 0x7fffffff
+    const-string v0, "start"
+
+    invoke-static {p1, v0}, Lkotlin/jvm/internal/Intrinsics;->checkNotNullParameter(Ljava/lang/Object;Ljava/lang/String;)V
+
+    const-string v0, "direction"
+
+    invoke-static {p2, v0}, Lkotlin/jvm/internal/Intrinsics$$ExternalSyntheticCheckNotZero0;->m(ILjava/lang/String;)V
 
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
     iput-object p1, p0, Lkotlin/io/FileTreeWalk;->start:Ljava/io/File;
 
-    iput-object p2, p0, Lkotlin/io/FileTreeWalk;->direction:Lkotlin/io/FileWalkDirection;
+    iput p2, p0, Lkotlin/io/FileTreeWalk;->direction:I
 
-    iput v0, p0, Lkotlin/io/FileTreeWalk;->maxDepth:I
+    const p1, 0x7fffffff
+
+    iput p1, p0, Lkotlin/io/FileTreeWalk;->maxDepth:I
 
     return-void
 .end method

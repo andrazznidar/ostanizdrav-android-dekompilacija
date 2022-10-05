@@ -1,4 +1,4 @@
-.class public final Lkotlin/reflect/jvm/internal/impl/builtins/jvm/JvmBuiltInsCustomizer$isMutabilityViolation$1;
+.class final Lkotlin/reflect/jvm/internal/impl/builtins/jvm/JvmBuiltInsCustomizer$isMutabilityViolation$1;
 .super Ljava/lang/Object;
 .source "JvmBuiltInsCustomizer.kt"
 
@@ -7,18 +7,35 @@
 
 
 # annotations
+.annotation system Ldalvik/annotation/EnclosingMethod;
+    value = Lkotlin/reflect/jvm/internal/impl/builtins/jvm/JvmBuiltInsCustomizer;->isMutabilityViolation(Lkotlin/reflect/jvm/internal/impl/descriptors/SimpleFunctionDescriptor;Z)Z
+.end annotation
+
+.annotation system Ldalvik/annotation/InnerClass;
+    accessFlags = 0x19
+    name = null
+.end annotation
+
 .annotation system Ldalvik/annotation/Signature;
     value = {
+        "<N:",
         "Ljava/lang/Object;",
-        "Lkotlin/reflect/jvm/internal/impl/utils/DFS$Neighbors<",
-        "Lkotlin/reflect/jvm/internal/impl/descriptors/CallableMemberDescriptor;",
-        ">;"
+        ">",
+        "Ljava/lang/Object;",
+        "Lkotlin/reflect/jvm/internal/impl/utils/DFS$Neighbors;"
     }
 .end annotation
 
 
 # static fields
 .field public static final INSTANCE:Lkotlin/reflect/jvm/internal/impl/builtins/jvm/JvmBuiltInsCustomizer$isMutabilityViolation$1;
+    .annotation system Ldalvik/annotation/Signature;
+        value = {
+            "Lkotlin/reflect/jvm/internal/impl/builtins/jvm/JvmBuiltInsCustomizer$isMutabilityViolation$1<",
+            "TN;>;"
+        }
+    .end annotation
+.end field
 
 
 # direct methods
@@ -44,10 +61,30 @@
 
 
 # virtual methods
-.method public getNeighbors(Ljava/lang/Object;)Ljava/lang/Iterable;
+.method public bridge synthetic getNeighbors(Ljava/lang/Object;)Ljava/lang/Iterable;
     .locals 0
 
     check-cast p1, Lkotlin/reflect/jvm/internal/impl/descriptors/CallableMemberDescriptor;
+
+    invoke-virtual {p0, p1}, Lkotlin/reflect/jvm/internal/impl/builtins/jvm/JvmBuiltInsCustomizer$isMutabilityViolation$1;->getNeighbors(Lkotlin/reflect/jvm/internal/impl/descriptors/CallableMemberDescriptor;)Ljava/lang/Iterable;
+
+    move-result-object p1
+
+    return-object p1
+.end method
+
+.method public final getNeighbors(Lkotlin/reflect/jvm/internal/impl/descriptors/CallableMemberDescriptor;)Ljava/lang/Iterable;
+    .locals 0
+    .annotation system Ldalvik/annotation/Signature;
+        value = {
+            "(",
+            "Lkotlin/reflect/jvm/internal/impl/descriptors/CallableMemberDescriptor;",
+            ")",
+            "Ljava/lang/Iterable<",
+            "Lkotlin/reflect/jvm/internal/impl/descriptors/CallableMemberDescriptor;",
+            ">;"
+        }
+    .end annotation
 
     invoke-interface {p1}, Lkotlin/reflect/jvm/internal/impl/descriptors/CallableMemberDescriptor;->getOriginal()Lkotlin/reflect/jvm/internal/impl/descriptors/CallableMemberDescriptor;
 

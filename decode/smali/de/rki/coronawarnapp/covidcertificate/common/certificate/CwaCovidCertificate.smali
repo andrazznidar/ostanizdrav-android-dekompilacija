@@ -2,6 +2,9 @@
 .super Ljava/lang/Object;
 .source "CwaCovidCertificate.kt"
 
+# interfaces
+.implements Lde/rki/coronawarnapp/reyclebin/common/Recyclable;
+
 
 # annotations
 .annotation system Ldalvik/annotation/MemberClasses;
@@ -14,9 +17,6 @@
 
 # virtual methods
 .method public abstract getCertificateCountry()Ljava/lang/String;
-.end method
-
-.method public abstract getCertificateId()Ljava/lang/String;
 .end method
 
 .method public abstract getCertificateIssuer()Ljava/lang/String;
@@ -61,7 +61,13 @@
 .method public abstract getHeaderIssuedAt()Lorg/joda/time/Instant;
 .end method
 
+.method public abstract getHeaderIssuer()Ljava/lang/String;
+.end method
+
 .method public abstract getLastName()Ljava/lang/String;
+.end method
+
+.method public abstract getNotifiedBlockedAt()Lorg/joda/time/Instant;
 .end method
 
 .method public abstract getNotifiedExpiredAt()Lorg/joda/time/Instant;
@@ -76,14 +82,26 @@
 .method public abstract getPersonIdentifier()Lde/rki/coronawarnapp/covidcertificate/common/certificate/CertificatePersonIdentifier;
 .end method
 
+.method public abstract getQrCodeHash()Ljava/lang/String;
+.end method
+
 .method public abstract getQrCodeToDisplay()Lde/rki/coronawarnapp/util/qrcode/coil/CoilQrCode;
+.end method
+
+.method public abstract getRawCertificate()Lde/rki/coronawarnapp/covidcertificate/common/certificate/DccV1$MetaData;
 .end method
 
 .method public abstract getState()Lde/rki/coronawarnapp/covidcertificate/common/certificate/CwaCovidCertificate$State;
 .end method
 
+.method public abstract getUniqueCertificateIdentifier()Ljava/lang/String;
+.end method
+
+.method public abstract isDisplayValid()Z
+.end method
+
 .method public abstract isNew()Z
 .end method
 
-.method public abstract isValid()Z
+.method public abstract isNotBlocked()Z
 .end method

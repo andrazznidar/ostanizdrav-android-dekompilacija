@@ -16,13 +16,11 @@
 
 # direct methods
 .method public static getMostRecentDateAtRiskState(Lde/rki/coronawarnapp/risk/EwRiskLevelResult;)Lorg/joda/time/Instant;
-    .locals 2
+    .locals 1
 
     invoke-interface {p0}, Lde/rki/coronawarnapp/risk/EwRiskLevelResult;->isIncreasedRisk()Z
 
     move-result v0
-
-    const/4 v1, 0x0
 
     if-eqz v0, :cond_1
 
@@ -35,9 +33,9 @@
     goto :goto_0
 
     :cond_0
-    iget-object v1, p0, Lde/rki/coronawarnapp/risk/result/EwAggregatedRiskResult;->mostRecentDateWithHighRisk:Lorg/joda/time/Instant;
+    iget-object p0, p0, Lde/rki/coronawarnapp/risk/result/EwAggregatedRiskResult;->mostRecentDateWithHighRisk:Lorg/joda/time/Instant;
 
-    goto :goto_0
+    goto :goto_1
 
     :cond_1
     invoke-interface {p0}, Lde/rki/coronawarnapp/risk/EwRiskLevelResult;->getEwAggregatedRiskResult()Lde/rki/coronawarnapp/risk/result/EwAggregatedRiskResult;
@@ -46,13 +44,16 @@
 
     if-nez p0, :cond_2
 
-    goto :goto_0
+    :goto_0
+    const/4 p0, 0x0
+
+    goto :goto_1
 
     :cond_2
-    iget-object v1, p0, Lde/rki/coronawarnapp/risk/result/EwAggregatedRiskResult;->mostRecentDateWithLowRisk:Lorg/joda/time/Instant;
+    iget-object p0, p0, Lde/rki/coronawarnapp/risk/result/EwAggregatedRiskResult;->mostRecentDateWithLowRisk:Lorg/joda/time/Instant;
 
-    :goto_0
-    return-object v1
+    :goto_1
+    return-object p0
 .end method
 
 .method public static getWasSuccessfullyCalculated(Lde/rki/coronawarnapp/risk/EwRiskLevelResult;)Z

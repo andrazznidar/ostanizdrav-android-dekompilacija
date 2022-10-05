@@ -20,10 +20,6 @@
 .method public getDefault()Lkotlin/coroutines/CoroutineContext;
     .locals 1
 
-    const-string v0, "this"
-
-    invoke-static {p0, v0}, Lkotlin/jvm/internal/Intrinsics;->checkNotNullParameter(Ljava/lang/Object;Ljava/lang/String;)V
-
     sget-object v0, Lkotlinx/coroutines/Dispatchers;->Default:Lkotlinx/coroutines/CoroutineDispatcher;
 
     return-object v0
@@ -32,10 +28,6 @@
 .method public getIO()Lkotlin/coroutines/CoroutineContext;
     .locals 1
 
-    const-string v0, "this"
-
-    invoke-static {p0, v0}, Lkotlin/jvm/internal/Intrinsics;->checkNotNullParameter(Ljava/lang/Object;Ljava/lang/String;)V
-
     sget-object v0, Lkotlinx/coroutines/Dispatchers;->IO:Lkotlinx/coroutines/CoroutineDispatcher;
 
     return-object v0
@@ -43,10 +35,6 @@
 
 .method public getMain()Lkotlin/coroutines/CoroutineContext;
     .locals 1
-
-    const-string v0, "this"
-
-    invoke-static {p0, v0}, Lkotlin/jvm/internal/Intrinsics;->checkNotNullParameter(Ljava/lang/Object;Ljava/lang/String;)V
 
     sget-object v0, Lkotlinx/coroutines/Dispatchers;->INSTANCE:Lkotlinx/coroutines/Dispatchers;
 

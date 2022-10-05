@@ -20,6 +20,9 @@
     }
 .end annotation
 
+.annotation runtime Lkotlin/jvm/JvmInline;
+.end annotation
+
 
 # static fields
 .field public static final failed:Lkotlinx/coroutines/channels/ChannelResult$Failed;
@@ -78,6 +81,29 @@
 
     :goto_1
     return-object v1
+.end method
+
+.method public static final getOrNull-impl(Ljava/lang/Object;)Ljava/lang/Object;
+    .locals 1
+    .annotation system Ldalvik/annotation/Signature;
+        value = {
+            "(",
+            "Ljava/lang/Object;",
+            ")TT;"
+        }
+    .end annotation
+
+    instance-of v0, p0, Lkotlinx/coroutines/channels/ChannelResult$Failed;
+
+    if-nez v0, :cond_0
+
+    goto :goto_0
+
+    :cond_0
+    const/4 p0, 0x0
+
+    :goto_0
+    return-object p0
 .end method
 
 

@@ -21,19 +21,19 @@
 
     sput-object v0, Lde/rki/coronawarnapp/databinding/FragmentTestHomeTestCardsLayoutBindingImpl;->sViewsWithIds:Landroid/util/SparseIntArray;
 
-    const v1, 0x7f0a07e4
+    const v1, 0x7f0a082c
 
     const/4 v2, 0x4
 
     invoke-virtual {v0, v1, v2}, Landroid/util/SparseIntArray;->put(II)V
 
-    const v1, 0x7f0a0439
+    const v1, 0x7f0a047e
 
     const/4 v2, 0x5
 
     invoke-virtual {v0, v1, v2}, Landroid/util/SparseIntArray;->put(II)V
 
-    const v1, 0x7f0a059a
+    const v1, 0x7f0a05e6
 
     const/4 v2, 0x6
 
@@ -141,9 +141,7 @@
 
     iput-wide v0, v11, Lde/rki/coronawarnapp/databinding/FragmentTestHomeTestCardsLayoutBindingImpl;->mDirtyFlags:J
 
-    iget-object v0, v11, Lde/rki/coronawarnapp/databinding/FragmentTestHomeTestCardsLayoutBinding;->container:Ljava/lang/Object;
-
-    check-cast v0, Landroid/widget/LinearLayout;
+    iget-object v0, v11, Lde/rki/coronawarnapp/databinding/FragmentTestHomeTestCardsLayoutBinding;->container:Landroid/widget/LinearLayout;
 
     invoke-virtual {v0, v13}, Landroid/widget/LinearLayout;->setTag(Ljava/lang/Object;)V
 
@@ -155,9 +153,7 @@
 
     invoke-virtual {v0, v13}, Landroid/widget/TextView;->setTag(Ljava/lang/Object;)V
 
-    iget-object v0, v11, Lde/rki/coronawarnapp/databinding/FragmentTestHomeTestCardsLayoutBinding;->mainTracingIcon:Ljava/lang/Object;
-
-    check-cast v0, Lcom/airbnb/lottie/LottieAnimationView;
+    iget-object v0, v11, Lde/rki/coronawarnapp/databinding/FragmentTestHomeTestCardsLayoutBinding;->mainTracingIcon:Lcom/airbnb/lottie/LottieAnimationView;
 
     invoke-virtual {v0, v13}, Landroid/widget/ImageView;->setTag(Ljava/lang/Object;)V
 
@@ -216,7 +212,7 @@
 
     move-result-object v1
 
-    invoke-static {v0, v1}, Lcom/google/android/gms/nearby/connection/zzq;->setCWAContentDescription(Landroid/widget/ImageView;Ljava/lang/String;)V
+    invoke-static {v0, v1}, Lboofcv/core/image/impl/ImplConvertPlanarToGray;->setCWAContentDescription(Landroid/widget/ImageView;Ljava/lang/String;)V
 
     :cond_0
     if-eqz v4, :cond_2
@@ -238,21 +234,17 @@
 
     invoke-static {v0, v2}, Landroidx/databinding/adapters/TextViewBindingAdapter;->setText(Landroid/widget/TextView;Ljava/lang/CharSequence;)V
 
-    iget-object v0, p0, Lde/rki/coronawarnapp/databinding/FragmentTestHomeTestCardsLayoutBinding;->mainTracingIcon:Ljava/lang/Object;
+    iget-object v0, p0, Lde/rki/coronawarnapp/databinding/FragmentTestHomeTestCardsLayoutBinding;->mainTracingIcon:Lcom/airbnb/lottie/LottieAnimationView;
 
-    check-cast v0, Lcom/airbnb/lottie/LottieAnimationView;
+    invoke-static {v0, v2}, Lorg/ejml/sparse/csc/CommonOps_DSCC;->setAnimation(Lcom/airbnb/lottie/LottieAnimationView;Ljava/lang/Integer;)V
 
-    invoke-static {v0, v2}, Ldagger/android/AndroidInjection;->setAnimation(Lcom/airbnb/lottie/LottieAnimationView;Ljava/lang/Integer;)V
-
-    iget-object v0, p0, Lde/rki/coronawarnapp/databinding/FragmentTestHomeTestCardsLayoutBinding;->mainTracingIcon:Ljava/lang/Object;
-
-    check-cast v0, Lcom/airbnb/lottie/LottieAnimationView;
+    iget-object v0, p0, Lde/rki/coronawarnapp/databinding/FragmentTestHomeTestCardsLayoutBinding;->mainTracingIcon:Lcom/airbnb/lottie/LottieAnimationView;
 
     invoke-static {v5}, Ljava/lang/Integer;->valueOf(I)Ljava/lang/Integer;
 
     move-result-object v1
 
-    invoke-static {v0, v1}, Ldagger/android/AndroidInjection;->setAnimationColor(Lcom/airbnb/lottie/LottieAnimationView;Ljava/lang/Integer;)V
+    invoke-static {v0, v1}, Lorg/ejml/sparse/csc/CommonOps_DSCC;->setAnimationColor(Lcom/airbnb/lottie/LottieAnimationView;Ljava/lang/Integer;)V
 
     :cond_2
     return-void

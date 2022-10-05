@@ -27,7 +27,7 @@
 
     const-class v0, Lde/rki/coronawarnapp/coronatest/notification/ShareTestResultNotification;
 
-    invoke-static {v0}, Lde/rki/coronawarnapp/contactdiary/retention/ContactDiaryCleanTask$$ExternalSyntheticOutline0;->m(Ljava/lang/Class;)Ljava/lang/String;
+    invoke-static {v0}, Lorg/bouncycastle/crypto/digests/MD5Digest$$ExternalSyntheticOutline0;->m(Ljava/lang/Class;)Ljava/lang/String;
 
     move-result-object v0
 
@@ -71,31 +71,29 @@
 
     invoke-static {p1, v0}, Lkotlin/jvm/internal/Intrinsics;->checkNotNullParameter(Ljava/lang/Object;Ljava/lang/String;)V
 
-    iget-object v1, p0, Lde/rki/coronawarnapp/coronatest/notification/ShareTestResultNotification;->notificationHelper:Lde/rki/coronawarnapp/notification/GeneralNotifications;
+    iget-object v0, p0, Lde/rki/coronawarnapp/coronatest/notification/ShareTestResultNotification;->notificationHelper:Lde/rki/coronawarnapp/notification/GeneralNotifications;
 
-    invoke-static {v1}, Ljava/util/Objects;->requireNonNull(Ljava/lang/Object;)Ljava/lang/Object;
+    invoke-static {v0}, Ljava/util/Objects;->requireNonNull(Ljava/lang/Object;)Ljava/lang/Object;
 
-    invoke-static {p1, v0}, Lkotlin/jvm/internal/Intrinsics;->checkNotNullParameter(Ljava/lang/Object;Ljava/lang/String;)V
-
-    iget-object v0, v1, Lde/rki/coronawarnapp/notification/GeneralNotifications;->context:Landroid/content/Context;
+    iget-object v1, v0, Lde/rki/coronawarnapp/notification/GeneralNotifications;->context:Landroid/content/Context;
 
     const-string v2, "alarm"
 
-    invoke-virtual {v0, v2}, Landroid/content/Context;->getSystemService(Ljava/lang/String;)Ljava/lang/Object;
+    invoke-virtual {v1, v2}, Landroid/content/Context;->getSystemService(Ljava/lang/String;)Ljava/lang/Object;
 
-    move-result-object v0
+    move-result-object v1
 
     const-string v2, "null cannot be cast to non-null type android.app.AlarmManager"
 
-    invoke-static {v0, v2}, Ljava/util/Objects;->requireNonNull(Ljava/lang/Object;Ljava/lang/String;)Ljava/lang/Object;
+    invoke-static {v1, v2}, Ljava/util/Objects;->requireNonNull(Ljava/lang/Object;Ljava/lang/String;)Ljava/lang/Object;
 
-    check-cast v0, Landroid/app/AlarmManager;
+    check-cast v1, Landroid/app/AlarmManager;
 
     const/16 v2, 0x64
 
     const/high16 v3, 0x20000000
 
-    invoke-virtual {v1, v2, p1, v3}, Lde/rki/coronawarnapp/notification/GeneralNotifications;->createPendingIntentToScheduleNotification(ILde/rki/coronawarnapp/coronatest/type/CoronaTest$Type;I)Landroid/app/PendingIntent;
+    invoke-virtual {v0, v2, p1, v3}, Lde/rki/coronawarnapp/notification/GeneralNotifications;->createPendingIntentToScheduleNotification(ILde/rki/coronawarnapp/coronatest/type/CoronaTest$Type;I)Landroid/app/PendingIntent;
 
     move-result-object v2
 
@@ -105,7 +103,7 @@
 
     if-eqz v2, :cond_0
 
-    invoke-virtual {v0, v2}, Landroid/app/AlarmManager;->cancel(Landroid/app/PendingIntent;)V
+    invoke-virtual {v1, v2}, Landroid/app/AlarmManager;->cancel(Landroid/app/PendingIntent;)V
 
     sget-object v2, Ltimber/log/Timber;->Forest:Ltimber/log/Timber$Forest;
 
@@ -131,15 +129,15 @@
     invoke-virtual {v2, v7, v6}, Ltimber/log/Timber$Forest;->v(Ljava/lang/String;[Ljava/lang/Object;)V
 
     :goto_0
-    invoke-virtual {v1, p2, p1, v3}, Lde/rki/coronawarnapp/notification/GeneralNotifications;->createPendingIntentToScheduleNotification(ILde/rki/coronawarnapp/coronatest/type/CoronaTest$Type;I)Landroid/app/PendingIntent;
+    invoke-virtual {v0, p2, p1, v3}, Lde/rki/coronawarnapp/notification/GeneralNotifications;->createPendingIntentToScheduleNotification(ILde/rki/coronawarnapp/coronatest/type/CoronaTest$Type;I)Landroid/app/PendingIntent;
 
-    move-result-object v1
+    move-result-object v0
 
     const-string v2, " type:"
 
-    if-eqz v1, :cond_1
+    if-eqz v0, :cond_1
 
-    invoke-virtual {v0, v1}, Landroid/app/AlarmManager;->cancel(Landroid/app/PendingIntent;)V
+    invoke-virtual {v1, v0}, Landroid/app/AlarmManager;->cancel(Landroid/app/PendingIntent;)V
 
     sget-object v0, Ltimber/log/Timber;->Forest:Ltimber/log/Timber$Forest;
 
@@ -263,11 +261,11 @@
 
     check-cast v4, Landroid/app/AlarmManager;
 
-    const/4 v5, 0x1
-
     iget-wide v6, v1, Lorg/joda/time/Instant;->iMillis:J
 
     iget-wide v8, v2, Lorg/joda/time/base/BaseDuration;->iMillis:J
+
+    const/4 v5, 0x1
 
     invoke-virtual/range {v4 .. v10}, Landroid/app/AlarmManager;->setInexactRepeating(IJJLandroid/app/PendingIntent;)V
 
@@ -321,7 +319,7 @@
 
     invoke-direct {p2, v1}, Landroidx/navigation/NavDeepLinkBuilder;-><init>(Landroid/content/Context;)V
 
-    const v1, 0x7f100002
+    const v1, 0x7f100003
 
     invoke-virtual {p2, v1}, Landroidx/navigation/NavDeepLinkBuilder;->setGraph(I)Landroidx/navigation/NavDeepLinkBuilder;
 
@@ -329,7 +327,7 @@
 
     invoke-virtual {p2, v1}, Landroidx/navigation/NavDeepLinkBuilder;->setComponentName(Ljava/lang/Class;)Landroidx/navigation/NavDeepLinkBuilder;
 
-    const v1, 0x7f0a06b4
+    const v1, 0x7f0a0707
 
     invoke-virtual {p2, v1}, Landroidx/navigation/NavDeepLinkBuilder;->setDestination(I)Landroidx/navigation/NavDeepLinkBuilder;
 
@@ -357,7 +355,7 @@
 
     iget-object v1, p0, Lde/rki/coronawarnapp/coronatest/notification/ShareTestResultNotification;->context:Landroid/content/Context;
 
-    const v2, 0x7f1302ca
+    const v2, 0x7f1302dd
 
     invoke-virtual {v1, v2}, Landroid/content/Context;->getString(I)Ljava/lang/String;
 
@@ -367,7 +365,7 @@
 
     iget-object v1, p0, Lde/rki/coronawarnapp/coronatest/notification/ShareTestResultNotification;->context:Landroid/content/Context;
 
-    const v2, 0x7f1302c5
+    const v2, 0x7f1302da
 
     invoke-virtual {v1, v2}, Landroid/content/Context;->getString(I)Ljava/lang/String;
 
@@ -377,7 +375,7 @@
 
     invoke-static {v1, v2}, Lkotlin/jvm/internal/Intrinsics;->checkNotNullExpressionValue(Ljava/lang/Object;Ljava/lang/String;)V
 
-    invoke-static {v0, v1}, Lcom/google/android/gms/internal/nearby/zznn;->setContentTextExpandable(Landroidx/core/app/NotificationCompat$Builder;Ljava/lang/String;)Landroidx/core/app/NotificationCompat$Builder;
+    invoke-static {v0, v1}, Lorg/ejml/ops/DConvertMatrixStruct;->setContentTextExpandable(Landroidx/core/app/NotificationCompat$Builder;Ljava/lang/String;)Landroidx/core/app/NotificationCompat$Builder;
 
     iput-object p2, v0, Landroidx/core/app/NotificationCompat$Builder;->mContentIntent:Landroid/app/PendingIntent;
 

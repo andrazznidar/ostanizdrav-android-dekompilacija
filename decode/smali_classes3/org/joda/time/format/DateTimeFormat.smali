@@ -89,6 +89,78 @@
     return-object p0
 .end method
 
+.method public static createFormatterForStyle(Ljava/lang/String;)Lorg/joda/time/format/DateTimeFormatter;
+    .locals 2
+
+    if-eqz p0, :cond_2
+
+    invoke-virtual {p0}, Ljava/lang/String;->length()I
+
+    move-result v0
+
+    const/4 v1, 0x2
+
+    if-ne v0, v1, :cond_2
+
+    const/4 v0, 0x0
+
+    invoke-virtual {p0, v0}, Ljava/lang/String;->charAt(I)C
+
+    move-result v0
+
+    invoke-static {v0}, Lorg/joda/time/format/DateTimeFormat;->selectStyle(C)I
+
+    move-result v0
+
+    const/4 v1, 0x1
+
+    invoke-virtual {p0, v1}, Ljava/lang/String;->charAt(I)C
+
+    move-result p0
+
+    invoke-static {p0}, Lorg/joda/time/format/DateTimeFormat;->selectStyle(C)I
+
+    move-result p0
+
+    const/4 v1, 0x4
+
+    if-ne v0, v1, :cond_1
+
+    if-eq p0, v1, :cond_0
+
+    goto :goto_0
+
+    :cond_0
+    new-instance p0, Ljava/lang/IllegalArgumentException;
+
+    const-string v0, "Style \'--\' is invalid"
+
+    invoke-direct {p0, v0}, Ljava/lang/IllegalArgumentException;-><init>(Ljava/lang/String;)V
+
+    throw p0
+
+    :cond_1
+    :goto_0
+    invoke-static {v0, p0}, Lorg/joda/time/format/DateTimeFormat;->createFormatterForStyleIndex(II)Lorg/joda/time/format/DateTimeFormatter;
+
+    move-result-object p0
+
+    return-object p0
+
+    :cond_2
+    new-instance v0, Ljava/lang/IllegalArgumentException;
+
+    const-string v1, "Invalid style specification: "
+
+    invoke-static {v1, p0}, Landroidx/appcompat/view/SupportMenuInflater$$ExternalSyntheticOutline0;->m(Ljava/lang/String;Ljava/lang/String;)Ljava/lang/String;
+
+    move-result-object p0
+
+    invoke-direct {v0, p0}, Ljava/lang/IllegalArgumentException;-><init>(Ljava/lang/String;)V
+
+    throw v0
+.end method
+
 .method public static createFormatterForStyleIndex(II)Lorg/joda/time/format/DateTimeFormatter;
     .locals 3
 
@@ -146,7 +218,7 @@
 .end method
 
 .method public static forPattern(Ljava/lang/String;)Lorg/joda/time/format/DateTimeFormatter;
-    .locals 15
+    .locals 14
 
     if-eqz p0, :cond_21
 
@@ -218,9 +290,7 @@
 
     const/16 v4, 0x4d
 
-    const/4 v6, 0x3
-
-    const/4 v12, 0x4
+    const/4 v6, 0x4
 
     if-eq v3, v4, :cond_19
 
@@ -258,21 +328,21 @@
 
     const/16 v4, 0x59
 
-    const/4 v13, 0x0
+    const/4 v12, 0x0
 
     if-eq v3, v4, :cond_8
 
-    const/16 v14, 0x5a
+    const/16 v13, 0x5a
 
-    if-eq v3, v14, :cond_5
+    if-eq v3, v13, :cond_5
 
-    const/16 v14, 0x64
+    const/16 v13, 0x64
 
-    if-eq v3, v14, :cond_4
+    if-eq v3, v13, :cond_4
 
-    const/16 v14, 0x65
+    const/16 v13, 0x65
 
-    if-eq v3, v14, :cond_3
+    if-eq v3, v13, :cond_3
 
     packed-switch v3, :pswitch_data_0
 
@@ -291,7 +361,7 @@
     throw p0
 
     :pswitch_0
-    if-lt v2, v12, :cond_1
+    if-lt v2, v6, :cond_1
 
     sget-object v1, Lorg/joda/time/DateTimeFieldType;->ERA_TYPE:Lorg/joda/time/DateTimeFieldType;
 
@@ -311,11 +381,7 @@
     goto/16 :goto_2
 
     :pswitch_1
-    sget-object v1, Lorg/joda/time/DateTimeFieldType;->ERA_TYPE:Lorg/joda/time/DateTimeFieldType;
-
-    sget-object v1, Lorg/joda/time/DateTimeFieldType;->DAY_OF_YEAR_TYPE:Lorg/joda/time/DateTimeFieldType;
-
-    invoke-virtual {v0, v1, v2, v6}, Lorg/joda/time/format/DateTimeFormatterBuilder;->appendDecimal(Lorg/joda/time/DateTimeFieldType;II)Lorg/joda/time/format/DateTimeFormatterBuilder;
+    invoke-virtual {v0, v2}, Lorg/joda/time/format/DateTimeFormatterBuilder;->appendDayOfYear(I)Lorg/joda/time/format/DateTimeFormatterBuilder;
 
     goto/16 :goto_2
 
@@ -329,13 +395,13 @@
     goto/16 :goto_2
 
     :pswitch_3
-    if-lt v2, v12, :cond_2
+    if-lt v2, v6, :cond_2
 
     new-instance v1, Lorg/joda/time/format/DateTimeFormatterBuilder$TimeZoneName;
 
-    invoke-direct {v1, v10, v13}, Lorg/joda/time/format/DateTimeFormatterBuilder$TimeZoneName;-><init>(ILjava/util/Map;)V
+    invoke-direct {v1, v10, v12}, Lorg/joda/time/format/DateTimeFormatterBuilder$TimeZoneName;-><init>(ILjava/util/Map;)V
 
-    iput-object v13, v0, Lorg/joda/time/format/DateTimeFormatterBuilder;->iFormatter:Ljava/lang/Object;
+    iput-object v12, v0, Lorg/joda/time/format/DateTimeFormatterBuilder;->iFormatter:Ljava/lang/Object;
 
     iget-object v2, v0, Lorg/joda/time/format/DateTimeFormatterBuilder;->iElementPairs:Ljava/util/ArrayList;
 
@@ -343,16 +409,16 @@
 
     iget-object v1, v0, Lorg/joda/time/format/DateTimeFormatterBuilder;->iElementPairs:Ljava/util/ArrayList;
 
-    invoke-virtual {v1, v13}, Ljava/util/ArrayList;->add(Ljava/lang/Object;)Z
+    invoke-virtual {v1, v12}, Ljava/util/ArrayList;->add(Ljava/lang/Object;)Z
 
     goto/16 :goto_2
 
     :cond_2
     new-instance v1, Lorg/joda/time/format/DateTimeFormatterBuilder$TimeZoneName;
 
-    invoke-direct {v1, v8, v13}, Lorg/joda/time/format/DateTimeFormatterBuilder$TimeZoneName;-><init>(ILjava/util/Map;)V
+    invoke-direct {v1, v8, v12}, Lorg/joda/time/format/DateTimeFormatterBuilder$TimeZoneName;-><init>(ILjava/util/Map;)V
 
-    iput-object v13, v0, Lorg/joda/time/format/DateTimeFormatterBuilder;->iFormatter:Ljava/lang/Object;
+    iput-object v12, v0, Lorg/joda/time/format/DateTimeFormatterBuilder;->iFormatter:Ljava/lang/Object;
 
     iget-object v2, v0, Lorg/joda/time/format/DateTimeFormatterBuilder;->iElementPairs:Ljava/util/ArrayList;
 
@@ -365,29 +431,17 @@
     goto/16 :goto_2
 
     :pswitch_4
-    sget-object v1, Lorg/joda/time/DateTimeFieldType;->ERA_TYPE:Lorg/joda/time/DateTimeFieldType;
-
-    sget-object v1, Lorg/joda/time/DateTimeFieldType;->WEEK_OF_WEEKYEAR_TYPE:Lorg/joda/time/DateTimeFieldType;
-
-    invoke-virtual {v0, v1, v2, v5}, Lorg/joda/time/format/DateTimeFormatterBuilder;->appendDecimal(Lorg/joda/time/DateTimeFieldType;II)Lorg/joda/time/format/DateTimeFormatterBuilder;
+    invoke-virtual {v0, v2}, Lorg/joda/time/format/DateTimeFormatterBuilder;->appendWeekOfWeekyear(I)Lorg/joda/time/format/DateTimeFormatterBuilder;
 
     goto/16 :goto_2
 
     :cond_3
-    sget-object v1, Lorg/joda/time/DateTimeFieldType;->ERA_TYPE:Lorg/joda/time/DateTimeFieldType;
-
-    sget-object v1, Lorg/joda/time/DateTimeFieldType;->DAY_OF_WEEK_TYPE:Lorg/joda/time/DateTimeFieldType;
-
-    invoke-virtual {v0, v1, v2, v8}, Lorg/joda/time/format/DateTimeFormatterBuilder;->appendDecimal(Lorg/joda/time/DateTimeFieldType;II)Lorg/joda/time/format/DateTimeFormatterBuilder;
+    invoke-virtual {v0, v2}, Lorg/joda/time/format/DateTimeFormatterBuilder;->appendDayOfWeek(I)Lorg/joda/time/format/DateTimeFormatterBuilder;
 
     goto/16 :goto_2
 
     :cond_4
-    sget-object v1, Lorg/joda/time/DateTimeFieldType;->ERA_TYPE:Lorg/joda/time/DateTimeFieldType;
-
-    sget-object v1, Lorg/joda/time/DateTimeFieldType;->DAY_OF_MONTH_TYPE:Lorg/joda/time/DateTimeFieldType;
-
-    invoke-virtual {v0, v1, v2, v5}, Lorg/joda/time/format/DateTimeFormatterBuilder;->appendDecimal(Lorg/joda/time/DateTimeFieldType;II)Lorg/joda/time/format/DateTimeFormatterBuilder;
+    invoke-virtual {v0, v2}, Lorg/joda/time/format/DateTimeFormatterBuilder;->appendDayOfMonth(I)Lorg/joda/time/format/DateTimeFormatterBuilder;
 
     goto/16 :goto_2
 
@@ -432,7 +486,7 @@
     :cond_7
     sget-object v1, Lorg/joda/time/format/DateTimeFormatterBuilder$TimeZoneId;->INSTANCE:Lorg/joda/time/format/DateTimeFormatterBuilder$TimeZoneId;
 
-    iput-object v13, v0, Lorg/joda/time/format/DateTimeFormatterBuilder;->iFormatter:Ljava/lang/Object;
+    iput-object v12, v0, Lorg/joda/time/format/DateTimeFormatterBuilder;->iFormatter:Ljava/lang/Object;
 
     iget-object v2, v0, Lorg/joda/time/format/DateTimeFormatterBuilder;->iElementPairs:Ljava/util/ArrayList;
 
@@ -502,7 +556,7 @@
 
     invoke-direct {v3, v4, v1, v2}, Lorg/joda/time/format/DateTimeFormatterBuilder$TwoDigitYear;-><init>(Lorg/joda/time/DateTimeFieldType;IZ)V
 
-    iput-object v13, v0, Lorg/joda/time/format/DateTimeFormatterBuilder;->iFormatter:Ljava/lang/Object;
+    iput-object v12, v0, Lorg/joda/time/format/DateTimeFormatterBuilder;->iFormatter:Ljava/lang/Object;
 
     iget-object v1, v0, Lorg/joda/time/format/DateTimeFormatterBuilder;->iElementPairs:Ljava/util/ArrayList;
 
@@ -541,7 +595,7 @@
 
     invoke-direct {v3, v4, v1, v2}, Lorg/joda/time/format/DateTimeFormatterBuilder$TwoDigitYear;-><init>(Lorg/joda/time/DateTimeFieldType;IZ)V
 
-    iput-object v13, v0, Lorg/joda/time/format/DateTimeFormatterBuilder;->iFormatter:Ljava/lang/Object;
+    iput-object v12, v0, Lorg/joda/time/format/DateTimeFormatterBuilder;->iFormatter:Ljava/lang/Object;
 
     iget-object v1, v0, Lorg/joda/time/format/DateTimeFormatterBuilder;->iElementPairs:Ljava/util/ArrayList;
 
@@ -616,11 +670,7 @@
     goto/16 :goto_2
 
     :cond_11
-    sget-object v1, Lorg/joda/time/DateTimeFieldType;->ERA_TYPE:Lorg/joda/time/DateTimeFieldType;
-
-    sget-object v1, Lorg/joda/time/DateTimeFieldType;->HOUR_OF_DAY_TYPE:Lorg/joda/time/DateTimeFieldType;
-
-    invoke-virtual {v0, v1, v2, v5}, Lorg/joda/time/format/DateTimeFormatterBuilder;->appendDecimal(Lorg/joda/time/DateTimeFieldType;II)Lorg/joda/time/format/DateTimeFormatterBuilder;
+    invoke-virtual {v0, v2}, Lorg/joda/time/format/DateTimeFormatterBuilder;->appendHourOfDay(I)Lorg/joda/time/format/DateTimeFormatterBuilder;
 
     goto/16 :goto_2
 
@@ -631,23 +681,15 @@
 
     invoke-virtual {v0, v1}, Lorg/joda/time/format/DateTimeFormatterBuilder;->appendText(Lorg/joda/time/DateTimeFieldType;)Lorg/joda/time/format/DateTimeFormatterBuilder;
 
-    goto/16 :goto_2
+    goto :goto_2
 
     :cond_13
-    sget-object v1, Lorg/joda/time/DateTimeFieldType;->ERA_TYPE:Lorg/joda/time/DateTimeFieldType;
-
-    sget-object v1, Lorg/joda/time/DateTimeFieldType;->SECOND_OF_MINUTE_TYPE:Lorg/joda/time/DateTimeFieldType;
-
-    invoke-virtual {v0, v1, v2, v5}, Lorg/joda/time/format/DateTimeFormatterBuilder;->appendDecimal(Lorg/joda/time/DateTimeFieldType;II)Lorg/joda/time/format/DateTimeFormatterBuilder;
+    invoke-virtual {v0, v2}, Lorg/joda/time/format/DateTimeFormatterBuilder;->appendSecondOfMinute(I)Lorg/joda/time/format/DateTimeFormatterBuilder;
 
     goto :goto_2
 
     :cond_14
-    sget-object v1, Lorg/joda/time/DateTimeFieldType;->ERA_TYPE:Lorg/joda/time/DateTimeFieldType;
-
-    sget-object v1, Lorg/joda/time/DateTimeFieldType;->MINUTE_OF_HOUR_TYPE:Lorg/joda/time/DateTimeFieldType;
-
-    invoke-virtual {v0, v1, v2, v5}, Lorg/joda/time/format/DateTimeFormatterBuilder;->appendDecimal(Lorg/joda/time/DateTimeFieldType;II)Lorg/joda/time/format/DateTimeFormatterBuilder;
+    invoke-virtual {v0, v2}, Lorg/joda/time/format/DateTimeFormatterBuilder;->appendMinuteOfHour(I)Lorg/joda/time/format/DateTimeFormatterBuilder;
 
     goto :goto_2
 
@@ -684,9 +726,11 @@
     goto :goto_2
 
     :cond_19
-    if-lt v2, v6, :cond_1b
+    const/4 v1, 0x3
 
-    if-lt v2, v12, :cond_1a
+    if-lt v2, v1, :cond_1b
+
+    if-lt v2, v6, :cond_1a
 
     sget-object v1, Lorg/joda/time/DateTimeFieldType;->ERA_TYPE:Lorg/joda/time/DateTimeFieldType;
 
@@ -706,11 +750,7 @@
     goto :goto_2
 
     :cond_1b
-    sget-object v1, Lorg/joda/time/DateTimeFieldType;->ERA_TYPE:Lorg/joda/time/DateTimeFieldType;
-
-    sget-object v1, Lorg/joda/time/DateTimeFieldType;->MONTH_OF_YEAR_TYPE:Lorg/joda/time/DateTimeFieldType;
-
-    invoke-virtual {v0, v1, v2, v5}, Lorg/joda/time/format/DateTimeFormatterBuilder;->appendDecimal(Lorg/joda/time/DateTimeFieldType;II)Lorg/joda/time/format/DateTimeFormatterBuilder;
+    invoke-virtual {v0, v2}, Lorg/joda/time/format/DateTimeFormatterBuilder;->appendMonthOfYear(I)Lorg/joda/time/format/DateTimeFormatterBuilder;
 
     goto :goto_2
 
@@ -791,6 +831,8 @@
     invoke-direct {p0, v0}, Ljava/lang/IllegalArgumentException;-><init>(Ljava/lang/String;)V
 
     throw p0
+
+    nop
 
     :pswitch_data_0
     .packed-switch 0x43

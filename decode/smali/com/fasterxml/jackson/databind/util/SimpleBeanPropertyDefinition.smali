@@ -275,7 +275,7 @@
     return-object v0
 
     :cond_0
-    invoke-virtual {v0}, Lcom/fasterxml/jackson/databind/introspect/Annotated;->getType()Lcom/fasterxml/jackson/databind/JavaType;
+    invoke-virtual {v0}, Lorg/joda/time/Chronology;->getType()Lcom/fasterxml/jackson/databind/JavaType;
 
     move-result-object v0
 
@@ -301,7 +301,7 @@
     return-object v0
 
     :cond_0
-    invoke-virtual {v0}, Lcom/fasterxml/jackson/databind/introspect/Annotated;->getRawType()Ljava/lang/Class;
+    invoke-virtual {v0}, Lorg/joda/time/Chronology;->getRawType()Ljava/lang/Class;
 
     move-result-object v0
 
@@ -353,7 +353,7 @@
     goto :goto_0
 
     :cond_0
-    invoke-virtual {v0, v1}, Lcom/fasterxml/jackson/databind/AnnotationIntrospector;->findWrapperName(Lcom/fasterxml/jackson/databind/introspect/Annotated;)Lcom/fasterxml/jackson/databind/PropertyName;
+    invoke-virtual {v0, v1}, Lcom/fasterxml/jackson/databind/AnnotationIntrospector;->findWrapperName(Lorg/joda/time/Chronology;)Lcom/fasterxml/jackson/databind/PropertyName;
 
     move-result-object v0
 

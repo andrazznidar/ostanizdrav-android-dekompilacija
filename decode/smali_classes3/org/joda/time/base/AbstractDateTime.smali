@@ -2,6 +2,9 @@
 .super Lorg/joda/time/base/AbstractInstant;
 .source "AbstractDateTime.java"
 
+# interfaces
+.implements Lorg/joda/time/ReadableDateTime;
+
 
 # direct methods
 .method public constructor <init>()V

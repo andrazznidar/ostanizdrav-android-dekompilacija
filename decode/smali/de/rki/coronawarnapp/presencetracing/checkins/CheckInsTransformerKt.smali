@@ -23,7 +23,7 @@
 
     iget-object v1, p0, Lde/rki/coronawarnapp/presencetracing/checkins/CheckIn;->traceLocationId:Lokio/ByteString;
 
-    invoke-static {v1}, Lkotlinx/coroutines/CoroutineScopeKt;->toProtoByteString(Lokio/ByteString;)Lcom/google/protobuf/ByteString;
+    invoke-static {v1}, Lde/rki/coronawarnapp/util/ProtoBufKt;->toProtoByteString(Lokio/ByteString;)Lcom/google/protobuf/ByteString;
 
     move-result-object v1
 

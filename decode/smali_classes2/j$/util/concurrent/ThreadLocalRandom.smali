@@ -2,16 +2,6 @@
 .super Ljava/util/Random;
 
 
-# annotations
-.annotation system Ldalvik/annotation/MemberClasses;
-    value = {
-        Lj$/util/concurrent/ThreadLocalRandom$b;,
-        Lj$/util/concurrent/ThreadLocalRandom$d;,
-        Lj$/util/concurrent/ThreadLocalRandom$c;
-    }
-.end annotation
-
-
 # static fields
 .field private static final d:Ljava/util/concurrent/atomic/AtomicInteger;
 
@@ -42,9 +32,9 @@
 
     new-instance v0, Ljava/util/concurrent/atomic/AtomicLong;
 
-    new-instance v1, Lj$/util/concurrent/d;
+    new-instance v1, Lj$/util/concurrent/w;
 
-    invoke-direct {v1}, Lj$/util/concurrent/d;-><init>()V
+    invoke-direct {v1}, Lj$/util/concurrent/w;-><init>()V
 
     invoke-static {v1}, Ljava/security/AccessController;->doPrivileged(Ljava/security/PrivilegedAction;)Ljava/lang/Object;
 
@@ -123,9 +113,9 @@
 
     sput-object v0, Lj$/util/concurrent/ThreadLocalRandom;->f:Ljava/lang/ThreadLocal;
 
-    new-instance v0, Lj$/util/concurrent/ThreadLocalRandom$a;
+    new-instance v0, Lj$/util/concurrent/x;
 
-    invoke-direct {v0}, Lj$/util/concurrent/ThreadLocalRandom$a;-><init>()V
+    invoke-direct {v0}, Lj$/util/concurrent/x;-><init>()V
 
     sput-object v0, Lj$/util/concurrent/ThreadLocalRandom;->g:Ljava/lang/ThreadLocal;
 
@@ -148,7 +138,7 @@
     return-void
 .end method
 
-.method constructor <init>(Lj$/util/concurrent/d;)V
+.method constructor <init>(Lj$/util/concurrent/w;)V
     .locals 0
 
     invoke-direct {p0}, Ljava/util/Random;-><init>()V
@@ -454,7 +444,7 @@
 .method public doubles()Ljava/util/stream/DoubleStream;
     .locals 10
 
-    new-instance v9, Lj$/util/concurrent/ThreadLocalRandom$b;
+    new-instance v9, Lj$/util/concurrent/y;
 
     const-wide/16 v1, 0x0
 
@@ -466,15 +456,15 @@
 
     move-object v0, v9
 
-    invoke-direct/range {v0 .. v8}, Lj$/util/concurrent/ThreadLocalRandom$b;-><init>(JJDD)V
+    invoke-direct/range {v0 .. v8}, Lj$/util/concurrent/y;-><init>(JJDD)V
 
     const/4 v0, 0x0
 
-    invoke-static {v9, v0}, Lj$/util/stream/p1;->r(Lj$/util/Spliterator$a;Z)Lj$/util/stream/U;
+    invoke-static {v9, v0}, Lj$/util/stream/D0;->r0(Lj$/util/x;Z)Lj$/util/stream/I;
 
     move-result-object v0
 
-    invoke-static {v0}, Lj$/wrappers/s;->k0(Lj$/util/stream/U;)Ljava/util/stream/DoubleStream;
+    invoke-static {v0}, Lj$/util/stream/H;->K(Lj$/util/stream/I;)Ljava/util/stream/DoubleStream;
 
     move-result-object v0
 
@@ -488,7 +478,7 @@
 
     if-gez v0, :cond_0
 
-    new-instance v0, Lj$/util/concurrent/ThreadLocalRandom$b;
+    new-instance v0, Lj$/util/concurrent/y;
 
     const-wide/16 v2, 0x0
 
@@ -500,15 +490,15 @@
 
     move-wide v8, p3
 
-    invoke-direct/range {v1 .. v9}, Lj$/util/concurrent/ThreadLocalRandom$b;-><init>(JJDD)V
+    invoke-direct/range {v1 .. v9}, Lj$/util/concurrent/y;-><init>(JJDD)V
 
     const/4 p1, 0x0
 
-    invoke-static {v0, p1}, Lj$/util/stream/p1;->r(Lj$/util/Spliterator$a;Z)Lj$/util/stream/U;
+    invoke-static {v0, p1}, Lj$/util/stream/D0;->r0(Lj$/util/x;Z)Lj$/util/stream/I;
 
     move-result-object p1
 
-    invoke-static {p1}, Lj$/wrappers/s;->k0(Lj$/util/stream/U;)Ljava/util/stream/DoubleStream;
+    invoke-static {p1}, Lj$/util/stream/H;->K(Lj$/util/stream/I;)Ljava/util/stream/DoubleStream;
 
     move-result-object p1
 
@@ -533,7 +523,7 @@
 
     if-ltz v0, :cond_0
 
-    new-instance v0, Lj$/util/concurrent/ThreadLocalRandom$b;
+    new-instance v0, Lj$/util/concurrent/y;
 
     const-wide/16 v2, 0x0
 
@@ -545,15 +535,15 @@
 
     move-wide v4, p1
 
-    invoke-direct/range {v1 .. v9}, Lj$/util/concurrent/ThreadLocalRandom$b;-><init>(JJDD)V
+    invoke-direct/range {v1 .. v9}, Lj$/util/concurrent/y;-><init>(JJDD)V
 
     const/4 p1, 0x0
 
-    invoke-static {v0, p1}, Lj$/util/stream/p1;->r(Lj$/util/Spliterator$a;Z)Lj$/util/stream/U;
+    invoke-static {v0, p1}, Lj$/util/stream/D0;->r0(Lj$/util/x;Z)Lj$/util/stream/I;
 
     move-result-object p1
 
-    invoke-static {p1}, Lj$/wrappers/s;->k0(Lj$/util/stream/U;)Ljava/util/stream/DoubleStream;
+    invoke-static {p1}, Lj$/util/stream/H;->K(Lj$/util/stream/I;)Ljava/util/stream/DoubleStream;
 
     move-result-object p1
 
@@ -582,7 +572,7 @@
 
     if-gez v0, :cond_0
 
-    new-instance v0, Lj$/util/concurrent/ThreadLocalRandom$b;
+    new-instance v0, Lj$/util/concurrent/y;
 
     const-wide/16 v3, 0x0
 
@@ -594,15 +584,15 @@
 
     move-wide/from16 v9, p5
 
-    invoke-direct/range {v2 .. v10}, Lj$/util/concurrent/ThreadLocalRandom$b;-><init>(JJDD)V
+    invoke-direct/range {v2 .. v10}, Lj$/util/concurrent/y;-><init>(JJDD)V
 
     const/4 v1, 0x0
 
-    invoke-static {v0, v1}, Lj$/util/stream/p1;->r(Lj$/util/Spliterator$a;Z)Lj$/util/stream/U;
+    invoke-static {v0, v1}, Lj$/util/stream/D0;->r0(Lj$/util/x;Z)Lj$/util/stream/I;
 
     move-result-object v0
 
-    invoke-static {v0}, Lj$/wrappers/s;->k0(Lj$/util/stream/U;)Ljava/util/stream/DoubleStream;
+    invoke-static {v0}, Lj$/util/stream/H;->K(Lj$/util/stream/I;)Ljava/util/stream/DoubleStream;
 
     move-result-object v0
 
@@ -740,7 +730,7 @@
 .method public ints()Ljava/util/stream/IntStream;
     .locals 8
 
-    new-instance v7, Lj$/util/concurrent/ThreadLocalRandom$c;
+    new-instance v7, Lj$/util/concurrent/z;
 
     const-wide/16 v1, 0x0
 
@@ -752,15 +742,15 @@
 
     move-object v0, v7
 
-    invoke-direct/range {v0 .. v6}, Lj$/util/concurrent/ThreadLocalRandom$c;-><init>(JJII)V
+    invoke-direct/range {v0 .. v6}, Lj$/util/concurrent/z;-><init>(JJII)V
 
     const/4 v0, 0x0
 
-    invoke-static {v7, v0}, Lj$/util/stream/p1;->s(Lj$/util/Spliterator$b;Z)Lj$/util/stream/M0;
+    invoke-static {v7, v0}, Lj$/util/stream/D0;->D0(Lj$/util/z;Z)Lj$/util/stream/IntStream;
 
     move-result-object v0
 
-    invoke-static {v0}, Lj$/wrappers/t;->k0(Lj$/util/stream/M0;)Ljava/util/stream/IntStream;
+    invoke-static {v0}, Lj$/util/stream/l0;->K(Lj$/util/stream/IntStream;)Ljava/util/stream/IntStream;
 
     move-result-object v0
 
@@ -772,7 +762,7 @@
 
     if-ge p1, p2, :cond_0
 
-    new-instance v7, Lj$/util/concurrent/ThreadLocalRandom$c;
+    new-instance v7, Lj$/util/concurrent/z;
 
     const-wide/16 v1, 0x0
 
@@ -784,15 +774,15 @@
 
     move v6, p2
 
-    invoke-direct/range {v0 .. v6}, Lj$/util/concurrent/ThreadLocalRandom$c;-><init>(JJII)V
+    invoke-direct/range {v0 .. v6}, Lj$/util/concurrent/z;-><init>(JJII)V
 
     const/4 p1, 0x0
 
-    invoke-static {v7, p1}, Lj$/util/stream/p1;->s(Lj$/util/Spliterator$b;Z)Lj$/util/stream/M0;
+    invoke-static {v7, p1}, Lj$/util/stream/D0;->D0(Lj$/util/z;Z)Lj$/util/stream/IntStream;
 
     move-result-object p1
 
-    invoke-static {p1}, Lj$/wrappers/t;->k0(Lj$/util/stream/M0;)Ljava/util/stream/IntStream;
+    invoke-static {p1}, Lj$/util/stream/l0;->K(Lj$/util/stream/IntStream;)Ljava/util/stream/IntStream;
 
     move-result-object p1
 
@@ -817,7 +807,7 @@
 
     if-ltz v0, :cond_0
 
-    new-instance v0, Lj$/util/concurrent/ThreadLocalRandom$c;
+    new-instance v0, Lj$/util/concurrent/z;
 
     const-wide/16 v2, 0x0
 
@@ -829,15 +819,15 @@
 
     move-wide v4, p1
 
-    invoke-direct/range {v1 .. v7}, Lj$/util/concurrent/ThreadLocalRandom$c;-><init>(JJII)V
+    invoke-direct/range {v1 .. v7}, Lj$/util/concurrent/z;-><init>(JJII)V
 
     const/4 p1, 0x0
 
-    invoke-static {v0, p1}, Lj$/util/stream/p1;->s(Lj$/util/Spliterator$b;Z)Lj$/util/stream/M0;
+    invoke-static {v0, p1}, Lj$/util/stream/D0;->D0(Lj$/util/z;Z)Lj$/util/stream/IntStream;
 
     move-result-object p1
 
-    invoke-static {p1}, Lj$/wrappers/t;->k0(Lj$/util/stream/M0;)Ljava/util/stream/IntStream;
+    invoke-static {p1}, Lj$/util/stream/l0;->K(Lj$/util/stream/IntStream;)Ljava/util/stream/IntStream;
 
     move-result-object p1
 
@@ -864,7 +854,7 @@
 
     if-ge p3, p4, :cond_0
 
-    new-instance v0, Lj$/util/concurrent/ThreadLocalRandom$c;
+    new-instance v0, Lj$/util/concurrent/z;
 
     const-wide/16 v2, 0x0
 
@@ -876,15 +866,15 @@
 
     move v7, p4
 
-    invoke-direct/range {v1 .. v7}, Lj$/util/concurrent/ThreadLocalRandom$c;-><init>(JJII)V
+    invoke-direct/range {v1 .. v7}, Lj$/util/concurrent/z;-><init>(JJII)V
 
     const/4 p1, 0x0
 
-    invoke-static {v0, p1}, Lj$/util/stream/p1;->s(Lj$/util/Spliterator$b;Z)Lj$/util/stream/M0;
+    invoke-static {v0, p1}, Lj$/util/stream/D0;->D0(Lj$/util/z;Z)Lj$/util/stream/IntStream;
 
     move-result-object p1
 
-    invoke-static {p1}, Lj$/wrappers/t;->k0(Lj$/util/stream/M0;)Ljava/util/stream/IntStream;
+    invoke-static {p1}, Lj$/util/stream/l0;->K(Lj$/util/stream/IntStream;)Ljava/util/stream/IntStream;
 
     move-result-object p1
 
@@ -912,7 +902,7 @@
 .method public longs()Ljava/util/stream/LongStream;
     .locals 10
 
-    new-instance v9, Lj$/util/concurrent/ThreadLocalRandom$d;
+    new-instance v9, Lj$/util/concurrent/A;
 
     const-wide/16 v1, 0x0
 
@@ -924,15 +914,15 @@
 
     move-object v0, v9
 
-    invoke-direct/range {v0 .. v8}, Lj$/util/concurrent/ThreadLocalRandom$d;-><init>(JJJJ)V
+    invoke-direct/range {v0 .. v8}, Lj$/util/concurrent/A;-><init>(JJJJ)V
 
     const/4 v0, 0x0
 
-    invoke-static {v9, v0}, Lj$/util/stream/p1;->t(Lj$/util/Spliterator$c;Z)Lj$/util/stream/f1;
+    invoke-static {v9, v0}, Lj$/util/stream/D0;->F0(Lj$/util/B;Z)Lj$/util/stream/u0;
 
     move-result-object v0
 
-    invoke-static {v0}, Lj$/wrappers/u;->k0(Lj$/util/stream/f1;)Ljava/util/stream/LongStream;
+    invoke-static {v0}, Lj$/util/stream/t0;->K(Lj$/util/stream/u0;)Ljava/util/stream/LongStream;
 
     move-result-object v0
 
@@ -948,7 +938,7 @@
 
     if-ltz v0, :cond_0
 
-    new-instance v0, Lj$/util/concurrent/ThreadLocalRandom$d;
+    new-instance v0, Lj$/util/concurrent/A;
 
     const-wide/16 v2, 0x0
 
@@ -960,15 +950,15 @@
 
     move-wide v4, p1
 
-    invoke-direct/range {v1 .. v9}, Lj$/util/concurrent/ThreadLocalRandom$d;-><init>(JJJJ)V
+    invoke-direct/range {v1 .. v9}, Lj$/util/concurrent/A;-><init>(JJJJ)V
 
     const/4 p1, 0x0
 
-    invoke-static {v0, p1}, Lj$/util/stream/p1;->t(Lj$/util/Spliterator$c;Z)Lj$/util/stream/f1;
+    invoke-static {v0, p1}, Lj$/util/stream/D0;->F0(Lj$/util/B;Z)Lj$/util/stream/u0;
 
     move-result-object p1
 
-    invoke-static {p1}, Lj$/wrappers/u;->k0(Lj$/util/stream/f1;)Ljava/util/stream/LongStream;
+    invoke-static {p1}, Lj$/util/stream/t0;->K(Lj$/util/stream/u0;)Ljava/util/stream/LongStream;
 
     move-result-object p1
 
@@ -991,7 +981,7 @@
 
     if-gez v0, :cond_0
 
-    new-instance v0, Lj$/util/concurrent/ThreadLocalRandom$d;
+    new-instance v0, Lj$/util/concurrent/A;
 
     const-wide/16 v2, 0x0
 
@@ -1003,15 +993,15 @@
 
     move-wide v8, p3
 
-    invoke-direct/range {v1 .. v9}, Lj$/util/concurrent/ThreadLocalRandom$d;-><init>(JJJJ)V
+    invoke-direct/range {v1 .. v9}, Lj$/util/concurrent/A;-><init>(JJJJ)V
 
     const/4 p1, 0x0
 
-    invoke-static {v0, p1}, Lj$/util/stream/p1;->t(Lj$/util/Spliterator$c;Z)Lj$/util/stream/f1;
+    invoke-static {v0, p1}, Lj$/util/stream/D0;->F0(Lj$/util/B;Z)Lj$/util/stream/u0;
 
     move-result-object p1
 
-    invoke-static {p1}, Lj$/wrappers/u;->k0(Lj$/util/stream/f1;)Ljava/util/stream/LongStream;
+    invoke-static {p1}, Lj$/util/stream/t0;->K(Lj$/util/stream/u0;)Ljava/util/stream/LongStream;
 
     move-result-object p1
 
@@ -1040,7 +1030,7 @@
 
     if-gez v0, :cond_0
 
-    new-instance v0, Lj$/util/concurrent/ThreadLocalRandom$d;
+    new-instance v0, Lj$/util/concurrent/A;
 
     const-wide/16 v3, 0x0
 
@@ -1052,15 +1042,15 @@
 
     move-wide/from16 v9, p5
 
-    invoke-direct/range {v2 .. v10}, Lj$/util/concurrent/ThreadLocalRandom$d;-><init>(JJJJ)V
+    invoke-direct/range {v2 .. v10}, Lj$/util/concurrent/A;-><init>(JJJJ)V
 
     const/4 v1, 0x0
 
-    invoke-static {v0, v1}, Lj$/util/stream/p1;->t(Lj$/util/Spliterator$c;Z)Lj$/util/stream/f1;
+    invoke-static {v0, v1}, Lj$/util/stream/D0;->F0(Lj$/util/B;Z)Lj$/util/stream/u0;
 
     move-result-object v0
 
-    invoke-static {v0}, Lj$/wrappers/u;->k0(Lj$/util/stream/f1;)Ljava/util/stream/LongStream;
+    invoke-static {v0}, Lj$/util/stream/t0;->K(Lj$/util/stream/u0;)Ljava/util/stream/LongStream;
 
     move-result-object v0
 
@@ -1235,17 +1225,17 @@
 
     if-eqz v2, :cond_0
 
+    const-wide/high16 v2, -0x4000000000000000L    # -2.0
+
     invoke-static {v8, v9}, Ljava/lang/StrictMath;->log(D)D
 
-    move-result-wide v2
+    move-result-wide v4
 
-    const-wide/high16 v4, -0x4000000000000000L    # -2.0
+    mul-double/2addr v4, v2
 
-    mul-double/2addr v2, v4
+    div-double/2addr v4, v8
 
-    div-double/2addr v2, v8
-
-    invoke-static {v2, v3}, Ljava/lang/StrictMath;->sqrt(D)D
+    invoke-static {v4, v5}, Ljava/lang/StrictMath;->sqrt(D)D
 
     move-result-wide v2
 

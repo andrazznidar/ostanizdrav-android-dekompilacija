@@ -37,7 +37,7 @@
 
 .field public final lottieDrawable:Lcom/airbnb/lottie/LottieDrawable;
 
-.field public mask:Lorg/slf4j/event/EventRecodingLogger;
+.field public mask:Lcom/airbnb/lottie/animation/keyframe/MaskKeyframeAnimation;
 
 .field public final maskBoundsRect:Landroid/graphics/RectF;
 
@@ -182,7 +182,7 @@
 
     const-string v3, "#draw"
 
-    invoke-static {p1, v2, v3}, Landroidx/constraintlayout/core/widgets/Barrier$$ExternalSyntheticOutline0;->m(Ljava/lang/StringBuilder;Ljava/lang/String;Ljava/lang/String;)Ljava/lang/String;
+    invoke-static {p1, v2, v3}, Landroidx/activity/ComponentActivity$2$$ExternalSyntheticOutline0;->m(Ljava/lang/StringBuilder;Ljava/lang/String;Ljava/lang/String;)Ljava/lang/String;
 
     move-result-object p1
 
@@ -236,17 +236,15 @@
 
     if-nez p1, :cond_2
 
-    new-instance p1, Lorg/slf4j/event/EventRecodingLogger;
+    new-instance p1, Lcom/airbnb/lottie/animation/keyframe/MaskKeyframeAnimation;
 
     iget-object p2, p2, Lcom/airbnb/lottie/model/layer/Layer;->masks:Ljava/util/List;
 
-    invoke-direct {p1, p2}, Lorg/slf4j/event/EventRecodingLogger;-><init>(Ljava/util/List;)V
+    invoke-direct {p1, p2}, Lcom/airbnb/lottie/animation/keyframe/MaskKeyframeAnimation;-><init>(Ljava/util/List;)V
 
-    iput-object p1, p0, Lcom/airbnb/lottie/model/layer/BaseLayer;->mask:Lorg/slf4j/event/EventRecodingLogger;
+    iput-object p1, p0, Lcom/airbnb/lottie/model/layer/BaseLayer;->mask:Lcom/airbnb/lottie/animation/keyframe/MaskKeyframeAnimation;
 
-    iget-object p1, p1, Lorg/slf4j/event/EventRecodingLogger;->name:Ljava/lang/Object;
-
-    check-cast p1, Ljava/util/List;
+    iget-object p1, p1, Lcom/airbnb/lottie/animation/keyframe/MaskKeyframeAnimation;->maskAnimations:Ljava/util/List;
 
     invoke-interface {p1}, Ljava/util/List;->iterator()Ljava/util/Iterator;
 
@@ -272,11 +270,9 @@
     goto :goto_1
 
     :cond_1
-    iget-object p1, p0, Lcom/airbnb/lottie/model/layer/BaseLayer;->mask:Lorg/slf4j/event/EventRecodingLogger;
+    iget-object p1, p0, Lcom/airbnb/lottie/model/layer/BaseLayer;->mask:Lcom/airbnb/lottie/animation/keyframe/MaskKeyframeAnimation;
 
-    iget-object p1, p1, Lorg/slf4j/event/EventRecodingLogger;->logger:Ljava/lang/Object;
-
-    check-cast p1, Ljava/util/List;
+    iget-object p1, p1, Lcom/airbnb/lottie/animation/keyframe/MaskKeyframeAnimation;->opacityAnimations:Ljava/util/List;
 
     invoke-interface {p1}, Ljava/util/List;->iterator()Ljava/util/Iterator;
 
@@ -736,11 +732,9 @@
     goto/16 :goto_7
 
     :cond_7
-    iget-object v11, v0, Lcom/airbnb/lottie/model/layer/BaseLayer;->mask:Lorg/slf4j/event/EventRecodingLogger;
+    iget-object v11, v0, Lcom/airbnb/lottie/model/layer/BaseLayer;->mask:Lcom/airbnb/lottie/animation/keyframe/MaskKeyframeAnimation;
 
-    iget-object v11, v11, Lorg/slf4j/event/EventRecodingLogger;->eventQueue:Ljava/lang/Object;
-
-    check-cast v11, Ljava/util/List;
+    iget-object v11, v11, Lcom/airbnb/lottie/animation/keyframe/MaskKeyframeAnimation;->masks:Ljava/util/List;
 
     invoke-interface {v11}, Ljava/util/List;->size()I
 
@@ -751,11 +745,9 @@
     :goto_3
     if-ge v13, v11, :cond_b
 
-    iget-object v14, v0, Lcom/airbnb/lottie/model/layer/BaseLayer;->mask:Lorg/slf4j/event/EventRecodingLogger;
+    iget-object v14, v0, Lcom/airbnb/lottie/model/layer/BaseLayer;->mask:Lcom/airbnb/lottie/animation/keyframe/MaskKeyframeAnimation;
 
-    iget-object v14, v14, Lorg/slf4j/event/EventRecodingLogger;->eventQueue:Ljava/lang/Object;
-
-    check-cast v14, Ljava/util/List;
+    iget-object v14, v14, Lcom/airbnb/lottie/animation/keyframe/MaskKeyframeAnimation;->masks:Ljava/util/List;
 
     invoke-interface {v14, v13}, Ljava/util/List;->get(I)Ljava/lang/Object;
 
@@ -763,11 +755,9 @@
 
     check-cast v14, Lcom/airbnb/lottie/model/content/Mask;
 
-    iget-object v15, v0, Lcom/airbnb/lottie/model/layer/BaseLayer;->mask:Lorg/slf4j/event/EventRecodingLogger;
+    iget-object v15, v0, Lcom/airbnb/lottie/model/layer/BaseLayer;->mask:Lcom/airbnb/lottie/animation/keyframe/MaskKeyframeAnimation;
 
-    iget-object v15, v15, Lorg/slf4j/event/EventRecodingLogger;->name:Ljava/lang/Object;
-
-    check-cast v15, Ljava/util/List;
+    iget-object v15, v15, Lcom/airbnb/lottie/animation/keyframe/MaskKeyframeAnimation;->maskAnimations:Ljava/util/List;
 
     invoke-interface {v15, v13}, Ljava/util/List;->get(I)Ljava/lang/Object;
 
@@ -791,7 +781,7 @@
 
     iget v7, v14, Lcom/airbnb/lottie/model/content/Mask;->maskMode:I
 
-    invoke-static {v7}, Landroidx/constraintlayout/core/SolverVariable$Type$r8$EnumUnboxingUtility;->$enumboxing$ordinal(I)I
+    invoke-static {v7}, Landroidx/camera/camera2/internal/Camera2CameraImpl$InternalState$EnumUnboxingSharedUtility;->ordinal(I)I
 
     move-result v7
 
@@ -1013,11 +1003,9 @@
     const/4 v10, 0x0
 
     :goto_8
-    iget-object v11, v0, Lcom/airbnb/lottie/model/layer/BaseLayer;->mask:Lorg/slf4j/event/EventRecodingLogger;
+    iget-object v11, v0, Lcom/airbnb/lottie/model/layer/BaseLayer;->mask:Lcom/airbnb/lottie/animation/keyframe/MaskKeyframeAnimation;
 
-    iget-object v11, v11, Lorg/slf4j/event/EventRecodingLogger;->eventQueue:Ljava/lang/Object;
-
-    check-cast v11, Ljava/util/List;
+    iget-object v11, v11, Lcom/airbnb/lottie/animation/keyframe/MaskKeyframeAnimation;->masks:Ljava/util/List;
 
     invoke-interface {v11}, Ljava/util/List;->size()I
 
@@ -1025,11 +1013,9 @@
 
     if-ge v10, v11, :cond_1b
 
-    iget-object v11, v0, Lcom/airbnb/lottie/model/layer/BaseLayer;->mask:Lorg/slf4j/event/EventRecodingLogger;
+    iget-object v11, v0, Lcom/airbnb/lottie/model/layer/BaseLayer;->mask:Lcom/airbnb/lottie/animation/keyframe/MaskKeyframeAnimation;
 
-    iget-object v11, v11, Lorg/slf4j/event/EventRecodingLogger;->eventQueue:Ljava/lang/Object;
-
-    check-cast v11, Ljava/util/List;
+    iget-object v11, v11, Lcom/airbnb/lottie/animation/keyframe/MaskKeyframeAnimation;->masks:Ljava/util/List;
 
     invoke-interface {v11, v10}, Ljava/util/List;->get(I)Ljava/lang/Object;
 
@@ -1037,11 +1023,9 @@
 
     check-cast v11, Lcom/airbnb/lottie/model/content/Mask;
 
-    iget-object v12, v0, Lcom/airbnb/lottie/model/layer/BaseLayer;->mask:Lorg/slf4j/event/EventRecodingLogger;
+    iget-object v12, v0, Lcom/airbnb/lottie/model/layer/BaseLayer;->mask:Lcom/airbnb/lottie/animation/keyframe/MaskKeyframeAnimation;
 
-    iget-object v12, v12, Lorg/slf4j/event/EventRecodingLogger;->name:Ljava/lang/Object;
-
-    check-cast v12, Ljava/util/List;
+    iget-object v12, v12, Lcom/airbnb/lottie/animation/keyframe/MaskKeyframeAnimation;->maskAnimations:Ljava/util/List;
 
     invoke-interface {v12, v10}, Ljava/util/List;->get(I)Ljava/lang/Object;
 
@@ -1049,11 +1033,9 @@
 
     check-cast v12, Lcom/airbnb/lottie/animation/keyframe/BaseKeyframeAnimation;
 
-    iget-object v13, v0, Lcom/airbnb/lottie/model/layer/BaseLayer;->mask:Lorg/slf4j/event/EventRecodingLogger;
+    iget-object v13, v0, Lcom/airbnb/lottie/model/layer/BaseLayer;->mask:Lcom/airbnb/lottie/animation/keyframe/MaskKeyframeAnimation;
 
-    iget-object v13, v13, Lorg/slf4j/event/EventRecodingLogger;->logger:Ljava/lang/Object;
-
-    check-cast v13, Ljava/util/List;
+    iget-object v13, v13, Lcom/airbnb/lottie/animation/keyframe/MaskKeyframeAnimation;->opacityAnimations:Ljava/util/List;
 
     invoke-interface {v13, v10}, Ljava/util/List;->get(I)Ljava/lang/Object;
 
@@ -1063,7 +1045,7 @@
 
     iget v14, v11, Lcom/airbnb/lottie/model/content/Mask;->maskMode:I
 
-    invoke-static {v14}, Landroidx/constraintlayout/core/SolverVariable$Type$r8$EnumUnboxingUtility;->$enumboxing$ordinal(I)I
+    invoke-static {v14}, Landroidx/camera/camera2/internal/Camera2CameraImpl$InternalState$EnumUnboxingSharedUtility;->ordinal(I)I
 
     move-result v14
 
@@ -1084,11 +1066,9 @@
     goto/16 :goto_c
 
     :cond_f
-    iget-object v11, v0, Lcom/airbnb/lottie/model/layer/BaseLayer;->mask:Lorg/slf4j/event/EventRecodingLogger;
+    iget-object v11, v0, Lcom/airbnb/lottie/model/layer/BaseLayer;->mask:Lcom/airbnb/lottie/animation/keyframe/MaskKeyframeAnimation;
 
-    iget-object v11, v11, Lorg/slf4j/event/EventRecodingLogger;->name:Ljava/lang/Object;
-
-    check-cast v11, Ljava/util/List;
+    iget-object v11, v11, Lcom/airbnb/lottie/animation/keyframe/MaskKeyframeAnimation;->maskAnimations:Ljava/util/List;
 
     invoke-interface {v11}, Ljava/util/List;->isEmpty()Z
 
@@ -1102,11 +1082,9 @@
     const/4 v11, 0x0
 
     :goto_9
-    iget-object v12, v0, Lcom/airbnb/lottie/model/layer/BaseLayer;->mask:Lorg/slf4j/event/EventRecodingLogger;
+    iget-object v12, v0, Lcom/airbnb/lottie/model/layer/BaseLayer;->mask:Lcom/airbnb/lottie/animation/keyframe/MaskKeyframeAnimation;
 
-    iget-object v12, v12, Lorg/slf4j/event/EventRecodingLogger;->eventQueue:Ljava/lang/Object;
-
-    check-cast v12, Ljava/util/List;
+    iget-object v12, v12, Lcom/airbnb/lottie/animation/keyframe/MaskKeyframeAnimation;->masks:Ljava/util/List;
 
     invoke-interface {v12}, Ljava/util/List;->size()I
 
@@ -1114,11 +1092,9 @@
 
     if-ge v11, v12, :cond_12
 
-    iget-object v12, v0, Lcom/airbnb/lottie/model/layer/BaseLayer;->mask:Lorg/slf4j/event/EventRecodingLogger;
+    iget-object v12, v0, Lcom/airbnb/lottie/model/layer/BaseLayer;->mask:Lcom/airbnb/lottie/animation/keyframe/MaskKeyframeAnimation;
 
-    iget-object v12, v12, Lorg/slf4j/event/EventRecodingLogger;->eventQueue:Ljava/lang/Object;
-
-    check-cast v12, Ljava/util/List;
+    iget-object v12, v12, Lcom/airbnb/lottie/animation/keyframe/MaskKeyframeAnimation;->masks:Ljava/util/List;
 
     invoke-interface {v12, v11}, Ljava/util/List;->get(I)Ljava/lang/Object;
 
@@ -1710,13 +1686,11 @@
 .method public hasMasksOnThisLayer()Z
     .locals 1
 
-    iget-object v0, p0, Lcom/airbnb/lottie/model/layer/BaseLayer;->mask:Lorg/slf4j/event/EventRecodingLogger;
+    iget-object v0, p0, Lcom/airbnb/lottie/model/layer/BaseLayer;->mask:Lcom/airbnb/lottie/animation/keyframe/MaskKeyframeAnimation;
 
     if-eqz v0, :cond_0
 
-    iget-object v0, v0, Lorg/slf4j/event/EventRecodingLogger;->name:Ljava/lang/Object;
-
-    check-cast v0, Ljava/util/List;
+    iget-object v0, v0, Lcom/airbnb/lottie/animation/keyframe/MaskKeyframeAnimation;->maskAnimations:Ljava/util/List;
 
     invoke-interface {v0}, Ljava/util/List;->isEmpty()Z
 
@@ -2080,7 +2054,7 @@
     invoke-virtual {v0, p1}, Lcom/airbnb/lottie/animation/keyframe/BaseKeyframeAnimation;->setProgress(F)V
 
     :cond_8
-    iget-object v0, p0, Lcom/airbnb/lottie/model/layer/BaseLayer;->mask:Lorg/slf4j/event/EventRecodingLogger;
+    iget-object v0, p0, Lcom/airbnb/lottie/model/layer/BaseLayer;->mask:Lcom/airbnb/lottie/animation/keyframe/MaskKeyframeAnimation;
 
     const/4 v1, 0x0
 
@@ -2089,11 +2063,9 @@
     move v0, v1
 
     :goto_0
-    iget-object v2, p0, Lcom/airbnb/lottie/model/layer/BaseLayer;->mask:Lorg/slf4j/event/EventRecodingLogger;
+    iget-object v2, p0, Lcom/airbnb/lottie/model/layer/BaseLayer;->mask:Lcom/airbnb/lottie/animation/keyframe/MaskKeyframeAnimation;
 
-    iget-object v2, v2, Lorg/slf4j/event/EventRecodingLogger;->name:Ljava/lang/Object;
-
-    check-cast v2, Ljava/util/List;
+    iget-object v2, v2, Lcom/airbnb/lottie/animation/keyframe/MaskKeyframeAnimation;->maskAnimations:Ljava/util/List;
 
     invoke-interface {v2}, Ljava/util/List;->size()I
 
@@ -2101,11 +2073,9 @@
 
     if-ge v0, v2, :cond_9
 
-    iget-object v2, p0, Lcom/airbnb/lottie/model/layer/BaseLayer;->mask:Lorg/slf4j/event/EventRecodingLogger;
+    iget-object v2, p0, Lcom/airbnb/lottie/model/layer/BaseLayer;->mask:Lcom/airbnb/lottie/animation/keyframe/MaskKeyframeAnimation;
 
-    iget-object v2, v2, Lorg/slf4j/event/EventRecodingLogger;->name:Ljava/lang/Object;
-
-    check-cast v2, Ljava/util/List;
+    iget-object v2, v2, Lcom/airbnb/lottie/animation/keyframe/MaskKeyframeAnimation;->maskAnimations:Ljava/util/List;
 
     invoke-interface {v2, v0}, Ljava/util/List;->get(I)Ljava/lang/Object;
 

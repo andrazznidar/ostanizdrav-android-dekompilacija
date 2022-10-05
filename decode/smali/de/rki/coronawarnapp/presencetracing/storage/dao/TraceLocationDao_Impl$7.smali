@@ -172,9 +172,9 @@
 
     iget-object v15, v1, Lde/rki/coronawarnapp/presencetracing/storage/dao/TraceLocationDao_Impl$7;->this$0:Lde/rki/coronawarnapp/presencetracing/storage/dao/TraceLocationDao_Impl;
 
-    iget-object v15, v15, Lde/rki/coronawarnapp/presencetracing/storage/dao/TraceLocationDao_Impl;->__traceLocationConverters:Lde/rki/coronawarnapp/contactdiary/storage/ContactDiaryStorageModule;
+    iget-object v15, v15, Lde/rki/coronawarnapp/presencetracing/storage/dao/TraceLocationDao_Impl;->__traceLocationConverters:Lcom/google/android/play/core/assetpacks/zzr;
 
-    invoke-virtual {v15, v14}, Lde/rki/coronawarnapp/contactdiary/storage/ContactDiaryStorageModule;->toTraceLocationType(I)Lde/rki/coronawarnapp/server/protocols/internal/pt/TraceLocationOuterClass$TraceLocationType;
+    invoke-virtual {v15, v14}, Lcom/google/android/play/core/assetpacks/zzr;->toTraceLocationType(I)Lde/rki/coronawarnapp/server/protocols/internal/pt/TraceLocationOuterClass$TraceLocationType;
 
     move-result-object v19
 

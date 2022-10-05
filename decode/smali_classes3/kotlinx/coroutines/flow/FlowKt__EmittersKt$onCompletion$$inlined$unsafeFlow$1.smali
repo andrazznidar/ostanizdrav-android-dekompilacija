@@ -189,9 +189,9 @@
     move-object v2, p0
 
     :goto_1
-    iget-object p2, v0, Lkotlin/coroutines/jvm/internal/ContinuationImpl;->_context:Lkotlin/coroutines/CoroutineContext;
+    invoke-interface {v0}, Lkotlin/coroutines/Continuation;->getContext()Lkotlin/coroutines/CoroutineContext;
 
-    invoke-static {p2}, Lkotlin/jvm/internal/Intrinsics;->checkNotNull(Ljava/lang/Object;)V
+    move-result-object p2
 
     new-instance v4, Lkotlinx/coroutines/flow/internal/SafeCollector;
 

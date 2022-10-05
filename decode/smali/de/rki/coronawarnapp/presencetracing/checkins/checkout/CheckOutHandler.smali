@@ -135,7 +135,7 @@
 
     const-string v6, ", checkOutAt=%s)"
 
-    invoke-static {v2, p1, p2, v6}, Landroidx/work/impl/utils/futures/AbstractFuture$$ExternalSyntheticOutline0;->m(Ljava/lang/String;JLjava/lang/String;)Ljava/lang/String;
+    invoke-static {v2, p1, p2, v6}, Landroidx/concurrent/futures/AbstractResolvableFuture$$ExternalSyntheticOutline0;->m(Ljava/lang/String;JLjava/lang/String;)Ljava/lang/String;
 
     move-result-object v2
 

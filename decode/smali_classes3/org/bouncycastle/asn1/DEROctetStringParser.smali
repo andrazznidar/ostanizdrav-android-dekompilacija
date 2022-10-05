@@ -6,7 +6,7 @@
 
 
 # instance fields
-.field public stream:Lorg/bouncycastle/asn1/DefiniteLengthInputStream;
+.field private stream:Lorg/bouncycastle/asn1/DefiniteLengthInputStream;
 
 
 # direct methods
@@ -52,18 +52,12 @@
 .end method
 
 .method public toASN1Primitive()Lorg/bouncycastle/asn1/ASN1Primitive;
-    .locals 4
+    .locals 3
 
     :try_start_0
-    new-instance v0, Lorg/bouncycastle/asn1/DEROctetString;
+    invoke-virtual {p0}, Lorg/bouncycastle/asn1/DEROctetStringParser;->getLoadedObject()Lorg/bouncycastle/asn1/ASN1Primitive;
 
-    iget-object v1, p0, Lorg/bouncycastle/asn1/DEROctetStringParser;->stream:Lorg/bouncycastle/asn1/DefiniteLengthInputStream;
-
-    invoke-virtual {v1}, Lorg/bouncycastle/asn1/DefiniteLengthInputStream;->toByteArray()[B
-
-    move-result-object v1
-
-    invoke-direct {v0, v1}, Lorg/bouncycastle/asn1/DEROctetString;-><init>([B)V
+    move-result-object v0
     :try_end_0
     .catch Ljava/io/IOException; {:try_start_0 .. :try_end_0} :catch_0
 
@@ -80,13 +74,7 @@
 
     move-result-object v2
 
-    invoke-virtual {v0}, Ljava/io/IOException;->getMessage()Ljava/lang/String;
-
-    move-result-object v3
-
-    invoke-virtual {v2, v3}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
-
-    invoke-virtual {v2}, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
+    invoke-static {v0, v2}, Lorg/bouncycastle/asn1/ASN1ApplicationSpecific$$ExternalSyntheticOutline0;->m(Ljava/io/IOException;Ljava/lang/StringBuilder;)Ljava/lang/String;
 
     move-result-object v2
 

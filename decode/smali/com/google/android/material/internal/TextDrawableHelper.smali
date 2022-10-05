@@ -22,7 +22,7 @@
     .end annotation
 .end field
 
-.field public final fontCallback:Lcom/google/android/material/resources/TextAppearanceFontCallback;
+.field public final fontCallback:Lorg/joda/time/Chronology;
 
 .field public textAppearance:Lcom/google/android/material/resources/TextAppearance;
 
@@ -51,7 +51,7 @@
 
     invoke-direct {v0, p0}, Lcom/google/android/material/internal/TextDrawableHelper$1;-><init>(Lcom/google/android/material/internal/TextDrawableHelper;)V
 
-    iput-object v0, p0, Lcom/google/android/material/internal/TextDrawableHelper;->fontCallback:Lcom/google/android/material/resources/TextAppearanceFontCallback;
+    iput-object v0, p0, Lcom/google/android/material/internal/TextDrawableHelper;->fontCallback:Lorg/joda/time/Chronology;
 
     iput-boolean v1, p0, Lcom/google/android/material/internal/TextDrawableHelper;->textWidthDirty:Z
 
@@ -126,9 +126,9 @@
 
     iget-object v0, p0, Lcom/google/android/material/internal/TextDrawableHelper;->textPaint:Landroid/text/TextPaint;
 
-    iget-object v1, p0, Lcom/google/android/material/internal/TextDrawableHelper;->fontCallback:Lcom/google/android/material/resources/TextAppearanceFontCallback;
+    iget-object v1, p0, Lcom/google/android/material/internal/TextDrawableHelper;->fontCallback:Lorg/joda/time/Chronology;
 
-    invoke-virtual {p1, p2, v0, v1}, Lcom/google/android/material/resources/TextAppearance;->updateMeasureState(Landroid/content/Context;Landroid/text/TextPaint;Lcom/google/android/material/resources/TextAppearanceFontCallback;)V
+    invoke-virtual {p1, p2, v0, v1}, Lcom/google/android/material/resources/TextAppearance;->updateMeasureState(Landroid/content/Context;Landroid/text/TextPaint;Lorg/joda/time/Chronology;)V
 
     iget-object v0, p0, Lcom/google/android/material/internal/TextDrawableHelper;->delegate:Ljava/lang/ref/WeakReference;
 
@@ -151,9 +151,9 @@
     :cond_0
     iget-object v0, p0, Lcom/google/android/material/internal/TextDrawableHelper;->textPaint:Landroid/text/TextPaint;
 
-    iget-object v1, p0, Lcom/google/android/material/internal/TextDrawableHelper;->fontCallback:Lcom/google/android/material/resources/TextAppearanceFontCallback;
+    iget-object v1, p0, Lcom/google/android/material/internal/TextDrawableHelper;->fontCallback:Lorg/joda/time/Chronology;
 
-    invoke-virtual {p1, p2, v0, v1}, Lcom/google/android/material/resources/TextAppearance;->updateDrawState(Landroid/content/Context;Landroid/text/TextPaint;Lcom/google/android/material/resources/TextAppearanceFontCallback;)V
+    invoke-virtual {p1, p2, v0, v1}, Lcom/google/android/material/resources/TextAppearance;->updateDrawState(Landroid/content/Context;Landroid/text/TextPaint;Lorg/joda/time/Chronology;)V
 
     const/4 p1, 0x1
 

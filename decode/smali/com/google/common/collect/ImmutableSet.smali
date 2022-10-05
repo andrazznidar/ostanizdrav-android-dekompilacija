@@ -134,7 +134,7 @@
 .method public hashCode()I
     .locals 1
 
-    invoke-static {p0}, Landroidx/lifecycle/LifecycleKt;->hashCodeImpl(Ljava/util/Set;)I
+    invoke-static {p0}, Lcom/google/common/collect/Sets;->hashCodeImpl(Ljava/util/Set;)I
 
     move-result v0
 

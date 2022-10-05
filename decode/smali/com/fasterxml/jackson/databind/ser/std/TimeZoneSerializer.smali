@@ -6,20 +6,20 @@
 # annotations
 .annotation system Ldalvik/annotation/Signature;
     value = {
-        "Lcom/fasterxml/jackson/databind/ser/std/StdScalarSerializer<",
-        "Ljava/util/TimeZone;",
-        ">;"
+        "Lcom/fasterxml/jackson/databind/ser/std/StdScalarSerializer;"
     }
 .end annotation
 
 
 # direct methods
 .method public constructor <init>()V
-    .locals 1
+    .locals 2
 
     const-class v0, Ljava/util/TimeZone;
 
-    invoke-direct {p0, v0}, Lcom/fasterxml/jackson/databind/ser/std/StdScalarSerializer;-><init>(Ljava/lang/Class;)V
+    const/4 v1, 0x0
+
+    invoke-direct {p0, v0, v1}, Lcom/fasterxml/jackson/databind/ser/std/StdScalarSerializer;-><init>(Ljava/lang/Class;I)V
 
     return-void
 .end method

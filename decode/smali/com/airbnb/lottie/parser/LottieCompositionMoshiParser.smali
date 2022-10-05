@@ -175,7 +175,7 @@
 
     move-result v3
 
-    const/16 v19, 0x0
+    const/16 v18, 0x0
 
     packed-switch v3, :pswitch_data_0
 
@@ -183,17 +183,19 @@
 
     move-object/from16 v23, v9
 
-    move-object v8, v10
+    move/from16 v22, v13
 
-    move/from16 v22, v11
+    move/from16 v20, v14
 
-    move/from16 v20, v15
+    move/from16 v17, v15
+
+    const/16 v9, 0xa
 
     invoke-virtual/range {p0 .. p0}, Lcom/airbnb/lottie/parser/moshi/JsonReader;->skipName()V
 
     invoke-virtual/range {p0 .. p0}, Lcom/airbnb/lottie/parser/moshi/JsonReader;->skipValue()V
 
-    goto/16 :goto_1c
+    goto/16 :goto_18
 
     :pswitch_0
     invoke-virtual/range {p0 .. p0}, Lcom/airbnb/lottie/parser/moshi/JsonReader;->beginArray()V
@@ -207,18 +209,18 @@
 
     invoke-virtual/range {p0 .. p0}, Lcom/airbnb/lottie/parser/moshi/JsonReader;->beginObject()V
 
-    move-object/from16 v3, v19
+    move-object/from16 v21, v18
+
+    const/4 v3, 0x0
 
     const/16 v20, 0x0
-
-    const/16 v21, 0x0
 
     :goto_2
     invoke-virtual/range {p0 .. p0}, Lcom/airbnb/lottie/parser/moshi/JsonReader;->hasNext()Z
 
-    move-result v18
+    move-result v19
 
-    if-eqz v18, :cond_3
+    if-eqz v19, :cond_3
 
     sget-object v12, Lcom/airbnb/lottie/parser/LottieCompositionMoshiParser;->MARKER_NAMES:Lcom/airbnb/lottie/parser/moshi/JsonReader$Options;
 
@@ -228,15 +230,15 @@
 
     if-eqz v12, :cond_2
 
-    move/from16 v22, v11
+    move/from16 v22, v13
 
-    const/4 v11, 0x1
+    const/4 v13, 0x1
 
-    if-eq v12, v11, :cond_1
+    if-eq v12, v13, :cond_1
 
-    const/4 v11, 0x2
+    const/4 v13, 0x2
 
-    if-eq v12, v11, :cond_0
+    if-eq v12, v13, :cond_0
 
     invoke-virtual/range {p0 .. p0}, Lcom/airbnb/lottie/parser/moshi/JsonReader;->skipName()V
 
@@ -247,73 +249,71 @@
     :cond_0
     invoke-virtual/range {p0 .. p0}, Lcom/airbnb/lottie/parser/moshi/JsonReader;->nextDouble()D
 
-    move-result-wide v11
+    move-result-wide v12
 
-    double-to-float v11, v11
+    double-to-float v12, v12
 
-    move/from16 v21, v11
+    move/from16 v20, v12
 
     goto :goto_3
 
     :cond_1
     invoke-virtual/range {p0 .. p0}, Lcom/airbnb/lottie/parser/moshi/JsonReader;->nextDouble()D
 
-    move-result-wide v11
+    move-result-wide v12
 
-    double-to-float v11, v11
-
-    move/from16 v20, v11
+    double-to-float v3, v12
 
     :goto_3
-    move/from16 v11, v22
+    move/from16 v13, v22
 
     goto :goto_2
 
     :cond_2
-    move/from16 v22, v11
+    move/from16 v22, v13
 
     invoke-virtual/range {p0 .. p0}, Lcom/airbnb/lottie/parser/moshi/JsonReader;->nextString()Ljava/lang/String;
 
-    move-result-object v3
+    move-result-object v21
 
     goto :goto_2
 
     :cond_3
-    move/from16 v22, v11
+    move/from16 v22, v13
 
     invoke-virtual/range {p0 .. p0}, Lcom/airbnb/lottie/parser/moshi/JsonReader;->endObject()V
 
-    new-instance v11, Lcom/airbnb/lottie/model/Marker;
+    new-instance v12, Lcom/airbnb/lottie/model/Marker;
 
-    move/from16 v12, v20
+    move/from16 v13, v20
 
-    move/from16 v20, v15
+    move/from16 v20, v14
 
-    move/from16 v15, v21
+    move-object/from16 v14, v21
 
-    invoke-direct {v11, v3, v12, v15}, Lcom/airbnb/lottie/model/Marker;-><init>(Ljava/lang/String;FF)V
+    invoke-direct {v12, v14, v3, v13}, Lcom/airbnb/lottie/model/Marker;-><init>(Ljava/lang/String;FF)V
 
-    invoke-virtual {v8, v11}, Ljava/util/ArrayList;->add(Ljava/lang/Object;)Z
+    invoke-virtual {v8, v12}, Ljava/util/ArrayList;->add(Ljava/lang/Object;)Z
 
-    move/from16 v15, v20
+    move/from16 v14, v20
 
-    move/from16 v11, v22
+    move/from16 v13, v22
 
     goto :goto_1
 
     :cond_4
-    move/from16 v22, v11
+    move/from16 v22, v13
 
-    move/from16 v20, v15
+    move/from16 v20, v14
 
     invoke-virtual/range {p0 .. p0}, Lcom/airbnb/lottie/parser/moshi/JsonReader;->endArray()V
 
     goto/16 :goto_8
 
     :pswitch_1
-    move/from16 v22, v11
+    move/from16 v22, v13
 
-    move/from16 v20, v15
+    move/from16 v20, v14
 
     invoke-virtual/range {p0 .. p0}, Lcom/airbnb/lottie/parser/moshi/JsonReader;->beginArray()V
 
@@ -332,13 +332,13 @@
 
     invoke-virtual/range {p0 .. p0}, Lcom/airbnb/lottie/parser/moshi/JsonReader;->beginObject()V
 
-    const-wide/16 v11, 0x0
+    const-wide/16 v12, 0x0
 
-    move-wide/from16 v26, v11
+    move-wide/from16 v26, v12
 
     move-wide/from16 v28, v26
 
-    move-object/from16 v30, v19
+    move-object/from16 v30, v18
 
     move-object/from16 v31, v30
 
@@ -347,37 +347,37 @@
     :goto_5
     invoke-virtual/range {p0 .. p0}, Lcom/airbnb/lottie/parser/moshi/JsonReader;->hasNext()Z
 
-    move-result v11
+    move-result v12
 
-    if-eqz v11, :cond_e
+    if-eqz v12, :cond_e
 
-    sget-object v11, Lcom/airbnb/lottie/parser/FontCharacterParser;->NAMES:Lcom/airbnb/lottie/parser/moshi/JsonReader$Options;
+    sget-object v12, Lcom/airbnb/lottie/parser/FontCharacterParser;->NAMES:Lcom/airbnb/lottie/parser/moshi/JsonReader$Options;
 
-    invoke-virtual {v0, v11}, Lcom/airbnb/lottie/parser/moshi/JsonReader;->selectName(Lcom/airbnb/lottie/parser/moshi/JsonReader$Options;)I
+    invoke-virtual {v0, v12}, Lcom/airbnb/lottie/parser/moshi/JsonReader;->selectName(Lcom/airbnb/lottie/parser/moshi/JsonReader$Options;)I
 
-    move-result v11
+    move-result v12
 
-    if-eqz v11, :cond_d
+    if-eqz v12, :cond_d
 
-    const/4 v12, 0x1
+    const/4 v13, 0x1
 
-    if-eq v11, v12, :cond_c
+    if-eq v12, v13, :cond_c
 
-    const/4 v12, 0x2
+    const/4 v13, 0x2
 
-    if-eq v11, v12, :cond_b
+    if-eq v12, v13, :cond_b
 
-    const/4 v12, 0x3
+    const/4 v13, 0x3
 
-    if-eq v11, v12, :cond_a
+    if-eq v12, v13, :cond_a
 
-    const/4 v12, 0x4
+    const/4 v13, 0x4
 
-    if-eq v11, v12, :cond_9
+    if-eq v12, v13, :cond_9
 
-    const/4 v12, 0x5
+    const/4 v13, 0x5
 
-    if-eq v11, v12, :cond_5
+    if-eq v12, v13, :cond_5
 
     invoke-virtual/range {p0 .. p0}, Lcom/airbnb/lottie/parser/moshi/JsonReader;->skipName()V
 
@@ -391,17 +391,17 @@
     :goto_6
     invoke-virtual/range {p0 .. p0}, Lcom/airbnb/lottie/parser/moshi/JsonReader;->hasNext()Z
 
-    move-result v11
+    move-result v12
 
-    if-eqz v11, :cond_8
+    if-eqz v12, :cond_8
 
-    sget-object v11, Lcom/airbnb/lottie/parser/FontCharacterParser;->DATA_NAMES:Lcom/airbnb/lottie/parser/moshi/JsonReader$Options;
+    sget-object v12, Lcom/airbnb/lottie/parser/FontCharacterParser;->DATA_NAMES:Lcom/airbnb/lottie/parser/moshi/JsonReader$Options;
 
-    invoke-virtual {v0, v11}, Lcom/airbnb/lottie/parser/moshi/JsonReader;->selectName(Lcom/airbnb/lottie/parser/moshi/JsonReader$Options;)I
+    invoke-virtual {v0, v12}, Lcom/airbnb/lottie/parser/moshi/JsonReader;->selectName(Lcom/airbnb/lottie/parser/moshi/JsonReader$Options;)I
 
-    move-result v11
+    move-result v12
 
-    if-eqz v11, :cond_6
+    if-eqz v12, :cond_6
 
     invoke-virtual/range {p0 .. p0}, Lcom/airbnb/lottie/parser/moshi/JsonReader;->skipName()V
 
@@ -415,17 +415,17 @@
     :goto_7
     invoke-virtual/range {p0 .. p0}, Lcom/airbnb/lottie/parser/moshi/JsonReader;->hasNext()Z
 
-    move-result v11
+    move-result v12
 
-    if-eqz v11, :cond_7
+    if-eqz v12, :cond_7
 
     invoke-static {v0, v10}, Lcom/airbnb/lottie/parser/ContentModelParser;->parse(Lcom/airbnb/lottie/parser/moshi/JsonReader;Lcom/airbnb/lottie/LottieComposition;)Lcom/airbnb/lottie/model/content/ContentModel;
 
-    move-result-object v11
+    move-result-object v12
 
-    check-cast v11, Lcom/airbnb/lottie/model/content/ShapeGroup;
+    check-cast v12, Lcom/airbnb/lottie/model/content/ShapeGroup;
 
-    invoke-virtual {v3, v11}, Ljava/util/ArrayList;->add(Ljava/lang/Object;)Z
+    invoke-virtual {v3, v12}, Ljava/util/ArrayList;->add(Ljava/lang/Object;)Z
 
     goto :goto_7
 
@@ -470,11 +470,11 @@
     :cond_d
     invoke-virtual/range {p0 .. p0}, Lcom/airbnb/lottie/parser/moshi/JsonReader;->nextString()Ljava/lang/String;
 
-    move-result-object v11
+    move-result-object v12
 
-    const/4 v12, 0x0
+    const/4 v13, 0x0
 
-    invoke-virtual {v11, v12}, Ljava/lang/String;->charAt(I)C
+    invoke-virtual {v12, v13}, Ljava/lang/String;->charAt(I)C
 
     move-result v25
 
@@ -483,19 +483,19 @@
     :cond_e
     invoke-virtual/range {p0 .. p0}, Lcom/airbnb/lottie/parser/moshi/JsonReader;->endObject()V
 
-    new-instance v11, Lcom/airbnb/lottie/model/FontCharacter;
+    new-instance v12, Lcom/airbnb/lottie/model/FontCharacter;
 
-    move-object/from16 v23, v11
+    move-object/from16 v23, v12
 
     move-object/from16 v24, v3
 
     invoke-direct/range {v23 .. v31}, Lcom/airbnb/lottie/model/FontCharacter;-><init>(Ljava/util/List;CDDLjava/lang/String;Ljava/lang/String;)V
 
-    invoke-virtual {v11}, Lcom/airbnb/lottie/model/FontCharacter;->hashCode()I
+    invoke-virtual {v12}, Lcom/airbnb/lottie/model/FontCharacter;->hashCode()I
 
     move-result v3
 
-    invoke-virtual {v9, v3, v11}, Landroidx/collection/SparseArrayCompat;->put(ILjava/lang/Object;)V
+    invoke-virtual {v9, v3, v12}, Landroidx/collection/SparseArrayCompat;->put(ILjava/lang/Object;)V
 
     goto/16 :goto_4
 
@@ -510,9 +510,9 @@
     goto/16 :goto_d
 
     :pswitch_2
-    move/from16 v22, v11
+    move/from16 v22, v13
 
-    move/from16 v20, v15
+    move/from16 v20, v14
 
     invoke-virtual/range {p0 .. p0}, Lcom/airbnb/lottie/parser/moshi/JsonReader;->beginObject()V
 
@@ -551,20 +551,20 @@
 
     invoke-virtual/range {p0 .. p0}, Lcom/airbnb/lottie/parser/moshi/JsonReader;->beginObject()V
 
-    move-object/from16 v3, v19
+    move-object/from16 v3, v18
 
-    move-object v11, v3
+    move-object v12, v3
 
-    move-object v12, v11
+    move-object v13, v12
 
-    const/4 v15, 0x0
+    const/4 v14, 0x0
 
     :goto_b
     invoke-virtual/range {p0 .. p0}, Lcom/airbnb/lottie/parser/moshi/JsonReader;->hasNext()Z
 
-    move-result v18
+    move-result v19
 
-    if-eqz v18, :cond_15
+    if-eqz v19, :cond_15
 
     move-object/from16 v21, v8
 
@@ -601,21 +601,27 @@
 
     move-result-wide v8
 
-    double-to-float v15, v8
+    double-to-float v8, v8
+
+    move v14, v8
 
     goto :goto_c
 
     :cond_12
     invoke-virtual/range {p0 .. p0}, Lcom/airbnb/lottie/parser/moshi/JsonReader;->nextString()Ljava/lang/String;
 
-    move-result-object v12
+    move-result-object v8
+
+    move-object v13, v8
 
     goto :goto_c
 
     :cond_13
     invoke-virtual/range {p0 .. p0}, Lcom/airbnb/lottie/parser/moshi/JsonReader;->nextString()Ljava/lang/String;
 
-    move-result-object v11
+    move-result-object v8
+
+    move-object v12, v8
 
     :goto_c
     move-object/from16 v8, v21
@@ -644,9 +650,9 @@
 
     new-instance v8, Lcom/airbnb/lottie/model/Font;
 
-    invoke-direct {v8, v3, v11, v12, v15}, Lcom/airbnb/lottie/model/Font;-><init>(Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;F)V
+    invoke-direct {v8, v3, v12, v13, v14}, Lcom/airbnb/lottie/model/Font;-><init>(Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;F)V
 
-    invoke-virtual {v7, v11, v8}, Ljava/util/HashMap;->put(Ljava/lang/Object;Ljava/lang/Object;)Ljava/lang/Object;
+    invoke-virtual {v7, v12, v8}, Ljava/util/HashMap;->put(Ljava/lang/Object;Ljava/lang/Object;)Ljava/lang/Object;
 
     move-object/from16 v8, v21
 
@@ -669,18 +675,20 @@
     invoke-virtual/range {p0 .. p0}, Lcom/airbnb/lottie/parser/moshi/JsonReader;->endObject()V
 
     :goto_d
-    move-object v8, v10
+    move/from16 v17, v15
 
-    goto/16 :goto_1c
+    const/16 v9, 0xa
+
+    goto/16 :goto_18
 
     :pswitch_3
     move-object/from16 v21, v8
 
     move-object/from16 v23, v9
 
-    move/from16 v22, v11
+    move/from16 v22, v13
 
-    move/from16 v20, v15
+    move/from16 v20, v14
 
     invoke-virtual/range {p0 .. p0}, Lcom/airbnb/lottie/parser/moshi/JsonReader;->beginArray()V
 
@@ -703,9 +711,9 @@
 
     invoke-virtual/range {p0 .. p0}, Lcom/airbnb/lottie/parser/moshi/JsonReader;->beginObject()V
 
-    move-object/from16 v11, v19
+    move-object/from16 v12, v18
 
-    move-object/from16 v28, v11
+    move-object/from16 v28, v12
 
     move-object/from16 v29, v28
 
@@ -716,142 +724,136 @@
     :goto_f
     invoke-virtual/range {p0 .. p0}, Lcom/airbnb/lottie/parser/moshi/JsonReader;->hasNext()Z
 
-    move-result v12
+    move-result v13
 
-    if-eqz v12, :cond_1f
+    if-eqz v13, :cond_1f
 
-    sget-object v12, Lcom/airbnb/lottie/parser/LottieCompositionMoshiParser;->ASSETS_NAMES:Lcom/airbnb/lottie/parser/moshi/JsonReader$Options;
+    sget-object v13, Lcom/airbnb/lottie/parser/LottieCompositionMoshiParser;->ASSETS_NAMES:Lcom/airbnb/lottie/parser/moshi/JsonReader$Options;
 
-    invoke-virtual {v0, v12}, Lcom/airbnb/lottie/parser/moshi/JsonReader;->selectName(Lcom/airbnb/lottie/parser/moshi/JsonReader$Options;)I
+    invoke-virtual {v0, v13}, Lcom/airbnb/lottie/parser/moshi/JsonReader;->selectName(Lcom/airbnb/lottie/parser/moshi/JsonReader$Options;)I
 
-    move-result v12
+    move-result v13
 
-    if-eqz v12, :cond_1e
+    if-eqz v13, :cond_1e
 
-    const/4 v15, 0x1
+    const/4 v14, 0x1
 
-    if-eq v12, v15, :cond_1c
+    if-eq v13, v14, :cond_1c
 
-    const/4 v15, 0x2
+    const/4 v14, 0x2
 
-    if-eq v12, v15, :cond_1b
+    if-eq v13, v14, :cond_1b
 
-    const/4 v15, 0x3
+    const/4 v14, 0x3
 
-    if-eq v12, v15, :cond_1a
+    if-eq v13, v14, :cond_1a
 
-    const/4 v9, 0x4
+    const/4 v14, 0x4
 
-    if-eq v12, v9, :cond_19
+    if-eq v13, v14, :cond_19
 
-    const/4 v9, 0x5
+    const/4 v14, 0x5
 
-    if-eq v12, v9, :cond_18
+    if-eq v13, v14, :cond_18
 
     invoke-virtual/range {p0 .. p0}, Lcom/airbnb/lottie/parser/moshi/JsonReader;->skipName()V
 
     invoke-virtual/range {p0 .. p0}, Lcom/airbnb/lottie/parser/moshi/JsonReader;->skipValue()V
 
-    move-object/from16 v18, v10
-
-    goto :goto_11
+    goto :goto_10
 
     :cond_18
     invoke-virtual/range {p0 .. p0}, Lcom/airbnb/lottie/parser/moshi/JsonReader;->nextString()Ljava/lang/String;
 
     move-result-object v29
 
-    goto :goto_12
+    goto :goto_10
 
     :cond_19
-    const/4 v9, 0x5
+    const/4 v14, 0x5
 
     invoke-virtual/range {p0 .. p0}, Lcom/airbnb/lottie/parser/moshi/JsonReader;->nextString()Ljava/lang/String;
 
     move-result-object v28
 
-    goto :goto_12
+    goto :goto_10
 
     :cond_1a
-    const/4 v9, 0x5
+    const/4 v14, 0x5
 
     invoke-virtual/range {p0 .. p0}, Lcom/airbnb/lottie/parser/moshi/JsonReader;->nextInt()I
 
-    move-result v26
+    move-result v13
 
-    goto :goto_12
+    move/from16 v26, v13
+
+    goto :goto_10
 
     :cond_1b
-    const/4 v9, 0x5
-
-    const/4 v15, 0x3
+    const/4 v14, 0x5
 
     invoke-virtual/range {p0 .. p0}, Lcom/airbnb/lottie/parser/moshi/JsonReader;->nextInt()I
 
-    move-result v25
+    move-result v13
+
+    move/from16 v25, v13
+
+    :goto_10
+    move/from16 v17, v15
 
     goto :goto_12
 
     :cond_1c
-    const/4 v9, 0x5
-
-    const/4 v15, 0x3
+    const/4 v14, 0x5
 
     invoke-virtual/range {p0 .. p0}, Lcom/airbnb/lottie/parser/moshi/JsonReader;->beginArray()V
 
-    :goto_10
+    :goto_11
     invoke-virtual/range {p0 .. p0}, Lcom/airbnb/lottie/parser/moshi/JsonReader;->hasNext()Z
 
-    move-result v12
+    move-result v13
 
-    if-eqz v12, :cond_1d
+    if-eqz v13, :cond_1d
 
     invoke-static {v0, v10}, Lcom/airbnb/lottie/parser/LayerParser;->parse(Lcom/airbnb/lottie/parser/moshi/JsonReader;Lcom/airbnb/lottie/LottieComposition;)Lcom/airbnb/lottie/model/layer/Layer;
 
-    move-result-object v12
+    move-result-object v13
 
-    move-object/from16 v18, v10
+    move/from16 v17, v15
 
-    iget-wide v9, v12, Lcom/airbnb/lottie/model/layer/Layer;->layerId:J
+    iget-wide v14, v13, Lcom/airbnb/lottie/model/layer/Layer;->layerId:J
 
-    invoke-virtual {v8, v9, v10, v12}, Landroidx/collection/LongSparseArray;->put(JLjava/lang/Object;)V
+    invoke-virtual {v8, v14, v15, v13}, Landroidx/collection/LongSparseArray;->put(JLjava/lang/Object;)V
 
-    invoke-virtual {v3, v12}, Ljava/util/ArrayList;->add(Ljava/lang/Object;)Z
+    invoke-virtual {v3, v13}, Ljava/util/ArrayList;->add(Ljava/lang/Object;)Z
 
-    move-object/from16 v10, v18
+    move/from16 v15, v17
 
-    const/4 v9, 0x5
+    const/4 v14, 0x5
 
-    goto :goto_10
+    goto :goto_11
 
     :cond_1d
-    move-object/from16 v18, v10
+    move/from16 v17, v15
 
     invoke-virtual/range {p0 .. p0}, Lcom/airbnb/lottie/parser/moshi/JsonReader;->endArray()V
-
-    :goto_11
-    move-object/from16 v10, v18
 
     goto :goto_12
 
     :cond_1e
-    move-object/from16 v18, v10
-
-    const/4 v15, 0x3
+    move/from16 v17, v15
 
     invoke-virtual/range {p0 .. p0}, Lcom/airbnb/lottie/parser/moshi/JsonReader;->nextString()Ljava/lang/String;
 
-    move-result-object v11
+    move-result-object v12
 
     :goto_12
-    const/16 v9, 0xa
+    move/from16 v15, v17
 
     goto :goto_f
 
     :cond_1f
-    move-object/from16 v18, v10
-
-    const/4 v15, 0x3
+    move/from16 v17, v15
 
     invoke-virtual/range {p0 .. p0}, Lcom/airbnb/lottie/parser/moshi/JsonReader;->endObject()V
 
@@ -861,46 +863,49 @@
 
     move-object/from16 v24, v3
 
-    move-object/from16 v27, v11
+    move-object/from16 v27, v12
 
     invoke-direct/range {v24 .. v29}, Lcom/airbnb/lottie/LottieImageAsset;-><init>(IILjava/lang/String;Ljava/lang/String;Ljava/lang/String;)V
 
-    invoke-virtual {v6, v11, v3}, Ljava/util/HashMap;->put(Ljava/lang/Object;Ljava/lang/Object;)Ljava/lang/Object;
+    invoke-virtual {v6, v12, v3}, Ljava/util/HashMap;->put(Ljava/lang/Object;Ljava/lang/Object;)Ljava/lang/Object;
 
     goto :goto_13
 
     :cond_20
-    invoke-virtual {v5, v11, v3}, Ljava/util/HashMap;->put(Ljava/lang/Object;Ljava/lang/Object;)Ljava/lang/Object;
+    invoke-virtual {v5, v12, v3}, Ljava/util/HashMap;->put(Ljava/lang/Object;Ljava/lang/Object;)Ljava/lang/Object;
 
     :goto_13
-    move-object/from16 v10, v18
+    move/from16 v15, v17
 
     goto/16 :goto_e
 
     :cond_21
-    move-object/from16 v18, v10
+    move/from16 v17, v15
+
+    const/16 v9, 0xa
 
     invoke-virtual/range {p0 .. p0}, Lcom/airbnb/lottie/parser/moshi/JsonReader;->endArray()V
 
-    move-object/from16 v8, v18
-
-    goto/16 :goto_1c
+    goto/16 :goto_18
 
     :pswitch_4
     move-object/from16 v21, v8
 
     move-object/from16 v23, v9
 
-    move-object/from16 v18, v10
+    move/from16 v22, v13
 
-    move/from16 v22, v11
+    move/from16 v20, v14
 
-    move/from16 v20, v15
+    move/from16 v17, v15
+
+    const/16 v9, 0xa
 
     invoke-virtual/range {p0 .. p0}, Lcom/airbnb/lottie/parser/moshi/JsonReader;->beginArray()V
 
     const/4 v3, 0x0
 
+    :cond_22
     :goto_14
     invoke-virtual/range {p0 .. p0}, Lcom/airbnb/lottie/parser/moshi/JsonReader;->hasNext()Z
 
@@ -908,287 +913,283 @@
 
     if-eqz v8, :cond_24
 
-    move-object/from16 v8, v18
+    invoke-static {v0, v10}, Lcom/airbnb/lottie/parser/LayerParser;->parse(Lcom/airbnb/lottie/parser/moshi/JsonReader;Lcom/airbnb/lottie/LottieComposition;)Lcom/airbnb/lottie/model/layer/Layer;
 
-    invoke-static {v0, v8}, Lcom/airbnb/lottie/parser/LayerParser;->parse(Lcom/airbnb/lottie/parser/moshi/JsonReader;Lcom/airbnb/lottie/LottieComposition;)Lcom/airbnb/lottie/model/layer/Layer;
+    move-result-object v8
 
-    move-result-object v9
+    iget v12, v8, Lcom/airbnb/lottie/model/layer/Layer;->layerType:I
 
-    iget-object v10, v9, Lcom/airbnb/lottie/model/layer/Layer;->layerType:Lcom/airbnb/lottie/model/layer/Layer$LayerType;
+    const/4 v13, 0x3
 
-    sget-object v11, Lcom/airbnb/lottie/model/layer/Layer$LayerType;->IMAGE:Lcom/airbnb/lottie/model/layer/Layer$LayerType;
-
-    if-ne v10, v11, :cond_22
+    if-ne v12, v13, :cond_23
 
     add-int/lit8 v3, v3, 0x1
 
-    :cond_22
-    invoke-virtual {v4, v9}, Ljava/util/ArrayList;->add(Ljava/lang/Object;)Z
-
-    iget-wide v10, v9, Lcom/airbnb/lottie/model/layer/Layer;->layerId:J
-
-    invoke-virtual {v2, v10, v11, v9}, Landroidx/collection/LongSparseArray;->put(JLjava/lang/Object;)V
-
-    const/4 v9, 0x4
-
-    if-le v3, v9, :cond_23
-
-    new-instance v9, Ljava/lang/StringBuilder;
-
-    invoke-direct {v9}, Ljava/lang/StringBuilder;-><init>()V
-
-    const-string v10, "You have "
-
-    invoke-virtual {v9, v10}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
-
-    invoke-virtual {v9, v3}, Ljava/lang/StringBuilder;->append(I)Ljava/lang/StringBuilder;
-
-    const-string v10, " images. Lottie should primarily be used with shapes. If you are using Adobe Illustrator, convert the Illustrator layers to shape layers."
-
-    invoke-virtual {v9, v10}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
-
-    invoke-virtual {v9}, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
-
-    move-result-object v9
-
-    invoke-static {v9}, Lcom/airbnb/lottie/utils/Logger;->warning(Ljava/lang/String;)V
-
     :cond_23
-    move-object/from16 v18, v8
+    invoke-virtual {v4, v8}, Ljava/util/ArrayList;->add(Ljava/lang/Object;)Z
+
+    iget-wide v14, v8, Lcom/airbnb/lottie/model/layer/Layer;->layerId:J
+
+    invoke-virtual {v2, v14, v15, v8}, Landroidx/collection/LongSparseArray;->put(JLjava/lang/Object;)V
+
+    const/4 v8, 0x4
+
+    if-le v3, v8, :cond_22
+
+    new-instance v8, Ljava/lang/StringBuilder;
+
+    invoke-direct {v8}, Ljava/lang/StringBuilder;-><init>()V
+
+    const-string v12, "You have "
+
+    invoke-virtual {v8, v12}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+
+    invoke-virtual {v8, v3}, Ljava/lang/StringBuilder;->append(I)Ljava/lang/StringBuilder;
+
+    const-string v12, " images. Lottie should primarily be used with shapes. If you are using Adobe Illustrator, convert the Illustrator layers to shape layers."
+
+    invoke-virtual {v8, v12}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+
+    invoke-virtual {v8}, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
+
+    move-result-object v8
+
+    invoke-static {v8}, Lcom/airbnb/lottie/utils/Logger;->warning(Ljava/lang/String;)V
 
     goto :goto_14
 
     :cond_24
-    move-object/from16 v8, v18
-
     invoke-virtual/range {p0 .. p0}, Lcom/airbnb/lottie/parser/moshi/JsonReader;->endArray()V
 
-    goto/16 :goto_1c
+    goto/16 :goto_18
 
     :pswitch_5
     move-object/from16 v21, v8
 
     move-object/from16 v23, v9
 
-    move-object v8, v10
+    move/from16 v22, v13
 
-    move/from16 v22, v11
+    move/from16 v20, v14
 
-    move/from16 v20, v15
+    move/from16 v17, v15
+
+    const/16 v9, 0xa
 
     invoke-virtual/range {p0 .. p0}, Lcom/airbnb/lottie/parser/moshi/JsonReader;->nextString()Ljava/lang/String;
 
     move-result-object v3
 
-    const-string v9, "\\."
+    const-string v8, "\\."
 
-    invoke-virtual {v3, v9}, Ljava/lang/String;->split(Ljava/lang/String;)[Ljava/lang/String;
+    invoke-virtual {v3, v8}, Ljava/lang/String;->split(Ljava/lang/String;)[Ljava/lang/String;
 
     move-result-object v3
 
-    const/4 v9, 0x0
+    const/4 v8, 0x0
 
-    aget-object v10, v3, v9
+    aget-object v12, v3, v8
 
-    invoke-static {v10}, Ljava/lang/Integer;->parseInt(Ljava/lang/String;)I
+    invoke-static {v12}, Ljava/lang/Integer;->parseInt(Ljava/lang/String;)I
 
-    move-result v9
+    move-result v8
 
-    const/4 v10, 0x1
+    const/4 v12, 0x1
 
-    aget-object v11, v3, v10
+    aget-object v13, v3, v12
 
-    invoke-static {v11}, Ljava/lang/Integer;->parseInt(Ljava/lang/String;)I
+    invoke-static {v13}, Ljava/lang/Integer;->parseInt(Ljava/lang/String;)I
 
-    move-result v11
+    move-result v13
 
-    const/4 v12, 0x2
+    const/4 v14, 0x2
 
-    aget-object v3, v3, v12
+    aget-object v3, v3, v14
 
     invoke-static {v3}, Ljava/lang/Integer;->parseInt(Ljava/lang/String;)I
 
     move-result v3
 
-    const/4 v12, 0x4
+    const/4 v14, 0x4
 
-    if-ge v9, v12, :cond_25
+    if-ge v8, v14, :cond_25
 
-    goto :goto_16
+    goto :goto_15
 
     :cond_25
-    if-le v9, v12, :cond_26
-
-    goto :goto_15
-
-    :cond_26
-    if-ge v11, v12, :cond_27
+    if-le v8, v14, :cond_26
 
     goto :goto_16
 
-    :cond_27
-    if-le v11, v12, :cond_28
+    :cond_26
+    if-ge v13, v14, :cond_27
 
     goto :goto_15
+
+    :cond_27
+    if-le v13, v14, :cond_28
+
+    goto :goto_16
 
     :cond_28
     if-ltz v3, :cond_29
 
-    :goto_15
-    move v12, v10
-
-    goto :goto_17
+    goto :goto_16
 
     :cond_29
-    :goto_16
+    :goto_15
     const/4 v12, 0x0
 
-    :goto_17
+    :goto_16
     if-nez v12, :cond_2a
 
     const-string v3, "Lottie only supports bodymovin >= 4.4.0"
 
-    invoke-virtual {v8, v3}, Lcom/airbnb/lottie/LottieComposition;->addWarning(Ljava/lang/String;)V
+    invoke-virtual {v10, v3}, Lcom/airbnb/lottie/LottieComposition;->addWarning(Ljava/lang/String;)V
 
-    goto/16 :goto_1c
+    goto/16 :goto_18
 
     :pswitch_6
     move-object/from16 v21, v8
 
     move-object/from16 v23, v9
 
-    move-object v8, v10
+    move/from16 v22, v13
 
-    move/from16 v22, v11
+    move/from16 v20, v14
 
-    move/from16 v20, v15
+    move/from16 v17, v15
+
+    const/16 v9, 0xa
 
     invoke-virtual/range {p0 .. p0}, Lcom/airbnb/lottie/parser/moshi/JsonReader;->nextDouble()D
 
-    move-result-wide v9
+    move-result-wide v12
 
-    double-to-float v3, v9
+    double-to-float v3, v12
 
     move/from16 v16, v3
 
-    goto :goto_18
+    goto :goto_19
 
     :pswitch_7
     move-object/from16 v21, v8
 
     move-object/from16 v23, v9
 
-    move-object v8, v10
+    move/from16 v20, v14
 
-    move/from16 v20, v15
+    move/from16 v17, v15
+
+    const/16 v9, 0xa
 
     invoke-virtual/range {p0 .. p0}, Lcom/airbnb/lottie/parser/moshi/JsonReader;->nextDouble()D
 
-    move-result-wide v9
+    move-result-wide v12
 
-    double-to-float v3, v9
+    double-to-float v3, v12
 
-    const v9, 0x3c23d70a    # 0.01f
+    const v8, 0x3c23d70a    # 0.01f
 
-    sub-float v11, v3, v9
+    sub-float v13, v3, v8
 
-    goto :goto_18
+    goto :goto_1a
 
     :pswitch_8
     move-object/from16 v21, v8
 
     move-object/from16 v23, v9
 
-    move-object v8, v10
+    move/from16 v22, v13
 
-    move/from16 v22, v11
+    move/from16 v17, v15
+
+    const/16 v9, 0xa
 
     invoke-virtual/range {p0 .. p0}, Lcom/airbnb/lottie/parser/moshi/JsonReader;->nextDouble()D
 
-    move-result-wide v9
+    move-result-wide v12
 
-    double-to-float v15, v9
+    double-to-float v14, v12
 
-    :goto_18
-    move-object v10, v8
-
-    move-object/from16 v8, v21
-
-    :goto_19
-    move-object/from16 v9, v23
-
-    goto :goto_1b
+    goto :goto_19
 
     :pswitch_9
     move-object/from16 v21, v8
 
     move-object/from16 v23, v9
 
-    move-object v8, v10
+    move/from16 v22, v13
 
-    move/from16 v22, v11
+    move/from16 v20, v14
 
-    move/from16 v20, v15
+    move/from16 v17, v15
+
+    const/16 v9, 0xa
 
     invoke-virtual/range {p0 .. p0}, Lcom/airbnb/lottie/parser/moshi/JsonReader;->nextInt()I
 
-    move-result v14
+    move-result v11
 
-    goto :goto_1a
+    goto :goto_17
 
     :pswitch_a
     move-object/from16 v21, v8
 
     move-object/from16 v23, v9
 
-    move-object v8, v10
+    move/from16 v22, v13
 
-    move/from16 v22, v11
+    move/from16 v20, v14
 
-    move/from16 v20, v15
+    const/16 v9, 0xa
 
     invoke-virtual/range {p0 .. p0}, Lcom/airbnb/lottie/parser/moshi/JsonReader;->nextInt()I
 
-    move-result v13
+    move-result v15
 
-    :goto_1a
-    move-object/from16 v8, v21
+    :goto_17
+    move/from16 v14, v20
 
-    :goto_1b
-    const/16 v3, 0xa
+    move/from16 v13, v22
 
-    goto/16 :goto_0
+    goto :goto_1b
 
     :cond_2a
-    :goto_1c
-    move-object v10, v8
+    :goto_18
+    move/from16 v14, v20
 
-    move/from16 v15, v20
+    :goto_19
+    move/from16 v13, v22
+
+    :goto_1a
+    move/from16 v15, v17
+
+    :goto_1b
+    move v3, v9
 
     move-object/from16 v8, v21
 
-    move/from16 v11, v22
+    move-object/from16 v9, v23
 
-    goto :goto_19
+    goto/16 :goto_0
 
     :cond_2b
     move-object/from16 v21, v8
 
     move-object/from16 v23, v9
 
-    move-object v8, v10
+    move/from16 v22, v13
 
-    move/from16 v22, v11
+    move/from16 v20, v14
 
-    move/from16 v20, v15
-
-    int-to-float v0, v13
+    int-to-float v0, v15
 
     mul-float/2addr v0, v1
 
     float-to-int v0, v0
 
-    int-to-float v3, v14
+    int-to-float v3, v11
 
     mul-float/2addr v3, v1
 
@@ -1196,43 +1197,43 @@
 
     new-instance v3, Landroid/graphics/Rect;
 
-    const/4 v9, 0x0
+    const/4 v8, 0x0
 
-    invoke-direct {v3, v9, v9, v0, v1}, Landroid/graphics/Rect;-><init>(IIII)V
+    invoke-direct {v3, v8, v8, v0, v1}, Landroid/graphics/Rect;-><init>(IIII)V
 
-    iput-object v3, v8, Lcom/airbnb/lottie/LottieComposition;->bounds:Landroid/graphics/Rect;
+    iput-object v3, v10, Lcom/airbnb/lottie/LottieComposition;->bounds:Landroid/graphics/Rect;
 
-    move/from16 v15, v20
+    move/from16 v11, v20
 
-    iput v15, v8, Lcom/airbnb/lottie/LottieComposition;->startFrame:F
+    iput v11, v10, Lcom/airbnb/lottie/LottieComposition;->startFrame:F
 
     move/from16 v11, v22
 
-    iput v11, v8, Lcom/airbnb/lottie/LottieComposition;->endFrame:F
+    iput v11, v10, Lcom/airbnb/lottie/LottieComposition;->endFrame:F
 
-    move/from16 v3, v16
+    move/from16 v11, v16
 
-    iput v3, v8, Lcom/airbnb/lottie/LottieComposition;->frameRate:F
+    iput v11, v10, Lcom/airbnb/lottie/LottieComposition;->frameRate:F
 
-    iput-object v4, v8, Lcom/airbnb/lottie/LottieComposition;->layers:Ljava/util/List;
+    iput-object v4, v10, Lcom/airbnb/lottie/LottieComposition;->layers:Ljava/util/List;
 
-    iput-object v2, v8, Lcom/airbnb/lottie/LottieComposition;->layerMap:Landroidx/collection/LongSparseArray;
+    iput-object v2, v10, Lcom/airbnb/lottie/LottieComposition;->layerMap:Landroidx/collection/LongSparseArray;
 
-    iput-object v5, v8, Lcom/airbnb/lottie/LottieComposition;->precomps:Ljava/util/Map;
+    iput-object v5, v10, Lcom/airbnb/lottie/LottieComposition;->precomps:Ljava/util/Map;
 
-    iput-object v6, v8, Lcom/airbnb/lottie/LottieComposition;->images:Ljava/util/Map;
+    iput-object v6, v10, Lcom/airbnb/lottie/LottieComposition;->images:Ljava/util/Map;
 
     move-object/from16 v0, v23
 
-    iput-object v0, v8, Lcom/airbnb/lottie/LottieComposition;->characters:Landroidx/collection/SparseArrayCompat;
+    iput-object v0, v10, Lcom/airbnb/lottie/LottieComposition;->characters:Landroidx/collection/SparseArrayCompat;
 
-    iput-object v7, v8, Lcom/airbnb/lottie/LottieComposition;->fonts:Ljava/util/Map;
+    iput-object v7, v10, Lcom/airbnb/lottie/LottieComposition;->fonts:Ljava/util/Map;
 
     move-object/from16 v0, v21
 
-    iput-object v0, v8, Lcom/airbnb/lottie/LottieComposition;->markers:Ljava/util/List;
+    iput-object v0, v10, Lcom/airbnb/lottie/LottieComposition;->markers:Ljava/util/List;
 
-    return-object v8
+    return-object v10
 
     :pswitch_data_0
     .packed-switch 0x0

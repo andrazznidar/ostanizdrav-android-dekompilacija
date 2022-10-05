@@ -5,14 +5,14 @@
 
 # annotations
 .annotation system Ldalvik/annotation/SourceDebugExtension;
-    value = "SMAP\nFakePureImplementationsProvider.kt\nKotlin\n*S Kotlin\n*F\n+ 1 FakePureImplementationsProvider.kt\norg/jetbrains/kotlin/load/java/FakePureImplementationsProvider\n+ 2 _Collections.kt\nkotlin/collections/CollectionsKt___CollectionsKt\n+ 3 _Arrays.kt\nkotlin/collections/ArraysKt___ArraysKt\n*L\n1#1,43:1\n1253#2,4:44\n11298#3:48\n11633#3,3:49\n*E\n*S KotlinDebug\n*F\n+ 1 FakePureImplementationsProvider.kt\norg/jetbrains/kotlin/load/java/FakePureImplementationsProvider\n*L\n27#1,4:44\n41#1:48\n41#1,3:49\n*E\n"
+    value = "SMAP\nFakePureImplementationsProvider.kt\nKotlin\n*S Kotlin\n*F\n+ 1 FakePureImplementationsProvider.kt\norg/jetbrains/kotlin/load/java/FakePureImplementationsProvider\n+ 2 _Collections.kt\nkotlin/collections/CollectionsKt___CollectionsKt\n+ 3 _Arrays.kt\nkotlin/collections/ArraysKt___ArraysKt\n*L\n1#1,43:1\n1283#2,4:44\n11328#3:48\n11663#3,3:49\n*S KotlinDebug\n*F\n+ 1 FakePureImplementationsProvider.kt\norg/jetbrains/kotlin/load/java/FakePureImplementationsProvider\n*L\n27#1:44,4\n41#1:48\n41#1:49,3\n*E\n"
 .end annotation
 
 
 # static fields
 .field public static final INSTANCE:Lkotlin/reflect/jvm/internal/impl/load/java/FakePureImplementationsProvider;
 
-.field public static final pureImplementations:Ljava/util/HashMap;
+.field private static final pureImplementations:Ljava/util/HashMap;
     .annotation system Ldalvik/annotation/Signature;
         value = {
             "Ljava/util/HashMap<",
@@ -26,110 +26,124 @@
 
 # direct methods
 .method public static constructor <clinit>()V
-    .locals 6
+    .locals 7
 
-    new-instance v0, Ljava/util/HashMap;
+    new-instance v0, Lkotlin/reflect/jvm/internal/impl/load/java/FakePureImplementationsProvider;
 
-    invoke-direct {v0}, Ljava/util/HashMap;-><init>()V
+    invoke-direct {v0}, Lkotlin/reflect/jvm/internal/impl/load/java/FakePureImplementationsProvider;-><init>()V
 
-    sput-object v0, Lkotlin/reflect/jvm/internal/impl/load/java/FakePureImplementationsProvider;->pureImplementations:Ljava/util/HashMap;
+    sput-object v0, Lkotlin/reflect/jvm/internal/impl/load/java/FakePureImplementationsProvider;->INSTANCE:Lkotlin/reflect/jvm/internal/impl/load/java/FakePureImplementationsProvider;
 
-    sget-object v0, Lkotlin/reflect/jvm/internal/impl/builtins/StandardNames$FqNames;->mutableList:Lkotlin/reflect/jvm/internal/impl/name/FqName;
+    new-instance v1, Ljava/util/HashMap;
 
-    const-string v1, "java.util.ArrayList"
+    invoke-direct {v1}, Ljava/util/HashMap;-><init>()V
 
-    const-string v2, "java.util.LinkedList"
+    sput-object v1, Lkotlin/reflect/jvm/internal/impl/load/java/FakePureImplementationsProvider;->pureImplementations:Ljava/util/HashMap;
 
-    filled-new-array {v1, v2}, [Ljava/lang/String;
+    sget-object v1, Lkotlin/reflect/jvm/internal/impl/builtins/StandardNames$FqNames;->mutableList:Lkotlin/reflect/jvm/internal/impl/name/FqName;
 
-    move-result-object v1
+    const-string v2, "java.util.ArrayList"
 
-    invoke-static {v1}, Lkotlin/reflect/jvm/internal/impl/load/java/FakePureImplementationsProvider;->fqNameListOf([Ljava/lang/String;)Ljava/util/List;
+    const-string v3, "java.util.LinkedList"
 
-    move-result-object v1
+    filled-new-array {v2, v3}, [Ljava/lang/String;
 
-    invoke-static {v0, v1}, Lkotlin/reflect/jvm/internal/impl/load/java/FakePureImplementationsProvider;->implementedWith(Lkotlin/reflect/jvm/internal/impl/name/FqName;Ljava/util/List;)V
+    move-result-object v2
 
-    sget-object v0, Lkotlin/reflect/jvm/internal/impl/builtins/StandardNames$FqNames;->mutableSet:Lkotlin/reflect/jvm/internal/impl/name/FqName;
+    invoke-direct {v0, v2}, Lkotlin/reflect/jvm/internal/impl/load/java/FakePureImplementationsProvider;->fqNameListOf([Ljava/lang/String;)Ljava/util/List;
 
-    const-string v1, "java.util.HashSet"
+    move-result-object v2
 
-    const-string v2, "java.util.TreeSet"
+    invoke-direct {v0, v1, v2}, Lkotlin/reflect/jvm/internal/impl/load/java/FakePureImplementationsProvider;->implementedWith(Lkotlin/reflect/jvm/internal/impl/name/FqName;Ljava/util/List;)V
 
-    const-string v3, "java.util.LinkedHashSet"
+    sget-object v1, Lkotlin/reflect/jvm/internal/impl/builtins/StandardNames$FqNames;->mutableSet:Lkotlin/reflect/jvm/internal/impl/name/FqName;
 
-    filled-new-array {v1, v2, v3}, [Ljava/lang/String;
+    const-string v2, "java.util.HashSet"
 
-    move-result-object v1
+    const-string v3, "java.util.TreeSet"
 
-    invoke-static {v1}, Lkotlin/reflect/jvm/internal/impl/load/java/FakePureImplementationsProvider;->fqNameListOf([Ljava/lang/String;)Ljava/util/List;
+    const-string v4, "java.util.LinkedHashSet"
 
-    move-result-object v1
+    filled-new-array {v2, v3, v4}, [Ljava/lang/String;
 
-    invoke-static {v0, v1}, Lkotlin/reflect/jvm/internal/impl/load/java/FakePureImplementationsProvider;->implementedWith(Lkotlin/reflect/jvm/internal/impl/name/FqName;Ljava/util/List;)V
+    move-result-object v2
 
-    sget-object v0, Lkotlin/reflect/jvm/internal/impl/builtins/StandardNames$FqNames;->mutableMap:Lkotlin/reflect/jvm/internal/impl/name/FqName;
+    invoke-direct {v0, v2}, Lkotlin/reflect/jvm/internal/impl/load/java/FakePureImplementationsProvider;->fqNameListOf([Ljava/lang/String;)Ljava/util/List;
 
-    const-string v1, "java.util.HashMap"
+    move-result-object v2
 
-    const-string v2, "java.util.TreeMap"
+    invoke-direct {v0, v1, v2}, Lkotlin/reflect/jvm/internal/impl/load/java/FakePureImplementationsProvider;->implementedWith(Lkotlin/reflect/jvm/internal/impl/name/FqName;Ljava/util/List;)V
 
-    const-string v3, "java.util.LinkedHashMap"
+    sget-object v1, Lkotlin/reflect/jvm/internal/impl/builtins/StandardNames$FqNames;->mutableMap:Lkotlin/reflect/jvm/internal/impl/name/FqName;
 
-    const-string v4, "java.util.concurrent.ConcurrentHashMap"
+    const-string v2, "java.util.HashMap"
 
-    const-string v5, "java.util.concurrent.ConcurrentSkipListMap"
+    const-string v3, "java.util.TreeMap"
 
-    filled-new-array {v1, v2, v3, v4, v5}, [Ljava/lang/String;
+    const-string v4, "java.util.LinkedHashMap"
 
-    move-result-object v1
+    const-string v5, "java.util.concurrent.ConcurrentHashMap"
 
-    invoke-static {v1}, Lkotlin/reflect/jvm/internal/impl/load/java/FakePureImplementationsProvider;->fqNameListOf([Ljava/lang/String;)Ljava/util/List;
+    const-string v6, "java.util.concurrent.ConcurrentSkipListMap"
 
-    move-result-object v1
+    filled-new-array {v2, v3, v4, v5, v6}, [Ljava/lang/String;
 
-    invoke-static {v0, v1}, Lkotlin/reflect/jvm/internal/impl/load/java/FakePureImplementationsProvider;->implementedWith(Lkotlin/reflect/jvm/internal/impl/name/FqName;Ljava/util/List;)V
+    move-result-object v2
 
-    new-instance v0, Lkotlin/reflect/jvm/internal/impl/name/FqName;
+    invoke-direct {v0, v2}, Lkotlin/reflect/jvm/internal/impl/load/java/FakePureImplementationsProvider;->fqNameListOf([Ljava/lang/String;)Ljava/util/List;
 
-    const-string v1, "java.util.function.Function"
+    move-result-object v2
 
-    invoke-direct {v0, v1}, Lkotlin/reflect/jvm/internal/impl/name/FqName;-><init>(Ljava/lang/String;)V
+    invoke-direct {v0, v1, v2}, Lkotlin/reflect/jvm/internal/impl/load/java/FakePureImplementationsProvider;->implementedWith(Lkotlin/reflect/jvm/internal/impl/name/FqName;Ljava/util/List;)V
 
-    const-string v1, "java.util.function.UnaryOperator"
+    new-instance v1, Lkotlin/reflect/jvm/internal/impl/name/FqName;
 
-    filled-new-array {v1}, [Ljava/lang/String;
+    const-string v2, "java.util.function.Function"
 
-    move-result-object v1
+    invoke-direct {v1, v2}, Lkotlin/reflect/jvm/internal/impl/name/FqName;-><init>(Ljava/lang/String;)V
 
-    invoke-static {v1}, Lkotlin/reflect/jvm/internal/impl/load/java/FakePureImplementationsProvider;->fqNameListOf([Ljava/lang/String;)Ljava/util/List;
+    const-string v2, "java.util.function.UnaryOperator"
 
-    move-result-object v1
+    filled-new-array {v2}, [Ljava/lang/String;
 
-    invoke-static {v0, v1}, Lkotlin/reflect/jvm/internal/impl/load/java/FakePureImplementationsProvider;->implementedWith(Lkotlin/reflect/jvm/internal/impl/name/FqName;Ljava/util/List;)V
+    move-result-object v2
 
-    new-instance v0, Lkotlin/reflect/jvm/internal/impl/name/FqName;
+    invoke-direct {v0, v2}, Lkotlin/reflect/jvm/internal/impl/load/java/FakePureImplementationsProvider;->fqNameListOf([Ljava/lang/String;)Ljava/util/List;
 
-    const-string v1, "java.util.function.BiFunction"
+    move-result-object v2
 
-    invoke-direct {v0, v1}, Lkotlin/reflect/jvm/internal/impl/name/FqName;-><init>(Ljava/lang/String;)V
+    invoke-direct {v0, v1, v2}, Lkotlin/reflect/jvm/internal/impl/load/java/FakePureImplementationsProvider;->implementedWith(Lkotlin/reflect/jvm/internal/impl/name/FqName;Ljava/util/List;)V
 
-    const-string v1, "java.util.function.BinaryOperator"
+    new-instance v1, Lkotlin/reflect/jvm/internal/impl/name/FqName;
 
-    filled-new-array {v1}, [Ljava/lang/String;
+    const-string v2, "java.util.function.BiFunction"
 
-    move-result-object v1
+    invoke-direct {v1, v2}, Lkotlin/reflect/jvm/internal/impl/name/FqName;-><init>(Ljava/lang/String;)V
 
-    invoke-static {v1}, Lkotlin/reflect/jvm/internal/impl/load/java/FakePureImplementationsProvider;->fqNameListOf([Ljava/lang/String;)Ljava/util/List;
+    const-string v2, "java.util.function.BinaryOperator"
 
-    move-result-object v1
+    filled-new-array {v2}, [Ljava/lang/String;
 
-    invoke-static {v0, v1}, Lkotlin/reflect/jvm/internal/impl/load/java/FakePureImplementationsProvider;->implementedWith(Lkotlin/reflect/jvm/internal/impl/name/FqName;Ljava/util/List;)V
+    move-result-object v2
+
+    invoke-direct {v0, v2}, Lkotlin/reflect/jvm/internal/impl/load/java/FakePureImplementationsProvider;->fqNameListOf([Ljava/lang/String;)Ljava/util/List;
+
+    move-result-object v2
+
+    invoke-direct {v0, v1, v2}, Lkotlin/reflect/jvm/internal/impl/load/java/FakePureImplementationsProvider;->implementedWith(Lkotlin/reflect/jvm/internal/impl/name/FqName;Ljava/util/List;)V
 
     return-void
 .end method
 
-.method public static final varargs fqNameListOf([Ljava/lang/String;)Ljava/util/List;
+.method private constructor <init>()V
+    .locals 0
+
+    invoke-direct {p0}, Ljava/lang/Object;-><init>()V
+
+    return-void
+.end method
+
+.method private final varargs fqNameListOf([Ljava/lang/String;)Ljava/util/List;
     .locals 5
     .annotation system Ldalvik/annotation/Signature;
         value = {
@@ -144,24 +158,24 @@
 
     new-instance v0, Ljava/util/ArrayList;
 
-    array-length v1, p0
+    array-length v1, p1
 
     invoke-direct {v0, v1}, Ljava/util/ArrayList;-><init>(I)V
 
-    array-length v1, p0
+    array-length v1, p1
 
     const/4 v2, 0x0
 
     :goto_0
     if-ge v2, v1, :cond_0
 
-    aget-object v3, p0, v2
+    aget-object v3, p1, v2
 
     new-instance v4, Lkotlin/reflect/jvm/internal/impl/name/FqName;
 
     invoke-direct {v4, v3}, Lkotlin/reflect/jvm/internal/impl/name/FqName;-><init>(Ljava/lang/String;)V
 
-    invoke-virtual {v0, v4}, Ljava/util/ArrayList;->add(Ljava/lang/Object;)Z
+    invoke-interface {v0, v4}, Ljava/util/Collection;->add(Ljava/lang/Object;)Z
 
     add-int/lit8 v2, v2, 0x1
 
@@ -171,7 +185,7 @@
     return-object v0
 .end method
 
-.method public static final implementedWith(Lkotlin/reflect/jvm/internal/impl/name/FqName;Ljava/util/List;)V
+.method private final implementedWith(Lkotlin/reflect/jvm/internal/impl/name/FqName;Ljava/util/List;)V
     .locals 3
     .annotation system Ldalvik/annotation/Signature;
         value = {
@@ -185,18 +199,18 @@
 
     sget-object v0, Lkotlin/reflect/jvm/internal/impl/load/java/FakePureImplementationsProvider;->pureImplementations:Ljava/util/HashMap;
 
-    invoke-interface {p1}, Ljava/lang/Iterable;->iterator()Ljava/util/Iterator;
+    invoke-interface {p2}, Ljava/lang/Iterable;->iterator()Ljava/util/Iterator;
 
-    move-result-object p1
+    move-result-object p2
 
     :goto_0
-    invoke-interface {p1}, Ljava/util/Iterator;->hasNext()Z
+    invoke-interface {p2}, Ljava/util/Iterator;->hasNext()Z
 
     move-result v1
 
     if-eqz v1, :cond_0
 
-    invoke-interface {p1}, Ljava/util/Iterator;->next()Ljava/lang/Object;
+    invoke-interface {p2}, Ljava/util/Iterator;->next()Ljava/lang/Object;
 
     move-result-object v1
 
@@ -204,10 +218,30 @@
 
     check-cast v2, Lkotlin/reflect/jvm/internal/impl/name/FqName;
 
-    invoke-virtual {v0, v1, p0}, Ljava/util/HashMap;->put(Ljava/lang/Object;Ljava/lang/Object;)Ljava/lang/Object;
+    invoke-interface {v0, v1, p1}, Ljava/util/Map;->put(Ljava/lang/Object;Ljava/lang/Object;)Ljava/lang/Object;
 
     goto :goto_0
 
     :cond_0
     return-void
+.end method
+
+
+# virtual methods
+.method public final getPurelyImplementedInterface(Lkotlin/reflect/jvm/internal/impl/name/FqName;)Lkotlin/reflect/jvm/internal/impl/name/FqName;
+    .locals 1
+
+    const-string v0, "classFqName"
+
+    invoke-static {p1, v0}, Lkotlin/jvm/internal/Intrinsics;->checkNotNullParameter(Ljava/lang/Object;Ljava/lang/String;)V
+
+    sget-object v0, Lkotlin/reflect/jvm/internal/impl/load/java/FakePureImplementationsProvider;->pureImplementations:Ljava/util/HashMap;
+
+    invoke-virtual {v0, p1}, Ljava/util/HashMap;->get(Ljava/lang/Object;)Ljava/lang/Object;
+
+    move-result-object p1
+
+    check-cast p1, Lkotlin/reflect/jvm/internal/impl/name/FqName;
+
+    return-object p1
 .end method

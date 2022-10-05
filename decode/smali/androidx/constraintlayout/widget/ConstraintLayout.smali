@@ -636,7 +636,7 @@
 
     iput-boolean v0, p0, Landroidx/constraintlayout/widget/ConstraintLayout;->mDirtyHierarchy:Z
 
-    invoke-super {p0}, Landroid/view/View;->forceLayout()V
+    invoke-super {p0}, Landroid/view/ViewGroup;->forceLayout()V
 
     return-void
 .end method
@@ -3698,8 +3698,6 @@
 
     iput-boolean v2, v0, Landroidx/constraintlayout/widget/ConstraintLayout$LayoutParams;->isGuideline:Z
 
-    check-cast v1, Landroidx/constraintlayout/core/widgets/Guideline;
-
     iget v0, v0, Landroidx/constraintlayout/widget/ConstraintLayout$LayoutParams;->orientation:I
 
     invoke-virtual {v1, v0}, Landroidx/constraintlayout/core/widgets/Guideline;->setOrientation(I)V
@@ -3824,7 +3822,7 @@
 
     iput-boolean v0, p0, Landroidx/constraintlayout/widget/ConstraintLayout;->mDirtyHierarchy:Z
 
-    invoke-super {p0}, Landroid/view/View;->requestLayout()V
+    invoke-super {p0}, Landroid/view/ViewGroup;->requestLayout()V
 
     return-void
 .end method
@@ -4013,7 +4011,7 @@
 
     invoke-virtual {v0, v1}, Landroid/util/SparseArray;->remove(I)V
 
-    invoke-super {p0, p1}, Landroid/view/View;->setId(I)V
+    invoke-super {p0, p1}, Landroid/view/ViewGroup;->setId(I)V
 
     iget-object p1, p0, Landroidx/constraintlayout/widget/ConstraintLayout;->mChildrenByIds:Landroid/util/SparseArray;
 

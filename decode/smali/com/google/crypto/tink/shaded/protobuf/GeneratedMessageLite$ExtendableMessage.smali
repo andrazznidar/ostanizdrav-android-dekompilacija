@@ -30,7 +30,8 @@
         "Ljava/lang/Object;",
         ">",
         "Lcom/google/crypto/tink/shaded/protobuf/GeneratedMessageLite<",
-        "TMessageType;TBuilderType;>;"
+        "TMessageType;TBuilderType;>;",
+        "Lcom/google/crypto/tink/shaded/protobuf/MessageLiteOrBuilder;"
     }
 .end annotation
 

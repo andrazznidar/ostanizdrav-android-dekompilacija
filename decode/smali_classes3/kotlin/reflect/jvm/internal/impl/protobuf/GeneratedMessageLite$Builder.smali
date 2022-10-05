@@ -27,7 +27,7 @@
 
 
 # instance fields
-.field public unknownFields:Lkotlin/reflect/jvm/internal/impl/protobuf/ByteString;
+.field private unknownFields:Lkotlin/reflect/jvm/internal/impl/protobuf/ByteString;
 
 
 # direct methods
@@ -60,6 +60,16 @@
     return-object v0
 .end method
 
+.method public bridge synthetic clone()Lkotlin/reflect/jvm/internal/impl/protobuf/AbstractMessageLite$Builder;
+    .locals 1
+
+    invoke-virtual {p0}, Lkotlin/reflect/jvm/internal/impl/protobuf/GeneratedMessageLite$Builder;->clone()Lkotlin/reflect/jvm/internal/impl/protobuf/GeneratedMessageLite$Builder;
+
+    move-result-object v0
+
+    return-object v0
+.end method
+
 .method public clone()Lkotlin/reflect/jvm/internal/impl/protobuf/GeneratedMessageLite$Builder;
     .locals 2
     .annotation system Ldalvik/annotation/Signature;
@@ -77,10 +87,51 @@
     throw v0
 .end method
 
+.method public abstract getDefaultInstanceForType()Lkotlin/reflect/jvm/internal/impl/protobuf/GeneratedMessageLite;
+    .annotation system Ldalvik/annotation/Signature;
+        value = {
+            "()TMessageType;"
+        }
+    .end annotation
+.end method
+
+.method public bridge synthetic getDefaultInstanceForType()Lkotlin/reflect/jvm/internal/impl/protobuf/MessageLite;
+    .locals 1
+
+    invoke-virtual {p0}, Lkotlin/reflect/jvm/internal/impl/protobuf/GeneratedMessageLite$Builder;->getDefaultInstanceForType()Lkotlin/reflect/jvm/internal/impl/protobuf/GeneratedMessageLite;
+
+    move-result-object v0
+
+    return-object v0
+.end method
+
+.method public final getUnknownFields()Lkotlin/reflect/jvm/internal/impl/protobuf/ByteString;
+    .locals 1
+
+    iget-object v0, p0, Lkotlin/reflect/jvm/internal/impl/protobuf/GeneratedMessageLite$Builder;->unknownFields:Lkotlin/reflect/jvm/internal/impl/protobuf/ByteString;
+
+    return-object v0
+.end method
+
 .method public abstract mergeFrom(Lkotlin/reflect/jvm/internal/impl/protobuf/GeneratedMessageLite;)Lkotlin/reflect/jvm/internal/impl/protobuf/GeneratedMessageLite$Builder;
     .annotation system Ldalvik/annotation/Signature;
         value = {
             "(TMessageType;)TBuilderType;"
         }
     .end annotation
+.end method
+
+.method public final setUnknownFields(Lkotlin/reflect/jvm/internal/impl/protobuf/ByteString;)Lkotlin/reflect/jvm/internal/impl/protobuf/GeneratedMessageLite$Builder;
+    .locals 0
+    .annotation system Ldalvik/annotation/Signature;
+        value = {
+            "(",
+            "Lkotlin/reflect/jvm/internal/impl/protobuf/ByteString;",
+            ")TBuilderType;"
+        }
+    .end annotation
+
+    iput-object p1, p0, Lkotlin/reflect/jvm/internal/impl/protobuf/GeneratedMessageLite$Builder;->unknownFields:Lkotlin/reflect/jvm/internal/impl/protobuf/ByteString;
+
+    return-object p0
 .end method

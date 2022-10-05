@@ -25,11 +25,7 @@
 
     const/4 v1, 0x1
 
-    int-to-char v1, v1
-
     const/4 v2, 0x0
-
-    int-to-char v2, v2
 
     invoke-direct {v0, v1, v2}, Lkotlin/ranges/CharRange;-><init>(CC)V
 

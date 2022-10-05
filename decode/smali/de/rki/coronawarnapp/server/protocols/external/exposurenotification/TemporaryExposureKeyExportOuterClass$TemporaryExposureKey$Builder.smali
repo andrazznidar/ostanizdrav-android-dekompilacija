@@ -38,7 +38,7 @@
     return-void
 .end method
 
-.method public constructor <init>(Lde/rki/coronawarnapp/server/protocols/external/exposurenotification/TemporaryExposureKeyExportOuterClass$TemporaryExposureKey$Builder-IA;)V
+.method public constructor <init>(Landroidx/camera/core/impl/SurfaceConfig$ConfigSize$EnumUnboxingLocalUtility;)V
     .locals 0
 
     sget-object p1, Lde/rki/coronawarnapp/server/protocols/external/exposurenotification/TemporaryExposureKeyExportOuterClass$TemporaryExposureKey;->DEFAULT_INSTANCE:Lde/rki/coronawarnapp/server/protocols/external/exposurenotification/TemporaryExposureKeyExportOuterClass$TemporaryExposureKey;

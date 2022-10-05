@@ -31,6 +31,8 @@
 
 .field public static final enum MINIMAL_CLASS:Lcom/fasterxml/jackson/annotation/JsonTypeInfo$Id;
 
+.field public static final enum NAME:Lcom/fasterxml/jackson/annotation/JsonTypeInfo$Id;
+
 .field public static final enum NONE:Lcom/fasterxml/jackson/annotation/JsonTypeInfo$Id;
 
 
@@ -87,6 +89,8 @@
     const-string v10, "@type"
 
     invoke-direct {v6, v8, v9, v10}, Lcom/fasterxml/jackson/annotation/JsonTypeInfo$Id;-><init>(Ljava/lang/String;ILjava/lang/String;)V
+
+    sput-object v6, Lcom/fasterxml/jackson/annotation/JsonTypeInfo$Id;->NAME:Lcom/fasterxml/jackson/annotation/JsonTypeInfo$Id;
 
     new-instance v8, Lcom/fasterxml/jackson/annotation/JsonTypeInfo$Id;
 

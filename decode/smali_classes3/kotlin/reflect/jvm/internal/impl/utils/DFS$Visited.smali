@@ -21,3 +21,13 @@
         "Ljava/lang/Object;"
     }
 .end annotation
+
+
+# virtual methods
+.method public abstract checkAndMarkVisited(Ljava/lang/Object;)Z
+    .annotation system Ldalvik/annotation/Signature;
+        value = {
+            "(TN;)Z"
+        }
+    .end annotation
+.end method

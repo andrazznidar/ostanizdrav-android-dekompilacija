@@ -48,8 +48,8 @@
     return-void
 .end method
 
-.method public static access$000(Lcom/google/crypto/tink/proto/HashType;)Lcom/google/crypto/tink/subtle/Enums$HashType;
-    .locals 2
+.method public static access$000(Lcom/google/crypto/tink/proto/HashType;)I
+    .locals 5
     .annotation system Ldalvik/annotation/Throws;
         value = {
             Ljava/security/GeneralSecurityException;
@@ -60,23 +60,21 @@
 
     move-result v0
 
-    const/4 v1, 0x1
-
-    if-eq v0, v1, :cond_3
-
-    const/4 v1, 0x2
-
-    if-eq v0, v1, :cond_2
-
-    const/4 v1, 0x3
-
-    if-eq v0, v1, :cond_1
-
     const/4 v1, 0x4
 
-    if-ne v0, v1, :cond_0
+    const/4 v2, 0x3
 
-    sget-object p0, Lcom/google/crypto/tink/subtle/Enums$HashType;->SHA512:Lcom/google/crypto/tink/subtle/Enums$HashType;
+    const/4 v3, 0x2
+
+    const/4 v4, 0x1
+
+    if-eq v0, v4, :cond_3
+
+    if-eq v0, v3, :cond_2
+
+    if-eq v0, v2, :cond_1
+
+    if-ne v0, v1, :cond_0
 
     goto :goto_0
 
@@ -108,20 +106,20 @@
     throw v0
 
     :cond_1
-    sget-object p0, Lcom/google/crypto/tink/subtle/Enums$HashType;->SHA256:Lcom/google/crypto/tink/subtle/Enums$HashType;
+    move v1, v3
 
     goto :goto_0
 
     :cond_2
-    sget-object p0, Lcom/google/crypto/tink/subtle/Enums$HashType;->SHA384:Lcom/google/crypto/tink/subtle/Enums$HashType;
+    move v1, v2
 
     goto :goto_0
 
     :cond_3
-    sget-object p0, Lcom/google/crypto/tink/subtle/Enums$HashType;->SHA1:Lcom/google/crypto/tink/subtle/Enums$HashType;
+    move v1, v4
 
     :goto_0
-    return-object p0
+    return v1
 .end method
 
 .method public static validateParams(Lcom/google/crypto/tink/proto/HkdfPrfParams;)V

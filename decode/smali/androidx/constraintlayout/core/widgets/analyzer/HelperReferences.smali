@@ -72,9 +72,9 @@
     goto/16 :goto_8
 
     :cond_0
-    sget-object v2, Landroidx/constraintlayout/core/widgets/analyzer/DependencyNode$Type;->BOTTOM:Landroidx/constraintlayout/core/widgets/analyzer/DependencyNode$Type;
+    const/4 v2, 0x7
 
-    iput-object v2, v1, Landroidx/constraintlayout/core/widgets/analyzer/DependencyNode;->type:Landroidx/constraintlayout/core/widgets/analyzer/DependencyNode$Type;
+    iput v2, v1, Landroidx/constraintlayout/core/widgets/analyzer/DependencyNode;->type:I
 
     :goto_0
     iget v1, v0, Landroidx/constraintlayout/core/widgets/HelperWidget;->mWidgetsCount:I
@@ -135,9 +135,9 @@
     goto/16 :goto_8
 
     :cond_3
-    sget-object v2, Landroidx/constraintlayout/core/widgets/analyzer/DependencyNode$Type;->TOP:Landroidx/constraintlayout/core/widgets/analyzer/DependencyNode$Type;
+    const/4 v2, 0x6
 
-    iput-object v2, v1, Landroidx/constraintlayout/core/widgets/analyzer/DependencyNode;->type:Landroidx/constraintlayout/core/widgets/analyzer/DependencyNode$Type;
+    iput v2, v1, Landroidx/constraintlayout/core/widgets/analyzer/DependencyNode;->type:I
 
     :goto_2
     iget v1, v0, Landroidx/constraintlayout/core/widgets/HelperWidget;->mWidgetsCount:I
@@ -198,9 +198,9 @@
     goto/16 :goto_8
 
     :cond_6
-    sget-object v2, Landroidx/constraintlayout/core/widgets/analyzer/DependencyNode$Type;->RIGHT:Landroidx/constraintlayout/core/widgets/analyzer/DependencyNode$Type;
+    const/4 v2, 0x5
 
-    iput-object v2, v1, Landroidx/constraintlayout/core/widgets/analyzer/DependencyNode;->type:Landroidx/constraintlayout/core/widgets/analyzer/DependencyNode$Type;
+    iput v2, v1, Landroidx/constraintlayout/core/widgets/analyzer/DependencyNode;->type:I
 
     :goto_4
     iget v1, v0, Landroidx/constraintlayout/core/widgets/HelperWidget;->mWidgetsCount:I
@@ -261,9 +261,9 @@
     goto :goto_8
 
     :cond_9
-    sget-object v2, Landroidx/constraintlayout/core/widgets/analyzer/DependencyNode$Type;->LEFT:Landroidx/constraintlayout/core/widgets/analyzer/DependencyNode$Type;
+    const/4 v2, 0x4
 
-    iput-object v2, v1, Landroidx/constraintlayout/core/widgets/analyzer/DependencyNode;->type:Landroidx/constraintlayout/core/widgets/analyzer/DependencyNode$Type;
+    iput v2, v1, Landroidx/constraintlayout/core/widgets/analyzer/DependencyNode;->type:I
 
     :goto_6
     iget v1, v0, Landroidx/constraintlayout/core/widgets/HelperWidget;->mWidgetsCount:I

@@ -16,14 +16,45 @@
     name = "Bound"
 .end annotation
 
+.annotation runtime Lkotlin/Metadata;
+    d1 = {
+        "\u0000$\n\u0002\u0018\u0002\n\u0002\u0018\u0002\n\u0002\u0018\u0002\n\u0000\n\u0002\u0018\u0002\n\u0000\n\u0002\u0010\u0000\n\u0002\u0008\u0003\n\u0002\u0010\u0011\n\u0002\u0008\u0002\u0018\u00002\u00020\u00012\u00020\u0002B\u0017\u0012\u0006\u0010\u0003\u001a\u00020\u0004\u0012\u0008\u0010\u0005\u001a\u0004\u0018\u00010\u0006\u00a2\u0006\u0002\u0010\u0007J\u001b\u0010\u0008\u001a\u0004\u0018\u00010\u00062\n\u0010\t\u001a\u0006\u0012\u0002\u0008\u00030\nH\u0016\u00a2\u0006\u0002\u0010\u000bR\u0010\u0010\u0005\u001a\u0004\u0018\u00010\u0006X\u0082\u0004\u00a2\u0006\u0002\n\u0000\u00a8\u0006\u000c"
+    }
+    d2 = {
+        "Lkotlin/reflect/jvm/internal/calls/InternalUnderlyingValOfInlineClass$Bound;",
+        "Lkotlin/reflect/jvm/internal/calls/InternalUnderlyingValOfInlineClass;",
+        "Lkotlin/reflect/jvm/internal/calls/BoundCaller;",
+        "unboxMethod",
+        "Ljava/lang/reflect/Method;",
+        "boundReceiver",
+        "",
+        "(Ljava/lang/reflect/Method;Ljava/lang/Object;)V",
+        "call",
+        "args",
+        "",
+        "([Ljava/lang/Object;)Ljava/lang/Object;",
+        "kotlin-reflection"
+    }
+    k = 0x1
+    mv = {
+        0x1,
+        0x5,
+        0x1
+    }
+.end annotation
+
 
 # instance fields
-.field public final boundReceiver:Ljava/lang/Object;
+.field private final boundReceiver:Ljava/lang/Object;
 
 
 # direct methods
 .method public constructor <init>(Ljava/lang/reflect/Method;Ljava/lang/Object;)V
     .locals 2
+
+    const-string v0, "unboxMethod"
+
+    invoke-static {p1, v0}, Lkotlin/jvm/internal/Intrinsics;->checkNotNullParameter(Ljava/lang/Object;Ljava/lang/String;)V
 
     sget-object v0, Lkotlin/collections/EmptyList;->INSTANCE:Lkotlin/collections/EmptyList;
 
@@ -39,25 +70,17 @@
 
 # virtual methods
 .method public call([Ljava/lang/Object;)Ljava/lang/Object;
-    .locals 3
+    .locals 1
 
     const-string v0, "args"
 
     invoke-static {p1, v0}, Lkotlin/jvm/internal/Intrinsics;->checkNotNullParameter(Ljava/lang/Object;Ljava/lang/String;)V
 
-    invoke-static {p0, p1}, Lkotlin/reflect/jvm/internal/calls/Caller$DefaultImpls;->checkArguments(Lkotlin/reflect/jvm/internal/calls/Caller;[Ljava/lang/Object;)V
+    invoke-virtual {p0, p1}, Lkotlin/reflect/jvm/internal/calls/InternalUnderlyingValOfInlineClass;->checkArguments([Ljava/lang/Object;)V
 
     iget-object v0, p0, Lkotlin/reflect/jvm/internal/calls/InternalUnderlyingValOfInlineClass$Bound;->boundReceiver:Ljava/lang/Object;
 
-    iget-object v1, p0, Lkotlin/reflect/jvm/internal/calls/InternalUnderlyingValOfInlineClass;->unboxMethod:Ljava/lang/reflect/Method;
-
-    array-length v2, p1
-
-    invoke-static {p1, v2}, Ljava/util/Arrays;->copyOf([Ljava/lang/Object;I)[Ljava/lang/Object;
-
-    move-result-object p1
-
-    invoke-virtual {v1, v0, p1}, Ljava/lang/reflect/Method;->invoke(Ljava/lang/Object;[Ljava/lang/Object;)Ljava/lang/Object;
+    invoke-virtual {p0, v0, p1}, Lkotlin/reflect/jvm/internal/calls/InternalUnderlyingValOfInlineClass;->callMethod(Ljava/lang/Object;[Ljava/lang/Object;)Ljava/lang/Object;
 
     move-result-object p1
 

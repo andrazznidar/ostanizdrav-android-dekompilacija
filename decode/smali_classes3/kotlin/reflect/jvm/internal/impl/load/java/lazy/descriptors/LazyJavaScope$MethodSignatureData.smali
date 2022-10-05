@@ -15,7 +15,7 @@
 
 
 # instance fields
-.field public final errors:Ljava/util/List;
+.field private final errors:Ljava/util/List;
     .annotation system Ldalvik/annotation/Signature;
         value = {
             "Ljava/util/List<",
@@ -25,13 +25,13 @@
     .end annotation
 .end field
 
-.field public final hasStableParameterNames:Z
+.field private final hasStableParameterNames:Z
 
-.field public final receiverType:Lkotlin/reflect/jvm/internal/impl/types/KotlinType;
+.field private final receiverType:Lkotlin/reflect/jvm/internal/impl/types/KotlinType;
 
-.field public final returnType:Lkotlin/reflect/jvm/internal/impl/types/KotlinType;
+.field private final returnType:Lkotlin/reflect/jvm/internal/impl/types/KotlinType;
 
-.field public final typeParameters:Ljava/util/List;
+.field private final typeParameters:Ljava/util/List;
     .annotation system Ldalvik/annotation/Signature;
         value = {
             "Ljava/util/List<",
@@ -41,7 +41,7 @@
     .end annotation
 .end field
 
-.field public final valueParameters:Ljava/util/List;
+.field private final valueParameters:Ljava/util/List;
     .annotation system Ldalvik/annotation/Signature;
         value = {
             "Ljava/util/List<",
@@ -54,7 +54,7 @@
 
 # direct methods
 .method public constructor <init>(Lkotlin/reflect/jvm/internal/impl/types/KotlinType;Lkotlin/reflect/jvm/internal/impl/types/KotlinType;Ljava/util/List;Ljava/util/List;ZLjava/util/List;)V
-    .locals 0
+    .locals 1
     .annotation system Ldalvik/annotation/Signature;
         value = {
             "(",
@@ -74,13 +74,27 @@
         }
     .end annotation
 
+    const-string v0, "returnType"
+
+    invoke-static {p1, v0}, Lkotlin/jvm/internal/Intrinsics;->checkNotNullParameter(Ljava/lang/Object;Ljava/lang/String;)V
+
+    const-string v0, "valueParameters"
+
+    invoke-static {p3, v0}, Lkotlin/jvm/internal/Intrinsics;->checkNotNullParameter(Ljava/lang/Object;Ljava/lang/String;)V
+
+    const-string v0, "typeParameters"
+
+    invoke-static {p4, v0}, Lkotlin/jvm/internal/Intrinsics;->checkNotNullParameter(Ljava/lang/Object;Ljava/lang/String;)V
+
+    const-string v0, "errors"
+
+    invoke-static {p6, v0}, Lkotlin/jvm/internal/Intrinsics;->checkNotNullParameter(Ljava/lang/Object;Ljava/lang/String;)V
+
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
     iput-object p1, p0, Lkotlin/reflect/jvm/internal/impl/load/java/lazy/descriptors/LazyJavaScope$MethodSignatureData;->returnType:Lkotlin/reflect/jvm/internal/impl/types/KotlinType;
 
-    const/4 p1, 0x0
-
-    iput-object p1, p0, Lkotlin/reflect/jvm/internal/impl/load/java/lazy/descriptors/LazyJavaScope$MethodSignatureData;->receiverType:Lkotlin/reflect/jvm/internal/impl/types/KotlinType;
+    iput-object p2, p0, Lkotlin/reflect/jvm/internal/impl/load/java/lazy/descriptors/LazyJavaScope$MethodSignatureData;->receiverType:Lkotlin/reflect/jvm/internal/impl/types/KotlinType;
 
     iput-object p3, p0, Lkotlin/reflect/jvm/internal/impl/load/java/lazy/descriptors/LazyJavaScope$MethodSignatureData;->valueParameters:Ljava/util/List;
 
@@ -191,6 +205,78 @@
 
     :cond_7
     return v0
+.end method
+
+.method public final getErrors()Ljava/util/List;
+    .locals 1
+    .annotation system Ldalvik/annotation/Signature;
+        value = {
+            "()",
+            "Ljava/util/List<",
+            "Ljava/lang/String;",
+            ">;"
+        }
+    .end annotation
+
+    iget-object v0, p0, Lkotlin/reflect/jvm/internal/impl/load/java/lazy/descriptors/LazyJavaScope$MethodSignatureData;->errors:Ljava/util/List;
+
+    return-object v0
+.end method
+
+.method public final getHasStableParameterNames()Z
+    .locals 1
+
+    iget-boolean v0, p0, Lkotlin/reflect/jvm/internal/impl/load/java/lazy/descriptors/LazyJavaScope$MethodSignatureData;->hasStableParameterNames:Z
+
+    return v0
+.end method
+
+.method public final getReceiverType()Lkotlin/reflect/jvm/internal/impl/types/KotlinType;
+    .locals 1
+
+    iget-object v0, p0, Lkotlin/reflect/jvm/internal/impl/load/java/lazy/descriptors/LazyJavaScope$MethodSignatureData;->receiverType:Lkotlin/reflect/jvm/internal/impl/types/KotlinType;
+
+    return-object v0
+.end method
+
+.method public final getReturnType()Lkotlin/reflect/jvm/internal/impl/types/KotlinType;
+    .locals 1
+
+    iget-object v0, p0, Lkotlin/reflect/jvm/internal/impl/load/java/lazy/descriptors/LazyJavaScope$MethodSignatureData;->returnType:Lkotlin/reflect/jvm/internal/impl/types/KotlinType;
+
+    return-object v0
+.end method
+
+.method public final getTypeParameters()Ljava/util/List;
+    .locals 1
+    .annotation system Ldalvik/annotation/Signature;
+        value = {
+            "()",
+            "Ljava/util/List<",
+            "Lkotlin/reflect/jvm/internal/impl/descriptors/TypeParameterDescriptor;",
+            ">;"
+        }
+    .end annotation
+
+    iget-object v0, p0, Lkotlin/reflect/jvm/internal/impl/load/java/lazy/descriptors/LazyJavaScope$MethodSignatureData;->typeParameters:Ljava/util/List;
+
+    return-object v0
+.end method
+
+.method public final getValueParameters()Ljava/util/List;
+    .locals 1
+    .annotation system Ldalvik/annotation/Signature;
+        value = {
+            "()",
+            "Ljava/util/List<",
+            "Lkotlin/reflect/jvm/internal/impl/descriptors/ValueParameterDescriptor;",
+            ">;"
+        }
+    .end annotation
+
+    iget-object v0, p0, Lkotlin/reflect/jvm/internal/impl/load/java/lazy/descriptors/LazyJavaScope$MethodSignatureData;->valueParameters:Ljava/util/List;
+
+    return-object v0
 .end method
 
 .method public hashCode()I

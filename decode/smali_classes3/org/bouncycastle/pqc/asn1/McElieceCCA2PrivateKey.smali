@@ -3,17 +3,17 @@
 
 
 # instance fields
-.field public digest:Lorg/bouncycastle/asn1/x509/AlgorithmIdentifier;
+.field private digest:Lorg/bouncycastle/asn1/x509/AlgorithmIdentifier;
 
-.field public encField:[B
+.field private encField:[B
 
-.field public encGp:[B
+.field private encGp:[B
 
-.field public encP:[B
+.field private encP:[B
 
-.field public k:I
+.field private k:I
 
-.field public n:I
+.field private n:I
 
 
 # direct methods
@@ -49,7 +49,7 @@
     return-void
 .end method
 
-.method public constructor <init>(Lorg/bouncycastle/asn1/ASN1Sequence;)V
+.method private constructor <init>(Lorg/bouncycastle/asn1/ASN1Sequence;)V
     .locals 1
 
     invoke-direct {p0}, Lorg/bouncycastle/asn1/ASN1Object;-><init>()V
@@ -90,7 +90,9 @@
 
     check-cast v0, Lorg/bouncycastle/asn1/ASN1OctetString;
 
-    iget-object v0, v0, Lorg/bouncycastle/asn1/ASN1OctetString;->string:[B
+    invoke-virtual {v0}, Lorg/bouncycastle/asn1/ASN1OctetString;->getOctets()[B
+
+    move-result-object v0
 
     iput-object v0, p0, Lorg/bouncycastle/pqc/asn1/McElieceCCA2PrivateKey;->encField:[B
 
@@ -102,7 +104,9 @@
 
     check-cast v0, Lorg/bouncycastle/asn1/ASN1OctetString;
 
-    iget-object v0, v0, Lorg/bouncycastle/asn1/ASN1OctetString;->string:[B
+    invoke-virtual {v0}, Lorg/bouncycastle/asn1/ASN1OctetString;->getOctets()[B
+
+    move-result-object v0
 
     iput-object v0, p0, Lorg/bouncycastle/pqc/asn1/McElieceCCA2PrivateKey;->encGp:[B
 
@@ -114,7 +118,9 @@
 
     check-cast v0, Lorg/bouncycastle/asn1/ASN1OctetString;
 
-    iget-object v0, v0, Lorg/bouncycastle/asn1/ASN1OctetString;->string:[B
+    invoke-virtual {v0}, Lorg/bouncycastle/asn1/ASN1OctetString;->getOctets()[B
+
+    move-result-object v0
 
     iput-object v0, p0, Lorg/bouncycastle/pqc/asn1/McElieceCCA2PrivateKey;->encP:[B
 
@@ -165,6 +171,14 @@
 
 
 # virtual methods
+.method public getDigest()Lorg/bouncycastle/asn1/x509/AlgorithmIdentifier;
+    .locals 1
+
+    iget-object v0, p0, Lorg/bouncycastle/pqc/asn1/McElieceCCA2PrivateKey;->digest:Lorg/bouncycastle/asn1/x509/AlgorithmIdentifier;
+
+    return-object v0
+.end method
+
 .method public getField()Lorg/bouncycastle/pqc/math/linearalgebra/GF2mField;
     .locals 2
 
@@ -177,14 +191,56 @@
     return-object v0
 .end method
 
+.method public getGoppaPoly()Lorg/bouncycastle/pqc/math/linearalgebra/PolynomialGF2mSmallM;
+    .locals 3
+
+    new-instance v0, Lorg/bouncycastle/pqc/math/linearalgebra/PolynomialGF2mSmallM;
+
+    invoke-virtual {p0}, Lorg/bouncycastle/pqc/asn1/McElieceCCA2PrivateKey;->getField()Lorg/bouncycastle/pqc/math/linearalgebra/GF2mField;
+
+    move-result-object v1
+
+    iget-object v2, p0, Lorg/bouncycastle/pqc/asn1/McElieceCCA2PrivateKey;->encGp:[B
+
+    invoke-direct {v0, v1, v2}, Lorg/bouncycastle/pqc/math/linearalgebra/PolynomialGF2mSmallM;-><init>(Lorg/bouncycastle/pqc/math/linearalgebra/GF2mField;[B)V
+
+    return-object v0
+.end method
+
+.method public getK()I
+    .locals 1
+
+    iget v0, p0, Lorg/bouncycastle/pqc/asn1/McElieceCCA2PrivateKey;->k:I
+
+    return v0
+.end method
+
+.method public getN()I
+    .locals 1
+
+    iget v0, p0, Lorg/bouncycastle/pqc/asn1/McElieceCCA2PrivateKey;->n:I
+
+    return v0
+.end method
+
+.method public getP()Lorg/bouncycastle/pqc/math/linearalgebra/Permutation;
+    .locals 2
+
+    new-instance v0, Lorg/bouncycastle/pqc/math/linearalgebra/Permutation;
+
+    iget-object v1, p0, Lorg/bouncycastle/pqc/asn1/McElieceCCA2PrivateKey;->encP:[B
+
+    invoke-direct {v0, v1}, Lorg/bouncycastle/pqc/math/linearalgebra/Permutation;-><init>([B)V
+
+    return-object v0
+.end method
+
 .method public toASN1Primitive()Lorg/bouncycastle/asn1/ASN1Primitive;
     .locals 4
 
     new-instance v0, Lorg/bouncycastle/asn1/ASN1EncodableVector;
 
-    const/16 v1, 0xa
-
-    invoke-direct {v0, v1}, Lorg/bouncycastle/asn1/ASN1EncodableVector;-><init>(I)V
+    invoke-direct {v0}, Lorg/bouncycastle/asn1/ASN1EncodableVector;-><init>()V
 
     new-instance v1, Lorg/bouncycastle/asn1/ASN1Integer;
 
@@ -234,11 +290,9 @@
 
     invoke-virtual {v0, v1}, Lorg/bouncycastle/asn1/ASN1EncodableVector;->add(Lorg/bouncycastle/asn1/ASN1Encodable;)V
 
-    new-instance v1, Lorg/bouncycastle/asn1/DLSequence;
+    new-instance v1, Lorg/bouncycastle/asn1/DERSequence;
 
-    const/4 v2, 0x1
-
-    invoke-direct {v1, v0, v2}, Lorg/bouncycastle/asn1/DLSequence;-><init>(Lorg/bouncycastle/asn1/ASN1EncodableVector;I)V
+    invoke-direct {v1, v0}, Lorg/bouncycastle/asn1/DERSequence;-><init>(Lorg/bouncycastle/asn1/ASN1EncodableVector;)V
 
     return-object v1
 .end method

@@ -11,8 +11,6 @@
 
 
 # instance fields
-.field public _acceptBlankAsEmpty:Ljava/lang/Boolean;
-
 .field public final _coercionsByShape:[I
 
 
@@ -20,7 +18,7 @@
 .method public static constructor <clinit>()V
     .locals 1
 
-    invoke-static {}, Landroidx/constraintlayout/core/SolverVariable$Type$r8$EnumUnboxingUtility;->com$fasterxml$jackson$databind$cfg$CoercionInputShape$s$values()[I
+    invoke-static {}, Lcom/fasterxml/jackson/databind/cfg/CoercionInputShape$EnumUnboxingLocalUtility;->_values()[I
 
     move-result-object v0
 
@@ -41,10 +39,6 @@
     new-array v0, v0, [I
 
     iput-object v0, p0, Lcom/fasterxml/jackson/databind/cfg/MutableCoercionConfig;->_coercionsByShape:[I
-
-    sget-object v0, Ljava/lang/Boolean;->FALSE:Ljava/lang/Boolean;
-
-    iput-object v0, p0, Lcom/fasterxml/jackson/databind/cfg/MutableCoercionConfig;->_acceptBlankAsEmpty:Ljava/lang/Boolean;
 
     return-void
 .end method

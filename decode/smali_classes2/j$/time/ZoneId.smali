@@ -205,7 +205,7 @@
 
     move-result-object v0
 
-    const-class v1, Lj$/time/p;
+    const-class v1, Lj$/time/s;
 
     if-ne v0, v1, :cond_0
 
@@ -228,11 +228,11 @@
 .method public static j(Lj$/time/temporal/TemporalAccessor;)Lj$/time/ZoneId;
     .locals 3
 
-    sget v0, Lj$/time/temporal/w;->a:I
+    sget v0, Lj$/time/temporal/n;->a:I
 
     sget-object v0, Lj$/time/temporal/t;->a:Lj$/time/temporal/t;
 
-    invoke-interface {p0, v0}, Lj$/time/temporal/TemporalAccessor;->g(Lj$/time/temporal/x;)Ljava/lang/Object;
+    invoke-interface {p0, v0}, Lj$/time/temporal/TemporalAccessor;->i(Lj$/time/temporal/w;)Ljava/lang/Object;
 
     move-result-object v0
 
@@ -344,7 +344,7 @@
     goto :goto_1
 
     :cond_2
-    invoke-static {p0, v1}, Lj$/time/p;->o(Ljava/lang/String;Z)Lj$/time/p;
+    invoke-static {p0, v1}, Lj$/time/s;->o(Ljava/lang/String;Z)Lj$/time/s;
 
     move-result-object p0
 
@@ -411,7 +411,7 @@
 
     if-eq v1, v2, :cond_1
 
-    invoke-static {p0, p2}, Lj$/time/p;->o(Ljava/lang/String;Z)Lj$/time/p;
+    invoke-static {p0, p2}, Lj$/time/s;->o(Ljava/lang/String;Z)Lj$/time/s;
 
     move-result-object p0
 
@@ -554,13 +554,13 @@
     move-result-object p0
 
     :cond_3
-    new-instance v0, Lj$/time/p;
+    new-instance v0, Lj$/time/s;
 
     invoke-static {p1}, Lj$/time/zone/c;->j(Lj$/time/ZoneOffset;)Lj$/time/zone/c;
 
     move-result-object p1
 
-    invoke-direct {v0, p0, p1}, Lj$/time/p;-><init>(Ljava/lang/String;Lj$/time/zone/c;)V
+    invoke-direct {v0, p0, p1}, Lj$/time/s;-><init>(Ljava/lang/String;Lj$/time/zone/c;)V
 
     return-object v0
 .end method

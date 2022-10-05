@@ -1,4 +1,4 @@
-.class public final Lkotlin/reflect/jvm/internal/impl/resolve/scopes/MemberScope$Companion$ALL_NAME_FILTER$1;
+.class final Lkotlin/reflect/jvm/internal/impl/resolve/scopes/MemberScope$Companion$ALL_NAME_FILTER$1;
 .super Lkotlin/jvm/internal/Lambda;
 .source "MemberScope.kt"
 
@@ -56,16 +56,26 @@
 
 
 # virtual methods
-.method public invoke(Ljava/lang/Object;)Ljava/lang/Object;
+.method public final invoke(Lkotlin/reflect/jvm/internal/impl/name/Name;)Ljava/lang/Boolean;
     .locals 1
-
-    check-cast p1, Lkotlin/reflect/jvm/internal/impl/name/Name;
 
     const-string v0, "it"
 
     invoke-static {p1, v0}, Lkotlin/jvm/internal/Intrinsics;->checkNotNullParameter(Ljava/lang/Object;Ljava/lang/String;)V
 
     sget-object p1, Ljava/lang/Boolean;->TRUE:Ljava/lang/Boolean;
+
+    return-object p1
+.end method
+
+.method public bridge synthetic invoke(Ljava/lang/Object;)Ljava/lang/Object;
+    .locals 0
+
+    check-cast p1, Lkotlin/reflect/jvm/internal/impl/name/Name;
+
+    invoke-virtual {p0, p1}, Lkotlin/reflect/jvm/internal/impl/resolve/scopes/MemberScope$Companion$ALL_NAME_FILTER$1;->invoke(Lkotlin/reflect/jvm/internal/impl/name/Name;)Ljava/lang/Boolean;
+
+    move-result-object p1
 
     return-object p1
 .end method

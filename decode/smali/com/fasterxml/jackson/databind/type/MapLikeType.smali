@@ -87,13 +87,21 @@
 
     if-eqz v1, :cond_0
 
+    const/4 v1, 0x2
+
+    invoke-virtual {p0, v1}, Lcom/fasterxml/jackson/databind/type/TypeBase;->_hasNTypeParameters(I)Z
+
+    move-result v1
+
+    if-eqz v1, :cond_0
+
     const/16 v1, 0x3c
 
     invoke-virtual {v0, v1}, Ljava/lang/StringBuilder;->append(C)Ljava/lang/StringBuilder;
 
     iget-object v1, p0, Lcom/fasterxml/jackson/databind/type/MapLikeType;->_keyType:Lcom/fasterxml/jackson/databind/JavaType;
 
-    invoke-virtual {v1}, Lcom/fasterxml/jackson/core/type/ResolvedType;->toCanonical()Ljava/lang/String;
+    invoke-virtual {v1}, Lorg/joda/time/Chronology;->toCanonical()Ljava/lang/String;
 
     move-result-object v1
 
@@ -105,7 +113,7 @@
 
     iget-object v1, p0, Lcom/fasterxml/jackson/databind/type/MapLikeType;->_valueType:Lcom/fasterxml/jackson/databind/JavaType;
 
-    invoke-virtual {v1}, Lcom/fasterxml/jackson/core/type/ResolvedType;->toCanonical()Ljava/lang/String;
+    invoke-virtual {v1}, Lorg/joda/time/Chronology;->toCanonical()Ljava/lang/String;
 
     move-result-object v1
 

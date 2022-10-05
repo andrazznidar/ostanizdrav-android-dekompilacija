@@ -98,10 +98,13 @@
 
     move v6, v3
 
+    :cond_1
     :goto_0
     if-ge v6, v5, :cond_2
 
     aget-object v7, v0, v6
+
+    add-int/lit8 v6, v6, 0x1
 
     invoke-virtual {v7}, Ljava/io/File;->delete()Z
 
@@ -120,9 +123,6 @@
     const-string v7, "Deleted stale snapshot: %s"
 
     invoke-virtual {v8, v7, v9}, Ltimber/log/Timber$Tree;->w(Ljava/lang/String;[Ljava/lang/Object;)V
-
-    :cond_1
-    add-int/lit8 v6, v6, 0x1
 
     goto :goto_0
 
@@ -201,21 +201,9 @@
 
     invoke-direct {v2, v5, v6}, Ljava/io/File;-><init>(Ljava/io/File;Ljava/lang/String;)V
 
-    const-string/jumbo v5, "zipPath"
+    const-string v5, ".txt"
 
-    invoke-static {v2, v5}, Lkotlin/jvm/internal/Intrinsics;->checkNotNullParameter(Ljava/lang/Object;Ljava/lang/String;)V
-
-    new-instance v5, Ljava/lang/StringBuilder;
-
-    invoke-direct {v5}, Ljava/lang/StringBuilder;-><init>()V
-
-    invoke-virtual {v5, v0}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
-
-    const-string v0, ".txt"
-
-    invoke-virtual {v5, v0}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
-
-    invoke-virtual {v5}, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
+    invoke-static {v0, v5}, Landroidx/appcompat/view/SupportMenuInflater$$ExternalSyntheticOutline0;->m(Ljava/lang/String;Ljava/lang/String;)Ljava/lang/String;
 
     move-result-object v0
 
@@ -233,15 +221,11 @@
 
     move-result-object v0
 
-    const-string/jumbo v5, "toZip"
-
-    invoke-static {v0, v5}, Lkotlin/jvm/internal/Intrinsics;->checkNotNullParameter(Ljava/lang/Object;Ljava/lang/String;)V
-
     invoke-virtual {v2}, Ljava/io/File;->exists()Z
 
     move-result v5
 
-    if-nez v5, :cond_a
+    if-nez v5, :cond_9
 
     sget-object v5, Ltimber/log/Timber;->Forest:Ltimber/log/Timber$Forest;
 
@@ -275,7 +259,7 @@
 
     move-result v5
 
-    if-eqz v5, :cond_9
+    if-eqz v5, :cond_8
 
     new-instance v5, Ljava/util/zip/ZipOutputStream;
 
@@ -308,13 +292,11 @@
 
     move-result v7
 
-    add-int/lit8 v7, v7, -0x1
-
-    if-ltz v7, :cond_8
-
     move v8, v3
 
     :goto_4
+    if-ge v8, v7, :cond_7
+
     add-int/lit8 v10, v8, 0x1
 
     sget-object v11, Ltimber/log/Timber;->Forest:Ltimber/log/Timber$Forest;
@@ -379,55 +361,50 @@
 
     invoke-virtual {v11, v12, v14}, Ltimber/log/Timber$Forest;->v(Ljava/lang/String;[Ljava/lang/Object;)V
 
-    iget-object v11, v8, Lde/rki/coronawarnapp/util/files/Zipper$Entry;->path:Ljava/io/File;
+    new-instance v11, Ljava/io/FileInputStream;
 
-    new-instance v12, Ljava/io/FileInputStream;
+    iget-object v12, v8, Lde/rki/coronawarnapp/util/files/Zipper$Entry;->path:Ljava/io/File;
 
-    invoke-direct {v12, v11}, Ljava/io/FileInputStream;-><init>(Ljava/io/File;)V
+    invoke-direct {v11, v12}, Ljava/io/FileInputStream;-><init>(Ljava/io/File;)V
 
-    instance-of v11, v12, Ljava/io/BufferedInputStream;
+    instance-of v12, v11, Ljava/io/BufferedInputStream;
 
-    if-eqz v11, :cond_6
+    if-eqz v12, :cond_6
 
-    check-cast v12, Ljava/io/BufferedInputStream;
+    check-cast v11, Ljava/io/BufferedInputStream;
 
     goto :goto_5
 
     :cond_6
-    new-instance v11, Ljava/io/BufferedInputStream;
+    new-instance v12, Ljava/io/BufferedInputStream;
 
-    invoke-direct {v11, v12, v9}, Ljava/io/BufferedInputStream;-><init>(Ljava/io/InputStream;I)V
+    invoke-direct {v12, v11, v9}, Ljava/io/BufferedInputStream;-><init>(Ljava/io/InputStream;I)V
     :try_end_0
     .catchall {:try_start_0 .. :try_end_0} :catchall_2
 
-    move-object v12, v11
+    move-object v11, v12
 
     :goto_5
     :try_start_1
-    new-instance v11, Ljava/util/zip/ZipEntry;
+    new-instance v12, Ljava/util/zip/ZipEntry;
 
     iget-object v8, v8, Lde/rki/coronawarnapp/util/files/Zipper$Entry;->name:Ljava/lang/String;
 
-    invoke-direct {v11, v8}, Ljava/util/zip/ZipEntry;-><init>(Ljava/lang/String;)V
+    invoke-direct {v12, v8}, Ljava/util/zip/ZipEntry;-><init>(Ljava/lang/String;)V
 
-    invoke-virtual {v5, v11}, Ljava/util/zip/ZipOutputStream;->putNextEntry(Ljava/util/zip/ZipEntry;)V
+    invoke-virtual {v5, v12}, Ljava/util/zip/ZipOutputStream;->putNextEntry(Ljava/util/zip/ZipEntry;)V
 
-    invoke-static {v12, v5, v3, v13}, Lkotlin/io/ByteStreamsKt;->copyTo$default(Ljava/io/InputStream;Ljava/io/OutputStream;II)J
+    invoke-static {v11, v5, v3, v13}, Lkotlin/io/ByteStreamsKt;->copyTo$default(Ljava/io/InputStream;Ljava/io/OutputStream;II)J
     :try_end_1
     .catchall {:try_start_1 .. :try_end_1} :catchall_0
 
     const/4 v8, 0x0
 
     :try_start_2
-    invoke-static {v12, v8}, Lkotlin/io/CloseableKt;->closeFinally(Ljava/io/Closeable;Ljava/lang/Throwable;)V
+    invoke-static {v11, v8}, Lkotlin/io/CloseableKt;->closeFinally(Ljava/io/Closeable;Ljava/lang/Throwable;)V
     :try_end_2
     .catchall {:try_start_2 .. :try_end_2} :catchall_2
 
-    if-le v10, v7, :cond_7
-
-    goto :goto_6
-
-    :cond_7
     move v8, v10
 
     goto :goto_4
@@ -448,14 +425,13 @@
     move-object v3, v0
 
     :try_start_4
-    invoke-static {v12, v2}, Lkotlin/io/CloseableKt;->closeFinally(Ljava/io/Closeable;Ljava/lang/Throwable;)V
+    invoke-static {v11, v2}, Lkotlin/io/CloseableKt;->closeFinally(Ljava/io/Closeable;Ljava/lang/Throwable;)V
 
     throw v3
     :try_end_4
     .catchall {:try_start_4 .. :try_end_4} :catchall_2
 
-    :cond_8
-    :goto_6
+    :cond_7
     const/4 v0, 0x0
 
     invoke-static {v5, v0}, Lkotlin/io/CloseableKt;->closeFinally(Ljava/io/Closeable;Ljava/lang/Throwable;)V
@@ -497,12 +473,20 @@
 
     throw v3
 
-    :cond_9
+    :cond_8
     new-instance v0, Ljava/io/IOException;
 
-    const-string v3, "Could not create "
+    new-instance v3, Ljava/lang/StringBuilder;
 
-    invoke-static {v3, v2}, Landroidx/core/content/FileProvider$SimplePathStrategy$$ExternalSyntheticOutline0;->m(Ljava/lang/String;Ljava/io/File;)Ljava/lang/String;
+    invoke-direct {v3}, Ljava/lang/StringBuilder;-><init>()V
+
+    const-string v4, "Could not create "
+
+    invoke-virtual {v3, v4}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+
+    invoke-virtual {v3, v2}, Ljava/lang/StringBuilder;->append(Ljava/lang/Object;)Ljava/lang/StringBuilder;
+
+    invoke-virtual {v3}, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
 
     move-result-object v2
 
@@ -510,7 +494,7 @@
 
     throw v0
 
-    :cond_a
+    :cond_9
     new-instance v0, Ljava/io/IOException;
 
     new-instance v3, Ljava/lang/StringBuilder;

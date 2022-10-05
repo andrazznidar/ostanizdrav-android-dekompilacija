@@ -10,17 +10,25 @@
 
 
 # direct methods
-.method public static final report(Ljava/lang/Throwable;Lde/rki/coronawarnapp/exception/ExceptionCategory;)V
+.method public static final report(Ljava/lang/Throwable;I)V
     .locals 1
+
+    const-string v0, "<this>"
+
+    invoke-static {p0, v0}, Lkotlin/jvm/internal/Intrinsics;->checkNotNullParameter(Ljava/lang/Object;Ljava/lang/String;)V
+
+    const-string v0, "exceptionCategory"
+
+    invoke-static {p1, v0}, Lkotlin/jvm/internal/Intrinsics$$ExternalSyntheticCheckNotZero0;->m(ILjava/lang/String;)V
 
     const/4 v0, 0x0
 
-    invoke-static {p0, p1, v0, v0}, Lde/rki/coronawarnapp/exception/reporting/ExceptionReporterKt;->report(Ljava/lang/Throwable;Lde/rki/coronawarnapp/exception/ExceptionCategory;Ljava/lang/String;Ljava/lang/String;)V
+    invoke-static {p0, p1, v0, v0}, Lde/rki/coronawarnapp/exception/reporting/ExceptionReporterKt;->report(Ljava/lang/Throwable;ILjava/lang/String;Ljava/lang/String;)V
 
     return-void
 .end method
 
-.method public static final report(Ljava/lang/Throwable;Lde/rki/coronawarnapp/exception/ExceptionCategory;Ljava/lang/String;Ljava/lang/String;)V
+.method public static final report(Ljava/lang/Throwable;ILjava/lang/String;Ljava/lang/String;)V
     .locals 21
 
     move-object/from16 v0, p0
@@ -35,9 +43,9 @@
 
     const-string v3, "exceptionCategory"
 
-    move-object/from16 v4, p1
+    move/from16 v4, p1
 
-    invoke-static {v4, v3}, Lkotlin/jvm/internal/Intrinsics;->checkNotNullParameter(Ljava/lang/Object;Ljava/lang/String;)V
+    invoke-static {v4, v3}, Lkotlin/jvm/internal/Intrinsics$$ExternalSyntheticCheckNotZero0;->m(ILjava/lang/String;)V
 
     sget-object v3, Lde/rki/coronawarnapp/util/CWADebug;->INSTANCE:Lde/rki/coronawarnapp/util/CWADebug;
 
@@ -57,7 +65,7 @@
     return-void
 
     :cond_1
-    invoke-static {v0, v1, v2}, Lkotlinx/coroutines/channels/ChannelsKt;->reportProblem(Ljava/lang/Throwable;Ljava/lang/String;Ljava/lang/String;)V
+    invoke-static {v0, v1, v2}, Lde/rki/coronawarnapp/bugreporting/BugReporterKt;->reportProblem(Ljava/lang/Throwable;Ljava/lang/String;Ljava/lang/String;)V
 
     invoke-static {}, Lde/rki/coronawarnapp/util/CWADebug;->isAUnitTest()Z
 
@@ -90,7 +98,7 @@
 
     const-string v7, "category"
 
-    invoke-virtual/range {p1 .. p1}, Ljava/lang/Enum;->name()Ljava/lang/String;
+    invoke-static/range {p1 .. p1}, Lde/rki/coronawarnapp/exception/ExceptionCategory$EnumUnboxingLocalUtility;->name(I)Ljava/lang/String;
 
     move-result-object v4
 
@@ -108,7 +116,7 @@
 
     if-eqz v1, :cond_4
 
-    invoke-static {v0, v3}, Lde/rki/coronawarnapp/util/HasHumanReadableErrorKt;->tryHumanReadableError(Ljava/lang/Throwable;Landroid/content/Context;)Lde/rki/coronawarnapp/util/HumanReadableError;
+    invoke-static {v0, v3}, Lcom/google/android/gms/common/api/internal/zacp;->tryHumanReadableError(Ljava/lang/Throwable;Landroid/content/Context;)Lde/rki/coronawarnapp/util/HumanReadableError;
 
     move-result-object v1
 
@@ -183,7 +191,7 @@
 
     if-eqz v2, :cond_a
 
-    const v2, 0x7f1301c8
+    const v2, 0x7f1301f4
 
     move-object v4, v0
 
@@ -197,7 +205,7 @@
 
     if-ne v7, v8, :cond_7
 
-    const v2, 0x7f1301d3
+    const v2, 0x7f1301ff
 
     goto :goto_3
 
@@ -211,7 +219,7 @@
     if-ne v7, v8, :cond_9
 
     :cond_8
-    const v2, 0x7f1301d2
+    const v2, 0x7f1301fe
 
     :cond_9
     :goto_3
@@ -673,12 +681,17 @@
     throw v5
 .end method
 
-.method public static synthetic report$default(Ljava/lang/Throwable;Lde/rki/coronawarnapp/exception/ExceptionCategory;Ljava/lang/String;Ljava/lang/String;I)V
+.method public static synthetic report$default(Ljava/lang/Throwable;ILjava/lang/String;Ljava/lang/String;I)V
     .locals 0
+
+    and-int/lit8 p4, p4, 0x4
+
+    if-eqz p4, :cond_0
 
     const/4 p3, 0x0
 
-    invoke-static {p0, p1, p2, p3}, Lde/rki/coronawarnapp/exception/reporting/ExceptionReporterKt;->report(Ljava/lang/Throwable;Lde/rki/coronawarnapp/exception/ExceptionCategory;Ljava/lang/String;Ljava/lang/String;)V
+    :cond_0
+    invoke-static {p0, p1, p2, p3}, Lde/rki/coronawarnapp/exception/reporting/ExceptionReporterKt;->report(Ljava/lang/Throwable;ILjava/lang/String;Ljava/lang/String;)V
 
     return-void
 .end method

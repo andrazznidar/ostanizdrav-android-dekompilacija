@@ -5,9 +5,9 @@
 
 # direct methods
 .method public static $default$getCustomMessage(Lcom/networknt/schema/ErrorMessageType;)Ljava/lang/String;
-    .locals 1
+    .locals 0
 
-    const/4 v0, 0x0
+    const/4 p0, 0x0
 
-    return-object v0
+    return-object p0
 .end method

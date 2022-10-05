@@ -1,5 +1,6 @@
 .class public final synthetic Lde/rki/coronawarnapp/contactdiary/ui/day/tabs/location/ContactDiaryLocationListFragment$onViewCreated$3$$ExternalSyntheticLambda0;
 .super Ljava/lang/Object;
+.source "R8$$SyntheticClass"
 
 # interfaces
 .implements Lde/rki/coronawarnapp/ui/durationpicker/DurationPicker$OnChangeListener;

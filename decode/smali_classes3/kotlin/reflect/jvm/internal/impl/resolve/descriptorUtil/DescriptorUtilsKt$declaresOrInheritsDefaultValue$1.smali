@@ -1,4 +1,4 @@
-.class public final Lkotlin/reflect/jvm/internal/impl/resolve/descriptorUtil/DescriptorUtilsKt$declaresOrInheritsDefaultValue$1;
+.class final Lkotlin/reflect/jvm/internal/impl/resolve/descriptorUtil/DescriptorUtilsKt$declaresOrInheritsDefaultValue$1;
 .super Ljava/lang/Object;
 .source "DescriptorUtils.kt"
 
@@ -18,20 +18,28 @@
 
 .annotation system Ldalvik/annotation/Signature;
     value = {
+        "<N:",
         "Ljava/lang/Object;",
-        "Lkotlin/reflect/jvm/internal/impl/utils/DFS$Neighbors<",
-        "Lkotlin/reflect/jvm/internal/impl/descriptors/ValueParameterDescriptor;",
-        ">;"
+        ">",
+        "Ljava/lang/Object;",
+        "Lkotlin/reflect/jvm/internal/impl/utils/DFS$Neighbors;"
     }
 .end annotation
 
 .annotation system Ldalvik/annotation/SourceDebugExtension;
-    value = "SMAP\nDescriptorUtils.kt\nKotlin\n*S Kotlin\n*F\n+ 1 DescriptorUtils.kt\norg/jetbrains/kotlin/resolve/descriptorUtil/DescriptorUtilsKt$declaresOrInheritsDefaultValue$1\n+ 2 _Collections.kt\nkotlin/collections/CollectionsKt___CollectionsKt\n*L\n1#1,429:1\n1517#2:430\n1588#2,3:431\n*E\n*S KotlinDebug\n*F\n+ 1 DescriptorUtils.kt\norg/jetbrains/kotlin/resolve/descriptorUtil/DescriptorUtilsKt$declaresOrInheritsDefaultValue$1\n*L\n200#1:430\n200#1,3:431\n*E\n"
+    value = "SMAP\nDescriptorUtils.kt\nKotlin\n*S Kotlin\n*F\n+ 1 DescriptorUtils.kt\norg/jetbrains/kotlin/resolve/descriptorUtil/DescriptorUtilsKt$declaresOrInheritsDefaultValue$1\n+ 2 _Collections.kt\nkotlin/collections/CollectionsKt___CollectionsKt\n*L\n1#1,444:1\n1547#2:445\n1618#2,3:446\n*S KotlinDebug\n*F\n+ 1 DescriptorUtils.kt\norg/jetbrains/kotlin/resolve/descriptorUtil/DescriptorUtilsKt$declaresOrInheritsDefaultValue$1\n*L\n198#1:445\n198#1:446,3\n*E\n"
 .end annotation
 
 
 # static fields
 .field public static final INSTANCE:Lkotlin/reflect/jvm/internal/impl/resolve/descriptorUtil/DescriptorUtilsKt$declaresOrInheritsDefaultValue$1;
+    .annotation system Ldalvik/annotation/Signature;
+        value = {
+            "Lkotlin/reflect/jvm/internal/impl/resolve/descriptorUtil/DescriptorUtilsKt$declaresOrInheritsDefaultValue$1<",
+            "TN;>;"
+        }
+    .end annotation
+.end field
 
 
 # direct methods
@@ -57,10 +65,30 @@
 
 
 # virtual methods
-.method public getNeighbors(Ljava/lang/Object;)Ljava/lang/Iterable;
-    .locals 2
+.method public bridge synthetic getNeighbors(Ljava/lang/Object;)Ljava/lang/Iterable;
+    .locals 0
 
     check-cast p1, Lkotlin/reflect/jvm/internal/impl/descriptors/ValueParameterDescriptor;
+
+    invoke-virtual {p0, p1}, Lkotlin/reflect/jvm/internal/impl/resolve/descriptorUtil/DescriptorUtilsKt$declaresOrInheritsDefaultValue$1;->getNeighbors(Lkotlin/reflect/jvm/internal/impl/descriptors/ValueParameterDescriptor;)Ljava/lang/Iterable;
+
+    move-result-object p1
+
+    return-object p1
+.end method
+
+.method public final getNeighbors(Lkotlin/reflect/jvm/internal/impl/descriptors/ValueParameterDescriptor;)Ljava/lang/Iterable;
+    .locals 2
+    .annotation system Ldalvik/annotation/Signature;
+        value = {
+            "(",
+            "Lkotlin/reflect/jvm/internal/impl/descriptors/ValueParameterDescriptor;",
+            ")",
+            "Ljava/lang/Iterable<",
+            "Lkotlin/reflect/jvm/internal/impl/descriptors/ValueParameterDescriptor;",
+            ">;"
+        }
+    .end annotation
 
     invoke-interface {p1}, Lkotlin/reflect/jvm/internal/impl/descriptors/ValueParameterDescriptor;->getOverriddenDescriptors()Ljava/util/Collection;
 
@@ -97,7 +125,7 @@
 
     move-result-object v1
 
-    invoke-virtual {v0, v1}, Ljava/util/ArrayList;->add(Ljava/lang/Object;)Z
+    invoke-interface {v0, v1}, Ljava/util/Collection;->add(Ljava/lang/Object;)Z
 
     goto :goto_0
 

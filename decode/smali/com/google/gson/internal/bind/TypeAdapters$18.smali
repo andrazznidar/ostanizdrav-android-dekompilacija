@@ -16,7 +16,7 @@
 .annotation system Ldalvik/annotation/Signature;
     value = {
         "Lcom/google/gson/TypeAdapter<",
-        "Ljava/math/BigInteger;",
+        "Ljava/lang/StringBuilder;",
         ">;"
     }
 .end annotation
@@ -56,30 +56,18 @@
     goto :goto_0
 
     :cond_0
-    :try_start_0
-    new-instance v0, Ljava/math/BigInteger;
+    new-instance v0, Ljava/lang/StringBuilder;
 
     invoke-virtual {p1}, Lcom/google/gson/stream/JsonReader;->nextString()Ljava/lang/String;
 
     move-result-object p1
 
-    invoke-direct {v0, p1}, Ljava/math/BigInteger;-><init>(Ljava/lang/String;)V
-    :try_end_0
-    .catch Ljava/lang/NumberFormatException; {:try_start_0 .. :try_end_0} :catch_0
+    invoke-direct {v0, p1}, Ljava/lang/StringBuilder;-><init>(Ljava/lang/String;)V
 
     move-object p1, v0
 
     :goto_0
     return-object p1
-
-    :catch_0
-    move-exception p1
-
-    new-instance v0, Lcom/google/gson/JsonSyntaxException;
-
-    invoke-direct {v0, p1}, Lcom/google/gson/JsonSyntaxException;-><init>(Ljava/lang/Throwable;)V
-
-    throw v0
 .end method
 
 .method public write(Lcom/google/gson/stream/JsonWriter;Ljava/lang/Object;)V
@@ -90,9 +78,21 @@
         }
     .end annotation
 
-    check-cast p2, Ljava/math/BigInteger;
+    check-cast p2, Ljava/lang/StringBuilder;
 
-    invoke-virtual {p1, p2}, Lcom/google/gson/stream/JsonWriter;->value(Ljava/lang/Number;)Lcom/google/gson/stream/JsonWriter;
+    if-nez p2, :cond_0
+
+    const/4 p2, 0x0
+
+    goto :goto_0
+
+    :cond_0
+    invoke-virtual {p2}, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
+
+    move-result-object p2
+
+    :goto_0
+    invoke-virtual {p1, p2}, Lcom/google/gson/stream/JsonWriter;->value(Ljava/lang/String;)Lcom/google/gson/stream/JsonWriter;
 
     return-void
 .end method

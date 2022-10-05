@@ -228,6 +228,26 @@
     return p1
 .end method
 
+.method public receive(Lkotlin/coroutines/Continuation;)Ljava/lang/Object;
+    .locals 1
+    .annotation system Ldalvik/annotation/Signature;
+        value = {
+            "(",
+            "Lkotlin/coroutines/Continuation<",
+            "-TE;>;)",
+            "Ljava/lang/Object;"
+        }
+    .end annotation
+
+    iget-object v0, p0, Lkotlinx/coroutines/channels/ChannelCoroutine;->_channel:Lkotlinx/coroutines/channels/Channel;
+
+    invoke-interface {v0, p1}, Lkotlinx/coroutines/channels/ReceiveChannel;->receive(Lkotlin/coroutines/Continuation;)Ljava/lang/Object;
+
+    move-result-object p1
+
+    return-object p1
+.end method
+
 .method public receiveCatching-JP2dKIU(Lkotlin/coroutines/Continuation;)Ljava/lang/Object;
     .locals 1
     .annotation system Ldalvik/annotation/Signature;

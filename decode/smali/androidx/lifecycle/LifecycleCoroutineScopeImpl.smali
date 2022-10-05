@@ -8,24 +8,14 @@
 
 # annotations
 .annotation runtime Lkotlin/Metadata;
-    bv = {
-        0x1,
-        0x0,
-        0x3
-    }
+    bv = {}
     d1 = {
-        "\u0000\u001a\n\u0002\u0018\u0002\n\u0002\u0018\u0002\n\u0002\u0018\u0002\n\u0002\u0018\u0002\n\u0000\n\u0002\u0018\u0002\n\u0002\u0008\u0004\u0008\u0000\u0018\u00002\u00020\u00012\u00020\u0002B\u0017\u0012\u0006\u0010\u0004\u001a\u00020\u0003\u0012\u0006\u0010\u0006\u001a\u00020\u0005\u00a2\u0006\u0004\u0008\u0007\u0010\u0008\u00a8\u0006\t"
+        "\u0000\u000e\n\u0002\u0018\u0002\n\u0002\u0018\u0002\n\u0002\u0018\u0002\n\u0000\u0008\u0000\u0018\u00002\u00020\u00012\u00020\u0002\u00a8\u0006\u0003"
     }
     d2 = {
         "Landroidx/lifecycle/LifecycleCoroutineScopeImpl;",
         "Landroidx/lifecycle/LifecycleCoroutineScope;",
         "Landroidx/lifecycle/LifecycleEventObserver;",
-        "Landroidx/lifecycle/Lifecycle;",
-        "lifecycle",
-        "Lkotlin/coroutines/CoroutineContext;",
-        "coroutineContext",
-        "<init>",
-        "(Landroidx/lifecycle/Lifecycle;Lkotlin/coroutines/CoroutineContext;)V",
         "lifecycle-runtime-ktx_release"
     }
     k = 0x1
@@ -81,6 +71,14 @@
     .locals 1
 
     iget-object v0, p0, Landroidx/lifecycle/LifecycleCoroutineScopeImpl;->coroutineContext:Lkotlin/coroutines/CoroutineContext;
+
+    return-object v0
+.end method
+
+.method public getLifecycle$lifecycle_runtime_ktx_release()Landroidx/lifecycle/Lifecycle;
+    .locals 1
+
+    iget-object v0, p0, Landroidx/lifecycle/LifecycleCoroutineScopeImpl;->lifecycle:Landroidx/lifecycle/Lifecycle;
 
     return-object v0
 .end method

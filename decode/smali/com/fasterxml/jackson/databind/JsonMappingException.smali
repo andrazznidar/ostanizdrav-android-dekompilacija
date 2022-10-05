@@ -1,5 +1,5 @@
 .class public Lcom/fasterxml/jackson/databind/JsonMappingException;
-.super Lcom/fasterxml/jackson/core/JsonProcessingException;
+.super Lcom/fasterxml/jackson/databind/DatabindException;
 .source "JsonMappingException.java"
 
 
@@ -29,7 +29,7 @@
 .method public constructor <init>(Ljava/io/Closeable;Ljava/lang/String;)V
     .locals 0
 
-    invoke-direct {p0, p2}, Lcom/fasterxml/jackson/core/JsonProcessingException;-><init>(Ljava/lang/String;)V
+    invoke-direct {p0, p2}, Lcom/fasterxml/jackson/databind/DatabindException;-><init>(Ljava/lang/String;)V
 
     iput-object p1, p0, Lcom/fasterxml/jackson/databind/JsonMappingException;->_processor:Ljava/io/Closeable;
 
@@ -52,7 +52,7 @@
 .method public constructor <init>(Ljava/io/Closeable;Ljava/lang/String;Lcom/fasterxml/jackson/core/JsonLocation;)V
     .locals 0
 
-    invoke-direct {p0, p2, p3}, Lcom/fasterxml/jackson/core/JsonProcessingException;-><init>(Ljava/lang/String;Lcom/fasterxml/jackson/core/JsonLocation;)V
+    invoke-direct {p0, p2, p3}, Lcom/fasterxml/jackson/databind/DatabindException;-><init>(Ljava/lang/String;Lcom/fasterxml/jackson/core/JsonLocation;)V
 
     iput-object p1, p0, Lcom/fasterxml/jackson/databind/JsonMappingException;->_processor:Ljava/io/Closeable;
 
@@ -62,17 +62,19 @@
 .method public constructor <init>(Ljava/io/Closeable;Ljava/lang/String;Ljava/lang/Throwable;)V
     .locals 0
 
-    invoke-direct {p0, p2, p3}, Lcom/fasterxml/jackson/core/JsonProcessingException;-><init>(Ljava/lang/String;Ljava/lang/Throwable;)V
+    invoke-direct {p0, p2, p3}, Lcom/fasterxml/jackson/databind/DatabindException;-><init>(Ljava/lang/String;Ljava/lang/Throwable;)V
 
     iput-object p1, p0, Lcom/fasterxml/jackson/databind/JsonMappingException;->_processor:Ljava/io/Closeable;
 
-    instance-of p2, p3, Lcom/fasterxml/jackson/core/JsonProcessingException;
+    instance-of p2, p3, Lcom/fasterxml/jackson/core/JacksonException;
 
     if-eqz p2, :cond_0
 
-    check-cast p3, Lcom/fasterxml/jackson/core/JsonProcessingException;
+    check-cast p3, Lcom/fasterxml/jackson/core/JacksonException;
 
-    iget-object p1, p3, Lcom/fasterxml/jackson/core/JsonProcessingException;->_location:Lcom/fasterxml/jackson/core/JsonLocation;
+    invoke-virtual {p3}, Lcom/fasterxml/jackson/core/JacksonException;->getLocation()Lcom/fasterxml/jackson/core/JsonLocation;
+
+    move-result-object p1
 
     iput-object p1, p0, Lcom/fasterxml/jackson/core/JsonProcessingException;->_location:Lcom/fasterxml/jackson/core/JsonLocation;
 
@@ -190,15 +192,15 @@
     :cond_2
     const/4 v1, 0x0
 
-    instance-of v2, p0, Lcom/fasterxml/jackson/core/JsonProcessingException;
+    instance-of v2, p0, Lcom/fasterxml/jackson/core/JacksonException;
 
     if-eqz v2, :cond_3
 
     move-object v2, p0
 
-    check-cast v2, Lcom/fasterxml/jackson/core/JsonProcessingException;
+    check-cast v2, Lcom/fasterxml/jackson/core/JacksonException;
 
-    invoke-virtual {v2}, Lcom/fasterxml/jackson/core/JsonProcessingException;->getProcessor()Ljava/lang/Object;
+    invoke-virtual {v2}, Lcom/fasterxml/jackson/core/JacksonException;->getProcessor()Ljava/lang/Object;
 
     move-result-object v2
 

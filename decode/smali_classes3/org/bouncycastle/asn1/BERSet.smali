@@ -3,6 +3,14 @@
 
 
 # direct methods
+.method public constructor <init>()V
+    .locals 0
+
+    invoke-direct {p0}, Lorg/bouncycastle/asn1/ASN1Set;-><init>()V
+
+    return-void
+.end method
+
 .method public constructor <init>(Lorg/bouncycastle/asn1/ASN1Encodable;)V
     .locals 0
 
@@ -25,6 +33,16 @@
     .locals 0
 
     invoke-direct {p0, p1, p2}, Lorg/bouncycastle/asn1/ASN1Set;-><init>(Z[Lorg/bouncycastle/asn1/ASN1Encodable;)V
+
+    return-void
+.end method
+
+.method public constructor <init>([Lorg/bouncycastle/asn1/ASN1Encodable;)V
+    .locals 1
+
+    const/4 v0, 0x0
+
+    invoke-direct {p0, p1, v0}, Lorg/bouncycastle/asn1/ASN1Set;-><init>([Lorg/bouncycastle/asn1/ASN1Encodable;Z)V
 
     return-void
 .end method

@@ -1,5 +1,6 @@
 .class public final synthetic Lde/rki/coronawarnapp/covidcertificate/pdf/ui/CertificateExportErrorDialog$$ExternalSyntheticLambda0;
 .super Ljava/lang/Object;
+.source "R8$$SyntheticClass"
 
 # interfaces
 .implements Landroid/content/DialogInterface$OnClickListener;

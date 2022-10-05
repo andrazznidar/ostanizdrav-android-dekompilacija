@@ -7,7 +7,9 @@
 .annotation system Ldalvik/annotation/Signature;
     value = {
         "Lcom/google/protobuf/SmallSortedMap<",
-        "Lcom/google/protobuf/FieldSet$FieldDescriptorLite;",
+        "Lcom/google/protobuf/FieldSet$FieldDescriptorLite<",
+        "Ljava/lang/Object;",
+        ">;",
         "Ljava/lang/Object;",
         ">;"
     }

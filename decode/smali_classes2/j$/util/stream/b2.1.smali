@@ -1,79 +1,105 @@
-.class abstract Lj$/util/stream/b2;
-.super Ljava/lang/Object;
+.class final Lj$/util/stream/b2;
+.super Lj$/util/stream/f;
 
-# interfaces
-.implements Lj$/util/stream/B1;
+
+# instance fields
+.field private final h:Lj$/util/stream/a2;
 
 
 # direct methods
-.method constructor <init>()V
+.method constructor <init>(Lj$/util/stream/a2;Lj$/util/stream/D0;Lj$/util/Spliterator;)V
     .locals 0
 
-    invoke-direct {p0}, Ljava/lang/Object;-><init>()V
+    invoke-direct {p0, p2, p3}, Lj$/util/stream/f;-><init>(Lj$/util/stream/D0;Lj$/util/Spliterator;)V
+
+    iput-object p1, p0, Lj$/util/stream/b2;->h:Lj$/util/stream/a2;
+
+    return-void
+.end method
+
+.method constructor <init>(Lj$/util/stream/b2;Lj$/util/Spliterator;)V
+    .locals 0
+
+    invoke-direct {p0, p1, p2}, Lj$/util/stream/f;-><init>(Lj$/util/stream/f;Lj$/util/Spliterator;)V
+
+    iget-object p1, p1, Lj$/util/stream/b2;->h:Lj$/util/stream/a2;
+
+    iput-object p1, p0, Lj$/util/stream/b2;->h:Lj$/util/stream/a2;
 
     return-void
 .end method
 
 
 # virtual methods
-.method public b(I)Lj$/util/stream/B1;
-    .locals 0
+.method protected a()Ljava/lang/Object;
+    .locals 3
 
-    new-instance p1, Ljava/lang/IndexOutOfBoundsException;
+    iget-object v0, p0, Lj$/util/stream/f;->a:Lj$/util/stream/D0;
 
-    invoke-direct {p1}, Ljava/lang/IndexOutOfBoundsException;-><init>()V
+    iget-object v1, p0, Lj$/util/stream/b2;->h:Lj$/util/stream/a2;
 
-    throw p1
+    invoke-virtual {v1}, Lj$/util/stream/a2;->b()Lj$/util/stream/Y1;
+
+    move-result-object v1
+
+    iget-object v2, p0, Lj$/util/stream/f;->b:Lj$/util/Spliterator;
+
+    invoke-virtual {v0, v1, v2}, Lj$/util/stream/D0;->S0(Lj$/util/stream/q2;Lj$/util/Spliterator;)Lj$/util/stream/q2;
+
+    return-object v1
 .end method
 
-.method public count()J
-    .locals 2
-
-    const-wide/16 v0, 0x0
-
-    return-wide v0
-.end method
-
-.method public g(Ljava/lang/Object;I)V
-    .locals 0
-
-    return-void
-.end method
-
-.method public j(Ljava/lang/Object;)V
-    .locals 0
-
-    return-void
-.end method
-
-.method public synthetic m()I
+.method protected f(Lj$/util/Spliterator;)Lj$/util/stream/f;
     .locals 1
 
-    const/4 v0, 0x0
+    new-instance v0, Lj$/util/stream/b2;
 
-    return v0
+    invoke-direct {v0, p0, p1}, Lj$/util/stream/b2;-><init>(Lj$/util/stream/b2;Lj$/util/Spliterator;)V
+
+    return-object v0
 .end method
 
-.method public o(Lj$/util/function/j;)[Ljava/lang/Object;
+.method public onCompletion(Ljava/util/concurrent/CountedCompleter;)V
     .locals 1
 
-    const/4 v0, 0x0
+    invoke-virtual {p0}, Lj$/util/stream/f;->d()Z
 
-    invoke-interface {p1, v0}, Lj$/util/function/j;->p(I)Ljava/lang/Object;
+    move-result p1
+
+    if-nez p1, :cond_0
+
+    iget-object p1, p0, Lj$/util/stream/f;->d:Lj$/util/stream/f;
+
+    check-cast p1, Lj$/util/stream/b2;
+
+    invoke-virtual {p1}, Lj$/util/stream/f;->b()Ljava/lang/Object;
 
     move-result-object p1
 
-    check-cast p1, [Ljava/lang/Object;
+    check-cast p1, Lj$/util/stream/Y1;
 
-    return-object p1
-.end method
+    iget-object v0, p0, Lj$/util/stream/f;->e:Lj$/util/stream/f;
 
-.method public synthetic p(JJLj$/util/function/j;)Lj$/util/stream/B1;
-    .locals 0
+    check-cast v0, Lj$/util/stream/b2;
 
-    invoke-static/range {p0 .. p5}, Lj$/util/stream/p1;->q(Lj$/util/stream/B1;JJLj$/util/function/j;)Lj$/util/stream/B1;
+    invoke-virtual {v0}, Lj$/util/stream/f;->b()Ljava/lang/Object;
 
-    move-result-object p1
+    move-result-object v0
 
-    return-object p1
+    check-cast v0, Lj$/util/stream/Y1;
+
+    invoke-interface {p1, v0}, Lj$/util/stream/Y1;->q(Lj$/util/stream/Y1;)V
+
+    invoke-virtual {p0, p1}, Lj$/util/stream/f;->g(Ljava/lang/Object;)V
+
+    :cond_0
+    const/4 p1, 0x0
+
+    iput-object p1, p0, Lj$/util/stream/f;->b:Lj$/util/Spliterator;
+
+    iput-object p1, p0, Lj$/util/stream/f;->e:Lj$/util/stream/f;
+
+    iput-object p1, p0, Lj$/util/stream/f;->d:Lj$/util/stream/f;
+
+    return-void
 .end method

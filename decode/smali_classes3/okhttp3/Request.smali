@@ -99,18 +99,6 @@
     return-object v0
 .end method
 
-.method public final header(Ljava/lang/String;)Ljava/lang/String;
-    .locals 1
-
-    iget-object v0, p0, Lokhttp3/Request;->headers:Lokhttp3/Headers;
-
-    invoke-virtual {v0, p1}, Lokhttp3/Headers;->get(Ljava/lang/String;)Ljava/lang/String;
-
-    move-result-object p1
-
-    return-object p1
-.end method
-
 .method public toString()Ljava/lang/String;
     .locals 6
 

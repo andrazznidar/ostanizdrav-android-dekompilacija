@@ -15,6 +15,14 @@
     return-void
 .end method
 
+.method public constructor <init>(Ljava/lang/Object;)V
+    .locals 0
+
+    invoke-direct {p0, p1}, Lkotlin/jvm/internal/CallableReference;-><init>(Ljava/lang/Object;)V
+
+    return-void
+.end method
+
 .method public constructor <init>(Ljava/lang/Object;Ljava/lang/Class;Ljava/lang/String;Ljava/lang/String;I)V
     .locals 7
 
@@ -109,9 +117,13 @@
 
     if-eqz v1, :cond_1
 
-    iget-object v1, p0, Lkotlin/jvm/internal/CallableReference;->receiver:Ljava/lang/Object;
+    invoke-virtual {p0}, Lkotlin/jvm/internal/CallableReference;->getBoundReceiver()Ljava/lang/Object;
 
-    iget-object p1, p1, Lkotlin/jvm/internal/CallableReference;->receiver:Ljava/lang/Object;
+    move-result-object v1
+
+    invoke-virtual {p1}, Lkotlin/jvm/internal/CallableReference;->getBoundReceiver()Ljava/lang/Object;
+
+    move-result-object p1
 
     invoke-static {v1, p1}, Lkotlin/jvm/internal/Intrinsics;->areEqual(Ljava/lang/Object;Ljava/lang/Object;)Z
 
@@ -159,22 +171,13 @@
 .method public getReflected()Lkotlin/reflect/KProperty;
     .locals 1
 
-    invoke-virtual {p0}, Lkotlin/jvm/internal/CallableReference;->compute()Lkotlin/reflect/KCallable;
+    invoke-super {p0}, Lkotlin/jvm/internal/CallableReference;->getReflected()Lkotlin/reflect/KCallable;
 
     move-result-object v0
-
-    if-eq v0, p0, :cond_0
 
     check-cast v0, Lkotlin/reflect/KProperty;
 
     return-object v0
-
-    :cond_0
-    new-instance v0, Lkotlin/jvm/KotlinReflectionNotSupportedError;
-
-    invoke-direct {v0}, Lkotlin/jvm/KotlinReflectionNotSupportedError;-><init>()V
-
-    throw v0
 .end method
 
 .method public hashCode()I
@@ -211,6 +214,34 @@
     move-result v0
 
     add-int/2addr v0, v1
+
+    return v0
+.end method
+
+.method public isConst()Z
+    .locals 1
+
+    invoke-virtual {p0}, Lkotlin/jvm/internal/PropertyReference;->getReflected()Lkotlin/reflect/KProperty;
+
+    move-result-object v0
+
+    invoke-interface {v0}, Lkotlin/reflect/KProperty;->isConst()Z
+
+    move-result v0
+
+    return v0
+.end method
+
+.method public isLateinit()Z
+    .locals 1
+
+    invoke-virtual {p0}, Lkotlin/jvm/internal/PropertyReference;->getReflected()Lkotlin/reflect/KProperty;
+
+    move-result-object v0
+
+    invoke-interface {v0}, Lkotlin/reflect/KProperty;->isLateinit()Z
+
+    move-result v0
 
     return v0
 .end method

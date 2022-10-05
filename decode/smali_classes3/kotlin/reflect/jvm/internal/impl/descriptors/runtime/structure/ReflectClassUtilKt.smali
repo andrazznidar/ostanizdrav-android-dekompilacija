@@ -5,12 +5,12 @@
 
 # annotations
 .annotation system Ldalvik/annotation/SourceDebugExtension;
-    value = "SMAP\nreflectClassUtil.kt\nKotlin\n*S Kotlin\n*F\n+ 1 reflectClassUtil.kt\norg/jetbrains/kotlin/descriptors/runtime/structure/ReflectClassUtilKt\n+ 2 _Collections.kt\nkotlin/collections/CollectionsKt___CollectionsKt\n*L\n1#1,92:1\n1517#2:93\n1588#2,3:94\n1517#2:97\n1588#2,3:98\n1527#2:101\n1558#2,4:102\n*E\n*S KotlinDebug\n*F\n+ 1 reflectClassUtil.kt\norg/jetbrains/kotlin/descriptors/runtime/structure/ReflectClassUtilKt\n*L\n34#1:93\n34#1,3:94\n35#1:97\n35#1,3:98\n50#1:101\n50#1,4:102\n*E\n"
+    value = "SMAP\nreflectClassUtil.kt\nKotlin\n*S Kotlin\n*F\n+ 1 reflectClassUtil.kt\norg/jetbrains/kotlin/descriptors/runtime/structure/ReflectClassUtilKt\n+ 2 _Collections.kt\nkotlin/collections/CollectionsKt___CollectionsKt\n*L\n1#1,99:1\n1547#2:100\n1618#2,3:101\n1547#2:104\n1618#2,3:105\n1557#2:108\n1588#2,4:109\n*S KotlinDebug\n*F\n+ 1 reflectClassUtil.kt\norg/jetbrains/kotlin/descriptors/runtime/structure/ReflectClassUtilKt\n*L\n34#1:100\n34#1:101,3\n35#1:104\n35#1:105,3\n50#1:108\n50#1:109,4\n*E\n"
 .end annotation
 
 
 # static fields
-.field public static final FUNCTION_CLASSES:Ljava/util/Map;
+.field private static final FUNCTION_CLASSES:Ljava/util/Map;
     .annotation system Ldalvik/annotation/Signature;
         value = {
             "Ljava/util/Map<",
@@ -24,7 +24,7 @@
     .end annotation
 .end field
 
-.field public static final PRIMITIVE_CLASSES:Ljava/util/List;
+.field private static final PRIMITIVE_CLASSES:Ljava/util/List;
     .annotation system Ldalvik/annotation/Signature;
         value = {
             "Ljava/util/List<",
@@ -36,7 +36,7 @@
     .end annotation
 .end field
 
-.field public static final PRIMITIVE_TO_WRAPPER:Ljava/util/Map;
+.field private static final PRIMITIVE_TO_WRAPPER:Ljava/util/Map;
     .annotation system Ldalvik/annotation/Signature;
         value = {
             "Ljava/util/Map<",
@@ -52,7 +52,7 @@
     .end annotation
 .end field
 
-.field public static final WRAPPER_TO_PRIMITIVE:Ljava/util/Map;
+.field private static final WRAPPER_TO_PRIMITIVE:Ljava/util/Map;
     .annotation system Ldalvik/annotation/Signature;
         value = {
             "Ljava/util/Map<",
@@ -449,35 +449,6 @@
     return-void
 .end method
 
-.method public static final createArrayType(Ljava/lang/Class;)Ljava/lang/Class;
-    .locals 1
-    .annotation system Ldalvik/annotation/Signature;
-        value = {
-            "(",
-            "Ljava/lang/Class<",
-            "*>;)",
-            "Ljava/lang/Class<",
-            "*>;"
-        }
-    .end annotation
-
-    const-string v0, "<this>"
-
-    invoke-static {p0, v0}, Lkotlin/jvm/internal/Intrinsics;->checkNotNullParameter(Ljava/lang/Object;Ljava/lang/String;)V
-
-    const/4 v0, 0x0
-
-    invoke-static {p0, v0}, Ljava/lang/reflect/Array;->newInstance(Ljava/lang/Class;I)Ljava/lang/Object;
-
-    move-result-object p0
-
-    invoke-virtual {p0}, Ljava/lang/Object;->getClass()Ljava/lang/Class;
-
-    move-result-object p0
-
-    return-object p0
-.end method
-
 .method public static final getClassId(Ljava/lang/Class;)Lkotlin/reflect/jvm/internal/impl/name/ClassId;
     .locals 3
     .annotation system Ldalvik/annotation/Signature;
@@ -511,13 +482,13 @@
 
     const/4 v1, 0x1
 
-    if-nez v0, :cond_3
+    if-nez v0, :cond_4
 
     invoke-virtual {p0}, Ljava/lang/Class;->getEnclosingConstructor()Ljava/lang/reflect/Constructor;
 
     move-result-object v0
 
-    if-nez v0, :cond_3
+    if-nez v0, :cond_4
 
     invoke-virtual {p0}, Ljava/lang/Class;->getSimpleName()Ljava/lang/String;
 
@@ -570,7 +541,7 @@
     move-result-object v0
 
     :goto_1
-    if-nez v0, :cond_4
+    if-nez v0, :cond_3
 
     new-instance v0, Lkotlin/reflect/jvm/internal/impl/name/FqName;
 
@@ -584,9 +555,14 @@
 
     move-result-object v0
 
+    :cond_3
+    const-string p0, "declaringClass?.classId?\u2026Id.topLevel(FqName(name))"
+
+    invoke-static {v0, p0}, Lkotlin/jvm/internal/Intrinsics;->checkNotNullExpressionValue(Ljava/lang/Object;Ljava/lang/String;)V
+
     goto :goto_3
 
-    :cond_3
+    :cond_4
     :goto_2
     new-instance v0, Lkotlin/reflect/jvm/internal/impl/name/FqName;
 
@@ -614,7 +590,6 @@
 
     move-object v0, p0
 
-    :cond_4
     :goto_3
     return-object v0
 
@@ -646,7 +621,7 @@
 .end method
 
 .method public static final getDesc(Ljava/lang/Class;)Ljava/lang/String;
-    .locals 4
+    .locals 5
     .annotation system Ldalvik/annotation/Signature;
         value = {
             "(",
@@ -656,9 +631,71 @@
         }
     .end annotation
 
-    sget-object v0, Ljava/lang/Void;->TYPE:Ljava/lang/Class;
+    const-string v0, "<this>"
 
-    invoke-static {p0, v0}, Lkotlin/jvm/internal/Intrinsics;->areEqual(Ljava/lang/Object;Ljava/lang/Object;)Z
+    invoke-static {p0, v0}, Lkotlin/jvm/internal/Intrinsics;->checkNotNullParameter(Ljava/lang/Object;Ljava/lang/String;)V
+
+    invoke-virtual {p0}, Ljava/lang/Class;->isPrimitive()Z
+
+    move-result v0
+
+    if-eqz v0, :cond_1
+
+    invoke-virtual {p0}, Ljava/lang/Class;->getName()Ljava/lang/String;
+
+    move-result-object v0
+
+    invoke-virtual {v0}, Ljava/lang/String;->hashCode()I
+
+    move-result v1
+
+    sparse-switch v1, :sswitch_data_0
+
+    goto/16 :goto_0
+
+    :sswitch_0
+    const-string v1, "short"
+
+    invoke-virtual {v0, v1}, Ljava/lang/String;->equals(Ljava/lang/Object;)Z
+
+    move-result v0
+
+    if-eqz v0, :cond_0
+
+    const-string p0, "S"
+
+    goto/16 :goto_1
+
+    :sswitch_1
+    const-string v1, "float"
+
+    invoke-virtual {v0, v1}, Ljava/lang/String;->equals(Ljava/lang/Object;)Z
+
+    move-result v0
+
+    if-eqz v0, :cond_0
+
+    const-string p0, "F"
+
+    goto/16 :goto_1
+
+    :sswitch_2
+    const-string v1, "boolean"
+
+    invoke-virtual {v0, v1}, Ljava/lang/String;->equals(Ljava/lang/Object;)Z
+
+    move-result v0
+
+    if-eqz v0, :cond_0
+
+    const-string p0, "Z"
+
+    goto/16 :goto_1
+
+    :sswitch_3
+    const-string v1, "void"
+
+    invoke-virtual {v0, v1}, Ljava/lang/String;->equals(Ljava/lang/Object;)Z
 
     move-result v0
 
@@ -666,38 +703,178 @@
 
     const-string p0, "V"
 
-    return-object p0
+    goto/16 :goto_1
+
+    :sswitch_4
+    const-string v1, "long"
+
+    invoke-virtual {v0, v1}, Ljava/lang/String;->equals(Ljava/lang/Object;)Z
+
+    move-result v0
+
+    if-eqz v0, :cond_0
+
+    const-string p0, "J"
+
+    goto :goto_1
+
+    :sswitch_5
+    const-string v1, "char"
+
+    invoke-virtual {v0, v1}, Ljava/lang/String;->equals(Ljava/lang/Object;)Z
+
+    move-result v0
+
+    if-eqz v0, :cond_0
+
+    const-string p0, "C"
+
+    goto :goto_1
+
+    :sswitch_6
+    const-string v1, "byte"
+
+    invoke-virtual {v0, v1}, Ljava/lang/String;->equals(Ljava/lang/Object;)Z
+
+    move-result v0
+
+    if-eqz v0, :cond_0
+
+    const-string p0, "B"
+
+    goto :goto_1
+
+    :sswitch_7
+    const-string v1, "int"
+
+    invoke-virtual {v0, v1}, Ljava/lang/String;->equals(Ljava/lang/Object;)Z
+
+    move-result v0
+
+    if-eqz v0, :cond_0
+
+    const-string p0, "I"
+
+    goto :goto_1
+
+    :sswitch_8
+    const-string v1, "double"
+
+    invoke-virtual {v0, v1}, Ljava/lang/String;->equals(Ljava/lang/Object;)Z
+
+    move-result v0
+
+    if-eqz v0, :cond_0
+
+    const-string p0, "D"
+
+    goto :goto_1
 
     :cond_0
-    invoke-static {p0}, Lkotlin/reflect/jvm/internal/impl/descriptors/runtime/structure/ReflectClassUtilKt;->createArrayType(Ljava/lang/Class;)Ljava/lang/Class;
+    :goto_0
+    new-instance v0, Ljava/lang/IllegalArgumentException;
+
+    const-string v1, "Unsupported primitive type: "
+
+    invoke-static {v1, p0}, Lkotlin/jvm/internal/Intrinsics;->stringPlus(Ljava/lang/String;Ljava/lang/Object;)Ljava/lang/String;
 
     move-result-object p0
+
+    invoke-direct {v0, p0}, Ljava/lang/IllegalArgumentException;-><init>(Ljava/lang/String;)V
+
+    throw v0
+
+    :cond_1
+    invoke-virtual {p0}, Ljava/lang/Class;->isArray()Z
+
+    move-result v0
+
+    const/4 v1, 0x4
+
+    const/4 v2, 0x0
+
+    const/16 v3, 0x2f
+
+    const/16 v4, 0x2e
+
+    if-eqz v0, :cond_2
 
     invoke-virtual {p0}, Ljava/lang/Class;->getName()Ljava/lang/String;
 
     move-result-object p0
 
-    const/4 v0, 0x1
-
-    invoke-virtual {p0, v0}, Ljava/lang/String;->substring(I)Ljava/lang/String;
+    invoke-static {p0, v4, v3, v2, v1}, Lkotlin/text/StringsKt__StringsJVMKt;->replace$default(Ljava/lang/String;CCZI)Ljava/lang/String;
 
     move-result-object p0
 
-    const-string v0, "(this as java.lang.String).substring(startIndex)"
+    goto :goto_1
 
-    invoke-static {p0, v0}, Lkotlin/jvm/internal/Intrinsics;->checkNotNullExpressionValue(Ljava/lang/Object;Ljava/lang/String;)V
+    :cond_2
+    const/16 v0, 0x4c
 
-    const/16 v0, 0x2e
+    invoke-static {v0}, Lcoil/bitmap/SizeStrategy$$ExternalSyntheticOutline0;->m(C)Ljava/lang/StringBuilder;
 
-    const/16 v1, 0x2f
+    move-result-object v0
 
-    const/4 v2, 0x0
-
-    const/4 v3, 0x4
-
-    invoke-static {p0, v0, v1, v2, v3}, Lkotlin/text/StringsKt__StringsJVMKt;->replace$default(Ljava/lang/String;CCZI)Ljava/lang/String;
+    invoke-virtual {p0}, Ljava/lang/Class;->getName()Ljava/lang/String;
 
     move-result-object p0
+
+    invoke-static {p0, v4, v3, v2, v1}, Lkotlin/text/StringsKt__StringsJVMKt;->replace$default(Ljava/lang/String;CCZI)Ljava/lang/String;
+
+    move-result-object p0
+
+    invoke-virtual {v0, p0}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+
+    const/16 p0, 0x3b
+
+    invoke-virtual {v0, p0}, Ljava/lang/StringBuilder;->append(C)Ljava/lang/StringBuilder;
+
+    invoke-virtual {v0}, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
+
+    move-result-object p0
+
+    :goto_1
+    return-object p0
+
+    nop
+
+    :sswitch_data_0
+    .sparse-switch
+        -0x4f08842f -> :sswitch_8
+        0x197ef -> :sswitch_7
+        0x2e6108 -> :sswitch_6
+        0x2e9356 -> :sswitch_5
+        0x32c67c -> :sswitch_4
+        0x375194 -> :sswitch_3
+        0x3db6c28 -> :sswitch_2
+        0x5d0225c -> :sswitch_1
+        0x685847c -> :sswitch_0
+    .end sparse-switch
+.end method
+
+.method public static final getFunctionClassArity(Ljava/lang/Class;)Ljava/lang/Integer;
+    .locals 1
+    .annotation system Ldalvik/annotation/Signature;
+        value = {
+            "(",
+            "Ljava/lang/Class<",
+            "*>;)",
+            "Ljava/lang/Integer;"
+        }
+    .end annotation
+
+    const-string v0, "<this>"
+
+    invoke-static {p0, v0}, Lkotlin/jvm/internal/Intrinsics;->checkNotNullParameter(Ljava/lang/Object;Ljava/lang/String;)V
+
+    sget-object v0, Lkotlin/reflect/jvm/internal/impl/descriptors/runtime/structure/ReflectClassUtilKt;->FUNCTION_CLASSES:Ljava/util/Map;
+
+    invoke-interface {v0, p0}, Ljava/util/Map;->get(Ljava/lang/Object;)Ljava/lang/Object;
+
+    move-result-object p0
+
+    check-cast p0, Ljava/lang/Integer;
 
     return-object p0
 .end method
@@ -772,6 +949,33 @@
     return-object p0
 .end method
 
+.method public static final getPrimitiveByWrapper(Ljava/lang/Class;)Ljava/lang/Class;
+    .locals 1
+    .annotation system Ldalvik/annotation/Signature;
+        value = {
+            "(",
+            "Ljava/lang/Class<",
+            "*>;)",
+            "Ljava/lang/Class<",
+            "*>;"
+        }
+    .end annotation
+
+    const-string v0, "<this>"
+
+    invoke-static {p0, v0}, Lkotlin/jvm/internal/Intrinsics;->checkNotNullParameter(Ljava/lang/Object;Ljava/lang/String;)V
+
+    sget-object v0, Lkotlin/reflect/jvm/internal/impl/descriptors/runtime/structure/ReflectClassUtilKt;->WRAPPER_TO_PRIMITIVE:Ljava/util/Map;
+
+    invoke-interface {v0, p0}, Ljava/util/Map;->get(Ljava/lang/Object;)Ljava/lang/Object;
+
+    move-result-object p0
+
+    check-cast p0, Ljava/lang/Class;
+
+    return-object p0
+.end method
+
 .method public static final getSafeClassLoader(Ljava/lang/Class;)Ljava/lang/ClassLoader;
     .locals 1
     .annotation system Ldalvik/annotation/Signature;
@@ -803,4 +1007,54 @@
 
     :cond_0
     return-object p0
+.end method
+
+.method public static final getWrapperByPrimitive(Ljava/lang/Class;)Ljava/lang/Class;
+    .locals 1
+    .annotation system Ldalvik/annotation/Signature;
+        value = {
+            "(",
+            "Ljava/lang/Class<",
+            "*>;)",
+            "Ljava/lang/Class<",
+            "*>;"
+        }
+    .end annotation
+
+    const-string v0, "<this>"
+
+    invoke-static {p0, v0}, Lkotlin/jvm/internal/Intrinsics;->checkNotNullParameter(Ljava/lang/Object;Ljava/lang/String;)V
+
+    sget-object v0, Lkotlin/reflect/jvm/internal/impl/descriptors/runtime/structure/ReflectClassUtilKt;->PRIMITIVE_TO_WRAPPER:Ljava/util/Map;
+
+    invoke-interface {v0, p0}, Ljava/util/Map;->get(Ljava/lang/Object;)Ljava/lang/Object;
+
+    move-result-object p0
+
+    check-cast p0, Ljava/lang/Class;
+
+    return-object p0
+.end method
+
+.method public static final isEnumClassOrSpecializedEnumEntryClass(Ljava/lang/Class;)Z
+    .locals 1
+    .annotation system Ldalvik/annotation/Signature;
+        value = {
+            "(",
+            "Ljava/lang/Class<",
+            "*>;)Z"
+        }
+    .end annotation
+
+    const-string v0, "<this>"
+
+    invoke-static {p0, v0}, Lkotlin/jvm/internal/Intrinsics;->checkNotNullParameter(Ljava/lang/Object;Ljava/lang/String;)V
+
+    const-class v0, Ljava/lang/Enum;
+
+    invoke-virtual {v0, p0}, Ljava/lang/Class;->isAssignableFrom(Ljava/lang/Class;)Z
+
+    move-result p0
+
+    return p0
 .end method

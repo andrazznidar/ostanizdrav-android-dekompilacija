@@ -5,7 +5,43 @@
 
 # annotations
 .annotation system Ldalvik/annotation/SourceDebugExtension;
-    value = "SMAP\nInlineClassAwareCaller.kt\nKotlin\n*S Kotlin\n*F\n+ 1 InlineClassAwareCaller.kt\nkotlin/reflect/jvm/internal/calls/InlineClassAwareCallerKt\n+ 2 _Collections.kt\nkotlin/collections/CollectionsKt___CollectionsKt\n*L\n1#1,208:1\n1711#2,3:209\n*E\n*S KotlinDebug\n*F\n+ 1 InlineClassAwareCaller.kt\nkotlin/reflect/jvm/internal/calls/InlineClassAwareCallerKt\n*L\n155#1,3:209\n*E\n"
+    value = "SMAP\nInlineClassAwareCaller.kt\nKotlin\n*S Kotlin\n*F\n+ 1 InlineClassAwareCaller.kt\nkotlin/reflect/jvm/internal/calls/InlineClassAwareCallerKt\n+ 2 _Collections.kt\nkotlin/collections/CollectionsKt___CollectionsKt\n*L\n1#1,208:1\n1741#2,3:209\n*S KotlinDebug\n*F\n+ 1 InlineClassAwareCaller.kt\nkotlin/reflect/jvm/internal/calls/InlineClassAwareCallerKt\n*L\n155#1:209,3\n*E\n"
+.end annotation
+
+.annotation runtime Lkotlin/Metadata;
+    d1 = {
+        "\u0000:\n\u0000\n\u0002\u0018\u0002\n\u0002\u0018\u0002\n\u0002\u0008\u0003\n\u0002\u0010\u0000\n\u0002\u0008\u0002\n\u0002\u0018\u0002\n\u0000\n\u0002\u0018\u0002\n\u0000\n\u0002\u0010\u000b\n\u0000\n\u0002\u0018\u0002\n\u0002\u0018\u0002\n\u0002\u0008\u0003\n\u0002\u0018\u0002\n\u0000\u001a\u0018\u0010\u0005\u001a\u0004\u0018\u00010\u0006*\u0004\u0018\u00010\u00062\u0006\u0010\u0007\u001a\u00020\u0002H\u0000\u001a6\u0010\u0008\u001a\u0008\u0012\u0004\u0012\u0002H\n0\t\"\n\u0008\u0000\u0010\n*\u0004\u0018\u00010\u000b*\u0008\u0012\u0004\u0012\u0002H\n0\t2\u0006\u0010\u0007\u001a\u00020\u00022\u0008\u0008\u0002\u0010\u000c\u001a\u00020\rH\u0000\u001a\u0018\u0010\u000e\u001a\u00020\u000f*\u0006\u0012\u0002\u0008\u00030\u00102\u0006\u0010\u0007\u001a\u00020\u0002H\u0000\u001a\u0018\u0010\u0011\u001a\u00020\u000f*\u0006\u0012\u0002\u0008\u00030\u00102\u0006\u0010\u0007\u001a\u00020\u0002H\u0000\u001a\u000c\u0010\u0012\u001a\u00020\r*\u00020\u0002H\u0002\u001a\u0014\u0010\u0013\u001a\u0008\u0012\u0002\u0008\u0003\u0018\u00010\u0010*\u0004\u0018\u00010\u0014H\u0000\u001a\u0012\u0010\u0013\u001a\u0008\u0012\u0002\u0008\u0003\u0018\u00010\u0010*\u00020\u0001H\u0000\"\u001a\u0010\u0000\u001a\u0004\u0018\u00010\u0001*\u00020\u00028BX\u0082\u0004\u00a2\u0006\u0006\u001a\u0004\u0008\u0003\u0010\u0004\u00a8\u0006\u0015"
+    }
+    d2 = {
+        "expectedReceiverType",
+        "Lkotlin/reflect/jvm/internal/impl/types/KotlinType;",
+        "Lkotlin/reflect/jvm/internal/impl/descriptors/CallableMemberDescriptor;",
+        "getExpectedReceiverType",
+        "(Lorg/jetbrains/kotlin/descriptors/CallableMemberDescriptor;)Lorg/jetbrains/kotlin/types/KotlinType;",
+        "coerceToExpectedReceiverType",
+        "",
+        "descriptor",
+        "createInlineClassAwareCallerIfNeeded",
+        "Lkotlin/reflect/jvm/internal/calls/Caller;",
+        "M",
+        "Ljava/lang/reflect/Member;",
+        "isDefault",
+        "",
+        "getBoxMethod",
+        "Ljava/lang/reflect/Method;",
+        "Ljava/lang/Class;",
+        "getUnboxMethod",
+        "hasInlineClassReceiver",
+        "toInlineClass",
+        "Lkotlin/reflect/jvm/internal/impl/descriptors/DeclarationDescriptor;",
+        "kotlin-reflection"
+    }
+    k = 0x2
+    mv = {
+        0x1,
+        0x5,
+        0x1
+    }
 .end annotation
 
 
@@ -49,6 +85,8 @@
     invoke-static {v0, p1}, Lkotlin/reflect/jvm/internal/calls/InlineClassAwareCallerKt;->getUnboxMethod(Ljava/lang/Class;Lkotlin/reflect/jvm/internal/impl/descriptors/CallableMemberDescriptor;)Ljava/lang/reflect/Method;
 
     move-result-object p1
+
+    if-eqz p1, :cond_1
 
     const/4 v0, 0x0
 
@@ -94,7 +132,7 @@
 
     const/4 v2, 0x1
 
-    if-nez v0, :cond_5
+    if-nez v0, :cond_4
 
     invoke-interface {p1}, Lkotlin/reflect/jvm/internal/impl/descriptors/CallableDescriptor;->getValueParameters()Ljava/util/List;
 
@@ -154,7 +192,7 @@
     move v0, v2
 
     :goto_0
-    if-nez v0, :cond_5
+    if-nez v0, :cond_4
 
     invoke-interface {p1}, Lkotlin/reflect/jvm/internal/impl/descriptors/CallableDescriptor;->getReturnType()Lkotlin/reflect/jvm/internal/impl/types/KotlinType;
 
@@ -166,40 +204,24 @@
 
     move-result v0
 
-    if-eq v0, v2, :cond_5
+    if-eq v0, v2, :cond_4
 
     :cond_3
     instance-of v0, p0, Lkotlin/reflect/jvm/internal/calls/BoundCaller;
 
-    if-nez v0, :cond_6
+    if-nez v0, :cond_5
 
-    invoke-static {p1}, Lkotlin/reflect/jvm/internal/calls/InlineClassAwareCallerKt;->getExpectedReceiverType(Lkotlin/reflect/jvm/internal/impl/descriptors/CallableMemberDescriptor;)Lkotlin/reflect/jvm/internal/impl/types/KotlinType;
-
-    move-result-object v0
-
-    if-eqz v0, :cond_4
-
-    invoke-static {v0}, Lkotlin/reflect/jvm/internal/impl/resolve/InlineClassesUtilsKt;->isInlineClassType(Lkotlin/reflect/jvm/internal/impl/types/KotlinType;)Z
+    invoke-static {p1}, Lkotlin/reflect/jvm/internal/calls/InlineClassAwareCallerKt;->hasInlineClassReceiver(Lkotlin/reflect/jvm/internal/impl/descriptors/CallableMemberDescriptor;)Z
 
     move-result v0
 
-    if-ne v0, v2, :cond_4
-
-    move v0, v2
-
-    goto :goto_1
+    if-eqz v0, :cond_5
 
     :cond_4
-    move v0, v1
-
-    :goto_1
-    if-eqz v0, :cond_6
-
-    :cond_5
     move v1, v2
 
-    :cond_6
-    if-eqz v1, :cond_7
+    :cond_5
+    if-eqz v1, :cond_6
 
     new-instance v0, Lkotlin/reflect/jvm/internal/calls/InlineClassAwareCaller;
 
@@ -207,11 +229,112 @@
 
     move-object p0, v0
 
-    :cond_7
+    :cond_6
     return-object p0
 .end method
 
-.method public static final getExpectedReceiverType(Lkotlin/reflect/jvm/internal/impl/descriptors/CallableMemberDescriptor;)Lkotlin/reflect/jvm/internal/impl/types/KotlinType;
+.method public static synthetic createInlineClassAwareCallerIfNeeded$default(Lkotlin/reflect/jvm/internal/calls/Caller;Lkotlin/reflect/jvm/internal/impl/descriptors/CallableMemberDescriptor;ZILjava/lang/Object;)Lkotlin/reflect/jvm/internal/calls/Caller;
+    .locals 0
+
+    and-int/lit8 p3, p3, 0x2
+
+    if-eqz p3, :cond_0
+
+    const/4 p2, 0x0
+
+    :cond_0
+    invoke-static {p0, p1, p2}, Lkotlin/reflect/jvm/internal/calls/InlineClassAwareCallerKt;->createInlineClassAwareCallerIfNeeded(Lkotlin/reflect/jvm/internal/calls/Caller;Lkotlin/reflect/jvm/internal/impl/descriptors/CallableMemberDescriptor;Z)Lkotlin/reflect/jvm/internal/calls/Caller;
+
+    move-result-object p0
+
+    return-object p0
+.end method
+
+.method public static final getBoxMethod(Ljava/lang/Class;Lkotlin/reflect/jvm/internal/impl/descriptors/CallableMemberDescriptor;)Ljava/lang/reflect/Method;
+    .locals 4
+    .annotation system Ldalvik/annotation/Signature;
+        value = {
+            "(",
+            "Ljava/lang/Class<",
+            "*>;",
+            "Lkotlin/reflect/jvm/internal/impl/descriptors/CallableMemberDescriptor;",
+            ")",
+            "Ljava/lang/reflect/Method;"
+        }
+    .end annotation
+
+    const-string v0, "$this$getBoxMethod"
+
+    invoke-static {p0, v0}, Lkotlin/jvm/internal/Intrinsics;->checkNotNullParameter(Ljava/lang/Object;Ljava/lang/String;)V
+
+    const-string v0, "descriptor"
+
+    invoke-static {p1, v0}, Lkotlin/jvm/internal/Intrinsics;->checkNotNullParameter(Ljava/lang/Object;Ljava/lang/String;)V
+
+    :try_start_0
+    const-string v0, "box-impl"
+
+    const/4 v1, 0x1
+
+    new-array v1, v1, [Ljava/lang/Class;
+
+    const/4 v2, 0x0
+
+    invoke-static {p0, p1}, Lkotlin/reflect/jvm/internal/calls/InlineClassAwareCallerKt;->getUnboxMethod(Ljava/lang/Class;Lkotlin/reflect/jvm/internal/impl/descriptors/CallableMemberDescriptor;)Ljava/lang/reflect/Method;
+
+    move-result-object v3
+
+    invoke-virtual {v3}, Ljava/lang/reflect/Method;->getReturnType()Ljava/lang/Class;
+
+    move-result-object v3
+
+    aput-object v3, v1, v2
+
+    invoke-virtual {p0, v0, v1}, Ljava/lang/Class;->getDeclaredMethod(Ljava/lang/String;[Ljava/lang/Class;)Ljava/lang/reflect/Method;
+
+    move-result-object v0
+
+    const-string v1, "getDeclaredMethod(\"box\" \u2026d(descriptor).returnType)"
+
+    invoke-static {v0, v1}, Lkotlin/jvm/internal/Intrinsics;->checkNotNullExpressionValue(Ljava/lang/Object;Ljava/lang/String;)V
+    :try_end_0
+    .catch Ljava/lang/NoSuchMethodException; {:try_start_0 .. :try_end_0} :catch_0
+
+    return-object v0
+
+    :catch_0
+    new-instance v0, Lkotlin/reflect/jvm/internal/KotlinReflectionInternalError;
+
+    new-instance v1, Ljava/lang/StringBuilder;
+
+    invoke-direct {v1}, Ljava/lang/StringBuilder;-><init>()V
+
+    const-string v2, "No box method found in inline class: "
+
+    invoke-virtual {v1, v2}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+
+    invoke-virtual {v1, p0}, Ljava/lang/StringBuilder;->append(Ljava/lang/Object;)Ljava/lang/StringBuilder;
+
+    const-string p0, " (calling "
+
+    invoke-virtual {v1, p0}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+
+    invoke-virtual {v1, p1}, Ljava/lang/StringBuilder;->append(Ljava/lang/Object;)Ljava/lang/StringBuilder;
+
+    const/16 p0, 0x29
+
+    invoke-virtual {v1, p0}, Ljava/lang/StringBuilder;->append(C)Ljava/lang/StringBuilder;
+
+    invoke-virtual {v1}, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
+
+    move-result-object p0
+
+    invoke-direct {v0, p0}, Lkotlin/reflect/jvm/internal/KotlinReflectionInternalError;-><init>(Ljava/lang/String;)V
+
+    throw v0
+.end method
+
+.method private static final getExpectedReceiverType(Lkotlin/reflect/jvm/internal/impl/descriptors/CallableMemberDescriptor;)Lkotlin/reflect/jvm/internal/impl/types/KotlinType;
     .locals 3
 
     invoke-interface {p0}, Lkotlin/reflect/jvm/internal/impl/descriptors/CallableDescriptor;->getExtensionReceiverParameter()Lkotlin/reflect/jvm/internal/impl/descriptors/ReceiverParameterDescriptor;
@@ -288,6 +411,14 @@
         }
     .end annotation
 
+    const-string v0, "$this$getUnboxMethod"
+
+    invoke-static {p0, v0}, Lkotlin/jvm/internal/Intrinsics;->checkNotNullParameter(Ljava/lang/Object;Ljava/lang/String;)V
+
+    const-string v0, "descriptor"
+
+    invoke-static {p1, v0}, Lkotlin/jvm/internal/Intrinsics;->checkNotNullParameter(Ljava/lang/Object;Ljava/lang/String;)V
+
     :try_start_0
     const-string v0, "unbox-impl"
 
@@ -339,6 +470,32 @@
     throw v0
 .end method
 
+.method private static final hasInlineClassReceiver(Lkotlin/reflect/jvm/internal/impl/descriptors/CallableMemberDescriptor;)Z
+    .locals 1
+
+    invoke-static {p0}, Lkotlin/reflect/jvm/internal/calls/InlineClassAwareCallerKt;->getExpectedReceiverType(Lkotlin/reflect/jvm/internal/impl/descriptors/CallableMemberDescriptor;)Lkotlin/reflect/jvm/internal/impl/types/KotlinType;
+
+    move-result-object p0
+
+    const/4 v0, 0x1
+
+    if-eqz p0, :cond_0
+
+    invoke-static {p0}, Lkotlin/reflect/jvm/internal/impl/resolve/InlineClassesUtilsKt;->isInlineClassType(Lkotlin/reflect/jvm/internal/impl/types/KotlinType;)Z
+
+    move-result p0
+
+    if-ne p0, v0, :cond_0
+
+    goto :goto_0
+
+    :cond_0
+    const/4 v0, 0x0
+
+    :goto_0
+    return v0
+.end method
+
 .method public static final toInlineClass(Lkotlin/reflect/jvm/internal/impl/descriptors/DeclarationDescriptor;)Ljava/lang/Class;
     .locals 3
     .annotation system Ldalvik/annotation/Signature;
@@ -382,7 +539,7 @@
 
     move-result-object v2
 
-    invoke-interface {v0}, Lkotlin/reflect/jvm/internal/impl/descriptors/DeclarationDescriptor;->getName()Lkotlin/reflect/jvm/internal/impl/name/Name;
+    invoke-interface {v0}, Lkotlin/reflect/jvm/internal/impl/descriptors/Named;->getName()Lkotlin/reflect/jvm/internal/impl/name/Name;
 
     move-result-object v0
 

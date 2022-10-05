@@ -427,9 +427,9 @@
 
     iget-object v4, p0, Lde/rki/coronawarnapp/bugreporting/censors/BugCensor$CensorContainer;->original:Ljava/lang/String;
 
-    const-string v5, "null cannot be cast to non-null type kotlin.CharSequence"
+    const-string v5, "<this>"
 
-    invoke-static {v4, v5}, Ljava/util/Objects;->requireNonNull(Ljava/lang/Object;Ljava/lang/String;)Ljava/lang/Object;
+    invoke-static {v4, v5}, Lkotlin/jvm/internal/Intrinsics;->checkNotNullParameter(Ljava/lang/Object;Ljava/lang/String;)V
 
     if-lt v1, v2, :cond_e
 

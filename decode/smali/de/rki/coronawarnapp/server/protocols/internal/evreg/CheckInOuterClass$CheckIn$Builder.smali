@@ -40,7 +40,7 @@
     return-void
 .end method
 
-.method public synthetic constructor <init>(Lde/rki/coronawarnapp/server/protocols/internal/evreg/CheckInOuterClass$CheckIn$Builder-IA;)V
+.method public synthetic constructor <init>(Lcom/fasterxml/jackson/core/JsonGenerator$$ExternalSyntheticOutline0;)V
     .locals 0
 
     invoke-direct {p0}, Lde/rki/coronawarnapp/server/protocols/internal/evreg/CheckInOuterClass$CheckIn$Builder;-><init>()V

@@ -65,7 +65,9 @@
     :cond_0
     new-instance p1, Lcom/fasterxml/jackson/databind/util/TokenBufferReadContext;
 
-    invoke-direct {p1, p5, v0}, Lcom/fasterxml/jackson/databind/util/TokenBufferReadContext;-><init>(Lcom/fasterxml/jackson/core/JsonStreamContext;Lcom/fasterxml/jackson/core/JsonLocation;)V
+    sget-object p2, Lcom/fasterxml/jackson/core/io/ContentReference;->UNKNOWN_CONTENT:Lcom/fasterxml/jackson/core/io/ContentReference;
+
+    invoke-direct {p1, p5, p2}, Lcom/fasterxml/jackson/databind/util/TokenBufferReadContext;-><init>(Lcom/fasterxml/jackson/core/JsonStreamContext;Lcom/fasterxml/jackson/core/io/ContentReference;)V
 
     :goto_0
     iput-object p1, p0, Lcom/fasterxml/jackson/databind/util/TokenBuffer$Parser;->_parsingContext:Lcom/fasterxml/jackson/databind/util/TokenBufferReadContext;
@@ -95,11 +97,6 @@
 
 .method public _handleEOF()V
     .locals 1
-    .annotation system Ldalvik/annotation/Throws;
-        value = {
-            Lcom/fasterxml/jackson/core/JsonParseException;
-        }
-    .end annotation
 
     invoke-static {}, Lcom/fasterxml/jackson/core/util/VersionUtil;->throwInternal()V
 
@@ -232,8 +229,7 @@
     .locals 4
     .annotation system Ldalvik/annotation/Throws;
         value = {
-            Ljava/io/IOException;,
-            Lcom/fasterxml/jackson/core/JsonParseException;
+            Ljava/io/IOException;
         }
     .end annotation
 
@@ -1031,17 +1027,7 @@
 
     move-result-object v2
 
-    invoke-virtual {v0}, Ljava/lang/Object;->getClass()Ljava/lang/Class;
-
-    move-result-object v0
-
-    invoke-virtual {v0}, Ljava/lang/Class;->getName()Ljava/lang/String;
-
-    move-result-object v0
-
-    invoke-virtual {v2, v0}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
-
-    invoke-virtual {v2}, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
+    invoke-static {v0, v2}, Lcom/fasterxml/jackson/core/JsonGenerator$$ExternalSyntheticOutline0;->m(Ljava/lang/Object;Ljava/lang/StringBuilder;)Ljava/lang/String;
 
     move-result-object v0
 

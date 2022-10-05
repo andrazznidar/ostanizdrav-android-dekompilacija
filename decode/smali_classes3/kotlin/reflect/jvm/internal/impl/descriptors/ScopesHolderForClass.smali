@@ -4,6 +4,12 @@
 
 
 # annotations
+.annotation system Ldalvik/annotation/MemberClasses;
+    value = {
+        Lkotlin/reflect/jvm/internal/impl/descriptors/ScopesHolderForClass$Companion;
+    }
+.end annotation
+
 .annotation system Ldalvik/annotation/Signature;
     value = {
         "<T::",
@@ -26,15 +32,15 @@
     .end annotation
 .end field
 
-.field public static final Companion:Lkotlin/reflect/jvm/internal/impl/descriptors/ScopesHolderForClass;
+.field public static final Companion:Lkotlin/reflect/jvm/internal/impl/descriptors/ScopesHolderForClass$Companion;
 
 
 # instance fields
-.field public final classDescriptor:Lkotlin/reflect/jvm/internal/impl/descriptors/ClassDescriptor;
+.field private final classDescriptor:Lkotlin/reflect/jvm/internal/impl/descriptors/ClassDescriptor;
 
-.field public final kotlinTypeRefinerForOwnerModule:Lkotlin/reflect/jvm/internal/impl/types/checker/KotlinTypeRefiner;
+.field private final kotlinTypeRefinerForOwnerModule:Lkotlin/reflect/jvm/internal/impl/types/checker/KotlinTypeRefiner;
 
-.field public final scopeFactory:Lkotlin/jvm/functions/Function1;
+.field private final scopeFactory:Lkotlin/jvm/functions/Function1;
     .annotation system Ldalvik/annotation/Signature;
         value = {
             "Lkotlin/jvm/functions/Function1<",
@@ -44,7 +50,7 @@
     .end annotation
 .end field
 
-.field public final scopeForOwnerModule$delegate:Lkotlin/reflect/jvm/internal/impl/storage/NotNullLazyValue;
+.field private final scopeForOwnerModule$delegate:Lkotlin/reflect/jvm/internal/impl/storage/NotNullLazyValue;
 
 
 # direct methods
@@ -79,11 +85,32 @@
 
     sput-object v0, Lkotlin/reflect/jvm/internal/impl/descriptors/ScopesHolderForClass;->$$delegatedProperties:[Lkotlin/reflect/KProperty;
 
+    new-instance v0, Lkotlin/reflect/jvm/internal/impl/descriptors/ScopesHolderForClass$Companion;
+
+    const/4 v1, 0x0
+
+    invoke-direct {v0, v1}, Lkotlin/reflect/jvm/internal/impl/descriptors/ScopesHolderForClass$Companion;-><init>(Lkotlin/jvm/internal/DefaultConstructorMarker;)V
+
+    sput-object v0, Lkotlin/reflect/jvm/internal/impl/descriptors/ScopesHolderForClass;->Companion:Lkotlin/reflect/jvm/internal/impl/descriptors/ScopesHolderForClass$Companion;
+
     return-void
 .end method
 
-.method public constructor <init>(Lkotlin/reflect/jvm/internal/impl/descriptors/ClassDescriptor;Lkotlin/reflect/jvm/internal/impl/storage/StorageManager;Lkotlin/jvm/functions/Function1;Lkotlin/reflect/jvm/internal/impl/types/checker/KotlinTypeRefiner;Lkotlin/jvm/internal/DefaultConstructorMarker;)V
+.method private constructor <init>(Lkotlin/reflect/jvm/internal/impl/descriptors/ClassDescriptor;Lkotlin/reflect/jvm/internal/impl/storage/StorageManager;Lkotlin/jvm/functions/Function1;Lkotlin/reflect/jvm/internal/impl/types/checker/KotlinTypeRefiner;)V
     .locals 0
+    .annotation system Ldalvik/annotation/Signature;
+        value = {
+            "(",
+            "Lkotlin/reflect/jvm/internal/impl/descriptors/ClassDescriptor;",
+            "Lkotlin/reflect/jvm/internal/impl/storage/StorageManager;",
+            "Lkotlin/jvm/functions/Function1<",
+            "-",
+            "Lkotlin/reflect/jvm/internal/impl/types/checker/KotlinTypeRefiner;",
+            "+TT;>;",
+            "Lkotlin/reflect/jvm/internal/impl/types/checker/KotlinTypeRefiner;",
+            ")V"
+        }
+    .end annotation
 
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
@@ -106,48 +133,51 @@
     return-void
 .end method
 
-.method public static final create(Lkotlin/reflect/jvm/internal/impl/descriptors/ClassDescriptor;Lkotlin/reflect/jvm/internal/impl/storage/StorageManager;Lkotlin/reflect/jvm/internal/impl/types/checker/KotlinTypeRefiner;Lkotlin/jvm/functions/Function1;)Lkotlin/reflect/jvm/internal/impl/descriptors/ScopesHolderForClass;
-    .locals 7
+.method public synthetic constructor <init>(Lkotlin/reflect/jvm/internal/impl/descriptors/ClassDescriptor;Lkotlin/reflect/jvm/internal/impl/storage/StorageManager;Lkotlin/jvm/functions/Function1;Lkotlin/reflect/jvm/internal/impl/types/checker/KotlinTypeRefiner;Lkotlin/jvm/internal/DefaultConstructorMarker;)V
+    .locals 0
+
+    invoke-direct {p0, p1, p2, p3, p4}, Lkotlin/reflect/jvm/internal/impl/descriptors/ScopesHolderForClass;-><init>(Lkotlin/reflect/jvm/internal/impl/descriptors/ClassDescriptor;Lkotlin/reflect/jvm/internal/impl/storage/StorageManager;Lkotlin/jvm/functions/Function1;Lkotlin/reflect/jvm/internal/impl/types/checker/KotlinTypeRefiner;)V
+
+    return-void
+.end method
+
+.method public static final synthetic access$getKotlinTypeRefinerForOwnerModule$p(Lkotlin/reflect/jvm/internal/impl/descriptors/ScopesHolderForClass;)Lkotlin/reflect/jvm/internal/impl/types/checker/KotlinTypeRefiner;
+    .locals 0
+
+    iget-object p0, p0, Lkotlin/reflect/jvm/internal/impl/descriptors/ScopesHolderForClass;->kotlinTypeRefinerForOwnerModule:Lkotlin/reflect/jvm/internal/impl/types/checker/KotlinTypeRefiner;
+
+    return-object p0
+.end method
+
+.method public static final synthetic access$getScopeFactory$p(Lkotlin/reflect/jvm/internal/impl/descriptors/ScopesHolderForClass;)Lkotlin/jvm/functions/Function1;
+    .locals 0
+
+    iget-object p0, p0, Lkotlin/reflect/jvm/internal/impl/descriptors/ScopesHolderForClass;->scopeFactory:Lkotlin/jvm/functions/Function1;
+
+    return-object p0
+.end method
+
+.method private final getScopeForOwnerModule()Lkotlin/reflect/jvm/internal/impl/resolve/scopes/MemberScope;
+    .locals 3
     .annotation system Ldalvik/annotation/Signature;
         value = {
-            "<T::",
-            "Lkotlin/reflect/jvm/internal/impl/resolve/scopes/MemberScope;",
-            ">(",
-            "Lkotlin/reflect/jvm/internal/impl/descriptors/ClassDescriptor;",
-            "Lkotlin/reflect/jvm/internal/impl/storage/StorageManager;",
-            "Lkotlin/reflect/jvm/internal/impl/types/checker/KotlinTypeRefiner;",
-            "Lkotlin/jvm/functions/Function1<",
-            "-",
-            "Lkotlin/reflect/jvm/internal/impl/types/checker/KotlinTypeRefiner;",
-            "+TT;>;)",
-            "Lkotlin/reflect/jvm/internal/impl/descriptors/ScopesHolderForClass<",
-            "TT;>;"
+            "()TT;"
         }
     .end annotation
 
-    const-string v0, "storageManager"
+    iget-object v0, p0, Lkotlin/reflect/jvm/internal/impl/descriptors/ScopesHolderForClass;->scopeForOwnerModule$delegate:Lkotlin/reflect/jvm/internal/impl/storage/NotNullLazyValue;
 
-    invoke-static {p1, v0}, Lkotlin/jvm/internal/Intrinsics;->checkNotNullParameter(Ljava/lang/Object;Ljava/lang/String;)V
+    sget-object v1, Lkotlin/reflect/jvm/internal/impl/descriptors/ScopesHolderForClass;->$$delegatedProperties:[Lkotlin/reflect/KProperty;
 
-    const-string v0, "kotlinTypeRefinerForOwnerModule"
+    const/4 v2, 0x0
 
-    invoke-static {p2, v0}, Lkotlin/jvm/internal/Intrinsics;->checkNotNullParameter(Ljava/lang/Object;Ljava/lang/String;)V
+    aget-object v1, v1, v2
 
-    new-instance v0, Lkotlin/reflect/jvm/internal/impl/descriptors/ScopesHolderForClass;
+    invoke-static {v0, p0, v1}, Lkotlin/reflect/jvm/internal/impl/storage/StorageKt;->getValue(Lkotlin/reflect/jvm/internal/impl/storage/NotNullLazyValue;Ljava/lang/Object;Lkotlin/reflect/KProperty;)Ljava/lang/Object;
 
-    const/4 v6, 0x0
+    move-result-object v0
 
-    move-object v1, v0
-
-    move-object v2, p0
-
-    move-object v3, p1
-
-    move-object v4, p3
-
-    move-object v5, p2
-
-    invoke-direct/range {v1 .. v6}, Lkotlin/reflect/jvm/internal/impl/descriptors/ScopesHolderForClass;-><init>(Lkotlin/reflect/jvm/internal/impl/descriptors/ClassDescriptor;Lkotlin/reflect/jvm/internal/impl/storage/StorageManager;Lkotlin/jvm/functions/Function1;Lkotlin/reflect/jvm/internal/impl/types/checker/KotlinTypeRefiner;Lkotlin/jvm/internal/DefaultConstructorMarker;)V
+    check-cast v0, Lkotlin/reflect/jvm/internal/impl/resolve/scopes/MemberScope;
 
     return-object v0
 .end method
@@ -155,7 +185,7 @@
 
 # virtual methods
 .method public final getScope(Lkotlin/reflect/jvm/internal/impl/types/checker/KotlinTypeRefiner;)Lkotlin/reflect/jvm/internal/impl/resolve/scopes/MemberScope;
-    .locals 3
+    .locals 2
     .annotation system Ldalvik/annotation/Signature;
         value = {
             "(",
@@ -178,21 +208,11 @@
 
     move-result v0
 
-    const/4 v1, 0x0
-
     if-nez v0, :cond_0
 
-    iget-object p1, p0, Lkotlin/reflect/jvm/internal/impl/descriptors/ScopesHolderForClass;->scopeForOwnerModule$delegate:Lkotlin/reflect/jvm/internal/impl/storage/NotNullLazyValue;
-
-    sget-object v0, Lkotlin/reflect/jvm/internal/impl/descriptors/ScopesHolderForClass;->$$delegatedProperties:[Lkotlin/reflect/KProperty;
-
-    aget-object v0, v0, v1
-
-    invoke-static {p1, v0}, Lcom/google/zxing/common/detector/MathUtils;->getValue(Lkotlin/reflect/jvm/internal/impl/storage/NotNullLazyValue;Lkotlin/reflect/KProperty;)Ljava/lang/Object;
+    invoke-direct {p0}, Lkotlin/reflect/jvm/internal/impl/descriptors/ScopesHolderForClass;->getScopeForOwnerModule()Lkotlin/reflect/jvm/internal/impl/resolve/scopes/MemberScope;
 
     move-result-object p1
-
-    check-cast p1, Lkotlin/reflect/jvm/internal/impl/resolve/scopes/MemberScope;
 
     return-object p1
 
@@ -203,9 +223,9 @@
 
     move-result-object v0
 
-    const-string v2, "classDescriptor.typeConstructor"
+    const-string v1, "classDescriptor.typeConstructor"
 
-    invoke-static {v0, v2}, Lkotlin/jvm/internal/Intrinsics;->checkNotNullExpressionValue(Ljava/lang/Object;Ljava/lang/String;)V
+    invoke-static {v0, v1}, Lkotlin/jvm/internal/Intrinsics;->checkNotNullExpressionValue(Ljava/lang/Object;Ljava/lang/String;)V
 
     invoke-virtual {p1, v0}, Lkotlin/reflect/jvm/internal/impl/types/checker/KotlinTypeRefiner;->isRefinementNeededForTypeConstructor(Lkotlin/reflect/jvm/internal/impl/types/TypeConstructor;)Z
 
@@ -213,17 +233,9 @@
 
     if-nez v0, :cond_1
 
-    iget-object p1, p0, Lkotlin/reflect/jvm/internal/impl/descriptors/ScopesHolderForClass;->scopeForOwnerModule$delegate:Lkotlin/reflect/jvm/internal/impl/storage/NotNullLazyValue;
-
-    sget-object v0, Lkotlin/reflect/jvm/internal/impl/descriptors/ScopesHolderForClass;->$$delegatedProperties:[Lkotlin/reflect/KProperty;
-
-    aget-object v0, v0, v1
-
-    invoke-static {p1, v0}, Lcom/google/zxing/common/detector/MathUtils;->getValue(Lkotlin/reflect/jvm/internal/impl/storage/NotNullLazyValue;Lkotlin/reflect/KProperty;)Ljava/lang/Object;
+    invoke-direct {p0}, Lkotlin/reflect/jvm/internal/impl/descriptors/ScopesHolderForClass;->getScopeForOwnerModule()Lkotlin/reflect/jvm/internal/impl/resolve/scopes/MemberScope;
 
     move-result-object p1
-
-    check-cast p1, Lkotlin/reflect/jvm/internal/impl/resolve/scopes/MemberScope;
 
     return-object p1
 

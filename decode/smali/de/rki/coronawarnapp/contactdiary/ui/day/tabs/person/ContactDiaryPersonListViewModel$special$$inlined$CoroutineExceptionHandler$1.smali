@@ -33,17 +33,15 @@
 
 # virtual methods
 .method public handleException(Lkotlin/coroutines/CoroutineContext;Ljava/lang/Throwable;)V
-    .locals 3
+    .locals 2
 
-    sget-object p1, Lde/rki/coronawarnapp/exception/ExceptionCategory;->INTERNAL:Lde/rki/coronawarnapp/exception/ExceptionCategory;
+    const/4 p1, 0x4
 
     const-string v0, "ContactDiaryPersonListViewModel"
 
     const/4 v1, 0x0
 
-    const/4 v2, 0x4
-
-    invoke-static {p2, p1, v0, v1, v2}, Lde/rki/coronawarnapp/exception/reporting/ExceptionReporterKt;->report$default(Ljava/lang/Throwable;Lde/rki/coronawarnapp/exception/ExceptionCategory;Ljava/lang/String;Ljava/lang/String;I)V
+    invoke-static {p2, p1, v0, v1, p1}, Lde/rki/coronawarnapp/exception/reporting/ExceptionReporterKt;->report$default(Ljava/lang/Throwable;ILjava/lang/String;Ljava/lang/String;I)V
 
     return-void
 .end method

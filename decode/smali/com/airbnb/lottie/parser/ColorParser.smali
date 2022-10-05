@@ -45,105 +45,103 @@
 
 # virtual methods
 .method public parse(Lcom/airbnb/lottie/parser/moshi/JsonReader;F)Ljava/lang/Object;
-    .locals 10
+    .locals 12
     .annotation system Ldalvik/annotation/Throws;
         value = {
             Ljava/io/IOException;
         }
     .end annotation
 
-    invoke-virtual {p1}, Lcom/airbnb/lottie/parser/moshi/JsonReader;->peek()Lcom/airbnb/lottie/parser/moshi/JsonReader$Token;
+    invoke-virtual {p1}, Lcom/airbnb/lottie/parser/moshi/JsonReader;->peek$enumunboxing$()I
 
-    move-result-object p2
+    move-result p2
 
-    sget-object v0, Lcom/airbnb/lottie/parser/moshi/JsonReader$Token;->BEGIN_ARRAY:Lcom/airbnb/lottie/parser/moshi/JsonReader$Token;
+    const/4 v0, 0x1
 
     if-ne p2, v0, :cond_0
-
-    const/4 p2, 0x1
 
     goto :goto_0
 
     :cond_0
-    const/4 p2, 0x0
+    const/4 v0, 0x0
 
     :goto_0
-    if-eqz p2, :cond_1
+    if-eqz v0, :cond_1
 
     invoke-virtual {p1}, Lcom/airbnb/lottie/parser/moshi/JsonReader;->beginArray()V
 
     :cond_1
     invoke-virtual {p1}, Lcom/airbnb/lottie/parser/moshi/JsonReader;->nextDouble()D
 
-    move-result-wide v0
+    move-result-wide v1
 
     invoke-virtual {p1}, Lcom/airbnb/lottie/parser/moshi/JsonReader;->nextDouble()D
 
-    move-result-wide v2
+    move-result-wide v3
 
     invoke-virtual {p1}, Lcom/airbnb/lottie/parser/moshi/JsonReader;->nextDouble()D
 
-    move-result-wide v4
+    move-result-wide v5
 
-    invoke-virtual {p1}, Lcom/airbnb/lottie/parser/moshi/JsonReader;->peek()Lcom/airbnb/lottie/parser/moshi/JsonReader$Token;
+    invoke-virtual {p1}, Lcom/airbnb/lottie/parser/moshi/JsonReader;->peek$enumunboxing$()I
 
-    move-result-object v6
+    move-result p2
 
-    sget-object v7, Lcom/airbnb/lottie/parser/moshi/JsonReader$Token;->NUMBER:Lcom/airbnb/lottie/parser/moshi/JsonReader$Token;
+    const/4 v7, 0x7
 
     const-wide/high16 v8, 0x3ff0000000000000L    # 1.0
 
-    if-ne v6, v7, :cond_2
+    if-ne p2, v7, :cond_2
 
     invoke-virtual {p1}, Lcom/airbnb/lottie/parser/moshi/JsonReader;->nextDouble()D
 
-    move-result-wide v6
+    move-result-wide v10
 
     goto :goto_1
 
     :cond_2
-    move-wide v6, v8
+    move-wide v10, v8
 
     :goto_1
-    if-eqz p2, :cond_3
+    if-eqz v0, :cond_3
 
     invoke-virtual {p1}, Lcom/airbnb/lottie/parser/moshi/JsonReader;->endArray()V
 
     :cond_3
-    cmpg-double p1, v0, v8
+    cmpg-double p1, v1, v8
 
     if-gtz p1, :cond_4
 
-    cmpg-double p1, v2, v8
+    cmpg-double p1, v3, v8
 
     if-gtz p1, :cond_4
 
-    cmpg-double p1, v4, v8
+    cmpg-double p1, v5, v8
 
     if-gtz p1, :cond_4
 
     const-wide p1, 0x406fe00000000000L    # 255.0
 
-    mul-double/2addr v0, p1
+    mul-double/2addr v1, p1
 
-    mul-double/2addr v2, p1
+    mul-double/2addr v3, p1
 
-    mul-double/2addr v4, p1
+    mul-double/2addr v5, p1
 
-    cmpg-double v8, v6, v8
+    cmpg-double v0, v10, v8
 
-    if-gtz v8, :cond_4
+    if-gtz v0, :cond_4
 
-    mul-double/2addr v6, p1
+    mul-double/2addr v10, p1
 
     :cond_4
-    double-to-int p1, v6
+    double-to-int p1, v10
 
-    double-to-int p2, v0
+    double-to-int p2, v1
 
-    double-to-int v0, v2
+    double-to-int v0, v3
 
-    double-to-int v1, v4
+    double-to-int v1, v5
 
     invoke-static {p1, p2, v0, v1}, Landroid/graphics/Color;->argb(IIII)I
 

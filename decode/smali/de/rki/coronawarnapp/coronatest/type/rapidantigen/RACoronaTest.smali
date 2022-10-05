@@ -6,14 +6,6 @@
 .implements Lde/rki/coronawarnapp/coronatest/type/CoronaTest;
 
 
-# annotations
-.annotation system Ldalvik/annotation/MemberClasses;
-    value = {
-        Lde/rki/coronawarnapp/coronatest/type/rapidantigen/RACoronaTest$State;
-    }
-.end annotation
-
-
 # instance fields
 .field private final dateOfBirth:Lorg/joda/time/LocalDate;
     .annotation runtime Lcom/google/gson/annotations/SerializedName;
@@ -103,6 +95,18 @@
     .end annotation
 .end field
 
+.field private final qrCodeHash:Ljava/lang/String;
+    .annotation runtime Lcom/google/gson/annotations/SerializedName;
+        value = "qrCodeHash"
+    .end annotation
+.end field
+
+.field private recycledAt:Lorg/joda/time/Instant;
+    .annotation runtime Lcom/google/gson/annotations/SerializedName;
+        value = "recycledAt"
+    .end annotation
+.end field
+
 .field private final registeredAt:Lorg/joda/time/Instant;
     .annotation runtime Lcom/google/gson/annotations/SerializedName;
         value = "registeredAt"
@@ -141,7 +145,7 @@
 
 
 # direct methods
-.method public constructor <init>(Ljava/lang/String;Lorg/joda/time/Instant;Ljava/lang/String;ZZZZZLorg/joda/time/Instant;Lorg/joda/time/Instant;Lde/rki/coronawarnapp/coronatest/server/CoronaTestResult;Lorg/joda/time/Instant;Ljava/lang/String;Ljava/lang/String;Lorg/joda/time/LocalDate;Lorg/joda/time/Instant;ZLjava/lang/Throwable;ZZZLjava/lang/String;)V
+.method public constructor <init>(Ljava/lang/String;Lorg/joda/time/Instant;Ljava/lang/String;ZZZZZLorg/joda/time/Instant;Lorg/joda/time/Instant;Lde/rki/coronawarnapp/coronatest/server/CoronaTestResult;Lorg/joda/time/Instant;Ljava/lang/String;Ljava/lang/String;Lorg/joda/time/LocalDate;Lorg/joda/time/Instant;ZLjava/lang/Throwable;ZZZLjava/lang/String;Ljava/lang/String;Lorg/joda/time/Instant;)V
     .locals 8
 
     move-object v0, p0
@@ -260,15 +264,23 @@
 
     iput-object v1, v0, Lde/rki/coronawarnapp/coronatest/type/rapidantigen/RACoronaTest;->labId:Ljava/lang/String;
 
+    move-object/from16 v1, p23
+
+    iput-object v1, v0, Lde/rki/coronawarnapp/coronatest/type/rapidantigen/RACoronaTest;->qrCodeHash:Ljava/lang/String;
+
+    move-object/from16 v1, p24
+
+    iput-object v1, v0, Lde/rki/coronawarnapp/coronatest/type/rapidantigen/RACoronaTest;->recycledAt:Lorg/joda/time/Instant;
+
     return-void
 .end method
 
-.method public static copy$default(Lde/rki/coronawarnapp/coronatest/type/rapidantigen/RACoronaTest;Ljava/lang/String;Lorg/joda/time/Instant;Ljava/lang/String;ZZZZZLorg/joda/time/Instant;Lorg/joda/time/Instant;Lde/rki/coronawarnapp/coronatest/server/CoronaTestResult;Lorg/joda/time/Instant;Ljava/lang/String;Ljava/lang/String;Lorg/joda/time/LocalDate;Lorg/joda/time/Instant;ZLjava/lang/Throwable;ZZZLjava/lang/String;I)Lde/rki/coronawarnapp/coronatest/type/rapidantigen/RACoronaTest;
+.method public static copy$default(Lde/rki/coronawarnapp/coronatest/type/rapidantigen/RACoronaTest;Ljava/lang/String;Lorg/joda/time/Instant;Ljava/lang/String;ZZZZZLorg/joda/time/Instant;Lorg/joda/time/Instant;Lde/rki/coronawarnapp/coronatest/server/CoronaTestResult;Lorg/joda/time/Instant;Ljava/lang/String;Ljava/lang/String;Lorg/joda/time/LocalDate;Lorg/joda/time/Instant;ZLjava/lang/Throwable;ZZZLjava/lang/String;Ljava/lang/String;Lorg/joda/time/Instant;I)Lde/rki/coronawarnapp/coronatest/type/rapidantigen/RACoronaTest;
     .locals 17
 
     move-object/from16 v0, p0
 
-    move/from16 v1, p23
+    move/from16 v1, p25
 
     and-int/lit8 v2, v1, 0x1
 
@@ -560,18 +572,54 @@
     :goto_14
     const/high16 v16, 0x200000
 
-    and-int v1, v1, v16
+    and-int v16, v1, v16
 
-    if-eqz v1, :cond_15
+    if-eqz v16, :cond_15
 
-    iget-object v1, v0, Lde/rki/coronawarnapp/coronatest/type/rapidantigen/RACoronaTest;->labId:Ljava/lang/String;
+    move/from16 p21, v3
+
+    iget-object v3, v0, Lde/rki/coronawarnapp/coronatest/type/rapidantigen/RACoronaTest;->labId:Ljava/lang/String;
 
     goto :goto_15
 
     :cond_15
-    move-object/from16 v1, p22
+    move/from16 p21, v3
+
+    move-object/from16 v3, p22
 
     :goto_15
+    const/high16 v16, 0x400000
+
+    and-int v16, v1, v16
+
+    if-eqz v16, :cond_16
+
+    move-object/from16 p22, v3
+
+    iget-object v3, v0, Lde/rki/coronawarnapp/coronatest/type/rapidantigen/RACoronaTest;->qrCodeHash:Ljava/lang/String;
+
+    goto :goto_16
+
+    :cond_16
+    move-object/from16 p22, v3
+
+    const/4 v3, 0x0
+
+    :goto_16
+    const/high16 v16, 0x800000
+
+    and-int v1, v1, v16
+
+    if-eqz v1, :cond_17
+
+    iget-object v1, v0, Lde/rki/coronawarnapp/coronatest/type/rapidantigen/RACoronaTest;->recycledAt:Lorg/joda/time/Instant;
+
+    goto :goto_17
+
+    :cond_17
+    move-object/from16 v1, p24
+
+    :goto_17
     invoke-static/range {p0 .. p0}, Ljava/util/Objects;->requireNonNull(Ljava/lang/Object;)Ljava/lang/Object;
 
     const-string v0, "identifier"
@@ -628,11 +676,11 @@
 
     move-object/from16 p13, v15
 
-    move/from16 p21, v3
+    move-object/from16 p23, v3
 
-    move-object/from16 p22, v1
+    move-object/from16 p24, v1
 
-    invoke-direct/range {p0 .. p22}, Lde/rki/coronawarnapp/coronatest/type/rapidantigen/RACoronaTest;-><init>(Ljava/lang/String;Lorg/joda/time/Instant;Ljava/lang/String;ZZZZZLorg/joda/time/Instant;Lorg/joda/time/Instant;Lde/rki/coronawarnapp/coronatest/server/CoronaTestResult;Lorg/joda/time/Instant;Ljava/lang/String;Ljava/lang/String;Lorg/joda/time/LocalDate;Lorg/joda/time/Instant;ZLjava/lang/Throwable;ZZZLjava/lang/String;)V
+    invoke-direct/range {p0 .. p24}, Lde/rki/coronawarnapp/coronatest/type/rapidantigen/RACoronaTest;-><init>(Ljava/lang/String;Lorg/joda/time/Instant;Ljava/lang/String;ZZZZZLorg/joda/time/Instant;Lorg/joda/time/Instant;Lde/rki/coronawarnapp/coronatest/server/CoronaTestResult;Lorg/joda/time/Instant;Ljava/lang/String;Ljava/lang/String;Lorg/joda/time/LocalDate;Lorg/joda/time/Instant;ZLjava/lang/Throwable;ZZZLjava/lang/String;Ljava/lang/String;Lorg/joda/time/Instant;)V
 
     return-object v0
 .end method
@@ -895,17 +943,43 @@
     :cond_16
     iget-object v1, p0, Lde/rki/coronawarnapp/coronatest/type/rapidantigen/RACoronaTest;->labId:Ljava/lang/String;
 
-    iget-object p1, p1, Lde/rki/coronawarnapp/coronatest/type/rapidantigen/RACoronaTest;->labId:Ljava/lang/String;
+    iget-object v3, p1, Lde/rki/coronawarnapp/coronatest/type/rapidantigen/RACoronaTest;->labId:Ljava/lang/String;
+
+    invoke-static {v1, v3}, Lkotlin/jvm/internal/Intrinsics;->areEqual(Ljava/lang/Object;Ljava/lang/Object;)Z
+
+    move-result v1
+
+    if-nez v1, :cond_17
+
+    return v2
+
+    :cond_17
+    iget-object v1, p0, Lde/rki/coronawarnapp/coronatest/type/rapidantigen/RACoronaTest;->qrCodeHash:Ljava/lang/String;
+
+    iget-object v3, p1, Lde/rki/coronawarnapp/coronatest/type/rapidantigen/RACoronaTest;->qrCodeHash:Ljava/lang/String;
+
+    invoke-static {v1, v3}, Lkotlin/jvm/internal/Intrinsics;->areEqual(Ljava/lang/Object;Ljava/lang/Object;)Z
+
+    move-result v1
+
+    if-nez v1, :cond_18
+
+    return v2
+
+    :cond_18
+    iget-object v1, p0, Lde/rki/coronawarnapp/coronatest/type/rapidantigen/RACoronaTest;->recycledAt:Lorg/joda/time/Instant;
+
+    iget-object p1, p1, Lde/rki/coronawarnapp/coronatest/type/rapidantigen/RACoronaTest;->recycledAt:Lorg/joda/time/Instant;
 
     invoke-static {v1, p1}, Lkotlin/jvm/internal/Intrinsics;->areEqual(Ljava/lang/Object;Ljava/lang/Object;)Z
 
     move-result p1
 
-    if-nez p1, :cond_17
+    if-nez p1, :cond_19
 
     return v2
 
-    :cond_17
+    :cond_19
     return v0
 .end method
 
@@ -965,6 +1039,22 @@
     return-object v0
 .end method
 
+.method public getQrCodeHash()Ljava/lang/String;
+    .locals 1
+
+    iget-object v0, p0, Lde/rki/coronawarnapp/coronatest/type/rapidantigen/RACoronaTest;->qrCodeHash:Ljava/lang/String;
+
+    return-object v0
+.end method
+
+.method public getRecycledAt()Lorg/joda/time/Instant;
+    .locals 1
+
+    iget-object v0, p0, Lde/rki/coronawarnapp/coronatest/type/rapidantigen/RACoronaTest;->recycledAt:Lorg/joda/time/Instant;
+
+    return-object v0
+.end method
+
 .method public getRegisteredAt()Lorg/joda/time/Instant;
     .locals 1
 
@@ -989,14 +1079,43 @@
     return-object v0
 .end method
 
-.method public final getState(Lorg/joda/time/Instant;Lde/rki/coronawarnapp/appconfig/CoronaTestConfig;)Lde/rki/coronawarnapp/coronatest/type/rapidantigen/RACoronaTest$State;
-    .locals 2
+.method public final getState$enumunboxing$(Lorg/joda/time/Instant;Lde/rki/coronawarnapp/appconfig/CoronaTestConfig;)I
+    .locals 3
 
+    const-string v0, "nowUTC"
+
+    invoke-static {p1, v0}, Lkotlin/jvm/internal/Intrinsics;->checkNotNullParameter(Ljava/lang/Object;Ljava/lang/String;)V
+
+    const-string/jumbo v0, "testConfig"
+
+    invoke-static {p2, v0}, Lkotlin/jvm/internal/Intrinsics;->checkNotNullParameter(Ljava/lang/Object;Ljava/lang/String;)V
+
+    iget-object v0, p0, Lde/rki/coronawarnapp/coronatest/type/rapidantigen/RACoronaTest;->recycledAt:Lorg/joda/time/Instant;
+
+    const/4 v1, 0x1
+
+    if-eqz v0, :cond_0
+
+    move v0, v1
+
+    goto :goto_0
+
+    :cond_0
+    const/4 v0, 0x0
+
+    :goto_0
+    if-eqz v0, :cond_1
+
+    const/4 v1, 0x7
+
+    goto :goto_1
+
+    :cond_1
     iget-object v0, p0, Lde/rki/coronawarnapp/coronatest/type/rapidantigen/RACoronaTest;->testResult:Lde/rki/coronawarnapp/coronatest/server/CoronaTestResult;
 
-    sget-object v1, Lde/rki/coronawarnapp/coronatest/server/CoronaTestResult;->RAT_NEGATIVE:Lde/rki/coronawarnapp/coronatest/server/CoronaTestResult;
+    sget-object v2, Lde/rki/coronawarnapp/coronatest/server/CoronaTestResult;->RAT_NEGATIVE:Lde/rki/coronawarnapp/coronatest/server/CoronaTestResult;
 
-    if-ne v0, v1, :cond_0
+    if-ne v0, v2, :cond_2
 
     invoke-virtual {p0}, Lde/rki/coronawarnapp/coronatest/type/rapidantigen/RACoronaTest;->getTestTakenAt()Lorg/joda/time/Instant;
 
@@ -1016,20 +1135,20 @@
 
     move-result p1
 
-    if-eqz p1, :cond_0
+    if-eqz p1, :cond_2
 
-    sget-object p1, Lde/rki/coronawarnapp/coronatest/type/rapidantigen/RACoronaTest$State;->OUTDATED:Lde/rki/coronawarnapp/coronatest/type/rapidantigen/RACoronaTest$State;
+    const/4 v1, 0x6
 
-    goto :goto_0
+    goto :goto_1
 
-    :cond_0
+    :cond_2
     iget-object p1, p0, Lde/rki/coronawarnapp/coronatest/type/rapidantigen/RACoronaTest;->testResult:Lde/rki/coronawarnapp/coronatest/server/CoronaTestResult;
 
     invoke-virtual {p1}, Ljava/lang/Enum;->ordinal()I
 
     move-result p1
 
-    if-eqz p1, :cond_1
+    if-eqz p1, :cond_3
 
     packed-switch p1, :pswitch_data_0
 
@@ -1056,31 +1175,29 @@
     throw p1
 
     :pswitch_0
-    sget-object p1, Lde/rki/coronawarnapp/coronatest/type/rapidantigen/RACoronaTest$State;->INVALID:Lde/rki/coronawarnapp/coronatest/type/rapidantigen/RACoronaTest$State;
+    const/4 v1, 0x2
 
-    goto :goto_0
+    goto :goto_1
 
     :pswitch_1
-    sget-object p1, Lde/rki/coronawarnapp/coronatest/type/rapidantigen/RACoronaTest$State;->POSITIVE:Lde/rki/coronawarnapp/coronatest/type/rapidantigen/RACoronaTest$State;
+    const/4 v1, 0x3
 
-    goto :goto_0
+    goto :goto_1
 
     :pswitch_2
-    sget-object p1, Lde/rki/coronawarnapp/coronatest/type/rapidantigen/RACoronaTest$State;->NEGATIVE:Lde/rki/coronawarnapp/coronatest/type/rapidantigen/RACoronaTest$State;
+    const/4 v1, 0x4
 
-    goto :goto_0
+    goto :goto_1
 
     :pswitch_3
-    sget-object p1, Lde/rki/coronawarnapp/coronatest/type/rapidantigen/RACoronaTest$State;->REDEEMED:Lde/rki/coronawarnapp/coronatest/type/rapidantigen/RACoronaTest$State;
+    const/4 v1, 0x5
 
-    goto :goto_0
-
-    :cond_1
+    :cond_3
+    :goto_1
     :pswitch_4
-    sget-object p1, Lde/rki/coronawarnapp/coronatest/type/rapidantigen/RACoronaTest$State;->PENDING:Lde/rki/coronawarnapp/coronatest/type/rapidantigen/RACoronaTest$State;
+    return v1
 
-    :goto_0
-    return-object p1
+    nop
 
     :pswitch_data_0
     .packed-switch 0x4
@@ -1397,14 +1514,50 @@
 
     if-nez v1, :cond_f
 
+    move v1, v3
+
     goto :goto_7
 
     :cond_f
     invoke-virtual {v1}, Ljava/lang/String;->hashCode()I
 
-    move-result v3
+    move-result v1
 
     :goto_7
+    add-int/2addr v0, v1
+
+    mul-int/lit8 v0, v0, 0x1f
+
+    iget-object v1, p0, Lde/rki/coronawarnapp/coronatest/type/rapidantigen/RACoronaTest;->qrCodeHash:Ljava/lang/String;
+
+    if-nez v1, :cond_10
+
+    move v1, v3
+
+    goto :goto_8
+
+    :cond_10
+    invoke-virtual {v1}, Ljava/lang/String;->hashCode()I
+
+    move-result v1
+
+    :goto_8
+    add-int/2addr v0, v1
+
+    mul-int/lit8 v0, v0, 0x1f
+
+    iget-object v1, p0, Lde/rki/coronawarnapp/coronatest/type/rapidantigen/RACoronaTest;->recycledAt:Lorg/joda/time/Instant;
+
+    if-nez v1, :cond_11
+
+    goto :goto_9
+
+    :cond_11
+    invoke-virtual {v1}, Lorg/joda/time/base/AbstractInstant;->hashCode()I
+
+    move-result v3
+
+    :goto_9
     add-int/2addr v0, v3
 
     return v0
@@ -1442,34 +1595,6 @@
     return v0
 .end method
 
-.method public isFinal()Z
-    .locals 2
-
-    iget-object v0, p0, Lde/rki/coronawarnapp/coronatest/type/rapidantigen/RACoronaTest;->testResult:Lde/rki/coronawarnapp/coronatest/server/CoronaTestResult;
-
-    sget-object v1, Lde/rki/coronawarnapp/coronatest/server/CoronaTestResult;->PCR_OR_RAT_REDEEMED:Lde/rki/coronawarnapp/coronatest/server/CoronaTestResult;
-
-    if-eq v0, v1, :cond_1
-
-    sget-object v1, Lde/rki/coronawarnapp/coronatest/server/CoronaTestResult;->RAT_REDEEMED:Lde/rki/coronawarnapp/coronatest/server/CoronaTestResult;
-
-    if-ne v0, v1, :cond_0
-
-    goto :goto_0
-
-    :cond_0
-    const/4 v0, 0x0
-
-    goto :goto_1
-
-    :cond_1
-    :goto_0
-    const/4 v0, 0x1
-
-    :goto_1
-    return v0
-.end method
-
 .method public isNegative()Z
     .locals 2
 
@@ -1487,6 +1612,48 @@
     const/4 v0, 0x0
 
     :goto_0
+    return v0
+.end method
+
+.method public isNotRecycled()Z
+    .locals 1
+
+    invoke-static {p0}, Lde/rki/coronawarnapp/reyclebin/common/Recyclable$DefaultImpls;->isNotRecycled(Lde/rki/coronawarnapp/reyclebin/common/Recyclable;)Z
+
+    move-result v0
+
+    return v0
+.end method
+
+.method public isPending()Z
+    .locals 3
+
+    const/4 v0, 0x2
+
+    new-array v0, v0, [Lde/rki/coronawarnapp/coronatest/server/CoronaTestResult;
+
+    sget-object v1, Lde/rki/coronawarnapp/coronatest/server/CoronaTestResult;->PCR_OR_RAT_PENDING:Lde/rki/coronawarnapp/coronatest/server/CoronaTestResult;
+
+    const/4 v2, 0x0
+
+    aput-object v1, v0, v2
+
+    sget-object v1, Lde/rki/coronawarnapp/coronatest/server/CoronaTestResult;->RAT_PENDING:Lde/rki/coronawarnapp/coronatest/server/CoronaTestResult;
+
+    const/4 v2, 0x1
+
+    aput-object v1, v0, v2
+
+    invoke-static {v0}, Lorg/bouncycastle/util/IPAddress;->setOf([Ljava/lang/Object;)Ljava/util/Set;
+
+    move-result-object v0
+
+    iget-object v1, p0, Lde/rki/coronawarnapp/coronatest/type/rapidantigen/RACoronaTest;->testResult:Lde/rki/coronawarnapp/coronatest/server/CoronaTestResult;
+
+    invoke-interface {v0, v1}, Ljava/util/Set;->contains(Ljava/lang/Object;)Z
+
+    move-result v0
+
     return v0
 .end method
 
@@ -1515,6 +1682,24 @@
 
     iget-boolean v0, p0, Lde/rki/coronawarnapp/coronatest/type/rapidantigen/RACoronaTest;->isProcessing:Z
 
+    return v0
+.end method
+
+.method public isRecycled()Z
+    .locals 1
+
+    iget-object v0, p0, Lde/rki/coronawarnapp/coronatest/type/rapidantigen/RACoronaTest;->recycledAt:Lorg/joda/time/Instant;
+
+    if-eqz v0, :cond_0
+
+    const/4 v0, 0x1
+
+    goto :goto_0
+
+    :cond_0
+    const/4 v0, 0x0
+
+    :goto_0
     return v0
 .end method
 
@@ -1595,7 +1780,7 @@
 .end method
 
 .method public toString()Ljava/lang/String;
-    .locals 24
+    .locals 26
 
     move-object/from16 v0, p0
 
@@ -1657,11 +1842,19 @@
 
     iget-object v15, v0, Lde/rki/coronawarnapp/coronatest/type/rapidantigen/RACoronaTest;->labId:Ljava/lang/String;
 
+    move-object/from16 v23, v15
+
+    iget-object v15, v0, Lde/rki/coronawarnapp/coronatest/type/rapidantigen/RACoronaTest;->qrCodeHash:Ljava/lang/String;
+
+    move-object/from16 v24, v15
+
+    iget-object v15, v0, Lde/rki/coronawarnapp/coronatest/type/rapidantigen/RACoronaTest;->recycledAt:Lorg/joda/time/Instant;
+
     new-instance v0, Ljava/lang/StringBuilder;
 
     invoke-direct {v0}, Ljava/lang/StringBuilder;-><init>()V
 
-    move-object/from16 v23, v15
+    move-object/from16 v25, v15
 
     const-string v15, "RACoronaTest(identifier="
 
@@ -1804,6 +1997,22 @@
     move-object/from16 v1, v23
 
     invoke-virtual {v0, v1}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+
+    const-string v1, ", qrCodeHash="
+
+    invoke-virtual {v0, v1}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+
+    move-object/from16 v1, v24
+
+    invoke-virtual {v0, v1}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+
+    const-string v1, ", recycledAt="
+
+    invoke-virtual {v0, v1}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+
+    move-object/from16 v1, v25
+
+    invoke-virtual {v0, v1}, Ljava/lang/StringBuilder;->append(Ljava/lang/Object;)Ljava/lang/StringBuilder;
 
     const-string v1, ")"
 

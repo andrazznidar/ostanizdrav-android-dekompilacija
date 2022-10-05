@@ -162,7 +162,7 @@
 
     invoke-direct {v0}, Ljava/lang/StringBuilder;-><init>()V
 
-    invoke-super {p0}, Ljava/lang/Throwable;->toString()Ljava/lang/String;
+    invoke-super {p0}, Ljava/util/concurrent/CancellationException;->toString()Ljava/lang/String;
 
     move-result-object v1
 

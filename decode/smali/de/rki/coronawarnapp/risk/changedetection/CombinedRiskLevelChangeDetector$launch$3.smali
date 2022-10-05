@@ -28,7 +28,7 @@
     c = "de.rki.coronawarnapp.risk.changedetection.CombinedRiskLevelChangeDetector$launch$3"
     f = "CombinedRiskLevelChangeDetector.kt"
     l = {
-        0x38
+        0x36
     }
     m = "invokeSuspend"
 .end annotation

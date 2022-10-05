@@ -224,7 +224,7 @@
 
     move-result v0
 
-    invoke-static {v0}, Landroidx/fragment/app/ViewKt;->smear(I)I
+    invoke-static {v0}, Lcom/google/common/collect/Hashing;->smear(I)I
 
     move-result v0
 
@@ -278,7 +278,7 @@
 
     move-result v0
 
-    invoke-static {v0}, Landroidx/fragment/app/ViewKt;->smear(I)I
+    invoke-static {v0}, Lcom/google/common/collect/Hashing;->smear(I)I
 
     move-result v0
 
@@ -326,7 +326,7 @@
 
     move-result v6
 
-    invoke-static {v6}, Landroidx/fragment/app/ViewKt;->smear(I)I
+    invoke-static {v6}, Lcom/google/common/collect/Hashing;->smear(I)I
 
     move-result v6
 

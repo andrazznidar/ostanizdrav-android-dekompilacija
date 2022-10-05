@@ -136,6 +136,38 @@
     return-object p1
 .end method
 
+.method public getValues()[I
+    .locals 4
+
+    invoke-virtual {p0}, Lorg/joda/time/base/AbstractPeriod;->size()I
+
+    move-result v0
+
+    new-array v1, v0, [I
+
+    const/4 v2, 0x0
+
+    :goto_0
+    if-ge v2, v0, :cond_0
+
+    move-object v3, p0
+
+    check-cast v3, Lorg/joda/time/base/BasePeriod;
+
+    iget-object v3, v3, Lorg/joda/time/base/BasePeriod;->iValues:[I
+
+    aget v3, v3, v2
+
+    aput v3, v1, v2
+
+    add-int/lit8 v2, v2, 0x1
+
+    goto :goto_0
+
+    :cond_0
+    return-object v1
+.end method
+
 .method public hashCode()I
     .locals 4
 
@@ -197,7 +229,7 @@
     .annotation runtime Lorg/joda/convert/ToString;
     .end annotation
 
-    invoke-static {}, Lorg/joda/time/format/ISOPeriodFormat;->standard()Lorg/joda/time/format/PeriodFormatter;
+    invoke-static {}, Lkotlin/internal/ProgressionUtilKt;->standard()Lorg/joda/time/format/PeriodFormatter;
 
     move-result-object v0
 

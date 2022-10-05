@@ -342,7 +342,7 @@
     return-object p1
 .end method
 
-.method public getFontAsync(Landroid/content/Context;Lcom/google/android/material/resources/TextAppearanceFontCallback;)V
+.method public getFontAsync(Landroid/content/Context;Lorg/joda/time/Chronology;)V
     .locals 9
 
     invoke-virtual {p0, p1}, Lcom/google/android/material/resources/TextAppearance;->shouldLoadFontSynchronously(Landroid/content/Context;)Z
@@ -374,7 +374,7 @@
 
     iget-object p1, p0, Lcom/google/android/material/resources/TextAppearance;->font:Landroid/graphics/Typeface;
 
-    invoke-virtual {p2, p1, v0}, Lcom/google/android/material/resources/TextAppearanceFontCallback;->onFontRetrieved(Landroid/graphics/Typeface;Z)V
+    invoke-virtual {p2, p1, v0}, Lorg/joda/time/Chronology;->onFontRetrieved(Landroid/graphics/Typeface;Z)V
 
     return-void
 
@@ -382,7 +382,7 @@
     :try_start_0
     new-instance v5, Lcom/google/android/material/resources/TextAppearance$1;
 
-    invoke-direct {v5, p0, p2}, Lcom/google/android/material/resources/TextAppearance$1;-><init>(Lcom/google/android/material/resources/TextAppearance;Lcom/google/android/material/resources/TextAppearanceFontCallback;)V
+    invoke-direct {v5, p0, p2}, Lcom/google/android/material/resources/TextAppearance$1;-><init>(Lcom/google/android/material/resources/TextAppearance;Lorg/joda/time/Chronology;)V
 
     const/4 v1, 0x0
 
@@ -447,14 +447,14 @@
 
     const/4 p1, -0x3
 
-    invoke-virtual {p2, p1}, Lcom/google/android/material/resources/TextAppearanceFontCallback;->onFontRetrievalFailed(I)V
+    invoke-virtual {p2, p1}, Lorg/joda/time/Chronology;->onFontRetrievalFailed(I)V
 
     goto :goto_1
 
     :catch_1
     iput-boolean v0, p0, Lcom/google/android/material/resources/TextAppearance;->fontResolved:Z
 
-    invoke-virtual {p2, v0}, Lcom/google/android/material/resources/TextAppearanceFontCallback;->onFontRetrievalFailed(I)V
+    invoke-virtual {p2, v0}, Lorg/joda/time/Chronology;->onFontRetrievalFailed(I)V
 
     :goto_1
     return-void
@@ -517,10 +517,10 @@
     return p1
 .end method
 
-.method public updateDrawState(Landroid/content/Context;Landroid/text/TextPaint;Lcom/google/android/material/resources/TextAppearanceFontCallback;)V
+.method public updateDrawState(Landroid/content/Context;Landroid/text/TextPaint;Lorg/joda/time/Chronology;)V
     .locals 4
 
-    invoke-virtual {p0, p1, p2, p3}, Lcom/google/android/material/resources/TextAppearance;->updateMeasureState(Landroid/content/Context;Landroid/text/TextPaint;Lcom/google/android/material/resources/TextAppearanceFontCallback;)V
+    invoke-virtual {p0, p1, p2, p3}, Lcom/google/android/material/resources/TextAppearance;->updateMeasureState(Landroid/content/Context;Landroid/text/TextPaint;Lorg/joda/time/Chronology;)V
 
     iget-object p1, p0, Lcom/google/android/material/resources/TextAppearance;->textColor:Landroid/content/res/ColorStateList;
 
@@ -575,7 +575,7 @@
     return-void
 .end method
 
-.method public updateMeasureState(Landroid/content/Context;Landroid/text/TextPaint;Lcom/google/android/material/resources/TextAppearanceFontCallback;)V
+.method public updateMeasureState(Landroid/content/Context;Landroid/text/TextPaint;Lorg/joda/time/Chronology;)V
     .locals 1
 
     invoke-virtual {p0, p1}, Lcom/google/android/material/resources/TextAppearance;->shouldLoadFontSynchronously(Landroid/content/Context;)Z
@@ -601,9 +601,9 @@
 
     new-instance v0, Lcom/google/android/material/resources/TextAppearance$2;
 
-    invoke-direct {v0, p0, p2, p3}, Lcom/google/android/material/resources/TextAppearance$2;-><init>(Lcom/google/android/material/resources/TextAppearance;Landroid/text/TextPaint;Lcom/google/android/material/resources/TextAppearanceFontCallback;)V
+    invoke-direct {v0, p0, p2, p3}, Lcom/google/android/material/resources/TextAppearance$2;-><init>(Lcom/google/android/material/resources/TextAppearance;Landroid/text/TextPaint;Lorg/joda/time/Chronology;)V
 
-    invoke-virtual {p0, p1, v0}, Lcom/google/android/material/resources/TextAppearance;->getFontAsync(Landroid/content/Context;Lcom/google/android/material/resources/TextAppearanceFontCallback;)V
+    invoke-virtual {p0, p1, v0}, Lcom/google/android/material/resources/TextAppearance;->getFontAsync(Landroid/content/Context;Lorg/joda/time/Chronology;)V
 
     :goto_0
     return-void

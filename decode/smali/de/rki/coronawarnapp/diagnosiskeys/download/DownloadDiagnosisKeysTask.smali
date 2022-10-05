@@ -80,7 +80,7 @@
 
     const-class v0, Lde/rki/coronawarnapp/diagnosiskeys/download/DownloadDiagnosisKeysTask;
 
-    invoke-static {v0}, Lde/rki/coronawarnapp/contactdiary/retention/ContactDiaryCleanTask$$ExternalSyntheticOutline0;->m(Ljava/lang/Class;)Ljava/lang/String;
+    invoke-static {v0}, Lorg/bouncycastle/crypto/digests/MD5Digest$$ExternalSyntheticOutline0;->m(Ljava/lang/Class;)Ljava/lang/String;
 
     move-result-object v0
 
@@ -112,7 +112,7 @@
 
     invoke-static {p5, v0}, Lkotlin/jvm/internal/Intrinsics;->checkNotNullParameter(Ljava/lang/Object;Ljava/lang/String;)V
 
-    const-string v0, "settings"
+    const-string/jumbo v0, "settings"
 
     invoke-static {p6, v0}, Lkotlin/jvm/internal/Intrinsics;->checkNotNullParameter(Ljava/lang/Object;Ljava/lang/String;)V
 
@@ -245,7 +245,7 @@
 
     invoke-static {p2}, Lkotlin/ResultKt;->throwOnFailure(Ljava/lang/Object;)V
 
-    goto/16 :goto_4
+    goto/16 :goto_5
 
     :cond_1
     new-instance p1, Ljava/lang/IllegalStateException;
@@ -280,7 +280,7 @@
 
     move-result p2
 
-    if-eqz p2, :cond_5
+    if-eqz p2, :cond_4
 
     const-string p1, "EUR"
 
@@ -288,13 +288,10 @@
 
     move-result-object p1
 
-    :cond_4
-    move-object p2, p0
-
     goto :goto_2
 
-    :cond_5
-    if-nez p1, :cond_4
+    :cond_4
+    if-nez p1, :cond_6
 
     iget-object p1, p0, Lde/rki/coronawarnapp/diagnosiskeys/download/DownloadDiagnosisKeysTask;->appConfigProvider:Lde/rki/coronawarnapp/appconfig/AppConfigProvider;
 
@@ -306,11 +303,11 @@
 
     move-result-object p2
 
-    if-ne p2, v1, :cond_6
+    if-ne p2, v1, :cond_5
 
     return-object v1
 
-    :cond_6
+    :cond_5
     move-object p1, p0
 
     :goto_1
@@ -326,7 +323,13 @@
 
     move-object p1, v6
 
+    goto :goto_3
+
+    :cond_6
     :goto_2
+    move-object p2, p0
+
+    :goto_3
     new-instance v2, Ljava/util/ArrayList;
 
     const/16 v4, 0xa
@@ -341,7 +344,7 @@
 
     move-result-object p1
 
-    :goto_3
+    :goto_4
     invoke-interface {p1}, Ljava/util/Iterator;->hasNext()Z
 
     move-result v4
@@ -360,7 +363,7 @@
 
     invoke-interface {v2, v5}, Ljava/util/Collection;->add(Ljava/lang/Object;)Z
 
-    goto :goto_3
+    goto :goto_4
 
     :cond_7
     iget-object p1, p2, Lde/rki/coronawarnapp/diagnosiskeys/download/DownloadDiagnosisKeysTask;->keyPackageSyncTool:Lde/rki/coronawarnapp/diagnosiskeys/download/KeyPackageSyncTool;
@@ -380,7 +383,7 @@
     return-object v1
 
     :cond_8
-    :goto_4
+    :goto_5
     return-object p2
 .end method
 
@@ -1554,7 +1557,7 @@
 
     iget-object v0, v11, Lde/rki/coronawarnapp/diagnosiskeys/download/DownloadDiagnosisKeysTask;->settings:Lde/rki/coronawarnapp/diagnosiskeys/download/DownloadDiagnosisKeysSettings;
 
-    invoke-static {v0}, Lcom/google/android/gms/internal/nearby/zzcd;->updateLastVersionCodeToCurrent(Lde/rki/coronawarnapp/diagnosiskeys/download/DownloadDiagnosisKeysSettings;)V
+    invoke-static {v0}, Lde/rki/coronawarnapp/diagnosiskeys/download/DownloadDiagnosisKeysSettingsKt;->updateLastVersionCodeToCurrent(Lde/rki/coronawarnapp/diagnosiskeys/download/DownloadDiagnosisKeysSettings;)V
 
     iget-object v0, v11, Lde/rki/coronawarnapp/diagnosiskeys/download/DownloadDiagnosisKeysTask;->coronaTestRepository:Lde/rki/coronawarnapp/coronatest/CoronaTestRepository;
 

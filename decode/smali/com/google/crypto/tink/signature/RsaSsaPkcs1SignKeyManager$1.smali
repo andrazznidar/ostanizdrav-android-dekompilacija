@@ -203,11 +203,11 @@
 
     move-result-object v3
 
-    invoke-static {v3}, Lcom/google/crypto/tink/signature/SigUtil;->toHashType(Lcom/google/crypto/tink/proto/HashType;)Lcom/google/crypto/tink/subtle/Enums$HashType;
+    invoke-static {v3}, Lcom/google/crypto/tink/signature/SigUtil;->toHashType(Lcom/google/crypto/tink/proto/HashType;)I
 
-    move-result-object v3
+    move-result v3
 
-    invoke-direct {v2, v1, v3}, Lcom/google/crypto/tink/subtle/RsaSsaPkcs1SignJce;-><init>(Ljava/security/interfaces/RSAPrivateCrtKey;Lcom/google/crypto/tink/subtle/Enums$HashType;)V
+    invoke-direct {v2, v1, v3}, Lcom/google/crypto/tink/subtle/RsaSsaPkcs1SignJce;-><init>(Ljava/security/interfaces/RSAPrivateCrtKey;I)V
 
     new-instance v1, Ljava/security/spec/RSAPublicKeySpec;
 
@@ -265,11 +265,11 @@
 
     move-result-object p1
 
-    invoke-static {p1}, Lcom/google/crypto/tink/signature/SigUtil;->toHashType(Lcom/google/crypto/tink/proto/HashType;)Lcom/google/crypto/tink/subtle/Enums$HashType;
+    invoke-static {p1}, Lcom/google/crypto/tink/signature/SigUtil;->toHashType(Lcom/google/crypto/tink/proto/HashType;)I
 
-    move-result-object p1
+    move-result p1
 
-    invoke-direct {v1, v0, p1}, Lcom/google/crypto/tink/subtle/RsaSsaPkcs1VerifyJce;-><init>(Ljava/security/interfaces/RSAPublicKey;Lcom/google/crypto/tink/subtle/Enums$HashType;)V
+    invoke-direct {v1, v0, p1}, Lcom/google/crypto/tink/subtle/RsaSsaPkcs1VerifyJce;-><init>(Ljava/security/interfaces/RSAPublicKey;I)V
 
     :try_start_0
     sget-object p1, Lcom/google/crypto/tink/signature/RsaSsaPkcs1SignKeyManager;->TEST_MESSAGE:[B

@@ -17,8 +17,8 @@
     c = "de.rki.coronawarnapp.coronatest.type.pcr.PCRTestProcessor"
     f = "PCRTestProcessor.kt"
     l = {
-        0x5b,
-        0x5f
+        0x5c,
+        0x60
     }
     m = "createTAN"
 .end annotation

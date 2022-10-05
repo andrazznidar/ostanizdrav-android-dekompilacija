@@ -1,101 +1,117 @@
-.class final Lj$/util/stream/Q1;
-.super Lj$/util/stream/S1;
+.class Lj$/util/stream/Q1;
+.super Lj$/util/stream/Z1;
 
 # interfaces
-.implements Lj$/util/stream/x1;
+.implements Lj$/util/stream/Y1;
+
+
+# instance fields
+.field final synthetic b:Lj$/util/function/C;
+
+.field final synthetic c:Lj$/util/function/BiConsumer;
+
+.field final synthetic d:Lj$/util/function/BiConsumer;
 
 
 # direct methods
-.method constructor <init>(Lj$/util/stream/x1;Lj$/util/stream/x1;)V
+.method constructor <init>(Lj$/util/function/C;Lj$/util/function/BiConsumer;Lj$/util/function/BiConsumer;)V
     .locals 0
 
-    invoke-direct {p0, p1, p2}, Lj$/util/stream/S1;-><init>(Lj$/util/stream/A1;Lj$/util/stream/A1;)V
+    iput-object p1, p0, Lj$/util/stream/Q1;->b:Lj$/util/function/C;
+
+    iput-object p2, p0, Lj$/util/stream/Q1;->c:Lj$/util/function/BiConsumer;
+
+    iput-object p3, p0, Lj$/util/stream/Q1;->d:Lj$/util/function/BiConsumer;
+
+    invoke-direct {p0}, Lj$/util/stream/Z1;-><init>()V
 
     return-void
 .end method
 
 
 # virtual methods
-.method public synthetic a([Ljava/lang/Integer;I)V
+.method public synthetic accept(I)V
     .locals 0
 
-    invoke-static {p0, p1, p2}, Lj$/util/stream/p1;->i(Lj$/util/stream/x1;[Ljava/lang/Integer;I)V
+    invoke-static {}, Lj$/util/stream/D0;->O()V
+
+    const/4 p1, 0x0
+
+    throw p1
+.end method
+
+.method public synthetic c(D)V
+    .locals 0
+
+    invoke-static {}, Lj$/util/stream/D0;->K()V
+
+    const/4 p1, 0x0
+
+    throw p1
+.end method
+
+.method public synthetic d(J)V
+    .locals 0
+
+    invoke-static {}, Lj$/util/stream/D0;->P()V
+
+    const/4 p1, 0x0
+
+    throw p1
+.end method
+
+.method public synthetic g()V
+    .locals 0
 
     return-void
 .end method
 
-.method public c(I)[I
+.method public i(J)V
     .locals 0
 
-    new-array p1, p1, [I
+    iget-object p1, p0, Lj$/util/stream/Q1;->b:Lj$/util/function/C;
 
-    return-object p1
-.end method
-
-.method public synthetic d(JJLj$/util/function/j;)Lj$/util/stream/x1;
-    .locals 0
-
-    invoke-static/range {p0 .. p5}, Lj$/util/stream/p1;->o(Lj$/util/stream/x1;JJLj$/util/function/j;)Lj$/util/stream/x1;
+    invoke-interface {p1}, Lj$/util/function/C;->get()Ljava/lang/Object;
 
     move-result-object p1
 
-    return-object p1
-.end method
-
-.method public bridge synthetic f(I)Ljava/lang/Object;
-    .locals 0
-
-    invoke-virtual {p0, p1}, Lj$/util/stream/Q1;->c(I)[I
-
-    move-result-object p1
-
-    return-object p1
-.end method
-
-.method public synthetic forEach(Lj$/util/function/Consumer;)V
-    .locals 0
-
-    invoke-static {p0, p1}, Lj$/util/stream/p1;->l(Lj$/util/stream/x1;Lj$/util/function/Consumer;)V
+    iput-object p1, p0, Lj$/util/stream/Z1;->a:Ljava/lang/Object;
 
     return-void
 .end method
 
-.method public bridge synthetic k([Ljava/lang/Object;I)V
-    .locals 0
+.method public j(Ljava/lang/Object;)V
+    .locals 2
 
-    check-cast p1, [Ljava/lang/Integer;
+    iget-object v0, p0, Lj$/util/stream/Q1;->c:Lj$/util/function/BiConsumer;
 
-    invoke-virtual {p0, p1, p2}, Lj$/util/stream/Q1;->a([Ljava/lang/Integer;I)V
+    iget-object v1, p0, Lj$/util/stream/Z1;->a:Ljava/lang/Object;
+
+    invoke-interface {v0, v1, p1}, Lj$/util/function/BiConsumer;->n(Ljava/lang/Object;Ljava/lang/Object;)V
 
     return-void
 .end method
 
-.method public bridge synthetic p(JJLj$/util/function/j;)Lj$/util/stream/B1;
-    .locals 0
+.method public q(Lj$/util/stream/Y1;)V
+    .locals 2
 
-    invoke-virtual/range {p0 .. p5}, Lj$/util/stream/Q1;->d(JJLj$/util/function/j;)Lj$/util/stream/x1;
+    check-cast p1, Lj$/util/stream/Q1;
 
-    move-result-object p1
+    iget-object v0, p0, Lj$/util/stream/Q1;->d:Lj$/util/function/BiConsumer;
 
-    return-object p1
+    iget-object v1, p0, Lj$/util/stream/Z1;->a:Ljava/lang/Object;
+
+    iget-object p1, p1, Lj$/util/stream/Z1;->a:Ljava/lang/Object;
+
+    invoke-interface {v0, v1, p1}, Lj$/util/function/BiConsumer;->n(Ljava/lang/Object;Ljava/lang/Object;)V
+
+    return-void
 .end method
 
-.method public spliterator()Lj$/util/Spliterator$d;
+.method public synthetic r()Z
     .locals 1
 
-    new-instance v0, Lj$/util/stream/h2;
+    const/4 v0, 0x0
 
-    invoke-direct {v0, p0}, Lj$/util/stream/h2;-><init>(Lj$/util/stream/x1;)V
-
-    return-object v0
-.end method
-
-.method public spliterator()Lj$/util/Spliterator;
-    .locals 1
-
-    new-instance v0, Lj$/util/stream/h2;
-
-    invoke-direct {v0, p0}, Lj$/util/stream/h2;-><init>(Lj$/util/stream/x1;)V
-
-    return-object v0
+    return v0
 .end method

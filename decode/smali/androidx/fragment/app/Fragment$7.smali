@@ -47,6 +47,8 @@
 .method public apply(Ljava/lang/Object;)Ljava/lang/Object;
     .locals 0
 
+    check-cast p1, Ljava/lang/Void;
+
     iget-object p1, p0, Landroidx/fragment/app/Fragment$7;->val$registry:Landroidx/activity/result/ActivityResultRegistry;
 
     return-object p1

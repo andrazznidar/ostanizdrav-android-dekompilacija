@@ -33,9 +33,9 @@
 
 # direct methods
 .method public static constructor <clinit>()V
-    .locals 7
+    .locals 6
 
-    invoke-static {}, Landroidx/constraintlayout/core/SolverVariable$Type$r8$EnumUnboxingUtility;->com$fasterxml$jackson$core$JsonFactory$Feature$s$values()[I
+    invoke-static {}, Lcom/fasterxml/jackson/core/JsonFactory$Feature$EnumUnboxingLocalUtility;->_values()[I
 
     move-result-object v0
 
@@ -48,28 +48,23 @@
     move v4, v3
 
     :goto_0
-    if-ge v3, v1, :cond_1
+    if-ge v3, v1, :cond_0
 
     aget v5, v0, v3
 
-    invoke-static {v5}, Landroidx/constraintlayout/core/SolverVariable$Type$r8$EnumUnboxingUtility;->get_defaultState$$com$fasterxml$jackson$core$JsonFactory$Feature(I)Z
+    invoke-static {v5}, Lcom/fasterxml/jackson/core/JsonFactory$Feature$EnumUnboxingLocalUtility;->get_defaultState(I)Z
 
-    move-result v6
-
-    if-eqz v6, :cond_0
-
-    invoke-static {v5}, Landroidx/constraintlayout/core/SolverVariable$Type$r8$EnumUnboxingUtility;->com$fasterxml$jackson$core$JsonFactory$Feature$v$getMask(I)I
+    invoke-static {v5}, Lcom/fasterxml/jackson/core/JsonFactory$Feature$EnumUnboxingLocalUtility;->_getMask(I)I
 
     move-result v5
 
     or-int/2addr v4, v5
 
-    :cond_0
     add-int/lit8 v3, v3, 0x1
 
     goto :goto_0
 
-    :cond_1
+    :cond_0
     sput v4, Lcom/fasterxml/jackson/core/JsonFactory;->DEFAULT_FACTORY_FEATURE_FLAGS:I
 
     invoke-static {}, Lcom/fasterxml/jackson/core/JsonParser$Feature;->values()[Lcom/fasterxml/jackson/core/JsonParser$Feature;
@@ -81,24 +76,24 @@
     move v3, v2
 
     :goto_1
-    if-ge v2, v1, :cond_3
+    if-ge v2, v1, :cond_2
 
     aget-object v4, v0, v2
 
     iget-boolean v5, v4, Lcom/fasterxml/jackson/core/JsonParser$Feature;->_defaultState:Z
 
-    if-eqz v5, :cond_2
+    if-eqz v5, :cond_1
 
     iget v4, v4, Lcom/fasterxml/jackson/core/JsonParser$Feature;->_mask:I
 
     or-int/2addr v3, v4
 
-    :cond_2
+    :cond_1
     add-int/lit8 v2, v2, 0x1
 
     goto :goto_1
 
-    :cond_3
+    :cond_2
     sput v3, Lcom/fasterxml/jackson/core/JsonFactory;->DEFAULT_PARSER_FEATURE_FLAGS:I
 
     invoke-static {}, Lcom/fasterxml/jackson/core/JsonGenerator$Feature;->collectDefaults()I
@@ -125,7 +120,7 @@
 .end method
 
 .method public constructor <init>(Lcom/fasterxml/jackson/core/ObjectCodec;)V
-    .locals 5
+    .locals 4
 
     invoke-direct {p0}, Lcom/fasterxml/jackson/core/TokenStreamFactory;-><init>()V
 
@@ -143,37 +138,35 @@
 
     add-int/2addr v2, v0
 
-    const/4 v0, 0x1
+    or-int/lit8 v0, v2, 0x1
 
-    or-int/lit8 v1, v2, 0x1
+    new-instance v1, Lcom/fasterxml/jackson/core/sym/CharsToNameCanonicalizer;
 
-    new-instance v2, Lcom/fasterxml/jackson/core/sym/CharsToNameCanonicalizer;
+    invoke-direct {v1, v0}, Lcom/fasterxml/jackson/core/sym/CharsToNameCanonicalizer;-><init>(I)V
 
-    invoke-direct {v2, v1}, Lcom/fasterxml/jackson/core/sym/CharsToNameCanonicalizer;-><init>(I)V
-
-    iput-object v2, p0, Lcom/fasterxml/jackson/core/JsonFactory;->_rootCharSymbols:Lcom/fasterxml/jackson/core/sym/CharsToNameCanonicalizer;
+    iput-object v1, p0, Lcom/fasterxml/jackson/core/JsonFactory;->_rootCharSymbols:Lcom/fasterxml/jackson/core/sym/CharsToNameCanonicalizer;
 
     invoke-static {}, Ljava/lang/System;->currentTimeMillis()J
 
-    move-result-wide v1
+    move-result-wide v0
 
-    long-to-int v4, v1
+    long-to-int v2, v0
 
-    ushr-long/2addr v1, v3
+    ushr-long/2addr v0, v3
 
-    long-to-int v1, v1
+    long-to-int v0, v0
 
-    add-int/2addr v4, v1
+    add-int/2addr v2, v0
 
-    or-int/lit8 v1, v4, 0x1
+    or-int/lit8 v0, v2, 0x1
 
-    new-instance v2, Lcom/fasterxml/jackson/core/sym/ByteQuadsCanonicalizer;
+    new-instance v1, Lcom/fasterxml/jackson/core/sym/ByteQuadsCanonicalizer;
 
-    const/16 v3, 0x40
+    const/16 v2, 0x40
 
-    invoke-direct {v2, v3, v0, v1, v0}, Lcom/fasterxml/jackson/core/sym/ByteQuadsCanonicalizer;-><init>(IZIZ)V
+    invoke-direct {v1, v2, v0}, Lcom/fasterxml/jackson/core/sym/ByteQuadsCanonicalizer;-><init>(II)V
 
-    iput-object v2, p0, Lcom/fasterxml/jackson/core/JsonFactory;->_byteSymbolCanonicalizer:Lcom/fasterxml/jackson/core/sym/ByteQuadsCanonicalizer;
+    iput-object v1, p0, Lcom/fasterxml/jackson/core/JsonFactory;->_byteSymbolCanonicalizer:Lcom/fasterxml/jackson/core/sym/ByteQuadsCanonicalizer;
 
     sget v0, Lcom/fasterxml/jackson/core/JsonFactory;->DEFAULT_FACTORY_FEATURE_FLAGS:I
 
@@ -202,6 +195,18 @@
 
 
 # virtual methods
+.method public _createContentReference(Ljava/lang/Object;)Lcom/fasterxml/jackson/core/io/ContentReference;
+    .locals 2
+
+    const/4 v0, 0x1
+
+    new-instance v1, Lcom/fasterxml/jackson/core/io/ContentReference;
+
+    invoke-direct {v1, v0, p1}, Lcom/fasterxml/jackson/core/io/ContentReference;-><init>(ZLjava/lang/Object;)V
+
+    return-object v1
+.end method
+
 .method public _createGenerator(Ljava/io/Writer;Lcom/fasterxml/jackson/core/io/IOContext;)Lcom/fasterxml/jackson/core/JsonGenerator;
     .locals 7
     .annotation system Ldalvik/annotation/Throws;
@@ -245,7 +250,7 @@
 
     const/4 v1, 0x4
 
-    invoke-static {v1, v0}, Landroidx/constraintlayout/core/SolverVariable$Type$r8$EnumUnboxingUtility;->com$fasterxml$jackson$core$JsonFactory$Feature$v$enabledIn(II)Z
+    invoke-static {v1, v0}, Lcom/fasterxml/jackson/core/JsonFactory$Feature$EnumUnboxingLocalUtility;->_enabledIn(II)Z
 
     move-result v0
 
@@ -334,7 +339,7 @@
 .end method
 
 .method public createParser(Ljava/lang/String;)Lcom/fasterxml/jackson/core/JsonParser;
-    .locals 21
+    .locals 22
     .annotation system Ldalvik/annotation/Throws;
         value = {
             Ljava/io/IOException;,
@@ -356,35 +361,39 @@
 
     if-gt v2, v3, :cond_0
 
-    const/4 v3, 0x1
+    invoke-virtual/range {p0 .. p1}, Lcom/fasterxml/jackson/core/JsonFactory;->_createContentReference(Ljava/lang/Object;)Lcom/fasterxml/jackson/core/io/ContentReference;
 
-    new-instance v6, Lcom/fasterxml/jackson/core/io/IOContext;
+    move-result-object v3
+
+    const/4 v5, 0x1
+
+    new-instance v7, Lcom/fasterxml/jackson/core/io/IOContext;
 
     invoke-virtual/range {p0 .. p0}, Lcom/fasterxml/jackson/core/JsonFactory;->_getBufferRecycler()Lcom/fasterxml/jackson/core/util/BufferRecycler;
 
-    move-result-object v5
+    move-result-object v6
 
-    invoke-direct {v6, v5, v1, v3}, Lcom/fasterxml/jackson/core/io/IOContext;-><init>(Lcom/fasterxml/jackson/core/util/BufferRecycler;Ljava/lang/Object;Z)V
+    invoke-direct {v7, v6, v3, v5}, Lcom/fasterxml/jackson/core/io/IOContext;-><init>(Lcom/fasterxml/jackson/core/util/BufferRecycler;Lcom/fasterxml/jackson/core/io/ContentReference;Z)V
 
-    iget-object v3, v6, Lcom/fasterxml/jackson/core/io/IOContext;->_tokenCBuffer:[C
+    iget-object v3, v7, Lcom/fasterxml/jackson/core/io/IOContext;->_tokenCBuffer:[C
 
-    invoke-virtual {v6, v3}, Lcom/fasterxml/jackson/core/io/IOContext;->_verifyAlloc(Ljava/lang/Object;)V
+    invoke-virtual {v7, v3}, Lcom/fasterxml/jackson/core/io/IOContext;->_verifyAlloc(Ljava/lang/Object;)V
 
-    invoke-virtual {v5, v4, v2}, Lcom/fasterxml/jackson/core/util/BufferRecycler;->allocCharBuffer(II)[C
+    invoke-virtual {v6, v4, v2}, Lcom/fasterxml/jackson/core/util/BufferRecycler;->allocCharBuffer(II)[C
 
-    move-result-object v11
+    move-result-object v12
 
-    iput-object v11, v6, Lcom/fasterxml/jackson/core/io/IOContext;->_tokenCBuffer:[C
+    iput-object v12, v7, Lcom/fasterxml/jackson/core/io/IOContext;->_tokenCBuffer:[C
 
-    invoke-virtual {v1, v4, v2, v11, v4}, Ljava/lang/String;->getChars(II[CI)V
+    invoke-virtual {v1, v4, v2, v12, v4}, Ljava/lang/String;->getChars(II[CI)V
 
-    const/4 v14, 0x1
+    const/4 v15, 0x1
 
     new-instance v1, Lcom/fasterxml/jackson/core/json/ReaderBasedJsonParser;
 
-    iget v7, v0, Lcom/fasterxml/jackson/core/JsonFactory;->_parserFeatures:I
+    iget v8, v0, Lcom/fasterxml/jackson/core/JsonFactory;->_parserFeatures:I
 
-    iget-object v9, v0, Lcom/fasterxml/jackson/core/JsonFactory;->_objectCodec:Lcom/fasterxml/jackson/core/ObjectCodec;
+    iget-object v10, v0, Lcom/fasterxml/jackson/core/JsonFactory;->_objectCodec:Lcom/fasterxml/jackson/core/ObjectCodec;
 
     iget-object v3, v0, Lcom/fasterxml/jackson/core/JsonFactory;->_rootCharSymbols:Lcom/fasterxml/jackson/core/sym/CharsToNameCanonicalizer;
 
@@ -392,17 +401,17 @@
 
     invoke-virtual {v3, v5}, Lcom/fasterxml/jackson/core/sym/CharsToNameCanonicalizer;->makeChild(I)Lcom/fasterxml/jackson/core/sym/CharsToNameCanonicalizer;
 
-    move-result-object v10
+    move-result-object v11
 
-    add-int/lit8 v13, v2, 0x0
+    add-int/lit8 v14, v2, 0x0
 
-    const/4 v8, 0x0
+    const/4 v9, 0x0
 
-    const/4 v12, 0x0
+    const/4 v13, 0x0
 
-    move-object v5, v1
+    move-object v6, v1
 
-    invoke-direct/range {v5 .. v14}, Lcom/fasterxml/jackson/core/json/ReaderBasedJsonParser;-><init>(Lcom/fasterxml/jackson/core/io/IOContext;ILjava/io/Reader;Lcom/fasterxml/jackson/core/ObjectCodec;Lcom/fasterxml/jackson/core/sym/CharsToNameCanonicalizer;[CIIZ)V
+    invoke-direct/range {v6 .. v15}, Lcom/fasterxml/jackson/core/json/ReaderBasedJsonParser;-><init>(Lcom/fasterxml/jackson/core/io/IOContext;ILjava/io/Reader;Lcom/fasterxml/jackson/core/ObjectCodec;Lcom/fasterxml/jackson/core/sym/CharsToNameCanonicalizer;[CIIZ)V
 
     return-object v1
 
@@ -411,15 +420,19 @@
 
     invoke-direct {v2, v1}, Ljava/io/StringReader;-><init>(Ljava/lang/String;)V
 
-    new-instance v1, Lcom/fasterxml/jackson/core/io/IOContext;
+    invoke-virtual {v0, v2}, Lcom/fasterxml/jackson/core/JsonFactory;->_createContentReference(Ljava/lang/Object;)Lcom/fasterxml/jackson/core/io/ContentReference;
+
+    move-result-object v1
+
+    new-instance v3, Lcom/fasterxml/jackson/core/io/IOContext;
 
     invoke-virtual/range {p0 .. p0}, Lcom/fasterxml/jackson/core/JsonFactory;->_getBufferRecycler()Lcom/fasterxml/jackson/core/util/BufferRecycler;
 
-    move-result-object v3
+    move-result-object v5
 
-    invoke-direct {v1, v3, v2, v4}, Lcom/fasterxml/jackson/core/io/IOContext;-><init>(Lcom/fasterxml/jackson/core/util/BufferRecycler;Ljava/lang/Object;Z)V
+    invoke-direct {v3, v5, v1, v4}, Lcom/fasterxml/jackson/core/io/IOContext;-><init>(Lcom/fasterxml/jackson/core/util/BufferRecycler;Lcom/fasterxml/jackson/core/io/ContentReference;Z)V
 
-    new-instance v3, Lcom/fasterxml/jackson/core/json/ReaderBasedJsonParser;
+    new-instance v1, Lcom/fasterxml/jackson/core/json/ReaderBasedJsonParser;
 
     iget v4, v0, Lcom/fasterxml/jackson/core/JsonFactory;->_parserFeatures:I
 
@@ -431,21 +444,21 @@
 
     invoke-virtual {v6, v7}, Lcom/fasterxml/jackson/core/sym/CharsToNameCanonicalizer;->makeChild(I)Lcom/fasterxml/jackson/core/sym/CharsToNameCanonicalizer;
 
-    move-result-object v20
-
-    move-object v15, v3
+    move-result-object v21
 
     move-object/from16 v16, v1
 
-    move/from16 v17, v4
+    move-object/from16 v17, v3
 
-    move-object/from16 v18, v2
+    move/from16 v18, v4
 
-    move-object/from16 v19, v5
+    move-object/from16 v19, v2
 
-    invoke-direct/range {v15 .. v20}, Lcom/fasterxml/jackson/core/json/ReaderBasedJsonParser;-><init>(Lcom/fasterxml/jackson/core/io/IOContext;ILjava/io/Reader;Lcom/fasterxml/jackson/core/ObjectCodec;Lcom/fasterxml/jackson/core/sym/CharsToNameCanonicalizer;)V
+    move-object/from16 v20, v5
 
-    return-object v3
+    invoke-direct/range {v16 .. v21}, Lcom/fasterxml/jackson/core/json/ReaderBasedJsonParser;-><init>(Lcom/fasterxml/jackson/core/io/IOContext;ILjava/io/Reader;Lcom/fasterxml/jackson/core/ObjectCodec;Lcom/fasterxml/jackson/core/sym/CharsToNameCanonicalizer;)V
+
+    return-object v1
 .end method
 
 .method public getCodec()Lcom/fasterxml/jackson/core/ObjectCodec;

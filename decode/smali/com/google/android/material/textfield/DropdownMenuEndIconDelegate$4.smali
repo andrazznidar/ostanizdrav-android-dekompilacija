@@ -113,7 +113,7 @@
 
     sget v7, Lcom/google/android/material/R$attr;->colorControlHighlight:I
 
-    invoke-static {v0, v7}, Ldagger/android/AndroidInjection;->getColor(Landroid/view/View;I)I
+    invoke-static {v0, v7}, Lkotlin/math/MathKt__MathJVMKt;->getColor(Landroid/view/View;I)I
 
     move-result v7
 
@@ -137,7 +137,7 @@
 
     sget v1, Lcom/google/android/material/R$attr;->colorSurface:I
 
-    invoke-static {v0, v1}, Ldagger/android/AndroidInjection;->getColor(Landroid/view/View;I)I
+    invoke-static {v0, v1}, Lkotlin/math/MathKt__MathJVMKt;->getColor(Landroid/view/View;I)I
 
     move-result v1
 
@@ -149,7 +149,7 @@
 
     invoke-direct {v2, v10}, Lcom/google/android/material/shape/MaterialShapeDrawable;-><init>(Lcom/google/android/material/shape/ShapeAppearanceModel;)V
 
-    invoke-static {v7, v1, v9}, Ldagger/android/AndroidInjection;->layer(IIF)I
+    invoke-static {v7, v1, v9}, Lkotlin/math/MathKt__MathJVMKt;->layer(IIF)I
 
     move-result v7
 
@@ -218,7 +218,7 @@
 
     move-result v1
 
-    invoke-static {v7, v1, v9}, Ldagger/android/AndroidInjection;->layer(IIF)I
+    invoke-static {v7, v1, v9}, Lkotlin/math/MathKt__MathJVMKt;->layer(IIF)I
 
     move-result v2
 

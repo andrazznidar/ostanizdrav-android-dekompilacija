@@ -56,7 +56,7 @@
 
 # virtual methods
 .method public final process(Ljava/util/List;Lorg/joda/time/DateTime;Lde/rki/coronawarnapp/covidcertificate/common/certificate/DccData;Ljava/lang/String;Lkotlin/coroutines/Continuation;)Ljava/lang/Object;
-    .locals 23
+    .locals 36
     .annotation system Ldalvik/annotation/Signature;
         value = {
             "(",
@@ -120,13 +120,13 @@
 
     const-string v6, "CertLogicEngineWrapper"
 
-    const/4 v7, 0x1
+    const/4 v7, 0x0
 
-    const/4 v8, 0x0
+    const/4 v8, 0x1
 
     if-eqz v5, :cond_2
 
-    if-ne v5, v7, :cond_1
+    if-ne v5, v8, :cond_1
 
     iget-object v1, v3, Lde/rki/coronawarnapp/covidcertificate/validation/core/business/wrapper/CertLogicEngineWrapper$process$1;->L$5:Ljava/lang/Object;
 
@@ -140,13 +140,13 @@
 
     check-cast v5, Lde/rki/coronawarnapp/covidcertificate/common/certificate/DccData;
 
-    iget-object v9, v3, Lde/rki/coronawarnapp/covidcertificate/validation/core/business/wrapper/CertLogicEngineWrapper$process$1;->L$2:Ljava/lang/Object;
+    iget-object v8, v3, Lde/rki/coronawarnapp/covidcertificate/validation/core/business/wrapper/CertLogicEngineWrapper$process$1;->L$2:Ljava/lang/Object;
 
-    check-cast v9, Lde/rki/coronawarnapp/covidcertificate/common/certificate/DccData;
+    check-cast v8, Lde/rki/coronawarnapp/covidcertificate/common/certificate/DccData;
 
-    iget-object v10, v3, Lde/rki/coronawarnapp/covidcertificate/validation/core/business/wrapper/CertLogicEngineWrapper$process$1;->L$1:Ljava/lang/Object;
+    iget-object v9, v3, Lde/rki/coronawarnapp/covidcertificate/validation/core/business/wrapper/CertLogicEngineWrapper$process$1;->L$1:Ljava/lang/Object;
 
-    check-cast v10, Ljava/util/List;
+    check-cast v9, Ljava/util/List;
 
     iget-object v3, v3, Lde/rki/coronawarnapp/covidcertificate/validation/core/business/wrapper/CertLogicEngineWrapper$process$1;->L$0:Ljava/lang/Object;
 
@@ -154,9 +154,11 @@
 
     invoke-static {v2}, Lkotlin/ResultKt;->throwOnFailure(Ljava/lang/Object;)V
 
-    move-object v14, v1
+    move-object v12, v1
 
     move-object v1, v5
+
+    move-object v5, v9
 
     goto :goto_1
 
@@ -182,7 +184,7 @@
 
     invoke-virtual {v1, v6}, Ltimber/log/Timber$Forest;->tag(Ljava/lang/String;)Ltimber/log/Timber$Tree;
 
-    new-array v2, v8, [Ljava/lang/Object;
+    new-array v2, v7, [Ljava/lang/Object;
 
     const-string v3, "No rules to be validated. Abort."
 
@@ -215,7 +217,7 @@
 
     iput-object v10, v3, Lde/rki/coronawarnapp/covidcertificate/validation/core/business/wrapper/CertLogicEngineWrapper$process$1;->L$5:Ljava/lang/Object;
 
-    iput v7, v3, Lde/rki/coronawarnapp/covidcertificate/validation/core/business/wrapper/CertLogicEngineWrapper$process$1;->label:I
+    iput v8, v3, Lde/rki/coronawarnapp/covidcertificate/validation/core/business/wrapper/CertLogicEngineWrapper$process$1;->label:I
 
     invoke-static {v2, v3}, Lkotlinx/coroutines/flow/FlowKt;->first(Lkotlinx/coroutines/flow/Flow;Lkotlin/coroutines/Continuation;)Ljava/lang/Object;
 
@@ -228,18 +230,16 @@
     :cond_4
     move-object v3, v0
 
+    move-object v8, v1
+
     move-object v4, v9
 
-    move-object v14, v10
-
-    move-object v9, v1
-
-    move-object v10, v5
+    move-object v12, v10
 
     :goto_1
-    move-object v13, v2
+    move-object v11, v2
 
-    check-cast v13, Ljava/util/Map;
+    check-cast v11, Ljava/util/Map;
 
     const-string v2, "certificate"
 
@@ -251,11 +251,11 @@
 
     const-string v2, "countryCode"
 
-    invoke-static {v14, v2}, Lkotlin/jvm/internal/Intrinsics;->checkNotNullParameter(Ljava/lang/Object;Ljava/lang/String;)V
+    invoke-static {v12, v2}, Lkotlin/jvm/internal/Intrinsics;->checkNotNullParameter(Ljava/lang/Object;Ljava/lang/String;)V
 
     const-string/jumbo v2, "valueSets"
 
-    invoke-static {v13, v2}, Lkotlin/jvm/internal/Intrinsics;->checkNotNullParameter(Ljava/lang/Object;Ljava/lang/String;)V
+    invoke-static {v11, v2}, Lkotlin/jvm/internal/Intrinsics;->checkNotNullParameter(Ljava/lang/Object;Ljava/lang/String;)V
 
     sget-object v2, Lorg/joda/time/DateTimeZone;->UTC:Lorg/joda/time/DateTimeZone;
 
@@ -267,93 +267,95 @@
 
     move-result-object v4
 
-    const-string/jumbo v5, "zoneId"
+    const-string/jumbo v9, "zoneId"
 
-    invoke-static {v4, v5}, Lkotlin/jvm/internal/Intrinsics;->checkNotNullParameter(Ljava/lang/Object;Ljava/lang/String;)V
+    invoke-static {v4, v9}, Lkotlin/jvm/internal/Intrinsics;->checkNotNullParameter(Ljava/lang/Object;Ljava/lang/String;)V
 
     invoke-virtual {v2}, Lorg/joda/time/base/AbstractDateTime;->getYear()I
 
+    move-result v13
+
+    iget-object v9, v2, Lorg/joda/time/base/BaseDateTime;->iChronology:Lorg/joda/time/Chronology;
+
+    invoke-virtual {v9}, Lorg/joda/time/Chronology;->monthOfYear()Lorg/joda/time/DateTimeField;
+
+    move-result-object v9
+
+    iget-wide v14, v2, Lorg/joda/time/base/BaseDateTime;->iMillis:J
+
+    invoke-virtual {v9, v14, v15}, Lorg/joda/time/DateTimeField;->get(J)I
+
+    move-result v14
+
+    iget-object v9, v2, Lorg/joda/time/base/BaseDateTime;->iChronology:Lorg/joda/time/Chronology;
+
+    invoke-virtual {v9}, Lorg/joda/time/Chronology;->dayOfMonth()Lorg/joda/time/DateTimeField;
+
+    move-result-object v9
+
+    move-object/from16 p1, v8
+
+    iget-wide v7, v2, Lorg/joda/time/base/BaseDateTime;->iMillis:J
+
+    invoke-virtual {v9, v7, v8}, Lorg/joda/time/DateTimeField;->get(J)I
+
     move-result v15
-
-    iget-object v5, v2, Lorg/joda/time/base/BaseDateTime;->iChronology:Lorg/joda/time/Chronology;
-
-    invoke-virtual {v5}, Lorg/joda/time/Chronology;->monthOfYear()Lorg/joda/time/DateTimeField;
-
-    move-result-object v5
-
-    iget-wide v11, v2, Lorg/joda/time/base/BaseDateTime;->iMillis:J
-
-    invoke-virtual {v5, v11, v12}, Lorg/joda/time/DateTimeField;->get(J)I
-
-    move-result v16
-
-    iget-object v5, v2, Lorg/joda/time/base/BaseDateTime;->iChronology:Lorg/joda/time/Chronology;
-
-    invoke-virtual {v5}, Lorg/joda/time/Chronology;->dayOfMonth()Lorg/joda/time/DateTimeField;
-
-    move-result-object v5
-
-    iget-wide v11, v2, Lorg/joda/time/base/BaseDateTime;->iMillis:J
-
-    invoke-virtual {v5, v11, v12}, Lorg/joda/time/DateTimeField;->get(J)I
-
-    move-result v17
 
     invoke-virtual {v2}, Lorg/joda/time/base/AbstractDateTime;->getHourOfDay()I
 
+    move-result v16
+
+    iget-object v7, v2, Lorg/joda/time/base/BaseDateTime;->iChronology:Lorg/joda/time/Chronology;
+
+    invoke-virtual {v7}, Lorg/joda/time/Chronology;->minuteOfHour()Lorg/joda/time/DateTimeField;
+
+    move-result-object v7
+
+    iget-wide v8, v2, Lorg/joda/time/base/BaseDateTime;->iMillis:J
+
+    invoke-virtual {v7, v8, v9}, Lorg/joda/time/DateTimeField;->get(J)I
+
+    move-result v17
+
+    iget-object v7, v2, Lorg/joda/time/base/BaseDateTime;->iChronology:Lorg/joda/time/Chronology;
+
+    invoke-virtual {v7}, Lorg/joda/time/Chronology;->secondOfMinute()Lorg/joda/time/DateTimeField;
+
+    move-result-object v7
+
+    iget-wide v8, v2, Lorg/joda/time/base/BaseDateTime;->iMillis:J
+
+    invoke-virtual {v7, v8, v9}, Lorg/joda/time/DateTimeField;->get(J)I
+
     move-result v18
 
-    iget-object v5, v2, Lorg/joda/time/base/BaseDateTime;->iChronology:Lorg/joda/time/Chronology;
+    const/16 v19, 0x0
 
-    invoke-virtual {v5}, Lorg/joda/time/Chronology;->minuteOfHour()Lorg/joda/time/DateTimeField;
+    move-object/from16 v20, v4
 
-    move-result-object v5
+    invoke-static/range {v13 .. v20}, Lj$/time/ZonedDateTime;->of(IIIIIIILj$/time/ZoneId;)Lj$/time/ZonedDateTime;
 
-    iget-wide v11, v2, Lorg/joda/time/base/BaseDateTime;->iMillis:J
-
-    invoke-virtual {v5, v11, v12}, Lorg/joda/time/DateTimeField;->get(J)I
-
-    move-result v19
-
-    iget-object v5, v2, Lorg/joda/time/base/BaseDateTime;->iChronology:Lorg/joda/time/Chronology;
-
-    invoke-virtual {v5}, Lorg/joda/time/Chronology;->secondOfMinute()Lorg/joda/time/DateTimeField;
-
-    move-result-object v5
-
-    iget-wide v11, v2, Lorg/joda/time/base/BaseDateTime;->iMillis:J
-
-    invoke-virtual {v5, v11, v12}, Lorg/joda/time/DateTimeField;->get(J)I
-
-    move-result v20
-
-    const/16 v21, 0x0
-
-    move-object/from16 v22, v4
-
-    invoke-static/range {v15 .. v22}, Lj$/time/ZonedDateTime;->of(IIIIIIILj$/time/ZoneId;)Lj$/time/ZonedDateTime;
-
-    move-result-object v12
+    move-result-object v10
 
     const-string v2, "of(\n    year,\n    monthO\u2026nute,\n    0,\n    zoneId\n)"
 
-    invoke-static {v12, v2}, Lkotlin/jvm/internal/Intrinsics;->checkNotNullExpressionValue(Ljava/lang/Object;Ljava/lang/String;)V
+    invoke-static {v10, v2}, Lkotlin/jvm/internal/Intrinsics;->checkNotNullExpressionValue(Ljava/lang/Object;Ljava/lang/String;)V
 
     iget-object v2, v1, Lde/rki/coronawarnapp/covidcertificate/common/certificate/DccData;->kid:Ljava/lang/String;
 
     iget-object v4, v1, Lde/rki/coronawarnapp/covidcertificate/common/certificate/DccData;->header:Lde/rki/coronawarnapp/covidcertificate/common/certificate/DccHeader;
 
-    iget-object v5, v4, Lde/rki/coronawarnapp/covidcertificate/common/certificate/DccHeader;->issuer:Ljava/lang/String;
+    iget-object v15, v4, Lde/rki/coronawarnapp/covidcertificate/common/certificate/DccHeader;->issuer:Ljava/lang/String;
 
     iget-object v4, v4, Lde/rki/coronawarnapp/covidcertificate/common/certificate/DccHeader;->expiresAt:Lorg/joda/time/Instant;
 
     invoke-static {}, Ldgca/verifier/app/engine/DateTimeKt;->getUTC_ZONE_ID()Lj$/time/ZoneId;
 
-    move-result-object v11
+    move-result-object v7
 
-    invoke-static {v4, v11}, Lde/rki/coronawarnapp/covidcertificate/validation/core/business/wrapper/MappingsKt;->toZonedDateTime(Lorg/joda/time/Instant;Lj$/time/ZoneId;)Lj$/time/ZonedDateTime;
+    invoke-static {v4, v7}, Lde/rki/coronawarnapp/covidcertificate/validation/core/business/wrapper/MappingsKt;->toZonedDateTime(Lorg/joda/time/Instant;Lj$/time/ZoneId;)Lj$/time/ZonedDateTime;
 
-    move-result-object v15
+    move-result-object v13
 
     iget-object v1, v1, Lde/rki/coronawarnapp/covidcertificate/common/certificate/DccData;->header:Lde/rki/coronawarnapp/covidcertificate/common/certificate/DccHeader;
 
@@ -365,338 +367,905 @@
 
     invoke-static {v1, v4}, Lde/rki/coronawarnapp/covidcertificate/validation/core/business/wrapper/MappingsKt;->toZonedDateTime(Lorg/joda/time/Instant;Lj$/time/ZoneId;)Lj$/time/ZonedDateTime;
 
-    move-result-object v16
+    move-result-object v14
 
-    new-instance v1, Ldgca/verifier/app/engine/data/ExternalParameter;
+    new-instance v20, Ldgca/verifier/app/engine/data/ExternalParameter;
+
+    const/16 v17, 0x0
+
+    const/16 v18, 0x80
 
     const/16 v19, 0x0
 
-    const/16 v20, 0x80
+    move-object/from16 v9, v20
 
-    const/16 v21, 0x0
+    move-object/from16 v16, v2
 
-    move-object v11, v1
+    invoke-direct/range {v9 .. v19}, Ldgca/verifier/app/engine/data/ExternalParameter;-><init>(Lj$/time/ZonedDateTime;Ljava/util/Map;Ljava/lang/String;Lj$/time/ZonedDateTime;Lj$/time/ZonedDateTime;Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;ILkotlin/jvm/internal/DefaultConstructorMarker;)V
 
-    move-object/from16 v17, v5
+    sget-object v1, Ltimber/log/Timber;->Forest:Ltimber/log/Timber$Forest;
 
-    move-object/from16 v18, v2
+    invoke-virtual {v1, v6}, Ltimber/log/Timber$Forest;->tag(Ljava/lang/String;)Ltimber/log/Timber$Tree;
 
-    invoke-direct/range {v11 .. v21}, Ldgca/verifier/app/engine/data/ExternalParameter;-><init>(Lj$/time/ZonedDateTime;Ljava/util/Map;Ljava/lang/String;Lj$/time/ZonedDateTime;Lj$/time/ZonedDateTime;Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;ILkotlin/jvm/internal/DefaultConstructorMarker;)V
+    const/4 v2, 0x0
 
-    sget-object v2, Ltimber/log/Timber;->Forest:Ltimber/log/Timber$Forest;
+    new-array v4, v2, [Ljava/lang/Object;
 
-    invoke-virtual {v2, v6}, Ltimber/log/Timber$Forest;->tag(Ljava/lang/String;)Ltimber/log/Timber$Tree;
+    const-string v2, "Rules to be validated are:"
 
-    new-array v4, v8, [Ljava/lang/Object;
+    invoke-virtual {v1, v2, v4}, Ltimber/log/Timber$Forest;->i(Ljava/lang/String;[Ljava/lang/Object;)V
 
-    const-string v5, "Rules to be validated are:"
+    invoke-interface {v5}, Ljava/lang/Iterable;->iterator()Ljava/util/Iterator;
 
-    invoke-virtual {v2, v5, v4}, Ltimber/log/Timber$Forest;->i(Ljava/lang/String;[Ljava/lang/Object;)V
+    move-result-object v1
 
-    invoke-interface {v10}, Ljava/lang/Iterable;->iterator()Ljava/util/Iterator;
+    :goto_2
+    invoke-interface {v1}, Ljava/util/Iterator;->hasNext()Z
+
+    move-result v2
+
+    const-string v4, "."
+
+    const-string v7, " "
+
+    const-string v8, "Rule "
+
+    if-eqz v2, :cond_5
+
+    invoke-interface {v1}, Ljava/util/Iterator;->next()Ljava/lang/Object;
 
     move-result-object v2
 
-    :goto_2
-    invoke-interface {v2}, Ljava/util/Iterator;->hasNext()Z
+    check-cast v2, Lde/rki/coronawarnapp/covidcertificate/validation/core/rule/DccValidationRule;
 
-    move-result v4
+    sget-object v9, Ltimber/log/Timber;->Forest:Ltimber/log/Timber$Forest;
 
-    const-string v5, "."
+    invoke-virtual {v9, v6}, Ltimber/log/Timber$Forest;->tag(Ljava/lang/String;)Ltimber/log/Timber$Tree;
 
-    const-string v11, " "
+    invoke-virtual {v2}, Lde/rki/coronawarnapp/covidcertificate/validation/core/rule/DccValidationRule;->getIdentifier()Ljava/lang/String;
 
-    const-string v12, "Rule "
+    move-result-object v10
 
-    if-eqz v4, :cond_5
+    invoke-virtual {v2}, Lde/rki/coronawarnapp/covidcertificate/validation/core/rule/DccValidationRule;->getVersion()Ljava/lang/String;
 
-    invoke-interface {v2}, Ljava/util/Iterator;->next()Ljava/lang/Object;
+    move-result-object v2
 
-    move-result-object v4
+    invoke-static {v8, v10, v7, v2, v4}, Landroidx/camera/camera2/internal/compat/CameraDeviceCompatBaseImpl$$ExternalSyntheticOutline0;->m(Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;)Ljava/lang/String;
 
-    check-cast v4, Lde/rki/coronawarnapp/covidcertificate/validation/core/rule/DccValidationRule;
+    move-result-object v2
 
-    sget-object v13, Ltimber/log/Timber;->Forest:Ltimber/log/Timber$Forest;
+    const/4 v10, 0x0
 
-    invoke-virtual {v13, v6}, Ltimber/log/Timber$Forest;->tag(Ljava/lang/String;)Ltimber/log/Timber$Tree;
+    new-array v4, v10, [Ljava/lang/Object;
 
-    invoke-virtual {v4}, Lde/rki/coronawarnapp/covidcertificate/validation/core/rule/DccValidationRule;->getIdentifier()Ljava/lang/String;
-
-    move-result-object v14
-
-    invoke-virtual {v4}, Lde/rki/coronawarnapp/covidcertificate/validation/core/rule/DccValidationRule;->getVersion()Ljava/lang/String;
-
-    move-result-object v4
-
-    invoke-static {v12, v14, v11, v4, v5}, Landroidx/fragment/app/FragmentContainerView$$ExternalSyntheticOutline0;->m(Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;)Ljava/lang/String;
-
-    move-result-object v4
-
-    new-array v5, v8, [Ljava/lang/Object;
-
-    invoke-virtual {v13, v4, v5}, Ltimber/log/Timber$Forest;->i(Ljava/lang/String;[Ljava/lang/Object;)V
+    invoke-virtual {v9, v2, v4}, Ltimber/log/Timber$Forest;->i(Ljava/lang/String;[Ljava/lang/Object;)V
 
     goto :goto_2
 
     :cond_5
-    iget-object v2, v3, Lde/rki/coronawarnapp/covidcertificate/validation/core/business/wrapper/CertLogicEngineWrapper;->engine:Ldagger/Lazy;
+    iget-object v1, v3, Lde/rki/coronawarnapp/covidcertificate/validation/core/business/wrapper/CertLogicEngineWrapper;->engine:Ldagger/Lazy;
 
-    invoke-interface {v2}, Ldagger/Lazy;->get()Ljava/lang/Object;
+    invoke-interface {v1}, Ldagger/Lazy;->get()Ljava/lang/Object;
 
-    move-result-object v2
+    move-result-object v1
 
-    move-object/from16 v17, v2
+    move-object/from16 v16, v1
 
-    check-cast v17, Ldgca/verifier/app/engine/DefaultCertLogicEngine;
+    check-cast v16, Ldgca/verifier/app/engine/DefaultCertLogicEngine;
 
-    iget-object v2, v9, Lde/rki/coronawarnapp/covidcertificate/common/certificate/DccData;->certificate:Lde/rki/coronawarnapp/covidcertificate/common/certificate/DccV1$MetaData;
+    move-object/from16 v1, p1
+
+    iget-object v2, v1, Lde/rki/coronawarnapp/covidcertificate/common/certificate/DccData;->certificate:Lde/rki/coronawarnapp/covidcertificate/common/certificate/DccV1$MetaData;
 
     invoke-interface {v2}, Lde/rki/coronawarnapp/covidcertificate/common/certificate/DccV1$MetaData;->getVersion()Ljava/lang/String;
 
-    move-result-object v19
+    move-result-object v18
 
     new-instance v2, Ljava/util/ArrayList;
 
     const/16 v3, 0xa
 
-    invoke-static {v10, v3}, Lkotlin/collections/CollectionsKt__IteratorsJVMKt;->collectionSizeOrDefault(Ljava/lang/Iterable;I)I
-
-    move-result v4
-
-    invoke-direct {v2, v4}, Ljava/util/ArrayList;-><init>(I)V
-
-    invoke-interface {v10}, Ljava/lang/Iterable;->iterator()Ljava/util/Iterator;
-
-    move-result-object v4
-
-    :goto_3
-    invoke-interface {v4}, Ljava/util/Iterator;->hasNext()Z
-
-    move-result v10
-
-    if-eqz v10, :cond_6
-
-    invoke-interface {v4}, Ljava/util/Iterator;->next()Ljava/lang/Object;
-
-    move-result-object v10
-
-    check-cast v10, Lde/rki/coronawarnapp/covidcertificate/validation/core/rule/DccValidationRule;
-
-    invoke-static {v10}, Lde/rki/coronawarnapp/covidcertificate/validation/core/business/wrapper/MappingsKt;->getAsExternalRule(Lde/rki/coronawarnapp/covidcertificate/validation/core/rule/DccValidationRule;)Ldgca/verifier/app/engine/data/Rule;
-
-    move-result-object v10
-
-    invoke-virtual {v2, v10}, Ljava/util/ArrayList;->add(Ljava/lang/Object;)Z
-
-    goto :goto_3
-
-    :cond_6
-    iget-object v4, v9, Lde/rki/coronawarnapp/covidcertificate/common/certificate/DccData;->certificateJson:Ljava/lang/String;
-
-    iget-object v9, v9, Lde/rki/coronawarnapp/covidcertificate/common/certificate/DccData;->certificate:Lde/rki/coronawarnapp/covidcertificate/common/certificate/DccV1$MetaData;
-
-    instance-of v10, v9, Lde/rki/coronawarnapp/covidcertificate/common/certificate/VaccinationDccV1;
-
-    if-eqz v10, :cond_7
-
-    sget-object v9, Ldgca/verifier/app/engine/data/CertificateType;->VACCINATION:Ldgca/verifier/app/engine/data/CertificateType;
-
-    :goto_4
-    move-object/from16 v18, v9
-
-    goto :goto_5
-
-    :cond_7
-    instance-of v10, v9, Lde/rki/coronawarnapp/covidcertificate/common/certificate/TestDccV1;
-
-    if-eqz v10, :cond_8
-
-    sget-object v9, Ldgca/verifier/app/engine/data/CertificateType;->TEST:Ldgca/verifier/app/engine/data/CertificateType;
-
-    goto :goto_4
-
-    :cond_8
-    instance-of v9, v9, Lde/rki/coronawarnapp/covidcertificate/common/certificate/RecoveryDccV1;
-
-    if-eqz v9, :cond_d
-
-    sget-object v9, Ldgca/verifier/app/engine/data/CertificateType;->RECOVERY:Ldgca/verifier/app/engine/data/CertificateType;
-
-    goto :goto_4
-
-    :goto_5
-    move-object/from16 v20, v2
-
-    move-object/from16 v21, v1
-
-    move-object/from16 v22, v4
-
-    invoke-virtual/range {v17 .. v22}, Ldgca/verifier/app/engine/DefaultCertLogicEngine;->validate(Ldgca/verifier/app/engine/data/CertificateType;Ljava/lang/String;Ljava/util/List;Ldgca/verifier/app/engine/data/ExternalParameter;Ljava/lang/String;)Ljava/util/List;
-
-    move-result-object v1
-
-    new-instance v2, Ljava/util/ArrayList;
-
-    invoke-static {v1, v3}, Lkotlin/collections/CollectionsKt__IteratorsJVMKt;->collectionSizeOrDefault(Ljava/lang/Iterable;I)I
+    invoke-static {v5, v3}, Lkotlin/collections/CollectionsKt__IteratorsJVMKt;->collectionSizeOrDefault(Ljava/lang/Iterable;I)I
 
     move-result v3
 
     invoke-direct {v2, v3}, Ljava/util/ArrayList;-><init>(I)V
 
-    invoke-interface {v1}, Ljava/lang/Iterable;->iterator()Ljava/util/Iterator;
-
-    move-result-object v1
-
-    :goto_6
-    invoke-interface {v1}, Ljava/util/Iterator;->hasNext()Z
-
-    move-result v3
-
-    if-eqz v3, :cond_b
-
-    invoke-interface {v1}, Ljava/util/Iterator;->next()Ljava/lang/Object;
+    invoke-interface {v5}, Ljava/lang/Iterable;->iterator()Ljava/util/Iterator;
 
     move-result-object v3
 
-    check-cast v3, Ldgca/verifier/app/engine/ValidationResult;
+    :goto_3
+    invoke-interface {v3}, Ljava/util/Iterator;->hasNext()Z
 
-    invoke-virtual {v3}, Ldgca/verifier/app/engine/ValidationResult;->getValidationErrors()Ljava/util/List;
+    move-result v5
 
-    move-result-object v4
+    const-string v9, "Recovery"
 
-    if-nez v4, :cond_9
+    const-string v10, "Vaccination"
 
-    goto :goto_8
+    const-string v11, "Test"
 
-    :cond_9
-    invoke-interface {v4}, Ljava/lang/Iterable;->iterator()Ljava/util/Iterator;
+    const-string v12, "General"
 
-    move-result-object v4
+    const-string v13, "<this>"
 
-    :goto_7
-    invoke-interface {v4}, Ljava/util/Iterator;->hasNext()Z
+    const/4 v14, 0x2
 
-    move-result v9
+    if-eqz v5, :cond_e
 
-    if-eqz v9, :cond_a
+    invoke-interface {v3}, Ljava/util/Iterator;->next()Ljava/lang/Object;
 
-    invoke-interface {v4}, Ljava/util/Iterator;->next()Ljava/lang/Object;
+    move-result-object v5
 
-    move-result-object v9
+    check-cast v5, Lde/rki/coronawarnapp/covidcertificate/validation/core/rule/DccValidationRule;
 
-    check-cast v9, Ljava/lang/Exception;
+    invoke-static {v5, v13}, Lkotlin/jvm/internal/Intrinsics;->checkNotNullParameter(Ljava/lang/Object;Ljava/lang/String;)V
 
-    sget-object v10, Ltimber/log/Timber;->Forest:Ltimber/log/Timber$Forest;
+    invoke-virtual {v5}, Lde/rki/coronawarnapp/covidcertificate/validation/core/rule/DccValidationRule;->getIdentifier()Ljava/lang/String;
 
-    invoke-virtual {v10, v6}, Ltimber/log/Timber$Forest;->tag(Ljava/lang/String;)Ltimber/log/Timber$Tree;
+    move-result-object v22
 
-    new-array v13, v7, [Ljava/lang/Object;
+    invoke-virtual {v5}, Lde/rki/coronawarnapp/covidcertificate/validation/core/rule/DccValidationRule;->getTypeDcc()Lde/rki/coronawarnapp/covidcertificate/validation/core/rule/DccValidationRule$Type;
 
-    invoke-virtual {v3}, Ldgca/verifier/app/engine/ValidationResult;->getRule()Ldgca/verifier/app/engine/data/Rule;
+    move-result-object v15
 
-    move-result-object v14
+    sget-object v17, Lde/rki/coronawarnapp/covidcertificate/validation/core/business/wrapper/MappingsKt$WhenMappings;->$EnumSwitchMapping$2:[I
 
-    invoke-virtual {v14}, Ldgca/verifier/app/engine/data/Rule;->getIdentifier()Ljava/lang/String;
+    invoke-virtual {v15}, Ljava/lang/Enum;->ordinal()I
 
-    move-result-object v14
+    move-result v15
 
-    aput-object v14, v13, v8
+    aget v15, v17, v15
 
-    const-string v14, "Errors during validation of %s"
+    const/4 v0, 0x1
 
-    invoke-virtual {v10, v9, v14, v13}, Ltimber/log/Timber$Forest;->e(Ljava/lang/Throwable;Ljava/lang/String;[Ljava/lang/Object;)V
+    if-eq v15, v0, :cond_8
 
-    goto :goto_7
+    if-eq v15, v14, :cond_7
 
-    :cond_a
-    :goto_8
-    invoke-static {v3}, Lde/rki/coronawarnapp/covidcertificate/validation/core/business/wrapper/MappingsKt;->getAsEvaluatedDccRule(Ldgca/verifier/app/engine/ValidationResult;)Lde/rki/coronawarnapp/covidcertificate/validation/core/rule/EvaluatedDccRule;
+    const/4 v0, 0x3
 
-    move-result-object v3
+    if-ne v15, v0, :cond_6
 
-    invoke-virtual {v2, v3}, Ljava/util/ArrayList;->add(Ljava/lang/Object;)Z
+    sget-object v0, Ldgca/verifier/app/engine/data/Type;->ACCEPTANCE:Ldgca/verifier/app/engine/data/Type;
+
+    goto :goto_4
+
+    :cond_6
+    new-instance v0, Lkotlin/NoWhenBranchMatchedException;
+
+    invoke-direct {v0}, Lkotlin/NoWhenBranchMatchedException;-><init>()V
+
+    throw v0
+
+    :cond_7
+    sget-object v0, Ldgca/verifier/app/engine/data/Type;->INVALIDATION:Ldgca/verifier/app/engine/data/Type;
+
+    goto :goto_4
+
+    :cond_8
+    sget-object v0, Ldgca/verifier/app/engine/data/Type;->ACCEPTANCE:Ldgca/verifier/app/engine/data/Type;
+
+    :goto_4
+    move-object/from16 v23, v0
+
+    invoke-virtual {v5}, Lde/rki/coronawarnapp/covidcertificate/validation/core/rule/DccValidationRule;->getVersion()Ljava/lang/String;
+
+    move-result-object v24
+
+    invoke-virtual {v5}, Lde/rki/coronawarnapp/covidcertificate/validation/core/rule/DccValidationRule;->getSchemaVersion()Ljava/lang/String;
+
+    move-result-object v25
+
+    invoke-virtual {v5}, Lde/rki/coronawarnapp/covidcertificate/validation/core/rule/DccValidationRule;->getEngine()Ljava/lang/String;
+
+    move-result-object v26
+
+    invoke-virtual {v5}, Lde/rki/coronawarnapp/covidcertificate/validation/core/rule/DccValidationRule;->getEngineVersion()Ljava/lang/String;
+
+    move-result-object v27
+
+    invoke-virtual {v5}, Lde/rki/coronawarnapp/covidcertificate/validation/core/rule/DccValidationRule;->getCertificateType()Ljava/lang/String;
+
+    move-result-object v0
+
+    sget-object v14, Ljava/util/Locale;->ROOT:Ljava/util/Locale;
+
+    invoke-virtual {v0, v14}, Ljava/lang/String;->toUpperCase(Ljava/util/Locale;)Ljava/lang/String;
+
+    move-result-object v0
+
+    const-string/jumbo v15, "this as java.lang.String).toUpperCase(Locale.ROOT)"
+
+    invoke-static {v0, v15}, Lkotlin/jvm/internal/Intrinsics;->checkNotNullExpressionValue(Ljava/lang/Object;Ljava/lang/String;)V
+
+    invoke-virtual {v12, v14}, Ljava/lang/String;->toUpperCase(Ljava/util/Locale;)Ljava/lang/String;
+
+    move-result-object v12
+
+    invoke-static {v12, v15}, Lkotlin/jvm/internal/Intrinsics;->checkNotNullExpressionValue(Ljava/lang/Object;Ljava/lang/String;)V
+
+    invoke-static {v0, v12}, Lkotlin/jvm/internal/Intrinsics;->areEqual(Ljava/lang/Object;Ljava/lang/Object;)Z
+
+    move-result v12
+
+    if-eqz v12, :cond_9
+
+    sget-object v0, Ldgca/verifier/app/engine/data/RuleCertificateType;->GENERAL:Ldgca/verifier/app/engine/data/RuleCertificateType;
+
+    :goto_5
+    move-object/from16 v28, v0
 
     goto :goto_6
 
+    :cond_9
+    invoke-virtual {v11, v14}, Ljava/lang/String;->toUpperCase(Ljava/util/Locale;)Ljava/lang/String;
+
+    move-result-object v11
+
+    invoke-static {v11, v15}, Lkotlin/jvm/internal/Intrinsics;->checkNotNullExpressionValue(Ljava/lang/Object;Ljava/lang/String;)V
+
+    invoke-static {v0, v11}, Lkotlin/jvm/internal/Intrinsics;->areEqual(Ljava/lang/Object;Ljava/lang/Object;)Z
+
+    move-result v11
+
+    if-eqz v11, :cond_a
+
+    sget-object v0, Ldgca/verifier/app/engine/data/RuleCertificateType;->TEST:Ldgca/verifier/app/engine/data/RuleCertificateType;
+
+    goto :goto_5
+
+    :cond_a
+    invoke-virtual {v10, v14}, Ljava/lang/String;->toUpperCase(Ljava/util/Locale;)Ljava/lang/String;
+
+    move-result-object v10
+
+    invoke-static {v10, v15}, Lkotlin/jvm/internal/Intrinsics;->checkNotNullExpressionValue(Ljava/lang/Object;Ljava/lang/String;)V
+
+    invoke-static {v0, v10}, Lkotlin/jvm/internal/Intrinsics;->areEqual(Ljava/lang/Object;Ljava/lang/Object;)Z
+
+    move-result v10
+
+    if-eqz v10, :cond_b
+
+    sget-object v0, Ldgca/verifier/app/engine/data/RuleCertificateType;->VACCINATION:Ldgca/verifier/app/engine/data/RuleCertificateType;
+
+    goto :goto_5
+
     :cond_b
-    sget-object v1, Ltimber/log/Timber;->Forest:Ltimber/log/Timber$Forest;
+    invoke-virtual {v9, v14}, Ljava/lang/String;->toUpperCase(Ljava/util/Locale;)Ljava/lang/String;
 
-    invoke-virtual {v1, v6}, Ltimber/log/Timber$Forest;->tag(Ljava/lang/String;)Ltimber/log/Timber$Tree;
+    move-result-object v9
 
-    new-array v3, v8, [Ljava/lang/Object;
+    invoke-static {v9, v15}, Lkotlin/jvm/internal/Intrinsics;->checkNotNullExpressionValue(Ljava/lang/Object;Ljava/lang/String;)V
 
-    const-string v4, "Evaluated rules are:"
+    invoke-static {v0, v9}, Lkotlin/jvm/internal/Intrinsics;->areEqual(Ljava/lang/Object;Ljava/lang/Object;)Z
 
-    invoke-virtual {v1, v4, v3}, Ltimber/log/Timber$Forest;->i(Ljava/lang/String;[Ljava/lang/Object;)V
+    move-result v0
 
-    invoke-virtual {v2}, Ljava/util/ArrayList;->iterator()Ljava/util/Iterator;
+    if-eqz v0, :cond_d
 
-    move-result-object v1
+    sget-object v0, Ldgca/verifier/app/engine/data/RuleCertificateType;->RECOVERY:Ldgca/verifier/app/engine/data/RuleCertificateType;
+
+    goto :goto_5
+
+    :goto_6
+    invoke-virtual {v5}, Lde/rki/coronawarnapp/covidcertificate/validation/core/rule/DccValidationRule;->getDescription()Ljava/util/List;
+
+    move-result-object v0
+
+    new-instance v9, Ljava/util/ArrayList;
+
+    const/16 v10, 0xa
+
+    invoke-static {v0, v10}, Lkotlin/collections/CollectionsKt__IteratorsJVMKt;->collectionSizeOrDefault(Ljava/lang/Iterable;I)I
+
+    move-result v10
+
+    invoke-direct {v9, v10}, Ljava/util/ArrayList;-><init>(I)V
+
+    invoke-interface {v0}, Ljava/lang/Iterable;->iterator()Ljava/util/Iterator;
+
+    move-result-object v0
+
+    :goto_7
+    invoke-interface {v0}, Ljava/util/Iterator;->hasNext()Z
+
+    move-result v10
+
+    if-eqz v10, :cond_c
+
+    invoke-interface {v0}, Ljava/util/Iterator;->next()Ljava/lang/Object;
+
+    move-result-object v10
+
+    check-cast v10, Lde/rki/coronawarnapp/covidcertificate/validation/core/rule/DccValidationRule$Description;
+
+    invoke-virtual {v10}, Lde/rki/coronawarnapp/covidcertificate/validation/core/rule/DccValidationRule$Description;->getLanguageCode()Ljava/lang/String;
+
+    move-result-object v11
+
+    invoke-virtual {v10}, Lde/rki/coronawarnapp/covidcertificate/validation/core/rule/DccValidationRule$Description;->getDescription()Ljava/lang/String;
+
+    move-result-object v10
+
+    new-instance v12, Lkotlin/Pair;
+
+    invoke-direct {v12, v11, v10}, Lkotlin/Pair;-><init>(Ljava/lang/Object;Ljava/lang/Object;)V
+
+    invoke-virtual {v9, v12}, Ljava/util/ArrayList;->add(Ljava/lang/Object;)Z
+
+    goto :goto_7
+
+    :cond_c
+    invoke-static {v9}, Lkotlin/collections/MapsKt___MapsKt;->toMap(Ljava/lang/Iterable;)Ljava/util/Map;
+
+    move-result-object v29
+
+    invoke-virtual {v5}, Lde/rki/coronawarnapp/covidcertificate/validation/core/rule/DccValidationRule;->getValidFrom()Ljava/lang/String;
+
+    move-result-object v0
+
+    invoke-static {v0, v13}, Lkotlin/jvm/internal/Intrinsics;->checkNotNullParameter(Ljava/lang/Object;Ljava/lang/String;)V
+
+    invoke-static {v0}, Lj$/time/ZonedDateTime;->parse(Ljava/lang/CharSequence;)Lj$/time/ZonedDateTime;
+
+    move-result-object v0
+
+    const-string v9, "parse(this)"
+
+    invoke-static {v0, v9}, Lkotlin/jvm/internal/Intrinsics;->checkNotNullExpressionValue(Ljava/lang/Object;Ljava/lang/String;)V
+
+    invoke-virtual {v5}, Lde/rki/coronawarnapp/covidcertificate/validation/core/rule/DccValidationRule;->getValidTo()Ljava/lang/String;
+
+    move-result-object v10
+
+    invoke-static {v10, v13}, Lkotlin/jvm/internal/Intrinsics;->checkNotNullParameter(Ljava/lang/Object;Ljava/lang/String;)V
+
+    invoke-static {v10}, Lj$/time/ZonedDateTime;->parse(Ljava/lang/CharSequence;)Lj$/time/ZonedDateTime;
+
+    move-result-object v10
+
+    invoke-static {v10, v9}, Lkotlin/jvm/internal/Intrinsics;->checkNotNullExpressionValue(Ljava/lang/Object;Ljava/lang/String;)V
+
+    invoke-virtual {v5}, Lde/rki/coronawarnapp/covidcertificate/validation/core/rule/DccValidationRule;->getAffectedFields()Ljava/util/List;
+
+    move-result-object v32
+
+    invoke-virtual {v5}, Lde/rki/coronawarnapp/covidcertificate/validation/core/rule/DccValidationRule;->getLogic()Lcom/fasterxml/jackson/databind/JsonNode;
+
+    move-result-object v33
+
+    invoke-virtual {v5}, Lde/rki/coronawarnapp/covidcertificate/validation/core/rule/DccValidationRule;->getCountry()Ljava/lang/String;
+
+    move-result-object v34
+
+    const/16 v35, 0x0
+
+    new-instance v5, Ldgca/verifier/app/engine/data/Rule;
+
+    move-object/from16 v21, v5
+
+    move-object/from16 v30, v0
+
+    move-object/from16 v31, v10
+
+    invoke-direct/range {v21 .. v35}, Ldgca/verifier/app/engine/data/Rule;-><init>(Ljava/lang/String;Ldgca/verifier/app/engine/data/Type;Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;Ldgca/verifier/app/engine/data/RuleCertificateType;Ljava/util/Map;Lj$/time/ZonedDateTime;Lj$/time/ZonedDateTime;Ljava/util/List;Lcom/fasterxml/jackson/databind/JsonNode;Ljava/lang/String;Ljava/lang/String;)V
+
+    invoke-virtual {v2, v5}, Ljava/util/ArrayList;->add(Ljava/lang/Object;)Z
+
+    move-object/from16 v0, p0
+
+    goto/16 :goto_3
+
+    :cond_d
+    new-instance v0, Ljava/lang/IllegalArgumentException;
+
+    invoke-direct {v0}, Ljava/lang/IllegalArgumentException;-><init>()V
+
+    throw v0
+
+    :cond_e
+    iget-object v0, v1, Lde/rki/coronawarnapp/covidcertificate/common/certificate/DccData;->certificateJson:Ljava/lang/String;
+
+    iget-object v1, v1, Lde/rki/coronawarnapp/covidcertificate/common/certificate/DccData;->certificate:Lde/rki/coronawarnapp/covidcertificate/common/certificate/DccV1$MetaData;
+
+    instance-of v3, v1, Lde/rki/coronawarnapp/covidcertificate/common/certificate/VaccinationDccV1;
+
+    if-eqz v3, :cond_f
+
+    sget-object v1, Ldgca/verifier/app/engine/data/CertificateType;->VACCINATION:Ldgca/verifier/app/engine/data/CertificateType;
+
+    :goto_8
+    move-object/from16 v17, v1
+
+    goto :goto_9
+
+    :cond_f
+    instance-of v3, v1, Lde/rki/coronawarnapp/covidcertificate/common/certificate/TestDccV1;
+
+    if-eqz v3, :cond_10
+
+    sget-object v1, Ldgca/verifier/app/engine/data/CertificateType;->TEST:Ldgca/verifier/app/engine/data/CertificateType;
+
+    goto :goto_8
+
+    :cond_10
+    instance-of v1, v1, Lde/rki/coronawarnapp/covidcertificate/common/certificate/RecoveryDccV1;
+
+    if-eqz v1, :cond_1e
+
+    sget-object v1, Ldgca/verifier/app/engine/data/CertificateType;->RECOVERY:Ldgca/verifier/app/engine/data/CertificateType;
+
+    goto :goto_8
 
     :goto_9
-    invoke-interface {v1}, Ljava/util/Iterator;->hasNext()Z
+    move-object/from16 v19, v2
 
-    move-result v3
+    move-object/from16 v21, v0
 
-    if-eqz v3, :cond_c
+    invoke-virtual/range {v16 .. v21}, Ldgca/verifier/app/engine/DefaultCertLogicEngine;->validate(Ldgca/verifier/app/engine/data/CertificateType;Ljava/lang/String;Ljava/util/List;Ldgca/verifier/app/engine/data/ExternalParameter;Ljava/lang/String;)Ljava/util/List;
 
-    invoke-interface {v1}, Ljava/util/Iterator;->next()Ljava/lang/Object;
+    move-result-object v0
+
+    new-instance v1, Ljava/util/ArrayList;
+
+    const/16 v2, 0xa
+
+    invoke-static {v0, v2}, Lkotlin/collections/CollectionsKt__IteratorsJVMKt;->collectionSizeOrDefault(Ljava/lang/Iterable;I)I
+
+    move-result v2
+
+    invoke-direct {v1, v2}, Ljava/util/ArrayList;-><init>(I)V
+
+    invoke-interface {v0}, Ljava/lang/Iterable;->iterator()Ljava/util/Iterator;
+
+    move-result-object v0
+
+    :goto_a
+    invoke-interface {v0}, Ljava/util/Iterator;->hasNext()Z
+
+    move-result v2
+
+    if-eqz v2, :cond_1c
+
+    invoke-interface {v0}, Ljava/util/Iterator;->next()Ljava/lang/Object;
+
+    move-result-object v2
+
+    check-cast v2, Ldgca/verifier/app/engine/ValidationResult;
+
+    invoke-virtual {v2}, Ldgca/verifier/app/engine/ValidationResult;->getValidationErrors()Ljava/util/List;
 
     move-result-object v3
 
-    check-cast v3, Lde/rki/coronawarnapp/covidcertificate/validation/core/rule/EvaluatedDccRule;
+    if-nez v3, :cond_12
 
-    sget-object v4, Ltimber/log/Timber;->Forest:Ltimber/log/Timber$Forest;
+    :cond_11
+    move-object/from16 p1, v0
 
-    invoke-virtual {v4, v6}, Ltimber/log/Timber$Forest;->tag(Ljava/lang/String;)Ltimber/log/Timber$Tree;
+    goto :goto_c
 
-    iget-object v7, v3, Lde/rki/coronawarnapp/covidcertificate/validation/core/rule/EvaluatedDccRule;->rule:Lde/rki/coronawarnapp/covidcertificate/validation/core/rule/DccValidationRule;
+    :cond_12
+    invoke-interface {v3}, Ljava/lang/Iterable;->iterator()Ljava/util/Iterator;
 
-    invoke-virtual {v7}, Lde/rki/coronawarnapp/covidcertificate/validation/core/rule/DccValidationRule;->getIdentifier()Ljava/lang/String;
+    move-result-object v3
 
-    move-result-object v7
+    :goto_b
+    invoke-interface {v3}, Ljava/util/Iterator;->hasNext()Z
 
-    iget-object v9, v3, Lde/rki/coronawarnapp/covidcertificate/validation/core/rule/EvaluatedDccRule;->rule:Lde/rki/coronawarnapp/covidcertificate/validation/core/rule/DccValidationRule;
+    move-result v5
+
+    if-eqz v5, :cond_11
+
+    invoke-interface {v3}, Ljava/util/Iterator;->next()Ljava/lang/Object;
+
+    move-result-object v5
+
+    check-cast v5, Ljava/lang/Exception;
+
+    sget-object v14, Ltimber/log/Timber;->Forest:Ltimber/log/Timber$Forest;
+
+    invoke-virtual {v14, v6}, Ltimber/log/Timber$Forest;->tag(Ljava/lang/String;)Ltimber/log/Timber$Tree;
+
+    const/4 v15, 0x1
+
+    new-array v15, v15, [Ljava/lang/Object;
+
+    invoke-virtual {v2}, Ldgca/verifier/app/engine/ValidationResult;->getRule()Ldgca/verifier/app/engine/data/Rule;
+
+    move-result-object v16
+
+    invoke-virtual/range {v16 .. v16}, Ldgca/verifier/app/engine/data/Rule;->getIdentifier()Ljava/lang/String;
+
+    move-result-object v16
+
+    const/16 v17, 0x0
+
+    aput-object v16, v15, v17
+
+    move-object/from16 p1, v0
+
+    const-string v0, "Errors during validation of %s"
+
+    invoke-virtual {v14, v5, v0, v15}, Ltimber/log/Timber$Forest;->e(Ljava/lang/Throwable;Ljava/lang/String;[Ljava/lang/Object;)V
+
+    move-object/from16 v0, p1
+
+    goto :goto_b
+
+    :goto_c
+    new-instance v0, Lde/rki/coronawarnapp/covidcertificate/validation/core/rule/EvaluatedDccRule;
+
+    invoke-virtual {v2}, Ldgca/verifier/app/engine/ValidationResult;->getRule()Ldgca/verifier/app/engine/data/Rule;
+
+    move-result-object v3
+
+    invoke-virtual {v3}, Ldgca/verifier/app/engine/data/Rule;->getIdentifier()Ljava/lang/String;
+
+    move-result-object v15
+
+    invoke-virtual {v3}, Ldgca/verifier/app/engine/data/Rule;->getType()Ldgca/verifier/app/engine/data/Type;
+
+    move-result-object v5
+
+    sget-object v14, Lde/rki/coronawarnapp/covidcertificate/validation/core/business/wrapper/MappingsKt$WhenMappings;->$EnumSwitchMapping$1:[I
+
+    invoke-virtual {v5}, Ljava/lang/Enum;->ordinal()I
+
+    move-result v5
+
+    aget v5, v14, v5
+
+    const/4 v14, 0x1
+
+    if-eq v5, v14, :cond_14
+
+    const/4 v14, 0x2
+
+    if-ne v5, v14, :cond_13
+
+    sget-object v5, Lde/rki/coronawarnapp/covidcertificate/validation/core/rule/DccValidationRule$Type;->INVALIDATION:Lde/rki/coronawarnapp/covidcertificate/validation/core/rule/DccValidationRule$Type;
+
+    goto :goto_d
+
+    :cond_13
+    new-instance v0, Lkotlin/NoWhenBranchMatchedException;
+
+    invoke-direct {v0}, Lkotlin/NoWhenBranchMatchedException;-><init>()V
+
+    throw v0
+
+    :cond_14
+    sget-object v5, Lde/rki/coronawarnapp/covidcertificate/validation/core/rule/DccValidationRule$Type;->ACCEPTANCE:Lde/rki/coronawarnapp/covidcertificate/validation/core/rule/DccValidationRule$Type;
+
+    :goto_d
+    move-object/from16 v16, v5
+
+    invoke-virtual {v3}, Ldgca/verifier/app/engine/data/Rule;->getVersion()Ljava/lang/String;
+
+    move-result-object v18
+
+    invoke-virtual {v3}, Ldgca/verifier/app/engine/data/Rule;->getSchemaVersion()Ljava/lang/String;
+
+    move-result-object v19
+
+    invoke-virtual {v3}, Ldgca/verifier/app/engine/data/Rule;->getEngine()Ljava/lang/String;
+
+    move-result-object v20
+
+    invoke-virtual {v3}, Ldgca/verifier/app/engine/data/Rule;->getEngineVersion()Ljava/lang/String;
+
+    move-result-object v21
+
+    invoke-virtual {v3}, Ldgca/verifier/app/engine/data/Rule;->getRuleCertificateType()Ldgca/verifier/app/engine/data/RuleCertificateType;
+
+    move-result-object v5
+
+    sget-object v14, Lde/rki/coronawarnapp/covidcertificate/validation/core/business/wrapper/MappingsKt$WhenMappings;->$EnumSwitchMapping$3:[I
+
+    invoke-virtual {v5}, Ljava/lang/Enum;->ordinal()I
+
+    move-result v5
+
+    aget v5, v14, v5
+
+    const/4 v14, 0x1
+
+    if-eq v5, v14, :cond_18
+
+    const/4 v14, 0x2
+
+    if-eq v5, v14, :cond_17
+
+    const/4 v14, 0x3
+
+    if-eq v5, v14, :cond_16
+
+    const/4 v14, 0x4
+
+    if-ne v5, v14, :cond_15
+
+    move-object/from16 v22, v9
+
+    goto :goto_e
+
+    :cond_15
+    new-instance v0, Lkotlin/NoWhenBranchMatchedException;
+
+    invoke-direct {v0}, Lkotlin/NoWhenBranchMatchedException;-><init>()V
+
+    throw v0
+
+    :cond_16
+    move-object/from16 v22, v10
+
+    goto :goto_e
+
+    :cond_17
+    move-object/from16 v22, v11
+
+    goto :goto_e
+
+    :cond_18
+    move-object/from16 v22, v12
+
+    :goto_e
+    invoke-virtual {v3}, Ldgca/verifier/app/engine/data/Rule;->getDescriptions()Ljava/util/Map;
+
+    move-result-object v5
+
+    new-instance v14, Ljava/util/ArrayList;
+
+    move-object/from16 p2, v9
+
+    invoke-interface {v5}, Ljava/util/Map;->size()I
+
+    move-result v9
+
+    invoke-direct {v14, v9}, Ljava/util/ArrayList;-><init>(I)V
+
+    invoke-interface {v5}, Ljava/util/Map;->entrySet()Ljava/util/Set;
+
+    move-result-object v5
+
+    invoke-interface {v5}, Ljava/util/Set;->iterator()Ljava/util/Iterator;
+
+    move-result-object v5
+
+    :goto_f
+    invoke-interface {v5}, Ljava/util/Iterator;->hasNext()Z
+
+    move-result v9
+
+    if-eqz v9, :cond_19
+
+    invoke-interface {v5}, Ljava/util/Iterator;->next()Ljava/lang/Object;
+
+    move-result-object v9
+
+    check-cast v9, Ljava/util/Map$Entry;
+
+    move-object/from16 p3, v5
+
+    new-instance v5, Lde/rki/coronawarnapp/covidcertificate/validation/core/rule/DccValidationRule$Description;
+
+    invoke-interface {v9}, Ljava/util/Map$Entry;->getKey()Ljava/lang/Object;
+
+    move-result-object v17
+
+    move-object/from16 p4, v10
+
+    move-object/from16 v10, v17
+
+    check-cast v10, Ljava/lang/String;
+
+    invoke-interface {v9}, Ljava/util/Map$Entry;->getValue()Ljava/lang/Object;
+
+    move-result-object v9
+
+    check-cast v9, Ljava/lang/String;
+
+    invoke-direct {v5, v10, v9}, Lde/rki/coronawarnapp/covidcertificate/validation/core/rule/DccValidationRule$Description;-><init>(Ljava/lang/String;Ljava/lang/String;)V
+
+    invoke-virtual {v14, v5}, Ljava/util/ArrayList;->add(Ljava/lang/Object;)Z
+
+    move-object/from16 v5, p3
+
+    move-object/from16 v10, p4
+
+    goto :goto_f
+
+    :cond_19
+    move-object/from16 p4, v10
+
+    invoke-virtual {v3}, Ldgca/verifier/app/engine/data/Rule;->getValidFrom()Lj$/time/ZonedDateTime;
+
+    move-result-object v5
+
+    invoke-static {v5, v13}, Lkotlin/jvm/internal/Intrinsics;->checkNotNullParameter(Ljava/lang/Object;Ljava/lang/String;)V
+
+    invoke-virtual {v5}, Lj$/time/ZonedDateTime;->toString()Ljava/lang/String;
+
+    move-result-object v5
+
+    const-string/jumbo v9, "this.toString()"
+
+    invoke-static {v5, v9}, Lkotlin/jvm/internal/Intrinsics;->checkNotNullExpressionValue(Ljava/lang/Object;Ljava/lang/String;)V
+
+    invoke-virtual {v3}, Ldgca/verifier/app/engine/data/Rule;->getValidTo()Lj$/time/ZonedDateTime;
+
+    move-result-object v10
+
+    invoke-static {v10, v13}, Lkotlin/jvm/internal/Intrinsics;->checkNotNullParameter(Ljava/lang/Object;Ljava/lang/String;)V
+
+    invoke-virtual {v10}, Lj$/time/ZonedDateTime;->toString()Ljava/lang/String;
+
+    move-result-object v10
+
+    invoke-static {v10, v9}, Lkotlin/jvm/internal/Intrinsics;->checkNotNullExpressionValue(Ljava/lang/Object;Ljava/lang/String;)V
+
+    invoke-virtual {v3}, Ldgca/verifier/app/engine/data/Rule;->getAffectedString()Ljava/util/List;
+
+    move-result-object v26
+
+    invoke-virtual {v3}, Ldgca/verifier/app/engine/data/Rule;->getLogic()Lcom/fasterxml/jackson/databind/JsonNode;
+
+    move-result-object v27
+
+    invoke-virtual {v3}, Ldgca/verifier/app/engine/data/Rule;->getCountryCode()Ljava/lang/String;
+
+    move-result-object v17
+
+    new-instance v3, Lde/rki/coronawarnapp/covidcertificate/validation/core/rule/DccValidationRule;
+
+    move-object v9, v14
+
+    move-object v14, v3
+
+    move-object/from16 v23, v9
+
+    move-object/from16 v24, v5
+
+    move-object/from16 v25, v10
+
+    invoke-direct/range {v14 .. v27}, Lde/rki/coronawarnapp/covidcertificate/validation/core/rule/DccValidationRule;-><init>(Ljava/lang/String;Lde/rki/coronawarnapp/covidcertificate/validation/core/rule/DccValidationRule$Type;Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;Ljava/util/List;Ljava/lang/String;Ljava/lang/String;Ljava/util/List;Lcom/fasterxml/jackson/databind/JsonNode;)V
+
+    invoke-virtual {v2}, Ldgca/verifier/app/engine/ValidationResult;->getResult()Ldgca/verifier/app/engine/Result;
+
+    move-result-object v2
+
+    sget-object v5, Lde/rki/coronawarnapp/covidcertificate/validation/core/business/wrapper/MappingsKt$WhenMappings;->$EnumSwitchMapping$0:[I
+
+    invoke-virtual {v2}, Ljava/lang/Enum;->ordinal()I
+
+    move-result v2
+
+    aget v2, v5, v2
+
+    const/4 v5, 0x1
+
+    if-eq v2, v5, :cond_1b
+
+    const/4 v5, 0x2
+
+    if-eq v2, v5, :cond_1b
+
+    const/4 v5, 0x3
+
+    if-ne v2, v5, :cond_1a
+
+    goto :goto_10
+
+    :cond_1a
+    new-instance v0, Lkotlin/NoWhenBranchMatchedException;
+
+    invoke-direct {v0}, Lkotlin/NoWhenBranchMatchedException;-><init>()V
+
+    throw v0
+
+    :cond_1b
+    :goto_10
+    invoke-direct {v0, v3, v5}, Lde/rki/coronawarnapp/covidcertificate/validation/core/rule/EvaluatedDccRule;-><init>(Lde/rki/coronawarnapp/covidcertificate/validation/core/rule/DccValidationRule;I)V
+
+    invoke-virtual {v1, v0}, Ljava/util/ArrayList;->add(Ljava/lang/Object;)Z
+
+    move-object/from16 v0, p1
+
+    move-object/from16 v9, p2
+
+    move-object/from16 v10, p4
+
+    goto/16 :goto_a
+
+    :cond_1c
+    sget-object v0, Ltimber/log/Timber;->Forest:Ltimber/log/Timber$Forest;
+
+    invoke-virtual {v0, v6}, Ltimber/log/Timber$Forest;->tag(Ljava/lang/String;)Ltimber/log/Timber$Tree;
+
+    const/4 v2, 0x0
+
+    new-array v2, v2, [Ljava/lang/Object;
+
+    const-string v3, "Evaluated rules are:"
+
+    invoke-virtual {v0, v3, v2}, Ltimber/log/Timber$Forest;->i(Ljava/lang/String;[Ljava/lang/Object;)V
+
+    invoke-virtual {v1}, Ljava/util/ArrayList;->iterator()Ljava/util/Iterator;
+
+    move-result-object v0
+
+    :goto_11
+    invoke-interface {v0}, Ljava/util/Iterator;->hasNext()Z
+
+    move-result v2
+
+    if-eqz v2, :cond_1d
+
+    invoke-interface {v0}, Ljava/util/Iterator;->next()Ljava/lang/Object;
+
+    move-result-object v2
+
+    check-cast v2, Lde/rki/coronawarnapp/covidcertificate/validation/core/rule/EvaluatedDccRule;
+
+    sget-object v3, Ltimber/log/Timber;->Forest:Ltimber/log/Timber$Forest;
+
+    invoke-virtual {v3, v6}, Ltimber/log/Timber$Forest;->tag(Ljava/lang/String;)Ltimber/log/Timber$Tree;
+
+    iget-object v5, v2, Lde/rki/coronawarnapp/covidcertificate/validation/core/rule/EvaluatedDccRule;->rule:Lde/rki/coronawarnapp/covidcertificate/validation/core/rule/DccValidationRule;
+
+    invoke-virtual {v5}, Lde/rki/coronawarnapp/covidcertificate/validation/core/rule/DccValidationRule;->getIdentifier()Ljava/lang/String;
+
+    move-result-object v5
+
+    iget-object v9, v2, Lde/rki/coronawarnapp/covidcertificate/validation/core/rule/EvaluatedDccRule;->rule:Lde/rki/coronawarnapp/covidcertificate/validation/core/rule/DccValidationRule;
 
     invoke-virtual {v9}, Lde/rki/coronawarnapp/covidcertificate/validation/core/rule/DccValidationRule;->getVersion()Ljava/lang/String;
 
     move-result-object v9
 
-    iget-object v3, v3, Lde/rki/coronawarnapp/covidcertificate/validation/core/rule/EvaluatedDccRule;->result:Lde/rki/coronawarnapp/covidcertificate/validation/core/rule/DccValidationRule$Result;
+    iget v2, v2, Lde/rki/coronawarnapp/covidcertificate/validation/core/rule/EvaluatedDccRule;->result:I
 
     const-string v10, " has resulted in "
 
-    invoke-static {v12, v7, v11, v9, v10}, Landroidx/navigation/NavInflater$$ExternalSyntheticOutline0;->m(Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;)Ljava/lang/StringBuilder;
+    invoke-static {v8, v5, v7, v9, v10}, Landroidx/navigation/NavInflater$$ExternalSyntheticOutline0;->m(Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;)Ljava/lang/StringBuilder;
 
-    move-result-object v7
+    move-result-object v5
 
-    invoke-virtual {v7, v3}, Ljava/lang/StringBuilder;->append(Ljava/lang/Object;)Ljava/lang/StringBuilder;
+    invoke-static {v2}, Lde/rki/coronawarnapp/server/protocols/internal/RiskScoreParametersOuterClass$RiskScoreParameters$Builder-IA;->stringValueOf(I)Ljava/lang/String;
 
-    invoke-virtual {v7, v5}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+    move-result-object v2
 
-    invoke-virtual {v7}, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
+    invoke-virtual {v5, v2}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
 
-    move-result-object v3
+    invoke-virtual {v5, v4}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
 
-    new-array v7, v8, [Ljava/lang/Object;
+    invoke-virtual {v5}, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
 
-    invoke-virtual {v4, v3, v7}, Ltimber/log/Timber$Forest;->i(Ljava/lang/String;[Ljava/lang/Object;)V
+    move-result-object v2
 
-    goto :goto_9
+    const/4 v5, 0x0
 
-    :cond_c
-    invoke-static {v2}, Lkotlin/collections/CollectionsKt___CollectionsKt;->toSet(Ljava/lang/Iterable;)Ljava/util/Set;
+    new-array v5, v5, [Ljava/lang/Object;
 
-    move-result-object v1
+    invoke-virtual {v3, v2, v5}, Ltimber/log/Timber$Forest;->i(Ljava/lang/String;[Ljava/lang/Object;)V
 
-    return-object v1
+    goto :goto_11
 
-    :cond_d
-    new-instance v1, Ljava/lang/IllegalArgumentException;
+    :cond_1d
+    invoke-static {v1}, Lkotlin/collections/CollectionsKt___CollectionsKt;->toSet(Ljava/lang/Iterable;)Ljava/util/Set;
 
-    const-string v2, "Unknown certificate type."
+    move-result-object v0
 
-    invoke-direct {v1, v2}, Ljava/lang/IllegalArgumentException;-><init>(Ljava/lang/String;)V
+    return-object v0
 
-    throw v1
+    :cond_1e
+    new-instance v0, Ljava/lang/IllegalArgumentException;
+
+    const-string v1, "Unknown certificate type."
+
+    invoke-direct {v0, v1}, Ljava/lang/IllegalArgumentException;-><init>(Ljava/lang/String;)V
+
+    throw v0
 .end method

@@ -15,7 +15,7 @@
 
 
 # instance fields
-.field public final zza:Lkotlin/jvm/internal/SpreadBuilder;
+.field public final zza:Lcom/google/android/play/core/internal/zzag;
 
 .field public final zzb:Ljava/util/Set;
     .annotation system Ldalvik/annotation/Signature;
@@ -43,7 +43,7 @@
 
 
 # direct methods
-.method public constructor <init>(Lkotlin/jvm/internal/SpreadBuilder;Landroid/content/IntentFilter;Landroid/content/Context;)V
+.method public constructor <init>(Lcom/google/android/play/core/internal/zzag;Landroid/content/IntentFilter;Landroid/content/Context;)V
     .locals 1
 
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
@@ -62,7 +62,7 @@
 
     iput-boolean v0, p0, Lcom/google/android/play/core/listener/zzc;->zzf:Z
 
-    iput-object p1, p0, Lcom/google/android/play/core/listener/zzc;->zza:Lkotlin/jvm/internal/SpreadBuilder;
+    iput-object p1, p0, Lcom/google/android/play/core/listener/zzc;->zza:Lcom/google/android/play/core/internal/zzag;
 
     iput-object p2, p0, Lcom/google/android/play/core/listener/zzc;->zzc:Landroid/content/IntentFilter;
 

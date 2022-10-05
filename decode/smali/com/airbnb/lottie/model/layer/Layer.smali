@@ -3,14 +3,6 @@
 .source "Layer.java"
 
 
-# annotations
-.annotation system Ldalvik/annotation/MemberClasses;
-    value = {
-        Lcom/airbnb/lottie/model/layer/Layer$LayerType;
-    }
-.end annotation
-
-
 # instance fields
 .field public final composition:Lcom/airbnb/lottie/LottieComposition;
 
@@ -31,7 +23,7 @@
 
 .field public final layerName:Ljava/lang/String;
 
-.field public final layerType:Lcom/airbnb/lottie/model/layer/Layer$LayerType;
+.field public final layerType:I
 
 .field public final masks:Ljava/util/List;
     .annotation system Ldalvik/annotation/Signature;
@@ -73,7 +65,7 @@
 
 .field public final text:Lcom/airbnb/lottie/model/animatable/AnimatableTextFrame;
 
-.field public final textProperties:Landroidx/constraintlayout/core/Cache;
+.field public final textProperties:Lcom/airbnb/lottie/model/animatable/AnimatableTextProperties;
 
 .field public final timeRemapping:Lcom/airbnb/lottie/model/animatable/AnimatableFloatValue;
 
@@ -83,7 +75,7 @@
 
 
 # direct methods
-.method public constructor <init>(Ljava/util/List;Lcom/airbnb/lottie/LottieComposition;Ljava/lang/String;JLcom/airbnb/lottie/model/layer/Layer$LayerType;JLjava/lang/String;Ljava/util/List;Lcom/airbnb/lottie/model/animatable/AnimatableTransform;IIIFFIILcom/airbnb/lottie/model/animatable/AnimatableTextFrame;Landroidx/constraintlayout/core/Cache;Ljava/util/List;ILcom/airbnb/lottie/model/animatable/AnimatableFloatValue;Z)V
+.method public constructor <init>(Ljava/util/List;Lcom/airbnb/lottie/LottieComposition;Ljava/lang/String;JIJLjava/lang/String;Ljava/util/List;Lcom/airbnb/lottie/model/animatable/AnimatableTransform;IIIFFIILcom/airbnb/lottie/model/animatable/AnimatableTextFrame;Lcom/airbnb/lottie/model/animatable/AnimatableTextProperties;Ljava/util/List;ILcom/airbnb/lottie/model/animatable/AnimatableFloatValue;Z)V
     .locals 3
     .annotation system Ldalvik/annotation/Signature;
         value = {
@@ -94,7 +86,7 @@
             "Lcom/airbnb/lottie/LottieComposition;",
             "Ljava/lang/String;",
             "J",
-            "Lcom/airbnb/lottie/model/layer/Layer$LayerType;",
+            "Ljava/lang/Object;",
             "J",
             "Ljava/lang/String;",
             "Ljava/util/List<",
@@ -103,7 +95,7 @@
             "Lcom/airbnb/lottie/model/animatable/AnimatableTransform;",
             "IIIFFII",
             "Lcom/airbnb/lottie/model/animatable/AnimatableTextFrame;",
-            "Landroidx/constraintlayout/core/Cache;",
+            "Lcom/airbnb/lottie/model/animatable/AnimatableTextProperties;",
             "Ljava/util/List<",
             "Lcom/airbnb/lottie/value/Keyframe<",
             "Ljava/lang/Float;",
@@ -134,9 +126,9 @@
 
     iput-wide v1, v0, Lcom/airbnb/lottie/model/layer/Layer;->layerId:J
 
-    move-object v1, p6
+    move v1, p6
 
-    iput-object v1, v0, Lcom/airbnb/lottie/model/layer/Layer;->layerType:Lcom/airbnb/lottie/model/layer/Layer$LayerType;
+    iput v1, v0, Lcom/airbnb/lottie/model/layer/Layer;->layerType:I
 
     move-wide v1, p7
 
@@ -188,7 +180,7 @@
 
     move-object/from16 v1, p20
 
-    iput-object v1, v0, Lcom/airbnb/lottie/model/layer/Layer;->textProperties:Landroidx/constraintlayout/core/Cache;
+    iput-object v1, v0, Lcom/airbnb/lottie/model/layer/Layer;->textProperties:Lcom/airbnb/lottie/model/animatable/AnimatableTextProperties;
 
     move-object/from16 v1, p21
 

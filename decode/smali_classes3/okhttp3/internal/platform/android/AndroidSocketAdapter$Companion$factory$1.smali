@@ -77,8 +77,6 @@
     :cond_1
     new-instance p1, Lokhttp3/internal/platform/android/AndroidSocketAdapter;
 
-    invoke-static {v0}, Lkotlin/jvm/internal/Intrinsics;->checkNotNull(Ljava/lang/Object;)V
-
     invoke-direct {p1, v0}, Lokhttp3/internal/platform/android/AndroidSocketAdapter;-><init>(Ljava/lang/Class;)V
 
     return-object p1

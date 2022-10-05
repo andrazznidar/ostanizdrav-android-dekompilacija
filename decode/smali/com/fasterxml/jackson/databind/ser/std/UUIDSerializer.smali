@@ -9,9 +9,7 @@
 # annotations
 .annotation system Ldalvik/annotation/Signature;
     value = {
-        "Lcom/fasterxml/jackson/databind/ser/std/StdScalarSerializer<",
-        "Ljava/util/UUID;",
-        ">;",
+        "Lcom/fasterxml/jackson/databind/ser/std/StdScalarSerializer;",
         "Lcom/fasterxml/jackson/databind/ser/ContextualSerializer;"
     }
 .end annotation
@@ -41,11 +39,13 @@
 .end method
 
 .method public constructor <init>()V
-    .locals 1
+    .locals 2
 
     const-class v0, Ljava/util/UUID;
 
-    invoke-direct {p0, v0}, Lcom/fasterxml/jackson/databind/ser/std/StdScalarSerializer;-><init>(Ljava/lang/Class;)V
+    const/4 v1, 0x0
+
+    invoke-direct {p0, v0, v1}, Lcom/fasterxml/jackson/databind/ser/std/StdScalarSerializer;-><init>(Ljava/lang/Class;I)V
 
     const/4 v0, 0x0
 
@@ -55,11 +55,13 @@
 .end method
 
 .method public constructor <init>(Ljava/lang/Boolean;)V
-    .locals 1
+    .locals 2
 
     const-class v0, Ljava/util/UUID;
 
-    invoke-direct {p0, v0}, Lcom/fasterxml/jackson/databind/ser/std/StdScalarSerializer;-><init>(Ljava/lang/Class;)V
+    const/4 v1, 0x0
+
+    invoke-direct {p0, v0, v1}, Lcom/fasterxml/jackson/databind/ser/std/StdScalarSerializer;-><init>(Ljava/lang/Class;I)V
 
     iput-object p1, p0, Lcom/fasterxml/jackson/databind/ser/std/UUIDSerializer;->_asBinary:Ljava/lang/Boolean;
 

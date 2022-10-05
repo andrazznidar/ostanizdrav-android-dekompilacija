@@ -1,4 +1,4 @@
-.class public Lorg/bouncycastle/asn1/LazyConstructionEnumeration;
+.class Lorg/bouncycastle/asn1/LazyConstructionEnumeration;
 .super Ljava/lang/Object;
 
 # interfaces
@@ -6,9 +6,9 @@
 
 
 # instance fields
-.field public aIn:Lorg/bouncycastle/asn1/ASN1InputStream;
+.field private aIn:Lorg/bouncycastle/asn1/ASN1InputStream;
 
-.field public nextObj:Ljava/lang/Object;
+.field private nextObj:Ljava/lang/Object;
 
 
 # direct methods
@@ -25,7 +25,7 @@
 
     iput-object v0, p0, Lorg/bouncycastle/asn1/LazyConstructionEnumeration;->aIn:Lorg/bouncycastle/asn1/ASN1InputStream;
 
-    invoke-virtual {p0}, Lorg/bouncycastle/asn1/LazyConstructionEnumeration;->readObject()Ljava/lang/Object;
+    invoke-direct {p0}, Lorg/bouncycastle/asn1/LazyConstructionEnumeration;->readObject()Ljava/lang/Object;
 
     move-result-object p1
 
@@ -34,50 +34,7 @@
     return-void
 .end method
 
-
-# virtual methods
-.method public hasMoreElements()Z
-    .locals 1
-
-    iget-object v0, p0, Lorg/bouncycastle/asn1/LazyConstructionEnumeration;->nextObj:Ljava/lang/Object;
-
-    if-eqz v0, :cond_0
-
-    const/4 v0, 0x1
-
-    goto :goto_0
-
-    :cond_0
-    const/4 v0, 0x0
-
-    :goto_0
-    return v0
-.end method
-
-.method public nextElement()Ljava/lang/Object;
-    .locals 2
-
-    iget-object v0, p0, Lorg/bouncycastle/asn1/LazyConstructionEnumeration;->nextObj:Ljava/lang/Object;
-
-    if-eqz v0, :cond_0
-
-    invoke-virtual {p0}, Lorg/bouncycastle/asn1/LazyConstructionEnumeration;->readObject()Ljava/lang/Object;
-
-    move-result-object v1
-
-    iput-object v1, p0, Lorg/bouncycastle/asn1/LazyConstructionEnumeration;->nextObj:Ljava/lang/Object;
-
-    return-object v0
-
-    :cond_0
-    new-instance v0, Ljava/util/NoSuchElementException;
-
-    invoke-direct {v0}, Ljava/util/NoSuchElementException;-><init>()V
-
-    throw v0
-.end method
-
-.method public final readObject()Ljava/lang/Object;
+.method private readObject()Ljava/lang/Object;
     .locals 4
 
     :try_start_0
@@ -113,4 +70,47 @@
     invoke-direct {v1, v2, v0}, Lorg/bouncycastle/asn1/ASN1ParsingException;-><init>(Ljava/lang/String;Ljava/lang/Throwable;)V
 
     throw v1
+.end method
+
+
+# virtual methods
+.method public hasMoreElements()Z
+    .locals 1
+
+    iget-object v0, p0, Lorg/bouncycastle/asn1/LazyConstructionEnumeration;->nextObj:Ljava/lang/Object;
+
+    if-eqz v0, :cond_0
+
+    const/4 v0, 0x1
+
+    goto :goto_0
+
+    :cond_0
+    const/4 v0, 0x0
+
+    :goto_0
+    return v0
+.end method
+
+.method public nextElement()Ljava/lang/Object;
+    .locals 2
+
+    iget-object v0, p0, Lorg/bouncycastle/asn1/LazyConstructionEnumeration;->nextObj:Ljava/lang/Object;
+
+    if-eqz v0, :cond_0
+
+    invoke-direct {p0}, Lorg/bouncycastle/asn1/LazyConstructionEnumeration;->readObject()Ljava/lang/Object;
+
+    move-result-object v1
+
+    iput-object v1, p0, Lorg/bouncycastle/asn1/LazyConstructionEnumeration;->nextObj:Ljava/lang/Object;
+
+    return-object v0
+
+    :cond_0
+    new-instance v0, Ljava/util/NoSuchElementException;
+
+    invoke-direct {v0}, Ljava/util/NoSuchElementException;-><init>()V
+
+    throw v0
 .end method

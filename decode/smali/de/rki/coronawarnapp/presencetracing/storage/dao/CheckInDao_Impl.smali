@@ -14,41 +14,33 @@
 .field public final __insertionAdapterOfTraceLocationCheckInEntity:Landroidx/room/EntityInsertionAdapter;
     .annotation system Ldalvik/annotation/Signature;
         value = {
-            "Landroidx/room/EntityInsertionAdapter<",
-            "Lde/rki/coronawarnapp/presencetracing/storage/entity/TraceLocationCheckInEntity;",
-            ">;"
+            "Landroidx/room/EntityInsertionAdapter;"
         }
     .end annotation
 .end field
 
 .field public final __preparedStmtOfDeleteAll:Landroidx/room/SharedSQLiteStatement;
 
-.field public final __updateAdapterOfSubmissionConsentUpdateAsTraceLocationCheckInEntity:Landroidx/room/EntityDeletionOrUpdateAdapter;
+.field public final __updateAdapterOfSubmissionConsentUpdateAsTraceLocationCheckInEntity:Landroidx/room/EntityInsertionAdapter;
     .annotation system Ldalvik/annotation/Signature;
         value = {
-            "Landroidx/room/EntityDeletionOrUpdateAdapter<",
-            "Lde/rki/coronawarnapp/presencetracing/storage/entity/TraceLocationCheckInEntity$SubmissionConsentUpdate;",
-            ">;"
+            "Landroidx/room/EntityInsertionAdapter;"
         }
     .end annotation
 .end field
 
-.field public final __updateAdapterOfSubmissionUpdateAsTraceLocationCheckInEntity:Landroidx/room/EntityDeletionOrUpdateAdapter;
+.field public final __updateAdapterOfSubmissionUpdateAsTraceLocationCheckInEntity:Landroidx/room/EntityInsertionAdapter;
     .annotation system Ldalvik/annotation/Signature;
         value = {
-            "Landroidx/room/EntityDeletionOrUpdateAdapter<",
-            "Lde/rki/coronawarnapp/presencetracing/storage/entity/TraceLocationCheckInEntity$SubmissionUpdate;",
-            ">;"
+            "Landroidx/room/EntityInsertionAdapter;"
         }
     .end annotation
 .end field
 
-.field public final __updateAdapterOfTraceLocationCheckInEntity:Landroidx/room/EntityDeletionOrUpdateAdapter;
+.field public final __updateAdapterOfTraceLocationCheckInEntity:Landroidx/room/EntityInsertionAdapter;
     .annotation system Ldalvik/annotation/Signature;
         value = {
-            "Landroidx/room/EntityDeletionOrUpdateAdapter<",
-            "Lde/rki/coronawarnapp/presencetracing/storage/entity/TraceLocationCheckInEntity;",
-            ">;"
+            "Landroidx/room/EntityInsertionAdapter;"
         }
     .end annotation
 .end field
@@ -86,19 +78,19 @@
 
     invoke-direct {v0, p0, p1}, Lde/rki/coronawarnapp/presencetracing/storage/dao/CheckInDao_Impl$2;-><init>(Lde/rki/coronawarnapp/presencetracing/storage/dao/CheckInDao_Impl;Landroidx/room/RoomDatabase;)V
 
-    iput-object v0, p0, Lde/rki/coronawarnapp/presencetracing/storage/dao/CheckInDao_Impl;->__updateAdapterOfTraceLocationCheckInEntity:Landroidx/room/EntityDeletionOrUpdateAdapter;
+    iput-object v0, p0, Lde/rki/coronawarnapp/presencetracing/storage/dao/CheckInDao_Impl;->__updateAdapterOfTraceLocationCheckInEntity:Landroidx/room/EntityInsertionAdapter;
 
     new-instance v0, Lde/rki/coronawarnapp/presencetracing/storage/dao/CheckInDao_Impl$3;
 
     invoke-direct {v0, p0, p1}, Lde/rki/coronawarnapp/presencetracing/storage/dao/CheckInDao_Impl$3;-><init>(Lde/rki/coronawarnapp/presencetracing/storage/dao/CheckInDao_Impl;Landroidx/room/RoomDatabase;)V
 
-    iput-object v0, p0, Lde/rki/coronawarnapp/presencetracing/storage/dao/CheckInDao_Impl;->__updateAdapterOfSubmissionUpdateAsTraceLocationCheckInEntity:Landroidx/room/EntityDeletionOrUpdateAdapter;
+    iput-object v0, p0, Lde/rki/coronawarnapp/presencetracing/storage/dao/CheckInDao_Impl;->__updateAdapterOfSubmissionUpdateAsTraceLocationCheckInEntity:Landroidx/room/EntityInsertionAdapter;
 
     new-instance v0, Lde/rki/coronawarnapp/presencetracing/storage/dao/CheckInDao_Impl$4;
 
     invoke-direct {v0, p0, p1}, Lde/rki/coronawarnapp/presencetracing/storage/dao/CheckInDao_Impl$4;-><init>(Lde/rki/coronawarnapp/presencetracing/storage/dao/CheckInDao_Impl;Landroidx/room/RoomDatabase;)V
 
-    iput-object v0, p0, Lde/rki/coronawarnapp/presencetracing/storage/dao/CheckInDao_Impl;->__updateAdapterOfSubmissionConsentUpdateAsTraceLocationCheckInEntity:Landroidx/room/EntityDeletionOrUpdateAdapter;
+    iput-object v0, p0, Lde/rki/coronawarnapp/presencetracing/storage/dao/CheckInDao_Impl;->__updateAdapterOfSubmissionConsentUpdateAsTraceLocationCheckInEntity:Landroidx/room/EntityInsertionAdapter;
 
     new-instance v0, Lde/rki/coronawarnapp/presencetracing/storage/dao/CheckInDao_Impl$5;
 

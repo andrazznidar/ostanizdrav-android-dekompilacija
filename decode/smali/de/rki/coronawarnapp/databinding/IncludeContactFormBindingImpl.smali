@@ -114,7 +114,7 @@
 
     sget-object v1, Ljava/lang/Boolean;->TRUE:Ljava/lang/Boolean;
 
-    invoke-static {v1}, Lcom/google/android/gms/internal/nearby/zzfq;->formatVisibilityLanguageBased(Ljava/lang/Boolean;)I
+    invoke-static {v1}, Lde/rki/coronawarnapp/risk/RiskModule;->formatVisibilityLanguageBased(Ljava/lang/Boolean;)I
 
     move-result v1
 
@@ -124,7 +124,7 @@
 
     sget-object v1, Ljava/lang/Boolean;->FALSE:Ljava/lang/Boolean;
 
-    invoke-static {v1}, Lcom/google/android/gms/internal/nearby/zzfq;->formatVisibilityLanguageBased(Ljava/lang/Boolean;)I
+    invoke-static {v1}, Lde/rki/coronawarnapp/risk/RiskModule;->formatVisibilityLanguageBased(Ljava/lang/Boolean;)I
 
     move-result v1
 

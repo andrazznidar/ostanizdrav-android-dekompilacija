@@ -35,8 +35,10 @@
 
 
 # virtual methods
-.method public synthetic add(Ljava/lang/Object;)V
+.method public add(Ljava/lang/Object;)V
     .locals 1
+
+    check-cast p1, Ljava/lang/Void;
 
     new-instance p1, Ljava/lang/UnsupportedOperationException;
 
@@ -49,6 +51,18 @@
 
 .method public synthetic forEachRemaining(Lj$/util/function/Consumer;)V
     .locals 0
+
+    invoke-static {p0, p1}, Lj$/util/Iterator$-CC;->$default$forEachRemaining(Ljava/util/Iterator;Lj$/util/function/Consumer;)V
+
+    return-void
+.end method
+
+.method public synthetic forEachRemaining(Ljava/util/function/Consumer;)V
+    .locals 0
+
+    invoke-static {p1}, Lj$/util/function/Consumer$VivifiedWrapper;->convert(Ljava/util/function/Consumer;)Lj$/util/function/Consumer;
+
+    move-result-object p1
 
     invoke-static {p0, p1}, Lj$/util/Iterator$-CC;->$default$forEachRemaining(Ljava/util/Iterator;Lj$/util/function/Consumer;)V
 
@@ -119,8 +133,10 @@
     throw v0
 .end method
 
-.method public synthetic set(Ljava/lang/Object;)V
+.method public set(Ljava/lang/Object;)V
     .locals 1
+
+    check-cast p1, Ljava/lang/Void;
 
     new-instance p1, Ljava/lang/UnsupportedOperationException;
 

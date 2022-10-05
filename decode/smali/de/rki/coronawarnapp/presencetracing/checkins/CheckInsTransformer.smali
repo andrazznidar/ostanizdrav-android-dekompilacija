@@ -389,19 +389,11 @@
 
     invoke-static {v9, v11}, Lkotlin/jvm/internal/Intrinsics;->checkNotNullParameter(Ljava/lang/Object;Ljava/lang/String;)V
 
-    sget-object v11, Lde/rki/coronawarnapp/util/TimeAndDateExtensions;->INSTANCE:Lde/rki/coronawarnapp/util/TimeAndDateExtensions;
+    sget-object v12, Lde/rki/coronawarnapp/util/TimeAndDateExtensions;->INSTANCE:Lde/rki/coronawarnapp/util/TimeAndDateExtensions;
 
-    iget-object v11, v9, Lde/rki/coronawarnapp/presencetracing/checkins/CheckIn;->checkInStart:Lorg/joda/time/Instant;
+    iget-object v12, v9, Lde/rki/coronawarnapp/presencetracing/checkins/CheckIn;->checkInStart:Lorg/joda/time/Instant;
 
-    invoke-static {v11}, Lde/rki/coronawarnapp/util/TimeAndDateExtensions;->toLocalDateUtc(Lorg/joda/time/Instant;)Lorg/joda/time/LocalDate;
-
-    move-result-object v11
-
-    invoke-virtual {v11}, Lorg/joda/time/LocalDate;->toDateTimeAtStartOfDay()Lorg/joda/time/DateTime;
-
-    move-result-object v11
-
-    invoke-static {v7}, Lde/rki/coronawarnapp/util/TimeAndDateExtensions;->toLocalDateUtc(Lorg/joda/time/Instant;)Lorg/joda/time/LocalDate;
+    invoke-static {v12}, Lde/rki/coronawarnapp/util/TimeAndDateExtensions;->toLocalDateUtc(Lorg/joda/time/Instant;)Lorg/joda/time/LocalDate;
 
     move-result-object v12
 
@@ -409,35 +401,33 @@
 
     move-result-object v12
 
-    sget-object v13, Lorg/joda/time/Days;->ZERO:Lorg/joda/time/Days;
+    invoke-static {v7}, Lde/rki/coronawarnapp/util/TimeAndDateExtensions;->toLocalDateUtc(Lorg/joda/time/Instant;)Lorg/joda/time/LocalDate;
 
-    sget-object v13, Lorg/joda/time/DurationFieldType;->DAYS_TYPE:Lorg/joda/time/DurationFieldType;
+    move-result-object v13
 
-    invoke-static {v11, v12, v13}, Lorg/joda/time/base/BaseSingleFieldPeriod;->between(Lorg/joda/time/ReadableInstant;Lorg/joda/time/ReadableInstant;Lorg/joda/time/DurationFieldType;)I
+    invoke-virtual {v13}, Lorg/joda/time/LocalDate;->toDateTimeAtStartOfDay()Lorg/joda/time/DateTime;
 
-    move-result v11
+    move-result-object v13
 
-    invoke-static {v11}, Lorg/joda/time/Days;->days(I)Lorg/joda/time/Days;
+    invoke-static {v12, v13}, Lorg/joda/time/Days;->daysBetween(Lorg/joda/time/ReadableInstant;Lorg/joda/time/ReadableInstant;)Lorg/joda/time/Days;
 
-    move-result-object v11
+    move-result-object v12
 
-    iget v11, v11, Lorg/joda/time/base/BaseSingleFieldPeriod;->iPeriod:I
+    iget v12, v12, Lorg/joda/time/base/BaseSingleFieldPeriod;->iPeriod:I
 
-    iget-object v12, v3, Lde/rki/coronawarnapp/submission/task/TransmissionRiskVector;->values:[I
+    iget-object v13, v3, Lde/rki/coronawarnapp/submission/task/TransmissionRiskVector;->values:[I
 
-    if-ltz v11, :cond_6
+    if-ltz v12, :cond_6
 
-    const-string v13, "$this$lastIndex"
+    invoke-static {v13, v11}, Lkotlin/jvm/internal/Intrinsics;->checkNotNullParameter(Ljava/lang/Object;Ljava/lang/String;)V
 
-    invoke-static {v12, v13}, Lkotlin/jvm/internal/Intrinsics;->checkNotNullParameter(Ljava/lang/Object;Ljava/lang/String;)V
+    array-length v11, v13
 
-    array-length v13, v12
+    add-int/lit8 v11, v11, -0x1
 
-    add-int/lit8 v13, v13, -0x1
+    if-gt v12, v11, :cond_6
 
-    if-gt v11, v13, :cond_6
-
-    aget v11, v12, v11
+    aget v11, v13, v12
 
     goto :goto_4
 
@@ -530,7 +520,7 @@
 
     invoke-virtual {v9, v11, v12}, Ltimber/log/Timber$Forest;->d(Ljava/lang/String;[Ljava/lang/Object;)V
 
-    goto/16 :goto_3
+    goto :goto_3
 
     :cond_c
     invoke-interface {v1}, Lde/rki/coronawarnapp/appconfig/CWAConfig;->isUnencryptedCheckInsEnabled()Z

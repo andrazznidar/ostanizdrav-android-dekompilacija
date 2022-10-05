@@ -93,8 +93,6 @@
 
     invoke-direct {v3, p1}, Lkotlinx/coroutines/internal/ContextScope;-><init>(Lkotlin/coroutines/CoroutineContext;)V
 
-    sget p1, Lkotlinx/coroutines/flow/SharingStarted;->$r8$clinit:I
-
     const-wide/16 p1, 0x5
 
     invoke-static {p1, p2}, Lorg/joda/time/Duration;->standardSeconds(J)Lorg/joda/time/Duration;

@@ -221,9 +221,13 @@
     goto :goto_1
 
     :cond_1
-    invoke-super {p0, p1}, Lokhttp3/internal/platform/Platform;->buildCertificateChainCleaner(Ljavax/net/ssl/X509TrustManager;)Lokhttp3/internal/tls/CertificateChainCleaner;
+    new-instance v0, Lokhttp3/internal/tls/BasicCertificateChainCleaner;
 
-    move-result-object v0
+    invoke-virtual {p0, p1}, Lokhttp3/internal/platform/Platform;->buildTrustRootIndex(Ljavax/net/ssl/X509TrustManager;)Lokhttp3/internal/tls/TrustRootIndex;
+
+    move-result-object p1
+
+    invoke-direct {v0, p1}, Lokhttp3/internal/tls/BasicCertificateChainCleaner;-><init>(Lokhttp3/internal/tls/TrustRootIndex;)V
 
     :goto_1
     return-object v0

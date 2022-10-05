@@ -6,6 +6,14 @@
 .implements Lkotlin/reflect/jvm/internal/impl/load/java/structure/JavaElement;
 
 
+# annotations
+.annotation system Ldalvik/annotation/MemberClasses;
+    value = {
+        Lkotlin/reflect/jvm/internal/impl/load/java/structure/JavaAnnotation$DefaultImpls;
+    }
+.end annotation
+
+
 # virtual methods
 .method public abstract getArguments()Ljava/util/Collection;
     .annotation system Ldalvik/annotation/Signature;

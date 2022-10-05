@@ -174,7 +174,7 @@
 
 # virtual methods
 .method public final _createUsingDelegate(Lcom/fasterxml/jackson/databind/introspect/AnnotatedWithParams;[Lcom/fasterxml/jackson/databind/deser/SettableBeanProperty;Lcom/fasterxml/jackson/databind/DeserializationContext;Ljava/lang/Object;)Ljava/lang/Object;
-    .locals 4
+    .locals 6
     .annotation system Ldalvik/annotation/Throws;
         value = {
             Ljava/io/IOException;
@@ -208,20 +208,25 @@
 
     aput-object p4, v1, v2
 
-    add-int/lit8 v2, v2, 0x1
-
-    goto :goto_0
+    goto :goto_1
 
     :cond_1
     invoke-virtual {v3}, Lcom/fasterxml/jackson/databind/deser/SettableBeanProperty;->getInjectableValueId()Ljava/lang/Object;
 
-    move-result-object p1
+    move-result-object v4
 
-    const/4 p2, 0x0
+    const/4 v5, 0x0
 
-    invoke-virtual {p3, p1, v3, p2}, Lcom/fasterxml/jackson/databind/DeserializationContext;->findInjectableValue(Ljava/lang/Object;Lcom/fasterxml/jackson/databind/BeanProperty;Ljava/lang/Object;)Ljava/lang/Object;
+    invoke-virtual {p3, v4, v3, v5}, Lcom/fasterxml/jackson/databind/DeserializationContext;->findInjectableValue(Ljava/lang/Object;Lcom/fasterxml/jackson/databind/BeanProperty;Ljava/lang/Object;)Ljava/lang/Object;
 
-    throw p2
+    move-result-object v3
+
+    aput-object v3, v1, v2
+
+    :goto_1
+    add-int/lit8 v2, v2, 0x1
+
+    goto :goto_0
 
     :cond_2
     invoke-virtual {p1, v1}, Lcom/fasterxml/jackson/databind/introspect/AnnotatedWithParams;->call([Ljava/lang/Object;)Ljava/lang/Object;

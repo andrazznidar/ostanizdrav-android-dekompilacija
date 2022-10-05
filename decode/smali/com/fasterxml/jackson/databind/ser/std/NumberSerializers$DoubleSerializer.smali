@@ -58,7 +58,7 @@
 .end method
 
 .method public serializeWithType(Ljava/lang/Object;Lcom/fasterxml/jackson/core/JsonGenerator;Lcom/fasterxml/jackson/databind/SerializerProvider;Lcom/fasterxml/jackson/databind/jsontype/TypeSerializer;)V
-    .locals 3
+    .locals 2
     .annotation system Ldalvik/annotation/Throws;
         value = {
             Ljava/io/IOException;
@@ -73,31 +73,11 @@
 
     move-result-wide v0
 
-    invoke-static {v0, v1}, Ljava/lang/Double;->isNaN(D)Z
-
-    move-result v2
-
-    if-nez v2, :cond_1
-
-    invoke-static {v0, v1}, Ljava/lang/Double;->isInfinite(D)Z
+    invoke-static {v0, v1}, Lcom/fasterxml/jackson/core/io/NumberOutput;->notFinite(D)Z
 
     move-result v0
 
     if-eqz v0, :cond_0
-
-    goto :goto_0
-
-    :cond_0
-    const/4 v0, 0x0
-
-    goto :goto_1
-
-    :cond_1
-    :goto_0
-    const/4 v0, 0x1
-
-    :goto_1
-    if-eqz v0, :cond_2
 
     sget-object v0, Lcom/fasterxml/jackson/core/JsonToken;->VALUE_NUMBER_FLOAT:Lcom/fasterxml/jackson/core/JsonToken;
 
@@ -117,15 +97,15 @@
 
     invoke-virtual {p4, p2, p1}, Lcom/fasterxml/jackson/databind/jsontype/TypeSerializer;->writeTypeSuffix(Lcom/fasterxml/jackson/core/JsonGenerator;Lcom/fasterxml/jackson/core/type/WritableTypeId;)Lcom/fasterxml/jackson/core/type/WritableTypeId;
 
-    goto :goto_2
+    goto :goto_0
 
-    :cond_2
+    :cond_0
     invoke-virtual {p3}, Ljava/lang/Double;->doubleValue()D
 
     move-result-wide p3
 
     invoke-virtual {p2, p3, p4}, Lcom/fasterxml/jackson/core/JsonGenerator;->writeNumber(D)V
 
-    :goto_2
+    :goto_0
     return-void
 .end method

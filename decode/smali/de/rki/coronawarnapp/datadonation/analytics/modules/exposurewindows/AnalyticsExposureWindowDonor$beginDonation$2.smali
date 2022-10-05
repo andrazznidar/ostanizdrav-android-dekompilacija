@@ -100,6 +100,32 @@
 
 
 # virtual methods
+.method public final create(Lkotlin/coroutines/Continuation;)Lkotlin/coroutines/Continuation;
+    .locals 4
+    .annotation system Ldalvik/annotation/Signature;
+        value = {
+            "(",
+            "Lkotlin/coroutines/Continuation<",
+            "*>;)",
+            "Lkotlin/coroutines/Continuation<",
+            "Lkotlin/Unit;",
+            ">;"
+        }
+    .end annotation
+
+    new-instance v0, Lde/rki/coronawarnapp/datadonation/analytics/modules/exposurewindows/AnalyticsExposureWindowDonor$beginDonation$2;
+
+    iget-object v1, p0, Lde/rki/coronawarnapp/datadonation/analytics/modules/exposurewindows/AnalyticsExposureWindowDonor$beginDonation$2;->this$0:Lde/rki/coronawarnapp/datadonation/analytics/modules/exposurewindows/AnalyticsExposureWindowDonor;
+
+    iget-object v2, p0, Lde/rki/coronawarnapp/datadonation/analytics/modules/exposurewindows/AnalyticsExposureWindowDonor$beginDonation$2;->$newWrappers:Ljava/util/List;
+
+    iget-object v3, p0, Lde/rki/coronawarnapp/datadonation/analytics/modules/exposurewindows/AnalyticsExposureWindowDonor$beginDonation$2;->$reported:Ljava/util/List;
+
+    invoke-direct {v0, v1, v2, v3, p1}, Lde/rki/coronawarnapp/datadonation/analytics/modules/exposurewindows/AnalyticsExposureWindowDonor$beginDonation$2;-><init>(Lde/rki/coronawarnapp/datadonation/analytics/modules/exposurewindows/AnalyticsExposureWindowDonor;Ljava/util/List;Ljava/util/List;Lkotlin/coroutines/Continuation;)V
+
+    return-object v0
+.end method
+
 .method public invoke(Ljava/lang/Object;)Ljava/lang/Object;
     .locals 4
 

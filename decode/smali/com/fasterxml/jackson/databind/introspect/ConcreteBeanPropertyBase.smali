@@ -86,7 +86,7 @@
 
     if-eqz v0, :cond_0
 
-    invoke-virtual {p1, v0}, Lcom/fasterxml/jackson/databind/AnnotationIntrospector;->findFormat(Lcom/fasterxml/jackson/databind/introspect/Annotated;)Lcom/fasterxml/jackson/annotation/JsonFormat$Value;
+    invoke-virtual {p1, v0}, Lcom/fasterxml/jackson/databind/AnnotationIntrospector;->findFormat(Lorg/joda/time/Chronology;)Lcom/fasterxml/jackson/annotation/JsonFormat$Value;
 
     move-result-object p1
 
@@ -149,9 +149,13 @@
     return-object p1
 
     :cond_0
-    invoke-virtual {v1}, Lcom/fasterxml/jackson/databind/introspect/Annotated;->getRawType()Ljava/lang/Class;
+    invoke-virtual {v1}, Lorg/joda/time/Chronology;->getRawType()Ljava/lang/Class;
 
     check-cast p1, Lcom/fasterxml/jackson/databind/cfg/MapperConfigBase;
+
+    iget-object v2, p1, Lcom/fasterxml/jackson/databind/cfg/MapperConfigBase;->_configOverrides:Lcom/fasterxml/jackson/databind/cfg/ConfigOverrides;
+
+    invoke-static {v2}, Ljava/util/Objects;->requireNonNull(Ljava/lang/Object;)Ljava/lang/Object;
 
     const/4 v2, 0x0
 
@@ -174,7 +178,7 @@
     return-object v2
 
     :cond_2
-    invoke-virtual {v0, v1}, Lcom/fasterxml/jackson/databind/AnnotationIntrospector;->findPropertyInclusion(Lcom/fasterxml/jackson/databind/introspect/Annotated;)Lcom/fasterxml/jackson/annotation/JsonInclude$Value;
+    invoke-virtual {v0, v1}, Lcom/fasterxml/jackson/databind/AnnotationIntrospector;->findPropertyInclusion(Lorg/joda/time/Chronology;)Lcom/fasterxml/jackson/annotation/JsonInclude$Value;
 
     move-result-object p1
 

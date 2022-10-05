@@ -143,3 +143,24 @@
 
     return p1
 .end method
+
+.method public setTopAndBottomOffset(I)Z
+    .locals 1
+
+    iget-object v0, p0, Lcom/google/android/material/appbar/ViewOffsetBehavior;->viewOffsetHelper:Lcom/google/android/material/appbar/ViewOffsetHelper;
+
+    if-eqz v0, :cond_0
+
+    invoke-virtual {v0, p1}, Lcom/google/android/material/appbar/ViewOffsetHelper;->setTopAndBottomOffset(I)Z
+
+    move-result p1
+
+    return p1
+
+    :cond_0
+    iput p1, p0, Lcom/google/android/material/appbar/ViewOffsetBehavior;->tempTopBottomOffset:I
+
+    const/4 p1, 0x0
+
+    return p1
+.end method

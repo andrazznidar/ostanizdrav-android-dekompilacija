@@ -58,7 +58,7 @@
     return-void
 .end method
 
-.method public synthetic constructor <init>(Lcom/google/zxing/common/detector/MathUtils;)V
+.method public synthetic constructor <init>(Lgeoregression/struct/ConvertFloatType;)V
     .locals 0
 
     invoke-direct {p0}, Lcom/google/android/gms/common/internal/safeparcel/AbstractSafeParcelable;-><init>()V

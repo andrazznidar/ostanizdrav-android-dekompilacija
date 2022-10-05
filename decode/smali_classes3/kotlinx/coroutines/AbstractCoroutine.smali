@@ -14,7 +14,6 @@
         "Ljava/lang/Object;",
         ">",
         "Lkotlinx/coroutines/JobSupport;",
-        "Lkotlinx/coroutines/Job;",
         "Lkotlin/coroutines/Continuation<",
         "TT;>;",
         "Lkotlinx/coroutines/CoroutineScope;"
@@ -105,7 +104,7 @@
 
     iget-object v0, p0, Lkotlinx/coroutines/AbstractCoroutine;->context:Lkotlin/coroutines/CoroutineContext;
 
-    invoke-static {v0, p1}, Lkotlinx/coroutines/YieldKt;->handleCoroutineException(Lkotlin/coroutines/CoroutineContext;Ljava/lang/Throwable;)V
+    invoke-static {v0, p1}, Lkotlinx/coroutines/CoroutineExceptionHandlerKt;->handleCoroutineException(Lkotlin/coroutines/CoroutineContext;Ljava/lang/Throwable;)V
 
     return-void
 .end method
@@ -182,7 +181,7 @@
 
     const/4 v1, 0x1
 
-    invoke-static {p1, v0, v1}, Lkotlinx/coroutines/SupervisorKt;->toState$default(Ljava/lang/Object;Lkotlin/jvm/functions/Function1;I)Ljava/lang/Object;
+    invoke-static {p1, v0, v1}, Lkotlinx/coroutines/CompletionStateKt;->toState$default(Ljava/lang/Object;Lkotlin/jvm/functions/Function1;I)Ljava/lang/Object;
 
     move-result-object p1
 
@@ -220,11 +219,11 @@
         }
     .end annotation
 
-    invoke-static {p1}, Landroidx/constraintlayout/core/SolverVariable$Type$r8$EnumUnboxingUtility;->$enumboxing$ordinal(I)I
-
-    move-result p1
-
     const/4 v0, 0x0
+
+    if-eqz p1, :cond_5
+
+    add-int/lit8 p1, p1, -0x1
 
     if-eqz p1, :cond_3
 
@@ -320,15 +319,15 @@
     throw p1
 
     :cond_2
-    const-string p1, "$this$startCoroutine"
+    const-string p1, "<this>"
 
     invoke-static {p3, p1}, Lkotlin/jvm/internal/Intrinsics;->checkNotNullParameter(Ljava/lang/Object;Ljava/lang/String;)V
 
-    invoke-static {p3, p2, p0}, Lkotlinx/coroutines/flow/FlowKt;->createCoroutineUnintercepted(Lkotlin/jvm/functions/Function2;Ljava/lang/Object;Lkotlin/coroutines/Continuation;)Lkotlin/coroutines/Continuation;
+    invoke-static {p3, p2, p0}, Lcom/google/android/gms/nearby/messages/internal/zzag;->createCoroutineUnintercepted(Lkotlin/jvm/functions/Function2;Ljava/lang/Object;Lkotlin/coroutines/Continuation;)Lkotlin/coroutines/Continuation;
 
     move-result-object p1
 
-    invoke-static {p1}, Lkotlinx/coroutines/flow/FlowKt;->intercepted(Lkotlin/coroutines/Continuation;)Lkotlin/coroutines/Continuation;
+    invoke-static {p1}, Lcom/google/android/gms/nearby/messages/internal/zzag;->intercepted(Lkotlin/coroutines/Continuation;)Lkotlin/coroutines/Continuation;
 
     move-result-object p1
 
@@ -344,4 +343,7 @@
     :cond_4
     :goto_2
     return-void
+
+    :cond_5
+    throw v0
 .end method

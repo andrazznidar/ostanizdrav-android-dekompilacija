@@ -5,7 +5,7 @@
 
 # annotations
 .annotation system Ldalvik/annotation/SourceDebugExtension;
-    value = "SMAP\nVaccinationStorage.kt\nKotlin\n*S Kotlin\n*F\n+ 1 VaccinationStorage.kt\nde/rki/coronawarnapp/covidcertificate/vaccination/core/repository/storage/VaccinationStorage\n+ 2 Mutex.kt\nkotlinx/coroutines/sync/MutexKt\n+ 3 _Maps.kt\nkotlin/collections/MapsKt___MapsKt\n+ 4 GsonExtensions.kt\nde/rki/coronawarnapp/util/serialization/GsonExtensionsKt\n+ 5 fake.kt\nkotlin/jvm/internal/FakeKt\n+ 6 SharedPreferences.kt\nandroidx/core/content/SharedPreferencesKt\n+ 7 _Collections.kt\nkotlin/collections/CollectionsKt___CollectionsKt\n*L\n1#1,72:1\n109#2,8:73\n118#2,2:98\n109#2,8:100\n118#2,2:123\n135#3,9:81\n211#3:90\n212#3:96\n144#3:97\n10#4,4:91\n1#5:95\n43#6,2:108\n45#6,6:117\n764#7:110\n855#7,2:111\n1849#7,2:113\n1849#7,2:115\n*S KotlinDebug\n*F\n+ 1 VaccinationStorage.kt\nde/rki/coronawarnapp/covidcertificate/vaccination/core/repository/storage/VaccinationStorage\n*L\n35#1:73,8\n35#1:98,2\n50#1:100,8\n50#1:123,2\n37#1:81,9\n37#1:90\n37#1:96\n37#1:97\n42#1:91,4\n37#1:95\n53#1:108,2\n53#1:117,6\n54#1:110\n54#1:111,2\n54#1:113,2\n58#1:115,2\n*E\n"
+    value = "SMAP\nVaccinationStorage.kt\nKotlin\n*S Kotlin\n*F\n+ 1 VaccinationStorage.kt\nde/rki/coronawarnapp/covidcertificate/vaccination/core/repository/storage/VaccinationStorage\n+ 2 Mutex.kt\nkotlinx/coroutines/sync/MutexKt\n+ 3 _Maps.kt\nkotlin/collections/MapsKt___MapsKt\n+ 4 GsonExtensions.kt\nde/rki/coronawarnapp/util/serialization/GsonExtensionsKt\n+ 5 fake.kt\nkotlin/jvm/internal/FakeKt\n+ 6 SharedPreferences.kt\nandroidx/core/content/SharedPreferencesKt\n+ 7 _Collections.kt\nkotlin/collections/CollectionsKt___CollectionsKt\n*L\n1#1,92:1\n109#2,8:93\n118#2,2:118\n109#2,8:120\n118#2,2:143\n135#3,9:101\n211#3:110\n212#3:116\n144#3:117\n11#4,4:111\n1#5:115\n43#6,2:128\n45#6,6:137\n764#7:130\n855#7,2:131\n1849#7,2:133\n1849#7,2:135\n*S KotlinDebug\n*F\n+ 1 VaccinationStorage.kt\nde/rki/coronawarnapp/covidcertificate/vaccination/core/repository/storage/VaccinationStorage\n*L\n36#1:93,8\n36#1:118,2\n51#1:120,8\n51#1:143,2\n38#1:101,9\n38#1:110\n38#1:116\n38#1:117\n43#1:111,4\n38#1:115\n54#1:128,2\n54#1:137,6\n55#1:130\n55#1:131,2\n55#1:133,2\n59#1:135,2\n*E\n"
 .end annotation
 
 
@@ -61,7 +61,7 @@
 
     invoke-direct {p1, p0}, Lde/rki/coronawarnapp/covidcertificate/vaccination/core/repository/storage/VaccinationStorage$prefs$2;-><init>(Lde/rki/coronawarnapp/covidcertificate/vaccination/core/repository/storage/VaccinationStorage;)V
 
-    invoke-static {p1}, Lkotlin/LazyKt__LazyKt;->lazy(Lkotlin/jvm/functions/Function0;)Lkotlin/Lazy;
+    invoke-static {p1}, Lkotlin/LazyKt__LazyJVMKt;->lazy(Lkotlin/jvm/functions/Function0;)Lkotlin/Lazy;
 
     move-result-object p1
 
@@ -71,7 +71,7 @@
 
     invoke-direct {p1, p0}, Lde/rki/coronawarnapp/covidcertificate/vaccination/core/repository/storage/VaccinationStorage$gson$2;-><init>(Lde/rki/coronawarnapp/covidcertificate/vaccination/core/repository/storage/VaccinationStorage;)V
 
-    invoke-static {p1}, Lkotlin/LazyKt__LazyKt;->lazy(Lkotlin/jvm/functions/Function0;)Lkotlin/Lazy;
+    invoke-static {p1}, Lkotlin/LazyKt__LazyJVMKt;->lazy(Lkotlin/jvm/functions/Function0;)Lkotlin/Lazy;
 
     move-result-object p1
 
@@ -97,7 +97,7 @@
 .end method
 
 .method public final load(Lkotlin/coroutines/Continuation;)Ljava/lang/Object;
-    .locals 12
+    .locals 13
     .annotation system Ldalvik/annotation/Signature;
         value = {
             "(",
@@ -237,7 +237,6 @@
 
     move-result-object p1
 
-    :cond_4
     :goto_2
     invoke-interface {p1}, Ljava/util/Iterator;->hasNext()Z
 
@@ -273,13 +272,13 @@
 
     move-result v8
 
-    if-nez v8, :cond_5
+    if-nez v8, :cond_4
 
     move-object v7, v4
 
     goto :goto_3
 
-    :cond_5
+    :cond_4
     if-eqz v7, :cond_7
 
     move-object v8, v7
@@ -322,7 +321,11 @@
 
     new-array v11, v5, [Ljava/lang/Object;
 
-    aput-object v8, v11, v6
+    invoke-virtual {v8}, Lde/rki/coronawarnapp/covidcertificate/vaccination/core/repository/storage/VaccinatedPersonData;->getIdentifier()Lde/rki/coronawarnapp/covidcertificate/common/certificate/CertificatePersonIdentifier;
+
+    move-result-object v12
+
+    aput-object v12, v11, v6
 
     invoke-virtual {v9, v10, v11}, Ltimber/log/Timber$Forest;->v(Ljava/lang/String;[Ljava/lang/Object;)V
 
@@ -335,8 +338,11 @@
     check-cast v7, Lde/rki/coronawarnapp/covidcertificate/vaccination/core/repository/storage/VaccinatedPersonData;
 
     :goto_3
-    if-eqz v7, :cond_4
+    if-nez v7, :cond_5
 
+    goto :goto_2
+
+    :cond_5
     invoke-virtual {v3, v7}, Ljava/util/ArrayList;->add(Ljava/lang/Object;)Z
 
     goto :goto_2
@@ -367,6 +373,10 @@
     invoke-static {v3}, Lkotlin/collections/CollectionsKt___CollectionsKt;->toSet(Ljava/lang/Iterable;)Ljava/util/Set;
 
     move-result-object p1
+
+    invoke-static {p1}, Lde/rki/coronawarnapp/covidcertificate/vaccination/core/repository/storage/VaccinationStorageKt;->groupDataByIdentifier(Ljava/util/Set;)Ljava/util/Set;
+
+    move-result-object p1
     :try_end_0
     .catchall {:try_start_0 .. :try_end_0} :catchall_0
 
@@ -383,7 +393,7 @@
 .end method
 
 .method public final save(Ljava/util/Set;Lkotlin/coroutines/Continuation;)Ljava/lang/Object;
-    .locals 13
+    .locals 16
     .annotation system Ldalvik/annotation/Signature;
         value = {
             "(",
@@ -398,309 +408,354 @@
         }
     .end annotation
 
-    const-string v0, "VaccinationStorage"
+    move-object/from16 v1, p0
 
-    instance-of v1, p2, Lde/rki/coronawarnapp/covidcertificate/vaccination/core/repository/storage/VaccinationStorage$save$1;
+    move-object/from16 v0, p2
 
-    if-eqz v1, :cond_0
+    const-string v2, "VaccinationStorage"
 
-    move-object v1, p2
+    instance-of v3, v0, Lde/rki/coronawarnapp/covidcertificate/vaccination/core/repository/storage/VaccinationStorage$save$1;
 
-    check-cast v1, Lde/rki/coronawarnapp/covidcertificate/vaccination/core/repository/storage/VaccinationStorage$save$1;
+    if-eqz v3, :cond_0
 
-    iget v2, v1, Lde/rki/coronawarnapp/covidcertificate/vaccination/core/repository/storage/VaccinationStorage$save$1;->label:I
+    move-object v3, v0
 
-    const/high16 v3, -0x80000000
+    check-cast v3, Lde/rki/coronawarnapp/covidcertificate/vaccination/core/repository/storage/VaccinationStorage$save$1;
 
-    and-int v4, v2, v3
+    iget v4, v3, Lde/rki/coronawarnapp/covidcertificate/vaccination/core/repository/storage/VaccinationStorage$save$1;->label:I
 
-    if-eqz v4, :cond_0
+    const/high16 v5, -0x80000000
 
-    sub-int/2addr v2, v3
+    and-int v6, v4, v5
 
-    iput v2, v1, Lde/rki/coronawarnapp/covidcertificate/vaccination/core/repository/storage/VaccinationStorage$save$1;->label:I
+    if-eqz v6, :cond_0
+
+    sub-int/2addr v4, v5
+
+    iput v4, v3, Lde/rki/coronawarnapp/covidcertificate/vaccination/core/repository/storage/VaccinationStorage$save$1;->label:I
 
     goto :goto_0
 
     :cond_0
-    new-instance v1, Lde/rki/coronawarnapp/covidcertificate/vaccination/core/repository/storage/VaccinationStorage$save$1;
+    new-instance v3, Lde/rki/coronawarnapp/covidcertificate/vaccination/core/repository/storage/VaccinationStorage$save$1;
 
-    invoke-direct {v1, p0, p2}, Lde/rki/coronawarnapp/covidcertificate/vaccination/core/repository/storage/VaccinationStorage$save$1;-><init>(Lde/rki/coronawarnapp/covidcertificate/vaccination/core/repository/storage/VaccinationStorage;Lkotlin/coroutines/Continuation;)V
+    invoke-direct {v3, v1, v0}, Lde/rki/coronawarnapp/covidcertificate/vaccination/core/repository/storage/VaccinationStorage$save$1;-><init>(Lde/rki/coronawarnapp/covidcertificate/vaccination/core/repository/storage/VaccinationStorage;Lkotlin/coroutines/Continuation;)V
 
     :goto_0
-    iget-object p2, v1, Lde/rki/coronawarnapp/covidcertificate/vaccination/core/repository/storage/VaccinationStorage$save$1;->result:Ljava/lang/Object;
+    iget-object v0, v3, Lde/rki/coronawarnapp/covidcertificate/vaccination/core/repository/storage/VaccinationStorage$save$1;->result:Ljava/lang/Object;
 
-    sget-object v2, Lkotlin/coroutines/intrinsics/CoroutineSingletons;->COROUTINE_SUSPENDED:Lkotlin/coroutines/intrinsics/CoroutineSingletons;
+    sget-object v4, Lkotlin/coroutines/intrinsics/CoroutineSingletons;->COROUTINE_SUSPENDED:Lkotlin/coroutines/intrinsics/CoroutineSingletons;
 
-    iget v3, v1, Lde/rki/coronawarnapp/covidcertificate/vaccination/core/repository/storage/VaccinationStorage$save$1;->label:I
+    iget v5, v3, Lde/rki/coronawarnapp/covidcertificate/vaccination/core/repository/storage/VaccinationStorage$save$1;->label:I
 
-    const/4 v4, 0x0
+    const/4 v6, 0x1
 
-    const/4 v5, 0x1
+    const/4 v7, 0x0
 
-    if-eqz v3, :cond_2
+    if-eqz v5, :cond_2
 
-    if-ne v3, v5, :cond_1
+    if-ne v5, v6, :cond_1
 
-    iget-object p1, v1, Lde/rki/coronawarnapp/covidcertificate/vaccination/core/repository/storage/VaccinationStorage$save$1;->L$2:Ljava/lang/Object;
+    iget-object v4, v3, Lde/rki/coronawarnapp/covidcertificate/vaccination/core/repository/storage/VaccinationStorage$save$1;->L$2:Ljava/lang/Object;
 
-    check-cast p1, Lkotlinx/coroutines/sync/Mutex;
+    check-cast v4, Lkotlinx/coroutines/sync/Mutex;
 
-    iget-object v2, v1, Lde/rki/coronawarnapp/covidcertificate/vaccination/core/repository/storage/VaccinationStorage$save$1;->L$1:Ljava/lang/Object;
+    iget-object v5, v3, Lde/rki/coronawarnapp/covidcertificate/vaccination/core/repository/storage/VaccinationStorage$save$1;->L$1:Ljava/lang/Object;
 
-    check-cast v2, Ljava/util/Set;
+    check-cast v5, Ljava/util/Set;
 
-    iget-object v1, v1, Lde/rki/coronawarnapp/covidcertificate/vaccination/core/repository/storage/VaccinationStorage$save$1;->L$0:Ljava/lang/Object;
+    iget-object v3, v3, Lde/rki/coronawarnapp/covidcertificate/vaccination/core/repository/storage/VaccinationStorage$save$1;->L$0:Ljava/lang/Object;
 
-    check-cast v1, Lde/rki/coronawarnapp/covidcertificate/vaccination/core/repository/storage/VaccinationStorage;
+    check-cast v3, Lde/rki/coronawarnapp/covidcertificate/vaccination/core/repository/storage/VaccinationStorage;
 
-    invoke-static {p2}, Lkotlin/ResultKt;->throwOnFailure(Ljava/lang/Object;)V
-
-    move-object p2, p1
-
-    move-object p1, v2
+    invoke-static {v0}, Lkotlin/ResultKt;->throwOnFailure(Ljava/lang/Object;)V
 
     goto :goto_1
 
     :cond_1
-    new-instance p1, Ljava/lang/IllegalStateException;
+    new-instance v0, Ljava/lang/IllegalStateException;
 
-    const-string p2, "call to \'resume\' before \'invoke\' with coroutine"
+    const-string v2, "call to \'resume\' before \'invoke\' with coroutine"
 
-    invoke-direct {p1, p2}, Ljava/lang/IllegalStateException;-><init>(Ljava/lang/String;)V
+    invoke-direct {v0, v2}, Ljava/lang/IllegalStateException;-><init>(Ljava/lang/String;)V
 
-    throw p1
+    throw v0
 
     :cond_2
-    invoke-static {p2}, Lkotlin/ResultKt;->throwOnFailure(Ljava/lang/Object;)V
+    invoke-static {v0}, Lkotlin/ResultKt;->throwOnFailure(Ljava/lang/Object;)V
 
-    iget-object p2, p0, Lde/rki/coronawarnapp/covidcertificate/vaccination/core/repository/storage/VaccinationStorage;->mutex:Lkotlinx/coroutines/sync/Mutex;
+    iget-object v0, v1, Lde/rki/coronawarnapp/covidcertificate/vaccination/core/repository/storage/VaccinationStorage;->mutex:Lkotlinx/coroutines/sync/Mutex;
 
-    iput-object p0, v1, Lde/rki/coronawarnapp/covidcertificate/vaccination/core/repository/storage/VaccinationStorage$save$1;->L$0:Ljava/lang/Object;
+    iput-object v1, v3, Lde/rki/coronawarnapp/covidcertificate/vaccination/core/repository/storage/VaccinationStorage$save$1;->L$0:Ljava/lang/Object;
 
-    iput-object p1, v1, Lde/rki/coronawarnapp/covidcertificate/vaccination/core/repository/storage/VaccinationStorage$save$1;->L$1:Ljava/lang/Object;
+    move-object/from16 v5, p1
 
-    iput-object p2, v1, Lde/rki/coronawarnapp/covidcertificate/vaccination/core/repository/storage/VaccinationStorage$save$1;->L$2:Ljava/lang/Object;
+    iput-object v5, v3, Lde/rki/coronawarnapp/covidcertificate/vaccination/core/repository/storage/VaccinationStorage$save$1;->L$1:Ljava/lang/Object;
 
-    iput v5, v1, Lde/rki/coronawarnapp/covidcertificate/vaccination/core/repository/storage/VaccinationStorage$save$1;->label:I
+    iput-object v0, v3, Lde/rki/coronawarnapp/covidcertificate/vaccination/core/repository/storage/VaccinationStorage$save$1;->L$2:Ljava/lang/Object;
 
-    invoke-interface {p2, v4, v1}, Lkotlinx/coroutines/sync/Mutex;->lock(Ljava/lang/Object;Lkotlin/coroutines/Continuation;)Ljava/lang/Object;
+    iput v6, v3, Lde/rki/coronawarnapp/covidcertificate/vaccination/core/repository/storage/VaccinationStorage$save$1;->label:I
 
-    move-result-object v1
+    invoke-interface {v0, v7, v3}, Lkotlinx/coroutines/sync/Mutex;->lock(Ljava/lang/Object;Lkotlin/coroutines/Continuation;)Ljava/lang/Object;
 
-    if-ne v1, v2, :cond_3
+    move-result-object v3
 
-    return-object v2
+    if-ne v3, v4, :cond_3
+
+    return-object v4
 
     :cond_3
-    move-object v1, p0
+    move-object v4, v0
+
+    move-object v3, v1
 
     :goto_1
     :try_start_0
-    sget-object v2, Ltimber/log/Timber;->Forest:Ltimber/log/Timber$Forest;
+    sget-object v0, Ltimber/log/Timber;->Forest:Ltimber/log/Timber$Forest;
 
-    invoke-virtual {v2, v0}, Ltimber/log/Timber$Forest;->tag(Ljava/lang/String;)Ltimber/log/Timber$Tree;
+    invoke-virtual {v0, v2}, Ltimber/log/Timber$Forest;->tag(Ljava/lang/String;)Ltimber/log/Timber$Tree;
 
-    const-string v3, "save(%s)"
+    const-string v8, "save(%s)"
 
-    new-array v6, v5, [Ljava/lang/Object;
+    new-array v9, v6, [Ljava/lang/Object;
 
-    const/4 v7, 0x0
+    invoke-interface {v5}, Ljava/util/Set;->size()I
 
-    aput-object p1, v6, v7
+    move-result v10
 
-    invoke-virtual {v2, v3, v6}, Ltimber/log/Timber$Forest;->d(Ljava/lang/String;[Ljava/lang/Object;)V
+    new-instance v11, Ljava/lang/Integer;
 
-    invoke-virtual {v1}, Lde/rki/coronawarnapp/covidcertificate/vaccination/core/repository/storage/VaccinationStorage;->getPrefs()Landroid/content/SharedPreferences;
+    invoke-direct {v11, v10}, Ljava/lang/Integer;-><init>(I)V
 
-    move-result-object v2
+    const/4 v10, 0x0
 
-    const-string v3, "prefs"
+    aput-object v11, v9, v10
 
-    invoke-static {v2, v3}, Lkotlin/jvm/internal/Intrinsics;->checkNotNullExpressionValue(Ljava/lang/Object;Ljava/lang/String;)V
+    invoke-virtual {v0, v8, v9}, Ltimber/log/Timber$Forest;->d(Ljava/lang/String;[Ljava/lang/Object;)V
 
-    invoke-interface {v2}, Landroid/content/SharedPreferences;->edit()Landroid/content/SharedPreferences$Editor;
+    invoke-virtual {v3}, Lde/rki/coronawarnapp/covidcertificate/vaccination/core/repository/storage/VaccinationStorage;->getPrefs()Landroid/content/SharedPreferences;
 
-    move-result-object v2
+    move-result-object v0
 
-    const-string v3, "editor"
+    const-string v8, "prefs"
 
-    invoke-static {v2, v3}, Lkotlin/jvm/internal/Intrinsics;->checkNotNullExpressionValue(Ljava/lang/Object;Ljava/lang/String;)V
+    invoke-static {v0, v8}, Lkotlin/jvm/internal/Intrinsics;->checkNotNullExpressionValue(Ljava/lang/Object;Ljava/lang/String;)V
 
-    invoke-virtual {v1}, Lde/rki/coronawarnapp/covidcertificate/vaccination/core/repository/storage/VaccinationStorage;->getPrefs()Landroid/content/SharedPreferences;
+    invoke-interface {v0}, Landroid/content/SharedPreferences;->edit()Landroid/content/SharedPreferences$Editor;
 
-    move-result-object v3
+    move-result-object v0
 
-    invoke-interface {v3}, Landroid/content/SharedPreferences;->getAll()Ljava/util/Map;
+    const-string v8, "editor"
 
-    move-result-object v3
+    invoke-static {v0, v8}, Lkotlin/jvm/internal/Intrinsics;->checkNotNullExpressionValue(Ljava/lang/Object;Ljava/lang/String;)V
 
-    invoke-interface {v3}, Ljava/util/Map;->keySet()Ljava/util/Set;
-
-    move-result-object v3
-
-    new-instance v6, Ljava/util/ArrayList;
-
-    invoke-direct {v6}, Ljava/util/ArrayList;-><init>()V
-
-    invoke-interface {v3}, Ljava/lang/Iterable;->iterator()Ljava/util/Iterator;
-
-    move-result-object v3
-
-    :cond_4
-    :goto_2
-    invoke-interface {v3}, Ljava/util/Iterator;->hasNext()Z
-
-    move-result v8
-    :try_end_0
-    .catchall {:try_start_0 .. :try_end_0} :catchall_0
-
-    const/4 v9, 0x2
-
-    const-string/jumbo v10, "vaccination.person."
-
-    if-eqz v8, :cond_5
-
-    :try_start_1
-    invoke-interface {v3}, Ljava/util/Iterator;->next()Ljava/lang/Object;
+    invoke-virtual {v3}, Lde/rki/coronawarnapp/covidcertificate/vaccination/core/repository/storage/VaccinationStorage;->getPrefs()Landroid/content/SharedPreferences;
 
     move-result-object v8
 
-    move-object v11, v8
+    invoke-interface {v8}, Landroid/content/SharedPreferences;->getAll()Ljava/util/Map;
 
-    check-cast v11, Ljava/lang/String;
+    move-result-object v8
 
-    const-string v12, "it"
+    invoke-interface {v8}, Ljava/util/Map;->keySet()Ljava/util/Set;
 
-    invoke-static {v11, v12}, Lkotlin/jvm/internal/Intrinsics;->checkNotNullExpressionValue(Ljava/lang/Object;Ljava/lang/String;)V
+    move-result-object v8
 
-    invoke-static {v11, v10, v7, v9}, Lkotlin/text/StringsKt__StringsJVMKt;->startsWith$default(Ljava/lang/String;Ljava/lang/String;ZI)Z
+    new-instance v9, Ljava/util/ArrayList;
 
-    move-result v9
+    invoke-direct {v9}, Ljava/util/ArrayList;-><init>()V
 
-    if-eqz v9, :cond_4
+    invoke-interface {v8}, Ljava/lang/Iterable;->iterator()Ljava/util/Iterator;
 
-    invoke-virtual {v6, v8}, Ljava/util/ArrayList;->add(Ljava/lang/Object;)Z
+    move-result-object v8
+
+    :cond_4
+    :goto_2
+    invoke-interface {v8}, Ljava/util/Iterator;->hasNext()Z
+
+    move-result v11
+    :try_end_0
+    .catchall {:try_start_0 .. :try_end_0} :catchall_0
+
+    const/4 v12, 0x2
+
+    const-string/jumbo v13, "vaccination.person."
+
+    if-eqz v11, :cond_5
+
+    :try_start_1
+    invoke-interface {v8}, Ljava/util/Iterator;->next()Ljava/lang/Object;
+
+    move-result-object v11
+
+    move-object v14, v11
+
+    check-cast v14, Ljava/lang/String;
+
+    const-string v15, "it"
+
+    invoke-static {v14, v15}, Lkotlin/jvm/internal/Intrinsics;->checkNotNullExpressionValue(Ljava/lang/Object;Ljava/lang/String;)V
+
+    invoke-static {v14, v13, v10, v12}, Lkotlin/text/StringsKt__StringsJVMKt;->startsWith$default(Ljava/lang/String;Ljava/lang/String;ZI)Z
+
+    move-result v12
+
+    if-eqz v12, :cond_4
+
+    invoke-virtual {v9, v11}, Ljava/util/ArrayList;->add(Ljava/lang/Object;)Z
 
     goto :goto_2
 
     :cond_5
-    invoke-virtual {v6}, Ljava/util/ArrayList;->iterator()Ljava/util/Iterator;
+    invoke-virtual {v9}, Ljava/util/ArrayList;->iterator()Ljava/util/Iterator;
 
-    move-result-object v3
+    move-result-object v8
 
     :goto_3
-    invoke-interface {v3}, Ljava/util/Iterator;->hasNext()Z
+    invoke-interface {v8}, Ljava/util/Iterator;->hasNext()Z
 
-    move-result v6
+    move-result v9
 
-    if-eqz v6, :cond_6
+    if-eqz v9, :cond_6
 
-    invoke-interface {v3}, Ljava/util/Iterator;->next()Ljava/lang/Object;
+    invoke-interface {v8}, Ljava/util/Iterator;->next()Ljava/lang/Object;
 
-    move-result-object v6
+    move-result-object v9
 
-    check-cast v6, Ljava/lang/String;
+    check-cast v9, Ljava/lang/String;
 
-    sget-object v8, Ltimber/log/Timber;->Forest:Ltimber/log/Timber$Forest;
+    sget-object v11, Ltimber/log/Timber;->Forest:Ltimber/log/Timber$Forest;
 
-    invoke-virtual {v8, v0}, Ltimber/log/Timber$Forest;->tag(Ljava/lang/String;)Ltimber/log/Timber$Tree;
+    invoke-virtual {v11, v2}, Ltimber/log/Timber$Forest;->tag(Ljava/lang/String;)Ltimber/log/Timber$Tree;
 
-    const-string v11, "Removing data for %s"
+    const-string v14, "Removing data for %s"
 
-    new-array v12, v5, [Ljava/lang/Object;
+    new-array v15, v6, [Ljava/lang/Object;
 
-    aput-object v6, v12, v7
+    aput-object v9, v15, v10
 
-    invoke-virtual {v8, v11, v12}, Ltimber/log/Timber$Forest;->v(Ljava/lang/String;[Ljava/lang/Object;)V
+    invoke-virtual {v11, v14, v15}, Ltimber/log/Timber$Forest;->v(Ljava/lang/String;[Ljava/lang/Object;)V
 
-    invoke-interface {v2, v6}, Landroid/content/SharedPreferences$Editor;->remove(Ljava/lang/String;)Landroid/content/SharedPreferences$Editor;
+    invoke-interface {v0, v9}, Landroid/content/SharedPreferences$Editor;->remove(Ljava/lang/String;)Landroid/content/SharedPreferences$Editor;
 
     goto :goto_3
 
     :cond_6
-    invoke-interface {p1}, Ljava/lang/Iterable;->iterator()Ljava/util/Iterator;
+    invoke-interface {v5}, Ljava/lang/Iterable;->iterator()Ljava/util/Iterator;
 
-    move-result-object p1
+    move-result-object v5
 
     :goto_4
-    invoke-interface {p1}, Ljava/util/Iterator;->hasNext()Z
+    invoke-interface {v5}, Ljava/util/Iterator;->hasNext()Z
 
-    move-result v3
+    move-result v8
 
-    if-eqz v3, :cond_7
+    if-eqz v8, :cond_8
 
-    invoke-interface {p1}, Ljava/util/Iterator;->next()Ljava/lang/Object;
+    invoke-interface {v5}, Ljava/util/Iterator;->next()Ljava/lang/Object;
 
-    move-result-object v3
+    move-result-object v8
 
-    check-cast v3, Lde/rki/coronawarnapp/covidcertificate/vaccination/core/repository/storage/VaccinatedPersonData;
+    check-cast v8, Lde/rki/coronawarnapp/covidcertificate/vaccination/core/repository/storage/VaccinatedPersonData;
 
-    iget-object v6, v1, Lde/rki/coronawarnapp/covidcertificate/vaccination/core/repository/storage/VaccinationStorage;->gson$delegate:Lkotlin/Lazy;
+    invoke-virtual {v8}, Lde/rki/coronawarnapp/covidcertificate/vaccination/core/repository/storage/VaccinatedPersonData;->getVaccinations()Ljava/util/Set;
 
-    invoke-interface {v6}, Lkotlin/Lazy;->getValue()Ljava/lang/Object;
+    move-result-object v9
 
-    move-result-object v6
+    invoke-interface {v9}, Ljava/util/Collection;->isEmpty()Z
 
-    check-cast v6, Lcom/google/gson/Gson;
+    move-result v9
 
-    invoke-virtual {v6, v3}, Lcom/google/gson/Gson;->toJson(Ljava/lang/Object;)Ljava/lang/String;
+    xor-int/2addr v9, v6
 
-    move-result-object v6
+    if-eqz v9, :cond_7
 
-    invoke-virtual {v3}, Lde/rki/coronawarnapp/covidcertificate/vaccination/core/repository/storage/VaccinatedPersonData;->getIdentifier()Lde/rki/coronawarnapp/covidcertificate/common/certificate/CertificatePersonIdentifier;
+    iget-object v9, v3, Lde/rki/coronawarnapp/covidcertificate/vaccination/core/repository/storage/VaccinationStorage;->gson$delegate:Lkotlin/Lazy;
 
-    move-result-object v3
+    invoke-interface {v9}, Lkotlin/Lazy;->getValue()Ljava/lang/Object;
 
-    sget-object v8, Ltimber/log/Timber;->Forest:Ltimber/log/Timber$Forest;
+    move-result-object v9
 
-    invoke-virtual {v8, v0}, Ltimber/log/Timber$Forest;->tag(Ljava/lang/String;)Ltimber/log/Timber$Tree;
+    check-cast v9, Lcom/google/gson/Gson;
 
-    const-string v11, "Storing vaccinatedPerson %s -> %s"
+    invoke-virtual {v9, v8}, Lcom/google/gson/Gson;->toJson(Ljava/lang/Object;)Ljava/lang/String;
 
-    new-array v12, v9, [Ljava/lang/Object;
+    move-result-object v9
 
-    aput-object v3, v12, v7
+    invoke-virtual {v8}, Lde/rki/coronawarnapp/covidcertificate/vaccination/core/repository/storage/VaccinatedPersonData;->getIdentifier()Lde/rki/coronawarnapp/covidcertificate/common/certificate/CertificatePersonIdentifier;
 
-    aput-object v6, v12, v5
+    move-result-object v11
 
-    invoke-virtual {v8, v11, v12}, Ltimber/log/Timber$Forest;->v(Ljava/lang/String;[Ljava/lang/Object;)V
+    sget-object v14, Ltimber/log/Timber;->Forest:Ltimber/log/Timber$Forest;
 
-    invoke-virtual {v3}, Lde/rki/coronawarnapp/covidcertificate/common/certificate/CertificatePersonIdentifier;->getCode$Corona_Warn_App_deviceRelease()Ljava/lang/String;
+    invoke-virtual {v14, v2}, Ltimber/log/Timber$Forest;->tag(Ljava/lang/String;)Ltimber/log/Timber$Tree;
 
-    move-result-object v3
+    const-string v15, "Storing vaccinatedPerson %s -> %s"
+
+    new-array v7, v12, [Ljava/lang/Object;
+
+    aput-object v11, v7, v10
+
+    invoke-virtual {v8}, Lde/rki/coronawarnapp/covidcertificate/vaccination/core/repository/storage/VaccinatedPersonData;->getVaccinations()Ljava/util/Set;
+
+    move-result-object v8
+
+    invoke-interface {v8}, Ljava/util/Set;->size()I
+
+    move-result v8
+
+    new-instance v10, Ljava/lang/Integer;
+
+    invoke-direct {v10, v8}, Ljava/lang/Integer;-><init>(I)V
+
+    aput-object v10, v7, v6
+
+    invoke-virtual {v14, v15, v7}, Ltimber/log/Timber$Forest;->v(Ljava/lang/String;[Ljava/lang/Object;)V
+
+    invoke-virtual {v11}, Lde/rki/coronawarnapp/covidcertificate/common/certificate/CertificatePersonIdentifier;->getGroupingKey$Corona_Warn_App_deviceRelease()Ljava/lang/String;
+
+    move-result-object v7
 
     new-instance v8, Ljava/lang/StringBuilder;
 
     invoke-direct {v8}, Ljava/lang/StringBuilder;-><init>()V
 
-    invoke-virtual {v8, v10}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+    invoke-virtual {v8, v13}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
 
-    invoke-virtual {v8, v3}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+    invoke-virtual {v8, v7}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
 
     invoke-virtual {v8}, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
 
-    move-result-object v3
+    move-result-object v7
 
-    invoke-interface {v2, v3, v6}, Landroid/content/SharedPreferences$Editor;->putString(Ljava/lang/String;Ljava/lang/String;)Landroid/content/SharedPreferences$Editor;
+    invoke-interface {v0, v7, v9}, Landroid/content/SharedPreferences$Editor;->putString(Ljava/lang/String;Ljava/lang/String;)Landroid/content/SharedPreferences$Editor;
+
+    :cond_7
+    const/4 v7, 0x0
+
+    const/4 v10, 0x0
 
     goto :goto_4
 
-    :cond_7
-    invoke-interface {v2}, Landroid/content/SharedPreferences$Editor;->commit()Z
+    :cond_8
+    invoke-interface {v0}, Landroid/content/SharedPreferences$Editor;->commit()Z
 
-    sget-object p1, Lkotlin/Unit;->INSTANCE:Lkotlin/Unit;
+    sget-object v0, Lkotlin/Unit;->INSTANCE:Lkotlin/Unit;
     :try_end_1
     .catchall {:try_start_1 .. :try_end_1} :catchall_0
 
-    invoke-interface {p2, v4}, Lkotlinx/coroutines/sync/Mutex;->unlock(Ljava/lang/Object;)V
+    const/4 v2, 0x0
 
-    return-object p1
+    invoke-interface {v4, v2}, Lkotlinx/coroutines/sync/Mutex;->unlock(Ljava/lang/Object;)V
+
+    return-object v0
 
     :catchall_0
-    move-exception p1
+    move-exception v0
 
-    invoke-interface {p2, v4}, Lkotlinx/coroutines/sync/Mutex;->unlock(Ljava/lang/Object;)V
+    const/4 v2, 0x0
 
-    throw p1
+    invoke-interface {v4, v2}, Lkotlinx/coroutines/sync/Mutex;->unlock(Ljava/lang/Object;)V
+
+    throw v0
 .end method

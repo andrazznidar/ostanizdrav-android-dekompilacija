@@ -9,44 +9,39 @@
 .end annotation
 
 .annotation runtime Lkotlin/Metadata;
-    bv = {
-        0x1,
-        0x0,
-        0x3
-    }
     d1 = {
-        "\u0000&\n\u0002\u0018\u0002\n\u0002\u0008\u0003\n\u0002\u0010\u000e\n\u0000\n\u0002\u0018\u0002\n\u0002\u0008\u000f\n\u0002\u0018\u0002\n\u0002\u0008\u0004\n\u0002\u0010\u000b\n\u0002\u0008\u0002\u001a\u0018\u0010\u0003\u001a\u00020\u00002\u0006\u0010\u0001\u001a\u00020\u00002\u0006\u0010\u0002\u001a\u00020\u0000H\u0000\u001a \u0010\u0007\u001a\u00020\u00002\u0006\u0010\u0005\u001a\u00020\u00042\u0006\u0010\u0001\u001a\u00020\u00062\u0006\u0010\u0002\u001a\u00020\u0000H\u0000\u001a\u0016\u0010\t\u001a\u00020\u00002\u0006\u0010\u0008\u001a\u00020\u00002\u0006\u0010\u0002\u001a\u00020\u0000\u001a \u0010\u000c\u001a\u00020\u00002\u0006\u0010\n\u001a\u00020\u00002\u0006\u0010\u000b\u001a\u00020\u00002\u0006\u0010\u0002\u001a\u00020\u0000H\u0000\u001a(\u0010\u0010\u001a\u00020\u00002\u0006\u0010\r\u001a\u00020\u00002\u0006\u0010\u000e\u001a\u00020\u00002\u0006\u0010\u000f\u001a\u00020\u00002\u0006\u0010\u0002\u001a\u00020\u0000H\u0000\u001a\u0018\u0010\u0012\u001a\u00020\u00002\u0006\u0010\u0011\u001a\u00020\u00002\u0006\u0010\u0002\u001a\u00020\u0000H\u0000\u001a(\u0010\u0017\u001a\u00020\u00162\u0006\u0010\u0013\u001a\u00020\u00002\u0006\u0010\u0014\u001a\u00020\u00002\u0006\u0010\u0015\u001a\u00020\u00002\u0006\u0010\u0002\u001a\u00020\u0000H\u0000\u001a(\u0010\u001a\u001a\u00020\u00002\u0006\u0010\n\u001a\u00020\u00002\u0006\u0010\u0018\u001a\u00020\u00002\u0006\u0010\u0019\u001a\u00020\u00002\u0006\u0010\u0002\u001a\u00020\u0000H\u0000\u001a\u0010\u0010\u001c\u001a\u00020\u001b2\u0006\u0010\u0015\u001a\u00020\u0000H\u0002\u00a8\u0006\u001d"
+        "\u0000&\n\u0000\n\u0002\u0018\u0002\n\u0002\u0008\u000b\n\u0002\u0010\u000e\n\u0000\n\u0002\u0018\u0002\n\u0002\u0008\u0003\n\u0002\u0018\u0002\n\u0002\u0008\u0008\n\u0002\u0010\u000b\n\u0000\u001a\u0016\u0010\u0000\u001a\u00020\u00012\u0006\u0010\u0002\u001a\u00020\u00012\u0006\u0010\u0003\u001a\u00020\u0001\u001a \u0010\u0004\u001a\u00020\u00012\u0006\u0010\u0005\u001a\u00020\u00012\u0006\u0010\u0006\u001a\u00020\u00012\u0006\u0010\u0003\u001a\u00020\u0001H\u0000\u001a(\u0010\u0007\u001a\u00020\u00012\u0006\u0010\u0008\u001a\u00020\u00012\u0006\u0010\t\u001a\u00020\u00012\u0006\u0010\n\u001a\u00020\u00012\u0006\u0010\u0003\u001a\u00020\u0001H\u0000\u001a \u0010\u000b\u001a\u00020\u00012\u0006\u0010\u000c\u001a\u00020\r2\u0006\u0010\u000e\u001a\u00020\u000f2\u0006\u0010\u0003\u001a\u00020\u0001H\u0000\u001a\u0018\u0010\u0010\u001a\u00020\u00012\u0006\u0010\u0011\u001a\u00020\u00012\u0006\u0010\u0003\u001a\u00020\u0001H\u0000\u001a(\u0010\u0012\u001a\u00020\u00132\u0006\u0010\u0014\u001a\u00020\u00012\u0006\u0010\u0015\u001a\u00020\u00012\u0006\u0010\u0016\u001a\u00020\u00012\u0006\u0010\u0003\u001a\u00020\u0001H\u0000\u001a(\u0010\u0017\u001a\u00020\u00012\u0006\u0010\u0005\u001a\u00020\u00012\u0006\u0010\u0018\u001a\u00020\u00012\u0006\u0010\u0019\u001a\u00020\u00012\u0006\u0010\u0003\u001a\u00020\u0001H\u0000\u001a\u0018\u0010\u001a\u001a\u00020\u00012\u0006\u0010\u000e\u001a\u00020\u00012\u0006\u0010\u0003\u001a\u00020\u0001H\u0000\u001a\u0010\u0010\u001b\u001a\u00020\u001c2\u0006\u0010\u0016\u001a\u00020\u0001H\u0002\u00a8\u0006\u001d"
     }
     d2 = {
-        "Lcom/fasterxml/jackson/databind/JsonNode;",
-        "args",
-        "data",
-        "evaluateVar",
-        "",
-        "operator",
-        "Lcom/fasterxml/jackson/databind/node/ArrayNode;",
-        "evaluateInfix",
-        "expr",
         "evaluate",
+        "Lcom/fasterxml/jackson/databind/JsonNode;",
+        "expr",
+        "data",
+        "evaluateExtractFromUVCI",
         "operand",
         "index",
-        "evaluateExtractFromUVCI",
+        "evaluateIf",
         "guard",
         "then",
         "else_",
-        "evaluateIf",
-        "operandExpr",
+        "evaluateInfix",
+        "operator",
+        "",
+        "args",
+        "Lcom/fasterxml/jackson/databind/node/ArrayNode;",
         "evaluateNot",
+        "operandExpr",
+        "evaluatePlusTime",
+        "Leu/ehn/dcc/certlogic/JsonDateTime;",
         "dateOperand",
         "amount",
         "unit",
-        "Leu/ehn/dcc/certlogic/JsonDateTime;",
-        "evaluatePlusTime",
+        "evaluateReduce",
         "lambda",
         "initial",
-        "evaluateReduce",
-        "",
+        "evaluateVar",
         "isTimeUnit",
+        "",
         "certlogic-kotlin"
     }
     k = 0x2
@@ -55,6 +50,7 @@
         0x5,
         0x1
     }
+    xi = 0x30
 .end annotation
 
 
@@ -74,35 +70,35 @@
 
     if-eqz v0, :cond_0
 
-    goto/16 :goto_f
+    goto/16 :goto_e
 
     :cond_0
     instance-of v0, p0, Lcom/fasterxml/jackson/databind/node/IntNode;
 
     if-eqz v0, :cond_1
 
-    goto/16 :goto_f
+    goto/16 :goto_e
 
     :cond_1
     instance-of v0, p0, Lcom/fasterxml/jackson/databind/node/BooleanNode;
 
     if-eqz v0, :cond_2
 
-    goto/16 :goto_f
+    goto/16 :goto_e
 
     :cond_2
     instance-of v0, p0, Lcom/fasterxml/jackson/databind/node/NullNode;
 
     if-eqz v0, :cond_3
 
-    goto/16 :goto_f
+    goto/16 :goto_e
 
     :cond_3
     instance-of v0, p0, Lcom/fasterxml/jackson/databind/node/ArrayNode;
 
     const/16 v1, 0xa
 
-    if-eqz v0, :cond_6
+    if-eqz v0, :cond_5
 
     sget-object v0, Lcom/fasterxml/jackson/databind/node/JsonNodeFactory;->instance:Lcom/fasterxml/jackson/databind/node/JsonNodeFactory;
 
@@ -148,36 +144,16 @@
     goto :goto_0
 
     :cond_4
-    invoke-virtual {v0}, Ljava/util/ArrayList;->iterator()Ljava/util/Iterator;
+    invoke-virtual {v2, v0}, Lcom/fasterxml/jackson/databind/node/ArrayNode;->addAll(Ljava/util/Collection;)Lcom/fasterxml/jackson/databind/node/ArrayNode;
 
-    move-result-object p0
-
-    :goto_1
-    invoke-interface {p0}, Ljava/util/Iterator;->hasNext()Z
-
-    move-result p1
-
-    if-eqz p1, :cond_5
-
-    invoke-interface {p0}, Ljava/util/Iterator;->next()Ljava/lang/Object;
-
-    move-result-object p1
-
-    check-cast p1, Lcom/fasterxml/jackson/databind/JsonNode;
-
-    invoke-virtual {v2, p1}, Lcom/fasterxml/jackson/databind/node/ArrayNode;->add(Lcom/fasterxml/jackson/databind/JsonNode;)Lcom/fasterxml/jackson/databind/node/ArrayNode;
-
-    goto :goto_1
-
-    :cond_5
     move-object p0, v2
 
-    goto/16 :goto_f
+    goto/16 :goto_e
 
-    :cond_6
+    :cond_5
     instance-of v0, p0, Lcom/fasterxml/jackson/databind/node/ObjectNode;
 
-    if-eqz v0, :cond_29
+    if-eqz v0, :cond_28
 
     invoke-virtual {p0}, Lcom/fasterxml/jackson/databind/JsonNode;->size()I
 
@@ -185,7 +161,7 @@
 
     const/4 v2, 0x1
 
-    if-ne v0, v2, :cond_28
+    if-ne v0, v2, :cond_27
 
     invoke-virtual {p0}, Lcom/fasterxml/jackson/databind/JsonNode;->fields()Ljava/util/Iterator;
 
@@ -219,7 +195,7 @@
 
     move-result v3
 
-    if-eqz v3, :cond_7
+    if-eqz v3, :cond_6
 
     const-string v0, "args"
 
@@ -229,20 +205,20 @@
 
     move-result-object p0
 
-    goto/16 :goto_f
+    goto/16 :goto_e
 
-    :cond_7
+    :cond_6
     instance-of v3, p0, Lcom/fasterxml/jackson/databind/node/ArrayNode;
 
-    if-eqz v3, :cond_27
+    if-eqz v3, :cond_26
 
     invoke-virtual {p0}, Lcom/fasterxml/jackson/databind/JsonNode;->size()I
 
     move-result v3
 
-    if-lez v3, :cond_27
+    if-lez v3, :cond_26
 
-    if-eqz v0, :cond_26
+    if-eqz v0, :cond_25
 
     invoke-virtual {v0}, Ljava/lang/String;->hashCode()I
 
@@ -260,7 +236,7 @@
 
     sparse-switch v3, :sswitch_data_0
 
-    goto/16 :goto_10
+    goto/16 :goto_f
 
     :sswitch_0
     const-string v1, "not-before"
@@ -269,9 +245,9 @@
 
     move-result v1
 
-    if-eqz v1, :cond_26
+    if-eqz v1, :cond_25
 
-    goto/16 :goto_3
+    goto/16 :goto_2
 
     :sswitch_1
     const-string v1, "not-after"
@@ -280,9 +256,9 @@
 
     move-result v1
 
-    if-eqz v1, :cond_26
+    if-eqz v1, :cond_25
 
-    goto/16 :goto_3
+    goto/16 :goto_2
 
     :sswitch_2
     const-string v1, "after"
@@ -291,9 +267,9 @@
 
     move-result v1
 
-    if-eqz v1, :cond_26
+    if-eqz v1, :cond_25
 
-    goto/16 :goto_3
+    goto/16 :goto_2
 
     :sswitch_3
     const-string v1, "and"
@@ -302,9 +278,9 @@
 
     move-result v1
 
-    if-eqz v1, :cond_26
+    if-eqz v1, :cond_25
 
-    goto/16 :goto_3
+    goto/16 :goto_2
 
     :sswitch_4
     const-string v1, "==="
@@ -313,9 +289,9 @@
 
     move-result v1
 
-    if-eqz v1, :cond_26
+    if-eqz v1, :cond_25
 
-    goto/16 :goto_3
+    goto/16 :goto_2
 
     :sswitch_5
     const-string v1, "in"
@@ -324,9 +300,9 @@
 
     move-result v1
 
-    if-eqz v1, :cond_26
+    if-eqz v1, :cond_25
 
-    goto/16 :goto_3
+    goto/16 :goto_2
 
     :sswitch_6
     const-string v1, "if"
@@ -335,7 +311,7 @@
 
     move-result v1
 
-    if-eqz v1, :cond_26
+    if-eqz v1, :cond_25
 
     invoke-virtual {p0, v8}, Lcom/fasterxml/jackson/databind/JsonNode;->get(I)Lcom/fasterxml/jackson/databind/JsonNode;
 
@@ -363,28 +339,28 @@
 
     move-result v2
 
-    if-eqz v2, :cond_8
+    if-eqz v2, :cond_7
 
     invoke-static {v1, p1}, Leu/ehn/dcc/certlogic/CertlogicKt;->evaluate(Lcom/fasterxml/jackson/databind/JsonNode;Lcom/fasterxml/jackson/databind/JsonNode;)Lcom/fasterxml/jackson/databind/JsonNode;
 
     move-result-object p0
 
-    goto/16 :goto_f
+    goto/16 :goto_e
 
-    :cond_8
+    :cond_7
     invoke-static {v0}, Leu/ehn/dcc/certlogic/InternalsKt;->isFalsy(Lcom/fasterxml/jackson/databind/JsonNode;)Z
 
     move-result v1
 
-    if-eqz v1, :cond_9
+    if-eqz v1, :cond_8
 
     invoke-static {p0, p1}, Leu/ehn/dcc/certlogic/CertlogicKt;->evaluate(Lcom/fasterxml/jackson/databind/JsonNode;Lcom/fasterxml/jackson/databind/JsonNode;)Lcom/fasterxml/jackson/databind/JsonNode;
 
     move-result-object p0
 
-    goto/16 :goto_f
+    goto/16 :goto_e
 
-    :cond_9
+    :cond_8
     new-instance p0, Ljava/lang/RuntimeException;
 
     const-string p1, "if-guard evaluates to something neither truthy, nor falsy: "
@@ -404,9 +380,9 @@
 
     move-result v1
 
-    if-eqz v1, :cond_26
+    if-eqz v1, :cond_25
 
-    goto/16 :goto_3
+    goto/16 :goto_2
 
     :sswitch_8
     const-string v1, "<="
@@ -415,9 +391,9 @@
 
     move-result v1
 
-    if-eqz v1, :cond_26
+    if-eqz v1, :cond_25
 
-    goto/16 :goto_3
+    goto/16 :goto_2
 
     :sswitch_9
     const-string v1, ">"
@@ -426,9 +402,9 @@
 
     move-result v1
 
-    if-eqz v1, :cond_26
+    if-eqz v1, :cond_25
 
-    goto/16 :goto_3
+    goto/16 :goto_2
 
     :sswitch_a
     const-string v1, "<"
@@ -437,9 +413,9 @@
 
     move-result v1
 
-    if-eqz v1, :cond_26
+    if-eqz v1, :cond_25
 
-    goto/16 :goto_3
+    goto/16 :goto_2
 
     :sswitch_b
     const-string v1, "+"
@@ -448,9 +424,9 @@
 
     move-result v1
 
-    if-eqz v1, :cond_26
+    if-eqz v1, :cond_25
 
-    goto/16 :goto_3
+    goto/16 :goto_2
 
     :sswitch_c
     const-string v1, "!"
@@ -459,7 +435,7 @@
 
     move-result v1
 
-    if-eqz v1, :cond_26
+    if-eqz v1, :cond_25
 
     invoke-virtual {p0, v8}, Lcom/fasterxml/jackson/databind/JsonNode;->get(I)Lcom/fasterxml/jackson/databind/JsonNode;
 
@@ -475,7 +451,7 @@
 
     move-result p1
 
-    if-eqz p1, :cond_a
+    if-eqz p1, :cond_9
 
     sget-object p0, Lcom/fasterxml/jackson/databind/node/BooleanNode;->TRUE:Lcom/fasterxml/jackson/databind/node/BooleanNode;
 
@@ -483,14 +459,14 @@
 
     invoke-static {p0, p1}, Lkotlin/jvm/internal/Intrinsics;->checkNotNullExpressionValue(Ljava/lang/Object;Ljava/lang/String;)V
 
-    goto/16 :goto_f
+    goto/16 :goto_e
 
-    :cond_a
+    :cond_9
     invoke-static {p0}, Leu/ehn/dcc/certlogic/InternalsKt;->isTruthy(Lcom/fasterxml/jackson/databind/JsonNode;)Z
 
     move-result p1
 
-    if-eqz p1, :cond_b
+    if-eqz p1, :cond_a
 
     sget-object p0, Lcom/fasterxml/jackson/databind/node/BooleanNode;->FALSE:Lcom/fasterxml/jackson/databind/node/BooleanNode;
 
@@ -498,9 +474,9 @@
 
     invoke-static {p0, p1}, Lkotlin/jvm/internal/Intrinsics;->checkNotNullExpressionValue(Ljava/lang/Object;Ljava/lang/String;)V
 
-    goto/16 :goto_f
+    goto/16 :goto_e
 
-    :cond_b
+    :cond_a
     new-instance p1, Ljava/lang/RuntimeException;
 
     const-string v0, "operand of ! evaluates to something neither truthy, nor falsy: "
@@ -520,7 +496,7 @@
 
     move-result v1
 
-    if-eqz v1, :cond_26
+    if-eqz v1, :cond_25
 
     invoke-virtual {p0, v8}, Lcom/fasterxml/jackson/databind/JsonNode;->get(I)Lcom/fasterxml/jackson/databind/JsonNode;
 
@@ -554,7 +530,7 @@
 
     move-result p0
 
-    if-eqz p0, :cond_c
+    if-eqz p0, :cond_b
 
     invoke-virtual {v2}, Leu/ehn/dcc/certlogic/CertlogicKt$evaluateReduce$evalInitial$1;->invoke()Ljava/lang/Object;
 
@@ -562,12 +538,12 @@
 
     check-cast p0, Lcom/fasterxml/jackson/databind/JsonNode;
 
-    goto/16 :goto_f
+    goto/16 :goto_e
 
-    :cond_c
+    :cond_b
     instance-of p0, v0, Lcom/fasterxml/jackson/databind/node/ArrayNode;
 
-    if-eqz p0, :cond_10
+    if-eqz p0, :cond_f
 
     invoke-virtual {v2}, Leu/ehn/dcc/certlogic/CertlogicKt$evaluateReduce$evalInitial$1;->invoke()Ljava/lang/Object;
 
@@ -577,12 +553,12 @@
 
     move-result-object p1
 
-    :goto_2
+    :goto_1
     invoke-interface {p1}, Ljava/util/Iterator;->hasNext()Z
 
     move-result v0
 
-    if-eqz v0, :cond_f
+    if-eqz v0, :cond_e
 
     invoke-interface {p1}, Ljava/util/Iterator;->next()Ljava/lang/Object;
 
@@ -598,26 +574,26 @@
 
     invoke-direct {v3, v2}, Lcom/fasterxml/jackson/databind/node/ObjectNode;-><init>(Lcom/fasterxml/jackson/databind/node/JsonNodeFactory;)V
 
-    if-nez p0, :cond_d
+    if-nez p0, :cond_c
 
     invoke-virtual {v3}, Lcom/fasterxml/jackson/databind/node/ContainerNode;->nullNode()Lcom/fasterxml/jackson/databind/node/NullNode;
 
     move-result-object p0
 
-    :cond_d
+    :cond_c
     iget-object v2, v3, Lcom/fasterxml/jackson/databind/node/ObjectNode;->_children:Ljava/util/Map;
 
     const-string v4, "accumulator"
 
     invoke-interface {v2, v4, p0}, Ljava/util/Map;->put(Ljava/lang/Object;Ljava/lang/Object;)Ljava/lang/Object;
 
-    if-nez v0, :cond_e
+    if-nez v0, :cond_d
 
     invoke-virtual {v3}, Lcom/fasterxml/jackson/databind/node/ContainerNode;->nullNode()Lcom/fasterxml/jackson/databind/node/NullNode;
 
     move-result-object v0
 
-    :cond_e
+    :cond_d
     iget-object p0, v3, Lcom/fasterxml/jackson/databind/node/ObjectNode;->_children:Ljava/util/Map;
 
     const-string v2, "current"
@@ -628,14 +604,14 @@
 
     move-result-object p0
 
-    goto :goto_2
+    goto :goto_1
 
-    :cond_f
+    :cond_e
     check-cast p0, Lcom/fasterxml/jackson/databind/JsonNode;
 
-    goto/16 :goto_f
+    goto/16 :goto_e
 
-    :cond_10
+    :cond_f
     new-instance p0, Ljava/lang/RuntimeException;
 
     const-string p1, "operand of reduce evaluated to a non-null non-array"
@@ -651,16 +627,16 @@
 
     move-result v1
 
-    if-eqz v1, :cond_26
+    if-eqz v1, :cond_25
 
-    :goto_3
+    :goto_2
     check-cast p0, Lcom/fasterxml/jackson/databind/node/ArrayNode;
 
     invoke-static {v0, p0, p1}, Leu/ehn/dcc/certlogic/CertlogicKt;->evaluateInfix(Ljava/lang/String;Lcom/fasterxml/jackson/databind/node/ArrayNode;Lcom/fasterxml/jackson/databind/JsonNode;)Lcom/fasterxml/jackson/databind/JsonNode;
 
     move-result-object p0
 
-    goto/16 :goto_f
+    goto/16 :goto_e
 
     :sswitch_f
     const-string v1, "extractFromUVCI"
@@ -669,7 +645,7 @@
 
     move-result v1
 
-    if-eqz v1, :cond_26
+    if-eqz v1, :cond_25
 
     invoke-virtual {p0, v8}, Lcom/fasterxml/jackson/databind/JsonNode;->get(I)Lcom/fasterxml/jackson/databind/JsonNode;
 
@@ -689,15 +665,15 @@
 
     instance-of v0, p1, Lcom/fasterxml/jackson/databind/node/NullNode;
 
-    if-nez v0, :cond_12
+    if-nez v0, :cond_11
 
     instance-of v0, p1, Lcom/fasterxml/jackson/databind/node/TextNode;
 
-    if-eqz v0, :cond_11
+    if-eqz v0, :cond_10
 
-    goto :goto_4
+    goto :goto_3
 
-    :cond_11
+    :cond_10
     new-instance p0, Ljava/lang/RuntimeException;
 
     const-string p1, "\"UVCI\" argument (#1) of \"extractFromUVCI\" must be either a string or null"
@@ -706,26 +682,26 @@
 
     throw p0
 
-    :cond_12
-    :goto_4
+    :cond_11
+    :goto_3
     instance-of v0, p0, Lcom/fasterxml/jackson/databind/node/IntNode;
 
-    if-eqz v0, :cond_15
+    if-eqz v0, :cond_14
 
     instance-of v0, p1, Lcom/fasterxml/jackson/databind/node/TextNode;
 
-    if-eqz v0, :cond_13
+    if-eqz v0, :cond_12
 
     invoke-virtual {p1}, Lcom/fasterxml/jackson/databind/JsonNode;->asText()Ljava/lang/String;
 
     move-result-object p1
 
-    goto :goto_5
+    goto :goto_4
 
-    :cond_13
+    :cond_12
     const/4 p1, 0x0
 
-    :goto_5
+    :goto_4
     invoke-virtual {p0}, Lcom/fasterxml/jackson/databind/JsonNode;->intValue()I
 
     move-result p0
@@ -734,27 +710,27 @@
 
     move-result-object p0
 
-    if-nez p0, :cond_14
+    if-nez p0, :cond_13
 
     sget-object p0, Lcom/fasterxml/jackson/databind/node/NullNode;->instance:Lcom/fasterxml/jackson/databind/node/NullNode;
 
     const-string p1, "instance"
 
-    goto :goto_6
+    goto :goto_5
 
-    :cond_14
+    :cond_13
     invoke-static {p0}, Lcom/fasterxml/jackson/databind/node/TextNode;->valueOf(Ljava/lang/String;)Lcom/fasterxml/jackson/databind/node/TextNode;
 
     move-result-object p0
 
     const-string p1, "valueOf(result)"
 
-    :goto_6
+    :goto_5
     invoke-static {p0, p1}, Lkotlin/jvm/internal/Intrinsics;->checkNotNullExpressionValue(Ljava/lang/Object;Ljava/lang/String;)V
 
-    goto/16 :goto_f
+    goto/16 :goto_e
 
-    :cond_15
+    :cond_14
     new-instance p0, Ljava/lang/RuntimeException;
 
     const-string p1, "\"index\" argument (#2) of \"extractFromUVCI\" must be an integer"
@@ -770,7 +746,7 @@
 
     move-result v3
 
-    if-eqz v3, :cond_26
+    if-eqz v3, :cond_25
 
     invoke-virtual {p0, v8}, Lcom/fasterxml/jackson/databind/JsonNode;->get(I)Lcom/fasterxml/jackson/databind/JsonNode;
 
@@ -792,17 +768,17 @@
 
     instance-of v4, v3, Lcom/fasterxml/jackson/databind/node/IntNode;
 
-    if-eqz v4, :cond_25
+    if-eqz v4, :cond_24
 
     instance-of v4, p0, Lcom/fasterxml/jackson/databind/node/TextNode;
 
     const-string v5, "unit.textValue()"
 
-    if-nez v4, :cond_16
+    if-nez v4, :cond_15
 
-    goto :goto_7
+    goto :goto_6
 
-    :cond_16
+    :cond_15
     :try_start_0
     invoke-virtual {p0}, Lcom/fasterxml/jackson/databind/JsonNode;->textValue()Ljava/lang/String;
 
@@ -816,16 +792,16 @@
 
     move v4, v2
 
-    goto :goto_8
+    goto :goto_7
 
     :catch_0
-    :goto_7
+    :goto_6
     move v4, v8
 
-    :goto_8
+    :goto_7
     const/4 v6, 0x4
 
-    if-nez v4, :cond_18
+    if-nez v4, :cond_17
 
     invoke-static {}, Leu/ehn/dcc/certlogic/TimeUnit;->values()[Leu/ehn/dcc/certlogic/TimeUnit;
 
@@ -835,8 +811,8 @@
 
     invoke-direct {p1, v6}, Ljava/util/ArrayList;-><init>(I)V
 
-    :goto_9
-    if-ge v8, v6, :cond_17
+    :goto_8
+    if-ge v8, v6, :cond_16
 
     aget-object v0, p0, v8
 
@@ -848,9 +824,9 @@
 
     add-int/lit8 v8, v8, 0x1
 
-    goto :goto_9
+    goto :goto_8
 
-    :cond_17
+    :cond_16
     const-string p0, "\"unit\" argument (#3) of \"plusTime\" must be a string with one of the time units: "
 
     invoke-static {p0, p1}, Lkotlin/jvm/internal/Intrinsics;->stringPlus(Ljava/lang/String;Ljava/lang/Object;)Ljava/lang/String;
@@ -863,7 +839,7 @@
 
     throw p1
 
-    :cond_18
+    :cond_17
     invoke-virtual {p0}, Lcom/fasterxml/jackson/databind/JsonNode;->textValue()Ljava/lang/String;
 
     move-result-object p0
@@ -880,7 +856,7 @@
 
     instance-of v0, p1, Lcom/fasterxml/jackson/databind/node/TextNode;
 
-    if-eqz v0, :cond_24
+    if-eqz v0, :cond_23
 
     invoke-virtual {p1}, Lcom/fasterxml/jackson/databind/JsonNode;->asText()Ljava/lang/String;
 
@@ -896,7 +872,7 @@
 
     const/4 v4, 0x3
 
-    if-eqz v0, :cond_19
+    if-eqz v0, :cond_18
 
     new-instance v0, Ljava/lang/StringBuilder;
 
@@ -916,9 +892,9 @@
 
     move-result-object p1
 
-    goto/16 :goto_d
+    goto/16 :goto_c
 
-    :cond_19
+    :cond_18
     const-string v0, "^(\\d{4})-(\\d{2})-(\\d{2})T(\\d{2}):(\\d{2}):(\\d{2})(\\.\\d+?)?(Z|(([+-])(\\d{1,2}):?(\\d{2})?))?$"
 
     invoke-static {v0}, Ljava/util/regex/Pattern;->compile(Ljava/lang/String;)Ljava/util/regex/Pattern;
@@ -933,7 +909,7 @@
 
     move-result v5
 
-    if-eqz v5, :cond_23
+    if-eqz v5, :cond_22
 
     const/4 p1, 0x6
 
@@ -989,7 +965,7 @@
 
     move-result-object v9
 
-    if-eqz v9, :cond_1a
+    if-eqz v9, :cond_19
 
     invoke-static {p1}, Landroid/support/v4/media/RatingCompat$$ExternalSyntheticOutline0;->m(Ljava/lang/String;)Ljava/lang/StringBuilder;
 
@@ -1027,7 +1003,7 @@
 
     move-result-object p1
 
-    :cond_1a
+    :cond_19
     const/16 v5, 0x8
 
     invoke-virtual {v0, v5}, Ljava/util/regex/Matcher;->group(I)Ljava/lang/String;
@@ -1036,7 +1012,7 @@
 
     const-string v9, "Z"
 
-    if-eqz v6, :cond_1d
+    if-eqz v6, :cond_1c
 
     invoke-virtual {v0, v5}, Ljava/util/regex/Matcher;->group(I)Ljava/lang/String;
 
@@ -1046,11 +1022,11 @@
 
     move-result v5
 
-    if-eqz v5, :cond_1b
+    if-eqz v5, :cond_1a
 
-    goto :goto_b
+    goto :goto_a
 
-    :cond_1b
+    :cond_1a
     invoke-static {p1}, Landroid/support/v4/media/RatingCompat$$ExternalSyntheticOutline0;->m(Ljava/lang/String;)Ljava/lang/StringBuilder;
 
     move-result-object p1
@@ -1097,60 +1073,60 @@
 
     move-result-object v5
 
-    if-eqz v5, :cond_1c
+    if-eqz v5, :cond_1b
 
     invoke-virtual {v0, v1}, Ljava/util/regex/Matcher;->group(I)Ljava/lang/String;
 
     move-result-object v0
 
-    goto :goto_a
+    goto :goto_9
 
-    :cond_1c
+    :cond_1b
     const-string v0, "00"
 
-    :goto_a
+    :goto_9
     invoke-virtual {p1, v0}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
 
     invoke-virtual {p1}, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
 
     move-result-object p1
 
-    goto :goto_c
+    goto :goto_b
 
-    :cond_1d
-    :goto_b
+    :cond_1c
+    :goto_a
     invoke-static {p1, v9}, Landroidx/appcompat/view/SupportMenuInflater$$ExternalSyntheticOutline0;->m(Ljava/lang/String;Ljava/lang/String;)Ljava/lang/String;
 
     move-result-object p1
 
-    :goto_c
+    :goto_b
     invoke-static {p1}, Leu/ehn/dcc/certlogic/JsonDateTime;->fromStringInternal(Ljava/lang/String;)Leu/ehn/dcc/certlogic/JsonDateTime;
 
     move-result-object p1
 
-    :goto_d
+    :goto_c
     invoke-virtual {v3}, Lcom/fasterxml/jackson/databind/JsonNode;->intValue()I
 
     move-result v0
 
-    if-nez v0, :cond_1e
+    if-nez v0, :cond_1d
 
     move-object p0, p1
 
-    goto :goto_e
+    goto :goto_d
 
-    :cond_1e
+    :cond_1d
     invoke-virtual {p0}, Ljava/lang/Enum;->ordinal()I
 
     move-result v1
 
-    if-eqz v1, :cond_22
+    if-eqz v1, :cond_21
 
-    if-eq v1, v2, :cond_21
+    if-eq v1, v2, :cond_20
 
-    if-eq v1, v7, :cond_20
+    if-eq v1, v7, :cond_1f
 
-    if-ne v1, v4, :cond_1f
+    if-ne v1, v4, :cond_1e
 
     new-instance p0, Leu/ehn/dcc/certlogic/JsonDateTime;
 
@@ -1164,9 +1140,9 @@
 
     invoke-direct {p0, p1}, Leu/ehn/dcc/certlogic/JsonDateTime;-><init>(Lj$/time/OffsetDateTime;)V
 
-    goto :goto_e
+    goto :goto_d
 
-    :cond_1f
+    :cond_1e
     new-instance p1, Ljava/lang/RuntimeException;
 
     new-array v0, v2, [Ljava/lang/Object;
@@ -1183,7 +1159,7 @@
 
     throw p1
 
-    :cond_20
+    :cond_1f
     new-instance p0, Leu/ehn/dcc/certlogic/JsonDateTime;
 
     iget-object p1, p1, Leu/ehn/dcc/certlogic/JsonDateTime;->_value:Lj$/time/OffsetDateTime;
@@ -1196,9 +1172,9 @@
 
     invoke-direct {p0, p1}, Leu/ehn/dcc/certlogic/JsonDateTime;-><init>(Lj$/time/OffsetDateTime;)V
 
-    goto :goto_e
+    goto :goto_d
 
-    :cond_21
+    :cond_20
     new-instance p0, Leu/ehn/dcc/certlogic/JsonDateTime;
 
     iget-object p1, p1, Leu/ehn/dcc/certlogic/JsonDateTime;->_value:Lj$/time/OffsetDateTime;
@@ -1211,9 +1187,9 @@
 
     invoke-direct {p0, p1}, Leu/ehn/dcc/certlogic/JsonDateTime;-><init>(Lj$/time/OffsetDateTime;)V
 
-    goto :goto_e
+    goto :goto_d
 
-    :cond_22
+    :cond_21
     new-instance p0, Leu/ehn/dcc/certlogic/JsonDateTime;
 
     iget-object p1, p1, Leu/ehn/dcc/certlogic/JsonDateTime;->_value:Lj$/time/OffsetDateTime;
@@ -1226,15 +1202,15 @@
 
     invoke-direct {p0, p1}, Leu/ehn/dcc/certlogic/JsonDateTime;-><init>(Lj$/time/OffsetDateTime;)V
 
-    :goto_e
+    :goto_d
     const-string p1, "fromString(dateTimeStr.asText()).plusTime(amount.intValue(), timeUnit)"
 
     invoke-static {p0, p1}, Lkotlin/jvm/internal/Intrinsics;->checkNotNullExpressionValue(Ljava/lang/Object;Ljava/lang/String;)V
 
-    :goto_f
+    :goto_e
     return-object p0
 
-    :cond_23
+    :cond_22
     new-instance p0, Lj$/time/format/DateTimeParseException;
 
     const-string v0, "not an allowed date or date-time format"
@@ -1243,7 +1219,7 @@
 
     throw p0
 
-    :cond_24
+    :cond_23
     new-instance p0, Ljava/lang/RuntimeException;
 
     const-string p1, "date argument of \"plusTime\" must be a string"
@@ -1252,7 +1228,7 @@
 
     throw p0
 
-    :cond_25
+    :cond_24
     new-instance p0, Ljava/lang/RuntimeException;
 
     const-string p1, "\"amount\" argument (#2) of \"plusTime\" must be an integer"
@@ -1261,8 +1237,8 @@
 
     throw p0
 
-    :cond_26
-    :goto_10
+    :cond_25
+    :goto_f
     new-instance p0, Ljava/lang/RuntimeException;
 
     new-instance p1, Ljava/lang/StringBuilder;
@@ -1287,7 +1263,7 @@
 
     throw p0
 
-    :cond_27
+    :cond_26
     new-instance p0, Ljava/lang/RuntimeException;
 
     const-string p1, "operation not of the form { \"<operator>\": [ <args...> ] }"
@@ -1296,7 +1272,7 @@
 
     throw p0
 
-    :cond_28
+    :cond_27
     new-instance p0, Ljava/lang/RuntimeException;
 
     const-string p1, "unrecognised expression object encountered"
@@ -1305,7 +1281,7 @@
 
     throw p0
 
-    :cond_29
+    :cond_28
     new-instance p1, Ljava/lang/RuntimeException;
 
     const-string v0, "invalid CertLogic expression: "
@@ -1317,8 +1293,6 @@
     invoke-direct {p1, p0}, Ljava/lang/RuntimeException;-><init>(Ljava/lang/String;)V
 
     throw p1
-
-    nop
 
     :sswitch_data_0
     .sparse-switch
@@ -1508,7 +1482,7 @@
 
     const-string p2, "\" must have 2 or 3 operands"
 
-    invoke-static {v1, p0, p2}, Landroidx/core/graphics/PathParser$$ExternalSyntheticOutline0;->m(Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;)Ljava/lang/String;
+    invoke-static {v1, p0, p2}, Landroidx/concurrent/futures/AbstractResolvableFuture$$ExternalSyntheticOutline1;->m(Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;)Ljava/lang/String;
 
     move-result-object p0
 
@@ -2169,7 +2143,7 @@
 
     const-string p2, "\" must have 2 operands"
 
-    invoke-static {v1, p0, p2}, Landroidx/core/graphics/PathParser$$ExternalSyntheticOutline0;->m(Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;)Ljava/lang/String;
+    invoke-static {v1, p0, p2}, Landroidx/concurrent/futures/AbstractResolvableFuture$$ExternalSyntheticOutline1;->m(Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;)Ljava/lang/String;
 
     move-result-object p0
 

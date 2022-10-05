@@ -60,7 +60,7 @@
 
     if-nez v2, :cond_0
 
-    sget-object v0, Lcom/google/android/play/core/appupdate/zzq;->zzb:Lkotlin/jvm/internal/SpreadBuilder;
+    sget-object v0, Lcom/google/android/play/core/appupdate/zzq;->zzb:Lcom/google/android/play/core/internal/zzag;
 
     new-array v1, v4, [Ljava/lang/Object;
 
@@ -72,13 +72,13 @@
 
     aput-object v4, v1, v3
 
-    const-string v4, "onError(%d)"
+    const-string v3, "onError(%d)"
 
-    invoke-virtual {v0, v4, v1}, Lkotlin/jvm/internal/SpreadBuilder;->zzb(Ljava/lang/String;[Ljava/lang/Object;)I
+    invoke-virtual {v0, v3, v1}, Lcom/google/android/play/core/internal/zzag;->zzb(Ljava/lang/String;[Ljava/lang/Object;)I
 
     new-instance v0, Lcom/google/android/play/core/install/InstallException;
 
-    invoke-direct {v0, v2, v3}, Lcom/google/android/play/core/install/InstallException;-><init>(II)V
+    invoke-direct {v0, v2}, Lcom/google/android/play/core/install/InstallException;-><init>(I)V
 
     new-instance v1, Lcom/google/android/play/core/tasks/zzm;
 
@@ -89,7 +89,7 @@
     goto :goto_0
 
     :cond_0
-    sget-object v2, Lcom/google/android/play/core/appupdate/zzq;->zzb:Lkotlin/jvm/internal/SpreadBuilder;
+    sget-object v2, Lcom/google/android/play/core/appupdate/zzq;->zzb:Lcom/google/android/play/core/internal/zzag;
 
     new-array v4, v4, [Ljava/lang/Object;
 
@@ -97,7 +97,7 @@
 
     const-string v3, "requestUpdateInfo(%s)"
 
-    invoke-virtual {v2, v3, v4}, Lkotlin/jvm/internal/SpreadBuilder;->zzd(Ljava/lang/String;[Ljava/lang/Object;)I
+    invoke-virtual {v2, v3, v4}, Lcom/google/android/play/core/internal/zzag;->zzd(Ljava/lang/String;[Ljava/lang/Object;)I
 
     new-instance v2, Lcom/google/android/play/core/tasks/zzi;
 
@@ -245,7 +245,7 @@
 
     const-string p3, "Missing required properties:"
 
-    invoke-static {p4, p3, p1}, Landroidx/constraintlayout/core/widgets/Barrier$$ExternalSyntheticOutline0;->m(Ljava/lang/StringBuilder;Ljava/lang/String;Ljava/lang/String;)Ljava/lang/String;
+    invoke-static {p4, p3, p1}, Landroidx/activity/ComponentActivity$2$$ExternalSyntheticOutline0;->m(Ljava/lang/StringBuilder;Ljava/lang/String;Ljava/lang/String;)Ljava/lang/String;
 
     move-result-object p1
 

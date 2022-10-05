@@ -44,6 +44,57 @@
     return-wide p1
 .end method
 
+.method public add(Lorg/joda/time/ReadablePeriod;JI)J
+    .locals 7
+
+    if-eqz p4, :cond_1
+
+    const/4 v0, 0x0
+
+    invoke-interface {p1}, Lorg/joda/time/ReadablePeriod;->size()I
+
+    move-result v1
+
+    :goto_0
+    if-ge v0, v1, :cond_1
+
+    invoke-interface {p1, v0}, Lorg/joda/time/ReadablePeriod;->getValue(I)I
+
+    move-result v2
+
+    int-to-long v2, v2
+
+    const-wide/16 v4, 0x0
+
+    cmp-long v4, v2, v4
+
+    if-eqz v4, :cond_0
+
+    invoke-interface {p1, v0}, Lorg/joda/time/ReadablePeriod;->getFieldType(I)Lorg/joda/time/DurationFieldType;
+
+    move-result-object v4
+
+    invoke-virtual {v4, p0}, Lorg/joda/time/DurationFieldType;->getField(Lorg/joda/time/Chronology;)Lorg/joda/time/DurationField;
+
+    move-result-object v4
+
+    int-to-long v5, p4
+
+    mul-long/2addr v2, v5
+
+    invoke-virtual {v4, p2, p3, v2, v3}, Lorg/joda/time/DurationField;->add(JJ)J
+
+    move-result-wide p2
+
+    :cond_0
+    add-int/lit8 v0, v0, 0x1
+
+    goto :goto_0
+
+    :cond_1
+    return-wide p2
+.end method
+
 .method public centuries()Lorg/joda/time/DurationField;
     .locals 1
 

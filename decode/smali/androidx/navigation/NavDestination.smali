@@ -454,7 +454,7 @@
     return-object v1
 .end method
 
-.method public matchDeepLink(Lorg/slf4j/event/EventRecodingLogger;)Landroidx/navigation/NavDestination$DeepLinkMatch;
+.method public matchDeepLink(Landroidx/navigation/NavDeepLinkRequest;)Landroidx/navigation/NavDestination$DeepLinkMatch;
     .locals 18
 
     move-object/from16 v6, p0
@@ -489,9 +489,7 @@
 
     check-cast v0, Landroidx/navigation/NavDeepLink;
 
-    iget-object v1, v7, Lorg/slf4j/event/EventRecodingLogger;->logger:Ljava/lang/Object;
-
-    check-cast v1, Landroid/net/Uri;
+    iget-object v1, v7, Landroidx/navigation/NavDeepLinkRequest;->mUri:Landroid/net/Uri;
 
     if-eqz v1, :cond_c
 
@@ -739,9 +737,7 @@
     const/4 v2, 0x0
 
     :goto_6
-    iget-object v1, v7, Lorg/slf4j/event/EventRecodingLogger;->name:Ljava/lang/Object;
-
-    check-cast v1, Ljava/lang/String;
+    iget-object v1, v7, Landroidx/navigation/NavDeepLinkRequest;->mAction:Ljava/lang/String;
 
     if-eqz v1, :cond_d
 
@@ -763,9 +759,7 @@
     const/4 v4, 0x0
 
     :goto_7
-    iget-object v1, v7, Lorg/slf4j/event/EventRecodingLogger;->eventQueue:Ljava/lang/Object;
-
-    check-cast v1, Ljava/lang/String;
+    iget-object v1, v7, Landroidx/navigation/NavDeepLinkRequest;->mMimeType:Ljava/lang/String;
 
     const/4 v3, -0x1
 

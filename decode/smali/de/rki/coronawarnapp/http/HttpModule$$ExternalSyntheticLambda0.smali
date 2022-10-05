@@ -1,17 +1,27 @@
 .class public final synthetic Lde/rki/coronawarnapp/http/HttpModule$$ExternalSyntheticLambda0;
 .super Ljava/lang/Object;
+.source "R8$$SyntheticClass"
 
 # interfaces
+.implements Lpabeles/concurrency/ConcurrencyOps$NewInstance;
 .implements Lokhttp3/logging/HttpLoggingInterceptor$Logger;
 
 
 # static fields
 .field public static final synthetic INSTANCE:Lde/rki/coronawarnapp/http/HttpModule$$ExternalSyntheticLambda0;
 
+.field public static final synthetic INSTANCE$1:Lde/rki/coronawarnapp/http/HttpModule$$ExternalSyntheticLambda0;
+
 
 # direct methods
-.method public static synthetic constructor <clinit>()V
+.method static synthetic constructor <clinit>()V
     .locals 1
+
+    new-instance v0, Lde/rki/coronawarnapp/http/HttpModule$$ExternalSyntheticLambda0;
+
+    invoke-direct {v0}, Lde/rki/coronawarnapp/http/HttpModule$$ExternalSyntheticLambda0;-><init>()V
+
+    sput-object v0, Lde/rki/coronawarnapp/http/HttpModule$$ExternalSyntheticLambda0;->INSTANCE$1:Lde/rki/coronawarnapp/http/HttpModule$$ExternalSyntheticLambda0;
 
     new-instance v0, Lde/rki/coronawarnapp/http/HttpModule$$ExternalSyntheticLambda0;
 
@@ -32,7 +42,7 @@
 
 
 # virtual methods
-.method public final log(Ljava/lang/String;)V
+.method public log(Ljava/lang/String;)V
     .locals 2
 
     const-string v0, "message"
@@ -52,4 +62,14 @@
     invoke-virtual {v0, p1, v1}, Ltimber/log/Timber$Forest;->v(Ljava/lang/String;[Ljava/lang/Object;)V
 
     return-void
+.end method
+
+.method public newInstance()Ljava/lang/Object;
+    .locals 1
+
+    new-instance v0, Lorg/ddogleg/struct/DogArray_F32;
+
+    invoke-direct {v0}, Lorg/ddogleg/struct/DogArray_F32;-><init>()V
+
+    return-object v0
 .end method

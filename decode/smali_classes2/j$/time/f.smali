@@ -128,15 +128,15 @@
 
     const-wide/32 v0, 0x3b9aca00
 
-    invoke-static {p2, p3, v0, v1}, Lj$/lang/d;->e(JJ)J
+    invoke-static {p2, p3, v0, v1}, Lj$/time/c;->d(JJ)J
 
     move-result-wide v2
 
-    invoke-static {p0, p1, v2, v3}, Lj$/lang/d;->c(JJ)J
+    invoke-static {p0, p1, v2, v3}, Lj$/time/c;->b(JJ)J
 
     move-result-wide p0
 
-    invoke-static {p2, p3, v0, v1}, Lj$/lang/d;->d(JJ)J
+    invoke-static {p2, p3, v0, v1}, Lj$/time/c;->c(JJ)J
 
     move-result-wide p2
 
@@ -373,15 +373,13 @@
 
     if-gez v0, :cond_6
 
+    const-wide/32 v3, 0x77359400
+
     iget v0, p0, Lj$/time/f;->b:I
 
-    int-to-long v3, v0
+    int-to-long v5, v0
 
-    const-wide/32 v5, 0x77359400
-
-    sub-long/2addr v5, v3
-
-    invoke-virtual {v1, v5, v6}, Ljava/lang/StringBuilder;->append(J)Ljava/lang/StringBuilder;
+    sub-long/2addr v3, v5
 
     goto :goto_1
 
@@ -394,9 +392,10 @@
 
     add-long/2addr v3, v5
 
+    :goto_1
     invoke-virtual {v1, v3, v4}, Ljava/lang/StringBuilder;->append(J)Ljava/lang/StringBuilder;
 
-    :goto_1
+    :goto_2
     invoke-virtual {v1}, Ljava/lang/StringBuilder;->length()I
 
     move-result v0
@@ -419,7 +418,7 @@
 
     invoke-virtual {v1, v0}, Ljava/lang/StringBuilder;->setLength(I)V
 
-    goto :goto_1
+    goto :goto_2
 
     :cond_7
     const/16 v0, 0x2e

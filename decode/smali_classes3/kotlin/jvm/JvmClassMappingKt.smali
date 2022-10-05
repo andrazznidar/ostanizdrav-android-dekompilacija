@@ -6,17 +6,8 @@
 # direct methods
 .method public static final getAnnotationClass(Ljava/lang/annotation/Annotation;)Lkotlin/reflect/KClass;
     .locals 1
-    .annotation system Ldalvik/annotation/Signature;
-        value = {
-            "<T::",
-            "Ljava/lang/annotation/Annotation;",
-            ">(TT;)",
-            "Lkotlin/reflect/KClass<",
-            "+TT;>;"
-        }
-    .end annotation
 
-    const-string v0, "$this$annotationClass"
+    const-string v0, "<this>"
 
     invoke-static {p0, v0}, Lkotlin/jvm/internal/Intrinsics;->checkNotNullParameter(Ljava/lang/Object;Ljava/lang/String;)V
 
@@ -24,7 +15,7 @@
 
     move-result-object p0
 
-    const-string v0, "(this as java.lang.annot\u2026otation).annotationType()"
+    const-string v0, "this as java.lang.annota\u2026otation).annotationType()"
 
     invoke-static {p0, v0}, Lkotlin/jvm/internal/Intrinsics;->checkNotNullExpressionValue(Ljava/lang/Object;Ljava/lang/String;)V
 
@@ -32,28 +23,13 @@
 
     move-result-object p0
 
-    const-string v0, "null cannot be cast to non-null type kotlin.reflect.KClass<out T>"
-
-    invoke-static {p0, v0}, Ljava/util/Objects;->requireNonNull(Ljava/lang/Object;Ljava/lang/String;)Ljava/lang/Object;
-
     return-object p0
 .end method
 
 .method public static final getJavaClass(Lkotlin/reflect/KClass;)Ljava/lang/Class;
     .locals 1
-    .annotation system Ldalvik/annotation/Signature;
-        value = {
-            "<T:",
-            "Ljava/lang/Object;",
-            ">(",
-            "Lkotlin/reflect/KClass<",
-            "TT;>;)",
-            "Ljava/lang/Class<",
-            "TT;>;"
-        }
-    .end annotation
 
-    const-string v0, "$this$java"
+    const-string v0, "<this>"
 
     invoke-static {p0, v0}, Lkotlin/jvm/internal/Intrinsics;->checkNotNullParameter(Ljava/lang/Object;Ljava/lang/String;)V
 
@@ -63,28 +39,13 @@
 
     move-result-object p0
 
-    const-string v0, "null cannot be cast to non-null type java.lang.Class<T>"
-
-    invoke-static {p0, v0}, Ljava/util/Objects;->requireNonNull(Ljava/lang/Object;Ljava/lang/String;)Ljava/lang/Object;
-
     return-object p0
 .end method
 
 .method public static final getJavaObjectType(Lkotlin/reflect/KClass;)Ljava/lang/Class;
     .locals 2
-    .annotation system Ldalvik/annotation/Signature;
-        value = {
-            "<T:",
-            "Ljava/lang/Object;",
-            ">(",
-            "Lkotlin/reflect/KClass<",
-            "TT;>;)",
-            "Ljava/lang/Class<",
-            "TT;>;"
-        }
-    .end annotation
 
-    const-string v0, "$this$javaObjectType"
+    const-string v0, "<this>"
 
     invoke-static {p0, v0}, Lkotlin/jvm/internal/Intrinsics;->checkNotNullParameter(Ljava/lang/Object;Ljava/lang/String;)V
 
@@ -113,7 +74,7 @@
 
     sparse-switch v1, :sswitch_data_0
 
-    goto :goto_0
+    goto/16 :goto_0
 
     :sswitch_0
     const-string v1, "short"
@@ -122,11 +83,14 @@
 
     move-result v0
 
-    if-eqz v0, :cond_1
+    if-nez v0, :cond_1
 
+    goto/16 :goto_0
+
+    :cond_1
     const-class p0, Ljava/lang/Short;
 
-    goto :goto_0
+    goto/16 :goto_0
 
     :sswitch_1
     const-string v1, "float"
@@ -135,8 +99,11 @@
 
     move-result v0
 
-    if-eqz v0, :cond_1
+    if-nez v0, :cond_2
 
+    goto :goto_0
+
+    :cond_2
     const-class p0, Ljava/lang/Float;
 
     goto :goto_0
@@ -148,8 +115,11 @@
 
     move-result v0
 
-    if-eqz v0, :cond_1
+    if-nez v0, :cond_3
 
+    goto :goto_0
+
+    :cond_3
     const-class p0, Ljava/lang/Boolean;
 
     goto :goto_0
@@ -161,8 +131,11 @@
 
     move-result v0
 
-    if-eqz v0, :cond_1
+    if-nez v0, :cond_4
 
+    goto :goto_0
+
+    :cond_4
     const-class p0, Ljava/lang/Void;
 
     goto :goto_0
@@ -174,8 +147,11 @@
 
     move-result v0
 
-    if-eqz v0, :cond_1
+    if-nez v0, :cond_5
 
+    goto :goto_0
+
+    :cond_5
     const-class p0, Ljava/lang/Long;
 
     goto :goto_0
@@ -187,8 +163,11 @@
 
     move-result v0
 
-    if-eqz v0, :cond_1
+    if-nez v0, :cond_6
 
+    goto :goto_0
+
+    :cond_6
     const-class p0, Ljava/lang/Character;
 
     goto :goto_0
@@ -200,8 +179,11 @@
 
     move-result v0
 
-    if-eqz v0, :cond_1
+    if-nez v0, :cond_7
 
+    goto :goto_0
+
+    :cond_7
     const-class p0, Ljava/lang/Byte;
 
     goto :goto_0
@@ -213,8 +195,11 @@
 
     move-result v0
 
-    if-eqz v0, :cond_1
+    if-nez v0, :cond_8
 
+    goto :goto_0
+
+    :cond_8
     const-class p0, Ljava/lang/Integer;
 
     goto :goto_0
@@ -226,11 +211,13 @@
 
     move-result v0
 
-    if-eqz v0, :cond_1
+    if-nez v0, :cond_9
 
+    goto :goto_0
+
+    :cond_9
     const-class p0, Ljava/lang/Double;
 
-    :cond_1
     :goto_0
     return-object p0
 
@@ -252,19 +239,8 @@
 
 .method public static final getJavaPrimitiveType(Lkotlin/reflect/KClass;)Ljava/lang/Class;
     .locals 1
-    .annotation system Ldalvik/annotation/Signature;
-        value = {
-            "<T:",
-            "Ljava/lang/Object;",
-            ">(",
-            "Lkotlin/reflect/KClass<",
-            "TT;>;)",
-            "Ljava/lang/Class<",
-            "TT;>;"
-        }
-    .end annotation
 
-    const-string v0, "$this$javaPrimitiveType"
+    const-string v0, "<this>"
 
     invoke-static {p0, v0}, Lkotlin/jvm/internal/Intrinsics;->checkNotNullParameter(Ljava/lang/Object;Ljava/lang/String;)V
 
@@ -302,11 +278,14 @@
 
     move-result p0
 
-    if-eqz p0, :cond_1
+    if-nez p0, :cond_1
 
+    goto/16 :goto_0
+
+    :cond_1
     sget-object p0, Ljava/lang/Double;->TYPE:Ljava/lang/Class;
 
-    goto :goto_1
+    goto/16 :goto_1
 
     :sswitch_1
     const-string v0, "java.lang.Void"
@@ -315,8 +294,11 @@
 
     move-result p0
 
-    if-eqz p0, :cond_1
+    if-nez p0, :cond_2
 
+    goto :goto_0
+
+    :cond_2
     sget-object p0, Ljava/lang/Void;->TYPE:Ljava/lang/Class;
 
     goto :goto_1
@@ -328,8 +310,11 @@
 
     move-result p0
 
-    if-eqz p0, :cond_1
+    if-nez p0, :cond_3
 
+    goto :goto_0
+
+    :cond_3
     sget-object p0, Ljava/lang/Long;->TYPE:Ljava/lang/Class;
 
     goto :goto_1
@@ -341,8 +326,11 @@
 
     move-result p0
 
-    if-eqz p0, :cond_1
+    if-nez p0, :cond_4
 
+    goto :goto_0
+
+    :cond_4
     sget-object p0, Ljava/lang/Byte;->TYPE:Ljava/lang/Class;
 
     goto :goto_1
@@ -354,8 +342,11 @@
 
     move-result p0
 
-    if-eqz p0, :cond_1
+    if-nez p0, :cond_5
 
+    goto :goto_0
+
+    :cond_5
     sget-object p0, Ljava/lang/Boolean;->TYPE:Ljava/lang/Class;
 
     goto :goto_1
@@ -367,8 +358,11 @@
 
     move-result p0
 
-    if-eqz p0, :cond_1
+    if-nez p0, :cond_6
 
+    goto :goto_0
+
+    :cond_6
     sget-object p0, Ljava/lang/Character;->TYPE:Ljava/lang/Class;
 
     goto :goto_1
@@ -380,8 +374,11 @@
 
     move-result p0
 
-    if-eqz p0, :cond_1
+    if-nez p0, :cond_7
 
+    goto :goto_0
+
+    :cond_7
     sget-object p0, Ljava/lang/Short;->TYPE:Ljava/lang/Class;
 
     goto :goto_1
@@ -393,8 +390,11 @@
 
     move-result p0
 
-    if-eqz p0, :cond_1
+    if-nez p0, :cond_8
 
+    goto :goto_0
+
+    :cond_8
     sget-object p0, Ljava/lang/Float;->TYPE:Ljava/lang/Class;
 
     goto :goto_1
@@ -406,18 +406,22 @@
 
     move-result p0
 
-    if-eqz p0, :cond_1
+    if-nez p0, :cond_9
 
+    goto :goto_0
+
+    :cond_9
     sget-object p0, Ljava/lang/Integer;->TYPE:Ljava/lang/Class;
 
     goto :goto_1
 
-    :cond_1
     :goto_0
     const/4 p0, 0x0
 
     :goto_1
     return-object p0
+
+    nop
 
     :sswitch_data_0
     .sparse-switch
@@ -435,19 +439,8 @@
 
 .method public static final getKotlinClass(Ljava/lang/Class;)Lkotlin/reflect/KClass;
     .locals 1
-    .annotation system Ldalvik/annotation/Signature;
-        value = {
-            "<T:",
-            "Ljava/lang/Object;",
-            ">(",
-            "Ljava/lang/Class<",
-            "TT;>;)",
-            "Lkotlin/reflect/KClass<",
-            "TT;>;"
-        }
-    .end annotation
 
-    const-string v0, "$this$kotlin"
+    const-string v0, "<this>"
 
     invoke-static {p0, v0}, Lkotlin/jvm/internal/Intrinsics;->checkNotNullParameter(Ljava/lang/Object;Ljava/lang/String;)V
 
@@ -456,4 +449,75 @@
     move-result-object p0
 
     return-object p0
+.end method
+
+.method public static inject(Landroid/content/BroadcastReceiver;Landroid/content/Context;)V
+    .locals 2
+
+    invoke-virtual {p1}, Landroid/content/Context;->getApplicationContext()Landroid/content/Context;
+
+    move-result-object p1
+
+    check-cast p1, Landroid/app/Application;
+
+    instance-of v0, p1, Ldagger/android/HasAndroidInjector;
+
+    if-eqz v0, :cond_0
+
+    check-cast p1, Ldagger/android/HasAndroidInjector;
+
+    invoke-interface {p1}, Ldagger/android/HasAndroidInjector;->androidInjector()Ldagger/android/AndroidInjector;
+
+    move-result-object v0
+
+    invoke-virtual {p1}, Ljava/lang/Object;->getClass()Ljava/lang/Class;
+
+    move-result-object p1
+
+    const-string v1, "%s.androidInjector() returned null"
+
+    invoke-static {v0, v1, p1}, Ldagger/internal/Preconditions;->checkNotNull(Ljava/lang/Object;Ljava/lang/String;Ljava/lang/Object;)Ljava/lang/Object;
+
+    invoke-interface {v0, p0}, Ldagger/android/AndroidInjector;->inject(Ljava/lang/Object;)V
+
+    return-void
+
+    :cond_0
+    new-instance p0, Ljava/lang/RuntimeException;
+
+    const/4 v0, 0x2
+
+    new-array v0, v0, [Ljava/lang/Object;
+
+    const/4 v1, 0x0
+
+    invoke-virtual {p1}, Ljava/lang/Object;->getClass()Ljava/lang/Class;
+
+    move-result-object p1
+
+    invoke-virtual {p1}, Ljava/lang/Class;->getCanonicalName()Ljava/lang/String;
+
+    move-result-object p1
+
+    aput-object p1, v0, v1
+
+    const/4 p1, 0x1
+
+    const-class v1, Ldagger/android/HasAndroidInjector;
+
+    invoke-virtual {v1}, Ljava/lang/Class;->getCanonicalName()Ljava/lang/String;
+
+    move-result-object v1
+
+    aput-object v1, v0, p1
+
+    const-string p1, "%s does not implement %s"
+
+    invoke-static {p1, v0}, Ljava/lang/String;->format(Ljava/lang/String;[Ljava/lang/Object;)Ljava/lang/String;
+
+    move-result-object p1
+
+    invoke-direct {p0, p1}, Ljava/lang/RuntimeException;-><init>(Ljava/lang/String;)V
+
+    throw p0
 .end method

@@ -1,106 +1,213 @@
-.class public interface abstract Lj$/util/stream/U;
-.super Ljava/lang/Object;
+.class final Lj$/util/stream/U;
+.super Lj$/util/stream/d;
 
-# interfaces
-.implements Lj$/util/stream/g;
+
+# instance fields
+.field private final j:Lj$/util/stream/N;
+
+
+# direct methods
+.method constructor <init>(Lj$/util/stream/N;Lj$/util/stream/D0;Lj$/util/Spliterator;)V
+    .locals 0
+
+    invoke-direct {p0, p2, p3}, Lj$/util/stream/d;-><init>(Lj$/util/stream/D0;Lj$/util/Spliterator;)V
+
+    iput-object p1, p0, Lj$/util/stream/U;->j:Lj$/util/stream/N;
+
+    return-void
+.end method
+
+.method constructor <init>(Lj$/util/stream/U;Lj$/util/Spliterator;)V
+    .locals 0
+
+    invoke-direct {p0, p1, p2}, Lj$/util/stream/d;-><init>(Lj$/util/stream/d;Lj$/util/Spliterator;)V
+
+    iget-object p1, p1, Lj$/util/stream/U;->j:Lj$/util/stream/N;
+
+    iput-object p1, p0, Lj$/util/stream/U;->j:Lj$/util/stream/N;
+
+    return-void
+.end method
+
+.method private m(Ljava/lang/Object;)V
+    .locals 3
+
+    move-object v0, p0
+
+    :goto_0
+    if-eqz v0, :cond_1
+
+    invoke-virtual {v0}, Lj$/util/stream/f;->c()Lj$/util/stream/f;
+
+    move-result-object v1
+
+    if-eqz v1, :cond_0
+
+    iget-object v2, v1, Lj$/util/stream/f;->d:Lj$/util/stream/f;
+
+    if-eq v2, v0, :cond_0
+
+    const/4 v0, 0x0
+
+    goto :goto_1
+
+    :cond_0
+    move-object v0, v1
+
+    goto :goto_0
+
+    :cond_1
+    const/4 v0, 0x1
+
+    :goto_1
+    if-eqz v0, :cond_2
+
+    invoke-virtual {p0, p1}, Lj$/util/stream/d;->l(Ljava/lang/Object;)V
+
+    goto :goto_2
+
+    :cond_2
+    invoke-virtual {p0}, Lj$/util/stream/d;->j()V
+
+    :goto_2
+    return-void
+.end method
 
 
 # virtual methods
-.method public abstract D(Lj$/util/function/d;)Lj$/util/i;
+.method protected a()Ljava/lang/Object;
+    .locals 3
+
+    iget-object v0, p0, Lj$/util/stream/f;->a:Lj$/util/stream/D0;
+
+    iget-object v1, p0, Lj$/util/stream/U;->j:Lj$/util/stream/N;
+
+    iget-object v1, v1, Lj$/util/stream/N;->e:Lj$/util/function/C;
+
+    invoke-interface {v1}, Lj$/util/function/C;->get()Ljava/lang/Object;
+
+    move-result-object v1
+
+    check-cast v1, Lj$/util/stream/N3;
+
+    iget-object v2, p0, Lj$/util/stream/f;->b:Lj$/util/Spliterator;
+
+    invoke-virtual {v0, v1, v2}, Lj$/util/stream/D0;->S0(Lj$/util/stream/q2;Lj$/util/Spliterator;)Lj$/util/stream/q2;
+
+    check-cast v1, Lj$/util/stream/N3;
+
+    invoke-interface {v1}, Lj$/util/function/C;->get()Ljava/lang/Object;
+
+    move-result-object v0
+
+    iget-object v1, p0, Lj$/util/stream/U;->j:Lj$/util/stream/N;
+
+    iget-boolean v1, v1, Lj$/util/stream/N;->b:Z
+
+    const/4 v2, 0x0
+
+    if-nez v1, :cond_1
+
+    if-eqz v0, :cond_0
+
+    invoke-virtual {p0, v0}, Lj$/util/stream/d;->l(Ljava/lang/Object;)V
+
+    :cond_0
+    return-object v2
+
+    :cond_1
+    if-eqz v0, :cond_2
+
+    invoke-direct {p0, v0}, Lj$/util/stream/U;->m(Ljava/lang/Object;)V
+
+    return-object v0
+
+    :cond_2
+    return-object v2
 .end method
 
-.method public abstract E(Lj$/util/function/t;Lj$/util/function/p;Lj$/util/function/BiConsumer;)Ljava/lang/Object;
+.method protected f(Lj$/util/Spliterator;)Lj$/util/stream/f;
+    .locals 1
+
+    new-instance v0, Lj$/util/stream/U;
+
+    invoke-direct {v0, p0, p1}, Lj$/util/stream/U;-><init>(Lj$/util/stream/U;Lj$/util/Spliterator;)V
+
+    return-object v0
 .end method
 
-.method public abstract I(DLj$/util/function/d;)D
+.method protected k()Ljava/lang/Object;
+    .locals 1
+
+    iget-object v0, p0, Lj$/util/stream/U;->j:Lj$/util/stream/N;
+
+    iget-object v0, v0, Lj$/util/stream/N;->c:Ljava/lang/Object;
+
+    return-object v0
 .end method
 
-.method public abstract K(Lj$/wrappers/i;)Lj$/util/stream/M0;
-.end method
+.method public onCompletion(Ljava/util/concurrent/CountedCompleter;)V
+    .locals 4
 
-.method public abstract L(Lj$/util/function/f;)Lj$/util/stream/c4;
-.end method
+    iget-object p1, p0, Lj$/util/stream/U;->j:Lj$/util/stream/N;
 
-.method public abstract R(Lj$/wrappers/i;)Z
-.end method
+    iget-boolean p1, p1, Lj$/util/stream/N;->b:Z
 
-.method public abstract a(Lj$/wrappers/i;)Lj$/util/stream/U;
-.end method
+    const/4 v0, 0x0
 
-.method public abstract average()Lj$/util/i;
-.end method
+    if-eqz p1, :cond_1
 
-.method public abstract b(Lj$/wrappers/i;)Lj$/util/stream/U;
-.end method
+    iget-object p1, p0, Lj$/util/stream/f;->d:Lj$/util/stream/f;
 
-.method public abstract boxed()Lj$/util/stream/c4;
-.end method
+    check-cast p1, Lj$/util/stream/U;
 
-.method public abstract c(Lj$/wrappers/i;)Z
-.end method
+    move-object v1, v0
 
-.method public abstract count()J
-.end method
+    :goto_0
+    if-eq p1, v1, :cond_1
 
-.method public abstract distinct()Lj$/util/stream/U;
-.end method
+    invoke-virtual {p1}, Lj$/util/stream/d;->b()Ljava/lang/Object;
 
-.method public abstract e(Lj$/util/function/e;)Lj$/util/stream/U;
-.end method
+    move-result-object v1
 
-.method public abstract findAny()Lj$/util/i;
-.end method
+    if-eqz v1, :cond_0
 
-.method public abstract findFirst()Lj$/util/i;
-.end method
+    iget-object v2, p0, Lj$/util/stream/U;->j:Lj$/util/stream/N;
 
-.method public abstract h0(Lj$/util/function/e;)V
-.end method
+    iget-object v2, v2, Lj$/util/stream/N;->d:Lj$/util/function/Predicate;
 
-.method public abstract iterator()Lj$/util/m;
-.end method
+    invoke-interface {v2, v1}, Lj$/util/function/Predicate;->test(Ljava/lang/Object;)Z
 
-.method public abstract limit(J)Lj$/util/stream/U;
-.end method
+    move-result v2
 
-.method public abstract m(Lj$/util/function/e;)V
-.end method
+    if-eqz v2, :cond_0
 
-.method public abstract max()Lj$/util/i;
-.end method
+    invoke-virtual {p0, v1}, Lj$/util/stream/d;->g(Ljava/lang/Object;)V
 
-.method public abstract min()Lj$/util/i;
-.end method
+    invoke-direct {p0, v1}, Lj$/util/stream/U;->m(Ljava/lang/Object;)V
 
-.method public abstract o(Lj$/wrappers/i;)Z
-.end method
+    goto :goto_1
 
-.method public abstract parallel()Lj$/util/stream/U;
-.end method
+    :cond_0
+    iget-object v1, p0, Lj$/util/stream/f;->e:Lj$/util/stream/f;
 
-.method public abstract sequential()Lj$/util/stream/U;
-.end method
+    check-cast v1, Lj$/util/stream/U;
 
-.method public abstract skip(J)Lj$/util/stream/U;
-.end method
+    move-object v3, v1
 
-.method public abstract sorted()Lj$/util/stream/U;
-.end method
+    move-object v1, p1
 
-.method public abstract spliterator()Lj$/util/Spliterator$a;
-.end method
+    move-object p1, v3
 
-.method public abstract sum()D
-.end method
+    goto :goto_0
 
-.method public abstract summaryStatistics()Lj$/util/f;
-.end method
+    :cond_1
+    :goto_1
+    iput-object v0, p0, Lj$/util/stream/f;->b:Lj$/util/Spliterator;
 
-.method public abstract toArray()[D
-.end method
+    iput-object v0, p0, Lj$/util/stream/f;->e:Lj$/util/stream/f;
 
-.method public abstract v(Lj$/util/function/f;)Lj$/util/stream/U;
-.end method
+    iput-object v0, p0, Lj$/util/stream/f;->d:Lj$/util/stream/f;
 
-.method public abstract x(Lj$/util/function/g;)Lj$/util/stream/f1;
+    return-void
 .end method

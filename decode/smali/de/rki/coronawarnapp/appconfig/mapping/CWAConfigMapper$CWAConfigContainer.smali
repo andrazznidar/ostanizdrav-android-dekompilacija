@@ -18,6 +18,10 @@
 
 
 # instance fields
+.field public final dccPersonCountMax:I
+
+.field public final dccPersonWarnThreshold:I
+
 .field public final isDeviceTimeCheckEnabled:Z
 
 .field public final isUnencryptedCheckInsEnabled:Z
@@ -36,16 +40,18 @@
     .end annotation
 .end field
 
+.field public final validationServiceMinVersion:I
+
 
 # direct methods
-.method public constructor <init>(JJLjava/util/List;ZZ)V
+.method public constructor <init>(JJLjava/util/List;ZZIII)V
     .locals 0
     .annotation system Ldalvik/annotation/Signature;
         value = {
             "(JJ",
             "Ljava/util/List<",
             "Ljava/lang/String;",
-            ">;ZZ)V"
+            ">;ZZIII)V"
         }
     .end annotation
 
@@ -60,6 +66,12 @@
     iput-boolean p6, p0, Lde/rki/coronawarnapp/appconfig/mapping/CWAConfigMapper$CWAConfigContainer;->isDeviceTimeCheckEnabled:Z
 
     iput-boolean p7, p0, Lde/rki/coronawarnapp/appconfig/mapping/CWAConfigMapper$CWAConfigContainer;->isUnencryptedCheckInsEnabled:Z
+
+    iput p8, p0, Lde/rki/coronawarnapp/appconfig/mapping/CWAConfigMapper$CWAConfigContainer;->validationServiceMinVersion:I
+
+    iput p9, p0, Lde/rki/coronawarnapp/appconfig/mapping/CWAConfigMapper$CWAConfigContainer;->dccPersonWarnThreshold:I
+
+    iput p10, p0, Lde/rki/coronawarnapp/appconfig/mapping/CWAConfigMapper$CWAConfigContainer;->dccPersonCountMax:I
 
     return-void
 .end method
@@ -133,13 +145,56 @@
     :cond_5
     iget-boolean v1, p0, Lde/rki/coronawarnapp/appconfig/mapping/CWAConfigMapper$CWAConfigContainer;->isUnencryptedCheckInsEnabled:Z
 
-    iget-boolean p1, p1, Lde/rki/coronawarnapp/appconfig/mapping/CWAConfigMapper$CWAConfigContainer;->isUnencryptedCheckInsEnabled:Z
+    iget-boolean v3, p1, Lde/rki/coronawarnapp/appconfig/mapping/CWAConfigMapper$CWAConfigContainer;->isUnencryptedCheckInsEnabled:Z
 
-    if-eq v1, p1, :cond_6
+    if-eq v1, v3, :cond_6
 
     return v2
 
     :cond_6
+    iget v1, p0, Lde/rki/coronawarnapp/appconfig/mapping/CWAConfigMapper$CWAConfigContainer;->validationServiceMinVersion:I
+
+    iget v3, p1, Lde/rki/coronawarnapp/appconfig/mapping/CWAConfigMapper$CWAConfigContainer;->validationServiceMinVersion:I
+
+    if-eq v1, v3, :cond_7
+
+    return v2
+
+    :cond_7
+    iget v1, p0, Lde/rki/coronawarnapp/appconfig/mapping/CWAConfigMapper$CWAConfigContainer;->dccPersonWarnThreshold:I
+
+    iget v3, p1, Lde/rki/coronawarnapp/appconfig/mapping/CWAConfigMapper$CWAConfigContainer;->dccPersonWarnThreshold:I
+
+    if-eq v1, v3, :cond_8
+
+    return v2
+
+    :cond_8
+    iget v1, p0, Lde/rki/coronawarnapp/appconfig/mapping/CWAConfigMapper$CWAConfigContainer;->dccPersonCountMax:I
+
+    iget p1, p1, Lde/rki/coronawarnapp/appconfig/mapping/CWAConfigMapper$CWAConfigContainer;->dccPersonCountMax:I
+
+    if-eq v1, p1, :cond_9
+
+    return v2
+
+    :cond_9
+    return v0
+.end method
+
+.method public getDccPersonCountMax()I
+    .locals 1
+
+    iget v0, p0, Lde/rki/coronawarnapp/appconfig/mapping/CWAConfigMapper$CWAConfigContainer;->dccPersonCountMax:I
+
+    return v0
+.end method
+
+.method public getDccPersonWarnThreshold()I
+    .locals 1
+
+    iget v0, p0, Lde/rki/coronawarnapp/appconfig/mapping/CWAConfigMapper$CWAConfigContainer;->dccPersonWarnThreshold:I
+
     return v0
 .end method
 
@@ -165,6 +220,14 @@
     iget-object v0, p0, Lde/rki/coronawarnapp/appconfig/mapping/CWAConfigMapper$CWAConfigContainer;->supportedCountries:Ljava/util/List;
 
     return-object v0
+.end method
+
+.method public getValidationServiceMinVersion()I
+    .locals 1
+
+    iget v0, p0, Lde/rki/coronawarnapp/appconfig/mapping/CWAConfigMapper$CWAConfigContainer;->validationServiceMinVersion:I
+
+    return v0
 .end method
 
 .method public hashCode()I
@@ -227,6 +290,24 @@
     :goto_0
     add-int/2addr v0, v2
 
+    mul-int/lit8 v0, v0, 0x1f
+
+    iget v1, p0, Lde/rki/coronawarnapp/appconfig/mapping/CWAConfigMapper$CWAConfigContainer;->validationServiceMinVersion:I
+
+    add-int/2addr v0, v1
+
+    mul-int/lit8 v0, v0, 0x1f
+
+    iget v1, p0, Lde/rki/coronawarnapp/appconfig/mapping/CWAConfigMapper$CWAConfigContainer;->dccPersonWarnThreshold:I
+
+    add-int/2addr v0, v1
+
+    mul-int/lit8 v0, v0, 0x1f
+
+    iget v1, p0, Lde/rki/coronawarnapp/appconfig/mapping/CWAConfigMapper$CWAConfigContainer;->dccPersonCountMax:I
+
+    add-int/2addr v0, v1
+
     return v0
 .end method
 
@@ -247,7 +328,7 @@
 .end method
 
 .method public toString()Ljava/lang/String;
-    .locals 9
+    .locals 12
 
     iget-wide v0, p0, Lde/rki/coronawarnapp/appconfig/mapping/CWAConfigMapper$CWAConfigContainer;->latestVersionCode:J
 
@@ -259,45 +340,63 @@
 
     iget-boolean v6, p0, Lde/rki/coronawarnapp/appconfig/mapping/CWAConfigMapper$CWAConfigContainer;->isUnencryptedCheckInsEnabled:Z
 
-    new-instance v7, Ljava/lang/StringBuilder;
+    iget v7, p0, Lde/rki/coronawarnapp/appconfig/mapping/CWAConfigMapper$CWAConfigContainer;->validationServiceMinVersion:I
 
-    invoke-direct {v7}, Ljava/lang/StringBuilder;-><init>()V
+    iget v8, p0, Lde/rki/coronawarnapp/appconfig/mapping/CWAConfigMapper$CWAConfigContainer;->dccPersonWarnThreshold:I
 
-    const-string v8, "CWAConfigContainer(latestVersionCode="
+    iget v9, p0, Lde/rki/coronawarnapp/appconfig/mapping/CWAConfigMapper$CWAConfigContainer;->dccPersonCountMax:I
 
-    invoke-virtual {v7, v8}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+    const-string v10, "CWAConfigContainer(latestVersionCode="
 
-    invoke-virtual {v7, v0, v1}, Ljava/lang/StringBuilder;->append(J)Ljava/lang/StringBuilder;
+    const-string v11, ", minVersionCode="
 
-    const-string v0, ", minVersionCode="
+    invoke-static {v10, v0, v1, v11}, Landroidx/camera/core/CameraX$$ExternalSyntheticOutline0;->m(Ljava/lang/String;JLjava/lang/String;)Ljava/lang/StringBuilder;
 
-    invoke-virtual {v7, v0}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+    move-result-object v0
 
-    invoke-virtual {v7, v2, v3}, Ljava/lang/StringBuilder;->append(J)Ljava/lang/StringBuilder;
+    invoke-virtual {v0, v2, v3}, Ljava/lang/StringBuilder;->append(J)Ljava/lang/StringBuilder;
 
-    const-string v0, ", supportedCountries="
+    const-string v1, ", supportedCountries="
 
-    invoke-virtual {v7, v0}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+    invoke-virtual {v0, v1}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
 
-    invoke-virtual {v7, v4}, Ljava/lang/StringBuilder;->append(Ljava/lang/Object;)Ljava/lang/StringBuilder;
+    invoke-virtual {v0, v4}, Ljava/lang/StringBuilder;->append(Ljava/lang/Object;)Ljava/lang/StringBuilder;
 
-    const-string v0, ", isDeviceTimeCheckEnabled="
+    const-string v1, ", isDeviceTimeCheckEnabled="
 
-    invoke-virtual {v7, v0}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+    invoke-virtual {v0, v1}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
 
-    invoke-virtual {v7, v5}, Ljava/lang/StringBuilder;->append(Z)Ljava/lang/StringBuilder;
+    invoke-virtual {v0, v5}, Ljava/lang/StringBuilder;->append(Z)Ljava/lang/StringBuilder;
 
-    const-string v0, ", isUnencryptedCheckInsEnabled="
+    const-string v1, ", isUnencryptedCheckInsEnabled="
 
-    invoke-virtual {v7, v0}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+    invoke-virtual {v0, v1}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
 
-    invoke-virtual {v7, v6}, Ljava/lang/StringBuilder;->append(Z)Ljava/lang/StringBuilder;
+    invoke-virtual {v0, v6}, Ljava/lang/StringBuilder;->append(Z)Ljava/lang/StringBuilder;
 
-    const-string v0, ")"
+    const-string v1, ", validationServiceMinVersion="
 
-    invoke-virtual {v7, v0}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+    invoke-virtual {v0, v1}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
 
-    invoke-virtual {v7}, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
+    invoke-virtual {v0, v7}, Ljava/lang/StringBuilder;->append(I)Ljava/lang/StringBuilder;
+
+    const-string v1, ", dccPersonWarnThreshold="
+
+    invoke-virtual {v0, v1}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+
+    invoke-virtual {v0, v8}, Ljava/lang/StringBuilder;->append(I)Ljava/lang/StringBuilder;
+
+    const-string v1, ", dccPersonCountMax="
+
+    invoke-virtual {v0, v1}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+
+    invoke-virtual {v0, v9}, Ljava/lang/StringBuilder;->append(I)Ljava/lang/StringBuilder;
+
+    const-string v1, ")"
+
+    invoke-virtual {v0, v1}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+
+    invoke-virtual {v0}, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
 
     move-result-object v0
 

@@ -6,18 +6,19 @@
 # annotations
 .annotation system Ldalvik/annotation/MemberClasses;
     value = {
-        Lkotlin/reflect/jvm/internal/impl/resolve/OverridingUtil$OverrideCompatibilityInfo;,
-        Lkotlin/reflect/jvm/internal/impl/resolve/OverridingUtil$OverridingUtilTypeCheckerContext;
+        Lkotlin/reflect/jvm/internal/impl/resolve/OverridingUtil$OverrideCompatibilityInfo;
     }
 .end annotation
 
 
 # static fields
+.field public static final synthetic $assertionsDisabled:Z
+
 .field public static final DEFAULT:Lkotlin/reflect/jvm/internal/impl/resolve/OverridingUtil;
 
-.field public static final DEFAULT_TYPE_CONSTRUCTOR_EQUALITY:Lkotlin/reflect/jvm/internal/impl/types/checker/KotlinTypeChecker$TypeConstructorEquality;
+.field private static final DEFAULT_TYPE_CONSTRUCTOR_EQUALITY:Lkotlin/reflect/jvm/internal/impl/types/checker/KotlinTypeChecker$TypeConstructorEquality;
 
-.field public static final EXTERNAL_CONDITIONS:Ljava/util/List;
+.field private static final EXTERNAL_CONDITIONS:Ljava/util/List;
     .annotation system Ldalvik/annotation/Signature;
         value = {
             "Ljava/util/List<",
@@ -29,30 +30,38 @@
 
 
 # instance fields
-.field public final equalityAxioms:Lkotlin/reflect/jvm/internal/impl/types/checker/KotlinTypeChecker$TypeConstructorEquality;
+.field private final equalityAxioms:Lkotlin/reflect/jvm/internal/impl/types/checker/KotlinTypeChecker$TypeConstructorEquality;
 
-.field public final kotlinTypeRefiner:Lkotlin/reflect/jvm/internal/impl/types/checker/KotlinTypeRefiner;
+.field private final kotlinTypeRefiner:Lkotlin/reflect/jvm/internal/impl/types/checker/KotlinTypeRefiner;
 
 
 # direct methods
-.method public static synthetic $$$reportNull$$$0(I)V
-    .locals 22
+.method private static synthetic $$$reportNull$$$0(I)V
+    .locals 24
 
     move/from16 v0, p0
 
-    const/16 v1, 0x65
+    const/16 v1, 0x2d
 
-    const/16 v2, 0x60
+    const/16 v2, 0x2c
 
-    const/16 v3, 0x5d
+    const/16 v3, 0x67
 
-    const/16 v4, 0x13
+    const/16 v4, 0x62
 
-    const/16 v5, 0xe
+    const/16 v5, 0x5f
 
-    const/16 v6, 0xa
+    const/16 v6, 0x13
 
-    const/16 v7, 0x9
+    const/16 v7, 0xe
+
+    const/16 v8, 0xa
+
+    const/16 v9, 0x9
+
+    if-eq v0, v9, :cond_0
+
+    if-eq v0, v8, :cond_0
 
     if-eq v0, v7, :cond_0
 
@@ -76,16 +85,20 @@
 
     packed-switch v0, :pswitch_data_3
 
-    const-string v8, "Argument for @NotNull parameter \'%s\' of %s.%s must not be null"
+    const-string v10, "Argument for @NotNull parameter \'%s\' of %s.%s must not be null"
 
     goto :goto_0
 
     :cond_0
     :pswitch_0
-    const-string v8, "@NotNull method %s.%s must not return null"
+    const-string v10, "@NotNull method %s.%s must not return null"
 
     :goto_0
-    const/4 v9, 0x2
+    const/4 v11, 0x2
+
+    if-eq v0, v9, :cond_1
+
+    if-eq v0, v8, :cond_1
 
     if-eq v0, v7, :cond_1
 
@@ -109,352 +122,356 @@
 
     packed-switch v0, :pswitch_data_7
 
-    const/4 v10, 0x3
+    const/4 v12, 0x3
 
     goto :goto_1
 
     :cond_1
     :pswitch_1
-    move v10, v9
+    move v12, v11
 
     :goto_1
-    new-array v10, v10, [Ljava/lang/Object;
+    new-array v12, v12, [Ljava/lang/Object;
 
-    const-string v11, "kotlin/reflect/jvm/internal/impl/resolve/OverridingUtil"
+    const-string v13, "kotlin/reflect/jvm/internal/impl/resolve/OverridingUtil"
 
-    const/4 v12, 0x0
+    const/4 v14, 0x0
 
     packed-switch v0, :pswitch_data_8
 
     :pswitch_2
-    const-string v13, "equalityAxioms"
+    const-string v15, "equalityAxioms"
 
-    aput-object v13, v10, v12
+    aput-object v15, v12, v14
 
     goto/16 :goto_2
 
     :pswitch_3
-    const-string v13, "memberDescriptor"
+    const-string v15, "memberDescriptor"
 
-    aput-object v13, v10, v12
+    aput-object v15, v12, v14
 
     goto/16 :goto_2
 
     :pswitch_4
-    const-string v13, "onConflict"
+    const-string v15, "onConflict"
 
-    aput-object v13, v10, v12
+    aput-object v15, v12, v14
 
     goto/16 :goto_2
 
     :pswitch_5
-    const-string v13, "extractFrom"
+    const-string v15, "extractFrom"
 
-    aput-object v13, v10, v12
+    aput-object v15, v12, v14
 
     goto/16 :goto_2
 
     :pswitch_6
-    const-string v13, "overrider"
+    const-string v15, "overrider"
 
-    aput-object v13, v10, v12
+    aput-object v15, v12, v14
 
     goto/16 :goto_2
 
     :pswitch_7
-    const-string v13, "toFilter"
+    const-string v15, "toFilter"
 
-    aput-object v13, v10, v12
+    aput-object v15, v12, v14
 
     goto/16 :goto_2
 
     :pswitch_8
-    const-string v13, "classModality"
+    const-string v15, "classModality"
 
-    aput-object v13, v10, v12
+    aput-object v15, v12, v14
 
     goto/16 :goto_2
 
     :pswitch_9
-    const-string v13, "descriptorByHandle"
+    const-string v15, "descriptorByHandle"
 
-    aput-object v13, v10, v12
+    aput-object v15, v12, v14
 
     goto/16 :goto_2
 
     :pswitch_a
-    const-string v13, "overridables"
+    const-string v15, "overridables"
 
-    aput-object v13, v10, v12
+    aput-object v15, v12, v14
 
     goto/16 :goto_2
 
     :pswitch_b
-    const-string v13, "bReturnType"
+    const-string v15, "bReturnType"
 
-    aput-object v13, v10, v12
+    aput-object v15, v12, v14
 
     goto/16 :goto_2
 
     :pswitch_c
-    const-string v13, "aReturnType"
+    const-string v15, "aReturnType"
 
-    aput-object v13, v10, v12
+    aput-object v15, v12, v14
 
     goto/16 :goto_2
 
     :pswitch_d
-    const-string v13, "descriptors"
+    const-string v15, "descriptors"
 
-    aput-object v13, v10, v12
+    aput-object v15, v12, v14
 
     goto/16 :goto_2
 
     :pswitch_e
-    const-string v13, "candidate"
+    const-string v15, "candidate"
 
-    aput-object v13, v10, v12
+    aput-object v15, v12, v14
 
     goto/16 :goto_2
 
     :pswitch_f
-    const-string v13, "b"
+    const-string v15, "b"
 
-    aput-object v13, v10, v12
+    aput-object v15, v12, v14
 
     goto/16 :goto_2
 
     :pswitch_10
-    const-string v13, "a"
+    const-string v15, "a"
 
-    aput-object v13, v10, v12
+    aput-object v15, v12, v14
 
     goto/16 :goto_2
 
     :pswitch_11
-    const-string v13, "notOverridden"
+    const-string v15, "notOverridden"
 
-    aput-object v13, v10, v12
+    aput-object v15, v12, v14
 
     goto/16 :goto_2
 
     :pswitch_12
-    const-string v13, "descriptorsFromSuper"
+    const-string v15, "descriptorsFromSuper"
 
-    aput-object v13, v10, v12
+    aput-object v15, v12, v14
 
     goto/16 :goto_2
 
     :pswitch_13
-    const-string v13, "fromCurrent"
+    const-string v15, "fromCurrent"
 
-    aput-object v13, v10, v12
+    aput-object v15, v12, v14
 
     goto/16 :goto_2
 
     :pswitch_14
-    const-string v13, "fromSuper"
+    const-string v15, "fromSuper"
 
-    aput-object v13, v10, v12
+    aput-object v15, v12, v14
 
     goto/16 :goto_2
 
     :pswitch_15
-    const-string v13, "overriding"
+    const-string v15, "overriding"
 
-    aput-object v13, v10, v12
+    aput-object v15, v12, v14
 
     goto/16 :goto_2
 
     :pswitch_16
-    const-string v13, "strategy"
+    const-string v15, "strategy"
 
-    aput-object v13, v10, v12
+    aput-object v15, v12, v14
 
     goto/16 :goto_2
 
     :pswitch_17
-    const-string v13, "current"
+    const-string v15, "current"
 
-    aput-object v13, v10, v12
+    aput-object v15, v12, v14
 
     goto/16 :goto_2
 
     :pswitch_18
-    const-string v13, "membersFromCurrent"
+    const-string v15, "membersFromCurrent"
 
-    aput-object v13, v10, v12
+    aput-object v15, v12, v14
 
     goto/16 :goto_2
 
     :pswitch_19
-    const-string v13, "membersFromSupertypes"
+    const-string v15, "membersFromSupertypes"
 
-    aput-object v13, v10, v12
+    aput-object v15, v12, v14
 
     goto/16 :goto_2
 
     :pswitch_1a
-    const-string v13, "name"
+    const-string v15, "name"
 
-    aput-object v13, v10, v12
+    aput-object v15, v12, v14
 
     goto :goto_2
 
     :pswitch_1b
-    const-string v13, "subTypeParameter"
+    const-string v15, "subTypeParameter"
 
-    aput-object v13, v10, v12
+    aput-object v15, v12, v14
 
     goto :goto_2
 
     :pswitch_1c
-    const-string v13, "superTypeParameter"
+    const-string v15, "superTypeParameter"
 
-    aput-object v13, v10, v12
+    aput-object v15, v12, v14
 
     goto :goto_2
 
     :pswitch_1d
-    const-string v13, "typeChecker"
+    const-string v15, "typeChecker"
 
-    aput-object v13, v10, v12
+    aput-object v15, v12, v14
 
     goto :goto_2
 
     :pswitch_1e
-    const-string v13, "typeInSub"
+    const-string v15, "typeInSub"
 
-    aput-object v13, v10, v12
+    aput-object v15, v12, v14
 
     goto :goto_2
 
     :pswitch_1f
-    const-string v13, "typeInSuper"
+    const-string v15, "typeInSuper"
 
-    aput-object v13, v10, v12
+    aput-object v15, v12, v14
 
     goto :goto_2
 
     :pswitch_20
-    const-string v13, "secondParameters"
+    const-string v15, "secondParameters"
 
-    aput-object v13, v10, v12
+    aput-object v15, v12, v14
 
     goto :goto_2
 
     :pswitch_21
-    const-string v13, "firstParameters"
+    const-string v15, "firstParameters"
 
-    aput-object v13, v10, v12
+    aput-object v15, v12, v14
 
     goto :goto_2
 
     :pswitch_22
-    const-string v13, "subDescriptor"
+    const-string v15, "subDescriptor"
 
-    aput-object v13, v10, v12
+    aput-object v15, v12, v14
 
     goto :goto_2
 
     :pswitch_23
-    const-string v13, "superDescriptor"
+    const-string v15, "superDescriptor"
 
-    aput-object v13, v10, v12
+    aput-object v15, v12, v14
 
     goto :goto_2
 
     :pswitch_24
-    const-string v13, "result"
+    const-string v15, "result"
 
-    aput-object v13, v10, v12
+    aput-object v15, v12, v14
 
     goto :goto_2
 
     :pswitch_25
-    const-string v13, "descriptor"
+    const-string v15, "descriptor"
 
-    aput-object v13, v10, v12
+    aput-object v15, v12, v14
 
     goto :goto_2
 
     :pswitch_26
-    const-string v13, "g"
+    const-string v15, "g"
 
-    aput-object v13, v10, v12
+    aput-object v15, v12, v14
 
     goto :goto_2
 
     :pswitch_27
-    const-string v13, "f"
+    const-string v15, "f"
 
-    aput-object v13, v10, v12
+    aput-object v15, v12, v14
 
     goto :goto_2
 
     :pswitch_28
-    aput-object v11, v10, v12
+    aput-object v13, v12, v14
 
     goto :goto_2
 
     :pswitch_29
-    const-string v13, "transformFirst"
+    const-string v15, "transformFirst"
 
-    aput-object v13, v10, v12
+    aput-object v15, v12, v14
 
     goto :goto_2
 
     :pswitch_2a
-    const-string v13, "candidateSet"
+    const-string v15, "candidateSet"
 
-    aput-object v13, v10, v12
+    aput-object v15, v12, v14
 
     goto :goto_2
 
     :pswitch_2b
-    const-string v13, "axioms"
+    const-string v15, "axioms"
 
-    aput-object v13, v10, v12
+    aput-object v15, v12, v14
 
     goto :goto_2
 
     :pswitch_2c
-    const-string v13, "kotlinTypeRefiner"
+    const-string v15, "kotlinTypeRefiner"
 
-    aput-object v13, v10, v12
+    aput-object v15, v12, v14
 
     :goto_2
-    const-string v12, "extractMembersOverridableInBothWays"
+    const-string v14, "filterVisibleFakeOverrides"
 
-    const-string v13, "filterVisibleFakeOverrides"
+    const-string v15, "getMinimalModality"
 
-    const-string v14, "getMinimalModality"
+    const-string v16, "determineModalityForFakeOverride"
 
-    const-string v15, "determineModalityForFakeOverride"
+    const-string v17, "selectMostSpecificMember"
 
-    const-string v16, "selectMostSpecificMember"
+    const-string v18, "createTypeCheckerContext"
 
-    const-string v17, "isOverridableByWithoutExternalConditions"
+    const-string v19, "isOverridableByWithoutExternalConditions"
 
-    const-string v18, "isOverridableBy"
+    const-string v20, "isOverridableBy"
 
-    const-string v19, "getOverriddenDeclarations"
+    const-string v21, "getOverriddenDeclarations"
 
-    const-string v20, "filterOverrides"
+    const-string v22, "filterOverrides"
 
-    const/16 v21, 0x1
+    const/16 v23, 0x1
+
+    if-eq v0, v9, :cond_8
+
+    if-eq v0, v8, :cond_8
 
     if-eq v0, v7, :cond_7
 
-    if-eq v0, v6, :cond_7
+    if-eq v0, v6, :cond_6
 
-    if-eq v0, v5, :cond_6
+    if-eq v0, v5, :cond_5
 
-    if-eq v0, v4, :cond_5
+    if-eq v0, v4, :cond_4
 
-    if-eq v0, v3, :cond_4
+    if-eq v0, v3, :cond_3
 
-    if-eq v0, v2, :cond_3
+    if-eq v0, v2, :cond_2
 
     if-eq v0, v1, :cond_2
 
@@ -466,293 +483,304 @@
 
     packed-switch v0, :pswitch_data_c
 
-    aput-object v11, v10, v21
+    aput-object v13, v12, v23
 
     goto :goto_3
 
     :pswitch_2d
-    aput-object v15, v10, v21
+    aput-object v16, v12, v23
 
     goto :goto_3
 
     :pswitch_2e
-    aput-object v16, v10, v21
+    aput-object v17, v12, v23
 
     goto :goto_3
 
     :pswitch_2f
-    aput-object v17, v10, v21
+    aput-object v19, v12, v23
 
     goto :goto_3
 
     :cond_2
-    aput-object v12, v10, v21
+    aput-object v18, v12, v23
 
     goto :goto_3
 
     :cond_3
-    aput-object v13, v10, v21
+    const-string v13, "extractMembersOverridableInBothWays"
+
+    aput-object v13, v12, v23
 
     goto :goto_3
 
     :cond_4
-    aput-object v14, v10, v21
+    aput-object v14, v12, v23
 
     goto :goto_3
 
     :cond_5
-    :pswitch_30
-    aput-object v18, v10, v21
+    aput-object v15, v12, v23
 
     goto :goto_3
 
     :cond_6
-    aput-object v19, v10, v21
+    :pswitch_30
+    aput-object v20, v12, v23
 
     goto :goto_3
 
     :cond_7
-    aput-object v20, v10, v21
+    aput-object v21, v12, v23
+
+    goto :goto_3
+
+    :cond_8
+    aput-object v22, v12, v23
 
     :goto_3
     packed-switch v0, :pswitch_data_d
 
-    const-string v11, "createWithEqualityAxioms"
+    const-string v13, "createWithEqualityAxioms"
 
-    aput-object v11, v10, v9
+    aput-object v13, v12, v11
 
     goto/16 :goto_4
 
     :pswitch_31
-    const-string v11, "findMaxVisibility"
+    const-string v13, "findMaxVisibility"
 
-    aput-object v11, v10, v9
+    aput-object v13, v12, v11
 
     goto/16 :goto_4
 
     :pswitch_32
-    const-string v11, "computeVisibilityToInherit"
+    const-string v13, "computeVisibilityToInherit"
 
-    aput-object v11, v10, v9
+    aput-object v13, v12, v11
 
     goto/16 :goto_4
 
     :pswitch_33
-    const-string v11, "resolveUnknownVisibilityForMember"
+    const-string v13, "resolveUnknownVisibilityForMember"
 
-    aput-object v11, v10, v9
+    aput-object v13, v12, v11
 
     goto/16 :goto_4
 
     :pswitch_34
-    aput-object v12, v10, v9
+    const-string v13, "extractMembersOverridableInBothWays"
+
+    aput-object v13, v12, v11
 
     goto/16 :goto_4
 
     :pswitch_35
-    aput-object v13, v10, v9
+    aput-object v14, v12, v11
 
     goto/16 :goto_4
 
     :pswitch_36
-    aput-object v14, v10, v9
+    aput-object v15, v12, v11
 
     goto/16 :goto_4
 
     :pswitch_37
-    aput-object v15, v10, v9
+    aput-object v16, v12, v11
 
     goto/16 :goto_4
 
     :pswitch_38
-    const-string v11, "createAndBindFakeOverride"
+    const-string v13, "createAndBindFakeOverride"
 
-    aput-object v11, v10, v9
+    aput-object v13, v12, v11
 
     goto/16 :goto_4
 
     :pswitch_39
-    aput-object v16, v10, v9
+    aput-object v17, v12, v11
 
     goto/16 :goto_4
 
     :pswitch_3a
-    const-string v11, "isReturnTypeMoreSpecific"
+    const-string v13, "isReturnTypeMoreSpecific"
 
-    aput-object v11, v10, v9
+    aput-object v13, v12, v11
 
     goto/16 :goto_4
 
     :pswitch_3b
-    const-string v11, "isMoreSpecificThenAllOf"
+    const-string v13, "isMoreSpecificThenAllOf"
 
-    aput-object v11, v10, v9
+    aput-object v13, v12, v11
 
     goto/16 :goto_4
 
     :pswitch_3c
-    const-string v11, "isVisibilityMoreSpecific"
+    const-string v13, "isVisibilityMoreSpecific"
 
-    aput-object v11, v10, v9
+    aput-object v13, v12, v11
 
     goto/16 :goto_4
 
     :pswitch_3d
-    const-string v11, "isMoreSpecific"
+    const-string v13, "isMoreSpecific"
 
-    aput-object v11, v10, v9
+    aput-object v13, v12, v11
 
     goto/16 :goto_4
 
     :pswitch_3e
-    const-string v11, "createAndBindFakeOverrides"
+    const-string v13, "createAndBindFakeOverrides"
 
-    aput-object v11, v10, v9
+    aput-object v13, v12, v11
 
     goto :goto_4
 
     :pswitch_3f
-    const-string v11, "allHasSameContainingDeclaration"
+    const-string v13, "allHasSameContainingDeclaration"
 
-    aput-object v11, v10, v9
+    aput-object v13, v12, v11
 
     goto :goto_4
 
     :pswitch_40
-    const-string v11, "extractAndBindOverridesForMember"
+    const-string v13, "extractAndBindOverridesForMember"
 
-    aput-object v11, v10, v9
+    aput-object v13, v12, v11
 
     goto :goto_4
 
     :pswitch_41
-    const-string v11, "isVisibleForOverride"
+    const-string v13, "isVisibleForOverride"
 
-    aput-object v11, v10, v9
+    aput-object v13, v12, v11
 
     goto :goto_4
 
     :pswitch_42
-    const-string v11, "generateOverridesInFunctionGroup"
+    const-string v13, "generateOverridesInFunctionGroup"
 
-    aput-object v11, v10, v9
+    aput-object v13, v12, v11
 
     goto :goto_4
 
     :pswitch_43
-    const-string v11, "areTypeParametersEquivalent"
+    const-string v13, "areTypeParametersEquivalent"
 
-    aput-object v11, v10, v9
+    aput-object v13, v12, v11
 
     goto :goto_4
 
     :pswitch_44
-    const-string v11, "areTypesEquivalent"
+    const-string v13, "areTypesEquivalent"
 
-    aput-object v11, v10, v9
+    aput-object v13, v12, v11
 
     goto :goto_4
 
     :pswitch_45
-    const-string v11, "createTypeCheckerContext"
-
-    aput-object v11, v10, v9
+    aput-object v18, v12, v11
 
     goto :goto_4
 
     :pswitch_46
-    const-string v11, "createTypeChecker"
+    const-string v13, "createTypeChecker"
 
-    aput-object v11, v10, v9
+    aput-object v13, v12, v11
 
     goto :goto_4
 
     :pswitch_47
-    const-string v11, "getBasicOverridabilityProblem"
+    const-string v13, "getBasicOverridabilityProblem"
 
-    aput-object v11, v10, v9
+    aput-object v13, v12, v11
 
     goto :goto_4
 
     :pswitch_48
-    aput-object v17, v10, v9
+    aput-object v19, v12, v11
 
     goto :goto_4
 
     :pswitch_49
-    aput-object v18, v10, v9
+    aput-object v20, v12, v11
 
     goto :goto_4
 
     :pswitch_4a
-    const-string v11, "collectOverriddenDeclarations"
+    const-string v13, "collectOverriddenDeclarations"
 
-    aput-object v11, v10, v9
+    aput-object v13, v12, v11
 
     goto :goto_4
 
     :pswitch_4b
-    aput-object v19, v10, v9
+    aput-object v21, v12, v11
 
     goto :goto_4
 
     :pswitch_4c
-    const-string v11, "overrides"
+    const-string v13, "overrides"
 
-    aput-object v11, v10, v9
+    aput-object v13, v12, v11
 
     goto :goto_4
 
     :pswitch_4d
-    aput-object v20, v10, v9
+    aput-object v22, v12, v11
 
     goto :goto_4
 
     :pswitch_4e
-    const-string v11, "filterOutOverridden"
+    const-string v13, "filterOutOverridden"
 
-    aput-object v11, v10, v9
+    aput-object v13, v12, v11
 
     goto :goto_4
 
     :pswitch_4f
-    const-string v11, "<init>"
+    const-string v13, "<init>"
 
-    aput-object v11, v10, v9
+    aput-object v13, v12, v11
 
     goto :goto_4
 
     :pswitch_50
-    const-string v11, "create"
+    const-string v13, "create"
 
-    aput-object v11, v10, v9
+    aput-object v13, v12, v11
 
     goto :goto_4
 
     :pswitch_51
-    const-string v11, "createWithTypeRefiner"
+    const-string v13, "createWithTypeRefiner"
 
-    aput-object v11, v10, v9
+    aput-object v13, v12, v11
 
     :goto_4
     :pswitch_52
-    invoke-static {v8, v10}, Ljava/lang/String;->format(Ljava/lang/String;[Ljava/lang/Object;)Ljava/lang/String;
+    invoke-static {v10, v12}, Ljava/lang/String;->format(Ljava/lang/String;[Ljava/lang/Object;)Ljava/lang/String;
 
-    move-result-object v8
+    move-result-object v10
 
-    if-eq v0, v7, :cond_8
+    if-eq v0, v9, :cond_9
 
-    if-eq v0, v6, :cond_8
+    if-eq v0, v8, :cond_9
 
-    if-eq v0, v5, :cond_8
+    if-eq v0, v7, :cond_9
 
-    if-eq v0, v4, :cond_8
+    if-eq v0, v6, :cond_9
 
-    if-eq v0, v3, :cond_8
+    if-eq v0, v5, :cond_9
 
-    if-eq v0, v2, :cond_8
+    if-eq v0, v4, :cond_9
 
-    if-eq v0, v1, :cond_8
+    if-eq v0, v3, :cond_9
+
+    if-eq v0, v2, :cond_9
+
+    if-eq v0, v1, :cond_9
 
     packed-switch v0, :pswitch_data_e
 
@@ -764,18 +792,20 @@
 
     new-instance v0, Ljava/lang/IllegalArgumentException;
 
-    invoke-direct {v0, v8}, Ljava/lang/IllegalArgumentException;-><init>(Ljava/lang/String;)V
+    invoke-direct {v0, v10}, Ljava/lang/IllegalArgumentException;-><init>(Ljava/lang/String;)V
 
     goto :goto_5
 
-    :cond_8
+    :cond_9
     :pswitch_53
     new-instance v0, Ljava/lang/IllegalStateException;
 
-    invoke-direct {v0, v8}, Ljava/lang/IllegalStateException;-><init>(Ljava/lang/String;)V
+    invoke-direct {v0, v10}, Ljava/lang/IllegalStateException;-><init>(Ljava/lang/String;)V
 
     :goto_5
     throw v0
+
+    nop
 
     :pswitch_data_0
     .packed-switch 0x16
@@ -800,7 +830,7 @@
     .end packed-switch
 
     :pswitch_data_2
-    .packed-switch 0x4e
+    .packed-switch 0x50
         :pswitch_0
         :pswitch_0
         :pswitch_0
@@ -809,7 +839,7 @@
     .end packed-switch
 
     :pswitch_data_3
-    .packed-switch 0x58
+    .packed-switch 0x5a
         :pswitch_0
         :pswitch_0
         :pswitch_0
@@ -838,7 +868,7 @@
     .end packed-switch
 
     :pswitch_data_6
-    .packed-switch 0x4e
+    .packed-switch 0x50
         :pswitch_1
         :pswitch_1
         :pswitch_1
@@ -847,7 +877,7 @@
     .end packed-switch
 
     :pswitch_data_7
-    .packed-switch 0x58
+    .packed-switch 0x5a
         :pswitch_1
         :pswitch_1
         :pswitch_1
@@ -898,6 +928,8 @@
         :pswitch_20
         :pswitch_21
         :pswitch_20
+        :pswitch_28
+        :pswitch_28
         :pswitch_1f
         :pswitch_1e
         :pswitch_1d
@@ -987,7 +1019,7 @@
     .end packed-switch
 
     :pswitch_data_b
-    .packed-switch 0x4e
+    .packed-switch 0x50
         :pswitch_2e
         :pswitch_2e
         :pswitch_2e
@@ -996,7 +1028,7 @@
     .end packed-switch
 
     :pswitch_data_c
-    .packed-switch 0x58
+    .packed-switch 0x5a
         :pswitch_2d
         :pswitch_2d
         :pswitch_2d
@@ -1047,6 +1079,8 @@
         :pswitch_46
         :pswitch_45
         :pswitch_45
+        :pswitch_52
+        :pswitch_52
         :pswitch_44
         :pswitch_44
         :pswitch_44
@@ -1136,7 +1170,7 @@
     .end packed-switch
 
     :pswitch_data_10
-    .packed-switch 0x4e
+    .packed-switch 0x50
         :pswitch_53
         :pswitch_53
         :pswitch_53
@@ -1145,7 +1179,7 @@
     .end packed-switch
 
     :pswitch_data_11
-    .packed-switch 0x58
+    .packed-switch 0x5a
         :pswitch_53
         :pswitch_53
         :pswitch_53
@@ -1188,15 +1222,23 @@
     return-void
 .end method
 
-.method public constructor <init>(Lkotlin/reflect/jvm/internal/impl/types/checker/KotlinTypeChecker$TypeConstructorEquality;Lkotlin/reflect/jvm/internal/impl/types/checker/KotlinTypeRefiner;)V
+.method private constructor <init>(Lkotlin/reflect/jvm/internal/impl/types/checker/KotlinTypeChecker$TypeConstructorEquality;Lkotlin/reflect/jvm/internal/impl/types/checker/KotlinTypeRefiner;)V
     .locals 1
 
-    const/4 v0, 0x0
+    if-nez p1, :cond_0
 
-    if-eqz p1, :cond_1
+    const/4 v0, 0x4
 
-    if-eqz p2, :cond_0
+    invoke-static {v0}, Lkotlin/reflect/jvm/internal/impl/resolve/OverridingUtil;->$$$reportNull$$$0(I)V
 
+    :cond_0
+    if-nez p2, :cond_1
+
+    const/4 v0, 0x5
+
+    invoke-static {v0}, Lkotlin/reflect/jvm/internal/impl/resolve/OverridingUtil;->$$$reportNull$$$0(I)V
+
+    :cond_1
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
     iput-object p1, p0, Lkotlin/reflect/jvm/internal/impl/resolve/OverridingUtil;->equalityAxioms:Lkotlin/reflect/jvm/internal/impl/types/checker/KotlinTypeChecker$TypeConstructorEquality;
@@ -1204,23 +1246,377 @@
     iput-object p2, p0, Lkotlin/reflect/jvm/internal/impl/resolve/OverridingUtil;->kotlinTypeRefiner:Lkotlin/reflect/jvm/internal/impl/types/checker/KotlinTypeRefiner;
 
     return-void
-
-    :cond_0
-    const/4 p1, 0x5
-
-    invoke-static {p1}, Lkotlin/reflect/jvm/internal/impl/resolve/OverridingUtil;->$$$reportNull$$$0(I)V
-
-    throw v0
-
-    :cond_1
-    const/4 p1, 0x4
-
-    invoke-static {p1}, Lkotlin/reflect/jvm/internal/impl/resolve/OverridingUtil;->$$$reportNull$$$0(I)V
-
-    throw v0
 .end method
 
-.method public static collectOverriddenDeclarations(Lkotlin/reflect/jvm/internal/impl/descriptors/CallableMemberDescriptor;Ljava/util/Set;)V
+.method private static allHasSameContainingDeclaration(Ljava/util/Collection;)Z
+    .locals 3
+    .annotation system Ldalvik/annotation/Signature;
+        value = {
+            "(",
+            "Ljava/util/Collection<",
+            "Lkotlin/reflect/jvm/internal/impl/descriptors/CallableMemberDescriptor;",
+            ">;)Z"
+        }
+    .end annotation
+
+    if-nez p0, :cond_0
+
+    const/16 v0, 0x3f
+
+    invoke-static {v0}, Lkotlin/reflect/jvm/internal/impl/resolve/OverridingUtil;->$$$reportNull$$$0(I)V
+
+    :cond_0
+    invoke-interface {p0}, Ljava/util/Collection;->size()I
+
+    move-result v0
+
+    const/4 v1, 0x2
+
+    const/4 v2, 0x1
+
+    if-ge v0, v1, :cond_1
+
+    return v2
+
+    :cond_1
+    invoke-interface {p0}, Ljava/util/Collection;->iterator()Ljava/util/Iterator;
+
+    move-result-object v0
+
+    invoke-interface {v0}, Ljava/util/Iterator;->next()Ljava/lang/Object;
+
+    move-result-object v0
+
+    check-cast v0, Lkotlin/reflect/jvm/internal/impl/descriptors/CallableMemberDescriptor;
+
+    invoke-interface {v0}, Lkotlin/reflect/jvm/internal/impl/descriptors/DeclarationDescriptorNonRoot;->getContainingDeclaration()Lkotlin/reflect/jvm/internal/impl/descriptors/DeclarationDescriptor;
+
+    move-result-object v0
+
+    new-instance v1, Lkotlin/reflect/jvm/internal/impl/resolve/OverridingUtil$3;
+
+    invoke-direct {v1, v0}, Lkotlin/reflect/jvm/internal/impl/resolve/OverridingUtil$3;-><init>(Lkotlin/reflect/jvm/internal/impl/descriptors/DeclarationDescriptor;)V
+
+    invoke-interface {p0}, Ljava/util/Collection;->isEmpty()Z
+
+    move-result v0
+
+    if-eqz v0, :cond_2
+
+    goto :goto_0
+
+    :cond_2
+    invoke-interface {p0}, Ljava/lang/Iterable;->iterator()Ljava/util/Iterator;
+
+    move-result-object p0
+
+    :cond_3
+    invoke-interface {p0}, Ljava/util/Iterator;->hasNext()Z
+
+    move-result v0
+
+    if-eqz v0, :cond_4
+
+    invoke-interface {p0}, Ljava/util/Iterator;->next()Ljava/lang/Object;
+
+    move-result-object v0
+
+    invoke-interface {v1, v0}, Lkotlin/jvm/functions/Function1;->invoke(Ljava/lang/Object;)Ljava/lang/Object;
+
+    move-result-object v0
+
+    check-cast v0, Ljava/lang/Boolean;
+
+    invoke-virtual {v0}, Ljava/lang/Boolean;->booleanValue()Z
+
+    move-result v0
+
+    if-nez v0, :cond_3
+
+    const/4 v2, 0x0
+
+    :cond_4
+    :goto_0
+    return v2
+.end method
+
+.method private areTypeParametersEquivalent(Lkotlin/reflect/jvm/internal/impl/descriptors/TypeParameterDescriptor;Lkotlin/reflect/jvm/internal/impl/descriptors/TypeParameterDescriptor;Lkotlin/Pair;)Z
+    .locals 4
+    .annotation system Ldalvik/annotation/Signature;
+        value = {
+            "(",
+            "Lkotlin/reflect/jvm/internal/impl/descriptors/TypeParameterDescriptor;",
+            "Lkotlin/reflect/jvm/internal/impl/descriptors/TypeParameterDescriptor;",
+            "Lkotlin/Pair<",
+            "Lkotlin/reflect/jvm/internal/impl/types/checker/NewKotlinTypeCheckerImpl;",
+            "Lkotlin/reflect/jvm/internal/impl/types/checker/ClassicTypeCheckerContext;",
+            ">;)Z"
+        }
+    .end annotation
+
+    if-nez p1, :cond_0
+
+    const/16 v0, 0x31
+
+    invoke-static {v0}, Lkotlin/reflect/jvm/internal/impl/resolve/OverridingUtil;->$$$reportNull$$$0(I)V
+
+    :cond_0
+    if-nez p2, :cond_1
+
+    const/16 v0, 0x32
+
+    invoke-static {v0}, Lkotlin/reflect/jvm/internal/impl/resolve/OverridingUtil;->$$$reportNull$$$0(I)V
+
+    :cond_1
+    if-nez p3, :cond_2
+
+    const/16 v0, 0x33
+
+    invoke-static {v0}, Lkotlin/reflect/jvm/internal/impl/resolve/OverridingUtil;->$$$reportNull$$$0(I)V
+
+    :cond_2
+    invoke-interface {p1}, Lkotlin/reflect/jvm/internal/impl/descriptors/TypeParameterDescriptor;->getUpperBounds()Ljava/util/List;
+
+    move-result-object p1
+
+    new-instance v0, Ljava/util/ArrayList;
+
+    invoke-interface {p2}, Lkotlin/reflect/jvm/internal/impl/descriptors/TypeParameterDescriptor;->getUpperBounds()Ljava/util/List;
+
+    move-result-object p2
+
+    invoke-direct {v0, p2}, Ljava/util/ArrayList;-><init>(Ljava/util/Collection;)V
+
+    invoke-interface {p1}, Ljava/util/List;->size()I
+
+    move-result p2
+
+    invoke-virtual {v0}, Ljava/util/ArrayList;->size()I
+
+    move-result v1
+
+    const/4 v2, 0x0
+
+    if-eq p2, v1, :cond_3
+
+    return v2
+
+    :cond_3
+    invoke-interface {p1}, Ljava/util/List;->iterator()Ljava/util/Iterator;
+
+    move-result-object p1
+
+    :goto_0
+    invoke-interface {p1}, Ljava/util/Iterator;->hasNext()Z
+
+    move-result p2
+
+    if-eqz p2, :cond_6
+
+    invoke-interface {p1}, Ljava/util/Iterator;->next()Ljava/lang/Object;
+
+    move-result-object p2
+
+    check-cast p2, Lkotlin/reflect/jvm/internal/impl/types/KotlinType;
+
+    invoke-virtual {v0}, Ljava/util/ArrayList;->listIterator()Ljava/util/ListIterator;
+
+    move-result-object v1
+
+    :cond_4
+    invoke-interface {v1}, Ljava/util/ListIterator;->hasNext()Z
+
+    move-result v3
+
+    if-eqz v3, :cond_5
+
+    invoke-interface {v1}, Ljava/util/ListIterator;->next()Ljava/lang/Object;
+
+    move-result-object v3
+
+    check-cast v3, Lkotlin/reflect/jvm/internal/impl/types/KotlinType;
+
+    invoke-direct {p0, p2, v3, p3}, Lkotlin/reflect/jvm/internal/impl/resolve/OverridingUtil;->areTypesEquivalent(Lkotlin/reflect/jvm/internal/impl/types/KotlinType;Lkotlin/reflect/jvm/internal/impl/types/KotlinType;Lkotlin/Pair;)Z
+
+    move-result v3
+
+    if-eqz v3, :cond_4
+
+    invoke-interface {v1}, Ljava/util/ListIterator;->remove()V
+
+    goto :goto_0
+
+    :cond_5
+    return v2
+
+    :cond_6
+    const/4 p1, 0x1
+
+    return p1
+.end method
+
+.method private areTypesEquivalent(Lkotlin/reflect/jvm/internal/impl/types/KotlinType;Lkotlin/reflect/jvm/internal/impl/types/KotlinType;Lkotlin/Pair;)Z
+    .locals 2
+    .annotation system Ldalvik/annotation/Signature;
+        value = {
+            "(",
+            "Lkotlin/reflect/jvm/internal/impl/types/KotlinType;",
+            "Lkotlin/reflect/jvm/internal/impl/types/KotlinType;",
+            "Lkotlin/Pair<",
+            "Lkotlin/reflect/jvm/internal/impl/types/checker/NewKotlinTypeCheckerImpl;",
+            "Lkotlin/reflect/jvm/internal/impl/types/checker/ClassicTypeCheckerContext;",
+            ">;)Z"
+        }
+    .end annotation
+
+    if-nez p1, :cond_0
+
+    const/16 v0, 0x2e
+
+    invoke-static {v0}, Lkotlin/reflect/jvm/internal/impl/resolve/OverridingUtil;->$$$reportNull$$$0(I)V
+
+    :cond_0
+    if-nez p2, :cond_1
+
+    const/16 v0, 0x2f
+
+    invoke-static {v0}, Lkotlin/reflect/jvm/internal/impl/resolve/OverridingUtil;->$$$reportNull$$$0(I)V
+
+    :cond_1
+    if-nez p3, :cond_2
+
+    const/16 v0, 0x30
+
+    invoke-static {v0}, Lkotlin/reflect/jvm/internal/impl/resolve/OverridingUtil;->$$$reportNull$$$0(I)V
+
+    :cond_2
+    invoke-static {p1}, Lkotlin/reflect/jvm/internal/impl/types/KotlinTypeKt;->isError(Lkotlin/reflect/jvm/internal/impl/types/KotlinType;)Z
+
+    move-result v0
+
+    const/4 v1, 0x1
+
+    if-eqz v0, :cond_3
+
+    invoke-static {p2}, Lkotlin/reflect/jvm/internal/impl/types/KotlinTypeKt;->isError(Lkotlin/reflect/jvm/internal/impl/types/KotlinType;)Z
+
+    move-result v0
+
+    if-eqz v0, :cond_3
+
+    move v0, v1
+
+    goto :goto_0
+
+    :cond_3
+    const/4 v0, 0x0
+
+    :goto_0
+    if-eqz v0, :cond_4
+
+    return v1
+
+    :cond_4
+    iget-object v0, p3, Lkotlin/Pair;->first:Ljava/lang/Object;
+
+    check-cast v0, Lkotlin/reflect/jvm/internal/impl/types/checker/NewKotlinTypeCheckerImpl;
+
+    iget-object p3, p3, Lkotlin/Pair;->second:Ljava/lang/Object;
+
+    check-cast p3, Lkotlin/reflect/jvm/internal/impl/types/checker/ClassicTypeCheckerContext;
+
+    invoke-virtual {p1}, Lkotlin/reflect/jvm/internal/impl/types/KotlinType;->unwrap()Lkotlin/reflect/jvm/internal/impl/types/UnwrappedType;
+
+    move-result-object p1
+
+    invoke-virtual {p2}, Lkotlin/reflect/jvm/internal/impl/types/KotlinType;->unwrap()Lkotlin/reflect/jvm/internal/impl/types/UnwrappedType;
+
+    move-result-object p2
+
+    invoke-virtual {v0, p3, p1, p2}, Lkotlin/reflect/jvm/internal/impl/types/checker/NewKotlinTypeCheckerImpl;->equalTypes(Lkotlin/reflect/jvm/internal/impl/types/checker/ClassicTypeCheckerContext;Lkotlin/reflect/jvm/internal/impl/types/UnwrappedType;Lkotlin/reflect/jvm/internal/impl/types/UnwrappedType;)Z
+
+    move-result p1
+
+    return p1
+.end method
+
+.method private static checkReceiverAndParameterCount(Lkotlin/reflect/jvm/internal/impl/descriptors/CallableDescriptor;Lkotlin/reflect/jvm/internal/impl/descriptors/CallableDescriptor;)Lkotlin/reflect/jvm/internal/impl/resolve/OverridingUtil$OverrideCompatibilityInfo;
+    .locals 4
+
+    invoke-interface {p0}, Lkotlin/reflect/jvm/internal/impl/descriptors/CallableDescriptor;->getExtensionReceiverParameter()Lkotlin/reflect/jvm/internal/impl/descriptors/ReceiverParameterDescriptor;
+
+    move-result-object v0
+
+    const/4 v1, 0x1
+
+    const/4 v2, 0x0
+
+    if-nez v0, :cond_0
+
+    move v0, v1
+
+    goto :goto_0
+
+    :cond_0
+    move v0, v2
+
+    :goto_0
+    invoke-interface {p1}, Lkotlin/reflect/jvm/internal/impl/descriptors/CallableDescriptor;->getExtensionReceiverParameter()Lkotlin/reflect/jvm/internal/impl/descriptors/ReceiverParameterDescriptor;
+
+    move-result-object v3
+
+    if-nez v3, :cond_1
+
+    goto :goto_1
+
+    :cond_1
+    move v1, v2
+
+    :goto_1
+    if-eq v0, v1, :cond_2
+
+    const-string p0, "Receiver presence mismatch"
+
+    invoke-static {p0}, Lkotlin/reflect/jvm/internal/impl/resolve/OverridingUtil$OverrideCompatibilityInfo;->incompatible(Ljava/lang/String;)Lkotlin/reflect/jvm/internal/impl/resolve/OverridingUtil$OverrideCompatibilityInfo;
+
+    move-result-object p0
+
+    return-object p0
+
+    :cond_2
+    invoke-interface {p0}, Lkotlin/reflect/jvm/internal/impl/descriptors/CallableDescriptor;->getValueParameters()Ljava/util/List;
+
+    move-result-object p0
+
+    invoke-interface {p0}, Ljava/util/List;->size()I
+
+    move-result p0
+
+    invoke-interface {p1}, Lkotlin/reflect/jvm/internal/impl/descriptors/CallableDescriptor;->getValueParameters()Ljava/util/List;
+
+    move-result-object p1
+
+    invoke-interface {p1}, Ljava/util/List;->size()I
+
+    move-result p1
+
+    if-eq p0, p1, :cond_3
+
+    const-string p0, "Value parameter number mismatch"
+
+    invoke-static {p0}, Lkotlin/reflect/jvm/internal/impl/resolve/OverridingUtil$OverrideCompatibilityInfo;->incompatible(Ljava/lang/String;)Lkotlin/reflect/jvm/internal/impl/resolve/OverridingUtil$OverrideCompatibilityInfo;
+
+    move-result-object p0
+
+    return-object p0
+
+    :cond_3
+    const/4 p0, 0x0
+
+    return-object p0
+.end method
+
+.method private static collectOverriddenDeclarations(Lkotlin/reflect/jvm/internal/impl/descriptors/CallableMemberDescriptor;Ljava/util/Set;)V
     .locals 2
     .annotation system Ldalvik/annotation/Signature;
         value = {
@@ -1232,12 +1628,20 @@
         }
     .end annotation
 
-    const/4 v0, 0x0
+    if-nez p0, :cond_0
 
-    if-eqz p0, :cond_4
+    const/16 v0, 0xf
 
-    if-eqz p1, :cond_3
+    invoke-static {v0}, Lkotlin/reflect/jvm/internal/impl/resolve/OverridingUtil;->$$$reportNull$$$0(I)V
 
+    :cond_0
+    if-nez p1, :cond_1
+
+    const/16 v0, 0x10
+
+    invoke-static {v0}, Lkotlin/reflect/jvm/internal/impl/resolve/OverridingUtil;->$$$reportNull$$$0(I)V
+
+    :cond_1
     invoke-interface {p0}, Lkotlin/reflect/jvm/internal/impl/descriptors/CallableMemberDescriptor;->getKind()Lkotlin/reflect/jvm/internal/impl/descriptors/CallableMemberDescriptor$Kind;
 
     move-result-object v0
@@ -1246,13 +1650,13 @@
 
     move-result v0
 
-    if-eqz v0, :cond_0
+    if-eqz v0, :cond_2
 
     invoke-interface {p1, p0}, Ljava/util/Set;->add(Ljava/lang/Object;)Z
 
     goto :goto_1
 
-    :cond_0
+    :cond_2
     invoke-interface {p0}, Lkotlin/reflect/jvm/internal/impl/descriptors/CallableMemberDescriptor;->getOverriddenDescriptors()Ljava/util/Collection;
 
     move-result-object v0
@@ -1261,7 +1665,7 @@
 
     move-result v0
 
-    if-nez v0, :cond_2
+    if-nez v0, :cond_4
 
     invoke-interface {p0}, Lkotlin/reflect/jvm/internal/impl/descriptors/CallableMemberDescriptor;->getOverriddenDescriptors()Ljava/util/Collection;
 
@@ -1276,7 +1680,7 @@
 
     move-result v0
 
-    if-eqz v0, :cond_1
+    if-eqz v0, :cond_3
 
     invoke-interface {p0}, Ljava/util/Iterator;->next()Ljava/lang/Object;
 
@@ -1288,11 +1692,11 @@
 
     goto :goto_0
 
-    :cond_1
+    :cond_3
     :goto_1
     return-void
 
-    :cond_2
+    :cond_4
     new-instance p1, Ljava/lang/IllegalStateException;
 
     new-instance v0, Ljava/lang/StringBuilder;
@@ -1312,23 +1716,9 @@
     invoke-direct {p1, p0}, Ljava/lang/IllegalStateException;-><init>(Ljava/lang/String;)V
 
     throw p1
-
-    :cond_3
-    const/16 p0, 0x10
-
-    invoke-static {p0}, Lkotlin/reflect/jvm/internal/impl/resolve/OverridingUtil;->$$$reportNull$$$0(I)V
-
-    throw v0
-
-    :cond_4
-    const/16 p0, 0xf
-
-    invoke-static {p0}, Lkotlin/reflect/jvm/internal/impl/resolve/OverridingUtil;->$$$reportNull$$$0(I)V
-
-    throw v0
 .end method
 
-.method public static compiledValueParameters(Lkotlin/reflect/jvm/internal/impl/descriptors/CallableDescriptor;)Ljava/util/List;
+.method private static compiledValueParameters(Lkotlin/reflect/jvm/internal/impl/descriptors/CallableDescriptor;)Ljava/util/List;
     .locals 2
     .annotation system Ldalvik/annotation/Signature;
         value = {
@@ -1391,8 +1781,113 @@
     return-object v1
 .end method
 
-.method public static createAndBindFakeOverride(Ljava/util/Collection;Lkotlin/reflect/jvm/internal/impl/descriptors/ClassDescriptor;Lkotlin/reflect/jvm/internal/impl/resolve/OverridingStrategy;)V
-    .locals 16
+.method private static computeVisibilityToInherit(Lkotlin/reflect/jvm/internal/impl/descriptors/CallableMemberDescriptor;)Lkotlin/reflect/jvm/internal/impl/descriptors/DescriptorVisibility;
+    .locals 5
+
+    if-nez p0, :cond_0
+
+    const/16 v0, 0x6c
+
+    invoke-static {v0}, Lkotlin/reflect/jvm/internal/impl/resolve/OverridingUtil;->$$$reportNull$$$0(I)V
+
+    :cond_0
+    invoke-interface {p0}, Lkotlin/reflect/jvm/internal/impl/descriptors/CallableMemberDescriptor;->getOverriddenDescriptors()Ljava/util/Collection;
+
+    move-result-object v0
+
+    invoke-static {v0}, Lkotlin/reflect/jvm/internal/impl/resolve/OverridingUtil;->findMaxVisibility(Ljava/util/Collection;)Lkotlin/reflect/jvm/internal/impl/descriptors/DescriptorVisibility;
+
+    move-result-object v1
+
+    const/4 v2, 0x0
+
+    if-nez v1, :cond_1
+
+    return-object v2
+
+    :cond_1
+    invoke-interface {p0}, Lkotlin/reflect/jvm/internal/impl/descriptors/CallableMemberDescriptor;->getKind()Lkotlin/reflect/jvm/internal/impl/descriptors/CallableMemberDescriptor$Kind;
+
+    move-result-object p0
+
+    sget-object v3, Lkotlin/reflect/jvm/internal/impl/descriptors/CallableMemberDescriptor$Kind;->FAKE_OVERRIDE:Lkotlin/reflect/jvm/internal/impl/descriptors/CallableMemberDescriptor$Kind;
+
+    if-ne p0, v3, :cond_4
+
+    invoke-interface {v0}, Ljava/util/Collection;->iterator()Ljava/util/Iterator;
+
+    move-result-object p0
+
+    :cond_2
+    invoke-interface {p0}, Ljava/util/Iterator;->hasNext()Z
+
+    move-result v0
+
+    if-eqz v0, :cond_3
+
+    invoke-interface {p0}, Ljava/util/Iterator;->next()Ljava/lang/Object;
+
+    move-result-object v0
+
+    check-cast v0, Lkotlin/reflect/jvm/internal/impl/descriptors/CallableMemberDescriptor;
+
+    invoke-interface {v0}, Lkotlin/reflect/jvm/internal/impl/descriptors/MemberDescriptor;->getModality()Lkotlin/reflect/jvm/internal/impl/descriptors/Modality;
+
+    move-result-object v3
+
+    sget-object v4, Lkotlin/reflect/jvm/internal/impl/descriptors/Modality;->ABSTRACT:Lkotlin/reflect/jvm/internal/impl/descriptors/Modality;
+
+    if-eq v3, v4, :cond_2
+
+    invoke-interface {v0}, Lkotlin/reflect/jvm/internal/impl/descriptors/MemberDescriptor;->getVisibility()Lkotlin/reflect/jvm/internal/impl/descriptors/DescriptorVisibility;
+
+    move-result-object v0
+
+    invoke-virtual {v0, v1}, Ljava/lang/Object;->equals(Ljava/lang/Object;)Z
+
+    move-result v0
+
+    if-nez v0, :cond_2
+
+    return-object v2
+
+    :cond_3
+    return-object v1
+
+    :cond_4
+    invoke-virtual {v1}, Lkotlin/reflect/jvm/internal/impl/descriptors/DescriptorVisibility;->normalize()Lkotlin/reflect/jvm/internal/impl/descriptors/DescriptorVisibility;
+
+    move-result-object p0
+
+    return-object p0
+.end method
+
+.method public static create(Lkotlin/reflect/jvm/internal/impl/types/checker/KotlinTypeRefiner;Lkotlin/reflect/jvm/internal/impl/types/checker/KotlinTypeChecker$TypeConstructorEquality;)Lkotlin/reflect/jvm/internal/impl/resolve/OverridingUtil;
+    .locals 1
+
+    if-nez p0, :cond_0
+
+    const/4 v0, 0x2
+
+    invoke-static {v0}, Lkotlin/reflect/jvm/internal/impl/resolve/OverridingUtil;->$$$reportNull$$$0(I)V
+
+    :cond_0
+    if-nez p1, :cond_1
+
+    const/4 v0, 0x3
+
+    invoke-static {v0}, Lkotlin/reflect/jvm/internal/impl/resolve/OverridingUtil;->$$$reportNull$$$0(I)V
+
+    :cond_1
+    new-instance v0, Lkotlin/reflect/jvm/internal/impl/resolve/OverridingUtil;
+
+    invoke-direct {v0, p1, p0}, Lkotlin/reflect/jvm/internal/impl/resolve/OverridingUtil;-><init>(Lkotlin/reflect/jvm/internal/impl/types/checker/KotlinTypeChecker$TypeConstructorEquality;Lkotlin/reflect/jvm/internal/impl/types/checker/KotlinTypeRefiner;)V
+
+    return-object v0
+.end method
+
+.method private static createAndBindFakeOverride(Ljava/util/Collection;Lkotlin/reflect/jvm/internal/impl/descriptors/ClassDescriptor;Lkotlin/reflect/jvm/internal/impl/resolve/OverridingStrategy;)V
+    .locals 8
     .annotation system Ldalvik/annotation/Signature;
         value = {
             "(",
@@ -1405,523 +1900,749 @@
         }
     .end annotation
 
-    move-object/from16 v0, p0
+    if-nez p0, :cond_0
 
-    move-object/from16 v1, p1
+    const/16 v0, 0x55
 
-    move-object/from16 v6, p2
-
-    const/4 v2, 0x0
-
-    if-eqz v0, :cond_1f
-
-    if-eqz v1, :cond_1e
-
-    if-eqz v6, :cond_1d
-
-    if-eqz v1, :cond_1c
-
-    if-eqz v0, :cond_1b
-
-    new-instance v3, Lkotlin/reflect/jvm/internal/impl/resolve/OverridingUtil$5;
-
-    invoke-direct {v3, v1}, Lkotlin/reflect/jvm/internal/impl/resolve/OverridingUtil$5;-><init>(Lkotlin/reflect/jvm/internal/impl/descriptors/ClassDescriptor;)V
-
-    invoke-static {v0, v3}, Lkotlin/collections/CollectionsKt___CollectionsKt;->filter(Ljava/lang/Iterable;Lkotlin/jvm/functions/Function1;)Ljava/util/List;
-
-    move-result-object v3
-
-    move-object v4, v3
-
-    check-cast v4, Ljava/util/ArrayList;
-
-    invoke-virtual {v4}, Ljava/util/ArrayList;->isEmpty()Z
-
-    move-result v4
-
-    if-eqz v4, :cond_0
-
-    move-object v7, v0
-
-    goto :goto_0
+    invoke-static {v0}, Lkotlin/reflect/jvm/internal/impl/resolve/OverridingUtil;->$$$reportNull$$$0(I)V
 
     :cond_0
-    move-object v7, v3
+    if-nez p1, :cond_1
 
-    :goto_0
-    sget-object v0, Lkotlin/reflect/jvm/internal/impl/descriptors/Modality;->ABSTRACT:Lkotlin/reflect/jvm/internal/impl/descriptors/Modality;
+    const/16 v0, 0x56
 
-    invoke-interface {v7}, Ljava/util/Collection;->iterator()Ljava/util/Iterator;
-
-    move-result-object v3
-
-    const/4 v5, 0x0
-
-    move v8, v5
-
-    move v9, v8
-
-    :goto_1
-    invoke-interface {v3}, Ljava/util/Iterator;->hasNext()Z
-
-    move-result v10
-
-    const/4 v11, 0x1
-
-    if-eqz v10, :cond_5
-
-    invoke-interface {v3}, Ljava/util/Iterator;->next()Ljava/lang/Object;
-
-    move-result-object v10
-
-    check-cast v10, Lkotlin/reflect/jvm/internal/impl/descriptors/CallableMemberDescriptor;
-
-    invoke-interface {v10}, Lkotlin/reflect/jvm/internal/impl/descriptors/MemberDescriptor;->getModality()Lkotlin/reflect/jvm/internal/impl/descriptors/Modality;
-
-    move-result-object v12
-
-    invoke-virtual {v12}, Ljava/lang/Enum;->ordinal()I
-
-    move-result v12
-
-    if-eqz v12, :cond_4
-
-    if-eq v12, v11, :cond_3
-
-    const/4 v10, 0x2
-
-    if-eq v12, v10, :cond_2
-
-    const/4 v10, 0x3
-
-    if-eq v12, v10, :cond_1
-
-    goto :goto_1
+    invoke-static {v0}, Lkotlin/reflect/jvm/internal/impl/resolve/OverridingUtil;->$$$reportNull$$$0(I)V
 
     :cond_1
-    move v9, v11
+    if-nez p2, :cond_2
 
-    goto :goto_1
+    const/16 v0, 0x57
+
+    invoke-static {v0}, Lkotlin/reflect/jvm/internal/impl/resolve/OverridingUtil;->$$$reportNull$$$0(I)V
 
     :cond_2
-    move v8, v11
-
-    goto :goto_1
-
-    :cond_3
-    new-instance v0, Ljava/lang/IllegalStateException;
-
-    new-instance v1, Ljava/lang/StringBuilder;
-
-    invoke-direct {v1}, Ljava/lang/StringBuilder;-><init>()V
-
-    const-string v2, "Member cannot have SEALED modality: "
-
-    invoke-virtual {v1, v2}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
-
-    invoke-virtual {v1, v10}, Ljava/lang/StringBuilder;->append(Ljava/lang/Object;)Ljava/lang/StringBuilder;
-
-    invoke-virtual {v1}, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
-
-    move-result-object v1
-
-    invoke-direct {v0, v1}, Ljava/lang/IllegalStateException;-><init>(Ljava/lang/String;)V
-
-    throw v0
-
-    :cond_4
-    sget-object v0, Lkotlin/reflect/jvm/internal/impl/descriptors/Modality;->FINAL:Lkotlin/reflect/jvm/internal/impl/descriptors/Modality;
-
-    :goto_2
-    move-object v2, v0
-
-    goto/16 :goto_c
-
-    :cond_5
-    invoke-interface/range {p1 .. p1}, Lkotlin/reflect/jvm/internal/impl/descriptors/MemberDescriptor;->isExpect()Z
-
-    move-result v3
-
-    if-eqz v3, :cond_6
-
-    invoke-interface/range {p1 .. p1}, Lkotlin/reflect/jvm/internal/impl/descriptors/ClassDescriptor;->getModality()Lkotlin/reflect/jvm/internal/impl/descriptors/Modality;
-
-    move-result-object v3
-
-    if-eq v3, v0, :cond_6
-
-    invoke-interface/range {p1 .. p1}, Lkotlin/reflect/jvm/internal/impl/descriptors/ClassDescriptor;->getModality()Lkotlin/reflect/jvm/internal/impl/descriptors/Modality;
-
-    move-result-object v3
-
-    sget-object v10, Lkotlin/reflect/jvm/internal/impl/descriptors/Modality;->SEALED:Lkotlin/reflect/jvm/internal/impl/descriptors/Modality;
-
-    if-eq v3, v10, :cond_6
-
-    move v3, v11
-
-    goto :goto_3
-
-    :cond_6
-    move v3, v5
-
-    :goto_3
-    if-eqz v8, :cond_7
-
-    if-nez v9, :cond_7
-
-    sget-object v0, Lkotlin/reflect/jvm/internal/impl/descriptors/Modality;->OPEN:Lkotlin/reflect/jvm/internal/impl/descriptors/Modality;
-
-    goto :goto_2
-
-    :cond_7
-    if-nez v8, :cond_a
-
-    if-eqz v9, :cond_a
-
-    if-eqz v3, :cond_8
-
-    invoke-interface/range {p1 .. p1}, Lkotlin/reflect/jvm/internal/impl/descriptors/ClassDescriptor;->getModality()Lkotlin/reflect/jvm/internal/impl/descriptors/Modality;
+    invoke-static {p1, p0}, Lkotlin/reflect/jvm/internal/impl/resolve/OverridingUtil;->filterVisibleFakeOverrides(Lkotlin/reflect/jvm/internal/impl/descriptors/ClassDescriptor;Ljava/util/Collection;)Ljava/util/Collection;
 
     move-result-object v0
 
-    :cond_8
-    if-eqz v0, :cond_9
+    invoke-interface {v0}, Ljava/util/Collection;->isEmpty()Z
 
-    goto :goto_2
+    move-result v1
 
-    :cond_9
-    const/16 v0, 0x5a
+    if-eqz v1, :cond_3
 
-    invoke-static {v0}, Lkotlin/reflect/jvm/internal/impl/resolve/OverridingUtil;->$$$reportNull$$$0(I)V
+    goto :goto_0
 
-    throw v2
+    :cond_3
+    move-object p0, v0
 
-    :cond_a
-    new-instance v8, Ljava/util/HashSet;
+    :goto_0
+    invoke-static {p0, p1}, Lkotlin/reflect/jvm/internal/impl/resolve/OverridingUtil;->determineModalityForFakeOverride(Ljava/util/Collection;Lkotlin/reflect/jvm/internal/impl/descriptors/ClassDescriptor;)Lkotlin/reflect/jvm/internal/impl/descriptors/Modality;
 
-    invoke-direct {v8}, Ljava/util/HashSet;-><init>()V
+    move-result-object v4
 
-    invoke-interface {v7}, Ljava/util/Collection;->iterator()Ljava/util/Iterator;
-
-    move-result-object v9
-
-    :goto_4
-    invoke-interface {v9}, Ljava/util/Iterator;->hasNext()Z
-
-    move-result v10
-
-    if-eqz v10, :cond_c
-
-    invoke-interface {v9}, Ljava/util/Iterator;->next()Ljava/lang/Object;
-
-    move-result-object v10
-
-    check-cast v10, Lkotlin/reflect/jvm/internal/impl/descriptors/CallableMemberDescriptor;
-
-    if-eqz v10, :cond_b
-
-    new-instance v12, Ljava/util/LinkedHashSet;
-
-    invoke-direct {v12}, Ljava/util/LinkedHashSet;-><init>()V
-
-    invoke-static {v10, v12}, Lkotlin/reflect/jvm/internal/impl/resolve/OverridingUtil;->collectOverriddenDeclarations(Lkotlin/reflect/jvm/internal/impl/descriptors/CallableMemberDescriptor;Ljava/util/Set;)V
-
-    invoke-interface {v8, v12}, Ljava/util/Set;->addAll(Ljava/util/Collection;)Z
-
-    goto :goto_4
-
-    :cond_b
-    const/16 v0, 0xd
-
-    invoke-static {v0}, Lkotlin/reflect/jvm/internal/impl/resolve/OverridingUtil;->$$$reportNull$$$0(I)V
-
-    throw v2
-
-    :cond_c
-    invoke-virtual {v8}, Ljava/util/HashSet;->isEmpty()Z
-
-    move-result v9
-
-    if-nez v9, :cond_f
-
-    invoke-virtual {v8}, Ljava/util/HashSet;->iterator()Ljava/util/Iterator;
-
-    move-result-object v9
-
-    invoke-interface {v9}, Ljava/util/Iterator;->next()Ljava/lang/Object;
-
-    move-result-object v9
-
-    check-cast v9, Lkotlin/reflect/jvm/internal/impl/descriptors/DeclarationDescriptor;
-
-    invoke-static {v9}, Lkotlin/reflect/jvm/internal/impl/resolve/descriptorUtil/DescriptorUtilsKt;->getModule(Lkotlin/reflect/jvm/internal/impl/descriptors/DeclarationDescriptor;)Lkotlin/reflect/jvm/internal/impl/descriptors/ModuleDescriptor;
-
-    move-result-object v9
-
-    const-string v10, "<this>"
-
-    invoke-static {v9, v10}, Lkotlin/jvm/internal/Intrinsics;->checkNotNullParameter(Ljava/lang/Object;Ljava/lang/String;)V
-
-    sget-object v10, Lkotlin/reflect/jvm/internal/impl/types/checker/KotlinTypeRefinerKt;->REFINER_CAPABILITY:Lcom/google/android/gms/internal/nearby/zzci;
-
-    invoke-interface {v9, v10}, Lkotlin/reflect/jvm/internal/impl/descriptors/ModuleDescriptor;->getCapability(Lcom/google/android/gms/internal/nearby/zzci;)Ljava/lang/Object;
-
-    move-result-object v9
-
-    check-cast v9, Lkotlin/reflect/jvm/internal/impl/types/checker/Ref;
-
-    if-nez v9, :cond_d
-
-    move-object v9, v2
-
-    goto :goto_5
-
-    :cond_d
-    iget-object v9, v9, Lkotlin/reflect/jvm/internal/impl/types/checker/Ref;->value:Ljava/lang/Object;
-
-    check-cast v9, Lkotlin/reflect/jvm/internal/impl/types/checker/KotlinTypeRefiner;
-
-    :goto_5
-    if-eqz v9, :cond_e
-
-    move v9, v11
-
-    goto :goto_6
-
-    :cond_e
-    move v9, v5
-
-    :goto_6
-    if-eqz v9, :cond_f
-
-    move v5, v11
-
-    :cond_f
-    invoke-virtual {v8}, Ljava/util/HashSet;->size()I
-
-    move-result v9
-
-    if-gt v9, v11, :cond_10
-
-    goto :goto_9
-
-    :cond_10
-    new-instance v9, Ljava/util/LinkedHashSet;
-
-    invoke-direct {v9}, Ljava/util/LinkedHashSet;-><init>()V
-
-    invoke-virtual {v8}, Ljava/util/HashSet;->iterator()Ljava/util/Iterator;
-
-    move-result-object v8
-
-    :goto_7
-    invoke-interface {v8}, Ljava/util/Iterator;->hasNext()Z
-
-    move-result v10
-
-    if-eqz v10, :cond_14
-
-    invoke-interface {v8}, Ljava/util/Iterator;->next()Ljava/lang/Object;
-
-    move-result-object v10
-
-    invoke-interface {v9}, Ljava/util/Set;->iterator()Ljava/util/Iterator;
-
-    move-result-object v12
-
-    :cond_11
-    :goto_8
-    invoke-interface {v12}, Ljava/util/Iterator;->hasNext()Z
-
-    move-result v13
-
-    if-eqz v13, :cond_13
-
-    invoke-interface {v12}, Ljava/util/Iterator;->next()Ljava/lang/Object;
-
-    move-result-object v13
-
-    move-object v14, v10
-
-    check-cast v14, Lkotlin/reflect/jvm/internal/impl/descriptors/CallableDescriptor;
-
-    check-cast v13, Lkotlin/reflect/jvm/internal/impl/descriptors/CallableDescriptor;
-
-    invoke-static {v14, v13, v5, v11}, Lkotlin/reflect/jvm/internal/impl/resolve/OverridingUtil;->overrides(Lkotlin/reflect/jvm/internal/impl/descriptors/CallableDescriptor;Lkotlin/reflect/jvm/internal/impl/descriptors/CallableDescriptor;ZZ)Z
-
-    move-result v15
-
-    if-eqz v15, :cond_12
-
-    invoke-interface {v12}, Ljava/util/Iterator;->remove()V
-
-    goto :goto_8
-
-    :cond_12
-    invoke-static {v13, v14, v5, v11}, Lkotlin/reflect/jvm/internal/impl/resolve/OverridingUtil;->overrides(Lkotlin/reflect/jvm/internal/impl/descriptors/CallableDescriptor;Lkotlin/reflect/jvm/internal/impl/descriptors/CallableDescriptor;ZZ)Z
-
-    move-result v13
-
-    if-eqz v13, :cond_11
-
-    goto :goto_7
-
-    :cond_13
-    invoke-interface {v9, v10}, Ljava/util/Set;->add(Ljava/lang/Object;)Z
-
-    goto :goto_7
-
-    :cond_14
-    move-object v8, v9
-
-    :goto_9
-    invoke-interface/range {p1 .. p1}, Lkotlin/reflect/jvm/internal/impl/descriptors/ClassDescriptor;->getModality()Lkotlin/reflect/jvm/internal/impl/descriptors/Modality;
-
-    move-result-object v5
-
-    if-eqz v5, :cond_1a
-
-    invoke-interface {v8}, Ljava/util/Collection;->iterator()Ljava/util/Iterator;
-
-    move-result-object v8
-
-    move-object v9, v0
-
-    :cond_15
-    :goto_a
-    invoke-interface {v8}, Ljava/util/Iterator;->hasNext()Z
-
-    move-result v10
-
-    if-eqz v10, :cond_17
-
-    invoke-interface {v8}, Ljava/util/Iterator;->next()Ljava/lang/Object;
-
-    move-result-object v10
-
-    check-cast v10, Lkotlin/reflect/jvm/internal/impl/descriptors/CallableMemberDescriptor;
-
-    if-eqz v3, :cond_16
-
-    invoke-interface {v10}, Lkotlin/reflect/jvm/internal/impl/descriptors/MemberDescriptor;->getModality()Lkotlin/reflect/jvm/internal/impl/descriptors/Modality;
-
-    move-result-object v11
-
-    if-ne v11, v0, :cond_16
-
-    move-object v10, v5
-
-    goto :goto_b
-
-    :cond_16
-    invoke-interface {v10}, Lkotlin/reflect/jvm/internal/impl/descriptors/MemberDescriptor;->getModality()Lkotlin/reflect/jvm/internal/impl/descriptors/Modality;
-
-    move-result-object v10
-
-    :goto_b
-    invoke-virtual {v10, v9}, Ljava/lang/Enum;->compareTo(Ljava/lang/Enum;)I
-
-    move-result v11
-
-    if-gez v11, :cond_15
-
-    move-object v9, v10
-
-    goto :goto_a
-
-    :cond_17
-    if-eqz v9, :cond_19
-
-    move-object v2, v9
-
-    :goto_c
-    if-eqz v4, :cond_18
+    if-eqz v1, :cond_4
 
     sget-object v0, Lkotlin/reflect/jvm/internal/impl/descriptors/DescriptorVisibilities;->INVISIBLE_FAKE:Lkotlin/reflect/jvm/internal/impl/descriptors/DescriptorVisibility;
 
-    goto :goto_d
+    goto :goto_1
 
-    :cond_18
+    :cond_4
     sget-object v0, Lkotlin/reflect/jvm/internal/impl/descriptors/DescriptorVisibilities;->INHERITED:Lkotlin/reflect/jvm/internal/impl/descriptors/DescriptorVisibility;
 
-    :goto_d
-    move-object v3, v0
+    :goto_1
+    move-object v5, v0
 
     new-instance v0, Lkotlin/reflect/jvm/internal/impl/resolve/OverridingUtil$4;
 
     invoke-direct {v0}, Lkotlin/reflect/jvm/internal/impl/resolve/OverridingUtil$4;-><init>()V
 
-    invoke-static {v7, v0}, Lkotlin/reflect/jvm/internal/impl/resolve/OverridingUtil;->selectMostSpecificMember(Ljava/util/Collection;Lkotlin/jvm/functions/Function1;)Ljava/lang/Object;
+    invoke-static {p0, v0}, Lkotlin/reflect/jvm/internal/impl/resolve/OverridingUtil;->selectMostSpecificMember(Ljava/util/Collection;Lkotlin/jvm/functions/Function1;)Ljava/lang/Object;
+
+    move-result-object v0
+
+    move-object v2, v0
+
+    check-cast v2, Lkotlin/reflect/jvm/internal/impl/descriptors/CallableMemberDescriptor;
+
+    sget-object v6, Lkotlin/reflect/jvm/internal/impl/descriptors/CallableMemberDescriptor$Kind;->FAKE_OVERRIDE:Lkotlin/reflect/jvm/internal/impl/descriptors/CallableMemberDescriptor$Kind;
+
+    const/4 v7, 0x0
+
+    move-object v3, p1
+
+    invoke-interface/range {v2 .. v7}, Lkotlin/reflect/jvm/internal/impl/descriptors/CallableMemberDescriptor;->copy(Lkotlin/reflect/jvm/internal/impl/descriptors/DeclarationDescriptor;Lkotlin/reflect/jvm/internal/impl/descriptors/Modality;Lkotlin/reflect/jvm/internal/impl/descriptors/DescriptorVisibility;Lkotlin/reflect/jvm/internal/impl/descriptors/CallableMemberDescriptor$Kind;Z)Lkotlin/reflect/jvm/internal/impl/descriptors/CallableMemberDescriptor;
+
+    move-result-object p1
+
+    invoke-virtual {p2, p1, p0}, Lkotlin/reflect/jvm/internal/impl/resolve/OverridingStrategy;->setOverriddenDescriptors(Lkotlin/reflect/jvm/internal/impl/descriptors/CallableMemberDescriptor;Ljava/util/Collection;)V
+
+    invoke-virtual {p2, p1}, Lkotlin/reflect/jvm/internal/impl/resolve/OverridingStrategy;->addFakeOverride(Lkotlin/reflect/jvm/internal/impl/descriptors/CallableMemberDescriptor;)V
+
+    return-void
+.end method
+
+.method private static createAndBindFakeOverrides(Lkotlin/reflect/jvm/internal/impl/descriptors/ClassDescriptor;Ljava/util/Collection;Lkotlin/reflect/jvm/internal/impl/resolve/OverridingStrategy;)V
+    .locals 1
+    .annotation system Ldalvik/annotation/Signature;
+        value = {
+            "(",
+            "Lkotlin/reflect/jvm/internal/impl/descriptors/ClassDescriptor;",
+            "Ljava/util/Collection<",
+            "Lkotlin/reflect/jvm/internal/impl/descriptors/CallableMemberDescriptor;",
+            ">;",
+            "Lkotlin/reflect/jvm/internal/impl/resolve/OverridingStrategy;",
+            ")V"
+        }
+    .end annotation
+
+    if-nez p0, :cond_0
+
+    const/16 v0, 0x40
+
+    invoke-static {v0}, Lkotlin/reflect/jvm/internal/impl/resolve/OverridingUtil;->$$$reportNull$$$0(I)V
+
+    :cond_0
+    if-nez p1, :cond_1
+
+    const/16 v0, 0x41
+
+    invoke-static {v0}, Lkotlin/reflect/jvm/internal/impl/resolve/OverridingUtil;->$$$reportNull$$$0(I)V
+
+    :cond_1
+    if-nez p2, :cond_2
+
+    const/16 v0, 0x42
+
+    invoke-static {v0}, Lkotlin/reflect/jvm/internal/impl/resolve/OverridingUtil;->$$$reportNull$$$0(I)V
+
+    :cond_2
+    invoke-static {p1}, Lkotlin/reflect/jvm/internal/impl/resolve/OverridingUtil;->allHasSameContainingDeclaration(Ljava/util/Collection;)Z
+
+    move-result v0
+
+    if-eqz v0, :cond_4
+
+    invoke-interface {p1}, Ljava/util/Collection;->iterator()Ljava/util/Iterator;
+
+    move-result-object p1
+
+    :goto_0
+    invoke-interface {p1}, Ljava/util/Iterator;->hasNext()Z
+
+    move-result v0
+
+    if-eqz v0, :cond_3
+
+    invoke-interface {p1}, Ljava/util/Iterator;->next()Ljava/lang/Object;
 
     move-result-object v0
 
     check-cast v0, Lkotlin/reflect/jvm/internal/impl/descriptors/CallableMemberDescriptor;
 
-    sget-object v4, Lkotlin/reflect/jvm/internal/impl/descriptors/CallableMemberDescriptor$Kind;->FAKE_OVERRIDE:Lkotlin/reflect/jvm/internal/impl/descriptors/CallableMemberDescriptor$Kind;
-
-    const/4 v5, 0x0
-
-    move-object/from16 v1, p1
-
-    invoke-interface/range {v0 .. v5}, Lkotlin/reflect/jvm/internal/impl/descriptors/CallableMemberDescriptor;->copy(Lkotlin/reflect/jvm/internal/impl/descriptors/DeclarationDescriptor;Lkotlin/reflect/jvm/internal/impl/descriptors/Modality;Lkotlin/reflect/jvm/internal/impl/descriptors/DescriptorVisibility;Lkotlin/reflect/jvm/internal/impl/descriptors/CallableMemberDescriptor$Kind;Z)Lkotlin/reflect/jvm/internal/impl/descriptors/CallableMemberDescriptor;
+    invoke-static {v0}, Ljava/util/Collections;->singleton(Ljava/lang/Object;)Ljava/util/Set;
 
     move-result-object v0
 
-    invoke-virtual {v6, v0, v7}, Lkotlin/reflect/jvm/internal/impl/resolve/OverridingStrategy;->setOverriddenDescriptors(Lkotlin/reflect/jvm/internal/impl/descriptors/CallableMemberDescriptor;Ljava/util/Collection;)V
+    invoke-static {v0, p0, p2}, Lkotlin/reflect/jvm/internal/impl/resolve/OverridingUtil;->createAndBindFakeOverride(Ljava/util/Collection;Lkotlin/reflect/jvm/internal/impl/descriptors/ClassDescriptor;Lkotlin/reflect/jvm/internal/impl/resolve/OverridingStrategy;)V
 
-    invoke-virtual {v6, v0}, Lkotlin/reflect/jvm/internal/impl/resolve/OverridingStrategy;->addFakeOverride(Lkotlin/reflect/jvm/internal/impl/descriptors/CallableMemberDescriptor;)V
+    goto :goto_0
 
+    :cond_3
     return-void
 
-    :cond_19
-    const/16 v0, 0x5d
+    :cond_4
+    new-instance v0, Ljava/util/LinkedList;
+
+    invoke-direct {v0, p1}, Ljava/util/LinkedList;-><init>(Ljava/util/Collection;)V
+
+    :goto_1
+    invoke-interface {v0}, Ljava/util/Queue;->isEmpty()Z
+
+    move-result p1
+
+    if-nez p1, :cond_5
+
+    invoke-static {v0}, Lkotlin/reflect/jvm/internal/impl/resolve/VisibilityUtilKt;->findMemberWithMaxVisibility(Ljava/util/Collection;)Lkotlin/reflect/jvm/internal/impl/descriptors/CallableMemberDescriptor;
+
+    move-result-object p1
+
+    invoke-static {p1, v0, p2}, Lkotlin/reflect/jvm/internal/impl/resolve/OverridingUtil;->extractMembersOverridableInBothWays(Lkotlin/reflect/jvm/internal/impl/descriptors/CallableMemberDescriptor;Ljava/util/Queue;Lkotlin/reflect/jvm/internal/impl/resolve/OverridingStrategy;)Ljava/util/Collection;
+
+    move-result-object p1
+
+    invoke-static {p1, p0, p2}, Lkotlin/reflect/jvm/internal/impl/resolve/OverridingUtil;->createAndBindFakeOverride(Ljava/util/Collection;Lkotlin/reflect/jvm/internal/impl/descriptors/ClassDescriptor;Lkotlin/reflect/jvm/internal/impl/resolve/OverridingStrategy;)V
+
+    goto :goto_1
+
+    :cond_5
+    return-void
+.end method
+
+.method private createTypeChecker(Ljava/util/List;Ljava/util/List;)Lkotlin/Pair;
+    .locals 3
+    .annotation system Ldalvik/annotation/Signature;
+        value = {
+            "(",
+            "Ljava/util/List<",
+            "Lkotlin/reflect/jvm/internal/impl/descriptors/TypeParameterDescriptor;",
+            ">;",
+            "Ljava/util/List<",
+            "Lkotlin/reflect/jvm/internal/impl/descriptors/TypeParameterDescriptor;",
+            ">;)",
+            "Lkotlin/Pair<",
+            "Lkotlin/reflect/jvm/internal/impl/types/checker/NewKotlinTypeCheckerImpl;",
+            "Lkotlin/reflect/jvm/internal/impl/types/checker/ClassicTypeCheckerContext;",
+            ">;"
+        }
+    .end annotation
+
+    if-nez p1, :cond_0
+
+    const/16 v0, 0x28
 
     invoke-static {v0}, Lkotlin/reflect/jvm/internal/impl/resolve/OverridingUtil;->$$$reportNull$$$0(I)V
 
-    throw v2
+    :cond_0
+    if-nez p2, :cond_1
 
-    :cond_1a
-    const/16 v0, 0x5c
-
-    invoke-static {v0}, Lkotlin/reflect/jvm/internal/impl/resolve/OverridingUtil;->$$$reportNull$$$0(I)V
-
-    throw v2
-
-    :cond_1b
-    const/16 v0, 0x5f
+    const/16 v0, 0x29
 
     invoke-static {v0}, Lkotlin/reflect/jvm/internal/impl/resolve/OverridingUtil;->$$$reportNull$$$0(I)V
 
-    throw v2
+    :cond_1
+    new-instance v0, Lkotlin/reflect/jvm/internal/impl/types/checker/NewKotlinTypeCheckerImpl;
 
-    :cond_1c
-    const/16 v0, 0x5e
+    iget-object v1, p0, Lkotlin/reflect/jvm/internal/impl/resolve/OverridingUtil;->kotlinTypeRefiner:Lkotlin/reflect/jvm/internal/impl/types/checker/KotlinTypeRefiner;
+
+    sget-object v2, Lkotlin/reflect/jvm/internal/impl/types/checker/KotlinTypePreparator$Default;->INSTANCE:Lkotlin/reflect/jvm/internal/impl/types/checker/KotlinTypePreparator$Default;
+
+    invoke-direct {v0, v1, v2}, Lkotlin/reflect/jvm/internal/impl/types/checker/NewKotlinTypeCheckerImpl;-><init>(Lkotlin/reflect/jvm/internal/impl/types/checker/KotlinTypeRefiner;Lkotlin/reflect/jvm/internal/impl/types/checker/KotlinTypePreparator;)V
+
+    invoke-direct {p0, p1, p2}, Lkotlin/reflect/jvm/internal/impl/resolve/OverridingUtil;->createTypeCheckerContext(Ljava/util/List;Ljava/util/List;)Lkotlin/reflect/jvm/internal/impl/types/checker/ClassicTypeCheckerContext;
+
+    move-result-object p1
+
+    new-instance p2, Lkotlin/Pair;
+
+    invoke-direct {p2, v0, p1}, Lkotlin/Pair;-><init>(Ljava/lang/Object;Ljava/lang/Object;)V
+
+    return-object p2
+.end method
+
+.method private createTypeCheckerContext(Ljava/util/List;Ljava/util/List;)Lkotlin/reflect/jvm/internal/impl/types/checker/ClassicTypeCheckerContext;
+    .locals 5
+    .annotation system Ldalvik/annotation/Signature;
+        value = {
+            "(",
+            "Ljava/util/List<",
+            "Lkotlin/reflect/jvm/internal/impl/descriptors/TypeParameterDescriptor;",
+            ">;",
+            "Ljava/util/List<",
+            "Lkotlin/reflect/jvm/internal/impl/descriptors/TypeParameterDescriptor;",
+            ">;)",
+            "Lkotlin/reflect/jvm/internal/impl/types/checker/ClassicTypeCheckerContext;"
+        }
+    .end annotation
+
+    if-nez p1, :cond_0
+
+    const/16 v0, 0x2a
 
     invoke-static {v0}, Lkotlin/reflect/jvm/internal/impl/resolve/OverridingUtil;->$$$reportNull$$$0(I)V
 
-    throw v2
+    :cond_0
+    if-nez p2, :cond_1
 
-    :cond_1d
-    const/16 v0, 0x55
-
-    invoke-static {v0}, Lkotlin/reflect/jvm/internal/impl/resolve/OverridingUtil;->$$$reportNull$$$0(I)V
-
-    throw v2
-
-    :cond_1e
-    const/16 v0, 0x54
+    const/16 v0, 0x2b
 
     invoke-static {v0}, Lkotlin/reflect/jvm/internal/impl/resolve/OverridingUtil;->$$$reportNull$$$0(I)V
 
-    throw v2
+    :cond_1
+    invoke-interface {p1}, Ljava/util/List;->isEmpty()Z
 
-    :cond_1f
-    const/16 v0, 0x53
+    move-result v0
+
+    const/4 v1, 0x1
+
+    if-eqz v0, :cond_3
+
+    new-instance p1, Lkotlin/reflect/jvm/internal/impl/resolve/OverridingUtilTypeSystemContext;
+
+    const/4 p2, 0x0
+
+    iget-object v0, p0, Lkotlin/reflect/jvm/internal/impl/resolve/OverridingUtil;->equalityAxioms:Lkotlin/reflect/jvm/internal/impl/types/checker/KotlinTypeChecker$TypeConstructorEquality;
+
+    iget-object v2, p0, Lkotlin/reflect/jvm/internal/impl/resolve/OverridingUtil;->kotlinTypeRefiner:Lkotlin/reflect/jvm/internal/impl/types/checker/KotlinTypeRefiner;
+
+    invoke-direct {p1, p2, v0, v2}, Lkotlin/reflect/jvm/internal/impl/resolve/OverridingUtilTypeSystemContext;-><init>(Ljava/util/Map;Lkotlin/reflect/jvm/internal/impl/types/checker/KotlinTypeChecker$TypeConstructorEquality;Lkotlin/reflect/jvm/internal/impl/types/checker/KotlinTypeRefiner;)V
+
+    invoke-virtual {p1, v1, v1}, Lkotlin/reflect/jvm/internal/impl/resolve/OverridingUtilTypeSystemContext;->newBaseTypeCheckerContext(ZZ)Lkotlin/reflect/jvm/internal/impl/types/AbstractTypeCheckerContext;
+
+    move-result-object p1
+
+    check-cast p1, Lkotlin/reflect/jvm/internal/impl/types/checker/ClassicTypeCheckerContext;
+
+    if-nez p1, :cond_2
+
+    const/16 p2, 0x2c
+
+    invoke-static {p2}, Lkotlin/reflect/jvm/internal/impl/resolve/OverridingUtil;->$$$reportNull$$$0(I)V
+
+    :cond_2
+    return-object p1
+
+    :cond_3
+    new-instance v0, Ljava/util/HashMap;
+
+    invoke-direct {v0}, Ljava/util/HashMap;-><init>()V
+
+    const/4 v2, 0x0
+
+    :goto_0
+    invoke-interface {p1}, Ljava/util/List;->size()I
+
+    move-result v3
+
+    if-ge v2, v3, :cond_4
+
+    invoke-interface {p1, v2}, Ljava/util/List;->get(I)Ljava/lang/Object;
+
+    move-result-object v3
+
+    check-cast v3, Lkotlin/reflect/jvm/internal/impl/descriptors/TypeParameterDescriptor;
+
+    invoke-interface {v3}, Lkotlin/reflect/jvm/internal/impl/descriptors/TypeParameterDescriptor;->getTypeConstructor()Lkotlin/reflect/jvm/internal/impl/types/TypeConstructor;
+
+    move-result-object v3
+
+    invoke-interface {p2, v2}, Ljava/util/List;->get(I)Ljava/lang/Object;
+
+    move-result-object v4
+
+    check-cast v4, Lkotlin/reflect/jvm/internal/impl/descriptors/TypeParameterDescriptor;
+
+    invoke-interface {v4}, Lkotlin/reflect/jvm/internal/impl/descriptors/TypeParameterDescriptor;->getTypeConstructor()Lkotlin/reflect/jvm/internal/impl/types/TypeConstructor;
+
+    move-result-object v4
+
+    invoke-virtual {v0, v3, v4}, Ljava/util/HashMap;->put(Ljava/lang/Object;Ljava/lang/Object;)Ljava/lang/Object;
+
+    add-int/lit8 v2, v2, 0x1
+
+    goto :goto_0
+
+    :cond_4
+    new-instance p1, Lkotlin/reflect/jvm/internal/impl/resolve/OverridingUtilTypeSystemContext;
+
+    iget-object p2, p0, Lkotlin/reflect/jvm/internal/impl/resolve/OverridingUtil;->equalityAxioms:Lkotlin/reflect/jvm/internal/impl/types/checker/KotlinTypeChecker$TypeConstructorEquality;
+
+    iget-object v2, p0, Lkotlin/reflect/jvm/internal/impl/resolve/OverridingUtil;->kotlinTypeRefiner:Lkotlin/reflect/jvm/internal/impl/types/checker/KotlinTypeRefiner;
+
+    invoke-direct {p1, v0, p2, v2}, Lkotlin/reflect/jvm/internal/impl/resolve/OverridingUtilTypeSystemContext;-><init>(Ljava/util/Map;Lkotlin/reflect/jvm/internal/impl/types/checker/KotlinTypeChecker$TypeConstructorEquality;Lkotlin/reflect/jvm/internal/impl/types/checker/KotlinTypeRefiner;)V
+
+    invoke-virtual {p1, v1, v1}, Lkotlin/reflect/jvm/internal/impl/resolve/OverridingUtilTypeSystemContext;->newBaseTypeCheckerContext(ZZ)Lkotlin/reflect/jvm/internal/impl/types/AbstractTypeCheckerContext;
+
+    move-result-object p1
+
+    check-cast p1, Lkotlin/reflect/jvm/internal/impl/types/checker/ClassicTypeCheckerContext;
+
+    if-nez p1, :cond_5
+
+    const/16 p2, 0x2d
+
+    invoke-static {p2}, Lkotlin/reflect/jvm/internal/impl/resolve/OverridingUtil;->$$$reportNull$$$0(I)V
+
+    :cond_5
+    return-object p1
+.end method
+
+.method public static createWithTypeRefiner(Lkotlin/reflect/jvm/internal/impl/types/checker/KotlinTypeRefiner;)Lkotlin/reflect/jvm/internal/impl/resolve/OverridingUtil;
+    .locals 2
+
+    if-nez p0, :cond_0
+
+    const/4 v0, 0x1
 
     invoke-static {v0}, Lkotlin/reflect/jvm/internal/impl/resolve/OverridingUtil;->$$$reportNull$$$0(I)V
 
-    throw v2
+    :cond_0
+    new-instance v0, Lkotlin/reflect/jvm/internal/impl/resolve/OverridingUtil;
+
+    sget-object v1, Lkotlin/reflect/jvm/internal/impl/resolve/OverridingUtil;->DEFAULT_TYPE_CONSTRUCTOR_EQUALITY:Lkotlin/reflect/jvm/internal/impl/types/checker/KotlinTypeChecker$TypeConstructorEquality;
+
+    invoke-direct {v0, v1, p0}, Lkotlin/reflect/jvm/internal/impl/resolve/OverridingUtil;-><init>(Lkotlin/reflect/jvm/internal/impl/types/checker/KotlinTypeChecker$TypeConstructorEquality;Lkotlin/reflect/jvm/internal/impl/types/checker/KotlinTypeRefiner;)V
+
+    return-object v0
+.end method
+
+.method private static determineModalityForFakeOverride(Ljava/util/Collection;Lkotlin/reflect/jvm/internal/impl/descriptors/ClassDescriptor;)Lkotlin/reflect/jvm/internal/impl/descriptors/Modality;
+    .locals 8
+    .annotation system Ldalvik/annotation/Signature;
+        value = {
+            "(",
+            "Ljava/util/Collection<",
+            "Lkotlin/reflect/jvm/internal/impl/descriptors/CallableMemberDescriptor;",
+            ">;",
+            "Lkotlin/reflect/jvm/internal/impl/descriptors/ClassDescriptor;",
+            ")",
+            "Lkotlin/reflect/jvm/internal/impl/descriptors/Modality;"
+        }
+    .end annotation
+
+    if-nez p0, :cond_0
+
+    const/16 v0, 0x58
+
+    invoke-static {v0}, Lkotlin/reflect/jvm/internal/impl/resolve/OverridingUtil;->$$$reportNull$$$0(I)V
+
+    :cond_0
+    if-nez p1, :cond_1
+
+    const/16 v0, 0x59
+
+    invoke-static {v0}, Lkotlin/reflect/jvm/internal/impl/resolve/OverridingUtil;->$$$reportNull$$$0(I)V
+
+    :cond_1
+    invoke-interface {p0}, Ljava/util/Collection;->iterator()Ljava/util/Iterator;
+
+    move-result-object v0
+
+    const/4 v1, 0x0
+
+    move v2, v1
+
+    move v3, v2
+
+    :goto_0
+    invoke-interface {v0}, Ljava/util/Iterator;->hasNext()Z
+
+    move-result v4
+
+    const/4 v5, 0x1
+
+    if-eqz v4, :cond_7
+
+    invoke-interface {v0}, Ljava/util/Iterator;->next()Ljava/lang/Object;
+
+    move-result-object v4
+
+    check-cast v4, Lkotlin/reflect/jvm/internal/impl/descriptors/CallableMemberDescriptor;
+
+    sget-object v6, Lkotlin/reflect/jvm/internal/impl/resolve/OverridingUtil$8;->$SwitchMap$org$jetbrains$kotlin$descriptors$Modality:[I
+
+    invoke-interface {v4}, Lkotlin/reflect/jvm/internal/impl/descriptors/MemberDescriptor;->getModality()Lkotlin/reflect/jvm/internal/impl/descriptors/Modality;
+
+    move-result-object v7
+
+    invoke-virtual {v7}, Ljava/lang/Enum;->ordinal()I
+
+    move-result v7
+
+    aget v6, v6, v7
+
+    if-eq v6, v5, :cond_5
+
+    const/4 v7, 0x2
+
+    if-eq v6, v7, :cond_4
+
+    const/4 v4, 0x3
+
+    if-eq v6, v4, :cond_3
+
+    const/4 v4, 0x4
+
+    if-eq v6, v4, :cond_2
+
+    goto :goto_0
+
+    :cond_2
+    move v3, v5
+
+    goto :goto_0
+
+    :cond_3
+    move v2, v5
+
+    goto :goto_0
+
+    :cond_4
+    new-instance p0, Ljava/lang/IllegalStateException;
+
+    new-instance p1, Ljava/lang/StringBuilder;
+
+    invoke-direct {p1}, Ljava/lang/StringBuilder;-><init>()V
+
+    const-string v0, "Member cannot have SEALED modality: "
+
+    invoke-virtual {p1, v0}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+
+    invoke-virtual {p1, v4}, Ljava/lang/StringBuilder;->append(Ljava/lang/Object;)Ljava/lang/StringBuilder;
+
+    invoke-virtual {p1}, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
+
+    move-result-object p1
+
+    invoke-direct {p0, p1}, Ljava/lang/IllegalStateException;-><init>(Ljava/lang/String;)V
+
+    throw p0
+
+    :cond_5
+    sget-object p0, Lkotlin/reflect/jvm/internal/impl/descriptors/Modality;->FINAL:Lkotlin/reflect/jvm/internal/impl/descriptors/Modality;
+
+    if-nez p0, :cond_6
+
+    const/16 p1, 0x5a
+
+    invoke-static {p1}, Lkotlin/reflect/jvm/internal/impl/resolve/OverridingUtil;->$$$reportNull$$$0(I)V
+
+    :cond_6
+    return-object p0
+
+    :cond_7
+    invoke-interface {p1}, Lkotlin/reflect/jvm/internal/impl/descriptors/MemberDescriptor;->isExpect()Z
+
+    move-result v0
+
+    if-eqz v0, :cond_8
+
+    invoke-interface {p1}, Lkotlin/reflect/jvm/internal/impl/descriptors/ClassDescriptor;->getModality()Lkotlin/reflect/jvm/internal/impl/descriptors/Modality;
+
+    move-result-object v0
+
+    sget-object v4, Lkotlin/reflect/jvm/internal/impl/descriptors/Modality;->ABSTRACT:Lkotlin/reflect/jvm/internal/impl/descriptors/Modality;
+
+    if-eq v0, v4, :cond_8
+
+    invoke-interface {p1}, Lkotlin/reflect/jvm/internal/impl/descriptors/ClassDescriptor;->getModality()Lkotlin/reflect/jvm/internal/impl/descriptors/Modality;
+
+    move-result-object v0
+
+    sget-object v4, Lkotlin/reflect/jvm/internal/impl/descriptors/Modality;->SEALED:Lkotlin/reflect/jvm/internal/impl/descriptors/Modality;
+
+    if-eq v0, v4, :cond_8
+
+    move v1, v5
+
+    :cond_8
+    if-eqz v2, :cond_a
+
+    if-nez v3, :cond_a
+
+    sget-object p0, Lkotlin/reflect/jvm/internal/impl/descriptors/Modality;->OPEN:Lkotlin/reflect/jvm/internal/impl/descriptors/Modality;
+
+    if-nez p0, :cond_9
+
+    const/16 p1, 0x5b
+
+    invoke-static {p1}, Lkotlin/reflect/jvm/internal/impl/resolve/OverridingUtil;->$$$reportNull$$$0(I)V
+
+    :cond_9
+    return-object p0
+
+    :cond_a
+    if-nez v2, :cond_d
+
+    if-eqz v3, :cond_d
+
+    if-eqz v1, :cond_b
+
+    invoke-interface {p1}, Lkotlin/reflect/jvm/internal/impl/descriptors/ClassDescriptor;->getModality()Lkotlin/reflect/jvm/internal/impl/descriptors/Modality;
+
+    move-result-object p0
+
+    goto :goto_1
+
+    :cond_b
+    sget-object p0, Lkotlin/reflect/jvm/internal/impl/descriptors/Modality;->ABSTRACT:Lkotlin/reflect/jvm/internal/impl/descriptors/Modality;
+
+    :goto_1
+    if-nez p0, :cond_c
+
+    const/16 p1, 0x5c
+
+    invoke-static {p1}, Lkotlin/reflect/jvm/internal/impl/resolve/OverridingUtil;->$$$reportNull$$$0(I)V
+
+    :cond_c
+    return-object p0
+
+    :cond_d
+    new-instance v0, Ljava/util/HashSet;
+
+    invoke-direct {v0}, Ljava/util/HashSet;-><init>()V
+
+    invoke-interface {p0}, Ljava/util/Collection;->iterator()Ljava/util/Iterator;
+
+    move-result-object p0
+
+    :goto_2
+    invoke-interface {p0}, Ljava/util/Iterator;->hasNext()Z
+
+    move-result v2
+
+    if-eqz v2, :cond_e
+
+    invoke-interface {p0}, Ljava/util/Iterator;->next()Ljava/lang/Object;
+
+    move-result-object v2
+
+    check-cast v2, Lkotlin/reflect/jvm/internal/impl/descriptors/CallableMemberDescriptor;
+
+    invoke-static {v2}, Lkotlin/reflect/jvm/internal/impl/resolve/OverridingUtil;->getOverriddenDeclarations(Lkotlin/reflect/jvm/internal/impl/descriptors/CallableMemberDescriptor;)Ljava/util/Set;
+
+    move-result-object v2
+
+    invoke-interface {v0, v2}, Ljava/util/Set;->addAll(Ljava/util/Collection;)Z
+
+    goto :goto_2
+
+    :cond_e
+    invoke-static {v0}, Lkotlin/reflect/jvm/internal/impl/resolve/OverridingUtil;->filterOutOverridden(Ljava/util/Set;)Ljava/util/Set;
+
+    move-result-object p0
+
+    invoke-interface {p1}, Lkotlin/reflect/jvm/internal/impl/descriptors/ClassDescriptor;->getModality()Lkotlin/reflect/jvm/internal/impl/descriptors/Modality;
+
+    move-result-object p1
+
+    invoke-static {p0, v1, p1}, Lkotlin/reflect/jvm/internal/impl/resolve/OverridingUtil;->getMinimalModality(Ljava/util/Collection;ZLkotlin/reflect/jvm/internal/impl/descriptors/Modality;)Lkotlin/reflect/jvm/internal/impl/descriptors/Modality;
+
+    move-result-object p0
+
+    return-object p0
+.end method
+
+.method private extractAndBindOverridesForMember(Lkotlin/reflect/jvm/internal/impl/descriptors/CallableMemberDescriptor;Ljava/util/Collection;Lkotlin/reflect/jvm/internal/impl/descriptors/ClassDescriptor;Lkotlin/reflect/jvm/internal/impl/resolve/OverridingStrategy;)Ljava/util/Collection;
+    .locals 6
+    .annotation system Ldalvik/annotation/Signature;
+        value = {
+            "(",
+            "Lkotlin/reflect/jvm/internal/impl/descriptors/CallableMemberDescriptor;",
+            "Ljava/util/Collection<",
+            "+",
+            "Lkotlin/reflect/jvm/internal/impl/descriptors/CallableMemberDescriptor;",
+            ">;",
+            "Lkotlin/reflect/jvm/internal/impl/descriptors/ClassDescriptor;",
+            "Lkotlin/reflect/jvm/internal/impl/resolve/OverridingStrategy;",
+            ")",
+            "Ljava/util/Collection<",
+            "Lkotlin/reflect/jvm/internal/impl/descriptors/CallableMemberDescriptor;",
+            ">;"
+        }
+    .end annotation
+
+    if-nez p1, :cond_0
+
+    const/16 v0, 0x3b
+
+    invoke-static {v0}, Lkotlin/reflect/jvm/internal/impl/resolve/OverridingUtil;->$$$reportNull$$$0(I)V
+
+    :cond_0
+    if-nez p2, :cond_1
+
+    const/16 v0, 0x3c
+
+    invoke-static {v0}, Lkotlin/reflect/jvm/internal/impl/resolve/OverridingUtil;->$$$reportNull$$$0(I)V
+
+    :cond_1
+    if-nez p3, :cond_2
+
+    const/16 v0, 0x3d
+
+    invoke-static {v0}, Lkotlin/reflect/jvm/internal/impl/resolve/OverridingUtil;->$$$reportNull$$$0(I)V
+
+    :cond_2
+    if-nez p4, :cond_3
+
+    const/16 v0, 0x3e
+
+    invoke-static {v0}, Lkotlin/reflect/jvm/internal/impl/resolve/OverridingUtil;->$$$reportNull$$$0(I)V
+
+    :cond_3
+    new-instance v0, Ljava/util/ArrayList;
+
+    invoke-interface {p2}, Ljava/util/Collection;->size()I
+
+    move-result v1
+
+    invoke-direct {v0, v1}, Ljava/util/ArrayList;-><init>(I)V
+
+    invoke-static {}, Lkotlin/reflect/jvm/internal/impl/utils/SmartSet;->create()Lkotlin/reflect/jvm/internal/impl/utils/SmartSet;
+
+    move-result-object v1
+
+    invoke-interface {p2}, Ljava/util/Collection;->iterator()Ljava/util/Iterator;
+
+    move-result-object p2
+
+    :goto_0
+    invoke-interface {p2}, Ljava/util/Iterator;->hasNext()Z
+
+    move-result v2
+
+    if-eqz v2, :cond_8
+
+    invoke-interface {p2}, Ljava/util/Iterator;->next()Ljava/lang/Object;
+
+    move-result-object v2
+
+    check-cast v2, Lkotlin/reflect/jvm/internal/impl/descriptors/CallableMemberDescriptor;
+
+    invoke-virtual {p0, v2, p1, p3}, Lkotlin/reflect/jvm/internal/impl/resolve/OverridingUtil;->isOverridableBy(Lkotlin/reflect/jvm/internal/impl/descriptors/CallableDescriptor;Lkotlin/reflect/jvm/internal/impl/descriptors/CallableDescriptor;Lkotlin/reflect/jvm/internal/impl/descriptors/ClassDescriptor;)Lkotlin/reflect/jvm/internal/impl/resolve/OverridingUtil$OverrideCompatibilityInfo;
+
+    move-result-object v3
+
+    invoke-virtual {v3}, Lkotlin/reflect/jvm/internal/impl/resolve/OverridingUtil$OverrideCompatibilityInfo;->getResult()Lkotlin/reflect/jvm/internal/impl/resolve/OverridingUtil$OverrideCompatibilityInfo$Result;
+
+    move-result-object v3
+
+    invoke-static {p1, v2}, Lkotlin/reflect/jvm/internal/impl/resolve/OverridingUtil;->isVisibleForOverride(Lkotlin/reflect/jvm/internal/impl/descriptors/MemberDescriptor;Lkotlin/reflect/jvm/internal/impl/descriptors/MemberDescriptor;)Z
+
+    move-result v4
+
+    sget-object v5, Lkotlin/reflect/jvm/internal/impl/resolve/OverridingUtil$8;->$SwitchMap$org$jetbrains$kotlin$resolve$OverridingUtil$OverrideCompatibilityInfo$Result:[I
+
+    invoke-virtual {v3}, Ljava/lang/Enum;->ordinal()I
+
+    move-result v3
+
+    aget v3, v5, v3
+
+    const/4 v5, 0x1
+
+    if-eq v3, v5, :cond_6
+
+    const/4 v5, 0x2
+
+    if-eq v3, v5, :cond_4
+
+    goto :goto_0
+
+    :cond_4
+    if-eqz v4, :cond_5
+
+    invoke-virtual {p4, v2, p1}, Lkotlin/reflect/jvm/internal/impl/resolve/OverridingStrategy;->overrideConflict(Lkotlin/reflect/jvm/internal/impl/descriptors/CallableMemberDescriptor;Lkotlin/reflect/jvm/internal/impl/descriptors/CallableMemberDescriptor;)V
+
+    :cond_5
+    invoke-virtual {v0, v2}, Ljava/util/ArrayList;->add(Ljava/lang/Object;)Z
+
+    goto :goto_0
+
+    :cond_6
+    if-eqz v4, :cond_7
+
+    invoke-interface {v1, v2}, Ljava/util/Collection;->add(Ljava/lang/Object;)Z
+
+    :cond_7
+    invoke-virtual {v0, v2}, Ljava/util/ArrayList;->add(Ljava/lang/Object;)Z
+
+    goto :goto_0
+
+    :cond_8
+    invoke-virtual {p4, p1, v1}, Lkotlin/reflect/jvm/internal/impl/resolve/OverridingStrategy;->setOverriddenDescriptors(Lkotlin/reflect/jvm/internal/impl/descriptors/CallableMemberDescriptor;Ljava/util/Collection;)V
+
+    return-object v0
 .end method
 
 .method public static extractMembersOverridableInBothWays(Ljava/lang/Object;Ljava/util/Collection;Lkotlin/jvm/functions/Function1;Lkotlin/jvm/functions/Function1;)Ljava/util/Collection;
@@ -1946,12 +2667,34 @@
         }
     .end annotation
 
-    const/4 v0, 0x0
+    if-nez p0, :cond_0
 
-    if-eqz p0, :cond_5
+    const/16 v0, 0x63
 
-    if-eqz p1, :cond_4
+    invoke-static {v0}, Lkotlin/reflect/jvm/internal/impl/resolve/OverridingUtil;->$$$reportNull$$$0(I)V
 
+    :cond_0
+    if-nez p1, :cond_1
+
+    const/16 v0, 0x64
+
+    invoke-static {v0}, Lkotlin/reflect/jvm/internal/impl/resolve/OverridingUtil;->$$$reportNull$$$0(I)V
+
+    :cond_1
+    if-nez p2, :cond_2
+
+    const/16 v0, 0x65
+
+    invoke-static {v0}, Lkotlin/reflect/jvm/internal/impl/resolve/OverridingUtil;->$$$reportNull$$$0(I)V
+
+    :cond_2
+    if-nez p3, :cond_3
+
+    const/16 v0, 0x66
+
+    invoke-static {v0}, Lkotlin/reflect/jvm/internal/impl/resolve/OverridingUtil;->$$$reportNull$$$0(I)V
+
+    :cond_3
     new-instance v0, Ljava/util/ArrayList;
 
     invoke-direct {v0}, Ljava/util/ArrayList;-><init>()V
@@ -1968,13 +2711,13 @@
 
     move-result-object p1
 
-    :cond_0
+    :cond_4
     :goto_0
     invoke-interface {p1}, Ljava/util/Iterator;->hasNext()Z
 
     move-result v2
 
-    if-eqz v2, :cond_3
+    if-eqz v2, :cond_7
 
     invoke-interface {p1}, Ljava/util/Iterator;->next()Ljava/lang/Object;
 
@@ -1986,20 +2729,20 @@
 
     check-cast v3, Lkotlin/reflect/jvm/internal/impl/descriptors/CallableDescriptor;
 
-    if-ne p0, v2, :cond_1
+    if-ne p0, v2, :cond_5
 
     invoke-interface {p1}, Ljava/util/Iterator;->remove()V
 
     goto :goto_0
 
-    :cond_1
+    :cond_5
     invoke-static {v1, v3}, Lkotlin/reflect/jvm/internal/impl/resolve/OverridingUtil;->getBothWaysOverridability(Lkotlin/reflect/jvm/internal/impl/descriptors/CallableDescriptor;Lkotlin/reflect/jvm/internal/impl/descriptors/CallableDescriptor;)Lkotlin/reflect/jvm/internal/impl/resolve/OverridingUtil$OverrideCompatibilityInfo$Result;
 
     move-result-object v3
 
     sget-object v4, Lkotlin/reflect/jvm/internal/impl/resolve/OverridingUtil$OverrideCompatibilityInfo$Result;->OVERRIDABLE:Lkotlin/reflect/jvm/internal/impl/resolve/OverridingUtil$OverrideCompatibilityInfo$Result;
 
-    if-ne v3, v4, :cond_2
+    if-ne v3, v4, :cond_6
 
     invoke-virtual {v0, v2}, Ljava/util/ArrayList;->add(Ljava/lang/Object;)Z
 
@@ -2007,10 +2750,10 @@
 
     goto :goto_0
 
-    :cond_2
+    :cond_6
     sget-object v4, Lkotlin/reflect/jvm/internal/impl/resolve/OverridingUtil$OverrideCompatibilityInfo$Result;->CONFLICT:Lkotlin/reflect/jvm/internal/impl/resolve/OverridingUtil$OverrideCompatibilityInfo$Result;
 
-    if-ne v3, v4, :cond_0
+    if-ne v3, v4, :cond_4
 
     invoke-interface {p3, v2}, Lkotlin/jvm/functions/Function1;->invoke(Ljava/lang/Object;)Ljava/lang/Object;
 
@@ -2018,51 +2761,464 @@
 
     goto :goto_0
 
-    :cond_3
+    :cond_7
     return-object v0
+.end method
+
+.method private static extractMembersOverridableInBothWays(Lkotlin/reflect/jvm/internal/impl/descriptors/CallableMemberDescriptor;Ljava/util/Queue;Lkotlin/reflect/jvm/internal/impl/resolve/OverridingStrategy;)Ljava/util/Collection;
+    .locals 2
+    .annotation system Ldalvik/annotation/Signature;
+        value = {
+            "(",
+            "Lkotlin/reflect/jvm/internal/impl/descriptors/CallableMemberDescriptor;",
+            "Ljava/util/Queue<",
+            "Lkotlin/reflect/jvm/internal/impl/descriptors/CallableMemberDescriptor;",
+            ">;",
+            "Lkotlin/reflect/jvm/internal/impl/resolve/OverridingStrategy;",
+            ")",
+            "Ljava/util/Collection<",
+            "Lkotlin/reflect/jvm/internal/impl/descriptors/CallableMemberDescriptor;",
+            ">;"
+        }
+    .end annotation
+
+    if-nez p0, :cond_0
+
+    const/16 v0, 0x68
+
+    invoke-static {v0}, Lkotlin/reflect/jvm/internal/impl/resolve/OverridingUtil;->$$$reportNull$$$0(I)V
+
+    :cond_0
+    if-nez p1, :cond_1
+
+    const/16 v0, 0x69
+
+    invoke-static {v0}, Lkotlin/reflect/jvm/internal/impl/resolve/OverridingUtil;->$$$reportNull$$$0(I)V
+
+    :cond_1
+    if-nez p2, :cond_2
+
+    const/16 v0, 0x6a
+
+    invoke-static {v0}, Lkotlin/reflect/jvm/internal/impl/resolve/OverridingUtil;->$$$reportNull$$$0(I)V
+
+    :cond_2
+    new-instance v0, Lkotlin/reflect/jvm/internal/impl/resolve/OverridingUtil$6;
+
+    invoke-direct {v0}, Lkotlin/reflect/jvm/internal/impl/resolve/OverridingUtil$6;-><init>()V
+
+    new-instance v1, Lkotlin/reflect/jvm/internal/impl/resolve/OverridingUtil$7;
+
+    invoke-direct {v1, p2, p0}, Lkotlin/reflect/jvm/internal/impl/resolve/OverridingUtil$7;-><init>(Lkotlin/reflect/jvm/internal/impl/resolve/OverridingStrategy;Lkotlin/reflect/jvm/internal/impl/descriptors/CallableMemberDescriptor;)V
+
+    invoke-static {p0, p1, v0, v1}, Lkotlin/reflect/jvm/internal/impl/resolve/OverridingUtil;->extractMembersOverridableInBothWays(Ljava/lang/Object;Ljava/util/Collection;Lkotlin/jvm/functions/Function1;Lkotlin/jvm/functions/Function1;)Ljava/util/Collection;
+
+    move-result-object p0
+
+    return-object p0
+.end method
+
+.method public static filterOutOverridden(Ljava/util/Set;)Ljava/util/Set;
+    .locals 3
+    .annotation system Ldalvik/annotation/Signature;
+        value = {
+            "<D::",
+            "Lkotlin/reflect/jvm/internal/impl/descriptors/CallableDescriptor;",
+            ">(",
+            "Ljava/util/Set<",
+            "TD;>;)",
+            "Ljava/util/Set<",
+            "TD;>;"
+        }
+    .end annotation
+
+    if-nez p0, :cond_0
+
+    const/4 v0, 0x6
+
+    invoke-static {v0}, Lkotlin/reflect/jvm/internal/impl/resolve/OverridingUtil;->$$$reportNull$$$0(I)V
+
+    :cond_0
+    invoke-interface {p0}, Ljava/util/Set;->isEmpty()Z
+
+    move-result v0
+
+    if-nez v0, :cond_1
+
+    invoke-interface {p0}, Ljava/util/Set;->iterator()Ljava/util/Iterator;
+
+    move-result-object v0
+
+    invoke-interface {v0}, Ljava/util/Iterator;->next()Ljava/lang/Object;
+
+    move-result-object v0
+
+    check-cast v0, Lkotlin/reflect/jvm/internal/impl/descriptors/DeclarationDescriptor;
+
+    invoke-static {v0}, Lkotlin/reflect/jvm/internal/impl/resolve/descriptorUtil/DescriptorUtilsKt;->getModule(Lkotlin/reflect/jvm/internal/impl/descriptors/DeclarationDescriptor;)Lkotlin/reflect/jvm/internal/impl/descriptors/ModuleDescriptor;
+
+    move-result-object v0
+
+    invoke-static {v0}, Lkotlin/reflect/jvm/internal/impl/resolve/descriptorUtil/DescriptorUtilsKt;->isTypeRefinementEnabled(Lkotlin/reflect/jvm/internal/impl/descriptors/ModuleDescriptor;)Z
+
+    move-result v0
+
+    if-eqz v0, :cond_1
+
+    const/4 v0, 0x1
+
+    goto :goto_0
+
+    :cond_1
+    const/4 v0, 0x0
+
+    :goto_0
+    const/4 v1, 0x0
+
+    new-instance v2, Lkotlin/reflect/jvm/internal/impl/resolve/OverridingUtil$2;
+
+    invoke-direct {v2}, Lkotlin/reflect/jvm/internal/impl/resolve/OverridingUtil$2;-><init>()V
+
+    invoke-static {p0, v0, v1, v2}, Lkotlin/reflect/jvm/internal/impl/resolve/OverridingUtil;->filterOverrides(Ljava/util/Set;ZLkotlin/jvm/functions/Function0;Lkotlin/jvm/functions/Function2;)Ljava/util/Set;
+
+    move-result-object p0
+
+    return-object p0
+.end method
+
+.method public static filterOverrides(Ljava/util/Set;ZLkotlin/jvm/functions/Function0;Lkotlin/jvm/functions/Function2;)Ljava/util/Set;
+    .locals 7
+    .annotation system Ldalvik/annotation/Signature;
+        value = {
+            "<D:",
+            "Ljava/lang/Object;",
+            ">(",
+            "Ljava/util/Set<",
+            "TD;>;Z",
+            "Lkotlin/jvm/functions/Function0<",
+            "*>;",
+            "Lkotlin/jvm/functions/Function2<",
+            "-TD;-TD;",
+            "Lkotlin/Pair<",
+            "Lkotlin/reflect/jvm/internal/impl/descriptors/CallableDescriptor;",
+            "Lkotlin/reflect/jvm/internal/impl/descriptors/CallableDescriptor;",
+            ">;>;)",
+            "Ljava/util/Set<",
+            "TD;>;"
+        }
+    .end annotation
+
+    if-nez p0, :cond_0
+
+    const/4 v0, 0x7
+
+    invoke-static {v0}, Lkotlin/reflect/jvm/internal/impl/resolve/OverridingUtil;->$$$reportNull$$$0(I)V
+
+    :cond_0
+    if-nez p3, :cond_1
+
+    const/16 v0, 0x8
+
+    invoke-static {v0}, Lkotlin/reflect/jvm/internal/impl/resolve/OverridingUtil;->$$$reportNull$$$0(I)V
+
+    :cond_1
+    invoke-interface {p0}, Ljava/util/Set;->size()I
+
+    move-result v0
+
+    const/4 v1, 0x1
+
+    if-gt v0, v1, :cond_2
+
+    return-object p0
+
+    :cond_2
+    new-instance v0, Ljava/util/LinkedHashSet;
+
+    invoke-direct {v0}, Ljava/util/LinkedHashSet;-><init>()V
+
+    invoke-interface {p0}, Ljava/util/Set;->iterator()Ljava/util/Iterator;
+
+    move-result-object p0
+
+    :goto_0
+    invoke-interface {p0}, Ljava/util/Iterator;->hasNext()Z
+
+    move-result v2
+
+    if-eqz v2, :cond_7
+
+    invoke-interface {p0}, Ljava/util/Iterator;->next()Ljava/lang/Object;
+
+    move-result-object v2
+
+    if-eqz p2, :cond_3
+
+    invoke-interface {p2}, Lkotlin/jvm/functions/Function0;->invoke()Ljava/lang/Object;
+
+    :cond_3
+    invoke-interface {v0}, Ljava/util/Set;->iterator()Ljava/util/Iterator;
+
+    move-result-object v3
 
     :cond_4
-    const/16 p0, 0x62
+    :goto_1
+    invoke-interface {v3}, Ljava/util/Iterator;->hasNext()Z
 
-    invoke-static {p0}, Lkotlin/reflect/jvm/internal/impl/resolve/OverridingUtil;->$$$reportNull$$$0(I)V
+    move-result v4
 
-    throw v0
+    if-eqz v4, :cond_6
+
+    invoke-interface {v3}, Ljava/util/Iterator;->next()Ljava/lang/Object;
+
+    move-result-object v4
+
+    invoke-interface {p3, v2, v4}, Lkotlin/jvm/functions/Function2;->invoke(Ljava/lang/Object;Ljava/lang/Object;)Ljava/lang/Object;
+
+    move-result-object v4
+
+    check-cast v4, Lkotlin/Pair;
+
+    iget-object v5, v4, Lkotlin/Pair;->first:Ljava/lang/Object;
+
+    check-cast v5, Lkotlin/reflect/jvm/internal/impl/descriptors/CallableDescriptor;
+
+    iget-object v4, v4, Lkotlin/Pair;->second:Ljava/lang/Object;
+
+    check-cast v4, Lkotlin/reflect/jvm/internal/impl/descriptors/CallableDescriptor;
+
+    invoke-static {v5, v4, p1, v1}, Lkotlin/reflect/jvm/internal/impl/resolve/OverridingUtil;->overrides(Lkotlin/reflect/jvm/internal/impl/descriptors/CallableDescriptor;Lkotlin/reflect/jvm/internal/impl/descriptors/CallableDescriptor;ZZ)Z
+
+    move-result v6
+
+    if-eqz v6, :cond_5
+
+    invoke-interface {v3}, Ljava/util/Iterator;->remove()V
+
+    goto :goto_1
 
     :cond_5
-    const/16 p0, 0x61
+    invoke-static {v4, v5, p1, v1}, Lkotlin/reflect/jvm/internal/impl/resolve/OverridingUtil;->overrides(Lkotlin/reflect/jvm/internal/impl/descriptors/CallableDescriptor;Lkotlin/reflect/jvm/internal/impl/descriptors/CallableDescriptor;ZZ)Z
 
-    invoke-static {p0}, Lkotlin/reflect/jvm/internal/impl/resolve/OverridingUtil;->$$$reportNull$$$0(I)V
+    move-result v4
 
-    throw v0
+    if-eqz v4, :cond_4
+
+    goto :goto_0
+
+    :cond_6
+    invoke-interface {v0, v2}, Ljava/util/Set;->add(Ljava/lang/Object;)Z
+
+    goto :goto_0
+
+    :cond_7
+    return-object v0
+.end method
+
+.method private static filterVisibleFakeOverrides(Lkotlin/reflect/jvm/internal/impl/descriptors/ClassDescriptor;Ljava/util/Collection;)Ljava/util/Collection;
+    .locals 1
+    .annotation system Ldalvik/annotation/Signature;
+        value = {
+            "(",
+            "Lkotlin/reflect/jvm/internal/impl/descriptors/ClassDescriptor;",
+            "Ljava/util/Collection<",
+            "Lkotlin/reflect/jvm/internal/impl/descriptors/CallableMemberDescriptor;",
+            ">;)",
+            "Ljava/util/Collection<",
+            "Lkotlin/reflect/jvm/internal/impl/descriptors/CallableMemberDescriptor;",
+            ">;"
+        }
+    .end annotation
+
+    if-nez p0, :cond_0
+
+    const/16 v0, 0x60
+
+    invoke-static {v0}, Lkotlin/reflect/jvm/internal/impl/resolve/OverridingUtil;->$$$reportNull$$$0(I)V
+
+    :cond_0
+    if-nez p1, :cond_1
+
+    const/16 v0, 0x61
+
+    invoke-static {v0}, Lkotlin/reflect/jvm/internal/impl/resolve/OverridingUtil;->$$$reportNull$$$0(I)V
+
+    :cond_1
+    new-instance v0, Lkotlin/reflect/jvm/internal/impl/resolve/OverridingUtil$5;
+
+    invoke-direct {v0, p0}, Lkotlin/reflect/jvm/internal/impl/resolve/OverridingUtil$5;-><init>(Lkotlin/reflect/jvm/internal/impl/descriptors/ClassDescriptor;)V
+
+    invoke-static {p1, v0}, Lkotlin/collections/CollectionsKt___CollectionsKt;->filter(Ljava/lang/Iterable;Lkotlin/jvm/functions/Function1;)Ljava/util/List;
+
+    move-result-object p0
+
+    return-object p0
+.end method
+
+.method public static findMaxVisibility(Ljava/util/Collection;)Lkotlin/reflect/jvm/internal/impl/descriptors/DescriptorVisibility;
+    .locals 5
+    .annotation system Ldalvik/annotation/Signature;
+        value = {
+            "(",
+            "Ljava/util/Collection<",
+            "+",
+            "Lkotlin/reflect/jvm/internal/impl/descriptors/CallableMemberDescriptor;",
+            ">;)",
+            "Lkotlin/reflect/jvm/internal/impl/descriptors/DescriptorVisibility;"
+        }
+    .end annotation
+
+    if-nez p0, :cond_0
+
+    const/16 v0, 0x6d
+
+    invoke-static {v0}, Lkotlin/reflect/jvm/internal/impl/resolve/OverridingUtil;->$$$reportNull$$$0(I)V
+
+    :cond_0
+    invoke-interface {p0}, Ljava/util/Collection;->isEmpty()Z
+
+    move-result v0
+
+    if-eqz v0, :cond_1
+
+    sget-object p0, Lkotlin/reflect/jvm/internal/impl/descriptors/DescriptorVisibilities;->DEFAULT_VISIBILITY:Lkotlin/reflect/jvm/internal/impl/descriptors/DescriptorVisibility;
+
+    return-object p0
+
+    :cond_1
+    invoke-interface {p0}, Ljava/util/Collection;->iterator()Ljava/util/Iterator;
+
+    move-result-object v0
+
+    const/4 v1, 0x0
+
+    :goto_0
+    move-object v2, v1
+
+    :cond_2
+    :goto_1
+    invoke-interface {v0}, Ljava/util/Iterator;->hasNext()Z
+
+    move-result v3
+
+    if-eqz v3, :cond_5
+
+    invoke-interface {v0}, Ljava/util/Iterator;->next()Ljava/lang/Object;
+
+    move-result-object v3
+
+    check-cast v3, Lkotlin/reflect/jvm/internal/impl/descriptors/CallableMemberDescriptor;
+
+    invoke-interface {v3}, Lkotlin/reflect/jvm/internal/impl/descriptors/MemberDescriptor;->getVisibility()Lkotlin/reflect/jvm/internal/impl/descriptors/DescriptorVisibility;
+
+    move-result-object v3
+
+    if-nez v2, :cond_3
+
+    :goto_2
+    move-object v2, v3
+
+    goto :goto_1
+
+    :cond_3
+    invoke-static {v3, v2}, Lkotlin/reflect/jvm/internal/impl/descriptors/DescriptorVisibilities;->compare(Lkotlin/reflect/jvm/internal/impl/descriptors/DescriptorVisibility;Lkotlin/reflect/jvm/internal/impl/descriptors/DescriptorVisibility;)Ljava/lang/Integer;
+
+    move-result-object v4
+
+    if-nez v4, :cond_4
+
+    goto :goto_0
+
+    :cond_4
+    invoke-virtual {v4}, Ljava/lang/Integer;->intValue()I
+
+    move-result v4
+
+    if-lez v4, :cond_2
+
+    goto :goto_2
+
+    :cond_5
+    if-nez v2, :cond_6
+
+    return-object v1
+
+    :cond_6
+    invoke-interface {p0}, Ljava/util/Collection;->iterator()Ljava/util/Iterator;
+
+    move-result-object p0
+
+    :cond_7
+    invoke-interface {p0}, Ljava/util/Iterator;->hasNext()Z
+
+    move-result v0
+
+    if-eqz v0, :cond_9
+
+    invoke-interface {p0}, Ljava/util/Iterator;->next()Ljava/lang/Object;
+
+    move-result-object v0
+
+    check-cast v0, Lkotlin/reflect/jvm/internal/impl/descriptors/CallableMemberDescriptor;
+
+    invoke-interface {v0}, Lkotlin/reflect/jvm/internal/impl/descriptors/MemberDescriptor;->getVisibility()Lkotlin/reflect/jvm/internal/impl/descriptors/DescriptorVisibility;
+
+    move-result-object v0
+
+    invoke-static {v2, v0}, Lkotlin/reflect/jvm/internal/impl/descriptors/DescriptorVisibilities;->compare(Lkotlin/reflect/jvm/internal/impl/descriptors/DescriptorVisibility;Lkotlin/reflect/jvm/internal/impl/descriptors/DescriptorVisibility;)Ljava/lang/Integer;
+
+    move-result-object v0
+
+    if-eqz v0, :cond_8
+
+    invoke-virtual {v0}, Ljava/lang/Integer;->intValue()I
+
+    move-result v0
+
+    if-gez v0, :cond_7
+
+    :cond_8
+    return-object v1
+
+    :cond_9
+    return-object v2
 .end method
 
 .method public static getBasicOverridabilityProblem(Lkotlin/reflect/jvm/internal/impl/descriptors/CallableDescriptor;Lkotlin/reflect/jvm/internal/impl/descriptors/CallableDescriptor;)Lkotlin/reflect/jvm/internal/impl/resolve/OverridingUtil$OverrideCompatibilityInfo;
-    .locals 5
+    .locals 3
 
-    const/4 v0, 0x0
+    if-nez p0, :cond_0
 
-    if-eqz p0, :cond_c
+    const/16 v0, 0x26
 
-    if-eqz p1, :cond_b
-
-    instance-of v1, p0, Lkotlin/reflect/jvm/internal/impl/descriptors/FunctionDescriptor;
-
-    if-eqz v1, :cond_0
-
-    instance-of v2, p1, Lkotlin/reflect/jvm/internal/impl/descriptors/FunctionDescriptor;
-
-    if-eqz v2, :cond_1
+    invoke-static {v0}, Lkotlin/reflect/jvm/internal/impl/resolve/OverridingUtil;->$$$reportNull$$$0(I)V
 
     :cond_0
-    instance-of v2, p0, Lkotlin/reflect/jvm/internal/impl/descriptors/PropertyDescriptor;
+    if-nez p1, :cond_1
 
-    if-eqz v2, :cond_2
+    const/16 v0, 0x27
 
-    instance-of v3, p1, Lkotlin/reflect/jvm/internal/impl/descriptors/PropertyDescriptor;
-
-    if-nez v3, :cond_2
+    invoke-static {v0}, Lkotlin/reflect/jvm/internal/impl/resolve/OverridingUtil;->$$$reportNull$$$0(I)V
 
     :cond_1
+    instance-of v0, p0, Lkotlin/reflect/jvm/internal/impl/descriptors/FunctionDescriptor;
+
+    if-eqz v0, :cond_2
+
+    instance-of v1, p1, Lkotlin/reflect/jvm/internal/impl/descriptors/FunctionDescriptor;
+
+    if-eqz v1, :cond_3
+
+    :cond_2
+    instance-of v1, p0, Lkotlin/reflect/jvm/internal/impl/descriptors/PropertyDescriptor;
+
+    if-eqz v1, :cond_4
+
+    instance-of v2, p1, Lkotlin/reflect/jvm/internal/impl/descriptors/PropertyDescriptor;
+
+    if-nez v2, :cond_4
+
+    :cond_3
     const-string p0, "Member kind mismatch"
 
     invoke-static {p0}, Lkotlin/reflect/jvm/internal/impl/resolve/OverridingUtil$OverrideCompatibilityInfo;->incompatible(Ljava/lang/String;)Lkotlin/reflect/jvm/internal/impl/resolve/OverridingUtil$OverrideCompatibilityInfo;
@@ -2071,14 +3227,14 @@
 
     return-object p0
 
-    :cond_2
-    if-nez v1, :cond_4
+    :cond_4
+    if-nez v0, :cond_6
 
-    if-eqz v2, :cond_3
+    if-eqz v1, :cond_5
 
     goto :goto_0
 
-    :cond_3
+    :cond_5
     new-instance p1, Ljava/lang/IllegalArgumentException;
 
     new-instance v0, Ljava/lang/StringBuilder;
@@ -2099,21 +3255,21 @@
 
     throw p1
 
-    :cond_4
+    :cond_6
     :goto_0
-    invoke-interface {p0}, Lkotlin/reflect/jvm/internal/impl/descriptors/DeclarationDescriptor;->getName()Lkotlin/reflect/jvm/internal/impl/name/Name;
+    invoke-interface {p0}, Lkotlin/reflect/jvm/internal/impl/descriptors/Named;->getName()Lkotlin/reflect/jvm/internal/impl/name/Name;
+
+    move-result-object v0
+
+    invoke-interface {p1}, Lkotlin/reflect/jvm/internal/impl/descriptors/Named;->getName()Lkotlin/reflect/jvm/internal/impl/name/Name;
 
     move-result-object v1
 
-    invoke-interface {p1}, Lkotlin/reflect/jvm/internal/impl/descriptors/DeclarationDescriptor;->getName()Lkotlin/reflect/jvm/internal/impl/name/Name;
+    invoke-virtual {v0, v1}, Lkotlin/reflect/jvm/internal/impl/name/Name;->equals(Ljava/lang/Object;)Z
 
-    move-result-object v2
+    move-result v0
 
-    invoke-virtual {v1, v2}, Lkotlin/reflect/jvm/internal/impl/name/Name;->equals(Ljava/lang/Object;)Z
-
-    move-result v1
-
-    if-nez v1, :cond_5
+    if-nez v0, :cond_7
 
     const-string p0, "Name mismatch"
 
@@ -2123,98 +3279,19 @@
 
     return-object p0
 
-    :cond_5
-    invoke-interface {p0}, Lkotlin/reflect/jvm/internal/impl/descriptors/CallableDescriptor;->getExtensionReceiverParameter()Lkotlin/reflect/jvm/internal/impl/descriptors/ReceiverParameterDescriptor;
-
-    move-result-object v1
-
-    const/4 v2, 0x1
-
-    const/4 v3, 0x0
-
-    if-nez v1, :cond_6
-
-    move v1, v2
-
-    goto :goto_1
-
-    :cond_6
-    move v1, v3
-
-    :goto_1
-    invoke-interface {p1}, Lkotlin/reflect/jvm/internal/impl/descriptors/CallableDescriptor;->getExtensionReceiverParameter()Lkotlin/reflect/jvm/internal/impl/descriptors/ReceiverParameterDescriptor;
-
-    move-result-object v4
-
-    if-nez v4, :cond_7
-
-    goto :goto_2
-
     :cond_7
-    move v2, v3
-
-    :goto_2
-    if-eq v1, v2, :cond_8
-
-    const-string p0, "Receiver presence mismatch"
-
-    invoke-static {p0}, Lkotlin/reflect/jvm/internal/impl/resolve/OverridingUtil$OverrideCompatibilityInfo;->incompatible(Ljava/lang/String;)Lkotlin/reflect/jvm/internal/impl/resolve/OverridingUtil$OverrideCompatibilityInfo;
+    invoke-static {p0, p1}, Lkotlin/reflect/jvm/internal/impl/resolve/OverridingUtil;->checkReceiverAndParameterCount(Lkotlin/reflect/jvm/internal/impl/descriptors/CallableDescriptor;Lkotlin/reflect/jvm/internal/impl/descriptors/CallableDescriptor;)Lkotlin/reflect/jvm/internal/impl/resolve/OverridingUtil$OverrideCompatibilityInfo;
 
     move-result-object p0
 
-    goto :goto_3
-
-    :cond_8
-    invoke-interface {p0}, Lkotlin/reflect/jvm/internal/impl/descriptors/CallableDescriptor;->getValueParameters()Ljava/util/List;
-
-    move-result-object p0
-
-    invoke-interface {p0}, Ljava/util/List;->size()I
-
-    move-result p0
-
-    invoke-interface {p1}, Lkotlin/reflect/jvm/internal/impl/descriptors/CallableDescriptor;->getValueParameters()Ljava/util/List;
-
-    move-result-object p1
-
-    invoke-interface {p1}, Ljava/util/List;->size()I
-
-    move-result p1
-
-    if-eq p0, p1, :cond_9
-
-    const-string p0, "Value parameter number mismatch"
-
-    invoke-static {p0}, Lkotlin/reflect/jvm/internal/impl/resolve/OverridingUtil$OverrideCompatibilityInfo;->incompatible(Ljava/lang/String;)Lkotlin/reflect/jvm/internal/impl/resolve/OverridingUtil$OverrideCompatibilityInfo;
-
-    move-result-object p0
-
-    goto :goto_3
-
-    :cond_9
-    move-object p0, v0
-
-    :goto_3
-    if-eqz p0, :cond_a
+    if-eqz p0, :cond_8
 
     return-object p0
 
-    :cond_a
-    return-object v0
+    :cond_8
+    const/4 p0, 0x0
 
-    :cond_b
-    const/16 p0, 0x27
-
-    invoke-static {p0}, Lkotlin/reflect/jvm/internal/impl/resolve/OverridingUtil;->$$$reportNull$$$0(I)V
-
-    throw v0
-
-    :cond_c
-    const/16 p0, 0x26
-
-    invoke-static {p0}, Lkotlin/reflect/jvm/internal/impl/resolve/OverridingUtil;->$$$reportNull$$$0(I)V
-
-    throw v0
+    return-object p0
 .end method
 
 .method public static getBothWaysOverridability(Lkotlin/reflect/jvm/internal/impl/descriptors/CallableDescriptor;Lkotlin/reflect/jvm/internal/impl/descriptors/CallableDescriptor;)Lkotlin/reflect/jvm/internal/impl/resolve/OverridingUtil$OverrideCompatibilityInfo$Result;
@@ -2265,15 +3342,164 @@
     return-object p1
 .end method
 
+.method private static getMinimalModality(Ljava/util/Collection;ZLkotlin/reflect/jvm/internal/impl/descriptors/Modality;)Lkotlin/reflect/jvm/internal/impl/descriptors/Modality;
+    .locals 4
+    .annotation system Ldalvik/annotation/Signature;
+        value = {
+            "(",
+            "Ljava/util/Collection<",
+            "Lkotlin/reflect/jvm/internal/impl/descriptors/CallableMemberDescriptor;",
+            ">;Z",
+            "Lkotlin/reflect/jvm/internal/impl/descriptors/Modality;",
+            ")",
+            "Lkotlin/reflect/jvm/internal/impl/descriptors/Modality;"
+        }
+    .end annotation
+
+    if-nez p0, :cond_0
+
+    const/16 v0, 0x5d
+
+    invoke-static {v0}, Lkotlin/reflect/jvm/internal/impl/resolve/OverridingUtil;->$$$reportNull$$$0(I)V
+
+    :cond_0
+    if-nez p2, :cond_1
+
+    const/16 v0, 0x5e
+
+    invoke-static {v0}, Lkotlin/reflect/jvm/internal/impl/resolve/OverridingUtil;->$$$reportNull$$$0(I)V
+
+    :cond_1
+    sget-object v0, Lkotlin/reflect/jvm/internal/impl/descriptors/Modality;->ABSTRACT:Lkotlin/reflect/jvm/internal/impl/descriptors/Modality;
+
+    invoke-interface {p0}, Ljava/util/Collection;->iterator()Ljava/util/Iterator;
+
+    move-result-object p0
+
+    :cond_2
+    :goto_0
+    invoke-interface {p0}, Ljava/util/Iterator;->hasNext()Z
+
+    move-result v1
+
+    if-eqz v1, :cond_4
+
+    invoke-interface {p0}, Ljava/util/Iterator;->next()Ljava/lang/Object;
+
+    move-result-object v1
+
+    check-cast v1, Lkotlin/reflect/jvm/internal/impl/descriptors/CallableMemberDescriptor;
+
+    if-eqz p1, :cond_3
+
+    invoke-interface {v1}, Lkotlin/reflect/jvm/internal/impl/descriptors/MemberDescriptor;->getModality()Lkotlin/reflect/jvm/internal/impl/descriptors/Modality;
+
+    move-result-object v2
+
+    sget-object v3, Lkotlin/reflect/jvm/internal/impl/descriptors/Modality;->ABSTRACT:Lkotlin/reflect/jvm/internal/impl/descriptors/Modality;
+
+    if-ne v2, v3, :cond_3
+
+    move-object v1, p2
+
+    goto :goto_1
+
+    :cond_3
+    invoke-interface {v1}, Lkotlin/reflect/jvm/internal/impl/descriptors/MemberDescriptor;->getModality()Lkotlin/reflect/jvm/internal/impl/descriptors/Modality;
+
+    move-result-object v1
+
+    :goto_1
+    invoke-virtual {v1, v0}, Ljava/lang/Enum;->compareTo(Ljava/lang/Enum;)I
+
+    move-result v2
+
+    if-gez v2, :cond_2
+
+    move-object v0, v1
+
+    goto :goto_0
+
+    :cond_4
+    if-nez v0, :cond_5
+
+    const/16 p0, 0x5f
+
+    invoke-static {p0}, Lkotlin/reflect/jvm/internal/impl/resolve/OverridingUtil;->$$$reportNull$$$0(I)V
+
+    :cond_5
+    return-object v0
+.end method
+
+.method public static getOverriddenDeclarations(Lkotlin/reflect/jvm/internal/impl/descriptors/CallableMemberDescriptor;)Ljava/util/Set;
+    .locals 1
+    .annotation system Ldalvik/annotation/Signature;
+        value = {
+            "(",
+            "Lkotlin/reflect/jvm/internal/impl/descriptors/CallableMemberDescriptor;",
+            ")",
+            "Ljava/util/Set<",
+            "Lkotlin/reflect/jvm/internal/impl/descriptors/CallableMemberDescriptor;",
+            ">;"
+        }
+    .end annotation
+
+    if-nez p0, :cond_0
+
+    const/16 v0, 0xd
+
+    invoke-static {v0}, Lkotlin/reflect/jvm/internal/impl/resolve/OverridingUtil;->$$$reportNull$$$0(I)V
+
+    :cond_0
+    new-instance v0, Ljava/util/LinkedHashSet;
+
+    invoke-direct {v0}, Ljava/util/LinkedHashSet;-><init>()V
+
+    invoke-static {p0, v0}, Lkotlin/reflect/jvm/internal/impl/resolve/OverridingUtil;->collectOverriddenDeclarations(Lkotlin/reflect/jvm/internal/impl/descriptors/CallableMemberDescriptor;Ljava/util/Set;)V
+
+    return-object v0
+.end method
+
+.method private static isAccessorMoreSpecific(Lkotlin/reflect/jvm/internal/impl/descriptors/PropertyAccessorDescriptor;Lkotlin/reflect/jvm/internal/impl/descriptors/PropertyAccessorDescriptor;)Z
+    .locals 0
+
+    if-eqz p0, :cond_1
+
+    if-nez p1, :cond_0
+
+    goto :goto_0
+
+    :cond_0
+    invoke-static {p0, p1}, Lkotlin/reflect/jvm/internal/impl/resolve/OverridingUtil;->isVisibilityMoreSpecific(Lkotlin/reflect/jvm/internal/impl/descriptors/DeclarationDescriptorWithVisibility;Lkotlin/reflect/jvm/internal/impl/descriptors/DeclarationDescriptorWithVisibility;)Z
+
+    move-result p0
+
+    return p0
+
+    :cond_1
+    :goto_0
+    const/4 p0, 0x1
+
+    return p0
+.end method
+
 .method public static isMoreSpecific(Lkotlin/reflect/jvm/internal/impl/descriptors/CallableDescriptor;Lkotlin/reflect/jvm/internal/impl/descriptors/CallableDescriptor;)Z
-    .locals 9
+    .locals 8
 
-    const/4 v0, 0x0
+    if-nez p0, :cond_0
 
-    if-eqz p0, :cond_a
+    const/16 v0, 0x43
 
-    if-eqz p1, :cond_9
+    invoke-static {v0}, Lkotlin/reflect/jvm/internal/impl/resolve/OverridingUtil;->$$$reportNull$$$0(I)V
 
+    :cond_0
+    if-nez p1, :cond_1
+
+    const/16 v0, 0x44
+
+    invoke-static {v0}, Lkotlin/reflect/jvm/internal/impl/resolve/OverridingUtil;->$$$reportNull$$$0(I)V
+
+    :cond_1
     invoke-interface {p0}, Lkotlin/reflect/jvm/internal/impl/descriptors/CallableDescriptor;->getReturnType()Lkotlin/reflect/jvm/internal/impl/types/KotlinType;
 
     move-result-object v0
@@ -2288,11 +3514,11 @@
 
     const/4 v3, 0x0
 
-    if-nez v2, :cond_0
+    if-nez v2, :cond_2
 
     return v3
 
-    :cond_0
+    :cond_2
     sget-object v2, Lkotlin/reflect/jvm/internal/impl/resolve/OverridingUtil;->DEFAULT:Lkotlin/reflect/jvm/internal/impl/resolve/OverridingUtil;
 
     invoke-interface {p0}, Lkotlin/reflect/jvm/internal/impl/descriptors/CallableDescriptor;->getTypeParameters()Ljava/util/List;
@@ -2303,13 +3529,13 @@
 
     move-result-object v5
 
-    invoke-virtual {v2, v4, v5}, Lkotlin/reflect/jvm/internal/impl/resolve/OverridingUtil;->createTypeChecker(Ljava/util/List;Ljava/util/List;)Lkotlin/Pair;
+    invoke-direct {v2, v4, v5}, Lkotlin/reflect/jvm/internal/impl/resolve/OverridingUtil;->createTypeChecker(Ljava/util/List;Ljava/util/List;)Lkotlin/Pair;
 
     move-result-object v2
 
     instance-of v4, p0, Lkotlin/reflect/jvm/internal/impl/descriptors/FunctionDescriptor;
 
-    if-eqz v4, :cond_1
+    if-eqz v4, :cond_3
 
     invoke-static {p0, v0, p1, v1, v2}, Lkotlin/reflect/jvm/internal/impl/resolve/OverridingUtil;->isReturnTypeMoreSpecific(Lkotlin/reflect/jvm/internal/impl/descriptors/CallableDescriptor;Lkotlin/reflect/jvm/internal/impl/types/KotlinType;Lkotlin/reflect/jvm/internal/impl/descriptors/CallableDescriptor;Lkotlin/reflect/jvm/internal/impl/types/KotlinType;Lkotlin/Pair;)Z
 
@@ -2317,7 +3543,7 @@
 
     return p0
 
-    :cond_1
+    :cond_3
     instance-of v4, p0, Lkotlin/reflect/jvm/internal/impl/descriptors/PropertyDescriptor;
 
     if-eqz v4, :cond_8
@@ -2338,26 +3564,10 @@
 
     move-result-object v7
 
-    const/4 v8, 0x1
-
-    if-eqz v6, :cond_3
-
-    if-nez v7, :cond_2
-
-    goto :goto_0
-
-    :cond_2
-    invoke-static {v6, v7}, Lkotlin/reflect/jvm/internal/impl/resolve/OverridingUtil;->isVisibilityMoreSpecific(Lkotlin/reflect/jvm/internal/impl/descriptors/DeclarationDescriptorWithVisibility;Lkotlin/reflect/jvm/internal/impl/descriptors/DeclarationDescriptorWithVisibility;)Z
+    invoke-static {v6, v7}, Lkotlin/reflect/jvm/internal/impl/resolve/OverridingUtil;->isAccessorMoreSpecific(Lkotlin/reflect/jvm/internal/impl/descriptors/PropertyAccessorDescriptor;Lkotlin/reflect/jvm/internal/impl/descriptors/PropertyAccessorDescriptor;)Z
 
     move-result v6
 
-    goto :goto_1
-
-    :cond_3
-    :goto_0
-    move v6, v8
-
-    :goto_1
     if-nez v6, :cond_4
 
     return v3
@@ -2417,7 +3627,7 @@
 
     if-eqz p0, :cond_7
 
-    move v3, v8
+    const/4 v3, 0x1
 
     :cond_7
     return v3
@@ -2444,23 +3654,68 @@
     invoke-direct {p1, p0}, Ljava/lang/IllegalArgumentException;-><init>(Ljava/lang/String;)V
 
     throw p1
-
-    :cond_9
-    const/16 p0, 0x42
-
-    invoke-static {p0}, Lkotlin/reflect/jvm/internal/impl/resolve/OverridingUtil;->$$$reportNull$$$0(I)V
-
-    throw v0
-
-    :cond_a
-    const/16 p0, 0x41
-
-    invoke-static {p0}, Lkotlin/reflect/jvm/internal/impl/resolve/OverridingUtil;->$$$reportNull$$$0(I)V
-
-    throw v0
 .end method
 
-.method public static isReturnTypeMoreSpecific(Lkotlin/reflect/jvm/internal/impl/descriptors/CallableDescriptor;Lkotlin/reflect/jvm/internal/impl/types/KotlinType;Lkotlin/reflect/jvm/internal/impl/descriptors/CallableDescriptor;Lkotlin/reflect/jvm/internal/impl/types/KotlinType;Lkotlin/Pair;)Z
+.method private static isMoreSpecificThenAllOf(Lkotlin/reflect/jvm/internal/impl/descriptors/CallableDescriptor;Ljava/util/Collection;)Z
+    .locals 1
+    .annotation system Ldalvik/annotation/Signature;
+        value = {
+            "(",
+            "Lkotlin/reflect/jvm/internal/impl/descriptors/CallableDescriptor;",
+            "Ljava/util/Collection<",
+            "Lkotlin/reflect/jvm/internal/impl/descriptors/CallableDescriptor;",
+            ">;)Z"
+        }
+    .end annotation
+
+    if-nez p0, :cond_0
+
+    const/16 v0, 0x47
+
+    invoke-static {v0}, Lkotlin/reflect/jvm/internal/impl/resolve/OverridingUtil;->$$$reportNull$$$0(I)V
+
+    :cond_0
+    if-nez p1, :cond_1
+
+    const/16 v0, 0x48
+
+    invoke-static {v0}, Lkotlin/reflect/jvm/internal/impl/resolve/OverridingUtil;->$$$reportNull$$$0(I)V
+
+    :cond_1
+    invoke-interface {p1}, Ljava/util/Collection;->iterator()Ljava/util/Iterator;
+
+    move-result-object p1
+
+    :cond_2
+    invoke-interface {p1}, Ljava/util/Iterator;->hasNext()Z
+
+    move-result v0
+
+    if-eqz v0, :cond_3
+
+    invoke-interface {p1}, Ljava/util/Iterator;->next()Ljava/lang/Object;
+
+    move-result-object v0
+
+    check-cast v0, Lkotlin/reflect/jvm/internal/impl/descriptors/CallableDescriptor;
+
+    invoke-static {p0, v0}, Lkotlin/reflect/jvm/internal/impl/resolve/OverridingUtil;->isMoreSpecific(Lkotlin/reflect/jvm/internal/impl/descriptors/CallableDescriptor;Lkotlin/reflect/jvm/internal/impl/descriptors/CallableDescriptor;)Z
+
+    move-result v0
+
+    if-nez v0, :cond_2
+
+    const/4 p0, 0x0
+
+    return p0
+
+    :cond_3
+    const/4 p0, 0x1
+
+    return p0
+.end method
+
+.method private static isReturnTypeMoreSpecific(Lkotlin/reflect/jvm/internal/impl/descriptors/CallableDescriptor;Lkotlin/reflect/jvm/internal/impl/types/KotlinType;Lkotlin/reflect/jvm/internal/impl/descriptors/CallableDescriptor;Lkotlin/reflect/jvm/internal/impl/types/KotlinType;Lkotlin/Pair;)Z
     .locals 0
     .annotation system Ldalvik/annotation/Signature;
         value = {
@@ -2476,12 +3731,41 @@
         }
     .end annotation
 
-    const/4 p0, 0x0
+    if-nez p0, :cond_0
 
-    if-eqz p1, :cond_1
+    const/16 p0, 0x49
 
-    if-eqz p3, :cond_0
+    invoke-static {p0}, Lkotlin/reflect/jvm/internal/impl/resolve/OverridingUtil;->$$$reportNull$$$0(I)V
 
+    :cond_0
+    if-nez p1, :cond_1
+
+    const/16 p0, 0x4a
+
+    invoke-static {p0}, Lkotlin/reflect/jvm/internal/impl/resolve/OverridingUtil;->$$$reportNull$$$0(I)V
+
+    :cond_1
+    if-nez p2, :cond_2
+
+    const/16 p0, 0x4b
+
+    invoke-static {p0}, Lkotlin/reflect/jvm/internal/impl/resolve/OverridingUtil;->$$$reportNull$$$0(I)V
+
+    :cond_2
+    if-nez p3, :cond_3
+
+    const/16 p0, 0x4c
+
+    invoke-static {p0}, Lkotlin/reflect/jvm/internal/impl/resolve/OverridingUtil;->$$$reportNull$$$0(I)V
+
+    :cond_3
+    if-nez p4, :cond_4
+
+    const/16 p0, 0x4d
+
+    invoke-static {p0}, Lkotlin/reflect/jvm/internal/impl/resolve/OverridingUtil;->$$$reportNull$$$0(I)V
+
+    :cond_4
     iget-object p0, p4, Lkotlin/Pair;->first:Ljava/lang/Object;
 
     check-cast p0, Lkotlin/reflect/jvm/internal/impl/types/checker/NewKotlinTypeCheckerImpl;
@@ -2503,25 +3787,25 @@
     move-result p0
 
     return p0
-
-    :cond_0
-    const/16 p1, 0x4a
-
-    invoke-static {p1}, Lkotlin/reflect/jvm/internal/impl/resolve/OverridingUtil;->$$$reportNull$$$0(I)V
-
-    throw p0
-
-    :cond_1
-    const/16 p1, 0x48
-
-    invoke-static {p1}, Lkotlin/reflect/jvm/internal/impl/resolve/OverridingUtil;->$$$reportNull$$$0(I)V
-
-    throw p0
 .end method
 
-.method public static isVisibilityMoreSpecific(Lkotlin/reflect/jvm/internal/impl/descriptors/DeclarationDescriptorWithVisibility;Lkotlin/reflect/jvm/internal/impl/descriptors/DeclarationDescriptorWithVisibility;)Z
-    .locals 0
+.method private static isVisibilityMoreSpecific(Lkotlin/reflect/jvm/internal/impl/descriptors/DeclarationDescriptorWithVisibility;Lkotlin/reflect/jvm/internal/impl/descriptors/DeclarationDescriptorWithVisibility;)Z
+    .locals 1
 
+    if-nez p0, :cond_0
+
+    const/16 v0, 0x45
+
+    invoke-static {v0}, Lkotlin/reflect/jvm/internal/impl/resolve/OverridingUtil;->$$$reportNull$$$0(I)V
+
+    :cond_0
+    if-nez p1, :cond_1
+
+    const/16 v0, 0x46
+
+    invoke-static {v0}, Lkotlin/reflect/jvm/internal/impl/resolve/OverridingUtil;->$$$reportNull$$$0(I)V
+
+    :cond_1
     invoke-interface {p0}, Lkotlin/reflect/jvm/internal/impl/descriptors/DeclarationDescriptorWithVisibility;->getVisibility()Lkotlin/reflect/jvm/internal/impl/descriptors/DescriptorVisibility;
 
     move-result-object p0
@@ -2534,26 +3818,70 @@
 
     move-result-object p0
 
-    if-eqz p0, :cond_1
+    if-eqz p0, :cond_3
 
     invoke-virtual {p0}, Ljava/lang/Integer;->intValue()I
 
     move-result p0
 
-    if-ltz p0, :cond_0
+    if-ltz p0, :cond_2
 
     goto :goto_0
 
-    :cond_0
+    :cond_2
     const/4 p0, 0x0
 
     goto :goto_1
 
-    :cond_1
+    :cond_3
     :goto_0
     const/4 p0, 0x1
 
     :goto_1
+    return p0
+.end method
+
+.method public static isVisibleForOverride(Lkotlin/reflect/jvm/internal/impl/descriptors/MemberDescriptor;Lkotlin/reflect/jvm/internal/impl/descriptors/MemberDescriptor;)Z
+    .locals 1
+
+    if-nez p0, :cond_0
+
+    const/16 v0, 0x39
+
+    invoke-static {v0}, Lkotlin/reflect/jvm/internal/impl/resolve/OverridingUtil;->$$$reportNull$$$0(I)V
+
+    :cond_0
+    if-nez p1, :cond_1
+
+    const/16 v0, 0x3a
+
+    invoke-static {v0}, Lkotlin/reflect/jvm/internal/impl/resolve/OverridingUtil;->$$$reportNull$$$0(I)V
+
+    :cond_1
+    invoke-interface {p1}, Lkotlin/reflect/jvm/internal/impl/descriptors/MemberDescriptor;->getVisibility()Lkotlin/reflect/jvm/internal/impl/descriptors/DescriptorVisibility;
+
+    move-result-object v0
+
+    invoke-static {v0}, Lkotlin/reflect/jvm/internal/impl/descriptors/DescriptorVisibilities;->isPrivate(Lkotlin/reflect/jvm/internal/impl/descriptors/DescriptorVisibility;)Z
+
+    move-result v0
+
+    if-nez v0, :cond_2
+
+    invoke-static {p1, p0}, Lkotlin/reflect/jvm/internal/impl/descriptors/DescriptorVisibilities;->isVisibleIgnoringReceiver(Lkotlin/reflect/jvm/internal/impl/descriptors/DeclarationDescriptorWithVisibility;Lkotlin/reflect/jvm/internal/impl/descriptors/DeclarationDescriptor;)Z
+
+    move-result p0
+
+    if-eqz p0, :cond_2
+
+    const/4 p0, 0x1
+
+    goto :goto_0
+
+    :cond_2
+    const/4 p0, 0x0
+
+    :goto_0
     return p0
 .end method
 
@@ -2567,19 +3895,27 @@
         }
     .end annotation
 
-    const/4 v0, 0x0
+    if-nez p0, :cond_0
 
-    if-eqz p0, :cond_4
+    const/16 v0, 0xb
 
-    if-eqz p1, :cond_3
+    invoke-static {v0}, Lkotlin/reflect/jvm/internal/impl/resolve/OverridingUtil;->$$$reportNull$$$0(I)V
 
+    :cond_0
+    if-nez p1, :cond_1
+
+    const/16 v0, 0xc
+
+    invoke-static {v0}, Lkotlin/reflect/jvm/internal/impl/resolve/OverridingUtil;->$$$reportNull$$$0(I)V
+
+    :cond_1
     invoke-virtual {p0, p1}, Ljava/lang/Object;->equals(Ljava/lang/Object;)Z
 
     move-result v0
 
     const/4 v1, 0x1
 
-    if-nez v0, :cond_0
+    if-nez v0, :cond_2
 
     sget-object v0, Lkotlin/reflect/jvm/internal/impl/resolve/DescriptorEquivalenceForOverrides;->INSTANCE:Lkotlin/reflect/jvm/internal/impl/resolve/DescriptorEquivalenceForOverrides;
 
@@ -2595,37 +3931,29 @@
 
     move-result v0
 
-    if-eqz v0, :cond_0
+    if-eqz v0, :cond_2
 
     return v1
 
-    :cond_0
+    :cond_2
     invoke-interface {p1}, Lkotlin/reflect/jvm/internal/impl/descriptors/CallableDescriptor;->getOriginal()Lkotlin/reflect/jvm/internal/impl/descriptors/CallableDescriptor;
 
     move-result-object p1
 
-    sget v0, Lkotlin/reflect/jvm/internal/impl/resolve/DescriptorUtils;->$r8$clinit:I
-
-    new-instance v0, Ljava/util/LinkedHashSet;
-
-    invoke-direct {v0}, Ljava/util/LinkedHashSet;-><init>()V
-
-    invoke-interface {p0}, Lkotlin/reflect/jvm/internal/impl/descriptors/CallableDescriptor;->getOriginal()Lkotlin/reflect/jvm/internal/impl/descriptors/CallableDescriptor;
+    invoke-static {p0}, Lkotlin/reflect/jvm/internal/impl/resolve/DescriptorUtils;->getAllOverriddenDescriptors(Lkotlin/reflect/jvm/internal/impl/descriptors/CallableDescriptor;)Ljava/util/Set;
 
     move-result-object p0
 
-    invoke-static {p0, v0}, Lkotlin/reflect/jvm/internal/impl/resolve/DescriptorUtils;->collectAllOverriddenDescriptors(Lkotlin/reflect/jvm/internal/impl/descriptors/CallableDescriptor;Ljava/util/Set;)V
-
-    invoke-interface {v0}, Ljava/util/Set;->iterator()Ljava/util/Iterator;
+    invoke-interface {p0}, Ljava/util/Set;->iterator()Ljava/util/Iterator;
 
     move-result-object p0
 
-    :cond_1
+    :cond_3
     invoke-interface {p0}, Ljava/util/Iterator;->hasNext()Z
 
     move-result v0
 
-    if-eqz v0, :cond_2
+    if-eqz v0, :cond_4
 
     invoke-interface {p0}, Ljava/util/Iterator;->next()Ljava/lang/Object;
 
@@ -2639,32 +3967,18 @@
 
     move-result v0
 
-    if-eqz v0, :cond_1
+    if-eqz v0, :cond_3
 
     return v1
 
-    :cond_2
+    :cond_4
     const/4 p0, 0x0
 
     return p0
-
-    :cond_3
-    const/16 p0, 0xc
-
-    invoke-static {p0}, Lkotlin/reflect/jvm/internal/impl/resolve/OverridingUtil;->$$$reportNull$$$0(I)V
-
-    throw v0
-
-    :cond_4
-    const/16 p0, 0xb
-
-    invoke-static {p0}, Lkotlin/reflect/jvm/internal/impl/resolve/OverridingUtil;->$$$reportNull$$$0(I)V
-
-    throw v0
 .end method
 
 .method public static resolveUnknownVisibilityForMember(Lkotlin/reflect/jvm/internal/impl/descriptors/CallableMemberDescriptor;Lkotlin/jvm/functions/Function1;)V
-    .locals 6
+    .locals 4
     .annotation system Ldalvik/annotation/Signature;
         value = {
             "(",
@@ -2676,258 +3990,87 @@
         }
     .end annotation
 
-    const/4 v0, 0x0
+    if-nez p0, :cond_0
 
-    if-eqz p0, :cond_19
+    const/16 v0, 0x6b
 
-    invoke-interface {p0}, Lkotlin/reflect/jvm/internal/impl/descriptors/CallableMemberDescriptor;->getOverriddenDescriptors()Ljava/util/Collection;
-
-    move-result-object v1
-
-    invoke-interface {v1}, Ljava/util/Collection;->iterator()Ljava/util/Iterator;
-
-    move-result-object v1
+    invoke-static {v0}, Lkotlin/reflect/jvm/internal/impl/resolve/OverridingUtil;->$$$reportNull$$$0(I)V
 
     :cond_0
+    invoke-interface {p0}, Lkotlin/reflect/jvm/internal/impl/descriptors/CallableMemberDescriptor;->getOverriddenDescriptors()Ljava/util/Collection;
+
+    move-result-object v0
+
+    invoke-interface {v0}, Ljava/util/Collection;->iterator()Ljava/util/Iterator;
+
+    move-result-object v0
+
+    :cond_1
     :goto_0
-    invoke-interface {v1}, Ljava/util/Iterator;->hasNext()Z
+    invoke-interface {v0}, Ljava/util/Iterator;->hasNext()Z
 
-    move-result v2
+    move-result v1
 
-    if-eqz v2, :cond_1
+    if-eqz v1, :cond_2
 
-    invoke-interface {v1}, Ljava/util/Iterator;->next()Ljava/lang/Object;
+    invoke-interface {v0}, Ljava/util/Iterator;->next()Ljava/lang/Object;
+
+    move-result-object v1
+
+    check-cast v1, Lkotlin/reflect/jvm/internal/impl/descriptors/CallableMemberDescriptor;
+
+    invoke-interface {v1}, Lkotlin/reflect/jvm/internal/impl/descriptors/MemberDescriptor;->getVisibility()Lkotlin/reflect/jvm/internal/impl/descriptors/DescriptorVisibility;
 
     move-result-object v2
 
-    check-cast v2, Lkotlin/reflect/jvm/internal/impl/descriptors/CallableMemberDescriptor;
+    sget-object v3, Lkotlin/reflect/jvm/internal/impl/descriptors/DescriptorVisibilities;->INHERITED:Lkotlin/reflect/jvm/internal/impl/descriptors/DescriptorVisibility;
 
-    invoke-interface {v2}, Lkotlin/reflect/jvm/internal/impl/descriptors/MemberDescriptor;->getVisibility()Lkotlin/reflect/jvm/internal/impl/descriptors/DescriptorVisibility;
+    if-ne v2, v3, :cond_1
 
-    move-result-object v3
-
-    sget-object v4, Lkotlin/reflect/jvm/internal/impl/descriptors/DescriptorVisibilities;->INHERITED:Lkotlin/reflect/jvm/internal/impl/descriptors/DescriptorVisibility;
-
-    if-ne v3, v4, :cond_0
-
-    invoke-static {v2, p1}, Lkotlin/reflect/jvm/internal/impl/resolve/OverridingUtil;->resolveUnknownVisibilityForMember(Lkotlin/reflect/jvm/internal/impl/descriptors/CallableMemberDescriptor;Lkotlin/jvm/functions/Function1;)V
+    invoke-static {v1, p1}, Lkotlin/reflect/jvm/internal/impl/resolve/OverridingUtil;->resolveUnknownVisibilityForMember(Lkotlin/reflect/jvm/internal/impl/descriptors/CallableMemberDescriptor;Lkotlin/jvm/functions/Function1;)V
 
     goto :goto_0
 
-    :cond_1
+    :cond_2
     invoke-interface {p0}, Lkotlin/reflect/jvm/internal/impl/descriptors/MemberDescriptor;->getVisibility()Lkotlin/reflect/jvm/internal/impl/descriptors/DescriptorVisibility;
 
-    move-result-object v1
+    move-result-object v0
 
-    sget-object v2, Lkotlin/reflect/jvm/internal/impl/descriptors/DescriptorVisibilities;->INHERITED:Lkotlin/reflect/jvm/internal/impl/descriptors/DescriptorVisibility;
+    sget-object v1, Lkotlin/reflect/jvm/internal/impl/descriptors/DescriptorVisibilities;->INHERITED:Lkotlin/reflect/jvm/internal/impl/descriptors/DescriptorVisibility;
 
-    if-eq v1, v2, :cond_2
+    if-eq v0, v1, :cond_3
 
     return-void
 
-    :cond_2
-    invoke-interface {p0}, Lkotlin/reflect/jvm/internal/impl/descriptors/CallableMemberDescriptor;->getOverriddenDescriptors()Ljava/util/Collection;
-
-    move-result-object v1
-
-    if-eqz v1, :cond_18
-
-    invoke-interface {v1}, Ljava/util/Collection;->isEmpty()Z
-
-    move-result v2
-
-    if-eqz v2, :cond_3
-
-    sget-object v2, Lkotlin/reflect/jvm/internal/impl/descriptors/DescriptorVisibilities;->DEFAULT_VISIBILITY:Lkotlin/reflect/jvm/internal/impl/descriptors/DescriptorVisibility;
-
-    goto :goto_5
-
     :cond_3
-    invoke-interface {v1}, Ljava/util/Collection;->iterator()Ljava/util/Iterator;
+    invoke-static {p0}, Lkotlin/reflect/jvm/internal/impl/resolve/OverridingUtil;->computeVisibilityToInherit(Lkotlin/reflect/jvm/internal/impl/descriptors/CallableMemberDescriptor;)Lkotlin/reflect/jvm/internal/impl/descriptors/DescriptorVisibility;
 
-    move-result-object v2
+    move-result-object v0
 
-    :goto_1
-    move-object v3, v0
+    if-nez v0, :cond_5
 
-    :cond_4
-    :goto_2
-    invoke-interface {v2}, Ljava/util/Iterator;->hasNext()Z
-
-    move-result v4
-
-    if-eqz v4, :cond_7
-
-    invoke-interface {v2}, Ljava/util/Iterator;->next()Ljava/lang/Object;
-
-    move-result-object v4
-
-    check-cast v4, Lkotlin/reflect/jvm/internal/impl/descriptors/CallableMemberDescriptor;
-
-    invoke-interface {v4}, Lkotlin/reflect/jvm/internal/impl/descriptors/MemberDescriptor;->getVisibility()Lkotlin/reflect/jvm/internal/impl/descriptors/DescriptorVisibility;
-
-    move-result-object v4
-
-    if-nez v3, :cond_5
-
-    goto :goto_3
-
-    :cond_5
-    invoke-static {v4, v3}, Lkotlin/reflect/jvm/internal/impl/descriptors/DescriptorVisibilities;->compare(Lkotlin/reflect/jvm/internal/impl/descriptors/DescriptorVisibility;Lkotlin/reflect/jvm/internal/impl/descriptors/DescriptorVisibility;)Ljava/lang/Integer;
-
-    move-result-object v5
-
-    if-nez v5, :cond_6
-
-    goto :goto_1
-
-    :cond_6
-    invoke-virtual {v5}, Ljava/lang/Integer;->intValue()I
-
-    move-result v5
-
-    if-lez v5, :cond_4
-
-    :goto_3
-    move-object v3, v4
-
-    goto :goto_2
-
-    :cond_7
-    if-nez v3, :cond_8
-
-    goto :goto_4
-
-    :cond_8
-    invoke-interface {v1}, Ljava/util/Collection;->iterator()Ljava/util/Iterator;
-
-    move-result-object v2
-
-    :cond_9
-    invoke-interface {v2}, Ljava/util/Iterator;->hasNext()Z
-
-    move-result v4
-
-    if-eqz v4, :cond_b
-
-    invoke-interface {v2}, Ljava/util/Iterator;->next()Ljava/lang/Object;
-
-    move-result-object v4
-
-    check-cast v4, Lkotlin/reflect/jvm/internal/impl/descriptors/CallableMemberDescriptor;
-
-    invoke-interface {v4}, Lkotlin/reflect/jvm/internal/impl/descriptors/MemberDescriptor;->getVisibility()Lkotlin/reflect/jvm/internal/impl/descriptors/DescriptorVisibility;
-
-    move-result-object v4
-
-    invoke-static {v3, v4}, Lkotlin/reflect/jvm/internal/impl/descriptors/DescriptorVisibilities;->compare(Lkotlin/reflect/jvm/internal/impl/descriptors/DescriptorVisibility;Lkotlin/reflect/jvm/internal/impl/descriptors/DescriptorVisibility;)Ljava/lang/Integer;
-
-    move-result-object v4
-
-    if-eqz v4, :cond_a
-
-    invoke-virtual {v4}, Ljava/lang/Integer;->intValue()I
-
-    move-result v4
-
-    if-gez v4, :cond_9
-
-    :cond_a
-    :goto_4
-    move-object v2, v0
-
-    goto :goto_5
-
-    :cond_b
-    move-object v2, v3
-
-    :goto_5
-    if-nez v2, :cond_c
-
-    :goto_6
-    move-object v2, v0
-
-    goto :goto_7
-
-    :cond_c
-    invoke-interface {p0}, Lkotlin/reflect/jvm/internal/impl/descriptors/CallableMemberDescriptor;->getKind()Lkotlin/reflect/jvm/internal/impl/descriptors/CallableMemberDescriptor$Kind;
-
-    move-result-object v3
-
-    sget-object v4, Lkotlin/reflect/jvm/internal/impl/descriptors/CallableMemberDescriptor$Kind;->FAKE_OVERRIDE:Lkotlin/reflect/jvm/internal/impl/descriptors/CallableMemberDescriptor$Kind;
-
-    if-ne v3, v4, :cond_e
-
-    invoke-interface {v1}, Ljava/util/Collection;->iterator()Ljava/util/Iterator;
-
-    move-result-object v1
-
-    :cond_d
-    invoke-interface {v1}, Ljava/util/Iterator;->hasNext()Z
-
-    move-result v3
-
-    if-eqz v3, :cond_f
-
-    invoke-interface {v1}, Ljava/util/Iterator;->next()Ljava/lang/Object;
-
-    move-result-object v3
-
-    check-cast v3, Lkotlin/reflect/jvm/internal/impl/descriptors/CallableMemberDescriptor;
-
-    invoke-interface {v3}, Lkotlin/reflect/jvm/internal/impl/descriptors/MemberDescriptor;->getModality()Lkotlin/reflect/jvm/internal/impl/descriptors/Modality;
-
-    move-result-object v4
-
-    sget-object v5, Lkotlin/reflect/jvm/internal/impl/descriptors/Modality;->ABSTRACT:Lkotlin/reflect/jvm/internal/impl/descriptors/Modality;
-
-    if-eq v4, v5, :cond_d
-
-    invoke-interface {v3}, Lkotlin/reflect/jvm/internal/impl/descriptors/MemberDescriptor;->getVisibility()Lkotlin/reflect/jvm/internal/impl/descriptors/DescriptorVisibility;
-
-    move-result-object v3
-
-    invoke-virtual {v3, v2}, Ljava/lang/Object;->equals(Ljava/lang/Object;)Z
-
-    move-result v3
-
-    if-nez v3, :cond_d
-
-    goto :goto_6
-
-    :cond_e
-    invoke-virtual {v2}, Lkotlin/reflect/jvm/internal/impl/descriptors/DescriptorVisibility;->normalize()Lkotlin/reflect/jvm/internal/impl/descriptors/DescriptorVisibility;
-
-    move-result-object v2
-
-    :cond_f
-    :goto_7
-    if-nez v2, :cond_11
-
-    if-eqz p1, :cond_10
+    if-eqz p1, :cond_4
 
     invoke-interface {p1, p0}, Lkotlin/jvm/functions/Function1;->invoke(Ljava/lang/Object;)Ljava/lang/Object;
 
-    :cond_10
+    :cond_4
     sget-object v1, Lkotlin/reflect/jvm/internal/impl/descriptors/DescriptorVisibilities;->PUBLIC:Lkotlin/reflect/jvm/internal/impl/descriptors/DescriptorVisibility;
 
-    goto :goto_8
+    goto :goto_1
 
-    :cond_11
-    move-object v1, v2
+    :cond_5
+    move-object v1, v0
 
-    :goto_8
-    instance-of v3, p0, Lkotlin/reflect/jvm/internal/impl/descriptors/impl/PropertyDescriptorImpl;
+    :goto_1
+    instance-of v2, p0, Lkotlin/reflect/jvm/internal/impl/descriptors/impl/PropertyDescriptorImpl;
 
-    if-eqz v3, :cond_14
+    if-eqz v2, :cond_7
 
-    move-object v3, p0
+    move-object v2, p0
 
-    check-cast v3, Lkotlin/reflect/jvm/internal/impl/descriptors/impl/PropertyDescriptorImpl;
+    check-cast v2, Lkotlin/reflect/jvm/internal/impl/descriptors/impl/PropertyDescriptorImpl;
 
-    if-eqz v1, :cond_13
-
-    iput-object v1, v3, Lkotlin/reflect/jvm/internal/impl/descriptors/impl/PropertyDescriptorImpl;->visibility:Lkotlin/reflect/jvm/internal/impl/descriptors/DescriptorVisibility;
+    invoke-virtual {v2, v1}, Lkotlin/reflect/jvm/internal/impl/descriptors/impl/PropertyDescriptorImpl;->setVisibility(Lkotlin/reflect/jvm/internal/impl/descriptors/DescriptorVisibility;)V
 
     check-cast p0, Lkotlin/reflect/jvm/internal/impl/descriptors/PropertyDescriptor;
 
@@ -2939,12 +4082,12 @@
 
     move-result-object p0
 
-    :goto_9
+    :goto_2
     invoke-interface {p0}, Ljava/util/Iterator;->hasNext()Z
 
     move-result v1
 
-    if-eqz v1, :cond_17
+    if-eqz v1, :cond_9
 
     invoke-interface {p0}, Ljava/util/Iterator;->next()Ljava/lang/Object;
 
@@ -2952,51 +4095,35 @@
 
     check-cast v1, Lkotlin/reflect/jvm/internal/impl/descriptors/PropertyAccessorDescriptor;
 
-    if-nez v2, :cond_12
+    if-nez v0, :cond_6
 
-    move-object v3, v0
+    const/4 v2, 0x0
 
-    goto :goto_a
+    goto :goto_3
 
-    :cond_12
-    move-object v3, p1
+    :cond_6
+    move-object v2, p1
 
-    :goto_a
-    invoke-static {v1, v3}, Lkotlin/reflect/jvm/internal/impl/resolve/OverridingUtil;->resolveUnknownVisibilityForMember(Lkotlin/reflect/jvm/internal/impl/descriptors/CallableMemberDescriptor;Lkotlin/jvm/functions/Function1;)V
+    :goto_3
+    invoke-static {v1, v2}, Lkotlin/reflect/jvm/internal/impl/resolve/OverridingUtil;->resolveUnknownVisibilityForMember(Lkotlin/reflect/jvm/internal/impl/descriptors/CallableMemberDescriptor;Lkotlin/jvm/functions/Function1;)V
 
-    goto :goto_9
+    goto :goto_2
 
-    :cond_13
-    const/16 p0, 0x10
-
-    invoke-static {p0}, Lkotlin/reflect/jvm/internal/impl/descriptors/impl/PropertyDescriptorImpl;->$$$reportNull$$$0(I)V
-
-    throw v0
-
-    :cond_14
+    :cond_7
     instance-of p1, p0, Lkotlin/reflect/jvm/internal/impl/descriptors/impl/FunctionDescriptorImpl;
 
-    if-eqz p1, :cond_16
+    if-eqz p1, :cond_8
 
     check-cast p0, Lkotlin/reflect/jvm/internal/impl/descriptors/impl/FunctionDescriptorImpl;
 
-    if-eqz v1, :cond_15
+    invoke-virtual {p0, v1}, Lkotlin/reflect/jvm/internal/impl/descriptors/impl/FunctionDescriptorImpl;->setVisibility(Lkotlin/reflect/jvm/internal/impl/descriptors/DescriptorVisibility;)V
 
-    iput-object v1, p0, Lkotlin/reflect/jvm/internal/impl/descriptors/impl/FunctionDescriptorImpl;->visibility:Lkotlin/reflect/jvm/internal/impl/descriptors/DescriptorVisibility;
+    goto :goto_4
 
-    goto :goto_b
-
-    :cond_15
-    const/16 p0, 0x9
-
-    invoke-static {p0}, Lkotlin/reflect/jvm/internal/impl/descriptors/impl/FunctionDescriptorImpl;->$$$reportNull$$$0(I)V
-
-    throw v0
-
-    :cond_16
+    :cond_8
     check-cast p0, Lkotlin/reflect/jvm/internal/impl/descriptors/impl/PropertyAccessorDescriptorImpl;
 
-    iput-object v1, p0, Lkotlin/reflect/jvm/internal/impl/descriptors/impl/PropertyAccessorDescriptorImpl;->visibility:Lkotlin/reflect/jvm/internal/impl/descriptors/DescriptorVisibility;
+    invoke-virtual {p0, v1}, Lkotlin/reflect/jvm/internal/impl/descriptors/impl/PropertyAccessorDescriptorImpl;->setVisibility(Lkotlin/reflect/jvm/internal/impl/descriptors/DescriptorVisibility;)V
 
     invoke-virtual {p0}, Lkotlin/reflect/jvm/internal/impl/descriptors/impl/PropertyAccessorDescriptorImpl;->getCorrespondingProperty()Lkotlin/reflect/jvm/internal/impl/descriptors/PropertyDescriptor;
 
@@ -3006,33 +4133,19 @@
 
     move-result-object p1
 
-    if-eq v1, p1, :cond_17
+    if-eq v1, p1, :cond_9
 
     const/4 p1, 0x0
 
-    iput-boolean p1, p0, Lkotlin/reflect/jvm/internal/impl/descriptors/impl/PropertyAccessorDescriptorImpl;->isDefault:Z
+    invoke-virtual {p0, p1}, Lkotlin/reflect/jvm/internal/impl/descriptors/impl/PropertyAccessorDescriptorImpl;->setDefault(Z)V
 
-    :cond_17
-    :goto_b
+    :cond_9
+    :goto_4
     return-void
-
-    :cond_18
-    const/16 p0, 0x6b
-
-    invoke-static {p0}, Lkotlin/reflect/jvm/internal/impl/resolve/OverridingUtil;->$$$reportNull$$$0(I)V
-
-    throw v0
-
-    :cond_19
-    const/16 p0, 0x69
-
-    invoke-static {p0}, Lkotlin/reflect/jvm/internal/impl/resolve/OverridingUtil;->$$$reportNull$$$0(I)V
-
-    throw v0
 .end method
 
 .method public static selectMostSpecificMember(Ljava/util/Collection;Lkotlin/jvm/functions/Function1;)Ljava/lang/Object;
-    .locals 10
+    .locals 8
     .annotation system Ldalvik/annotation/Signature;
         value = {
             "<H:",
@@ -3047,222 +4160,198 @@
         }
     .end annotation
 
+    if-nez p0, :cond_0
+
+    const/16 v0, 0x4e
+
+    invoke-static {v0}, Lkotlin/reflect/jvm/internal/impl/resolve/OverridingUtil;->$$$reportNull$$$0(I)V
+
+    :cond_0
+    if-nez p1, :cond_1
+
+    const/16 v0, 0x4f
+
+    invoke-static {v0}, Lkotlin/reflect/jvm/internal/impl/resolve/OverridingUtil;->$$$reportNull$$$0(I)V
+
+    :cond_1
     invoke-interface {p0}, Ljava/util/Collection;->size()I
 
     move-result v0
 
     const/4 v1, 0x1
 
-    const/4 v2, 0x0
-
-    if-ne v0, v1, :cond_1
+    if-ne v0, v1, :cond_3
 
     invoke-static {p0}, Lkotlin/collections/CollectionsKt___CollectionsKt;->first(Ljava/lang/Iterable;)Ljava/lang/Object;
 
     move-result-object p0
 
-    if-eqz p0, :cond_0
+    if-nez p0, :cond_2
 
+    const/16 p1, 0x50
+
+    invoke-static {p1}, Lkotlin/reflect/jvm/internal/impl/resolve/OverridingUtil;->$$$reportNull$$$0(I)V
+
+    :cond_2
     return-object p0
 
-    :cond_0
-    const/16 p0, 0x4e
-
-    invoke-static {p0}, Lkotlin/reflect/jvm/internal/impl/resolve/OverridingUtil;->$$$reportNull$$$0(I)V
-
-    throw v2
-
-    :cond_1
+    :cond_3
     new-instance v0, Ljava/util/ArrayList;
 
-    const/4 v3, 0x2
+    const/4 v2, 0x2
 
-    invoke-direct {v0, v3}, Ljava/util/ArrayList;-><init>(I)V
+    invoke-direct {v0, v2}, Ljava/util/ArrayList;-><init>(I)V
 
-    new-instance v3, Ljava/util/ArrayList;
+    const-string v2, "transform"
 
-    const/16 v4, 0xa
+    invoke-static {p1, v2}, Lkotlin/jvm/internal/Intrinsics;->checkNotNullParameter(Ljava/lang/Object;Ljava/lang/String;)V
 
-    invoke-static {p0, v4}, Lkotlin/collections/CollectionsKt__IteratorsJVMKt;->collectionSizeOrDefault(Ljava/lang/Iterable;I)I
+    new-instance v2, Ljava/util/ArrayList;
 
-    move-result v4
+    const/16 v3, 0xa
 
-    invoke-direct {v3, v4}, Ljava/util/ArrayList;-><init>(I)V
+    invoke-static {p0, v3}, Lkotlin/collections/CollectionsKt__IteratorsJVMKt;->collectionSizeOrDefault(Ljava/lang/Iterable;I)I
+
+    move-result v3
+
+    invoke-direct {v2, v3}, Ljava/util/ArrayList;-><init>(I)V
 
     invoke-interface {p0}, Ljava/lang/Iterable;->iterator()Ljava/util/Iterator;
 
-    move-result-object v4
+    move-result-object v3
 
     :goto_0
-    invoke-interface {v4}, Ljava/util/Iterator;->hasNext()Z
+    invoke-interface {v3}, Ljava/util/Iterator;->hasNext()Z
 
-    move-result v5
+    move-result v4
 
-    if-eqz v5, :cond_2
+    if-eqz v4, :cond_4
 
-    invoke-interface {v4}, Ljava/util/Iterator;->next()Ljava/lang/Object;
-
-    move-result-object v5
-
-    invoke-interface {p1, v5}, Lkotlin/jvm/functions/Function1;->invoke(Ljava/lang/Object;)Ljava/lang/Object;
-
-    move-result-object v5
-
-    invoke-virtual {v3, v5}, Ljava/util/ArrayList;->add(Ljava/lang/Object;)Z
-
-    goto :goto_0
-
-    :cond_2
-    invoke-static {p0}, Lkotlin/collections/CollectionsKt___CollectionsKt;->first(Ljava/lang/Iterable;)Ljava/lang/Object;
+    invoke-interface {v3}, Ljava/util/Iterator;->next()Ljava/lang/Object;
 
     move-result-object v4
 
     invoke-interface {p1, v4}, Lkotlin/jvm/functions/Function1;->invoke(Ljava/lang/Object;)Ljava/lang/Object;
 
-    move-result-object v5
+    move-result-object v4
 
-    check-cast v5, Lkotlin/reflect/jvm/internal/impl/descriptors/CallableDescriptor;
+    invoke-virtual {v2, v4}, Ljava/util/ArrayList;->add(Ljava/lang/Object;)Z
+
+    goto :goto_0
+
+    :cond_4
+    invoke-static {p0}, Lkotlin/collections/CollectionsKt___CollectionsKt;->first(Ljava/lang/Iterable;)Ljava/lang/Object;
+
+    move-result-object v3
+
+    invoke-interface {p1, v3}, Lkotlin/jvm/functions/Function1;->invoke(Ljava/lang/Object;)Ljava/lang/Object;
+
+    move-result-object v4
+
+    check-cast v4, Lkotlin/reflect/jvm/internal/impl/descriptors/CallableDescriptor;
 
     invoke-interface {p0}, Ljava/util/Collection;->iterator()Ljava/util/Iterator;
 
     move-result-object p0
 
-    :cond_3
+    :cond_5
     :goto_1
     invoke-interface {p0}, Ljava/util/Iterator;->hasNext()Z
 
-    move-result v6
+    move-result v5
 
-    if-eqz v6, :cond_8
+    if-eqz v5, :cond_7
 
     invoke-interface {p0}, Ljava/util/Iterator;->next()Ljava/lang/Object;
 
+    move-result-object v5
+
+    invoke-interface {p1, v5}, Lkotlin/jvm/functions/Function1;->invoke(Ljava/lang/Object;)Ljava/lang/Object;
+
     move-result-object v6
 
-    invoke-interface {p1, v6}, Lkotlin/jvm/functions/Function1;->invoke(Ljava/lang/Object;)Ljava/lang/Object;
+    check-cast v6, Lkotlin/reflect/jvm/internal/impl/descriptors/CallableDescriptor;
 
-    move-result-object v7
-
-    check-cast v7, Lkotlin/reflect/jvm/internal/impl/descriptors/CallableDescriptor;
-
-    if-eqz v7, :cond_7
-
-    invoke-virtual {v3}, Ljava/util/ArrayList;->iterator()Ljava/util/Iterator;
-
-    move-result-object v8
-
-    :cond_4
-    invoke-interface {v8}, Ljava/util/Iterator;->hasNext()Z
-
-    move-result v9
-
-    if-eqz v9, :cond_5
-
-    invoke-interface {v8}, Ljava/util/Iterator;->next()Ljava/lang/Object;
-
-    move-result-object v9
-
-    check-cast v9, Lkotlin/reflect/jvm/internal/impl/descriptors/CallableDescriptor;
-
-    invoke-static {v7, v9}, Lkotlin/reflect/jvm/internal/impl/resolve/OverridingUtil;->isMoreSpecific(Lkotlin/reflect/jvm/internal/impl/descriptors/CallableDescriptor;Lkotlin/reflect/jvm/internal/impl/descriptors/CallableDescriptor;)Z
-
-    move-result v9
-
-    if-nez v9, :cond_4
-
-    const/4 v8, 0x0
-
-    goto :goto_2
-
-    :cond_5
-    move v8, v1
-
-    :goto_2
-    if-eqz v8, :cond_6
-
-    invoke-virtual {v0, v6}, Ljava/util/ArrayList;->add(Ljava/lang/Object;)Z
-
-    :cond_6
-    invoke-static {v7, v5}, Lkotlin/reflect/jvm/internal/impl/resolve/OverridingUtil;->isMoreSpecific(Lkotlin/reflect/jvm/internal/impl/descriptors/CallableDescriptor;Lkotlin/reflect/jvm/internal/impl/descriptors/CallableDescriptor;)Z
-
-    move-result v8
-
-    if-eqz v8, :cond_3
-
-    invoke-static {v5, v7}, Lkotlin/reflect/jvm/internal/impl/resolve/OverridingUtil;->isMoreSpecific(Lkotlin/reflect/jvm/internal/impl/descriptors/CallableDescriptor;Lkotlin/reflect/jvm/internal/impl/descriptors/CallableDescriptor;)Z
+    invoke-static {v6, v2}, Lkotlin/reflect/jvm/internal/impl/resolve/OverridingUtil;->isMoreSpecificThenAllOf(Lkotlin/reflect/jvm/internal/impl/descriptors/CallableDescriptor;Ljava/util/Collection;)Z
 
     move-result v7
 
-    if-nez v7, :cond_3
+    if-eqz v7, :cond_6
 
-    move-object v4, v6
+    invoke-virtual {v0, v5}, Ljava/util/ArrayList;->add(Ljava/lang/Object;)Z
+
+    :cond_6
+    invoke-static {v6, v4}, Lkotlin/reflect/jvm/internal/impl/resolve/OverridingUtil;->isMoreSpecific(Lkotlin/reflect/jvm/internal/impl/descriptors/CallableDescriptor;Lkotlin/reflect/jvm/internal/impl/descriptors/CallableDescriptor;)Z
+
+    move-result v7
+
+    if-eqz v7, :cond_5
+
+    invoke-static {v4, v6}, Lkotlin/reflect/jvm/internal/impl/resolve/OverridingUtil;->isMoreSpecific(Lkotlin/reflect/jvm/internal/impl/descriptors/CallableDescriptor;Lkotlin/reflect/jvm/internal/impl/descriptors/CallableDescriptor;)Z
+
+    move-result v6
+
+    if-nez v6, :cond_5
+
+    move-object v3, v5
 
     goto :goto_1
 
     :cond_7
-    const/16 p0, 0x45
-
-    invoke-static {p0}, Lkotlin/reflect/jvm/internal/impl/resolve/OverridingUtil;->$$$reportNull$$$0(I)V
-
-    throw v2
-
-    :cond_8
     invoke-virtual {v0}, Ljava/util/ArrayList;->isEmpty()Z
 
     move-result p0
 
-    if-eqz p0, :cond_a
+    if-eqz p0, :cond_9
 
-    if-eqz v4, :cond_9
+    if-nez v3, :cond_8
 
-    return-object v4
-
-    :cond_9
-    const/16 p0, 0x4f
+    const/16 p0, 0x51
 
     invoke-static {p0}, Lkotlin/reflect/jvm/internal/impl/resolve/OverridingUtil;->$$$reportNull$$$0(I)V
 
-    throw v2
+    :cond_8
+    return-object v3
 
-    :cond_a
+    :cond_9
     invoke-virtual {v0}, Ljava/util/ArrayList;->size()I
 
     move-result p0
 
-    if-ne p0, v1, :cond_c
+    if-ne p0, v1, :cond_b
 
     invoke-static {v0}, Lkotlin/collections/CollectionsKt___CollectionsKt;->first(Ljava/lang/Iterable;)Ljava/lang/Object;
 
     move-result-object p0
 
-    if-eqz p0, :cond_b
+    if-nez p0, :cond_a
 
+    const/16 p1, 0x52
+
+    invoke-static {p1}, Lkotlin/reflect/jvm/internal/impl/resolve/OverridingUtil;->$$$reportNull$$$0(I)V
+
+    :cond_a
     return-object p0
 
     :cond_b
-    const/16 p0, 0x50
+    const/4 p0, 0x0
 
-    invoke-static {p0}, Lkotlin/reflect/jvm/internal/impl/resolve/OverridingUtil;->$$$reportNull$$$0(I)V
-
-    throw v2
-
-    :cond_c
     invoke-virtual {v0}, Ljava/util/ArrayList;->iterator()Ljava/util/Iterator;
-
-    move-result-object p0
-
-    :cond_d
-    invoke-interface {p0}, Ljava/util/Iterator;->hasNext()Z
-
-    move-result v1
-
-    if-eqz v1, :cond_e
-
-    invoke-interface {p0}, Ljava/util/Iterator;->next()Ljava/lang/Object;
 
     move-result-object v1
 
-    invoke-interface {p1, v1}, Lkotlin/jvm/functions/Function1;->invoke(Ljava/lang/Object;)Ljava/lang/Object;
+    :cond_c
+    invoke-interface {v1}, Ljava/util/Iterator;->hasNext()Z
+
+    move-result v2
+
+    if-eqz v2, :cond_d
+
+    invoke-interface {v1}, Ljava/util/Iterator;->next()Ljava/lang/Object;
+
+    move-result-object v2
+
+    invoke-interface {p1, v2}, Lkotlin/jvm/functions/Function1;->invoke(Ljava/lang/Object;)Ljava/lang/Object;
 
     move-result-object v3
 
@@ -3276,241 +4365,34 @@
 
     move-result v3
 
-    if-nez v3, :cond_d
+    if-nez v3, :cond_c
 
-    goto :goto_3
+    move-object p0, v2
+
+    :cond_d
+    if-eqz p0, :cond_e
+
+    return-object p0
 
     :cond_e
-    move-object v1, v2
-
-    :goto_3
-    if-eqz v1, :cond_f
-
-    return-object v1
-
-    :cond_f
     invoke-static {v0}, Lkotlin/collections/CollectionsKt___CollectionsKt;->first(Ljava/lang/Iterable;)Ljava/lang/Object;
 
     move-result-object p0
 
-    if-eqz p0, :cond_10
+    if-nez p0, :cond_f
 
+    const/16 p1, 0x54
+
+    invoke-static {p1}, Lkotlin/reflect/jvm/internal/impl/resolve/OverridingUtil;->$$$reportNull$$$0(I)V
+
+    :cond_f
     return-object p0
-
-    :cond_10
-    const/16 p0, 0x52
-
-    invoke-static {p0}, Lkotlin/reflect/jvm/internal/impl/resolve/OverridingUtil;->$$$reportNull$$$0(I)V
-
-    throw v2
 .end method
 
 
 # virtual methods
-.method public final areTypesEquivalent(Lkotlin/reflect/jvm/internal/impl/types/KotlinType;Lkotlin/reflect/jvm/internal/impl/types/KotlinType;Lkotlin/Pair;)Z
-    .locals 2
-    .annotation system Ldalvik/annotation/Signature;
-        value = {
-            "(",
-            "Lkotlin/reflect/jvm/internal/impl/types/KotlinType;",
-            "Lkotlin/reflect/jvm/internal/impl/types/KotlinType;",
-            "Lkotlin/Pair<",
-            "Lkotlin/reflect/jvm/internal/impl/types/checker/NewKotlinTypeCheckerImpl;",
-            "Lkotlin/reflect/jvm/internal/impl/types/checker/ClassicTypeCheckerContext;",
-            ">;)Z"
-        }
-    .end annotation
-
-    const/4 v0, 0x0
-
-    if-eqz p1, :cond_4
-
-    if-eqz p2, :cond_3
-
-    if-eqz p3, :cond_2
-
-    invoke-static {p1}, Lcom/google/android/gms/internal/nearby/zzfc;->isError(Lkotlin/reflect/jvm/internal/impl/types/KotlinType;)Z
-
-    move-result v0
-
-    const/4 v1, 0x1
-
-    if-eqz v0, :cond_0
-
-    invoke-static {p2}, Lcom/google/android/gms/internal/nearby/zzfc;->isError(Lkotlin/reflect/jvm/internal/impl/types/KotlinType;)Z
-
-    move-result v0
-
-    if-eqz v0, :cond_0
-
-    move v0, v1
-
-    goto :goto_0
-
-    :cond_0
-    const/4 v0, 0x0
-
-    :goto_0
-    if-eqz v0, :cond_1
-
-    return v1
-
-    :cond_1
-    iget-object v0, p3, Lkotlin/Pair;->first:Ljava/lang/Object;
-
-    check-cast v0, Lkotlin/reflect/jvm/internal/impl/types/checker/NewKotlinTypeCheckerImpl;
-
-    iget-object p3, p3, Lkotlin/Pair;->second:Ljava/lang/Object;
-
-    check-cast p3, Lkotlin/reflect/jvm/internal/impl/types/checker/ClassicTypeCheckerContext;
-
-    invoke-virtual {p1}, Lkotlin/reflect/jvm/internal/impl/types/KotlinType;->unwrap()Lkotlin/reflect/jvm/internal/impl/types/UnwrappedType;
-
-    move-result-object p1
-
-    invoke-virtual {p2}, Lkotlin/reflect/jvm/internal/impl/types/KotlinType;->unwrap()Lkotlin/reflect/jvm/internal/impl/types/UnwrappedType;
-
-    move-result-object p2
-
-    invoke-virtual {v0, p3, p1, p2}, Lkotlin/reflect/jvm/internal/impl/types/checker/NewKotlinTypeCheckerImpl;->equalTypes(Lkotlin/reflect/jvm/internal/impl/types/checker/ClassicTypeCheckerContext;Lkotlin/reflect/jvm/internal/impl/types/UnwrappedType;Lkotlin/reflect/jvm/internal/impl/types/UnwrappedType;)Z
-
-    move-result p1
-
-    return p1
-
-    :cond_2
-    const/16 p1, 0x2e
-
-    invoke-static {p1}, Lkotlin/reflect/jvm/internal/impl/resolve/OverridingUtil;->$$$reportNull$$$0(I)V
-
-    throw v0
-
-    :cond_3
-    const/16 p1, 0x2d
-
-    invoke-static {p1}, Lkotlin/reflect/jvm/internal/impl/resolve/OverridingUtil;->$$$reportNull$$$0(I)V
-
-    throw v0
-
-    :cond_4
-    const/16 p1, 0x2c
-
-    invoke-static {p1}, Lkotlin/reflect/jvm/internal/impl/resolve/OverridingUtil;->$$$reportNull$$$0(I)V
-
-    throw v0
-.end method
-
-.method public final createTypeChecker(Ljava/util/List;Ljava/util/List;)Lkotlin/Pair;
-    .locals 5
-    .annotation system Ldalvik/annotation/Signature;
-        value = {
-            "(",
-            "Ljava/util/List<",
-            "Lkotlin/reflect/jvm/internal/impl/descriptors/TypeParameterDescriptor;",
-            ">;",
-            "Ljava/util/List<",
-            "Lkotlin/reflect/jvm/internal/impl/descriptors/TypeParameterDescriptor;",
-            ">;)",
-            "Lkotlin/Pair<",
-            "Lkotlin/reflect/jvm/internal/impl/types/checker/NewKotlinTypeCheckerImpl;",
-            "Lkotlin/reflect/jvm/internal/impl/types/checker/ClassicTypeCheckerContext;",
-            ">;"
-        }
-    .end annotation
-
-    const/4 v0, 0x0
-
-    if-eqz p1, :cond_3
-
-    if-eqz p2, :cond_2
-
-    new-instance v1, Lkotlin/reflect/jvm/internal/impl/types/checker/NewKotlinTypeCheckerImpl;
-
-    iget-object v2, p0, Lkotlin/reflect/jvm/internal/impl/resolve/OverridingUtil;->kotlinTypeRefiner:Lkotlin/reflect/jvm/internal/impl/types/checker/KotlinTypeRefiner;
-
-    invoke-direct {v1, v2}, Lkotlin/reflect/jvm/internal/impl/types/checker/NewKotlinTypeCheckerImpl;-><init>(Lkotlin/reflect/jvm/internal/impl/types/checker/KotlinTypeRefiner;)V
-
-    invoke-interface {p1}, Ljava/util/List;->isEmpty()Z
-
-    move-result v2
-
-    if-eqz v2, :cond_0
-
-    new-instance p1, Lkotlin/reflect/jvm/internal/impl/resolve/OverridingUtil$OverridingUtilTypeCheckerContext;
-
-    invoke-direct {p1, p0, v0}, Lkotlin/reflect/jvm/internal/impl/resolve/OverridingUtil$OverridingUtilTypeCheckerContext;-><init>(Lkotlin/reflect/jvm/internal/impl/resolve/OverridingUtil;Ljava/util/Map;)V
-
-    goto :goto_1
-
-    :cond_0
-    new-instance v0, Ljava/util/HashMap;
-
-    invoke-direct {v0}, Ljava/util/HashMap;-><init>()V
-
-    const/4 v2, 0x0
-
-    :goto_0
-    invoke-interface {p1}, Ljava/util/List;->size()I
-
-    move-result v3
-
-    if-ge v2, v3, :cond_1
-
-    invoke-interface {p1, v2}, Ljava/util/List;->get(I)Ljava/lang/Object;
-
-    move-result-object v3
-
-    check-cast v3, Lkotlin/reflect/jvm/internal/impl/descriptors/TypeParameterDescriptor;
-
-    invoke-interface {v3}, Lkotlin/reflect/jvm/internal/impl/descriptors/TypeParameterDescriptor;->getTypeConstructor()Lkotlin/reflect/jvm/internal/impl/types/TypeConstructor;
-
-    move-result-object v3
-
-    invoke-interface {p2, v2}, Ljava/util/List;->get(I)Ljava/lang/Object;
-
-    move-result-object v4
-
-    check-cast v4, Lkotlin/reflect/jvm/internal/impl/descriptors/TypeParameterDescriptor;
-
-    invoke-interface {v4}, Lkotlin/reflect/jvm/internal/impl/descriptors/TypeParameterDescriptor;->getTypeConstructor()Lkotlin/reflect/jvm/internal/impl/types/TypeConstructor;
-
-    move-result-object v4
-
-    invoke-virtual {v0, v3, v4}, Ljava/util/HashMap;->put(Ljava/lang/Object;Ljava/lang/Object;)Ljava/lang/Object;
-
-    add-int/lit8 v2, v2, 0x1
-
-    goto :goto_0
-
-    :cond_1
-    new-instance p1, Lkotlin/reflect/jvm/internal/impl/resolve/OverridingUtil$OverridingUtilTypeCheckerContext;
-
-    invoke-direct {p1, p0, v0}, Lkotlin/reflect/jvm/internal/impl/resolve/OverridingUtil$OverridingUtilTypeCheckerContext;-><init>(Lkotlin/reflect/jvm/internal/impl/resolve/OverridingUtil;Ljava/util/Map;)V
-
-    :goto_1
-    new-instance p2, Lkotlin/Pair;
-
-    invoke-direct {p2, v1, p1}, Lkotlin/Pair;-><init>(Ljava/lang/Object;Ljava/lang/Object;)V
-
-    return-object p2
-
-    :cond_2
-    const/16 p1, 0x29
-
-    invoke-static {p1}, Lkotlin/reflect/jvm/internal/impl/resolve/OverridingUtil;->$$$reportNull$$$0(I)V
-
-    throw v0
-
-    :cond_3
-    const/16 p1, 0x28
-
-    invoke-static {p1}, Lkotlin/reflect/jvm/internal/impl/resolve/OverridingUtil;->$$$reportNull$$$0(I)V
-
-    throw v0
-.end method
-
 .method public generateOverridesInFunctionGroup(Lkotlin/reflect/jvm/internal/impl/name/Name;Ljava/util/Collection;Ljava/util/Collection;Lkotlin/reflect/jvm/internal/impl/descriptors/ClassDescriptor;Lkotlin/reflect/jvm/internal/impl/resolve/OverridingStrategy;)V
-    .locals 17
+    .locals 1
     .annotation system Ldalvik/annotation/Signature;
         value = {
             "(",
@@ -3529,599 +4411,258 @@
         }
     .end annotation
 
-    move-object/from16 v0, p2
+    if-nez p1, :cond_0
 
-    move-object/from16 v1, p4
+    const/16 p1, 0x34
 
-    move-object/from16 v2, p5
-
-    const/4 v3, 0x0
-
-    if-eqz p1, :cond_19
-
-    if-eqz v0, :cond_18
-
-    if-eqz p3, :cond_17
-
-    if-eqz v1, :cond_16
-
-    new-instance v4, Ljava/util/LinkedHashSet;
-
-    invoke-direct {v4, v0}, Ljava/util/LinkedHashSet;-><init>(Ljava/util/Collection;)V
-
-    invoke-interface/range {p3 .. p3}, Ljava/util/Collection;->iterator()Ljava/util/Iterator;
-
-    move-result-object v5
-
-    :goto_0
-    invoke-interface {v5}, Ljava/util/Iterator;->hasNext()Z
-
-    move-result v6
-
-    const/4 v7, 0x0
-
-    const/4 v8, 0x1
-
-    const/4 v9, 0x2
-
-    if-eqz v6, :cond_7
-
-    invoke-interface {v5}, Ljava/util/Iterator;->next()Ljava/lang/Object;
-
-    move-result-object v6
-
-    check-cast v6, Lkotlin/reflect/jvm/internal/impl/descriptors/CallableMemberDescriptor;
-
-    if-eqz v6, :cond_6
-
-    new-instance v10, Ljava/util/ArrayList;
-
-    invoke-interface/range {p2 .. p2}, Ljava/util/Collection;->size()I
-
-    move-result v11
-
-    invoke-direct {v10, v11}, Ljava/util/ArrayList;-><init>(I)V
-
-    invoke-static {}, Lkotlin/reflect/jvm/internal/impl/utils/SmartSet;->create()Lkotlin/reflect/jvm/internal/impl/utils/SmartSet;
-
-    move-result-object v11
-
-    invoke-interface/range {p2 .. p2}, Ljava/util/Collection;->iterator()Ljava/util/Iterator;
-
-    move-result-object v12
-
-    :goto_1
-    invoke-interface {v12}, Ljava/util/Iterator;->hasNext()Z
-
-    move-result v13
-
-    if-eqz v13, :cond_5
-
-    invoke-interface {v12}, Ljava/util/Iterator;->next()Ljava/lang/Object;
-
-    move-result-object v13
-
-    check-cast v13, Lkotlin/reflect/jvm/internal/impl/descriptors/CallableMemberDescriptor;
-
-    move-object/from16 v14, p0
-
-    invoke-virtual {v14, v13, v6, v1}, Lkotlin/reflect/jvm/internal/impl/resolve/OverridingUtil;->isOverridableBy(Lkotlin/reflect/jvm/internal/impl/descriptors/CallableDescriptor;Lkotlin/reflect/jvm/internal/impl/descriptors/CallableDescriptor;Lkotlin/reflect/jvm/internal/impl/descriptors/ClassDescriptor;)Lkotlin/reflect/jvm/internal/impl/resolve/OverridingUtil$OverrideCompatibilityInfo;
-
-    move-result-object v15
-
-    invoke-virtual {v15}, Lkotlin/reflect/jvm/internal/impl/resolve/OverridingUtil$OverrideCompatibilityInfo;->getResult()Lkotlin/reflect/jvm/internal/impl/resolve/OverridingUtil$OverrideCompatibilityInfo$Result;
-
-    move-result-object v15
-
-    invoke-interface {v13}, Lkotlin/reflect/jvm/internal/impl/descriptors/MemberDescriptor;->getVisibility()Lkotlin/reflect/jvm/internal/impl/descriptors/DescriptorVisibility;
-
-    move-result-object v16
-
-    invoke-static/range {v16 .. v16}, Lkotlin/reflect/jvm/internal/impl/descriptors/DescriptorVisibilities;->isPrivate(Lkotlin/reflect/jvm/internal/impl/descriptors/DescriptorVisibility;)Z
-
-    move-result v16
-
-    if-nez v16, :cond_0
-
-    invoke-static {v13, v6}, Lkotlin/reflect/jvm/internal/impl/descriptors/DescriptorVisibilities;->isVisibleIgnoringReceiver(Lkotlin/reflect/jvm/internal/impl/descriptors/DeclarationDescriptorWithVisibility;Lkotlin/reflect/jvm/internal/impl/descriptors/DeclarationDescriptor;)Z
-
-    move-result v16
-
-    if-eqz v16, :cond_0
-
-    move/from16 v16, v8
-
-    goto :goto_2
+    invoke-static {p1}, Lkotlin/reflect/jvm/internal/impl/resolve/OverridingUtil;->$$$reportNull$$$0(I)V
 
     :cond_0
-    move/from16 v16, v7
+    if-nez p2, :cond_1
 
-    :goto_2
-    invoke-virtual {v15}, Ljava/lang/Enum;->ordinal()I
+    const/16 p1, 0x35
 
-    move-result v15
-
-    if-eqz v15, :cond_3
-
-    if-eq v15, v9, :cond_1
-
-    goto :goto_1
+    invoke-static {p1}, Lkotlin/reflect/jvm/internal/impl/resolve/OverridingUtil;->$$$reportNull$$$0(I)V
 
     :cond_1
-    if-eqz v16, :cond_2
+    if-nez p3, :cond_2
 
-    move-object v15, v2
+    const/16 p1, 0x36
 
-    check-cast v15, Lkotlin/reflect/jvm/internal/impl/resolve/NonReportingOverrideStrategy;
-
-    invoke-virtual {v15, v13, v6}, Lkotlin/reflect/jvm/internal/impl/resolve/NonReportingOverrideStrategy;->conflict(Lkotlin/reflect/jvm/internal/impl/descriptors/CallableMemberDescriptor;Lkotlin/reflect/jvm/internal/impl/descriptors/CallableMemberDescriptor;)V
+    invoke-static {p1}, Lkotlin/reflect/jvm/internal/impl/resolve/OverridingUtil;->$$$reportNull$$$0(I)V
 
     :cond_2
-    invoke-virtual {v10, v13}, Ljava/util/ArrayList;->add(Ljava/lang/Object;)Z
+    if-nez p4, :cond_3
 
-    goto :goto_1
+    const/16 p1, 0x37
+
+    invoke-static {p1}, Lkotlin/reflect/jvm/internal/impl/resolve/OverridingUtil;->$$$reportNull$$$0(I)V
 
     :cond_3
-    if-eqz v16, :cond_4
+    if-nez p5, :cond_4
 
-    invoke-virtual {v11, v13}, Lkotlin/reflect/jvm/internal/impl/utils/SmartSet;->add(Ljava/lang/Object;)Z
+    const/16 p1, 0x38
+
+    invoke-static {p1}, Lkotlin/reflect/jvm/internal/impl/resolve/OverridingUtil;->$$$reportNull$$$0(I)V
 
     :cond_4
-    invoke-virtual {v10, v13}, Ljava/util/ArrayList;->add(Ljava/lang/Object;)Z
+    new-instance p1, Ljava/util/LinkedHashSet;
 
-    goto :goto_1
+    invoke-direct {p1, p2}, Ljava/util/LinkedHashSet;-><init>(Ljava/util/Collection;)V
 
-    :cond_5
-    move-object/from16 v14, p0
+    invoke-interface {p3}, Ljava/util/Collection;->iterator()Ljava/util/Iterator;
 
-    invoke-virtual {v2, v6, v11}, Lkotlin/reflect/jvm/internal/impl/resolve/OverridingStrategy;->setOverriddenDescriptors(Lkotlin/reflect/jvm/internal/impl/descriptors/CallableMemberDescriptor;Ljava/util/Collection;)V
+    move-result-object p3
 
-    invoke-interface {v4, v10}, Ljava/util/Collection;->removeAll(Ljava/util/Collection;)Z
-
-    goto :goto_0
-
-    :cond_6
-    move-object/from16 v14, p0
-
-    const/16 v0, 0x39
-
-    invoke-static {v0}, Lkotlin/reflect/jvm/internal/impl/resolve/OverridingUtil;->$$$reportNull$$$0(I)V
-
-    throw v3
-
-    :cond_7
-    move-object/from16 v14, p0
-
-    invoke-interface {v4}, Ljava/util/Collection;->size()I
+    :goto_0
+    invoke-interface {p3}, Ljava/util/Iterator;->hasNext()Z
 
     move-result v0
 
-    if-ge v0, v9, :cond_8
+    if-eqz v0, :cond_5
 
-    goto :goto_4
-
-    :cond_8
-    invoke-interface {v4}, Ljava/util/Collection;->iterator()Ljava/util/Iterator;
-
-    move-result-object v0
-
-    invoke-interface {v0}, Ljava/util/Iterator;->next()Ljava/lang/Object;
+    invoke-interface {p3}, Ljava/util/Iterator;->next()Ljava/lang/Object;
 
     move-result-object v0
 
     check-cast v0, Lkotlin/reflect/jvm/internal/impl/descriptors/CallableMemberDescriptor;
 
-    invoke-interface {v0}, Lkotlin/reflect/jvm/internal/impl/descriptors/DeclarationDescriptorNonRoot;->getContainingDeclaration()Lkotlin/reflect/jvm/internal/impl/descriptors/DeclarationDescriptor;
+    invoke-direct {p0, v0, p2, p4, p5}, Lkotlin/reflect/jvm/internal/impl/resolve/OverridingUtil;->extractAndBindOverridesForMember(Lkotlin/reflect/jvm/internal/impl/descriptors/CallableMemberDescriptor;Ljava/util/Collection;Lkotlin/reflect/jvm/internal/impl/descriptors/ClassDescriptor;Lkotlin/reflect/jvm/internal/impl/resolve/OverridingStrategy;)Ljava/util/Collection;
 
     move-result-object v0
 
-    invoke-interface {v4}, Ljava/util/Collection;->isEmpty()Z
+    invoke-interface {p1, v0}, Ljava/util/Collection;->removeAll(Ljava/util/Collection;)Z
 
-    move-result v5
+    goto :goto_0
 
-    if-eqz v5, :cond_9
+    :cond_5
+    invoke-static {p4, p1, p5}, Lkotlin/reflect/jvm/internal/impl/resolve/OverridingUtil;->createAndBindFakeOverrides(Lkotlin/reflect/jvm/internal/impl/descriptors/ClassDescriptor;Ljava/util/Collection;Lkotlin/reflect/jvm/internal/impl/resolve/OverridingStrategy;)V
 
-    goto :goto_4
-
-    :cond_9
-    invoke-interface {v4}, Ljava/lang/Iterable;->iterator()Ljava/util/Iterator;
-
-    move-result-object v5
-
-    :cond_a
-    invoke-interface {v5}, Ljava/util/Iterator;->hasNext()Z
-
-    move-result v6
-
-    if-eqz v6, :cond_c
-
-    invoke-interface {v5}, Ljava/util/Iterator;->next()Ljava/lang/Object;
-
-    move-result-object v6
-
-    check-cast v6, Lkotlin/reflect/jvm/internal/impl/descriptors/CallableMemberDescriptor;
-
-    invoke-interface {v6}, Lkotlin/reflect/jvm/internal/impl/descriptors/DeclarationDescriptorNonRoot;->getContainingDeclaration()Lkotlin/reflect/jvm/internal/impl/descriptors/DeclarationDescriptor;
-
-    move-result-object v6
-
-    if-ne v6, v0, :cond_b
-
-    move v6, v8
-
-    goto :goto_3
-
-    :cond_b
-    move v6, v7
-
-    :goto_3
-    invoke-static {v6}, Ljava/lang/Boolean;->valueOf(Z)Ljava/lang/Boolean;
-
-    move-result-object v6
-
-    invoke-virtual {v6}, Ljava/lang/Boolean;->booleanValue()Z
-
-    move-result v6
-
-    if-nez v6, :cond_a
-
-    goto :goto_5
-
-    :cond_c
-    :goto_4
-    move v7, v8
-
-    :goto_5
-    if-eqz v7, :cond_d
-
-    invoke-interface {v4}, Ljava/util/Collection;->iterator()Ljava/util/Iterator;
-
-    move-result-object v0
-
-    :goto_6
-    invoke-interface {v0}, Ljava/util/Iterator;->hasNext()Z
-
-    move-result v3
-
-    if-eqz v3, :cond_15
-
-    invoke-interface {v0}, Ljava/util/Iterator;->next()Ljava/lang/Object;
-
-    move-result-object v3
-
-    check-cast v3, Lkotlin/reflect/jvm/internal/impl/descriptors/CallableMemberDescriptor;
-
-    invoke-static {v3}, Ljava/util/Collections;->singleton(Ljava/lang/Object;)Ljava/util/Set;
-
-    move-result-object v3
-
-    invoke-static {v3, v1, v2}, Lkotlin/reflect/jvm/internal/impl/resolve/OverridingUtil;->createAndBindFakeOverride(Ljava/util/Collection;Lkotlin/reflect/jvm/internal/impl/descriptors/ClassDescriptor;Lkotlin/reflect/jvm/internal/impl/resolve/OverridingStrategy;)V
-
-    goto :goto_6
-
-    :cond_d
-    new-instance v0, Ljava/util/LinkedList;
-
-    invoke-direct {v0, v4}, Ljava/util/LinkedList;-><init>(Ljava/util/Collection;)V
-
-    :goto_7
-    invoke-interface {v0}, Ljava/util/Queue;->isEmpty()Z
-
-    move-result v4
-
-    if-nez v4, :cond_15
-
-    invoke-interface {v0}, Ljava/util/Collection;->isEmpty()Z
-
-    invoke-interface {v0}, Ljava/util/Collection;->iterator()Ljava/util/Iterator;
-
-    move-result-object v4
-
-    move-object v5, v3
-
-    :cond_e
-    :goto_8
-    invoke-interface {v4}, Ljava/util/Iterator;->hasNext()Z
-
-    move-result v6
-
-    if-eqz v6, :cond_10
-
-    invoke-interface {v4}, Ljava/util/Iterator;->next()Ljava/lang/Object;
-
-    move-result-object v6
-
-    check-cast v6, Lkotlin/reflect/jvm/internal/impl/descriptors/CallableMemberDescriptor;
-
-    if-nez v5, :cond_f
-
-    goto :goto_9
-
-    :cond_f
-    invoke-interface {v5}, Lkotlin/reflect/jvm/internal/impl/descriptors/MemberDescriptor;->getVisibility()Lkotlin/reflect/jvm/internal/impl/descriptors/DescriptorVisibility;
-
-    move-result-object v7
-
-    invoke-interface {v6}, Lkotlin/reflect/jvm/internal/impl/descriptors/MemberDescriptor;->getVisibility()Lkotlin/reflect/jvm/internal/impl/descriptors/DescriptorVisibility;
-
-    move-result-object v8
-
-    invoke-static {v7, v8}, Lkotlin/reflect/jvm/internal/impl/descriptors/DescriptorVisibilities;->compare(Lkotlin/reflect/jvm/internal/impl/descriptors/DescriptorVisibility;Lkotlin/reflect/jvm/internal/impl/descriptors/DescriptorVisibility;)Ljava/lang/Integer;
-
-    move-result-object v7
-
-    if-eqz v7, :cond_e
-
-    invoke-virtual {v7}, Ljava/lang/Integer;->intValue()I
-
-    move-result v7
-
-    if-gez v7, :cond_e
-
-    :goto_9
-    move-object v5, v6
-
-    goto :goto_8
-
-    :cond_10
-    invoke-static {v5}, Lkotlin/jvm/internal/Intrinsics;->checkNotNull(Ljava/lang/Object;)V
-
-    new-instance v4, Ljava/util/ArrayList;
-
-    invoke-direct {v4}, Ljava/util/ArrayList;-><init>()V
-
-    invoke-virtual {v4, v5}, Ljava/util/ArrayList;->add(Ljava/lang/Object;)Z
-
-    invoke-interface {v0}, Ljava/util/Collection;->iterator()Ljava/util/Iterator;
-
-    move-result-object v6
-
-    :cond_11
-    :goto_a
-    invoke-interface {v6}, Ljava/util/Iterator;->hasNext()Z
-
-    move-result v7
-
-    if-eqz v7, :cond_14
-
-    invoke-interface {v6}, Ljava/util/Iterator;->next()Ljava/lang/Object;
-
-    move-result-object v7
-
-    move-object v8, v7
-
-    check-cast v8, Lkotlin/reflect/jvm/internal/impl/descriptors/CallableMemberDescriptor;
-
-    if-ne v5, v7, :cond_12
-
-    invoke-interface {v6}, Ljava/util/Iterator;->remove()V
-
-    goto :goto_a
-
-    :cond_12
-    invoke-static {v5, v8}, Lkotlin/reflect/jvm/internal/impl/resolve/OverridingUtil;->getBothWaysOverridability(Lkotlin/reflect/jvm/internal/impl/descriptors/CallableDescriptor;Lkotlin/reflect/jvm/internal/impl/descriptors/CallableDescriptor;)Lkotlin/reflect/jvm/internal/impl/resolve/OverridingUtil$OverrideCompatibilityInfo$Result;
-
-    move-result-object v8
-
-    sget-object v9, Lkotlin/reflect/jvm/internal/impl/resolve/OverridingUtil$OverrideCompatibilityInfo$Result;->OVERRIDABLE:Lkotlin/reflect/jvm/internal/impl/resolve/OverridingUtil$OverrideCompatibilityInfo$Result;
-
-    if-ne v8, v9, :cond_13
-
-    invoke-virtual {v4, v7}, Ljava/util/ArrayList;->add(Ljava/lang/Object;)Z
-
-    invoke-interface {v6}, Ljava/util/Iterator;->remove()V
-
-    goto :goto_a
-
-    :cond_13
-    sget-object v9, Lkotlin/reflect/jvm/internal/impl/resolve/OverridingUtil$OverrideCompatibilityInfo$Result;->CONFLICT:Lkotlin/reflect/jvm/internal/impl/resolve/OverridingUtil$OverrideCompatibilityInfo$Result;
-
-    if-ne v8, v9, :cond_11
-
-    check-cast v7, Lkotlin/reflect/jvm/internal/impl/descriptors/CallableMemberDescriptor;
-
-    invoke-virtual {v2, v5, v7}, Lkotlin/reflect/jvm/internal/impl/resolve/OverridingStrategy;->inheritanceConflict(Lkotlin/reflect/jvm/internal/impl/descriptors/CallableMemberDescriptor;Lkotlin/reflect/jvm/internal/impl/descriptors/CallableMemberDescriptor;)V
-
-    invoke-interface {v6}, Ljava/util/Iterator;->remove()V
-
-    goto :goto_a
-
-    :cond_14
-    invoke-static {v4, v1, v2}, Lkotlin/reflect/jvm/internal/impl/resolve/OverridingUtil;->createAndBindFakeOverride(Ljava/util/Collection;Lkotlin/reflect/jvm/internal/impl/descriptors/ClassDescriptor;Lkotlin/reflect/jvm/internal/impl/resolve/OverridingStrategy;)V
-
-    goto :goto_7
-
-    :cond_15
     return-void
-
-    :cond_16
-    move-object/from16 v14, p0
-
-    const/16 v0, 0x35
-
-    invoke-static {v0}, Lkotlin/reflect/jvm/internal/impl/resolve/OverridingUtil;->$$$reportNull$$$0(I)V
-
-    throw v3
-
-    :cond_17
-    move-object/from16 v14, p0
-
-    const/16 v0, 0x34
-
-    invoke-static {v0}, Lkotlin/reflect/jvm/internal/impl/resolve/OverridingUtil;->$$$reportNull$$$0(I)V
-
-    throw v3
-
-    :cond_18
-    move-object/from16 v14, p0
-
-    const/16 v0, 0x33
-
-    invoke-static {v0}, Lkotlin/reflect/jvm/internal/impl/resolve/OverridingUtil;->$$$reportNull$$$0(I)V
-
-    throw v3
-
-    :cond_19
-    move-object/from16 v14, p0
-
-    const/16 v0, 0x32
-
-    invoke-static {v0}, Lkotlin/reflect/jvm/internal/impl/resolve/OverridingUtil;->$$$reportNull$$$0(I)V
-
-    throw v3
 .end method
 
 .method public isOverridableBy(Lkotlin/reflect/jvm/internal/impl/descriptors/CallableDescriptor;Lkotlin/reflect/jvm/internal/impl/descriptors/CallableDescriptor;Lkotlin/reflect/jvm/internal/impl/descriptors/ClassDescriptor;)Lkotlin/reflect/jvm/internal/impl/resolve/OverridingUtil$OverrideCompatibilityInfo;
     .locals 1
 
-    const/4 v0, 0x0
+    if-nez p1, :cond_0
 
-    if-eqz p1, :cond_1
+    const/16 v0, 0x11
 
-    if-eqz p2, :cond_0
+    invoke-static {v0}, Lkotlin/reflect/jvm/internal/impl/resolve/OverridingUtil;->$$$reportNull$$$0(I)V
 
+    :cond_0
+    if-nez p2, :cond_1
+
+    const/16 v0, 0x12
+
+    invoke-static {v0}, Lkotlin/reflect/jvm/internal/impl/resolve/OverridingUtil;->$$$reportNull$$$0(I)V
+
+    :cond_1
     const/4 v0, 0x0
 
     invoke-virtual {p0, p1, p2, p3, v0}, Lkotlin/reflect/jvm/internal/impl/resolve/OverridingUtil;->isOverridableBy(Lkotlin/reflect/jvm/internal/impl/descriptors/CallableDescriptor;Lkotlin/reflect/jvm/internal/impl/descriptors/CallableDescriptor;Lkotlin/reflect/jvm/internal/impl/descriptors/ClassDescriptor;Z)Lkotlin/reflect/jvm/internal/impl/resolve/OverridingUtil$OverrideCompatibilityInfo;
 
     move-result-object p1
 
+    if-nez p1, :cond_2
+
+    const/16 p2, 0x13
+
+    invoke-static {p2}, Lkotlin/reflect/jvm/internal/impl/resolve/OverridingUtil;->$$$reportNull$$$0(I)V
+
+    :cond_2
     return-object p1
-
-    :cond_0
-    const/16 p1, 0x12
-
-    invoke-static {p1}, Lkotlin/reflect/jvm/internal/impl/resolve/OverridingUtil;->$$$reportNull$$$0(I)V
-
-    throw v0
-
-    :cond_1
-    const/16 p1, 0x11
-
-    invoke-static {p1}, Lkotlin/reflect/jvm/internal/impl/resolve/OverridingUtil;->$$$reportNull$$$0(I)V
-
-    throw v0
 .end method
 
 .method public isOverridableBy(Lkotlin/reflect/jvm/internal/impl/descriptors/CallableDescriptor;Lkotlin/reflect/jvm/internal/impl/descriptors/CallableDescriptor;Lkotlin/reflect/jvm/internal/impl/descriptors/ClassDescriptor;Z)Lkotlin/reflect/jvm/internal/impl/resolve/OverridingUtil$OverrideCompatibilityInfo;
     .locals 10
 
-    const/4 v0, 0x0
+    if-nez p1, :cond_0
 
-    if-eqz p1, :cond_f
+    const/16 v0, 0x14
 
-    if-eqz p2, :cond_e
+    invoke-static {v0}, Lkotlin/reflect/jvm/internal/impl/resolve/OverridingUtil;->$$$reportNull$$$0(I)V
 
+    :cond_0
+    if-nez p2, :cond_1
+
+    const/16 v0, 0x15
+
+    invoke-static {v0}, Lkotlin/reflect/jvm/internal/impl/resolve/OverridingUtil;->$$$reportNull$$$0(I)V
+
+    :cond_1
     invoke-virtual {p0, p1, p2, p4}, Lkotlin/reflect/jvm/internal/impl/resolve/OverridingUtil;->isOverridableByWithoutExternalConditions(Lkotlin/reflect/jvm/internal/impl/descriptors/CallableDescriptor;Lkotlin/reflect/jvm/internal/impl/descriptors/CallableDescriptor;Z)Lkotlin/reflect/jvm/internal/impl/resolve/OverridingUtil$OverrideCompatibilityInfo;
 
     move-result-object p4
 
     invoke-virtual {p4}, Lkotlin/reflect/jvm/internal/impl/resolve/OverridingUtil$OverrideCompatibilityInfo;->getResult()Lkotlin/reflect/jvm/internal/impl/resolve/OverridingUtil$OverrideCompatibilityInfo$Result;
 
-    move-result-object v1
+    move-result-object v0
 
-    sget-object v2, Lkotlin/reflect/jvm/internal/impl/resolve/OverridingUtil$OverrideCompatibilityInfo$Result;->OVERRIDABLE:Lkotlin/reflect/jvm/internal/impl/resolve/OverridingUtil$OverrideCompatibilityInfo$Result;
+    sget-object v1, Lkotlin/reflect/jvm/internal/impl/resolve/OverridingUtil$OverrideCompatibilityInfo$Result;->OVERRIDABLE:Lkotlin/reflect/jvm/internal/impl/resolve/OverridingUtil$OverrideCompatibilityInfo$Result;
 
-    const/4 v3, 0x0
+    const/4 v2, 0x1
 
-    const/4 v4, 0x1
+    if-ne v0, v1, :cond_2
 
-    if-ne v1, v2, :cond_0
-
-    move v1, v4
+    move v0, v2
 
     goto :goto_0
 
-    :cond_0
-    move v1, v3
+    :cond_2
+    const/4 v0, 0x0
 
     :goto_0
-    sget-object v2, Lkotlin/reflect/jvm/internal/impl/resolve/OverridingUtil;->EXTERNAL_CONDITIONS:Ljava/util/List;
+    sget-object v1, Lkotlin/reflect/jvm/internal/impl/resolve/OverridingUtil;->EXTERNAL_CONDITIONS:Ljava/util/List;
 
-    invoke-interface {v2}, Ljava/util/List;->iterator()Ljava/util/Iterator;
+    invoke-interface {v1}, Ljava/util/List;->iterator()Ljava/util/Iterator;
 
-    move-result-object v2
+    move-result-object v1
 
     :goto_1
-    invoke-interface {v2}, Ljava/util/Iterator;->hasNext()Z
+    invoke-interface {v1}, Ljava/util/Iterator;->hasNext()Z
 
-    move-result v5
+    move-result v3
 
-    const-string v6, "External condition"
+    const-string v4, "External condition"
 
-    const-string v7, "External condition failed"
+    const-string v5, "External condition failed"
 
-    const/4 v8, 0x2
+    const/4 v6, 0x3
 
-    if-eqz v5, :cond_6
+    const/4 v7, 0x2
 
-    invoke-interface {v2}, Ljava/util/Iterator;->next()Ljava/lang/Object;
+    if-eqz v3, :cond_a
 
-    move-result-object v5
+    invoke-interface {v1}, Ljava/util/Iterator;->next()Ljava/lang/Object;
 
-    check-cast v5, Lkotlin/reflect/jvm/internal/impl/resolve/ExternalOverridabilityCondition;
+    move-result-object v3
 
-    invoke-interface {v5}, Lkotlin/reflect/jvm/internal/impl/resolve/ExternalOverridabilityCondition;->getContract$enumunboxing$()I
+    check-cast v3, Lkotlin/reflect/jvm/internal/impl/resolve/ExternalOverridabilityCondition;
 
-    move-result v9
+    invoke-interface {v3}, Lkotlin/reflect/jvm/internal/impl/resolve/ExternalOverridabilityCondition;->getContract()Lkotlin/reflect/jvm/internal/impl/resolve/ExternalOverridabilityCondition$Contract;
 
-    if-ne v9, v4, :cond_1
+    move-result-object v8
 
-    goto :goto_1
+    sget-object v9, Lkotlin/reflect/jvm/internal/impl/resolve/ExternalOverridabilityCondition$Contract;->CONFLICTS_ONLY:Lkotlin/reflect/jvm/internal/impl/resolve/ExternalOverridabilityCondition$Contract;
 
-    :cond_1
-    if-eqz v1, :cond_2
-
-    invoke-interface {v5}, Lkotlin/reflect/jvm/internal/impl/resolve/ExternalOverridabilityCondition;->getContract$enumunboxing$()I
-
-    move-result v9
-
-    if-ne v9, v8, :cond_2
-
-    goto :goto_1
-
-    :cond_2
-    invoke-interface {v5, p1, p2, p3}, Lkotlin/reflect/jvm/internal/impl/resolve/ExternalOverridabilityCondition;->isOverridable$enumunboxing$(Lkotlin/reflect/jvm/internal/impl/descriptors/CallableDescriptor;Lkotlin/reflect/jvm/internal/impl/descriptors/CallableDescriptor;Lkotlin/reflect/jvm/internal/impl/descriptors/ClassDescriptor;)I
-
-    move-result v5
-
-    invoke-static {v5}, Landroidx/constraintlayout/core/SolverVariable$Type$r8$EnumUnboxingUtility;->$enumboxing$ordinal(I)I
-
-    move-result v5
-
-    if-eqz v5, :cond_5
-
-    if-eq v5, v4, :cond_4
-
-    if-eq v5, v8, :cond_3
+    if-ne v8, v9, :cond_3
 
     goto :goto_1
 
     :cond_3
-    invoke-static {v6}, Lkotlin/reflect/jvm/internal/impl/resolve/OverridingUtil$OverrideCompatibilityInfo;->incompatible(Ljava/lang/String;)Lkotlin/reflect/jvm/internal/impl/resolve/OverridingUtil$OverrideCompatibilityInfo;
+    if-eqz v0, :cond_4
 
-    move-result-object p1
+    invoke-interface {v3}, Lkotlin/reflect/jvm/internal/impl/resolve/ExternalOverridabilityCondition;->getContract()Lkotlin/reflect/jvm/internal/impl/resolve/ExternalOverridabilityCondition$Contract;
 
-    return-object p1
+    move-result-object v8
 
-    :cond_4
-    invoke-static {v7}, Lkotlin/reflect/jvm/internal/impl/resolve/OverridingUtil$OverrideCompatibilityInfo;->conflict(Ljava/lang/String;)Lkotlin/reflect/jvm/internal/impl/resolve/OverridingUtil$OverrideCompatibilityInfo;
+    sget-object v9, Lkotlin/reflect/jvm/internal/impl/resolve/ExternalOverridabilityCondition$Contract;->SUCCESS_ONLY:Lkotlin/reflect/jvm/internal/impl/resolve/ExternalOverridabilityCondition$Contract;
 
-    move-result-object p1
-
-    return-object p1
-
-    :cond_5
-    move v1, v4
+    if-ne v8, v9, :cond_4
 
     goto :goto_1
 
+    :cond_4
+    invoke-interface {v3, p1, p2, p3}, Lkotlin/reflect/jvm/internal/impl/resolve/ExternalOverridabilityCondition;->isOverridable(Lkotlin/reflect/jvm/internal/impl/descriptors/CallableDescriptor;Lkotlin/reflect/jvm/internal/impl/descriptors/CallableDescriptor;Lkotlin/reflect/jvm/internal/impl/descriptors/ClassDescriptor;)Lkotlin/reflect/jvm/internal/impl/resolve/ExternalOverridabilityCondition$Result;
+
+    move-result-object v3
+
+    sget-object v8, Lkotlin/reflect/jvm/internal/impl/resolve/OverridingUtil$8;->$SwitchMap$org$jetbrains$kotlin$resolve$ExternalOverridabilityCondition$Result:[I
+
+    invoke-virtual {v3}, Ljava/lang/Enum;->ordinal()I
+
+    move-result v3
+
+    aget v3, v8, v3
+
+    if-eq v3, v2, :cond_9
+
+    if-eq v3, v7, :cond_7
+
+    if-eq v3, v6, :cond_5
+
+    goto :goto_1
+
+    :cond_5
+    invoke-static {v4}, Lkotlin/reflect/jvm/internal/impl/resolve/OverridingUtil$OverrideCompatibilityInfo;->incompatible(Ljava/lang/String;)Lkotlin/reflect/jvm/internal/impl/resolve/OverridingUtil$OverrideCompatibilityInfo;
+
+    move-result-object p1
+
+    if-nez p1, :cond_6
+
+    const/16 p2, 0x17
+
+    invoke-static {p2}, Lkotlin/reflect/jvm/internal/impl/resolve/OverridingUtil;->$$$reportNull$$$0(I)V
+
     :cond_6
-    if-nez v1, :cond_7
+    return-object p1
+
+    :cond_7
+    invoke-static {v5}, Lkotlin/reflect/jvm/internal/impl/resolve/OverridingUtil$OverrideCompatibilityInfo;->conflict(Ljava/lang/String;)Lkotlin/reflect/jvm/internal/impl/resolve/OverridingUtil$OverrideCompatibilityInfo;
+
+    move-result-object p1
+
+    if-nez p1, :cond_8
+
+    const/16 p2, 0x16
+
+    invoke-static {p2}, Lkotlin/reflect/jvm/internal/impl/resolve/OverridingUtil;->$$$reportNull$$$0(I)V
+
+    :cond_8
+    return-object p1
+
+    :cond_9
+    move v0, v2
+
+    goto :goto_1
+
+    :cond_a
+    if-nez v0, :cond_b
 
     return-object p4
 
-    :cond_7
+    :cond_b
     sget-object p4, Lkotlin/reflect/jvm/internal/impl/resolve/OverridingUtil;->EXTERNAL_CONDITIONS:Ljava/util/List;
 
     invoke-interface {p4}, Ljava/util/List;->iterator()Ljava/util/Iterator;
@@ -4131,56 +4672,76 @@
     :goto_2
     invoke-interface {p4}, Ljava/util/Iterator;->hasNext()Z
 
-    move-result v1
+    move-result v0
 
-    if-eqz v1, :cond_c
+    if-eqz v0, :cond_12
 
     invoke-interface {p4}, Ljava/util/Iterator;->next()Ljava/lang/Object;
 
+    move-result-object v0
+
+    check-cast v0, Lkotlin/reflect/jvm/internal/impl/resolve/ExternalOverridabilityCondition;
+
+    invoke-interface {v0}, Lkotlin/reflect/jvm/internal/impl/resolve/ExternalOverridabilityCondition;->getContract()Lkotlin/reflect/jvm/internal/impl/resolve/ExternalOverridabilityCondition$Contract;
+
     move-result-object v1
 
-    check-cast v1, Lkotlin/reflect/jvm/internal/impl/resolve/ExternalOverridabilityCondition;
+    sget-object v3, Lkotlin/reflect/jvm/internal/impl/resolve/ExternalOverridabilityCondition$Contract;->CONFLICTS_ONLY:Lkotlin/reflect/jvm/internal/impl/resolve/ExternalOverridabilityCondition$Contract;
 
-    invoke-interface {v1}, Lkotlin/reflect/jvm/internal/impl/resolve/ExternalOverridabilityCondition;->getContract$enumunboxing$()I
-
-    move-result v2
-
-    if-eq v2, v4, :cond_8
+    if-eq v1, v3, :cond_c
 
     goto :goto_2
 
-    :cond_8
-    invoke-interface {v1, p1, p2, p3}, Lkotlin/reflect/jvm/internal/impl/resolve/ExternalOverridabilityCondition;->isOverridable$enumunboxing$(Lkotlin/reflect/jvm/internal/impl/descriptors/CallableDescriptor;Lkotlin/reflect/jvm/internal/impl/descriptors/CallableDescriptor;Lkotlin/reflect/jvm/internal/impl/descriptors/ClassDescriptor;)I
+    :cond_c
+    invoke-interface {v0, p1, p2, p3}, Lkotlin/reflect/jvm/internal/impl/resolve/ExternalOverridabilityCondition;->isOverridable(Lkotlin/reflect/jvm/internal/impl/descriptors/CallableDescriptor;Lkotlin/reflect/jvm/internal/impl/descriptors/CallableDescriptor;Lkotlin/reflect/jvm/internal/impl/descriptors/ClassDescriptor;)Lkotlin/reflect/jvm/internal/impl/resolve/ExternalOverridabilityCondition$Result;
 
-    move-result v2
+    move-result-object v1
 
-    invoke-static {v2}, Landroidx/constraintlayout/core/SolverVariable$Type$r8$EnumUnboxingUtility;->$enumboxing$ordinal(I)I
+    sget-object v3, Lkotlin/reflect/jvm/internal/impl/resolve/OverridingUtil$8;->$SwitchMap$org$jetbrains$kotlin$resolve$ExternalOverridabilityCondition$Result:[I
 
-    move-result v2
+    invoke-virtual {v1}, Ljava/lang/Enum;->ordinal()I
 
-    if-eqz v2, :cond_b
+    move-result v1
 
-    if-eq v2, v4, :cond_a
+    aget v1, v3, v1
 
-    if-eq v2, v8, :cond_9
+    if-eq v1, v2, :cond_11
+
+    if-eq v1, v7, :cond_f
+
+    if-eq v1, v6, :cond_d
 
     goto :goto_2
 
-    :cond_9
-    invoke-static {v6}, Lkotlin/reflect/jvm/internal/impl/resolve/OverridingUtil$OverrideCompatibilityInfo;->incompatible(Ljava/lang/String;)Lkotlin/reflect/jvm/internal/impl/resolve/OverridingUtil$OverrideCompatibilityInfo;
+    :cond_d
+    invoke-static {v4}, Lkotlin/reflect/jvm/internal/impl/resolve/OverridingUtil$OverrideCompatibilityInfo;->incompatible(Ljava/lang/String;)Lkotlin/reflect/jvm/internal/impl/resolve/OverridingUtil$OverrideCompatibilityInfo;
 
     move-result-object p1
 
+    if-nez p1, :cond_e
+
+    const/16 p2, 0x1a
+
+    invoke-static {p2}, Lkotlin/reflect/jvm/internal/impl/resolve/OverridingUtil;->$$$reportNull$$$0(I)V
+
+    :cond_e
     return-object p1
 
-    :cond_a
-    invoke-static {v7}, Lkotlin/reflect/jvm/internal/impl/resolve/OverridingUtil$OverrideCompatibilityInfo;->conflict(Ljava/lang/String;)Lkotlin/reflect/jvm/internal/impl/resolve/OverridingUtil$OverrideCompatibilityInfo;
+    :cond_f
+    invoke-static {v5}, Lkotlin/reflect/jvm/internal/impl/resolve/OverridingUtil$OverrideCompatibilityInfo;->conflict(Ljava/lang/String;)Lkotlin/reflect/jvm/internal/impl/resolve/OverridingUtil$OverrideCompatibilityInfo;
 
     move-result-object p1
 
+    if-nez p1, :cond_10
+
+    const/16 p2, 0x19
+
+    invoke-static {p2}, Lkotlin/reflect/jvm/internal/impl/resolve/OverridingUtil;->$$$reportNull$$$0(I)V
+
+    :cond_10
     return-object p1
 
-    :cond_b
+    :cond_11
     new-instance p1, Ljava/lang/IllegalStateException;
 
     const-string p2, "Contract violation in "
@@ -4189,7 +4750,7 @@
 
     move-result-object p2
 
-    invoke-virtual {v1}, Ljava/lang/Object;->getClass()Ljava/lang/Class;
+    invoke-virtual {v0}, Ljava/lang/Object;->getClass()Ljava/lang/Class;
 
     move-result-object p3
 
@@ -4211,456 +4772,358 @@
 
     throw p1
 
-    :cond_c
-    sget-object p1, Lkotlin/reflect/jvm/internal/impl/resolve/OverridingUtil$OverrideCompatibilityInfo;->SUCCESS:Lkotlin/reflect/jvm/internal/impl/resolve/OverridingUtil$OverrideCompatibilityInfo;
+    :cond_12
+    invoke-static {}, Lkotlin/reflect/jvm/internal/impl/resolve/OverridingUtil$OverrideCompatibilityInfo;->success()Lkotlin/reflect/jvm/internal/impl/resolve/OverridingUtil$OverrideCompatibilityInfo;
 
-    if-eqz p1, :cond_d
+    move-result-object p1
 
+    if-nez p1, :cond_13
+
+    const/16 p2, 0x1b
+
+    invoke-static {p2}, Lkotlin/reflect/jvm/internal/impl/resolve/OverridingUtil;->$$$reportNull$$$0(I)V
+
+    :cond_13
     return-object p1
-
-    :cond_d
-    invoke-static {v3}, Lkotlin/reflect/jvm/internal/impl/resolve/OverridingUtil$OverrideCompatibilityInfo;->$$$reportNull$$$0(I)V
-
-    throw v0
-
-    :cond_e
-    const/16 p1, 0x15
-
-    invoke-static {p1}, Lkotlin/reflect/jvm/internal/impl/resolve/OverridingUtil;->$$$reportNull$$$0(I)V
-
-    throw v0
-
-    :cond_f
-    const/16 p1, 0x14
-
-    invoke-static {p1}, Lkotlin/reflect/jvm/internal/impl/resolve/OverridingUtil;->$$$reportNull$$$0(I)V
-
-    throw v0
 .end method
 
 .method public isOverridableByWithoutExternalConditions(Lkotlin/reflect/jvm/internal/impl/descriptors/CallableDescriptor;Lkotlin/reflect/jvm/internal/impl/descriptors/CallableDescriptor;Z)Lkotlin/reflect/jvm/internal/impl/resolve/OverridingUtil$OverrideCompatibilityInfo;
-    .locals 17
+    .locals 9
 
-    move-object/from16 v0, p0
+    if-nez p1, :cond_0
 
-    move-object/from16 v1, p1
+    const/16 v0, 0x1c
 
-    move-object/from16 v2, p2
-
-    const/4 v3, 0x0
-
-    if-eqz v1, :cond_13
-
-    if-eqz v2, :cond_12
-
-    invoke-static/range {p1 .. p2}, Lkotlin/reflect/jvm/internal/impl/resolve/OverridingUtil;->getBasicOverridabilityProblem(Lkotlin/reflect/jvm/internal/impl/descriptors/CallableDescriptor;Lkotlin/reflect/jvm/internal/impl/descriptors/CallableDescriptor;)Lkotlin/reflect/jvm/internal/impl/resolve/OverridingUtil$OverrideCompatibilityInfo;
-
-    move-result-object v4
-
-    if-eqz v4, :cond_0
-
-    return-object v4
+    invoke-static {v0}, Lkotlin/reflect/jvm/internal/impl/resolve/OverridingUtil;->$$$reportNull$$$0(I)V
 
     :cond_0
-    invoke-static/range {p1 .. p1}, Lkotlin/reflect/jvm/internal/impl/resolve/OverridingUtil;->compiledValueParameters(Lkotlin/reflect/jvm/internal/impl/descriptors/CallableDescriptor;)Ljava/util/List;
+    if-nez p2, :cond_1
 
-    move-result-object v4
+    const/16 v0, 0x1d
 
-    invoke-static/range {p2 .. p2}, Lkotlin/reflect/jvm/internal/impl/resolve/OverridingUtil;->compiledValueParameters(Lkotlin/reflect/jvm/internal/impl/descriptors/CallableDescriptor;)Ljava/util/List;
-
-    move-result-object v5
-
-    invoke-interface/range {p1 .. p1}, Lkotlin/reflect/jvm/internal/impl/descriptors/CallableDescriptor;->getTypeParameters()Ljava/util/List;
-
-    move-result-object v6
-
-    invoke-interface/range {p2 .. p2}, Lkotlin/reflect/jvm/internal/impl/descriptors/CallableDescriptor;->getTypeParameters()Ljava/util/List;
-
-    move-result-object v7
-
-    invoke-interface {v6}, Ljava/util/List;->size()I
-
-    move-result v8
-
-    invoke-interface {v7}, Ljava/util/List;->size()I
-
-    move-result v9
-
-    const/4 v10, 0x0
-
-    if-eq v8, v9, :cond_3
-
-    :goto_0
-    move-object v1, v4
-
-    check-cast v1, Ljava/util/ArrayList;
-
-    invoke-virtual {v1}, Ljava/util/ArrayList;->size()I
-
-    move-result v2
-
-    const-string v3, "Type parameter number mismatch"
-
-    if-ge v10, v2, :cond_2
-
-    sget-object v2, Lkotlin/reflect/jvm/internal/impl/types/checker/KotlinTypeChecker;->DEFAULT:Lkotlin/reflect/jvm/internal/impl/types/checker/KotlinTypeChecker;
-
-    invoke-virtual {v1, v10}, Ljava/util/ArrayList;->get(I)Ljava/lang/Object;
-
-    move-result-object v1
-
-    check-cast v1, Lkotlin/reflect/jvm/internal/impl/types/KotlinType;
-
-    move-object v6, v5
-
-    check-cast v6, Ljava/util/ArrayList;
-
-    invoke-virtual {v6, v10}, Ljava/util/ArrayList;->get(I)Ljava/lang/Object;
-
-    move-result-object v6
-
-    check-cast v6, Lkotlin/reflect/jvm/internal/impl/types/KotlinType;
-
-    check-cast v2, Lkotlin/reflect/jvm/internal/impl/types/checker/NewKotlinTypeCheckerImpl;
-
-    invoke-virtual {v2, v1, v6}, Lkotlin/reflect/jvm/internal/impl/types/checker/NewKotlinTypeCheckerImpl;->equalTypes(Lkotlin/reflect/jvm/internal/impl/types/KotlinType;Lkotlin/reflect/jvm/internal/impl/types/KotlinType;)Z
-
-    move-result v1
-
-    if-nez v1, :cond_1
-
-    invoke-static {v3}, Lkotlin/reflect/jvm/internal/impl/resolve/OverridingUtil$OverrideCompatibilityInfo;->incompatible(Ljava/lang/String;)Lkotlin/reflect/jvm/internal/impl/resolve/OverridingUtil$OverrideCompatibilityInfo;
-
-    move-result-object v1
-
-    return-object v1
+    invoke-static {v0}, Lkotlin/reflect/jvm/internal/impl/resolve/OverridingUtil;->$$$reportNull$$$0(I)V
 
     :cond_1
-    add-int/lit8 v10, v10, 0x1
+    invoke-static {p1, p2}, Lkotlin/reflect/jvm/internal/impl/resolve/OverridingUtil;->getBasicOverridabilityProblem(Lkotlin/reflect/jvm/internal/impl/descriptors/CallableDescriptor;Lkotlin/reflect/jvm/internal/impl/descriptors/CallableDescriptor;)Lkotlin/reflect/jvm/internal/impl/resolve/OverridingUtil$OverrideCompatibilityInfo;
 
-    goto :goto_0
+    move-result-object v0
+
+    if-eqz v0, :cond_2
+
+    return-object v0
 
     :cond_2
-    invoke-static {v3}, Lkotlin/reflect/jvm/internal/impl/resolve/OverridingUtil$OverrideCompatibilityInfo;->conflict(Ljava/lang/String;)Lkotlin/reflect/jvm/internal/impl/resolve/OverridingUtil$OverrideCompatibilityInfo;
+    invoke-static {p1}, Lkotlin/reflect/jvm/internal/impl/resolve/OverridingUtil;->compiledValueParameters(Lkotlin/reflect/jvm/internal/impl/descriptors/CallableDescriptor;)Ljava/util/List;
+
+    move-result-object v0
+
+    invoke-static {p2}, Lkotlin/reflect/jvm/internal/impl/resolve/OverridingUtil;->compiledValueParameters(Lkotlin/reflect/jvm/internal/impl/descriptors/CallableDescriptor;)Ljava/util/List;
 
     move-result-object v1
 
-    return-object v1
+    invoke-interface {p1}, Lkotlin/reflect/jvm/internal/impl/descriptors/CallableDescriptor;->getTypeParameters()Ljava/util/List;
 
-    :cond_3
-    invoke-virtual {v0, v6, v7}, Lkotlin/reflect/jvm/internal/impl/resolve/OverridingUtil;->createTypeChecker(Ljava/util/List;Ljava/util/List;)Lkotlin/Pair;
+    move-result-object v2
 
-    move-result-object v8
+    invoke-interface {p2}, Lkotlin/reflect/jvm/internal/impl/descriptors/CallableDescriptor;->getTypeParameters()Ljava/util/List;
 
-    move v9, v10
+    move-result-object v3
 
-    :goto_1
-    invoke-interface {v6}, Ljava/util/List;->size()I
-
-    move-result v11
-
-    if-ge v9, v11, :cond_b
-
-    invoke-interface {v6, v9}, Ljava/util/List;->get(I)Ljava/lang/Object;
-
-    move-result-object v11
-
-    check-cast v11, Lkotlin/reflect/jvm/internal/impl/descriptors/TypeParameterDescriptor;
-
-    invoke-interface {v7, v9}, Ljava/util/List;->get(I)Ljava/lang/Object;
-
-    move-result-object v13
-
-    check-cast v13, Lkotlin/reflect/jvm/internal/impl/descriptors/TypeParameterDescriptor;
-
-    if-eqz v11, :cond_a
-
-    if-eqz v13, :cond_9
-
-    invoke-interface {v11}, Lkotlin/reflect/jvm/internal/impl/descriptors/TypeParameterDescriptor;->getUpperBounds()Ljava/util/List;
-
-    move-result-object v11
-
-    new-instance v14, Ljava/util/ArrayList;
-
-    invoke-interface {v13}, Lkotlin/reflect/jvm/internal/impl/descriptors/TypeParameterDescriptor;->getUpperBounds()Ljava/util/List;
-
-    move-result-object v13
-
-    invoke-direct {v14, v13}, Ljava/util/ArrayList;-><init>(Ljava/util/Collection;)V
-
-    invoke-interface {v11}, Ljava/util/List;->size()I
-
-    move-result v13
-
-    invoke-virtual {v14}, Ljava/util/ArrayList;->size()I
-
-    move-result v15
-
-    if-eq v13, v15, :cond_4
-
-    goto :goto_3
-
-    :cond_4
-    invoke-interface {v11}, Ljava/util/List;->iterator()Ljava/util/Iterator;
-
-    move-result-object v11
-
-    :goto_2
-    invoke-interface {v11}, Ljava/util/Iterator;->hasNext()Z
-
-    move-result v13
-
-    if-eqz v13, :cond_7
-
-    invoke-interface {v11}, Ljava/util/Iterator;->next()Ljava/lang/Object;
-
-    move-result-object v13
-
-    check-cast v13, Lkotlin/reflect/jvm/internal/impl/types/KotlinType;
-
-    invoke-virtual {v14}, Ljava/util/ArrayList;->listIterator()Ljava/util/ListIterator;
-
-    move-result-object v15
-
-    :cond_5
-    invoke-interface {v15}, Ljava/util/ListIterator;->hasNext()Z
-
-    move-result v16
-
-    if-eqz v16, :cond_6
-
-    invoke-interface {v15}, Ljava/util/ListIterator;->next()Ljava/lang/Object;
-
-    move-result-object v16
-
-    move-object/from16 v12, v16
-
-    check-cast v12, Lkotlin/reflect/jvm/internal/impl/types/KotlinType;
-
-    invoke-virtual {v0, v13, v12, v8}, Lkotlin/reflect/jvm/internal/impl/resolve/OverridingUtil;->areTypesEquivalent(Lkotlin/reflect/jvm/internal/impl/types/KotlinType;Lkotlin/reflect/jvm/internal/impl/types/KotlinType;Lkotlin/Pair;)Z
-
-    move-result v12
-
-    if-eqz v12, :cond_5
-
-    invoke-interface {v15}, Ljava/util/ListIterator;->remove()V
-
-    goto :goto_2
-
-    :cond_6
-    :goto_3
-    move v12, v10
-
-    goto :goto_4
-
-    :cond_7
-    const/4 v12, 0x1
-
-    :goto_4
-    if-nez v12, :cond_8
-
-    const-string v1, "Type parameter bounds mismatch"
-
-    invoke-static {v1}, Lkotlin/reflect/jvm/internal/impl/resolve/OverridingUtil$OverrideCompatibilityInfo;->incompatible(Ljava/lang/String;)Lkotlin/reflect/jvm/internal/impl/resolve/OverridingUtil$OverrideCompatibilityInfo;
-
-    move-result-object v1
-
-    return-object v1
-
-    :cond_8
-    add-int/lit8 v9, v9, 0x1
-
-    goto :goto_1
-
-    :cond_9
-    const/16 v1, 0x30
-
-    invoke-static {v1}, Lkotlin/reflect/jvm/internal/impl/resolve/OverridingUtil;->$$$reportNull$$$0(I)V
-
-    throw v3
-
-    :cond_a
-    const/16 v1, 0x2f
-
-    invoke-static {v1}, Lkotlin/reflect/jvm/internal/impl/resolve/OverridingUtil;->$$$reportNull$$$0(I)V
-
-    throw v3
-
-    :cond_b
-    move v6, v10
-
-    :goto_5
-    move-object v7, v4
-
-    check-cast v7, Ljava/util/ArrayList;
-
-    invoke-virtual {v7}, Ljava/util/ArrayList;->size()I
-
-    move-result v9
-
-    if-ge v6, v9, :cond_d
-
-    invoke-virtual {v7, v6}, Ljava/util/ArrayList;->get(I)Ljava/lang/Object;
-
-    move-result-object v7
-
-    check-cast v7, Lkotlin/reflect/jvm/internal/impl/types/KotlinType;
-
-    move-object v9, v5
-
-    check-cast v9, Ljava/util/ArrayList;
-
-    invoke-virtual {v9, v6}, Ljava/util/ArrayList;->get(I)Ljava/lang/Object;
-
-    move-result-object v9
-
-    check-cast v9, Lkotlin/reflect/jvm/internal/impl/types/KotlinType;
-
-    invoke-virtual {v0, v7, v9, v8}, Lkotlin/reflect/jvm/internal/impl/resolve/OverridingUtil;->areTypesEquivalent(Lkotlin/reflect/jvm/internal/impl/types/KotlinType;Lkotlin/reflect/jvm/internal/impl/types/KotlinType;Lkotlin/Pair;)Z
-
-    move-result v7
-
-    if-nez v7, :cond_c
-
-    const-string v1, "Value parameter type mismatch"
-
-    invoke-static {v1}, Lkotlin/reflect/jvm/internal/impl/resolve/OverridingUtil$OverrideCompatibilityInfo;->incompatible(Ljava/lang/String;)Lkotlin/reflect/jvm/internal/impl/resolve/OverridingUtil$OverrideCompatibilityInfo;
-
-    move-result-object v1
-
-    return-object v1
-
-    :cond_c
-    add-int/lit8 v6, v6, 0x1
-
-    goto :goto_5
-
-    :cond_d
-    instance-of v4, v1, Lkotlin/reflect/jvm/internal/impl/descriptors/FunctionDescriptor;
-
-    if-eqz v4, :cond_e
-
-    instance-of v4, v2, Lkotlin/reflect/jvm/internal/impl/descriptors/FunctionDescriptor;
-
-    if-eqz v4, :cond_e
-
-    move-object v4, v1
-
-    check-cast v4, Lkotlin/reflect/jvm/internal/impl/descriptors/FunctionDescriptor;
-
-    invoke-interface {v4}, Lkotlin/reflect/jvm/internal/impl/descriptors/FunctionDescriptor;->isSuspend()Z
+    invoke-interface {v2}, Ljava/util/List;->size()I
 
     move-result v4
 
-    move-object v5, v2
-
-    check-cast v5, Lkotlin/reflect/jvm/internal/impl/descriptors/FunctionDescriptor;
-
-    invoke-interface {v5}, Lkotlin/reflect/jvm/internal/impl/descriptors/FunctionDescriptor;->isSuspend()Z
+    invoke-interface {v3}, Ljava/util/List;->size()I
 
     move-result v5
 
-    if-eq v4, v5, :cond_e
+    const/4 v6, 0x0
 
-    const-string v1, "Incompatible suspendability"
+    if-eq v4, v5, :cond_7
 
-    invoke-static {v1}, Lkotlin/reflect/jvm/internal/impl/resolve/OverridingUtil$OverrideCompatibilityInfo;->conflict(Ljava/lang/String;)Lkotlin/reflect/jvm/internal/impl/resolve/OverridingUtil$OverrideCompatibilityInfo;
+    :goto_0
+    invoke-interface {v0}, Ljava/util/List;->size()I
 
-    move-result-object v1
+    move-result p1
 
-    return-object v1
+    const-string p2, "Type parameter number mismatch"
 
-    :cond_e
-    if-eqz p3, :cond_10
+    if-ge v6, p1, :cond_5
 
-    invoke-interface/range {p1 .. p1}, Lkotlin/reflect/jvm/internal/impl/descriptors/CallableDescriptor;->getReturnType()Lkotlin/reflect/jvm/internal/impl/types/KotlinType;
+    sget-object p1, Lkotlin/reflect/jvm/internal/impl/types/checker/KotlinTypeChecker;->DEFAULT:Lkotlin/reflect/jvm/internal/impl/types/checker/KotlinTypeChecker;
 
-    move-result-object v1
+    invoke-interface {v0, v6}, Ljava/util/List;->get(I)Ljava/lang/Object;
 
-    invoke-interface/range {p2 .. p2}, Lkotlin/reflect/jvm/internal/impl/descriptors/CallableDescriptor;->getReturnType()Lkotlin/reflect/jvm/internal/impl/types/KotlinType;
+    move-result-object p3
 
-    move-result-object v2
+    check-cast p3, Lkotlin/reflect/jvm/internal/impl/types/KotlinType;
 
-    if-eqz v1, :cond_10
-
-    if-eqz v2, :cond_10
-
-    invoke-static {v2}, Lcom/google/android/gms/internal/nearby/zzfc;->isError(Lkotlin/reflect/jvm/internal/impl/types/KotlinType;)Z
-
-    move-result v4
-
-    if-eqz v4, :cond_f
-
-    invoke-static {v1}, Lcom/google/android/gms/internal/nearby/zzfc;->isError(Lkotlin/reflect/jvm/internal/impl/types/KotlinType;)Z
-
-    move-result v4
-
-    if-eqz v4, :cond_f
-
-    const/4 v12, 0x1
-
-    goto :goto_6
-
-    :cond_f
-    move v12, v10
-
-    :goto_6
-    if-nez v12, :cond_10
-
-    iget-object v4, v8, Lkotlin/Pair;->first:Ljava/lang/Object;
-
-    check-cast v4, Lkotlin/reflect/jvm/internal/impl/types/checker/NewKotlinTypeCheckerImpl;
-
-    iget-object v5, v8, Lkotlin/Pair;->second:Ljava/lang/Object;
-
-    check-cast v5, Lkotlin/reflect/jvm/internal/impl/types/checker/ClassicTypeCheckerContext;
-
-    invoke-virtual {v2}, Lkotlin/reflect/jvm/internal/impl/types/KotlinType;->unwrap()Lkotlin/reflect/jvm/internal/impl/types/UnwrappedType;
+    invoke-interface {v1, v6}, Ljava/util/List;->get(I)Ljava/lang/Object;
 
     move-result-object v2
 
-    invoke-virtual {v1}, Lkotlin/reflect/jvm/internal/impl/types/KotlinType;->unwrap()Lkotlin/reflect/jvm/internal/impl/types/UnwrappedType;
+    check-cast v2, Lkotlin/reflect/jvm/internal/impl/types/KotlinType;
 
-    move-result-object v1
+    invoke-interface {p1, p3, v2}, Lkotlin/reflect/jvm/internal/impl/types/checker/KotlinTypeChecker;->equalTypes(Lkotlin/reflect/jvm/internal/impl/types/KotlinType;Lkotlin/reflect/jvm/internal/impl/types/KotlinType;)Z
 
-    invoke-virtual {v4, v5, v2, v1}, Lkotlin/reflect/jvm/internal/impl/types/checker/NewKotlinTypeCheckerImpl;->isSubtypeOf(Lkotlin/reflect/jvm/internal/impl/types/checker/ClassicTypeCheckerContext;Lkotlin/reflect/jvm/internal/impl/types/UnwrappedType;Lkotlin/reflect/jvm/internal/impl/types/UnwrappedType;)Z
+    move-result p1
+
+    if-nez p1, :cond_4
+
+    invoke-static {p2}, Lkotlin/reflect/jvm/internal/impl/resolve/OverridingUtil$OverrideCompatibilityInfo;->incompatible(Ljava/lang/String;)Lkotlin/reflect/jvm/internal/impl/resolve/OverridingUtil$OverrideCompatibilityInfo;
+
+    move-result-object p1
+
+    if-nez p1, :cond_3
+
+    const/16 p2, 0x1f
+
+    invoke-static {p2}, Lkotlin/reflect/jvm/internal/impl/resolve/OverridingUtil;->$$$reportNull$$$0(I)V
+
+    :cond_3
+    return-object p1
+
+    :cond_4
+    add-int/lit8 v6, v6, 0x1
+
+    goto :goto_0
+
+    :cond_5
+    invoke-static {p2}, Lkotlin/reflect/jvm/internal/impl/resolve/OverridingUtil$OverrideCompatibilityInfo;->conflict(Ljava/lang/String;)Lkotlin/reflect/jvm/internal/impl/resolve/OverridingUtil$OverrideCompatibilityInfo;
+
+    move-result-object p1
+
+    if-nez p1, :cond_6
+
+    const/16 p2, 0x20
+
+    invoke-static {p2}, Lkotlin/reflect/jvm/internal/impl/resolve/OverridingUtil;->$$$reportNull$$$0(I)V
+
+    :cond_6
+    return-object p1
+
+    :cond_7
+    invoke-direct {p0, v2, v3}, Lkotlin/reflect/jvm/internal/impl/resolve/OverridingUtil;->createTypeChecker(Ljava/util/List;Ljava/util/List;)Lkotlin/Pair;
+
+    move-result-object v4
+
+    move v5, v6
+
+    :goto_1
+    invoke-interface {v2}, Ljava/util/List;->size()I
+
+    move-result v7
+
+    if-ge v5, v7, :cond_a
+
+    invoke-interface {v2, v5}, Ljava/util/List;->get(I)Ljava/lang/Object;
+
+    move-result-object v7
+
+    check-cast v7, Lkotlin/reflect/jvm/internal/impl/descriptors/TypeParameterDescriptor;
+
+    invoke-interface {v3, v5}, Ljava/util/List;->get(I)Ljava/lang/Object;
+
+    move-result-object v8
+
+    check-cast v8, Lkotlin/reflect/jvm/internal/impl/descriptors/TypeParameterDescriptor;
+
+    invoke-direct {p0, v7, v8, v4}, Lkotlin/reflect/jvm/internal/impl/resolve/OverridingUtil;->areTypeParametersEquivalent(Lkotlin/reflect/jvm/internal/impl/descriptors/TypeParameterDescriptor;Lkotlin/reflect/jvm/internal/impl/descriptors/TypeParameterDescriptor;Lkotlin/Pair;)Z
+
+    move-result v7
+
+    if-nez v7, :cond_9
+
+    const-string p1, "Type parameter bounds mismatch"
+
+    invoke-static {p1}, Lkotlin/reflect/jvm/internal/impl/resolve/OverridingUtil$OverrideCompatibilityInfo;->incompatible(Ljava/lang/String;)Lkotlin/reflect/jvm/internal/impl/resolve/OverridingUtil$OverrideCompatibilityInfo;
+
+    move-result-object p1
+
+    if-nez p1, :cond_8
+
+    const/16 p2, 0x21
+
+    invoke-static {p2}, Lkotlin/reflect/jvm/internal/impl/resolve/OverridingUtil;->$$$reportNull$$$0(I)V
+
+    :cond_8
+    return-object p1
+
+    :cond_9
+    add-int/lit8 v5, v5, 0x1
+
+    goto :goto_1
+
+    :cond_a
+    move v2, v6
+
+    :goto_2
+    invoke-interface {v0}, Ljava/util/List;->size()I
+
+    move-result v3
+
+    if-ge v2, v3, :cond_d
+
+    invoke-interface {v0, v2}, Ljava/util/List;->get(I)Ljava/lang/Object;
+
+    move-result-object v3
+
+    check-cast v3, Lkotlin/reflect/jvm/internal/impl/types/KotlinType;
+
+    invoke-interface {v1, v2}, Ljava/util/List;->get(I)Ljava/lang/Object;
+
+    move-result-object v5
+
+    check-cast v5, Lkotlin/reflect/jvm/internal/impl/types/KotlinType;
+
+    invoke-direct {p0, v3, v5, v4}, Lkotlin/reflect/jvm/internal/impl/resolve/OverridingUtil;->areTypesEquivalent(Lkotlin/reflect/jvm/internal/impl/types/KotlinType;Lkotlin/reflect/jvm/internal/impl/types/KotlinType;Lkotlin/Pair;)Z
+
+    move-result v3
+
+    if-nez v3, :cond_c
+
+    const-string p1, "Value parameter type mismatch"
+
+    invoke-static {p1}, Lkotlin/reflect/jvm/internal/impl/resolve/OverridingUtil$OverrideCompatibilityInfo;->incompatible(Ljava/lang/String;)Lkotlin/reflect/jvm/internal/impl/resolve/OverridingUtil$OverrideCompatibilityInfo;
+
+    move-result-object p1
+
+    if-nez p1, :cond_b
+
+    const/16 p2, 0x22
+
+    invoke-static {p2}, Lkotlin/reflect/jvm/internal/impl/resolve/OverridingUtil;->$$$reportNull$$$0(I)V
+
+    :cond_b
+    return-object p1
+
+    :cond_c
+    add-int/lit8 v2, v2, 0x1
+
+    goto :goto_2
+
+    :cond_d
+    instance-of v0, p1, Lkotlin/reflect/jvm/internal/impl/descriptors/FunctionDescriptor;
+
+    if-eqz v0, :cond_f
+
+    instance-of v0, p2, Lkotlin/reflect/jvm/internal/impl/descriptors/FunctionDescriptor;
+
+    if-eqz v0, :cond_f
+
+    move-object v0, p1
+
+    check-cast v0, Lkotlin/reflect/jvm/internal/impl/descriptors/FunctionDescriptor;
+
+    invoke-interface {v0}, Lkotlin/reflect/jvm/internal/impl/descriptors/FunctionDescriptor;->isSuspend()Z
+
+    move-result v0
+
+    move-object v1, p2
+
+    check-cast v1, Lkotlin/reflect/jvm/internal/impl/descriptors/FunctionDescriptor;
+
+    invoke-interface {v1}, Lkotlin/reflect/jvm/internal/impl/descriptors/FunctionDescriptor;->isSuspend()Z
 
     move-result v1
 
-    if-nez v1, :cond_10
+    if-eq v0, v1, :cond_f
 
-    const-string v1, "Return type mismatch"
+    const-string p1, "Incompatible suspendability"
 
-    invoke-static {v1}, Lkotlin/reflect/jvm/internal/impl/resolve/OverridingUtil$OverrideCompatibilityInfo;->conflict(Ljava/lang/String;)Lkotlin/reflect/jvm/internal/impl/resolve/OverridingUtil$OverrideCompatibilityInfo;
+    invoke-static {p1}, Lkotlin/reflect/jvm/internal/impl/resolve/OverridingUtil$OverrideCompatibilityInfo;->conflict(Ljava/lang/String;)Lkotlin/reflect/jvm/internal/impl/resolve/OverridingUtil$OverrideCompatibilityInfo;
 
-    move-result-object v1
+    move-result-object p1
 
-    return-object v1
+    if-nez p1, :cond_e
+
+    const/16 p2, 0x23
+
+    invoke-static {p2}, Lkotlin/reflect/jvm/internal/impl/resolve/OverridingUtil;->$$$reportNull$$$0(I)V
+
+    :cond_e
+    return-object p1
+
+    :cond_f
+    if-eqz p3, :cond_12
+
+    invoke-interface {p1}, Lkotlin/reflect/jvm/internal/impl/descriptors/CallableDescriptor;->getReturnType()Lkotlin/reflect/jvm/internal/impl/types/KotlinType;
+
+    move-result-object p1
+
+    invoke-interface {p2}, Lkotlin/reflect/jvm/internal/impl/descriptors/CallableDescriptor;->getReturnType()Lkotlin/reflect/jvm/internal/impl/types/KotlinType;
+
+    move-result-object p2
+
+    if-eqz p1, :cond_12
+
+    if-eqz p2, :cond_12
+
+    invoke-static {p2}, Lkotlin/reflect/jvm/internal/impl/types/KotlinTypeKt;->isError(Lkotlin/reflect/jvm/internal/impl/types/KotlinType;)Z
+
+    move-result p3
+
+    if-eqz p3, :cond_10
+
+    invoke-static {p1}, Lkotlin/reflect/jvm/internal/impl/types/KotlinTypeKt;->isError(Lkotlin/reflect/jvm/internal/impl/types/KotlinType;)Z
+
+    move-result p3
+
+    if-eqz p3, :cond_10
+
+    const/4 v6, 0x1
 
     :cond_10
-    sget-object v1, Lkotlin/reflect/jvm/internal/impl/resolve/OverridingUtil$OverrideCompatibilityInfo;->SUCCESS:Lkotlin/reflect/jvm/internal/impl/resolve/OverridingUtil$OverrideCompatibilityInfo;
+    if-nez v6, :cond_12
 
-    if-eqz v1, :cond_11
+    iget-object p3, v4, Lkotlin/Pair;->first:Ljava/lang/Object;
 
-    return-object v1
+    check-cast p3, Lkotlin/reflect/jvm/internal/impl/types/checker/NewKotlinTypeCheckerImpl;
+
+    iget-object v0, v4, Lkotlin/Pair;->second:Ljava/lang/Object;
+
+    check-cast v0, Lkotlin/reflect/jvm/internal/impl/types/checker/ClassicTypeCheckerContext;
+
+    invoke-virtual {p2}, Lkotlin/reflect/jvm/internal/impl/types/KotlinType;->unwrap()Lkotlin/reflect/jvm/internal/impl/types/UnwrappedType;
+
+    move-result-object p2
+
+    invoke-virtual {p1}, Lkotlin/reflect/jvm/internal/impl/types/KotlinType;->unwrap()Lkotlin/reflect/jvm/internal/impl/types/UnwrappedType;
+
+    move-result-object p1
+
+    invoke-virtual {p3, v0, p2, p1}, Lkotlin/reflect/jvm/internal/impl/types/checker/NewKotlinTypeCheckerImpl;->isSubtypeOf(Lkotlin/reflect/jvm/internal/impl/types/checker/ClassicTypeCheckerContext;Lkotlin/reflect/jvm/internal/impl/types/UnwrappedType;Lkotlin/reflect/jvm/internal/impl/types/UnwrappedType;)Z
+
+    move-result p1
+
+    if-nez p1, :cond_12
+
+    const-string p1, "Return type mismatch"
+
+    invoke-static {p1}, Lkotlin/reflect/jvm/internal/impl/resolve/OverridingUtil$OverrideCompatibilityInfo;->conflict(Ljava/lang/String;)Lkotlin/reflect/jvm/internal/impl/resolve/OverridingUtil$OverrideCompatibilityInfo;
+
+    move-result-object p1
+
+    if-nez p1, :cond_11
+
+    const/16 p2, 0x24
+
+    invoke-static {p2}, Lkotlin/reflect/jvm/internal/impl/resolve/OverridingUtil;->$$$reportNull$$$0(I)V
 
     :cond_11
-    invoke-static {v10}, Lkotlin/reflect/jvm/internal/impl/resolve/OverridingUtil$OverrideCompatibilityInfo;->$$$reportNull$$$0(I)V
-
-    throw v3
+    return-object p1
 
     :cond_12
-    const/16 v1, 0x1d
+    invoke-static {}, Lkotlin/reflect/jvm/internal/impl/resolve/OverridingUtil$OverrideCompatibilityInfo;->success()Lkotlin/reflect/jvm/internal/impl/resolve/OverridingUtil$OverrideCompatibilityInfo;
 
-    invoke-static {v1}, Lkotlin/reflect/jvm/internal/impl/resolve/OverridingUtil;->$$$reportNull$$$0(I)V
+    move-result-object p1
 
-    throw v3
+    if-nez p1, :cond_13
+
+    const/16 p2, 0x25
+
+    invoke-static {p2}, Lkotlin/reflect/jvm/internal/impl/resolve/OverridingUtil;->$$$reportNull$$$0(I)V
 
     :cond_13
-    const/16 v1, 0x1c
-
-    invoke-static {v1}, Lkotlin/reflect/jvm/internal/impl/resolve/OverridingUtil;->$$$reportNull$$$0(I)V
-
-    throw v3
+    return-object p1
 .end method

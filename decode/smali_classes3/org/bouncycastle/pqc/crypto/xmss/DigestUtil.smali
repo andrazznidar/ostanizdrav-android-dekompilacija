@@ -1,9 +1,9 @@
-.class public Lorg/bouncycastle/pqc/crypto/xmss/DigestUtil;
+.class Lorg/bouncycastle/pqc/crypto/xmss/DigestUtil;
 .super Ljava/lang/Object;
 
 
 # static fields
-.field public static nameToOid:Ljava/util/Map;
+.field private static nameToOid:Ljava/util/Map;
     .annotation system Ldalvik/annotation/Signature;
         value = {
             "Ljava/util/Map<",
@@ -14,7 +14,7 @@
     .end annotation
 .end field
 
-.field public static oidToName:Ljava/util/Map;
+.field private static oidToName:Ljava/util/Map;
     .annotation system Ldalvik/annotation/Signature;
         value = {
             "Ljava/util/Map<",
@@ -93,8 +93,16 @@
     return-void
 .end method
 
+.method public constructor <init>()V
+    .locals 0
+
+    invoke-direct {p0}, Ljava/lang/Object;-><init>()V
+
+    return-void
+.end method
+
 .method public static getDigest(Lorg/bouncycastle/asn1/ASN1ObjectIdentifier;)Lorg/bouncycastle/crypto/Digest;
-    .locals 3
+    .locals 2
 
     sget-object v0, Lorg/bouncycastle/asn1/nist/NISTObjectIdentifiers;->id_sha256:Lorg/bouncycastle/asn1/ASN1ObjectIdentifier;
 
@@ -162,17 +170,38 @@
     :cond_3
     new-instance v0, Ljava/lang/IllegalArgumentException;
 
-    new-instance v1, Ljava/lang/StringBuilder;
+    const-string v1, "unrecognized digest OID: "
 
-    invoke-direct {v1}, Ljava/lang/StringBuilder;-><init>()V
+    invoke-static {v1, p0}, Lorg/bouncycastle/crypto/util/OpenSSHPrivateKeyUtil$$ExternalSyntheticOutline0;->m(Ljava/lang/String;Lorg/bouncycastle/asn1/ASN1ObjectIdentifier;)Ljava/lang/String;
 
-    const-string v2, "unrecognized digest OID: "
+    move-result-object p0
 
-    invoke-virtual {v1, v2}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+    invoke-direct {v0, p0}, Ljava/lang/IllegalArgumentException;-><init>(Ljava/lang/String;)V
 
-    invoke-virtual {v1, p0}, Ljava/lang/StringBuilder;->append(Ljava/lang/Object;)Ljava/lang/StringBuilder;
+    throw v0
+.end method
 
-    invoke-virtual {v1}, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
+.method public static getDigestName(Lorg/bouncycastle/asn1/ASN1ObjectIdentifier;)Ljava/lang/String;
+    .locals 2
+
+    sget-object v0, Lorg/bouncycastle/pqc/crypto/xmss/DigestUtil;->oidToName:Ljava/util/Map;
+
+    invoke-interface {v0, p0}, Ljava/util/Map;->get(Ljava/lang/Object;)Ljava/lang/Object;
+
+    move-result-object v0
+
+    check-cast v0, Ljava/lang/String;
+
+    if-eqz v0, :cond_0
+
+    return-object v0
+
+    :cond_0
+    new-instance v0, Ljava/lang/IllegalArgumentException;
+
+    const-string v1, "unrecognized digest oid: "
+
+    invoke-static {v1, p0}, Lorg/bouncycastle/crypto/util/OpenSSHPrivateKeyUtil$$ExternalSyntheticOutline0;->m(Ljava/lang/String;Lorg/bouncycastle/asn1/ASN1ObjectIdentifier;)Ljava/lang/String;
 
     move-result-object p0
 
@@ -186,9 +215,7 @@
 
     sget-object v0, Lorg/bouncycastle/pqc/crypto/xmss/DigestUtil;->nameToOid:Ljava/util/Map;
 
-    check-cast v0, Ljava/util/HashMap;
-
-    invoke-virtual {v0, p0}, Ljava/util/HashMap;->get(Ljava/lang/Object;)Ljava/lang/Object;
+    invoke-interface {v0, p0}, Ljava/util/Map;->get(Ljava/lang/Object;)Ljava/lang/Object;
 
     move-result-object v0
 
@@ -210,4 +237,21 @@
     invoke-direct {v0, p0}, Ljava/lang/IllegalArgumentException;-><init>(Ljava/lang/String;)V
 
     throw v0
+.end method
+
+.method public static getDigestSize(Lorg/bouncycastle/crypto/Digest;)I
+    .locals 1
+
+    instance-of v0, p0, Lorg/bouncycastle/crypto/Xof;
+
+    invoke-interface {p0}, Lorg/bouncycastle/crypto/Digest;->getDigestSize()I
+
+    move-result p0
+
+    if-eqz v0, :cond_0
+
+    mul-int/lit8 p0, p0, 0x2
+
+    :cond_0
+    return p0
 .end method

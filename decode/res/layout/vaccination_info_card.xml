@@ -3,9 +3,8 @@
   xmlns:android="http://schemas.android.com/apk/res/android">
     <LinearLayout android:orientation="horizontal" android:layout_width="wrap_content" android:layout_height="wrap_content">
         <TextView android:textSize="16.0sp" android:textStyle="bold" android:id="@id/title" android:layout_width="wrap_content" android:layout_height="wrap_content" style="@style/body2" />
-        <ImageView android:layout_gravity="center" android:id="@id/booster_badge" android:visibility="gone" android:layout_width="wrap_content" android:layout_height="wrap_content" android:src="@drawable/ic_booster_badge" android:layout_marginStart="8.0dip" />
     </LinearLayout>
     <TextView android:id="@id/subtitle" android:layout_width="fill_parent" android:layout_height="wrap_content" />
     <TextView android:textSize="14.0sp" android:id="@id/body" android:layout_width="fill_parent" android:layout_height="wrap_content" android:layout_marginTop="@dimen/spacing_tiny" style="@style/subtitle" />
-    <TextView android:textSize="14.0sp" android:id="@id/body_2_faq" android:visibility="gone" android:layout_width="fill_parent" android:layout_height="wrap_content" android:layout_marginTop="24.0dip" style="@style/subtitle" />
+    <TextView android:textSize="14.0sp" android:id="@id/faq" android:visibility="gone" android:layout_width="fill_parent" android:layout_height="wrap_content" android:layout_marginTop="24.0dip" android:text="@string/vaccination_card_booster_eligible_faq" style="@style/subtitle" />
 </LinearLayout>

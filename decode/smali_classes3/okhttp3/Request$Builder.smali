@@ -287,84 +287,82 @@
 
     invoke-interface {p1}, Ljava/lang/CharSequence;->length()I
 
-    move-result v1
+    move-result v0
 
-    const/4 v2, 0x0
+    const/4 v1, 0x0
 
-    const/4 v3, 0x1
+    const/4 v2, 0x1
 
-    if-lez v1, :cond_0
+    if-lez v0, :cond_0
 
-    move v1, v3
+    move v0, v2
 
     goto :goto_0
 
     :cond_0
-    move v1, v2
+    move v0, v1
 
     :goto_0
-    if-eqz v1, :cond_6
+    if-eqz v0, :cond_6
 
-    const-string v1, "method "
+    const-string v0, "method "
 
     if-nez p2, :cond_4
 
-    invoke-static {p1, v0}, Lkotlin/jvm/internal/Intrinsics;->checkNotNullParameter(Ljava/lang/Object;Ljava/lang/String;)V
+    const-string v3, "POST"
 
-    const-string v0, "POST"
+    invoke-static {p1, v3}, Lkotlin/jvm/internal/Intrinsics;->areEqual(Ljava/lang/Object;Ljava/lang/Object;)Z
 
-    invoke-static {p1, v0}, Lkotlin/jvm/internal/Intrinsics;->areEqual(Ljava/lang/Object;Ljava/lang/Object;)Z
+    move-result v3
 
-    move-result v0
+    if-nez v3, :cond_1
 
-    if-nez v0, :cond_1
+    const-string v3, "PUT"
 
-    const-string v0, "PUT"
+    invoke-static {p1, v3}, Lkotlin/jvm/internal/Intrinsics;->areEqual(Ljava/lang/Object;Ljava/lang/Object;)Z
 
-    invoke-static {p1, v0}, Lkotlin/jvm/internal/Intrinsics;->areEqual(Ljava/lang/Object;Ljava/lang/Object;)Z
+    move-result v3
 
-    move-result v0
+    if-nez v3, :cond_1
 
-    if-nez v0, :cond_1
+    const-string v3, "PATCH"
 
-    const-string v0, "PATCH"
+    invoke-static {p1, v3}, Lkotlin/jvm/internal/Intrinsics;->areEqual(Ljava/lang/Object;Ljava/lang/Object;)Z
 
-    invoke-static {p1, v0}, Lkotlin/jvm/internal/Intrinsics;->areEqual(Ljava/lang/Object;Ljava/lang/Object;)Z
+    move-result v3
 
-    move-result v0
+    if-nez v3, :cond_1
 
-    if-nez v0, :cond_1
+    const-string v3, "PROPPATCH"
 
-    const-string v0, "PROPPATCH"
+    invoke-static {p1, v3}, Lkotlin/jvm/internal/Intrinsics;->areEqual(Ljava/lang/Object;Ljava/lang/Object;)Z
 
-    invoke-static {p1, v0}, Lkotlin/jvm/internal/Intrinsics;->areEqual(Ljava/lang/Object;Ljava/lang/Object;)Z
+    move-result v3
 
-    move-result v0
+    if-nez v3, :cond_1
 
-    if-nez v0, :cond_1
+    const-string v3, "REPORT"
 
-    const-string v0, "REPORT"
+    invoke-static {p1, v3}, Lkotlin/jvm/internal/Intrinsics;->areEqual(Ljava/lang/Object;Ljava/lang/Object;)Z
 
-    invoke-static {p1, v0}, Lkotlin/jvm/internal/Intrinsics;->areEqual(Ljava/lang/Object;Ljava/lang/Object;)Z
+    move-result v3
 
-    move-result v0
-
-    if-eqz v0, :cond_2
+    if-eqz v3, :cond_2
 
     :cond_1
-    move v2, v3
+    move v1, v2
 
     :cond_2
-    xor-int/lit8 v0, v2, 0x1
+    xor-int/2addr v1, v2
 
-    if-eqz v0, :cond_3
+    if-eqz v1, :cond_3
 
     goto :goto_1
 
     :cond_3
     const-string p2, " must have a request body."
 
-    invoke-static {v1, p1, p2}, Landroidx/core/graphics/PathParser$$ExternalSyntheticOutline0;->m(Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;)Ljava/lang/String;
+    invoke-static {v0, p1, p2}, Landroidx/concurrent/futures/AbstractResolvableFuture$$ExternalSyntheticOutline1;->m(Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;)Ljava/lang/String;
 
     move-result-object p1
 
@@ -381,9 +379,9 @@
     :cond_4
     invoke-static {p1}, Lokhttp3/internal/http/HttpMethod;->permitsRequestBody(Ljava/lang/String;)Z
 
-    move-result v0
+    move-result v1
 
-    if-eqz v0, :cond_5
+    if-eqz v1, :cond_5
 
     :goto_1
     iput-object p1, p0, Lokhttp3/Request$Builder;->method:Ljava/lang/String;
@@ -395,7 +393,7 @@
     :cond_5
     const-string p2, " must not have a request body."
 
-    invoke-static {v1, p1, p2}, Landroidx/core/graphics/PathParser$$ExternalSyntheticOutline0;->m(Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;)Ljava/lang/String;
+    invoke-static {v0, p1, p2}, Landroidx/concurrent/futures/AbstractResolvableFuture$$ExternalSyntheticOutline1;->m(Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;)Ljava/lang/String;
 
     move-result-object p1
 

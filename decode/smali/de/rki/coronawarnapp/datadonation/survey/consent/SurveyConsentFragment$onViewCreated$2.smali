@@ -47,7 +47,7 @@
 
 # virtual methods
 .method public invoke(Ljava/lang/Object;)Ljava/lang/Object;
-    .locals 4
+    .locals 3
 
     check-cast p1, Lde/rki/coronawarnapp/datadonation/survey/consent/SurveyConsentNavigationEvents;
 
@@ -85,21 +85,17 @@
 
     invoke-static {v0, v1}, Lkotlin/jvm/internal/Intrinsics;->checkNotNullParameter(Ljava/lang/Object;Ljava/lang/String;)V
 
-    const-string/jumbo v2, "url"
+    const-string/jumbo v1, "url"
 
-    invoke-static {p1, v2}, Lkotlin/jvm/internal/Intrinsics;->checkNotNullParameter(Ljava/lang/Object;Ljava/lang/String;)V
+    invoke-static {p1, v1}, Lkotlin/jvm/internal/Intrinsics;->checkNotNullParameter(Ljava/lang/Object;Ljava/lang/String;)V
 
     invoke-virtual {v0}, Landroidx/fragment/app/Fragment;->requireContext()Landroid/content/Context;
 
     move-result-object v0
 
-    const-string v3, "requireContext()"
+    const-string v1, "requireContext()"
 
-    invoke-static {v0, v3}, Lkotlin/jvm/internal/Intrinsics;->checkNotNullExpressionValue(Ljava/lang/Object;Ljava/lang/String;)V
-
-    invoke-static {v0, v1}, Lkotlin/jvm/internal/Intrinsics;->checkNotNullParameter(Ljava/lang/Object;Ljava/lang/String;)V
-
-    invoke-static {p1, v2}, Lkotlin/jvm/internal/Intrinsics;->checkNotNullParameter(Ljava/lang/Object;Ljava/lang/String;)V
+    invoke-static {v0, v1}, Lkotlin/jvm/internal/Intrinsics;->checkNotNullExpressionValue(Ljava/lang/Object;Ljava/lang/String;)V
 
     :try_start_0
     new-instance v1, Landroid/content/Intent;
@@ -125,9 +121,9 @@
 
     invoke-direct {v0, p1}, Lde/rki/coronawarnapp/exception/ExternalActionException;-><init>(Ljava/lang/Throwable;)V
 
-    sget-object p1, Lde/rki/coronawarnapp/exception/ExceptionCategory;->UI:Lde/rki/coronawarnapp/exception/ExceptionCategory;
+    const/4 p1, 0x1
 
-    invoke-static {v0, p1}, Lde/rki/coronawarnapp/exception/reporting/ExceptionReporterKt;->report(Ljava/lang/Throwable;Lde/rki/coronawarnapp/exception/ExceptionCategory;)V
+    invoke-static {v0, p1}, Lde/rki/coronawarnapp/exception/reporting/ExceptionReporterKt;->report(Ljava/lang/Throwable;I)V
 
     :goto_0
     iget-object p1, p0, Lde/rki/coronawarnapp/datadonation/survey/consent/SurveyConsentFragment$onViewCreated$2;->this$0:Lde/rki/coronawarnapp/datadonation/survey/consent/SurveyConsentFragment;
@@ -145,7 +141,7 @@
 
     new-instance v0, Landroidx/navigation/ActionOnlyNavDirections;
 
-    const v1, 0x7f0a00da
+    const v1, 0x7f0a00e8
 
     invoke-direct {v0, v1}, Landroidx/navigation/ActionOnlyNavDirections;-><init>(I)V
 

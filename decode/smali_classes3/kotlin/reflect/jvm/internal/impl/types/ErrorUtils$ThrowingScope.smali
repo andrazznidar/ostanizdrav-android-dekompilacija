@@ -1,4 +1,4 @@
-.class public Lkotlin/reflect/jvm/internal/impl/types/ErrorUtils$ThrowingScope;
+.class Lkotlin/reflect/jvm/internal/impl/types/ErrorUtils$ThrowingScope;
 .super Ljava/lang/Object;
 .source "ErrorUtils.java"
 
@@ -18,11 +18,11 @@
 
 
 # instance fields
-.field public final debugMessage:Ljava/lang/String;
+.field private final debugMessage:Ljava/lang/String;
 
 
 # direct methods
-.method public static synthetic $$$reportNull$$$0(I)V
+.method private static synthetic $$$reportNull$$$0(I)V
     .locals 3
 
     const/4 v0, 0x3
@@ -195,25 +195,29 @@
     .end packed-switch
 .end method
 
-.method public constructor <init>(Ljava/lang/String;Lkotlin/reflect/jvm/internal/impl/types/ErrorUtils$1;)V
-    .locals 0
+.method private constructor <init>(Ljava/lang/String;)V
+    .locals 1
 
-    if-eqz p1, :cond_0
+    if-nez p1, :cond_0
 
+    const/4 v0, 0x0
+
+    invoke-static {v0}, Lkotlin/reflect/jvm/internal/impl/types/ErrorUtils$ThrowingScope;->$$$reportNull$$$0(I)V
+
+    :cond_0
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
     iput-object p1, p0, Lkotlin/reflect/jvm/internal/impl/types/ErrorUtils$ThrowingScope;->debugMessage:Ljava/lang/String;
 
     return-void
+.end method
 
-    :cond_0
-    const/4 p1, 0x0
+.method public synthetic constructor <init>(Ljava/lang/String;Lkotlin/reflect/jvm/internal/impl/types/ErrorUtils$1;)V
+    .locals 0
 
-    invoke-static {p1}, Lkotlin/reflect/jvm/internal/impl/types/ErrorUtils$ThrowingScope;->$$$reportNull$$$0(I)V
+    invoke-direct {p0, p1}, Lkotlin/reflect/jvm/internal/impl/types/ErrorUtils$ThrowingScope;-><init>(Ljava/lang/String;)V
 
-    const/4 p1, 0x0
-
-    throw p1
+    return-void
 .end method
 
 
@@ -239,19 +243,20 @@
 .method public getContributedClassifier(Lkotlin/reflect/jvm/internal/impl/name/Name;Lkotlin/reflect/jvm/internal/impl/incremental/components/LookupLocation;)Lkotlin/reflect/jvm/internal/impl/descriptors/ClassifierDescriptor;
     .locals 2
 
-    const/4 v0, 0x0
+    if-nez p1, :cond_0
 
-    if-eqz p1, :cond_1
+    const/4 v0, 0x1
 
-    if-nez p2, :cond_0
-
-    const/4 p1, 0x2
-
-    invoke-static {p1}, Lkotlin/reflect/jvm/internal/impl/types/ErrorUtils$ThrowingScope;->$$$reportNull$$$0(I)V
-
-    throw v0
+    invoke-static {v0}, Lkotlin/reflect/jvm/internal/impl/types/ErrorUtils$ThrowingScope;->$$$reportNull$$$0(I)V
 
     :cond_0
+    if-nez p2, :cond_1
+
+    const/4 p2, 0x2
+
+    invoke-static {p2}, Lkotlin/reflect/jvm/internal/impl/types/ErrorUtils$ThrowingScope;->$$$reportNull$$$0(I)V
+
+    :cond_1
     new-instance p2, Ljava/lang/IllegalStateException;
 
     new-instance v0, Ljava/lang/StringBuilder;
@@ -275,17 +280,10 @@
     invoke-direct {p2, p1}, Ljava/lang/IllegalStateException;-><init>(Ljava/lang/String;)V
 
     throw p2
-
-    :cond_1
-    const/4 p1, 0x1
-
-    invoke-static {p1}, Lkotlin/reflect/jvm/internal/impl/types/ErrorUtils$ThrowingScope;->$$$reportNull$$$0(I)V
-
-    throw v0
 .end method
 
 .method public getContributedDescriptors(Lkotlin/reflect/jvm/internal/impl/resolve/scopes/DescriptorKindFilter;Lkotlin/jvm/functions/Function1;)Ljava/util/Collection;
-    .locals 1
+    .locals 0
     .annotation system Ldalvik/annotation/Signature;
         value = {
             "(",
@@ -301,19 +299,20 @@
         }
     .end annotation
 
-    const/4 v0, 0x0
+    if-nez p1, :cond_0
 
-    if-eqz p1, :cond_1
+    const/16 p1, 0x9
 
-    if-nez p2, :cond_0
+    invoke-static {p1}, Lkotlin/reflect/jvm/internal/impl/types/ErrorUtils$ThrowingScope;->$$$reportNull$$$0(I)V
+
+    :cond_0
+    if-nez p2, :cond_1
 
     const/16 p1, 0xa
 
     invoke-static {p1}, Lkotlin/reflect/jvm/internal/impl/types/ErrorUtils$ThrowingScope;->$$$reportNull$$$0(I)V
 
-    throw v0
-
-    :cond_0
+    :cond_1
     new-instance p1, Ljava/lang/IllegalStateException;
 
     iget-object p2, p0, Lkotlin/reflect/jvm/internal/impl/types/ErrorUtils$ThrowingScope;->debugMessage:Ljava/lang/String;
@@ -321,13 +320,6 @@
     invoke-direct {p1, p2}, Ljava/lang/IllegalStateException;-><init>(Ljava/lang/String;)V
 
     throw p1
-
-    :cond_1
-    const/16 p1, 0x9
-
-    invoke-static {p1}, Lkotlin/reflect/jvm/internal/impl/types/ErrorUtils$ThrowingScope;->$$$reportNull$$$0(I)V
-
-    throw v0
 .end method
 
 .method public getContributedFunctions(Lkotlin/reflect/jvm/internal/impl/name/Name;Lkotlin/reflect/jvm/internal/impl/incremental/components/LookupLocation;)Ljava/util/Collection;
@@ -345,19 +337,20 @@
         }
     .end annotation
 
-    const/4 v0, 0x0
+    if-nez p1, :cond_0
 
-    if-eqz p1, :cond_1
+    const/4 v0, 0x7
 
-    if-nez p2, :cond_0
-
-    const/16 p1, 0x8
-
-    invoke-static {p1}, Lkotlin/reflect/jvm/internal/impl/types/ErrorUtils$ThrowingScope;->$$$reportNull$$$0(I)V
-
-    throw v0
+    invoke-static {v0}, Lkotlin/reflect/jvm/internal/impl/types/ErrorUtils$ThrowingScope;->$$$reportNull$$$0(I)V
 
     :cond_0
+    if-nez p2, :cond_1
+
+    const/16 p2, 0x8
+
+    invoke-static {p2}, Lkotlin/reflect/jvm/internal/impl/types/ErrorUtils$ThrowingScope;->$$$reportNull$$$0(I)V
+
+    :cond_1
     new-instance p2, Ljava/lang/IllegalStateException;
 
     new-instance v0, Ljava/lang/StringBuilder;
@@ -381,13 +374,6 @@
     invoke-direct {p2, p1}, Ljava/lang/IllegalStateException;-><init>(Ljava/lang/String;)V
 
     throw p2
-
-    :cond_1
-    const/4 p1, 0x7
-
-    invoke-static {p1}, Lkotlin/reflect/jvm/internal/impl/types/ErrorUtils$ThrowingScope;->$$$reportNull$$$0(I)V
-
-    throw v0
 .end method
 
 .method public getContributedVariables(Lkotlin/reflect/jvm/internal/impl/name/Name;Lkotlin/reflect/jvm/internal/impl/incremental/components/LookupLocation;)Ljava/util/Collection;
@@ -405,19 +391,20 @@
         }
     .end annotation
 
-    const/4 v0, 0x0
+    if-nez p1, :cond_0
 
-    if-eqz p1, :cond_1
+    const/4 v0, 0x5
 
-    if-nez p2, :cond_0
-
-    const/4 p1, 0x6
-
-    invoke-static {p1}, Lkotlin/reflect/jvm/internal/impl/types/ErrorUtils$ThrowingScope;->$$$reportNull$$$0(I)V
-
-    throw v0
+    invoke-static {v0}, Lkotlin/reflect/jvm/internal/impl/types/ErrorUtils$ThrowingScope;->$$$reportNull$$$0(I)V
 
     :cond_0
+    if-nez p2, :cond_1
+
+    const/4 p2, 0x6
+
+    invoke-static {p2}, Lkotlin/reflect/jvm/internal/impl/types/ErrorUtils$ThrowingScope;->$$$reportNull$$$0(I)V
+
+    :cond_1
     new-instance p2, Ljava/lang/IllegalStateException;
 
     new-instance v0, Ljava/lang/StringBuilder;
@@ -441,13 +428,6 @@
     invoke-direct {p2, p1}, Ljava/lang/IllegalStateException;-><init>(Ljava/lang/String;)V
 
     throw p2
-
-    :cond_1
-    const/4 p1, 0x5
-
-    invoke-static {p1}, Lkotlin/reflect/jvm/internal/impl/types/ErrorUtils$ThrowingScope;->$$$reportNull$$$0(I)V
-
-    throw v0
 .end method
 
 .method public getFunctionNames()Ljava/util/Set;
@@ -484,6 +464,30 @@
     invoke-direct {v0}, Ljava/lang/IllegalStateException;-><init>()V
 
     throw v0
+.end method
+
+.method public recordLookup(Lkotlin/reflect/jvm/internal/impl/name/Name;Lkotlin/reflect/jvm/internal/impl/incremental/components/LookupLocation;)V
+    .locals 0
+
+    if-nez p1, :cond_0
+
+    const/16 p1, 0xb
+
+    invoke-static {p1}, Lkotlin/reflect/jvm/internal/impl/types/ErrorUtils$ThrowingScope;->$$$reportNull$$$0(I)V
+
+    :cond_0
+    if-nez p2, :cond_1
+
+    const/16 p1, 0xc
+
+    invoke-static {p1}, Lkotlin/reflect/jvm/internal/impl/types/ErrorUtils$ThrowingScope;->$$$reportNull$$$0(I)V
+
+    :cond_1
+    new-instance p1, Ljava/lang/IllegalStateException;
+
+    invoke-direct {p1}, Ljava/lang/IllegalStateException;-><init>()V
+
+    throw p1
 .end method
 
 .method public toString()Ljava/lang/String;

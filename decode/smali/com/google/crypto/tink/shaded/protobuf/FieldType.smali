@@ -18,6 +18,8 @@
 
 .field public static final enum DOUBLE_LIST_PACKED:Lcom/google/crypto/tink/shaded/protobuf/FieldType;
 
+.field public static final EMPTY_TYPES:[Ljava/lang/reflect/Type;
+
 .field public static final enum SINT64_LIST_PACKED:Lcom/google/crypto/tink/shaded/protobuf/FieldType;
 
 .field public static final VALUES:[Lcom/google/crypto/tink/shaded/protobuf/FieldType;
@@ -989,6 +991,10 @@
 
     sput-object v1, Lcom/google/crypto/tink/shaded/protobuf/FieldType;->$VALUES:[Lcom/google/crypto/tink/shaded/protobuf/FieldType;
 
+    new-array v0, v2, [Ljava/lang/reflect/Type;
+
+    sput-object v0, Lcom/google/crypto/tink/shaded/protobuf/FieldType;->EMPTY_TYPES:[Ljava/lang/reflect/Type;
+
     invoke-static {}, Lcom/google/crypto/tink/shaded/protobuf/FieldType;->values()[Lcom/google/crypto/tink/shaded/protobuf/FieldType;
 
     move-result-object v0
@@ -1037,9 +1043,9 @@
 
     iput p4, p0, Lcom/google/crypto/tink/shaded/protobuf/FieldType;->collection:I
 
-    invoke-static {p4}, Landroidx/constraintlayout/core/SolverVariable$Type$r8$EnumUnboxingUtility;->$enumboxing$ordinal(I)I
+    if-eqz p4, :cond_3
 
-    move-result p1
+    add-int/lit8 p1, p4, -0x1
 
     const/4 p2, 0x1
 
@@ -1066,6 +1072,11 @@
 
     :cond_2
     return-void
+
+    :cond_3
+    const/4 p1, 0x0
+
+    throw p1
 .end method
 
 .method public static valueOf(Ljava/lang/String;)Lcom/google/crypto/tink/shaded/protobuf/FieldType;

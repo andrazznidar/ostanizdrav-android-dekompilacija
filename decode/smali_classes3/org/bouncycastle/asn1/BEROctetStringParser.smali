@@ -6,7 +6,7 @@
 
 
 # instance fields
-.field public _parser:Lorg/bouncycastle/asn1/ASN1StreamParser;
+.field private _parser:Lorg/bouncycastle/asn1/ASN1StreamParser;
 
 
 # direct methods
@@ -58,7 +58,7 @@
 .end method
 
 .method public toASN1Primitive()Lorg/bouncycastle/asn1/ASN1Primitive;
-    .locals 4
+    .locals 3
 
     :try_start_0
     invoke-virtual {p0}, Lorg/bouncycastle/asn1/BEROctetStringParser;->getLoadedObject()Lorg/bouncycastle/asn1/ASN1Primitive;
@@ -80,13 +80,7 @@
 
     move-result-object v2
 
-    invoke-virtual {v0}, Ljava/io/IOException;->getMessage()Ljava/lang/String;
-
-    move-result-object v3
-
-    invoke-virtual {v2, v3}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
-
-    invoke-virtual {v2}, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
+    invoke-static {v0, v2}, Lorg/bouncycastle/asn1/ASN1ApplicationSpecific$$ExternalSyntheticOutline0;->m(Ljava/io/IOException;Ljava/lang/StringBuilder;)Ljava/lang/String;
 
     move-result-object v2
 

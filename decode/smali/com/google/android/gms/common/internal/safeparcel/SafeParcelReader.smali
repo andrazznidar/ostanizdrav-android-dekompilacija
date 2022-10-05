@@ -331,7 +331,7 @@
 
     const-string v2, "Overread allowed size end="
 
-    invoke-static {v1, v2, p1}, Lcom/google/android/gms/common/api/internal/BasePendingResult$CallbackHandler$$ExternalSyntheticOutline0;->m(ILjava/lang/String;I)Ljava/lang/String;
+    invoke-static {v1, v2, p1}, Lboofcv/alg/misc/HistogramStatistics$$ExternalSyntheticOutline0;->m(ILjava/lang/String;I)Ljava/lang/String;
 
     move-result-object p1
 

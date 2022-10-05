@@ -17,8 +17,8 @@
     c = "de.rki.coronawarnapp.covidcertificate.validation.core.DccValidator"
     f = "DccValidator.kt"
     l = {
-        0x20,
-        0x24
+        0x21,
+        0x25
     }
     m = "validateDcc"
 .end annotation

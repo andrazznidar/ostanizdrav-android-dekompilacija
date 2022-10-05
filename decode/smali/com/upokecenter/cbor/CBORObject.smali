@@ -669,7 +669,7 @@
     :cond_0
     new-instance p0, Lcom/upokecenter/cbor/CBORException;
 
-    const-string p1, "Too many bytes"
+    const-string p1, "Too many bytes. There is data beyond the decoded CBOR Object."
 
     invoke-direct {p0, p1}, Lcom/upokecenter/cbor/CBORException;-><init>(Ljava/lang/String;)V
 
@@ -944,7 +944,7 @@
     :try_start_5
     new-instance p0, Lcom/upokecenter/cbor/CBORException;
 
-    const-string v0, "Too many bytes"
+    const-string v0, "Too many bytes. There is data beyond the decoded CBOR Object."
 
     invoke-direct {p0, v0}, Lcom/upokecenter/cbor/CBORException;-><init>(Ljava/lang/String;)V
 
@@ -1084,6 +1084,8 @@
 .method public static FromObject(D)Lcom/upokecenter/cbor/CBORObject;
     .locals 2
 
+    sget-object v0, Lcom/upokecenter/cbor/CBORUtilities;->EInteger1970:Lcom/upokecenter/numbers/EInteger;
+
     invoke-static {p0, p1}, Ljava/lang/Double;->doubleToRawLongBits(D)J
 
     move-result-wide p0
@@ -1204,186 +1206,6 @@
     move-object p0, v0
 
     :goto_0
-    return-object p0
-.end method
-
-.method public static FromObject(Lcom/upokecenter/numbers/EDecimal;)Lcom/upokecenter/cbor/CBORObject;
-    .locals 6
-
-    if-nez p0, :cond_0
-
-    sget-object p0, Lcom/upokecenter/cbor/CBORObject;->Null:Lcom/upokecenter/cbor/CBORObject;
-
-    return-object p0
-
-    :cond_0
-    invoke-virtual {p0}, Lcom/upokecenter/numbers/EDecimal;->IsInfinity()Z
-
-    move-result v0
-
-    const/4 v1, 0x4
-
-    if-nez v0, :cond_4
-
-    invoke-virtual {p0}, Lcom/upokecenter/numbers/EDecimal;->IsNaN()Z
-
-    move-result v0
-
-    if-nez v0, :cond_4
-
-    invoke-virtual {p0}, Lcom/upokecenter/numbers/EDecimal;->isNegative()Z
-
-    move-result v0
-
-    if-eqz v0, :cond_1
-
-    invoke-virtual {p0}, Lcom/upokecenter/numbers/EDecimal;->isZero()Z
-
-    move-result v0
-
-    if-eqz v0, :cond_1
-
-    goto :goto_0
-
-    :cond_1
-    invoke-virtual {p0}, Lcom/upokecenter/numbers/EDecimal;->getExponent()Lcom/upokecenter/numbers/EInteger;
-
-    move-result-object v0
-
-    invoke-virtual {v0}, Lcom/upokecenter/numbers/EInteger;->CanFitInInt64()Z
-
-    move-result v2
-
-    if-eqz v2, :cond_2
-
-    invoke-virtual {v0}, Lcom/upokecenter/numbers/EInteger;->ToInt64Checked()J
-
-    move-result-wide v2
-
-    invoke-static {v2, v3}, Lcom/upokecenter/cbor/CBORObject;->FromObject(J)Lcom/upokecenter/cbor/CBORObject;
-
-    move-result-object v0
-
-    invoke-virtual {p0}, Lcom/upokecenter/numbers/EDecimal;->getMantissa()Lcom/upokecenter/numbers/EInteger;
-
-    move-result-object p0
-
-    invoke-static {p0}, Lcom/upokecenter/cbor/CBORObject;->FromObject(Lcom/upokecenter/numbers/EInteger;)Lcom/upokecenter/cbor/CBORObject;
-
-    move-result-object p0
-
-    invoke-static {v0, p0}, Lcom/upokecenter/cbor/CBORObject;->NewArray(Lcom/upokecenter/cbor/CBORObject;Lcom/upokecenter/cbor/CBORObject;)Lcom/upokecenter/cbor/CBORObject;
-
-    move-result-object p0
-
-    goto :goto_2
-
-    :cond_2
-    invoke-virtual {v0}, Lcom/upokecenter/numbers/EInteger;->GetSignedBitLengthAsInt64()J
-
-    move-result-wide v2
-
-    const-wide/16 v4, 0x40
-
-    cmp-long v2, v2, v4
-
-    if-lez v2, :cond_3
-
-    const/16 v1, 0x108
-
-    :cond_3
-    invoke-static {v0}, Lcom/upokecenter/cbor/CBORObject;->FromObject(Lcom/upokecenter/numbers/EInteger;)Lcom/upokecenter/cbor/CBORObject;
-
-    move-result-object v0
-
-    invoke-virtual {p0}, Lcom/upokecenter/numbers/EDecimal;->getMantissa()Lcom/upokecenter/numbers/EInteger;
-
-    move-result-object p0
-
-    invoke-static {p0}, Lcom/upokecenter/cbor/CBORObject;->FromObject(Lcom/upokecenter/numbers/EInteger;)Lcom/upokecenter/cbor/CBORObject;
-
-    move-result-object p0
-
-    invoke-static {v0, p0}, Lcom/upokecenter/cbor/CBORObject;->NewArray(Lcom/upokecenter/cbor/CBORObject;Lcom/upokecenter/cbor/CBORObject;)Lcom/upokecenter/cbor/CBORObject;
-
-    move-result-object p0
-
-    goto :goto_2
-
-    :cond_4
-    :goto_0
-    invoke-virtual {p0}, Lcom/upokecenter/numbers/EDecimal;->isNegative()Z
-
-    move-result v0
-
-    invoke-virtual {p0}, Lcom/upokecenter/numbers/EDecimal;->IsInfinity()Z
-
-    move-result v2
-
-    if-eqz v2, :cond_5
-
-    add-int/lit8 v0, v0, 0x2
-
-    :cond_5
-    iget-byte v2, p0, Lcom/upokecenter/numbers/EDecimal;->flags:B
-
-    and-int/2addr v1, v2
-
-    if-eqz v1, :cond_6
-
-    const/4 v1, 0x1
-
-    goto :goto_1
-
-    :cond_6
-    const/4 v1, 0x0
-
-    :goto_1
-    if-eqz v1, :cond_7
-
-    add-int/lit8 v0, v0, 0x4
-
-    :cond_7
-    invoke-virtual {p0}, Lcom/upokecenter/numbers/EDecimal;->IsSignalingNaN()Z
-
-    move-result v1
-
-    if-eqz v1, :cond_8
-
-    add-int/lit8 v0, v0, 0x6
-
-    :cond_8
-    invoke-virtual {p0}, Lcom/upokecenter/numbers/EDecimal;->getExponent()Lcom/upokecenter/numbers/EInteger;
-
-    move-result-object v1
-
-    invoke-static {v1}, Lcom/upokecenter/cbor/CBORObject;->FromObject(Lcom/upokecenter/numbers/EInteger;)Lcom/upokecenter/cbor/CBORObject;
-
-    move-result-object v1
-
-    invoke-virtual {p0}, Lcom/upokecenter/numbers/EDecimal;->getUnsignedMantissa()Lcom/upokecenter/numbers/EInteger;
-
-    move-result-object p0
-
-    invoke-static {p0}, Lcom/upokecenter/cbor/CBORObject;->FromObject(Lcom/upokecenter/numbers/EInteger;)Lcom/upokecenter/cbor/CBORObject;
-
-    move-result-object p0
-
-    invoke-static {v0}, Lcom/upokecenter/cbor/CBORObject;->FromObject(I)Lcom/upokecenter/cbor/CBORObject;
-
-    move-result-object v0
-
-    invoke-static {v1, p0, v0}, Lcom/upokecenter/cbor/CBORObject;->NewArray(Lcom/upokecenter/cbor/CBORObject;Lcom/upokecenter/cbor/CBORObject;Lcom/upokecenter/cbor/CBORObject;)Lcom/upokecenter/cbor/CBORObject;
-
-    move-result-object p0
-
-    const/16 v1, 0x10c
-
-    :goto_2
-    invoke-virtual {p0, v1}, Lcom/upokecenter/cbor/CBORObject;->WithTag(I)Lcom/upokecenter/cbor/CBORObject;
-
-    move-result-object p0
-
     return-object p0
 .end method
 
@@ -1535,7 +1357,7 @@
 .end method
 
 .method public static FromObject(Ljava/lang/Object;Lcom/upokecenter/cbor/PODOptions;I)Lcom/upokecenter/cbor/CBORObject;
-    .locals 26
+    .locals 25
 
     move-object/from16 v0, p0
 
@@ -1616,6 +1438,8 @@
     :cond_4
     instance-of v3, v0, Lcom/upokecenter/numbers/EInteger;
 
+    const/4 v4, 0x0
+
     if-eqz v3, :cond_5
 
     move-object v3, v0
@@ -1625,7 +1449,7 @@
     goto :goto_0
 
     :cond_5
-    const/4 v3, 0x0
+    move-object v3, v4
 
     :goto_0
     if-eqz v3, :cond_6
@@ -1648,63 +1472,225 @@
     goto :goto_1
 
     :cond_7
-    const/4 v3, 0x0
+    move-object v3, v4
 
     :goto_1
-    if-eqz v3, :cond_8
+    const-wide/16 v5, 0x40
 
-    invoke-static {v3}, Lcom/upokecenter/cbor/CBORObject;->FromObject(Lcom/upokecenter/numbers/EDecimal;)Lcom/upokecenter/cbor/CBORObject;
+    const/4 v7, 0x4
+
+    const/4 v8, 0x0
+
+    const/4 v9, 0x1
+
+    if-eqz v3, :cond_10
+
+    invoke-virtual {v3}, Lcom/upokecenter/numbers/EDecimal;->IsInfinity()Z
+
+    move-result v0
+
+    if-nez v0, :cond_b
+
+    invoke-virtual {v3}, Lcom/upokecenter/numbers/EDecimal;->IsNaN()Z
+
+    move-result v0
+
+    if-nez v0, :cond_b
+
+    invoke-virtual {v3}, Lcom/upokecenter/numbers/EDecimal;->isNegative()Z
+
+    move-result v0
+
+    if-eqz v0, :cond_8
+
+    invoke-virtual {v3}, Lcom/upokecenter/numbers/EDecimal;->isZero()Z
+
+    move-result v0
+
+    if-eqz v0, :cond_8
+
+    goto :goto_2
+
+    :cond_8
+    invoke-virtual {v3}, Lcom/upokecenter/numbers/EDecimal;->getExponent()Lcom/upokecenter/numbers/EInteger;
+
+    move-result-object v0
+
+    invoke-virtual {v0}, Lcom/upokecenter/numbers/EInteger;->CanFitInInt64()Z
+
+    move-result v1
+
+    if-eqz v1, :cond_9
+
+    invoke-virtual {v0}, Lcom/upokecenter/numbers/EInteger;->ToInt64Checked()J
+
+    move-result-wide v0
+
+    invoke-static {v0, v1}, Lcom/upokecenter/cbor/CBORObject;->FromObject(J)Lcom/upokecenter/cbor/CBORObject;
+
+    move-result-object v0
+
+    invoke-virtual {v3}, Lcom/upokecenter/numbers/EDecimal;->getMantissa()Lcom/upokecenter/numbers/EInteger;
+
+    move-result-object v1
+
+    invoke-static {v1}, Lcom/upokecenter/cbor/CBORObject;->FromObject(Lcom/upokecenter/numbers/EInteger;)Lcom/upokecenter/cbor/CBORObject;
+
+    move-result-object v1
+
+    invoke-static {v0, v1}, Lcom/upokecenter/cbor/CBORObject;->NewArray(Lcom/upokecenter/cbor/CBORObject;Lcom/upokecenter/cbor/CBORObject;)Lcom/upokecenter/cbor/CBORObject;
+
+    move-result-object v0
+
+    goto :goto_3
+
+    :cond_9
+    invoke-virtual {v0}, Lcom/upokecenter/numbers/EInteger;->GetSignedBitLengthAsInt64()J
+
+    move-result-wide v1
+
+    cmp-long v1, v1, v5
+
+    if-lez v1, :cond_a
+
+    const/16 v7, 0x108
+
+    :cond_a
+    invoke-static {v0}, Lcom/upokecenter/cbor/CBORObject;->FromObject(Lcom/upokecenter/numbers/EInteger;)Lcom/upokecenter/cbor/CBORObject;
+
+    move-result-object v0
+
+    invoke-virtual {v3}, Lcom/upokecenter/numbers/EDecimal;->getMantissa()Lcom/upokecenter/numbers/EInteger;
+
+    move-result-object v1
+
+    invoke-static {v1}, Lcom/upokecenter/cbor/CBORObject;->FromObject(Lcom/upokecenter/numbers/EInteger;)Lcom/upokecenter/cbor/CBORObject;
+
+    move-result-object v1
+
+    invoke-static {v0, v1}, Lcom/upokecenter/cbor/CBORObject;->NewArray(Lcom/upokecenter/cbor/CBORObject;Lcom/upokecenter/cbor/CBORObject;)Lcom/upokecenter/cbor/CBORObject;
+
+    move-result-object v0
+
+    goto :goto_3
+
+    :cond_b
+    :goto_2
+    invoke-virtual {v3}, Lcom/upokecenter/numbers/EDecimal;->isNegative()Z
+
+    move-result v0
+
+    invoke-virtual {v3}, Lcom/upokecenter/numbers/EDecimal;->IsInfinity()Z
+
+    move-result v1
+
+    if-eqz v1, :cond_c
+
+    add-int/lit8 v0, v0, 0x2
+
+    :cond_c
+    iget-byte v1, v3, Lcom/upokecenter/numbers/EDecimal;->flags:B
+
+    and-int/2addr v1, v7
+
+    if-eqz v1, :cond_d
+
+    move v8, v9
+
+    :cond_d
+    if-eqz v8, :cond_e
+
+    add-int/lit8 v0, v0, 0x4
+
+    :cond_e
+    invoke-virtual {v3}, Lcom/upokecenter/numbers/EDecimal;->IsSignalingNaN()Z
+
+    move-result v1
+
+    if-eqz v1, :cond_f
+
+    add-int/lit8 v0, v0, 0x6
+
+    :cond_f
+    invoke-virtual {v3}, Lcom/upokecenter/numbers/EDecimal;->getExponent()Lcom/upokecenter/numbers/EInteger;
+
+    move-result-object v1
+
+    invoke-static {v1}, Lcom/upokecenter/cbor/CBORObject;->FromObject(Lcom/upokecenter/numbers/EInteger;)Lcom/upokecenter/cbor/CBORObject;
+
+    move-result-object v1
+
+    invoke-virtual {v3}, Lcom/upokecenter/numbers/EDecimal;->getUnsignedMantissa()Lcom/upokecenter/numbers/EInteger;
+
+    move-result-object v2
+
+    invoke-static {v2}, Lcom/upokecenter/cbor/CBORObject;->FromObject(Lcom/upokecenter/numbers/EInteger;)Lcom/upokecenter/cbor/CBORObject;
+
+    move-result-object v2
+
+    invoke-static {v0}, Lcom/upokecenter/cbor/CBORObject;->FromObject(I)Lcom/upokecenter/cbor/CBORObject;
+
+    move-result-object v0
+
+    invoke-static {v1, v2, v0}, Lcom/upokecenter/cbor/CBORObject;->NewArray(Lcom/upokecenter/cbor/CBORObject;Lcom/upokecenter/cbor/CBORObject;Lcom/upokecenter/cbor/CBORObject;)Lcom/upokecenter/cbor/CBORObject;
+
+    move-result-object v0
+
+    const/16 v7, 0x10c
+
+    :goto_3
+    invoke-virtual {v0, v7}, Lcom/upokecenter/cbor/CBORObject;->WithTag(I)Lcom/upokecenter/cbor/CBORObject;
 
     move-result-object v0
 
     return-object v0
 
-    :cond_8
+    :cond_10
     instance-of v3, v0, Lcom/upokecenter/numbers/EFloat;
 
-    if-eqz v3, :cond_9
+    if-eqz v3, :cond_11
 
     move-object v3, v0
 
     check-cast v3, Lcom/upokecenter/numbers/EFloat;
 
-    goto :goto_2
+    goto :goto_4
 
-    :cond_9
-    const/4 v3, 0x0
+    :cond_11
+    move-object v3, v4
 
-    :goto_2
-    const/4 v5, 0x5
+    :goto_4
+    const/4 v10, 0x5
 
-    if-eqz v3, :cond_11
+    if-eqz v3, :cond_19
 
     invoke-virtual {v3}, Lcom/upokecenter/numbers/EFloat;->IsInfinity()Z
 
     move-result v0
 
-    if-nez v0, :cond_d
+    if-nez v0, :cond_15
 
     invoke-virtual {v3}, Lcom/upokecenter/numbers/EFloat;->IsNaN()Z
 
     move-result v0
 
-    if-nez v0, :cond_d
+    if-nez v0, :cond_15
 
     invoke-virtual {v3}, Lcom/upokecenter/numbers/EFloat;->isNegative()Z
 
     move-result v0
 
-    if-eqz v0, :cond_a
+    if-eqz v0, :cond_12
 
     invoke-virtual {v3}, Lcom/upokecenter/numbers/EFloat;->isZero()Z
 
     move-result v0
 
-    if-eqz v0, :cond_a
+    if-eqz v0, :cond_12
 
-    goto :goto_3
+    goto :goto_5
 
-    :cond_a
+    :cond_12
     invoke-virtual {v3}, Lcom/upokecenter/numbers/EFloat;->getExponent()Lcom/upokecenter/numbers/EInteger;
 
     move-result-object v0
@@ -1713,7 +1699,7 @@
 
     move-result v1
 
-    if-eqz v1, :cond_b
+    if-eqz v1, :cond_13
 
     invoke-virtual {v0}, Lcom/upokecenter/numbers/EInteger;->ToInt64Checked()J
 
@@ -1735,24 +1721,22 @@
 
     move-result-object v0
 
-    goto :goto_4
+    goto :goto_6
 
-    :cond_b
+    :cond_13
     invoke-virtual {v0}, Lcom/upokecenter/numbers/EInteger;->GetSignedBitLengthAsInt64()J
 
     move-result-wide v1
 
-    const-wide/16 v6, 0x40
+    cmp-long v1, v1, v5
 
-    cmp-long v1, v1, v6
-
-    if-lez v1, :cond_c
+    if-lez v1, :cond_14
 
     const/16 v1, 0x109
 
-    move v5, v1
+    move v10, v1
 
-    :cond_c
+    :cond_14
     invoke-static {v0}, Lcom/upokecenter/cbor/CBORObject;->FromObject(Lcom/upokecenter/numbers/EInteger;)Lcom/upokecenter/cbor/CBORObject;
 
     move-result-object v0
@@ -1769,10 +1753,10 @@
 
     move-result-object v0
 
-    goto :goto_4
+    goto :goto_6
 
-    :cond_d
-    :goto_3
+    :cond_15
+    :goto_5
     invoke-virtual {v3}, Lcom/upokecenter/numbers/EFloat;->isNegative()Z
 
     move-result v0
@@ -1781,29 +1765,29 @@
 
     move-result v1
 
-    if-eqz v1, :cond_e
+    if-eqz v1, :cond_16
 
     add-int/lit8 v0, v0, 0x2
 
-    :cond_e
+    :cond_16
     invoke-virtual {v3}, Lcom/upokecenter/numbers/EFloat;->IsQuietNaN()Z
 
     move-result v1
 
-    if-eqz v1, :cond_f
+    if-eqz v1, :cond_17
 
     add-int/lit8 v0, v0, 0x4
 
-    :cond_f
+    :cond_17
     invoke-virtual {v3}, Lcom/upokecenter/numbers/EFloat;->IsSignalingNaN()Z
 
     move-result v1
 
-    if-eqz v1, :cond_10
+    if-eqz v1, :cond_18
 
     add-int/lit8 v0, v0, 0x6
 
-    :cond_10
+    :cond_18
     invoke-virtual {v3}, Lcom/upokecenter/numbers/EFloat;->getExponent()Lcom/upokecenter/numbers/EInteger;
 
     move-result-object v1
@@ -1828,65 +1812,59 @@
 
     move-result-object v0
 
-    const/16 v5, 0x10d
+    const/16 v10, 0x10d
 
-    :goto_4
-    invoke-virtual {v0, v5}, Lcom/upokecenter/cbor/CBORObject;->WithTag(I)Lcom/upokecenter/cbor/CBORObject;
+    :goto_6
+    invoke-virtual {v0, v10}, Lcom/upokecenter/cbor/CBORObject;->WithTag(I)Lcom/upokecenter/cbor/CBORObject;
 
     move-result-object v0
 
     return-object v0
 
-    :cond_11
+    :cond_19
     instance-of v3, v0, Lcom/upokecenter/numbers/ERational;
 
-    if-eqz v3, :cond_12
+    if-eqz v3, :cond_1a
 
     move-object v3, v0
 
     check-cast v3, Lcom/upokecenter/numbers/ERational;
 
-    goto :goto_5
+    goto :goto_7
 
-    :cond_12
-    const/4 v3, 0x0
+    :cond_1a
+    move-object v3, v4
 
-    :goto_5
-    const/4 v6, 0x4
-
-    const/4 v7, 0x0
-
-    const/4 v8, 0x1
-
-    if-eqz v3, :cond_19
+    :goto_7
+    if-eqz v3, :cond_21
 
     invoke-virtual {v3}, Lcom/upokecenter/numbers/ERational;->IsInfinity()Z
 
     move-result v0
 
-    if-nez v0, :cond_14
+    if-nez v0, :cond_1c
 
     invoke-virtual {v3}, Lcom/upokecenter/numbers/ERational;->IsNaN()Z
 
     move-result v0
 
-    if-nez v0, :cond_14
+    if-nez v0, :cond_1c
 
     invoke-virtual {v3}, Lcom/upokecenter/numbers/ERational;->isNegative()Z
 
     move-result v0
 
-    if-eqz v0, :cond_13
+    if-eqz v0, :cond_1b
 
     invoke-virtual {v3}, Lcom/upokecenter/numbers/ERational;->isZero()Z
 
     move-result v0
 
-    if-eqz v0, :cond_13
+    if-eqz v0, :cond_1b
 
-    goto :goto_6
+    goto :goto_8
 
-    :cond_13
+    :cond_1b
     const/16 v0, 0x1e
 
     invoke-virtual {v3}, Lcom/upokecenter/numbers/ERational;->getNumerator()Lcom/upokecenter/numbers/EInteger;
@@ -1909,10 +1887,10 @@
 
     move-result-object v1
 
-    goto :goto_7
+    goto :goto_9
 
-    :cond_14
-    :goto_6
+    :cond_1c
+    :goto_8
     invoke-virtual {v3}, Lcom/upokecenter/numbers/ERational;->isNegative()Z
 
     move-result v0
@@ -1921,34 +1899,34 @@
 
     move-result v1
 
-    if-eqz v1, :cond_15
+    if-eqz v1, :cond_1d
 
     add-int/lit8 v0, v0, 0x2
 
-    :cond_15
+    :cond_1d
     iget-byte v1, v3, Lcom/upokecenter/numbers/ERational;->flags:B
 
-    and-int/2addr v1, v6
+    and-int/2addr v1, v7
 
-    if-eqz v1, :cond_16
+    if-eqz v1, :cond_1e
 
-    move v7, v8
+    move v8, v9
 
-    :cond_16
-    if-eqz v7, :cond_17
+    :cond_1e
+    if-eqz v8, :cond_1f
 
     add-int/lit8 v0, v0, 0x4
 
-    :cond_17
+    :cond_1f
     invoke-virtual {v3}, Lcom/upokecenter/numbers/ERational;->IsSignalingNaN()Z
 
     move-result v1
 
-    if-eqz v1, :cond_18
+    if-eqz v1, :cond_20
 
     add-int/lit8 v0, v0, 0x6
 
-    :cond_18
+    :cond_20
     invoke-virtual {v3}, Lcom/upokecenter/numbers/ERational;->getUnsignedNumerator()Lcom/upokecenter/numbers/EInteger;
 
     move-result-object v1
@@ -1975,21 +1953,21 @@
 
     const/16 v0, 0x10e
 
-    :goto_7
+    :goto_9
     invoke-virtual {v1, v0}, Lcom/upokecenter/cbor/CBORObject;->WithTag(I)Lcom/upokecenter/cbor/CBORObject;
 
     move-result-object v0
 
     return-object v0
 
-    :cond_19
+    :cond_21
     instance-of v3, v0, Ljava/lang/Short;
 
-    const/16 v9, 0x18
+    const/16 v5, 0x18
 
-    const/16 v10, 0x20
+    const/16 v6, 0x20
 
-    if-eqz v3, :cond_1c
+    if-eqz v3, :cond_24
 
     check-cast v0, Ljava/lang/Short;
 
@@ -1997,47 +1975,47 @@
 
     move-result v0
 
-    if-ltz v0, :cond_1a
+    if-ltz v0, :cond_22
 
-    if-ge v0, v9, :cond_1a
+    if-ge v0, v5, :cond_22
 
     sget-object v1, Lcom/upokecenter/cbor/CBORObject;->FixedObjects:[Lcom/upokecenter/cbor/CBORObject;
 
     aget-object v0, v1, v0
 
-    goto :goto_8
+    goto :goto_a
 
-    :cond_1a
+    :cond_22
     const/16 v1, -0x18
 
-    if-lt v0, v1, :cond_1b
+    if-lt v0, v1, :cond_23
 
-    if-gez v0, :cond_1b
+    if-gez v0, :cond_23
 
     sget-object v1, Lcom/upokecenter/cbor/CBORObject;->FixedObjects:[Lcom/upokecenter/cbor/CBORObject;
 
-    add-int/2addr v0, v8
+    add-int/2addr v0, v9
 
-    sub-int/2addr v10, v0
+    sub-int/2addr v6, v0
 
-    aget-object v0, v1, v10
+    aget-object v0, v1, v6
 
-    goto :goto_8
+    goto :goto_a
 
-    :cond_1b
+    :cond_23
     int-to-long v0, v0
 
     invoke-static {v0, v1}, Lcom/upokecenter/cbor/CBORObject;->FromObject(J)Lcom/upokecenter/cbor/CBORObject;
 
     move-result-object v0
 
-    :goto_8
+    :goto_a
     return-object v0
 
-    :cond_1c
+    :cond_24
     instance-of v3, v0, Ljava/lang/Character;
 
-    if-eqz v3, :cond_1d
+    if-eqz v3, :cond_25
 
     check-cast v0, Ljava/lang/Character;
 
@@ -2051,10 +2029,10 @@
 
     return-object v0
 
-    :cond_1d
+    :cond_25
     instance-of v3, v0, Ljava/lang/Boolean;
 
-    if-eqz v3, :cond_1f
+    if-eqz v3, :cond_27
 
     check-cast v0, Ljava/lang/Boolean;
 
@@ -2062,22 +2040,22 @@
 
     move-result v0
 
-    if-eqz v0, :cond_1e
+    if-eqz v0, :cond_26
 
     sget-object v0, Lcom/upokecenter/cbor/CBORObject;->True:Lcom/upokecenter/cbor/CBORObject;
 
-    goto :goto_9
+    goto :goto_b
 
-    :cond_1e
+    :cond_26
     sget-object v0, Lcom/upokecenter/cbor/CBORObject;->False:Lcom/upokecenter/cbor/CBORObject;
 
-    :goto_9
+    :goto_b
     return-object v0
 
-    :cond_1f
+    :cond_27
     instance-of v3, v0, Ljava/lang/Byte;
 
-    if-eqz v3, :cond_20
+    if-eqz v3, :cond_28
 
     check-cast v0, Ljava/lang/Byte;
 
@@ -2093,18 +2071,20 @@
 
     return-object v0
 
-    :cond_20
+    :cond_28
     instance-of v3, v0, Ljava/lang/Float;
 
     const/16 v11, 0x8
 
-    if-eqz v3, :cond_21
+    if-eqz v3, :cond_29
 
     check-cast v0, Ljava/lang/Float;
 
     invoke-virtual {v0}, Ljava/lang/Float;->floatValue()F
 
     move-result v0
+
+    sget-object v1, Lcom/upokecenter/cbor/CBORUtilities;->EInteger1970:Lcom/upokecenter/numbers/EInteger;
 
     invoke-static {v0}, Ljava/lang/Float;->floatToRawIntBits(F)I
 
@@ -2124,10 +2104,10 @@
 
     return-object v2
 
-    :cond_21
+    :cond_29
     instance-of v3, v0, Ljava/lang/Double;
 
-    if-eqz v3, :cond_22
+    if-eqz v3, :cond_2a
 
     check-cast v0, Ljava/lang/Double;
 
@@ -2141,22 +2121,22 @@
 
     return-object v0
 
-    :cond_22
+    :cond_2a
     instance-of v3, v0, [B
 
-    if-eqz v3, :cond_23
+    if-eqz v3, :cond_2b
 
     move-object v3, v0
 
     check-cast v3, [B
 
-    goto :goto_a
+    goto :goto_c
 
-    :cond_23
-    const/4 v3, 0x0
+    :cond_2b
+    move-object v3, v4
 
-    :goto_a
-    if-eqz v3, :cond_24
+    :goto_c
+    if-eqz v3, :cond_2c
 
     invoke-static {v3}, Lcom/upokecenter/cbor/CBORObject;->FromObject([B)Lcom/upokecenter/cbor/CBORObject;
 
@@ -2164,10 +2144,10 @@
 
     return-object v0
 
-    :cond_24
+    :cond_2c
     instance-of v3, v0, Ljava/util/Map;
 
-    if-eqz v3, :cond_26
+    if-eqz v3, :cond_2e
 
     invoke-static {}, Lcom/upokecenter/cbor/CBORObject;->NewMap()Lcom/upokecenter/cbor/CBORObject;
 
@@ -2183,12 +2163,12 @@
 
     move-result-object v0
 
-    :goto_b
+    :goto_d
     invoke-interface {v0}, Ljava/util/Iterator;->hasNext()Z
 
     move-result v4
 
-    if-eqz v4, :cond_25
+    if-eqz v4, :cond_2d
 
     invoke-interface {v0}, Ljava/util/Iterator;->next()Ljava/lang/Object;
 
@@ -2216,12 +2196,12 @@
 
     invoke-virtual {v3, v5, v4}, Lcom/upokecenter/cbor/CBORObject;->set(Lcom/upokecenter/cbor/CBORObject;Lcom/upokecenter/cbor/CBORObject;)V
 
-    goto :goto_b
+    goto :goto_d
 
-    :cond_25
+    :cond_2d
     return-object v3
 
-    :cond_26
+    :cond_2e
     invoke-virtual/range {p0 .. p0}, Ljava/lang/Object;->getClass()Ljava/lang/Class;
 
     move-result-object v3
@@ -2230,7 +2210,7 @@
 
     move-result v3
 
-    if-eqz v3, :cond_28
+    if-eqz v3, :cond_32
 
     sget-object v3, Lcom/upokecenter/cbor/PropertyMap;->propertyLists:Ljava/util/Map;
 
@@ -2242,10 +2222,18 @@
 
     move-result-object v4
 
-    :goto_c
-    if-ge v7, v3, :cond_27
+    instance-of v5, v0, [I
 
-    invoke-static {v0, v7}, Ljava/lang/reflect/Array;->get(Ljava/lang/Object;I)Ljava/lang/Object;
+    if-eqz v5, :cond_2f
+
+    check-cast v0, [I
+
+    :goto_e
+    if-ge v8, v3, :cond_31
+
+    aget v5, v0, v8
+
+    invoke-static {v5}, Ljava/lang/Integer;->valueOf(I)Ljava/lang/Integer;
 
     move-result-object v5
 
@@ -2257,17 +2245,69 @@
 
     invoke-virtual {v4, v5}, Lcom/upokecenter/cbor/CBORObject;->Add(Lcom/upokecenter/cbor/CBORObject;)Lcom/upokecenter/cbor/CBORObject;
 
-    add-int/lit8 v7, v7, 0x1
+    add-int/lit8 v8, v8, 0x1
 
-    goto :goto_c
+    goto :goto_e
 
-    :cond_27
+    :cond_2f
+    instance-of v5, v0, [Ljava/lang/Integer;
+
+    if-eqz v5, :cond_30
+
+    check-cast v0, [Ljava/lang/Integer;
+
+    :goto_f
+    if-ge v8, v3, :cond_31
+
+    aget-object v5, v0, v8
+
+    invoke-virtual {v5}, Ljava/lang/Integer;->intValue()I
+
+    move-result v5
+
+    invoke-static {v5}, Ljava/lang/Integer;->valueOf(I)Ljava/lang/Integer;
+
+    move-result-object v5
+
+    add-int/lit8 v6, v2, 0x1
+
+    invoke-static {v5, v1, v6}, Lcom/upokecenter/cbor/CBORObject;->FromObject(Ljava/lang/Object;Lcom/upokecenter/cbor/PODOptions;I)Lcom/upokecenter/cbor/CBORObject;
+
+    move-result-object v5
+
+    invoke-virtual {v4, v5}, Lcom/upokecenter/cbor/CBORObject;->Add(Lcom/upokecenter/cbor/CBORObject;)Lcom/upokecenter/cbor/CBORObject;
+
+    add-int/lit8 v8, v8, 0x1
+
+    goto :goto_f
+
+    :cond_30
+    :goto_10
+    if-ge v8, v3, :cond_31
+
+    invoke-static {v0, v8}, Ljava/lang/reflect/Array;->get(Ljava/lang/Object;I)Ljava/lang/Object;
+
+    move-result-object v5
+
+    add-int/lit8 v6, v2, 0x1
+
+    invoke-static {v5, v1, v6}, Lcom/upokecenter/cbor/CBORObject;->FromObject(Ljava/lang/Object;Lcom/upokecenter/cbor/PODOptions;I)Lcom/upokecenter/cbor/CBORObject;
+
+    move-result-object v5
+
+    invoke-virtual {v4, v5}, Lcom/upokecenter/cbor/CBORObject;->Add(Lcom/upokecenter/cbor/CBORObject;)Lcom/upokecenter/cbor/CBORObject;
+
+    add-int/lit8 v8, v8, 0x1
+
+    goto :goto_10
+
+    :cond_31
     return-object v4
 
-    :cond_28
+    :cond_32
     instance-of v3, v0, Ljava/lang/Iterable;
 
-    if-eqz v3, :cond_2a
+    if-eqz v3, :cond_34
 
     invoke-static {}, Lcom/upokecenter/cbor/CBORObject;->NewArray()Lcom/upokecenter/cbor/CBORObject;
 
@@ -2279,12 +2319,12 @@
 
     move-result-object v0
 
-    :goto_d
+    :goto_11
     invoke-interface {v0}, Ljava/util/Iterator;->hasNext()Z
 
     move-result v4
 
-    if-eqz v4, :cond_29
+    if-eqz v4, :cond_33
 
     invoke-interface {v0}, Ljava/util/Iterator;->next()Ljava/lang/Object;
 
@@ -2298,15 +2338,15 @@
 
     invoke-virtual {v3, v4}, Lcom/upokecenter/cbor/CBORObject;->Add(Lcom/upokecenter/cbor/CBORObject;)Lcom/upokecenter/cbor/CBORObject;
 
-    goto :goto_d
+    goto :goto_11
 
-    :cond_29
+    :cond_33
     return-object v3
 
-    :cond_2a
+    :cond_34
     instance-of v3, v0, Ljava/lang/Enum;
 
-    if-eqz v3, :cond_2b
+    if-eqz v3, :cond_35
 
     check-cast v0, Ljava/lang/Enum;
 
@@ -2326,12 +2366,12 @@
 
     return-object v0
 
-    :cond_2b
+    :cond_35
     instance-of v3, v0, Ljava/util/Date;
 
     const/4 v12, 0x7
 
-    if-eqz v3, :cond_2c
+    if-eqz v3, :cond_36
 
     new-instance v1, Lcom/upokecenter/cbor/CBORDateConverter;
 
@@ -2342,11 +2382,11 @@
     :try_start_0
     new-array v2, v12, [I
 
-    new-array v3, v8, [Lcom/upokecenter/numbers/EInteger;
+    new-array v3, v9, [Lcom/upokecenter/numbers/EInteger;
 
     invoke-static {v0, v3, v2}, Lcom/upokecenter/cbor/PropertyMap;->BreakDownDateTime(Ljava/util/Date;[Lcom/upokecenter/numbers/EInteger;[I)V
 
-    aget-object v0, v3, v7
+    aget-object v0, v3, v8
 
     invoke-virtual {v1, v0, v2}, Lcom/upokecenter/cbor/CBORDateConverter;->DateTimeFieldsToCBORObject(Lcom/upokecenter/numbers/EInteger;[I)Lcom/upokecenter/cbor/CBORObject;
 
@@ -2369,10 +2409,10 @@
 
     throw v1
 
-    :cond_2c
+    :cond_36
     instance-of v3, v0, Ljava/net/URI;
 
-    if-eqz v3, :cond_32
+    if-eqz v3, :cond_3c
 
     check-cast v0, Ljava/net/URI;
 
@@ -2380,16 +2420,16 @@
 
     move-result-object v0
 
-    move v1, v7
+    move v1, v8
 
     move v2, v1
 
-    :goto_e
+    :goto_12
     invoke-virtual {v0}, Ljava/lang/String;->length()I
 
     move-result v3
 
-    if-ge v1, v3, :cond_2e
+    if-ge v1, v3, :cond_38
 
     invoke-virtual {v0, v1}, Ljava/lang/String;->charAt(I)C
 
@@ -2397,64 +2437,62 @@
 
     const/16 v4, 0x80
 
-    if-lt v3, v4, :cond_2d
+    if-lt v3, v4, :cond_37
 
+    move v3, v9
+
+    goto :goto_13
+
+    :cond_37
     move v3, v8
 
-    goto :goto_f
-
-    :cond_2d
-    move v3, v7
-
-    :goto_f
+    :goto_13
     or-int/2addr v2, v3
 
     add-int/lit8 v1, v1, 0x1
 
-    goto :goto_e
+    goto :goto_12
 
-    :cond_2e
-    if-eqz v2, :cond_2f
+    :cond_38
+    if-eqz v2, :cond_39
 
-    const/16 v10, 0x10a
+    const/16 v6, 0x10a
 
-    :cond_2f
+    :cond_39
     invoke-virtual {v0}, Ljava/lang/String;->length()I
 
     move-result v1
 
-    invoke-static {v0, v7, v1, v8}, Lcom/upokecenter/cbor/URIUtility;->SplitIRI(Ljava/lang/String;III)[I
+    invoke-static {v0, v8, v1, v9}, Lcom/upokecenter/cbor/URIUtility;->SplitIRI(Ljava/lang/String;III)[I
 
     move-result-object v1
 
-    if-eqz v1, :cond_30
+    if-eqz v1, :cond_3a
 
-    aget v1, v1, v7
+    aget v1, v1, v8
 
-    if-ltz v1, :cond_30
+    if-ltz v1, :cond_3a
 
-    move v7, v8
+    move v8, v9
 
-    :cond_30
-    if-nez v7, :cond_31
+    :cond_3a
+    if-nez v8, :cond_3b
 
-    const/16 v10, 0x10b
+    const/16 v6, 0x10b
 
-    :cond_31
-    invoke-static {v0, v10}, Lcom/upokecenter/cbor/CBORObject;->FromObjectAndTag(Ljava/lang/Object;I)Lcom/upokecenter/cbor/CBORObject;
+    :cond_3b
+    invoke-static {v0, v6}, Lcom/upokecenter/cbor/CBORObject;->FromObjectAndTag(Ljava/lang/Object;I)Lcom/upokecenter/cbor/CBORObject;
 
     move-result-object v0
 
     return-object v0
 
-    :cond_32
+    :cond_3c
     instance-of v3, v0, Ljava/util/UUID;
 
-    const/4 v14, 0x3
+    const/4 v14, 0x2
 
-    const/4 v15, 0x2
-
-    if-eqz v3, :cond_33
+    if-eqz v3, :cond_3d
 
     check-cast v0, Ljava/util/UUID;
 
@@ -2470,27 +2508,15 @@
 
     invoke-virtual {v0}, Ljava/util/UUID;->getMostSignificantBits()J
 
-    move-result-wide v16
+    move-result-wide v15
 
     const/16 v0, 0x38
 
-    shr-long v18, v16, v0
+    shr-long v17, v15, v0
 
-    const-wide/16 v20, 0xff
+    const-wide/16 v19, 0xff
 
-    and-long v12, v18, v20
-
-    long-to-int v12, v12
-
-    int-to-byte v12, v12
-
-    aput-byte v12, v2, v7
-
-    const/16 v7, 0x30
-
-    shr-long v12, v16, v7
-
-    and-long v12, v12, v20
+    and-long v12, v17, v19
 
     long-to-int v12, v12
 
@@ -2498,21 +2524,23 @@
 
     aput-byte v12, v2, v8
 
-    const/16 v8, 0x28
+    const/16 v8, 0x30
 
-    shr-long v12, v16, v8
+    shr-long v12, v15, v8
 
-    and-long v12, v12, v20
+    and-long v12, v12, v19
 
     long-to-int v12, v12
 
     int-to-byte v12, v12
 
-    aput-byte v12, v2, v15
+    aput-byte v12, v2, v9
 
-    shr-long v12, v16, v10
+    const/16 v9, 0x28
 
-    and-long v12, v12, v20
+    shr-long v12, v15, v9
+
+    and-long v12, v12, v19
 
     long-to-int v12, v12
 
@@ -2520,97 +2548,109 @@
 
     aput-byte v12, v2, v14
 
-    shr-long v12, v16, v9
+    shr-long v12, v15, v6
 
-    and-long v12, v12, v20
+    and-long v12, v12, v19
 
     long-to-int v12, v12
 
     int-to-byte v12, v12
 
-    aput-byte v12, v2, v6
+    const/4 v13, 0x3
 
-    shr-long v12, v16, v1
+    aput-byte v12, v2, v13
 
-    and-long v12, v12, v20
+    shr-long v12, v15, v5
 
-    long-to-int v6, v12
+    and-long v12, v12, v19
 
-    int-to-byte v6, v6
+    long-to-int v12, v12
 
-    aput-byte v6, v2, v5
+    int-to-byte v12, v12
 
-    shr-long v5, v16, v11
+    aput-byte v12, v2, v7
 
-    and-long v5, v5, v20
+    shr-long v12, v15, v1
 
-    long-to-int v5, v5
+    and-long v12, v12, v19
 
-    int-to-byte v5, v5
+    long-to-int v7, v12
 
-    const/4 v6, 0x6
+    int-to-byte v7, v7
 
-    aput-byte v5, v2, v6
+    aput-byte v7, v2, v10
 
-    and-long v5, v16, v20
+    shr-long v12, v15, v11
 
-    long-to-int v5, v5
+    and-long v12, v12, v19
 
-    int-to-byte v5, v5
+    long-to-int v7, v12
 
-    const/4 v6, 0x7
+    int-to-byte v7, v7
 
-    aput-byte v5, v2, v6
+    const/4 v10, 0x6
 
-    shr-long v5, v3, v0
+    aput-byte v7, v2, v10
 
-    and-long v5, v5, v20
+    and-long v12, v15, v19
 
-    long-to-int v0, v5
+    long-to-int v7, v12
+
+    int-to-byte v7, v7
+
+    const/4 v10, 0x7
+
+    aput-byte v7, v2, v10
+
+    shr-long v12, v3, v0
+
+    and-long v12, v12, v19
+
+    long-to-int v0, v12
 
     int-to-byte v0, v0
 
     aput-byte v0, v2, v11
 
-    shr-long v5, v3, v7
+    shr-long v7, v3, v8
 
-    and-long v5, v5, v20
+    and-long v7, v7, v19
 
-    long-to-int v0, v5
-
-    int-to-byte v0, v0
-
-    const/16 v5, 0x9
-
-    aput-byte v0, v2, v5
-
-    shr-long v5, v3, v8
-
-    and-long v5, v5, v20
-
-    long-to-int v0, v5
+    long-to-int v0, v7
 
     int-to-byte v0, v0
 
-    const/16 v5, 0xa
+    const/16 v7, 0x9
 
-    aput-byte v0, v2, v5
+    aput-byte v0, v2, v7
 
-    shr-long v5, v3, v10
+    shr-long v7, v3, v9
 
-    and-long v5, v5, v20
+    and-long v7, v7, v19
 
-    long-to-int v0, v5
+    long-to-int v0, v7
 
     int-to-byte v0, v0
 
-    const/16 v5, 0xb
+    const/16 v7, 0xa
 
-    aput-byte v0, v2, v5
+    aput-byte v0, v2, v7
 
-    shr-long v5, v3, v9
+    shr-long v6, v3, v6
 
-    and-long v5, v5, v20
+    and-long v6, v6, v19
+
+    long-to-int v0, v6
+
+    int-to-byte v0, v0
+
+    const/16 v6, 0xb
+
+    aput-byte v0, v2, v6
+
+    shr-long v5, v3, v5
+
+    and-long v5, v5, v19
 
     long-to-int v0, v5
 
@@ -2622,7 +2662,7 @@
 
     shr-long v0, v3, v1
 
-    and-long v0, v0, v20
+    and-long v0, v0, v19
 
     long-to-int v0, v0
 
@@ -2634,7 +2674,7 @@
 
     shr-long v0, v3, v11
 
-    and-long v0, v0, v20
+    and-long v0, v0, v19
 
     long-to-int v0, v0
 
@@ -2644,7 +2684,7 @@
 
     aput-byte v0, v2, v1
 
-    and-long v0, v3, v20
+    and-long v0, v3, v19
 
     long-to-int v0, v0
 
@@ -2662,12 +2702,12 @@
 
     return-object v0
 
-    :cond_33
+    :cond_3d
     sget-object v3, Lcom/upokecenter/cbor/PropertyMap;->propertyLists:Ljava/util/Map;
 
     instance-of v3, v0, Ljava/math/BigDecimal;
 
-    if-eqz v3, :cond_34
+    if-eqz v3, :cond_3f
 
     move-object v3, v0
 
@@ -2681,7 +2721,7 @@
 
     move-result-object v5
 
-    invoke-static {v5, v7}, Lcom/upokecenter/numbers/EInteger;->FromBytes([BZ)Lcom/upokecenter/numbers/EInteger;
+    invoke-static {v5, v8}, Lcom/upokecenter/numbers/EInteger;->FromBytes([BZ)Lcom/upokecenter/numbers/EInteger;
 
     move-result-object v5
 
@@ -2689,28 +2729,57 @@
 
     move-result v3
 
-    invoke-static {v3}, Lcom/upokecenter/numbers/EInteger;->FromInt32(I)Lcom/upokecenter/numbers/EInteger;
+    const/high16 v6, -0x80000000
+
+    if-ne v3, v6, :cond_3e
+
+    int-to-long v10, v3
+
+    neg-long v10, v10
+
+    invoke-static {v10, v11}, Lcom/upokecenter/cbor/CBORObject;->FromObject(J)Lcom/upokecenter/cbor/CBORObject;
 
     move-result-object v3
 
-    invoke-virtual {v3}, Lcom/upokecenter/numbers/EInteger;->Negate()Lcom/upokecenter/numbers/EInteger;
+    invoke-static {v5}, Lcom/upokecenter/cbor/CBORObject;->FromObject(Lcom/upokecenter/numbers/EInteger;)Lcom/upokecenter/cbor/CBORObject;
+
+    move-result-object v5
+
+    invoke-static {v3, v5}, Lcom/upokecenter/cbor/CBORObject;->NewArray(Lcom/upokecenter/cbor/CBORObject;Lcom/upokecenter/cbor/CBORObject;)Lcom/upokecenter/cbor/CBORObject;
 
     move-result-object v3
 
-    invoke-static {v5, v3}, Lcom/upokecenter/numbers/EDecimal;->Create(Lcom/upokecenter/numbers/EInteger;Lcom/upokecenter/numbers/EInteger;)Lcom/upokecenter/numbers/EDecimal;
+    invoke-virtual {v3, v7}, Lcom/upokecenter/cbor/CBORObject;->WithTag(I)Lcom/upokecenter/cbor/CBORObject;
 
     move-result-object v3
 
-    invoke-static {v3}, Lcom/upokecenter/cbor/CBORObject;->FromObject(Lcom/upokecenter/numbers/EDecimal;)Lcom/upokecenter/cbor/CBORObject;
+    goto :goto_14
+
+    :cond_3e
+    neg-int v3, v3
+
+    invoke-static {v3}, Lcom/upokecenter/cbor/CBORObject;->FromObject(I)Lcom/upokecenter/cbor/CBORObject;
 
     move-result-object v3
 
-    goto :goto_10
+    invoke-static {v5}, Lcom/upokecenter/cbor/CBORObject;->FromObject(Lcom/upokecenter/numbers/EInteger;)Lcom/upokecenter/cbor/CBORObject;
 
-    :cond_34
+    move-result-object v5
+
+    invoke-static {v3, v5}, Lcom/upokecenter/cbor/CBORObject;->NewArray(Lcom/upokecenter/cbor/CBORObject;Lcom/upokecenter/cbor/CBORObject;)Lcom/upokecenter/cbor/CBORObject;
+
+    move-result-object v3
+
+    invoke-virtual {v3, v7}, Lcom/upokecenter/cbor/CBORObject;->WithTag(I)Lcom/upokecenter/cbor/CBORObject;
+
+    move-result-object v3
+
+    goto :goto_14
+
+    :cond_3f
     instance-of v3, v0, Ljava/math/BigInteger;
 
-    if-eqz v3, :cond_35
+    if-eqz v3, :cond_40
 
     move-object v3, v0
 
@@ -2720,7 +2789,7 @@
 
     move-result-object v3
 
-    invoke-static {v3, v7}, Lcom/upokecenter/numbers/EInteger;->FromBytes([BZ)Lcom/upokecenter/numbers/EInteger;
+    invoke-static {v3, v8}, Lcom/upokecenter/numbers/EInteger;->FromBytes([BZ)Lcom/upokecenter/numbers/EInteger;
 
     move-result-object v3
 
@@ -2728,299 +2797,77 @@
 
     move-result-object v3
 
-    goto :goto_10
+    goto :goto_14
 
-    :cond_35
-    const/4 v3, 0x0
+    :cond_40
+    move-object v3, v4
 
-    :goto_10
-    if-eqz v3, :cond_36
+    :goto_14
+    if-eqz v3, :cond_41
 
     return-object v3
 
-    :cond_36
+    :cond_41
     invoke-static {}, Lcom/upokecenter/cbor/CBORObject;->NewMap()Lcom/upokecenter/cbor/CBORObject;
 
     move-result-object v3
 
     iget-boolean v5, v1, Lcom/upokecenter/cbor/PODOptions;->propVarusecamelcase:Z
 
-    new-instance v6, Ljava/util/ArrayList;
-
-    invoke-direct {v6}, Ljava/util/ArrayList;-><init>()V
-
     invoke-virtual/range {p0 .. p0}, Ljava/lang/Object;->getClass()Ljava/lang/Class;
 
-    move-result-object v9
+    move-result-object v6
 
-    invoke-virtual {v9}, Ljava/lang/Class;->getName()Ljava/lang/String;
+    sget-object v7, Lcom/upokecenter/cbor/PropertyMap;->propertyLists:Ljava/util/Map;
 
-    move-result-object v10
-
-    const-string v11, "java."
-
-    invoke-virtual {v10, v11}, Ljava/lang/String;->startsWith(Ljava/lang/String;)Z
-
-    move-result v11
-
-    if-nez v11, :cond_37
-
-    const-string v11, "javax."
-
-    invoke-virtual {v10, v11}, Ljava/lang/String;->startsWith(Ljava/lang/String;)Z
-
-    move-result v11
-
-    if-nez v11, :cond_37
-
-    const-string v11, "com.sun."
-
-    invoke-virtual {v10, v11}, Ljava/lang/String;->startsWith(Ljava/lang/String;)Z
-
-    move-result v11
-
-    if-eqz v11, :cond_3a
-
-    :cond_37
-    invoke-virtual {v9}, Ljava/lang/Class;->getInterfaces()[Ljava/lang/Class;
-
-    move-result-object v11
-
-    array-length v12, v11
-
-    move v13, v7
-
-    :goto_11
-    if-ge v13, v12, :cond_39
-
-    aget-object v7, v11, v13
-
-    const-class v14, Ljava/io/Serializable;
-
-    invoke-virtual {v7, v14}, Ljava/lang/Object;->equals(Ljava/lang/Object;)Z
-
-    move-result v7
-
-    if-eqz v7, :cond_38
-
-    move v7, v8
-
-    goto :goto_12
-
-    :cond_38
-    add-int/lit8 v13, v13, 0x1
-
-    const/4 v7, 0x0
-
-    const/4 v14, 0x3
-
-    goto :goto_11
-
-    :cond_39
-    const/4 v7, 0x0
-
-    :goto_12
-    if-nez v7, :cond_3a
-
-    goto/16 :goto_13
-
-    :cond_3a
-    const-class v7, Ljava/lang/reflect/Type;
-
-    invoke-virtual {v7, v9}, Ljava/lang/Class;->isAssignableFrom(Ljava/lang/Class;)Z
-
-    move-result v7
-
-    if-nez v7, :cond_3d
-
-    const-class v7, Ljava/lang/reflect/Method;
-
-    invoke-virtual {v7, v9}, Ljava/lang/Class;->isAssignableFrom(Ljava/lang/Class;)Z
-
-    move-result v7
-
-    if-nez v7, :cond_3d
-
-    const-class v7, Ljava/lang/reflect/Field;
-
-    invoke-virtual {v7, v9}, Ljava/lang/Class;->isAssignableFrom(Ljava/lang/Class;)Z
-
-    move-result v7
-
-    if-nez v7, :cond_3d
-
-    const-class v7, Ljava/lang/reflect/Constructor;
-
-    invoke-virtual {v7, v9}, Ljava/lang/Class;->isAssignableFrom(Ljava/lang/Class;)Z
-
-    move-result v7
-
-    if-eqz v7, :cond_3b
-
-    goto :goto_13
-
-    :cond_3b
-    const-string v7, "org.springframework."
-
-    invoke-virtual {v10, v7}, Ljava/lang/String;->startsWith(Ljava/lang/String;)Z
-
-    move-result v7
-
-    if-nez v7, :cond_3d
-
-    const-string v7, "java.io."
-
-    invoke-virtual {v10, v7}, Ljava/lang/String;->startsWith(Ljava/lang/String;)Z
-
-    move-result v7
-
-    if-nez v7, :cond_3d
-
-    const-string v7, "java.lang.annotation."
-
-    invoke-virtual {v10, v7}, Ljava/lang/String;->startsWith(Ljava/lang/String;)Z
-
-    move-result v7
-
-    if-nez v7, :cond_3d
-
-    const-string v7, "java.security.SignedObject"
-
-    invoke-virtual {v10, v7}, Ljava/lang/String;->startsWith(Ljava/lang/String;)Z
-
-    move-result v7
-
-    if-nez v7, :cond_3d
-
-    const-string v7, "com.sun.rowset"
-
-    invoke-virtual {v10, v7}, Ljava/lang/String;->startsWith(Ljava/lang/String;)Z
-
-    move-result v7
-
-    if-nez v7, :cond_3d
-
-    const-string v7, "com.sun.org.apache."
-
-    invoke-virtual {v10, v7}, Ljava/lang/String;->startsWith(Ljava/lang/String;)Z
-
-    move-result v7
-
-    if-nez v7, :cond_3d
-
-    const-string v7, "org.apache.xalan."
-
-    invoke-virtual {v10, v7}, Ljava/lang/String;->startsWith(Ljava/lang/String;)Z
-
-    move-result v7
-
-    if-nez v7, :cond_3d
-
-    const-string v7, "org.apache.xpath."
-
-    invoke-virtual {v10, v7}, Ljava/lang/String;->startsWith(Ljava/lang/String;)Z
-
-    move-result v7
-
-    if-nez v7, :cond_3d
-
-    const-string v7, "org.codehaus.groovy."
-
-    invoke-virtual {v10, v7}, Ljava/lang/String;->startsWith(Ljava/lang/String;)Z
-
-    move-result v7
-
-    if-nez v7, :cond_3d
-
-    const-string v7, "com.sun.jndi."
-
-    invoke-virtual {v10, v7}, Ljava/lang/String;->startsWith(Ljava/lang/String;)Z
-
-    move-result v7
-
-    if-nez v7, :cond_3d
-
-    const-string v7, "groovy.util.Expando"
-
-    invoke-virtual {v10, v7}, Ljava/lang/String;->startsWith(Ljava/lang/String;)Z
-
-    move-result v7
-
-    if-nez v7, :cond_3d
-
-    const-string v7, "java.util.logging."
-
-    invoke-virtual {v10, v7}, Ljava/lang/String;->startsWith(Ljava/lang/String;)Z
-
-    move-result v7
-
-    if-nez v7, :cond_3d
-
-    const-string v7, "com.mchange.v2.c3p0."
-
-    invoke-virtual {v10, v7}, Ljava/lang/String;->startsWith(Ljava/lang/String;)Z
-
-    move-result v7
-
-    if-eqz v7, :cond_3c
-
-    goto :goto_13
-
-    :cond_3c
-    const/4 v7, 0x0
-
-    goto :goto_14
-
-    :cond_3d
-    :goto_13
-    move v7, v8
-
-    :goto_14
-    if-eqz v7, :cond_3e
-
-    move-object/from16 v21, v3
-
-    move-object v2, v6
-
-    goto/16 :goto_2a
-
-    :cond_3e
-    invoke-virtual/range {p0 .. p0}, Ljava/lang/Object;->getClass()Ljava/lang/Class;
-
-    move-result-object v7
-
-    sget-object v9, Lcom/upokecenter/cbor/PropertyMap;->propertyLists:Ljava/util/Map;
-
-    monitor-enter v9
+    monitor-enter v7
 
     :try_start_1
     sget-object v10, Lcom/upokecenter/cbor/PropertyMap;->propertyLists:Ljava/util/Map;
 
     check-cast v10, Ljava/util/HashMap;
 
-    invoke-virtual {v10, v7}, Ljava/util/HashMap;->get(Ljava/lang/Object;)Ljava/lang/Object;
+    invoke-virtual {v10, v6}, Ljava/util/HashMap;->get(Ljava/lang/Object;)Ljava/lang/Object;
 
     move-result-object v10
 
     check-cast v10, Ljava/util/List;
 
-    if-eqz v10, :cond_3f
+    if-eqz v10, :cond_42
 
-    monitor-exit v9
+    monitor-exit v7
 
-    move-object/from16 v21, v3
+    goto :goto_15
 
-    move-object/from16 v24, v6
-
-    const/4 v8, 0x0
-
-    goto/16 :goto_23
-
-    :cond_3f
+    :cond_42
     new-instance v10, Ljava/util/ArrayList;
 
     invoke-direct {v10}, Ljava/util/ArrayList;-><init>()V
 
+    invoke-static {v6}, Lcom/upokecenter/cbor/PropertyMap;->IsProblematicForSerialization(Ljava/lang/Class;)Z
+
+    move-result v11
+
+    if-eqz v11, :cond_43
+
+    invoke-virtual {v10, v4}, Ljava/util/ArrayList;->add(Ljava/lang/Object;)Z
+
+    sget-object v11, Lcom/upokecenter/cbor/PropertyMap;->propertyLists:Ljava/util/Map;
+
+    check-cast v11, Ljava/util/HashMap;
+
+    invoke-virtual {v11, v6, v10}, Ljava/util/HashMap;->put(Ljava/lang/Object;Ljava/lang/Object;)Ljava/lang/Object;
+
+    monitor-exit v7
+
+    :goto_15
+    move-object/from16 v20, v3
+
+    move-object v11, v4
+
+    goto/16 :goto_25
+
+    :cond_43
     new-instance v11, Ljava/util/ArrayList;
 
     invoke-direct {v11}, Ljava/util/ArrayList;-><init>()V
@@ -3033,345 +2880,279 @@
 
     invoke-direct {v13}, Ljava/util/ArrayList;-><init>()V
 
-    new-instance v14, Ljava/util/TreeMap;
+    new-instance v15, Ljava/util/TreeMap;
 
-    invoke-direct {v14}, Ljava/util/TreeMap;-><init>()V
+    invoke-direct {v15}, Ljava/util/TreeMap;-><init>()V
+
+    new-instance v8, Ljava/util/TreeMap;
+
+    invoke-direct {v8}, Ljava/util/TreeMap;-><init>()V
 
     new-instance v4, Ljava/util/TreeMap;
 
     invoke-direct {v4}, Ljava/util/TreeMap;-><init>()V
 
-    new-instance v15, Ljava/util/TreeMap;
+    invoke-virtual {v6}, Ljava/lang/Class;->getMethods()[Ljava/lang/reflect/Method;
 
-    invoke-direct {v15}, Ljava/util/TreeMap;-><init>()V
+    move-result-object v14
 
-    invoke-virtual {v7}, Ljava/lang/Class;->getMethods()[Ljava/lang/reflect/Method;
+    array-length v9, v14
 
-    move-result-object v8
+    move-object/from16 v20, v3
 
-    move-object/from16 v21, v3
-
-    array-length v3, v8
-
-    const/4 v1, 0x0
-
-    :goto_15
-    if-ge v1, v3, :cond_47
-
-    move/from16 v23, v3
-
-    aget-object v3, v8, v1
-
-    invoke-virtual {v3}, Ljava/lang/reflect/Method;->getModifiers()I
-
-    move-result v24
-
-    move-object/from16 v25, v8
-
-    const/16 v22, 0x9
-
-    and-int/lit8 v8, v24, 0x9
-
-    const/4 v2, 0x1
-
-    if-ne v8, v2, :cond_45
-
-    invoke-virtual {v3}, Ljava/lang/reflect/Method;->getName()Ljava/lang/String;
-
-    move-result-object v2
-
-    invoke-static {v2}, Lcom/upokecenter/cbor/PropertyMap$MethodData;->RemoveGetSetIs(Ljava/lang/String;)Ljava/lang/String;
-
-    move-result-object v8
-
-    invoke-static {v2}, Lcom/upokecenter/cbor/PropertyMap$MethodData;->IsGetMethod(Ljava/lang/String;)Z
-
-    move-result v24
-
-    if-eqz v24, :cond_41
-
-    invoke-virtual {v3}, Ljava/lang/reflect/Method;->getParameterTypes()[Ljava/lang/Class;
-
-    move-result-object v2
-
-    array-length v2, v2
-
-    if-nez v2, :cond_45
-
-    invoke-virtual {v3}, Ljava/lang/reflect/Method;->getReturnType()Ljava/lang/Class;
-
-    move-result-object v2
-
-    move-object/from16 v24, v6
-
-    sget-object v6, Ljava/lang/Void;->TYPE:Ljava/lang/Class;
-
-    invoke-virtual {v2, v6}, Ljava/lang/Object;->equals(Ljava/lang/Object;)Z
-
-    move-result v2
-
-    if-nez v2, :cond_46
-
-    invoke-virtual {v14, v8}, Ljava/util/TreeMap;->containsKey(Ljava/lang/Object;)Z
-
-    move-result v2
-
-    if-eqz v2, :cond_40
-
-    invoke-virtual {v14, v8}, Ljava/util/TreeMap;->get(Ljava/lang/Object;)Ljava/lang/Object;
-
-    move-result-object v2
-
-    check-cast v2, Ljava/lang/Integer;
-
-    invoke-virtual {v2}, Ljava/lang/Integer;->intValue()I
-
-    move-result v2
-
-    const/4 v6, 0x1
-
-    add-int/2addr v2, v6
-
-    invoke-static {v2}, Ljava/lang/Integer;->valueOf(I)Ljava/lang/Integer;
-
-    move-result-object v2
-
-    invoke-virtual {v14, v8, v2}, Ljava/util/TreeMap;->put(Ljava/lang/Object;Ljava/lang/Object;)Ljava/lang/Object;
-
-    goto :goto_16
-
-    :cond_40
-    const/4 v2, 0x1
-
-    invoke-static {v2}, Ljava/lang/Integer;->valueOf(I)Ljava/lang/Integer;
-
-    move-result-object v6
-
-    invoke-virtual {v14, v8, v6}, Ljava/util/TreeMap;->put(Ljava/lang/Object;Ljava/lang/Object;)Ljava/lang/Object;
+    const/4 v3, 0x0
 
     :goto_16
-    invoke-virtual {v11, v3}, Ljava/util/ArrayList;->add(Ljava/lang/Object;)Z
+    if-ge v3, v9, :cond_4a
 
-    goto/16 :goto_19
+    move/from16 v22, v9
 
-    :cond_41
-    move-object/from16 v24, v6
+    aget-object v9, v14, v3
 
-    invoke-static {v2}, Lcom/upokecenter/cbor/PropertyMap$MethodData;->IsIsMethod(Ljava/lang/String;)Z
+    invoke-virtual {v9}, Ljava/lang/reflect/Method;->getModifiers()I
 
-    move-result v6
+    move-result v23
 
-    if-eqz v6, :cond_43
+    move-object/from16 v24, v14
 
-    invoke-virtual {v3}, Ljava/lang/reflect/Method;->getParameterTypes()[Ljava/lang/Class;
+    const/16 v21, 0x9
 
-    move-result-object v2
+    and-int/lit8 v14, v23, 0x9
 
-    array-length v2, v2
+    const/4 v1, 0x1
 
-    if-nez v2, :cond_46
+    if-ne v14, v1, :cond_49
 
-    invoke-virtual {v3}, Ljava/lang/reflect/Method;->getReturnType()Ljava/lang/Class;
-
-    move-result-object v2
-
-    sget-object v6, Ljava/lang/Void;->TYPE:Ljava/lang/Class;
-
-    invoke-virtual {v2, v6}, Ljava/lang/Object;->equals(Ljava/lang/Object;)Z
-
-    move-result v2
-
-    if-nez v2, :cond_46
-
-    invoke-virtual {v14, v8}, Ljava/util/TreeMap;->containsKey(Ljava/lang/Object;)Z
-
-    move-result v2
-
-    if-eqz v2, :cond_42
-
-    invoke-virtual {v14, v8}, Ljava/util/TreeMap;->get(Ljava/lang/Object;)Ljava/lang/Object;
-
-    move-result-object v2
-
-    check-cast v2, Ljava/lang/Integer;
-
-    invoke-virtual {v2}, Ljava/lang/Integer;->intValue()I
-
-    move-result v2
-
-    const/4 v6, 0x1
-
-    add-int/2addr v2, v6
-
-    invoke-static {v2}, Ljava/lang/Integer;->valueOf(I)Ljava/lang/Integer;
-
-    move-result-object v2
-
-    invoke-virtual {v14, v8, v2}, Ljava/util/TreeMap;->put(Ljava/lang/Object;Ljava/lang/Object;)Ljava/lang/Object;
-
-    goto :goto_17
-
-    :cond_42
-    const/4 v2, 0x1
-
-    invoke-static {v2}, Ljava/lang/Integer;->valueOf(I)Ljava/lang/Integer;
-
-    move-result-object v6
-
-    invoke-virtual {v14, v8, v6}, Ljava/util/TreeMap;->put(Ljava/lang/Object;Ljava/lang/Object;)Ljava/lang/Object;
-
-    :goto_17
-    invoke-virtual {v13, v3}, Ljava/util/ArrayList;->add(Ljava/lang/Object;)Z
-
-    goto :goto_19
-
-    :cond_43
-    invoke-static {v2}, Lcom/upokecenter/cbor/PropertyMap$MethodData;->IsSetMethod(Ljava/lang/String;)Z
-
-    move-result v2
-
-    if-eqz v2, :cond_46
-
-    invoke-virtual {v3}, Ljava/lang/reflect/Method;->getParameterTypes()[Ljava/lang/Class;
-
-    move-result-object v2
-
-    array-length v2, v2
-
-    const/4 v6, 0x1
-
-    if-ne v2, v6, :cond_46
-
-    invoke-virtual {v3}, Ljava/lang/reflect/Method;->getReturnType()Ljava/lang/Class;
-
-    move-result-object v2
-
-    sget-object v6, Ljava/lang/Void;->TYPE:Ljava/lang/Class;
-
-    invoke-virtual {v2, v6}, Ljava/lang/Object;->equals(Ljava/lang/Object;)Z
-
-    move-result v2
-
-    if-eqz v2, :cond_46
-
-    invoke-virtual {v4, v8}, Ljava/util/TreeMap;->containsKey(Ljava/lang/Object;)Z
-
-    move-result v2
-
-    if-eqz v2, :cond_44
-
-    invoke-virtual {v4, v8}, Ljava/util/TreeMap;->get(Ljava/lang/Object;)Ljava/lang/Object;
-
-    move-result-object v2
-
-    check-cast v2, Ljava/lang/Integer;
-
-    invoke-virtual {v2}, Ljava/lang/Integer;->intValue()I
-
-    move-result v2
-
-    const/4 v6, 0x1
-
-    add-int/2addr v2, v6
-
-    invoke-static {v2}, Ljava/lang/Integer;->valueOf(I)Ljava/lang/Integer;
-
-    move-result-object v2
-
-    invoke-virtual {v4, v8, v2}, Ljava/util/TreeMap;->put(Ljava/lang/Object;Ljava/lang/Object;)Ljava/lang/Object;
-
-    goto :goto_18
-
-    :cond_44
-    const/4 v2, 0x1
-
-    invoke-static {v2}, Ljava/lang/Integer;->valueOf(I)Ljava/lang/Integer;
-
-    move-result-object v6
-
-    invoke-virtual {v4, v8, v6}, Ljava/util/TreeMap;->put(Ljava/lang/Object;Ljava/lang/Object;)Ljava/lang/Object;
-
-    :goto_18
-    invoke-virtual {v12, v3}, Ljava/util/ArrayList;->add(Ljava/lang/Object;)Z
-
-    goto :goto_19
-
-    :cond_45
-    move-object/from16 v24, v6
-
-    :cond_46
-    :goto_19
-    add-int/lit8 v1, v1, 0x1
-
-    move/from16 v2, p2
-
-    move/from16 v3, v23
-
-    move-object/from16 v6, v24
-
-    move-object/from16 v8, v25
-
-    goto/16 :goto_15
-
-    :cond_47
-    move-object/from16 v24, v6
-
-    invoke-virtual {v11}, Ljava/util/ArrayList;->iterator()Ljava/util/Iterator;
+    invoke-virtual {v9}, Ljava/lang/reflect/Method;->getName()Ljava/lang/String;
 
     move-result-object v1
 
-    :goto_1a
-    invoke-interface {v1}, Ljava/util/Iterator;->hasNext()Z
+    invoke-static {v1}, Lcom/upokecenter/cbor/PropertyMap$MethodData;->RemoveGetSetIs(Ljava/lang/String;)Ljava/lang/String;
 
-    move-result v2
+    move-result-object v14
 
-    if-eqz v2, :cond_49
+    invoke-static {v1}, Lcom/upokecenter/cbor/PropertyMap$MethodData;->IsGetMethod(Ljava/lang/String;)Z
 
-    invoke-interface {v1}, Ljava/util/Iterator;->next()Ljava/lang/Object;
+    move-result v23
+
+    if-eqz v23, :cond_45
+
+    invoke-virtual {v9}, Ljava/lang/reflect/Method;->getParameterTypes()[Ljava/lang/Class;
+
+    move-result-object v1
+
+    array-length v1, v1
+
+    if-nez v1, :cond_49
+
+    invoke-virtual {v9}, Ljava/lang/reflect/Method;->getReturnType()Ljava/lang/Class;
+
+    move-result-object v1
+
+    sget-object v2, Ljava/lang/Void;->TYPE:Ljava/lang/Class;
+
+    invoke-virtual {v1, v2}, Ljava/lang/Object;->equals(Ljava/lang/Object;)Z
+
+    move-result v1
+
+    if-nez v1, :cond_49
+
+    invoke-virtual {v15, v14}, Ljava/util/TreeMap;->containsKey(Ljava/lang/Object;)Z
+
+    move-result v1
+
+    if-eqz v1, :cond_44
+
+    invoke-virtual {v15, v14}, Ljava/util/TreeMap;->get(Ljava/lang/Object;)Ljava/lang/Object;
+
+    move-result-object v1
+
+    check-cast v1, Ljava/lang/Integer;
+
+    invoke-virtual {v1}, Ljava/lang/Integer;->intValue()I
+
+    move-result v1
+
+    const/4 v2, 0x1
+
+    add-int/2addr v1, v2
+
+    invoke-static {v1}, Ljava/lang/Integer;->valueOf(I)Ljava/lang/Integer;
+
+    move-result-object v1
+
+    invoke-virtual {v15, v14, v1}, Ljava/util/TreeMap;->put(Ljava/lang/Object;Ljava/lang/Object;)Ljava/lang/Object;
+
+    goto :goto_17
+
+    :cond_44
+    const/4 v1, 0x1
+
+    invoke-static {v1}, Ljava/lang/Integer;->valueOf(I)Ljava/lang/Integer;
 
     move-result-object v2
 
-    check-cast v2, Ljava/lang/reflect/Method;
+    invoke-virtual {v15, v14, v2}, Ljava/util/TreeMap;->put(Ljava/lang/Object;Ljava/lang/Object;)Ljava/lang/Object;
 
-    invoke-virtual {v2}, Ljava/lang/reflect/Method;->getName()Ljava/lang/String;
+    :goto_17
+    invoke-virtual {v11, v9}, Ljava/util/ArrayList;->add(Ljava/lang/Object;)Z
 
-    move-result-object v3
+    goto/16 :goto_1a
 
-    invoke-static {v3}, Lcom/upokecenter/cbor/PropertyMap$MethodData;->RemoveGetSetIs(Ljava/lang/String;)Ljava/lang/String;
+    :cond_45
+    invoke-static {v1}, Lcom/upokecenter/cbor/PropertyMap$MethodData;->IsIsMethod(Ljava/lang/String;)Z
 
-    move-result-object v3
+    move-result v2
 
-    invoke-virtual {v14, v3}, Ljava/util/TreeMap;->get(Ljava/lang/Object;)Ljava/lang/Object;
+    if-eqz v2, :cond_47
 
-    move-result-object v3
+    invoke-virtual {v9}, Ljava/lang/reflect/Method;->getParameterTypes()[Ljava/lang/Class;
 
-    check-cast v3, Ljava/lang/Integer;
+    move-result-object v1
 
-    invoke-virtual {v3}, Ljava/lang/Integer;->intValue()I
+    array-length v1, v1
 
-    move-result v3
+    if-nez v1, :cond_49
 
-    const/4 v6, 0x1
+    invoke-virtual {v9}, Ljava/lang/reflect/Method;->getReturnType()Ljava/lang/Class;
 
-    if-le v3, v6, :cond_48
+    move-result-object v1
+
+    sget-object v2, Ljava/lang/Void;->TYPE:Ljava/lang/Class;
+
+    invoke-virtual {v1, v2}, Ljava/lang/Object;->equals(Ljava/lang/Object;)Z
+
+    move-result v1
+
+    if-nez v1, :cond_49
+
+    invoke-virtual {v15, v14}, Ljava/util/TreeMap;->containsKey(Ljava/lang/Object;)Z
+
+    move-result v1
+
+    if-eqz v1, :cond_46
+
+    invoke-virtual {v15, v14}, Ljava/util/TreeMap;->get(Ljava/lang/Object;)Ljava/lang/Object;
+
+    move-result-object v1
+
+    check-cast v1, Ljava/lang/Integer;
+
+    invoke-virtual {v1}, Ljava/lang/Integer;->intValue()I
+
+    move-result v1
+
+    const/4 v2, 0x1
+
+    add-int/2addr v1, v2
+
+    invoke-static {v1}, Ljava/lang/Integer;->valueOf(I)Ljava/lang/Integer;
+
+    move-result-object v1
+
+    invoke-virtual {v15, v14, v1}, Ljava/util/TreeMap;->put(Ljava/lang/Object;Ljava/lang/Object;)Ljava/lang/Object;
+
+    goto :goto_18
+
+    :cond_46
+    const/4 v1, 0x1
+
+    invoke-static {v1}, Ljava/lang/Integer;->valueOf(I)Ljava/lang/Integer;
+
+    move-result-object v2
+
+    invoke-virtual {v15, v14, v2}, Ljava/util/TreeMap;->put(Ljava/lang/Object;Ljava/lang/Object;)Ljava/lang/Object;
+
+    :goto_18
+    invoke-virtual {v13, v9}, Ljava/util/ArrayList;->add(Ljava/lang/Object;)Z
 
     goto :goto_1a
+
+    :cond_47
+    invoke-static {v1}, Lcom/upokecenter/cbor/PropertyMap$MethodData;->IsSetMethod(Ljava/lang/String;)Z
+
+    move-result v1
+
+    if-eqz v1, :cond_49
+
+    invoke-virtual {v9}, Ljava/lang/reflect/Method;->getParameterTypes()[Ljava/lang/Class;
+
+    move-result-object v1
+
+    array-length v1, v1
+
+    const/4 v2, 0x1
+
+    if-ne v1, v2, :cond_49
+
+    invoke-virtual {v9}, Ljava/lang/reflect/Method;->getReturnType()Ljava/lang/Class;
+
+    move-result-object v1
+
+    sget-object v2, Ljava/lang/Void;->TYPE:Ljava/lang/Class;
+
+    invoke-virtual {v1, v2}, Ljava/lang/Object;->equals(Ljava/lang/Object;)Z
+
+    move-result v1
+
+    if-eqz v1, :cond_49
+
+    invoke-virtual {v8, v14}, Ljava/util/TreeMap;->containsKey(Ljava/lang/Object;)Z
+
+    move-result v1
+
+    if-eqz v1, :cond_48
+
+    invoke-virtual {v8, v14}, Ljava/util/TreeMap;->get(Ljava/lang/Object;)Ljava/lang/Object;
+
+    move-result-object v1
+
+    check-cast v1, Ljava/lang/Integer;
+
+    invoke-virtual {v1}, Ljava/lang/Integer;->intValue()I
+
+    move-result v1
+
+    const/4 v2, 0x1
+
+    add-int/2addr v1, v2
+
+    invoke-static {v1}, Ljava/lang/Integer;->valueOf(I)Ljava/lang/Integer;
+
+    move-result-object v1
+
+    invoke-virtual {v8, v14, v1}, Ljava/util/TreeMap;->put(Ljava/lang/Object;Ljava/lang/Object;)Ljava/lang/Object;
+
+    goto :goto_19
 
     :cond_48
-    new-instance v3, Lcom/upokecenter/cbor/PropertyMap$MethodData;
+    const/4 v1, 0x1
 
-    invoke-virtual {v2}, Ljava/lang/reflect/Method;->getName()Ljava/lang/String;
+    invoke-static {v1}, Ljava/lang/Integer;->valueOf(I)Ljava/lang/Integer;
 
-    move-result-object v6
+    move-result-object v2
 
-    invoke-direct {v3, v6, v2}, Lcom/upokecenter/cbor/PropertyMap$MethodData;-><init>(Ljava/lang/String;Ljava/lang/reflect/Member;)V
+    invoke-virtual {v8, v14, v2}, Ljava/util/TreeMap;->put(Ljava/lang/Object;Ljava/lang/Object;)Ljava/lang/Object;
 
-    invoke-virtual {v10, v3}, Ljava/util/ArrayList;->add(Ljava/lang/Object;)Z
-
-    goto :goto_1a
+    :goto_19
+    invoke-virtual {v12, v9}, Ljava/util/ArrayList;->add(Ljava/lang/Object;)Z
 
     :cond_49
-    invoke-virtual {v13}, Ljava/util/ArrayList;->iterator()Ljava/util/Iterator;
+    :goto_1a
+    add-int/lit8 v3, v3, 0x1
+
+    move-object/from16 v1, p1
+
+    move/from16 v2, p2
+
+    move/from16 v9, v22
+
+    move-object/from16 v14, v24
+
+    goto/16 :goto_16
+
+    :cond_4a
+    invoke-virtual {v11}, Ljava/util/ArrayList;->iterator()Ljava/util/Iterator;
 
     move-result-object v1
 
@@ -3380,7 +3161,7 @@
 
     move-result v2
 
-    if-eqz v2, :cond_4b
+    if-eqz v2, :cond_4c
 
     invoke-interface {v1}, Ljava/util/Iterator;->next()Ljava/lang/Object;
 
@@ -3396,7 +3177,7 @@
 
     move-result-object v3
 
-    invoke-virtual {v14, v3}, Ljava/util/TreeMap;->get(Ljava/lang/Object;)Ljava/lang/Object;
+    invoke-virtual {v15, v3}, Ljava/util/TreeMap;->get(Ljava/lang/Object;)Ljava/lang/Object;
 
     move-result-object v3
 
@@ -3406,27 +3187,82 @@
 
     move-result v3
 
-    const/4 v6, 0x1
+    const/4 v9, 0x1
 
-    if-le v3, v6, :cond_4a
+    if-le v3, v9, :cond_4b
 
     goto :goto_1b
 
-    :cond_4a
+    :cond_4b
     new-instance v3, Lcom/upokecenter/cbor/PropertyMap$MethodData;
 
     invoke-virtual {v2}, Ljava/lang/reflect/Method;->getName()Ljava/lang/String;
 
-    move-result-object v6
+    move-result-object v9
 
-    invoke-direct {v3, v6, v2}, Lcom/upokecenter/cbor/PropertyMap$MethodData;-><init>(Ljava/lang/String;Ljava/lang/reflect/Member;)V
+    invoke-direct {v3, v9, v2}, Lcom/upokecenter/cbor/PropertyMap$MethodData;-><init>(Ljava/lang/String;Ljava/lang/reflect/Member;)V
 
     invoke-virtual {v10, v3}, Ljava/util/ArrayList;->add(Ljava/lang/Object;)Z
 
     goto :goto_1b
 
-    :cond_4b
-    invoke-virtual {v7}, Ljava/lang/Class;->getFields()[Ljava/lang/reflect/Field;
+    :cond_4c
+    invoke-virtual {v13}, Ljava/util/ArrayList;->iterator()Ljava/util/Iterator;
+
+    move-result-object v1
+
+    :goto_1c
+    invoke-interface {v1}, Ljava/util/Iterator;->hasNext()Z
+
+    move-result v2
+
+    if-eqz v2, :cond_4e
+
+    invoke-interface {v1}, Ljava/util/Iterator;->next()Ljava/lang/Object;
+
+    move-result-object v2
+
+    check-cast v2, Ljava/lang/reflect/Method;
+
+    invoke-virtual {v2}, Ljava/lang/reflect/Method;->getName()Ljava/lang/String;
+
+    move-result-object v3
+
+    invoke-static {v3}, Lcom/upokecenter/cbor/PropertyMap$MethodData;->RemoveGetSetIs(Ljava/lang/String;)Ljava/lang/String;
+
+    move-result-object v3
+
+    invoke-virtual {v15, v3}, Ljava/util/TreeMap;->get(Ljava/lang/Object;)Ljava/lang/Object;
+
+    move-result-object v3
+
+    check-cast v3, Ljava/lang/Integer;
+
+    invoke-virtual {v3}, Ljava/lang/Integer;->intValue()I
+
+    move-result v3
+
+    const/4 v9, 0x1
+
+    if-le v3, v9, :cond_4d
+
+    goto :goto_1c
+
+    :cond_4d
+    new-instance v3, Lcom/upokecenter/cbor/PropertyMap$MethodData;
+
+    invoke-virtual {v2}, Ljava/lang/reflect/Method;->getName()Ljava/lang/String;
+
+    move-result-object v9
+
+    invoke-direct {v3, v9, v2}, Lcom/upokecenter/cbor/PropertyMap$MethodData;-><init>(Ljava/lang/String;Ljava/lang/reflect/Member;)V
+
+    invoke-virtual {v10, v3}, Ljava/util/ArrayList;->add(Ljava/lang/Object;)Z
+
+    goto :goto_1c
+
+    :cond_4e
+    invoke-virtual {v6}, Ljava/lang/Class;->getFields()[Ljava/lang/reflect/Field;
 
     move-result-object v1
 
@@ -3434,135 +3270,147 @@
 
     const/4 v3, 0x0
 
-    :goto_1c
-    if-ge v3, v2, :cond_51
+    :goto_1d
+    if-ge v3, v2, :cond_55
 
-    aget-object v6, v1, v3
+    aget-object v9, v1, v3
 
-    invoke-virtual {v6}, Ljava/lang/reflect/Field;->getModifiers()I
-
-    move-result v8
-
-    and-int/lit8 v8, v8, 0x19
-
-    const/4 v11, 0x1
-
-    if-ne v8, v11, :cond_50
-
-    invoke-virtual {v6}, Ljava/lang/reflect/Field;->getName()Ljava/lang/String;
-
-    move-result-object v8
-
-    invoke-static {v8}, Lcom/upokecenter/cbor/PropertyMap$MethodData;->IsIsMethod(Ljava/lang/String;)Z
+    invoke-virtual {v9}, Ljava/lang/reflect/Field;->getModifiers()I
 
     move-result v11
 
-    if-eqz v11, :cond_4c
+    and-int/lit8 v11, v11, 0x19
 
-    const/4 v11, 0x2
+    const/4 v12, 0x1
 
-    invoke-virtual {v8, v11}, Ljava/lang/String;->substring(I)Ljava/lang/String;
+    if-ne v11, v12, :cond_54
 
-    move-result-object v8
-
-    :cond_4c
-    invoke-virtual {v14, v8}, Ljava/util/TreeMap;->containsKey(Ljava/lang/Object;)Z
-
-    move-result v11
-
-    if-nez v11, :cond_4e
-
-    invoke-virtual {v4, v8}, Ljava/util/TreeMap;->containsKey(Ljava/lang/Object;)Z
-
-    move-result v11
-
-    if-eqz v11, :cond_4d
-
-    goto :goto_1d
-
-    :cond_4d
-    new-instance v8, Lcom/upokecenter/cbor/PropertyMap$MethodData;
-
-    invoke-virtual {v6}, Ljava/lang/reflect/Field;->getName()Ljava/lang/String;
+    invoke-virtual {v9}, Ljava/lang/reflect/Field;->getName()Ljava/lang/String;
 
     move-result-object v11
 
-    invoke-direct {v8, v11, v6}, Lcom/upokecenter/cbor/PropertyMap$MethodData;-><init>(Ljava/lang/String;Ljava/lang/reflect/Member;)V
+    invoke-static {v11}, Lcom/upokecenter/cbor/PropertyMap$MethodData;->IsIsMethod(Ljava/lang/String;)Z
 
-    invoke-virtual {v10, v8}, Ljava/util/ArrayList;->add(Ljava/lang/Object;)Z
+    move-result v12
 
-    goto :goto_1f
+    if-eqz v12, :cond_4f
 
-    :cond_4e
-    :goto_1d
-    invoke-virtual {v15, v8}, Ljava/util/TreeMap;->containsKey(Ljava/lang/Object;)Z
+    const/4 v12, 0x2
 
-    move-result v6
+    invoke-virtual {v11, v12}, Ljava/lang/String;->substring(I)Ljava/lang/String;
 
-    if-eqz v6, :cond_4f
-
-    invoke-virtual {v15, v8}, Ljava/util/TreeMap;->get(Ljava/lang/Object;)Ljava/lang/Object;
-
-    move-result-object v6
-
-    check-cast v6, Ljava/lang/Integer;
-
-    invoke-virtual {v6}, Ljava/lang/Integer;->intValue()I
-
-    move-result v6
+    move-result-object v11
 
     goto :goto_1e
 
     :cond_4f
-    const/4 v6, -0x1
+    const/4 v12, 0x2
 
     :goto_1e
-    if-ltz v6, :cond_50
+    invoke-virtual {v15, v11}, Ljava/util/TreeMap;->containsKey(Ljava/lang/Object;)Z
 
-    const/4 v8, 0x0
+    move-result v13
 
-    invoke-virtual {v10, v6, v8}, Ljava/util/ArrayList;->set(ILjava/lang/Object;)Ljava/lang/Object;
+    if-nez v13, :cond_51
+
+    invoke-virtual {v8, v11}, Ljava/util/TreeMap;->containsKey(Ljava/lang/Object;)Z
+
+    move-result v13
+
+    if-eqz v13, :cond_50
+
+    goto :goto_1f
+
+    :cond_50
+    new-instance v11, Lcom/upokecenter/cbor/PropertyMap$MethodData;
+
+    invoke-virtual {v9}, Ljava/lang/reflect/Field;->getName()Ljava/lang/String;
+
+    move-result-object v13
+
+    invoke-direct {v11, v13, v9}, Lcom/upokecenter/cbor/PropertyMap$MethodData;-><init>(Ljava/lang/String;Ljava/lang/reflect/Member;)V
+
+    invoke-virtual {v10, v11}, Ljava/util/ArrayList;->add(Ljava/lang/Object;)Z
+
+    goto :goto_21
+
+    :cond_51
+    :goto_1f
+    invoke-virtual {v4, v11}, Ljava/util/TreeMap;->containsKey(Ljava/lang/Object;)Z
+
+    move-result v9
+
+    if-eqz v9, :cond_52
+
+    invoke-virtual {v4, v11}, Ljava/util/TreeMap;->get(Ljava/lang/Object;)Ljava/lang/Object;
+
+    move-result-object v9
+
+    check-cast v9, Ljava/lang/Integer;
+
+    invoke-virtual {v9}, Ljava/lang/Integer;->intValue()I
+
+    move-result v9
 
     goto :goto_20
 
-    :cond_50
-    :goto_1f
-    const/4 v8, 0x0
+    :cond_52
+    const/4 v9, -0x1
 
     :goto_20
+    if-ltz v9, :cond_53
+
+    const/4 v11, 0x0
+
+    invoke-virtual {v10, v9, v11}, Ljava/util/ArrayList;->set(ILjava/lang/Object;)Ljava/lang/Object;
+
+    goto :goto_22
+
+    :cond_53
+    :goto_21
+    const/4 v11, 0x0
+
+    goto :goto_22
+
+    :cond_54
+    const/4 v11, 0x0
+
+    const/4 v12, 0x2
+
+    :goto_22
     add-int/lit8 v3, v3, 0x1
 
-    goto :goto_1c
+    goto :goto_1d
 
-    :cond_51
-    const/4 v8, 0x0
+    :cond_55
+    const/4 v11, 0x0
 
     invoke-virtual {v10}, Ljava/util/ArrayList;->iterator()Ljava/util/Iterator;
 
     move-result-object v1
 
-    :cond_52
+    :cond_56
     invoke-interface {v1}, Ljava/util/Iterator;->hasNext()Z
 
     move-result v2
 
-    if-eqz v2, :cond_53
+    if-eqz v2, :cond_57
 
     invoke-interface {v1}, Ljava/util/Iterator;->next()Ljava/lang/Object;
 
     move-result-object v2
 
-    if-nez v2, :cond_52
+    if-nez v2, :cond_56
 
-    const/4 v2, 0x1
+    const/4 v1, 0x1
 
-    goto :goto_21
+    goto :goto_23
 
-    :cond_53
-    const/4 v2, 0x0
+    :cond_57
+    const/4 v1, 0x0
 
-    :goto_21
-    if-eqz v2, :cond_56
+    :goto_23
+    if-eqz v1, :cond_5a
 
     new-instance v1, Ljava/util/ArrayList;
 
@@ -3572,217 +3420,154 @@
 
     move-result-object v2
 
-    :cond_54
-    :goto_22
+    :cond_58
+    :goto_24
     invoke-interface {v2}, Ljava/util/Iterator;->hasNext()Z
 
     move-result v3
 
-    if-eqz v3, :cond_55
+    if-eqz v3, :cond_59
 
     invoke-interface {v2}, Ljava/util/Iterator;->next()Ljava/lang/Object;
 
     move-result-object v3
 
-    if-eqz v3, :cond_54
+    if-eqz v3, :cond_58
 
     invoke-virtual {v1, v3}, Ljava/util/ArrayList;->add(Ljava/lang/Object;)Z
 
-    goto :goto_22
+    goto :goto_24
 
-    :cond_55
+    :cond_59
     move-object v10, v1
 
-    :cond_56
+    :cond_5a
     sget-object v1, Lcom/upokecenter/cbor/PropertyMap;->propertyLists:Ljava/util/Map;
 
     check-cast v1, Ljava/util/HashMap;
 
-    invoke-virtual {v1, v7, v10}, Ljava/util/HashMap;->put(Ljava/lang/Object;Ljava/lang/Object;)Ljava/lang/Object;
+    invoke-virtual {v1, v6, v10}, Ljava/util/HashMap;->put(Ljava/lang/Object;Ljava/lang/Object;)Ljava/lang/Object;
 
-    monitor-exit v9
+    monitor-exit v7
     :try_end_1
     .catchall {:try_start_1 .. :try_end_1} :catchall_0
 
-    :goto_23
-    invoke-interface {v10}, Ljava/util/List;->iterator()Ljava/util/Iterator;
-
-    move-result-object v1
-
-    :goto_24
-    invoke-interface {v1}, Ljava/util/Iterator;->hasNext()Z
-
-    move-result v2
-
-    if-eqz v2, :cond_5f
-
-    invoke-interface {v1}, Ljava/util/Iterator;->next()Ljava/lang/Object;
-
-    move-result-object v2
-
-    check-cast v2, Lcom/upokecenter/cbor/PropertyMap$MethodData;
-
-    new-instance v3, Ljava/util/AbstractMap$SimpleEntry;
-
-    iget-object v4, v2, Lcom/upokecenter/cbor/PropertyMap$MethodData;->method:Ljava/lang/reflect/Member;
-
-    instance-of v4, v4, Ljava/lang/reflect/Field;
-
-    if-eqz v4, :cond_59
-
-    if-eqz v5, :cond_58
-
-    iget-object v4, v2, Lcom/upokecenter/cbor/PropertyMap$MethodData;->name:Ljava/lang/String;
-
-    invoke-static {v4}, Lcom/upokecenter/cbor/PropertyMap$MethodData;->IsIsMethod(Ljava/lang/String;)Z
-
-    move-result v6
-
-    if-eqz v6, :cond_57
-
-    const/4 v6, 0x2
-
-    invoke-virtual {v4, v6}, Ljava/lang/String;->substring(I)Ljava/lang/String;
-
-    move-result-object v4
-
-    goto :goto_25
-
-    :cond_57
-    const/4 v6, 0x2
-
     :goto_25
-    invoke-static {v4}, Lcom/upokecenter/cbor/CBORUtilities;->FirstCharLower(Ljava/lang/String;)Ljava/lang/String;
+    invoke-interface {v10}, Ljava/util/List;->size()I
 
-    move-result-object v4
+    move-result v1
 
-    goto :goto_26
+    const/4 v2, 0x1
 
-    :cond_58
-    const/4 v6, 0x2
+    if-ne v1, v2, :cond_5b
 
-    iget-object v4, v2, Lcom/upokecenter/cbor/PropertyMap$MethodData;->name:Ljava/lang/String;
+    const/4 v1, 0x0
 
-    invoke-static {v4}, Lcom/upokecenter/cbor/CBORUtilities;->FirstCharUpper(Ljava/lang/String;)Ljava/lang/String;
-
-    move-result-object v4
-
-    goto :goto_26
-
-    :cond_59
-    const/4 v6, 0x2
-
-    if-eqz v5, :cond_5a
-
-    iget-object v4, v2, Lcom/upokecenter/cbor/PropertyMap$MethodData;->name:Ljava/lang/String;
-
-    invoke-static {v4}, Lcom/upokecenter/cbor/PropertyMap$MethodData;->RemoveGetSetIs(Ljava/lang/String;)Ljava/lang/String;
-
-    move-result-object v4
-
-    invoke-static {v4}, Lcom/upokecenter/cbor/CBORUtilities;->FirstCharLower(Ljava/lang/String;)Ljava/lang/String;
-
-    move-result-object v4
-
-    :goto_26
-    const/4 v7, 0x3
-
-    goto :goto_28
-
-    :cond_5a
-    iget-object v4, v2, Lcom/upokecenter/cbor/PropertyMap$MethodData;->name:Ljava/lang/String;
-
-    invoke-static {v4}, Lcom/upokecenter/cbor/PropertyMap$MethodData;->IsSetMethod(Ljava/lang/String;)Z
-
-    move-result v7
-
-    if-eqz v7, :cond_5b
-
-    const/4 v7, 0x3
-
-    invoke-virtual {v4, v7}, Ljava/lang/String;->substring(I)Ljava/lang/String;
-
-    move-result-object v4
-
-    goto :goto_27
-
-    :cond_5b
-    const/4 v7, 0x3
-
-    invoke-static {v4}, Lcom/upokecenter/cbor/PropertyMap$MethodData;->IsGetMethod(Ljava/lang/String;)Z
-
-    move-result v9
-
-    if-eqz v9, :cond_5c
-
-    invoke-virtual {v4, v7}, Ljava/lang/String;->substring(I)Ljava/lang/String;
-
-    move-result-object v4
-
-    :cond_5c
-    :goto_27
-    invoke-static {v4}, Lcom/upokecenter/cbor/CBORUtilities;->FirstCharUpper(Ljava/lang/String;)Ljava/lang/String;
-
-    move-result-object v4
-
-    :goto_28
-    const-string v9, ""
-
-    :try_start_2
-    iget-object v2, v2, Lcom/upokecenter/cbor/PropertyMap$MethodData;->method:Ljava/lang/reflect/Member;
-
-    instance-of v10, v2, Ljava/lang/reflect/Method;
-
-    if-eqz v10, :cond_5d
-
-    check-cast v2, Ljava/lang/reflect/Method;
-
-    const/4 v10, 0x0
-
-    new-array v11, v10, [Ljava/lang/Object;
-
-    invoke-virtual {v2, v0, v11}, Ljava/lang/reflect/Method;->invoke(Ljava/lang/Object;[Ljava/lang/Object;)Ljava/lang/Object;
+    invoke-interface {v10, v1}, Ljava/util/List;->get(I)Ljava/lang/Object;
 
     move-result-object v2
+
+    if-nez v2, :cond_5b
+
+    new-instance v0, Ljava/util/ArrayList;
+
+    invoke-direct {v0}, Ljava/util/ArrayList;-><init>()V
 
     goto :goto_29
 
-    :cond_5d
-    const/4 v10, 0x0
+    :cond_5b
+    new-instance v1, Ljava/util/ArrayList;
 
-    instance-of v11, v2, Ljava/lang/reflect/Field;
+    invoke-interface {v10}, Ljava/util/List;->size()I
 
-    if-eqz v11, :cond_5e
+    move-result v2
 
-    check-cast v2, Ljava/lang/reflect/Field;
+    invoke-direct {v1, v2}, Ljava/util/ArrayList;-><init>(I)V
 
-    invoke-virtual {v2, v0}, Ljava/lang/reflect/Field;->get(Ljava/lang/Object;)Ljava/lang/Object;
+    invoke-interface {v10}, Ljava/util/List;->iterator()Ljava/util/Iterator;
 
     move-result-object v2
+
+    :goto_26
+    invoke-interface {v2}, Ljava/util/Iterator;->hasNext()Z
+
+    move-result v3
+
+    if-eqz v3, :cond_5f
+
+    invoke-interface {v2}, Ljava/util/Iterator;->next()Ljava/lang/Object;
+
+    move-result-object v3
+
+    check-cast v3, Lcom/upokecenter/cbor/PropertyMap$MethodData;
+
+    new-instance v4, Ljava/util/AbstractMap$SimpleEntry;
+
+    if-eqz v5, :cond_5c
+
+    iget-object v6, v3, Lcom/upokecenter/cbor/PropertyMap$MethodData;->adjustedNameCamelCase:Ljava/lang/String;
+
+    goto :goto_27
+
+    :cond_5c
+    iget-object v6, v3, Lcom/upokecenter/cbor/PropertyMap$MethodData;->adjustedName:Ljava/lang/String;
+
+    :goto_27
+    const-string v7, ""
+
+    :try_start_2
+    iget-object v3, v3, Lcom/upokecenter/cbor/PropertyMap$MethodData;->method:Ljava/lang/reflect/Member;
+
+    instance-of v8, v3, Ljava/lang/reflect/Method;
+
+    if-eqz v8, :cond_5d
+
+    check-cast v3, Ljava/lang/reflect/Method;
+
+    const/4 v8, 0x0
+
+    new-array v9, v8, [Ljava/lang/Object;
+
+    invoke-virtual {v3, v0, v9}, Ljava/lang/reflect/Method;->invoke(Ljava/lang/Object;[Ljava/lang/Object;)Ljava/lang/Object;
+
+    move-result-object v3
+
+    goto :goto_28
+
+    :cond_5d
+    const/4 v8, 0x0
+
+    instance-of v9, v3, Ljava/lang/reflect/Field;
+
+    if-eqz v9, :cond_5e
+
+    check-cast v3, Ljava/lang/reflect/Field;
+
+    invoke-virtual {v3, v0}, Ljava/lang/reflect/Field;->get(Ljava/lang/Object;)Ljava/lang/Object;
+
+    move-result-object v3
     :try_end_2
     .catch Ljava/lang/reflect/InvocationTargetException; {:try_start_2 .. :try_end_2} :catch_2
     .catch Ljava/lang/IllegalAccessException; {:try_start_2 .. :try_end_2} :catch_1
 
-    goto :goto_29
+    goto :goto_28
 
     :cond_5e
-    move-object v2, v8
+    move-object v3, v11
 
-    :goto_29
-    invoke-direct {v3, v4, v2}, Ljava/util/AbstractMap$SimpleEntry;-><init>(Ljava/lang/Object;Ljava/lang/Object;)V
+    :goto_28
+    invoke-direct {v4, v6, v3}, Ljava/util/AbstractMap$SimpleEntry;-><init>(Ljava/lang/Object;Ljava/lang/Object;)V
 
-    move-object/from16 v2, v24
+    invoke-virtual {v1, v4}, Ljava/util/ArrayList;->add(Ljava/lang/Object;)Z
 
-    invoke-virtual {v2, v3}, Ljava/util/ArrayList;->add(Ljava/lang/Object;)Z
-
-    goto/16 :goto_24
+    goto :goto_26
 
     :catch_1
     move-exception v0
 
     new-instance v1, Lcom/upokecenter/cbor/CBORException;
 
-    invoke-direct {v1, v9}, Lcom/upokecenter/cbor/CBORException;-><init>(Ljava/lang/String;)V
+    invoke-direct {v1, v7}, Lcom/upokecenter/cbor/CBORException;-><init>(Ljava/lang/String;)V
 
     invoke-virtual {v1, v0}, Ljava/lang/RuntimeException;->initCause(Ljava/lang/Throwable;)Ljava/lang/Throwable;
 
@@ -3797,7 +3582,7 @@
 
     new-instance v1, Lcom/upokecenter/cbor/CBORException;
 
-    invoke-direct {v1, v9}, Lcom/upokecenter/cbor/CBORException;-><init>(Ljava/lang/String;)V
+    invoke-direct {v1, v7}, Lcom/upokecenter/cbor/CBORException;-><init>(Ljava/lang/String;)V
 
     invoke-virtual {v1, v0}, Ljava/lang/RuntimeException;->initCause(Ljava/lang/Throwable;)Ljava/lang/Throwable;
 
@@ -3808,14 +3593,14 @@
     throw v0
 
     :cond_5f
-    move-object/from16 v2, v24
+    move-object v0, v1
 
-    :goto_2a
-    invoke-virtual {v2}, Ljava/util/ArrayList;->iterator()Ljava/util/Iterator;
+    :goto_29
+    invoke-interface {v0}, Ljava/lang/Iterable;->iterator()Ljava/util/Iterator;
 
     move-result-object v0
 
-    :goto_2b
+    :goto_2a
     invoke-interface {v0}, Ljava/util/Iterator;->hasNext()Z
 
     move-result v1
@@ -3848,9 +3633,11 @@
 
     move-result-object v1
 
-    const-string/jumbo v4, "value"
+    const-string v4, "key"
 
     invoke-static {v2, v4}, Ljava/util/Objects;->requireNonNull(Ljava/lang/Object;Ljava/lang/String;)Ljava/lang/Object;
+
+    const-string/jumbo v4, "value"
 
     invoke-static {v1, v4}, Ljava/util/Objects;->requireNonNull(Ljava/lang/Object;Ljava/lang/String;)Ljava/lang/Object;
 
@@ -3858,7 +3645,7 @@
 
     move-result-object v2
 
-    invoke-virtual/range {v21 .. v21}, Lcom/upokecenter/cbor/CBORObject;->getType$enumunboxing$()I
+    invoke-virtual/range {v20 .. v20}, Lcom/upokecenter/cbor/CBORObject;->getType$enumunboxing$()I
 
     move-result v4
 
@@ -3866,13 +3653,13 @@
 
     if-ne v4, v6, :cond_60
 
-    invoke-virtual/range {v21 .. v21}, Lcom/upokecenter/cbor/CBORObject;->AsMap()Ljava/util/Map;
+    invoke-virtual/range {v20 .. v20}, Lcom/upokecenter/cbor/CBORObject;->AsMap()Ljava/util/Map;
 
     move-result-object v4
 
     invoke-interface {v4, v2, v1}, Ljava/util/Map;->put(Ljava/lang/Object;Ljava/lang/Object;)Ljava/lang/Object;
 
-    goto :goto_2b
+    goto :goto_2a
 
     :cond_60
     new-instance v0, Ljava/lang/IllegalStateException;
@@ -3884,13 +3671,13 @@
     throw v0
 
     :cond_61
-    return-object v21
+    return-object v20
 
     :catchall_0
     move-exception v0
 
     :try_start_3
-    monitor-exit v9
+    monitor-exit v7
     :try_end_3
     .catchall {:try_start_3 .. :try_end_3} :catchall_0
 
@@ -3907,7 +3694,7 @@
 .end method
 
 .method public static FromObject(Ljava/lang/String;)Lcom/upokecenter/cbor/CBORObject;
-    .locals 4
+    .locals 5
 
     invoke-virtual {p0}, Ljava/lang/String;->length()I
 
@@ -3932,19 +3719,35 @@
 
     const-wide/16 v2, 0x0
 
-    cmp-long v0, v0, v2
+    cmp-long v2, v0, v2
 
-    if-ltz v0, :cond_1
+    if-ltz v2, :cond_2
 
-    new-instance v0, Lcom/upokecenter/cbor/CBORObject;
+    new-instance v2, Lcom/upokecenter/cbor/CBORObject;
 
-    const/4 v1, 0x3
+    invoke-virtual {p0}, Ljava/lang/String;->length()I
 
-    invoke-direct {v0, v1, p0}, Lcom/upokecenter/cbor/CBORObject;-><init>(ILjava/lang/Object;)V
+    move-result v3
 
-    return-object v0
+    int-to-long v3, v3
+
+    cmp-long v0, v3, v0
+
+    if-nez v0, :cond_1
+
+    const/16 v0, 0xa
+
+    goto :goto_0
 
     :cond_1
+    const/4 v0, 0x3
+
+    :goto_0
+    invoke-direct {v2, v0, p0}, Lcom/upokecenter/cbor/CBORObject;-><init>(ILjava/lang/Object;)V
+
+    return-object v2
+
+    :cond_2
     new-instance p0, Ljava/lang/IllegalArgumentException;
 
     const-string v0, "String contains an unpaired surrogate code point."
@@ -5217,7 +5020,7 @@
 
     if-ne v0, v1, :cond_10
 
-    invoke-static {}, Lcom/upokecenter/cbor/CBORObject;->NewMap()Lcom/upokecenter/cbor/CBORObject;
+    invoke-static {}, Lcom/upokecenter/cbor/CBORObject;->NewOrderedMap()Lcom/upokecenter/cbor/CBORObject;
 
     move-result-object v0
 
@@ -5659,7 +5462,7 @@
 
     const-string v4, ") is less than 0"
 
-    invoke-static {v3, v0, v1, v4}, Landroidx/work/impl/utils/futures/AbstractFuture$$ExternalSyntheticOutline0;->m(Ljava/lang/String;JLjava/lang/String;)Ljava/lang/String;
+    invoke-static {v3, v0, v1, v4}, Landroidx/concurrent/futures/AbstractResolvableFuture$$ExternalSyntheticOutline0;->m(Ljava/lang/String;JLjava/lang/String;)Ljava/lang/String;
 
     move-result-object v0
 
@@ -5982,6 +5785,24 @@
     return-object v0
 .end method
 
+.method public static NewOrderedMap()Lcom/upokecenter/cbor/CBORObject;
+    .locals 3
+
+    new-instance v0, Lcom/upokecenter/cbor/CBORObject;
+
+    sget-object v1, Lcom/upokecenter/cbor/PropertyMap;->propertyLists:Ljava/util/Map;
+
+    new-instance v1, Lcom/upokecenter/cbor/PropertyMap$OrderedMap;
+
+    invoke-direct {v1}, Lcom/upokecenter/cbor/PropertyMap$OrderedMap;-><init>()V
+
+    const/4 v2, 0x5
+
+    invoke-direct {v0, v2, v1}, Lcom/upokecenter/cbor/CBORObject;-><init>(ILjava/lang/Object;)V
+
+    return-object v0
+.end method
+
 .method public static PushObject(Ljava/util/List;Ljava/lang/Object;Ljava/lang/Object;)Ljava/util/List;
     .locals 1
     .annotation system Ldalvik/annotation/Signature;
@@ -6217,6 +6038,8 @@
     if-ne v3, v6, :cond_8
 
     long-to-float v10, v1
+
+    sget-object v11, Lcom/upokecenter/cbor/CBORUtilities;->EInteger1970:Lcom/upokecenter/numbers/EInteger;
 
     invoke-static {v10}, Ljava/lang/Float;->floatToRawIntBits(F)I
 
@@ -7087,7 +6910,7 @@
 
     move-result v0
 
-    invoke-static {v0}, Landroidx/constraintlayout/core/SolverVariable$Type$r8$EnumUnboxingUtility;->$enumboxing$ordinal(I)I
+    invoke-static {v0}, Landroidx/camera/camera2/internal/Camera2CameraImpl$InternalState$EnumUnboxingSharedUtility;->ordinal(I)I
 
     move-result v0
 
@@ -7305,12 +7128,28 @@
 
     const/4 v1, 0x3
 
-    if-eq v0, v1, :cond_2
+    if-eq v0, v1, :cond_3
 
     const/16 v1, 0x9
 
-    if-ne v0, v1, :cond_1
+    if-eq v0, v1, :cond_1
 
+    const/16 v1, 0xa
+
+    if-ne v0, v1, :cond_0
+
+    goto :goto_0
+
+    :cond_0
+    new-instance v0, Ljava/lang/IllegalStateException;
+
+    const-string v1, "Not a text String type"
+
+    invoke-direct {v0, v1}, Ljava/lang/IllegalStateException;-><init>(Ljava/lang/String;)V
+
+    throw v0
+
+    :cond_1
     invoke-virtual {p0}, Lcom/upokecenter/cbor/CBORObject;->getThisItem()Ljava/lang/Object;
 
     move-result-object v0
@@ -7333,7 +7172,7 @@
 
     move-result v0
 
-    if-nez v0, :cond_0
+    if-nez v0, :cond_2
 
     invoke-virtual {v1}, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
 
@@ -7341,7 +7180,7 @@
 
     return-object v0
 
-    :cond_0
+    :cond_2
     new-instance v0, Ljava/lang/IllegalArgumentException;
 
     const-string v1, "Invalid UTF-8"
@@ -7350,16 +7189,8 @@
 
     throw v0
 
-    :cond_1
-    new-instance v0, Ljava/lang/IllegalStateException;
-
-    const-string v1, "Not a text String type"
-
-    invoke-direct {v0, v1}, Ljava/lang/IllegalStateException;-><init>(Ljava/lang/String;)V
-
-    throw v0
-
-    :cond_2
+    :cond_3
+    :goto_0
     invoke-virtual {p0}, Lcom/upokecenter/cbor/CBORObject;->getThisItem()Ljava/lang/Object;
 
     move-result-object v0
@@ -7428,38 +7259,6 @@
     return v1
 .end method
 
-.method public ContainsKey(Lcom/upokecenter/cbor/CBORObject;)Z
-    .locals 2
-
-    if-nez p1, :cond_0
-
-    sget-object p1, Lcom/upokecenter/cbor/CBORObject;->Null:Lcom/upokecenter/cbor/CBORObject;
-
-    :cond_0
-    invoke-virtual {p0}, Lcom/upokecenter/cbor/CBORObject;->getType$enumunboxing$()I
-
-    move-result v0
-
-    const/4 v1, 0x7
-
-    if-ne v0, v1, :cond_1
-
-    invoke-virtual {p0}, Lcom/upokecenter/cbor/CBORObject;->AsMap()Ljava/util/Map;
-
-    move-result-object v0
-
-    invoke-interface {v0, p1}, Ljava/util/Map;->containsKey(Ljava/lang/Object;)Z
-
-    move-result p1
-
-    return p1
-
-    :cond_1
-    const/4 p1, 0x0
-
-    return p1
-.end method
-
 .method public EncodeToBytes()[B
     .locals 1
 
@@ -7473,7 +7272,7 @@
 .end method
 
 .method public EncodeToBytes(Lcom/upokecenter/cbor/CBOREncodeOptions;)[B
-    .locals 11
+    .locals 10
 
     const-string v0, "options"
 
@@ -7481,11 +7280,9 @@
 
     iget-boolean v0, p1, Lcom/upokecenter/cbor/CBOREncodeOptions;->propVarctap2canonical:Z
 
-    const/4 v1, 0x0
-
     if-eqz v0, :cond_0
 
-    invoke-static {p0, v1}, Lcom/upokecenter/cbor/CBORCanonical;->CtapCanonicalEncode(Lcom/upokecenter/cbor/CBORObject;I)[B
+    invoke-static {p0}, Lcom/upokecenter/cbor/CBORCanonical;->CtapCanonicalEncode(Lcom/upokecenter/cbor/CBORObject;)[B
 
     move-result-object p1
 
@@ -7498,95 +7295,87 @@
 
     invoke-virtual {p0}, Lcom/upokecenter/cbor/CBORObject;->isTagged()Z
 
-    move-result v2
+    move-result v1
 
-    const/16 v3, 0x18
+    const/16 v2, 0x18
+
+    const/4 v3, 0x0
 
     const/4 v4, 0x1
 
-    if-eqz v2, :cond_3
+    if-eqz v1, :cond_3
 
-    iget-object v2, p0, Lcom/upokecenter/cbor/CBORObject;->itemValue:Ljava/lang/Object;
+    iget-object v1, p0, Lcom/upokecenter/cbor/CBORObject;->itemValue:Ljava/lang/Object;
 
-    check-cast v2, Lcom/upokecenter/cbor/CBORObject;
+    check-cast v1, Lcom/upokecenter/cbor/CBORObject;
 
-    invoke-virtual {v2}, Lcom/upokecenter/cbor/CBORObject;->isTagged()Z
+    invoke-virtual {v1}, Lcom/upokecenter/cbor/CBORObject;->isTagged()Z
 
-    move-result v2
+    move-result v1
 
-    if-nez v2, :cond_2
+    if-nez v1, :cond_2
 
-    iget v2, p0, Lcom/upokecenter/cbor/CBORObject;->tagHigh:I
+    iget v1, p0, Lcom/upokecenter/cbor/CBORObject;->tagHigh:I
 
-    if-nez v2, :cond_2
+    if-nez v1, :cond_2
 
-    iget v2, p0, Lcom/upokecenter/cbor/CBORObject;->tagLow:I
+    iget v1, p0, Lcom/upokecenter/cbor/CBORObject;->tagLow:I
 
-    shr-int/lit8 v5, v2, 0x10
+    shr-int/lit8 v5, v1, 0x10
 
     if-nez v5, :cond_2
 
-    if-lt v2, v3, :cond_1
+    if-lt v1, v2, :cond_1
 
     goto :goto_0
 
     :cond_1
-    add-int/lit16 v2, v2, 0xc0
+    add-int/lit16 v1, v1, 0xc0
 
-    int-to-byte v2, v2
+    int-to-byte v1, v1
 
-    move v5, v1
+    move v5, v3
 
     goto :goto_1
 
     :cond_2
     :goto_0
-    move v2, v1
+    move v1, v3
 
     move v5, v4
 
     goto :goto_1
 
     :cond_3
-    move v2, v1
+    move v1, v3
 
-    move v5, v2
+    move v5, v1
 
     :goto_1
-    if-nez v5, :cond_17
+    if-nez v5, :cond_14
 
     invoke-virtual {p0}, Lcom/upokecenter/cbor/CBORObject;->getItemType()I
 
     move-result v5
 
-    if-eqz v5, :cond_14
+    if-eqz v5, :cond_11
 
     const/4 v6, 0x3
 
-    if-eq v5, v6, :cond_12
+    if-eq v5, v6, :cond_f
 
-    const/4 v7, 0x7
+    const/4 v7, 0x2
 
-    const/4 v8, 0x2
-
-    if-eq v5, v7, :cond_a
-
-    const/16 v7, 0x8
-
-    if-eq v5, v7, :cond_8
-
-    const/16 v2, 0x9
-
-    if-eq v5, v2, :cond_4
+    packed-switch v5, :pswitch_data_0
 
     goto/16 :goto_5
 
-    :cond_4
-    if-nez v0, :cond_17
+    :pswitch_0
+    if-nez v0, :cond_14
 
     iget-boolean v0, p1, Lcom/upokecenter/cbor/CBOREncodeOptions;->propVaruseindeflengthstrings:Z
 
-    if-nez v0, :cond_17
+    if-nez v0, :cond_14
 
     invoke-virtual {p0}, Lcom/upokecenter/cbor/CBORObject;->getThisItem()Ljava/lang/Object;
 
@@ -7596,7 +7385,7 @@
 
     array-length v0, p1
 
-    if-ge v0, v3, :cond_5
+    if-ge v0, v2, :cond_4
 
     array-length v0, p1
 
@@ -7604,63 +7393,63 @@
 
     new-array v0, v0, [B
 
-    array-length v2, p1
+    array-length v1, p1
 
-    or-int/lit8 v2, v2, 0x60
+    or-int/lit8 v1, v1, 0x60
 
-    int-to-byte v2, v2
+    int-to-byte v1, v1
 
-    aput-byte v2, v0, v1
+    aput-byte v1, v0, v3
 
-    array-length v2, p1
+    array-length v1, p1
 
-    invoke-static {p1, v1, v0, v4, v2}, Ljava/lang/System;->arraycopy(Ljava/lang/Object;ILjava/lang/Object;II)V
+    invoke-static {p1, v3, v0, v4, v1}, Ljava/lang/System;->arraycopy(Ljava/lang/Object;ILjava/lang/Object;II)V
+
+    goto :goto_2
+
+    :cond_4
+    array-length v0, p1
+
+    int-to-long v0, v0
+
+    const-wide/16 v8, 0xff
+
+    cmp-long v0, v0, v8
+
+    if-gtz v0, :cond_5
+
+    array-length v0, p1
+
+    add-int/2addr v0, v7
+
+    new-array v0, v0, [B
+
+    const/16 v1, 0x78
+
+    aput-byte v1, v0, v3
+
+    array-length v1, p1
+
+    int-to-byte v1, v1
+
+    aput-byte v1, v0, v4
+
+    array-length v1, p1
+
+    invoke-static {p1, v3, v0, v7, v1}, Ljava/lang/System;->arraycopy(Ljava/lang/Object;ILjava/lang/Object;II)V
 
     goto :goto_2
 
     :cond_5
     array-length v0, p1
 
-    int-to-long v2, v0
+    int-to-long v0, v0
 
-    const-wide/16 v9, 0xff
+    const-wide/32 v8, 0xffff
 
-    cmp-long v0, v2, v9
+    cmp-long v0, v0, v8
 
     if-gtz v0, :cond_6
-
-    array-length v0, p1
-
-    add-int/2addr v0, v8
-
-    new-array v0, v0, [B
-
-    const/16 v2, 0x78
-
-    aput-byte v2, v0, v1
-
-    array-length v2, p1
-
-    int-to-byte v2, v2
-
-    aput-byte v2, v0, v4
-
-    array-length v2, p1
-
-    invoke-static {p1, v1, v0, v8, v2}, Ljava/lang/System;->arraycopy(Ljava/lang/Object;ILjava/lang/Object;II)V
-
-    goto :goto_2
-
-    :cond_6
-    array-length v0, p1
-
-    int-to-long v2, v0
-
-    const-wide/32 v9, 0xffff
-
-    cmp-long v0, v2, v9
-
-    if-gtz v0, :cond_7
 
     array-length v0, p1
 
@@ -7668,232 +7457,233 @@
 
     new-array v0, v0, [B
 
-    const/16 v2, 0x79
+    const/16 v1, 0x79
 
-    aput-byte v2, v0, v1
+    aput-byte v1, v0, v3
 
-    array-length v2, p1
+    array-length v1, p1
 
-    shr-int/2addr v2, v7
+    shr-int/lit8 v1, v1, 0x8
 
-    and-int/lit16 v2, v2, 0xff
+    and-int/lit16 v1, v1, 0xff
 
-    int-to-byte v2, v2
+    int-to-byte v1, v1
 
-    aput-byte v2, v0, v4
+    aput-byte v1, v0, v4
 
-    array-length v2, p1
+    array-length v1, p1
 
-    and-int/lit16 v2, v2, 0xff
+    and-int/lit16 v1, v1, 0xff
 
-    int-to-byte v2, v2
+    int-to-byte v1, v1
 
-    aput-byte v2, v0, v8
+    aput-byte v1, v0, v7
 
-    array-length v2, p1
+    array-length v1, p1
 
-    invoke-static {p1, v1, v0, v6, v2}, Ljava/lang/System;->arraycopy(Ljava/lang/Object;ILjava/lang/Object;II)V
+    invoke-static {p1, v3, v0, v6, v1}, Ljava/lang/System;->arraycopy(Ljava/lang/Object;ILjava/lang/Object;II)V
 
     goto :goto_2
 
-    :cond_7
+    :cond_6
     array-length v0, p1
 
-    int-to-long v2, v0
+    int-to-long v0, v0
 
-    invoke-static {v6, v2, v3}, Lcom/upokecenter/cbor/CBORObject;->GetPositiveInt64Bytes(IJ)[B
+    invoke-static {v6, v0, v1}, Lcom/upokecenter/cbor/CBORObject;->GetPositiveInt64Bytes(IJ)[B
 
     move-result-object v0
 
-    array-length v2, p1
+    array-length v1, p1
 
-    array-length v3, v0
+    array-length v2, v0
 
-    add-int/2addr v2, v3
+    add-int/2addr v1, v2
 
-    new-array v2, v2, [B
+    new-array v1, v1, [B
 
-    array-length v3, v0
+    array-length v2, v0
 
-    invoke-static {v0, v1, v2, v1, v3}, Ljava/lang/System;->arraycopy(Ljava/lang/Object;ILjava/lang/Object;II)V
+    invoke-static {v0, v3, v1, v3, v2}, Ljava/lang/System;->arraycopy(Ljava/lang/Object;ILjava/lang/Object;II)V
 
     array-length v0, v0
 
-    array-length v3, p1
+    array-length v2, p1
 
-    invoke-static {p1, v1, v2, v0, v3}, Ljava/lang/System;->arraycopy(Ljava/lang/Object;ILjava/lang/Object;II)V
+    invoke-static {p1, v3, v1, v0, v2}, Ljava/lang/System;->arraycopy(Ljava/lang/Object;ILjava/lang/Object;II)V
 
-    move-object v0, v2
+    move-object v0, v1
 
     :goto_2
     return-object v0
 
-    :cond_8
+    :pswitch_1
     iget-boolean p1, p1, Lcom/upokecenter/cbor/CBOREncodeOptions;->propVarfloat64:Z
 
-    if-eqz p1, :cond_9
+    if-eqz p1, :cond_7
 
     invoke-virtual {p0}, Lcom/upokecenter/cbor/CBORObject;->AsDoubleBits()J
 
-    move-result-wide v0
+    move-result-wide v2
 
-    and-int/lit16 p1, v2, 0xff
+    and-int/lit16 p1, v1, 0xff
 
-    invoke-static {v0, v1, p1}, Lcom/upokecenter/cbor/CBORObject;->GetDoubleBytes64(JI)[B
+    invoke-static {v2, v3, p1}, Lcom/upokecenter/cbor/CBORObject;->GetDoubleBytes64(JI)[B
 
     move-result-object p1
 
     return-object p1
 
-    :cond_9
+    :cond_7
     invoke-virtual {p0}, Lcom/upokecenter/cbor/CBORObject;->AsDoubleBits()J
 
-    move-result-wide v0
+    move-result-wide v2
 
-    and-int/lit16 p1, v2, 0xff
+    and-int/lit16 p1, v1, 0xff
 
-    invoke-static {v0, v1, p1}, Lcom/upokecenter/cbor/CBORObject;->GetDoubleBytes(JI)[B
+    invoke-static {v2, v3, p1}, Lcom/upokecenter/cbor/CBORObject;->GetDoubleBytes(JI)[B
 
     move-result-object p1
 
     return-object p1
 
-    :cond_a
-    const/16 v3, -0x9
+    :pswitch_2
+    const/16 v2, -0x9
 
     const/16 v5, -0xa
 
     const/16 v6, -0xb
 
-    const/16 v7, -0xc
+    const/16 v8, -0xc
 
-    if-eqz v0, :cond_e
+    if-eqz v0, :cond_b
 
-    new-array v0, v8, [B
+    new-array v0, v7, [B
 
-    aput-byte v2, v0, v1
+    aput-byte v1, v0, v3
 
-    aput-byte v7, v0, v4
+    aput-byte v8, v0, v4
 
     invoke-virtual {p0}, Lcom/upokecenter/cbor/CBORObject;->isFalse()Z
 
     move-result v1
 
-    if-eqz v1, :cond_b
+    if-eqz v1, :cond_8
 
-    aput-byte v7, v0, v4
+    aput-byte v8, v0, v4
 
     return-object v0
 
-    :cond_b
+    :cond_8
     invoke-virtual {p0}, Lcom/upokecenter/cbor/CBORObject;->isTrue()Z
 
     move-result v1
 
-    if-eqz v1, :cond_c
+    if-eqz v1, :cond_9
 
     aput-byte v6, v0, v4
 
     return-object v0
 
-    :cond_c
+    :cond_9
     invoke-virtual {p0}, Lcom/upokecenter/cbor/CBORObject;->isNull()Z
 
     move-result v1
 
-    if-eqz v1, :cond_d
+    if-eqz v1, :cond_a
 
     aput-byte v5, v0, v4
 
     return-object v0
 
-    :cond_d
+    :cond_a
     invoke-virtual {p0}, Lcom/upokecenter/cbor/CBORObject;->isUndefined()Z
 
     move-result v1
 
-    if-eqz v1, :cond_17
+    if-eqz v1, :cond_14
 
-    aput-byte v3, v0, v4
+    aput-byte v2, v0, v4
 
     return-object v0
 
-    :cond_e
+    :cond_b
     invoke-virtual {p0}, Lcom/upokecenter/cbor/CBORObject;->isFalse()Z
 
     move-result v0
 
-    if-eqz v0, :cond_f
+    if-eqz v0, :cond_c
 
     new-array p1, v4, [B
 
-    aput-byte v7, p1, v1
+    aput-byte v8, p1, v3
 
     return-object p1
 
-    :cond_f
+    :cond_c
     invoke-virtual {p0}, Lcom/upokecenter/cbor/CBORObject;->isTrue()Z
 
     move-result v0
 
-    if-eqz v0, :cond_10
+    if-eqz v0, :cond_d
 
     new-array p1, v4, [B
 
-    aput-byte v6, p1, v1
+    aput-byte v6, p1, v3
 
     return-object p1
 
-    :cond_10
+    :cond_d
     invoke-virtual {p0}, Lcom/upokecenter/cbor/CBORObject;->isNull()Z
 
     move-result v0
 
-    if-eqz v0, :cond_11
+    if-eqz v0, :cond_e
 
     new-array p1, v4, [B
 
-    aput-byte v5, p1, v1
+    aput-byte v5, p1, v3
 
     return-object p1
 
-    :cond_11
+    :cond_e
     invoke-virtual {p0}, Lcom/upokecenter/cbor/CBORObject;->isUndefined()Z
 
     move-result v0
 
-    if-eqz v0, :cond_17
+    if-eqz v0, :cond_14
 
     new-array p1, v4, [B
 
-    aput-byte v3, p1, v1
+    aput-byte v2, p1, v3
 
     return-object p1
 
-    :cond_12
+    :cond_f
+    :pswitch_3
     invoke-virtual {p0}, Lcom/upokecenter/cbor/CBORObject;->AsString()Ljava/lang/String;
 
-    move-result-object v1
+    move-result-object v2
 
-    if-eqz v0, :cond_13
+    if-eqz v0, :cond_10
 
-    and-int/lit16 v0, v2, 0xff
+    and-int/lit16 v0, v1, 0xff
 
     goto :goto_3
 
-    :cond_13
+    :cond_10
     const/4 v0, -0x1
 
     :goto_3
-    invoke-static {v1, v0}, Lcom/upokecenter/cbor/CBORObject;->GetOptimizedBytesIfShortAscii(Ljava/lang/String;I)[B
+    invoke-static {v2, v0}, Lcom/upokecenter/cbor/CBORObject;->GetOptimizedBytesIfShortAscii(Ljava/lang/String;I)[B
 
     move-result-object v0
 
-    if-eqz v0, :cond_17
+    if-eqz v0, :cond_14
 
     return-object v0
 
-    :cond_14
+    :cond_11
     invoke-virtual {p0}, Lcom/upokecenter/cbor/CBORObject;->getThisItem()Ljava/lang/Object;
 
     move-result-object p1
@@ -7908,15 +7698,15 @@
 
     cmp-long p1, v5, v7
 
-    if-ltz p1, :cond_15
+    if-ltz p1, :cond_12
 
-    invoke-static {v1, v5, v6}, Lcom/upokecenter/cbor/CBORObject;->GetPositiveInt64Bytes(IJ)[B
+    invoke-static {v3, v5, v6}, Lcom/upokecenter/cbor/CBORObject;->GetPositiveInt64Bytes(IJ)[B
 
     move-result-object p1
 
     goto :goto_4
 
-    :cond_15
+    :cond_12
     const-wide/16 v7, 0x1
 
     add-long/2addr v5, v7
@@ -7928,26 +7718,26 @@
     move-result-object p1
 
     :goto_4
-    if-nez v0, :cond_16
+    if-nez v0, :cond_13
 
     return-object p1
 
-    :cond_16
+    :cond_13
     array-length v0, p1
 
     add-int/2addr v0, v4
 
     new-array v0, v0, [B
 
-    array-length v3, p1
+    array-length v2, p1
 
-    invoke-static {p1, v1, v0, v4, v3}, Ljava/lang/System;->arraycopy(Ljava/lang/Object;ILjava/lang/Object;II)V
+    invoke-static {p1, v3, v0, v4, v2}, Ljava/lang/System;->arraycopy(Ljava/lang/Object;ILjava/lang/Object;II)V
 
-    aput-byte v2, v0, v1
+    aput-byte v1, v0, v3
 
     return-object v0
 
-    :cond_17
+    :cond_14
     :goto_5
     const/4 v0, 0x0
 
@@ -7988,7 +7778,7 @@
     move-exception p1
 
     :goto_6
-    if-eqz v0, :cond_18
+    if-eqz v0, :cond_15
 
     :try_start_3
     invoke-virtual {v0}, Ljava/io/ByteArrayOutputStream;->close()V
@@ -7996,7 +7786,7 @@
     .catch Ljava/io/IOException; {:try_start_3 .. :try_end_3} :catch_1
 
     :catch_1
-    :cond_18
+    :cond_15
     :try_start_4
     throw p1
     :try_end_4
@@ -8012,6 +7802,16 @@
     invoke-direct {v0, v1, p1}, Lcom/upokecenter/cbor/CBORException;-><init>(Ljava/lang/String;Ljava/lang/Throwable;)V
 
     throw v0
+
+    nop
+
+    :pswitch_data_0
+    .packed-switch 0x7
+        :pswitch_2
+        :pswitch_1
+        :pswitch_0
+        :pswitch_3
+    .end packed-switch
 .end method
 
 .method public GetByteString()[B
@@ -8213,7 +8013,7 @@
 
     move-result v0
 
-    invoke-static {v0}, Landroidx/constraintlayout/core/SolverVariable$Type$r8$EnumUnboxingUtility;->$enumboxing$ordinal(I)I
+    invoke-static {v0}, Landroidx/camera/camera2/internal/Camera2CameraImpl$InternalState$EnumUnboxingSharedUtility;->ordinal(I)I
 
     move-result v0
 
@@ -8992,6 +8792,8 @@
 
     aput-byte v10, v1, v7
 
+    move v7, v9
+
     goto :goto_2
 
     :cond_10
@@ -9059,11 +8861,7 @@
 
     aput-byte v10, v1, v9
 
-    move v9, v7
-
     :goto_2
-    move v7, v9
-
     const/4 v9, 0x1
 
     :goto_3
@@ -9423,8 +9221,6 @@
     :goto_a
     return-void
 
-    nop
-
     :pswitch_data_0
     .packed-switch 0x0
         :pswitch_11
@@ -9437,6 +9233,7 @@
         :pswitch_2
         :pswitch_1
         :pswitch_6
+        :pswitch_5
     .end packed-switch
 
     :pswitch_data_1
@@ -9454,1008 +9251,580 @@
 .end method
 
 .method public compareTo(Lcom/upokecenter/cbor/CBORObject;)I
-    .locals 24
+    .locals 10
 
-    move-object/from16 v0, p0
+    const/4 v0, 0x1
 
-    move-object/from16 v1, p1
+    if-nez p1, :cond_0
 
-    const/4 v2, 0x1
-
-    if-nez v1, :cond_0
-
-    return v2
+    return v0
 
     :cond_0
-    const/4 v3, 0x0
+    const/4 v1, 0x0
 
-    if-ne v0, v1, :cond_1
+    if-ne p0, p1, :cond_1
 
-    return v3
+    return v1
 
     :cond_1
-    iget v4, v0, Lcom/upokecenter/cbor/CBORObject;->itemtypeValue:I
+    iget v2, p0, Lcom/upokecenter/cbor/CBORObject;->itemtypeValue:I
 
-    iget v5, v1, Lcom/upokecenter/cbor/CBORObject;->itemtypeValue:I
+    iget v3, p1, Lcom/upokecenter/cbor/CBORObject;->itemtypeValue:I
 
-    iget-object v6, v0, Lcom/upokecenter/cbor/CBORObject;->itemValue:Ljava/lang/Object;
+    iget-object v4, p0, Lcom/upokecenter/cbor/CBORObject;->itemValue:Ljava/lang/Object;
 
-    iget-object v7, v1, Lcom/upokecenter/cbor/CBORObject;->itemValue:Ljava/lang/Object;
+    iget-object v5, p1, Lcom/upokecenter/cbor/CBORObject;->itemValue:Ljava/lang/Object;
 
-    const/4 v8, 0x3
+    const/4 v6, -0x1
 
-    if-ne v4, v5, :cond_3d
+    if-ne v2, v3, :cond_18
 
-    const-wide/16 v10, 0x0
+    packed-switch v2, :pswitch_data_0
 
-    packed-switch v4, :pswitch_data_0
+    new-instance p1, Ljava/lang/IllegalStateException;
 
-    new-instance v1, Ljava/lang/IllegalStateException;
+    const-string v0, "Unexpected data type"
 
-    const-string v2, "Unexpected data type"
+    invoke-direct {p1, v0}, Ljava/lang/IllegalStateException;-><init>(Ljava/lang/String;)V
 
-    invoke-direct {v1, v2}, Ljava/lang/IllegalStateException;-><init>(Ljava/lang/String;)V
-
-    throw v1
+    throw p1
 
     :pswitch_0
-    invoke-virtual/range {p0 .. p0}, Lcom/upokecenter/cbor/CBORObject;->AsDoubleBits()J
+    check-cast v4, Ljava/lang/String;
 
-    move-result-wide v4
+    check-cast v5, Ljava/lang/String;
 
-    invoke-static {v4, v5, v3}, Lcom/upokecenter/cbor/CBORObject;->GetDoubleBytes(JI)[B
+    invoke-virtual {v4}, Ljava/lang/String;->length()I
 
-    move-result-object v2
+    move-result p1
 
-    invoke-virtual/range {p1 .. p1}, Lcom/upokecenter/cbor/CBORObject;->AsDoubleBits()J
-
-    move-result-wide v4
-
-    invoke-static {v4, v5, v3}, Lcom/upokecenter/cbor/CBORObject;->GetDoubleBytes(JI)[B
-
-    move-result-object v1
-
-    invoke-static {v2, v1}, Lcom/upokecenter/cbor/CBORUtilities;->ByteArrayCompare([B[B)I
-
-    move-result v2
-
-    goto/16 :goto_13
-
-    :pswitch_1
-    check-cast v6, Ljava/lang/Integer;
-
-    invoke-virtual {v6}, Ljava/lang/Integer;->intValue()I
+    invoke-virtual {v5}, Ljava/lang/String;->length()I
 
     move-result v1
 
-    check-cast v7, Ljava/lang/Integer;
-
-    invoke-virtual {v7}, Ljava/lang/Integer;->intValue()I
-
-    move-result v4
-
-    if-ne v1, v4, :cond_2
+    if-ge p1, v1, :cond_2
 
     goto/16 :goto_4
 
     :cond_2
-    if-ge v1, v4, :cond_46
+    if-le p1, v1, :cond_3
 
-    goto/16 :goto_12
+    goto/16 :goto_5
+
+    :cond_3
+    invoke-virtual {v4, v5}, Ljava/lang/String;->compareTo(Ljava/lang/String;)I
+
+    move-result v0
+
+    goto/16 :goto_5
+
+    :pswitch_1
+    invoke-virtual {p0}, Lcom/upokecenter/cbor/CBORObject;->AsDoubleBits()J
+
+    move-result-wide v2
+
+    invoke-static {v2, v3, v1}, Lcom/upokecenter/cbor/CBORObject;->GetDoubleBytes(JI)[B
+
+    move-result-object v0
+
+    invoke-virtual {p1}, Lcom/upokecenter/cbor/CBORObject;->AsDoubleBits()J
+
+    move-result-wide v2
+
+    invoke-static {v2, v3, v1}, Lcom/upokecenter/cbor/CBORObject;->GetDoubleBytes(JI)[B
+
+    move-result-object p1
+
+    invoke-static {v0, p1}, Lcom/upokecenter/cbor/CBORUtilities;->ByteArrayCompare([B[B)I
+
+    move-result v0
+
+    goto/16 :goto_5
 
     :pswitch_2
-    invoke-virtual/range {p0 .. p0}, Lcom/upokecenter/cbor/CBORObject;->getMostOuterTag()Lcom/upokecenter/numbers/EInteger;
+    check-cast v4, Ljava/lang/Integer;
 
-    move-result-object v2
+    invoke-virtual {v4}, Ljava/lang/Integer;->intValue()I
 
-    invoke-virtual/range {p1 .. p1}, Lcom/upokecenter/cbor/CBORObject;->getMostOuterTag()Lcom/upokecenter/numbers/EInteger;
+    move-result p1
 
-    move-result-object v1
+    check-cast v5, Ljava/lang/Integer;
 
-    invoke-virtual {v2, v1}, Lcom/upokecenter/numbers/EInteger;->compareTo(Lcom/upokecenter/numbers/EInteger;)I
+    invoke-virtual {v5}, Ljava/lang/Integer;->intValue()I
 
     move-result v2
 
-    if-nez v2, :cond_46
+    if-ne p1, v2, :cond_4
 
-    check-cast v6, Lcom/upokecenter/cbor/CBORObject;
+    goto/16 :goto_2
+
+    :cond_4
+    if-ge p1, v2, :cond_2a
+
+    goto/16 :goto_4
+
+    :pswitch_3
+    invoke-virtual {p0}, Lcom/upokecenter/cbor/CBORObject;->getMostOuterTag()Lcom/upokecenter/numbers/EInteger;
+
+    move-result-object v0
+
+    invoke-virtual {p1}, Lcom/upokecenter/cbor/CBORObject;->getMostOuterTag()Lcom/upokecenter/numbers/EInteger;
+
+    move-result-object p1
+
+    invoke-virtual {v0, p1}, Lcom/upokecenter/numbers/EInteger;->compareTo(Lcom/upokecenter/numbers/EInteger;)I
+
+    move-result v0
+
+    if-nez v0, :cond_2a
+
+    check-cast v4, Lcom/upokecenter/cbor/CBORObject;
+
+    check-cast v5, Lcom/upokecenter/cbor/CBORObject;
+
+    invoke-virtual {v4, v5}, Lcom/upokecenter/cbor/CBORObject;->compareTo(Lcom/upokecenter/cbor/CBORObject;)I
+
+    move-result v0
+
+    goto/16 :goto_5
+
+    :pswitch_4
+    check-cast v4, Ljava/util/Map;
+
+    check-cast v5, Ljava/util/Map;
+
+    if-nez v4, :cond_5
+
+    if-nez v5, :cond_29
+
+    goto/16 :goto_2
+
+    :cond_5
+    if-nez v5, :cond_6
+
+    goto/16 :goto_5
+
+    :cond_6
+    if-ne v4, v5, :cond_7
+
+    goto/16 :goto_2
+
+    :cond_7
+    invoke-interface {v4}, Ljava/util/Map;->size()I
+
+    move-result p1
+
+    invoke-interface {v5}, Ljava/util/Map;->size()I
+
+    move-result v2
+
+    if-nez p1, :cond_8
+
+    if-nez v2, :cond_8
+
+    goto/16 :goto_2
+
+    :cond_8
+    if-nez p1, :cond_9
+
+    goto/16 :goto_4
+
+    :cond_9
+    if-nez v2, :cond_a
+
+    goto/16 :goto_5
+
+    :cond_a
+    if-eq p1, v2, :cond_b
+
+    if-ge p1, v2, :cond_2a
+
+    goto/16 :goto_4
+
+    :cond_b
+    new-instance p1, Ljava/util/ArrayList;
+
+    invoke-static {v4}, Lcom/upokecenter/cbor/PropertyMap;->GetSortedKeys(Ljava/util/Map;)Ljava/util/Collection;
+
+    move-result-object v0
+
+    invoke-direct {p1, v0}, Ljava/util/ArrayList;-><init>(Ljava/util/Collection;)V
+
+    new-instance v0, Ljava/util/ArrayList;
+
+    invoke-static {v5}, Lcom/upokecenter/cbor/PropertyMap;->GetSortedKeys(Ljava/util/Map;)Ljava/util/Collection;
+
+    move-result-object v2
+
+    invoke-direct {v0, v2}, Ljava/util/ArrayList;-><init>(Ljava/util/Collection;)V
+
+    invoke-virtual {p1}, Ljava/util/ArrayList;->size()I
+
+    move-result v2
+
+    invoke-virtual {v0}, Ljava/util/ArrayList;->size()I
+
+    move v3, v1
+
+    :goto_0
+    if-ge v3, v2, :cond_15
+
+    invoke-virtual {p1, v3}, Ljava/util/ArrayList;->get(I)Ljava/lang/Object;
+
+    move-result-object v7
 
     check-cast v7, Lcom/upokecenter/cbor/CBORObject;
 
-    invoke-virtual {v6, v7}, Lcom/upokecenter/cbor/CBORObject;->compareTo(Lcom/upokecenter/cbor/CBORObject;)I
-
-    move-result v2
-
-    goto/16 :goto_13
-
-    :pswitch_3
-    check-cast v6, Ljava/util/Map;
-
-    check-cast v7, Ljava/util/Map;
-
-    if-nez v6, :cond_3
-
-    if-nez v7, :cond_45
-
-    goto/16 :goto_4
-
-    :cond_3
-    if-nez v7, :cond_4
-
-    goto/16 :goto_13
-
-    :cond_4
-    if-ne v6, v7, :cond_5
-
-    goto/16 :goto_4
-
-    :cond_5
-    invoke-interface {v6}, Ljava/util/Map;->size()I
-
-    move-result v1
-
-    invoke-interface {v7}, Ljava/util/Map;->size()I
-
-    move-result v4
-
-    if-nez v1, :cond_6
-
-    if-nez v4, :cond_6
-
-    goto/16 :goto_4
-
-    :cond_6
-    if-nez v1, :cond_7
-
-    goto/16 :goto_12
-
-    :cond_7
-    if-nez v4, :cond_8
-
-    goto/16 :goto_13
-
-    :cond_8
-    if-eq v1, v4, :cond_9
-
-    if-ge v1, v4, :cond_46
-
-    goto/16 :goto_12
-
-    :cond_9
-    new-instance v1, Ljava/util/ArrayList;
-
-    invoke-interface {v6}, Ljava/util/Map;->keySet()Ljava/util/Set;
-
-    move-result-object v2
-
-    invoke-direct {v1, v2}, Ljava/util/ArrayList;-><init>(Ljava/util/Collection;)V
-
-    new-instance v2, Ljava/util/ArrayList;
-
-    invoke-interface {v7}, Ljava/util/Map;->keySet()Ljava/util/Set;
-
-    move-result-object v4
-
-    invoke-direct {v2, v4}, Ljava/util/ArrayList;-><init>(Ljava/util/Collection;)V
-
-    invoke-static {v1}, Ljava/util/Collections;->sort(Ljava/util/List;)V
-
-    invoke-static {v2}, Ljava/util/Collections;->sort(Ljava/util/List;)V
-
-    invoke-virtual {v1}, Ljava/util/ArrayList;->size()I
-
-    move-result v4
-
-    invoke-virtual {v2}, Ljava/util/ArrayList;->size()I
-
-    move v5, v3
-
-    :goto_0
-    if-ge v5, v4, :cond_17
-
-    invoke-virtual {v1, v5}, Ljava/util/ArrayList;->get(I)Ljava/lang/Object;
+    invoke-virtual {v0, v3}, Ljava/util/ArrayList;->get(I)Ljava/lang/Object;
 
     move-result-object v8
 
     check-cast v8, Lcom/upokecenter/cbor/CBORObject;
 
-    invoke-virtual {v2, v5}, Ljava/util/ArrayList;->get(I)Ljava/lang/Object;
+    if-nez v7, :cond_c
 
-    move-result-object v10
-
-    check-cast v10, Lcom/upokecenter/cbor/CBORObject;
-
-    if-nez v8, :cond_a
-
-    goto/16 :goto_12
-
-    :cond_a
-    invoke-virtual {v8, v10}, Lcom/upokecenter/cbor/CBORObject;->compareTo(Lcom/upokecenter/cbor/CBORObject;)I
-
-    move-result v11
-
-    if-eqz v11, :cond_b
-
-    move v2, v11
-
-    goto/16 :goto_13
-
-    :cond_b
-    invoke-interface {v6, v8}, Ljava/util/Map;->get(Ljava/lang/Object;)Ljava/lang/Object;
-
-    move-result-object v8
-
-    check-cast v8, Lcom/upokecenter/cbor/CBORObject;
-
-    invoke-interface {v7, v10}, Ljava/util/Map;->get(Ljava/lang/Object;)Ljava/lang/Object;
-
-    move-result-object v10
-
-    check-cast v10, Lcom/upokecenter/cbor/CBORObject;
-
-    invoke-virtual {v8, v10}, Lcom/upokecenter/cbor/CBORObject;->compareTo(Lcom/upokecenter/cbor/CBORObject;)I
-
-    move-result v8
-
-    if-eqz v8, :cond_d
+    goto/16 :goto_4
 
     :cond_c
-    move v2, v8
+    invoke-virtual {v7, v8}, Lcom/upokecenter/cbor/CBORObject;->compareTo(Lcom/upokecenter/cbor/CBORObject;)I
 
-    goto/16 :goto_13
+    move-result v9
+
+    if-eqz v9, :cond_d
+
+    move v0, v9
+
+    goto/16 :goto_5
 
     :cond_d
-    add-int/lit8 v5, v5, 0x1
+    invoke-interface {v4, v7}, Ljava/util/Map;->get(Ljava/lang/Object;)Ljava/lang/Object;
+
+    move-result-object v7
+
+    check-cast v7, Lcom/upokecenter/cbor/CBORObject;
+
+    invoke-interface {v5, v8}, Ljava/util/Map;->get(Ljava/lang/Object;)Ljava/lang/Object;
+
+    move-result-object v8
+
+    check-cast v8, Lcom/upokecenter/cbor/CBORObject;
+
+    invoke-virtual {v7, v8}, Lcom/upokecenter/cbor/CBORObject;->compareTo(Lcom/upokecenter/cbor/CBORObject;)I
+
+    move-result v7
+
+    if-eqz v7, :cond_e
+
+    move v0, v7
+
+    goto/16 :goto_5
+
+    :cond_e
+    add-int/lit8 v3, v3, 0x1
 
     goto :goto_0
 
-    :pswitch_4
-    check-cast v6, Ljava/util/ArrayList;
-
-    check-cast v7, Ljava/util/ArrayList;
-
-    invoke-static {v6, v7}, Lcom/upokecenter/cbor/CBORObject;->ListCompare(Ljava/util/List;Ljava/util/List;)I
-
-    move-result v2
-
-    goto/16 :goto_13
-
     :pswitch_5
-    check-cast v6, Ljava/lang/String;
+    check-cast v4, Ljava/util/ArrayList;
 
-    check-cast v7, Ljava/lang/String;
+    check-cast v5, Ljava/util/ArrayList;
 
-    if-nez v6, :cond_e
+    invoke-static {v4, v5}, Lcom/upokecenter/cbor/CBORObject;->ListCompare(Ljava/util/List;Ljava/util/List;)I
 
-    if-nez v7, :cond_45
+    move-result v0
 
-    goto/16 :goto_4
+    goto/16 :goto_5
 
-    :cond_e
-    if-nez v7, :cond_f
+    :pswitch_6
+    check-cast v4, Ljava/lang/String;
 
-    goto/16 :goto_13
+    check-cast v5, Ljava/lang/String;
 
-    :cond_f
-    invoke-virtual {v6}, Ljava/lang/String;->length()I
+    invoke-static {v4, v5}, Lcom/upokecenter/cbor/CBORUtilities;->CompareStringsAsUtf8LengthFirst(Ljava/lang/String;Ljava/lang/String;)I
 
-    move-result v1
+    move-result v0
 
-    if-nez v1, :cond_10
+    goto/16 :goto_5
 
-    invoke-virtual {v7}, Ljava/lang/String;->length()I
+    :pswitch_7
+    check-cast v4, [B
 
-    move-result v1
+    check-cast v5, [B
 
-    if-nez v1, :cond_45
+    sget-object p1, Lcom/upokecenter/cbor/CBORUtilities;->EInteger1970:Lcom/upokecenter/numbers/EInteger;
 
-    goto/16 :goto_4
+    if-nez v4, :cond_f
 
-    :cond_10
-    invoke-virtual {v7}, Ljava/lang/String;->length()I
-
-    move-result v1
-
-    if-nez v1, :cond_11
-
-    invoke-virtual {v6}, Ljava/lang/String;->length()I
-
-    move-result v1
-
-    if-nez v1, :cond_46
-
-    goto :goto_4
-
-    :cond_11
-    invoke-virtual {v6}, Ljava/lang/String;->length()I
-
-    move-result v1
-
-    const/16 v4, 0x80
-
-    if-ge v1, v4, :cond_1f
-
-    invoke-virtual {v7}, Ljava/lang/String;->length()I
-
-    move-result v1
-
-    if-ge v1, v4, :cond_1f
-
-    invoke-virtual {v6}, Ljava/lang/String;->length()I
-
-    move-result v1
-
-    mul-int/2addr v1, v8
-
-    invoke-virtual {v7}, Ljava/lang/String;->length()I
-
-    move-result v5
-
-    if-ge v1, v5, :cond_12
-
-    goto/16 :goto_12
-
-    :cond_12
-    invoke-virtual {v7}, Ljava/lang/String;->length()I
-
-    move-result v1
-
-    mul-int/2addr v1, v8
-
-    invoke-virtual {v6}, Ljava/lang/String;->length()I
-
-    move-result v5
-
-    if-ge v1, v5, :cond_13
-
-    goto/16 :goto_13
-
-    :cond_13
-    invoke-virtual {v6}, Ljava/lang/String;->length()I
-
-    move-result v1
-
-    invoke-virtual {v7}, Ljava/lang/String;->length()I
-
-    move-result v5
-
-    if-ne v1, v5, :cond_18
-
-    move v1, v3
-
-    :goto_1
-    invoke-virtual {v6}, Ljava/lang/String;->length()I
-
-    move-result v5
-
-    if-ge v1, v5, :cond_16
-
-    invoke-virtual {v6, v1}, Ljava/lang/String;->charAt(I)C
-
-    move-result v5
-
-    invoke-virtual {v7, v1}, Ljava/lang/String;->charAt(I)C
-
-    move-result v8
-
-    if-eq v5, v8, :cond_15
-
-    invoke-virtual {v6, v1}, Ljava/lang/String;->charAt(I)C
-
-    move-result v5
-
-    invoke-virtual {v7, v1}, Ljava/lang/String;->charAt(I)C
-
-    move-result v1
-
-    if-ge v5, v1, :cond_14
-
-    const/4 v1, -0x1
+    if-nez v5, :cond_29
 
     goto :goto_2
 
-    :cond_14
-    move v1, v2
+    :cond_f
+    if-nez v5, :cond_10
 
-    :goto_2
-    move v5, v3
+    goto/16 :goto_5
 
-    goto :goto_3
+    :cond_10
+    array-length p1, v4
 
-    :cond_15
-    add-int/lit8 v1, v1, 0x1
+    array-length v2, v5
+
+    if-eq p1, v2, :cond_11
+
+    array-length p1, v4
+
+    array-length v1, v5
+
+    if-ge p1, v1, :cond_2a
+
+    goto/16 :goto_4
+
+    :cond_11
+    move p1, v1
+
+    :goto_1
+    array-length v2, v4
+
+    if-ge p1, v2, :cond_15
+
+    aget-byte v2, v4, p1
+
+    aget-byte v3, v5, p1
+
+    if-eq v2, v3, :cond_12
+
+    and-int/lit16 p1, v2, 0xff
+
+    and-int/lit16 v1, v3, 0xff
+
+    if-ge p1, v1, :cond_2a
+
+    goto/16 :goto_4
+
+    :cond_12
+    add-int/lit8 p1, p1, 0x1
 
     goto :goto_1
 
+    :pswitch_8
+    invoke-virtual {p0}, Lcom/upokecenter/cbor/CBORObject;->EncodeToBytes()[B
+
+    move-result-object v0
+
+    invoke-virtual {p1}, Lcom/upokecenter/cbor/CBORObject;->EncodeToBytes()[B
+
+    move-result-object p1
+
+    invoke-static {v0, p1}, Lcom/upokecenter/cbor/CBORUtilities;->ByteArrayCompare([B[B)I
+
+    move-result v0
+
+    goto/16 :goto_5
+
+    :pswitch_9
+    check-cast v4, Ljava/lang/Long;
+
+    invoke-virtual {v4}, Ljava/lang/Long;->longValue()J
+
+    move-result-wide v2
+
+    check-cast v5, Ljava/lang/Long;
+
+    invoke-virtual {v5}, Ljava/lang/Long;->longValue()J
+
+    move-result-wide v4
+
+    const-wide/16 v7, 0x0
+
+    cmp-long p1, v2, v7
+
+    if-ltz p1, :cond_14
+
+    cmp-long v9, v4, v7
+
+    if-ltz v9, :cond_14
+
+    cmp-long p1, v2, v4
+
+    if-nez p1, :cond_13
+
+    goto :goto_2
+
+    :cond_13
+    if-gez p1, :cond_2a
+
+    goto/16 :goto_4
+
+    :cond_14
+    if-gtz p1, :cond_17
+
+    cmp-long v9, v4, v7
+
+    if-gtz v9, :cond_17
+
+    cmp-long p1, v2, v4
+
+    if-nez p1, :cond_16
+
+    :cond_15
+    :goto_2
+    move v0, v1
+
+    goto/16 :goto_5
+
     :cond_16
-    move v5, v2
+    if-gez p1, :cond_29
 
-    move v1, v3
-
-    :goto_3
-    if-eqz v5, :cond_19
+    goto/16 :goto_5
 
     :cond_17
-    :goto_4
-    move v2, v3
+    if-gez p1, :cond_29
 
-    goto/16 :goto_13
+    cmp-long p1, v4, v7
+
+    if-ltz p1, :cond_29
+
+    goto/16 :goto_5
 
     :cond_18
-    move v1, v3
+    if-nez v3, :cond_19
+
+    if-eq v2, v0, :cond_1a
 
     :cond_19
-    move v5, v3
+    if-nez v2, :cond_1b
 
-    :goto_5
-    invoke-virtual {v6}, Ljava/lang/String;->length()I
-
-    move-result v8
-
-    if-ge v5, v8, :cond_1b
-
-    invoke-virtual {v6, v5}, Ljava/lang/String;->charAt(I)C
-
-    move-result v8
-
-    if-lt v8, v4, :cond_1a
-
-    move v5, v2
-
-    goto :goto_6
+    if-ne v3, v0, :cond_1b
 
     :cond_1a
-    add-int/lit8 v5, v5, 0x1
+    invoke-virtual {p0}, Lcom/upokecenter/cbor/CBORObject;->EncodeToBytes()[B
+
+    move-result-object v0
+
+    invoke-virtual {p1}, Lcom/upokecenter/cbor/CBORObject;->EncodeToBytes()[B
+
+    move-result-object p1
+
+    invoke-static {v0, p1}, Lcom/upokecenter/cbor/CBORUtilities;->ByteArrayCompare([B[B)I
+
+    move-result v0
 
     goto :goto_5
 
     :cond_1b
-    move v5, v3
+    const/16 p1, 0x9
 
-    :goto_6
-    move v8, v3
+    const/16 v1, 0xa
 
-    :goto_7
-    invoke-virtual {v7}, Ljava/lang/String;->length()I
+    const/4 v7, 0x3
 
-    move-result v12
+    if-eq v3, v7, :cond_1c
 
-    if-ge v8, v12, :cond_1d
-
-    invoke-virtual {v7, v8}, Ljava/lang/String;->charAt(I)C
-
-    move-result v12
-
-    if-lt v12, v4, :cond_1c
-
-    move v5, v2
-
-    goto :goto_8
+    if-ne v3, v1, :cond_1d
 
     :cond_1c
-    add-int/lit8 v8, v8, 0x1
+    if-ne v2, p1, :cond_1d
 
-    goto :goto_7
+    check-cast v5, Ljava/lang/String;
+
+    check-cast v4, [B
+
+    invoke-static {v5, v4}, Lcom/upokecenter/cbor/CBORUtilities;->CompareUtf16Utf8LengthFirst(Ljava/lang/String;[B)I
+
+    move-result p1
+
+    goto :goto_3
 
     :cond_1d
-    :goto_8
-    if-nez v5, :cond_21
+    if-eq v2, v7, :cond_1e
 
-    invoke-virtual {v6}, Ljava/lang/String;->length()I
-
-    move-result v5
-
-    invoke-virtual {v7}, Ljava/lang/String;->length()I
-
-    move-result v8
-
-    if-eq v5, v8, :cond_1e
-
-    invoke-virtual {v6}, Ljava/lang/String;->length()I
-
-    move-result v1
-
-    invoke-virtual {v7}, Ljava/lang/String;->length()I
-
-    move-result v3
-
-    if-ge v1, v3, :cond_46
-
-    goto/16 :goto_12
+    if-ne v2, v1, :cond_1f
 
     :cond_1e
-    invoke-virtual {v6}, Ljava/lang/String;->length()I
+    if-ne v3, p1, :cond_1f
 
-    move-result v5
+    check-cast v4, Ljava/lang/String;
 
-    invoke-virtual {v7}, Ljava/lang/String;->length()I
+    check-cast v5, [B
 
-    move-result v8
+    invoke-static {v4, v5}, Lcom/upokecenter/cbor/CBORUtilities;->CompareUtf16Utf8LengthFirst(Ljava/lang/String;[B)I
 
-    if-ne v5, v8, :cond_21
+    move-result v0
 
-    move v2, v1
-
-    goto/16 :goto_13
+    goto :goto_5
 
     :cond_1f
-    invoke-virtual {v6}, Ljava/lang/String;->length()I
+    if-ne v2, v7, :cond_20
 
-    move-result v1
-
-    mul-int/2addr v1, v8
-
-    int-to-long v12, v1
-
-    invoke-virtual {v7}, Ljava/lang/String;->length()I
-
-    move-result v1
-
-    int-to-long v14, v1
-
-    cmp-long v1, v12, v14
-
-    if-gez v1, :cond_20
-
-    goto/16 :goto_12
+    if-eq v3, v1, :cond_21
 
     :cond_20
-    invoke-virtual {v7}, Ljava/lang/String;->length()I
+    if-ne v3, v7, :cond_22
 
-    move-result v1
-
-    mul-int/2addr v1, v8
-
-    int-to-long v12, v1
-
-    invoke-virtual {v6}, Ljava/lang/String;->length()I
-
-    move-result v1
-
-    int-to-long v14, v1
-
-    cmp-long v1, v12, v14
-
-    if-gez v1, :cond_21
-
-    goto/16 :goto_13
+    if-ne v2, v1, :cond_22
 
     :cond_21
-    move v14, v2
+    check-cast v5, Ljava/lang/String;
 
-    move v1, v3
+    check-cast v4, Ljava/lang/String;
 
-    move v5, v1
+    invoke-static {v5, v4}, Lcom/upokecenter/cbor/CBORUtilities;->CompareStringsAsUtf8LengthFirst(Ljava/lang/String;Ljava/lang/String;)I
 
-    move v8, v5
+    move-result p1
 
-    move-wide v12, v10
+    :goto_3
+    neg-int v0, p1
 
-    :goto_9
-    invoke-virtual {v6}, Ljava/lang/String;->length()I
-
-    move-result v15
-
-    const-wide/16 v16, 0x1
-
-    const-wide/16 v18, 0x3
-
-    const-wide/16 v20, 0x4
-
-    const/16 v3, 0x800
-
-    const/high16 v9, 0x10000
-
-    const-wide/16 v22, 0x2
-
-    if-ne v1, v15, :cond_25
-
-    cmp-long v14, v10, v12
-
-    if-lez v14, :cond_22
-
-    goto/16 :goto_12
+    goto :goto_5
 
     :cond_22
-    invoke-virtual {v7}, Ljava/lang/String;->length()I
+    if-eq v2, v7, :cond_23
 
-    move-result v14
-
-    if-ne v5, v14, :cond_23
-
-    goto :goto_c
+    if-ne v2, v1, :cond_24
 
     :cond_23
-    if-nez v8, :cond_24
+    if-ne v3, p1, :cond_24
 
-    const/4 v8, -0x1
+    check-cast v4, Ljava/lang/String;
+
+    check-cast v5, [B
+
+    invoke-static {v4, v5}, Lcom/upokecenter/cbor/CBORUtilities;->CompareUtf16Utf8LengthFirst(Ljava/lang/String;[B)I
+
+    move-result v0
+
+    goto :goto_5
 
     :cond_24
-    const/4 v14, 0x0
+    if-eq v2, p1, :cond_25
 
-    const/4 v15, 0x0
-
-    goto :goto_b
+    if-ne v2, v1, :cond_26
 
     :cond_25
-    invoke-static {v6, v1, v2}, Lcom/upokecenter/util/DataUtilities;->CodePointAt(Ljava/lang/String;II)I
-
-    move-result v15
-
-    if-ltz v15, :cond_33
-
-    if-lt v15, v9, :cond_26
-
-    add-long v12, v12, v20
-
-    add-int/lit8 v1, v1, 0x2
-
-    goto :goto_b
+    move v2, v7
 
     :cond_26
-    if-lt v15, v3, :cond_27
+    if-eq v3, p1, :cond_27
 
-    add-long v12, v12, v18
-
-    goto :goto_a
+    if-ne v3, v1, :cond_28
 
     :cond_27
-    if-lt v15, v4, :cond_28
-
-    add-long v12, v12, v22
-
-    goto :goto_a
+    move v3, v7
 
     :cond_28
-    add-long v12, v12, v16
-
-    :goto_a
-    add-int/lit8 v1, v1, 0x1
-
-    :goto_b
-    invoke-virtual {v7}, Ljava/lang/String;->length()I
-
-    move-result v4
-
-    if-ne v5, v4, :cond_2c
-
-    cmp-long v3, v12, v10
-
-    if-lez v3, :cond_29
-
-    goto/16 :goto_13
+    if-ge v2, v3, :cond_2a
 
     :cond_29
-    invoke-virtual {v6}, Ljava/lang/String;->length()I
-
-    move-result v3
-
-    if-ne v1, v3, :cond_2a
-
-    :goto_c
-    cmp-long v1, v12, v10
-
-    if-eqz v1, :cond_c
-
-    if-gez v1, :cond_46
-
-    goto/16 :goto_12
+    :goto_4
+    move v0, v6
 
     :cond_2a
-    if-nez v8, :cond_2b
-
-    move v8, v2
-
-    :cond_2b
-    const/16 v3, 0x80
-
-    const/4 v4, 0x0
-
-    const/4 v14, 0x0
-
-    goto :goto_e
-
-    :cond_2c
-    invoke-static {v7, v5, v2}, Lcom/upokecenter/util/DataUtilities;->CodePointAt(Ljava/lang/String;II)I
-
-    move-result v4
-
-    if-ltz v4, :cond_32
-
-    if-lt v4, v9, :cond_2d
-
-    add-long v10, v10, v20
-
-    add-int/lit8 v5, v5, 0x2
-
-    goto :goto_d
-
-    :cond_2d
-    if-lt v4, v3, :cond_2e
-
-    add-long v10, v10, v18
-
-    add-int/lit8 v5, v5, 0x1
-
-    :goto_d
-    const/16 v3, 0x80
-
-    goto :goto_e
-
-    :cond_2e
-    add-int/lit8 v5, v5, 0x1
-
-    const/16 v3, 0x80
-
-    if-lt v4, v3, :cond_2f
-
-    move-wide/from16 v16, v22
-
-    :cond_2f
-    add-long v10, v10, v16
-
-    :goto_e
-    if-eqz v14, :cond_31
-
-    if-nez v8, :cond_31
-
-    if-eq v15, v4, :cond_31
-
-    if-ge v15, v4, :cond_30
-
-    const/4 v4, -0x1
-
-    goto :goto_f
-
-    :cond_30
-    move v4, v2
-
-    :goto_f
-    move v8, v4
-
-    :cond_31
-    move v4, v3
-
-    const/4 v3, 0x0
-
-    goto/16 :goto_9
-
-    :cond_32
-    new-instance v1, Ljava/lang/IllegalArgumentException;
-
-    const-string/jumbo v2, "strB has unpaired surrogate"
-
-    invoke-direct {v1, v2}, Ljava/lang/IllegalArgumentException;-><init>(Ljava/lang/String;)V
-
-    throw v1
-
-    :cond_33
-    new-instance v1, Ljava/lang/IllegalArgumentException;
-
-    const-string/jumbo v2, "strA has unpaired surrogate"
-
-    invoke-direct {v1, v2}, Ljava/lang/IllegalArgumentException;-><init>(Ljava/lang/String;)V
-
-    throw v1
-
-    :pswitch_6
-    check-cast v6, [B
-
-    check-cast v7, [B
-
-    if-nez v6, :cond_34
-
-    if-nez v7, :cond_45
-
-    goto :goto_11
-
-    :cond_34
-    if-nez v7, :cond_35
-
-    goto/16 :goto_13
-
-    :cond_35
-    array-length v1, v6
-
-    array-length v3, v7
-
-    if-eq v1, v3, :cond_36
-
-    array-length v1, v6
-
-    array-length v3, v7
-
-    if-ge v1, v3, :cond_46
-
-    goto/16 :goto_12
-
-    :cond_36
-    const/4 v1, 0x0
-
-    :goto_10
-    array-length v3, v6
-
-    if-ge v1, v3, :cond_3a
-
-    aget-byte v3, v6, v1
-
-    aget-byte v4, v7, v1
-
-    if-eq v3, v4, :cond_37
-
-    aget-byte v3, v6, v1
-
-    aget-byte v1, v7, v1
-
-    if-ge v3, v1, :cond_46
-
-    goto/16 :goto_12
-
-    :cond_37
-    add-int/lit8 v1, v1, 0x1
-
-    goto :goto_10
-
-    :pswitch_7
-    invoke-virtual/range {p0 .. p0}, Lcom/upokecenter/cbor/CBORObject;->EncodeToBytes()[B
-
-    move-result-object v2
-
-    invoke-virtual/range {p1 .. p1}, Lcom/upokecenter/cbor/CBORObject;->EncodeToBytes()[B
-
-    move-result-object v1
-
-    invoke-static {v2, v1}, Lcom/upokecenter/cbor/CBORUtilities;->ByteArrayCompare([B[B)I
-
-    move-result v2
-
-    goto/16 :goto_13
-
-    :pswitch_8
-    check-cast v6, Ljava/lang/Long;
-
-    invoke-virtual {v6}, Ljava/lang/Long;->longValue()J
-
-    move-result-wide v3
-
-    check-cast v7, Ljava/lang/Long;
-
-    invoke-virtual {v7}, Ljava/lang/Long;->longValue()J
-
-    move-result-wide v5
-
-    cmp-long v1, v3, v10
-
-    if-ltz v1, :cond_39
-
-    cmp-long v7, v5, v10
-
-    if-ltz v7, :cond_39
-
-    cmp-long v1, v3, v5
-
-    if-nez v1, :cond_38
-
-    goto :goto_11
-
-    :cond_38
-    if-gez v1, :cond_46
-
-    goto :goto_12
-
-    :cond_39
-    if-gtz v1, :cond_3c
-
-    cmp-long v7, v5, v10
-
-    if-gtz v7, :cond_3c
-
-    cmp-long v1, v3, v5
-
-    if-nez v1, :cond_3b
-
-    :cond_3a
-    :goto_11
-    const/4 v2, 0x0
-
-    goto :goto_13
-
-    :cond_3b
-    if-gez v1, :cond_45
-
-    goto :goto_13
-
-    :cond_3c
-    if-gez v1, :cond_45
-
-    cmp-long v1, v5, v10
-
-    if-ltz v1, :cond_45
-
-    goto :goto_13
-
-    :cond_3d
-    if-nez v5, :cond_3e
-
-    if-eq v4, v2, :cond_3f
-
-    :cond_3e
-    if-nez v4, :cond_40
-
-    if-ne v5, v2, :cond_40
-
-    :cond_3f
-    invoke-virtual/range {p0 .. p0}, Lcom/upokecenter/cbor/CBORObject;->EncodeToBytes()[B
-
-    move-result-object v2
-
-    invoke-virtual/range {p1 .. p1}, Lcom/upokecenter/cbor/CBORObject;->EncodeToBytes()[B
-
-    move-result-object v1
-
-    invoke-static {v2, v1}, Lcom/upokecenter/cbor/CBORUtilities;->ByteArrayCompare([B[B)I
-
-    move-result v2
-
-    goto :goto_13
-
-    :cond_40
-    const/16 v1, 0x9
-
-    if-ne v5, v8, :cond_41
-
-    if-ne v4, v1, :cond_41
-
-    check-cast v7, Ljava/lang/String;
-
-    check-cast v6, [B
-
-    invoke-static {v7, v6}, Lcom/upokecenter/cbor/CBORUtilities;->CompareUtf16Utf8LengthFirst(Ljava/lang/String;[B)I
-
-    move-result v1
-
-    neg-int v2, v1
-
-    goto :goto_13
-
-    :cond_41
-    if-ne v4, v8, :cond_42
-
-    if-ne v5, v1, :cond_42
-
-    check-cast v6, Ljava/lang/String;
-
-    check-cast v7, [B
-
-    invoke-static {v6, v7}, Lcom/upokecenter/cbor/CBORUtilities;->CompareUtf16Utf8LengthFirst(Ljava/lang/String;[B)I
-
-    move-result v2
-
-    goto :goto_13
-
-    :cond_42
-    if-ne v4, v1, :cond_43
-
-    move v4, v8
-
-    :cond_43
-    if-ne v5, v1, :cond_44
-
-    move v5, v8
-
-    :cond_44
-    if-ge v4, v5, :cond_46
-
-    :cond_45
-    :goto_12
-    const/4 v2, -0x1
-
-    :cond_46
-    :goto_13
-    return v2
+    :goto_5
+    return v0
 
     :pswitch_data_0
     .packed-switch 0x0
+        :pswitch_9
         :pswitch_8
         :pswitch_7
         :pswitch_6
@@ -10464,8 +9833,8 @@
         :pswitch_3
         :pswitch_2
         :pswitch_1
+        :pswitch_7
         :pswitch_0
-        :pswitch_6
     .end packed-switch
 .end method
 
@@ -10482,7 +9851,7 @@
 .end method
 
 .method public equals(Lcom/upokecenter/cbor/CBORObject;)Z
-    .locals 7
+    .locals 8
 
     instance-of v0, p1, Lcom/upokecenter/cbor/CBORObject;
 
@@ -10512,15 +9881,20 @@
     :cond_2
     iget v3, p0, Lcom/upokecenter/cbor/CBORObject;->itemtypeValue:I
 
-    const/4 v4, 0x3
+    const/16 v4, 0x9
 
-    const/16 v5, 0x9
+    const/16 v5, 0xa
 
-    if-ne v3, v4, :cond_3
+    const/4 v6, 0x3
 
-    iget v6, p1, Lcom/upokecenter/cbor/CBORObject;->itemtypeValue:I
+    if-eq v3, v6, :cond_3
 
-    if-ne v6, v5, :cond_3
+    if-ne v3, v5, :cond_4
+
+    :cond_3
+    iget v7, p1, Lcom/upokecenter/cbor/CBORObject;->itemtypeValue:I
+
+    if-ne v7, v4, :cond_4
 
     iget-object v0, p0, Lcom/upokecenter/cbor/CBORObject;->itemValue:Ljava/lang/Object;
 
@@ -10536,12 +9910,15 @@
 
     return p1
 
-    :cond_3
-    iget v6, p1, Lcom/upokecenter/cbor/CBORObject;->itemtypeValue:I
+    :cond_4
+    iget v7, p1, Lcom/upokecenter/cbor/CBORObject;->itemtypeValue:I
 
-    if-ne v6, v4, :cond_4
+    if-eq v7, v6, :cond_5
 
-    if-ne v3, v5, :cond_4
+    if-ne v7, v5, :cond_6
+
+    :cond_5
+    if-ne v3, v4, :cond_6
 
     iget-object p1, p1, Lcom/upokecenter/cbor/CBORObject;->itemValue:Ljava/lang/Object;
 
@@ -10557,56 +9934,88 @@
 
     return p1
 
-    :cond_4
-    if-eq v3, v6, :cond_5
+    :cond_6
+    if-ne v7, v6, :cond_7
 
-    return v0
+    if-eq v3, v5, :cond_8
 
-    :cond_5
-    const/4 v4, 0x2
+    :cond_7
+    if-ne v3, v6, :cond_b
 
-    if-eq v3, v4, :cond_19
+    if-ne v7, v5, :cond_b
 
-    const/4 v4, 0x4
-
-    if-eq v3, v4, :cond_17
-
-    const/4 v4, 0x5
-
-    if-eq v3, v4, :cond_d
-
-    const/4 v4, 0x6
-
-    if-eq v3, v4, :cond_a
-
-    const/16 v4, 0x8
-
-    if-eq v3, v4, :cond_8
-
-    if-eq v3, v5, :cond_19
-
+    :cond_8
     iget-object v1, p0, Lcom/upokecenter/cbor/CBORObject;->itemValue:Ljava/lang/Object;
 
     iget-object p1, p1, Lcom/upokecenter/cbor/CBORObject;->itemValue:Ljava/lang/Object;
 
-    if-nez v1, :cond_6
+    if-nez v1, :cond_9
 
-    if-nez p1, :cond_7
+    if-nez p1, :cond_a
 
     move v0, v2
 
     goto :goto_1
 
-    :cond_6
+    :cond_9
     invoke-virtual {v1, p1}, Ljava/lang/Object;->equals(Ljava/lang/Object;)Z
 
     move-result v0
 
-    :cond_7
+    :cond_a
     :goto_1
     return v0
 
-    :cond_8
+    :cond_b
+    if-eq v3, v7, :cond_c
+
+    return v0
+
+    :cond_c
+    const/4 v5, 0x2
+
+    if-eq v3, v5, :cond_20
+
+    const/4 v5, 0x4
+
+    if-eq v3, v5, :cond_1e
+
+    const/4 v5, 0x5
+
+    if-eq v3, v5, :cond_14
+
+    const/4 v5, 0x6
+
+    if-eq v3, v5, :cond_11
+
+    const/16 v5, 0x8
+
+    if-eq v3, v5, :cond_f
+
+    if-eq v3, v4, :cond_20
+
+    iget-object v1, p0, Lcom/upokecenter/cbor/CBORObject;->itemValue:Ljava/lang/Object;
+
+    iget-object p1, p1, Lcom/upokecenter/cbor/CBORObject;->itemValue:Ljava/lang/Object;
+
+    if-nez v1, :cond_d
+
+    if-nez p1, :cond_e
+
+    move v0, v2
+
+    goto :goto_2
+
+    :cond_d
+    invoke-virtual {v1, p1}, Ljava/lang/Object;->equals(Ljava/lang/Object;)Z
+
+    move-result v0
+
+    :cond_e
+    :goto_2
+    return v0
+
+    :cond_f
     invoke-virtual {p0}, Lcom/upokecenter/cbor/CBORObject;->AsDoubleBits()J
 
     move-result-wide v3
@@ -10617,77 +10026,77 @@
 
     cmp-long p1, v3, v5
 
-    if-nez p1, :cond_9
+    if-nez p1, :cond_10
 
     move v0, v2
 
-    :cond_9
+    :cond_10
     return v0
 
-    :cond_a
+    :cond_11
     iget v1, p0, Lcom/upokecenter/cbor/CBORObject;->tagLow:I
 
     iget v3, p1, Lcom/upokecenter/cbor/CBORObject;->tagLow:I
 
-    if-ne v1, v3, :cond_c
+    if-ne v1, v3, :cond_13
 
     iget v1, p0, Lcom/upokecenter/cbor/CBORObject;->tagHigh:I
 
     iget v3, p1, Lcom/upokecenter/cbor/CBORObject;->tagHigh:I
 
-    if-ne v1, v3, :cond_c
+    if-ne v1, v3, :cond_13
 
     iget-object v1, p0, Lcom/upokecenter/cbor/CBORObject;->itemValue:Ljava/lang/Object;
 
     iget-object p1, p1, Lcom/upokecenter/cbor/CBORObject;->itemValue:Ljava/lang/Object;
 
-    if-nez v1, :cond_b
+    if-nez v1, :cond_12
 
-    if-nez p1, :cond_c
+    if-nez p1, :cond_13
 
-    goto :goto_2
+    goto :goto_3
 
-    :cond_b
+    :cond_12
     invoke-virtual {v1, p1}, Ljava/lang/Object;->equals(Ljava/lang/Object;)Z
 
     move-result p1
 
-    if-eqz p1, :cond_c
+    if-eqz p1, :cond_13
 
-    :goto_2
+    :goto_3
     move v0, v2
 
-    :cond_c
+    :cond_13
     return v0
 
-    :cond_d
+    :cond_14
     iget-object p1, p1, Lcom/upokecenter/cbor/CBORObject;->itemValue:Ljava/lang/Object;
 
     instance-of v3, p1, Ljava/util/Map;
 
-    if-eqz v3, :cond_e
+    if-eqz v3, :cond_15
 
     move-object v1, p1
 
     check-cast v1, Ljava/util/Map;
 
-    :cond_e
+    :cond_15
     invoke-virtual {p0}, Lcom/upokecenter/cbor/CBORObject;->AsMap()Ljava/util/Map;
 
     move-result-object p1
 
-    if-nez p1, :cond_f
+    if-nez p1, :cond_16
 
-    if-nez v1, :cond_16
-
-    goto :goto_5
-
-    :cond_f
-    if-nez v1, :cond_10
+    if-nez v1, :cond_1d
 
     goto :goto_6
 
-    :cond_10
+    :cond_16
+    if-nez v1, :cond_17
+
+    goto :goto_7
+
+    :cond_17
     invoke-interface {p1}, Ljava/util/Map;->size()I
 
     move-result v3
@@ -10696,11 +10105,11 @@
 
     move-result v4
 
-    if-eq v3, v4, :cond_11
+    if-eq v3, v4, :cond_18
 
-    goto :goto_6
+    goto :goto_7
 
-    :cond_11
+    :cond_18
     invoke-interface {p1}, Ljava/util/Map;->entrySet()Ljava/util/Set;
 
     move-result-object p1
@@ -10709,13 +10118,13 @@
 
     move-result-object p1
 
-    :cond_12
-    :goto_3
+    :cond_19
+    :goto_4
     invoke-interface {p1}, Ljava/util/Iterator;->hasNext()Z
 
     move-result v3
 
-    if-eqz v3, :cond_15
+    if-eqz v3, :cond_1c
 
     invoke-interface {p1}, Ljava/util/Iterator;->next()Ljava/lang/Object;
 
@@ -10733,7 +10142,7 @@
 
     check-cast v4, Lcom/upokecenter/cbor/CBORObject;
 
-    if-nez v4, :cond_13
+    if-nez v4, :cond_1a
 
     invoke-interface {v3}, Ljava/util/Map$Entry;->getKey()Ljava/lang/Object;
 
@@ -10743,13 +10152,13 @@
 
     move-result v5
 
-    goto :goto_4
+    goto :goto_5
 
-    :cond_13
+    :cond_1a
     move v5, v2
 
-    :goto_4
-    if-eqz v5, :cond_16
+    :goto_5
+    if-eqz v5, :cond_1d
 
     invoke-interface {v3}, Ljava/util/Map$Entry;->getValue()Ljava/lang/Object;
 
@@ -10757,30 +10166,30 @@
 
     check-cast v3, Lcom/upokecenter/cbor/CBORObject;
 
-    if-nez v3, :cond_14
+    if-nez v3, :cond_1b
 
-    if-nez v4, :cond_16
+    if-nez v4, :cond_1d
 
-    goto :goto_3
+    goto :goto_4
 
-    :cond_14
+    :cond_1b
     invoke-virtual {v3, v4}, Lcom/upokecenter/cbor/CBORObject;->equals(Lcom/upokecenter/cbor/CBORObject;)Z
 
     move-result v3
 
-    if-nez v3, :cond_12
+    if-nez v3, :cond_19
 
-    goto :goto_6
+    goto :goto_7
 
-    :cond_15
-    :goto_5
+    :cond_1c
+    :goto_6
     move v0, v2
 
-    :cond_16
-    :goto_6
+    :cond_1d
+    :goto_7
     return v0
 
-    :cond_17
+    :cond_1e
     invoke-virtual {p0}, Lcom/upokecenter/cbor/CBORObject;->AsList()Ljava/util/List;
 
     move-result-object v0
@@ -10789,20 +10198,20 @@
 
     instance-of v2, p1, Ljava/util/List;
 
-    if-eqz v2, :cond_18
+    if-eqz v2, :cond_1f
 
     move-object v1, p1
 
     check-cast v1, Ljava/util/List;
 
-    :cond_18
+    :cond_1f
     invoke-static {v0, v1}, Lcom/upokecenter/cbor/CBORObject;->CBORArrayEquals(Ljava/util/List;Ljava/util/List;)Z
 
     move-result p1
 
     return p1
 
-    :cond_19
+    :cond_20
     iget-object v3, p0, Lcom/upokecenter/cbor/CBORObject;->itemValue:Ljava/lang/Object;
 
     check-cast v3, [B
@@ -10811,60 +10220,62 @@
 
     instance-of v4, p1, [B
 
-    if-eqz v4, :cond_1a
+    if-eqz v4, :cond_21
 
     move-object v1, p1
 
     check-cast v1, [B
 
-    :cond_1a
-    if-nez v3, :cond_1b
+    :cond_21
+    sget-object p1, Lcom/upokecenter/cbor/CBORUtilities;->EInteger1970:Lcom/upokecenter/numbers/EInteger;
 
-    if-nez v1, :cond_20
+    if-nez v3, :cond_22
 
-    goto :goto_8
-
-    :cond_1b
-    if-nez v1, :cond_1c
+    if-nez v1, :cond_27
 
     goto :goto_9
 
-    :cond_1c
+    :cond_22
+    if-nez v1, :cond_23
+
+    goto :goto_a
+
+    :cond_23
     array-length p1, v3
 
     array-length v4, v1
 
-    if-eq p1, v4, :cond_1d
+    if-eq p1, v4, :cond_24
 
-    goto :goto_9
+    goto :goto_a
 
-    :cond_1d
+    :cond_24
     move p1, v0
 
-    :goto_7
+    :goto_8
     array-length v4, v3
 
-    if-ge p1, v4, :cond_1f
+    if-ge p1, v4, :cond_26
 
     aget-byte v4, v3, p1
 
     aget-byte v5, v1, p1
 
-    if-eq v4, v5, :cond_1e
+    if-eq v4, v5, :cond_25
 
-    goto :goto_9
+    goto :goto_a
 
-    :cond_1e
+    :cond_25
     add-int/lit8 p1, p1, 0x1
 
-    goto :goto_7
+    goto :goto_8
 
-    :cond_1f
-    :goto_8
+    :cond_26
+    :goto_9
     move v0, v2
 
-    :cond_20
-    :goto_9
+    :cond_27
+    :goto_a
     return v0
 .end method
 
@@ -11423,6 +10834,7 @@
         :pswitch_2
         :pswitch_1
         :pswitch_5
+        :pswitch_5
     .end packed-switch
 .end method
 
@@ -11572,6 +10984,8 @@
     :pswitch_6
     check-cast v0, Ljava/lang/String;
 
+    sget-object v2, Lcom/upokecenter/cbor/CBORUtilities;->EInteger1970:Lcom/upokecenter/numbers/EInteger;
+
     :goto_1
     invoke-virtual {v0}, Ljava/lang/String;->length()I
 
@@ -11615,6 +11029,8 @@
     invoke-virtual {p0}, Lcom/upokecenter/cbor/CBORObject;->GetByteString()[B
 
     move-result-object v0
+
+    sget-object v2, Lcom/upokecenter/cbor/CBORUtilities;->EInteger1970:Lcom/upokecenter/numbers/EInteger;
 
     if-nez v0, :cond_8
 
@@ -11684,6 +11100,7 @@
         :pswitch_2
         :pswitch_1
         :pswitch_0
+        :pswitch_6
     .end packed-switch
 .end method
 
@@ -12431,19 +11848,21 @@
 .method public set(Lcom/upokecenter/cbor/CBORObject;Lcom/upokecenter/cbor/CBORObject;)V
     .locals 3
 
-    const-string/jumbo v0, "value"
+    const-string v0, "key"
 
     invoke-static {p1, v0}, Ljava/util/Objects;->requireNonNull(Ljava/lang/Object;Ljava/lang/String;)Ljava/lang/Object;
 
-    invoke-static {p2, v0}, Ljava/util/Objects;->requireNonNull(Ljava/lang/Object;Ljava/lang/String;)Ljava/lang/Object;
+    const-string/jumbo v1, "value"
+
+    invoke-static {p2, v1}, Ljava/util/Objects;->requireNonNull(Ljava/lang/Object;Ljava/lang/String;)Ljava/lang/Object;
 
     invoke-virtual {p0}, Lcom/upokecenter/cbor/CBORObject;->getType$enumunboxing$()I
 
-    move-result v0
+    move-result v1
 
-    const/4 v1, 0x7
+    const/4 v2, 0x7
 
-    if-ne v0, v1, :cond_0
+    if-ne v1, v2, :cond_0
 
     invoke-virtual {p0}, Lcom/upokecenter/cbor/CBORObject;->AsMap()Ljava/util/Map;
 
@@ -12456,43 +11875,41 @@
     :cond_0
     invoke-virtual {p0}, Lcom/upokecenter/cbor/CBORObject;->getType$enumunboxing$()I
 
-    move-result v0
+    move-result v1
 
-    const/4 v1, 0x6
+    const/4 v2, 0x6
 
-    if-ne v0, v1, :cond_4
+    if-ne v1, v2, :cond_4
 
     invoke-virtual {p1}, Lcom/upokecenter/cbor/CBORObject;->isNumber()Z
 
-    move-result v0
+    move-result v1
 
-    if-eqz v0, :cond_3
-
-    invoke-virtual {p1}, Lcom/upokecenter/cbor/CBORObject;->AsNumber()Lcom/upokecenter/cbor/CBORNumber;
-
-    move-result-object v0
-
-    invoke-virtual {v0}, Lcom/upokecenter/cbor/CBORNumber;->IsInteger()Z
-
-    move-result v0
-
-    if-eqz v0, :cond_3
+    if-eqz v1, :cond_3
 
     invoke-virtual {p1}, Lcom/upokecenter/cbor/CBORObject;->AsNumber()Lcom/upokecenter/cbor/CBORNumber;
 
-    move-result-object v0
+    move-result-object v1
 
-    invoke-virtual {v0}, Lcom/upokecenter/cbor/CBORNumber;->CanFitInInt32()Z
+    invoke-virtual {v1}, Lcom/upokecenter/cbor/CBORNumber;->IsInteger()Z
 
-    move-result v0
+    move-result v1
 
-    const-string v1, "key"
+    if-eqz v1, :cond_3
 
-    if-eqz v0, :cond_2
+    invoke-virtual {p1}, Lcom/upokecenter/cbor/CBORObject;->AsNumber()Lcom/upokecenter/cbor/CBORNumber;
+
+    move-result-object v1
+
+    invoke-virtual {v1}, Lcom/upokecenter/cbor/CBORNumber;->CanFitInInt32()Z
+
+    move-result v1
+
+    if-eqz v1, :cond_2
 
     invoke-virtual {p0}, Lcom/upokecenter/cbor/CBORObject;->AsList()Ljava/util/List;
 
-    move-result-object v0
+    move-result-object v1
 
     invoke-virtual {p1}, Lcom/upokecenter/cbor/CBORObject;->AsNumber()Lcom/upokecenter/cbor/CBORNumber;
 
@@ -12504,27 +11921,27 @@
 
     if-ltz p1, :cond_1
 
-    invoke-interface {v0}, Ljava/util/List;->size()I
+    invoke-interface {v1}, Ljava/util/List;->size()I
 
     move-result v2
 
     if-ge p1, v2, :cond_1
 
-    invoke-interface {v0, p1, p2}, Ljava/util/List;->set(ILjava/lang/Object;)Ljava/lang/Object;
+    invoke-interface {v1, p1, p2}, Ljava/util/List;->set(ILjava/lang/Object;)Ljava/lang/Object;
 
     return-void
 
     :cond_1
     new-instance p1, Ljava/lang/IllegalArgumentException;
 
-    invoke-direct {p1, v1}, Ljava/lang/IllegalArgumentException;-><init>(Ljava/lang/String;)V
+    invoke-direct {p1, v0}, Ljava/lang/IllegalArgumentException;-><init>(Ljava/lang/String;)V
 
     throw p1
 
     :cond_2
     new-instance p1, Ljava/lang/IllegalArgumentException;
 
-    invoke-direct {p1, v1}, Ljava/lang/IllegalArgumentException;-><init>(Ljava/lang/String;)V
+    invoke-direct {p1, v0}, Ljava/lang/IllegalArgumentException;-><init>(Ljava/lang/String;)V
 
     throw p1
 

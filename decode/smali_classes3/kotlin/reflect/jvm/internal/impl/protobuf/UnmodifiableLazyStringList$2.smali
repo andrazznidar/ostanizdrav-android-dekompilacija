@@ -1,4 +1,4 @@
-.class public Lkotlin/reflect/jvm/internal/impl/protobuf/UnmodifiableLazyStringList$2;
+.class Lkotlin/reflect/jvm/internal/impl/protobuf/UnmodifiableLazyStringList$2;
 .super Ljava/lang/Object;
 .source "UnmodifiableLazyStringList.java"
 
@@ -39,14 +39,20 @@
     .end annotation
 .end field
 
+.field public final synthetic this$0:Lkotlin/reflect/jvm/internal/impl/protobuf/UnmodifiableLazyStringList;
+
 
 # direct methods
 .method public constructor <init>(Lkotlin/reflect/jvm/internal/impl/protobuf/UnmodifiableLazyStringList;)V
     .locals 0
 
+    iput-object p1, p0, Lkotlin/reflect/jvm/internal/impl/protobuf/UnmodifiableLazyStringList$2;->this$0:Lkotlin/reflect/jvm/internal/impl/protobuf/UnmodifiableLazyStringList;
+
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
-    iget-object p1, p1, Lkotlin/reflect/jvm/internal/impl/protobuf/UnmodifiableLazyStringList;->list:Lkotlin/reflect/jvm/internal/impl/protobuf/LazyStringList;
+    invoke-static {p1}, Lkotlin/reflect/jvm/internal/impl/protobuf/UnmodifiableLazyStringList;->access$000(Lkotlin/reflect/jvm/internal/impl/protobuf/UnmodifiableLazyStringList;)Lkotlin/reflect/jvm/internal/impl/protobuf/LazyStringList;
+
+    move-result-object p1
 
     invoke-interface {p1}, Ljava/util/List;->iterator()Ljava/util/Iterator;
 
@@ -67,6 +73,18 @@
     return-void
 .end method
 
+.method public synthetic forEachRemaining(Ljava/util/function/Consumer;)V
+    .locals 0
+
+    invoke-static {p1}, Lj$/util/function/Consumer$VivifiedWrapper;->convert(Ljava/util/function/Consumer;)Lj$/util/function/Consumer;
+
+    move-result-object p1
+
+    invoke-virtual {p0, p1}, Lkotlin/reflect/jvm/internal/impl/protobuf/UnmodifiableLazyStringList$2;->forEachRemaining(Lj$/util/function/Consumer;)V
+
+    return-void
+.end method
+
 .method public hasNext()Z
     .locals 1
 
@@ -79,7 +97,17 @@
     return v0
 .end method
 
-.method public next()Ljava/lang/Object;
+.method public bridge synthetic next()Ljava/lang/Object;
+    .locals 1
+
+    invoke-virtual {p0}, Lkotlin/reflect/jvm/internal/impl/protobuf/UnmodifiableLazyStringList$2;->next()Ljava/lang/String;
+
+    move-result-object v0
+
+    return-object v0
+.end method
+
+.method public next()Ljava/lang/String;
     .locals 1
 
     iget-object v0, p0, Lkotlin/reflect/jvm/internal/impl/protobuf/UnmodifiableLazyStringList$2;->iter:Ljava/util/Iterator;

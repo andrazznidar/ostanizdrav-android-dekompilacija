@@ -197,7 +197,7 @@
     return-object p3
 .end method
 
-.method public final calculateTranslationX(Landroid/view/View;Landroid/view/View;Lcom/google/android/material/animation/Positioning;)F
+.method public final calculateTranslationX(Landroid/view/View;Landroid/view/View;Lde/rki/coronawarnapp/nearby/ENFModule;)F
     .locals 3
 
     iget-object v0, p0, Lcom/google/android/material/transformation/FabTransformationBehavior;->tmpRectF1:Landroid/graphics/RectF;
@@ -233,7 +233,7 @@
     return p1
 .end method
 
-.method public final calculateTranslationY(Landroid/view/View;Landroid/view/View;Lcom/google/android/material/animation/Positioning;)F
+.method public final calculateTranslationY(Landroid/view/View;Landroid/view/View;Lde/rki/coronawarnapp/nearby/ENFModule;)F
     .locals 3
 
     iget-object v0, p0, Lcom/google/android/material/transformation/FabTransformationBehavior;->tmpRectF1:Landroid/graphics/RectF;
@@ -550,15 +550,15 @@
 
     iget-object v7, v0, Lcom/google/android/material/transformation/FabTransformationBehavior;->tmpRectF1:Landroid/graphics/RectF;
 
-    iget-object v11, v4, Lcom/google/android/material/transformation/FabTransformationBehavior$FabTransformationSpec;->positioning:Lcom/google/android/material/animation/Positioning;
+    iget-object v11, v4, Lcom/google/android/material/transformation/FabTransformationBehavior$FabTransformationSpec;->positioning:Lde/rki/coronawarnapp/nearby/ENFModule;
 
-    invoke-virtual {v0, v1, v2, v11}, Lcom/google/android/material/transformation/FabTransformationBehavior;->calculateTranslationX(Landroid/view/View;Landroid/view/View;Lcom/google/android/material/animation/Positioning;)F
+    invoke-virtual {v0, v1, v2, v11}, Lcom/google/android/material/transformation/FabTransformationBehavior;->calculateTranslationX(Landroid/view/View;Landroid/view/View;Lde/rki/coronawarnapp/nearby/ENFModule;)F
 
     move-result v11
 
-    iget-object v12, v4, Lcom/google/android/material/transformation/FabTransformationBehavior$FabTransformationSpec;->positioning:Lcom/google/android/material/animation/Positioning;
+    iget-object v12, v4, Lcom/google/android/material/transformation/FabTransformationBehavior$FabTransformationSpec;->positioning:Lde/rki/coronawarnapp/nearby/ENFModule;
 
-    invoke-virtual {v0, v1, v2, v12}, Lcom/google/android/material/transformation/FabTransformationBehavior;->calculateTranslationY(Landroid/view/View;Landroid/view/View;Lcom/google/android/material/animation/Positioning;)F
+    invoke-virtual {v0, v1, v2, v12}, Lcom/google/android/material/transformation/FabTransformationBehavior;->calculateTranslationY(Landroid/view/View;Landroid/view/View;Lde/rki/coronawarnapp/nearby/ENFModule;)F
 
     move-result v12
 
@@ -691,15 +691,15 @@
 
     move-result v7
 
-    iget-object v8, v4, Lcom/google/android/material/transformation/FabTransformationBehavior$FabTransformationSpec;->positioning:Lcom/google/android/material/animation/Positioning;
+    iget-object v8, v4, Lcom/google/android/material/transformation/FabTransformationBehavior$FabTransformationSpec;->positioning:Lde/rki/coronawarnapp/nearby/ENFModule;
 
-    invoke-virtual {v0, v1, v2, v8}, Lcom/google/android/material/transformation/FabTransformationBehavior;->calculateTranslationX(Landroid/view/View;Landroid/view/View;Lcom/google/android/material/animation/Positioning;)F
+    invoke-virtual {v0, v1, v2, v8}, Lcom/google/android/material/transformation/FabTransformationBehavior;->calculateTranslationX(Landroid/view/View;Landroid/view/View;Lde/rki/coronawarnapp/nearby/ENFModule;)F
 
     move-result v8
 
-    iget-object v11, v4, Lcom/google/android/material/transformation/FabTransformationBehavior$FabTransformationSpec;->positioning:Lcom/google/android/material/animation/Positioning;
+    iget-object v11, v4, Lcom/google/android/material/transformation/FabTransformationBehavior$FabTransformationSpec;->positioning:Lde/rki/coronawarnapp/nearby/ENFModule;
 
-    invoke-virtual {v0, v1, v2, v11}, Lcom/google/android/material/transformation/FabTransformationBehavior;->calculateTranslationY(Landroid/view/View;Landroid/view/View;Lcom/google/android/material/animation/Positioning;)F
+    invoke-virtual {v0, v1, v2, v11}, Lcom/google/android/material/transformation/FabTransformationBehavior;->calculateTranslationY(Landroid/view/View;Landroid/view/View;Lde/rki/coronawarnapp/nearby/ENFModule;)F
 
     move-result v11
 
@@ -872,7 +872,7 @@
 
     check-cast v12, Lcom/google/android/material/circularreveal/CircularRevealWidget;
 
-    iget-object v13, v4, Lcom/google/android/material/transformation/FabTransformationBehavior$FabTransformationSpec;->positioning:Lcom/google/android/material/animation/Positioning;
+    iget-object v13, v4, Lcom/google/android/material/transformation/FabTransformationBehavior$FabTransformationSpec;->positioning:Lde/rki/coronawarnapp/nearby/ENFModule;
 
     iget-object v14, v0, Lcom/google/android/material/transformation/FabTransformationBehavior;->tmpRectF1:Landroid/graphics/RectF;
 
@@ -888,7 +888,7 @@
 
     invoke-virtual {v0, v2, v15}, Lcom/google/android/material/transformation/FabTransformationBehavior;->calculateWindowBounds(Landroid/view/View;Landroid/graphics/RectF;)V
 
-    invoke-virtual {v0, v1, v2, v13}, Lcom/google/android/material/transformation/FabTransformationBehavior;->calculateTranslationX(Landroid/view/View;Landroid/view/View;Lcom/google/android/material/animation/Positioning;)F
+    invoke-virtual {v0, v1, v2, v13}, Lcom/google/android/material/transformation/FabTransformationBehavior;->calculateTranslationX(Landroid/view/View;Landroid/view/View;Lde/rki/coronawarnapp/nearby/ENFModule;)F
 
     move-result v9
 
@@ -906,7 +906,7 @@
 
     sub-float/2addr v9, v10
 
-    iget-object v10, v4, Lcom/google/android/material/transformation/FabTransformationBehavior$FabTransformationSpec;->positioning:Lcom/google/android/material/animation/Positioning;
+    iget-object v10, v4, Lcom/google/android/material/transformation/FabTransformationBehavior$FabTransformationSpec;->positioning:Lde/rki/coronawarnapp/nearby/ENFModule;
 
     iget-object v13, v0, Lcom/google/android/material/transformation/FabTransformationBehavior;->tmpRectF1:Landroid/graphics/RectF;
 
@@ -924,7 +924,7 @@
 
     invoke-virtual {v0, v2, v14}, Lcom/google/android/material/transformation/FabTransformationBehavior;->calculateWindowBounds(Landroid/view/View;Landroid/graphics/RectF;)V
 
-    invoke-virtual {v0, v1, v2, v10}, Lcom/google/android/material/transformation/FabTransformationBehavior;->calculateTranslationY(Landroid/view/View;Landroid/view/View;Lcom/google/android/material/animation/Positioning;)F
+    invoke-virtual {v0, v1, v2, v10}, Lcom/google/android/material/transformation/FabTransformationBehavior;->calculateTranslationY(Landroid/view/View;Landroid/view/View;Lde/rki/coronawarnapp/nearby/ENFModule;)F
 
     move-result v8
 
@@ -992,19 +992,19 @@
     :cond_e
     const/4 v14, 0x0
 
-    invoke-static {v9, v8, v14, v14}, Lcom/google/android/material/math/MathUtils;->dist(FFFF)F
+    invoke-static {v9, v8, v14, v14}, Lcom/airbnb/lottie/parser/moshi/JsonScope;->dist(FFFF)F
 
     move-result v15
 
-    invoke-static {v9, v8, v6, v14}, Lcom/google/android/material/math/MathUtils;->dist(FFFF)F
+    invoke-static {v9, v8, v6, v14}, Lcom/airbnb/lottie/parser/moshi/JsonScope;->dist(FFFF)F
 
     move-result v21
 
-    invoke-static {v9, v8, v6, v7}, Lcom/google/android/material/math/MathUtils;->dist(FFFF)F
+    invoke-static {v9, v8, v6, v7}, Lcom/airbnb/lottie/parser/moshi/JsonScope;->dist(FFFF)F
 
     move-result v6
 
-    invoke-static {v9, v8, v14, v7}, Lcom/google/android/material/math/MathUtils;->dist(FFFF)F
+    invoke-static {v9, v8, v14, v7}, Lcom/airbnb/lottie/parser/moshi/JsonScope;->dist(FFFF)F
 
     move-result v7
 
@@ -1482,7 +1482,7 @@
 
     invoke-direct {v0}, Landroid/animation/AnimatorSet;-><init>()V
 
-    invoke-static {v0, v1}, Lcom/google/android/material/animation/AnimatorSetCompat;->playTogether(Landroid/animation/AnimatorSet;Ljava/util/List;)V
+    invoke-static {v0, v1}, Lboofcv/alg/shapes/polygon/UtilShapePolygon;->playTogether(Landroid/animation/AnimatorSet;Ljava/util/List;)V
 
     new-instance v1, Lcom/google/android/material/transformation/FabTransformationBehavior$1;
 

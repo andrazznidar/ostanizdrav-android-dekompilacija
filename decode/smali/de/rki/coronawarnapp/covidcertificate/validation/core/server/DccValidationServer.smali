@@ -4,8 +4,15 @@
 
 
 # annotations
+.annotation system Ldalvik/annotation/MemberClasses;
+    value = {
+        Lde/rki/coronawarnapp/covidcertificate/validation/core/server/DccValidationServer$RuleSetResult;,
+        Lde/rki/coronawarnapp/covidcertificate/validation/core/server/DccValidationServer$RuleSetSource;
+    }
+.end annotation
+
 .annotation system Ldalvik/annotation/SourceDebugExtension;
-    value = "SMAP\nDccValidationServer.kt\nKotlin\n*S Kotlin\n*F\n+ 1 DccValidationServer.kt\nde/rki/coronawarnapp/covidcertificate/validation/core/server/DccValidationServer\n+ 2 fake.kt\nkotlin/jvm/internal/FakeKt\n*L\n1#1,134:1\n1#2:135\n*E\n"
+    value = "SMAP\nDccValidationServer.kt\nKotlin\n*S Kotlin\n*F\n+ 1 DccValidationServer.kt\nde/rki/coronawarnapp/covidcertificate/validation/core/server/DccValidationServer\n+ 2 fake.kt\nkotlin/jvm/internal/FakeKt\n*L\n1#1,177:1\n1#2:178\n*E\n"
 .end annotation
 
 
@@ -109,7 +116,7 @@
     return-object p0
 .end method
 
-.method public static final access$parseAndValidate(Lde/rki/coronawarnapp/covidcertificate/validation/core/server/DccValidationServer;Lretrofit2/Response;Lde/rki/coronawarnapp/covidcertificate/validation/core/common/exception/DccValidationException$ErrorCode;Lde/rki/coronawarnapp/covidcertificate/validation/core/common/exception/DccValidationException$ErrorCode;Lde/rki/coronawarnapp/covidcertificate/validation/core/common/exception/DccValidationException$ErrorCode;)Ljava/lang/String;
+.method public static final access$parseAndValidate(Lde/rki/coronawarnapp/covidcertificate/validation/core/server/DccValidationServer;Lretrofit2/Response;III)Ljava/lang/String;
     .locals 4
 
     invoke-static {p0}, Ljava/util/Objects;->requireNonNull(Ljava/lang/Object;)Ljava/lang/Object;
@@ -233,14 +240,14 @@
 
     new-instance p1, Lde/rki/coronawarnapp/covidcertificate/validation/core/common/exception/DccValidationException;
 
-    invoke-direct {p1, p4, p0}, Lde/rki/coronawarnapp/covidcertificate/validation/core/common/exception/DccValidationException;-><init>(Lde/rki/coronawarnapp/covidcertificate/validation/core/common/exception/DccValidationException$ErrorCode;Ljava/lang/Throwable;)V
+    invoke-direct {p1, p4, p0}, Lde/rki/coronawarnapp/covidcertificate/validation/core/common/exception/DccValidationException;-><init>(ILjava/lang/Throwable;)V
 
     throw p1
 
     :cond_0
     new-instance p0, Lde/rki/coronawarnapp/covidcertificate/validation/core/common/exception/DccValidationException;
 
-    invoke-direct {p0, p3, v1}, Lde/rki/coronawarnapp/covidcertificate/validation/core/common/exception/DccValidationException;-><init>(Lde/rki/coronawarnapp/covidcertificate/validation/core/common/exception/DccValidationException$ErrorCode;Ljava/lang/Throwable;)V
+    invoke-direct {p0, p3, v1}, Lde/rki/coronawarnapp/covidcertificate/validation/core/common/exception/DccValidationException;-><init>(ILjava/lang/Throwable;)V
 
     throw p0
 
@@ -270,7 +277,7 @@
     :cond_1
     new-instance p0, Lde/rki/coronawarnapp/covidcertificate/validation/core/common/exception/DccValidationException;
 
-    invoke-direct {p0, p2, v1}, Lde/rki/coronawarnapp/covidcertificate/validation/core/common/exception/DccValidationException;-><init>(Lde/rki/coronawarnapp/covidcertificate/validation/core/common/exception/DccValidationException$ErrorCode;Ljava/lang/Throwable;)V
+    invoke-direct {p0, p2, v1}, Lde/rki/coronawarnapp/covidcertificate/validation/core/common/exception/DccValidationException;-><init>(ILjava/lang/Throwable;)V
 
     throw p0
 
@@ -297,6 +304,39 @@
 
 
 # virtual methods
+.method public final getSource(Lretrofit2/Response;)Lde/rki/coronawarnapp/covidcertificate/validation/core/server/DccValidationServer$RuleSetSource;
+    .locals 1
+    .annotation system Ldalvik/annotation/Signature;
+        value = {
+            "(",
+            "Lretrofit2/Response<",
+            "Lokhttp3/ResponseBody;",
+            ">;)",
+            "Lde/rki/coronawarnapp/covidcertificate/validation/core/server/DccValidationServer$RuleSetSource;"
+        }
+    .end annotation
+
+    const-string v0, "response"
+
+    invoke-static {p1, v0}, Lkotlin/jvm/internal/Intrinsics;->checkNotNullParameter(Ljava/lang/Object;Ljava/lang/String;)V
+
+    invoke-static {p1}, Lkotlinx/coroutines/EventLoopKt;->getWasModified(Lretrofit2/Response;)Z
+
+    move-result p1
+
+    if-eqz p1, :cond_0
+
+    sget-object p1, Lde/rki/coronawarnapp/covidcertificate/validation/core/server/DccValidationServer$RuleSetSource;->SERVER:Lde/rki/coronawarnapp/covidcertificate/validation/core/server/DccValidationServer$RuleSetSource;
+
+    goto :goto_0
+
+    :cond_0
+    sget-object p1, Lde/rki/coronawarnapp/covidcertificate/validation/core/server/DccValidationServer$RuleSetSource;->CACHE:Lde/rki/coronawarnapp/covidcertificate/validation/core/server/DccValidationServer$RuleSetSource;
+
+    :goto_0
+    return-object p1
+.end method
+
 .method public final ruleSetJson(Lde/rki/coronawarnapp/covidcertificate/validation/core/rule/DccValidationRule$Type;Lkotlin/coroutines/Continuation;)Ljava/lang/Object;
     .locals 3
     .annotation system Ldalvik/annotation/Signature;
@@ -305,7 +345,7 @@
             "Lde/rki/coronawarnapp/covidcertificate/validation/core/rule/DccValidationRule$Type;",
             "Lkotlin/coroutines/Continuation<",
             "-",
-            "Ljava/lang/String;",
+            "Lde/rki/coronawarnapp/covidcertificate/validation/core/server/DccValidationServer$RuleSetResult;",
             ">;)",
             "Ljava/lang/Object;"
         }

@@ -2,8 +2,10 @@
 <menu
   xmlns:android="http://schemas.android.com/apk/res/android" xmlns:app="http://schemas.android.com/apk/res-auto">
     <item android:icon="@drawable/ic_main_share" android:id="@id/mainSharingFragment" android:orderInCategory="1" android:title="@string/button_share" android:contentDescription="@string/button_share" app:showAsAction="always" />
-    <item android:id="@id/mainOverviewFragment" android:title="@string/menu_help" />
-    <item android:id="@id/informationFragment" android:title="@string/menu_information" />
-    <item android:id="@id/settingsFragment" android:title="@string/menu_settings" />
+    <item android:icon="@drawable/ic_menu_settings" android:id="@id/settingsFragment" android:title="@string/menu_settings" />
+    <item android:icon="@drawable/ic_menu_trash" android:id="@id/recyclerBinOverviewFragment" android:title="@string/menu_trash" />
+    <item android:icon="@drawable/ic_menu_info" android:id="@id/informationFragment" android:title="@string/menu_information" />
+    <item android:icon="@drawable/ic_menu_social_media" android:id="@id/socialMediaMenuItem" android:visible="false" android:title="@string/menu_social_media" />
+    <item android:icon="@drawable/ic_menu_overview" android:id="@id/mainOverviewFragment" android:title="@string/menu_help" />
     <item android:id="@id/test_nav_graph" android:visible="false" android:title="Test Menu" />
 </menu>

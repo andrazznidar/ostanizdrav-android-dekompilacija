@@ -179,11 +179,11 @@
 
     const/4 v8, 0x0
 
-    invoke-static {v7, v8, v5}, Lde/rki/coronawarnapp/risk/storage/internal/riskresults/PersistedRiskLevelResultDao;->toRiskResult$default(Lde/rki/coronawarnapp/risk/storage/internal/riskresults/PersistedRiskLevelResultDao;Ljava/util/List;I)Lde/rki/coronawarnapp/risk/EwRiskLevelTaskResult;
+    invoke-virtual {v7, v8}, Lde/rki/coronawarnapp/risk/storage/internal/riskresults/PersistedRiskLevelResultDao;->toRiskResult(Ljava/util/List;)Lde/rki/coronawarnapp/risk/EwRiskLevelTaskResult;
 
     move-result-object v7
 
-    invoke-interface {v6, v7}, Ljava/util/Collection;->add(Ljava/lang/Object;)Z
+    invoke-virtual {v6, v7}, Ljava/util/ArrayList;->add(Ljava/lang/Object;)Z
 
     goto :goto_1
 

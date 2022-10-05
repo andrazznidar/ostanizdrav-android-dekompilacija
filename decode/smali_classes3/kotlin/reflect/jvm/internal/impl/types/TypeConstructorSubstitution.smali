@@ -38,10 +38,66 @@
     return-void
 .end method
 
+.method public static final create(Lkotlin/reflect/jvm/internal/impl/types/TypeConstructor;Ljava/util/List;)Lkotlin/reflect/jvm/internal/impl/types/TypeSubstitution;
+    .locals 1
+    .annotation system Ldalvik/annotation/Signature;
+        value = {
+            "(",
+            "Lkotlin/reflect/jvm/internal/impl/types/TypeConstructor;",
+            "Ljava/util/List<",
+            "+",
+            "Lkotlin/reflect/jvm/internal/impl/types/TypeProjection;",
+            ">;)",
+            "Lkotlin/reflect/jvm/internal/impl/types/TypeSubstitution;"
+        }
+    .end annotation
+
+    .annotation runtime Lkotlin/jvm/JvmStatic;
+    .end annotation
+
+    sget-object v0, Lkotlin/reflect/jvm/internal/impl/types/TypeConstructorSubstitution;->Companion:Lkotlin/reflect/jvm/internal/impl/types/TypeConstructorSubstitution$Companion;
+
+    invoke-virtual {v0, p0, p1}, Lkotlin/reflect/jvm/internal/impl/types/TypeConstructorSubstitution$Companion;->create(Lkotlin/reflect/jvm/internal/impl/types/TypeConstructor;Ljava/util/List;)Lkotlin/reflect/jvm/internal/impl/types/TypeSubstitution;
+
+    move-result-object p0
+
+    return-object p0
+.end method
+
+.method public static final createByConstructorsMap(Ljava/util/Map;)Lkotlin/reflect/jvm/internal/impl/types/TypeConstructorSubstitution;
+    .locals 1
+    .annotation system Ldalvik/annotation/Signature;
+        value = {
+            "(",
+            "Ljava/util/Map<",
+            "Lkotlin/reflect/jvm/internal/impl/types/TypeConstructor;",
+            "+",
+            "Lkotlin/reflect/jvm/internal/impl/types/TypeProjection;",
+            ">;)",
+            "Lkotlin/reflect/jvm/internal/impl/types/TypeConstructorSubstitution;"
+        }
+    .end annotation
+
+    .annotation runtime Lkotlin/jvm/JvmStatic;
+    .end annotation
+
+    sget-object v0, Lkotlin/reflect/jvm/internal/impl/types/TypeConstructorSubstitution;->Companion:Lkotlin/reflect/jvm/internal/impl/types/TypeConstructorSubstitution$Companion;
+
+    invoke-virtual {v0, p0}, Lkotlin/reflect/jvm/internal/impl/types/TypeConstructorSubstitution$Companion;->createByConstructorsMap(Ljava/util/Map;)Lkotlin/reflect/jvm/internal/impl/types/TypeConstructorSubstitution;
+
+    move-result-object p0
+
+    return-object p0
+.end method
+
 
 # virtual methods
 .method public get(Lkotlin/reflect/jvm/internal/impl/types/KotlinType;)Lkotlin/reflect/jvm/internal/impl/types/TypeProjection;
-    .locals 0
+    .locals 1
+
+    const-string v0, "key"
+
+    invoke-static {p1, v0}, Lkotlin/jvm/internal/Intrinsics;->checkNotNullParameter(Ljava/lang/Object;Ljava/lang/String;)V
 
     invoke-virtual {p1}, Lkotlin/reflect/jvm/internal/impl/types/KotlinType;->getConstructor()Lkotlin/reflect/jvm/internal/impl/types/TypeConstructor;
 

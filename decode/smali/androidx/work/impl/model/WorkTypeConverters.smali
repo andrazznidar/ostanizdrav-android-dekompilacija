@@ -190,7 +190,7 @@
     throw p0
 .end method
 
-.method public static intToBackoffPolicy(I)Landroidx/work/BackoffPolicy;
+.method public static intToBackoffPolicy(I)I
     .locals 3
     .annotation system Ldalvik/annotation/MethodParameters;
         accessFlags = {
@@ -201,15 +201,15 @@
         }
     .end annotation
 
-    if-eqz p0, :cond_1
-
     const/4 v0, 0x1
+
+    if-eqz p0, :cond_1
 
     if-ne p0, v0, :cond_0
 
-    sget-object p0, Landroidx/work/BackoffPolicy;->LINEAR:Landroidx/work/BackoffPolicy;
+    const/4 p0, 0x2
 
-    return-object p0
+    return p0
 
     :cond_0
     new-instance v0, Ljava/lang/IllegalArgumentException;
@@ -227,9 +227,7 @@
     throw v0
 
     :cond_1
-    sget-object p0, Landroidx/work/BackoffPolicy;->EXPONENTIAL:Landroidx/work/BackoffPolicy;
-
-    return-object p0
+    return v0
 .end method
 
 .method public static intToNetworkType(I)Landroidx/work/NetworkType;

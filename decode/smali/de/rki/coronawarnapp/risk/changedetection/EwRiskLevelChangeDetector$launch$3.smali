@@ -416,7 +416,7 @@
 
     move-result-object p1
 
-    invoke-static {v3, p1}, Lkotlin/reflect/jvm/KCallablesJvm;->hasChangedFromHighToLow(Lde/rki/coronawarnapp/risk/RiskState;Lde/rki/coronawarnapp/risk/RiskState;)Z
+    invoke-static {v3, p1}, Lde/rki/coronawarnapp/risk/changedetection/CommonKt;->hasChangedFromHighToLow(Lde/rki/coronawarnapp/risk/RiskState;Lde/rki/coronawarnapp/risk/RiskState;)Z
 
     move-result p1
 

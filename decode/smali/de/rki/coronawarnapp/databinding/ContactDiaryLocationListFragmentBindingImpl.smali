@@ -21,31 +21,31 @@
 
     sput-object v0, Lde/rki/coronawarnapp/databinding/ContactDiaryLocationListFragmentBindingImpl;->sViewsWithIds:Landroid/util/SparseIntArray;
 
-    const v1, 0x7f0a01ee
+    const v1, 0x7f0a020e
 
     const/4 v2, 0x1
 
     invoke-virtual {v0, v1, v2}, Landroid/util/SparseIntArray;->put(II)V
 
-    const v1, 0x7f0a01ea
+    const v1, 0x7f0a020a
 
     const/4 v2, 0x2
 
     invoke-virtual {v0, v1, v2}, Landroid/util/SparseIntArray;->put(II)V
 
-    const v1, 0x7f0a01eb
+    const v1, 0x7f0a020b
 
     const/4 v2, 0x3
 
     invoke-virtual {v0, v1, v2}, Landroid/util/SparseIntArray;->put(II)V
 
-    const v1, 0x7f0a01ed
+    const v1, 0x7f0a020d
 
     const/4 v2, 0x4
 
     invoke-virtual {v0, v1, v2}, Landroid/util/SparseIntArray;->put(II)V
 
-    const v1, 0x7f0a01ec
+    const v1, 0x7f0a020c
 
     const/4 v2, 0x5
 

@@ -4,7 +4,7 @@
 
 # interfaces
 .implements Lkotlin/reflect/jvm/internal/impl/descriptors/CallableMemberDescriptor;
-.implements Lkotlin/reflect/jvm/internal/impl/descriptors/VariableDescriptor;
+.implements Lkotlin/reflect/jvm/internal/impl/descriptors/VariableDescriptorWithAccessors;
 
 
 # virtual methods
@@ -44,9 +44,6 @@
 .end method
 
 .method public abstract getSetter()Lkotlin/reflect/jvm/internal/impl/descriptors/PropertySetterDescriptor;
-.end method
-
-.method public abstract isDelegated()Z
 .end method
 
 .method public abstract substitute(Lkotlin/reflect/jvm/internal/impl/types/TypeSubstitutor;)Lkotlin/reflect/jvm/internal/impl/descriptors/PropertyDescriptor;

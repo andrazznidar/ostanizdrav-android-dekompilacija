@@ -97,9 +97,9 @@
 
     invoke-static {p3, p2}, Lkotlin/jvm/internal/Intrinsics;->checkNotNullParameter(Ljava/lang/Object;Ljava/lang/String;)V
 
-    instance-of v0, p1, Lorg/openjsse/javax/net/ssl/SSLSocket;
+    instance-of p2, p1, Lorg/openjsse/javax/net/ssl/SSLSocket;
 
-    if-eqz v0, :cond_4
+    if-eqz p2, :cond_4
 
     check-cast p1, Lorg/openjsse/javax/net/ssl/SSLSocket;
 
@@ -109,7 +109,7 @@
 
     instance-of v0, p2, Lorg/openjsse/javax/net/ssl/SSLParameters;
 
-    if-eqz v0, :cond_5
+    if-eqz v0, :cond_4
 
     new-instance v0, Ljava/util/ArrayList;
 
@@ -205,24 +205,16 @@
 
     invoke-virtual {p1, p2}, Lorg/openjsse/javax/net/ssl/SSLSocket;->setSSLParameters(Ljavax/net/ssl/SSLParameters;)V
 
-    goto :goto_2
-
     :cond_4
-    invoke-static {p3, p2}, Lkotlin/jvm/internal/Intrinsics;->checkNotNullParameter(Ljava/lang/Object;Ljava/lang/String;)V
-
-    :cond_5
-    :goto_2
     return-void
 .end method
 
 .method public getSelectedProtocol(Ljavax/net/ssl/SSLSocket;)Ljava/lang/String;
-    .locals 2
+    .locals 1
 
     instance-of v0, p1, Lorg/openjsse/javax/net/ssl/SSLSocket;
 
-    const/4 v1, 0x0
-
-    if-eqz v0, :cond_3
+    if-eqz v0, :cond_2
 
     check-cast p1, Lorg/openjsse/javax/net/ssl/SSLSocket;
 
@@ -232,7 +224,7 @@
 
     if-nez p1, :cond_0
 
-    goto :goto_1
+    goto :goto_0
 
     :cond_0
     invoke-virtual {p1}, Ljava/lang/String;->hashCode()I
@@ -241,7 +233,7 @@
 
     if-eqz v0, :cond_1
 
-    goto :goto_0
+    goto :goto_1
 
     :cond_1
     const-string v0, ""
@@ -250,17 +242,15 @@
 
     move-result v0
 
-    if-eqz v0, :cond_2
-
-    goto :goto_1
+    if-eqz v0, :cond_3
 
     :cond_2
     :goto_0
-    move-object v1, p1
+    const/4 p1, 0x0
 
     :cond_3
     :goto_1
-    return-object v1
+    return-object p1
 .end method
 
 .method public newSSLContext()Ljavax/net/ssl/SSLContext;

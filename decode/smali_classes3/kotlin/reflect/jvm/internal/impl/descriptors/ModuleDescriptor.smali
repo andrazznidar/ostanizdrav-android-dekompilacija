@@ -6,18 +6,26 @@
 .implements Lkotlin/reflect/jvm/internal/impl/descriptors/DeclarationDescriptor;
 
 
+# annotations
+.annotation system Ldalvik/annotation/MemberClasses;
+    value = {
+        Lkotlin/reflect/jvm/internal/impl/descriptors/ModuleDescriptor$DefaultImpls;
+    }
+.end annotation
+
+
 # virtual methods
 .method public abstract getBuiltIns()Lkotlin/reflect/jvm/internal/impl/builtins/KotlinBuiltIns;
 .end method
 
-.method public abstract getCapability(Lcom/google/android/gms/internal/nearby/zzci;)Ljava/lang/Object;
+.method public abstract getCapability(Lkotlin/reflect/jvm/internal/impl/descriptors/ModuleCapability;)Ljava/lang/Object;
     .annotation system Ldalvik/annotation/Signature;
         value = {
             "<T:",
             "Ljava/lang/Object;",
             ">(",
-            "Lcom/google/android/gms/internal/nearby/zzci;",
-            ")TT;"
+            "Lkotlin/reflect/jvm/internal/impl/descriptors/ModuleCapability<",
+            "TT;>;)TT;"
         }
     .end annotation
 .end method

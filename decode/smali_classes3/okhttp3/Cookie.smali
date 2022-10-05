@@ -641,79 +641,6 @@
     throw p0
 .end method
 
-.method public static final parseMaxAge(Ljava/lang/String;)J
-    .locals 6
-
-    const-wide/high16 v0, -0x8000000000000000L
-
-    :try_start_0
-    invoke-static {p0}, Ljava/lang/Long;->parseLong(Ljava/lang/String;)J
-
-    move-result-wide v2
-    :try_end_0
-    .catch Ljava/lang/NumberFormatException; {:try_start_0 .. :try_end_0} :catch_0
-
-    const-wide/16 v4, 0x0
-
-    cmp-long p0, v2, v4
-
-    if-gtz p0, :cond_0
-
-    goto :goto_0
-
-    :cond_0
-    move-wide v0, v2
-
-    :goto_0
-    return-wide v0
-
-    :catch_0
-    move-exception v2
-
-    const-string v3, "-?\\d+"
-
-    invoke-static {v3}, Ljava/util/regex/Pattern;->compile(Ljava/lang/String;)Ljava/util/regex/Pattern;
-
-    move-result-object v3
-
-    const-string v4, "Pattern.compile(pattern)"
-
-    invoke-static {v3, v4}, Lkotlin/jvm/internal/Intrinsics;->checkNotNullExpressionValue(Ljava/lang/Object;Ljava/lang/String;)V
-
-    invoke-virtual {v3, p0}, Ljava/util/regex/Pattern;->matcher(Ljava/lang/CharSequence;)Ljava/util/regex/Matcher;
-
-    move-result-object v3
-
-    invoke-virtual {v3}, Ljava/util/regex/Matcher;->matches()Z
-
-    move-result v3
-
-    if-eqz v3, :cond_2
-
-    const/4 v2, 0x0
-
-    const/4 v3, 0x2
-
-    const-string v4, "-"
-
-    invoke-static {p0, v4, v2, v3}, Lkotlin/text/StringsKt__StringsJVMKt;->startsWith$default(Ljava/lang/String;Ljava/lang/String;ZI)Z
-
-    move-result p0
-
-    if-eqz p0, :cond_1
-
-    goto :goto_1
-
-    :cond_1
-    const-wide v0, 0x7fffffffffffffffL
-
-    :goto_1
-    return-wide v0
-
-    :cond_2
-    throw v2
-.end method
-
 
 # virtual methods
 .method public equals(Ljava/lang/Object;)Z
@@ -973,10 +900,6 @@
     invoke-direct {v1, v2, v3}, Ljava/util/Date;-><init>(J)V
 
     sget-object v2, Lokhttp3/internal/http/DatesKt;->STANDARD_DATE_FORMAT:Lokhttp3/internal/http/DatesKt$STANDARD_DATE_FORMAT$1;
-
-    const-string v2, "$this$toHttpDateString"
-
-    invoke-static {v1, v2}, Lkotlin/jvm/internal/Intrinsics;->checkNotNullParameter(Ljava/lang/Object;Ljava/lang/String;)V
 
     sget-object v2, Lokhttp3/internal/http/DatesKt;->STANDARD_DATE_FORMAT:Lokhttp3/internal/http/DatesKt$STANDARD_DATE_FORMAT$1;
 

@@ -77,7 +77,7 @@
 
     sget-object v0, Landroidx/databinding/DataBindingUtil;->sMapper:Landroidx/databinding/DataBinderMapper;
 
-    const v0, 0x7f0d0190
+    const v0, 0x7f0d01a0
 
     const/4 v1, 0x0
 

@@ -326,7 +326,7 @@
 
     sget-object v8, Lde/rki/coronawarnapp/diagnosiskeys/server/DiagnosisKeyServer;->DAY_FORMATTER:Lorg/joda/time/format/DateTimeFormatter;
 
-    invoke-virtual {v7, v8}, Lorg/joda/time/base/BaseLocal;->toString(Lorg/joda/time/format/DateTimeFormatter;)Ljava/lang/String;
+    invoke-virtual {v7, v8}, Lorg/joda/time/base/AbstractPartial;->toString(Lorg/joda/time/format/DateTimeFormatter;)Ljava/lang/String;
 
     move-result-object v7
 
@@ -336,7 +336,7 @@
 
     sget-object v8, Lde/rki/coronawarnapp/diagnosiskeys/server/DiagnosisKeyServer;->HOUR_FORMATTER:Lorg/joda/time/format/DateTimeFormatter;
 
-    invoke-virtual {v1, v8}, Lorg/joda/time/base/BaseLocal;->toString(Lorg/joda/time/format/DateTimeFormatter;)Ljava/lang/String;
+    invoke-virtual {v1, v8}, Lorg/joda/time/base/AbstractPartial;->toString(Lorg/joda/time/format/DateTimeFormatter;)Ljava/lang/String;
 
     move-result-object v1
 
@@ -380,7 +380,7 @@
 
     sget-object v9, Lde/rki/coronawarnapp/diagnosiskeys/server/DiagnosisKeyServer;->DAY_FORMATTER:Lorg/joda/time/format/DateTimeFormatter;
 
-    invoke-virtual {v8, v9}, Lorg/joda/time/base/BaseLocal;->toString(Lorg/joda/time/format/DateTimeFormatter;)Ljava/lang/String;
+    invoke-virtual {v8, v9}, Lorg/joda/time/base/AbstractPartial;->toString(Lorg/joda/time/format/DateTimeFormatter;)Ljava/lang/String;
 
     move-result-object v8
 
@@ -466,40 +466,40 @@
 
     if-eqz p1, :cond_a
 
-    iget-object p1, p0, Lde/rki/coronawarnapp/diagnosiskeys/server/DiagnosisKeyServer$downloadKeyFile$3;->$saveTo:Ljava/io/File;
+    new-instance p1, Ljava/io/FileOutputStream;
 
-    new-instance v2, Ljava/io/FileOutputStream;
+    iget-object v2, p0, Lde/rki/coronawarnapp/diagnosiskeys/server/DiagnosisKeyServer$downloadKeyFile$3;->$saveTo:Ljava/io/File;
 
-    invoke-direct {v2, p1}, Ljava/io/FileOutputStream;-><init>(Ljava/io/File;)V
+    invoke-direct {p1, v2}, Ljava/io/FileOutputStream;-><init>(Ljava/io/File;)V
 
     :try_start_0
-    iget-object p1, v1, Lretrofit2/Response;->body:Ljava/lang/Object;
+    iget-object v1, v1, Lretrofit2/Response;->body:Ljava/lang/Object;
 
-    invoke-static {p1}, Lkotlin/jvm/internal/Intrinsics;->checkNotNull(Ljava/lang/Object;)V
+    invoke-static {v1}, Lkotlin/jvm/internal/Intrinsics;->checkNotNull(Ljava/lang/Object;)V
 
-    check-cast p1, Lokhttp3/ResponseBody;
+    check-cast v1, Lokhttp3/ResponseBody;
 
-    invoke-virtual {p1}, Lokhttp3/ResponseBody;->byteStream()Ljava/io/InputStream;
+    invoke-virtual {v1}, Lokhttp3/ResponseBody;->byteStream()Ljava/io/InputStream;
 
-    move-result-object p1
+    move-result-object v1
     :try_end_0
     .catchall {:try_start_0 .. :try_end_0} :catchall_2
 
-    const/16 v1, 0x2000
+    const/16 v2, 0x2000
 
     :try_start_1
-    invoke-static {p1, v2, v1}, Lkotlin/io/ByteStreamsKt;->copyTo(Ljava/io/InputStream;Ljava/io/OutputStream;I)J
+    invoke-static {v1, p1, v2}, Lkotlin/io/ByteStreamsKt;->copyTo(Ljava/io/InputStream;Ljava/io/OutputStream;I)J
     :try_end_1
     .catchall {:try_start_1 .. :try_end_1} :catchall_0
 
-    const/4 v1, 0x0
+    const/4 v2, 0x0
 
     :try_start_2
-    invoke-static {p1, v1}, Lkotlin/io/CloseableKt;->closeFinally(Ljava/io/Closeable;Ljava/lang/Throwable;)V
+    invoke-static {v1, v2}, Lkotlin/io/CloseableKt;->closeFinally(Ljava/io/Closeable;Ljava/lang/Throwable;)V
     :try_end_2
     .catchall {:try_start_2 .. :try_end_2} :catchall_2
 
-    invoke-static {v2, v1}, Lkotlin/io/CloseableKt;->closeFinally(Ljava/io/Closeable;Ljava/lang/Throwable;)V
+    invoke-static {p1, v2}, Lkotlin/io/CloseableKt;->closeFinally(Ljava/io/Closeable;Ljava/lang/Throwable;)V
 
     sget-object p1, Ltimber/log/Timber;->Forest:Ltimber/log/Timber$Forest;
 
@@ -526,29 +526,29 @@
     .catchall {:try_start_3 .. :try_end_3} :catchall_1
 
     :catchall_1
-    move-exception v1
+    move-exception v2
 
     :try_start_4
-    invoke-static {p1, v0}, Lkotlin/io/CloseableKt;->closeFinally(Ljava/io/Closeable;Ljava/lang/Throwable;)V
+    invoke-static {v1, v0}, Lkotlin/io/CloseableKt;->closeFinally(Ljava/io/Closeable;Ljava/lang/Throwable;)V
 
-    throw v1
+    throw v2
     :try_end_4
     .catchall {:try_start_4 .. :try_end_4} :catchall_2
 
     :catchall_2
-    move-exception p1
+    move-exception v0
 
     :try_start_5
-    throw p1
+    throw v0
     :try_end_5
     .catchall {:try_start_5 .. :try_end_5} :catchall_3
 
     :catchall_3
-    move-exception v0
+    move-exception v1
 
-    invoke-static {v2, p1}, Lkotlin/io/CloseableKt;->closeFinally(Ljava/io/Closeable;Ljava/lang/Throwable;)V
+    invoke-static {p1, v0}, Lkotlin/io/CloseableKt;->closeFinally(Ljava/io/Closeable;Ljava/lang/Throwable;)V
 
-    throw v0
+    throw v1
 
     :cond_a
     new-instance p1, Lretrofit2/HttpException;

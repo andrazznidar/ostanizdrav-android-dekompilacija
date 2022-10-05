@@ -18,11 +18,11 @@
 
 
 # instance fields
-.field public final debugMessage:Ljava/lang/String;
+.field private final debugMessage:Ljava/lang/String;
 
 
 # direct methods
-.method public static synthetic $$$reportNull$$$0(I)V
+.method private static synthetic $$$reportNull$$$0(I)V
     .locals 10
 
     const/16 v0, 0x12
@@ -331,31 +331,35 @@
     .end packed-switch
 .end method
 
-.method public constructor <init>(Ljava/lang/String;Lkotlin/reflect/jvm/internal/impl/types/ErrorUtils$1;)V
-    .locals 0
+.method private constructor <init>(Ljava/lang/String;)V
+    .locals 1
 
-    if-eqz p1, :cond_0
+    if-nez p1, :cond_0
 
+    const/4 v0, 0x0
+
+    invoke-static {v0}, Lkotlin/reflect/jvm/internal/impl/types/ErrorUtils$ErrorScope;->$$$reportNull$$$0(I)V
+
+    :cond_0
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
     iput-object p1, p0, Lkotlin/reflect/jvm/internal/impl/types/ErrorUtils$ErrorScope;->debugMessage:Ljava/lang/String;
 
     return-void
+.end method
 
-    :cond_0
-    const/4 p1, 0x0
+.method public synthetic constructor <init>(Ljava/lang/String;Lkotlin/reflect/jvm/internal/impl/types/ErrorUtils$1;)V
+    .locals 0
 
-    invoke-static {p1}, Lkotlin/reflect/jvm/internal/impl/types/ErrorUtils$ErrorScope;->$$$reportNull$$$0(I)V
+    invoke-direct {p0, p1}, Lkotlin/reflect/jvm/internal/impl/types/ErrorUtils$ErrorScope;-><init>(Ljava/lang/String;)V
 
-    const/4 p1, 0x0
-
-    throw p1
+    return-void
 .end method
 
 
 # virtual methods
 .method public getClassifierNames()Ljava/util/Set;
-    .locals 1
+    .locals 2
     .annotation system Ldalvik/annotation/Signature;
         value = {
             "()",
@@ -369,85 +373,46 @@
 
     move-result-object v0
 
-    if-eqz v0, :cond_0
+    if-nez v0, :cond_0
 
-    return-object v0
+    const/16 v1, 0xd
+
+    invoke-static {v1}, Lkotlin/reflect/jvm/internal/impl/types/ErrorUtils$ErrorScope;->$$$reportNull$$$0(I)V
 
     :cond_0
-    const/16 v0, 0xd
-
-    invoke-static {v0}, Lkotlin/reflect/jvm/internal/impl/types/ErrorUtils$ErrorScope;->$$$reportNull$$$0(I)V
-
-    const/4 v0, 0x0
-
-    throw v0
+    return-object v0
 .end method
 
 .method public getContributedClassifier(Lkotlin/reflect/jvm/internal/impl/name/Name;Lkotlin/reflect/jvm/internal/impl/incremental/components/LookupLocation;)Lkotlin/reflect/jvm/internal/impl/descriptors/ClassifierDescriptor;
-    .locals 2
+    .locals 1
+
+    if-nez p1, :cond_0
 
     const/4 v0, 0x1
 
-    const/4 v1, 0x0
+    invoke-static {v0}, Lkotlin/reflect/jvm/internal/impl/types/ErrorUtils$ErrorScope;->$$$reportNull$$$0(I)V
 
-    if-eqz p1, :cond_2
+    :cond_0
+    if-nez p2, :cond_1
 
-    if-eqz p2, :cond_1
+    const/4 p2, 0x2
 
+    invoke-static {p2}, Lkotlin/reflect/jvm/internal/impl/types/ErrorUtils$ErrorScope;->$$$reportNull$$$0(I)V
+
+    :cond_1
     invoke-virtual {p1}, Lkotlin/reflect/jvm/internal/impl/name/Name;->asString()Ljava/lang/String;
 
     move-result-object p1
 
-    if-eqz p1, :cond_0
-
-    new-instance p2, Lkotlin/reflect/jvm/internal/impl/types/ErrorUtils$ErrorClassDescriptor;
-
-    new-instance v0, Ljava/lang/StringBuilder;
-
-    invoke-direct {v0}, Ljava/lang/StringBuilder;-><init>()V
-
-    const-string v1, "<ERROR CLASS: "
-
-    invoke-virtual {v0, v1}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
-
-    invoke-virtual {v0, p1}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
-
-    const-string p1, ">"
-
-    invoke-virtual {v0, p1}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
-
-    invoke-virtual {v0}, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
+    invoke-static {p1}, Lkotlin/reflect/jvm/internal/impl/types/ErrorUtils;->createErrorClass(Ljava/lang/String;)Lkotlin/reflect/jvm/internal/impl/descriptors/ClassDescriptor;
 
     move-result-object p1
 
-    invoke-static {p1}, Lkotlin/reflect/jvm/internal/impl/name/Name;->special(Ljava/lang/String;)Lkotlin/reflect/jvm/internal/impl/name/Name;
-
-    move-result-object p1
-
-    invoke-direct {p2, p1}, Lkotlin/reflect/jvm/internal/impl/types/ErrorUtils$ErrorClassDescriptor;-><init>(Lkotlin/reflect/jvm/internal/impl/name/Name;)V
-
-    return-object p2
-
-    :cond_0
-    invoke-static {v0}, Lkotlin/reflect/jvm/internal/impl/types/ErrorUtils;->$$$reportNull$$$0(I)V
-
-    throw v1
-
-    :cond_1
-    const/4 p1, 0x2
-
-    invoke-static {p1}, Lkotlin/reflect/jvm/internal/impl/types/ErrorUtils$ErrorScope;->$$$reportNull$$$0(I)V
-
-    throw v1
-
-    :cond_2
-    invoke-static {v0}, Lkotlin/reflect/jvm/internal/impl/types/ErrorUtils$ErrorScope;->$$$reportNull$$$0(I)V
-
-    throw v1
+    return-object p1
 .end method
 
 .method public getContributedDescriptors(Lkotlin/reflect/jvm/internal/impl/resolve/scopes/DescriptorKindFilter;Lkotlin/jvm/functions/Function1;)Ljava/util/Collection;
-    .locals 1
+    .locals 0
     .annotation system Ldalvik/annotation/Signature;
         value = {
             "(",
@@ -463,152 +428,146 @@
         }
     .end annotation
 
-    const/4 v0, 0x0
+    if-nez p1, :cond_0
 
-    if-eqz p1, :cond_2
-
-    if-eqz p2, :cond_1
-
-    invoke-static {}, Ljava/util/Collections;->emptyList()Ljava/util/List;
-
-    move-result-object p1
-
-    if-eqz p1, :cond_0
-
-    return-object p1
-
-    :cond_0
-    const/16 p1, 0x12
-
-    invoke-static {p1}, Lkotlin/reflect/jvm/internal/impl/types/ErrorUtils$ErrorScope;->$$$reportNull$$$0(I)V
-
-    throw v0
-
-    :cond_1
-    const/16 p1, 0x11
-
-    invoke-static {p1}, Lkotlin/reflect/jvm/internal/impl/types/ErrorUtils$ErrorScope;->$$$reportNull$$$0(I)V
-
-    throw v0
-
-    :cond_2
     const/16 p1, 0x10
 
     invoke-static {p1}, Lkotlin/reflect/jvm/internal/impl/types/ErrorUtils$ErrorScope;->$$$reportNull$$$0(I)V
 
-    throw v0
+    :cond_0
+    if-nez p2, :cond_1
+
+    const/16 p1, 0x11
+
+    invoke-static {p1}, Lkotlin/reflect/jvm/internal/impl/types/ErrorUtils$ErrorScope;->$$$reportNull$$$0(I)V
+
+    :cond_1
+    invoke-static {}, Ljava/util/Collections;->emptyList()Ljava/util/List;
+
+    move-result-object p1
+
+    if-nez p1, :cond_2
+
+    const/16 p2, 0x12
+
+    invoke-static {p2}, Lkotlin/reflect/jvm/internal/impl/types/ErrorUtils$ErrorScope;->$$$reportNull$$$0(I)V
+
+    :cond_2
+    return-object p1
 .end method
 
-.method public getContributedFunctions(Lkotlin/reflect/jvm/internal/impl/name/Name;Lkotlin/reflect/jvm/internal/impl/incremental/components/LookupLocation;)Ljava/util/Collection;
-    .locals 9
+.method public bridge synthetic getContributedFunctions(Lkotlin/reflect/jvm/internal/impl/name/Name;Lkotlin/reflect/jvm/internal/impl/incremental/components/LookupLocation;)Ljava/util/Collection;
+    .locals 0
 
-    const/4 v0, 0x0
+    invoke-virtual {p0, p1, p2}, Lkotlin/reflect/jvm/internal/impl/types/ErrorUtils$ErrorScope;->getContributedFunctions(Lkotlin/reflect/jvm/internal/impl/name/Name;Lkotlin/reflect/jvm/internal/impl/incremental/components/LookupLocation;)Ljava/util/Set;
 
-    if-eqz p1, :cond_2
+    move-result-object p1
 
-    if-eqz p2, :cond_1
+    return-object p1
+.end method
 
-    new-instance p1, Lkotlin/reflect/jvm/internal/impl/types/error/ErrorSimpleFunctionDescriptorImpl;
+.method public getContributedFunctions(Lkotlin/reflect/jvm/internal/impl/name/Name;Lkotlin/reflect/jvm/internal/impl/incremental/components/LookupLocation;)Ljava/util/Set;
+    .locals 0
+    .annotation system Ldalvik/annotation/Signature;
+        value = {
+            "(",
+            "Lkotlin/reflect/jvm/internal/impl/name/Name;",
+            "Lkotlin/reflect/jvm/internal/impl/incremental/components/LookupLocation;",
+            ")",
+            "Ljava/util/Set<",
+            "+",
+            "Lkotlin/reflect/jvm/internal/impl/descriptors/SimpleFunctionDescriptor;",
+            ">;"
+        }
+    .end annotation
 
-    sget-object p2, Lkotlin/reflect/jvm/internal/impl/types/ErrorUtils;->ERROR_CLASS:Lkotlin/reflect/jvm/internal/impl/types/ErrorUtils$ErrorClassDescriptor;
+    if-nez p1, :cond_0
 
-    invoke-direct {p1, p2, p0}, Lkotlin/reflect/jvm/internal/impl/types/error/ErrorSimpleFunctionDescriptorImpl;-><init>(Lkotlin/reflect/jvm/internal/impl/descriptors/ClassDescriptor;Lkotlin/reflect/jvm/internal/impl/types/ErrorUtils$ErrorScope;)V
+    const/16 p1, 0x8
 
-    const/4 v2, 0x0
+    invoke-static {p1}, Lkotlin/reflect/jvm/internal/impl/types/ErrorUtils$ErrorScope;->$$$reportNull$$$0(I)V
 
-    const/4 v3, 0x0
+    :cond_0
+    if-nez p2, :cond_1
 
-    invoke-static {}, Ljava/util/Collections;->emptyList()Ljava/util/List;
+    const/16 p1, 0x9
 
-    move-result-object v4
+    invoke-static {p1}, Lkotlin/reflect/jvm/internal/impl/types/ErrorUtils$ErrorScope;->$$$reportNull$$$0(I)V
 
-    invoke-static {}, Ljava/util/Collections;->emptyList()Ljava/util/List;
+    :cond_1
+    invoke-static {p0}, Lkotlin/reflect/jvm/internal/impl/types/ErrorUtils;->access$100(Lkotlin/reflect/jvm/internal/impl/types/ErrorUtils$ErrorScope;)Lkotlin/reflect/jvm/internal/impl/descriptors/SimpleFunctionDescriptor;
 
-    move-result-object v5
-
-    const-string p2, "<ERROR FUNCTION RETURN TYPE>"
-
-    invoke-static {p2}, Lkotlin/reflect/jvm/internal/impl/types/ErrorUtils;->createErrorType(Ljava/lang/String;)Lkotlin/reflect/jvm/internal/impl/types/SimpleType;
-
-    move-result-object v6
-
-    sget-object v7, Lkotlin/reflect/jvm/internal/impl/descriptors/Modality;->OPEN:Lkotlin/reflect/jvm/internal/impl/descriptors/Modality;
-
-    sget-object v8, Lkotlin/reflect/jvm/internal/impl/descriptors/DescriptorVisibilities;->PUBLIC:Lkotlin/reflect/jvm/internal/impl/descriptors/DescriptorVisibility;
-
-    move-object v1, p1
-
-    invoke-virtual/range {v1 .. v8}, Lkotlin/reflect/jvm/internal/impl/descriptors/impl/SimpleFunctionDescriptorImpl;->initialize(Lkotlin/reflect/jvm/internal/impl/descriptors/ReceiverParameterDescriptor;Lkotlin/reflect/jvm/internal/impl/descriptors/ReceiverParameterDescriptor;Ljava/util/List;Ljava/util/List;Lkotlin/reflect/jvm/internal/impl/types/KotlinType;Lkotlin/reflect/jvm/internal/impl/descriptors/Modality;Lkotlin/reflect/jvm/internal/impl/descriptors/DescriptorVisibility;)Lkotlin/reflect/jvm/internal/impl/descriptors/impl/SimpleFunctionDescriptorImpl;
+    move-result-object p1
 
     invoke-static {p1}, Ljava/util/Collections;->singleton(Ljava/lang/Object;)Ljava/util/Set;
 
     move-result-object p1
 
-    if-eqz p1, :cond_0
+    if-nez p1, :cond_2
 
-    return-object p1
+    const/16 p2, 0xa
 
-    :cond_0
-    const/16 p1, 0xa
-
-    invoke-static {p1}, Lkotlin/reflect/jvm/internal/impl/types/ErrorUtils$ErrorScope;->$$$reportNull$$$0(I)V
-
-    throw v0
-
-    :cond_1
-    const/16 p1, 0x9
-
-    invoke-static {p1}, Lkotlin/reflect/jvm/internal/impl/types/ErrorUtils$ErrorScope;->$$$reportNull$$$0(I)V
-
-    throw v0
+    invoke-static {p2}, Lkotlin/reflect/jvm/internal/impl/types/ErrorUtils$ErrorScope;->$$$reportNull$$$0(I)V
 
     :cond_2
-    const/16 p1, 0x8
-
-    invoke-static {p1}, Lkotlin/reflect/jvm/internal/impl/types/ErrorUtils$ErrorScope;->$$$reportNull$$$0(I)V
-
-    throw v0
+    return-object p1
 .end method
 
-.method public getContributedVariables(Lkotlin/reflect/jvm/internal/impl/name/Name;Lkotlin/reflect/jvm/internal/impl/incremental/components/LookupLocation;)Ljava/util/Collection;
-    .locals 1
+.method public bridge synthetic getContributedVariables(Lkotlin/reflect/jvm/internal/impl/name/Name;Lkotlin/reflect/jvm/internal/impl/incremental/components/LookupLocation;)Ljava/util/Collection;
+    .locals 0
 
-    const/4 v0, 0x0
+    invoke-virtual {p0, p1, p2}, Lkotlin/reflect/jvm/internal/impl/types/ErrorUtils$ErrorScope;->getContributedVariables(Lkotlin/reflect/jvm/internal/impl/name/Name;Lkotlin/reflect/jvm/internal/impl/incremental/components/LookupLocation;)Ljava/util/Set;
 
-    if-eqz p1, :cond_2
-
-    if-eqz p2, :cond_1
-
-    sget-object p1, Lkotlin/reflect/jvm/internal/impl/types/ErrorUtils;->ERROR_PROPERTY_GROUP:Ljava/util/Set;
-
-    if-eqz p1, :cond_0
+    move-result-object p1
 
     return-object p1
+.end method
 
-    :cond_0
-    const/4 p1, 0x7
+.method public getContributedVariables(Lkotlin/reflect/jvm/internal/impl/name/Name;Lkotlin/reflect/jvm/internal/impl/incremental/components/LookupLocation;)Ljava/util/Set;
+    .locals 0
+    .annotation system Ldalvik/annotation/Signature;
+        value = {
+            "(",
+            "Lkotlin/reflect/jvm/internal/impl/name/Name;",
+            "Lkotlin/reflect/jvm/internal/impl/incremental/components/LookupLocation;",
+            ")",
+            "Ljava/util/Set<",
+            "+",
+            "Lkotlin/reflect/jvm/internal/impl/descriptors/PropertyDescriptor;",
+            ">;"
+        }
+    .end annotation
 
-    invoke-static {p1}, Lkotlin/reflect/jvm/internal/impl/types/ErrorUtils$ErrorScope;->$$$reportNull$$$0(I)V
+    if-nez p1, :cond_0
 
-    throw v0
-
-    :cond_1
-    const/4 p1, 0x6
-
-    invoke-static {p1}, Lkotlin/reflect/jvm/internal/impl/types/ErrorUtils$ErrorScope;->$$$reportNull$$$0(I)V
-
-    throw v0
-
-    :cond_2
     const/4 p1, 0x5
 
     invoke-static {p1}, Lkotlin/reflect/jvm/internal/impl/types/ErrorUtils$ErrorScope;->$$$reportNull$$$0(I)V
 
-    throw v0
+    :cond_0
+    if-nez p2, :cond_1
+
+    const/4 p1, 0x6
+
+    invoke-static {p1}, Lkotlin/reflect/jvm/internal/impl/types/ErrorUtils$ErrorScope;->$$$reportNull$$$0(I)V
+
+    :cond_1
+    invoke-static {}, Lkotlin/reflect/jvm/internal/impl/types/ErrorUtils;->access$000()Ljava/util/Set;
+
+    move-result-object p1
+
+    if-nez p1, :cond_2
+
+    const/4 p2, 0x7
+
+    invoke-static {p2}, Lkotlin/reflect/jvm/internal/impl/types/ErrorUtils$ErrorScope;->$$$reportNull$$$0(I)V
+
+    :cond_2
+    return-object p1
 .end method
 
 .method public getFunctionNames()Ljava/util/Set;
-    .locals 1
+    .locals 2
     .annotation system Ldalvik/annotation/Signature;
         value = {
             "()",
@@ -622,22 +581,18 @@
 
     move-result-object v0
 
-    if-eqz v0, :cond_0
+    if-nez v0, :cond_0
 
-    return-object v0
+    const/16 v1, 0xb
+
+    invoke-static {v1}, Lkotlin/reflect/jvm/internal/impl/types/ErrorUtils$ErrorScope;->$$$reportNull$$$0(I)V
 
     :cond_0
-    const/16 v0, 0xb
-
-    invoke-static {v0}, Lkotlin/reflect/jvm/internal/impl/types/ErrorUtils$ErrorScope;->$$$reportNull$$$0(I)V
-
-    const/4 v0, 0x0
-
-    throw v0
+    return-object v0
 .end method
 
 .method public getVariableNames()Ljava/util/Set;
-    .locals 1
+    .locals 2
     .annotation system Ldalvik/annotation/Signature;
         value = {
             "()",
@@ -651,18 +606,34 @@
 
     move-result-object v0
 
-    if-eqz v0, :cond_0
+    if-nez v0, :cond_0
 
-    return-object v0
+    const/16 v1, 0xc
+
+    invoke-static {v1}, Lkotlin/reflect/jvm/internal/impl/types/ErrorUtils$ErrorScope;->$$$reportNull$$$0(I)V
 
     :cond_0
-    const/16 v0, 0xc
+    return-object v0
+.end method
 
-    invoke-static {v0}, Lkotlin/reflect/jvm/internal/impl/types/ErrorUtils$ErrorScope;->$$$reportNull$$$0(I)V
+.method public recordLookup(Lkotlin/reflect/jvm/internal/impl/name/Name;Lkotlin/reflect/jvm/internal/impl/incremental/components/LookupLocation;)V
+    .locals 0
 
-    const/4 v0, 0x0
+    if-nez p1, :cond_0
 
-    throw v0
+    const/16 p1, 0xe
+
+    invoke-static {p1}, Lkotlin/reflect/jvm/internal/impl/types/ErrorUtils$ErrorScope;->$$$reportNull$$$0(I)V
+
+    :cond_0
+    if-nez p2, :cond_1
+
+    const/16 p1, 0xf
+
+    invoke-static {p1}, Lkotlin/reflect/jvm/internal/impl/types/ErrorUtils$ErrorScope;->$$$reportNull$$$0(I)V
+
+    :cond_1
+    return-void
 .end method
 
 .method public toString()Ljava/lang/String;

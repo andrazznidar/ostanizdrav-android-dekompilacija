@@ -4,7 +4,7 @@
 
 
 # direct methods
-.method public static synthetic $$$reportNull$$$0(I)V
+.method private static synthetic $$$reportNull$$$0(I)V
     .locals 7
 
     const/16 v0, 0x12
@@ -200,27 +200,37 @@
 .method public static getAnnotationParameterByName(Lkotlin/reflect/jvm/internal/impl/name/Name;Lkotlin/reflect/jvm/internal/impl/descriptors/ClassDescriptor;)Lkotlin/reflect/jvm/internal/impl/descriptors/ValueParameterDescriptor;
     .locals 3
 
-    const/4 v0, 0x0
+    if-nez p0, :cond_0
 
-    if-eqz p0, :cond_4
+    const/16 v0, 0x13
 
-    if-eqz p1, :cond_3
+    invoke-static {v0}, Lkotlin/reflect/jvm/internal/impl/load/java/components/DescriptorResolverUtils;->$$$reportNull$$$0(I)V
 
+    :cond_0
+    if-nez p1, :cond_1
+
+    const/16 v0, 0x14
+
+    invoke-static {v0}, Lkotlin/reflect/jvm/internal/impl/load/java/components/DescriptorResolverUtils;->$$$reportNull$$$0(I)V
+
+    :cond_1
     invoke-interface {p1}, Lkotlin/reflect/jvm/internal/impl/descriptors/ClassDescriptor;->getConstructors()Ljava/util/Collection;
 
     move-result-object p1
 
     invoke-interface {p1}, Ljava/util/Collection;->size()I
 
-    move-result v1
+    move-result v0
 
-    const/4 v2, 0x1
+    const/4 v1, 0x1
 
-    if-eq v1, v2, :cond_0
+    const/4 v2, 0x0
 
-    return-object v0
+    if-eq v0, v1, :cond_2
 
-    :cond_0
+    return-object v2
+
+    :cond_2
     invoke-interface {p1}, Ljava/util/Collection;->iterator()Ljava/util/Iterator;
 
     move-result-object p1
@@ -239,50 +249,36 @@
 
     move-result-object p1
 
-    :cond_1
+    :cond_3
     invoke-interface {p1}, Ljava/util/Iterator;->hasNext()Z
 
-    move-result v1
+    move-result v0
 
-    if-eqz v1, :cond_2
+    if-eqz v0, :cond_4
 
     invoke-interface {p1}, Ljava/util/Iterator;->next()Ljava/lang/Object;
 
+    move-result-object v0
+
+    check-cast v0, Lkotlin/reflect/jvm/internal/impl/descriptors/ValueParameterDescriptor;
+
+    invoke-interface {v0}, Lkotlin/reflect/jvm/internal/impl/descriptors/Named;->getName()Lkotlin/reflect/jvm/internal/impl/name/Name;
+
     move-result-object v1
 
-    check-cast v1, Lkotlin/reflect/jvm/internal/impl/descriptors/ValueParameterDescriptor;
+    invoke-virtual {v1, p0}, Lkotlin/reflect/jvm/internal/impl/name/Name;->equals(Ljava/lang/Object;)Z
 
-    invoke-interface {v1}, Lkotlin/reflect/jvm/internal/impl/descriptors/DeclarationDescriptor;->getName()Lkotlin/reflect/jvm/internal/impl/name/Name;
+    move-result v1
 
-    move-result-object v2
+    if-eqz v1, :cond_3
 
-    invoke-virtual {v2, p0}, Lkotlin/reflect/jvm/internal/impl/name/Name;->equals(Ljava/lang/Object;)Z
-
-    move-result v2
-
-    if-eqz v2, :cond_1
-
-    return-object v1
-
-    :cond_2
     return-object v0
 
-    :cond_3
-    const/16 p0, 0x14
-
-    invoke-static {p0}, Lkotlin/reflect/jvm/internal/impl/load/java/components/DescriptorResolverUtils;->$$$reportNull$$$0(I)V
-
-    throw v0
-
     :cond_4
-    const/16 p0, 0x13
-
-    invoke-static {p0}, Lkotlin/reflect/jvm/internal/impl/load/java/components/DescriptorResolverUtils;->$$$reportNull$$$0(I)V
-
-    throw v0
+    return-object v2
 .end method
 
-.method public static resolveOverrides(Lkotlin/reflect/jvm/internal/impl/name/Name;Ljava/util/Collection;Ljava/util/Collection;Lkotlin/reflect/jvm/internal/impl/descriptors/ClassDescriptor;Lkotlin/reflect/jvm/internal/impl/serialization/deserialization/ErrorReporter;Lkotlin/reflect/jvm/internal/impl/resolve/OverridingUtil;Z)Ljava/util/Collection;
+.method private static resolveOverrides(Lkotlin/reflect/jvm/internal/impl/name/Name;Ljava/util/Collection;Ljava/util/Collection;Lkotlin/reflect/jvm/internal/impl/descriptors/ClassDescriptor;Lkotlin/reflect/jvm/internal/impl/serialization/deserialization/ErrorReporter;Lkotlin/reflect/jvm/internal/impl/resolve/OverridingUtil;Z)Ljava/util/Collection;
     .locals 7
     .annotation system Ldalvik/annotation/Signature;
         value = {
@@ -303,20 +299,48 @@
         }
     .end annotation
 
-    const/4 v0, 0x0
+    if-nez p0, :cond_0
 
-    if-eqz p0, :cond_5
+    const/16 v0, 0xc
 
-    if-eqz p1, :cond_4
+    invoke-static {v0}, Lkotlin/reflect/jvm/internal/impl/load/java/components/DescriptorResolverUtils;->$$$reportNull$$$0(I)V
 
-    if-eqz p2, :cond_3
+    :cond_0
+    if-nez p1, :cond_1
 
-    if-eqz p3, :cond_2
+    const/16 v0, 0xd
 
-    if-eqz p4, :cond_1
+    invoke-static {v0}, Lkotlin/reflect/jvm/internal/impl/load/java/components/DescriptorResolverUtils;->$$$reportNull$$$0(I)V
 
-    if-eqz p5, :cond_0
+    :cond_1
+    if-nez p2, :cond_2
 
+    const/16 v0, 0xe
+
+    invoke-static {v0}, Lkotlin/reflect/jvm/internal/impl/load/java/components/DescriptorResolverUtils;->$$$reportNull$$$0(I)V
+
+    :cond_2
+    if-nez p3, :cond_3
+
+    const/16 v0, 0xf
+
+    invoke-static {v0}, Lkotlin/reflect/jvm/internal/impl/load/java/components/DescriptorResolverUtils;->$$$reportNull$$$0(I)V
+
+    :cond_3
+    if-nez p4, :cond_4
+
+    const/16 v0, 0x10
+
+    invoke-static {v0}, Lkotlin/reflect/jvm/internal/impl/load/java/components/DescriptorResolverUtils;->$$$reportNull$$$0(I)V
+
+    :cond_4
+    if-nez p5, :cond_5
+
+    const/16 v0, 0x11
+
+    invoke-static {v0}, Lkotlin/reflect/jvm/internal/impl/load/java/components/DescriptorResolverUtils;->$$$reportNull$$$0(I)V
+
+    :cond_5
     new-instance v0, Ljava/util/LinkedHashSet;
 
     invoke-direct {v0}, Ljava/util/LinkedHashSet;-><init>()V
@@ -338,48 +362,6 @@
     invoke-virtual/range {v1 .. v6}, Lkotlin/reflect/jvm/internal/impl/resolve/OverridingUtil;->generateOverridesInFunctionGroup(Lkotlin/reflect/jvm/internal/impl/name/Name;Ljava/util/Collection;Ljava/util/Collection;Lkotlin/reflect/jvm/internal/impl/descriptors/ClassDescriptor;Lkotlin/reflect/jvm/internal/impl/resolve/OverridingStrategy;)V
 
     return-object v0
-
-    :cond_0
-    const/16 p0, 0x11
-
-    invoke-static {p0}, Lkotlin/reflect/jvm/internal/impl/load/java/components/DescriptorResolverUtils;->$$$reportNull$$$0(I)V
-
-    throw v0
-
-    :cond_1
-    const/16 p0, 0x10
-
-    invoke-static {p0}, Lkotlin/reflect/jvm/internal/impl/load/java/components/DescriptorResolverUtils;->$$$reportNull$$$0(I)V
-
-    throw v0
-
-    :cond_2
-    const/16 p0, 0xf
-
-    invoke-static {p0}, Lkotlin/reflect/jvm/internal/impl/load/java/components/DescriptorResolverUtils;->$$$reportNull$$$0(I)V
-
-    throw v0
-
-    :cond_3
-    const/16 p0, 0xe
-
-    invoke-static {p0}, Lkotlin/reflect/jvm/internal/impl/load/java/components/DescriptorResolverUtils;->$$$reportNull$$$0(I)V
-
-    throw v0
-
-    :cond_4
-    const/16 p0, 0xd
-
-    invoke-static {p0}, Lkotlin/reflect/jvm/internal/impl/load/java/components/DescriptorResolverUtils;->$$$reportNull$$$0(I)V
-
-    throw v0
-
-    :cond_5
-    const/16 p0, 0xc
-
-    invoke-static {p0}, Lkotlin/reflect/jvm/internal/impl/load/java/components/DescriptorResolverUtils;->$$$reportNull$$$0(I)V
-
-    throw v0
 .end method
 
 .method public static resolveOverridesForNonStaticMembers(Lkotlin/reflect/jvm/internal/impl/name/Name;Ljava/util/Collection;Ljava/util/Collection;Lkotlin/reflect/jvm/internal/impl/descriptors/ClassDescriptor;Lkotlin/reflect/jvm/internal/impl/serialization/deserialization/ErrorReporter;Lkotlin/reflect/jvm/internal/impl/resolve/OverridingUtil;)Ljava/util/Collection;
@@ -403,20 +385,48 @@
         }
     .end annotation
 
+    if-nez p0, :cond_0
+
     const/4 v0, 0x0
 
-    if-eqz p0, :cond_5
+    invoke-static {v0}, Lkotlin/reflect/jvm/internal/impl/load/java/components/DescriptorResolverUtils;->$$$reportNull$$$0(I)V
 
-    if-eqz p1, :cond_4
+    :cond_0
+    if-nez p1, :cond_1
 
-    if-eqz p2, :cond_3
+    const/4 v0, 0x1
 
-    if-eqz p3, :cond_2
+    invoke-static {v0}, Lkotlin/reflect/jvm/internal/impl/load/java/components/DescriptorResolverUtils;->$$$reportNull$$$0(I)V
 
-    if-eqz p4, :cond_1
+    :cond_1
+    if-nez p2, :cond_2
 
-    if-eqz p5, :cond_0
+    const/4 v0, 0x2
 
+    invoke-static {v0}, Lkotlin/reflect/jvm/internal/impl/load/java/components/DescriptorResolverUtils;->$$$reportNull$$$0(I)V
+
+    :cond_2
+    if-nez p3, :cond_3
+
+    const/4 v0, 0x3
+
+    invoke-static {v0}, Lkotlin/reflect/jvm/internal/impl/load/java/components/DescriptorResolverUtils;->$$$reportNull$$$0(I)V
+
+    :cond_3
+    if-nez p4, :cond_4
+
+    const/4 v0, 0x4
+
+    invoke-static {v0}, Lkotlin/reflect/jvm/internal/impl/load/java/components/DescriptorResolverUtils;->$$$reportNull$$$0(I)V
+
+    :cond_4
+    if-nez p5, :cond_5
+
+    const/4 v0, 0x5
+
+    invoke-static {v0}, Lkotlin/reflect/jvm/internal/impl/load/java/components/DescriptorResolverUtils;->$$$reportNull$$$0(I)V
+
+    :cond_5
     const/4 v7, 0x0
 
     move-object v1, p0
@@ -436,48 +446,6 @@
     move-result-object p0
 
     return-object p0
-
-    :cond_0
-    const/4 p0, 0x5
-
-    invoke-static {p0}, Lkotlin/reflect/jvm/internal/impl/load/java/components/DescriptorResolverUtils;->$$$reportNull$$$0(I)V
-
-    throw v0
-
-    :cond_1
-    const/4 p0, 0x4
-
-    invoke-static {p0}, Lkotlin/reflect/jvm/internal/impl/load/java/components/DescriptorResolverUtils;->$$$reportNull$$$0(I)V
-
-    throw v0
-
-    :cond_2
-    const/4 p0, 0x3
-
-    invoke-static {p0}, Lkotlin/reflect/jvm/internal/impl/load/java/components/DescriptorResolverUtils;->$$$reportNull$$$0(I)V
-
-    throw v0
-
-    :cond_3
-    const/4 p0, 0x2
-
-    invoke-static {p0}, Lkotlin/reflect/jvm/internal/impl/load/java/components/DescriptorResolverUtils;->$$$reportNull$$$0(I)V
-
-    throw v0
-
-    :cond_4
-    const/4 p0, 0x1
-
-    invoke-static {p0}, Lkotlin/reflect/jvm/internal/impl/load/java/components/DescriptorResolverUtils;->$$$reportNull$$$0(I)V
-
-    throw v0
-
-    :cond_5
-    const/4 p0, 0x0
-
-    invoke-static {p0}, Lkotlin/reflect/jvm/internal/impl/load/java/components/DescriptorResolverUtils;->$$$reportNull$$$0(I)V
-
-    throw v0
 .end method
 
 .method public static resolveOverridesForStaticMembers(Lkotlin/reflect/jvm/internal/impl/name/Name;Ljava/util/Collection;Ljava/util/Collection;Lkotlin/reflect/jvm/internal/impl/descriptors/ClassDescriptor;Lkotlin/reflect/jvm/internal/impl/serialization/deserialization/ErrorReporter;Lkotlin/reflect/jvm/internal/impl/resolve/OverridingUtil;)Ljava/util/Collection;
@@ -501,16 +469,48 @@
         }
     .end annotation
 
-    const/4 v0, 0x0
+    if-nez p0, :cond_0
 
-    if-eqz p1, :cond_3
+    const/4 v0, 0x6
 
-    if-eqz p3, :cond_2
+    invoke-static {v0}, Lkotlin/reflect/jvm/internal/impl/load/java/components/DescriptorResolverUtils;->$$$reportNull$$$0(I)V
 
-    if-eqz p4, :cond_1
+    :cond_0
+    if-nez p1, :cond_1
 
-    if-eqz p5, :cond_0
+    const/4 v0, 0x7
 
+    invoke-static {v0}, Lkotlin/reflect/jvm/internal/impl/load/java/components/DescriptorResolverUtils;->$$$reportNull$$$0(I)V
+
+    :cond_1
+    if-nez p2, :cond_2
+
+    const/16 v0, 0x8
+
+    invoke-static {v0}, Lkotlin/reflect/jvm/internal/impl/load/java/components/DescriptorResolverUtils;->$$$reportNull$$$0(I)V
+
+    :cond_2
+    if-nez p3, :cond_3
+
+    const/16 v0, 0x9
+
+    invoke-static {v0}, Lkotlin/reflect/jvm/internal/impl/load/java/components/DescriptorResolverUtils;->$$$reportNull$$$0(I)V
+
+    :cond_3
+    if-nez p4, :cond_4
+
+    const/16 v0, 0xa
+
+    invoke-static {v0}, Lkotlin/reflect/jvm/internal/impl/load/java/components/DescriptorResolverUtils;->$$$reportNull$$$0(I)V
+
+    :cond_4
+    if-nez p5, :cond_5
+
+    const/16 v0, 0xb
+
+    invoke-static {v0}, Lkotlin/reflect/jvm/internal/impl/load/java/components/DescriptorResolverUtils;->$$$reportNull$$$0(I)V
+
+    :cond_5
     const/4 v7, 0x1
 
     move-object v1, p0
@@ -530,32 +530,4 @@
     move-result-object p0
 
     return-object p0
-
-    :cond_0
-    const/16 p0, 0xb
-
-    invoke-static {p0}, Lkotlin/reflect/jvm/internal/impl/load/java/components/DescriptorResolverUtils;->$$$reportNull$$$0(I)V
-
-    throw v0
-
-    :cond_1
-    const/16 p0, 0xa
-
-    invoke-static {p0}, Lkotlin/reflect/jvm/internal/impl/load/java/components/DescriptorResolverUtils;->$$$reportNull$$$0(I)V
-
-    throw v0
-
-    :cond_2
-    const/16 p0, 0x9
-
-    invoke-static {p0}, Lkotlin/reflect/jvm/internal/impl/load/java/components/DescriptorResolverUtils;->$$$reportNull$$$0(I)V
-
-    throw v0
-
-    :cond_3
-    const/4 p0, 0x7
-
-    invoke-static {p0}, Lkotlin/reflect/jvm/internal/impl/load/java/components/DescriptorResolverUtils;->$$$reportNull$$$0(I)V
-
-    throw v0
 .end method

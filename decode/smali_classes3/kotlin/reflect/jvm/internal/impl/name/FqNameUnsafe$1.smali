@@ -1,4 +1,4 @@
-.class public final Lkotlin/reflect/jvm/internal/impl/name/FqNameUnsafe$1;
+.class final Lkotlin/reflect/jvm/internal/impl/name/FqNameUnsafe$1;
 .super Ljava/lang/Object;
 .source "FqNameUnsafe.java"
 
@@ -38,10 +38,20 @@
 
 
 # virtual methods
-.method public invoke(Ljava/lang/Object;)Ljava/lang/Object;
+.method public bridge synthetic invoke(Ljava/lang/Object;)Ljava/lang/Object;
     .locals 0
 
     check-cast p1, Ljava/lang/String;
+
+    invoke-virtual {p0, p1}, Lkotlin/reflect/jvm/internal/impl/name/FqNameUnsafe$1;->invoke(Ljava/lang/String;)Lkotlin/reflect/jvm/internal/impl/name/Name;
+
+    move-result-object p1
+
+    return-object p1
+.end method
+
+.method public invoke(Ljava/lang/String;)Lkotlin/reflect/jvm/internal/impl/name/Name;
+    .locals 0
 
     invoke-static {p1}, Lkotlin/reflect/jvm/internal/impl/name/Name;->guessByFirstCharacter(Ljava/lang/String;)Lkotlin/reflect/jvm/internal/impl/name/Name;
 

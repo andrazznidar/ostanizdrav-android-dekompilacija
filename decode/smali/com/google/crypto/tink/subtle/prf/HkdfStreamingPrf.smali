@@ -15,7 +15,7 @@
 
 
 # instance fields
-.field public final hashType:Lcom/google/crypto/tink/subtle/Enums$HashType;
+.field public final hashType:I
 
 .field public final ikm:[B
 
@@ -23,7 +23,7 @@
 
 
 # direct methods
-.method public constructor <init>(Lcom/google/crypto/tink/subtle/Enums$HashType;[B[B)V
+.method public constructor <init>(I[B[B)V
     .locals 0
     .annotation system Ldalvik/annotation/MethodParameters;
         accessFlags = {
@@ -40,7 +40,7 @@
 
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
-    iput-object p1, p0, Lcom/google/crypto/tink/subtle/prf/HkdfStreamingPrf;->hashType:Lcom/google/crypto/tink/subtle/Enums$HashType;
+    iput p1, p0, Lcom/google/crypto/tink/subtle/prf/HkdfStreamingPrf;->hashType:I
 
     array-length p1, p2
 
@@ -61,7 +61,7 @@
     return-void
 .end method
 
-.method public static access$100(Lcom/google/crypto/tink/subtle/Enums$HashType;)Ljava/lang/String;
+.method public static access$100(I)Ljava/lang/String;
     .locals 3
     .annotation system Ldalvik/annotation/Throws;
         value = {
@@ -69,9 +69,9 @@
         }
     .end annotation
 
-    invoke-virtual {p0}, Ljava/lang/Enum;->ordinal()I
+    if-eqz p0, :cond_4
 
-    move-result v0
+    add-int/lit8 v0, p0, -0x1
 
     if-eqz v0, :cond_3
 
@@ -102,7 +102,11 @@
 
     invoke-virtual {v1, v2}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
 
-    invoke-virtual {v1, p0}, Ljava/lang/StringBuilder;->append(Ljava/lang/Object;)Ljava/lang/StringBuilder;
+    invoke-static {p0}, Lcom/google/crypto/tink/subtle/Enums$HashType$EnumUnboxingLocalUtility;->stringValueOf(I)Ljava/lang/String;
+
+    move-result-object p0
+
+    invoke-virtual {v1, p0}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
 
     const-string p0, " known"
 
@@ -131,6 +135,11 @@
 
     :goto_0
     return-object p0
+
+    :cond_4
+    const/4 p0, 0x0
+
+    throw p0
 .end method
 
 

@@ -19,13 +19,17 @@
 
     invoke-virtual {v0, v1}, Lcom/google/crypto/tink/shaded/protobuf/GeneratedMessageLite$Builder;->mergeFrom(Lcom/google/crypto/tink/shaded/protobuf/GeneratedMessageLite;)Lcom/google/crypto/tink/shaded/protobuf/GeneratedMessageLite$Builder;
 
-    check-cast v0, Lcom/google/crypto/tink/proto/RegistryConfig$Builder;
+    move-object v1, v0
+
+    check-cast v1, Lcom/google/crypto/tink/proto/RegistryConfig$Builder;
 
     sget-object v1, Lcom/google/crypto/tink/signature/SignatureConfig;->TINK_1_0_0:Lcom/google/crypto/tink/proto/RegistryConfig;
 
     invoke-virtual {v0, v1}, Lcom/google/crypto/tink/shaded/protobuf/GeneratedMessageLite$Builder;->mergeFrom(Lcom/google/crypto/tink/shaded/protobuf/GeneratedMessageLite;)Lcom/google/crypto/tink/shaded/protobuf/GeneratedMessageLite$Builder;
 
-    check-cast v0, Lcom/google/crypto/tink/proto/RegistryConfig$Builder;
+    move-object v1, v0
+
+    check-cast v1, Lcom/google/crypto/tink/proto/RegistryConfig$Builder;
 
     invoke-virtual {v0}, Lcom/google/crypto/tink/shaded/protobuf/GeneratedMessageLite$Builder;->copyOnWrite()V
 
@@ -51,25 +55,33 @@
 
     invoke-virtual {v0, v1}, Lcom/google/crypto/tink/shaded/protobuf/GeneratedMessageLite$Builder;->mergeFrom(Lcom/google/crypto/tink/shaded/protobuf/GeneratedMessageLite;)Lcom/google/crypto/tink/shaded/protobuf/GeneratedMessageLite$Builder;
 
-    check-cast v0, Lcom/google/crypto/tink/proto/RegistryConfig$Builder;
+    move-object v1, v0
+
+    check-cast v1, Lcom/google/crypto/tink/proto/RegistryConfig$Builder;
 
     sget-object v1, Lcom/google/crypto/tink/signature/SignatureConfig;->TINK_1_1_0:Lcom/google/crypto/tink/proto/RegistryConfig;
 
     invoke-virtual {v0, v1}, Lcom/google/crypto/tink/shaded/protobuf/GeneratedMessageLite$Builder;->mergeFrom(Lcom/google/crypto/tink/shaded/protobuf/GeneratedMessageLite;)Lcom/google/crypto/tink/shaded/protobuf/GeneratedMessageLite$Builder;
 
-    check-cast v0, Lcom/google/crypto/tink/proto/RegistryConfig$Builder;
+    move-object v1, v0
+
+    check-cast v1, Lcom/google/crypto/tink/proto/RegistryConfig$Builder;
 
     sget-object v1, Lcom/google/crypto/tink/daead/DeterministicAeadConfig;->TINK_1_1_0:Lcom/google/crypto/tink/proto/RegistryConfig;
 
     invoke-virtual {v0, v1}, Lcom/google/crypto/tink/shaded/protobuf/GeneratedMessageLite$Builder;->mergeFrom(Lcom/google/crypto/tink/shaded/protobuf/GeneratedMessageLite;)Lcom/google/crypto/tink/shaded/protobuf/GeneratedMessageLite$Builder;
 
-    check-cast v0, Lcom/google/crypto/tink/proto/RegistryConfig$Builder;
+    move-object v1, v0
+
+    check-cast v1, Lcom/google/crypto/tink/proto/RegistryConfig$Builder;
 
     sget-object v1, Lcom/google/crypto/tink/streamingaead/StreamingAeadConfig;->TINK_1_1_0:Lcom/google/crypto/tink/proto/RegistryConfig;
 
     invoke-virtual {v0, v1}, Lcom/google/crypto/tink/shaded/protobuf/GeneratedMessageLite$Builder;->mergeFrom(Lcom/google/crypto/tink/shaded/protobuf/GeneratedMessageLite;)Lcom/google/crypto/tink/shaded/protobuf/GeneratedMessageLite$Builder;
 
-    check-cast v0, Lcom/google/crypto/tink/proto/RegistryConfig$Builder;
+    move-object v1, v0
+
+    check-cast v1, Lcom/google/crypto/tink/proto/RegistryConfig$Builder;
 
     invoke-virtual {v0}, Lcom/google/crypto/tink/shaded/protobuf/GeneratedMessageLite$Builder;->copyOnWrite()V
 
@@ -95,25 +107,33 @@
 
     invoke-virtual {v0, v1}, Lcom/google/crypto/tink/shaded/protobuf/GeneratedMessageLite$Builder;->mergeFrom(Lcom/google/crypto/tink/shaded/protobuf/GeneratedMessageLite;)Lcom/google/crypto/tink/shaded/protobuf/GeneratedMessageLite$Builder;
 
-    check-cast v0, Lcom/google/crypto/tink/proto/RegistryConfig$Builder;
+    move-object v1, v0
+
+    check-cast v1, Lcom/google/crypto/tink/proto/RegistryConfig$Builder;
 
     sget-object v1, Lcom/google/crypto/tink/signature/SignatureConfig;->LATEST:Lcom/google/crypto/tink/proto/RegistryConfig;
 
     invoke-virtual {v0, v1}, Lcom/google/crypto/tink/shaded/protobuf/GeneratedMessageLite$Builder;->mergeFrom(Lcom/google/crypto/tink/shaded/protobuf/GeneratedMessageLite;)Lcom/google/crypto/tink/shaded/protobuf/GeneratedMessageLite$Builder;
 
-    check-cast v0, Lcom/google/crypto/tink/proto/RegistryConfig$Builder;
+    move-object v1, v0
+
+    check-cast v1, Lcom/google/crypto/tink/proto/RegistryConfig$Builder;
 
     sget-object v1, Lcom/google/crypto/tink/daead/DeterministicAeadConfig;->LATEST:Lcom/google/crypto/tink/proto/RegistryConfig;
 
     invoke-virtual {v0, v1}, Lcom/google/crypto/tink/shaded/protobuf/GeneratedMessageLite$Builder;->mergeFrom(Lcom/google/crypto/tink/shaded/protobuf/GeneratedMessageLite;)Lcom/google/crypto/tink/shaded/protobuf/GeneratedMessageLite$Builder;
 
-    check-cast v0, Lcom/google/crypto/tink/proto/RegistryConfig$Builder;
+    move-object v1, v0
+
+    check-cast v1, Lcom/google/crypto/tink/proto/RegistryConfig$Builder;
 
     sget-object v1, Lcom/google/crypto/tink/streamingaead/StreamingAeadConfig;->LATEST:Lcom/google/crypto/tink/proto/RegistryConfig;
 
     invoke-virtual {v0, v1}, Lcom/google/crypto/tink/shaded/protobuf/GeneratedMessageLite$Builder;->mergeFrom(Lcom/google/crypto/tink/shaded/protobuf/GeneratedMessageLite;)Lcom/google/crypto/tink/shaded/protobuf/GeneratedMessageLite$Builder;
 
-    check-cast v0, Lcom/google/crypto/tink/proto/RegistryConfig$Builder;
+    move-object v1, v0
+
+    check-cast v1, Lcom/google/crypto/tink/proto/RegistryConfig$Builder;
 
     invoke-virtual {v0}, Lcom/google/crypto/tink/shaded/protobuf/GeneratedMessageLite$Builder;->copyOnWrite()V
 

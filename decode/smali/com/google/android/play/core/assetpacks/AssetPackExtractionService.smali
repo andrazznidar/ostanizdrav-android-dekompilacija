@@ -35,7 +35,7 @@
 
     move-result-object v0
 
-    invoke-static {v0}, Lcom/google/android/play/core/assetpacks/zzd;->zza(Landroid/content/Context;)Lcom/google/android/play/core/assetpacks/zzcd;
+    invoke-static {v0}, Lorg/bouncycastle/crypto/util/DerUtil;->zza(Landroid/content/Context;)Lcom/google/android/play/core/assetpacks/zzcd;
 
     move-result-object v0
 

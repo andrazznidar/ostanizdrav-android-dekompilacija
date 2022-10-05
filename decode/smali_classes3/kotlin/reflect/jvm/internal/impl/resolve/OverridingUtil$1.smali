@@ -1,4 +1,4 @@
-.class public final Lkotlin/reflect/jvm/internal/impl/resolve/OverridingUtil$1;
+.class final Lkotlin/reflect/jvm/internal/impl/resolve/OverridingUtil$1;
 .super Ljava/lang/Object;
 .source "OverridingUtil.java"
 
@@ -18,7 +18,7 @@
 
 
 # direct methods
-.method public static synthetic $$$reportNull$$$0(I)V
+.method private static synthetic $$$reportNull$$$0(I)V
     .locals 3
 
     const/4 v0, 0x3
@@ -79,29 +79,23 @@
 .method public equals(Lkotlin/reflect/jvm/internal/impl/types/TypeConstructor;Lkotlin/reflect/jvm/internal/impl/types/TypeConstructor;)Z
     .locals 1
 
+    if-nez p1, :cond_0
+
     const/4 v0, 0x0
 
-    if-eqz p1, :cond_1
+    invoke-static {v0}, Lkotlin/reflect/jvm/internal/impl/resolve/OverridingUtil$1;->$$$reportNull$$$0(I)V
 
-    if-eqz p2, :cond_0
+    :cond_0
+    if-nez p2, :cond_1
 
+    const/4 v0, 0x1
+
+    invoke-static {v0}, Lkotlin/reflect/jvm/internal/impl/resolve/OverridingUtil$1;->$$$reportNull$$$0(I)V
+
+    :cond_1
     invoke-virtual {p1, p2}, Ljava/lang/Object;->equals(Ljava/lang/Object;)Z
 
     move-result p1
 
     return p1
-
-    :cond_0
-    const/4 p1, 0x1
-
-    invoke-static {p1}, Lkotlin/reflect/jvm/internal/impl/resolve/OverridingUtil$1;->$$$reportNull$$$0(I)V
-
-    throw v0
-
-    :cond_1
-    const/4 p1, 0x0
-
-    invoke-static {p1}, Lkotlin/reflect/jvm/internal/impl/resolve/OverridingUtil$1;->$$$reportNull$$$0(I)V
-
-    throw v0
 .end method

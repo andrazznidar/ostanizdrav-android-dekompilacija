@@ -15,7 +15,7 @@
 
 
 # instance fields
-.field public final lower:Ljava/lang/Object;
+.field private final lower:Ljava/lang/Object;
     .annotation system Ldalvik/annotation/Signature;
         value = {
             "TT;"
@@ -23,7 +23,7 @@
     .end annotation
 .end field
 
-.field public final upper:Ljava/lang/Object;
+.field private final upper:Ljava/lang/Object;
     .annotation system Ldalvik/annotation/Signature;
         value = {
             "TT;"
@@ -52,6 +52,32 @@
 
 
 # virtual methods
+.method public final component1()Ljava/lang/Object;
+    .locals 1
+    .annotation system Ldalvik/annotation/Signature;
+        value = {
+            "()TT;"
+        }
+    .end annotation
+
+    iget-object v0, p0, Lkotlin/reflect/jvm/internal/impl/types/typesApproximation/ApproximationBounds;->lower:Ljava/lang/Object;
+
+    return-object v0
+.end method
+
+.method public final component2()Ljava/lang/Object;
+    .locals 1
+    .annotation system Ldalvik/annotation/Signature;
+        value = {
+            "()TT;"
+        }
+    .end annotation
+
+    iget-object v0, p0, Lkotlin/reflect/jvm/internal/impl/types/typesApproximation/ApproximationBounds;->upper:Ljava/lang/Object;
+
+    return-object v0
+.end method
+
 .method public equals(Ljava/lang/Object;)Z
     .locals 4
 
@@ -100,6 +126,32 @@
 
     :cond_3
     return v0
+.end method
+
+.method public final getLower()Ljava/lang/Object;
+    .locals 1
+    .annotation system Ldalvik/annotation/Signature;
+        value = {
+            "()TT;"
+        }
+    .end annotation
+
+    iget-object v0, p0, Lkotlin/reflect/jvm/internal/impl/types/typesApproximation/ApproximationBounds;->lower:Ljava/lang/Object;
+
+    return-object v0
+.end method
+
+.method public final getUpper()Ljava/lang/Object;
+    .locals 1
+    .annotation system Ldalvik/annotation/Signature;
+        value = {
+            "()TT;"
+        }
+    .end annotation
+
+    iget-object v0, p0, Lkotlin/reflect/jvm/internal/impl/types/typesApproximation/ApproximationBounds;->upper:Ljava/lang/Object;
+
+    return-object v0
 .end method
 
 .method public hashCode()I

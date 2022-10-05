@@ -33,15 +33,15 @@
 .end annotation
 
 .annotation system Ldalvik/annotation/SourceDebugExtension;
-    value = "SMAP\nVaccinationRepository.kt\nKotlin\n*S Kotlin\n*F\n+ 1 VaccinationRepository.kt\nde/rki/coronawarnapp/covidcertificate/vaccination/core/repository/VaccinationRepository$internalData$1\n+ 2 _Collections.kt\nkotlin/collections/CollectionsKt___CollectionsKt\n+ 3 fake.kt\nkotlin/jvm/internal/FakeKt\n*L\n1#1,368:1\n1547#2:369\n1618#2,3:370\n1#3:373\n*S KotlinDebug\n*F\n+ 1 VaccinationRepository.kt\nde/rki/coronawarnapp/covidcertificate/vaccination/core/repository/VaccinationRepository$internalData$1\n*L\n60#1:369\n60#1:370,3\n*E\n"
+    value = "SMAP\nVaccinationRepository.kt\nKotlin\n*S Kotlin\n*F\n+ 1 VaccinationRepository.kt\nde/rki/coronawarnapp/covidcertificate/vaccination/core/repository/VaccinationRepository$internalData$1\n+ 2 _Collections.kt\nkotlin/collections/CollectionsKt___CollectionsKt\n+ 3 fake.kt\nkotlin/jvm/internal/FakeKt\n*L\n1#1,439:1\n1547#2:440\n1618#2,3:441\n1#3:444\n*S KotlinDebug\n*F\n+ 1 VaccinationRepository.kt\nde/rki/coronawarnapp/covidcertificate/vaccination/core/repository/VaccinationRepository$internalData$1\n*L\n59#1:440\n59#1:441,3\n*E\n"
 .end annotation
 
 .annotation runtime Lkotlin/coroutines/jvm/internal/DebugMetadata;
     c = "de.rki.coronawarnapp.covidcertificate.vaccination.core.repository.VaccinationRepository$internalData$1"
     f = "VaccinationRepository.kt"
     l = {
-        0x3b,
-        0x3f
+        0x3a,
+        0x3e
     }
     m = "invokeSuspend"
 .end annotation
@@ -335,9 +335,17 @@
 
     const/4 v2, 0x0
 
-    aput-object p1, v1, v2
+    invoke-interface {p1}, Ljava/util/Set;->size()I
 
-    const-string v2, "Restored vaccination data: %s"
+    move-result v3
+
+    new-instance v4, Ljava/lang/Integer;
+
+    invoke-direct {v4, v3}, Ljava/lang/Integer;-><init>(I)V
+
+    aput-object v4, v1, v2
+
+    const-string v2, "Restored vaccination data, %d items"
 
     invoke-virtual {v0, v2, v1}, Ltimber/log/Timber$Forest;->v(Ljava/lang/String;[Ljava/lang/Object;)V
 

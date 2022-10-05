@@ -44,7 +44,7 @@
 .end annotation
 
 .annotation system Ldalvik/annotation/SourceDebugExtension;
-    value = "SMAP\nTestCertificateRepository.kt\nKotlin\n*S Kotlin\n*F\n+ 1 TestCertificateRepository.kt\nde/rki/coronawarnapp/covidcertificate/test/core/TestCertificateRepository$requestCertificate$newData$1\n+ 2 _Collections.kt\nkotlin/collections/CollectionsKt___CollectionsKt\n+ 3 MapExtensions.kt\nde/rki/coronawarnapp/util/MapExtensionsKt\n*L\n1#1,496:1\n1547#2:497\n1618#2,3:498\n798#2,11:501\n1741#2,3:512\n4#3:515\n*S KotlinDebug\n*F\n+ 1 TestCertificateRepository.kt\nde/rki/coronawarnapp/covidcertificate/test/core/TestCertificateRepository$requestCertificate$newData$1\n*L\n133#1:497\n133#1:498,3\n134#1:501,11\n135#1:512,3\n182#1:515\n*E\n"
+    value = "SMAP\nTestCertificateRepository.kt\nKotlin\n*S Kotlin\n*F\n+ 1 TestCertificateRepository.kt\nde/rki/coronawarnapp/covidcertificate/test/core/TestCertificateRepository$requestCertificate$newData$1\n+ 2 _Collections.kt\nkotlin/collections/CollectionsKt___CollectionsKt\n+ 3 MapExtensions.kt\nde/rki/coronawarnapp/util/MapExtensionsKt\n*L\n1#1,590:1\n1547#2:591\n1618#2,3:592\n798#2,11:595\n1741#2,3:606\n4#3:609\n*S KotlinDebug\n*F\n+ 1 TestCertificateRepository.kt\nde/rki/coronawarnapp/covidcertificate/test/core/TestCertificateRepository$requestCertificate$newData$1\n*L\n150#1:591\n150#1:592,3\n151#1:595,11\n152#1:606,3\n199#1:609\n*E\n"
 .end annotation
 
 .annotation runtime Lkotlin/coroutines/jvm/internal/DebugMetadata;
@@ -145,7 +145,7 @@
 .end method
 
 .method public final invokeSuspend(Ljava/lang/Object;)Ljava/lang/Object;
-    .locals 24
+    .locals 26
 
     move-object/from16 v1, p0
 
@@ -354,13 +354,15 @@
 
     invoke-interface {v3}, Lde/rki/coronawarnapp/coronatest/type/CoronaTest;->getLabId()Ljava/lang/String;
 
-    move-result-object v21
+    move-result-object v22
 
-    iget-object v15, v2, Lde/rki/coronawarnapp/util/encryption/rsa/RSAKeyPairGenerator$RSAKeyPair;->publicKey:Lde/rki/coronawarnapp/util/encryption/rsa/RSAKey$Public;
+    iget-object v3, v2, Lde/rki/coronawarnapp/util/encryption/rsa/RSAKeyPairGenerator$RSAKeyPair;->publicKey:Lde/rki/coronawarnapp/util/encryption/rsa/RSAKey$Public;
+
+    move-object/from16 v16, v3
 
     iget-object v2, v2, Lde/rki/coronawarnapp/util/encryption/rsa/RSAKeyPairGenerator$RSAKeyPair;->privateKey:Lde/rki/coronawarnapp/util/encryption/rsa/RSAKey$Private;
 
-    move-object/from16 v16, v2
+    move-object/from16 v17, v2
 
     new-instance v2, Lde/rki/coronawarnapp/covidcertificate/test/core/storage/types/RACertificateData;
 
@@ -374,7 +376,7 @@
 
     const/4 v14, 0x0
 
-    const/16 v17, 0x0
+    const/4 v15, 0x0
 
     const/16 v18, 0x0
 
@@ -382,11 +384,15 @@
 
     const/16 v20, 0x0
 
-    const/16 v22, 0x0
+    const/16 v21, 0x0
 
-    const/16 v23, 0x5e78
+    const/16 v23, 0x0
 
-    invoke-direct/range {v7 .. v23}, Lde/rki/coronawarnapp/covidcertificate/test/core/storage/types/RACertificateData;-><init>(Ljava/lang/String;Ljava/lang/String;Lorg/joda/time/Instant;Lorg/joda/time/Instant;Lde/rki/coronawarnapp/covidcertificate/common/certificate/CwaCovidCertificate$State;Lorg/joda/time/Instant;Lorg/joda/time/Instant;Lde/rki/coronawarnapp/util/encryption/rsa/RSAKey$Public;Lde/rki/coronawarnapp/util/encryption/rsa/RSAKey$Private;Lorg/joda/time/Instant;Lokio/ByteString;Lokio/ByteString;Ljava/lang/String;Ljava/lang/String;ZI)V
+    const/16 v24, 0x0
+
+    const v25, 0x1bcf8
+
+    invoke-direct/range {v7 .. v25}, Lde/rki/coronawarnapp/covidcertificate/test/core/storage/types/RACertificateData;-><init>(Ljava/lang/String;Ljava/lang/String;Lorg/joda/time/Instant;Lorg/joda/time/Instant;Lorg/joda/time/Instant;Lde/rki/coronawarnapp/covidcertificate/common/certificate/CwaCovidCertificate$State;Lorg/joda/time/Instant;Lorg/joda/time/Instant;Lde/rki/coronawarnapp/util/encryption/rsa/RSAKey$Public;Lde/rki/coronawarnapp/util/encryption/rsa/RSAKey$Private;Lorg/joda/time/Instant;Lokio/ByteString;Lokio/ByteString;Ljava/lang/String;Ljava/lang/String;ZLorg/joda/time/Instant;I)V
 
     goto :goto_4
 
@@ -414,13 +420,15 @@
 
     invoke-interface {v3}, Lde/rki/coronawarnapp/coronatest/type/CoronaTest;->getLabId()Ljava/lang/String;
 
-    move-result-object v21
+    move-result-object v22
 
-    iget-object v15, v2, Lde/rki/coronawarnapp/util/encryption/rsa/RSAKeyPairGenerator$RSAKeyPair;->publicKey:Lde/rki/coronawarnapp/util/encryption/rsa/RSAKey$Public;
+    iget-object v3, v2, Lde/rki/coronawarnapp/util/encryption/rsa/RSAKeyPairGenerator$RSAKeyPair;->publicKey:Lde/rki/coronawarnapp/util/encryption/rsa/RSAKey$Public;
+
+    move-object/from16 v16, v3
 
     iget-object v2, v2, Lde/rki/coronawarnapp/util/encryption/rsa/RSAKeyPairGenerator$RSAKeyPair;->privateKey:Lde/rki/coronawarnapp/util/encryption/rsa/RSAKey$Private;
 
-    move-object/from16 v16, v2
+    move-object/from16 v17, v2
 
     new-instance v2, Lde/rki/coronawarnapp/covidcertificate/test/core/storage/types/PCRCertificateData;
 
@@ -434,7 +442,7 @@
 
     const/4 v14, 0x0
 
-    const/16 v17, 0x0
+    const/4 v15, 0x0
 
     const/16 v18, 0x0
 
@@ -442,11 +450,15 @@
 
     const/16 v20, 0x0
 
-    const/16 v22, 0x0
+    const/16 v21, 0x0
 
-    const/16 v23, 0x5e78
+    const/16 v23, 0x0
 
-    invoke-direct/range {v7 .. v23}, Lde/rki/coronawarnapp/covidcertificate/test/core/storage/types/PCRCertificateData;-><init>(Ljava/lang/String;Ljava/lang/String;Lorg/joda/time/Instant;Lorg/joda/time/Instant;Lde/rki/coronawarnapp/covidcertificate/common/certificate/CwaCovidCertificate$State;Lorg/joda/time/Instant;Lorg/joda/time/Instant;Lde/rki/coronawarnapp/util/encryption/rsa/RSAKey$Public;Lde/rki/coronawarnapp/util/encryption/rsa/RSAKey$Private;Lorg/joda/time/Instant;Lokio/ByteString;Lokio/ByteString;Ljava/lang/String;Ljava/lang/String;ZI)V
+    const/16 v24, 0x0
+
+    const v25, 0x1bcf8
+
+    invoke-direct/range {v7 .. v25}, Lde/rki/coronawarnapp/covidcertificate/test/core/storage/types/PCRCertificateData;-><init>(Ljava/lang/String;Ljava/lang/String;Lorg/joda/time/Instant;Lorg/joda/time/Instant;Lorg/joda/time/Instant;Lde/rki/coronawarnapp/covidcertificate/common/certificate/CwaCovidCertificate$State;Lorg/joda/time/Instant;Lorg/joda/time/Instant;Lde/rki/coronawarnapp/util/encryption/rsa/RSAKey$Public;Lde/rki/coronawarnapp/util/encryption/rsa/RSAKey$Private;Lorg/joda/time/Instant;Lokio/ByteString;Lokio/ByteString;Ljava/lang/String;Ljava/lang/String;ZLorg/joda/time/Instant;I)V
 
     :goto_4
     new-instance v3, Lde/rki/coronawarnapp/covidcertificate/test/core/storage/TestCertificateContainer;

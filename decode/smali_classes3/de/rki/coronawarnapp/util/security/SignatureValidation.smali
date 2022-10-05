@@ -33,7 +33,7 @@
 
     sget-object p1, Lde/rki/coronawarnapp/util/security/SignatureValidation$keyFactory$2;->INSTANCE:Lde/rki/coronawarnapp/util/security/SignatureValidation$keyFactory$2;
 
-    invoke-static {p1}, Lkotlin/LazyKt__LazyKt;->lazy(Lkotlin/jvm/functions/Function0;)Lkotlin/Lazy;
+    invoke-static {p1}, Lkotlin/LazyKt__LazyJVMKt;->lazy(Lkotlin/jvm/functions/Function0;)Lkotlin/Lazy;
 
     move-result-object p1
 
@@ -41,7 +41,7 @@
 
     sget-object p1, Lde/rki/coronawarnapp/util/security/SignatureValidation$signature$2;->INSTANCE:Lde/rki/coronawarnapp/util/security/SignatureValidation$signature$2;
 
-    invoke-static {p1}, Lkotlin/LazyKt__LazyKt;->lazy(Lkotlin/jvm/functions/Function0;)Lkotlin/Lazy;
+    invoke-static {p1}, Lkotlin/LazyKt__LazyJVMKt;->lazy(Lkotlin/jvm/functions/Function0;)Lkotlin/Lazy;
 
     move-result-object p1
 
@@ -51,7 +51,7 @@
 
     invoke-direct {p1, p0}, Lde/rki/coronawarnapp/util/security/SignatureValidation$publicKeys$2;-><init>(Lde/rki/coronawarnapp/util/security/SignatureValidation;)V
 
-    invoke-static {p1}, Lkotlin/LazyKt__LazyKt;->lazy(Lkotlin/jvm/functions/Function0;)Lkotlin/Lazy;
+    invoke-static {p1}, Lkotlin/LazyKt__LazyJVMKt;->lazy(Lkotlin/jvm/functions/Function0;)Lkotlin/Lazy;
 
     move-result-object p1
 

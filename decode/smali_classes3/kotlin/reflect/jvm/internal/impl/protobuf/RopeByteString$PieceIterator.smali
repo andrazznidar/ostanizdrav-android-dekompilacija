@@ -1,4 +1,4 @@
-.class public Lkotlin/reflect/jvm/internal/impl/protobuf/RopeByteString$PieceIterator;
+.class Lkotlin/reflect/jvm/internal/impl/protobuf/RopeByteString$PieceIterator;
 .super Ljava/lang/Object;
 .source "RopeByteString.java"
 
@@ -29,7 +29,7 @@
 
 
 # instance fields
-.field public final breadCrumbs:Ljava/util/Stack;
+.field private final breadCrumbs:Ljava/util/Stack;
     .annotation system Ldalvik/annotation/Signature;
         value = {
             "Ljava/util/Stack<",
@@ -39,42 +39,104 @@
     .end annotation
 .end field
 
-.field public next:Lkotlin/reflect/jvm/internal/impl/protobuf/LiteralByteString;
+.field private next:Lkotlin/reflect/jvm/internal/impl/protobuf/LiteralByteString;
 
 
 # direct methods
-.method public constructor <init>(Lkotlin/reflect/jvm/internal/impl/protobuf/ByteString;Lkotlin/reflect/jvm/internal/impl/protobuf/RopeByteString$1;)V
-    .locals 0
+.method private constructor <init>(Lkotlin/reflect/jvm/internal/impl/protobuf/ByteString;)V
+    .locals 1
 
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
-    new-instance p2, Ljava/util/Stack;
+    new-instance v0, Ljava/util/Stack;
 
-    invoke-direct {p2}, Ljava/util/Stack;-><init>()V
+    invoke-direct {v0}, Ljava/util/Stack;-><init>()V
 
-    iput-object p2, p0, Lkotlin/reflect/jvm/internal/impl/protobuf/RopeByteString$PieceIterator;->breadCrumbs:Ljava/util/Stack;
+    iput-object v0, p0, Lkotlin/reflect/jvm/internal/impl/protobuf/RopeByteString$PieceIterator;->breadCrumbs:Ljava/util/Stack;
+
+    invoke-direct {p0, p1}, Lkotlin/reflect/jvm/internal/impl/protobuf/RopeByteString$PieceIterator;->getLeafByLeft(Lkotlin/reflect/jvm/internal/impl/protobuf/ByteString;)Lkotlin/reflect/jvm/internal/impl/protobuf/LiteralByteString;
+
+    move-result-object p1
+
+    iput-object p1, p0, Lkotlin/reflect/jvm/internal/impl/protobuf/RopeByteString$PieceIterator;->next:Lkotlin/reflect/jvm/internal/impl/protobuf/LiteralByteString;
+
+    return-void
+.end method
+
+.method public synthetic constructor <init>(Lkotlin/reflect/jvm/internal/impl/protobuf/ByteString;Lkotlin/reflect/jvm/internal/impl/protobuf/RopeByteString$1;)V
+    .locals 0
+
+    invoke-direct {p0, p1}, Lkotlin/reflect/jvm/internal/impl/protobuf/RopeByteString$PieceIterator;-><init>(Lkotlin/reflect/jvm/internal/impl/protobuf/ByteString;)V
+
+    return-void
+.end method
+
+.method private getLeafByLeft(Lkotlin/reflect/jvm/internal/impl/protobuf/ByteString;)Lkotlin/reflect/jvm/internal/impl/protobuf/LiteralByteString;
+    .locals 1
 
     :goto_0
-    instance-of p2, p1, Lkotlin/reflect/jvm/internal/impl/protobuf/RopeByteString;
+    instance-of v0, p1, Lkotlin/reflect/jvm/internal/impl/protobuf/RopeByteString;
 
-    if-eqz p2, :cond_0
+    if-eqz v0, :cond_0
 
     check-cast p1, Lkotlin/reflect/jvm/internal/impl/protobuf/RopeByteString;
 
-    iget-object p2, p0, Lkotlin/reflect/jvm/internal/impl/protobuf/RopeByteString$PieceIterator;->breadCrumbs:Ljava/util/Stack;
+    iget-object v0, p0, Lkotlin/reflect/jvm/internal/impl/protobuf/RopeByteString$PieceIterator;->breadCrumbs:Ljava/util/Stack;
 
-    invoke-virtual {p2, p1}, Ljava/util/Stack;->push(Ljava/lang/Object;)Ljava/lang/Object;
+    invoke-virtual {v0, p1}, Ljava/util/Stack;->push(Ljava/lang/Object;)Ljava/lang/Object;
 
-    iget-object p1, p1, Lkotlin/reflect/jvm/internal/impl/protobuf/RopeByteString;->left:Lkotlin/reflect/jvm/internal/impl/protobuf/ByteString;
+    invoke-static {p1}, Lkotlin/reflect/jvm/internal/impl/protobuf/RopeByteString;->access$400(Lkotlin/reflect/jvm/internal/impl/protobuf/RopeByteString;)Lkotlin/reflect/jvm/internal/impl/protobuf/ByteString;
+
+    move-result-object p1
 
     goto :goto_0
 
     :cond_0
     check-cast p1, Lkotlin/reflect/jvm/internal/impl/protobuf/LiteralByteString;
 
-    iput-object p1, p0, Lkotlin/reflect/jvm/internal/impl/protobuf/RopeByteString$PieceIterator;->next:Lkotlin/reflect/jvm/internal/impl/protobuf/LiteralByteString;
+    return-object p1
+.end method
 
-    return-void
+.method private getNextNonEmptyLeaf()Lkotlin/reflect/jvm/internal/impl/protobuf/LiteralByteString;
+    .locals 2
+
+    :cond_0
+    iget-object v0, p0, Lkotlin/reflect/jvm/internal/impl/protobuf/RopeByteString$PieceIterator;->breadCrumbs:Ljava/util/Stack;
+
+    invoke-virtual {v0}, Ljava/util/Stack;->isEmpty()Z
+
+    move-result v0
+
+    if-eqz v0, :cond_1
+
+    const/4 v0, 0x0
+
+    return-object v0
+
+    :cond_1
+    iget-object v0, p0, Lkotlin/reflect/jvm/internal/impl/protobuf/RopeByteString$PieceIterator;->breadCrumbs:Ljava/util/Stack;
+
+    invoke-virtual {v0}, Ljava/util/Stack;->pop()Ljava/lang/Object;
+
+    move-result-object v0
+
+    check-cast v0, Lkotlin/reflect/jvm/internal/impl/protobuf/RopeByteString;
+
+    invoke-static {v0}, Lkotlin/reflect/jvm/internal/impl/protobuf/RopeByteString;->access$500(Lkotlin/reflect/jvm/internal/impl/protobuf/RopeByteString;)Lkotlin/reflect/jvm/internal/impl/protobuf/ByteString;
+
+    move-result-object v0
+
+    invoke-direct {p0, v0}, Lkotlin/reflect/jvm/internal/impl/protobuf/RopeByteString$PieceIterator;->getLeafByLeft(Lkotlin/reflect/jvm/internal/impl/protobuf/ByteString;)Lkotlin/reflect/jvm/internal/impl/protobuf/LiteralByteString;
+
+    move-result-object v0
+
+    invoke-virtual {v0}, Lkotlin/reflect/jvm/internal/impl/protobuf/ByteString;->isEmpty()Z
+
+    move-result v1
+
+    if-nez v1, :cond_0
+
+    return-object v0
 .end method
 
 
@@ -83,6 +145,18 @@
     .locals 0
 
     invoke-static {p0, p1}, Lj$/util/Iterator$-CC;->$default$forEachRemaining(Ljava/util/Iterator;Lj$/util/function/Consumer;)V
+
+    return-void
+.end method
+
+.method public synthetic forEachRemaining(Ljava/util/function/Consumer;)V
+    .locals 0
+
+    invoke-static {p1}, Lj$/util/function/Consumer$VivifiedWrapper;->convert(Ljava/util/function/Consumer;)Lj$/util/function/Consumer;
+
+    move-result-object p1
+
+    invoke-virtual {p0, p1}, Lkotlin/reflect/jvm/internal/impl/protobuf/RopeByteString$PieceIterator;->forEachRemaining(Lj$/util/function/Consumer;)V
 
     return-void
 .end method
@@ -116,76 +190,21 @@
 .end method
 
 .method public next()Lkotlin/reflect/jvm/internal/impl/protobuf/LiteralByteString;
-    .locals 3
+    .locals 2
 
     iget-object v0, p0, Lkotlin/reflect/jvm/internal/impl/protobuf/RopeByteString$PieceIterator;->next:Lkotlin/reflect/jvm/internal/impl/protobuf/LiteralByteString;
 
-    if-eqz v0, :cond_4
+    if-eqz v0, :cond_0
 
-    :cond_0
-    iget-object v1, p0, Lkotlin/reflect/jvm/internal/impl/protobuf/RopeByteString$PieceIterator;->breadCrumbs:Ljava/util/Stack;
-
-    invoke-virtual {v1}, Ljava/util/Stack;->isEmpty()Z
-
-    move-result v1
-
-    if-eqz v1, :cond_1
-
-    const/4 v1, 0x0
-
-    goto :goto_2
-
-    :cond_1
-    iget-object v1, p0, Lkotlin/reflect/jvm/internal/impl/protobuf/RopeByteString$PieceIterator;->breadCrumbs:Ljava/util/Stack;
-
-    invoke-virtual {v1}, Ljava/util/Stack;->pop()Ljava/lang/Object;
+    invoke-direct {p0}, Lkotlin/reflect/jvm/internal/impl/protobuf/RopeByteString$PieceIterator;->getNextNonEmptyLeaf()Lkotlin/reflect/jvm/internal/impl/protobuf/LiteralByteString;
 
     move-result-object v1
 
-    check-cast v1, Lkotlin/reflect/jvm/internal/impl/protobuf/RopeByteString;
-
-    iget-object v1, v1, Lkotlin/reflect/jvm/internal/impl/protobuf/RopeByteString;->right:Lkotlin/reflect/jvm/internal/impl/protobuf/ByteString;
-
-    :goto_0
-    instance-of v2, v1, Lkotlin/reflect/jvm/internal/impl/protobuf/RopeByteString;
-
-    if-eqz v2, :cond_2
-
-    check-cast v1, Lkotlin/reflect/jvm/internal/impl/protobuf/RopeByteString;
-
-    iget-object v2, p0, Lkotlin/reflect/jvm/internal/impl/protobuf/RopeByteString$PieceIterator;->breadCrumbs:Ljava/util/Stack;
-
-    invoke-virtual {v2, v1}, Ljava/util/Stack;->push(Ljava/lang/Object;)Ljava/lang/Object;
-
-    iget-object v1, v1, Lkotlin/reflect/jvm/internal/impl/protobuf/RopeByteString;->left:Lkotlin/reflect/jvm/internal/impl/protobuf/ByteString;
-
-    goto :goto_0
-
-    :cond_2
-    check-cast v1, Lkotlin/reflect/jvm/internal/impl/protobuf/LiteralByteString;
-
-    invoke-virtual {v1}, Lkotlin/reflect/jvm/internal/impl/protobuf/LiteralByteString;->size()I
-
-    move-result v2
-
-    if-nez v2, :cond_3
-
-    const/4 v2, 0x1
-
-    goto :goto_1
-
-    :cond_3
-    const/4 v2, 0x0
-
-    :goto_1
-    if-nez v2, :cond_0
-
-    :goto_2
     iput-object v1, p0, Lkotlin/reflect/jvm/internal/impl/protobuf/RopeByteString$PieceIterator;->next:Lkotlin/reflect/jvm/internal/impl/protobuf/LiteralByteString;
 
     return-object v0
 
-    :cond_4
+    :cond_0
     new-instance v0, Ljava/util/NoSuchElementException;
 
     invoke-direct {v0}, Ljava/util/NoSuchElementException;-><init>()V

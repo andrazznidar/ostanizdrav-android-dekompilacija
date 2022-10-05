@@ -21,27 +21,33 @@
 
     sput-object v0, Lde/rki/coronawarnapp/databinding/HomeFaqCardLayoutBindingImpl;->sViewsWithIds:Landroid/util/SparseIntArray;
 
-    const v1, 0x7f0a0415
+    const v1, 0x7f0a045a
 
     const/4 v2, 0x1
 
     invoke-virtual {v0, v1, v2}, Landroid/util/SparseIntArray;->put(II)V
 
-    const v1, 0x7f0a0414
+    const v1, 0x7f0a0459
 
     const/4 v2, 0x2
 
     invoke-virtual {v0, v1, v2}, Landroid/util/SparseIntArray;->put(II)V
 
-    const v1, 0x7f0a0416
+    const v1, 0x7f0a045b
 
     const/4 v2, 0x3
 
     invoke-virtual {v0, v1, v2}, Landroid/util/SparseIntArray;->put(II)V
 
-    const v1, 0x7f0a0413
+    const v1, 0x7f0a0830
 
     const/4 v2, 0x4
+
+    invoke-virtual {v0, v1, v2}, Landroid/util/SparseIntArray;->put(II)V
+
+    const v1, 0x7f0a0458
+
+    const/4 v2, 0x5
 
     invoke-virtual {v0, v1, v2}, Landroid/util/SparseIntArray;->put(II)V
 
@@ -49,7 +55,7 @@
 .end method
 
 .method public constructor <init>(Landroidx/databinding/DataBindingComponent;Landroid/view/View;)V
-    .locals 11
+    .locals 12
     .annotation system Ldalvik/annotation/MethodParameters;
         accessFlags = {
             0x0,
@@ -63,7 +69,7 @@
 
     sget-object v0, Lde/rki/coronawarnapp/databinding/HomeFaqCardLayoutBindingImpl;->sViewsWithIds:Landroid/util/SparseIntArray;
 
-    const/4 v1, 0x5
+    const/4 v1, 0x6
 
     const/4 v2, 0x0
 
@@ -71,7 +77,7 @@
 
     move-result-object v0
 
-    const/4 v1, 0x4
+    const/4 v1, 0x5
 
     aget-object v1, v0, v1
 
@@ -103,6 +109,14 @@
 
     check-cast v10, Landroid/widget/ImageView;
 
+    const/4 v1, 0x4
+
+    aget-object v1, v0, v1
+
+    move-object v11, v1
+
+    check-cast v11, Landroidx/constraintlayout/widget/Barrier;
+
     const/4 v6, 0x0
 
     move-object v3, p0
@@ -111,7 +125,7 @@
 
     move-object v5, p2
 
-    invoke-direct/range {v3 .. v10}, Lde/rki/coronawarnapp/databinding/HomeFaqCardLayoutBinding;-><init>(Ljava/lang/Object;Landroid/view/View;ILandroid/widget/TextView;Landroid/widget/TextView;Landroid/widget/ImageView;Landroid/widget/ImageView;)V
+    invoke-direct/range {v3 .. v11}, Lde/rki/coronawarnapp/databinding/HomeFaqCardLayoutBinding;-><init>(Ljava/lang/Object;Landroid/view/View;ILandroid/widget/TextView;Landroid/widget/TextView;Landroid/widget/ImageView;Landroid/widget/ImageView;Landroidx/constraintlayout/widget/Barrier;)V
 
     const-wide/16 v3, -0x1
 

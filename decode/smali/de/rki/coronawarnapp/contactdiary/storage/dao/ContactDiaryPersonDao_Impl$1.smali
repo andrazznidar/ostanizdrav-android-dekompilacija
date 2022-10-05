@@ -15,9 +15,7 @@
 
 .annotation system Ldalvik/annotation/Signature;
     value = {
-        "Landroidx/room/EntityInsertionAdapter<",
-        "Lde/rki/coronawarnapp/contactdiary/storage/entity/ContactDiaryPersonEntity;",
-        ">;"
+        "Landroidx/room/EntityInsertionAdapter;"
     }
 .end annotation
 

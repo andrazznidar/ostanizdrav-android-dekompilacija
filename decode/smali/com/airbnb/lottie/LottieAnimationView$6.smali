@@ -44,7 +44,9 @@
 
     iget-object p1, p0, Lcom/airbnb/lottie/LottieAnimationView$6;->val$callback:Lde/rki/coronawarnapp/util/DataBindingAdaptersKt$$ExternalSyntheticLambda0;
 
-    iget-object p1, p1, Lde/rki/coronawarnapp/util/DataBindingAdaptersKt$$ExternalSyntheticLambda0;->f$0:Ljava/lang/Integer;
+    iget-object p1, p1, Lde/rki/coronawarnapp/util/DataBindingAdaptersKt$$ExternalSyntheticLambda0;->f$0:Ljava/lang/Object;
+
+    check-cast p1, Ljava/lang/Integer;
 
     new-instance v0, Landroid/graphics/PorterDuffColorFilter;
 

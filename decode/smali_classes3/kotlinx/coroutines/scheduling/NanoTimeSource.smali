@@ -1,5 +1,5 @@
 .class public final Lkotlinx/coroutines/scheduling/NanoTimeSource;
-.super Lkotlinx/coroutines/scheduling/SchedulerTimeSource;
+.super Lorg/joda/time/Chronology;
 .source "Tasks.kt"
 
 
@@ -23,7 +23,7 @@
 .method public constructor <init>()V
     .locals 0
 
-    invoke-direct {p0}, Lkotlinx/coroutines/scheduling/SchedulerTimeSource;-><init>()V
+    invoke-direct {p0}, Lorg/joda/time/Chronology;-><init>()V
 
     return-void
 .end method

@@ -18,9 +18,7 @@
 .field public final __insertionAdapterOfPersistedRiskLevelResultDao:Landroidx/room/EntityInsertionAdapter;
     .annotation system Ldalvik/annotation/Signature;
         value = {
-            "Landroidx/room/EntityInsertionAdapter<",
-            "Lde/rki/coronawarnapp/risk/storage/internal/riskresults/PersistedRiskLevelResultDao;",
-            ">;"
+            "Landroidx/room/EntityInsertionAdapter;"
         }
     .end annotation
 .end field
@@ -234,58 +232,4 @@
     move-result-object v0
 
     return-object v0
-.end method
-
-.method public latestEntries(I)Lkotlinx/coroutines/flow/Flow;
-    .locals 4
-    .annotation system Ldalvik/annotation/MethodParameters;
-        accessFlags = {
-            0x10
-        }
-        names = {
-            "limit"
-        }
-    .end annotation
-
-    .annotation system Ldalvik/annotation/Signature;
-        value = {
-            "(I)",
-            "Lkotlinx/coroutines/flow/Flow<",
-            "Ljava/util/List<",
-            "Lde/rki/coronawarnapp/risk/storage/internal/riskresults/PersistedRiskLevelResultDao;",
-            ">;>;"
-        }
-    .end annotation
-
-    const-string v0, "SELECT * FROM riskresults ORDER BY monotonicId DESC LIMIT ?"
-
-    const/4 v1, 0x1
-
-    invoke-static {v0, v1}, Landroidx/room/RoomSQLiteQuery;->acquire(Ljava/lang/String;I)Landroidx/room/RoomSQLiteQuery;
-
-    move-result-object v0
-
-    int-to-long v2, p1
-
-    invoke-virtual {v0, v1, v2, v3}, Landroidx/room/RoomSQLiteQuery;->bindLong(IJ)V
-
-    iget-object p1, p0, Lde/rki/coronawarnapp/risk/storage/internal/RiskResultDatabaseRiskResultsDao_Impl;->__db:Landroidx/room/RoomDatabase;
-
-    const-string v1, "riskresults"
-
-    filled-new-array {v1}, [Ljava/lang/String;
-
-    move-result-object v1
-
-    new-instance v2, Lde/rki/coronawarnapp/risk/storage/internal/RiskResultDatabaseRiskResultsDao_Impl$6;
-
-    invoke-direct {v2, p0, v0}, Lde/rki/coronawarnapp/risk/storage/internal/RiskResultDatabaseRiskResultsDao_Impl$6;-><init>(Lde/rki/coronawarnapp/risk/storage/internal/RiskResultDatabaseRiskResultsDao_Impl;Landroidx/room/RoomSQLiteQuery;)V
-
-    const/4 v0, 0x0
-
-    invoke-static {p1, v0, v1, v2}, Landroidx/room/CoroutinesRoom;->createFlow(Landroidx/room/RoomDatabase;Z[Ljava/lang/String;Ljava/util/concurrent/Callable;)Lkotlinx/coroutines/flow/Flow;
-
-    move-result-object p1
-
-    return-object p1
 .end method

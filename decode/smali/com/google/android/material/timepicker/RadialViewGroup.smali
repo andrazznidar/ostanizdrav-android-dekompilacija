@@ -163,7 +163,7 @@
 .method public onFinishInflate()V
     .locals 0
 
-    invoke-super {p0}, Landroid/view/View;->onFinishInflate()V
+    invoke-super {p0}, Landroid/view/ViewGroup;->onFinishInflate()V
 
     invoke-virtual {p0}, Lcom/google/android/material/timepicker/RadialViewGroup;->updateLayoutParams()V
 

@@ -11,13 +11,9 @@
 .end annotation
 
 .annotation runtime Lkotlin/Metadata;
-    bv = {
-        0x1,
-        0x0,
-        0x3
-    }
+    bv = {}
     d1 = {
-        "\u0000\u000c\n\u0002\u0018\u0002\n\u0002\u0010\u0000\n\u0002\u0008\u0004\u0018\u0000 \u00042\u00020\u0001:\u0001\u0004B\u0007\u00a2\u0006\u0004\u0008\u0002\u0010\u0003\u00a8\u0006\u0005"
+        "\u0000\u000c\n\u0002\u0018\u0002\n\u0002\u0010\u0000\n\u0002\u0008\u0004\u0018\u00002\u00020\u0001:\u0001\u0004B\u0007\u00a2\u0006\u0004\u0008\u0002\u0010\u0003\u00a8\u0006\u0005"
     }
     d2 = {
         "Lokhttp3/internal/publicsuffix/PublicSuffixDatabase;",
@@ -154,21 +150,21 @@
 
     move-result v1
 
-    const/4 v2, 0x0
+    const/4 v2, 0x1
 
-    const/4 v3, 0x1
+    const/4 v3, 0x0
 
     if-nez v1, :cond_1
 
     iget-object v1, p0, Lokhttp3/internal/publicsuffix/PublicSuffixDatabase;->listRead:Ljava/util/concurrent/atomic/AtomicBoolean;
 
-    invoke-virtual {v1, v2, v3}, Ljava/util/concurrent/atomic/AtomicBoolean;->compareAndSet(ZZ)Z
+    invoke-virtual {v1, v3, v2}, Ljava/util/concurrent/atomic/AtomicBoolean;->compareAndSet(ZZ)Z
 
     move-result v1
 
     if-eqz v1, :cond_1
 
-    move v1, v2
+    move v1, v3
 
     :goto_0
     :try_start_0
@@ -220,7 +216,7 @@
     :try_end_2
     .catchall {:try_start_2 .. :try_end_2} :catchall_0
 
-    move v1, v3
+    move v1, v2
 
     goto :goto_0
 
@@ -259,12 +255,12 @@
 
     if-eqz v1, :cond_3
 
-    move v1, v3
+    move v1, v2
 
     goto :goto_4
 
     :cond_3
-    move v1, v2
+    move v1, v3
 
     :goto_4
     if-eqz v1, :cond_15
@@ -275,7 +271,7 @@
 
     new-array v4, v1, [[B
 
-    move v5, v2
+    move v5, v3
 
     :goto_5
     if-ge v5, v1, :cond_4
@@ -311,7 +307,7 @@
     goto :goto_5
 
     :cond_4
-    move v5, v2
+    move v5, v3
 
     :goto_6
     const-string v6, "publicSuffixListBytes"
@@ -348,7 +344,7 @@
     move-object v8, v7
 
     :goto_7
-    if-le v1, v3, :cond_a
+    if-le v1, v2, :cond_a
 
     invoke-virtual {v4}, Ljava/lang/Object;->clone()Ljava/lang/Object;
 
@@ -358,9 +354,9 @@
 
     array-length v9, v5
 
-    sub-int/2addr v9, v3
+    sub-int/2addr v9, v2
 
-    move v10, v2
+    move v10, v3
 
     :goto_8
     if-ge v10, v9, :cond_a
@@ -399,9 +395,9 @@
     :goto_9
     if-eqz v11, :cond_d
 
-    sub-int/2addr v1, v3
+    sub-int/2addr v1, v2
 
-    move v5, v2
+    move v5, v3
 
     :goto_a
     if-ge v5, v1, :cond_d
@@ -456,11 +452,11 @@
 
     move-result-object v6
 
-    new-array v8, v3, [C
+    new-array v8, v2, [C
 
-    aput-char v4, v8, v2
+    aput-char v4, v8, v3
 
-    invoke-static {v6, v8, v2, v2, v1}, Lkotlin/text/StringsKt__StringsKt;->split$default(Ljava/lang/CharSequence;[CZII)Ljava/util/List;
+    invoke-static {v6, v8, v3, v3, v1}, Lkotlin/text/StringsKt__StringsKt;->split$default(Ljava/lang/CharSequence;[CZII)Ljava/util/List;
 
     move-result-object v1
 
@@ -478,11 +474,11 @@
     :cond_f
     if-eqz v8, :cond_10
 
-    new-array v6, v3, [C
+    new-array v6, v2, [C
 
-    aput-char v4, v6, v2
+    aput-char v4, v6, v3
 
-    invoke-static {v8, v6, v2, v2, v1}, Lkotlin/text/StringsKt__StringsKt;->split$default(Ljava/lang/CharSequence;[CZII)Ljava/util/List;
+    invoke-static {v8, v6, v3, v3, v1}, Lkotlin/text/StringsKt__StringsKt;->split$default(Ljava/lang/CharSequence;[CZII)Ljava/util/List;
 
     move-result-object v6
 
@@ -494,11 +490,11 @@
     :goto_c
     if-eqz v11, :cond_11
 
-    new-array v8, v3, [C
+    new-array v8, v2, [C
 
-    aput-char v4, v8, v2
+    aput-char v4, v8, v3
 
-    invoke-static {v11, v8, v2, v2, v1}, Lkotlin/text/StringsKt__StringsKt;->split$default(Ljava/lang/CharSequence;[CZII)Ljava/util/List;
+    invoke-static {v11, v8, v3, v3, v1}, Lkotlin/text/StringsKt__StringsKt;->split$default(Ljava/lang/CharSequence;[CZII)Ljava/util/List;
 
     move-result-object v1
 
@@ -532,13 +528,13 @@
 
     if-ne v4, v6, :cond_13
 
-    invoke-interface {v1, v2}, Ljava/util/List;->get(I)Ljava/lang/Object;
+    invoke-interface {v1, v3}, Ljava/util/List;->get(I)Ljava/lang/Object;
 
     move-result-object v4
 
     check-cast v4, Ljava/lang/String;
 
-    invoke-virtual {v4, v2}, Ljava/lang/String;->charAt(I)C
+    invoke-virtual {v4, v3}, Ljava/lang/String;->charAt(I)C
 
     move-result v4
 
@@ -547,17 +543,17 @@
     return-object v7
 
     :cond_13
-    invoke-interface {v1, v2}, Ljava/util/List;->get(I)Ljava/lang/Object;
+    invoke-interface {v1, v3}, Ljava/util/List;->get(I)Ljava/lang/Object;
 
     move-result-object v4
 
     check-cast v4, Ljava/lang/String;
 
-    invoke-virtual {v4, v2}, Ljava/lang/String;->charAt(I)C
+    invoke-virtual {v4, v3}, Ljava/lang/String;->charAt(I)C
 
-    move-result v2
+    move-result v3
 
-    if-ne v2, v5, :cond_14
+    if-ne v3, v5, :cond_14
 
     invoke-interface {v0}, Ljava/util/List;->size()I
 
@@ -578,7 +574,7 @@
 
     move-result v1
 
-    add-int/2addr v1, v3
+    add-int/2addr v1, v2
 
     :goto_f
     sub-int/2addr v0, v1

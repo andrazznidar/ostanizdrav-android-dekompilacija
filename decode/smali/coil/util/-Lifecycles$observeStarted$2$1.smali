@@ -17,11 +17,7 @@
 .end annotation
 
 .annotation runtime Lkotlin/Metadata;
-    bv = {
-        0x1,
-        0x0,
-        0x3
-    }
+    bv = {}
     d1 = {
         "\u0000\u000b\n\u0000\n\u0002\u0018\u0002\n\u0000*\u0001\u0000\u0008\n\u0018\u00002\u00020\u0001\u00a8\u0006\u0002"
     }
@@ -76,15 +72,11 @@
 .method public synthetic onCreate(Landroidx/lifecycle/LifecycleOwner;)V
     .locals 0
 
-    invoke-static {p0, p1}, Landroidx/lifecycle/DefaultLifecycleObserver$-CC;->$default$onCreate(Landroidx/lifecycle/DefaultLifecycleObserver;Landroidx/lifecycle/LifecycleOwner;)V
-
     return-void
 .end method
 
 .method public synthetic onDestroy(Landroidx/lifecycle/LifecycleOwner;)V
     .locals 0
-
-    invoke-static {p0, p1}, Landroidx/lifecycle/DefaultLifecycleObserver$-CC;->$default$onDestroy(Landroidx/lifecycle/DefaultLifecycleObserver;Landroidx/lifecycle/LifecycleOwner;)V
 
     return-void
 .end method
@@ -92,15 +84,11 @@
 .method public synthetic onPause(Landroidx/lifecycle/LifecycleOwner;)V
     .locals 0
 
-    invoke-static {p0, p1}, Landroidx/lifecycle/DefaultLifecycleObserver$-CC;->$default$onPause(Landroidx/lifecycle/DefaultLifecycleObserver;Landroidx/lifecycle/LifecycleOwner;)V
-
     return-void
 .end method
 
 .method public synthetic onResume(Landroidx/lifecycle/LifecycleOwner;)V
     .locals 0
-
-    invoke-static {p0, p1}, Landroidx/lifecycle/DefaultLifecycleObserver$-CC;->$default$onResume(Landroidx/lifecycle/DefaultLifecycleObserver;Landroidx/lifecycle/LifecycleOwner;)V
 
     return-void
 .end method
@@ -123,8 +111,6 @@
 
 .method public synthetic onStop(Landroidx/lifecycle/LifecycleOwner;)V
     .locals 0
-
-    invoke-static {p0, p1}, Landroidx/lifecycle/DefaultLifecycleObserver$-CC;->$default$onStop(Landroidx/lifecycle/DefaultLifecycleObserver;Landroidx/lifecycle/LifecycleOwner;)V
 
     return-void
 .end method

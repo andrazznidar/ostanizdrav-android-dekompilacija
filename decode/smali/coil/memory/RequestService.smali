@@ -14,7 +14,7 @@
 
 
 # instance fields
-.field public final hardwareBitmapService:Lcoil/memory/HardwareBitmapService;
+.field public final hardwareBitmapService:Lorg/bouncycastle/util/Pack;
 
 .field public final logger:Lcoil/util/Logger;
 
@@ -112,7 +112,7 @@
     invoke-direct {p1, v0}, Lcoil/memory/ImmutableHardwareBitmapService;-><init>(Z)V
 
     :goto_2
-    iput-object p1, p0, Lcoil/memory/RequestService;->hardwareBitmapService:Lcoil/memory/HardwareBitmapService;
+    iput-object p1, p0, Lcoil/memory/RequestService;->hardwareBitmapService:Lorg/bouncycastle/util/Pack;
 
     return-void
 .end method

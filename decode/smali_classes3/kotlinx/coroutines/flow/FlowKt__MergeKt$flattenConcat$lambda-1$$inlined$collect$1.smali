@@ -40,7 +40,7 @@
 
 # virtual methods
 .method public emit(Ljava/lang/Object;Lkotlin/coroutines/Continuation;)Ljava/lang/Object;
-    .locals 2
+    .locals 1
     .annotation system Ldalvik/annotation/Signature;
         value = {
             "(",
@@ -59,11 +59,7 @@
 
     iget-object v0, p0, Lkotlinx/coroutines/flow/FlowKt__MergeKt$flattenConcat$lambda-1$$inlined$collect$1;->$this_unsafeFlow$inlined:Lkotlinx/coroutines/flow/FlowCollector;
 
-    instance-of v1, v0, Lkotlinx/coroutines/flow/ThrowingCollector;
-
-    if-nez v1, :cond_2
-
-    invoke-interface {p1, v0, p2}, Lkotlinx/coroutines/flow/Flow;->collect(Lkotlinx/coroutines/flow/FlowCollector;Lkotlin/coroutines/Continuation;)Ljava/lang/Object;
+    invoke-static {v0, p1, p2}, Lkotlinx/coroutines/flow/FlowKt;->emitAll(Lkotlinx/coroutines/flow/FlowCollector;Lkotlinx/coroutines/flow/Flow;Lkotlin/coroutines/Continuation;)Ljava/lang/Object;
 
     move-result-object p1
 
@@ -71,25 +67,10 @@
 
     if-ne p1, p2, :cond_0
 
-    goto :goto_0
+    return-object p1
 
     :cond_0
     sget-object p1, Lkotlin/Unit;->INSTANCE:Lkotlin/Unit;
 
-    :goto_0
-    if-ne p1, p2, :cond_1
-
     return-object p1
-
-    :cond_1
-    sget-object p1, Lkotlin/Unit;->INSTANCE:Lkotlin/Unit;
-
-    return-object p1
-
-    :cond_2
-    check-cast v0, Lkotlinx/coroutines/flow/ThrowingCollector;
-
-    iget-object p1, v0, Lkotlinx/coroutines/flow/ThrowingCollector;->e:Ljava/lang/Throwable;
-
-    throw p1
 .end method

@@ -1,220 +1,99 @@
-.class public final Lj$/util/k;
-.super Ljava/lang/Object;
+.class final Lj$/util/K;
+.super Lj$/util/a;
 
-
-# static fields
-.field private static final c:Lj$/util/k;
-
-
-# instance fields
-.field private final a:Z
-
-.field private final b:J
+# interfaces
+.implements Lj$/util/x;
 
 
 # direct methods
-.method static constructor <clinit>()V
-    .locals 1
+.method constructor <init>()V
+    .locals 0
 
-    new-instance v0, Lj$/util/k;
-
-    invoke-direct {v0}, Lj$/util/k;-><init>()V
-
-    sput-object v0, Lj$/util/k;->c:Lj$/util/k;
+    invoke-direct {p0}, Lj$/util/a;-><init>()V
 
     return-void
-.end method
-
-.method private constructor <init>()V
-    .locals 2
-
-    invoke-direct {p0}, Ljava/lang/Object;-><init>()V
-
-    const/4 v0, 0x0
-
-    iput-boolean v0, p0, Lj$/util/k;->a:Z
-
-    const-wide/16 v0, 0x0
-
-    iput-wide v0, p0, Lj$/util/k;->b:J
-
-    return-void
-.end method
-
-.method private constructor <init>(J)V
-    .locals 1
-
-    invoke-direct {p0}, Ljava/lang/Object;-><init>()V
-
-    const/4 v0, 0x1
-
-    iput-boolean v0, p0, Lj$/util/k;->a:Z
-
-    iput-wide p1, p0, Lj$/util/k;->b:J
-
-    return-void
-.end method
-
-.method public static a()Lj$/util/k;
-    .locals 1
-
-    sget-object v0, Lj$/util/k;->c:Lj$/util/k;
-
-    return-object v0
-.end method
-
-.method public static d(J)Lj$/util/k;
-    .locals 1
-
-    new-instance v0, Lj$/util/k;
-
-    invoke-direct {v0, p0, p1}, Lj$/util/k;-><init>(J)V
-
-    return-object v0
 .end method
 
 
 # virtual methods
-.method public b()J
-    .locals 2
+.method public synthetic a(Lj$/util/function/Consumer;)Z
+    .locals 0
 
-    iget-boolean v0, p0, Lj$/util/k;->a:Z
+    invoke-static {p0, p1}, Lj$/util/a;->q(Lj$/util/x;Lj$/util/function/Consumer;)Z
 
-    if-eqz v0, :cond_0
+    move-result p1
 
-    iget-wide v0, p0, Lj$/util/k;->b:J
+    return p1
+.end method
 
-    return-wide v0
+.method public synthetic forEachRemaining(Lj$/util/function/Consumer;)V
+    .locals 0
 
-    :cond_0
-    new-instance v0, Ljava/util/NoSuchElementException;
+    invoke-static {p0, p1}, Lj$/util/a;->c(Lj$/util/x;Lj$/util/function/Consumer;)V
 
-    const-string v1, "No value present"
+    return-void
+.end method
 
-    invoke-direct {v0, v1}, Ljava/util/NoSuchElementException;-><init>(Ljava/lang/String;)V
+.method public getComparator()Ljava/util/Comparator;
+    .locals 1
+
+    new-instance v0, Ljava/lang/IllegalStateException;
+
+    invoke-direct {v0}, Ljava/lang/IllegalStateException;-><init>()V
 
     throw v0
 .end method
 
-.method public c()Z
+.method public synthetic getExactSizeIfKnown()J
+    .locals 2
+
+    invoke-static {p0}, Lj$/util/a;->i(Lj$/util/Spliterator;)J
+
+    move-result-wide v0
+
+    return-wide v0
+.end method
+
+.method public synthetic hasCharacteristics(I)Z
+    .locals 0
+
+    invoke-static {p0, p1}, Lj$/util/a;->j(Lj$/util/Spliterator;I)Z
+
+    move-result p1
+
+    return p1
+.end method
+
+.method public k(Lj$/util/function/g;)Z
+    .locals 0
+
+    invoke-static {p1}, Ljava/util/Objects;->requireNonNull(Ljava/lang/Object;)Ljava/lang/Object;
+
+    const/4 p1, 0x0
+
+    return p1
+.end method
+
+.method public l(Lj$/util/function/g;)V
+    .locals 0
+
+    invoke-static {p1}, Ljava/util/Objects;->requireNonNull(Ljava/lang/Object;)Ljava/lang/Object;
+
+    return-void
+.end method
+
+.method public bridge synthetic trySplit()Lj$/util/D;
     .locals 1
 
-    iget-boolean v0, p0, Lj$/util/k;->a:Z
-
-    return v0
-.end method
-
-.method public equals(Ljava/lang/Object;)Z
-    .locals 7
-
-    const/4 v0, 0x1
-
-    if-ne p0, p1, :cond_0
-
-    return v0
-
-    :cond_0
-    instance-of v1, p1, Lj$/util/k;
-
-    const/4 v2, 0x0
-
-    if-nez v1, :cond_1
-
-    return v2
-
-    :cond_1
-    check-cast p1, Lj$/util/k;
-
-    iget-boolean v1, p0, Lj$/util/k;->a:Z
-
-    if-eqz v1, :cond_2
-
-    iget-boolean v3, p1, Lj$/util/k;->a:Z
-
-    if-eqz v3, :cond_2
-
-    iget-wide v3, p0, Lj$/util/k;->b:J
-
-    iget-wide v5, p1, Lj$/util/k;->b:J
-
-    cmp-long p1, v3, v5
-
-    if-nez p1, :cond_3
-
-    goto :goto_0
-
-    :cond_2
-    iget-boolean p1, p1, Lj$/util/k;->a:Z
-
-    if-ne v1, p1, :cond_3
-
-    goto :goto_0
-
-    :cond_3
-    move v0, v2
-
-    :goto_0
-    return v0
-.end method
-
-.method public hashCode()I
-    .locals 4
-
-    iget-boolean v0, p0, Lj$/util/k;->a:Z
-
-    if-eqz v0, :cond_0
-
-    iget-wide v0, p0, Lj$/util/k;->b:J
-
-    const/16 v2, 0x20
-
-    ushr-long v2, v0, v2
-
-    xor-long/2addr v0, v2
-
-    long-to-int v0, v0
-
-    goto :goto_0
-
-    :cond_0
     const/4 v0, 0x0
 
-    :goto_0
-    return v0
+    return-object v0
 .end method
 
-.method public toString()Ljava/lang/String;
-    .locals 3
+.method public bridge synthetic trySplit()Lj$/util/x;
+    .locals 1
 
-    iget-boolean v0, p0, Lj$/util/k;->a:Z
+    const/4 v0, 0x0
 
-    if-eqz v0, :cond_0
-
-    const/4 v0, 0x1
-
-    new-array v0, v0, [Ljava/lang/Object;
-
-    iget-wide v1, p0, Lj$/util/k;->b:J
-
-    invoke-static {v1, v2}, Ljava/lang/Long;->valueOf(J)Ljava/lang/Long;
-
-    move-result-object v1
-
-    const/4 v2, 0x0
-
-    aput-object v1, v0, v2
-
-    const-string v1, "OptionalLong[%s]"
-
-    invoke-static {v1, v0}, Ljava/lang/String;->format(Ljava/lang/String;[Ljava/lang/Object;)Ljava/lang/String;
-
-    move-result-object v0
-
-    goto :goto_0
-
-    :cond_0
-    const-string v0, "OptionalLong.empty"
-
-    :goto_0
     return-object v0
 .end method

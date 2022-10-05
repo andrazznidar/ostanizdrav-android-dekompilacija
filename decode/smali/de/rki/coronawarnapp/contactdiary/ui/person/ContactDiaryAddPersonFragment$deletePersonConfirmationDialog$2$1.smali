@@ -66,10 +66,6 @@
 
     invoke-static {v3}, Ljava/util/Objects;->requireNonNull(Ljava/lang/Object;)Ljava/lang/Object;
 
-    const-string v2, "person"
-
-    invoke-static {v0, v2}, Lkotlin/jvm/internal/Intrinsics;->checkNotNullParameter(Ljava/lang/Object;Ljava/lang/String;)V
-
     iget-object v4, v3, Lde/rki/coronawarnapp/contactdiary/ui/person/ContactDiaryAddPersonViewModel;->appScope:Lkotlinx/coroutines/CoroutineScope;
 
     new-instance v7, Lde/rki/coronawarnapp/contactdiary/ui/person/ContactDiaryAddPersonViewModel$deletePerson$1;

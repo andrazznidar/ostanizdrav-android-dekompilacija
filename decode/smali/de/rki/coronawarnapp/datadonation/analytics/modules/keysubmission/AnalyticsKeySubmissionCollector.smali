@@ -152,8 +152,12 @@
     return-void
 .end method
 
-.method public final reportLastSubmissionFlowScreen(Lde/rki/coronawarnapp/datadonation/analytics/modules/keysubmission/Screen;Lde/rki/coronawarnapp/coronatest/type/CoronaTest$Type;)V
+.method public final reportLastSubmissionFlowScreen$enumunboxing$(ILde/rki/coronawarnapp/coronatest/type/CoronaTest$Type;)V
     .locals 1
+
+    const-string v0, "screen"
+
+    invoke-static {p1, v0}, Lkotlin/jvm/internal/Intrinsics$$ExternalSyntheticCheckNotZero0;->m(ILjava/lang/String;)V
 
     const-string/jumbo v0, "type"
 
@@ -176,7 +180,7 @@
 
     new-instance v0, Lde/rki/coronawarnapp/datadonation/analytics/modules/keysubmission/AnalyticsKeySubmissionCollector$reportLastSubmissionFlowScreen$1;
 
-    invoke-direct {v0, p1}, Lde/rki/coronawarnapp/datadonation/analytics/modules/keysubmission/AnalyticsKeySubmissionCollector$reportLastSubmissionFlowScreen$1;-><init>(Lde/rki/coronawarnapp/datadonation/analytics/modules/keysubmission/Screen;)V
+    invoke-direct {v0, p1}, Lde/rki/coronawarnapp/datadonation/analytics/modules/keysubmission/AnalyticsKeySubmissionCollector$reportLastSubmissionFlowScreen$1;-><init>(I)V
 
     invoke-virtual {p2, v0}, Lde/rki/coronawarnapp/util/preferences/FlowPreference;->update(Lkotlin/jvm/functions/Function1;)V
 

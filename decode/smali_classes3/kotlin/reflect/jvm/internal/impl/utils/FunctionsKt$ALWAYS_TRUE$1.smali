@@ -1,4 +1,4 @@
-.class public final Lkotlin/reflect/jvm/internal/impl/utils/FunctionsKt$ALWAYS_TRUE$1;
+.class final Lkotlin/reflect/jvm/internal/impl/utils/FunctionsKt$ALWAYS_TRUE$1;
 .super Lkotlin/jvm/internal/Lambda;
 .source "functions.kt"
 
@@ -56,10 +56,20 @@
 
 
 # virtual methods
-.method public bridge synthetic invoke(Ljava/lang/Object;)Ljava/lang/Object;
+.method public final invoke(Ljava/lang/Object;)Ljava/lang/Boolean;
     .locals 0
 
     sget-object p1, Ljava/lang/Boolean;->TRUE:Ljava/lang/Boolean;
+
+    return-object p1
+.end method
+
+.method public bridge synthetic invoke(Ljava/lang/Object;)Ljava/lang/Object;
+    .locals 0
+
+    invoke-virtual {p0, p1}, Lkotlin/reflect/jvm/internal/impl/utils/FunctionsKt$ALWAYS_TRUE$1;->invoke(Ljava/lang/Object;)Ljava/lang/Boolean;
+
+    move-result-object p1
 
     return-object p1
 .end method

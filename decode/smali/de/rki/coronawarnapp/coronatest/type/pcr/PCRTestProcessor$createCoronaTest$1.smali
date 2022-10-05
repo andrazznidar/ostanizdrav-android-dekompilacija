@@ -5,7 +5,7 @@
 
 # annotations
 .annotation system Ldalvik/annotation/EnclosingMethod;
-    value = Lde/rki/coronawarnapp/coronatest/type/pcr/PCRTestProcessor;->createCoronaTest(Lde/rki/coronawarnapp/coronatest/TestRegistrationRequest;Lde/rki/coronawarnapp/coronatest/server/RegistrationData;Lkotlin/coroutines/Continuation;)Ljava/lang/Object;
+    value = Lde/rki/coronawarnapp/coronatest/type/pcr/PCRTestProcessor;->createCoronaTest(Lde/rki/coronawarnapp/coronatest/TestRegistrationRequest;Lde/rki/coronawarnapp/coronatest/server/RegistrationData;Ljava/lang/String;Lkotlin/coroutines/Continuation;)Ljava/lang/Object;
 .end annotation
 
 .annotation system Ldalvik/annotation/InnerClass;
@@ -17,8 +17,8 @@
     c = "de.rki.coronawarnapp.coronatest.type.pcr.PCRTestProcessor"
     f = "PCRTestProcessor.kt"
     l = {
-        0x6f,
-        0x76
+        0x71,
+        0x78
     }
     m = "createCoronaTest"
 .end annotation
@@ -32,6 +32,8 @@
 .field public L$2:Ljava/lang/Object;
 
 .field public L$3:Ljava/lang/Object;
+
+.field public L$4:Ljava/lang/Object;
 
 .field public label:I
 
@@ -82,7 +84,7 @@
 
     const/4 v0, 0x0
 
-    invoke-virtual {p1, v0, v0, p0}, Lde/rki/coronawarnapp/coronatest/type/pcr/PCRTestProcessor;->createCoronaTest(Lde/rki/coronawarnapp/coronatest/TestRegistrationRequest;Lde/rki/coronawarnapp/coronatest/server/RegistrationData;Lkotlin/coroutines/Continuation;)Ljava/lang/Object;
+    invoke-virtual {p1, v0, v0, v0, p0}, Lde/rki/coronawarnapp/coronatest/type/pcr/PCRTestProcessor;->createCoronaTest(Lde/rki/coronawarnapp/coronatest/TestRegistrationRequest;Lde/rki/coronawarnapp/coronatest/server/RegistrationData;Ljava/lang/String;Lkotlin/coroutines/Continuation;)Ljava/lang/Object;
 
     move-result-object p1
 

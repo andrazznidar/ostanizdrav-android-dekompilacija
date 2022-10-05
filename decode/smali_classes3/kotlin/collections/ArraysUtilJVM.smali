@@ -4,63 +4,32 @@
 
 
 # direct methods
-.method public static calculateInitialCapacity(I)I
-    .locals 1
+.method public static zza(Ljava/lang/Object;Ljava/lang/Object;)Z
+    .locals 2
 
-    const/4 v0, 0x3
+    const/4 v0, 0x0
 
-    if-ge p0, v0, :cond_0
+    const/4 v1, 0x1
 
-    add-int/lit8 p0, p0, 0x1
+    if-eq p0, p1, :cond_1
 
-    return p0
+    if-eqz p0, :cond_2
 
-    :cond_0
-    const/high16 v0, 0x40000000    # 2.0f
-
-    if-ge p0, v0, :cond_1
-
-    int-to-float p0, p0
-
-    const/high16 v0, 0x3f400000    # 0.75f
-
-    div-float/2addr p0, v0
-
-    const/high16 v0, 0x3f800000    # 1.0f
-
-    add-float/2addr p0, v0
-
-    float-to-int p0, p0
-
-    return p0
-
-    :cond_1
-    const p0, 0x7fffffff
-
-    return p0
-.end method
-
-.method public static newLinkedHashMapWithExpectedSize(I)Ljava/util/LinkedHashMap;
-    .locals 1
-    .annotation system Ldalvik/annotation/Signature;
-        value = {
-            "<K:",
-            "Ljava/lang/Object;",
-            "V:",
-            "Ljava/lang/Object;",
-            ">(I)",
-            "Ljava/util/LinkedHashMap<",
-            "TK;TV;>;"
-        }
-    .end annotation
-
-    new-instance v0, Ljava/util/LinkedHashMap;
-
-    invoke-static {p0}, Lkotlin/collections/ArraysUtilJVM;->calculateInitialCapacity(I)I
+    invoke-virtual {p0, p1}, Ljava/lang/Object;->equals(Ljava/lang/Object;)Z
 
     move-result p0
 
-    invoke-direct {v0, p0}, Ljava/util/LinkedHashMap;-><init>(I)V
+    if-eqz p0, :cond_0
 
-    return-object v0
+    goto :goto_0
+
+    :cond_0
+    return v0
+
+    :cond_1
+    :goto_0
+    move v0, v1
+
+    :cond_2
+    return v0
 .end method

@@ -28,13 +28,13 @@
 
     new-instance v0, Lde/rki/coronawarnapp/util/HumanReadableError;
 
-    const v1, 0x7f1301d7
+    const v1, 0x7f130203
 
     invoke-virtual {p1, v1}, Landroid/content/Context;->getString(I)Ljava/lang/String;
 
     move-result-object v1
 
-    const v2, 0x7f1301d6
+    const v2, 0x7f130202
 
     invoke-virtual {p1, v2}, Landroid/content/Context;->getString(I)Ljava/lang/String;
 

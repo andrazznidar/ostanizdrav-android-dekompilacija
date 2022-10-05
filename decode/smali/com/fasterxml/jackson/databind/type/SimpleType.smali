@@ -157,6 +157,12 @@
 
     if-lez v1, :cond_2
 
+    invoke-virtual {p0, v1}, Lcom/fasterxml/jackson/databind/type/TypeBase;->_hasNTypeParameters(I)Z
+
+    move-result v2
+
+    if-eqz v2, :cond_2
+
     const/16 v2, 0x3c
 
     invoke-virtual {v0, v2}, Ljava/lang/StringBuilder;->append(C)Ljava/lang/StringBuilder;
@@ -177,7 +183,7 @@
     invoke-virtual {v0, v4}, Ljava/lang/StringBuilder;->append(C)Ljava/lang/StringBuilder;
 
     :cond_0
-    invoke-virtual {v3}, Lcom/fasterxml/jackson/core/type/ResolvedType;->toCanonical()Ljava/lang/String;
+    invoke-virtual {v3}, Lorg/joda/time/Chronology;->toCanonical()Ljava/lang/String;
 
     move-result-object v3
 

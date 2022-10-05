@@ -15,6 +15,14 @@
     return-void
 .end method
 
+.method public constructor <init>(Ljava/lang/Object;)V
+    .locals 0
+
+    invoke-direct {p0, p1}, Lkotlin/jvm/internal/PropertyReference;-><init>(Ljava/lang/Object;)V
+
+    return-void
+.end method
+
 .method public constructor <init>(Ljava/lang/Object;Ljava/lang/Class;Ljava/lang/String;Ljava/lang/String;I)V
     .locals 0
 
@@ -33,6 +41,22 @@
     move-result-object v0
 
     return-object v0
+.end method
+
+.method public getDelegate(Ljava/lang/Object;)Ljava/lang/Object;
+    .locals 1
+
+    invoke-virtual {p0}, Lkotlin/jvm/internal/PropertyReference;->getReflected()Lkotlin/reflect/KProperty;
+
+    move-result-object v0
+
+    check-cast v0, Lkotlin/reflect/KProperty1;
+
+    invoke-interface {v0, p1}, Lkotlin/reflect/KProperty1;->getDelegate(Ljava/lang/Object;)Ljava/lang/Object;
+
+    move-result-object p1
+
+    return-object p1
 .end method
 
 .method public bridge synthetic getGetter()Lkotlin/reflect/KProperty$Getter;

@@ -17,7 +17,7 @@
     c = "de.rki.coronawarnapp.covidcertificate.test.core.TestCertificateRepository"
     f = "TestCertificateRepository.kt"
     l = {
-        0x15f
+        0x172
     }
     m = "deleteCertificate"
 .end annotation

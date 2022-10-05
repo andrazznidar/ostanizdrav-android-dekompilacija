@@ -26,10 +26,130 @@
 
 .field public final zza:Lcom/google/android/play/core/assetpacks/zzp;
 
+.field public final zzc:Lcom/google/android/play/core/internal/zzct;
+    .annotation system Ldalvik/annotation/Signature;
+        value = {
+            "Lcom/google/android/play/core/internal/zzct<",
+            "Landroid/content/Context;",
+            ">;"
+        }
+    .end annotation
+.end field
+
+.field public final zzd:Lcom/google/android/play/core/internal/zzct;
+    .annotation system Ldalvik/annotation/Signature;
+        value = {
+            "Lcom/google/android/play/core/internal/zzct<",
+            "Lcom/google/android/play/core/assetpacks/zzea;",
+            ">;"
+        }
+    .end annotation
+.end field
+
+.field public final zze:Lcom/google/android/play/core/internal/zzct;
+    .annotation system Ldalvik/annotation/Signature;
+        value = {
+            "Lcom/google/android/play/core/internal/zzct<",
+            "Lcom/google/android/play/core/assetpacks/zzbh;",
+            ">;"
+        }
+    .end annotation
+.end field
+
+.field public final zzf:Lcom/google/android/play/core/internal/zzct;
+    .annotation system Ldalvik/annotation/Signature;
+        value = {
+            "Lcom/google/android/play/core/internal/zzct<",
+            "Lcom/google/android/play/core/assetpacks/zzcl;",
+            ">;"
+        }
+    .end annotation
+.end field
+
+.field public final zzg:Lcom/google/android/play/core/internal/zzct;
+    .annotation system Ldalvik/annotation/Signature;
+        value = {
+            "Lcom/google/android/play/core/internal/zzct<",
+            "Lcom/google/android/play/core/common/zza;",
+            ">;"
+        }
+    .end annotation
+.end field
+
+.field public final zzh:Lcom/google/android/play/core/internal/zzct;
+    .annotation system Ldalvik/annotation/Signature;
+        value = {
+            "Lcom/google/android/play/core/internal/zzct<",
+            "Lcom/google/android/play/core/assetpacks/zzdy;",
+            ">;"
+        }
+    .end annotation
+.end field
+
+.field public final zzi:Lcom/google/android/play/core/internal/zzct;
+    .annotation system Ldalvik/annotation/Signature;
+        value = {
+            "Lcom/google/android/play/core/internal/zzct<",
+            "Lcom/google/android/play/core/assetpacks/zzaw;",
+            ">;"
+        }
+    .end annotation
+.end field
+
+.field public final zzj:Lcom/google/android/play/core/internal/zzct;
+    .annotation system Ldalvik/annotation/Signature;
+        value = {
+            "Lcom/google/android/play/core/internal/zzct<",
+            "Ljava/lang/String;",
+            ">;"
+        }
+    .end annotation
+.end field
+
+.field public final zzk:Lcom/google/android/play/core/internal/zzct;
+    .annotation system Ldalvik/annotation/Signature;
+        value = {
+            "Lcom/google/android/play/core/internal/zzct<",
+            "Lcom/google/android/play/core/assetpacks/zzy;",
+            ">;"
+        }
+    .end annotation
+.end field
+
+.field public final zzl:Lcom/google/android/play/core/internal/zzct;
+    .annotation system Ldalvik/annotation/Signature;
+        value = {
+            "Lcom/google/android/play/core/internal/zzct<",
+            "Ljava/util/concurrent/Executor;",
+            ">;"
+        }
+    .end annotation
+.end field
+
+.field public final zzm:Lcom/google/android/play/core/internal/zzct;
+    .annotation system Ldalvik/annotation/Signature;
+        value = {
+            "Lcom/google/android/play/core/internal/zzct<",
+            "Lcom/google/android/play/core/assetpacks/zzdb;",
+            ">;"
+        }
+    .end annotation
+.end field
+
+.field public final zzn:Lcom/google/android/play/core/internal/zzct;
+    .annotation system Ldalvik/annotation/Signature;
+        value = {
+            "Lcom/google/android/play/core/internal/zzct<",
+            "Lcom/google/android/play/core/assetpacks/zzbb;",
+            ">;"
+        }
+    .end annotation
+.end field
+
 
 # direct methods
 .method public constructor <init>(Lcom/google/android/play/core/assetpacks/zzp;)V
-    .locals 32
+    .locals 30
 
     move-object/from16 v0, p0
 
@@ -39,13 +159,15 @@
 
     iput-object v1, v0, Lcom/google/android/play/core/assetpacks/zzcd;->zza:Lcom/google/android/play/core/assetpacks/zzp;
 
-    new-instance v12, Lcom/google/android/play/core/assetpacks/zzu;
+    new-instance v11, Lcom/google/android/play/core/assetpacks/zzu;
 
-    invoke-direct {v12, v1}, Lcom/google/android/play/core/assetpacks/zzu;-><init>(Lcom/google/android/play/core/assetpacks/zzp;)V
+    invoke-direct {v11, v1}, Lcom/google/android/play/core/assetpacks/zzu;-><init>(Lcom/google/android/play/core/assetpacks/zzp;)V
 
-    new-instance v1, Lcom/upokecenter/cbor/SharedRefs;
+    iput-object v11, v0, Lcom/google/android/play/core/assetpacks/zzcd;->zzc:Lcom/google/android/play/core/internal/zzct;
 
-    invoke-direct {v1, v12}, Lcom/upokecenter/cbor/SharedRefs;-><init>(Lcom/google/android/play/core/internal/zzct;)V
+    new-instance v1, Lcom/google/android/play/core/assetpacks/zzeb;
+
+    invoke-direct {v1, v11}, Lcom/google/android/play/core/assetpacks/zzeb;-><init>(Lcom/google/android/play/core/internal/zzct;)V
 
     sget-object v2, Lcom/google/android/play/core/internal/zzcq;->zza:Ljava/lang/Object;
 
@@ -53,7 +175,7 @@
 
     if-eqz v2, :cond_0
 
-    move-object v13, v1
+    move-object v12, v1
 
     goto :goto_0
 
@@ -62,12 +184,14 @@
 
     invoke-direct {v2, v1}, Lcom/google/android/play/core/internal/zzcq;-><init>(Lcom/google/android/play/core/internal/zzct;)V
 
-    move-object v13, v2
+    move-object v12, v2
 
     :goto_0
+    iput-object v12, v0, Lcom/google/android/play/core/assetpacks/zzcd;->zzd:Lcom/google/android/play/core/internal/zzct;
+
     new-instance v1, Lcom/google/android/play/core/assetpacks/zzbi;
 
-    invoke-direct {v1, v12, v13}, Lcom/google/android/play/core/assetpacks/zzbi;-><init>(Lcom/google/android/play/core/internal/zzct;Lcom/google/android/play/core/internal/zzct;)V
+    invoke-direct {v1, v11, v12}, Lcom/google/android/play/core/assetpacks/zzbi;-><init>(Lcom/google/android/play/core/internal/zzct;Lcom/google/android/play/core/internal/zzct;)V
 
     instance-of v2, v1, Lcom/google/android/play/core/internal/zzcq;
 
@@ -85,6 +209,8 @@
     move-object v15, v2
 
     :goto_1
+    iput-object v15, v0, Lcom/google/android/play/core/assetpacks/zzcd;->zze:Lcom/google/android/play/core/internal/zzct;
+
     sget-object v1, Lcom/google/android/play/core/assetpacks/zzcm;->zza:Lcom/google/android/play/core/assetpacks/zzcn;
 
     instance-of v2, v1, Lcom/google/android/play/core/internal/zzcq;
@@ -103,13 +229,15 @@
     move-object v14, v2
 
     :goto_2
-    sget-object v1, Lcom/google/android/play/core/common/zzb;->zza:Lcom/google/android/play/core/common/zzc;
+    iput-object v14, v0, Lcom/google/android/play/core/assetpacks/zzcd;->zzf:Lcom/google/android/play/core/internal/zzct;
+
+    sget-object v1, Lcom/google/android/play/core/common/zzb;->zza:Lcom/upokecenter/cbor/CBOREInteger;
 
     instance-of v2, v1, Lcom/google/android/play/core/internal/zzcq;
 
     if-eqz v2, :cond_3
 
-    move-object v2, v1
+    move-object v13, v1
 
     goto :goto_3
 
@@ -118,54 +246,60 @@
 
     invoke-direct {v2, v1}, Lcom/google/android/play/core/internal/zzcq;-><init>(Lcom/google/android/play/core/internal/zzct;)V
 
+    move-object v13, v2
+
     :goto_3
-    new-instance v1, Lorg/slf4j/event/EventRecodingLogger;
+    iput-object v13, v0, Lcom/google/android/play/core/assetpacks/zzcd;->zzg:Lcom/google/android/play/core/internal/zzct;
 
-    invoke-direct {v1, v15, v13, v2}, Lorg/slf4j/event/EventRecodingLogger;-><init>(Lcom/google/android/play/core/internal/zzct;Lcom/google/android/play/core/internal/zzct;Lcom/google/android/play/core/internal/zzct;)V
+    new-instance v1, Lcom/google/android/play/core/assetpacks/zzdz;
 
-    instance-of v3, v1, Lcom/google/android/play/core/internal/zzcq;
+    invoke-direct {v1, v15, v12, v13}, Lcom/google/android/play/core/assetpacks/zzdz;-><init>(Lcom/google/android/play/core/internal/zzct;Lcom/google/android/play/core/internal/zzct;Lcom/google/android/play/core/internal/zzct;)V
 
-    if-eqz v3, :cond_4
+    instance-of v2, v1, Lcom/google/android/play/core/internal/zzcq;
+
+    if-eqz v2, :cond_4
+
+    move-object v2, v1
 
     goto :goto_4
 
     :cond_4
+    new-instance v2, Lcom/google/android/play/core/internal/zzcq;
+
+    invoke-direct {v2, v1}, Lcom/google/android/play/core/internal/zzcq;-><init>(Lcom/google/android/play/core/internal/zzct;)V
+
+    :goto_4
+    iput-object v2, v0, Lcom/google/android/play/core/assetpacks/zzcd;->zzh:Lcom/google/android/play/core/internal/zzct;
+
+    new-instance v1, Lcom/google/android/play/core/assetpacks/zzax;
+
+    invoke-direct {v1, v11, v14, v2}, Lcom/google/android/play/core/assetpacks/zzax;-><init>(Lcom/google/android/play/core/internal/zzct;Lcom/google/android/play/core/internal/zzct;Lcom/google/android/play/core/internal/zzct;)V
+
+    instance-of v3, v1, Lcom/google/android/play/core/internal/zzcq;
+
+    if-eqz v3, :cond_5
+
+    goto :goto_5
+
+    :cond_5
     new-instance v3, Lcom/google/android/play/core/internal/zzcq;
 
     invoke-direct {v3, v1}, Lcom/google/android/play/core/internal/zzcq;-><init>(Lcom/google/android/play/core/internal/zzct;)V
 
     move-object v1, v3
 
-    :goto_4
-    new-instance v3, Lcom/google/android/play/core/assetpacks/zzax;
-
-    invoke-direct {v3, v12, v14, v1}, Lcom/google/android/play/core/assetpacks/zzax;-><init>(Lcom/google/android/play/core/internal/zzct;Lcom/google/android/play/core/internal/zzct;Lcom/google/android/play/core/internal/zzct;)V
-
-    instance-of v4, v3, Lcom/google/android/play/core/internal/zzcq;
-
-    if-eqz v4, :cond_5
-
-    move-object v11, v3
-
-    goto :goto_5
-
-    :cond_5
-    new-instance v4, Lcom/google/android/play/core/internal/zzcq;
-
-    invoke-direct {v4, v3}, Lcom/google/android/play/core/internal/zzcq;-><init>(Lcom/google/android/play/core/internal/zzct;)V
-
-    move-object v11, v4
-
     :goto_5
+    iput-object v1, v0, Lcom/google/android/play/core/assetpacks/zzcd;->zzi:Lcom/google/android/play/core/internal/zzct;
+
     new-instance v3, Lcom/google/android/play/core/assetpacks/zzv;
 
-    invoke-direct {v3, v12}, Lcom/google/android/play/core/assetpacks/zzv;-><init>(Lcom/google/android/play/core/internal/zzct;)V
+    invoke-direct {v3, v11}, Lcom/google/android/play/core/assetpacks/zzv;-><init>(Lcom/google/android/play/core/internal/zzct;)V
 
     instance-of v4, v3, Lcom/google/android/play/core/internal/zzcq;
 
     if-eqz v4, :cond_6
 
-    move-object/from16 v16, v3
+    move-object v10, v3
 
     goto :goto_6
 
@@ -174,12 +308,16 @@
 
     invoke-direct {v4, v3}, Lcom/google/android/play/core/internal/zzcq;-><init>(Lcom/google/android/play/core/internal/zzct;)V
 
-    move-object/from16 v16, v4
+    move-object v10, v4
 
     :goto_6
-    new-instance v10, Lcom/google/android/play/core/internal/zzcp;
+    iput-object v10, v0, Lcom/google/android/play/core/assetpacks/zzcd;->zzj:Lcom/google/android/play/core/internal/zzct;
 
-    invoke-direct {v10}, Lcom/google/android/play/core/internal/zzcp;-><init>()V
+    new-instance v9, Lcom/google/android/play/core/internal/zzcp;
+
+    invoke-direct {v9}, Lcom/google/android/play/core/internal/zzcp;-><init>()V
+
+    iput-object v9, v0, Lcom/google/android/play/core/assetpacks/zzcd;->zzk:Lcom/google/android/play/core/internal/zzct;
 
     sget-object v3, Lcom/google/android/play/core/assetpacks/zzq;->zza:Lcom/google/android/play/core/assetpacks/zzr;
 
@@ -187,7 +325,7 @@
 
     if-eqz v4, :cond_7
 
-    move-object/from16 v28, v3
+    move-object v8, v3
 
     goto :goto_7
 
@@ -196,166 +334,148 @@
 
     invoke-direct {v4, v3}, Lcom/google/android/play/core/internal/zzcq;-><init>(Lcom/google/android/play/core/internal/zzct;)V
 
-    move-object/from16 v28, v4
+    move-object v8, v4
 
     :goto_7
-    new-instance v9, Lcom/google/android/play/core/assetpacks/zzdc;
+    iput-object v8, v0, Lcom/google/android/play/core/assetpacks/zzcd;->zzl:Lcom/google/android/play/core/internal/zzct;
 
-    const/4 v8, 0x0
+    new-instance v3, Lcom/google/android/play/core/assetpacks/zzdc;
 
-    move-object v3, v9
+    invoke-direct {v3, v15, v9, v14, v8}, Lcom/google/android/play/core/assetpacks/zzdc;-><init>(Lcom/google/android/play/core/internal/zzct;Lcom/google/android/play/core/internal/zzct;Lcom/google/android/play/core/internal/zzct;Lcom/google/android/play/core/internal/zzct;)V
 
-    move-object v4, v15
+    instance-of v4, v3, Lcom/google/android/play/core/internal/zzcq;
 
-    move-object v5, v10
+    if-eqz v4, :cond_8
 
-    move-object v6, v14
-
-    move-object/from16 v7, v28
-
-    invoke-direct/range {v3 .. v8}, Lcom/google/android/play/core/assetpacks/zzdc;-><init>(Lcom/google/android/play/core/internal/zzct;Lcom/google/android/play/core/internal/zzct;Lcom/google/android/play/core/internal/zzct;Lcom/google/android/play/core/internal/zzct;I)V
-
-    instance-of v3, v9, Lcom/google/android/play/core/internal/zzcq;
-
-    if-eqz v3, :cond_8
-
-    move-object/from16 v29, v9
+    move-object v7, v3
 
     goto :goto_8
 
     :cond_8
-    new-instance v3, Lcom/google/android/play/core/internal/zzcq;
+    new-instance v4, Lcom/google/android/play/core/internal/zzcq;
 
-    invoke-direct {v3, v9}, Lcom/google/android/play/core/internal/zzcq;-><init>(Lcom/google/android/play/core/internal/zzct;)V
+    invoke-direct {v4, v3}, Lcom/google/android/play/core/internal/zzcq;-><init>(Lcom/google/android/play/core/internal/zzct;)V
 
-    move-object/from16 v29, v3
+    move-object v7, v4
 
     :goto_8
-    new-instance v9, Lcom/google/android/play/core/internal/zzcp;
+    iput-object v7, v0, Lcom/google/android/play/core/assetpacks/zzcd;->zzm:Lcom/google/android/play/core/internal/zzct;
 
-    invoke-direct {v9}, Lcom/google/android/play/core/internal/zzcp;-><init>()V
+    new-instance v6, Lcom/google/android/play/core/internal/zzcp;
 
-    new-instance v8, Lcom/google/android/play/core/assetpacks/zzcg;
+    invoke-direct {v6}, Lcom/google/android/play/core/internal/zzcp;-><init>()V
 
-    const/16 v17, 0x0
+    iput-object v6, v0, Lcom/google/android/play/core/assetpacks/zzcd;->zzn:Lcom/google/android/play/core/internal/zzct;
 
-    move-object v3, v8
+    new-instance v5, Lcom/google/android/play/core/assetpacks/zzcg;
+
+    move-object v3, v5
 
     move-object v4, v15
 
-    move-object v5, v10
+    move-object/from16 p1, v1
 
-    move-object v6, v9
+    move-object v1, v5
+
+    move-object v5, v9
+
+    move-object/from16 v26, v6
+
+    move-object/from16 v27, v7
 
     move-object v7, v14
 
-    move-object/from16 p1, v11
+    move-object/from16 v28, v8
 
-    move-object v11, v8
+    move-object v8, v2
 
-    move-object v8, v1
+    invoke-direct/range {v3 .. v8}, Lcom/google/android/play/core/assetpacks/zzcg;-><init>(Lcom/google/android/play/core/internal/zzct;Lcom/google/android/play/core/internal/zzct;Lcom/google/android/play/core/internal/zzct;Lcom/google/android/play/core/internal/zzct;Lcom/google/android/play/core/internal/zzct;)V
 
-    move-object v0, v9
-
-    move/from16 v9, v17
-
-    invoke-direct/range {v3 .. v9}, Lcom/google/android/play/core/assetpacks/zzcg;-><init>(Lcom/google/android/play/core/internal/zzct;Lcom/google/android/play/core/internal/zzct;Lcom/google/android/play/core/internal/zzct;Lcom/google/android/play/core/internal/zzct;Lcom/google/android/play/core/internal/zzct;I)V
-
-    instance-of v3, v11, Lcom/google/android/play/core/internal/zzcq;
+    instance-of v3, v1, Lcom/google/android/play/core/internal/zzcq;
 
     if-eqz v3, :cond_9
 
-    move-object/from16 v20, v11
+    move-object/from16 v19, v1
 
     goto :goto_9
 
     :cond_9
     new-instance v3, Lcom/google/android/play/core/internal/zzcq;
 
-    invoke-direct {v3, v11}, Lcom/google/android/play/core/internal/zzcq;-><init>(Lcom/google/android/play/core/internal/zzct;)V
+    invoke-direct {v3, v1}, Lcom/google/android/play/core/internal/zzcq;-><init>(Lcom/google/android/play/core/internal/zzct;)V
 
-    move-object/from16 v20, v3
+    move-object/from16 v19, v3
 
     :goto_9
-    new-instance v3, Lcom/upokecenter/cbor/StringRefs;
+    new-instance v1, Landroidx/transition/ViewGroupOverlayApi18;
 
-    invoke-direct {v3, v15}, Lcom/upokecenter/cbor/StringRefs;-><init>(Lcom/google/android/play/core/internal/zzct;)V
+    invoke-direct {v1, v15}, Landroidx/transition/ViewGroupOverlayApi18;-><init>(Lcom/google/android/play/core/internal/zzct;)V
 
-    instance-of v4, v3, Lcom/google/android/play/core/internal/zzcq;
+    instance-of v3, v1, Lcom/google/android/play/core/internal/zzcq;
 
-    if-eqz v4, :cond_a
+    if-eqz v3, :cond_a
 
-    move-object/from16 v21, v3
+    move-object/from16 v20, v1
 
     goto :goto_a
 
     :cond_a
-    new-instance v4, Lcom/google/android/play/core/internal/zzcq;
+    new-instance v3, Lcom/google/android/play/core/internal/zzcq;
 
-    invoke-direct {v4, v3}, Lcom/google/android/play/core/internal/zzcq;-><init>(Lcom/google/android/play/core/internal/zzct;)V
+    invoke-direct {v3, v1}, Lcom/google/android/play/core/internal/zzcq;-><init>(Lcom/google/android/play/core/internal/zzct;)V
 
-    move-object/from16 v21, v4
+    move-object/from16 v20, v3
 
     :goto_a
-    new-instance v3, Lorg/bouncycastle/pqc/crypto/lms/Composer;
+    new-instance v1, Lcom/google/android/play/core/assetpacks/zzds;
 
-    invoke-direct {v3, v15}, Lorg/bouncycastle/pqc/crypto/lms/Composer;-><init>(Lcom/google/android/play/core/internal/zzct;)V
+    invoke-direct {v1, v15}, Lcom/google/android/play/core/assetpacks/zzds;-><init>(Lcom/google/android/play/core/internal/zzct;)V
 
-    instance-of v4, v3, Lcom/google/android/play/core/internal/zzcq;
+    instance-of v3, v1, Lcom/google/android/play/core/internal/zzcq;
 
-    if-eqz v4, :cond_b
+    if-eqz v3, :cond_b
 
-    move-object/from16 v22, v3
+    move-object/from16 v21, v1
 
     goto :goto_b
 
     :cond_b
-    new-instance v4, Lcom/google/android/play/core/internal/zzcq;
+    new-instance v3, Lcom/google/android/play/core/internal/zzcq;
 
-    invoke-direct {v4, v3}, Lcom/google/android/play/core/internal/zzcq;-><init>(Lcom/google/android/play/core/internal/zzct;)V
+    invoke-direct {v3, v1}, Lcom/google/android/play/core/internal/zzcq;-><init>(Lcom/google/android/play/core/internal/zzct;)V
 
-    move-object/from16 v22, v4
+    move-object/from16 v21, v3
 
     :goto_b
-    new-instance v11, Lcom/google/android/play/core/appupdate/zzaa;
+    new-instance v1, Lcom/google/android/play/core/assetpacks/zzdx;
 
-    const/16 v17, 0x2
-
-    move-object v3, v11
+    move-object v3, v1
 
     move-object v4, v15
 
-    move-object v5, v10
+    move-object v5, v9
 
-    move-object/from16 v6, v29
+    move-object/from16 v6, v27
 
     move-object/from16 v7, v28
 
     move-object v8, v14
 
-    move-object v9, v2
+    move-object v0, v9
 
-    move-object/from16 v30, v13
+    move-object v9, v13
 
-    move-object v13, v10
+    move-object/from16 v29, v10
 
-    move-object v10, v1
+    move-object v10, v2
 
-    move-object/from16 v31, p1
-
-    move-object/from16 p1, v1
-
-    move-object v1, v11
-
-    move/from16 v11, v17
-
-    invoke-direct/range {v3 .. v11}, Lcom/google/android/play/core/appupdate/zzaa;-><init>(Lcom/google/android/play/core/internal/zzct;Lcom/google/android/play/core/internal/zzct;Lcom/google/android/play/core/internal/zzct;Lcom/google/android/play/core/internal/zzct;Lcom/google/android/play/core/internal/zzct;Lcom/google/android/play/core/internal/zzct;Lcom/google/android/play/core/internal/zzct;I)V
+    invoke-direct/range {v3 .. v10}, Lcom/google/android/play/core/assetpacks/zzdx;-><init>(Lcom/google/android/play/core/internal/zzct;Lcom/google/android/play/core/internal/zzct;Lcom/google/android/play/core/internal/zzct;Lcom/google/android/play/core/internal/zzct;Lcom/google/android/play/core/internal/zzct;Lcom/google/android/play/core/internal/zzct;Lcom/google/android/play/core/internal/zzct;)V
 
     instance-of v3, v1, Lcom/google/android/play/core/internal/zzcq;
 
     if-eqz v3, :cond_c
 
-    move-object/from16 v23, v1
+    move-object/from16 v22, v1
 
     goto :goto_c
 
@@ -364,18 +484,18 @@
 
     invoke-direct {v3, v1}, Lcom/google/android/play/core/internal/zzcq;-><init>(Lcom/google/android/play/core/internal/zzct;)V
 
-    move-object/from16 v23, v3
+    move-object/from16 v22, v3
 
     :goto_c
-    new-instance v1, Lcom/google/zxing/common/DetectorResult;
+    new-instance v1, Lcom/google/android/play/core/assetpacks/zzee;
 
-    invoke-direct {v1, v15, v13}, Lcom/google/zxing/common/DetectorResult;-><init>(Lcom/google/android/play/core/internal/zzct;Lcom/google/android/play/core/internal/zzct;)V
+    invoke-direct {v1, v15, v0}, Lcom/google/android/play/core/assetpacks/zzee;-><init>(Lcom/google/android/play/core/internal/zzct;Lcom/google/android/play/core/internal/zzct;)V
 
     instance-of v3, v1, Lcom/google/android/play/core/internal/zzcq;
 
     if-eqz v3, :cond_d
 
-    move-object/from16 v24, v1
+    move-object/from16 v23, v1
 
     goto :goto_d
 
@@ -384,32 +504,30 @@
 
     invoke-direct {v3, v1}, Lcom/google/android/play/core/internal/zzcq;-><init>(Lcom/google/android/play/core/internal/zzct;)V
 
-    move-object/from16 v24, v3
+    move-object/from16 v23, v3
 
     :goto_d
-    new-instance v1, Lcom/google/android/play/core/assetpacks/zzcg;
-
-    const/4 v9, 0x1
+    new-instance v1, Lcom/google/android/play/core/assetpacks/zzei;
 
     move-object v3, v1
 
     move-object v4, v15
 
-    move-object v5, v13
+    move-object v5, v0
 
-    move-object/from16 v6, v29
+    move-object/from16 v6, v27
 
     move-object/from16 v7, v28
 
     move-object v8, v14
 
-    invoke-direct/range {v3 .. v9}, Lcom/google/android/play/core/assetpacks/zzcg;-><init>(Lcom/google/android/play/core/internal/zzct;Lcom/google/android/play/core/internal/zzct;Lcom/google/android/play/core/internal/zzct;Lcom/google/android/play/core/internal/zzct;Lcom/google/android/play/core/internal/zzct;I)V
+    invoke-direct/range {v3 .. v8}, Lcom/google/android/play/core/assetpacks/zzei;-><init>(Lcom/google/android/play/core/internal/zzct;Lcom/google/android/play/core/internal/zzct;Lcom/google/android/play/core/internal/zzct;Lcom/google/android/play/core/internal/zzct;Lcom/google/android/play/core/internal/zzct;)V
 
     instance-of v3, v1, Lcom/google/android/play/core/internal/zzcq;
 
     if-eqz v3, :cond_e
 
-    move-object/from16 v25, v1
+    move-object/from16 v24, v1
 
     goto :goto_e
 
@@ -418,18 +536,16 @@
 
     invoke-direct {v3, v1}, Lcom/google/android/play/core/internal/zzcq;-><init>(Lcom/google/android/play/core/internal/zzct;)V
 
-    move-object/from16 v25, v3
+    move-object/from16 v24, v3
 
     :goto_e
-    new-instance v1, Lcom/google/android/gms/internal/nearby/zzed;
+    new-instance v1, Lcom/google/android/play/core/assetpacks/zzbv;
 
-    invoke-direct {v1, v13}, Lcom/google/android/gms/internal/nearby/zzed;-><init>(Lcom/google/android/play/core/internal/zzct;)V
+    invoke-direct {v1, v0}, Lcom/google/android/play/core/assetpacks/zzbv;-><init>(Lcom/google/android/play/core/internal/zzct;)V
 
     instance-of v3, v1, Lcom/google/android/play/core/internal/zzcq;
 
     if-eqz v3, :cond_f
-
-    move-object v6, v1
 
     goto :goto_f
 
@@ -438,50 +554,40 @@
 
     invoke-direct {v3, v1}, Lcom/google/android/play/core/internal/zzcq;-><init>(Lcom/google/android/play/core/internal/zzct;)V
 
-    move-object v6, v3
+    move-object v1, v3
 
     :goto_f
-    new-instance v1, Lcom/google/android/play/core/assetpacks/zzdc;
+    new-instance v3, Lcom/google/android/play/core/assetpacks/zzdf;
 
-    const/4 v8, 0x1
+    move-object/from16 v10, v27
 
-    move-object v3, v1
+    invoke-direct {v3, v10, v15, v1, v13}, Lcom/google/android/play/core/assetpacks/zzdf;-><init>(Lcom/google/android/play/core/internal/zzct;Lcom/google/android/play/core/internal/zzct;Lcom/google/android/play/core/internal/zzct;Lcom/google/android/play/core/internal/zzct;)V
 
-    move-object/from16 v4, v29
+    instance-of v1, v3, Lcom/google/android/play/core/internal/zzcq;
 
-    move-object v5, v15
+    if-eqz v1, :cond_10
 
-    move-object v7, v2
-
-    invoke-direct/range {v3 .. v8}, Lcom/google/android/play/core/assetpacks/zzdc;-><init>(Lcom/google/android/play/core/internal/zzct;Lcom/google/android/play/core/internal/zzct;Lcom/google/android/play/core/internal/zzct;Lcom/google/android/play/core/internal/zzct;I)V
-
-    instance-of v3, v1, Lcom/google/android/play/core/internal/zzcq;
-
-    if-eqz v3, :cond_10
-
-    move-object/from16 v26, v1
+    move-object/from16 v25, v3
 
     goto :goto_10
 
     :cond_10
-    new-instance v3, Lcom/google/android/play/core/internal/zzcq;
+    new-instance v1, Lcom/google/android/play/core/internal/zzcq;
 
-    invoke-direct {v3, v1}, Lcom/google/android/play/core/internal/zzcq;-><init>(Lcom/google/android/play/core/internal/zzct;)V
+    invoke-direct {v1, v3}, Lcom/google/android/play/core/internal/zzcq;-><init>(Lcom/google/android/play/core/internal/zzct;)V
 
-    move-object/from16 v26, v3
+    move-object/from16 v25, v1
 
     :goto_10
-    new-instance v1, Lcom/google/android/play/core/assetpacks/zzbc;
+    new-instance v1, Lcom/google/android/play/core/assetpacks/zzcj;
 
-    const/16 v27, 0x1
+    move-object/from16 v16, v1
 
-    move-object/from16 v17, v1
+    move-object/from16 v17, v10
 
-    move-object/from16 v18, v29
+    move-object/from16 v18, v0
 
-    move-object/from16 v19, v13
-
-    invoke-direct/range {v17 .. v27}, Lcom/google/android/play/core/assetpacks/zzbc;-><init>(Lcom/google/android/play/core/internal/zzct;Lcom/google/android/play/core/internal/zzct;Lcom/google/android/play/core/internal/zzct;Lcom/google/android/play/core/internal/zzct;Lcom/google/android/play/core/internal/zzct;Lcom/google/android/play/core/internal/zzct;Lcom/google/android/play/core/internal/zzct;Lcom/google/android/play/core/internal/zzct;Lcom/google/android/play/core/internal/zzct;I)V
+    invoke-direct/range {v16 .. v25}, Lcom/google/android/play/core/assetpacks/zzcj;-><init>(Lcom/google/android/play/core/internal/zzct;Lcom/google/android/play/core/internal/zzct;Lcom/google/android/play/core/internal/zzct;Lcom/google/android/play/core/internal/zzct;Lcom/google/android/play/core/internal/zzct;Lcom/google/android/play/core/internal/zzct;Lcom/google/android/play/core/internal/zzct;Lcom/google/android/play/core/internal/zzct;Lcom/google/android/play/core/internal/zzct;)V
 
     instance-of v3, v1, Lcom/google/android/play/core/internal/zzcq;
 
@@ -505,7 +611,7 @@
 
     if-eqz v3, :cond_12
 
-    move-object/from16 v21, v1
+    move-object/from16 v20, v1
 
     goto :goto_12
 
@@ -514,10 +620,10 @@
 
     invoke-direct {v3, v1}, Lcom/google/android/play/core/internal/zzcq;-><init>(Lcom/google/android/play/core/internal/zzct;)V
 
-    move-object/from16 v21, v3
+    move-object/from16 v20, v3
 
     :goto_12
-    sget-object v1, Lcom/google/android/play/core/assetpacks/zzw;->zza:Lcom/google/android/play/core/assetpacks/zzx;
+    sget-object v1, Lcom/google/android/play/core/assetpacks/zzw;->zza:Lcom/upokecenter/cbor/CBORDoubleBits;
 
     instance-of v3, v1, Lcom/google/android/play/core/internal/zzcq;
 
@@ -535,79 +641,81 @@
     move-object v9, v3
 
     :goto_13
-    new-instance v11, Lcom/google/android/play/core/assetpacks/zzbc;
+    new-instance v8, Lcom/google/android/play/core/assetpacks/zzbc;
 
-    const/16 v17, 0x0
+    move-object/from16 v7, p1
 
-    move-object/from16 v24, p1
-
-    move-object v1, v11
+    move-object v1, v8
 
     move-object/from16 v23, v2
 
-    move-object v2, v12
+    move-object v2, v11
 
-    move-object/from16 v3, v29
+    move-object v3, v10
 
-    move-object v5, v13
+    move-object v5, v0
 
     move-object v6, v14
 
-    move-object/from16 v7, v21
+    move-object/from16 v16, v13
+
+    move-object v13, v7
+
+    move-object/from16 v7, v20
+
+    move-object/from16 v17, v15
+
+    move-object v15, v8
 
     move-object/from16 v8, v28
 
-    move-object/from16 v10, v24
+    move-object/from16 v18, v10
 
-    move-object/from16 v18, v15
+    move-object/from16 v10, v23
 
-    move-object v15, v11
-
-    move/from16 v11, v17
-
-    invoke-direct/range {v1 .. v11}, Lcom/google/android/play/core/assetpacks/zzbc;-><init>(Lcom/google/android/play/core/internal/zzct;Lcom/google/android/play/core/internal/zzct;Lcom/google/android/play/core/internal/zzct;Lcom/google/android/play/core/internal/zzct;Lcom/google/android/play/core/internal/zzct;Lcom/google/android/play/core/internal/zzct;Lcom/google/android/play/core/internal/zzct;Lcom/google/android/play/core/internal/zzct;Lcom/google/android/play/core/internal/zzct;I)V
+    invoke-direct/range {v1 .. v10}, Lcom/google/android/play/core/assetpacks/zzbc;-><init>(Lcom/google/android/play/core/internal/zzct;Lcom/google/android/play/core/internal/zzct;Lcom/google/android/play/core/internal/zzct;Lcom/google/android/play/core/internal/zzct;Lcom/google/android/play/core/internal/zzct;Lcom/google/android/play/core/internal/zzct;Lcom/google/android/play/core/internal/zzct;Lcom/google/android/play/core/internal/zzct;Lcom/google/android/play/core/internal/zzct;)V
 
     instance-of v1, v15, Lcom/google/android/play/core/internal/zzcq;
 
     if-eqz v1, :cond_14
 
-    move-object v11, v15
+    move-object v8, v15
 
     goto :goto_14
 
     :cond_14
-    new-instance v11, Lcom/google/android/play/core/internal/zzcq;
+    new-instance v8, Lcom/google/android/play/core/internal/zzcq;
 
-    invoke-direct {v11, v15}, Lcom/google/android/play/core/internal/zzcq;-><init>(Lcom/google/android/play/core/internal/zzct;)V
+    invoke-direct {v8, v15}, Lcom/google/android/play/core/internal/zzcq;-><init>(Lcom/google/android/play/core/internal/zzct;)V
 
     :goto_14
-    iget-object v1, v0, Lcom/google/android/play/core/internal/zzcp;->zza:Lcom/google/android/play/core/internal/zzct;
+    move-object/from16 v9, v26
+
+    iget-object v1, v9, Lcom/google/android/play/core/internal/zzcp;->zza:Lcom/google/android/play/core/internal/zzct;
 
     if-nez v1, :cond_1c
 
-    iput-object v11, v0, Lcom/google/android/play/core/internal/zzcp;->zza:Lcom/google/android/play/core/internal/zzct;
+    iput-object v8, v9, Lcom/google/android/play/core/internal/zzcp;->zza:Lcom/google/android/play/core/internal/zzct;
 
-    new-instance v10, Lcom/google/android/play/core/appupdate/zzaa;
-
-    const/4 v9, 0x1
+    new-instance v10, Lcom/google/android/play/core/assetpacks/zzdm;
 
     move-object v1, v10
 
-    move-object/from16 v2, v16
+    move-object/from16 v2, v29
 
-    move-object v3, v0
+    move-object v3, v9
 
     move-object v4, v14
 
-    move-object v5, v12
+    move-object v5, v11
 
-    move-object/from16 v6, v30
+    move-object v6, v12
 
     move-object/from16 v7, v28
 
-    move-object/from16 v8, v24
+    move-object/from16 v8, v23
 
-    invoke-direct/range {v1 .. v9}, Lcom/google/android/play/core/appupdate/zzaa;-><init>(Lcom/google/android/play/core/internal/zzct;Lcom/google/android/play/core/internal/zzct;Lcom/google/android/play/core/internal/zzct;Lcom/google/android/play/core/internal/zzct;Lcom/google/android/play/core/internal/zzct;Lcom/google/android/play/core/internal/zzct;Lcom/google/android/play/core/internal/zzct;I)V
+    invoke-direct/range {v1 .. v8}, Lcom/google/android/play/core/assetpacks/zzdm;-><init>(Lcom/google/android/play/core/internal/zzct;Lcom/google/android/play/core/internal/zzct;Lcom/google/android/play/core/internal/zzct;Lcom/google/android/play/core/internal/zzct;Lcom/google/android/play/core/internal/zzct;Lcom/google/android/play/core/internal/zzct;Lcom/google/android/play/core/internal/zzct;)V
 
     instance-of v1, v10, Lcom/google/android/play/core/internal/zzcq;
 
@@ -623,11 +731,9 @@
     move-object v10, v1
 
     :goto_15
-    new-instance v1, Lcom/airbnb/lottie/value/LottieValueCallback;
+    new-instance v1, Lcom/google/android/play/core/assetpacks/zzt;
 
-    move-object/from16 v3, v31
-
-    invoke-direct {v1, v12, v3, v10}, Lcom/airbnb/lottie/value/LottieValueCallback;-><init>(Lcom/google/android/play/core/internal/zzct;Lcom/google/android/play/core/internal/zzct;Lcom/google/android/play/core/internal/zzct;)V
+    invoke-direct {v1, v11, v13, v10}, Lcom/google/android/play/core/assetpacks/zzt;-><init>(Lcom/google/android/play/core/internal/zzct;Lcom/google/android/play/core/internal/zzct;Lcom/google/android/play/core/internal/zzct;)V
 
     instance-of v2, v1, Lcom/google/android/play/core/internal/zzcq;
 
@@ -643,15 +749,15 @@
     move-object v1, v2
 
     :goto_16
-    iget-object v2, v13, Lcom/google/android/play/core/internal/zzcp;->zza:Lcom/google/android/play/core/internal/zzct;
+    iget-object v2, v0, Lcom/google/android/play/core/internal/zzcp;->zza:Lcom/google/android/play/core/internal/zzct;
 
     if-nez v2, :cond_1b
 
-    iput-object v1, v13, Lcom/google/android/play/core/internal/zzcp;->zza:Lcom/google/android/play/core/internal/zzct;
+    iput-object v1, v0, Lcom/google/android/play/core/internal/zzcp;->zza:Lcom/google/android/play/core/internal/zzct;
 
-    new-instance v1, Lcom/google/android/gms/internal/nearby/zzci;
+    new-instance v1, Lcom/google/android/play/core/splitinstall/zzt;
 
-    invoke-direct {v1, v12}, Lcom/google/android/gms/internal/nearby/zzci;-><init>(Lcom/google/android/play/core/internal/zzct;)V
+    invoke-direct {v1, v11}, Lcom/google/android/play/core/splitinstall/zzt;-><init>(Lcom/google/android/play/core/internal/zzct;)V
 
     instance-of v2, v1, Lcom/google/android/play/core/internal/zzcq;
 
@@ -669,27 +775,29 @@
     :goto_17
     new-instance v2, Lcom/google/android/play/core/assetpacks/zzm;
 
-    move-object v3, v14
+    move-object/from16 v3, v16
 
-    move-object v14, v2
+    move-object v13, v2
 
-    move-object/from16 v4, v18
+    move-object v4, v14
 
-    move-object v15, v4
+    move-object/from16 v14, v17
 
-    move-object/from16 v16, v13
+    move-object/from16 v5, v17
 
-    move-object/from16 v17, v0
+    move-object v15, v0
 
-    move-object/from16 v18, v1
+    move-object/from16 v16, v9
 
-    move-object/from16 v19, v29
+    move-object/from16 v17, v1
 
-    move-object/from16 v20, v3
+    move-object/from16 v19, v4
 
-    move-object/from16 v22, v28
+    move-object/from16 v21, v28
 
-    invoke-direct/range {v14 .. v24}, Lcom/google/android/play/core/assetpacks/zzm;-><init>(Lcom/google/android/play/core/internal/zzct;Lcom/google/android/play/core/internal/zzct;Lcom/google/android/play/core/internal/zzct;Lcom/google/android/play/core/internal/zzct;Lcom/google/android/play/core/internal/zzct;Lcom/google/android/play/core/internal/zzct;Lcom/google/android/play/core/internal/zzct;Lcom/google/android/play/core/internal/zzct;Lcom/google/android/play/core/internal/zzct;Lcom/google/android/play/core/internal/zzct;)V
+    move-object/from16 v22, v3
+
+    invoke-direct/range {v13 .. v23}, Lcom/google/android/play/core/assetpacks/zzm;-><init>(Lcom/google/android/play/core/internal/zzct;Lcom/google/android/play/core/internal/zzct;Lcom/google/android/play/core/internal/zzct;Lcom/google/android/play/core/internal/zzct;Lcom/google/android/play/core/internal/zzct;Lcom/google/android/play/core/internal/zzct;Lcom/google/android/play/core/internal/zzct;Lcom/google/android/play/core/internal/zzct;Lcom/google/android/play/core/internal/zzct;Lcom/google/android/play/core/internal/zzct;)V
 
     instance-of v0, v2, Lcom/google/android/play/core/internal/zzcq;
 
@@ -709,9 +817,9 @@
 
     iput-object v2, v0, Lcom/google/android/play/core/assetpacks/zzcd;->zzB:Lcom/google/android/play/core/internal/zzct;
 
-    new-instance v1, Lcom/airbnb/lottie/model/MutablePair;
+    new-instance v1, Lcom/google/android/play/core/assetpacks/zzs;
 
-    invoke-direct {v1, v2, v12}, Lcom/airbnb/lottie/model/MutablePair;-><init>(Lcom/google/android/play/core/internal/zzct;Lcom/google/android/play/core/internal/zzct;)V
+    invoke-direct {v1, v2, v11}, Lcom/google/android/play/core/assetpacks/zzs;-><init>(Lcom/google/android/play/core/internal/zzct;Lcom/google/android/play/core/internal/zzct;)V
 
     instance-of v1, v1, Lcom/google/android/play/core/internal/zzcq;
 
@@ -725,7 +833,7 @@
     :goto_19
     new-instance v1, Lcom/google/android/play/core/assetpacks/zzc;
 
-    invoke-direct {v1, v12, v4}, Lcom/google/android/play/core/assetpacks/zzc;-><init>(Lcom/google/android/play/core/internal/zzct;Lcom/google/android/play/core/internal/zzct;)V
+    invoke-direct {v1, v11, v5}, Lcom/google/android/play/core/assetpacks/zzc;-><init>(Lcom/google/android/play/core/internal/zzct;Lcom/google/android/play/core/internal/zzct;)V
 
     instance-of v2, v1, Lcom/google/android/play/core/internal/zzcq;
 

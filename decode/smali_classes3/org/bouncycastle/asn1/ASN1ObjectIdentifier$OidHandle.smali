@@ -1,4 +1,4 @@
-.class public Lorg/bouncycastle/asn1/ASN1ObjectIdentifier$OidHandle;
+.class Lorg/bouncycastle/asn1/ASN1ObjectIdentifier$OidHandle;
 .super Ljava/lang/Object;
 
 
@@ -14,9 +14,9 @@
 
 
 # instance fields
-.field public final enc:[B
+.field private final enc:[B
 
-.field public final key:I
+.field private final key:I
 
 
 # direct methods

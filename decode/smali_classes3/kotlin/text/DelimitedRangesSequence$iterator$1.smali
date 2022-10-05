@@ -47,11 +47,6 @@
 # direct methods
 .method public constructor <init>(Lkotlin/text/DelimitedRangesSequence;)V
     .locals 2
-    .annotation system Ldalvik/annotation/Signature;
-        value = {
-            "()V"
-        }
-    .end annotation
 
     iput-object p1, p0, Lkotlin/text/DelimitedRangesSequence$iterator$1;->this$0:Lkotlin/text/DelimitedRangesSequence;
 
@@ -130,9 +125,9 @@
     if-le v0, v2, :cond_3
 
     :cond_2
-    iget v0, p0, Lkotlin/text/DelimitedRangesSequence$iterator$1;->currentStartIndex:I
+    new-instance v0, Lkotlin/ranges/IntRange;
 
-    new-instance v1, Lkotlin/ranges/IntRange;
+    iget v1, p0, Lkotlin/text/DelimitedRangesSequence$iterator$1;->currentStartIndex:I
 
     iget-object v2, p0, Lkotlin/text/DelimitedRangesSequence$iterator$1;->this$0:Lkotlin/text/DelimitedRangesSequence;
 
@@ -142,9 +137,9 @@
 
     move-result v2
 
-    invoke-direct {v1, v0, v2}, Lkotlin/ranges/IntRange;-><init>(II)V
+    invoke-direct {v0, v1, v2}, Lkotlin/ranges/IntRange;-><init>(II)V
 
-    iput-object v1, p0, Lkotlin/text/DelimitedRangesSequence$iterator$1;->nextItem:Lkotlin/ranges/IntRange;
+    iput-object v0, p0, Lkotlin/text/DelimitedRangesSequence$iterator$1;->nextItem:Lkotlin/ranges/IntRange;
 
     iput v4, p0, Lkotlin/text/DelimitedRangesSequence$iterator$1;->nextSearchIndex:I
 
@@ -171,9 +166,9 @@
 
     if-nez v0, :cond_4
 
-    iget v0, p0, Lkotlin/text/DelimitedRangesSequence$iterator$1;->currentStartIndex:I
+    new-instance v0, Lkotlin/ranges/IntRange;
 
-    new-instance v1, Lkotlin/ranges/IntRange;
+    iget v1, p0, Lkotlin/text/DelimitedRangesSequence$iterator$1;->currentStartIndex:I
 
     iget-object v2, p0, Lkotlin/text/DelimitedRangesSequence$iterator$1;->this$0:Lkotlin/text/DelimitedRangesSequence;
 
@@ -183,9 +178,9 @@
 
     move-result v2
 
-    invoke-direct {v1, v0, v2}, Lkotlin/ranges/IntRange;-><init>(II)V
+    invoke-direct {v0, v1, v2}, Lkotlin/ranges/IntRange;-><init>(II)V
 
-    iput-object v1, p0, Lkotlin/text/DelimitedRangesSequence$iterator$1;->nextItem:Lkotlin/ranges/IntRange;
+    iput-object v0, p0, Lkotlin/text/DelimitedRangesSequence$iterator$1;->nextItem:Lkotlin/ranges/IntRange;
 
     iput v4, p0, Lkotlin/text/DelimitedRangesSequence$iterator$1;->nextSearchIndex:I
 
@@ -238,6 +233,18 @@
 
 .method public synthetic forEachRemaining(Lj$/util/function/Consumer;)V
     .locals 0
+
+    invoke-static {p0, p1}, Lj$/util/Iterator$-CC;->$default$forEachRemaining(Ljava/util/Iterator;Lj$/util/function/Consumer;)V
+
+    return-void
+.end method
+
+.method public synthetic forEachRemaining(Ljava/util/function/Consumer;)V
+    .locals 0
+
+    invoke-static {p1}, Lj$/util/function/Consumer$VivifiedWrapper;->convert(Ljava/util/function/Consumer;)Lj$/util/function/Consumer;
+
+    move-result-object p1
 
     invoke-static {p0, p1}, Lj$/util/Iterator$-CC;->$default$forEachRemaining(Ljava/util/Iterator;Lj$/util/function/Consumer;)V
 

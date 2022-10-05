@@ -35,14 +35,14 @@
 
 .field public static final fontWeight:I = 0x7f0401b1
 
-.field public static final layoutManager:I = 0x7f040216
+.field public static final layoutManager:I = 0x7f040217
 
-.field public static final recyclerViewStyle:I = 0x7f04033c
+.field public static final recyclerViewStyle:I = 0x7f04033d
 
-.field public static final reverseLayout:I = 0x7f040341
+.field public static final reverseLayout:I = 0x7f040342
 
-.field public static final spanCount:I = 0x7f040374
+.field public static final spanCount:I = 0x7f040376
 
-.field public static final stackFromEnd:I = 0x7f04037f
+.field public static final stackFromEnd:I = 0x7f040381
 
-.field public static final ttcIndex:I = 0x7f04043c
+.field public static final ttcIndex:I = 0x7f04043e

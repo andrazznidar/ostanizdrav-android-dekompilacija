@@ -304,10 +304,6 @@
     aput-byte v1, v2, v0
 
     :goto_1
-    const-string v0, "$this$toUtf8String"
-
-    invoke-static {v2, v0}, Lkotlin/jvm/internal/Intrinsics;->checkNotNullParameter(Ljava/lang/Object;Ljava/lang/String;)V
-
     sget-object v0, Lkotlin/text/Charsets;->UTF_8:Ljava/nio/charset/Charset;
 
     new-instance v1, Ljava/lang/String;
@@ -653,6 +649,129 @@
     return-object v1
 .end method
 
+.method public substring(II)Lokio/ByteString;
+    .locals 4
+
+    const/4 v0, 0x1
+
+    const/4 v1, 0x0
+
+    if-ltz p1, :cond_0
+
+    move v2, v0
+
+    goto :goto_0
+
+    :cond_0
+    move v2, v1
+
+    :goto_0
+    if-eqz v2, :cond_6
+
+    iget-object v2, p0, Lokio/ByteString;->data:[B
+
+    array-length v3, v2
+
+    if-gt p2, v3, :cond_1
+
+    move v3, v0
+
+    goto :goto_1
+
+    :cond_1
+    move v3, v1
+
+    :goto_1
+    if-eqz v3, :cond_5
+
+    sub-int v3, p2, p1
+
+    if-ltz v3, :cond_2
+
+    goto :goto_2
+
+    :cond_2
+    move v0, v1
+
+    :goto_2
+    if-eqz v0, :cond_4
+
+    if-nez p1, :cond_3
+
+    array-length v0, v2
+
+    if-ne p2, v0, :cond_3
+
+    move-object v0, p0
+
+    goto :goto_3
+
+    :cond_3
+    new-instance v0, Lokio/ByteString;
+
+    invoke-static {v2, p1, p2}, Lkotlin/collections/ArraysKt___ArraysJvmKt;->copyOfRange([BII)[B
+
+    move-result-object p1
+
+    invoke-direct {v0, p1}, Lokio/ByteString;-><init>([B)V
+
+    :goto_3
+    return-object v0
+
+    :cond_4
+    new-instance p1, Ljava/lang/IllegalArgumentException;
+
+    const-string p2, "endIndex < beginIndex"
+
+    invoke-virtual {p2}, Ljava/lang/Object;->toString()Ljava/lang/String;
+
+    move-result-object p2
+
+    invoke-direct {p1, p2}, Ljava/lang/IllegalArgumentException;-><init>(Ljava/lang/String;)V
+
+    throw p1
+
+    :cond_5
+    const-string p1, "endIndex > length("
+
+    invoke-static {p1}, Landroid/support/v4/media/RatingCompat$$ExternalSyntheticOutline0;->m(Ljava/lang/String;)Ljava/lang/StringBuilder;
+
+    move-result-object p1
+
+    iget-object p2, p0, Lokio/ByteString;->data:[B
+
+    array-length p2, p2
+
+    const/16 v0, 0x29
+
+    invoke-static {p1, p2, v0}, Landroidx/core/graphics/Insets$$ExternalSyntheticOutline0;->m(Ljava/lang/StringBuilder;IC)Ljava/lang/String;
+
+    move-result-object p1
+
+    new-instance p2, Ljava/lang/IllegalArgumentException;
+
+    invoke-virtual {p1}, Ljava/lang/Object;->toString()Ljava/lang/String;
+
+    move-result-object p1
+
+    invoke-direct {p2, p1}, Ljava/lang/IllegalArgumentException;-><init>(Ljava/lang/String;)V
+
+    throw p2
+
+    :cond_6
+    new-instance p1, Ljava/lang/IllegalArgumentException;
+
+    const-string p2, "beginIndex < 0"
+
+    invoke-virtual {p2}, Ljava/lang/Object;->toString()Ljava/lang/String;
+
+    move-result-object p2
+
+    invoke-direct {p1, p2}, Ljava/lang/IllegalArgumentException;-><init>(Ljava/lang/String;)V
+
+    throw p1
+.end method
+
 .method public toAsciiLowercase()Lokio/ByteString;
     .locals 6
 
@@ -806,17 +925,17 @@
 
     aget-byte v7, v1, v3
 
-    const/16 v8, 0xa
+    const/16 v8, 0xd
 
-    const/16 v9, 0xd
+    const/16 v9, 0xa
 
-    const/16 v10, 0x9f
+    const/16 v10, 0x1f
 
     const/16 v11, 0x7f
 
-    const/16 v12, 0x1f
+    const/16 v12, 0x9f
 
-    const v14, 0xfffd
+    const v13, 0xfffd
 
     const/high16 v15, 0x10000
 
@@ -829,13 +948,13 @@
     goto/16 :goto_1b
 
     :cond_3
-    if-eq v7, v8, :cond_8
-
     if-eq v7, v9, :cond_8
+
+    if-eq v7, v8, :cond_8
 
     if-ltz v7, :cond_4
 
-    if-ge v12, v7, :cond_6
+    if-ge v10, v7, :cond_6
 
     :cond_4
     if-le v11, v7, :cond_5
@@ -843,7 +962,7 @@
     goto :goto_2
 
     :cond_5
-    if-lt v10, v7, :cond_7
+    if-lt v12, v7, :cond_7
 
     :cond_6
     const/4 v4, 0x1
@@ -858,7 +977,7 @@
     if-nez v4, :cond_46
 
     :cond_8
-    if-ne v7, v14, :cond_9
+    if-ne v7, v13, :cond_9
 
     goto/16 :goto_1a
 
@@ -897,13 +1016,13 @@
     goto/16 :goto_1b
 
     :cond_b
-    if-eq v3, v8, :cond_10
-
     if-eq v3, v9, :cond_10
+
+    if-eq v3, v8, :cond_10
 
     if-ltz v3, :cond_c
 
-    if-ge v12, v3, :cond_e
+    if-ge v10, v3, :cond_e
 
     :cond_c
     if-le v11, v3, :cond_d
@@ -911,7 +1030,7 @@
     goto :goto_6
 
     :cond_d
-    if-lt v10, v3, :cond_f
+    if-lt v12, v3, :cond_f
 
     :cond_e
     const/4 v4, 0x1
@@ -926,7 +1045,7 @@
     if-nez v4, :cond_46
 
     :cond_10
-    if-ne v3, v14, :cond_11
+    if-ne v3, v13, :cond_11
 
     goto/16 :goto_1a
 
@@ -948,13 +1067,13 @@
     goto :goto_5
 
     :cond_13
-    shr-int/lit8 v14, v7, 0x5
+    shr-int/lit8 v13, v7, 0x5
 
     const/4 v15, -0x2
 
-    const/16 v13, 0x80
+    const/16 v14, 0x80
 
-    if-ne v14, v15, :cond_20
+    if-ne v13, v15, :cond_20
 
     add-int/lit8 v7, v3, 0x1
 
@@ -965,13 +1084,13 @@
     goto/16 :goto_1b
 
     :cond_14
-    aget-byte v14, v1, v3
+    aget-byte v13, v1, v3
 
     aget-byte v7, v1, v7
 
     and-int/lit16 v15, v7, 0xc0
 
-    if-ne v15, v13, :cond_15
+    if-ne v15, v14, :cond_15
 
     const/4 v15, 0x1
 
@@ -990,11 +1109,11 @@
     :cond_16
     xor-int/lit16 v7, v7, 0xf80
 
-    shl-int/lit8 v14, v14, 0x6
+    shl-int/lit8 v13, v13, 0x6
 
-    xor-int/2addr v7, v14
+    xor-int/2addr v7, v13
 
-    if-ge v7, v13, :cond_17
+    if-ge v7, v14, :cond_17
 
     if-ne v4, v6, :cond_46
 
@@ -1008,13 +1127,13 @@
     goto/16 :goto_1b
 
     :cond_18
-    if-eq v7, v8, :cond_1d
-
     if-eq v7, v9, :cond_1d
+
+    if-eq v7, v8, :cond_1d
 
     if-ltz v7, :cond_19
 
-    if-ge v12, v7, :cond_1b
+    if-ge v10, v7, :cond_1b
 
     :cond_19
     if-le v11, v7, :cond_1a
@@ -1022,7 +1141,7 @@
     goto :goto_a
 
     :cond_1a
-    if-lt v10, v7, :cond_1c
+    if-lt v12, v7, :cond_1c
 
     :cond_1b
     const/4 v4, 0x1
@@ -1048,17 +1167,15 @@
 
     if-ge v7, v4, :cond_1f
 
-    const/4 v4, 0x1
-
-    move/from16 v16, v4
+    const/4 v14, 0x1
 
     goto :goto_c
 
     :cond_1f
-    const/16 v16, 0x2
+    const/4 v14, 0x2
 
     :goto_c
-    add-int v5, v5, v16
+    add-int/2addr v5, v14
 
     add-int/lit8 v3, v3, 0x2
 
@@ -1086,13 +1203,13 @@
     :cond_21
     aget-byte v10, v1, v3
 
-    add-int/lit8 v14, v3, 0x1
+    add-int/lit8 v13, v3, 0x1
 
-    aget-byte v14, v1, v14
+    aget-byte v13, v1, v13
 
-    and-int/lit16 v15, v14, 0xc0
+    and-int/lit16 v15, v13, 0xc0
 
-    if-ne v15, v13, :cond_22
+    if-ne v15, v14, :cond_22
 
     const/4 v15, 0x1
 
@@ -1113,28 +1230,28 @@
 
     and-int/lit16 v15, v7, 0xc0
 
-    if-ne v15, v13, :cond_24
+    if-ne v15, v14, :cond_24
 
-    const/4 v13, 0x1
+    const/4 v14, 0x1
 
     goto :goto_e
 
     :cond_24
-    const/4 v13, 0x0
+    const/4 v14, 0x0
 
     :goto_e
-    if-nez v13, :cond_25
+    if-nez v14, :cond_25
 
     if-ne v4, v6, :cond_46
 
     goto/16 :goto_1b
 
     :cond_25
-    const v13, -0x1e080
+    const v14, -0x1e080
 
-    xor-int/2addr v7, v13
+    xor-int/2addr v7, v14
 
-    shl-int/lit8 v13, v14, 0x6
+    shl-int/lit8 v13, v13, 0x6
 
     xor-int/2addr v7, v13
 
@@ -1171,9 +1288,9 @@
     goto/16 :goto_1b
 
     :cond_29
-    if-eq v7, v8, :cond_2e
-
     if-eq v7, v9, :cond_2e
+
+    if-eq v7, v8, :cond_2e
 
     if-ltz v7, :cond_2a
 
@@ -1217,15 +1334,15 @@
 
     if-ge v7, v4, :cond_30
 
-    const/4 v13, 0x1
+    const/4 v14, 0x1
 
     goto :goto_12
 
     :cond_30
-    const/4 v13, 0x2
+    const/4 v14, 0x2
 
     :goto_12
-    add-int/2addr v5, v13
+    add-int/2addr v5, v14
 
     add-int/lit8 v3, v3, 0x3
 
@@ -1247,38 +1364,38 @@
     goto/16 :goto_1b
 
     :cond_32
-    aget-byte v9, v1, v3
+    aget-byte v8, v1, v3
 
     add-int/lit8 v10, v3, 0x1
 
     aget-byte v10, v1, v10
 
-    and-int/lit16 v14, v10, 0xc0
+    and-int/lit16 v13, v10, 0xc0
 
-    if-ne v14, v13, :cond_33
+    if-ne v13, v14, :cond_33
 
-    const/4 v14, 0x1
+    const/4 v13, 0x1
 
     goto :goto_13
 
     :cond_33
-    const/4 v14, 0x0
+    const/4 v13, 0x0
 
     :goto_13
-    if-nez v14, :cond_34
+    if-nez v13, :cond_34
 
     if-ne v4, v6, :cond_46
 
     goto/16 :goto_1b
 
     :cond_34
-    add-int/lit8 v14, v3, 0x2
+    add-int/lit8 v13, v3, 0x2
 
-    aget-byte v14, v1, v14
+    aget-byte v13, v1, v13
 
-    and-int/lit16 v15, v14, 0xc0
+    and-int/lit16 v15, v13, 0xc0
 
-    if-ne v15, v13, :cond_35
+    if-ne v15, v14, :cond_35
 
     const/4 v15, 0x1
 
@@ -1299,28 +1416,28 @@
 
     and-int/lit16 v15, v7, 0xc0
 
-    if-ne v15, v13, :cond_37
+    if-ne v15, v14, :cond_37
 
-    const/4 v13, 0x1
+    const/4 v14, 0x1
 
     goto :goto_15
 
     :cond_37
-    const/4 v13, 0x0
+    const/4 v14, 0x0
 
     :goto_15
-    if-nez v13, :cond_38
+    if-nez v14, :cond_38
 
     if-ne v4, v6, :cond_46
 
     goto/16 :goto_1b
 
     :cond_38
-    const v13, 0x381f80
+    const v14, 0x381f80
 
-    xor-int/2addr v7, v13
+    xor-int/2addr v7, v14
 
-    shl-int/lit8 v13, v14, 0x6
+    shl-int/lit8 v13, v13, 0x6
 
     xor-int/2addr v7, v13
 
@@ -1328,13 +1445,13 @@
 
     xor-int/2addr v7, v10
 
-    shl-int/lit8 v9, v9, 0x12
+    shl-int/lit8 v8, v8, 0x12
 
-    xor-int/2addr v7, v9
+    xor-int/2addr v7, v8
 
-    const v9, 0x10ffff
+    const v8, 0x10ffff
 
-    if-le v7, v9, :cond_39
+    if-le v7, v8, :cond_39
 
     if-ne v4, v6, :cond_46
 
@@ -1354,23 +1471,23 @@
 
     :cond_3b
     :goto_16
-    const/high16 v9, 0x10000
+    const/high16 v8, 0x10000
 
-    if-ge v7, v9, :cond_3c
+    if-ge v7, v8, :cond_3c
 
     if-ne v4, v6, :cond_46
 
     goto :goto_1b
 
     :cond_3c
-    add-int/lit8 v9, v4, 0x1
+    add-int/lit8 v8, v4, 0x1
 
     if-ne v4, v6, :cond_3d
 
     goto :goto_1b
 
     :cond_3d
-    if-eq v7, v8, :cond_42
+    if-eq v7, v9, :cond_42
 
     const/16 v4, 0xd
 
@@ -1418,19 +1535,19 @@
 
     if-ge v7, v4, :cond_44
 
-    const/4 v13, 0x1
+    const/4 v14, 0x1
 
     goto :goto_19
 
     :cond_44
-    const/4 v13, 0x2
+    const/4 v14, 0x2
 
     :goto_19
-    add-int/2addr v5, v13
+    add-int/2addr v5, v14
 
     add-int/lit8 v3, v3, 0x4
 
-    move v4, v9
+    move v4, v8
 
     goto/16 :goto_1
 
@@ -1523,19 +1640,11 @@
     :cond_4a
     new-instance v4, Lokio/ByteString;
 
-    array-length v5, v3
-
-    invoke-static {v6, v5}, Lkotlin/collections/ArraysKt__ArraysKt;->copyOfRangeToIndexCheck(II)V
-
     const/4 v5, 0x0
 
-    invoke-static {v3, v5, v6}, Ljava/util/Arrays;->copyOfRange([BII)[B
+    invoke-static {v3, v5, v6}, Lkotlin/collections/ArraysKt___ArraysJvmKt;->copyOfRange([BII)[B
 
     move-result-object v3
-
-    const-string v5, "java.util.Arrays.copyOfR\u2026this, fromIndex, toIndex)"
-
-    invoke-static {v3, v5}, Lkotlin/jvm/internal/Intrinsics;->checkNotNullExpressionValue(Ljava/lang/Object;Ljava/lang/String;)V
 
     invoke-direct {v4, v3}, Lokio/ByteString;-><init>([B)V
 

@@ -14,7 +14,7 @@
 
 
 # static fields
-.field public static final synthetic $VALUES:[Lkotlin/reflect/jvm/internal/impl/types/model/TypeVariance;
+.field private static final synthetic $VALUES:[Lkotlin/reflect/jvm/internal/impl/types/model/TypeVariance;
 
 .field public static final enum IN:Lkotlin/reflect/jvm/internal/impl/types/model/TypeVariance;
 
@@ -24,12 +24,40 @@
 
 
 # instance fields
-.field public final presentation:Ljava/lang/String;
+.field private final presentation:Ljava/lang/String;
 
 
 # direct methods
+.method private static final synthetic $values()[Lkotlin/reflect/jvm/internal/impl/types/model/TypeVariance;
+    .locals 3
+
+    const/4 v0, 0x3
+
+    new-array v0, v0, [Lkotlin/reflect/jvm/internal/impl/types/model/TypeVariance;
+
+    sget-object v1, Lkotlin/reflect/jvm/internal/impl/types/model/TypeVariance;->IN:Lkotlin/reflect/jvm/internal/impl/types/model/TypeVariance;
+
+    const/4 v2, 0x0
+
+    aput-object v1, v0, v2
+
+    sget-object v1, Lkotlin/reflect/jvm/internal/impl/types/model/TypeVariance;->OUT:Lkotlin/reflect/jvm/internal/impl/types/model/TypeVariance;
+
+    const/4 v2, 0x1
+
+    aput-object v1, v0, v2
+
+    sget-object v1, Lkotlin/reflect/jvm/internal/impl/types/model/TypeVariance;->INV:Lkotlin/reflect/jvm/internal/impl/types/model/TypeVariance;
+
+    const/4 v2, 0x2
+
+    aput-object v1, v0, v2
+
+    return-object v0
+.end method
+
 .method public static constructor <clinit>()V
-    .locals 8
+    .locals 4
 
     new-instance v0, Lkotlin/reflect/jvm/internal/impl/types/model/TypeVariance;
 
@@ -43,46 +71,40 @@
 
     sput-object v0, Lkotlin/reflect/jvm/internal/impl/types/model/TypeVariance;->IN:Lkotlin/reflect/jvm/internal/impl/types/model/TypeVariance;
 
-    new-instance v1, Lkotlin/reflect/jvm/internal/impl/types/model/TypeVariance;
+    new-instance v0, Lkotlin/reflect/jvm/internal/impl/types/model/TypeVariance;
 
-    const-string v3, "OUT"
+    const-string v1, "OUT"
 
-    const/4 v4, 0x1
+    const/4 v2, 0x1
 
-    const-string v5, "out"
+    const-string v3, "out"
 
-    invoke-direct {v1, v3, v4, v5}, Lkotlin/reflect/jvm/internal/impl/types/model/TypeVariance;-><init>(Ljava/lang/String;ILjava/lang/String;)V
+    invoke-direct {v0, v1, v2, v3}, Lkotlin/reflect/jvm/internal/impl/types/model/TypeVariance;-><init>(Ljava/lang/String;ILjava/lang/String;)V
 
-    sput-object v1, Lkotlin/reflect/jvm/internal/impl/types/model/TypeVariance;->OUT:Lkotlin/reflect/jvm/internal/impl/types/model/TypeVariance;
+    sput-object v0, Lkotlin/reflect/jvm/internal/impl/types/model/TypeVariance;->OUT:Lkotlin/reflect/jvm/internal/impl/types/model/TypeVariance;
 
-    new-instance v3, Lkotlin/reflect/jvm/internal/impl/types/model/TypeVariance;
+    new-instance v0, Lkotlin/reflect/jvm/internal/impl/types/model/TypeVariance;
 
-    const-string v5, "INV"
+    const-string v1, "INV"
 
-    const/4 v6, 0x2
+    const/4 v2, 0x2
 
-    const-string v7, ""
+    const-string v3, ""
 
-    invoke-direct {v3, v5, v6, v7}, Lkotlin/reflect/jvm/internal/impl/types/model/TypeVariance;-><init>(Ljava/lang/String;ILjava/lang/String;)V
+    invoke-direct {v0, v1, v2, v3}, Lkotlin/reflect/jvm/internal/impl/types/model/TypeVariance;-><init>(Ljava/lang/String;ILjava/lang/String;)V
 
-    sput-object v3, Lkotlin/reflect/jvm/internal/impl/types/model/TypeVariance;->INV:Lkotlin/reflect/jvm/internal/impl/types/model/TypeVariance;
+    sput-object v0, Lkotlin/reflect/jvm/internal/impl/types/model/TypeVariance;->INV:Lkotlin/reflect/jvm/internal/impl/types/model/TypeVariance;
 
-    const/4 v5, 0x3
+    invoke-static {}, Lkotlin/reflect/jvm/internal/impl/types/model/TypeVariance;->$values()[Lkotlin/reflect/jvm/internal/impl/types/model/TypeVariance;
 
-    new-array v5, v5, [Lkotlin/reflect/jvm/internal/impl/types/model/TypeVariance;
+    move-result-object v0
 
-    aput-object v0, v5, v2
-
-    aput-object v1, v5, v4
-
-    aput-object v3, v5, v6
-
-    sput-object v5, Lkotlin/reflect/jvm/internal/impl/types/model/TypeVariance;->$VALUES:[Lkotlin/reflect/jvm/internal/impl/types/model/TypeVariance;
+    sput-object v0, Lkotlin/reflect/jvm/internal/impl/types/model/TypeVariance;->$VALUES:[Lkotlin/reflect/jvm/internal/impl/types/model/TypeVariance;
 
     return-void
 .end method
 
-.method public constructor <init>(Ljava/lang/String;ILjava/lang/String;)V
+.method private constructor <init>(Ljava/lang/String;ILjava/lang/String;)V
     .locals 0
     .annotation system Ldalvik/annotation/Signature;
         value = {
@@ -102,10 +124,6 @@
 .method public static valueOf(Ljava/lang/String;)Lkotlin/reflect/jvm/internal/impl/types/model/TypeVariance;
     .locals 1
 
-    const-string v0, "value"
-
-    invoke-static {p0, v0}, Lkotlin/jvm/internal/Intrinsics;->checkNotNullParameter(Ljava/lang/Object;Ljava/lang/String;)V
-
     const-class v0, Lkotlin/reflect/jvm/internal/impl/types/model/TypeVariance;
 
     invoke-static {v0, p0}, Ljava/lang/Enum;->valueOf(Ljava/lang/Class;Ljava/lang/String;)Ljava/lang/Enum;
@@ -118,21 +136,17 @@
 .end method
 
 .method public static values()[Lkotlin/reflect/jvm/internal/impl/types/model/TypeVariance;
-    .locals 4
+    .locals 1
 
     sget-object v0, Lkotlin/reflect/jvm/internal/impl/types/model/TypeVariance;->$VALUES:[Lkotlin/reflect/jvm/internal/impl/types/model/TypeVariance;
 
-    array-length v1, v0
+    invoke-virtual {v0}, [Ljava/lang/Object;->clone()Ljava/lang/Object;
 
-    new-array v1, v1, [Lkotlin/reflect/jvm/internal/impl/types/model/TypeVariance;
+    move-result-object v0
 
-    array-length v2, v0
+    check-cast v0, [Lkotlin/reflect/jvm/internal/impl/types/model/TypeVariance;
 
-    const/4 v3, 0x0
-
-    invoke-static {v0, v3, v1, v3, v2}, Ljava/lang/System;->arraycopy(Ljava/lang/Object;ILjava/lang/Object;II)V
-
-    return-object v1
+    return-object v0
 .end method
 
 

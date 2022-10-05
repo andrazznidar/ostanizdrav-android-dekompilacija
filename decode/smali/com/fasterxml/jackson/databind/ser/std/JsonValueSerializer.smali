@@ -63,7 +63,7 @@
         }
     .end annotation
 
-    invoke-virtual {p1}, Lcom/fasterxml/jackson/databind/introspect/Annotated;->getType()Lcom/fasterxml/jackson/databind/JavaType;
+    invoke-virtual {p1}, Lorg/joda/time/Chronology;->getType()Lcom/fasterxml/jackson/databind/JavaType;
 
     move-result-object v0
 
@@ -71,7 +71,7 @@
 
     iput-object p1, p0, Lcom/fasterxml/jackson/databind/ser/std/JsonValueSerializer;->_accessor:Lcom/fasterxml/jackson/databind/introspect/AnnotatedMember;
 
-    invoke-virtual {p1}, Lcom/fasterxml/jackson/databind/introspect/Annotated;->getType()Lcom/fasterxml/jackson/databind/JavaType;
+    invoke-virtual {p1}, Lorg/joda/time/Chronology;->getType()Lcom/fasterxml/jackson/databind/JavaType;
 
     move-result-object p1
 
@@ -481,7 +481,7 @@
 
     iget-object v1, p0, Lcom/fasterxml/jackson/databind/ser/std/JsonValueSerializer;->_accessor:Lcom/fasterxml/jackson/databind/introspect/AnnotatedMember;
 
-    invoke-virtual {v1}, Lcom/fasterxml/jackson/databind/introspect/Annotated;->getName()Ljava/lang/String;
+    invoke-virtual {v1}, Lorg/joda/time/Chronology;->getName()Ljava/lang/String;
 
     move-result-object v1
 
@@ -580,7 +580,7 @@
 
     iget-object v0, p0, Lcom/fasterxml/jackson/databind/ser/std/JsonValueSerializer;->_accessor:Lcom/fasterxml/jackson/databind/introspect/AnnotatedMember;
 
-    invoke-virtual {v0}, Lcom/fasterxml/jackson/databind/introspect/Annotated;->getName()Ljava/lang/String;
+    invoke-virtual {v0}, Lorg/joda/time/Chronology;->getName()Ljava/lang/String;
 
     move-result-object v0
 
@@ -624,7 +624,7 @@
 
     iget-object v1, p0, Lcom/fasterxml/jackson/databind/ser/std/JsonValueSerializer;->_accessor:Lcom/fasterxml/jackson/databind/introspect/AnnotatedMember;
 
-    invoke-virtual {v1}, Lcom/fasterxml/jackson/databind/introspect/Annotated;->getName()Ljava/lang/String;
+    invoke-virtual {v1}, Lorg/joda/time/Chronology;->getName()Ljava/lang/String;
 
     move-result-object v1
 

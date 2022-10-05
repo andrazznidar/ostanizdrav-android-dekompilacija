@@ -156,10 +156,6 @@
 
     iget-object p1, p0, Lde/rki/coronawarnapp/contactdiary/ui/day/tabs/person/ContactDiaryPersonListViewModel$onCircumstancesChanged$1;->$circumstances:Ljava/lang/String;
 
-    const-string v1, "null cannot be cast to non-null type kotlin.CharSequence"
-
-    invoke-static {p1, v1}, Ljava/util/Objects;->requireNonNull(Ljava/lang/Object;Ljava/lang/String;)Ljava/lang/Object;
-
     invoke-static {p1}, Lkotlin/text/StringsKt__StringsKt;->trim(Ljava/lang/CharSequence;)Ljava/lang/CharSequence;
 
     move-result-object p1
@@ -170,7 +166,7 @@
 
     const/16 v1, 0xfa
 
-    invoke-static {p1, v1}, Lcom/google/android/material/math/MathUtils;->trimToLength(Ljava/lang/String;I)Ljava/lang/String;
+    invoke-static {p1, v1}, Lkotlinx/coroutines/channels/ChannelsKt;->trimToLength(Ljava/lang/String;I)Ljava/lang/String;
 
     move-result-object p1
 

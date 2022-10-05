@@ -19,7 +19,7 @@
     .end annotation
 .end field
 
-.field public final qrCodeErrorCorrectionLevel:Lcom/google/zxing/qrcode/decoder/ErrorCorrectionLevel;
+.field public final qrCodeErrorCorrectionLevel:I
 
 .field public final revokedTraceLocationVersions:Ljava/util/List;
     .annotation system Ldalvik/annotation/Signature;
@@ -56,17 +56,17 @@
 
     move-object v0, p0
 
-    invoke-direct/range {v0 .. v7}, Lde/rki/coronawarnapp/appconfig/PresenceTracingConfigContainer;-><init>(Lcom/google/zxing/qrcode/decoder/ErrorCorrectionLevel;Ljava/util/List;Lde/rki/coronawarnapp/appconfig/PresenceTracingRiskCalculationParamContainer;Lde/rki/coronawarnapp/appconfig/PresenceTracingSubmissionParamContainer;Lde/rki/coronawarnapp/appconfig/PlausibleDeniabilityParametersContainer;Ljava/util/List;I)V
+    invoke-direct/range {v0 .. v7}, Lde/rki/coronawarnapp/appconfig/PresenceTracingConfigContainer;-><init>(ILjava/util/List;Lde/rki/coronawarnapp/appconfig/PresenceTracingRiskCalculationParamContainer;Lde/rki/coronawarnapp/appconfig/PresenceTracingSubmissionParamContainer;Lde/rki/coronawarnapp/appconfig/PlausibleDeniabilityParametersContainer;Ljava/util/List;I)V
 
     return-void
 .end method
 
-.method public constructor <init>(Lcom/google/zxing/qrcode/decoder/ErrorCorrectionLevel;Ljava/util/List;Lde/rki/coronawarnapp/appconfig/PresenceTracingRiskCalculationParamContainer;Lde/rki/coronawarnapp/appconfig/PresenceTracingSubmissionParamContainer;Lde/rki/coronawarnapp/appconfig/PlausibleDeniabilityParametersContainer;Ljava/util/List;)V
+.method public constructor <init>(ILjava/util/List;Lde/rki/coronawarnapp/appconfig/PresenceTracingRiskCalculationParamContainer;Lde/rki/coronawarnapp/appconfig/PresenceTracingSubmissionParamContainer;Lde/rki/coronawarnapp/appconfig/PlausibleDeniabilityParametersContainer;Ljava/util/List;)V
     .locals 1
     .annotation system Ldalvik/annotation/Signature;
         value = {
             "(",
-            "Lcom/google/zxing/qrcode/decoder/ErrorCorrectionLevel;",
+            "Ljava/lang/Object;",
             "Ljava/util/List<",
             "Ljava/lang/Integer;",
             ">;",
@@ -82,7 +82,7 @@
 
     const-string v0, "qrCodeErrorCorrectionLevel"
 
-    invoke-static {p1, v0}, Lkotlin/jvm/internal/Intrinsics;->checkNotNullParameter(Ljava/lang/Object;Ljava/lang/String;)V
+    invoke-static {p1, v0}, Lkotlin/jvm/internal/Intrinsics$$ExternalSyntheticCheckNotZero0;->m(ILjava/lang/String;)V
 
     const-string v0, "revokedTraceLocationVersions"
 
@@ -106,7 +106,7 @@
 
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
-    iput-object p1, p0, Lde/rki/coronawarnapp/appconfig/PresenceTracingConfigContainer;->qrCodeErrorCorrectionLevel:Lcom/google/zxing/qrcode/decoder/ErrorCorrectionLevel;
+    iput p1, p0, Lde/rki/coronawarnapp/appconfig/PresenceTracingConfigContainer;->qrCodeErrorCorrectionLevel:I
 
     iput-object p2, p0, Lde/rki/coronawarnapp/appconfig/PresenceTracingConfigContainer;->revokedTraceLocationVersions:Ljava/util/List;
 
@@ -121,19 +121,19 @@
     return-void
 .end method
 
-.method public synthetic constructor <init>(Lcom/google/zxing/qrcode/decoder/ErrorCorrectionLevel;Ljava/util/List;Lde/rki/coronawarnapp/appconfig/PresenceTracingRiskCalculationParamContainer;Lde/rki/coronawarnapp/appconfig/PresenceTracingSubmissionParamContainer;Lde/rki/coronawarnapp/appconfig/PlausibleDeniabilityParametersContainer;Ljava/util/List;I)V
-    .locals 14
+.method public synthetic constructor <init>(ILjava/util/List;Lde/rki/coronawarnapp/appconfig/PresenceTracingRiskCalculationParamContainer;Lde/rki/coronawarnapp/appconfig/PresenceTracingSubmissionParamContainer;Lde/rki/coronawarnapp/appconfig/PlausibleDeniabilityParametersContainer;Ljava/util/List;I)V
+    .locals 13
 
     and-int/lit8 v0, p7, 0x1
 
     if-eqz v0, :cond_0
 
-    sget-object v0, Lcom/google/zxing/qrcode/decoder/ErrorCorrectionLevel;->H:Lcom/google/zxing/qrcode/decoder/ErrorCorrectionLevel;
+    const/4 v0, 0x4
 
     goto :goto_0
 
     :cond_0
-    move-object v0, p1
+    move v0, p1
 
     :goto_0
     and-int/lit8 v1, p7, 0x2
@@ -145,7 +145,7 @@
     goto :goto_1
 
     :cond_1
-    move-object/from16 v1, p2
+    move-object v1, p2
 
     :goto_1
     and-int/lit8 v2, p7, 0x4
@@ -182,42 +182,47 @@
     move-object/from16 v4, p4
 
     :goto_3
-    and-int/lit8 v5, p7, 0x10
+    and-int/lit8 v3, p7, 0x10
 
-    if-eqz v5, :cond_4
+    if-eqz v3, :cond_4
 
-    new-instance v5, Lde/rki/coronawarnapp/appconfig/PlausibleDeniabilityParametersContainer;
+    new-instance v3, Lde/rki/coronawarnapp/appconfig/PlausibleDeniabilityParametersContainer;
 
-    const/4 v7, 0x0
+    const/4 v6, 0x0
 
-    const-wide/16 v8, 0x0
+    const-wide/16 v7, 0x0
 
-    const-wide/16 v10, 0x0
+    const-wide/16 v9, 0x0
 
-    const/4 v12, 0x0
+    const/4 v11, 0x0
 
-    const/16 v13, 0xf
+    const/16 v12, 0xf
 
-    move-object v6, v5
+    move-object v5, v3
 
-    invoke-direct/range {v6 .. v13}, Lde/rki/coronawarnapp/appconfig/PlausibleDeniabilityParametersContainer;-><init>(Ljava/util/List;DDLjava/util/List;I)V
+    invoke-direct/range {v5 .. v12}, Lde/rki/coronawarnapp/appconfig/PlausibleDeniabilityParametersContainer;-><init>(Ljava/util/List;DDLjava/util/List;I)V
 
     goto :goto_4
 
     :cond_4
-    move-object/from16 v5, p5
+    move-object/from16 v3, p5
 
     :goto_4
-    and-int/lit8 v6, p7, 0x20
+    and-int/lit8 v5, p7, 0x20
 
-    if-eqz v6, :cond_5
+    if-eqz v5, :cond_5
 
-    sget-object v3, Lkotlin/collections/EmptyList;->INSTANCE:Lkotlin/collections/EmptyList;
+    sget-object v5, Lkotlin/collections/EmptyList;->INSTANCE:Lkotlin/collections/EmptyList;
+
+    goto :goto_5
 
     :cond_5
+    move-object/from16 v5, p6
+
+    :goto_5
     move-object p1, p0
 
-    move-object/from16 p2, v0
+    move p2, v0
 
     move-object/from16 p3, v1
 
@@ -225,11 +230,11 @@
 
     move-object/from16 p5, v4
 
-    move-object/from16 p6, v5
+    move-object/from16 p6, v3
 
-    move-object/from16 p7, v3
+    move-object/from16 p7, v5
 
-    invoke-direct/range {p1 .. p7}, Lde/rki/coronawarnapp/appconfig/PresenceTracingConfigContainer;-><init>(Lcom/google/zxing/qrcode/decoder/ErrorCorrectionLevel;Ljava/util/List;Lde/rki/coronawarnapp/appconfig/PresenceTracingRiskCalculationParamContainer;Lde/rki/coronawarnapp/appconfig/PresenceTracingSubmissionParamContainer;Lde/rki/coronawarnapp/appconfig/PlausibleDeniabilityParametersContainer;Ljava/util/List;)V
+    invoke-direct/range {p1 .. p7}, Lde/rki/coronawarnapp/appconfig/PresenceTracingConfigContainer;-><init>(ILjava/util/List;Lde/rki/coronawarnapp/appconfig/PresenceTracingRiskCalculationParamContainer;Lde/rki/coronawarnapp/appconfig/PresenceTracingSubmissionParamContainer;Lde/rki/coronawarnapp/appconfig/PlausibleDeniabilityParametersContainer;Ljava/util/List;)V
 
     return-void
 .end method
@@ -257,9 +262,9 @@
     :cond_1
     check-cast p1, Lde/rki/coronawarnapp/appconfig/PresenceTracingConfigContainer;
 
-    iget-object v1, p0, Lde/rki/coronawarnapp/appconfig/PresenceTracingConfigContainer;->qrCodeErrorCorrectionLevel:Lcom/google/zxing/qrcode/decoder/ErrorCorrectionLevel;
+    iget v1, p0, Lde/rki/coronawarnapp/appconfig/PresenceTracingConfigContainer;->qrCodeErrorCorrectionLevel:I
 
-    iget-object v3, p1, Lde/rki/coronawarnapp/appconfig/PresenceTracingConfigContainer;->qrCodeErrorCorrectionLevel:Lcom/google/zxing/qrcode/decoder/ErrorCorrectionLevel;
+    iget v3, p1, Lde/rki/coronawarnapp/appconfig/PresenceTracingConfigContainer;->qrCodeErrorCorrectionLevel:I
 
     if-eq v1, v3, :cond_2
 
@@ -358,12 +363,12 @@
     return-object v0
 .end method
 
-.method public getQrCodeErrorCorrectionLevel()Lcom/google/zxing/qrcode/decoder/ErrorCorrectionLevel;
+.method public getQrCodeErrorCorrectionLevel$enumunboxing$()I
     .locals 1
 
-    iget-object v0, p0, Lde/rki/coronawarnapp/appconfig/PresenceTracingConfigContainer;->qrCodeErrorCorrectionLevel:Lcom/google/zxing/qrcode/decoder/ErrorCorrectionLevel;
+    iget v0, p0, Lde/rki/coronawarnapp/appconfig/PresenceTracingConfigContainer;->qrCodeErrorCorrectionLevel:I
 
-    return-object v0
+    return v0
 .end method
 
 .method public getRiskCalculationParameters()Lde/rki/coronawarnapp/appconfig/PresenceTracingRiskCalculationParamContainer;
@@ -385,9 +390,9 @@
 .method public hashCode()I
     .locals 3
 
-    iget-object v0, p0, Lde/rki/coronawarnapp/appconfig/PresenceTracingConfigContainer;->qrCodeErrorCorrectionLevel:Lcom/google/zxing/qrcode/decoder/ErrorCorrectionLevel;
+    iget v0, p0, Lde/rki/coronawarnapp/appconfig/PresenceTracingConfigContainer;->qrCodeErrorCorrectionLevel:I
 
-    invoke-virtual {v0}, Ljava/lang/Enum;->hashCode()I
+    invoke-static {v0}, Landroidx/camera/camera2/internal/Camera2CameraImpl$InternalState$EnumUnboxingSharedUtility;->ordinal(I)I
 
     move-result v0
 
@@ -445,7 +450,7 @@
 .method public toString()Ljava/lang/String;
     .locals 8
 
-    iget-object v0, p0, Lde/rki/coronawarnapp/appconfig/PresenceTracingConfigContainer;->qrCodeErrorCorrectionLevel:Lcom/google/zxing/qrcode/decoder/ErrorCorrectionLevel;
+    iget v0, p0, Lde/rki/coronawarnapp/appconfig/PresenceTracingConfigContainer;->qrCodeErrorCorrectionLevel:I
 
     iget-object v1, p0, Lde/rki/coronawarnapp/appconfig/PresenceTracingConfigContainer;->revokedTraceLocationVersions:Ljava/util/List;
 
@@ -465,7 +470,11 @@
 
     invoke-virtual {v6, v7}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
 
-    invoke-virtual {v6, v0}, Ljava/lang/StringBuilder;->append(Ljava/lang/Object;)Ljava/lang/StringBuilder;
+    invoke-static {v0}, Lcom/google/zxing/qrcode/decoder/ErrorCorrectionLevel$EnumUnboxingLocalUtility;->stringValueOf(I)Ljava/lang/String;
+
+    move-result-object v0
+
+    invoke-virtual {v6, v0}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
 
     const-string v0, ", revokedTraceLocationVersions="
 

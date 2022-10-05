@@ -4,16 +4,6 @@
 
 
 # instance fields
-.field public final appScopeProvider:Ljavax/inject/Provider;
-    .annotation system Ldalvik/annotation/Signature;
-        value = {
-            "Ljavax/inject/Provider<",
-            "Lkotlinx/coroutines/CoroutineScope;",
-            ">;"
-        }
-    .end annotation
-.end field
-
 .field public final dccValidationRepositoryProvider:Ljavax/inject/Provider;
     .annotation system Ldalvik/annotation/Signature;
         value = {
@@ -34,21 +24,21 @@
     .end annotation
 .end field
 
-.field public final personCertificatesProvider:Ljavax/inject/Provider;
+.field public final formatProvider:Ljavax/inject/Provider;
     .annotation system Ldalvik/annotation/Signature;
         value = {
             "Ljavax/inject/Provider<",
-            "Lde/rki/coronawarnapp/covidcertificate/person/core/PersonCertificatesProvider;",
+            "Lde/rki/coronawarnapp/ccl/ui/text/CCLTextFormatter;",
             ">;"
         }
     .end annotation
 .end field
 
-.field public final timeStamperProvider:Ljavax/inject/Provider;
+.field public final personCertificatesProvider:Ljavax/inject/Provider;
     .annotation system Ldalvik/annotation/Signature;
         value = {
             "Ljavax/inject/Provider<",
-            "Lde/rki/coronawarnapp/util/TimeStamper;",
+            "Lde/rki/coronawarnapp/covidcertificate/person/core/PersonCertificatesProvider;",
             ">;"
         }
     .end annotation
@@ -66,11 +56,10 @@
 
 
 # direct methods
-.method public constructor <init>(Ljavax/inject/Provider;Ljavax/inject/Provider;Ljavax/inject/Provider;Ljavax/inject/Provider;Ljavax/inject/Provider;Ljavax/inject/Provider;)V
+.method public constructor <init>(Ljavax/inject/Provider;Ljavax/inject/Provider;Ljavax/inject/Provider;Ljavax/inject/Provider;Ljavax/inject/Provider;)V
     .locals 0
     .annotation system Ldalvik/annotation/MethodParameters;
         accessFlags = {
-            0x0,
             0x0,
             0x0,
             0x0,
@@ -82,8 +71,7 @@
             "personCertificatesProvider",
             "vaccinationRepositoryProvider",
             "dccValidationRepositoryProvider",
-            "timeStamperProvider",
-            "appScopeProvider"
+            "formatProvider"
         }
     .end annotation
 
@@ -103,10 +91,7 @@
             "Lde/rki/coronawarnapp/covidcertificate/validation/core/DccValidationRepository;",
             ">;",
             "Ljavax/inject/Provider<",
-            "Lde/rki/coronawarnapp/util/TimeStamper;",
-            ">;",
-            "Ljavax/inject/Provider<",
-            "Lkotlinx/coroutines/CoroutineScope;",
+            "Lde/rki/coronawarnapp/ccl/ui/text/CCLTextFormatter;",
             ">;)V"
         }
     .end annotation
@@ -121,9 +106,7 @@
 
     iput-object p4, p0, Lde/rki/coronawarnapp/covidcertificate/person/ui/details/PersonDetailsViewModel_Factory;->dccValidationRepositoryProvider:Ljavax/inject/Provider;
 
-    iput-object p5, p0, Lde/rki/coronawarnapp/covidcertificate/person/ui/details/PersonDetailsViewModel_Factory;->timeStamperProvider:Ljavax/inject/Provider;
-
-    iput-object p6, p0, Lde/rki/coronawarnapp/covidcertificate/person/ui/details/PersonDetailsViewModel_Factory;->appScopeProvider:Ljavax/inject/Provider;
+    iput-object p5, p0, Lde/rki/coronawarnapp/covidcertificate/person/ui/details/PersonDetailsViewModel_Factory;->formatProvider:Ljavax/inject/Provider;
 
     return-void
 .end method

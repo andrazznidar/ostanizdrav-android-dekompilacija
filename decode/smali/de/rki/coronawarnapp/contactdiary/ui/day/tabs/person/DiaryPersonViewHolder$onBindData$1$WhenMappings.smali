@@ -30,13 +30,9 @@
 
     new-array v0, v0, [I
 
-    sget-object v1, Lde/rki/coronawarnapp/contactdiary/model/ContactDiaryPersonEncounter$DurationClassification;->MORE_THAN_10_MINUTES:Lde/rki/coronawarnapp/contactdiary/model/ContactDiaryPersonEncounter$DurationClassification;
-
     const/4 v1, 0x1
 
     aput v1, v0, v1
-
-    sget-object v1, Lde/rki/coronawarnapp/contactdiary/model/ContactDiaryPersonEncounter$DurationClassification;->LESS_THAN_10_MINUTES:Lde/rki/coronawarnapp/contactdiary/model/ContactDiaryPersonEncounter$DurationClassification;
 
     const/4 v1, 0x0
 

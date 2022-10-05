@@ -13,6 +13,10 @@
         <item name="buttonBarPositiveButtonStyle">@style/Widget.MaterialComponents.Button.TextButton.Dialog</item>
         <item name="materialAlertDialogBodyTextStyle">@style/MaterialAlertDialog.MaterialComponents.Body.Text</item>
     </style>
+    <style name="StatisticsCardValueLabel" parent="@style/subtitle">
+        <item name="android:textColor">@color/colorStatisticsValueLabel</item>
+        <item name="android:lineHeight">@dimen/line_height_tiny</item>
+    </style>
     <style name="body1" parent="@style/TextAppearance.MaterialComponents.Body1">
         <item name="android:textColor">@color/colorOnPrimary</item>
         <item name="android:lineHeight">@dimen/line_height_large</item>

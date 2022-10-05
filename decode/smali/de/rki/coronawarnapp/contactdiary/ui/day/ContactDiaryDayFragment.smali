@@ -12,11 +12,7 @@
 .end annotation
 
 .annotation runtime Lkotlin/Metadata;
-    bv = {
-        0x1,
-        0x0,
-        0x3
-    }
+    bv = {}
     d1 = {
         "\u0000\u0010\n\u0002\u0018\u0002\n\u0002\u0018\u0002\n\u0002\u0018\u0002\n\u0002\u0008\u0003\u0018\u00002\u00020\u00012\u00020\u0002B\u0007\u00a2\u0006\u0004\u0008\u0003\u0010\u0004\u00a8\u0006\u0005"
     }
@@ -31,8 +27,8 @@
     k = 0x1
     mv = {
         0x1,
-        0x5,
-        0x1
+        0x6,
+        0x0
     }
 .end annotation
 
@@ -90,17 +86,15 @@
 .method public constructor <init>()V
     .locals 5
 
-    const v0, 0x7f0d002d
+    const v0, 0x7f0d002e
 
     invoke-direct {p0, v0}, Landroidx/fragment/app/Fragment;-><init>(I)V
 
-    new-instance v0, Lde/rki/coronawarnapp/contactdiary/ui/day/ContactDiaryDayFragment$special$$inlined$viewBinding$1;
-
-    invoke-direct {v0}, Lde/rki/coronawarnapp/contactdiary/ui/day/ContactDiaryDayFragment$special$$inlined$viewBinding$1;-><init>()V
+    sget-object v0, Lde/rki/coronawarnapp/contactdiary/ui/day/ContactDiaryDayFragment$special$$inlined$viewBinding$1;->INSTANCE:Lde/rki/coronawarnapp/contactdiary/ui/day/ContactDiaryDayFragment$special$$inlined$viewBinding$1;
 
     sget-object v1, Lde/rki/coronawarnapp/util/ui/ViewBindingExtensionsKt$viewBinding$2;->INSTANCE:Lde/rki/coronawarnapp/util/ui/ViewBindingExtensionsKt$viewBinding$2;
 
-    invoke-static {p0, v0, v1}, Lkotlin/sequences/SequencesKt__SequencesJVMKt;->viewBinding(Landroidx/fragment/app/Fragment;Lkotlin/jvm/functions/Function1;Lkotlin/jvm/functions/Function1;)Lde/rki/coronawarnapp/util/ui/ViewBindingProperty;
+    invoke-static {p0, v0, v1}, Lkotlinx/coroutines/channels/ChannelsKt;->viewBinding(Landroidx/fragment/app/Fragment;Lkotlin/jvm/functions/Function1;Lkotlin/jvm/functions/Function1;)Lde/rki/coronawarnapp/util/ui/ViewBindingProperty;
 
     move-result-object v0
 
@@ -146,7 +140,7 @@
 
     const/4 v0, 0x0
 
-    invoke-static {p0, v3, v0, v2, v4}, Lde/rki/coronawarnapp/util/viewmodel/ViewModelLazyKeyedKt;->createViewModelLazyKeyed(Landroidx/fragment/app/Fragment;Lkotlin/reflect/KClass;Lkotlin/jvm/functions/Function0;Lkotlin/jvm/functions/Function0;Lkotlin/jvm/functions/Function0;)Lkotlin/Lazy;
+    invoke-static {p0, v3, v0, v2, v4}, Lcom/google/android/gms/internal/nearby/zzbf;->createViewModelLazyKeyed(Landroidx/fragment/app/Fragment;Lkotlin/reflect/KClass;Lkotlin/jvm/functions/Function0;Lkotlin/jvm/functions/Function0;Lkotlin/jvm/functions/Function0;)Lkotlin/Lazy;
 
     move-result-object v0
 
@@ -266,7 +260,7 @@
 .end method
 
 .method public onViewCreated(Landroid/view/View;Landroid/os/Bundle;)V
-    .locals 6
+    .locals 7
 
     const-string/jumbo v0, "view"
 
@@ -286,9 +280,9 @@
 
     sget-object v0, Lde/rki/coronawarnapp/contactdiary/ui/day/tabs/ContactDiaryDayTab$LocationTab;->INSTANCE:Lde/rki/coronawarnapp/contactdiary/ui/day/tabs/ContactDiaryDayTab$LocationTab;
 
-    const/4 v1, 0x1
+    const/4 v2, 0x1
 
-    aput-object v0, p2, v1
+    aput-object v0, p2, v2
 
     invoke-static {p2}, Lkotlin/collections/CollectionsKt__CollectionsKt;->listOf([Ljava/lang/Object;)Ljava/util/List;
 
@@ -296,17 +290,17 @@
 
     new-instance v0, Lde/rki/coronawarnapp/contactdiary/ui/day/tabs/ContactDiaryDayFragmentsAdapter;
 
-    iget-object v2, p0, Lde/rki/coronawarnapp/contactdiary/ui/day/ContactDiaryDayFragment;->navArgs$delegate:Landroidx/navigation/NavArgsLazy;
+    iget-object v3, p0, Lde/rki/coronawarnapp/contactdiary/ui/day/ContactDiaryDayFragment;->navArgs$delegate:Landroidx/navigation/NavArgsLazy;
 
-    invoke-virtual {v2}, Landroidx/navigation/NavArgsLazy;->getValue()Ljava/lang/Object;
+    invoke-virtual {v3}, Landroidx/navigation/NavArgsLazy;->getValue()Ljava/lang/Object;
 
-    move-result-object v2
+    move-result-object v3
 
-    check-cast v2, Lde/rki/coronawarnapp/contactdiary/ui/day/ContactDiaryDayFragmentArgs;
+    check-cast v3, Lde/rki/coronawarnapp/contactdiary/ui/day/ContactDiaryDayFragmentArgs;
 
-    iget-object v2, v2, Lde/rki/coronawarnapp/contactdiary/ui/day/ContactDiaryDayFragmentArgs;->selectedDay:Ljava/lang/String;
+    iget-object v3, v3, Lde/rki/coronawarnapp/contactdiary/ui/day/ContactDiaryDayFragmentArgs;->selectedDay:Ljava/lang/String;
 
-    invoke-direct {v0, p0, p2, v2}, Lde/rki/coronawarnapp/contactdiary/ui/day/tabs/ContactDiaryDayFragmentsAdapter;-><init>(Landroidx/fragment/app/Fragment;Ljava/util/List;Ljava/lang/String;)V
+    invoke-direct {v0, p0, p2, v3}, Lde/rki/coronawarnapp/contactdiary/ui/day/tabs/ContactDiaryDayFragmentsAdapter;-><init>(Landroidx/fragment/app/Fragment;Ljava/util/List;Ljava/lang/String;)V
 
     invoke-virtual {p0}, Lde/rki/coronawarnapp/contactdiary/ui/day/ContactDiaryDayFragment;->getBinding()Lde/rki/coronawarnapp/databinding/ContactDiaryDayFragmentBinding;
 
@@ -320,120 +314,120 @@
 
     invoke-virtual {p0}, Lde/rki/coronawarnapp/contactdiary/ui/day/ContactDiaryDayFragment;->getBinding()Lde/rki/coronawarnapp/databinding/ContactDiaryDayFragmentBinding;
 
-    move-result-object v2
+    move-result-object v3
 
-    iget-object v2, v2, Lde/rki/coronawarnapp/databinding/ContactDiaryDayFragmentBinding;->contactDiaryDayTabLayout:Lcom/google/android/material/tabs/TabLayout;
+    iget-object v3, v3, Lde/rki/coronawarnapp/databinding/ContactDiaryDayFragmentBinding;->contactDiaryDayTabLayout:Lcom/google/android/material/tabs/TabLayout;
 
     invoke-virtual {p0}, Lde/rki/coronawarnapp/contactdiary/ui/day/ContactDiaryDayFragment;->getBinding()Lde/rki/coronawarnapp/databinding/ContactDiaryDayFragmentBinding;
 
-    move-result-object v3
-
-    iget-object v3, v3, Lde/rki/coronawarnapp/databinding/ContactDiaryDayFragmentBinding;->contactDiaryDayViewPager:Landroidx/viewpager2/widget/ViewPager2;
-
-    new-instance v4, Lde/rki/coronawarnapp/qrcode/ui/QrCodeScannerFragment$$ExternalSyntheticLambda6;
-
-    invoke-direct {v4, v0}, Lde/rki/coronawarnapp/qrcode/ui/QrCodeScannerFragment$$ExternalSyntheticLambda6;-><init>(Lde/rki/coronawarnapp/contactdiary/ui/day/tabs/ContactDiaryDayFragmentsAdapter;)V
-
-    invoke-direct {p2, v2, v3, v4}, Lcom/google/android/material/tabs/TabLayoutMediator;-><init>(Lcom/google/android/material/tabs/TabLayout;Landroidx/viewpager2/widget/ViewPager2;Lcom/google/android/material/tabs/TabLayoutMediator$TabConfigurationStrategy;)V
-
-    iget-boolean v4, p2, Lcom/google/android/material/tabs/TabLayoutMediator;->attached:Z
-
-    if-nez v4, :cond_2
-
-    invoke-virtual {v3}, Landroidx/viewpager2/widget/ViewPager2;->getAdapter()Landroidx/recyclerview/widget/RecyclerView$Adapter;
-
     move-result-object v4
 
-    iput-object v4, p2, Lcom/google/android/material/tabs/TabLayoutMediator;->adapter:Landroidx/recyclerview/widget/RecyclerView$Adapter;
+    iget-object v4, v4, Lde/rki/coronawarnapp/databinding/ContactDiaryDayFragmentBinding;->contactDiaryDayViewPager:Landroidx/viewpager2/widget/ViewPager2;
 
-    if-eqz v4, :cond_1
+    new-instance v5, Lde/rki/coronawarnapp/ui/main/home/HomeFragment$$ExternalSyntheticLambda1;
 
-    iput-boolean v1, p2, Lcom/google/android/material/tabs/TabLayoutMediator;->attached:Z
+    invoke-direct {v5, v0}, Lde/rki/coronawarnapp/ui/main/home/HomeFragment$$ExternalSyntheticLambda1;-><init>(Ljava/lang/Object;)V
 
-    new-instance v4, Lcom/google/android/material/tabs/TabLayoutMediator$TabLayoutOnPageChangeCallback;
+    invoke-direct {p2, v3, v4, v5}, Lcom/google/android/material/tabs/TabLayoutMediator;-><init>(Lcom/google/android/material/tabs/TabLayout;Landroidx/viewpager2/widget/ViewPager2;Lcom/google/android/material/tabs/TabLayoutMediator$TabConfigurationStrategy;)V
 
-    invoke-direct {v4, v2}, Lcom/google/android/material/tabs/TabLayoutMediator$TabLayoutOnPageChangeCallback;-><init>(Lcom/google/android/material/tabs/TabLayout;)V
+    iget-boolean v5, p2, Lcom/google/android/material/tabs/TabLayoutMediator;->attached:Z
 
-    iget-object v5, v3, Landroidx/viewpager2/widget/ViewPager2;->mExternalPageChangeCallbacks:Landroidx/viewpager2/widget/CompositeOnPageChangeCallback;
+    if-nez v5, :cond_2
 
-    iget-object v5, v5, Landroidx/viewpager2/widget/CompositeOnPageChangeCallback;->mCallbacks:Ljava/util/List;
+    invoke-virtual {v4}, Landroidx/viewpager2/widget/ViewPager2;->getAdapter()Landroidx/recyclerview/widget/RecyclerView$Adapter;
 
-    invoke-interface {v5, v4}, Ljava/util/List;->add(Ljava/lang/Object;)Z
+    move-result-object v5
 
-    new-instance v4, Lcom/google/android/material/tabs/TabLayoutMediator$ViewPagerOnTabSelectedListener;
+    iput-object v5, p2, Lcom/google/android/material/tabs/TabLayoutMediator;->adapter:Landroidx/recyclerview/widget/RecyclerView$Adapter;
 
-    invoke-direct {v4, v3, v1}, Lcom/google/android/material/tabs/TabLayoutMediator$ViewPagerOnTabSelectedListener;-><init>(Landroidx/viewpager2/widget/ViewPager2;Z)V
+    if-eqz v5, :cond_1
 
-    iget-object v5, v2, Lcom/google/android/material/tabs/TabLayout;->selectedListeners:Ljava/util/ArrayList;
+    iput-boolean v2, p2, Lcom/google/android/material/tabs/TabLayoutMediator;->attached:Z
 
-    invoke-virtual {v5, v4}, Ljava/util/ArrayList;->contains(Ljava/lang/Object;)Z
+    new-instance v5, Lcom/google/android/material/tabs/TabLayoutMediator$TabLayoutOnPageChangeCallback;
 
-    move-result v5
+    invoke-direct {v5, v3}, Lcom/google/android/material/tabs/TabLayoutMediator$TabLayoutOnPageChangeCallback;-><init>(Lcom/google/android/material/tabs/TabLayout;)V
 
-    if-nez v5, :cond_0
+    iget-object v6, v4, Landroidx/viewpager2/widget/ViewPager2;->mExternalPageChangeCallbacks:Landroidx/viewpager2/widget/CompositeOnPageChangeCallback;
 
-    iget-object v5, v2, Lcom/google/android/material/tabs/TabLayout;->selectedListeners:Ljava/util/ArrayList;
+    iget-object v6, v6, Landroidx/viewpager2/widget/CompositeOnPageChangeCallback;->mCallbacks:Ljava/util/List;
 
-    invoke-virtual {v5, v4}, Ljava/util/ArrayList;->add(Ljava/lang/Object;)Z
+    invoke-interface {v6, v5}, Ljava/util/List;->add(Ljava/lang/Object;)Z
+
+    new-instance v5, Lcom/google/android/material/tabs/TabLayoutMediator$ViewPagerOnTabSelectedListener;
+
+    invoke-direct {v5, v4, v2}, Lcom/google/android/material/tabs/TabLayoutMediator$ViewPagerOnTabSelectedListener;-><init>(Landroidx/viewpager2/widget/ViewPager2;Z)V
+
+    iget-object v6, v3, Lcom/google/android/material/tabs/TabLayout;->selectedListeners:Ljava/util/ArrayList;
+
+    invoke-virtual {v6, v5}, Ljava/util/ArrayList;->contains(Ljava/lang/Object;)Z
+
+    move-result v6
+
+    if-nez v6, :cond_0
+
+    iget-object v6, v3, Lcom/google/android/material/tabs/TabLayout;->selectedListeners:Ljava/util/ArrayList;
+
+    invoke-virtual {v6, v5}, Ljava/util/ArrayList;->add(Ljava/lang/Object;)Z
 
     :cond_0
-    new-instance v4, Lcom/google/android/material/tabs/TabLayoutMediator$PagerAdapterObserver;
+    new-instance v5, Lcom/google/android/material/tabs/TabLayoutMediator$PagerAdapterObserver;
 
-    invoke-direct {v4, p2}, Lcom/google/android/material/tabs/TabLayoutMediator$PagerAdapterObserver;-><init>(Lcom/google/android/material/tabs/TabLayoutMediator;)V
+    invoke-direct {v5, p2}, Lcom/google/android/material/tabs/TabLayoutMediator$PagerAdapterObserver;-><init>(Lcom/google/android/material/tabs/TabLayoutMediator;)V
 
-    iget-object v5, p2, Lcom/google/android/material/tabs/TabLayoutMediator;->adapter:Landroidx/recyclerview/widget/RecyclerView$Adapter;
+    iget-object v6, p2, Lcom/google/android/material/tabs/TabLayoutMediator;->adapter:Landroidx/recyclerview/widget/RecyclerView$Adapter;
 
-    iget-object v5, v5, Landroidx/recyclerview/widget/RecyclerView$Adapter;->mObservable:Landroidx/recyclerview/widget/RecyclerView$AdapterDataObservable;
+    iget-object v6, v6, Landroidx/recyclerview/widget/RecyclerView$Adapter;->mObservable:Landroidx/recyclerview/widget/RecyclerView$AdapterDataObservable;
 
-    invoke-virtual {v5, v4}, Landroid/database/Observable;->registerObserver(Ljava/lang/Object;)V
+    invoke-virtual {v6, v5}, Landroid/database/Observable;->registerObserver(Ljava/lang/Object;)V
 
     invoke-virtual {p2}, Lcom/google/android/material/tabs/TabLayoutMediator;->populateTabsFromPagerAdapter()V
 
-    invoke-virtual {v3}, Landroidx/viewpager2/widget/ViewPager2;->getCurrentItem()I
+    invoke-virtual {v4}, Landroidx/viewpager2/widget/ViewPager2;->getCurrentItem()I
 
     move-result p2
 
-    const/4 v3, 0x0
+    const/4 v4, 0x0
 
-    invoke-virtual {v2, p2, v3, v1, v1}, Lcom/google/android/material/tabs/TabLayout;->setScrollPosition(IFZZ)V
+    invoke-virtual {v3, p2, v4, v2, v2}, Lcom/google/android/material/tabs/TabLayout;->setScrollPosition(IFZZ)V
 
     invoke-virtual {p0}, Lde/rki/coronawarnapp/contactdiary/ui/day/ContactDiaryDayFragment;->getBinding()Lde/rki/coronawarnapp/databinding/ContactDiaryDayFragmentBinding;
 
     move-result-object p2
 
-    iget-object v1, p2, Lde/rki/coronawarnapp/databinding/ContactDiaryDayFragmentBinding;->contactDiaryDayViewPager:Landroidx/viewpager2/widget/ViewPager2;
+    iget-object v2, p2, Lde/rki/coronawarnapp/databinding/ContactDiaryDayFragmentBinding;->contactDiaryDayViewPager:Landroidx/viewpager2/widget/ViewPager2;
 
-    const-string v2, "contactDiaryDayViewPager"
+    const-string v3, "contactDiaryDayViewPager"
 
-    invoke-static {v1, v2}, Lkotlin/jvm/internal/Intrinsics;->checkNotNullExpressionValue(Ljava/lang/Object;Ljava/lang/String;)V
+    invoke-static {v2, v3}, Lkotlin/jvm/internal/Intrinsics;->checkNotNullExpressionValue(Ljava/lang/Object;Ljava/lang/String;)V
 
-    new-instance v2, Lde/rki/coronawarnapp/contactdiary/ui/day/ContactDiaryDayFragment$onViewCreated$2$1;
+    new-instance v3, Lde/rki/coronawarnapp/contactdiary/ui/day/ContactDiaryDayFragment$onViewCreated$2$1;
 
-    invoke-direct {v2, p0, v0}, Lde/rki/coronawarnapp/contactdiary/ui/day/ContactDiaryDayFragment$onViewCreated$2$1;-><init>(Lde/rki/coronawarnapp/contactdiary/ui/day/ContactDiaryDayFragment;Lde/rki/coronawarnapp/contactdiary/ui/day/tabs/ContactDiaryDayFragmentsAdapter;)V
+    invoke-direct {v3, p0, v0}, Lde/rki/coronawarnapp/contactdiary/ui/day/ContactDiaryDayFragment$onViewCreated$2$1;-><init>(Lde/rki/coronawarnapp/contactdiary/ui/day/ContactDiaryDayFragment;Lde/rki/coronawarnapp/contactdiary/ui/day/tabs/ContactDiaryDayFragmentsAdapter;)V
 
-    new-instance v3, Lde/rki/coronawarnapp/contactdiary/util/ContactDiaryExtensionsKt$registerOnPageChangeCallback$1;
+    new-instance v4, Lde/rki/coronawarnapp/contactdiary/util/ContactDiaryExtensionsKt$registerOnPageChangeCallback$1;
 
-    invoke-direct {v3, v2}, Lde/rki/coronawarnapp/contactdiary/util/ContactDiaryExtensionsKt$registerOnPageChangeCallback$1;-><init>(Lkotlin/jvm/functions/Function1;)V
+    invoke-direct {v4, v3}, Lde/rki/coronawarnapp/contactdiary/util/ContactDiaryExtensionsKt$registerOnPageChangeCallback$1;-><init>(Lkotlin/jvm/functions/Function1;)V
 
-    iget-object v1, v1, Landroidx/viewpager2/widget/ViewPager2;->mExternalPageChangeCallbacks:Landroidx/viewpager2/widget/CompositeOnPageChangeCallback;
+    iget-object v2, v2, Landroidx/viewpager2/widget/ViewPager2;->mExternalPageChangeCallbacks:Landroidx/viewpager2/widget/CompositeOnPageChangeCallback;
 
-    iget-object v1, v1, Landroidx/viewpager2/widget/CompositeOnPageChangeCallback;->mCallbacks:Ljava/util/List;
+    iget-object v2, v2, Landroidx/viewpager2/widget/CompositeOnPageChangeCallback;->mCallbacks:Ljava/util/List;
 
-    invoke-interface {v1, v3}, Ljava/util/List;->add(Ljava/lang/Object;)Z
+    invoke-interface {v2, v4}, Ljava/util/List;->add(Ljava/lang/Object;)Z
 
-    iget-object v1, p2, Lde/rki/coronawarnapp/databinding/ContactDiaryDayFragmentBinding;->contactDiaryDayFab:Lcom/google/android/material/floatingactionbutton/ExtendedFloatingActionButton;
+    iget-object v2, p2, Lde/rki/coronawarnapp/databinding/ContactDiaryDayFragmentBinding;->contactDiaryDayFab:Lcom/google/android/material/floatingactionbutton/ExtendedFloatingActionButton;
 
-    new-instance v2, Lde/rki/coronawarnapp/contactdiary/ui/day/ContactDiaryDayFragment$$ExternalSyntheticLambda0;
+    new-instance v3, Lde/rki/coronawarnapp/contactdiary/ui/day/ContactDiaryDayFragment$$ExternalSyntheticLambda1;
 
-    invoke-direct {v2, p0, v0, p2}, Lde/rki/coronawarnapp/contactdiary/ui/day/ContactDiaryDayFragment$$ExternalSyntheticLambda0;-><init>(Lde/rki/coronawarnapp/contactdiary/ui/day/ContactDiaryDayFragment;Lde/rki/coronawarnapp/contactdiary/ui/day/tabs/ContactDiaryDayFragmentsAdapter;Lde/rki/coronawarnapp/databinding/ContactDiaryDayFragmentBinding;)V
+    invoke-direct {v3, p0, v0, p2}, Lde/rki/coronawarnapp/contactdiary/ui/day/ContactDiaryDayFragment$$ExternalSyntheticLambda1;-><init>(Lde/rki/coronawarnapp/contactdiary/ui/day/ContactDiaryDayFragment;Lde/rki/coronawarnapp/contactdiary/ui/day/tabs/ContactDiaryDayFragmentsAdapter;Lde/rki/coronawarnapp/databinding/ContactDiaryDayFragmentBinding;)V
 
-    invoke-virtual {v1, v2}, Landroid/widget/Button;->setOnClickListener(Landroid/view/View$OnClickListener;)V
+    invoke-virtual {v2, v3}, Landroid/widget/Button;->setOnClickListener(Landroid/view/View$OnClickListener;)V
 
     iget-object p2, p2, Lde/rki/coronawarnapp/databinding/ContactDiaryDayFragmentBinding;->contactDiaryDayHeader:Lcom/google/android/material/appbar/MaterialToolbar;
 
-    new-instance v0, Lde/rki/coronawarnapp/ui/calendar/CalendarDayViewHolder$$ExternalSyntheticLambda0;
+    new-instance v0, Lde/rki/coronawarnapp/contactdiary/ui/day/ContactDiaryDayFragment$$ExternalSyntheticLambda0;
 
-    invoke-direct {v0, p1, p0}, Lde/rki/coronawarnapp/ui/calendar/CalendarDayViewHolder$$ExternalSyntheticLambda0;-><init>(Landroid/view/View;Lde/rki/coronawarnapp/contactdiary/ui/day/ContactDiaryDayFragment;)V
+    invoke-direct {v0, p1, p0, v1}, Lde/rki/coronawarnapp/contactdiary/ui/day/ContactDiaryDayFragment$$ExternalSyntheticLambda0;-><init>(Ljava/lang/Object;Ljava/lang/Object;I)V
 
     invoke-virtual {p2, v0}, Landroidx/appcompat/widget/Toolbar;->setNavigationOnClickListener(Landroid/view/View$OnClickListener;)V
 

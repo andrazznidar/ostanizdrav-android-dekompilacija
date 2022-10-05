@@ -42,8 +42,41 @@
     return-void
 .end method
 
+.method public static newUninitializedMessageException(Lkotlin/reflect/jvm/internal/impl/protobuf/MessageLite;)Lkotlin/reflect/jvm/internal/impl/protobuf/UninitializedMessageException;
+    .locals 1
+
+    new-instance v0, Lkotlin/reflect/jvm/internal/impl/protobuf/UninitializedMessageException;
+
+    invoke-direct {v0, p0}, Lkotlin/reflect/jvm/internal/impl/protobuf/UninitializedMessageException;-><init>(Lkotlin/reflect/jvm/internal/impl/protobuf/MessageLite;)V
+
+    return-object v0
+.end method
+
 
 # virtual methods
+.method public bridge synthetic clone()Ljava/lang/Object;
+    .locals 1
+    .annotation system Ldalvik/annotation/Throws;
+        value = {
+            Ljava/lang/CloneNotSupportedException;
+        }
+    .end annotation
+
+    invoke-virtual {p0}, Lkotlin/reflect/jvm/internal/impl/protobuf/AbstractMessageLite$Builder;->clone()Lkotlin/reflect/jvm/internal/impl/protobuf/AbstractMessageLite$Builder;
+
+    move-result-object v0
+
+    return-object v0
+.end method
+
+.method public abstract clone()Lkotlin/reflect/jvm/internal/impl/protobuf/AbstractMessageLite$Builder;
+    .annotation system Ldalvik/annotation/Signature;
+        value = {
+            "()TBuilderType;"
+        }
+    .end annotation
+.end method
+
 .method public abstract mergeFrom(Lkotlin/reflect/jvm/internal/impl/protobuf/CodedInputStream;Lkotlin/reflect/jvm/internal/impl/protobuf/ExtensionRegistryLite;)Lkotlin/reflect/jvm/internal/impl/protobuf/AbstractMessageLite$Builder;
     .annotation system Ldalvik/annotation/Signature;
         value = {

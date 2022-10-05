@@ -10,7 +10,7 @@
 
 .field private static final j:[Lj$/time/zone/b;
 
-.field private static final k:[Lj$/time/h;
+.field private static final k:[Lj$/time/j;
 
 .field private static final l:[Lj$/time/zone/a;
 
@@ -22,7 +22,7 @@
 
 .field private final c:[J
 
-.field private final d:[Lj$/time/h;
+.field private final d:[Lj$/time/j;
 
 .field private final e:[Lj$/time/ZoneOffset;
 
@@ -47,9 +47,9 @@
 
     sput-object v1, Lj$/time/zone/c;->j:[Lj$/time/zone/b;
 
-    new-array v1, v0, [Lj$/time/h;
+    new-array v1, v0, [Lj$/time/j;
 
-    sput-object v1, Lj$/time/zone/c;->k:[Lj$/time/h;
+    sput-object v1, Lj$/time/zone/c;->k:[Lj$/time/j;
 
     new-array v0, v0, [Lj$/time/zone/a;
 
@@ -85,9 +85,9 @@
 
     iput-object p1, p0, Lj$/time/zone/c;->c:[J
 
-    sget-object p1, Lj$/time/zone/c;->k:[Lj$/time/h;
+    sget-object p1, Lj$/time/zone/c;->k:[Lj$/time/j;
 
-    iput-object p1, p0, Lj$/time/zone/c;->d:[Lj$/time/h;
+    iput-object p1, p0, Lj$/time/zone/c;->d:[Lj$/time/j;
 
     iput-object v0, p0, Lj$/time/zone/c;->e:[Lj$/time/ZoneOffset;
 
@@ -137,9 +137,9 @@
 
     iput-object v1, p0, Lj$/time/zone/c;->c:[J
 
-    sget-object v1, Lj$/time/zone/c;->k:[Lj$/time/h;
+    sget-object v1, Lj$/time/zone/c;->k:[Lj$/time/j;
 
-    iput-object v1, p0, Lj$/time/zone/c;->d:[Lj$/time/h;
+    iput-object v1, p0, Lj$/time/zone/c;->d:[Lj$/time/j;
 
     iput-object v0, p0, Lj$/time/zone/c;->e:[Lj$/time/ZoneOffset;
 
@@ -152,10 +152,10 @@
     return-void
 .end method
 
-.method private a(Lj$/time/h;Lj$/time/zone/a;)Ljava/lang/Object;
+.method private a(Lj$/time/j;Lj$/time/zone/a;)Ljava/lang/Object;
     .locals 2
 
-    invoke-virtual {p2}, Lj$/time/zone/a;->b()Lj$/time/h;
+    invoke-virtual {p2}, Lj$/time/zone/a;->b()Lj$/time/j;
 
     move-result-object v0
 
@@ -163,7 +163,7 @@
 
     move-result v1
 
-    invoke-virtual {p1, v0}, Lj$/time/h;->q(Lj$/time/chrono/c;)Z
+    invoke-virtual {p1, v0}, Lj$/time/j;->q(Lj$/time/chrono/c;)Z
 
     move-result v0
 
@@ -178,11 +178,11 @@
     return-object p1
 
     :cond_0
-    invoke-virtual {p2}, Lj$/time/zone/a;->a()Lj$/time/h;
+    invoke-virtual {p2}, Lj$/time/zone/a;->a()Lj$/time/j;
 
     move-result-object v0
 
-    invoke-virtual {p1, v0}, Lj$/time/h;->q(Lj$/time/chrono/c;)Z
+    invoke-virtual {p1, v0}, Lj$/time/j;->q(Lj$/time/chrono/c;)Z
 
     move-result p1
 
@@ -207,11 +207,11 @@
     return-object p1
 
     :cond_3
-    invoke-virtual {p2}, Lj$/time/zone/a;->a()Lj$/time/h;
+    invoke-virtual {p2}, Lj$/time/zone/a;->a()Lj$/time/j;
 
     move-result-object v0
 
-    invoke-virtual {p1, v0}, Lj$/time/h;->q(Lj$/time/chrono/c;)Z
+    invoke-virtual {p1, v0}, Lj$/time/j;->q(Lj$/time/chrono/c;)Z
 
     move-result p1
 
@@ -272,7 +272,7 @@
 
     const/16 v7, 0x1f
 
-    invoke-static {v3, v6, v7, v5, v5}, Lj$/time/h;->r(IIIII)Lj$/time/h;
+    invoke-static {v3, v6, v7, v5, v5}, Lj$/time/j;->r(IIIII)Lj$/time/j;
 
     move-result-object v3
 
@@ -280,7 +280,7 @@
 
     aget-object v5, v6, v5
 
-    invoke-virtual {v3, v5}, Lj$/time/h;->D(Lj$/time/ZoneOffset;)J
+    invoke-virtual {v3, v5}, Lj$/time/j;->D(Lj$/time/ZoneOffset;)J
 
     move-result-wide v5
 
@@ -338,7 +338,7 @@
 
     const-wide/16 v9, 0x2
 
-    invoke-static {v7, v8, v9, v10}, Lj$/lang/d;->e(JJ)J
+    invoke-static {v7, v8, v9, v10}, Lj$/time/c;->d(JJ)J
 
     move-result-wide v7
 
@@ -358,8 +358,6 @@
 
     move-wide v5, v7
 
-    move-wide v7, v9
-
     move-wide v12, v15
 
     goto :goto_2
@@ -367,9 +365,9 @@
     :cond_2
     move-wide v12, v7
 
+    :goto_2
     move-wide v7, v9
 
-    :goto_2
     move-wide/from16 v9, v17
 
     goto :goto_1
@@ -427,33 +425,42 @@
 
     move-result-object v8
 
-    move-object v11, v8
+    check-cast v8, [Lj$/time/zone/a;
 
-    check-cast v11, [Lj$/time/zone/a;
+    array-length v11, v8
 
-    array-length v8, v11
-
-    add-int/lit8 v8, v8, -0x1
+    add-int/lit8 v11, v11, -0x1
 
     new-instance v12, Lj$/time/zone/a;
 
     invoke-direct {v12, v5, v6, v3, v7}, Lj$/time/zone/a;-><init>(JLj$/time/ZoneOffset;Lj$/time/ZoneOffset;)V
 
-    aput-object v12, v11, v8
+    aput-object v12, v8, v11
+
+    move v3, v4
+
+    move-object v11, v8
+
+    goto :goto_4
 
     :cond_5
     move v3, v4
 
+    goto :goto_4
+
+    :cond_6
+    move-wide/from16 v17, v9
+
+    move-wide v9, v7
+
+    move-wide v5, v12
+
+    :goto_4
     move-wide v7, v9
 
     move-wide/from16 v9, v17
 
-    goto :goto_0
-
-    :cond_6
-    move-wide v5, v12
-
-    goto :goto_0
+    goto/16 :goto_0
 
     :cond_7
     const/16 v3, 0x77c
@@ -514,7 +521,7 @@
 
     const-wide/32 v0, 0x15180
 
-    invoke-static {p1, p2, v0, v1}, Lj$/lang/d;->e(JJ)J
+    invoke-static {p1, p2, v0, v1}, Lj$/time/c;->d(JJ)J
 
     move-result-wide p1
 
@@ -529,7 +536,7 @@
     return p1
 .end method
 
-.method private e(Lj$/time/h;)Ljava/lang/Object;
+.method private e(Lj$/time/j;)Ljava/lang/Object;
     .locals 6
 
     iget-object v0, p0, Lj$/time/zone/c;->g:Ljava/util/TimeZone;
@@ -540,7 +547,7 @@
 
     if-eqz v0, :cond_4
 
-    invoke-virtual {p1}, Lj$/time/h;->o()I
+    invoke-virtual {p1}, Lj$/time/j;->o()I
 
     move-result v0
 
@@ -558,7 +565,7 @@
 
     aget-object v1, v1, v2
 
-    invoke-virtual {p1, v1}, Lj$/time/h;->D(Lj$/time/ZoneOffset;)J
+    invoke-virtual {p1, v1}, Lj$/time/j;->D(Lj$/time/ZoneOffset;)J
 
     move-result-wide v1
 
@@ -584,7 +591,7 @@
 
     aget-object v1, v0, v2
 
-    invoke-direct {p0, p1, v1}, Lj$/time/zone/c;->a(Lj$/time/h;Lj$/time/zone/a;)Ljava/lang/Object;
+    invoke-direct {p0, p1, v1}, Lj$/time/zone/c;->a(Lj$/time/j;Lj$/time/zone/a;)Ljava/lang/Object;
 
     move-result-object v4
 
@@ -638,7 +645,7 @@
 
     if-lez v0, :cond_9
 
-    iget-object v0, p0, Lj$/time/zone/c;->d:[Lj$/time/h;
+    iget-object v0, p0, Lj$/time/zone/c;->d:[Lj$/time/j;
 
     array-length v3, v0
 
@@ -646,13 +653,13 @@
 
     aget-object v0, v0, v3
 
-    invoke-virtual {p1, v0}, Lj$/time/h;->p(Lj$/time/chrono/c;)Z
+    invoke-virtual {p1, v0}, Lj$/time/j;->p(Lj$/time/chrono/c;)Z
 
     move-result v0
 
     if-eqz v0, :cond_9
 
-    invoke-virtual {p1}, Lj$/time/h;->o()I
+    invoke-virtual {p1}, Lj$/time/j;->o()I
 
     move-result v0
 
@@ -667,7 +674,7 @@
 
     aget-object v1, v0, v2
 
-    invoke-direct {p0, p1, v1}, Lj$/time/zone/c;->a(Lj$/time/h;Lj$/time/zone/a;)Ljava/lang/Object;
+    invoke-direct {p0, p1, v1}, Lj$/time/zone/c;->a(Lj$/time/j;Lj$/time/zone/a;)Ljava/lang/Object;
 
     move-result-object v4
 
@@ -702,7 +709,7 @@
     return-object v1
 
     :cond_9
-    iget-object v0, p0, Lj$/time/zone/c;->d:[Lj$/time/h;
+    iget-object v0, p0, Lj$/time/zone/c;->d:[Lj$/time/j;
 
     invoke-static {v0, p1}, Ljava/util/Arrays;->binarySearch([Ljava/lang/Object;Ljava/lang/Object;)I
 
@@ -728,7 +735,7 @@
     goto :goto_4
 
     :cond_b
-    iget-object v0, p0, Lj$/time/zone/c;->d:[Lj$/time/h;
+    iget-object v0, p0, Lj$/time/zone/c;->d:[Lj$/time/j;
 
     array-length v1, v0
 
@@ -742,7 +749,7 @@
 
     aget-object v0, v0, v2
 
-    invoke-virtual {v1, v0}, Lj$/time/h;->equals(Ljava/lang/Object;)Z
+    invoke-virtual {v1, v0}, Lj$/time/j;->equals(Ljava/lang/Object;)Z
 
     move-result v0
 
@@ -756,7 +763,7 @@
 
     if-nez v0, :cond_e
 
-    iget-object v0, p0, Lj$/time/zone/c;->d:[Lj$/time/h;
+    iget-object v0, p0, Lj$/time/zone/c;->d:[Lj$/time/j;
 
     aget-object v1, v0, p1
 
@@ -786,14 +793,14 @@
 
     new-instance v0, Lj$/time/zone/a;
 
-    invoke-direct {v0, v1, v3, p1}, Lj$/time/zone/a;-><init>(Lj$/time/h;Lj$/time/ZoneOffset;Lj$/time/ZoneOffset;)V
+    invoke-direct {v0, v1, v3, p1}, Lj$/time/zone/a;-><init>(Lj$/time/j;Lj$/time/ZoneOffset;Lj$/time/ZoneOffset;)V
 
     return-object v0
 
     :cond_d
     new-instance v1, Lj$/time/zone/a;
 
-    invoke-direct {v1, v0, v3, p1}, Lj$/time/zone/a;-><init>(Lj$/time/h;Lj$/time/ZoneOffset;Lj$/time/ZoneOffset;)V
+    invoke-direct {v1, v0, v3, p1}, Lj$/time/zone/a;-><init>(Lj$/time/j;Lj$/time/ZoneOffset;Lj$/time/ZoneOffset;)V
 
     return-object v1
 
@@ -988,7 +995,7 @@
 
     iget-object v3, p1, Lj$/time/zone/c;->g:Ljava/util/TimeZone;
 
-    invoke-static {v1, v3}, Lj$/util/a;->t(Ljava/lang/Object;Ljava/lang/Object;)Z
+    invoke-static {v1, v3}, Lj$/util/a;->A(Ljava/lang/Object;Ljava/lang/Object;)Z
 
     move-result v1
 
@@ -1056,10 +1063,10 @@
     return v2
 .end method
 
-.method public f(Lj$/time/h;)Lj$/time/zone/a;
+.method public f(Lj$/time/j;)Lj$/time/zone/a;
     .locals 1
 
-    invoke-direct {p0, p1}, Lj$/time/zone/c;->e(Lj$/time/h;)Ljava/lang/Object;
+    invoke-direct {p0, p1}, Lj$/time/zone/c;->e(Lj$/time/j;)Ljava/lang/Object;
 
     move-result-object p1
 
@@ -1078,10 +1085,10 @@
     return-object p1
 .end method
 
-.method public g(Lj$/time/h;)Ljava/util/List;
+.method public g(Lj$/time/j;)Ljava/util/List;
     .locals 1
 
-    invoke-direct {p0, p1}, Lj$/time/zone/c;->e(Lj$/time/h;)Ljava/lang/Object;
+    invoke-direct {p0, p1}, Lj$/time/zone/c;->e(Lj$/time/j;)Ljava/lang/Object;
 
     move-result-object p1
 
@@ -1386,11 +1393,11 @@
 
     sub-long v5, v10, v5
 
-    invoke-static {}, Lj$/time/c;->b()Lj$/time/c;
+    invoke-static {}, Lj$/time/c;->h()Lj$/time/c;
 
     move-result-object v1
 
-    invoke-virtual {v1}, Lj$/time/c;->a()J
+    invoke-virtual {v1}, Lj$/time/c;->g()J
 
     move-result-wide v12
 
@@ -1680,7 +1687,7 @@
 
     const-string v0, "ZoneRules[timeZone="
 
-    invoke-static {v0}, Lj$/time/a;->a(Ljava/lang/String;)Ljava/lang/StringBuilder;
+    invoke-static {v0}, Lj$/time/a;->b(Ljava/lang/String;)Ljava/lang/StringBuilder;
 
     move-result-object v0
 
@@ -1697,7 +1704,7 @@
     :cond_0
     const-string v0, "ZoneRules[currentStandardOffset="
 
-    invoke-static {v0}, Lj$/time/a;->a(Ljava/lang/String;)Ljava/lang/StringBuilder;
+    invoke-static {v0}, Lj$/time/a;->b(Ljava/lang/String;)Ljava/lang/StringBuilder;
 
     move-result-object v0
 

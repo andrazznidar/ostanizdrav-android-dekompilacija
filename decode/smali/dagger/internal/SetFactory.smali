@@ -158,7 +158,7 @@
     :cond_0
     new-instance v2, Ljava/util/HashSet;
 
-    invoke-static {v0}, Lkotlin/collections/ArraysUtilJVM;->calculateInitialCapacity(I)I
+    invoke-static {v0}, Ldagger/internal/DaggerCollections;->calculateInitialCapacity(I)I
 
     move-result v0
 

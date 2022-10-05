@@ -285,62 +285,155 @@
 .end method
 
 .method public static checkAndFixAccess(Ljava/lang/reflect/Member;Z)V
-    .locals 4
+    .locals 5
 
     move-object v0, p0
 
     check-cast v0, Ljava/lang/reflect/AccessibleObject;
 
-    if-nez p1, :cond_0
+    const/4 v1, 0x0
+
+    const/4 v2, 0x1
 
     :try_start_0
-    invoke-interface {p0}, Ljava/lang/reflect/Member;->getModifiers()I
-
-    move-result p1
-
-    invoke-static {p1}, Ljava/lang/reflect/Modifier;->isPublic(I)Z
-
-    move-result p1
-
-    if-eqz p1, :cond_0
-
     invoke-interface {p0}, Ljava/lang/reflect/Member;->getDeclaringClass()Ljava/lang/Class;
 
-    move-result-object p1
+    move-result-object v3
 
-    invoke-virtual {p1}, Ljava/lang/Class;->getModifiers()I
+    invoke-interface {p0}, Ljava/lang/reflect/Member;->getModifiers()I
 
-    move-result p1
+    move-result v4
 
-    invoke-static {p1}, Ljava/lang/reflect/Modifier;->isPublic(I)Z
+    invoke-static {v4}, Ljava/lang/reflect/Modifier;->isPublic(I)Z
 
-    move-result p1
+    move-result v4
 
-    if-nez p1, :cond_1
+    if-eqz v4, :cond_0
 
-    :cond_0
-    const/4 p1, 0x1
+    invoke-virtual {v3}, Ljava/lang/Class;->getModifiers()I
 
-    invoke-virtual {v0, p1}, Ljava/lang/reflect/AccessibleObject;->setAccessible(Z)V
-    :try_end_0
-    .catch Ljava/lang/SecurityException; {:try_start_0 .. :try_end_0} :catch_0
+    move-result v4
+
+    invoke-static {v4}, Ljava/lang/reflect/Modifier;->isPublic(I)Z
+
+    move-result v4
+
+    if-eqz v4, :cond_0
+
+    move v4, v2
 
     goto :goto_0
 
+    :cond_0
+    move v4, v1
+
+    :goto_0
+    if-eqz v4, :cond_1
+
+    if-eqz p1, :cond_3
+
+    invoke-static {v3}, Lcom/fasterxml/jackson/databind/util/ClassUtil;->isJDKClass(Ljava/lang/Class;)Z
+
+    move-result p1
+
+    if-nez p1, :cond_3
+
+    :cond_1
+    invoke-virtual {v0, v2}, Ljava/lang/reflect/AccessibleObject;->setAccessible(Z)V
+    :try_end_0
+    .catch Ljava/lang/SecurityException; {:try_start_0 .. :try_end_0} :catch_1
+    .catch Ljava/lang/RuntimeException; {:try_start_0 .. :try_end_0} :catch_0
+
+    goto :goto_1
+
     :catch_0
+    move-exception p1
+
+    invoke-virtual {p1}, Ljava/lang/Object;->getClass()Ljava/lang/Class;
+
+    move-result-object v0
+
+    invoke-virtual {v0}, Ljava/lang/Class;->getSimpleName()Ljava/lang/String;
+
+    move-result-object v0
+
+    const-string v3, "InaccessibleObjectException"
+
+    invoke-virtual {v3, v0}, Ljava/lang/String;->equals(Ljava/lang/Object;)Z
+
+    move-result v0
+
+    if-eqz v0, :cond_2
+
+    new-instance v0, Ljava/lang/IllegalArgumentException;
+
+    const/4 v3, 0x4
+
+    new-array v3, v3, [Ljava/lang/Object;
+
+    invoke-virtual {p0}, Ljava/lang/Object;->getClass()Ljava/lang/Class;
+
+    move-result-object v4
+
+    invoke-virtual {v4}, Ljava/lang/Class;->getSimpleName()Ljava/lang/String;
+
+    move-result-object v4
+
+    aput-object v4, v3, v1
+
+    invoke-interface {p0}, Ljava/lang/reflect/Member;->getName()Ljava/lang/String;
+
+    move-result-object p0
+
+    aput-object p0, v3, v2
+
+    const/4 p0, 0x2
+
+    invoke-virtual {p1}, Ljava/lang/Object;->getClass()Ljava/lang/Class;
+
+    move-result-object v1
+
+    invoke-virtual {v1}, Ljava/lang/Class;->getName()Ljava/lang/String;
+
+    move-result-object v1
+
+    aput-object v1, v3, p0
+
+    const/4 p0, 0x3
+
+    invoke-virtual {p1}, Ljava/lang/RuntimeException;->getMessage()Ljava/lang/String;
+
+    move-result-object v1
+
+    aput-object v1, v3, p0
+
+    const-string p0, "Failed to call `setAccess()` on %s \'%s\' due to `%s`, problem: %s"
+
+    invoke-static {p0, v3}, Ljava/lang/String;->format(Ljava/lang/String;[Ljava/lang/Object;)Ljava/lang/String;
+
+    move-result-object p0
+
+    invoke-direct {v0, p0, p1}, Ljava/lang/IllegalArgumentException;-><init>(Ljava/lang/String;Ljava/lang/Throwable;)V
+
+    throw v0
+
+    :cond_2
+    throw p1
+
+    :catch_1
     move-exception p1
 
     invoke-virtual {v0}, Ljava/lang/reflect/AccessibleObject;->isAccessible()Z
 
     move-result v0
 
-    if-eqz v0, :cond_2
+    if-eqz v0, :cond_4
 
-    :cond_1
-    :goto_0
+    :cond_3
+    :goto_1
     return-void
 
-    :cond_2
+    :cond_4
     invoke-interface {p0}, Ljava/lang/reflect/Member;->getDeclaringClass()Ljava/lang/Class;
 
     move-result-object v0
@@ -603,19 +696,40 @@
 .method public static exceptionMessage(Ljava/lang/Throwable;)Ljava/lang/String;
     .locals 1
 
-    instance-of v0, p0, Lcom/fasterxml/jackson/core/JsonProcessingException;
+    instance-of v0, p0, Lcom/fasterxml/jackson/core/JacksonException;
 
     if-eqz v0, :cond_0
 
-    check-cast p0, Lcom/fasterxml/jackson/core/JsonProcessingException;
+    check-cast p0, Lcom/fasterxml/jackson/core/JacksonException;
 
-    invoke-virtual {p0}, Lcom/fasterxml/jackson/core/JsonProcessingException;->getOriginalMessage()Ljava/lang/String;
+    invoke-virtual {p0}, Lcom/fasterxml/jackson/core/JacksonException;->getOriginalMessage()Ljava/lang/String;
 
     move-result-object p0
 
     return-object p0
 
     :cond_0
+    instance-of v0, p0, Ljava/lang/reflect/InvocationTargetException;
+
+    if-eqz v0, :cond_1
+
+    invoke-virtual {p0}, Ljava/lang/Throwable;->getCause()Ljava/lang/Throwable;
+
+    move-result-object v0
+
+    if-eqz v0, :cond_1
+
+    invoke-virtual {p0}, Ljava/lang/Throwable;->getCause()Ljava/lang/Throwable;
+
+    move-result-object p0
+
+    invoke-virtual {p0}, Ljava/lang/Throwable;->getMessage()Ljava/lang/String;
+
+    move-result-object p0
+
+    return-object p0
+
+    :cond_1
     invoke-virtual {p0}, Ljava/lang/Throwable;->getMessage()Ljava/lang/String;
 
     move-result-object p0
@@ -1127,7 +1241,7 @@
 
     invoke-virtual {v0, v1}, Ljava/lang/StringBuilder;->append(C)Ljava/lang/StringBuilder;
 
-    invoke-virtual {p0}, Lcom/fasterxml/jackson/core/type/ResolvedType;->toCanonical()Ljava/lang/String;
+    invoke-virtual {p0}, Lorg/joda/time/Chronology;->toCanonical()Ljava/lang/String;
 
     move-result-object p0
 
@@ -1190,7 +1304,7 @@
 
     if-eq p0, v0, :cond_1
 
-    const-class v0, Lcom/fasterxml/jackson/databind/annotation/NoClass;
+    const-class v0, Lde/rki/coronawarnapp/update/InAppUpdateModule;
 
     if-ne p0, v0, :cond_0
 

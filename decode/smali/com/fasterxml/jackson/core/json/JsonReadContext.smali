@@ -274,7 +274,7 @@
 
     const-string v3, "\'"
 
-    invoke-static {v2, p1, v3}, Landroidx/core/graphics/PathParser$$ExternalSyntheticOutline0;->m(Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;)Ljava/lang/String;
+    invoke-static {v2, p1, v3}, Landroidx/concurrent/futures/AbstractResolvableFuture$$ExternalSyntheticOutline1;->m(Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;)Ljava/lang/String;
 
     move-result-object p1
 
@@ -292,4 +292,26 @@
     iput-object p1, p0, Lcom/fasterxml/jackson/core/json/JsonReadContext;->_currentValue:Ljava/lang/Object;
 
     return-void
+.end method
+
+.method public startLocation(Lcom/fasterxml/jackson/core/io/ContentReference;)Lcom/fasterxml/jackson/core/JsonLocation;
+    .locals 9
+
+    new-instance v8, Lcom/fasterxml/jackson/core/JsonLocation;
+
+    iget v6, p0, Lcom/fasterxml/jackson/core/json/JsonReadContext;->_lineNr:I
+
+    iget v7, p0, Lcom/fasterxml/jackson/core/json/JsonReadContext;->_columnNr:I
+
+    const-wide/16 v2, -0x1
+
+    const-wide/16 v4, -0x1
+
+    move-object v0, v8
+
+    move-object v1, p1
+
+    invoke-direct/range {v0 .. v7}, Lcom/fasterxml/jackson/core/JsonLocation;-><init>(Lcom/fasterxml/jackson/core/io/ContentReference;JJII)V
+
+    return-object v8
 .end method

@@ -1,11 +1,16 @@
-.class public interface abstract Lj$/util/stream/l3;
+.class abstract Lj$/util/stream/l3;
 .super Ljava/lang/Object;
 
-# interfaces
-.implements Lj$/util/stream/n3;
-.implements Lj$/util/function/i;
+
+# instance fields
+.field a:I
 
 
-# virtual methods
-.method public abstract d(I)V
+# direct methods
+.method constructor <init>()V
+    .locals 0
+
+    invoke-direct {p0}, Ljava/lang/Object;-><init>()V
+
+    return-void
 .end method

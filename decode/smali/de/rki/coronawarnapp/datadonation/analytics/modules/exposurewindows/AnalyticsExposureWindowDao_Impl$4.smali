@@ -1,5 +1,5 @@
 .class public Lde/rki/coronawarnapp/datadonation/analytics/modules/exposurewindows/AnalyticsExposureWindowDao_Impl$4;
-.super Landroidx/room/EntityDeletionOrUpdateAdapter;
+.super Landroidx/room/EntityInsertionAdapter;
 .source "AnalyticsExposureWindowDao_Impl.java"
 
 
@@ -15,9 +15,7 @@
 
 .annotation system Ldalvik/annotation/Signature;
     value = {
-        "Landroidx/room/EntityDeletionOrUpdateAdapter<",
-        "Lde/rki/coronawarnapp/datadonation/analytics/modules/exposurewindows/AnalyticsExposureWindowEntity;",
-        ">;"
+        "Landroidx/room/EntityInsertionAdapter;"
     }
 .end annotation
 
@@ -36,7 +34,7 @@
         }
     .end annotation
 
-    invoke-direct {p0, p2}, Landroidx/room/EntityDeletionOrUpdateAdapter;-><init>(Landroidx/room/RoomDatabase;)V
+    invoke-direct {p0, p2}, Landroidx/room/EntityInsertionAdapter;-><init>(Landroidx/room/RoomDatabase;)V
 
     return-void
 .end method

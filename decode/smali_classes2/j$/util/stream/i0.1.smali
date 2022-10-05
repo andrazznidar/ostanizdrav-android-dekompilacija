@@ -1,90 +1,54 @@
 .class abstract Lj$/util/stream/i0;
-.super Ljava/lang/Object;
-
-# interfaces
-.implements Lj$/util/stream/Q4;
-
-
-# instance fields
-.field a:Z
-
-.field b:Ljava/lang/Object;
+.super Lj$/util/stream/k0;
 
 
 # direct methods
-.method constructor <init>()V
+.method static constructor <clinit>()V
+    .locals 1
+
+    const-class v0, Lj$/util/stream/k0;
+
+    return-void
+.end method
+
+.method constructor <init>(Lj$/util/stream/c;II)V
     .locals 0
 
-    invoke-direct {p0}, Ljava/lang/Object;-><init>()V
+    invoke-direct {p0, p1, p3}, Lj$/util/stream/k0;-><init>(Lj$/util/stream/c;I)V
 
     return-void
 .end method
 
 
 # virtual methods
-.method public synthetic c(D)V
-    .locals 0
-
-    invoke-static {p0}, Lj$/util/stream/p1;->f(Lj$/util/stream/n3;)V
-
-    const/4 p1, 0x0
-
-    throw p1
-.end method
-
-.method public synthetic d(I)V
-    .locals 0
-
-    invoke-static {p0}, Lj$/util/stream/p1;->d(Lj$/util/stream/n3;)V
-
-    const/4 p1, 0x0
-
-    throw p1
-.end method
-
-.method public synthetic e(J)V
-    .locals 0
-
-    invoke-static {p0}, Lj$/util/stream/p1;->e(Lj$/util/stream/n3;)V
-
-    const/4 p1, 0x0
-
-    throw p1
-.end method
-
-.method public i(Ljava/lang/Object;)V
+.method final e1()Z
     .locals 1
-
-    iget-boolean v0, p0, Lj$/util/stream/i0;->a:Z
-
-    if-nez v0, :cond_0
 
     const/4 v0, 0x1
 
-    iput-boolean v0, p0, Lj$/util/stream/i0;->a:Z
-
-    iput-object p1, p0, Lj$/util/stream/i0;->b:Ljava/lang/Object;
-
-    :cond_0
-    return-void
+    return v0
 .end method
 
-.method public synthetic w()V
-    .locals 0
-
-    return-void
-.end method
-
-.method public synthetic x(J)V
-    .locals 0
-
-    return-void
-.end method
-
-.method public z()Z
+.method public bridge synthetic parallel()Lj$/util/stream/IntStream;
     .locals 1
 
-    iget-boolean v0, p0, Lj$/util/stream/i0;->a:Z
+    invoke-virtual {p0}, Lj$/util/stream/c;->parallel()Lj$/util/stream/h;
 
-    return v0
+    move-object v0, p0
+
+    check-cast v0, Lj$/util/stream/IntStream;
+
+    return-object v0
+.end method
+
+.method public bridge synthetic sequential()Lj$/util/stream/IntStream;
+    .locals 1
+
+    invoke-virtual {p0}, Lj$/util/stream/c;->sequential()Lj$/util/stream/h;
+
+    move-object v0, p0
+
+    check-cast v0, Lj$/util/stream/IntStream;
+
+    return-object v0
 .end method

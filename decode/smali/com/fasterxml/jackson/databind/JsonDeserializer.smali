@@ -48,7 +48,7 @@
     .annotation system Ldalvik/annotation/Throws;
         value = {
             Ljava/io/IOException;,
-            Lcom/fasterxml/jackson/core/JsonProcessingException;
+            Lcom/fasterxml/jackson/core/JacksonException;
         }
     .end annotation
 .end method
@@ -66,7 +66,8 @@
 
     .annotation system Ldalvik/annotation/Throws;
         value = {
-            Ljava/io/IOException;
+            Ljava/io/IOException;,
+            Lcom/fasterxml/jackson/core/JacksonException;
         }
     .end annotation
 
@@ -83,7 +84,8 @@
     .locals 0
     .annotation system Ldalvik/annotation/Throws;
         value = {
-            Ljava/io/IOException;
+            Ljava/io/IOException;,
+            Lcom/fasterxml/jackson/core/JacksonException;
         }
     .end annotation
 
@@ -128,6 +130,21 @@
     invoke-direct {v0, p1}, Ljava/lang/IllegalArgumentException;-><init>(Ljava/lang/String;)V
 
     throw v0
+.end method
+
+.method public getAbsentValue(Lcom/fasterxml/jackson/databind/DeserializationContext;)Ljava/lang/Object;
+    .locals 0
+    .annotation system Ldalvik/annotation/Throws;
+        value = {
+            Lcom/fasterxml/jackson/databind/JsonMappingException;
+        }
+    .end annotation
+
+    invoke-virtual {p0, p1}, Lcom/fasterxml/jackson/databind/JsonDeserializer;->getNullValue(Lcom/fasterxml/jackson/databind/DeserializationContext;)Ljava/lang/Object;
+
+    move-result-object p1
+
+    return-object p1
 .end method
 
 .method public getEmptyAccessPattern$enumunboxing$()I

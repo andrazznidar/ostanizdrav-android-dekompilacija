@@ -116,7 +116,7 @@
 
 
 # virtual methods
-.method public final enqueue(Landroidx/fragment/app/SpecialEffectsController$Operation$State;Landroidx/fragment/app/SpecialEffectsController$Operation$LifecycleImpact;Landroidx/fragment/app/FragmentStateManager;)V
+.method public final enqueue$enumunboxing$(IILandroidx/fragment/app/FragmentStateManager;)V
     .locals 3
 
     iget-object v0, p0, Landroidx/fragment/app/SpecialEffectsController;->mPendingOperations:Ljava/util/ArrayList;
@@ -136,7 +136,7 @@
 
     if-eqz v2, :cond_0
 
-    invoke-virtual {v2, p1, p2}, Landroidx/fragment/app/SpecialEffectsController$Operation;->mergeWith(Landroidx/fragment/app/SpecialEffectsController$Operation$State;Landroidx/fragment/app/SpecialEffectsController$Operation$LifecycleImpact;)V
+    invoke-virtual {v2, p1, p2}, Landroidx/fragment/app/SpecialEffectsController$Operation;->mergeWith$enumunboxing$(II)V
 
     monitor-exit v0
 
@@ -145,7 +145,7 @@
     :cond_0
     new-instance v2, Landroidx/fragment/app/SpecialEffectsController$FragmentStateManagerOperation;
 
-    invoke-direct {v2, p1, p2, p3, v1}, Landroidx/fragment/app/SpecialEffectsController$FragmentStateManagerOperation;-><init>(Landroidx/fragment/app/SpecialEffectsController$Operation$State;Landroidx/fragment/app/SpecialEffectsController$Operation$LifecycleImpact;Landroidx/fragment/app/FragmentStateManager;Landroidx/core/os/CancellationSignal;)V
+    invoke-direct {v2, p1, p2, p3, v1}, Landroidx/fragment/app/SpecialEffectsController$FragmentStateManagerOperation;-><init>(IILandroidx/fragment/app/FragmentStateManager;Landroidx/core/os/CancellationSignal;)V
 
     iget-object p1, p0, Landroidx/fragment/app/SpecialEffectsController;->mPendingOperations:Ljava/util/ArrayList;
 
@@ -655,9 +655,9 @@
 
     move-result v1
 
+    :cond_0
     add-int/lit8 v1, v1, -0x1
 
-    :goto_0
     if-ltz v1, :cond_1
 
     iget-object v2, p0, Landroidx/fragment/app/SpecialEffectsController;->mPendingOperations:Ljava/util/ArrayList;
@@ -672,13 +672,13 @@
 
     iget-object v3, v3, Landroidx/fragment/app/Fragment;->mView:Landroid/view/View;
 
-    invoke-static {v3}, Landroidx/fragment/app/SpecialEffectsController$Operation$State;->from(Landroid/view/View;)Landroidx/fragment/app/SpecialEffectsController$Operation$State;
+    invoke-static {v3}, Landroidx/fragment/app/SpecialEffectsController$Operation$State$EnumUnboxingLocalUtility;->_from(Landroid/view/View;)I
 
-    move-result-object v3
+    move-result v3
 
-    iget-object v4, v2, Landroidx/fragment/app/SpecialEffectsController$Operation;->mFinalState:Landroidx/fragment/app/SpecialEffectsController$Operation$State;
+    iget v4, v2, Landroidx/fragment/app/SpecialEffectsController$Operation;->mFinalState:I
 
-    sget-object v5, Landroidx/fragment/app/SpecialEffectsController$Operation$State;->VISIBLE:Landroidx/fragment/app/SpecialEffectsController$Operation$State;
+    const/4 v5, 0x2
 
     if-ne v4, v5, :cond_0
 
@@ -692,15 +692,7 @@
 
     iput-boolean v1, p0, Landroidx/fragment/app/SpecialEffectsController;->mIsContainerPostponed:Z
 
-    goto :goto_1
-
-    :cond_0
-    add-int/lit8 v1, v1, -0x1
-
-    goto :goto_0
-
     :cond_1
-    :goto_1
     monitor-exit v0
 
     return-void
@@ -738,9 +730,9 @@
 
     check-cast v1, Landroidx/fragment/app/SpecialEffectsController$Operation;
 
-    iget-object v2, v1, Landroidx/fragment/app/SpecialEffectsController$Operation;->mLifecycleImpact:Landroidx/fragment/app/SpecialEffectsController$Operation$LifecycleImpact;
+    iget v2, v1, Landroidx/fragment/app/SpecialEffectsController$Operation;->mLifecycleImpact:I
 
-    sget-object v3, Landroidx/fragment/app/SpecialEffectsController$Operation$LifecycleImpact;->ADDING:Landroidx/fragment/app/SpecialEffectsController$Operation$LifecycleImpact;
+    const/4 v3, 0x2
 
     if-ne v2, v3, :cond_0
 
@@ -754,13 +746,13 @@
 
     move-result v2
 
-    invoke-static {v2}, Landroidx/fragment/app/SpecialEffectsController$Operation$State;->from(I)Landroidx/fragment/app/SpecialEffectsController$Operation$State;
+    invoke-static {v2}, Landroidx/fragment/app/SpecialEffectsController$Operation$State$EnumUnboxingLocalUtility;->_from(I)I
 
-    move-result-object v2
+    move-result v2
 
-    sget-object v3, Landroidx/fragment/app/SpecialEffectsController$Operation$LifecycleImpact;->NONE:Landroidx/fragment/app/SpecialEffectsController$Operation$LifecycleImpact;
+    const/4 v3, 0x1
 
-    invoke-virtual {v1, v2, v3}, Landroidx/fragment/app/SpecialEffectsController$Operation;->mergeWith(Landroidx/fragment/app/SpecialEffectsController$Operation$State;Landroidx/fragment/app/SpecialEffectsController$Operation$LifecycleImpact;)V
+    invoke-virtual {v1, v2, v3}, Landroidx/fragment/app/SpecialEffectsController$Operation;->mergeWith$enumunboxing$(II)V
 
     goto :goto_0
 

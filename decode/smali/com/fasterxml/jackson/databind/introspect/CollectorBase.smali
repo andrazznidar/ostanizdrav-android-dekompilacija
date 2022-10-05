@@ -6,7 +6,7 @@
 # static fields
 .field public static final NO_ANNOTATIONS:[Ljava/lang/annotation/Annotation;
 
-.field public static final NO_ANNOTATION_MAPS:[Lokhttp3/ConnectionPool;
+.field public static final NO_ANNOTATION_MAPS:[Lcom/fasterxml/jackson/databind/introspect/AnnotationMap;
 
 
 # instance fields
@@ -19,9 +19,9 @@
 
     const/4 v0, 0x0
 
-    new-array v1, v0, [Lokhttp3/ConnectionPool;
+    new-array v1, v0, [Lcom/fasterxml/jackson/databind/introspect/AnnotationMap;
 
-    sput-object v1, Lcom/fasterxml/jackson/databind/introspect/CollectorBase;->NO_ANNOTATION_MAPS:[Lokhttp3/ConnectionPool;
+    sput-object v1, Lcom/fasterxml/jackson/databind/introspect/CollectorBase;->NO_ANNOTATION_MAPS:[Lcom/fasterxml/jackson/databind/introspect/AnnotationMap;
 
     new-array v0, v0, [Ljava/lang/annotation/Annotation;
 
@@ -40,38 +40,26 @@
     return-void
 .end method
 
-.method public static _emptyAnnotationMap()Lokhttp3/ConnectionPool;
-    .locals 2
-
-    new-instance v0, Lokhttp3/ConnectionPool;
-
-    const/4 v1, 0x2
-
-    invoke-direct {v0, v1}, Lokhttp3/ConnectionPool;-><init>(I)V
-
-    return-object v0
-.end method
-
-.method public static _emptyAnnotationMaps(I)[Lokhttp3/ConnectionPool;
+.method public static _emptyAnnotationMaps(I)[Lcom/fasterxml/jackson/databind/introspect/AnnotationMap;
     .locals 3
 
     if-nez p0, :cond_0
 
-    sget-object p0, Lcom/fasterxml/jackson/databind/introspect/CollectorBase;->NO_ANNOTATION_MAPS:[Lokhttp3/ConnectionPool;
+    sget-object p0, Lcom/fasterxml/jackson/databind/introspect/CollectorBase;->NO_ANNOTATION_MAPS:[Lcom/fasterxml/jackson/databind/introspect/AnnotationMap;
 
     return-object p0
 
     :cond_0
-    new-array v0, p0, [Lokhttp3/ConnectionPool;
+    new-array v0, p0, [Lcom/fasterxml/jackson/databind/introspect/AnnotationMap;
 
     const/4 v1, 0x0
 
     :goto_0
     if-ge v1, p0, :cond_1
 
-    invoke-static {}, Lcom/fasterxml/jackson/databind/introspect/CollectorBase;->_emptyAnnotationMap()Lokhttp3/ConnectionPool;
+    new-instance v2, Lcom/fasterxml/jackson/databind/introspect/AnnotationMap;
 
-    move-result-object v2
+    invoke-direct {v2}, Lcom/fasterxml/jackson/databind/introspect/AnnotationMap;-><init>()V
 
     aput-object v2, v0, v1
 

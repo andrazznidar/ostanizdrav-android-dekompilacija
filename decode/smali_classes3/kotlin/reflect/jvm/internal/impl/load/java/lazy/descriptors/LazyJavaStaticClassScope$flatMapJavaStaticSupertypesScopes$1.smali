@@ -1,4 +1,4 @@
-.class public final Lkotlin/reflect/jvm/internal/impl/load/java/lazy/descriptors/LazyJavaStaticClassScope$flatMapJavaStaticSupertypesScopes$1;
+.class final Lkotlin/reflect/jvm/internal/impl/load/java/lazy/descriptors/LazyJavaStaticClassScope$flatMapJavaStaticSupertypesScopes$1;
 .super Ljava/lang/Object;
 .source "LazyJavaStaticClassScope.kt"
 
@@ -7,18 +7,35 @@
 
 
 # annotations
+.annotation system Ldalvik/annotation/EnclosingMethod;
+    value = Lkotlin/reflect/jvm/internal/impl/load/java/lazy/descriptors/LazyJavaStaticClassScope;->flatMapJavaStaticSupertypesScopes(Lkotlin/reflect/jvm/internal/impl/descriptors/ClassDescriptor;Ljava/util/Set;Lkotlin/jvm/functions/Function1;)Ljava/util/Set;
+.end annotation
+
+.annotation system Ldalvik/annotation/InnerClass;
+    accessFlags = 0x19
+    name = null
+.end annotation
+
 .annotation system Ldalvik/annotation/Signature;
     value = {
+        "<N:",
         "Ljava/lang/Object;",
-        "Lkotlin/reflect/jvm/internal/impl/utils/DFS$Neighbors<",
-        "Lkotlin/reflect/jvm/internal/impl/descriptors/ClassDescriptor;",
-        ">;"
+        ">",
+        "Ljava/lang/Object;",
+        "Lkotlin/reflect/jvm/internal/impl/utils/DFS$Neighbors;"
     }
 .end annotation
 
 
 # static fields
 .field public static final INSTANCE:Lkotlin/reflect/jvm/internal/impl/load/java/lazy/descriptors/LazyJavaStaticClassScope$flatMapJavaStaticSupertypesScopes$1;
+    .annotation system Ldalvik/annotation/Signature;
+        value = {
+            "Lkotlin/reflect/jvm/internal/impl/load/java/lazy/descriptors/LazyJavaStaticClassScope$flatMapJavaStaticSupertypesScopes$1<",
+            "TN;>;"
+        }
+    .end annotation
+.end field
 
 
 # direct methods
@@ -44,10 +61,30 @@
 
 
 # virtual methods
-.method public getNeighbors(Ljava/lang/Object;)Ljava/lang/Iterable;
-    .locals 1
+.method public bridge synthetic getNeighbors(Ljava/lang/Object;)Ljava/lang/Iterable;
+    .locals 0
 
     check-cast p1, Lkotlin/reflect/jvm/internal/impl/descriptors/ClassDescriptor;
+
+    invoke-virtual {p0, p1}, Lkotlin/reflect/jvm/internal/impl/load/java/lazy/descriptors/LazyJavaStaticClassScope$flatMapJavaStaticSupertypesScopes$1;->getNeighbors(Lkotlin/reflect/jvm/internal/impl/descriptors/ClassDescriptor;)Ljava/lang/Iterable;
+
+    move-result-object p1
+
+    return-object p1
+.end method
+
+.method public final getNeighbors(Lkotlin/reflect/jvm/internal/impl/descriptors/ClassDescriptor;)Ljava/lang/Iterable;
+    .locals 1
+    .annotation system Ldalvik/annotation/Signature;
+        value = {
+            "(",
+            "Lkotlin/reflect/jvm/internal/impl/descriptors/ClassDescriptor;",
+            ")",
+            "Ljava/lang/Iterable<",
+            "Lkotlin/reflect/jvm/internal/impl/descriptors/ClassDescriptor;",
+            ">;"
+        }
+    .end annotation
 
     invoke-interface {p1}, Lkotlin/reflect/jvm/internal/impl/descriptors/ClassifierDescriptor;->getTypeConstructor()Lkotlin/reflect/jvm/internal/impl/types/TypeConstructor;
 

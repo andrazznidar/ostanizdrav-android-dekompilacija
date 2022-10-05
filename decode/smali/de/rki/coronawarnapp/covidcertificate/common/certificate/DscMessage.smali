@@ -3,16 +3,8 @@
 .source "DccData.kt"
 
 
-# annotations
-.annotation system Ldalvik/annotation/MemberClasses;
-    value = {
-        Lde/rki/coronawarnapp/covidcertificate/common/certificate/DscMessage$Algorithm;
-    }
-.end annotation
-
-
 # instance fields
-.field public final algorithm:Lde/rki/coronawarnapp/covidcertificate/common/certificate/DscMessage$Algorithm;
+.field public final algorithm:I
 
 .field public final kid:Ljava/lang/String;
 
@@ -24,8 +16,28 @@
 
 
 # direct methods
-.method public constructor <init>(Lokio/ByteString;Lokio/ByteString;Lokio/ByteString;Lde/rki/coronawarnapp/covidcertificate/common/certificate/DscMessage$Algorithm;Ljava/lang/String;)V
-    .locals 0
+.method public constructor <init>(Lokio/ByteString;Lokio/ByteString;Lokio/ByteString;ILjava/lang/String;)V
+    .locals 1
+
+    const-string v0, "protectedHeader"
+
+    invoke-static {p1, v0}, Lkotlin/jvm/internal/Intrinsics;->checkNotNullParameter(Ljava/lang/Object;Ljava/lang/String;)V
+
+    const-string v0, "payload"
+
+    invoke-static {p2, v0}, Lkotlin/jvm/internal/Intrinsics;->checkNotNullParameter(Ljava/lang/Object;Ljava/lang/String;)V
+
+    const-string/jumbo v0, "signature"
+
+    invoke-static {p3, v0}, Lkotlin/jvm/internal/Intrinsics;->checkNotNullParameter(Ljava/lang/Object;Ljava/lang/String;)V
+
+    const-string v0, "algorithm"
+
+    invoke-static {p4, v0}, Lkotlin/jvm/internal/Intrinsics$$ExternalSyntheticCheckNotZero0;->m(ILjava/lang/String;)V
+
+    const-string v0, "kid"
+
+    invoke-static {p5, v0}, Lkotlin/jvm/internal/Intrinsics;->checkNotNullParameter(Ljava/lang/Object;Ljava/lang/String;)V
 
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
@@ -35,7 +47,7 @@
 
     iput-object p3, p0, Lde/rki/coronawarnapp/covidcertificate/common/certificate/DscMessage;->signature:Lokio/ByteString;
 
-    iput-object p4, p0, Lde/rki/coronawarnapp/covidcertificate/common/certificate/DscMessage;->algorithm:Lde/rki/coronawarnapp/covidcertificate/common/certificate/DscMessage$Algorithm;
+    iput p4, p0, Lde/rki/coronawarnapp/covidcertificate/common/certificate/DscMessage;->algorithm:I
 
     iput-object p5, p0, Lde/rki/coronawarnapp/covidcertificate/common/certificate/DscMessage;->kid:Ljava/lang/String;
 
@@ -104,9 +116,9 @@
     return v2
 
     :cond_4
-    iget-object v1, p0, Lde/rki/coronawarnapp/covidcertificate/common/certificate/DscMessage;->algorithm:Lde/rki/coronawarnapp/covidcertificate/common/certificate/DscMessage$Algorithm;
+    iget v1, p0, Lde/rki/coronawarnapp/covidcertificate/common/certificate/DscMessage;->algorithm:I
 
-    iget-object v3, p1, Lde/rki/coronawarnapp/covidcertificate/common/certificate/DscMessage;->algorithm:Lde/rki/coronawarnapp/covidcertificate/common/certificate/DscMessage$Algorithm;
+    iget v3, p1, Lde/rki/coronawarnapp/covidcertificate/common/certificate/DscMessage;->algorithm:I
 
     if-eq v1, v3, :cond_5
 
@@ -160,9 +172,9 @@
 
     mul-int/lit8 v0, v0, 0x1f
 
-    iget-object v1, p0, Lde/rki/coronawarnapp/covidcertificate/common/certificate/DscMessage;->algorithm:Lde/rki/coronawarnapp/covidcertificate/common/certificate/DscMessage$Algorithm;
+    iget v1, p0, Lde/rki/coronawarnapp/covidcertificate/common/certificate/DscMessage;->algorithm:I
 
-    invoke-virtual {v1}, Ljava/lang/Enum;->hashCode()I
+    invoke-static {v1}, Landroidx/camera/camera2/internal/Camera2CameraImpl$InternalState$EnumUnboxingSharedUtility;->ordinal(I)I
 
     move-result v1
 
@@ -190,7 +202,7 @@
 
     iget-object v2, p0, Lde/rki/coronawarnapp/covidcertificate/common/certificate/DscMessage;->signature:Lokio/ByteString;
 
-    iget-object v3, p0, Lde/rki/coronawarnapp/covidcertificate/common/certificate/DscMessage;->algorithm:Lde/rki/coronawarnapp/covidcertificate/common/certificate/DscMessage$Algorithm;
+    iget v3, p0, Lde/rki/coronawarnapp/covidcertificate/common/certificate/DscMessage;->algorithm:I
 
     iget-object v4, p0, Lde/rki/coronawarnapp/covidcertificate/common/certificate/DscMessage;->kid:Ljava/lang/String;
 
@@ -220,15 +232,23 @@
 
     invoke-virtual {v5, v0}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
 
-    invoke-virtual {v5, v3}, Ljava/lang/StringBuilder;->append(Ljava/lang/Object;)Ljava/lang/StringBuilder;
+    invoke-static {v3}, Lorg/bouncycastle/crypto/util/OpenSSHPrivateKeyUtil$$ExternalSyntheticOutline0;->stringValueOf(I)Ljava/lang/String;
+
+    move-result-object v0
+
+    invoke-virtual {v5, v0}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
 
     const-string v0, ", kid="
 
     invoke-virtual {v5, v0}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
 
+    invoke-virtual {v5, v4}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+
     const-string v0, ")"
 
-    invoke-static {v5, v4, v0}, Landroidx/constraintlayout/core/widgets/Barrier$$ExternalSyntheticOutline0;->m(Ljava/lang/StringBuilder;Ljava/lang/String;Ljava/lang/String;)Ljava/lang/String;
+    invoke-virtual {v5, v0}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+
+    invoke-virtual {v5}, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
 
     move-result-object v0
 

@@ -46,6 +46,18 @@
     .end annotation
 .end method
 
+.method public abstract getAllCombinedEwPtRiskLevelResults()Lkotlinx/coroutines/flow/Flow;
+    .annotation system Ldalvik/annotation/Signature;
+        value = {
+            "()",
+            "Lkotlinx/coroutines/flow/Flow<",
+            "Ljava/util/List<",
+            "Lde/rki/coronawarnapp/risk/CombinedEwPtRiskLevelResult;",
+            ">;>;"
+        }
+    .end annotation
+.end method
+
 .method public abstract getAllEwRiskLevelResults()Lkotlinx/coroutines/flow/Flow;
     .annotation system Ldalvik/annotation/Signature;
         value = {
@@ -89,18 +101,6 @@
             "Lkotlinx/coroutines/flow/Flow<",
             "Lde/rki/coronawarnapp/risk/LastCombinedRiskResults;",
             ">;"
-        }
-    .end annotation
-.end method
-
-.method public abstract getLatestCombinedEwPtRiskLevelResults()Lkotlinx/coroutines/flow/Flow;
-    .annotation system Ldalvik/annotation/Signature;
-        value = {
-            "()",
-            "Lkotlinx/coroutines/flow/Flow<",
-            "Ljava/util/List<",
-            "Lde/rki/coronawarnapp/risk/CombinedEwPtRiskLevelResult;",
-            ">;>;"
         }
     .end annotation
 .end method

@@ -8,6 +8,7 @@
     value = {
         Lde/rki/coronawarnapp/covidcertificate/common/certificate/DccV1$NameData;,
         Lde/rki/coronawarnapp/covidcertificate/common/certificate/DccV1$MetaData;,
+        Lde/rki/coronawarnapp/covidcertificate/common/certificate/DccV1$Payload;,
         Lde/rki/coronawarnapp/covidcertificate/common/certificate/DccV1$RecoveryCertificateData;,
         Lde/rki/coronawarnapp/covidcertificate/common/certificate/DccV1$VaccinationData;,
         Lde/rki/coronawarnapp/covidcertificate/common/certificate/DccV1$TestCertificateData;
@@ -324,9 +325,17 @@
 
     iget-object v0, p0, Lde/rki/coronawarnapp/covidcertificate/common/certificate/DccV1;->dob:Ljava/lang/String;
 
-    invoke-static {v0}, Lkotlin/reflect/jvm/internal/impl/descriptors/PackageFragmentProviderKt;->formatDate(Ljava/lang/String;)Ljava/lang/String;
+    invoke-static {v0}, Lcom/google/android/gms/internal/nearby/zzew;->formatDate(Ljava/lang/String;)Ljava/lang/String;
 
     move-result-object v0
+
+    return-object v0
+.end method
+
+.method public final getDob()Ljava/lang/String;
+    .locals 1
+
+    iget-object v0, p0, Lde/rki/coronawarnapp/covidcertificate/common/certificate/DccV1;->dob:Ljava/lang/String;
 
     return-object v0
 .end method

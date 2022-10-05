@@ -5,29 +5,7 @@
 # interfaces
 .implements Lkotlin/jvm/internal/FunctionBase;
 .implements Lkotlin/reflect/KFunction;
-.implements Lkotlin/jvm/functions/Function0;
-.implements Lkotlin/jvm/functions/Function1;
-.implements Lkotlin/jvm/functions/Function10;
-.implements Lkotlin/jvm/functions/Function11;
-.implements Lkotlin/jvm/functions/Function12;
-.implements Lkotlin/jvm/functions/Function13;
-.implements Lkotlin/jvm/functions/Function14;
-.implements Lkotlin/jvm/functions/Function15;
-.implements Lkotlin/jvm/functions/Function16;
-.implements Lkotlin/jvm/functions/Function17;
-.implements Lkotlin/jvm/functions/Function18;
-.implements Lkotlin/jvm/functions/Function19;
-.implements Lkotlin/jvm/functions/Function2;
-.implements Lkotlin/jvm/functions/Function20;
-.implements Lkotlin/jvm/functions/Function21;
-.implements Lkotlin/jvm/functions/Function22;
-.implements Lkotlin/jvm/functions/Function3;
-.implements Lkotlin/jvm/functions/Function4;
-.implements Lkotlin/jvm/functions/Function5;
-.implements Lkotlin/jvm/functions/Function6;
-.implements Lkotlin/jvm/functions/Function7;
-.implements Lkotlin/jvm/functions/Function8;
-.implements Lkotlin/jvm/functions/Function9;
+.implements Lkotlin/reflect/jvm/internal/FunctionWithAllInvokes;
 
 
 # annotations
@@ -41,7 +19,86 @@
         ">;",
         "Lkotlin/reflect/KFunction<",
         "Ljava/lang/Object;",
-        ">;"
+        ">;",
+        "Lkotlin/reflect/jvm/internal/FunctionWithAllInvokes;"
+    }
+.end annotation
+
+.annotation runtime Lkotlin/Metadata;
+    d1 = {
+        "\u0000`\n\u0002\u0018\u0002\n\u0002\u0018\u0002\n\u0002\u0010\u0000\n\u0002\u0018\u0002\n\u0002\u0018\u0002\n\u0002\u0018\u0002\n\u0000\n\u0002\u0018\u0002\n\u0000\n\u0002\u0010\u000e\n\u0002\u0008\u0004\n\u0002\u0018\u0002\n\u0002\u0008\u0005\n\u0002\u0010\u0008\n\u0002\u0008\u0005\n\u0002\u0018\u0002\n\u0002\u0008\u000e\n\u0002\u0010\u000b\n\u0002\u0008\t\n\u0002\u0018\u0002\n\u0002\u0018\u0002\n\u0002\u0008\u0002\n\u0002\u0018\u0002\n\u0002\u0018\u0002\n\u0002\u0008\u0007\u0008\u0000\u0018\u00002\n\u0012\u0006\u0012\u0004\u0018\u00010\u00020\u00012\n\u0012\u0006\u0012\u0004\u0018\u00010\u00020\u00032\n\u0012\u0006\u0012\u0004\u0018\u00010\u00020\u00042\u00020\u0005B)\u0008\u0016\u0012\u0006\u0010\u0006\u001a\u00020\u0007\u0012\u0006\u0010\u0008\u001a\u00020\t\u0012\u0006\u0010\n\u001a\u00020\t\u0012\u0008\u0010\u000b\u001a\u0004\u0018\u00010\u0002\u00a2\u0006\u0002\u0010\u000cB\u0017\u0008\u0016\u0012\u0006\u0010\u0006\u001a\u00020\u0007\u0012\u0006\u0010\r\u001a\u00020\u000e\u00a2\u0006\u0002\u0010\u000fB5\u0008\u0002\u0012\u0006\u0010\u0006\u001a\u00020\u0007\u0012\u0006\u0010\u0008\u001a\u00020\t\u0012\u0006\u0010\n\u001a\u00020\t\u0012\u0008\u0010\u0010\u001a\u0004\u0018\u00010\u000e\u0012\n\u0008\u0002\u0010\u0011\u001a\u0004\u0018\u00010\u0002\u00a2\u0006\u0002\u0010\u0012J&\u00102\u001a\u000c\u0012\u0008\u0012\u0006\u0012\u0002\u0008\u000304032\n\u00105\u001a\u0006\u0012\u0002\u0008\u0003042\u0006\u0010\r\u001a\u00020\u000eH\u0002J\u0010\u00106\u001a\u0002072\u0006\u00105\u001a\u000208H\u0002J\u0010\u00109\u001a\u0002072\u0006\u00105\u001a\u000208H\u0002J\u0010\u0010:\u001a\u0002072\u0006\u00105\u001a\u000208H\u0002J\u0013\u0010;\u001a\u00020)2\u0008\u0010<\u001a\u0004\u0018\u00010\u0002H\u0096\u0002J\u0008\u0010=\u001a\u00020\u0014H\u0016J\u0008\u0010>\u001a\u00020\tH\u0016R\u0014\u0010\u0013\u001a\u00020\u00148VX\u0096\u0004\u00a2\u0006\u0006\u001a\u0004\u0008\u0015\u0010\u0016R\u0016\u0010\u000b\u001a\u0004\u0018\u00010\u00028BX\u0082\u0004\u00a2\u0006\u0006\u001a\u0004\u0008\u0017\u0010\u0018R\u001f\u0010\u0019\u001a\u0006\u0012\u0002\u0008\u00030\u001a8VX\u0096\u0084\u0002\u00a2\u0006\u000c\n\u0004\u0008\u001d\u0010\u001e\u001a\u0004\u0008\u001b\u0010\u001cR\u0014\u0010\u0006\u001a\u00020\u0007X\u0096\u0004\u00a2\u0006\u0008\n\u0000\u001a\u0004\u0008\u001f\u0010 R!\u0010!\u001a\u0008\u0012\u0002\u0008\u0003\u0018\u00010\u001a8VX\u0096\u0084\u0002\u00a2\u0006\u000c\n\u0004\u0008#\u0010\u001e\u001a\u0004\u0008\"\u0010\u001cR\u001b\u0010\r\u001a\u00020\u000e8VX\u0096\u0084\u0002\u00a2\u0006\u000c\n\u0004\u0008&\u0010\'\u001a\u0004\u0008$\u0010%R\u0014\u0010(\u001a\u00020)8VX\u0096\u0004\u00a2\u0006\u0006\u001a\u0004\u0008(\u0010*R\u0014\u0010+\u001a\u00020)8VX\u0096\u0004\u00a2\u0006\u0006\u001a\u0004\u0008+\u0010*R\u0014\u0010,\u001a\u00020)8VX\u0096\u0004\u00a2\u0006\u0006\u001a\u0004\u0008,\u0010*R\u0014\u0010-\u001a\u00020)8VX\u0096\u0004\u00a2\u0006\u0006\u001a\u0004\u0008-\u0010*R\u0014\u0010.\u001a\u00020)8VX\u0096\u0004\u00a2\u0006\u0006\u001a\u0004\u0008.\u0010*R\u0014\u0010/\u001a\u00020)8VX\u0096\u0004\u00a2\u0006\u0006\u001a\u0004\u0008/\u0010*R\u0014\u0010\u0008\u001a\u00020\t8VX\u0096\u0004\u00a2\u0006\u0006\u001a\u0004\u00080\u00101R\u0010\u0010\u0011\u001a\u0004\u0018\u00010\u0002X\u0082\u0004\u00a2\u0006\u0002\n\u0000R\u000e\u0010\n\u001a\u00020\tX\u0082\u0004\u00a2\u0006\u0002\n\u0000\u00a8\u0006?"
+    }
+    d2 = {
+        "Lkotlin/reflect/jvm/internal/KFunctionImpl;",
+        "Lkotlin/reflect/jvm/internal/KCallableImpl;",
+        "",
+        "Lkotlin/reflect/KFunction;",
+        "Lkotlin/jvm/internal/FunctionBase;",
+        "Lkotlin/reflect/jvm/internal/FunctionWithAllInvokes;",
+        "container",
+        "Lkotlin/reflect/jvm/internal/KDeclarationContainerImpl;",
+        "name",
+        "",
+        "signature",
+        "boundReceiver",
+        "(Lkotlin/reflect/jvm/internal/KDeclarationContainerImpl;Ljava/lang/String;Ljava/lang/String;Ljava/lang/Object;)V",
+        "descriptor",
+        "Lkotlin/reflect/jvm/internal/impl/descriptors/FunctionDescriptor;",
+        "(Lkotlin/reflect/jvm/internal/KDeclarationContainerImpl;Lorg/jetbrains/kotlin/descriptors/FunctionDescriptor;)V",
+        "descriptorInitialValue",
+        "rawBoundReceiver",
+        "(Lkotlin/reflect/jvm/internal/KDeclarationContainerImpl;Ljava/lang/String;Ljava/lang/String;Lorg/jetbrains/kotlin/descriptors/FunctionDescriptor;Ljava/lang/Object;)V",
+        "arity",
+        "",
+        "getArity",
+        "()I",
+        "getBoundReceiver",
+        "()Ljava/lang/Object;",
+        "caller",
+        "Lkotlin/reflect/jvm/internal/calls/Caller;",
+        "getCaller",
+        "()Lkotlin/reflect/jvm/internal/calls/Caller;",
+        "caller$delegate",
+        "Lkotlin/reflect/jvm/internal/ReflectProperties$LazyVal;",
+        "getContainer",
+        "()Lkotlin/reflect/jvm/internal/KDeclarationContainerImpl;",
+        "defaultCaller",
+        "getDefaultCaller",
+        "defaultCaller$delegate",
+        "getDescriptor",
+        "()Lorg/jetbrains/kotlin/descriptors/FunctionDescriptor;",
+        "descriptor$delegate",
+        "Lkotlin/reflect/jvm/internal/ReflectProperties$LazySoftVal;",
+        "isBound",
+        "",
+        "()Z",
+        "isExternal",
+        "isInfix",
+        "isInline",
+        "isOperator",
+        "isSuspend",
+        "getName",
+        "()Ljava/lang/String;",
+        "createConstructorCaller",
+        "Lkotlin/reflect/jvm/internal/calls/CallerImpl;",
+        "Ljava/lang/reflect/Constructor;",
+        "member",
+        "createInstanceMethodCaller",
+        "Lkotlin/reflect/jvm/internal/calls/CallerImpl$Method;",
+        "Ljava/lang/reflect/Method;",
+        "createJvmStaticInObjectCaller",
+        "createStaticMethodCaller",
+        "equals",
+        "other",
+        "hashCode",
+        "toString",
+        "kotlin-reflection"
+    }
+    k = 0x1
+    mv = {
+        0x1,
+        0x5,
+        0x1
     }
 .end annotation
 
@@ -51,17 +108,17 @@
 
 
 # instance fields
-.field public final caller$delegate:Lkotlin/reflect/jvm/internal/ReflectProperties$LazyVal;
+.field private final caller$delegate:Lkotlin/reflect/jvm/internal/ReflectProperties$LazyVal;
 
-.field public final container:Lkotlin/reflect/jvm/internal/KDeclarationContainerImpl;
+.field private final container:Lkotlin/reflect/jvm/internal/KDeclarationContainerImpl;
 
-.field public final defaultCaller$delegate:Lkotlin/reflect/jvm/internal/ReflectProperties$LazyVal;
+.field private final defaultCaller$delegate:Lkotlin/reflect/jvm/internal/ReflectProperties$LazyVal;
 
-.field public final descriptor$delegate:Lkotlin/reflect/jvm/internal/ReflectProperties$LazySoftVal;
+.field private final descriptor$delegate:Lkotlin/reflect/jvm/internal/ReflectProperties$LazySoftVal;
 
-.field public final rawBoundReceiver:Ljava/lang/Object;
+.field private final rawBoundReceiver:Ljava/lang/Object;
 
-.field public final signature:Ljava/lang/String;
+.field private final signature:Ljava/lang/String;
 
 
 # direct methods
@@ -139,7 +196,39 @@
     return-void
 .end method
 
-.method public constructor <init>(Lkotlin/reflect/jvm/internal/KDeclarationContainerImpl;Ljava/lang/String;Ljava/lang/String;Lkotlin/reflect/jvm/internal/impl/descriptors/FunctionDescriptor;Ljava/lang/Object;)V
+.method public constructor <init>(Lkotlin/reflect/jvm/internal/KDeclarationContainerImpl;Ljava/lang/String;Ljava/lang/String;Ljava/lang/Object;)V
+    .locals 7
+
+    const-string v0, "container"
+
+    invoke-static {p1, v0}, Lkotlin/jvm/internal/Intrinsics;->checkNotNullParameter(Ljava/lang/Object;Ljava/lang/String;)V
+
+    const-string v0, "name"
+
+    invoke-static {p2, v0}, Lkotlin/jvm/internal/Intrinsics;->checkNotNullParameter(Ljava/lang/Object;Ljava/lang/String;)V
+
+    const-string v0, "signature"
+
+    invoke-static {p3, v0}, Lkotlin/jvm/internal/Intrinsics;->checkNotNullParameter(Ljava/lang/Object;Ljava/lang/String;)V
+
+    const/4 v5, 0x0
+
+    move-object v1, p0
+
+    move-object v2, p1
+
+    move-object v3, p2
+
+    move-object v4, p3
+
+    move-object v6, p4
+
+    invoke-direct/range {v1 .. v6}, Lkotlin/reflect/jvm/internal/KFunctionImpl;-><init>(Lkotlin/reflect/jvm/internal/KDeclarationContainerImpl;Ljava/lang/String;Ljava/lang/String;Lkotlin/reflect/jvm/internal/impl/descriptors/FunctionDescriptor;Ljava/lang/Object;)V
+
+    return-void
+.end method
+
+.method private constructor <init>(Lkotlin/reflect/jvm/internal/KDeclarationContainerImpl;Ljava/lang/String;Ljava/lang/String;Lkotlin/reflect/jvm/internal/impl/descriptors/FunctionDescriptor;Ljava/lang/Object;)V
     .locals 0
 
     invoke-direct {p0}, Lkotlin/reflect/jvm/internal/KCallableImpl;-><init>()V
@@ -183,8 +272,35 @@
     return-void
 .end method
 
+.method public synthetic constructor <init>(Lkotlin/reflect/jvm/internal/KDeclarationContainerImpl;Ljava/lang/String;Ljava/lang/String;Lkotlin/reflect/jvm/internal/impl/descriptors/FunctionDescriptor;Ljava/lang/Object;ILkotlin/jvm/internal/DefaultConstructorMarker;)V
+    .locals 6
+
+    and-int/lit8 p6, p6, 0x10
+
+    if-eqz p6, :cond_0
+
+    sget-object p5, Lkotlin/jvm/internal/CallableReference;->NO_RECEIVER:Ljava/lang/Object;
+
+    :cond_0
+    move-object v5, p5
+
+    move-object v0, p0
+
+    move-object v1, p1
+
+    move-object v2, p2
+
+    move-object v3, p3
+
+    move-object v4, p4
+
+    invoke-direct/range {v0 .. v5}, Lkotlin/reflect/jvm/internal/KFunctionImpl;-><init>(Lkotlin/reflect/jvm/internal/KDeclarationContainerImpl;Ljava/lang/String;Ljava/lang/String;Lkotlin/reflect/jvm/internal/impl/descriptors/FunctionDescriptor;Ljava/lang/Object;)V
+
+    return-void
+.end method
+
 .method public constructor <init>(Lkotlin/reflect/jvm/internal/KDeclarationContainerImpl;Lkotlin/reflect/jvm/internal/impl/descriptors/FunctionDescriptor;)V
-    .locals 7
+    .locals 9
 
     const-string v0, "container"
 
@@ -194,7 +310,7 @@
 
     invoke-static {p2, v0}, Lkotlin/jvm/internal/Intrinsics;->checkNotNullParameter(Ljava/lang/Object;Ljava/lang/String;)V
 
-    invoke-interface {p2}, Lkotlin/reflect/jvm/internal/impl/descriptors/DeclarationDescriptor;->getName()Lkotlin/reflect/jvm/internal/impl/name/Name;
+    invoke-interface {p2}, Lkotlin/reflect/jvm/internal/impl/descriptors/Named;->getName()Lkotlin/reflect/jvm/internal/impl/name/Name;
 
     move-result-object v0
 
@@ -208,7 +324,7 @@
 
     sget-object v0, Lkotlin/reflect/jvm/internal/RuntimeTypeMapper;->INSTANCE:Lkotlin/reflect/jvm/internal/RuntimeTypeMapper;
 
-    invoke-static {p2}, Lkotlin/reflect/jvm/internal/RuntimeTypeMapper;->mapSignature(Lkotlin/reflect/jvm/internal/impl/descriptors/FunctionDescriptor;)Lkotlin/reflect/jvm/internal/JvmFunctionSignature;
+    invoke-virtual {v0, p2}, Lkotlin/reflect/jvm/internal/RuntimeTypeMapper;->mapSignature(Lkotlin/reflect/jvm/internal/impl/descriptors/FunctionDescriptor;)Lkotlin/reflect/jvm/internal/JvmFunctionSignature;
 
     move-result-object v0
 
@@ -216,7 +332,11 @@
 
     move-result-object v4
 
-    sget-object v6, Lkotlin/jvm/internal/CallableReference$NoReceiver;->INSTANCE:Lkotlin/jvm/internal/CallableReference$NoReceiver;
+    const/4 v6, 0x0
+
+    const/16 v7, 0x10
+
+    const/4 v8, 0x0
 
     move-object v1, p0
 
@@ -224,187 +344,183 @@
 
     move-object v5, p2
 
-    invoke-direct/range {v1 .. v6}, Lkotlin/reflect/jvm/internal/KFunctionImpl;-><init>(Lkotlin/reflect/jvm/internal/KDeclarationContainerImpl;Ljava/lang/String;Ljava/lang/String;Lkotlin/reflect/jvm/internal/impl/descriptors/FunctionDescriptor;Ljava/lang/Object;)V
+    invoke-direct/range {v1 .. v8}, Lkotlin/reflect/jvm/internal/KFunctionImpl;-><init>(Lkotlin/reflect/jvm/internal/KDeclarationContainerImpl;Ljava/lang/String;Ljava/lang/String;Lkotlin/reflect/jvm/internal/impl/descriptors/FunctionDescriptor;Ljava/lang/Object;ILkotlin/jvm/internal/DefaultConstructorMarker;)V
 
     return-void
 .end method
 
-.method public static final access$createConstructorCaller(Lkotlin/reflect/jvm/internal/KFunctionImpl;Ljava/lang/reflect/Constructor;Lkotlin/reflect/jvm/internal/impl/descriptors/FunctionDescriptor;)Lkotlin/reflect/jvm/internal/calls/CallerImpl;
-    .locals 3
+.method public static final synthetic access$createConstructorCaller(Lkotlin/reflect/jvm/internal/KFunctionImpl;Ljava/lang/reflect/Constructor;Lkotlin/reflect/jvm/internal/impl/descriptors/FunctionDescriptor;)Lkotlin/reflect/jvm/internal/calls/CallerImpl;
+    .locals 0
 
-    invoke-static {p0}, Ljava/util/Objects;->requireNonNull(Ljava/lang/Object;)Ljava/lang/Object;
+    invoke-direct {p0, p1, p2}, Lkotlin/reflect/jvm/internal/KFunctionImpl;->createConstructorCaller(Ljava/lang/reflect/Constructor;Lkotlin/reflect/jvm/internal/impl/descriptors/FunctionDescriptor;)Lkotlin/reflect/jvm/internal/calls/CallerImpl;
 
-    const-string v0, "descriptor"
+    move-result-object p0
 
-    invoke-static {p2, v0}, Lkotlin/jvm/internal/Intrinsics;->checkNotNullParameter(Ljava/lang/Object;Ljava/lang/String;)V
+    return-object p0
+.end method
 
-    instance-of v0, p2, Lkotlin/reflect/jvm/internal/impl/descriptors/ClassConstructorDescriptor;
+.method public static final synthetic access$createInstanceMethodCaller(Lkotlin/reflect/jvm/internal/KFunctionImpl;Ljava/lang/reflect/Method;)Lkotlin/reflect/jvm/internal/calls/CallerImpl$Method;
+    .locals 0
 
-    if-eqz v0, :cond_0
+    invoke-direct {p0, p1}, Lkotlin/reflect/jvm/internal/KFunctionImpl;->createInstanceMethodCaller(Ljava/lang/reflect/Method;)Lkotlin/reflect/jvm/internal/calls/CallerImpl$Method;
 
-    check-cast p2, Lkotlin/reflect/jvm/internal/impl/descriptors/ClassConstructorDescriptor;
+    move-result-object p0
+
+    return-object p0
+.end method
+
+.method public static final synthetic access$createJvmStaticInObjectCaller(Lkotlin/reflect/jvm/internal/KFunctionImpl;Ljava/lang/reflect/Method;)Lkotlin/reflect/jvm/internal/calls/CallerImpl$Method;
+    .locals 0
+
+    invoke-direct {p0, p1}, Lkotlin/reflect/jvm/internal/KFunctionImpl;->createJvmStaticInObjectCaller(Ljava/lang/reflect/Method;)Lkotlin/reflect/jvm/internal/calls/CallerImpl$Method;
+
+    move-result-object p0
+
+    return-object p0
+.end method
+
+.method public static final synthetic access$createStaticMethodCaller(Lkotlin/reflect/jvm/internal/KFunctionImpl;Ljava/lang/reflect/Method;)Lkotlin/reflect/jvm/internal/calls/CallerImpl$Method;
+    .locals 0
+
+    invoke-direct {p0, p1}, Lkotlin/reflect/jvm/internal/KFunctionImpl;->createStaticMethodCaller(Ljava/lang/reflect/Method;)Lkotlin/reflect/jvm/internal/calls/CallerImpl$Method;
+
+    move-result-object p0
+
+    return-object p0
+.end method
+
+.method public static final synthetic access$getSignature$p(Lkotlin/reflect/jvm/internal/KFunctionImpl;)Ljava/lang/String;
+    .locals 0
+
+    iget-object p0, p0, Lkotlin/reflect/jvm/internal/KFunctionImpl;->signature:Ljava/lang/String;
+
+    return-object p0
+.end method
+
+.method private final createConstructorCaller(Ljava/lang/reflect/Constructor;Lkotlin/reflect/jvm/internal/impl/descriptors/FunctionDescriptor;)Lkotlin/reflect/jvm/internal/calls/CallerImpl;
+    .locals 1
+    .annotation system Ldalvik/annotation/Signature;
+        value = {
+            "(",
+            "Ljava/lang/reflect/Constructor<",
+            "*>;",
+            "Lkotlin/reflect/jvm/internal/impl/descriptors/FunctionDescriptor;",
+            ")",
+            "Lkotlin/reflect/jvm/internal/calls/CallerImpl<",
+            "Ljava/lang/reflect/Constructor<",
+            "*>;>;"
+        }
+    .end annotation
+
+    invoke-static {p2}, Lkotlin/reflect/jvm/internal/impl/resolve/jvm/InlineClassManglingRulesKt;->shouldHideConstructorDueToInlineClassTypeValueParameters(Lkotlin/reflect/jvm/internal/impl/descriptors/CallableMemberDescriptor;)Z
+
+    move-result p2
+
+    if-eqz p2, :cond_1
+
+    invoke-virtual {p0}, Lkotlin/reflect/jvm/internal/KFunctionImpl;->isBound()Z
+
+    move-result p2
+
+    if-eqz p2, :cond_0
+
+    new-instance p2, Lkotlin/reflect/jvm/internal/calls/CallerImpl$AccessorForHiddenBoundConstructor;
+
+    invoke-direct {p0}, Lkotlin/reflect/jvm/internal/KFunctionImpl;->getBoundReceiver()Ljava/lang/Object;
+
+    move-result-object v0
+
+    invoke-direct {p2, p1, v0}, Lkotlin/reflect/jvm/internal/calls/CallerImpl$AccessorForHiddenBoundConstructor;-><init>(Ljava/lang/reflect/Constructor;Ljava/lang/Object;)V
 
     goto :goto_0
 
     :cond_0
-    const/4 p2, 0x0
-
-    :goto_0
-    const/4 v0, 0x0
-
-    if-nez p2, :cond_1
-
-    goto :goto_1
-
-    :cond_1
-    invoke-interface {p2}, Lkotlin/reflect/jvm/internal/impl/descriptors/MemberDescriptor;->getVisibility()Lkotlin/reflect/jvm/internal/impl/descriptors/DescriptorVisibility;
-
-    move-result-object v1
-
-    invoke-static {v1}, Lkotlin/reflect/jvm/internal/impl/descriptors/DescriptorVisibilities;->isPrivate(Lkotlin/reflect/jvm/internal/impl/descriptors/DescriptorVisibility;)Z
-
-    move-result v1
-
-    if-eqz v1, :cond_2
-
-    goto :goto_1
-
-    :cond_2
-    invoke-interface {p2}, Lkotlin/reflect/jvm/internal/impl/descriptors/ConstructorDescriptor;->getConstructedClass()Lkotlin/reflect/jvm/internal/impl/descriptors/ClassDescriptor;
-
-    move-result-object v1
-
-    const-string v2, "constructorDescriptor.constructedClass"
-
-    invoke-static {v1, v2}, Lkotlin/jvm/internal/Intrinsics;->checkNotNullExpressionValue(Ljava/lang/Object;Ljava/lang/String;)V
-
-    invoke-static {v1}, Lkotlin/reflect/jvm/internal/impl/resolve/InlineClassesUtilsKt;->isInlineClass(Lkotlin/reflect/jvm/internal/impl/descriptors/DeclarationDescriptor;)Z
-
-    move-result v1
-
-    if-eqz v1, :cond_3
-
-    goto :goto_1
-
-    :cond_3
-    invoke-interface {p2}, Lkotlin/reflect/jvm/internal/impl/descriptors/ConstructorDescriptor;->getConstructedClass()Lkotlin/reflect/jvm/internal/impl/descriptors/ClassDescriptor;
-
-    move-result-object v1
-
-    invoke-static {v1}, Lkotlin/reflect/jvm/internal/impl/resolve/DescriptorUtils;->isSealedClass(Lkotlin/reflect/jvm/internal/impl/descriptors/DeclarationDescriptor;)Z
-
-    move-result v1
-
-    if-eqz v1, :cond_4
-
-    goto :goto_1
-
-    :cond_4
-    invoke-interface {p2}, Lkotlin/reflect/jvm/internal/impl/descriptors/CallableDescriptor;->getValueParameters()Ljava/util/List;
-
-    move-result-object p2
-
-    const-string v1, "constructorDescriptor.valueParameters"
-
-    invoke-static {p2, v1}, Lkotlin/jvm/internal/Intrinsics;->checkNotNullExpressionValue(Ljava/lang/Object;Ljava/lang/String;)V
-
-    invoke-interface {p2}, Ljava/util/Collection;->isEmpty()Z
-
-    move-result v1
-
-    if-eqz v1, :cond_5
-
-    goto :goto_1
-
-    :cond_5
-    invoke-interface {p2}, Ljava/lang/Iterable;->iterator()Ljava/util/Iterator;
-
-    move-result-object p2
-
-    :cond_6
-    invoke-interface {p2}, Ljava/util/Iterator;->hasNext()Z
-
-    move-result v1
-
-    if-eqz v1, :cond_7
-
-    invoke-interface {p2}, Ljava/util/Iterator;->next()Ljava/lang/Object;
-
-    move-result-object v1
-
-    check-cast v1, Lkotlin/reflect/jvm/internal/impl/descriptors/ValueParameterDescriptor;
-
-    invoke-interface {v1}, Lkotlin/reflect/jvm/internal/impl/descriptors/ValueDescriptor;->getType()Lkotlin/reflect/jvm/internal/impl/types/KotlinType;
-
-    move-result-object v1
-
-    const-string v2, "it.type"
-
-    invoke-static {v1, v2}, Lkotlin/jvm/internal/Intrinsics;->checkNotNullExpressionValue(Ljava/lang/Object;Ljava/lang/String;)V
-
-    invoke-static {v1}, Lkotlin/reflect/jvm/internal/impl/resolve/jvm/InlineClassManglingRulesKt;->requiresFunctionNameManglingInParameterTypes(Lkotlin/reflect/jvm/internal/impl/types/KotlinType;)Z
-
-    move-result v1
-
-    if-eqz v1, :cond_6
-
-    const/4 v0, 0x1
-
-    :cond_7
-    :goto_1
-    if-eqz v0, :cond_9
-
-    invoke-virtual {p0}, Lkotlin/reflect/jvm/internal/KFunctionImpl;->isBound()Z
-
-    move-result p2
-
-    if-eqz p2, :cond_8
-
-    new-instance p2, Lkotlin/reflect/jvm/internal/calls/CallerImpl$AccessorForHiddenBoundConstructor;
-
-    invoke-virtual {p0}, Lkotlin/reflect/jvm/internal/KFunctionImpl;->getBoundReceiver()Ljava/lang/Object;
-
-    move-result-object p0
-
-    invoke-direct {p2, p1, p0}, Lkotlin/reflect/jvm/internal/calls/CallerImpl$AccessorForHiddenBoundConstructor;-><init>(Ljava/lang/reflect/Constructor;Ljava/lang/Object;)V
-
-    goto :goto_2
-
-    :cond_8
     new-instance p2, Lkotlin/reflect/jvm/internal/calls/CallerImpl$AccessorForHiddenConstructor;
 
     invoke-direct {p2, p1}, Lkotlin/reflect/jvm/internal/calls/CallerImpl$AccessorForHiddenConstructor;-><init>(Ljava/lang/reflect/Constructor;)V
 
-    goto :goto_2
+    goto :goto_0
 
-    :cond_9
+    :cond_1
     invoke-virtual {p0}, Lkotlin/reflect/jvm/internal/KFunctionImpl;->isBound()Z
 
     move-result p2
 
-    if-eqz p2, :cond_a
+    if-eqz p2, :cond_2
 
     new-instance p2, Lkotlin/reflect/jvm/internal/calls/CallerImpl$BoundConstructor;
 
-    invoke-virtual {p0}, Lkotlin/reflect/jvm/internal/KFunctionImpl;->getBoundReceiver()Ljava/lang/Object;
+    invoke-direct {p0}, Lkotlin/reflect/jvm/internal/KFunctionImpl;->getBoundReceiver()Ljava/lang/Object;
 
-    move-result-object p0
+    move-result-object v0
 
-    invoke-direct {p2, p1, p0}, Lkotlin/reflect/jvm/internal/calls/CallerImpl$BoundConstructor;-><init>(Ljava/lang/reflect/Constructor;Ljava/lang/Object;)V
+    invoke-direct {p2, p1, v0}, Lkotlin/reflect/jvm/internal/calls/CallerImpl$BoundConstructor;-><init>(Ljava/lang/reflect/Constructor;Ljava/lang/Object;)V
 
-    goto :goto_2
+    goto :goto_0
 
-    :cond_a
+    :cond_2
     new-instance p2, Lkotlin/reflect/jvm/internal/calls/CallerImpl$Constructor;
 
     invoke-direct {p2, p1}, Lkotlin/reflect/jvm/internal/calls/CallerImpl$Constructor;-><init>(Ljava/lang/reflect/Constructor;)V
 
-    :goto_2
+    :goto_0
     return-object p2
 .end method
 
-.method public static final access$createStaticMethodCaller(Lkotlin/reflect/jvm/internal/KFunctionImpl;Ljava/lang/reflect/Method;)Lkotlin/reflect/jvm/internal/calls/CallerImpl$Method;
+.method private final createInstanceMethodCaller(Ljava/lang/reflect/Method;)Lkotlin/reflect/jvm/internal/calls/CallerImpl$Method;
+    .locals 2
+
+    invoke-virtual {p0}, Lkotlin/reflect/jvm/internal/KFunctionImpl;->isBound()Z
+
+    move-result v0
+
+    if-eqz v0, :cond_0
+
+    new-instance v0, Lkotlin/reflect/jvm/internal/calls/CallerImpl$Method$BoundInstance;
+
+    invoke-direct {p0}, Lkotlin/reflect/jvm/internal/KFunctionImpl;->getBoundReceiver()Ljava/lang/Object;
+
+    move-result-object v1
+
+    invoke-direct {v0, p1, v1}, Lkotlin/reflect/jvm/internal/calls/CallerImpl$Method$BoundInstance;-><init>(Ljava/lang/reflect/Method;Ljava/lang/Object;)V
+
+    goto :goto_0
+
+    :cond_0
+    new-instance v0, Lkotlin/reflect/jvm/internal/calls/CallerImpl$Method$Instance;
+
+    invoke-direct {v0, p1}, Lkotlin/reflect/jvm/internal/calls/CallerImpl$Method$Instance;-><init>(Ljava/lang/reflect/Method;)V
+
+    :goto_0
+    return-object v0
+.end method
+
+.method private final createJvmStaticInObjectCaller(Ljava/lang/reflect/Method;)Lkotlin/reflect/jvm/internal/calls/CallerImpl$Method;
     .locals 1
+
+    invoke-virtual {p0}, Lkotlin/reflect/jvm/internal/KFunctionImpl;->isBound()Z
+
+    move-result v0
+
+    if-eqz v0, :cond_0
+
+    new-instance v0, Lkotlin/reflect/jvm/internal/calls/CallerImpl$Method$BoundJvmStaticInObject;
+
+    invoke-direct {v0, p1}, Lkotlin/reflect/jvm/internal/calls/CallerImpl$Method$BoundJvmStaticInObject;-><init>(Ljava/lang/reflect/Method;)V
+
+    goto :goto_0
+
+    :cond_0
+    new-instance v0, Lkotlin/reflect/jvm/internal/calls/CallerImpl$Method$JvmStaticInObject;
+
+    invoke-direct {v0, p1}, Lkotlin/reflect/jvm/internal/calls/CallerImpl$Method$JvmStaticInObject;-><init>(Ljava/lang/reflect/Method;)V
+
+    :goto_0
+    return-object v0
+.end method
+
+.method private final createStaticMethodCaller(Ljava/lang/reflect/Method;)Lkotlin/reflect/jvm/internal/calls/CallerImpl$Method;
+    .locals 2
 
     invoke-virtual {p0}, Lkotlin/reflect/jvm/internal/KFunctionImpl;->isBound()Z
 
@@ -414,11 +530,11 @@
 
     new-instance v0, Lkotlin/reflect/jvm/internal/calls/CallerImpl$Method$BoundStatic;
 
-    invoke-virtual {p0}, Lkotlin/reflect/jvm/internal/KFunctionImpl;->getBoundReceiver()Ljava/lang/Object;
+    invoke-direct {p0}, Lkotlin/reflect/jvm/internal/KFunctionImpl;->getBoundReceiver()Ljava/lang/Object;
 
-    move-result-object p0
+    move-result-object v1
 
-    invoke-direct {v0, p1, p0}, Lkotlin/reflect/jvm/internal/calls/CallerImpl$Method$BoundStatic;-><init>(Ljava/lang/reflect/Method;Ljava/lang/Object;)V
+    invoke-direct {v0, p1, v1}, Lkotlin/reflect/jvm/internal/calls/CallerImpl$Method$BoundStatic;-><init>(Ljava/lang/reflect/Method;Ljava/lang/Object;)V
 
     goto :goto_0
 
@@ -428,6 +544,22 @@
     invoke-direct {v0, p1}, Lkotlin/reflect/jvm/internal/calls/CallerImpl$Method$Static;-><init>(Ljava/lang/reflect/Method;)V
 
     :goto_0
+    return-object v0
+.end method
+
+.method private final getBoundReceiver()Ljava/lang/Object;
+    .locals 2
+
+    iget-object v0, p0, Lkotlin/reflect/jvm/internal/KFunctionImpl;->rawBoundReceiver:Ljava/lang/Object;
+
+    invoke-virtual {p0}, Lkotlin/reflect/jvm/internal/KFunctionImpl;->getDescriptor()Lkotlin/reflect/jvm/internal/impl/descriptors/FunctionDescriptor;
+
+    move-result-object v1
+
+    invoke-static {v0, v1}, Lkotlin/reflect/jvm/internal/calls/InlineClassAwareCallerKt;->coerceToExpectedReceiverType(Ljava/lang/Object;Lkotlin/reflect/jvm/internal/impl/descriptors/CallableMemberDescriptor;)Ljava/lang/Object;
+
+    move-result-object v0
+
     return-object v0
 .end method
 
@@ -444,9 +576,13 @@
 
     if-eqz p1, :cond_0
 
-    iget-object v1, p0, Lkotlin/reflect/jvm/internal/KFunctionImpl;->container:Lkotlin/reflect/jvm/internal/KDeclarationContainerImpl;
+    invoke-virtual {p0}, Lkotlin/reflect/jvm/internal/KFunctionImpl;->getContainer()Lkotlin/reflect/jvm/internal/KDeclarationContainerImpl;
 
-    iget-object v2, p1, Lkotlin/reflect/jvm/internal/KFunctionImpl;->container:Lkotlin/reflect/jvm/internal/KDeclarationContainerImpl;
+    move-result-object v1
+
+    invoke-virtual {p1}, Lkotlin/reflect/jvm/internal/KFunctionImpl;->getContainer()Lkotlin/reflect/jvm/internal/KDeclarationContainerImpl;
+
+    move-result-object v2
 
     invoke-static {v1, v2}, Lkotlin/jvm/internal/Intrinsics;->areEqual(Ljava/lang/Object;Ljava/lang/Object;)Z
 
@@ -508,22 +644,6 @@
     return v0
 .end method
 
-.method public final getBoundReceiver()Ljava/lang/Object;
-    .locals 2
-
-    iget-object v0, p0, Lkotlin/reflect/jvm/internal/KFunctionImpl;->rawBoundReceiver:Ljava/lang/Object;
-
-    invoke-virtual {p0}, Lkotlin/reflect/jvm/internal/KFunctionImpl;->getDescriptor()Lkotlin/reflect/jvm/internal/impl/descriptors/FunctionDescriptor;
-
-    move-result-object v1
-
-    invoke-static {v0, v1}, Lkotlin/reflect/jvm/internal/calls/InlineClassAwareCallerKt;->coerceToExpectedReceiverType(Ljava/lang/Object;Lkotlin/reflect/jvm/internal/impl/descriptors/CallableMemberDescriptor;)Ljava/lang/Object;
-
-    move-result-object v0
-
-    return-object v0
-.end method
-
 .method public getCaller()Lkotlin/reflect/jvm/internal/calls/Caller;
     .locals 3
     .annotation system Ldalvik/annotation/Signature;
@@ -542,7 +662,7 @@
 
     aget-object v1, v1, v2
 
-    invoke-virtual {v0}, Lkotlin/reflect/jvm/internal/ReflectProperties$LazyVal;->invoke()Ljava/lang/Object;
+    invoke-virtual {v0, p0, v1}, Lkotlin/reflect/jvm/internal/ReflectProperties$Val;->getValue(Ljava/lang/Object;Ljava/lang/Object;)Ljava/lang/Object;
 
     move-result-object v0
 
@@ -577,7 +697,7 @@
 
     aget-object v1, v1, v2
 
-    invoke-virtual {v0}, Lkotlin/reflect/jvm/internal/ReflectProperties$LazyVal;->invoke()Ljava/lang/Object;
+    invoke-virtual {v0, p0, v1}, Lkotlin/reflect/jvm/internal/ReflectProperties$Val;->getValue(Ljava/lang/Object;Ljava/lang/Object;)Ljava/lang/Object;
 
     move-result-object v0
 
@@ -607,7 +727,7 @@
 
     aget-object v1, v1, v2
 
-    invoke-virtual {v0}, Lkotlin/reflect/jvm/internal/ReflectProperties$LazySoftVal;->invoke()Ljava/lang/Object;
+    invoke-virtual {v0, p0, v1}, Lkotlin/reflect/jvm/internal/ReflectProperties$Val;->getValue(Ljava/lang/Object;Ljava/lang/Object;)Ljava/lang/Object;
 
     move-result-object v0
 
@@ -623,7 +743,7 @@
 
     move-result-object v0
 
-    invoke-interface {v0}, Lkotlin/reflect/jvm/internal/impl/descriptors/DeclarationDescriptor;->getName()Lkotlin/reflect/jvm/internal/impl/name/Name;
+    invoke-interface {v0}, Lkotlin/reflect/jvm/internal/impl/descriptors/Named;->getName()Lkotlin/reflect/jvm/internal/impl/name/Name;
 
     move-result-object v0
 
@@ -641,7 +761,9 @@
 .method public hashCode()I
     .locals 2
 
-    iget-object v0, p0, Lkotlin/reflect/jvm/internal/KFunctionImpl;->container:Lkotlin/reflect/jvm/internal/KDeclarationContainerImpl;
+    invoke-virtual {p0}, Lkotlin/reflect/jvm/internal/KFunctionImpl;->getContainer()Lkotlin/reflect/jvm/internal/KDeclarationContainerImpl;
+
+    move-result-object v0
 
     invoke-virtual {v0}, Ljava/lang/Object;->hashCode()I
 
@@ -675,11 +797,7 @@
 .method public invoke()Ljava/lang/Object;
     .locals 1
 
-    const/4 v0, 0x0
-
-    new-array v0, v0, [Ljava/lang/Object;
-
-    invoke-virtual {p0, v0}, Lkotlin/reflect/jvm/internal/KCallableImpl;->call([Ljava/lang/Object;)Ljava/lang/Object;
+    invoke-static {p0}, Lkotlin/reflect/jvm/internal/FunctionWithAllInvokes$DefaultImpls;->invoke(Lkotlin/reflect/jvm/internal/FunctionWithAllInvokes;)Ljava/lang/Object;
 
     move-result-object v0
 
@@ -687,17 +805,9 @@
 .end method
 
 .method public invoke(Ljava/lang/Object;)Ljava/lang/Object;
-    .locals 2
+    .locals 0
 
-    const/4 v0, 0x1
-
-    new-array v0, v0, [Ljava/lang/Object;
-
-    const/4 v1, 0x0
-
-    aput-object p1, v0, v1
-
-    invoke-virtual {p0, v0}, Lkotlin/reflect/jvm/internal/KCallableImpl;->call([Ljava/lang/Object;)Ljava/lang/Object;
+    invoke-static {p0, p1}, Lkotlin/reflect/jvm/internal/FunctionWithAllInvokes$DefaultImpls;->invoke(Lkotlin/reflect/jvm/internal/FunctionWithAllInvokes;Ljava/lang/Object;)Ljava/lang/Object;
 
     move-result-object p1
 
@@ -705,21 +815,9 @@
 .end method
 
 .method public invoke(Ljava/lang/Object;Ljava/lang/Object;)Ljava/lang/Object;
-    .locals 2
+    .locals 0
 
-    const/4 v0, 0x2
-
-    new-array v0, v0, [Ljava/lang/Object;
-
-    const/4 v1, 0x0
-
-    aput-object p1, v0, v1
-
-    const/4 p1, 0x1
-
-    aput-object p2, v0, p1
-
-    invoke-virtual {p0, v0}, Lkotlin/reflect/jvm/internal/KCallableImpl;->call([Ljava/lang/Object;)Ljava/lang/Object;
+    invoke-static {p0, p1, p2}, Lkotlin/reflect/jvm/internal/FunctionWithAllInvokes$DefaultImpls;->invoke(Lkotlin/reflect/jvm/internal/FunctionWithAllInvokes;Ljava/lang/Object;Ljava/lang/Object;)Ljava/lang/Object;
 
     move-result-object p1
 
@@ -727,25 +825,9 @@
 .end method
 
 .method public invoke(Ljava/lang/Object;Ljava/lang/Object;Ljava/lang/Object;)Ljava/lang/Object;
-    .locals 2
+    .locals 0
 
-    const/4 v0, 0x3
-
-    new-array v0, v0, [Ljava/lang/Object;
-
-    const/4 v1, 0x0
-
-    aput-object p1, v0, v1
-
-    const/4 p1, 0x1
-
-    aput-object p2, v0, p1
-
-    const/4 p1, 0x2
-
-    aput-object p3, v0, p1
-
-    invoke-virtual {p0, v0}, Lkotlin/reflect/jvm/internal/KCallableImpl;->call([Ljava/lang/Object;)Ljava/lang/Object;
+    invoke-static {p0, p1, p2, p3}, Lkotlin/reflect/jvm/internal/FunctionWithAllInvokes$DefaultImpls;->invoke(Lkotlin/reflect/jvm/internal/FunctionWithAllInvokes;Ljava/lang/Object;Ljava/lang/Object;Ljava/lang/Object;)Ljava/lang/Object;
 
     move-result-object p1
 
@@ -753,29 +835,9 @@
 .end method
 
 .method public invoke(Ljava/lang/Object;Ljava/lang/Object;Ljava/lang/Object;Ljava/lang/Object;)Ljava/lang/Object;
-    .locals 2
+    .locals 0
 
-    const/4 v0, 0x4
-
-    new-array v0, v0, [Ljava/lang/Object;
-
-    const/4 v1, 0x0
-
-    aput-object p1, v0, v1
-
-    const/4 p1, 0x1
-
-    aput-object p2, v0, p1
-
-    const/4 p1, 0x2
-
-    aput-object p3, v0, p1
-
-    const/4 p1, 0x3
-
-    aput-object p4, v0, p1
-
-    invoke-virtual {p0, v0}, Lkotlin/reflect/jvm/internal/KCallableImpl;->call([Ljava/lang/Object;)Ljava/lang/Object;
+    invoke-static {p0, p1, p2, p3, p4}, Lkotlin/reflect/jvm/internal/FunctionWithAllInvokes$DefaultImpls;->invoke(Lkotlin/reflect/jvm/internal/FunctionWithAllInvokes;Ljava/lang/Object;Ljava/lang/Object;Ljava/lang/Object;Ljava/lang/Object;)Ljava/lang/Object;
 
     move-result-object p1
 
@@ -783,37 +845,183 @@
 .end method
 
 .method public invoke(Ljava/lang/Object;Ljava/lang/Object;Ljava/lang/Object;Ljava/lang/Object;Ljava/lang/Object;)Ljava/lang/Object;
-    .locals 2
+    .locals 0
 
-    const/4 v0, 0x5
-
-    new-array v0, v0, [Ljava/lang/Object;
-
-    const/4 v1, 0x0
-
-    aput-object p1, v0, v1
-
-    const/4 p1, 0x1
-
-    aput-object p2, v0, p1
-
-    const/4 p1, 0x2
-
-    aput-object p3, v0, p1
-
-    const/4 p1, 0x3
-
-    aput-object p4, v0, p1
-
-    const/4 p1, 0x4
-
-    aput-object p5, v0, p1
-
-    invoke-virtual {p0, v0}, Lkotlin/reflect/jvm/internal/KCallableImpl;->call([Ljava/lang/Object;)Ljava/lang/Object;
+    invoke-static/range {p0 .. p5}, Lkotlin/reflect/jvm/internal/FunctionWithAllInvokes$DefaultImpls;->invoke(Lkotlin/reflect/jvm/internal/FunctionWithAllInvokes;Ljava/lang/Object;Ljava/lang/Object;Ljava/lang/Object;Ljava/lang/Object;Ljava/lang/Object;)Ljava/lang/Object;
 
     move-result-object p1
 
     return-object p1
+.end method
+
+.method public invoke(Ljava/lang/Object;Ljava/lang/Object;Ljava/lang/Object;Ljava/lang/Object;Ljava/lang/Object;Ljava/lang/Object;)Ljava/lang/Object;
+    .locals 0
+
+    invoke-static/range {p0 .. p6}, Lkotlin/reflect/jvm/internal/FunctionWithAllInvokes$DefaultImpls;->invoke(Lkotlin/reflect/jvm/internal/FunctionWithAllInvokes;Ljava/lang/Object;Ljava/lang/Object;Ljava/lang/Object;Ljava/lang/Object;Ljava/lang/Object;Ljava/lang/Object;)Ljava/lang/Object;
+
+    move-result-object p1
+
+    return-object p1
+.end method
+
+.method public invoke(Ljava/lang/Object;Ljava/lang/Object;Ljava/lang/Object;Ljava/lang/Object;Ljava/lang/Object;Ljava/lang/Object;Ljava/lang/Object;)Ljava/lang/Object;
+    .locals 0
+
+    invoke-static/range {p0 .. p7}, Lkotlin/reflect/jvm/internal/FunctionWithAllInvokes$DefaultImpls;->invoke(Lkotlin/reflect/jvm/internal/FunctionWithAllInvokes;Ljava/lang/Object;Ljava/lang/Object;Ljava/lang/Object;Ljava/lang/Object;Ljava/lang/Object;Ljava/lang/Object;Ljava/lang/Object;)Ljava/lang/Object;
+
+    move-result-object p1
+
+    return-object p1
+.end method
+
+.method public invoke(Ljava/lang/Object;Ljava/lang/Object;Ljava/lang/Object;Ljava/lang/Object;Ljava/lang/Object;Ljava/lang/Object;Ljava/lang/Object;Ljava/lang/Object;)Ljava/lang/Object;
+    .locals 0
+
+    invoke-static/range {p0 .. p8}, Lkotlin/reflect/jvm/internal/FunctionWithAllInvokes$DefaultImpls;->invoke(Lkotlin/reflect/jvm/internal/FunctionWithAllInvokes;Ljava/lang/Object;Ljava/lang/Object;Ljava/lang/Object;Ljava/lang/Object;Ljava/lang/Object;Ljava/lang/Object;Ljava/lang/Object;Ljava/lang/Object;)Ljava/lang/Object;
+
+    move-result-object p1
+
+    return-object p1
+.end method
+
+.method public invoke(Ljava/lang/Object;Ljava/lang/Object;Ljava/lang/Object;Ljava/lang/Object;Ljava/lang/Object;Ljava/lang/Object;Ljava/lang/Object;Ljava/lang/Object;Ljava/lang/Object;)Ljava/lang/Object;
+    .locals 0
+
+    invoke-static/range {p0 .. p9}, Lkotlin/reflect/jvm/internal/FunctionWithAllInvokes$DefaultImpls;->invoke(Lkotlin/reflect/jvm/internal/FunctionWithAllInvokes;Ljava/lang/Object;Ljava/lang/Object;Ljava/lang/Object;Ljava/lang/Object;Ljava/lang/Object;Ljava/lang/Object;Ljava/lang/Object;Ljava/lang/Object;Ljava/lang/Object;)Ljava/lang/Object;
+
+    move-result-object p1
+
+    return-object p1
+.end method
+
+.method public invoke(Ljava/lang/Object;Ljava/lang/Object;Ljava/lang/Object;Ljava/lang/Object;Ljava/lang/Object;Ljava/lang/Object;Ljava/lang/Object;Ljava/lang/Object;Ljava/lang/Object;Ljava/lang/Object;)Ljava/lang/Object;
+    .locals 0
+
+    invoke-static/range {p0 .. p10}, Lkotlin/reflect/jvm/internal/FunctionWithAllInvokes$DefaultImpls;->invoke(Lkotlin/reflect/jvm/internal/FunctionWithAllInvokes;Ljava/lang/Object;Ljava/lang/Object;Ljava/lang/Object;Ljava/lang/Object;Ljava/lang/Object;Ljava/lang/Object;Ljava/lang/Object;Ljava/lang/Object;Ljava/lang/Object;Ljava/lang/Object;)Ljava/lang/Object;
+
+    move-result-object p1
+
+    return-object p1
+.end method
+
+.method public invoke(Ljava/lang/Object;Ljava/lang/Object;Ljava/lang/Object;Ljava/lang/Object;Ljava/lang/Object;Ljava/lang/Object;Ljava/lang/Object;Ljava/lang/Object;Ljava/lang/Object;Ljava/lang/Object;Ljava/lang/Object;)Ljava/lang/Object;
+    .locals 0
+
+    invoke-static/range {p0 .. p11}, Lkotlin/reflect/jvm/internal/FunctionWithAllInvokes$DefaultImpls;->invoke(Lkotlin/reflect/jvm/internal/FunctionWithAllInvokes;Ljava/lang/Object;Ljava/lang/Object;Ljava/lang/Object;Ljava/lang/Object;Ljava/lang/Object;Ljava/lang/Object;Ljava/lang/Object;Ljava/lang/Object;Ljava/lang/Object;Ljava/lang/Object;Ljava/lang/Object;)Ljava/lang/Object;
+
+    move-result-object p1
+
+    return-object p1
+.end method
+
+.method public invoke(Ljava/lang/Object;Ljava/lang/Object;Ljava/lang/Object;Ljava/lang/Object;Ljava/lang/Object;Ljava/lang/Object;Ljava/lang/Object;Ljava/lang/Object;Ljava/lang/Object;Ljava/lang/Object;Ljava/lang/Object;Ljava/lang/Object;)Ljava/lang/Object;
+    .locals 0
+
+    invoke-static/range {p0 .. p12}, Lkotlin/reflect/jvm/internal/FunctionWithAllInvokes$DefaultImpls;->invoke(Lkotlin/reflect/jvm/internal/FunctionWithAllInvokes;Ljava/lang/Object;Ljava/lang/Object;Ljava/lang/Object;Ljava/lang/Object;Ljava/lang/Object;Ljava/lang/Object;Ljava/lang/Object;Ljava/lang/Object;Ljava/lang/Object;Ljava/lang/Object;Ljava/lang/Object;Ljava/lang/Object;)Ljava/lang/Object;
+
+    move-result-object p1
+
+    return-object p1
+.end method
+
+.method public invoke(Ljava/lang/Object;Ljava/lang/Object;Ljava/lang/Object;Ljava/lang/Object;Ljava/lang/Object;Ljava/lang/Object;Ljava/lang/Object;Ljava/lang/Object;Ljava/lang/Object;Ljava/lang/Object;Ljava/lang/Object;Ljava/lang/Object;Ljava/lang/Object;)Ljava/lang/Object;
+    .locals 0
+
+    invoke-static/range {p0 .. p13}, Lkotlin/reflect/jvm/internal/FunctionWithAllInvokes$DefaultImpls;->invoke(Lkotlin/reflect/jvm/internal/FunctionWithAllInvokes;Ljava/lang/Object;Ljava/lang/Object;Ljava/lang/Object;Ljava/lang/Object;Ljava/lang/Object;Ljava/lang/Object;Ljava/lang/Object;Ljava/lang/Object;Ljava/lang/Object;Ljava/lang/Object;Ljava/lang/Object;Ljava/lang/Object;Ljava/lang/Object;)Ljava/lang/Object;
+
+    move-result-object p1
+
+    return-object p1
+.end method
+
+.method public invoke(Ljava/lang/Object;Ljava/lang/Object;Ljava/lang/Object;Ljava/lang/Object;Ljava/lang/Object;Ljava/lang/Object;Ljava/lang/Object;Ljava/lang/Object;Ljava/lang/Object;Ljava/lang/Object;Ljava/lang/Object;Ljava/lang/Object;Ljava/lang/Object;Ljava/lang/Object;)Ljava/lang/Object;
+    .locals 0
+
+    invoke-static/range {p0 .. p14}, Lkotlin/reflect/jvm/internal/FunctionWithAllInvokes$DefaultImpls;->invoke(Lkotlin/reflect/jvm/internal/FunctionWithAllInvokes;Ljava/lang/Object;Ljava/lang/Object;Ljava/lang/Object;Ljava/lang/Object;Ljava/lang/Object;Ljava/lang/Object;Ljava/lang/Object;Ljava/lang/Object;Ljava/lang/Object;Ljava/lang/Object;Ljava/lang/Object;Ljava/lang/Object;Ljava/lang/Object;Ljava/lang/Object;)Ljava/lang/Object;
+
+    move-result-object p1
+
+    return-object p1
+.end method
+
+.method public invoke(Ljava/lang/Object;Ljava/lang/Object;Ljava/lang/Object;Ljava/lang/Object;Ljava/lang/Object;Ljava/lang/Object;Ljava/lang/Object;Ljava/lang/Object;Ljava/lang/Object;Ljava/lang/Object;Ljava/lang/Object;Ljava/lang/Object;Ljava/lang/Object;Ljava/lang/Object;Ljava/lang/Object;)Ljava/lang/Object;
+    .locals 0
+
+    invoke-static/range {p0 .. p15}, Lkotlin/reflect/jvm/internal/FunctionWithAllInvokes$DefaultImpls;->invoke(Lkotlin/reflect/jvm/internal/FunctionWithAllInvokes;Ljava/lang/Object;Ljava/lang/Object;Ljava/lang/Object;Ljava/lang/Object;Ljava/lang/Object;Ljava/lang/Object;Ljava/lang/Object;Ljava/lang/Object;Ljava/lang/Object;Ljava/lang/Object;Ljava/lang/Object;Ljava/lang/Object;Ljava/lang/Object;Ljava/lang/Object;Ljava/lang/Object;)Ljava/lang/Object;
+
+    move-result-object p1
+
+    return-object p1
+.end method
+
+.method public invoke(Ljava/lang/Object;Ljava/lang/Object;Ljava/lang/Object;Ljava/lang/Object;Ljava/lang/Object;Ljava/lang/Object;Ljava/lang/Object;Ljava/lang/Object;Ljava/lang/Object;Ljava/lang/Object;Ljava/lang/Object;Ljava/lang/Object;Ljava/lang/Object;Ljava/lang/Object;Ljava/lang/Object;Ljava/lang/Object;)Ljava/lang/Object;
+    .locals 1
+
+    invoke-static/range {p0 .. p16}, Lkotlin/reflect/jvm/internal/FunctionWithAllInvokes$DefaultImpls;->invoke(Lkotlin/reflect/jvm/internal/FunctionWithAllInvokes;Ljava/lang/Object;Ljava/lang/Object;Ljava/lang/Object;Ljava/lang/Object;Ljava/lang/Object;Ljava/lang/Object;Ljava/lang/Object;Ljava/lang/Object;Ljava/lang/Object;Ljava/lang/Object;Ljava/lang/Object;Ljava/lang/Object;Ljava/lang/Object;Ljava/lang/Object;Ljava/lang/Object;Ljava/lang/Object;)Ljava/lang/Object;
+
+    move-result-object v0
+
+    return-object v0
+.end method
+
+.method public invoke(Ljava/lang/Object;Ljava/lang/Object;Ljava/lang/Object;Ljava/lang/Object;Ljava/lang/Object;Ljava/lang/Object;Ljava/lang/Object;Ljava/lang/Object;Ljava/lang/Object;Ljava/lang/Object;Ljava/lang/Object;Ljava/lang/Object;Ljava/lang/Object;Ljava/lang/Object;Ljava/lang/Object;Ljava/lang/Object;Ljava/lang/Object;)Ljava/lang/Object;
+    .locals 1
+
+    invoke-static/range {p0 .. p17}, Lkotlin/reflect/jvm/internal/FunctionWithAllInvokes$DefaultImpls;->invoke(Lkotlin/reflect/jvm/internal/FunctionWithAllInvokes;Ljava/lang/Object;Ljava/lang/Object;Ljava/lang/Object;Ljava/lang/Object;Ljava/lang/Object;Ljava/lang/Object;Ljava/lang/Object;Ljava/lang/Object;Ljava/lang/Object;Ljava/lang/Object;Ljava/lang/Object;Ljava/lang/Object;Ljava/lang/Object;Ljava/lang/Object;Ljava/lang/Object;Ljava/lang/Object;Ljava/lang/Object;)Ljava/lang/Object;
+
+    move-result-object v0
+
+    return-object v0
+.end method
+
+.method public invoke(Ljava/lang/Object;Ljava/lang/Object;Ljava/lang/Object;Ljava/lang/Object;Ljava/lang/Object;Ljava/lang/Object;Ljava/lang/Object;Ljava/lang/Object;Ljava/lang/Object;Ljava/lang/Object;Ljava/lang/Object;Ljava/lang/Object;Ljava/lang/Object;Ljava/lang/Object;Ljava/lang/Object;Ljava/lang/Object;Ljava/lang/Object;Ljava/lang/Object;)Ljava/lang/Object;
+    .locals 1
+
+    invoke-static/range {p0 .. p18}, Lkotlin/reflect/jvm/internal/FunctionWithAllInvokes$DefaultImpls;->invoke(Lkotlin/reflect/jvm/internal/FunctionWithAllInvokes;Ljava/lang/Object;Ljava/lang/Object;Ljava/lang/Object;Ljava/lang/Object;Ljava/lang/Object;Ljava/lang/Object;Ljava/lang/Object;Ljava/lang/Object;Ljava/lang/Object;Ljava/lang/Object;Ljava/lang/Object;Ljava/lang/Object;Ljava/lang/Object;Ljava/lang/Object;Ljava/lang/Object;Ljava/lang/Object;Ljava/lang/Object;Ljava/lang/Object;)Ljava/lang/Object;
+
+    move-result-object v0
+
+    return-object v0
+.end method
+
+.method public invoke(Ljava/lang/Object;Ljava/lang/Object;Ljava/lang/Object;Ljava/lang/Object;Ljava/lang/Object;Ljava/lang/Object;Ljava/lang/Object;Ljava/lang/Object;Ljava/lang/Object;Ljava/lang/Object;Ljava/lang/Object;Ljava/lang/Object;Ljava/lang/Object;Ljava/lang/Object;Ljava/lang/Object;Ljava/lang/Object;Ljava/lang/Object;Ljava/lang/Object;Ljava/lang/Object;)Ljava/lang/Object;
+    .locals 1
+
+    invoke-static/range {p0 .. p19}, Lkotlin/reflect/jvm/internal/FunctionWithAllInvokes$DefaultImpls;->invoke(Lkotlin/reflect/jvm/internal/FunctionWithAllInvokes;Ljava/lang/Object;Ljava/lang/Object;Ljava/lang/Object;Ljava/lang/Object;Ljava/lang/Object;Ljava/lang/Object;Ljava/lang/Object;Ljava/lang/Object;Ljava/lang/Object;Ljava/lang/Object;Ljava/lang/Object;Ljava/lang/Object;Ljava/lang/Object;Ljava/lang/Object;Ljava/lang/Object;Ljava/lang/Object;Ljava/lang/Object;Ljava/lang/Object;Ljava/lang/Object;)Ljava/lang/Object;
+
+    move-result-object v0
+
+    return-object v0
+.end method
+
+.method public invoke(Ljava/lang/Object;Ljava/lang/Object;Ljava/lang/Object;Ljava/lang/Object;Ljava/lang/Object;Ljava/lang/Object;Ljava/lang/Object;Ljava/lang/Object;Ljava/lang/Object;Ljava/lang/Object;Ljava/lang/Object;Ljava/lang/Object;Ljava/lang/Object;Ljava/lang/Object;Ljava/lang/Object;Ljava/lang/Object;Ljava/lang/Object;Ljava/lang/Object;Ljava/lang/Object;Ljava/lang/Object;)Ljava/lang/Object;
+    .locals 1
+
+    invoke-static/range {p0 .. p20}, Lkotlin/reflect/jvm/internal/FunctionWithAllInvokes$DefaultImpls;->invoke(Lkotlin/reflect/jvm/internal/FunctionWithAllInvokes;Ljava/lang/Object;Ljava/lang/Object;Ljava/lang/Object;Ljava/lang/Object;Ljava/lang/Object;Ljava/lang/Object;Ljava/lang/Object;Ljava/lang/Object;Ljava/lang/Object;Ljava/lang/Object;Ljava/lang/Object;Ljava/lang/Object;Ljava/lang/Object;Ljava/lang/Object;Ljava/lang/Object;Ljava/lang/Object;Ljava/lang/Object;Ljava/lang/Object;Ljava/lang/Object;Ljava/lang/Object;)Ljava/lang/Object;
+
+    move-result-object v0
+
+    return-object v0
+.end method
+
+.method public invoke(Ljava/lang/Object;Ljava/lang/Object;Ljava/lang/Object;Ljava/lang/Object;Ljava/lang/Object;Ljava/lang/Object;Ljava/lang/Object;Ljava/lang/Object;Ljava/lang/Object;Ljava/lang/Object;Ljava/lang/Object;Ljava/lang/Object;Ljava/lang/Object;Ljava/lang/Object;Ljava/lang/Object;Ljava/lang/Object;Ljava/lang/Object;Ljava/lang/Object;Ljava/lang/Object;Ljava/lang/Object;Ljava/lang/Object;)Ljava/lang/Object;
+    .locals 1
+
+    invoke-static/range {p0 .. p21}, Lkotlin/reflect/jvm/internal/FunctionWithAllInvokes$DefaultImpls;->invoke(Lkotlin/reflect/jvm/internal/FunctionWithAllInvokes;Ljava/lang/Object;Ljava/lang/Object;Ljava/lang/Object;Ljava/lang/Object;Ljava/lang/Object;Ljava/lang/Object;Ljava/lang/Object;Ljava/lang/Object;Ljava/lang/Object;Ljava/lang/Object;Ljava/lang/Object;Ljava/lang/Object;Ljava/lang/Object;Ljava/lang/Object;Ljava/lang/Object;Ljava/lang/Object;Ljava/lang/Object;Ljava/lang/Object;Ljava/lang/Object;Ljava/lang/Object;Ljava/lang/Object;)Ljava/lang/Object;
+
+    move-result-object v0
+
+    return-object v0
+.end method
+
+.method public invoke(Ljava/lang/Object;Ljava/lang/Object;Ljava/lang/Object;Ljava/lang/Object;Ljava/lang/Object;Ljava/lang/Object;Ljava/lang/Object;Ljava/lang/Object;Ljava/lang/Object;Ljava/lang/Object;Ljava/lang/Object;Ljava/lang/Object;Ljava/lang/Object;Ljava/lang/Object;Ljava/lang/Object;Ljava/lang/Object;Ljava/lang/Object;Ljava/lang/Object;Ljava/lang/Object;Ljava/lang/Object;Ljava/lang/Object;Ljava/lang/Object;)Ljava/lang/Object;
+    .locals 1
+
+    invoke-static/range {p0 .. p22}, Lkotlin/reflect/jvm/internal/FunctionWithAllInvokes$DefaultImpls;->invoke(Lkotlin/reflect/jvm/internal/FunctionWithAllInvokes;Ljava/lang/Object;Ljava/lang/Object;Ljava/lang/Object;Ljava/lang/Object;Ljava/lang/Object;Ljava/lang/Object;Ljava/lang/Object;Ljava/lang/Object;Ljava/lang/Object;Ljava/lang/Object;Ljava/lang/Object;Ljava/lang/Object;Ljava/lang/Object;Ljava/lang/Object;Ljava/lang/Object;Ljava/lang/Object;Ljava/lang/Object;Ljava/lang/Object;Ljava/lang/Object;Ljava/lang/Object;Ljava/lang/Object;Ljava/lang/Object;)Ljava/lang/Object;
+
+    move-result-object v0
+
+    return-object v0
 .end method
 
 .method public isBound()Z
@@ -821,9 +1029,7 @@
 
     iget-object v0, p0, Lkotlin/reflect/jvm/internal/KFunctionImpl;->rawBoundReceiver:Ljava/lang/Object;
 
-    sget v1, Lkotlin/jvm/internal/CallableReference;->$r8$clinit:I
-
-    sget-object v1, Lkotlin/jvm/internal/CallableReference$NoReceiver;->INSTANCE:Lkotlin/jvm/internal/CallableReference$NoReceiver;
+    sget-object v1, Lkotlin/jvm/internal/CallableReference;->NO_RECEIVER:Ljava/lang/Object;
 
     invoke-static {v0, v1}, Lkotlin/jvm/internal/Intrinsics;->areEqual(Ljava/lang/Object;Ljava/lang/Object;)Z
 
@@ -834,16 +1040,86 @@
     return v0
 .end method
 
-.method public toString()Ljava/lang/String;
+.method public isExternal()Z
     .locals 1
-
-    sget-object v0, Lkotlin/reflect/jvm/internal/ReflectionObjectRenderer;->INSTANCE:Lkotlin/reflect/jvm/internal/ReflectionObjectRenderer;
 
     invoke-virtual {p0}, Lkotlin/reflect/jvm/internal/KFunctionImpl;->getDescriptor()Lkotlin/reflect/jvm/internal/impl/descriptors/FunctionDescriptor;
 
     move-result-object v0
 
-    invoke-static {v0}, Lkotlin/reflect/jvm/internal/ReflectionObjectRenderer;->renderFunction(Lkotlin/reflect/jvm/internal/impl/descriptors/FunctionDescriptor;)Ljava/lang/String;
+    invoke-interface {v0}, Lkotlin/reflect/jvm/internal/impl/descriptors/MemberDescriptor;->isExternal()Z
+
+    move-result v0
+
+    return v0
+.end method
+
+.method public isInfix()Z
+    .locals 1
+
+    invoke-virtual {p0}, Lkotlin/reflect/jvm/internal/KFunctionImpl;->getDescriptor()Lkotlin/reflect/jvm/internal/impl/descriptors/FunctionDescriptor;
+
+    move-result-object v0
+
+    invoke-interface {v0}, Lkotlin/reflect/jvm/internal/impl/descriptors/FunctionDescriptor;->isInfix()Z
+
+    move-result v0
+
+    return v0
+.end method
+
+.method public isInline()Z
+    .locals 1
+
+    invoke-virtual {p0}, Lkotlin/reflect/jvm/internal/KFunctionImpl;->getDescriptor()Lkotlin/reflect/jvm/internal/impl/descriptors/FunctionDescriptor;
+
+    move-result-object v0
+
+    invoke-interface {v0}, Lkotlin/reflect/jvm/internal/impl/descriptors/FunctionDescriptor;->isInline()Z
+
+    move-result v0
+
+    return v0
+.end method
+
+.method public isOperator()Z
+    .locals 1
+
+    invoke-virtual {p0}, Lkotlin/reflect/jvm/internal/KFunctionImpl;->getDescriptor()Lkotlin/reflect/jvm/internal/impl/descriptors/FunctionDescriptor;
+
+    move-result-object v0
+
+    invoke-interface {v0}, Lkotlin/reflect/jvm/internal/impl/descriptors/FunctionDescriptor;->isOperator()Z
+
+    move-result v0
+
+    return v0
+.end method
+
+.method public isSuspend()Z
+    .locals 1
+
+    invoke-virtual {p0}, Lkotlin/reflect/jvm/internal/KFunctionImpl;->getDescriptor()Lkotlin/reflect/jvm/internal/impl/descriptors/FunctionDescriptor;
+
+    move-result-object v0
+
+    invoke-interface {v0}, Lkotlin/reflect/jvm/internal/impl/descriptors/FunctionDescriptor;->isSuspend()Z
+
+    move-result v0
+
+    return v0
+.end method
+
+.method public toString()Ljava/lang/String;
+    .locals 2
+
+    sget-object v0, Lkotlin/reflect/jvm/internal/ReflectionObjectRenderer;->INSTANCE:Lkotlin/reflect/jvm/internal/ReflectionObjectRenderer;
+
+    invoke-virtual {p0}, Lkotlin/reflect/jvm/internal/KFunctionImpl;->getDescriptor()Lkotlin/reflect/jvm/internal/impl/descriptors/FunctionDescriptor;
+
+    move-result-object v1
+
+    invoke-virtual {v0, v1}, Lkotlin/reflect/jvm/internal/ReflectionObjectRenderer;->renderFunction(Lkotlin/reflect/jvm/internal/impl/descriptors/FunctionDescriptor;)Ljava/lang/String;
 
     move-result-object v0
 

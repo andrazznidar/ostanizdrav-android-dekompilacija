@@ -23,7 +23,7 @@
 # instance fields
 .field public final _base:Lcom/fasterxml/jackson/databind/cfg/BaseSettings;
 
-.field public final _mapperFeatures:I
+.field public final _mapperFeatures:J
 
 
 # direct methods
@@ -39,25 +39,25 @@
     return-void
 .end method
 
-.method public constructor <init>(Lcom/fasterxml/jackson/databind/cfg/BaseSettings;I)V
+.method public constructor <init>(Lcom/fasterxml/jackson/databind/cfg/BaseSettings;J)V
     .locals 0
 
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
     iput-object p1, p0, Lcom/fasterxml/jackson/databind/cfg/MapperConfig;->_base:Lcom/fasterxml/jackson/databind/cfg/BaseSettings;
 
-    iput p2, p0, Lcom/fasterxml/jackson/databind/cfg/MapperConfig;->_mapperFeatures:I
+    iput-wide p2, p0, Lcom/fasterxml/jackson/databind/cfg/MapperConfig;->_mapperFeatures:J
 
     return-void
 .end method
 
-.method public constructor <init>(Lcom/fasterxml/jackson/databind/cfg/MapperConfig;I)V
+.method public constructor <init>(Lcom/fasterxml/jackson/databind/cfg/MapperConfig;J)V
     .locals 0
     .annotation system Ldalvik/annotation/Signature;
         value = {
             "(",
             "Lcom/fasterxml/jackson/databind/cfg/MapperConfig<",
-            "TT;>;I)V"
+            "TT;>;J)V"
         }
     .end annotation
 
@@ -67,7 +67,7 @@
 
     iput-object p1, p0, Lcom/fasterxml/jackson/databind/cfg/MapperConfig;->_base:Lcom/fasterxml/jackson/databind/cfg/BaseSettings;
 
-    iput p2, p0, Lcom/fasterxml/jackson/databind/cfg/MapperConfig;->_mapperFeatures:I
+    iput-wide p2, p0, Lcom/fasterxml/jackson/databind/cfg/MapperConfig;->_mapperFeatures:J
 
     return-void
 .end method
@@ -88,9 +88,9 @@
 
     iput-object p2, p0, Lcom/fasterxml/jackson/databind/cfg/MapperConfig;->_base:Lcom/fasterxml/jackson/databind/cfg/BaseSettings;
 
-    iget p1, p1, Lcom/fasterxml/jackson/databind/cfg/MapperConfig;->_mapperFeatures:I
+    iget-wide p1, p1, Lcom/fasterxml/jackson/databind/cfg/MapperConfig;->_mapperFeatures:J
 
-    iput p1, p0, Lcom/fasterxml/jackson/databind/cfg/MapperConfig;->_mapperFeatures:I
+    iput-wide p1, p0, Lcom/fasterxml/jackson/databind/cfg/MapperConfig;->_mapperFeatures:J
 
     return-void
 .end method
@@ -182,7 +182,7 @@
 
     const/4 v2, 0x0
 
-    invoke-virtual {v0, v2, p1, v1}, Lcom/fasterxml/jackson/databind/type/TypeFactory;->_fromAny(Landroidx/fragment/app/FragmentStore;Ljava/lang/reflect/Type;Lcom/fasterxml/jackson/databind/type/TypeBindings;)Lcom/fasterxml/jackson/databind/JavaType;
+    invoke-virtual {v0, v2, p1, v1}, Lcom/fasterxml/jackson/databind/type/TypeFactory;->_fromAny(Lcom/fasterxml/jackson/databind/type/ClassStack;Ljava/lang/reflect/Type;Lcom/fasterxml/jackson/databind/type/TypeBindings;)Lcom/fasterxml/jackson/databind/JavaType;
 
     move-result-object p1
 
@@ -329,7 +329,7 @@
 
     const/4 v2, 0x0
 
-    invoke-virtual {v0, v2, p1, v1}, Lcom/fasterxml/jackson/databind/type/TypeFactory;->_fromAny(Landroidx/fragment/app/FragmentStore;Ljava/lang/reflect/Type;Lcom/fasterxml/jackson/databind/type/TypeBindings;)Lcom/fasterxml/jackson/databind/JavaType;
+    invoke-virtual {v0, v2, p1, v1}, Lcom/fasterxml/jackson/databind/type/TypeFactory;->_fromAny(Lcom/fasterxml/jackson/databind/type/ClassStack;Ljava/lang/reflect/Type;Lcom/fasterxml/jackson/databind/type/TypeBindings;)Lcom/fasterxml/jackson/databind/JavaType;
 
     move-result-object p1
 
@@ -353,13 +353,17 @@
 .end method
 
 .method public final isEnabled(Lcom/fasterxml/jackson/databind/MapperFeature;)Z
-    .locals 1
+    .locals 4
 
-    iget v0, p0, Lcom/fasterxml/jackson/databind/cfg/MapperConfig;->_mapperFeatures:I
+    iget-wide v0, p0, Lcom/fasterxml/jackson/databind/cfg/MapperConfig;->_mapperFeatures:J
 
-    iget p1, p1, Lcom/fasterxml/jackson/databind/MapperFeature;->_mask:I
+    iget-wide v2, p1, Lcom/fasterxml/jackson/databind/MapperFeature;->_mask:J
 
-    and-int/2addr p1, v0
+    and-long/2addr v0, v2
+
+    const-wide/16 v2, 0x0
+
+    cmp-long p1, v0, v2
 
     if-eqz p1, :cond_0
 

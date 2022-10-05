@@ -126,7 +126,7 @@
 .method public getFocusedRect(Landroid/graphics/Rect;)V
     .locals 2
 
-    invoke-super {p0, p1}, Landroid/widget/TextView;->getFocusedRect(Landroid/graphics/Rect;)V
+    invoke-super {p0, p1}, Landroid/widget/EditText;->getFocusedRect(Landroid/graphics/Rect;)V
 
     invoke-direct {p0}, Lcom/google/android/material/textfield/TextInputEditText;->getTextInputLayout()Lcom/google/android/material/textfield/TextInputLayout;
 
@@ -157,7 +157,7 @@
 .method public getGlobalVisibleRect(Landroid/graphics/Rect;Landroid/graphics/Point;)Z
     .locals 3
 
-    invoke-super {p0, p1, p2}, Landroid/view/View;->getGlobalVisibleRect(Landroid/graphics/Rect;Landroid/graphics/Point;)Z
+    invoke-super {p0, p1, p2}, Landroid/widget/EditText;->getGlobalVisibleRect(Landroid/graphics/Rect;Landroid/graphics/Point;)Z
 
     move-result v0
 
@@ -207,7 +207,7 @@
     return-object v0
 
     :cond_0
-    invoke-super {p0}, Landroid/widget/TextView;->getHint()Ljava/lang/CharSequence;
+    invoke-super {p0}, Landroid/widget/EditText;->getHint()Ljava/lang/CharSequence;
 
     move-result-object v0
 
@@ -217,7 +217,7 @@
 .method public onAttachedToWindow()V
     .locals 2
 
-    invoke-super {p0}, Landroid/widget/TextView;->onAttachedToWindow()V
+    invoke-super {p0}, Landroid/widget/EditText;->onAttachedToWindow()V
 
     invoke-direct {p0}, Lcom/google/android/material/textfield/TextInputEditText;->getTextInputLayout()Lcom/google/android/material/textfield/TextInputLayout;
 
@@ -229,7 +229,7 @@
 
     if-eqz v0, :cond_0
 
-    invoke-super {p0}, Landroid/widget/TextView;->getHint()Ljava/lang/CharSequence;
+    invoke-super {p0}, Landroid/widget/EditText;->getHint()Ljava/lang/CharSequence;
 
     move-result-object v0
 
@@ -285,7 +285,7 @@
 .method public onInitializeAccessibilityNodeInfo(Landroid/view/accessibility/AccessibilityNodeInfo;)V
     .locals 0
 
-    invoke-super {p0, p1}, Landroid/view/View;->onInitializeAccessibilityNodeInfo(Landroid/view/accessibility/AccessibilityNodeInfo;)V
+    invoke-super {p0, p1}, Landroid/widget/EditText;->onInitializeAccessibilityNodeInfo(Landroid/view/accessibility/AccessibilityNodeInfo;)V
 
     invoke-direct {p0}, Lcom/google/android/material/textfield/TextInputEditText;->getTextInputLayout()Lcom/google/android/material/textfield/TextInputLayout;
 
@@ -295,7 +295,7 @@
 .method public requestRectangleOnScreen(Landroid/graphics/Rect;)Z
     .locals 6
 
-    invoke-super {p0, p1}, Landroid/view/View;->requestRectangleOnScreen(Landroid/graphics/Rect;)Z
+    invoke-super {p0, p1}, Landroid/widget/EditText;->requestRectangleOnScreen(Landroid/graphics/Rect;)Z
 
     move-result p1
 

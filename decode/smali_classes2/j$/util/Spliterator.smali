@@ -3,15 +3,6 @@
 
 
 # annotations
-.annotation system Ldalvik/annotation/MemberClasses;
-    value = {
-        Lj$/util/Spliterator$a;,
-        Lj$/util/Spliterator$c;,
-        Lj$/util/Spliterator$b;,
-        Lj$/util/Spliterator$d;
-    }
-.end annotation
-
 .annotation system Ldalvik/annotation/Signature;
     value = {
         "<T:",
@@ -23,7 +14,7 @@
 
 
 # virtual methods
-.method public abstract b(Lj$/util/function/Consumer;)Z
+.method public abstract a(Lj$/util/function/Consumer;)Z
 .end method
 
 .method public abstract characteristics()I

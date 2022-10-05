@@ -7,30 +7,28 @@
 
 
 # instance fields
-.field public final lock:Ljava/util/concurrent/locks/Lock;
+.field private final lock:Ljava/util/concurrent/locks/Lock;
 
 
 # direct methods
-.method public constructor <init>(Ljava/util/concurrent/locks/Lock;I)V
-    .locals 0
+.method public constructor <init>()V
+    .locals 2
 
-    and-int/lit8 p1, p2, 0x1
+    const/4 v0, 0x0
 
-    if-eqz p1, :cond_0
+    const/4 v1, 0x1
 
-    new-instance p1, Ljava/util/concurrent/locks/ReentrantLock;
+    invoke-direct {p0, v0, v1, v0}, Lkotlin/reflect/jvm/internal/impl/storage/DefaultSimpleLock;-><init>(Ljava/util/concurrent/locks/Lock;ILkotlin/jvm/internal/DefaultConstructorMarker;)V
 
-    invoke-direct {p1}, Ljava/util/concurrent/locks/ReentrantLock;-><init>()V
+    return-void
+.end method
 
-    goto :goto_0
+.method public constructor <init>(Ljava/util/concurrent/locks/Lock;)V
+    .locals 1
 
-    :cond_0
-    const/4 p1, 0x0
+    const-string v0, "lock"
 
-    :goto_0
-    const-string p2, "lock"
-
-    invoke-static {p1, p2}, Lkotlin/jvm/internal/Intrinsics;->checkNotNullParameter(Ljava/lang/Object;Ljava/lang/String;)V
+    invoke-static {p1, v0}, Lkotlin/jvm/internal/Intrinsics;->checkNotNullParameter(Ljava/lang/Object;Ljava/lang/String;)V
 
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
@@ -39,8 +37,33 @@
     return-void
 .end method
 
+.method public synthetic constructor <init>(Ljava/util/concurrent/locks/Lock;ILkotlin/jvm/internal/DefaultConstructorMarker;)V
+    .locals 0
+
+    and-int/lit8 p2, p2, 0x1
+
+    if-eqz p2, :cond_0
+
+    new-instance p1, Ljava/util/concurrent/locks/ReentrantLock;
+
+    invoke-direct {p1}, Ljava/util/concurrent/locks/ReentrantLock;-><init>()V
+
+    :cond_0
+    invoke-direct {p0, p1}, Lkotlin/reflect/jvm/internal/impl/storage/DefaultSimpleLock;-><init>(Ljava/util/concurrent/locks/Lock;)V
+
+    return-void
+.end method
+
 
 # virtual methods
+.method public final getLock()Ljava/util/concurrent/locks/Lock;
+    .locals 1
+
+    iget-object v0, p0, Lkotlin/reflect/jvm/internal/impl/storage/DefaultSimpleLock;->lock:Ljava/util/concurrent/locks/Lock;
+
+    return-object v0
+.end method
+
 .method public lock()V
     .locals 1
 

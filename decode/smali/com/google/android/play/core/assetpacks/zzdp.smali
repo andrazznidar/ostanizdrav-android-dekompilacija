@@ -67,7 +67,7 @@
 
     const/4 v4, 0x0
 
-    invoke-static {v3, v4}, Lkotlin/io/CloseableKt;->zzc([BI)J
+    invoke-static {v3, v4}, Lgeoregression/geometry/UtilPoint2D_F64;->zzc([BI)J
 
     move-result-wide v5
 
@@ -85,7 +85,7 @@
 
     const/16 v4, 0x12
 
-    invoke-static {v3, v4}, Lkotlin/io/CloseableKt;->zzc([BI)J
+    invoke-static {v3, v4}, Lgeoregression/geometry/UtilPoint2D_F64;->zzc([BI)J
 
     move-result-wide v3
 
@@ -95,7 +95,7 @@
 
     const/16 v4, 0x8
 
-    invoke-static {v3, v4}, Lkotlin/io/CloseableKt;->zza([BI)I
+    invoke-static {v3, v4}, Lgeoregression/geometry/UtilPoint2D_F64;->zza([BI)I
 
     move-result v3
 
@@ -105,7 +105,7 @@
 
     const/16 v4, 0x1a
 
-    invoke-static {v3, v4}, Lkotlin/io/CloseableKt;->zza([BI)I
+    invoke-static {v3, v4}, Lgeoregression/geometry/UtilPoint2D_F64;->zza([BI)I
 
     move-result v3
 
@@ -115,7 +115,7 @@
 
     const/16 v4, 0x1c
 
-    invoke-static {v3, v4}, Lkotlin/io/CloseableKt;->zza([BI)I
+    invoke-static {v3, v4}, Lgeoregression/geometry/UtilPoint2D_F64;->zza([BI)I
 
     move-result v3
 

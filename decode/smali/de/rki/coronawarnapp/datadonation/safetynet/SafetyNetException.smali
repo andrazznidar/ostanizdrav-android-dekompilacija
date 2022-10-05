@@ -52,7 +52,7 @@
 
 # virtual methods
 .method public toHumanReadableError(Landroid/content/Context;)Lde/rki/coronawarnapp/util/HumanReadableError;
-    .locals 7
+    .locals 5
 
     const-string v0, "context"
 
@@ -73,44 +73,42 @@
     throw p1
 
     :pswitch_0
-    const v0, 0x7f130155
+    const v0, 0x7f130144
 
     goto :goto_0
 
     :pswitch_1
-    const v0, 0x7f130158
+    const v0, 0x7f130146
 
     goto :goto_0
 
     :pswitch_2
-    const v0, 0x7f130152
+    const v0, 0x7f130142
 
     goto :goto_0
 
     :pswitch_3
-    const v0, 0x7f130154
+    const v0, 0x7f130143
 
     goto :goto_0
 
     :pswitch_4
-    const v0, 0x7f130156
+    const v0, 0x7f130145
 
     :goto_0
     new-instance v1, Lde/rki/coronawarnapp/util/HumanReadableError;
 
-    const/4 v2, 0x0
+    const/4 v2, 0x1
 
-    const/4 v3, 0x1
+    new-array v2, v2, [Ljava/lang/Object;
 
-    new-array v4, v3, [Ljava/lang/Object;
+    const/4 v3, 0x0
 
-    const/4 v5, 0x0
+    iget-object v4, p0, Lde/rki/coronawarnapp/datadonation/safetynet/SafetyNetException;->type:Lde/rki/coronawarnapp/datadonation/safetynet/SafetyNetException$Type;
 
-    iget-object v6, p0, Lde/rki/coronawarnapp/datadonation/safetynet/SafetyNetException;->type:Lde/rki/coronawarnapp/datadonation/safetynet/SafetyNetException$Type;
+    aput-object v4, v2, v3
 
-    aput-object v6, v4, v5
-
-    invoke-virtual {p1, v0, v4}, Landroid/content/Context;->getString(I[Ljava/lang/Object;)Ljava/lang/String;
+    invoke-virtual {p1, v0, v2}, Landroid/content/Context;->getString(I[Ljava/lang/Object;)Ljava/lang/String;
 
     move-result-object p1
 
@@ -118,7 +116,9 @@
 
     invoke-static {p1, v0}, Lkotlin/jvm/internal/Intrinsics;->checkNotNullExpressionValue(Ljava/lang/Object;Ljava/lang/String;)V
 
-    invoke-direct {v1, v2, p1, v3}, Lde/rki/coronawarnapp/util/HumanReadableError;-><init>(Ljava/lang/String;Ljava/lang/String;I)V
+    const/4 v0, 0x0
+
+    invoke-direct {v1, v0, p1}, Lde/rki/coronawarnapp/util/HumanReadableError;-><init>(Ljava/lang/String;Ljava/lang/String;)V
 
     return-object v1
 
@@ -138,5 +138,6 @@
         :pswitch_2
         :pswitch_1
         :pswitch_0
+        :pswitch_4
     .end packed-switch
 .end method

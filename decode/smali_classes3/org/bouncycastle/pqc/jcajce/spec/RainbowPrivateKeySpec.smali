@@ -6,17 +6,17 @@
 
 
 # instance fields
-.field public A1inv:[[S
+.field private A1inv:[[S
 
-.field public A2inv:[[S
+.field private A2inv:[[S
 
-.field public b1:[S
+.field private b1:[S
 
-.field public b2:[S
+.field private b2:[S
 
-.field public layers:[Lorg/bouncycastle/pqc/crypto/rainbow/Layer;
+.field private layers:[Lorg/bouncycastle/pqc/crypto/rainbow/Layer;
 
-.field public vi:[I
+.field private vi:[I
 
 
 # direct methods
@@ -38,4 +38,54 @@
     iput-object p6, p0, Lorg/bouncycastle/pqc/jcajce/spec/RainbowPrivateKeySpec;->layers:[Lorg/bouncycastle/pqc/crypto/rainbow/Layer;
 
     return-void
+.end method
+
+
+# virtual methods
+.method public getB1()[S
+    .locals 1
+
+    iget-object v0, p0, Lorg/bouncycastle/pqc/jcajce/spec/RainbowPrivateKeySpec;->b1:[S
+
+    return-object v0
+.end method
+
+.method public getB2()[S
+    .locals 1
+
+    iget-object v0, p0, Lorg/bouncycastle/pqc/jcajce/spec/RainbowPrivateKeySpec;->b2:[S
+
+    return-object v0
+.end method
+
+.method public getInvA1()[[S
+    .locals 1
+
+    iget-object v0, p0, Lorg/bouncycastle/pqc/jcajce/spec/RainbowPrivateKeySpec;->A1inv:[[S
+
+    return-object v0
+.end method
+
+.method public getInvA2()[[S
+    .locals 1
+
+    iget-object v0, p0, Lorg/bouncycastle/pqc/jcajce/spec/RainbowPrivateKeySpec;->A2inv:[[S
+
+    return-object v0
+.end method
+
+.method public getLayers()[Lorg/bouncycastle/pqc/crypto/rainbow/Layer;
+    .locals 1
+
+    iget-object v0, p0, Lorg/bouncycastle/pqc/jcajce/spec/RainbowPrivateKeySpec;->layers:[Lorg/bouncycastle/pqc/crypto/rainbow/Layer;
+
+    return-object v0
+.end method
+
+.method public getVi()[I
+    .locals 1
+
+    iget-object v0, p0, Lorg/bouncycastle/pqc/jcajce/spec/RainbowPrivateKeySpec;->vi:[I
+
+    return-object v0
 .end method

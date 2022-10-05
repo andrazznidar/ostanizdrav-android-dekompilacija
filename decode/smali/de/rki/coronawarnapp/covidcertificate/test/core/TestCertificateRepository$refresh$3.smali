@@ -38,14 +38,14 @@
 .end annotation
 
 .annotation system Ldalvik/annotation/SourceDebugExtension;
-    value = "SMAP\nTestCertificateRepository.kt\nKotlin\n*S Kotlin\n*F\n+ 1 TestCertificateRepository.kt\nde/rki/coronawarnapp/covidcertificate/test/core/TestCertificateRepository$refresh$3\n+ 2 _Collections.kt\nkotlin/collections/CollectionsKt___CollectionsKt\n+ 3 fake.kt\nkotlin/jvm/internal/FakeKt\n+ 4 MapExtensions.kt\nde/rki/coronawarnapp/util/MapExtensionsKt\n*L\n1#1,496:1\n764#2:497\n855#2,2:498\n1601#2,9:500\n1849#2:509\n1850#2:511\n1610#2:512\n1849#2,2:513\n764#2:516\n855#2,2:517\n1547#2:519\n1618#2,3:520\n1849#2,2:523\n1#3:510\n4#4:515\n*S KotlinDebug\n*F\n+ 1 TestCertificateRepository.kt\nde/rki/coronawarnapp/covidcertificate/test/core/TestCertificateRepository$refresh$3\n*L\n270#1:497\n270#1:498,2\n271#1:500,9\n271#1:509\n271#1:511\n271#1:512\n286#1:513,2\n292#1:516\n292#1:517,2\n293#1:519\n293#1:520,3\n294#1:523,2\n271#1:510\n290#1:515\n*E\n"
+    value = "SMAP\nTestCertificateRepository.kt\nKotlin\n*S Kotlin\n*F\n+ 1 TestCertificateRepository.kt\nde/rki/coronawarnapp/covidcertificate/test/core/TestCertificateRepository$refresh$3\n+ 2 _Collections.kt\nkotlin/collections/CollectionsKt___CollectionsKt\n+ 3 fake.kt\nkotlin/jvm/internal/FakeKt\n+ 4 MapExtensions.kt\nde/rki/coronawarnapp/util/MapExtensionsKt\n*L\n1#1,590:1\n764#2:591\n855#2,2:592\n1601#2,9:594\n1849#2:603\n1850#2:605\n1610#2:606\n1849#2,2:607\n764#2:610\n855#2,2:611\n1547#2:613\n1618#2,3:614\n1849#2,2:617\n1#3:604\n4#4:609\n*S KotlinDebug\n*F\n+ 1 TestCertificateRepository.kt\nde/rki/coronawarnapp/covidcertificate/test/core/TestCertificateRepository$refresh$3\n*L\n286#1:591\n286#1:592,2\n287#1:594,9\n287#1:603\n287#1:605\n287#1:606\n302#1:607,2\n308#1:610\n308#1:611,2\n309#1:613\n309#1:614,3\n310#1:617,2\n287#1:604\n306#1:609\n*E\n"
 .end annotation
 
 .annotation runtime Lkotlin/coroutines/jvm/internal/DebugMetadata;
     c = "de.rki.coronawarnapp.covidcertificate.test.core.TestCertificateRepository$refresh$3"
     f = "TestCertificateRepository.kt"
     l = {
-        0x113
+        0x123
     }
     m = "invokeSuspend"
 .end annotation
@@ -319,7 +319,6 @@
 
     move-object v1, v11
 
-    :cond_4
     :goto_1
     const/4 v7, 0x0
 
@@ -339,32 +338,32 @@
 
     instance-of v10, v9, Lde/rki/coronawarnapp/covidcertificate/test/core/storage/types/RetrievedTestCertificate;
 
-    if-nez v10, :cond_5
+    if-nez v10, :cond_4
 
     goto :goto_4
 
-    :cond_5
+    :cond_4
     check-cast v9, Lde/rki/coronawarnapp/covidcertificate/test/core/storage/types/RetrievedTestCertificate;
 
     invoke-virtual {v9}, Lde/rki/coronawarnapp/covidcertificate/test/core/storage/types/RetrievedTestCertificate;->getPublicKeyRegisteredAt()Lorg/joda/time/Instant;
 
     move-result-object v9
 
-    if-eqz v9, :cond_6
+    if-eqz v9, :cond_5
 
     move v9, v2
 
     goto :goto_2
 
-    :cond_6
+    :cond_5
     move v9, v3
 
     :goto_2
-    if-eqz v9, :cond_7
+    if-eqz v9, :cond_6
 
     goto :goto_4
 
-    :cond_7
+    :cond_6
     iget-object v9, v5, Lde/rki/coronawarnapp/covidcertificate/test/core/TestCertificateRepository;->dispatcherProvider:Lde/rki/coronawarnapp/util/coroutine/DispatcherProvider;
 
     invoke-interface {v9}, Lde/rki/coronawarnapp/util/coroutine/DispatcherProvider;->getIO()Lkotlin/coroutines/CoroutineContext;
@@ -389,11 +388,11 @@
 
     move-result-object v7
 
-    if-ne v7, v0, :cond_8
+    if-ne v7, v0, :cond_7
 
     return-object v0
 
-    :cond_8
+    :cond_7
     move-object v11, v0
 
     move-object v0, p1
@@ -430,8 +429,11 @@
     move-object v6, v11
 
     :goto_4
-    if-eqz v7, :cond_4
+    if-nez v7, :cond_8
 
+    goto :goto_1
+
+    :cond_8
     invoke-interface {v4, v7}, Ljava/util/Collection;->add(Ljava/lang/Object;)Z
 
     goto :goto_1

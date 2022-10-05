@@ -4,6 +4,20 @@
 
 
 # direct methods
+.method public static final createViewModelLazy(Landroidx/fragment/app/Fragment;Lkotlin/reflect/KClass;Lkotlin/jvm/functions/Function0;Lkotlin/jvm/functions/Function0;)Lkotlin/Lazy;
+    .locals 0
+
+    const-string/jumbo p0, "viewModelClass"
+
+    invoke-static {p1, p0}, Lkotlin/jvm/internal/Intrinsics;->checkNotNullParameter(Ljava/lang/Object;Ljava/lang/String;)V
+
+    new-instance p0, Landroidx/lifecycle/ViewModelLazy;
+
+    invoke-direct {p0, p1, p2, p3}, Landroidx/lifecycle/ViewModelLazy;-><init>(Lkotlin/reflect/KClass;Lkotlin/jvm/functions/Function0;Lkotlin/jvm/functions/Function0;)V
+
+    return-object p0
+.end method
+
 .method public static e(Ljava/lang/Object;)V
     .locals 2
 

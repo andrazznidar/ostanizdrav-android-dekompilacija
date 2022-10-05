@@ -73,7 +73,7 @@
 
     invoke-direct {p1, p0}, Lde/rki/coronawarnapp/presencetracing/warning/storage/TraceWarningRepository$database$2;-><init>(Lde/rki/coronawarnapp/presencetracing/warning/storage/TraceWarningRepository;)V
 
-    invoke-static {p1}, Lkotlin/LazyKt__LazyKt;->lazy(Lkotlin/jvm/functions/Function0;)Lkotlin/Lazy;
+    invoke-static {p1}, Lkotlin/LazyKt__LazyJVMKt;->lazy(Lkotlin/jvm/functions/Function0;)Lkotlin/Lazy;
 
     move-result-object p1
 
@@ -83,7 +83,7 @@
 
     invoke-direct {p1, p0}, Lde/rki/coronawarnapp/presencetracing/warning/storage/TraceWarningRepository$dao$2;-><init>(Lde/rki/coronawarnapp/presencetracing/warning/storage/TraceWarningRepository;)V
 
-    invoke-static {p1}, Lkotlin/LazyKt__LazyKt;->lazy(Lkotlin/jvm/functions/Function0;)Lkotlin/Lazy;
+    invoke-static {p1}, Lkotlin/LazyKt__LazyJVMKt;->lazy(Lkotlin/jvm/functions/Function0;)Lkotlin/Lazy;
 
     move-result-object p1
 
@@ -93,7 +93,7 @@
 
     invoke-direct {p1, p0}, Lde/rki/coronawarnapp/presencetracing/warning/storage/TraceWarningRepository$storageDir$2;-><init>(Lde/rki/coronawarnapp/presencetracing/warning/storage/TraceWarningRepository;)V
 
-    invoke-static {p1}, Lkotlin/LazyKt__LazyKt;->lazy(Lkotlin/jvm/functions/Function0;)Lkotlin/Lazy;
+    invoke-static {p1}, Lkotlin/LazyKt__LazyJVMKt;->lazy(Lkotlin/jvm/functions/Function0;)Lkotlin/Lazy;
 
     move-result-object p1
 
@@ -575,34 +575,37 @@
 
     move v3, v6
 
+    :cond_16
     :goto_a
     if-ge v3, v2, :cond_1a
 
     aget-object v4, p1, v3
 
+    add-int/lit8 v3, v3, 0x1
+
     instance-of v8, v1, Ljava/util/Collection;
 
-    if-eqz v8, :cond_16
+    if-eqz v8, :cond_17
 
     invoke-interface {v1}, Ljava/util/Collection;->isEmpty()Z
 
     move-result v8
 
-    if-eqz v8, :cond_16
+    if-eqz v8, :cond_17
 
     goto :goto_b
 
-    :cond_16
+    :cond_17
     invoke-interface {v1}, Ljava/lang/Iterable;->iterator()Ljava/util/Iterator;
 
     move-result-object v8
 
-    :cond_17
+    :cond_18
     invoke-interface {v8}, Ljava/util/Iterator;->hasNext()Z
 
     move-result v9
 
-    if-eqz v9, :cond_18
+    if-eqz v9, :cond_19
 
     invoke-interface {v8}, Ljava/util/Iterator;->next()Ljava/lang/Object;
 
@@ -618,24 +621,24 @@
 
     move-result v9
 
-    if-eqz v9, :cond_17
+    if-eqz v9, :cond_18
 
     move v8, v6
 
     goto :goto_c
 
-    :cond_18
+    :cond_19
     :goto_b
     move v8, v7
 
     :goto_c
-    if-eqz v8, :cond_19
+    if-eqz v8, :cond_16
 
     invoke-virtual {v4}, Ljava/io/File;->delete()Z
 
     move-result v8
 
-    if-eqz v8, :cond_19
+    if-eqz v8, :cond_16
 
     sget-object v8, Ltimber/log/Timber;->Forest:Ltimber/log/Timber$Forest;
 
@@ -648,9 +651,6 @@
     const-string v4, "Deleted orphaned file: %s"
 
     invoke-virtual {v8, v4, v9}, Ltimber/log/Timber$Forest;->w(Ljava/lang/String;[Ljava/lang/Object;)V
-
-    :cond_19
-    add-int/lit8 v3, v3, 0x1
 
     goto :goto_a
 
@@ -920,8 +920,6 @@
     const/4 v15, 0x0
 
     move-object v6, v1
-
-    move-object/from16 v9, p1
 
     invoke-direct/range {v6 .. v15}, Lde/rki/coronawarnapp/presencetracing/warning/storage/TraceWarningPackageMetadata;-><init>(Ljava/lang/String;Lorg/joda/time/Instant;Lde/rki/coronawarnapp/diagnosiskeys/server/LocationCode;JLjava/lang/String;ZZZ)V
 

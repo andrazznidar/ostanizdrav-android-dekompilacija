@@ -99,10 +99,6 @@
 
     invoke-static {p1}, Ljava/util/Objects;->requireNonNull(Ljava/lang/Object;)Ljava/lang/Object;
 
-    const-string v0, "Expecting a valid ISignInCallbacks"
-
-    invoke-static {p0, v0}, Lcom/google/android/gms/common/internal/Preconditions;->checkNotNull(Ljava/lang/Object;Ljava/lang/Object;)Ljava/lang/Object;
-
     const/4 v0, 0x1
 
     const/4 v1, 0x0

@@ -41,8 +41,11 @@
 
     const/4 v1, 0x0
 
-    if-eqz v0, :cond_0
+    if-nez v0, :cond_0
 
+    return v1
+
+    :cond_0
     check-cast p1, Ljava/lang/Number;
 
     invoke-virtual {p1}, Ljava/lang/Number;->intValue()I
@@ -51,7 +54,7 @@
 
     iget-object v0, p0, Lkotlin/collections/ArraysKt___ArraysJvmKt$asList$3;->$this_asList:[I
 
-    const-string v2, "$this$contains"
+    const-string v2, "<this>"
 
     invoke-static {v0, v2}, Lkotlin/jvm/internal/Intrinsics;->checkNotNullParameter(Ljava/lang/Object;Ljava/lang/String;)V
 
@@ -59,11 +62,11 @@
 
     move-result p1
 
-    if-ltz p1, :cond_0
+    if-ltz p1, :cond_1
 
     const/4 v1, 0x1
 
-    :cond_0
+    :cond_1
     return v1
 .end method
 
@@ -96,8 +99,13 @@
 
     instance-of v0, p1, Ljava/lang/Integer;
 
-    if-eqz v0, :cond_0
+    if-nez v0, :cond_0
 
+    const/4 p1, -0x1
+
+    return p1
+
+    :cond_0
     check-cast p1, Ljava/lang/Number;
 
     invoke-virtual {p1}, Ljava/lang/Number;->intValue()I
@@ -109,11 +117,6 @@
     invoke-static {v0, p1}, Lkotlin/collections/ArraysKt___ArraysKt;->indexOf([II)I
 
     move-result p1
-
-    return p1
-
-    :cond_0
-    const/4 p1, -0x1
 
     return p1
 .end method
@@ -139,14 +142,17 @@
 .end method
 
 .method public final lastIndexOf(Ljava/lang/Object;)I
-    .locals 4
+    .locals 5
 
     instance-of v0, p1, Ljava/lang/Integer;
 
     const/4 v1, -0x1
 
-    if-eqz v0, :cond_1
+    if-nez v0, :cond_0
 
+    return v1
+
+    :cond_0
     check-cast p1, Ljava/lang/Number;
 
     invoke-virtual {p1}, Ljava/lang/Number;->intValue()I
@@ -155,7 +161,7 @@
 
     iget-object v0, p0, Lkotlin/collections/ArraysKt___ArraysJvmKt$asList$3;->$this_asList:[I
 
-    const-string v2, "$this$lastIndexOf"
+    const-string v2, "<this>"
 
     invoke-static {v0, v2}, Lkotlin/jvm/internal/Intrinsics;->checkNotNullParameter(Ljava/lang/Object;Ljava/lang/String;)V
 
@@ -163,23 +169,30 @@
 
     add-int/2addr v2, v1
 
+    if-ltz v2, :cond_3
+
     :goto_0
-    if-ltz v2, :cond_1
+    add-int/lit8 v3, v2, -0x1
 
-    aget v3, v0, v2
+    aget v4, v0, v2
 
-    if-ne p1, v3, :cond_0
+    if-ne p1, v4, :cond_1
 
     move v1, v2
 
     goto :goto_1
 
-    :cond_0
-    add-int/lit8 v2, v2, -0x1
+    :cond_1
+    if-gez v3, :cond_2
+
+    goto :goto_1
+
+    :cond_2
+    move v2, v3
 
     goto :goto_0
 
-    :cond_1
+    :cond_3
     :goto_1
     return v1
 .end method

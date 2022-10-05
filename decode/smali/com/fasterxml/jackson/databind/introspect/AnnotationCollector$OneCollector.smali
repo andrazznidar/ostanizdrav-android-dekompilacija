@@ -83,7 +83,7 @@
     return-object v6
 .end method
 
-.method public asAnnotationMap()Lokhttp3/ConnectionPool;
+.method public asAnnotationMap()Lcom/fasterxml/jackson/databind/introspect/AnnotationMap;
     .locals 4
 
     iget-object v0, p0, Lcom/fasterxml/jackson/databind/introspect/AnnotationCollector$OneCollector;->_type:Ljava/lang/Class;
@@ -98,9 +98,9 @@
 
     invoke-virtual {v2, v0, v1}, Ljava/util/HashMap;->put(Ljava/lang/Object;Ljava/lang/Object;)Ljava/lang/Object;
 
-    new-instance v0, Lokhttp3/ConnectionPool;
+    new-instance v0, Lcom/fasterxml/jackson/databind/introspect/AnnotationMap;
 
-    invoke-direct {v0, v2}, Lokhttp3/ConnectionPool;-><init>(Ljava/util/HashMap;)V
+    invoke-direct {v0, v2}, Lcom/fasterxml/jackson/databind/introspect/AnnotationMap;-><init>(Ljava/util/HashMap;)V
 
     return-object v0
 .end method

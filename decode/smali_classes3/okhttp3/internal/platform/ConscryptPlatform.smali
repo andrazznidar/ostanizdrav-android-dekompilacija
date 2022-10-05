@@ -169,9 +169,9 @@
 
     invoke-static {p1}, Lorg/conscrypt/Conscrypt;->isConscrypt(Ljavax/net/ssl/SSLSocket;)Z
 
-    move-result v0
+    move-result p2
 
-    if-eqz v0, :cond_4
+    if-eqz p2, :cond_4
 
     const/4 p2, 0x1
 
@@ -265,12 +265,7 @@
 
     invoke-static {p1, p2}, Lorg/conscrypt/Conscrypt;->setApplicationProtocols(Ljavax/net/ssl/SSLSocket;[Ljava/lang/String;)V
 
-    goto :goto_2
-
     :cond_4
-    invoke-static {p3, p2}, Lkotlin/jvm/internal/Intrinsics;->checkNotNullParameter(Ljava/lang/Object;Ljava/lang/String;)V
-
-    :goto_2
     return-void
 .end method
 

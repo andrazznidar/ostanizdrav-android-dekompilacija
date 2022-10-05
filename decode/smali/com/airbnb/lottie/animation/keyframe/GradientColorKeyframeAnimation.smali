@@ -129,7 +129,7 @@
 
     aget v5, v5, v2
 
-    invoke-static {p2, v4, v5}, Lcom/airbnb/lottie/utils/GammaEvaluator;->evaluate(FII)I
+    invoke-static {p2, v4, v5}, Lorg/ejml/ops/DConvertMatrixStruct;->evaluate(FII)I
 
     move-result v4
 
@@ -169,7 +169,7 @@
 
     const-string v1, ")"
 
-    invoke-static {v0, p1, v1}, Landroidx/constraintlayout/core/widgets/ConstraintWidget$$ExternalSyntheticOutline0;->m(Ljava/lang/StringBuilder;ILjava/lang/String;)Ljava/lang/String;
+    invoke-static {v0, p1, v1}, Landroidx/camera/core/AutoValue_ImmutableImageInfo$$ExternalSyntheticOutline0;->m(Ljava/lang/StringBuilder;ILjava/lang/String;)Ljava/lang/String;
 
     move-result-object p1
 

@@ -17,6 +17,7 @@
         "Ljava/lang/Object;",
         "Lkotlinx/coroutines/flow/SharedFlow<",
         "TT;>;",
+        "Lkotlinx/coroutines/flow/Flow;",
         "Lkotlinx/coroutines/flow/internal/FusibleFlow<",
         "TT;>;"
     }

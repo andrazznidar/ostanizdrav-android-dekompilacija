@@ -3,7 +3,18 @@
 .source "DescriptorRenderer.kt"
 
 
+# annotations
+.annotation system Ldalvik/annotation/MemberClasses;
+    value = {
+        Lkotlin/reflect/jvm/internal/impl/renderer/DescriptorRendererOptions$DefaultImpls;
+    }
+.end annotation
+
+
 # virtual methods
+.method public abstract getAnnotationArgumentsRenderingPolicy()Lkotlin/reflect/jvm/internal/impl/renderer/AnnotationArgumentsRenderingPolicy;
+.end method
+
 .method public abstract getDebugMode()Z
 .end method
 
@@ -66,6 +77,9 @@
 .end method
 
 .method public abstract setTextFormat(Lkotlin/reflect/jvm/internal/impl/renderer/RenderingFormat;)V
+.end method
+
+.method public abstract setVerbose(Z)V
 .end method
 
 .method public abstract setWithDefinedIn(Z)V

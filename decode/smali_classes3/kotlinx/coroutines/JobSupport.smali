@@ -154,6 +154,82 @@
     return-object p1
 .end method
 
+.method public final awaitInternal$kotlinx_coroutines_core(Lkotlin/coroutines/Continuation;)Ljava/lang/Object;
+    .locals 3
+    .annotation system Ldalvik/annotation/Signature;
+        value = {
+            "(",
+            "Lkotlin/coroutines/Continuation<",
+            "Ljava/lang/Object;",
+            ">;)",
+            "Ljava/lang/Object;"
+        }
+    .end annotation
+
+    :cond_0
+    invoke-virtual {p0}, Lkotlinx/coroutines/JobSupport;->getState$kotlinx_coroutines_core()Ljava/lang/Object;
+
+    move-result-object v0
+
+    instance-of v1, v0, Lkotlinx/coroutines/Incomplete;
+
+    if-nez v1, :cond_2
+
+    instance-of p1, v0, Lkotlinx/coroutines/CompletedExceptionally;
+
+    if-nez p1, :cond_1
+
+    invoke-static {v0}, Lkotlinx/coroutines/JobSupportKt;->unboxState(Ljava/lang/Object;)Ljava/lang/Object;
+
+    move-result-object p1
+
+    return-object p1
+
+    :cond_1
+    check-cast v0, Lkotlinx/coroutines/CompletedExceptionally;
+
+    iget-object p1, v0, Lkotlinx/coroutines/CompletedExceptionally;->cause:Ljava/lang/Throwable;
+
+    throw p1
+
+    :cond_2
+    invoke-virtual {p0, v0}, Lkotlinx/coroutines/JobSupport;->startInternal(Ljava/lang/Object;)I
+
+    move-result v0
+
+    if-ltz v0, :cond_0
+
+    new-instance v0, Lkotlinx/coroutines/JobSupport$AwaitContinuation;
+
+    invoke-static {p1}, Lcom/google/android/gms/nearby/messages/internal/zzag;->intercepted(Lkotlin/coroutines/Continuation;)Lkotlin/coroutines/Continuation;
+
+    move-result-object p1
+
+    invoke-direct {v0, p1, p0}, Lkotlinx/coroutines/JobSupport$AwaitContinuation;-><init>(Lkotlin/coroutines/Continuation;Lkotlinx/coroutines/JobSupport;)V
+
+    invoke-virtual {v0}, Lkotlinx/coroutines/CancellableContinuationImpl;->initCancellability()V
+
+    new-instance p1, Lkotlinx/coroutines/ResumeAwaitOnCompletion;
+
+    invoke-direct {p1, v0}, Lkotlinx/coroutines/ResumeAwaitOnCompletion;-><init>(Lkotlinx/coroutines/CancellableContinuationImpl;)V
+
+    const/4 v1, 0x0
+
+    const/4 v2, 0x1
+
+    invoke-virtual {p0, v1, v2, p1}, Lkotlinx/coroutines/JobSupport;->invokeOnCompletion(ZZLkotlin/jvm/functions/Function1;)Lkotlinx/coroutines/DisposableHandle;
+
+    move-result-object p1
+
+    invoke-static {v0, p1}, Lkotlinx/coroutines/CancellableContinuationKt;->disposeOnCancellation(Lkotlinx/coroutines/CancellableContinuation;Lkotlinx/coroutines/DisposableHandle;)V
+
+    invoke-virtual {v0}, Lkotlinx/coroutines/CancellableContinuationImpl;->getResult()Ljava/lang/Object;
+
+    move-result-object p1
+
+    return-object p1
+.end method
+
 .method public cancel(Ljava/util/concurrent/CancellationException;)V
     .locals 2
 
@@ -1286,6 +1362,50 @@
     throw v1
 .end method
 
+.method public final getCompletedInternal$kotlinx_coroutines_core()Ljava/lang/Object;
+    .locals 2
+
+    invoke-virtual {p0}, Lkotlinx/coroutines/JobSupport;->getState$kotlinx_coroutines_core()Ljava/lang/Object;
+
+    move-result-object v0
+
+    instance-of v1, v0, Lkotlinx/coroutines/Incomplete;
+
+    xor-int/lit8 v1, v1, 0x1
+
+    if-eqz v1, :cond_1
+
+    instance-of v1, v0, Lkotlinx/coroutines/CompletedExceptionally;
+
+    if-nez v1, :cond_0
+
+    invoke-static {v0}, Lkotlinx/coroutines/JobSupportKt;->unboxState(Ljava/lang/Object;)Ljava/lang/Object;
+
+    move-result-object v0
+
+    return-object v0
+
+    :cond_0
+    check-cast v0, Lkotlinx/coroutines/CompletedExceptionally;
+
+    iget-object v0, v0, Lkotlinx/coroutines/CompletedExceptionally;->cause:Ljava/lang/Throwable;
+
+    throw v0
+
+    :cond_1
+    new-instance v0, Ljava/lang/IllegalStateException;
+
+    const-string v1, "This job has not completed yet"
+
+    invoke-virtual {v1}, Ljava/lang/Object;->toString()Ljava/lang/String;
+
+    move-result-object v1
+
+    invoke-direct {v0, v1}, Ljava/lang/IllegalStateException;-><init>(Ljava/lang/String;)V
+
+    throw v0
+.end method
+
 .method public final getCompletionExceptionOrNull()Ljava/lang/Throwable;
     .locals 3
 
@@ -1503,11 +1623,11 @@
 .end method
 
 .method public getOnCancelComplete$kotlinx_coroutines_core()Z
-    .locals 1
+    .locals 0
 
-    const/4 v0, 0x0
+    instance-of p0, p0, Lkotlinx/coroutines/CompletableDeferredImpl;
 
-    return v0
+    return p0
 .end method
 
 .method public final getOrPromoteCancellingList(Lkotlinx/coroutines/Incomplete;)Lkotlinx/coroutines/NodeList;
@@ -2086,7 +2206,7 @@
     :cond_2
     new-instance v0, Lkotlinx/coroutines/CancellableContinuationImpl;
 
-    invoke-static {p1}, Lkotlinx/coroutines/flow/FlowKt;->intercepted(Lkotlin/coroutines/Continuation;)Lkotlin/coroutines/Continuation;
+    invoke-static {p1}, Lcom/google/android/gms/nearby/messages/internal/zzag;->intercepted(Lkotlin/coroutines/Continuation;)Lkotlin/coroutines/Continuation;
 
     move-result-object p1
 
@@ -2102,11 +2222,7 @@
 
     move-result-object p1
 
-    new-instance v1, Lkotlinx/coroutines/DisposeOnCancel;
-
-    invoke-direct {v1, p1}, Lkotlinx/coroutines/DisposeOnCancel;-><init>(Lkotlinx/coroutines/DisposableHandle;)V
-
-    invoke-virtual {v0, v1}, Lkotlinx/coroutines/CancellableContinuationImpl;->invokeOnCancellation(Lkotlin/jvm/functions/Function1;)V
+    invoke-static {v0, p1}, Lkotlinx/coroutines/CancellableContinuationKt;->disposeOnCancellation(Lkotlinx/coroutines/CancellableContinuation;Lkotlinx/coroutines/DisposableHandle;)V
 
     invoke-virtual {v0}, Lkotlinx/coroutines/CancellableContinuationImpl;->getResult()Ljava/lang/Object;
 
@@ -2130,6 +2246,46 @@
     sget-object p1, Lkotlin/Unit;->INSTANCE:Lkotlin/Unit;
 
     return-object p1
+.end method
+
+.method public final makeCompleting$kotlinx_coroutines_core(Ljava/lang/Object;)Z
+    .locals 3
+
+    :goto_0
+    invoke-virtual {p0}, Lkotlinx/coroutines/JobSupport;->getState$kotlinx_coroutines_core()Ljava/lang/Object;
+
+    move-result-object v0
+
+    invoke-virtual {p0, v0, p1}, Lkotlinx/coroutines/JobSupport;->tryMakeCompleting(Ljava/lang/Object;Ljava/lang/Object;)Ljava/lang/Object;
+
+    move-result-object v0
+
+    sget-object v1, Lkotlinx/coroutines/JobSupportKt;->COMPLETING_ALREADY:Lkotlinx/coroutines/internal/Symbol;
+
+    if-ne v0, v1, :cond_0
+
+    const/4 p1, 0x0
+
+    return p1
+
+    :cond_0
+    sget-object v1, Lkotlinx/coroutines/JobSupportKt;->COMPLETING_WAITING_CHILDREN:Lkotlinx/coroutines/internal/Symbol;
+
+    const/4 v2, 0x1
+
+    if-ne v0, v1, :cond_1
+
+    return v2
+
+    :cond_1
+    sget-object v1, Lkotlinx/coroutines/JobSupportKt;->COMPLETING_RETRY:Lkotlinx/coroutines/internal/Symbol;
+
+    if-ne v0, v1, :cond_2
+
+    goto :goto_0
+
+    :cond_2
+    return v2
 .end method
 
 .method public final makeCompletingOnce$kotlinx_coroutines_core(Ljava/lang/Object;)Ljava/lang/Object;
@@ -2459,6 +2615,101 @@
     sget-object v1, Lkotlinx/coroutines/JobSupport;->_state$FU:Ljava/util/concurrent/atomic/AtomicReferenceFieldUpdater;
 
     invoke-virtual {v1, p0, p1, v0}, Ljava/util/concurrent/atomic/AtomicReferenceFieldUpdater;->compareAndSet(Ljava/lang/Object;Ljava/lang/Object;Ljava/lang/Object;)Z
+
+    return-void
+.end method
+
+.method public final registerSelectClause1Internal$kotlinx_coroutines_core(Lkotlinx/coroutines/selects/SelectInstance;Lkotlin/jvm/functions/Function2;)V
+    .locals 2
+    .annotation system Ldalvik/annotation/Signature;
+        value = {
+            "<T:",
+            "Ljava/lang/Object;",
+            "R:",
+            "Ljava/lang/Object;",
+            ">(",
+            "Lkotlinx/coroutines/selects/SelectInstance<",
+            "-TR;>;",
+            "Lkotlin/jvm/functions/Function2<",
+            "-TT;-",
+            "Lkotlin/coroutines/Continuation<",
+            "-TR;>;+",
+            "Ljava/lang/Object;",
+            ">;)V"
+        }
+    .end annotation
+
+    :cond_0
+    invoke-virtual {p0}, Lkotlinx/coroutines/JobSupport;->getState$kotlinx_coroutines_core()Ljava/lang/Object;
+
+    move-result-object v0
+
+    invoke-interface {p1}, Lkotlinx/coroutines/selects/SelectInstance;->isSelected()Z
+
+    move-result v1
+
+    if-eqz v1, :cond_1
+
+    return-void
+
+    :cond_1
+    instance-of v1, v0, Lkotlinx/coroutines/Incomplete;
+
+    if-nez v1, :cond_4
+
+    invoke-interface {p1}, Lkotlinx/coroutines/selects/SelectInstance;->trySelect()Z
+
+    move-result v1
+
+    if-eqz v1, :cond_3
+
+    instance-of v1, v0, Lkotlinx/coroutines/CompletedExceptionally;
+
+    if-eqz v1, :cond_2
+
+    check-cast v0, Lkotlinx/coroutines/CompletedExceptionally;
+
+    iget-object p2, v0, Lkotlinx/coroutines/CompletedExceptionally;->cause:Ljava/lang/Throwable;
+
+    invoke-interface {p1, p2}, Lkotlinx/coroutines/selects/SelectInstance;->resumeSelectWithException(Ljava/lang/Throwable;)V
+
+    goto :goto_0
+
+    :cond_2
+    invoke-static {v0}, Lkotlinx/coroutines/JobSupportKt;->unboxState(Ljava/lang/Object;)Ljava/lang/Object;
+
+    move-result-object v0
+
+    invoke-interface {p1}, Lkotlinx/coroutines/selects/SelectInstance;->getCompletion()Lkotlin/coroutines/Continuation;
+
+    move-result-object p1
+
+    invoke-static {p2, v0, p1}, Lkotlinx/coroutines/intrinsics/UndispatchedKt;->startCoroutineUnintercepted(Lkotlin/jvm/functions/Function2;Ljava/lang/Object;Lkotlin/coroutines/Continuation;)V
+
+    :cond_3
+    :goto_0
+    return-void
+
+    :cond_4
+    invoke-virtual {p0, v0}, Lkotlinx/coroutines/JobSupport;->startInternal(Ljava/lang/Object;)I
+
+    move-result v0
+
+    if-nez v0, :cond_0
+
+    new-instance v0, Lkotlinx/coroutines/SelectAwaitOnCompletion;
+
+    invoke-direct {v0, p1, p2}, Lkotlinx/coroutines/SelectAwaitOnCompletion;-><init>(Lkotlinx/coroutines/selects/SelectInstance;Lkotlin/jvm/functions/Function2;)V
+
+    const/4 p2, 0x0
+
+    const/4 v1, 0x1
+
+    invoke-virtual {p0, p2, v1, v0}, Lkotlinx/coroutines/JobSupport;->invokeOnCompletion(ZZLkotlin/jvm/functions/Function1;)Lkotlinx/coroutines/DisposableHandle;
+
+    move-result-object p2
+
+    invoke-interface {p1, p2}, Lkotlinx/coroutines/selects/SelectInstance;->disposeOnSelect(Lkotlinx/coroutines/DisposableHandle;)V
 
     return-void
 .end method

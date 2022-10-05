@@ -1,5 +1,6 @@
 .class public final synthetic Landroidx/activity/ComponentActivity$$ExternalSyntheticLambda1;
 .super Ljava/lang/Object;
+.source "R8$$SyntheticClass"
 
 # interfaces
 .implements Landroidx/savedstate/SavedStateRegistry$SavedStateProvider;

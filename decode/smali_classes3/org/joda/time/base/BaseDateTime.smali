@@ -46,6 +46,12 @@
 
     move-result-wide v1
 
+    iget-object v3, v0, Lorg/joda/time/base/BaseDateTime;->iChronology:Lorg/joda/time/Chronology;
+
+    invoke-virtual {p0, v1, v2, v3}, Lorg/joda/time/base/BaseDateTime;->checkInstant(JLorg/joda/time/Chronology;)J
+
+    move-result-wide v1
+
     iput-wide v1, v0, Lorg/joda/time/base/BaseDateTime;->iMillis:J
 
     invoke-virtual {p0}, Lorg/joda/time/base/BaseDateTime;->adjustForMinMax()V
@@ -64,27 +70,11 @@
 
     iput-object p3, p0, Lorg/joda/time/base/BaseDateTime;->iChronology:Lorg/joda/time/Chronology;
 
-    iput-wide p1, p0, Lorg/joda/time/base/BaseDateTime;->iMillis:J
+    iget-object p3, p0, Lorg/joda/time/base/BaseDateTime;->iChronology:Lorg/joda/time/Chronology;
 
-    invoke-virtual {p0}, Lorg/joda/time/base/BaseDateTime;->adjustForMinMax()V
+    invoke-virtual {p0, p1, p2, p3}, Lorg/joda/time/base/BaseDateTime;->checkInstant(JLorg/joda/time/Chronology;)J
 
-    return-void
-.end method
-
-.method public constructor <init>(JLorg/joda/time/DateTimeZone;)V
-    .locals 0
-
-    invoke-static {p3}, Lorg/joda/time/chrono/ISOChronology;->getInstance(Lorg/joda/time/DateTimeZone;)Lorg/joda/time/chrono/ISOChronology;
-
-    move-result-object p3
-
-    invoke-direct {p0}, Lorg/joda/time/base/AbstractDateTime;-><init>()V
-
-    invoke-static {p3}, Lorg/joda/time/DateTimeUtils;->getChronology(Lorg/joda/time/Chronology;)Lorg/joda/time/Chronology;
-
-    move-result-object p3
-
-    iput-object p3, p0, Lorg/joda/time/base/BaseDateTime;->iChronology:Lorg/joda/time/Chronology;
+    move-result-wide p1
 
     iput-wide p1, p0, Lorg/joda/time/base/BaseDateTime;->iMillis:J
 
@@ -195,6 +185,12 @@
 
     :cond_1
     return-void
+.end method
+
+.method public checkInstant(JLorg/joda/time/Chronology;)J
+    .locals 0
+
+    return-wide p1
 .end method
 
 .method public getChronology()Lorg/joda/time/Chronology;

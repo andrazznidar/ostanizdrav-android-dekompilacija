@@ -12,11 +12,11 @@
 
 
 # instance fields
-.field public final aesEncryptor:Lde/rki/coronawarnapp/covidcertificate/common/cryptography/AesCryptography;
+.field public final aesEncryptor:Lde/rki/coronawarnapp/util/encryption/aes/AesCryptography;
 
 
 # direct methods
-.method public constructor <init>(Lde/rki/coronawarnapp/covidcertificate/common/cryptography/AesCryptography;)V
+.method public constructor <init>(Lde/rki/coronawarnapp/util/encryption/aes/AesCryptography;)V
     .locals 1
 
     const-string v0, "aesEncryptor"
@@ -25,7 +25,7 @@
 
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
-    iput-object p1, p0, Lde/rki/coronawarnapp/covidcertificate/common/decoder/DccCoseDecoder;->aesEncryptor:Lde/rki/coronawarnapp/covidcertificate/common/cryptography/AesCryptography;
+    iput-object p1, p0, Lde/rki/coronawarnapp/covidcertificate/common/decoder/DccCoseDecoder;->aesEncryptor:Lde/rki/coronawarnapp/util/encryption/aes/AesCryptography;
 
     return-void
 .end method
@@ -146,15 +146,15 @@
 
     move-result-object v9
 
-    invoke-virtual {p0, p1}, Lde/rki/coronawarnapp/covidcertificate/common/decoder/DccCoseDecoder;->extractAlgorithm(Lcom/upokecenter/cbor/CBORObject;)Lde/rki/coronawarnapp/covidcertificate/common/certificate/DscMessage$Algorithm;
+    invoke-virtual {p0, p1}, Lde/rki/coronawarnapp/covidcertificate/common/decoder/DccCoseDecoder;->extractAlgorithm$enumunboxing$(Lcom/upokecenter/cbor/CBORObject;)I
 
-    move-result-object v8
+    move-result v8
 
     new-instance p1, Lde/rki/coronawarnapp/covidcertificate/common/certificate/DscMessage;
 
     move-object v4, p1
 
-    invoke-direct/range {v4 .. v9}, Lde/rki/coronawarnapp/covidcertificate/common/certificate/DscMessage;-><init>(Lokio/ByteString;Lokio/ByteString;Lokio/ByteString;Lde/rki/coronawarnapp/covidcertificate/common/certificate/DscMessage$Algorithm;Ljava/lang/String;)V
+    invoke-direct/range {v4 .. v9}, Lde/rki/coronawarnapp/covidcertificate/common/certificate/DscMessage;-><init>(Lokio/ByteString;Lokio/ByteString;Lokio/ByteString;ILjava/lang/String;)V
     :try_end_0
     .catch Lde/rki/coronawarnapp/covidcertificate/common/exception/InvalidHealthCertificateException; {:try_start_0 .. :try_end_0} :catch_0
     .catchall {:try_start_0 .. :try_end_0} :catchall_0
@@ -183,14 +183,36 @@
 .end method
 
 .method public final decrypt([B[B)[B
-    .locals 2
-
-    const/4 v0, 0x0
+    .locals 5
 
     :try_start_0
-    iget-object v1, p0, Lde/rki/coronawarnapp/covidcertificate/common/decoder/DccCoseDecoder;->aesEncryptor:Lde/rki/coronawarnapp/covidcertificate/common/cryptography/AesCryptography;
+    iget-object v0, p0, Lde/rki/coronawarnapp/covidcertificate/common/decoder/DccCoseDecoder;->aesEncryptor:Lde/rki/coronawarnapp/util/encryption/aes/AesCryptography;
 
-    invoke-virtual {v1, p2, p1, v0}, Lde/rki/coronawarnapp/covidcertificate/common/cryptography/AesCryptography;->decrypt([B[BLjavax/crypto/spec/IvParameterSpec;)[B
+    invoke-static {v0}, Ljava/util/Objects;->requireNonNull(Ljava/lang/Object;)Ljava/lang/Object;
+
+    const/16 v1, 0x10
+
+    new-array v2, v1, [B
+
+    const/4 v3, 0x0
+
+    move v4, v3
+
+    :goto_0
+    if-ge v4, v1, :cond_0
+
+    aput-byte v3, v2, v4
+
+    add-int/lit8 v4, v4, 0x1
+
+    goto :goto_0
+
+    :cond_0
+    new-instance v1, Ljavax/crypto/spec/IvParameterSpec;
+
+    invoke-direct {v1, v2}, Ljavax/crypto/spec/IvParameterSpec;-><init>([B)V
+
+    invoke-virtual {v0, p2, p1, v1}, Lde/rki/coronawarnapp/util/encryption/aes/AesCryptography;->decryptWithCBC([B[BLjavax/crypto/spec/IvParameterSpec;)[B
 
     move-result-object p1
     :try_end_0
@@ -208,6 +230,8 @@
     new-instance p1, Lde/rki/coronawarnapp/covidcertificate/common/exception/InvalidHealthCertificateException;
 
     sget-object p2, Lde/rki/coronawarnapp/covidcertificate/common/exception/InvalidHealthCertificateException$ErrorCode;->AES_DECRYPTION_FAILED:Lde/rki/coronawarnapp/covidcertificate/common/exception/InvalidHealthCertificateException$ErrorCode;
+
+    const/4 v0, 0x0
 
     invoke-direct {p1, p2, v0}, Lde/rki/coronawarnapp/covidcertificate/common/exception/InvalidHealthCertificateException;-><init>(Lde/rki/coronawarnapp/covidcertificate/common/exception/InvalidHealthCertificateException$ErrorCode;Ljava/lang/Throwable;)V
 
@@ -296,8 +320,8 @@
     throw p1
 .end method
 
-.method public final extractAlgorithm(Lcom/upokecenter/cbor/CBORObject;)Lde/rki/coronawarnapp/covidcertificate/common/certificate/DscMessage$Algorithm;
-    .locals 2
+.method public final extractAlgorithm$enumunboxing$(Lcom/upokecenter/cbor/CBORObject;)I
+    .locals 3
 
     const/4 v0, 0x0
 
@@ -328,15 +352,13 @@
     :try_end_0
     .catch Ljava/lang/Exception; {:try_start_0 .. :try_end_0} :catch_0
 
-    const/16 v0, -0x25
+    const/16 v2, -0x25
 
-    if-eq p1, v0, :cond_1
+    if-eq p1, v2, :cond_1
 
-    const/4 v0, -0x7
+    const/4 v2, -0x7
 
-    if-ne p1, v0, :cond_0
-
-    sget-object p1, Lde/rki/coronawarnapp/covidcertificate/common/certificate/DscMessage$Algorithm;->ES256:Lde/rki/coronawarnapp/covidcertificate/common/certificate/DscMessage$Algorithm;
+    if-ne p1, v2, :cond_0
 
     goto :goto_0
 
@@ -350,10 +372,10 @@
     throw p1
 
     :cond_1
-    sget-object p1, Lde/rki/coronawarnapp/covidcertificate/common/certificate/DscMessage$Algorithm;->PS256:Lde/rki/coronawarnapp/covidcertificate/common/certificate/DscMessage$Algorithm;
+    const/4 v0, 0x2
 
     :goto_0
-    return-object p1
+    return v0
 
     :catch_0
     new-instance p1, Lde/rki/coronawarnapp/covidcertificate/common/exception/InvalidHealthCertificateException;
@@ -439,7 +461,7 @@
     goto :goto_3
 
     :cond_3
-    invoke-static {p1}, Lcom/google/android/gms/internal/nearby/zzew;->base64([B)Ljava/lang/String;
+    invoke-static {p1}, Lorg/ejml/dense/row/CommonOps_ZDRM;->base64([B)Ljava/lang/String;
 
     move-result-object p1
 

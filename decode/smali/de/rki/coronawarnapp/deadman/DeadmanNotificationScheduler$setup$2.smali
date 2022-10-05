@@ -186,11 +186,11 @@
 
     check-cast v3, Landroidx/work/PeriodicWorkRequest$Builder;
 
-    sget-object v4, Landroidx/work/BackoffPolicy;->EXPONENTIAL:Landroidx/work/BackoffPolicy;
+    const/4 v4, 0x1
 
     const-wide/16 v5, 0x8
 
-    invoke-virtual {v3, v4, v5, v6, p1}, Landroidx/work/WorkRequest$Builder;->setBackoffCriteria(Landroidx/work/BackoffPolicy;JLjava/util/concurrent/TimeUnit;)Landroidx/work/WorkRequest$Builder;
+    invoke-virtual {v3, v4, v5, v6, p1}, Landroidx/work/WorkRequest$Builder;->setBackoffCriteria$enumunboxing$(IJLjava/util/concurrent/TimeUnit;)Landroidx/work/WorkRequest$Builder;
 
     move-result-object p1
 

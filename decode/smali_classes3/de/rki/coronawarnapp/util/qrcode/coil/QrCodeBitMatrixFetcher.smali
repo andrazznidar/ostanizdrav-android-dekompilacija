@@ -55,9 +55,9 @@
 
     iget-object p2, p2, Lde/rki/coronawarnapp/util/qrcode/coil/CoilQrCode;->options:Lde/rki/coronawarnapp/util/qrcode/QrCodeOptions;
 
-    iget-object p2, p2, Lde/rki/coronawarnapp/util/qrcode/QrCodeOptions;->correctionLevel:Lcom/google/zxing/qrcode/decoder/ErrorCorrectionLevel;
+    iget p2, p2, Lde/rki/coronawarnapp/util/qrcode/QrCodeOptions;->correctionLevel:I
 
-    invoke-static {p3, p2, p1}, Lcom/google/zxing/qrcode/encoder/Encoder;->encode(Ljava/lang/String;Lcom/google/zxing/qrcode/decoder/ErrorCorrectionLevel;Ljava/util/Map;)Lcom/google/zxing/qrcode/encoder/QRCode;
+    invoke-static {p3, p2, p1}, Lcom/google/zxing/qrcode/encoder/Encoder;->encode(Ljava/lang/String;ILjava/util/Map;)Lcom/google/zxing/qrcode/encoder/QRCode;
 
     move-result-object p1
 
@@ -74,11 +74,9 @@
     invoke-direct {p3, p4}, Ljava/io/ObjectOutputStream;-><init>(Ljava/io/OutputStream;)V
 
     :try_start_0
-    iget-object p1, p1, Lcom/google/zxing/qrcode/encoder/QRCode;->matrix:Lkotlinx/coroutines/internal/ArrayQueue;
+    iget-object p1, p1, Lcom/google/zxing/qrcode/encoder/QRCode;->matrix:Lcom/google/zxing/qrcode/encoder/ByteMatrix;
 
-    iget-object p1, p1, Lkotlinx/coroutines/internal/ArrayQueue;->elements:Ljava/lang/Object;
-
-    check-cast p1, [[B
+    iget-object p1, p1, Lcom/google/zxing/qrcode/encoder/ByteMatrix;->bytes:[[B
 
     const-string p4, "qrCode.matrix.array"
 

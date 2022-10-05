@@ -298,6 +298,30 @@
     return-object v0
 .end method
 
+.method public getDccPersonCountMax()I
+    .locals 1
+
+    iget-object v0, p0, Lde/rki/coronawarnapp/appconfig/mapping/DefaultConfigMapping;->cwaConfig:Lde/rki/coronawarnapp/appconfig/CWAConfig;
+
+    invoke-interface {v0}, Lde/rki/coronawarnapp/appconfig/CWAConfig;->getDccPersonCountMax()I
+
+    move-result v0
+
+    return v0
+.end method
+
+.method public getDccPersonWarnThreshold()I
+    .locals 1
+
+    iget-object v0, p0, Lde/rki/coronawarnapp/appconfig/mapping/DefaultConfigMapping;->cwaConfig:Lde/rki/coronawarnapp/appconfig/CWAConfig;
+
+    invoke-interface {v0}, Lde/rki/coronawarnapp/appconfig/CWAConfig;->getDccPersonWarnThreshold()I
+
+    move-result v0
+
+    return v0
+.end method
+
 .method public getDiagnosisKeysDataMapping()Lcom/google/android/gms/nearby/exposurenotification/DiagnosisKeysDataMapping;
     .locals 1
 
@@ -616,6 +640,18 @@
     move-result-object v0
 
     return-object v0
+.end method
+
+.method public getValidationServiceMinVersion()I
+    .locals 1
+
+    iget-object v0, p0, Lde/rki/coronawarnapp/appconfig/mapping/DefaultConfigMapping;->cwaConfig:Lde/rki/coronawarnapp/appconfig/CWAConfig;
+
+    invoke-interface {v0}, Lde/rki/coronawarnapp/appconfig/CWAConfig;->getValidationServiceMinVersion()I
+
+    move-result v0
+
+    return v0
 .end method
 
 .method public hashCode()I

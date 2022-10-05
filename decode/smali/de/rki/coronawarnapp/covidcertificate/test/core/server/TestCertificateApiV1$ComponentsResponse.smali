@@ -13,12 +13,6 @@
     name = "ComponentsResponse"
 .end annotation
 
-.annotation system Ldalvik/annotation/MemberClasses;
-    value = {
-        Lde/rki/coronawarnapp/covidcertificate/test/core/server/TestCertificateApiV1$ComponentsResponse$Reason;
-    }
-.end annotation
-
 
 # instance fields
 .field private final dcc:Ljava/lang/String;
@@ -223,7 +217,7 @@
 
     const-string v1, ")"
 
-    invoke-static {v0, v2, v1}, Landroidx/constraintlayout/core/widgets/Barrier$$ExternalSyntheticOutline0;->m(Ljava/lang/StringBuilder;Ljava/lang/String;Ljava/lang/String;)Ljava/lang/String;
+    invoke-static {v0, v2, v1}, Landroidx/activity/ComponentActivity$2$$ExternalSyntheticOutline0;->m(Ljava/lang/StringBuilder;Ljava/lang/String;Ljava/lang/String;)Ljava/lang/String;
 
     move-result-object v0
 

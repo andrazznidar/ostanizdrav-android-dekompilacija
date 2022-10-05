@@ -4,6 +4,15 @@
 
 
 # annotations
+.annotation system Ldalvik/annotation/EnclosingMethod;
+    value = Lkotlin/reflect/jvm/internal/impl/builtins/jvm/JvmBuiltInsCustomizer;->getJdkMethodStatus(Lkotlin/reflect/jvm/internal/impl/descriptors/FunctionDescriptor;)Lkotlin/reflect/jvm/internal/impl/builtins/jvm/JvmBuiltInsCustomizer$JDKMemberStatus;
+.end annotation
+
+.annotation system Ldalvik/annotation/InnerClass;
+    accessFlags = 0x19
+    name = null
+.end annotation
+
 .annotation system Ldalvik/annotation/Signature;
     value = {
         "Lkotlin/reflect/jvm/internal/impl/utils/DFS$AbstractNodeHandler<",
@@ -52,10 +61,20 @@
 
 
 # virtual methods
-.method public beforeChildren(Ljava/lang/Object;)Z
-    .locals 2
+.method public bridge synthetic beforeChildren(Ljava/lang/Object;)Z
+    .locals 0
 
     check-cast p1, Lkotlin/reflect/jvm/internal/impl/descriptors/ClassDescriptor;
+
+    invoke-virtual {p0, p1}, Lkotlin/reflect/jvm/internal/impl/builtins/jvm/JvmBuiltInsCustomizer$getJdkMethodStatus$2;->beforeChildren(Lkotlin/reflect/jvm/internal/impl/descriptors/ClassDescriptor;)Z
+
+    move-result p1
+
+    return p1
+.end method
+
+.method public beforeChildren(Lkotlin/reflect/jvm/internal/impl/descriptors/ClassDescriptor;)Z
+    .locals 2
 
     const-string v0, "javaClassDescriptor"
 
@@ -65,19 +84,21 @@
 
     iget-object v1, p0, Lkotlin/reflect/jvm/internal/impl/builtins/jvm/JvmBuiltInsCustomizer$getJdkMethodStatus$2;->$jvmDescriptor:Ljava/lang/String;
 
-    invoke-static {v0, p1, v1}, Lcom/google/android/gms/common/util/zzb;->signature(Lkotlin/reflect/jvm/internal/impl/load/kotlin/SignatureBuildingComponents;Lkotlin/reflect/jvm/internal/impl/descriptors/ClassDescriptor;Ljava/lang/String;)Ljava/lang/String;
+    invoke-static {v0, p1, v1}, Lkotlin/reflect/jvm/internal/impl/load/kotlin/MethodSignatureBuildingUtilsKt;->signature(Lkotlin/reflect/jvm/internal/impl/load/kotlin/SignatureBuildingComponents;Lkotlin/reflect/jvm/internal/impl/descriptors/ClassDescriptor;Ljava/lang/String;)Ljava/lang/String;
 
     move-result-object p1
 
     sget-object v0, Lkotlin/reflect/jvm/internal/impl/builtins/jvm/JvmBuiltInsSignatures;->INSTANCE:Lkotlin/reflect/jvm/internal/impl/builtins/jvm/JvmBuiltInsSignatures;
 
-    sget-object v0, Lkotlin/reflect/jvm/internal/impl/builtins/jvm/JvmBuiltInsSignatures;->HIDDEN_METHOD_SIGNATURES:Ljava/util/Set;
+    invoke-virtual {v0}, Lkotlin/reflect/jvm/internal/impl/builtins/jvm/JvmBuiltInsSignatures;->getHIDDEN_METHOD_SIGNATURES()Ljava/util/Set;
 
-    invoke-interface {v0, p1}, Ljava/util/Set;->contains(Ljava/lang/Object;)Z
+    move-result-object v1
 
-    move-result v0
+    invoke-interface {v1, p1}, Ljava/util/Set;->contains(Ljava/lang/Object;)Z
 
-    if-eqz v0, :cond_0
+    move-result v1
+
+    if-eqz v1, :cond_0
 
     iget-object p1, p0, Lkotlin/reflect/jvm/internal/impl/builtins/jvm/JvmBuiltInsCustomizer$getJdkMethodStatus$2;->$result:Lkotlin/jvm/internal/Ref$ObjectRef;
 
@@ -88,13 +109,15 @@
     goto :goto_0
 
     :cond_0
-    sget-object v0, Lkotlin/reflect/jvm/internal/impl/builtins/jvm/JvmBuiltInsSignatures;->VISIBLE_METHOD_SIGNATURES:Ljava/util/Set;
+    invoke-virtual {v0}, Lkotlin/reflect/jvm/internal/impl/builtins/jvm/JvmBuiltInsSignatures;->getVISIBLE_METHOD_SIGNATURES()Ljava/util/Set;
 
-    invoke-interface {v0, p1}, Ljava/util/Set;->contains(Ljava/lang/Object;)Z
+    move-result-object v1
 
-    move-result v0
+    invoke-interface {v1, p1}, Ljava/util/Set;->contains(Ljava/lang/Object;)Z
 
-    if-eqz v0, :cond_1
+    move-result v1
+
+    if-eqz v1, :cond_1
 
     iget-object p1, p0, Lkotlin/reflect/jvm/internal/impl/builtins/jvm/JvmBuiltInsCustomizer$getJdkMethodStatus$2;->$result:Lkotlin/jvm/internal/Ref$ObjectRef;
 
@@ -105,7 +128,9 @@
     goto :goto_0
 
     :cond_1
-    sget-object v0, Lkotlin/reflect/jvm/internal/impl/builtins/jvm/JvmBuiltInsSignatures;->DROP_LIST_METHOD_SIGNATURES:Ljava/util/Set;
+    invoke-virtual {v0}, Lkotlin/reflect/jvm/internal/impl/builtins/jvm/JvmBuiltInsSignatures;->getDROP_LIST_METHOD_SIGNATURES()Ljava/util/Set;
+
+    move-result-object v0
 
     invoke-interface {v0, p1}, Ljava/util/Set;->contains(Ljava/lang/Object;)Z
 
@@ -138,7 +163,17 @@
     return p1
 .end method
 
-.method public result()Ljava/lang/Object;
+.method public bridge synthetic result()Ljava/lang/Object;
+    .locals 1
+
+    invoke-virtual {p0}, Lkotlin/reflect/jvm/internal/impl/builtins/jvm/JvmBuiltInsCustomizer$getJdkMethodStatus$2;->result()Lkotlin/reflect/jvm/internal/impl/builtins/jvm/JvmBuiltInsCustomizer$JDKMemberStatus;
+
+    move-result-object v0
+
+    return-object v0
+.end method
+
+.method public result()Lkotlin/reflect/jvm/internal/impl/builtins/jvm/JvmBuiltInsCustomizer$JDKMemberStatus;
     .locals 1
 
     iget-object v0, p0, Lkotlin/reflect/jvm/internal/impl/builtins/jvm/JvmBuiltInsCustomizer$getJdkMethodStatus$2;->$result:Lkotlin/jvm/internal/Ref$ObjectRef;

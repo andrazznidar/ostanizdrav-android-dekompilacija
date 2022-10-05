@@ -15,7 +15,7 @@
 
 
 # instance fields
-.field public final descriptors:Ljava/util/List;
+.field private final descriptors:Ljava/util/List;
     .annotation system Ldalvik/annotation/Signature;
         value = {
             "Ljava/util/List<",
@@ -25,12 +25,12 @@
     .end annotation
 .end field
 
-.field public final hasSynthesizedNames:Z
+.field private final hasSynthesizedNames:Z
 
 
 # direct methods
 .method public constructor <init>(Ljava/util/List;Z)V
-    .locals 0
+    .locals 1
     .annotation system Ldalvik/annotation/Signature;
         value = {
             "(",
@@ -41,6 +41,10 @@
         }
     .end annotation
 
+    const-string v0, "descriptors"
+
+    invoke-static {p1, v0}, Lkotlin/jvm/internal/Intrinsics;->checkNotNullParameter(Ljava/lang/Object;Ljava/lang/String;)V
+
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
     iput-object p1, p0, Lkotlin/reflect/jvm/internal/impl/load/java/lazy/descriptors/LazyJavaScope$ResolvedValueParameters;->descriptors:Ljava/util/List;
@@ -48,4 +52,30 @@
     iput-boolean p2, p0, Lkotlin/reflect/jvm/internal/impl/load/java/lazy/descriptors/LazyJavaScope$ResolvedValueParameters;->hasSynthesizedNames:Z
 
     return-void
+.end method
+
+
+# virtual methods
+.method public final getDescriptors()Ljava/util/List;
+    .locals 1
+    .annotation system Ldalvik/annotation/Signature;
+        value = {
+            "()",
+            "Ljava/util/List<",
+            "Lkotlin/reflect/jvm/internal/impl/descriptors/ValueParameterDescriptor;",
+            ">;"
+        }
+    .end annotation
+
+    iget-object v0, p0, Lkotlin/reflect/jvm/internal/impl/load/java/lazy/descriptors/LazyJavaScope$ResolvedValueParameters;->descriptors:Ljava/util/List;
+
+    return-object v0
+.end method
+
+.method public final getHasSynthesizedNames()Z
+    .locals 1
+
+    iget-boolean v0, p0, Lkotlin/reflect/jvm/internal/impl/load/java/lazy/descriptors/LazyJavaScope$ResolvedValueParameters;->hasSynthesizedNames:Z
+
+    return v0
 .end method

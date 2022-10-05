@@ -39,13 +39,13 @@
 
     iget v0, p3, Lcom/airbnb/lottie/model/content/ShapeStroke;->capType:I
 
-    invoke-static {v0}, Landroidx/constraintlayout/core/SolverVariable$Type$r8$EnumUnboxingUtility;->com$airbnb$lottie$model$content$ShapeStroke$LineCapType$v$toPaintCap(I)Landroid/graphics/Paint$Cap;
+    invoke-static {v0}, Lcom/google/crypto/tink/subtle/Field25519$$ExternalSyntheticOutline0;->_toPaintCap(I)Landroid/graphics/Paint$Cap;
 
     move-result-object v4
 
     iget v0, p3, Lcom/airbnb/lottie/model/content/ShapeStroke;->joinType:I
 
-    invoke-static {v0}, Landroidx/constraintlayout/core/SolverVariable$Type$r8$EnumUnboxingUtility;->com$airbnb$lottie$model$content$ShapeStroke$LineJoinType$v$toPaintJoin(I)Landroid/graphics/Paint$Join;
+    invoke-static {v0}, Lcom/airbnb/lottie/model/content/ShapeStroke$LineJoinType$EnumUnboxingLocalUtility;->_toPaintJoin(I)Landroid/graphics/Paint$Join;
 
     move-result-object v5
 
@@ -116,7 +116,9 @@
 
     iget-object p1, p0, Lcom/airbnb/lottie/animation/content/StrokeContent;->colorAnimation:Lcom/airbnb/lottie/animation/keyframe/BaseKeyframeAnimation;
 
-    invoke-virtual {p1, p2}, Lcom/airbnb/lottie/animation/keyframe/BaseKeyframeAnimation;->setValueCallback(Lcom/airbnb/lottie/value/LottieValueCallback;)V
+    iget-object v0, p1, Lcom/airbnb/lottie/animation/keyframe/BaseKeyframeAnimation;->valueCallback:Lcom/airbnb/lottie/value/LottieValueCallback;
+
+    iput-object p2, p1, Lcom/airbnb/lottie/animation/keyframe/BaseKeyframeAnimation;->valueCallback:Lcom/airbnb/lottie/value/LottieValueCallback;
 
     goto :goto_0
 

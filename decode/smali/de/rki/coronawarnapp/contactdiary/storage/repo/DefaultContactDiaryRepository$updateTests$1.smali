@@ -17,7 +17,7 @@
     c = "de.rki.coronawarnapp.contactdiary.storage.repo.DefaultContactDiaryRepository"
     f = "DefaultContactDiaryRepository.kt"
     l = {
-        0x107
+        0x10d
     }
     m = "updateTests"
 .end annotation

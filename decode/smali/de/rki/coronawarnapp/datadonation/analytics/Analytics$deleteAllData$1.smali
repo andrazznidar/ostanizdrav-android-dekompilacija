@@ -17,8 +17,8 @@
     c = "de.rki.coronawarnapp.datadonation.analytics.Analytics"
     f = "Analytics.kt"
     l = {
-        0xff,
-        0xd6
+        0x102,
+        0xd9
     }
     m = "deleteAllData"
 .end annotation

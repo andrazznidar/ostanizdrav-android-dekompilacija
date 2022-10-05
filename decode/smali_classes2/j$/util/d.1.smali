@@ -13,58 +13,14 @@
 
 
 # direct methods
-.method public synthetic constructor <init>(Lj$/util/function/Function;)V
-    .locals 1
+.method public synthetic constructor <init>(Ljava/lang/Object;I)V
+    .locals 0
 
-    const/4 v0, 0x0
-
-    iput v0, p0, Lj$/util/d;->a:I
-
-    invoke-direct {p0}, Ljava/lang/Object;-><init>()V
+    iput p2, p0, Lj$/util/d;->a:I
 
     iput-object p1, p0, Lj$/util/d;->b:Ljava/lang/Object;
 
-    return-void
-.end method
-
-.method public synthetic constructor <init>(Lj$/util/function/ToDoubleFunction;)V
-    .locals 1
-
-    const/4 v0, 0x1
-
-    iput v0, p0, Lj$/util/d;->a:I
-
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
-
-    iput-object p1, p0, Lj$/util/d;->b:Ljava/lang/Object;
-
-    return-void
-.end method
-
-.method public synthetic constructor <init>(Lj$/util/function/ToIntFunction;)V
-    .locals 1
-
-    const/4 v0, 0x2
-
-    iput v0, p0, Lj$/util/d;->a:I
-
-    invoke-direct {p0}, Ljava/lang/Object;-><init>()V
-
-    iput-object p1, p0, Lj$/util/d;->b:Ljava/lang/Object;
-
-    return-void
-.end method
-
-.method public synthetic constructor <init>(Lj$/util/function/ToLongFunction;)V
-    .locals 1
-
-    const/4 v0, 0x3
-
-    iput v0, p0, Lj$/util/d;->a:I
-
-    invoke-direct {p0}, Ljava/lang/Object;-><init>()V
-
-    iput-object p1, p0, Lj$/util/d;->b:Ljava/lang/Object;
 
     return-void
 .end method
@@ -85,11 +41,11 @@
 
     check-cast v0, Lj$/util/function/ToIntFunction;
 
-    invoke-interface {v0, p1}, Lj$/util/function/ToIntFunction;->u(Ljava/lang/Object;)I
+    invoke-interface {v0, p1}, Lj$/util/function/ToIntFunction;->e(Ljava/lang/Object;)I
 
     move-result p1
 
-    invoke-interface {v0, p2}, Lj$/util/function/ToIntFunction;->u(Ljava/lang/Object;)I
+    invoke-interface {v0, p2}, Lj$/util/function/ToIntFunction;->e(Ljava/lang/Object;)I
 
     move-result p2
 
@@ -104,11 +60,11 @@
 
     check-cast v0, Lj$/util/function/ToDoubleFunction;
 
-    invoke-interface {v0, p1}, Lj$/util/function/ToDoubleFunction;->o(Ljava/lang/Object;)D
+    invoke-interface {v0, p1}, Lj$/util/function/ToDoubleFunction;->s(Ljava/lang/Object;)D
 
     move-result-wide v1
 
-    invoke-interface {v0, p2}, Lj$/util/function/ToDoubleFunction;->o(Ljava/lang/Object;)D
+    invoke-interface {v0, p2}, Lj$/util/function/ToDoubleFunction;->s(Ljava/lang/Object;)D
 
     move-result-wide p1
 
@@ -144,11 +100,11 @@
 
     check-cast v0, Lj$/util/function/ToLongFunction;
 
-    invoke-interface {v0, p1}, Lj$/util/function/ToLongFunction;->v(Ljava/lang/Object;)J
+    invoke-interface {v0, p1}, Lj$/util/function/ToLongFunction;->f(Ljava/lang/Object;)J
 
     move-result-wide v1
 
-    invoke-interface {v0, p2}, Lj$/util/function/ToLongFunction;->v(Ljava/lang/Object;)J
+    invoke-interface {v0, p2}, Lj$/util/function/ToLongFunction;->f(Ljava/lang/Object;)J
 
     move-result-wide p1
 

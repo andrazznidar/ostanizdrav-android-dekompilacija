@@ -169,7 +169,7 @@
 
     const-string v5, "durationSecondsUTC="
 
-    invoke-static {v5, v3, v4}, Landroidx/viewpager2/adapter/FragmentStateAdapter$$ExternalSyntheticOutline0;->m(Ljava/lang/String;J)Ljava/lang/String;
+    invoke-static {v5, v3, v4}, Landroidx/camera/core/impl/DeferrableSurfaces$$ExternalSyntheticOutline0;->m(Ljava/lang/String;J)Ljava/lang/String;
 
     move-result-object v5
 
@@ -193,7 +193,7 @@
 
     const-string v3, "durationDays="
 
-    invoke-static {v3, v14, v15}, Landroidx/viewpager2/adapter/FragmentStateAdapter$$ExternalSyntheticOutline0;->m(Ljava/lang/String;J)Ljava/lang/String;
+    invoke-static {v3, v14, v15}, Landroidx/camera/core/impl/DeferrableSurfaces$$ExternalSyntheticOutline0;->m(Ljava/lang/String;J)Ljava/lang/String;
 
     move-result-object v3
 
@@ -216,9 +216,9 @@
     goto :goto_0
 
     :cond_2
-    int-to-long v3, v2
-
     new-instance v1, Lkotlin/ranges/LongRange;
+
+    int-to-long v3, v2
 
     sub-long v5, v14, v24
 

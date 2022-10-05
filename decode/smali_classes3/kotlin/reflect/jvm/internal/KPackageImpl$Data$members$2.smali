@@ -1,4 +1,4 @@
-.class public final Lkotlin/reflect/jvm/internal/KPackageImpl$Data$members$2;
+.class final Lkotlin/reflect/jvm/internal/KPackageImpl$Data$members$2;
 .super Lkotlin/jvm/internal/Lambda;
 .source "KPackageImpl.kt"
 
@@ -27,6 +27,25 @@
     }
 .end annotation
 
+.annotation runtime Lkotlin/Metadata;
+    d1 = {
+        "\u0000\u000e\n\u0000\n\u0002\u0010\u001e\n\u0002\u0018\u0002\n\u0002\u0008\u0002\u0010\u0000\u001a\u001e\u0012\u0008\u0012\u0006\u0012\u0002\u0008\u00030\u0002 \u0003*\u000e\u0012\u0008\u0012\u0006\u0012\u0002\u0008\u00030\u0002\u0018\u00010\u00010\u0001H\n\u00a2\u0006\u0002\u0008\u0004"
+    }
+    d2 = {
+        "<anonymous>",
+        "",
+        "Lkotlin/reflect/jvm/internal/KCallableImpl;",
+        "kotlin.jvm.PlatformType",
+        "invoke"
+    }
+    k = 0x3
+    mv = {
+        0x1,
+        0x5,
+        0x1
+    }
+.end annotation
+
 
 # instance fields
 .field public final synthetic this$0:Lkotlin/reflect/jvm/internal/KPackageImpl$Data;
@@ -47,26 +66,34 @@
 
 
 # virtual methods
-.method public invoke()Ljava/lang/Object;
-    .locals 4
+.method public bridge synthetic invoke()Ljava/lang/Object;
+    .locals 1
+
+    invoke-virtual {p0}, Lkotlin/reflect/jvm/internal/KPackageImpl$Data$members$2;->invoke()Ljava/util/Collection;
+
+    move-result-object v0
+
+    return-object v0
+.end method
+
+.method public final invoke()Ljava/util/Collection;
+    .locals 3
+    .annotation system Ldalvik/annotation/Signature;
+        value = {
+            "()",
+            "Ljava/util/Collection<",
+            "Lkotlin/reflect/jvm/internal/KCallableImpl<",
+            "*>;>;"
+        }
+    .end annotation
 
     iget-object v0, p0, Lkotlin/reflect/jvm/internal/KPackageImpl$Data$members$2;->this$0:Lkotlin/reflect/jvm/internal/KPackageImpl$Data;
 
     iget-object v1, v0, Lkotlin/reflect/jvm/internal/KPackageImpl$Data;->this$0:Lkotlin/reflect/jvm/internal/KPackageImpl;
 
-    iget-object v0, v0, Lkotlin/reflect/jvm/internal/KPackageImpl$Data;->scope$delegate:Lkotlin/reflect/jvm/internal/ReflectProperties$LazySoftVal;
-
-    sget-object v2, Lkotlin/reflect/jvm/internal/KPackageImpl$Data;->$$delegatedProperties:[Lkotlin/reflect/KProperty;
-
-    const/4 v3, 0x1
-
-    aget-object v2, v2, v3
-
-    invoke-virtual {v0}, Lkotlin/reflect/jvm/internal/ReflectProperties$LazySoftVal;->invoke()Ljava/lang/Object;
+    invoke-virtual {v0}, Lkotlin/reflect/jvm/internal/KPackageImpl$Data;->getScope()Lkotlin/reflect/jvm/internal/impl/resolve/scopes/MemberScope;
 
     move-result-object v0
-
-    check-cast v0, Lkotlin/reflect/jvm/internal/impl/resolve/scopes/MemberScope;
 
     sget-object v2, Lkotlin/reflect/jvm/internal/KDeclarationContainerImpl$MemberBelonginess;->DECLARED:Lkotlin/reflect/jvm/internal/KDeclarationContainerImpl$MemberBelonginess;
 

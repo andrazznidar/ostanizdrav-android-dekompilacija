@@ -14,31 +14,25 @@
 .field public final __insertionAdapterOfTraceWarningPackageMetadata:Landroidx/room/EntityInsertionAdapter;
     .annotation system Ldalvik/annotation/Signature;
         value = {
-            "Landroidx/room/EntityInsertionAdapter<",
-            "Lde/rki/coronawarnapp/presencetracing/warning/storage/TraceWarningPackageMetadata;",
-            ">;"
+            "Landroidx/room/EntityInsertionAdapter;"
         }
     .end annotation
 .end field
 
 .field public final __preparedStmtOfClear:Landroidx/room/SharedSQLiteStatement;
 
-.field public final __updateAdapterOfUpdateDownloadAsTraceWarningPackageMetadata:Landroidx/room/EntityDeletionOrUpdateAdapter;
+.field public final __updateAdapterOfUpdateDownloadAsTraceWarningPackageMetadata:Landroidx/room/EntityInsertionAdapter;
     .annotation system Ldalvik/annotation/Signature;
         value = {
-            "Landroidx/room/EntityDeletionOrUpdateAdapter<",
-            "Lde/rki/coronawarnapp/presencetracing/warning/storage/TraceWarningPackageMetadata$UpdateDownload;",
-            ">;"
+            "Landroidx/room/EntityInsertionAdapter;"
         }
     .end annotation
 .end field
 
-.field public final __updateAdapterOfUpdateProcessedAsTraceWarningPackageMetadata:Landroidx/room/EntityDeletionOrUpdateAdapter;
+.field public final __updateAdapterOfUpdateProcessedAsTraceWarningPackageMetadata:Landroidx/room/EntityInsertionAdapter;
     .annotation system Ldalvik/annotation/Signature;
         value = {
-            "Landroidx/room/EntityDeletionOrUpdateAdapter<",
-            "Lde/rki/coronawarnapp/presencetracing/warning/storage/TraceWarningPackageMetadata$UpdateProcessed;",
-            ">;"
+            "Landroidx/room/EntityInsertionAdapter;"
         }
     .end annotation
 .end field
@@ -76,13 +70,13 @@
 
     invoke-direct {v0, p0, p1}, Lde/rki/coronawarnapp/presencetracing/warning/storage/TraceWarningPackageDao_Impl$2;-><init>(Lde/rki/coronawarnapp/presencetracing/warning/storage/TraceWarningPackageDao_Impl;Landroidx/room/RoomDatabase;)V
 
-    iput-object v0, p0, Lde/rki/coronawarnapp/presencetracing/warning/storage/TraceWarningPackageDao_Impl;->__updateAdapterOfUpdateDownloadAsTraceWarningPackageMetadata:Landroidx/room/EntityDeletionOrUpdateAdapter;
+    iput-object v0, p0, Lde/rki/coronawarnapp/presencetracing/warning/storage/TraceWarningPackageDao_Impl;->__updateAdapterOfUpdateDownloadAsTraceWarningPackageMetadata:Landroidx/room/EntityInsertionAdapter;
 
     new-instance v0, Lde/rki/coronawarnapp/presencetracing/warning/storage/TraceWarningPackageDao_Impl$3;
 
     invoke-direct {v0, p0, p1}, Lde/rki/coronawarnapp/presencetracing/warning/storage/TraceWarningPackageDao_Impl$3;-><init>(Lde/rki/coronawarnapp/presencetracing/warning/storage/TraceWarningPackageDao_Impl;Landroidx/room/RoomDatabase;)V
 
-    iput-object v0, p0, Lde/rki/coronawarnapp/presencetracing/warning/storage/TraceWarningPackageDao_Impl;->__updateAdapterOfUpdateProcessedAsTraceWarningPackageMetadata:Landroidx/room/EntityDeletionOrUpdateAdapter;
+    iput-object v0, p0, Lde/rki/coronawarnapp/presencetracing/warning/storage/TraceWarningPackageDao_Impl;->__updateAdapterOfUpdateProcessedAsTraceWarningPackageMetadata:Landroidx/room/EntityInsertionAdapter;
 
     new-instance v0, Lde/rki/coronawarnapp/presencetracing/warning/storage/TraceWarningPackageDao_Impl$4;
 

@@ -39,23 +39,14 @@
 .method public static between(Lorg/joda/time/ReadableInstant;Lorg/joda/time/ReadableInstant;Lorg/joda/time/DurationFieldType;)I
     .locals 2
 
-    if-eqz p0, :cond_1
+    if-eqz p0, :cond_0
 
-    if-eqz p1, :cond_1
+    if-eqz p1, :cond_0
 
-    sget-object v0, Lorg/joda/time/DateTimeUtils;->cZoneNames:Ljava/util/concurrent/atomic/AtomicReference;
-
-    invoke-interface {p0}, Lorg/joda/time/ReadableInstant;->getChronology()Lorg/joda/time/Chronology;
+    invoke-static {p0}, Lorg/joda/time/DateTimeUtils;->getInstantChronology(Lorg/joda/time/ReadableInstant;)Lorg/joda/time/Chronology;
 
     move-result-object v0
 
-    if-nez v0, :cond_0
-
-    invoke-static {}, Lorg/joda/time/chrono/ISOChronology;->getInstance()Lorg/joda/time/chrono/ISOChronology;
-
-    move-result-object v0
-
-    :cond_0
     invoke-virtual {p2, v0}, Lorg/joda/time/DurationFieldType;->getField(Lorg/joda/time/Chronology;)Lorg/joda/time/DurationField;
 
     move-result-object p2
@@ -74,7 +65,7 @@
 
     return p0
 
-    :cond_1
+    :cond_0
     new-instance p0, Ljava/lang/IllegalArgumentException;
 
     const-string p1, "ReadableInstant objects must not be null"

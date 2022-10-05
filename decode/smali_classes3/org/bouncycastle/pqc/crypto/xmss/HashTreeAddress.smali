@@ -1,4 +1,4 @@
-.class public final Lorg/bouncycastle/pqc/crypto/xmss/HashTreeAddress;
+.class final Lorg/bouncycastle/pqc/crypto/xmss/HashTreeAddress;
 .super Lorg/bouncycastle/pqc/crypto/xmss/XMSSAddress;
 
 
@@ -10,31 +10,79 @@
 .end annotation
 
 
-# instance fields
-.field public final treeHeight:I
+# static fields
+.field private static final PADDING:I = 0x0
 
-.field public final treeIndex:I
+.field private static final TYPE:I = 0x2
+
+
+# instance fields
+.field private final padding:I
+
+.field private final treeHeight:I
+
+.field private final treeIndex:I
 
 
 # direct methods
-.method public constructor <init>(Lorg/bouncycastle/pqc/crypto/xmss/HashTreeAddress$Builder;Lorg/bouncycastle/pqc/crypto/xmss/HashTreeAddress$1;)V
-    .locals 0
+.method private constructor <init>(Lorg/bouncycastle/pqc/crypto/xmss/HashTreeAddress$Builder;)V
+    .locals 1
 
     invoke-direct {p0, p1}, Lorg/bouncycastle/pqc/crypto/xmss/XMSSAddress;-><init>(Lorg/bouncycastle/pqc/crypto/xmss/XMSSAddress$Builder;)V
 
-    iget p2, p1, Lorg/bouncycastle/pqc/crypto/xmss/HashTreeAddress$Builder;->treeHeight:I
+    const/4 v0, 0x0
 
-    iput p2, p0, Lorg/bouncycastle/pqc/crypto/xmss/HashTreeAddress;->treeHeight:I
+    iput v0, p0, Lorg/bouncycastle/pqc/crypto/xmss/HashTreeAddress;->padding:I
 
-    iget p1, p1, Lorg/bouncycastle/pqc/crypto/xmss/HashTreeAddress$Builder;->treeIndex:I
+    invoke-static {p1}, Lorg/bouncycastle/pqc/crypto/xmss/HashTreeAddress$Builder;->access$000(Lorg/bouncycastle/pqc/crypto/xmss/HashTreeAddress$Builder;)I
+
+    move-result v0
+
+    iput v0, p0, Lorg/bouncycastle/pqc/crypto/xmss/HashTreeAddress;->treeHeight:I
+
+    invoke-static {p1}, Lorg/bouncycastle/pqc/crypto/xmss/HashTreeAddress$Builder;->access$100(Lorg/bouncycastle/pqc/crypto/xmss/HashTreeAddress$Builder;)I
+
+    move-result p1
 
     iput p1, p0, Lorg/bouncycastle/pqc/crypto/xmss/HashTreeAddress;->treeIndex:I
 
     return-void
 .end method
 
+.method public synthetic constructor <init>(Lorg/bouncycastle/pqc/crypto/xmss/HashTreeAddress$Builder;Lorg/bouncycastle/pqc/crypto/xmss/HashTreeAddress$1;)V
+    .locals 0
+
+    invoke-direct {p0, p1}, Lorg/bouncycastle/pqc/crypto/xmss/HashTreeAddress;-><init>(Lorg/bouncycastle/pqc/crypto/xmss/HashTreeAddress$Builder;)V
+
+    return-void
+.end method
+
 
 # virtual methods
+.method public getPadding()I
+    .locals 1
+
+    iget v0, p0, Lorg/bouncycastle/pqc/crypto/xmss/HashTreeAddress;->padding:I
+
+    return v0
+.end method
+
+.method public getTreeHeight()I
+    .locals 1
+
+    iget v0, p0, Lorg/bouncycastle/pqc/crypto/xmss/HashTreeAddress;->treeHeight:I
+
+    return v0
+.end method
+
+.method public getTreeIndex()I
+    .locals 1
+
+    iget v0, p0, Lorg/bouncycastle/pqc/crypto/xmss/HashTreeAddress;->treeIndex:I
+
+    return v0
+.end method
+
 .method public toByteArray()[B
     .locals 3
 
@@ -42,7 +90,7 @@
 
     move-result-object v0
 
-    const/4 v1, 0x0
+    iget v1, p0, Lorg/bouncycastle/pqc/crypto/xmss/HashTreeAddress;->padding:I
 
     const/16 v2, 0x10
 

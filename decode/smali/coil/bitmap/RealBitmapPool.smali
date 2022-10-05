@@ -97,10 +97,6 @@
     invoke-virtual {v0, v1}, Lkotlin/collections/builders/SetBuilder;->add(Ljava/lang/Object;)Z
 
     :cond_0
-    const-string v1, "builder"
-
-    invoke-static {v0, v1}, Lkotlin/jvm/internal/Intrinsics;->checkNotNullParameter(Ljava/lang/Object;Ljava/lang/String;)V
-
     iget-object v1, v0, Lkotlin/collections/builders/SetBuilder;->backing:Lkotlin/collections/builders/MapBuilder;
 
     invoke-virtual {v1}, Lkotlin/collections/builders/MapBuilder;->checkIsMutable$kotlin_stdlib()V
@@ -134,8 +130,6 @@
     and-int/lit8 v0, p5, 0x4
 
     if-eqz v0, :cond_1
-
-    sget v0, Lcoil/bitmap/BitmapPoolStrategy;->$r8$clinit:I
 
     new-instance v0, Lcoil/bitmap/SizeStrategy;
 
@@ -212,8 +206,6 @@
     .locals 2
 
     const-string v0, "config"
-
-    invoke-static {p3, v0}, Lkotlin/jvm/internal/Intrinsics;->checkNotNullParameter(Ljava/lang/Object;Ljava/lang/String;)V
 
     invoke-static {p3, v0}, Lkotlin/jvm/internal/Intrinsics;->checkNotNullParameter(Ljava/lang/Object;Ljava/lang/String;)V
 

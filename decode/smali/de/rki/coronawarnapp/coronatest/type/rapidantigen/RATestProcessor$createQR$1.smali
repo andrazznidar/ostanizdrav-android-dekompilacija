@@ -17,9 +17,9 @@
     c = "de.rki.coronawarnapp.coronatest.type.rapidantigen.RATestProcessor"
     f = "RATestProcessor.kt"
     l = {
-        0x40,
-        0x49,
-        0x4d
+        0x41,
+        0x4a,
+        0x4e
     }
     m = "createQR"
 .end annotation

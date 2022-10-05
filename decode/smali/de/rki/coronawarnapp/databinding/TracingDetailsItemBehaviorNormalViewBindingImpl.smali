@@ -186,7 +186,7 @@
 
     sget-object v5, Lde/rki/coronawarnapp/tracing/GeneralTracingStatus$Status;->TRACING_INACTIVE:Lde/rki/coronawarnapp/tracing/GeneralTracingStatus$Status;
 
-    const v7, 0x7f060079
+    const v7, 0x7f06007f
 
     if-ne v4, v5, :cond_0
 
@@ -197,7 +197,7 @@
 
     if-ne v4, v1, :cond_1
 
-    const v7, 0x7f06005c
+    const v7, 0x7f060062
 
     goto :goto_0
 
@@ -208,19 +208,15 @@
 
     if-lez v4, :cond_2
 
-    const v7, 0x7f060060
+    const v7, 0x7f060066
 
     goto :goto_0
 
     :cond_2
-    const v7, 0x7f06005e
+    const v7, 0x7f060064
 
     :cond_3
     :goto_0
-    const-string v4, "<this>"
-
-    invoke-static {v3, v4}, Lkotlin/jvm/internal/Intrinsics;->checkNotNullParameter(Ljava/lang/Object;Ljava/lang/String;)V
-
     sget-object v4, Landroidx/core/content/ContextCompat;->sLock:Ljava/lang/Object;
 
     invoke-static {v3, v7}, Landroidx/core/content/ContextCompat$Api23Impl;->getColor(Landroid/content/Context;I)I
@@ -239,7 +235,7 @@
 
     iget-object v7, v6, Lde/rki/coronawarnapp/tracing/ui/details/items/behavior/BehaviorNormalRiskBox$Item;->tracingStatus:Lde/rki/coronawarnapp/tracing/GeneralTracingStatus$Status;
 
-    const v8, 0x7f060085
+    const v8, 0x7f06008b
 
     if-ne v7, v5, :cond_4
 
@@ -253,14 +249,10 @@
     if-ne v5, v0, :cond_6
 
     :cond_5
-    const v8, 0x7f06006f
+    const v8, 0x7f060075
 
     :cond_6
     :goto_1
-    const-string v0, "<this>"
-
-    invoke-static {v4, v0}, Lkotlin/jvm/internal/Intrinsics;->checkNotNullParameter(Ljava/lang/Object;Ljava/lang/String;)V
-
     invoke-static {v4, v8}, Landroidx/core/content/ContextCompat$Api23Impl;->getColor(Landroid/content/Context;I)I
 
     move-result v0
@@ -437,7 +429,7 @@
     :try_end_0
     .catchall {:try_start_0 .. :try_end_0} :catchall_0
 
-    const/16 p1, 0x29
+    const/16 p1, 0x27
 
     invoke-virtual {p0, p1}, Landroidx/databinding/BaseObservable;->notifyPropertyChanged(I)V
 

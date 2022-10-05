@@ -38,15 +38,15 @@
 .end annotation
 
 .annotation system Ldalvik/annotation/SourceDebugExtension;
-    value = "SMAP\nCoronaTestRepository.kt\nKotlin\n*S Kotlin\n*F\n+ 1 CoronaTestRepository.kt\nde/rki/coronawarnapp/coronatest/CoronaTestRepository$registerTest$currentTests$1\n+ 2 _Collections.kt\nkotlin/collections/CollectionsKt___CollectionsKt\n+ 3 fake.kt\nkotlin/jvm/internal/FakeKt\n*L\n1#1,293:1\n659#2,11:294\n1#3:305\n*S KotlinDebug\n*F\n+ 1 CoronaTestRepository.kt\nde/rki/coronawarnapp/coronatest/CoronaTestRepository$registerTest$currentTests$1\n*L\n114#1:294,11\n*E\n"
+    value = "SMAP\nCoronaTestRepository.kt\nKotlin\n*S Kotlin\n*F\n+ 1 CoronaTestRepository.kt\nde/rki/coronawarnapp/coronatest/CoronaTestRepository$registerTest$currentTests$1\n+ 2 _Collections.kt\nkotlin/collections/CollectionsKt___CollectionsKt\n*L\n1#1,341:1\n659#2,11:342\n*S KotlinDebug\n*F\n+ 1 CoronaTestRepository.kt\nde/rki/coronawarnapp/coronatest/CoronaTestRepository$registerTest$currentTests$1\n*L\n132#1:342,11\n*E\n"
 .end annotation
 
 .annotation runtime Lkotlin/coroutines/jvm/internal/DebugMetadata;
     c = "de.rki.coronawarnapp.coronatest.CoronaTestRepository$registerTest$currentTests$1"
     f = "CoronaTestRepository.kt"
     l = {
-        0x74,
-        0x7f
+        0x86,
+        0x92
     }
     m = "invokeSuspend"
 .end annotation
@@ -87,6 +87,10 @@
 .field public L$1:Ljava/lang/Object;
 
 .field public L$2:Ljava/lang/Object;
+
+.field public L$3:Ljava/lang/Object;
+
+.field public L$4:Ljava/lang/Object;
 
 .field public label:I
 
@@ -219,29 +223,37 @@
 
     if-ne v1, v2, :cond_0
 
-    iget-object v0, p0, Lde/rki/coronawarnapp/coronatest/CoronaTestRepository$registerTest$currentTests$1;->L$2:Ljava/lang/Object;
+    iget-object v0, p0, Lde/rki/coronawarnapp/coronatest/CoronaTestRepository$registerTest$currentTests$1;->L$4:Ljava/lang/Object;
 
-    check-cast v0, Lde/rki/coronawarnapp/coronatest/type/CoronaTest;
+    check-cast v0, Ljava/util/Map;
 
-    iget-object v1, p0, Lde/rki/coronawarnapp/coronatest/CoronaTestRepository$registerTest$currentTests$1;->L$1:Ljava/lang/Object;
+    iget-object v1, p0, Lde/rki/coronawarnapp/coronatest/CoronaTestRepository$registerTest$currentTests$1;->L$3:Ljava/lang/Object;
 
-    check-cast v1, Lde/rki/coronawarnapp/coronatest/type/CoronaTest;
+    check-cast v1, Ljava/lang/String;
 
-    iget-object v2, p0, Lde/rki/coronawarnapp/coronatest/CoronaTestRepository$registerTest$currentTests$1;->L$0:Ljava/lang/Object;
+    iget-object v2, p0, Lde/rki/coronawarnapp/coronatest/CoronaTestRepository$registerTest$currentTests$1;->L$2:Ljava/lang/Object;
 
     check-cast v2, Ljava/util/Map;
+
+    iget-object v3, p0, Lde/rki/coronawarnapp/coronatest/CoronaTestRepository$registerTest$currentTests$1;->L$1:Ljava/lang/Object;
+
+    check-cast v3, Ljava/util/Map;
+
+    iget-object v4, p0, Lde/rki/coronawarnapp/coronatest/CoronaTestRepository$registerTest$currentTests$1;->L$0:Ljava/lang/Object;
+
+    check-cast v4, Lde/rki/coronawarnapp/coronatest/type/CoronaTest;
 
     :try_start_0
     invoke-static {p1}, Lkotlin/ResultKt;->throwOnFailure(Ljava/lang/Object;)V
     :try_end_0
     .catch Ljava/lang/Exception; {:try_start_0 .. :try_end_0} :catch_0
 
-    goto/16 :goto_5
+    goto/16 :goto_4
 
     :catch_0
     move-exception p1
 
-    goto/16 :goto_4
+    goto/16 :goto_5
 
     :cond_0
     new-instance p1, Ljava/lang/IllegalStateException;
@@ -270,35 +282,37 @@
 
     iget-object p1, p0, Lde/rki/coronawarnapp/coronatest/CoronaTestRepository$registerTest$currentTests$1;->L$0:Ljava/lang/Object;
 
-    check-cast p1, Ljava/util/Map;
+    move-object v5, p1
 
-    iget-object v1, p0, Lde/rki/coronawarnapp/coronatest/CoronaTestRepository$registerTest$currentTests$1;->$preCondition:Lkotlin/jvm/functions/Function1;
+    check-cast v5, Ljava/util/Map;
 
-    invoke-interface {p1}, Ljava/util/Map;->values()Ljava/util/Collection;
+    iget-object p1, p0, Lde/rki/coronawarnapp/coronatest/CoronaTestRepository$registerTest$currentTests$1;->$preCondition:Lkotlin/jvm/functions/Function1;
 
-    move-result-object v5
-
-    invoke-interface {v1, v5}, Lkotlin/jvm/functions/Function1;->invoke(Ljava/lang/Object;)Ljava/lang/Object;
+    invoke-interface {v5}, Ljava/util/Map;->values()Ljava/util/Collection;
 
     move-result-object v1
 
-    check-cast v1, Ljava/lang/Boolean;
+    invoke-interface {p1, v1}, Lkotlin/jvm/functions/Function1;->invoke(Ljava/lang/Object;)Ljava/lang/Object;
 
-    invoke-virtual {v1}, Ljava/lang/Boolean;->booleanValue()Z
+    move-result-object p1
 
-    move-result v1
+    check-cast p1, Ljava/lang/Boolean;
 
-    if-eqz v1, :cond_d
+    invoke-virtual {p1}, Ljava/lang/Boolean;->booleanValue()Z
 
-    invoke-interface {p1}, Ljava/util/Map;->values()Ljava/util/Collection;
+    move-result p1
 
-    move-result-object v1
+    if-eqz p1, :cond_c
 
-    iget-object v5, p0, Lde/rki/coronawarnapp/coronatest/CoronaTestRepository$registerTest$currentTests$1;->$request:Lde/rki/coronawarnapp/coronatest/TestRegistrationRequest;
+    invoke-interface {v5}, Ljava/util/Map;->values()Ljava/util/Collection;
 
-    invoke-interface {v1}, Ljava/lang/Iterable;->iterator()Ljava/util/Iterator;
+    move-result-object p1
 
-    move-result-object v1
+    iget-object v1, p0, Lde/rki/coronawarnapp/coronatest/CoronaTestRepository$registerTest$currentTests$1;->$request:Lde/rki/coronawarnapp/coronatest/TestRegistrationRequest;
+
+    invoke-interface {p1}, Ljava/lang/Iterable;->iterator()Ljava/util/Iterator;
+
+    move-result-object p1
 
     const/4 v6, 0x0
 
@@ -308,13 +322,13 @@
 
     :cond_3
     :goto_0
-    invoke-interface {v1}, Ljava/util/Iterator;->hasNext()Z
+    invoke-interface {p1}, Ljava/util/Iterator;->hasNext()Z
 
     move-result v9
 
     if-eqz v9, :cond_6
 
-    invoke-interface {v1}, Ljava/util/Iterator;->next()Ljava/lang/Object;
+    invoke-interface {p1}, Ljava/util/Iterator;->next()Ljava/lang/Object;
 
     move-result-object v9
 
@@ -324,13 +338,19 @@
 
     invoke-interface {v10}, Lde/rki/coronawarnapp/coronatest/type/CoronaTest;->getType()Lde/rki/coronawarnapp/coronatest/type/CoronaTest$Type;
 
-    move-result-object v10
-
-    invoke-interface {v5}, Lde/rki/coronawarnapp/coronatest/TestRegistrationRequest;->getType()Lde/rki/coronawarnapp/coronatest/type/CoronaTest$Type;
-
     move-result-object v11
 
-    if-ne v10, v11, :cond_4
+    invoke-interface {v1}, Lde/rki/coronawarnapp/coronatest/TestRegistrationRequest;->getType()Lde/rki/coronawarnapp/coronatest/type/CoronaTest$Type;
+
+    move-result-object v12
+
+    if-ne v11, v12, :cond_4
+
+    invoke-interface {v10}, Lde/rki/coronawarnapp/reyclebin/common/Recyclable;->isNotRecycled()Z
+
+    move-result v10
+
+    if-eqz v10, :cond_4
 
     move v10, v4
 
@@ -362,33 +382,29 @@
     move-object v6, v8
 
     :goto_2
-    check-cast v6, Lde/rki/coronawarnapp/coronatest/type/CoronaTest;
+    move-object v1, v6
 
-    iget-object v1, p0, Lde/rki/coronawarnapp/coronatest/CoronaTestRepository$registerTest$currentTests$1;->$processor:Lde/rki/coronawarnapp/coronatest/type/CoronaTestProcessor;
+    check-cast v1, Lde/rki/coronawarnapp/coronatest/type/CoronaTest;
 
-    iget-object v5, p0, Lde/rki/coronawarnapp/coronatest/CoronaTestRepository$registerTest$currentTests$1;->$request:Lde/rki/coronawarnapp/coronatest/TestRegistrationRequest;
+    iget-object p1, p0, Lde/rki/coronawarnapp/coronatest/CoronaTestRepository$registerTest$currentTests$1;->$processor:Lde/rki/coronawarnapp/coronatest/type/CoronaTestProcessor;
 
-    iput-object p1, p0, Lde/rki/coronawarnapp/coronatest/CoronaTestRepository$registerTest$currentTests$1;->L$0:Ljava/lang/Object;
+    iget-object v6, p0, Lde/rki/coronawarnapp/coronatest/CoronaTestRepository$registerTest$currentTests$1;->$request:Lde/rki/coronawarnapp/coronatest/TestRegistrationRequest;
 
-    iput-object v6, p0, Lde/rki/coronawarnapp/coronatest/CoronaTestRepository$registerTest$currentTests$1;->L$1:Ljava/lang/Object;
+    iput-object v5, p0, Lde/rki/coronawarnapp/coronatest/CoronaTestRepository$registerTest$currentTests$1;->L$0:Ljava/lang/Object;
+
+    iput-object v1, p0, Lde/rki/coronawarnapp/coronatest/CoronaTestRepository$registerTest$currentTests$1;->L$1:Ljava/lang/Object;
 
     iput v4, p0, Lde/rki/coronawarnapp/coronatest/CoronaTestRepository$registerTest$currentTests$1;->label:I
 
-    invoke-interface {v1, v5, p0}, Lde/rki/coronawarnapp/coronatest/type/CoronaTestProcessor;->create(Lde/rki/coronawarnapp/coronatest/TestRegistrationRequest;Lkotlin/coroutines/Continuation;)Ljava/lang/Object;
+    invoke-interface {p1, v6, p0}, Lde/rki/coronawarnapp/coronatest/type/CoronaTestProcessor;->create(Lde/rki/coronawarnapp/coronatest/TestRegistrationRequest;Lkotlin/coroutines/Continuation;)Ljava/lang/Object;
 
-    move-result-object v1
+    move-result-object p1
 
-    if-ne v1, v0, :cond_8
+    if-ne p1, v0, :cond_8
 
     return-object v0
 
     :cond_8
-    move-object v5, p1
-
-    move-object p1, v1
-
-    move-object v1, v6
-
     :goto_3
     check-cast p1, Lde/rki/coronawarnapp/coronatest/type/CoronaTest;
 
@@ -404,7 +420,7 @@
 
     const-string v9, "New test created: %s"
 
-    invoke-virtual {v6, v9, v8}, Ltimber/log/Timber$Tree;->i(Ljava/lang/String;[Ljava/lang/Object;)V
+    invoke-virtual {v6, v9, v8}, Ltimber/log/Timber$Forest;->i(Ljava/lang/String;[Ljava/lang/Object;)V
 
     iget-object v8, p0, Lde/rki/coronawarnapp/coronatest/CoronaTestRepository$registerTest$currentTests$1;->$postCondition:Lkotlin/jvm/functions/Function1;
 
@@ -418,109 +434,125 @@
 
     move-result v8
 
-    if-eqz v8, :cond_c
+    if-eqz v8, :cond_b
 
-    if-eqz v1, :cond_a
+    invoke-static {v5}, Lkotlin/collections/MapsKt___MapsKt;->toMutableMap(Ljava/util/Map;)Ljava/util/Map;
 
+    move-result-object v5
+
+    iget-object v8, p0, Lde/rki/coronawarnapp/coronatest/CoronaTestRepository$registerTest$currentTests$1;->this$0:Lde/rki/coronawarnapp/coronatest/CoronaTestRepository;
+
+    if-nez v1, :cond_9
+
+    move-object v0, v5
+
+    goto :goto_8
+
+    :cond_9
     invoke-virtual {v6, v7}, Ltimber/log/Timber$Forest;->tag(Ljava/lang/String;)Ltimber/log/Timber$Tree;
 
     new-array v4, v4, [Ljava/lang/Object;
 
-    iget-object v7, p0, Lde/rki/coronawarnapp/coronatest/CoronaTestRepository$registerTest$currentTests$1;->$request:Lde/rki/coronawarnapp/coronatest/TestRegistrationRequest;
+    aput-object v1, v4, v3
 
-    aput-object v7, v4, v3
+    const-string v3, "We already have a test of this type, moving old test to recycle bin: %s"
 
-    const-string v3, "We already have a test of this type, removing old test: %s"
-
-    invoke-virtual {v6, v3, v4}, Ltimber/log/Timber$Tree;->w(Ljava/lang/String;[Ljava/lang/Object;)V
+    invoke-virtual {v6, v3, v4}, Ltimber/log/Timber$Forest;->w(Ljava/lang/String;[Ljava/lang/Object;)V
 
     :try_start_1
-    iget-object v3, p0, Lde/rki/coronawarnapp/coronatest/CoronaTestRepository$registerTest$currentTests$1;->this$0:Lde/rki/coronawarnapp/coronatest/CoronaTestRepository;
+    invoke-interface {v1}, Lde/rki/coronawarnapp/coronatest/type/CoronaTest;->getIdentifier()Ljava/lang/String;
+
+    move-result-object v3
 
     invoke-interface {v1}, Lde/rki/coronawarnapp/coronatest/type/CoronaTest;->getType()Lde/rki/coronawarnapp/coronatest/type/CoronaTest$Type;
 
     move-result-object v4
 
-    invoke-virtual {v3, v4}, Lde/rki/coronawarnapp/coronatest/CoronaTestRepository;->getProcessor(Lde/rki/coronawarnapp/coronatest/type/CoronaTest$Type;)Lde/rki/coronawarnapp/coronatest/type/CoronaTestProcessor;
+    invoke-virtual {v8, v4}, Lde/rki/coronawarnapp/coronatest/CoronaTestRepository;->getProcessor(Lde/rki/coronawarnapp/coronatest/type/CoronaTest$Type;)Lde/rki/coronawarnapp/coronatest/type/CoronaTestProcessor;
 
-    move-result-object v3
+    move-result-object v4
 
-    iput-object v5, p0, Lde/rki/coronawarnapp/coronatest/CoronaTestRepository$registerTest$currentTests$1;->L$0:Ljava/lang/Object;
+    iput-object p1, p0, Lde/rki/coronawarnapp/coronatest/CoronaTestRepository$registerTest$currentTests$1;->L$0:Ljava/lang/Object;
 
-    iput-object v1, p0, Lde/rki/coronawarnapp/coronatest/CoronaTestRepository$registerTest$currentTests$1;->L$1:Ljava/lang/Object;
+    iput-object v5, p0, Lde/rki/coronawarnapp/coronatest/CoronaTestRepository$registerTest$currentTests$1;->L$1:Ljava/lang/Object;
 
-    iput-object p1, p0, Lde/rki/coronawarnapp/coronatest/CoronaTestRepository$registerTest$currentTests$1;->L$2:Ljava/lang/Object;
+    iput-object v5, p0, Lde/rki/coronawarnapp/coronatest/CoronaTestRepository$registerTest$currentTests$1;->L$2:Ljava/lang/Object;
+
+    iput-object v3, p0, Lde/rki/coronawarnapp/coronatest/CoronaTestRepository$registerTest$currentTests$1;->L$3:Ljava/lang/Object;
+
+    iput-object v5, p0, Lde/rki/coronawarnapp/coronatest/CoronaTestRepository$registerTest$currentTests$1;->L$4:Ljava/lang/Object;
 
     iput v2, p0, Lde/rki/coronawarnapp/coronatest/CoronaTestRepository$registerTest$currentTests$1;->label:I
 
-    invoke-interface {v3, v1, p0}, Lde/rki/coronawarnapp/coronatest/type/CoronaTestProcessor;->onRemove(Lde/rki/coronawarnapp/coronatest/type/CoronaTest;Lkotlin/coroutines/Continuation;)Ljava/lang/Object;
+    invoke-interface {v4, v1, p0}, Lde/rki/coronawarnapp/coronatest/type/CoronaTestProcessor;->recycle(Lde/rki/coronawarnapp/coronatest/type/CoronaTest;Lkotlin/coroutines/Continuation;)Ljava/lang/Object;
 
-    move-result-object v2
+    move-result-object v1
     :try_end_1
     .catch Ljava/lang/Exception; {:try_start_1 .. :try_end_1} :catch_1
 
-    if-ne v2, v0, :cond_9
+    if-ne v1, v0, :cond_a
 
     return-object v0
 
-    :cond_9
-    move-object v0, p1
+    :cond_a
+    move-object v4, p1
 
-    move-object v2, v5
+    move-object p1, v1
 
-    goto :goto_5
+    move-object v1, v3
+
+    move-object v0, v5
+
+    move-object v2, v0
+
+    move-object v3, v2
+
+    :goto_4
+    :try_start_2
+    invoke-interface {v0, v1, p1}, Ljava/util/Map;->put(Ljava/lang/Object;Ljava/lang/Object;)Ljava/lang/Object;
+    :try_end_2
+    .catch Ljava/lang/Exception; {:try_start_2 .. :try_end_2} :catch_0
+
+    move-object v5, v3
+
+    goto :goto_7
+
+    :goto_5
+    move-object v5, v3
+
+    goto :goto_6
 
     :catch_1
     move-exception v0
 
+    move-object v4, p1
+
+    move-object p1, v0
+
     move-object v2, v5
 
-    move-object v12, v0
+    :goto_6
+    const/4 v0, 0x4
 
-    move-object v0, p1
+    invoke-static {p1, v0}, Lde/rki/coronawarnapp/exception/reporting/ExceptionReporterKt;->report(Ljava/lang/Throwable;I)V
 
-    move-object p1, v12
+    :goto_7
+    move-object p1, v4
 
-    :goto_4
-    sget-object v3, Lde/rki/coronawarnapp/exception/ExceptionCategory;->INTERNAL:Lde/rki/coronawarnapp/exception/ExceptionCategory;
-
-    invoke-static {p1, v3}, Lde/rki/coronawarnapp/exception/reporting/ExceptionReporterKt;->report(Ljava/lang/Throwable;Lde/rki/coronawarnapp/exception/ExceptionCategory;)V
-
-    :goto_5
-    move-object p1, v0
+    move-object v0, v5
 
     move-object v5, v2
 
-    :cond_a
-    invoke-static {v5}, Lkotlin/collections/MapsKt___MapsKt;->toMutableMap(Ljava/util/Map;)Ljava/util/Map;
-
-    move-result-object v0
-
-    if-nez v1, :cond_b
-
-    goto :goto_6
-
-    :cond_b
-    invoke-interface {v1}, Lde/rki/coronawarnapp/coronatest/type/CoronaTest;->getIdentifier()Ljava/lang/String;
-
-    move-result-object v1
-
-    invoke-interface {v0, v1}, Ljava/util/Map;->remove(Ljava/lang/Object;)Ljava/lang/Object;
-
-    move-result-object v1
-
-    check-cast v1, Lde/rki/coronawarnapp/coronatest/type/CoronaTest;
-
-    :goto_6
+    :goto_8
     invoke-interface {p1}, Lde/rki/coronawarnapp/coronatest/type/CoronaTest;->getIdentifier()Ljava/lang/String;
 
     move-result-object v1
 
-    invoke-interface {v0, v1, p1}, Ljava/util/Map;->put(Ljava/lang/Object;Ljava/lang/Object;)Ljava/lang/Object;
+    invoke-interface {v5, v1, p1}, Ljava/util/Map;->put(Ljava/lang/Object;Ljava/lang/Object;)Ljava/lang/Object;
 
     return-object v0
 
-    :cond_c
+    :cond_b
     new-instance p1, Ljava/lang/IllegalStateException;
 
     const-string v0, "PostCondition for new tests not fullfilled."
@@ -529,7 +561,7 @@
 
     throw p1
 
-    :cond_d
+    :cond_c
     new-instance p1, Ljava/lang/IllegalStateException;
 
     const-string v0, "PreCondition for current tests not fullfilled."

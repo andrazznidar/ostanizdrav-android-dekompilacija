@@ -1,874 +1,326 @@
-.class abstract Lj$/util/stream/y2;
-.super Ljava/lang/Object;
+.class Lj$/util/stream/y2;
+.super Lj$/util/stream/E;
 
 
 # static fields
-.field private static final a:Lj$/util/stream/B1;
+.field public static final synthetic w:I
 
-.field private static final b:Lj$/util/stream/x1;
 
-.field private static final c:Lj$/util/stream/z1;
+# instance fields
+.field final synthetic u:J
 
-.field private static final d:Lj$/util/stream/v1;
-
-.field private static final e:[I
-
-.field private static final f:[J
-
-.field private static final g:[D
+.field final synthetic v:J
 
 
 # direct methods
-.method static constructor <clinit>()V
-    .locals 2
+.method constructor <init>(Lj$/util/stream/c;IIJJ)V
+    .locals 0
 
-    new-instance v0, Lj$/util/stream/a2;
+    iput-wide p4, p0, Lj$/util/stream/y2;->u:J
 
-    const/4 v1, 0x0
+    iput-wide p6, p0, Lj$/util/stream/y2;->v:J
 
-    invoke-direct {v0, v1}, Lj$/util/stream/a2;-><init>(Lj$/util/stream/C1;)V
-
-    sput-object v0, Lj$/util/stream/y2;->a:Lj$/util/stream/B1;
-
-    new-instance v0, Lj$/util/stream/Y1;
-
-    invoke-direct {v0}, Lj$/util/stream/Y1;-><init>()V
-
-    sput-object v0, Lj$/util/stream/y2;->b:Lj$/util/stream/x1;
-
-    new-instance v0, Lj$/util/stream/Z1;
-
-    invoke-direct {v0}, Lj$/util/stream/Z1;-><init>()V
-
-    sput-object v0, Lj$/util/stream/y2;->c:Lj$/util/stream/z1;
-
-    new-instance v0, Lj$/util/stream/X1;
-
-    invoke-direct {v0}, Lj$/util/stream/X1;-><init>()V
-
-    sput-object v0, Lj$/util/stream/y2;->d:Lj$/util/stream/v1;
-
-    const/4 v0, 0x0
-
-    new-array v1, v0, [I
-
-    sput-object v1, Lj$/util/stream/y2;->e:[I
-
-    new-array v1, v0, [J
-
-    sput-object v1, Lj$/util/stream/y2;->f:[J
-
-    new-array v0, v0, [D
-
-    sput-object v0, Lj$/util/stream/y2;->g:[D
+    invoke-direct {p0, p1, p2, p3}, Lj$/util/stream/E;-><init>(Lj$/util/stream/c;II)V
 
     return-void
 .end method
 
-.method static synthetic a()[I
-    .locals 1
 
-    sget-object v0, Lj$/util/stream/y2;->e:[I
+# virtual methods
+.method c1(Lj$/util/stream/D0;Lj$/util/Spliterator;Lj$/util/function/p;)Lj$/util/stream/P0;
+    .locals 16
 
-    return-object v0
-.end method
+    move-object/from16 v9, p0
 
-.method static synthetic b()[J
-    .locals 1
+    invoke-virtual/range {p1 .. p2}, Lj$/util/stream/D0;->u0(Lj$/util/Spliterator;)J
 
-    sget-object v0, Lj$/util/stream/y2;->f:[J
-
-    return-object v0
-.end method
-
-.method static synthetic c()[D
-    .locals 1
-
-    sget-object v0, Lj$/util/stream/y2;->g:[D
-
-    return-object v0
-.end method
-
-.method static d(JLj$/util/function/j;)Lj$/util/stream/t1;
-    .locals 2
+    move-result-wide v6
 
     const-wide/16 v0, 0x0
 
-    cmp-long v0, p0, v0
+    cmp-long v0, v6, v0
 
-    if-ltz v0, :cond_0
+    const/4 v8, 0x1
 
-    const-wide/32 v0, 0x7ffffff7
+    if-lez v0, :cond_1
 
-    cmp-long v0, p0, v0
+    const/16 v0, 0x4000
 
-    if-gez v0, :cond_0
+    move-object/from16 v3, p2
 
-    new-instance v0, Lj$/util/stream/c2;
+    invoke-interface {v3, v0}, Lj$/util/Spliterator;->hasCharacteristics(I)Z
 
-    invoke-direct {v0, p0, p1, p2}, Lj$/util/stream/c2;-><init>(JLj$/util/function/j;)V
+    move-result v0
+
+    if-eqz v0, :cond_0
+
+    invoke-virtual/range {p1 .. p1}, Lj$/util/stream/D0;->A0()I
+
+    move-result v10
+
+    iget-wide v12, v9, Lj$/util/stream/y2;->u:J
+
+    iget-wide v14, v9, Lj$/util/stream/y2;->v:J
+
+    move-object/from16 v11, p2
+
+    invoke-static/range {v10 .. v15}, Lj$/util/stream/D0;->c0(ILj$/util/Spliterator;JJ)Lj$/util/Spliterator;
+
+    move-result-object v0
+
+    move-object/from16 v2, p1
+
+    invoke-static {v2, v0, v8}, Lj$/util/stream/D0;->k0(Lj$/util/stream/D0;Lj$/util/Spliterator;Z)Lj$/util/stream/J0;
+
+    move-result-object v0
+
+    return-object v0
+
+    :cond_0
+    move-object/from16 v2, p1
 
     goto :goto_0
 
-    :cond_0
-    new-instance v0, Lj$/util/stream/u2;
+    :cond_1
+    move-object/from16 v2, p1
 
-    invoke-direct {v0}, Lj$/util/stream/u2;-><init>()V
+    move-object/from16 v3, p2
 
     :goto_0
-    return-object v0
-.end method
+    sget-object v0, Lj$/util/stream/e3;->ORDERED:Lj$/util/stream/e3;
 
-.method public static e(Lj$/util/stream/z2;Lj$/util/Spliterator;ZLj$/util/function/j;)Lj$/util/stream/B1;
-    .locals 4
-
-    invoke-virtual {p0, p1}, Lj$/util/stream/z2;->n0(Lj$/util/Spliterator;)J
-
-    move-result-wide v0
-
-    const-wide/16 v2, 0x0
-
-    cmp-long v2, v0, v2
-
-    if-ltz v2, :cond_1
-
-    const/16 v2, 0x4000
-
-    invoke-interface {p1, v2}, Lj$/util/Spliterator;->hasCharacteristics(I)Z
-
-    move-result v2
-
-    if-eqz v2, :cond_1
-
-    const-wide/32 v2, 0x7ffffff7
-
-    cmp-long p2, v0, v2
-
-    if-gez p2, :cond_0
-
-    long-to-int p2, v0
-
-    invoke-interface {p3, p2}, Lj$/util/function/j;->p(I)Ljava/lang/Object;
-
-    move-result-object p2
-
-    check-cast p2, [Ljava/lang/Object;
-
-    new-instance p3, Lj$/util/stream/s2;
-
-    invoke-direct {p3, p1, p0, p2}, Lj$/util/stream/s2;-><init>(Lj$/util/Spliterator;Lj$/util/stream/z2;[Ljava/lang/Object;)V
-
-    invoke-virtual {p3}, Ljava/util/concurrent/CountedCompleter;->invoke()Ljava/lang/Object;
-
-    new-instance p0, Lj$/util/stream/E1;
-
-    invoke-direct {p0, p2}, Lj$/util/stream/E1;-><init>([Ljava/lang/Object;)V
-
-    return-object p0
-
-    :cond_0
-    new-instance p0, Ljava/lang/IllegalArgumentException;
-
-    const-string p1, "Stream size exceeds max array size"
-
-    invoke-direct {p0, p1}, Ljava/lang/IllegalArgumentException;-><init>(Ljava/lang/String;)V
-
-    throw p0
-
-    :cond_1
-    new-instance v0, Lj$/util/stream/I1;
-
-    invoke-direct {v0, p0, p3, p1}, Lj$/util/stream/I1;-><init>(Lj$/util/stream/z2;Lj$/util/function/j;Lj$/util/Spliterator;)V
-
-    invoke-virtual {v0}, Ljava/util/concurrent/CountedCompleter;->invoke()Ljava/lang/Object;
-
-    move-result-object p0
-
-    check-cast p0, Lj$/util/stream/B1;
-
-    if-eqz p2, :cond_2
-
-    invoke-static {p0, p3}, Lj$/util/stream/y2;->l(Lj$/util/stream/B1;Lj$/util/function/j;)Lj$/util/stream/B1;
-
-    move-result-object p0
-
-    :cond_2
-    return-object p0
-.end method
-
-.method public static f(Lj$/util/stream/z2;Lj$/util/Spliterator;Z)Lj$/util/stream/v1;
-    .locals 4
-
-    invoke-virtual {p0, p1}, Lj$/util/stream/z2;->n0(Lj$/util/Spliterator;)J
-
-    move-result-wide v0
-
-    const-wide/16 v2, 0x0
-
-    cmp-long v2, v0, v2
-
-    if-ltz v2, :cond_1
-
-    const/16 v2, 0x4000
-
-    invoke-interface {p1, v2}, Lj$/util/Spliterator;->hasCharacteristics(I)Z
-
-    move-result v2
-
-    if-eqz v2, :cond_1
-
-    const-wide/32 v2, 0x7ffffff7
-
-    cmp-long p2, v0, v2
-
-    if-gez p2, :cond_0
-
-    long-to-int p2, v0
-
-    new-array p2, p2, [D
-
-    new-instance v0, Lj$/util/stream/p2;
-
-    invoke-direct {v0, p1, p0, p2}, Lj$/util/stream/p2;-><init>(Lj$/util/Spliterator;Lj$/util/stream/z2;[D)V
-
-    invoke-virtual {v0}, Ljava/util/concurrent/CountedCompleter;->invoke()Ljava/lang/Object;
-
-    new-instance p0, Lj$/util/stream/U1;
-
-    invoke-direct {p0, p2}, Lj$/util/stream/U1;-><init>([D)V
-
-    return-object p0
-
-    :cond_0
-    new-instance p0, Ljava/lang/IllegalArgumentException;
-
-    const-string p1, "Stream size exceeds max array size"
-
-    invoke-direct {p0, p1}, Ljava/lang/IllegalArgumentException;-><init>(Ljava/lang/String;)V
-
-    throw p0
-
-    :cond_1
-    new-instance v0, Lj$/util/stream/I1;
-
-    const/4 v1, 0x0
-
-    invoke-direct {v0, p0, p1, v1}, Lj$/util/stream/I1;-><init>(Lj$/util/stream/z2;Lj$/util/Spliterator;I)V
-
-    invoke-virtual {v0}, Ljava/util/concurrent/CountedCompleter;->invoke()Ljava/lang/Object;
-
-    move-result-object p0
-
-    check-cast p0, Lj$/util/stream/v1;
-
-    if-eqz p2, :cond_2
-
-    invoke-static {p0}, Lj$/util/stream/y2;->m(Lj$/util/stream/v1;)Lj$/util/stream/v1;
-
-    move-result-object p0
-
-    :cond_2
-    return-object p0
-.end method
-
-.method public static g(Lj$/util/stream/z2;Lj$/util/Spliterator;Z)Lj$/util/stream/x1;
-    .locals 4
-
-    invoke-virtual {p0, p1}, Lj$/util/stream/z2;->n0(Lj$/util/Spliterator;)J
-
-    move-result-wide v0
-
-    const-wide/16 v2, 0x0
-
-    cmp-long v2, v0, v2
-
-    if-ltz v2, :cond_1
-
-    const/16 v2, 0x4000
-
-    invoke-interface {p1, v2}, Lj$/util/Spliterator;->hasCharacteristics(I)Z
-
-    move-result v2
-
-    if-eqz v2, :cond_1
-
-    const-wide/32 v2, 0x7ffffff7
-
-    cmp-long p2, v0, v2
-
-    if-gez p2, :cond_0
-
-    long-to-int p2, v0
-
-    new-array p2, p2, [I
-
-    new-instance v0, Lj$/util/stream/q2;
-
-    invoke-direct {v0, p1, p0, p2}, Lj$/util/stream/q2;-><init>(Lj$/util/Spliterator;Lj$/util/stream/z2;[I)V
-
-    invoke-virtual {v0}, Ljava/util/concurrent/CountedCompleter;->invoke()Ljava/lang/Object;
-
-    new-instance p0, Lj$/util/stream/d2;
-
-    invoke-direct {p0, p2}, Lj$/util/stream/d2;-><init>([I)V
-
-    return-object p0
-
-    :cond_0
-    new-instance p0, Ljava/lang/IllegalArgumentException;
-
-    const-string p1, "Stream size exceeds max array size"
-
-    invoke-direct {p0, p1}, Ljava/lang/IllegalArgumentException;-><init>(Ljava/lang/String;)V
-
-    throw p0
-
-    :cond_1
-    new-instance v0, Lj$/util/stream/I1;
-
-    const/4 v1, 0x1
-
-    invoke-direct {v0, p0, p1, v1}, Lj$/util/stream/I1;-><init>(Lj$/util/stream/z2;Lj$/util/Spliterator;I)V
-
-    invoke-virtual {v0}, Ljava/util/concurrent/CountedCompleter;->invoke()Ljava/lang/Object;
-
-    move-result-object p0
-
-    check-cast p0, Lj$/util/stream/x1;
-
-    if-eqz p2, :cond_2
-
-    invoke-static {p0}, Lj$/util/stream/y2;->n(Lj$/util/stream/x1;)Lj$/util/stream/x1;
-
-    move-result-object p0
-
-    :cond_2
-    return-object p0
-.end method
-
-.method public static h(Lj$/util/stream/z2;Lj$/util/Spliterator;Z)Lj$/util/stream/z1;
-    .locals 4
-
-    invoke-virtual {p0, p1}, Lj$/util/stream/z2;->n0(Lj$/util/Spliterator;)J
-
-    move-result-wide v0
-
-    const-wide/16 v2, 0x0
-
-    cmp-long v2, v0, v2
-
-    if-ltz v2, :cond_1
-
-    const/16 v2, 0x4000
-
-    invoke-interface {p1, v2}, Lj$/util/Spliterator;->hasCharacteristics(I)Z
-
-    move-result v2
-
-    if-eqz v2, :cond_1
-
-    const-wide/32 v2, 0x7ffffff7
-
-    cmp-long p2, v0, v2
-
-    if-gez p2, :cond_0
-
-    long-to-int p2, v0
-
-    new-array p2, p2, [J
-
-    new-instance v0, Lj$/util/stream/r2;
-
-    invoke-direct {v0, p1, p0, p2}, Lj$/util/stream/r2;-><init>(Lj$/util/Spliterator;Lj$/util/stream/z2;[J)V
-
-    invoke-virtual {v0}, Ljava/util/concurrent/CountedCompleter;->invoke()Ljava/lang/Object;
-
-    new-instance p0, Lj$/util/stream/m2;
-
-    invoke-direct {p0, p2}, Lj$/util/stream/m2;-><init>([J)V
-
-    return-object p0
-
-    :cond_0
-    new-instance p0, Ljava/lang/IllegalArgumentException;
-
-    const-string p1, "Stream size exceeds max array size"
-
-    invoke-direct {p0, p1}, Ljava/lang/IllegalArgumentException;-><init>(Ljava/lang/String;)V
-
-    throw p0
-
-    :cond_1
-    new-instance v0, Lj$/util/stream/I1;
-
-    const/4 v1, 0x2
-
-    invoke-direct {v0, p0, p1, v1}, Lj$/util/stream/I1;-><init>(Lj$/util/stream/z2;Lj$/util/Spliterator;I)V
-
-    invoke-virtual {v0}, Ljava/util/concurrent/CountedCompleter;->invoke()Ljava/lang/Object;
-
-    move-result-object p0
-
-    check-cast p0, Lj$/util/stream/z1;
-
-    if-eqz p2, :cond_2
-
-    invoke-static {p0}, Lj$/util/stream/y2;->o(Lj$/util/stream/z1;)Lj$/util/stream/z1;
-
-    move-result-object p0
-
-    :cond_2
-    return-object p0
-.end method
-
-.method static i(Lj$/util/stream/g4;Lj$/util/stream/B1;Lj$/util/stream/B1;)Lj$/util/stream/B1;
-    .locals 2
-
-    sget-object v0, Lj$/util/stream/C1;->a:[I
-
-    invoke-virtual {p0}, Ljava/lang/Enum;->ordinal()I
+    invoke-virtual/range {p1 .. p1}, Lj$/util/stream/D0;->B0()I
 
     move-result v1
 
-    aget v0, v0, v1
+    invoke-virtual {v0, v1}, Lj$/util/stream/e3;->d(I)Z
 
-    const/4 v1, 0x1
+    move-result v0
 
-    if-eq v0, v1, :cond_3
+    if-nez v0, :cond_2
 
-    const/4 v1, 0x2
+    invoke-virtual/range {p1 .. p2}, Lj$/util/stream/D0;->U0(Lj$/util/Spliterator;)Lj$/util/Spliterator;
 
-    if-eq v0, v1, :cond_2
+    move-result-object v0
 
-    const/4 v1, 0x3
+    move-object v1, v0
 
-    if-eq v0, v1, :cond_1
+    check-cast v1, Lj$/util/x;
 
-    const/4 v1, 0x4
+    iget-wide v2, v9, Lj$/util/stream/y2;->u:J
 
-    if-ne v0, v1, :cond_0
+    iget-wide v4, v9, Lj$/util/stream/y2;->v:J
 
-    new-instance p0, Lj$/util/stream/P1;
+    move-object/from16 v0, p0
 
-    check-cast p1, Lj$/util/stream/v1;
+    invoke-virtual/range {v0 .. v7}, Lj$/util/stream/y2;->q1(Lj$/util/x;JJJ)Lj$/util/x;
 
-    check-cast p2, Lj$/util/stream/v1;
+    move-result-object v0
 
-    invoke-direct {p0, p1, p2}, Lj$/util/stream/P1;-><init>(Lj$/util/stream/v1;Lj$/util/stream/v1;)V
+    invoke-static {v9, v0, v8}, Lj$/util/stream/D0;->k0(Lj$/util/stream/D0;Lj$/util/Spliterator;Z)Lj$/util/stream/J0;
 
-    return-object p0
+    move-result-object v0
 
-    :cond_0
-    new-instance p1, Ljava/lang/IllegalStateException;
-
-    new-instance p2, Ljava/lang/StringBuilder;
-
-    invoke-direct {p2}, Ljava/lang/StringBuilder;-><init>()V
-
-    const-string v0, "Unknown shape "
-
-    invoke-virtual {p2, v0}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
-
-    invoke-virtual {p2, p0}, Ljava/lang/StringBuilder;->append(Ljava/lang/Object;)Ljava/lang/StringBuilder;
-
-    invoke-virtual {p2}, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
-
-    move-result-object p0
-
-    invoke-direct {p1, p0}, Ljava/lang/IllegalStateException;-><init>(Ljava/lang/String;)V
-
-    throw p1
-
-    :cond_1
-    new-instance p0, Lj$/util/stream/R1;
-
-    check-cast p1, Lj$/util/stream/z1;
-
-    check-cast p2, Lj$/util/stream/z1;
-
-    invoke-direct {p0, p1, p2}, Lj$/util/stream/R1;-><init>(Lj$/util/stream/z1;Lj$/util/stream/z1;)V
-
-    return-object p0
+    return-object v0
 
     :cond_2
-    new-instance p0, Lj$/util/stream/Q1;
+    new-instance v10, Lj$/util/stream/A2;
 
-    check-cast p1, Lj$/util/stream/x1;
+    iget-wide v5, v9, Lj$/util/stream/y2;->u:J
 
-    check-cast p2, Lj$/util/stream/x1;
+    iget-wide v7, v9, Lj$/util/stream/y2;->v:J
 
-    invoke-direct {p0, p1, p2}, Lj$/util/stream/Q1;-><init>(Lj$/util/stream/x1;Lj$/util/stream/x1;)V
+    move-object v0, v10
 
-    return-object p0
+    move-object/from16 v1, p0
 
-    :cond_3
-    new-instance p0, Lj$/util/stream/T1;
+    move-object/from16 v2, p1
 
-    invoke-direct {p0, p1, p2}, Lj$/util/stream/T1;-><init>(Lj$/util/stream/B1;Lj$/util/stream/B1;)V
+    move-object/from16 v3, p2
 
-    return-object p0
-.end method
+    move-object/from16 v4, p3
 
-.method static j(J)Lj$/util/stream/q1;
-    .locals 2
+    invoke-direct/range {v0 .. v8}, Lj$/util/stream/A2;-><init>(Lj$/util/stream/c;Lj$/util/stream/D0;Lj$/util/Spliterator;Lj$/util/function/p;JJ)V
 
-    const-wide/16 v0, 0x0
+    invoke-virtual {v10}, Ljava/util/concurrent/CountedCompleter;->invoke()Ljava/lang/Object;
 
-    cmp-long v0, p0, v0
+    move-result-object v0
 
-    if-ltz v0, :cond_0
+    check-cast v0, Lj$/util/stream/P0;
 
-    const-wide/32 v0, 0x7ffffff7
-
-    cmp-long v0, p0, v0
-
-    if-gez v0, :cond_0
-
-    new-instance v0, Lj$/util/stream/V1;
-
-    invoke-direct {v0, p0, p1}, Lj$/util/stream/V1;-><init>(J)V
-
-    goto :goto_0
-
-    :cond_0
-    new-instance v0, Lj$/util/stream/W1;
-
-    invoke-direct {v0}, Lj$/util/stream/W1;-><init>()V
-
-    :goto_0
     return-object v0
 .end method
 
-.method static k(Lj$/util/stream/g4;)Lj$/util/stream/B1;
-    .locals 3
+.method d1(Lj$/util/stream/D0;Lj$/util/Spliterator;)Lj$/util/Spliterator;
+    .locals 16
 
-    sget-object v0, Lj$/util/stream/C1;->a:[I
+    move-object/from16 v9, p0
 
-    invoke-virtual {p0}, Ljava/lang/Enum;->ordinal()I
+    invoke-virtual/range {p1 .. p2}, Lj$/util/stream/D0;->u0(Lj$/util/Spliterator;)J
+
+    move-result-wide v6
+
+    const-wide/16 v0, 0x0
+
+    cmp-long v0, v6, v0
+
+    if-lez v0, :cond_0
+
+    const/16 v0, 0x4000
+
+    move-object/from16 v3, p2
+
+    invoke-interface {v3, v0}, Lj$/util/Spliterator;->hasCharacteristics(I)Z
+
+    move-result v0
+
+    if-eqz v0, :cond_1
+
+    new-instance v0, Lj$/util/stream/u3;
+
+    invoke-virtual/range {p1 .. p2}, Lj$/util/stream/D0;->U0(Lj$/util/Spliterator;)Lj$/util/Spliterator;
+
+    move-result-object v1
+
+    move-object v11, v1
+
+    check-cast v11, Lj$/util/x;
+
+    iget-wide v12, v9, Lj$/util/stream/y2;->u:J
+
+    iget-wide v1, v9, Lj$/util/stream/y2;->v:J
+
+    invoke-static {v12, v13, v1, v2}, Lj$/util/stream/D0;->b0(JJ)J
+
+    move-result-wide v14
+
+    move-object v10, v0
+
+    invoke-direct/range {v10 .. v15}, Lj$/util/stream/u3;-><init>(Lj$/util/x;JJ)V
+
+    return-object v0
+
+    :cond_0
+    move-object/from16 v3, p2
+
+    :cond_1
+    sget-object v0, Lj$/util/stream/e3;->ORDERED:Lj$/util/stream/e3;
+
+    invoke-virtual/range {p1 .. p1}, Lj$/util/stream/D0;->B0()I
 
     move-result v1
 
-    aget v0, v0, v1
+    invoke-virtual {v0, v1}, Lj$/util/stream/e3;->d(I)Z
 
-    const/4 v1, 0x1
+    move-result v0
 
-    if-eq v0, v1, :cond_3
+    if-nez v0, :cond_2
 
-    const/4 v1, 0x2
+    invoke-virtual/range {p1 .. p2}, Lj$/util/stream/D0;->U0(Lj$/util/Spliterator;)Lj$/util/Spliterator;
 
-    if-eq v0, v1, :cond_2
+    move-result-object v0
 
-    const/4 v1, 0x3
+    move-object v1, v0
 
-    if-eq v0, v1, :cond_1
+    check-cast v1, Lj$/util/x;
 
-    const/4 v1, 0x4
+    iget-wide v2, v9, Lj$/util/stream/y2;->u:J
 
-    if-ne v0, v1, :cond_0
+    iget-wide v4, v9, Lj$/util/stream/y2;->v:J
 
-    sget-object p0, Lj$/util/stream/y2;->d:Lj$/util/stream/v1;
+    move-object/from16 v0, p0
 
-    return-object p0
+    invoke-virtual/range {v0 .. v7}, Lj$/util/stream/y2;->q1(Lj$/util/x;JJJ)Lj$/util/x;
 
-    :cond_0
-    new-instance v0, Ljava/lang/IllegalStateException;
+    move-result-object v0
 
-    new-instance v1, Ljava/lang/StringBuilder;
-
-    invoke-direct {v1}, Ljava/lang/StringBuilder;-><init>()V
-
-    const-string v2, "Unknown shape "
-
-    invoke-virtual {v1, v2}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
-
-    invoke-virtual {v1, p0}, Ljava/lang/StringBuilder;->append(Ljava/lang/Object;)Ljava/lang/StringBuilder;
-
-    invoke-virtual {v1}, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
-
-    move-result-object p0
-
-    invoke-direct {v0, p0}, Ljava/lang/IllegalStateException;-><init>(Ljava/lang/String;)V
-
-    throw v0
-
-    :cond_1
-    sget-object p0, Lj$/util/stream/y2;->c:Lj$/util/stream/z1;
-
-    return-object p0
+    return-object v0
 
     :cond_2
-    sget-object p0, Lj$/util/stream/y2;->b:Lj$/util/stream/x1;
+    new-instance v10, Lj$/util/stream/A2;
 
-    return-object p0
+    sget-object v4, Lj$/util/stream/c0;->b:Lj$/util/stream/c0;
 
-    :cond_3
-    sget-object p0, Lj$/util/stream/y2;->a:Lj$/util/stream/B1;
+    iget-wide v5, v9, Lj$/util/stream/y2;->u:J
 
-    return-object p0
+    iget-wide v7, v9, Lj$/util/stream/y2;->v:J
+
+    move-object v0, v10
+
+    move-object/from16 v1, p0
+
+    move-object/from16 v2, p1
+
+    move-object/from16 v3, p2
+
+    invoke-direct/range {v0 .. v8}, Lj$/util/stream/A2;-><init>(Lj$/util/stream/c;Lj$/util/stream/D0;Lj$/util/Spliterator;Lj$/util/function/p;JJ)V
+
+    invoke-virtual {v10}, Ljava/util/concurrent/CountedCompleter;->invoke()Ljava/lang/Object;
+
+    move-result-object v0
+
+    check-cast v0, Lj$/util/stream/P0;
+
+    invoke-interface {v0}, Lj$/util/stream/P0;->spliterator()Lj$/util/Spliterator;
+
+    move-result-object v0
+
+    return-object v0
 .end method
 
-.method public static l(Lj$/util/stream/B1;Lj$/util/function/j;)Lj$/util/stream/B1;
-    .locals 4
+.method f1(ILj$/util/stream/q2;)Lj$/util/stream/q2;
+    .locals 0
 
-    invoke-interface {p0}, Lj$/util/stream/B1;->m()I
+    new-instance p1, Lj$/util/stream/x2;
 
-    move-result v0
+    invoke-direct {p1, p0, p2}, Lj$/util/stream/x2;-><init>(Lj$/util/stream/y2;Lj$/util/stream/q2;)V
 
-    if-lez v0, :cond_1
+    return-object p1
+.end method
 
-    invoke-interface {p0}, Lj$/util/stream/B1;->count()J
+.method q1(Lj$/util/x;JJJ)Lj$/util/x;
+    .locals 7
+
+    cmp-long v2, p2, p6
+
+    const-wide/16 v3, 0x0
+
+    if-gtz v2, :cond_1
+
+    cmp-long v2, p4, v3
+
+    if-ltz v2, :cond_0
+
+    sub-long v5, p6, p2
+
+    invoke-static {p4, p5, v5, v6}, Ljava/lang/Math;->min(JJ)J
 
     move-result-wide v0
-
-    const-wide/32 v2, 0x7ffffff7
-
-    cmp-long v2, v0, v2
-
-    if-gez v2, :cond_0
-
-    long-to-int v0, v0
-
-    invoke-interface {p1, v0}, Lj$/util/function/j;->p(I)Ljava/lang/Object;
-
-    move-result-object p1
-
-    check-cast p1, [Ljava/lang/Object;
-
-    new-instance v0, Lj$/util/stream/w2;
-
-    const/4 v1, 0x0
-
-    const/4 v2, 0x0
-
-    invoke-direct {v0, p0, p1, v1, v2}, Lj$/util/stream/w2;-><init>(Lj$/util/stream/B1;[Ljava/lang/Object;ILj$/util/stream/C1;)V
-
-    invoke-virtual {v0}, Ljava/util/concurrent/CountedCompleter;->invoke()Ljava/lang/Object;
-
-    new-instance p0, Lj$/util/stream/E1;
-
-    invoke-direct {p0, p1}, Lj$/util/stream/E1;-><init>([Ljava/lang/Object;)V
-
-    return-object p0
-
-    :cond_0
-    new-instance p0, Ljava/lang/IllegalArgumentException;
-
-    const-string p1, "Stream size exceeds max array size"
-
-    invoke-direct {p0, p1}, Ljava/lang/IllegalArgumentException;-><init>(Ljava/lang/String;)V
-
-    throw p0
-
-    :cond_1
-    return-object p0
-.end method
-
-.method public static m(Lj$/util/stream/v1;)Lj$/util/stream/v1;
-    .locals 4
-
-    invoke-interface {p0}, Lj$/util/stream/B1;->m()I
-
-    move-result v0
-
-    if-lez v0, :cond_1
-
-    invoke-interface {p0}, Lj$/util/stream/B1;->count()J
-
-    move-result-wide v0
-
-    const-wide/32 v2, 0x7ffffff7
-
-    cmp-long v2, v0, v2
-
-    if-gez v2, :cond_0
-
-    long-to-int v0, v0
-
-    new-array v0, v0, [D
-
-    new-instance v1, Lj$/util/stream/v2;
-
-    const/4 v2, 0x0
-
-    invoke-direct {v1, p0, v0, v2}, Lj$/util/stream/v2;-><init>(Lj$/util/stream/v1;[DI)V
-
-    invoke-virtual {v1}, Ljava/util/concurrent/CountedCompleter;->invoke()Ljava/lang/Object;
-
-    new-instance p0, Lj$/util/stream/U1;
-
-    invoke-direct {p0, v0}, Lj$/util/stream/U1;-><init>([D)V
-
-    return-object p0
-
-    :cond_0
-    new-instance p0, Ljava/lang/IllegalArgumentException;
-
-    const-string v0, "Stream size exceeds max array size"
-
-    invoke-direct {p0, v0}, Ljava/lang/IllegalArgumentException;-><init>(Ljava/lang/String;)V
-
-    throw p0
-
-    :cond_1
-    return-object p0
-.end method
-
-.method public static n(Lj$/util/stream/x1;)Lj$/util/stream/x1;
-    .locals 4
-
-    invoke-interface {p0}, Lj$/util/stream/B1;->m()I
-
-    move-result v0
-
-    if-lez v0, :cond_1
-
-    invoke-interface {p0}, Lj$/util/stream/B1;->count()J
-
-    move-result-wide v0
-
-    const-wide/32 v2, 0x7ffffff7
-
-    cmp-long v2, v0, v2
-
-    if-gez v2, :cond_0
-
-    long-to-int v0, v0
-
-    new-array v0, v0, [I
-
-    new-instance v1, Lj$/util/stream/v2;
-
-    const/4 v2, 0x0
-
-    invoke-direct {v1, p0, v0, v2}, Lj$/util/stream/v2;-><init>(Lj$/util/stream/x1;[II)V
-
-    invoke-virtual {v1}, Ljava/util/concurrent/CountedCompleter;->invoke()Ljava/lang/Object;
-
-    new-instance p0, Lj$/util/stream/d2;
-
-    invoke-direct {p0, v0}, Lj$/util/stream/d2;-><init>([I)V
-
-    return-object p0
-
-    :cond_0
-    new-instance p0, Ljava/lang/IllegalArgumentException;
-
-    const-string v0, "Stream size exceeds max array size"
-
-    invoke-direct {p0, v0}, Ljava/lang/IllegalArgumentException;-><init>(Ljava/lang/String;)V
-
-    throw p0
-
-    :cond_1
-    return-object p0
-.end method
-
-.method public static o(Lj$/util/stream/z1;)Lj$/util/stream/z1;
-    .locals 4
-
-    invoke-interface {p0}, Lj$/util/stream/B1;->m()I
-
-    move-result v0
-
-    if-lez v0, :cond_1
-
-    invoke-interface {p0}, Lj$/util/stream/B1;->count()J
-
-    move-result-wide v0
-
-    const-wide/32 v2, 0x7ffffff7
-
-    cmp-long v2, v0, v2
-
-    if-gez v2, :cond_0
-
-    long-to-int v0, v0
-
-    new-array v0, v0, [J
-
-    new-instance v1, Lj$/util/stream/v2;
-
-    const/4 v2, 0x0
-
-    invoke-direct {v1, p0, v0, v2}, Lj$/util/stream/v2;-><init>(Lj$/util/stream/z1;[JI)V
-
-    invoke-virtual {v1}, Ljava/util/concurrent/CountedCompleter;->invoke()Ljava/lang/Object;
-
-    new-instance p0, Lj$/util/stream/m2;
-
-    invoke-direct {p0, v0}, Lj$/util/stream/m2;-><init>([J)V
-
-    return-object p0
-
-    :cond_0
-    new-instance p0, Ljava/lang/IllegalArgumentException;
-
-    const-string v0, "Stream size exceeds max array size"
-
-    invoke-direct {p0, v0}, Ljava/lang/IllegalArgumentException;-><init>(Ljava/lang/String;)V
-
-    throw p0
-
-    :cond_1
-    return-object p0
-.end method
-
-.method static p(J)Lj$/util/stream/r1;
-    .locals 2
-
-    const-wide/16 v0, 0x0
-
-    cmp-long v0, p0, v0
-
-    if-ltz v0, :cond_0
-
-    const-wide/32 v0, 0x7ffffff7
-
-    cmp-long v0, p0, v0
-
-    if-gez v0, :cond_0
-
-    new-instance v0, Lj$/util/stream/e2;
-
-    invoke-direct {v0, p0, p1}, Lj$/util/stream/e2;-><init>(J)V
 
     goto :goto_0
 
     :cond_0
-    new-instance v0, Lj$/util/stream/f2;
-
-    invoke-direct {v0}, Lj$/util/stream/f2;-><init>()V
-
-    :goto_0
-    return-object v0
-.end method
-
-.method static q(J)Lj$/util/stream/s1;
-    .locals 2
-
-    const-wide/16 v0, 0x0
-
-    cmp-long v0, p0, v0
-
-    if-ltz v0, :cond_0
-
-    const-wide/32 v0, 0x7ffffff7
-
-    cmp-long v0, p0, v0
-
-    if-gez v0, :cond_0
-
-    new-instance v0, Lj$/util/stream/n2;
-
-    invoke-direct {v0, p0, p1}, Lj$/util/stream/n2;-><init>(J)V
+    sub-long v0, p6, p2
 
     goto :goto_0
 
-    :cond_0
-    new-instance v0, Lj$/util/stream/o2;
+    :cond_1
+    move-wide v3, p2
 
-    invoke-direct {v0}, Lj$/util/stream/o2;-><init>()V
+    move-wide v0, p4
 
     :goto_0
-    return-object v0
+    new-instance v2, Lj$/util/stream/C3;
+
+    move-object p2, v2
+
+    move-object p3, p1
+
+    move-wide p4, v3
+
+    move-wide p6, v0
+
+    invoke-direct/range {p2 .. p7}, Lj$/util/stream/C3;-><init>(Lj$/util/x;JJ)V
+
+    return-object v2
 .end method

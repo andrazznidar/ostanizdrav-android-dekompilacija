@@ -92,16 +92,6 @@
 
 .method public static final varyFields(Lokhttp3/Headers;)Ljava/util/Set;
     .locals 8
-    .annotation system Ldalvik/annotation/Signature;
-        value = {
-            "(",
-            "Lokhttp3/Headers;",
-            ")",
-            "Ljava/util/Set<",
-            "Ljava/lang/String;",
-            ">;"
-        }
-    .end annotation
 
     invoke-virtual {p0}, Lokhttp3/Headers;->size()I
 
@@ -143,7 +133,7 @@
 
     sget-object v5, Ljava/lang/String;->CASE_INSENSITIVE_ORDER:Ljava/util/Comparator;
 
-    const-string v7, "java.lang.String.CASE_INSENSITIVE_ORDER"
+    const-string v7, "CASE_INSENSITIVE_ORDER"
 
     invoke-static {v5, v7}, Lkotlin/jvm/internal/Intrinsics;->checkNotNullExpressionValue(Ljava/lang/Object;Ljava/lang/String;)V
 

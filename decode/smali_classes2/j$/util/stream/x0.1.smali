@@ -1,63 +1,82 @@
-.class public final synthetic Lj$/util/stream/x0;
-.super Ljava/lang/Object;
+.class Lj$/util/stream/x0;
+.super Lj$/util/stream/z0;
 
 # interfaces
-.implements Lj$/util/function/BiConsumer;
+.implements Lj$/util/stream/p2;
 
 
-# static fields
-.field public static final synthetic a:Lj$/util/stream/x0;
+# instance fields
+.field final synthetic c:Lj$/util/stream/A0;
+
+.field final synthetic d:Lj$/util/function/b;
 
 
 # direct methods
-.method static synthetic constructor <clinit>()V
-    .locals 1
-
-    new-instance v0, Lj$/util/stream/x0;
-
-    invoke-direct {v0}, Lj$/util/stream/x0;-><init>()V
-
-    sput-object v0, Lj$/util/stream/x0;->a:Lj$/util/stream/x0;
-
-    return-void
-.end method
-
-.method private synthetic constructor <init>()V
+.method constructor <init>(Lj$/util/stream/A0;Lj$/util/function/b;)V
     .locals 0
 
-    invoke-direct {p0}, Ljava/lang/Object;-><init>()V
+    iput-object p1, p0, Lj$/util/stream/x0;->c:Lj$/util/stream/A0;
+
+    iput-object p2, p0, Lj$/util/stream/x0;->d:Lj$/util/function/b;
+
+    invoke-direct {p0, p1}, Lj$/util/stream/z0;-><init>(Lj$/util/stream/A0;)V
 
     return-void
 .end method
 
 
 # virtual methods
-.method public final y(Ljava/lang/Object;Ljava/lang/Object;)V
-    .locals 5
+.method public synthetic a(Ljava/lang/Long;)V
+    .locals 0
 
-    check-cast p1, [J
+    invoke-static {p0, p1}, Lj$/util/stream/D0;->N(Lj$/util/stream/p2;Ljava/lang/Long;)V
 
-    check-cast p2, [J
+    return-void
+.end method
 
-    const/4 v0, 0x0
+.method public d(J)V
+    .locals 1
 
-    aget-wide v1, p1, v0
+    iget-boolean v0, p0, Lj$/util/stream/z0;->a:Z
 
-    aget-wide v3, p2, v0
+    if-nez v0, :cond_0
 
-    add-long/2addr v1, v3
+    iget-object v0, p0, Lj$/util/stream/x0;->d:Lj$/util/function/b;
 
-    aput-wide v1, p1, v0
+    invoke-virtual {v0, p1, p2}, Lj$/util/function/b;->B(J)Z
 
-    const/4 v0, 0x1
+    move-result p1
 
-    aget-wide v1, p1, v0
+    iget-object p2, p0, Lj$/util/stream/x0;->c:Lj$/util/stream/A0;
 
-    aget-wide v3, p2, v0
+    invoke-static {p2}, Lj$/util/stream/A0;->a(Lj$/util/stream/A0;)Z
 
-    add-long/2addr v1, v3
+    move-result p2
 
-    aput-wide v1, p1, v0
+    if-ne p1, p2, :cond_0
+
+    const/4 p1, 0x1
+
+    iput-boolean p1, p0, Lj$/util/stream/z0;->a:Z
+
+    iget-object p1, p0, Lj$/util/stream/x0;->c:Lj$/util/stream/A0;
+
+    invoke-static {p1}, Lj$/util/stream/A0;->b(Lj$/util/stream/A0;)Z
+
+    move-result p1
+
+    iput-boolean p1, p0, Lj$/util/stream/z0;->b:Z
+
+    :cond_0
+    return-void
+.end method
+
+.method public bridge synthetic j(Ljava/lang/Object;)V
+    .locals 0
+
+    check-cast p1, Ljava/lang/Long;
+
+    invoke-virtual {p0, p1}, Lj$/util/stream/x0;->a(Ljava/lang/Long;)V
 
     return-void
 .end method

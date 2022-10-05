@@ -7,15 +7,6 @@
 
 
 # annotations
-.annotation system Ldalvik/annotation/EnclosingMethod;
-    value = Lde/rki/coronawarnapp/covidcertificate/common/statecheck/DccStateChecker;->checkState(Lde/rki/coronawarnapp/covidcertificate/common/certificate/DccData;)Ljava/lang/Object;
-.end annotation
-
-.annotation system Ldalvik/annotation/InnerClass;
-    accessFlags = 0x19
-    name = null
-.end annotation
-
 .annotation system Ldalvik/annotation/Signature;
     value = {
         "Lkotlin/coroutines/jvm/internal/SuspendLambda;",
@@ -35,7 +26,7 @@
     c = "de.rki.coronawarnapp.covidcertificate.common.statecheck.DccStateChecker$checkState$2"
     f = "DccStateChecker.kt"
     l = {
-        0x20
+        0x2d
     }
     m = "invokeSuspend"
 .end annotation
@@ -120,19 +111,21 @@
 .end method
 
 .method public final invokeSuspend(Ljava/lang/Object;)Ljava/lang/Object;
-    .locals 8
+    .locals 11
 
     sget-object v0, Lkotlin/coroutines/intrinsics/CoroutineSingletons;->COROUTINE_SUSPENDED:Lkotlin/coroutines/intrinsics/CoroutineSingletons;
 
     iget v1, p0, Lde/rki/coronawarnapp/covidcertificate/common/statecheck/DccStateChecker$checkState$2;->label:I
 
-    const/4 v2, 0x0
+    const-string v2, "DccStateChecker"
 
-    const/4 v3, 0x1
+    const/4 v3, 0x0
+
+    const/4 v4, 0x1
 
     if-eqz v1, :cond_1
 
-    if-ne v1, v3, :cond_0
+    if-ne v1, v4, :cond_0
 
     iget-object v0, p0, Lde/rki/coronawarnapp/covidcertificate/common/statecheck/DccStateChecker$checkState$2;->L$0:Ljava/lang/Object;
 
@@ -144,6 +137,11 @@
     .catch Ljava/lang/Exception; {:try_start_0 .. :try_end_0} :catch_0
 
     goto :goto_0
+
+    :catch_0
+    move-exception p1
+
+    goto/16 :goto_2
 
     :cond_0
     new-instance p1, Ljava/lang/IllegalStateException;
@@ -163,24 +161,51 @@
 
     iget-object v1, p0, Lde/rki/coronawarnapp/covidcertificate/common/statecheck/DccStateChecker$checkState$2;->L$1:Ljava/lang/Object;
 
-    check-cast v1, Lde/rki/coronawarnapp/covidcertificate/signature/core/DscData;
+    move-object v7, v1
+
+    check-cast v7, Lde/rki/coronawarnapp/covidcertificate/signature/core/DscData;
 
     :try_start_1
-    iget-object v4, p0, Lde/rki/coronawarnapp/covidcertificate/common/statecheck/DccStateChecker$checkState$2;->this$0:Lde/rki/coronawarnapp/covidcertificate/common/statecheck/DccStateChecker;
+    iget-object v1, p0, Lde/rki/coronawarnapp/covidcertificate/common/statecheck/DccStateChecker$checkState$2;->this$0:Lde/rki/coronawarnapp/covidcertificate/common/statecheck/DccStateChecker;
 
-    iget-object v4, v4, Lde/rki/coronawarnapp/covidcertificate/common/statecheck/DccStateChecker;->dscSignatureValidator:Lde/rki/coronawarnapp/covidcertificate/signature/core/DscSignatureValidator;
+    iget-object v1, v1, Lde/rki/coronawarnapp/covidcertificate/common/statecheck/DccStateChecker;->blocklistValidator:Lde/rki/coronawarnapp/covidcertificate/validation/core/BlocklistValidator;
 
     iget-object v5, p0, Lde/rki/coronawarnapp/covidcertificate/common/statecheck/DccStateChecker$checkState$2;->$dccData:Lde/rki/coronawarnapp/covidcertificate/common/certificate/DccData;
 
+    invoke-interface {p1}, Lde/rki/coronawarnapp/appconfig/mapping/ConfigMapping;->getCovidCertificateParameters()Lde/rki/coronawarnapp/appconfig/CovidCertificateConfig;
+
+    move-result-object v6
+
+    invoke-interface {v6}, Lde/rki/coronawarnapp/appconfig/CovidCertificateConfig;->getBlockListParameters()Ljava/util/List;
+
+    move-result-object v6
+
+    invoke-virtual {v1, v5, v6}, Lde/rki/coronawarnapp/covidcertificate/validation/core/BlocklistValidator;->validate(Lde/rki/coronawarnapp/covidcertificate/common/certificate/DccData;Ljava/util/List;)V
+    :try_end_1
+    .catch Ljava/lang/Exception; {:try_start_1 .. :try_end_1} :catch_1
+
+    :try_start_2
+    iget-object v1, p0, Lde/rki/coronawarnapp/covidcertificate/common/statecheck/DccStateChecker$checkState$2;->this$0:Lde/rki/coronawarnapp/covidcertificate/common/statecheck/DccStateChecker;
+
+    iget-object v5, v1, Lde/rki/coronawarnapp/covidcertificate/common/statecheck/DccStateChecker;->dscSignatureValidator:Lde/rki/coronawarnapp/covidcertificate/signature/core/DscSignatureValidator;
+
+    iget-object v6, p0, Lde/rki/coronawarnapp/covidcertificate/common/statecheck/DccStateChecker$checkState$2;->$dccData:Lde/rki/coronawarnapp/covidcertificate/common/certificate/DccData;
+
+    const/4 v8, 0x0
+
+    const/4 v10, 0x4
+
     iput-object p1, p0, Lde/rki/coronawarnapp/covidcertificate/common/statecheck/DccStateChecker$checkState$2;->L$0:Ljava/lang/Object;
 
-    iput v3, p0, Lde/rki/coronawarnapp/covidcertificate/common/statecheck/DccStateChecker$checkState$2;->label:I
+    iput v4, p0, Lde/rki/coronawarnapp/covidcertificate/common/statecheck/DccStateChecker$checkState$2;->label:I
 
-    invoke-virtual {v4, v5, v1, p0}, Lde/rki/coronawarnapp/covidcertificate/signature/core/DscSignatureValidator;->validateSignature(Lde/rki/coronawarnapp/covidcertificate/common/certificate/DccData;Lde/rki/coronawarnapp/covidcertificate/signature/core/DscData;Lkotlin/coroutines/Continuation;)Ljava/lang/Object;
+    move-object v9, p0
+
+    invoke-static/range {v5 .. v10}, Lde/rki/coronawarnapp/covidcertificate/signature/core/DscSignatureValidator;->validateSignature$default(Lde/rki/coronawarnapp/covidcertificate/signature/core/DscSignatureValidator;Lde/rki/coronawarnapp/covidcertificate/common/certificate/DccData;Lde/rki/coronawarnapp/covidcertificate/signature/core/DscData;Ljava/util/Date;Lkotlin/coroutines/Continuation;I)Ljava/lang/Object;
 
     move-result-object v1
-    :try_end_1
-    .catch Ljava/lang/Exception; {:try_start_1 .. :try_end_1} :catch_0
+    :try_end_2
+    .catch Ljava/lang/Exception; {:try_start_2 .. :try_end_2} :catch_0
 
     if-ne v1, v0, :cond_2
 
@@ -200,13 +225,13 @@
 
     invoke-static {}, Ljava/lang/System;->currentTimeMillis()J
 
-    move-result-wide v4
+    move-result-wide v1
 
     iget-object p1, p0, Lde/rki/coronawarnapp/covidcertificate/common/statecheck/DccStateChecker$checkState$2;->this$0:Lde/rki/coronawarnapp/covidcertificate/common/statecheck/DccStateChecker;
 
     iget-object p1, p1, Lde/rki/coronawarnapp/covidcertificate/common/statecheck/DccStateChecker;->expirationChecker:Lde/rki/coronawarnapp/covidcertificate/expiration/DccExpirationChecker;
 
-    iget-object v1, p0, Lde/rki/coronawarnapp/covidcertificate/common/statecheck/DccStateChecker$checkState$2;->$dccData:Lde/rki/coronawarnapp/covidcertificate/common/certificate/DccData;
+    iget-object v5, p0, Lde/rki/coronawarnapp/covidcertificate/common/statecheck/DccStateChecker$checkState$2;->$dccData:Lde/rki/coronawarnapp/covidcertificate/common/certificate/DccData;
 
     invoke-interface {v0}, Lde/rki/coronawarnapp/appconfig/mapping/ConfigMapping;->getCovidCertificateParameters()Lde/rki/coronawarnapp/appconfig/CovidCertificateConfig;
 
@@ -228,47 +253,41 @@
 
     const-string p1, "dccData"
 
-    invoke-static {v1, p1}, Lkotlin/jvm/internal/Intrinsics;->checkNotNullParameter(Ljava/lang/Object;Ljava/lang/String;)V
+    invoke-static {v5, p1}, Lkotlin/jvm/internal/Intrinsics;->checkNotNullParameter(Ljava/lang/Object;Ljava/lang/String;)V
 
     const-string p1, "expirationThreshold"
 
     invoke-static {v0, p1}, Lkotlin/jvm/internal/Intrinsics;->checkNotNullParameter(Ljava/lang/Object;Ljava/lang/String;)V
 
-    const-string/jumbo p1, "timeZone"
+    iget-object p1, v5, Lde/rki/coronawarnapp/covidcertificate/common/certificate/DccData;->header:Lde/rki/coronawarnapp/covidcertificate/common/certificate/DccHeader;
 
-    invoke-static {v6, p1}, Lkotlin/jvm/internal/Intrinsics;->checkNotNullParameter(Ljava/lang/Object;Ljava/lang/String;)V
+    iget-object p1, p1, Lde/rki/coronawarnapp/covidcertificate/common/certificate/DccHeader;->expiresAt:Lorg/joda/time/Instant;
 
-    iget-object v1, v1, Lde/rki/coronawarnapp/covidcertificate/common/certificate/DccData;->header:Lde/rki/coronawarnapp/covidcertificate/common/certificate/DccHeader;
+    sget-object v5, Lde/rki/coronawarnapp/util/TimeAndDateExtensions;->INSTANCE:Lde/rki/coronawarnapp/util/TimeAndDateExtensions;
 
-    iget-object v1, v1, Lde/rki/coronawarnapp/covidcertificate/common/certificate/DccHeader;->expiresAt:Lorg/joda/time/Instant;
+    const-string v5, "date"
 
-    sget-object v7, Lde/rki/coronawarnapp/util/TimeAndDateExtensions;->INSTANCE:Lde/rki/coronawarnapp/util/TimeAndDateExtensions;
+    invoke-static {p1, v5}, Lkotlin/jvm/internal/Intrinsics;->checkNotNullParameter(Ljava/lang/Object;Ljava/lang/String;)V
 
-    const-string v7, "date"
+    sget-object v5, Lorg/joda/time/chrono/ISOChronology;->INSTANCE_UTC:Lorg/joda/time/chrono/ISOChronology;
 
-    invoke-static {v1, v7}, Lkotlin/jvm/internal/Intrinsics;->checkNotNullParameter(Ljava/lang/Object;Ljava/lang/String;)V
+    invoke-static {v5}, Lorg/joda/time/DateTimeUtils;->getChronology(Lorg/joda/time/Chronology;)Lorg/joda/time/Chronology;
 
-    invoke-static {v6, p1}, Lkotlin/jvm/internal/Intrinsics;->checkNotNullParameter(Ljava/lang/Object;Ljava/lang/String;)V
+    move-result-object v5
 
-    sget-object p1, Lorg/joda/time/chrono/ISOChronology;->INSTANCE_UTC:Lorg/joda/time/chrono/ISOChronology;
+    invoke-virtual {v5, v6}, Lorg/joda/time/Chronology;->withZone(Lorg/joda/time/DateTimeZone;)Lorg/joda/time/Chronology;
 
-    invoke-static {p1}, Lorg/joda/time/DateTimeUtils;->getChronology(Lorg/joda/time/Chronology;)Lorg/joda/time/Chronology;
-
-    move-result-object p1
-
-    invoke-virtual {p1, v6}, Lorg/joda/time/Chronology;->withZone(Lorg/joda/time/DateTimeZone;)Lorg/joda/time/Chronology;
-
-    move-result-object p1
+    move-result-object v5
 
     new-instance v7, Lorg/joda/time/DateTime;
 
-    invoke-direct {v7, v4, v5, p1}, Lorg/joda/time/DateTime;-><init>(JLorg/joda/time/Chronology;)V
+    invoke-direct {v7, v1, v2, v5}, Lorg/joda/time/DateTime;-><init>(JLorg/joda/time/Chronology;)V
 
     invoke-virtual {v7}, Lorg/joda/time/DateTime;->toLocalDate()Lorg/joda/time/LocalDate;
 
-    move-result-object p1
+    move-result-object v5
 
-    invoke-virtual {v1, v6}, Lorg/joda/time/base/AbstractInstant;->toDateTime(Lorg/joda/time/DateTimeZone;)Lorg/joda/time/DateTime;
+    invoke-virtual {p1, v6}, Lorg/joda/time/base/AbstractInstant;->toDateTime(Lorg/joda/time/DateTimeZone;)Lorg/joda/time/DateTime;
 
     move-result-object v6
 
@@ -276,81 +295,81 @@
 
     move-result-object v6
 
-    invoke-static {p1, v6}, Lorg/joda/time/Days;->daysBetween(Lorg/joda/time/ReadablePartial;Lorg/joda/time/ReadablePartial;)Lorg/joda/time/Days;
+    invoke-static {v5, v6}, Lorg/joda/time/Days;->daysBetween(Lorg/joda/time/ReadablePartial;Lorg/joda/time/ReadablePartial;)Lorg/joda/time/Days;
 
-    move-result-object p1
+    move-result-object v5
 
-    iget p1, p1, Lorg/joda/time/base/BaseSingleFieldPeriod;->iPeriod:I
+    iget v5, v5, Lorg/joda/time/base/BaseSingleFieldPeriod;->iPeriod:I
 
-    if-gez p1, :cond_3
+    if-gez v5, :cond_3
 
-    new-instance p1, Lde/rki/coronawarnapp/covidcertificate/common/certificate/CwaCovidCertificate$State$Expired;
+    new-instance v0, Lde/rki/coronawarnapp/covidcertificate/common/certificate/CwaCovidCertificate$State$Expired;
 
-    invoke-direct {p1, v1}, Lde/rki/coronawarnapp/covidcertificate/common/certificate/CwaCovidCertificate$State$Expired;-><init>(Lorg/joda/time/Instant;)V
+    invoke-direct {v0, p1}, Lde/rki/coronawarnapp/covidcertificate/common/certificate/CwaCovidCertificate$State$Expired;-><init>(Lorg/joda/time/Instant;)V
 
     goto :goto_1
 
     :cond_3
-    if-nez p1, :cond_6
+    if-nez v5, :cond_6
 
-    invoke-static {v1}, Lorg/joda/time/DateTimeUtils;->getInstantMillis(Lorg/joda/time/ReadableInstant;)J
+    invoke-static {p1}, Lorg/joda/time/DateTimeUtils;->getInstantMillis(Lorg/joda/time/ReadableInstant;)J
 
-    move-result-wide v6
+    move-result-wide v5
 
-    cmp-long p1, v4, v6
+    cmp-long v0, v1, v5
 
-    if-lez p1, :cond_4
+    if-lez v0, :cond_4
 
-    move v2, v3
+    move v3, v4
 
     :cond_4
-    if-eqz v2, :cond_5
+    if-eqz v3, :cond_5
 
-    new-instance p1, Lde/rki/coronawarnapp/covidcertificate/common/certificate/CwaCovidCertificate$State$Expired;
+    new-instance v0, Lde/rki/coronawarnapp/covidcertificate/common/certificate/CwaCovidCertificate$State$Expired;
 
-    invoke-direct {p1, v1}, Lde/rki/coronawarnapp/covidcertificate/common/certificate/CwaCovidCertificate$State$Expired;-><init>(Lorg/joda/time/Instant;)V
+    invoke-direct {v0, p1}, Lde/rki/coronawarnapp/covidcertificate/common/certificate/CwaCovidCertificate$State$Expired;-><init>(Lorg/joda/time/Instant;)V
 
     goto :goto_1
 
     :cond_5
-    new-instance p1, Lde/rki/coronawarnapp/covidcertificate/common/certificate/CwaCovidCertificate$State$ExpiringSoon;
+    new-instance v0, Lde/rki/coronawarnapp/covidcertificate/common/certificate/CwaCovidCertificate$State$ExpiringSoon;
 
-    invoke-direct {p1, v1}, Lde/rki/coronawarnapp/covidcertificate/common/certificate/CwaCovidCertificate$State$ExpiringSoon;-><init>(Lorg/joda/time/Instant;)V
+    invoke-direct {v0, p1}, Lde/rki/coronawarnapp/covidcertificate/common/certificate/CwaCovidCertificate$State$ExpiringSoon;-><init>(Lorg/joda/time/Instant;)V
 
     goto :goto_1
 
     :cond_6
-    int-to-long v2, p1
+    int-to-long v1, v5
 
     invoke-virtual {v0}, Lorg/joda/time/Duration;->getStandardDays()J
 
-    move-result-wide v4
+    move-result-wide v3
 
-    cmp-long p1, v2, v4
+    cmp-long v3, v1, v3
 
-    if-gtz p1, :cond_7
+    if-gtz v3, :cond_7
 
-    new-instance p1, Lde/rki/coronawarnapp/covidcertificate/common/certificate/CwaCovidCertificate$State$ExpiringSoon;
+    new-instance v0, Lde/rki/coronawarnapp/covidcertificate/common/certificate/CwaCovidCertificate$State$ExpiringSoon;
 
-    invoke-direct {p1, v1}, Lde/rki/coronawarnapp/covidcertificate/common/certificate/CwaCovidCertificate$State$ExpiringSoon;-><init>(Lorg/joda/time/Instant;)V
+    invoke-direct {v0, p1}, Lde/rki/coronawarnapp/covidcertificate/common/certificate/CwaCovidCertificate$State$ExpiringSoon;-><init>(Lorg/joda/time/Instant;)V
 
     goto :goto_1
 
     :cond_7
     invoke-virtual {v0}, Lorg/joda/time/Duration;->getStandardDays()J
 
-    move-result-wide v4
+    move-result-wide v3
 
-    cmp-long p1, v2, v4
+    cmp-long v0, v1, v3
 
-    if-lez p1, :cond_8
+    if-lez v0, :cond_8
 
-    new-instance p1, Lde/rki/coronawarnapp/covidcertificate/common/certificate/CwaCovidCertificate$State$Valid;
+    new-instance v0, Lde/rki/coronawarnapp/covidcertificate/common/certificate/CwaCovidCertificate$State$Valid;
 
-    invoke-direct {p1, v1}, Lde/rki/coronawarnapp/covidcertificate/common/certificate/CwaCovidCertificate$State$Valid;-><init>(Lorg/joda/time/Instant;)V
+    invoke-direct {v0, p1}, Lde/rki/coronawarnapp/covidcertificate/common/certificate/CwaCovidCertificate$State$Valid;-><init>(Lorg/joda/time/Instant;)V
 
     :goto_1
-    return-object p1
+    return-object v0
 
     :cond_8
     new-instance p1, Ljava/lang/IllegalArgumentException;
@@ -359,24 +378,49 @@
 
     throw p1
 
-    :catch_0
+    :goto_2
+    sget-object v0, Ltimber/log/Timber;->Forest:Ltimber/log/Timber$Forest;
+
+    invoke-virtual {v0, v2}, Ltimber/log/Timber$Forest;->tag(Ljava/lang/String;)Ltimber/log/Timber$Tree;
+
+    new-array v1, v4, [Ljava/lang/Object;
+
+    invoke-virtual {p1}, Ljava/lang/Exception;->getMessage()Ljava/lang/String;
+
+    move-result-object p1
+
+    aput-object p1, v1, v3
+
+    const-string p1, "Certificate had invalid signature %s"
+
+    invoke-virtual {v0, p1, v1}, Ltimber/log/Timber$Tree;->w(Ljava/lang/String;[Ljava/lang/Object;)V
+
+    new-instance p1, Lde/rki/coronawarnapp/covidcertificate/common/certificate/CwaCovidCertificate$State$Invalid;
+
+    invoke-direct {p1, v3, v4}, Lde/rki/coronawarnapp/covidcertificate/common/certificate/CwaCovidCertificate$State$Invalid;-><init>(ZI)V
+
+    return-object p1
+
+    :catch_1
     move-exception p1
 
     sget-object v0, Ltimber/log/Timber;->Forest:Ltimber/log/Timber$Forest;
 
-    const-string v1, "DccStateChecker"
+    invoke-virtual {v0, v2}, Ltimber/log/Timber$Forest;->tag(Ljava/lang/String;)Ltimber/log/Timber$Tree;
 
-    invoke-virtual {v0, v1}, Ltimber/log/Timber$Forest;->tag(Ljava/lang/String;)Ltimber/log/Timber$Tree;
+    new-array v1, v4, [Ljava/lang/Object;
 
-    new-array v1, v2, [Ljava/lang/Object;
+    invoke-virtual {p1}, Ljava/lang/Exception;->getMessage()Ljava/lang/String;
 
-    const-string v4, "Certificate had invalid signature."
+    move-result-object p1
 
-    invoke-virtual {v0, p1, v4, v1}, Ltimber/log/Timber$Tree;->w(Ljava/lang/Throwable;Ljava/lang/String;[Ljava/lang/Object;)V
+    aput-object p1, v1, v3
 
-    new-instance p1, Lde/rki/coronawarnapp/covidcertificate/common/certificate/CwaCovidCertificate$State$Invalid;
+    const-string p1, "Certificate is in the blocklist %s"
 
-    invoke-direct {p1, v2, v3}, Lde/rki/coronawarnapp/covidcertificate/common/certificate/CwaCovidCertificate$State$Invalid;-><init>(ZI)V
+    invoke-virtual {v0, p1, v1}, Ltimber/log/Timber$Tree;->w(Ljava/lang/String;[Ljava/lang/Object;)V
+
+    sget-object p1, Lde/rki/coronawarnapp/covidcertificate/common/certificate/CwaCovidCertificate$State$Blocked;->INSTANCE:Lde/rki/coronawarnapp/covidcertificate/common/certificate/CwaCovidCertificate$State$Blocked;
 
     return-object p1
 .end method

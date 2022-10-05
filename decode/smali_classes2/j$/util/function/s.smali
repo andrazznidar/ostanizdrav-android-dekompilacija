@@ -2,200 +2,49 @@
 .super Ljava/lang/Object;
 
 # interfaces
-.implements Lj$/util/function/Predicate;
+.implements Lj$/util/function/t;
 
 
 # instance fields
-.field public final synthetic a:I
-
-.field public final synthetic b:Lj$/util/function/Predicate;
-
-.field public final synthetic c:Lj$/util/function/Predicate;
+.field final synthetic a:Ljava/util/function/LongConsumer;
 
 
 # direct methods
-.method public synthetic constructor <init>(Lj$/util/function/Predicate;Lj$/util/function/Predicate;I)V
+.method private synthetic constructor <init>(Ljava/util/function/LongConsumer;)V
+    .locals 0
+
+    invoke-direct {p0}, Ljava/lang/Object;-><init>()V
+
+    iput-object p1, p0, Lj$/util/function/s;->a:Ljava/util/function/LongConsumer;
+
+    return-void
+.end method
+
+.method public static synthetic a(Ljava/util/function/LongConsumer;)Lj$/util/function/t;
     .locals 1
 
-    iput p3, p0, Lj$/util/function/s;->a:I
+    if-nez p0, :cond_0
 
-    const/4 v0, 0x1
+    const/4 p0, 0x0
 
-    if-eq p3, v0, :cond_0
-
-    invoke-direct {p0}, Ljava/lang/Object;-><init>()V
-
-    iput-object p1, p0, Lj$/util/function/s;->b:Lj$/util/function/Predicate;
-
-    iput-object p2, p0, Lj$/util/function/s;->c:Lj$/util/function/Predicate;
-
-    return-void
+    return-object p0
 
     :cond_0
-    invoke-direct {p0}, Ljava/lang/Object;-><init>()V
+    new-instance v0, Lj$/util/function/s;
 
-    iput-object p1, p0, Lj$/util/function/s;->b:Lj$/util/function/Predicate;
+    invoke-direct {v0, p0}, Lj$/util/function/s;-><init>(Ljava/util/function/LongConsumer;)V
 
-    iput-object p2, p0, Lj$/util/function/s;->c:Lj$/util/function/Predicate;
-
-    return-void
+    return-object v0
 .end method
 
 
 # virtual methods
-.method public synthetic and(Lj$/util/function/Predicate;)Lj$/util/function/Predicate;
+.method public synthetic d(J)V
     .locals 1
 
-    iget v0, p0, Lj$/util/function/s;->a:I
+    iget-object v0, p0, Lj$/util/function/s;->a:Ljava/util/function/LongConsumer;
 
-    packed-switch v0, :pswitch_data_0
+    invoke-interface {v0, p1, p2}, Ljava/util/function/LongConsumer;->accept(J)V
 
-    goto :goto_0
-
-    :pswitch_0
-    invoke-static {p0, p1}, Lj$/util/function/Predicate$-CC;->$default$and(Lj$/util/function/Predicate;Lj$/util/function/Predicate;)Lj$/util/function/Predicate;
-
-    move-result-object p1
-
-    return-object p1
-
-    :goto_0
-    invoke-static {p0, p1}, Lj$/util/function/Predicate$-CC;->$default$and(Lj$/util/function/Predicate;Lj$/util/function/Predicate;)Lj$/util/function/Predicate;
-
-    move-result-object p1
-
-    return-object p1
-
-    :pswitch_data_0
-    .packed-switch 0x0
-        :pswitch_0
-    .end packed-switch
-.end method
-
-.method public synthetic negate()Lj$/util/function/Predicate;
-    .locals 1
-
-    iget v0, p0, Lj$/util/function/s;->a:I
-
-    packed-switch v0, :pswitch_data_0
-
-    goto :goto_0
-
-    :pswitch_0
-    invoke-static {p0}, Lj$/util/function/Predicate$-CC;->$default$negate(Lj$/util/function/Predicate;)Lj$/util/function/Predicate;
-
-    move-result-object v0
-
-    return-object v0
-
-    :goto_0
-    invoke-static {p0}, Lj$/util/function/Predicate$-CC;->$default$negate(Lj$/util/function/Predicate;)Lj$/util/function/Predicate;
-
-    move-result-object v0
-
-    return-object v0
-
-    :pswitch_data_0
-    .packed-switch 0x0
-        :pswitch_0
-    .end packed-switch
-.end method
-
-.method public synthetic or(Lj$/util/function/Predicate;)Lj$/util/function/Predicate;
-    .locals 1
-
-    iget v0, p0, Lj$/util/function/s;->a:I
-
-    packed-switch v0, :pswitch_data_0
-
-    goto :goto_0
-
-    :pswitch_0
-    invoke-static {p0, p1}, Lj$/util/function/Predicate$-CC;->$default$or(Lj$/util/function/Predicate;Lj$/util/function/Predicate;)Lj$/util/function/Predicate;
-
-    move-result-object p1
-
-    return-object p1
-
-    :goto_0
-    invoke-static {p0, p1}, Lj$/util/function/Predicate$-CC;->$default$or(Lj$/util/function/Predicate;Lj$/util/function/Predicate;)Lj$/util/function/Predicate;
-
-    move-result-object p1
-
-    return-object p1
-
-    :pswitch_data_0
-    .packed-switch 0x0
-        :pswitch_0
-    .end packed-switch
-.end method
-
-.method public final test(Ljava/lang/Object;)Z
-    .locals 4
-
-    iget v0, p0, Lj$/util/function/s;->a:I
-
-    const/4 v1, 0x1
-
-    const/4 v2, 0x0
-
-    packed-switch v0, :pswitch_data_0
-
-    goto :goto_1
-
-    :pswitch_0
-    iget-object v0, p0, Lj$/util/function/s;->b:Lj$/util/function/Predicate;
-
-    iget-object v3, p0, Lj$/util/function/s;->c:Lj$/util/function/Predicate;
-
-    invoke-interface {v0, p1}, Lj$/util/function/Predicate;->test(Ljava/lang/Object;)Z
-
-    move-result v0
-
-    if-eqz v0, :cond_0
-
-    invoke-interface {v3, p1}, Lj$/util/function/Predicate;->test(Ljava/lang/Object;)Z
-
-    move-result p1
-
-    if-eqz p1, :cond_0
-
-    goto :goto_0
-
-    :cond_0
-    move v1, v2
-
-    :goto_0
-    return v1
-
-    :goto_1
-    iget-object v0, p0, Lj$/util/function/s;->b:Lj$/util/function/Predicate;
-
-    iget-object v3, p0, Lj$/util/function/s;->c:Lj$/util/function/Predicate;
-
-    invoke-interface {v0, p1}, Lj$/util/function/Predicate;->test(Ljava/lang/Object;)Z
-
-    move-result v0
-
-    if-nez v0, :cond_2
-
-    invoke-interface {v3, p1}, Lj$/util/function/Predicate;->test(Ljava/lang/Object;)Z
-
-    move-result p1
-
-    if-eqz p1, :cond_1
-
-    goto :goto_2
-
-    :cond_1
-    move v1, v2
-
-    :cond_2
-    :goto_2
-    return v1
-
-    :pswitch_data_0
-    .packed-switch 0x0
-        :pswitch_0
-    .end packed-switch
+    return-void
 .end method

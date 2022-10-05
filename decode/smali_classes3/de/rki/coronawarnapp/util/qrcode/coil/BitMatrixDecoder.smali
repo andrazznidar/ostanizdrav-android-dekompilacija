@@ -42,7 +42,7 @@
 
 # virtual methods
 .method public decode(Lcoil/bitmap/BitmapPool;Lokio/BufferedSource;Lcoil/size/Size;Lcoil/decode/Options;Lkotlin/coroutines/Continuation;)Ljava/lang/Object;
-    .locals 20
+    .locals 22
     .annotation system Ldalvik/annotation/Signature;
         value = {
             "(",
@@ -79,7 +79,7 @@
 
     move-result-object v5
 
-    if-eqz v5, :cond_7
+    if-eqz v5, :cond_5
 
     check-cast v5, [[B
     :try_end_0
@@ -124,7 +124,7 @@
     :cond_0
     instance-of v7, v0, Lcoil/size/PixelSize;
 
-    if-eqz v7, :cond_6
+    if-eqz v7, :cond_4
 
     check-cast v0, Lcoil/size/PixelSize;
 
@@ -233,153 +233,101 @@
 
     invoke-virtual {v15, v11}, Landroid/graphics/Paint;->setColor(I)V
 
-    if-lez v4, :cond_5
-
-    const/4 v12, 0x0
+    const/4 v13, 0x0
 
     :goto_1
-    add-int/lit8 v11, v12, 0x1
+    const/4 v12, 0x1
 
-    if-lez v6, :cond_3
+    if-ge v13, v4, :cond_3
 
-    const/4 v14, 0x0
+    add-int/lit8 v17, v13, 0x1
+
+    const/4 v11, 0x0
 
     :goto_2
-    add-int/lit8 v13, v14, 0x1
+    if-ge v11, v6, :cond_2
 
-    aget-object v16, v5, v12
+    add-int/lit8 v18, v11, 0x1
 
-    move-object/from16 p4, v5
+    aget-object v16, v5, v13
 
-    aget-byte v5, v16, v14
+    aget-byte v14, v16, v11
 
-    move/from16 p3, v13
+    if-eq v14, v12, :cond_1
 
-    const/4 v13, 0x1
+    move/from16 p2, v4
 
-    if-eq v5, v13, :cond_1
+    move v4, v12
 
-    move/from16 v5, p3
-
-    move-object/from16 p3, v7
-
-    move/from16 p2, v8
-
-    move v8, v11
-
-    move/from16 v18, v12
-
-    move v7, v13
+    move/from16 v21, v13
 
     move-object/from16 v19, v15
 
     goto :goto_3
 
     :cond_1
-    int-to-float v5, v14
+    int-to-float v11, v11
 
-    mul-float/2addr v5, v9
+    mul-float/2addr v11, v9
 
-    add-float/2addr v5, v8
+    add-float v14, v11, v8
 
-    int-to-float v14, v12
+    int-to-float v11, v13
 
-    mul-float/2addr v14, v9
+    mul-float/2addr v11, v9
 
-    add-float/2addr v14, v10
+    add-float v16, v11, v10
 
-    add-float v16, v5, v9
+    add-float v19, v14, v9
 
-    add-float v17, v14, v9
-
-    move/from16 p2, v8
-
-    move v8, v11
+    add-float v20, v16, v9
 
     move-object v11, v7
 
-    move/from16 v18, v12
+    move/from16 p2, v4
 
-    move v12, v5
+    move v4, v12
 
-    move/from16 v5, p3
+    move v12, v14
 
-    move-object/from16 p3, v7
+    move/from16 v21, v13
 
-    move v7, v13
+    move/from16 v13, v16
 
-    move v13, v14
-
-    move/from16 v14, v16
+    move/from16 v14, v19
 
     move-object/from16 v19, v15
 
-    move/from16 v15, v17
+    move/from16 v15, v20
 
     move-object/from16 v16, v19
 
     invoke-virtual/range {v11 .. v16}, Landroid/graphics/Canvas;->drawRect(FFFFLandroid/graphics/Paint;)V
 
     :goto_3
-    if-lt v5, v6, :cond_2
+    move v12, v4
 
-    goto :goto_4
-
-    :cond_2
-    move-object/from16 v7, p3
-
-    move v14, v5
-
-    move v11, v8
-
-    move/from16 v12, v18
+    move/from16 v11, v18
 
     move-object/from16 v15, v19
 
-    move/from16 v8, p2
+    move/from16 v13, v21
 
-    move-object/from16 v5, p4
+    move/from16 v4, p2
 
     goto :goto_2
 
-    :cond_3
-    move-object/from16 p4, v5
-
-    move-object/from16 p3, v7
-
-    move/from16 p2, v8
-
-    move v8, v11
-
-    move-object/from16 v19, v15
-
-    const/4 v7, 0x1
-
-    :goto_4
-    if-lt v8, v4, :cond_4
-
-    goto :goto_5
-
-    :cond_4
-    move-object/from16 v7, p3
-
-    move-object/from16 v5, p4
-
-    move v12, v8
-
-    move-object/from16 v15, v19
-
-    move/from16 v8, p2
+    :cond_2
+    move/from16 v13, v17
 
     goto :goto_1
 
-    :cond_5
-    const/4 v7, 0x1
+    :cond_3
+    move v4, v12
 
-    :goto_5
-    sget-object v4, Ltimber/log/Timber;->Forest:Ltimber/log/Timber$Forest;
+    sget-object v5, Ltimber/log/Timber;->Forest:Ltimber/log/Timber$Forest;
 
-    new-array v5, v7, [Ljava/lang/Object;
+    new-array v4, v4, [Ljava/lang/Object;
 
     invoke-static {}, Ljava/lang/System;->currentTimeMillis()J
 
@@ -393,11 +341,11 @@
 
     const/4 v3, 0x0
 
-    aput-object v2, v5, v3
+    aput-object v2, v4, v3
 
     const-string v2, "Bitmap generation took %dms"
 
-    invoke-virtual {v4, v2, v5}, Ltimber/log/Timber$Forest;->v(Ljava/lang/String;[Ljava/lang/Object;)V
+    invoke-virtual {v5, v2, v4}, Ltimber/log/Timber$Forest;->v(Ljava/lang/String;[Ljava/lang/Object;)V
 
     new-instance v2, Lcoil/decode/DecodeResult;
 
@@ -411,14 +359,14 @@
 
     return-object v2
 
-    :cond_6
+    :cond_4
     new-instance v0, Lkotlin/NoWhenBranchMatchedException;
 
     invoke-direct {v0}, Lkotlin/NoWhenBranchMatchedException;-><init>()V
 
     throw v0
 
-    :cond_7
+    :cond_5
     :try_start_1
     new-instance v0, Ljava/lang/NullPointerException;
 

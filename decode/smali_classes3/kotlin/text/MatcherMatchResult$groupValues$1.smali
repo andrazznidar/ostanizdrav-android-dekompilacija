@@ -29,11 +29,6 @@
 # direct methods
 .method public constructor <init>(Lkotlin/text/MatcherMatchResult;)V
     .locals 0
-    .annotation system Ldalvik/annotation/Signature;
-        value = {
-            "()V"
-        }
-    .end annotation
 
     iput-object p1, p0, Lkotlin/text/MatcherMatchResult$groupValues$1;->this$0:Lkotlin/text/MatcherMatchResult;
 
@@ -49,18 +44,18 @@
 
     instance-of v0, p1, Ljava/lang/String;
 
-    if-eqz v0, :cond_0
+    if-nez v0, :cond_0
 
+    const/4 p1, 0x0
+
+    return p1
+
+    :cond_0
     check-cast p1, Ljava/lang/String;
 
     invoke-super {p0, p1}, Lkotlin/collections/AbstractCollection;->contains(Ljava/lang/Object;)Z
 
     move-result p1
-
-    return p1
-
-    :cond_0
-    const/4 p1, 0x0
 
     return p1
 .end method
@@ -76,14 +71,11 @@
 
     move-result-object p1
 
-    if-eqz p1, :cond_0
+    if-nez p1, :cond_0
 
-    goto :goto_0
-
-    :cond_0
     const-string p1, ""
 
-    :goto_0
+    :cond_0
     return-object p1
 .end method
 
@@ -108,18 +100,18 @@
 
     instance-of v0, p1, Ljava/lang/String;
 
-    if-eqz v0, :cond_0
+    if-nez v0, :cond_0
 
+    const/4 p1, -0x1
+
+    return p1
+
+    :cond_0
     check-cast p1, Ljava/lang/String;
 
     invoke-super {p0, p1}, Lkotlin/collections/AbstractList;->indexOf(Ljava/lang/Object;)I
 
     move-result p1
-
-    return p1
-
-    :cond_0
-    const/4 p1, -0x1
 
     return p1
 .end method
@@ -129,18 +121,18 @@
 
     instance-of v0, p1, Ljava/lang/String;
 
-    if-eqz v0, :cond_0
+    if-nez v0, :cond_0
 
+    const/4 p1, -0x1
+
+    return p1
+
+    :cond_0
     check-cast p1, Ljava/lang/String;
 
     invoke-super {p0, p1}, Lkotlin/collections/AbstractList;->lastIndexOf(Ljava/lang/Object;)I
 
     move-result p1
-
-    return p1
-
-    :cond_0
-    const/4 p1, -0x1
 
     return p1
 .end method

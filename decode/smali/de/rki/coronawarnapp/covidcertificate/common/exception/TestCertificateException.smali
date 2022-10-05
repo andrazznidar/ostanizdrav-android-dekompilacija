@@ -6,33 +6,27 @@
 .implements Lde/rki/coronawarnapp/util/HasHumanReadableError;
 
 
-# annotations
-.annotation system Ldalvik/annotation/MemberClasses;
-    value = {
-        Lde/rki/coronawarnapp/covidcertificate/common/exception/TestCertificateException$ErrorCode;
-    }
-.end annotation
-
-
 # instance fields
-.field public final errorCode:Lde/rki/coronawarnapp/covidcertificate/common/exception/TestCertificateException$ErrorCode;
+.field public final errorCode:I
 
 .field public final errorMessage:Lde/rki/coronawarnapp/util/ui/LazyString;
 
 
 # direct methods
-.method public constructor <init>(Lde/rki/coronawarnapp/covidcertificate/common/exception/TestCertificateException$ErrorCode;Ljava/lang/Throwable;)V
+.method public constructor <init>(ILjava/lang/Throwable;)V
     .locals 1
 
     const-string v0, "errorCode"
 
-    invoke-static {p1, v0}, Lkotlin/jvm/internal/Intrinsics;->checkNotNullParameter(Ljava/lang/Object;Ljava/lang/String;)V
+    invoke-static {p1, v0}, Lkotlin/jvm/internal/Intrinsics$$ExternalSyntheticCheckNotZero0;->m(ILjava/lang/String;)V
 
-    iget-object v0, p1, Lde/rki/coronawarnapp/covidcertificate/common/exception/TestCertificateException$ErrorCode;->message:Ljava/lang/String;
+    invoke-static {p1}, Lde/rki/coronawarnapp/ui/main/home/HomeFragment$onViewCreated$4$$ExternalSyntheticOutline0;->getMessage(I)Ljava/lang/String;
+
+    move-result-object v0
 
     invoke-direct {p0, v0, p2}, Ljava/lang/Exception;-><init>(Ljava/lang/String;Ljava/lang/Throwable;)V
 
-    iput-object p1, p0, Lde/rki/coronawarnapp/covidcertificate/common/exception/TestCertificateException;->errorCode:Lde/rki/coronawarnapp/covidcertificate/common/exception/TestCertificateException$ErrorCode;
+    iput p1, p0, Lde/rki/coronawarnapp/covidcertificate/common/exception/TestCertificateException;->errorCode:I
 
     new-instance p1, Lde/rki/coronawarnapp/util/ui/CachedString;
 
@@ -58,7 +52,7 @@
 
     new-instance v0, Lde/rki/coronawarnapp/util/HumanReadableError;
 
-    const v1, 0x7f13064a
+    const v1, 0x7f1305f9
 
     invoke-virtual {p1, v1}, Landroid/content/Context;->getString(I)Ljava/lang/String;
 

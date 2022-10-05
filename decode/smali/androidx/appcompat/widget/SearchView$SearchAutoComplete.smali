@@ -216,7 +216,7 @@
 .method public onFinishInflate()V
     .locals 3
 
-    invoke-super {p0}, Landroid/view/View;->onFinishInflate()V
+    invoke-super {p0}, Landroid/widget/AutoCompleteTextView;->onFinishInflate()V
 
     invoke-virtual {p0}, Landroid/widget/AutoCompleteTextView;->getResources()Landroid/content/res/Resources;
 

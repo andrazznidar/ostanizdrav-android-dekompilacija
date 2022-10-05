@@ -127,9 +127,7 @@
 
     new-instance v0, Lokhttp3/ConnectionPool;
 
-    const/4 v1, 0x0
-
-    invoke-direct {v0, v1}, Lokhttp3/ConnectionPool;-><init>(I)V
+    invoke-direct {v0}, Lokhttp3/ConnectionPool;-><init>()V
 
     iput-object v0, p0, Lokhttp3/OkHttpClient$Builder;->connectionPool:Lokhttp3/ConnectionPool;
 
@@ -146,12 +144,6 @@
     iput-object v0, p0, Lokhttp3/OkHttpClient$Builder;->networkInterceptors:Ljava/util/List;
 
     sget-object v0, Lokhttp3/EventListener;->NONE:Lokhttp3/EventListener;
-
-    sget-object v1, Lokhttp3/internal/Util;->EMPTY_BYTE_ARRAY:[B
-
-    const-string v1, "$this$asFactory"
-
-    invoke-static {v0, v1}, Lkotlin/jvm/internal/Intrinsics;->checkNotNullParameter(Ljava/lang/Object;Ljava/lang/String;)V
 
     new-instance v1, Lokhttp3/internal/Util$asFactory$1;
 

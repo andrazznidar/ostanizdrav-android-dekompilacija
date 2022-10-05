@@ -36,9 +36,9 @@
 
     sget-object v4, Lde/rki/coronawarnapp/contactdiary/ui/day/tabs/ContactDiaryDayTab$LocationTab$1;->INSTANCE:Lde/rki/coronawarnapp/contactdiary/ui/day/tabs/ContactDiaryDayTab$LocationTab$1;
 
-    const v1, 0x7f1300b5
+    const v1, 0x7f1300b0
 
-    const v2, 0x7f1300b4
+    const v2, 0x7f1300af
 
     const v3, 0x7f130020
 

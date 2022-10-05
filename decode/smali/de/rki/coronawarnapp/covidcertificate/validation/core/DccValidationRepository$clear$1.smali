@@ -17,9 +17,9 @@
     c = "de.rki.coronawarnapp.covidcertificate.validation.core.DccValidationRepository"
     f = "DccValidationRepository.kt"
     l = {
-        0x82,
-        0x83,
-        0x84
+        0x84,
+        0x85,
+        0x86
     }
     m = "clear"
 .end annotation

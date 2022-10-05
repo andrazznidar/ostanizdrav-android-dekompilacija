@@ -189,7 +189,7 @@
 
     iget-object v0, p0, Lcom/fasterxml/jackson/databind/deser/impl/CreatorCandidate;->_creator:Lcom/fasterxml/jackson/databind/introspect/AnnotatedWithParams;
 
-    invoke-virtual {v0}, Lcom/fasterxml/jackson/databind/introspect/Annotated;->toString()Ljava/lang/String;
+    invoke-virtual {v0}, Lorg/joda/time/Chronology;->toString()Ljava/lang/String;
 
     move-result-object v0
 

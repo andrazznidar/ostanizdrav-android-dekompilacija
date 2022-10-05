@@ -95,29 +95,29 @@
 
     iput v0, p0, Landroidx/constraintlayout/core/LinearSystem;->mPoolVariablesCount:I
 
-    new-array v1, v1, [Landroidx/constraintlayout/core/ArrayRow;
+    new-array v0, v1, [Landroidx/constraintlayout/core/ArrayRow;
 
-    iput-object v1, p0, Landroidx/constraintlayout/core/LinearSystem;->mRows:[Landroidx/constraintlayout/core/ArrayRow;
+    iput-object v0, p0, Landroidx/constraintlayout/core/LinearSystem;->mRows:[Landroidx/constraintlayout/core/ArrayRow;
 
     invoke-virtual {p0}, Landroidx/constraintlayout/core/LinearSystem;->releaseRows()V
 
-    new-instance v1, Landroidx/constraintlayout/core/Cache;
+    new-instance v0, Landroidx/constraintlayout/core/Cache;
 
-    invoke-direct {v1, v0}, Landroidx/constraintlayout/core/Cache;-><init>(I)V
+    invoke-direct {v0}, Landroidx/constraintlayout/core/Cache;-><init>()V
 
-    iput-object v1, p0, Landroidx/constraintlayout/core/LinearSystem;->mCache:Landroidx/constraintlayout/core/Cache;
+    iput-object v0, p0, Landroidx/constraintlayout/core/LinearSystem;->mCache:Landroidx/constraintlayout/core/Cache;
 
-    new-instance v0, Landroidx/constraintlayout/core/PriorityGoalRow;
+    new-instance v1, Landroidx/constraintlayout/core/PriorityGoalRow;
 
-    invoke-direct {v0, v1}, Landroidx/constraintlayout/core/PriorityGoalRow;-><init>(Landroidx/constraintlayout/core/Cache;)V
+    invoke-direct {v1, v0}, Landroidx/constraintlayout/core/PriorityGoalRow;-><init>(Landroidx/constraintlayout/core/Cache;)V
 
-    iput-object v0, p0, Landroidx/constraintlayout/core/LinearSystem;->mGoal:Landroidx/constraintlayout/core/LinearSystem$Row;
+    iput-object v1, p0, Landroidx/constraintlayout/core/LinearSystem;->mGoal:Landroidx/constraintlayout/core/LinearSystem$Row;
 
-    new-instance v0, Landroidx/constraintlayout/core/ArrayRow;
+    new-instance v1, Landroidx/constraintlayout/core/ArrayRow;
 
-    invoke-direct {v0, v1}, Landroidx/constraintlayout/core/ArrayRow;-><init>(Landroidx/constraintlayout/core/Cache;)V
+    invoke-direct {v1, v0}, Landroidx/constraintlayout/core/ArrayRow;-><init>(Landroidx/constraintlayout/core/Cache;)V
 
-    iput-object v0, p0, Landroidx/constraintlayout/core/LinearSystem;->mTempGoal:Landroidx/constraintlayout/core/LinearSystem$Row;
+    iput-object v1, p0, Landroidx/constraintlayout/core/LinearSystem;->mTempGoal:Landroidx/constraintlayout/core/LinearSystem$Row;
 
     return-void
 .end method
@@ -129,9 +129,7 @@
 
     iget-object p2, p0, Landroidx/constraintlayout/core/LinearSystem;->mCache:Landroidx/constraintlayout/core/Cache;
 
-    iget-object p2, p2, Landroidx/constraintlayout/core/Cache;->solverVariablePool:Ljava/lang/Object;
-
-    check-cast p2, Landroidx/constraintlayout/core/Pools$SimplePool;
+    iget-object p2, p2, Landroidx/constraintlayout/core/Cache;->solverVariablePool:Landroidx/constraintlayout/core/Pools$SimplePool;
 
     invoke-virtual {p2}, Landroidx/constraintlayout/core/Pools$SimplePool;->acquire()Ljava/lang/Object;
 
@@ -748,9 +746,7 @@
 
     iget-object v5, v0, Landroidx/constraintlayout/core/LinearSystem;->mCache:Landroidx/constraintlayout/core/Cache;
 
-    iget-object v5, v5, Landroidx/constraintlayout/core/Cache;->mIndexedVariables:Ljava/lang/Object;
-
-    check-cast v5, [Landroidx/constraintlayout/core/SolverVariable;
+    iget-object v5, v5, Landroidx/constraintlayout/core/Cache;->mIndexedVariables:[Landroidx/constraintlayout/core/SolverVariable;
 
     aput-object v2, v5, v4
 
@@ -844,9 +840,7 @@
     :cond_19
     iget-object v2, v0, Landroidx/constraintlayout/core/LinearSystem;->mCache:Landroidx/constraintlayout/core/Cache;
 
-    iget-object v2, v2, Landroidx/constraintlayout/core/Cache;->arrayRowPool:Ljava/lang/Object;
-
-    check-cast v2, Landroidx/constraintlayout/core/Pools$SimplePool;
+    iget-object v2, v2, Landroidx/constraintlayout/core/Cache;->arrayRowPool:Landroidx/constraintlayout/core/Pools$SimplePool;
 
     invoke-virtual {v2, v1}, Landroidx/constraintlayout/core/Pools$SimplePool;->release(Ljava/lang/Object;)Z
 
@@ -1019,9 +1013,7 @@
 
     iget-object p2, p0, Landroidx/constraintlayout/core/LinearSystem;->mCache:Landroidx/constraintlayout/core/Cache;
 
-    iget-object p2, p2, Landroidx/constraintlayout/core/Cache;->mIndexedVariables:Ljava/lang/Object;
-
-    check-cast p2, [Landroidx/constraintlayout/core/SolverVariable;
+    iget-object p2, p2, Landroidx/constraintlayout/core/Cache;->mIndexedVariables:[Landroidx/constraintlayout/core/SolverVariable;
 
     aget-object p2, p2, p1
 
@@ -1340,9 +1332,7 @@
 
     iget-object v2, p0, Landroidx/constraintlayout/core/LinearSystem;->mCache:Landroidx/constraintlayout/core/Cache;
 
-    iget-object v2, v2, Landroidx/constraintlayout/core/Cache;->arrayRowPool:Ljava/lang/Object;
-
-    check-cast v2, Landroidx/constraintlayout/core/Pools$SimplePool;
+    iget-object v2, v2, Landroidx/constraintlayout/core/Cache;->arrayRowPool:Landroidx/constraintlayout/core/Pools$SimplePool;
 
     invoke-virtual {v2, v1}, Landroidx/constraintlayout/core/Pools$SimplePool;->release(Ljava/lang/Object;)Z
 
@@ -1486,9 +1476,7 @@
 
     iget-object p1, p0, Landroidx/constraintlayout/core/LinearSystem;->mCache:Landroidx/constraintlayout/core/Cache;
 
-    iget-object p1, p1, Landroidx/constraintlayout/core/Cache;->mIndexedVariables:Ljava/lang/Object;
-
-    check-cast p1, [Landroidx/constraintlayout/core/SolverVariable;
+    iget-object p1, p1, Landroidx/constraintlayout/core/Cache;->mIndexedVariables:[Landroidx/constraintlayout/core/SolverVariable;
 
     aput-object p2, p1, v0
 
@@ -1551,9 +1539,7 @@
 
     iget-object v3, p0, Landroidx/constraintlayout/core/LinearSystem;->mCache:Landroidx/constraintlayout/core/Cache;
 
-    iget-object v3, v3, Landroidx/constraintlayout/core/Cache;->mIndexedVariables:Ljava/lang/Object;
-
-    check-cast v3, [Landroidx/constraintlayout/core/SolverVariable;
+    iget-object v3, v3, Landroidx/constraintlayout/core/Cache;->mIndexedVariables:[Landroidx/constraintlayout/core/SolverVariable;
 
     aget-object v3, v3, p1
 
@@ -1583,9 +1569,7 @@
 
     iget-object v1, p0, Landroidx/constraintlayout/core/LinearSystem;->mCache:Landroidx/constraintlayout/core/Cache;
 
-    iget-object v1, v1, Landroidx/constraintlayout/core/Cache;->mIndexedVariables:Ljava/lang/Object;
-
-    check-cast v1, [Landroidx/constraintlayout/core/SolverVariable;
+    iget-object v1, v1, Landroidx/constraintlayout/core/Cache;->mIndexedVariables:[Landroidx/constraintlayout/core/SolverVariable;
 
     aput-object v0, v1, p1
 
@@ -1598,9 +1582,7 @@
 
     iget-object v0, p0, Landroidx/constraintlayout/core/LinearSystem;->mCache:Landroidx/constraintlayout/core/Cache;
 
-    iget-object v0, v0, Landroidx/constraintlayout/core/Cache;->arrayRowPool:Ljava/lang/Object;
-
-    check-cast v0, Landroidx/constraintlayout/core/Pools$SimplePool;
+    iget-object v0, v0, Landroidx/constraintlayout/core/Cache;->arrayRowPool:Landroidx/constraintlayout/core/Pools$SimplePool;
 
     invoke-virtual {v0}, Landroidx/constraintlayout/core/Pools$SimplePool;->acquire()Ljava/lang/Object;
 
@@ -1691,9 +1673,7 @@
 
     iget-object v2, p0, Landroidx/constraintlayout/core/LinearSystem;->mCache:Landroidx/constraintlayout/core/Cache;
 
-    iget-object v2, v2, Landroidx/constraintlayout/core/Cache;->mIndexedVariables:Ljava/lang/Object;
-
-    check-cast v2, [Landroidx/constraintlayout/core/SolverVariable;
+    iget-object v2, v2, Landroidx/constraintlayout/core/Cache;->mIndexedVariables:[Landroidx/constraintlayout/core/SolverVariable;
 
     aput-object v0, v2, v1
 
@@ -1746,9 +1726,7 @@
 
     iget-object v0, p0, Landroidx/constraintlayout/core/LinearSystem;->mCache:Landroidx/constraintlayout/core/Cache;
 
-    iget-object v1, v0, Landroidx/constraintlayout/core/Cache;->mIndexedVariables:Ljava/lang/Object;
-
-    check-cast v1, [Landroidx/constraintlayout/core/SolverVariable;
+    iget-object v1, v0, Landroidx/constraintlayout/core/Cache;->mIndexedVariables:[Landroidx/constraintlayout/core/SolverVariable;
 
     iget v2, p0, Landroidx/constraintlayout/core/LinearSystem;->TABLE_SIZE:I
 
@@ -1758,7 +1736,7 @@
 
     check-cast v1, [Landroidx/constraintlayout/core/SolverVariable;
 
-    iput-object v1, v0, Landroidx/constraintlayout/core/Cache;->mIndexedVariables:Ljava/lang/Object;
+    iput-object v1, v0, Landroidx/constraintlayout/core/Cache;->mIndexedVariables:[Landroidx/constraintlayout/core/SolverVariable;
 
     iget v0, p0, Landroidx/constraintlayout/core/LinearSystem;->TABLE_SIZE:I
 
@@ -2057,9 +2035,7 @@
 
     iget-object v4, v0, Landroidx/constraintlayout/core/LinearSystem;->mCache:Landroidx/constraintlayout/core/Cache;
 
-    iget-object v4, v4, Landroidx/constraintlayout/core/Cache;->mIndexedVariables:Ljava/lang/Object;
-
-    check-cast v4, [Landroidx/constraintlayout/core/SolverVariable;
+    iget-object v4, v4, Landroidx/constraintlayout/core/Cache;->mIndexedVariables:[Landroidx/constraintlayout/core/SolverVariable;
 
     aget-object v4, v4, v10
 
@@ -2302,9 +2278,7 @@
 
     iget-object v2, p0, Landroidx/constraintlayout/core/LinearSystem;->mCache:Landroidx/constraintlayout/core/Cache;
 
-    iget-object v2, v2, Landroidx/constraintlayout/core/Cache;->arrayRowPool:Ljava/lang/Object;
-
-    check-cast v2, Landroidx/constraintlayout/core/Pools$SimplePool;
+    iget-object v2, v2, Landroidx/constraintlayout/core/Cache;->arrayRowPool:Landroidx/constraintlayout/core/Pools$SimplePool;
 
     invoke-virtual {v2, v1}, Landroidx/constraintlayout/core/Pools$SimplePool;->release(Ljava/lang/Object;)Z
 
@@ -2333,17 +2307,11 @@
     :goto_0
     iget-object v2, p0, Landroidx/constraintlayout/core/LinearSystem;->mCache:Landroidx/constraintlayout/core/Cache;
 
-    iget-object v3, v2, Landroidx/constraintlayout/core/Cache;->mIndexedVariables:Ljava/lang/Object;
+    iget-object v3, v2, Landroidx/constraintlayout/core/Cache;->mIndexedVariables:[Landroidx/constraintlayout/core/SolverVariable;
 
-    move-object v4, v3
-
-    check-cast v4, [Landroidx/constraintlayout/core/SolverVariable;
-
-    array-length v4, v4
+    array-length v4, v3
 
     if-ge v1, v4, :cond_1
-
-    check-cast v3, [Landroidx/constraintlayout/core/SolverVariable;
 
     aget-object v2, v3, v1
 
@@ -2357,9 +2325,7 @@
     goto :goto_0
 
     :cond_1
-    iget-object v1, v2, Landroidx/constraintlayout/core/Cache;->solverVariablePool:Ljava/lang/Object;
-
-    check-cast v1, Landroidx/constraintlayout/core/Pools$SimplePool;
+    iget-object v1, v2, Landroidx/constraintlayout/core/Cache;->solverVariablePool:Landroidx/constraintlayout/core/Pools$SimplePool;
 
     iget-object v2, p0, Landroidx/constraintlayout/core/LinearSystem;->mPoolVariables:[Landroidx/constraintlayout/core/SolverVariable;
 
@@ -2383,9 +2349,7 @@
 
     iget v6, v1, Landroidx/constraintlayout/core/Pools$SimplePool;->mPoolSize:I
 
-    iget-object v7, v1, Landroidx/constraintlayout/core/Pools$SimplePool;->mPool:Ljava/lang/Object;
-
-    check-cast v7, [Ljava/lang/Object;
+    iget-object v7, v1, Landroidx/constraintlayout/core/Pools$SimplePool;->mPool:[Ljava/lang/Object;
 
     array-length v8, v7
 
@@ -2407,9 +2371,7 @@
 
     iget-object v1, p0, Landroidx/constraintlayout/core/LinearSystem;->mCache:Landroidx/constraintlayout/core/Cache;
 
-    iget-object v1, v1, Landroidx/constraintlayout/core/Cache;->mIndexedVariables:Ljava/lang/Object;
-
-    check-cast v1, [Landroidx/constraintlayout/core/SolverVariable;
+    iget-object v1, v1, Landroidx/constraintlayout/core/Cache;->mIndexedVariables:[Landroidx/constraintlayout/core/SolverVariable;
 
     const/4 v2, 0x0
 

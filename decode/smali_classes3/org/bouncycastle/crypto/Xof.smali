@@ -2,7 +2,7 @@
 .super Ljava/lang/Object;
 
 # interfaces
-.implements Lorg/bouncycastle/crypto/Digest;
+.implements Lorg/bouncycastle/crypto/ExtendedDigest;
 
 
 # virtual methods

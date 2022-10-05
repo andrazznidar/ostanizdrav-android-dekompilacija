@@ -151,7 +151,7 @@
 
     move-result p3
 
-    if-eqz p3, :cond_4
+    if-eqz p3, :cond_7
 
     const-string p3, "androidx.activity.result.contract.extra.PERMISSIONS"
 
@@ -159,18 +159,72 @@
 
     move-result-object p2
 
+    const/4 p3, 0x0
+
     if-nez p2, :cond_3
 
-    const/4 p2, 0x0
-
-    new-array p2, p2, [Ljava/lang/String;
+    new-array p2, p3, [Ljava/lang/String;
 
     :cond_3
-    invoke-static {v0, p2, p1}, Landroidx/core/app/ActivityCompat;->requestPermissions(Landroid/app/Activity;[Ljava/lang/String;I)V
+    sget p4, Landroidx/core/app/ActivityCompat;->$r8$clinit:I
+
+    array-length p4, p2
+
+    :goto_0
+    if-ge p3, p4, :cond_5
+
+    aget-object v1, p2, p3
+
+    invoke-static {v1}, Landroid/text/TextUtils;->isEmpty(Ljava/lang/CharSequence;)Z
+
+    move-result v1
+
+    if-nez v1, :cond_4
+
+    add-int/lit8 p3, p3, 0x1
 
     goto :goto_0
 
     :cond_4
+    new-instance p1, Ljava/lang/IllegalArgumentException;
+
+    const-string p3, "Permission request for permissions "
+
+    invoke-static {p3}, Landroid/support/v4/media/RatingCompat$$ExternalSyntheticOutline0;->m(Ljava/lang/String;)Ljava/lang/StringBuilder;
+
+    move-result-object p3
+
+    invoke-static {p2}, Ljava/util/Arrays;->toString([Ljava/lang/Object;)Ljava/lang/String;
+
+    move-result-object p2
+
+    const-string p4, " must not contain null or empty values"
+
+    invoke-static {p3, p2, p4}, Landroidx/activity/ComponentActivity$2$$ExternalSyntheticOutline0;->m(Ljava/lang/StringBuilder;Ljava/lang/String;Ljava/lang/String;)Ljava/lang/String;
+
+    move-result-object p2
+
+    invoke-direct {p1, p2}, Ljava/lang/IllegalArgumentException;-><init>(Ljava/lang/String;)V
+
+    throw p1
+
+    :cond_5
+    instance-of p3, v0, Landroidx/core/app/ActivityCompat$RequestPermissionsRequestCodeValidator;
+
+    if-eqz p3, :cond_6
+
+    move-object p3, v0
+
+    check-cast p3, Landroidx/core/app/ActivityCompat$RequestPermissionsRequestCodeValidator;
+
+    invoke-interface {p3, p1}, Landroidx/core/app/ActivityCompat$RequestPermissionsRequestCodeValidator;->validateRequestPermissionsRequestCode(I)V
+
+    :cond_6
+    invoke-virtual {v0, p2, p1}, Landroid/app/Activity;->requestPermissions([Ljava/lang/String;I)V
+
+    goto :goto_1
+
+    :cond_7
     invoke-virtual {p2}, Landroid/content/Intent;->getAction()Ljava/lang/String;
 
     move-result-object p3
@@ -181,7 +235,7 @@
 
     move-result p3
 
-    if-eqz p3, :cond_5
+    if-eqz p3, :cond_8
 
     const-string p3, "androidx.activity.result.contract.extra.INTENT_SENDER_REQUEST"
 
@@ -210,7 +264,7 @@
     :try_end_0
     .catch Landroid/content/IntentSender$SendIntentException; {:try_start_0 .. :try_end_0} :catch_0
 
-    goto :goto_0
+    goto :goto_1
 
     :catch_0
     move-exception p2
@@ -229,13 +283,13 @@
 
     invoke-virtual {p3, p4}, Landroid/os/Handler;->post(Ljava/lang/Runnable;)Z
 
-    goto :goto_0
+    goto :goto_1
 
-    :cond_5
+    :cond_8
     sget p3, Landroidx/core/app/ActivityCompat;->$r8$clinit:I
 
     invoke-virtual {v0, p2, p1, v7}, Landroidx/activity/ComponentActivity;->startActivityForResult(Landroid/content/Intent;ILandroid/os/Bundle;)V
 
-    :goto_0
+    :goto_1
     return-void
 .end method

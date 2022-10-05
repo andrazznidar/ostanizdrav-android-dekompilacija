@@ -89,6 +89,32 @@
     return-object v0
 .end method
 
+.method public static final getInstantChronology(Lorg/joda/time/ReadableInstant;)Lorg/joda/time/Chronology;
+    .locals 0
+
+    if-nez p0, :cond_0
+
+    invoke-static {}, Lorg/joda/time/chrono/ISOChronology;->getInstance()Lorg/joda/time/chrono/ISOChronology;
+
+    move-result-object p0
+
+    return-object p0
+
+    :cond_0
+    invoke-interface {p0}, Lorg/joda/time/ReadableInstant;->getChronology()Lorg/joda/time/Chronology;
+
+    move-result-object p0
+
+    if-nez p0, :cond_1
+
+    invoke-static {}, Lorg/joda/time/chrono/ISOChronology;->getInstance()Lorg/joda/time/chrono/ISOChronology;
+
+    move-result-object p0
+
+    :cond_1
+    return-object p0
+.end method
+
 .method public static final getInstantMillis(Lorg/joda/time/ReadableInstant;)J
     .locals 2
 

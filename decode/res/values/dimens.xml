@@ -83,7 +83,6 @@
     <dimen name="abc_text_size_title_material_toolbar">20.0dip</dimen>
     <dimen name="action_bar_size">16.0dip</dimen>
     <dimen name="appcompat_dialog_background_inset">16.0dip</dimen>
-    <dimen name="behavior_bullet_point_size">16.0dip</dimen>
     <dimen name="bullet_point_baseline_offset">8.0sp</dimen>
     <dimen name="bullet_point_baseline_offset_contact_diary">9.0dip</dimen>
     <dimen name="bullet_point_size">4.0dip</dimen>
@@ -109,14 +108,10 @@
     <dimen name="cardview_compat_inset_shadow">1.0dip</dimen>
     <dimen name="cardview_default_elevation">2.0dip</dimen>
     <dimen name="cardview_default_radius">2.0dip</dimen>
-    <item type="dimen" name="circle_big">@dimen/spacing_huge</item>
     <dimen name="circle_icon">32.0dip</dimen>
     <dimen name="circle_icon_big">40.0dip</dimen>
     <dimen name="circle_icon_big_padding">8.0dip</dimen>
     <dimen name="circle_icon_padding">6.0dip</dimen>
-    <item type="dimen" name="circle_large_width">10.0</item>
-    <dimen name="circle_small">23.0dip</dimen>
-    <item type="dimen" name="circle_small_width">5.0</item>
     <dimen name="clock_face_margin_start">64.0dip</dimen>
     <dimen name="compat_button_inset_horizontal_material">4.0dip</dimen>
     <dimen name="compat_button_inset_vertical_material">6.0dip</dimen>
@@ -125,8 +120,6 @@
     <dimen name="compat_control_corner_material">2.0dip</dimen>
     <dimen name="compat_notification_large_icon_max_height">320.0dip</dimen>
     <dimen name="compat_notification_large_icon_max_width">320.0dip</dimen>
-    <dimen name="contact_diary_list_item">64.0dip</dimen>
-    <dimen name="contact_diary_nested_recyclerview_margin">60.0dip</dimen>
     <dimen name="def_drawer_elevation">10.0dip</dimen>
     <dimen name="default_dimension">100.0dip</dimen>
     <dimen name="design_appbar_elevation">4.0dip</dimen>
@@ -186,9 +179,6 @@
     <dimen name="fastscroll_minimum_range">50.0dip</dimen>
     <dimen name="font_button">14.0sp</dimen>
     <dimen name="font_huge">34.0sp</dimen>
-    <dimen name="font_large">18.0sp</dimen>
-    <dimen name="font_larger">24.0sp</dimen>
-    <dimen name="font_line_spacing_extra">4.0sp</dimen>
     <dimen name="font_normal">16.0sp</dimen>
     <dimen name="font_small">12.0sp</dimen>
     <dimen name="font_title">20.0sp</dimen>
@@ -205,7 +195,6 @@
     <dimen name="guideline_statistics_card_content">96.0dip</dimen>
     <item type="dimen" name="guideline_top">@dimen/spacing_normal</item>
     <dimen name="guideline_top_onboarding">64.0dip</dimen>
-    <dimen name="guideline_top_submission">72.0dip</dimen>
     <dimen name="header">56.0dip</dimen>
     <dimen name="header_main">40.0dip</dimen>
     <item type="dimen" name="highlight_alpha_material_colored">0.26</item>
@@ -230,6 +219,7 @@
     <dimen name="line_height_large">28.0sp</dimen>
     <dimen name="line_height_normal">24.0sp</dimen>
     <dimen name="line_height_small">20.0sp</dimen>
+    <dimen name="line_height_tiny">16.0sp</dimen>
     <dimen name="list_item_decoration_card_margins">16.0dip</dimen>
     <dimen name="material_bottom_sheet_max_width">640.0dip</dimen>
     <dimen name="material_clock_display_padding">24.0dip</dimen>
@@ -482,11 +472,9 @@
     <dimen name="preference_seekbar_padding_horizontal">0.0dip</dimen>
     <dimen name="preference_seekbar_padding_vertical">15.0dip</dimen>
     <dimen name="preference_seekbar_value_minWidth">36.0dip</dimen>
-    <item type="dimen" name="radius_button">@dimen/spacing_tiny</item>
     <dimen name="radius_card">4.0dip</dimen>
-    <item type="dimen" name="radius_info_button">@dimen/spacing_huge</item>
+    <dimen name="scan_qr_code_text_length">250.0dip</dimen>
     <dimen name="scan_qr_code_viewfinder_center_offset">150.0dip</dimen>
-    <dimen name="scan_qr_code_viewfinder_safe_size">400.0dip</dimen>
     <dimen name="scan_qr_code_viewfinder_size">300.0dip</dimen>
     <dimen name="spacing_fab_padding">80.0dip</dimen>
     <dimen name="spacing_huge">56.0dip</dimen>
@@ -499,7 +487,6 @@
     <dimen name="statistics_card_height">328.0dip</dimen>
     <dimen name="statistics_card_width">300.0dip</dimen>
     <dimen name="submission_country_selection_country_icon_size">40.0dip</dimen>
-    <item type="dimen" name="submission_guideline_button">@dimen/spacing_large</item>
     <dimen name="submission_tan_dash_height">2.0dip</dimen>
     <dimen name="submission_tan_dash_spacing_end">5.0dip</dimen>
     <dimen name="submission_tan_dash_spacing_start">2.0dip</dimen>
@@ -513,7 +500,6 @@
     <dimen name="submission_tan_line_spacing">16.0dip</dimen>
     <dimen name="submission_tan_total_digit_spacing">6.0dip</dimen>
     <dimen name="submission_tan_total_group_spacing">16.0dip</dimen>
-    <dimen name="submission_test_result_guideline_body">84.0dip</dimen>
     <dimen name="subtitle_corner_radius">2.0dip</dimen>
     <dimen name="subtitle_outline_width">2.0dip</dimen>
     <dimen name="subtitle_shadow_offset">2.0dip</dimen>
@@ -531,9 +517,7 @@
     <dimen name="test_navigation_bar_label_padding">10.0dip</dimen>
     <dimen name="test_navigation_bar_shadow_height">1.0dip</dimen>
     <dimen name="test_navigation_bar_text_size">12.0sp</dimen>
-    <dimen name="test_result_card_body_height">120.0dip</dimen>
     <dimen name="test_result_step_progress_line_width">1.0dip</dimen>
-    <dimen name="test_result_step_text_width">256.0dip</dimen>
     <dimen name="tooltip_corner_radius">2.0dip</dimen>
     <dimen name="tooltip_horizontal_padding">16.0dip</dimen>
     <dimen name="tooltip_margin">8.0dip</dimen>

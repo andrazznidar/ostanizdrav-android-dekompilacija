@@ -40,7 +40,7 @@
 
 
 # instance fields
-.field public final synthetic $request:Lde/rki/coronawarnapp/coronatest/server/RegistrationRequest;
+.field public final synthetic $tokenRequest:Lde/rki/coronawarnapp/coronatest/server/RegistrationRequest;
 
 .field public label:I
 
@@ -64,7 +64,7 @@
 
     iput-object p1, p0, Lde/rki/coronawarnapp/playbook/DefaultPlaybook$initialRegistration$2;->this$0:Lde/rki/coronawarnapp/playbook/DefaultPlaybook;
 
-    iput-object p2, p0, Lde/rki/coronawarnapp/playbook/DefaultPlaybook$initialRegistration$2;->$request:Lde/rki/coronawarnapp/coronatest/server/RegistrationRequest;
+    iput-object p2, p0, Lde/rki/coronawarnapp/playbook/DefaultPlaybook$initialRegistration$2;->$tokenRequest:Lde/rki/coronawarnapp/coronatest/server/RegistrationRequest;
 
     const/4 p1, 0x1
 
@@ -75,6 +75,30 @@
 
 
 # virtual methods
+.method public final create(Lkotlin/coroutines/Continuation;)Lkotlin/coroutines/Continuation;
+    .locals 3
+    .annotation system Ldalvik/annotation/Signature;
+        value = {
+            "(",
+            "Lkotlin/coroutines/Continuation<",
+            "*>;)",
+            "Lkotlin/coroutines/Continuation<",
+            "Lkotlin/Unit;",
+            ">;"
+        }
+    .end annotation
+
+    new-instance v0, Lde/rki/coronawarnapp/playbook/DefaultPlaybook$initialRegistration$2;
+
+    iget-object v1, p0, Lde/rki/coronawarnapp/playbook/DefaultPlaybook$initialRegistration$2;->this$0:Lde/rki/coronawarnapp/playbook/DefaultPlaybook;
+
+    iget-object v2, p0, Lde/rki/coronawarnapp/playbook/DefaultPlaybook$initialRegistration$2;->$tokenRequest:Lde/rki/coronawarnapp/coronatest/server/RegistrationRequest;
+
+    invoke-direct {v0, v1, v2, p1}, Lde/rki/coronawarnapp/playbook/DefaultPlaybook$initialRegistration$2;-><init>(Lde/rki/coronawarnapp/playbook/DefaultPlaybook;Lde/rki/coronawarnapp/coronatest/server/RegistrationRequest;Lkotlin/coroutines/Continuation;)V
+
+    return-object v0
+.end method
+
 .method public invoke(Ljava/lang/Object;)Ljava/lang/Object;
     .locals 3
 
@@ -84,7 +108,7 @@
 
     iget-object v1, p0, Lde/rki/coronawarnapp/playbook/DefaultPlaybook$initialRegistration$2;->this$0:Lde/rki/coronawarnapp/playbook/DefaultPlaybook;
 
-    iget-object v2, p0, Lde/rki/coronawarnapp/playbook/DefaultPlaybook$initialRegistration$2;->$request:Lde/rki/coronawarnapp/coronatest/server/RegistrationRequest;
+    iget-object v2, p0, Lde/rki/coronawarnapp/playbook/DefaultPlaybook$initialRegistration$2;->$tokenRequest:Lde/rki/coronawarnapp/coronatest/server/RegistrationRequest;
 
     invoke-direct {v0, v1, v2, p1}, Lde/rki/coronawarnapp/playbook/DefaultPlaybook$initialRegistration$2;-><init>(Lde/rki/coronawarnapp/playbook/DefaultPlaybook;Lde/rki/coronawarnapp/coronatest/server/RegistrationRequest;Lkotlin/coroutines/Continuation;)V
 
@@ -130,7 +154,7 @@
 
     iget-object p1, p1, Lde/rki/coronawarnapp/playbook/DefaultPlaybook;->verificationServer:Lde/rki/coronawarnapp/coronatest/server/VerificationServer;
 
-    iget-object v1, p0, Lde/rki/coronawarnapp/playbook/DefaultPlaybook$initialRegistration$2;->$request:Lde/rki/coronawarnapp/coronatest/server/RegistrationRequest;
+    iget-object v1, p0, Lde/rki/coronawarnapp/playbook/DefaultPlaybook$initialRegistration$2;->$tokenRequest:Lde/rki/coronawarnapp/coronatest/server/RegistrationRequest;
 
     iput v2, p0, Lde/rki/coronawarnapp/playbook/DefaultPlaybook$initialRegistration$2;->label:I
 

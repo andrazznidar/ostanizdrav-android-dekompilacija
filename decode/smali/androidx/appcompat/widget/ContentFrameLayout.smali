@@ -165,7 +165,7 @@
 .method public onAttachedToWindow()V
     .locals 1
 
-    invoke-super {p0}, Landroid/view/ViewGroup;->onAttachedToWindow()V
+    invoke-super {p0}, Landroid/widget/FrameLayout;->onAttachedToWindow()V
 
     iget-object v0, p0, Landroidx/appcompat/widget/ContentFrameLayout;->mAttachListener:Landroidx/appcompat/widget/ContentFrameLayout$OnAttachListener;
 
@@ -180,7 +180,7 @@
 .method public onDetachedFromWindow()V
     .locals 3
 
-    invoke-super {p0}, Landroid/view/ViewGroup;->onDetachedFromWindow()V
+    invoke-super {p0}, Landroid/widget/FrameLayout;->onDetachedFromWindow()V
 
     iget-object v0, p0, Landroidx/appcompat/widget/ContentFrameLayout;->mAttachListener:Landroidx/appcompat/widget/ContentFrameLayout$OnAttachListener;
 

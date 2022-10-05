@@ -5,7 +5,7 @@
 
 # annotations
 .annotation system Ldalvik/annotation/SourceDebugExtension;
-    value = "SMAP\nKotlinModule.kt\nKotlin\n*S Kotlin\n*F\n+ 1 KotlinModule.kt\ncom/fasterxml/jackson/module/kotlin/KotlinModuleKt\n+ 2 _Arrays.kt\nkotlin/collections/ArraysKt___ArraysKt\n*L\n1#1,142:1\n12671#2,2:143\n*E\n*S KotlinDebug\n*F\n+ 1 KotlinModule.kt\ncom/fasterxml/jackson/module/kotlin/KotlinModuleKt\n*L\n12#1,2:143\n*E\n"
+    value = "SMAP\nKotlinModule.kt\nKotlin\n*S Kotlin\n*F\n+ 1 KotlinModule.kt\ncom/fasterxml/jackson/module/kotlin/KotlinModuleKt\n+ 2 _Arrays.kt\nkotlin/collections/ArraysKt___ArraysKt\n*L\n1#1,284:1\n12701#2,2:285\n*S KotlinDebug\n*F\n+ 1 KotlinModule.kt\ncom/fasterxml/jackson/module/kotlin/KotlinModuleKt\n*L\n17#1:285,2\n*E\n"
 .end annotation
 
 
@@ -20,7 +20,7 @@
         }
     .end annotation
 
-    const-string v0, "$this$isKotlinClass"
+    const-string v0, "<this>"
 
     invoke-static {p0, v0}, Lkotlin/jvm/internal/Intrinsics;->checkNotNullParameter(Ljava/lang/Object;Ljava/lang/String;)V
 

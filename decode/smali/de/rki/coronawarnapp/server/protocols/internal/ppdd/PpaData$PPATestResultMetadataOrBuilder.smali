@@ -24,6 +24,40 @@
 .method public abstract synthetic getDefaultInstanceForType()Lcom/google/protobuf/MessageLite;
 .end method
 
+.method public abstract getExposureWindowsAtTestRegistration(I)Lde/rki/coronawarnapp/server/protocols/internal/ppdd/PpaData$PPANewExposureWindow;
+.end method
+
+.method public abstract getExposureWindowsAtTestRegistrationCount()I
+.end method
+
+.method public abstract getExposureWindowsAtTestRegistrationList()Ljava/util/List;
+    .annotation system Ldalvik/annotation/Signature;
+        value = {
+            "()",
+            "Ljava/util/List<",
+            "Lde/rki/coronawarnapp/server/protocols/internal/ppdd/PpaData$PPANewExposureWindow;",
+            ">;"
+        }
+    .end annotation
+.end method
+
+.method public abstract getExposureWindowsUntilTestResult(I)Lde/rki/coronawarnapp/server/protocols/internal/ppdd/PpaData$PPANewExposureWindow;
+.end method
+
+.method public abstract getExposureWindowsUntilTestResultCount()I
+.end method
+
+.method public abstract getExposureWindowsUntilTestResultList()Ljava/util/List;
+    .annotation system Ldalvik/annotation/Signature;
+        value = {
+            "()",
+            "Ljava/util/List<",
+            "Lde/rki/coronawarnapp/server/protocols/internal/ppdd/PpaData$PPANewExposureWindow;",
+            ">;"
+        }
+    .end annotation
+.end method
+
 .method public abstract getHoursSinceHighRiskWarningAtTestRegistration()I
 .end method
 

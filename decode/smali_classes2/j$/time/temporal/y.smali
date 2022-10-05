@@ -1,10 +1,12 @@
-.class public interface abstract Lj$/time/temporal/y;
-.super Ljava/lang/Object;
+.class public Lj$/time/temporal/y;
+.super Lj$/time/d;
 
 
-# virtual methods
-.method public abstract a()Z
-.end method
+# direct methods
+.method public constructor <init>(Ljava/lang/String;)V
+    .locals 0
 
-.method public abstract b(Lj$/time/temporal/k;J)Lj$/time/temporal/k;
+    invoke-direct {p0, p1}, Lj$/time/d;-><init>(Ljava/lang/String;)V
+
+    return-void
 .end method

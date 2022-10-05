@@ -228,7 +228,9 @@
 
     iget-object v8, v1, Lde/rki/coronawarnapp/bugreporting/debuglog/DebugLogger$startNewLogJob$1$1$1;->this$0:Lde/rki/coronawarnapp/bugreporting/debuglog/DebugLogger;
 
-    iget-object v8, v8, Lde/rki/coronawarnapp/bugreporting/debuglog/DebugLoggerBase;->bugCensors:Ldagger/Lazy;
+    iget-object v8, v8, Lboofcv/struct/border/ImageBorder;->image:Ljava/lang/Object;
+
+    check-cast v8, Ldagger/Lazy;
 
     if-eqz v8, :cond_13
 
@@ -523,7 +525,7 @@
 
     const-string v5, ": "
 
-    invoke-static {v8, v5, v7}, Landroidx/constraintlayout/core/widgets/Barrier$$ExternalSyntheticOutline0;->m(Ljava/lang/StringBuilder;Ljava/lang/String;Ljava/lang/String;)Ljava/lang/String;
+    invoke-static {v8, v5, v7}, Landroidx/activity/ComponentActivity$2$$ExternalSyntheticOutline0;->m(Ljava/lang/StringBuilder;Ljava/lang/String;Ljava/lang/String;)Ljava/lang/String;
 
     move-result-object v5
 

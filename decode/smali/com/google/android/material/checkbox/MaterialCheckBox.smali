@@ -162,19 +162,19 @@
 
     sget v2, Lcom/google/android/material/R$attr;->colorControlActivated:I
 
-    invoke-static {p0, v2}, Ldagger/android/AndroidInjection;->getColor(Landroid/view/View;I)I
+    invoke-static {p0, v2}, Lkotlin/math/MathKt__MathJVMKt;->getColor(Landroid/view/View;I)I
 
     move-result v2
 
     sget v3, Lcom/google/android/material/R$attr;->colorSurface:I
 
-    invoke-static {p0, v3}, Ldagger/android/AndroidInjection;->getColor(Landroid/view/View;I)I
+    invoke-static {p0, v3}, Lkotlin/math/MathKt__MathJVMKt;->getColor(Landroid/view/View;I)I
 
     move-result v3
 
     sget v4, Lcom/google/android/material/R$attr;->colorOnSurface:I
 
-    invoke-static {p0, v4}, Ldagger/android/AndroidInjection;->getColor(Landroid/view/View;I)I
+    invoke-static {p0, v4}, Lkotlin/math/MathKt__MathJVMKt;->getColor(Landroid/view/View;I)I
 
     move-result v4
 
@@ -182,7 +182,7 @@
 
     const/high16 v6, 0x3f800000    # 1.0f
 
-    invoke-static {v3, v2, v6}, Ldagger/android/AndroidInjection;->layer(IIF)I
+    invoke-static {v3, v2, v6}, Lkotlin/math/MathKt__MathJVMKt;->layer(IIF)I
 
     move-result v2
 
@@ -192,7 +192,7 @@
 
     const v5, 0x3f0a3d71    # 0.54f
 
-    invoke-static {v3, v4, v5}, Ldagger/android/AndroidInjection;->layer(IIF)I
+    invoke-static {v3, v4, v5}, Lkotlin/math/MathKt__MathJVMKt;->layer(IIF)I
 
     move-result v5
 
@@ -202,7 +202,7 @@
 
     const v5, 0x3ec28f5c    # 0.38f
 
-    invoke-static {v3, v4, v5}, Ldagger/android/AndroidInjection;->layer(IIF)I
+    invoke-static {v3, v4, v5}, Lkotlin/math/MathKt__MathJVMKt;->layer(IIF)I
 
     move-result v6
 
@@ -210,7 +210,7 @@
 
     const/4 v2, 0x3
 
-    invoke-static {v3, v4, v5}, Ldagger/android/AndroidInjection;->layer(IIF)I
+    invoke-static {v3, v4, v5}, Lkotlin/math/MathKt__MathJVMKt;->layer(IIF)I
 
     move-result v3
 
@@ -233,7 +233,7 @@
 .method public onAttachedToWindow()V
     .locals 1
 
-    invoke-super {p0}, Landroid/widget/TextView;->onAttachedToWindow()V
+    invoke-super {p0}, Landroid/widget/CheckBox;->onAttachedToWindow()V
 
     iget-boolean v0, p0, Lcom/google/android/material/checkbox/MaterialCheckBox;->useMaterialThemeColors:Z
 

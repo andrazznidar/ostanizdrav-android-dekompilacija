@@ -38,7 +38,7 @@
 
     const v3, 0x7ffffffe
 
-    invoke-static {v0, v1, v2, v3}, Lkotlinx/coroutines/internal/SystemPropsKt;->systemProp(Ljava/lang/String;III)I
+    invoke-static {v0, v1, v2, v3}, Lorg/ejml/dense/row/CommonOps_ZDRM;->systemProp(Ljava/lang/String;III)I
 
     move-result v0
 

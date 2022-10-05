@@ -13,12 +13,10 @@
 
 .field public final __db:Landroidx/room/RoomDatabase;
 
-.field public final __deletionAdapterOfContactDiaryCoronaTestEntity:Landroidx/room/EntityDeletionOrUpdateAdapter;
+.field public final __deletionAdapterOfContactDiaryCoronaTestEntity:Landroidx/room/EntityInsertionAdapter;
     .annotation system Ldalvik/annotation/Signature;
         value = {
-            "Landroidx/room/EntityDeletionOrUpdateAdapter<",
-            "Lde/rki/coronawarnapp/contactdiary/storage/entity/ContactDiaryCoronaTestEntity;",
-            ">;"
+            "Landroidx/room/EntityInsertionAdapter;"
         }
     .end annotation
 .end field
@@ -26,9 +24,7 @@
 .field public final __insertionAdapterOfContactDiaryCoronaTestEntity:Landroidx/room/EntityInsertionAdapter;
     .annotation system Ldalvik/annotation/Signature;
         value = {
-            "Landroidx/room/EntityInsertionAdapter<",
-            "Lde/rki/coronawarnapp/contactdiary/storage/entity/ContactDiaryCoronaTestEntity;",
-            ">;"
+            "Landroidx/room/EntityInsertionAdapter;"
         }
     .end annotation
 .end field
@@ -72,7 +68,7 @@
 
     invoke-direct {v0, p0, p1}, Lde/rki/coronawarnapp/contactdiary/storage/dao/ContactDiaryCoronaTestDao_Impl$2;-><init>(Lde/rki/coronawarnapp/contactdiary/storage/dao/ContactDiaryCoronaTestDao_Impl;Landroidx/room/RoomDatabase;)V
 
-    iput-object v0, p0, Lde/rki/coronawarnapp/contactdiary/storage/dao/ContactDiaryCoronaTestDao_Impl;->__deletionAdapterOfContactDiaryCoronaTestEntity:Landroidx/room/EntityDeletionOrUpdateAdapter;
+    iput-object v0, p0, Lde/rki/coronawarnapp/contactdiary/storage/dao/ContactDiaryCoronaTestDao_Impl;->__deletionAdapterOfContactDiaryCoronaTestEntity:Landroidx/room/EntityInsertionAdapter;
 
     new-instance p1, Ljava/util/concurrent/atomic/AtomicBoolean;
 

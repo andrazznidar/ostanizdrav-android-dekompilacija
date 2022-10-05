@@ -51,3 +51,16 @@
 
     return-void
 .end method
+
+.method public beforeChildren(Ljava/lang/Object;)Z
+    .locals 0
+    .annotation system Ldalvik/annotation/Signature;
+        value = {
+            "(TN;)Z"
+        }
+    .end annotation
+
+    const/4 p1, 0x1
+
+    return p1
+.end method

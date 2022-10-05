@@ -1,61 +1,113 @@
-.class Lj$/util/stream/g1;
-.super Lj$/util/stream/k1;
+.class final Lj$/util/stream/g1;
+.super Lj$/util/stream/i1;
 
-
-# instance fields
-.field final synthetic c:Lj$/util/stream/l1;
-
-.field final synthetic d:Lj$/util/function/Predicate;
+# interfaces
+.implements Lj$/util/stream/N0;
 
 
 # direct methods
-.method constructor <init>(Lj$/util/stream/l1;Lj$/util/function/Predicate;)V
+.method constructor <init>()V
     .locals 0
 
-    iput-object p1, p0, Lj$/util/stream/g1;->c:Lj$/util/stream/l1;
-
-    iput-object p2, p0, Lj$/util/stream/g1;->d:Lj$/util/function/Predicate;
-
-    invoke-direct {p0, p1}, Lj$/util/stream/k1;-><init>(Lj$/util/stream/l1;)V
+    invoke-direct {p0}, Lj$/util/stream/i1;-><init>()V
 
     return-void
 .end method
 
 
 # virtual methods
-.method public i(Ljava/lang/Object;)V
+.method public a(I)Lj$/util/stream/O0;
+    .locals 0
+
+    new-instance p1, Ljava/lang/IndexOutOfBoundsException;
+
+    invoke-direct {p1}, Ljava/lang/IndexOutOfBoundsException;-><init>()V
+
+    throw p1
+.end method
+
+.method public bridge synthetic a(I)Lj$/util/stream/P0;
+    .locals 0
+
+    invoke-virtual {p0, p1}, Lj$/util/stream/g1;->a(I)Lj$/util/stream/O0;
+
+    const/4 p1, 0x0
+
+    throw p1
+.end method
+
+.method public synthetic b([Ljava/lang/Long;I)V
+    .locals 0
+
+    invoke-static {p0, p1, p2}, Lj$/util/stream/D0;->T(Lj$/util/stream/N0;[Ljava/lang/Long;I)V
+
+    return-void
+.end method
+
+.method public synthetic c(JJLj$/util/function/p;)Lj$/util/stream/N0;
+    .locals 0
+
+    invoke-static {p0, p1, p2, p3, p4}, Lj$/util/stream/D0;->Z(Lj$/util/stream/N0;JJ)Lj$/util/stream/N0;
+
+    move-result-object p1
+
+    return-object p1
+.end method
+
+.method public synthetic forEach(Lj$/util/function/Consumer;)V
+    .locals 0
+
+    invoke-static {p0, p1}, Lj$/util/stream/D0;->W(Lj$/util/stream/N0;Lj$/util/function/Consumer;)V
+
+    return-void
+.end method
+
+.method public k()Ljava/lang/Object;
     .locals 1
 
-    iget-boolean v0, p0, Lj$/util/stream/k1;->a:Z
+    invoke-static {}, Lj$/util/stream/D0;->f0()[J
 
-    if-nez v0, :cond_0
+    move-result-object v0
 
-    iget-object v0, p0, Lj$/util/stream/g1;->d:Lj$/util/function/Predicate;
+    return-object v0
+.end method
 
-    invoke-interface {v0, p1}, Lj$/util/function/Predicate;->test(Ljava/lang/Object;)Z
+.method public bridge synthetic m([Ljava/lang/Object;I)V
+    .locals 0
 
-    move-result p1
+    check-cast p1, [Ljava/lang/Long;
 
-    iget-object v0, p0, Lj$/util/stream/g1;->c:Lj$/util/stream/l1;
+    invoke-virtual {p0, p1, p2}, Lj$/util/stream/g1;->b([Ljava/lang/Long;I)V
 
-    invoke-static {v0}, Lj$/util/stream/l1;->a(Lj$/util/stream/l1;)Z
-
-    move-result v0
-
-    if-ne p1, v0, :cond_0
-
-    const/4 p1, 0x1
-
-    iput-boolean p1, p0, Lj$/util/stream/k1;->a:Z
-
-    iget-object p1, p0, Lj$/util/stream/g1;->c:Lj$/util/stream/l1;
-
-    invoke-static {p1}, Lj$/util/stream/l1;->b(Lj$/util/stream/l1;)Z
-
-    move-result p1
-
-    iput-boolean p1, p0, Lj$/util/stream/k1;->b:Z
-
-    :cond_0
     return-void
+.end method
+
+.method public bridge synthetic p(JJLj$/util/function/p;)Lj$/util/stream/P0;
+    .locals 0
+
+    invoke-virtual/range {p0 .. p5}, Lj$/util/stream/g1;->c(JJLj$/util/function/p;)Lj$/util/stream/N0;
+
+    move-result-object p1
+
+    return-object p1
+.end method
+
+.method public spliterator()Lj$/util/D;
+    .locals 1
+
+    invoke-static {}, Lj$/util/S;->d()Lj$/util/B;
+
+    move-result-object v0
+
+    return-object v0
+.end method
+
+.method public spliterator()Lj$/util/Spliterator;
+    .locals 1
+
+    invoke-static {}, Lj$/util/S;->d()Lj$/util/B;
+
+    move-result-object v0
+
+    return-object v0
 .end method

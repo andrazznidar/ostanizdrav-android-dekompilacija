@@ -19,6 +19,18 @@
 
 
 # direct methods
+.method public constructor <init>()V
+    .locals 1
+
+    invoke-direct {p0}, Lcom/fasterxml/jackson/databind/node/BaseJsonNode;-><init>()V
+
+    const/4 v0, 0x0
+
+    iput-object v0, p0, Lcom/fasterxml/jackson/databind/node/ContainerNode;->_nodeFactory:Lcom/fasterxml/jackson/databind/node/JsonNodeFactory;
+
+    return-void
+.end method
+
 .method public constructor <init>(Lcom/fasterxml/jackson/databind/node/JsonNodeFactory;)V
     .locals 0
 

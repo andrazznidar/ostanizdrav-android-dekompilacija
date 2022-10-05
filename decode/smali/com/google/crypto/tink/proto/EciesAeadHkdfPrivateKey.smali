@@ -18,7 +18,8 @@
         "Lcom/google/crypto/tink/shaded/protobuf/GeneratedMessageLite<",
         "Lcom/google/crypto/tink/proto/EciesAeadHkdfPrivateKey;",
         "Lcom/google/crypto/tink/proto/EciesAeadHkdfPrivateKey$Builder;",
-        ">;"
+        ">;",
+        "Lcom/google/crypto/tink/shaded/protobuf/MessageLiteOrBuilder;"
     }
 .end annotation
 

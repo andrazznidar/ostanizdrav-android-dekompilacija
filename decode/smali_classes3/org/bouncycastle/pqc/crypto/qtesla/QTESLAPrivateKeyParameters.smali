@@ -3,9 +3,9 @@
 
 
 # instance fields
-.field public privateKey:[B
+.field private privateKey:[B
 
-.field public securityCategory:I
+.field private securityCategory:I
 
 
 # direct methods
@@ -18,36 +18,11 @@
 
     array-length v0, p2
 
-    const/4 v1, 0x5
+    invoke-static {p1}, Lorg/bouncycastle/pqc/crypto/qtesla/QTESLASecurityCategory;->getPrivateSize(I)I
 
-    if-eq p1, v1, :cond_1
+    move-result v1
 
-    const/4 v1, 0x6
-
-    if-ne p1, v1, :cond_0
-
-    const/16 v1, 0x3068
-
-    goto :goto_0
-
-    :cond_0
-    new-instance p2, Ljava/lang/IllegalArgumentException;
-
-    const-string v0, "unknown security category: "
-
-    invoke-static {v0, p1}, Landroidx/appcompat/widget/AppCompatTextHelper$$ExternalSyntheticOutline0;->m(Ljava/lang/String;I)Ljava/lang/String;
-
-    move-result-object p1
-
-    invoke-direct {p2, p1}, Ljava/lang/IllegalArgumentException;-><init>(Ljava/lang/String;)V
-
-    throw p2
-
-    :cond_1
-    const/16 v1, 0x1468
-
-    :goto_0
-    if-ne v0, v1, :cond_2
+    if-ne v0, v1, :cond_0
 
     iput p1, p0, Lorg/bouncycastle/pqc/crypto/qtesla/QTESLAPrivateKeyParameters;->securityCategory:I
 
@@ -59,7 +34,7 @@
 
     return-void
 
-    :cond_2
+    :cond_0
     new-instance p1, Ljava/lang/IllegalArgumentException;
 
     const-string p2, "invalid key size for security category"
@@ -81,4 +56,12 @@
     move-result-object v0
 
     return-object v0
+.end method
+
+.method public getSecurityCategory()I
+    .locals 1
+
+    iget v0, p0, Lorg/bouncycastle/pqc/crypto/qtesla/QTESLAPrivateKeyParameters;->securityCategory:I
+
+    return v0
 .end method

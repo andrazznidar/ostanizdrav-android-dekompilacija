@@ -4,12 +4,6 @@
 
 
 # annotations
-.annotation system Ldalvik/annotation/MemberClasses;
-    value = {
-        Lde/rki/coronawarnapp/playbook/OrganizerPlaybook$ErrorType;
-    }
-.end annotation
-
 .annotation system Ldalvik/annotation/SourceDebugExtension;
     value = "SMAP\nOrganizerPlaybook.kt\nKotlin\n*S Kotlin\n*F\n+ 1 OrganizerPlaybook.kt\nde/rki/coronawarnapp/playbook/OrganizerPlaybook\n+ 2 fake.kt\nkotlin/jvm/internal/FakeKt\n*L\n1#1,202:1\n1#2:203\n*E\n"
 .end annotation
@@ -91,7 +85,7 @@
 .end method
 
 .method public static final access$followUpPlaybooks(Lde/rki/coronawarnapp/playbook/OrganizerPlaybook;Lkotlin/coroutines/Continuation;)Ljava/lang/Object;
-    .locals 14
+    .locals 11
 
     invoke-static {p0}, Ljava/util/Objects;->requireNonNull(Ljava/lang/Object;)Ljava/lang/Object;
 
@@ -143,15 +137,13 @@
 
     if-ne v2, v4, :cond_1
 
-    iget p0, v0, Lde/rki/coronawarnapp/playbook/OrganizerPlaybook$followUpPlaybooks$1;->I$2:I
+    iget p0, v0, Lde/rki/coronawarnapp/playbook/OrganizerPlaybook$followUpPlaybooks$1;->I$1:I
 
-    iget v2, v0, Lde/rki/coronawarnapp/playbook/OrganizerPlaybook$followUpPlaybooks$1;->I$1:I
+    iget v2, v0, Lde/rki/coronawarnapp/playbook/OrganizerPlaybook$followUpPlaybooks$1;->I$0:I
 
-    iget v7, v0, Lde/rki/coronawarnapp/playbook/OrganizerPlaybook$followUpPlaybooks$1;->I$0:I
+    iget-object v7, v0, Lde/rki/coronawarnapp/playbook/OrganizerPlaybook$followUpPlaybooks$1;->L$0:Ljava/lang/Object;
 
-    iget-object v8, v0, Lde/rki/coronawarnapp/playbook/OrganizerPlaybook$followUpPlaybooks$1;->L$0:Ljava/lang/Object;
-
-    check-cast v8, Lde/rki/coronawarnapp/playbook/OrganizerPlaybook;
+    check-cast v7, Lde/rki/coronawarnapp/playbook/OrganizerPlaybook;
 
     invoke-static {p1}, Lkotlin/ResultKt;->throwOnFailure(Ljava/lang/Object;)V
 
@@ -167,15 +159,13 @@
     throw p0
 
     :cond_2
-    iget p0, v0, Lde/rki/coronawarnapp/playbook/OrganizerPlaybook$followUpPlaybooks$1;->I$2:I
+    iget p0, v0, Lde/rki/coronawarnapp/playbook/OrganizerPlaybook$followUpPlaybooks$1;->I$1:I
 
-    iget v2, v0, Lde/rki/coronawarnapp/playbook/OrganizerPlaybook$followUpPlaybooks$1;->I$1:I
+    iget v2, v0, Lde/rki/coronawarnapp/playbook/OrganizerPlaybook$followUpPlaybooks$1;->I$0:I
 
-    iget v7, v0, Lde/rki/coronawarnapp/playbook/OrganizerPlaybook$followUpPlaybooks$1;->I$0:I
+    iget-object v7, v0, Lde/rki/coronawarnapp/playbook/OrganizerPlaybook$followUpPlaybooks$1;->L$0:Ljava/lang/Object;
 
-    iget-object v8, v0, Lde/rki/coronawarnapp/playbook/OrganizerPlaybook$followUpPlaybooks$1;->L$0:Ljava/lang/Object;
-
-    check-cast v8, Lde/rki/coronawarnapp/playbook/OrganizerPlaybook;
+    check-cast v7, Lde/rki/coronawarnapp/playbook/OrganizerPlaybook;
 
     invoke-static {p1}, Lkotlin/ResultKt;->throwOnFailure(Ljava/lang/Object;)V
 
@@ -224,174 +214,126 @@
 
     invoke-virtual {v2, v7, v8}, Ltimber/log/Timber$Forest;->i(Ljava/lang/String;[Ljava/lang/Object;)V
 
-    move-object v2, v1
-
-    move v7, v6
-
-    move-object v1, v0
-
-    move v6, v5
-
-    move v0, p1
+    move v2, v5
 
     :goto_1
     if-ge v5, p1, :cond_6
 
-    new-instance v8, Lkotlin/ranges/IntRange;
+    add-int/lit8 v5, v5, 0x1
 
-    invoke-direct {v8, v6, v6}, Lkotlin/ranges/IntRange;-><init>(II)V
+    new-instance v7, Lkotlin/ranges/IntRange;
 
-    sget-object v9, Lkotlin/random/Random;->Default:Lkotlin/random/Random$Default;
+    invoke-direct {v7, v2, v2}, Lkotlin/ranges/IntRange;-><init>(II)V
 
-    invoke-static {v8, v9}, Lkotlin/ranges/RangesKt___RangesKt;->random(Lkotlin/ranges/IntRange;Lkotlin/random/Random;)I
+    sget-object v8, Lkotlin/random/Random;->Default:Lkotlin/random/Random$Default;
 
-    move-result v8
+    invoke-static {v7, v8}, Lkotlin/ranges/RangesKt___RangesKt;->random(Lkotlin/ranges/IntRange;Lkotlin/random/Random;)I
 
-    sget-object v9, Ltimber/log/Timber;->Forest:Ltimber/log/Timber$Forest;
+    move-result v7
 
-    iget-object v10, p0, Lde/rki/coronawarnapp/playbook/OrganizerPlaybook;->uid:Ljava/lang/String;
+    sget-object v8, Ltimber/log/Timber;->Forest:Ltimber/log/Timber$Forest;
 
-    add-int/lit8 v11, v5, 0x1
+    iget-object v9, p0, Lde/rki/coronawarnapp/playbook/OrganizerPlaybook;->uid:Ljava/lang/String;
 
-    new-instance v12, Ljava/lang/StringBuilder;
+    new-instance v10, Ljava/lang/StringBuilder;
 
-    invoke-direct {v12}, Ljava/lang/StringBuilder;-><init>()V
+    invoke-direct {v10}, Ljava/lang/StringBuilder;-><init>()V
 
-    invoke-virtual {v12, v3}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+    invoke-virtual {v10, v3}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
 
-    invoke-virtual {v12, v10}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+    invoke-virtual {v10, v9}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
 
-    const-string v10, "] Follow Up: ("
+    const-string v9, "] Follow Up: ("
 
-    invoke-virtual {v12, v10}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+    invoke-virtual {v10, v9}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
 
-    invoke-virtual {v12, v11}, Ljava/lang/StringBuilder;->append(I)Ljava/lang/StringBuilder;
+    invoke-virtual {v10, v5}, Ljava/lang/StringBuilder;->append(I)Ljava/lang/StringBuilder;
 
-    const-string v10, "/"
+    const-string v9, "/"
 
-    invoke-virtual {v12, v10}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+    invoke-virtual {v10, v9}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
 
-    invoke-virtual {v12, v0}, Ljava/lang/StringBuilder;->append(I)Ljava/lang/StringBuilder;
+    invoke-virtual {v10, p1}, Ljava/lang/StringBuilder;->append(I)Ljava/lang/StringBuilder;
 
-    const-string v10, ") waiting "
+    const-string v9, ") waiting "
 
-    invoke-virtual {v12, v10}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+    invoke-virtual {v10, v9}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
 
-    invoke-virtual {v12, v8}, Ljava/lang/StringBuilder;->append(I)Ljava/lang/StringBuilder;
+    invoke-virtual {v10, v7}, Ljava/lang/StringBuilder;->append(I)Ljava/lang/StringBuilder;
 
-    const-string v10, "[s]..."
+    const-string v9, "[s]..."
 
-    invoke-virtual {v12, v10}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+    invoke-virtual {v10, v9}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
 
-    invoke-virtual {v12}, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
+    invoke-virtual {v10}, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
 
-    move-result-object v10
+    move-result-object v9
 
-    new-array v11, v6, [Ljava/lang/Object;
+    new-array v10, v2, [Ljava/lang/Object;
 
-    invoke-virtual {v9, v10, v11}, Ltimber/log/Timber$Forest;->i(Ljava/lang/String;[Ljava/lang/Object;)V
+    invoke-virtual {v8, v9, v10}, Ltimber/log/Timber$Forest;->i(Ljava/lang/String;[Ljava/lang/Object;)V
 
-    sget-object v9, Ljava/util/concurrent/TimeUnit;->SECONDS:Ljava/util/concurrent/TimeUnit;
+    sget-object v8, Ljava/util/concurrent/TimeUnit;->SECONDS:Ljava/util/concurrent/TimeUnit;
 
-    int-to-long v10, v8
+    int-to-long v9, v7
 
-    invoke-virtual {v9, v10, v11}, Ljava/util/concurrent/TimeUnit;->toMillis(J)J
+    invoke-virtual {v8, v9, v10}, Ljava/util/concurrent/TimeUnit;->toMillis(J)J
 
-    move-result-wide v8
+    move-result-wide v7
 
-    iput-object p0, v1, Lde/rki/coronawarnapp/playbook/OrganizerPlaybook$followUpPlaybooks$1;->L$0:Ljava/lang/Object;
+    iput-object p0, v0, Lde/rki/coronawarnapp/playbook/OrganizerPlaybook$followUpPlaybooks$1;->L$0:Ljava/lang/Object;
 
-    iput v0, v1, Lde/rki/coronawarnapp/playbook/OrganizerPlaybook$followUpPlaybooks$1;->I$0:I
+    iput p1, v0, Lde/rki/coronawarnapp/playbook/OrganizerPlaybook$followUpPlaybooks$1;->I$0:I
 
-    iput v5, v1, Lde/rki/coronawarnapp/playbook/OrganizerPlaybook$followUpPlaybooks$1;->I$1:I
+    iput v5, v0, Lde/rki/coronawarnapp/playbook/OrganizerPlaybook$followUpPlaybooks$1;->I$1:I
 
-    iput p1, v1, Lde/rki/coronawarnapp/playbook/OrganizerPlaybook$followUpPlaybooks$1;->I$2:I
+    iput v6, v0, Lde/rki/coronawarnapp/playbook/OrganizerPlaybook$followUpPlaybooks$1;->label:I
 
-    iput v7, v1, Lde/rki/coronawarnapp/playbook/OrganizerPlaybook$followUpPlaybooks$1;->label:I
+    invoke-static {v7, v8, v0}, Lkotlinx/coroutines/DelayKt;->delay(JLkotlin/coroutines/Continuation;)Ljava/lang/Object;
 
-    invoke-static {v8, v9, v1}, Lkotlinx/coroutines/DelayKt;->delay(JLkotlin/coroutines/Continuation;)Ljava/lang/Object;
+    move-result-object v7
 
-    move-result-object v8
-
-    if-ne v8, v2, :cond_4
+    if-ne v7, v1, :cond_4
 
     goto :goto_4
 
     :cond_4
-    move-object v8, p0
+    move-object v7, p0
 
-    move p0, p1
+    move p0, v5
 
-    move v13, v7
+    move v5, v2
 
-    move v7, v0
-
-    move-object v0, v1
-
-    move-object v1, v2
-
-    move v2, v5
-
-    move v5, v6
-
-    move v6, v13
+    move v2, p1
 
     :goto_2
-    iput-object v8, v0, Lde/rki/coronawarnapp/playbook/OrganizerPlaybook$followUpPlaybooks$1;->L$0:Ljava/lang/Object;
+    iput-object v7, v0, Lde/rki/coronawarnapp/playbook/OrganizerPlaybook$followUpPlaybooks$1;->L$0:Ljava/lang/Object;
 
-    iput v7, v0, Lde/rki/coronawarnapp/playbook/OrganizerPlaybook$followUpPlaybooks$1;->I$0:I
+    iput v2, v0, Lde/rki/coronawarnapp/playbook/OrganizerPlaybook$followUpPlaybooks$1;->I$0:I
 
-    iput v2, v0, Lde/rki/coronawarnapp/playbook/OrganizerPlaybook$followUpPlaybooks$1;->I$1:I
-
-    iput p0, v0, Lde/rki/coronawarnapp/playbook/OrganizerPlaybook$followUpPlaybooks$1;->I$2:I
+    iput p0, v0, Lde/rki/coronawarnapp/playbook/OrganizerPlaybook$followUpPlaybooks$1;->I$1:I
 
     iput v4, v0, Lde/rki/coronawarnapp/playbook/OrganizerPlaybook$followUpPlaybooks$1;->label:I
 
-    invoke-virtual {v8, v0}, Lde/rki/coronawarnapp/playbook/OrganizerPlaybook;->dummy(Lkotlin/coroutines/Continuation;)Ljava/lang/Object;
+    invoke-virtual {v7, v0}, Lde/rki/coronawarnapp/playbook/OrganizerPlaybook;->dummy(Lkotlin/coroutines/Continuation;)Ljava/lang/Object;
 
     move-result-object p1
 
     if-ne p1, v1, :cond_5
 
-    move-object v2, v1
-
     goto :goto_4
 
     :cond_5
     :goto_3
-    move p1, p0
+    move p1, v2
 
-    move-object p0, v8
+    move v2, v5
 
-    move-object v13, v1
+    move v5, p0
 
-    move-object v1, v0
+    move-object p0, v7
 
-    move v0, v7
-
-    move v7, v6
-
-    move v6, v5
-
-    move v5, v4
-
-    move-object v4, v3
-
-    move v3, v2
-
-    move-object v2, v13
-
-    add-int/2addr v3, v7
-
-    move v13, v5
-
-    move v5, v3
-
-    move-object v3, v4
-
-    move v4, v13
-
-    goto/16 :goto_1
+    goto :goto_1
 
     :cond_6
     sget-object p1, Ltimber/log/Timber;->Forest:Ltimber/log/Timber$Forest;
@@ -400,24 +342,24 @@
 
     const-string v0, "] Follow Up: finished"
 
-    invoke-static {v3, p0, v0}, Landroidx/core/graphics/PathParser$$ExternalSyntheticOutline0;->m(Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;)Ljava/lang/String;
+    invoke-static {v3, p0, v0}, Landroidx/concurrent/futures/AbstractResolvableFuture$$ExternalSyntheticOutline1;->m(Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;)Ljava/lang/String;
 
     move-result-object p0
 
-    new-array v0, v6, [Ljava/lang/Object;
+    new-array v0, v2, [Ljava/lang/Object;
 
     invoke-virtual {p1, p0, v0}, Ltimber/log/Timber$Forest;->i(Ljava/lang/String;[Ljava/lang/Object;)V
 
-    sget-object v2, Lkotlin/Unit;->INSTANCE:Lkotlin/Unit;
+    sget-object v1, Lkotlin/Unit;->INSTANCE:Lkotlin/Unit;
 
     :goto_4
-    return-object v2
+    return-object v1
 .end method
 
 
 # virtual methods
-.method public final asOrganizerSubmissionException(Ljava/lang/Exception;Lde/rki/coronawarnapp/playbook/OrganizerPlaybook$ErrorType;)Lde/rki/coronawarnapp/presencetracing/organizer/submission/OrganizerSubmissionException;
-    .locals 6
+.method public final asOrganizerSubmissionException$enumunboxing$(Ljava/lang/Exception;I)Lde/rki/coronawarnapp/presencetracing/organizer/submission/OrganizerSubmissionException;
+    .locals 7
 
     sget-object v0, Lde/rki/coronawarnapp/presencetracing/organizer/submission/OrganizerSubmissionException$ErrorCode;->SUBMISSION_OB_SERVER_ERROR:Lde/rki/coronawarnapp/presencetracing/organizer/submission/OrganizerSubmissionException$ErrorCode;
 
@@ -441,11 +383,13 @@
     :goto_0
     const/4 v5, 0x2
 
-    if-eqz v3, :cond_4
+    const/4 v6, 0x0
 
-    invoke-virtual {p2}, Ljava/lang/Enum;->ordinal()I
+    if-eqz v3, :cond_5
 
-    move-result p2
+    if-eqz p2, :cond_4
+
+    add-int/lit8 p2, p2, -0x1
 
     if-eqz p2, :cond_3
 
@@ -475,73 +419,59 @@
     goto :goto_1
 
     :cond_4
+    throw v6
+
+    :cond_5
     instance-of v3, p1, Lde/rki/coronawarnapp/exception/http/CwaClientError;
 
-    if-eqz v3, :cond_8
+    if-eqz v3, :cond_a
 
-    invoke-virtual {p2}, Ljava/lang/Enum;->ordinal()I
+    if-eqz p2, :cond_9
 
-    move-result p2
+    add-int/lit8 p2, p2, -0x1
 
-    if-eqz p2, :cond_7
+    if-eqz p2, :cond_8
 
-    if-eq p2, v4, :cond_6
+    if-eq p2, v4, :cond_7
 
-    if-ne p2, v5, :cond_5
+    if-ne p2, v5, :cond_6
 
     sget-object v0, Lde/rki/coronawarnapp/presencetracing/organizer/submission/OrganizerSubmissionException$ErrorCode;->SUBMISSION_OB_CLIENT_ERROR:Lde/rki/coronawarnapp/presencetracing/organizer/submission/OrganizerSubmissionException$ErrorCode;
 
     goto :goto_1
 
-    :cond_5
+    :cond_6
     new-instance p1, Lkotlin/NoWhenBranchMatchedException;
 
     invoke-direct {p1}, Lkotlin/NoWhenBranchMatchedException;-><init>()V
 
     throw p1
 
-    :cond_6
+    :cond_7
     sget-object v0, Lde/rki/coronawarnapp/presencetracing/organizer/submission/OrganizerSubmissionException$ErrorCode;->TAN_OB_CLIENT_ERROR:Lde/rki/coronawarnapp/presencetracing/organizer/submission/OrganizerSubmissionException$ErrorCode;
 
     goto :goto_1
 
-    :cond_7
+    :cond_8
     sget-object v0, Lde/rki/coronawarnapp/presencetracing/organizer/submission/OrganizerSubmissionException$ErrorCode;->REGTOKEN_OB_CLIENT_ERROR:Lde/rki/coronawarnapp/presencetracing/organizer/submission/OrganizerSubmissionException$ErrorCode;
 
     goto :goto_1
 
-    :cond_8
-    instance-of v3, p1, Lde/rki/coronawarnapp/exception/http/CwaServerError;
-
-    if-eqz v3, :cond_a
-
-    invoke-virtual {p2}, Ljava/lang/Enum;->ordinal()I
-
-    move-result p2
-
-    if-eqz p2, :cond_d
-
-    if-eq p2, v4, :cond_c
-
-    if-ne p2, v5, :cond_9
-
-    goto :goto_1
-
     :cond_9
-    new-instance p1, Lkotlin/NoWhenBranchMatchedException;
-
-    invoke-direct {p1}, Lkotlin/NoWhenBranchMatchedException;-><init>()V
-
-    throw p1
+    throw v6
 
     :cond_a
-    invoke-virtual {p2}, Ljava/lang/Enum;->ordinal()I
+    instance-of v3, p1, Lde/rki/coronawarnapp/exception/http/CwaServerError;
 
-    move-result p2
+    if-eqz v3, :cond_d
 
-    if-eqz p2, :cond_d
+    if-eqz p2, :cond_c
 
-    if-eq p2, v4, :cond_c
+    add-int/lit8 p2, p2, -0x1
+
+    if-eqz p2, :cond_10
+
+    if-eq p2, v4, :cond_f
 
     if-ne p2, v5, :cond_b
 
@@ -555,11 +485,34 @@
     throw p1
 
     :cond_c
+    throw v6
+
+    :cond_d
+    if-eqz p2, :cond_11
+
+    add-int/lit8 p2, p2, -0x1
+
+    if-eqz p2, :cond_10
+
+    if-eq p2, v4, :cond_f
+
+    if-ne p2, v5, :cond_e
+
+    goto :goto_1
+
+    :cond_e
+    new-instance p1, Lkotlin/NoWhenBranchMatchedException;
+
+    invoke-direct {p1}, Lkotlin/NoWhenBranchMatchedException;-><init>()V
+
+    throw p1
+
+    :cond_f
     move-object v0, v1
 
     goto :goto_1
 
-    :cond_d
+    :cond_10
     move-object v0, v2
 
     :goto_1
@@ -590,10 +543,13 @@
     invoke-direct {p2, v0, p1}, Lde/rki/coronawarnapp/presencetracing/organizer/submission/OrganizerSubmissionException;-><init>(Lde/rki/coronawarnapp/presencetracing/organizer/submission/OrganizerSubmissionException$ErrorCode;Ljava/lang/Throwable;)V
 
     return-object p2
+
+    :cond_11
+    throw v6
 .end method
 
 .method public final dummy(Lkotlin/coroutines/Continuation;)Ljava/lang/Object;
-    .locals 11
+    .locals 7
     .annotation system Ldalvik/annotation/Signature;
         value = {
             "(",
@@ -605,402 +561,146 @@
         }
     .end annotation
 
-    sget-object v0, Lkotlin/coroutines/intrinsics/CoroutineSingletons;->COROUTINE_SUSPENDED:Lkotlin/coroutines/intrinsics/CoroutineSingletons;
+    instance-of v0, p1, Lde/rki/coronawarnapp/playbook/OrganizerPlaybook$dummy$1;
 
-    instance-of v1, p1, Lde/rki/coronawarnapp/playbook/OrganizerPlaybook$dummy$1;
+    if-eqz v0, :cond_0
+
+    move-object v0, p1
+
+    check-cast v0, Lde/rki/coronawarnapp/playbook/OrganizerPlaybook$dummy$1;
+
+    iget v1, v0, Lde/rki/coronawarnapp/playbook/OrganizerPlaybook$dummy$1;->label:I
 
     const/high16 v2, -0x80000000
 
-    if-eqz v1, :cond_0
+    and-int v3, v1, v2
 
-    move-object v1, p1
+    if-eqz v3, :cond_0
 
-    check-cast v1, Lde/rki/coronawarnapp/playbook/OrganizerPlaybook$dummy$1;
+    sub-int/2addr v1, v2
 
-    iget v3, v1, Lde/rki/coronawarnapp/playbook/OrganizerPlaybook$dummy$1;->label:I
-
-    and-int v4, v3, v2
-
-    if-eqz v4, :cond_0
-
-    sub-int/2addr v3, v2
-
-    iput v3, v1, Lde/rki/coronawarnapp/playbook/OrganizerPlaybook$dummy$1;->label:I
+    iput v1, v0, Lde/rki/coronawarnapp/playbook/OrganizerPlaybook$dummy$1;->label:I
 
     goto :goto_0
 
     :cond_0
-    new-instance v1, Lde/rki/coronawarnapp/playbook/OrganizerPlaybook$dummy$1;
+    new-instance v0, Lde/rki/coronawarnapp/playbook/OrganizerPlaybook$dummy$1;
 
-    invoke-direct {v1, p0, p1}, Lde/rki/coronawarnapp/playbook/OrganizerPlaybook$dummy$1;-><init>(Lde/rki/coronawarnapp/playbook/OrganizerPlaybook;Lkotlin/coroutines/Continuation;)V
+    invoke-direct {v0, p0, p1}, Lde/rki/coronawarnapp/playbook/OrganizerPlaybook$dummy$1;-><init>(Lde/rki/coronawarnapp/playbook/OrganizerPlaybook;Lkotlin/coroutines/Continuation;)V
 
     :goto_0
-    iget-object p1, v1, Lde/rki/coronawarnapp/playbook/OrganizerPlaybook$dummy$1;->result:Ljava/lang/Object;
+    iget-object p1, v0, Lde/rki/coronawarnapp/playbook/OrganizerPlaybook$dummy$1;->result:Ljava/lang/Object;
 
-    iget v3, v1, Lde/rki/coronawarnapp/playbook/OrganizerPlaybook$dummy$1;->label:I
+    sget-object v1, Lkotlin/coroutines/intrinsics/CoroutineSingletons;->COROUTINE_SUSPENDED:Lkotlin/coroutines/intrinsics/CoroutineSingletons;
 
-    const/4 v4, 0x3
+    iget v2, v0, Lde/rki/coronawarnapp/playbook/OrganizerPlaybook$dummy$1;->label:I
 
-    const/4 v5, 0x2
+    const/4 v3, 0x3
 
-    const-string v6, "Ignoring dummy request exception: %s"
+    const/4 v4, 0x2
 
-    const/4 v7, 0x0
+    const/4 v5, 0x1
 
-    const-string v8, "call to \'resume\' before \'invoke\' with coroutine"
+    const/4 v6, 0x0
 
-    const/4 v9, 0x1
+    if-eqz v2, :cond_4
 
-    if-eqz v3, :cond_4
+    if-eq v2, v5, :cond_3
 
-    if-eq v3, v9, :cond_3
+    if-eq v2, v4, :cond_2
 
-    if-eq v3, v5, :cond_2
-
-    if-ne v3, v4, :cond_1
+    if-ne v2, v3, :cond_1
 
     invoke-static {p1}, Lkotlin/ResultKt;->throwOnFailure(Ljava/lang/Object;)V
 
-    goto/16 :goto_c
+    goto :goto_3
 
     :cond_1
     new-instance p1, Ljava/lang/IllegalStateException;
 
-    invoke-direct {p1, v8}, Ljava/lang/IllegalStateException;-><init>(Ljava/lang/String;)V
+    const-string v0, "call to \'resume\' before \'invoke\' with coroutine"
+
+    invoke-direct {p1, v0}, Ljava/lang/IllegalStateException;-><init>(Ljava/lang/String;)V
 
     throw p1
 
     :cond_2
-    iget-object v3, v1, Lde/rki/coronawarnapp/playbook/OrganizerPlaybook$dummy$1;->L$0:Ljava/lang/Object;
+    iget-object v2, v0, Lde/rki/coronawarnapp/playbook/OrganizerPlaybook$dummy$1;->L$0:Ljava/lang/Object;
 
-    check-cast v3, Lde/rki/coronawarnapp/playbook/OrganizerPlaybook;
+    check-cast v2, Lde/rki/coronawarnapp/playbook/OrganizerPlaybook;
 
     invoke-static {p1}, Lkotlin/ResultKt;->throwOnFailure(Ljava/lang/Object;)V
 
-    goto/16 :goto_8
+    goto :goto_2
 
     :cond_3
-    iget-object v3, v1, Lde/rki/coronawarnapp/playbook/OrganizerPlaybook$dummy$1;->L$0:Ljava/lang/Object;
+    iget-object v2, v0, Lde/rki/coronawarnapp/playbook/OrganizerPlaybook$dummy$1;->L$0:Ljava/lang/Object;
 
-    check-cast v3, Lde/rki/coronawarnapp/playbook/OrganizerPlaybook;
+    check-cast v2, Lde/rki/coronawarnapp/playbook/OrganizerPlaybook;
 
     invoke-static {p1}, Lkotlin/ResultKt;->throwOnFailure(Ljava/lang/Object;)V
 
-    goto :goto_4
+    goto :goto_1
 
     :cond_4
     invoke-static {p1}, Lkotlin/ResultKt;->throwOnFailure(Ljava/lang/Object;)V
 
-    iput-object p0, v1, Lde/rki/coronawarnapp/playbook/OrganizerPlaybook$dummy$1;->L$0:Ljava/lang/Object;
+    new-instance p1, Lde/rki/coronawarnapp/playbook/OrganizerPlaybook$dummy$2;
 
-    iput v9, v1, Lde/rki/coronawarnapp/playbook/OrganizerPlaybook$dummy$1;->label:I
+    invoke-direct {p1, p0, v6}, Lde/rki/coronawarnapp/playbook/OrganizerPlaybook$dummy$2;-><init>(Lde/rki/coronawarnapp/playbook/OrganizerPlaybook;Lkotlin/coroutines/Continuation;)V
 
-    instance-of p1, v1, Lde/rki/coronawarnapp/playbook/OrganizerPlaybook$ignoreExceptions$1;
+    iput-object p0, v0, Lde/rki/coronawarnapp/playbook/OrganizerPlaybook$dummy$1;->L$0:Ljava/lang/Object;
 
-    if-eqz p1, :cond_5
+    iput v5, v0, Lde/rki/coronawarnapp/playbook/OrganizerPlaybook$dummy$1;->label:I
 
-    move-object p1, v1
+    invoke-virtual {p0, p1, v0}, Lde/rki/coronawarnapp/playbook/OrganizerPlaybook;->ignoreExceptions(Lkotlin/jvm/functions/Function1;Lkotlin/coroutines/Continuation;)Ljava/lang/Object;
 
-    check-cast p1, Lde/rki/coronawarnapp/playbook/OrganizerPlaybook$ignoreExceptions$1;
+    move-result-object p1
 
-    iget v3, p1, Lde/rki/coronawarnapp/playbook/OrganizerPlaybook$ignoreExceptions$1;->label:I
+    if-ne p1, v1, :cond_5
 
-    and-int v10, v3, v2
-
-    if-eqz v10, :cond_5
-
-    sub-int/2addr v3, v2
-
-    iput v3, p1, Lde/rki/coronawarnapp/playbook/OrganizerPlaybook$ignoreExceptions$1;->label:I
-
-    goto :goto_1
+    return-object v1
 
     :cond_5
-    new-instance p1, Lde/rki/coronawarnapp/playbook/OrganizerPlaybook$ignoreExceptions$1;
-
-    invoke-direct {p1, p0, v1}, Lde/rki/coronawarnapp/playbook/OrganizerPlaybook$ignoreExceptions$1;-><init>(Lde/rki/coronawarnapp/playbook/OrganizerPlaybook;Lkotlin/coroutines/Continuation;)V
+    move-object v2, p0
 
     :goto_1
-    iget-object v3, p1, Lde/rki/coronawarnapp/playbook/OrganizerPlaybook$ignoreExceptions$1;->result:Ljava/lang/Object;
+    new-instance p1, Lde/rki/coronawarnapp/playbook/OrganizerPlaybook$dummy$3;
 
-    iget v10, p1, Lde/rki/coronawarnapp/playbook/OrganizerPlaybook$ignoreExceptions$1;->label:I
+    invoke-direct {p1, v2, v6}, Lde/rki/coronawarnapp/playbook/OrganizerPlaybook$dummy$3;-><init>(Lde/rki/coronawarnapp/playbook/OrganizerPlaybook;Lkotlin/coroutines/Continuation;)V
 
-    if-eqz v10, :cond_7
+    iput-object v2, v0, Lde/rki/coronawarnapp/playbook/OrganizerPlaybook$dummy$1;->L$0:Ljava/lang/Object;
 
-    if-ne v10, v9, :cond_6
+    iput v4, v0, Lde/rki/coronawarnapp/playbook/OrganizerPlaybook$dummy$1;->label:I
 
-    :try_start_0
-    invoke-static {v3}, Lkotlin/ResultKt;->throwOnFailure(Ljava/lang/Object;)V
-    :try_end_0
-    .catch Ljava/lang/Exception; {:try_start_0 .. :try_end_0} :catch_0
+    invoke-virtual {v2, p1, v0}, Lde/rki/coronawarnapp/playbook/OrganizerPlaybook;->ignoreExceptions(Lkotlin/jvm/functions/Function1;Lkotlin/coroutines/Continuation;)Ljava/lang/Object;
 
-    goto :goto_2
+    move-result-object p1
+
+    if-ne p1, v1, :cond_6
+
+    return-object v1
 
     :cond_6
-    new-instance p1, Ljava/lang/IllegalStateException;
+    :goto_2
+    new-instance p1, Lde/rki/coronawarnapp/playbook/OrganizerPlaybook$dummy$4;
 
-    invoke-direct {p1, v8}, Ljava/lang/IllegalStateException;-><init>(Ljava/lang/String;)V
+    invoke-direct {p1, v2, v6}, Lde/rki/coronawarnapp/playbook/OrganizerPlaybook$dummy$4;-><init>(Lde/rki/coronawarnapp/playbook/OrganizerPlaybook;Lkotlin/coroutines/Continuation;)V
 
-    throw p1
+    iput-object v6, v0, Lde/rki/coronawarnapp/playbook/OrganizerPlaybook$dummy$1;->L$0:Ljava/lang/Object;
+
+    iput v3, v0, Lde/rki/coronawarnapp/playbook/OrganizerPlaybook$dummy$1;->label:I
+
+    invoke-virtual {v2, p1, v0}, Lde/rki/coronawarnapp/playbook/OrganizerPlaybook;->ignoreExceptions(Lkotlin/jvm/functions/Function1;Lkotlin/coroutines/Continuation;)Ljava/lang/Object;
+
+    move-result-object p1
+
+    if-ne p1, v1, :cond_7
+
+    return-object v1
 
     :cond_7
-    invoke-static {v3}, Lkotlin/ResultKt;->throwOnFailure(Ljava/lang/Object;)V
-
-    :try_start_1
-    iput v9, p1, Lde/rki/coronawarnapp/playbook/OrganizerPlaybook$ignoreExceptions$1;->label:I
-
-    new-instance v3, Lde/rki/coronawarnapp/playbook/OrganizerPlaybook$dummy$2;
-
-    invoke-direct {v3, p0, p1}, Lde/rki/coronawarnapp/playbook/OrganizerPlaybook$dummy$2;-><init>(Lde/rki/coronawarnapp/playbook/OrganizerPlaybook;Lkotlin/coroutines/Continuation;)V
-
-    sget-object p1, Lkotlin/Unit;->INSTANCE:Lkotlin/Unit;
-
-    invoke-virtual {v3, p1}, Lde/rki/coronawarnapp/playbook/OrganizerPlaybook$dummy$2;->invokeSuspend(Ljava/lang/Object;)Ljava/lang/Object;
-
-    move-result-object p1
-    :try_end_1
-    .catch Ljava/lang/Exception; {:try_start_1 .. :try_end_1} :catch_0
-
-    if-ne p1, v0, :cond_8
-
-    move-object p1, v0
-
-    goto :goto_3
-
-    :catch_0
-    move-exception p1
-
-    sget-object v3, Ltimber/log/Timber;->Forest:Ltimber/log/Timber$Forest;
-
-    new-array v10, v9, [Ljava/lang/Object;
-
-    invoke-virtual {p1}, Ljava/lang/Exception;->toString()Ljava/lang/String;
-
-    move-result-object p1
-
-    aput-object p1, v10, v7
-
-    invoke-virtual {v3, v6, v10}, Ltimber/log/Timber$Forest;->v(Ljava/lang/String;[Ljava/lang/Object;)V
-
-    :cond_8
-    :goto_2
-    sget-object p1, Lkotlin/Unit;->INSTANCE:Lkotlin/Unit;
-
     :goto_3
-    if-ne p1, v0, :cond_9
-
-    return-object v0
-
-    :cond_9
-    move-object v3, p0
-
-    :goto_4
-    iput-object v3, v1, Lde/rki/coronawarnapp/playbook/OrganizerPlaybook$dummy$1;->L$0:Ljava/lang/Object;
-
-    iput v5, v1, Lde/rki/coronawarnapp/playbook/OrganizerPlaybook$dummy$1;->label:I
-
-    instance-of p1, v1, Lde/rki/coronawarnapp/playbook/OrganizerPlaybook$ignoreExceptions$1;
-
-    if-eqz p1, :cond_a
-
-    move-object p1, v1
-
-    check-cast p1, Lde/rki/coronawarnapp/playbook/OrganizerPlaybook$ignoreExceptions$1;
-
-    iget v5, p1, Lde/rki/coronawarnapp/playbook/OrganizerPlaybook$ignoreExceptions$1;->label:I
-
-    and-int v10, v5, v2
-
-    if-eqz v10, :cond_a
-
-    sub-int/2addr v5, v2
-
-    iput v5, p1, Lde/rki/coronawarnapp/playbook/OrganizerPlaybook$ignoreExceptions$1;->label:I
-
-    goto :goto_5
-
-    :cond_a
-    new-instance p1, Lde/rki/coronawarnapp/playbook/OrganizerPlaybook$ignoreExceptions$1;
-
-    invoke-direct {p1, v3, v1}, Lde/rki/coronawarnapp/playbook/OrganizerPlaybook$ignoreExceptions$1;-><init>(Lde/rki/coronawarnapp/playbook/OrganizerPlaybook;Lkotlin/coroutines/Continuation;)V
-
-    :goto_5
-    iget-object v5, p1, Lde/rki/coronawarnapp/playbook/OrganizerPlaybook$ignoreExceptions$1;->result:Ljava/lang/Object;
-
-    iget v10, p1, Lde/rki/coronawarnapp/playbook/OrganizerPlaybook$ignoreExceptions$1;->label:I
-
-    if-eqz v10, :cond_c
-
-    if-ne v10, v9, :cond_b
-
-    :try_start_2
-    invoke-static {v5}, Lkotlin/ResultKt;->throwOnFailure(Ljava/lang/Object;)V
-    :try_end_2
-    .catch Ljava/lang/Exception; {:try_start_2 .. :try_end_2} :catch_1
-
-    goto :goto_6
-
-    :cond_b
-    new-instance p1, Ljava/lang/IllegalStateException;
-
-    invoke-direct {p1, v8}, Ljava/lang/IllegalStateException;-><init>(Ljava/lang/String;)V
-
-    throw p1
-
-    :cond_c
-    invoke-static {v5}, Lkotlin/ResultKt;->throwOnFailure(Ljava/lang/Object;)V
-
-    :try_start_3
-    iput v9, p1, Lde/rki/coronawarnapp/playbook/OrganizerPlaybook$ignoreExceptions$1;->label:I
-
-    new-instance v5, Lde/rki/coronawarnapp/playbook/OrganizerPlaybook$dummy$3;
-
-    invoke-direct {v5, v3, p1}, Lde/rki/coronawarnapp/playbook/OrganizerPlaybook$dummy$3;-><init>(Lde/rki/coronawarnapp/playbook/OrganizerPlaybook;Lkotlin/coroutines/Continuation;)V
-
-    sget-object p1, Lkotlin/Unit;->INSTANCE:Lkotlin/Unit;
-
-    invoke-virtual {v5, p1}, Lde/rki/coronawarnapp/playbook/OrganizerPlaybook$dummy$3;->invokeSuspend(Ljava/lang/Object;)Ljava/lang/Object;
-
-    move-result-object p1
-    :try_end_3
-    .catch Ljava/lang/Exception; {:try_start_3 .. :try_end_3} :catch_1
-
-    if-ne p1, v0, :cond_d
-
-    move-object p1, v0
-
-    goto :goto_7
-
-    :catch_1
-    move-exception p1
-
-    sget-object v5, Ltimber/log/Timber;->Forest:Ltimber/log/Timber$Forest;
-
-    new-array v10, v9, [Ljava/lang/Object;
-
-    invoke-virtual {p1}, Ljava/lang/Exception;->toString()Ljava/lang/String;
-
-    move-result-object p1
-
-    aput-object p1, v10, v7
-
-    invoke-virtual {v5, v6, v10}, Ltimber/log/Timber$Forest;->v(Ljava/lang/String;[Ljava/lang/Object;)V
-
-    :cond_d
-    :goto_6
-    sget-object p1, Lkotlin/Unit;->INSTANCE:Lkotlin/Unit;
-
-    :goto_7
-    if-ne p1, v0, :cond_e
-
-    return-object v0
-
-    :cond_e
-    :goto_8
-    const/4 p1, 0x0
-
-    iput-object p1, v1, Lde/rki/coronawarnapp/playbook/OrganizerPlaybook$dummy$1;->L$0:Ljava/lang/Object;
-
-    iput v4, v1, Lde/rki/coronawarnapp/playbook/OrganizerPlaybook$dummy$1;->label:I
-
-    instance-of p1, v1, Lde/rki/coronawarnapp/playbook/OrganizerPlaybook$ignoreExceptions$1;
-
-    if-eqz p1, :cond_f
-
-    move-object p1, v1
-
-    check-cast p1, Lde/rki/coronawarnapp/playbook/OrganizerPlaybook$ignoreExceptions$1;
-
-    iget v4, p1, Lde/rki/coronawarnapp/playbook/OrganizerPlaybook$ignoreExceptions$1;->label:I
-
-    and-int v5, v4, v2
-
-    if-eqz v5, :cond_f
-
-    sub-int/2addr v4, v2
-
-    iput v4, p1, Lde/rki/coronawarnapp/playbook/OrganizerPlaybook$ignoreExceptions$1;->label:I
-
-    goto :goto_9
-
-    :cond_f
-    new-instance p1, Lde/rki/coronawarnapp/playbook/OrganizerPlaybook$ignoreExceptions$1;
-
-    invoke-direct {p1, v3, v1}, Lde/rki/coronawarnapp/playbook/OrganizerPlaybook$ignoreExceptions$1;-><init>(Lde/rki/coronawarnapp/playbook/OrganizerPlaybook;Lkotlin/coroutines/Continuation;)V
-
-    :goto_9
-    iget-object v1, p1, Lde/rki/coronawarnapp/playbook/OrganizerPlaybook$ignoreExceptions$1;->result:Ljava/lang/Object;
-
-    iget v2, p1, Lde/rki/coronawarnapp/playbook/OrganizerPlaybook$ignoreExceptions$1;->label:I
-
-    if-eqz v2, :cond_11
-
-    if-ne v2, v9, :cond_10
-
-    :try_start_4
-    invoke-static {v1}, Lkotlin/ResultKt;->throwOnFailure(Ljava/lang/Object;)V
-    :try_end_4
-    .catch Ljava/lang/Exception; {:try_start_4 .. :try_end_4} :catch_2
-
-    goto :goto_a
-
-    :cond_10
-    new-instance p1, Ljava/lang/IllegalStateException;
-
-    invoke-direct {p1, v8}, Ljava/lang/IllegalStateException;-><init>(Ljava/lang/String;)V
-
-    throw p1
-
-    :cond_11
-    invoke-static {v1}, Lkotlin/ResultKt;->throwOnFailure(Ljava/lang/Object;)V
-
-    :try_start_5
-    iput v9, p1, Lde/rki/coronawarnapp/playbook/OrganizerPlaybook$ignoreExceptions$1;->label:I
-
-    new-instance v1, Lde/rki/coronawarnapp/playbook/OrganizerPlaybook$dummy$4;
-
-    invoke-direct {v1, v3, p1}, Lde/rki/coronawarnapp/playbook/OrganizerPlaybook$dummy$4;-><init>(Lde/rki/coronawarnapp/playbook/OrganizerPlaybook;Lkotlin/coroutines/Continuation;)V
-
-    sget-object p1, Lkotlin/Unit;->INSTANCE:Lkotlin/Unit;
-
-    invoke-virtual {v1, p1}, Lde/rki/coronawarnapp/playbook/OrganizerPlaybook$dummy$4;->invokeSuspend(Ljava/lang/Object;)Ljava/lang/Object;
-
-    move-result-object p1
-    :try_end_5
-    .catch Ljava/lang/Exception; {:try_start_5 .. :try_end_5} :catch_2
-
-    if-ne p1, v0, :cond_12
-
-    move-object p1, v0
-
-    goto :goto_b
-
-    :catch_2
-    move-exception p1
-
-    sget-object v1, Ltimber/log/Timber;->Forest:Ltimber/log/Timber$Forest;
-
-    new-array v2, v9, [Ljava/lang/Object;
-
-    invoke-virtual {p1}, Ljava/lang/Exception;->toString()Ljava/lang/String;
-
-    move-result-object p1
-
-    aput-object p1, v2, v7
-
-    invoke-virtual {v1, v6, v2}, Ltimber/log/Timber$Forest;->v(Ljava/lang/String;[Ljava/lang/Object;)V
-
-    :cond_12
-    :goto_a
-    sget-object p1, Lkotlin/Unit;->INSTANCE:Lkotlin/Unit;
-
-    :goto_b
-    if-ne p1, v0, :cond_13
-
-    return-object v0
-
-    :cond_13
-    :goto_c
     sget-object p1, Lkotlin/Unit;->INSTANCE:Lkotlin/Unit;
 
     return-object p1
@@ -1247,7 +947,7 @@
 .end method
 
 .method public final obtainUploadTan(Lde/rki/coronawarnapp/coronatest/server/RegistrationRequest;Lkotlin/coroutines/Continuation;)Ljava/lang/Object;
-    .locals 19
+    .locals 17
     .annotation system Ldalvik/annotation/Signature;
         value = {
             "(",
@@ -1260,186 +960,182 @@
         }
     .end annotation
 
-    move-object/from16 v1, p0
+    move-object/from16 v0, p0
 
-    move-object/from16 v0, p1
+    move-object/from16 v1, p1
 
     move-object/from16 v2, p2
 
-    sget-object v3, Lkotlin/coroutines/intrinsics/CoroutineSingletons;->COROUTINE_SUSPENDED:Lkotlin/coroutines/intrinsics/CoroutineSingletons;
+    instance-of v3, v2, Lde/rki/coronawarnapp/playbook/OrganizerPlaybook$obtainUploadTan$1;
 
-    instance-of v4, v2, Lde/rki/coronawarnapp/playbook/OrganizerPlaybook$obtainUploadTan$1;
+    if-eqz v3, :cond_0
+
+    move-object v3, v2
+
+    check-cast v3, Lde/rki/coronawarnapp/playbook/OrganizerPlaybook$obtainUploadTan$1;
+
+    iget v4, v3, Lde/rki/coronawarnapp/playbook/OrganizerPlaybook$obtainUploadTan$1;->label:I
 
     const/high16 v5, -0x80000000
 
-    if-eqz v4, :cond_0
+    and-int v6, v4, v5
 
-    move-object v4, v2
+    if-eqz v6, :cond_0
 
-    check-cast v4, Lde/rki/coronawarnapp/playbook/OrganizerPlaybook$obtainUploadTan$1;
+    sub-int/2addr v4, v5
 
-    iget v6, v4, Lde/rki/coronawarnapp/playbook/OrganizerPlaybook$obtainUploadTan$1;->label:I
-
-    and-int v7, v6, v5
-
-    if-eqz v7, :cond_0
-
-    sub-int/2addr v6, v5
-
-    iput v6, v4, Lde/rki/coronawarnapp/playbook/OrganizerPlaybook$obtainUploadTan$1;->label:I
+    iput v4, v3, Lde/rki/coronawarnapp/playbook/OrganizerPlaybook$obtainUploadTan$1;->label:I
 
     goto :goto_0
 
     :cond_0
-    new-instance v4, Lde/rki/coronawarnapp/playbook/OrganizerPlaybook$obtainUploadTan$1;
+    new-instance v3, Lde/rki/coronawarnapp/playbook/OrganizerPlaybook$obtainUploadTan$1;
 
-    invoke-direct {v4, v1, v2}, Lde/rki/coronawarnapp/playbook/OrganizerPlaybook$obtainUploadTan$1;-><init>(Lde/rki/coronawarnapp/playbook/OrganizerPlaybook;Lkotlin/coroutines/Continuation;)V
+    invoke-direct {v3, v0, v2}, Lde/rki/coronawarnapp/playbook/OrganizerPlaybook$obtainUploadTan$1;-><init>(Lde/rki/coronawarnapp/playbook/OrganizerPlaybook;Lkotlin/coroutines/Continuation;)V
 
     :goto_0
-    iget-object v2, v4, Lde/rki/coronawarnapp/playbook/OrganizerPlaybook$obtainUploadTan$1;->result:Ljava/lang/Object;
+    iget-object v2, v3, Lde/rki/coronawarnapp/playbook/OrganizerPlaybook$obtainUploadTan$1;->result:Ljava/lang/Object;
 
-    iget v6, v4, Lde/rki/coronawarnapp/playbook/OrganizerPlaybook$obtainUploadTan$1;->label:I
+    sget-object v4, Lkotlin/coroutines/intrinsics/CoroutineSingletons;->COROUTINE_SUSPENDED:Lkotlin/coroutines/intrinsics/CoroutineSingletons;
 
-    const/4 v7, 0x2
+    iget v5, v3, Lde/rki/coronawarnapp/playbook/OrganizerPlaybook$obtainUploadTan$1;->label:I
 
-    const-string v8, "Ignoring dummy request exception: %s"
+    const/4 v6, 0x0
 
-    const/4 v9, 0x0
+    const/4 v7, 0x0
 
-    const-string v10, "call to \'resume\' before \'invoke\' with coroutine"
+    const/4 v8, 0x1
 
-    const/4 v11, 0x0
+    const/4 v9, 0x2
 
-    const/4 v12, 0x1
+    packed-switch v5, :pswitch_data_0
 
-    packed-switch v6, :pswitch_data_0
+    new-instance v1, Ljava/lang/IllegalStateException;
 
-    new-instance v0, Ljava/lang/IllegalStateException;
+    const-string v2, "call to \'resume\' before \'invoke\' with coroutine"
 
-    invoke-direct {v0, v10}, Ljava/lang/IllegalStateException;-><init>(Ljava/lang/String;)V
+    invoke-direct {v1, v2}, Ljava/lang/IllegalStateException;-><init>(Ljava/lang/String;)V
 
-    throw v0
+    throw v1
 
     :pswitch_0
-    iget-object v0, v4, Lde/rki/coronawarnapp/playbook/OrganizerPlaybook$obtainUploadTan$1;->L$4:Ljava/lang/Object;
+    iget-object v1, v3, Lde/rki/coronawarnapp/playbook/OrganizerPlaybook$obtainUploadTan$1;->L$4:Ljava/lang/Object;
 
-    check-cast v0, Ljava/lang/Exception;
+    check-cast v1, Ljava/lang/Exception;
 
-    iget-object v3, v4, Lde/rki/coronawarnapp/playbook/OrganizerPlaybook$obtainUploadTan$1;->L$3:Ljava/lang/Object;
+    iget-object v4, v3, Lde/rki/coronawarnapp/playbook/OrganizerPlaybook$obtainUploadTan$1;->L$3:Ljava/lang/Object;
 
-    check-cast v3, Ljava/lang/String;
+    check-cast v4, Ljava/lang/String;
 
-    iget-object v5, v4, Lde/rki/coronawarnapp/playbook/OrganizerPlaybook$obtainUploadTan$1;->L$2:Ljava/lang/Object;
+    iget-object v5, v3, Lde/rki/coronawarnapp/playbook/OrganizerPlaybook$obtainUploadTan$1;->L$2:Ljava/lang/Object;
 
     check-cast v5, Ljava/lang/Exception;
 
-    iget-object v6, v4, Lde/rki/coronawarnapp/playbook/OrganizerPlaybook$obtainUploadTan$1;->L$1:Ljava/lang/Object;
+    iget-object v10, v3, Lde/rki/coronawarnapp/playbook/OrganizerPlaybook$obtainUploadTan$1;->L$1:Ljava/lang/Object;
 
-    check-cast v6, Ljava/lang/String;
+    check-cast v10, Ljava/lang/String;
 
-    iget-object v4, v4, Lde/rki/coronawarnapp/playbook/OrganizerPlaybook$obtainUploadTan$1;->L$0:Ljava/lang/Object;
+    iget-object v3, v3, Lde/rki/coronawarnapp/playbook/OrganizerPlaybook$obtainUploadTan$1;->L$0:Ljava/lang/Object;
 
-    check-cast v4, Lde/rki/coronawarnapp/playbook/OrganizerPlaybook;
+    check-cast v3, Lde/rki/coronawarnapp/playbook/OrganizerPlaybook;
 
     invoke-static {v2}, Lkotlin/ResultKt;->throwOnFailure(Ljava/lang/Object;)V
 
-    goto/16 :goto_17
+    goto/16 :goto_a
 
     :pswitch_1
-    iget-object v0, v4, Lde/rki/coronawarnapp/playbook/OrganizerPlaybook$obtainUploadTan$1;->L$4:Ljava/lang/Object;
+    iget-object v1, v3, Lde/rki/coronawarnapp/playbook/OrganizerPlaybook$obtainUploadTan$1;->L$4:Ljava/lang/Object;
 
-    check-cast v0, Ljava/lang/Exception;
+    check-cast v1, Ljava/lang/Exception;
 
-    iget-object v6, v4, Lde/rki/coronawarnapp/playbook/OrganizerPlaybook$obtainUploadTan$1;->L$3:Ljava/lang/Object;
+    iget-object v5, v3, Lde/rki/coronawarnapp/playbook/OrganizerPlaybook$obtainUploadTan$1;->L$3:Ljava/lang/Object;
 
-    check-cast v6, Ljava/lang/String;
+    check-cast v5, Ljava/lang/String;
 
-    iget-object v7, v4, Lde/rki/coronawarnapp/playbook/OrganizerPlaybook$obtainUploadTan$1;->L$2:Ljava/lang/Object;
+    iget-object v10, v3, Lde/rki/coronawarnapp/playbook/OrganizerPlaybook$obtainUploadTan$1;->L$2:Ljava/lang/Object;
 
-    check-cast v7, Ljava/lang/Exception;
+    check-cast v10, Ljava/lang/Exception;
 
-    iget-object v13, v4, Lde/rki/coronawarnapp/playbook/OrganizerPlaybook$obtainUploadTan$1;->L$1:Ljava/lang/Object;
+    iget-object v11, v3, Lde/rki/coronawarnapp/playbook/OrganizerPlaybook$obtainUploadTan$1;->L$1:Ljava/lang/Object;
 
-    check-cast v13, Ljava/lang/String;
+    check-cast v11, Ljava/lang/String;
 
-    iget-object v14, v4, Lde/rki/coronawarnapp/playbook/OrganizerPlaybook$obtainUploadTan$1;->L$0:Ljava/lang/Object;
+    iget-object v12, v3, Lde/rki/coronawarnapp/playbook/OrganizerPlaybook$obtainUploadTan$1;->L$0:Ljava/lang/Object;
 
-    check-cast v14, Lde/rki/coronawarnapp/playbook/OrganizerPlaybook;
+    check-cast v12, Lde/rki/coronawarnapp/playbook/OrganizerPlaybook;
 
     invoke-static {v2}, Lkotlin/ResultKt;->throwOnFailure(Ljava/lang/Object;)V
 
-    goto/16 :goto_12
+    goto/16 :goto_8
 
     :pswitch_2
-    iget-object v0, v4, Lde/rki/coronawarnapp/playbook/OrganizerPlaybook$obtainUploadTan$1;->L$2:Ljava/lang/Object;
+    iget-object v1, v3, Lde/rki/coronawarnapp/playbook/OrganizerPlaybook$obtainUploadTan$1;->L$2:Ljava/lang/Object;
 
-    check-cast v0, Ljava/lang/Exception;
+    check-cast v1, Ljava/lang/Exception;
 
-    iget-object v6, v4, Lde/rki/coronawarnapp/playbook/OrganizerPlaybook$obtainUploadTan$1;->L$1:Ljava/lang/Object;
+    iget-object v5, v3, Lde/rki/coronawarnapp/playbook/OrganizerPlaybook$obtainUploadTan$1;->L$1:Ljava/lang/Object;
 
-    check-cast v6, Ljava/lang/String;
+    check-cast v5, Ljava/lang/String;
 
-    iget-object v7, v4, Lde/rki/coronawarnapp/playbook/OrganizerPlaybook$obtainUploadTan$1;->L$0:Ljava/lang/Object;
+    iget-object v10, v3, Lde/rki/coronawarnapp/playbook/OrganizerPlaybook$obtainUploadTan$1;->L$0:Ljava/lang/Object;
 
-    check-cast v7, Lde/rki/coronawarnapp/playbook/OrganizerPlaybook;
-
-    invoke-static {v2}, Lkotlin/ResultKt;->throwOnFailure(Ljava/lang/Object;)V
-
-    goto/16 :goto_10
-
-    :pswitch_3
-    iget-object v0, v4, Lde/rki/coronawarnapp/playbook/OrganizerPlaybook$obtainUploadTan$1;->L$2:Ljava/lang/Object;
-
-    check-cast v0, Ljava/lang/Exception;
-
-    iget-object v6, v4, Lde/rki/coronawarnapp/playbook/OrganizerPlaybook$obtainUploadTan$1;->L$1:Ljava/lang/Object;
-
-    check-cast v6, Ljava/lang/String;
-
-    iget-object v7, v4, Lde/rki/coronawarnapp/playbook/OrganizerPlaybook$obtainUploadTan$1;->L$0:Ljava/lang/Object;
-
-    check-cast v7, Lde/rki/coronawarnapp/playbook/OrganizerPlaybook;
-
-    invoke-static {v2}, Lkotlin/ResultKt;->throwOnFailure(Ljava/lang/Object;)V
-
-    goto/16 :goto_b
-
-    :pswitch_4
-    iget-object v0, v4, Lde/rki/coronawarnapp/playbook/OrganizerPlaybook$obtainUploadTan$1;->L$2:Ljava/lang/Object;
-
-    check-cast v0, Ljava/lang/Exception;
-
-    iget-object v6, v4, Lde/rki/coronawarnapp/playbook/OrganizerPlaybook$obtainUploadTan$1;->L$1:Ljava/lang/Object;
-
-    check-cast v6, Ljava/lang/String;
-
-    iget-object v7, v4, Lde/rki/coronawarnapp/playbook/OrganizerPlaybook$obtainUploadTan$1;->L$0:Ljava/lang/Object;
-
-    check-cast v7, Lde/rki/coronawarnapp/playbook/OrganizerPlaybook;
-
-    invoke-static {v2}, Lkotlin/ResultKt;->throwOnFailure(Ljava/lang/Object;)V
-
-    move-object v2, v0
-
-    goto/16 :goto_7
-
-    :pswitch_5
-    iget-object v0, v4, Lde/rki/coronawarnapp/playbook/OrganizerPlaybook$obtainUploadTan$1;->L$0:Ljava/lang/Object;
-
-    check-cast v0, Lde/rki/coronawarnapp/playbook/OrganizerPlaybook;
+    check-cast v10, Lde/rki/coronawarnapp/playbook/OrganizerPlaybook;
 
     invoke-static {v2}, Lkotlin/ResultKt;->throwOnFailure(Ljava/lang/Object;)V
 
     goto/16 :goto_6
 
+    :pswitch_3
+    iget-object v1, v3, Lde/rki/coronawarnapp/playbook/OrganizerPlaybook$obtainUploadTan$1;->L$2:Ljava/lang/Object;
+
+    check-cast v1, Ljava/lang/Exception;
+
+    iget-object v5, v3, Lde/rki/coronawarnapp/playbook/OrganizerPlaybook$obtainUploadTan$1;->L$1:Ljava/lang/Object;
+
+    check-cast v5, Ljava/lang/String;
+
+    iget-object v10, v3, Lde/rki/coronawarnapp/playbook/OrganizerPlaybook$obtainUploadTan$1;->L$0:Ljava/lang/Object;
+
+    check-cast v10, Lde/rki/coronawarnapp/playbook/OrganizerPlaybook;
+
+    invoke-static {v2}, Lkotlin/ResultKt;->throwOnFailure(Ljava/lang/Object;)V
+
+    goto/16 :goto_4
+
+    :pswitch_4
+    iget-object v1, v3, Lde/rki/coronawarnapp/playbook/OrganizerPlaybook$obtainUploadTan$1;->L$2:Ljava/lang/Object;
+
+    check-cast v1, Ljava/lang/Exception;
+
+    iget-object v5, v3, Lde/rki/coronawarnapp/playbook/OrganizerPlaybook$obtainUploadTan$1;->L$1:Ljava/lang/Object;
+
+    check-cast v5, Ljava/lang/String;
+
+    iget-object v10, v3, Lde/rki/coronawarnapp/playbook/OrganizerPlaybook$obtainUploadTan$1;->L$0:Ljava/lang/Object;
+
+    check-cast v10, Lde/rki/coronawarnapp/playbook/OrganizerPlaybook;
+
+    invoke-static {v2}, Lkotlin/ResultKt;->throwOnFailure(Ljava/lang/Object;)V
+
+    goto :goto_3
+
+    :pswitch_5
+    iget-object v1, v3, Lde/rki/coronawarnapp/playbook/OrganizerPlaybook$obtainUploadTan$1;->L$0:Ljava/lang/Object;
+
+    check-cast v1, Lde/rki/coronawarnapp/playbook/OrganizerPlaybook;
+
+    invoke-static {v2}, Lkotlin/ResultKt;->throwOnFailure(Ljava/lang/Object;)V
+
+    goto :goto_2
+
     :pswitch_6
-    iget-object v0, v4, Lde/rki/coronawarnapp/playbook/OrganizerPlaybook$obtainUploadTan$1;->L$1:Ljava/lang/Object;
+    iget-object v1, v3, Lde/rki/coronawarnapp/playbook/OrganizerPlaybook$obtainUploadTan$1;->L$1:Ljava/lang/Object;
 
-    check-cast v0, Lde/rki/coronawarnapp/coronatest/server/RegistrationRequest;
+    check-cast v1, Lde/rki/coronawarnapp/coronatest/server/RegistrationRequest;
 
-    iget-object v6, v4, Lde/rki/coronawarnapp/playbook/OrganizerPlaybook$obtainUploadTan$1;->L$0:Ljava/lang/Object;
+    iget-object v5, v3, Lde/rki/coronawarnapp/playbook/OrganizerPlaybook$obtainUploadTan$1;->L$0:Ljava/lang/Object;
 
-    check-cast v6, Lde/rki/coronawarnapp/playbook/OrganizerPlaybook;
+    check-cast v5, Lde/rki/coronawarnapp/playbook/OrganizerPlaybook;
 
     invoke-static {v2}, Lkotlin/ResultKt;->throwOnFailure(Ljava/lang/Object;)V
 
@@ -1450,671 +1146,320 @@
 
     sget-object v2, Ltimber/log/Timber;->Forest:Ltimber/log/Timber$Forest;
 
-    iget-object v6, v1, Lde/rki/coronawarnapp/playbook/OrganizerPlaybook;->uid:Ljava/lang/String;
+    iget-object v5, v0, Lde/rki/coronawarnapp/playbook/OrganizerPlaybook;->uid:Ljava/lang/String;
 
-    const-string v13, "["
+    const-string v10, "["
 
-    const-string v14, "] New Initial Registration Playbook"
+    const-string v11, "] New Initial Registration Playbook"
 
-    invoke-static {v13, v6, v14}, Landroidx/core/graphics/PathParser$$ExternalSyntheticOutline0;->m(Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;)Ljava/lang/String;
+    invoke-static {v10, v5, v11}, Landroidx/concurrent/futures/AbstractResolvableFuture$$ExternalSyntheticOutline1;->m(Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;)Ljava/lang/String;
 
-    move-result-object v6
+    move-result-object v5
 
-    new-array v13, v9, [Ljava/lang/Object;
+    new-array v10, v6, [Ljava/lang/Object;
 
-    invoke-virtual {v2, v6, v13}, Ltimber/log/Timber$Forest;->i(Ljava/lang/String;[Ljava/lang/Object;)V
+    invoke-virtual {v2, v5, v10}, Ltimber/log/Timber$Forest;->i(Ljava/lang/String;[Ljava/lang/Object;)V
 
     sget-object v2, Lde/rki/coronawarnapp/bugreporting/censors/contactdiary/OrganizerRegistrationTokenCensor;->Companion:Lde/rki/coronawarnapp/bugreporting/censors/contactdiary/OrganizerRegistrationTokenCensor$Companion;
 
-    iput-object v1, v4, Lde/rki/coronawarnapp/playbook/OrganizerPlaybook$obtainUploadTan$1;->L$0:Ljava/lang/Object;
+    iput-object v0, v3, Lde/rki/coronawarnapp/playbook/OrganizerPlaybook$obtainUploadTan$1;->L$0:Ljava/lang/Object;
 
-    iput-object v0, v4, Lde/rki/coronawarnapp/playbook/OrganizerPlaybook$obtainUploadTan$1;->L$1:Ljava/lang/Object;
+    iput-object v1, v3, Lde/rki/coronawarnapp/playbook/OrganizerPlaybook$obtainUploadTan$1;->L$1:Ljava/lang/Object;
 
-    iput v12, v4, Lde/rki/coronawarnapp/playbook/OrganizerPlaybook$obtainUploadTan$1;->label:I
+    iput v8, v3, Lde/rki/coronawarnapp/playbook/OrganizerPlaybook$obtainUploadTan$1;->label:I
 
-    invoke-virtual {v2, v0, v4}, Lde/rki/coronawarnapp/bugreporting/censors/contactdiary/OrganizerRegistrationTokenCensor$Companion;->addRegistrationRequestToCensor(Lde/rki/coronawarnapp/coronatest/server/RegistrationRequest;Lkotlin/coroutines/Continuation;)Ljava/lang/Object;
+    invoke-virtual {v2, v1, v3}, Lde/rki/coronawarnapp/bugreporting/censors/contactdiary/OrganizerRegistrationTokenCensor$Companion;->addRegistrationRequestToCensor(Lde/rki/coronawarnapp/coronatest/server/RegistrationRequest;Lkotlin/coroutines/Continuation;)Ljava/lang/Object;
 
     move-result-object v2
 
-    if-ne v2, v3, :cond_1
+    if-ne v2, v4, :cond_1
 
-    return-object v3
+    return-object v4
 
     :cond_1
-    move-object v6, v1
+    move-object v5, v0
 
     :goto_1
-    iput-object v6, v4, Lde/rki/coronawarnapp/playbook/OrganizerPlaybook$obtainUploadTan$1;->L$0:Ljava/lang/Object;
+    new-instance v2, Lde/rki/coronawarnapp/playbook/OrganizerPlaybook$obtainUploadTan$2;
 
-    iput-object v11, v4, Lde/rki/coronawarnapp/playbook/OrganizerPlaybook$obtainUploadTan$1;->L$1:Ljava/lang/Object;
+    invoke-direct {v2, v5, v1, v7}, Lde/rki/coronawarnapp/playbook/OrganizerPlaybook$obtainUploadTan$2;-><init>(Lde/rki/coronawarnapp/playbook/OrganizerPlaybook;Lde/rki/coronawarnapp/coronatest/server/RegistrationRequest;Lkotlin/coroutines/Continuation;)V
 
-    iput v7, v4, Lde/rki/coronawarnapp/playbook/OrganizerPlaybook$obtainUploadTan$1;->label:I
+    iput-object v5, v3, Lde/rki/coronawarnapp/playbook/OrganizerPlaybook$obtainUploadTan$1;->L$0:Ljava/lang/Object;
 
-    instance-of v2, v4, Lde/rki/coronawarnapp/playbook/OrganizerPlaybook$executeCapturingExceptions$1;
+    iput-object v7, v3, Lde/rki/coronawarnapp/playbook/OrganizerPlaybook$obtainUploadTan$1;->L$1:Ljava/lang/Object;
 
-    if-eqz v2, :cond_2
+    iput v9, v3, Lde/rki/coronawarnapp/playbook/OrganizerPlaybook$obtainUploadTan$1;->label:I
 
-    move-object v2, v4
+    invoke-virtual {v5, v2, v3}, Lde/rki/coronawarnapp/playbook/OrganizerPlaybook;->executeCapturingExceptions(Lkotlin/jvm/functions/Function1;Lkotlin/coroutines/Continuation;)Ljava/lang/Object;
 
-    check-cast v2, Lde/rki/coronawarnapp/playbook/OrganizerPlaybook$executeCapturingExceptions$1;
+    move-result-object v2
 
-    iget v7, v2, Lde/rki/coronawarnapp/playbook/OrganizerPlaybook$executeCapturingExceptions$1;->label:I
+    if-ne v2, v4, :cond_2
 
-    and-int v13, v7, v5
-
-    if-eqz v13, :cond_2
-
-    sub-int/2addr v7, v5
-
-    iput v7, v2, Lde/rki/coronawarnapp/playbook/OrganizerPlaybook$executeCapturingExceptions$1;->label:I
-
-    goto :goto_2
+    return-object v4
 
     :cond_2
-    new-instance v2, Lde/rki/coronawarnapp/playbook/OrganizerPlaybook$executeCapturingExceptions$1;
-
-    invoke-direct {v2, v6, v4}, Lde/rki/coronawarnapp/playbook/OrganizerPlaybook$executeCapturingExceptions$1;-><init>(Lde/rki/coronawarnapp/playbook/OrganizerPlaybook;Lkotlin/coroutines/Continuation;)V
+    move-object v1, v5
 
     :goto_2
-    iget-object v7, v2, Lde/rki/coronawarnapp/playbook/OrganizerPlaybook$executeCapturingExceptions$1;->result:Ljava/lang/Object;
-
-    iget v13, v2, Lde/rki/coronawarnapp/playbook/OrganizerPlaybook$executeCapturingExceptions$1;->label:I
-
-    if-eqz v13, :cond_4
-
-    if-ne v13, v12, :cond_3
-
-    :try_start_0
-    invoke-static {v7}, Lkotlin/ResultKt;->throwOnFailure(Ljava/lang/Object;)V
-    :try_end_0
-    .catch Ljava/lang/Exception; {:try_start_0 .. :try_end_0} :catch_0
-
-    goto :goto_3
-
-    :cond_3
-    new-instance v0, Ljava/lang/IllegalStateException;
-
-    invoke-direct {v0, v10}, Ljava/lang/IllegalStateException;-><init>(Ljava/lang/String;)V
-
-    throw v0
-
-    :cond_4
-    invoke-static {v7}, Lkotlin/ResultKt;->throwOnFailure(Ljava/lang/Object;)V
-
-    :try_start_1
-    iput v12, v2, Lde/rki/coronawarnapp/playbook/OrganizerPlaybook$executeCapturingExceptions$1;->label:I
-
-    new-instance v7, Lde/rki/coronawarnapp/playbook/OrganizerPlaybook$obtainUploadTan$2;
-
-    invoke-direct {v7, v6, v0, v2}, Lde/rki/coronawarnapp/playbook/OrganizerPlaybook$obtainUploadTan$2;-><init>(Lde/rki/coronawarnapp/playbook/OrganizerPlaybook;Lde/rki/coronawarnapp/coronatest/server/RegistrationRequest;Lkotlin/coroutines/Continuation;)V
-
-    sget-object v0, Lkotlin/Unit;->INSTANCE:Lkotlin/Unit;
-
-    invoke-virtual {v7, v0}, Lde/rki/coronawarnapp/playbook/OrganizerPlaybook$obtainUploadTan$2;->invokeSuspend(Ljava/lang/Object;)Ljava/lang/Object;
-
-    move-result-object v7
-
-    if-ne v7, v3, :cond_5
-
-    move-object v2, v3
-
-    goto :goto_5
-
-    :cond_5
-    :goto_3
-    new-instance v0, Lkotlin/Pair;
-
-    invoke-direct {v0, v7, v11}, Lkotlin/Pair;-><init>(Ljava/lang/Object;Ljava/lang/Object;)V
-    :try_end_1
-    .catch Ljava/lang/Exception; {:try_start_1 .. :try_end_1} :catch_0
-
-    goto :goto_4
-
-    :catch_0
-    move-exception v0
-
-    new-instance v2, Lkotlin/Pair;
-
-    invoke-direct {v2, v11, v0}, Lkotlin/Pair;-><init>(Ljava/lang/Object;Ljava/lang/Object;)V
-
-    move-object v0, v2
-
-    :goto_4
-    move-object v2, v0
-
-    :goto_5
-    if-ne v2, v3, :cond_6
-
-    return-object v3
-
-    :cond_6
-    move-object v0, v6
-
-    :goto_6
     check-cast v2, Lkotlin/Pair;
 
-    iget-object v6, v2, Lkotlin/Pair;->first:Ljava/lang/Object;
+    iget-object v5, v2, Lkotlin/Pair;->first:Ljava/lang/Object;
 
-    check-cast v6, Ljava/lang/String;
+    check-cast v5, Ljava/lang/String;
 
     iget-object v2, v2, Lkotlin/Pair;->second:Ljava/lang/Object;
 
     check-cast v2, Ljava/lang/Exception;
 
-    if-eqz v6, :cond_7
+    if-eqz v5, :cond_3
 
-    sget-object v7, Lde/rki/coronawarnapp/bugreporting/censors/contactdiary/OrganizerRegistrationTokenCensor;->Companion:Lde/rki/coronawarnapp/bugreporting/censors/contactdiary/OrganizerRegistrationTokenCensor$Companion;
+    sget-object v10, Lde/rki/coronawarnapp/bugreporting/censors/contactdiary/OrganizerRegistrationTokenCensor;->Companion:Lde/rki/coronawarnapp/bugreporting/censors/contactdiary/OrganizerRegistrationTokenCensor$Companion;
 
-    iput-object v0, v4, Lde/rki/coronawarnapp/playbook/OrganizerPlaybook$obtainUploadTan$1;->L$0:Ljava/lang/Object;
+    iput-object v1, v3, Lde/rki/coronawarnapp/playbook/OrganizerPlaybook$obtainUploadTan$1;->L$0:Ljava/lang/Object;
 
-    iput-object v6, v4, Lde/rki/coronawarnapp/playbook/OrganizerPlaybook$obtainUploadTan$1;->L$1:Ljava/lang/Object;
+    iput-object v5, v3, Lde/rki/coronawarnapp/playbook/OrganizerPlaybook$obtainUploadTan$1;->L$1:Ljava/lang/Object;
 
-    iput-object v2, v4, Lde/rki/coronawarnapp/playbook/OrganizerPlaybook$obtainUploadTan$1;->L$2:Ljava/lang/Object;
+    iput-object v2, v3, Lde/rki/coronawarnapp/playbook/OrganizerPlaybook$obtainUploadTan$1;->L$2:Ljava/lang/Object;
 
-    const/4 v13, 0x3
+    const/4 v11, 0x3
 
-    iput v13, v4, Lde/rki/coronawarnapp/playbook/OrganizerPlaybook$obtainUploadTan$1;->label:I
+    iput v11, v3, Lde/rki/coronawarnapp/playbook/OrganizerPlaybook$obtainUploadTan$1;->label:I
 
-    invoke-virtual {v7, v6, v4}, Lde/rki/coronawarnapp/bugreporting/censors/contactdiary/OrganizerRegistrationTokenCensor$Companion;->addTan(Ljava/lang/String;Lkotlin/coroutines/Continuation;)Ljava/lang/Object;
+    invoke-virtual {v10, v5, v3}, Lde/rki/coronawarnapp/bugreporting/censors/contactdiary/OrganizerRegistrationTokenCensor$Companion;->addTan(Ljava/lang/String;Lkotlin/coroutines/Continuation;)Ljava/lang/Object;
 
-    move-result-object v7
+    move-result-object v10
 
-    if-ne v7, v3, :cond_7
+    if-ne v10, v4, :cond_3
 
-    return-object v3
+    return-object v4
 
-    :cond_7
-    move-object v7, v0
+    :cond_3
+    move-object v10, v1
 
-    :goto_7
-    if-eqz v6, :cond_d
+    move-object v1, v2
 
-    iput-object v7, v4, Lde/rki/coronawarnapp/playbook/OrganizerPlaybook$obtainUploadTan$1;->L$0:Ljava/lang/Object;
+    :goto_3
+    if-eqz v5, :cond_5
 
-    iput-object v6, v4, Lde/rki/coronawarnapp/playbook/OrganizerPlaybook$obtainUploadTan$1;->L$1:Ljava/lang/Object;
+    new-instance v2, Lde/rki/coronawarnapp/playbook/OrganizerPlaybook$obtainUploadTan$3;
 
-    iput-object v2, v4, Lde/rki/coronawarnapp/playbook/OrganizerPlaybook$obtainUploadTan$1;->L$2:Ljava/lang/Object;
+    invoke-direct {v2, v10, v5, v7}, Lde/rki/coronawarnapp/playbook/OrganizerPlaybook$obtainUploadTan$3;-><init>(Lde/rki/coronawarnapp/playbook/OrganizerPlaybook;Ljava/lang/String;Lkotlin/coroutines/Continuation;)V
 
-    const/4 v0, 0x4
+    iput-object v10, v3, Lde/rki/coronawarnapp/playbook/OrganizerPlaybook$obtainUploadTan$1;->L$0:Ljava/lang/Object;
 
-    iput v0, v4, Lde/rki/coronawarnapp/playbook/OrganizerPlaybook$obtainUploadTan$1;->label:I
+    iput-object v5, v3, Lde/rki/coronawarnapp/playbook/OrganizerPlaybook$obtainUploadTan$1;->L$1:Ljava/lang/Object;
 
-    instance-of v0, v4, Lde/rki/coronawarnapp/playbook/OrganizerPlaybook$executeCapturingExceptions$1;
+    iput-object v1, v3, Lde/rki/coronawarnapp/playbook/OrganizerPlaybook$obtainUploadTan$1;->L$2:Ljava/lang/Object;
 
-    if-eqz v0, :cond_8
+    const/4 v11, 0x4
 
-    move-object v0, v4
+    iput v11, v3, Lde/rki/coronawarnapp/playbook/OrganizerPlaybook$obtainUploadTan$1;->label:I
 
-    check-cast v0, Lde/rki/coronawarnapp/playbook/OrganizerPlaybook$executeCapturingExceptions$1;
-
-    iget v13, v0, Lde/rki/coronawarnapp/playbook/OrganizerPlaybook$executeCapturingExceptions$1;->label:I
-
-    and-int v14, v13, v5
-
-    if-eqz v14, :cond_8
-
-    sub-int/2addr v13, v5
-
-    iput v13, v0, Lde/rki/coronawarnapp/playbook/OrganizerPlaybook$executeCapturingExceptions$1;->label:I
-
-    goto :goto_8
-
-    :cond_8
-    new-instance v0, Lde/rki/coronawarnapp/playbook/OrganizerPlaybook$executeCapturingExceptions$1;
-
-    invoke-direct {v0, v7, v4}, Lde/rki/coronawarnapp/playbook/OrganizerPlaybook$executeCapturingExceptions$1;-><init>(Lde/rki/coronawarnapp/playbook/OrganizerPlaybook;Lkotlin/coroutines/Continuation;)V
-
-    :goto_8
-    iget-object v13, v0, Lde/rki/coronawarnapp/playbook/OrganizerPlaybook$executeCapturingExceptions$1;->result:Ljava/lang/Object;
-
-    iget v14, v0, Lde/rki/coronawarnapp/playbook/OrganizerPlaybook$executeCapturingExceptions$1;->label:I
-
-    if-eqz v14, :cond_a
-
-    if-ne v14, v12, :cond_9
-
-    :try_start_2
-    invoke-static {v13}, Lkotlin/ResultKt;->throwOnFailure(Ljava/lang/Object;)V
-    :try_end_2
-    .catch Ljava/lang/Exception; {:try_start_2 .. :try_end_2} :catch_1
-
-    goto :goto_9
-
-    :cond_9
-    new-instance v0, Ljava/lang/IllegalStateException;
-
-    invoke-direct {v0, v10}, Ljava/lang/IllegalStateException;-><init>(Ljava/lang/String;)V
-
-    throw v0
-
-    :cond_a
-    invoke-static {v13}, Lkotlin/ResultKt;->throwOnFailure(Ljava/lang/Object;)V
-
-    :try_start_3
-    iput v12, v0, Lde/rki/coronawarnapp/playbook/OrganizerPlaybook$executeCapturingExceptions$1;->label:I
-
-    new-instance v13, Lde/rki/coronawarnapp/playbook/OrganizerPlaybook$obtainUploadTan$3;
-
-    invoke-direct {v13, v7, v6, v0}, Lde/rki/coronawarnapp/playbook/OrganizerPlaybook$obtainUploadTan$3;-><init>(Lde/rki/coronawarnapp/playbook/OrganizerPlaybook;Ljava/lang/String;Lkotlin/coroutines/Continuation;)V
-
-    sget-object v0, Lkotlin/Unit;->INSTANCE:Lkotlin/Unit;
-
-    invoke-virtual {v13, v0}, Lde/rki/coronawarnapp/playbook/OrganizerPlaybook$obtainUploadTan$3;->invokeSuspend(Ljava/lang/Object;)Ljava/lang/Object;
-
-    move-result-object v13
-
-    if-ne v13, v3, :cond_b
-
-    move-object v13, v3
-
-    goto :goto_a
-
-    :cond_b
-    :goto_9
-    new-instance v0, Lkotlin/Pair;
-
-    invoke-direct {v0, v13, v11}, Lkotlin/Pair;-><init>(Ljava/lang/Object;Ljava/lang/Object;)V
-    :try_end_3
-    .catch Ljava/lang/Exception; {:try_start_3 .. :try_end_3} :catch_1
-
-    move-object v13, v0
-
-    goto :goto_a
-
-    :catch_1
-    move-exception v0
-
-    new-instance v13, Lkotlin/Pair;
-
-    invoke-direct {v13, v11, v0}, Lkotlin/Pair;-><init>(Ljava/lang/Object;Ljava/lang/Object;)V
-
-    :goto_a
-    if-ne v13, v3, :cond_c
-
-    return-object v3
-
-    :cond_c
-    move-object v0, v2
-
-    move-object v2, v13
-
-    :goto_b
-    check-cast v2, Lkotlin/Pair;
-
-    :goto_c
-    move-object v13, v6
-
-    move-object v14, v7
-
-    move-object v7, v0
-
-    goto :goto_11
-
-    :cond_d
-    iput-object v7, v4, Lde/rki/coronawarnapp/playbook/OrganizerPlaybook$obtainUploadTan$1;->L$0:Ljava/lang/Object;
-
-    iput-object v6, v4, Lde/rki/coronawarnapp/playbook/OrganizerPlaybook$obtainUploadTan$1;->L$1:Ljava/lang/Object;
-
-    iput-object v2, v4, Lde/rki/coronawarnapp/playbook/OrganizerPlaybook$obtainUploadTan$1;->L$2:Ljava/lang/Object;
-
-    const/4 v0, 0x5
-
-    iput v0, v4, Lde/rki/coronawarnapp/playbook/OrganizerPlaybook$obtainUploadTan$1;->label:I
-
-    instance-of v0, v4, Lde/rki/coronawarnapp/playbook/OrganizerPlaybook$ignoreExceptions$1;
-
-    if-eqz v0, :cond_e
-
-    move-object v0, v4
-
-    check-cast v0, Lde/rki/coronawarnapp/playbook/OrganizerPlaybook$ignoreExceptions$1;
-
-    iget v13, v0, Lde/rki/coronawarnapp/playbook/OrganizerPlaybook$ignoreExceptions$1;->label:I
-
-    and-int v14, v13, v5
-
-    if-eqz v14, :cond_e
-
-    sub-int/2addr v13, v5
-
-    iput v13, v0, Lde/rki/coronawarnapp/playbook/OrganizerPlaybook$ignoreExceptions$1;->label:I
-
-    goto :goto_d
-
-    :cond_e
-    new-instance v0, Lde/rki/coronawarnapp/playbook/OrganizerPlaybook$ignoreExceptions$1;
-
-    invoke-direct {v0, v7, v4}, Lde/rki/coronawarnapp/playbook/OrganizerPlaybook$ignoreExceptions$1;-><init>(Lde/rki/coronawarnapp/playbook/OrganizerPlaybook;Lkotlin/coroutines/Continuation;)V
-
-    :goto_d
-    iget-object v13, v0, Lde/rki/coronawarnapp/playbook/OrganizerPlaybook$ignoreExceptions$1;->result:Ljava/lang/Object;
-
-    iget v14, v0, Lde/rki/coronawarnapp/playbook/OrganizerPlaybook$ignoreExceptions$1;->label:I
-
-    if-eqz v14, :cond_10
-
-    if-ne v14, v12, :cond_f
-
-    :try_start_4
-    invoke-static {v13}, Lkotlin/ResultKt;->throwOnFailure(Ljava/lang/Object;)V
-    :try_end_4
-    .catch Ljava/lang/Exception; {:try_start_4 .. :try_end_4} :catch_2
-
-    goto :goto_e
-
-    :cond_f
-    new-instance v0, Ljava/lang/IllegalStateException;
-
-    invoke-direct {v0, v10}, Ljava/lang/IllegalStateException;-><init>(Ljava/lang/String;)V
-
-    throw v0
-
-    :cond_10
-    invoke-static {v13}, Lkotlin/ResultKt;->throwOnFailure(Ljava/lang/Object;)V
-
-    :try_start_5
-    iput v12, v0, Lde/rki/coronawarnapp/playbook/OrganizerPlaybook$ignoreExceptions$1;->label:I
-
-    new-instance v13, Lde/rki/coronawarnapp/playbook/OrganizerPlaybook$obtainUploadTan$4;
-
-    invoke-direct {v13, v7, v0}, Lde/rki/coronawarnapp/playbook/OrganizerPlaybook$obtainUploadTan$4;-><init>(Lde/rki/coronawarnapp/playbook/OrganizerPlaybook;Lkotlin/coroutines/Continuation;)V
-
-    sget-object v0, Lkotlin/Unit;->INSTANCE:Lkotlin/Unit;
-
-    invoke-virtual {v13, v0}, Lde/rki/coronawarnapp/playbook/OrganizerPlaybook$obtainUploadTan$4;->invokeSuspend(Ljava/lang/Object;)Ljava/lang/Object;
-
-    move-result-object v0
-    :try_end_5
-    .catch Ljava/lang/Exception; {:try_start_5 .. :try_end_5} :catch_2
-
-    if-ne v0, v3, :cond_11
-
-    move-object v0, v3
-
-    goto :goto_f
-
-    :catch_2
-    move-exception v0
-
-    sget-object v13, Ltimber/log/Timber;->Forest:Ltimber/log/Timber$Forest;
-
-    new-array v14, v12, [Ljava/lang/Object;
-
-    invoke-virtual {v0}, Ljava/lang/Exception;->toString()Ljava/lang/String;
-
-    move-result-object v0
-
-    aput-object v0, v14, v9
-
-    invoke-virtual {v13, v8, v14}, Ltimber/log/Timber$Forest;->v(Ljava/lang/String;[Ljava/lang/Object;)V
-
-    :cond_11
-    :goto_e
-    sget-object v0, Lkotlin/Unit;->INSTANCE:Lkotlin/Unit;
-
-    :goto_f
-    if-ne v0, v3, :cond_12
-
-    return-object v3
-
-    :cond_12
-    move-object v0, v2
-
-    :goto_10
-    new-instance v2, Lkotlin/Pair;
-
-    invoke-direct {v2, v11, v11}, Lkotlin/Pair;-><init>(Ljava/lang/Object;Ljava/lang/Object;)V
-
-    goto :goto_c
-
-    :goto_11
-    iget-object v0, v2, Lkotlin/Pair;->first:Ljava/lang/Object;
-
-    move-object v6, v0
-
-    check-cast v6, Ljava/lang/String;
-
-    iget-object v0, v2, Lkotlin/Pair;->second:Ljava/lang/Object;
-
-    check-cast v0, Ljava/lang/Exception;
-
-    if-nez v6, :cond_13
-
-    goto :goto_13
-
-    :cond_13
-    sget-object v2, Lde/rki/coronawarnapp/bugreporting/censors/contactdiary/OrganizerRegistrationTokenCensor;->Companion:Lde/rki/coronawarnapp/bugreporting/censors/contactdiary/OrganizerRegistrationTokenCensor$Companion;
-
-    iput-object v14, v4, Lde/rki/coronawarnapp/playbook/OrganizerPlaybook$obtainUploadTan$1;->L$0:Ljava/lang/Object;
-
-    iput-object v13, v4, Lde/rki/coronawarnapp/playbook/OrganizerPlaybook$obtainUploadTan$1;->L$1:Ljava/lang/Object;
-
-    iput-object v7, v4, Lde/rki/coronawarnapp/playbook/OrganizerPlaybook$obtainUploadTan$1;->L$2:Ljava/lang/Object;
-
-    iput-object v6, v4, Lde/rki/coronawarnapp/playbook/OrganizerPlaybook$obtainUploadTan$1;->L$3:Ljava/lang/Object;
-
-    iput-object v0, v4, Lde/rki/coronawarnapp/playbook/OrganizerPlaybook$obtainUploadTan$1;->L$4:Ljava/lang/Object;
-
-    const/4 v15, 0x6
-
-    iput v15, v4, Lde/rki/coronawarnapp/playbook/OrganizerPlaybook$obtainUploadTan$1;->label:I
-
-    invoke-virtual {v2, v6, v4}, Lde/rki/coronawarnapp/bugreporting/censors/contactdiary/OrganizerRegistrationTokenCensor$Companion;->addTan(Ljava/lang/String;Lkotlin/coroutines/Continuation;)Ljava/lang/Object;
+    invoke-virtual {v10, v2, v3}, Lde/rki/coronawarnapp/playbook/OrganizerPlaybook;->executeCapturingExceptions(Lkotlin/jvm/functions/Function1;Lkotlin/coroutines/Continuation;)Ljava/lang/Object;
 
     move-result-object v2
 
-    if-ne v2, v3, :cond_14
+    if-ne v2, v4, :cond_4
 
-    return-object v3
+    return-object v4
 
-    :cond_14
-    :goto_12
+    :cond_4
+    :goto_4
+    check-cast v2, Lkotlin/Pair;
+
+    :goto_5
+    move-object v11, v5
+
+    move-object v12, v10
+
+    move-object v10, v1
+
+    goto :goto_7
+
+    :cond_5
+    new-instance v2, Lde/rki/coronawarnapp/playbook/OrganizerPlaybook$obtainUploadTan$4;
+
+    invoke-direct {v2, v10, v7}, Lde/rki/coronawarnapp/playbook/OrganizerPlaybook$obtainUploadTan$4;-><init>(Lde/rki/coronawarnapp/playbook/OrganizerPlaybook;Lkotlin/coroutines/Continuation;)V
+
+    iput-object v10, v3, Lde/rki/coronawarnapp/playbook/OrganizerPlaybook$obtainUploadTan$1;->L$0:Ljava/lang/Object;
+
+    iput-object v5, v3, Lde/rki/coronawarnapp/playbook/OrganizerPlaybook$obtainUploadTan$1;->L$1:Ljava/lang/Object;
+
+    iput-object v1, v3, Lde/rki/coronawarnapp/playbook/OrganizerPlaybook$obtainUploadTan$1;->L$2:Ljava/lang/Object;
+
+    const/4 v11, 0x5
+
+    iput v11, v3, Lde/rki/coronawarnapp/playbook/OrganizerPlaybook$obtainUploadTan$1;->label:I
+
+    invoke-virtual {v10, v2, v3}, Lde/rki/coronawarnapp/playbook/OrganizerPlaybook;->ignoreExceptions(Lkotlin/jvm/functions/Function1;Lkotlin/coroutines/Continuation;)Ljava/lang/Object;
+
+    move-result-object v2
+
+    if-ne v2, v4, :cond_6
+
+    return-object v4
+
+    :cond_6
+    :goto_6
+    new-instance v2, Lkotlin/Pair;
+
+    invoke-direct {v2, v7, v7}, Lkotlin/Pair;-><init>(Ljava/lang/Object;Ljava/lang/Object;)V
+
+    goto :goto_5
+
+    :goto_7
+    iget-object v1, v2, Lkotlin/Pair;->first:Ljava/lang/Object;
+
+    move-object v5, v1
+
+    check-cast v5, Ljava/lang/String;
+
+    iget-object v1, v2, Lkotlin/Pair;->second:Ljava/lang/Object;
+
+    check-cast v1, Ljava/lang/Exception;
+
+    if-nez v5, :cond_7
+
+    goto :goto_9
+
+    :cond_7
+    sget-object v2, Lde/rki/coronawarnapp/bugreporting/censors/contactdiary/OrganizerRegistrationTokenCensor;->Companion:Lde/rki/coronawarnapp/bugreporting/censors/contactdiary/OrganizerRegistrationTokenCensor$Companion;
+
+    iput-object v12, v3, Lde/rki/coronawarnapp/playbook/OrganizerPlaybook$obtainUploadTan$1;->L$0:Ljava/lang/Object;
+
+    iput-object v11, v3, Lde/rki/coronawarnapp/playbook/OrganizerPlaybook$obtainUploadTan$1;->L$1:Ljava/lang/Object;
+
+    iput-object v10, v3, Lde/rki/coronawarnapp/playbook/OrganizerPlaybook$obtainUploadTan$1;->L$2:Ljava/lang/Object;
+
+    iput-object v5, v3, Lde/rki/coronawarnapp/playbook/OrganizerPlaybook$obtainUploadTan$1;->L$3:Ljava/lang/Object;
+
+    iput-object v1, v3, Lde/rki/coronawarnapp/playbook/OrganizerPlaybook$obtainUploadTan$1;->L$4:Ljava/lang/Object;
+
+    const/4 v13, 0x6
+
+    iput v13, v3, Lde/rki/coronawarnapp/playbook/OrganizerPlaybook$obtainUploadTan$1;->label:I
+
+    invoke-virtual {v2, v5, v3}, Lde/rki/coronawarnapp/bugreporting/censors/contactdiary/OrganizerRegistrationTokenCensor$Companion;->addTan(Ljava/lang/String;Lkotlin/coroutines/Continuation;)Ljava/lang/Object;
+
+    move-result-object v2
+
+    if-ne v2, v4, :cond_8
+
+    return-object v4
+
+    :cond_8
+    :goto_8
     check-cast v2, Ljava/lang/Boolean;
 
     invoke-virtual {v2}, Ljava/lang/Boolean;->booleanValue()Z
 
-    :goto_13
-    move-object v2, v0
+    :goto_9
+    new-instance v2, Lde/rki/coronawarnapp/playbook/OrganizerPlaybook$obtainUploadTan$6;
 
-    iput-object v14, v4, Lde/rki/coronawarnapp/playbook/OrganizerPlaybook$obtainUploadTan$1;->L$0:Ljava/lang/Object;
+    invoke-direct {v2, v12, v7}, Lde/rki/coronawarnapp/playbook/OrganizerPlaybook$obtainUploadTan$6;-><init>(Lde/rki/coronawarnapp/playbook/OrganizerPlaybook;Lkotlin/coroutines/Continuation;)V
 
-    iput-object v13, v4, Lde/rki/coronawarnapp/playbook/OrganizerPlaybook$obtainUploadTan$1;->L$1:Ljava/lang/Object;
+    iput-object v12, v3, Lde/rki/coronawarnapp/playbook/OrganizerPlaybook$obtainUploadTan$1;->L$0:Ljava/lang/Object;
 
-    iput-object v7, v4, Lde/rki/coronawarnapp/playbook/OrganizerPlaybook$obtainUploadTan$1;->L$2:Ljava/lang/Object;
+    iput-object v11, v3, Lde/rki/coronawarnapp/playbook/OrganizerPlaybook$obtainUploadTan$1;->L$1:Ljava/lang/Object;
 
-    iput-object v6, v4, Lde/rki/coronawarnapp/playbook/OrganizerPlaybook$obtainUploadTan$1;->L$3:Ljava/lang/Object;
+    iput-object v10, v3, Lde/rki/coronawarnapp/playbook/OrganizerPlaybook$obtainUploadTan$1;->L$2:Ljava/lang/Object;
 
-    iput-object v2, v4, Lde/rki/coronawarnapp/playbook/OrganizerPlaybook$obtainUploadTan$1;->L$4:Ljava/lang/Object;
+    iput-object v5, v3, Lde/rki/coronawarnapp/playbook/OrganizerPlaybook$obtainUploadTan$1;->L$3:Ljava/lang/Object;
 
-    const/4 v0, 0x7
+    iput-object v1, v3, Lde/rki/coronawarnapp/playbook/OrganizerPlaybook$obtainUploadTan$1;->L$4:Ljava/lang/Object;
 
-    iput v0, v4, Lde/rki/coronawarnapp/playbook/OrganizerPlaybook$obtainUploadTan$1;->label:I
+    const/4 v13, 0x7
 
-    instance-of v0, v4, Lde/rki/coronawarnapp/playbook/OrganizerPlaybook$ignoreExceptions$1;
+    iput v13, v3, Lde/rki/coronawarnapp/playbook/OrganizerPlaybook$obtainUploadTan$1;->label:I
 
-    if-eqz v0, :cond_15
+    invoke-virtual {v12, v2, v3}, Lde/rki/coronawarnapp/playbook/OrganizerPlaybook;->ignoreExceptions(Lkotlin/jvm/functions/Function1;Lkotlin/coroutines/Continuation;)Ljava/lang/Object;
 
-    move-object v0, v4
+    move-result-object v2
 
-    check-cast v0, Lde/rki/coronawarnapp/playbook/OrganizerPlaybook$ignoreExceptions$1;
+    if-ne v2, v4, :cond_9
 
-    iget v15, v0, Lde/rki/coronawarnapp/playbook/OrganizerPlaybook$ignoreExceptions$1;->label:I
+    return-object v4
 
-    and-int v16, v15, v5
+    :cond_9
+    move-object v4, v5
 
-    if-eqz v16, :cond_15
+    move-object v5, v10
 
-    sub-int/2addr v15, v5
+    move-object v10, v11
 
-    iput v15, v0, Lde/rki/coronawarnapp/playbook/OrganizerPlaybook$ignoreExceptions$1;->label:I
+    move-object v3, v12
 
-    goto :goto_14
+    :goto_a
+    iget-object v11, v3, Lde/rki/coronawarnapp/playbook/OrganizerPlaybook;->coroutineScope:Lkotlinx/coroutines/CoroutineScope;
 
-    :cond_15
-    new-instance v0, Lde/rki/coronawarnapp/playbook/OrganizerPlaybook$ignoreExceptions$1;
+    const/4 v12, 0x0
 
-    invoke-direct {v0, v14, v4}, Lde/rki/coronawarnapp/playbook/OrganizerPlaybook$ignoreExceptions$1;-><init>(Lde/rki/coronawarnapp/playbook/OrganizerPlaybook;Lkotlin/coroutines/Continuation;)V
+    new-instance v14, Lde/rki/coronawarnapp/playbook/OrganizerPlaybook$obtainUploadTan$7;
 
-    :goto_14
-    iget-object v4, v0, Lde/rki/coronawarnapp/playbook/OrganizerPlaybook$ignoreExceptions$1;->result:Ljava/lang/Object;
+    invoke-direct {v14, v3, v7}, Lde/rki/coronawarnapp/playbook/OrganizerPlaybook$obtainUploadTan$7;-><init>(Lde/rki/coronawarnapp/playbook/OrganizerPlaybook;Lkotlin/coroutines/Continuation;)V
 
-    iget v5, v0, Lde/rki/coronawarnapp/playbook/OrganizerPlaybook$ignoreExceptions$1;->label:I
+    const/4 v15, 0x3
 
-    if-eqz v5, :cond_17
+    const/16 v16, 0x0
 
-    if-ne v5, v12, :cond_16
+    const/4 v13, 0x0
 
-    :try_start_6
-    invoke-static {v4}, Lkotlin/ResultKt;->throwOnFailure(Ljava/lang/Object;)V
-    :try_end_6
-    .catch Ljava/lang/Exception; {:try_start_6 .. :try_end_6} :catch_3
+    invoke-static/range {v11 .. v16}, Lkotlinx/coroutines/BuildersKt;->launch$default(Lkotlinx/coroutines/CoroutineScope;Lkotlin/coroutines/CoroutineContext;ILkotlin/jvm/functions/Function2;ILjava/lang/Object;)Lkotlinx/coroutines/Job;
 
-    goto :goto_15
+    if-eqz v10, :cond_a
 
-    :cond_16
-    new-instance v0, Ljava/lang/IllegalStateException;
+    if-eqz v4, :cond_a
 
-    invoke-direct {v0, v10}, Ljava/lang/IllegalStateException;-><init>(Ljava/lang/String;)V
+    return-object v4
 
-    throw v0
+    :cond_a
+    new-array v2, v9, [Ljava/lang/Exception;
 
-    :cond_17
-    invoke-static {v4}, Lkotlin/ResultKt;->throwOnFailure(Ljava/lang/Object;)V
+    if-nez v5, :cond_b
 
-    :try_start_7
-    iput v12, v0, Lde/rki/coronawarnapp/playbook/OrganizerPlaybook$ignoreExceptions$1;->label:I
+    move-object v4, v7
 
-    new-instance v4, Lde/rki/coronawarnapp/playbook/OrganizerPlaybook$obtainUploadTan$6;
+    goto :goto_b
 
-    invoke-direct {v4, v14, v0}, Lde/rki/coronawarnapp/playbook/OrganizerPlaybook$obtainUploadTan$6;-><init>(Lde/rki/coronawarnapp/playbook/OrganizerPlaybook;Lkotlin/coroutines/Continuation;)V
+    :cond_b
+    invoke-virtual {v3, v5, v8}, Lde/rki/coronawarnapp/playbook/OrganizerPlaybook;->asOrganizerSubmissionException$enumunboxing$(Ljava/lang/Exception;I)Lde/rki/coronawarnapp/presencetracing/organizer/submission/OrganizerSubmissionException;
 
-    sget-object v0, Lkotlin/Unit;->INSTANCE:Lkotlin/Unit;
+    move-result-object v4
 
-    invoke-virtual {v4, v0}, Lde/rki/coronawarnapp/playbook/OrganizerPlaybook$obtainUploadTan$6;->invokeSuspend(Ljava/lang/Object;)Ljava/lang/Object;
+    :goto_b
+    aput-object v4, v2, v6
 
-    move-result-object v0
-    :try_end_7
-    .catch Ljava/lang/Exception; {:try_start_7 .. :try_end_7} :catch_3
+    if-nez v1, :cond_c
 
-    if-ne v0, v3, :cond_18
+    goto :goto_c
 
-    move-object v0, v3
+    :cond_c
+    invoke-virtual {v3, v1, v9}, Lde/rki/coronawarnapp/playbook/OrganizerPlaybook;->asOrganizerSubmissionException$enumunboxing$(Ljava/lang/Exception;I)Lde/rki/coronawarnapp/presencetracing/organizer/submission/OrganizerSubmissionException;
 
-    goto :goto_16
+    move-result-object v7
 
-    :catch_3
-    move-exception v0
-
-    sget-object v4, Ltimber/log/Timber;->Forest:Ltimber/log/Timber$Forest;
-
-    new-array v5, v12, [Ljava/lang/Object;
-
-    invoke-virtual {v0}, Ljava/lang/Exception;->toString()Ljava/lang/String;
-
-    move-result-object v0
-
-    aput-object v0, v5, v9
-
-    invoke-virtual {v4, v8, v5}, Ltimber/log/Timber$Forest;->v(Ljava/lang/String;[Ljava/lang/Object;)V
-
-    :cond_18
-    :goto_15
-    sget-object v0, Lkotlin/Unit;->INSTANCE:Lkotlin/Unit;
-
-    :goto_16
-    if-ne v0, v3, :cond_19
-
-    return-object v3
-
-    :cond_19
-    move-object v0, v2
-
-    move-object v3, v6
-
-    move-object v5, v7
-
-    move-object v6, v13
-
-    move-object v4, v14
-
-    :goto_17
-    iget-object v13, v4, Lde/rki/coronawarnapp/playbook/OrganizerPlaybook;->coroutineScope:Lkotlinx/coroutines/CoroutineScope;
-
-    const/4 v14, 0x0
-
-    new-instance v2, Lde/rki/coronawarnapp/playbook/OrganizerPlaybook$obtainUploadTan$7;
-
-    invoke-direct {v2, v4, v11}, Lde/rki/coronawarnapp/playbook/OrganizerPlaybook$obtainUploadTan$7;-><init>(Lde/rki/coronawarnapp/playbook/OrganizerPlaybook;Lkotlin/coroutines/Continuation;)V
-
-    const/16 v17, 0x3
-
-    const/16 v18, 0x0
-
-    const/4 v15, 0x0
-
-    move-object/from16 v16, v2
-
-    invoke-static/range {v13 .. v18}, Lkotlinx/coroutines/BuildersKt;->launch$default(Lkotlinx/coroutines/CoroutineScope;Lkotlin/coroutines/CoroutineContext;ILkotlin/jvm/functions/Function2;ILjava/lang/Object;)Lkotlinx/coroutines/Job;
-
-    if-eqz v6, :cond_1a
-
-    if-eqz v3, :cond_1a
-
-    return-object v3
-
-    :cond_1a
-    const/4 v2, 0x2
-
-    new-array v2, v2, [Ljava/lang/Exception;
-
-    if-nez v5, :cond_1b
-
-    move-object v3, v11
-
-    goto :goto_18
-
-    :cond_1b
-    sget-object v3, Lde/rki/coronawarnapp/playbook/OrganizerPlaybook$ErrorType;->REG_TOKEN:Lde/rki/coronawarnapp/playbook/OrganizerPlaybook$ErrorType;
-
-    invoke-virtual {v4, v5, v3}, Lde/rki/coronawarnapp/playbook/OrganizerPlaybook;->asOrganizerSubmissionException(Ljava/lang/Exception;Lde/rki/coronawarnapp/playbook/OrganizerPlaybook$ErrorType;)Lde/rki/coronawarnapp/presencetracing/organizer/submission/OrganizerSubmissionException;
-
-    move-result-object v3
-
-    :goto_18
-    aput-object v3, v2, v9
-
-    if-nez v0, :cond_1c
-
-    goto :goto_19
-
-    :cond_1c
-    sget-object v3, Lde/rki/coronawarnapp/playbook/OrganizerPlaybook$ErrorType;->TAN:Lde/rki/coronawarnapp/playbook/OrganizerPlaybook$ErrorType;
-
-    invoke-virtual {v4, v0, v3}, Lde/rki/coronawarnapp/playbook/OrganizerPlaybook;->asOrganizerSubmissionException(Ljava/lang/Exception;Lde/rki/coronawarnapp/playbook/OrganizerPlaybook$ErrorType;)Lde/rki/coronawarnapp/presencetracing/organizer/submission/OrganizerSubmissionException;
-
-    move-result-object v11
-
-    :goto_19
-    aput-object v11, v2, v12
+    :goto_c
+    aput-object v7, v2, v8
 
     invoke-static {v2}, Lkotlin/collections/ArraysKt___ArraysKt;->filterNotNull([Ljava/lang/Object;)Ljava/util/List;
 
-    move-result-object v0
+    move-result-object v1
 
-    invoke-static {v0}, Lkotlin/collections/CollectionsKt___CollectionsKt;->firstOrNull(Ljava/util/List;)Ljava/lang/Object;
+    invoke-static {v1}, Lkotlin/collections/CollectionsKt___CollectionsKt;->firstOrNull(Ljava/util/List;)Ljava/lang/Object;
 
-    move-result-object v0
+    move-result-object v1
 
-    check-cast v0, Ljava/lang/Exception;
+    check-cast v1, Ljava/lang/Exception;
 
-    if-nez v0, :cond_1d
+    if-nez v1, :cond_d
 
-    new-instance v0, Ljava/lang/IllegalStateException;
+    new-instance v1, Ljava/lang/IllegalStateException;
 
-    invoke-direct {v0}, Ljava/lang/IllegalStateException;-><init>()V
+    invoke-direct {v1}, Ljava/lang/IllegalStateException;-><init>()V
 
-    :cond_1d
-    throw v0
+    :cond_d
+    throw v1
 
     nop
 
@@ -2132,7 +1477,7 @@
 .end method
 
 .method public final submit(Ljava/lang/String;Lde/rki/coronawarnapp/presencetracing/checkins/CheckInsReport;Lkotlin/coroutines/Continuation;)Ljava/lang/Object;
-    .locals 19
+    .locals 17
     .annotation system Ldalvik/annotation/Signature;
         value = {
             "(",
@@ -2156,410 +1501,238 @@
 
     move-object/from16 v0, p3
 
-    sget-object v2, Lkotlin/coroutines/intrinsics/CoroutineSingletons;->COROUTINE_SUSPENDED:Lkotlin/coroutines/intrinsics/CoroutineSingletons;
+    instance-of v2, v0, Lde/rki/coronawarnapp/playbook/OrganizerPlaybook$submit$1;
 
-    instance-of v3, v0, Lde/rki/coronawarnapp/playbook/OrganizerPlaybook$submit$1;
+    if-eqz v2, :cond_0
+
+    move-object v2, v0
+
+    check-cast v2, Lde/rki/coronawarnapp/playbook/OrganizerPlaybook$submit$1;
+
+    iget v3, v2, Lde/rki/coronawarnapp/playbook/OrganizerPlaybook$submit$1;->label:I
 
     const/high16 v4, -0x80000000
 
-    if-eqz v3, :cond_0
+    and-int v5, v3, v4
 
-    move-object v3, v0
+    if-eqz v5, :cond_0
 
-    check-cast v3, Lde/rki/coronawarnapp/playbook/OrganizerPlaybook$submit$1;
+    sub-int/2addr v3, v4
 
-    iget v5, v3, Lde/rki/coronawarnapp/playbook/OrganizerPlaybook$submit$1;->label:I
-
-    and-int v6, v5, v4
-
-    if-eqz v6, :cond_0
-
-    sub-int/2addr v5, v4
-
-    iput v5, v3, Lde/rki/coronawarnapp/playbook/OrganizerPlaybook$submit$1;->label:I
+    iput v3, v2, Lde/rki/coronawarnapp/playbook/OrganizerPlaybook$submit$1;->label:I
 
     goto :goto_0
 
     :cond_0
-    new-instance v3, Lde/rki/coronawarnapp/playbook/OrganizerPlaybook$submit$1;
+    new-instance v2, Lde/rki/coronawarnapp/playbook/OrganizerPlaybook$submit$1;
 
-    invoke-direct {v3, v1, v0}, Lde/rki/coronawarnapp/playbook/OrganizerPlaybook$submit$1;-><init>(Lde/rki/coronawarnapp/playbook/OrganizerPlaybook;Lkotlin/coroutines/Continuation;)V
+    invoke-direct {v2, v1, v0}, Lde/rki/coronawarnapp/playbook/OrganizerPlaybook$submit$1;-><init>(Lde/rki/coronawarnapp/playbook/OrganizerPlaybook;Lkotlin/coroutines/Continuation;)V
 
     :goto_0
-    iget-object v0, v3, Lde/rki/coronawarnapp/playbook/OrganizerPlaybook$submit$1;->result:Ljava/lang/Object;
+    iget-object v0, v2, Lde/rki/coronawarnapp/playbook/OrganizerPlaybook$submit$1;->result:Ljava/lang/Object;
 
-    iget v5, v3, Lde/rki/coronawarnapp/playbook/OrganizerPlaybook$submit$1;->label:I
+    sget-object v3, Lkotlin/coroutines/intrinsics/CoroutineSingletons;->COROUTINE_SUSPENDED:Lkotlin/coroutines/intrinsics/CoroutineSingletons;
+
+    iget v4, v2, Lde/rki/coronawarnapp/playbook/OrganizerPlaybook$submit$1;->label:I
+
+    const/4 v5, 0x0
 
     const/4 v6, 0x4
 
-    const/4 v7, 0x3
+    const/4 v7, 0x2
 
-    const/4 v8, 0x2
+    const/4 v8, 0x1
 
     const/4 v9, 0x0
 
-    const/4 v10, 0x0
+    const/4 v10, 0x3
 
-    const-string v11, "call to \'resume\' before \'invoke\' with coroutine"
+    if-eqz v4, :cond_5
 
-    const/4 v12, 0x1
+    if-eq v4, v8, :cond_4
 
-    if-eqz v5, :cond_5
+    if-eq v4, v7, :cond_3
 
-    if-eq v5, v12, :cond_4
+    if-eq v4, v10, :cond_2
 
-    if-eq v5, v8, :cond_3
+    if-ne v4, v6, :cond_1
 
-    if-eq v5, v7, :cond_2
+    iget-object v3, v2, Lde/rki/coronawarnapp/playbook/OrganizerPlaybook$submit$1;->L$1:Ljava/lang/Object;
 
-    if-ne v5, v6, :cond_1
+    check-cast v3, Ljava/lang/Exception;
 
-    iget-object v2, v3, Lde/rki/coronawarnapp/playbook/OrganizerPlaybook$submit$1;->L$1:Ljava/lang/Object;
+    iget-object v2, v2, Lde/rki/coronawarnapp/playbook/OrganizerPlaybook$submit$1;->L$0:Ljava/lang/Object;
 
-    check-cast v2, Ljava/lang/Exception;
-
-    iget-object v3, v3, Lde/rki/coronawarnapp/playbook/OrganizerPlaybook$submit$1;->L$0:Ljava/lang/Object;
-
-    check-cast v3, Lde/rki/coronawarnapp/playbook/OrganizerPlaybook;
+    check-cast v2, Lde/rki/coronawarnapp/playbook/OrganizerPlaybook;
 
     :try_start_0
     invoke-static {v0}, Lkotlin/ResultKt;->throwOnFailure(Ljava/lang/Object;)V
     :try_end_0
     .catch Ljava/lang/Exception; {:try_start_0 .. :try_end_0} :catch_0
 
-    goto/16 :goto_b
+    goto/16 :goto_5
 
     :cond_1
     new-instance v0, Ljava/lang/IllegalStateException;
 
-    invoke-direct {v0, v11}, Ljava/lang/IllegalStateException;-><init>(Ljava/lang/String;)V
+    const-string v2, "call to \'resume\' before \'invoke\' with coroutine"
+
+    invoke-direct {v0, v2}, Ljava/lang/IllegalStateException;-><init>(Ljava/lang/String;)V
 
     throw v0
 
     :cond_2
-    iget-object v2, v3, Lde/rki/coronawarnapp/playbook/OrganizerPlaybook$submit$1;->L$0:Ljava/lang/Object;
+    iget-object v2, v2, Lde/rki/coronawarnapp/playbook/OrganizerPlaybook$submit$1;->L$0:Ljava/lang/Object;
 
-    move-object v3, v2
-
-    check-cast v3, Lde/rki/coronawarnapp/playbook/OrganizerPlaybook;
+    check-cast v2, Lde/rki/coronawarnapp/playbook/OrganizerPlaybook;
 
     :try_start_1
     invoke-static {v0}, Lkotlin/ResultKt;->throwOnFailure(Ljava/lang/Object;)V
     :try_end_1
     .catch Ljava/lang/Exception; {:try_start_1 .. :try_end_1} :catch_0
 
-    goto/16 :goto_a
+    goto/16 :goto_4
 
     :catch_0
     move-exception v0
 
-    goto/16 :goto_c
+    goto/16 :goto_6
 
     :cond_3
-    iget-object v4, v3, Lde/rki/coronawarnapp/playbook/OrganizerPlaybook$submit$1;->L$3:Ljava/lang/Object;
+    iget-object v4, v2, Lde/rki/coronawarnapp/playbook/OrganizerPlaybook$submit$1;->L$3:Ljava/lang/Object;
 
     check-cast v4, Ljava/lang/Exception;
 
-    iget-object v5, v3, Lde/rki/coronawarnapp/playbook/OrganizerPlaybook$submit$1;->L$2:Ljava/lang/Object;
+    iget-object v7, v2, Lde/rki/coronawarnapp/playbook/OrganizerPlaybook$submit$1;->L$2:Ljava/lang/Object;
 
-    check-cast v5, Ljava/lang/String;
+    check-cast v7, Ljava/lang/String;
 
-    iget-object v8, v3, Lde/rki/coronawarnapp/playbook/OrganizerPlaybook$submit$1;->L$1:Ljava/lang/Object;
+    iget-object v11, v2, Lde/rki/coronawarnapp/playbook/OrganizerPlaybook$submit$1;->L$1:Ljava/lang/Object;
 
-    check-cast v8, Lde/rki/coronawarnapp/presencetracing/checkins/CheckInsReport;
+    check-cast v11, Lde/rki/coronawarnapp/presencetracing/checkins/CheckInsReport;
 
-    iget-object v11, v3, Lde/rki/coronawarnapp/playbook/OrganizerPlaybook$submit$1;->L$0:Ljava/lang/Object;
+    iget-object v12, v2, Lde/rki/coronawarnapp/playbook/OrganizerPlaybook$submit$1;->L$0:Ljava/lang/Object;
+
+    check-cast v12, Lde/rki/coronawarnapp/playbook/OrganizerPlaybook;
+
+    invoke-static {v0}, Lkotlin/ResultKt;->throwOnFailure(Ljava/lang/Object;)V
+
+    move-object v0, v4
+
+    goto :goto_2
+
+    :cond_4
+    iget-object v4, v2, Lde/rki/coronawarnapp/playbook/OrganizerPlaybook$submit$1;->L$1:Ljava/lang/Object;
+
+    check-cast v4, Lde/rki/coronawarnapp/presencetracing/checkins/CheckInsReport;
+
+    iget-object v11, v2, Lde/rki/coronawarnapp/playbook/OrganizerPlaybook$submit$1;->L$0:Ljava/lang/Object;
 
     check-cast v11, Lde/rki/coronawarnapp/playbook/OrganizerPlaybook;
 
     invoke-static {v0}, Lkotlin/ResultKt;->throwOnFailure(Ljava/lang/Object;)V
 
-    move-object v15, v4
-
-    move-object v13, v11
-
-    goto/16 :goto_8
-
-    :cond_4
-    iget-object v5, v3, Lde/rki/coronawarnapp/playbook/OrganizerPlaybook$submit$1;->L$1:Ljava/lang/Object;
-
-    check-cast v5, Lde/rki/coronawarnapp/presencetracing/checkins/CheckInsReport;
-
-    iget-object v13, v3, Lde/rki/coronawarnapp/playbook/OrganizerPlaybook$submit$1;->L$0:Ljava/lang/Object;
-
-    check-cast v13, Lde/rki/coronawarnapp/playbook/OrganizerPlaybook;
-
-    invoke-static {v0}, Lkotlin/ResultKt;->throwOnFailure(Ljava/lang/Object;)V
-
-    goto/16 :goto_4
+    goto :goto_1
 
     :cond_5
     invoke-static {v0}, Lkotlin/ResultKt;->throwOnFailure(Ljava/lang/Object;)V
 
     sget-object v0, Ltimber/log/Timber;->Forest:Ltimber/log/Timber$Forest;
 
-    iget-object v5, v1, Lde/rki/coronawarnapp/playbook/OrganizerPlaybook;->uid:Ljava/lang/String;
+    iget-object v4, v1, Lde/rki/coronawarnapp/playbook/OrganizerPlaybook;->uid:Ljava/lang/String;
 
-    const-string v13, "["
+    const-string v11, "["
 
-    const-string v14, "] New Submission Playbook"
+    const-string v12, "] New Submission Playbook"
 
-    invoke-static {v13, v5, v14}, Landroidx/core/graphics/PathParser$$ExternalSyntheticOutline0;->m(Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;)Ljava/lang/String;
+    invoke-static {v11, v4, v12}, Landroidx/concurrent/futures/AbstractResolvableFuture$$ExternalSyntheticOutline1;->m(Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;)Ljava/lang/String;
 
-    move-result-object v5
+    move-result-object v4
 
-    new-array v13, v10, [Ljava/lang/Object;
+    new-array v11, v5, [Ljava/lang/Object;
 
-    invoke-virtual {v0, v5, v13}, Ltimber/log/Timber$Forest;->i(Ljava/lang/String;[Ljava/lang/Object;)V
+    invoke-virtual {v0, v4, v11}, Ltimber/log/Timber$Forest;->i(Ljava/lang/String;[Ljava/lang/Object;)V
 
-    iput-object v1, v3, Lde/rki/coronawarnapp/playbook/OrganizerPlaybook$submit$1;->L$0:Ljava/lang/Object;
+    new-instance v0, Lde/rki/coronawarnapp/playbook/OrganizerPlaybook$submit$2;
 
-    move-object/from16 v5, p2
+    move-object/from16 v4, p1
 
-    iput-object v5, v3, Lde/rki/coronawarnapp/playbook/OrganizerPlaybook$submit$1;->L$1:Ljava/lang/Object;
+    invoke-direct {v0, v1, v4, v9}, Lde/rki/coronawarnapp/playbook/OrganizerPlaybook$submit$2;-><init>(Lde/rki/coronawarnapp/playbook/OrganizerPlaybook;Ljava/lang/String;Lkotlin/coroutines/Continuation;)V
 
-    iput v12, v3, Lde/rki/coronawarnapp/playbook/OrganizerPlaybook$submit$1;->label:I
+    iput-object v1, v2, Lde/rki/coronawarnapp/playbook/OrganizerPlaybook$submit$1;->L$0:Ljava/lang/Object;
 
-    instance-of v0, v3, Lde/rki/coronawarnapp/playbook/OrganizerPlaybook$executeCapturingExceptions$1;
+    move-object/from16 v4, p2
 
-    if-eqz v0, :cond_6
+    iput-object v4, v2, Lde/rki/coronawarnapp/playbook/OrganizerPlaybook$submit$1;->L$1:Ljava/lang/Object;
 
-    move-object v0, v3
+    iput v8, v2, Lde/rki/coronawarnapp/playbook/OrganizerPlaybook$submit$1;->label:I
 
-    check-cast v0, Lde/rki/coronawarnapp/playbook/OrganizerPlaybook$executeCapturingExceptions$1;
+    invoke-virtual {v1, v0, v2}, Lde/rki/coronawarnapp/playbook/OrganizerPlaybook;->executeCapturingExceptions(Lkotlin/jvm/functions/Function1;Lkotlin/coroutines/Continuation;)Ljava/lang/Object;
 
-    iget v13, v0, Lde/rki/coronawarnapp/playbook/OrganizerPlaybook$executeCapturingExceptions$1;->label:I
+    move-result-object v0
 
-    and-int v14, v13, v4
+    if-ne v0, v3, :cond_6
 
-    if-eqz v14, :cond_6
-
-    sub-int/2addr v13, v4
-
-    iput v13, v0, Lde/rki/coronawarnapp/playbook/OrganizerPlaybook$executeCapturingExceptions$1;->label:I
-
-    goto :goto_1
+    return-object v3
 
     :cond_6
-    new-instance v0, Lde/rki/coronawarnapp/playbook/OrganizerPlaybook$executeCapturingExceptions$1;
-
-    invoke-direct {v0, v1, v3}, Lde/rki/coronawarnapp/playbook/OrganizerPlaybook$executeCapturingExceptions$1;-><init>(Lde/rki/coronawarnapp/playbook/OrganizerPlaybook;Lkotlin/coroutines/Continuation;)V
+    move-object v11, v1
 
     :goto_1
-    iget-object v13, v0, Lde/rki/coronawarnapp/playbook/OrganizerPlaybook$executeCapturingExceptions$1;->result:Ljava/lang/Object;
-
-    iget v14, v0, Lde/rki/coronawarnapp/playbook/OrganizerPlaybook$executeCapturingExceptions$1;->label:I
-
-    if-eqz v14, :cond_8
-
-    if-ne v14, v12, :cond_7
-
-    :try_start_2
-    invoke-static {v13}, Lkotlin/ResultKt;->throwOnFailure(Ljava/lang/Object;)V
-    :try_end_2
-    .catch Ljava/lang/Exception; {:try_start_2 .. :try_end_2} :catch_1
-
-    goto :goto_2
-
-    :cond_7
-    new-instance v0, Ljava/lang/IllegalStateException;
-
-    invoke-direct {v0, v11}, Ljava/lang/IllegalStateException;-><init>(Ljava/lang/String;)V
-
-    throw v0
-
-    :cond_8
-    invoke-static {v13}, Lkotlin/ResultKt;->throwOnFailure(Ljava/lang/Object;)V
-
-    :try_start_3
-    iput v12, v0, Lde/rki/coronawarnapp/playbook/OrganizerPlaybook$executeCapturingExceptions$1;->label:I
-
-    new-instance v13, Lde/rki/coronawarnapp/playbook/OrganizerPlaybook$submit$2;
-
-    move-object/from16 v14, p1
-
-    invoke-direct {v13, v1, v14, v0}, Lde/rki/coronawarnapp/playbook/OrganizerPlaybook$submit$2;-><init>(Lde/rki/coronawarnapp/playbook/OrganizerPlaybook;Ljava/lang/String;Lkotlin/coroutines/Continuation;)V
-
-    sget-object v0, Lkotlin/Unit;->INSTANCE:Lkotlin/Unit;
-
-    invoke-virtual {v13, v0}, Lde/rki/coronawarnapp/playbook/OrganizerPlaybook$submit$2;->invokeSuspend(Ljava/lang/Object;)Ljava/lang/Object;
-
-    move-result-object v13
-
-    if-ne v13, v2, :cond_9
-
-    move-object v0, v2
-
-    goto :goto_3
-
-    :cond_9
-    :goto_2
-    new-instance v0, Lkotlin/Pair;
-
-    invoke-direct {v0, v13, v9}, Lkotlin/Pair;-><init>(Ljava/lang/Object;Ljava/lang/Object;)V
-    :try_end_3
-    .catch Ljava/lang/Exception; {:try_start_3 .. :try_end_3} :catch_1
-
-    goto :goto_3
-
-    :catch_1
-    move-exception v0
-
-    new-instance v13, Lkotlin/Pair;
-
-    invoke-direct {v13, v9, v0}, Lkotlin/Pair;-><init>(Ljava/lang/Object;Ljava/lang/Object;)V
-
-    move-object v0, v13
-
-    :goto_3
-    if-ne v0, v2, :cond_a
-
-    return-object v2
-
-    :cond_a
-    move-object v13, v1
-
-    :goto_4
     check-cast v0, Lkotlin/Pair;
 
-    iget-object v14, v0, Lkotlin/Pair;->first:Ljava/lang/Object;
+    iget-object v12, v0, Lkotlin/Pair;->first:Ljava/lang/Object;
 
-    check-cast v14, Ljava/lang/String;
+    check-cast v12, Ljava/lang/String;
 
     iget-object v0, v0, Lkotlin/Pair;->second:Ljava/lang/Object;
 
-    move-object v15, v0
+    check-cast v0, Ljava/lang/Exception;
 
-    check-cast v15, Ljava/lang/Exception;
+    new-instance v13, Lde/rki/coronawarnapp/playbook/OrganizerPlaybook$submit$3;
 
-    iput-object v13, v3, Lde/rki/coronawarnapp/playbook/OrganizerPlaybook$submit$1;->L$0:Ljava/lang/Object;
+    invoke-direct {v13, v11, v9}, Lde/rki/coronawarnapp/playbook/OrganizerPlaybook$submit$3;-><init>(Lde/rki/coronawarnapp/playbook/OrganizerPlaybook;Lkotlin/coroutines/Continuation;)V
 
-    iput-object v5, v3, Lde/rki/coronawarnapp/playbook/OrganizerPlaybook$submit$1;->L$1:Ljava/lang/Object;
+    iput-object v11, v2, Lde/rki/coronawarnapp/playbook/OrganizerPlaybook$submit$1;->L$0:Ljava/lang/Object;
 
-    iput-object v14, v3, Lde/rki/coronawarnapp/playbook/OrganizerPlaybook$submit$1;->L$2:Ljava/lang/Object;
+    iput-object v4, v2, Lde/rki/coronawarnapp/playbook/OrganizerPlaybook$submit$1;->L$1:Ljava/lang/Object;
 
-    iput-object v15, v3, Lde/rki/coronawarnapp/playbook/OrganizerPlaybook$submit$1;->L$3:Ljava/lang/Object;
+    iput-object v12, v2, Lde/rki/coronawarnapp/playbook/OrganizerPlaybook$submit$1;->L$2:Ljava/lang/Object;
 
-    iput v8, v3, Lde/rki/coronawarnapp/playbook/OrganizerPlaybook$submit$1;->label:I
+    iput-object v0, v2, Lde/rki/coronawarnapp/playbook/OrganizerPlaybook$submit$1;->L$3:Ljava/lang/Object;
 
-    instance-of v0, v3, Lde/rki/coronawarnapp/playbook/OrganizerPlaybook$ignoreExceptions$1;
+    iput v7, v2, Lde/rki/coronawarnapp/playbook/OrganizerPlaybook$submit$1;->label:I
 
-    if-eqz v0, :cond_b
+    invoke-virtual {v11, v13, v2}, Lde/rki/coronawarnapp/playbook/OrganizerPlaybook;->ignoreExceptions(Lkotlin/jvm/functions/Function1;Lkotlin/coroutines/Continuation;)Ljava/lang/Object;
 
-    move-object v0, v3
+    move-result-object v7
 
-    check-cast v0, Lde/rki/coronawarnapp/playbook/OrganizerPlaybook$ignoreExceptions$1;
+    if-ne v7, v3, :cond_7
 
-    iget v8, v0, Lde/rki/coronawarnapp/playbook/OrganizerPlaybook$ignoreExceptions$1;->label:I
+    return-object v3
 
-    and-int v16, v8, v4
+    :cond_7
+    move-object v7, v12
 
-    if-eqz v16, :cond_b
+    move-object v12, v11
 
-    sub-int/2addr v8, v4
+    move-object v11, v4
 
-    iput v8, v0, Lde/rki/coronawarnapp/playbook/OrganizerPlaybook$ignoreExceptions$1;->label:I
+    :goto_2
+    if-eqz v7, :cond_a
 
-    goto :goto_5
+    :try_start_2
+    iget-object v0, v12, Lde/rki/coronawarnapp/playbook/OrganizerPlaybook;->organizerSubmissionServer:Lde/rki/coronawarnapp/presencetracing/organizer/submission/server/OrganizerSubmissionServer;
 
-    :cond_b
-    new-instance v0, Lde/rki/coronawarnapp/playbook/OrganizerPlaybook$ignoreExceptions$1;
+    iput-object v12, v2, Lde/rki/coronawarnapp/playbook/OrganizerPlaybook$submit$1;->L$0:Ljava/lang/Object;
 
-    invoke-direct {v0, v13, v3}, Lde/rki/coronawarnapp/playbook/OrganizerPlaybook$ignoreExceptions$1;-><init>(Lde/rki/coronawarnapp/playbook/OrganizerPlaybook;Lkotlin/coroutines/Continuation;)V
+    iput-object v9, v2, Lde/rki/coronawarnapp/playbook/OrganizerPlaybook$submit$1;->L$1:Ljava/lang/Object;
 
-    :goto_5
-    iget-object v4, v0, Lde/rki/coronawarnapp/playbook/OrganizerPlaybook$ignoreExceptions$1;->result:Ljava/lang/Object;
+    iput-object v9, v2, Lde/rki/coronawarnapp/playbook/OrganizerPlaybook$submit$1;->L$2:Ljava/lang/Object;
 
-    iget v8, v0, Lde/rki/coronawarnapp/playbook/OrganizerPlaybook$ignoreExceptions$1;->label:I
+    iput-object v9, v2, Lde/rki/coronawarnapp/playbook/OrganizerPlaybook$submit$1;->L$3:Ljava/lang/Object;
 
-    if-eqz v8, :cond_d
-
-    if-ne v8, v12, :cond_c
-
-    :try_start_4
-    invoke-static {v4}, Lkotlin/ResultKt;->throwOnFailure(Ljava/lang/Object;)V
-    :try_end_4
-    .catch Ljava/lang/Exception; {:try_start_4 .. :try_end_4} :catch_2
-
-    goto :goto_6
-
-    :cond_c
-    new-instance v0, Ljava/lang/IllegalStateException;
-
-    invoke-direct {v0, v11}, Ljava/lang/IllegalStateException;-><init>(Ljava/lang/String;)V
-
-    throw v0
-
-    :cond_d
-    invoke-static {v4}, Lkotlin/ResultKt;->throwOnFailure(Ljava/lang/Object;)V
-
-    :try_start_5
-    iput v12, v0, Lde/rki/coronawarnapp/playbook/OrganizerPlaybook$ignoreExceptions$1;->label:I
-
-    new-instance v4, Lde/rki/coronawarnapp/playbook/OrganizerPlaybook$submit$3;
-
-    invoke-direct {v4, v13, v0}, Lde/rki/coronawarnapp/playbook/OrganizerPlaybook$submit$3;-><init>(Lde/rki/coronawarnapp/playbook/OrganizerPlaybook;Lkotlin/coroutines/Continuation;)V
-
-    sget-object v0, Lkotlin/Unit;->INSTANCE:Lkotlin/Unit;
-
-    invoke-virtual {v4, v0}, Lde/rki/coronawarnapp/playbook/OrganizerPlaybook$submit$3;->invokeSuspend(Ljava/lang/Object;)Ljava/lang/Object;
-
-    move-result-object v0
-    :try_end_5
-    .catch Ljava/lang/Exception; {:try_start_5 .. :try_end_5} :catch_2
-
-    if-ne v0, v2, :cond_e
-
-    move-object v0, v2
-
-    goto :goto_7
-
-    :catch_2
-    move-exception v0
-
-    sget-object v4, Ltimber/log/Timber;->Forest:Ltimber/log/Timber$Forest;
-
-    new-array v8, v12, [Ljava/lang/Object;
-
-    invoke-virtual {v0}, Ljava/lang/Exception;->toString()Ljava/lang/String;
-
-    move-result-object v0
-
-    aput-object v0, v8, v10
-
-    const-string v0, "Ignoring dummy request exception: %s"
-
-    invoke-virtual {v4, v0, v8}, Ltimber/log/Timber$Forest;->v(Ljava/lang/String;[Ljava/lang/Object;)V
-
-    :cond_e
-    :goto_6
-    sget-object v0, Lkotlin/Unit;->INSTANCE:Lkotlin/Unit;
-
-    :goto_7
-    if-ne v0, v2, :cond_f
-
-    return-object v2
-
-    :cond_f
-    move-object v8, v5
-
-    move-object v5, v14
-
-    :goto_8
-    if-eqz v5, :cond_12
-
-    :try_start_6
-    iget-object v0, v13, Lde/rki/coronawarnapp/playbook/OrganizerPlaybook;->organizerSubmissionServer:Lde/rki/coronawarnapp/presencetracing/organizer/submission/server/OrganizerSubmissionServer;
-
-    iput-object v13, v3, Lde/rki/coronawarnapp/playbook/OrganizerPlaybook$submit$1;->L$0:Ljava/lang/Object;
-
-    iput-object v9, v3, Lde/rki/coronawarnapp/playbook/OrganizerPlaybook$submit$1;->L$1:Ljava/lang/Object;
-
-    iput-object v9, v3, Lde/rki/coronawarnapp/playbook/OrganizerPlaybook$submit$1;->L$2:Ljava/lang/Object;
-
-    iput-object v9, v3, Lde/rki/coronawarnapp/playbook/OrganizerPlaybook$submit$1;->L$3:Ljava/lang/Object;
-
-    iput v7, v3, Lde/rki/coronawarnapp/playbook/OrganizerPlaybook$submit$1;->label:I
+    iput v10, v2, Lde/rki/coronawarnapp/playbook/OrganizerPlaybook$submit$1;->label:I
 
     iget-object v4, v0, Lde/rki/coronawarnapp/presencetracing/organizer/submission/server/OrganizerSubmissionServer;->dispatcherProvider:Lde/rki/coronawarnapp/util/coroutine/DispatcherProvider;
 
@@ -2567,107 +1740,105 @@
 
     move-result-object v4
 
-    new-instance v6, Lde/rki/coronawarnapp/presencetracing/organizer/submission/server/OrganizerSubmissionServer$submit$2;
+    new-instance v5, Lde/rki/coronawarnapp/presencetracing/organizer/submission/server/OrganizerSubmissionServer$submit$2;
 
-    invoke-direct {v6, v5, v8, v0, v9}, Lde/rki/coronawarnapp/presencetracing/organizer/submission/server/OrganizerSubmissionServer$submit$2;-><init>(Ljava/lang/String;Lde/rki/coronawarnapp/presencetracing/checkins/CheckInsReport;Lde/rki/coronawarnapp/presencetracing/organizer/submission/server/OrganizerSubmissionServer;Lkotlin/coroutines/Continuation;)V
+    invoke-direct {v5, v7, v11, v0, v9}, Lde/rki/coronawarnapp/presencetracing/organizer/submission/server/OrganizerSubmissionServer$submit$2;-><init>(Ljava/lang/String;Lde/rki/coronawarnapp/presencetracing/checkins/CheckInsReport;Lde/rki/coronawarnapp/presencetracing/organizer/submission/server/OrganizerSubmissionServer;Lkotlin/coroutines/Continuation;)V
 
-    invoke-static {v4, v6, v3}, Lkotlinx/coroutines/BuildersKt;->withContext(Lkotlin/coroutines/CoroutineContext;Lkotlin/jvm/functions/Function2;Lkotlin/coroutines/Continuation;)Ljava/lang/Object;
+    invoke-static {v4, v5, v2}, Lkotlinx/coroutines/BuildersKt;->withContext(Lkotlin/coroutines/CoroutineContext;Lkotlin/jvm/functions/Function2;Lkotlin/coroutines/Continuation;)Ljava/lang/Object;
 
     move-result-object v0
 
-    if-ne v0, v2, :cond_10
+    if-ne v0, v3, :cond_8
 
-    goto :goto_9
+    goto :goto_3
 
-    :cond_10
+    :cond_8
     sget-object v0, Lkotlin/Unit;->INSTANCE:Lkotlin/Unit;
-    :try_end_6
-    .catch Ljava/lang/Exception; {:try_start_6 .. :try_end_6} :catch_3
+    :try_end_2
+    .catch Ljava/lang/Exception; {:try_start_2 .. :try_end_2} :catch_1
 
-    :goto_9
-    if-ne v0, v2, :cond_11
+    :goto_3
+    if-ne v0, v3, :cond_9
 
-    return-object v2
+    return-object v3
 
-    :cond_11
-    move-object v3, v13
+    :cond_9
+    move-object v2, v12
 
-    :goto_a
-    :try_start_7
-    iget-object v10, v3, Lde/rki/coronawarnapp/playbook/OrganizerPlaybook;->coroutineScope:Lkotlinx/coroutines/CoroutineScope;
+    :goto_4
+    :try_start_3
+    iget-object v3, v2, Lde/rki/coronawarnapp/playbook/OrganizerPlaybook;->coroutineScope:Lkotlinx/coroutines/CoroutineScope;
 
-    const/4 v11, 0x0
+    const/4 v4, 0x0
 
-    new-instance v13, Lde/rki/coronawarnapp/playbook/OrganizerPlaybook$submit$4;
+    new-instance v6, Lde/rki/coronawarnapp/playbook/OrganizerPlaybook$submit$4;
 
-    invoke-direct {v13, v3, v9}, Lde/rki/coronawarnapp/playbook/OrganizerPlaybook$submit$4;-><init>(Lde/rki/coronawarnapp/playbook/OrganizerPlaybook;Lkotlin/coroutines/Continuation;)V
+    invoke-direct {v6, v2, v9}, Lde/rki/coronawarnapp/playbook/OrganizerPlaybook$submit$4;-><init>(Lde/rki/coronawarnapp/playbook/OrganizerPlaybook;Lkotlin/coroutines/Continuation;)V
 
-    const/4 v14, 0x3
+    const/4 v7, 0x3
 
-    const/4 v15, 0x0
+    const/4 v8, 0x0
 
-    const/4 v12, 0x0
+    const/4 v5, 0x0
 
-    invoke-static/range {v10 .. v15}, Lkotlinx/coroutines/BuildersKt;->launch$default(Lkotlinx/coroutines/CoroutineScope;Lkotlin/coroutines/CoroutineContext;ILkotlin/jvm/functions/Function2;ILjava/lang/Object;)Lkotlinx/coroutines/Job;
-    :try_end_7
-    .catch Ljava/lang/Exception; {:try_start_7 .. :try_end_7} :catch_0
+    invoke-static/range {v3 .. v8}, Lkotlinx/coroutines/BuildersKt;->launch$default(Lkotlinx/coroutines/CoroutineScope;Lkotlin/coroutines/CoroutineContext;ILkotlin/jvm/functions/Function2;ILjava/lang/Object;)Lkotlinx/coroutines/Job;
+    :try_end_3
+    .catch Ljava/lang/Exception; {:try_start_3 .. :try_end_3} :catch_0
 
     sget-object v0, Lkotlin/Unit;->INSTANCE:Lkotlin/Unit;
 
     return-object v0
 
-    :cond_12
-    :try_start_8
-    iget-object v0, v13, Lde/rki/coronawarnapp/playbook/OrganizerPlaybook;->submissionServer:Lde/rki/coronawarnapp/submission/server/SubmissionServer;
+    :cond_a
+    :try_start_4
+    iget-object v4, v12, Lde/rki/coronawarnapp/playbook/OrganizerPlaybook;->submissionServer:Lde/rki/coronawarnapp/submission/server/SubmissionServer;
 
-    iput-object v13, v3, Lde/rki/coronawarnapp/playbook/OrganizerPlaybook$submit$1;->L$0:Ljava/lang/Object;
+    iput-object v12, v2, Lde/rki/coronawarnapp/playbook/OrganizerPlaybook$submit$1;->L$0:Ljava/lang/Object;
 
-    iput-object v15, v3, Lde/rki/coronawarnapp/playbook/OrganizerPlaybook$submit$1;->L$1:Ljava/lang/Object;
+    iput-object v0, v2, Lde/rki/coronawarnapp/playbook/OrganizerPlaybook$submit$1;->L$1:Ljava/lang/Object;
 
-    iput-object v9, v3, Lde/rki/coronawarnapp/playbook/OrganizerPlaybook$submit$1;->L$2:Ljava/lang/Object;
+    iput-object v9, v2, Lde/rki/coronawarnapp/playbook/OrganizerPlaybook$submit$1;->L$2:Ljava/lang/Object;
 
-    iput-object v9, v3, Lde/rki/coronawarnapp/playbook/OrganizerPlaybook$submit$1;->L$3:Ljava/lang/Object;
+    iput-object v9, v2, Lde/rki/coronawarnapp/playbook/OrganizerPlaybook$submit$1;->L$3:Ljava/lang/Object;
 
-    iput v6, v3, Lde/rki/coronawarnapp/playbook/OrganizerPlaybook$submit$1;->label:I
+    iput v6, v2, Lde/rki/coronawarnapp/playbook/OrganizerPlaybook$submit$1;->label:I
 
-    invoke-virtual {v0, v3}, Lde/rki/coronawarnapp/submission/server/SubmissionServer;->submitFakePayload(Lkotlin/coroutines/Continuation;)Ljava/lang/Object;
+    invoke-virtual {v4, v2}, Lde/rki/coronawarnapp/submission/server/SubmissionServer;->submitFakePayload(Lkotlin/coroutines/Continuation;)Ljava/lang/Object;
 
-    move-result-object v0
-    :try_end_8
-    .catch Ljava/lang/Exception; {:try_start_8 .. :try_end_8} :catch_3
+    move-result-object v2
+    :try_end_4
+    .catch Ljava/lang/Exception; {:try_start_4 .. :try_end_4} :catch_1
 
-    if-ne v0, v2, :cond_13
+    if-ne v2, v3, :cond_b
 
-    return-object v2
+    return-object v3
 
-    :cond_13
-    move-object v3, v13
+    :cond_b
+    move-object v3, v0
 
-    move-object v2, v15
+    move-object v2, v12
 
-    :goto_b
-    :try_start_9
-    iget-object v13, v3, Lde/rki/coronawarnapp/playbook/OrganizerPlaybook;->coroutineScope:Lkotlinx/coroutines/CoroutineScope;
+    :goto_5
+    :try_start_5
+    iget-object v11, v2, Lde/rki/coronawarnapp/playbook/OrganizerPlaybook;->coroutineScope:Lkotlinx/coroutines/CoroutineScope;
 
-    const/4 v14, 0x0
+    const/4 v12, 0x0
 
-    new-instance v0, Lde/rki/coronawarnapp/playbook/OrganizerPlaybook$submit$5;
+    new-instance v14, Lde/rki/coronawarnapp/playbook/OrganizerPlaybook$submit$5;
 
-    invoke-direct {v0, v3, v9}, Lde/rki/coronawarnapp/playbook/OrganizerPlaybook$submit$5;-><init>(Lde/rki/coronawarnapp/playbook/OrganizerPlaybook;Lkotlin/coroutines/Continuation;)V
+    invoke-direct {v14, v2, v9}, Lde/rki/coronawarnapp/playbook/OrganizerPlaybook$submit$5;-><init>(Lde/rki/coronawarnapp/playbook/OrganizerPlaybook;Lkotlin/coroutines/Continuation;)V
 
-    const/16 v17, 0x3
+    const/4 v15, 0x3
 
-    const/16 v18, 0x0
+    const/16 v16, 0x0
 
-    const/4 v15, 0x0
+    const/4 v13, 0x0
 
-    move-object/from16 v16, v0
+    invoke-static/range {v11 .. v16}, Lkotlinx/coroutines/BuildersKt;->launch$default(Lkotlinx/coroutines/CoroutineScope;Lkotlin/coroutines/CoroutineContext;ILkotlin/jvm/functions/Function2;ILjava/lang/Object;)Lkotlinx/coroutines/Job;
 
-    invoke-static/range {v13 .. v18}, Lkotlinx/coroutines/BuildersKt;->launch$default(Lkotlinx/coroutines/CoroutineScope;Lkotlin/coroutines/CoroutineContext;ILkotlin/jvm/functions/Function2;ILjava/lang/Object;)Lkotlinx/coroutines/Job;
+    new-array v0, v8, [Ljava/lang/Exception;
 
-    new-array v0, v12, [Ljava/lang/Exception;
-
-    aput-object v2, v0, v10
+    aput-object v3, v0, v5
 
     invoke-static {v0}, Lkotlin/collections/ArraysKt___ArraysKt;->filterNotNull([Ljava/lang/Object;)Ljava/util/List;
 
@@ -2679,39 +1850,37 @@
 
     check-cast v0, Ljava/lang/Exception;
 
-    if-nez v0, :cond_14
+    if-nez v0, :cond_c
 
     new-instance v0, Ljava/lang/IllegalStateException;
 
     invoke-direct {v0}, Ljava/lang/IllegalStateException;-><init>()V
 
-    :cond_14
+    :cond_c
     throw v0
-    :try_end_9
-    .catch Ljava/lang/Exception; {:try_start_9 .. :try_end_9} :catch_0
+    :try_end_5
+    .catch Ljava/lang/Exception; {:try_start_5 .. :try_end_5} :catch_0
 
-    :goto_c
-    move-object v13, v3
+    :goto_6
+    move-object v12, v2
 
-    goto :goto_d
+    goto :goto_7
 
-    :catch_3
+    :catch_1
     move-exception v0
 
-    :goto_d
+    :goto_7
     instance-of v2, v0, Lde/rki/coronawarnapp/presencetracing/organizer/submission/OrganizerSubmissionException;
 
-    if-eqz v2, :cond_15
+    if-eqz v2, :cond_d
 
-    goto :goto_e
+    goto :goto_8
 
-    :cond_15
-    sget-object v2, Lde/rki/coronawarnapp/playbook/OrganizerPlaybook$ErrorType;->SUBMISSION:Lde/rki/coronawarnapp/playbook/OrganizerPlaybook$ErrorType;
-
-    invoke-virtual {v13, v0, v2}, Lde/rki/coronawarnapp/playbook/OrganizerPlaybook;->asOrganizerSubmissionException(Ljava/lang/Exception;Lde/rki/coronawarnapp/playbook/OrganizerPlaybook$ErrorType;)Lde/rki/coronawarnapp/presencetracing/organizer/submission/OrganizerSubmissionException;
+    :cond_d
+    invoke-virtual {v12, v0, v10}, Lde/rki/coronawarnapp/playbook/OrganizerPlaybook;->asOrganizerSubmissionException$enumunboxing$(Ljava/lang/Exception;I)Lde/rki/coronawarnapp/presencetracing/organizer/submission/OrganizerSubmissionException;
 
     move-result-object v0
 
-    :goto_e
+    :goto_8
     throw v0
 .end method

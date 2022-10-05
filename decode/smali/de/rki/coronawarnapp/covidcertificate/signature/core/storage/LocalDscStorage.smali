@@ -356,10 +356,6 @@
 
     invoke-direct {v0, v5, v6}, Lorg/joda/time/Instant;-><init>(J)V
 
-    const-string v5, "ofEpochMilli(dscFile.lastModified())"
-
-    invoke-static {v0, v5}, Lkotlin/jvm/internal/Intrinsics;->checkNotNullExpressionValue(Ljava/lang/Object;Ljava/lang/String;)V
-
     invoke-virtual {p1, v2, v0}, Lde/rki/coronawarnapp/covidcertificate/signature/core/DscDataParser;->parse([BLorg/joda/time/Instant;)Lde/rki/coronawarnapp/covidcertificate/signature/core/DscData;
 
     move-result-object p1

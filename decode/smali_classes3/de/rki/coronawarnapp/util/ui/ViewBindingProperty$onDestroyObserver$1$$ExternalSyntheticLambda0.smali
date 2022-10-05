@@ -1,5 +1,6 @@
 .class public final synthetic Lde/rki/coronawarnapp/util/ui/ViewBindingProperty$onDestroyObserver$1$$ExternalSyntheticLambda0;
 .super Ljava/lang/Object;
+.source "R8$$SyntheticClass"
 
 # interfaces
 .implements Ljava/lang/Runnable;

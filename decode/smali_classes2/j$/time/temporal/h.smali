@@ -147,7 +147,7 @@
     throw p0
 .end method
 
-.method static k(Lj$/time/LocalDate;)Lj$/time/temporal/A;
+.method static k(Lj$/time/LocalDate;)Lj$/time/temporal/z;
     .locals 4
 
     invoke-static {p0}, Lj$/time/temporal/h;->o(Lj$/time/LocalDate;)I
@@ -162,7 +162,7 @@
 
     const-wide/16 v2, 0x1
 
-    invoke-static {v2, v3, v0, v1}, Lj$/time/temporal/A;->i(JJ)Lj$/time/temporal/A;
+    invoke-static {v2, v3, v0, v1}, Lj$/time/temporal/z;->i(JJ)Lj$/time/temporal/z;
 
     move-result-object p0
 
@@ -233,11 +233,11 @@
 
     const-wide/16 v2, 0x1
 
-    invoke-static {v2, v3, v0, v1}, Lj$/time/temporal/A;->i(JJ)Lj$/time/temporal/A;
+    invoke-static {v2, v3, v0, v1}, Lj$/time/temporal/z;->i(JJ)Lj$/time/temporal/z;
 
     move-result-object p0
 
-    invoke-virtual {p0}, Lj$/time/temporal/A;->d()J
+    invoke-virtual {p0}, Lj$/time/temporal/z;->d()J
 
     move-result-wide v0
 
@@ -462,15 +462,7 @@
     return v0
 .end method
 
-.method public c()Z
-    .locals 1
-
-    const/4 v0, 0x0
-
-    return v0
-.end method
-
-.method public synthetic d(Ljava/util/Map;Lj$/time/temporal/TemporalAccessor;Lj$/time/format/E;)Lj$/time/temporal/TemporalAccessor;
+.method public synthetic b(Ljava/util/Map;Lj$/time/temporal/TemporalAccessor;Lj$/time/format/E;)Lj$/time/temporal/TemporalAccessor;
     .locals 0
 
     const/4 p1, 0x0
@@ -478,10 +470,18 @@
     return-object p1
 .end method
 
-.method public h(Lj$/time/temporal/TemporalAccessor;)Lj$/time/temporal/A;
+.method public e()Z
+    .locals 1
+
+    const/4 v0, 0x0
+
+    return v0
+.end method
+
+.method public h(Lj$/time/temporal/TemporalAccessor;)Lj$/time/temporal/z;
     .locals 0
 
-    invoke-interface {p0}, Lj$/time/temporal/o;->b()Lj$/time/temporal/A;
+    invoke-interface {p0}, Lj$/time/temporal/o;->d()Lj$/time/temporal/z;
 
     move-result-object p1
 

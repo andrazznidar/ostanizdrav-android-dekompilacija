@@ -48,7 +48,7 @@
     move v1, v3
 
     :goto_0
-    invoke-static {v1}, Lcom/google/gson/internal/$Gson$Preconditions;->checkArgument(Z)V
+    invoke-static {v1}, Lkotlinx/coroutines/flow/FlowKt;->checkArgument(Z)V
 
     array-length v1, p1
 
@@ -62,7 +62,7 @@
     move v1, v3
 
     :goto_1
-    invoke-static {v1}, Lcom/google/gson/internal/$Gson$Preconditions;->checkArgument(Z)V
+    invoke-static {v1}, Lkotlinx/coroutines/flow/FlowKt;->checkArgument(Z)V
 
     array-length v1, p2
 
@@ -86,7 +86,7 @@
     move v2, v3
 
     :goto_2
-    invoke-static {v2}, Lcom/google/gson/internal/$Gson$Preconditions;->checkArgument(Z)V
+    invoke-static {v2}, Lkotlinx/coroutines/flow/FlowKt;->checkArgument(Z)V
 
     aget-object p1, p2, v3
 

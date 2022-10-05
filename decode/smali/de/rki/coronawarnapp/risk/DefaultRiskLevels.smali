@@ -8,7 +8,7 @@
 
 # annotations
 .annotation system Ldalvik/annotation/SourceDebugExtension;
-    value = "SMAP\nDefaultRiskLevels.kt\nKotlin\n*S Kotlin\n*F\n+ 1 DefaultRiskLevels.kt\nde/rki/coronawarnapp/risk/DefaultRiskLevels\n+ 2 _Collections.kt\nkotlin/collections/CollectionsKt___CollectionsKt\n+ 3 fake.kt\nkotlin/jvm/internal/FakeKt\n+ 4 Maps.kt\nkotlin/collections/MapsKt__MapsKt\n+ 5 _Maps.kt\nkotlin/collections/MapsKt___MapsKt\n*L\n1#1,323:1\n1741#2,2:324\n764#2:326\n855#2,2:327\n1783#2,3:329\n1743#2:332\n1741#2,3:333\n1783#2,2:336\n764#2:338\n855#2,2:339\n1547#2:341\n1618#2,3:342\n1785#2:345\n764#2:346\n855#2,2:347\n1547#2:349\n1618#2,3:350\n1547#2:354\n1618#2,3:355\n1601#2,9:358\n1849#2:367\n1850#2:369\n1610#2:370\n1741#2,3:371\n764#2:374\n855#2,2:375\n764#2:377\n855#2,2:378\n764#2:387\n855#2,2:388\n1547#2:390\n1618#2,3:391\n1#3:353\n1#3:368\n509#4:380\n494#4,6:381\n509#4:394\n494#4,6:395\n125#5:401\n152#5,3:402\n*S KotlinDebug\n*F\n+ 1 DefaultRiskLevels.kt\nde/rki/coronawarnapp/risk/DefaultRiskLevels\n*L\n23#1:324,2\n26#1:326\n26#1:327,2\n27#1:329,3\n23#1:332\n69#1:333,3\n76#1:336,2\n79#1:338\n79#1:339,2\n80#1:341\n80#1:342,3\n76#1:345\n90#1:346\n90#1:347,2\n91#1:349\n91#1:350,3\n160#1:354\n160#1:355,3\n167#1:358,9\n167#1:367\n167#1:369\n167#1:370\n175#1:371,3\n238#1:374\n238#1:375,2\n243#1:377\n243#1:378,2\n267#1:387\n267#1:388,2\n268#1:390\n268#1:391,3\n167#1:368\n253#1:380\n253#1:381,6\n303#1:394\n303#1:395,6\n304#1:401\n304#1:402,3\n*E\n"
+    value = "SMAP\nDefaultRiskLevels.kt\nKotlin\n*S Kotlin\n*F\n+ 1 DefaultRiskLevels.kt\nde/rki/coronawarnapp/risk/DefaultRiskLevels\n+ 2 _Collections.kt\nkotlin/collections/CollectionsKt___CollectionsKt\n+ 3 fake.kt\nkotlin/jvm/internal/FakeKt\n+ 4 Maps.kt\nkotlin/collections/MapsKt__MapsKt\n+ 5 _Maps.kt\nkotlin/collections/MapsKt___MapsKt\n*L\n1#1,323:1\n1741#2,2:324\n764#2:326\n855#2,2:327\n1783#2,3:329\n1743#2:332\n1741#2,3:333\n1783#2,2:336\n764#2:338\n855#2,2:339\n1547#2:341\n1618#2,3:342\n1785#2:345\n764#2:346\n855#2,2:347\n1547#2:349\n1618#2,3:350\n1547#2:354\n1618#2,3:355\n1601#2,9:358\n1849#2:367\n1850#2:369\n1610#2:370\n1741#2,3:371\n764#2:374\n855#2,2:375\n764#2:377\n855#2,2:378\n764#2:387\n855#2,2:388\n1547#2:390\n1618#2,3:391\n1#3:353\n1#3:368\n511#4:380\n496#4,6:381\n511#4:394\n496#4,6:395\n125#5:401\n152#5,3:402\n*S KotlinDebug\n*F\n+ 1 DefaultRiskLevels.kt\nde/rki/coronawarnapp/risk/DefaultRiskLevels\n*L\n23#1:324,2\n26#1:326\n26#1:327,2\n27#1:329,3\n23#1:332\n69#1:333,3\n76#1:336,2\n79#1:338\n79#1:339,2\n80#1:341\n80#1:342,3\n76#1:345\n90#1:346\n90#1:347,2\n91#1:349\n91#1:350,3\n160#1:354\n160#1:355,3\n167#1:358,9\n167#1:367\n167#1:369\n167#1:370\n175#1:371,3\n238#1:374\n238#1:375,2\n243#1:377\n243#1:378,2\n267#1:387\n267#1:388,2\n268#1:390\n268#1:391,3\n167#1:368\n253#1:380\n253#1:381,6\n303#1:394\n303#1:395,6\n304#1:401\n304#1:402,3\n*E\n"
 .end annotation
 
 
@@ -22,16 +22,7 @@
 .end method
 
 .method public static final inRange(Lde/rki/coronawarnapp/server/protocols/internal/v2/RiskCalculationParametersOuterClass$Range;Ljava/lang/Number;)Z
-    .locals 6
-    .annotation system Ldalvik/annotation/Signature;
-        value = {
-            "<T:",
-            "Ljava/lang/Number;",
-            ">(",
-            "Lde/rki/coronawarnapp/server/protocols/internal/v2/RiskCalculationParametersOuterClass$Range;",
-            "TT;)Z"
-        }
-    .end annotation
+    .locals 4
 
     const-string/jumbo v0, "value"
 
@@ -41,19 +32,17 @@
 
     move-result v0
 
-    const/4 v1, 0x0
-
     if-eqz v0, :cond_0
 
     invoke-virtual {p1}, Ljava/lang/Number;->doubleValue()D
 
-    move-result-wide v2
+    move-result-wide v0
 
     invoke-virtual {p0}, Lde/rki/coronawarnapp/server/protocols/internal/v2/RiskCalculationParametersOuterClass$Range;->getMin()D
 
-    move-result-wide v4
+    move-result-wide v2
 
-    cmpg-double v0, v2, v4
+    cmpg-double v0, v0, v2
 
     if-gtz v0, :cond_0
 
@@ -68,13 +57,13 @@
 
     invoke-virtual {p1}, Ljava/lang/Number;->doubleValue()D
 
-    move-result-wide v2
+    move-result-wide v0
 
     invoke-virtual {p0}, Lde/rki/coronawarnapp/server/protocols/internal/v2/RiskCalculationParametersOuterClass$Range;->getMin()D
 
-    move-result-wide v4
+    move-result-wide v2
 
-    cmpg-double v0, v2, v4
+    cmpg-double v0, v0, v2
 
     if-gez v0, :cond_1
 
@@ -89,13 +78,13 @@
 
     invoke-virtual {p1}, Ljava/lang/Number;->doubleValue()D
 
-    move-result-wide v2
+    move-result-wide v0
 
     invoke-virtual {p0}, Lde/rki/coronawarnapp/server/protocols/internal/v2/RiskCalculationParametersOuterClass$Range;->getMax()D
 
-    move-result-wide v4
+    move-result-wide v2
 
-    cmpl-double v0, v2, v4
+    cmpl-double v0, v0, v2
 
     if-ltz v0, :cond_2
 
@@ -110,23 +99,26 @@
 
     invoke-virtual {p1}, Ljava/lang/Number;->doubleValue()D
 
-    move-result-wide v2
+    move-result-wide v0
 
     invoke-virtual {p0}, Lde/rki/coronawarnapp/server/protocols/internal/v2/RiskCalculationParametersOuterClass$Range;->getMax()D
 
     move-result-wide p0
 
-    cmpl-double p0, v2, p0
+    cmpl-double p0, v0, p0
 
     if-lez p0, :cond_3
 
-    goto :goto_0
+    :goto_0
+    const/4 p0, 0x0
+
+    goto :goto_1
 
     :cond_3
-    const/4 v1, 0x1
+    const/4 p0, 0x1
 
-    :goto_0
-    return v1
+    :goto_1
+    return p0
 .end method
 
 
@@ -153,25 +145,19 @@
 
     invoke-static {v2, v1}, Lkotlin/jvm/internal/Intrinsics;->checkNotNullParameter(Ljava/lang/Object;Ljava/lang/String;)V
 
-    const-string v1, "exposureWindowResultMap"
-
-    move-object/from16 v3, p2
-
-    invoke-static {v3, v1}, Lkotlin/jvm/internal/Intrinsics;->checkNotNullParameter(Ljava/lang/Object;Ljava/lang/String;)V
-
     invoke-interface/range {p2 .. p2}, Ljava/util/Map;->keySet()Ljava/util/Set;
 
     move-result-object v1
 
-    new-instance v4, Ljava/util/ArrayList;
+    new-instance v3, Ljava/util/ArrayList;
 
-    const/16 v5, 0xa
+    const/16 v4, 0xa
 
-    invoke-static {v1, v5}, Lkotlin/collections/CollectionsKt__IteratorsJVMKt;->collectionSizeOrDefault(Ljava/lang/Iterable;I)I
+    invoke-static {v1, v4}, Lkotlin/collections/CollectionsKt__IteratorsJVMKt;->collectionSizeOrDefault(Ljava/lang/Iterable;I)I
 
     move-result v5
 
-    invoke-direct {v4, v5}, Ljava/util/ArrayList;-><init>(I)V
+    invoke-direct {v3, v5}, Ljava/util/ArrayList;-><init>(I)V
 
     invoke-interface {v1}, Ljava/lang/Iterable;->iterator()Ljava/util/Iterator;
 
@@ -196,16 +182,16 @@
 
     move-result-object v5
 
-    invoke-virtual {v4, v5}, Ljava/util/ArrayList;->add(Ljava/lang/Object;)Z
+    invoke-virtual {v3, v5}, Ljava/util/ArrayList;->add(Ljava/lang/Object;)Z
 
     goto :goto_0
 
     :cond_0
-    invoke-static {v4}, Lkotlin/collections/CollectionsKt___CollectionsKt;->toSet(Ljava/lang/Iterable;)Ljava/util/Set;
+    invoke-static {v3}, Lkotlin/collections/CollectionsKt___CollectionsKt;->toSet(Ljava/lang/Iterable;)Ljava/util/Set;
 
     move-result-object v1
 
-    sget-object v4, Ltimber/log/Timber;->Forest:Ltimber/log/Timber$Forest;
+    sget-object v3, Ltimber/log/Timber;->Forest:Ltimber/log/Timber$Forest;
 
     const/4 v5, 0x1
 
@@ -217,11 +203,11 @@
 
     const-string/jumbo v8, "uniqueDates: %s"
 
-    invoke-virtual {v4, v8, v6}, Ltimber/log/Timber$Forest;->d(Ljava/lang/String;[Ljava/lang/Object;)V
+    invoke-virtual {v3, v8, v6}, Ltimber/log/Timber$Forest;->d(Ljava/lang/String;[Ljava/lang/Object;)V
 
-    new-instance v4, Ljava/util/ArrayList;
+    new-instance v3, Ljava/util/ArrayList;
 
-    invoke-direct {v4}, Ljava/util/ArrayList;-><init>()V
+    invoke-direct {v3}, Ljava/util/ArrayList;-><init>()V
 
     invoke-interface {v1}, Ljava/lang/Iterable;->iterator()Ljava/util/Iterator;
 
@@ -309,55 +295,53 @@
     :cond_3
     invoke-virtual {v6}, Ljava/util/LinkedHashMap;->values()Ljava/util/Collection;
 
-    move-result-object v5
+    move-result-object v9
 
-    int-to-double v12, v7
+    const-wide/16 v12, 0x0
 
-    invoke-interface {v5}, Ljava/lang/Iterable;->iterator()Ljava/util/Iterator;
-
-    move-result-object v5
-
-    :goto_4
-    invoke-interface {v5}, Ljava/util/Iterator;->hasNext()Z
-
-    move-result v9
-
-    if-eqz v9, :cond_4
-
-    invoke-interface {v5}, Ljava/util/Iterator;->next()Ljava/lang/Object;
+    invoke-interface {v9}, Ljava/lang/Iterable;->iterator()Ljava/util/Iterator;
 
     move-result-object v9
 
-    check-cast v9, Lde/rki/coronawarnapp/risk/result/RiskResult;
+    :goto_4
+    invoke-interface {v9}, Ljava/util/Iterator;->hasNext()Z
 
-    iget-wide v14, v9, Lde/rki/coronawarnapp/risk/result/RiskResult;->normalizedTime:D
+    move-result v14
+
+    if-eqz v14, :cond_4
+
+    invoke-interface {v9}, Ljava/util/Iterator;->next()Ljava/lang/Object;
+
+    move-result-object v14
+
+    check-cast v14, Lde/rki/coronawarnapp/risk/result/RiskResult;
+
+    iget-wide v14, v14, Lde/rki/coronawarnapp/risk/result/RiskResult;->normalizedTime:D
 
     add-double/2addr v12, v14
 
     goto :goto_4
 
     :cond_4
-    sget-object v5, Ltimber/log/Timber;->Forest:Ltimber/log/Timber$Forest;
+    sget-object v9, Ltimber/log/Timber;->Forest:Ltimber/log/Timber$Forest;
 
     new-array v8, v8, [Ljava/lang/Object;
 
     invoke-static {v10, v11}, Ljava/lang/Long;->valueOf(J)Ljava/lang/Long;
 
-    move-result-object v9
+    move-result-object v14
 
-    aput-object v9, v8, v7
+    aput-object v14, v8, v7
 
     new-instance v7, Lorg/joda/time/Instant;
 
     invoke-direct {v7, v10, v11}, Lorg/joda/time/Instant;-><init>(J)V
 
-    const/4 v9, 0x1
+    aput-object v7, v8, v5
 
-    aput-object v7, v8, v9
+    const-string v5, "Aggregating result for date %d - %s"
 
-    const-string v7, "Aggregating result for date %d - %s"
-
-    invoke-virtual {v5, v7, v8}, Ltimber/log/Timber$Forest;->d(Ljava/lang/String;[Ljava/lang/Object;)V
+    invoke-virtual {v9, v5, v8}, Ltimber/log/Timber$Forest;->d(Ljava/lang/String;[Ljava/lang/Object;)V
 
     invoke-interface/range {p1 .. p1}, Lde/rki/coronawarnapp/appconfig/ExposureWindowRiskCalculationConfig;->getNormalizedTimePerDayToRiskLevelMappingList()Ljava/util/List;
 
@@ -412,9 +396,7 @@
     :cond_6
     new-instance v5, Ljava/util/ArrayList;
 
-    const/16 v8, 0xa
-
-    invoke-static {v7, v8}, Lkotlin/collections/CollectionsKt__IteratorsJVMKt;->collectionSizeOrDefault(Ljava/lang/Iterable;I)I
+    invoke-static {v7, v4}, Lkotlin/collections/CollectionsKt__IteratorsJVMKt;->collectionSizeOrDefault(Ljava/lang/Iterable;I)I
 
     move-result v8
 
@@ -560,11 +542,14 @@
     invoke-direct/range {v9 .. v14}, Lde/rki/coronawarnapp/risk/result/ExposureWindowDayRisk;-><init>(JLde/rki/coronawarnapp/server/protocols/internal/v2/RiskCalculationParametersOuterClass$NormalizedTimeToRiskLevelMapping$RiskLevel;II)V
 
     :goto_7
-    if-eqz v5, :cond_9
+    if-nez v5, :cond_9
 
-    invoke-virtual {v4, v5}, Ljava/util/ArrayList;->add(Ljava/lang/Object;)Z
+    goto :goto_8
 
     :cond_9
+    invoke-virtual {v3, v5}, Ljava/util/ArrayList;->add(Ljava/lang/Object;)Z
+
+    :goto_8
     const/4 v5, 0x1
 
     const/4 v7, 0x0
@@ -578,32 +563,32 @@
 
     new-array v2, v2, [Ljava/lang/Object;
 
-    invoke-virtual {v4}, Ljava/util/ArrayList;->size()I
+    invoke-virtual {v3}, Ljava/util/ArrayList;->size()I
 
-    move-result v3
+    move-result v4
 
-    invoke-static {v3}, Ljava/lang/Integer;->valueOf(I)Ljava/lang/Integer;
+    invoke-static {v4}, Ljava/lang/Integer;->valueOf(I)Ljava/lang/Integer;
 
-    move-result-object v3
+    move-result-object v4
 
     const/4 v5, 0x0
 
-    aput-object v3, v2, v5
+    aput-object v4, v2, v5
 
-    const-string v3, "exposureHistory size: %d"
+    const-string v4, "exposureHistory size: %d"
 
-    invoke-virtual {v1, v3, v2}, Ltimber/log/Timber$Forest;->d(Ljava/lang/String;[Ljava/lang/Object;)V
+    invoke-virtual {v1, v4, v2}, Ltimber/log/Timber$Forest;->d(Ljava/lang/String;[Ljava/lang/Object;)V
 
-    invoke-virtual {v4}, Ljava/util/ArrayList;->isEmpty()Z
+    invoke-virtual {v3}, Ljava/util/ArrayList;->isEmpty()Z
 
     move-result v1
 
     if-eqz v1, :cond_b
 
-    goto :goto_9
+    goto :goto_a
 
     :cond_b
-    invoke-virtual {v4}, Ljava/util/ArrayList;->iterator()Ljava/util/Iterator;
+    invoke-virtual {v3}, Ljava/util/ArrayList;->iterator()Ljava/util/Iterator;
 
     move-result-object v1
 
@@ -622,39 +607,39 @@
 
     iget-object v2, v2, Lde/rki/coronawarnapp/risk/result/ExposureWindowDayRisk;->riskLevel:Lde/rki/coronawarnapp/server/protocols/internal/v2/RiskCalculationParametersOuterClass$NormalizedTimeToRiskLevelMapping$RiskLevel;
 
-    sget-object v3, Lde/rki/coronawarnapp/server/protocols/internal/v2/RiskCalculationParametersOuterClass$NormalizedTimeToRiskLevelMapping$RiskLevel;->HIGH:Lde/rki/coronawarnapp/server/protocols/internal/v2/RiskCalculationParametersOuterClass$NormalizedTimeToRiskLevelMapping$RiskLevel;
+    sget-object v4, Lde/rki/coronawarnapp/server/protocols/internal/v2/RiskCalculationParametersOuterClass$NormalizedTimeToRiskLevelMapping$RiskLevel;->HIGH:Lde/rki/coronawarnapp/server/protocols/internal/v2/RiskCalculationParametersOuterClass$NormalizedTimeToRiskLevelMapping$RiskLevel;
 
-    if-ne v2, v3, :cond_d
+    if-ne v2, v4, :cond_d
 
     const/4 v2, 0x1
 
-    goto :goto_8
+    goto :goto_9
 
     :cond_d
     const/4 v2, 0x0
 
-    :goto_8
+    :goto_9
     if-eqz v2, :cond_c
 
     const/4 v1, 0x1
 
-    goto :goto_a
+    goto :goto_b
 
     :cond_e
-    :goto_9
+    :goto_a
     const/4 v1, 0x0
 
-    :goto_a
+    :goto_b
     if-eqz v1, :cond_f
 
     sget-object v1, Lde/rki/coronawarnapp/server/protocols/internal/v2/RiskCalculationParametersOuterClass$NormalizedTimeToRiskLevelMapping$RiskLevel;->HIGH:Lde/rki/coronawarnapp/server/protocols/internal/v2/RiskCalculationParametersOuterClass$NormalizedTimeToRiskLevelMapping$RiskLevel;
 
-    goto :goto_b
+    goto :goto_c
 
     :cond_f
     sget-object v1, Lde/rki/coronawarnapp/server/protocols/internal/v2/RiskCalculationParametersOuterClass$NormalizedTimeToRiskLevelMapping$RiskLevel;->LOW:Lde/rki/coronawarnapp/server/protocols/internal/v2/RiskCalculationParametersOuterClass$NormalizedTimeToRiskLevelMapping$RiskLevel;
 
-    :goto_b
+    :goto_c
     move-object v10, v1
 
     sget-object v1, Ltimber/log/Timber;->Forest:Ltimber/log/Timber$Forest;
@@ -665,31 +650,31 @@
 
     invoke-virtual {v10}, Ljava/lang/Enum;->name()Ljava/lang/String;
 
-    move-result-object v3
+    move-result-object v4
 
     const/4 v5, 0x0
 
-    aput-object v3, v2, v5
+    aput-object v4, v2, v5
 
     invoke-virtual {v10}, Ljava/lang/Enum;->ordinal()I
 
-    move-result v3
+    move-result v4
 
-    invoke-static {v3}, Ljava/lang/Integer;->valueOf(I)Ljava/lang/Integer;
+    invoke-static {v4}, Ljava/lang/Integer;->valueOf(I)Ljava/lang/Integer;
 
-    move-result-object v3
+    move-result-object v4
 
     const/4 v6, 0x1
 
-    aput-object v3, v2, v6
+    aput-object v4, v2, v6
 
-    const-string/jumbo v3, "totalRiskLevel: %s (%d)"
+    const-string/jumbo v4, "totalRiskLevel: %s (%d)"
 
-    invoke-virtual {v1, v3, v2}, Ltimber/log/Timber$Forest;->d(Ljava/lang/String;[Ljava/lang/Object;)V
+    invoke-virtual {v1, v4, v2}, Ltimber/log/Timber$Forest;->d(Ljava/lang/String;[Ljava/lang/Object;)V
 
     sget-object v2, Lde/rki/coronawarnapp/server/protocols/internal/v2/RiskCalculationParametersOuterClass$NormalizedTimeToRiskLevelMapping$RiskLevel;->LOW:Lde/rki/coronawarnapp/server/protocols/internal/v2/RiskCalculationParametersOuterClass$NormalizedTimeToRiskLevelMapping$RiskLevel;
 
-    invoke-virtual {v0, v4, v2}, Lde/rki/coronawarnapp/risk/DefaultRiskLevels;->mostRecentDateForRisk(Ljava/util/List;Lde/rki/coronawarnapp/server/protocols/internal/v2/RiskCalculationParametersOuterClass$NormalizedTimeToRiskLevelMapping$RiskLevel;)Lorg/joda/time/Instant;
+    invoke-virtual {v0, v3, v2}, Lde/rki/coronawarnapp/risk/DefaultRiskLevels;->mostRecentDateForRisk(Ljava/util/List;Lde/rki/coronawarnapp/server/protocols/internal/v2/RiskCalculationParametersOuterClass$NormalizedTimeToRiskLevelMapping$RiskLevel;)Lorg/joda/time/Instant;
 
     move-result-object v13
 
@@ -697,13 +682,13 @@
 
     aput-object v13, v2, v5
 
-    const-string v3, "mostRecentDateWithLowRisk: %s"
+    const-string v4, "mostRecentDateWithLowRisk: %s"
 
-    invoke-virtual {v1, v3, v2}, Ltimber/log/Timber$Forest;->d(Ljava/lang/String;[Ljava/lang/Object;)V
+    invoke-virtual {v1, v4, v2}, Ltimber/log/Timber$Forest;->d(Ljava/lang/String;[Ljava/lang/Object;)V
 
     sget-object v2, Lde/rki/coronawarnapp/server/protocols/internal/v2/RiskCalculationParametersOuterClass$NormalizedTimeToRiskLevelMapping$RiskLevel;->HIGH:Lde/rki/coronawarnapp/server/protocols/internal/v2/RiskCalculationParametersOuterClass$NormalizedTimeToRiskLevelMapping$RiskLevel;
 
-    invoke-virtual {v0, v4, v2}, Lde/rki/coronawarnapp/risk/DefaultRiskLevels;->mostRecentDateForRisk(Ljava/util/List;Lde/rki/coronawarnapp/server/protocols/internal/v2/RiskCalculationParametersOuterClass$NormalizedTimeToRiskLevelMapping$RiskLevel;)Lorg/joda/time/Instant;
+    invoke-virtual {v0, v3, v2}, Lde/rki/coronawarnapp/risk/DefaultRiskLevels;->mostRecentDateForRisk(Ljava/util/List;Lde/rki/coronawarnapp/server/protocols/internal/v2/RiskCalculationParametersOuterClass$NormalizedTimeToRiskLevelMapping$RiskLevel;)Lorg/joda/time/Instant;
 
     move-result-object v14
 
@@ -711,11 +696,11 @@
 
     aput-object v14, v2, v5
 
-    const-string v3, "mostRecentDateWithHighRisk: %s"
+    const-string v4, "mostRecentDateWithHighRisk: %s"
 
-    invoke-virtual {v1, v3, v2}, Ltimber/log/Timber$Forest;->d(Ljava/lang/String;[Ljava/lang/Object;)V
+    invoke-virtual {v1, v4, v2}, Ltimber/log/Timber$Forest;->d(Ljava/lang/String;[Ljava/lang/Object;)V
 
-    invoke-virtual {v4}, Ljava/util/ArrayList;->iterator()Ljava/util/Iterator;
+    invoke-virtual {v3}, Ljava/util/ArrayList;->iterator()Ljava/util/Iterator;
 
     move-result-object v1
 
@@ -723,7 +708,7 @@
 
     move v11, v2
 
-    :goto_c
+    :goto_d
     invoke-interface {v1}, Ljava/util/Iterator;->hasNext()Z
 
     move-result v2
@@ -740,7 +725,7 @@
 
     add-int/2addr v11, v2
 
-    goto :goto_c
+    goto :goto_d
 
     :cond_10
     sget-object v1, Ltimber/log/Timber;->Forest:Ltimber/log/Timber$Forest;
@@ -751,17 +736,17 @@
 
     invoke-static {v11}, Ljava/lang/Integer;->valueOf(I)Ljava/lang/Integer;
 
-    move-result-object v3
+    move-result-object v4
 
     const/4 v5, 0x0
 
-    aput-object v3, v2, v5
+    aput-object v4, v2, v5
 
-    const-string/jumbo v3, "totalMinimumDistinctEncountersWithLowRisk: %d"
+    const-string/jumbo v4, "totalMinimumDistinctEncountersWithLowRisk: %d"
 
-    invoke-virtual {v1, v3, v2}, Ltimber/log/Timber$Forest;->d(Ljava/lang/String;[Ljava/lang/Object;)V
+    invoke-virtual {v1, v4, v2}, Ltimber/log/Timber$Forest;->d(Ljava/lang/String;[Ljava/lang/Object;)V
 
-    invoke-virtual {v4}, Ljava/util/ArrayList;->iterator()Ljava/util/Iterator;
+    invoke-virtual {v3}, Ljava/util/ArrayList;->iterator()Ljava/util/Iterator;
 
     move-result-object v1
 
@@ -769,7 +754,7 @@
 
     move v12, v2
 
-    :goto_d
+    :goto_e
     invoke-interface {v1}, Ljava/util/Iterator;->hasNext()Z
 
     move-result v2
@@ -786,14 +771,14 @@
 
     add-int/2addr v12, v2
 
-    goto :goto_d
+    goto :goto_e
 
     :cond_11
     sget-object v1, Ltimber/log/Timber;->Forest:Ltimber/log/Timber$Forest;
 
     const/4 v2, 0x1
 
-    new-array v3, v2, [Ljava/lang/Object;
+    new-array v4, v2, [Ljava/lang/Object;
 
     invoke-static {v12}, Ljava/lang/Integer;->valueOf(I)Ljava/lang/Integer;
 
@@ -801,33 +786,33 @@
 
     const/4 v6, 0x0
 
-    aput-object v5, v3, v6
+    aput-object v5, v4, v6
 
     const-string/jumbo v5, "totalMinimumDistinctEncountersWithHighRisk: %d"
 
-    invoke-virtual {v1, v5, v3}, Ltimber/log/Timber$Forest;->d(Ljava/lang/String;[Ljava/lang/Object;)V
+    invoke-virtual {v1, v5, v4}, Ltimber/log/Timber$Forest;->d(Ljava/lang/String;[Ljava/lang/Object;)V
 
-    sget-object v3, Lde/rki/coronawarnapp/server/protocols/internal/v2/RiskCalculationParametersOuterClass$NormalizedTimeToRiskLevelMapping$RiskLevel;->LOW:Lde/rki/coronawarnapp/server/protocols/internal/v2/RiskCalculationParametersOuterClass$NormalizedTimeToRiskLevelMapping$RiskLevel;
+    sget-object v4, Lde/rki/coronawarnapp/server/protocols/internal/v2/RiskCalculationParametersOuterClass$NormalizedTimeToRiskLevelMapping$RiskLevel;->LOW:Lde/rki/coronawarnapp/server/protocols/internal/v2/RiskCalculationParametersOuterClass$NormalizedTimeToRiskLevelMapping$RiskLevel;
 
-    invoke-virtual {v0, v4, v3}, Lde/rki/coronawarnapp/risk/DefaultRiskLevels;->numberOfDaysForRisk(Ljava/util/List;Lde/rki/coronawarnapp/server/protocols/internal/v2/RiskCalculationParametersOuterClass$NormalizedTimeToRiskLevelMapping$RiskLevel;)I
+    invoke-virtual {v0, v3, v4}, Lde/rki/coronawarnapp/risk/DefaultRiskLevels;->numberOfDaysForRisk(Ljava/util/List;Lde/rki/coronawarnapp/server/protocols/internal/v2/RiskCalculationParametersOuterClass$NormalizedTimeToRiskLevelMapping$RiskLevel;)I
 
     move-result v15
 
-    new-array v3, v2, [Ljava/lang/Object;
+    new-array v4, v2, [Ljava/lang/Object;
 
     invoke-static {v15}, Ljava/lang/Integer;->valueOf(I)Ljava/lang/Integer;
 
     move-result-object v5
 
-    aput-object v5, v3, v6
+    aput-object v5, v4, v6
 
     const-string v5, "numberOfDaysWithLowRisk: %d"
 
-    invoke-virtual {v1, v5, v3}, Ltimber/log/Timber$Forest;->d(Ljava/lang/String;[Ljava/lang/Object;)V
+    invoke-virtual {v1, v5, v4}, Ltimber/log/Timber$Forest;->d(Ljava/lang/String;[Ljava/lang/Object;)V
 
-    sget-object v3, Lde/rki/coronawarnapp/server/protocols/internal/v2/RiskCalculationParametersOuterClass$NormalizedTimeToRiskLevelMapping$RiskLevel;->HIGH:Lde/rki/coronawarnapp/server/protocols/internal/v2/RiskCalculationParametersOuterClass$NormalizedTimeToRiskLevelMapping$RiskLevel;
+    sget-object v4, Lde/rki/coronawarnapp/server/protocols/internal/v2/RiskCalculationParametersOuterClass$NormalizedTimeToRiskLevelMapping$RiskLevel;->HIGH:Lde/rki/coronawarnapp/server/protocols/internal/v2/RiskCalculationParametersOuterClass$NormalizedTimeToRiskLevelMapping$RiskLevel;
 
-    invoke-virtual {v0, v4, v3}, Lde/rki/coronawarnapp/risk/DefaultRiskLevels;->numberOfDaysForRisk(Ljava/util/List;Lde/rki/coronawarnapp/server/protocols/internal/v2/RiskCalculationParametersOuterClass$NormalizedTimeToRiskLevelMapping$RiskLevel;)I
+    invoke-virtual {v0, v3, v4}, Lde/rki/coronawarnapp/risk/DefaultRiskLevels;->numberOfDaysForRisk(Ljava/util/List;Lde/rki/coronawarnapp/server/protocols/internal/v2/RiskCalculationParametersOuterClass$NormalizedTimeToRiskLevelMapping$RiskLevel;)I
 
     move-result v16
 
@@ -835,19 +820,19 @@
 
     invoke-static/range {v16 .. v16}, Ljava/lang/Integer;->valueOf(I)Ljava/lang/Integer;
 
-    move-result-object v3
+    move-result-object v4
 
-    aput-object v3, v2, v6
+    aput-object v4, v2, v6
 
-    const-string v3, "numberOfDaysWithHighRisk: %d"
+    const-string v4, "numberOfDaysWithHighRisk: %d"
 
-    invoke-virtual {v1, v3, v2}, Ltimber/log/Timber$Forest;->d(Ljava/lang/String;[Ljava/lang/Object;)V
+    invoke-virtual {v1, v4, v2}, Ltimber/log/Timber$Forest;->d(Ljava/lang/String;[Ljava/lang/Object;)V
 
     new-instance v1, Lde/rki/coronawarnapp/risk/result/EwAggregatedRiskResult;
 
     move-object v9, v1
 
-    move-object/from16 v17, v4
+    move-object/from16 v17, v3
 
     invoke-direct/range {v9 .. v17}, Lde/rki/coronawarnapp/risk/result/EwAggregatedRiskResult;-><init>(Lde/rki/coronawarnapp/server/protocols/internal/v2/RiskCalculationParametersOuterClass$NormalizedTimeToRiskLevelMapping$RiskLevel;IILorg/joda/time/Instant;Lorg/joda/time/Instant;IILjava/util/List;)V
 
@@ -908,7 +893,7 @@
 
     iget-object v3, v0, Lcom/google/android/gms/nearby/exposurenotification/ExposureWindow;->zzb:Ljava/util/List;
 
-    invoke-static {v3, v4}, Lde/rki/coronawarnapp/appconfig/mapping/KeyDownloadParametersMapper$$ExternalSyntheticOutline0;->m(Ljava/util/List;Ljava/lang/String;)Ljava/util/ArrayList;
+    invoke-static {v3, v4}, Landroidx/window/ExtensionAdapter$$ExternalSyntheticOutline0;->m(Ljava/util/List;Ljava/lang/String;)Ljava/util/ArrayList;
 
     move-result-object v6
 

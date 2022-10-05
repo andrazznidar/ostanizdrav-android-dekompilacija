@@ -4,7 +4,7 @@
 
 
 # instance fields
-.field public final nullableAnyType:Lkotlin/reflect/jvm/internal/impl/types/KotlinType;
+.field private final nullableAnyType:Lkotlin/reflect/jvm/internal/impl/types/KotlinType;
 
 
 # direct methods
@@ -57,7 +57,11 @@
 .end method
 
 .method public refine(Lkotlin/reflect/jvm/internal/impl/types/checker/KotlinTypeRefiner;)Lkotlin/reflect/jvm/internal/impl/types/TypeProjection;
-    .locals 0
+    .locals 1
+
+    const-string v0, "kotlinTypeRefiner"
+
+    invoke-static {p1, v0}, Lkotlin/jvm/internal/Intrinsics;->checkNotNullParameter(Ljava/lang/Object;Ljava/lang/String;)V
 
     return-object p0
 .end method

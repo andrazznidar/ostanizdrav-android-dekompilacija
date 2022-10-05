@@ -800,7 +800,7 @@
 
     iget-object v9, v2, Lde/rki/coronawarnapp/appconfig/internal/ConfigDataContainer;->identifier:Ljava/lang/String;
 
-    iget-object v11, v2, Lde/rki/coronawarnapp/appconfig/internal/ConfigDataContainer;->configType:Lde/rki/coronawarnapp/appconfig/ConfigData$Type;
+    iget v11, v2, Lde/rki/coronawarnapp/appconfig/internal/ConfigDataContainer;->configType:I
 
     const-string v1, "serverTime"
 
@@ -820,13 +820,13 @@
 
     const-string v1, "configType"
 
-    invoke-static {v11, v1}, Lkotlin/jvm/internal/Intrinsics;->checkNotNullParameter(Ljava/lang/Object;Ljava/lang/String;)V
+    invoke-static {v11, v1}, Lkotlin/jvm/internal/Intrinsics$$ExternalSyntheticCheckNotZero0;->m(ILjava/lang/String;)V
 
     new-instance v1, Lde/rki/coronawarnapp/appconfig/internal/ConfigDataContainer;
 
     move-object v5, v1
 
-    invoke-direct/range {v5 .. v11}, Lde/rki/coronawarnapp/appconfig/internal/ConfigDataContainer;-><init>(Lorg/joda/time/Instant;Lorg/joda/time/Duration;Lde/rki/coronawarnapp/appconfig/mapping/ConfigMapping;Ljava/lang/String;Lorg/joda/time/Duration;Lde/rki/coronawarnapp/appconfig/ConfigData$Type;)V
+    invoke-direct/range {v5 .. v11}, Lde/rki/coronawarnapp/appconfig/internal/ConfigDataContainer;-><init>(Lorg/joda/time/Instant;Lorg/joda/time/Duration;Lde/rki/coronawarnapp/appconfig/mapping/ConfigMapping;Ljava/lang/String;Lorg/joda/time/Duration;I)V
 
     goto :goto_7
 
@@ -873,7 +873,7 @@
 
     sget-object v8, Lorg/joda/time/Duration;->ZERO:Lorg/joda/time/Duration;
 
-    sget-object v9, Lde/rki/coronawarnapp/appconfig/ConfigData$Type;->LOCAL_DEFAULT:Lde/rki/coronawarnapp/appconfig/ConfigData$Type;
+    const/4 v9, 0x3
 
     new-instance v1, Lde/rki/coronawarnapp/appconfig/internal/ConfigDataContainer;
 
@@ -883,7 +883,7 @@
 
     move-object v5, v8
 
-    invoke-direct/range {v3 .. v9}, Lde/rki/coronawarnapp/appconfig/internal/ConfigDataContainer;-><init>(Lorg/joda/time/Instant;Lorg/joda/time/Duration;Lde/rki/coronawarnapp/appconfig/mapping/ConfigMapping;Ljava/lang/String;Lorg/joda/time/Duration;Lde/rki/coronawarnapp/appconfig/ConfigData$Type;)V
+    invoke-direct/range {v3 .. v9}, Lde/rki/coronawarnapp/appconfig/internal/ConfigDataContainer;-><init>(Lorg/joda/time/Instant;Lorg/joda/time/Duration;Lde/rki/coronawarnapp/appconfig/mapping/ConfigMapping;Ljava/lang/String;Lorg/joda/time/Duration;I)V
 
     :goto_7
     move-object v6, v1

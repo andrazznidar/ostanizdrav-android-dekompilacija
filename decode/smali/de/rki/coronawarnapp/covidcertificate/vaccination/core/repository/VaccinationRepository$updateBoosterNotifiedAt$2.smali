@@ -27,7 +27,7 @@
 .end annotation
 
 .annotation system Ldalvik/annotation/SourceDebugExtension;
-    value = "SMAP\nVaccinationRepository.kt\nKotlin\n*S Kotlin\n*F\n+ 1 VaccinationRepository.kt\nde/rki/coronawarnapp/covidcertificate/vaccination/core/repository/VaccinationRepository$updateBoosterNotifiedAt$2\n+ 2 _Collections.kt\nkotlin/collections/CollectionsKt___CollectionsKt\n*L\n1#1,368:1\n659#2,11:369\n*S KotlinDebug\n*F\n+ 1 VaccinationRepository.kt\nde/rki/coronawarnapp/covidcertificate/vaccination/core/repository/VaccinationRepository$updateBoosterNotifiedAt$2\n*L\n347#1:369,11\n*E\n"
+    value = "SMAP\nVaccinationRepository.kt\nKotlin\n*S Kotlin\n*F\n+ 1 VaccinationRepository.kt\nde/rki/coronawarnapp/covidcertificate/vaccination/core/repository/VaccinationRepository$updateBoosterNotifiedAt$2\n+ 2 _Collections.kt\nkotlin/collections/CollectionsKt___CollectionsKt\n*L\n1#1,439:1\n659#2,11:440\n*S KotlinDebug\n*F\n+ 1 VaccinationRepository.kt\nde/rki/coronawarnapp/covidcertificate/vaccination/core/repository/VaccinationRepository$updateBoosterNotifiedAt$2\n*L\n366#1:440,11\n*E\n"
 .end annotation
 
 .annotation runtime Lkotlin/coroutines/jvm/internal/DebugMetadata;
@@ -128,7 +128,7 @@
 .end method
 
 .method public final invokeSuspend(Ljava/lang/Object;)Ljava/lang/Object;
-    .locals 14
+    .locals 13
 
     invoke-static {p1}, Lkotlin/ResultKt;->throwOnFailure(Ljava/lang/Object;)V
 
@@ -142,29 +142,29 @@
 
     move-result-object v1
 
-    const/4 v2, 0x0
+    const/4 v2, 0x1
 
     const/4 v3, 0x0
 
-    move v4, v2
+    const/4 v4, 0x0
 
-    move-object v5, v3
+    move v5, v3
+
+    move-object v6, v4
 
     :cond_0
     :goto_0
     invoke-interface {v1}, Ljava/util/Iterator;->hasNext()Z
 
-    move-result v6
+    move-result v7
 
-    const/4 v7, 0x1
-
-    if-eqz v6, :cond_2
+    if-eqz v7, :cond_2
 
     invoke-interface {v1}, Ljava/util/Iterator;->next()Ljava/lang/Object;
 
-    move-result-object v6
+    move-result-object v7
 
-    move-object v8, v6
+    move-object v8, v7
 
     check-cast v8, Lde/rki/coronawarnapp/covidcertificate/vaccination/core/VaccinatedPerson;
 
@@ -178,43 +178,43 @@
 
     if-eqz v8, :cond_0
 
-    if-eqz v4, :cond_1
+    if-eqz v5, :cond_1
 
     goto :goto_1
 
     :cond_1
-    move-object v5, v6
+    move v5, v2
 
-    move v4, v7
+    move-object v6, v7
 
     goto :goto_0
 
     :cond_2
-    if-nez v4, :cond_3
+    if-nez v5, :cond_3
 
     :goto_1
-    move-object v5, v3
+    move-object v6, v4
 
     :cond_3
-    check-cast v5, Lde/rki/coronawarnapp/covidcertificate/vaccination/core/VaccinatedPerson;
+    check-cast v6, Lde/rki/coronawarnapp/covidcertificate/vaccination/core/VaccinatedPerson;
 
     const-string v0, "VaccinationRepository"
 
-    if-nez v5, :cond_4
+    if-nez v6, :cond_4
 
     sget-object v1, Ltimber/log/Timber;->Forest:Ltimber/log/Timber$Forest;
 
     invoke-virtual {v1, v0}, Ltimber/log/Timber$Forest;->tag(Ljava/lang/String;)Ltimber/log/Timber$Tree;
 
-    new-array v0, v7, [Ljava/lang/Object;
+    new-array v0, v2, [Ljava/lang/Object;
 
-    iget-object v3, p0, Lde/rki/coronawarnapp/covidcertificate/vaccination/core/repository/VaccinationRepository$updateBoosterNotifiedAt$2;->$personIdentifier:Lde/rki/coronawarnapp/covidcertificate/common/certificate/CertificatePersonIdentifier;
+    iget-object v2, p0, Lde/rki/coronawarnapp/covidcertificate/vaccination/core/repository/VaccinationRepository$updateBoosterNotifiedAt$2;->$personIdentifier:Lde/rki/coronawarnapp/covidcertificate/common/certificate/CertificatePersonIdentifier;
 
-    invoke-virtual {v3}, Lde/rki/coronawarnapp/covidcertificate/common/certificate/CertificatePersonIdentifier;->getCodeSHA256()Ljava/lang/String;
+    invoke-virtual {v2}, Lde/rki/coronawarnapp/covidcertificate/common/certificate/CertificatePersonIdentifier;->getCodeSHA256()Ljava/lang/String;
 
-    move-result-object v3
+    move-result-object v2
 
-    aput-object v3, v0, v2
+    aput-object v2, v0, v3
 
     const-string/jumbo v2, "updateBoosterNotifiedAt couldn\'t find person %s"
 
@@ -223,41 +223,45 @@
     return-object p1
 
     :cond_4
-    iget-object v8, v5, Lde/rki/coronawarnapp/covidcertificate/vaccination/core/VaccinatedPerson;->data:Lde/rki/coronawarnapp/covidcertificate/vaccination/core/repository/storage/VaccinatedPersonData;
+    iget-object v7, v6, Lde/rki/coronawarnapp/covidcertificate/vaccination/core/VaccinatedPerson;->data:Lde/rki/coronawarnapp/covidcertificate/vaccination/core/repository/storage/VaccinatedPersonData;
+
+    const/4 v8, 0x0
 
     const/4 v9, 0x0
 
     const/4 v10, 0x0
 
-    const/4 v11, 0x0
+    iget-object v11, p0, Lde/rki/coronawarnapp/covidcertificate/vaccination/core/repository/VaccinationRepository$updateBoosterNotifiedAt$2;->$time:Lorg/joda/time/Instant;
 
-    iget-object v12, p0, Lde/rki/coronawarnapp/covidcertificate/vaccination/core/repository/VaccinationRepository$updateBoosterNotifiedAt$2;->$time:Lorg/joda/time/Instant;
+    const/4 v12, 0x7
 
-    const/4 v13, 0x7
-
-    invoke-static/range {v8 .. v13}, Lde/rki/coronawarnapp/covidcertificate/vaccination/core/repository/storage/VaccinatedPersonData;->copy$default(Lde/rki/coronawarnapp/covidcertificate/vaccination/core/repository/storage/VaccinatedPersonData;Ljava/util/Set;Lde/rki/coronawarnapp/covidcertificate/validation/core/rule/DccValidationRule;Ljava/lang/String;Lorg/joda/time/Instant;I)Lde/rki/coronawarnapp/covidcertificate/vaccination/core/repository/storage/VaccinatedPersonData;
+    invoke-static/range {v7 .. v12}, Lde/rki/coronawarnapp/covidcertificate/vaccination/core/repository/storage/VaccinatedPersonData;->copy$default(Lde/rki/coronawarnapp/covidcertificate/vaccination/core/repository/storage/VaccinatedPersonData;Ljava/util/Set;Ljava/lang/String;Ljava/lang/String;Lorg/joda/time/Instant;I)Lde/rki/coronawarnapp/covidcertificate/vaccination/core/repository/storage/VaccinatedPersonData;
 
     move-result-object v1
 
-    const/4 v4, 0x6
+    const/4 v5, 0x6
 
-    invoke-static {v5, v1, v3, v3, v4}, Lde/rki/coronawarnapp/covidcertificate/vaccination/core/VaccinatedPerson;->copy$default(Lde/rki/coronawarnapp/covidcertificate/vaccination/core/VaccinatedPerson;Lde/rki/coronawarnapp/covidcertificate/vaccination/core/repository/storage/VaccinatedPersonData;Lde/rki/coronawarnapp/covidcertificate/valueset/valuesets/VaccinationValueSets;Ljava/util/Map;I)Lde/rki/coronawarnapp/covidcertificate/vaccination/core/VaccinatedPerson;
+    invoke-static {v6, v1, v4, v4, v5}, Lde/rki/coronawarnapp/covidcertificate/vaccination/core/VaccinatedPerson;->copy$default(Lde/rki/coronawarnapp/covidcertificate/vaccination/core/VaccinatedPerson;Lde/rki/coronawarnapp/covidcertificate/vaccination/core/repository/storage/VaccinatedPersonData;Lde/rki/coronawarnapp/covidcertificate/valueset/valuesets/VaccinationValueSets;Ljava/util/Map;I)Lde/rki/coronawarnapp/covidcertificate/vaccination/core/VaccinatedPerson;
 
     move-result-object v1
 
-    sget-object v3, Ltimber/log/Timber;->Forest:Ltimber/log/Timber$Forest;
+    sget-object v4, Ltimber/log/Timber;->Forest:Ltimber/log/Timber$Forest;
 
-    invoke-virtual {v3, v0}, Ltimber/log/Timber$Forest;->tag(Ljava/lang/String;)Ltimber/log/Timber$Tree;
+    invoke-virtual {v4, v0}, Ltimber/log/Timber$Forest;->tag(Ljava/lang/String;)Ltimber/log/Timber$Tree;
 
-    new-array v0, v7, [Ljava/lang/Object;
+    new-array v0, v2, [Ljava/lang/Object;
 
-    aput-object v1, v0, v2
+    invoke-virtual {v1}, Lde/rki/coronawarnapp/covidcertificate/vaccination/core/VaccinatedPerson;->getIdentifier()Lde/rki/coronawarnapp/covidcertificate/common/certificate/CertificatePersonIdentifier;
+
+    move-result-object v2
+
+    aput-object v2, v0, v3
 
     const-string/jumbo v2, "updateBoosterNotifiedAt updatedPerson=%s"
 
-    invoke-virtual {v3, v2, v0}, Ltimber/log/Timber$Tree;->d(Ljava/lang/String;[Ljava/lang/Object;)V
+    invoke-virtual {v4, v2, v0}, Ltimber/log/Timber$Tree;->d(Ljava/lang/String;[Ljava/lang/Object;)V
 
-    invoke-static {p1, v5}, Lkotlin/collections/SetsKt;->minus(Ljava/util/Set;Ljava/lang/Object;)Ljava/util/Set;
+    invoke-static {p1, v6}, Lkotlin/collections/SetsKt;->minus(Ljava/util/Set;Ljava/lang/Object;)Ljava/util/Set;
 
     move-result-object p1
 

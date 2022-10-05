@@ -28,11 +28,11 @@
     .end annotation
 .end field
 
-.field public final timeStamperProvider:Ljavax/inject/Provider;
+.field public final gsonProvider:Ljavax/inject/Provider;
     .annotation system Ldalvik/annotation/Signature;
         value = {
             "Ljavax/inject/Provider<",
-            "Lde/rki/coronawarnapp/util/TimeStamper;",
+            "Lcom/google/gson/Gson;",
             ">;"
         }
     .end annotation
@@ -49,7 +49,7 @@
         }
         names = {
             "contextProvider",
-            "timeStamperProvider"
+            "gsonProvider"
         }
     .end annotation
 
@@ -60,7 +60,7 @@
             "Landroid/content/Context;",
             ">;",
             "Ljavax/inject/Provider<",
-            "Lde/rki/coronawarnapp/util/TimeStamper;",
+            "Lcom/google/gson/Gson;",
             ">;)V"
         }
     .end annotation
@@ -69,7 +69,7 @@
 
     iput-object p1, p0, Lde/rki/coronawarnapp/datadonation/analytics/modules/testresult/AnalyticsRATestResultSettings_Factory;->contextProvider:Ljavax/inject/Provider;
 
-    iput-object p2, p0, Lde/rki/coronawarnapp/datadonation/analytics/modules/testresult/AnalyticsRATestResultSettings_Factory;->timeStamperProvider:Ljavax/inject/Provider;
+    iput-object p2, p0, Lde/rki/coronawarnapp/datadonation/analytics/modules/testresult/AnalyticsRATestResultSettings_Factory;->gsonProvider:Ljavax/inject/Provider;
 
     return-void
 .end method
@@ -87,17 +87,17 @@
 
     check-cast v0, Landroid/content/Context;
 
-    iget-object v1, p0, Lde/rki/coronawarnapp/datadonation/analytics/modules/testresult/AnalyticsRATestResultSettings_Factory;->timeStamperProvider:Ljavax/inject/Provider;
+    iget-object v1, p0, Lde/rki/coronawarnapp/datadonation/analytics/modules/testresult/AnalyticsRATestResultSettings_Factory;->gsonProvider:Ljavax/inject/Provider;
 
     invoke-interface {v1}, Ljavax/inject/Provider;->get()Ljava/lang/Object;
 
     move-result-object v1
 
-    check-cast v1, Lde/rki/coronawarnapp/util/TimeStamper;
+    check-cast v1, Lcom/google/gson/Gson;
 
     new-instance v2, Lde/rki/coronawarnapp/datadonation/analytics/modules/testresult/AnalyticsRATestResultSettings;
 
-    invoke-direct {v2, v0, v1}, Lde/rki/coronawarnapp/datadonation/analytics/modules/testresult/AnalyticsRATestResultSettings;-><init>(Landroid/content/Context;Lde/rki/coronawarnapp/util/TimeStamper;)V
+    invoke-direct {v2, v0, v1}, Lde/rki/coronawarnapp/datadonation/analytics/modules/testresult/AnalyticsRATestResultSettings;-><init>(Landroid/content/Context;Lcom/google/gson/Gson;)V
 
     return-object v2
 .end method

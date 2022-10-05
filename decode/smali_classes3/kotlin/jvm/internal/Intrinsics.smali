@@ -3,6 +3,14 @@
 .source "Intrinsics.java"
 
 
+# annotations
+.annotation system Ldalvik/annotation/MemberClasses;
+    value = {
+        Lkotlin/jvm/internal/Intrinsics$Kotlin;
+    }
+.end annotation
+
+
 # direct methods
 .method public constructor <init>()V
     .locals 0
@@ -237,6 +245,18 @@
     return-object p0
 .end method
 
+.method public static reifiedOperationMarker()V
+    .locals 2
+
+    new-instance v0, Ljava/lang/UnsupportedOperationException;
+
+    const-string v1, "This function has a reified type parameter and thus can only be inlined at compilation time, not called directly."
+
+    invoke-direct {v0, v1}, Ljava/lang/UnsupportedOperationException;-><init>(Ljava/lang/String;)V
+
+    throw v0
+.end method
+
 .method public static sanitizeStackTrace(Ljava/lang/Throwable;Ljava/lang/String;)Ljava/lang/Throwable;
     .locals 5
     .annotation system Ldalvik/annotation/Signature;
@@ -330,7 +350,7 @@
 
     const-string v1, " has not been initialized"
 
-    invoke-static {v0, p0, v1}, Landroidx/core/graphics/PathParser$$ExternalSyntheticOutline0;->m(Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;)Ljava/lang/String;
+    invoke-static {v0, p0, v1}, Landroidx/concurrent/futures/AbstractResolvableFuture$$ExternalSyntheticOutline1;->m(Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;)Ljava/lang/String;
 
     move-result-object p0
 

@@ -22,11 +22,11 @@
 
 
 # instance fields
-.field public lTreeAddress:I
+.field private lTreeAddress:I
 
-.field public treeHeight:I
+.field private treeHeight:I
 
-.field public treeIndex:I
+.field private treeIndex:I
 
 
 # direct methods
@@ -48,6 +48,30 @@
     return-void
 .end method
 
+.method public static synthetic access$000(Lorg/bouncycastle/pqc/crypto/xmss/LTreeAddress$Builder;)I
+    .locals 0
+
+    iget p0, p0, Lorg/bouncycastle/pqc/crypto/xmss/LTreeAddress$Builder;->lTreeAddress:I
+
+    return p0
+.end method
+
+.method public static synthetic access$100(Lorg/bouncycastle/pqc/crypto/xmss/LTreeAddress$Builder;)I
+    .locals 0
+
+    iget p0, p0, Lorg/bouncycastle/pqc/crypto/xmss/LTreeAddress$Builder;->treeHeight:I
+
+    return p0
+.end method
+
+.method public static synthetic access$200(Lorg/bouncycastle/pqc/crypto/xmss/LTreeAddress$Builder;)I
+    .locals 0
+
+    iget p0, p0, Lorg/bouncycastle/pqc/crypto/xmss/LTreeAddress$Builder;->treeIndex:I
+
+    return p0
+.end method
+
 
 # virtual methods
 .method public build()Lorg/bouncycastle/pqc/crypto/xmss/XMSSAddress;
@@ -62,8 +86,42 @@
     return-object v0
 .end method
 
-.method public getThis()Lorg/bouncycastle/pqc/crypto/xmss/XMSSAddress$Builder;
+.method public getThis()Lorg/bouncycastle/pqc/crypto/xmss/LTreeAddress$Builder;
     .locals 0
+
+    return-object p0
+.end method
+
+.method public bridge synthetic getThis()Lorg/bouncycastle/pqc/crypto/xmss/XMSSAddress$Builder;
+    .locals 1
+
+    invoke-virtual {p0}, Lorg/bouncycastle/pqc/crypto/xmss/LTreeAddress$Builder;->getThis()Lorg/bouncycastle/pqc/crypto/xmss/LTreeAddress$Builder;
+
+    move-result-object v0
+
+    return-object v0
+.end method
+
+.method public withLTreeAddress(I)Lorg/bouncycastle/pqc/crypto/xmss/LTreeAddress$Builder;
+    .locals 0
+
+    iput p1, p0, Lorg/bouncycastle/pqc/crypto/xmss/LTreeAddress$Builder;->lTreeAddress:I
+
+    return-object p0
+.end method
+
+.method public withTreeHeight(I)Lorg/bouncycastle/pqc/crypto/xmss/LTreeAddress$Builder;
+    .locals 0
+
+    iput p1, p0, Lorg/bouncycastle/pqc/crypto/xmss/LTreeAddress$Builder;->treeHeight:I
+
+    return-object p0
+.end method
+
+.method public withTreeIndex(I)Lorg/bouncycastle/pqc/crypto/xmss/LTreeAddress$Builder;
+    .locals 0
+
+    iput p1, p0, Lorg/bouncycastle/pqc/crypto/xmss/LTreeAddress$Builder;->treeIndex:I
 
     return-object p0
 .end method

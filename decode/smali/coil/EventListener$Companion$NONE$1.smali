@@ -31,10 +31,6 @@
 .method public decodeEnd(Lcoil/request/ImageRequest;Lcoil/decode/Decoder;Lcoil/decode/Options;Lcoil/decode/DecodeResult;)V
     .locals 1
 
-    const-string/jumbo v0, "this"
-
-    invoke-static {p0, v0}, Lkotlin/jvm/internal/Intrinsics;->checkNotNullParameter(Ljava/lang/Object;Ljava/lang/String;)V
-
     const-string v0, "request"
 
     invoke-static {p1, v0}, Lkotlin/jvm/internal/Intrinsics;->checkNotNullParameter(Ljava/lang/Object;Ljava/lang/String;)V
@@ -81,10 +77,6 @@
             ")V"
         }
     .end annotation
-
-    const-string/jumbo v0, "this"
-
-    invoke-static {p0, v0}, Lkotlin/jvm/internal/Intrinsics;->checkNotNullParameter(Ljava/lang/Object;Ljava/lang/String;)V
 
     const-string v0, "request"
 
@@ -148,10 +140,6 @@
 .method public onCancel(Lcoil/request/ImageRequest;)V
     .locals 1
 
-    const-string/jumbo v0, "this"
-
-    invoke-static {p0, v0}, Lkotlin/jvm/internal/Intrinsics;->checkNotNullParameter(Ljava/lang/Object;Ljava/lang/String;)V
-
     const-string v0, "request"
 
     invoke-static {p1, v0}, Lkotlin/jvm/internal/Intrinsics;->checkNotNullParameter(Ljava/lang/Object;Ljava/lang/String;)V
@@ -161,10 +149,6 @@
 
 .method public onError(Lcoil/request/ImageRequest;Ljava/lang/Throwable;)V
     .locals 1
-
-    const-string/jumbo v0, "this"
-
-    invoke-static {p0, v0}, Lkotlin/jvm/internal/Intrinsics;->checkNotNullParameter(Ljava/lang/Object;Ljava/lang/String;)V
 
     const-string v0, "request"
 
@@ -186,10 +170,6 @@
 .method public onSuccess(Lcoil/request/ImageRequest;Lcoil/request/ImageResult$Metadata;)V
     .locals 1
 
-    const-string/jumbo v0, "this"
-
-    invoke-static {p0, v0}, Lkotlin/jvm/internal/Intrinsics;->checkNotNullParameter(Ljava/lang/Object;Ljava/lang/String;)V
-
     const-string v0, "request"
 
     invoke-static {p1, v0}, Lkotlin/jvm/internal/Intrinsics;->checkNotNullParameter(Ljava/lang/Object;Ljava/lang/String;)V
@@ -203,10 +183,6 @@
 
 .method public resolveSizeEnd(Lcoil/request/ImageRequest;Lcoil/size/Size;)V
     .locals 1
-
-    const-string/jumbo v0, "this"
-
-    invoke-static {p0, v0}, Lkotlin/jvm/internal/Intrinsics;->checkNotNullParameter(Ljava/lang/Object;Ljava/lang/String;)V
 
     const-string v0, "request"
 
@@ -244,10 +220,6 @@
 .method public transitionEnd(Lcoil/request/ImageRequest;)V
     .locals 1
 
-    const-string/jumbo v0, "this"
-
-    invoke-static {p0, v0}, Lkotlin/jvm/internal/Intrinsics;->checkNotNullParameter(Ljava/lang/Object;Ljava/lang/String;)V
-
     const-string v0, "request"
 
     invoke-static {p1, v0}, Lkotlin/jvm/internal/Intrinsics;->checkNotNullParameter(Ljava/lang/Object;Ljava/lang/String;)V
@@ -257,10 +229,6 @@
 
 .method public transitionStart(Lcoil/request/ImageRequest;)V
     .locals 1
-
-    const-string/jumbo v0, "this"
-
-    invoke-static {p0, v0}, Lkotlin/jvm/internal/Intrinsics;->checkNotNullParameter(Ljava/lang/Object;Ljava/lang/String;)V
 
     const-string v0, "request"
 

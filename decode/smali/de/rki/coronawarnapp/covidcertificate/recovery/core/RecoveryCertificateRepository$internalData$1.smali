@@ -33,14 +33,14 @@
 .end annotation
 
 .annotation system Ldalvik/annotation/SourceDebugExtension;
-    value = "SMAP\nRecoveryCertificateRepository.kt\nKotlin\n*S Kotlin\n*F\n+ 1 RecoveryCertificateRepository.kt\nde/rki/coronawarnapp/covidcertificate/recovery/core/RecoveryCertificateRepository$internalData$1\n+ 2 _Collections.kt\nkotlin/collections/CollectionsKt___CollectionsKt\n+ 3 fake.kt\nkotlin/jvm/internal/FakeKt\n*L\n1#1,219:1\n1547#2:220\n1618#2,3:221\n1#3:224\n*S KotlinDebug\n*F\n+ 1 RecoveryCertificateRepository.kt\nde/rki/coronawarnapp/covidcertificate/recovery/core/RecoveryCertificateRepository$internalData$1\n*L\n55#1:220\n55#1:221,3\n*E\n"
+    value = "SMAP\nRecoveryCertificateRepository.kt\nKotlin\n*S Kotlin\n*F\n+ 1 RecoveryCertificateRepository.kt\nde/rki/coronawarnapp/covidcertificate/recovery/core/RecoveryCertificateRepository$internalData$1\n+ 2 _Collections.kt\nkotlin/collections/CollectionsKt___CollectionsKt\n+ 3 fake.kt\nkotlin/jvm/internal/FakeKt\n*L\n1#1,282:1\n1547#2:283\n1618#2,3:284\n1#3:287\n*S KotlinDebug\n*F\n+ 1 RecoveryCertificateRepository.kt\nde/rki/coronawarnapp/covidcertificate/recovery/core/RecoveryCertificateRepository$internalData$1\n*L\n56#1:283\n56#1:284,3\n*E\n"
 .end annotation
 
 .annotation runtime Lkotlin/coroutines/jvm/internal/DebugMetadata;
     c = "de.rki.coronawarnapp.covidcertificate.recovery.core.RecoveryCertificateRepository$internalData$1"
     f = "RecoveryCertificateRepository.kt"
     l = {
-        0x36
+        0x37
     }
     m = "invokeSuspend"
 .end annotation
@@ -223,9 +223,17 @@
 
     new-array v1, v2, [Ljava/lang/Object;
 
-    aput-object p1, v1, v4
+    invoke-interface {p1}, Ljava/util/Set;->size()I
 
-    const-string v2, "Restored recovery certificate data: %s"
+    move-result v2
+
+    new-instance v3, Ljava/lang/Integer;
+
+    invoke-direct {v3, v2}, Ljava/lang/Integer;-><init>(I)V
+
+    aput-object v3, v1, v4
+
+    const-string v2, "Restored recovery certificate data: %d items"
 
     invoke-virtual {v0, v2, v1}, Ltimber/log/Timber$Forest;->v(Ljava/lang/String;[Ljava/lang/Object;)V
 

@@ -28,9 +28,9 @@
 
     invoke-direct {p0, p1, p2}, Landroidx/fragment/app/DefaultSpecialEffectsController$SpecialEffectsInfo;-><init>(Landroidx/fragment/app/SpecialEffectsController$Operation;Landroidx/core/os/CancellationSignal;)V
 
-    iget-object p2, p1, Landroidx/fragment/app/SpecialEffectsController$Operation;->mFinalState:Landroidx/fragment/app/SpecialEffectsController$Operation$State;
+    iget p2, p1, Landroidx/fragment/app/SpecialEffectsController$Operation;->mFinalState:I
 
-    sget-object v0, Landroidx/fragment/app/SpecialEffectsController$Operation$State;->VISIBLE:Landroidx/fragment/app/SpecialEffectsController$Operation$State;
+    const/4 v0, 0x2
 
     if-ne p2, v0, :cond_2
 
@@ -192,7 +192,7 @@
 
     const-string v2, " is not a valid framework Transition or AndroidX Transition"
 
-    invoke-static {v1, p1, v2}, Landroidx/fragment/app/DefaultSpecialEffectsController$TransitionInfo$$ExternalSyntheticOutline0;->m(Ljava/lang/StringBuilder;Landroidx/fragment/app/Fragment;Ljava/lang/String;)Ljava/lang/String;
+    invoke-static {v1, p1, v2}, Lde/rki/coronawarnapp/server/protocols/internal/v2/DgcParameters$DGCBlockedUVCIChunk$Builder-IA;->m(Ljava/lang/StringBuilder;Landroidx/fragment/app/Fragment;Ljava/lang/String;)Ljava/lang/String;
 
     move-result-object p1
 

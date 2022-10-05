@@ -21,7 +21,7 @@
 
     sput-object v0, Lde/rki/coronawarnapp/databinding/TracingContentIncreasedViewBindingImpl;->sViewsWithIds:Landroid/util/SparseIntArray;
 
-    const v1, 0x7f0a0354
+    const v1, 0x7f0a0384
 
     const/4 v2, 0x7
 
@@ -173,7 +173,7 @@
 
 # virtual methods
 .method public executeBindings()V
-    .locals 13
+    .locals 14
 
     monitor-enter p0
 
@@ -200,7 +200,7 @@
 
     const/4 v2, 0x0
 
-    if-eqz v0, :cond_7
+    if-eqz v0, :cond_8
 
     const/4 v3, 0x1
 
@@ -222,7 +222,7 @@
 
     if-nez v7, :cond_0
 
-    const-string v6, ""
+    move-object v6, v1
 
     goto :goto_0
 
@@ -231,7 +231,7 @@
 
     move-result-object v6
 
-    const v7, 0x7f110003
+    const v7, 0x7f110001
 
     iget v8, v4, Lde/rki/coronawarnapp/tracing/states/IncreasedRisk;->daysWithEncounters:I
 
@@ -246,10 +246,6 @@
     invoke-virtual {v6, v7, v8, v9}, Landroid/content/res/Resources;->getQuantityString(II[Ljava/lang/Object;)Ljava/lang/String;
 
     move-result-object v6
-
-    const-string/jumbo v7, "{\n        context.resour\u2026ncounters\n        )\n    }"
-
-    invoke-static {v6, v7}, Lkotlin/jvm/internal/Intrinsics;->checkNotNullExpressionValue(Ljava/lang/Object;Ljava/lang/String;)V
 
     :goto_0
     iget-object v7, p0, Landroidx/databinding/ViewDataBinding;->mRoot:Landroid/view/View;
@@ -275,7 +271,7 @@
 
     move-result-object v7
 
-    const v8, 0x7f110004
+    const v8, 0x7f110002
 
     iget v9, v4, Lde/rki/coronawarnapp/tracing/states/IncreasedRisk;->daysWithEncounters:I
 
@@ -317,12 +313,12 @@
 
     if-ne v1, v3, :cond_3
 
-    const v1, 0x7f1303e6
+    const v1, 0x7f1303f8
 
     goto :goto_2
 
     :cond_3
-    const v1, 0x7f1303e7
+    const v1, 0x7f1303f9
 
     :goto_2
     new-array v10, v3, [Ljava/lang/Object;
@@ -331,7 +327,7 @@
 
     move-result-object v11
 
-    invoke-virtual {v9, v11}, Lorg/joda/time/base/BaseLocal;->toString(Lorg/joda/time/format/DateTimeFormatter;)Ljava/lang/String;
+    invoke-virtual {v9, v11}, Lorg/joda/time/base/AbstractPartial;->toString(Lorg/joda/time/format/DateTimeFormatter;)Ljava/lang/String;
 
     move-result-object v9
 
@@ -358,7 +354,7 @@
 
     if-eqz v10, :cond_4
 
-    const v11, 0x7f1303dd
+    const v11, 0x7f1303f1
 
     new-array v12, v3, [Ljava/lang/Object;
 
@@ -379,7 +375,7 @@
     goto :goto_4
 
     :cond_4
-    const v10, 0x7f1303d9
+    const v10, 0x7f1303f0
 
     invoke-virtual {v9, v10}, Landroid/content/Context;->getString(I)Ljava/lang/String;
 
@@ -392,62 +388,84 @@
     :goto_4
     iget-boolean v4, v4, Lde/rki/coronawarnapp/tracing/states/IncreasedRisk;->isInDetailsMode:Z
 
+    move v13, v4
+
+    move-object v4, v1
+
+    move-object v1, v6
+
+    move v6, v5
+
+    move v5, v13
+
     goto :goto_5
 
     :cond_5
-    move-object v6, v1
+    move-object v4, v1
 
-    move-object v7, v6
+    move-object v7, v4
 
     move-object v9, v7
 
-    move v4, v2
+    move v5, v2
 
-    move v5, v4
+    move v6, v5
 
-    move v8, v5
+    move v8, v6
 
     :goto_5
     if-nez v1, :cond_6
 
-    move v2, v3
-
-    :cond_6
-    xor-int/2addr v8, v3
-
-    xor-int/2addr v3, v4
-
-    move v4, v3
-
-    move v3, v2
-
-    move-object v2, v1
-
-    move-object v1, v6
+    move v10, v3
 
     goto :goto_6
 
+    :cond_6
+    move v10, v2
+
+    :goto_6
+    if-nez v4, :cond_7
+
+    move v2, v3
+
     :cond_7
-    move-object v7, v1
+    xor-int/2addr v8, v3
+
+    xor-int/2addr v3, v5
+
+    move v5, v3
+
+    move v3, v2
+
+    move v2, v6
+
+    goto :goto_7
+
+    :cond_8
+    move-object v4, v1
+
+    move-object v7, v4
 
     move-object v9, v7
 
     move v3, v2
 
-    move v4, v3
-
-    move v5, v4
+    move v5, v3
 
     move v8, v5
 
-    move-object v2, v9
+    move v10, v8
 
-    :goto_6
-    if-eqz v0, :cond_8
+    :goto_7
+    if-eqz v0, :cond_9
 
     iget-object v0, p0, Lde/rki/coronawarnapp/databinding/TracingContentIncreasedViewBinding;->detailsIcon:Landroid/widget/ImageView;
 
-    invoke-static {v0, v5}, Lde/rki/coronawarnapp/util/ui/ViewExtensionsKt;->setGone(Landroid/view/View;Z)V
+    invoke-static {v0, v2}, Lde/rki/coronawarnapp/util/ui/ViewExtensionsKt;->setGone(Landroid/view/View;Z)V
+
+    iget-object v0, p0, Lde/rki/coronawarnapp/databinding/TracingContentIncreasedViewBinding;->rowContact:Lde/rki/coronawarnapp/ui/view/TracingCardInfoRow;
+
+    invoke-static {v0, v10}, Lde/rki/coronawarnapp/util/ui/ViewExtensionsKt;->setGone(Landroid/view/View;Z)V
 
     iget-object v0, p0, Lde/rki/coronawarnapp/databinding/TracingContentIncreasedViewBinding;->rowContact:Lde/rki/coronawarnapp/ui/view/TracingCardInfoRow;
 
@@ -459,7 +477,7 @@
 
     iget-object v0, p0, Lde/rki/coronawarnapp/databinding/TracingContentIncreasedViewBinding;->rowContactLast:Lde/rki/coronawarnapp/ui/view/TracingCardInfoRow;
 
-    invoke-virtual {v0, v2}, Lde/rki/coronawarnapp/ui/view/TracingCardInfoRow;->setText(Ljava/lang/String;)V
+    invoke-virtual {v0, v4}, Lde/rki/coronawarnapp/ui/view/TracingCardInfoRow;->setText(Ljava/lang/String;)V
 
     iget-object v0, p0, Lde/rki/coronawarnapp/databinding/TracingContentIncreasedViewBinding;->rowTimeFetched:Lde/rki/coronawarnapp/ui/view/TracingCardInfoRow;
 
@@ -467,7 +485,7 @@
 
     iget-object v0, p0, Lde/rki/coronawarnapp/databinding/TracingContentIncreasedViewBinding;->rowTracingDays:Landroidx/constraintlayout/widget/ConstraintLayout;
 
-    invoke-static {v0, v4}, Lde/rki/coronawarnapp/util/ui/ViewExtensionsKt;->setGone(Landroid/view/View;Z)V
+    invoke-static {v0, v5}, Lde/rki/coronawarnapp/util/ui/ViewExtensionsKt;->setGone(Landroid/view/View;Z)V
 
     iget-object v0, p0, Lde/rki/coronawarnapp/databinding/TracingContentIncreasedViewBinding;->updateAction:Landroid/widget/Button;
 
@@ -477,13 +495,13 @@
 
     const/4 v1, 0x4
 
-    if-lt v0, v1, :cond_8
+    if-lt v0, v1, :cond_9
 
     iget-object v0, p0, Lde/rki/coronawarnapp/databinding/TracingContentIncreasedViewBinding;->rowContact:Lde/rki/coronawarnapp/ui/view/TracingCardInfoRow;
 
     invoke-virtual {v0, v7}, Landroid/view/ViewGroup;->setContentDescription(Ljava/lang/CharSequence;)V
 
-    :cond_8
+    :cond_9
     return-void
 
     :catchall_0
@@ -591,7 +609,7 @@
     :try_end_0
     .catchall {:try_start_0 .. :try_end_0} :catchall_0
 
-    const/16 p1, 0x29
+    const/16 p1, 0x27
 
     invoke-virtual {p0, p1}, Landroidx/databinding/BaseObservable;->notifyPropertyChanged(I)V
 

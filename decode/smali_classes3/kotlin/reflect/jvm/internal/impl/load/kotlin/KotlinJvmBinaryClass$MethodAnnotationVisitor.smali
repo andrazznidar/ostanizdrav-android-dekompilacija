@@ -15,3 +15,8 @@
     accessFlags = 0x609
     name = "MethodAnnotationVisitor"
 .end annotation
+
+
+# virtual methods
+.method public abstract visitParameterAnnotation(ILkotlin/reflect/jvm/internal/impl/name/ClassId;Lkotlin/reflect/jvm/internal/impl/descriptors/SourceElement;)Lkotlin/reflect/jvm/internal/impl/load/kotlin/KotlinJvmBinaryClass$AnnotationArgumentVisitor;
+.end method

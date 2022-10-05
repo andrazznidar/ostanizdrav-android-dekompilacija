@@ -32,7 +32,11 @@
 
 # direct methods
 .method public constructor <init>(Lokhttp3/logging/HttpLoggingInterceptor$Logger;)V
-    .locals 0
+    .locals 1
+
+    const-string v0, "logger"
+
+    invoke-static {p1, v0}, Lkotlin/jvm/internal/Intrinsics;->checkNotNullParameter(Ljava/lang/Object;Ljava/lang/String;)V
 
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
@@ -227,9 +231,7 @@
     :cond_5
     iget-object v10, v1, Lokhttp3/logging/HttpLoggingInterceptor;->logger:Lokhttp3/logging/HttpLoggingInterceptor$Logger;
 
-    check-cast v10, Lde/rki/coronawarnapp/http/HttpModule$$ExternalSyntheticLambda0;
-
-    invoke-virtual {v10, v6}, Lde/rki/coronawarnapp/http/HttpModule$$ExternalSyntheticLambda0;->log(Ljava/lang/String;)V
+    invoke-interface {v10, v6}, Lokhttp3/logging/HttpLoggingInterceptor$Logger;->log(Ljava/lang/String;)V
 
     const-string v6, "-byte body omitted)"
 
@@ -271,9 +273,7 @@
 
     move-result-object v12
 
-    check-cast v13, Lde/rki/coronawarnapp/http/HttpModule$$ExternalSyntheticLambda0;
-
-    invoke-virtual {v13, v12}, Lde/rki/coronawarnapp/http/HttpModule$$ExternalSyntheticLambda0;->log(Ljava/lang/String;)V
+    invoke-interface {v13, v12}, Lokhttp3/logging/HttpLoggingInterceptor$Logger;->log(Ljava/lang/String;)V
 
     :cond_6
     invoke-virtual {v0}, Lokhttp3/RequestBody;->contentLength()J
@@ -312,9 +312,7 @@
 
     move-result-object v13
 
-    check-cast v12, Lde/rki/coronawarnapp/http/HttpModule$$ExternalSyntheticLambda0;
-
-    invoke-virtual {v12, v13}, Lde/rki/coronawarnapp/http/HttpModule$$ExternalSyntheticLambda0;->log(Ljava/lang/String;)V
+    invoke-interface {v12, v13}, Lokhttp3/logging/HttpLoggingInterceptor$Logger;->log(Ljava/lang/String;)V
 
     :cond_7
     invoke-virtual {v11}, Lokhttp3/Headers;->size()I
@@ -358,15 +356,17 @@
 
     iget-object v12, v3, Lokhttp3/Request;->method:Ljava/lang/String;
 
-    const-string v13, " (encoded body omitted)"
+    invoke-virtual {v11, v12}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
 
-    invoke-static {v11, v12, v13}, Landroidx/constraintlayout/core/widgets/Barrier$$ExternalSyntheticOutline0;->m(Ljava/lang/StringBuilder;Ljava/lang/String;Ljava/lang/String;)Ljava/lang/String;
+    const-string v12, " (encoded body omitted)"
+
+    invoke-virtual {v11, v12}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+
+    invoke-virtual {v11}, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
 
     move-result-object v11
 
-    check-cast v0, Lde/rki/coronawarnapp/http/HttpModule$$ExternalSyntheticLambda0;
-
-    invoke-virtual {v0, v11}, Lde/rki/coronawarnapp/http/HttpModule$$ExternalSyntheticLambda0;->log(Ljava/lang/String;)V
+    invoke-interface {v0, v11}, Lokhttp3/logging/HttpLoggingInterceptor$Logger;->log(Ljava/lang/String;)V
 
     goto/16 :goto_6
 
@@ -401,11 +401,9 @@
     :goto_4
     iget-object v14, v1, Lokhttp3/logging/HttpLoggingInterceptor;->logger:Lokhttp3/logging/HttpLoggingInterceptor$Logger;
 
-    check-cast v14, Lde/rki/coronawarnapp/http/HttpModule$$ExternalSyntheticLambda0;
+    invoke-interface {v14, v8}, Lokhttp3/logging/HttpLoggingInterceptor$Logger;->log(Ljava/lang/String;)V
 
-    invoke-virtual {v14, v8}, Lde/rki/coronawarnapp/http/HttpModule$$ExternalSyntheticLambda0;->log(Ljava/lang/String;)V
-
-    invoke-static {v12}, Lokhttp3/logging/Utf8Kt;->isProbablyUtf8(Lokio/Buffer;)Z
+    invoke-static {v12}, Lkotlin/ExceptionsKt;->isProbablyUtf8(Lokio/Buffer;)Z
 
     move-result v14
 
@@ -413,102 +411,115 @@
 
     iget-object v14, v1, Lokhttp3/logging/HttpLoggingInterceptor;->logger:Lokhttp3/logging/HttpLoggingInterceptor$Logger;
 
-    invoke-virtual {v12, v13}, Lokio/Buffer;->readString(Ljava/nio/charset/Charset;)Ljava/lang/String;
+    move v15, v4
 
-    move-result-object v12
+    move/from16 p1, v5
 
-    check-cast v14, Lde/rki/coronawarnapp/http/HttpModule$$ExternalSyntheticLambda0;
+    iget-wide v4, v12, Lokio/Buffer;->size:J
 
-    invoke-virtual {v14, v12}, Lde/rki/coronawarnapp/http/HttpModule$$ExternalSyntheticLambda0;->log(Ljava/lang/String;)V
+    invoke-virtual {v12, v4, v5, v13}, Lokio/Buffer;->readString(JLjava/nio/charset/Charset;)Ljava/lang/String;
 
-    iget-object v12, v1, Lokhttp3/logging/HttpLoggingInterceptor;->logger:Lokhttp3/logging/HttpLoggingInterceptor$Logger;
+    move-result-object v4
+
+    invoke-interface {v14, v4}, Lokhttp3/logging/HttpLoggingInterceptor$Logger;->log(Ljava/lang/String;)V
+
+    iget-object v4, v1, Lokhttp3/logging/HttpLoggingInterceptor;->logger:Lokhttp3/logging/HttpLoggingInterceptor$Logger;
 
     invoke-static {v11}, Landroid/support/v4/media/RatingCompat$$ExternalSyntheticOutline0;->m(Ljava/lang/String;)Ljava/lang/StringBuilder;
 
-    move-result-object v11
+    move-result-object v5
 
-    iget-object v13, v3, Lokhttp3/Request;->method:Ljava/lang/String;
+    iget-object v11, v3, Lokhttp3/Request;->method:Ljava/lang/String;
 
-    invoke-virtual {v11, v13}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+    invoke-virtual {v5, v11}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
 
-    invoke-virtual {v11, v9}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+    invoke-virtual {v5, v9}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
 
     invoke-virtual {v0}, Lokhttp3/RequestBody;->contentLength()J
 
-    move-result-wide v13
+    move-result-wide v11
 
-    invoke-virtual {v11, v13, v14}, Ljava/lang/StringBuilder;->append(J)Ljava/lang/StringBuilder;
+    invoke-virtual {v5, v11, v12}, Ljava/lang/StringBuilder;->append(J)Ljava/lang/StringBuilder;
 
-    invoke-virtual {v11, v7}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+    invoke-virtual {v5, v7}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
 
-    invoke-virtual {v11}, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
+    invoke-virtual {v5}, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
 
     move-result-object v0
 
-    check-cast v12, Lde/rki/coronawarnapp/http/HttpModule$$ExternalSyntheticLambda0;
+    invoke-interface {v4, v0}, Lokhttp3/logging/HttpLoggingInterceptor$Logger;->log(Ljava/lang/String;)V
 
-    invoke-virtual {v12, v0}, Lde/rki/coronawarnapp/http/HttpModule$$ExternalSyntheticLambda0;->log(Ljava/lang/String;)V
-
-    goto :goto_6
+    goto :goto_7
 
     :cond_c
-    iget-object v12, v1, Lokhttp3/logging/HttpLoggingInterceptor;->logger:Lokhttp3/logging/HttpLoggingInterceptor$Logger;
+    move v15, v4
+
+    move/from16 p1, v5
+
+    iget-object v4, v1, Lokhttp3/logging/HttpLoggingInterceptor;->logger:Lokhttp3/logging/HttpLoggingInterceptor$Logger;
 
     invoke-static {v11}, Landroid/support/v4/media/RatingCompat$$ExternalSyntheticOutline0;->m(Ljava/lang/String;)Ljava/lang/StringBuilder;
 
-    move-result-object v11
+    move-result-object v5
 
-    iget-object v13, v3, Lokhttp3/Request;->method:Ljava/lang/String;
+    iget-object v11, v3, Lokhttp3/Request;->method:Ljava/lang/String;
 
-    invoke-virtual {v11, v13}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+    invoke-virtual {v5, v11}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
 
-    const-string v13, " (binary "
+    const-string v11, " (binary "
 
-    invoke-virtual {v11, v13}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+    invoke-virtual {v5, v11}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
 
     invoke-virtual {v0}, Lokhttp3/RequestBody;->contentLength()J
 
-    move-result-wide v13
+    move-result-wide v11
 
-    invoke-virtual {v11, v13, v14}, Ljava/lang/StringBuilder;->append(J)Ljava/lang/StringBuilder;
+    invoke-virtual {v5, v11, v12}, Ljava/lang/StringBuilder;->append(J)Ljava/lang/StringBuilder;
 
-    invoke-virtual {v11, v6}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+    invoke-virtual {v5, v6}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
 
-    invoke-virtual {v11}, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
+    invoke-virtual {v5}, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
 
     move-result-object v0
 
-    check-cast v12, Lde/rki/coronawarnapp/http/HttpModule$$ExternalSyntheticLambda0;
+    invoke-interface {v4, v0}, Lokhttp3/logging/HttpLoggingInterceptor$Logger;->log(Ljava/lang/String;)V
 
-    invoke-virtual {v12, v0}, Lde/rki/coronawarnapp/http/HttpModule$$ExternalSyntheticLambda0;->log(Ljava/lang/String;)V
-
-    goto :goto_6
+    goto :goto_7
 
     :cond_d
     :goto_5
+    move v15, v4
+
+    move/from16 p1, v5
+
     iget-object v0, v1, Lokhttp3/logging/HttpLoggingInterceptor;->logger:Lokhttp3/logging/HttpLoggingInterceptor$Logger;
 
     invoke-static {v11}, Landroid/support/v4/media/RatingCompat$$ExternalSyntheticOutline0;->m(Ljava/lang/String;)Ljava/lang/StringBuilder;
 
-    move-result-object v11
+    move-result-object v4
 
-    iget-object v12, v3, Lokhttp3/Request;->method:Ljava/lang/String;
+    iget-object v5, v3, Lokhttp3/Request;->method:Ljava/lang/String;
 
-    invoke-virtual {v11, v12}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+    invoke-virtual {v4, v5}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
 
-    invoke-virtual {v11}, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
+    invoke-virtual {v4}, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
 
-    move-result-object v11
+    move-result-object v4
 
-    check-cast v0, Lde/rki/coronawarnapp/http/HttpModule$$ExternalSyntheticLambda0;
+    invoke-interface {v0, v4}, Lokhttp3/logging/HttpLoggingInterceptor$Logger;->log(Ljava/lang/String;)V
 
-    invoke-virtual {v0, v11}, Lde/rki/coronawarnapp/http/HttpModule$$ExternalSyntheticLambda0;->log(Ljava/lang/String;)V
+    goto :goto_7
 
     :cond_e
     :goto_6
+    move v15, v4
+
+    move/from16 p1, v5
+
+    :goto_7
     invoke-static {}, Ljava/lang/System;->nanoTime()J
 
-    move-result-wide v11
+    move-result-wide v4
 
     :try_start_0
     invoke-virtual {v2, v3}, Lokhttp3/internal/http/RealInterceptorChain;->proceed(Lokhttp3/Request;)Lokhttp3/Response;
@@ -521,161 +532,165 @@
 
     invoke-static {}, Ljava/lang/System;->nanoTime()J
 
-    move-result-wide v13
+    move-result-wide v11
 
-    sub-long/2addr v13, v11
+    sub-long/2addr v11, v4
 
-    invoke-virtual {v2, v13, v14}, Ljava/util/concurrent/TimeUnit;->toMillis(J)J
+    invoke-virtual {v2, v11, v12}, Ljava/util/concurrent/TimeUnit;->toMillis(J)J
 
     move-result-wide v2
 
-    iget-object v11, v0, Lokhttp3/Response;->body:Lokhttp3/ResponseBody;
+    iget-object v4, v0, Lokhttp3/Response;->body:Lokhttp3/ResponseBody;
 
-    invoke-static {v11}, Lkotlin/jvm/internal/Intrinsics;->checkNotNull(Ljava/lang/Object;)V
+    invoke-static {v4}, Lkotlin/jvm/internal/Intrinsics;->checkNotNull(Ljava/lang/Object;)V
 
-    invoke-virtual {v11}, Lokhttp3/ResponseBody;->contentLength()J
+    invoke-virtual {v4}, Lokhttp3/ResponseBody;->contentLength()J
 
-    move-result-wide v12
+    move-result-wide v11
 
-    const-wide/16 v14, -0x1
+    const-wide/16 v13, -0x1
 
-    cmp-long v14, v12, v14
+    cmp-long v5, v11, v13
 
-    if-eqz v14, :cond_f
+    if-eqz v5, :cond_f
 
-    new-instance v14, Ljava/lang/StringBuilder;
+    new-instance v5, Ljava/lang/StringBuilder;
 
-    invoke-direct {v14}, Ljava/lang/StringBuilder;-><init>()V
+    invoke-direct {v5}, Ljava/lang/StringBuilder;-><init>()V
 
-    invoke-virtual {v14, v12, v13}, Ljava/lang/StringBuilder;->append(J)Ljava/lang/StringBuilder;
+    invoke-virtual {v5, v11, v12}, Ljava/lang/StringBuilder;->append(J)Ljava/lang/StringBuilder;
 
-    const-string v15, "-byte"
+    const-string v13, "-byte"
 
-    invoke-virtual {v14, v15}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+    invoke-virtual {v5, v13}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
 
-    invoke-virtual {v14}, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
+    invoke-virtual {v5}, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
 
-    move-result-object v14
-
-    goto :goto_7
-
-    :cond_f
-    const-string v14, "unknown-length"
-
-    :goto_7
-    iget-object v15, v1, Lokhttp3/logging/HttpLoggingInterceptor;->logger:Lokhttp3/logging/HttpLoggingInterceptor$Logger;
-
-    const-string v16, "<-- "
-
-    move-object/from16 p1, v7
-
-    invoke-static/range {v16 .. v16}, Landroid/support/v4/media/RatingCompat$$ExternalSyntheticOutline0;->m(Ljava/lang/String;)Ljava/lang/StringBuilder;
-
-    move-result-object v7
-
-    move-wide/from16 v16, v12
-
-    iget v12, v0, Lokhttp3/Response;->code:I
-
-    invoke-virtual {v7, v12}, Ljava/lang/StringBuilder;->append(I)Ljava/lang/StringBuilder;
-
-    iget-object v12, v0, Lokhttp3/Response;->message:Ljava/lang/String;
-
-    invoke-virtual {v12}, Ljava/lang/String;->length()I
-
-    move-result v12
-
-    if-nez v12, :cond_10
-
-    const/4 v12, 0x1
+    move-result-object v5
 
     goto :goto_8
 
-    :cond_10
-    const/4 v12, 0x0
+    :cond_f
+    const-string v5, "unknown-length"
 
     :goto_8
-    if-eqz v12, :cond_11
+    iget-object v13, v1, Lokhttp3/logging/HttpLoggingInterceptor;->logger:Lokhttp3/logging/HttpLoggingInterceptor$Logger;
 
-    const/16 v12, 0x20
+    const-string v14, "<-- "
+
+    invoke-static {v14}, Landroid/support/v4/media/RatingCompat$$ExternalSyntheticOutline0;->m(Ljava/lang/String;)Ljava/lang/StringBuilder;
+
+    move-result-object v14
+
+    move-object/from16 v16, v7
+
+    iget v7, v0, Lokhttp3/Response;->code:I
+
+    invoke-virtual {v14, v7}, Ljava/lang/StringBuilder;->append(I)Ljava/lang/StringBuilder;
+
+    iget-object v7, v0, Lokhttp3/Response;->message:Ljava/lang/String;
+
+    invoke-virtual {v7}, Ljava/lang/String;->length()I
+
+    move-result v7
+
+    if-nez v7, :cond_10
+
+    const/4 v7, 0x1
+
+    goto :goto_9
+
+    :cond_10
+    const/4 v7, 0x0
+
+    :goto_9
+    if-eqz v7, :cond_11
+
+    const/16 v7, 0x20
 
     move-object/from16 v19, v6
 
     move-object v6, v8
 
-    goto :goto_9
+    move-wide/from16 v17, v11
+
+    goto :goto_a
 
     :cond_11
-    iget-object v12, v0, Lokhttp3/Response;->message:Ljava/lang/String;
+    iget-object v7, v0, Lokhttp3/Response;->message:Ljava/lang/String;
 
-    new-instance v13, Ljava/lang/StringBuilder;
+    move-wide/from16 v17, v11
 
-    invoke-direct {v13}, Ljava/lang/StringBuilder;-><init>()V
+    new-instance v11, Ljava/lang/StringBuilder;
 
-    const/16 v18, 0x20
+    invoke-direct {v11}, Ljava/lang/StringBuilder;-><init>()V
+
+    const/16 v12, 0x20
 
     move-object/from16 v19, v6
 
-    invoke-static/range {v18 .. v18}, Ljava/lang/String;->valueOf(C)Ljava/lang/String;
+    invoke-static {v12}, Ljava/lang/String;->valueOf(C)Ljava/lang/String;
 
     move-result-object v6
 
-    invoke-virtual {v13, v6}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+    invoke-virtual {v11, v6}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
 
-    invoke-virtual {v13, v12}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+    invoke-virtual {v11, v7}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
 
-    invoke-virtual {v13}, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
+    invoke-virtual {v11}, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
 
     move-result-object v6
 
-    move/from16 v12, v18
+    move v7, v12
 
-    :goto_9
-    invoke-virtual {v7, v6}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+    :goto_a
+    invoke-virtual {v14, v6}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
 
-    invoke-virtual {v7, v12}, Ljava/lang/StringBuilder;->append(C)Ljava/lang/StringBuilder;
+    invoke-virtual {v14, v7}, Ljava/lang/StringBuilder;->append(C)Ljava/lang/StringBuilder;
 
     iget-object v6, v0, Lokhttp3/Response;->request:Lokhttp3/Request;
 
     iget-object v6, v6, Lokhttp3/Request;->url:Lokhttp3/HttpUrl;
 
-    invoke-virtual {v7, v6}, Ljava/lang/StringBuilder;->append(Ljava/lang/Object;)Ljava/lang/StringBuilder;
+    invoke-virtual {v14, v6}, Ljava/lang/StringBuilder;->append(Ljava/lang/Object;)Ljava/lang/StringBuilder;
 
-    invoke-virtual {v7, v9}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+    invoke-virtual {v14, v9}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
 
-    invoke-virtual {v7, v2, v3}, Ljava/lang/StringBuilder;->append(J)Ljava/lang/StringBuilder;
+    invoke-virtual {v14, v2, v3}, Ljava/lang/StringBuilder;->append(J)Ljava/lang/StringBuilder;
 
     const-string v2, "ms"
 
-    invoke-virtual {v7, v2}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+    invoke-virtual {v14, v2}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
 
-    if-nez v4, :cond_12
+    if-nez v15, :cond_12
 
     const-string v2, ", "
 
     const-string v3, " body"
 
-    invoke-static {v2, v14, v3}, Landroidx/core/graphics/PathParser$$ExternalSyntheticOutline0;->m(Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;)Ljava/lang/String;
+    invoke-static {v2, v5, v3}, Landroidx/concurrent/futures/AbstractResolvableFuture$$ExternalSyntheticOutline1;->m(Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;)Ljava/lang/String;
 
     move-result-object v2
 
-    goto :goto_a
+    goto :goto_b
 
     :cond_12
     move-object v2, v8
 
-    :goto_a
-    const/16 v3, 0x29
+    :goto_b
+    invoke-virtual {v14, v2}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
 
-    invoke-static {v7, v2, v3}, Lcom/airbnb/lottie/manager/ImageAssetManager$$ExternalSyntheticOutline0;->m(Ljava/lang/StringBuilder;Ljava/lang/String;C)Ljava/lang/String;
+    const/16 v2, 0x29
+
+    invoke-virtual {v14, v2}, Ljava/lang/StringBuilder;->append(C)Ljava/lang/StringBuilder;
+
+    invoke-virtual {v14}, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
 
     move-result-object v2
 
-    check-cast v15, Lde/rki/coronawarnapp/http/HttpModule$$ExternalSyntheticLambda0;
+    invoke-interface {v13, v2}, Lokhttp3/logging/HttpLoggingInterceptor$Logger;->log(Ljava/lang/String;)V
 
-    invoke-virtual {v15, v2}, Lde/rki/coronawarnapp/http/HttpModule$$ExternalSyntheticLambda0;->log(Ljava/lang/String;)V
-
-    if-eqz v4, :cond_1c
+    if-eqz v15, :cond_1c
 
     iget-object v2, v0, Lokhttp3/Response;->headers:Lokhttp3/Headers;
 
@@ -683,19 +698,19 @@
 
     move-result v3
 
-    const/4 v4, 0x0
+    const/4 v5, 0x0
 
-    :goto_b
-    if-ge v4, v3, :cond_13
+    :goto_c
+    if-ge v5, v3, :cond_13
 
-    invoke-virtual {v1, v2, v4}, Lokhttp3/logging/HttpLoggingInterceptor;->logHeader(Lokhttp3/Headers;I)V
+    invoke-virtual {v1, v2, v5}, Lokhttp3/logging/HttpLoggingInterceptor;->logHeader(Lokhttp3/Headers;I)V
 
-    add-int/lit8 v4, v4, 0x1
+    add-int/lit8 v5, v5, 0x1
 
-    goto :goto_b
+    goto :goto_c
 
     :cond_13
-    if-eqz v5, :cond_1b
+    if-eqz p1, :cond_1b
 
     invoke-static {v0}, Lokhttp3/internal/http/HttpHeaders;->promisesBody(Lokhttp3/Response;)Z
 
@@ -703,7 +718,7 @@
 
     if-nez v3, :cond_14
 
-    goto/16 :goto_e
+    goto/16 :goto_f
 
     :cond_14
     iget-object v3, v0, Lokhttp3/Response;->headers:Lokhttp3/Headers;
@@ -716,73 +731,71 @@
 
     iget-object v2, v1, Lokhttp3/logging/HttpLoggingInterceptor;->logger:Lokhttp3/logging/HttpLoggingInterceptor$Logger;
 
-    check-cast v2, Lde/rki/coronawarnapp/http/HttpModule$$ExternalSyntheticLambda0;
-
     const-string v3, "<-- END HTTP (encoded body omitted)"
 
-    invoke-virtual {v2, v3}, Lde/rki/coronawarnapp/http/HttpModule$$ExternalSyntheticLambda0;->log(Ljava/lang/String;)V
+    invoke-interface {v2, v3}, Lokhttp3/logging/HttpLoggingInterceptor$Logger;->log(Ljava/lang/String;)V
 
-    goto/16 :goto_f
+    goto/16 :goto_10
 
     :cond_15
-    invoke-virtual {v11}, Lokhttp3/ResponseBody;->source()Lokio/BufferedSource;
+    invoke-virtual {v4}, Lokhttp3/ResponseBody;->source()Lokio/BufferedSource;
 
     move-result-object v3
 
-    const-wide v4, 0x7fffffffffffffffL
+    const-wide v5, 0x7fffffffffffffffL
 
-    invoke-interface {v3, v4, v5}, Lokio/BufferedSource;->request(J)Z
+    invoke-interface {v3, v5, v6}, Lokio/BufferedSource;->request(J)Z
 
     invoke-interface {v3}, Lokio/BufferedSource;->getBuffer()Lokio/Buffer;
 
     move-result-object v3
 
-    const-string v4, "Content-Encoding"
+    const-string v5, "Content-Encoding"
 
-    invoke-virtual {v2, v4}, Lokhttp3/Headers;->get(Ljava/lang/String;)Ljava/lang/String;
+    invoke-virtual {v2, v5}, Lokhttp3/Headers;->get(Ljava/lang/String;)Ljava/lang/String;
 
     move-result-object v2
 
-    const-string v4, "gzip"
+    const-string v5, "gzip"
 
-    const/4 v5, 0x1
+    const/4 v6, 0x1
 
-    invoke-static {v4, v2, v5}, Lkotlin/text/StringsKt__StringsJVMKt;->equals(Ljava/lang/String;Ljava/lang/String;Z)Z
+    invoke-static {v5, v2, v6}, Lkotlin/text/StringsKt__StringsJVMKt;->equals(Ljava/lang/String;Ljava/lang/String;Z)Z
 
     move-result v2
 
-    const/4 v4, 0x0
+    const/4 v5, 0x0
 
     if-eqz v2, :cond_16
 
-    iget-wide v5, v3, Lokio/Buffer;->size:J
+    iget-wide v6, v3, Lokio/Buffer;->size:J
 
-    invoke-static {v5, v6}, Ljava/lang/Long;->valueOf(J)Ljava/lang/Long;
+    invoke-static {v6, v7}, Ljava/lang/Long;->valueOf(J)Ljava/lang/Long;
 
     move-result-object v2
 
-    new-instance v5, Lokio/GzipSource;
+    new-instance v6, Lokio/GzipSource;
 
     invoke-virtual {v3}, Lokio/Buffer;->clone()Lokio/Buffer;
 
     move-result-object v3
 
-    invoke-direct {v5, v3}, Lokio/GzipSource;-><init>(Lokio/Source;)V
+    invoke-direct {v6, v3}, Lokio/GzipSource;-><init>(Lokio/Source;)V
 
     :try_start_1
     new-instance v3, Lokio/Buffer;
 
     invoke-direct {v3}, Lokio/Buffer;-><init>()V
 
-    invoke-virtual {v3, v5}, Lokio/Buffer;->writeAll(Lokio/Source;)J
+    invoke-virtual {v3, v6}, Lokio/Buffer;->writeAll(Lokio/Source;)J
     :try_end_1
     .catchall {:try_start_1 .. :try_end_1} :catchall_0
 
-    invoke-static {v5, v4}, Lkotlin/io/CloseableKt;->closeFinally(Ljava/io/Closeable;Ljava/lang/Throwable;)V
+    invoke-static {v6, v5}, Lkotlin/io/CloseableKt;->closeFinally(Ljava/io/Closeable;Ljava/lang/Throwable;)V
 
-    move-object v4, v2
+    move-object v5, v2
 
-    goto :goto_c
+    goto :goto_d
 
     :catchall_0
     move-exception v0
@@ -799,45 +812,43 @@
 
     move-object v3, v0
 
-    invoke-static {v5, v2}, Lkotlin/io/CloseableKt;->closeFinally(Ljava/io/Closeable;Ljava/lang/Throwable;)V
+    invoke-static {v6, v2}, Lkotlin/io/CloseableKt;->closeFinally(Ljava/io/Closeable;Ljava/lang/Throwable;)V
 
     throw v3
 
     :cond_16
-    :goto_c
-    invoke-virtual {v11}, Lokhttp3/ResponseBody;->contentType()Lokhttp3/MediaType;
+    :goto_d
+    invoke-virtual {v4}, Lokhttp3/ResponseBody;->contentType()Lokhttp3/MediaType;
 
     move-result-object v2
 
     if-eqz v2, :cond_17
 
-    sget-object v5, Ljava/nio/charset/StandardCharsets;->UTF_8:Ljava/nio/charset/Charset;
+    sget-object v4, Ljava/nio/charset/StandardCharsets;->UTF_8:Ljava/nio/charset/Charset;
 
-    invoke-virtual {v2, v5}, Lokhttp3/MediaType;->charset(Ljava/nio/charset/Charset;)Ljava/nio/charset/Charset;
+    invoke-virtual {v2, v4}, Lokhttp3/MediaType;->charset(Ljava/nio/charset/Charset;)Ljava/nio/charset/Charset;
 
     move-result-object v2
 
     if-eqz v2, :cond_17
 
-    goto :goto_d
+    goto :goto_e
 
     :cond_17
     sget-object v2, Ljava/nio/charset/StandardCharsets;->UTF_8:Ljava/nio/charset/Charset;
 
     invoke-static {v2, v10}, Lkotlin/jvm/internal/Intrinsics;->checkNotNullExpressionValue(Ljava/lang/Object;Ljava/lang/String;)V
 
-    :goto_d
-    invoke-static {v3}, Lokhttp3/logging/Utf8Kt;->isProbablyUtf8(Lokio/Buffer;)Z
+    :goto_e
+    invoke-static {v3}, Lkotlin/ExceptionsKt;->isProbablyUtf8(Lokio/Buffer;)Z
 
-    move-result v5
+    move-result v4
 
-    if-nez v5, :cond_18
+    if-nez v4, :cond_18
 
     iget-object v2, v1, Lokhttp3/logging/HttpLoggingInterceptor;->logger:Lokhttp3/logging/HttpLoggingInterceptor$Logger;
 
-    check-cast v2, Lde/rki/coronawarnapp/http/HttpModule$$ExternalSyntheticLambda0;
-
-    invoke-virtual {v2, v8}, Lde/rki/coronawarnapp/http/HttpModule$$ExternalSyntheticLambda0;->log(Ljava/lang/String;)V
+    invoke-interface {v2, v8}, Lokhttp3/logging/HttpLoggingInterceptor$Logger;->log(Ljava/lang/String;)V
 
     iget-object v2, v1, Lokhttp3/logging/HttpLoggingInterceptor;->logger:Lokhttp3/logging/HttpLoggingInterceptor$Logger;
 
@@ -859,45 +870,41 @@
 
     move-result-object v3
 
-    check-cast v2, Lde/rki/coronawarnapp/http/HttpModule$$ExternalSyntheticLambda0;
-
-    invoke-virtual {v2, v3}, Lde/rki/coronawarnapp/http/HttpModule$$ExternalSyntheticLambda0;->log(Ljava/lang/String;)V
+    invoke-interface {v2, v3}, Lokhttp3/logging/HttpLoggingInterceptor$Logger;->log(Ljava/lang/String;)V
 
     return-object v0
 
     :cond_18
-    const-wide/16 v5, 0x0
+    const-wide/16 v6, 0x0
 
-    cmp-long v5, v16, v5
+    cmp-long v4, v17, v6
 
-    if-eqz v5, :cond_19
+    if-eqz v4, :cond_19
 
-    iget-object v5, v1, Lokhttp3/logging/HttpLoggingInterceptor;->logger:Lokhttp3/logging/HttpLoggingInterceptor$Logger;
+    iget-object v4, v1, Lokhttp3/logging/HttpLoggingInterceptor;->logger:Lokhttp3/logging/HttpLoggingInterceptor$Logger;
 
-    check-cast v5, Lde/rki/coronawarnapp/http/HttpModule$$ExternalSyntheticLambda0;
+    invoke-interface {v4, v8}, Lokhttp3/logging/HttpLoggingInterceptor$Logger;->log(Ljava/lang/String;)V
 
-    invoke-virtual {v5, v8}, Lde/rki/coronawarnapp/http/HttpModule$$ExternalSyntheticLambda0;->log(Ljava/lang/String;)V
-
-    iget-object v5, v1, Lokhttp3/logging/HttpLoggingInterceptor;->logger:Lokhttp3/logging/HttpLoggingInterceptor$Logger;
+    iget-object v4, v1, Lokhttp3/logging/HttpLoggingInterceptor;->logger:Lokhttp3/logging/HttpLoggingInterceptor$Logger;
 
     invoke-virtual {v3}, Lokio/Buffer;->clone()Lokio/Buffer;
 
     move-result-object v6
 
-    invoke-virtual {v6, v2}, Lokio/Buffer;->readString(Ljava/nio/charset/Charset;)Ljava/lang/String;
+    iget-wide v7, v6, Lokio/Buffer;->size:J
+
+    invoke-virtual {v6, v7, v8, v2}, Lokio/Buffer;->readString(JLjava/nio/charset/Charset;)Ljava/lang/String;
 
     move-result-object v2
 
-    check-cast v5, Lde/rki/coronawarnapp/http/HttpModule$$ExternalSyntheticLambda0;
-
-    invoke-virtual {v5, v2}, Lde/rki/coronawarnapp/http/HttpModule$$ExternalSyntheticLambda0;->log(Ljava/lang/String;)V
+    invoke-interface {v4, v2}, Lokhttp3/logging/HttpLoggingInterceptor$Logger;->log(Ljava/lang/String;)V
 
     :cond_19
     const-string v2, "<-- END HTTP ("
 
-    if-eqz v4, :cond_1a
+    if-eqz v5, :cond_1a
 
-    iget-object v5, v1, Lokhttp3/logging/HttpLoggingInterceptor;->logger:Lokhttp3/logging/HttpLoggingInterceptor$Logger;
+    iget-object v4, v1, Lokhttp3/logging/HttpLoggingInterceptor;->logger:Lokhttp3/logging/HttpLoggingInterceptor$Logger;
 
     invoke-static {v2}, Landroid/support/v4/media/RatingCompat$$ExternalSyntheticOutline0;->m(Ljava/lang/String;)Ljava/lang/StringBuilder;
 
@@ -911,7 +918,7 @@
 
     invoke-virtual {v2, v3}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
 
-    invoke-virtual {v2, v4}, Ljava/lang/StringBuilder;->append(Ljava/lang/Object;)Ljava/lang/StringBuilder;
+    invoke-virtual {v2, v5}, Ljava/lang/StringBuilder;->append(Ljava/lang/Object;)Ljava/lang/StringBuilder;
 
     const-string v3, "-gzipped-byte body)"
 
@@ -921,11 +928,9 @@
 
     move-result-object v2
 
-    check-cast v5, Lde/rki/coronawarnapp/http/HttpModule$$ExternalSyntheticLambda0;
+    invoke-interface {v4, v2}, Lokhttp3/logging/HttpLoggingInterceptor$Logger;->log(Ljava/lang/String;)V
 
-    invoke-virtual {v5, v2}, Lde/rki/coronawarnapp/http/HttpModule$$ExternalSyntheticLambda0;->log(Ljava/lang/String;)V
-
-    goto :goto_f
+    goto :goto_10
 
     :cond_1a
     iget-object v4, v1, Lokhttp3/logging/HttpLoggingInterceptor;->logger:Lokhttp3/logging/HttpLoggingInterceptor$Logger;
@@ -938,7 +943,7 @@
 
     invoke-virtual {v2, v5, v6}, Ljava/lang/StringBuilder;->append(J)Ljava/lang/StringBuilder;
 
-    move-object/from16 v3, p1
+    move-object/from16 v3, v16
 
     invoke-virtual {v2, v3}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
 
@@ -946,24 +951,20 @@
 
     move-result-object v2
 
-    check-cast v4, Lde/rki/coronawarnapp/http/HttpModule$$ExternalSyntheticLambda0;
+    invoke-interface {v4, v2}, Lokhttp3/logging/HttpLoggingInterceptor$Logger;->log(Ljava/lang/String;)V
 
-    invoke-virtual {v4, v2}, Lde/rki/coronawarnapp/http/HttpModule$$ExternalSyntheticLambda0;->log(Ljava/lang/String;)V
-
-    goto :goto_f
+    goto :goto_10
 
     :cond_1b
-    :goto_e
+    :goto_f
     iget-object v2, v1, Lokhttp3/logging/HttpLoggingInterceptor;->logger:Lokhttp3/logging/HttpLoggingInterceptor$Logger;
-
-    check-cast v2, Lde/rki/coronawarnapp/http/HttpModule$$ExternalSyntheticLambda0;
 
     const-string v3, "<-- END HTTP"
 
-    invoke-virtual {v2, v3}, Lde/rki/coronawarnapp/http/HttpModule$$ExternalSyntheticLambda0;->log(Ljava/lang/String;)V
+    invoke-interface {v2, v3}, Lokhttp3/logging/HttpLoggingInterceptor$Logger;->log(Ljava/lang/String;)V
 
     :cond_1c
-    :goto_f
+    :goto_10
     return-object v0
 
     :catch_0
@@ -987,9 +988,7 @@
 
     move-result-object v3
 
-    check-cast v0, Lde/rki/coronawarnapp/http/HttpModule$$ExternalSyntheticLambda0;
-
-    invoke-virtual {v0, v3}, Lde/rki/coronawarnapp/http/HttpModule$$ExternalSyntheticLambda0;->log(Ljava/lang/String;)V
+    invoke-interface {v0, v3}, Lokhttp3/logging/HttpLoggingInterceptor$Logger;->log(Ljava/lang/String;)V
 
     throw v2
 .end method
@@ -1033,15 +1032,19 @@
 
     aget-object p1, p1, p2
 
-    const-string p2, ": "
+    invoke-virtual {v2, p1}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
 
-    invoke-static {v2, p1, p2, v0}, Landroidx/fragment/app/BackStackRecord$$ExternalSyntheticOutline0;->m(Ljava/lang/StringBuilder;Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;)Ljava/lang/String;
+    const-string p1, ": "
+
+    invoke-virtual {v2, p1}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+
+    invoke-virtual {v2, v0}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+
+    invoke-virtual {v2}, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
 
     move-result-object p1
 
-    check-cast v1, Lde/rki/coronawarnapp/http/HttpModule$$ExternalSyntheticLambda0;
-
-    invoke-virtual {v1, p1}, Lde/rki/coronawarnapp/http/HttpModule$$ExternalSyntheticLambda0;->log(Ljava/lang/String;)V
+    invoke-interface {v1, p1}, Lokhttp3/logging/HttpLoggingInterceptor$Logger;->log(Ljava/lang/String;)V
 
     return-void
 .end method

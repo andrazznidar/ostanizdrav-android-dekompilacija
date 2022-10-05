@@ -13,12 +13,10 @@
 
 .field public final __db:Landroidx/room/RoomDatabase;
 
-.field public final __deletionAdapterOfCachedKeyInfo:Landroidx/room/EntityDeletionOrUpdateAdapter;
+.field public final __deletionAdapterOfCachedKeyInfo:Landroidx/room/EntityInsertionAdapter;
     .annotation system Ldalvik/annotation/Signature;
         value = {
-            "Landroidx/room/EntityDeletionOrUpdateAdapter<",
-            "Lde/rki/coronawarnapp/diagnosiskeys/storage/CachedKeyInfo;",
-            ">;"
+            "Landroidx/room/EntityInsertionAdapter;"
         }
     .end annotation
 .end field
@@ -26,19 +24,15 @@
 .field public final __insertionAdapterOfCachedKeyInfo:Landroidx/room/EntityInsertionAdapter;
     .annotation system Ldalvik/annotation/Signature;
         value = {
-            "Landroidx/room/EntityInsertionAdapter<",
-            "Lde/rki/coronawarnapp/diagnosiskeys/storage/CachedKeyInfo;",
-            ">;"
+            "Landroidx/room/EntityInsertionAdapter;"
         }
     .end annotation
 .end field
 
-.field public final __updateAdapterOfDownloadUpdateAsCachedKeyInfo:Landroidx/room/EntityDeletionOrUpdateAdapter;
+.field public final __updateAdapterOfDownloadUpdateAsCachedKeyInfo:Landroidx/room/EntityInsertionAdapter;
     .annotation system Ldalvik/annotation/Signature;
         value = {
-            "Landroidx/room/EntityDeletionOrUpdateAdapter<",
-            "Lde/rki/coronawarnapp/diagnosiskeys/storage/CachedKeyInfo$DownloadUpdate;",
-            ">;"
+            "Landroidx/room/EntityInsertionAdapter;"
         }
     .end annotation
 .end field
@@ -82,13 +76,13 @@
 
     invoke-direct {v0, p0, p1}, Lde/rki/coronawarnapp/diagnosiskeys/storage/KeyCacheDatabaseCachedKeyFileDao_Impl$2;-><init>(Lde/rki/coronawarnapp/diagnosiskeys/storage/KeyCacheDatabaseCachedKeyFileDao_Impl;Landroidx/room/RoomDatabase;)V
 
-    iput-object v0, p0, Lde/rki/coronawarnapp/diagnosiskeys/storage/KeyCacheDatabaseCachedKeyFileDao_Impl;->__deletionAdapterOfCachedKeyInfo:Landroidx/room/EntityDeletionOrUpdateAdapter;
+    iput-object v0, p0, Lde/rki/coronawarnapp/diagnosiskeys/storage/KeyCacheDatabaseCachedKeyFileDao_Impl;->__deletionAdapterOfCachedKeyInfo:Landroidx/room/EntityInsertionAdapter;
 
     new-instance v0, Lde/rki/coronawarnapp/diagnosiskeys/storage/KeyCacheDatabaseCachedKeyFileDao_Impl$3;
 
     invoke-direct {v0, p0, p1}, Lde/rki/coronawarnapp/diagnosiskeys/storage/KeyCacheDatabaseCachedKeyFileDao_Impl$3;-><init>(Lde/rki/coronawarnapp/diagnosiskeys/storage/KeyCacheDatabaseCachedKeyFileDao_Impl;Landroidx/room/RoomDatabase;)V
 
-    iput-object v0, p0, Lde/rki/coronawarnapp/diagnosiskeys/storage/KeyCacheDatabaseCachedKeyFileDao_Impl;->__updateAdapterOfDownloadUpdateAsCachedKeyInfo:Landroidx/room/EntityDeletionOrUpdateAdapter;
+    iput-object v0, p0, Lde/rki/coronawarnapp/diagnosiskeys/storage/KeyCacheDatabaseCachedKeyFileDao_Impl;->__updateAdapterOfDownloadUpdateAsCachedKeyInfo:Landroidx/room/EntityInsertionAdapter;
 
     new-instance p1, Ljava/util/concurrent/atomic/AtomicBoolean;
 

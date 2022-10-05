@@ -149,9 +149,17 @@
     :catch_0
     new-instance v0, Ljava/lang/IllegalArgumentException;
 
-    const-string v1, "Failed to resolve canonical path for "
+    new-instance v1, Ljava/lang/StringBuilder;
 
-    invoke-static {v1, p1}, Landroidx/core/content/FileProvider$SimplePathStrategy$$ExternalSyntheticOutline0;->m(Ljava/lang/String;Ljava/io/File;)Ljava/lang/String;
+    invoke-direct {v1}, Ljava/lang/StringBuilder;-><init>()V
+
+    const-string v2, "Failed to resolve canonical path for "
+
+    invoke-virtual {v1, v2}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+
+    invoke-virtual {v1, p1}, Ljava/lang/StringBuilder;->append(Ljava/lang/Object;)Ljava/lang/StringBuilder;
+
+    invoke-virtual {v1}, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
 
     move-result-object p1
 
@@ -383,9 +391,17 @@
     :catch_0
     new-instance v0, Ljava/lang/IllegalArgumentException;
 
-    const-string v1, "Failed to resolve canonical path for "
+    new-instance v1, Ljava/lang/StringBuilder;
 
-    invoke-static {v1, p1}, Landroidx/core/content/FileProvider$SimplePathStrategy$$ExternalSyntheticOutline0;->m(Ljava/lang/String;Ljava/io/File;)Ljava/lang/String;
+    invoke-direct {v1}, Ljava/lang/StringBuilder;-><init>()V
+
+    const-string v2, "Failed to resolve canonical path for "
+
+    invoke-virtual {v1, v2}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+
+    invoke-virtual {v1, p1}, Ljava/lang/StringBuilder;->append(Ljava/lang/Object;)Ljava/lang/StringBuilder;
+
+    invoke-virtual {v1}, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
 
     move-result-object p1
 

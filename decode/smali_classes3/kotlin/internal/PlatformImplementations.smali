@@ -31,8 +31,11 @@
 
     sget-object v0, Lkotlin/internal/PlatformImplementations$ReflectThrowable;->addSuppressed:Ljava/lang/reflect/Method;
 
-    if-eqz v0, :cond_0
+    if-nez v0, :cond_0
 
+    goto :goto_0
+
+    :cond_0
     const/4 v1, 0x1
 
     new-array v1, v1, [Ljava/lang/Object;
@@ -43,7 +46,7 @@
 
     invoke-virtual {v0, p1, v1}, Ljava/lang/reflect/Method;->invoke(Ljava/lang/Object;[Ljava/lang/Object;)Ljava/lang/Object;
 
-    :cond_0
+    :goto_0
     return-void
 .end method
 

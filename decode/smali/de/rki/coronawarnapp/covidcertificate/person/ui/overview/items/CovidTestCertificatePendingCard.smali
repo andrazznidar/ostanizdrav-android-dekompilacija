@@ -52,7 +52,7 @@
 .method public constructor <init>(Landroid/view/ViewGroup;)V
     .locals 1
 
-    const v0, 0x7f0d00a7
+    const v0, 0x7f0d00b8
 
     invoke-direct {p0, v0, p1}, Lde/rki/coronawarnapp/covidcertificate/person/ui/overview/PersonOverviewAdapter$PersonOverviewItemVH;-><init>(ILandroid/view/ViewGroup;)V
 
@@ -60,7 +60,7 @@
 
     invoke-direct {p1, p0}, Lde/rki/coronawarnapp/covidcertificate/person/ui/overview/items/CovidTestCertificatePendingCard$viewBinding$1;-><init>(Lde/rki/coronawarnapp/covidcertificate/person/ui/overview/items/CovidTestCertificatePendingCard;)V
 
-    invoke-static {p1}, Lkotlin/LazyKt__LazyKt;->lazy(Lkotlin/jvm/functions/Function0;)Lkotlin/Lazy;
+    invoke-static {p1}, Lkotlin/LazyKt__LazyJVMKt;->lazy(Lkotlin/jvm/functions/Function0;)Lkotlin/Lazy;
 
     move-result-object p1
 

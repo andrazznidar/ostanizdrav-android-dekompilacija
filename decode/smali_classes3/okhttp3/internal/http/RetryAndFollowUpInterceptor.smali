@@ -1618,7 +1618,7 @@
 
     move-result-object p2
 
-    const-string v0, "Pattern.compile(pattern)"
+    const-string v0, "compile(pattern)"
 
     invoke-static {p2, v0}, Lkotlin/jvm/internal/Intrinsics;->checkNotNullExpressionValue(Ljava/lang/Object;Ljava/lang/String;)V
 

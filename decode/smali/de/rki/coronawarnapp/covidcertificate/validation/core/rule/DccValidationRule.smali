@@ -10,7 +10,6 @@
 .annotation system Ldalvik/annotation/MemberClasses;
     value = {
         Lde/rki/coronawarnapp/covidcertificate/validation/core/rule/DccValidationRule$Type;,
-        Lde/rki/coronawarnapp/covidcertificate/validation/core/rule/DccValidationRule$Result;,
         Lde/rki/coronawarnapp/covidcertificate/validation/core/rule/DccValidationRule$Description;
     }
 .end annotation
@@ -546,17 +545,11 @@
 .end method
 
 .method public final getValidFromDateTime()Lorg/joda/time/DateTime;
-    .locals 2
+    .locals 1
 
     iget-object v0, p0, Lde/rki/coronawarnapp/covidcertificate/validation/core/rule/DccValidationRule;->validFrom:Ljava/lang/String;
 
-    sget-object v1, Lorg/joda/time/format/ISODateTimeFormat$Constants;->dtp:Lorg/joda/time/format/DateTimeFormatter;
-
-    invoke-virtual {v1}, Lorg/joda/time/format/DateTimeFormatter;->withOffsetParsed()Lorg/joda/time/format/DateTimeFormatter;
-
-    move-result-object v1
-
-    invoke-virtual {v1, v0}, Lorg/joda/time/format/DateTimeFormatter;->parseDateTime(Ljava/lang/String;)Lorg/joda/time/DateTime;
+    invoke-static {v0}, Lorg/joda/time/DateTime;->parse(Ljava/lang/String;)Lorg/joda/time/DateTime;
 
     move-result-object v0
 
@@ -572,17 +565,11 @@
 .end method
 
 .method public final getValidToDateTime()Lorg/joda/time/DateTime;
-    .locals 2
+    .locals 1
 
     iget-object v0, p0, Lde/rki/coronawarnapp/covidcertificate/validation/core/rule/DccValidationRule;->validTo:Ljava/lang/String;
 
-    sget-object v1, Lorg/joda/time/format/ISODateTimeFormat$Constants;->dtp:Lorg/joda/time/format/DateTimeFormatter;
-
-    invoke-virtual {v1}, Lorg/joda/time/format/DateTimeFormatter;->withOffsetParsed()Lorg/joda/time/format/DateTimeFormatter;
-
-    move-result-object v1
-
-    invoke-virtual {v1, v0}, Lorg/joda/time/format/DateTimeFormatter;->parseDateTime(Ljava/lang/String;)Lorg/joda/time/DateTime;
+    invoke-static {v0}, Lorg/joda/time/DateTime;->parse(Ljava/lang/String;)Lorg/joda/time/DateTime;
 
     move-result-object v0
 
@@ -940,10 +927,6 @@
     const-string v0, "<this>"
 
     invoke-static {p2, v0}, Lkotlin/jvm/internal/Intrinsics;->checkNotNullParameter(Ljava/lang/Object;Ljava/lang/String;)V
-
-    const-string v0, "parcel"
-
-    invoke-static {p1, v0}, Lkotlin/jvm/internal/Intrinsics;->checkNotNullParameter(Ljava/lang/Object;Ljava/lang/String;)V
 
     sget-object v0, Lde/rki/coronawarnapp/util/serialization/SerializationModule;->Companion:Lde/rki/coronawarnapp/util/serialization/SerializationModule;
 

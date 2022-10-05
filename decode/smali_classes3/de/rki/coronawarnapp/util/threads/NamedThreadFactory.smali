@@ -86,7 +86,7 @@
 
     move-result-object p1
 
-    const-string v1, "java.lang.String.format(locale, format, *args)"
+    const-string v1, "format(locale, format, *args)"
 
     invoke-static {p1, v1}, Lkotlin/jvm/internal/Intrinsics;->checkNotNullExpressionValue(Ljava/lang/Object;Ljava/lang/String;)V
 

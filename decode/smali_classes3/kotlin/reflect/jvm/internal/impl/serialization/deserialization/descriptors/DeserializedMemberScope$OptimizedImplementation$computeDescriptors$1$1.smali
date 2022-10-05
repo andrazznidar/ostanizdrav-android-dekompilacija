@@ -16,14 +16,6 @@
     name = null
 .end annotation
 
-.annotation system Ldalvik/annotation/Signature;
-    value = {
-        "Lkotlin/jvm/internal/Lambda;",
-        "Lkotlin/jvm/functions/Function0<",
-        "TM;>;"
-    }
-.end annotation
-
 .annotation system Ldalvik/annotation/SourceDebugExtension;
     value = "SMAP\nDeserializedMemberScope.kt\nKotlin\n*S Kotlin\n*F\n+ 1 DeserializedMemberScope.kt\norg/jetbrains/kotlin/serialization/deserialization/descriptors/DeserializedMemberScope$OptimizedImplementation$computeDescriptors$1$1\n*L\n1#1,512:1\n*E\n"
 .end annotation
@@ -33,13 +25,6 @@
 .field public final synthetic $inputStream:Ljava/io/ByteArrayInputStream;
 
 .field public final synthetic $parser:Lkotlin/reflect/jvm/internal/impl/protobuf/Parser;
-    .annotation system Ldalvik/annotation/Signature;
-        value = {
-            "Lkotlin/reflect/jvm/internal/impl/protobuf/Parser<",
-            "TM;>;"
-        }
-    .end annotation
-.end field
 
 .field public final synthetic this$0:Lkotlin/reflect/jvm/internal/impl/serialization/deserialization/descriptors/DeserializedMemberScope;
 
@@ -47,16 +32,6 @@
 # direct methods
 .method public constructor <init>(Lkotlin/reflect/jvm/internal/impl/protobuf/Parser;Ljava/io/ByteArrayInputStream;Lkotlin/reflect/jvm/internal/impl/serialization/deserialization/descriptors/DeserializedMemberScope;)V
     .locals 0
-    .annotation system Ldalvik/annotation/Signature;
-        value = {
-            "(",
-            "Lkotlin/reflect/jvm/internal/impl/protobuf/Parser<",
-            "TM;>;",
-            "Ljava/io/ByteArrayInputStream;",
-            "Lkotlin/reflect/jvm/internal/impl/serialization/deserialization/descriptors/DeserializedMemberScope;",
-            ")V"
-        }
-    .end annotation
 
     iput-object p1, p0, Lkotlin/reflect/jvm/internal/impl/serialization/deserialization/descriptors/DeserializedMemberScope$OptimizedImplementation$computeDescriptors$1$1;->$parser:Lkotlin/reflect/jvm/internal/impl/protobuf/Parser;
 
@@ -73,7 +48,17 @@
 
 
 # virtual methods
-.method public invoke()Ljava/lang/Object;
+.method public bridge synthetic invoke()Ljava/lang/Object;
+    .locals 1
+
+    invoke-virtual {p0}, Lkotlin/reflect/jvm/internal/impl/serialization/deserialization/descriptors/DeserializedMemberScope$OptimizedImplementation$computeDescriptors$1$1;->invoke()Lkotlin/reflect/jvm/internal/impl/protobuf/MessageLite;
+
+    move-result-object v0
+
+    return-object v0
+.end method
+
+.method public final invoke()Lkotlin/reflect/jvm/internal/impl/protobuf/MessageLite;
     .locals 3
 
     iget-object v0, p0, Lkotlin/reflect/jvm/internal/impl/serialization/deserialization/descriptors/DeserializedMemberScope$OptimizedImplementation$computeDescriptors$1$1;->$parser:Lkotlin/reflect/jvm/internal/impl/protobuf/Parser;
@@ -82,17 +67,19 @@
 
     iget-object v2, p0, Lkotlin/reflect/jvm/internal/impl/serialization/deserialization/descriptors/DeserializedMemberScope$OptimizedImplementation$computeDescriptors$1$1;->this$0:Lkotlin/reflect/jvm/internal/impl/serialization/deserialization/descriptors/DeserializedMemberScope;
 
-    iget-object v2, v2, Lkotlin/reflect/jvm/internal/impl/serialization/deserialization/descriptors/DeserializedMemberScope;->c:Lcom/google/android/play/core/assetpacks/zzbc;
+    invoke-virtual {v2}, Lkotlin/reflect/jvm/internal/impl/serialization/deserialization/descriptors/DeserializedMemberScope;->getC()Lkotlin/reflect/jvm/internal/impl/serialization/deserialization/DeserializationContext;
 
-    iget-object v2, v2, Lcom/google/android/play/core/assetpacks/zzbc;->zza:Ljava/lang/Object;
+    move-result-object v2
 
-    check-cast v2, Lkotlin/reflect/jvm/internal/impl/serialization/deserialization/DeserializationComponents;
+    invoke-virtual {v2}, Lkotlin/reflect/jvm/internal/impl/serialization/deserialization/DeserializationContext;->getComponents()Lkotlin/reflect/jvm/internal/impl/serialization/deserialization/DeserializationComponents;
 
-    iget-object v2, v2, Lkotlin/reflect/jvm/internal/impl/serialization/deserialization/DeserializationComponents;->extensionRegistryLite:Lkotlin/reflect/jvm/internal/impl/protobuf/ExtensionRegistryLite;
+    move-result-object v2
 
-    check-cast v0, Lkotlin/reflect/jvm/internal/impl/protobuf/AbstractParser;
+    invoke-virtual {v2}, Lkotlin/reflect/jvm/internal/impl/serialization/deserialization/DeserializationComponents;->getExtensionRegistryLite()Lkotlin/reflect/jvm/internal/impl/protobuf/ExtensionRegistryLite;
 
-    invoke-virtual {v0, v1, v2}, Lkotlin/reflect/jvm/internal/impl/protobuf/AbstractParser;->parseDelimitedFrom(Ljava/io/InputStream;Lkotlin/reflect/jvm/internal/impl/protobuf/ExtensionRegistryLite;)Ljava/lang/Object;
+    move-result-object v2
+
+    invoke-interface {v0, v1, v2}, Lkotlin/reflect/jvm/internal/impl/protobuf/Parser;->parseDelimitedFrom(Ljava/io/InputStream;Lkotlin/reflect/jvm/internal/impl/protobuf/ExtensionRegistryLite;)Ljava/lang/Object;
 
     move-result-object v0
 

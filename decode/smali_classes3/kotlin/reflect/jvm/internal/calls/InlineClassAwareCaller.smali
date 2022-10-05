@@ -25,12 +25,56 @@
 .end annotation
 
 .annotation system Ldalvik/annotation/SourceDebugExtension;
-    value = "SMAP\nInlineClassAwareCaller.kt\nKotlin\n*S Kotlin\n*F\n+ 1 InlineClassAwareCaller.kt\nkotlin/reflect/jvm/internal/calls/InlineClassAwareCaller\n+ 2 _Collections.kt\nkotlin/collections/CollectionsKt___CollectionsKt\n*L\n1#1,208:1\n1588#2,3:209\n*E\n*S KotlinDebug\n*F\n+ 1 InlineClassAwareCaller.kt\nkotlin/reflect/jvm/internal/calls/InlineClassAwareCaller\n*L\n98#1,3:209\n*E\n"
+    value = "SMAP\nInlineClassAwareCaller.kt\nKotlin\n*S Kotlin\n*F\n+ 1 InlineClassAwareCaller.kt\nkotlin/reflect/jvm/internal/calls/InlineClassAwareCaller\n+ 2 _Collections.kt\nkotlin/collections/CollectionsKt___CollectionsKt\n*L\n1#1,208:1\n1618#2,3:209\n*S KotlinDebug\n*F\n+ 1 InlineClassAwareCaller.kt\nkotlin/reflect/jvm/internal/calls/InlineClassAwareCaller\n*L\n98#1:209,3\n*E\n"
+.end annotation
+
+.annotation runtime Lkotlin/Metadata;
+    d1 = {
+        "\u0000B\n\u0002\u0018\u0002\n\u0000\n\u0002\u0018\u0002\n\u0002\u0018\u0002\n\u0000\n\u0002\u0018\u0002\n\u0002\u0008\u0002\n\u0002\u0010\u000b\n\u0002\u0008\u0002\n\u0002\u0018\u0002\n\u0002\u0008\u0004\n\u0002\u0010 \n\u0002\u0018\u0002\n\u0002\u0008\u0006\n\u0002\u0010\u0000\n\u0000\n\u0002\u0010\u0011\n\u0002\u0008\u0003\u0008\u0000\u0018\u0000*\u000c\u0008\u0000\u0010\u0001 \u0001*\u0004\u0018\u00010\u00022\u0008\u0012\u0004\u0012\u0002H\u00010\u0003:\u0001\u001cB#\u0012\u0006\u0010\u0004\u001a\u00020\u0005\u0012\u000c\u0010\u0006\u001a\u0008\u0012\u0004\u0012\u00028\u00000\u0003\u0012\u0006\u0010\u0007\u001a\u00020\u0008\u00a2\u0006\u0002\u0010\tJ\u001b\u0010\u0017\u001a\u0004\u0018\u00010\u00182\n\u0010\u0019\u001a\u0006\u0012\u0002\u0008\u00030\u001aH\u0016\u00a2\u0006\u0002\u0010\u001bR\u0014\u0010\u0006\u001a\u0008\u0012\u0004\u0012\u00028\u00000\u0003X\u0082\u0004\u00a2\u0006\u0002\n\u0000R\u000e\u0010\n\u001a\u00020\u000bX\u0082\u0004\u00a2\u0006\u0002\n\u0000R\u000e\u0010\u0007\u001a\u00020\u0008X\u0082\u0004\u00a2\u0006\u0002\n\u0000R\u0014\u0010\u000c\u001a\u00028\u00008VX\u0096\u0004\u00a2\u0006\u0006\u001a\u0004\u0008\r\u0010\u000eR\u001a\u0010\u000f\u001a\u0008\u0012\u0004\u0012\u00020\u00110\u00108VX\u0096\u0004\u00a2\u0006\u0006\u001a\u0004\u0008\u0012\u0010\u0013R\u0014\u0010\u0014\u001a\u00020\u00118VX\u0096\u0004\u00a2\u0006\u0006\u001a\u0004\u0008\u0015\u0010\u0016\u00a8\u0006\u001d"
+    }
+    d2 = {
+        "Lkotlin/reflect/jvm/internal/calls/InlineClassAwareCaller;",
+        "M",
+        "Ljava/lang/reflect/Member;",
+        "Lkotlin/reflect/jvm/internal/calls/Caller;",
+        "descriptor",
+        "Lkotlin/reflect/jvm/internal/impl/descriptors/CallableMemberDescriptor;",
+        "caller",
+        "isDefault",
+        "",
+        "(Lorg/jetbrains/kotlin/descriptors/CallableMemberDescriptor;Lkotlin/reflect/jvm/internal/calls/Caller;Z)V",
+        "data",
+        "Lkotlin/reflect/jvm/internal/calls/InlineClassAwareCaller$BoxUnboxData;",
+        "member",
+        "getMember",
+        "()Ljava/lang/reflect/Member;",
+        "parameterTypes",
+        "",
+        "Ljava/lang/reflect/Type;",
+        "getParameterTypes",
+        "()Ljava/util/List;",
+        "returnType",
+        "getReturnType",
+        "()Ljava/lang/reflect/Type;",
+        "call",
+        "",
+        "args",
+        "",
+        "([Ljava/lang/Object;)Ljava/lang/Object;",
+        "BoxUnboxData",
+        "kotlin-reflection"
+    }
+    k = 0x1
+    mv = {
+        0x1,
+        0x5,
+        0x1
+    }
 .end annotation
 
 
 # instance fields
-.field public final caller:Lkotlin/reflect/jvm/internal/calls/Caller;
+.field private final caller:Lkotlin/reflect/jvm/internal/calls/Caller;
     .annotation system Ldalvik/annotation/Signature;
         value = {
             "Lkotlin/reflect/jvm/internal/calls/Caller<",
@@ -39,9 +83,9 @@
     .end annotation
 .end field
 
-.field public final data:Lkotlin/reflect/jvm/internal/calls/InlineClassAwareCaller$BoxUnboxData;
+.field private final data:Lkotlin/reflect/jvm/internal/calls/InlineClassAwareCaller$BoxUnboxData;
 
-.field public final isDefault:Z
+.field private final isDefault:Z
 
 
 # direct methods
@@ -55,6 +99,14 @@
             "+TM;>;Z)V"
         }
     .end annotation
+
+    const-string v0, "descriptor"
+
+    invoke-static {p1, v0}, Lkotlin/jvm/internal/Intrinsics;->checkNotNullParameter(Ljava/lang/Object;Ljava/lang/String;)V
+
+    const-string v0, "caller"
+
+    invoke-static {p2, v0}, Lkotlin/jvm/internal/Intrinsics;->checkNotNullParameter(Ljava/lang/Object;Ljava/lang/String;)V
 
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
@@ -74,79 +126,25 @@
 
     const/4 v1, 0x0
 
-    const/4 v2, 0x0
-
-    const/4 v3, 0x1
-
     if-eqz v0, :cond_0
 
-    :try_start_0
-    const-string v4, "box-impl"
+    invoke-static {v0, p1}, Lkotlin/reflect/jvm/internal/calls/InlineClassAwareCallerKt;->getBoxMethod(Ljava/lang/Class;Lkotlin/reflect/jvm/internal/impl/descriptors/CallableMemberDescriptor;)Ljava/lang/reflect/Method;
 
-    new-array v5, v3, [Ljava/lang/Class;
-
-    invoke-static {v0, p1}, Lkotlin/reflect/jvm/internal/calls/InlineClassAwareCallerKt;->getUnboxMethod(Ljava/lang/Class;Lkotlin/reflect/jvm/internal/impl/descriptors/CallableMemberDescriptor;)Ljava/lang/reflect/Method;
-
-    move-result-object v6
-
-    invoke-virtual {v6}, Ljava/lang/reflect/Method;->getReturnType()Ljava/lang/Class;
-
-    move-result-object v6
-
-    aput-object v6, v5, v2
-
-    invoke-virtual {v0, v4, v5}, Ljava/lang/Class;->getDeclaredMethod(Ljava/lang/String;[Ljava/lang/Class;)Ljava/lang/reflect/Method;
-
-    move-result-object v4
-
-    const-string v5, "getDeclaredMethod(\"box\" \u2026d(descriptor).returnType)"
-
-    invoke-static {v4, v5}, Lkotlin/jvm/internal/Intrinsics;->checkNotNullExpressionValue(Ljava/lang/Object;Ljava/lang/String;)V
-    :try_end_0
-    .catch Ljava/lang/NoSuchMethodException; {:try_start_0 .. :try_end_0} :catch_0
+    move-result-object v0
 
     goto :goto_0
 
-    :catch_0
-    new-instance p2, Lkotlin/reflect/jvm/internal/KotlinReflectionInternalError;
-
-    new-instance p3, Ljava/lang/StringBuilder;
-
-    invoke-direct {p3}, Ljava/lang/StringBuilder;-><init>()V
-
-    const-string v1, "No box method found in inline class: "
-
-    invoke-virtual {p3, v1}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
-
-    invoke-virtual {p3, v0}, Ljava/lang/StringBuilder;->append(Ljava/lang/Object;)Ljava/lang/StringBuilder;
-
-    const-string v0, " (calling "
-
-    invoke-virtual {p3, v0}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
-
-    invoke-virtual {p3, p1}, Ljava/lang/StringBuilder;->append(Ljava/lang/Object;)Ljava/lang/StringBuilder;
-
-    const/16 p1, 0x29
-
-    invoke-virtual {p3, p1}, Ljava/lang/StringBuilder;->append(C)Ljava/lang/StringBuilder;
-
-    invoke-virtual {p3}, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
-
-    move-result-object p1
-
-    invoke-direct {p2, p1}, Lkotlin/reflect/jvm/internal/KotlinReflectionInternalError;-><init>(Ljava/lang/String;)V
-
-    throw p2
-
     :cond_0
-    move-object v4, v1
+    move-object v0, v1
 
     :goto_0
     invoke-static {p1}, Lkotlin/reflect/jvm/internal/impl/resolve/InlineClassesUtilsKt;->isGetterOfUnderlyingPropertyOfInlineClass(Lkotlin/reflect/jvm/internal/impl/descriptors/CallableDescriptor;)Z
 
-    move-result v0
+    move-result v2
 
-    if-eqz v0, :cond_1
+    const/4 v3, 0x0
+
+    if-eqz v2, :cond_1
 
     new-instance p1, Lkotlin/reflect/jvm/internal/calls/InlineClassAwareCaller$BoxUnboxData;
 
@@ -154,27 +152,29 @@
 
     sget-object p2, Lkotlin/ranges/IntRange;->EMPTY:Lkotlin/ranges/IntRange;
 
-    new-array p3, v2, [Ljava/lang/reflect/Method;
+    new-array p3, v3, [Ljava/lang/reflect/Method;
 
-    invoke-direct {p1, p2, p3, v4}, Lkotlin/reflect/jvm/internal/calls/InlineClassAwareCaller$BoxUnboxData;-><init>(Lkotlin/ranges/IntRange;[Ljava/lang/reflect/Method;Ljava/lang/reflect/Method;)V
+    invoke-direct {p1, p2, p3, v0}, Lkotlin/reflect/jvm/internal/calls/InlineClassAwareCaller$BoxUnboxData;-><init>(Lkotlin/ranges/IntRange;[Ljava/lang/reflect/Method;Ljava/lang/reflect/Method;)V
 
     goto/16 :goto_a
 
     :cond_1
-    instance-of v0, p2, Lkotlin/reflect/jvm/internal/calls/CallerImpl$Method$BoundStatic;
+    instance-of v2, p2, Lkotlin/reflect/jvm/internal/calls/CallerImpl$Method$BoundStatic;
 
-    const-string v5, "descriptor.containingDeclaration"
+    const-string v4, "descriptor.containingDeclaration"
 
-    const/4 v6, -0x1
+    const/4 v5, -0x1
 
-    if-eqz v0, :cond_2
+    const/4 v6, 0x1
+
+    if-eqz v2, :cond_2
 
     goto :goto_2
 
     :cond_2
-    instance-of v0, p1, Lkotlin/reflect/jvm/internal/impl/descriptors/ConstructorDescriptor;
+    instance-of v2, p1, Lkotlin/reflect/jvm/internal/impl/descriptors/ConstructorDescriptor;
 
-    if-eqz v0, :cond_3
+    if-eqz v2, :cond_3
 
     instance-of p2, p2, Lkotlin/reflect/jvm/internal/calls/BoundCaller;
 
@@ -185,9 +185,9 @@
     :cond_3
     invoke-interface {p1}, Lkotlin/reflect/jvm/internal/impl/descriptors/CallableDescriptor;->getDispatchReceiverParameter()Lkotlin/reflect/jvm/internal/impl/descriptors/ReceiverParameterDescriptor;
 
-    move-result-object v0
+    move-result-object v2
 
-    if-eqz v0, :cond_5
+    if-eqz v2, :cond_5
 
     instance-of p2, p2, Lkotlin/reflect/jvm/internal/calls/BoundCaller;
 
@@ -197,7 +197,7 @@
 
     move-result-object p2
 
-    invoke-static {p2, v5}, Lkotlin/jvm/internal/Intrinsics;->checkNotNullExpressionValue(Ljava/lang/Object;Ljava/lang/String;)V
+    invoke-static {p2, v4}, Lkotlin/jvm/internal/Intrinsics;->checkNotNullExpressionValue(Ljava/lang/Object;Ljava/lang/String;)V
 
     invoke-static {p2}, Lkotlin/reflect/jvm/internal/impl/resolve/InlineClassesUtilsKt;->isInlineClass(Lkotlin/reflect/jvm/internal/impl/descriptors/DeclarationDescriptor;)Z
 
@@ -208,13 +208,13 @@
     goto :goto_1
 
     :cond_4
-    move v6, v3
+    move v5, v6
 
     goto :goto_2
 
     :cond_5
     :goto_1
-    move v6, v2
+    move v5, v3
 
     :goto_2
     if-eqz p3, :cond_6
@@ -224,7 +224,7 @@
     goto :goto_3
 
     :cond_6
-    move p2, v2
+    move p2, v3
 
     :goto_3
     instance-of p3, p1, Lkotlin/reflect/jvm/internal/impl/descriptors/FunctionDescriptor;
@@ -244,10 +244,10 @@
     goto :goto_4
 
     :cond_7
-    move v3, v2
+    move v6, v3
 
     :goto_4
-    add-int/2addr p2, v3
+    add-int/2addr p2, v6
 
     new-instance p3, Ljava/util/ArrayList;
 
@@ -255,201 +255,201 @@
 
     invoke-interface {p1}, Lkotlin/reflect/jvm/internal/impl/descriptors/CallableDescriptor;->getExtensionReceiverParameter()Lkotlin/reflect/jvm/internal/impl/descriptors/ReceiverParameterDescriptor;
 
-    move-result-object v0
+    move-result-object v2
 
-    if-eqz v0, :cond_8
+    if-eqz v2, :cond_8
 
-    invoke-interface {v0}, Lkotlin/reflect/jvm/internal/impl/descriptors/ValueDescriptor;->getType()Lkotlin/reflect/jvm/internal/impl/types/KotlinType;
+    invoke-interface {v2}, Lkotlin/reflect/jvm/internal/impl/descriptors/ValueDescriptor;->getType()Lkotlin/reflect/jvm/internal/impl/types/KotlinType;
 
-    move-result-object v0
+    move-result-object v2
 
     goto :goto_5
 
     :cond_8
-    move-object v0, v1
+    move-object v2, v1
 
     :goto_5
-    if-eqz v0, :cond_9
+    if-eqz v2, :cond_9
 
-    invoke-virtual {p3, v0}, Ljava/util/ArrayList;->add(Ljava/lang/Object;)Z
+    invoke-virtual {p3, v2}, Ljava/util/ArrayList;->add(Ljava/lang/Object;)Z
 
     goto :goto_6
 
     :cond_9
-    instance-of v0, p1, Lkotlin/reflect/jvm/internal/impl/descriptors/ConstructorDescriptor;
+    instance-of v2, p1, Lkotlin/reflect/jvm/internal/impl/descriptors/ConstructorDescriptor;
 
-    if-eqz v0, :cond_a
+    if-eqz v2, :cond_a
 
-    move-object v0, p1
+    move-object v2, p1
 
-    check-cast v0, Lkotlin/reflect/jvm/internal/impl/descriptors/ConstructorDescriptor;
+    check-cast v2, Lkotlin/reflect/jvm/internal/impl/descriptors/ConstructorDescriptor;
 
-    invoke-interface {v0}, Lkotlin/reflect/jvm/internal/impl/descriptors/ConstructorDescriptor;->getConstructedClass()Lkotlin/reflect/jvm/internal/impl/descriptors/ClassDescriptor;
+    invoke-interface {v2}, Lkotlin/reflect/jvm/internal/impl/descriptors/ConstructorDescriptor;->getConstructedClass()Lkotlin/reflect/jvm/internal/impl/descriptors/ClassDescriptor;
 
-    move-result-object v0
+    move-result-object v2
 
-    const-string v3, "descriptor.constructedClass"
+    const-string v4, "descriptor.constructedClass"
 
-    invoke-static {v0, v3}, Lkotlin/jvm/internal/Intrinsics;->checkNotNullExpressionValue(Ljava/lang/Object;Ljava/lang/String;)V
+    invoke-static {v2, v4}, Lkotlin/jvm/internal/Intrinsics;->checkNotNullExpressionValue(Ljava/lang/Object;Ljava/lang/String;)V
 
-    invoke-interface {v0}, Lkotlin/reflect/jvm/internal/impl/descriptors/ClassifierDescriptorWithTypeParameters;->isInner()Z
+    invoke-interface {v2}, Lkotlin/reflect/jvm/internal/impl/descriptors/ClassifierDescriptorWithTypeParameters;->isInner()Z
 
-    move-result v3
+    move-result v4
 
-    if-eqz v3, :cond_b
+    if-eqz v4, :cond_b
 
-    invoke-interface {v0}, Lkotlin/reflect/jvm/internal/impl/descriptors/ClassDescriptor;->getContainingDeclaration()Lkotlin/reflect/jvm/internal/impl/descriptors/DeclarationDescriptor;
+    invoke-interface {v2}, Lkotlin/reflect/jvm/internal/impl/descriptors/ClassDescriptor;->getContainingDeclaration()Lkotlin/reflect/jvm/internal/impl/descriptors/DeclarationDescriptor;
 
-    move-result-object v0
+    move-result-object v2
 
-    const-string v3, "null cannot be cast to non-null type org.jetbrains.kotlin.descriptors.ClassDescriptor"
+    const-string v4, "null cannot be cast to non-null type org.jetbrains.kotlin.descriptors.ClassDescriptor"
 
-    invoke-static {v0, v3}, Ljava/util/Objects;->requireNonNull(Ljava/lang/Object;Ljava/lang/String;)Ljava/lang/Object;
+    invoke-static {v2, v4}, Ljava/util/Objects;->requireNonNull(Ljava/lang/Object;Ljava/lang/String;)Ljava/lang/Object;
 
-    check-cast v0, Lkotlin/reflect/jvm/internal/impl/descriptors/ClassDescriptor;
+    check-cast v2, Lkotlin/reflect/jvm/internal/impl/descriptors/ClassDescriptor;
 
-    invoke-interface {v0}, Lkotlin/reflect/jvm/internal/impl/descriptors/ClassDescriptor;->getDefaultType()Lkotlin/reflect/jvm/internal/impl/types/SimpleType;
+    invoke-interface {v2}, Lkotlin/reflect/jvm/internal/impl/descriptors/ClassDescriptor;->getDefaultType()Lkotlin/reflect/jvm/internal/impl/types/SimpleType;
 
-    move-result-object v0
+    move-result-object v2
 
-    invoke-virtual {p3, v0}, Ljava/util/ArrayList;->add(Ljava/lang/Object;)Z
+    invoke-virtual {p3, v2}, Ljava/util/ArrayList;->add(Ljava/lang/Object;)Z
 
     goto :goto_6
 
     :cond_a
     invoke-interface {p1}, Lkotlin/reflect/jvm/internal/impl/descriptors/DeclarationDescriptorNonRoot;->getContainingDeclaration()Lkotlin/reflect/jvm/internal/impl/descriptors/DeclarationDescriptor;
 
-    move-result-object v0
+    move-result-object v2
 
-    invoke-static {v0, v5}, Lkotlin/jvm/internal/Intrinsics;->checkNotNullExpressionValue(Ljava/lang/Object;Ljava/lang/String;)V
+    invoke-static {v2, v4}, Lkotlin/jvm/internal/Intrinsics;->checkNotNullExpressionValue(Ljava/lang/Object;Ljava/lang/String;)V
 
-    instance-of v3, v0, Lkotlin/reflect/jvm/internal/impl/descriptors/ClassDescriptor;
+    instance-of v4, v2, Lkotlin/reflect/jvm/internal/impl/descriptors/ClassDescriptor;
 
-    if-eqz v3, :cond_b
+    if-eqz v4, :cond_b
 
-    invoke-static {v0}, Lkotlin/reflect/jvm/internal/impl/resolve/InlineClassesUtilsKt;->isInlineClass(Lkotlin/reflect/jvm/internal/impl/descriptors/DeclarationDescriptor;)Z
+    invoke-static {v2}, Lkotlin/reflect/jvm/internal/impl/resolve/InlineClassesUtilsKt;->isInlineClass(Lkotlin/reflect/jvm/internal/impl/descriptors/DeclarationDescriptor;)Z
 
-    move-result v3
+    move-result v4
 
-    if-eqz v3, :cond_b
+    if-eqz v4, :cond_b
 
-    check-cast v0, Lkotlin/reflect/jvm/internal/impl/descriptors/ClassDescriptor;
+    check-cast v2, Lkotlin/reflect/jvm/internal/impl/descriptors/ClassDescriptor;
 
-    invoke-interface {v0}, Lkotlin/reflect/jvm/internal/impl/descriptors/ClassDescriptor;->getDefaultType()Lkotlin/reflect/jvm/internal/impl/types/SimpleType;
+    invoke-interface {v2}, Lkotlin/reflect/jvm/internal/impl/descriptors/ClassDescriptor;->getDefaultType()Lkotlin/reflect/jvm/internal/impl/types/SimpleType;
 
-    move-result-object v0
+    move-result-object v2
 
-    invoke-virtual {p3, v0}, Ljava/util/ArrayList;->add(Ljava/lang/Object;)Z
+    invoke-virtual {p3, v2}, Ljava/util/ArrayList;->add(Ljava/lang/Object;)Z
 
     :cond_b
     :goto_6
     invoke-interface {p1}, Lkotlin/reflect/jvm/internal/impl/descriptors/CallableDescriptor;->getValueParameters()Ljava/util/List;
 
-    move-result-object v0
+    move-result-object v2
 
-    const-string v3, "descriptor.valueParameters"
+    const-string v4, "descriptor.valueParameters"
 
-    invoke-static {v0, v3}, Lkotlin/jvm/internal/Intrinsics;->checkNotNullExpressionValue(Ljava/lang/Object;Ljava/lang/String;)V
+    invoke-static {v2, v4}, Lkotlin/jvm/internal/Intrinsics;->checkNotNullExpressionValue(Ljava/lang/Object;Ljava/lang/String;)V
 
-    invoke-interface {v0}, Ljava/lang/Iterable;->iterator()Ljava/util/Iterator;
+    invoke-interface {v2}, Ljava/lang/Iterable;->iterator()Ljava/util/Iterator;
 
-    move-result-object v0
+    move-result-object v2
 
     :goto_7
-    invoke-interface {v0}, Ljava/util/Iterator;->hasNext()Z
+    invoke-interface {v2}, Ljava/util/Iterator;->hasNext()Z
 
-    move-result v3
+    move-result v4
 
-    if-eqz v3, :cond_c
+    if-eqz v4, :cond_c
 
-    invoke-interface {v0}, Ljava/util/Iterator;->next()Ljava/lang/Object;
+    invoke-interface {v2}, Ljava/util/Iterator;->next()Ljava/lang/Object;
 
-    move-result-object v3
+    move-result-object v4
 
-    check-cast v3, Lkotlin/reflect/jvm/internal/impl/descriptors/ValueParameterDescriptor;
+    check-cast v4, Lkotlin/reflect/jvm/internal/impl/descriptors/ValueParameterDescriptor;
 
-    invoke-interface {v3}, Lkotlin/reflect/jvm/internal/impl/descriptors/ValueDescriptor;->getType()Lkotlin/reflect/jvm/internal/impl/types/KotlinType;
+    invoke-interface {v4}, Lkotlin/reflect/jvm/internal/impl/descriptors/ValueDescriptor;->getType()Lkotlin/reflect/jvm/internal/impl/types/KotlinType;
 
-    move-result-object v3
+    move-result-object v4
 
-    invoke-virtual {p3, v3}, Ljava/util/ArrayList;->add(Ljava/lang/Object;)Z
+    invoke-virtual {p3, v4}, Ljava/util/ArrayList;->add(Ljava/lang/Object;)Z
 
     goto :goto_7
 
     :cond_c
     invoke-virtual {p3}, Ljava/util/ArrayList;->size()I
 
-    move-result v0
+    move-result v2
 
-    add-int/2addr v0, v6
+    add-int/2addr v2, v5
 
-    add-int/2addr v0, p2
+    add-int/2addr v2, p2
 
     invoke-static {p0}, Lkotlin/reflect/jvm/internal/calls/CallerKt;->getArity(Lkotlin/reflect/jvm/internal/calls/Caller;)I
 
     move-result p2
 
-    if-ne p2, v0, :cond_f
+    if-ne p2, v2, :cond_f
 
-    invoke-static {v6, v2}, Ljava/lang/Math;->max(II)I
+    invoke-static {v5, v3}, Ljava/lang/Math;->max(II)I
 
     move-result p2
 
     invoke-virtual {p3}, Ljava/util/ArrayList;->size()I
 
-    move-result v3
+    move-result v4
 
-    add-int/2addr v3, v6
+    add-int/2addr v4, v5
 
-    invoke-static {p2, v3}, Lkotlin/ranges/RangesKt___RangesKt;->until(II)Lkotlin/ranges/IntRange;
+    invoke-static {p2, v4}, Lkotlin/ranges/RangesKt___RangesKt;->until(II)Lkotlin/ranges/IntRange;
 
     move-result-object p2
 
-    new-array v3, v0, [Ljava/lang/reflect/Method;
+    new-array v4, v2, [Ljava/lang/reflect/Method;
 
     :goto_8
-    if-ge v2, v0, :cond_e
+    if-ge v3, v2, :cond_e
 
-    invoke-virtual {p2, v2}, Lkotlin/ranges/IntRange;->contains(I)Z
+    invoke-virtual {p2, v3}, Lkotlin/ranges/IntRange;->contains(I)Z
 
-    move-result v5
+    move-result v6
 
-    if-eqz v5, :cond_d
+    if-eqz v6, :cond_d
 
-    sub-int v5, v2, v6
+    sub-int v6, v3, v5
 
-    invoke-virtual {p3, v5}, Ljava/util/ArrayList;->get(I)Ljava/lang/Object;
+    invoke-virtual {p3, v6}, Ljava/util/ArrayList;->get(I)Ljava/lang/Object;
 
-    move-result-object v5
+    move-result-object v6
 
-    check-cast v5, Lkotlin/reflect/jvm/internal/impl/types/KotlinType;
+    check-cast v6, Lkotlin/reflect/jvm/internal/impl/types/KotlinType;
 
-    invoke-static {v5}, Lkotlin/reflect/jvm/internal/calls/InlineClassAwareCallerKt;->toInlineClass(Lkotlin/reflect/jvm/internal/impl/types/KotlinType;)Ljava/lang/Class;
+    invoke-static {v6}, Lkotlin/reflect/jvm/internal/calls/InlineClassAwareCallerKt;->toInlineClass(Lkotlin/reflect/jvm/internal/impl/types/KotlinType;)Ljava/lang/Class;
 
-    move-result-object v5
+    move-result-object v6
 
-    if-eqz v5, :cond_d
+    if-eqz v6, :cond_d
 
-    invoke-static {v5, p1}, Lkotlin/reflect/jvm/internal/calls/InlineClassAwareCallerKt;->getUnboxMethod(Ljava/lang/Class;Lkotlin/reflect/jvm/internal/impl/descriptors/CallableMemberDescriptor;)Ljava/lang/reflect/Method;
+    invoke-static {v6, p1}, Lkotlin/reflect/jvm/internal/calls/InlineClassAwareCallerKt;->getUnboxMethod(Ljava/lang/Class;Lkotlin/reflect/jvm/internal/impl/descriptors/CallableMemberDescriptor;)Ljava/lang/reflect/Method;
 
-    move-result-object v5
+    move-result-object v6
 
     goto :goto_9
 
     :cond_d
-    move-object v5, v1
+    move-object v6, v1
 
     :goto_9
-    aput-object v5, v3, v2
+    aput-object v6, v4, v3
 
-    add-int/lit8 v2, v2, 0x1
+    add-int/lit8 v3, v3, 0x1
 
     goto :goto_8
 
     :cond_e
     new-instance p1, Lkotlin/reflect/jvm/internal/calls/InlineClassAwareCaller$BoxUnboxData;
 
-    invoke-direct {p1, p2, v3, v4}, Lkotlin/reflect/jvm/internal/calls/InlineClassAwareCaller$BoxUnboxData;-><init>(Lkotlin/ranges/IntRange;[Ljava/lang/reflect/Method;Ljava/lang/reflect/Method;)V
+    invoke-direct {p1, p2, v4, v0}, Lkotlin/reflect/jvm/internal/calls/InlineClassAwareCaller$BoxUnboxData;-><init>(Lkotlin/ranges/IntRange;[Ljava/lang/reflect/Method;Ljava/lang/reflect/Method;)V
 
     :goto_a
     iput-object p1, p0, Lkotlin/reflect/jvm/internal/calls/InlineClassAwareCaller;->data:Lkotlin/reflect/jvm/internal/calls/InlineClassAwareCaller$BoxUnboxData;
@@ -467,15 +467,15 @@
 
     invoke-static {p0}, Lkotlin/reflect/jvm/internal/calls/CallerKt;->getArity(Lkotlin/reflect/jvm/internal/calls/Caller;)I
 
-    move-result v1
-
-    invoke-virtual {p3, v1}, Ljava/lang/StringBuilder;->append(I)Ljava/lang/StringBuilder;
-
-    const-string v1, " != "
-
-    invoke-virtual {p3, v1}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+    move-result v0
 
     invoke-virtual {p3, v0}, Ljava/lang/StringBuilder;->append(I)Ljava/lang/StringBuilder;
+
+    const-string v0, " != "
+
+    invoke-virtual {p3, v0}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+
+    invoke-virtual {p3, v2}, Ljava/lang/StringBuilder;->append(I)Ljava/lang/StringBuilder;
 
     const/16 v0, 0xa
 
@@ -531,11 +531,17 @@
 
     iget-object v0, p0, Lkotlin/reflect/jvm/internal/calls/InlineClassAwareCaller;->data:Lkotlin/reflect/jvm/internal/calls/InlineClassAwareCaller$BoxUnboxData;
 
-    iget-object v1, v0, Lkotlin/reflect/jvm/internal/calls/InlineClassAwareCaller$BoxUnboxData;->argumentRange:Lkotlin/ranges/IntRange;
+    invoke-virtual {v0}, Lkotlin/reflect/jvm/internal/calls/InlineClassAwareCaller$BoxUnboxData;->component1()Lkotlin/ranges/IntRange;
 
-    iget-object v2, v0, Lkotlin/reflect/jvm/internal/calls/InlineClassAwareCaller$BoxUnboxData;->unbox:[Ljava/lang/reflect/Method;
+    move-result-object v1
 
-    iget-object v0, v0, Lkotlin/reflect/jvm/internal/calls/InlineClassAwareCaller$BoxUnboxData;->box:Ljava/lang/reflect/Method;
+    invoke-virtual {v0}, Lkotlin/reflect/jvm/internal/calls/InlineClassAwareCaller$BoxUnboxData;->component2()[Ljava/lang/reflect/Method;
+
+    move-result-object v2
+
+    invoke-virtual {v0}, Lkotlin/reflect/jvm/internal/calls/InlineClassAwareCaller$BoxUnboxData;->component3()Ljava/lang/reflect/Method;
+
+    move-result-object v0
 
     array-length v3, p1
 

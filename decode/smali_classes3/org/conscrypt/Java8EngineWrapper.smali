@@ -275,7 +275,7 @@
 
     move-result-object v0
 
-    invoke-static {v0}, Lj$/wrappers/$r8$wrapper$java$util$function$BiFunction$-WRP;->convert(Lj$/util/function/BiFunction;)Ljava/util/function/BiFunction;
+    invoke-static {v0}, Lj$/util/function/BiFunction$Wrapper;->convert(Lj$/util/function/BiFunction;)Ljava/util/function/BiFunction;
 
     move-result-object v0
 
@@ -597,7 +597,7 @@
 .method public synthetic setHandshakeApplicationProtocolSelector(Ljava/util/function/BiFunction;)V
     .locals 0
 
-    invoke-static {p1}, Lj$/wrappers/$r8$wrapper$java$util$function$BiFunction$-V-WRP;->convert(Ljava/util/function/BiFunction;)Lj$/util/function/BiFunction;
+    invoke-static {p1}, Lj$/util/function/BiFunction$VivifiedWrapper;->convert(Ljava/util/function/BiFunction;)Lj$/util/function/BiFunction;
 
     move-result-object p1
 

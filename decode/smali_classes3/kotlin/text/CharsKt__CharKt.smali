@@ -5,48 +5,57 @@
 
 # annotations
 .annotation system Ldalvik/annotation/SourceDebugExtension;
-    value = "SMAP\nChar.kt\nKotlin\n*S Kotlin\n*F\n+ 1 Char.kt\nkotlin/text/CharsKt__CharKt\n+ 2 fake.kt\nkotlin/jvm/internal/FakeKt\n*L\n1#1,348:1\n1#2:349\n*E\n"
+    value = "SMAP\nChar.kt\nKotlin\n*S Kotlin\n*F\n+ 1 Char.kt\nkotlin/text/CharsKt__CharKt\n+ 2 fake.kt\nkotlin/jvm/internal/FakeKt\n*L\n1#1,344:1\n1#2:345\n*E\n"
 .end annotation
 
 
 # direct methods
 .method public static final checkRadix(I)I
-    .locals 5
+    .locals 4
 
-    const/4 v0, 0x2
+    const/4 v0, 0x0
 
-    const/16 v1, 0x24
+    const/4 v1, 0x2
 
-    if-gt v0, p0, :cond_0
+    if-gt v1, p0, :cond_0
 
-    if-lt v1, p0, :cond_0
+    const/16 v2, 0x25
+
+    if-ge p0, v2, :cond_0
+
+    const/4 v0, 0x1
+
+    :cond_0
+    if-eqz v0, :cond_1
 
     return p0
 
-    :cond_0
-    new-instance v2, Ljava/lang/IllegalArgumentException;
+    :cond_1
+    new-instance v0, Ljava/lang/IllegalArgumentException;
 
-    const-string v3, "radix "
+    const-string v2, "radix "
 
-    const-string v4, " was not in valid range "
+    const-string v3, " was not in valid range "
 
-    invoke-static {v3, p0, v4}, Landroidx/appcompat/widget/SuggestionsAdapter$$ExternalSyntheticOutline0;->m(Ljava/lang/String;ILjava/lang/String;)Ljava/lang/StringBuilder;
+    invoke-static {v2, p0, v3}, Landroidx/appcompat/widget/SuggestionsAdapter$$ExternalSyntheticOutline0;->m(Ljava/lang/String;ILjava/lang/String;)Ljava/lang/StringBuilder;
 
     move-result-object p0
 
-    new-instance v3, Lkotlin/ranges/IntRange;
+    new-instance v2, Lkotlin/ranges/IntRange;
 
-    invoke-direct {v3, v0, v1}, Lkotlin/ranges/IntRange;-><init>(II)V
+    const/16 v3, 0x24
 
-    invoke-virtual {p0, v3}, Ljava/lang/StringBuilder;->append(Ljava/lang/Object;)Ljava/lang/StringBuilder;
+    invoke-direct {v2, v1, v3}, Lkotlin/ranges/IntRange;-><init>(II)V
+
+    invoke-virtual {p0, v2}, Ljava/lang/StringBuilder;->append(Ljava/lang/Object;)Ljava/lang/StringBuilder;
 
     invoke-virtual {p0}, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
 
     move-result-object p0
 
-    invoke-direct {v2, p0}, Ljava/lang/IllegalArgumentException;-><init>(Ljava/lang/String;)V
+    invoke-direct {v0, p0}, Ljava/lang/IllegalArgumentException;-><init>(Ljava/lang/String;)V
 
-    throw v2
+    throw v0
 .end method
 
 .method public static final equals(CCZ)Z

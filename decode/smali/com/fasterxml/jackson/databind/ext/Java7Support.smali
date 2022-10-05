@@ -48,8 +48,8 @@
 .method public abstract findConstructorName(Lcom/fasterxml/jackson/databind/introspect/AnnotatedParameter;)Lcom/fasterxml/jackson/databind/PropertyName;
 .end method
 
-.method public abstract findTransient(Lcom/fasterxml/jackson/databind/introspect/Annotated;)Ljava/lang/Boolean;
+.method public abstract findTransient(Lorg/joda/time/Chronology;)Ljava/lang/Boolean;
 .end method
 
-.method public abstract hasCreatorAnnotation(Lcom/fasterxml/jackson/databind/introspect/Annotated;)Ljava/lang/Boolean;
+.method public abstract hasCreatorAnnotation(Lorg/joda/time/Chronology;)Ljava/lang/Boolean;
 .end method

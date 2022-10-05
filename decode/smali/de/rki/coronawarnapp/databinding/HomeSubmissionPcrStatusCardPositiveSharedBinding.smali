@@ -13,10 +13,12 @@
 
 
 # direct methods
-.method public constructor <init>(Landroidx/constraintlayout/widget/ConstraintLayout;Landroid/widget/TextView;Landroid/widget/ImageView;Landroid/widget/TextView;Landroid/widget/ImageView;Landroid/widget/TextView;Landroid/widget/TextView;Landroid/widget/TextView;Lde/rki/coronawarnapp/databinding/IncludeDividerBinding;Landroid/widget/TextView;Landroid/widget/ImageView;Landroid/widget/TextView;Landroid/widget/TextView;Landroid/widget/TextView;)V
-    .locals 0
+.method public constructor <init>(Landroidx/constraintlayout/widget/ConstraintLayout;Landroid/widget/TextView;Landroid/widget/ImageView;Landroid/widget/TextView;Landroid/widget/ImageView;Landroid/widget/TextView;Landroid/widget/TextView;Landroid/widget/TextView;Lde/rki/coronawarnapp/databinding/IncludeDividerBinding;Landroid/widget/TextView;Landroid/widget/ImageView;Landroid/widget/ImageView;Landroid/widget/TextView;Landroid/widget/TextView;Landroid/widget/TextView;Landroid/widget/TextView;)V
+    .locals 2
     .annotation system Ldalvik/annotation/MethodParameters;
         accessFlags = {
+            0x0,
+            0x0,
             0x0,
             0x0,
             0x0,
@@ -44,17 +46,25 @@
             "divider",
             "findings",
             "icon",
+            "illnessIcon",
+            "illnessSubtitle",
             "resultSubtitle",
             "status",
             "title"
         }
     .end annotation
 
+    move-object v0, p0
+
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
-    iput-object p1, p0, Lde/rki/coronawarnapp/databinding/HomeSubmissionPcrStatusCardPositiveSharedBinding;->rootView:Landroidx/constraintlayout/widget/ConstraintLayout;
+    move-object v1, p1
 
-    iput-object p8, p0, Lde/rki/coronawarnapp/databinding/HomeSubmissionPcrStatusCardPositiveSharedBinding;->date:Landroid/widget/TextView;
+    iput-object v1, v0, Lde/rki/coronawarnapp/databinding/HomeSubmissionPcrStatusCardPositiveSharedBinding;->rootView:Landroidx/constraintlayout/widget/ConstraintLayout;
+
+    move-object v1, p8
+
+    iput-object v1, v0, Lde/rki/coronawarnapp/databinding/HomeSubmissionPcrStatusCardPositiveSharedBinding;->date:Landroid/widget/TextView;
 
     return-void
 .end method

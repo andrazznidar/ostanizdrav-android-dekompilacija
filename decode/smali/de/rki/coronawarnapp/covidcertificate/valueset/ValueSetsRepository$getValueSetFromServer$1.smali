@@ -8,8 +8,8 @@
     c = "de.rki.coronawarnapp.covidcertificate.valueset.ValueSetsRepository"
     f = "ValueSetsRepository.kt"
     l = {
-        0x52,
-        0x59
+        0x54,
+        0x5b
     }
     m = "getValueSetFromServer"
 .end annotation

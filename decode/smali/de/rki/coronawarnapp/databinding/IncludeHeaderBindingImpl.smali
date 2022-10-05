@@ -43,7 +43,7 @@
 
     new-array v2, v2, [I
 
-    const v4, 0x7f0d00cf
+    const v4, 0x7f0d00df
 
     aput v4, v2, v5
 
@@ -55,19 +55,19 @@
 
     sput-object v0, Lde/rki/coronawarnapp/databinding/IncludeHeaderBindingImpl;->sViewsWithIds:Landroid/util/SparseIntArray;
 
-    const v1, 0x7f0a0348
+    const v1, 0x7f0a0377
 
     const/4 v2, 0x3
 
     invoke-virtual {v0, v1, v2}, Landroid/util/SparseIntArray;->put(II)V
 
-    const v1, 0x7f0a0345
+    const v1, 0x7f0a0374
 
     const/4 v2, 0x4
 
     invoke-virtual {v0, v1, v2}, Landroid/util/SparseIntArray;->put(II)V
 
-    const v1, 0x7f0a0340
+    const v1, 0x7f0a036f
 
     const/4 v2, 0x5
 
@@ -385,7 +385,7 @@
     :try_end_0
     .catchall {:try_start_0 .. :try_end_0} :catchall_0
 
-    const/16 p1, 0x16
+    const/16 p1, 0x15
 
     invoke-virtual {p0, p1}, Landroidx/databinding/BaseObservable;->notifyPropertyChanged(I)V
 
@@ -452,7 +452,7 @@
     :try_end_0
     .catchall {:try_start_0 .. :try_end_0} :catchall_0
 
-    const/16 p1, 0x2f
+    const/16 p1, 0x2d
 
     invoke-virtual {p0, p1}, Landroidx/databinding/BaseObservable;->notifyPropertyChanged(I)V
 

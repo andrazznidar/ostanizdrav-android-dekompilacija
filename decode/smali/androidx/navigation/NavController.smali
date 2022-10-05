@@ -809,14 +809,114 @@
     throw p1
 .end method
 
-.method public navigate(Landroid/net/Uri;Landroidx/navigation/NavOptions;)V
-    .locals 1
+.method public navigate(Landroid/net/Uri;)V
+    .locals 2
 
-    const/4 v0, 0x0
+    new-instance v0, Landroidx/navigation/NavDeepLinkRequest;
 
-    invoke-static {p1, v0, v0, p0, p2}, Landroidx/navigation/NavController$$ExternalSyntheticOutline0;->m(Landroid/net/Uri;Ljava/lang/String;Ljava/lang/String;Landroidx/navigation/NavController;Landroidx/navigation/NavOptions;)V
+    const/4 v1, 0x0
+
+    invoke-direct {v0, p1, v1, v1}, Landroidx/navigation/NavDeepLinkRequest;-><init>(Landroid/net/Uri;Ljava/lang/String;Ljava/lang/String;)V
+
+    invoke-virtual {p0, v0, v1}, Landroidx/navigation/NavController;->navigate(Landroidx/navigation/NavDeepLinkRequest;Landroidx/navigation/NavOptions;)V
 
     return-void
+.end method
+
+.method public navigate(Landroid/net/Uri;Landroidx/navigation/NavOptions;)V
+    .locals 2
+
+    new-instance v0, Landroidx/navigation/NavDeepLinkRequest;
+
+    const/4 v1, 0x0
+
+    invoke-direct {v0, p1, v1, v1}, Landroidx/navigation/NavDeepLinkRequest;-><init>(Landroid/net/Uri;Ljava/lang/String;Ljava/lang/String;)V
+
+    invoke-virtual {p0, v0, p2}, Landroidx/navigation/NavController;->navigate(Landroidx/navigation/NavDeepLinkRequest;Landroidx/navigation/NavOptions;)V
+
+    return-void
+.end method
+
+.method public navigate(Landroidx/navigation/NavDeepLinkRequest;Landroidx/navigation/NavOptions;)V
+    .locals 5
+
+    iget-object v0, p0, Landroidx/navigation/NavController;->mGraph:Landroidx/navigation/NavGraph;
+
+    invoke-virtual {v0, p1}, Landroidx/navigation/NavGraph;->matchDeepLink(Landroidx/navigation/NavDeepLinkRequest;)Landroidx/navigation/NavDestination$DeepLinkMatch;
+
+    move-result-object v0
+
+    if-eqz v0, :cond_1
+
+    iget-object v1, v0, Landroidx/navigation/NavDestination$DeepLinkMatch;->mDestination:Landroidx/navigation/NavDestination;
+
+    iget-object v2, v0, Landroidx/navigation/NavDestination$DeepLinkMatch;->mMatchingArgs:Landroid/os/Bundle;
+
+    invoke-virtual {v1, v2}, Landroidx/navigation/NavDestination;->addInDefaultArgs(Landroid/os/Bundle;)Landroid/os/Bundle;
+
+    move-result-object v1
+
+    if-nez v1, :cond_0
+
+    new-instance v1, Landroid/os/Bundle;
+
+    invoke-direct {v1}, Landroid/os/Bundle;-><init>()V
+
+    :cond_0
+    iget-object v0, v0, Landroidx/navigation/NavDestination$DeepLinkMatch;->mDestination:Landroidx/navigation/NavDestination;
+
+    new-instance v2, Landroid/content/Intent;
+
+    invoke-direct {v2}, Landroid/content/Intent;-><init>()V
+
+    iget-object v3, p1, Landroidx/navigation/NavDeepLinkRequest;->mUri:Landroid/net/Uri;
+
+    iget-object v4, p1, Landroidx/navigation/NavDeepLinkRequest;->mMimeType:Ljava/lang/String;
+
+    invoke-virtual {v2, v3, v4}, Landroid/content/Intent;->setDataAndType(Landroid/net/Uri;Ljava/lang/String;)Landroid/content/Intent;
+
+    iget-object p1, p1, Landroidx/navigation/NavDeepLinkRequest;->mAction:Ljava/lang/String;
+
+    invoke-virtual {v2, p1}, Landroid/content/Intent;->setAction(Ljava/lang/String;)Landroid/content/Intent;
+
+    const-string p1, "android-support-nav:controller:deepLinkIntent"
+
+    invoke-virtual {v1, p1, v2}, Landroid/os/Bundle;->putParcelable(Ljava/lang/String;Landroid/os/Parcelable;)V
+
+    const/4 p1, 0x0
+
+    invoke-virtual {p0, v0, v1, p2, p1}, Landroidx/navigation/NavController;->navigate(Landroidx/navigation/NavDestination;Landroid/os/Bundle;Landroidx/navigation/NavOptions;Landroidx/navigation/Navigator$Extras;)V
+
+    return-void
+
+    :cond_1
+    new-instance p2, Ljava/lang/IllegalArgumentException;
+
+    new-instance v0, Ljava/lang/StringBuilder;
+
+    invoke-direct {v0}, Ljava/lang/StringBuilder;-><init>()V
+
+    const-string v1, "Navigation destination that matches request "
+
+    invoke-virtual {v0, v1}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+
+    invoke-virtual {v0, p1}, Ljava/lang/StringBuilder;->append(Ljava/lang/Object;)Ljava/lang/StringBuilder;
+
+    const-string p1, " cannot be found in the navigation graph "
+
+    invoke-virtual {v0, p1}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+
+    iget-object p1, p0, Landroidx/navigation/NavController;->mGraph:Landroidx/navigation/NavGraph;
+
+    invoke-virtual {v0, p1}, Ljava/lang/StringBuilder;->append(Ljava/lang/Object;)Ljava/lang/StringBuilder;
+
+    invoke-virtual {v0}, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
+
+    move-result-object p1
+
+    invoke-direct {p2, p1}, Ljava/lang/IllegalArgumentException;-><init>(Ljava/lang/String;)V
+
+    throw p2
 .end method
 
 .method public final navigate(Landroidx/navigation/NavDestination;Landroid/os/Bundle;Landroidx/navigation/NavOptions;Landroidx/navigation/Navigator$Extras;)V
@@ -1251,92 +1351,22 @@
     return-void
 .end method
 
-.method public navigate(Lorg/slf4j/event/EventRecodingLogger;Landroidx/navigation/NavOptions;)V
-    .locals 5
+.method public navigate(Landroidx/navigation/NavDirections;Landroidx/navigation/NavOptions;)V
+    .locals 2
 
-    iget-object v0, p0, Landroidx/navigation/NavController;->mGraph:Landroidx/navigation/NavGraph;
+    invoke-interface {p1}, Landroidx/navigation/NavDirections;->getActionId()I
 
-    invoke-virtual {v0, p1}, Landroidx/navigation/NavGraph;->matchDeepLink(Lorg/slf4j/event/EventRecodingLogger;)Landroidx/navigation/NavDestination$DeepLinkMatch;
+    move-result v0
 
-    move-result-object v0
-
-    if-eqz v0, :cond_1
-
-    iget-object v1, v0, Landroidx/navigation/NavDestination$DeepLinkMatch;->mDestination:Landroidx/navigation/NavDestination;
-
-    iget-object v2, v0, Landroidx/navigation/NavDestination$DeepLinkMatch;->mMatchingArgs:Landroid/os/Bundle;
-
-    invoke-virtual {v1, v2}, Landroidx/navigation/NavDestination;->addInDefaultArgs(Landroid/os/Bundle;)Landroid/os/Bundle;
-
-    move-result-object v1
-
-    if-nez v1, :cond_0
-
-    new-instance v1, Landroid/os/Bundle;
-
-    invoke-direct {v1}, Landroid/os/Bundle;-><init>()V
-
-    :cond_0
-    iget-object v0, v0, Landroidx/navigation/NavDestination$DeepLinkMatch;->mDestination:Landroidx/navigation/NavDestination;
-
-    new-instance v2, Landroid/content/Intent;
-
-    invoke-direct {v2}, Landroid/content/Intent;-><init>()V
-
-    iget-object v3, p1, Lorg/slf4j/event/EventRecodingLogger;->logger:Ljava/lang/Object;
-
-    check-cast v3, Landroid/net/Uri;
-
-    iget-object v4, p1, Lorg/slf4j/event/EventRecodingLogger;->eventQueue:Ljava/lang/Object;
-
-    check-cast v4, Ljava/lang/String;
-
-    invoke-virtual {v2, v3, v4}, Landroid/content/Intent;->setDataAndType(Landroid/net/Uri;Ljava/lang/String;)Landroid/content/Intent;
-
-    iget-object p1, p1, Lorg/slf4j/event/EventRecodingLogger;->name:Ljava/lang/Object;
-
-    check-cast p1, Ljava/lang/String;
-
-    invoke-virtual {v2, p1}, Landroid/content/Intent;->setAction(Ljava/lang/String;)Landroid/content/Intent;
-
-    const-string p1, "android-support-nav:controller:deepLinkIntent"
-
-    invoke-virtual {v1, p1, v2}, Landroid/os/Bundle;->putParcelable(Ljava/lang/String;Landroid/os/Parcelable;)V
-
-    const/4 p1, 0x0
-
-    invoke-virtual {p0, v0, v1, p2, p1}, Landroidx/navigation/NavController;->navigate(Landroidx/navigation/NavDestination;Landroid/os/Bundle;Landroidx/navigation/NavOptions;Landroidx/navigation/Navigator$Extras;)V
-
-    return-void
-
-    :cond_1
-    new-instance p2, Ljava/lang/IllegalArgumentException;
-
-    new-instance v0, Ljava/lang/StringBuilder;
-
-    invoke-direct {v0}, Ljava/lang/StringBuilder;-><init>()V
-
-    const-string v1, "Navigation destination that matches request "
-
-    invoke-virtual {v0, v1}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
-
-    invoke-virtual {v0, p1}, Ljava/lang/StringBuilder;->append(Ljava/lang/Object;)Ljava/lang/StringBuilder;
-
-    const-string p1, " cannot be found in the navigation graph "
-
-    invoke-virtual {v0, p1}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
-
-    iget-object p1, p0, Landroidx/navigation/NavController;->mGraph:Landroidx/navigation/NavGraph;
-
-    invoke-virtual {v0, p1}, Ljava/lang/StringBuilder;->append(Ljava/lang/Object;)Ljava/lang/StringBuilder;
-
-    invoke-virtual {v0}, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
+    invoke-interface {p1}, Landroidx/navigation/NavDirections;->getArguments()Landroid/os/Bundle;
 
     move-result-object p1
 
-    invoke-direct {p2, p1}, Ljava/lang/IllegalArgumentException;-><init>(Ljava/lang/String;)V
+    const/4 v1, 0x0
 
-    throw p2
+    invoke-virtual {p0, v0, p1, p2, v1}, Landroidx/navigation/NavController;->navigate(ILandroid/os/Bundle;Landroidx/navigation/NavOptions;Landroidx/navigation/Navigator$Extras;)V
+
+    return-void
 .end method
 
 .method public popBackStack()Z
@@ -1875,11 +1905,23 @@
 
     iget-object v6, v0, Landroidx/navigation/NavController;->mGraph:Landroidx/navigation/NavGraph;
 
-    new-instance v9, Lorg/slf4j/event/EventRecodingLogger;
+    new-instance v9, Landroidx/navigation/NavDeepLinkRequest;
 
-    invoke-direct {v9, v1}, Lorg/slf4j/event/EventRecodingLogger;-><init>(Landroid/content/Intent;)V
+    invoke-virtual {v1}, Landroid/content/Intent;->getData()Landroid/net/Uri;
 
-    invoke-virtual {v6, v9}, Landroidx/navigation/NavGraph;->matchDeepLink(Lorg/slf4j/event/EventRecodingLogger;)Landroidx/navigation/NavDestination$DeepLinkMatch;
+    move-result-object v10
+
+    invoke-virtual {v1}, Landroid/content/Intent;->getAction()Ljava/lang/String;
+
+    move-result-object v11
+
+    invoke-virtual {v1}, Landroid/content/Intent;->getType()Ljava/lang/String;
+
+    move-result-object v12
+
+    invoke-direct {v9, v10, v11, v12}, Landroidx/navigation/NavDeepLinkRequest;-><init>(Landroid/net/Uri;Ljava/lang/String;Ljava/lang/String;)V
+
+    invoke-virtual {v6, v9}, Landroidx/navigation/NavGraph;->matchDeepLink(Landroidx/navigation/NavDeepLinkRequest;)Landroidx/navigation/NavDestination$DeepLinkMatch;
 
     move-result-object v6
 

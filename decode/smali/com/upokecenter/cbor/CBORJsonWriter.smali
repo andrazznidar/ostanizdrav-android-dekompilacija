@@ -128,7 +128,7 @@
 .end method
 
 .method public static WriteJSONStringUnquoted(Ljava/lang/String;Lcom/upokecenter/cbor/StringOutput;Lcom/upokecenter/cbor/JSONOptions;)V
-    .locals 9
+    .locals 12
     .annotation system Ldalvik/annotation/Throws;
         value = {
             Ljava/io/IOException;
@@ -202,211 +202,149 @@
 
     move-result v0
 
-    if-ge v1, v0, :cond_14
+    if-ge v1, v0, :cond_16
 
     invoke-virtual {p0, v1}, Ljava/lang/String;->charAt(I)C
 
     move-result v0
 
-    if-eq v0, v5, :cond_13
+    if-eq v0, v5, :cond_15
 
     if-ne v0, v3, :cond_4
 
-    goto/16 :goto_5
+    goto/16 :goto_6
 
     :cond_4
-    if-lt v0, v4, :cond_b
+    const-string v2, "\\u"
+
+    const-string v7, "0123456789ABCDEF"
+
+    if-lt v0, v4, :cond_d
 
     if-lt v0, v6, :cond_6
 
-    const/16 v2, 0x2028
+    const/16 v8, 0x2028
 
-    if-eq v0, v2, :cond_b
+    if-eq v0, v8, :cond_d
 
-    const/16 v2, 0x2029
+    const/16 v8, 0x2029
 
-    if-eq v0, v2, :cond_b
+    if-eq v0, v8, :cond_d
 
     if-lt v0, v6, :cond_5
 
-    const/16 v2, 0xa0
+    const/16 v8, 0xa0
 
-    if-le v0, v2, :cond_b
+    if-le v0, v8, :cond_d
 
     :cond_5
-    const v2, 0xfeff
+    const v8, 0xfeff
 
-    if-eq v0, v2, :cond_b
+    if-eq v0, v8, :cond_d
 
-    const v2, 0xfffe
+    const v8, 0xfffe
 
-    if-eq v0, v2, :cond_b
+    if-eq v0, v8, :cond_d
 
-    const v2, 0xffff
+    const v8, 0xffff
 
-    if-ne v0, v2, :cond_6
+    if-ne v0, v8, :cond_6
 
-    goto :goto_4
+    goto/16 :goto_5
 
     :cond_6
-    const v2, 0xfc00
+    const v8, 0xfc00
 
-    and-int v7, v0, v2
+    and-int v9, v0, v8
 
-    const v8, 0xd800
+    const v10, 0xd800
 
-    if-ne v7, v8, :cond_a
+    const/16 v11, 0x80
+
+    if-ne v9, v10, :cond_b
 
     invoke-virtual {p0}, Ljava/lang/String;->length()I
 
-    move-result v0
+    move-result v9
 
-    add-int/lit8 v0, v0, -0x1
+    add-int/lit8 v9, v9, -0x1
 
-    if-ge v1, v0, :cond_8
+    if-ge v1, v9, :cond_9
 
-    add-int/lit8 v0, v1, 0x1
+    add-int/lit8 v9, v1, 0x1
 
-    invoke-virtual {p0, v0}, Ljava/lang/String;->charAt(I)C
+    invoke-virtual {p0, v9}, Ljava/lang/String;->charAt(I)C
 
-    move-result v7
+    move-result v10
 
-    and-int/2addr v2, v7
+    and-int/2addr v8, v10
 
-    const v7, 0xdc00
+    const v10, 0xdc00
 
-    if-eq v2, v7, :cond_7
+    if-eq v8, v10, :cond_7
 
     goto :goto_3
 
     :cond_7
-    iget-object v2, p1, Lcom/upokecenter/cbor/StringOutput;->builder:Ljava/lang/StringBuilder;
+    if-lt v0, v11, :cond_8
 
-    add-int/lit8 v7, v1, 0x2
+    iget-boolean v0, p2, Lcom/upokecenter/cbor/JSONOptions;->propVarwritebasic:Z
 
-    invoke-virtual {v2, p0, v1, v7}, Ljava/lang/StringBuilder;->append(Ljava/lang/CharSequence;II)Ljava/lang/StringBuilder;
+    if-eqz v0, :cond_8
 
-    move v1, v0
+    invoke-virtual {p0, v1}, Ljava/lang/String;->charAt(I)C
 
-    goto/16 :goto_6
+    move-result v0
 
-    :cond_8
-    :goto_3
-    iget-boolean v0, p2, Lcom/upokecenter/cbor/JSONOptions;->propVarreplacesurrogates:Z
+    iget-object v8, p1, Lcom/upokecenter/cbor/StringOutput;->builder:Ljava/lang/StringBuilder;
 
-    if-eqz v0, :cond_9
+    invoke-virtual {v8, v2}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
 
-    const v0, 0xfffd
+    shr-int/lit8 v8, v0, 0xc
+
+    and-int/lit8 v8, v8, 0xf
+
+    invoke-virtual {v7, v8}, Ljava/lang/String;->charAt(I)C
+
+    move-result v8
+
+    invoke-virtual {p1, v8}, Lcom/upokecenter/cbor/StringOutput;->WriteCodePoint(I)V
+
+    shr-int/lit8 v8, v0, 0x8
+
+    and-int/lit8 v8, v8, 0xf
+
+    invoke-virtual {v7, v8}, Ljava/lang/String;->charAt(I)C
+
+    move-result v8
+
+    invoke-virtual {p1, v8}, Lcom/upokecenter/cbor/StringOutput;->WriteCodePoint(I)V
+
+    shr-int/lit8 v8, v0, 0x4
+
+    and-int/lit8 v8, v8, 0xf
+
+    invoke-virtual {v7, v8}, Ljava/lang/String;->charAt(I)C
+
+    move-result v8
+
+    invoke-virtual {p1, v8}, Lcom/upokecenter/cbor/StringOutput;->WriteCodePoint(I)V
+
+    and-int/lit8 v0, v0, 0xf
+
+    invoke-virtual {v7, v0}, Ljava/lang/String;->charAt(I)C
+
+    move-result v0
 
     invoke-virtual {p1, v0}, Lcom/upokecenter/cbor/StringOutput;->WriteCodePoint(I)V
 
-    goto/16 :goto_6
+    invoke-virtual {p0, v9}, Ljava/lang/String;->charAt(I)C
 
-    :cond_9
-    new-instance p0, Lcom/upokecenter/cbor/CBORException;
+    move-result v0
 
-    const-string p1, "Unpaired surrogate in String"
+    iget-object v8, p1, Lcom/upokecenter/cbor/StringOutput;->builder:Ljava/lang/StringBuilder;
 
-    invoke-direct {p0, p1}, Lcom/upokecenter/cbor/CBORException;-><init>(Ljava/lang/String;)V
-
-    throw p0
-
-    :cond_a
-    invoke-virtual {p1, v0}, Lcom/upokecenter/cbor/StringOutput;->WriteCodePoint(I)V
-
-    goto/16 :goto_6
-
-    :cond_b
-    :goto_4
-    const/16 v2, 0xd
-
-    if-ne v0, v2, :cond_c
-
-    iget-object v0, p1, Lcom/upokecenter/cbor/StringOutput;->builder:Ljava/lang/StringBuilder;
-
-    const-string v2, "\\r"
-
-    invoke-virtual {v0, v2}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
-
-    goto/16 :goto_6
-
-    :cond_c
-    const/16 v2, 0xa
-
-    if-ne v0, v2, :cond_d
-
-    iget-object v0, p1, Lcom/upokecenter/cbor/StringOutput;->builder:Ljava/lang/StringBuilder;
-
-    const-string v2, "\\n"
-
-    invoke-virtual {v0, v2}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
-
-    goto/16 :goto_6
-
-    :cond_d
-    const/16 v2, 0x8
-
-    if-ne v0, v2, :cond_e
-
-    iget-object v0, p1, Lcom/upokecenter/cbor/StringOutput;->builder:Ljava/lang/StringBuilder;
-
-    const-string v2, "\\b"
-
-    invoke-virtual {v0, v2}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
-
-    goto/16 :goto_6
-
-    :cond_e
-    const/16 v2, 0xc
-
-    if-ne v0, v2, :cond_f
-
-    iget-object v0, p1, Lcom/upokecenter/cbor/StringOutput;->builder:Ljava/lang/StringBuilder;
-
-    const-string v2, "\\f"
-
-    invoke-virtual {v0, v2}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
-
-    goto :goto_6
-
-    :cond_f
-    const/16 v2, 0x9
-
-    if-ne v0, v2, :cond_10
-
-    iget-object v0, p1, Lcom/upokecenter/cbor/StringOutput;->builder:Ljava/lang/StringBuilder;
-
-    const-string v2, "\\t"
-
-    invoke-virtual {v0, v2}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
-
-    goto :goto_6
-
-    :cond_10
-    const/16 v2, 0x85
-
-    if-ne v0, v2, :cond_11
-
-    iget-object v0, p1, Lcom/upokecenter/cbor/StringOutput;->builder:Ljava/lang/StringBuilder;
-
-    const-string v2, "\\u0085"
-
-    invoke-virtual {v0, v2}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
-
-    goto :goto_6
-
-    :cond_11
-    const/16 v2, 0x100
-
-    const-string v7, "0123456789ABCDEF"
-
-    if-lt v0, v2, :cond_12
-
-    iget-object v2, p1, Lcom/upokecenter/cbor/StringOutput;->builder:Ljava/lang/StringBuilder;
-
-    const-string v8, "\\u"
-
-    invoke-virtual {v2, v8}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+    invoke-virtual {v8, v2}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
 
     shr-int/lit8 v2, v0, 0xc
 
@@ -446,9 +384,226 @@
 
     invoke-virtual {p1, v0}, Lcom/upokecenter/cbor/StringOutput;->WriteCodePoint(I)V
 
-    goto :goto_6
+    goto :goto_4
+
+    :cond_8
+    iget-object v0, p1, Lcom/upokecenter/cbor/StringOutput;->builder:Ljava/lang/StringBuilder;
+
+    add-int/lit8 v2, v1, 0x2
+
+    invoke-virtual {v0, p0, v1, v2}, Ljava/lang/StringBuilder;->append(Ljava/lang/CharSequence;II)Ljava/lang/StringBuilder;
+
+    goto :goto_4
+
+    :cond_9
+    :goto_3
+    iget-boolean v0, p2, Lcom/upokecenter/cbor/JSONOptions;->propVarreplacesurrogates:Z
+
+    if-eqz v0, :cond_a
+
+    const v0, 0xfffd
+
+    invoke-virtual {p1, v0}, Lcom/upokecenter/cbor/StringOutput;->WriteCodePoint(I)V
+
+    :goto_4
+    add-int/lit8 v1, v1, 0x1
+
+    goto/16 :goto_7
+
+    :cond_a
+    new-instance p0, Lcom/upokecenter/cbor/CBORException;
+
+    const-string p1, "Unpaired surrogate in String"
+
+    invoke-direct {p0, p1}, Lcom/upokecenter/cbor/CBORException;-><init>(Ljava/lang/String;)V
+
+    throw p0
+
+    :cond_b
+    if-lt v0, v11, :cond_c
+
+    iget-boolean v8, p2, Lcom/upokecenter/cbor/JSONOptions;->propVarwritebasic:Z
+
+    if-eqz v8, :cond_c
+
+    iget-object v8, p1, Lcom/upokecenter/cbor/StringOutput;->builder:Ljava/lang/StringBuilder;
+
+    invoke-virtual {v8, v2}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+
+    shr-int/lit8 v2, v0, 0xc
+
+    and-int/lit8 v2, v2, 0xf
+
+    invoke-virtual {v7, v2}, Ljava/lang/String;->charAt(I)C
+
+    move-result v2
+
+    invoke-virtual {p1, v2}, Lcom/upokecenter/cbor/StringOutput;->WriteCodePoint(I)V
+
+    shr-int/lit8 v2, v0, 0x8
+
+    and-int/lit8 v2, v2, 0xf
+
+    invoke-virtual {v7, v2}, Ljava/lang/String;->charAt(I)C
+
+    move-result v2
+
+    invoke-virtual {p1, v2}, Lcom/upokecenter/cbor/StringOutput;->WriteCodePoint(I)V
+
+    shr-int/lit8 v2, v0, 0x4
+
+    and-int/lit8 v2, v2, 0xf
+
+    invoke-virtual {v7, v2}, Ljava/lang/String;->charAt(I)C
+
+    move-result v2
+
+    invoke-virtual {p1, v2}, Lcom/upokecenter/cbor/StringOutput;->WriteCodePoint(I)V
+
+    and-int/lit8 v0, v0, 0xf
+
+    invoke-virtual {v7, v0}, Ljava/lang/String;->charAt(I)C
+
+    move-result v0
+
+    invoke-virtual {p1, v0}, Lcom/upokecenter/cbor/StringOutput;->WriteCodePoint(I)V
+
+    goto/16 :goto_7
+
+    :cond_c
+    invoke-virtual {p1, v0}, Lcom/upokecenter/cbor/StringOutput;->WriteCodePoint(I)V
+
+    goto/16 :goto_7
+
+    :cond_d
+    :goto_5
+    const/16 v8, 0xd
+
+    if-ne v0, v8, :cond_e
+
+    iget-object v0, p1, Lcom/upokecenter/cbor/StringOutput;->builder:Ljava/lang/StringBuilder;
+
+    const-string v2, "\\r"
+
+    invoke-virtual {v0, v2}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+
+    goto/16 :goto_7
+
+    :cond_e
+    const/16 v8, 0xa
+
+    if-ne v0, v8, :cond_f
+
+    iget-object v0, p1, Lcom/upokecenter/cbor/StringOutput;->builder:Ljava/lang/StringBuilder;
+
+    const-string v2, "\\n"
+
+    invoke-virtual {v0, v2}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+
+    goto/16 :goto_7
+
+    :cond_f
+    const/16 v8, 0x8
+
+    if-ne v0, v8, :cond_10
+
+    iget-object v0, p1, Lcom/upokecenter/cbor/StringOutput;->builder:Ljava/lang/StringBuilder;
+
+    const-string v2, "\\b"
+
+    invoke-virtual {v0, v2}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+
+    goto/16 :goto_7
+
+    :cond_10
+    const/16 v8, 0xc
+
+    if-ne v0, v8, :cond_11
+
+    iget-object v0, p1, Lcom/upokecenter/cbor/StringOutput;->builder:Ljava/lang/StringBuilder;
+
+    const-string v2, "\\f"
+
+    invoke-virtual {v0, v2}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+
+    goto :goto_7
+
+    :cond_11
+    const/16 v8, 0x9
+
+    if-ne v0, v8, :cond_12
+
+    iget-object v0, p1, Lcom/upokecenter/cbor/StringOutput;->builder:Ljava/lang/StringBuilder;
+
+    const-string v2, "\\t"
+
+    invoke-virtual {v0, v2}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+
+    goto :goto_7
 
     :cond_12
+    const/16 v8, 0x85
+
+    if-ne v0, v8, :cond_13
+
+    iget-object v0, p1, Lcom/upokecenter/cbor/StringOutput;->builder:Ljava/lang/StringBuilder;
+
+    const-string v2, "\\u0085"
+
+    invoke-virtual {v0, v2}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+
+    goto :goto_7
+
+    :cond_13
+    const/16 v8, 0x100
+
+    if-lt v0, v8, :cond_14
+
+    iget-object v8, p1, Lcom/upokecenter/cbor/StringOutput;->builder:Ljava/lang/StringBuilder;
+
+    invoke-virtual {v8, v2}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+
+    shr-int/lit8 v2, v0, 0xc
+
+    and-int/lit8 v2, v2, 0xf
+
+    invoke-virtual {v7, v2}, Ljava/lang/String;->charAt(I)C
+
+    move-result v2
+
+    invoke-virtual {p1, v2}, Lcom/upokecenter/cbor/StringOutput;->WriteCodePoint(I)V
+
+    shr-int/lit8 v2, v0, 0x8
+
+    and-int/lit8 v2, v2, 0xf
+
+    invoke-virtual {v7, v2}, Ljava/lang/String;->charAt(I)C
+
+    move-result v2
+
+    invoke-virtual {p1, v2}, Lcom/upokecenter/cbor/StringOutput;->WriteCodePoint(I)V
+
+    shr-int/lit8 v2, v0, 0x4
+
+    and-int/lit8 v2, v2, 0xf
+
+    invoke-virtual {v7, v2}, Ljava/lang/String;->charAt(I)C
+
+    move-result v2
+
+    invoke-virtual {p1, v2}, Lcom/upokecenter/cbor/StringOutput;->WriteCodePoint(I)V
+
+    and-int/lit8 v0, v0, 0xf
+
+    invoke-virtual {v7, v0}, Ljava/lang/String;->charAt(I)C
+
+    move-result v0
+
+    invoke-virtual {p1, v0}, Lcom/upokecenter/cbor/StringOutput;->WriteCodePoint(I)V
+
+    goto :goto_7
+
+    :cond_14
     iget-object v2, p1, Lcom/upokecenter/cbor/StringOutput;->builder:Ljava/lang/StringBuilder;
 
     const-string v8, "\\u00"
@@ -471,20 +626,20 @@
 
     invoke-virtual {p1, v0}, Lcom/upokecenter/cbor/StringOutput;->WriteCodePoint(I)V
 
-    goto :goto_6
+    goto :goto_7
 
-    :cond_13
-    :goto_5
+    :cond_15
+    :goto_6
     invoke-virtual {p1, v5}, Lcom/upokecenter/cbor/StringOutput;->WriteCodePoint(I)V
 
     invoke-virtual {p1, v0}, Lcom/upokecenter/cbor/StringOutput;->WriteCodePoint(I)V
 
-    :goto_6
+    :goto_7
     add-int/lit8 v1, v1, 0x1
 
     goto/16 :goto_2
 
-    :cond_14
+    :cond_16
     return-void
 .end method
 
@@ -541,7 +696,7 @@
 
     move-result v3
 
-    invoke-static {v3}, Landroidx/constraintlayout/core/SolverVariable$Type$r8$EnumUnboxingUtility;->$enumboxing$ordinal(I)I
+    invoke-static {v3}, Landroidx/camera/camera2/internal/Camera2CameraImpl$InternalState$EnumUnboxingSharedUtility;->ordinal(I)I
 
     move-result v3
 
@@ -748,7 +903,7 @@
 
     move-result v16
 
-    invoke-static/range {v16 .. v16}, Landroidx/constraintlayout/core/SolverVariable$Type$r8$EnumUnboxingUtility;->$enumboxing$ordinal(I)I
+    invoke-static/range {v16 .. v16}, Landroidx/camera/camera2/internal/Camera2CameraImpl$InternalState$EnumUnboxingSharedUtility;->ordinal(I)I
 
     move-result v12
 

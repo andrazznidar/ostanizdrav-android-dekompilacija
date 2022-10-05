@@ -6,7 +6,6 @@
 # annotations
 .annotation system Ldalvik/annotation/MemberClasses;
     value = {
-        Lcom/fasterxml/jackson/databind/introspect/TypeResolutionContext$Empty;,
         Lcom/fasterxml/jackson/databind/introspect/TypeResolutionContext$Basic;
     }
 .end annotation

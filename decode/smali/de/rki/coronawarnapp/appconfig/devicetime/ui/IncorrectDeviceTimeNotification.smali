@@ -200,7 +200,7 @@
 
     check-cast p1, Landroidx/navigation/NavDeepLinkBuilder;
 
-    const v1, 0x7f100002
+    const v1, 0x7f100003
 
     invoke-virtual {p1, v1}, Landroidx/navigation/NavDeepLinkBuilder;->setGraph(I)Landroidx/navigation/NavDeepLinkBuilder;
 
@@ -208,7 +208,7 @@
 
     invoke-virtual {p1, v1}, Landroidx/navigation/NavDeepLinkBuilder;->setComponentName(Ljava/lang/Class;)Landroidx/navigation/NavDeepLinkBuilder;
 
-    const v1, 0x7f0a040e
+    const v1, 0x7f0a0453
 
     invoke-virtual {p1, v1}, Landroidx/navigation/NavDeepLinkBuilder;->setDestination(I)Landroidx/navigation/NavDeepLinkBuilder;
 
@@ -230,7 +230,7 @@
 
     iget-object p1, v0, Lde/rki/coronawarnapp/appconfig/devicetime/ui/IncorrectDeviceTimeNotification;->context:Landroid/content/Context;
 
-    const v2, 0x7f1301a4
+    const v2, 0x7f1301d5
 
     invoke-virtual {p1, v2}, Landroid/content/Context;->getString(I)Ljava/lang/String;
 
@@ -240,7 +240,7 @@
 
     iget-object p1, v0, Lde/rki/coronawarnapp/appconfig/devicetime/ui/IncorrectDeviceTimeNotification;->context:Landroid/content/Context;
 
-    const v2, 0x7f1301a2
+    const v2, 0x7f1301d3
 
     invoke-virtual {p1, v2}, Landroid/content/Context;->getString(I)Ljava/lang/String;
 
@@ -250,7 +250,7 @@
 
     invoke-static {p1, v2}, Lkotlin/jvm/internal/Intrinsics;->checkNotNullExpressionValue(Ljava/lang/Object;Ljava/lang/String;)V
 
-    invoke-static {v1, p1}, Lcom/google/android/gms/internal/nearby/zznn;->setContentTextExpandable(Landroidx/core/app/NotificationCompat$Builder;Ljava/lang/String;)Landroidx/core/app/NotificationCompat$Builder;
+    invoke-static {v1, p1}, Lorg/ejml/ops/DConvertMatrixStruct;->setContentTextExpandable(Landroidx/core/app/NotificationCompat$Builder;Ljava/lang/String;)Landroidx/core/app/NotificationCompat$Builder;
 
     invoke-virtual {v1}, Landroidx/core/app/NotificationCompat$Builder;->build()Landroid/app/Notification;
 

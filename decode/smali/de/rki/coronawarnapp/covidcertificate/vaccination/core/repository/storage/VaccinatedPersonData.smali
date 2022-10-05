@@ -4,9 +4,9 @@
 
 
 # instance fields
-.field private final boosterRule:Lde/rki/coronawarnapp/covidcertificate/validation/core/rule/DccValidationRule;
+.field private final boosterRuleIdentifier:Ljava/lang/String;
     .annotation runtime Lcom/google/gson/annotations/SerializedName;
-        value = "boosterRule"
+        value = "boosterRuleIdentifier"
     .end annotation
 .end field
 
@@ -53,12 +53,12 @@
 
     move-object v0, p0
 
-    invoke-direct/range {v0 .. v5}, Lde/rki/coronawarnapp/covidcertificate/vaccination/core/repository/storage/VaccinatedPersonData;-><init>(Ljava/util/Set;Lde/rki/coronawarnapp/covidcertificate/validation/core/rule/DccValidationRule;Ljava/lang/String;Lorg/joda/time/Instant;I)V
+    invoke-direct/range {v0 .. v5}, Lde/rki/coronawarnapp/covidcertificate/vaccination/core/repository/storage/VaccinatedPersonData;-><init>(Ljava/util/Set;Ljava/lang/String;Ljava/lang/String;Lorg/joda/time/Instant;I)V
 
     return-void
 .end method
 
-.method public constructor <init>(Ljava/util/Set;Lde/rki/coronawarnapp/covidcertificate/validation/core/rule/DccValidationRule;Ljava/lang/String;Lorg/joda/time/Instant;)V
+.method public constructor <init>(Ljava/util/Set;Ljava/lang/String;Ljava/lang/String;Lorg/joda/time/Instant;)V
     .locals 0
     .annotation system Ldalvik/annotation/Signature;
         value = {
@@ -66,7 +66,7 @@
             "Ljava/util/Set<",
             "Lde/rki/coronawarnapp/covidcertificate/vaccination/core/repository/storage/VaccinationContainer;",
             ">;",
-            "Lde/rki/coronawarnapp/covidcertificate/validation/core/rule/DccValidationRule;",
+            "Ljava/lang/String;",
             "Ljava/lang/String;",
             "Lorg/joda/time/Instant;",
             ")V"
@@ -77,7 +77,7 @@
 
     iput-object p1, p0, Lde/rki/coronawarnapp/covidcertificate/vaccination/core/repository/storage/VaccinatedPersonData;->vaccinations:Ljava/util/Set;
 
-    iput-object p2, p0, Lde/rki/coronawarnapp/covidcertificate/vaccination/core/repository/storage/VaccinatedPersonData;->boosterRule:Lde/rki/coronawarnapp/covidcertificate/validation/core/rule/DccValidationRule;
+    iput-object p2, p0, Lde/rki/coronawarnapp/covidcertificate/vaccination/core/repository/storage/VaccinatedPersonData;->boosterRuleIdentifier:Ljava/lang/String;
 
     iput-object p3, p0, Lde/rki/coronawarnapp/covidcertificate/vaccination/core/repository/storage/VaccinatedPersonData;->lastSeenBoosterRuleIdentifier:Ljava/lang/String;
 
@@ -86,7 +86,7 @@
     return-void
 .end method
 
-.method public constructor <init>(Ljava/util/Set;Lde/rki/coronawarnapp/covidcertificate/validation/core/rule/DccValidationRule;Ljava/lang/String;Lorg/joda/time/Instant;I)V
+.method public constructor <init>(Ljava/util/Set;Ljava/lang/String;Ljava/lang/String;Lorg/joda/time/Instant;I)V
     .locals 0
 
     and-int/lit8 p1, p5, 0x1
@@ -111,7 +111,7 @@
 
     iput-object p1, p0, Lde/rki/coronawarnapp/covidcertificate/vaccination/core/repository/storage/VaccinatedPersonData;->vaccinations:Ljava/util/Set;
 
-    iput-object p2, p0, Lde/rki/coronawarnapp/covidcertificate/vaccination/core/repository/storage/VaccinatedPersonData;->boosterRule:Lde/rki/coronawarnapp/covidcertificate/validation/core/rule/DccValidationRule;
+    iput-object p2, p0, Lde/rki/coronawarnapp/covidcertificate/vaccination/core/repository/storage/VaccinatedPersonData;->boosterRuleIdentifier:Ljava/lang/String;
 
     iput-object p2, p0, Lde/rki/coronawarnapp/covidcertificate/vaccination/core/repository/storage/VaccinatedPersonData;->lastSeenBoosterRuleIdentifier:Ljava/lang/String;
 
@@ -120,23 +120,28 @@
     return-void
 .end method
 
-.method public static copy$default(Lde/rki/coronawarnapp/covidcertificate/vaccination/core/repository/storage/VaccinatedPersonData;Ljava/util/Set;Lde/rki/coronawarnapp/covidcertificate/validation/core/rule/DccValidationRule;Ljava/lang/String;Lorg/joda/time/Instant;I)Lde/rki/coronawarnapp/covidcertificate/vaccination/core/repository/storage/VaccinatedPersonData;
+.method public static copy$default(Lde/rki/coronawarnapp/covidcertificate/vaccination/core/repository/storage/VaccinatedPersonData;Ljava/util/Set;Ljava/lang/String;Ljava/lang/String;Lorg/joda/time/Instant;I)Lde/rki/coronawarnapp/covidcertificate/vaccination/core/repository/storage/VaccinatedPersonData;
     .locals 1
 
-    and-int/lit8 v0, p5, 0x1
+    and-int/lit8 p2, p5, 0x1
 
-    if-eqz v0, :cond_0
+    if-eqz p2, :cond_0
 
     iget-object p1, p0, Lde/rki/coronawarnapp/covidcertificate/vaccination/core/repository/storage/VaccinatedPersonData;->vaccinations:Ljava/util/Set;
 
     :cond_0
-    and-int/lit8 v0, p5, 0x2
+    and-int/lit8 p2, p5, 0x2
 
-    if-eqz v0, :cond_1
+    if-eqz p2, :cond_1
 
-    iget-object p2, p0, Lde/rki/coronawarnapp/covidcertificate/vaccination/core/repository/storage/VaccinatedPersonData;->boosterRule:Lde/rki/coronawarnapp/covidcertificate/validation/core/rule/DccValidationRule;
+    iget-object p2, p0, Lde/rki/coronawarnapp/covidcertificate/vaccination/core/repository/storage/VaccinatedPersonData;->boosterRuleIdentifier:Ljava/lang/String;
+
+    goto :goto_0
 
     :cond_1
+    const/4 p2, 0x0
+
+    :goto_0
     and-int/lit8 v0, p5, 0x4
 
     if-eqz v0, :cond_2
@@ -159,7 +164,7 @@
 
     new-instance p0, Lde/rki/coronawarnapp/covidcertificate/vaccination/core/repository/storage/VaccinatedPersonData;
 
-    invoke-direct {p0, p1, p2, p3, p4}, Lde/rki/coronawarnapp/covidcertificate/vaccination/core/repository/storage/VaccinatedPersonData;-><init>(Ljava/util/Set;Lde/rki/coronawarnapp/covidcertificate/validation/core/rule/DccValidationRule;Ljava/lang/String;Lorg/joda/time/Instant;)V
+    invoke-direct {p0, p1, p2, p3, p4}, Lde/rki/coronawarnapp/covidcertificate/vaccination/core/repository/storage/VaccinatedPersonData;-><init>(Ljava/util/Set;Ljava/lang/String;Ljava/lang/String;Lorg/joda/time/Instant;)V
 
     return-object p0
 .end method
@@ -200,9 +205,9 @@
     return v2
 
     :cond_2
-    iget-object v1, p0, Lde/rki/coronawarnapp/covidcertificate/vaccination/core/repository/storage/VaccinatedPersonData;->boosterRule:Lde/rki/coronawarnapp/covidcertificate/validation/core/rule/DccValidationRule;
+    iget-object v1, p0, Lde/rki/coronawarnapp/covidcertificate/vaccination/core/repository/storage/VaccinatedPersonData;->boosterRuleIdentifier:Ljava/lang/String;
 
-    iget-object v3, p1, Lde/rki/coronawarnapp/covidcertificate/vaccination/core/repository/storage/VaccinatedPersonData;->boosterRule:Lde/rki/coronawarnapp/covidcertificate/validation/core/rule/DccValidationRule;
+    iget-object v3, p1, Lde/rki/coronawarnapp/covidcertificate/vaccination/core/repository/storage/VaccinatedPersonData;->boosterRuleIdentifier:Ljava/lang/String;
 
     invoke-static {v1, v3}, Lkotlin/jvm/internal/Intrinsics;->areEqual(Ljava/lang/Object;Ljava/lang/Object;)Z
 
@@ -242,10 +247,10 @@
     return v0
 .end method
 
-.method public final getBoosterRule()Lde/rki/coronawarnapp/covidcertificate/validation/core/rule/DccValidationRule;
+.method public final getBoosterRuleIdentifier()Ljava/lang/String;
     .locals 1
 
-    iget-object v0, p0, Lde/rki/coronawarnapp/covidcertificate/vaccination/core/repository/storage/VaccinatedPersonData;->boosterRule:Lde/rki/coronawarnapp/covidcertificate/validation/core/rule/DccValidationRule;
+    iget-object v0, p0, Lde/rki/coronawarnapp/covidcertificate/vaccination/core/repository/storage/VaccinatedPersonData;->boosterRuleIdentifier:Ljava/lang/String;
 
     return-object v0
 .end method
@@ -264,6 +269,14 @@
     invoke-virtual {v0}, Lde/rki/coronawarnapp/covidcertificate/vaccination/core/repository/storage/VaccinationContainer;->getPersonIdentifier()Lde/rki/coronawarnapp/covidcertificate/common/certificate/CertificatePersonIdentifier;
 
     move-result-object v0
+
+    return-object v0
+.end method
+
+.method public final getLastBoosterNotifiedAt()Lorg/joda/time/Instant;
+    .locals 1
+
+    iget-object v0, p0, Lde/rki/coronawarnapp/covidcertificate/vaccination/core/repository/storage/VaccinatedPersonData;->lastBoosterNotifiedAt:Lorg/joda/time/Instant;
 
     return-object v0
 .end method
@@ -303,7 +316,7 @@
 
     mul-int/lit8 v0, v0, 0x1f
 
-    iget-object v1, p0, Lde/rki/coronawarnapp/covidcertificate/vaccination/core/repository/storage/VaccinatedPersonData;->boosterRule:Lde/rki/coronawarnapp/covidcertificate/validation/core/rule/DccValidationRule;
+    iget-object v1, p0, Lde/rki/coronawarnapp/covidcertificate/vaccination/core/repository/storage/VaccinatedPersonData;->boosterRuleIdentifier:Ljava/lang/String;
 
     const/4 v2, 0x0
 
@@ -314,7 +327,7 @@
     goto :goto_0
 
     :cond_0
-    invoke-virtual {v1}, Lde/rki/coronawarnapp/covidcertificate/validation/core/rule/DccValidationRule;->hashCode()I
+    invoke-virtual {v1}, Ljava/lang/String;->hashCode()I
 
     move-result v1
 
@@ -363,7 +376,7 @@
 
     iget-object v0, p0, Lde/rki/coronawarnapp/covidcertificate/vaccination/core/repository/storage/VaccinatedPersonData;->vaccinations:Ljava/util/Set;
 
-    iget-object v1, p0, Lde/rki/coronawarnapp/covidcertificate/vaccination/core/repository/storage/VaccinatedPersonData;->boosterRule:Lde/rki/coronawarnapp/covidcertificate/validation/core/rule/DccValidationRule;
+    iget-object v1, p0, Lde/rki/coronawarnapp/covidcertificate/vaccination/core/repository/storage/VaccinatedPersonData;->boosterRuleIdentifier:Ljava/lang/String;
 
     iget-object v2, p0, Lde/rki/coronawarnapp/covidcertificate/vaccination/core/repository/storage/VaccinatedPersonData;->lastSeenBoosterRuleIdentifier:Ljava/lang/String;
 
@@ -379,11 +392,11 @@
 
     invoke-virtual {v4, v0}, Ljava/lang/StringBuilder;->append(Ljava/lang/Object;)Ljava/lang/StringBuilder;
 
-    const-string v0, ", boosterRule="
+    const-string v0, ", boosterRuleIdentifier="
 
     invoke-virtual {v4, v0}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
 
-    invoke-virtual {v4, v1}, Ljava/lang/StringBuilder;->append(Ljava/lang/Object;)Ljava/lang/StringBuilder;
+    invoke-virtual {v4, v1}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
 
     const-string v0, ", lastSeenBoosterRuleIdentifier="
 

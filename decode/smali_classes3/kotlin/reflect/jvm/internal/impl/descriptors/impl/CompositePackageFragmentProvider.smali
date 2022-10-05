@@ -6,8 +6,16 @@
 .implements Lkotlin/reflect/jvm/internal/impl/descriptors/PackageFragmentProviderOptimized;
 
 
+# annotations
+.annotation system Ldalvik/annotation/SourceDebugExtension;
+    value = "SMAP\nCompositePackageFragmentProvider.kt\nKotlin\n*S Kotlin\n*F\n+ 1 CompositePackageFragmentProvider.kt\norg/jetbrains/kotlin/descriptors/impl/CompositePackageFragmentProvider\n+ 2 _Collections.kt\nkotlin/collections/CollectionsKt___CollectionsKt\n*L\n1#1,62:1\n1720#2,3:63\n*S KotlinDebug\n*F\n+ 1 CompositePackageFragmentProvider.kt\norg/jetbrains/kotlin/descriptors/impl/CompositePackageFragmentProvider\n*L\n50#1:63,3\n*E\n"
+.end annotation
+
+
 # instance fields
-.field public final providers:Ljava/util/List;
+.field private final debugName:Ljava/lang/String;
+
+.field private final providers:Ljava/util/List;
     .annotation system Ldalvik/annotation/Signature;
         value = {
             "Ljava/util/List<",
@@ -19,21 +27,33 @@
 
 
 # direct methods
-.method public constructor <init>(Ljava/util/List;)V
-    .locals 0
+.method public constructor <init>(Ljava/util/List;Ljava/lang/String;)V
+    .locals 1
     .annotation system Ldalvik/annotation/Signature;
         value = {
             "(",
             "Ljava/util/List<",
             "+",
             "Lkotlin/reflect/jvm/internal/impl/descriptors/PackageFragmentProvider;",
-            ">;)V"
+            ">;",
+            "Ljava/lang/String;",
+            ")V"
         }
     .end annotation
+
+    const-string v0, "providers"
+
+    invoke-static {p1, v0}, Lkotlin/jvm/internal/Intrinsics;->checkNotNullParameter(Ljava/lang/Object;Ljava/lang/String;)V
+
+    const-string v0, "debugName"
+
+    invoke-static {p2, v0}, Lkotlin/jvm/internal/Intrinsics;->checkNotNullParameter(Ljava/lang/Object;Ljava/lang/String;)V
 
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
     iput-object p1, p0, Lkotlin/reflect/jvm/internal/impl/descriptors/impl/CompositePackageFragmentProvider;->providers:Ljava/util/List;
+
+    iput-object p2, p0, Lkotlin/reflect/jvm/internal/impl/descriptors/impl/CompositePackageFragmentProvider;->debugName:Ljava/lang/String;
 
     invoke-interface {p1}, Ljava/util/List;->size()I
 
@@ -59,6 +79,14 @@
             ">;)V"
         }
     .end annotation
+
+    const-string v0, "fqName"
+
+    invoke-static {p1, v0}, Lkotlin/jvm/internal/Intrinsics;->checkNotNullParameter(Ljava/lang/Object;Ljava/lang/String;)V
+
+    const-string v0, "packageFragments"
+
+    invoke-static {p2, v0}, Lkotlin/jvm/internal/Intrinsics;->checkNotNullParameter(Ljava/lang/Object;Ljava/lang/String;)V
 
     iget-object v0, p0, Lkotlin/reflect/jvm/internal/impl/descriptors/impl/CompositePackageFragmentProvider;->providers:Ljava/util/List;
 
@@ -99,6 +127,10 @@
             ">;"
         }
     .end annotation
+
+    const-string v0, "fqName"
+
+    invoke-static {p1, v0}, Lkotlin/jvm/internal/Intrinsics;->checkNotNullParameter(Ljava/lang/Object;Ljava/lang/String;)V
 
     new-instance v0, Ljava/util/ArrayList;
 
@@ -152,6 +184,14 @@
         }
     .end annotation
 
+    const-string v0, "fqName"
+
+    invoke-static {p1, v0}, Lkotlin/jvm/internal/Intrinsics;->checkNotNullParameter(Ljava/lang/Object;Ljava/lang/String;)V
+
+    const-string v0, "nameFilter"
+
+    invoke-static {p2, v0}, Lkotlin/jvm/internal/Intrinsics;->checkNotNullParameter(Ljava/lang/Object;Ljava/lang/String;)V
+
     new-instance v0, Ljava/util/HashSet;
 
     invoke-direct {v0}, Ljava/util/HashSet;-><init>()V
@@ -184,5 +224,67 @@
     goto :goto_0
 
     :cond_0
+    return-object v0
+.end method
+
+.method public isEmpty(Lkotlin/reflect/jvm/internal/impl/name/FqName;)Z
+    .locals 3
+
+    const-string v0, "fqName"
+
+    invoke-static {p1, v0}, Lkotlin/jvm/internal/Intrinsics;->checkNotNullParameter(Ljava/lang/Object;Ljava/lang/String;)V
+
+    iget-object v0, p0, Lkotlin/reflect/jvm/internal/impl/descriptors/impl/CompositePackageFragmentProvider;->providers:Ljava/util/List;
+
+    instance-of v1, v0, Ljava/util/Collection;
+
+    const/4 v2, 0x1
+
+    if-eqz v1, :cond_0
+
+    invoke-interface {v0}, Ljava/util/Collection;->isEmpty()Z
+
+    move-result v1
+
+    if-eqz v1, :cond_0
+
+    goto :goto_0
+
+    :cond_0
+    invoke-interface {v0}, Ljava/lang/Iterable;->iterator()Ljava/util/Iterator;
+
+    move-result-object v0
+
+    :cond_1
+    invoke-interface {v0}, Ljava/util/Iterator;->hasNext()Z
+
+    move-result v1
+
+    if-eqz v1, :cond_2
+
+    invoke-interface {v0}, Ljava/util/Iterator;->next()Ljava/lang/Object;
+
+    move-result-object v1
+
+    check-cast v1, Lkotlin/reflect/jvm/internal/impl/descriptors/PackageFragmentProvider;
+
+    invoke-static {v1, p1}, Lkotlin/reflect/jvm/internal/impl/descriptors/PackageFragmentProviderKt;->isEmpty(Lkotlin/reflect/jvm/internal/impl/descriptors/PackageFragmentProvider;Lkotlin/reflect/jvm/internal/impl/name/FqName;)Z
+
+    move-result v1
+
+    if-nez v1, :cond_1
+
+    const/4 v2, 0x0
+
+    :cond_2
+    :goto_0
+    return v2
+.end method
+
+.method public toString()Ljava/lang/String;
+    .locals 1
+
+    iget-object v0, p0, Lkotlin/reflect/jvm/internal/impl/descriptors/impl/CompositePackageFragmentProvider;->debugName:Ljava/lang/String;
+
     return-object v0
 .end method

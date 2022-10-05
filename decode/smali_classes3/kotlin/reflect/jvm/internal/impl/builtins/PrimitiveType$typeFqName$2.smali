@@ -1,4 +1,4 @@
-.class public final Lkotlin/reflect/jvm/internal/impl/builtins/PrimitiveType$typeFqName$2;
+.class final Lkotlin/reflect/jvm/internal/impl/builtins/PrimitiveType$typeFqName$2;
 .super Lkotlin/jvm/internal/Lambda;
 .source "PrimitiveType.kt"
 
@@ -45,18 +45,34 @@
 
 
 # virtual methods
-.method public invoke()Ljava/lang/Object;
+.method public bridge synthetic invoke()Ljava/lang/Object;
+    .locals 1
+
+    invoke-virtual {p0}, Lkotlin/reflect/jvm/internal/impl/builtins/PrimitiveType$typeFqName$2;->invoke()Lkotlin/reflect/jvm/internal/impl/name/FqName;
+
+    move-result-object v0
+
+    return-object v0
+.end method
+
+.method public final invoke()Lkotlin/reflect/jvm/internal/impl/name/FqName;
     .locals 2
 
     sget-object v0, Lkotlin/reflect/jvm/internal/impl/builtins/StandardNames;->BUILT_INS_PACKAGE_FQ_NAME:Lkotlin/reflect/jvm/internal/impl/name/FqName;
 
     iget-object v1, p0, Lkotlin/reflect/jvm/internal/impl/builtins/PrimitiveType$typeFqName$2;->this$0:Lkotlin/reflect/jvm/internal/impl/builtins/PrimitiveType;
 
-    iget-object v1, v1, Lkotlin/reflect/jvm/internal/impl/builtins/PrimitiveType;->typeName:Lkotlin/reflect/jvm/internal/impl/name/Name;
+    invoke-virtual {v1}, Lkotlin/reflect/jvm/internal/impl/builtins/PrimitiveType;->getTypeName()Lkotlin/reflect/jvm/internal/impl/name/Name;
+
+    move-result-object v1
 
     invoke-virtual {v0, v1}, Lkotlin/reflect/jvm/internal/impl/name/FqName;->child(Lkotlin/reflect/jvm/internal/impl/name/Name;)Lkotlin/reflect/jvm/internal/impl/name/FqName;
 
     move-result-object v0
+
+    const-string v1, "BUILT_INS_PACKAGE_FQ_NAME.child(this.typeName)"
+
+    invoke-static {v0, v1}, Lkotlin/jvm/internal/Intrinsics;->checkNotNullExpressionValue(Ljava/lang/Object;Ljava/lang/String;)V
 
     return-object v0
 .end method

@@ -1,57 +1,20 @@
-.class final Lj$/util/stream/g0;
-.super Lj$/util/stream/i0;
-
-# interfaces
-.implements Lj$/util/stream/m3;
+.class Lj$/util/stream/g0;
+.super Lj$/util/stream/j0;
 
 
 # direct methods
-.method constructor <init>()V
+.method constructor <init>(Lj$/util/stream/k0;Lj$/util/stream/c;II)V
     .locals 0
 
-    invoke-direct {p0}, Lj$/util/stream/i0;-><init>()V
+    invoke-direct {p0, p2, p3, p4}, Lj$/util/stream/j0;-><init>(Lj$/util/stream/c;II)V
 
     return-void
 .end method
 
 
 # virtual methods
-.method public e(J)V
+.method f1(ILj$/util/stream/q2;)Lj$/util/stream/q2;
     .locals 0
 
-    invoke-static {p1, p2}, Ljava/lang/Long;->valueOf(J)Ljava/lang/Long;
-
-    move-result-object p1
-
-    invoke-virtual {p0, p1}, Lj$/util/stream/i0;->i(Ljava/lang/Object;)V
-
-    return-void
-.end method
-
-.method public get()Ljava/lang/Object;
-    .locals 2
-
-    iget-boolean v0, p0, Lj$/util/stream/i0;->a:Z
-
-    if-eqz v0, :cond_0
-
-    iget-object v0, p0, Lj$/util/stream/i0;->b:Ljava/lang/Object;
-
-    check-cast v0, Ljava/lang/Long;
-
-    invoke-virtual {v0}, Ljava/lang/Long;->longValue()J
-
-    move-result-wide v0
-
-    invoke-static {v0, v1}, Lj$/util/k;->d(J)Lj$/util/k;
-
-    move-result-object v0
-
-    goto :goto_0
-
-    :cond_0
-    const/4 v0, 0x0
-
-    :goto_0
-    return-object v0
+    return-object p2
 .end method

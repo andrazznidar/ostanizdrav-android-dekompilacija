@@ -124,7 +124,7 @@
 .method public setBackgroundResource(I)V
     .locals 1
 
-    invoke-super {p0, p1}, Landroid/view/View;->setBackgroundResource(I)V
+    invoke-super {p0, p1}, Landroid/widget/ToggleButton;->setBackgroundResource(I)V
 
     iget-object v0, p0, Landroidx/appcompat/widget/AppCompatToggleButton;->mBackgroundTintHelper:Landroidx/appcompat/widget/AppCompatBackgroundHelper;
 

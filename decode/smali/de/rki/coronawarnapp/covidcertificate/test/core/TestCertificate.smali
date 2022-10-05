@@ -39,3 +39,9 @@
 
 .method public abstract isCertificateRetrievalPending()Z
 .end method
+
+.method public abstract isPCRTestCertificate()Z
+.end method
+
+.method public abstract isRapidAntigenTestCertificate()Z
+.end method

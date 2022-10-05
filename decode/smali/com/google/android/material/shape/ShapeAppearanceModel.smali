@@ -282,7 +282,7 @@
 
     invoke-direct {v5}, Lcom/google/android/material/shape/ShapeAppearanceModel$Builder;-><init>()V
 
-    invoke-static {p2}, Lcom/google/android/material/shape/MaterialShapeUtils;->createCornerTreatment(I)Lcom/google/android/material/shape/CornerTreatment;
+    invoke-static {p2}, Lcom/google/common/base/Preconditions;->createCornerTreatment(I)Lcom/google/android/material/shape/CornerTreatment;
 
     move-result-object p2
 
@@ -292,7 +292,7 @@
 
     iput-object v2, v5, Lcom/google/android/material/shape/ShapeAppearanceModel$Builder;->topLeftCornerSize:Lcom/google/android/material/shape/CornerSize;
 
-    invoke-static {v0}, Lcom/google/android/material/shape/MaterialShapeUtils;->createCornerTreatment(I)Lcom/google/android/material/shape/CornerTreatment;
+    invoke-static {v0}, Lcom/google/common/base/Preconditions;->createCornerTreatment(I)Lcom/google/android/material/shape/CornerTreatment;
 
     move-result-object p2
 
@@ -302,7 +302,7 @@
 
     iput-object v3, v5, Lcom/google/android/material/shape/ShapeAppearanceModel$Builder;->topRightCornerSize:Lcom/google/android/material/shape/CornerSize;
 
-    invoke-static {v1}, Lcom/google/android/material/shape/MaterialShapeUtils;->createCornerTreatment(I)Lcom/google/android/material/shape/CornerTreatment;
+    invoke-static {v1}, Lcom/google/common/base/Preconditions;->createCornerTreatment(I)Lcom/google/android/material/shape/CornerTreatment;
 
     move-result-object p2
 
@@ -312,7 +312,7 @@
 
     iput-object v4, v5, Lcom/google/android/material/shape/ShapeAppearanceModel$Builder;->bottomRightCornerSize:Lcom/google/android/material/shape/CornerSize;
 
-    invoke-static {p1}, Lcom/google/android/material/shape/MaterialShapeUtils;->createCornerTreatment(I)Lcom/google/android/material/shape/CornerTreatment;
+    invoke-static {p1}, Lcom/google/common/base/Preconditions;->createCornerTreatment(I)Lcom/google/android/material/shape/CornerTreatment;
 
     move-result-object p1
 
@@ -334,6 +334,24 @@
     invoke-virtual {p0}, Landroid/content/res/TypedArray;->recycle()V
 
     throw p1
+.end method
+
+.method public static builder(Landroid/content/Context;Landroid/util/AttributeSet;II)Lcom/google/android/material/shape/ShapeAppearanceModel$Builder;
+    .locals 2
+
+    new-instance v0, Lcom/google/android/material/shape/AbsoluteCornerSize;
+
+    const/4 v1, 0x0
+
+    int-to-float v1, v1
+
+    invoke-direct {v0, v1}, Lcom/google/android/material/shape/AbsoluteCornerSize;-><init>(F)V
+
+    invoke-static {p0, p1, p2, p3, v0}, Lcom/google/android/material/shape/ShapeAppearanceModel;->builder(Landroid/content/Context;Landroid/util/AttributeSet;IILcom/google/android/material/shape/CornerSize;)Lcom/google/android/material/shape/ShapeAppearanceModel$Builder;
+
+    move-result-object p0
+
+    return-object p0
 .end method
 
 .method public static builder(Landroid/content/Context;Landroid/util/AttributeSet;IILcom/google/android/material/shape/CornerSize;)Lcom/google/android/material/shape/ShapeAppearanceModel$Builder;
@@ -594,7 +612,13 @@
 
     invoke-direct {v0, p0}, Lcom/google/android/material/shape/ShapeAppearanceModel$Builder;-><init>(Lcom/google/android/material/shape/ShapeAppearanceModel;)V
 
-    invoke-virtual {v0, p1}, Lcom/google/android/material/shape/ShapeAppearanceModel$Builder;->setAllCornerSizes(F)Lcom/google/android/material/shape/ShapeAppearanceModel$Builder;
+    invoke-virtual {v0, p1}, Lcom/google/android/material/shape/ShapeAppearanceModel$Builder;->setTopLeftCornerSize(F)Lcom/google/android/material/shape/ShapeAppearanceModel$Builder;
+
+    invoke-virtual {v0, p1}, Lcom/google/android/material/shape/ShapeAppearanceModel$Builder;->setTopRightCornerSize(F)Lcom/google/android/material/shape/ShapeAppearanceModel$Builder;
+
+    invoke-virtual {v0, p1}, Lcom/google/android/material/shape/ShapeAppearanceModel$Builder;->setBottomRightCornerSize(F)Lcom/google/android/material/shape/ShapeAppearanceModel$Builder;
+
+    invoke-virtual {v0, p1}, Lcom/google/android/material/shape/ShapeAppearanceModel$Builder;->setBottomLeftCornerSize(F)Lcom/google/android/material/shape/ShapeAppearanceModel$Builder;
 
     invoke-virtual {v0}, Lcom/google/android/material/shape/ShapeAppearanceModel$Builder;->build()Lcom/google/android/material/shape/ShapeAppearanceModel;
 

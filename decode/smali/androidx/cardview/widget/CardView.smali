@@ -41,9 +41,9 @@
 
     sput-object v0, Landroidx/cardview/widget/CardView;->COLOR_BACKGROUND_ATTR:[I
 
-    new-instance v0, Landroidx/cardview/widget/CardViewApi21Impl;
+    new-instance v0, Lorg/ejml/sparse/csc/CommonOps_DSCC;
 
-    invoke-direct {v0}, Landroidx/cardview/widget/CardViewApi21Impl;-><init>()V
+    invoke-direct {v0}, Lorg/ejml/sparse/csc/CommonOps_DSCC;-><init>()V
 
     sput-object v0, Landroidx/cardview/widget/CardView;->IMPL:Landroidx/cardview/widget/CardViewImpl;
 
@@ -264,7 +264,7 @@
 
     sget-object p1, Landroidx/cardview/widget/CardView;->IMPL:Landroidx/cardview/widget/CardViewImpl;
 
-    check-cast p1, Landroidx/cardview/widget/CardViewApi21Impl;
+    check-cast p1, Lorg/ejml/sparse/csc/CommonOps_DSCC;
 
     new-instance v1, Landroidx/cardview/widget/RoundRectDrawable;
 
@@ -278,7 +278,7 @@
 
     invoke-virtual {p0, v5}, Landroid/view/View;->setElevation(F)V
 
-    invoke-virtual {p1, v2, v4}, Landroidx/cardview/widget/CardViewApi21Impl;->setMaxElevation(Landroidx/cardview/widget/CardViewDelegate;F)V
+    invoke-virtual {p1, v2, v4}, Lorg/ejml/sparse/csc/CommonOps_DSCC;->setMaxElevation(Landroidx/cardview/widget/CardViewDelegate;F)V
 
     return-void
 .end method
@@ -286,7 +286,7 @@
 .method public static synthetic access$001(Landroidx/cardview/widget/CardView;IIII)V
     .locals 0
 
-    invoke-super {p0, p1, p2, p3, p4}, Landroid/view/View;->setPadding(IIII)V
+    invoke-super {p0, p1, p2, p3, p4}, Landroid/widget/FrameLayout;->setPadding(IIII)V
 
     return-void
 .end method
@@ -300,9 +300,9 @@
 
     iget-object v1, p0, Landroidx/cardview/widget/CardView;->mCardViewDelegate:Landroidx/cardview/widget/CardViewDelegate;
 
-    check-cast v0, Landroidx/cardview/widget/CardViewApi21Impl;
+    check-cast v0, Lorg/ejml/sparse/csc/CommonOps_DSCC;
 
-    invoke-virtual {v0, v1}, Landroidx/cardview/widget/CardViewApi21Impl;->getCardBackground(Landroidx/cardview/widget/CardViewDelegate;)Landroidx/cardview/widget/RoundRectDrawable;
+    invoke-virtual {v0, v1}, Lorg/ejml/sparse/csc/CommonOps_DSCC;->getCardBackground(Landroidx/cardview/widget/CardViewDelegate;)Landroidx/cardview/widget/RoundRectDrawable;
 
     move-result-object v0
 
@@ -374,9 +374,9 @@
 
     iget-object v1, p0, Landroidx/cardview/widget/CardView;->mCardViewDelegate:Landroidx/cardview/widget/CardViewDelegate;
 
-    check-cast v0, Landroidx/cardview/widget/CardViewApi21Impl;
+    check-cast v0, Lorg/ejml/sparse/csc/CommonOps_DSCC;
 
-    invoke-virtual {v0, v1}, Landroidx/cardview/widget/CardViewApi21Impl;->getMaxElevation(Landroidx/cardview/widget/CardViewDelegate;)F
+    invoke-virtual {v0, v1}, Lorg/ejml/sparse/csc/CommonOps_DSCC;->getMaxElevation(Landroidx/cardview/widget/CardViewDelegate;)F
 
     move-result v0
 
@@ -398,9 +398,9 @@
 
     iget-object v1, p0, Landroidx/cardview/widget/CardView;->mCardViewDelegate:Landroidx/cardview/widget/CardViewDelegate;
 
-    check-cast v0, Landroidx/cardview/widget/CardViewApi21Impl;
+    check-cast v0, Lorg/ejml/sparse/csc/CommonOps_DSCC;
 
-    invoke-virtual {v0, v1}, Landroidx/cardview/widget/CardViewApi21Impl;->getRadius(Landroidx/cardview/widget/CardViewDelegate;)F
+    invoke-virtual {v0, v1}, Lorg/ejml/sparse/csc/CommonOps_DSCC;->getRadius(Landroidx/cardview/widget/CardViewDelegate;)F
 
     move-result v0
 
@@ -434,9 +434,9 @@
 
     move-result-object p1
 
-    check-cast v0, Landroidx/cardview/widget/CardViewApi21Impl;
+    check-cast v0, Lorg/ejml/sparse/csc/CommonOps_DSCC;
 
-    invoke-virtual {v0, v1}, Landroidx/cardview/widget/CardViewApi21Impl;->getCardBackground(Landroidx/cardview/widget/CardViewDelegate;)Landroidx/cardview/widget/RoundRectDrawable;
+    invoke-virtual {v0, v1}, Lorg/ejml/sparse/csc/CommonOps_DSCC;->getCardBackground(Landroidx/cardview/widget/CardViewDelegate;)Landroidx/cardview/widget/RoundRectDrawable;
 
     move-result-object v0
 
@@ -454,9 +454,9 @@
 
     iget-object v1, p0, Landroidx/cardview/widget/CardView;->mCardViewDelegate:Landroidx/cardview/widget/CardViewDelegate;
 
-    check-cast v0, Landroidx/cardview/widget/CardViewApi21Impl;
+    check-cast v0, Lorg/ejml/sparse/csc/CommonOps_DSCC;
 
-    invoke-virtual {v0, v1}, Landroidx/cardview/widget/CardViewApi21Impl;->getCardBackground(Landroidx/cardview/widget/CardViewDelegate;)Landroidx/cardview/widget/RoundRectDrawable;
+    invoke-virtual {v0, v1}, Lorg/ejml/sparse/csc/CommonOps_DSCC;->getCardBackground(Landroidx/cardview/widget/CardViewDelegate;)Landroidx/cardview/widget/RoundRectDrawable;
 
     move-result-object v0
 
@@ -488,9 +488,9 @@
 
     iget-object v1, p0, Landroidx/cardview/widget/CardView;->mCardViewDelegate:Landroidx/cardview/widget/CardViewDelegate;
 
-    check-cast v0, Landroidx/cardview/widget/CardViewApi21Impl;
+    check-cast v0, Lorg/ejml/sparse/csc/CommonOps_DSCC;
 
-    invoke-virtual {v0, v1, p1}, Landroidx/cardview/widget/CardViewApi21Impl;->setMaxElevation(Landroidx/cardview/widget/CardViewDelegate;F)V
+    invoke-virtual {v0, v1, p1}, Lorg/ejml/sparse/csc/CommonOps_DSCC;->setMaxElevation(Landroidx/cardview/widget/CardViewDelegate;F)V
 
     return-void
 .end method
@@ -500,7 +500,7 @@
 
     iput p1, p0, Landroidx/cardview/widget/CardView;->mUserSetMinHeight:I
 
-    invoke-super {p0, p1}, Landroid/view/View;->setMinimumHeight(I)V
+    invoke-super {p0, p1}, Landroid/widget/FrameLayout;->setMinimumHeight(I)V
 
     return-void
 .end method
@@ -510,7 +510,7 @@
 
     iput p1, p0, Landroidx/cardview/widget/CardView;->mUserSetMinWidth:I
 
-    invoke-super {p0, p1}, Landroid/view/View;->setMinimumWidth(I)V
+    invoke-super {p0, p1}, Landroid/widget/FrameLayout;->setMinimumWidth(I)V
 
     return-void
 .end method
@@ -540,15 +540,15 @@
 
     iget-object v0, p0, Landroidx/cardview/widget/CardView;->mCardViewDelegate:Landroidx/cardview/widget/CardViewDelegate;
 
-    check-cast p1, Landroidx/cardview/widget/CardViewApi21Impl;
+    check-cast p1, Lorg/ejml/sparse/csc/CommonOps_DSCC;
 
-    invoke-virtual {p1, v0}, Landroidx/cardview/widget/CardViewApi21Impl;->getCardBackground(Landroidx/cardview/widget/CardViewDelegate;)Landroidx/cardview/widget/RoundRectDrawable;
+    invoke-virtual {p1, v0}, Lorg/ejml/sparse/csc/CommonOps_DSCC;->getCardBackground(Landroidx/cardview/widget/CardViewDelegate;)Landroidx/cardview/widget/RoundRectDrawable;
 
     move-result-object v1
 
     iget v1, v1, Landroidx/cardview/widget/RoundRectDrawable;->mPadding:F
 
-    invoke-virtual {p1, v0, v1}, Landroidx/cardview/widget/CardViewApi21Impl;->setMaxElevation(Landroidx/cardview/widget/CardViewDelegate;F)V
+    invoke-virtual {p1, v0, v1}, Lorg/ejml/sparse/csc/CommonOps_DSCC;->setMaxElevation(Landroidx/cardview/widget/CardViewDelegate;F)V
 
     :cond_0
     return-void
@@ -561,9 +561,9 @@
 
     iget-object v1, p0, Landroidx/cardview/widget/CardView;->mCardViewDelegate:Landroidx/cardview/widget/CardViewDelegate;
 
-    check-cast v0, Landroidx/cardview/widget/CardViewApi21Impl;
+    check-cast v0, Lorg/ejml/sparse/csc/CommonOps_DSCC;
 
-    invoke-virtual {v0, v1}, Landroidx/cardview/widget/CardViewApi21Impl;->getCardBackground(Landroidx/cardview/widget/CardViewDelegate;)Landroidx/cardview/widget/RoundRectDrawable;
+    invoke-virtual {v0, v1}, Lorg/ejml/sparse/csc/CommonOps_DSCC;->getCardBackground(Landroidx/cardview/widget/CardViewDelegate;)Landroidx/cardview/widget/RoundRectDrawable;
 
     move-result-object v0
 
@@ -601,15 +601,15 @@
 
     iget-object v0, p0, Landroidx/cardview/widget/CardView;->mCardViewDelegate:Landroidx/cardview/widget/CardViewDelegate;
 
-    check-cast p1, Landroidx/cardview/widget/CardViewApi21Impl;
+    check-cast p1, Lorg/ejml/sparse/csc/CommonOps_DSCC;
 
-    invoke-virtual {p1, v0}, Landroidx/cardview/widget/CardViewApi21Impl;->getCardBackground(Landroidx/cardview/widget/CardViewDelegate;)Landroidx/cardview/widget/RoundRectDrawable;
+    invoke-virtual {p1, v0}, Lorg/ejml/sparse/csc/CommonOps_DSCC;->getCardBackground(Landroidx/cardview/widget/CardViewDelegate;)Landroidx/cardview/widget/RoundRectDrawable;
 
     move-result-object v1
 
     iget v1, v1, Landroidx/cardview/widget/RoundRectDrawable;->mPadding:F
 
-    invoke-virtual {p1, v0, v1}, Landroidx/cardview/widget/CardViewApi21Impl;->setMaxElevation(Landroidx/cardview/widget/CardViewDelegate;F)V
+    invoke-virtual {p1, v0, v1}, Lorg/ejml/sparse/csc/CommonOps_DSCC;->setMaxElevation(Landroidx/cardview/widget/CardViewDelegate;F)V
 
     :cond_0
     return-void

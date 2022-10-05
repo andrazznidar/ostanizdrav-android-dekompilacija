@@ -57,9 +57,7 @@
 
     :cond_0
     :try_start_0
-    iget-object v0, p0, Lokio/ForwardingSink;->delegate:Lokio/Sink;
-
-    invoke-interface {v0}, Lokio/Sink;->close()V
+    invoke-super {p0}, Lokio/ForwardingSink;->close()V
     :try_end_0
     .catch Ljava/io/IOException; {:try_start_0 .. :try_end_0} :catch_0
 

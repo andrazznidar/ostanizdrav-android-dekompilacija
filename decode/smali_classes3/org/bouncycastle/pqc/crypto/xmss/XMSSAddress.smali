@@ -11,13 +11,13 @@
 
 
 # instance fields
-.field public final keyAndMask:I
+.field private final keyAndMask:I
 
-.field public final layerAddress:I
+.field private final layerAddress:I
 
-.field public final treeAddress:J
+.field private final treeAddress:J
 
-.field public final type:I
+.field private final type:I
 
 
 # direct methods
@@ -26,19 +26,27 @@
 
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
-    iget v0, p1, Lorg/bouncycastle/pqc/crypto/xmss/XMSSAddress$Builder;->layerAddress:I
+    invoke-static {p1}, Lorg/bouncycastle/pqc/crypto/xmss/XMSSAddress$Builder;->access$000(Lorg/bouncycastle/pqc/crypto/xmss/XMSSAddress$Builder;)I
+
+    move-result v0
 
     iput v0, p0, Lorg/bouncycastle/pqc/crypto/xmss/XMSSAddress;->layerAddress:I
 
-    iget-wide v0, p1, Lorg/bouncycastle/pqc/crypto/xmss/XMSSAddress$Builder;->treeAddress:J
+    invoke-static {p1}, Lorg/bouncycastle/pqc/crypto/xmss/XMSSAddress$Builder;->access$100(Lorg/bouncycastle/pqc/crypto/xmss/XMSSAddress$Builder;)J
+
+    move-result-wide v0
 
     iput-wide v0, p0, Lorg/bouncycastle/pqc/crypto/xmss/XMSSAddress;->treeAddress:J
 
-    iget v0, p1, Lorg/bouncycastle/pqc/crypto/xmss/XMSSAddress$Builder;->type:I
+    invoke-static {p1}, Lorg/bouncycastle/pqc/crypto/xmss/XMSSAddress$Builder;->access$200(Lorg/bouncycastle/pqc/crypto/xmss/XMSSAddress$Builder;)I
+
+    move-result v0
 
     iput v0, p0, Lorg/bouncycastle/pqc/crypto/xmss/XMSSAddress;->type:I
 
-    iget p1, p1, Lorg/bouncycastle/pqc/crypto/xmss/XMSSAddress$Builder;->keyAndMask:I
+    invoke-static {p1}, Lorg/bouncycastle/pqc/crypto/xmss/XMSSAddress$Builder;->access$300(Lorg/bouncycastle/pqc/crypto/xmss/XMSSAddress$Builder;)I
+
+    move-result p1
 
     iput p1, p0, Lorg/bouncycastle/pqc/crypto/xmss/XMSSAddress;->keyAndMask:I
 
@@ -47,6 +55,38 @@
 
 
 # virtual methods
+.method public final getKeyAndMask()I
+    .locals 1
+
+    iget v0, p0, Lorg/bouncycastle/pqc/crypto/xmss/XMSSAddress;->keyAndMask:I
+
+    return v0
+.end method
+
+.method public final getLayerAddress()I
+    .locals 1
+
+    iget v0, p0, Lorg/bouncycastle/pqc/crypto/xmss/XMSSAddress;->layerAddress:I
+
+    return v0
+.end method
+
+.method public final getTreeAddress()J
+    .locals 2
+
+    iget-wide v0, p0, Lorg/bouncycastle/pqc/crypto/xmss/XMSSAddress;->treeAddress:J
+
+    return-wide v0
+.end method
+
+.method public final getType()I
+    .locals 1
+
+    iget v0, p0, Lorg/bouncycastle/pqc/crypto/xmss/XMSSAddress;->type:I
+
+    return v0
+.end method
+
 .method public toByteArray()[B
     .locals 4
 

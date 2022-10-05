@@ -33,6 +33,13 @@
 .field public index:I
 
 .field public final synthetic this$0:Lkotlin/collections/AbstractList;
+    .annotation system Ldalvik/annotation/Signature;
+        value = {
+            "Lkotlin/collections/AbstractList<",
+            "TE;>;"
+        }
+    .end annotation
+.end field
 
 
 # direct methods
@@ -55,6 +62,18 @@
 # virtual methods
 .method public synthetic forEachRemaining(Lj$/util/function/Consumer;)V
     .locals 0
+
+    invoke-static {p0, p1}, Lj$/util/Iterator$-CC;->$default$forEachRemaining(Ljava/util/Iterator;Lj$/util/function/Consumer;)V
+
+    return-void
+.end method
+
+.method public synthetic forEachRemaining(Ljava/util/function/Consumer;)V
+    .locals 0
+
+    invoke-static {p1}, Lj$/util/function/Consumer$VivifiedWrapper;->convert(Ljava/util/function/Consumer;)Lj$/util/function/Consumer;
+
+    move-result-object p1
 
     invoke-static {p0, p1}, Lj$/util/Iterator$-CC;->$default$forEachRemaining(Ljava/util/Iterator;Lj$/util/function/Consumer;)V
 

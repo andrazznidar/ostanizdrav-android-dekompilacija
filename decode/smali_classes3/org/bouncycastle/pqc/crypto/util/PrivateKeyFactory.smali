@@ -3,65 +3,106 @@
 
 
 # direct methods
-.method public static createKey(Lorg/bouncycastle/asn1/pkcs/PrivateKeyInfo;)Lorg/bouncycastle/crypto/params/AsymmetricKeyParameter;
-    .locals 9
+.method public constructor <init>()V
+    .locals 0
+
+    invoke-direct {p0}, Ljava/lang/Object;-><init>()V
+
+    return-void
+.end method
+
+.method private static convert([B)[S
+    .locals 5
+
+    array-length v0, p0
+
+    div-int/lit8 v0, v0, 0x2
+
+    new-array v1, v0, [S
+
+    const/4 v2, 0x0
+
+    :goto_0
+    if-eq v2, v0, :cond_0
+
+    mul-int/lit8 v3, v2, 0x2
+
+    aget-byte v4, p0, v3
+
+    and-int/lit16 v4, v4, 0xff
+
+    add-int/lit8 v3, v3, 0x1
+
+    aget-byte v3, p0, v3
+
+    and-int/lit16 v3, v3, 0xff
+
+    shl-int/lit8 v3, v3, 0x8
+
+    or-int/2addr v3, v4
+
+    int-to-short v3, v3
+
+    aput-short v3, v1, v2
+
+    add-int/lit8 v2, v2, 0x1
+
+    goto :goto_0
+
+    :cond_0
+    return-object v1
+.end method
+
+.method public static createKey(Ljava/io/InputStream;)Lorg/bouncycastle/crypto/params/AsymmetricKeyParameter;
+    .locals 1
     .annotation system Ldalvik/annotation/Throws;
         value = {
             Ljava/io/IOException;
         }
     .end annotation
 
-    iget-object v0, p0, Lorg/bouncycastle/asn1/pkcs/PrivateKeyInfo;->privateKeyAlgorithm:Lorg/bouncycastle/asn1/x509/AlgorithmIdentifier;
+    new-instance v0, Lorg/bouncycastle/asn1/ASN1InputStream;
 
-    iget-object v0, v0, Lorg/bouncycastle/asn1/x509/AlgorithmIdentifier;->algorithm:Lorg/bouncycastle/asn1/ASN1ObjectIdentifier;
+    invoke-direct {v0, p0}, Lorg/bouncycastle/asn1/ASN1InputStream;-><init>(Ljava/io/InputStream;)V
+
+    invoke-virtual {v0}, Lorg/bouncycastle/asn1/ASN1InputStream;->readObject()Lorg/bouncycastle/asn1/ASN1Primitive;
+
+    move-result-object p0
+
+    invoke-static {p0}, Lorg/bouncycastle/asn1/pkcs/PrivateKeyInfo;->getInstance(Ljava/lang/Object;)Lorg/bouncycastle/asn1/pkcs/PrivateKeyInfo;
+
+    move-result-object p0
+
+    invoke-static {p0}, Lorg/bouncycastle/pqc/crypto/util/PrivateKeyFactory;->createKey(Lorg/bouncycastle/asn1/pkcs/PrivateKeyInfo;)Lorg/bouncycastle/crypto/params/AsymmetricKeyParameter;
+
+    move-result-object p0
+
+    return-object p0
+.end method
+
+.method public static createKey(Lorg/bouncycastle/asn1/pkcs/PrivateKeyInfo;)Lorg/bouncycastle/crypto/params/AsymmetricKeyParameter;
+    .locals 8
+    .annotation system Ldalvik/annotation/Throws;
+        value = {
+            Ljava/io/IOException;
+        }
+    .end annotation
+
+    invoke-virtual {p0}, Lorg/bouncycastle/asn1/pkcs/PrivateKeyInfo;->getPrivateKeyAlgorithm()Lorg/bouncycastle/asn1/x509/AlgorithmIdentifier;
+
+    move-result-object v0
+
+    invoke-virtual {v0}, Lorg/bouncycastle/asn1/x509/AlgorithmIdentifier;->getAlgorithm()Lorg/bouncycastle/asn1/ASN1ObjectIdentifier;
+
+    move-result-object v0
 
     sget-object v1, Lorg/bouncycastle/asn1/bc/BCObjectIdentifiers;->qTESLA:Lorg/bouncycastle/asn1/ASN1ObjectIdentifier;
 
-    iget-object v2, v0, Lorg/bouncycastle/asn1/ASN1ObjectIdentifier;->identifier:Ljava/lang/String;
-
-    iget-object v1, v1, Lorg/bouncycastle/asn1/ASN1ObjectIdentifier;->identifier:Ljava/lang/String;
-
-    invoke-virtual {v2}, Ljava/lang/String;->length()I
-
-    move-result v3
-
-    invoke-virtual {v1}, Ljava/lang/String;->length()I
-
-    move-result v4
-
-    const/4 v5, 0x1
-
-    const/4 v6, 0x0
-
-    if-le v3, v4, :cond_0
-
-    invoke-virtual {v1}, Ljava/lang/String;->length()I
-
-    move-result v3
-
-    invoke-virtual {v2, v3}, Ljava/lang/String;->charAt(I)C
-
-    move-result v3
-
-    const/16 v4, 0x2e
-
-    if-ne v3, v4, :cond_0
-
-    invoke-virtual {v2, v1}, Ljava/lang/String;->startsWith(Ljava/lang/String;)Z
+    invoke-virtual {v0, v1}, Lorg/bouncycastle/asn1/ASN1ObjectIdentifier;->on(Lorg/bouncycastle/asn1/ASN1ObjectIdentifier;)Z
 
     move-result v1
 
     if-eqz v1, :cond_0
-
-    move v1, v5
-
-    goto :goto_0
-
-    :cond_0
-    move v1, v6
-
-    :goto_0
-    if-eqz v1, :cond_1
 
     invoke-virtual {p0}, Lorg/bouncycastle/asn1/pkcs/PrivateKeyInfo;->parsePrivateKey()Lorg/bouncycastle/asn1/ASN1Encodable;
 
@@ -73,38 +114,30 @@
 
     new-instance v1, Lorg/bouncycastle/pqc/crypto/qtesla/QTESLAPrivateKeyParameters;
 
-    iget-object p0, p0, Lorg/bouncycastle/asn1/pkcs/PrivateKeyInfo;->privateKeyAlgorithm:Lorg/bouncycastle/asn1/x509/AlgorithmIdentifier;
-
-    sget-object v2, Lorg/bouncycastle/pqc/crypto/util/Utils;->categories:Ljava/util/Map;
-
-    iget-object p0, p0, Lorg/bouncycastle/asn1/x509/AlgorithmIdentifier;->algorithm:Lorg/bouncycastle/asn1/ASN1ObjectIdentifier;
-
-    check-cast v2, Ljava/util/HashMap;
-
-    invoke-virtual {v2, p0}, Ljava/util/HashMap;->get(Ljava/lang/Object;)Ljava/lang/Object;
+    invoke-virtual {p0}, Lorg/bouncycastle/asn1/pkcs/PrivateKeyInfo;->getPrivateKeyAlgorithm()Lorg/bouncycastle/asn1/x509/AlgorithmIdentifier;
 
     move-result-object p0
 
-    check-cast p0, Ljava/lang/Integer;
-
-    invoke-virtual {p0}, Ljava/lang/Integer;->intValue()I
+    invoke-static {p0}, Lorg/bouncycastle/pqc/crypto/util/Utils;->qTeslaLookupSecurityCategory(Lorg/bouncycastle/asn1/x509/AlgorithmIdentifier;)I
 
     move-result p0
 
-    iget-object v0, v0, Lorg/bouncycastle/asn1/ASN1OctetString;->string:[B
+    invoke-virtual {v0}, Lorg/bouncycastle/asn1/ASN1OctetString;->getOctets()[B
+
+    move-result-object v0
 
     invoke-direct {v1, p0, v0}, Lorg/bouncycastle/pqc/crypto/qtesla/QTESLAPrivateKeyParameters;-><init>(I[B)V
 
     return-object v1
 
-    :cond_1
+    :cond_0
     sget-object v1, Lorg/bouncycastle/asn1/bc/BCObjectIdentifiers;->sphincs256:Lorg/bouncycastle/asn1/ASN1ObjectIdentifier;
 
     invoke-virtual {v0, v1}, Lorg/bouncycastle/asn1/ASN1Primitive;->equals(Lorg/bouncycastle/asn1/ASN1Primitive;)Z
 
     move-result v1
 
-    if-eqz v1, :cond_2
+    if-eqz v1, :cond_1
 
     new-instance v0, Lorg/bouncycastle/pqc/crypto/sphincs/SPHINCSPrivateKeyParameters;
 
@@ -116,11 +149,17 @@
 
     move-result-object v1
 
-    iget-object v1, v1, Lorg/bouncycastle/asn1/ASN1OctetString;->string:[B
+    invoke-virtual {v1}, Lorg/bouncycastle/asn1/ASN1OctetString;->getOctets()[B
 
-    iget-object p0, p0, Lorg/bouncycastle/asn1/pkcs/PrivateKeyInfo;->privateKeyAlgorithm:Lorg/bouncycastle/asn1/x509/AlgorithmIdentifier;
+    move-result-object v1
 
-    iget-object p0, p0, Lorg/bouncycastle/asn1/x509/AlgorithmIdentifier;->parameters:Lorg/bouncycastle/asn1/ASN1Encodable;
+    invoke-virtual {p0}, Lorg/bouncycastle/asn1/pkcs/PrivateKeyInfo;->getPrivateKeyAlgorithm()Lorg/bouncycastle/asn1/x509/AlgorithmIdentifier;
+
+    move-result-object p0
+
+    invoke-virtual {p0}, Lorg/bouncycastle/asn1/x509/AlgorithmIdentifier;->getParameters()Lorg/bouncycastle/asn1/ASN1Encodable;
+
+    move-result-object p0
 
     invoke-static {p0}, Lorg/bouncycastle/pqc/asn1/SPHINCS256KeyParams;->getInstance(Ljava/lang/Object;)Lorg/bouncycastle/pqc/asn1/SPHINCS256KeyParams;
 
@@ -134,14 +173,14 @@
 
     return-object v0
 
-    :cond_2
+    :cond_1
     sget-object v1, Lorg/bouncycastle/asn1/bc/BCObjectIdentifiers;->newHope:Lorg/bouncycastle/asn1/ASN1ObjectIdentifier;
 
     invoke-virtual {v0, v1}, Lorg/bouncycastle/asn1/ASN1Primitive;->equals(Lorg/bouncycastle/asn1/ASN1Primitive;)Z
 
     move-result v1
 
-    if-eqz v1, :cond_4
+    if-eqz v1, :cond_2
 
     new-instance v0, Lorg/bouncycastle/pqc/crypto/newhope/NHPrivateKeyParameters;
 
@@ -153,54 +192,26 @@
 
     move-result-object p0
 
-    iget-object p0, p0, Lorg/bouncycastle/asn1/ASN1OctetString;->string:[B
+    invoke-virtual {p0}, Lorg/bouncycastle/asn1/ASN1OctetString;->getOctets()[B
 
-    array-length v1, p0
+    move-result-object p0
 
-    div-int/lit8 v1, v1, 0x2
+    invoke-static {p0}, Lorg/bouncycastle/pqc/crypto/util/PrivateKeyFactory;->convert([B)[S
 
-    new-array v2, v1, [S
+    move-result-object p0
 
-    :goto_1
-    if-eq v6, v1, :cond_3
-
-    mul-int/lit8 v3, v6, 0x2
-
-    aget-byte v4, p0, v3
-
-    and-int/lit16 v4, v4, 0xff
-
-    add-int/2addr v3, v5
-
-    aget-byte v3, p0, v3
-
-    and-int/lit16 v3, v3, 0xff
-
-    shl-int/lit8 v3, v3, 0x8
-
-    or-int/2addr v3, v4
-
-    int-to-short v3, v3
-
-    aput-short v3, v2, v6
-
-    add-int/lit8 v6, v6, 0x1
-
-    goto :goto_1
-
-    :cond_3
-    invoke-direct {v0, v2}, Lorg/bouncycastle/pqc/crypto/newhope/NHPrivateKeyParameters;-><init>([S)V
+    invoke-direct {v0, p0}, Lorg/bouncycastle/pqc/crypto/newhope/NHPrivateKeyParameters;-><init>([S)V
 
     return-object v0
 
-    :cond_4
+    :cond_2
     sget-object v1, Lorg/bouncycastle/asn1/pkcs/PKCSObjectIdentifiers;->id_alg_hss_lms_hashsig:Lorg/bouncycastle/asn1/ASN1ObjectIdentifier;
 
     invoke-virtual {v0, v1}, Lorg/bouncycastle/asn1/ASN1Primitive;->equals(Lorg/bouncycastle/asn1/ASN1Primitive;)Z
 
     move-result v1
 
-    if-eqz v1, :cond_8
+    if-eqz v1, :cond_6
 
     invoke-virtual {p0}, Lorg/bouncycastle/asn1/pkcs/PrivateKeyInfo;->parsePrivateKey()Lorg/bouncycastle/asn1/ASN1Encodable;
 
@@ -210,19 +221,27 @@
 
     move-result-object v0
 
-    iget-object v0, v0, Lorg/bouncycastle/asn1/ASN1OctetString;->string:[B
+    invoke-virtual {v0}, Lorg/bouncycastle/asn1/ASN1OctetString;->getOctets()[B
 
-    iget-object p0, p0, Lorg/bouncycastle/asn1/pkcs/PrivateKeyInfo;->publicKey:Lorg/bouncycastle/asn1/ASN1BitString;
+    move-result-object v0
 
-    invoke-static {v0, v6}, Lorg/bouncycastle/util/Pack;->bigEndianToInt([BI)I
+    invoke-virtual {p0}, Lorg/bouncycastle/asn1/pkcs/PrivateKeyInfo;->getPublicKeyData()Lorg/bouncycastle/asn1/ASN1BitString;
+
+    move-result-object p0
+
+    const/4 v1, 0x0
+
+    invoke-static {v0, v1}, Lorg/bouncycastle/util/Pack;->bigEndianToInt([BI)I
 
     move-result v1
 
-    const/4 v2, 0x4
+    const/4 v2, 0x1
 
-    if-ne v1, v5, :cond_6
+    const/4 v3, 0x4
 
-    if-eqz p0, :cond_5
+    if-ne v1, v2, :cond_4
+
+    if-eqz p0, :cond_3
 
     invoke-virtual {p0}, Lorg/bouncycastle/asn1/ASN1BitString;->getOctets()[B
 
@@ -230,32 +249,26 @@
 
     array-length v1, v0
 
-    invoke-static {v0, v2, v1}, Lorg/bouncycastle/util/Arrays;->copyOfRange([BII)[B
+    invoke-static {v0, v3, v1}, Lorg/bouncycastle/util/Arrays;->copyOfRange([BII)[B
 
     move-result-object v0
 
     array-length v1, p0
 
-    invoke-static {p0, v2, v1}, Lorg/bouncycastle/util/Arrays;->copyOfRange([BII)[B
+    invoke-static {p0, v3, v1}, Lorg/bouncycastle/util/Arrays;->copyOfRange([BII)[B
 
     move-result-object p0
 
-    invoke-static {v0}, Lorg/bouncycastle/pqc/crypto/lms/LMSPrivateKeyParameters;->getInstance(Ljava/lang/Object;)Lorg/bouncycastle/pqc/crypto/lms/LMSPrivateKeyParameters;
-
-    move-result-object v0
-
-    invoke-static {p0}, Lorg/bouncycastle/pqc/crypto/lms/LMSPublicKeyParameters;->getInstance(Ljava/lang/Object;)Lorg/bouncycastle/pqc/crypto/lms/LMSPublicKeyParameters;
+    invoke-static {v0, p0}, Lorg/bouncycastle/pqc/crypto/lms/LMSPrivateKeyParameters;->getInstance([B[B)Lorg/bouncycastle/pqc/crypto/lms/LMSPrivateKeyParameters;
 
     move-result-object p0
 
-    iput-object p0, v0, Lorg/bouncycastle/pqc/crypto/lms/LMSPrivateKeyParameters;->publicKey:Lorg/bouncycastle/pqc/crypto/lms/LMSPublicKeyParameters;
+    return-object p0
 
-    return-object v0
-
-    :cond_5
+    :cond_3
     array-length p0, v0
 
-    invoke-static {v0, v2, p0}, Lorg/bouncycastle/util/Arrays;->copyOfRange([BII)[B
+    invoke-static {v0, v3, p0}, Lorg/bouncycastle/util/Arrays;->copyOfRange([BII)[B
 
     move-result-object p0
 
@@ -265,8 +278,8 @@
 
     return-object p0
 
-    :cond_6
-    if-eqz p0, :cond_7
+    :cond_4
+    if-eqz p0, :cond_5
 
     invoke-virtual {p0}, Lorg/bouncycastle/asn1/ASN1BitString;->getOctets()[B
 
@@ -274,24 +287,20 @@
 
     array-length v1, v0
 
-    invoke-static {v0, v2, v1}, Lorg/bouncycastle/util/Arrays;->copyOfRange([BII)[B
+    invoke-static {v0, v3, v1}, Lorg/bouncycastle/util/Arrays;->copyOfRange([BII)[B
 
     move-result-object v0
 
-    invoke-static {v0}, Lorg/bouncycastle/pqc/crypto/lms/HSSPrivateKeyParameters;->getInstance(Ljava/lang/Object;)Lorg/bouncycastle/pqc/crypto/lms/HSSPrivateKeyParameters;
+    invoke-static {v0, p0}, Lorg/bouncycastle/pqc/crypto/lms/HSSPrivateKeyParameters;->getInstance([B[B)Lorg/bouncycastle/pqc/crypto/lms/HSSPrivateKeyParameters;
 
-    move-result-object v0
+    move-result-object p0
 
-    invoke-static {p0}, Lorg/bouncycastle/pqc/crypto/lms/HSSPublicKeyParameters;->getInstance(Ljava/lang/Object;)Lorg/bouncycastle/pqc/crypto/lms/HSSPublicKeyParameters;
+    return-object p0
 
-    invoke-static {v0}, Ljava/util/Objects;->requireNonNull(Ljava/lang/Object;)Ljava/lang/Object;
-
-    return-object v0
-
-    :cond_7
+    :cond_5
     array-length p0, v0
 
-    invoke-static {v0, v2, p0}, Lorg/bouncycastle/util/Arrays;->copyOfRange([BII)[B
+    invoke-static {v0, v3, p0}, Lorg/bouncycastle/util/Arrays;->copyOfRange([BII)[B
 
     move-result-object p0
 
@@ -301,7 +310,7 @@
 
     return-object p0
 
-    :cond_8
+    :cond_6
     sget-object v1, Lorg/bouncycastle/asn1/bc/BCObjectIdentifiers;->xmss:Lorg/bouncycastle/asn1/ASN1ObjectIdentifier;
 
     invoke-virtual {v0, v1}, Lorg/bouncycastle/asn1/ASN1Primitive;->equals(Lorg/bouncycastle/asn1/ASN1Primitive;)Z
@@ -310,171 +319,134 @@
 
     const-string v2, "ClassNotFoundException processing BDS state: "
 
-    const/4 v3, 0x0
+    if-eqz v1, :cond_9
 
-    if-eqz v1, :cond_d
+    invoke-virtual {p0}, Lorg/bouncycastle/asn1/pkcs/PrivateKeyInfo;->getPrivateKeyAlgorithm()Lorg/bouncycastle/asn1/x509/AlgorithmIdentifier;
 
-    iget-object v0, p0, Lorg/bouncycastle/asn1/pkcs/PrivateKeyInfo;->privateKeyAlgorithm:Lorg/bouncycastle/asn1/x509/AlgorithmIdentifier;
+    move-result-object v0
 
-    iget-object v0, v0, Lorg/bouncycastle/asn1/x509/AlgorithmIdentifier;->parameters:Lorg/bouncycastle/asn1/ASN1Encodable;
+    invoke-virtual {v0}, Lorg/bouncycastle/asn1/x509/AlgorithmIdentifier;->getParameters()Lorg/bouncycastle/asn1/ASN1Encodable;
+
+    move-result-object v0
 
     invoke-static {v0}, Lorg/bouncycastle/pqc/asn1/XMSSKeyParams;->getInstance(Ljava/lang/Object;)Lorg/bouncycastle/pqc/asn1/XMSSKeyParams;
 
     move-result-object v0
 
-    iget-object v1, v0, Lorg/bouncycastle/pqc/asn1/XMSSKeyParams;->treeDigest:Lorg/bouncycastle/asn1/x509/AlgorithmIdentifier;
+    invoke-virtual {v0}, Lorg/bouncycastle/pqc/asn1/XMSSKeyParams;->getTreeDigest()Lorg/bouncycastle/asn1/x509/AlgorithmIdentifier;
 
-    iget-object v1, v1, Lorg/bouncycastle/asn1/x509/AlgorithmIdentifier;->algorithm:Lorg/bouncycastle/asn1/ASN1ObjectIdentifier;
+    move-result-object v1
+
+    invoke-virtual {v1}, Lorg/bouncycastle/asn1/x509/AlgorithmIdentifier;->getAlgorithm()Lorg/bouncycastle/asn1/ASN1ObjectIdentifier;
+
+    move-result-object v1
 
     invoke-virtual {p0}, Lorg/bouncycastle/asn1/pkcs/PrivateKeyInfo;->parsePrivateKey()Lorg/bouncycastle/asn1/ASN1Encodable;
 
     move-result-object p0
 
-    instance-of v4, p0, Lorg/bouncycastle/pqc/asn1/XMSSPrivateKey;
-
-    if-eqz v4, :cond_9
-
-    check-cast p0, Lorg/bouncycastle/pqc/asn1/XMSSPrivateKey;
-
-    goto :goto_2
-
-    :cond_9
-    if-eqz p0, :cond_a
-
-    new-instance v4, Lorg/bouncycastle/pqc/asn1/XMSSPrivateKey;
-
-    invoke-static {p0}, Lorg/bouncycastle/asn1/ASN1Sequence;->getInstance(Ljava/lang/Object;)Lorg/bouncycastle/asn1/ASN1Sequence;
+    invoke-static {p0}, Lorg/bouncycastle/pqc/asn1/XMSSPrivateKey;->getInstance(Ljava/lang/Object;)Lorg/bouncycastle/pqc/asn1/XMSSPrivateKey;
 
     move-result-object p0
 
-    invoke-direct {v4, p0}, Lorg/bouncycastle/pqc/asn1/XMSSPrivateKey;-><init>(Lorg/bouncycastle/asn1/ASN1Sequence;)V
-
-    move-object p0, v4
-
-    goto :goto_2
-
-    :cond_a
-    move-object p0, v3
-
-    :goto_2
     :try_start_0
-    new-instance v4, Lorg/bouncycastle/pqc/crypto/xmss/XMSSPrivateKeyParameters$Builder;
+    new-instance v3, Lorg/bouncycastle/pqc/crypto/xmss/XMSSPrivateKeyParameters$Builder;
 
-    new-instance v5, Lorg/bouncycastle/pqc/crypto/xmss/XMSSParameters;
+    new-instance v4, Lorg/bouncycastle/pqc/crypto/xmss/XMSSParameters;
 
-    iget v0, v0, Lorg/bouncycastle/pqc/asn1/XMSSKeyParams;->height:I
+    invoke-virtual {v0}, Lorg/bouncycastle/pqc/asn1/XMSSKeyParams;->getHeight()I
+
+    move-result v0
 
     invoke-static {v1}, Lorg/bouncycastle/pqc/crypto/util/Utils;->getDigest(Lorg/bouncycastle/asn1/ASN1ObjectIdentifier;)Lorg/bouncycastle/crypto/Digest;
 
-    move-result-object v6
+    move-result-object v5
 
-    invoke-interface {v6}, Lorg/bouncycastle/crypto/Digest;->getAlgorithmName()Ljava/lang/String;
+    invoke-direct {v4, v0, v5}, Lorg/bouncycastle/pqc/crypto/xmss/XMSSParameters;-><init>(ILorg/bouncycastle/crypto/Digest;)V
 
-    move-result-object v6
+    invoke-direct {v3, v4}, Lorg/bouncycastle/pqc/crypto/xmss/XMSSPrivateKeyParameters$Builder;-><init>(Lorg/bouncycastle/pqc/crypto/xmss/XMSSParameters;)V
 
-    invoke-static {v6}, Lorg/bouncycastle/pqc/crypto/xmss/DigestUtil;->getDigestOID(Ljava/lang/String;)Lorg/bouncycastle/asn1/ASN1ObjectIdentifier;
+    invoke-virtual {p0}, Lorg/bouncycastle/pqc/asn1/XMSSPrivateKey;->getIndex()I
 
-    move-result-object v6
+    move-result v0
 
-    invoke-direct {v5, v0, v6}, Lorg/bouncycastle/pqc/crypto/xmss/XMSSParameters;-><init>(ILorg/bouncycastle/asn1/ASN1ObjectIdentifier;)V
-
-    invoke-direct {v4, v5}, Lorg/bouncycastle/pqc/crypto/xmss/XMSSPrivateKeyParameters$Builder;-><init>(Lorg/bouncycastle/pqc/crypto/xmss/XMSSParameters;)V
-
-    iget v0, p0, Lorg/bouncycastle/pqc/asn1/XMSSPrivateKey;->index:I
-
-    iput v0, v4, Lorg/bouncycastle/pqc/crypto/xmss/XMSSPrivateKeyParameters$Builder;->index:I
-
-    iget-object v0, p0, Lorg/bouncycastle/pqc/asn1/XMSSPrivateKey;->secretKeySeed:[B
-
-    invoke-static {v0}, Lorg/bouncycastle/util/Arrays;->clone([B)[B
+    invoke-virtual {v3, v0}, Lorg/bouncycastle/pqc/crypto/xmss/XMSSPrivateKeyParameters$Builder;->withIndex(I)Lorg/bouncycastle/pqc/crypto/xmss/XMSSPrivateKeyParameters$Builder;
 
     move-result-object v0
 
-    invoke-static {v0}, Lorg/bouncycastle/pqc/crypto/xmss/XMSSUtil;->cloneArray([B)[B
+    invoke-virtual {p0}, Lorg/bouncycastle/pqc/asn1/XMSSPrivateKey;->getSecretKeySeed()[B
+
+    move-result-object v3
+
+    invoke-virtual {v0, v3}, Lorg/bouncycastle/pqc/crypto/xmss/XMSSPrivateKeyParameters$Builder;->withSecretKeySeed([B)Lorg/bouncycastle/pqc/crypto/xmss/XMSSPrivateKeyParameters$Builder;
 
     move-result-object v0
 
-    iput-object v0, v4, Lorg/bouncycastle/pqc/crypto/xmss/XMSSPrivateKeyParameters$Builder;->secretKeySeed:[B
+    invoke-virtual {p0}, Lorg/bouncycastle/pqc/asn1/XMSSPrivateKey;->getSecretKeyPRF()[B
 
-    iget-object v0, p0, Lorg/bouncycastle/pqc/asn1/XMSSPrivateKey;->secretKeyPRF:[B
+    move-result-object v3
 
-    invoke-static {v0}, Lorg/bouncycastle/util/Arrays;->clone([B)[B
-
-    move-result-object v0
-
-    invoke-static {v0}, Lorg/bouncycastle/pqc/crypto/xmss/XMSSUtil;->cloneArray([B)[B
+    invoke-virtual {v0, v3}, Lorg/bouncycastle/pqc/crypto/xmss/XMSSPrivateKeyParameters$Builder;->withSecretKeyPRF([B)Lorg/bouncycastle/pqc/crypto/xmss/XMSSPrivateKeyParameters$Builder;
 
     move-result-object v0
 
-    iput-object v0, v4, Lorg/bouncycastle/pqc/crypto/xmss/XMSSPrivateKeyParameters$Builder;->secretKeyPRF:[B
+    invoke-virtual {p0}, Lorg/bouncycastle/pqc/asn1/XMSSPrivateKey;->getPublicSeed()[B
 
-    iget-object v0, p0, Lorg/bouncycastle/pqc/asn1/XMSSPrivateKey;->publicSeed:[B
+    move-result-object v3
 
-    invoke-static {v0}, Lorg/bouncycastle/util/Arrays;->clone([B)[B
-
-    move-result-object v0
-
-    invoke-static {v0}, Lorg/bouncycastle/pqc/crypto/xmss/XMSSUtil;->cloneArray([B)[B
+    invoke-virtual {v0, v3}, Lorg/bouncycastle/pqc/crypto/xmss/XMSSPrivateKeyParameters$Builder;->withPublicSeed([B)Lorg/bouncycastle/pqc/crypto/xmss/XMSSPrivateKeyParameters$Builder;
 
     move-result-object v0
 
-    iput-object v0, v4, Lorg/bouncycastle/pqc/crypto/xmss/XMSSPrivateKeyParameters$Builder;->publicSeed:[B
+    invoke-virtual {p0}, Lorg/bouncycastle/pqc/asn1/XMSSPrivateKey;->getRoot()[B
 
-    iget-object v0, p0, Lorg/bouncycastle/pqc/asn1/XMSSPrivateKey;->root:[B
+    move-result-object v3
 
-    invoke-static {v0}, Lorg/bouncycastle/util/Arrays;->clone([B)[B
-
-    move-result-object v0
-
-    invoke-static {v0}, Lorg/bouncycastle/pqc/crypto/xmss/XMSSUtil;->cloneArray([B)[B
+    invoke-virtual {v0, v3}, Lorg/bouncycastle/pqc/crypto/xmss/XMSSPrivateKeyParameters$Builder;->withRoot([B)Lorg/bouncycastle/pqc/crypto/xmss/XMSSPrivateKeyParameters$Builder;
 
     move-result-object v0
 
-    iput-object v0, v4, Lorg/bouncycastle/pqc/crypto/xmss/XMSSPrivateKeyParameters$Builder;->root:[B
+    invoke-virtual {p0}, Lorg/bouncycastle/pqc/asn1/XMSSPrivateKey;->getVersion()I
 
-    iget v0, p0, Lorg/bouncycastle/pqc/asn1/XMSSPrivateKey;->version:I
+    move-result v3
 
-    if-eqz v0, :cond_b
+    if-eqz v3, :cond_7
 
-    iget v0, p0, Lorg/bouncycastle/pqc/asn1/XMSSPrivateKey;->maxIndex:I
+    invoke-virtual {p0}, Lorg/bouncycastle/pqc/asn1/XMSSPrivateKey;->getMaxIndex()I
 
-    iput v0, v4, Lorg/bouncycastle/pqc/crypto/xmss/XMSSPrivateKeyParameters$Builder;->maxIndex:I
+    move-result v3
 
-    :cond_b
-    iget-object v0, p0, Lorg/bouncycastle/pqc/asn1/XMSSPrivateKey;->bdsState:[B
+    invoke-virtual {v0, v3}, Lorg/bouncycastle/pqc/crypto/xmss/XMSSPrivateKeyParameters$Builder;->withMaxIndex(I)Lorg/bouncycastle/pqc/crypto/xmss/XMSSPrivateKeyParameters$Builder;
 
-    invoke-static {v0}, Lorg/bouncycastle/util/Arrays;->clone([B)[B
+    :cond_7
+    invoke-virtual {p0}, Lorg/bouncycastle/pqc/asn1/XMSSPrivateKey;->getBdsState()[B
 
-    move-result-object v0
+    move-result-object v3
 
-    if-eqz v0, :cond_c
+    if-eqz v3, :cond_8
 
-    iget-object p0, p0, Lorg/bouncycastle/pqc/asn1/XMSSPrivateKey;->bdsState:[B
-
-    invoke-static {p0}, Lorg/bouncycastle/util/Arrays;->clone([B)[B
+    invoke-virtual {p0}, Lorg/bouncycastle/pqc/asn1/XMSSPrivateKey;->getBdsState()[B
 
     move-result-object p0
 
-    const-class v0, Lorg/bouncycastle/pqc/crypto/xmss/BDS;
+    const-class v3, Lorg/bouncycastle/pqc/crypto/xmss/BDS;
 
-    invoke-static {p0, v0}, Lorg/bouncycastle/pqc/crypto/xmss/XMSSUtil;->deserialize([BLjava/lang/Class;)Ljava/lang/Object;
+    invoke-static {p0, v3}, Lorg/bouncycastle/pqc/crypto/xmss/XMSSUtil;->deserialize([BLjava/lang/Class;)Ljava/lang/Object;
 
     move-result-object p0
 
     check-cast p0, Lorg/bouncycastle/pqc/crypto/xmss/BDS;
 
-    invoke-static {p0}, Ljava/util/Objects;->requireNonNull(Ljava/lang/Object;)Ljava/lang/Object;
+    invoke-virtual {p0, v1}, Lorg/bouncycastle/pqc/crypto/xmss/BDS;->withWOTSDigest(Lorg/bouncycastle/asn1/ASN1ObjectIdentifier;)Lorg/bouncycastle/pqc/crypto/xmss/BDS;
 
-    new-instance v0, Lorg/bouncycastle/pqc/crypto/xmss/BDS;
+    move-result-object p0
 
-    invoke-direct {v0, p0, v1}, Lorg/bouncycastle/pqc/crypto/xmss/BDS;-><init>(Lorg/bouncycastle/pqc/crypto/xmss/BDS;Lorg/bouncycastle/asn1/ASN1ObjectIdentifier;)V
+    invoke-virtual {v0, p0}, Lorg/bouncycastle/pqc/crypto/xmss/XMSSPrivateKeyParameters$Builder;->withBDSState(Lorg/bouncycastle/pqc/crypto/xmss/BDS;)Lorg/bouncycastle/pqc/crypto/xmss/XMSSPrivateKeyParameters$Builder;
 
-    iput-object v0, v4, Lorg/bouncycastle/pqc/crypto/xmss/XMSSPrivateKeyParameters$Builder;->bdsState:Lorg/bouncycastle/pqc/crypto/xmss/BDS;
+    :cond_8
+    invoke-virtual {v0}, Lorg/bouncycastle/pqc/crypto/xmss/XMSSPrivateKeyParameters$Builder;->build()Lorg/bouncycastle/pqc/crypto/xmss/XMSSPrivateKeyParameters;
 
-    :cond_c
-    new-instance p0, Lorg/bouncycastle/pqc/crypto/xmss/XMSSPrivateKeyParameters;
-
-    invoke-direct {p0, v4, v3}, Lorg/bouncycastle/pqc/crypto/xmss/XMSSPrivateKeyParameters;-><init>(Lorg/bouncycastle/pqc/crypto/xmss/XMSSPrivateKeyParameters$Builder;Lorg/bouncycastle/pqc/crypto/xmss/XMSSPrivateKeyParameters$1;)V
+    move-result-object p0
     :try_end_0
     .catch Ljava/lang/ClassNotFoundException; {:try_start_0 .. :try_end_0} :catch_0
 
@@ -503,161 +475,130 @@
 
     throw v0
 
-    :cond_d
+    :cond_9
     sget-object v1, Lorg/bouncycastle/pqc/asn1/PQCObjectIdentifiers;->xmss_mt:Lorg/bouncycastle/asn1/ASN1ObjectIdentifier;
 
     invoke-virtual {v0, v1}, Lorg/bouncycastle/asn1/ASN1Primitive;->equals(Lorg/bouncycastle/asn1/ASN1Primitive;)Z
 
     move-result v1
 
-    if-eqz v1, :cond_13
+    if-eqz v1, :cond_c
 
-    iget-object v0, p0, Lorg/bouncycastle/asn1/pkcs/PrivateKeyInfo;->privateKeyAlgorithm:Lorg/bouncycastle/asn1/x509/AlgorithmIdentifier;
+    invoke-virtual {p0}, Lorg/bouncycastle/asn1/pkcs/PrivateKeyInfo;->getPrivateKeyAlgorithm()Lorg/bouncycastle/asn1/x509/AlgorithmIdentifier;
 
-    iget-object v0, v0, Lorg/bouncycastle/asn1/x509/AlgorithmIdentifier;->parameters:Lorg/bouncycastle/asn1/ASN1Encodable;
+    move-result-object v0
+
+    invoke-virtual {v0}, Lorg/bouncycastle/asn1/x509/AlgorithmIdentifier;->getParameters()Lorg/bouncycastle/asn1/ASN1Encodable;
+
+    move-result-object v0
 
     invoke-static {v0}, Lorg/bouncycastle/pqc/asn1/XMSSMTKeyParams;->getInstance(Ljava/lang/Object;)Lorg/bouncycastle/pqc/asn1/XMSSMTKeyParams;
 
     move-result-object v0
 
-    iget-object v1, v0, Lorg/bouncycastle/pqc/asn1/XMSSMTKeyParams;->treeDigest:Lorg/bouncycastle/asn1/x509/AlgorithmIdentifier;
+    invoke-virtual {v0}, Lorg/bouncycastle/pqc/asn1/XMSSMTKeyParams;->getTreeDigest()Lorg/bouncycastle/asn1/x509/AlgorithmIdentifier;
 
-    iget-object v1, v1, Lorg/bouncycastle/asn1/x509/AlgorithmIdentifier;->algorithm:Lorg/bouncycastle/asn1/ASN1ObjectIdentifier;
+    move-result-object v1
+
+    invoke-virtual {v1}, Lorg/bouncycastle/asn1/x509/AlgorithmIdentifier;->getAlgorithm()Lorg/bouncycastle/asn1/ASN1ObjectIdentifier;
+
+    move-result-object v1
 
     :try_start_1
     invoke-virtual {p0}, Lorg/bouncycastle/asn1/pkcs/PrivateKeyInfo;->parsePrivateKey()Lorg/bouncycastle/asn1/ASN1Encodable;
 
     move-result-object p0
 
-    instance-of v4, p0, Lorg/bouncycastle/pqc/asn1/XMSSMTPrivateKey;
-
-    if-eqz v4, :cond_e
-
-    check-cast p0, Lorg/bouncycastle/pqc/asn1/XMSSMTPrivateKey;
-
-    goto :goto_3
-
-    :cond_e
-    if-eqz p0, :cond_f
-
-    new-instance v4, Lorg/bouncycastle/pqc/asn1/XMSSMTPrivateKey;
-
-    invoke-static {p0}, Lorg/bouncycastle/asn1/ASN1Sequence;->getInstance(Ljava/lang/Object;)Lorg/bouncycastle/asn1/ASN1Sequence;
+    invoke-static {p0}, Lorg/bouncycastle/pqc/asn1/XMSSMTPrivateKey;->getInstance(Ljava/lang/Object;)Lorg/bouncycastle/pqc/asn1/XMSSMTPrivateKey;
 
     move-result-object p0
 
-    invoke-direct {v4, p0}, Lorg/bouncycastle/pqc/asn1/XMSSMTPrivateKey;-><init>(Lorg/bouncycastle/asn1/ASN1Sequence;)V
+    new-instance v3, Lorg/bouncycastle/pqc/crypto/xmss/XMSSMTPrivateKeyParameters$Builder;
 
-    move-object p0, v4
+    new-instance v4, Lorg/bouncycastle/pqc/crypto/xmss/XMSSMTParameters;
 
-    goto :goto_3
+    invoke-virtual {v0}, Lorg/bouncycastle/pqc/asn1/XMSSMTKeyParams;->getHeight()I
 
-    :cond_f
-    move-object p0, v3
+    move-result v5
 
-    :goto_3
-    new-instance v4, Lorg/bouncycastle/pqc/crypto/xmss/XMSSMTPrivateKeyParameters$Builder;
+    invoke-virtual {v0}, Lorg/bouncycastle/pqc/asn1/XMSSMTKeyParams;->getLayers()I
 
-    new-instance v5, Lorg/bouncycastle/pqc/crypto/xmss/XMSSMTParameters;
-
-    iget v6, v0, Lorg/bouncycastle/pqc/asn1/XMSSMTKeyParams;->height:I
-
-    iget v0, v0, Lorg/bouncycastle/pqc/asn1/XMSSMTKeyParams;->layers:I
+    move-result v0
 
     invoke-static {v1}, Lorg/bouncycastle/pqc/crypto/util/Utils;->getDigest(Lorg/bouncycastle/asn1/ASN1ObjectIdentifier;)Lorg/bouncycastle/crypto/Digest;
 
-    move-result-object v7
+    move-result-object v6
 
-    invoke-interface {v7}, Lorg/bouncycastle/crypto/Digest;->getAlgorithmName()Ljava/lang/String;
+    invoke-direct {v4, v5, v0, v6}, Lorg/bouncycastle/pqc/crypto/xmss/XMSSMTParameters;-><init>(IILorg/bouncycastle/crypto/Digest;)V
 
-    move-result-object v7
+    invoke-direct {v3, v4}, Lorg/bouncycastle/pqc/crypto/xmss/XMSSMTPrivateKeyParameters$Builder;-><init>(Lorg/bouncycastle/pqc/crypto/xmss/XMSSMTParameters;)V
 
-    invoke-static {v7}, Lorg/bouncycastle/pqc/crypto/xmss/DigestUtil;->getDigestOID(Ljava/lang/String;)Lorg/bouncycastle/asn1/ASN1ObjectIdentifier;
+    invoke-virtual {p0}, Lorg/bouncycastle/pqc/asn1/XMSSMTPrivateKey;->getIndex()J
 
-    move-result-object v7
+    move-result-wide v4
 
-    invoke-direct {v5, v6, v0, v7}, Lorg/bouncycastle/pqc/crypto/xmss/XMSSMTParameters;-><init>(IILorg/bouncycastle/asn1/ASN1ObjectIdentifier;)V
-
-    invoke-direct {v4, v5}, Lorg/bouncycastle/pqc/crypto/xmss/XMSSMTPrivateKeyParameters$Builder;-><init>(Lorg/bouncycastle/pqc/crypto/xmss/XMSSMTParameters;)V
-
-    iget-wide v7, p0, Lorg/bouncycastle/pqc/asn1/XMSSMTPrivateKey;->index:J
-
-    iput-wide v7, v4, Lorg/bouncycastle/pqc/crypto/xmss/XMSSMTPrivateKeyParameters$Builder;->index:J
-
-    iget-object v0, p0, Lorg/bouncycastle/pqc/asn1/XMSSMTPrivateKey;->secretKeySeed:[B
-
-    invoke-static {v0}, Lorg/bouncycastle/util/Arrays;->clone([B)[B
+    invoke-virtual {v3, v4, v5}, Lorg/bouncycastle/pqc/crypto/xmss/XMSSMTPrivateKeyParameters$Builder;->withIndex(J)Lorg/bouncycastle/pqc/crypto/xmss/XMSSMTPrivateKeyParameters$Builder;
 
     move-result-object v0
 
-    invoke-static {v0}, Lorg/bouncycastle/pqc/crypto/xmss/XMSSUtil;->cloneArray([B)[B
+    invoke-virtual {p0}, Lorg/bouncycastle/pqc/asn1/XMSSMTPrivateKey;->getSecretKeySeed()[B
+
+    move-result-object v3
+
+    invoke-virtual {v0, v3}, Lorg/bouncycastle/pqc/crypto/xmss/XMSSMTPrivateKeyParameters$Builder;->withSecretKeySeed([B)Lorg/bouncycastle/pqc/crypto/xmss/XMSSMTPrivateKeyParameters$Builder;
 
     move-result-object v0
 
-    iput-object v0, v4, Lorg/bouncycastle/pqc/crypto/xmss/XMSSMTPrivateKeyParameters$Builder;->secretKeySeed:[B
+    invoke-virtual {p0}, Lorg/bouncycastle/pqc/asn1/XMSSMTPrivateKey;->getSecretKeyPRF()[B
 
-    iget-object v0, p0, Lorg/bouncycastle/pqc/asn1/XMSSMTPrivateKey;->secretKeyPRF:[B
+    move-result-object v3
 
-    invoke-static {v0}, Lorg/bouncycastle/util/Arrays;->clone([B)[B
-
-    move-result-object v0
-
-    invoke-static {v0}, Lorg/bouncycastle/pqc/crypto/xmss/XMSSUtil;->cloneArray([B)[B
+    invoke-virtual {v0, v3}, Lorg/bouncycastle/pqc/crypto/xmss/XMSSMTPrivateKeyParameters$Builder;->withSecretKeyPRF([B)Lorg/bouncycastle/pqc/crypto/xmss/XMSSMTPrivateKeyParameters$Builder;
 
     move-result-object v0
 
-    iput-object v0, v4, Lorg/bouncycastle/pqc/crypto/xmss/XMSSMTPrivateKeyParameters$Builder;->secretKeyPRF:[B
+    invoke-virtual {p0}, Lorg/bouncycastle/pqc/asn1/XMSSMTPrivateKey;->getPublicSeed()[B
 
-    iget-object v0, p0, Lorg/bouncycastle/pqc/asn1/XMSSMTPrivateKey;->publicSeed:[B
+    move-result-object v3
 
-    invoke-static {v0}, Lorg/bouncycastle/util/Arrays;->clone([B)[B
-
-    move-result-object v0
-
-    invoke-static {v0}, Lorg/bouncycastle/pqc/crypto/xmss/XMSSUtil;->cloneArray([B)[B
+    invoke-virtual {v0, v3}, Lorg/bouncycastle/pqc/crypto/xmss/XMSSMTPrivateKeyParameters$Builder;->withPublicSeed([B)Lorg/bouncycastle/pqc/crypto/xmss/XMSSMTPrivateKeyParameters$Builder;
 
     move-result-object v0
 
-    iput-object v0, v4, Lorg/bouncycastle/pqc/crypto/xmss/XMSSMTPrivateKeyParameters$Builder;->publicSeed:[B
+    invoke-virtual {p0}, Lorg/bouncycastle/pqc/asn1/XMSSMTPrivateKey;->getRoot()[B
 
-    iget-object v0, p0, Lorg/bouncycastle/pqc/asn1/XMSSMTPrivateKey;->root:[B
+    move-result-object v3
 
-    invoke-static {v0}, Lorg/bouncycastle/util/Arrays;->clone([B)[B
-
-    move-result-object v0
-
-    invoke-static {v0}, Lorg/bouncycastle/pqc/crypto/xmss/XMSSUtil;->cloneArray([B)[B
+    invoke-virtual {v0, v3}, Lorg/bouncycastle/pqc/crypto/xmss/XMSSMTPrivateKeyParameters$Builder;->withRoot([B)Lorg/bouncycastle/pqc/crypto/xmss/XMSSMTPrivateKeyParameters$Builder;
 
     move-result-object v0
 
-    iput-object v0, v4, Lorg/bouncycastle/pqc/crypto/xmss/XMSSMTPrivateKeyParameters$Builder;->root:[B
+    invoke-virtual {p0}, Lorg/bouncycastle/pqc/asn1/XMSSMTPrivateKey;->getVersion()I
 
-    iget v0, p0, Lorg/bouncycastle/pqc/asn1/XMSSMTPrivateKey;->version:I
+    move-result v3
 
-    if-eqz v0, :cond_10
+    if-eqz v3, :cond_a
 
-    iget-wide v7, p0, Lorg/bouncycastle/pqc/asn1/XMSSMTPrivateKey;->maxIndex:J
+    invoke-virtual {p0}, Lorg/bouncycastle/pqc/asn1/XMSSMTPrivateKey;->getMaxIndex()J
 
-    iput-wide v7, v4, Lorg/bouncycastle/pqc/crypto/xmss/XMSSMTPrivateKeyParameters$Builder;->maxIndex:J
+    move-result-wide v3
 
-    :cond_10
-    iget-object v0, p0, Lorg/bouncycastle/pqc/asn1/XMSSMTPrivateKey;->bdsState:[B
+    invoke-virtual {v0, v3, v4}, Lorg/bouncycastle/pqc/crypto/xmss/XMSSMTPrivateKeyParameters$Builder;->withMaxIndex(J)Lorg/bouncycastle/pqc/crypto/xmss/XMSSMTPrivateKeyParameters$Builder;
 
-    invoke-static {v0}, Lorg/bouncycastle/util/Arrays;->clone([B)[B
+    :cond_a
+    invoke-virtual {p0}, Lorg/bouncycastle/pqc/asn1/XMSSMTPrivateKey;->getBdsState()[B
 
-    move-result-object v0
+    move-result-object v3
 
-    if-eqz v0, :cond_12
+    if-eqz v3, :cond_b
 
-    iget-object p0, p0, Lorg/bouncycastle/pqc/asn1/XMSSMTPrivateKey;->bdsState:[B
-
-    invoke-static {p0}, Lorg/bouncycastle/util/Arrays;->clone([B)[B
+    invoke-virtual {p0}, Lorg/bouncycastle/pqc/asn1/XMSSMTPrivateKey;->getBdsState()[B
 
     move-result-object p0
 
-    const-class v0, Lorg/bouncycastle/pqc/crypto/xmss/BDSStateMap;
+    const-class v3, Lorg/bouncycastle/pqc/crypto/xmss/BDSStateMap;
 
-    invoke-static {p0, v0}, Lorg/bouncycastle/pqc/crypto/xmss/XMSSUtil;->deserialize([BLjava/lang/Class;)Ljava/lang/Object;
+    invoke-static {p0, v3}, Lorg/bouncycastle/pqc/crypto/xmss/XMSSUtil;->deserialize([BLjava/lang/Class;)Ljava/lang/Object;
 
     move-result-object p0
 
@@ -667,36 +608,12 @@
 
     move-result-object p0
 
-    iget-wide v0, p0, Lorg/bouncycastle/pqc/crypto/xmss/BDSStateMap;->maxIndex:J
+    invoke-virtual {v0, p0}, Lorg/bouncycastle/pqc/crypto/xmss/XMSSMTPrivateKeyParameters$Builder;->withBDSState(Lorg/bouncycastle/pqc/crypto/xmss/BDSStateMap;)Lorg/bouncycastle/pqc/crypto/xmss/XMSSMTPrivateKeyParameters$Builder;
 
-    const-wide/16 v7, 0x0
+    :cond_b
+    invoke-virtual {v0}, Lorg/bouncycastle/pqc/crypto/xmss/XMSSMTPrivateKeyParameters$Builder;->build()Lorg/bouncycastle/pqc/crypto/xmss/XMSSMTPrivateKeyParameters;
 
-    cmp-long v0, v0, v7
-
-    if-nez v0, :cond_11
-
-    new-instance v0, Lorg/bouncycastle/pqc/crypto/xmss/BDSStateMap;
-
-    const-wide/16 v7, 0x1
-
-    shl-long v5, v7, v6
-
-    sub-long/2addr v5, v7
-
-    invoke-direct {v0, p0, v5, v6}, Lorg/bouncycastle/pqc/crypto/xmss/BDSStateMap;-><init>(Lorg/bouncycastle/pqc/crypto/xmss/BDSStateMap;J)V
-
-    iput-object v0, v4, Lorg/bouncycastle/pqc/crypto/xmss/XMSSMTPrivateKeyParameters$Builder;->bdsState:Lorg/bouncycastle/pqc/crypto/xmss/BDSStateMap;
-
-    goto :goto_4
-
-    :cond_11
-    iput-object p0, v4, Lorg/bouncycastle/pqc/crypto/xmss/XMSSMTPrivateKeyParameters$Builder;->bdsState:Lorg/bouncycastle/pqc/crypto/xmss/BDSStateMap;
-
-    :cond_12
-    :goto_4
-    new-instance p0, Lorg/bouncycastle/pqc/crypto/xmss/XMSSMTPrivateKeyParameters;
-
-    invoke-direct {p0, v4, v3}, Lorg/bouncycastle/pqc/crypto/xmss/XMSSMTPrivateKeyParameters;-><init>(Lorg/bouncycastle/pqc/crypto/xmss/XMSSMTPrivateKeyParameters$Builder;Lorg/bouncycastle/pqc/crypto/xmss/XMSSMTPrivateKeyParameters$1;)V
+    move-result-object p0
     :try_end_1
     .catch Ljava/lang/ClassNotFoundException; {:try_start_1 .. :try_end_1} :catch_1
 
@@ -725,14 +642,14 @@
 
     throw v0
 
-    :cond_13
+    :cond_c
     sget-object v1, Lorg/bouncycastle/pqc/asn1/PQCObjectIdentifiers;->mcElieceCca2:Lorg/bouncycastle/asn1/ASN1ObjectIdentifier;
 
     invoke-virtual {v0, v1}, Lorg/bouncycastle/asn1/ASN1Primitive;->equals(Lorg/bouncycastle/asn1/ASN1Primitive;)Z
 
     move-result v0
 
-    if-eqz v0, :cond_14
+    if-eqz v0, :cond_d
 
     invoke-virtual {p0}, Lorg/bouncycastle/asn1/pkcs/PrivateKeyInfo;->parsePrivateKey()Lorg/bouncycastle/asn1/ASN1Encodable;
 
@@ -744,33 +661,33 @@
 
     new-instance v7, Lorg/bouncycastle/pqc/crypto/mceliece/McElieceCCA2PrivateKeyParameters;
 
-    iget v1, p0, Lorg/bouncycastle/pqc/asn1/McElieceCCA2PrivateKey;->n:I
+    invoke-virtual {p0}, Lorg/bouncycastle/pqc/asn1/McElieceCCA2PrivateKey;->getN()I
 
-    iget v2, p0, Lorg/bouncycastle/pqc/asn1/McElieceCCA2PrivateKey;->k:I
+    move-result v1
+
+    invoke-virtual {p0}, Lorg/bouncycastle/pqc/asn1/McElieceCCA2PrivateKey;->getK()I
+
+    move-result v2
 
     invoke-virtual {p0}, Lorg/bouncycastle/pqc/asn1/McElieceCCA2PrivateKey;->getField()Lorg/bouncycastle/pqc/math/linearalgebra/GF2mField;
 
     move-result-object v3
 
-    new-instance v4, Lorg/bouncycastle/pqc/math/linearalgebra/PolynomialGF2mSmallM;
+    invoke-virtual {p0}, Lorg/bouncycastle/pqc/asn1/McElieceCCA2PrivateKey;->getGoppaPoly()Lorg/bouncycastle/pqc/math/linearalgebra/PolynomialGF2mSmallM;
 
-    invoke-virtual {p0}, Lorg/bouncycastle/pqc/asn1/McElieceCCA2PrivateKey;->getField()Lorg/bouncycastle/pqc/math/linearalgebra/GF2mField;
+    move-result-object v4
 
-    move-result-object v0
+    invoke-virtual {p0}, Lorg/bouncycastle/pqc/asn1/McElieceCCA2PrivateKey;->getP()Lorg/bouncycastle/pqc/math/linearalgebra/Permutation;
 
-    iget-object v5, p0, Lorg/bouncycastle/pqc/asn1/McElieceCCA2PrivateKey;->encGp:[B
+    move-result-object v5
 
-    invoke-direct {v4, v0, v5}, Lorg/bouncycastle/pqc/math/linearalgebra/PolynomialGF2mSmallM;-><init>(Lorg/bouncycastle/pqc/math/linearalgebra/GF2mField;[B)V
+    invoke-virtual {p0}, Lorg/bouncycastle/pqc/asn1/McElieceCCA2PrivateKey;->getDigest()Lorg/bouncycastle/asn1/x509/AlgorithmIdentifier;
 
-    new-instance v5, Lorg/bouncycastle/pqc/math/linearalgebra/Permutation;
+    move-result-object p0
 
-    iget-object v0, p0, Lorg/bouncycastle/pqc/asn1/McElieceCCA2PrivateKey;->encP:[B
+    invoke-virtual {p0}, Lorg/bouncycastle/asn1/x509/AlgorithmIdentifier;->getAlgorithm()Lorg/bouncycastle/asn1/ASN1ObjectIdentifier;
 
-    invoke-direct {v5, v0}, Lorg/bouncycastle/pqc/math/linearalgebra/Permutation;-><init>([B)V
-
-    iget-object p0, p0, Lorg/bouncycastle/pqc/asn1/McElieceCCA2PrivateKey;->digest:Lorg/bouncycastle/asn1/x509/AlgorithmIdentifier;
-
-    iget-object p0, p0, Lorg/bouncycastle/asn1/x509/AlgorithmIdentifier;->algorithm:Lorg/bouncycastle/asn1/ASN1ObjectIdentifier;
+    move-result-object p0
 
     invoke-static {p0}, Lorg/bouncycastle/pqc/crypto/util/Utils;->getDigestName(Lorg/bouncycastle/asn1/ASN1ObjectIdentifier;)Ljava/lang/String;
 
@@ -782,7 +699,7 @@
 
     return-object v7
 
-    :cond_14
+    :cond_d
     new-instance p0, Ljava/lang/RuntimeException;
 
     const-string v0, "algorithm identifier in private key not recognised"
@@ -790,4 +707,27 @@
     invoke-direct {p0, v0}, Ljava/lang/RuntimeException;-><init>(Ljava/lang/String;)V
 
     throw p0
+.end method
+
+.method public static createKey([B)Lorg/bouncycastle/crypto/params/AsymmetricKeyParameter;
+    .locals 0
+    .annotation system Ldalvik/annotation/Throws;
+        value = {
+            Ljava/io/IOException;
+        }
+    .end annotation
+
+    invoke-static {p0}, Lorg/bouncycastle/asn1/ASN1Primitive;->fromByteArray([B)Lorg/bouncycastle/asn1/ASN1Primitive;
+
+    move-result-object p0
+
+    invoke-static {p0}, Lorg/bouncycastle/asn1/pkcs/PrivateKeyInfo;->getInstance(Ljava/lang/Object;)Lorg/bouncycastle/asn1/pkcs/PrivateKeyInfo;
+
+    move-result-object p0
+
+    invoke-static {p0}, Lorg/bouncycastle/pqc/crypto/util/PrivateKeyFactory;->createKey(Lorg/bouncycastle/asn1/pkcs/PrivateKeyInfo;)Lorg/bouncycastle/crypto/params/AsymmetricKeyParameter;
+
+    move-result-object p0
+
+    return-object p0
 .end method

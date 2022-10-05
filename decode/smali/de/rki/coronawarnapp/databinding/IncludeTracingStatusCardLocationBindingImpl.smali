@@ -21,13 +21,13 @@
 
     sput-object v0, Lde/rki/coronawarnapp/databinding/IncludeTracingStatusCardLocationBindingImpl;->sViewsWithIds:Landroid/util/SparseIntArray;
 
-    const v1, 0x7f0a0816
+    const v1, 0x7f0a085e
 
     const/4 v2, 0x4
 
     invoke-virtual {v0, v1, v2}, Landroid/util/SparseIntArray;->put(II)V
 
-    const v1, 0x7f0a0814
+    const v1, 0x7f0a085c
 
     const/4 v2, 0x5
 
@@ -180,7 +180,7 @@
 
     if-eqz v7, :cond_0
 
-    invoke-static {v4}, Lcom/google/android/gms/internal/nearby/zzfc;->formatVisibilityIcon(Ljava/lang/Object;)I
+    invoke-static {v4}, Lorg/ejml/dense/row/misc/ImplCommonOps_DDMA;->formatVisibilityIcon(Ljava/lang/Object;)I
 
     move-result v9
 
@@ -204,7 +204,7 @@
 
     if-eqz v0, :cond_1
 
-    invoke-static {v6}, Lcom/google/android/gms/internal/nearby/zzfc;->formatVisibilityText(Ljava/lang/String;)I
+    invoke-static {v6}, Lorg/ejml/dense/row/misc/ImplCommonOps_DDMA;->formatVisibilityText(Ljava/lang/String;)I
 
     move-result v8
 
@@ -402,7 +402,7 @@
     :try_end_0
     .catchall {:try_start_0 .. :try_end_0} :catchall_0
 
-    const/16 p1, 0x13
+    const/16 p1, 0x12
 
     invoke-virtual {p0, p1}, Landroidx/databinding/BaseObservable;->notifyPropertyChanged(I)V
 
@@ -449,7 +449,7 @@
     :try_end_0
     .catchall {:try_start_0 .. :try_end_0} :catchall_0
 
-    const/16 p1, 0x16
+    const/16 p1, 0x15
 
     invoke-virtual {p0, p1}, Landroidx/databinding/BaseObservable;->notifyPropertyChanged(I)V
 

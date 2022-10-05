@@ -23,6 +23,9 @@
     }
 .end annotation
 
+.annotation runtime Lkotlin/jvm/JvmInline;
+.end annotation
+
 
 # direct methods
 .method public static final exceptionOrNull-impl(Ljava/lang/Object;)Ljava/lang/Throwable;

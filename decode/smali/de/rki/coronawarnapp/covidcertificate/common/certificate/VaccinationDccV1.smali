@@ -9,6 +9,8 @@
 # instance fields
 .field public final dateOfBirthFormatted:Ljava/lang/String;
 
+.field public final dob:Ljava/lang/String;
+
 .field public final nameData:Lde/rki/coronawarnapp/covidcertificate/common/certificate/DccV1$NameData;
 
 .field public final personIdentifier:Lde/rki/coronawarnapp/covidcertificate/common/certificate/CertificatePersonIdentifier;
@@ -19,7 +21,7 @@
 
 
 # direct methods
-.method public constructor <init>(Ljava/lang/String;Lde/rki/coronawarnapp/covidcertificate/common/certificate/DccV1$NameData;Ljava/lang/String;Lde/rki/coronawarnapp/covidcertificate/common/certificate/CertificatePersonIdentifier;Lde/rki/coronawarnapp/covidcertificate/common/certificate/DccV1$VaccinationData;)V
+.method public constructor <init>(Ljava/lang/String;Lde/rki/coronawarnapp/covidcertificate/common/certificate/DccV1$NameData;Ljava/lang/String;Ljava/lang/String;Lde/rki/coronawarnapp/covidcertificate/common/certificate/CertificatePersonIdentifier;Lde/rki/coronawarnapp/covidcertificate/common/certificate/DccV1$VaccinationData;)V
     .locals 1
 
     const-string/jumbo v0, "version"
@@ -30,6 +32,10 @@
 
     invoke-static {p2, v0}, Lkotlin/jvm/internal/Intrinsics;->checkNotNullParameter(Ljava/lang/Object;Ljava/lang/String;)V
 
+    const-string v0, "dob"
+
+    invoke-static {p4, v0}, Lkotlin/jvm/internal/Intrinsics;->checkNotNullParameter(Ljava/lang/Object;Ljava/lang/String;)V
+
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
     iput-object p1, p0, Lde/rki/coronawarnapp/covidcertificate/common/certificate/VaccinationDccV1;->version:Ljava/lang/String;
@@ -38,9 +44,11 @@
 
     iput-object p3, p0, Lde/rki/coronawarnapp/covidcertificate/common/certificate/VaccinationDccV1;->dateOfBirthFormatted:Ljava/lang/String;
 
-    iput-object p4, p0, Lde/rki/coronawarnapp/covidcertificate/common/certificate/VaccinationDccV1;->personIdentifier:Lde/rki/coronawarnapp/covidcertificate/common/certificate/CertificatePersonIdentifier;
+    iput-object p4, p0, Lde/rki/coronawarnapp/covidcertificate/common/certificate/VaccinationDccV1;->dob:Ljava/lang/String;
 
-    iput-object p5, p0, Lde/rki/coronawarnapp/covidcertificate/common/certificate/VaccinationDccV1;->vaccination:Lde/rki/coronawarnapp/covidcertificate/common/certificate/DccV1$VaccinationData;
+    iput-object p5, p0, Lde/rki/coronawarnapp/covidcertificate/common/certificate/VaccinationDccV1;->personIdentifier:Lde/rki/coronawarnapp/covidcertificate/common/certificate/CertificatePersonIdentifier;
+
+    iput-object p6, p0, Lde/rki/coronawarnapp/covidcertificate/common/certificate/VaccinationDccV1;->vaccination:Lde/rki/coronawarnapp/covidcertificate/common/certificate/DccV1$VaccinationData;
 
     return-void
 .end method
@@ -107,9 +115,9 @@
     return v2
 
     :cond_4
-    iget-object v1, p0, Lde/rki/coronawarnapp/covidcertificate/common/certificate/VaccinationDccV1;->personIdentifier:Lde/rki/coronawarnapp/covidcertificate/common/certificate/CertificatePersonIdentifier;
+    iget-object v1, p0, Lde/rki/coronawarnapp/covidcertificate/common/certificate/VaccinationDccV1;->dob:Ljava/lang/String;
 
-    iget-object v3, p1, Lde/rki/coronawarnapp/covidcertificate/common/certificate/VaccinationDccV1;->personIdentifier:Lde/rki/coronawarnapp/covidcertificate/common/certificate/CertificatePersonIdentifier;
+    iget-object v3, p1, Lde/rki/coronawarnapp/covidcertificate/common/certificate/VaccinationDccV1;->dob:Ljava/lang/String;
 
     invoke-static {v1, v3}, Lkotlin/jvm/internal/Intrinsics;->areEqual(Ljava/lang/Object;Ljava/lang/Object;)Z
 
@@ -120,6 +128,19 @@
     return v2
 
     :cond_5
+    iget-object v1, p0, Lde/rki/coronawarnapp/covidcertificate/common/certificate/VaccinationDccV1;->personIdentifier:Lde/rki/coronawarnapp/covidcertificate/common/certificate/CertificatePersonIdentifier;
+
+    iget-object v3, p1, Lde/rki/coronawarnapp/covidcertificate/common/certificate/VaccinationDccV1;->personIdentifier:Lde/rki/coronawarnapp/covidcertificate/common/certificate/CertificatePersonIdentifier;
+
+    invoke-static {v1, v3}, Lkotlin/jvm/internal/Intrinsics;->areEqual(Ljava/lang/Object;Ljava/lang/Object;)Z
+
+    move-result v1
+
+    if-nez v1, :cond_6
+
+    return v2
+
+    :cond_6
     iget-object v1, p0, Lde/rki/coronawarnapp/covidcertificate/common/certificate/VaccinationDccV1;->vaccination:Lde/rki/coronawarnapp/covidcertificate/common/certificate/DccV1$VaccinationData;
 
     iget-object p1, p1, Lde/rki/coronawarnapp/covidcertificate/common/certificate/VaccinationDccV1;->vaccination:Lde/rki/coronawarnapp/covidcertificate/common/certificate/DccV1$VaccinationData;
@@ -128,11 +149,11 @@
 
     move-result p1
 
-    if-nez p1, :cond_6
+    if-nez p1, :cond_7
 
     return v2
 
-    :cond_6
+    :cond_7
     return v0
 .end method
 
@@ -144,10 +165,26 @@
     return-object v0
 .end method
 
+.method public getDob()Ljava/lang/String;
+    .locals 1
+
+    iget-object v0, p0, Lde/rki/coronawarnapp/covidcertificate/common/certificate/VaccinationDccV1;->dob:Ljava/lang/String;
+
+    return-object v0
+.end method
+
 .method public getNameData()Lde/rki/coronawarnapp/covidcertificate/common/certificate/DccV1$NameData;
     .locals 1
 
     iget-object v0, p0, Lde/rki/coronawarnapp/covidcertificate/common/certificate/VaccinationDccV1;->nameData:Lde/rki/coronawarnapp/covidcertificate/common/certificate/DccV1$NameData;
+
+    return-object v0
+.end method
+
+.method public getPayload()Lde/rki/coronawarnapp/covidcertificate/common/certificate/DccV1$Payload;
+    .locals 1
+
+    iget-object v0, p0, Lde/rki/coronawarnapp/covidcertificate/common/certificate/VaccinationDccV1;->vaccination:Lde/rki/coronawarnapp/covidcertificate/common/certificate/DccV1$VaccinationData;
 
     return-object v0
 .end method
@@ -197,6 +234,12 @@
 
     move-result v0
 
+    iget-object v1, p0, Lde/rki/coronawarnapp/covidcertificate/common/certificate/VaccinationDccV1;->dob:Ljava/lang/String;
+
+    invoke-static {v1, v0, v2}, Landroidx/room/util/TableInfo$ForeignKey$$ExternalSyntheticOutline0;->m(Ljava/lang/String;II)I
+
+    move-result v0
+
     iget-object v1, p0, Lde/rki/coronawarnapp/covidcertificate/common/certificate/VaccinationDccV1;->personIdentifier:Lde/rki/coronawarnapp/covidcertificate/common/certificate/CertificatePersonIdentifier;
 
     invoke-virtual {v1}, Lde/rki/coronawarnapp/covidcertificate/common/certificate/CertificatePersonIdentifier;->hashCode()I
@@ -219,7 +262,7 @@
 .end method
 
 .method public toString()Ljava/lang/String;
-    .locals 7
+    .locals 8
 
     iget-object v0, p0, Lde/rki/coronawarnapp/covidcertificate/common/certificate/VaccinationDccV1;->version:Ljava/lang/String;
 
@@ -227,49 +270,51 @@
 
     iget-object v2, p0, Lde/rki/coronawarnapp/covidcertificate/common/certificate/VaccinationDccV1;->dateOfBirthFormatted:Ljava/lang/String;
 
-    iget-object v3, p0, Lde/rki/coronawarnapp/covidcertificate/common/certificate/VaccinationDccV1;->personIdentifier:Lde/rki/coronawarnapp/covidcertificate/common/certificate/CertificatePersonIdentifier;
+    iget-object v3, p0, Lde/rki/coronawarnapp/covidcertificate/common/certificate/VaccinationDccV1;->dob:Ljava/lang/String;
 
-    iget-object v4, p0, Lde/rki/coronawarnapp/covidcertificate/common/certificate/VaccinationDccV1;->vaccination:Lde/rki/coronawarnapp/covidcertificate/common/certificate/DccV1$VaccinationData;
+    iget-object v4, p0, Lde/rki/coronawarnapp/covidcertificate/common/certificate/VaccinationDccV1;->personIdentifier:Lde/rki/coronawarnapp/covidcertificate/common/certificate/CertificatePersonIdentifier;
 
-    new-instance v5, Ljava/lang/StringBuilder;
+    iget-object v5, p0, Lde/rki/coronawarnapp/covidcertificate/common/certificate/VaccinationDccV1;->vaccination:Lde/rki/coronawarnapp/covidcertificate/common/certificate/DccV1$VaccinationData;
 
-    invoke-direct {v5}, Ljava/lang/StringBuilder;-><init>()V
+    new-instance v6, Ljava/lang/StringBuilder;
 
-    const-string v6, "VaccinationDccV1(version="
+    invoke-direct {v6}, Ljava/lang/StringBuilder;-><init>()V
 
-    invoke-virtual {v5, v6}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+    const-string v7, "VaccinationDccV1(version="
 
-    invoke-virtual {v5, v0}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+    invoke-virtual {v6, v7}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+
+    invoke-virtual {v6, v0}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
 
     const-string v0, ", nameData="
 
-    invoke-virtual {v5, v0}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+    invoke-virtual {v6, v0}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
 
-    invoke-virtual {v5, v1}, Ljava/lang/StringBuilder;->append(Ljava/lang/Object;)Ljava/lang/StringBuilder;
+    invoke-virtual {v6, v1}, Ljava/lang/StringBuilder;->append(Ljava/lang/Object;)Ljava/lang/StringBuilder;
 
     const-string v0, ", dateOfBirthFormatted="
 
-    invoke-virtual {v5, v0}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+    invoke-virtual {v6, v0}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
 
-    invoke-virtual {v5, v2}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+    const-string v0, ", dob="
 
-    const-string v0, ", personIdentifier="
+    const-string v1, ", personIdentifier="
 
-    invoke-virtual {v5, v0}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+    invoke-static {v6, v2, v0, v3, v1}, Landroidx/room/InvalidationTracker$$ExternalSyntheticOutline1;->m(Ljava/lang/StringBuilder;Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;)V
 
-    invoke-virtual {v5, v3}, Ljava/lang/StringBuilder;->append(Ljava/lang/Object;)Ljava/lang/StringBuilder;
+    invoke-virtual {v6, v4}, Ljava/lang/StringBuilder;->append(Ljava/lang/Object;)Ljava/lang/StringBuilder;
 
     const-string v0, ", vaccination="
 
-    invoke-virtual {v5, v0}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+    invoke-virtual {v6, v0}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
 
-    invoke-virtual {v5, v4}, Ljava/lang/StringBuilder;->append(Ljava/lang/Object;)Ljava/lang/StringBuilder;
+    invoke-virtual {v6, v5}, Ljava/lang/StringBuilder;->append(Ljava/lang/Object;)Ljava/lang/StringBuilder;
 
     const-string v0, ")"
 
-    invoke-virtual {v5, v0}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+    invoke-virtual {v6, v0}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
 
-    invoke-virtual {v5}, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
+    invoke-virtual {v6}, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
 
     move-result-object v0
 

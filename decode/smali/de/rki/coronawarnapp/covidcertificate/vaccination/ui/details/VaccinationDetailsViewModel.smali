@@ -11,7 +11,7 @@
 .end annotation
 
 .annotation system Ldalvik/annotation/SourceDebugExtension;
-    value = "SMAP\nVaccinationDetailsViewModel.kt\nKotlin\n*S Kotlin\n*F\n+ 1 VaccinationDetailsViewModel.kt\nde/rki/coronawarnapp/covidcertificate/vaccination/ui/details/VaccinationDetailsViewModel\n+ 2 Transform.kt\nkotlinx/coroutines/flow/FlowKt__TransformKt\n+ 3 Emitters.kt\nkotlinx/coroutines/flow/FlowKt__EmittersKt\n+ 4 SafeCollector.common.kt\nkotlinx/coroutines/flow/internal/SafeCollector_commonKt\n+ 5 fake.kt\nkotlin/jvm/internal/FakeKt\n+ 6 _Collections.kt\nkotlin/collections/CollectionsKt___CollectionsKt\n*L\n1#1,118:1\n47#2:119\n49#2:123\n50#3:120\n55#3:122\n106#4:121\n1#5:124\n1741#6,3:125\n*S KotlinDebug\n*F\n+ 1 VaccinationDetailsViewModel.kt\nde/rki/coronawarnapp/covidcertificate/vaccination/ui/details/VaccinationDetailsViewModel\n*L\n35#1:119\n35#1:123\n35#1:120\n35#1:122\n35#1:121\n55#1:125,3\n*E\n"
+    value = "SMAP\nVaccinationDetailsViewModel.kt\nKotlin\n*S Kotlin\n*F\n+ 1 VaccinationDetailsViewModel.kt\nde/rki/coronawarnapp/covidcertificate/vaccination/ui/details/VaccinationDetailsViewModel\n+ 2 Transform.kt\nkotlinx/coroutines/flow/FlowKt__TransformKt\n+ 3 Emitters.kt\nkotlinx/coroutines/flow/FlowKt__EmittersKt\n+ 4 SafeCollector.common.kt\nkotlinx/coroutines/flow/internal/SafeCollector_commonKt\n+ 5 fake.kt\nkotlin/jvm/internal/FakeKt\n+ 6 _Collections.kt\nkotlin/collections/CollectionsKt___CollectionsKt\n*L\n1#1,109:1\n47#2:110\n49#2:114\n50#3:111\n55#3:113\n106#4:112\n1#5:115\n1741#6,3:116\n*S KotlinDebug\n*F\n+ 1 VaccinationDetailsViewModel.kt\nde/rki/coronawarnapp/covidcertificate/vaccination/ui/details/VaccinationDetailsViewModel\n*L\n35#1:110\n35#1:114\n35#1:111\n35#1:113\n35#1:112\n55#1:116,3\n*E\n"
 .end annotation
 
 
@@ -121,7 +121,7 @@
 
     const-wide/16 p3, 0x0
 
-    invoke-static {p2, p1, p3, p4, v1}, Landroidx/lifecycle/FlowLiveDataConversions;->asLiveData$default(Lkotlinx/coroutines/flow/Flow;Lkotlin/coroutines/CoroutineContext;JI)Landroidx/lifecycle/LiveData;
+    invoke-static {p2, p1, p3, p4, v1}, Lcom/upokecenter/cbor/URIUtility;->asLiveData$default(Lkotlinx/coroutines/flow/Flow;Lkotlin/coroutines/CoroutineContext;JI)Landroidx/lifecycle/LiveData;
 
     move-result-object p1
 

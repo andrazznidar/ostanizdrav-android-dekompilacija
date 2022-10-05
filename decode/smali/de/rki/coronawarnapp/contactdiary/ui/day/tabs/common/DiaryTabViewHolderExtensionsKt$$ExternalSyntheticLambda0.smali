@@ -1,5 +1,6 @@
 .class public final synthetic Lde/rki/coronawarnapp/contactdiary/ui/day/tabs/common/DiaryTabViewHolderExtensionsKt$$ExternalSyntheticLambda0;
 .super Ljava/lang/Object;
+.source "R8$$SyntheticClass"
 
 # interfaces
 .implements Lcom/google/android/material/button/MaterialButtonToggleGroup$OnButtonCheckedListener;

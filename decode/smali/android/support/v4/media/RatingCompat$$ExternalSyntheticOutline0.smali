@@ -1,5 +1,6 @@
 .class public final synthetic Landroid/support/v4/media/RatingCompat$$ExternalSyntheticOutline0;
 .super Ljava/lang/Object;
+.source "R8$$SyntheticClass"
 
 
 # direct methods

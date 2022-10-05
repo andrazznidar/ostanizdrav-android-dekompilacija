@@ -219,7 +219,6 @@
 
     move-result-object v5
 
-    :cond_3
     :goto_1
     invoke-interface {v5}, Ljava/util/Iterator;->hasNext()Z
 
@@ -237,8 +236,11 @@
 
     move-result-object v6
 
-    if-eqz v6, :cond_3
+    if-nez v6, :cond_3
 
+    goto :goto_1
+
+    :cond_3
     invoke-interface {v4, v6}, Ljava/util/Collection;->add(Ljava/lang/Object;)Z
 
     goto :goto_1
@@ -279,7 +281,7 @@
 
     move-result-object v4
 
-    iget-object v4, v4, Lde/rki/coronawarnapp/covidcertificate/common/repository/TestCertificateContainerId;->certUuid:Ljava/lang/String;
+    iget-object v4, v4, Lde/rki/coronawarnapp/covidcertificate/common/repository/TestCertificateContainerId;->qrCodeHash:Ljava/lang/String;
 
     invoke-interface {v0, v4}, Ljava/util/Collection;->add(Ljava/lang/Object;)Z
 

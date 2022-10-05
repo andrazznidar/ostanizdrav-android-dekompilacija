@@ -42,6 +42,9 @@
 .method public abstract getTrendValue()I
 .end method
 
+.method public abstract getUpdatedAt()J
+.end method
+
 .method public abstract getValue()D
 .end method
 

@@ -3,6 +3,14 @@
 .source "JsonMapper.java"
 
 
+# annotations
+.annotation system Ldalvik/annotation/MemberClasses;
+    value = {
+        Lcom/fasterxml/jackson/databind/json/JsonMapper$Builder;
+    }
+.end annotation
+
+
 # direct methods
 .method public constructor <init>()V
     .locals 2

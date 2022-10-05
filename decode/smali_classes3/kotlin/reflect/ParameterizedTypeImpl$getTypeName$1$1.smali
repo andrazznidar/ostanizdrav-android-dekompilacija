@@ -1,4 +1,4 @@
-.class public final synthetic Lkotlin/reflect/ParameterizedTypeImpl$getTypeName$1$1;
+.class final synthetic Lkotlin/reflect/ParameterizedTypeImpl$getTypeName$1$1;
 .super Lkotlin/jvm/internal/FunctionReferenceImpl;
 .source "TypesJVM.kt"
 
@@ -12,7 +12,7 @@
 .end annotation
 
 .annotation system Ldalvik/annotation/InnerClass;
-    accessFlags = 0x1019
+    accessFlags = 0x1001
     name = null
 .end annotation
 
@@ -24,6 +24,16 @@
         "Ljava/lang/String;",
         ">;"
     }
+.end annotation
+
+.annotation runtime Lkotlin/Metadata;
+    k = 0x3
+    mv = {
+        0x1,
+        0x6,
+        0x0
+    }
+    xi = 0x30
 .end annotation
 
 
@@ -66,12 +76,22 @@
 
 
 # virtual methods
-.method public invoke(Ljava/lang/Object;)Ljava/lang/Object;
-    .locals 1
+.method public bridge synthetic invoke(Ljava/lang/Object;)Ljava/lang/Object;
+    .locals 0
 
     check-cast p1, Ljava/lang/reflect/Type;
 
-    const-string v0, "p1"
+    invoke-virtual {p0, p1}, Lkotlin/reflect/ParameterizedTypeImpl$getTypeName$1$1;->invoke(Ljava/lang/reflect/Type;)Ljava/lang/String;
+
+    move-result-object p1
+
+    return-object p1
+.end method
+
+.method public final invoke(Ljava/lang/reflect/Type;)Ljava/lang/String;
+    .locals 1
+
+    const-string v0, "p0"
 
     invoke-static {p1, v0}, Lkotlin/jvm/internal/Intrinsics;->checkNotNullParameter(Ljava/lang/Object;Ljava/lang/String;)V
 

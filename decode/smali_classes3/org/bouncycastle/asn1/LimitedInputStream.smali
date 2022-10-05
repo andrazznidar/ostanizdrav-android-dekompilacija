@@ -1,11 +1,11 @@
-.class public abstract Lorg/bouncycastle/asn1/LimitedInputStream;
+.class abstract Lorg/bouncycastle/asn1/LimitedInputStream;
 .super Ljava/io/InputStream;
 
 
 # instance fields
 .field public final _in:Ljava/io/InputStream;
 
-.field public _limit:I
+.field private _limit:I
 
 
 # direct methods
@@ -23,6 +23,14 @@
 
 
 # virtual methods
+.method public getLimit()I
+    .locals 1
+
+    iget v0, p0, Lorg/bouncycastle/asn1/LimitedInputStream;->_limit:I
+
+    return v0
+.end method
+
 .method public setParentEofDetect(Z)V
     .locals 2
 
@@ -34,9 +42,7 @@
 
     check-cast v0, Lorg/bouncycastle/asn1/IndefiniteLengthInputStream;
 
-    iput-boolean p1, v0, Lorg/bouncycastle/asn1/IndefiniteLengthInputStream;->_eofOn00:Z
-
-    invoke-virtual {v0}, Lorg/bouncycastle/asn1/IndefiniteLengthInputStream;->checkForEof()Z
+    invoke-virtual {v0, p1}, Lorg/bouncycastle/asn1/IndefiniteLengthInputStream;->setEofOn00(Z)V
 
     :cond_0
     return-void

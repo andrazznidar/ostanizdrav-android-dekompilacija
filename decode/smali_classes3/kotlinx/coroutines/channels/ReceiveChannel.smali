@@ -49,6 +49,17 @@
     .end annotation
 .end method
 
+.method public abstract receive(Lkotlin/coroutines/Continuation;)Ljava/lang/Object;
+    .annotation system Ldalvik/annotation/Signature;
+        value = {
+            "(",
+            "Lkotlin/coroutines/Continuation<",
+            "-TE;>;)",
+            "Ljava/lang/Object;"
+        }
+    .end annotation
+.end method
+
 .method public abstract receiveCatching-JP2dKIU(Lkotlin/coroutines/Continuation;)Ljava/lang/Object;
     .annotation system Ldalvik/annotation/Signature;
         value = {

@@ -1,4 +1,4 @@
-.class public final Lkotlin/reflect/jvm/internal/impl/serialization/deserialization/ClassDeserializer$ClassKey;
+.class final Lkotlin/reflect/jvm/internal/impl/serialization/deserialization/ClassDeserializer$ClassKey;
 .super Ljava/lang/Object;
 .source "ClassDeserializer.kt"
 
@@ -15,14 +15,18 @@
 
 
 # instance fields
-.field public final classData:Lkotlin/reflect/jvm/internal/impl/serialization/deserialization/ClassData;
+.field private final classData:Lkotlin/reflect/jvm/internal/impl/serialization/deserialization/ClassData;
 
-.field public final classId:Lkotlin/reflect/jvm/internal/impl/name/ClassId;
+.field private final classId:Lkotlin/reflect/jvm/internal/impl/name/ClassId;
 
 
 # direct methods
 .method public constructor <init>(Lkotlin/reflect/jvm/internal/impl/name/ClassId;Lkotlin/reflect/jvm/internal/impl/serialization/deserialization/ClassData;)V
-    .locals 0
+    .locals 1
+
+    const-string v0, "classId"
+
+    invoke-static {p1, v0}, Lkotlin/jvm/internal/Intrinsics;->checkNotNullParameter(Ljava/lang/Object;Ljava/lang/String;)V
 
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
@@ -63,6 +67,22 @@
 
     :goto_0
     return p1
+.end method
+
+.method public final getClassData()Lkotlin/reflect/jvm/internal/impl/serialization/deserialization/ClassData;
+    .locals 1
+
+    iget-object v0, p0, Lkotlin/reflect/jvm/internal/impl/serialization/deserialization/ClassDeserializer$ClassKey;->classData:Lkotlin/reflect/jvm/internal/impl/serialization/deserialization/ClassData;
+
+    return-object v0
+.end method
+
+.method public final getClassId()Lkotlin/reflect/jvm/internal/impl/name/ClassId;
+    .locals 1
+
+    iget-object v0, p0, Lkotlin/reflect/jvm/internal/impl/serialization/deserialization/ClassDeserializer$ClassKey;->classId:Lkotlin/reflect/jvm/internal/impl/name/ClassId;
+
+    return-object v0
 .end method
 
 .method public hashCode()I

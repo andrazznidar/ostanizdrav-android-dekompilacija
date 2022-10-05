@@ -36,14 +36,14 @@
 .end annotation
 
 .annotation system Ldalvik/annotation/SourceDebugExtension;
-    value = "SMAP\nVaccinationRepository.kt\nKotlin\n*S Kotlin\n*F\n+ 1 VaccinationRepository.kt\nde/rki/coronawarnapp/covidcertificate/vaccination/core/repository/VaccinationRepository$registerCertificate$updatedData$1\n+ 2 _Collections.kt\nkotlin/collections/CollectionsKt___CollectionsKt\n+ 3 fake.kt\nkotlin/jvm/internal/FakeKt\n*L\n1#1,368:1\n659#2,11:369\n1741#2,3:381\n1#3:380\n*S KotlinDebug\n*F\n+ 1 VaccinationRepository.kt\nde/rki/coronawarnapp/covidcertificate/vaccination/core/repository/VaccinationRepository$registerCertificate$updatedData$1\n*L\n109#1:369,11\n117#1:381,3\n*E\n"
+    value = "SMAP\nVaccinationRepository.kt\nKotlin\n*S Kotlin\n*F\n+ 1 VaccinationRepository.kt\nde/rki/coronawarnapp/covidcertificate/vaccination/core/repository/VaccinationRepository$registerCertificate$updatedData$1\n+ 2 _Collections.kt\nkotlin/collections/CollectionsKt___CollectionsKt\n+ 3 fake.kt\nkotlin/jvm/internal/FakeKt\n*L\n1#1,439:1\n659#2,11:440\n1741#2,3:452\n1#3:451\n*S KotlinDebug\n*F\n+ 1 VaccinationRepository.kt\nde/rki/coronawarnapp/covidcertificate/vaccination/core/repository/VaccinationRepository$registerCertificate$updatedData$1\n*L\n126#1:440,11\n134#1:452,3\n*E\n"
 .end annotation
 
 .annotation runtime Lkotlin/coroutines/jvm/internal/DebugMetadata;
     c = "de.rki.coronawarnapp.covidcertificate.vaccination.core.repository.VaccinationRepository$registerCertificate$updatedData$1"
     f = "VaccinationRepository.kt"
     l = {
-        0x86
+        0x97
     }
     m = "invokeSuspend"
 .end annotation
@@ -147,7 +147,7 @@
 .end method
 
 .method public final invokeSuspend(Ljava/lang/Object;)Ljava/lang/Object;
-    .locals 22
+    .locals 24
 
     move-object/from16 v0, p0
 
@@ -187,7 +187,7 @@
 
     move-object/from16 v5, p1
 
-    goto/16 :goto_4
+    goto/16 :goto_3
 
     :cond_0
     new-instance v1, Ljava/lang/IllegalStateException;
@@ -241,11 +241,7 @@
 
     invoke-static {v2}, Ljava/util/Objects;->requireNonNull(Ljava/lang/Object;)Ljava/lang/Object;
 
-    iget-object v13, v2, Lde/rki/coronawarnapp/covidcertificate/vaccination/core/qrcode/VaccinationCertificateQRCode;->data:Lde/rki/coronawarnapp/covidcertificate/common/certificate/DccData;
-
-    iget-object v13, v13, Lde/rki/coronawarnapp/covidcertificate/common/certificate/DccData;->certificate:Lde/rki/coronawarnapp/covidcertificate/common/certificate/DccV1$MetaData;
-
-    invoke-interface {v13}, Lde/rki/coronawarnapp/covidcertificate/common/certificate/DccV1$MetaData;->getPersonIdentifier()Lde/rki/coronawarnapp/covidcertificate/common/certificate/CertificatePersonIdentifier;
+    invoke-static {v2}, Lde/rki/coronawarnapp/covidcertificate/common/qrcode/DccQrCode$DefaultImpls;->getPersonIdentifier(Lde/rki/coronawarnapp/covidcertificate/common/qrcode/DccQrCode;)Lde/rki/coronawarnapp/covidcertificate/common/certificate/CertificatePersonIdentifier;
 
     move-result-object v13
 
@@ -293,7 +289,7 @@
 
     move-object v11, v7
 
-    invoke-direct/range {v11 .. v16}, Lde/rki/coronawarnapp/covidcertificate/vaccination/core/repository/storage/VaccinatedPersonData;-><init>(Ljava/util/Set;Lde/rki/coronawarnapp/covidcertificate/validation/core/rule/DccValidationRule;Ljava/lang/String;Lorg/joda/time/Instant;I)V
+    invoke-direct/range {v11 .. v16}, Lde/rki/coronawarnapp/covidcertificate/vaccination/core/repository/storage/VaccinatedPersonData;-><init>(Ljava/util/Set;Ljava/lang/String;Ljava/lang/String;Lorg/joda/time/Instant;I)V
 
     sget-object v9, Lkotlin/collections/EmptyMap;->INSTANCE:Lkotlin/collections/EmptyMap;
 
@@ -313,7 +309,7 @@
 
     const-string v7, "Creating new person for %s"
 
-    invoke-virtual {v9, v7, v11}, Ltimber/log/Timber$Forest;->i(Ljava/lang/String;[Ljava/lang/Object;)V
+    invoke-virtual {v9, v7, v11}, Ltimber/log/Timber$Tree;->i(Ljava/lang/String;[Ljava/lang/Object;)V
 
     :cond_6
     iget-object v7, v10, Lde/rki/coronawarnapp/covidcertificate/vaccination/core/VaccinatedPerson;->data:Lde/rki/coronawarnapp/covidcertificate/vaccination/core/repository/storage/VaccinatedPersonData;
@@ -326,27 +322,30 @@
 
     instance-of v11, v7, Ljava/util/Collection;
 
-    if-eqz v11, :cond_7
+    if-eqz v11, :cond_8
 
     invoke-interface {v7}, Ljava/util/Collection;->isEmpty()Z
 
     move-result v11
 
-    if-eqz v11, :cond_7
+    if-eqz v11, :cond_8
+
+    :cond_7
+    move v7, v8
 
     goto :goto_2
 
-    :cond_7
+    :cond_8
     invoke-interface {v7}, Ljava/lang/Iterable;->iterator()Ljava/util/Iterator;
 
     move-result-object v7
 
-    :cond_8
+    :cond_9
     invoke-interface {v7}, Ljava/util/Iterator;->hasNext()Z
 
     move-result v11
 
-    if-eqz v11, :cond_9
+    if-eqz v11, :cond_7
 
     invoke-interface {v7}, Ljava/util/Iterator;->next()Ljava/lang/Object;
 
@@ -354,11 +353,13 @@
 
     check-cast v11, Lde/rki/coronawarnapp/covidcertificate/vaccination/core/repository/storage/VaccinationContainer;
 
-    invoke-virtual {v11}, Lde/rki/coronawarnapp/covidcertificate/vaccination/core/repository/storage/VaccinationContainer;->getCertificateId()Ljava/lang/String;
+    invoke-virtual {v11}, Lde/rki/coronawarnapp/covidcertificate/vaccination/core/repository/storage/VaccinationContainer;->getQrCodeHash()Ljava/lang/String;
 
     move-result-object v11
 
-    invoke-virtual {v9}, Lde/rki/coronawarnapp/covidcertificate/vaccination/core/qrcode/VaccinationCertificateQRCode;->getUniqueCertificateIdentifier()Ljava/lang/String;
+    invoke-static {v9}, Ljava/util/Objects;->requireNonNull(Ljava/lang/Object;)Ljava/lang/Object;
+
+    invoke-static {v9}, Lde/rki/coronawarnapp/covidcertificate/common/qrcode/DccQrCode$DefaultImpls;->getHash(Lde/rki/coronawarnapp/covidcertificate/common/qrcode/DccQrCode;)Ljava/lang/String;
 
     move-result-object v12
 
@@ -366,17 +367,11 @@
 
     move-result v11
 
-    if-eqz v11, :cond_8
+    if-eqz v11, :cond_9
 
     move v7, v5
 
-    goto :goto_3
-
-    :cond_9
     :goto_2
-    move v7, v8
-
-    :goto_3
     if-nez v7, :cond_b
 
     iget-object v2, v0, Lde/rki/coronawarnapp/covidcertificate/vaccination/core/repository/VaccinationRepository$registerCertificate$updatedData$1;->$qrCode:Lde/rki/coronawarnapp/covidcertificate/vaccination/core/qrcode/VaccinationCertificateQRCode;
@@ -395,7 +390,7 @@
 
     iget-object v7, v7, Lde/rki/coronawarnapp/covidcertificate/vaccination/core/repository/VaccinationRepository;->qrCodeExtractor:Lde/rki/coronawarnapp/covidcertificate/common/certificate/DccQrCodeExtractor;
 
-    const/16 v19, 0x0
+    const/16 v20, 0x0
 
     const-string v8, "<this>"
 
@@ -419,13 +414,17 @@
 
     const/16 v18, 0x0
 
-    const/16 v20, 0x7c
+    const/16 v19, 0x0
 
     const/16 v21, 0x0
 
+    const/16 v22, 0x2fc
+
+    const/16 v23, 0x0
+
     move-object v11, v8
 
-    invoke-direct/range {v11 .. v21}, Lde/rki/coronawarnapp/covidcertificate/vaccination/core/repository/storage/VaccinationContainer;-><init>(Ljava/lang/String;Lorg/joda/time/Instant;Lorg/joda/time/Instant;Lorg/joda/time/Instant;Lorg/joda/time/Instant;Lde/rki/coronawarnapp/covidcertificate/common/certificate/CwaCovidCertificate$State;Lorg/joda/time/Instant;ZILkotlin/jvm/internal/DefaultConstructorMarker;)V
+    invoke-direct/range {v11 .. v23}, Lde/rki/coronawarnapp/covidcertificate/vaccination/core/repository/storage/VaccinationContainer;-><init>(Ljava/lang/String;Lorg/joda/time/Instant;Lorg/joda/time/Instant;Lorg/joda/time/Instant;Lorg/joda/time/Instant;Lorg/joda/time/Instant;Lde/rki/coronawarnapp/covidcertificate/common/certificate/CwaCovidCertificate$State;Lorg/joda/time/Instant;ZLorg/joda/time/Instant;ILkotlin/jvm/internal/DefaultConstructorMarker;)V
 
     invoke-virtual {v8, v7}, Lde/rki/coronawarnapp/covidcertificate/vaccination/core/repository/storage/VaccinationContainer;->setQrCodeExtractor(Lde/rki/coronawarnapp/covidcertificate/common/certificate/DccQrCodeExtractor;)V
 
@@ -445,9 +444,13 @@
 
     const/4 v13, 0x0
 
+    const/4 v14, 0x0
+
+    const/4 v15, 0x0
+
     const/16 v16, 0xe
 
-    invoke-static/range {v11 .. v16}, Lde/rki/coronawarnapp/covidcertificate/vaccination/core/repository/storage/VaccinatedPersonData;->copy$default(Lde/rki/coronawarnapp/covidcertificate/vaccination/core/repository/storage/VaccinatedPersonData;Ljava/util/Set;Lde/rki/coronawarnapp/covidcertificate/validation/core/rule/DccValidationRule;Ljava/lang/String;Lorg/joda/time/Instant;I)Lde/rki/coronawarnapp/covidcertificate/vaccination/core/repository/storage/VaccinatedPersonData;
+    invoke-static/range {v11 .. v16}, Lde/rki/coronawarnapp/covidcertificate/vaccination/core/repository/storage/VaccinatedPersonData;->copy$default(Lde/rki/coronawarnapp/covidcertificate/vaccination/core/repository/storage/VaccinatedPersonData;Ljava/util/Set;Ljava/lang/String;Ljava/lang/String;Lorg/joda/time/Instant;I)Lde/rki/coronawarnapp/covidcertificate/vaccination/core/repository/storage/VaccinatedPersonData;
 
     move-result-object v2
 
@@ -476,7 +479,7 @@
 
     move-object v2, v10
 
-    :goto_4
+    :goto_3
     check-cast v5, Ljava/util/Map;
 
     invoke-static {v2, v1, v4, v5, v3}, Lde/rki/coronawarnapp/covidcertificate/vaccination/core/VaccinatedPerson;->copy$default(Lde/rki/coronawarnapp/covidcertificate/vaccination/core/VaccinatedPerson;Lde/rki/coronawarnapp/covidcertificate/vaccination/core/repository/storage/VaccinatedPersonData;Lde/rki/coronawarnapp/covidcertificate/valueset/valuesets/VaccinationValueSets;Ljava/util/Map;I)Lde/rki/coronawarnapp/covidcertificate/vaccination/core/VaccinatedPerson;
@@ -502,7 +505,9 @@
 
     iget-object v5, v0, Lde/rki/coronawarnapp/covidcertificate/vaccination/core/repository/VaccinationRepository$registerCertificate$updatedData$1;->$qrCode:Lde/rki/coronawarnapp/covidcertificate/vaccination/core/qrcode/VaccinationCertificateQRCode;
 
-    invoke-virtual {v5}, Lde/rki/coronawarnapp/covidcertificate/vaccination/core/qrcode/VaccinationCertificateQRCode;->getUniqueCertificateIdentifier()Ljava/lang/String;
+    invoke-static {v5}, Ljava/util/Objects;->requireNonNull(Ljava/lang/Object;)Ljava/lang/Object;
+
+    invoke-static {v5}, Lde/rki/coronawarnapp/covidcertificate/common/qrcode/DccQrCode$DefaultImpls;->getHash(Lde/rki/coronawarnapp/covidcertificate/common/qrcode/DccQrCode;)Ljava/lang/String;
 
     move-result-object v5
 
@@ -510,7 +515,7 @@
 
     const-string v5, "Certificate is already registered: %s"
 
-    invoke-virtual {v1, v5, v2}, Ltimber/log/Timber$Forest;->e(Ljava/lang/String;[Ljava/lang/Object;)V
+    invoke-virtual {v1, v5, v2}, Ltimber/log/Timber$Tree;->e(Ljava/lang/String;[Ljava/lang/Object;)V
 
     new-instance v1, Lde/rki/coronawarnapp/covidcertificate/common/exception/InvalidVaccinationCertificateException;
 

@@ -149,7 +149,7 @@
 
     invoke-direct {v1, p0}, Lde/rki/coronawarnapp/presencetracing/checkins/CheckIn$traceLocationIdHash$2;-><init>(Lde/rki/coronawarnapp/presencetracing/checkins/CheckIn;)V
 
-    invoke-static {v1}, Lkotlin/LazyKt__LazyKt;->lazy(Lkotlin/jvm/functions/Function0;)Lkotlin/Lazy;
+    invoke-static {v1}, Lkotlin/LazyKt__LazyJVMKt;->lazy(Lkotlin/jvm/functions/Function0;)Lkotlin/Lazy;
 
     move-result-object v1
 

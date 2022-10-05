@@ -53,7 +53,7 @@
 
     invoke-direct {p1, p0}, Lde/rki/coronawarnapp/diagnosiskeys/storage/KeyCacheRepository$storageDir$2;-><init>(Lde/rki/coronawarnapp/diagnosiskeys/storage/KeyCacheRepository;)V
 
-    invoke-static {p1}, Lkotlin/LazyKt__LazyKt;->lazy(Lkotlin/jvm/functions/Function0;)Lkotlin/Lazy;
+    invoke-static {p1}, Lkotlin/LazyKt__LazyJVMKt;->lazy(Lkotlin/jvm/functions/Function0;)Lkotlin/Lazy;
 
     move-result-object p1
 
@@ -63,7 +63,7 @@
 
     invoke-direct {p1, p0}, Lde/rki/coronawarnapp/diagnosiskeys/storage/KeyCacheRepository$database$2;-><init>(Lde/rki/coronawarnapp/diagnosiskeys/storage/KeyCacheRepository;)V
 
-    invoke-static {p1}, Lkotlin/LazyKt__LazyKt;->lazy(Lkotlin/jvm/functions/Function0;)Lkotlin/Lazy;
+    invoke-static {p1}, Lkotlin/LazyKt__LazyJVMKt;->lazy(Lkotlin/jvm/functions/Function0;)Lkotlin/Lazy;
 
     move-result-object p1
 
@@ -416,7 +416,7 @@
 
     iget v3, v11, Lde/rki/coronawarnapp/diagnosiskeys/storage/KeyCacheRepository$createCacheEntry$1;->label:I
 
-    const/4 v13, 0x0
+    const/4 v13, 0x3
 
     const/4 v14, 0x1
 
@@ -424,11 +424,9 @@
 
     const/4 v10, 0x2
 
-    const/4 v9, 0x3
+    const/4 v9, 0x4
 
-    const/4 v8, 0x4
-
-    const/4 v5, 0x5
+    const/4 v8, 0x5
 
     if-eqz v3, :cond_6
 
@@ -436,11 +434,11 @@
 
     if-eq v3, v10, :cond_4
 
-    if-eq v3, v9, :cond_3
+    if-eq v3, v13, :cond_3
 
-    if-eq v3, v8, :cond_2
+    if-eq v3, v9, :cond_2
 
-    if-ne v3, v5, :cond_1
+    if-ne v3, v8, :cond_1
 
     iget-object v0, v11, Lde/rki/coronawarnapp/diagnosiskeys/storage/KeyCacheRepository$createCacheEntry$1;->L$1:Ljava/lang/Object;
 
@@ -489,9 +487,9 @@
 
     check-cast v4, Lde/rki/coronawarnapp/diagnosiskeys/storage/CachedKeyInfo;
 
-    iget-object v6, v11, Lde/rki/coronawarnapp/diagnosiskeys/storage/KeyCacheRepository$createCacheEntry$1;->L$0:Ljava/lang/Object;
+    iget-object v5, v11, Lde/rki/coronawarnapp/diagnosiskeys/storage/KeyCacheRepository$createCacheEntry$1;->L$0:Ljava/lang/Object;
 
-    check-cast v6, Lde/rki/coronawarnapp/diagnosiskeys/storage/KeyCacheRepository;
+    check-cast v5, Lde/rki/coronawarnapp/diagnosiskeys/storage/KeyCacheRepository;
 
     invoke-static {v2}, Lkotlin/ResultKt;->throwOnFailure(Ljava/lang/Object;)V
 
@@ -512,9 +510,9 @@
 
     iget-object v0, v11, Lde/rki/coronawarnapp/diagnosiskeys/storage/KeyCacheRepository$createCacheEntry$1;->L$0:Ljava/lang/Object;
 
-    move-object v6, v0
+    move-object v5, v0
 
-    check-cast v6, Lde/rki/coronawarnapp/diagnosiskeys/storage/KeyCacheRepository;
+    check-cast v5, Lde/rki/coronawarnapp/diagnosiskeys/storage/KeyCacheRepository;
 
     :try_start_0
     invoke-static {v2}, Lkotlin/ResultKt;->throwOnFailure(Ljava/lang/Object;)V
@@ -538,9 +536,9 @@
 
     iget-object v0, v11, Lde/rki/coronawarnapp/diagnosiskeys/storage/KeyCacheRepository$createCacheEntry$1;->L$0:Ljava/lang/Object;
 
-    move-object v6, v0
+    move-object v5, v0
 
-    check-cast v6, Lde/rki/coronawarnapp/diagnosiskeys/storage/KeyCacheRepository;
+    check-cast v5, Lde/rki/coronawarnapp/diagnosiskeys/storage/KeyCacheRepository;
 
     :try_start_1
     invoke-static {v2}, Lkotlin/ResultKt;->throwOnFailure(Ljava/lang/Object;)V
@@ -559,7 +557,7 @@
     :cond_6
     invoke-static {v2}, Lkotlin/ResultKt;->throwOnFailure(Ljava/lang/Object;)V
 
-    new-instance v4, Lde/rki/coronawarnapp/diagnosiskeys/storage/CachedKeyInfo;
+    new-instance v5, Lde/rki/coronawarnapp/diagnosiskeys/storage/CachedKeyInfo;
 
     iget-object v2, v1, Lde/rki/coronawarnapp/diagnosiskeys/storage/KeyCacheRepository;->timeStamper:Lde/rki/coronawarnapp/util/TimeStamper;
 
@@ -575,9 +573,9 @@
 
     const-string v2, "location"
 
-    move-object/from16 v3, p2
+    move-object/from16 v4, p2
 
-    invoke-static {v3, v2}, Lkotlin/jvm/internal/Intrinsics;->checkNotNullParameter(Ljava/lang/Object;Ljava/lang/String;)V
+    invoke-static {v4, v2}, Lkotlin/jvm/internal/Intrinsics;->checkNotNullParameter(Ljava/lang/Object;Ljava/lang/String;)V
 
     const-string v2, "day"
 
@@ -587,7 +585,7 @@
 
     move-result-object v2
 
-    iget-object v5, v0, Lde/rki/coronawarnapp/diagnosiskeys/storage/CachedKeyInfo$Type;->typeValue:Ljava/lang/String;
+    iget-object v3, v0, Lde/rki/coronawarnapp/diagnosiskeys/storage/CachedKeyInfo$Type;->typeValue:Ljava/lang/String;
 
     new-instance v8, Ljava/lang/StringBuilder;
 
@@ -599,7 +597,7 @@
 
     invoke-virtual {v8, v2}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
 
-    invoke-virtual {v8, v5}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+    invoke-virtual {v8, v3}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
 
     invoke-virtual {v8, v2}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
 
@@ -607,7 +605,7 @@
 
     invoke-virtual {v8}, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
 
-    move-result-object v5
+    move-result-object v3
 
     if-nez v7, :cond_7
 
@@ -618,7 +616,7 @@
 
     invoke-direct {v8}, Ljava/lang/StringBuilder;-><init>()V
 
-    invoke-virtual {v8, v5}, Ljava/lang/StringBuilder;->append(Ljava/lang/Object;)Ljava/lang/StringBuilder;
+    invoke-virtual {v8, v3}, Ljava/lang/StringBuilder;->append(Ljava/lang/Object;)Ljava/lang/StringBuilder;
 
     invoke-virtual {v8, v2}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
 
@@ -626,26 +624,24 @@
 
     invoke-virtual {v8}, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
 
-    move-result-object v5
+    move-result-object v3
 
     :goto_1
     sget-object v2, Lde/rki/coronawarnapp/util/HashExtensions;->INSTANCE:Lde/rki/coronawarnapp/util/HashExtensions;
 
-    invoke-static {v2, v5, v15, v14}, Lde/rki/coronawarnapp/util/HashExtensions;->toSHA1$default(Lde/rki/coronawarnapp/util/HashExtensions;Ljava/lang/String;Lde/rki/coronawarnapp/util/HashExtensions$Format;I)Ljava/lang/String;
+    invoke-static {v2, v3, v15, v14}, Lde/rki/coronawarnapp/util/HashExtensions;->toSHA1$default(Lde/rki/coronawarnapp/util/HashExtensions;Ljava/lang/String;II)Ljava/lang/String;
 
-    move-result-object v5
+    move-result-object v3
 
     const/16 v17, 0x0
 
     const/16 v18, 0x0
 
-    move-object v2, v4
-
-    move-object v3, v5
-
-    move-object v8, v4
+    move-object v2, v5
 
     move-object/from16 v4, p1
+
+    move-object v8, v5
 
     move-object/from16 v5, p2
 
@@ -653,7 +649,7 @@
 
     move-object/from16 v7, p4
 
-    move-object v15, v8
+    move-object v13, v8
 
     move-object/from16 v8, v16
 
@@ -665,14 +661,14 @@
 
     invoke-direct/range {v2 .. v10}, Lde/rki/coronawarnapp/diagnosiskeys/storage/CachedKeyInfo;-><init>(Ljava/lang/String;Lde/rki/coronawarnapp/diagnosiskeys/storage/CachedKeyInfo$Type;Lde/rki/coronawarnapp/diagnosiskeys/server/LocationCode;Lorg/joda/time/LocalDate;Lorg/joda/time/LocalTime;Lorg/joda/time/Instant;Ljava/lang/String;Z)V
 
-    invoke-virtual {v1, v15}, Lde/rki/coronawarnapp/diagnosiskeys/storage/KeyCacheRepository;->getPathForKey(Lde/rki/coronawarnapp/diagnosiskeys/storage/CachedKeyInfo;)Ljava/io/File;
+    invoke-virtual {v1, v13}, Lde/rki/coronawarnapp/diagnosiskeys/storage/KeyCacheRepository;->getPathForKey(Lde/rki/coronawarnapp/diagnosiskeys/storage/CachedKeyInfo;)Ljava/io/File;
 
     move-result-object v2
 
     :try_start_2
     iput-object v1, v11, Lde/rki/coronawarnapp/diagnosiskeys/storage/KeyCacheRepository$createCacheEntry$1;->L$0:Ljava/lang/Object;
 
-    iput-object v15, v11, Lde/rki/coronawarnapp/diagnosiskeys/storage/KeyCacheRepository$createCacheEntry$1;->L$1:Ljava/lang/Object;
+    iput-object v13, v11, Lde/rki/coronawarnapp/diagnosiskeys/storage/KeyCacheRepository$createCacheEntry$1;->L$1:Ljava/lang/Object;
 
     iput-object v2, v11, Lde/rki/coronawarnapp/diagnosiskeys/storage/KeyCacheRepository$createCacheEntry$1;->L$2:Ljava/lang/Object;
 
@@ -689,9 +685,9 @@
     return-object v12
 
     :cond_8
-    move-object v6, v1
+    move-object v5, v1
 
-    move-object v4, v15
+    move-object v4, v13
 
     move-object/from16 v19, v3
 
@@ -703,7 +699,7 @@
     :try_start_3
     check-cast v2, Lde/rki/coronawarnapp/diagnosiskeys/storage/KeyCacheDatabase$CachedKeyFileDao;
 
-    iput-object v6, v11, Lde/rki/coronawarnapp/diagnosiskeys/storage/KeyCacheRepository$createCacheEntry$1;->L$0:Ljava/lang/Object;
+    iput-object v5, v11, Lde/rki/coronawarnapp/diagnosiskeys/storage/KeyCacheRepository$createCacheEntry$1;->L$0:Ljava/lang/Object;
 
     iput-object v4, v11, Lde/rki/coronawarnapp/diagnosiskeys/storage/KeyCacheRepository$createCacheEntry$1;->L$1:Ljava/lang/Object;
 
@@ -731,11 +727,11 @@
 
     const-string v2, "Target path despite no collision exists, deleting: %s"
 
-    new-array v5, v14, [Ljava/lang/Object;
+    new-array v6, v14, [Ljava/lang/Object;
 
-    aput-object v3, v5, v13
+    aput-object v3, v6, v15
 
-    invoke-virtual {v0, v2, v5}, Ltimber/log/Timber$Forest;->w(Ljava/lang/String;[Ljava/lang/Object;)V
+    invoke-virtual {v0, v2, v6}, Ltimber/log/Timber$Forest;->w(Ljava/lang/String;[Ljava/lang/Object;)V
     :try_end_3
     .catch Landroid/database/sqlite/SQLiteConstraintException; {:try_start_3 .. :try_end_3} :catch_0
 
@@ -744,28 +740,28 @@
     :catch_1
     move-exception v0
 
-    move-object v6, v1
+    move-object v5, v1
 
     move-object v3, v2
 
-    move-object v4, v15
+    move-object v4, v13
 
     :goto_4
     sget-object v2, Ltimber/log/Timber;->Forest:Ltimber/log/Timber$Forest;
 
-    new-array v5, v14, [Ljava/lang/Object;
+    new-array v6, v14, [Ljava/lang/Object;
 
-    aput-object v4, v5, v13
+    aput-object v4, v6, v15
 
     const-string v7, "Insertion collision? Overwriting for %s"
 
-    invoke-virtual {v2, v0, v7, v5}, Ltimber/log/Timber$Forest;->e(Ljava/lang/Throwable;Ljava/lang/String;[Ljava/lang/Object;)V
+    invoke-virtual {v2, v0, v7, v6}, Ltimber/log/Timber$Forest;->e(Ljava/lang/Throwable;Ljava/lang/String;[Ljava/lang/Object;)V
 
     invoke-static {v4}, Lkotlin/collections/CollectionsKt__CollectionsKt;->listOf(Ljava/lang/Object;)Ljava/util/List;
 
     move-result-object v2
 
-    iput-object v6, v11, Lde/rki/coronawarnapp/diagnosiskeys/storage/KeyCacheRepository$createCacheEntry$1;->L$0:Ljava/lang/Object;
+    iput-object v5, v11, Lde/rki/coronawarnapp/diagnosiskeys/storage/KeyCacheRepository$createCacheEntry$1;->L$0:Ljava/lang/Object;
 
     iput-object v4, v11, Lde/rki/coronawarnapp/diagnosiskeys/storage/KeyCacheRepository$createCacheEntry$1;->L$1:Ljava/lang/Object;
 
@@ -773,11 +769,11 @@
 
     iput-object v0, v11, Lde/rki/coronawarnapp/diagnosiskeys/storage/KeyCacheRepository$createCacheEntry$1;->L$3:Ljava/lang/Object;
 
-    const/4 v5, 0x3
+    const/4 v6, 0x3
 
-    iput v5, v11, Lde/rki/coronawarnapp/diagnosiskeys/storage/KeyCacheRepository$createCacheEntry$1;->label:I
+    iput v6, v11, Lde/rki/coronawarnapp/diagnosiskeys/storage/KeyCacheRepository$createCacheEntry$1;->label:I
 
-    invoke-virtual {v6, v2, v11}, Lde/rki/coronawarnapp/diagnosiskeys/storage/KeyCacheRepository;->delete(Ljava/util/Collection;Lkotlin/coroutines/Continuation;)Ljava/lang/Object;
+    invoke-virtual {v5, v2, v11}, Lde/rki/coronawarnapp/diagnosiskeys/storage/KeyCacheRepository;->delete(Ljava/util/Collection;Lkotlin/coroutines/Continuation;)Ljava/lang/Object;
 
     move-result-object v2
 
@@ -789,29 +785,29 @@
     :goto_5
     sget-object v2, Ltimber/log/Timber;->Forest:Ltimber/log/Timber$Forest;
 
-    new-array v5, v14, [Ljava/lang/Object;
+    new-array v6, v14, [Ljava/lang/Object;
 
-    aput-object v4, v5, v13
+    aput-object v4, v6, v15
 
     const-string v7, "Retrying insertion for %s"
 
-    invoke-virtual {v2, v0, v7, v5}, Ltimber/log/Timber$Forest;->d(Ljava/lang/Throwable;Ljava/lang/String;[Ljava/lang/Object;)V
+    invoke-virtual {v2, v0, v7, v6}, Ltimber/log/Timber$Forest;->d(Ljava/lang/Throwable;Ljava/lang/String;[Ljava/lang/Object;)V
 
     iput-object v4, v11, Lde/rki/coronawarnapp/diagnosiskeys/storage/KeyCacheRepository$createCacheEntry$1;->L$0:Ljava/lang/Object;
 
     iput-object v3, v11, Lde/rki/coronawarnapp/diagnosiskeys/storage/KeyCacheRepository$createCacheEntry$1;->L$1:Ljava/lang/Object;
 
-    const/4 v2, 0x0
+    const/4 v0, 0x0
 
-    iput-object v2, v11, Lde/rki/coronawarnapp/diagnosiskeys/storage/KeyCacheRepository$createCacheEntry$1;->L$2:Ljava/lang/Object;
+    iput-object v0, v11, Lde/rki/coronawarnapp/diagnosiskeys/storage/KeyCacheRepository$createCacheEntry$1;->L$2:Ljava/lang/Object;
 
-    iput-object v2, v11, Lde/rki/coronawarnapp/diagnosiskeys/storage/KeyCacheRepository$createCacheEntry$1;->L$3:Ljava/lang/Object;
+    iput-object v0, v11, Lde/rki/coronawarnapp/diagnosiskeys/storage/KeyCacheRepository$createCacheEntry$1;->L$3:Ljava/lang/Object;
 
     const/4 v2, 0x4
 
     iput v2, v11, Lde/rki/coronawarnapp/diagnosiskeys/storage/KeyCacheRepository$createCacheEntry$1;->label:I
 
-    invoke-virtual {v6, v11}, Lde/rki/coronawarnapp/diagnosiskeys/storage/KeyCacheRepository;->getDao(Lkotlin/coroutines/Continuation;)Ljava/lang/Object;
+    invoke-virtual {v5, v11}, Lde/rki/coronawarnapp/diagnosiskeys/storage/KeyCacheRepository;->getDao(Lkotlin/coroutines/Continuation;)Ljava/lang/Object;
 
     move-result-object v2
 
@@ -867,7 +863,7 @@
 
     new-array v5, v14, [Ljava/lang/Object;
 
-    aput-object v0, v5, v13
+    aput-object v0, v5, v15
 
     const-string v6, "Parent folder doesn\'t exist, cache cleared? %s"
 

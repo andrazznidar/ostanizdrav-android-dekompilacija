@@ -76,7 +76,7 @@
 
     const/4 v2, 0x0
 
-    if-eqz v1, :cond_3
+    if-eqz v1, :cond_2
 
     check-cast p1, Lkotlin/coroutines/AbstractCoroutineContextKey;
 
@@ -104,11 +104,7 @@
     const/4 v0, 0x1
 
     :goto_1
-    if-eqz v0, :cond_4
-
-    const-string v0, "element"
-
-    invoke-static {p0, v0}, Lkotlin/jvm/internal/Intrinsics;->checkNotNullParameter(Ljava/lang/Object;Ljava/lang/String;)V
+    if-eqz v0, :cond_3
 
     iget-object p1, p1, Lkotlin/coroutines/AbstractCoroutineContextKey;->safeCast:Lkotlin/jvm/functions/Function1;
 
@@ -120,23 +116,20 @@
 
     instance-of v0, p1, Lkotlin/coroutines/CoroutineContext$Element;
 
-    if-nez v0, :cond_2
+    if-eqz v0, :cond_3
 
-    goto :goto_2
-
-    :cond_2
     move-object v2, p1
 
     goto :goto_2
 
-    :cond_3
+    :cond_2
     sget-object v0, Lkotlin/coroutines/ContinuationInterceptor$Key;->$$INSTANCE:Lkotlin/coroutines/ContinuationInterceptor$Key;
 
-    if-ne v0, p1, :cond_4
+    if-ne v0, p1, :cond_3
 
     move-object v2, p0
 
-    :cond_4
+    :cond_3
     :goto_2
     return-object v2
 .end method
@@ -218,10 +211,6 @@
 
     :goto_1
     if-eqz v0, :cond_2
-
-    const-string v0, "element"
-
-    invoke-static {p0, v0}, Lkotlin/jvm/internal/Intrinsics;->checkNotNullParameter(Ljava/lang/Object;Ljava/lang/String;)V
 
     iget-object p1, p1, Lkotlin/coroutines/AbstractCoroutineContextKey;->safeCast:Lkotlin/jvm/functions/Function1;
 

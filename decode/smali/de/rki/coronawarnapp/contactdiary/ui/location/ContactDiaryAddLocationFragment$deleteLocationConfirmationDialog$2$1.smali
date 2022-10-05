@@ -66,10 +66,6 @@
 
     invoke-static {v3}, Ljava/util/Objects;->requireNonNull(Ljava/lang/Object;)Ljava/lang/Object;
 
-    const-string v2, "location"
-
-    invoke-static {v0, v2}, Lkotlin/jvm/internal/Intrinsics;->checkNotNullParameter(Ljava/lang/Object;Ljava/lang/String;)V
-
     iget-object v4, v3, Lde/rki/coronawarnapp/contactdiary/ui/location/ContactDiaryAddLocationViewModel;->appScope:Lkotlinx/coroutines/CoroutineScope;
 
     new-instance v7, Lde/rki/coronawarnapp/contactdiary/ui/location/ContactDiaryAddLocationViewModel$deleteLocation$1;

@@ -16,7 +16,7 @@
 .annotation system Ldalvik/annotation/Signature;
     value = {
         "Lcom/google/gson/TypeAdapter<",
-        "Ljava/net/InetAddress;",
+        "Ljava/util/UUID;",
         ">;"
     }
 .end annotation
@@ -60,7 +60,7 @@
 
     move-result-object p1
 
-    invoke-static {p1}, Ljava/net/InetAddress;->getByName(Ljava/lang/String;)Ljava/net/InetAddress;
+    invoke-static {p1}, Ljava/util/UUID;->fromString(Ljava/lang/String;)Ljava/util/UUID;
 
     move-result-object p1
 
@@ -76,7 +76,7 @@
         }
     .end annotation
 
-    check-cast p2, Ljava/net/InetAddress;
+    check-cast p2, Ljava/util/UUID;
 
     if-nez p2, :cond_0
 
@@ -85,7 +85,7 @@
     goto :goto_0
 
     :cond_0
-    invoke-virtual {p2}, Ljava/net/InetAddress;->getHostAddress()Ljava/lang/String;
+    invoke-virtual {p2}, Ljava/util/UUID;->toString()Ljava/lang/String;
 
     move-result-object p2
 

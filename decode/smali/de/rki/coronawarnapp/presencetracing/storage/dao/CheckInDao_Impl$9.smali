@@ -74,11 +74,11 @@
     :try_start_0
     iget-object v0, p0, Lde/rki/coronawarnapp/presencetracing/storage/dao/CheckInDao_Impl$9;->this$0:Lde/rki/coronawarnapp/presencetracing/storage/dao/CheckInDao_Impl;
 
-    iget-object v0, v0, Lde/rki/coronawarnapp/presencetracing/storage/dao/CheckInDao_Impl;->__updateAdapterOfSubmissionConsentUpdateAsTraceLocationCheckInEntity:Landroidx/room/EntityDeletionOrUpdateAdapter;
+    iget-object v0, v0, Lde/rki/coronawarnapp/presencetracing/storage/dao/CheckInDao_Impl;->__updateAdapterOfSubmissionConsentUpdateAsTraceLocationCheckInEntity:Landroidx/room/EntityInsertionAdapter;
 
     iget-object v1, p0, Lde/rki/coronawarnapp/presencetracing/storage/dao/CheckInDao_Impl$9;->val$update:Ljava/util/Collection;
 
-    invoke-virtual {v0, v1}, Landroidx/room/EntityDeletionOrUpdateAdapter;->handleMultiple(Ljava/lang/Iterable;)I
+    invoke-virtual {v0, v1}, Landroidx/room/EntityInsertionAdapter;->handleMultiple(Ljava/lang/Iterable;)I
 
     iget-object v0, p0, Lde/rki/coronawarnapp/presencetracing/storage/dao/CheckInDao_Impl$9;->this$0:Lde/rki/coronawarnapp/presencetracing/storage/dao/CheckInDao_Impl;
 

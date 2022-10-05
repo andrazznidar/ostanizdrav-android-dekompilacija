@@ -28,10 +28,10 @@
 # instance fields
 .field public final zza:Ljava/util/concurrent/Executor;
 
-.field public final zzb:Lcom/google/android/gms/internal/nearby/zzz;
+.field public final zzb:Lcom/google/android/gms/internal/nearby/zzad;
     .annotation system Ldalvik/annotation/Signature;
         value = {
-            "Lcom/google/android/gms/internal/nearby/zzz;"
+            "Lcom/google/android/gms/internal/nearby/zzad;"
         }
     .end annotation
 .end field
@@ -47,13 +47,13 @@
 
 
 # direct methods
-.method public constructor <init>(Ljava/util/concurrent/Executor;Lcom/google/android/gms/internal/nearby/zzz;Lcom/google/android/gms/tasks/zzw;)V
+.method public constructor <init>(Ljava/util/concurrent/Executor;Lcom/google/android/gms/internal/nearby/zzad;Lcom/google/android/gms/tasks/zzw;)V
     .locals 0
     .annotation system Ldalvik/annotation/Signature;
         value = {
             "(",
             "Ljava/util/concurrent/Executor;",
-            "Lcom/google/android/gms/internal/nearby/zzz;",
+            "Lcom/google/android/gms/internal/nearby/zzad;",
             "Lcom/google/android/gms/tasks/zzw<",
             "TTContinuationResult;>;)V"
         }
@@ -63,7 +63,7 @@
 
     iput-object p1, p0, Lcom/google/android/gms/tasks/zzf;->zza:Ljava/util/concurrent/Executor;
 
-    iput-object p2, p0, Lcom/google/android/gms/tasks/zzf;->zzb:Lcom/google/android/gms/internal/nearby/zzz;
+    iput-object p2, p0, Lcom/google/android/gms/tasks/zzf;->zzb:Lcom/google/android/gms/internal/nearby/zzad;
 
     iput-object p3, p0, Lcom/google/android/gms/tasks/zzf;->zzc:Lcom/google/android/gms/tasks/zzw;
 

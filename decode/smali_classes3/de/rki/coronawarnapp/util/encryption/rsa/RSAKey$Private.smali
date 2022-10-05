@@ -128,10 +128,6 @@
 .method public toString()Ljava/lang/String;
     .locals 2
 
-    const-string v0, "this"
-
-    invoke-static {p0, v0}, Lkotlin/jvm/internal/Intrinsics;->checkNotNullParameter(Ljava/lang/Object;Ljava/lang/String;)V
-
     invoke-virtual {p0}, Lde/rki/coronawarnapp/util/encryption/rsa/RSAKey$Private;->getRawKey()Lokio/ByteString;
 
     move-result-object v0
@@ -142,7 +138,7 @@
 
     const/16 v1, 0x10
 
-    invoke-static {v0, v1}, Lcom/google/android/material/math/MathUtils;->trimToLength(Ljava/lang/String;I)Ljava/lang/String;
+    invoke-static {v0, v1}, Lkotlinx/coroutines/channels/ChannelsKt;->trimToLength(Ljava/lang/String;I)Ljava/lang/String;
 
     move-result-object v0
 

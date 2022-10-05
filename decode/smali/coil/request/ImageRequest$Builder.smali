@@ -613,10 +613,6 @@
 
     sget-object v1, Lcoil/size/OriginalSize;->INSTANCE:Lcoil/size/OriginalSize;
 
-    const-string/jumbo v12, "size"
-
-    invoke-static {v1, v12}, Lkotlin/jvm/internal/Intrinsics;->checkNotNullParameter(Ljava/lang/Object;Ljava/lang/String;)V
-
     new-instance v12, Lcoil/size/RealSizeResolver;
 
     invoke-direct {v12, v1}, Lcoil/size/RealSizeResolver;-><init>(Lcoil/size/Size;)V
@@ -1042,10 +1038,6 @@
     sget-object v1, Lcoil/transition/NoneTransition;->INSTANCE:Lcoil/transition/NoneTransition;
 
     :goto_1
-    const-string/jumbo p1, "transition"
-
-    invoke-static {v1, p1}, Lkotlin/jvm/internal/Intrinsics;->checkNotNullParameter(Ljava/lang/Object;Ljava/lang/String;)V
-
     iput-object v1, p0, Lcoil/request/ImageRequest$Builder;->transition:Lcoil/transition/Transition;
 
     return-object p0

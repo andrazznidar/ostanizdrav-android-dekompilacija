@@ -10,7 +10,14 @@
 .annotation system Ldalvik/annotation/MemberClasses;
     value = {
         Lde/rki/coronawarnapp/qrcode/ui/CoronaTestResult$DuplicateTest;,
-        Lde/rki/coronawarnapp/qrcode/ui/CoronaTestResult$ConsentTest;
+        Lde/rki/coronawarnapp/qrcode/ui/CoronaTestResult$RestoreDuplicateTest;,
+        Lde/rki/coronawarnapp/qrcode/ui/CoronaTestResult$ConsentTest;,
+        Lde/rki/coronawarnapp/qrcode/ui/CoronaTestResult$InRecycleBin;,
+        Lde/rki/coronawarnapp/qrcode/ui/CoronaTestResult$TestPositive;,
+        Lde/rki/coronawarnapp/qrcode/ui/CoronaTestResult$TestNegative;,
+        Lde/rki/coronawarnapp/qrcode/ui/CoronaTestResult$TestInvalid;,
+        Lde/rki/coronawarnapp/qrcode/ui/CoronaTestResult$TestPending;,
+        Lde/rki/coronawarnapp/qrcode/ui/CoronaTestResult$WarnOthers;
     }
 .end annotation
 

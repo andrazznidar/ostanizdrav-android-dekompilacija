@@ -9,7 +9,9 @@
         "<E:",
         "Ljava/lang/Object;",
         ">",
-        "Ljava/lang/Object;"
+        "Lcom/google/android/gms/internal/nearby/zzoi<",
+        "Ljava/lang/Object;",
+        ">;"
     }
 .end annotation
 

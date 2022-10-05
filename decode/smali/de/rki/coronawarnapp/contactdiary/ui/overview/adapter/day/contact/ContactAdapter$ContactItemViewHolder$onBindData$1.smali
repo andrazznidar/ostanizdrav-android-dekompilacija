@@ -94,9 +94,9 @@
 
     iget-object v3, v1, Lde/rki/coronawarnapp/databinding/ContactDiaryOverviewNestedListItemBinding;->contactDiaryOverviewElementName:Landroid/widget/TextView;
 
-    iget-object v4, v2, Lde/rki/coronawarnapp/contactdiary/ui/overview/adapter/day/contact/ContactItem$Data;->type:Lde/rki/coronawarnapp/contactdiary/ui/overview/adapter/day/contact/ContactItem$Type;
+    iget v4, v2, Lde/rki/coronawarnapp/contactdiary/ui/overview/adapter/day/contact/ContactItem$Data;->type:I
 
-    invoke-virtual {v4}, Ljava/lang/Enum;->ordinal()I
+    invoke-static {v4}, Landroidx/camera/camera2/internal/Camera2CameraImpl$InternalState$EnumUnboxingSharedUtility;->ordinal(I)I
 
     move-result v4
 
@@ -114,7 +114,7 @@
 
     move-result-object v4
 
-    const v7, 0x7f13002a
+    const v7, 0x7f130028
 
     new-array v8, v6, [Ljava/lang/Object;
 
@@ -188,7 +188,7 @@
 
     move-result-object v9
 
-    const v10, 0x7f1300e0
+    const v10, 0x7f1300d5
 
     invoke-virtual {v9, v10}, Landroid/content/Context;->getString(I)Ljava/lang/String;
 
@@ -200,7 +200,7 @@
 
     const/4 v10, 0x0
 
-    invoke-static {v4, v10, v9, v6}, Lde/rki/coronawarnapp/ui/durationpicker/DurationExtensionKt;->toReadableDuration$default(Lorg/joda/time/Duration;Ljava/lang/String;Ljava/lang/String;I)Ljava/lang/String;
+    invoke-static {v4, v10, v9, v6}, Landroidx/lifecycle/ViewModelKt;->toReadableDuration$default(Lorg/joda/time/Duration;Ljava/lang/String;Ljava/lang/String;I)Ljava/lang/String;
 
     move-result-object v4
 

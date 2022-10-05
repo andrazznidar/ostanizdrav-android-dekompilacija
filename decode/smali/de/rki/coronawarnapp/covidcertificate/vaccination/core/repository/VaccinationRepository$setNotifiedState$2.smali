@@ -27,7 +27,7 @@
 .end annotation
 
 .annotation system Ldalvik/annotation/SourceDebugExtension;
-    value = "SMAP\nVaccinationRepository.kt\nKotlin\n*S Kotlin\n*F\n+ 1 VaccinationRepository.kt\nde/rki/coronawarnapp/covidcertificate/vaccination/core/repository/VaccinationRepository$setNotifiedState$2\n+ 2 _Collections.kt\nkotlin/collections/CollectionsKt___CollectionsKt\n*L\n1#1,368:1\n659#2,11:369\n*S KotlinDebug\n*F\n+ 1 VaccinationRepository.kt\nde/rki/coronawarnapp/covidcertificate/vaccination/core/repository/VaccinationRepository$setNotifiedState$2\n*L\n212#1:369,11\n*E\n"
+    value = "SMAP\nVaccinationRepository.kt\nKotlin\n*S Kotlin\n*F\n+ 1 VaccinationRepository.kt\nde/rki/coronawarnapp/covidcertificate/vaccination/core/repository/VaccinationRepository$setNotifiedState$2\n+ 2 _Collections.kt\nkotlin/collections/CollectionsKt___CollectionsKt\n*L\n1#1,439:1\n659#2,11:440\n*S KotlinDebug\n*F\n+ 1 VaccinationRepository.kt\nde/rki/coronawarnapp/covidcertificate/vaccination/core/repository/VaccinationRepository$setNotifiedState$2\n*L\n229#1:440,11\n*E\n"
 .end annotation
 
 .annotation runtime Lkotlin/coroutines/jvm/internal/DebugMetadata;
@@ -154,7 +154,7 @@
 .end method
 
 .method public final invokeSuspend(Ljava/lang/Object;)Ljava/lang/Object;
-    .locals 19
+    .locals 22
 
     move-object/from16 v0, p0
 
@@ -170,29 +170,29 @@
 
     move-result-object v3
 
-    const/4 v4, 0x0
+    const/4 v4, 0x1
 
     const/4 v5, 0x0
 
-    move v6, v4
+    const/4 v6, 0x0
 
-    move-object v7, v5
+    move v7, v5
+
+    move-object v8, v6
 
     :cond_0
     :goto_0
     invoke-interface {v3}, Ljava/util/Iterator;->hasNext()Z
 
-    move-result v8
+    move-result v9
 
-    const/4 v9, 0x1
-
-    if-eqz v8, :cond_3
+    if-eqz v9, :cond_3
 
     invoke-interface {v3}, Ljava/util/Iterator;->next()Ljava/lang/Object;
 
-    move-result-object v8
+    move-result-object v9
 
-    move-object v10, v8
+    move-object v10, v9
 
     check-cast v10, Lde/rki/coronawarnapp/covidcertificate/vaccination/core/VaccinatedPerson;
 
@@ -202,37 +202,37 @@
 
     if-eqz v10, :cond_1
 
-    move v10, v9
+    move v10, v4
 
     goto :goto_1
 
     :cond_1
-    move v10, v4
+    move v10, v5
 
     :goto_1
     if-eqz v10, :cond_0
 
-    if-eqz v6, :cond_2
+    if-eqz v7, :cond_2
 
     goto :goto_2
 
     :cond_2
-    move-object v7, v8
+    move v7, v4
 
-    move v6, v9
+    move-object v8, v9
 
     goto :goto_0
 
     :cond_3
-    if-nez v6, :cond_4
+    if-nez v7, :cond_4
 
     :goto_2
-    move-object v7, v5
+    move-object v8, v6
 
     :cond_4
-    check-cast v7, Lde/rki/coronawarnapp/covidcertificate/vaccination/core/VaccinatedPerson;
+    check-cast v8, Lde/rki/coronawarnapp/covidcertificate/vaccination/core/VaccinatedPerson;
 
-    if-nez v7, :cond_5
+    if-nez v8, :cond_5
 
     sget-object v2, Ltimber/log/Timber;->Forest:Ltimber/log/Timber$Forest;
 
@@ -240,11 +240,11 @@
 
     invoke-virtual {v2, v3}, Ltimber/log/Timber$Forest;->tag(Ljava/lang/String;)Ltimber/log/Timber$Tree;
 
-    new-array v3, v9, [Ljava/lang/Object;
+    new-array v3, v4, [Ljava/lang/Object;
 
-    iget-object v5, v0, Lde/rki/coronawarnapp/covidcertificate/vaccination/core/repository/VaccinationRepository$setNotifiedState$2;->$containerId:Lde/rki/coronawarnapp/covidcertificate/common/repository/VaccinationCertificateContainerId;
+    iget-object v4, v0, Lde/rki/coronawarnapp/covidcertificate/vaccination/core/repository/VaccinationRepository$setNotifiedState$2;->$containerId:Lde/rki/coronawarnapp/covidcertificate/common/repository/VaccinationCertificateContainerId;
 
-    aput-object v5, v3, v4
+    aput-object v4, v3, v5
 
     const-string v4, "Couldn\'t find %s"
 
@@ -255,7 +255,7 @@
     :cond_5
     iget-object v2, v0, Lde/rki/coronawarnapp/covidcertificate/vaccination/core/repository/VaccinationRepository$setNotifiedState$2;->$containerId:Lde/rki/coronawarnapp/covidcertificate/common/repository/VaccinationCertificateContainerId;
 
-    invoke-virtual {v7, v2}, Lde/rki/coronawarnapp/covidcertificate/vaccination/core/VaccinatedPerson;->findVaccination(Lde/rki/coronawarnapp/covidcertificate/common/repository/VaccinationCertificateContainerId;)Lde/rki/coronawarnapp/covidcertificate/vaccination/core/repository/storage/VaccinationContainer;
+    invoke-virtual {v8, v2}, Lde/rki/coronawarnapp/covidcertificate/vaccination/core/VaccinatedPerson;->findVaccination(Lde/rki/coronawarnapp/covidcertificate/common/repository/VaccinationCertificateContainerId;)Lde/rki/coronawarnapp/covidcertificate/vaccination/core/repository/storage/VaccinationContainer;
 
     move-result-object v2
 
@@ -266,74 +266,6 @@
     instance-of v4, v3, Lde/rki/coronawarnapp/covidcertificate/common/certificate/CwaCovidCertificate$State$Expired;
 
     if-eqz v4, :cond_6
-
-    const/4 v9, 0x0
-
-    const/4 v10, 0x0
-
-    const/4 v11, 0x0
-
-    iget-object v12, v0, Lde/rki/coronawarnapp/covidcertificate/vaccination/core/repository/VaccinationRepository$setNotifiedState$2;->$time:Lorg/joda/time/Instant;
-
-    const/4 v13, 0x0
-
-    const/4 v14, 0x0
-
-    const/4 v15, 0x0
-
-    const/16 v16, 0x0
-
-    const/16 v17, 0xf7
-
-    const/16 v18, 0x0
-
-    move-object v8, v2
-
-    invoke-static/range {v8 .. v18}, Lde/rki/coronawarnapp/covidcertificate/vaccination/core/repository/storage/VaccinationContainer;->copy$default(Lde/rki/coronawarnapp/covidcertificate/vaccination/core/repository/storage/VaccinationContainer;Ljava/lang/String;Lorg/joda/time/Instant;Lorg/joda/time/Instant;Lorg/joda/time/Instant;Lorg/joda/time/Instant;Lde/rki/coronawarnapp/covidcertificate/common/certificate/CwaCovidCertificate$State;Lorg/joda/time/Instant;ZILjava/lang/Object;)Lde/rki/coronawarnapp/covidcertificate/vaccination/core/repository/storage/VaccinationContainer;
-
-    move-result-object v3
-
-    goto :goto_3
-
-    :cond_6
-    instance-of v4, v3, Lde/rki/coronawarnapp/covidcertificate/common/certificate/CwaCovidCertificate$State$ExpiringSoon;
-
-    if-eqz v4, :cond_7
-
-    const/4 v9, 0x0
-
-    const/4 v10, 0x0
-
-    iget-object v11, v0, Lde/rki/coronawarnapp/covidcertificate/vaccination/core/repository/VaccinationRepository$setNotifiedState$2;->$time:Lorg/joda/time/Instant;
-
-    const/4 v12, 0x0
-
-    const/4 v13, 0x0
-
-    const/4 v14, 0x0
-
-    const/4 v15, 0x0
-
-    const/16 v16, 0x0
-
-    const/16 v17, 0xfb
-
-    const/16 v18, 0x0
-
-    move-object v8, v2
-
-    invoke-static/range {v8 .. v18}, Lde/rki/coronawarnapp/covidcertificate/vaccination/core/repository/storage/VaccinationContainer;->copy$default(Lde/rki/coronawarnapp/covidcertificate/vaccination/core/repository/storage/VaccinationContainer;Ljava/lang/String;Lorg/joda/time/Instant;Lorg/joda/time/Instant;Lorg/joda/time/Instant;Lorg/joda/time/Instant;Lde/rki/coronawarnapp/covidcertificate/common/certificate/CwaCovidCertificate$State;Lorg/joda/time/Instant;ZILjava/lang/Object;)Lde/rki/coronawarnapp/covidcertificate/vaccination/core/repository/storage/VaccinationContainer;
-
-    move-result-object v3
-
-    goto :goto_3
-
-    :cond_7
-    instance-of v3, v3, Lde/rki/coronawarnapp/covidcertificate/common/certificate/CwaCovidCertificate$State$Invalid;
-
-    if-eqz v3, :cond_8
-
-    const/4 v9, 0x0
 
     const/4 v10, 0x0
 
@@ -349,13 +281,130 @@
 
     const/16 v16, 0x0
 
-    const/16 v17, 0xef
+    const/16 v17, 0x0
 
     const/16 v18, 0x0
 
-    move-object v8, v2
+    const/16 v19, 0x0
 
-    invoke-static/range {v8 .. v18}, Lde/rki/coronawarnapp/covidcertificate/vaccination/core/repository/storage/VaccinationContainer;->copy$default(Lde/rki/coronawarnapp/covidcertificate/vaccination/core/repository/storage/VaccinationContainer;Ljava/lang/String;Lorg/joda/time/Instant;Lorg/joda/time/Instant;Lorg/joda/time/Instant;Lorg/joda/time/Instant;Lde/rki/coronawarnapp/covidcertificate/common/certificate/CwaCovidCertificate$State;Lorg/joda/time/Instant;ZILjava/lang/Object;)Lde/rki/coronawarnapp/covidcertificate/vaccination/core/repository/storage/VaccinationContainer;
+    const/16 v20, 0x3f7
+
+    const/16 v21, 0x0
+
+    move-object v9, v2
+
+    invoke-static/range {v9 .. v21}, Lde/rki/coronawarnapp/covidcertificate/vaccination/core/repository/storage/VaccinationContainer;->copy$default(Lde/rki/coronawarnapp/covidcertificate/vaccination/core/repository/storage/VaccinationContainer;Ljava/lang/String;Lorg/joda/time/Instant;Lorg/joda/time/Instant;Lorg/joda/time/Instant;Lorg/joda/time/Instant;Lorg/joda/time/Instant;Lde/rki/coronawarnapp/covidcertificate/common/certificate/CwaCovidCertificate$State;Lorg/joda/time/Instant;ZLorg/joda/time/Instant;ILjava/lang/Object;)Lde/rki/coronawarnapp/covidcertificate/vaccination/core/repository/storage/VaccinationContainer;
+
+    move-result-object v3
+
+    goto :goto_3
+
+    :cond_6
+    instance-of v4, v3, Lde/rki/coronawarnapp/covidcertificate/common/certificate/CwaCovidCertificate$State$ExpiringSoon;
+
+    if-eqz v4, :cond_7
+
+    const/4 v10, 0x0
+
+    const/4 v11, 0x0
+
+    iget-object v12, v0, Lde/rki/coronawarnapp/covidcertificate/vaccination/core/repository/VaccinationRepository$setNotifiedState$2;->$time:Lorg/joda/time/Instant;
+
+    const/4 v13, 0x0
+
+    const/4 v14, 0x0
+
+    const/4 v15, 0x0
+
+    const/16 v16, 0x0
+
+    const/16 v17, 0x0
+
+    const/16 v18, 0x0
+
+    const/16 v19, 0x0
+
+    const/16 v20, 0x3fb
+
+    const/16 v21, 0x0
+
+    move-object v9, v2
+
+    invoke-static/range {v9 .. v21}, Lde/rki/coronawarnapp/covidcertificate/vaccination/core/repository/storage/VaccinationContainer;->copy$default(Lde/rki/coronawarnapp/covidcertificate/vaccination/core/repository/storage/VaccinationContainer;Ljava/lang/String;Lorg/joda/time/Instant;Lorg/joda/time/Instant;Lorg/joda/time/Instant;Lorg/joda/time/Instant;Lorg/joda/time/Instant;Lde/rki/coronawarnapp/covidcertificate/common/certificate/CwaCovidCertificate$State;Lorg/joda/time/Instant;ZLorg/joda/time/Instant;ILjava/lang/Object;)Lde/rki/coronawarnapp/covidcertificate/vaccination/core/repository/storage/VaccinationContainer;
+
+    move-result-object v3
+
+    goto :goto_3
+
+    :cond_7
+    instance-of v4, v3, Lde/rki/coronawarnapp/covidcertificate/common/certificate/CwaCovidCertificate$State$Invalid;
+
+    if-eqz v4, :cond_8
+
+    const/4 v10, 0x0
+
+    const/4 v11, 0x0
+
+    const/4 v12, 0x0
+
+    const/4 v13, 0x0
+
+    iget-object v14, v0, Lde/rki/coronawarnapp/covidcertificate/vaccination/core/repository/VaccinationRepository$setNotifiedState$2;->$time:Lorg/joda/time/Instant;
+
+    const/4 v15, 0x0
+
+    const/16 v16, 0x0
+
+    const/16 v17, 0x0
+
+    const/16 v18, 0x0
+
+    const/16 v19, 0x0
+
+    const/16 v20, 0x3ef
+
+    const/16 v21, 0x0
+
+    move-object v9, v2
+
+    invoke-static/range {v9 .. v21}, Lde/rki/coronawarnapp/covidcertificate/vaccination/core/repository/storage/VaccinationContainer;->copy$default(Lde/rki/coronawarnapp/covidcertificate/vaccination/core/repository/storage/VaccinationContainer;Ljava/lang/String;Lorg/joda/time/Instant;Lorg/joda/time/Instant;Lorg/joda/time/Instant;Lorg/joda/time/Instant;Lorg/joda/time/Instant;Lde/rki/coronawarnapp/covidcertificate/common/certificate/CwaCovidCertificate$State;Lorg/joda/time/Instant;ZLorg/joda/time/Instant;ILjava/lang/Object;)Lde/rki/coronawarnapp/covidcertificate/vaccination/core/repository/storage/VaccinationContainer;
+
+    move-result-object v3
+
+    goto :goto_3
+
+    :cond_8
+    instance-of v3, v3, Lde/rki/coronawarnapp/covidcertificate/common/certificate/CwaCovidCertificate$State$Blocked;
+
+    if-eqz v3, :cond_9
+
+    const/4 v10, 0x0
+
+    const/4 v11, 0x0
+
+    const/4 v12, 0x0
+
+    const/4 v13, 0x0
+
+    const/4 v14, 0x0
+
+    iget-object v15, v0, Lde/rki/coronawarnapp/covidcertificate/vaccination/core/repository/VaccinationRepository$setNotifiedState$2;->$time:Lorg/joda/time/Instant;
+
+    const/16 v16, 0x0
+
+    const/16 v17, 0x0
+
+    const/16 v18, 0x0
+
+    const/16 v19, 0x0
+
+    const/16 v20, 0x3df
+
+    const/16 v21, 0x0
+
+    move-object v9, v2
+
+    invoke-static/range {v9 .. v21}, Lde/rki/coronawarnapp/covidcertificate/vaccination/core/repository/storage/VaccinationContainer;->copy$default(Lde/rki/coronawarnapp/covidcertificate/vaccination/core/repository/storage/VaccinationContainer;Ljava/lang/String;Lorg/joda/time/Instant;Lorg/joda/time/Instant;Lorg/joda/time/Instant;Lorg/joda/time/Instant;Lorg/joda/time/Instant;Lde/rki/coronawarnapp/covidcertificate/common/certificate/CwaCovidCertificate$State;Lorg/joda/time/Instant;ZLorg/joda/time/Instant;ILjava/lang/Object;)Lde/rki/coronawarnapp/covidcertificate/vaccination/core/repository/storage/VaccinationContainer;
 
     move-result-object v3
 
@@ -366,9 +415,9 @@
 
     invoke-virtual {v3, v4}, Lde/rki/coronawarnapp/covidcertificate/vaccination/core/repository/storage/VaccinationContainer;->setQrCodeExtractor(Lde/rki/coronawarnapp/covidcertificate/common/certificate/DccQrCodeExtractor;)V
 
-    iget-object v8, v7, Lde/rki/coronawarnapp/covidcertificate/vaccination/core/VaccinatedPerson;->data:Lde/rki/coronawarnapp/covidcertificate/vaccination/core/repository/storage/VaccinatedPersonData;
+    iget-object v9, v8, Lde/rki/coronawarnapp/covidcertificate/vaccination/core/VaccinatedPerson;->data:Lde/rki/coronawarnapp/covidcertificate/vaccination/core/repository/storage/VaccinatedPersonData;
 
-    invoke-virtual {v8}, Lde/rki/coronawarnapp/covidcertificate/vaccination/core/repository/storage/VaccinatedPersonData;->getVaccinations()Ljava/util/Set;
+    invoke-virtual {v9}, Lde/rki/coronawarnapp/covidcertificate/vaccination/core/repository/storage/VaccinatedPersonData;->getVaccinations()Ljava/util/Set;
 
     move-result-object v4
 
@@ -378,27 +427,27 @@
 
     invoke-static {v2, v3}, Lkotlin/collections/SetsKt;->plus(Ljava/util/Set;Ljava/lang/Object;)Ljava/util/Set;
 
-    move-result-object v9
-
-    const/4 v10, 0x0
+    move-result-object v10
 
     const/4 v11, 0x0
 
     const/4 v12, 0x0
 
-    const/16 v13, 0xe
+    const/4 v13, 0x0
 
-    invoke-static/range {v8 .. v13}, Lde/rki/coronawarnapp/covidcertificate/vaccination/core/repository/storage/VaccinatedPersonData;->copy$default(Lde/rki/coronawarnapp/covidcertificate/vaccination/core/repository/storage/VaccinatedPersonData;Ljava/util/Set;Lde/rki/coronawarnapp/covidcertificate/validation/core/rule/DccValidationRule;Ljava/lang/String;Lorg/joda/time/Instant;I)Lde/rki/coronawarnapp/covidcertificate/vaccination/core/repository/storage/VaccinatedPersonData;
+    const/16 v14, 0xe
+
+    invoke-static/range {v9 .. v14}, Lde/rki/coronawarnapp/covidcertificate/vaccination/core/repository/storage/VaccinatedPersonData;->copy$default(Lde/rki/coronawarnapp/covidcertificate/vaccination/core/repository/storage/VaccinatedPersonData;Ljava/util/Set;Ljava/lang/String;Ljava/lang/String;Lorg/joda/time/Instant;I)Lde/rki/coronawarnapp/covidcertificate/vaccination/core/repository/storage/VaccinatedPersonData;
 
     move-result-object v2
 
     const/4 v3, 0x6
 
-    invoke-static {v7, v2, v5, v5, v3}, Lde/rki/coronawarnapp/covidcertificate/vaccination/core/VaccinatedPerson;->copy$default(Lde/rki/coronawarnapp/covidcertificate/vaccination/core/VaccinatedPerson;Lde/rki/coronawarnapp/covidcertificate/vaccination/core/repository/storage/VaccinatedPersonData;Lde/rki/coronawarnapp/covidcertificate/valueset/valuesets/VaccinationValueSets;Ljava/util/Map;I)Lde/rki/coronawarnapp/covidcertificate/vaccination/core/VaccinatedPerson;
+    invoke-static {v8, v2, v6, v6, v3}, Lde/rki/coronawarnapp/covidcertificate/vaccination/core/VaccinatedPerson;->copy$default(Lde/rki/coronawarnapp/covidcertificate/vaccination/core/VaccinatedPerson;Lde/rki/coronawarnapp/covidcertificate/vaccination/core/repository/storage/VaccinatedPersonData;Lde/rki/coronawarnapp/covidcertificate/valueset/valuesets/VaccinationValueSets;Ljava/util/Map;I)Lde/rki/coronawarnapp/covidcertificate/vaccination/core/VaccinatedPerson;
 
     move-result-object v2
 
-    invoke-static {v1, v7}, Lkotlin/collections/SetsKt;->minus(Ljava/util/Set;Ljava/lang/Object;)Ljava/util/Set;
+    invoke-static {v1, v8}, Lkotlin/collections/SetsKt;->minus(Ljava/util/Set;Ljava/lang/Object;)Ljava/util/Set;
 
     move-result-object v1
 
@@ -408,7 +457,7 @@
 
     return-object v1
 
-    :cond_8
+    :cond_9
     new-instance v1, Ljava/lang/UnsupportedOperationException;
 
     iget-object v2, v0, Lde/rki/coronawarnapp/covidcertificate/vaccination/core/repository/VaccinationRepository$setNotifiedState$2;->$state:Lde/rki/coronawarnapp/covidcertificate/common/certificate/CwaCovidCertificate$State;

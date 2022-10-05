@@ -199,7 +199,7 @@
 
     if-eqz v0, :cond_a
 
-    sget-object v0, Lcom/google/gson/internal/JsonReaderInternalAccess;->INSTANCE:Lcom/google/gson/internal/JsonReaderInternalAccess;
+    sget-object v0, Lorg/bouncycastle/util/Pack;->INSTANCE:Lorg/bouncycastle/util/Pack;
 
     check-cast v0, Lcom/google/gson/stream/JsonReader$1;
 

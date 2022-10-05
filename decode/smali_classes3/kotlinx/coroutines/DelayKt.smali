@@ -36,7 +36,7 @@
     :cond_0
     new-instance v0, Lkotlinx/coroutines/CancellableContinuationImpl;
 
-    invoke-static {p2}, Lkotlinx/coroutines/flow/FlowKt;->intercepted(Lkotlin/coroutines/Continuation;)Lkotlin/coroutines/Continuation;
+    invoke-static {p2}, Lcom/google/android/gms/nearby/messages/internal/zzag;->intercepted(Lkotlin/coroutines/Continuation;)Lkotlin/coroutines/Continuation;
 
     move-result-object p2
 
@@ -79,8 +79,6 @@
 
 .method public static final getDelay(Lkotlin/coroutines/CoroutineContext;)Lkotlinx/coroutines/Delay;
     .locals 1
-
-    sget v0, Lkotlin/coroutines/ContinuationInterceptor;->$r8$clinit:I
 
     sget-object v0, Lkotlin/coroutines/ContinuationInterceptor$Key;->$$INSTANCE:Lkotlin/coroutines/ContinuationInterceptor$Key;
 

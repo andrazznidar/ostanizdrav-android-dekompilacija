@@ -16,7 +16,7 @@
         }
     .end annotation
 
-    const-string v0, "$this$asList"
+    const-string v0, "<this>"
 
     invoke-static {p0, v0}, Lkotlin/jvm/internal/Intrinsics;->checkNotNullParameter(Ljava/lang/Object;Ljava/lang/String;)V
 
@@ -24,7 +24,7 @@
 
     move-result-object p0
 
-    const-string v0, "ArraysUtilJVM.asList(this)"
+    const-string v0, "asList(this)"
 
     invoke-static {p0, v0}, Lkotlin/jvm/internal/Intrinsics;->checkNotNullExpressionValue(Ljava/lang/Object;Ljava/lang/String;)V
 
@@ -34,7 +34,7 @@
 .method public static final copyInto([B[BIII)[B
     .locals 1
 
-    const-string v0, "$this$copyInto"
+    const-string v0, "<this>"
 
     invoke-static {p0, v0}, Lkotlin/jvm/internal/Intrinsics;->checkNotNullParameter(Ljava/lang/Object;Ljava/lang/String;)V
 
@@ -59,7 +59,7 @@
         }
     .end annotation
 
-    const-string v0, "$this$copyInto"
+    const-string v0, "<this>"
 
     invoke-static {p0, v0}, Lkotlin/jvm/internal/Intrinsics;->checkNotNullParameter(Ljava/lang/Object;Ljava/lang/String;)V
 
@@ -136,6 +136,28 @@
     return-object p1
 .end method
 
+.method public static final copyOfRange([BII)[B
+    .locals 1
+
+    const-string v0, "<this>"
+
+    invoke-static {p0, v0}, Lkotlin/jvm/internal/Intrinsics;->checkNotNullParameter(Ljava/lang/Object;Ljava/lang/String;)V
+
+    array-length v0, p0
+
+    invoke-static {p2, v0}, Lkotlin/collections/ArraysKt__ArraysKt;->copyOfRangeToIndexCheck(II)V
+
+    invoke-static {p0, p1, p2}, Ljava/util/Arrays;->copyOfRange([BII)[B
+
+    move-result-object p0
+
+    const-string p1, "copyOfRange(this, fromIndex, toIndex)"
+
+    invoke-static {p0, p1}, Lkotlin/jvm/internal/Intrinsics;->checkNotNullExpressionValue(Ljava/lang/Object;Ljava/lang/String;)V
+
+    return-object p0
+.end method
+
 .method public static final copyOfRange([Ljava/lang/Object;II)[Ljava/lang/Object;
     .locals 1
     .annotation system Ldalvik/annotation/Signature;
@@ -146,7 +168,7 @@
         }
     .end annotation
 
-    const-string v0, "$this$copyOfRangeImpl"
+    const-string v0, "<this>"
 
     invoke-static {p0, v0}, Lkotlin/jvm/internal/Intrinsics;->checkNotNullParameter(Ljava/lang/Object;Ljava/lang/String;)V
 
@@ -158,7 +180,7 @@
 
     move-result-object p0
 
-    const-string p1, "java.util.Arrays.copyOfR\u2026this, fromIndex, toIndex)"
+    const-string p1, "copyOfRange(this, fromIndex, toIndex)"
 
     invoke-static {p0, p1}, Lkotlin/jvm/internal/Intrinsics;->checkNotNullExpressionValue(Ljava/lang/Object;Ljava/lang/String;)V
 
@@ -175,7 +197,7 @@
         }
     .end annotation
 
-    const-string v0, "$this$fill"
+    const-string v0, "<this>"
 
     invoke-static {p0, v0}, Lkotlin/jvm/internal/Intrinsics;->checkNotNullParameter(Ljava/lang/Object;Ljava/lang/String;)V
 
@@ -209,7 +231,7 @@
 .method public static final plus([B[B)[B
     .locals 3
 
-    const-string v0, "$this$plus"
+    const-string v0, "<this>"
 
     invoke-static {p0, v0}, Lkotlin/jvm/internal/Intrinsics;->checkNotNullParameter(Ljava/lang/Object;Ljava/lang/String;)V
 

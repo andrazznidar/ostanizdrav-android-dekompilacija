@@ -139,7 +139,7 @@
 
     const-string v0, ") is less than 0"
 
-    invoke-static {p2, p3, v0}, Landroidx/constraintlayout/core/widgets/ConstraintWidget$$ExternalSyntheticOutline0;->m(Ljava/lang/StringBuilder;ILjava/lang/String;)Ljava/lang/String;
+    invoke-static {p2, p3, v0}, Landroidx/camera/core/AutoValue_ImmutableImageInfo$$ExternalSyntheticOutline0;->m(Ljava/lang/StringBuilder;ILjava/lang/String;)Ljava/lang/String;
 
     move-result-object p2
 
@@ -188,7 +188,7 @@
 
     const-string v0, ") is less than 0"
 
-    invoke-static {p2, p3, v0}, Landroidx/constraintlayout/core/widgets/ConstraintWidget$$ExternalSyntheticOutline0;->m(Ljava/lang/StringBuilder;ILjava/lang/String;)Ljava/lang/String;
+    invoke-static {p2, p3, v0}, Landroidx/camera/core/AutoValue_ImmutableImageInfo$$ExternalSyntheticOutline0;->m(Ljava/lang/StringBuilder;ILjava/lang/String;)Ljava/lang/String;
 
     move-result-object p2
 
@@ -2860,79 +2860,79 @@
 
     invoke-virtual {p2}, Lcom/upokecenter/numbers/EInteger;->toString()Ljava/lang/String;
 
-    move-result-object p2
+    move-result-object v5
 
-    invoke-virtual {p2}, Ljava/lang/String;->length()I
+    invoke-virtual {v5}, Ljava/lang/String;->length()I
 
-    move-result v0
+    move-result p2
 
-    new-instance v2, Lcom/upokecenter/numbers/FastInteger;
+    new-instance v0, Lcom/upokecenter/numbers/FastInteger;
 
-    invoke-direct {v2, v0}, Lcom/upokecenter/numbers/FastInteger;-><init>(I)V
+    invoke-direct {v0, p2}, Lcom/upokecenter/numbers/FastInteger;-><init>(I)V
 
-    iput-object v2, p0, Lcom/upokecenter/numbers/DigitShiftAccumulator;->knownDigitLength:Lcom/upokecenter/numbers/FastInteger;
+    iput-object v0, p0, Lcom/upokecenter/numbers/DigitShiftAccumulator;->knownDigitLength:Lcom/upokecenter/numbers/FastInteger;
 
-    if-le v0, p1, :cond_2c
+    if-le p2, p1, :cond_2c
 
-    sub-int p1, v0, p1
+    sub-int p1, p2, p1
 
     invoke-virtual {p0, p1}, Lcom/upokecenter/numbers/DigitShiftAccumulator;->UpdateKnownLengthInt(I)V
 
-    sub-int/2addr v0, p1
+    sub-int v8, p2, p1
 
-    iget-object v2, p0, Lcom/upokecenter/numbers/DigitShiftAccumulator;->discardedDigitCount:Lcom/upokecenter/numbers/FastInteger;
+    iget-object p2, p0, Lcom/upokecenter/numbers/DigitShiftAccumulator;->discardedDigitCount:Lcom/upokecenter/numbers/FastInteger;
 
-    if-nez v2, :cond_1a
+    if-nez p2, :cond_1a
 
-    new-instance v2, Lcom/upokecenter/numbers/FastInteger;
+    new-instance p2, Lcom/upokecenter/numbers/FastInteger;
 
-    invoke-direct {v2, v1}, Lcom/upokecenter/numbers/FastInteger;-><init>(I)V
+    invoke-direct {p2, v1}, Lcom/upokecenter/numbers/FastInteger;-><init>(I)V
 
     :cond_1a
-    iput-object v2, p0, Lcom/upokecenter/numbers/DigitShiftAccumulator;->discardedDigitCount:Lcom/upokecenter/numbers/FastInteger;
+    iput-object p2, p0, Lcom/upokecenter/numbers/DigitShiftAccumulator;->discardedDigitCount:Lcom/upokecenter/numbers/FastInteger;
 
-    const v5, 0x7fffffff
+    const v0, 0x7fffffff
 
-    if-gt p1, v5, :cond_1b
+    if-gt p1, v0, :cond_1b
 
-    invoke-virtual {v2, p1}, Lcom/upokecenter/numbers/FastInteger;->AddInt(I)Lcom/upokecenter/numbers/FastInteger;
+    invoke-virtual {p2, p1}, Lcom/upokecenter/numbers/FastInteger;->AddInt(I)Lcom/upokecenter/numbers/FastInteger;
 
     goto :goto_a
 
     :cond_1b
     invoke-static {p1}, Lcom/upokecenter/numbers/EInteger;->FromInt32(I)Lcom/upokecenter/numbers/EInteger;
 
-    move-result-object v5
+    move-result-object v0
 
-    invoke-virtual {v2, v5}, Lcom/upokecenter/numbers/FastInteger;->AddBig(Lcom/upokecenter/numbers/EInteger;)Lcom/upokecenter/numbers/FastInteger;
+    invoke-virtual {p2, v0}, Lcom/upokecenter/numbers/FastInteger;->AddBig(Lcom/upokecenter/numbers/EInteger;)Lcom/upokecenter/numbers/FastInteger;
 
     :goto_a
-    invoke-virtual {p2}, Ljava/lang/String;->length()I
+    invoke-virtual {v5}, Ljava/lang/String;->length()I
+
+    move-result p2
+
+    sub-int/2addr p2, v3
+
+    :goto_b
+    const/16 v0, 0x30
+
+    if-ltz p2, :cond_1d
+
+    iget v2, p0, Lcom/upokecenter/numbers/DigitShiftAccumulator;->bitsAfterLeftmost:I
+
+    iget v6, p0, Lcom/upokecenter/numbers/DigitShiftAccumulator;->bitLeftmost:I
+
+    or-int/2addr v2, v6
+
+    iput v2, p0, Lcom/upokecenter/numbers/DigitShiftAccumulator;->bitsAfterLeftmost:I
+
+    invoke-virtual {v5, p2}, Ljava/lang/String;->charAt(I)C
 
     move-result v2
 
-    sub-int/2addr v2, v3
+    sub-int/2addr v2, v0
 
-    :goto_b
-    const/16 v5, 0x30
-
-    if-ltz v2, :cond_1d
-
-    iget v6, p0, Lcom/upokecenter/numbers/DigitShiftAccumulator;->bitsAfterLeftmost:I
-
-    iget v7, p0, Lcom/upokecenter/numbers/DigitShiftAccumulator;->bitLeftmost:I
-
-    or-int/2addr v6, v7
-
-    iput v6, p0, Lcom/upokecenter/numbers/DigitShiftAccumulator;->bitsAfterLeftmost:I
-
-    invoke-virtual {p2, v2}, Ljava/lang/String;->charAt(I)C
-
-    move-result v6
-
-    sub-int/2addr v6, v5
-
-    iput v6, p0, Lcom/upokecenter/numbers/DigitShiftAccumulator;->bitLeftmost:I
+    iput v2, p0, Lcom/upokecenter/numbers/DigitShiftAccumulator;->bitLeftmost:I
 
     add-int/lit8 p1, p1, -0x1
 
@@ -2941,43 +2941,43 @@
     goto :goto_c
 
     :cond_1c
-    add-int/lit8 v2, v2, -0x1
+    add-int/lit8 p2, p2, -0x1
 
     goto :goto_b
 
     :cond_1d
     :goto_c
-    if-gt v0, v4, :cond_20
+    if-gt v8, v4, :cond_20
 
     iput-boolean v3, p0, Lcom/upokecenter/numbers/DigitShiftAccumulator;->isSmall:Z
 
-    if-gt v0, v4, :cond_1f
+    if-gt v8, v4, :cond_1f
 
     move p1, v1
 
-    move v2, p1
+    move p2, p1
 
     :goto_d
-    if-ge p1, v0, :cond_1e
+    if-ge p1, v8, :cond_1e
 
-    add-int v4, v1, p1
+    add-int v0, v1, p1
 
-    invoke-virtual {p2, v4}, Ljava/lang/String;->charAt(I)C
+    invoke-virtual {v5, v0}, Ljava/lang/String;->charAt(I)C
 
-    move-result v4
+    move-result v0
 
-    add-int/lit8 v4, v4, -0x30
+    add-int/lit8 v0, v0, -0x30
 
-    mul-int/lit8 v2, v2, 0xa
+    mul-int/lit8 p2, p2, 0xa
 
-    add-int/2addr v2, v4
+    add-int/2addr p2, v0
 
     add-int/lit8 p1, p1, 0x1
 
     goto :goto_d
 
     :cond_1e
-    iput v2, p0, Lcom/upokecenter/numbers/DigitShiftAccumulator;->shiftedSmall:I
+    iput p2, p0, Lcom/upokecenter/numbers/DigitShiftAccumulator;->shiftedSmall:I
 
     goto :goto_12
 
@@ -2986,9 +2986,9 @@
 
     const-string p2, "length("
 
-    const-string v1, ") is more than 9 "
+    const-string v0, ") is more than 9 "
 
-    invoke-static {p2, v0, v1}, Landroidx/core/os/LocaleListCompatWrapper$$ExternalSyntheticOutline0;->m(Ljava/lang/String;ILjava/lang/String;)Ljava/lang/String;
+    invoke-static {p2, v8, v0}, Landroidx/core/os/LocaleListCompatWrapper$$ExternalSyntheticOutline0;->m(Ljava/lang/String;ILjava/lang/String;)Ljava/lang/String;
 
     move-result-object p2
 
@@ -2997,41 +2997,41 @@
     throw p1
 
     :cond_20
-    invoke-virtual {p2}, Ljava/lang/String;->length()I
+    invoke-virtual {v5}, Ljava/lang/String;->length()I
 
     move-result p1
 
-    const-string v2, ") is more than "
+    const-string p2, ") is more than "
 
     if-ltz p1, :cond_2b
 
     const-string p1, "endIndex("
 
-    if-ltz v0, :cond_2a
+    if-ltz v8, :cond_2a
 
-    invoke-virtual {p2}, Ljava/lang/String;->length()I
-
-    move-result v4
-
-    if-gt v0, v4, :cond_29
-
-    if-ltz v0, :cond_28
-
-    const-string p1, "No digits"
-
-    if-eqz v0, :cond_27
-
-    invoke-virtual {p2, v1}, Ljava/lang/String;->charAt(I)C
+    invoke-virtual {v5}, Ljava/lang/String;->length()I
 
     move-result v2
 
-    const/16 v4, 0x2d
+    if-gt v8, v2, :cond_29
 
-    if-ne v2, v4, :cond_22
+    if-ltz v8, :cond_28
 
-    if-eq v3, v0, :cond_21
+    const-string p1, "No digits"
 
-    move p1, v3
+    if-eqz v8, :cond_27
+
+    invoke-virtual {v5, v1}, Ljava/lang/String;->charAt(I)C
+
+    move-result p2
+
+    const/16 v2, 0x2d
+
+    if-ne p2, v2, :cond_22
+
+    if-eq v3, v8, :cond_21
+
+    move v9, v3
 
     goto :goto_e
 
@@ -3043,32 +3043,32 @@
     throw p2
 
     :cond_22
-    move p1, v1
+    move v9, v1
 
     :goto_e
-    move v2, p1
+    move v7, v9
 
     :goto_f
-    if-ge v2, v0, :cond_24
+    if-ge v7, v8, :cond_24
 
-    invoke-virtual {p2, v2}, Ljava/lang/String;->charAt(I)C
+    invoke-virtual {v5, v7}, Ljava/lang/String;->charAt(I)C
 
-    move-result v4
+    move-result p1
 
-    if-eq v4, v5, :cond_23
+    if-eq p1, v0, :cond_23
 
     goto :goto_10
 
     :cond_23
-    add-int/lit8 v2, v2, 0x1
+    add-int/lit8 v7, v7, 0x1
 
     goto :goto_f
 
     :cond_24
     :goto_10
-    sub-int v4, v0, v2
+    sub-int p1, v8, v7
 
-    if-nez v4, :cond_25
+    if-nez p1, :cond_25
 
     invoke-static {v1}, Lcom/upokecenter/numbers/EInteger;->FromInt32(I)Lcom/upokecenter/numbers/EInteger;
 
@@ -3077,9 +3077,11 @@
     goto :goto_11
 
     :cond_25
-    const/16 v4, 0xa
+    const/4 v10, 0x1
 
-    invoke-static {p2, v4, v2, v0, p1}, Lcom/airbnb/lottie/utils/GammaEvaluator;->FromRadixSubstringGeneral(Ljava/lang/String;IIIZ)Lcom/upokecenter/numbers/EInteger;
+    const/16 v6, 0xa
+
+    invoke-static/range {v5 .. v10}, Lkotlin/io/ByteStreamsKt;->FromRadixSubstringGeneral(Ljava/lang/String;IIIZZ)Lcom/upokecenter/numbers/EInteger;
 
     move-result-object p1
 
@@ -3108,9 +3110,9 @@
     :cond_28
     new-instance p2, Ljava/lang/IllegalArgumentException;
 
-    const-string v2, ") is less than "
+    const-string v0, ") is less than "
 
-    invoke-static {p1, v0, v2, v1}, Lcom/airbnb/lottie/utils/GammaEvaluator$$ExternalSyntheticOutline0;->m(Ljava/lang/String;ILjava/lang/String;I)Ljava/lang/String;
+    invoke-static {p1, v8, v0, v1}, Landroidx/camera/camera2/internal/Camera2CameraImpl$$ExternalSyntheticOutline0;->m(Ljava/lang/String;ILjava/lang/String;I)Ljava/lang/String;
 
     move-result-object p1
 
@@ -3119,13 +3121,13 @@
     throw p2
 
     :cond_29
-    new-instance v1, Ljava/lang/IllegalArgumentException;
+    new-instance v0, Ljava/lang/IllegalArgumentException;
 
-    invoke-static {p1, v0, v2}, Landroidx/appcompat/widget/SuggestionsAdapter$$ExternalSyntheticOutline0;->m(Ljava/lang/String;ILjava/lang/String;)Ljava/lang/StringBuilder;
+    invoke-static {p1, v8, p2}, Landroidx/appcompat/widget/SuggestionsAdapter$$ExternalSyntheticOutline0;->m(Ljava/lang/String;ILjava/lang/String;)Ljava/lang/StringBuilder;
 
     move-result-object p1
 
-    invoke-virtual {p2}, Ljava/lang/String;->length()I
+    invoke-virtual {v5}, Ljava/lang/String;->length()I
 
     move-result p2
 
@@ -3135,16 +3137,16 @@
 
     move-result-object p1
 
-    invoke-direct {v1, p1}, Ljava/lang/IllegalArgumentException;-><init>(Ljava/lang/String;)V
+    invoke-direct {v0, p1}, Ljava/lang/IllegalArgumentException;-><init>(Ljava/lang/String;)V
 
-    throw v1
+    throw v0
 
     :cond_2a
     new-instance p2, Ljava/lang/IllegalArgumentException;
 
-    const-string v1, ") is less than 0"
+    const-string v0, ") is less than 0"
 
-    invoke-static {p1, v0, v1}, Landroidx/core/os/LocaleListCompatWrapper$$ExternalSyntheticOutline0;->m(Ljava/lang/String;ILjava/lang/String;)Ljava/lang/String;
+    invoke-static {p1, v8, v0}, Landroidx/core/os/LocaleListCompatWrapper$$ExternalSyntheticOutline0;->m(Ljava/lang/String;ILjava/lang/String;)Ljava/lang/String;
 
     move-result-object p1
 
@@ -3157,17 +3159,17 @@
 
     const-string v0, "index("
 
-    invoke-static {v0, v1, v2}, Landroidx/appcompat/widget/SuggestionsAdapter$$ExternalSyntheticOutline0;->m(Ljava/lang/String;ILjava/lang/String;)Ljava/lang/StringBuilder;
+    invoke-static {v0, v1, p2}, Landroidx/appcompat/widget/SuggestionsAdapter$$ExternalSyntheticOutline0;->m(Ljava/lang/String;ILjava/lang/String;)Ljava/lang/StringBuilder;
 
-    move-result-object v0
+    move-result-object p2
 
-    invoke-virtual {p2}, Ljava/lang/String;->length()I
+    invoke-virtual {v5}, Ljava/lang/String;->length()I
 
-    move-result p2
+    move-result v0
 
-    invoke-virtual {v0, p2}, Ljava/lang/StringBuilder;->append(I)Ljava/lang/StringBuilder;
+    invoke-virtual {p2, v0}, Ljava/lang/StringBuilder;->append(I)Ljava/lang/StringBuilder;
 
-    invoke-virtual {v0}, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
+    invoke-virtual {p2}, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
 
     move-result-object p2
 
@@ -3928,7 +3930,7 @@
 
     const-string v2, "]"
 
-    invoke-static {v0, v1, v2}, Landroidx/constraintlayout/core/widgets/ConstraintWidget$$ExternalSyntheticOutline0;->m(Ljava/lang/StringBuilder;ILjava/lang/String;)Ljava/lang/String;
+    invoke-static {v0, v1, v2}, Landroidx/camera/core/AutoValue_ImmutableImageInfo$$ExternalSyntheticOutline0;->m(Ljava/lang/StringBuilder;ILjava/lang/String;)Ljava/lang/String;
 
     move-result-object v0
 

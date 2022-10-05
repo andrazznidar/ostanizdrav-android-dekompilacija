@@ -42,16 +42,18 @@
 
 
 # virtual methods
-.method public accept(Landroidx/core/provider/FontRequestWorker$TypefaceResult;)V
+.method public accept(Ljava/lang/Object;)V
     .locals 4
     .annotation system Ldalvik/annotation/MethodParameters;
         accessFlags = {
-            0x0
+            0x1000
         }
         names = {
             "typefaceResult"
         }
     .end annotation
+
+    check-cast p1, Landroidx/core/provider/FontRequestWorker$TypefaceResult;
 
     sget-object v0, Landroidx/core/provider/FontRequestWorker;->LOCK:Ljava/lang/Object;
 
@@ -72,7 +74,7 @@
 
     monitor-exit v0
 
-    return-void
+    goto :goto_1
 
     :cond_0
     iget-object v3, p0, Landroidx/core/provider/FontRequestWorker$4;->val$id:Ljava/lang/String;
@@ -105,6 +107,7 @@
     goto :goto_0
 
     :cond_1
+    :goto_1
     return-void
 
     :catchall_0
@@ -116,22 +119,4 @@
     .catchall {:try_start_1 .. :try_end_1} :catchall_0
 
     throw p1
-.end method
-
-.method public bridge synthetic accept(Ljava/lang/Object;)V
-    .locals 0
-    .annotation system Ldalvik/annotation/MethodParameters;
-        accessFlags = {
-            0x1000
-        }
-        names = {
-            "typefaceResult"
-        }
-    .end annotation
-
-    check-cast p1, Landroidx/core/provider/FontRequestWorker$TypefaceResult;
-
-    invoke-virtual {p0, p1}, Landroidx/core/provider/FontRequestWorker$4;->accept(Landroidx/core/provider/FontRequestWorker$TypefaceResult;)V
-
-    return-void
 .end method

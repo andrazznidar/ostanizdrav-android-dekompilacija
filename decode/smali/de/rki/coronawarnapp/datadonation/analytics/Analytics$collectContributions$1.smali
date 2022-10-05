@@ -17,8 +17,8 @@
     c = "de.rki.coronawarnapp.datadonation.analytics.Analytics"
     f = "Analytics.kt"
     l = {
-        0x58,
-        0x63
+        0x5b,
+        0x66
     }
     m = "collectContributions"
 .end annotation

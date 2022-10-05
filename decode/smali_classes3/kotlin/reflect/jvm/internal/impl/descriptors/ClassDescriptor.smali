@@ -39,6 +39,17 @@
 .method public abstract getDefaultType()Lkotlin/reflect/jvm/internal/impl/types/SimpleType;
 .end method
 
+.method public abstract getInlineClassRepresentation()Lkotlin/reflect/jvm/internal/impl/descriptors/InlineClassRepresentation;
+    .annotation system Ldalvik/annotation/Signature;
+        value = {
+            "()",
+            "Lkotlin/reflect/jvm/internal/impl/descriptors/InlineClassRepresentation<",
+            "Lkotlin/reflect/jvm/internal/impl/types/SimpleType;",
+            ">;"
+        }
+    .end annotation
+.end method
+
 .method public abstract getKind()Lkotlin/reflect/jvm/internal/impl/descriptors/ClassKind;
 .end method
 

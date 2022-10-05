@@ -104,7 +104,7 @@
 
     iget-object v1, p0, Lde/rki/coronawarnapp/databinding/IncludeButtonIconBinding;->buttonIcon:Landroidx/constraintlayout/widget/ConstraintLayout;
 
-    invoke-static {v1, v4}, Lcom/google/android/gms/nearby/connection/zzq;->setCWAContentDescription(Landroid/view/View;Ljava/lang/String;)V
+    invoke-static {v1, v4}, Lboofcv/core/image/impl/ImplConvertPlanarToGray;->setCWAContentDescription(Landroid/view/View;Ljava/lang/String;)V
 
     :cond_0
     if-eqz v0, :cond_1
@@ -221,7 +221,7 @@
     :try_end_0
     .catchall {:try_start_0 .. :try_end_0} :catchall_0
 
-    const/16 p1, 0x16
+    const/16 p1, 0x15
 
     invoke-virtual {p0, p1}, Landroidx/databinding/BaseObservable;->notifyPropertyChanged(I)V
 
@@ -268,7 +268,7 @@
     :try_end_0
     .catchall {:try_start_0 .. :try_end_0} :catchall_0
 
-    const/16 p1, 0x17
+    const/16 p1, 0x16
 
     invoke-virtual {p0, p1}, Landroidx/databinding/BaseObservable;->notifyPropertyChanged(I)V
 

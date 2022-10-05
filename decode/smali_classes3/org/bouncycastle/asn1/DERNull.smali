@@ -5,7 +5,7 @@
 # static fields
 .field public static final INSTANCE:Lorg/bouncycastle/asn1/DERNull;
 
-.field public static final zeroBytes:[B
+.field private static final zeroBytes:[B
 
 
 # direct methods
@@ -27,7 +27,7 @@
     return-void
 .end method
 
-.method public constructor <init>()V
+.method private constructor <init>()V
     .locals 0
 
     invoke-direct {p0}, Lorg/bouncycastle/asn1/ASN1Null;-><init>()V

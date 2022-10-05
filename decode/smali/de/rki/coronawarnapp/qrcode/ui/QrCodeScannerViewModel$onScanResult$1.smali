@@ -34,9 +34,10 @@
     c = "de.rki.coronawarnapp.qrcode.ui.QrCodeScannerViewModel$onScanResult$1"
     f = "QrCodeScannerViewModel.kt"
     l = {
-        0x41,
-        0x42,
-        0x44
+        0x58,
+        0x59,
+        0x5b,
+        0x5c
     }
     m = "invokeSuspend"
 .end annotation
@@ -128,7 +129,7 @@
 .end method
 
 .method public final invokeSuspend(Ljava/lang/Object;)Ljava/lang/Object;
-    .locals 8
+    .locals 9
 
     sget-object v0, Lkotlin/coroutines/intrinsics/CoroutineSingletons;->COROUTINE_SUSPENDED:Lkotlin/coroutines/intrinsics/CoroutineSingletons;
 
@@ -136,15 +137,19 @@
 
     const/4 v2, 0x0
 
-    const/4 v3, 0x3
+    const/4 v3, 0x4
 
-    const/4 v4, 0x2
+    const/4 v4, 0x3
 
-    const/4 v5, 0x1
+    const/4 v5, 0x2
+
+    const/4 v6, 0x1
 
     if-eqz v1, :cond_3
 
-    if-eq v1, v5, :cond_2
+    if-eq v1, v6, :cond_2
+
+    if-eq v1, v5, :cond_1
 
     if-eq v1, v4, :cond_1
 
@@ -194,17 +199,17 @@
 
     iget-object v1, p0, Lde/rki/coronawarnapp/qrcode/ui/QrCodeScannerViewModel$onScanResult$1;->$rawResult:Ljava/lang/String;
 
-    const-string v6, "onScanResult(rawResult="
+    const-string v7, "onScanResult(rawResult="
 
-    const-string v7, ")"
+    const-string v8, ")"
 
-    invoke-static {v6, v1, v7}, Landroidx/core/graphics/PathParser$$ExternalSyntheticOutline0;->m(Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;)Ljava/lang/String;
+    invoke-static {v7, v1, v8}, Landroidx/concurrent/futures/AbstractResolvableFuture$$ExternalSyntheticOutline1;->m(Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;)Ljava/lang/String;
 
     move-result-object v1
 
-    new-array v6, v2, [Ljava/lang/Object;
+    new-array v7, v2, [Ljava/lang/Object;
 
-    invoke-virtual {p1, v1, v6}, Ltimber/log/Timber$Tree;->d(Ljava/lang/String;[Ljava/lang/Object;)V
+    invoke-virtual {p1, v1, v7}, Ltimber/log/Timber$Tree;->d(Ljava/lang/String;[Ljava/lang/Object;)V
 
     :try_start_1
     iget-object p1, p0, Lde/rki/coronawarnapp/qrcode/ui/QrCodeScannerViewModel$onScanResult$1;->this$0:Lde/rki/coronawarnapp/qrcode/ui/QrCodeScannerViewModel;
@@ -213,7 +218,7 @@
 
     iget-object v1, p0, Lde/rki/coronawarnapp/qrcode/ui/QrCodeScannerViewModel$onScanResult$1;->$rawResult:Ljava/lang/String;
 
-    iput v5, p0, Lde/rki/coronawarnapp/qrcode/ui/QrCodeScannerViewModel$onScanResult$1;->label:I
+    iput v6, p0, Lde/rki/coronawarnapp/qrcode/ui/QrCodeScannerViewModel$onScanResult$1;->label:I
 
     invoke-virtual {p1, v1, p0}, Lde/rki/coronawarnapp/qrcode/scanner/QrCodeValidator;->validate(Ljava/lang/String;Lkotlin/coroutines/Continuation;)Ljava/lang/Object;
 
@@ -235,13 +240,13 @@
 
     check-cast p1, Lde/rki/coronawarnapp/coronatest/qrcode/CoronaTestQRCode;
 
-    iput v4, p0, Lde/rki/coronawarnapp/qrcode/ui/QrCodeScannerViewModel$onScanResult$1;->label:I
+    iput v5, p0, Lde/rki/coronawarnapp/qrcode/ui/QrCodeScannerViewModel$onScanResult$1;->label:I
 
     invoke-static {v1, p1, p0}, Lde/rki/coronawarnapp/qrcode/ui/QrCodeScannerViewModel;->access$onCoronaTestQrCode(Lde/rki/coronawarnapp/qrcode/ui/QrCodeScannerViewModel;Lde/rki/coronawarnapp/coronatest/qrcode/CoronaTestQRCode;Lkotlin/coroutines/Continuation;)Ljava/lang/Object;
 
     move-result-object p1
 
-    if-ne p1, v0, :cond_7
+    if-ne p1, v0, :cond_8
 
     return-object v0
 
@@ -267,15 +272,34 @@
 
     check-cast p1, Lde/rki/coronawarnapp/covidcertificate/common/qrcode/DccQrCode;
 
-    iput v3, p0, Lde/rki/coronawarnapp/qrcode/ui/QrCodeScannerViewModel$onScanResult$1;->label:I
+    iput v4, p0, Lde/rki/coronawarnapp/qrcode/ui/QrCodeScannerViewModel$onScanResult$1;->label:I
 
     invoke-static {v1, p1, p0}, Lde/rki/coronawarnapp/qrcode/ui/QrCodeScannerViewModel;->access$onDccQrCode(Lde/rki/coronawarnapp/qrcode/ui/QrCodeScannerViewModel;Lde/rki/coronawarnapp/covidcertificate/common/qrcode/DccQrCode;Lkotlin/coroutines/Continuation;)Ljava/lang/Object;
+
+    move-result-object p1
+
+    if-ne p1, v0, :cond_8
+
+    return-object v0
+
+    :cond_7
+    instance-of v1, p1, Lde/rki/coronawarnapp/dccticketing/core/qrcode/DccTicketingQrCode;
+
+    if-eqz v1, :cond_8
+
+    iget-object v1, p0, Lde/rki/coronawarnapp/qrcode/ui/QrCodeScannerViewModel$onScanResult$1;->this$0:Lde/rki/coronawarnapp/qrcode/ui/QrCodeScannerViewModel;
+
+    check-cast p1, Lde/rki/coronawarnapp/dccticketing/core/qrcode/DccTicketingQrCode;
+
+    iput v3, p0, Lde/rki/coronawarnapp/qrcode/ui/QrCodeScannerViewModel$onScanResult$1;->label:I
+
+    invoke-static {v1, p1, p0}, Lde/rki/coronawarnapp/qrcode/ui/QrCodeScannerViewModel;->access$onTicketValidationQrCode(Lde/rki/coronawarnapp/qrcode/ui/QrCodeScannerViewModel;Lde/rki/coronawarnapp/dccticketing/core/qrcode/DccTicketingQrCode;Lkotlin/coroutines/Continuation;)Ljava/lang/Object;
 
     move-result-object p1
     :try_end_1
     .catch Ljava/lang/Exception; {:try_start_1 .. :try_end_1} :catch_0
 
-    if-ne p1, v0, :cond_7
+    if-ne p1, v0, :cond_8
 
     return-object v0
 
@@ -304,7 +328,7 @@
 
     invoke-virtual {v0, v1}, Landroidx/lifecycle/MutableLiveData;->postValue(Ljava/lang/Object;)V
 
-    :cond_7
+    :cond_8
     :goto_2
     sget-object p1, Lkotlin/Unit;->INSTANCE:Lkotlin/Unit;
 

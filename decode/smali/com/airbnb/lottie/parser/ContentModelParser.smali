@@ -100,11 +100,11 @@
 
     move-result v6
 
-    const/4 v7, 0x5
+    const/4 v7, 0x3
 
     const/4 v8, 0x4
 
-    const/4 v9, 0x3
+    const/4 v9, 0x5
 
     const/4 v10, -0x1
 
@@ -238,7 +238,7 @@
     goto :goto_2
 
     :cond_b
-    move v6, v7
+    move v6, v9
 
     goto :goto_3
 
@@ -270,7 +270,7 @@
     goto :goto_2
 
     :cond_d
-    move v6, v9
+    move v6, v7
 
     goto :goto_3
 
@@ -407,11 +407,11 @@
 
     if-eq v3, v2, :cond_16
 
-    if-eq v3, v9, :cond_15
+    if-eq v3, v7, :cond_15
 
     if-eq v3, v8, :cond_12
 
-    if-eq v3, v7, :cond_11
+    if-eq v3, v9, :cond_11
 
     invoke-virtual/range {p0 .. p0}, Lcom/airbnb/lottie/parser/moshi/JsonReader;->skipValue()V
 
@@ -714,7 +714,7 @@
     goto/16 :goto_5
 
     :pswitch_8
-    invoke-static {}, Landroidx/constraintlayout/core/SolverVariable$Type$r8$EnumUnboxingUtility;->com$airbnb$lottie$model$content$ShapeStroke$LineJoinType$s$values()[I
+    invoke-static {}, Lcom/airbnb/lottie/model/content/ShapeStroke$LineJoinType$EnumUnboxingLocalUtility;->_values()[I
 
     move-result-object v4
 
@@ -729,7 +729,7 @@
     goto/16 :goto_5
 
     :pswitch_9
-    invoke-static {}, Landroidx/constraintlayout/core/SolverVariable$Type$r8$EnumUnboxingUtility;->com$airbnb$lottie$model$content$ShapeStroke$LineCapType$s$values()[I
+    invoke-static {}, Lcom/google/crypto/tink/subtle/Field25519$$ExternalSyntheticOutline0;->_values()[I
 
     move-result-object v4
 
@@ -929,7 +929,7 @@
 
     move-result v2
 
-    invoke-static {}, Landroidx/constraintlayout/core/SolverVariable$Type$r8$EnumUnboxingUtility;->com$airbnb$lottie$model$content$PolystarShape$Type$s$values()[I
+    invoke-static {}, Lcom/airbnb/lottie/model/content/PolystarShape$Type$EnumUnboxingLocalUtility;->_values()[I
 
     move-result-object v3
 
@@ -942,7 +942,7 @@
 
     aget v14, v3, v5
 
-    invoke-static {v14}, Landroidx/constraintlayout/core/SolverVariable$Type$r8$EnumUnboxingUtility;->getvalue$$com$airbnb$lottie$model$content$PolystarShape$Type(I)I
+    invoke-static {v14}, Lcom/airbnb/lottie/model/content/PolystarShape$Type$EnumUnboxingLocalUtility;->getValue(I)I
 
     move-result v6
 
@@ -988,23 +988,23 @@
     :goto_c
     invoke-virtual/range {p0 .. p0}, Lcom/airbnb/lottie/parser/moshi/JsonReader;->hasNext()Z
 
-    move-result v7
+    move-result v8
 
-    if-eqz v7, :cond_2b
+    if-eqz v8, :cond_2b
 
-    sget-object v7, Lcom/airbnb/lottie/parser/ShapePathParser;->NAMES:Lcom/airbnb/lottie/parser/moshi/JsonReader$Options;
+    sget-object v8, Lcom/airbnb/lottie/parser/ShapePathParser;->NAMES:Lcom/airbnb/lottie/parser/moshi/JsonReader$Options;
 
-    invoke-virtual {v0, v7}, Lcom/airbnb/lottie/parser/moshi/JsonReader;->selectName(Lcom/airbnb/lottie/parser/moshi/JsonReader$Options;)I
+    invoke-virtual {v0, v8}, Lcom/airbnb/lottie/parser/moshi/JsonReader;->selectName(Lcom/airbnb/lottie/parser/moshi/JsonReader$Options;)I
 
-    move-result v7
+    move-result v8
 
-    if-eqz v7, :cond_2a
+    if-eqz v8, :cond_2a
 
-    if-eq v7, v5, :cond_29
+    if-eq v8, v5, :cond_29
 
-    if-eq v7, v2, :cond_28
+    if-eq v8, v2, :cond_28
 
-    if-eq v7, v9, :cond_27
+    if-eq v8, v7, :cond_27
 
     invoke-virtual/range {p0 .. p0}, Lcom/airbnb/lottie/parser/moshi/JsonReader;->skipValue()V
 
@@ -1022,15 +1022,15 @@
 
     invoke-static {}, Lcom/airbnb/lottie/utils/Utils;->dpScale()F
 
-    move-result v7
+    move-result v8
 
-    sget-object v8, Lcom/airbnb/lottie/parser/ShapeDataParser;->INSTANCE:Lcom/airbnb/lottie/parser/ShapeDataParser;
+    sget-object v9, Lcom/airbnb/lottie/parser/ShapeDataParser;->INSTANCE:Lcom/airbnb/lottie/parser/ShapeDataParser;
 
-    invoke-static {v0, v1, v7, v8}, Lcom/airbnb/lottie/parser/KeyframesParser;->parse(Lcom/airbnb/lottie/parser/moshi/JsonReader;Lcom/airbnb/lottie/LottieComposition;FLcom/airbnb/lottie/parser/ValueParser;)Ljava/util/List;
+    invoke-static {v0, v1, v8, v9}, Lcom/airbnb/lottie/parser/KeyframesParser;->parse(Lcom/airbnb/lottie/parser/moshi/JsonReader;Lcom/airbnb/lottie/LottieComposition;FLcom/airbnb/lottie/parser/ValueParser;)Ljava/util/List;
 
-    move-result-object v7
+    move-result-object v8
 
-    invoke-direct {v3, v7}, Lcom/airbnb/lottie/model/animatable/AnimatableShapeValue;-><init>(Ljava/util/List;)V
+    invoke-direct {v3, v8}, Lcom/airbnb/lottie/model/animatable/AnimatableShapeValue;-><init>(Ljava/util/List;)V
 
     goto :goto_c
 
@@ -1064,7 +1064,7 @@
 
     const/4 v6, 0x0
 
-    const/4 v7, 0x0
+    const/4 v9, 0x0
 
     move-object v13, v3
 
@@ -1072,7 +1072,7 @@
 
     move-object v15, v6
 
-    move-object/from16 v16, v7
+    move-object/from16 v16, v9
 
     move/from16 v17, v11
 
@@ -1095,7 +1095,7 @@
 
     if-eq v3, v2, :cond_2e
 
-    if-eq v3, v9, :cond_2d
+    if-eq v3, v7, :cond_2d
 
     if-eq v3, v8, :cond_2c
 
@@ -1156,7 +1156,7 @@
 
     const/4 v6, 0x0
 
-    const/4 v7, 0x0
+    const/4 v9, 0x0
 
     move-object v13, v3
 
@@ -1164,7 +1164,7 @@
 
     move-object v15, v6
 
-    move-object/from16 v16, v7
+    move-object/from16 v16, v9
 
     move/from16 v17, v11
 
@@ -1187,7 +1187,7 @@
 
     if-eq v3, v2, :cond_34
 
-    if-eq v3, v9, :cond_33
+    if-eq v3, v7, :cond_33
 
     if-eq v3, v8, :cond_32
 
@@ -1231,11 +1231,11 @@
     goto :goto_e
 
     :cond_37
-    new-instance v1, Lcom/airbnb/lottie/model/content/Repeater;
+    new-instance v1, Lcom/airbnb/lottie/model/content/RectangleShape;
 
     move-object v12, v1
 
-    invoke-direct/range {v12 .. v17}, Lcom/airbnb/lottie/model/content/Repeater;-><init>(Ljava/lang/String;Lcom/airbnb/lottie/model/animatable/AnimatableValue;Lcom/airbnb/lottie/model/animatable/AnimatablePointValue;Lcom/airbnb/lottie/model/animatable/AnimatableFloatValue;Z)V
+    invoke-direct/range {v12 .. v17}, Lcom/airbnb/lottie/model/content/RectangleShape;-><init>(Ljava/lang/String;Lcom/airbnb/lottie/model/animatable/AnimatableValue;Lcom/airbnb/lottie/model/animatable/AnimatablePointValue;Lcom/airbnb/lottie/model/animatable/AnimatableFloatValue;Z)V
 
     goto/16 :goto_20
 
@@ -1244,7 +1244,7 @@
 
     const/4 v3, 0x0
 
-    const/4 v4, 0x0
+    move v4, v11
 
     :goto_f
     invoke-virtual/range {p0 .. p0}, Lcom/airbnb/lottie/parser/moshi/JsonReader;->hasNext()Z
@@ -1274,66 +1274,64 @@
     :cond_38
     invoke-virtual/range {p0 .. p0}, Lcom/airbnb/lottie/parser/moshi/JsonReader;->nextBoolean()Z
 
-    move-result v11
+    move-result v4
 
     goto :goto_f
 
     :cond_39
     invoke-virtual/range {p0 .. p0}, Lcom/airbnb/lottie/parser/moshi/JsonReader;->nextInt()I
 
-    move-result v3
+    move-result v6
 
-    sget-object v6, Lcom/airbnb/lottie/model/content/MergePaths$MergePathsMode;->MERGE:Lcom/airbnb/lottie/model/content/MergePaths$MergePathsMode;
+    if-eq v6, v5, :cond_3e
 
-    if-eq v3, v5, :cond_3e
+    if-eq v6, v2, :cond_3d
 
-    if-eq v3, v2, :cond_3d
+    if-eq v6, v7, :cond_3c
 
-    if-eq v3, v9, :cond_3c
+    if-eq v6, v8, :cond_3b
 
-    if-eq v3, v8, :cond_3b
-
-    if-eq v3, v7, :cond_3a
+    if-eq v6, v9, :cond_3a
 
     goto :goto_10
 
     :cond_3a
-    sget-object v3, Lcom/airbnb/lottie/model/content/MergePaths$MergePathsMode;->EXCLUDE_INTERSECTIONS:Lcom/airbnb/lottie/model/content/MergePaths$MergePathsMode;
+    move v11, v9
 
     goto :goto_f
 
     :cond_3b
-    sget-object v3, Lcom/airbnb/lottie/model/content/MergePaths$MergePathsMode;->INTERSECT:Lcom/airbnb/lottie/model/content/MergePaths$MergePathsMode;
+    move v11, v8
 
     goto :goto_f
 
     :cond_3c
-    sget-object v3, Lcom/airbnb/lottie/model/content/MergePaths$MergePathsMode;->SUBTRACT:Lcom/airbnb/lottie/model/content/MergePaths$MergePathsMode;
+    move v11, v7
 
     goto :goto_f
 
     :cond_3d
-    sget-object v3, Lcom/airbnb/lottie/model/content/MergePaths$MergePathsMode;->ADD:Lcom/airbnb/lottie/model/content/MergePaths$MergePathsMode;
+    move v11, v2
 
     goto :goto_f
 
     :cond_3e
     :goto_10
-    move-object v3, v6
+    move v11, v5
 
     goto :goto_f
 
     :cond_3f
     invoke-virtual/range {p0 .. p0}, Lcom/airbnb/lottie/parser/moshi/JsonReader;->nextString()Ljava/lang/String;
 
-    move-result-object v4
+    move-result-object v3
 
     goto :goto_f
 
     :cond_40
     new-instance v2, Lcom/airbnb/lottie/model/content/MergePaths;
 
-    invoke-direct {v2, v4, v3, v11}, Lcom/airbnb/lottie/model/content/MergePaths;-><init>(Ljava/lang/String;Lcom/airbnb/lottie/model/content/MergePaths$MergePathsMode;Z)V
+    invoke-direct {v2, v3, v11, v4}, Lcom/airbnb/lottie/model/content/MergePaths;-><init>(Ljava/lang/String;IZ)V
 
     const-string v3, "Animation contains merge paths. Merge paths are only supported on KitKat+ and must be manually enabled by calling enableMergePathsForKitKatAndAbove()."
 
@@ -1531,7 +1529,7 @@
     goto/16 :goto_11
 
     :pswitch_21
-    invoke-static {}, Landroidx/constraintlayout/core/SolverVariable$Type$r8$EnumUnboxingUtility;->com$airbnb$lottie$model$content$ShapeStroke$LineJoinType$s$values()[I
+    invoke-static {}, Lcom/airbnb/lottie/model/content/ShapeStroke$LineJoinType$EnumUnboxingLocalUtility;->_values()[I
 
     move-result-object v6
 
@@ -1546,7 +1544,7 @@
     goto/16 :goto_11
 
     :pswitch_22
-    invoke-static {}, Landroidx/constraintlayout/core/SolverVariable$Type$r8$EnumUnboxingUtility;->com$airbnb$lottie$model$content$ShapeStroke$LineCapType$s$values()[I
+    invoke-static {}, Lcom/google/crypto/tink/subtle/Field25519$$ExternalSyntheticOutline0;->_values()[I
 
     move-result-object v6
 
@@ -2038,11 +2036,11 @@
 
     if-eq v6, v2, :cond_5f
 
-    if-eq v6, v9, :cond_5e
+    if-eq v6, v7, :cond_5e
 
     if-eq v6, v8, :cond_5d
 
-    if-eq v6, v7, :cond_5c
+    if-eq v6, v9, :cond_5c
 
     invoke-virtual/range {p0 .. p0}, Lcom/airbnb/lottie/parser/moshi/JsonReader;->skipName()V
 
@@ -2137,7 +2135,7 @@
     :pswitch_35
     sget-object v4, Lcom/airbnb/lottie/parser/CircleShapeParser;->NAMES:Lcom/airbnb/lottie/parser/moshi/JsonReader$Options;
 
-    if-ne v3, v9, :cond_65
+    if-ne v3, v7, :cond_65
 
     move v3, v5
 
@@ -2151,7 +2149,7 @@
 
     const/4 v6, 0x0
 
-    const/4 v7, 0x0
+    const/4 v9, 0x0
 
     move/from16 v16, v3
 
@@ -2159,7 +2157,7 @@
 
     move-object v14, v6
 
-    move-object v15, v7
+    move-object v15, v9
 
     move/from16 v17, v11
 
@@ -2182,7 +2180,7 @@
 
     if-eq v3, v2, :cond_69
 
-    if-eq v3, v9, :cond_68
+    if-eq v3, v7, :cond_68
 
     if-eq v3, v8, :cond_66
 
@@ -2197,7 +2195,7 @@
 
     move-result v3
 
-    if-ne v3, v9, :cond_67
+    if-ne v3, v7, :cond_67
 
     move/from16 v16, v5
 

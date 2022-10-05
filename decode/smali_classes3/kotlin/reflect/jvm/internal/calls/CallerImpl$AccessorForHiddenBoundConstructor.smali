@@ -26,12 +26,39 @@
 .end annotation
 
 .annotation system Ldalvik/annotation/SourceDebugExtension;
-    value = "SMAP\nCallerImpl.kt\nKotlin\n*S Kotlin\n*F\n+ 1 CallerImpl.kt\nkotlin/reflect/jvm/internal/calls/CallerImpl$AccessorForHiddenBoundConstructor\n+ 2 CallerImpl.kt\nkotlin/reflect/jvm/internal/calls/CallerImpl$Companion\n*L\n1#1,250:1\n247#2:251\n*E\n*S KotlinDebug\n*F\n+ 1 CallerImpl.kt\nkotlin/reflect/jvm/internal/calls/CallerImpl$AccessorForHiddenBoundConstructor\n*L\n76#1:251\n*E\n"
+    value = "SMAP\nCallerImpl.kt\nKotlin\n*S Kotlin\n*F\n+ 1 CallerImpl.kt\nkotlin/reflect/jvm/internal/calls/CallerImpl$AccessorForHiddenBoundConstructor\n+ 2 CallerImpl.kt\nkotlin/reflect/jvm/internal/calls/CallerImpl$Companion\n*L\n1#1,250:1\n247#2:251\n*S KotlinDebug\n*F\n+ 1 CallerImpl.kt\nkotlin/reflect/jvm/internal/calls/CallerImpl$AccessorForHiddenBoundConstructor\n*L\n76#1:251\n*E\n"
+.end annotation
+
+.annotation runtime Lkotlin/Metadata;
+    d1 = {
+        "\u0000$\n\u0002\u0018\u0002\n\u0002\u0018\u0002\n\u0002\u0018\u0002\n\u0002\u0018\u0002\n\u0002\u0008\u0002\n\u0002\u0010\u0000\n\u0002\u0008\u0003\n\u0002\u0010\u0011\n\u0002\u0008\u0002\u0018\u00002\u000c\u0012\u0008\u0012\u0006\u0012\u0002\u0008\u00030\u00020\u00012\u00020\u0003B\u001b\u0012\n\u0010\u0004\u001a\u0006\u0012\u0002\u0008\u00030\u0002\u0012\u0008\u0010\u0005\u001a\u0004\u0018\u00010\u0006\u00a2\u0006\u0002\u0010\u0007J\u001b\u0010\u0008\u001a\u0004\u0018\u00010\u00062\n\u0010\t\u001a\u0006\u0012\u0002\u0008\u00030\nH\u0016\u00a2\u0006\u0002\u0010\u000bR\u0010\u0010\u0005\u001a\u0004\u0018\u00010\u0006X\u0082\u0004\u00a2\u0006\u0002\n\u0000\u00a8\u0006\u000c"
+    }
+    d2 = {
+        "Lkotlin/reflect/jvm/internal/calls/CallerImpl$AccessorForHiddenBoundConstructor;",
+        "Lkotlin/reflect/jvm/internal/calls/CallerImpl;",
+        "Ljava/lang/reflect/Constructor;",
+        "Lkotlin/reflect/jvm/internal/calls/BoundCaller;",
+        "constructor",
+        "boundReceiver",
+        "",
+        "(Ljava/lang/reflect/Constructor;Ljava/lang/Object;)V",
+        "call",
+        "args",
+        "",
+        "([Ljava/lang/Object;)Ljava/lang/Object;",
+        "kotlin-reflection"
+    }
+    k = 0x1
+    mv = {
+        0x1,
+        0x5,
+        0x1
+    }
 .end annotation
 
 
 # instance fields
-.field public final boundReceiver:Ljava/lang/Object;
+.field private final boundReceiver:Ljava/lang/Object;
 
 
 # direct methods
@@ -113,7 +140,7 @@
 
 # virtual methods
 .method public call([Ljava/lang/Object;)Ljava/lang/Object;
-    .locals 3
+    .locals 4
 
     const-string v0, "args"
 
@@ -121,7 +148,9 @@
 
     invoke-virtual {p0, p1}, Lkotlin/reflect/jvm/internal/calls/CallerImpl;->checkArguments([Ljava/lang/Object;)V
 
-    iget-object v0, p0, Lkotlin/reflect/jvm/internal/calls/CallerImpl;->member:Ljava/lang/reflect/Member;
+    invoke-virtual {p0}, Lkotlin/reflect/jvm/internal/calls/CallerImpl;->getMember()Ljava/lang/reflect/Member;
+
+    move-result-object v0
 
     check-cast v0, Ljava/lang/reflect/Constructor;
 
@@ -133,13 +162,17 @@
 
     iget-object v2, p0, Lkotlin/reflect/jvm/internal/calls/CallerImpl$AccessorForHiddenBoundConstructor;->boundReceiver:Ljava/lang/Object;
 
-    invoke-virtual {v1, v2}, Lkotlin/jvm/internal/SpreadBuilder;->add(Ljava/lang/Object;)V
+    iget-object v3, v1, Lkotlin/jvm/internal/SpreadBuilder;->list:Ljava/util/ArrayList;
+
+    invoke-virtual {v3, v2}, Ljava/util/ArrayList;->add(Ljava/lang/Object;)Z
 
     invoke-virtual {v1, p1}, Lkotlin/jvm/internal/SpreadBuilder;->addSpread(Ljava/lang/Object;)V
 
     const/4 p1, 0x0
 
-    invoke-virtual {v1, p1}, Lkotlin/jvm/internal/SpreadBuilder;->add(Ljava/lang/Object;)V
+    iget-object v2, v1, Lkotlin/jvm/internal/SpreadBuilder;->list:Ljava/util/ArrayList;
+
+    invoke-virtual {v2, p1}, Ljava/util/ArrayList;->add(Ljava/lang/Object;)Z
 
     invoke-virtual {v1}, Lkotlin/jvm/internal/SpreadBuilder;->size()I
 
@@ -147,9 +180,7 @@
 
     new-array p1, p1, [Ljava/lang/Object;
 
-    iget-object v1, v1, Lkotlin/jvm/internal/SpreadBuilder;->list:Ljava/lang/Object;
-
-    check-cast v1, Ljava/util/ArrayList;
+    iget-object v1, v1, Lkotlin/jvm/internal/SpreadBuilder;->list:Ljava/util/ArrayList;
 
     invoke-virtual {v1, p1}, Ljava/util/ArrayList;->toArray([Ljava/lang/Object;)[Ljava/lang/Object;
 

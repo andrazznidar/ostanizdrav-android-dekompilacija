@@ -4,7 +4,7 @@
 
 
 # static fields
-.field public static final zza:Lkotlin/jvm/internal/SpreadBuilder;
+.field public static final zza:Lcom/google/android/play/core/internal/zzag;
 
 
 # instance fields
@@ -21,13 +21,13 @@
 .method public static constructor <clinit>()V
     .locals 2
 
-    new-instance v0, Lkotlin/jvm/internal/SpreadBuilder;
+    new-instance v0, Lcom/google/android/play/core/internal/zzag;
 
     const-string v1, "ExtractorTaskFinder"
 
-    invoke-direct {v0, v1}, Lkotlin/jvm/internal/SpreadBuilder;-><init>(Ljava/lang/String;)V
+    invoke-direct {v0, v1}, Lcom/google/android/play/core/internal/zzag;-><init>(Ljava/lang/String;)V
 
-    sput-object v0, Lcom/google/android/play/core/assetpacks/zzde;->zza:Lkotlin/jvm/internal/SpreadBuilder;
+    sput-object v0, Lcom/google/android/play/core/assetpacks/zzde;->zza:Lcom/google/android/play/core/internal/zzag;
 
     return-void
 .end method
@@ -50,7 +50,7 @@
 
 
 # virtual methods
-.method public final zza()Lorg/bouncycastle/asn1/OIDTokenizer;
+.method public final zza()Lorg/bouncycastle/crypto/util/SSHBuffer;
     .locals 32
 
     move-object/from16 v1, p0
@@ -96,7 +96,7 @@
 
     iget v4, v4, Lcom/google/android/play/core/assetpacks/zzcx;->zzd:I
 
-    invoke-static {v4}, Lkotlin/io/ByteStreamsKt;->zzb(I)Z
+    invoke-static {v4}, Landroidx/databinding/adapters/Converters;->zzb(I)Z
 
     move-result v4
 
@@ -192,7 +192,7 @@
 
     if-nez v9, :cond_3
 
-    sget-object v0, Lcom/google/android/play/core/assetpacks/zzde;->zza:Lkotlin/jvm/internal/SpreadBuilder;
+    sget-object v0, Lcom/google/android/play/core/assetpacks/zzde;->zza:Lcom/google/android/play/core/internal/zzag;
 
     new-array v7, v6, [Ljava/lang/Object;
 
@@ -212,7 +212,7 @@
 
     const-string v9, "Found promote pack task for session %s with pack %s."
 
-    invoke-virtual {v0, v9, v7}, Lkotlin/jvm/internal/SpreadBuilder;->zza(Ljava/lang/String;[Ljava/lang/Object;)I
+    invoke-virtual {v0, v9, v7}, Lcom/google/android/play/core/internal/zzag;->zza(Ljava/lang/String;[Ljava/lang/Object;)I
 
     new-instance v0, Lcom/google/android/play/core/assetpacks/zzef;
 
@@ -319,7 +319,7 @@
     if-ne v8, v9, :cond_7
 
     :try_start_4
-    sget-object v0, Lcom/google/android/play/core/assetpacks/zzde;->zza:Lkotlin/jvm/internal/SpreadBuilder;
+    sget-object v0, Lcom/google/android/play/core/assetpacks/zzde;->zza:Lcom/google/android/play/core/internal/zzag;
 
     new-array v8, v6, [Ljava/lang/Object;
 
@@ -339,7 +339,7 @@
 
     const-string v9, "Found final move task for session %s with pack %s."
 
-    invoke-virtual {v0, v9, v8}, Lkotlin/jvm/internal/SpreadBuilder;->zza(Ljava/lang/String;[Ljava/lang/Object;)I
+    invoke-virtual {v0, v9, v8}, Lcom/google/android/play/core/internal/zzag;->zza(Ljava/lang/String;[Ljava/lang/Object;)I
 
     new-instance v0, Lcom/google/android/play/core/assetpacks/zzdt;
 
@@ -425,7 +425,7 @@
 
     iget v9, v9, Lcom/google/android/play/core/assetpacks/zzcx;->zzd:I
 
-    invoke-static {v9}, Lkotlin/io/ByteStreamsKt;->zzb(I)Z
+    invoke-static {v9}, Landroidx/databinding/adapters/Converters;->zzb(I)Z
 
     move-result v9
 
@@ -482,7 +482,7 @@
 
     if-eqz v5, :cond_a
 
-    sget-object v0, Lcom/google/android/play/core/assetpacks/zzde;->zza:Lkotlin/jvm/internal/SpreadBuilder;
+    sget-object v0, Lcom/google/android/play/core/assetpacks/zzde;->zza:Lcom/google/android/play/core/internal/zzag;
 
     new-array v5, v8, [Ljava/lang/Object;
 
@@ -510,7 +510,7 @@
 
     const-string v6, "Found merge task for session %s with pack %s and slice %s."
 
-    invoke-virtual {v0, v6, v5}, Lkotlin/jvm/internal/SpreadBuilder;->zza(Ljava/lang/String;[Ljava/lang/Object;)I
+    invoke-virtual {v0, v6, v5}, Lcom/google/android/play/core/internal/zzag;->zza(Ljava/lang/String;[Ljava/lang/Object;)I
 
     new-instance v0, Lcom/google/android/play/core/assetpacks/zzdq;
 
@@ -576,7 +576,7 @@
 
     iget v6, v6, Lcom/google/android/play/core/assetpacks/zzcx;->zzd:I
 
-    invoke-static {v6}, Lkotlin/io/ByteStreamsKt;->zzb(I)Z
+    invoke-static {v6}, Landroidx/databinding/adapters/Converters;->zzb(I)Z
 
     move-result v6
 
@@ -631,7 +631,7 @@
 
     if-eqz v9, :cond_d
 
-    sget-object v0, Lcom/google/android/play/core/assetpacks/zzde;->zza:Lkotlin/jvm/internal/SpreadBuilder;
+    sget-object v0, Lcom/google/android/play/core/assetpacks/zzde;->zza:Lcom/google/android/play/core/internal/zzag;
 
     new-array v6, v8, [Ljava/lang/Object;
 
@@ -659,7 +659,7 @@
 
     const-string v9, "Found verify task for session %s with pack %s and slice %s."
 
-    invoke-virtual {v0, v9, v6}, Lkotlin/jvm/internal/SpreadBuilder;->zza(Ljava/lang/String;[Ljava/lang/Object;)I
+    invoke-virtual {v0, v9, v6}, Lcom/google/android/play/core/internal/zzag;->zza(Ljava/lang/String;[Ljava/lang/Object;)I
 
     new-instance v0, Lcom/google/android/play/core/assetpacks/zzen;
 
@@ -726,7 +726,7 @@
 
     iget v0, v0, Lcom/google/android/play/core/assetpacks/zzcx;->zzd:I
 
-    invoke-static {v0}, Lkotlin/io/ByteStreamsKt;->zzb(I)Z
+    invoke-static {v0}, Landroidx/databinding/adapters/Converters;->zzb(I)Z
 
     move-result v0
 
@@ -828,7 +828,7 @@
     move-object v8, v0
 
     :try_start_6
-    sget-object v0, Lcom/google/android/play/core/assetpacks/zzde;->zza:Lkotlin/jvm/internal/SpreadBuilder;
+    sget-object v0, Lcom/google/android/play/core/assetpacks/zzde;->zza:Lcom/google/android/play/core/internal/zzag;
 
     const/4 v9, 0x1
 
@@ -838,7 +838,7 @@
 
     const-string v8, "Slice checkpoint corrupt, restarting extraction. %s"
 
-    invoke-virtual {v0, v8, v11}, Lkotlin/jvm/internal/SpreadBuilder;->zzb(Ljava/lang/String;[Ljava/lang/Object;)I
+    invoke-virtual {v0, v8, v11}, Lcom/google/android/play/core/internal/zzag;->zzb(Ljava/lang/String;[Ljava/lang/Object;)I
 
     move v0, v4
 
@@ -859,7 +859,7 @@
 
     if-eqz v8, :cond_13
 
-    sget-object v5, Lcom/google/android/play/core/assetpacks/zzde;->zza:Lkotlin/jvm/internal/SpreadBuilder;
+    sget-object v5, Lcom/google/android/play/core/assetpacks/zzde;->zza:Lcom/google/android/play/core/internal/zzag;
 
     const/4 v8, 0x5
 
@@ -905,7 +905,7 @@
 
     const-string v9, "Found extraction task using compression format %s for session %s, pack %s, slice %s, chunk %s."
 
-    invoke-virtual {v5, v9, v8}, Lkotlin/jvm/internal/SpreadBuilder;->zza(Ljava/lang/String;[Ljava/lang/Object;)I
+    invoke-virtual {v5, v9, v8}, Lcom/google/android/play/core/internal/zzag;->zza(Ljava/lang/String;[Ljava/lang/Object;)I
 
     iget-object v5, v1, Lcom/google/android/play/core/assetpacks/zzde;->zzd:Lcom/google/android/play/core/assetpacks/zzbu;
 
@@ -1019,7 +1019,7 @@
 
     iget v3, v3, Lcom/google/android/play/core/assetpacks/zzcx;->zzd:I
 
-    invoke-static {v3}, Lkotlin/io/ByteStreamsKt;->zzb(I)Z
+    invoke-static {v3}, Landroidx/databinding/adapters/Converters;->zzb(I)Z
 
     move-result v3
 
@@ -1090,7 +1090,7 @@
 
     if-nez v5, :cond_16
 
-    sget-object v0, Lcom/google/android/play/core/assetpacks/zzde;->zza:Lkotlin/jvm/internal/SpreadBuilder;
+    sget-object v0, Lcom/google/android/play/core/assetpacks/zzde;->zza:Lcom/google/android/play/core/internal/zzag;
 
     new-array v3, v6, [Ljava/lang/Object;
 
@@ -1130,7 +1130,7 @@
 
     const-string v5, "Found patch slice task using patch format %s for session %s, pack %s, slice %s."
 
-    invoke-virtual {v0, v5, v3}, Lkotlin/jvm/internal/SpreadBuilder;->zza(Ljava/lang/String;[Ljava/lang/Object;)I
+    invoke-virtual {v0, v5, v3}, Lcom/google/android/play/core/internal/zzag;->zza(Ljava/lang/String;[Ljava/lang/Object;)I
 
     iget-object v0, v1, Lcom/google/android/play/core/assetpacks/zzde;->zzd:Lcom/google/android/play/core/assetpacks/zzbu;
 
@@ -1321,13 +1321,13 @@
 
     if-nez v2, :cond_1
 
-    sget-object p1, Lcom/google/android/play/core/assetpacks/zzek;->zza:Lkotlin/jvm/internal/SpreadBuilder;
+    sget-object p1, Lcom/google/android/play/core/assetpacks/zzek;->zza:Lcom/google/android/play/core/internal/zzag;
 
     new-array p2, v0, [Ljava/lang/Object;
 
     const-string v1, "Slice checkpoint file corrupt while checking if extraction finished."
 
-    invoke-virtual {p1, v1, p2}, Lkotlin/jvm/internal/SpreadBuilder;->zzb(Ljava/lang/String;[Ljava/lang/Object;)I
+    invoke-virtual {p1, v1, p2}, Lcom/google/android/play/core/internal/zzag;->zzb(Ljava/lang/String;[Ljava/lang/Object;)I
 
     goto :goto_0
 
@@ -1365,7 +1365,7 @@
     :catch_0
     move-exception p1
 
-    sget-object v1, Lcom/google/android/play/core/assetpacks/zzek;->zza:Lkotlin/jvm/internal/SpreadBuilder;
+    sget-object v1, Lcom/google/android/play/core/assetpacks/zzek;->zza:Lcom/google/android/play/core/internal/zzag;
 
     new-array p2, p2, [Ljava/lang/Object;
 
@@ -1373,7 +1373,7 @@
 
     const-string p1, "Could not read checkpoint while checking if extraction finished. %s"
 
-    invoke-virtual {v1, p1, p2}, Lkotlin/jvm/internal/SpreadBuilder;->zzb(Ljava/lang/String;[Ljava/lang/Object;)I
+    invoke-virtual {v1, p1, p2}, Lcom/google/android/play/core/internal/zzag;->zzb(Ljava/lang/String;[Ljava/lang/Object;)I
 
     :cond_2
     :goto_0

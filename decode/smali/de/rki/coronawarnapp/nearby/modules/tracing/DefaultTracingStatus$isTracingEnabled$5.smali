@@ -149,13 +149,13 @@
 
     const-string v6, "ENF isEnabled failed."
 
-    invoke-virtual {v3, v1, v6, v5}, Ltimber/log/Timber$Tree;->w(Ljava/lang/Throwable;Ljava/lang/String;[Ljava/lang/Object;)V
+    invoke-virtual {v3, v1, v6, v5}, Ltimber/log/Timber$Forest;->w(Ljava/lang/Throwable;Ljava/lang/String;[Ljava/lang/Object;)V
 
-    sget-object v3, Lde/rki/coronawarnapp/exception/ExceptionCategory;->EXPOSURENOTIFICATION:Lde/rki/coronawarnapp/exception/ExceptionCategory;
+    const/4 v3, 0x6
 
     const/4 v5, 0x0
 
-    invoke-static {v1, v3, v4, v5}, Lde/rki/coronawarnapp/exception/reporting/ExceptionReporterKt;->report(Ljava/lang/Throwable;Lde/rki/coronawarnapp/exception/ExceptionCategory;Ljava/lang/String;Ljava/lang/String;)V
+    invoke-static {v1, v3, v4, v5}, Lde/rki/coronawarnapp/exception/reporting/ExceptionReporterKt;->report(Ljava/lang/Throwable;ILjava/lang/String;Ljava/lang/String;)V
 
     sget-object v1, Ljava/lang/Boolean;->FALSE:Ljava/lang/Boolean;
 

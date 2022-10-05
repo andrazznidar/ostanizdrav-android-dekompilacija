@@ -114,7 +114,7 @@
 
     new-instance v0, Lkotlin/coroutines/SafeContinuation;
 
-    invoke-static {p1}, Lkotlinx/coroutines/flow/FlowKt;->intercepted(Lkotlin/coroutines/Continuation;)Lkotlin/coroutines/Continuation;
+    invoke-static {p1}, Lcom/google/android/gms/nearby/messages/internal/zzag;->intercepted(Lkotlin/coroutines/Continuation;)Lkotlin/coroutines/Continuation;
 
     move-result-object p1
 
@@ -174,7 +174,7 @@
 
     new-instance v0, Lkotlin/coroutines/SafeContinuation;
 
-    invoke-static {p1}, Lkotlinx/coroutines/flow/FlowKt;->intercepted(Lkotlin/coroutines/Continuation;)Lkotlin/coroutines/Continuation;
+    invoke-static {p1}, Lcom/google/android/gms/nearby/messages/internal/zzag;->intercepted(Lkotlin/coroutines/Continuation;)Lkotlin/coroutines/Continuation;
 
     move-result-object p1
 
@@ -414,11 +414,11 @@
 
     const/4 v2, 0x0
 
+    const/4 v3, 0x0
+
     const/4 v5, 0x3
 
     const/4 v6, 0x0
-
-    const/4 v3, 0x0
 
     move-object v4, v0
 

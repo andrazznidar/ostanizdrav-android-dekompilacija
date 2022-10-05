@@ -138,13 +138,17 @@
 
     sget-object p1, Ltimber/log/Timber;->Forest:Ltimber/log/Timber$Forest;
 
+    const-string v1, "PersonOverviewViewModel"
+
+    invoke-virtual {p1, v1}, Ltimber/log/Timber$Forest;->tag(Ljava/lang/String;)Ltimber/log/Timber$Tree;
+
     const/4 v1, 0x0
 
     new-array v1, v1, [Ljava/lang/Object;
 
     const-string v3, "checkExpiration()"
 
-    invoke-virtual {p1, v3, v1}, Ltimber/log/Timber$Forest;->d(Ljava/lang/String;[Ljava/lang/Object;)V
+    invoke-virtual {p1, v3, v1}, Ltimber/log/Timber$Tree;->d(Ljava/lang/String;[Ljava/lang/Object;)V
 
     iget-object p1, p0, Lde/rki/coronawarnapp/covidcertificate/person/ui/overview/PersonOverviewViewModel$checkExpiration$1;->this$0:Lde/rki/coronawarnapp/covidcertificate/person/ui/overview/PersonOverviewViewModel;
 

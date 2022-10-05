@@ -26,7 +26,7 @@
     c = "de.rki.coronawarnapp.coronatest.CoronaTestRepository$markAsViewed$2"
     f = "CoronaTestRepository.kt"
     l = {
-        0xec
+        0x117
     }
     m = "invokeSuspend"
 .end annotation

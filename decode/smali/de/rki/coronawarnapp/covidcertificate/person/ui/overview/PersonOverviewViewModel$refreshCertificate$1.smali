@@ -22,14 +22,14 @@
 .end annotation
 
 .annotation system Ldalvik/annotation/SourceDebugExtension;
-    value = "SMAP\nPersonOverviewViewModel.kt\nKotlin\n*S Kotlin\n*F\n+ 1 PersonOverviewViewModel.kt\nde/rki/coronawarnapp/covidcertificate/person/ui/overview/PersonOverviewViewModel$refreshCertificate$1\n+ 2 _Collections.kt\nkotlin/collections/CollectionsKt___CollectionsKt\n+ 3 fake.kt\nkotlin/jvm/internal/FakeKt\n*L\n1#1,133:1\n1601#2,9:134\n1849#2:143\n1850#2:145\n1610#2:146\n1#3:144\n1#3:147\n*S KotlinDebug\n*F\n+ 1 PersonOverviewViewModel.kt\nde/rki/coronawarnapp/covidcertificate/person/ui/overview/PersonOverviewViewModel$refreshCertificate$1\n*L\n117#1:134,9\n117#1:143\n117#1:145\n117#1:146\n117#1:144\n*E\n"
+    value = "SMAP\nPersonOverviewViewModel.kt\nKotlin\n*S Kotlin\n*F\n+ 1 PersonOverviewViewModel.kt\nde/rki/coronawarnapp/covidcertificate/person/ui/overview/PersonOverviewViewModel$refreshCertificate$1\n+ 2 _Collections.kt\nkotlin/collections/CollectionsKt___CollectionsKt\n+ 3 fake.kt\nkotlin/jvm/internal/FakeKt\n*L\n1#1,138:1\n1601#2,9:139\n1849#2:148\n1850#2:150\n1610#2:151\n1#3:149\n1#3:152\n*S KotlinDebug\n*F\n+ 1 PersonOverviewViewModel.kt\nde/rki/coronawarnapp/covidcertificate/person/ui/overview/PersonOverviewViewModel$refreshCertificate$1\n*L\n117#1:139,9\n117#1:148\n117#1:150\n117#1:151\n117#1:149\n*E\n"
 .end annotation
 
 .annotation runtime Lkotlin/coroutines/jvm/internal/DebugMetadata;
     c = "de.rki.coronawarnapp.covidcertificate.person.ui.overview.PersonOverviewViewModel$refreshCertificate$1"
     f = "PersonOverviewViewModel.kt"
     l = {
-        0x75
+        0x74
     }
     m = "invokeSuspend"
 .end annotation
@@ -167,7 +167,7 @@
 
     :cond_2
     :goto_0
-    check-cast p1, Ljava/lang/Iterable;
+    check-cast p1, Ljava/util/Set;
 
     new-instance v0, Ljava/util/ArrayList;
 
@@ -177,7 +177,6 @@
 
     move-result-object p1
 
-    :cond_3
     :goto_1
     invoke-interface {p1}, Ljava/util/Iterator;->hasNext()Z
 
@@ -193,8 +192,11 @@
 
     iget-object v1, v1, Lde/rki/coronawarnapp/covidcertificate/test/core/TestCertificateRepository$RefreshResult;->error:Ljava/lang/Exception;
 
-    if-eqz v1, :cond_3
+    if-nez v1, :cond_3
 
+    goto :goto_1
+
+    :cond_3
     invoke-virtual {v0, v1}, Ljava/util/ArrayList;->add(Ljava/lang/Object;)Z
 
     goto :goto_1

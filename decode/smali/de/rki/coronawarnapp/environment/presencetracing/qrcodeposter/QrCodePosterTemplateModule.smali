@@ -1,15 +1,13 @@
 .class public final Lde/rki/coronawarnapp/environment/presencetracing/qrcodeposter/QrCodePosterTemplateModule;
-.super Lde/rki/coronawarnapp/task/internal/TaskModule;
+.super Lcom/google/android/gms/internal/nearby/zzaf;
 .source "QrCodePosterTemplateModule.kt"
 
 
 # direct methods
 .method public constructor <init>()V
-    .locals 1
+    .locals 0
 
-    const/4 v0, 0x1
-
-    invoke-direct {p0, v0}, Lde/rki/coronawarnapp/task/internal/TaskModule;-><init>(I)V
+    invoke-direct {p0}, Lcom/google/android/gms/internal/nearby/zzaf;-><init>()V
 
     return-void
 .end method

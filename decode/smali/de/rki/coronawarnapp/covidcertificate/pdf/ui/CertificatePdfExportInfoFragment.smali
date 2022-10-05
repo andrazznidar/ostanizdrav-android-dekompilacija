@@ -9,11 +9,7 @@
 .end annotation
 
 .annotation runtime Lkotlin/Metadata;
-    bv = {
-        0x1,
-        0x0,
-        0x3
-    }
+    bv = {}
     d1 = {
         "\u0000\u000c\n\u0002\u0018\u0002\n\u0002\u0018\u0002\n\u0002\u0008\u0003\u0018\u00002\u00020\u0001B\u0007\u00a2\u0006\u0004\u0008\u0002\u0010\u0003\u00a8\u0006\u0004"
     }
@@ -27,8 +23,8 @@
     k = 0x1
     mv = {
         0x1,
-        0x5,
-        0x1
+        0x6,
+        0x0
     }
 .end annotation
 
@@ -86,13 +82,11 @@
 
     invoke-direct {p0, v0}, Landroidx/fragment/app/Fragment;-><init>(I)V
 
-    new-instance v0, Lde/rki/coronawarnapp/covidcertificate/pdf/ui/CertificatePdfExportInfoFragment$special$$inlined$viewBinding$1;
-
-    invoke-direct {v0}, Lde/rki/coronawarnapp/covidcertificate/pdf/ui/CertificatePdfExportInfoFragment$special$$inlined$viewBinding$1;-><init>()V
+    sget-object v0, Lde/rki/coronawarnapp/covidcertificate/pdf/ui/CertificatePdfExportInfoFragment$special$$inlined$viewBinding$1;->INSTANCE:Lde/rki/coronawarnapp/covidcertificate/pdf/ui/CertificatePdfExportInfoFragment$special$$inlined$viewBinding$1;
 
     sget-object v1, Lde/rki/coronawarnapp/util/ui/ViewBindingExtensionsKt$viewBinding$2;->INSTANCE:Lde/rki/coronawarnapp/util/ui/ViewBindingExtensionsKt$viewBinding$2;
 
-    invoke-static {p0, v0, v1}, Lkotlin/sequences/SequencesKt__SequencesJVMKt;->viewBinding(Landroidx/fragment/app/Fragment;Lkotlin/jvm/functions/Function1;Lkotlin/jvm/functions/Function1;)Lde/rki/coronawarnapp/util/ui/ViewBindingProperty;
+    invoke-static {p0, v0, v1}, Lkotlinx/coroutines/channels/ChannelsKt;->viewBinding(Landroidx/fragment/app/Fragment;Lkotlin/jvm/functions/Function1;Lkotlin/jvm/functions/Function1;)Lde/rki/coronawarnapp/util/ui/ViewBindingProperty;
 
     move-result-object v0
 
@@ -146,7 +140,7 @@
 .end method
 
 .method public onViewCreated(Landroid/view/View;Landroid/os/Bundle;)V
-    .locals 1
+    .locals 3
 
     const-string/jumbo v0, "view"
 
@@ -170,19 +164,21 @@
 
     iget-object p2, p1, Lde/rki/coronawarnapp/databinding/CertificatePdfExportInfoFragmentBinding;->toolbar:Lcom/google/android/material/appbar/MaterialToolbar;
 
-    new-instance v0, Lde/rki/coronawarnapp/ui/main/share/MainShareFragment$$ExternalSyntheticLambda0;
+    new-instance v1, Lde/rki/coronawarnapp/ui/information/InformationTermsFragment$$ExternalSyntheticLambda0;
 
-    invoke-direct {v0, p0}, Lde/rki/coronawarnapp/ui/main/share/MainShareFragment$$ExternalSyntheticLambda0;-><init>(Lde/rki/coronawarnapp/covidcertificate/pdf/ui/CertificatePdfExportInfoFragment;)V
+    const/4 v2, 0x1
 
-    invoke-virtual {p2, v0}, Landroidx/appcompat/widget/Toolbar;->setNavigationOnClickListener(Landroid/view/View$OnClickListener;)V
+    invoke-direct {v1, p0, v2}, Lde/rki/coronawarnapp/ui/information/InformationTermsFragment$$ExternalSyntheticLambda0;-><init>(Landroidx/fragment/app/Fragment;I)V
+
+    invoke-virtual {p2, v1}, Landroidx/appcompat/widget/Toolbar;->setNavigationOnClickListener(Landroid/view/View$OnClickListener;)V
 
     iget-object p2, p1, Lde/rki/coronawarnapp/databinding/CertificatePdfExportInfoFragmentBinding;->nextButton:Landroid/widget/Button;
 
-    new-instance v0, Lde/rki/coronawarnapp/ui/main/MainActivity$$ExternalSyntheticLambda2;
+    new-instance v1, Lde/rki/coronawarnapp/covidcertificate/pdf/ui/CertificatePdfExportInfoFragment$$ExternalSyntheticLambda0;
 
-    invoke-direct {v0, p0}, Lde/rki/coronawarnapp/ui/main/MainActivity$$ExternalSyntheticLambda2;-><init>(Lde/rki/coronawarnapp/covidcertificate/pdf/ui/CertificatePdfExportInfoFragment;)V
+    invoke-direct {v1, p0, v0}, Lde/rki/coronawarnapp/covidcertificate/pdf/ui/CertificatePdfExportInfoFragment$$ExternalSyntheticLambda0;-><init>(Landroidx/fragment/app/Fragment;I)V
 
-    invoke-virtual {p2, v0}, Landroid/widget/Button;->setOnClickListener(Landroid/view/View$OnClickListener;)V
+    invoke-virtual {p2, v1}, Landroid/widget/Button;->setOnClickListener(Landroid/view/View$OnClickListener;)V
 
     iget-object p2, p1, Lde/rki/coronawarnapp/databinding/CertificatePdfExportInfoFragmentBinding;->appBarLayout:Lcom/google/android/material/appbar/AppBarLayout;
 
@@ -194,7 +190,7 @@
 
     invoke-direct {v0, p1}, Lde/rki/coronawarnapp/covidcertificate/pdf/ui/CertificatePdfExportInfoFragment$onViewCreated$1$3;-><init>(Lde/rki/coronawarnapp/databinding/CertificatePdfExportInfoFragmentBinding;)V
 
-    invoke-static {p2, v0}, Lkotlin/LazyKt__LazyKt;->onOffsetChange(Lcom/google/android/material/appbar/AppBarLayout;Lkotlin/jvm/functions/Function2;)V
+    invoke-static {p2, v0}, Lkotlinx/coroutines/CoroutineScopeKt;->onOffsetChange(Lcom/google/android/material/appbar/AppBarLayout;Lkotlin/jvm/functions/Function2;)V
 
     return-void
 .end method

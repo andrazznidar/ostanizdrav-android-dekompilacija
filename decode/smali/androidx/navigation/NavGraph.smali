@@ -215,10 +215,10 @@
     return-object v0
 .end method
 
-.method public matchDeepLink(Lorg/slf4j/event/EventRecodingLogger;)Landroidx/navigation/NavDestination$DeepLinkMatch;
+.method public matchDeepLink(Landroidx/navigation/NavDeepLinkRequest;)Landroidx/navigation/NavDestination$DeepLinkMatch;
     .locals 4
 
-    invoke-super {p0, p1}, Landroidx/navigation/NavDestination;->matchDeepLink(Lorg/slf4j/event/EventRecodingLogger;)Landroidx/navigation/NavDestination$DeepLinkMatch;
+    invoke-super {p0, p1}, Landroidx/navigation/NavDestination;->matchDeepLink(Landroidx/navigation/NavDeepLinkRequest;)Landroidx/navigation/NavDestination$DeepLinkMatch;
 
     move-result-object v0
 
@@ -240,7 +240,7 @@
 
     check-cast v2, Landroidx/navigation/NavDestination;
 
-    invoke-virtual {v2, p1}, Landroidx/navigation/NavDestination;->matchDeepLink(Lorg/slf4j/event/EventRecodingLogger;)Landroidx/navigation/NavDestination$DeepLinkMatch;
+    invoke-virtual {v2, p1}, Landroidx/navigation/NavDestination;->matchDeepLink(Landroidx/navigation/NavDeepLinkRequest;)Landroidx/navigation/NavDestination$DeepLinkMatch;
 
     move-result-object v2
 

@@ -7,7 +7,18 @@
 .implements Lkotlin/reflect/jvm/internal/impl/load/java/structure/JavaTypeParameterListOwner;
 
 
+# annotations
+.annotation system Ldalvik/annotation/MemberClasses;
+    value = {
+        Lkotlin/reflect/jvm/internal/impl/load/java/structure/JavaMethod$DefaultImpls;
+    }
+.end annotation
+
+
 # virtual methods
+.method public abstract getAnnotationParameterDefaultValue()Lkotlin/reflect/jvm/internal/impl/load/java/structure/JavaAnnotationArgument;
+.end method
+
 .method public abstract getHasAnnotationParameterDefaultValue()Z
 .end method
 

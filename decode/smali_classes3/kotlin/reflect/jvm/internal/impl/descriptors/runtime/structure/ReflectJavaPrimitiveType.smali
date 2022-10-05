@@ -7,7 +7,7 @@
 
 
 # instance fields
-.field public final annotations:Ljava/util/Collection;
+.field private final annotations:Ljava/util/Collection;
     .annotation system Ldalvik/annotation/Signature;
         value = {
             "Ljava/util/Collection<",
@@ -17,7 +17,9 @@
     .end annotation
 .end field
 
-.field public final reflectType:Ljava/lang/Class;
+.field private final isDeprecatedInJavaDoc:Z
+
+.field private final reflectType:Ljava/lang/Class;
     .annotation system Ldalvik/annotation/Signature;
         value = {
             "Ljava/lang/Class<",
@@ -29,7 +31,7 @@
 
 # direct methods
 .method public constructor <init>(Ljava/lang/Class;)V
-    .locals 0
+    .locals 1
     .annotation system Ldalvik/annotation/Signature;
         value = {
             "(",
@@ -37,6 +39,10 @@
             "*>;)V"
         }
     .end annotation
+
+    const-string v0, "reflectType"
+
+    invoke-static {p1, v0}, Lkotlin/jvm/internal/Intrinsics;->checkNotNullParameter(Ljava/lang/Object;Ljava/lang/String;)V
 
     invoke-direct {p0}, Lkotlin/reflect/jvm/internal/impl/descriptors/runtime/structure/ReflectJavaType;-><init>()V
 
@@ -67,10 +73,27 @@
     return-object v0
 .end method
 
-.method public getReflectType()Ljava/lang/reflect/Type;
+.method public getReflectType()Ljava/lang/Class;
     .locals 1
+    .annotation system Ldalvik/annotation/Signature;
+        value = {
+            "()",
+            "Ljava/lang/Class<",
+            "*>;"
+        }
+    .end annotation
 
     iget-object v0, p0, Lkotlin/reflect/jvm/internal/impl/descriptors/runtime/structure/ReflectJavaPrimitiveType;->reflectType:Ljava/lang/Class;
+
+    return-object v0
+.end method
+
+.method public bridge synthetic getReflectType()Ljava/lang/reflect/Type;
+    .locals 1
+
+    invoke-virtual {p0}, Lkotlin/reflect/jvm/internal/impl/descriptors/runtime/structure/ReflectJavaPrimitiveType;->getReflectType()Ljava/lang/Class;
+
+    move-result-object v0
 
     return-object v0
 .end method
@@ -78,7 +101,9 @@
 .method public getType()Lkotlin/reflect/jvm/internal/impl/builtins/PrimitiveType;
     .locals 2
 
-    iget-object v0, p0, Lkotlin/reflect/jvm/internal/impl/descriptors/runtime/structure/ReflectJavaPrimitiveType;->reflectType:Ljava/lang/Class;
+    invoke-virtual {p0}, Lkotlin/reflect/jvm/internal/impl/descriptors/runtime/structure/ReflectJavaPrimitiveType;->getReflectType()Ljava/lang/Class;
+
+    move-result-object v0
 
     sget-object v1, Ljava/lang/Void;->TYPE:Ljava/lang/Class;
 
@@ -93,7 +118,9 @@
     goto :goto_0
 
     :cond_0
-    iget-object v0, p0, Lkotlin/reflect/jvm/internal/impl/descriptors/runtime/structure/ReflectJavaPrimitiveType;->reflectType:Ljava/lang/Class;
+    invoke-virtual {p0}, Lkotlin/reflect/jvm/internal/impl/descriptors/runtime/structure/ReflectJavaPrimitiveType;->getReflectType()Ljava/lang/Class;
+
+    move-result-object v0
 
     invoke-virtual {v0}, Ljava/lang/Class;->getName()Ljava/lang/String;
 
@@ -114,7 +141,7 @@
 .method public isDeprecatedInJavaDoc()Z
     .locals 1
 
-    const/4 v0, 0x0
+    iget-boolean v0, p0, Lkotlin/reflect/jvm/internal/impl/descriptors/runtime/structure/ReflectJavaPrimitiveType;->isDeprecatedInJavaDoc:Z
 
     return v0
 .end method

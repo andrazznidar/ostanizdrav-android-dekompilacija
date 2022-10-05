@@ -30,7 +30,7 @@
 
 # virtual methods
 .method public serialize(Lcom/fasterxml/jackson/databind/util/TokenBuffer;Lcom/fasterxml/jackson/core/JsonGenerator;)V
-    .locals 7
+    .locals 8
     .annotation system Ldalvik/annotation/Throws;
         value = {
             Ljava/io/IOException;
@@ -39,44 +39,44 @@
 
     iget-object v0, p1, Lcom/fasterxml/jackson/databind/util/TokenBuffer;->_first:Lcom/fasterxml/jackson/databind/util/TokenBuffer$Segment;
 
-    iget-boolean p1, p1, Lcom/fasterxml/jackson/databind/util/TokenBuffer;->_mayHaveNativeIds:Z
+    iget-boolean v1, p1, Lcom/fasterxml/jackson/databind/util/TokenBuffer;->_mayHaveNativeIds:Z
 
-    const/4 v1, 0x1
+    const/4 v2, 0x1
 
-    const/4 v2, 0x0
+    const/4 v3, 0x0
 
-    if-eqz p1, :cond_1
+    if-eqz v1, :cond_1
 
-    iget-object v3, v0, Lcom/fasterxml/jackson/databind/util/TokenBuffer$Segment;->_nativeIds:Ljava/util/TreeMap;
+    iget-object v4, v0, Lcom/fasterxml/jackson/databind/util/TokenBuffer$Segment;->_nativeIds:Ljava/util/TreeMap;
 
-    if-eqz v3, :cond_0
+    if-eqz v4, :cond_0
 
-    move v3, v1
+    move v4, v2
 
     goto :goto_0
 
     :cond_0
-    move v3, v2
+    move v4, v3
 
     :goto_0
-    if-eqz v3, :cond_1
+    if-eqz v4, :cond_1
 
-    move v3, v1
+    move v4, v2
 
     goto :goto_1
 
     :cond_1
-    move v3, v2
+    move v4, v3
 
     :goto_1
-    const/4 v4, -0x1
+    const/4 v5, -0x1
 
     :goto_2
-    add-int/2addr v4, v1
+    add-int/2addr v5, v2
 
-    const/16 v5, 0x10
+    const/16 v6, 0x10
 
-    if-lt v4, v5, :cond_5
+    if-lt v5, v6, :cond_5
 
     iget-object v0, v0, Lcom/fasterxml/jackson/databind/util/TokenBuffer$Segment;->_next:Lcom/fasterxml/jackson/databind/util/TokenBuffer$Segment;
 
@@ -85,68 +85,68 @@
     goto :goto_5
 
     :cond_2
-    if-eqz p1, :cond_4
+    if-eqz v1, :cond_4
 
-    iget-object v3, v0, Lcom/fasterxml/jackson/databind/util/TokenBuffer$Segment;->_nativeIds:Ljava/util/TreeMap;
+    iget-object v4, v0, Lcom/fasterxml/jackson/databind/util/TokenBuffer$Segment;->_nativeIds:Ljava/util/TreeMap;
 
-    if-eqz v3, :cond_3
+    if-eqz v4, :cond_3
 
-    move v3, v1
+    move v4, v2
 
     goto :goto_3
 
     :cond_3
-    move v3, v2
+    move v4, v3
 
     :goto_3
-    if-eqz v3, :cond_4
+    if-eqz v4, :cond_4
 
-    move v3, v1
+    move v4, v2
 
     goto :goto_4
 
     :cond_4
-    move v3, v2
+    move v4, v3
 
     :goto_4
-    move v4, v2
+    move v5, v3
 
     :cond_5
-    invoke-virtual {v0, v4}, Lcom/fasterxml/jackson/databind/util/TokenBuffer$Segment;->type(I)Lcom/fasterxml/jackson/core/JsonToken;
+    invoke-virtual {v0, v5}, Lcom/fasterxml/jackson/databind/util/TokenBuffer$Segment;->type(I)Lcom/fasterxml/jackson/core/JsonToken;
 
-    move-result-object v5
+    move-result-object v6
 
-    if-nez v5, :cond_6
+    if-nez v6, :cond_6
 
     :goto_5
     return-void
 
     :cond_6
-    if-eqz v3, :cond_8
+    if-eqz v4, :cond_8
 
-    invoke-virtual {v0, v4}, Lcom/fasterxml/jackson/databind/util/TokenBuffer$Segment;->findObjectId(I)Ljava/lang/Object;
+    invoke-virtual {v0, v5}, Lcom/fasterxml/jackson/databind/util/TokenBuffer$Segment;->findObjectId(I)Ljava/lang/Object;
 
-    move-result-object v6
+    move-result-object v7
 
-    if-eqz v6, :cond_7
+    if-eqz v7, :cond_7
 
-    invoke-virtual {p2, v6}, Lcom/fasterxml/jackson/core/JsonGenerator;->writeObjectId(Ljava/lang/Object;)V
+    invoke-virtual {p2, v7}, Lcom/fasterxml/jackson/core/JsonGenerator;->writeObjectId(Ljava/lang/Object;)V
 
     :cond_7
-    invoke-virtual {v0, v4}, Lcom/fasterxml/jackson/databind/util/TokenBuffer$Segment;->findTypeId(I)Ljava/lang/Object;
+    invoke-virtual {v0, v5}, Lcom/fasterxml/jackson/databind/util/TokenBuffer$Segment;->findTypeId(I)Ljava/lang/Object;
 
-    move-result-object v6
+    move-result-object v7
 
-    if-eqz v6, :cond_8
+    if-eqz v7, :cond_8
 
-    invoke-virtual {p2, v6}, Lcom/fasterxml/jackson/core/JsonGenerator;->writeTypeId(Ljava/lang/Object;)V
+    invoke-virtual {p2, v7}, Lcom/fasterxml/jackson/core/JsonGenerator;->writeTypeId(Ljava/lang/Object;)V
 
     :cond_8
-    invoke-virtual {v5}, Ljava/lang/Enum;->ordinal()I
+    invoke-virtual {v6}, Ljava/lang/Enum;->ordinal()I
 
-    move-result v5
+    move-result v6
 
-    packed-switch v5, :pswitch_data_0
+    packed-switch v6, :pswitch_data_0
 
     new-instance p1, Ljava/lang/RuntimeException;
 
@@ -162,270 +162,270 @@
     goto :goto_2
 
     :pswitch_1
-    invoke-virtual {p2, v2}, Lcom/fasterxml/jackson/core/JsonGenerator;->writeBoolean(Z)V
+    invoke-virtual {p2, v3}, Lcom/fasterxml/jackson/core/JsonGenerator;->writeBoolean(Z)V
 
     goto :goto_2
 
     :pswitch_2
-    invoke-virtual {p2, v1}, Lcom/fasterxml/jackson/core/JsonGenerator;->writeBoolean(Z)V
+    invoke-virtual {p2, v2}, Lcom/fasterxml/jackson/core/JsonGenerator;->writeBoolean(Z)V
 
     goto :goto_2
 
     :pswitch_3
-    iget-object v5, v0, Lcom/fasterxml/jackson/databind/util/TokenBuffer$Segment;->_tokens:[Ljava/lang/Object;
+    iget-object v6, v0, Lcom/fasterxml/jackson/databind/util/TokenBuffer$Segment;->_tokens:[Ljava/lang/Object;
 
-    aget-object v5, v5, v4
+    aget-object v6, v6, v5
 
-    instance-of v6, v5, Ljava/lang/Double;
+    instance-of v7, v6, Ljava/lang/Double;
 
-    if-eqz v6, :cond_9
+    if-eqz v7, :cond_9
 
-    check-cast v5, Ljava/lang/Double;
+    check-cast v6, Ljava/lang/Double;
 
-    invoke-virtual {v5}, Ljava/lang/Double;->doubleValue()D
+    invoke-virtual {v6}, Ljava/lang/Double;->doubleValue()D
 
-    move-result-wide v5
+    move-result-wide v6
 
-    invoke-virtual {p2, v5, v6}, Lcom/fasterxml/jackson/core/JsonGenerator;->writeNumber(D)V
+    invoke-virtual {p2, v6, v7}, Lcom/fasterxml/jackson/core/JsonGenerator;->writeNumber(D)V
 
     goto :goto_2
 
     :cond_9
-    instance-of v6, v5, Ljava/math/BigDecimal;
+    instance-of v7, v6, Ljava/math/BigDecimal;
 
-    if-eqz v6, :cond_a
+    if-eqz v7, :cond_a
 
-    check-cast v5, Ljava/math/BigDecimal;
+    check-cast v6, Ljava/math/BigDecimal;
 
-    invoke-virtual {p2, v5}, Lcom/fasterxml/jackson/core/JsonGenerator;->writeNumber(Ljava/math/BigDecimal;)V
+    invoke-virtual {p2, v6}, Lcom/fasterxml/jackson/core/JsonGenerator;->writeNumber(Ljava/math/BigDecimal;)V
 
     goto :goto_2
 
     :cond_a
-    instance-of v6, v5, Ljava/lang/Float;
+    instance-of v7, v6, Ljava/lang/Float;
 
-    if-eqz v6, :cond_b
+    if-eqz v7, :cond_b
 
-    check-cast v5, Ljava/lang/Float;
+    check-cast v6, Ljava/lang/Float;
 
-    invoke-virtual {v5}, Ljava/lang/Float;->floatValue()F
+    invoke-virtual {v6}, Ljava/lang/Float;->floatValue()F
 
-    move-result v5
+    move-result v6
 
-    invoke-virtual {p2, v5}, Lcom/fasterxml/jackson/core/JsonGenerator;->writeNumber(F)V
+    invoke-virtual {p2, v6}, Lcom/fasterxml/jackson/core/JsonGenerator;->writeNumber(F)V
 
     goto :goto_2
 
     :cond_b
-    if-nez v5, :cond_c
+    if-nez v6, :cond_c
 
     invoke-virtual {p2}, Lcom/fasterxml/jackson/core/JsonGenerator;->writeNull()V
 
     goto :goto_2
 
     :cond_c
-    instance-of v6, v5, Ljava/lang/String;
+    instance-of v7, v6, Ljava/lang/String;
 
-    if-eqz v6, :cond_d
+    if-eqz v7, :cond_d
 
-    check-cast v5, Ljava/lang/String;
+    check-cast v6, Ljava/lang/String;
 
-    invoke-virtual {p2, v5}, Lcom/fasterxml/jackson/core/JsonGenerator;->writeNumber(Ljava/lang/String;)V
+    invoke-virtual {p2, v6}, Lcom/fasterxml/jackson/core/JsonGenerator;->writeNumber(Ljava/lang/String;)V
 
     goto/16 :goto_2
 
     :cond_d
-    new-instance p1, Lcom/fasterxml/jackson/core/JsonGenerationException;
+    new-array p2, v2, [Ljava/lang/Object;
 
-    new-array v0, v1, [Ljava/lang/Object;
-
-    invoke-virtual {v5}, Ljava/lang/Object;->getClass()Ljava/lang/Class;
-
-    move-result-object v1
-
-    invoke-virtual {v1}, Ljava/lang/Class;->getName()Ljava/lang/String;
-
-    move-result-object v1
-
-    aput-object v1, v0, v2
-
-    const-string v1, "Unrecognized value type for VALUE_NUMBER_FLOAT: %s, cannot serialize"
-
-    invoke-static {v1, v0}, Ljava/lang/String;->format(Ljava/lang/String;[Ljava/lang/Object;)Ljava/lang/String;
+    invoke-virtual {v6}, Ljava/lang/Object;->getClass()Ljava/lang/Class;
 
     move-result-object v0
 
-    invoke-direct {p1, v0, p2}, Lcom/fasterxml/jackson/core/JsonGenerationException;-><init>(Ljava/lang/String;Lcom/fasterxml/jackson/core/JsonGenerator;)V
+    invoke-virtual {v0}, Ljava/lang/Class;->getName()Ljava/lang/String;
 
-    throw p1
+    move-result-object v0
+
+    aput-object v0, p2, v3
+
+    const-string v0, "Unrecognized value type for VALUE_NUMBER_FLOAT: %s, cannot serialize"
+
+    invoke-static {v0, p2}, Ljava/lang/String;->format(Ljava/lang/String;[Ljava/lang/Object;)Ljava/lang/String;
+
+    move-result-object p2
+
+    new-instance v0, Lcom/fasterxml/jackson/core/JsonGenerationException;
+
+    invoke-direct {v0, p2, p1}, Lcom/fasterxml/jackson/core/JsonGenerationException;-><init>(Ljava/lang/String;Lcom/fasterxml/jackson/core/JsonGenerator;)V
+
+    throw v0
 
     :pswitch_4
-    iget-object v5, v0, Lcom/fasterxml/jackson/databind/util/TokenBuffer$Segment;->_tokens:[Ljava/lang/Object;
+    iget-object v6, v0, Lcom/fasterxml/jackson/databind/util/TokenBuffer$Segment;->_tokens:[Ljava/lang/Object;
 
-    aget-object v5, v5, v4
+    aget-object v6, v6, v5
 
-    instance-of v6, v5, Ljava/lang/Integer;
+    instance-of v7, v6, Ljava/lang/Integer;
 
-    if-eqz v6, :cond_e
+    if-eqz v7, :cond_e
 
-    check-cast v5, Ljava/lang/Integer;
+    check-cast v6, Ljava/lang/Integer;
 
-    invoke-virtual {v5}, Ljava/lang/Integer;->intValue()I
+    invoke-virtual {v6}, Ljava/lang/Integer;->intValue()I
 
-    move-result v5
+    move-result v6
 
-    invoke-virtual {p2, v5}, Lcom/fasterxml/jackson/core/JsonGenerator;->writeNumber(I)V
+    invoke-virtual {p2, v6}, Lcom/fasterxml/jackson/core/JsonGenerator;->writeNumber(I)V
 
     goto/16 :goto_2
 
     :cond_e
-    instance-of v6, v5, Ljava/math/BigInteger;
+    instance-of v7, v6, Ljava/math/BigInteger;
 
-    if-eqz v6, :cond_f
+    if-eqz v7, :cond_f
 
-    check-cast v5, Ljava/math/BigInteger;
+    check-cast v6, Ljava/math/BigInteger;
 
-    invoke-virtual {p2, v5}, Lcom/fasterxml/jackson/core/JsonGenerator;->writeNumber(Ljava/math/BigInteger;)V
+    invoke-virtual {p2, v6}, Lcom/fasterxml/jackson/core/JsonGenerator;->writeNumber(Ljava/math/BigInteger;)V
 
     goto/16 :goto_2
 
     :cond_f
-    instance-of v6, v5, Ljava/lang/Long;
+    instance-of v7, v6, Ljava/lang/Long;
 
-    if-eqz v6, :cond_10
+    if-eqz v7, :cond_10
 
-    check-cast v5, Ljava/lang/Long;
+    check-cast v6, Ljava/lang/Long;
 
-    invoke-virtual {v5}, Ljava/lang/Long;->longValue()J
+    invoke-virtual {v6}, Ljava/lang/Long;->longValue()J
 
-    move-result-wide v5
+    move-result-wide v6
 
-    invoke-virtual {p2, v5, v6}, Lcom/fasterxml/jackson/core/JsonGenerator;->writeNumber(J)V
+    invoke-virtual {p2, v6, v7}, Lcom/fasterxml/jackson/core/JsonGenerator;->writeNumber(J)V
 
     goto/16 :goto_2
 
     :cond_10
-    instance-of v6, v5, Ljava/lang/Short;
+    instance-of v7, v6, Ljava/lang/Short;
 
-    if-eqz v6, :cond_11
+    if-eqz v7, :cond_11
 
-    check-cast v5, Ljava/lang/Short;
+    check-cast v6, Ljava/lang/Short;
 
-    invoke-virtual {v5}, Ljava/lang/Short;->shortValue()S
+    invoke-virtual {v6}, Ljava/lang/Short;->shortValue()S
 
-    move-result v5
+    move-result v6
 
-    invoke-virtual {p2, v5}, Lcom/fasterxml/jackson/core/JsonGenerator;->writeNumber(S)V
+    invoke-virtual {p2, v6}, Lcom/fasterxml/jackson/core/JsonGenerator;->writeNumber(S)V
 
     goto/16 :goto_2
 
     :cond_11
-    check-cast v5, Ljava/lang/Number;
+    check-cast v6, Ljava/lang/Number;
 
-    invoke-virtual {v5}, Ljava/lang/Number;->intValue()I
+    invoke-virtual {v6}, Ljava/lang/Number;->intValue()I
 
-    move-result v5
+    move-result v6
 
-    invoke-virtual {p2, v5}, Lcom/fasterxml/jackson/core/JsonGenerator;->writeNumber(I)V
+    invoke-virtual {p2, v6}, Lcom/fasterxml/jackson/core/JsonGenerator;->writeNumber(I)V
 
     goto/16 :goto_2
 
     :pswitch_5
-    iget-object v5, v0, Lcom/fasterxml/jackson/databind/util/TokenBuffer$Segment;->_tokens:[Ljava/lang/Object;
+    iget-object v6, v0, Lcom/fasterxml/jackson/databind/util/TokenBuffer$Segment;->_tokens:[Ljava/lang/Object;
 
-    aget-object v5, v5, v4
+    aget-object v6, v6, v5
 
-    instance-of v6, v5, Lcom/fasterxml/jackson/core/SerializableString;
+    instance-of v7, v6, Lcom/fasterxml/jackson/core/SerializableString;
 
-    if-eqz v6, :cond_12
+    if-eqz v7, :cond_12
 
-    check-cast v5, Lcom/fasterxml/jackson/core/SerializableString;
+    check-cast v6, Lcom/fasterxml/jackson/core/SerializableString;
 
-    invoke-virtual {p2, v5}, Lcom/fasterxml/jackson/core/JsonGenerator;->writeString(Lcom/fasterxml/jackson/core/SerializableString;)V
+    invoke-virtual {p2, v6}, Lcom/fasterxml/jackson/core/JsonGenerator;->writeString(Lcom/fasterxml/jackson/core/SerializableString;)V
 
     goto/16 :goto_2
 
     :cond_12
-    check-cast v5, Ljava/lang/String;
+    check-cast v6, Ljava/lang/String;
 
-    invoke-virtual {p2, v5}, Lcom/fasterxml/jackson/core/JsonGenerator;->writeString(Ljava/lang/String;)V
+    invoke-virtual {p2, v6}, Lcom/fasterxml/jackson/core/JsonGenerator;->writeString(Ljava/lang/String;)V
 
     goto/16 :goto_2
 
     :pswitch_6
-    iget-object v5, v0, Lcom/fasterxml/jackson/databind/util/TokenBuffer$Segment;->_tokens:[Ljava/lang/Object;
+    iget-object v6, v0, Lcom/fasterxml/jackson/databind/util/TokenBuffer$Segment;->_tokens:[Ljava/lang/Object;
 
-    aget-object v5, v5, v4
+    aget-object v6, v6, v5
 
-    instance-of v6, v5, Lcom/fasterxml/jackson/databind/util/RawValue;
+    instance-of v7, v6, Lcom/fasterxml/jackson/databind/util/RawValue;
 
-    if-eqz v6, :cond_15
+    if-eqz v7, :cond_15
 
-    check-cast v5, Lcom/fasterxml/jackson/databind/util/RawValue;
+    check-cast v6, Lcom/fasterxml/jackson/databind/util/RawValue;
 
-    iget-object v5, v5, Lcom/fasterxml/jackson/databind/util/RawValue;->_value:Ljava/lang/Object;
+    iget-object v6, v6, Lcom/fasterxml/jackson/databind/util/RawValue;->_value:Ljava/lang/Object;
 
-    instance-of v6, v5, Lcom/fasterxml/jackson/databind/JsonSerializable;
+    instance-of v7, v6, Lcom/fasterxml/jackson/databind/JsonSerializable;
 
-    if-eqz v6, :cond_13
+    if-eqz v7, :cond_13
 
-    invoke-virtual {p2, v5}, Lcom/fasterxml/jackson/core/JsonGenerator;->writeObject(Ljava/lang/Object;)V
+    invoke-virtual {p2, v6}, Lcom/fasterxml/jackson/core/JsonGenerator;->writeObject(Ljava/lang/Object;)V
 
     goto/16 :goto_2
 
     :cond_13
-    instance-of v6, v5, Lcom/fasterxml/jackson/core/SerializableString;
+    instance-of v7, v6, Lcom/fasterxml/jackson/core/SerializableString;
 
-    if-eqz v6, :cond_14
+    if-eqz v7, :cond_14
 
-    check-cast v5, Lcom/fasterxml/jackson/core/SerializableString;
+    check-cast v6, Lcom/fasterxml/jackson/core/SerializableString;
 
-    invoke-virtual {p2, v5}, Lcom/fasterxml/jackson/core/JsonGenerator;->writeRawValue(Lcom/fasterxml/jackson/core/SerializableString;)V
+    invoke-virtual {p2, v6}, Lcom/fasterxml/jackson/core/JsonGenerator;->writeRawValue(Lcom/fasterxml/jackson/core/SerializableString;)V
 
     goto/16 :goto_2
 
     :cond_14
-    invoke-static {v5}, Ljava/lang/String;->valueOf(Ljava/lang/Object;)Ljava/lang/String;
+    invoke-static {v6}, Ljava/lang/String;->valueOf(Ljava/lang/Object;)Ljava/lang/String;
 
-    move-result-object v5
+    move-result-object v6
 
-    invoke-virtual {p2, v5}, Lcom/fasterxml/jackson/core/JsonGenerator;->writeRawValue(Ljava/lang/String;)V
+    invoke-virtual {p2, v6}, Lcom/fasterxml/jackson/core/JsonGenerator;->writeRawValue(Ljava/lang/String;)V
 
     goto/16 :goto_2
 
     :cond_15
-    instance-of v6, v5, Lcom/fasterxml/jackson/databind/JsonSerializable;
+    instance-of v7, v6, Lcom/fasterxml/jackson/databind/JsonSerializable;
 
-    if-eqz v6, :cond_16
+    if-eqz v7, :cond_16
 
-    invoke-virtual {p2, v5}, Lcom/fasterxml/jackson/core/JsonGenerator;->writeObject(Ljava/lang/Object;)V
+    invoke-virtual {p2, v6}, Lcom/fasterxml/jackson/core/JsonGenerator;->writeObject(Ljava/lang/Object;)V
 
     goto/16 :goto_2
 
     :cond_16
-    invoke-virtual {p2, v5}, Lcom/fasterxml/jackson/core/JsonGenerator;->writeEmbeddedObject(Ljava/lang/Object;)V
+    invoke-virtual {p2, v6}, Lcom/fasterxml/jackson/core/JsonGenerator;->writeEmbeddedObject(Ljava/lang/Object;)V
 
     goto/16 :goto_2
 
     :pswitch_7
-    iget-object v5, v0, Lcom/fasterxml/jackson/databind/util/TokenBuffer$Segment;->_tokens:[Ljava/lang/Object;
+    iget-object v6, v0, Lcom/fasterxml/jackson/databind/util/TokenBuffer$Segment;->_tokens:[Ljava/lang/Object;
 
-    aget-object v5, v5, v4
+    aget-object v6, v6, v5
 
-    instance-of v6, v5, Lcom/fasterxml/jackson/core/SerializableString;
+    instance-of v7, v6, Lcom/fasterxml/jackson/core/SerializableString;
 
-    if-eqz v6, :cond_17
+    if-eqz v7, :cond_17
 
-    check-cast v5, Lcom/fasterxml/jackson/core/SerializableString;
+    check-cast v6, Lcom/fasterxml/jackson/core/SerializableString;
 
-    invoke-virtual {p2, v5}, Lcom/fasterxml/jackson/core/JsonGenerator;->writeFieldName(Lcom/fasterxml/jackson/core/SerializableString;)V
+    invoke-virtual {p2, v6}, Lcom/fasterxml/jackson/core/JsonGenerator;->writeFieldName(Lcom/fasterxml/jackson/core/SerializableString;)V
 
     goto/16 :goto_2
 
     :cond_17
-    check-cast v5, Ljava/lang/String;
+    check-cast v6, Ljava/lang/String;
 
-    invoke-virtual {p2, v5}, Lcom/fasterxml/jackson/core/JsonGenerator;->writeFieldName(Ljava/lang/String;)V
+    invoke-virtual {p2, v6}, Lcom/fasterxml/jackson/core/JsonGenerator;->writeFieldName(Ljava/lang/String;)V
 
     goto/16 :goto_2
 

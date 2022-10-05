@@ -15,7 +15,7 @@
 # instance fields
 .field public final mExecutor:Ljava/util/concurrent/Executor;
 
-.field public final mInputMergerFactory:Landroidx/work/InputMergerFactory;
+.field public final mInputMergerFactory:Lorg/bouncycastle/util/Pack;
 
 .field public final mLoggingLevel:I
 
@@ -78,7 +78,7 @@
 
     invoke-direct {v0}, Landroidx/work/InputMergerFactory$1;-><init>()V
 
-    iput-object v0, p0, Landroidx/work/Configuration;->mInputMergerFactory:Landroidx/work/InputMergerFactory;
+    iput-object v0, p0, Landroidx/work/Configuration;->mInputMergerFactory:Lorg/bouncycastle/util/Pack;
 
     new-instance v0, Landroidx/work/impl/DefaultRunnableScheduler;
 

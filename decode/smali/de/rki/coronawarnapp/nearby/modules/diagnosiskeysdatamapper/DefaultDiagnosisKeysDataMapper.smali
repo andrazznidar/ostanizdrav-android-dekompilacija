@@ -27,54 +27,6 @@
 
 
 # virtual methods
-.method public final getDiagnosisKeysDataMapping(Lkotlin/coroutines/Continuation;)Ljava/lang/Object;
-    .locals 2
-    .annotation system Ldalvik/annotation/Signature;
-        value = {
-            "(",
-            "Lkotlin/coroutines/Continuation<",
-            "-",
-            "Lcom/google/android/gms/nearby/exposurenotification/DiagnosisKeysDataMapping;",
-            ">;)",
-            "Ljava/lang/Object;"
-        }
-    .end annotation
-
-    new-instance v0, Lkotlin/coroutines/SafeContinuation;
-
-    invoke-static {p1}, Lkotlinx/coroutines/flow/FlowKt;->intercepted(Lkotlin/coroutines/Continuation;)Lkotlin/coroutines/Continuation;
-
-    move-result-object p1
-
-    invoke-direct {v0, p1}, Lkotlin/coroutines/SafeContinuation;-><init>(Lkotlin/coroutines/Continuation;)V
-
-    iget-object p1, p0, Lde/rki/coronawarnapp/nearby/modules/diagnosiskeysdatamapper/DefaultDiagnosisKeysDataMapper;->client:Lcom/google/android/gms/nearby/exposurenotification/ExposureNotificationClient;
-
-    invoke-interface {p1}, Lcom/google/android/gms/nearby/exposurenotification/ExposureNotificationClient;->getDiagnosisKeysDataMapping()Lcom/google/android/gms/tasks/Task;
-
-    move-result-object p1
-
-    new-instance v1, Lde/rki/coronawarnapp/nearby/modules/diagnosiskeysdatamapper/DefaultDiagnosisKeysDataMapper$getDiagnosisKeysDataMapping$2$1;
-
-    invoke-direct {v1, v0}, Lde/rki/coronawarnapp/nearby/modules/diagnosiskeysdatamapper/DefaultDiagnosisKeysDataMapper$getDiagnosisKeysDataMapping$2$1;-><init>(Lkotlin/coroutines/Continuation;)V
-
-    invoke-virtual {p1, v1}, Lcom/google/android/gms/tasks/Task;->addOnSuccessListener(Lcom/google/android/gms/tasks/OnSuccessListener;)Lcom/google/android/gms/tasks/Task;
-
-    move-result-object p1
-
-    new-instance v1, Lde/rki/coronawarnapp/nearby/modules/diagnosiskeysdatamapper/DefaultDiagnosisKeysDataMapper$getDiagnosisKeysDataMapping$2$2;
-
-    invoke-direct {v1, v0}, Lde/rki/coronawarnapp/nearby/modules/diagnosiskeysdatamapper/DefaultDiagnosisKeysDataMapper$getDiagnosisKeysDataMapping$2$2;-><init>(Lkotlin/coroutines/Continuation;)V
-
-    invoke-virtual {p1, v1}, Lcom/google/android/gms/tasks/Task;->addOnFailureListener(Lcom/google/android/gms/tasks/OnFailureListener;)Lcom/google/android/gms/tasks/Task;
-
-    invoke-virtual {v0}, Lkotlin/coroutines/SafeContinuation;->getOrThrow()Ljava/lang/Object;
-
-    move-result-object p1
-
-    return-object p1
-.end method
-
 .method public final setDiagnosisKeysDataMapping(Lcom/google/android/gms/nearby/exposurenotification/DiagnosisKeysDataMapping;Lkotlin/coroutines/Continuation;)Ljava/lang/Object;
     .locals 1
     .annotation system Ldalvik/annotation/Signature;
@@ -91,7 +43,7 @@
 
     new-instance v0, Lkotlin/coroutines/SafeContinuation;
 
-    invoke-static {p2}, Lkotlinx/coroutines/flow/FlowKt;->intercepted(Lkotlin/coroutines/Continuation;)Lkotlin/coroutines/Continuation;
+    invoke-static {p2}, Lcom/google/android/gms/nearby/messages/internal/zzag;->intercepted(Lkotlin/coroutines/Continuation;)Lkotlin/coroutines/Continuation;
 
     move-result-object p2
 
@@ -242,7 +194,35 @@
 
     iput v6, v0, Lde/rki/coronawarnapp/nearby/modules/diagnosiskeysdatamapper/DefaultDiagnosisKeysDataMapper$updateDiagnosisKeysDataMapping$1;->label:I
 
-    invoke-virtual {p0, v0}, Lde/rki/coronawarnapp/nearby/modules/diagnosiskeysdatamapper/DefaultDiagnosisKeysDataMapper;->getDiagnosisKeysDataMapping(Lkotlin/coroutines/Continuation;)Ljava/lang/Object;
+    new-instance p2, Lkotlin/coroutines/SafeContinuation;
+
+    invoke-static {v0}, Lcom/google/android/gms/nearby/messages/internal/zzag;->intercepted(Lkotlin/coroutines/Continuation;)Lkotlin/coroutines/Continuation;
+
+    move-result-object v2
+
+    invoke-direct {p2, v2}, Lkotlin/coroutines/SafeContinuation;-><init>(Lkotlin/coroutines/Continuation;)V
+
+    iget-object v2, p0, Lde/rki/coronawarnapp/nearby/modules/diagnosiskeysdatamapper/DefaultDiagnosisKeysDataMapper;->client:Lcom/google/android/gms/nearby/exposurenotification/ExposureNotificationClient;
+
+    invoke-interface {v2}, Lcom/google/android/gms/nearby/exposurenotification/ExposureNotificationClient;->getDiagnosisKeysDataMapping()Lcom/google/android/gms/tasks/Task;
+
+    move-result-object v2
+
+    new-instance v7, Lde/rki/coronawarnapp/nearby/modules/diagnosiskeysdatamapper/DefaultDiagnosisKeysDataMapper$getDiagnosisKeysDataMapping$2$1;
+
+    invoke-direct {v7, p2}, Lde/rki/coronawarnapp/nearby/modules/diagnosiskeysdatamapper/DefaultDiagnosisKeysDataMapper$getDiagnosisKeysDataMapping$2$1;-><init>(Lkotlin/coroutines/Continuation;)V
+
+    invoke-virtual {v2, v7}, Lcom/google/android/gms/tasks/Task;->addOnSuccessListener(Lcom/google/android/gms/tasks/OnSuccessListener;)Lcom/google/android/gms/tasks/Task;
+
+    move-result-object v2
+
+    new-instance v7, Lde/rki/coronawarnapp/nearby/modules/diagnosiskeysdatamapper/DefaultDiagnosisKeysDataMapper$getDiagnosisKeysDataMapping$2$2;
+
+    invoke-direct {v7, p2}, Lde/rki/coronawarnapp/nearby/modules/diagnosiskeysdatamapper/DefaultDiagnosisKeysDataMapper$getDiagnosisKeysDataMapping$2$2;-><init>(Lkotlin/coroutines/Continuation;)V
+
+    invoke-virtual {v2, v7}, Lcom/google/android/gms/tasks/Task;->addOnFailureListener(Lcom/google/android/gms/tasks/OnFailureListener;)Lcom/google/android/gms/tasks/Task;
+
+    invoke-virtual {p2}, Lkotlin/coroutines/SafeContinuation;->getOrThrow()Ljava/lang/Object;
 
     move-result-object p2
     :try_end_2
@@ -284,16 +264,16 @@
 
     move-result v7
 
-    if-eqz p1, :cond_5
+    if-nez p1, :cond_5
 
-    invoke-virtual {p1}, Lcom/google/android/gms/nearby/exposurenotification/DiagnosisKeysDataMapping;->hashCode()I
-
-    move-result v8
+    move v8, v5
 
     goto :goto_3
 
     :cond_5
-    move v8, v5
+    invoke-virtual {p1}, Lcom/google/android/gms/nearby/exposurenotification/DiagnosisKeysDataMapping;->hashCode()I
+
+    move-result v8
 
     :goto_3
     if-eq v7, v8, :cond_6

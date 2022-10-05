@@ -49,8 +49,6 @@
 
     invoke-direct {p0}, Landroidx/lifecycle/MediatorLiveData;-><init>()V
 
-    sget v0, Lkotlinx/coroutines/Job;->$r8$clinit:I
-
     sget-object v0, Lkotlinx/coroutines/Job$Key;->$$INSTANCE:Lkotlinx/coroutines/Job$Key;
 
     invoke-interface {p1, v0}, Lkotlin/coroutines/CoroutineContext;->get(Lkotlin/coroutines/CoroutineContext$Key;)Lkotlin/coroutines/CoroutineContext$Element;

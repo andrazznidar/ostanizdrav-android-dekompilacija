@@ -5,7 +5,62 @@
 
 # annotations
 .annotation system Ldalvik/annotation/SourceDebugExtension;
-    value = "SMAP\nReflectJvmMapping.kt\nKotlin\n*S Kotlin\n*F\n+ 1 ReflectJvmMapping.kt\nkotlin/reflect/jvm/ReflectJvmMapping\n+ 2 _Collections.kt\nkotlin/collections/CollectionsKt___CollectionsKt\n+ 3 fake.kt\nkotlin/jvm/internal/FakeKt\n*L\n1#1,148:1\n768#2,11:149\n256#2,2:160\n256#2,2:162\n768#2,11:164\n256#2,2:175\n256#2,2:177\n256#2,2:180\n256#2,2:182\n1#3:179\n*E\n*S KotlinDebug\n*F\n+ 1 ReflectJvmMapping.kt\nkotlin/reflect/jvm/ReflectJvmMapping\n*L\n99#1,11:149\n99#1,2:160\n102#1,2:162\n122#1,11:164\n122#1,2:175\n128#1,2:177\n136#1,2:180\n146#1,2:182\n*E\n"
+    value = "SMAP\nReflectJvmMapping.kt\nKotlin\n*S Kotlin\n*F\n+ 1 ReflectJvmMapping.kt\nkotlin/reflect/jvm/ReflectJvmMapping\n+ 2 _Collections.kt\nkotlin/collections/CollectionsKt___CollectionsKt\n+ 3 fake.kt\nkotlin/jvm/internal/FakeKt\n*L\n1#1,148:1\n798#2,11:149\n286#2,2:160\n286#2,2:162\n798#2,11:164\n286#2,2:175\n286#2,2:177\n286#2,2:180\n286#2,2:182\n1#3:179\n*S KotlinDebug\n*F\n+ 1 ReflectJvmMapping.kt\nkotlin/reflect/jvm/ReflectJvmMapping\n*L\n99#1:149,11\n99#1:160,2\n102#1:162,2\n122#1:164,11\n122#1:175,2\n128#1:177,2\n136#1:180,2\n146#1:182,2\n*E\n"
+.end annotation
+
+.annotation runtime Lkotlin/Metadata;
+    d1 = {
+        "\u0000J\n\u0000\n\u0002\u0018\u0002\n\u0000\n\u0002\u0018\u0002\n\u0002\u0008\u0005\n\u0002\u0018\u0002\n\u0002\u0018\u0002\n\u0002\u0008\u0003\n\u0002\u0018\u0002\n\u0002\u0008\u0006\n\u0002\u0018\u0002\n\u0002\u0008\u0003\n\u0002\u0018\u0002\n\u0002\u0018\u0002\n\u0002\u0008\u0003\n\u0002\u0010\u0000\n\u0002\u0008\u0007\n\u0002\u0018\u0002\n\u0002\u0018\u0002\n\u0000\u001a\u000e\u0010%\u001a\u0004\u0018\u00010&*\u00020\'H\u0002\"/\u0010\u0000\u001a\n\u0012\u0004\u0012\u0002H\u0002\u0018\u00010\u0001\"\u0004\u0008\u0000\u0010\u0002*\u0008\u0012\u0004\u0012\u0002H\u00020\u00038F\u00a2\u0006\u000c\u0012\u0004\u0008\u0004\u0010\u0005\u001a\u0004\u0008\u0006\u0010\u0007\"\u001b\u0010\u0008\u001a\u0004\u0018\u00010\t*\u0006\u0012\u0002\u0008\u00030\n8F\u00a2\u0006\u0006\u001a\u0004\u0008\u000b\u0010\u000c\"\u001b\u0010\r\u001a\u0004\u0018\u00010\u000e*\u0006\u0012\u0002\u0008\u00030\n8F\u00a2\u0006\u0006\u001a\u0004\u0008\u000f\u0010\u0010\"\u001b\u0010\u0011\u001a\u0004\u0018\u00010\u000e*\u0006\u0012\u0002\u0008\u00030\u00038F\u00a2\u0006\u0006\u001a\u0004\u0008\u0012\u0010\u0013\"\u001b\u0010\u0014\u001a\u0004\u0018\u00010\u000e*\u0006\u0012\u0002\u0008\u00030\u00158F\u00a2\u0006\u0006\u001a\u0004\u0008\u0016\u0010\u0017\"\u0015\u0010\u0018\u001a\u00020\u0019*\u00020\u001a8F\u00a2\u0006\u0006\u001a\u0004\u0008\u001b\u0010\u001c\"-\u0010\u001d\u001a\n\u0012\u0004\u0012\u0002H\u0002\u0018\u00010\u0003\"\u0008\u0008\u0000\u0010\u0002*\u00020\u001e*\u0008\u0012\u0004\u0012\u0002H\u00020\u00018F\u00a2\u0006\u0006\u001a\u0004\u0008\u001f\u0010 \"\u001b\u0010\u001d\u001a\u0008\u0012\u0002\u0008\u0003\u0018\u00010\u0003*\u00020\u000e8F\u00a2\u0006\u0006\u001a\u0004\u0008\u001f\u0010!\"\u001b\u0010\"\u001a\u0008\u0012\u0002\u0008\u0003\u0018\u00010\n*\u00020\t8F\u00a2\u0006\u0006\u001a\u0004\u0008#\u0010$\u00a8\u0006("
+    }
+    d2 = {
+        "javaConstructor",
+        "Ljava/lang/reflect/Constructor;",
+        "T",
+        "Lkotlin/reflect/KFunction;",
+        "getJavaConstructor$annotations",
+        "(Lkotlin/reflect/KFunction;)V",
+        "getJavaConstructor",
+        "(Lkotlin/reflect/KFunction;)Ljava/lang/reflect/Constructor;",
+        "javaField",
+        "Ljava/lang/reflect/Field;",
+        "Lkotlin/reflect/KProperty;",
+        "getJavaField",
+        "(Lkotlin/reflect/KProperty;)Ljava/lang/reflect/Field;",
+        "javaGetter",
+        "Ljava/lang/reflect/Method;",
+        "getJavaGetter",
+        "(Lkotlin/reflect/KProperty;)Ljava/lang/reflect/Method;",
+        "javaMethod",
+        "getJavaMethod",
+        "(Lkotlin/reflect/KFunction;)Ljava/lang/reflect/Method;",
+        "javaSetter",
+        "Lkotlin/reflect/KMutableProperty;",
+        "getJavaSetter",
+        "(Lkotlin/reflect/KMutableProperty;)Ljava/lang/reflect/Method;",
+        "javaType",
+        "Ljava/lang/reflect/Type;",
+        "Lkotlin/reflect/KType;",
+        "getJavaType",
+        "(Lkotlin/reflect/KType;)Ljava/lang/reflect/Type;",
+        "kotlinFunction",
+        "",
+        "getKotlinFunction",
+        "(Ljava/lang/reflect/Constructor;)Lkotlin/reflect/KFunction;",
+        "(Ljava/lang/reflect/Method;)Lkotlin/reflect/KFunction;",
+        "kotlinProperty",
+        "getKotlinProperty",
+        "(Ljava/lang/reflect/Field;)Lkotlin/reflect/KProperty;",
+        "getKPackage",
+        "Lkotlin/reflect/KDeclarationContainer;",
+        "Ljava/lang/reflect/Member;",
+        "kotlin-reflection"
+    }
+    k = 0x2
+    mv = {
+        0x1,
+        0x5,
+        0x1
+    }
 .end annotation
 
 
@@ -67,6 +122,12 @@
     return-object v0
 .end method
 
+.method public static synthetic getJavaConstructor$annotations(Lkotlin/reflect/KFunction;)V
+    .locals 0
+
+    return-void
+.end method
+
 .method public static final getJavaField(Lkotlin/reflect/KProperty;)Ljava/lang/reflect/Field;
     .locals 1
     .annotation system Ldalvik/annotation/Signature;
@@ -102,7 +163,7 @@
 .end method
 
 .method public static final getJavaGetter(Lkotlin/reflect/KProperty;)Ljava/lang/reflect/Method;
-    .locals 0
+    .locals 1
     .annotation system Ldalvik/annotation/Signature;
         value = {
             "(",
@@ -111,6 +172,10 @@
             "Ljava/lang/reflect/Method;"
         }
     .end annotation
+
+    const-string v0, "$this$javaGetter"
+
+    invoke-static {p0, v0}, Lkotlin/jvm/internal/Intrinsics;->checkNotNullParameter(Ljava/lang/Object;Ljava/lang/String;)V
 
     invoke-interface {p0}, Lkotlin/reflect/KProperty;->getGetter()Lkotlin/reflect/KProperty$Getter;
 
@@ -204,87 +269,68 @@
 .end method
 
 .method public static final getJavaType(Lkotlin/reflect/KType;)Ljava/lang/reflect/Type;
-    .locals 2
+    .locals 1
 
     const-string v0, "$this$javaType"
 
     invoke-static {p0, v0}, Lkotlin/jvm/internal/Intrinsics;->checkNotNullParameter(Ljava/lang/Object;Ljava/lang/String;)V
 
-    move-object v1, p0
+    move-object v0, p0
 
-    check-cast v1, Lkotlin/reflect/jvm/internal/KTypeImpl;
+    check-cast v0, Lkotlin/reflect/jvm/internal/KTypeImpl;
 
-    invoke-virtual {v1}, Lkotlin/reflect/jvm/internal/KTypeImpl;->getJavaType()Ljava/lang/reflect/Type;
+    invoke-virtual {v0}, Lkotlin/reflect/jvm/internal/KTypeImpl;->getJavaType()Ljava/lang/reflect/Type;
 
-    move-result-object v1
+    move-result-object v0
 
-    if-eqz v1, :cond_0
+    if-eqz v0, :cond_0
 
     goto :goto_0
 
     :cond_0
-    invoke-static {p0, v0}, Lkotlin/jvm/internal/Intrinsics;->checkNotNullParameter(Ljava/lang/Object;Ljava/lang/String;)V
-
-    instance-of v0, p0, Lkotlin/jvm/internal/KTypeBase;
-
-    if-eqz v0, :cond_1
-
-    move-object v0, p0
-
-    check-cast v0, Lkotlin/jvm/internal/KTypeBase;
-
-    invoke-interface {v0}, Lkotlin/jvm/internal/KTypeBase;->getJavaType()Ljava/lang/reflect/Type;
+    invoke-static {p0}, Lkotlin/reflect/TypesJVMKt;->getJavaType(Lkotlin/reflect/KType;)Ljava/lang/reflect/Type;
 
     move-result-object v0
 
-    if-eqz v0, :cond_1
-
-    move-object v1, v0
-
-    goto :goto_0
-
-    :cond_1
-    const/4 v0, 0x0
-
-    invoke-static {p0, v0}, Lkotlin/reflect/TypesJVMKt;->computeJavaType(Lkotlin/reflect/KType;Z)Ljava/lang/reflect/Type;
-
-    move-result-object p0
-
-    move-object v1, p0
-
     :goto_0
-    return-object v1
+    return-object v0
 .end method
 
-.method public static final getKPackage(Ljava/lang/reflect/Member;)Lkotlin/reflect/KDeclarationContainer;
+.method private static final getKPackage(Ljava/lang/reflect/Member;)Lkotlin/reflect/KDeclarationContainer;
     .locals 5
+
+    sget-object v0, Lkotlin/reflect/jvm/internal/impl/descriptors/runtime/components/ReflectKotlinClass;->Factory:Lkotlin/reflect/jvm/internal/impl/descriptors/runtime/components/ReflectKotlinClass$Factory;
 
     invoke-interface {p0}, Ljava/lang/reflect/Member;->getDeclaringClass()Ljava/lang/Class;
 
+    move-result-object v1
+
+    const-string v2, "declaringClass"
+
+    invoke-static {v1, v2}, Lkotlin/jvm/internal/Intrinsics;->checkNotNullExpressionValue(Ljava/lang/Object;Ljava/lang/String;)V
+
+    invoke-virtual {v0, v1}, Lkotlin/reflect/jvm/internal/impl/descriptors/runtime/components/ReflectKotlinClass$Factory;->create(Ljava/lang/Class;)Lkotlin/reflect/jvm/internal/impl/descriptors/runtime/components/ReflectKotlinClass;
+
     move-result-object v0
 
-    const-string v1, "declaringClass"
-
-    invoke-static {v0, v1}, Lkotlin/jvm/internal/Intrinsics;->checkNotNullExpressionValue(Ljava/lang/Object;Ljava/lang/String;)V
-
-    invoke-static {v0}, Lkotlin/reflect/jvm/internal/impl/descriptors/runtime/components/ReflectKotlinClass;->create(Ljava/lang/Class;)Lkotlin/reflect/jvm/internal/impl/descriptors/runtime/components/ReflectKotlinClass;
-
-    move-result-object v0
-
-    const/4 v2, 0x0
+    const/4 v1, 0x0
 
     if-eqz v0, :cond_0
 
-    iget-object v0, v0, Lkotlin/reflect/jvm/internal/impl/descriptors/runtime/components/ReflectKotlinClass;->classHeader:Lkotlin/reflect/jvm/internal/impl/load/kotlin/header/KotlinClassHeader;
+    invoke-virtual {v0}, Lkotlin/reflect/jvm/internal/impl/descriptors/runtime/components/ReflectKotlinClass;->getClassHeader()Lkotlin/reflect/jvm/internal/impl/load/kotlin/header/KotlinClassHeader;
+
+    move-result-object v0
 
     if-eqz v0, :cond_0
 
-    iget-object v0, v0, Lkotlin/reflect/jvm/internal/impl/load/kotlin/header/KotlinClassHeader;->kind:Lkotlin/reflect/jvm/internal/impl/load/kotlin/header/KotlinClassHeader$Kind;
+    invoke-virtual {v0}, Lkotlin/reflect/jvm/internal/impl/load/kotlin/header/KotlinClassHeader;->getKind()Lkotlin/reflect/jvm/internal/impl/load/kotlin/header/KotlinClassHeader$Kind;
+
+    move-result-object v0
 
     goto :goto_0
 
     :cond_0
-    move-object v0, v2
+    move-object v0, v1
 
     :goto_0
     if-nez v0, :cond_1
@@ -292,21 +338,25 @@
     goto :goto_1
 
     :cond_1
+    sget-object v3, Lkotlin/reflect/jvm/ReflectJvmMapping$WhenMappings;->$EnumSwitchMapping$0:[I
+
     invoke-virtual {v0}, Ljava/lang/Enum;->ordinal()I
 
     move-result v0
 
-    const/4 v3, 0x2
+    aget v0, v3, v0
+
+    const/4 v3, 0x1
+
+    const/4 v4, 0x2
 
     if-eq v0, v3, :cond_2
 
-    const/4 v4, 0x4
-
     if-eq v0, v4, :cond_2
 
-    const/4 v4, 0x5
+    const/4 v3, 0x3
 
-    if-eq v0, v4, :cond_2
+    if-eq v0, v3, :cond_2
 
     goto :goto_1
 
@@ -317,14 +367,14 @@
 
     move-result-object p0
 
-    invoke-static {p0, v1}, Lkotlin/jvm/internal/Intrinsics;->checkNotNullExpressionValue(Ljava/lang/Object;Ljava/lang/String;)V
+    invoke-static {p0, v2}, Lkotlin/jvm/internal/Intrinsics;->checkNotNullExpressionValue(Ljava/lang/Object;Ljava/lang/String;)V
 
-    invoke-direct {v0, p0, v2, v3}, Lkotlin/reflect/jvm/internal/KPackageImpl;-><init>(Ljava/lang/Class;Ljava/lang/String;I)V
+    invoke-direct {v0, p0, v1, v4, v1}, Lkotlin/reflect/jvm/internal/KPackageImpl;-><init>(Ljava/lang/Class;Ljava/lang/String;ILkotlin/jvm/internal/DefaultConstructorMarker;)V
 
-    move-object v2, v0
+    move-object v1, v0
 
     :goto_1
-    return-object v2
+    return-object v1
 .end method
 
 .method public static final getKotlinFunction(Ljava/lang/reflect/Constructor;)Lkotlin/reflect/KFunction;
@@ -437,9 +487,7 @@
 
     if-eqz v0, :cond_4
 
-    check-cast v0, Lkotlin/reflect/jvm/internal/KPackageImpl;
-
-    invoke-virtual {v0}, Lkotlin/reflect/jvm/internal/KPackageImpl;->getMembers()Ljava/util/Collection;
+    invoke-interface {v0}, Lkotlin/reflect/KDeclarationContainer;->getMembers()Ljava/util/Collection;
 
     move-result-object v0
 
@@ -670,4 +718,160 @@
     check-cast v2, Lkotlin/reflect/KFunction;
 
     return-object v2
+.end method
+
+.method public static final getKotlinProperty(Ljava/lang/reflect/Field;)Lkotlin/reflect/KProperty;
+    .locals 5
+    .annotation system Ldalvik/annotation/Signature;
+        value = {
+            "(",
+            "Ljava/lang/reflect/Field;",
+            ")",
+            "Lkotlin/reflect/KProperty<",
+            "*>;"
+        }
+    .end annotation
+
+    const-string v0, "$this$kotlinProperty"
+
+    invoke-static {p0, v0}, Lkotlin/jvm/internal/Intrinsics;->checkNotNullParameter(Ljava/lang/Object;Ljava/lang/String;)V
+
+    invoke-virtual {p0}, Ljava/lang/reflect/Field;->isSynthetic()Z
+
+    move-result v0
+
+    const/4 v1, 0x0
+
+    if-eqz v0, :cond_0
+
+    return-object v1
+
+    :cond_0
+    invoke-static {p0}, Lkotlin/reflect/jvm/ReflectJvmMapping;->getKPackage(Ljava/lang/reflect/Member;)Lkotlin/reflect/KDeclarationContainer;
+
+    move-result-object v0
+
+    if-eqz v0, :cond_5
+
+    invoke-interface {v0}, Lkotlin/reflect/KDeclarationContainer;->getMembers()Ljava/util/Collection;
+
+    move-result-object v0
+
+    new-instance v2, Ljava/util/ArrayList;
+
+    invoke-direct {v2}, Ljava/util/ArrayList;-><init>()V
+
+    invoke-interface {v0}, Ljava/lang/Iterable;->iterator()Ljava/util/Iterator;
+
+    move-result-object v0
+
+    :cond_1
+    :goto_0
+    invoke-interface {v0}, Ljava/util/Iterator;->hasNext()Z
+
+    move-result v3
+
+    if-eqz v3, :cond_2
+
+    invoke-interface {v0}, Ljava/util/Iterator;->next()Ljava/lang/Object;
+
+    move-result-object v3
+
+    instance-of v4, v3, Lkotlin/reflect/KProperty;
+
+    if-eqz v4, :cond_1
+
+    invoke-interface {v2, v3}, Ljava/util/Collection;->add(Ljava/lang/Object;)Z
+
+    goto :goto_0
+
+    :cond_2
+    invoke-interface {v2}, Ljava/lang/Iterable;->iterator()Ljava/util/Iterator;
+
+    move-result-object v0
+
+    :cond_3
+    invoke-interface {v0}, Ljava/util/Iterator;->hasNext()Z
+
+    move-result v2
+
+    if-eqz v2, :cond_4
+
+    invoke-interface {v0}, Ljava/util/Iterator;->next()Ljava/lang/Object;
+
+    move-result-object v2
+
+    move-object v3, v2
+
+    check-cast v3, Lkotlin/reflect/KProperty;
+
+    invoke-static {v3}, Lkotlin/reflect/jvm/ReflectJvmMapping;->getJavaField(Lkotlin/reflect/KProperty;)Ljava/lang/reflect/Field;
+
+    move-result-object v3
+
+    invoke-static {v3, p0}, Lkotlin/jvm/internal/Intrinsics;->areEqual(Ljava/lang/Object;Ljava/lang/Object;)Z
+
+    move-result v3
+
+    if-eqz v3, :cond_3
+
+    move-object v1, v2
+
+    :cond_4
+    check-cast v1, Lkotlin/reflect/KProperty;
+
+    return-object v1
+
+    :cond_5
+    invoke-virtual {p0}, Ljava/lang/reflect/Field;->getDeclaringClass()Ljava/lang/Class;
+
+    move-result-object v0
+
+    const-string v2, "declaringClass"
+
+    invoke-static {v0, v2}, Lkotlin/jvm/internal/Intrinsics;->checkNotNullExpressionValue(Ljava/lang/Object;Ljava/lang/String;)V
+
+    invoke-static {v0}, Lkotlin/jvm/JvmClassMappingKt;->getKotlinClass(Ljava/lang/Class;)Lkotlin/reflect/KClass;
+
+    move-result-object v0
+
+    invoke-static {v0}, Lkotlin/reflect/full/KClasses;->getMemberProperties(Lkotlin/reflect/KClass;)Ljava/util/Collection;
+
+    move-result-object v0
+
+    invoke-interface {v0}, Ljava/lang/Iterable;->iterator()Ljava/util/Iterator;
+
+    move-result-object v0
+
+    :cond_6
+    invoke-interface {v0}, Ljava/util/Iterator;->hasNext()Z
+
+    move-result v2
+
+    if-eqz v2, :cond_7
+
+    invoke-interface {v0}, Ljava/util/Iterator;->next()Ljava/lang/Object;
+
+    move-result-object v2
+
+    move-object v3, v2
+
+    check-cast v3, Lkotlin/reflect/KProperty1;
+
+    invoke-static {v3}, Lkotlin/reflect/jvm/ReflectJvmMapping;->getJavaField(Lkotlin/reflect/KProperty;)Ljava/lang/reflect/Field;
+
+    move-result-object v3
+
+    invoke-static {v3, p0}, Lkotlin/jvm/internal/Intrinsics;->areEqual(Ljava/lang/Object;Ljava/lang/Object;)Z
+
+    move-result v3
+
+    if-eqz v3, :cond_6
+
+    move-object v1, v2
+
+    :cond_7
+    check-cast v1, Lkotlin/reflect/KProperty;
+
+    return-object v1
 .end method

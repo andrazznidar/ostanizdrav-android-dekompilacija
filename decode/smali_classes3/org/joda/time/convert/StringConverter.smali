@@ -102,7 +102,7 @@
 
     check-cast p2, Ljava/lang/String;
 
-    invoke-static {}, Lorg/joda/time/format/ISOPeriodFormat;->standard()Lorg/joda/time/format/PeriodFormatter;
+    invoke-static {}, Lkotlin/internal/ProgressionUtilKt;->standard()Lorg/joda/time/format/PeriodFormatter;
 
     move-result-object p3
 

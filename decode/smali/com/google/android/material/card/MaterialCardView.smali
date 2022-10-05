@@ -215,7 +215,7 @@
 .method public onAttachedToWindow()V
     .locals 1
 
-    invoke-super {p0}, Landroid/view/ViewGroup;->onAttachedToWindow()V
+    invoke-super {p0}, Landroid/widget/FrameLayout;->onAttachedToWindow()V
 
     const/4 v0, 0x0
 
@@ -227,7 +227,7 @@
 
     add-int/lit8 p1, p1, 0x3
 
-    invoke-super {p0, p1}, Landroid/view/ViewGroup;->onCreateDrawableState(I)[I
+    invoke-super {p0, p1}, Landroid/widget/FrameLayout;->onCreateDrawableState(I)[I
 
     move-result-object p1
 
@@ -246,7 +246,7 @@
 .method public onInitializeAccessibilityEvent(Landroid/view/accessibility/AccessibilityEvent;)V
     .locals 1
 
-    invoke-super {p0, p1}, Landroid/view/View;->onInitializeAccessibilityEvent(Landroid/view/accessibility/AccessibilityEvent;)V
+    invoke-super {p0, p1}, Landroid/widget/FrameLayout;->onInitializeAccessibilityEvent(Landroid/view/accessibility/AccessibilityEvent;)V
 
     const-string v0, "androidx.cardview.widget.CardView"
 
@@ -262,7 +262,7 @@
 .method public onInitializeAccessibilityNodeInfo(Landroid/view/accessibility/AccessibilityNodeInfo;)V
     .locals 2
 
-    invoke-super {p0, p1}, Landroid/view/View;->onInitializeAccessibilityNodeInfo(Landroid/view/accessibility/AccessibilityNodeInfo;)V
+    invoke-super {p0, p1}, Landroid/widget/FrameLayout;->onInitializeAccessibilityNodeInfo(Landroid/view/accessibility/AccessibilityNodeInfo;)V
 
     const-string v0, "androidx.cardview.widget.CardView"
 
@@ -314,7 +314,7 @@
 .method public setBackgroundInternal(Landroid/graphics/drawable/Drawable;)V
     .locals 0
 
-    invoke-super {p0, p1}, Landroid/view/View;->setBackgroundDrawable(Landroid/graphics/drawable/Drawable;)V
+    invoke-super {p0, p1}, Landroid/widget/FrameLayout;->setBackgroundDrawable(Landroid/graphics/drawable/Drawable;)V
 
     return-void
 .end method
@@ -458,7 +458,7 @@
 .method public setClickable(Z)V
     .locals 0
 
-    invoke-super {p0, p1}, Landroid/view/View;->setClickable(Z)V
+    invoke-super {p0, p1}, Landroid/widget/FrameLayout;->setClickable(Z)V
 
     return-void
 .end method

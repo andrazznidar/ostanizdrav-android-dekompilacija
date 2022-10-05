@@ -21,6 +21,31 @@
     }
 .end annotation
 
+.annotation runtime Lkotlin/Metadata;
+    d1 = {
+        "\u0000\u001e\n\u0002\u0018\u0002\n\u0002\u0018\u0002\n\u0002\u0018\u0002\n\u0002\u0008\u0003\n\u0002\u0010\u0000\n\u0000\n\u0002\u0010\u0011\n\u0002\u0008\u0002\u0018\u00002\u000c\u0012\u0008\u0012\u0006\u0012\u0002\u0008\u00030\u00020\u0001B\u0011\u0012\n\u0010\u0003\u001a\u0006\u0012\u0002\u0008\u00030\u0002\u00a2\u0006\u0002\u0010\u0004J\u001b\u0010\u0005\u001a\u0004\u0018\u00010\u00062\n\u0010\u0007\u001a\u0006\u0012\u0002\u0008\u00030\u0008H\u0016\u00a2\u0006\u0002\u0010\t\u00a8\u0006\n"
+    }
+    d2 = {
+        "Lkotlin/reflect/jvm/internal/calls/CallerImpl$Constructor;",
+        "Lkotlin/reflect/jvm/internal/calls/CallerImpl;",
+        "Ljava/lang/reflect/Constructor;",
+        "constructor",
+        "(Ljava/lang/reflect/Constructor;)V",
+        "call",
+        "",
+        "args",
+        "",
+        "([Ljava/lang/Object;)Ljava/lang/Object;",
+        "kotlin-reflection"
+    }
+    k = 0x1
+    mv = {
+        0x1,
+        0x5,
+        0x1
+    }
+.end annotation
+
 
 # direct methods
 .method public constructor <init>(Ljava/lang/reflect/Constructor;)V
@@ -109,7 +134,9 @@
 
     invoke-virtual {p0, p1}, Lkotlin/reflect/jvm/internal/calls/CallerImpl;->checkArguments([Ljava/lang/Object;)V
 
-    iget-object v0, p0, Lkotlin/reflect/jvm/internal/calls/CallerImpl;->member:Ljava/lang/reflect/Member;
+    invoke-virtual {p0}, Lkotlin/reflect/jvm/internal/calls/CallerImpl;->getMember()Ljava/lang/reflect/Member;
+
+    move-result-object v0
 
     check-cast v0, Ljava/lang/reflect/Constructor;
 

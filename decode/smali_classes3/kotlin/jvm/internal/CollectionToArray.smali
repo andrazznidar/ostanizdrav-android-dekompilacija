@@ -5,7 +5,7 @@
 
 # annotations
 .annotation system Ldalvik/annotation/SourceDebugExtension;
-    value = "SMAP\nCollectionToArray.kt\nKotlin\n*S Kotlin\n*F\n+ 1 CollectionToArray.kt\nkotlin/jvm/internal/CollectionToArray\n*L\n1#1,82:1\n57#1,23:83\n57#1,23:106\n*S KotlinDebug\n*F\n+ 1 CollectionToArray.kt\nkotlin/jvm/internal/CollectionToArray\n*L\n19#1:83,23\n31#1:106,23\n*E\n"
+    value = "SMAP\nCollectionToArray.kt\nKotlin\n*S Kotlin\n*F\n+ 1 CollectionToArray.kt\nkotlin/jvm/internal/CollectionToArray\n+ 2 ArrayIntrinsics.kt\nkotlin/ArrayIntrinsicsKt\n*L\n1#1,82:1\n57#1,22:83\n57#1,22:105\n26#2:127\n*S KotlinDebug\n*F\n+ 1 CollectionToArray.kt\nkotlin/jvm/internal/CollectionToArray\n*L\n19#1:83,22\n31#1:105,22\n14#1:127\n*E\n"
 .end annotation
 
 
@@ -119,7 +119,7 @@
 
     move-result-object v0
 
-    const-string v1, "Arrays.copyOf(result, newSize)"
+    const-string v1, "copyOf(result, newSize)"
 
     invoke-static {v0, v1}, Lkotlin/jvm/internal/Intrinsics;->checkNotNullExpressionValue(Ljava/lang/Object;Ljava/lang/String;)V
 
@@ -136,7 +136,7 @@
 
     move-result-object p0
 
-    const-string v0, "Arrays.copyOf(result, size)"
+    const-string v0, "copyOf(result, size)"
 
     invoke-static {p0, v0}, Lkotlin/jvm/internal/Intrinsics;->checkNotNullExpressionValue(Ljava/lang/Object;Ljava/lang/String;)V
 
@@ -162,8 +162,6 @@
             "Ljava/lang/Object;"
         }
     .end annotation
-
-    invoke-static {p1}, Ljava/util/Objects;->requireNonNull(Ljava/lang/Object;)Ljava/lang/Object;
 
     invoke-interface {p0}, Ljava/util/Collection;->size()I
 
@@ -283,7 +281,7 @@
 
     move-result-object v0
 
-    const-string v2, "Arrays.copyOf(result, newSize)"
+    const-string v2, "copyOf(result, newSize)"
 
     invoke-static {v0, v2}, Lkotlin/jvm/internal/Intrinsics;->checkNotNullExpressionValue(Ljava/lang/Object;Ljava/lang/String;)V
 
@@ -307,7 +305,7 @@
 
     move-result-object p1
 
-    const-string p0, "Arrays.copyOf(result, size)"
+    const-string p0, "copyOf(result, size)"
 
     invoke-static {p1, p0}, Lkotlin/jvm/internal/Intrinsics;->checkNotNullExpressionValue(Ljava/lang/Object;Ljava/lang/String;)V
 

@@ -145,7 +145,7 @@
 
     invoke-direct {p4}, Landroid/animation/AnimatorSet;-><init>()V
 
-    invoke-static {p4, p1}, Lcom/google/android/material/animation/AnimatorSetCompat;->playTogether(Landroid/animation/AnimatorSet;Ljava/util/List;)V
+    invoke-static {p4, p1}, Lboofcv/alg/shapes/polygon/UtilShapePolygon;->playTogether(Landroid/animation/AnimatorSet;Ljava/util/List;)V
 
     new-instance p1, Lcom/google/android/material/transformation/FabTransformationScrimBehavior$1;
 

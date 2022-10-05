@@ -77,13 +77,13 @@
     return v2
 
     :cond_1
-    invoke-virtual {p0}, Lde/rki/coronawarnapp/covidcertificate/common/repository/CertificateContainerId;->getIdentifier()Ljava/lang/String;
+    invoke-virtual {p0}, Lde/rki/coronawarnapp/covidcertificate/common/repository/CertificateContainerId;->getQrCodeHash()Ljava/lang/String;
 
     move-result-object v1
 
     check-cast p1, Lde/rki/coronawarnapp/covidcertificate/common/repository/CertificateContainerId;
 
-    invoke-virtual {p1}, Lde/rki/coronawarnapp/covidcertificate/common/repository/CertificateContainerId;->getIdentifier()Ljava/lang/String;
+    invoke-virtual {p1}, Lde/rki/coronawarnapp/covidcertificate/common/repository/CertificateContainerId;->getQrCodeHash()Ljava/lang/String;
 
     move-result-object v3
 
@@ -112,13 +112,13 @@
     return v0
 .end method
 
-.method public abstract getIdentifier()Ljava/lang/String;
+.method public abstract getQrCodeHash()Ljava/lang/String;
 .end method
 
 .method public hashCode()I
     .locals 2
 
-    invoke-virtual {p0}, Lde/rki/coronawarnapp/covidcertificate/common/repository/CertificateContainerId;->getIdentifier()Ljava/lang/String;
+    invoke-virtual {p0}, Lde/rki/coronawarnapp/covidcertificate/common/repository/CertificateContainerId;->getQrCodeHash()Ljava/lang/String;
 
     move-result-object v0
 
@@ -130,7 +130,7 @@
 
     iget-object v1, p0, Lde/rki/coronawarnapp/covidcertificate/common/repository/CertificateContainerId;->idType:Lkotlin/reflect/KClass;
 
-    invoke-interface {v1}, Lkotlin/reflect/KClass;->hashCode()I
+    invoke-virtual {v1}, Ljava/lang/Object;->hashCode()I
 
     move-result v1
 

@@ -70,6 +70,28 @@
 
 
 # virtual methods
+.method public final create(Lkotlin/coroutines/Continuation;)Lkotlin/coroutines/Continuation;
+    .locals 2
+    .annotation system Ldalvik/annotation/Signature;
+        value = {
+            "(",
+            "Lkotlin/coroutines/Continuation<",
+            "*>;)",
+            "Lkotlin/coroutines/Continuation<",
+            "Lkotlin/Unit;",
+            ">;"
+        }
+    .end annotation
+
+    new-instance v0, Lde/rki/coronawarnapp/playbook/OrganizerPlaybook$submit$3;
+
+    iget-object v1, p0, Lde/rki/coronawarnapp/playbook/OrganizerPlaybook$submit$3;->this$0:Lde/rki/coronawarnapp/playbook/OrganizerPlaybook;
+
+    invoke-direct {v0, v1, p1}, Lde/rki/coronawarnapp/playbook/OrganizerPlaybook$submit$3;-><init>(Lde/rki/coronawarnapp/playbook/OrganizerPlaybook;Lkotlin/coroutines/Continuation;)V
+
+    return-object v0
+.end method
+
 .method public invoke(Ljava/lang/Object;)Ljava/lang/Object;
     .locals 2
 

@@ -86,15 +86,6 @@
 # direct methods
 .method public static bridge synthetic -$$Nest$maddAllCheckInProtectedReports(Lde/rki/coronawarnapp/server/protocols/internal/pt/TraceWarning$TraceWarningPackage;Ljava/lang/Iterable;)V
     .locals 0
-    .annotation system Ldalvik/annotation/Signature;
-        value = {
-            "(",
-            "Ljava/lang/Iterable<",
-            "+",
-            "Lde/rki/coronawarnapp/server/protocols/internal/pt/CheckInOuterClass$CheckInProtectedReport;",
-            ">;)V"
-        }
-    .end annotation
 
     invoke-direct {p0, p1}, Lde/rki/coronawarnapp/server/protocols/internal/pt/TraceWarning$TraceWarningPackage;->addAllCheckInProtectedReports(Ljava/lang/Iterable;)V
 
@@ -103,15 +94,6 @@
 
 .method public static bridge synthetic -$$Nest$maddAllTimeIntervalWarnings(Lde/rki/coronawarnapp/server/protocols/internal/pt/TraceWarning$TraceWarningPackage;Ljava/lang/Iterable;)V
     .locals 0
-    .annotation system Ldalvik/annotation/Signature;
-        value = {
-            "(",
-            "Ljava/lang/Iterable<",
-            "+",
-            "Lde/rki/coronawarnapp/server/protocols/internal/pt/TraceWarning$TraceTimeIntervalWarning;",
-            ">;)V"
-        }
-    .end annotation
 
     invoke-direct {p0, p1}, Lde/rki/coronawarnapp/server/protocols/internal/pt/TraceWarning$TraceWarningPackage;->addAllTimeIntervalWarnings(Ljava/lang/Iterable;)V
 
@@ -286,7 +268,7 @@
     return-void
 .end method
 
-.method public static synthetic -$$Nest$sfgetDEFAULT_INSTANCE()Lde/rki/coronawarnapp/server/protocols/internal/pt/TraceWarning$TraceWarningPackage;
+.method public static bridge synthetic -$$Nest$sfgetDEFAULT_INSTANCE()Lde/rki/coronawarnapp/server/protocols/internal/pt/TraceWarning$TraceWarningPackage;
     .locals 1
 
     sget-object v0, Lde/rki/coronawarnapp/server/protocols/internal/pt/TraceWarning$TraceWarningPackage;->DEFAULT_INSTANCE:Lde/rki/coronawarnapp/server/protocols/internal/pt/TraceWarning$TraceWarningPackage;

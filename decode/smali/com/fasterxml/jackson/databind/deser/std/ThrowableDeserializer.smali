@@ -72,7 +72,7 @@
 
     const/4 v2, 0x0
 
-    if-nez v0, :cond_f
+    if-nez v0, :cond_10
 
     iget-object v0, p0, Lcom/fasterxml/jackson/databind/deser/BeanDeserializerBase;->_valueInstantiator:Lcom/fasterxml/jackson/databind/deser/ValueInstantiator;
 
@@ -119,34 +119,36 @@
 
     move-object v4, v3
 
+    move-object v6, v4
+
     :goto_1
-    sget-object v6, Lcom/fasterxml/jackson/core/JsonToken;->END_OBJECT:Lcom/fasterxml/jackson/core/JsonToken;
+    sget-object v7, Lcom/fasterxml/jackson/core/JsonToken;->END_OBJECT:Lcom/fasterxml/jackson/core/JsonToken;
 
-    invoke-virtual {p1, v6}, Lcom/fasterxml/jackson/core/JsonParser;->hasToken(Lcom/fasterxml/jackson/core/JsonToken;)Z
+    invoke-virtual {p1, v7}, Lcom/fasterxml/jackson/core/JsonParser;->hasToken(Lcom/fasterxml/jackson/core/JsonToken;)Z
 
-    move-result v6
+    move-result v7
 
-    if-nez v6, :cond_c
+    if-nez v7, :cond_b
 
     invoke-virtual {p1}, Lcom/fasterxml/jackson/core/JsonParser;->currentName()Ljava/lang/String;
 
-    move-result-object v6
-
-    iget-object v7, p0, Lcom/fasterxml/jackson/databind/deser/BeanDeserializerBase;->_beanProperties:Lcom/fasterxml/jackson/databind/deser/impl/BeanPropertyMap;
-
-    invoke-virtual {v7, v6}, Lcom/fasterxml/jackson/databind/deser/impl/BeanPropertyMap;->find(Ljava/lang/String;)Lcom/fasterxml/jackson/databind/deser/SettableBeanProperty;
-
     move-result-object v7
+
+    iget-object v8, p0, Lcom/fasterxml/jackson/databind/deser/BeanDeserializerBase;->_beanProperties:Lcom/fasterxml/jackson/databind/deser/impl/BeanPropertyMap;
+
+    invoke-virtual {v8, v7}, Lcom/fasterxml/jackson/databind/deser/impl/BeanPropertyMap;->find(Ljava/lang/String;)Lcom/fasterxml/jackson/databind/deser/SettableBeanProperty;
+
+    move-result-object v8
 
     invoke-virtual {p1}, Lcom/fasterxml/jackson/core/JsonParser;->nextToken()Lcom/fasterxml/jackson/core/JsonToken;
 
-    if-eqz v7, :cond_6
+    if-eqz v8, :cond_6
 
     if-eqz v3, :cond_4
 
-    invoke-virtual {v7, p1, p2, v3}, Lcom/fasterxml/jackson/databind/deser/SettableBeanProperty;->deserializeAndSet(Lcom/fasterxml/jackson/core/JsonParser;Lcom/fasterxml/jackson/databind/DeserializationContext;Ljava/lang/Object;)V
+    invoke-virtual {v8, p1, p2, v3}, Lcom/fasterxml/jackson/databind/deser/SettableBeanProperty;->deserializeAndSet(Lcom/fasterxml/jackson/core/JsonParser;Lcom/fasterxml/jackson/databind/DeserializationContext;Ljava/lang/Object;)V
 
-    goto :goto_3
+    goto :goto_2
 
     :cond_4
     if-nez v4, :cond_5
@@ -160,28 +162,28 @@
     new-array v4, v4, [Ljava/lang/Object;
 
     :cond_5
-    add-int/lit8 v6, v5, 0x1
+    add-int/lit8 v7, v5, 0x1
 
-    aput-object v7, v4, v5
+    aput-object v8, v4, v5
 
-    add-int/lit8 v5, v6, 0x1
+    add-int/lit8 v5, v7, 0x1
 
-    invoke-virtual {v7, p1, p2}, Lcom/fasterxml/jackson/databind/deser/SettableBeanProperty;->deserialize(Lcom/fasterxml/jackson/core/JsonParser;Lcom/fasterxml/jackson/databind/DeserializationContext;)Ljava/lang/Object;
+    invoke-virtual {v8, p1, p2}, Lcom/fasterxml/jackson/databind/deser/SettableBeanProperty;->deserialize(Lcom/fasterxml/jackson/core/JsonParser;Lcom/fasterxml/jackson/databind/DeserializationContext;)Ljava/lang/Object;
 
-    move-result-object v7
+    move-result-object v8
 
-    aput-object v7, v4, v6
+    aput-object v8, v4, v7
 
-    goto :goto_3
+    goto :goto_2
 
     :cond_6
-    const-string v7, "message"
+    const-string v8, "message"
 
-    invoke-virtual {v7, v6}, Ljava/lang/String;->equals(Ljava/lang/Object;)Z
+    invoke-virtual {v8, v7}, Ljava/lang/String;->equals(Ljava/lang/Object;)Z
 
-    move-result v7
+    move-result v8
 
-    if-eqz v7, :cond_8
+    if-eqz v8, :cond_7
 
     if-eqz v0, :cond_8
 
@@ -189,75 +191,71 @@
 
     invoke-virtual {p1}, Lcom/fasterxml/jackson/core/JsonParser;->getValueAsString()Ljava/lang/String;
 
-    move-result-object v6
+    move-result-object v7
 
-    invoke-virtual {v3, p2, v6}, Lcom/fasterxml/jackson/databind/deser/ValueInstantiator;->createFromString(Lcom/fasterxml/jackson/databind/DeserializationContext;Ljava/lang/String;)Ljava/lang/Object;
+    invoke-virtual {v3, p2, v7}, Lcom/fasterxml/jackson/databind/deser/ValueInstantiator;->createFromString(Lcom/fasterxml/jackson/databind/DeserializationContext;Ljava/lang/String;)Ljava/lang/Object;
 
     move-result-object v3
 
-    if-eqz v4, :cond_b
-
-    move v6, v1
-
-    :goto_2
-    if-ge v6, v5, :cond_7
-
-    aget-object v7, v4, v6
-
-    check-cast v7, Lcom/fasterxml/jackson/databind/deser/SettableBeanProperty;
-
-    add-int/lit8 v8, v6, 0x1
-
-    aget-object v8, v4, v8
-
-    invoke-virtual {v7, v3, v8}, Lcom/fasterxml/jackson/databind/deser/SettableBeanProperty;->set(Ljava/lang/Object;Ljava/lang/Object;)V
-
-    add-int/lit8 v6, v6, 0x2
+    check-cast v3, Ljava/lang/Throwable;
 
     goto :goto_2
 
     :cond_7
-    move-object v4, v2
+    const-string/jumbo v8, "suppressed"
 
-    goto :goto_3
+    invoke-virtual {v8, v7}, Ljava/lang/String;->equals(Ljava/lang/Object;)Z
+
+    move-result v8
+
+    if-eqz v8, :cond_8
+
+    const-class v6, [Ljava/lang/Throwable;
+
+    invoke-virtual {p2, p1, v6}, Lcom/fasterxml/jackson/databind/DeserializationContext;->readValue(Lcom/fasterxml/jackson/core/JsonParser;Ljava/lang/Class;)Ljava/lang/Object;
+
+    move-result-object v6
+
+    check-cast v6, [Ljava/lang/Throwable;
+
+    goto :goto_2
 
     :cond_8
-    iget-object v7, p0, Lcom/fasterxml/jackson/databind/deser/BeanDeserializerBase;->_ignorableProps:Ljava/util/Set;
+    iget-object v8, p0, Lcom/fasterxml/jackson/databind/deser/BeanDeserializerBase;->_ignorableProps:Ljava/util/Set;
 
-    if-eqz v7, :cond_9
+    if-eqz v8, :cond_9
 
-    invoke-interface {v7, v6}, Ljava/util/Set;->contains(Ljava/lang/Object;)Z
+    invoke-interface {v8, v7}, Ljava/util/Set;->contains(Ljava/lang/Object;)Z
 
-    move-result v7
+    move-result v8
 
-    if-eqz v7, :cond_9
+    if-eqz v8, :cond_9
 
     invoke-virtual {p1}, Lcom/fasterxml/jackson/core/JsonParser;->skipChildren()Lcom/fasterxml/jackson/core/JsonParser;
 
-    goto :goto_3
+    goto :goto_2
 
     :cond_9
-    iget-object v7, p0, Lcom/fasterxml/jackson/databind/deser/BeanDeserializerBase;->_anySetter:Lcom/fasterxml/jackson/databind/deser/SettableAnyProperty;
+    iget-object v8, p0, Lcom/fasterxml/jackson/databind/deser/BeanDeserializerBase;->_anySetter:Lcom/fasterxml/jackson/databind/deser/SettableAnyProperty;
 
-    if-eqz v7, :cond_a
+    if-eqz v8, :cond_a
 
-    invoke-virtual {v7, p1, p2, v3, v6}, Lcom/fasterxml/jackson/databind/deser/SettableAnyProperty;->deserializeAndSet(Lcom/fasterxml/jackson/core/JsonParser;Lcom/fasterxml/jackson/databind/DeserializationContext;Ljava/lang/Object;Ljava/lang/String;)V
+    invoke-virtual {v8, p1, p2, v3, v7}, Lcom/fasterxml/jackson/databind/deser/SettableAnyProperty;->deserializeAndSet(Lcom/fasterxml/jackson/core/JsonParser;Lcom/fasterxml/jackson/databind/DeserializationContext;Ljava/lang/Object;Ljava/lang/String;)V
 
-    goto :goto_3
+    goto :goto_2
 
     :cond_a
-    invoke-virtual {p0, p1, p2, v3, v6}, Lcom/fasterxml/jackson/databind/deser/BeanDeserializerBase;->handleUnknownProperty(Lcom/fasterxml/jackson/core/JsonParser;Lcom/fasterxml/jackson/databind/DeserializationContext;Ljava/lang/Object;Ljava/lang/String;)V
+    invoke-virtual {p0, p1, p2, v3, v7}, Lcom/fasterxml/jackson/databind/deser/BeanDeserializerBase;->handleUnknownProperty(Lcom/fasterxml/jackson/core/JsonParser;Lcom/fasterxml/jackson/databind/DeserializationContext;Ljava/lang/Object;Ljava/lang/String;)V
 
-    :cond_b
-    :goto_3
+    :goto_2
     invoke-virtual {p1}, Lcom/fasterxml/jackson/core/JsonParser;->nextToken()Lcom/fasterxml/jackson/core/JsonToken;
 
     goto :goto_1
 
-    :cond_c
-    if-nez v3, :cond_e
+    :cond_b
+    if-nez v3, :cond_d
 
-    if-eqz v0, :cond_d
+    if-eqz v0, :cond_c
 
     iget-object p1, p0, Lcom/fasterxml/jackson/databind/deser/BeanDeserializerBase;->_valueInstantiator:Lcom/fasterxml/jackson/databind/deser/ValueInstantiator;
 
@@ -265,41 +263,66 @@
 
     move-result-object p1
 
-    goto :goto_4
+    move-object v3, p1
 
-    :cond_d
+    check-cast v3, Ljava/lang/Throwable;
+
+    goto :goto_3
+
+    :cond_c
     iget-object p1, p0, Lcom/fasterxml/jackson/databind/deser/BeanDeserializerBase;->_valueInstantiator:Lcom/fasterxml/jackson/databind/deser/ValueInstantiator;
 
     invoke-virtual {p1, p2}, Lcom/fasterxml/jackson/databind/deser/ValueInstantiator;->createUsingDefault(Lcom/fasterxml/jackson/databind/DeserializationContext;)Ljava/lang/Object;
 
     move-result-object p1
 
-    :goto_4
     move-object v3, p1
 
+    check-cast v3, Ljava/lang/Throwable;
+
+    :cond_d
+    :goto_3
     if-eqz v4, :cond_e
 
+    move p1, v1
+
+    :goto_4
+    if-ge p1, v5, :cond_e
+
+    aget-object p2, v4, p1
+
+    check-cast p2, Lcom/fasterxml/jackson/databind/deser/SettableBeanProperty;
+
+    add-int/lit8 v0, p1, 0x1
+
+    aget-object v0, v4, v0
+
+    invoke-virtual {p2, v3, v0}, Lcom/fasterxml/jackson/databind/deser/SettableBeanProperty;->set(Ljava/lang/Object;Ljava/lang/Object;)V
+
+    add-int/lit8 p1, p1, 0x2
+
+    goto :goto_4
+
+    :cond_e
+    if-eqz v6, :cond_f
+
+    array-length p1, v6
+
     :goto_5
-    if-ge v1, v5, :cond_e
+    if-ge v1, p1, :cond_f
 
-    aget-object p1, v4, v1
+    aget-object p2, v6, v1
 
-    check-cast p1, Lcom/fasterxml/jackson/databind/deser/SettableBeanProperty;
+    invoke-virtual {v3, p2}, Ljava/lang/Throwable;->addSuppressed(Ljava/lang/Throwable;)V
 
-    add-int/lit8 p2, v1, 0x1
-
-    aget-object p2, v4, p2
-
-    invoke-virtual {p1, v3, p2}, Lcom/fasterxml/jackson/databind/deser/SettableBeanProperty;->set(Ljava/lang/Object;Ljava/lang/Object;)V
-
-    add-int/lit8 v1, v1, 0x2
+    add-int/lit8 v1, v1, 0x1
 
     goto :goto_5
 
-    :cond_e
+    :cond_f
     return-object v3
 
-    :cond_f
+    :cond_10
     iget-object v0, p0, Lcom/fasterxml/jackson/databind/deser/BeanDeserializerBase;->_beanType:Lcom/fasterxml/jackson/databind/JavaType;
 
     iget-object v4, v0, Lcom/fasterxml/jackson/databind/JavaType;->_class:Ljava/lang/Class;

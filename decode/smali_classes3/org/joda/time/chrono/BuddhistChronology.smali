@@ -113,7 +113,7 @@
 
     new-instance v2, Lorg/joda/time/chrono/BuddhistChronology;
 
-    invoke-static {v1, v12, v11}, Lorg/joda/time/chrono/LimitChronology;->getInstance(Lorg/joda/time/Chronology;Lorg/joda/time/base/AbstractDateTime;Lorg/joda/time/base/AbstractDateTime;)Lorg/joda/time/chrono/LimitChronology;
+    invoke-static {v1, v12, v11}, Lorg/joda/time/chrono/LimitChronology;->getInstance(Lorg/joda/time/Chronology;Lorg/joda/time/ReadableDateTime;Lorg/joda/time/ReadableDateTime;)Lorg/joda/time/chrono/LimitChronology;
 
     move-result-object v1
 
@@ -162,11 +162,9 @@
 
     new-instance v1, Lorg/joda/time/field/OffsetDateTimeField;
 
-    new-instance v2, Lorg/joda/time/field/SkipDateTimeField;
+    new-instance v2, Lorg/joda/time/field/SkipUndoDateTimeField;
 
-    const/4 v3, 0x1
-
-    invoke-direct {v2, p0, v0, v3}, Lorg/joda/time/field/SkipDateTimeField;-><init>(Lorg/joda/time/Chronology;Lorg/joda/time/DateTimeField;I)V
+    invoke-direct {v2, p0, v0}, Lorg/joda/time/field/SkipUndoDateTimeField;-><init>(Lorg/joda/time/Chronology;Lorg/joda/time/DateTimeField;)V
 
     const/16 v0, 0x21f
 
@@ -176,13 +174,13 @@
 
     new-instance v2, Lorg/joda/time/field/DelegatedDateTimeField;
 
-    iget-object v4, p1, Lorg/joda/time/chrono/AssembledChronology$Fields;->eras:Lorg/joda/time/DurationField;
+    iget-object v3, p1, Lorg/joda/time/chrono/AssembledChronology$Fields;->eras:Lorg/joda/time/DurationField;
 
-    sget-object v5, Lorg/joda/time/DateTimeFieldType;->ERA_TYPE:Lorg/joda/time/DateTimeFieldType;
+    sget-object v4, Lorg/joda/time/DateTimeFieldType;->ERA_TYPE:Lorg/joda/time/DateTimeFieldType;
 
-    sget-object v5, Lorg/joda/time/DateTimeFieldType;->YEAR_OF_ERA_TYPE:Lorg/joda/time/DateTimeFieldType;
+    sget-object v4, Lorg/joda/time/DateTimeFieldType;->YEAR_OF_ERA_TYPE:Lorg/joda/time/DateTimeFieldType;
 
-    invoke-direct {v2, v1, v4, v5}, Lorg/joda/time/field/DelegatedDateTimeField;-><init>(Lorg/joda/time/DateTimeField;Lorg/joda/time/DurationField;Lorg/joda/time/DateTimeFieldType;)V
+    invoke-direct {v2, v1, v3, v4}, Lorg/joda/time/field/DelegatedDateTimeField;-><init>(Lorg/joda/time/DateTimeField;Lorg/joda/time/DurationField;Lorg/joda/time/DateTimeFieldType;)V
 
     iput-object v2, p1, Lorg/joda/time/chrono/AssembledChronology$Fields;->yearOfEra:Lorg/joda/time/DateTimeField;
 
@@ -190,11 +188,11 @@
 
     new-instance v2, Lorg/joda/time/field/OffsetDateTimeField;
 
-    new-instance v4, Lorg/joda/time/field/SkipDateTimeField;
+    new-instance v3, Lorg/joda/time/field/SkipUndoDateTimeField;
 
-    invoke-direct {v4, p0, v1, v3}, Lorg/joda/time/field/SkipDateTimeField;-><init>(Lorg/joda/time/Chronology;Lorg/joda/time/DateTimeField;I)V
+    invoke-direct {v3, p0, v1}, Lorg/joda/time/field/SkipUndoDateTimeField;-><init>(Lorg/joda/time/Chronology;Lorg/joda/time/DateTimeField;)V
 
-    invoke-direct {v2, v4, v0}, Lorg/joda/time/field/OffsetDateTimeField;-><init>(Lorg/joda/time/DateTimeField;I)V
+    invoke-direct {v2, v3, v0}, Lorg/joda/time/field/OffsetDateTimeField;-><init>(Lorg/joda/time/DateTimeField;I)V
 
     iput-object v2, p1, Lorg/joda/time/chrono/AssembledChronology$Fields;->weekyear:Lorg/joda/time/DateTimeField;
 
@@ -210,11 +208,11 @@
 
     iget-object v2, p1, Lorg/joda/time/chrono/AssembledChronology$Fields;->eras:Lorg/joda/time/DurationField;
 
-    sget-object v4, Lorg/joda/time/DateTimeFieldType;->CENTURY_OF_ERA_TYPE:Lorg/joda/time/DateTimeFieldType;
+    sget-object v3, Lorg/joda/time/DateTimeFieldType;->CENTURY_OF_ERA_TYPE:Lorg/joda/time/DateTimeFieldType;
 
-    const/16 v5, 0x64
+    const/16 v4, 0x64
 
-    invoke-direct {v1, v0, v2, v4, v5}, Lorg/joda/time/field/DividedDateTimeField;-><init>(Lorg/joda/time/DateTimeField;Lorg/joda/time/DurationField;Lorg/joda/time/DateTimeFieldType;I)V
+    invoke-direct {v1, v0, v2, v3, v4}, Lorg/joda/time/field/DividedDateTimeField;-><init>(Lorg/joda/time/DateTimeField;Lorg/joda/time/DurationField;Lorg/joda/time/DateTimeFieldType;I)V
 
     iput-object v1, p1, Lorg/joda/time/chrono/AssembledChronology$Fields;->centuryOfEra:Lorg/joda/time/DateTimeField;
 
@@ -224,8 +222,6 @@
 
     new-instance v0, Lorg/joda/time/field/RemainderDateTimeField;
 
-    check-cast v1, Lorg/joda/time/field/DividedDateTimeField;
-
     iget-object v2, v1, Lorg/joda/time/field/BaseDateTimeField;->iType:Lorg/joda/time/DateTimeFieldType;
 
     invoke-direct {v0, v1, v2}, Lorg/joda/time/field/RemainderDateTimeField;-><init>(Lorg/joda/time/field/DividedDateTimeField;Lorg/joda/time/DateTimeFieldType;)V
@@ -233,6 +229,8 @@
     new-instance v1, Lorg/joda/time/field/OffsetDateTimeField;
 
     sget-object v2, Lorg/joda/time/DateTimeFieldType;->YEAR_OF_CENTURY_TYPE:Lorg/joda/time/DateTimeFieldType;
+
+    const/4 v3, 0x1
 
     invoke-direct {v1, v0, v2, v3}, Lorg/joda/time/field/OffsetDateTimeField;-><init>(Lorg/joda/time/DateTimeField;Lorg/joda/time/DateTimeFieldType;I)V
 
@@ -244,13 +242,13 @@
 
     iget-object v2, p1, Lorg/joda/time/chrono/AssembledChronology$Fields;->centuries:Lorg/joda/time/DurationField;
 
-    sget-object v4, Lorg/joda/time/DateTimeFieldType;->WEEKYEAR_OF_CENTURY_TYPE:Lorg/joda/time/DateTimeFieldType;
+    sget-object v5, Lorg/joda/time/DateTimeFieldType;->WEEKYEAR_OF_CENTURY_TYPE:Lorg/joda/time/DateTimeFieldType;
 
-    invoke-direct {v0, v1, v2, v4, v5}, Lorg/joda/time/field/RemainderDateTimeField;-><init>(Lorg/joda/time/DateTimeField;Lorg/joda/time/DurationField;Lorg/joda/time/DateTimeFieldType;I)V
+    invoke-direct {v0, v1, v2, v5, v4}, Lorg/joda/time/field/RemainderDateTimeField;-><init>(Lorg/joda/time/DateTimeField;Lorg/joda/time/DurationField;Lorg/joda/time/DateTimeFieldType;I)V
 
     new-instance v1, Lorg/joda/time/field/OffsetDateTimeField;
 
-    invoke-direct {v1, v0, v4, v3}, Lorg/joda/time/field/OffsetDateTimeField;-><init>(Lorg/joda/time/DateTimeField;Lorg/joda/time/DateTimeFieldType;I)V
+    invoke-direct {v1, v0, v5, v3}, Lorg/joda/time/field/OffsetDateTimeField;-><init>(Lorg/joda/time/DateTimeField;Lorg/joda/time/DateTimeFieldType;I)V
 
     iput-object v1, p1, Lorg/joda/time/chrono/AssembledChronology$Fields;->weekyearOfCentury:Lorg/joda/time/DateTimeField;
 

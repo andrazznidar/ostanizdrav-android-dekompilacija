@@ -39,13 +39,9 @@
 
     if-eqz v1, :cond_0
 
-    iget-object v2, v1, Lcom/google/android/play/core/internal/zzaj;->zza:Ljava/lang/Object;
+    iget-object v2, v1, Lcom/google/android/play/core/internal/zzaj;->zza:Lcom/google/android/play/core/internal/zzas;
 
-    check-cast v2, Lcom/google/android/play/core/internal/zzas;
-
-    iget-object v1, v1, Lcom/google/android/play/core/internal/zzaj;->zzb:Ljava/lang/Object;
-
-    check-cast v1, Lcom/google/android/play/core/tasks/zzi;
+    iget-object v1, v1, Lcom/google/android/play/core/internal/zzaj;->zzb:Lcom/google/android/play/core/tasks/zzi;
 
     iget-object v3, v2, Lcom/google/android/play/core/internal/zzas;->zzg:Ljava/lang/Object;
 

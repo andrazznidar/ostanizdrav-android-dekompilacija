@@ -17,7 +17,7 @@
 # static fields
 .field public static final synthetic $$INSTANCE:Lkotlin/reflect/jvm/internal/impl/resolve/scopes/MemberScope$Companion;
 
-.field public static final ALL_NAME_FILTER:Lkotlin/jvm/functions/Function1;
+.field private static final ALL_NAME_FILTER:Lkotlin/jvm/functions/Function1;
     .annotation system Ldalvik/annotation/Signature;
         value = {
             "Lkotlin/jvm/functions/Function1<",
@@ -46,10 +46,29 @@
     return-void
 .end method
 
-.method public constructor <init>()V
+.method private constructor <init>()V
     .locals 0
 
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
     return-void
+.end method
+
+
+# virtual methods
+.method public final getALL_NAME_FILTER()Lkotlin/jvm/functions/Function1;
+    .locals 1
+    .annotation system Ldalvik/annotation/Signature;
+        value = {
+            "()",
+            "Lkotlin/jvm/functions/Function1<",
+            "Lkotlin/reflect/jvm/internal/impl/name/Name;",
+            "Ljava/lang/Boolean;",
+            ">;"
+        }
+    .end annotation
+
+    sget-object v0, Lkotlin/reflect/jvm/internal/impl/resolve/scopes/MemberScope$Companion;->ALL_NAME_FILTER:Lkotlin/jvm/functions/Function1;
+
+    return-object v0
 .end method

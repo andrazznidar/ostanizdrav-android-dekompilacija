@@ -3,7 +3,7 @@
 .source "MapBuilder.kt"
 
 # interfaces
-.implements Lkotlin/jvm/internal/markers/KMutableCollection;
+.implements Lkotlin/jvm/internal/markers/KMappedMarker;
 
 
 # annotations
@@ -12,10 +12,10 @@
         "<V:",
         "Ljava/lang/Object;",
         ">",
+        "Ljava/util/AbstractCollection<",
         "Ljava/lang/Object;",
-        "Ljava/util/Collection<",
-        "TV;>;",
-        "Lkotlin/jvm/internal/markers/KMutableCollection;"
+        ">;",
+        "Lkotlin/jvm/internal/markers/KMappedMarker;"
     }
 .end annotation
 

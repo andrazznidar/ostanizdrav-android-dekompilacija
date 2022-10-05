@@ -89,84 +89,6 @@
     return-object p1
 .end method
 
-.method public Add(Ljava/lang/Object;Ljava/lang/Object;Lcom/upokecenter/numbers/EContext;)Ljava/lang/Object;
-    .locals 2
-    .annotation system Ldalvik/annotation/Signature;
-        value = {
-            "(TT;TT;",
-            "Lcom/upokecenter/numbers/EContext;",
-            ")TT;"
-        }
-    .end annotation
-
-    if-nez p3, :cond_0
-
-    move-object v0, p3
-
-    goto :goto_0
-
-    :cond_0
-    invoke-virtual {p3}, Lcom/upokecenter/numbers/EContext;->GetNontrapping()Lcom/upokecenter/numbers/EContext;
-
-    move-result-object v0
-
-    :goto_0
-    iget-object v1, p0, Lcom/upokecenter/numbers/TrappableRadixMath;->math:Lcom/upokecenter/numbers/IRadixMath;
-
-    invoke-interface {v1, p1, p2, v0}, Lcom/upokecenter/numbers/IRadixMath;->Add(Ljava/lang/Object;Ljava/lang/Object;Lcom/upokecenter/numbers/EContext;)Ljava/lang/Object;
-
-    move-result-object p1
-
-    if-nez p3, :cond_1
-
-    goto :goto_1
-
-    :cond_1
-    invoke-virtual {p3, p1, v0}, Lcom/upokecenter/numbers/EContext;->TriggerTraps(Ljava/lang/Object;Lcom/upokecenter/numbers/EContext;)Ljava/lang/Object;
-
-    :goto_1
-    return-object p1
-.end method
-
-.method public AddEx(Ljava/lang/Object;Ljava/lang/Object;Lcom/upokecenter/numbers/EContext;Z)Ljava/lang/Object;
-    .locals 2
-    .annotation system Ldalvik/annotation/Signature;
-        value = {
-            "(TT;TT;",
-            "Lcom/upokecenter/numbers/EContext;",
-            "Z)TT;"
-        }
-    .end annotation
-
-    if-nez p3, :cond_0
-
-    move-object v0, p3
-
-    goto :goto_0
-
-    :cond_0
-    invoke-virtual {p3}, Lcom/upokecenter/numbers/EContext;->GetNontrapping()Lcom/upokecenter/numbers/EContext;
-
-    move-result-object v0
-
-    :goto_0
-    iget-object v1, p0, Lcom/upokecenter/numbers/TrappableRadixMath;->math:Lcom/upokecenter/numbers/IRadixMath;
-
-    invoke-interface {v1, p1, p2, p3, p4}, Lcom/upokecenter/numbers/IRadixMath;->AddEx(Ljava/lang/Object;Ljava/lang/Object;Lcom/upokecenter/numbers/EContext;Z)Ljava/lang/Object;
-
-    move-result-object p1
-
-    if-nez p3, :cond_1
-
-    goto :goto_1
-
-    :cond_1
-    invoke-virtual {p3, p1, v0}, Lcom/upokecenter/numbers/EContext;->TriggerTraps(Ljava/lang/Object;Lcom/upokecenter/numbers/EContext;)Ljava/lang/Object;
-
-    :goto_1
-    return-object p1
-.end method
-
 .method public Divide(Ljava/lang/Object;Ljava/lang/Object;Lcom/upokecenter/numbers/EContext;)Ljava/lang/Object;
     .locals 2
     .annotation system Ldalvik/annotation/Signature;
@@ -225,45 +147,6 @@
     return-object v0
 .end method
 
-.method public Multiply(Ljava/lang/Object;Ljava/lang/Object;Lcom/upokecenter/numbers/EContext;)Ljava/lang/Object;
-    .locals 2
-    .annotation system Ldalvik/annotation/Signature;
-        value = {
-            "(TT;TT;",
-            "Lcom/upokecenter/numbers/EContext;",
-            ")TT;"
-        }
-    .end annotation
-
-    if-nez p3, :cond_0
-
-    move-object v0, p3
-
-    goto :goto_0
-
-    :cond_0
-    invoke-virtual {p3}, Lcom/upokecenter/numbers/EContext;->GetNontrapping()Lcom/upokecenter/numbers/EContext;
-
-    move-result-object v0
-
-    :goto_0
-    iget-object v1, p0, Lcom/upokecenter/numbers/TrappableRadixMath;->math:Lcom/upokecenter/numbers/IRadixMath;
-
-    invoke-interface {v1, p1, p2, v0}, Lcom/upokecenter/numbers/IRadixMath;->Multiply(Ljava/lang/Object;Ljava/lang/Object;Lcom/upokecenter/numbers/EContext;)Ljava/lang/Object;
-
-    move-result-object p1
-
-    if-nez p3, :cond_1
-
-    goto :goto_1
-
-    :cond_1
-    invoke-virtual {p3, p1, v0}, Lcom/upokecenter/numbers/EContext;->TriggerTraps(Ljava/lang/Object;Lcom/upokecenter/numbers/EContext;)Ljava/lang/Object;
-
-    :goto_1
-    return-object p1
-.end method
-
 .method public NextPlus(Ljava/lang/Object;Lcom/upokecenter/numbers/EContext;)Ljava/lang/Object;
     .locals 2
     .annotation system Ldalvik/annotation/Signature;
@@ -298,45 +181,6 @@
 
     :cond_1
     invoke-virtual {p2, p1, v0}, Lcom/upokecenter/numbers/EContext;->TriggerTraps(Ljava/lang/Object;Lcom/upokecenter/numbers/EContext;)Ljava/lang/Object;
-
-    :goto_1
-    return-object p1
-.end method
-
-.method public Quantize(Ljava/lang/Object;Ljava/lang/Object;Lcom/upokecenter/numbers/EContext;)Ljava/lang/Object;
-    .locals 2
-    .annotation system Ldalvik/annotation/Signature;
-        value = {
-            "(TT;TT;",
-            "Lcom/upokecenter/numbers/EContext;",
-            ")TT;"
-        }
-    .end annotation
-
-    if-nez p3, :cond_0
-
-    move-object v0, p3
-
-    goto :goto_0
-
-    :cond_0
-    invoke-virtual {p3}, Lcom/upokecenter/numbers/EContext;->GetNontrapping()Lcom/upokecenter/numbers/EContext;
-
-    move-result-object v0
-
-    :goto_0
-    iget-object v1, p0, Lcom/upokecenter/numbers/TrappableRadixMath;->math:Lcom/upokecenter/numbers/IRadixMath;
-
-    invoke-interface {v1, p1, p2, v0}, Lcom/upokecenter/numbers/IRadixMath;->Quantize(Ljava/lang/Object;Ljava/lang/Object;Lcom/upokecenter/numbers/EContext;)Ljava/lang/Object;
-
-    move-result-object p1
-
-    if-nez p3, :cond_1
-
-    goto :goto_1
-
-    :cond_1
-    invoke-virtual {p3, p1, v0}, Lcom/upokecenter/numbers/EContext;->TriggerTraps(Ljava/lang/Object;Lcom/upokecenter/numbers/EContext;)Ljava/lang/Object;
 
     :goto_1
     return-object p1

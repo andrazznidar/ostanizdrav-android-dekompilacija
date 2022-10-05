@@ -14,34 +14,59 @@
 
 
 # static fields
-.field public static final FACTORY:Lcom/google/gson/TypeAdapterFactory;
+.field public static final DOUBLE_FACTORY:Lcom/google/gson/TypeAdapterFactory;
 
 
 # instance fields
 .field public final gson:Lcom/google/gson/Gson;
 
+.field public final toNumberStrategy:Lcom/google/gson/ToNumberStrategy;
+
 
 # direct methods
 .method public static constructor <clinit>()V
-    .locals 1
+    .locals 2
 
-    new-instance v0, Lcom/google/gson/internal/bind/ObjectTypeAdapter$1;
+    sget-object v0, Lcom/google/gson/ToNumberPolicy;->DOUBLE:Lcom/google/gson/ToNumberPolicy;
 
-    invoke-direct {v0}, Lcom/google/gson/internal/bind/ObjectTypeAdapter$1;-><init>()V
+    new-instance v1, Lcom/google/gson/internal/bind/ObjectTypeAdapter$1;
 
-    sput-object v0, Lcom/google/gson/internal/bind/ObjectTypeAdapter;->FACTORY:Lcom/google/gson/TypeAdapterFactory;
+    invoke-direct {v1, v0}, Lcom/google/gson/internal/bind/ObjectTypeAdapter$1;-><init>(Lcom/google/gson/ToNumberStrategy;)V
+
+    sput-object v1, Lcom/google/gson/internal/bind/ObjectTypeAdapter;->DOUBLE_FACTORY:Lcom/google/gson/TypeAdapterFactory;
 
     return-void
 .end method
 
-.method public constructor <init>(Lcom/google/gson/Gson;)V
+.method public constructor <init>(Lcom/google/gson/Gson;Lcom/google/gson/ToNumberStrategy;Lcom/google/gson/internal/bind/ObjectTypeAdapter$1;)V
     .locals 0
 
     invoke-direct {p0}, Lcom/google/gson/TypeAdapter;-><init>()V
 
     iput-object p1, p0, Lcom/google/gson/internal/bind/ObjectTypeAdapter;->gson:Lcom/google/gson/Gson;
 
+    iput-object p2, p0, Lcom/google/gson/internal/bind/ObjectTypeAdapter;->toNumberStrategy:Lcom/google/gson/ToNumberStrategy;
+
     return-void
+.end method
+
+.method public static getFactory(Lcom/google/gson/ToNumberStrategy;)Lcom/google/gson/TypeAdapterFactory;
+    .locals 1
+
+    sget-object v0, Lcom/google/gson/ToNumberPolicy;->DOUBLE:Lcom/google/gson/ToNumberPolicy;
+
+    if-ne p0, v0, :cond_0
+
+    sget-object p0, Lcom/google/gson/internal/bind/ObjectTypeAdapter;->DOUBLE_FACTORY:Lcom/google/gson/TypeAdapterFactory;
+
+    return-object p0
+
+    :cond_0
+    new-instance v0, Lcom/google/gson/internal/bind/ObjectTypeAdapter$1;
+
+    invoke-direct {v0, p0}, Lcom/google/gson/internal/bind/ObjectTypeAdapter$1;-><init>(Lcom/google/gson/ToNumberStrategy;)V
+
+    return-object v0
 .end method
 
 
@@ -109,11 +134,9 @@
     return-object p1
 
     :cond_2
-    invoke-virtual {p1}, Lcom/google/gson/stream/JsonReader;->nextDouble()D
+    iget-object v0, p0, Lcom/google/gson/internal/bind/ObjectTypeAdapter;->toNumberStrategy:Lcom/google/gson/ToNumberStrategy;
 
-    move-result-wide v0
-
-    invoke-static {v0, v1}, Ljava/lang/Double;->valueOf(D)Ljava/lang/Double;
+    invoke-interface {v0, p1}, Lcom/google/gson/ToNumberStrategy;->readNumber(Lcom/google/gson/stream/JsonReader;)Ljava/lang/Number;
 
     move-result-object p1
 

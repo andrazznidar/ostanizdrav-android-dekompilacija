@@ -2,16 +2,20 @@
 .super Ljava/lang/Object;
 
 
+# annotations
+.annotation system Ldalvik/annotation/Signature;
+    value = {
+        "<T:",
+        "Ljava/lang/Object;",
+        ">",
+        "Ljava/lang/Object;"
+    }
+.end annotation
+
+
 # direct methods
 .method public static $default$forEach(Ljava/lang/Iterable;Lj$/util/function/Consumer;)V
     .locals 1
-    .annotation system Ldalvik/annotation/Signature;
-        value = {
-            "(",
-            "Lj$/util/function/Consumer<",
-            "-TT;>;)V"
-        }
-    .end annotation
 
     sget-object v0, Lj$/util/DesugarCollections;->a:Ljava/lang/Class;
 
@@ -43,7 +47,7 @@
 
     move-result-object v0
 
-    invoke-interface {p1, v0}, Lj$/util/function/Consumer;->i(Ljava/lang/Object;)V
+    invoke-interface {p1, v0}, Lj$/util/function/Consumer;->j(Ljava/lang/Object;)V
 
     goto :goto_0
 
@@ -53,13 +57,6 @@
 
 .method public static $default$spliterator(Ljava/lang/Iterable;)Lj$/util/Spliterator;
     .locals 1
-    .annotation system Ldalvik/annotation/Signature;
-        value = {
-            "()",
-            "Lj$/util/Spliterator<",
-            "TT;>;"
-        }
-    .end annotation
 
     invoke-interface {p0}, Ljava/lang/Iterable;->iterator()Ljava/util/Iterator;
 
@@ -67,7 +64,7 @@
 
     const/4 v0, 0x0
 
-    invoke-static {p0, v0}, Lj$/util/H;->n(Ljava/util/Iterator;I)Lj$/util/Spliterator;
+    invoke-static {p0, v0}, Lj$/util/S;->n(Ljava/util/Iterator;I)Lj$/util/Spliterator;
 
     move-result-object p0
 

@@ -110,7 +110,7 @@
     return v0
 .end method
 
-.method public static mgf1([BILcom/google/crypto/tink/subtle/Enums$HashType;)[B
+.method public static mgf1([BII)[B
     .locals 8
     .annotation system Ldalvik/annotation/MethodParameters;
         accessFlags = {
@@ -133,7 +133,7 @@
 
     sget-object v0, Lcom/google/crypto/tink/subtle/EngineFactory;->MESSAGE_DIGEST:Lcom/google/crypto/tink/subtle/EngineFactory;
 
-    invoke-static {p2}, Lcom/google/crypto/tink/subtle/SubtleUtil;->toDigestAlgo(Lcom/google/crypto/tink/subtle/Enums$HashType;)Ljava/lang/String;
+    invoke-static {p2}, Lcom/google/crypto/tink/subtle/SubtleUtil;->toDigestAlgo(I)Ljava/lang/String;
 
     move-result-object p2
 
@@ -206,7 +206,7 @@
     return-object v1
 .end method
 
-.method public static toDigestAlgo(Lcom/google/crypto/tink/subtle/Enums$HashType;)Ljava/lang/String;
+.method public static toDigestAlgo(I)Ljava/lang/String;
     .locals 3
     .annotation system Ldalvik/annotation/MethodParameters;
         accessFlags = {
@@ -223,9 +223,9 @@
         }
     .end annotation
 
-    invoke-virtual {p0}, Ljava/lang/Enum;->ordinal()I
+    if-eqz p0, :cond_4
 
-    move-result v0
+    add-int/lit8 v0, p0, -0x1
 
     if-eqz v0, :cond_3
 
@@ -256,7 +256,11 @@
 
     invoke-virtual {v1, v2}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
 
-    invoke-virtual {v1, p0}, Ljava/lang/StringBuilder;->append(Ljava/lang/Object;)Ljava/lang/StringBuilder;
+    invoke-static {p0}, Lcom/google/crypto/tink/subtle/Enums$HashType$EnumUnboxingLocalUtility;->stringValueOf(I)Ljava/lang/String;
+
+    move-result-object p0
+
+    invoke-virtual {v1, p0}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
 
     invoke-virtual {v1}, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
 
@@ -280,4 +284,9 @@
     const-string p0, "SHA-1"
 
     return-object p0
+
+    :cond_4
+    const/4 p0, 0x0
+
+    throw p0
 .end method

@@ -35,7 +35,7 @@
 
 # virtual methods
 .method public fetch(Lcoil/bitmap/BitmapPool;Ljava/lang/Object;Lcoil/size/Size;Lcoil/decode/Options;Lkotlin/coroutines/Continuation;)Ljava/lang/Object;
-    .locals 1
+    .locals 0
 
     check-cast p2, Ljava/io/File;
 
@@ -53,19 +53,7 @@
 
     move-result-object p4
 
-    invoke-virtual {p2}, Ljava/io/File;->getName()Ljava/lang/String;
-
-    move-result-object p2
-
-    const-string p5, "name"
-
-    invoke-static {p2, p5}, Lkotlin/jvm/internal/Intrinsics;->checkNotNullExpressionValue(Ljava/lang/Object;Ljava/lang/String;)V
-
-    const/16 p5, 0x2e
-
-    const-string v0, ""
-
-    invoke-static {p2, p5, v0}, Lkotlin/text/StringsKt__StringsKt;->substringAfterLast(Ljava/lang/String;CLjava/lang/String;)Ljava/lang/String;
+    invoke-static {p2}, Lkotlin/io/FilesKt__UtilsKt;->getExtension(Ljava/io/File;)Ljava/lang/String;
 
     move-result-object p2
 

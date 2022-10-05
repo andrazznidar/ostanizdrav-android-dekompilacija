@@ -1,149 +1,243 @@
 .class final Lj$/util/stream/J3;
-.super Lj$/util/stream/F3;
-
-
-# instance fields
-.field private c:Lj$/util/stream/Z3;
+.super Lj$/util/stream/f3;
 
 
 # direct methods
-.method constructor <init>(Lj$/util/stream/n3;)V
+.method constructor <init>(Lj$/util/stream/D0;Lj$/util/Spliterator;Z)V
     .locals 0
 
-    invoke-direct {p0, p1}, Lj$/util/stream/F3;-><init>(Lj$/util/stream/n3;)V
+    invoke-direct {p0, p1, p2, p3}, Lj$/util/stream/f3;-><init>(Lj$/util/stream/D0;Lj$/util/Spliterator;Z)V
+
+    return-void
+.end method
+
+.method constructor <init>(Lj$/util/stream/D0;Lj$/util/function/C;Z)V
+    .locals 0
+
+    invoke-direct {p0, p1, p2, p3}, Lj$/util/stream/f3;-><init>(Lj$/util/stream/D0;Lj$/util/function/C;Z)V
 
     return-void
 .end method
 
 
 # virtual methods
-.method public e(J)V
-    .locals 1
+.method public a(Lj$/util/function/Consumer;)Z
+    .locals 11
 
-    iget-object v0, p0, Lj$/util/stream/J3;->c:Lj$/util/stream/Z3;
+    invoke-static {p1}, Ljava/util/Objects;->requireNonNull(Ljava/lang/Object;)Ljava/lang/Object;
 
-    invoke-virtual {v0, p1, p2}, Lj$/util/stream/Z3;->e(J)V
+    invoke-virtual {p0}, Lj$/util/stream/f3;->b()Z
 
-    return-void
-.end method
+    move-result v0
 
-.method public w()V
-    .locals 6
+    if-eqz v0, :cond_5
 
-    iget-object v0, p0, Lj$/util/stream/J3;->c:Lj$/util/stream/Z3;
+    iget-object v1, p0, Lj$/util/stream/f3;->h:Lj$/util/stream/e;
 
-    invoke-virtual {v0}, Lj$/util/stream/a4;->h()Ljava/lang/Object;
+    check-cast v1, Lj$/util/stream/a3;
 
-    move-result-object v0
+    iget-wide v2, p0, Lj$/util/stream/f3;->g:J
 
-    check-cast v0, [J
+    iget v4, v1, Lj$/util/stream/e;->c:I
 
-    invoke-static {v0}, Ljava/util/Arrays;->sort([J)V
+    if-nez v4, :cond_1
 
-    iget-object v1, p0, Lj$/util/stream/i3;->a:Lj$/util/stream/n3;
+    iget v4, v1, Lj$/util/stream/e;->b:I
 
-    array-length v2, v0
+    int-to-long v4, v4
 
-    int-to-long v2, v2
+    cmp-long v4, v2, v4
 
-    invoke-interface {v1, v2, v3}, Lj$/util/stream/n3;->x(J)V
+    if-gez v4, :cond_0
 
-    iget-boolean v1, p0, Lj$/util/stream/F3;->b:Z
+    iget-object v1, v1, Lj$/util/stream/a3;->e:[Ljava/lang/Object;
 
-    const/4 v2, 0x0
+    long-to-int v2, v2
 
-    if-nez v1, :cond_0
-
-    array-length v1, v0
-
-    :goto_0
-    if-ge v2, v1, :cond_2
-
-    aget-wide v3, v0, v2
-
-    iget-object v5, p0, Lj$/util/stream/i3;->a:Lj$/util/stream/n3;
-
-    invoke-interface {v5, v3, v4}, Lj$/util/stream/n3;->e(J)V
-
-    add-int/lit8 v2, v2, 0x1
-
-    goto :goto_0
-
-    :cond_0
-    array-length v1, v0
-
-    :goto_1
-    if-ge v2, v1, :cond_2
-
-    aget-wide v3, v0, v2
-
-    iget-object v5, p0, Lj$/util/stream/i3;->a:Lj$/util/stream/n3;
-
-    invoke-interface {v5}, Lj$/util/stream/n3;->z()Z
-
-    move-result v5
-
-    if-eqz v5, :cond_1
-
-    goto :goto_2
-
-    :cond_1
-    iget-object v5, p0, Lj$/util/stream/i3;->a:Lj$/util/stream/n3;
-
-    invoke-interface {v5, v3, v4}, Lj$/util/stream/n3;->e(J)V
-
-    add-int/lit8 v2, v2, 0x1
+    aget-object v1, v1, v2
 
     goto :goto_1
 
+    :cond_0
+    new-instance p1, Ljava/lang/IndexOutOfBoundsException;
+
+    invoke-static {v2, v3}, Ljava/lang/Long;->toString(J)Ljava/lang/String;
+
+    move-result-object v0
+
+    invoke-direct {p1, v0}, Ljava/lang/IndexOutOfBoundsException;-><init>(Ljava/lang/String;)V
+
+    throw p1
+
+    :cond_1
+    invoke-virtual {v1}, Lj$/util/stream/e;->count()J
+
+    move-result-wide v4
+
+    cmp-long v4, v2, v4
+
+    if-gez v4, :cond_4
+
+    const/4 v4, 0x0
+
+    :goto_0
+    iget v5, v1, Lj$/util/stream/e;->c:I
+
+    if-gt v4, v5, :cond_3
+
+    iget-object v5, v1, Lj$/util/stream/e;->d:[J
+
+    aget-wide v6, v5, v4
+
+    iget-object v8, v1, Lj$/util/stream/a3;->f:[[Ljava/lang/Object;
+
+    aget-object v9, v8, v4
+
+    array-length v9, v9
+
+    int-to-long v9, v9
+
+    add-long/2addr v6, v9
+
+    cmp-long v6, v2, v6
+
+    if-gez v6, :cond_2
+
+    aget-object v1, v8, v4
+
+    aget-wide v4, v5, v4
+
+    sub-long/2addr v2, v4
+
+    long-to-int v2, v2
+
+    aget-object v1, v1, v2
+
+    :goto_1
+    invoke-interface {p1, v1}, Lj$/util/function/Consumer;->j(Ljava/lang/Object;)V
+
+    goto :goto_2
+
     :cond_2
+    add-int/lit8 v4, v4, 0x1
+
+    goto :goto_0
+
+    :cond_3
+    new-instance p1, Ljava/lang/IndexOutOfBoundsException;
+
+    invoke-static {v2, v3}, Ljava/lang/Long;->toString(J)Ljava/lang/String;
+
+    move-result-object v0
+
+    invoke-direct {p1, v0}, Ljava/lang/IndexOutOfBoundsException;-><init>(Ljava/lang/String;)V
+
+    throw p1
+
+    :cond_4
+    new-instance p1, Ljava/lang/IndexOutOfBoundsException;
+
+    invoke-static {v2, v3}, Ljava/lang/Long;->toString(J)Ljava/lang/String;
+
+    move-result-object v0
+
+    invoke-direct {p1, v0}, Ljava/lang/IndexOutOfBoundsException;-><init>(Ljava/lang/String;)V
+
+    throw p1
+
+    :cond_5
     :goto_2
-    iget-object v0, p0, Lj$/util/stream/i3;->a:Lj$/util/stream/n3;
-
-    invoke-interface {v0}, Lj$/util/stream/n3;->w()V
-
-    return-void
+    return v0
 .end method
 
-.method public x(J)V
-    .locals 2
+.method public forEachRemaining(Lj$/util/function/Consumer;)V
+    .locals 3
 
-    const-wide/32 v0, 0x7ffffff7
+    iget-object v0, p0, Lj$/util/stream/f3;->h:Lj$/util/stream/e;
 
-    cmp-long v0, p1, v0
+    if-nez v0, :cond_0
 
-    if-gez v0, :cond_1
+    iget-boolean v0, p0, Lj$/util/stream/f3;->i:Z
 
-    const-wide/16 v0, 0x0
+    if-nez v0, :cond_0
 
-    cmp-long v0, p1, v0
+    invoke-static {p1}, Ljava/util/Objects;->requireNonNull(Ljava/lang/Object;)Ljava/lang/Object;
 
-    if-lez v0, :cond_0
+    invoke-virtual {p0}, Lj$/util/stream/f3;->d()V
 
-    new-instance v0, Lj$/util/stream/Z3;
+    iget-object v0, p0, Lj$/util/stream/f3;->b:Lj$/util/stream/D0;
 
-    long-to-int p1, p1
+    new-instance v1, Lj$/util/stream/I3;
 
-    invoke-direct {v0, p1}, Lj$/util/stream/Z3;-><init>(I)V
+    const/4 v2, 0x0
+
+    invoke-direct {v1, p1, v2}, Lj$/util/stream/I3;-><init>(Ljava/lang/Object;I)V
+
+    iget-object p1, p0, Lj$/util/stream/f3;->d:Lj$/util/Spliterator;
+
+    invoke-virtual {v0, v1, p1}, Lj$/util/stream/D0;->S0(Lj$/util/stream/q2;Lj$/util/Spliterator;)Lj$/util/stream/q2;
+
+    const/4 p1, 0x1
+
+    iput-boolean p1, p0, Lj$/util/stream/f3;->i:Z
 
     goto :goto_0
 
     :cond_0
-    new-instance v0, Lj$/util/stream/Z3;
+    invoke-virtual {p0, p1}, Lj$/util/stream/J3;->a(Lj$/util/function/Consumer;)Z
 
-    invoke-direct {v0}, Lj$/util/stream/Z3;-><init>()V
+    move-result v0
+
+    if-nez v0, :cond_0
 
     :goto_0
-    iput-object v0, p0, Lj$/util/stream/J3;->c:Lj$/util/stream/Z3;
+    return-void
+.end method
+
+.method g()V
+    .locals 4
+
+    new-instance v0, Lj$/util/stream/a3;
+
+    invoke-direct {v0}, Lj$/util/stream/a3;-><init>()V
+
+    iput-object v0, p0, Lj$/util/stream/f3;->h:Lj$/util/stream/e;
+
+    iget-object v1, p0, Lj$/util/stream/f3;->b:Lj$/util/stream/D0;
+
+    new-instance v2, Lj$/util/stream/I3;
+
+    const/4 v3, 0x1
+
+    invoke-direct {v2, v0, v3}, Lj$/util/stream/I3;-><init>(Ljava/lang/Object;I)V
+
+    invoke-virtual {v1, v2}, Lj$/util/stream/D0;->T0(Lj$/util/stream/q2;)Lj$/util/stream/q2;
+
+    move-result-object v0
+
+    iput-object v0, p0, Lj$/util/stream/f3;->e:Lj$/util/stream/q2;
+
+    new-instance v0, Lj$/util/stream/b;
+
+    const/4 v1, 0x7
+
+    invoke-direct {v0, p0, v1}, Lj$/util/stream/b;-><init>(Ljava/lang/Object;I)V
+
+    iput-object v0, p0, Lj$/util/stream/f3;->f:Lj$/util/function/d;
 
     return-void
+.end method
 
-    :cond_1
-    new-instance p1, Ljava/lang/IllegalArgumentException;
+.method i(Lj$/util/Spliterator;)Lj$/util/stream/f3;
+    .locals 3
 
-    const-string p2, "Stream size exceeds max array size"
+    new-instance v0, Lj$/util/stream/J3;
 
-    invoke-direct {p1, p2}, Ljava/lang/IllegalArgumentException;-><init>(Ljava/lang/String;)V
+    iget-object v1, p0, Lj$/util/stream/f3;->b:Lj$/util/stream/D0;
 
-    throw p1
+    iget-boolean v2, p0, Lj$/util/stream/f3;->a:Z
+
+    invoke-direct {v0, v1, p1, v2}, Lj$/util/stream/J3;-><init>(Lj$/util/stream/D0;Lj$/util/Spliterator;Z)V
+
+    return-object v0
 .end method

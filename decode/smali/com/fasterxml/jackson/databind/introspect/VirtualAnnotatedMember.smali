@@ -35,7 +35,7 @@
 
     const/4 v0, 0x0
 
-    invoke-direct {p0, p1, v0}, Lcom/fasterxml/jackson/databind/introspect/AnnotatedMember;-><init>(Lcom/fasterxml/jackson/databind/introspect/TypeResolutionContext;Lokhttp3/ConnectionPool;)V
+    invoke-direct {p0, p1, v0}, Lcom/fasterxml/jackson/databind/introspect/AnnotatedMember;-><init>(Lcom/fasterxml/jackson/databind/introspect/TypeResolutionContext;Lcom/fasterxml/jackson/databind/introspect/AnnotationMap;)V
 
     iput-object p2, p0, Lcom/fasterxml/jackson/databind/introspect/VirtualAnnotatedMember;->_declaringClass:Ljava/lang/Class;
 
@@ -182,7 +182,7 @@
 
     const-string v2, "\'"
 
-    invoke-static {v0, v1, v2}, Landroidx/constraintlayout/core/widgets/Barrier$$ExternalSyntheticOutline0;->m(Ljava/lang/StringBuilder;Ljava/lang/String;Ljava/lang/String;)Ljava/lang/String;
+    invoke-static {v0, v1, v2}, Landroidx/activity/ComponentActivity$2$$ExternalSyntheticOutline0;->m(Ljava/lang/StringBuilder;Ljava/lang/String;Ljava/lang/String;)Ljava/lang/String;
 
     move-result-object v0
 
@@ -201,6 +201,35 @@
     move-result v0
 
     return v0
+.end method
+
+.method public setValue(Ljava/lang/Object;Ljava/lang/Object;)V
+    .locals 2
+    .annotation system Ldalvik/annotation/Throws;
+        value = {
+            Ljava/lang/IllegalArgumentException;
+        }
+    .end annotation
+
+    new-instance p1, Ljava/lang/IllegalArgumentException;
+
+    const-string p2, "Cannot set virtual property \'"
+
+    invoke-static {p2}, Landroid/support/v4/media/RatingCompat$$ExternalSyntheticOutline0;->m(Ljava/lang/String;)Ljava/lang/StringBuilder;
+
+    move-result-object p2
+
+    iget-object v0, p0, Lcom/fasterxml/jackson/databind/introspect/VirtualAnnotatedMember;->_name:Ljava/lang/String;
+
+    const-string v1, "\'"
+
+    invoke-static {p2, v0, v1}, Landroidx/activity/ComponentActivity$2$$ExternalSyntheticOutline0;->m(Ljava/lang/StringBuilder;Ljava/lang/String;Ljava/lang/String;)Ljava/lang/String;
+
+    move-result-object p2
+
+    invoke-direct {p1, p2}, Ljava/lang/IllegalArgumentException;-><init>(Ljava/lang/String;)V
+
+    throw p1
 .end method
 
 .method public toString()Ljava/lang/String;
@@ -229,7 +258,7 @@
     return-object v0
 .end method
 
-.method public withAnnotations(Lokhttp3/ConnectionPool;)Lcom/fasterxml/jackson/databind/introspect/Annotated;
+.method public withAnnotations(Lcom/fasterxml/jackson/databind/introspect/AnnotationMap;)Lorg/joda/time/Chronology;
     .locals 0
 
     return-object p0

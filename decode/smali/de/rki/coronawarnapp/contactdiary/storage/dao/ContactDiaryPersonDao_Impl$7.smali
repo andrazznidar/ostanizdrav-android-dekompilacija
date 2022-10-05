@@ -65,11 +65,11 @@
     :try_start_0
     iget-object v0, p0, Lde/rki/coronawarnapp/contactdiary/storage/dao/ContactDiaryPersonDao_Impl$7;->this$0:Lde/rki/coronawarnapp/contactdiary/storage/dao/ContactDiaryPersonDao_Impl;
 
-    iget-object v0, v0, Lde/rki/coronawarnapp/contactdiary/storage/dao/ContactDiaryPersonDao_Impl;->__deletionAdapterOfContactDiaryPersonEntity:Landroidx/room/EntityDeletionOrUpdateAdapter;
+    iget-object v0, v0, Lde/rki/coronawarnapp/contactdiary/storage/dao/ContactDiaryPersonDao_Impl;->__deletionAdapterOfContactDiaryPersonEntity:Landroidx/room/EntityInsertionAdapter;
 
     iget-object v1, p0, Lde/rki/coronawarnapp/contactdiary/storage/dao/ContactDiaryPersonDao_Impl$7;->val$entity:Lde/rki/coronawarnapp/contactdiary/storage/entity/ContactDiaryPersonEntity;
 
-    invoke-virtual {v0, v1}, Landroidx/room/EntityDeletionOrUpdateAdapter;->handle(Ljava/lang/Object;)I
+    invoke-virtual {v0, v1}, Landroidx/room/EntityInsertionAdapter;->handle(Ljava/lang/Object;)I
 
     iget-object v0, p0, Lde/rki/coronawarnapp/contactdiary/storage/dao/ContactDiaryPersonDao_Impl$7;->this$0:Lde/rki/coronawarnapp/contactdiary/storage/dao/ContactDiaryPersonDao_Impl;
 

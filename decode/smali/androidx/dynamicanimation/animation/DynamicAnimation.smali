@@ -58,7 +58,7 @@
 
 .field public mMinVisibleChange:F
 
-.field public final mProperty:Landroidx/dynamicanimation/animation/FloatPropertyCompat;
+.field public final mProperty:Lboofcv/struct/border/ImageBorder;
 
 .field public mRunning:Z
 
@@ -136,15 +136,15 @@
     return-void
 .end method
 
-.method public constructor <init>(Ljava/lang/Object;Landroidx/dynamicanimation/animation/FloatPropertyCompat;)V
+.method public constructor <init>(Ljava/lang/Object;Lboofcv/struct/border/ImageBorder;)V
     .locals 2
     .annotation system Ldalvik/annotation/Signature;
         value = {
             "<K:",
             "Ljava/lang/Object;",
             ">(TK;",
-            "Landroidx/dynamicanimation/animation/FloatPropertyCompat<",
-            "TK;>;)V"
+            "Lboofcv/struct/border/ImageBorder;",
+            ")V"
         }
     .end annotation
 
@@ -186,7 +186,7 @@
 
     iput-object p1, p0, Landroidx/dynamicanimation/animation/DynamicAnimation;->mTarget:Ljava/lang/Object;
 
-    iput-object p2, p0, Landroidx/dynamicanimation/animation/DynamicAnimation;->mProperty:Landroidx/dynamicanimation/animation/FloatPropertyCompat;
+    iput-object p2, p0, Landroidx/dynamicanimation/animation/DynamicAnimation;->mProperty:Lboofcv/struct/border/ImageBorder;
 
     sget-object p1, Landroidx/dynamicanimation/animation/DynamicAnimation;->ROTATION:Landroidx/dynamicanimation/animation/DynamicAnimation$ViewProperty;
 
@@ -646,11 +646,11 @@
 .method public setPropertyValue(F)V
     .locals 3
 
-    iget-object v0, p0, Landroidx/dynamicanimation/animation/DynamicAnimation;->mProperty:Landroidx/dynamicanimation/animation/FloatPropertyCompat;
+    iget-object v0, p0, Landroidx/dynamicanimation/animation/DynamicAnimation;->mProperty:Lboofcv/struct/border/ImageBorder;
 
     iget-object v1, p0, Landroidx/dynamicanimation/animation/DynamicAnimation;->mTarget:Ljava/lang/Object;
 
-    invoke-virtual {v0, v1, p1}, Landroidx/dynamicanimation/animation/FloatPropertyCompat;->setValue(Ljava/lang/Object;F)V
+    invoke-virtual {v0, v1, p1}, Lboofcv/struct/border/ImageBorder;->setValue(Ljava/lang/Object;F)V
 
     const/4 p1, 0x0
 

@@ -103,7 +103,7 @@
 
     const/4 v3, 0x0
 
-    invoke-virtual {v0, v3, v1, v2}, Lcom/fasterxml/jackson/databind/type/TypeFactory;->_fromAny(Landroidx/fragment/app/FragmentStore;Ljava/lang/reflect/Type;Lcom/fasterxml/jackson/databind/type/TypeBindings;)Lcom/fasterxml/jackson/databind/JavaType;
+    invoke-virtual {v0, v3, v1, v2}, Lcom/fasterxml/jackson/databind/type/TypeFactory;->_fromAny(Lcom/fasterxml/jackson/databind/type/ClassStack;Ljava/lang/reflect/Type;Lcom/fasterxml/jackson/databind/type/TypeBindings;)Lcom/fasterxml/jackson/databind/JavaType;
 
     move-result-object v0
 
@@ -118,10 +118,6 @@
     check-cast p1, Lcom/fasterxml/jackson/databind/JsonNode;
 
     :goto_0
-    const-string p2, "node"
-
-    invoke-static {p1, p2}, Lkotlin/jvm/internal/Intrinsics;->checkNotNullExpressionValue(Ljava/lang/Object;Ljava/lang/String;)V
-
     invoke-virtual {p1}, Lcom/fasterxml/jackson/databind/JsonNode;->isTextual()Z
 
     move-result p2
@@ -169,47 +165,39 @@
 
     invoke-virtual {p1, v1}, Lcom/fasterxml/jackson/databind/JsonNode;->get(Ljava/lang/String;)Lcom/fasterxml/jackson/databind/JsonNode;
 
-    move-result-object v2
+    move-result-object v1
 
-    const-string v3, "optionsNode"
+    invoke-virtual {v1}, Lcom/fasterxml/jackson/databind/JsonNode;->isArray()Z
 
-    invoke-static {v2, v3}, Lkotlin/jvm/internal/Intrinsics;->checkNotNullExpressionValue(Ljava/lang/Object;Ljava/lang/String;)V
+    move-result v2
 
-    invoke-virtual {v2}, Lcom/fasterxml/jackson/databind/JsonNode;->isArray()Z
+    if-eqz v2, :cond_3
 
-    move-result v3
-
-    if-eqz v3, :cond_3
-
-    invoke-virtual {v2}, Lcom/fasterxml/jackson/databind/JsonNode;->elements()Ljava/util/Iterator;
+    invoke-virtual {v1}, Lcom/fasterxml/jackson/databind/JsonNode;->elements()Ljava/util/Iterator;
 
     move-result-object p1
 
-    const-string v2, "optionsNode.elements()"
+    const-string v1, "optionsNode.elements()"
 
-    invoke-static {p1, v2}, Lkotlin/jvm/internal/Intrinsics;->checkNotNullExpressionValue(Ljava/lang/Object;Ljava/lang/String;)V
+    invoke-static {p1, v1}, Lkotlin/jvm/internal/Intrinsics;->checkNotNullExpressionValue(Ljava/lang/Object;Ljava/lang/String;)V
 
     invoke-static {p1}, Lkotlin/sequences/SequencesKt__SequencesKt;->asSequence(Ljava/util/Iterator;)Lkotlin/sequences/Sequence;
 
     move-result-object p1
 
-    sget-object v2, Lcom/fasterxml/jackson/module/kotlin/RegexDeserializer$deserialize$options$1;->INSTANCE:Lcom/fasterxml/jackson/module/kotlin/RegexDeserializer$deserialize$options$1;
+    sget-object v1, Lcom/fasterxml/jackson/module/kotlin/RegexDeserializer$deserialize$options$1;->INSTANCE:Lcom/fasterxml/jackson/module/kotlin/RegexDeserializer$deserialize$options$1;
 
-    invoke-static {p1, v2}, Lkotlin/sequences/SequencesKt___SequencesKt;->map(Lkotlin/sequences/Sequence;Lkotlin/jvm/functions/Function1;)Lkotlin/sequences/Sequence;
+    invoke-static {p1, v1}, Lkotlin/sequences/SequencesKt___SequencesKt;->map(Lkotlin/sequences/Sequence;Lkotlin/jvm/functions/Function1;)Lkotlin/sequences/Sequence;
 
     move-result-object p1
 
-    const-string v2, "$this$toSet"
+    new-instance v1, Ljava/util/LinkedHashSet;
 
-    invoke-static {p1, v2}, Lkotlin/jvm/internal/Intrinsics;->checkNotNullParameter(Ljava/lang/Object;Ljava/lang/String;)V
+    invoke-direct {v1}, Ljava/util/LinkedHashSet;-><init>()V
 
-    new-instance v2, Ljava/util/LinkedHashSet;
+    invoke-static {p1, v1}, Lkotlin/sequences/SequencesKt___SequencesKt;->toCollection(Lkotlin/sequences/Sequence;Ljava/util/Collection;)Ljava/util/Collection;
 
-    invoke-direct {v2}, Ljava/util/LinkedHashSet;-><init>()V
-
-    invoke-static {p1, v2}, Lkotlin/sequences/SequencesKt___SequencesKt;->toCollection(Lkotlin/sequences/Sequence;Ljava/util/Collection;)Ljava/util/Collection;
-
-    invoke-static {v2}, Lkotlin/collections/SetsKt__SetsKt;->optimizeReadOnlySet(Ljava/util/Set;)Ljava/util/Set;
+    invoke-static {v1}, Lorg/bouncycastle/util/IPAddress;->optimizeReadOnlySet(Ljava/util/Set;)Ljava/util/Set;
 
     move-result-object p1
 
@@ -218,19 +206,13 @@
     :cond_3
     new-instance p2, Ljava/lang/IllegalStateException;
 
-    const-string v0, "Expected an array of strings for RegexOptions, but type was "
-
-    invoke-static {v0}, Landroid/support/v4/media/RatingCompat$$ExternalSyntheticOutline0;->m(Ljava/lang/String;)Ljava/lang/StringBuilder;
-
-    move-result-object v0
-
     invoke-virtual {p1}, Lcom/fasterxml/jackson/databind/JsonNode;->getNodeType()Lcom/fasterxml/jackson/databind/node/JsonNodeType;
 
     move-result-object p1
 
-    invoke-virtual {v0, p1}, Ljava/lang/StringBuilder;->append(Ljava/lang/Object;)Ljava/lang/StringBuilder;
+    const-string v0, "Expected an array of strings for RegexOptions, but type was "
 
-    invoke-virtual {v0}, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
+    invoke-static {v0, p1}, Lkotlin/jvm/internal/Intrinsics;->stringPlus(Ljava/lang/String;Ljava/lang/Object;)Ljava/lang/String;
 
     move-result-object p1
 
@@ -242,13 +224,9 @@
     sget-object p1, Lkotlin/collections/EmptySet;->INSTANCE:Lkotlin/collections/EmptySet;
 
     :goto_1
-    new-instance v2, Lkotlin/text/Regex;
+    new-instance v1, Lkotlin/text/Regex;
 
     invoke-static {v0, p2}, Lkotlin/jvm/internal/Intrinsics;->checkNotNullExpressionValue(Ljava/lang/Object;Ljava/lang/String;)V
-
-    invoke-static {v0, p2}, Lkotlin/jvm/internal/Intrinsics;->checkNotNullParameter(Ljava/lang/Object;Ljava/lang/String;)V
-
-    invoke-static {p1, v1}, Lkotlin/jvm/internal/Intrinsics;->checkNotNullParameter(Ljava/lang/Object;Ljava/lang/String;)V
 
     invoke-interface {p1}, Ljava/lang/Iterable;->iterator()Ljava/util/Iterator;
 
@@ -259,21 +237,21 @@
     :goto_2
     invoke-interface {p1}, Ljava/util/Iterator;->hasNext()Z
 
-    move-result v1
+    move-result v2
 
-    if-eqz v1, :cond_5
+    if-eqz v2, :cond_5
 
     invoke-interface {p1}, Ljava/util/Iterator;->next()Ljava/lang/Object;
 
-    move-result-object v1
+    move-result-object v2
 
-    check-cast v1, Lkotlin/text/FlagEnum;
+    check-cast v2, Lkotlin/text/FlagEnum;
 
-    invoke-interface {v1}, Lkotlin/text/FlagEnum;->getValue()I
+    invoke-interface {v2}, Lkotlin/text/FlagEnum;->getValue()I
 
-    move-result v1
+    move-result v2
 
-    or-int/2addr p2, v1
+    or-int/2addr p2, v2
 
     goto :goto_2
 
@@ -289,13 +267,13 @@
 
     move-result-object p1
 
-    const-string p2, "Pattern.compile(pattern,\u2026odeCase(options.toInt()))"
+    const-string p2, "compile(pattern, ensureU\u2026odeCase(options.toInt()))"
 
     invoke-static {p1, p2}, Lkotlin/jvm/internal/Intrinsics;->checkNotNullExpressionValue(Ljava/lang/Object;Ljava/lang/String;)V
 
-    invoke-direct {v2, p1}, Lkotlin/text/Regex;-><init>(Ljava/util/regex/Pattern;)V
+    invoke-direct {v1, p1}, Lkotlin/text/Regex;-><init>(Ljava/util/regex/Pattern;)V
 
-    move-object p2, v2
+    move-object p2, v1
 
     :goto_3
     return-object p2
@@ -303,19 +281,13 @@
     :cond_7
     new-instance p2, Ljava/lang/IllegalStateException;
 
-    const-string v0, "Expected a string or an object to deserialize a Regex, but type was "
-
-    invoke-static {v0}, Landroid/support/v4/media/RatingCompat$$ExternalSyntheticOutline0;->m(Ljava/lang/String;)Ljava/lang/StringBuilder;
-
-    move-result-object v0
-
     invoke-virtual {p1}, Lcom/fasterxml/jackson/databind/JsonNode;->getNodeType()Lcom/fasterxml/jackson/databind/node/JsonNodeType;
 
     move-result-object p1
 
-    invoke-virtual {v0, p1}, Ljava/lang/StringBuilder;->append(Ljava/lang/Object;)Ljava/lang/StringBuilder;
+    const-string v0, "Expected a string or an object to deserialize a Regex, but type was "
 
-    invoke-virtual {v0}, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
+    invoke-static {v0, p1}, Lkotlin/jvm/internal/Intrinsics;->stringPlus(Ljava/lang/String;Ljava/lang/Object;)Ljava/lang/String;
 
     move-result-object p1
 

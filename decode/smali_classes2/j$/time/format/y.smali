@@ -34,17 +34,17 @@
 
 
 # virtual methods
-.method public synthetic c(Lj$/time/temporal/o;)I
+.method public synthetic d(Lj$/time/temporal/o;)I
     .locals 0
 
-    invoke-static {p0, p1}, Lj$/time/temporal/n;->a(Lj$/time/temporal/TemporalAccessor;Lj$/time/temporal/o;)I
+    invoke-static {p0, p1}, Lj$/time/temporal/n;->b(Lj$/time/temporal/TemporalAccessor;Lj$/time/temporal/o;)I
 
     move-result p1
 
     return p1
 .end method
 
-.method public d(Lj$/time/temporal/o;)Lj$/time/temporal/A;
+.method public e(Lj$/time/temporal/o;)Z
     .locals 1
 
     iget-object v0, p0, Lj$/time/format/y;->a:Lj$/time/chrono/b;
@@ -61,7 +61,40 @@
 
     check-cast v0, Lj$/time/LocalDate;
 
-    invoke-virtual {v0, p1}, Lj$/time/LocalDate;->d(Lj$/time/temporal/o;)Lj$/time/temporal/A;
+    invoke-virtual {v0, p1}, Lj$/time/LocalDate;->e(Lj$/time/temporal/o;)Z
+
+    move-result p1
+
+    return p1
+
+    :cond_0
+    iget-object v0, p0, Lj$/time/format/y;->b:Lj$/time/temporal/TemporalAccessor;
+
+    invoke-interface {v0, p1}, Lj$/time/temporal/TemporalAccessor;->e(Lj$/time/temporal/o;)Z
+
+    move-result p1
+
+    return p1
+.end method
+
+.method public f(Lj$/time/temporal/o;)Lj$/time/temporal/z;
+    .locals 1
+
+    iget-object v0, p0, Lj$/time/format/y;->a:Lj$/time/chrono/b;
+
+    if-eqz v0, :cond_0
+
+    invoke-interface {p1}, Lj$/time/temporal/o;->a()Z
+
+    move-result v0
+
+    if-eqz v0, :cond_0
+
+    iget-object v0, p0, Lj$/time/format/y;->a:Lj$/time/chrono/b;
+
+    check-cast v0, Lj$/time/LocalDate;
+
+    invoke-virtual {v0, p1}, Lj$/time/LocalDate;->f(Lj$/time/temporal/o;)Lj$/time/temporal/z;
 
     move-result-object p1
 
@@ -70,14 +103,14 @@
     :cond_0
     iget-object v0, p0, Lj$/time/format/y;->b:Lj$/time/temporal/TemporalAccessor;
 
-    invoke-interface {v0, p1}, Lj$/time/temporal/TemporalAccessor;->d(Lj$/time/temporal/o;)Lj$/time/temporal/A;
+    invoke-interface {v0, p1}, Lj$/time/temporal/TemporalAccessor;->f(Lj$/time/temporal/o;)Lj$/time/temporal/z;
 
     move-result-object p1
 
     return-object p1
 .end method
 
-.method public e(Lj$/time/temporal/o;)J
+.method public g(Lj$/time/temporal/o;)J
     .locals 2
 
     iget-object v0, p0, Lj$/time/format/y;->a:Lj$/time/chrono/b;
@@ -94,7 +127,7 @@
 
     check-cast v0, Lj$/time/LocalDate;
 
-    invoke-virtual {v0, p1}, Lj$/time/LocalDate;->e(Lj$/time/temporal/o;)J
+    invoke-virtual {v0, p1}, Lj$/time/LocalDate;->g(Lj$/time/temporal/o;)J
 
     move-result-wide v0
 
@@ -103,17 +136,17 @@
     :cond_0
     iget-object v0, p0, Lj$/time/format/y;->b:Lj$/time/temporal/TemporalAccessor;
 
-    invoke-interface {v0, p1}, Lj$/time/temporal/TemporalAccessor;->e(Lj$/time/temporal/o;)J
+    invoke-interface {v0, p1}, Lj$/time/temporal/TemporalAccessor;->g(Lj$/time/temporal/o;)J
 
     move-result-wide v0
 
     return-wide v0
 .end method
 
-.method public g(Lj$/time/temporal/x;)Ljava/lang/Object;
+.method public i(Lj$/time/temporal/w;)Ljava/lang/Object;
     .locals 1
 
-    sget v0, Lj$/time/temporal/w;->a:I
+    sget v0, Lj$/time/temporal/n;->a:I
 
     sget-object v0, Lj$/time/temporal/q;->a:Lj$/time/temporal/q;
 
@@ -139,49 +172,16 @@
 
     iget-object v0, p0, Lj$/time/format/y;->b:Lj$/time/temporal/TemporalAccessor;
 
-    invoke-interface {v0, p1}, Lj$/time/temporal/TemporalAccessor;->g(Lj$/time/temporal/x;)Ljava/lang/Object;
+    invoke-interface {v0, p1}, Lj$/time/temporal/TemporalAccessor;->i(Lj$/time/temporal/w;)Ljava/lang/Object;
 
     move-result-object p1
 
     return-object p1
 
     :cond_2
-    invoke-interface {p1, p0}, Lj$/time/temporal/x;->a(Lj$/time/temporal/TemporalAccessor;)Ljava/lang/Object;
+    invoke-interface {p1, p0}, Lj$/time/temporal/w;->a(Lj$/time/temporal/TemporalAccessor;)Ljava/lang/Object;
 
     move-result-object p1
 
     return-object p1
-.end method
-
-.method public i(Lj$/time/temporal/o;)Z
-    .locals 1
-
-    iget-object v0, p0, Lj$/time/format/y;->a:Lj$/time/chrono/b;
-
-    if-eqz v0, :cond_0
-
-    invoke-interface {p1}, Lj$/time/temporal/o;->a()Z
-
-    move-result v0
-
-    if-eqz v0, :cond_0
-
-    iget-object v0, p0, Lj$/time/format/y;->a:Lj$/time/chrono/b;
-
-    check-cast v0, Lj$/time/LocalDate;
-
-    invoke-virtual {v0, p1}, Lj$/time/LocalDate;->i(Lj$/time/temporal/o;)Z
-
-    move-result p1
-
-    return p1
-
-    :cond_0
-    iget-object v0, p0, Lj$/time/format/y;->b:Lj$/time/temporal/TemporalAccessor;
-
-    invoke-interface {v0, p1}, Lj$/time/temporal/TemporalAccessor;->i(Lj$/time/temporal/o;)Z
-
-    move-result p1
-
-    return p1
 .end method

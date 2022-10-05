@@ -27,10 +27,10 @@
 
 .field public static final fontWeight:I = 0x7f0401b1
 
-.field public static final nestedScrollViewStyle:I = 0x7f0402e4
+.field public static final nestedScrollViewStyle:I = 0x7f0402e5
 
-.field public static final queryPatterns:I = 0x7f040332
+.field public static final queryPatterns:I = 0x7f040333
 
-.field public static final shortcutMatchRequired:I = 0x7f04035d
+.field public static final shortcutMatchRequired:I = 0x7f04035f
 
-.field public static final ttcIndex:I = 0x7f04043c
+.field public static final ttcIndex:I = 0x7f04043e

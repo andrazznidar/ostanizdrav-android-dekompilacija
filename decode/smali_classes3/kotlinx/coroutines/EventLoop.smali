@@ -109,67 +109,59 @@
     iput-object v0, p0, Lkotlinx/coroutines/EventLoop;->unconfinedQueue:Lkotlinx/coroutines/internal/ArrayQueue;
 
     :cond_0
-    iget-object v1, v0, Lkotlinx/coroutines/internal/ArrayQueue;->elements:Ljava/lang/Object;
+    iget-object v1, v0, Lkotlinx/coroutines/internal/ArrayQueue;->elements:[Ljava/lang/Object;
 
-    move-object v2, v1
+    iget v2, v0, Lkotlinx/coroutines/internal/ArrayQueue;->tail:I
 
-    check-cast v2, [Ljava/lang/Object;
+    aput-object p1, v1, v2
 
-    iget v1, v0, Lkotlinx/coroutines/internal/ArrayQueue;->tail:I
+    add-int/lit8 v2, v2, 0x1
 
-    aput-object p1, v2, v1
-
-    add-int/lit8 v1, v1, 0x1
-
-    array-length p1, v2
+    array-length p1, v1
 
     add-int/lit8 p1, p1, -0x1
 
-    and-int/2addr p1, v1
+    and-int/2addr p1, v2
 
     iput p1, v0, Lkotlinx/coroutines/internal/ArrayQueue;->tail:I
 
-    iget v5, v0, Lkotlinx/coroutines/internal/ArrayQueue;->head:I
+    iget v4, v0, Lkotlinx/coroutines/internal/ArrayQueue;->head:I
 
-    if-ne p1, v5, :cond_1
+    if-ne p1, v4, :cond_1
 
-    array-length p1, v2
+    array-length p1, v1
 
-    shl-int/lit8 v1, p1, 0x1
+    shl-int/lit8 v2, p1, 0x1
 
-    new-array v1, v1, [Ljava/lang/Object;
+    new-array v11, v2, [Ljava/lang/Object;
 
-    const/4 v4, 0x0
+    const/4 v3, 0x0
 
-    const/4 v6, 0x0
+    const/4 v5, 0x0
 
-    const/16 v7, 0xa
+    const/16 v6, 0xa
 
-    move-object v3, v1
+    move-object v2, v11
 
-    invoke-static/range {v2 .. v7}, Lkotlin/collections/ArraysKt___ArraysJvmKt;->copyInto$default([Ljava/lang/Object;[Ljava/lang/Object;IIII)[Ljava/lang/Object;
+    invoke-static/range {v1 .. v6}, Lkotlin/collections/ArraysKt___ArraysJvmKt;->copyInto$default([Ljava/lang/Object;[Ljava/lang/Object;IIII)[Ljava/lang/Object;
 
-    iget-object v2, v0, Lkotlinx/coroutines/internal/ArrayQueue;->elements:Ljava/lang/Object;
+    iget-object v5, v0, Lkotlinx/coroutines/internal/ArrayQueue;->elements:[Ljava/lang/Object;
 
-    move-object v6, v2
+    array-length v1, v5
 
-    check-cast v6, [Ljava/lang/Object;
+    iget v9, v0, Lkotlinx/coroutines/internal/ArrayQueue;->head:I
 
-    array-length v2, v6
+    sub-int v7, v1, v9
 
-    iget v10, v0, Lkotlinx/coroutines/internal/ArrayQueue;->head:I
+    const/4 v8, 0x0
 
-    sub-int v8, v2, v10
+    const/4 v10, 0x4
 
-    const/4 v9, 0x0
+    move-object v6, v11
 
-    const/4 v11, 0x4
+    invoke-static/range {v5 .. v10}, Lkotlin/collections/ArraysKt___ArraysJvmKt;->copyInto$default([Ljava/lang/Object;[Ljava/lang/Object;IIII)[Ljava/lang/Object;
 
-    move-object v7, v1
-
-    invoke-static/range {v6 .. v11}, Lkotlin/collections/ArraysKt___ArraysJvmKt;->copyInto$default([Ljava/lang/Object;[Ljava/lang/Object;IIII)[Ljava/lang/Object;
-
-    iput-object v1, v0, Lkotlinx/coroutines/internal/ArrayQueue;->elements:Ljava/lang/Object;
+    iput-object v11, v0, Lkotlinx/coroutines/internal/ArrayQueue;->elements:[Ljava/lang/Object;
 
     const/4 v1, 0x0
 
@@ -272,9 +264,7 @@
     goto :goto_0
 
     :cond_1
-    iget-object v3, v0, Lkotlinx/coroutines/internal/ArrayQueue;->elements:Ljava/lang/Object;
-
-    check-cast v3, [Ljava/lang/Object;
+    iget-object v3, v0, Lkotlinx/coroutines/internal/ArrayQueue;->elements:[Ljava/lang/Object;
 
     aget-object v6, v3, v2
 

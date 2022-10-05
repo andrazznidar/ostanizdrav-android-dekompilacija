@@ -12,9 +12,7 @@
 .field public final __insertionAdapterOfWorkSpec:Landroidx/room/EntityInsertionAdapter;
     .annotation system Ldalvik/annotation/Signature;
         value = {
-            "Landroidx/room/EntityInsertionAdapter<",
-            "Landroidx/work/impl/model/WorkSpec;",
-            ">;"
+            "Landroidx/room/EntityInsertionAdapter;"
         }
     .end annotation
 .end field
@@ -219,7 +217,7 @@
 
     move-result v2
 
-    invoke-static {v1, v2}, Landroidx/room/util/StringUtil;->appendPlaceholders(Ljava/lang/StringBuilder;I)V
+    invoke-static {v1, v2}, Lkotlinx/coroutines/YieldKt;->appendPlaceholders(Ljava/lang/StringBuilder;I)V
 
     const-string v4, ")"
 
@@ -462,7 +460,7 @@
 
     move-result v2
 
-    invoke-static {v1, v2}, Landroidx/room/util/StringUtil;->appendPlaceholders(Ljava/lang/StringBuilder;I)V
+    invoke-static {v1, v2}, Lkotlinx/coroutines/YieldKt;->appendPlaceholders(Ljava/lang/StringBuilder;I)V
 
     const-string v4, ")"
 
@@ -1121,11 +1119,11 @@
 
     move/from16 v20, v0
 
-    invoke-static/range {v19 .. v19}, Landroidx/work/impl/model/WorkTypeConverters;->intToBackoffPolicy(I)Landroidx/work/BackoffPolicy;
+    invoke-static/range {v19 .. v19}, Landroidx/work/impl/model/WorkTypeConverters;->intToBackoffPolicy(I)I
 
-    move-result-object v0
+    move-result v0
 
-    iput-object v0, v6, Landroidx/work/impl/model/WorkSpec;->backoffPolicy:Landroidx/work/BackoffPolicy;
+    iput v0, v6, Landroidx/work/impl/model/WorkSpec;->backoffPolicy:I
 
     move/from16 v19, v1
 
@@ -1777,11 +1775,11 @@
 
     move/from16 v20, v0
 
-    invoke-static/range {v19 .. v19}, Landroidx/work/impl/model/WorkTypeConverters;->intToBackoffPolicy(I)Landroidx/work/BackoffPolicy;
+    invoke-static/range {v19 .. v19}, Landroidx/work/impl/model/WorkTypeConverters;->intToBackoffPolicy(I)I
 
-    move-result-object v0
+    move-result v0
 
-    iput-object v0, v6, Landroidx/work/impl/model/WorkSpec;->backoffPolicy:Landroidx/work/BackoffPolicy;
+    iput v0, v6, Landroidx/work/impl/model/WorkSpec;->backoffPolicy:I
 
     move/from16 v19, v1
 
@@ -2344,11 +2342,11 @@
 
     move/from16 v20, v0
 
-    invoke-static/range {v19 .. v19}, Landroidx/work/impl/model/WorkTypeConverters;->intToBackoffPolicy(I)Landroidx/work/BackoffPolicy;
+    invoke-static/range {v19 .. v19}, Landroidx/work/impl/model/WorkTypeConverters;->intToBackoffPolicy(I)I
 
-    move-result-object v0
+    move-result v0
 
-    iput-object v0, v5, Landroidx/work/impl/model/WorkSpec;->backoffPolicy:Landroidx/work/BackoffPolicy;
+    iput v0, v5, Landroidx/work/impl/model/WorkSpec;->backoffPolicy:I
 
     move/from16 v19, v1
 
@@ -2911,11 +2909,11 @@
 
     move/from16 v20, v0
 
-    invoke-static/range {v19 .. v19}, Landroidx/work/impl/model/WorkTypeConverters;->intToBackoffPolicy(I)Landroidx/work/BackoffPolicy;
+    invoke-static/range {v19 .. v19}, Landroidx/work/impl/model/WorkTypeConverters;->intToBackoffPolicy(I)I
 
-    move-result-object v0
+    move-result v0
 
-    iput-object v0, v5, Landroidx/work/impl/model/WorkSpec;->backoffPolicy:Landroidx/work/BackoffPolicy;
+    iput v0, v5, Landroidx/work/impl/model/WorkSpec;->backoffPolicy:I
 
     move/from16 v19, v1
 
@@ -3726,11 +3724,11 @@
 
     move-result v1
 
-    invoke-static {v1}, Landroidx/work/impl/model/WorkTypeConverters;->intToBackoffPolicy(I)Landroidx/work/BackoffPolicy;
+    invoke-static {v1}, Landroidx/work/impl/model/WorkTypeConverters;->intToBackoffPolicy(I)I
 
-    move-result-object v1
+    move-result v1
 
-    iput-object v1, v0, Landroidx/work/impl/model/WorkSpec;->backoffPolicy:Landroidx/work/BackoffPolicy;
+    iput v1, v0, Landroidx/work/impl/model/WorkSpec;->backoffPolicy:I
 
     move/from16 v1, v22
 
@@ -4451,7 +4449,7 @@
 
     array-length v1, p2
 
-    invoke-static {v0, v1}, Landroidx/room/util/StringUtil;->appendPlaceholders(Ljava/lang/StringBuilder;I)V
+    invoke-static {v0, v1}, Lkotlinx/coroutines/YieldKt;->appendPlaceholders(Ljava/lang/StringBuilder;I)V
 
     const-string v1, ")"
 

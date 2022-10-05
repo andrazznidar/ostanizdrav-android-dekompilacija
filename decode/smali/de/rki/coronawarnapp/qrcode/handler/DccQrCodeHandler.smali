@@ -49,7 +49,7 @@
 
 # virtual methods
 .method public final handleQrCode(Lde/rki/coronawarnapp/covidcertificate/common/qrcode/DccQrCode;Lkotlin/coroutines/Continuation;)Ljava/lang/Object;
-    .locals 8
+    .locals 12
     .annotation system Ldalvik/annotation/Signature;
         value = {
             "(",
@@ -92,29 +92,27 @@
     :goto_0
     iget-object p2, v0, Lde/rki/coronawarnapp/qrcode/handler/DccQrCodeHandler$handleQrCode$1;->result:Ljava/lang/Object;
 
-    sget-object v1, Lkotlin/coroutines/intrinsics/CoroutineSingletons;->COROUTINE_SUSPENDED:Lkotlin/coroutines/intrinsics/CoroutineSingletons;
+    sget-object v7, Lkotlin/coroutines/intrinsics/CoroutineSingletons;->COROUTINE_SUSPENDED:Lkotlin/coroutines/intrinsics/CoroutineSingletons;
 
-    iget v2, v0, Lde/rki/coronawarnapp/qrcode/handler/DccQrCodeHandler$handleQrCode$1;->label:I
+    iget v1, v0, Lde/rki/coronawarnapp/qrcode/handler/DccQrCodeHandler$handleQrCode$1;->label:I
 
-    const/4 v3, 0x4
+    const/4 v8, 0x4
 
-    const/4 v4, 0x3
+    const/4 v9, 0x3
 
-    const/4 v5, 0x2
+    const/4 v10, 0x2
 
-    const/4 v6, 0x1
+    const/4 v11, 0x1
 
-    const/4 v7, 0x0
+    if-eqz v1, :cond_5
 
-    if-eqz v2, :cond_5
+    if-eq v1, v11, :cond_4
 
-    if-eq v2, v6, :cond_4
+    if-eq v1, v10, :cond_3
 
-    if-eq v2, v5, :cond_3
+    if-eq v1, v9, :cond_2
 
-    if-eq v2, v4, :cond_2
-
-    if-ne v2, v3, :cond_1
+    if-ne v1, v8, :cond_1
 
     invoke-static {p2}, Lkotlin/ResultKt;->throwOnFailure(Ljava/lang/Object;)V
 
@@ -144,9 +142,9 @@
 
     check-cast p1, Lde/rki/coronawarnapp/covidcertificate/common/qrcode/DccQrCode;
 
-    iget-object v2, v0, Lde/rki/coronawarnapp/qrcode/handler/DccQrCodeHandler$handleQrCode$1;->L$0:Ljava/lang/Object;
+    iget-object v1, v0, Lde/rki/coronawarnapp/qrcode/handler/DccQrCodeHandler$handleQrCode$1;->L$0:Ljava/lang/Object;
 
-    check-cast v2, Lde/rki/coronawarnapp/qrcode/handler/DccQrCodeHandler;
+    check-cast v1, Lde/rki/coronawarnapp/qrcode/handler/DccQrCodeHandler;
 
     invoke-static {p2}, Lkotlin/ResultKt;->throwOnFailure(Ljava/lang/Object;)V
 
@@ -155,51 +153,61 @@
     :cond_5
     invoke-static {p2}, Lkotlin/ResultKt;->throwOnFailure(Ljava/lang/Object;)V
 
-    iget-object p2, p0, Lde/rki/coronawarnapp/qrcode/handler/DccQrCodeHandler;->dscSignatureValidator:Lde/rki/coronawarnapp/covidcertificate/signature/core/DscSignatureValidator;
+    iget-object v1, p0, Lde/rki/coronawarnapp/qrcode/handler/DccQrCodeHandler;->dscSignatureValidator:Lde/rki/coronawarnapp/covidcertificate/signature/core/DscSignatureValidator;
 
     invoke-interface {p1}, Lde/rki/coronawarnapp/covidcertificate/common/qrcode/DccQrCode;->getData()Lde/rki/coronawarnapp/covidcertificate/common/certificate/DccData;
 
     move-result-object v2
 
+    const/4 v3, 0x0
+
+    const/4 v4, 0x0
+
+    const/4 v6, 0x6
+
     iput-object p0, v0, Lde/rki/coronawarnapp/qrcode/handler/DccQrCodeHandler$handleQrCode$1;->L$0:Ljava/lang/Object;
 
     iput-object p1, v0, Lde/rki/coronawarnapp/qrcode/handler/DccQrCodeHandler$handleQrCode$1;->L$1:Ljava/lang/Object;
 
-    iput v6, v0, Lde/rki/coronawarnapp/qrcode/handler/DccQrCodeHandler$handleQrCode$1;->label:I
+    iput v11, v0, Lde/rki/coronawarnapp/qrcode/handler/DccQrCodeHandler$handleQrCode$1;->label:I
 
-    invoke-virtual {p2, v2, v7, v0}, Lde/rki/coronawarnapp/covidcertificate/signature/core/DscSignatureValidator;->validateSignature(Lde/rki/coronawarnapp/covidcertificate/common/certificate/DccData;Lde/rki/coronawarnapp/covidcertificate/signature/core/DscData;Lkotlin/coroutines/Continuation;)Ljava/lang/Object;
+    move-object v5, v0
+
+    invoke-static/range {v1 .. v6}, Lde/rki/coronawarnapp/covidcertificate/signature/core/DscSignatureValidator;->validateSignature$default(Lde/rki/coronawarnapp/covidcertificate/signature/core/DscSignatureValidator;Lde/rki/coronawarnapp/covidcertificate/common/certificate/DccData;Lde/rki/coronawarnapp/covidcertificate/signature/core/DscData;Ljava/util/Date;Lkotlin/coroutines/Continuation;I)Ljava/lang/Object;
 
     move-result-object p2
 
-    if-ne p2, v1, :cond_6
+    if-ne p2, v7, :cond_6
 
-    return-object v1
+    return-object v7
 
     :cond_6
-    move-object v2, p0
+    move-object v1, p0
 
     :goto_1
     instance-of p2, p1, Lde/rki/coronawarnapp/covidcertificate/recovery/core/qrcode/RecoveryCertificateQRCode;
 
+    const/4 v2, 0x0
+
     if-eqz p2, :cond_8
 
-    iget-object p2, v2, Lde/rki/coronawarnapp/qrcode/handler/DccQrCodeHandler;->recoveryCertificateRepository:Lde/rki/coronawarnapp/covidcertificate/recovery/core/RecoveryCertificateRepository;
+    iget-object p2, v1, Lde/rki/coronawarnapp/qrcode/handler/DccQrCodeHandler;->recoveryCertificateRepository:Lde/rki/coronawarnapp/covidcertificate/recovery/core/RecoveryCertificateRepository;
 
     check-cast p1, Lde/rki/coronawarnapp/covidcertificate/recovery/core/qrcode/RecoveryCertificateQRCode;
 
-    iput-object v7, v0, Lde/rki/coronawarnapp/qrcode/handler/DccQrCodeHandler$handleQrCode$1;->L$0:Ljava/lang/Object;
+    iput-object v2, v0, Lde/rki/coronawarnapp/qrcode/handler/DccQrCodeHandler$handleQrCode$1;->L$0:Ljava/lang/Object;
 
-    iput-object v7, v0, Lde/rki/coronawarnapp/qrcode/handler/DccQrCodeHandler$handleQrCode$1;->L$1:Ljava/lang/Object;
+    iput-object v2, v0, Lde/rki/coronawarnapp/qrcode/handler/DccQrCodeHandler$handleQrCode$1;->L$1:Ljava/lang/Object;
 
-    iput v5, v0, Lde/rki/coronawarnapp/qrcode/handler/DccQrCodeHandler$handleQrCode$1;->label:I
+    iput v10, v0, Lde/rki/coronawarnapp/qrcode/handler/DccQrCodeHandler$handleQrCode$1;->label:I
 
     invoke-virtual {p2, p1, v0}, Lde/rki/coronawarnapp/covidcertificate/recovery/core/RecoveryCertificateRepository;->registerCertificate(Lde/rki/coronawarnapp/covidcertificate/recovery/core/qrcode/RecoveryCertificateQRCode;Lkotlin/coroutines/Continuation;)Ljava/lang/Object;
 
     move-result-object p2
 
-    if-ne p2, v1, :cond_7
+    if-ne p2, v7, :cond_7
 
-    return-object v1
+    return-object v7
 
     :cond_7
     :goto_2
@@ -216,23 +224,23 @@
 
     if-eqz p2, :cond_a
 
-    iget-object p2, v2, Lde/rki/coronawarnapp/qrcode/handler/DccQrCodeHandler;->vaccinationRepository:Lde/rki/coronawarnapp/covidcertificate/vaccination/core/repository/VaccinationRepository;
+    iget-object p2, v1, Lde/rki/coronawarnapp/qrcode/handler/DccQrCodeHandler;->vaccinationRepository:Lde/rki/coronawarnapp/covidcertificate/vaccination/core/repository/VaccinationRepository;
 
     check-cast p1, Lde/rki/coronawarnapp/covidcertificate/vaccination/core/qrcode/VaccinationCertificateQRCode;
 
-    iput-object v7, v0, Lde/rki/coronawarnapp/qrcode/handler/DccQrCodeHandler$handleQrCode$1;->L$0:Ljava/lang/Object;
+    iput-object v2, v0, Lde/rki/coronawarnapp/qrcode/handler/DccQrCodeHandler$handleQrCode$1;->L$0:Ljava/lang/Object;
 
-    iput-object v7, v0, Lde/rki/coronawarnapp/qrcode/handler/DccQrCodeHandler$handleQrCode$1;->L$1:Ljava/lang/Object;
+    iput-object v2, v0, Lde/rki/coronawarnapp/qrcode/handler/DccQrCodeHandler$handleQrCode$1;->L$1:Ljava/lang/Object;
 
-    iput v4, v0, Lde/rki/coronawarnapp/qrcode/handler/DccQrCodeHandler$handleQrCode$1;->label:I
+    iput v9, v0, Lde/rki/coronawarnapp/qrcode/handler/DccQrCodeHandler$handleQrCode$1;->label:I
 
     invoke-virtual {p2, p1, v0}, Lde/rki/coronawarnapp/covidcertificate/vaccination/core/repository/VaccinationRepository;->registerCertificate(Lde/rki/coronawarnapp/covidcertificate/vaccination/core/qrcode/VaccinationCertificateQRCode;Lkotlin/coroutines/Continuation;)Ljava/lang/Object;
 
     move-result-object p2
 
-    if-ne p2, v1, :cond_9
+    if-ne p2, v7, :cond_9
 
-    return-object v1
+    return-object v7
 
     :cond_9
     :goto_3
@@ -249,23 +257,23 @@
 
     if-eqz p2, :cond_c
 
-    iget-object p2, v2, Lde/rki/coronawarnapp/qrcode/handler/DccQrCodeHandler;->testCertificateRepository:Lde/rki/coronawarnapp/covidcertificate/test/core/TestCertificateRepository;
+    iget-object p2, v1, Lde/rki/coronawarnapp/qrcode/handler/DccQrCodeHandler;->testCertificateRepository:Lde/rki/coronawarnapp/covidcertificate/test/core/TestCertificateRepository;
 
     check-cast p1, Lde/rki/coronawarnapp/covidcertificate/test/core/qrcode/TestCertificateQRCode;
 
-    iput-object v7, v0, Lde/rki/coronawarnapp/qrcode/handler/DccQrCodeHandler$handleQrCode$1;->L$0:Ljava/lang/Object;
+    iput-object v2, v0, Lde/rki/coronawarnapp/qrcode/handler/DccQrCodeHandler$handleQrCode$1;->L$0:Ljava/lang/Object;
 
-    iput-object v7, v0, Lde/rki/coronawarnapp/qrcode/handler/DccQrCodeHandler$handleQrCode$1;->L$1:Ljava/lang/Object;
+    iput-object v2, v0, Lde/rki/coronawarnapp/qrcode/handler/DccQrCodeHandler$handleQrCode$1;->L$1:Ljava/lang/Object;
 
-    iput v3, v0, Lde/rki/coronawarnapp/qrcode/handler/DccQrCodeHandler$handleQrCode$1;->label:I
+    iput v8, v0, Lde/rki/coronawarnapp/qrcode/handler/DccQrCodeHandler$handleQrCode$1;->label:I
 
     invoke-virtual {p2, p1, v0}, Lde/rki/coronawarnapp/covidcertificate/test/core/TestCertificateRepository;->registerCertificate(Lde/rki/coronawarnapp/covidcertificate/test/core/qrcode/TestCertificateQRCode;Lkotlin/coroutines/Continuation;)Ljava/lang/Object;
 
     move-result-object p2
 
-    if-ne p2, v1, :cond_b
+    if-ne p2, v7, :cond_b
 
-    return-object v1
+    return-object v7
 
     :cond_b
     :goto_4
@@ -281,7 +289,9 @@
     :cond_c
     new-instance p1, Lde/rki/coronawarnapp/qrcode/scanner/UnsupportedQrCodeException;
 
-    invoke-direct {p1, v7, v6}, Lde/rki/coronawarnapp/qrcode/scanner/UnsupportedQrCodeException;-><init>(Lde/rki/coronawarnapp/qrcode/scanner/UnsupportedQrCodeException$ErrorCode;I)V
+    const/4 p2, 0x0
+
+    invoke-direct {p1, p2, v11}, Lde/rki/coronawarnapp/qrcode/scanner/UnsupportedQrCodeException;-><init>(II)V
 
     throw p1
 .end method

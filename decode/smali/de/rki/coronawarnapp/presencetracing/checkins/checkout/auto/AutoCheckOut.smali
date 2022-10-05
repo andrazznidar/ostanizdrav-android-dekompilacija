@@ -1065,7 +1065,6 @@
 
     move-object v5, v0
 
-    :cond_d
     :goto_6
     invoke-interface {v5}, Ljava/util/Iterator;->hasNext()Z
 
@@ -1115,7 +1114,7 @@
     .catch Ljava/lang/Exception; {:try_start_4 .. :try_end_4} :catch_1
     .catchall {:try_start_4 .. :try_end_4} :catchall_0
 
-    if-ne v0, v3, :cond_e
+    if-ne v0, v3, :cond_d
 
     return-object v3
 
@@ -1145,10 +1144,13 @@
 
     const/4 v4, 0x0
 
-    :cond_e
+    :cond_d
     :goto_8
-    if-eqz v4, :cond_d
+    if-nez v4, :cond_e
 
+    goto :goto_6
+
+    :cond_e
     invoke-interface {v11, v4}, Ljava/util/Collection;->add(Ljava/lang/Object;)Z
 
     goto :goto_6

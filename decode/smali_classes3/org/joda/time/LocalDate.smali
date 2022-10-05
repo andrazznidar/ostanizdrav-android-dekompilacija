@@ -180,9 +180,7 @@
 
     move-result-object v0
 
-    iget-object v0, v0, Lorg/joda/time/convert/ConverterManager;->iPartialConverters:Ljava/lang/Object;
-
-    check-cast v0, Lorg/joda/time/convert/ConverterSet;
+    iget-object v0, v0, Lorg/joda/time/convert/ConverterManager;->iPartialConverters:Lorg/joda/time/convert/ConverterSet;
 
     invoke-virtual {p1}, Ljava/lang/Object;->getClass()Ljava/lang/Class;
 
@@ -247,17 +245,7 @@
 
     move-result-object v1
 
-    invoke-virtual {p1}, Ljava/lang/Object;->getClass()Ljava/lang/Class;
-
-    move-result-object p1
-
-    invoke-virtual {p1}, Ljava/lang/Class;->getName()Ljava/lang/String;
-
-    move-result-object p1
-
-    invoke-virtual {v1, p1}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
-
-    invoke-virtual {v1}, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
+    invoke-static {p1, v1}, Lcom/fasterxml/jackson/core/JsonGenerator$$ExternalSyntheticOutline0;->m(Ljava/lang/Object;Ljava/lang/StringBuilder;)Ljava/lang/String;
 
     move-result-object p1
 
@@ -437,7 +425,7 @@
     return v0
 
     :cond_3
-    invoke-super {p0, p1}, Lorg/joda/time/base/BaseLocal;->compareTo(Lorg/joda/time/ReadablePartial;)I
+    invoke-super {p0, p1}, Lorg/joda/time/base/AbstractPartial;->compareTo(Lorg/joda/time/ReadablePartial;)I
 
     move-result p1
 
@@ -489,7 +477,7 @@
     return v0
 
     :cond_2
-    invoke-super {p0, p1}, Lorg/joda/time/base/BaseLocal;->equals(Ljava/lang/Object;)Z
+    invoke-super {p0, p1}, Lorg/joda/time/base/AbstractPartial;->equals(Ljava/lang/Object;)Z
 
     move-result p1
 
@@ -743,7 +731,7 @@
 
     if-nez v0, :cond_0
 
-    invoke-super {p0}, Lorg/joda/time/base/BaseLocal;->hashCode()I
+    invoke-super {p0}, Lorg/joda/time/base/AbstractPartial;->hashCode()I
 
     move-result v0
 

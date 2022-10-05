@@ -20,8 +20,6 @@
 
 .field public I$1:I
 
-.field public I$2:I
-
 .field public L$0:Ljava/lang/Object;
 
 .field public label:I

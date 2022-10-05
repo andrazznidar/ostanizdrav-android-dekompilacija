@@ -209,15 +209,29 @@
     .end annotation
 .end method
 
-.method public bridge abstract synthetic clone()Lcom/google/protobuf/MessageLite$Builder;
+.method public bridge synthetic clone()Lcom/google/protobuf/MessageLite$Builder;
+    .locals 1
+
+    invoke-virtual {p0}, Lcom/google/protobuf/AbstractMessageLite$Builder;->clone()Lcom/google/protobuf/AbstractMessageLite$Builder;
+
+    move-result-object v0
+
+    return-object v0
 .end method
 
-.method public bridge abstract synthetic clone()Ljava/lang/Object;
+.method public bridge synthetic clone()Ljava/lang/Object;
+    .locals 1
     .annotation system Ldalvik/annotation/Throws;
         value = {
             Ljava/lang/CloneNotSupportedException;
         }
     .end annotation
+
+    invoke-virtual {p0}, Lcom/google/protobuf/AbstractMessageLite$Builder;->clone()Lcom/google/protobuf/AbstractMessageLite$Builder;
+
+    move-result-object v0
+
+    return-object v0
 .end method
 
 .method public abstract internalMergeFrom(Lcom/google/protobuf/AbstractMessageLite;)Lcom/google/protobuf/AbstractMessageLite$Builder;
@@ -736,12 +750,19 @@
     return-object p1
 .end method
 
-.method public bridge abstract synthetic mergeFrom(Lcom/google/protobuf/CodedInputStream;Lcom/google/protobuf/ExtensionRegistryLite;)Lcom/google/protobuf/MessageLite$Builder;
+.method public bridge synthetic mergeFrom(Lcom/google/protobuf/CodedInputStream;Lcom/google/protobuf/ExtensionRegistryLite;)Lcom/google/protobuf/MessageLite$Builder;
+    .locals 0
     .annotation system Ldalvik/annotation/Throws;
         value = {
             Ljava/io/IOException;
         }
     .end annotation
+
+    invoke-virtual {p0, p1, p2}, Lcom/google/protobuf/AbstractMessageLite$Builder;->mergeFrom(Lcom/google/protobuf/CodedInputStream;Lcom/google/protobuf/ExtensionRegistryLite;)Lcom/google/protobuf/AbstractMessageLite$Builder;
+
+    move-result-object p1
+
+    return-object p1
 .end method
 
 .method public bridge synthetic mergeFrom(Lcom/google/protobuf/MessageLite;)Lcom/google/protobuf/MessageLite$Builder;

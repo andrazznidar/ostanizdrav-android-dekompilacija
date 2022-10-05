@@ -309,7 +309,7 @@
 
     move-result-object v8
 
-    const-string v12, "(this as java.lang.String).getBytes(charset)"
+    const-string/jumbo v12, "this as java.lang.String).getBytes(charset)"
 
     invoke-static {v8, v12}, Lkotlin/jvm/internal/Intrinsics;->checkNotNullExpressionValue(Ljava/lang/Object;Ljava/lang/String;)V
 
@@ -332,6 +332,8 @@
 
     aget-byte v14, v8, v13
 
+    add-int/lit8 v13, v13, 0x1
+
     new-array v15, v3, [Ljava/lang/Object;
 
     invoke-static {v14}, Ljava/lang/Byte;->valueOf(B)Ljava/lang/Byte;
@@ -342,17 +344,15 @@
 
     const-string v14, "%02x"
 
-    const-string v6, "java.lang.String.format(this, *args)"
+    const-string v6, "format(this, *args)"
 
-    invoke-static {v15, v3, v14, v6}, Lde/rki/coronawarnapp/coronatest/server/VerificationServer$retrieveRegistrationToken$2$$ExternalSyntheticOutline0;->m([Ljava/lang/Object;ILjava/lang/String;Ljava/lang/String;)Ljava/lang/String;
+    invoke-static {v15, v3, v14, v6}, Landroidx/lifecycle/ViewModelKt$$ExternalSyntheticOutline0;->m([Ljava/lang/Object;ILjava/lang/String;Ljava/lang/String;)Ljava/lang/String;
 
     move-result-object v6
 
     invoke-static {v12, v6}, Landroidx/appcompat/view/SupportMenuInflater$$ExternalSyntheticOutline0;->m(Ljava/lang/String;Ljava/lang/String;)Ljava/lang/String;
 
     move-result-object v12
-
-    add-int/lit8 v13, v13, 0x1
 
     const/4 v6, 0x0
 

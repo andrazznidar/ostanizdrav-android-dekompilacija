@@ -25,7 +25,7 @@
 .end annotation
 
 .annotation system Ldalvik/annotation/SourceDebugExtension;
-    value = "SMAP\nGsonExtensions.kt\nKotlin\n*S Kotlin\n*F\n+ 1 GsonExtensions.kt\nde/rki/coronawarnapp/util/serialization/GsonExtensionsKt$fromJson$2$value$1\n*L\n1#1,45:1\n*E\n"
+    value = "SMAP\nGsonExtensions.kt\nKotlin\n*S Kotlin\n*F\n+ 1 GsonExtensions.kt\nde/rki/coronawarnapp/util/serialization/GsonExtensionsKt$fromJson$3$value$1\n*L\n1#1,51:1\n*E\n"
 .end annotation
 
 

@@ -240,14 +240,38 @@
     return-object p1
 .end method
 
-.method public _findTypeResolver(Lcom/fasterxml/jackson/databind/cfg/MapperConfig;Lcom/fasterxml/jackson/databind/introspect/Annotated;Lcom/fasterxml/jackson/databind/JavaType;)Lcom/fasterxml/jackson/databind/jsontype/TypeResolverBuilder;
+.method public final _databindException(Ljava/lang/String;)Lcom/fasterxml/jackson/databind/JsonMappingException;
+    .locals 2
+
+    new-instance v0, Lcom/fasterxml/jackson/databind/JsonMappingException;
+
+    const/4 v1, 0x0
+
+    invoke-direct {v0, v1, p1}, Lcom/fasterxml/jackson/databind/JsonMappingException;-><init>(Ljava/io/Closeable;Ljava/lang/String;)V
+
+    return-object v0
+.end method
+
+.method public final _databindException(Ljava/lang/Throwable;Ljava/lang/String;)Lcom/fasterxml/jackson/databind/JsonMappingException;
+    .locals 2
+
+    new-instance v0, Lcom/fasterxml/jackson/databind/JsonMappingException;
+
+    const/4 v1, 0x0
+
+    invoke-direct {v0, v1, p2, p1}, Lcom/fasterxml/jackson/databind/JsonMappingException;-><init>(Ljava/io/Closeable;Ljava/lang/String;Ljava/lang/Throwable;)V
+
+    return-object v0
+.end method
+
+.method public _findTypeResolver(Lcom/fasterxml/jackson/databind/cfg/MapperConfig;Lorg/joda/time/Chronology;Lcom/fasterxml/jackson/databind/JavaType;)Lcom/fasterxml/jackson/databind/jsontype/TypeResolverBuilder;
     .locals 4
     .annotation system Ldalvik/annotation/Signature;
         value = {
             "(",
             "Lcom/fasterxml/jackson/databind/cfg/MapperConfig<",
             "*>;",
-            "Lcom/fasterxml/jackson/databind/introspect/Annotated;",
+            "Lorg/joda/time/Chronology;",
             "Lcom/fasterxml/jackson/databind/JavaType;",
             ")",
             "Lcom/fasterxml/jackson/databind/jsontype/TypeResolverBuilder<",
@@ -257,7 +281,7 @@
 
     const-class v0, Lcom/fasterxml/jackson/annotation/JsonTypeInfo;
 
-    invoke-virtual {p2, v0}, Lcom/fasterxml/jackson/databind/introspect/Annotated;->getAnnotation(Ljava/lang/Class;)Ljava/lang/annotation/Annotation;
+    invoke-virtual {p2, v0}, Lorg/joda/time/Chronology;->getAnnotation(Ljava/lang/Class;)Ljava/lang/annotation/Annotation;
 
     move-result-object v0
 
@@ -265,7 +289,7 @@
 
     const-class v1, Lcom/fasterxml/jackson/databind/annotation/JsonTypeResolver;
 
-    invoke-virtual {p2, v1}, Lcom/fasterxml/jackson/databind/introspect/Annotated;->getAnnotation(Ljava/lang/Class;)Ljava/lang/annotation/Annotation;
+    invoke-virtual {p2, v1}, Lorg/joda/time/Chronology;->getAnnotation(Ljava/lang/Class;)Ljava/lang/annotation/Annotation;
 
     move-result-object v1
 
@@ -334,7 +358,7 @@
     :goto_0
     const-class v3, Lcom/fasterxml/jackson/databind/annotation/JsonTypeIdResolver;
 
-    invoke-virtual {p2, v3}, Lcom/fasterxml/jackson/databind/introspect/Annotated;->getAnnotation(Ljava/lang/Class;)Ljava/lang/annotation/Annotation;
+    invoke-virtual {p2, v3}, Lorg/joda/time/Chronology;->getAnnotation(Ljava/lang/Class;)Ljava/lang/annotation/Annotation;
 
     move-result-object v3
 
@@ -651,7 +675,7 @@
 
     sget-object v13, Lcom/fasterxml/jackson/databind/type/TypeFactory;->EMPTY_BINDINGS:Lcom/fasterxml/jackson/databind/type/TypeBindings;
 
-    invoke-virtual {v12, v9, v11, v13}, Lcom/fasterxml/jackson/databind/type/TypeFactory;->_fromAny(Landroidx/fragment/app/FragmentStore;Ljava/lang/reflect/Type;Lcom/fasterxml/jackson/databind/type/TypeBindings;)Lcom/fasterxml/jackson/databind/JavaType;
+    invoke-virtual {v12, v9, v11, v13}, Lcom/fasterxml/jackson/databind/type/TypeFactory;->_fromAny(Lcom/fasterxml/jackson/databind/type/ClassStack;Ljava/lang/reflect/Type;Lcom/fasterxml/jackson/databind/type/TypeBindings;)Lcom/fasterxml/jackson/databind/JavaType;
 
     move-result-object v11
 
@@ -929,12 +953,12 @@
     return-object p2
 .end method
 
-.method public findContentDeserializer(Lcom/fasterxml/jackson/databind/introspect/Annotated;)Ljava/lang/Object;
+.method public findContentDeserializer(Lorg/joda/time/Chronology;)Ljava/lang/Object;
     .locals 1
 
     const-class v0, Lcom/fasterxml/jackson/databind/annotation/JsonDeserialize;
 
-    invoke-virtual {p1, v0}, Lcom/fasterxml/jackson/databind/introspect/Annotated;->getAnnotation(Ljava/lang/Class;)Ljava/lang/annotation/Annotation;
+    invoke-virtual {p1, v0}, Lorg/joda/time/Chronology;->getAnnotation(Ljava/lang/Class;)Ljava/lang/annotation/Annotation;
 
     move-result-object p1
 
@@ -958,12 +982,12 @@
     return-object p1
 .end method
 
-.method public findContentSerializer(Lcom/fasterxml/jackson/databind/introspect/Annotated;)Ljava/lang/Object;
+.method public findContentSerializer(Lorg/joda/time/Chronology;)Ljava/lang/Object;
     .locals 1
 
     const-class v0, Lcom/fasterxml/jackson/databind/annotation/JsonSerialize;
 
-    invoke-virtual {p1, v0}, Lcom/fasterxml/jackson/databind/introspect/Annotated;->getAnnotation(Ljava/lang/Class;)Ljava/lang/annotation/Annotation;
+    invoke-virtual {p1, v0}, Lorg/joda/time/Chronology;->getAnnotation(Ljava/lang/Class;)Ljava/lang/annotation/Annotation;
 
     move-result-object p1
 
@@ -987,14 +1011,14 @@
     return-object p1
 .end method
 
-.method public findCreatorAnnotation(Lcom/fasterxml/jackson/databind/cfg/MapperConfig;Lcom/fasterxml/jackson/databind/introspect/Annotated;)Lcom/fasterxml/jackson/annotation/JsonCreator$Mode;
+.method public findCreatorAnnotation(Lcom/fasterxml/jackson/databind/cfg/MapperConfig;Lorg/joda/time/Chronology;)Lcom/fasterxml/jackson/annotation/JsonCreator$Mode;
     .locals 1
     .annotation system Ldalvik/annotation/Signature;
         value = {
             "(",
             "Lcom/fasterxml/jackson/databind/cfg/MapperConfig<",
             "*>;",
-            "Lcom/fasterxml/jackson/databind/introspect/Annotated;",
+            "Lorg/joda/time/Chronology;",
             ")",
             "Lcom/fasterxml/jackson/annotation/JsonCreator$Mode;"
         }
@@ -1002,7 +1026,7 @@
 
     const-class v0, Lcom/fasterxml/jackson/annotation/JsonCreator;
 
-    invoke-virtual {p2, v0}, Lcom/fasterxml/jackson/databind/introspect/Annotated;->getAnnotation(Ljava/lang/Class;)Ljava/lang/annotation/Annotation;
+    invoke-virtual {p2, v0}, Lorg/joda/time/Chronology;->getAnnotation(Ljava/lang/Class;)Ljava/lang/annotation/Annotation;
 
     move-result-object v0
 
@@ -1037,7 +1061,7 @@
 
     if-eqz p1, :cond_1
 
-    invoke-virtual {p1, p2}, Lcom/fasterxml/jackson/databind/ext/Java7Support;->hasCreatorAnnotation(Lcom/fasterxml/jackson/databind/introspect/Annotated;)Ljava/lang/Boolean;
+    invoke-virtual {p1, p2}, Lcom/fasterxml/jackson/databind/ext/Java7Support;->hasCreatorAnnotation(Lorg/joda/time/Chronology;)Ljava/lang/Boolean;
 
     move-result-object p1
 
@@ -1059,14 +1083,14 @@
     return-object p1
 .end method
 
-.method public findCreatorBinding(Lcom/fasterxml/jackson/databind/introspect/Annotated;)Lcom/fasterxml/jackson/annotation/JsonCreator$Mode;
+.method public findCreatorBinding(Lorg/joda/time/Chronology;)Lcom/fasterxml/jackson/annotation/JsonCreator$Mode;
     .locals 1
     .annotation runtime Ljava/lang/Deprecated;
     .end annotation
 
     const-class v0, Lcom/fasterxml/jackson/annotation/JsonCreator;
 
-    invoke-virtual {p1, v0}, Lcom/fasterxml/jackson/databind/introspect/Annotated;->getAnnotation(Ljava/lang/Class;)Ljava/lang/annotation/Annotation;
+    invoke-virtual {p1, v0}, Lorg/joda/time/Chronology;->getAnnotation(Ljava/lang/Class;)Ljava/lang/annotation/Annotation;
 
     move-result-object p1
 
@@ -1211,12 +1235,12 @@
     return-object p1
 .end method
 
-.method public findDeserializationConverter(Lcom/fasterxml/jackson/databind/introspect/Annotated;)Ljava/lang/Object;
+.method public findDeserializationConverter(Lorg/joda/time/Chronology;)Ljava/lang/Object;
     .locals 1
 
     const-class v0, Lcom/fasterxml/jackson/databind/annotation/JsonDeserialize;
 
-    invoke-virtual {p1, v0}, Lcom/fasterxml/jackson/databind/introspect/Annotated;->getAnnotation(Ljava/lang/Class;)Ljava/lang/annotation/Annotation;
+    invoke-virtual {p1, v0}, Lorg/joda/time/Chronology;->getAnnotation(Ljava/lang/Class;)Ljava/lang/annotation/Annotation;
 
     move-result-object p1
 
@@ -1243,12 +1267,12 @@
     return-object p1
 .end method
 
-.method public findDeserializer(Lcom/fasterxml/jackson/databind/introspect/Annotated;)Ljava/lang/Object;
+.method public findDeserializer(Lorg/joda/time/Chronology;)Ljava/lang/Object;
     .locals 1
 
     const-class v0, Lcom/fasterxml/jackson/databind/annotation/JsonDeserialize;
 
-    invoke-virtual {p1, v0}, Lcom/fasterxml/jackson/databind/introspect/Annotated;->getAnnotation(Ljava/lang/Class;)Ljava/lang/annotation/Annotation;
+    invoke-virtual {p1, v0}, Lorg/joda/time/Chronology;->getAnnotation(Ljava/lang/Class;)Ljava/lang/annotation/Annotation;
 
     move-result-object p1
 
@@ -1482,12 +1506,12 @@
     return-object p3
 .end method
 
-.method public findFilterId(Lcom/fasterxml/jackson/databind/introspect/Annotated;)Ljava/lang/Object;
+.method public findFilterId(Lorg/joda/time/Chronology;)Ljava/lang/Object;
     .locals 1
 
     const-class v0, Lcom/fasterxml/jackson/annotation/JsonFilter;
 
-    invoke-virtual {p1, v0}, Lcom/fasterxml/jackson/databind/introspect/Annotated;->getAnnotation(Ljava/lang/Class;)Ljava/lang/annotation/Annotation;
+    invoke-virtual {p1, v0}, Lorg/joda/time/Chronology;->getAnnotation(Ljava/lang/Class;)Ljava/lang/annotation/Annotation;
 
     move-result-object p1
 
@@ -1513,12 +1537,12 @@
     return-object p1
 .end method
 
-.method public findFormat(Lcom/fasterxml/jackson/databind/introspect/Annotated;)Lcom/fasterxml/jackson/annotation/JsonFormat$Value;
+.method public findFormat(Lorg/joda/time/Chronology;)Lcom/fasterxml/jackson/annotation/JsonFormat$Value;
     .locals 13
 
     const-class v0, Lcom/fasterxml/jackson/annotation/JsonFormat;
 
-    invoke-virtual {p1, v0}, Lcom/fasterxml/jackson/databind/introspect/Annotated;->getAnnotation(Ljava/lang/Class;)Ljava/lang/annotation/Annotation;
+    invoke-virtual {p1, v0}, Lorg/joda/time/Chronology;->getAnnotation(Ljava/lang/Class;)Ljava/lang/annotation/Annotation;
 
     move-result-object p1
 
@@ -1725,7 +1749,7 @@
 
     if-nez v1, :cond_2
 
-    invoke-virtual {p1}, Lcom/fasterxml/jackson/databind/introspect/Annotated;->getRawType()Ljava/lang/Class;
+    invoke-virtual {p1}, Lorg/joda/time/Chronology;->getRawType()Ljava/lang/Class;
 
     move-result-object p1
 
@@ -1746,7 +1770,7 @@
 
     if-nez v3, :cond_3
 
-    invoke-virtual {p1}, Lcom/fasterxml/jackson/databind/introspect/Annotated;->getRawType()Ljava/lang/Class;
+    invoke-virtual {p1}, Lorg/joda/time/Chronology;->getRawType()Ljava/lang/Class;
 
     move-result-object p1
 
@@ -1812,12 +1836,12 @@
     return-object p1
 .end method
 
-.method public findKeyDeserializer(Lcom/fasterxml/jackson/databind/introspect/Annotated;)Ljava/lang/Object;
+.method public findKeyDeserializer(Lorg/joda/time/Chronology;)Ljava/lang/Object;
     .locals 1
 
     const-class v0, Lcom/fasterxml/jackson/databind/annotation/JsonDeserialize;
 
-    invoke-virtual {p1, v0}, Lcom/fasterxml/jackson/databind/introspect/Annotated;->getAnnotation(Ljava/lang/Class;)Ljava/lang/annotation/Annotation;
+    invoke-virtual {p1, v0}, Lorg/joda/time/Chronology;->getAnnotation(Ljava/lang/Class;)Ljava/lang/annotation/Annotation;
 
     move-result-object p1
 
@@ -1841,12 +1865,12 @@
     return-object p1
 .end method
 
-.method public findKeySerializer(Lcom/fasterxml/jackson/databind/introspect/Annotated;)Ljava/lang/Object;
+.method public findKeySerializer(Lorg/joda/time/Chronology;)Ljava/lang/Object;
     .locals 1
 
     const-class v0, Lcom/fasterxml/jackson/databind/annotation/JsonSerialize;
 
-    invoke-virtual {p1, v0}, Lcom/fasterxml/jackson/databind/introspect/Annotated;->getAnnotation(Ljava/lang/Class;)Ljava/lang/annotation/Annotation;
+    invoke-virtual {p1, v0}, Lorg/joda/time/Chronology;->getAnnotation(Ljava/lang/Class;)Ljava/lang/annotation/Annotation;
 
     move-result-object p1
 
@@ -1870,12 +1894,12 @@
     return-object p1
 .end method
 
-.method public findMergeInfo(Lcom/fasterxml/jackson/databind/introspect/Annotated;)Ljava/lang/Boolean;
+.method public findMergeInfo(Lorg/joda/time/Chronology;)Ljava/lang/Boolean;
     .locals 1
 
     const-class v0, Lcom/fasterxml/jackson/annotation/JsonMerge;
 
-    invoke-virtual {p1, v0}, Lcom/fasterxml/jackson/databind/introspect/Annotated;->getAnnotation(Ljava/lang/Class;)Ljava/lang/annotation/Annotation;
+    invoke-virtual {p1, v0}, Lorg/joda/time/Chronology;->getAnnotation(Ljava/lang/Class;)Ljava/lang/annotation/Annotation;
 
     move-result-object p1
 
@@ -1900,12 +1924,12 @@
     return-object p1
 .end method
 
-.method public findNameForDeserialization(Lcom/fasterxml/jackson/databind/introspect/Annotated;)Lcom/fasterxml/jackson/databind/PropertyName;
+.method public findNameForDeserialization(Lorg/joda/time/Chronology;)Lcom/fasterxml/jackson/databind/PropertyName;
     .locals 3
 
     const-class v0, Lcom/fasterxml/jackson/annotation/JsonSetter;
 
-    invoke-virtual {p1, v0}, Lcom/fasterxml/jackson/databind/introspect/Annotated;->getAnnotation(Ljava/lang/Class;)Ljava/lang/annotation/Annotation;
+    invoke-virtual {p1, v0}, Lorg/joda/time/Chronology;->getAnnotation(Ljava/lang/Class;)Ljava/lang/annotation/Annotation;
 
     move-result-object v0
 
@@ -1940,7 +1964,7 @@
     :goto_0
     const-class v1, Lcom/fasterxml/jackson/annotation/JsonProperty;
 
-    invoke-virtual {p1, v1}, Lcom/fasterxml/jackson/databind/introspect/Annotated;->getAnnotation(Ljava/lang/Class;)Ljava/lang/annotation/Annotation;
+    invoke-virtual {p1, v1}, Lorg/joda/time/Chronology;->getAnnotation(Ljava/lang/Class;)Ljava/lang/annotation/Annotation;
 
     move-result-object v1
 
@@ -1983,7 +2007,7 @@
 
     sget-object v0, Lcom/fasterxml/jackson/databind/introspect/JacksonAnnotationIntrospector;->ANNOTATIONS_TO_INFER_DESER:[Ljava/lang/Class;
 
-    invoke-virtual {p1, v0}, Lcom/fasterxml/jackson/databind/introspect/Annotated;->hasOneOf([Ljava/lang/Class;)Z
+    invoke-virtual {p1, v0}, Lorg/joda/time/Chronology;->hasOneOf([Ljava/lang/Class;)Z
 
     move-result p1
 
@@ -2001,12 +2025,12 @@
     return-object p1
 .end method
 
-.method public findNameForSerialization(Lcom/fasterxml/jackson/databind/introspect/Annotated;)Lcom/fasterxml/jackson/databind/PropertyName;
+.method public findNameForSerialization(Lorg/joda/time/Chronology;)Lcom/fasterxml/jackson/databind/PropertyName;
     .locals 3
 
     const-class v0, Lcom/fasterxml/jackson/annotation/JsonGetter;
 
-    invoke-virtual {p1, v0}, Lcom/fasterxml/jackson/databind/introspect/Annotated;->getAnnotation(Ljava/lang/Class;)Ljava/lang/annotation/Annotation;
+    invoke-virtual {p1, v0}, Lorg/joda/time/Chronology;->getAnnotation(Ljava/lang/Class;)Ljava/lang/annotation/Annotation;
 
     move-result-object v0
 
@@ -2041,7 +2065,7 @@
     :goto_0
     const-class v1, Lcom/fasterxml/jackson/annotation/JsonProperty;
 
-    invoke-virtual {p1, v1}, Lcom/fasterxml/jackson/databind/introspect/Annotated;->getAnnotation(Ljava/lang/Class;)Ljava/lang/annotation/Annotation;
+    invoke-virtual {p1, v1}, Lorg/joda/time/Chronology;->getAnnotation(Ljava/lang/Class;)Ljava/lang/annotation/Annotation;
 
     move-result-object v1
 
@@ -2084,7 +2108,7 @@
 
     sget-object v0, Lcom/fasterxml/jackson/databind/introspect/JacksonAnnotationIntrospector;->ANNOTATIONS_TO_INFER_SER:[Ljava/lang/Class;
 
-    invoke-virtual {p1, v0}, Lcom/fasterxml/jackson/databind/introspect/Annotated;->hasOneOf([Ljava/lang/Class;)Z
+    invoke-virtual {p1, v0}, Lorg/joda/time/Chronology;->hasOneOf([Ljava/lang/Class;)Z
 
     move-result p1
 
@@ -2128,12 +2152,12 @@
     return-object p1
 .end method
 
-.method public findNullSerializer(Lcom/fasterxml/jackson/databind/introspect/Annotated;)Ljava/lang/Object;
+.method public findNullSerializer(Lorg/joda/time/Chronology;)Ljava/lang/Object;
     .locals 1
 
     const-class v0, Lcom/fasterxml/jackson/databind/annotation/JsonSerialize;
 
-    invoke-virtual {p1, v0}, Lcom/fasterxml/jackson/databind/introspect/Annotated;->getAnnotation(Ljava/lang/Class;)Ljava/lang/annotation/Annotation;
+    invoke-virtual {p1, v0}, Lorg/joda/time/Chronology;->getAnnotation(Ljava/lang/Class;)Ljava/lang/annotation/Annotation;
 
     move-result-object p1
 
@@ -2157,12 +2181,12 @@
     return-object p1
 .end method
 
-.method public findObjectIdInfo(Lcom/fasterxml/jackson/databind/introspect/Annotated;)Lcom/fasterxml/jackson/databind/introspect/ObjectIdInfo;
+.method public findObjectIdInfo(Lorg/joda/time/Chronology;)Lcom/fasterxml/jackson/databind/introspect/ObjectIdInfo;
     .locals 7
 
     const-class v0, Lcom/fasterxml/jackson/annotation/JsonIdentityInfo;
 
-    invoke-virtual {p1, v0}, Lcom/fasterxml/jackson/databind/introspect/Annotated;->getAnnotation(Ljava/lang/Class;)Ljava/lang/annotation/Annotation;
+    invoke-virtual {p1, v0}, Lorg/joda/time/Chronology;->getAnnotation(Ljava/lang/Class;)Ljava/lang/annotation/Annotation;
 
     move-result-object p1
 
@@ -2218,12 +2242,12 @@
     return-object p1
 .end method
 
-.method public findObjectReferenceInfo(Lcom/fasterxml/jackson/databind/introspect/Annotated;Lcom/fasterxml/jackson/databind/introspect/ObjectIdInfo;)Lcom/fasterxml/jackson/databind/introspect/ObjectIdInfo;
+.method public findObjectReferenceInfo(Lorg/joda/time/Chronology;Lcom/fasterxml/jackson/databind/introspect/ObjectIdInfo;)Lcom/fasterxml/jackson/databind/introspect/ObjectIdInfo;
     .locals 6
 
     const-class v0, Lcom/fasterxml/jackson/annotation/JsonIdentityReference;
 
-    invoke-virtual {p1, v0}, Lcom/fasterxml/jackson/databind/introspect/Annotated;->getAnnotation(Ljava/lang/Class;)Ljava/lang/annotation/Annotation;
+    invoke-virtual {p1, v0}, Lorg/joda/time/Chronology;->getAnnotation(Ljava/lang/Class;)Ljava/lang/annotation/Annotation;
 
     move-result-object p1
 
@@ -2337,12 +2361,12 @@
     return-object p1
 .end method
 
-.method public findPropertyAccess(Lcom/fasterxml/jackson/databind/introspect/Annotated;)Lcom/fasterxml/jackson/annotation/JsonProperty$Access;
+.method public findPropertyAccess(Lorg/joda/time/Chronology;)Lcom/fasterxml/jackson/annotation/JsonProperty$Access;
     .locals 1
 
     const-class v0, Lcom/fasterxml/jackson/annotation/JsonProperty;
 
-    invoke-virtual {p1, v0}, Lcom/fasterxml/jackson/databind/introspect/Annotated;->getAnnotation(Ljava/lang/Class;)Ljava/lang/annotation/Annotation;
+    invoke-virtual {p1, v0}, Lorg/joda/time/Chronology;->getAnnotation(Ljava/lang/Class;)Ljava/lang/annotation/Annotation;
 
     move-result-object p1
 
@@ -2362,12 +2386,12 @@
     return-object p1
 .end method
 
-.method public findPropertyAliases(Lcom/fasterxml/jackson/databind/introspect/Annotated;)Ljava/util/List;
+.method public findPropertyAliases(Lorg/joda/time/Chronology;)Ljava/util/List;
     .locals 4
     .annotation system Ldalvik/annotation/Signature;
         value = {
             "(",
-            "Lcom/fasterxml/jackson/databind/introspect/Annotated;",
+            "Lorg/joda/time/Chronology;",
             ")",
             "Ljava/util/List<",
             "Lcom/fasterxml/jackson/databind/PropertyName;",
@@ -2377,7 +2401,7 @@
 
     const-class v0, Lcom/fasterxml/jackson/annotation/JsonAlias;
 
-    invoke-virtual {p1, v0}, Lcom/fasterxml/jackson/databind/introspect/Annotated;->getAnnotation(Ljava/lang/Class;)Ljava/lang/annotation/Annotation;
+    invoke-virtual {p1, v0}, Lorg/joda/time/Chronology;->getAnnotation(Ljava/lang/Class;)Ljava/lang/annotation/Annotation;
 
     move-result-object p1
 
@@ -2451,7 +2475,7 @@
 
     if-eqz v0, :cond_0
 
-    invoke-virtual {p0, p1, p2, p3}, Lcom/fasterxml/jackson/databind/introspect/JacksonAnnotationIntrospector;->_findTypeResolver(Lcom/fasterxml/jackson/databind/cfg/MapperConfig;Lcom/fasterxml/jackson/databind/introspect/Annotated;Lcom/fasterxml/jackson/databind/JavaType;)Lcom/fasterxml/jackson/databind/jsontype/TypeResolverBuilder;
+    invoke-virtual {p0, p1, p2, p3}, Lcom/fasterxml/jackson/databind/introspect/JacksonAnnotationIntrospector;->_findTypeResolver(Lcom/fasterxml/jackson/databind/cfg/MapperConfig;Lorg/joda/time/Chronology;Lcom/fasterxml/jackson/databind/JavaType;)Lcom/fasterxml/jackson/databind/jsontype/TypeResolverBuilder;
 
     move-result-object p1
 
@@ -2483,12 +2507,12 @@
     throw p1
 .end method
 
-.method public findPropertyDefaultValue(Lcom/fasterxml/jackson/databind/introspect/Annotated;)Ljava/lang/String;
+.method public findPropertyDefaultValue(Lorg/joda/time/Chronology;)Ljava/lang/String;
     .locals 2
 
     const-class v0, Lcom/fasterxml/jackson/annotation/JsonProperty;
 
-    invoke-virtual {p1, v0}, Lcom/fasterxml/jackson/databind/introspect/Annotated;->getAnnotation(Ljava/lang/Class;)Ljava/lang/annotation/Annotation;
+    invoke-virtual {p1, v0}, Lorg/joda/time/Chronology;->getAnnotation(Ljava/lang/Class;)Ljava/lang/annotation/Annotation;
 
     move-result-object p1
 
@@ -2520,12 +2544,12 @@
     return-object v0
 .end method
 
-.method public findPropertyDescription(Lcom/fasterxml/jackson/databind/introspect/Annotated;)Ljava/lang/String;
+.method public findPropertyDescription(Lorg/joda/time/Chronology;)Ljava/lang/String;
     .locals 1
 
     const-class v0, Lcom/fasterxml/jackson/annotation/JsonPropertyDescription;
 
-    invoke-virtual {p1, v0}, Lcom/fasterxml/jackson/databind/introspect/Annotated;->getAnnotation(Ljava/lang/Class;)Ljava/lang/annotation/Annotation;
+    invoke-virtual {p1, v0}, Lorg/joda/time/Chronology;->getAnnotation(Ljava/lang/Class;)Ljava/lang/annotation/Annotation;
 
     move-result-object p1
 
@@ -2546,14 +2570,14 @@
     return-object p1
 .end method
 
-.method public findPropertyIgnoralByName(Lcom/fasterxml/jackson/databind/cfg/MapperConfig;Lcom/fasterxml/jackson/databind/introspect/Annotated;)Lcom/fasterxml/jackson/annotation/JsonIgnoreProperties$Value;
+.method public findPropertyIgnoralByName(Lcom/fasterxml/jackson/databind/cfg/MapperConfig;Lorg/joda/time/Chronology;)Lcom/fasterxml/jackson/annotation/JsonIgnoreProperties$Value;
     .locals 5
     .annotation system Ldalvik/annotation/Signature;
         value = {
             "(",
             "Lcom/fasterxml/jackson/databind/cfg/MapperConfig<",
             "*>;",
-            "Lcom/fasterxml/jackson/databind/introspect/Annotated;",
+            "Lorg/joda/time/Chronology;",
             ")",
             "Lcom/fasterxml/jackson/annotation/JsonIgnoreProperties$Value;"
         }
@@ -2561,7 +2585,7 @@
 
     const-class p1, Lcom/fasterxml/jackson/annotation/JsonIgnoreProperties;
 
-    invoke-virtual {p2, p1}, Lcom/fasterxml/jackson/databind/introspect/Annotated;->getAnnotation(Ljava/lang/Class;)Ljava/lang/annotation/Annotation;
+    invoke-virtual {p2, p1}, Lorg/joda/time/Chronology;->getAnnotation(Ljava/lang/Class;)Ljava/lang/annotation/Annotation;
 
     move-result-object p1
 
@@ -2638,28 +2662,28 @@
     return-object p1
 .end method
 
-.method public findPropertyIgnorals(Lcom/fasterxml/jackson/databind/introspect/Annotated;)Lcom/fasterxml/jackson/annotation/JsonIgnoreProperties$Value;
+.method public findPropertyIgnorals(Lorg/joda/time/Chronology;)Lcom/fasterxml/jackson/annotation/JsonIgnoreProperties$Value;
     .locals 1
     .annotation runtime Ljava/lang/Deprecated;
     .end annotation
 
     const/4 v0, 0x0
 
-    invoke-virtual {p0, v0, p1}, Lcom/fasterxml/jackson/databind/introspect/JacksonAnnotationIntrospector;->findPropertyIgnoralByName(Lcom/fasterxml/jackson/databind/cfg/MapperConfig;Lcom/fasterxml/jackson/databind/introspect/Annotated;)Lcom/fasterxml/jackson/annotation/JsonIgnoreProperties$Value;
+    invoke-virtual {p0, v0, p1}, Lcom/fasterxml/jackson/databind/introspect/JacksonAnnotationIntrospector;->findPropertyIgnoralByName(Lcom/fasterxml/jackson/databind/cfg/MapperConfig;Lorg/joda/time/Chronology;)Lcom/fasterxml/jackson/annotation/JsonIgnoreProperties$Value;
 
     move-result-object p1
 
     return-object p1
 .end method
 
-.method public findPropertyInclusion(Lcom/fasterxml/jackson/databind/introspect/Annotated;)Lcom/fasterxml/jackson/annotation/JsonInclude$Value;
+.method public findPropertyInclusion(Lorg/joda/time/Chronology;)Lcom/fasterxml/jackson/annotation/JsonInclude$Value;
     .locals 7
 
     sget-object v0, Lcom/fasterxml/jackson/annotation/JsonInclude$Include;->USE_DEFAULTS:Lcom/fasterxml/jackson/annotation/JsonInclude$Include;
 
     const-class v1, Lcom/fasterxml/jackson/annotation/JsonInclude;
 
-    invoke-virtual {p1, v1}, Lcom/fasterxml/jackson/databind/introspect/Annotated;->getAnnotation(Ljava/lang/Class;)Ljava/lang/annotation/Annotation;
+    invoke-virtual {p1, v1}, Lorg/joda/time/Chronology;->getAnnotation(Ljava/lang/Class;)Ljava/lang/annotation/Annotation;
 
     move-result-object v1
 
@@ -2731,7 +2755,7 @@
 
     const-class v0, Lcom/fasterxml/jackson/databind/annotation/JsonSerialize;
 
-    invoke-virtual {p1, v0}, Lcom/fasterxml/jackson/databind/introspect/Annotated;->getAnnotation(Ljava/lang/Class;)Ljava/lang/annotation/Annotation;
+    invoke-virtual {p1, v0}, Lorg/joda/time/Chronology;->getAnnotation(Ljava/lang/Class;)Ljava/lang/annotation/Annotation;
 
     move-result-object p1
 
@@ -2805,14 +2829,14 @@
     return-object v1
 .end method
 
-.method public findPropertyInclusionByName(Lcom/fasterxml/jackson/databind/cfg/MapperConfig;Lcom/fasterxml/jackson/databind/introspect/Annotated;)Lcom/fasterxml/jackson/annotation/JsonIncludeProperties$Value;
+.method public findPropertyInclusionByName(Lcom/fasterxml/jackson/databind/cfg/MapperConfig;Lorg/joda/time/Chronology;)Lcom/fasterxml/jackson/annotation/JsonIncludeProperties$Value;
     .locals 4
     .annotation system Ldalvik/annotation/Signature;
         value = {
             "(",
             "Lcom/fasterxml/jackson/databind/cfg/MapperConfig<",
             "*>;",
-            "Lcom/fasterxml/jackson/databind/introspect/Annotated;",
+            "Lorg/joda/time/Chronology;",
             ")",
             "Lcom/fasterxml/jackson/annotation/JsonIncludeProperties$Value;"
         }
@@ -2820,7 +2844,7 @@
 
     const-class p1, Lcom/fasterxml/jackson/annotation/JsonIncludeProperties;
 
-    invoke-virtual {p2, p1}, Lcom/fasterxml/jackson/databind/introspect/Annotated;->getAnnotation(Ljava/lang/Class;)Ljava/lang/annotation/Annotation;
+    invoke-virtual {p2, p1}, Lorg/joda/time/Chronology;->getAnnotation(Ljava/lang/Class;)Ljava/lang/annotation/Annotation;
 
     move-result-object p1
 
@@ -2881,12 +2905,12 @@
     return-object p2
 .end method
 
-.method public findPropertyIndex(Lcom/fasterxml/jackson/databind/introspect/Annotated;)Ljava/lang/Integer;
+.method public findPropertyIndex(Lorg/joda/time/Chronology;)Ljava/lang/Integer;
     .locals 1
 
     const-class v0, Lcom/fasterxml/jackson/annotation/JsonProperty;
 
-    invoke-virtual {p1, v0}, Lcom/fasterxml/jackson/databind/introspect/Annotated;->getAnnotation(Ljava/lang/Class;)Ljava/lang/annotation/Annotation;
+    invoke-virtual {p1, v0}, Lorg/joda/time/Chronology;->getAnnotation(Ljava/lang/Class;)Ljava/lang/annotation/Annotation;
 
     move-result-object p1
 
@@ -2935,7 +2959,7 @@
 
     if-nez v0, :cond_1
 
-    invoke-virtual {p3}, Lcom/fasterxml/jackson/core/type/ResolvedType;->isReferenceType()Z
+    invoke-virtual {p3}, Lorg/joda/time/Chronology;->isReferenceType()Z
 
     move-result v0
 
@@ -2944,7 +2968,7 @@
     goto :goto_0
 
     :cond_0
-    invoke-virtual {p0, p1, p2, p3}, Lcom/fasterxml/jackson/databind/introspect/JacksonAnnotationIntrospector;->_findTypeResolver(Lcom/fasterxml/jackson/databind/cfg/MapperConfig;Lcom/fasterxml/jackson/databind/introspect/Annotated;Lcom/fasterxml/jackson/databind/JavaType;)Lcom/fasterxml/jackson/databind/jsontype/TypeResolverBuilder;
+    invoke-virtual {p0, p1, p2, p3}, Lcom/fasterxml/jackson/databind/introspect/JacksonAnnotationIntrospector;->_findTypeResolver(Lcom/fasterxml/jackson/databind/cfg/MapperConfig;Lorg/joda/time/Chronology;Lcom/fasterxml/jackson/databind/JavaType;)Lcom/fasterxml/jackson/databind/jsontype/TypeResolverBuilder;
 
     move-result-object p1
 
@@ -2958,29 +2982,17 @@
 .end method
 
 .method public findReferenceType(Lcom/fasterxml/jackson/databind/introspect/AnnotatedMember;)Lcom/fasterxml/jackson/databind/AnnotationIntrospector$ReferenceProperty;
-    .locals 3
+    .locals 2
 
     const-class v0, Lcom/fasterxml/jackson/annotation/JsonManagedReference;
 
-    iget-object v1, p1, Lcom/fasterxml/jackson/databind/introspect/AnnotatedMember;->_annotations:Lokhttp3/ConnectionPool;
-
-    const/4 v2, 0x0
-
-    if-nez v1, :cond_0
-
-    move-object v0, v2
-
-    goto :goto_0
-
-    :cond_0
-    invoke-virtual {v1, v0}, Lokhttp3/ConnectionPool;->get(Ljava/lang/Class;)Ljava/lang/annotation/Annotation;
+    invoke-virtual {p1, v0}, Lcom/fasterxml/jackson/databind/introspect/AnnotatedMember;->getAnnotation(Ljava/lang/Class;)Ljava/lang/annotation/Annotation;
 
     move-result-object v0
 
-    :goto_0
     check-cast v0, Lcom/fasterxml/jackson/annotation/JsonManagedReference;
 
-    if-eqz v0, :cond_1
+    if-eqz v0, :cond_0
 
     invoke-interface {v0}, Lcom/fasterxml/jackson/annotation/JsonManagedReference;->value()Ljava/lang/String;
 
@@ -2994,26 +3006,16 @@
 
     return-object v0
 
-    :cond_1
+    :cond_0
     const-class v0, Lcom/fasterxml/jackson/annotation/JsonBackReference;
 
-    iget-object p1, p1, Lcom/fasterxml/jackson/databind/introspect/AnnotatedMember;->_annotations:Lokhttp3/ConnectionPool;
-
-    if-nez p1, :cond_2
-
-    move-object p1, v2
-
-    goto :goto_1
-
-    :cond_2
-    invoke-virtual {p1, v0}, Lokhttp3/ConnectionPool;->get(Ljava/lang/Class;)Ljava/lang/annotation/Annotation;
+    invoke-virtual {p1, v0}, Lcom/fasterxml/jackson/databind/introspect/AnnotatedMember;->getAnnotation(Ljava/lang/Class;)Ljava/lang/annotation/Annotation;
 
     move-result-object p1
 
-    :goto_1
     check-cast p1, Lcom/fasterxml/jackson/annotation/JsonBackReference;
 
-    if-eqz p1, :cond_3
+    if-eqz p1, :cond_1
 
     invoke-interface {p1}, Lcom/fasterxml/jackson/annotation/JsonBackReference;->value()Ljava/lang/String;
 
@@ -3027,8 +3029,10 @@
 
     return-object v0
 
-    :cond_3
-    return-object v2
+    :cond_1
+    const/4 p1, 0x0
+
+    return-object p1
 .end method
 
 .method public findRenameByField(Lcom/fasterxml/jackson/databind/cfg/MapperConfig;Lcom/fasterxml/jackson/databind/introspect/AnnotatedField;Lcom/fasterxml/jackson/databind/PropertyName;)Lcom/fasterxml/jackson/databind/PropertyName;
@@ -3129,12 +3133,12 @@
     return-object p1
 .end method
 
-.method public findSerializationConverter(Lcom/fasterxml/jackson/databind/introspect/Annotated;)Ljava/lang/Object;
+.method public findSerializationConverter(Lorg/joda/time/Chronology;)Ljava/lang/Object;
     .locals 1
 
     const-class v0, Lcom/fasterxml/jackson/databind/annotation/JsonSerialize;
 
-    invoke-virtual {p1, v0}, Lcom/fasterxml/jackson/databind/introspect/Annotated;->getAnnotation(Ljava/lang/Class;)Ljava/lang/annotation/Annotation;
+    invoke-virtual {p1, v0}, Lorg/joda/time/Chronology;->getAnnotation(Ljava/lang/Class;)Ljava/lang/annotation/Annotation;
 
     move-result-object p1
 
@@ -3187,12 +3191,12 @@
     return-object p1
 .end method
 
-.method public findSerializationSortAlphabetically(Lcom/fasterxml/jackson/databind/introspect/Annotated;)Ljava/lang/Boolean;
+.method public findSerializationSortAlphabetically(Lorg/joda/time/Chronology;)Ljava/lang/Boolean;
     .locals 1
 
     const-class v0, Lcom/fasterxml/jackson/annotation/JsonPropertyOrder;
 
-    invoke-virtual {p1, v0}, Lcom/fasterxml/jackson/databind/introspect/Annotated;->getAnnotation(Ljava/lang/Class;)Ljava/lang/annotation/Annotation;
+    invoke-virtual {p1, v0}, Lorg/joda/time/Chronology;->getAnnotation(Ljava/lang/Class;)Ljava/lang/annotation/Annotation;
 
     move-result-object p1
 
@@ -3217,12 +3221,12 @@
     return-object p1
 .end method
 
-.method public findSerializationTyping(Lcom/fasterxml/jackson/databind/introspect/Annotated;)Lcom/fasterxml/jackson/databind/annotation/JsonSerialize$Typing;
+.method public findSerializationTyping(Lorg/joda/time/Chronology;)Lcom/fasterxml/jackson/databind/annotation/JsonSerialize$Typing;
     .locals 1
 
     const-class v0, Lcom/fasterxml/jackson/databind/annotation/JsonSerialize;
 
-    invoke-virtual {p1, v0}, Lcom/fasterxml/jackson/databind/introspect/Annotated;->getAnnotation(Ljava/lang/Class;)Ljava/lang/annotation/Annotation;
+    invoke-virtual {p1, v0}, Lorg/joda/time/Chronology;->getAnnotation(Ljava/lang/Class;)Ljava/lang/annotation/Annotation;
 
     move-result-object p1
 
@@ -3243,12 +3247,12 @@
     return-object p1
 .end method
 
-.method public findSerializer(Lcom/fasterxml/jackson/databind/introspect/Annotated;)Ljava/lang/Object;
+.method public findSerializer(Lorg/joda/time/Chronology;)Ljava/lang/Object;
     .locals 2
 
     const-class v0, Lcom/fasterxml/jackson/databind/annotation/JsonSerialize;
 
-    invoke-virtual {p1, v0}, Lcom/fasterxml/jackson/databind/introspect/Annotated;->getAnnotation(Ljava/lang/Class;)Ljava/lang/annotation/Annotation;
+    invoke-virtual {p1, v0}, Lorg/joda/time/Chronology;->getAnnotation(Ljava/lang/Class;)Ljava/lang/annotation/Annotation;
 
     move-result-object v0
 
@@ -3269,7 +3273,7 @@
     :cond_0
     const-class v0, Lcom/fasterxml/jackson/annotation/JsonRawValue;
 
-    invoke-virtual {p1, v0}, Lcom/fasterxml/jackson/databind/introspect/Annotated;->getAnnotation(Ljava/lang/Class;)Ljava/lang/annotation/Annotation;
+    invoke-virtual {p1, v0}, Lorg/joda/time/Chronology;->getAnnotation(Ljava/lang/Class;)Ljava/lang/annotation/Annotation;
 
     move-result-object v0
 
@@ -3283,7 +3287,7 @@
 
     if-eqz v0, :cond_1
 
-    invoke-virtual {p1}, Lcom/fasterxml/jackson/databind/introspect/Annotated;->getRawType()Ljava/lang/Class;
+    invoke-virtual {p1}, Lorg/joda/time/Chronology;->getRawType()Ljava/lang/Class;
 
     move-result-object p1
 
@@ -3299,12 +3303,12 @@
     return-object p1
 .end method
 
-.method public findSetterInfo(Lcom/fasterxml/jackson/databind/introspect/Annotated;)Lcom/fasterxml/jackson/annotation/JsonSetter$Value;
+.method public findSetterInfo(Lorg/joda/time/Chronology;)Lcom/fasterxml/jackson/annotation/JsonSetter$Value;
     .locals 1
 
     const-class v0, Lcom/fasterxml/jackson/annotation/JsonSetter;
 
-    invoke-virtual {p1, v0}, Lcom/fasterxml/jackson/databind/introspect/Annotated;->getAnnotation(Ljava/lang/Class;)Ljava/lang/annotation/Annotation;
+    invoke-virtual {p1, v0}, Lorg/joda/time/Chronology;->getAnnotation(Ljava/lang/Class;)Ljava/lang/annotation/Annotation;
 
     move-result-object p1
 
@@ -3333,12 +3337,12 @@
     return-object p1
 .end method
 
-.method public findSubtypes(Lcom/fasterxml/jackson/databind/introspect/Annotated;)Ljava/util/List;
+.method public findSubtypes(Lorg/joda/time/Chronology;)Ljava/util/List;
     .locals 11
     .annotation system Ldalvik/annotation/Signature;
         value = {
             "(",
-            "Lcom/fasterxml/jackson/databind/introspect/Annotated;",
+            "Lorg/joda/time/Chronology;",
             ")",
             "Ljava/util/List<",
             "Lcom/fasterxml/jackson/databind/jsontype/NamedType;",
@@ -3348,7 +3352,7 @@
 
     const-class v0, Lcom/fasterxml/jackson/annotation/JsonSubTypes;
 
-    invoke-virtual {p1, v0}, Lcom/fasterxml/jackson/databind/introspect/Annotated;->getAnnotation(Ljava/lang/Class;)Ljava/lang/annotation/Annotation;
+    invoke-virtual {p1, v0}, Lorg/joda/time/Chronology;->getAnnotation(Ljava/lang/Class;)Ljava/lang/annotation/Annotation;
 
     move-result-object p1
 
@@ -3473,7 +3477,7 @@
         }
     .end annotation
 
-    invoke-virtual {p0, p1, p2, p3}, Lcom/fasterxml/jackson/databind/introspect/JacksonAnnotationIntrospector;->_findTypeResolver(Lcom/fasterxml/jackson/databind/cfg/MapperConfig;Lcom/fasterxml/jackson/databind/introspect/Annotated;Lcom/fasterxml/jackson/databind/JavaType;)Lcom/fasterxml/jackson/databind/jsontype/TypeResolverBuilder;
+    invoke-virtual {p0, p1, p2, p3}, Lcom/fasterxml/jackson/databind/introspect/JacksonAnnotationIntrospector;->_findTypeResolver(Lcom/fasterxml/jackson/databind/cfg/MapperConfig;Lorg/joda/time/Chronology;Lcom/fasterxml/jackson/databind/JavaType;)Lcom/fasterxml/jackson/databind/jsontype/TypeResolverBuilder;
 
     move-result-object p1
 
@@ -3609,12 +3613,12 @@
     return-object p1
 .end method
 
-.method public findViews(Lcom/fasterxml/jackson/databind/introspect/Annotated;)[Ljava/lang/Class;
+.method public findViews(Lorg/joda/time/Chronology;)[Ljava/lang/Class;
     .locals 1
     .annotation system Ldalvik/annotation/Signature;
         value = {
             "(",
-            "Lcom/fasterxml/jackson/databind/introspect/Annotated;",
+            "Lorg/joda/time/Chronology;",
             ")[",
             "Ljava/lang/Class<",
             "*>;"
@@ -3623,7 +3627,7 @@
 
     const-class v0, Lcom/fasterxml/jackson/annotation/JsonView;
 
-    invoke-virtual {p1, v0}, Lcom/fasterxml/jackson/databind/introspect/Annotated;->getAnnotation(Ljava/lang/Class;)Ljava/lang/annotation/Annotation;
+    invoke-virtual {p1, v0}, Lorg/joda/time/Chronology;->getAnnotation(Ljava/lang/Class;)Ljava/lang/annotation/Annotation;
 
     move-result-object p1
 
@@ -3644,12 +3648,12 @@
     return-object p1
 .end method
 
-.method public hasAnyGetter(Lcom/fasterxml/jackson/databind/introspect/Annotated;)Ljava/lang/Boolean;
+.method public hasAnyGetter(Lorg/joda/time/Chronology;)Ljava/lang/Boolean;
     .locals 1
 
     const-class v0, Lcom/fasterxml/jackson/annotation/JsonAnyGetter;
 
-    invoke-virtual {p1, v0}, Lcom/fasterxml/jackson/databind/introspect/Annotated;->getAnnotation(Ljava/lang/Class;)Ljava/lang/annotation/Annotation;
+    invoke-virtual {p1, v0}, Lorg/joda/time/Chronology;->getAnnotation(Ljava/lang/Class;)Ljava/lang/annotation/Annotation;
 
     move-result-object p1
 
@@ -3687,12 +3691,12 @@
     return p1
 .end method
 
-.method public hasAnySetter(Lcom/fasterxml/jackson/databind/introspect/Annotated;)Ljava/lang/Boolean;
+.method public hasAnySetter(Lorg/joda/time/Chronology;)Ljava/lang/Boolean;
     .locals 1
 
     const-class v0, Lcom/fasterxml/jackson/annotation/JsonAnySetter;
 
-    invoke-virtual {p1, v0}, Lcom/fasterxml/jackson/databind/introspect/Annotated;->getAnnotation(Ljava/lang/Class;)Ljava/lang/annotation/Annotation;
+    invoke-virtual {p1, v0}, Lorg/joda/time/Chronology;->getAnnotation(Ljava/lang/Class;)Ljava/lang/annotation/Annotation;
 
     move-result-object p1
 
@@ -3717,14 +3721,14 @@
     return-object p1
 .end method
 
-.method public hasAsKey(Lcom/fasterxml/jackson/databind/cfg/MapperConfig;Lcom/fasterxml/jackson/databind/introspect/Annotated;)Ljava/lang/Boolean;
-    .locals 1
+.method public hasAsKey(Lcom/fasterxml/jackson/databind/cfg/MapperConfig;Lorg/joda/time/Chronology;)Ljava/lang/Boolean;
+    .locals 0
     .annotation system Ldalvik/annotation/Signature;
         value = {
             "(",
             "Lcom/fasterxml/jackson/databind/cfg/MapperConfig<",
             "*>;",
-            "Lcom/fasterxml/jackson/databind/introspect/Annotated;",
+            "Lorg/joda/time/Chronology;",
             ")",
             "Ljava/lang/Boolean;"
         }
@@ -3732,31 +3736,19 @@
 
     const-class p1, Lcom/fasterxml/jackson/annotation/JsonKey;
 
-    check-cast p2, Lcom/fasterxml/jackson/databind/introspect/AnnotatedMember;
-
-    iget-object p2, p2, Lcom/fasterxml/jackson/databind/introspect/AnnotatedMember;->_annotations:Lokhttp3/ConnectionPool;
-
-    const/4 v0, 0x0
-
-    if-nez p2, :cond_0
-
-    move-object p1, v0
-
-    goto :goto_0
-
-    :cond_0
-    invoke-virtual {p2, p1}, Lokhttp3/ConnectionPool;->get(Ljava/lang/Class;)Ljava/lang/annotation/Annotation;
+    invoke-virtual {p2, p1}, Lorg/joda/time/Chronology;->getAnnotation(Ljava/lang/Class;)Ljava/lang/annotation/Annotation;
 
     move-result-object p1
 
-    :goto_0
     check-cast p1, Lcom/fasterxml/jackson/annotation/JsonKey;
 
-    if-nez p1, :cond_1
+    if-nez p1, :cond_0
 
-    return-object v0
+    const/4 p1, 0x0
 
-    :cond_1
+    return-object p1
+
+    :cond_0
     invoke-interface {p1}, Lcom/fasterxml/jackson/annotation/JsonKey;->value()Z
 
     move-result p1
@@ -3768,12 +3760,12 @@
     return-object p1
 .end method
 
-.method public hasAsValue(Lcom/fasterxml/jackson/databind/introspect/Annotated;)Ljava/lang/Boolean;
+.method public hasAsValue(Lorg/joda/time/Chronology;)Ljava/lang/Boolean;
     .locals 1
 
     const-class v0, Lcom/fasterxml/jackson/annotation/JsonValue;
 
-    invoke-virtual {p1, v0}, Lcom/fasterxml/jackson/databind/introspect/Annotated;->getAnnotation(Ljava/lang/Class;)Ljava/lang/annotation/Annotation;
+    invoke-virtual {p1, v0}, Lorg/joda/time/Chronology;->getAnnotation(Ljava/lang/Class;)Ljava/lang/annotation/Annotation;
 
     move-result-object p1
 
@@ -3829,14 +3821,14 @@
     return p1
 .end method
 
-.method public hasCreatorAnnotation(Lcom/fasterxml/jackson/databind/introspect/Annotated;)Z
+.method public hasCreatorAnnotation(Lorg/joda/time/Chronology;)Z
     .locals 2
     .annotation runtime Ljava/lang/Deprecated;
     .end annotation
 
     const-class v0, Lcom/fasterxml/jackson/annotation/JsonCreator;
 
-    invoke-virtual {p1, v0}, Lcom/fasterxml/jackson/databind/introspect/Annotated;->getAnnotation(Ljava/lang/Class;)Ljava/lang/annotation/Annotation;
+    invoke-virtual {p1, v0}, Lorg/joda/time/Chronology;->getAnnotation(Ljava/lang/Class;)Ljava/lang/annotation/Annotation;
 
     move-result-object v0
 
@@ -3872,7 +3864,7 @@
 
     if-eqz v0, :cond_2
 
-    invoke-virtual {v0, p1}, Lcom/fasterxml/jackson/databind/ext/Java7Support;->hasCreatorAnnotation(Lcom/fasterxml/jackson/databind/introspect/Annotated;)Ljava/lang/Boolean;
+    invoke-virtual {v0, p1}, Lcom/fasterxml/jackson/databind/ext/Java7Support;->hasCreatorAnnotation(Lorg/joda/time/Chronology;)Ljava/lang/Boolean;
 
     move-result-object p1
 
@@ -3912,7 +3904,7 @@
 
     if-eqz v0, :cond_1
 
-    invoke-virtual {v0, p1}, Lcom/fasterxml/jackson/databind/ext/Java7Support;->findTransient(Lcom/fasterxml/jackson/databind/introspect/Annotated;)Ljava/lang/Boolean;
+    invoke-virtual {v0, p1}, Lcom/fasterxml/jackson/databind/ext/Java7Support;->findTransient(Lorg/joda/time/Chronology;)Ljava/lang/Boolean;
 
     move-result-object p1
 
@@ -4055,14 +4047,14 @@
     return-object p1
 .end method
 
-.method public refineDeserializationType(Lcom/fasterxml/jackson/databind/cfg/MapperConfig;Lcom/fasterxml/jackson/databind/introspect/Annotated;Lcom/fasterxml/jackson/databind/JavaType;)Lcom/fasterxml/jackson/databind/JavaType;
+.method public refineDeserializationType(Lcom/fasterxml/jackson/databind/cfg/MapperConfig;Lorg/joda/time/Chronology;Lcom/fasterxml/jackson/databind/JavaType;)Lcom/fasterxml/jackson/databind/JavaType;
     .locals 10
     .annotation system Ldalvik/annotation/Signature;
         value = {
             "(",
             "Lcom/fasterxml/jackson/databind/cfg/MapperConfig<",
             "*>;",
-            "Lcom/fasterxml/jackson/databind/introspect/Annotated;",
+            "Lorg/joda/time/Chronology;",
             "Lcom/fasterxml/jackson/databind/JavaType;",
             ")",
             "Lcom/fasterxml/jackson/databind/JavaType;"
@@ -4081,7 +4073,7 @@
 
     const-class v0, Lcom/fasterxml/jackson/databind/annotation/JsonDeserialize;
 
-    invoke-virtual {p2, v0}, Lcom/fasterxml/jackson/databind/introspect/Annotated;->getAnnotation(Ljava/lang/Class;)Ljava/lang/annotation/Annotation;
+    invoke-virtual {p2, v0}, Lorg/joda/time/Chronology;->getAnnotation(Ljava/lang/Class;)Ljava/lang/annotation/Annotation;
 
     move-result-object v0
 
@@ -4149,39 +4141,39 @@
     :catch_0
     move-exception p1
 
-    new-instance v0, Lcom/fasterxml/jackson/databind/JsonMappingException;
+    new-array v0, v5, [Ljava/lang/Object;
 
-    new-array v5, v5, [Ljava/lang/Object;
-
-    aput-object p3, v5, v7
+    aput-object p3, v0, v7
 
     invoke-virtual {v2}, Ljava/lang/Class;->getName()Ljava/lang/String;
 
     move-result-object p3
 
-    aput-object p3, v5, v6
+    aput-object p3, v0, v6
 
-    invoke-virtual {p2}, Lcom/fasterxml/jackson/databind/introspect/Annotated;->getName()Ljava/lang/String;
+    invoke-virtual {p2}, Lorg/joda/time/Chronology;->getName()Ljava/lang/String;
 
     move-result-object p2
 
-    aput-object p2, v5, v4
+    aput-object p2, v0, v4
 
     invoke-virtual {p1}, Ljava/lang/IllegalArgumentException;->getMessage()Ljava/lang/String;
 
     move-result-object p2
 
-    aput-object p2, v5, v3
+    aput-object p2, v0, v3
 
     const-string p2, "Failed to narrow type %s with annotation (value %s), from \'%s\': %s"
 
-    invoke-static {p2, v5}, Ljava/lang/String;->format(Ljava/lang/String;[Ljava/lang/Object;)Ljava/lang/String;
+    invoke-static {p2, v0}, Ljava/lang/String;->format(Ljava/lang/String;[Ljava/lang/Object;)Ljava/lang/String;
 
     move-result-object p2
 
-    invoke-direct {v0, v1, p2, p1}, Lcom/fasterxml/jackson/databind/JsonMappingException;-><init>(Ljava/io/Closeable;Ljava/lang/String;Ljava/lang/Throwable;)V
+    invoke-virtual {p0, p1, p2}, Lcom/fasterxml/jackson/databind/introspect/JacksonAnnotationIntrospector;->_databindException(Ljava/lang/Throwable;Ljava/lang/String;)Lcom/fasterxml/jackson/databind/JsonMappingException;
 
-    throw v0
+    move-result-object p1
+
+    throw p1
 
     :cond_2
     :goto_2
@@ -4239,39 +4231,39 @@
     :catch_1
     move-exception p1
 
-    new-instance v0, Lcom/fasterxml/jackson/databind/JsonMappingException;
+    new-array v0, v5, [Ljava/lang/Object;
 
-    new-array v2, v5, [Ljava/lang/Object;
-
-    aput-object p3, v2, v7
+    aput-object p3, v0, v7
 
     invoke-virtual {v8}, Ljava/lang/Class;->getName()Ljava/lang/String;
 
     move-result-object p3
 
-    aput-object p3, v2, v6
+    aput-object p3, v0, v6
 
-    invoke-virtual {p2}, Lcom/fasterxml/jackson/databind/introspect/Annotated;->getName()Ljava/lang/String;
+    invoke-virtual {p2}, Lorg/joda/time/Chronology;->getName()Ljava/lang/String;
 
     move-result-object p2
 
-    aput-object p2, v2, v4
+    aput-object p2, v0, v4
 
     invoke-virtual {p1}, Ljava/lang/IllegalArgumentException;->getMessage()Ljava/lang/String;
 
     move-result-object p2
 
-    aput-object p2, v2, v3
+    aput-object p2, v0, v3
 
     const-string p2, "Failed to narrow key type of %s with concrete-type annotation (value %s), from \'%s\': %s"
 
-    invoke-static {p2, v2}, Ljava/lang/String;->format(Ljava/lang/String;[Ljava/lang/Object;)Ljava/lang/String;
+    invoke-static {p2, v0}, Ljava/lang/String;->format(Ljava/lang/String;[Ljava/lang/Object;)Ljava/lang/String;
 
     move-result-object p2
 
-    invoke-direct {v0, v1, p2, p1}, Lcom/fasterxml/jackson/databind/JsonMappingException;-><init>(Ljava/io/Closeable;Ljava/lang/String;Ljava/lang/Throwable;)V
+    invoke-virtual {p0, p1, p2}, Lcom/fasterxml/jackson/databind/introspect/JacksonAnnotationIntrospector;->_databindException(Ljava/lang/Throwable;Ljava/lang/String;)Lcom/fasterxml/jackson/databind/JsonMappingException;
 
-    throw v0
+    move-result-object p1
+
+    throw p1
 
     :cond_4
     :goto_4
@@ -4283,8 +4275,6 @@
 
     if-nez v0, :cond_5
 
-    move-object v0, v1
-
     goto :goto_5
 
     :cond_5
@@ -4294,19 +4284,19 @@
 
     invoke-virtual {p0, v0}, Lcom/fasterxml/jackson/databind/introspect/JacksonAnnotationIntrospector;->_classIfExplicit(Ljava/lang/Class;)Ljava/lang/Class;
 
-    move-result-object v0
+    move-result-object v1
 
     :goto_5
-    if-eqz v0, :cond_6
+    if-eqz v1, :cond_6
 
-    invoke-virtual {p0, v2, v0}, Lcom/fasterxml/jackson/databind/introspect/JacksonAnnotationIntrospector;->_primitiveAndWrapper(Lcom/fasterxml/jackson/databind/JavaType;Ljava/lang/Class;)Z
+    invoke-virtual {p0, v2, v1}, Lcom/fasterxml/jackson/databind/introspect/JacksonAnnotationIntrospector;->_primitiveAndWrapper(Lcom/fasterxml/jackson/databind/JavaType;Ljava/lang/Class;)Z
 
-    move-result v8
+    move-result v0
 
-    if-nez v8, :cond_6
+    if-nez v0, :cond_6
 
     :try_start_2
-    invoke-virtual {p1, v2, v0, v7}, Lcom/fasterxml/jackson/databind/type/TypeFactory;->constructSpecializedType(Lcom/fasterxml/jackson/databind/JavaType;Ljava/lang/Class;Z)Lcom/fasterxml/jackson/databind/JavaType;
+    invoke-virtual {p1, v2, v1, v7}, Lcom/fasterxml/jackson/databind/type/TypeFactory;->constructSpecializedType(Lcom/fasterxml/jackson/databind/JavaType;Ljava/lang/Class;Z)Lcom/fasterxml/jackson/databind/JavaType;
 
     move-result-object p1
 
@@ -4321,53 +4311,53 @@
     :catch_2
     move-exception p1
 
-    new-instance v2, Lcom/fasterxml/jackson/databind/JsonMappingException;
+    new-array v0, v5, [Ljava/lang/Object;
 
-    new-array v5, v5, [Ljava/lang/Object;
+    aput-object p3, v0, v7
 
-    aput-object p3, v5, v7
-
-    invoke-virtual {v0}, Ljava/lang/Class;->getName()Ljava/lang/String;
+    invoke-virtual {v1}, Ljava/lang/Class;->getName()Ljava/lang/String;
 
     move-result-object p3
 
-    aput-object p3, v5, v6
+    aput-object p3, v0, v6
 
-    invoke-virtual {p2}, Lcom/fasterxml/jackson/databind/introspect/Annotated;->getName()Ljava/lang/String;
+    invoke-virtual {p2}, Lorg/joda/time/Chronology;->getName()Ljava/lang/String;
 
     move-result-object p2
 
-    aput-object p2, v5, v4
+    aput-object p2, v0, v4
 
     invoke-virtual {p1}, Ljava/lang/IllegalArgumentException;->getMessage()Ljava/lang/String;
 
     move-result-object p2
 
-    aput-object p2, v5, v3
+    aput-object p2, v0, v3
 
     const-string p2, "Failed to narrow value type of %s with concrete-type annotation (value %s), from \'%s\': %s"
 
-    invoke-static {p2, v5}, Ljava/lang/String;->format(Ljava/lang/String;[Ljava/lang/Object;)Ljava/lang/String;
+    invoke-static {p2, v0}, Ljava/lang/String;->format(Ljava/lang/String;[Ljava/lang/Object;)Ljava/lang/String;
 
     move-result-object p2
 
-    invoke-direct {v2, v1, p2, p1}, Lcom/fasterxml/jackson/databind/JsonMappingException;-><init>(Ljava/io/Closeable;Ljava/lang/String;Ljava/lang/Throwable;)V
+    invoke-virtual {p0, p1, p2}, Lcom/fasterxml/jackson/databind/introspect/JacksonAnnotationIntrospector;->_databindException(Ljava/lang/Throwable;Ljava/lang/String;)Lcom/fasterxml/jackson/databind/JsonMappingException;
 
-    throw v2
+    move-result-object p1
+
+    throw p1
 
     :cond_6
     :goto_6
     return-object p3
 .end method
 
-.method public refineSerializationType(Lcom/fasterxml/jackson/databind/cfg/MapperConfig;Lcom/fasterxml/jackson/databind/introspect/Annotated;Lcom/fasterxml/jackson/databind/JavaType;)Lcom/fasterxml/jackson/databind/JavaType;
+.method public refineSerializationType(Lcom/fasterxml/jackson/databind/cfg/MapperConfig;Lorg/joda/time/Chronology;Lcom/fasterxml/jackson/databind/JavaType;)Lcom/fasterxml/jackson/databind/JavaType;
     .locals 11
     .annotation system Ldalvik/annotation/Signature;
         value = {
             "(",
             "Lcom/fasterxml/jackson/databind/cfg/MapperConfig<",
             "*>;",
-            "Lcom/fasterxml/jackson/databind/introspect/Annotated;",
+            "Lorg/joda/time/Chronology;",
             "Lcom/fasterxml/jackson/databind/JavaType;",
             ")",
             "Lcom/fasterxml/jackson/databind/JavaType;"
@@ -4386,7 +4376,7 @@
 
     const-class v0, Lcom/fasterxml/jackson/databind/annotation/JsonSerialize;
 
-    invoke-virtual {p2, v0}, Lcom/fasterxml/jackson/databind/introspect/Annotated;->getAnnotation(Ljava/lang/Class;)Ljava/lang/annotation/Annotation;
+    invoke-virtual {p2, v0}, Lorg/joda/time/Chronology;->getAnnotation(Ljava/lang/Class;)Ljava/lang/annotation/Annotation;
 
     move-result-object v0
 
@@ -4483,25 +4473,25 @@
     goto :goto_2
 
     :cond_5
-    new-instance p1, Lcom/fasterxml/jackson/databind/JsonMappingException;
+    const-string p1, "Cannot refine serialization type %s into %s; types not related"
 
-    const-string v0, "Cannot refine serialization type %s into %s; types not related"
+    new-array v0, v5, [Ljava/lang/Object;
 
-    new-array v8, v5, [Ljava/lang/Object;
-
-    aput-object p3, v8, v7
+    aput-object p3, v0, v7
 
     invoke-virtual {v2}, Ljava/lang/Class;->getName()Ljava/lang/String;
 
-    move-result-object v9
+    move-result-object v1
 
-    aput-object v9, v8, v6
+    aput-object v1, v0, v6
 
-    invoke-static {v0, v8}, Ljava/lang/String;->format(Ljava/lang/String;[Ljava/lang/Object;)Ljava/lang/String;
+    invoke-static {p1, v0}, Ljava/lang/String;->format(Ljava/lang/String;[Ljava/lang/Object;)Ljava/lang/String;
 
-    move-result-object v0
+    move-result-object p1
 
-    invoke-direct {p1, v1, v0}, Lcom/fasterxml/jackson/databind/JsonMappingException;-><init>(Ljava/io/Closeable;Ljava/lang/String;)V
+    invoke-virtual {p0, p1}, Lcom/fasterxml/jackson/databind/introspect/JacksonAnnotationIntrospector;->_databindException(Ljava/lang/String;)Lcom/fasterxml/jackson/databind/JsonMappingException;
+
+    move-result-object p1
 
     throw p1
     :try_end_0
@@ -4510,39 +4500,39 @@
     :catch_0
     move-exception p1
 
-    new-instance v0, Lcom/fasterxml/jackson/databind/JsonMappingException;
+    new-array v0, v4, [Ljava/lang/Object;
 
-    new-array v4, v4, [Ljava/lang/Object;
-
-    aput-object p3, v4, v7
+    aput-object p3, v0, v7
 
     invoke-virtual {v2}, Ljava/lang/Class;->getName()Ljava/lang/String;
 
     move-result-object p3
 
-    aput-object p3, v4, v6
+    aput-object p3, v0, v6
 
-    invoke-virtual {p2}, Lcom/fasterxml/jackson/databind/introspect/Annotated;->getName()Ljava/lang/String;
+    invoke-virtual {p2}, Lorg/joda/time/Chronology;->getName()Ljava/lang/String;
 
     move-result-object p2
 
-    aput-object p2, v4, v5
+    aput-object p2, v0, v5
 
     invoke-virtual {p1}, Ljava/lang/IllegalArgumentException;->getMessage()Ljava/lang/String;
 
     move-result-object p2
 
-    aput-object p2, v4, v3
+    aput-object p2, v0, v3
 
     const-string p2, "Failed to widen type %s with annotation (value %s), from \'%s\': %s"
 
-    invoke-static {p2, v4}, Ljava/lang/String;->format(Ljava/lang/String;[Ljava/lang/Object;)Ljava/lang/String;
+    invoke-static {p2, v0}, Ljava/lang/String;->format(Ljava/lang/String;[Ljava/lang/Object;)Ljava/lang/String;
 
     move-result-object p2
 
-    invoke-direct {v0, v1, p2, p1}, Lcom/fasterxml/jackson/databind/JsonMappingException;-><init>(Ljava/io/Closeable;Ljava/lang/String;Ljava/lang/Throwable;)V
+    invoke-virtual {p0, p1, p2}, Lcom/fasterxml/jackson/databind/introspect/JacksonAnnotationIntrospector;->_databindException(Ljava/lang/Throwable;Ljava/lang/String;)Lcom/fasterxml/jackson/databind/JsonMappingException;
 
-    throw v0
+    move-result-object p1
+
+    throw p1
 
     :cond_6
     :goto_2
@@ -4645,25 +4635,25 @@
 
     :cond_c
     :try_start_2
-    new-instance p1, Lcom/fasterxml/jackson/databind/JsonMappingException;
+    const-string p1, "Cannot refine serialization key type %s into %s; types not related"
 
-    const-string v0, "Cannot refine serialization key type %s into %s; types not related"
+    new-array v0, v5, [Ljava/lang/Object;
 
-    new-array v9, v5, [Ljava/lang/Object;
-
-    aput-object v2, v9, v7
+    aput-object v2, v0, v7
 
     invoke-virtual {v8}, Ljava/lang/Class;->getName()Ljava/lang/String;
 
-    move-result-object v2
+    move-result-object v1
 
-    aput-object v2, v9, v6
+    aput-object v1, v0, v6
 
-    invoke-static {v0, v9}, Ljava/lang/String;->format(Ljava/lang/String;[Ljava/lang/Object;)Ljava/lang/String;
+    invoke-static {p1, v0}, Ljava/lang/String;->format(Ljava/lang/String;[Ljava/lang/Object;)Ljava/lang/String;
 
-    move-result-object v0
+    move-result-object p1
 
-    invoke-direct {p1, v1, v0}, Lcom/fasterxml/jackson/databind/JsonMappingException;-><init>(Ljava/io/Closeable;Ljava/lang/String;)V
+    invoke-virtual {p0, p1}, Lcom/fasterxml/jackson/databind/introspect/JacksonAnnotationIntrospector;->_databindException(Ljava/lang/String;)Lcom/fasterxml/jackson/databind/JsonMappingException;
+
+    move-result-object p1
 
     throw p1
     :try_end_2
@@ -4672,39 +4662,39 @@
     :catch_1
     move-exception p1
 
-    new-instance v0, Lcom/fasterxml/jackson/databind/JsonMappingException;
+    new-array v0, v4, [Ljava/lang/Object;
 
-    new-array v2, v4, [Ljava/lang/Object;
-
-    aput-object p3, v2, v7
+    aput-object p3, v0, v7
 
     invoke-virtual {v8}, Ljava/lang/Class;->getName()Ljava/lang/String;
 
     move-result-object p3
 
-    aput-object p3, v2, v6
+    aput-object p3, v0, v6
 
-    invoke-virtual {p2}, Lcom/fasterxml/jackson/databind/introspect/Annotated;->getName()Ljava/lang/String;
+    invoke-virtual {p2}, Lorg/joda/time/Chronology;->getName()Ljava/lang/String;
 
     move-result-object p2
 
-    aput-object p2, v2, v5
+    aput-object p2, v0, v5
 
     invoke-virtual {p1}, Ljava/lang/IllegalArgumentException;->getMessage()Ljava/lang/String;
 
     move-result-object p2
 
-    aput-object p2, v2, v3
+    aput-object p2, v0, v3
 
     const-string p2, "Failed to widen key type of %s with concrete-type annotation (value %s), from \'%s\': %s"
 
-    invoke-static {p2, v2}, Ljava/lang/String;->format(Ljava/lang/String;[Ljava/lang/Object;)Ljava/lang/String;
+    invoke-static {p2, v0}, Ljava/lang/String;->format(Ljava/lang/String;[Ljava/lang/Object;)Ljava/lang/String;
 
     move-result-object p2
 
-    invoke-direct {v0, v1, p2, p1}, Lcom/fasterxml/jackson/databind/JsonMappingException;-><init>(Ljava/io/Closeable;Ljava/lang/String;Ljava/lang/Throwable;)V
+    invoke-virtual {p0, p1, p2}, Lcom/fasterxml/jackson/databind/introspect/JacksonAnnotationIntrospector;->_databindException(Ljava/lang/Throwable;Ljava/lang/String;)Lcom/fasterxml/jackson/databind/JsonMappingException;
 
-    throw v0
+    move-result-object p1
+
+    throw p1
 
     :cond_d
     :goto_6
@@ -4716,8 +4706,6 @@
 
     if-nez v0, :cond_e
 
-    move-object v0, v1
-
     goto :goto_7
 
     :cond_e
@@ -4727,24 +4715,24 @@
 
     invoke-virtual {p0, v0}, Lcom/fasterxml/jackson/databind/introspect/JacksonAnnotationIntrospector;->_classIfExplicit(Ljava/lang/Class;)Ljava/lang/Class;
 
-    move-result-object v0
+    move-result-object v1
 
     :goto_7
-    if-eqz v0, :cond_14
+    if-eqz v1, :cond_14
 
-    iget-object v8, v2, Lcom/fasterxml/jackson/databind/JavaType;->_class:Ljava/lang/Class;
+    iget-object v0, v2, Lcom/fasterxml/jackson/databind/JavaType;->_class:Ljava/lang/Class;
 
-    if-ne v8, v0, :cond_f
+    if-ne v0, v1, :cond_f
 
-    move v9, v6
+    move v8, v6
 
     goto :goto_8
 
     :cond_f
-    move v9, v7
+    move v8, v7
 
     :goto_8
-    if-eqz v9, :cond_10
+    if-eqz v8, :cond_10
 
     invoke-virtual {v2}, Lcom/fasterxml/jackson/databind/JavaType;->withStaticTyping()Lcom/fasterxml/jackson/databind/JavaType;
 
@@ -4754,33 +4742,33 @@
 
     :cond_10
     :try_start_3
-    invoke-virtual {v0, v8}, Ljava/lang/Class;->isAssignableFrom(Ljava/lang/Class;)Z
+    invoke-virtual {v1, v0}, Ljava/lang/Class;->isAssignableFrom(Ljava/lang/Class;)Z
 
-    move-result v9
+    move-result v8
 
-    if-eqz v9, :cond_11
+    if-eqz v8, :cond_11
 
-    invoke-virtual {p1, v2, v0}, Lcom/fasterxml/jackson/databind/type/TypeFactory;->constructGeneralizedType(Lcom/fasterxml/jackson/databind/JavaType;Ljava/lang/Class;)Lcom/fasterxml/jackson/databind/JavaType;
+    invoke-virtual {p1, v2, v1}, Lcom/fasterxml/jackson/databind/type/TypeFactory;->constructGeneralizedType(Lcom/fasterxml/jackson/databind/JavaType;Ljava/lang/Class;)Lcom/fasterxml/jackson/databind/JavaType;
 
     move-result-object p1
 
     goto :goto_9
 
     :cond_11
-    invoke-virtual {v8, v0}, Ljava/lang/Class;->isAssignableFrom(Ljava/lang/Class;)Z
+    invoke-virtual {v0, v1}, Ljava/lang/Class;->isAssignableFrom(Ljava/lang/Class;)Z
 
-    move-result v9
+    move-result v8
 
-    if-eqz v9, :cond_12
+    if-eqz v8, :cond_12
 
-    invoke-virtual {p1, v2, v0, v7}, Lcom/fasterxml/jackson/databind/type/TypeFactory;->constructSpecializedType(Lcom/fasterxml/jackson/databind/JavaType;Ljava/lang/Class;Z)Lcom/fasterxml/jackson/databind/JavaType;
+    invoke-virtual {p1, v2, v1, v7}, Lcom/fasterxml/jackson/databind/type/TypeFactory;->constructSpecializedType(Lcom/fasterxml/jackson/databind/JavaType;Ljava/lang/Class;Z)Lcom/fasterxml/jackson/databind/JavaType;
 
     move-result-object p1
 
     goto :goto_9
 
     :cond_12
-    invoke-virtual {p0, v8, v0}, Lcom/fasterxml/jackson/databind/introspect/JacksonAnnotationIntrospector;->_primitiveAndWrapper(Ljava/lang/Class;Ljava/lang/Class;)Z
+    invoke-virtual {p0, v0, v1}, Lcom/fasterxml/jackson/databind/introspect/JacksonAnnotationIntrospector;->_primitiveAndWrapper(Ljava/lang/Class;Ljava/lang/Class;)Z
 
     move-result p1
 
@@ -4801,25 +4789,25 @@
 
     :cond_13
     :try_start_4
-    new-instance p1, Lcom/fasterxml/jackson/databind/JsonMappingException;
+    const-string p1, "Cannot refine serialization content type %s into %s; types not related"
 
-    const-string v8, "Cannot refine serialization content type %s into %s; types not related"
+    new-array v0, v5, [Ljava/lang/Object;
 
-    new-array v9, v5, [Ljava/lang/Object;
+    aput-object v2, v0, v7
 
-    aput-object v2, v9, v7
-
-    invoke-virtual {v0}, Ljava/lang/Class;->getName()Ljava/lang/String;
+    invoke-virtual {v1}, Ljava/lang/Class;->getName()Ljava/lang/String;
 
     move-result-object v2
 
-    aput-object v2, v9, v6
+    aput-object v2, v0, v6
 
-    invoke-static {v8, v9}, Ljava/lang/String;->format(Ljava/lang/String;[Ljava/lang/Object;)Ljava/lang/String;
+    invoke-static {p1, v0}, Ljava/lang/String;->format(Ljava/lang/String;[Ljava/lang/Object;)Ljava/lang/String;
 
-    move-result-object v2
+    move-result-object p1
 
-    invoke-direct {p1, v1, v2}, Lcom/fasterxml/jackson/databind/JsonMappingException;-><init>(Ljava/io/Closeable;Ljava/lang/String;)V
+    invoke-virtual {p0, p1}, Lcom/fasterxml/jackson/databind/introspect/JacksonAnnotationIntrospector;->_databindException(Ljava/lang/String;)Lcom/fasterxml/jackson/databind/JsonMappingException;
+
+    move-result-object p1
 
     throw p1
     :try_end_4
@@ -4828,39 +4816,39 @@
     :catch_2
     move-exception p1
 
-    new-instance v2, Lcom/fasterxml/jackson/databind/JsonMappingException;
+    new-array v0, v4, [Ljava/lang/Object;
 
-    new-array v4, v4, [Ljava/lang/Object;
+    aput-object p3, v0, v7
 
-    aput-object p3, v4, v7
-
-    invoke-virtual {v0}, Ljava/lang/Class;->getName()Ljava/lang/String;
+    invoke-virtual {v1}, Ljava/lang/Class;->getName()Ljava/lang/String;
 
     move-result-object p3
 
-    aput-object p3, v4, v6
+    aput-object p3, v0, v6
 
-    invoke-virtual {p2}, Lcom/fasterxml/jackson/databind/introspect/Annotated;->getName()Ljava/lang/String;
+    invoke-virtual {p2}, Lorg/joda/time/Chronology;->getName()Ljava/lang/String;
 
     move-result-object p2
 
-    aput-object p2, v4, v5
+    aput-object p2, v0, v5
 
     invoke-virtual {p1}, Ljava/lang/IllegalArgumentException;->getMessage()Ljava/lang/String;
 
     move-result-object p2
 
-    aput-object p2, v4, v3
+    aput-object p2, v0, v3
 
     const-string p2, "Internal error: failed to refine value type of %s with concrete-type annotation (value %s), from \'%s\': %s"
 
-    invoke-static {p2, v4}, Ljava/lang/String;->format(Ljava/lang/String;[Ljava/lang/Object;)Ljava/lang/String;
+    invoke-static {p2, v0}, Ljava/lang/String;->format(Ljava/lang/String;[Ljava/lang/Object;)Ljava/lang/String;
 
     move-result-object p2
 
-    invoke-direct {v2, v1, p2, p1}, Lcom/fasterxml/jackson/databind/JsonMappingException;-><init>(Ljava/io/Closeable;Ljava/lang/String;Ljava/lang/Throwable;)V
+    invoke-virtual {p0, p1, p2}, Lcom/fasterxml/jackson/databind/introspect/JacksonAnnotationIntrospector;->_databindException(Ljava/lang/Throwable;Ljava/lang/String;)Lcom/fasterxml/jackson/databind/JsonMappingException;
 
-    throw v2
+    move-result-object p1
+
+    throw p1
 
     :cond_14
     :goto_a
@@ -4868,7 +4856,7 @@
 .end method
 
 .method public resolveSetterConflict(Lcom/fasterxml/jackson/databind/cfg/MapperConfig;Lcom/fasterxml/jackson/databind/introspect/AnnotatedMethod;Lcom/fasterxml/jackson/databind/introspect/AnnotatedMethod;)Lcom/fasterxml/jackson/databind/introspect/AnnotatedMethod;
-    .locals 3
+    .locals 4
     .annotation system Ldalvik/annotation/Signature;
         value = {
             "(",
@@ -4897,39 +4885,42 @@
 
     move-result v2
 
-    if-eqz v2, :cond_0
+    const/4 v3, 0x0
+
+    if-eqz v2, :cond_1
 
     invoke-virtual {v0}, Ljava/lang/Class;->isPrimitive()Z
 
-    move-result v2
+    move-result p1
 
-    if-nez v2, :cond_1
+    if-nez p1, :cond_0
 
     return-object p2
 
     :cond_0
+    return-object v3
+
+    :cond_1
     invoke-virtual {v0}, Ljava/lang/Class;->isPrimitive()Z
 
     move-result v2
 
-    if-eqz v2, :cond_1
+    if-eqz v2, :cond_2
 
     return-object p3
 
-    :cond_1
-    if-ne v1, p1, :cond_2
+    :cond_2
+    if-ne v1, p1, :cond_3
 
-    if-eq v0, p1, :cond_3
+    if-eq v0, p1, :cond_4
 
     return-object p2
 
-    :cond_2
-    if-ne v0, p1, :cond_3
+    :cond_3
+    if-ne v0, p1, :cond_4
 
     return-object p3
 
-    :cond_3
-    const/4 p1, 0x0
-
-    return-object p1
+    :cond_4
+    return-object v3
 .end method

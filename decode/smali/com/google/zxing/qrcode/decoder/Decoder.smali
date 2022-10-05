@@ -148,7 +148,7 @@
 
     move-result-object v2
 
-    iget-object v2, v2, Lcom/google/zxing/qrcode/decoder/FormatInformation;->errorCorrectionLevel:Lcom/google/zxing/qrcode/decoder/ErrorCorrectionLevel;
+    iget v2, v2, Lcom/google/zxing/qrcode/decoder/FormatInformation;->errorCorrectionLevel:I
 
     invoke-virtual/range {p1 .. p1}, Lcom/google/zxing/qrcode/decoder/BitMatrixParser;->readFormatInformation()Lcom/google/zxing/qrcode/decoder/FormatInformation;
 
@@ -423,15 +423,15 @@
     :cond_d
     iget v0, v4, Lcom/google/zxing/qrcode/decoder/Version;->totalCodewords:I
 
-    if-ne v12, v0, :cond_3a
+    if-ne v12, v0, :cond_3c
 
     iget v0, v1, Lcom/google/zxing/qrcode/decoder/Version;->totalCodewords:I
 
-    if-ne v3, v0, :cond_39
+    if-ne v3, v0, :cond_3b
 
     iget-object v0, v1, Lcom/google/zxing/qrcode/decoder/Version;->ecBlocks:[Lcom/google/zxing/qrcode/decoder/Version$ECBlocks;
 
-    invoke-virtual {v2}, Ljava/lang/Enum;->ordinal()I
+    invoke-static {v2}, Landroidx/camera/camera2/internal/Camera2CameraImpl$InternalState$EnumUnboxingSharedUtility;->ordinal(I)I
 
     move-result v3
 
@@ -670,7 +670,7 @@
     move v3, v0
 
     :goto_12
-    if-ge v0, v6, :cond_1c
+    if-ge v0, v6, :cond_1d
 
     aget-object v5, v4, v0
 
@@ -750,13 +750,23 @@
     goto :goto_12
 
     :catch_0
-    invoke-static {}, Lcom/google/zxing/ChecksumException;->getChecksumInstance()Lcom/google/zxing/ChecksumException;
+    sget-boolean v0, Lcom/google/zxing/ReaderException;->isStackTrace:Z
 
-    move-result-object v0
+    if-eqz v0, :cond_1c
 
-    throw v0
+    new-instance v0, Lcom/google/zxing/ChecksumException;
+
+    invoke-direct {v0}, Lcom/google/zxing/ChecksumException;-><init>()V
+
+    goto :goto_16
 
     :cond_1c
+    sget-object v0, Lcom/google/zxing/ChecksumException;->INSTANCE:Lcom/google/zxing/ChecksumException;
+
+    :goto_16
+    throw v0
+
+    :cond_1d
     move-object/from16 v15, p0
 
     sget-object v0, Lcom/google/zxing/qrcode/decoder/DecodedBitStreamParser;->ALPHANUMERIC_CHARS:[C
@@ -785,7 +795,7 @@
 
     const/4 v11, 0x0
 
-    :goto_16
+    :goto_17
     :try_start_1
     invoke-virtual {v3}, Lcom/google/zxing/common/BitSource;->available()I
 
@@ -795,128 +805,128 @@
 
     const/4 v14, 0x4
 
-    if-ge v12, v14, :cond_1d
-
-    goto :goto_17
-
-    :cond_1d
-    invoke-virtual {v3, v14}, Lcom/google/zxing/common/BitSource;->readBits(I)I
-
-    move-result v12
-
-    if-eqz v12, :cond_27
-
-    const/4 v6, 0x1
-
-    if-eq v12, v6, :cond_26
-
-    const/4 v6, 0x2
-
-    if-eq v12, v6, :cond_25
-
-    const/4 v6, 0x3
-
-    if-eq v12, v6, :cond_24
-
-    if-eq v12, v14, :cond_23
-
-    const/4 v6, 0x5
-
-    if-eq v12, v6, :cond_22
-
-    if-eq v12, v13, :cond_21
-
-    const/16 v6, 0x8
-
-    if-eq v12, v6, :cond_20
-
-    const/16 v6, 0x9
-
-    if-eq v12, v6, :cond_1f
-
-    const/16 v6, 0xd
-
-    if-ne v12, v6, :cond_1e
-
-    sget-object v6, Lcom/google/zxing/qrcode/decoder/Mode;->HANZI:Lcom/google/zxing/qrcode/decoder/Mode;
+    if-ge v12, v14, :cond_1e
 
     goto :goto_18
 
     :cond_1e
+    invoke-virtual {v3, v14}, Lcom/google/zxing/common/BitSource;->readBits(I)I
+
+    move-result v12
+
+    if-eqz v12, :cond_28
+
+    const/4 v6, 0x1
+
+    if-eq v12, v6, :cond_27
+
+    const/4 v6, 0x2
+
+    if-eq v12, v6, :cond_26
+
+    const/4 v6, 0x3
+
+    if-eq v12, v6, :cond_25
+
+    if-eq v12, v14, :cond_24
+
+    const/4 v6, 0x5
+
+    if-eq v12, v6, :cond_23
+
+    if-eq v12, v13, :cond_22
+
+    const/16 v6, 0x8
+
+    if-eq v12, v6, :cond_21
+
+    const/16 v6, 0x9
+
+    if-eq v12, v6, :cond_20
+
+    const/16 v6, 0xd
+
+    if-ne v12, v6, :cond_1f
+
+    sget-object v6, Lcom/google/zxing/qrcode/decoder/Mode;->HANZI:Lcom/google/zxing/qrcode/decoder/Mode;
+
+    goto :goto_19
+
+    :cond_1f
     new-instance v0, Ljava/lang/IllegalArgumentException;
 
     invoke-direct {v0}, Ljava/lang/IllegalArgumentException;-><init>()V
 
     throw v0
 
-    :cond_1f
+    :cond_20
     sget-object v6, Lcom/google/zxing/qrcode/decoder/Mode;->FNC1_SECOND_POSITION:Lcom/google/zxing/qrcode/decoder/Mode;
 
-    goto :goto_18
-
-    :cond_20
-    sget-object v6, Lcom/google/zxing/qrcode/decoder/Mode;->KANJI:Lcom/google/zxing/qrcode/decoder/Mode;
-
-    goto :goto_18
+    goto :goto_19
 
     :cond_21
-    sget-object v6, Lcom/google/zxing/qrcode/decoder/Mode;->ECI:Lcom/google/zxing/qrcode/decoder/Mode;
+    sget-object v6, Lcom/google/zxing/qrcode/decoder/Mode;->KANJI:Lcom/google/zxing/qrcode/decoder/Mode;
 
-    goto :goto_18
+    goto :goto_19
 
     :cond_22
-    sget-object v6, Lcom/google/zxing/qrcode/decoder/Mode;->FNC1_FIRST_POSITION:Lcom/google/zxing/qrcode/decoder/Mode;
+    sget-object v6, Lcom/google/zxing/qrcode/decoder/Mode;->ECI:Lcom/google/zxing/qrcode/decoder/Mode;
 
-    goto :goto_18
+    goto :goto_19
 
     :cond_23
-    sget-object v6, Lcom/google/zxing/qrcode/decoder/Mode;->BYTE:Lcom/google/zxing/qrcode/decoder/Mode;
+    sget-object v6, Lcom/google/zxing/qrcode/decoder/Mode;->FNC1_FIRST_POSITION:Lcom/google/zxing/qrcode/decoder/Mode;
 
-    goto :goto_18
+    goto :goto_19
 
     :cond_24
-    sget-object v6, Lcom/google/zxing/qrcode/decoder/Mode;->STRUCTURED_APPEND:Lcom/google/zxing/qrcode/decoder/Mode;
+    sget-object v6, Lcom/google/zxing/qrcode/decoder/Mode;->BYTE:Lcom/google/zxing/qrcode/decoder/Mode;
 
-    goto :goto_18
+    goto :goto_19
 
     :cond_25
-    sget-object v6, Lcom/google/zxing/qrcode/decoder/Mode;->ALPHANUMERIC:Lcom/google/zxing/qrcode/decoder/Mode;
+    sget-object v6, Lcom/google/zxing/qrcode/decoder/Mode;->STRUCTURED_APPEND:Lcom/google/zxing/qrcode/decoder/Mode;
 
-    goto :goto_18
+    goto :goto_19
 
     :cond_26
-    sget-object v6, Lcom/google/zxing/qrcode/decoder/Mode;->NUMERIC:Lcom/google/zxing/qrcode/decoder/Mode;
+    sget-object v6, Lcom/google/zxing/qrcode/decoder/Mode;->ALPHANUMERIC:Lcom/google/zxing/qrcode/decoder/Mode;
 
-    goto :goto_18
+    goto :goto_19
 
     :cond_27
-    :goto_17
+    sget-object v6, Lcom/google/zxing/qrcode/decoder/Mode;->NUMERIC:Lcom/google/zxing/qrcode/decoder/Mode;
+
+    goto :goto_19
+
+    :cond_28
+    :goto_18
     move-object v6, v0
 
-    :goto_18
+    :goto_19
     invoke-virtual {v6}, Ljava/lang/Enum;->ordinal()I
 
     move-result v12
 
-    if-eqz v12, :cond_36
+    if-eqz v12, :cond_38
 
     const/4 v14, 0x3
 
-    if-eq v12, v14, :cond_34
+    if-eq v12, v14, :cond_36
 
     const/4 v14, 0x5
 
-    if-eq v12, v14, :cond_2f
+    if-eq v12, v14, :cond_30
 
-    if-eq v12, v13, :cond_2e
+    if-eq v12, v13, :cond_2f
 
     const/16 v13, 0x8
 
-    if-eq v12, v13, :cond_2e
+    if-eq v12, v13, :cond_2f
 
     const/16 v13, 0x9
 
-    if-eq v12, v13, :cond_2c
+    if-eq v12, v13, :cond_2d
 
     invoke-virtual {v6, v1}, Lcom/google/zxing/qrcode/decoder/Mode;->getCharacterCountBits(Lcom/google/zxing/qrcode/decoder/Version;)I
 
@@ -932,32 +942,32 @@
 
     const/4 v14, 0x1
 
-    if-eq v13, v14, :cond_2b
+    if-eq v13, v14, :cond_2c
 
     const/4 v14, 0x2
 
-    if-eq v13, v14, :cond_2a
+    if-eq v13, v14, :cond_2b
 
     const/4 v14, 0x4
 
-    if-eq v13, v14, :cond_29
+    if-eq v13, v14, :cond_2a
 
     const/4 v14, 0x6
 
-    if-ne v13, v14, :cond_28
+    if-ne v13, v14, :cond_29
 
     invoke-static {v3, v4, v12}, Lcom/google/zxing/qrcode/decoder/DecodedBitStreamParser;->decodeKanjiSegment(Lcom/google/zxing/common/BitSource;Ljava/lang/StringBuilder;I)V
 
-    goto/16 :goto_1b
+    goto/16 :goto_1c
 
-    :cond_28
+    :cond_29
     invoke-static {}, Lcom/google/zxing/FormatException;->getFormatInstance()Lcom/google/zxing/FormatException;
 
     move-result-object v0
 
     throw v0
 
-    :cond_29
+    :cond_2a
     const/4 v14, 0x6
 
     move-object/from16 v21, v3
@@ -974,23 +984,23 @@
 
     invoke-static/range {v21 .. v26}, Lcom/google/zxing/qrcode/decoder/DecodedBitStreamParser;->decodeByteSegment(Lcom/google/zxing/common/BitSource;Ljava/lang/StringBuilder;ILcom/google/zxing/common/CharacterSetECI;Ljava/util/Collection;Ljava/util/Map;)V
 
-    goto/16 :goto_1b
-
-    :cond_2a
-    const/4 v14, 0x6
-
-    invoke-static {v3, v4, v12, v7}, Lcom/google/zxing/qrcode/decoder/DecodedBitStreamParser;->decodeAlphanumericSegment(Lcom/google/zxing/common/BitSource;Ljava/lang/StringBuilder;IZ)V
-
-    goto/16 :goto_1b
+    goto/16 :goto_1c
 
     :cond_2b
     const/4 v14, 0x6
 
-    invoke-static {v3, v4, v12}, Lcom/google/zxing/qrcode/decoder/DecodedBitStreamParser;->decodeNumericSegment(Lcom/google/zxing/common/BitSource;Ljava/lang/StringBuilder;I)V
+    invoke-static {v3, v4, v12, v7}, Lcom/google/zxing/qrcode/decoder/DecodedBitStreamParser;->decodeAlphanumericSegment(Lcom/google/zxing/common/BitSource;Ljava/lang/StringBuilder;IZ)V
 
-    goto/16 :goto_1b
+    goto/16 :goto_1c
 
     :cond_2c
+    const/4 v14, 0x6
+
+    invoke-static {v3, v4, v12}, Lcom/google/zxing/qrcode/decoder/DecodedBitStreamParser;->decodeNumericSegment(Lcom/google/zxing/common/BitSource;Ljava/lang/StringBuilder;I)V
+
+    goto/16 :goto_1c
+
+    :cond_2d
     const/4 v12, 0x4
 
     const/4 v14, 0x6
@@ -1009,23 +1019,30 @@
 
     const/4 v14, 0x1
 
-    if-ne v12, v14, :cond_2d
+    if-ne v12, v14, :cond_2e
 
     invoke-static {v3, v4, v13}, Lcom/google/zxing/qrcode/decoder/DecodedBitStreamParser;->decodeHanziSegment(Lcom/google/zxing/common/BitSource;Ljava/lang/StringBuilder;I)V
 
-    :cond_2d
+    :cond_2e
     const/16 v12, 0x8
 
-    goto :goto_1c
+    goto/16 :goto_1d
 
-    :cond_2e
+    :cond_2f
     const/4 v14, 0x1
+
+    move v13, v8
+
+    move/from16 v16, v10
 
     move v7, v14
 
-    goto :goto_1a
+    :goto_1a
+    const/16 v12, 0x8
 
-    :cond_2f
+    goto/16 :goto_1e
+
+    :cond_30
     const/16 v11, 0x8
 
     const/4 v14, 0x1
@@ -1036,18 +1053,18 @@
 
     and-int/lit16 v11, v12, 0x80
 
-    if-nez v11, :cond_30
+    if-nez v11, :cond_31
 
     and-int/lit8 v11, v12, 0x7f
 
-    goto :goto_19
+    goto :goto_1b
 
-    :cond_30
+    :cond_31
     and-int/lit16 v11, v12, 0xc0
 
     const/16 v13, 0x80
 
-    if-ne v11, v13, :cond_31
+    if-ne v11, v13, :cond_32
 
     const/16 v11, 0x8
 
@@ -1061,14 +1078,14 @@
 
     or-int v11, v12, v13
 
-    goto :goto_19
+    goto :goto_1b
 
-    :cond_31
+    :cond_32
     and-int/lit16 v11, v12, 0xe0
 
     const/16 v13, 0xc0
 
-    if-ne v11, v13, :cond_33
+    if-ne v11, v13, :cond_35
 
     const/16 v11, 0x10
 
@@ -1082,28 +1099,36 @@
 
     or-int/2addr v11, v13
 
-    :goto_19
-    invoke-static {v11}, Lcom/google/zxing/common/CharacterSetECI;->getCharacterSetECIByValue(I)Lcom/google/zxing/common/CharacterSetECI;
+    :goto_1b
+    sget-object v12, Lcom/google/zxing/common/CharacterSetECI;->VALUE_TO_ECI:Ljava/util/Map;
+
+    if-ltz v11, :cond_34
+
+    const/16 v12, 0x384
+
+    if-ge v11, v12, :cond_34
+
+    sget-object v12, Lcom/google/zxing/common/CharacterSetECI;->VALUE_TO_ECI:Ljava/util/Map;
+
+    invoke-static {v11}, Ljava/lang/Integer;->valueOf(I)Ljava/lang/Integer;
 
     move-result-object v11
 
-    if-eqz v11, :cond_32
+    check-cast v12, Ljava/util/HashMap;
 
-    :goto_1a
+    invoke-virtual {v12, v11}, Ljava/util/HashMap;->get(Ljava/lang/Object;)Ljava/lang/Object;
+
+    move-result-object v11
+
+    check-cast v11, Lcom/google/zxing/common/CharacterSetECI;
+
+    if-eqz v11, :cond_33
+
     move v13, v8
 
     move/from16 v16, v10
 
-    const/16 v12, 0x8
-
-    goto :goto_1d
-
-    :cond_32
-    invoke-static {}, Lcom/google/zxing/FormatException;->getFormatInstance()Lcom/google/zxing/FormatException;
-
-    move-result-object v0
-
-    throw v0
+    goto :goto_1a
 
     :cond_33
     invoke-static {}, Lcom/google/zxing/FormatException;->getFormatInstance()Lcom/google/zxing/FormatException;
@@ -1113,6 +1138,20 @@
     throw v0
 
     :cond_34
+    invoke-static {}, Lcom/google/zxing/FormatException;->getFormatInstance()Lcom/google/zxing/FormatException;
+
+    move-result-object v0
+
+    throw v0
+
+    :cond_35
+    invoke-static {}, Lcom/google/zxing/FormatException;->getFormatInstance()Lcom/google/zxing/FormatException;
+
+    move-result-object v0
+
+    throw v0
+
+    :cond_36
     const/4 v14, 0x1
 
     invoke-virtual {v3}, Lcom/google/zxing/common/BitSource;->available()I
@@ -1121,7 +1160,7 @@
 
     const/16 v10, 0x10
 
-    if-lt v8, v10, :cond_35
+    if-lt v8, v10, :cond_37
 
     const/16 v12, 0x8
 
@@ -1133,9 +1172,9 @@
 
     move-result v10
 
-    goto :goto_1c
+    goto :goto_1d
 
-    :cond_35
+    :cond_37
     invoke-static {}, Lcom/google/zxing/FormatException;->getFormatInstance()Lcom/google/zxing/FormatException;
 
     move-result-object v0
@@ -1144,19 +1183,19 @@
     :try_end_1
     .catch Ljava/lang/IllegalArgumentException; {:try_start_1 .. :try_end_1} :catch_1
 
-    :cond_36
-    :goto_1b
+    :cond_38
+    :goto_1c
     const/16 v12, 0x8
 
     const/4 v14, 0x1
 
-    :goto_1c
+    :goto_1d
     move v13, v8
 
     move/from16 v16, v10
 
-    :goto_1d
-    if-ne v6, v0, :cond_38
+    :goto_1e
+    if-ne v6, v0, :cond_3a
 
     new-instance v0, Lcom/google/zxing/common/DecoderResult;
 
@@ -1168,17 +1207,17 @@
 
     move-result v1
 
-    if-eqz v1, :cond_37
+    if-eqz v1, :cond_39
 
     const/4 v11, 0x0
 
-    goto :goto_1e
+    goto :goto_1f
 
-    :cond_37
+    :cond_39
     move-object v11, v5
 
-    :goto_1e
-    invoke-virtual {v2}, Ljava/lang/Enum;->toString()Ljava/lang/String;
+    :goto_1f
+    invoke-static {v2}, Lcom/google/zxing/qrcode/decoder/ErrorCorrectionLevel$EnumUnboxingLocalUtility;->name(I)Ljava/lang/String;
 
     move-result-object v12
 
@@ -1190,12 +1229,12 @@
 
     return-object v0
 
-    :cond_38
+    :cond_3a
     move v8, v13
 
     move/from16 v10, v16
 
-    goto/16 :goto_16
+    goto/16 :goto_17
 
     :catch_1
     invoke-static {}, Lcom/google/zxing/FormatException;->getFormatInstance()Lcom/google/zxing/FormatException;
@@ -1204,7 +1243,7 @@
 
     throw v0
 
-    :cond_39
+    :cond_3b
     move-object/from16 v15, p0
 
     new-instance v0, Ljava/lang/IllegalArgumentException;
@@ -1213,7 +1252,7 @@
 
     throw v0
 
-    :cond_3a
+    :cond_3c
     move-object/from16 v15, p0
 
     invoke-static {}, Lcom/google/zxing/FormatException;->getFormatInstance()Lcom/google/zxing/FormatException;

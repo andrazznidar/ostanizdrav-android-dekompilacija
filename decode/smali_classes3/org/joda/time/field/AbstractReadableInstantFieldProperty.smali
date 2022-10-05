@@ -103,46 +103,6 @@
     return v0
 .end method
 
-.method public getAsShortText(Ljava/util/Locale;)Ljava/lang/String;
-    .locals 4
-
-    move-object v0, p0
-
-    check-cast v0, Lorg/joda/time/MutableDateTime$Property;
-
-    iget-object v1, v0, Lorg/joda/time/MutableDateTime$Property;->iField:Lorg/joda/time/DateTimeField;
-
-    iget-object v0, v0, Lorg/joda/time/MutableDateTime$Property;->iInstant:Lorg/joda/time/MutableDateTime;
-
-    iget-wide v2, v0, Lorg/joda/time/base/BaseDateTime;->iMillis:J
-
-    invoke-virtual {v1, v2, v3, p1}, Lorg/joda/time/DateTimeField;->getAsShortText(JLjava/util/Locale;)Ljava/lang/String;
-
-    move-result-object p1
-
-    return-object p1
-.end method
-
-.method public getAsText(Ljava/util/Locale;)Ljava/lang/String;
-    .locals 4
-
-    move-object v0, p0
-
-    check-cast v0, Lorg/joda/time/MutableDateTime$Property;
-
-    iget-object v1, v0, Lorg/joda/time/MutableDateTime$Property;->iField:Lorg/joda/time/DateTimeField;
-
-    iget-object v0, v0, Lorg/joda/time/MutableDateTime$Property;->iInstant:Lorg/joda/time/MutableDateTime;
-
-    iget-wide v2, v0, Lorg/joda/time/base/BaseDateTime;->iMillis:J
-
-    invoke-virtual {v1, v2, v3, p1}, Lorg/joda/time/DateTimeField;->getAsText(JLjava/util/Locale;)Ljava/lang/String;
-
-    move-result-object p1
-
-    return-object p1
-.end method
-
 .method public getChronology()Lorg/joda/time/Chronology;
     .locals 2
 

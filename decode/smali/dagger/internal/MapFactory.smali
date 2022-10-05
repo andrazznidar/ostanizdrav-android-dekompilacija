@@ -78,7 +78,7 @@
 
     move-result v0
 
-    invoke-static {v0}, Lkotlin/collections/ArraysUtilJVM;->newLinkedHashMapWithExpectedSize(I)Ljava/util/LinkedHashMap;
+    invoke-static {v0}, Ldagger/internal/DaggerCollections;->newLinkedHashMapWithExpectedSize(I)Ljava/util/LinkedHashMap;
 
     move-result-object v0
 

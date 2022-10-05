@@ -51,7 +51,7 @@
 
     aput-object v1, v0, v2
 
-    invoke-static {v0}, Lkotlin/collections/SetsKt__SetsKt;->setOf([Ljava/lang/Object;)Ljava/util/Set;
+    invoke-static {v0}, Lorg/bouncycastle/util/IPAddress;->setOf([Ljava/lang/Object;)Ljava/util/Set;
 
     move-result-object v0
 

@@ -22,7 +22,7 @@
 
     const/4 v0, 0x0
 
-    invoke-virtual {p0, p1, v0}, Lorg/bouncycastle/asn1/ASN1External;->getObjFromVector(Lorg/bouncycastle/asn1/ASN1EncodableVector;I)Lorg/bouncycastle/asn1/ASN1Primitive;
+    invoke-direct {p0, p1, v0}, Lorg/bouncycastle/asn1/ASN1External;->getObjFromVector(Lorg/bouncycastle/asn1/ASN1EncodableVector;I)Lorg/bouncycastle/asn1/ASN1Primitive;
 
     move-result-object v1
 
@@ -36,7 +36,7 @@
 
     iput-object v1, p0, Lorg/bouncycastle/asn1/ASN1External;->directReference:Lorg/bouncycastle/asn1/ASN1ObjectIdentifier;
 
-    invoke-virtual {p0, p1, v3}, Lorg/bouncycastle/asn1/ASN1External;->getObjFromVector(Lorg/bouncycastle/asn1/ASN1EncodableVector;I)Lorg/bouncycastle/asn1/ASN1Primitive;
+    invoke-direct {p0, p1, v3}, Lorg/bouncycastle/asn1/ASN1External;->getObjFromVector(Lorg/bouncycastle/asn1/ASN1EncodableVector;I)Lorg/bouncycastle/asn1/ASN1Primitive;
 
     move-result-object v1
 
@@ -53,7 +53,7 @@
 
     add-int/lit8 v0, v0, 0x1
 
-    invoke-virtual {p0, p1, v0}, Lorg/bouncycastle/asn1/ASN1External;->getObjFromVector(Lorg/bouncycastle/asn1/ASN1EncodableVector;I)Lorg/bouncycastle/asn1/ASN1Primitive;
+    invoke-direct {p0, p1, v0}, Lorg/bouncycastle/asn1/ASN1External;->getObjFromVector(Lorg/bouncycastle/asn1/ASN1EncodableVector;I)Lorg/bouncycastle/asn1/ASN1Primitive;
 
     move-result-object v1
 
@@ -66,12 +66,14 @@
 
     add-int/lit8 v0, v0, 0x1
 
-    invoke-virtual {p0, p1, v0}, Lorg/bouncycastle/asn1/ASN1External;->getObjFromVector(Lorg/bouncycastle/asn1/ASN1EncodableVector;I)Lorg/bouncycastle/asn1/ASN1Primitive;
+    invoke-direct {p0, p1, v0}, Lorg/bouncycastle/asn1/ASN1External;->getObjFromVector(Lorg/bouncycastle/asn1/ASN1EncodableVector;I)Lorg/bouncycastle/asn1/ASN1Primitive;
 
     move-result-object v1
 
     :cond_2
-    iget p1, p1, Lorg/bouncycastle/asn1/ASN1EncodableVector;->elementCount:I
+    invoke-virtual {p1}, Lorg/bouncycastle/asn1/ASN1EncodableVector;->size()I
+
+    move-result p1
 
     add-int/2addr v0, v3
 
@@ -83,9 +85,11 @@
 
     check-cast v1, Lorg/bouncycastle/asn1/ASN1TaggedObject;
 
-    iget p1, v1, Lorg/bouncycastle/asn1/ASN1TaggedObject;->tagNo:I
+    invoke-virtual {v1}, Lorg/bouncycastle/asn1/ASN1TaggedObject;->getTagNo()I
 
-    invoke-virtual {p0, p1}, Lorg/bouncycastle/asn1/ASN1External;->setEncoding(I)V
+    move-result p1
+
+    invoke-direct {p0, p1}, Lorg/bouncycastle/asn1/ASN1External;->setEncoding(I)V
 
     invoke-virtual {v1}, Lorg/bouncycastle/asn1/ASN1TaggedObject;->getObject()Lorg/bouncycastle/asn1/ASN1Primitive;
 
@@ -119,17 +123,131 @@
 
     invoke-direct {p0}, Lorg/bouncycastle/asn1/ASN1Primitive;-><init>()V
 
+    invoke-direct {p0, p1}, Lorg/bouncycastle/asn1/ASN1External;->setDirectReference(Lorg/bouncycastle/asn1/ASN1ObjectIdentifier;)V
+
+    invoke-direct {p0, p2}, Lorg/bouncycastle/asn1/ASN1External;->setIndirectReference(Lorg/bouncycastle/asn1/ASN1Integer;)V
+
+    invoke-direct {p0, p3}, Lorg/bouncycastle/asn1/ASN1External;->setDataValueDescriptor(Lorg/bouncycastle/asn1/ASN1Primitive;)V
+
+    invoke-direct {p0, p4}, Lorg/bouncycastle/asn1/ASN1External;->setEncoding(I)V
+
+    invoke-virtual {p5}, Lorg/bouncycastle/asn1/ASN1Primitive;->toASN1Primitive()Lorg/bouncycastle/asn1/ASN1Primitive;
+
+    move-result-object p1
+
+    invoke-direct {p0, p1}, Lorg/bouncycastle/asn1/ASN1External;->setExternalContent(Lorg/bouncycastle/asn1/ASN1Primitive;)V
+
+    return-void
+.end method
+
+.method public constructor <init>(Lorg/bouncycastle/asn1/ASN1ObjectIdentifier;Lorg/bouncycastle/asn1/ASN1Integer;Lorg/bouncycastle/asn1/ASN1Primitive;Lorg/bouncycastle/asn1/DERTaggedObject;)V
+    .locals 6
+
+    invoke-virtual {p4}, Lorg/bouncycastle/asn1/ASN1TaggedObject;->getTagNo()I
+
+    move-result v4
+
+    invoke-virtual {p4}, Lorg/bouncycastle/asn1/ASN1Primitive;->toASN1Primitive()Lorg/bouncycastle/asn1/ASN1Primitive;
+
+    move-result-object v5
+
+    move-object v0, p0
+
+    move-object v1, p1
+
+    move-object v2, p2
+
+    move-object v3, p3
+
+    invoke-direct/range {v0 .. v5}, Lorg/bouncycastle/asn1/ASN1External;-><init>(Lorg/bouncycastle/asn1/ASN1ObjectIdentifier;Lorg/bouncycastle/asn1/ASN1Integer;Lorg/bouncycastle/asn1/ASN1Primitive;ILorg/bouncycastle/asn1/ASN1Primitive;)V
+
+    return-void
+.end method
+
+.method private getObjFromVector(Lorg/bouncycastle/asn1/ASN1EncodableVector;I)Lorg/bouncycastle/asn1/ASN1Primitive;
+    .locals 1
+
+    invoke-virtual {p1}, Lorg/bouncycastle/asn1/ASN1EncodableVector;->size()I
+
+    move-result v0
+
+    if-le v0, p2, :cond_0
+
+    invoke-virtual {p1, p2}, Lorg/bouncycastle/asn1/ASN1EncodableVector;->get(I)Lorg/bouncycastle/asn1/ASN1Encodable;
+
+    move-result-object p1
+
+    invoke-interface {p1}, Lorg/bouncycastle/asn1/ASN1Encodable;->toASN1Primitive()Lorg/bouncycastle/asn1/ASN1Primitive;
+
+    move-result-object p1
+
+    return-object p1
+
+    :cond_0
+    new-instance p1, Ljava/lang/IllegalArgumentException;
+
+    const-string p2, "too few objects in input vector"
+
+    invoke-direct {p1, p2}, Ljava/lang/IllegalArgumentException;-><init>(Ljava/lang/String;)V
+
+    throw p1
+.end method
+
+.method private setDataValueDescriptor(Lorg/bouncycastle/asn1/ASN1Primitive;)V
+    .locals 0
+
+    iput-object p1, p0, Lorg/bouncycastle/asn1/ASN1External;->dataValueDescriptor:Lorg/bouncycastle/asn1/ASN1Primitive;
+
+    return-void
+.end method
+
+.method private setDirectReference(Lorg/bouncycastle/asn1/ASN1ObjectIdentifier;)V
+    .locals 0
+
     iput-object p1, p0, Lorg/bouncycastle/asn1/ASN1External;->directReference:Lorg/bouncycastle/asn1/ASN1ObjectIdentifier;
 
-    iput-object p2, p0, Lorg/bouncycastle/asn1/ASN1External;->indirectReference:Lorg/bouncycastle/asn1/ASN1Integer;
+    return-void
+.end method
 
-    iput-object p3, p0, Lorg/bouncycastle/asn1/ASN1External;->dataValueDescriptor:Lorg/bouncycastle/asn1/ASN1Primitive;
+.method private setEncoding(I)V
+    .locals 2
 
-    invoke-virtual {p0, p4}, Lorg/bouncycastle/asn1/ASN1External;->setEncoding(I)V
+    if-ltz p1, :cond_0
 
-    invoke-static {p5}, Ljava/util/Objects;->requireNonNull(Ljava/lang/Object;)Ljava/lang/Object;
+    const/4 v0, 0x2
 
-    iput-object p5, p0, Lorg/bouncycastle/asn1/ASN1External;->externalContent:Lorg/bouncycastle/asn1/ASN1Primitive;
+    if-gt p1, v0, :cond_0
+
+    iput p1, p0, Lorg/bouncycastle/asn1/ASN1External;->encoding:I
+
+    return-void
+
+    :cond_0
+    new-instance v0, Ljava/lang/IllegalArgumentException;
+
+    const-string v1, "invalid encoding value: "
+
+    invoke-static {v1, p1}, Landroidx/appcompat/widget/AppCompatTextHelper$$ExternalSyntheticOutline0;->m(Ljava/lang/String;I)Ljava/lang/String;
+
+    move-result-object p1
+
+    invoke-direct {v0, p1}, Ljava/lang/IllegalArgumentException;-><init>(Ljava/lang/String;)V
+
+    throw v0
+.end method
+
+.method private setExternalContent(Lorg/bouncycastle/asn1/ASN1Primitive;)V
+    .locals 0
+
+    iput-object p1, p0, Lorg/bouncycastle/asn1/ASN1External;->externalContent:Lorg/bouncycastle/asn1/ASN1Primitive;
+
+    return-void
+.end method
+
+.method private setIndirectReference(Lorg/bouncycastle/asn1/ASN1Integer;)V
+    .locals 0
+
+    iput-object p1, p0, Lorg/bouncycastle/asn1/ASN1External;->indirectReference:Lorg/bouncycastle/asn1/ASN1Integer;
 
     return-void
 .end method
@@ -239,31 +357,44 @@
     return v0
 .end method
 
-.method public final getObjFromVector(Lorg/bouncycastle/asn1/ASN1EncodableVector;I)Lorg/bouncycastle/asn1/ASN1Primitive;
+.method public getDataValueDescriptor()Lorg/bouncycastle/asn1/ASN1Primitive;
     .locals 1
 
-    iget v0, p1, Lorg/bouncycastle/asn1/ASN1EncodableVector;->elementCount:I
+    iget-object v0, p0, Lorg/bouncycastle/asn1/ASN1External;->dataValueDescriptor:Lorg/bouncycastle/asn1/ASN1Primitive;
 
-    if-le v0, p2, :cond_0
+    return-object v0
+.end method
 
-    invoke-virtual {p1, p2}, Lorg/bouncycastle/asn1/ASN1EncodableVector;->get(I)Lorg/bouncycastle/asn1/ASN1Encodable;
+.method public getDirectReference()Lorg/bouncycastle/asn1/ASN1ObjectIdentifier;
+    .locals 1
 
-    move-result-object p1
+    iget-object v0, p0, Lorg/bouncycastle/asn1/ASN1External;->directReference:Lorg/bouncycastle/asn1/ASN1ObjectIdentifier;
 
-    invoke-interface {p1}, Lorg/bouncycastle/asn1/ASN1Encodable;->toASN1Primitive()Lorg/bouncycastle/asn1/ASN1Primitive;
+    return-object v0
+.end method
 
-    move-result-object p1
+.method public getEncoding()I
+    .locals 1
 
-    return-object p1
+    iget v0, p0, Lorg/bouncycastle/asn1/ASN1External;->encoding:I
 
-    :cond_0
-    new-instance p1, Ljava/lang/IllegalArgumentException;
+    return v0
+.end method
 
-    const-string p2, "too few objects in input vector"
+.method public getExternalContent()Lorg/bouncycastle/asn1/ASN1Primitive;
+    .locals 1
 
-    invoke-direct {p1, p2}, Ljava/lang/IllegalArgumentException;-><init>(Ljava/lang/String;)V
+    iget-object v0, p0, Lorg/bouncycastle/asn1/ASN1External;->externalContent:Lorg/bouncycastle/asn1/ASN1Primitive;
 
-    throw p1
+    return-object v0
+.end method
+
+.method public getIndirectReference()Lorg/bouncycastle/asn1/ASN1Integer;
+    .locals 1
+
+    iget-object v0, p0, Lorg/bouncycastle/asn1/ASN1External;->indirectReference:Lorg/bouncycastle/asn1/ASN1Integer;
+
+    return-object v0
 .end method
 
 .method public hashCode()I
@@ -298,7 +429,7 @@
 
     if-eqz v1, :cond_2
 
-    invoke-virtual {v1}, Lorg/bouncycastle/asn1/ASN1Object;->hashCode()I
+    invoke-virtual {v1}, Lorg/bouncycastle/asn1/ASN1Primitive;->hashCode()I
 
     move-result v1
 
@@ -307,7 +438,7 @@
     :cond_2
     iget-object v1, p0, Lorg/bouncycastle/asn1/ASN1External;->externalContent:Lorg/bouncycastle/asn1/ASN1Primitive;
 
-    invoke-virtual {v1}, Lorg/bouncycastle/asn1/ASN1Object;->hashCode()I
+    invoke-virtual {v1}, Lorg/bouncycastle/asn1/ASN1Primitive;->hashCode()I
 
     move-result v1
 
@@ -322,33 +453,6 @@
     const/4 v0, 0x1
 
     return v0
-.end method
-
-.method public final setEncoding(I)V
-    .locals 2
-
-    if-ltz p1, :cond_0
-
-    const/4 v0, 0x2
-
-    if-gt p1, v0, :cond_0
-
-    iput p1, p0, Lorg/bouncycastle/asn1/ASN1External;->encoding:I
-
-    return-void
-
-    :cond_0
-    new-instance v0, Ljava/lang/IllegalArgumentException;
-
-    const-string v1, "invalid encoding value: "
-
-    invoke-static {v1, p1}, Landroidx/appcompat/widget/AppCompatTextHelper$$ExternalSyntheticOutline0;->m(Ljava/lang/String;I)Ljava/lang/String;
-
-    move-result-object p1
-
-    invoke-direct {v0, p1}, Ljava/lang/IllegalArgumentException;-><init>(Ljava/lang/String;)V
-
-    throw v0
 .end method
 
 .method public toDERObject()Lorg/bouncycastle/asn1/ASN1Primitive;

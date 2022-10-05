@@ -1,5 +1,6 @@
 .class public final synthetic Landroidx/work/impl/WorkDatabase_Impl$1$$ExternalSyntheticOutline1;
 .super Ljava/lang/Object;
+.source "R8$$SyntheticClass"
 
 
 # direct methods

@@ -6,7 +6,7 @@
 
 
 # instance fields
-.field public _parser:Lorg/bouncycastle/asn1/ASN1StreamParser;
+.field private _parser:Lorg/bouncycastle/asn1/ASN1StreamParser;
 
 
 # direct methods
@@ -39,6 +39,23 @@
     move-result-object v1
 
     invoke-direct {v0, v1}, Lorg/bouncycastle/asn1/BERSequence;-><init>(Lorg/bouncycastle/asn1/ASN1EncodableVector;)V
+
+    return-object v0
+.end method
+
+.method public readObject()Lorg/bouncycastle/asn1/ASN1Encodable;
+    .locals 1
+    .annotation system Ldalvik/annotation/Throws;
+        value = {
+            Ljava/io/IOException;
+        }
+    .end annotation
+
+    iget-object v0, p0, Lorg/bouncycastle/asn1/BERSequenceParser;->_parser:Lorg/bouncycastle/asn1/ASN1StreamParser;
+
+    invoke-virtual {v0}, Lorg/bouncycastle/asn1/ASN1StreamParser;->readObject()Lorg/bouncycastle/asn1/ASN1Encodable;
+
+    move-result-object v0
 
     return-object v0
 .end method

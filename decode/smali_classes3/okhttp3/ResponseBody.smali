@@ -66,6 +66,50 @@
     return-object v0
 .end method
 
+.method public final charStream()Ljava/io/Reader;
+    .locals 4
+
+    iget-object v0, p0, Lokhttp3/ResponseBody;->reader:Ljava/io/Reader;
+
+    if-eqz v0, :cond_0
+
+    goto :goto_1
+
+    :cond_0
+    new-instance v0, Lokhttp3/ResponseBody$BomAwareReader;
+
+    invoke-virtual {p0}, Lokhttp3/ResponseBody;->source()Lokio/BufferedSource;
+
+    move-result-object v1
+
+    invoke-virtual {p0}, Lokhttp3/ResponseBody;->contentType()Lokhttp3/MediaType;
+
+    move-result-object v2
+
+    if-eqz v2, :cond_1
+
+    sget-object v3, Lkotlin/text/Charsets;->UTF_8:Ljava/nio/charset/Charset;
+
+    invoke-virtual {v2, v3}, Lokhttp3/MediaType;->charset(Ljava/nio/charset/Charset;)Ljava/nio/charset/Charset;
+
+    move-result-object v2
+
+    if-eqz v2, :cond_1
+
+    goto :goto_0
+
+    :cond_1
+    sget-object v2, Lkotlin/text/Charsets;->UTF_8:Ljava/nio/charset/Charset;
+
+    :goto_0
+    invoke-direct {v0, v1, v2}, Lokhttp3/ResponseBody$BomAwareReader;-><init>(Lokio/BufferedSource;Ljava/nio/charset/Charset;)V
+
+    iput-object v0, p0, Lokhttp3/ResponseBody;->reader:Ljava/io/Reader;
+
+    :goto_1
+    return-object v0
+.end method
+
 .method public close()V
     .locals 1
 
@@ -95,18 +139,14 @@
         }
     .end annotation
 
-    move-object v0, p0
+    invoke-virtual {p0}, Lokhttp3/ResponseBody;->source()Lokio/BufferedSource;
 
-    check-cast v0, Lokhttp3/ResponseBody$Companion$asResponseBody$1;
-
-    iget-object v0, v0, Lokhttp3/ResponseBody$Companion$asResponseBody$1;->$this_asResponseBody:Lokio/BufferedSource;
+    move-result-object v0
 
     :try_start_0
-    move-object v1, p0
+    invoke-virtual {p0}, Lokhttp3/ResponseBody;->contentType()Lokhttp3/MediaType;
 
-    check-cast v1, Lokhttp3/ResponseBody$Companion$asResponseBody$1;
-
-    iget-object v1, v1, Lokhttp3/ResponseBody$Companion$asResponseBody$1;->$contentType:Lokhttp3/MediaType;
+    move-result-object v1
 
     if-eqz v1, :cond_0
 

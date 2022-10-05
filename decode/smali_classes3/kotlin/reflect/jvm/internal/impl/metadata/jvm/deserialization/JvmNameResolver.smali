@@ -7,13 +7,22 @@
 
 
 # annotations
+.annotation system Ldalvik/annotation/MemberClasses;
+    value = {
+        Lkotlin/reflect/jvm/internal/impl/metadata/jvm/deserialization/JvmNameResolver$Companion;,
+        Lkotlin/reflect/jvm/internal/impl/metadata/jvm/deserialization/JvmNameResolver$WhenMappings;
+    }
+.end annotation
+
 .annotation system Ldalvik/annotation/SourceDebugExtension;
-    value = "SMAP\nJvmNameResolver.kt\nKotlin\n*S Kotlin\n*F\n+ 1 JvmNameResolver.kt\norg/jetbrains/kotlin/metadata/jvm/deserialization/JvmNameResolver\n+ 2 fake.kt\nkotlin/jvm/internal/FakeKt\n+ 3 _Collections.kt\nkotlin/collections/CollectionsKt___CollectionsKt\n*L\n1#1,121:1\n1#2:122\n1176#3,2:123\n1206#3,4:125\n*E\n*S KotlinDebug\n*F\n+ 1 JvmNameResolver.kt\norg/jetbrains/kotlin/metadata/jvm/deserialization/JvmNameResolver\n*L\n116#1,2:123\n116#1,4:125\n*E\n"
+    value = "SMAP\nJvmNameResolver.kt\nKotlin\n*S Kotlin\n*F\n+ 1 JvmNameResolver.kt\norg/jetbrains/kotlin/metadata/jvm/deserialization/JvmNameResolver\n+ 2 fake.kt\nkotlin/jvm/internal/FakeKt\n+ 3 _Collections.kt\nkotlin/collections/CollectionsKt___CollectionsKt\n*L\n1#1,121:1\n1#2:122\n1206#3,2:123\n1236#3,4:125\n*S KotlinDebug\n*F\n+ 1 JvmNameResolver.kt\norg/jetbrains/kotlin/metadata/jvm/deserialization/JvmNameResolver\n*L\n116#1:123,2\n116#1:125,4\n*E\n"
 .end annotation
 
 
 # static fields
-.field public static final PREDEFINED_STRINGS:Ljava/util/List;
+.field public static final Companion:Lkotlin/reflect/jvm/internal/impl/metadata/jvm/deserialization/JvmNameResolver$Companion;
+
+.field private static final PREDEFINED_STRINGS:Ljava/util/List;
     .annotation system Ldalvik/annotation/Signature;
         value = {
             "Ljava/util/List<",
@@ -23,9 +32,22 @@
     .end annotation
 .end field
 
+.field private static final PREDEFINED_STRINGS_MAP:Ljava/util/Map;
+    .annotation system Ldalvik/annotation/Signature;
+        value = {
+            "Ljava/util/Map<",
+            "Ljava/lang/String;",
+            "Ljava/lang/Integer;",
+            ">;"
+        }
+    .end annotation
+.end field
+
+.field private static final kotlin:Ljava/lang/String;
+
 
 # instance fields
-.field public final localNameIndices:Ljava/util/Set;
+.field private final localNameIndices:Ljava/util/Set;
     .annotation system Ldalvik/annotation/Signature;
         value = {
             "Ljava/util/Set<",
@@ -35,7 +57,7 @@
     .end annotation
 .end field
 
-.field public final records:Ljava/util/List;
+.field private final records:Ljava/util/List;
     .annotation system Ldalvik/annotation/Signature;
         value = {
             "Ljava/util/List<",
@@ -45,14 +67,22 @@
     .end annotation
 .end field
 
-.field public final strings:[Ljava/lang/String;
+.field private final strings:[Ljava/lang/String;
 
-.field public final types:Lkotlin/reflect/jvm/internal/impl/metadata/jvm/JvmProtoBuf$StringTableTypes;
+.field private final types:Lkotlin/reflect/jvm/internal/impl/metadata/jvm/JvmProtoBuf$StringTableTypes;
 
 
 # direct methods
 .method public static constructor <clinit>()V
     .locals 17
+
+    new-instance v0, Lkotlin/reflect/jvm/internal/impl/metadata/jvm/deserialization/JvmNameResolver$Companion;
+
+    const/4 v1, 0x0
+
+    invoke-direct {v0, v1}, Lkotlin/reflect/jvm/internal/impl/metadata/jvm/deserialization/JvmNameResolver$Companion;-><init>(Lkotlin/jvm/internal/DefaultConstructorMarker;)V
+
+    sput-object v0, Lkotlin/reflect/jvm/internal/impl/metadata/jvm/deserialization/JvmNameResolver;->Companion:Lkotlin/reflect/jvm/internal/impl/metadata/jvm/deserialization/JvmNameResolver$Companion;
 
     const/4 v0, 0x6
 
@@ -139,6 +169,8 @@
     invoke-static/range {v9 .. v16}, Lkotlin/collections/CollectionsKt___CollectionsKt;->joinToString$default(Ljava/lang/Iterable;Ljava/lang/CharSequence;Ljava/lang/CharSequence;Ljava/lang/CharSequence;ILjava/lang/CharSequence;Lkotlin/jvm/functions/Function1;I)Ljava/lang/String;
 
     move-result-object v1
+
+    sput-object v1, Lkotlin/reflect/jvm/internal/impl/metadata/jvm/deserialization/JvmNameResolver;->kotlin:Ljava/lang/String;
 
     const/16 v2, 0x2c
 
@@ -607,17 +639,13 @@
     move-result-object v0
 
     :goto_1
-    move-object v2, v0
+    invoke-interface {v0}, Ljava/util/Iterator;->hasNext()Z
 
-    check-cast v2, Lkotlin/jvm/internal/ArrayIterator;
+    move-result v2
 
-    invoke-virtual {v2}, Lkotlin/jvm/internal/ArrayIterator;->hasNext()Z
+    if-eqz v2, :cond_1
 
-    move-result v3
-
-    if-eqz v3, :cond_1
-
-    invoke-virtual {v2}, Lkotlin/jvm/internal/ArrayIterator;->next()Ljava/lang/Object;
+    invoke-interface {v0}, Ljava/util/Iterator;->next()Ljava/lang/Object;
 
     move-result-object v2
 
@@ -638,11 +666,17 @@
     goto :goto_1
 
     :cond_1
+    sput-object v1, Lkotlin/reflect/jvm/internal/impl/metadata/jvm/deserialization/JvmNameResolver;->PREDEFINED_STRINGS_MAP:Ljava/util/Map;
+
     return-void
 .end method
 
 .method public constructor <init>(Lkotlin/reflect/jvm/internal/impl/metadata/jvm/JvmProtoBuf$StringTableTypes;[Ljava/lang/String;)V
     .locals 3
+
+    const-string v0, "types"
+
+    invoke-static {p1, v0}, Lkotlin/jvm/internal/Intrinsics;->checkNotNullParameter(Ljava/lang/Object;Ljava/lang/String;)V
 
     const-string v0, "strings"
 
@@ -654,72 +688,82 @@
 
     iput-object p2, p0, Lkotlin/reflect/jvm/internal/impl/metadata/jvm/deserialization/JvmNameResolver;->strings:[Ljava/lang/String;
 
-    iget-object p2, p1, Lkotlin/reflect/jvm/internal/impl/metadata/jvm/JvmProtoBuf$StringTableTypes;->localName_:Ljava/util/List;
+    invoke-virtual {p1}, Lkotlin/reflect/jvm/internal/impl/metadata/jvm/JvmProtoBuf$StringTableTypes;->getLocalNameList()Ljava/util/List;
 
-    invoke-interface {p2}, Ljava/util/List;->isEmpty()Z
+    move-result-object p1
 
-    move-result v0
+    invoke-interface {p1}, Ljava/util/List;->isEmpty()Z
 
-    if-eqz v0, :cond_0
+    move-result p2
 
-    sget-object p2, Lkotlin/collections/EmptySet;->INSTANCE:Lkotlin/collections/EmptySet;
+    if-eqz p2, :cond_0
+
+    sget-object p1, Lkotlin/collections/EmptySet;->INSTANCE:Lkotlin/collections/EmptySet;
 
     goto :goto_0
 
     :cond_0
-    invoke-static {p2}, Lkotlin/collections/CollectionsKt___CollectionsKt;->toSet(Ljava/lang/Iterable;)Ljava/util/Set;
-
-    move-result-object p2
-
-    :goto_0
-    iput-object p2, p0, Lkotlin/reflect/jvm/internal/impl/metadata/jvm/deserialization/JvmNameResolver;->localNameIndices:Ljava/util/Set;
-
-    new-instance p2, Ljava/util/ArrayList;
-
-    invoke-direct {p2}, Ljava/util/ArrayList;-><init>()V
-
-    iget-object p1, p1, Lkotlin/reflect/jvm/internal/impl/metadata/jvm/JvmProtoBuf$StringTableTypes;->record_:Ljava/util/List;
-
-    invoke-interface {p1}, Ljava/util/List;->size()I
-
-    move-result v0
-
-    invoke-virtual {p2, v0}, Ljava/util/ArrayList;->ensureCapacity(I)V
-
-    invoke-interface {p1}, Ljava/util/List;->iterator()Ljava/util/Iterator;
+    invoke-static {p1}, Lkotlin/collections/CollectionsKt___CollectionsKt;->toSet(Ljava/lang/Iterable;)Ljava/util/Set;
 
     move-result-object p1
 
+    :goto_0
+    iput-object p1, p0, Lkotlin/reflect/jvm/internal/impl/metadata/jvm/deserialization/JvmNameResolver;->localNameIndices:Ljava/util/Set;
+
+    new-instance p1, Ljava/util/ArrayList;
+
+    invoke-direct {p1}, Ljava/util/ArrayList;-><init>()V
+
+    invoke-virtual {p0}, Lkotlin/reflect/jvm/internal/impl/metadata/jvm/deserialization/JvmNameResolver;->getTypes()Lkotlin/reflect/jvm/internal/impl/metadata/jvm/JvmProtoBuf$StringTableTypes;
+
+    move-result-object p2
+
+    invoke-virtual {p2}, Lkotlin/reflect/jvm/internal/impl/metadata/jvm/JvmProtoBuf$StringTableTypes;->getRecordList()Ljava/util/List;
+
+    move-result-object p2
+
+    invoke-interface {p2}, Ljava/util/List;->size()I
+
+    move-result v0
+
+    invoke-virtual {p1, v0}, Ljava/util/ArrayList;->ensureCapacity(I)V
+
+    invoke-interface {p2}, Ljava/util/List;->iterator()Ljava/util/Iterator;
+
+    move-result-object p2
+
     :cond_1
-    invoke-interface {p1}, Ljava/util/Iterator;->hasNext()Z
+    invoke-interface {p2}, Ljava/util/Iterator;->hasNext()Z
 
     move-result v0
 
     if-eqz v0, :cond_2
 
-    invoke-interface {p1}, Ljava/util/Iterator;->next()Ljava/lang/Object;
+    invoke-interface {p2}, Ljava/util/Iterator;->next()Ljava/lang/Object;
 
     move-result-object v0
 
     check-cast v0, Lkotlin/reflect/jvm/internal/impl/metadata/jvm/JvmProtoBuf$StringTableTypes$Record;
 
-    iget v1, v0, Lkotlin/reflect/jvm/internal/impl/metadata/jvm/JvmProtoBuf$StringTableTypes$Record;->range_:I
+    invoke-virtual {v0}, Lkotlin/reflect/jvm/internal/impl/metadata/jvm/JvmProtoBuf$StringTableTypes$Record;->getRange()I
+
+    move-result v1
 
     const/4 v2, 0x0
 
     :goto_1
     if-ge v2, v1, :cond_1
 
-    invoke-virtual {p2, v0}, Ljava/util/ArrayList;->add(Ljava/lang/Object;)Z
+    invoke-virtual {p1, v0}, Ljava/util/ArrayList;->add(Ljava/lang/Object;)Z
 
     add-int/lit8 v2, v2, 0x1
 
     goto :goto_1
 
     :cond_2
-    invoke-virtual {p2}, Ljava/util/ArrayList;->trimToSize()V
+    invoke-virtual {p1}, Ljava/util/ArrayList;->trimToSize()V
 
-    iput-object p2, p0, Lkotlin/reflect/jvm/internal/impl/metadata/jvm/deserialization/JvmNameResolver;->records:Ljava/util/List;
+    iput-object p1, p0, Lkotlin/reflect/jvm/internal/impl/metadata/jvm/deserialization/JvmNameResolver;->records:Ljava/util/List;
 
     return-void
 .end method
@@ -747,213 +791,177 @@
 
     check-cast v0, Lkotlin/reflect/jvm/internal/impl/metadata/jvm/JvmProtoBuf$StringTableTypes$Record;
 
-    iget v1, v0, Lkotlin/reflect/jvm/internal/impl/metadata/jvm/JvmProtoBuf$StringTableTypes$Record;->bitField0_:I
+    invoke-virtual {v0}, Lkotlin/reflect/jvm/internal/impl/metadata/jvm/JvmProtoBuf$StringTableTypes$Record;->hasString()Z
 
-    and-int/lit8 v2, v1, 0x4
+    move-result v1
 
-    const/4 v3, 0x4
+    const/4 v2, 0x1
 
-    const/4 v4, 0x1
+    const/4 v3, 0x0
 
-    const/4 v5, 0x0
+    if-eqz v1, :cond_0
 
-    if-ne v2, v3, :cond_0
+    invoke-virtual {v0}, Lkotlin/reflect/jvm/internal/impl/metadata/jvm/JvmProtoBuf$StringTableTypes$Record;->getString()Ljava/lang/String;
 
-    move v2, v4
-
-    goto :goto_0
-
-    :cond_0
-    move v2, v5
-
-    :goto_0
-    const/4 v6, 0x2
-
-    if-eqz v2, :cond_3
-
-    iget-object p1, v0, Lkotlin/reflect/jvm/internal/impl/metadata/jvm/JvmProtoBuf$StringTableTypes$Record;->string_:Ljava/lang/Object;
-
-    instance-of v1, p1, Ljava/lang/String;
-
-    if-eqz v1, :cond_1
-
-    check-cast p1, Ljava/lang/String;
-
-    goto :goto_3
-
-    :cond_1
-    check-cast p1, Lkotlin/reflect/jvm/internal/impl/protobuf/ByteString;
-
-    invoke-virtual {p1}, Lkotlin/reflect/jvm/internal/impl/protobuf/ByteString;->toStringUtf8()Ljava/lang/String;
-
-    move-result-object v1
-
-    invoke-virtual {p1}, Lkotlin/reflect/jvm/internal/impl/protobuf/ByteString;->isValidUtf8()Z
-
-    move-result p1
-
-    if-eqz p1, :cond_2
-
-    iput-object v1, v0, Lkotlin/reflect/jvm/internal/impl/metadata/jvm/JvmProtoBuf$StringTableTypes$Record;->string_:Ljava/lang/Object;
-
-    :cond_2
-    move-object p1, v1
-
-    goto :goto_3
-
-    :cond_3
-    and-int/2addr v1, v6
-
-    if-ne v1, v6, :cond_4
-
-    move v1, v4
+    move-result-object p1
 
     goto :goto_1
 
-    :cond_4
-    move v1, v5
+    :cond_0
+    invoke-virtual {v0}, Lkotlin/reflect/jvm/internal/impl/metadata/jvm/JvmProtoBuf$StringTableTypes$Record;->hasPredefinedIndex()Z
 
-    :goto_1
-    if-eqz v1, :cond_6
+    move-result v1
+
+    if-eqz v1, :cond_2
 
     sget-object v1, Lkotlin/reflect/jvm/internal/impl/metadata/jvm/deserialization/JvmNameResolver;->PREDEFINED_STRINGS:Ljava/util/List;
 
     invoke-interface {v1}, Ljava/util/List;->size()I
 
-    move-result v2
+    move-result v4
 
-    add-int/lit8 v2, v2, -0x1
+    add-int/lit8 v4, v4, -0x1
 
-    iget v7, v0, Lkotlin/reflect/jvm/internal/impl/metadata/jvm/JvmProtoBuf$StringTableTypes$Record;->predefinedIndex_:I
+    invoke-virtual {v0}, Lkotlin/reflect/jvm/internal/impl/metadata/jvm/JvmProtoBuf$StringTableTypes$Record;->getPredefinedIndex()I
 
-    if-ltz v7, :cond_5
+    move-result v5
 
-    if-gt v7, v2, :cond_5
+    if-ltz v5, :cond_1
 
-    move v2, v4
+    if-gt v5, v4, :cond_1
 
-    goto :goto_2
+    move v4, v2
 
-    :cond_5
-    move v2, v5
+    goto :goto_0
 
-    :goto_2
-    if-eqz v2, :cond_6
+    :cond_1
+    move v4, v3
 
-    invoke-interface {v1, v7}, Ljava/util/List;->get(I)Ljava/lang/Object;
+    :goto_0
+    if-eqz v4, :cond_2
+
+    invoke-virtual {v0}, Lkotlin/reflect/jvm/internal/impl/metadata/jvm/JvmProtoBuf$StringTableTypes$Record;->getPredefinedIndex()I
+
+    move-result p1
+
+    invoke-interface {v1, p1}, Ljava/util/List;->get(I)Ljava/lang/Object;
 
     move-result-object p1
 
     check-cast p1, Ljava/lang/String;
 
-    goto :goto_3
+    goto :goto_1
 
-    :cond_6
+    :cond_2
     iget-object v1, p0, Lkotlin/reflect/jvm/internal/impl/metadata/jvm/deserialization/JvmNameResolver;->strings:[Ljava/lang/String;
 
     aget-object p1, v1, p1
 
-    :goto_3
-    iget-object v1, v0, Lkotlin/reflect/jvm/internal/impl/metadata/jvm/JvmProtoBuf$StringTableTypes$Record;->substringIndex_:Ljava/util/List;
-
-    invoke-interface {v1}, Ljava/util/List;->size()I
+    :goto_1
+    invoke-virtual {v0}, Lkotlin/reflect/jvm/internal/impl/metadata/jvm/JvmProtoBuf$StringTableTypes$Record;->getSubstringIndexCount()I
 
     move-result v1
 
-    const-string v2, "(this as java.lang.Strin\u2026ing(startIndex, endIndex)"
+    const-string v4, "(this as java.lang.Strin\u2026ing(startIndex, endIndex)"
 
-    if-lt v1, v6, :cond_7
+    const/4 v5, 0x2
 
-    iget-object v1, v0, Lkotlin/reflect/jvm/internal/impl/metadata/jvm/JvmProtoBuf$StringTableTypes$Record;->substringIndex_:Ljava/util/List;
+    if-lt v1, v5, :cond_3
 
-    const-string v7, "substringIndexList"
+    invoke-virtual {v0}, Lkotlin/reflect/jvm/internal/impl/metadata/jvm/JvmProtoBuf$StringTableTypes$Record;->getSubstringIndexList()Ljava/util/List;
 
-    invoke-static {v1, v7}, Lkotlin/jvm/internal/Intrinsics;->checkNotNullExpressionValue(Ljava/lang/Object;Ljava/lang/String;)V
+    move-result-object v1
 
-    invoke-interface {v1, v5}, Ljava/util/List;->get(I)Ljava/lang/Object;
+    const-string v6, "substringIndexList"
 
-    move-result-object v7
+    invoke-static {v1, v6}, Lkotlin/jvm/internal/Intrinsics;->checkNotNullExpressionValue(Ljava/lang/Object;Ljava/lang/String;)V
 
-    check-cast v7, Ljava/lang/Integer;
+    invoke-interface {v1, v3}, Ljava/util/List;->get(I)Ljava/lang/Object;
 
-    invoke-interface {v1, v4}, Ljava/util/List;->get(I)Ljava/lang/Object;
+    move-result-object v6
+
+    check-cast v6, Ljava/lang/Integer;
+
+    invoke-interface {v1, v2}, Ljava/util/List;->get(I)Ljava/lang/Object;
 
     move-result-object v1
 
     check-cast v1, Ljava/lang/Integer;
 
-    const-string v8, "begin"
+    const-string v7, "begin"
 
-    invoke-static {v7, v8}, Lkotlin/jvm/internal/Intrinsics;->checkNotNullExpressionValue(Ljava/lang/Object;Ljava/lang/String;)V
+    invoke-static {v6, v7}, Lkotlin/jvm/internal/Intrinsics;->checkNotNullExpressionValue(Ljava/lang/Object;Ljava/lang/String;)V
 
-    invoke-virtual {v7}, Ljava/lang/Integer;->intValue()I
-
-    move-result v8
-
-    if-ltz v8, :cond_7
-
-    invoke-virtual {v7}, Ljava/lang/Integer;->intValue()I
-
-    move-result v8
-
-    const-string v9, "end"
-
-    invoke-static {v1, v9}, Lkotlin/jvm/internal/Intrinsics;->checkNotNullExpressionValue(Ljava/lang/Object;Ljava/lang/String;)V
-
-    invoke-virtual {v1}, Ljava/lang/Integer;->intValue()I
-
-    move-result v9
-
-    if-gt v8, v9, :cond_7
-
-    invoke-virtual {v1}, Ljava/lang/Integer;->intValue()I
-
-    move-result v8
-
-    invoke-virtual {p1}, Ljava/lang/String;->length()I
-
-    move-result v9
-
-    if-gt v8, v9, :cond_7
-
-    invoke-virtual {v7}, Ljava/lang/Integer;->intValue()I
+    invoke-virtual {v6}, Ljava/lang/Integer;->intValue()I
 
     move-result v7
 
+    if-ltz v7, :cond_3
+
+    invoke-virtual {v6}, Ljava/lang/Integer;->intValue()I
+
+    move-result v7
+
+    const-string v8, "end"
+
+    invoke-static {v1, v8}, Lkotlin/jvm/internal/Intrinsics;->checkNotNullExpressionValue(Ljava/lang/Object;Ljava/lang/String;)V
+
+    invoke-virtual {v1}, Ljava/lang/Integer;->intValue()I
+
+    move-result v8
+
+    if-gt v7, v8, :cond_3
+
+    invoke-virtual {v1}, Ljava/lang/Integer;->intValue()I
+
+    move-result v7
+
+    invoke-virtual {p1}, Ljava/lang/String;->length()I
+
+    move-result v8
+
+    if-gt v7, v8, :cond_3
+
+    invoke-virtual {v6}, Ljava/lang/Integer;->intValue()I
+
+    move-result v6
+
     invoke-virtual {v1}, Ljava/lang/Integer;->intValue()I
 
     move-result v1
 
-    invoke-virtual {p1, v7, v1}, Ljava/lang/String;->substring(II)Ljava/lang/String;
+    invoke-virtual {p1, v6, v1}, Ljava/lang/String;->substring(II)Ljava/lang/String;
 
     move-result-object p1
 
-    invoke-static {p1, v2}, Lkotlin/jvm/internal/Intrinsics;->checkNotNullExpressionValue(Ljava/lang/Object;Ljava/lang/String;)V
+    invoke-static {p1, v4}, Lkotlin/jvm/internal/Intrinsics;->checkNotNullExpressionValue(Ljava/lang/Object;Ljava/lang/String;)V
 
-    :cond_7
-    iget-object v1, v0, Lkotlin/reflect/jvm/internal/impl/metadata/jvm/JvmProtoBuf$StringTableTypes$Record;->replaceChar_:Ljava/util/List;
-
-    invoke-interface {v1}, Ljava/util/List;->size()I
+    :cond_3
+    invoke-virtual {v0}, Lkotlin/reflect/jvm/internal/impl/metadata/jvm/JvmProtoBuf$StringTableTypes$Record;->getReplaceCharCount()I
 
     move-result v1
 
+    const/4 v6, 0x4
+
     const-string v7, "string"
 
-    if-lt v1, v6, :cond_8
+    if-lt v1, v5, :cond_4
 
-    iget-object v1, v0, Lkotlin/reflect/jvm/internal/impl/metadata/jvm/JvmProtoBuf$StringTableTypes$Record;->replaceChar_:Ljava/util/List;
+    invoke-virtual {v0}, Lkotlin/reflect/jvm/internal/impl/metadata/jvm/JvmProtoBuf$StringTableTypes$Record;->getReplaceCharList()Ljava/util/List;
+
+    move-result-object v1
 
     const-string v8, "replaceCharList"
 
     invoke-static {v1, v8}, Lkotlin/jvm/internal/Intrinsics;->checkNotNullExpressionValue(Ljava/lang/Object;Ljava/lang/String;)V
 
-    invoke-interface {v1, v5}, Ljava/util/List;->get(I)Ljava/lang/Object;
+    invoke-interface {v1, v3}, Ljava/util/List;->get(I)Ljava/lang/Object;
 
     move-result-object v8
 
     check-cast v8, Ljava/lang/Integer;
 
-    invoke-interface {v1, v4}, Ljava/util/List;->get(I)Ljava/lang/Object;
+    invoke-interface {v1, v2}, Ljava/util/List;->get(I)Ljava/lang/Object;
 
     move-result-object v1
 
@@ -973,69 +981,85 @@
 
     int-to-char v1, v1
 
-    invoke-static {p1, v8, v1, v5, v3}, Lkotlin/text/StringsKt__StringsJVMKt;->replace$default(Ljava/lang/String;CCZI)Ljava/lang/String;
+    invoke-static {p1, v8, v1, v3, v6}, Lkotlin/text/StringsKt__StringsJVMKt;->replace$default(Ljava/lang/String;CCZI)Ljava/lang/String;
 
     move-result-object p1
 
-    :cond_8
-    iget-object v0, v0, Lkotlin/reflect/jvm/internal/impl/metadata/jvm/JvmProtoBuf$StringTableTypes$Record;->operation_:Lkotlin/reflect/jvm/internal/impl/metadata/jvm/JvmProtoBuf$StringTableTypes$Record$Operation;
+    :cond_4
+    invoke-virtual {v0}, Lkotlin/reflect/jvm/internal/impl/metadata/jvm/JvmProtoBuf$StringTableTypes$Record;->getOperation()Lkotlin/reflect/jvm/internal/impl/metadata/jvm/JvmProtoBuf$StringTableTypes$Record$Operation;
 
-    if-nez v0, :cond_9
+    move-result-object v0
+
+    if-nez v0, :cond_5
 
     sget-object v0, Lkotlin/reflect/jvm/internal/impl/metadata/jvm/JvmProtoBuf$StringTableTypes$Record$Operation;->NONE:Lkotlin/reflect/jvm/internal/impl/metadata/jvm/JvmProtoBuf$StringTableTypes$Record$Operation;
 
-    :cond_9
+    :cond_5
+    sget-object v1, Lkotlin/reflect/jvm/internal/impl/metadata/jvm/deserialization/JvmNameResolver$WhenMappings;->$EnumSwitchMapping$0:[I
+
     invoke-virtual {v0}, Ljava/lang/Enum;->ordinal()I
 
     move-result v0
+
+    aget v0, v1, v0
 
     const/16 v1, 0x2e
 
     const/16 v8, 0x24
 
-    if-eq v0, v4, :cond_c
+    if-eq v0, v5, :cond_8
 
-    if-eq v0, v6, :cond_a
+    const/4 v9, 0x3
 
-    goto :goto_4
+    if-eq v0, v9, :cond_6
 
-    :cond_a
+    goto :goto_2
+
+    :cond_6
     invoke-virtual {p1}, Ljava/lang/String;->length()I
 
     move-result v0
 
-    if-lt v0, v6, :cond_b
+    if-lt v0, v5, :cond_7
 
     invoke-virtual {p1}, Ljava/lang/String;->length()I
 
     move-result v0
 
-    sub-int/2addr v0, v4
+    sub-int/2addr v0, v2
 
-    invoke-virtual {p1, v4, v0}, Ljava/lang/String;->substring(II)Ljava/lang/String;
-
-    move-result-object p1
-
-    invoke-static {p1, v2}, Lkotlin/jvm/internal/Intrinsics;->checkNotNullExpressionValue(Ljava/lang/Object;Ljava/lang/String;)V
-
-    :cond_b
-    invoke-static {p1, v8, v1, v5, v3}, Lkotlin/text/StringsKt__StringsJVMKt;->replace$default(Ljava/lang/String;CCZI)Ljava/lang/String;
+    invoke-virtual {p1, v2, v0}, Ljava/lang/String;->substring(II)Ljava/lang/String;
 
     move-result-object p1
 
-    goto :goto_4
+    invoke-static {p1, v4}, Lkotlin/jvm/internal/Intrinsics;->checkNotNullExpressionValue(Ljava/lang/Object;Ljava/lang/String;)V
 
-    :cond_c
+    :cond_7
+    invoke-static {p1, v8, v1, v3, v6}, Lkotlin/text/StringsKt__StringsJVMKt;->replace$default(Ljava/lang/String;CCZI)Ljava/lang/String;
+
+    move-result-object p1
+
+    goto :goto_2
+
+    :cond_8
     invoke-static {p1, v7}, Lkotlin/jvm/internal/Intrinsics;->checkNotNullExpressionValue(Ljava/lang/Object;Ljava/lang/String;)V
 
-    invoke-static {p1, v8, v1, v5, v3}, Lkotlin/text/StringsKt__StringsJVMKt;->replace$default(Ljava/lang/String;CCZI)Ljava/lang/String;
+    invoke-static {p1, v8, v1, v3, v6}, Lkotlin/text/StringsKt__StringsJVMKt;->replace$default(Ljava/lang/String;CCZI)Ljava/lang/String;
 
     move-result-object p1
 
-    :goto_4
+    :goto_2
     invoke-static {p1, v7}, Lkotlin/jvm/internal/Intrinsics;->checkNotNullExpressionValue(Ljava/lang/Object;Ljava/lang/String;)V
 
     return-object p1
+.end method
+
+.method public final getTypes()Lkotlin/reflect/jvm/internal/impl/metadata/jvm/JvmProtoBuf$StringTableTypes;
+    .locals 1
+
+    iget-object v0, p0, Lkotlin/reflect/jvm/internal/impl/metadata/jvm/deserialization/JvmNameResolver;->types:Lkotlin/reflect/jvm/internal/impl/metadata/jvm/JvmProtoBuf$StringTableTypes;
+
+    return-object v0
 .end method
 
 .method public isLocalClassName(I)Z

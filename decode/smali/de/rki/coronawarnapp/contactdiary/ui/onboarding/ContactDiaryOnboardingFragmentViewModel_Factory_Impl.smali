@@ -7,11 +7,11 @@
 
 
 # instance fields
-.field public final delegateFactory:Lde/rki/coronawarnapp/contactdiary/ui/onboarding/ContactDiaryOnboardingFragmentViewModel_Factory;
+.field public final delegateFactory:Lcom/google/android/material/shape/CornerTreatment;
 
 
 # direct methods
-.method public constructor <init>(Lde/rki/coronawarnapp/contactdiary/ui/onboarding/ContactDiaryOnboardingFragmentViewModel_Factory;)V
+.method public constructor <init>(Lcom/google/android/material/shape/CornerTreatment;)V
     .locals 0
     .annotation system Ldalvik/annotation/MethodParameters;
         accessFlags = {
@@ -24,7 +24,7 @@
 
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
-    iput-object p1, p0, Lde/rki/coronawarnapp/contactdiary/ui/onboarding/ContactDiaryOnboardingFragmentViewModel_Factory_Impl;->delegateFactory:Lde/rki/coronawarnapp/contactdiary/ui/onboarding/ContactDiaryOnboardingFragmentViewModel_Factory;
+    iput-object p1, p0, Lde/rki/coronawarnapp/contactdiary/ui/onboarding/ContactDiaryOnboardingFragmentViewModel_Factory_Impl;->delegateFactory:Lcom/google/android/material/shape/CornerTreatment;
 
     return-void
 .end method
@@ -34,7 +34,7 @@
 .method public create()Lde/rki/coronawarnapp/util/viewmodel/CWAViewModel;
     .locals 1
 
-    iget-object v0, p0, Lde/rki/coronawarnapp/contactdiary/ui/onboarding/ContactDiaryOnboardingFragmentViewModel_Factory_Impl;->delegateFactory:Lde/rki/coronawarnapp/contactdiary/ui/onboarding/ContactDiaryOnboardingFragmentViewModel_Factory;
+    iget-object v0, p0, Lde/rki/coronawarnapp/contactdiary/ui/onboarding/ContactDiaryOnboardingFragmentViewModel_Factory_Impl;->delegateFactory:Lcom/google/android/material/shape/CornerTreatment;
 
     invoke-static {v0}, Ljava/util/Objects;->requireNonNull(Ljava/lang/Object;)Ljava/lang/Object;
 

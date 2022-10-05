@@ -6,6 +6,16 @@
 
 
 # direct methods
+.method public constructor <init>()V
+    .locals 1
+
+    const/16 v0, 0x80
+
+    invoke-direct {p0, v0}, Lorg/bouncycastle/crypto/digests/SHAKEDigest;-><init>(I)V
+
+    return-void
+.end method
+
 .method public constructor <init>(I)V
     .locals 3
 
@@ -41,6 +51,14 @@
     return-void
 .end method
 
+.method public constructor <init>(Lorg/bouncycastle/crypto/digests/SHAKEDigest;)V
+    .locals 0
+
+    invoke-direct {p0, p1}, Lorg/bouncycastle/crypto/digests/KeccakDigest;-><init>(Lorg/bouncycastle/crypto/digests/KeccakDigest;)V
+
+    return-void
+.end method
+
 
 # virtual methods
 .method public doFinal([BI)I
@@ -50,12 +68,28 @@
 
     div-int/lit8 v0, v0, 0x4
 
-    invoke-virtual {p0, p1, p2, v0}, Lorg/bouncycastle/crypto/digests/SHAKEDigest;->doFinal([BII)I
+    invoke-virtual {p0, p1, p2, v0}, Lorg/bouncycastle/crypto/digests/SHAKEDigest;->doOutput([BII)I
 
-    return v0
+    move-result p1
+
+    invoke-virtual {p0}, Lorg/bouncycastle/crypto/digests/KeccakDigest;->reset()V
+
+    return p1
 .end method
 
 .method public doFinal([BII)I
+    .locals 0
+
+    invoke-virtual {p0, p1, p2, p3}, Lorg/bouncycastle/crypto/digests/SHAKEDigest;->doOutput([BII)I
+
+    move-result p1
+
+    invoke-virtual {p0}, Lorg/bouncycastle/crypto/digests/KeccakDigest;->reset()V
+
+    return p1
+.end method
+
+.method public doOutput([BII)I
     .locals 4
 
     iget-boolean v0, p0, Lorg/bouncycastle/crypto/digests/KeccakDigest;->squeezing:Z
@@ -76,10 +110,6 @@
     mul-long/2addr v0, v2
 
     invoke-virtual {p0, p1, p2, v0, v1}, Lorg/bouncycastle/crypto/digests/KeccakDigest;->squeeze([BIJ)V
-
-    iget p1, p0, Lorg/bouncycastle/crypto/digests/KeccakDigest;->fixedOutputLength:I
-
-    invoke-virtual {p0, p1}, Lorg/bouncycastle/crypto/digests/KeccakDigest;->init(I)V
 
     return p3
 .end method

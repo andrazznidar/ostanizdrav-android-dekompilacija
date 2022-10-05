@@ -61,7 +61,7 @@
 
     iget-object v1, v0, Landroidx/core/app/NotificationCompat$Builder;->mNotification:Landroid/app/Notification;
 
-    const v2, 0x7f080166
+    const v2, 0x7f08015f
 
     iput v2, v1, Landroid/app/Notification;->icon:I
 
@@ -75,7 +75,7 @@
 
     invoke-direct {v2, v3}, Landroidx/navigation/NavDeepLinkBuilder;-><init>(Landroid/content/Context;)V
 
-    const v3, 0x7f100006
+    const v3, 0x7f100007
 
     invoke-virtual {v2, v3}, Landroidx/navigation/NavDeepLinkBuilder;->setGraph(I)Landroidx/navigation/NavDeepLinkBuilder;
 
@@ -83,7 +83,7 @@
 
     invoke-virtual {v2, v3}, Landroidx/navigation/NavDeepLinkBuilder;->setComponentName(Ljava/lang/Class;)Landroidx/navigation/NavDeepLinkBuilder;
 
-    const v3, 0x7f0a0187
+    const v3, 0x7f0a01ac
 
     invoke-virtual {v2, v3}, Landroidx/navigation/NavDeepLinkBuilder;->setDestination(I)Landroidx/navigation/NavDeepLinkBuilder;
 
@@ -105,7 +105,7 @@
 
     iget-object v2, p0, Lde/rki/coronawarnapp/covidcertificate/common/notification/DigitalCovidCertificateNotifications;->context:Landroid/content/Context;
 
-    const v3, 0x7f1302c9
+    const v3, 0x7f1302dc
 
     invoke-virtual {v2, v3}, Landroid/content/Context;->getString(I)Ljava/lang/String;
 
@@ -115,7 +115,7 @@
 
     iget-object v2, p0, Lde/rki/coronawarnapp/covidcertificate/common/notification/DigitalCovidCertificateNotifications;->context:Landroid/content/Context;
 
-    const v3, 0x7f1302c3
+    const v3, 0x7f1302d8
 
     invoke-virtual {v2, v3}, Landroid/content/Context;->getString(I)Ljava/lang/String;
 
@@ -125,7 +125,7 @@
 
     invoke-static {v2, v3}, Lkotlin/jvm/internal/Intrinsics;->checkNotNullExpressionValue(Ljava/lang/Object;Ljava/lang/String;)V
 
-    invoke-static {v0, v2}, Lcom/google/android/gms/internal/nearby/zznn;->setContentTextExpandable(Landroidx/core/app/NotificationCompat$Builder;Ljava/lang/String;)Landroidx/core/app/NotificationCompat$Builder;
+    invoke-static {v0, v2}, Lorg/ejml/ops/DConvertMatrixStruct;->setContentTextExpandable(Landroidx/core/app/NotificationCompat$Builder;Ljava/lang/String;)Landroidx/core/app/NotificationCompat$Builder;
 
     invoke-virtual {v0}, Landroidx/core/app/NotificationCompat$Builder;->build()Landroid/app/Notification;
 
@@ -149,7 +149,7 @@
 
     const/16 v1, 0x1a
 
-    invoke-static {v0, v1}, Lcom/airbnb/lottie/utils/GammaEvaluator;->hasAPILevel(Lde/rki/coronawarnapp/util/BuildVersionWrap;I)Z
+    invoke-static {v0, v1}, Lokhttp3/CookieJar$Companion$NoCookies;->hasAPILevel(Lde/rki/coronawarnapp/util/BuildVersionWrap;I)Z
 
     move-result v0
 
@@ -214,7 +214,7 @@
 
     iget-object v0, p0, Lde/rki/coronawarnapp/covidcertificate/common/notification/DigitalCovidCertificateNotifications;->context:Landroid/content/Context;
 
-    const v2, 0x7f130165
+    const v2, 0x7f130153
 
     invoke-virtual {v0, v2}, Landroid/content/Context;->getString(I)Ljava/lang/String;
 
@@ -224,17 +224,13 @@
 
     iget-object v0, p0, Lde/rki/coronawarnapp/covidcertificate/common/notification/DigitalCovidCertificateNotifications;->context:Landroid/content/Context;
 
-    const v2, 0x7f130164
+    const v2, 0x7f130152
 
     invoke-virtual {v0, v2}, Landroid/content/Context;->getString(I)Ljava/lang/String;
 
     move-result-object v0
 
     iput-object v0, v1, Landroidx/core/app/NotificationChannelCompat;->mDescription:Ljava/lang/String;
-
-    const-string v0, "Builder(\n            cha\u2026on))\n            .build()"
-
-    invoke-static {v1, v0}, Lkotlin/jvm/internal/Intrinsics;->checkNotNullExpressionValue(Ljava/lang/Object;Ljava/lang/String;)V
 
     iget-object v0, p0, Lde/rki/coronawarnapp/covidcertificate/common/notification/DigitalCovidCertificateNotifications;->notificationManagerCompat:Landroidx/core/app/NotificationManagerCompat;
 

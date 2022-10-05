@@ -7,15 +7,6 @@
 
 
 # annotations
-.annotation system Ldalvik/annotation/EnclosingMethod;
-    value = Lde/rki/coronawarnapp/util/flow/HotDataFlow;->updateAsync$default(Lde/rki/coronawarnapp/util/flow/HotDataFlow;Lkotlin/jvm/functions/Function2;Lkotlin/jvm/functions/Function2;I)V
-.end annotation
-
-.annotation system Ldalvik/annotation/InnerClass;
-    accessFlags = 0x19
-    name = null
-.end annotation
-
 .annotation system Ldalvik/annotation/Signature;
     value = {
         "Lkotlin/coroutines/jvm/internal/SuspendLambda;",

@@ -1,37 +1,65 @@
-.class public final synthetic Lj$/util/n;
-.super Ljava/lang/Object;
+.class final Lj$/util/N;
+.super Lj$/util/a;
 
 # interfaces
-.implements Lj$/util/function/i;
-
-
-# instance fields
-.field public final synthetic a:Lj$/util/function/Consumer;
+.implements Lj$/util/Spliterator;
 
 
 # direct methods
-.method public synthetic constructor <init>(Lj$/util/function/Consumer;)V
+.method constructor <init>()V
     .locals 0
 
-    invoke-direct {p0}, Ljava/lang/Object;-><init>()V
-
-    iput-object p1, p0, Lj$/util/n;->a:Lj$/util/function/Consumer;
+    invoke-direct {p0}, Lj$/util/a;-><init>()V
 
     return-void
 .end method
 
 
 # virtual methods
-.method public final d(I)V
-    .locals 1
+.method public a(Lj$/util/function/Consumer;)Z
+    .locals 0
 
-    iget-object v0, p0, Lj$/util/n;->a:Lj$/util/function/Consumer;
+    invoke-static {p1}, Ljava/util/Objects;->requireNonNull(Ljava/lang/Object;)Ljava/lang/Object;
 
-    invoke-static {p1}, Ljava/lang/Integer;->valueOf(I)Ljava/lang/Integer;
+    const/4 p1, 0x0
 
-    move-result-object p1
+    return p1
+.end method
 
-    invoke-interface {v0, p1}, Lj$/util/function/Consumer;->i(Ljava/lang/Object;)V
+.method public forEachRemaining(Lj$/util/function/Consumer;)V
+    .locals 0
+
+    invoke-static {p1}, Ljava/util/Objects;->requireNonNull(Ljava/lang/Object;)Ljava/lang/Object;
 
     return-void
+.end method
+
+.method public getComparator()Ljava/util/Comparator;
+    .locals 1
+
+    new-instance v0, Ljava/lang/IllegalStateException;
+
+    invoke-direct {v0}, Ljava/lang/IllegalStateException;-><init>()V
+
+    throw v0
+.end method
+
+.method public synthetic getExactSizeIfKnown()J
+    .locals 2
+
+    invoke-static {p0}, Lj$/util/a;->i(Lj$/util/Spliterator;)J
+
+    move-result-wide v0
+
+    return-wide v0
+.end method
+
+.method public synthetic hasCharacteristics(I)Z
+    .locals 0
+
+    invoke-static {p0, p1}, Lj$/util/a;->j(Lj$/util/Spliterator;I)Z
+
+    move-result p1
+
+    return p1
 .end method

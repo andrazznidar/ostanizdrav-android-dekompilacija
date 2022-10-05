@@ -2,16 +2,15 @@
 .super Ljava/lang/Object;
 
 # interfaces
-.implements Lorg/bouncycastle/asn1/ASN1Encodable;
-.implements Lorg/bouncycastle/asn1/InMemoryRepresentable;
+.implements Lorg/bouncycastle/asn1/ASN1TaggedObjectParser;
 
 
 # instance fields
-.field public _constructed:Z
+.field private _constructed:Z
 
-.field public _parser:Lorg/bouncycastle/asn1/ASN1StreamParser;
+.field private _parser:Lorg/bouncycastle/asn1/ASN1StreamParser;
 
-.field public _tagNumber:I
+.field private _tagNumber:I
 
 
 # direct methods
@@ -50,6 +49,65 @@
     move-result-object v0
 
     return-object v0
+.end method
+
+.method public getObjectParser(IZ)Lorg/bouncycastle/asn1/ASN1Encodable;
+    .locals 1
+    .annotation system Ldalvik/annotation/Throws;
+        value = {
+            Ljava/io/IOException;
+        }
+    .end annotation
+
+    if-eqz p2, :cond_1
+
+    iget-boolean p1, p0, Lorg/bouncycastle/asn1/BERTaggedObjectParser;->_constructed:Z
+
+    if-eqz p1, :cond_0
+
+    iget-object p1, p0, Lorg/bouncycastle/asn1/BERTaggedObjectParser;->_parser:Lorg/bouncycastle/asn1/ASN1StreamParser;
+
+    invoke-virtual {p1}, Lorg/bouncycastle/asn1/ASN1StreamParser;->readObject()Lorg/bouncycastle/asn1/ASN1Encodable;
+
+    move-result-object p1
+
+    return-object p1
+
+    :cond_0
+    new-instance p1, Ljava/io/IOException;
+
+    const-string p2, "Explicit tags must be constructed (see X.690 8.14.2)"
+
+    invoke-direct {p1, p2}, Ljava/io/IOException;-><init>(Ljava/lang/String;)V
+
+    throw p1
+
+    :cond_1
+    iget-object p2, p0, Lorg/bouncycastle/asn1/BERTaggedObjectParser;->_parser:Lorg/bouncycastle/asn1/ASN1StreamParser;
+
+    iget-boolean v0, p0, Lorg/bouncycastle/asn1/BERTaggedObjectParser;->_constructed:Z
+
+    invoke-virtual {p2, v0, p1}, Lorg/bouncycastle/asn1/ASN1StreamParser;->readImplicit(ZI)Lorg/bouncycastle/asn1/ASN1Encodable;
+
+    move-result-object p1
+
+    return-object p1
+.end method
+
+.method public getTagNo()I
+    .locals 1
+
+    iget v0, p0, Lorg/bouncycastle/asn1/BERTaggedObjectParser;->_tagNumber:I
+
+    return v0
+.end method
+
+.method public isConstructed()Z
+    .locals 1
+
+    iget-boolean v0, p0, Lorg/bouncycastle/asn1/BERTaggedObjectParser;->_constructed:Z
+
+    return v0
 .end method
 
 .method public toASN1Primitive()Lorg/bouncycastle/asn1/ASN1Primitive;

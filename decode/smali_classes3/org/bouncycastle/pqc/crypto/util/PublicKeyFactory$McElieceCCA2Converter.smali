@@ -1,4 +1,4 @@
-.class public Lorg/bouncycastle/pqc/crypto/util/PublicKeyFactory$McElieceCCA2Converter;
+.class Lorg/bouncycastle/pqc/crypto/util/PublicKeyFactory$McElieceCCA2Converter;
 .super Lorg/bouncycastle/pqc/crypto/util/PublicKeyFactory$SubjectPublicKeyInfoConverter;
 
 
@@ -14,12 +14,20 @@
 
 
 # direct methods
-.method public constructor <init>(Lorg/bouncycastle/pqc/crypto/util/PublicKeyFactory$1;)V
+.method private constructor <init>()V
+    .locals 1
+
+    const/4 v0, 0x0
+
+    invoke-direct {p0, v0}, Lorg/bouncycastle/pqc/crypto/util/PublicKeyFactory$SubjectPublicKeyInfoConverter;-><init>(Lorg/bouncycastle/pqc/crypto/util/PublicKeyFactory$1;)V
+
+    return-void
+.end method
+
+.method public synthetic constructor <init>(Lorg/bouncycastle/pqc/crypto/util/PublicKeyFactory$1;)V
     .locals 0
 
-    const/4 p1, 0x0
-
-    invoke-direct {p0, p1}, Lorg/bouncycastle/pqc/crypto/util/PublicKeyFactory$SubjectPublicKeyInfoConverter;-><init>(Lorg/bouncycastle/pqc/crypto/util/PublicKeyFactory$1;)V
+    invoke-direct {p0}, Lorg/bouncycastle/pqc/crypto/util/PublicKeyFactory$McElieceCCA2Converter;-><init>()V
 
     return-void
 .end method
@@ -44,15 +52,25 @@
 
     new-instance p2, Lorg/bouncycastle/pqc/crypto/mceliece/McElieceCCA2PublicKeyParameters;
 
-    iget v0, p1, Lorg/bouncycastle/pqc/asn1/McElieceCCA2PublicKey;->n:I
+    invoke-virtual {p1}, Lorg/bouncycastle/pqc/asn1/McElieceCCA2PublicKey;->getN()I
 
-    iget v1, p1, Lorg/bouncycastle/pqc/asn1/McElieceCCA2PublicKey;->t:I
+    move-result v0
 
-    iget-object v2, p1, Lorg/bouncycastle/pqc/asn1/McElieceCCA2PublicKey;->g:Lorg/bouncycastle/pqc/math/linearalgebra/GF2Matrix;
+    invoke-virtual {p1}, Lorg/bouncycastle/pqc/asn1/McElieceCCA2PublicKey;->getT()I
 
-    iget-object p1, p1, Lorg/bouncycastle/pqc/asn1/McElieceCCA2PublicKey;->digest:Lorg/bouncycastle/asn1/x509/AlgorithmIdentifier;
+    move-result v1
 
-    iget-object p1, p1, Lorg/bouncycastle/asn1/x509/AlgorithmIdentifier;->algorithm:Lorg/bouncycastle/asn1/ASN1ObjectIdentifier;
+    invoke-virtual {p1}, Lorg/bouncycastle/pqc/asn1/McElieceCCA2PublicKey;->getG()Lorg/bouncycastle/pqc/math/linearalgebra/GF2Matrix;
+
+    move-result-object v2
+
+    invoke-virtual {p1}, Lorg/bouncycastle/pqc/asn1/McElieceCCA2PublicKey;->getDigest()Lorg/bouncycastle/asn1/x509/AlgorithmIdentifier;
+
+    move-result-object p1
+
+    invoke-virtual {p1}, Lorg/bouncycastle/asn1/x509/AlgorithmIdentifier;->getAlgorithm()Lorg/bouncycastle/asn1/ASN1ObjectIdentifier;
+
+    move-result-object p1
 
     invoke-static {p1}, Lorg/bouncycastle/pqc/crypto/util/Utils;->getDigestName(Lorg/bouncycastle/asn1/ASN1ObjectIdentifier;)Ljava/lang/String;
 

@@ -150,7 +150,7 @@
 
 
 # virtual methods
-.method public getMemoizedSerializedSize()I
+.method getMemoizedSerializedSize()I
     .locals 1
 
     new-instance v0, Ljava/lang/UnsupportedOperationException;
@@ -191,7 +191,7 @@
     return-object v0
 .end method
 
-.method public setMemoizedSerializedSize(I)V
+.method setMemoizedSerializedSize(I)V
     .locals 0
 
     new-instance p1, Ljava/lang/UnsupportedOperationException;

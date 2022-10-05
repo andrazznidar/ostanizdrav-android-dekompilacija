@@ -46,7 +46,7 @@
 
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
-    invoke-static {p1}, Lkotlin/collections/ArraysUtilJVM;->newLinkedHashMapWithExpectedSize(I)Ljava/util/LinkedHashMap;
+    invoke-static {p1}, Ldagger/internal/DaggerCollections;->newLinkedHashMapWithExpectedSize(I)Ljava/util/LinkedHashMap;
 
     move-result-object p1
 

@@ -728,7 +728,7 @@
 .end method
 
 .method public _parseDate(Ljava/lang/String;Ljava/text/ParsePosition;)Ljava/util/Date;
-    .locals 7
+    .locals 6
     .annotation system Ldalvik/annotation/Throws;
         value = {
             Ljava/text/ParseException;
@@ -741,9 +741,9 @@
 
     const/4 v1, 0x7
 
-    const/16 v2, 0x2d
+    const/4 v2, 0x1
 
-    const/4 v3, 0x1
+    const/16 v3, 0x2d
 
     const/4 v4, 0x0
 
@@ -777,7 +777,7 @@
 
     move-result v0
 
-    if-ne v0, v2, :cond_0
+    if-ne v0, v3, :cond_0
 
     const/4 v0, 0x5
 
@@ -791,7 +791,7 @@
 
     if-eqz v0, :cond_0
 
-    move v0, v3
+    move v0, v2
 
     goto :goto_0
 
@@ -815,21 +815,21 @@
 
     new-instance v1, Ljava/text/ParseException;
 
-    const/4 v2, 0x2
+    const/4 v3, 0x2
 
-    new-array v2, v2, [Ljava/lang/Object;
+    new-array v3, v3, [Ljava/lang/Object;
 
-    aput-object p1, v2, v4
+    aput-object p1, v3, v4
 
     invoke-virtual {v0}, Ljava/lang/IllegalArgumentException;->getMessage()Ljava/lang/String;
 
     move-result-object p1
 
-    aput-object p1, v2, v3
+    aput-object p1, v3, v2
 
     const-string p1, "Cannot parse date \"%s\", problem: %s"
 
-    invoke-static {p1, v2}, Ljava/lang/String;->format(Ljava/lang/String;[Ljava/lang/Object;)Ljava/lang/String;
+    invoke-static {p1, v3}, Ljava/lang/String;->format(Ljava/lang/String;[Ljava/lang/Object;)Ljava/lang/String;
 
     move-result-object p1
 
@@ -866,77 +866,24 @@
     :cond_3
     if-gtz v0, :cond_4
 
-    if-eq v1, v2, :cond_2
+    if-eq v1, v3, :cond_2
 
     :cond_4
-    if-gez v0, :cond_b
+    if-gez v0, :cond_6
 
     invoke-virtual {p1, v4}, Ljava/lang/String;->charAt(I)C
 
     move-result v0
 
-    if-eq v0, v2, :cond_a
+    if-eq v0, v3, :cond_5
 
-    sget-object v0, Lcom/fasterxml/jackson/core/io/NumberInput;->MAX_LONG_STR:Ljava/lang/String;
+    invoke-static {p1, v4}, Lcom/fasterxml/jackson/core/io/NumberInput;->inLongRange(Ljava/lang/String;Z)Z
 
-    invoke-virtual {v0}, Ljava/lang/String;->length()I
+    move-result v0
 
-    move-result v1
-
-    invoke-virtual {p1}, Ljava/lang/String;->length()I
-
-    move-result v2
-
-    if-ge v2, v1, :cond_5
-
-    goto :goto_2
+    if-eqz v0, :cond_6
 
     :cond_5
-    if-le v2, v1, :cond_6
-
-    goto :goto_3
-
-    :cond_6
-    move v2, v4
-
-    :goto_1
-    if-ge v2, v1, :cond_7
-
-    invoke-virtual {p1, v2}, Ljava/lang/String;->charAt(I)C
-
-    move-result v5
-
-    invoke-virtual {v0, v2}, Ljava/lang/String;->charAt(I)C
-
-    move-result v6
-
-    sub-int/2addr v5, v6
-
-    if-eqz v5, :cond_9
-
-    if-gez v5, :cond_8
-
-    :cond_7
-    :goto_2
-    move v0, v3
-
-    goto :goto_4
-
-    :cond_8
-    :goto_3
-    move v0, v4
-
-    goto :goto_4
-
-    :cond_9
-    add-int/lit8 v2, v2, 0x1
-
-    goto :goto_1
-
-    :goto_4
-    if-eqz v0, :cond_b
-
-    :cond_a
     :try_start_1
     invoke-static {p1}, Lcom/fasterxml/jackson/core/io/NumberInput;->parseLong(Ljava/lang/String;)J
 
@@ -953,7 +900,7 @@
     :catch_1
     new-instance v0, Ljava/text/ParseException;
 
-    new-array v1, v3, [Ljava/lang/Object;
+    new-array v1, v2, [Ljava/lang/Object;
 
     aput-object p1, v1, v4
 
@@ -971,10 +918,10 @@
 
     throw v0
 
-    :cond_b
+    :cond_6
     iget-object v0, p0, Lcom/fasterxml/jackson/databind/util/StdDateFormat;->_formatRFC1123:Ljava/text/DateFormat;
 
-    if-nez v0, :cond_10
+    if-nez v0, :cond_b
 
     sget-object v0, Lcom/fasterxml/jackson/databind/util/StdDateFormat;->DATE_FORMAT_RFC1123:Ljava/text/DateFormat;
 
@@ -990,7 +937,7 @@
 
     move-result v4
 
-    if-nez v4, :cond_d
+    if-nez v4, :cond_8
 
     new-instance v0, Ljava/text/SimpleDateFormat;
 
@@ -998,29 +945,29 @@
 
     invoke-direct {v0, v4, v2}, Ljava/text/SimpleDateFormat;-><init>(Ljava/lang/String;Ljava/util/Locale;)V
 
-    if-nez v1, :cond_c
+    if-nez v1, :cond_7
 
     sget-object v1, Lcom/fasterxml/jackson/databind/util/StdDateFormat;->DEFAULT_TIMEZONE:Ljava/util/TimeZone;
 
-    :cond_c
+    :cond_7
     invoke-virtual {v0, v1}, Ljava/text/DateFormat;->setTimeZone(Ljava/util/TimeZone;)V
 
-    goto :goto_5
+    goto :goto_1
 
-    :cond_d
+    :cond_8
     invoke-virtual {v0}, Ljava/text/DateFormat;->clone()Ljava/lang/Object;
 
     move-result-object v0
 
     check-cast v0, Ljava/text/DateFormat;
 
-    if-eqz v1, :cond_e
+    if-eqz v1, :cond_9
 
     invoke-virtual {v0, v1}, Ljava/text/DateFormat;->setTimeZone(Ljava/util/TimeZone;)V
 
-    :cond_e
-    :goto_5
-    if-eqz v3, :cond_f
+    :cond_9
+    :goto_1
+    if-eqz v3, :cond_a
 
     invoke-virtual {v3}, Ljava/lang/Boolean;->booleanValue()Z
 
@@ -1028,10 +975,10 @@
 
     invoke-virtual {v0, v1}, Ljava/text/DateFormat;->setLenient(Z)V
 
-    :cond_f
+    :cond_a
     iput-object v0, p0, Lcom/fasterxml/jackson/databind/util/StdDateFormat;->_formatRFC1123:Ljava/text/DateFormat;
 
-    :cond_10
+    :cond_b
     iget-object v0, p0, Lcom/fasterxml/jackson/databind/util/StdDateFormat;->_formatRFC1123:Ljava/text/DateFormat;
 
     invoke-virtual {v0, p1, p2}, Ljava/text/DateFormat;->parse(Ljava/lang/String;Ljava/text/ParsePosition;)Ljava/util/Date;

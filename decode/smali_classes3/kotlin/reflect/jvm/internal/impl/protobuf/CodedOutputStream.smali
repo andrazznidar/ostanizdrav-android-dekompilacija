@@ -12,19 +12,19 @@
 
 
 # instance fields
-.field public final buffer:[B
+.field private final buffer:[B
 
-.field public final limit:I
+.field private final limit:I
 
-.field public final output:Ljava/io/OutputStream;
+.field private final output:Ljava/io/OutputStream;
 
-.field public position:I
+.field private position:I
 
-.field public totalBytesWritten:I
+.field private totalBytesWritten:I
 
 
 # direct methods
-.method public constructor <init>(Ljava/io/OutputStream;[B)V
+.method private constructor <init>(Ljava/io/OutputStream;[B)V
     .locals 1
 
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
@@ -44,6 +44,62 @@
     iput p1, p0, Lkotlin/reflect/jvm/internal/impl/protobuf/CodedOutputStream;->limit:I
 
     return-void
+.end method
+
+.method public static computeBoolSize(IZ)I
+    .locals 0
+
+    invoke-static {p0}, Lkotlin/reflect/jvm/internal/impl/protobuf/CodedOutputStream;->computeTagSize(I)I
+
+    move-result p0
+
+    invoke-static {p1}, Lkotlin/reflect/jvm/internal/impl/protobuf/CodedOutputStream;->computeBoolSizeNoTag(Z)I
+
+    move-result p1
+
+    add-int/2addr p1, p0
+
+    return p1
+.end method
+
+.method public static computeBoolSizeNoTag(Z)I
+    .locals 0
+
+    const/4 p0, 0x1
+
+    return p0
+.end method
+
+.method public static computeByteArraySizeNoTag([B)I
+    .locals 1
+
+    array-length v0, p0
+
+    invoke-static {v0}, Lkotlin/reflect/jvm/internal/impl/protobuf/CodedOutputStream;->computeRawVarint32Size(I)I
+
+    move-result v0
+
+    array-length p0, p0
+
+    add-int/2addr v0, p0
+
+    return v0
+.end method
+
+.method public static computeBytesSize(ILkotlin/reflect/jvm/internal/impl/protobuf/ByteString;)I
+    .locals 0
+
+    invoke-static {p0}, Lkotlin/reflect/jvm/internal/impl/protobuf/CodedOutputStream;->computeTagSize(I)I
+
+    move-result p0
+
+    invoke-static {p1}, Lkotlin/reflect/jvm/internal/impl/protobuf/CodedOutputStream;->computeBytesSizeNoTag(Lkotlin/reflect/jvm/internal/impl/protobuf/ByteString;)I
+
+    move-result p1
+
+    add-int/2addr p1, p0
+
+    return p1
 .end method
 
 .method public static computeBytesSizeNoTag(Lkotlin/reflect/jvm/internal/impl/protobuf/ByteString;)I
@@ -66,6 +122,30 @@
     return p0
 .end method
 
+.method public static computeDoubleSize(ID)I
+    .locals 0
+
+    invoke-static {p0}, Lkotlin/reflect/jvm/internal/impl/protobuf/CodedOutputStream;->computeTagSize(I)I
+
+    move-result p0
+
+    invoke-static {p1, p2}, Lkotlin/reflect/jvm/internal/impl/protobuf/CodedOutputStream;->computeDoubleSizeNoTag(D)I
+
+    move-result p1
+
+    add-int/2addr p1, p0
+
+    return p1
+.end method
+
+.method public static computeDoubleSizeNoTag(D)I
+    .locals 0
+
+    const/16 p0, 0x8
+
+    return p0
+.end method
+
 .method public static computeEnumSize(II)I
     .locals 0
 
@@ -73,11 +153,71 @@
 
     move-result p0
 
-    invoke-static {p1}, Lkotlin/reflect/jvm/internal/impl/protobuf/CodedOutputStream;->computeInt32SizeNoTag(I)I
+    invoke-static {p1}, Lkotlin/reflect/jvm/internal/impl/protobuf/CodedOutputStream;->computeEnumSizeNoTag(I)I
 
     move-result p1
 
-    add-int/2addr p0, p1
+    add-int/2addr p1, p0
+
+    return p1
+.end method
+
+.method public static computeEnumSizeNoTag(I)I
+    .locals 0
+
+    invoke-static {p0}, Lkotlin/reflect/jvm/internal/impl/protobuf/CodedOutputStream;->computeInt32SizeNoTag(I)I
+
+    move-result p0
+
+    return p0
+.end method
+
+.method public static computeFixed32SizeNoTag(I)I
+    .locals 0
+
+    const/4 p0, 0x4
+
+    return p0
+.end method
+
+.method public static computeFixed64SizeNoTag(J)I
+    .locals 0
+
+    const/16 p0, 0x8
+
+    return p0
+.end method
+
+.method public static computeFloatSize(IF)I
+    .locals 0
+
+    invoke-static {p0}, Lkotlin/reflect/jvm/internal/impl/protobuf/CodedOutputStream;->computeTagSize(I)I
+
+    move-result p0
+
+    invoke-static {p1}, Lkotlin/reflect/jvm/internal/impl/protobuf/CodedOutputStream;->computeFloatSizeNoTag(F)I
+
+    move-result p1
+
+    add-int/2addr p1, p0
+
+    return p1
+.end method
+
+.method public static computeFloatSizeNoTag(F)I
+    .locals 0
+
+    const/4 p0, 0x4
+
+    return p0
+.end method
+
+.method public static computeGroupSizeNoTag(Lkotlin/reflect/jvm/internal/impl/protobuf/MessageLite;)I
+    .locals 0
+
+    invoke-interface {p0}, Lkotlin/reflect/jvm/internal/impl/protobuf/MessageLite;->getSerializedSize()I
+
+    move-result p0
 
     return p0
 .end method
@@ -115,26 +255,46 @@
     return p0
 .end method
 
-.method public static computeMessageSize(ILkotlin/reflect/jvm/internal/impl/protobuf/MessageLite;)I
+.method public static computeInt64SizeNoTag(J)I
+    .locals 0
+
+    invoke-static {p0, p1}, Lkotlin/reflect/jvm/internal/impl/protobuf/CodedOutputStream;->computeRawVarint64Size(J)I
+
+    move-result p0
+
+    return p0
+.end method
+
+.method public static computeLazyFieldSizeNoTag(Lkotlin/reflect/jvm/internal/impl/protobuf/LazyFieldLite;)I
     .locals 1
+
+    invoke-virtual {p0}, Lkotlin/reflect/jvm/internal/impl/protobuf/LazyFieldLite;->getSerializedSize()I
+
+    move-result p0
+
+    invoke-static {p0}, Lkotlin/reflect/jvm/internal/impl/protobuf/CodedOutputStream;->computeRawVarint32Size(I)I
+
+    move-result v0
+
+    add-int/2addr v0, p0
+
+    return v0
+.end method
+
+.method public static computeMessageSize(ILkotlin/reflect/jvm/internal/impl/protobuf/MessageLite;)I
+    .locals 0
 
     invoke-static {p0}, Lkotlin/reflect/jvm/internal/impl/protobuf/CodedOutputStream;->computeTagSize(I)I
 
     move-result p0
 
-    invoke-interface {p1}, Lkotlin/reflect/jvm/internal/impl/protobuf/MessageLite;->getSerializedSize()I
+    invoke-static {p1}, Lkotlin/reflect/jvm/internal/impl/protobuf/CodedOutputStream;->computeMessageSizeNoTag(Lkotlin/reflect/jvm/internal/impl/protobuf/MessageLite;)I
 
     move-result p1
 
-    invoke-static {p1}, Lkotlin/reflect/jvm/internal/impl/protobuf/CodedOutputStream;->computeRawVarint32Size(I)I
+    add-int/2addr p1, p0
 
-    move-result v0
-
-    add-int/2addr v0, p1
-
-    add-int/2addr p0, v0
-
-    return p0
+    return p1
 .end method
 
 .method public static computeMessageSizeNoTag(Lkotlin/reflect/jvm/internal/impl/protobuf/MessageLite;)I
@@ -151,6 +311,19 @@
     add-int/2addr v0, p0
 
     return v0
+.end method
+
+.method public static computePreferredBufferSize(I)I
+    .locals 1
+
+    const/16 v0, 0x1000
+
+    if-le p0, v0, :cond_0
+
+    return v0
+
+    :cond_0
+    return p0
 .end method
 
 .method public static computeRawVarint32Size(I)I
@@ -328,18 +501,164 @@
     return p0
 .end method
 
-.method public static computeTagSize(I)I
+.method public static computeSFixed32SizeNoTag(I)I
     .locals 0
 
-    shl-int/lit8 p0, p0, 0x3
+    const/4 p0, 0x4
 
-    or-int/lit8 p0, p0, 0x0
+    return p0
+.end method
+
+.method public static computeSFixed64SizeNoTag(J)I
+    .locals 0
+
+    const/16 p0, 0x8
+
+    return p0
+.end method
+
+.method public static computeSInt32SizeNoTag(I)I
+    .locals 0
+
+    invoke-static {p0}, Lkotlin/reflect/jvm/internal/impl/protobuf/CodedOutputStream;->encodeZigZag32(I)I
+
+    move-result p0
 
     invoke-static {p0}, Lkotlin/reflect/jvm/internal/impl/protobuf/CodedOutputStream;->computeRawVarint32Size(I)I
 
     move-result p0
 
     return p0
+.end method
+
+.method public static computeSInt64Size(IJ)I
+    .locals 0
+
+    invoke-static {p0}, Lkotlin/reflect/jvm/internal/impl/protobuf/CodedOutputStream;->computeTagSize(I)I
+
+    move-result p0
+
+    invoke-static {p1, p2}, Lkotlin/reflect/jvm/internal/impl/protobuf/CodedOutputStream;->computeSInt64SizeNoTag(J)I
+
+    move-result p1
+
+    add-int/2addr p1, p0
+
+    return p1
+.end method
+
+.method public static computeSInt64SizeNoTag(J)I
+    .locals 0
+
+    invoke-static {p0, p1}, Lkotlin/reflect/jvm/internal/impl/protobuf/CodedOutputStream;->encodeZigZag64(J)J
+
+    move-result-wide p0
+
+    invoke-static {p0, p1}, Lkotlin/reflect/jvm/internal/impl/protobuf/CodedOutputStream;->computeRawVarint64Size(J)I
+
+    move-result p0
+
+    return p0
+.end method
+
+.method public static computeStringSizeNoTag(Ljava/lang/String;)I
+    .locals 2
+
+    :try_start_0
+    const-string v0, "UTF-8"
+
+    invoke-virtual {p0, v0}, Ljava/lang/String;->getBytes(Ljava/lang/String;)[B
+
+    move-result-object p0
+
+    array-length v0, p0
+
+    invoke-static {v0}, Lkotlin/reflect/jvm/internal/impl/protobuf/CodedOutputStream;->computeRawVarint32Size(I)I
+
+    move-result v0
+
+    array-length p0, p0
+    :try_end_0
+    .catch Ljava/io/UnsupportedEncodingException; {:try_start_0 .. :try_end_0} :catch_0
+
+    add-int/2addr v0, p0
+
+    return v0
+
+    :catch_0
+    move-exception p0
+
+    new-instance v0, Ljava/lang/RuntimeException;
+
+    const-string v1, "UTF-8 not supported."
+
+    invoke-direct {v0, v1, p0}, Ljava/lang/RuntimeException;-><init>(Ljava/lang/String;Ljava/lang/Throwable;)V
+
+    throw v0
+.end method
+
+.method public static computeTagSize(I)I
+    .locals 1
+
+    const/4 v0, 0x0
+
+    invoke-static {p0, v0}, Lkotlin/reflect/jvm/internal/impl/protobuf/WireFormat;->makeTag(II)I
+
+    move-result p0
+
+    invoke-static {p0}, Lkotlin/reflect/jvm/internal/impl/protobuf/CodedOutputStream;->computeRawVarint32Size(I)I
+
+    move-result p0
+
+    return p0
+.end method
+
+.method public static computeUInt32SizeNoTag(I)I
+    .locals 0
+
+    invoke-static {p0}, Lkotlin/reflect/jvm/internal/impl/protobuf/CodedOutputStream;->computeRawVarint32Size(I)I
+
+    move-result p0
+
+    return p0
+.end method
+
+.method public static computeUInt64SizeNoTag(J)I
+    .locals 0
+
+    invoke-static {p0, p1}, Lkotlin/reflect/jvm/internal/impl/protobuf/CodedOutputStream;->computeRawVarint64Size(J)I
+
+    move-result p0
+
+    return p0
+.end method
+
+.method public static encodeZigZag32(I)I
+    .locals 1
+
+    shl-int/lit8 v0, p0, 0x1
+
+    shr-int/lit8 p0, p0, 0x1f
+
+    xor-int/2addr p0, v0
+
+    return p0
+.end method
+
+.method public static encodeZigZag64(J)J
+    .locals 3
+
+    const/4 v0, 0x1
+
+    shl-long v0, p0, v0
+
+    const/16 v2, 0x3f
+
+    shr-long/2addr p0, v2
+
+    xor-long/2addr p0, v0
+
+    return-wide p0
 .end method
 
 .method public static newInstance(Ljava/io/OutputStream;I)Lkotlin/reflect/jvm/internal/impl/protobuf/CodedOutputStream;
@@ -354,27 +673,7 @@
     return-object v0
 .end method
 
-
-# virtual methods
-.method public flush()V
-    .locals 1
-    .annotation system Ldalvik/annotation/Throws;
-        value = {
-            Ljava/io/IOException;
-        }
-    .end annotation
-
-    iget-object v0, p0, Lkotlin/reflect/jvm/internal/impl/protobuf/CodedOutputStream;->output:Ljava/io/OutputStream;
-
-    if-eqz v0, :cond_0
-
-    invoke-virtual {p0}, Lkotlin/reflect/jvm/internal/impl/protobuf/CodedOutputStream;->refreshBuffer()V
-
-    :cond_0
-    return-void
-.end method
-
-.method public final refreshBuffer()V
+.method private refreshBuffer()V
     .locals 4
     .annotation system Ldalvik/annotation/Throws;
         value = {
@@ -406,6 +705,90 @@
     throw v0
 .end method
 
+
+# virtual methods
+.method public flush()V
+    .locals 1
+    .annotation system Ldalvik/annotation/Throws;
+        value = {
+            Ljava/io/IOException;
+        }
+    .end annotation
+
+    iget-object v0, p0, Lkotlin/reflect/jvm/internal/impl/protobuf/CodedOutputStream;->output:Ljava/io/OutputStream;
+
+    if-eqz v0, :cond_0
+
+    invoke-direct {p0}, Lkotlin/reflect/jvm/internal/impl/protobuf/CodedOutputStream;->refreshBuffer()V
+
+    :cond_0
+    return-void
+.end method
+
+.method public writeBool(IZ)V
+    .locals 1
+    .annotation system Ldalvik/annotation/Throws;
+        value = {
+            Ljava/io/IOException;
+        }
+    .end annotation
+
+    const/4 v0, 0x0
+
+    invoke-virtual {p0, p1, v0}, Lkotlin/reflect/jvm/internal/impl/protobuf/CodedOutputStream;->writeTag(II)V
+
+    invoke-virtual {p0, p2}, Lkotlin/reflect/jvm/internal/impl/protobuf/CodedOutputStream;->writeBoolNoTag(Z)V
+
+    return-void
+.end method
+
+.method public writeBoolNoTag(Z)V
+    .locals 0
+    .annotation system Ldalvik/annotation/Throws;
+        value = {
+            Ljava/io/IOException;
+        }
+    .end annotation
+
+    invoke-virtual {p0, p1}, Lkotlin/reflect/jvm/internal/impl/protobuf/CodedOutputStream;->writeRawByte(I)V
+
+    return-void
+.end method
+
+.method public writeByteArrayNoTag([B)V
+    .locals 1
+    .annotation system Ldalvik/annotation/Throws;
+        value = {
+            Ljava/io/IOException;
+        }
+    .end annotation
+
+    array-length v0, p1
+
+    invoke-virtual {p0, v0}, Lkotlin/reflect/jvm/internal/impl/protobuf/CodedOutputStream;->writeRawVarint32(I)V
+
+    invoke-virtual {p0, p1}, Lkotlin/reflect/jvm/internal/impl/protobuf/CodedOutputStream;->writeRawBytes([B)V
+
+    return-void
+.end method
+
+.method public writeBytes(ILkotlin/reflect/jvm/internal/impl/protobuf/ByteString;)V
+    .locals 1
+    .annotation system Ldalvik/annotation/Throws;
+        value = {
+            Ljava/io/IOException;
+        }
+    .end annotation
+
+    const/4 v0, 0x2
+
+    invoke-virtual {p0, p1, v0}, Lkotlin/reflect/jvm/internal/impl/protobuf/CodedOutputStream;->writeTag(II)V
+
+    invoke-virtual {p0, p2}, Lkotlin/reflect/jvm/internal/impl/protobuf/CodedOutputStream;->writeBytesNoTag(Lkotlin/reflect/jvm/internal/impl/protobuf/ByteString;)V
+
+    return-void
+.end method
+
 .method public writeBytesNoTag(Lkotlin/reflect/jvm/internal/impl/protobuf/ByteString;)V
     .locals 1
     .annotation system Ldalvik/annotation/Throws;
@@ -425,7 +808,24 @@
     return-void
 .end method
 
-.method public writeEnum(II)V
+.method public writeDouble(ID)V
+    .locals 1
+    .annotation system Ldalvik/annotation/Throws;
+        value = {
+            Ljava/io/IOException;
+        }
+    .end annotation
+
+    const/4 v0, 0x1
+
+    invoke-virtual {p0, p1, v0}, Lkotlin/reflect/jvm/internal/impl/protobuf/CodedOutputStream;->writeTag(II)V
+
+    invoke-virtual {p0, p2, p3}, Lkotlin/reflect/jvm/internal/impl/protobuf/CodedOutputStream;->writeDoubleNoTag(D)V
+
+    return-void
+.end method
+
+.method public writeDoubleNoTag(D)V
     .locals 0
     .annotation system Ldalvik/annotation/Throws;
         value = {
@@ -433,51 +833,33 @@
         }
     .end annotation
 
-    shl-int/lit8 p1, p1, 0x3
+    invoke-static {p1, p2}, Ljava/lang/Double;->doubleToRawLongBits(D)J
 
-    or-int/lit8 p1, p1, 0x0
+    move-result-wide p1
 
-    invoke-virtual {p0, p1}, Lkotlin/reflect/jvm/internal/impl/protobuf/CodedOutputStream;->writeRawVarint32(I)V
+    invoke-virtual {p0, p1, p2}, Lkotlin/reflect/jvm/internal/impl/protobuf/CodedOutputStream;->writeRawLittleEndian64(J)V
 
-    if-ltz p2, :cond_0
+    return-void
+.end method
 
-    invoke-virtual {p0, p2}, Lkotlin/reflect/jvm/internal/impl/protobuf/CodedOutputStream;->writeRawVarint32(I)V
+.method public writeEnum(II)V
+    .locals 1
+    .annotation system Ldalvik/annotation/Throws;
+        value = {
+            Ljava/io/IOException;
+        }
+    .end annotation
 
-    goto :goto_0
+    const/4 v0, 0x0
 
-    :cond_0
-    int-to-long p1, p2
+    invoke-virtual {p0, p1, v0}, Lkotlin/reflect/jvm/internal/impl/protobuf/CodedOutputStream;->writeTag(II)V
 
-    invoke-virtual {p0, p1, p2}, Lkotlin/reflect/jvm/internal/impl/protobuf/CodedOutputStream;->writeRawVarint64(J)V
+    invoke-virtual {p0, p2}, Lkotlin/reflect/jvm/internal/impl/protobuf/CodedOutputStream;->writeEnumNoTag(I)V
 
-    :goto_0
     return-void
 .end method
 
 .method public writeEnumNoTag(I)V
-    .locals 2
-    .annotation system Ldalvik/annotation/Throws;
-        value = {
-            Ljava/io/IOException;
-        }
-    .end annotation
-
-    if-ltz p1, :cond_0
-
-    invoke-virtual {p0, p1}, Lkotlin/reflect/jvm/internal/impl/protobuf/CodedOutputStream;->writeRawVarint32(I)V
-
-    goto :goto_0
-
-    :cond_0
-    int-to-long v0, p1
-
-    invoke-virtual {p0, v0, v1}, Lkotlin/reflect/jvm/internal/impl/protobuf/CodedOutputStream;->writeRawVarint64(J)V
-
-    :goto_0
-    return-void
-.end method
-
-.method public writeInt32(II)V
     .locals 0
     .annotation system Ldalvik/annotation/Throws;
         value = {
@@ -485,24 +867,119 @@
         }
     .end annotation
 
-    shl-int/lit8 p1, p1, 0x3
+    invoke-virtual {p0, p1}, Lkotlin/reflect/jvm/internal/impl/protobuf/CodedOutputStream;->writeInt32NoTag(I)V
 
-    or-int/lit8 p1, p1, 0x0
+    return-void
+.end method
 
-    invoke-virtual {p0, p1}, Lkotlin/reflect/jvm/internal/impl/protobuf/CodedOutputStream;->writeRawVarint32(I)V
+.method public writeFixed32NoTag(I)V
+    .locals 0
+    .annotation system Ldalvik/annotation/Throws;
+        value = {
+            Ljava/io/IOException;
+        }
+    .end annotation
 
-    if-ltz p2, :cond_0
+    invoke-virtual {p0, p1}, Lkotlin/reflect/jvm/internal/impl/protobuf/CodedOutputStream;->writeRawLittleEndian32(I)V
 
-    invoke-virtual {p0, p2}, Lkotlin/reflect/jvm/internal/impl/protobuf/CodedOutputStream;->writeRawVarint32(I)V
+    return-void
+.end method
 
-    goto :goto_0
+.method public writeFixed64NoTag(J)V
+    .locals 0
+    .annotation system Ldalvik/annotation/Throws;
+        value = {
+            Ljava/io/IOException;
+        }
+    .end annotation
 
-    :cond_0
-    int-to-long p1, p2
+    invoke-virtual {p0, p1, p2}, Lkotlin/reflect/jvm/internal/impl/protobuf/CodedOutputStream;->writeRawLittleEndian64(J)V
 
-    invoke-virtual {p0, p1, p2}, Lkotlin/reflect/jvm/internal/impl/protobuf/CodedOutputStream;->writeRawVarint64(J)V
+    return-void
+.end method
 
-    :goto_0
+.method public writeFloat(IF)V
+    .locals 1
+    .annotation system Ldalvik/annotation/Throws;
+        value = {
+            Ljava/io/IOException;
+        }
+    .end annotation
+
+    const/4 v0, 0x5
+
+    invoke-virtual {p0, p1, v0}, Lkotlin/reflect/jvm/internal/impl/protobuf/CodedOutputStream;->writeTag(II)V
+
+    invoke-virtual {p0, p2}, Lkotlin/reflect/jvm/internal/impl/protobuf/CodedOutputStream;->writeFloatNoTag(F)V
+
+    return-void
+.end method
+
+.method public writeFloatNoTag(F)V
+    .locals 0
+    .annotation system Ldalvik/annotation/Throws;
+        value = {
+            Ljava/io/IOException;
+        }
+    .end annotation
+
+    invoke-static {p1}, Ljava/lang/Float;->floatToRawIntBits(F)I
+
+    move-result p1
+
+    invoke-virtual {p0, p1}, Lkotlin/reflect/jvm/internal/impl/protobuf/CodedOutputStream;->writeRawLittleEndian32(I)V
+
+    return-void
+.end method
+
+.method public writeGroup(ILkotlin/reflect/jvm/internal/impl/protobuf/MessageLite;)V
+    .locals 1
+    .annotation system Ldalvik/annotation/Throws;
+        value = {
+            Ljava/io/IOException;
+        }
+    .end annotation
+
+    const/4 v0, 0x3
+
+    invoke-virtual {p0, p1, v0}, Lkotlin/reflect/jvm/internal/impl/protobuf/CodedOutputStream;->writeTag(II)V
+
+    invoke-virtual {p0, p2}, Lkotlin/reflect/jvm/internal/impl/protobuf/CodedOutputStream;->writeGroupNoTag(Lkotlin/reflect/jvm/internal/impl/protobuf/MessageLite;)V
+
+    const/4 p2, 0x4
+
+    invoke-virtual {p0, p1, p2}, Lkotlin/reflect/jvm/internal/impl/protobuf/CodedOutputStream;->writeTag(II)V
+
+    return-void
+.end method
+
+.method public writeGroupNoTag(Lkotlin/reflect/jvm/internal/impl/protobuf/MessageLite;)V
+    .locals 0
+    .annotation system Ldalvik/annotation/Throws;
+        value = {
+            Ljava/io/IOException;
+        }
+    .end annotation
+
+    invoke-interface {p1, p0}, Lkotlin/reflect/jvm/internal/impl/protobuf/MessageLite;->writeTo(Lkotlin/reflect/jvm/internal/impl/protobuf/CodedOutputStream;)V
+
+    return-void
+.end method
+
+.method public writeInt32(II)V
+    .locals 1
+    .annotation system Ldalvik/annotation/Throws;
+        value = {
+            Ljava/io/IOException;
+        }
+    .end annotation
+
+    const/4 v0, 0x0
+
+    invoke-virtual {p0, p1, v0}, Lkotlin/reflect/jvm/internal/impl/protobuf/CodedOutputStream;->writeTag(II)V
+
+    invoke-virtual {p0, p2}, Lkotlin/reflect/jvm/internal/impl/protobuf/CodedOutputStream;->writeInt32NoTag(I)V
+
     return-void
 .end method
 
@@ -529,7 +1006,7 @@
     return-void
 .end method
 
-.method public writeMessage(ILkotlin/reflect/jvm/internal/impl/protobuf/MessageLite;)V
+.method public writeInt64NoTag(J)V
     .locals 0
     .annotation system Ldalvik/annotation/Throws;
         value = {
@@ -537,19 +1014,24 @@
         }
     .end annotation
 
-    shl-int/lit8 p1, p1, 0x3
+    invoke-virtual {p0, p1, p2}, Lkotlin/reflect/jvm/internal/impl/protobuf/CodedOutputStream;->writeRawVarint64(J)V
 
-    or-int/lit8 p1, p1, 0x2
+    return-void
+.end method
 
-    invoke-virtual {p0, p1}, Lkotlin/reflect/jvm/internal/impl/protobuf/CodedOutputStream;->writeRawVarint32(I)V
+.method public writeMessage(ILkotlin/reflect/jvm/internal/impl/protobuf/MessageLite;)V
+    .locals 1
+    .annotation system Ldalvik/annotation/Throws;
+        value = {
+            Ljava/io/IOException;
+        }
+    .end annotation
 
-    invoke-interface {p2}, Lkotlin/reflect/jvm/internal/impl/protobuf/MessageLite;->getSerializedSize()I
+    const/4 v0, 0x2
 
-    move-result p1
+    invoke-virtual {p0, p1, v0}, Lkotlin/reflect/jvm/internal/impl/protobuf/CodedOutputStream;->writeTag(II)V
 
-    invoke-virtual {p0, p1}, Lkotlin/reflect/jvm/internal/impl/protobuf/CodedOutputStream;->writeRawVarint32(I)V
-
-    invoke-interface {p2, p0}, Lkotlin/reflect/jvm/internal/impl/protobuf/MessageLite;->writeTo(Lkotlin/reflect/jvm/internal/impl/protobuf/CodedOutputStream;)V
+    invoke-virtual {p0, p2}, Lkotlin/reflect/jvm/internal/impl/protobuf/CodedOutputStream;->writeMessageNoTag(Lkotlin/reflect/jvm/internal/impl/protobuf/MessageLite;)V
 
     return-void
 .end method
@@ -573,7 +1055,7 @@
     return-void
 .end method
 
-.method public writeRawByte(I)V
+.method public writeMessageSetExtension(ILkotlin/reflect/jvm/internal/impl/protobuf/MessageLite;)V
     .locals 3
     .annotation system Ldalvik/annotation/Throws;
         value = {
@@ -581,7 +1063,32 @@
         }
     .end annotation
 
-    int-to-byte p1, p1
+    const/4 v0, 0x1
+
+    const/4 v1, 0x3
+
+    invoke-virtual {p0, v0, v1}, Lkotlin/reflect/jvm/internal/impl/protobuf/CodedOutputStream;->writeTag(II)V
+
+    const/4 v2, 0x2
+
+    invoke-virtual {p0, v2, p1}, Lkotlin/reflect/jvm/internal/impl/protobuf/CodedOutputStream;->writeUInt32(II)V
+
+    invoke-virtual {p0, v1, p2}, Lkotlin/reflect/jvm/internal/impl/protobuf/CodedOutputStream;->writeMessage(ILkotlin/reflect/jvm/internal/impl/protobuf/MessageLite;)V
+
+    const/4 p1, 0x4
+
+    invoke-virtual {p0, v0, p1}, Lkotlin/reflect/jvm/internal/impl/protobuf/CodedOutputStream;->writeTag(II)V
+
+    return-void
+.end method
+
+.method public writeRawByte(B)V
+    .locals 3
+    .annotation system Ldalvik/annotation/Throws;
+        value = {
+            Ljava/io/IOException;
+        }
+    .end annotation
 
     iget v0, p0, Lkotlin/reflect/jvm/internal/impl/protobuf/CodedOutputStream;->position:I
 
@@ -589,7 +1096,7 @@
 
     if-ne v0, v1, :cond_0
 
-    invoke-virtual {p0}, Lkotlin/reflect/jvm/internal/impl/protobuf/CodedOutputStream;->refreshBuffer()V
+    invoke-direct {p0}, Lkotlin/reflect/jvm/internal/impl/protobuf/CodedOutputStream;->refreshBuffer()V
 
     :cond_0
     iget-object v0, p0, Lkotlin/reflect/jvm/internal/impl/protobuf/CodedOutputStream;->buffer:[B
@@ -611,8 +1118,23 @@
     return-void
 .end method
 
+.method public writeRawByte(I)V
+    .locals 0
+    .annotation system Ldalvik/annotation/Throws;
+        value = {
+            Ljava/io/IOException;
+        }
+    .end annotation
+
+    int-to-byte p1, p1
+
+    invoke-virtual {p0, p1}, Lkotlin/reflect/jvm/internal/impl/protobuf/CodedOutputStream;->writeRawByte(B)V
+
+    return-void
+.end method
+
 .method public writeRawBytes(Lkotlin/reflect/jvm/internal/impl/protobuf/ByteString;)V
-    .locals 5
+    .locals 2
     .annotation system Ldalvik/annotation/Throws;
         value = {
             Ljava/io/IOException;
@@ -623,145 +1145,102 @@
 
     move-result v0
 
-    iget v1, p0, Lkotlin/reflect/jvm/internal/impl/protobuf/CodedOutputStream;->limit:I
+    const/4 v1, 0x0
 
-    iget v2, p0, Lkotlin/reflect/jvm/internal/impl/protobuf/CodedOutputStream;->position:I
+    invoke-virtual {p0, p1, v1, v0}, Lkotlin/reflect/jvm/internal/impl/protobuf/CodedOutputStream;->writeRawBytes(Lkotlin/reflect/jvm/internal/impl/protobuf/ByteString;II)V
 
-    sub-int/2addr v1, v2
+    return-void
+.end method
 
-    const/4 v3, 0x0
+.method public writeRawBytes(Lkotlin/reflect/jvm/internal/impl/protobuf/ByteString;II)V
+    .locals 3
+    .annotation system Ldalvik/annotation/Throws;
+        value = {
+            Ljava/io/IOException;
+        }
+    .end annotation
 
-    if-lt v1, v0, :cond_0
+    iget v0, p0, Lkotlin/reflect/jvm/internal/impl/protobuf/CodedOutputStream;->limit:I
 
-    iget-object v1, p0, Lkotlin/reflect/jvm/internal/impl/protobuf/CodedOutputStream;->buffer:[B
+    iget v1, p0, Lkotlin/reflect/jvm/internal/impl/protobuf/CodedOutputStream;->position:I
 
-    invoke-virtual {p1, v1, v3, v2, v0}, Lkotlin/reflect/jvm/internal/impl/protobuf/ByteString;->copyTo([BIII)V
+    sub-int v2, v0, v1
+
+    if-lt v2, p3, :cond_0
+
+    iget-object v0, p0, Lkotlin/reflect/jvm/internal/impl/protobuf/CodedOutputStream;->buffer:[B
+
+    invoke-virtual {p1, v0, p2, v1, p3}, Lkotlin/reflect/jvm/internal/impl/protobuf/ByteString;->copyTo([BIII)V
 
     iget p1, p0, Lkotlin/reflect/jvm/internal/impl/protobuf/CodedOutputStream;->position:I
 
-    add-int/2addr p1, v0
+    add-int/2addr p1, p3
 
     iput p1, p0, Lkotlin/reflect/jvm/internal/impl/protobuf/CodedOutputStream;->position:I
 
     iget p1, p0, Lkotlin/reflect/jvm/internal/impl/protobuf/CodedOutputStream;->totalBytesWritten:I
 
-    add-int/2addr p1, v0
+    add-int/2addr p1, p3
 
     iput p1, p0, Lkotlin/reflect/jvm/internal/impl/protobuf/CodedOutputStream;->totalBytesWritten:I
 
     goto :goto_1
 
     :cond_0
-    iget-object v4, p0, Lkotlin/reflect/jvm/internal/impl/protobuf/CodedOutputStream;->buffer:[B
-
-    invoke-virtual {p1, v4, v3, v2, v1}, Lkotlin/reflect/jvm/internal/impl/protobuf/ByteString;->copyTo([BIII)V
-
-    add-int/lit8 v2, v1, 0x0
-
     sub-int/2addr v0, v1
 
-    iget v4, p0, Lkotlin/reflect/jvm/internal/impl/protobuf/CodedOutputStream;->limit:I
+    iget-object v2, p0, Lkotlin/reflect/jvm/internal/impl/protobuf/CodedOutputStream;->buffer:[B
 
-    iput v4, p0, Lkotlin/reflect/jvm/internal/impl/protobuf/CodedOutputStream;->position:I
+    invoke-virtual {p1, v2, p2, v1, v0}, Lkotlin/reflect/jvm/internal/impl/protobuf/ByteString;->copyTo([BIII)V
 
-    iget v4, p0, Lkotlin/reflect/jvm/internal/impl/protobuf/CodedOutputStream;->totalBytesWritten:I
+    add-int/2addr p2, v0
 
-    add-int/2addr v4, v1
-
-    iput v4, p0, Lkotlin/reflect/jvm/internal/impl/protobuf/CodedOutputStream;->totalBytesWritten:I
-
-    invoke-virtual {p0}, Lkotlin/reflect/jvm/internal/impl/protobuf/CodedOutputStream;->refreshBuffer()V
+    sub-int/2addr p3, v0
 
     iget v1, p0, Lkotlin/reflect/jvm/internal/impl/protobuf/CodedOutputStream;->limit:I
 
-    if-gt v0, v1, :cond_1
+    iput v1, p0, Lkotlin/reflect/jvm/internal/impl/protobuf/CodedOutputStream;->position:I
 
-    iget-object v1, p0, Lkotlin/reflect/jvm/internal/impl/protobuf/CodedOutputStream;->buffer:[B
+    iget v1, p0, Lkotlin/reflect/jvm/internal/impl/protobuf/CodedOutputStream;->totalBytesWritten:I
 
-    invoke-virtual {p1, v1, v2, v3, v0}, Lkotlin/reflect/jvm/internal/impl/protobuf/ByteString;->copyTo([BIII)V
+    add-int/2addr v1, v0
 
-    iput v0, p0, Lkotlin/reflect/jvm/internal/impl/protobuf/CodedOutputStream;->position:I
+    iput v1, p0, Lkotlin/reflect/jvm/internal/impl/protobuf/CodedOutputStream;->totalBytesWritten:I
+
+    invoke-direct {p0}, Lkotlin/reflect/jvm/internal/impl/protobuf/CodedOutputStream;->refreshBuffer()V
+
+    iget v0, p0, Lkotlin/reflect/jvm/internal/impl/protobuf/CodedOutputStream;->limit:I
+
+    if-gt p3, v0, :cond_1
+
+    iget-object v0, p0, Lkotlin/reflect/jvm/internal/impl/protobuf/CodedOutputStream;->buffer:[B
+
+    const/4 v1, 0x0
+
+    invoke-virtual {p1, v0, p2, v1, p3}, Lkotlin/reflect/jvm/internal/impl/protobuf/ByteString;->copyTo([BIII)V
+
+    iput p3, p0, Lkotlin/reflect/jvm/internal/impl/protobuf/CodedOutputStream;->position:I
 
     goto :goto_0
 
     :cond_1
-    iget-object v1, p0, Lkotlin/reflect/jvm/internal/impl/protobuf/CodedOutputStream;->output:Ljava/io/OutputStream;
+    iget-object v0, p0, Lkotlin/reflect/jvm/internal/impl/protobuf/CodedOutputStream;->output:Ljava/io/OutputStream;
 
-    if-ltz v2, :cond_5
+    invoke-virtual {p1, v0, p2, p3}, Lkotlin/reflect/jvm/internal/impl/protobuf/ByteString;->writeTo(Ljava/io/OutputStream;II)V
 
-    if-ltz v0, :cond_4
-
-    add-int v3, v2, v0
-
-    invoke-virtual {p1}, Lkotlin/reflect/jvm/internal/impl/protobuf/ByteString;->size()I
-
-    move-result v4
-
-    if-gt v3, v4, :cond_3
-
-    if-lez v0, :cond_2
-
-    invoke-virtual {p1, v1, v2, v0}, Lkotlin/reflect/jvm/internal/impl/protobuf/ByteString;->writeToInternal(Ljava/io/OutputStream;II)V
-
-    :cond_2
     :goto_0
     iget p1, p0, Lkotlin/reflect/jvm/internal/impl/protobuf/CodedOutputStream;->totalBytesWritten:I
 
-    add-int/2addr p1, v0
+    add-int/2addr p1, p3
 
     iput p1, p0, Lkotlin/reflect/jvm/internal/impl/protobuf/CodedOutputStream;->totalBytesWritten:I
 
     :goto_1
     return-void
-
-    :cond_3
-    new-instance p1, Ljava/lang/IndexOutOfBoundsException;
-
-    const/16 v0, 0x27
-
-    const-string v1, "Source end offset exceeded: "
-
-    invoke-static {v0, v1, v3}, Lcom/google/android/gms/common/api/internal/BasePendingResult$CallbackHandler$$ExternalSyntheticOutline0;->m(ILjava/lang/String;I)Ljava/lang/String;
-
-    move-result-object v0
-
-    invoke-direct {p1, v0}, Ljava/lang/IndexOutOfBoundsException;-><init>(Ljava/lang/String;)V
-
-    throw p1
-
-    :cond_4
-    new-instance p1, Ljava/lang/IndexOutOfBoundsException;
-
-    const/16 v1, 0x17
-
-    const-string v2, "Length < 0: "
-
-    invoke-static {v1, v2, v0}, Lcom/google/android/gms/common/api/internal/BasePendingResult$CallbackHandler$$ExternalSyntheticOutline0;->m(ILjava/lang/String;I)Ljava/lang/String;
-
-    move-result-object v0
-
-    invoke-direct {p1, v0}, Ljava/lang/IndexOutOfBoundsException;-><init>(Ljava/lang/String;)V
-
-    throw p1
-
-    :cond_5
-    new-instance p1, Ljava/lang/IndexOutOfBoundsException;
-
-    const/16 v0, 0x1e
-
-    const-string v1, "Source offset < 0: "
-
-    invoke-static {v0, v1, v2}, Lcom/google/android/gms/common/api/internal/BasePendingResult$CallbackHandler$$ExternalSyntheticOutline0;->m(ILjava/lang/String;I)Ljava/lang/String;
-
-    move-result-object v0
-
-    invoke-direct {p1, v0}, Ljava/lang/IndexOutOfBoundsException;-><init>(Ljava/lang/String;)V
-
-    throw p1
 .end method
 
 .method public writeRawBytes([B)V
-    .locals 5
+    .locals 2
     .annotation system Ldalvik/annotation/Throws;
         value = {
             Ljava/io/IOException;
@@ -770,76 +1249,93 @@
 
     array-length v0, p1
 
-    iget v1, p0, Lkotlin/reflect/jvm/internal/impl/protobuf/CodedOutputStream;->limit:I
+    const/4 v1, 0x0
 
-    iget v2, p0, Lkotlin/reflect/jvm/internal/impl/protobuf/CodedOutputStream;->position:I
+    invoke-virtual {p0, p1, v1, v0}, Lkotlin/reflect/jvm/internal/impl/protobuf/CodedOutputStream;->writeRawBytes([BII)V
 
-    sub-int/2addr v1, v2
+    return-void
+.end method
 
-    const/4 v3, 0x0
+.method public writeRawBytes([BII)V
+    .locals 3
+    .annotation system Ldalvik/annotation/Throws;
+        value = {
+            Ljava/io/IOException;
+        }
+    .end annotation
 
-    if-lt v1, v0, :cond_0
+    iget v0, p0, Lkotlin/reflect/jvm/internal/impl/protobuf/CodedOutputStream;->limit:I
 
-    iget-object v1, p0, Lkotlin/reflect/jvm/internal/impl/protobuf/CodedOutputStream;->buffer:[B
+    iget v1, p0, Lkotlin/reflect/jvm/internal/impl/protobuf/CodedOutputStream;->position:I
 
-    invoke-static {p1, v3, v1, v2, v0}, Ljava/lang/System;->arraycopy(Ljava/lang/Object;ILjava/lang/Object;II)V
+    sub-int v2, v0, v1
+
+    if-lt v2, p3, :cond_0
+
+    iget-object v0, p0, Lkotlin/reflect/jvm/internal/impl/protobuf/CodedOutputStream;->buffer:[B
+
+    invoke-static {p1, p2, v0, v1, p3}, Ljava/lang/System;->arraycopy(Ljava/lang/Object;ILjava/lang/Object;II)V
 
     iget p1, p0, Lkotlin/reflect/jvm/internal/impl/protobuf/CodedOutputStream;->position:I
 
-    add-int/2addr p1, v0
+    add-int/2addr p1, p3
 
     iput p1, p0, Lkotlin/reflect/jvm/internal/impl/protobuf/CodedOutputStream;->position:I
 
     iget p1, p0, Lkotlin/reflect/jvm/internal/impl/protobuf/CodedOutputStream;->totalBytesWritten:I
 
-    add-int/2addr p1, v0
+    add-int/2addr p1, p3
 
     iput p1, p0, Lkotlin/reflect/jvm/internal/impl/protobuf/CodedOutputStream;->totalBytesWritten:I
 
     goto :goto_1
 
     :cond_0
-    iget-object v4, p0, Lkotlin/reflect/jvm/internal/impl/protobuf/CodedOutputStream;->buffer:[B
-
-    invoke-static {p1, v3, v4, v2, v1}, Ljava/lang/System;->arraycopy(Ljava/lang/Object;ILjava/lang/Object;II)V
-
-    add-int/lit8 v2, v1, 0x0
-
     sub-int/2addr v0, v1
 
-    iget v4, p0, Lkotlin/reflect/jvm/internal/impl/protobuf/CodedOutputStream;->limit:I
+    iget-object v2, p0, Lkotlin/reflect/jvm/internal/impl/protobuf/CodedOutputStream;->buffer:[B
 
-    iput v4, p0, Lkotlin/reflect/jvm/internal/impl/protobuf/CodedOutputStream;->position:I
+    invoke-static {p1, p2, v2, v1, v0}, Ljava/lang/System;->arraycopy(Ljava/lang/Object;ILjava/lang/Object;II)V
 
-    iget v4, p0, Lkotlin/reflect/jvm/internal/impl/protobuf/CodedOutputStream;->totalBytesWritten:I
+    add-int/2addr p2, v0
 
-    add-int/2addr v4, v1
-
-    iput v4, p0, Lkotlin/reflect/jvm/internal/impl/protobuf/CodedOutputStream;->totalBytesWritten:I
-
-    invoke-virtual {p0}, Lkotlin/reflect/jvm/internal/impl/protobuf/CodedOutputStream;->refreshBuffer()V
+    sub-int/2addr p3, v0
 
     iget v1, p0, Lkotlin/reflect/jvm/internal/impl/protobuf/CodedOutputStream;->limit:I
 
-    if-gt v0, v1, :cond_1
+    iput v1, p0, Lkotlin/reflect/jvm/internal/impl/protobuf/CodedOutputStream;->position:I
 
-    iget-object v1, p0, Lkotlin/reflect/jvm/internal/impl/protobuf/CodedOutputStream;->buffer:[B
+    iget v1, p0, Lkotlin/reflect/jvm/internal/impl/protobuf/CodedOutputStream;->totalBytesWritten:I
 
-    invoke-static {p1, v2, v1, v3, v0}, Ljava/lang/System;->arraycopy(Ljava/lang/Object;ILjava/lang/Object;II)V
+    add-int/2addr v1, v0
 
-    iput v0, p0, Lkotlin/reflect/jvm/internal/impl/protobuf/CodedOutputStream;->position:I
+    iput v1, p0, Lkotlin/reflect/jvm/internal/impl/protobuf/CodedOutputStream;->totalBytesWritten:I
+
+    invoke-direct {p0}, Lkotlin/reflect/jvm/internal/impl/protobuf/CodedOutputStream;->refreshBuffer()V
+
+    iget v0, p0, Lkotlin/reflect/jvm/internal/impl/protobuf/CodedOutputStream;->limit:I
+
+    if-gt p3, v0, :cond_1
+
+    iget-object v0, p0, Lkotlin/reflect/jvm/internal/impl/protobuf/CodedOutputStream;->buffer:[B
+
+    const/4 v1, 0x0
+
+    invoke-static {p1, p2, v0, v1, p3}, Ljava/lang/System;->arraycopy(Ljava/lang/Object;ILjava/lang/Object;II)V
+
+    iput p3, p0, Lkotlin/reflect/jvm/internal/impl/protobuf/CodedOutputStream;->position:I
 
     goto :goto_0
 
     :cond_1
-    iget-object v1, p0, Lkotlin/reflect/jvm/internal/impl/protobuf/CodedOutputStream;->output:Ljava/io/OutputStream;
+    iget-object v0, p0, Lkotlin/reflect/jvm/internal/impl/protobuf/CodedOutputStream;->output:Ljava/io/OutputStream;
 
-    invoke-virtual {v1, p1, v2, v0}, Ljava/io/OutputStream;->write([BII)V
+    invoke-virtual {v0, p1, p2, p3}, Ljava/io/OutputStream;->write([BII)V
 
     :goto_0
     iget p1, p0, Lkotlin/reflect/jvm/internal/impl/protobuf/CodedOutputStream;->totalBytesWritten:I
 
-    add-int/2addr p1, v0
+    add-int/2addr p1, p3
 
     iput p1, p0, Lkotlin/reflect/jvm/internal/impl/protobuf/CodedOutputStream;->totalBytesWritten:I
 
@@ -1037,6 +1533,106 @@
     goto :goto_0
 .end method
 
+.method public writeSFixed32NoTag(I)V
+    .locals 0
+    .annotation system Ldalvik/annotation/Throws;
+        value = {
+            Ljava/io/IOException;
+        }
+    .end annotation
+
+    invoke-virtual {p0, p1}, Lkotlin/reflect/jvm/internal/impl/protobuf/CodedOutputStream;->writeRawLittleEndian32(I)V
+
+    return-void
+.end method
+
+.method public writeSFixed64NoTag(J)V
+    .locals 0
+    .annotation system Ldalvik/annotation/Throws;
+        value = {
+            Ljava/io/IOException;
+        }
+    .end annotation
+
+    invoke-virtual {p0, p1, p2}, Lkotlin/reflect/jvm/internal/impl/protobuf/CodedOutputStream;->writeRawLittleEndian64(J)V
+
+    return-void
+.end method
+
+.method public writeSInt32NoTag(I)V
+    .locals 0
+    .annotation system Ldalvik/annotation/Throws;
+        value = {
+            Ljava/io/IOException;
+        }
+    .end annotation
+
+    invoke-static {p1}, Lkotlin/reflect/jvm/internal/impl/protobuf/CodedOutputStream;->encodeZigZag32(I)I
+
+    move-result p1
+
+    invoke-virtual {p0, p1}, Lkotlin/reflect/jvm/internal/impl/protobuf/CodedOutputStream;->writeRawVarint32(I)V
+
+    return-void
+.end method
+
+.method public writeSInt64(IJ)V
+    .locals 1
+    .annotation system Ldalvik/annotation/Throws;
+        value = {
+            Ljava/io/IOException;
+        }
+    .end annotation
+
+    const/4 v0, 0x0
+
+    invoke-virtual {p0, p1, v0}, Lkotlin/reflect/jvm/internal/impl/protobuf/CodedOutputStream;->writeTag(II)V
+
+    invoke-virtual {p0, p2, p3}, Lkotlin/reflect/jvm/internal/impl/protobuf/CodedOutputStream;->writeSInt64NoTag(J)V
+
+    return-void
+.end method
+
+.method public writeSInt64NoTag(J)V
+    .locals 0
+    .annotation system Ldalvik/annotation/Throws;
+        value = {
+            Ljava/io/IOException;
+        }
+    .end annotation
+
+    invoke-static {p1, p2}, Lkotlin/reflect/jvm/internal/impl/protobuf/CodedOutputStream;->encodeZigZag64(J)J
+
+    move-result-wide p1
+
+    invoke-virtual {p0, p1, p2}, Lkotlin/reflect/jvm/internal/impl/protobuf/CodedOutputStream;->writeRawVarint64(J)V
+
+    return-void
+.end method
+
+.method public writeStringNoTag(Ljava/lang/String;)V
+    .locals 1
+    .annotation system Ldalvik/annotation/Throws;
+        value = {
+            Ljava/io/IOException;
+        }
+    .end annotation
+
+    const-string v0, "UTF-8"
+
+    invoke-virtual {p1, v0}, Ljava/lang/String;->getBytes(Ljava/lang/String;)[B
+
+    move-result-object p1
+
+    array-length v0, p1
+
+    invoke-virtual {p0, v0}, Lkotlin/reflect/jvm/internal/impl/protobuf/CodedOutputStream;->writeRawVarint32(I)V
+
+    invoke-virtual {p0, p1}, Lkotlin/reflect/jvm/internal/impl/protobuf/CodedOutputStream;->writeRawBytes([B)V
+
+    return-void
+.end method
+
 .method public writeTag(II)V
     .locals 0
     .annotation system Ldalvik/annotation/Throws;
@@ -1045,11 +1641,54 @@
         }
     .end annotation
 
-    shl-int/lit8 p1, p1, 0x3
+    invoke-static {p1, p2}, Lkotlin/reflect/jvm/internal/impl/protobuf/WireFormat;->makeTag(II)I
 
-    or-int/2addr p1, p2
+    move-result p1
 
     invoke-virtual {p0, p1}, Lkotlin/reflect/jvm/internal/impl/protobuf/CodedOutputStream;->writeRawVarint32(I)V
+
+    return-void
+.end method
+
+.method public writeUInt32(II)V
+    .locals 1
+    .annotation system Ldalvik/annotation/Throws;
+        value = {
+            Ljava/io/IOException;
+        }
+    .end annotation
+
+    const/4 v0, 0x0
+
+    invoke-virtual {p0, p1, v0}, Lkotlin/reflect/jvm/internal/impl/protobuf/CodedOutputStream;->writeTag(II)V
+
+    invoke-virtual {p0, p2}, Lkotlin/reflect/jvm/internal/impl/protobuf/CodedOutputStream;->writeUInt32NoTag(I)V
+
+    return-void
+.end method
+
+.method public writeUInt32NoTag(I)V
+    .locals 0
+    .annotation system Ldalvik/annotation/Throws;
+        value = {
+            Ljava/io/IOException;
+        }
+    .end annotation
+
+    invoke-virtual {p0, p1}, Lkotlin/reflect/jvm/internal/impl/protobuf/CodedOutputStream;->writeRawVarint32(I)V
+
+    return-void
+.end method
+
+.method public writeUInt64NoTag(J)V
+    .locals 0
+    .annotation system Ldalvik/annotation/Throws;
+        value = {
+            Ljava/io/IOException;
+        }
+    .end annotation
+
+    invoke-virtual {p0, p1, p2}, Lkotlin/reflect/jvm/internal/impl/protobuf/CodedOutputStream;->writeRawVarint64(J)V
 
     return-void
 .end method

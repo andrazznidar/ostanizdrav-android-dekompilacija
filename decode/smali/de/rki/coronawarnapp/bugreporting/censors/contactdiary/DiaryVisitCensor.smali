@@ -243,10 +243,6 @@
 
     invoke-direct {v5, v2, v1}, Lde/rki/coronawarnapp/bugreporting/censors/contactdiary/DiaryVisitCensor$checkLog$2$newMessage$1$1;-><init>(Lkotlin/jvm/internal/Ref$ObjectRef;Lde/rki/coronawarnapp/contactdiary/model/ContactDiaryLocationVisit;)V
 
-    const-string v1, "action"
-
-    invoke-static {v5, v1}, Lkotlin/jvm/internal/Intrinsics;->checkNotNullParameter(Ljava/lang/Object;Ljava/lang/String;)V
-
     const/4 v1, 0x0
 
     if-eqz v0, :cond_5

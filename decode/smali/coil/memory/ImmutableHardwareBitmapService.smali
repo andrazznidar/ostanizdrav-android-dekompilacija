@@ -1,5 +1,5 @@
 .class public final Lcoil/memory/ImmutableHardwareBitmapService;
-.super Lcoil/memory/HardwareBitmapService;
+.super Lorg/bouncycastle/util/Pack;
 .source "HardwareBitmapService.kt"
 
 
@@ -13,7 +13,7 @@
 
     const/4 v0, 0x0
 
-    invoke-direct {p0, v0}, Lcoil/memory/HardwareBitmapService;-><init>(Lkotlin/jvm/internal/DefaultConstructorMarker;)V
+    invoke-direct {p0, v0}, Lorg/bouncycastle/util/Pack;-><init>(Lkotlin/jvm/internal/DefaultConstructorMarker;)V
 
     iput-boolean p1, p0, Lcoil/memory/ImmutableHardwareBitmapService;->allowHardware:Z
 

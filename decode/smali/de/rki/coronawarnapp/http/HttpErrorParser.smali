@@ -20,9 +20,9 @@
 .method public intercept(Lokhttp3/Interceptor$Chain;)Lokhttp3/Response;
     .locals 7
 
-    const/4 v0, 0x1
+    const/4 v0, 0x0
 
-    const/4 v1, 0x0
+    const/4 v1, 0x1
 
     :try_start_0
     move-object v2, p1
@@ -71,7 +71,7 @@
     .catch Ljava/net/SocketTimeoutException; {:try_start_2 .. :try_end_2} :catch_3
     .catch Ljava/net/UnknownHostException; {:try_start_2 .. :try_end_2} :catch_2
 
-    move-object v3, v1
+    move-object v3, v0
 
     :goto_0
     const-wide/16 v4, 0x800
@@ -99,7 +99,7 @@
 
     invoke-virtual {v4, v5, v6}, Ltimber/log/Timber$Forest;->w(Ljava/lang/String;[Ljava/lang/Object;)V
 
-    move-object v4, v1
+    move-object v4, v0
 
     :goto_1
     new-instance v5, Ljava/lang/StringBuilder;
@@ -178,13 +178,13 @@
 
     const/16 p1, 0x64
 
+    const/16 v6, 0xc8
+
     if-gt p1, v4, :cond_1
 
-    const/16 p1, 0xc7
+    if-ge v4, v6, :cond_1
 
-    if-gt v4, p1, :cond_1
-
-    move p1, v0
+    move p1, v1
 
     goto :goto_2
 
@@ -236,33 +236,27 @@
     :goto_2
     if-nez p1, :cond_a
 
-    const/16 p1, 0xc8
+    const/16 p1, 0x12c
 
-    if-gt p1, v4, :cond_2
+    if-gt v6, v4, :cond_2
 
-    const/16 p1, 0x12b
+    if-ge v4, p1, :cond_2
 
-    if-gt v4, p1, :cond_2
-
-    move p1, v0
+    move v6, v1
 
     goto :goto_3
 
     :cond_2
-    move p1, v2
+    move v6, v2
 
     :goto_3
-    if-nez p1, :cond_9
-
-    const/16 p1, 0x12c
+    if-nez v6, :cond_9
 
     if-gt p1, v4, :cond_3
 
-    const/16 p1, 0x18f
+    if-ge v4, v5, :cond_3
 
-    if-gt v4, p1, :cond_3
-
-    move p1, v0
+    move p1, v1
 
     goto :goto_4
 
@@ -272,50 +266,50 @@
     :goto_4
     if-nez p1, :cond_8
 
+    const/16 p1, 0x1f4
+
     if-gt v5, v4, :cond_4
 
-    const/16 p1, 0x1f3
+    if-ge v4, p1, :cond_4
 
-    if-gt v4, p1, :cond_4
-
-    move p1, v0
+    move v5, v1
 
     goto :goto_5
 
     :cond_4
-    move p1, v2
+    move v5, v2
 
     :goto_5
-    if-nez p1, :cond_7
-
-    const/16 p1, 0x1f4
+    if-nez v5, :cond_7
 
     if-gt p1, v4, :cond_5
 
-    if-gt v4, v6, :cond_5
+    const/16 p1, 0x258
 
-    move v2, v0
+    if-ge v4, p1, :cond_5
+
+    move v2, v1
 
     :cond_5
     if-eqz v2, :cond_6
 
     new-instance p1, Lde/rki/coronawarnapp/exception/http/CwaServerError;
 
-    invoke-direct {p1, v4, v3, v1}, Lde/rki/coronawarnapp/exception/http/CwaServerError;-><init>(ILjava/lang/String;Ljava/lang/Throwable;)V
+    invoke-direct {p1, v4, v3, v0}, Lde/rki/coronawarnapp/exception/http/CwaServerError;-><init>(ILjava/lang/String;Ljava/lang/Throwable;)V
 
     throw p1
 
     :cond_6
     new-instance p1, Lde/rki/coronawarnapp/exception/http/CwaWebException;
 
-    invoke-direct {p1, v4, v3, v1}, Lde/rki/coronawarnapp/exception/http/CwaWebException;-><init>(ILjava/lang/String;Ljava/lang/Throwable;)V
+    invoke-direct {p1, v4, v3, v0}, Lde/rki/coronawarnapp/exception/http/CwaWebException;-><init>(ILjava/lang/String;Ljava/lang/Throwable;)V
 
     throw p1
 
     :cond_7
     new-instance p1, Lde/rki/coronawarnapp/exception/http/CwaClientError;
 
-    invoke-direct {p1, v4, v3, v1}, Lde/rki/coronawarnapp/exception/http/CwaClientError;-><init>(ILjava/lang/String;Ljava/lang/Throwable;)V
+    invoke-direct {p1, v4, v3, v0}, Lde/rki/coronawarnapp/exception/http/CwaClientError;-><init>(ILjava/lang/String;Ljava/lang/Throwable;)V
 
     throw p1
 
@@ -345,7 +339,7 @@
 
     const/4 v2, 0x2
 
-    invoke-direct {p1, v3, v1, v2}, Lde/rki/coronawarnapp/exception/http/NetworkConnectTimeoutException;-><init>(Ljava/lang/String;Ljava/lang/Throwable;I)V
+    invoke-direct {p1, v3, v0, v2}, Lde/rki/coronawarnapp/exception/http/NetworkConnectTimeoutException;-><init>(Ljava/lang/String;Ljava/lang/Throwable;I)V
 
     throw p1
 
@@ -439,14 +433,14 @@
     :goto_6
     new-instance v2, Lde/rki/coronawarnapp/exception/http/CwaUnknownHostException;
 
-    invoke-direct {v2, v1, p1, v0}, Lde/rki/coronawarnapp/exception/http/CwaUnknownHostException;-><init>(Ljava/lang/String;Ljava/lang/Throwable;I)V
+    invoke-direct {v2, v0, p1, v1}, Lde/rki/coronawarnapp/exception/http/CwaUnknownHostException;-><init>(Ljava/lang/String;Ljava/lang/Throwable;I)V
 
     throw v2
 
     :goto_7
     new-instance v2, Lde/rki/coronawarnapp/exception/http/NetworkConnectTimeoutException;
 
-    invoke-direct {v2, v1, p1, v0}, Lde/rki/coronawarnapp/exception/http/NetworkConnectTimeoutException;-><init>(Ljava/lang/String;Ljava/lang/Throwable;I)V
+    invoke-direct {v2, v0, p1, v1}, Lde/rki/coronawarnapp/exception/http/NetworkConnectTimeoutException;-><init>(Ljava/lang/String;Ljava/lang/Throwable;I)V
 
     throw v2
 

@@ -17,8 +17,14 @@
 .end annotation
 
 
+# instance fields
+.field private final errorTypeConstructor:Lkotlin/reflect/jvm/internal/impl/types/TypeConstructor;
+
+.field private final typeParameterDescriptor:Lkotlin/reflect/jvm/internal/impl/descriptors/TypeParameterDescriptor;
+
+
 # direct methods
-.method public static synthetic $$$reportNull$$$0(I)V
+.method private static synthetic $$$reportNull$$$0(I)V
     .locals 10
 
     const/4 v0, 0x6
@@ -207,34 +213,36 @@
 .method public getBuiltIns()Lkotlin/reflect/jvm/internal/impl/builtins/KotlinBuiltIns;
     .locals 2
 
-    const/4 v0, 0x0
+    iget-object v0, p0, Lkotlin/reflect/jvm/internal/impl/types/ErrorUtils$UninferredParameterTypeConstructor;->typeParameterDescriptor:Lkotlin/reflect/jvm/internal/impl/descriptors/TypeParameterDescriptor;
 
     invoke-static {v0}, Lkotlin/reflect/jvm/internal/impl/resolve/descriptorUtil/DescriptorUtilsKt;->getBuiltIns(Lkotlin/reflect/jvm/internal/impl/descriptors/DeclarationDescriptor;)Lkotlin/reflect/jvm/internal/impl/builtins/KotlinBuiltIns;
 
-    move-result-object v1
+    move-result-object v0
 
-    if-eqz v1, :cond_0
+    if-nez v0, :cond_0
 
-    return-object v1
-
-    :cond_0
     const/4 v1, 0x4
 
     invoke-static {v1}, Lkotlin/reflect/jvm/internal/impl/types/ErrorUtils$UninferredParameterTypeConstructor;->$$$reportNull$$$0(I)V
 
-    throw v0
+    :cond_0
+    return-object v0
 .end method
 
 .method public getDeclarationDescriptor()Lkotlin/reflect/jvm/internal/impl/descriptors/ClassifierDescriptor;
     .locals 1
 
-    const/4 v0, 0x0
+    iget-object v0, p0, Lkotlin/reflect/jvm/internal/impl/types/ErrorUtils$UninferredParameterTypeConstructor;->errorTypeConstructor:Lkotlin/reflect/jvm/internal/impl/types/TypeConstructor;
 
-    throw v0
+    invoke-interface {v0}, Lkotlin/reflect/jvm/internal/impl/types/TypeConstructor;->getDeclarationDescriptor()Lkotlin/reflect/jvm/internal/impl/descriptors/ClassifierDescriptor;
+
+    move-result-object v0
+
+    return-object v0
 .end method
 
 .method public getParameters()Ljava/util/List;
-    .locals 1
+    .locals 2
     .annotation system Ldalvik/annotation/Signature;
         value = {
             "()",
@@ -244,13 +252,24 @@
         }
     .end annotation
 
-    const/4 v0, 0x0
+    iget-object v0, p0, Lkotlin/reflect/jvm/internal/impl/types/ErrorUtils$UninferredParameterTypeConstructor;->errorTypeConstructor:Lkotlin/reflect/jvm/internal/impl/types/TypeConstructor;
 
-    throw v0
+    invoke-interface {v0}, Lkotlin/reflect/jvm/internal/impl/types/TypeConstructor;->getParameters()Ljava/util/List;
+
+    move-result-object v0
+
+    if-nez v0, :cond_0
+
+    const/4 v1, 0x2
+
+    invoke-static {v1}, Lkotlin/reflect/jvm/internal/impl/types/ErrorUtils$UninferredParameterTypeConstructor;->$$$reportNull$$$0(I)V
+
+    :cond_0
+    return-object v0
 .end method
 
 .method public getSupertypes()Ljava/util/Collection;
-    .locals 1
+    .locals 2
     .annotation system Ldalvik/annotation/Signature;
         value = {
             "()",
@@ -260,32 +279,58 @@
         }
     .end annotation
 
-    const/4 v0, 0x0
+    iget-object v0, p0, Lkotlin/reflect/jvm/internal/impl/types/ErrorUtils$UninferredParameterTypeConstructor;->errorTypeConstructor:Lkotlin/reflect/jvm/internal/impl/types/TypeConstructor;
 
-    throw v0
+    invoke-interface {v0}, Lkotlin/reflect/jvm/internal/impl/types/TypeConstructor;->getSupertypes()Ljava/util/Collection;
+
+    move-result-object v0
+
+    if-nez v0, :cond_0
+
+    const/4 v1, 0x3
+
+    invoke-static {v1}, Lkotlin/reflect/jvm/internal/impl/types/ErrorUtils$UninferredParameterTypeConstructor;->$$$reportNull$$$0(I)V
+
+    :cond_0
+    return-object v0
+.end method
+
+.method public getTypeParameterDescriptor()Lkotlin/reflect/jvm/internal/impl/descriptors/TypeParameterDescriptor;
+    .locals 2
+
+    iget-object v0, p0, Lkotlin/reflect/jvm/internal/impl/types/ErrorUtils$UninferredParameterTypeConstructor;->typeParameterDescriptor:Lkotlin/reflect/jvm/internal/impl/descriptors/TypeParameterDescriptor;
+
+    if-nez v0, :cond_0
+
+    const/4 v1, 0x1
+
+    invoke-static {v1}, Lkotlin/reflect/jvm/internal/impl/types/ErrorUtils$UninferredParameterTypeConstructor;->$$$reportNull$$$0(I)V
+
+    :cond_0
+    return-object v0
 .end method
 
 .method public isDenotable()Z
     .locals 1
 
-    const/4 v0, 0x0
+    iget-object v0, p0, Lkotlin/reflect/jvm/internal/impl/types/ErrorUtils$UninferredParameterTypeConstructor;->errorTypeConstructor:Lkotlin/reflect/jvm/internal/impl/types/TypeConstructor;
 
-    throw v0
+    invoke-interface {v0}, Lkotlin/reflect/jvm/internal/impl/types/TypeConstructor;->isDenotable()Z
+
+    move-result v0
+
+    return v0
 .end method
 
 .method public refine(Lkotlin/reflect/jvm/internal/impl/types/checker/KotlinTypeRefiner;)Lkotlin/reflect/jvm/internal/impl/types/TypeConstructor;
     .locals 0
 
-    if-eqz p1, :cond_0
+    if-nez p1, :cond_0
 
-    return-object p0
-
-    :cond_0
     const/4 p1, 0x5
 
     invoke-static {p1}, Lkotlin/reflect/jvm/internal/impl/types/ErrorUtils$UninferredParameterTypeConstructor;->$$$reportNull$$$0(I)V
 
-    const/4 p1, 0x0
-
-    throw p1
+    :cond_0
+    return-object p0
 .end method

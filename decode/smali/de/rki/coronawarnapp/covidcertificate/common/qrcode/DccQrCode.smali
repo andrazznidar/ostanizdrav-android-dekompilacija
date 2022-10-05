@@ -6,6 +6,14 @@
 .implements Lde/rki/coronawarnapp/qrcode/scanner/QrCode;
 
 
+# annotations
+.annotation system Ldalvik/annotation/MemberClasses;
+    value = {
+        Lde/rki/coronawarnapp/covidcertificate/common/qrcode/DccQrCode$DefaultImpls;
+    }
+.end annotation
+
+
 # virtual methods
 .method public abstract getData()Lde/rki/coronawarnapp/covidcertificate/common/certificate/DccData;
     .annotation system Ldalvik/annotation/Signature;
@@ -19,8 +27,11 @@
     .end annotation
 .end method
 
-.method public abstract getQrCode()Ljava/lang/String;
+.method public abstract getHash()Ljava/lang/String;
 .end method
 
-.method public abstract getUniqueCertificateIdentifier()Ljava/lang/String;
+.method public abstract getPersonIdentifier()Lde/rki/coronawarnapp/covidcertificate/common/certificate/CertificatePersonIdentifier;
+.end method
+
+.method public abstract getQrCode()Ljava/lang/String;
 .end method

@@ -7,7 +7,7 @@
 
 
 # static fields
-.field public static final zza:Lkotlin/jvm/internal/SpreadBuilder;
+.field public static final zza:Lcom/google/android/play/core/internal/zzag;
 
 
 # instance fields
@@ -36,13 +36,13 @@
 .method public static constructor <clinit>()V
     .locals 2
 
-    new-instance v0, Lkotlin/jvm/internal/SpreadBuilder;
+    new-instance v0, Lcom/google/android/play/core/internal/zzag;
 
     const-string v1, "FakeAssetPackService"
 
-    invoke-direct {v0, v1}, Lkotlin/jvm/internal/SpreadBuilder;-><init>(Ljava/lang/String;)V
+    invoke-direct {v0, v1}, Lcom/google/android/play/core/internal/zzag;-><init>(Ljava/lang/String;)V
 
-    sput-object v0, Lcom/google/android/play/core/assetpacks/zzdl;->zza:Lkotlin/jvm/internal/SpreadBuilder;
+    sput-object v0, Lcom/google/android/play/core/assetpacks/zzdl;->zza:Lcom/google/android/play/core/internal/zzag;
 
     new-instance v0, Ljava/util/concurrent/atomic/AtomicInteger;
 
@@ -146,7 +146,7 @@
 
     const-string v0, "getChunkFileDescriptor failed"
 
-    sget-object v1, Lcom/google/android/play/core/assetpacks/zzdl;->zza:Lkotlin/jvm/internal/SpreadBuilder;
+    sget-object v1, Lcom/google/android/play/core/assetpacks/zzdl;->zza:Lcom/google/android/play/core/internal/zzag;
 
     const/4 v2, 0x4
 
@@ -178,7 +178,7 @@
 
     const-string p4, "getChunkFileDescriptor(session=%d, %s, %s, %d)"
 
-    invoke-virtual {v1, p4, v2}, Lkotlin/jvm/internal/SpreadBuilder;->zzd(Ljava/lang/String;[Ljava/lang/Object;)I
+    invoke-virtual {v1, p4, v2}, Lcom/google/android/play/core/internal/zzag;->zzd(Ljava/lang/String;[Ljava/lang/Object;)I
 
     new-instance p4, Lcom/google/android/play/core/tasks/zzm;
 
@@ -198,7 +198,7 @@
 
     aget-object v4, p2, v2
 
-    invoke-static {v4}, Lokio/-Platform;->zza(Ljava/io/File;)Ljava/lang/String;
+    invoke-static {v4}, Lcom/google/android/play/core/internal/zzcj;->zza(Ljava/io/File;)Ljava/lang/String;
 
     move-result-object v5
 
@@ -246,13 +246,13 @@
     :catch_0
     move-exception p2
 
-    sget-object p3, Lcom/google/android/play/core/assetpacks/zzdl;->zza:Lkotlin/jvm/internal/SpreadBuilder;
+    sget-object p3, Lcom/google/android/play/core/assetpacks/zzdl;->zza:Lcom/google/android/play/core/internal/zzag;
 
     new-array p1, p1, [Ljava/lang/Object;
 
     aput-object p2, p1, v3
 
-    invoke-virtual {p3, v0, p1}, Lkotlin/jvm/internal/SpreadBuilder;->zze(Ljava/lang/String;[Ljava/lang/Object;)I
+    invoke-virtual {p3, v0, p1}, Lcom/google/android/play/core/internal/zzag;->zze(Ljava/lang/String;[Ljava/lang/Object;)I
 
     invoke-virtual {p4, p2}, Lcom/google/android/play/core/tasks/zzm;->zza(Ljava/lang/Exception;)V
 
@@ -261,13 +261,13 @@
     :catch_1
     move-exception p2
 
-    sget-object p3, Lcom/google/android/play/core/assetpacks/zzdl;->zza:Lkotlin/jvm/internal/SpreadBuilder;
+    sget-object p3, Lcom/google/android/play/core/assetpacks/zzdl;->zza:Lcom/google/android/play/core/internal/zzag;
 
     new-array p1, p1, [Ljava/lang/Object;
 
     aput-object p2, p1, v3
 
-    invoke-virtual {p3, v0, p1}, Lkotlin/jvm/internal/SpreadBuilder;->zze(Ljava/lang/String;[Ljava/lang/Object;)I
+    invoke-virtual {p3, v0, p1}, Lcom/google/android/play/core/internal/zzag;->zze(Ljava/lang/String;[Ljava/lang/Object;)I
 
     new-instance p1, Lcom/google/android/play/core/common/LocalTestingException;
 
@@ -294,7 +294,7 @@
         }
     .end annotation
 
-    sget-object p1, Lcom/google/android/play/core/assetpacks/zzdl;->zza:Lkotlin/jvm/internal/SpreadBuilder;
+    sget-object p1, Lcom/google/android/play/core/assetpacks/zzdl;->zza:Lcom/google/android/play/core/internal/zzag;
 
     const/4 v0, 0x0
 
@@ -302,7 +302,7 @@
 
     const-string/jumbo v1, "syncPacks()"
 
-    invoke-virtual {p1, v1, v0}, Lkotlin/jvm/internal/SpreadBuilder;->zzd(Ljava/lang/String;[Ljava/lang/Object;)I
+    invoke-virtual {p1, v1, v0}, Lcom/google/android/play/core/internal/zzag;->zzd(Ljava/lang/String;[Ljava/lang/Object;)I
 
     new-instance p1, Ljava/util/ArrayList;
 
@@ -328,7 +328,7 @@
         }
     .end annotation
 
-    sget-object v0, Lcom/google/android/play/core/assetpacks/zzdl;->zza:Lkotlin/jvm/internal/SpreadBuilder;
+    sget-object v0, Lcom/google/android/play/core/assetpacks/zzdl;->zza:Lcom/google/android/play/core/internal/zzag;
 
     const/4 v1, 0x1
 
@@ -340,7 +340,7 @@
 
     const-string p1, "cancelDownload(%s)"
 
-    invoke-virtual {v0, p1, v1}, Lkotlin/jvm/internal/SpreadBuilder;->zzd(Ljava/lang/String;[Ljava/lang/Object;)I
+    invoke-virtual {v0, p1, v1}, Lcom/google/android/play/core/internal/zzag;->zzd(Ljava/lang/String;[Ljava/lang/Object;)I
 
     return-void
 .end method
@@ -348,7 +348,7 @@
 .method public final zzf()V
     .locals 3
 
-    sget-object v0, Lcom/google/android/play/core/assetpacks/zzdl;->zza:Lkotlin/jvm/internal/SpreadBuilder;
+    sget-object v0, Lcom/google/android/play/core/assetpacks/zzdl;->zza:Lcom/google/android/play/core/internal/zzag;
 
     const/4 v1, 0x0
 
@@ -356,7 +356,7 @@
 
     const-string v2, "keepAlive"
 
-    invoke-virtual {v0, v2, v1}, Lkotlin/jvm/internal/SpreadBuilder;->zzd(Ljava/lang/String;[Ljava/lang/Object;)I
+    invoke-virtual {v0, v2, v1}, Lcom/google/android/play/core/internal/zzag;->zzd(Ljava/lang/String;[Ljava/lang/Object;)I
 
     return-void
 .end method
@@ -364,7 +364,7 @@
 .method public final zzg(ILjava/lang/String;Ljava/lang/String;I)V
     .locals 0
 
-    sget-object p1, Lcom/google/android/play/core/assetpacks/zzdl;->zza:Lkotlin/jvm/internal/SpreadBuilder;
+    sget-object p1, Lcom/google/android/play/core/assetpacks/zzdl;->zza:Lcom/google/android/play/core/internal/zzag;
 
     const/4 p2, 0x0
 
@@ -372,7 +372,7 @@
 
     const-string p3, "notifyChunkTransferred"
 
-    invoke-virtual {p1, p3, p2}, Lkotlin/jvm/internal/SpreadBuilder;->zzd(Ljava/lang/String;[Ljava/lang/Object;)I
+    invoke-virtual {p1, p3, p2}, Lcom/google/android/play/core/internal/zzag;->zzd(Ljava/lang/String;[Ljava/lang/Object;)I
 
     return-void
 .end method
@@ -380,7 +380,7 @@
 .method public final zzh(ILjava/lang/String;)V
     .locals 3
 
-    sget-object v0, Lcom/google/android/play/core/assetpacks/zzdl;->zza:Lkotlin/jvm/internal/SpreadBuilder;
+    sget-object v0, Lcom/google/android/play/core/assetpacks/zzdl;->zza:Lcom/google/android/play/core/internal/zzag;
 
     const/4 v1, 0x0
 
@@ -388,7 +388,7 @@
 
     const-string v2, "notifyModuleCompleted"
 
-    invoke-virtual {v0, v2, v1}, Lkotlin/jvm/internal/SpreadBuilder;->zzd(Ljava/lang/String;[Ljava/lang/Object;)I
+    invoke-virtual {v0, v2, v1}, Lcom/google/android/play/core/internal/zzag;->zzd(Ljava/lang/String;[Ljava/lang/Object;)I
 
     iget-object v0, p0, Lcom/google/android/play/core/assetpacks/zzdl;->zzh:Lcom/google/android/play/core/internal/zzco;
 
@@ -410,7 +410,7 @@
 .method public final zzi(I)V
     .locals 2
 
-    sget-object p1, Lcom/google/android/play/core/assetpacks/zzdl;->zza:Lkotlin/jvm/internal/SpreadBuilder;
+    sget-object p1, Lcom/google/android/play/core/assetpacks/zzdl;->zza:Lcom/google/android/play/core/internal/zzag;
 
     const/4 v0, 0x0
 
@@ -418,7 +418,7 @@
 
     const-string v1, "notifySessionFailed"
 
-    invoke-virtual {p1, v1, v0}, Lkotlin/jvm/internal/SpreadBuilder;->zzd(Ljava/lang/String;[Ljava/lang/Object;)I
+    invoke-virtual {p1, v1, v0}, Lcom/google/android/play/core/internal/zzag;->zzd(Ljava/lang/String;[Ljava/lang/Object;)I
 
     return-void
 .end method
@@ -504,13 +504,13 @@
     :goto_1
     invoke-virtual {v9, v10}, Ljava/util/ArrayList;->add(Ljava/lang/Object;)Z
 
-    invoke-static {v8}, Lokio/-Platform;->zza(Ljava/io/File;)Ljava/lang/String;
+    invoke-static {v8}, Lcom/google/android/play/core/internal/zzcj;->zza(Ljava/io/File;)Ljava/lang/String;
 
     move-result-object v10
 
     const-string v11, "chunk_intents"
 
-    invoke-static {v11, p2, v10}, Lkotlinx/coroutines/flow/FlowKt;->zzb(Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;)Ljava/lang/String;
+    invoke-static {v11, p2, v10}, Lcom/google/android/play/core/assetpacks/model/zzb;->zzb(Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;)Ljava/lang/String;
 
     move-result-object v11
 
@@ -518,7 +518,7 @@
 
     const-string/jumbo v9, "uncompressed_hash_sha256"
 
-    invoke-static {v9, p2, v10}, Lkotlinx/coroutines/flow/FlowKt;->zzb(Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;)Ljava/lang/String;
+    invoke-static {v9, p2, v10}, Lcom/google/android/play/core/assetpacks/model/zzb;->zzb(Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;)Ljava/lang/String;
 
     move-result-object v9
 
@@ -542,7 +542,7 @@
 
     const-string/jumbo v7, "uncompressed_size"
 
-    invoke-static {v7, p2, v10}, Lkotlinx/coroutines/flow/FlowKt;->zzb(Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;)Ljava/lang/String;
+    invoke-static {v7, p2, v10}, Lcom/google/android/play/core/assetpacks/model/zzb;->zzb(Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;)Ljava/lang/String;
 
     move-result-object v7
 
@@ -591,7 +591,7 @@
     :cond_1
     const-string/jumbo p1, "slice_ids"
 
-    invoke-static {p1, p2}, Lkotlinx/coroutines/flow/FlowKt;->zza(Ljava/lang/String;Ljava/lang/String;)Ljava/lang/String;
+    invoke-static {p1, p2}, Lcom/google/android/play/core/assetpacks/model/zzb;->zza(Ljava/lang/String;Ljava/lang/String;)Ljava/lang/String;
 
     move-result-object p1
 
@@ -599,7 +599,7 @@
 
     const-string p1, "pack_version"
 
-    invoke-static {p1, p2}, Lkotlinx/coroutines/flow/FlowKt;->zza(Ljava/lang/String;Ljava/lang/String;)Ljava/lang/String;
+    invoke-static {p1, p2}, Lcom/google/android/play/core/assetpacks/model/zzb;->zza(Ljava/lang/String;Ljava/lang/String;)Ljava/lang/String;
 
     move-result-object p1
 
@@ -615,7 +615,7 @@
 
     const-string/jumbo p1, "status"
 
-    invoke-static {p1, p2}, Lkotlinx/coroutines/flow/FlowKt;->zza(Ljava/lang/String;Ljava/lang/String;)Ljava/lang/String;
+    invoke-static {p1, p2}, Lcom/google/android/play/core/assetpacks/model/zzb;->zza(Ljava/lang/String;Ljava/lang/String;)Ljava/lang/String;
 
     move-result-object p1
 
@@ -623,7 +623,7 @@
 
     const-string p1, "error_code"
 
-    invoke-static {p1, p2}, Lkotlinx/coroutines/flow/FlowKt;->zza(Ljava/lang/String;Ljava/lang/String;)Ljava/lang/String;
+    invoke-static {p1, p2}, Lcom/google/android/play/core/assetpacks/model/zzb;->zza(Ljava/lang/String;Ljava/lang/String;)Ljava/lang/String;
 
     move-result-object p1
 
@@ -631,7 +631,7 @@
 
     const-string p1, "bytes_downloaded"
 
-    invoke-static {p1, p2}, Lkotlinx/coroutines/flow/FlowKt;->zza(Ljava/lang/String;Ljava/lang/String;)Ljava/lang/String;
+    invoke-static {p1, p2}, Lcom/google/android/play/core/assetpacks/model/zzb;->zza(Ljava/lang/String;Ljava/lang/String;)Ljava/lang/String;
 
     move-result-object v1
 
@@ -643,7 +643,7 @@
 
     const-string/jumbo v1, "total_bytes_to_download"
 
-    invoke-static {v1, p2}, Lkotlinx/coroutines/flow/FlowKt;->zza(Ljava/lang/String;Ljava/lang/String;)Ljava/lang/String;
+    invoke-static {v1, p2}, Lcom/google/android/play/core/assetpacks/model/zzb;->zza(Ljava/lang/String;Ljava/lang/String;)Ljava/lang/String;
 
     move-result-object v2
 
@@ -687,9 +687,9 @@
 
     iget-object p2, p0, Lcom/google/android/play/core/assetpacks/zzdl;->zzj:Landroid/os/Handler;
 
-    new-instance p3, Lcom/google/android/gms/tasks/zze;
+    new-instance p3, Lcom/google/android/play/core/assetpacks/zzdi;
 
-    invoke-direct {p3, p0, p1}, Lcom/google/android/gms/tasks/zze;-><init>(Lcom/google/android/play/core/assetpacks/zzdl;Landroid/content/Intent;)V
+    invoke-direct {p3, p0, p1}, Lcom/google/android/play/core/assetpacks/zzdi;-><init>(Lcom/google/android/play/core/assetpacks/zzdl;Landroid/content/Intent;)V
 
     invoke-virtual {p2, p3}, Landroid/os/Handler;->post(Ljava/lang/Runnable;)Z
 
@@ -741,7 +741,7 @@
 
     aget-object v5, v0, v4
 
-    invoke-static {v5}, Lokio/-Platform;->zza(Ljava/io/File;)Ljava/lang/String;
+    invoke-static {v5}, Lcom/google/android/play/core/internal/zzcj;->zza(Ljava/io/File;)Ljava/lang/String;
 
     move-result-object v5
 

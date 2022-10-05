@@ -17,16 +17,16 @@
 
     if-eqz p1, :cond_0
 
-    sget-object p1, Landroidx/constraintlayout/core/widgets/analyzer/DependencyNode$Type;->HORIZONTAL_DIMENSION:Landroidx/constraintlayout/core/widgets/analyzer/DependencyNode$Type;
+    const/4 p1, 0x2
 
-    iput-object p1, p0, Landroidx/constraintlayout/core/widgets/analyzer/DependencyNode;->type:Landroidx/constraintlayout/core/widgets/analyzer/DependencyNode$Type;
+    iput p1, p0, Landroidx/constraintlayout/core/widgets/analyzer/DependencyNode;->type:I
 
     goto :goto_0
 
     :cond_0
-    sget-object p1, Landroidx/constraintlayout/core/widgets/analyzer/DependencyNode$Type;->VERTICAL_DIMENSION:Landroidx/constraintlayout/core/widgets/analyzer/DependencyNode$Type;
+    const/4 p1, 0x3
 
-    iput-object p1, p0, Landroidx/constraintlayout/core/widgets/analyzer/DependencyNode;->type:Landroidx/constraintlayout/core/widgets/analyzer/DependencyNode$Type;
+    iput p1, p0, Landroidx/constraintlayout/core/widgets/analyzer/DependencyNode;->type:I
 
     :goto_0
     return-void

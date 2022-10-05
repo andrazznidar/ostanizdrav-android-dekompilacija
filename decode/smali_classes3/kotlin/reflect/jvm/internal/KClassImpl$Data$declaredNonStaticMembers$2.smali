@@ -1,4 +1,4 @@
-.class public final Lkotlin/reflect/jvm/internal/KClassImpl$Data$declaredNonStaticMembers$2;
+.class final Lkotlin/reflect/jvm/internal/KClassImpl$Data$declaredNonStaticMembers$2;
 .super Lkotlin/jvm/internal/Lambda;
 .source "KClassImpl.kt"
 
@@ -27,6 +27,27 @@
     }
 .end annotation
 
+.annotation runtime Lkotlin/Metadata;
+    d1 = {
+        "\u0000\u0014\n\u0000\n\u0002\u0010\u001e\n\u0002\u0018\u0002\n\u0002\u0008\u0002\n\u0002\u0010\u0000\n\u0000\u0010\u0000\u001a\u001e\u0012\u0008\u0012\u0006\u0012\u0002\u0008\u00030\u0002 \u0003*\u000e\u0012\u0008\u0012\u0006\u0012\u0002\u0008\u00030\u0002\u0018\u00010\u00010\u0001\"\u0008\u0008\u0000\u0010\u0004*\u00020\u0005H\n\u00a2\u0006\u0002\u0008\u0006"
+    }
+    d2 = {
+        "<anonymous>",
+        "",
+        "Lkotlin/reflect/jvm/internal/KCallableImpl;",
+        "kotlin.jvm.PlatformType",
+        "T",
+        "",
+        "invoke"
+    }
+    k = 0x3
+    mv = {
+        0x1,
+        0x5,
+        0x1
+    }
+.end annotation
+
 
 # instance fields
 .field public final synthetic this$0:Lkotlin/reflect/jvm/internal/KClassImpl$Data;
@@ -47,8 +68,26 @@
 
 
 # virtual methods
-.method public invoke()Ljava/lang/Object;
+.method public bridge synthetic invoke()Ljava/lang/Object;
+    .locals 1
+
+    invoke-virtual {p0}, Lkotlin/reflect/jvm/internal/KClassImpl$Data$declaredNonStaticMembers$2;->invoke()Ljava/util/Collection;
+
+    move-result-object v0
+
+    return-object v0
+.end method
+
+.method public final invoke()Ljava/util/Collection;
     .locals 3
+    .annotation system Ldalvik/annotation/Signature;
+        value = {
+            "()",
+            "Ljava/util/Collection<",
+            "Lkotlin/reflect/jvm/internal/KCallableImpl<",
+            "*>;>;"
+        }
+    .end annotation
 
     iget-object v0, p0, Lkotlin/reflect/jvm/internal/KClassImpl$Data$declaredNonStaticMembers$2;->this$0:Lkotlin/reflect/jvm/internal/KClassImpl$Data;
 

@@ -12,7 +12,7 @@
                 </LinearLayout>
                 <com.google.android.material.appbar.MaterialToolbar android:theme="@style/Theme.MaterialComponents" android:id="@id/toolbar" android:layout_width="fill_parent" android:layout_height="?actionBarSize" app:layout_collapseMode="pin" app:layout_scrollFlags="scroll|enterAlways" app:menu="@menu/menu_recovery_certificate_details" app:navigationIcon="@drawable/ic_back" app:popupTheme="@style/Theme.MaterialComponents.DayNight">
                     <LinearLayout android:gravity="center_vertical" android:orientation="horizontal" android:id="@id/header_text_layout" android:layout_width="fill_parent" android:layout_height="fill_parent">
-                        <ImageView android:visibility="gone" android:layout_width="fill_parent" android:layout_height="42.0dip" android:importantForAccessibility="no" android:layout_marginEnd="32.0dip" app:srcCompat="@drawable/ic_cwa_logo_white" />
+                        <ImageView android:layout_width="fill_parent" android:layout_height="wrap_content" android:importantForAccessibility="no" android:layout_marginEnd="32.0dip" app:srcCompat="@drawable/ic_cwa_logo_white" />
                     </LinearLayout>
                 </com.google.android.material.appbar.MaterialToolbar>
             </com.google.android.material.appbar.CollapsingToolbarLayout>
@@ -42,7 +42,7 @@
                     <TextView android:layout_width="fill_parent" android:layout_height="wrap_content" android:layout_marginTop="16.0dip" android:text="@string/covid_certificate_attribute_certificate_id" style="@style/body1Medium" />
                     <TextView android:id="@id/certificate_id" android:layout_width="fill_parent" android:layout_height="wrap_content" android:layout_marginTop="2.0dip" style="@style/body1" />
                 </LinearLayout>
-                <include android:id="@id/expiration_notice" android:visibility="gone" android:layout_width="fill_parent" android:layout_height="wrap_content" android:layout_marginLeft="24.0dip" android:layout_marginTop="8.0dip" android:layout_marginRight="24.0dip" android:layout_marginHorizontal="24.0dip" layout="@layout/include_expiration_notice_card" />
+                <include android:id="@id/expiration_notice" android:layout_width="fill_parent" android:layout_height="wrap_content" android:layout_marginLeft="24.0dip" android:layout_marginTop="8.0dip" android:layout_marginRight="24.0dip" android:layout_marginHorizontal="24.0dip" layout="@layout/include_expiration_notice_card" />
                 <de.rki.coronawarnapp.covidcertificate.common.certificate.TravelNoticeView android:id="@id/travel_notice" android:focusable="true" android:layout_width="fill_parent" android:layout_height="wrap_content" />
             </LinearLayout>
         </androidx.core.widget.NestedScrollView>

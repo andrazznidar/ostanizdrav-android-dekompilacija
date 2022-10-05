@@ -128,7 +128,7 @@
 
     iget-object v1, p0, Lde/rki/coronawarnapp/databinding/IncludeDividerBindingImpl;->mboundView1:Landroid/view/View;
 
-    const v2, 0x7f0600c7
+    const v2, 0x7f0600ce
 
     invoke-static {v1, v2}, Landroidx/databinding/ViewDataBinding;->getColorFromResource(Landroid/view/View;I)I
 

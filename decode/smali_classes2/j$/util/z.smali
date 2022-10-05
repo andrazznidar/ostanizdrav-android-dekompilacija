@@ -1,99 +1,22 @@
-.class final Lj$/util/z;
-.super Lj$/util/D;
+.class public interface abstract Lj$/util/z;
+.super Ljava/lang/Object;
 
 # interfaces
-.implements Lj$/util/Spliterator$a;
-
-
-# direct methods
-.method constructor <init>()V
-    .locals 0
-
-    invoke-direct {p0}, Lj$/util/D;-><init>()V
-
-    return-void
-.end method
+.implements Lj$/util/D;
 
 
 # virtual methods
-.method public synthetic b(Lj$/util/function/Consumer;)Z
-    .locals 0
-
-    invoke-static {p0, p1}, Lj$/util/a;->j(Lj$/util/Spliterator$a;Lj$/util/function/Consumer;)Z
-
-    move-result p1
-
-    return p1
+.method public abstract a(Lj$/util/function/Consumer;)Z
 .end method
 
-.method public synthetic forEachRemaining(Lj$/util/function/Consumer;)V
-    .locals 0
-
-    invoke-static {p0, p1}, Lj$/util/a;->b(Lj$/util/Spliterator$a;Lj$/util/function/Consumer;)V
-
-    return-void
+.method public abstract forEachRemaining(Lj$/util/function/Consumer;)V
 .end method
 
-.method public getComparator()Ljava/util/Comparator;
-    .locals 1
-
-    new-instance v0, Ljava/lang/IllegalStateException;
-
-    invoke-direct {v0}, Ljava/lang/IllegalStateException;-><init>()V
-
-    throw v0
+.method public abstract h(Lj$/util/function/IntConsumer;)Z
 .end method
 
-.method public synthetic getExactSizeIfKnown()J
-    .locals 2
-
-    invoke-static {p0}, Lj$/util/a;->e(Lj$/util/Spliterator;)J
-
-    move-result-wide v0
-
-    return-wide v0
+.method public abstract m(Lj$/util/function/IntConsumer;)V
 .end method
 
-.method public h(Lj$/util/function/e;)V
-    .locals 0
-
-    invoke-static {p1}, Ljava/util/Objects;->requireNonNull(Ljava/lang/Object;)Ljava/lang/Object;
-
-    return-void
-.end method
-
-.method public synthetic hasCharacteristics(I)Z
-    .locals 0
-
-    invoke-static {p0, p1}, Lj$/util/a;->f(Lj$/util/Spliterator;I)Z
-
-    move-result p1
-
-    return p1
-.end method
-
-.method public l(Lj$/util/function/e;)Z
-    .locals 0
-
-    invoke-static {p1}, Ljava/util/Objects;->requireNonNull(Ljava/lang/Object;)Ljava/lang/Object;
-
-    const/4 p1, 0x0
-
-    return p1
-.end method
-
-.method public bridge synthetic trySplit()Lj$/util/Spliterator$a;
-    .locals 1
-
-    const/4 v0, 0x0
-
-    return-object v0
-.end method
-
-.method public bridge synthetic trySplit()Lj$/util/Spliterator$d;
-    .locals 1
-
-    const/4 v0, 0x0
-
-    return-object v0
+.method public abstract trySplit()Lj$/util/z;
 .end method

@@ -117,7 +117,7 @@
 
     iget-object v1, v0, Landroidx/core/app/NotificationCompat$Builder;->mNotification:Landroid/app/Notification;
 
-    const v2, 0x7f080166
+    const v2, 0x7f08015f
 
     iput v2, v1, Landroid/app/Notification;->icon:I
 
@@ -151,7 +151,7 @@
 
     iget-object v1, p0, Lde/rki/coronawarnapp/notification/GeneralNotifications;->context:Landroid/content/Context;
 
-    const v2, 0x7f1302c9
+    const v2, 0x7f1302dc
 
     invoke-virtual {v1, v2}, Landroid/content/Context;->getString(I)Ljava/lang/String;
 
@@ -161,7 +161,7 @@
 
     iget-object v1, p0, Lde/rki/coronawarnapp/notification/GeneralNotifications;->context:Landroid/content/Context;
 
-    const v2, 0x7f1302c3
+    const v2, 0x7f1302d8
 
     invoke-virtual {v1, v2}, Landroid/content/Context;->getString(I)Ljava/lang/String;
 
@@ -171,7 +171,7 @@
 
     invoke-static {v1, v2}, Lkotlin/jvm/internal/Intrinsics;->checkNotNullExpressionValue(Ljava/lang/Object;Ljava/lang/String;)V
 
-    invoke-static {v0, v1}, Lcom/google/android/gms/internal/nearby/zznn;->setContentTextExpandable(Landroidx/core/app/NotificationCompat$Builder;Ljava/lang/String;)Landroidx/core/app/NotificationCompat$Builder;
+    invoke-static {v0, v1}, Lorg/ejml/ops/DConvertMatrixStruct;->setContentTextExpandable(Landroidx/core/app/NotificationCompat$Builder;Ljava/lang/String;)Landroidx/core/app/NotificationCompat$Builder;
 
     invoke-virtual {v0}, Landroidx/core/app/NotificationCompat$Builder;->build()Landroid/app/Notification;
 
@@ -274,7 +274,7 @@
 
     iget-object v1, p0, Lde/rki/coronawarnapp/notification/GeneralNotifications;->context:Landroid/content/Context;
 
-    const v3, 0x7f1301e4
+    const v3, 0x7f130210
 
     invoke-virtual {v1, v3}, Landroid/content/Context;->getString(I)Ljava/lang/String;
 
@@ -284,7 +284,7 @@
 
     iget-object v1, p0, Lde/rki/coronawarnapp/notification/GeneralNotifications;->context:Landroid/content/Context;
 
-    const v3, 0x7f1301e3
+    const v3, 0x7f13020f
 
     invoke-virtual {v1, v3}, Landroid/content/Context;->getString(I)Ljava/lang/String;
 
@@ -319,10 +319,6 @@
     iput-object v1, v0, Landroidx/core/app/NotificationChannelCompat;->mSound:Landroid/net/Uri;
 
     iput-object v2, v0, Landroidx/core/app/NotificationChannelCompat;->mAudioAttributes:Landroid/media/AudioAttributes;
-
-    const-string v1, "Builder(\n            MAI\u2026()\n\n            ).build()"
-
-    invoke-static {v0, v1}, Lkotlin/jvm/internal/Intrinsics;->checkNotNullExpressionValue(Ljava/lang/Object;Ljava/lang/String;)V
 
     iget-object v1, p0, Lde/rki/coronawarnapp/notification/GeneralNotifications;->notificationManagerCompat:Landroidx/core/app/NotificationManagerCompat;
 

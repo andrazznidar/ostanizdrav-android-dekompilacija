@@ -161,9 +161,15 @@
 
     invoke-interface {v7}, Lde/rki/coronawarnapp/coronatest/type/CoronaTest;->isSubmitted()Z
 
+    move-result v8
+
+    if-nez v8, :cond_1
+
+    invoke-interface {v7}, Lde/rki/coronawarnapp/coronatest/type/CoronaTest;->isViewed()Z
+
     move-result v7
 
-    if-nez v7, :cond_1
+    if-eqz v7, :cond_1
 
     goto :goto_1
 

@@ -1,4 +1,4 @@
-.class public final Lkotlin/reflect/jvm/internal/impl/load/java/typeEnhancement/EnhancedTypeAnnotationDescriptor;
+.class final Lkotlin/reflect/jvm/internal/impl/load/java/typeEnhancement/EnhancedTypeAnnotationDescriptor;
 .super Ljava/lang/Object;
 .source "typeEnhancement.kt"
 
@@ -23,12 +23,28 @@
     return-void
 .end method
 
-.method public constructor <init>()V
+.method private constructor <init>()V
     .locals 0
 
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
     return-void
+.end method
+
+.method private final throwError()Ljava/lang/Void;
+    .locals 2
+
+    new-instance v0, Ljava/lang/IllegalStateException;
+
+    const-string v1, "No methods should be called on this descriptor. Only its presence matters"
+
+    invoke-virtual {v1}, Ljava/lang/Object;->toString()Ljava/lang/String;
+
+    move-result-object v1
+
+    invoke-direct {v0, v1}, Ljava/lang/IllegalStateException;-><init>(Ljava/lang/String;)V
+
+    throw v0
 .end method
 
 
@@ -45,7 +61,7 @@
         }
     .end annotation
 
-    invoke-virtual {p0}, Lkotlin/reflect/jvm/internal/impl/load/java/typeEnhancement/EnhancedTypeAnnotationDescriptor;->throwError()Ljava/lang/Void;
+    invoke-direct {p0}, Lkotlin/reflect/jvm/internal/impl/load/java/typeEnhancement/EnhancedTypeAnnotationDescriptor;->throwError()Ljava/lang/Void;
 
     const/4 v0, 0x0
 
@@ -65,7 +81,7 @@
 .method public getSource()Lkotlin/reflect/jvm/internal/impl/descriptors/SourceElement;
     .locals 1
 
-    invoke-virtual {p0}, Lkotlin/reflect/jvm/internal/impl/load/java/typeEnhancement/EnhancedTypeAnnotationDescriptor;->throwError()Ljava/lang/Void;
+    invoke-direct {p0}, Lkotlin/reflect/jvm/internal/impl/load/java/typeEnhancement/EnhancedTypeAnnotationDescriptor;->throwError()Ljava/lang/Void;
 
     const/4 v0, 0x0
 
@@ -75,25 +91,9 @@
 .method public getType()Lkotlin/reflect/jvm/internal/impl/types/KotlinType;
     .locals 1
 
-    invoke-virtual {p0}, Lkotlin/reflect/jvm/internal/impl/load/java/typeEnhancement/EnhancedTypeAnnotationDescriptor;->throwError()Ljava/lang/Void;
+    invoke-direct {p0}, Lkotlin/reflect/jvm/internal/impl/load/java/typeEnhancement/EnhancedTypeAnnotationDescriptor;->throwError()Ljava/lang/Void;
 
     const/4 v0, 0x0
-
-    throw v0
-.end method
-
-.method public final throwError()Ljava/lang/Void;
-    .locals 2
-
-    new-instance v0, Ljava/lang/IllegalStateException;
-
-    const-string v1, "No methods should be called on this descriptor. Only its presence matters"
-
-    invoke-virtual {v1}, Ljava/lang/Object;->toString()Ljava/lang/String;
-
-    move-result-object v1
-
-    invoke-direct {v0, v1}, Ljava/lang/IllegalStateException;-><init>(Ljava/lang/String;)V
 
     throw v0
 .end method

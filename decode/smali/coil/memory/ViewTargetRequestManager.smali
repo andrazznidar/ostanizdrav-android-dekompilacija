@@ -116,10 +116,6 @@
 .method public final setCurrentRequestJob(Lkotlinx/coroutines/Job;)Ljava/util/UUID;
     .locals 3
 
-    const-string v0, "job"
-
-    invoke-static {p1, v0}, Lkotlin/jvm/internal/Intrinsics;->checkNotNullParameter(Ljava/lang/Object;Ljava/lang/String;)V
-
     iget-object v0, p0, Lcoil/memory/ViewTargetRequestManager;->currentRequestId:Ljava/util/UUID;
 
     if-eqz v0, :cond_0

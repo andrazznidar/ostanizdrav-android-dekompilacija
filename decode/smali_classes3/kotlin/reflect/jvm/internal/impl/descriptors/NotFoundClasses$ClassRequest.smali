@@ -1,4 +1,4 @@
-.class public final Lkotlin/reflect/jvm/internal/impl/descriptors/NotFoundClasses$ClassRequest;
+.class final Lkotlin/reflect/jvm/internal/impl/descriptors/NotFoundClasses$ClassRequest;
 .super Ljava/lang/Object;
 .source "NotFoundClasses.kt"
 
@@ -15,9 +15,9 @@
 
 
 # instance fields
-.field public final classId:Lkotlin/reflect/jvm/internal/impl/name/ClassId;
+.field private final classId:Lkotlin/reflect/jvm/internal/impl/name/ClassId;
 
-.field public final typeParametersCount:Ljava/util/List;
+.field private final typeParametersCount:Ljava/util/List;
     .annotation system Ldalvik/annotation/Signature;
         value = {
             "Ljava/util/List<",
@@ -30,7 +30,7 @@
 
 # direct methods
 .method public constructor <init>(Lkotlin/reflect/jvm/internal/impl/name/ClassId;Ljava/util/List;)V
-    .locals 0
+    .locals 1
     .annotation system Ldalvik/annotation/Signature;
         value = {
             "(",
@@ -40,6 +40,14 @@
             ">;)V"
         }
     .end annotation
+
+    const-string v0, "classId"
+
+    invoke-static {p1, v0}, Lkotlin/jvm/internal/Intrinsics;->checkNotNullParameter(Ljava/lang/Object;Ljava/lang/String;)V
+
+    const-string v0, "typeParametersCount"
+
+    invoke-static {p2, v0}, Lkotlin/jvm/internal/Intrinsics;->checkNotNullParameter(Ljava/lang/Object;Ljava/lang/String;)V
 
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
@@ -52,6 +60,30 @@
 
 
 # virtual methods
+.method public final component1()Lkotlin/reflect/jvm/internal/impl/name/ClassId;
+    .locals 1
+
+    iget-object v0, p0, Lkotlin/reflect/jvm/internal/impl/descriptors/NotFoundClasses$ClassRequest;->classId:Lkotlin/reflect/jvm/internal/impl/name/ClassId;
+
+    return-object v0
+.end method
+
+.method public final component2()Ljava/util/List;
+    .locals 1
+    .annotation system Ldalvik/annotation/Signature;
+        value = {
+            "()",
+            "Ljava/util/List<",
+            "Ljava/lang/Integer;",
+            ">;"
+        }
+    .end annotation
+
+    iget-object v0, p0, Lkotlin/reflect/jvm/internal/impl/descriptors/NotFoundClasses$ClassRequest;->typeParametersCount:Ljava/util/List;
+
+    return-object v0
+.end method
+
 .method public equals(Ljava/lang/Object;)Z
     .locals 4
 

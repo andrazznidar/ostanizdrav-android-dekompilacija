@@ -186,7 +186,7 @@
 
     aput-object v1, v4, p1
 
-    invoke-virtual {v2, v3, v4}, Ltimber/log/Timber$Tree;->w(Ljava/lang/String;[Ljava/lang/Object;)V
+    invoke-virtual {v2, v3, v4}, Ltimber/log/Timber$Forest;->w(Ljava/lang/String;[Ljava/lang/Object;)V
 
     :goto_0
     iget-object v1, p0, Lde/rki/coronawarnapp/receiver/ExposureStateUpdateReceiver$onReceive$1;->this$0:Lde/rki/coronawarnapp/receiver/ExposureStateUpdateReceiver;
@@ -204,10 +204,6 @@
     invoke-direct {v2, v1}, Landroidx/work/Data;-><init>(Ljava/util/Map;)V
 
     invoke-static {v2}, Landroidx/work/Data;->toByteArrayInternal(Landroidx/work/Data;)[B
-
-    const-string v1, "Builder().build()"
-
-    invoke-static {v2, v1}, Lkotlin/jvm/internal/Intrinsics;->checkNotNullExpressionValue(Ljava/lang/Object;Ljava/lang/String;)V
 
     new-instance v1, Landroidx/work/OneTimeWorkRequest$Builder;
 
@@ -244,7 +240,7 @@
 
     new-array p1, p1, [Ljava/lang/Object;
 
-    invoke-virtual {v1, v0, p1}, Ltimber/log/Timber$Tree;->i(Ljava/lang/String;[Ljava/lang/Object;)V
+    invoke-virtual {v1, v0, p1}, Ltimber/log/Timber$Forest;->i(Ljava/lang/String;[Ljava/lang/Object;)V
 
     goto :goto_1
 
@@ -278,9 +274,9 @@
 
     invoke-virtual {v2, v1, v3, v4}, Ltimber/log/Timber$Forest;->e(Ljava/lang/Throwable;Ljava/lang/String;[Ljava/lang/Object;)V
 
-    sget-object v3, Lde/rki/coronawarnapp/exception/ExceptionCategory;->INTERNAL:Lde/rki/coronawarnapp/exception/ExceptionCategory;
+    const/4 v3, 0x4
 
-    invoke-static {v1, v3}, Lde/rki/coronawarnapp/exception/reporting/ExceptionReporterKt;->report(Ljava/lang/Throwable;Lde/rki/coronawarnapp/exception/ExceptionCategory;)V
+    invoke-static {v1, v3}, Lde/rki/coronawarnapp/exception/reporting/ExceptionReporterKt;->report(Ljava/lang/Throwable;I)V
     :try_end_2
     .catchall {:try_start_2 .. :try_end_2} :catchall_0
 
@@ -290,7 +286,7 @@
 
     new-array p1, p1, [Ljava/lang/Object;
 
-    invoke-virtual {v2, v0, p1}, Ltimber/log/Timber$Tree;->i(Ljava/lang/String;[Ljava/lang/Object;)V
+    invoke-virtual {v2, v0, p1}, Ltimber/log/Timber$Forest;->i(Ljava/lang/String;[Ljava/lang/Object;)V
 
     :goto_1
     iget-object p1, p0, Lde/rki/coronawarnapp/receiver/ExposureStateUpdateReceiver$onReceive$1;->$async:Landroid/content/BroadcastReceiver$PendingResult;
@@ -310,7 +306,7 @@
 
     new-array p1, p1, [Ljava/lang/Object;
 
-    invoke-virtual {v2, v0, p1}, Ltimber/log/Timber$Tree;->i(Ljava/lang/String;[Ljava/lang/Object;)V
+    invoke-virtual {v2, v0, p1}, Ltimber/log/Timber$Forest;->i(Ljava/lang/String;[Ljava/lang/Object;)V
 
     iget-object p1, p0, Lde/rki/coronawarnapp/receiver/ExposureStateUpdateReceiver$onReceive$1;->$async:Landroid/content/BroadcastReceiver$PendingResult;
 

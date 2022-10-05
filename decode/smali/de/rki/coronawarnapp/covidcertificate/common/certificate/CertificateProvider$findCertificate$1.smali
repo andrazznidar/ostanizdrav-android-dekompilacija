@@ -17,9 +17,7 @@
     c = "de.rki.coronawarnapp.covidcertificate.common.certificate.CertificateProvider"
     f = "CertificateProvider.kt"
     l = {
-        0x17,
-        0x18,
-        0x19
+        0x31
     }
     m = "findCertificate"
 .end annotation
@@ -27,10 +25,6 @@
 
 # instance fields
 .field public L$0:Ljava/lang/Object;
-
-.field public L$1:Ljava/lang/Object;
-
-.field public L$2:Ljava/lang/Object;
 
 .field public label:I
 

@@ -4,6 +4,14 @@
 
 
 # direct methods
+.method public synthetic constructor <init>()V
+    .locals 0
+
+    invoke-direct {p0}, Ljava/lang/Object;-><init>()V
+
+    return-void
+.end method
+
 .method public static final decodeIpv6(Ljava/lang/String;II)Ljava/net/InetAddress;
     .locals 17
 
@@ -19,25 +27,31 @@
 
     const/4 v5, 0x0
 
-    move/from16 v6, p1
+    move v6, v4
 
-    move v8, v4
+    move v7, v6
+
+    move v8, v5
 
     move v9, v8
 
-    move v7, v5
+    move v4, v2
+
+    move v5, v7
+
+    move/from16 v2, p1
 
     :goto_0
     const/4 v10, 0x0
 
-    if-ge v6, v1, :cond_16
+    if-ge v2, v1, :cond_16
 
-    if-ne v7, v2, :cond_0
+    if-ne v8, v4, :cond_0
 
     return-object v10
 
     :cond_0
-    add-int/lit8 v11, v6, 0x2
+    add-int/lit8 v11, v2, 0x2
 
     const/4 v12, 0x4
 
@@ -47,306 +61,293 @@
 
     const-string v14, "::"
 
-    invoke-static {v0, v14, v6, v5, v12}, Lkotlin/text/StringsKt__StringsJVMKt;->startsWith$default(Ljava/lang/String;Ljava/lang/String;IZI)Z
+    invoke-static {v0, v14, v2, v9, v12}, Lkotlin/text/StringsKt__StringsJVMKt;->startsWith$default(Ljava/lang/String;Ljava/lang/String;IZI)Z
 
     move-result v14
 
     if-eqz v14, :cond_3
 
-    if-eq v8, v4, :cond_1
+    if-eq v5, v6, :cond_1
 
     return-object v10
 
     :cond_1
-    add-int/lit8 v7, v7, 0x2
+    add-int/lit8 v5, v8, 0x2
+
+    move v8, v5
 
     if-ne v11, v1, :cond_2
 
-    move v0, v2
-
-    move v8, v7
-
-    goto/16 :goto_c
+    goto/16 :goto_b
 
     :cond_2
-    move v8, v7
-
-    move v9, v11
-
-    goto/16 :goto_8
-
-    :cond_3
-    if-eqz v7, :cond_11
-
-    const-string v11, ":"
-
-    invoke-static {v0, v11, v6, v5, v12}, Lkotlin/text/StringsKt__StringsJVMKt;->startsWith$default(Ljava/lang/String;Ljava/lang/String;IZI)Z
-
-    move-result v11
-
-    if-eqz v11, :cond_4
-
-    add-int/lit8 v6, v6, 0x1
+    move v7, v11
 
     goto/16 :goto_7
 
-    :cond_4
-    const-string v11, "."
+    :cond_3
+    if-eqz v8, :cond_11
 
-    invoke-static {v0, v11, v6, v5, v12}, Lkotlin/text/StringsKt__StringsJVMKt;->startsWith$default(Ljava/lang/String;Ljava/lang/String;IZI)Z
+    const-string v6, ":"
+
+    invoke-static {v0, v6, v2, v9, v12}, Lkotlin/text/StringsKt__StringsJVMKt;->startsWith$default(Ljava/lang/String;Ljava/lang/String;IZI)Z
 
     move-result v6
 
-    if-eqz v6, :cond_10
+    if-eqz v6, :cond_4
 
-    add-int/lit8 v6, v7, -0x2
+    add-int/lit8 v2, v2, 0x1
 
-    move v11, v6
+    goto/16 :goto_6
+
+    :cond_4
+    const-string v6, "."
+
+    invoke-static {v0, v6, v2, v9, v12}, Lkotlin/text/StringsKt__StringsJVMKt;->startsWith$default(Ljava/lang/String;Ljava/lang/String;IZI)Z
+
+    move-result v2
+
+    if-eqz v2, :cond_10
+
+    add-int/lit8 v2, v8, -0x2
+
+    move v6, v2
 
     :goto_1
-    if-ge v9, v1, :cond_d
+    if-ge v7, v1, :cond_d
 
-    if-ne v11, v2, :cond_5
+    if-ne v6, v4, :cond_5
 
-    goto :goto_2
+    goto :goto_5
 
     :cond_5
-    if-eq v11, v6, :cond_7
+    if-eq v6, v2, :cond_7
 
-    invoke-virtual {v0, v9}, Ljava/lang/String;->charAt(I)C
-
-    move-result v14
-
-    const/16 v15, 0x2e
-
-    if-eq v14, v15, :cond_6
-
-    :goto_2
-    move v0, v5
-
-    goto :goto_6
-
-    :cond_6
-    add-int/lit8 v9, v9, 0x1
-
-    :cond_7
-    move v15, v5
-
-    move v14, v9
-
-    :goto_3
-    if-ge v14, v1, :cond_b
-
-    invoke-virtual {v0, v14}, Ljava/lang/String;->charAt(I)C
-
-    move-result v5
-
-    const/16 v2, 0x30
-
-    invoke-static {v5, v2}, Lkotlin/jvm/internal/Intrinsics;->compare(II)I
-
-    move-result v16
-
-    if-ltz v16, :cond_b
-
-    const/16 v4, 0x39
-
-    invoke-static {v5, v4}, Lkotlin/jvm/internal/Intrinsics;->compare(II)I
+    invoke-virtual {v0, v7}, Ljava/lang/String;->charAt(I)C
 
     move-result v4
 
-    if-lez v4, :cond_8
+    const/16 v11, 0x2e
 
-    goto :goto_4
-
-    :cond_8
-    if-nez v15, :cond_9
-
-    if-eq v9, v14, :cond_9
+    if-eq v4, v11, :cond_6
 
     goto :goto_5
 
-    :cond_9
-    mul-int/lit8 v15, v15, 0xa
+    :cond_6
+    add-int/lit8 v7, v7, 0x1
 
-    add-int/2addr v15, v5
+    :cond_7
+    move v4, v7
 
-    sub-int/2addr v15, v2
+    :goto_2
+    if-ge v4, v1, :cond_b
 
-    if-le v15, v13, :cond_a
+    invoke-virtual {v0, v4}, Ljava/lang/String;->charAt(I)C
 
-    goto :goto_5
+    move-result v11
 
-    :cond_a
-    add-int/lit8 v14, v14, 0x1
+    const/16 v14, 0x30
 
-    const/16 v2, 0x10
+    invoke-static {v11, v14}, Lkotlin/jvm/internal/Intrinsics;->compare(II)I
 
-    const/4 v4, -0x1
+    move-result v15
 
-    const/4 v5, 0x0
+    if-ltz v15, :cond_b
+
+    const/16 v15, 0x39
+
+    invoke-static {v11, v15}, Lkotlin/jvm/internal/Intrinsics;->compare(II)I
+
+    move-result v15
+
+    if-lez v15, :cond_8
 
     goto :goto_3
 
+    :cond_8
+    if-nez v9, :cond_9
+
+    if-eq v7, v4, :cond_9
+
+    goto :goto_4
+
+    :cond_9
+    const/16 v15, 0xa
+
+    invoke-static {v9, v15, v11, v14}, Lde/rki/coronawarnapp/exception/ExceptionCategory$EnumUnboxingLocalUtility;->m(IIII)I
+
+    move-result v9
+
+    if-le v9, v13, :cond_a
+
+    goto :goto_4
+
+    :cond_a
+    add-int/lit8 v4, v4, 0x1
+
+    goto :goto_2
+
     :cond_b
-    :goto_4
-    sub-int v2, v14, v9
+    :goto_3
+    sub-int v7, v4, v7
 
-    if-nez v2, :cond_c
+    if-nez v7, :cond_c
 
-    goto :goto_5
+    goto :goto_4
 
     :cond_c
-    add-int/lit8 v2, v11, 0x1
+    add-int/lit8 v7, v6, 0x1
 
-    int-to-byte v4, v15
+    int-to-byte v9, v9
 
-    aput-byte v4, v3, v11
+    aput-byte v9, v3, v6
 
-    move v11, v2
+    const/16 v6, 0x10
 
-    move v9, v14
+    const/4 v9, 0x0
 
-    const/16 v2, 0x10
+    move/from16 v16, v7
 
-    const/4 v4, -0x1
+    move v7, v4
 
-    const/4 v5, 0x0
+    move v4, v6
+
+    move/from16 v6, v16
 
     goto :goto_1
 
     :cond_d
-    add-int/2addr v6, v12
+    add-int/2addr v2, v12
 
-    if-ne v11, v6, :cond_e
+    if-ne v6, v2, :cond_e
 
-    const/4 v0, 0x1
+    const/4 v9, 0x1
 
-    goto :goto_6
+    goto :goto_5
 
     :cond_e
-    :goto_5
-    const/4 v0, 0x0
+    :goto_4
+    const/4 v9, 0x0
 
-    :goto_6
-    if-nez v0, :cond_f
+    :goto_5
+    if-nez v9, :cond_f
 
     return-object v10
 
     :cond_f
-    add-int/lit8 v7, v7, 0x2
+    add-int/lit8 v8, v8, 0x2
 
-    const/16 v0, 0x10
+    const/16 v4, 0x10
 
-    goto :goto_c
+    goto :goto_b
 
     :cond_10
     return-object v10
 
     :cond_11
+    :goto_6
+    move v7, v2
+
     :goto_7
-    move v9, v6
-
-    :goto_8
-    move v6, v9
-
     const/4 v2, 0x0
 
-    :goto_9
-    if-ge v6, v1, :cond_13
+    move v4, v2
 
-    invoke-virtual {v0, v6}, Ljava/lang/String;->charAt(I)C
+    move v2, v7
 
-    move-result v4
+    :goto_8
+    if-ge v2, v1, :cond_13
 
-    invoke-static {v4}, Lokhttp3/internal/Util;->parseHexDigit(C)I
+    invoke-virtual {v0, v2}, Ljava/lang/String;->charAt(I)C
 
-    move-result v4
+    move-result v6
 
-    const/4 v5, -0x1
+    invoke-static {v6}, Lokhttp3/internal/Util;->parseHexDigit(C)I
 
-    if-ne v4, v5, :cond_12
+    move-result v6
 
-    goto :goto_a
+    const/4 v9, -0x1
 
-    :cond_12
-    shl-int/lit8 v2, v2, 0x4
-
-    add-int/2addr v2, v4
-
-    add-int/lit8 v6, v6, 0x1
+    if-ne v6, v9, :cond_12
 
     goto :goto_9
 
+    :cond_12
+    shl-int/lit8 v4, v4, 0x4
+
+    add-int/2addr v4, v6
+
+    add-int/lit8 v2, v2, 0x1
+
+    goto :goto_8
+
     :cond_13
-    :goto_a
-    sub-int v4, v6, v9
+    :goto_9
+    sub-int v6, v2, v7
 
-    if-eqz v4, :cond_15
+    if-eqz v6, :cond_15
 
-    if-le v4, v12, :cond_14
+    if-le v6, v12, :cond_14
 
-    goto :goto_b
+    goto :goto_a
 
     :cond_14
-    add-int/lit8 v4, v7, 0x1
+    add-int/lit8 v6, v8, 0x1
 
-    ushr-int/lit8 v5, v2, 0x8
+    ushr-int/lit8 v9, v4, 0x8
 
-    and-int/2addr v5, v13
+    and-int/2addr v9, v13
 
-    int-to-byte v5, v5
+    int-to-byte v9, v9
 
-    aput-byte v5, v3, v7
+    aput-byte v9, v3, v8
 
-    add-int/lit8 v7, v4, 0x1
+    add-int/lit8 v8, v6, 0x1
 
-    and-int/lit16 v2, v2, 0xff
+    and-int/lit16 v4, v4, 0xff
 
-    int-to-byte v2, v2
+    int-to-byte v4, v4
 
-    aput-byte v2, v3, v4
+    aput-byte v4, v3, v6
 
-    const/16 v2, 0x10
+    const/16 v4, 0x10
 
-    const/4 v4, -0x1
+    const/4 v6, -0x1
 
-    const/4 v5, 0x0
+    const/4 v9, 0x0
 
     goto/16 :goto_0
 
     :cond_15
-    :goto_b
+    :goto_a
     return-object v10
 
     :cond_16
-    move v0, v2
+    :goto_b
+    if-eq v8, v4, :cond_18
 
-    :goto_c
-    if-eq v7, v0, :cond_18
+    const/4 v0, -0x1
 
-    const/4 v1, -0x1
-
-    if-ne v8, v1, :cond_17
+    if-ne v5, v0, :cond_17
 
     return-object v10
 
     :cond_17
-    sub-int v1, v7, v8
+    sub-int v0, v8, v5
 
-    rsub-int/lit8 v2, v1, 0x10
+    rsub-int/lit8 v1, v0, 0x10
 
-    invoke-static {v3, v8, v3, v2, v1}, Ljava/lang/System;->arraycopy(Ljava/lang/Object;ILjava/lang/Object;II)V
+    invoke-static {v3, v5, v3, v1, v0}, Ljava/lang/System;->arraycopy(Ljava/lang/Object;ILjava/lang/Object;II)V
 
-    rsub-int/lit8 v2, v7, 0x10
+    rsub-int/lit8 v0, v8, 0x10
 
-    add-int/2addr v2, v8
+    add-int/2addr v0, v5
 
-    const/4 v0, 0x0
+    const/4 v1, 0x0
 
-    int-to-byte v0, v0
+    int-to-byte v1, v1
 
-    invoke-static {v3, v8, v2, v0}, Ljava/util/Arrays;->fill([BIIB)V
+    invoke-static {v3, v5, v0, v1}, Ljava/util/Arrays;->fill([BIIB)V
 
     :cond_18
     invoke-static {v3}, Ljava/net/InetAddress;->getByAddress([B)Ljava/net/InetAddress;
@@ -356,48 +357,91 @@
     return-object v0
 .end method
 
-.method public static onCreateInputConnection(Landroid/view/inputmethod/InputConnection;Landroid/view/inputmethod/EditorInfo;Landroid/view/View;)Landroid/view/inputmethod/InputConnection;
-    .locals 1
+.method public static final getLifecycleScope(Landroidx/lifecycle/LifecycleOwner;)Landroidx/lifecycle/LifecycleCoroutineScope;
+    .locals 7
 
-    if-eqz p0, :cond_1
+    const-string v0, "$this$lifecycleScope"
 
-    iget-object v0, p1, Landroid/view/inputmethod/EditorInfo;->hintText:Ljava/lang/CharSequence;
+    invoke-static {p0, v0}, Lkotlin/jvm/internal/Intrinsics;->checkNotNullParameter(Ljava/lang/Object;Ljava/lang/String;)V
 
-    if-nez v0, :cond_1
+    invoke-interface {p0}, Landroidx/lifecycle/LifecycleOwner;->getLifecycle()Landroidx/lifecycle/Lifecycle;
 
-    invoke-virtual {p2}, Landroid/view/View;->getParent()Landroid/view/ViewParent;
+    move-result-object p0
 
-    move-result-object p2
+    const-string v0, "lifecycle"
 
-    :goto_0
-    instance-of v0, p2, Landroid/view/View;
-
-    if-eqz v0, :cond_1
-
-    instance-of v0, p2, Landroidx/appcompat/widget/WithHint;
-
-    if-eqz v0, :cond_0
-
-    check-cast p2, Landroidx/appcompat/widget/WithHint;
-
-    invoke-interface {p2}, Landroidx/appcompat/widget/WithHint;->getHint()Ljava/lang/CharSequence;
-
-    move-result-object p2
-
-    iput-object p2, p1, Landroid/view/inputmethod/EditorInfo;->hintText:Ljava/lang/CharSequence;
-
-    goto :goto_1
+    invoke-static {p0, v0}, Lkotlin/jvm/internal/Intrinsics;->checkNotNullExpressionValue(Ljava/lang/Object;Ljava/lang/String;)V
 
     :cond_0
-    invoke-interface {p2}, Landroid/view/ViewParent;->getParent()Landroid/view/ViewParent;
+    iget-object v0, p0, Landroidx/lifecycle/Lifecycle;->mInternalScopeRef:Ljava/util/concurrent/atomic/AtomicReference;
 
-    move-result-object p2
+    invoke-virtual {v0}, Ljava/util/concurrent/atomic/AtomicReference;->get()Ljava/lang/Object;
+
+    move-result-object v0
+
+    check-cast v0, Landroidx/lifecycle/LifecycleCoroutineScopeImpl;
+
+    if-eqz v0, :cond_1
 
     goto :goto_0
 
     :cond_1
-    :goto_1
-    return-object p0
+    new-instance v0, Landroidx/lifecycle/LifecycleCoroutineScopeImpl;
+
+    const/4 v1, 0x1
+
+    const/4 v2, 0x0
+
+    invoke-static {v2, v1}, Landroidx/core/os/BundleKt;->SupervisorJob$default(Lkotlinx/coroutines/Job;I)Lkotlinx/coroutines/CompletableJob;
+
+    move-result-object v1
+
+    sget-object v3, Lkotlinx/coroutines/Dispatchers;->INSTANCE:Lkotlinx/coroutines/Dispatchers;
+
+    sget-object v3, Lkotlinx/coroutines/internal/MainDispatcherLoader;->dispatcher:Lkotlinx/coroutines/MainCoroutineDispatcher;
+
+    invoke-virtual {v3}, Lkotlinx/coroutines/MainCoroutineDispatcher;->getImmediate()Lkotlinx/coroutines/MainCoroutineDispatcher;
+
+    move-result-object v4
+
+    check-cast v1, Lkotlinx/coroutines/JobSupport;
+
+    invoke-static {v1, v4}, Lkotlin/coroutines/CoroutineContext$Element$DefaultImpls;->plus(Lkotlin/coroutines/CoroutineContext$Element;Lkotlin/coroutines/CoroutineContext;)Lkotlin/coroutines/CoroutineContext;
+
+    move-result-object v1
+
+    invoke-direct {v0, p0, v1}, Landroidx/lifecycle/LifecycleCoroutineScopeImpl;-><init>(Landroidx/lifecycle/Lifecycle;Lkotlin/coroutines/CoroutineContext;)V
+
+    iget-object v1, p0, Landroidx/lifecycle/Lifecycle;->mInternalScopeRef:Ljava/util/concurrent/atomic/AtomicReference;
+
+    invoke-virtual {v1, v2, v0}, Ljava/util/concurrent/atomic/AtomicReference;->compareAndSet(Ljava/lang/Object;Ljava/lang/Object;)Z
+
+    move-result v1
+
+    if-eqz v1, :cond_0
+
+    invoke-virtual {v3}, Lkotlinx/coroutines/MainCoroutineDispatcher;->getImmediate()Lkotlinx/coroutines/MainCoroutineDispatcher;
+
+    move-result-object p0
+
+    new-instance v4, Landroidx/lifecycle/LifecycleCoroutineScopeImpl$register$1;
+
+    invoke-direct {v4, v0, v2}, Landroidx/lifecycle/LifecycleCoroutineScopeImpl$register$1;-><init>(Landroidx/lifecycle/LifecycleCoroutineScopeImpl;Lkotlin/coroutines/Continuation;)V
+
+    const/4 v5, 0x2
+
+    const/4 v6, 0x0
+
+    const/4 v3, 0x0
+
+    move-object v1, v0
+
+    move-object v2, p0
+
+    invoke-static/range {v1 .. v6}, Lkotlinx/coroutines/BuildersKt;->launch$default(Lkotlinx/coroutines/CoroutineScope;Lkotlin/coroutines/CoroutineContext;ILkotlin/jvm/functions/Function2;ILjava/lang/Object;)Lkotlinx/coroutines/Job;
+
+    :goto_0
+    return-object v0
 .end method
 
 .method public static final toCanonicalHost(Ljava/lang/String;)Ljava/lang/String;

@@ -9,6 +9,7 @@
 # annotations
 .annotation system Ldalvik/annotation/MemberClasses;
     value = {
+        Lde/rki/coronawarnapp/util/di/DaggerApplicationComponent$RootDetectionDialogFragmentSubcomponentImpl;,
         Lde/rki/coronawarnapp/util/di/DaggerApplicationComponent$SurveyConsentFragmentSubcomponentImpl;,
         Lde/rki/coronawarnapp/util/di/DaggerApplicationComponent$OnboardingActivitySubcomponentImpl;,
         Lde/rki/coronawarnapp/util/di/DaggerApplicationComponent$OAM_ODNF_OnboardingDeltaNotificationsFragmentSubcomponentImpl;,
@@ -38,6 +39,12 @@
         Lde/rki/coronawarnapp/util/di/DaggerApplicationComponent$MAM_NRIS_NewReleaseInfoFragmentSubcomponentImpl;,
         Lde/rki/coronawarnapp/util/di/DaggerApplicationComponent$SettingsResetFragmentSubcomponentImpl;,
         Lde/rki/coronawarnapp/util/di/DaggerApplicationComponent$InteroperabilityConfigurationFragmentSubcomponentImpl;,
+        Lde/rki/coronawarnapp/util/di/DaggerApplicationComponent$DccTicketingValidationResultFragmentSubcomponentImpl;,
+        Lde/rki/coronawarnapp/util/di/DaggerApplicationComponent$DccTicketingConsentTwoFragmentSubcomponentImpl;,
+        Lde/rki/coronawarnapp/util/di/DaggerApplicationComponent$DccTicketingCertificateSelectionFragmentSubcomponentImpl;,
+        Lde/rki/coronawarnapp/util/di/DaggerApplicationComponent$DccTicketingConsentOneFragmentSubcomponentImpl;,
+        Lde/rki/coronawarnapp/util/di/DaggerApplicationComponent$RecyclerBinOverviewFragmentSubcomponentImpl;,
+        Lde/rki/coronawarnapp/util/di/DaggerApplicationComponent$BoosterInfoDetailsFragmentSubcomponentImpl;,
         Lde/rki/coronawarnapp/util/di/DaggerApplicationComponent$CertificatePosterFragmentSubcomponentImpl;,
         Lde/rki/coronawarnapp/util/di/DaggerApplicationComponent$ValidationStartFragmentSubcomponentImpl;,
         Lde/rki/coronawarnapp/util/di/DaggerApplicationComponent$RecoveryCertificateDetailsFragmentSubcomponentImpl;,
@@ -109,6 +116,7 @@
         Lde/rki/coronawarnapp/util/di/DaggerApplicationComponent$AutoCheckOutBootRestoreReceiverSubcomponentImpl;,
         Lde/rki/coronawarnapp/util/di/DaggerApplicationComponent$NotificationReceiverSubcomponentImpl;,
         Lde/rki/coronawarnapp/util/di/DaggerApplicationComponent$ExposureStateUpdateReceiverSubcomponentImpl;,
+        Lde/rki/coronawarnapp/util/di/DaggerApplicationComponent$RootDetectionDialogFragmentSubcomponentFactory;,
         Lde/rki/coronawarnapp/util/di/DaggerApplicationComponent$SurveyConsentFragmentSubcomponentFactory;,
         Lde/rki/coronawarnapp/util/di/DaggerApplicationComponent$OAM_ODNF_OnboardingDeltaNotificationsFragmentSubcomponentFactory;,
         Lde/rki/coronawarnapp/util/di/DaggerApplicationComponent$OAM_ODAF_OnboardingDeltaAnalyticsFragmentSubcomponentFactory;,
@@ -137,6 +145,12 @@
         Lde/rki/coronawarnapp/util/di/DaggerApplicationComponent$MAM_NRIS_NewReleaseInfoFragmentSubcomponentFactory;,
         Lde/rki/coronawarnapp/util/di/DaggerApplicationComponent$SettingsResetFragmentSubcomponentFactory;,
         Lde/rki/coronawarnapp/util/di/DaggerApplicationComponent$InteroperabilityConfigurationFragmentSubcomponentFactory;,
+        Lde/rki/coronawarnapp/util/di/DaggerApplicationComponent$DccTicketingValidationResultFragmentSubcomponentFactory;,
+        Lde/rki/coronawarnapp/util/di/DaggerApplicationComponent$DccTicketingConsentTwoFragmentSubcomponentFactory;,
+        Lde/rki/coronawarnapp/util/di/DaggerApplicationComponent$DccTicketingCertificateSelectionFragmentSubcomponentFactory;,
+        Lde/rki/coronawarnapp/util/di/DaggerApplicationComponent$DccTicketingConsentOneFragmentSubcomponentFactory;,
+        Lde/rki/coronawarnapp/util/di/DaggerApplicationComponent$RecyclerBinOverviewFragmentSubcomponentFactory;,
+        Lde/rki/coronawarnapp/util/di/DaggerApplicationComponent$BoosterInfoDetailsFragmentSubcomponentFactory;,
         Lde/rki/coronawarnapp/util/di/DaggerApplicationComponent$CertificatePosterFragmentSubcomponentFactory;,
         Lde/rki/coronawarnapp/util/di/DaggerApplicationComponent$ValidationStartFragmentSubcomponentFactory;,
         Lde/rki/coronawarnapp/util/di/DaggerApplicationComponent$RecoveryCertificateDetailsFragmentSubcomponentFactory;,
@@ -234,6 +248,16 @@
     .end annotation
 .end field
 
+.field public allowListApiProvider:Ljavax/inject/Provider;
+    .annotation system Ldalvik/annotation/Signature;
+        value = {
+            "Ljavax/inject/Provider<",
+            "Lde/rki/coronawarnapp/dccticketing/core/allowlist/server/DccTicketingAllowListApi1;",
+            ">;"
+        }
+    .end annotation
+.end field
+
 .field public analyticsConfigMapperProvider:Ljavax/inject/Provider;
     .annotation system Ldalvik/annotation/Signature;
         value = {
@@ -269,6 +293,16 @@
         value = {
             "Ljavax/inject/Provider<",
             "Lde/rki/coronawarnapp/datadonation/analytics/modules/exposurewindows/AnalyticsExposureWindowRepository;",
+            ">;"
+        }
+    .end annotation
+.end field
+
+.field public analyticsExposureWindowsSettingsProvider:Ljavax/inject/Provider;
+    .annotation system Ldalvik/annotation/Signature;
+        value = {
+            "Ljavax/inject/Provider<",
+            "Lde/rki/coronawarnapp/datadonation/analytics/modules/testresult/AnalyticsExposureWindowsSettings;",
             ">;"
         }
     .end annotation
@@ -478,7 +512,7 @@
     .annotation system Ldalvik/annotation/Signature;
         value = {
             "Ljavax/inject/Provider<",
-            "Lde/rki/coronawarnapp/covidcertificate/test/core/server/TestCertificateApiV1;",
+            "Lde/rki/coronawarnapp/covidcertificate/signature/core/server/DscApiV1;",
             ">;"
         }
     .end annotation
@@ -488,7 +522,7 @@
     .annotation system Ldalvik/annotation/Signature;
         value = {
             "Ljavax/inject/Provider<",
-            "Lde/rki/coronawarnapp/covidcertificate/signature/core/server/DscApiV1;",
+            "Lde/rki/coronawarnapp/covidcertificate/test/core/server/TestCertificateApiV1;",
             ">;"
         }
     .end annotation
@@ -746,21 +780,11 @@
     .end annotation
 .end field
 
-.field public boosterCheckSchedulerProvider:Ljavax/inject/Provider;
+.field public boosterNotificationSenderProvider:Ljavax/inject/Provider;
     .annotation system Ldalvik/annotation/Signature;
         value = {
             "Ljavax/inject/Provider<",
-            "Lde/rki/coronawarnapp/covidcertificate/booster/BoosterCheckScheduler;",
-            ">;"
-        }
-    .end annotation
-.end field
-
-.field public boosterNotificationProvider:Ljavax/inject/Provider;
-    .annotation system Ldalvik/annotation/Signature;
-        value = {
-            "Ljavax/inject/Provider<",
-            "Lde/rki/coronawarnapp/covidcertificate/booster/BoosterNotification;",
+            "Lde/rki/coronawarnapp/covidcertificate/booster/BoosterNotificationSender;",
             ">;"
         }
     .end annotation
@@ -791,6 +815,76 @@
         value = {
             "Ljavax/inject/Provider<",
             "Lde/rki/coronawarnapp/bugreporting/BugReportingSettings;",
+            ">;"
+        }
+    .end annotation
+.end field
+
+.field public cCLConfigurationParserProvider:Ljavax/inject/Provider;
+    .annotation system Ldalvik/annotation/Signature;
+        value = {
+            "Ljavax/inject/Provider<",
+            "Lde/rki/coronawarnapp/ccl/configuration/common/CCLConfigurationParser;",
+            ">;"
+        }
+    .end annotation
+.end field
+
+.field public cCLConfigurationRepositoryProvider:Ljavax/inject/Provider;
+    .annotation system Ldalvik/annotation/Signature;
+        value = {
+            "Ljavax/inject/Provider<",
+            "Lde/rki/coronawarnapp/ccl/configuration/storage/CCLConfigurationRepository;",
+            ">;"
+        }
+    .end annotation
+.end field
+
+.field public cCLConfigurationServerProvider:Ljavax/inject/Provider;
+    .annotation system Ldalvik/annotation/Signature;
+        value = {
+            "Ljavax/inject/Provider<",
+            "Lde/rki/coronawarnapp/ccl/configuration/server/CCLConfigurationServer;",
+            ">;"
+        }
+    .end annotation
+.end field
+
+.field public cCLConfigurationStorageProvider:Ljavax/inject/Provider;
+    .annotation system Ldalvik/annotation/Signature;
+        value = {
+            "Ljavax/inject/Provider<",
+            "Lde/rki/coronawarnapp/ccl/configuration/storage/CCLConfigurationStorage;",
+            ">;"
+        }
+    .end annotation
+.end field
+
+.field public cCLConfigurationUpdaterProvider:Ljavax/inject/Provider;
+    .annotation system Ldalvik/annotation/Signature;
+        value = {
+            "Ljavax/inject/Provider<",
+            "Lde/rki/coronawarnapp/ccl/configuration/update/CCLConfigurationUpdater;",
+            ">;"
+        }
+    .end annotation
+.end field
+
+.field public cCLJsonFunctionsProvider:Ljavax/inject/Provider;
+    .annotation system Ldalvik/annotation/Signature;
+        value = {
+            "Ljavax/inject/Provider<",
+            "Lde/rki/coronawarnapp/ccl/dccwalletinfo/calculation/CCLJsonFunctions;",
+            ">;"
+        }
+    .end annotation
+.end field
+
+.field public cCLSettingsProvider:Ljavax/inject/Provider;
+    .annotation system Ldalvik/annotation/Signature;
+        value = {
+            "Ljavax/inject/Provider<",
+            "Lde/rki/coronawarnapp/ccl/configuration/update/CCLSettings;",
             ">;"
         }
     .end annotation
@@ -896,16 +990,6 @@
     .end annotation
 .end field
 
-.field public cameraSettingsProvider:Ljavax/inject/Provider;
-    .annotation system Ldalvik/annotation/Signature;
-        value = {
-            "Ljavax/inject/Provider<",
-            "Lde/rki/coronawarnapp/util/permission/CameraSettings;",
-            ">;"
-        }
-    .end annotation
-.end field
-
 .field public cdnHttpClientProvider:Ljavax/inject/Provider;
     .annotation system Ldalvik/annotation/Signature;
         value = {
@@ -951,6 +1035,16 @@
         value = {
             "Ljavax/inject/Provider<",
             "Lokhttp3/OkHttpClient;",
+            ">;"
+        }
+    .end annotation
+.end field
+
+.field public certificateProvider:Ljavax/inject/Provider;
+    .annotation system Ldalvik/annotation/Signature;
+        value = {
+            "Ljavax/inject/Provider<",
+            "Lde/rki/coronawarnapp/covidcertificate/common/certificate/CertificateProvider;",
             ">;"
         }
     .end annotation
@@ -1406,16 +1500,6 @@
     .end annotation
 .end field
 
-.field public dccBoosterRulesValidatorProvider:Ljavax/inject/Provider;
-    .annotation system Ldalvik/annotation/Signature;
-        value = {
-            "Ljavax/inject/Provider<",
-            "Lde/rki/coronawarnapp/covidcertificate/booster/DccBoosterRulesValidator;",
-            ">;"
-        }
-    .end annotation
-.end field
-
 .field public dccCoseDecoderProvider:Ljavax/inject/Provider;
     .annotation system Ldalvik/annotation/Signature;
         value = {
@@ -1546,6 +1630,68 @@
     .end annotation
 .end field
 
+.field public dccTicketingAllowListParserProvider:Ljavax/inject/Provider;
+    .annotation system Ldalvik/annotation/Signature;
+        value = {
+            "Ljavax/inject/Provider<",
+            "Lde/rki/coronawarnapp/dccticketing/core/allowlist/internal/DccTicketingAllowListParser;",
+            ">;"
+        }
+    .end annotation
+.end field
+
+.field public dccTicketingAllowListRepositoryProvider:Ljavax/inject/Provider;
+    .annotation system Ldalvik/annotation/Signature;
+        value = {
+            "Ljavax/inject/Provider<",
+            "Lde/rki/coronawarnapp/dccticketing/core/allowlist/repo/DccTicketingAllowListRepository;",
+            ">;"
+        }
+    .end annotation
+.end field
+
+.field public dccTicketingAllowListServerProvider:Ljavax/inject/Provider;
+    .annotation system Ldalvik/annotation/Signature;
+        value = {
+            "Ljavax/inject/Provider<",
+            "Lde/rki/coronawarnapp/dccticketing/core/allowlist/server/DccTicketingAllowListServer;",
+            ">;"
+        }
+    .end annotation
+.end field
+
+.field public dccTicketingAllowListStorageProvider:Ljavax/inject/Provider;
+    .annotation system Ldalvik/annotation/Signature;
+        value = {
+            "Ljavax/inject/Provider<",
+            "Lde/rki/coronawarnapp/dccticketing/core/allowlist/repo/storage/DccTicketingAllowListStorage;",
+            ">;"
+        }
+    .end annotation
+.end field
+
+.field public final dccTicketingCoreModule:Lde/rki/coronawarnapp/dccticketing/core/DccTicketingCoreModule;
+
+.field public dccTicketingJwtCensorProvider:Ljavax/inject/Provider;
+    .annotation system Ldalvik/annotation/Signature;
+        value = {
+            "Ljavax/inject/Provider<",
+            "Lde/rki/coronawarnapp/bugreporting/censors/dccticketing/DccTicketingJwtCensor;",
+            ">;"
+        }
+    .end annotation
+.end field
+
+.field public dccTicketingQrCodeSettingsProvider:Ljavax/inject/Provider;
+    .annotation system Ldalvik/annotation/Signature;
+        value = {
+            "Ljavax/inject/Provider<",
+            "Lde/rki/coronawarnapp/dccticketing/core/qrcode/DccTicketingQrCodeSettings;",
+            ">;"
+        }
+    .end annotation
+.end field
+
 .field public dccV1ParserProvider:Ljavax/inject/Provider;
     .annotation system Ldalvik/annotation/Signature;
         value = {
@@ -1591,6 +1737,76 @@
         value = {
             "Ljavax/inject/Provider<",
             "Lde/rki/coronawarnapp/covidcertificate/validation/core/server/DccValidationServer;",
+            ">;"
+        }
+    .end annotation
+.end field
+
+.field public dccWalletInfoCalculationManagerProvider:Ljavax/inject/Provider;
+    .annotation system Ldalvik/annotation/Signature;
+        value = {
+            "Ljavax/inject/Provider<",
+            "Lde/rki/coronawarnapp/ccl/dccwalletinfo/calculation/DccWalletInfoCalculationManager;",
+            ">;"
+        }
+    .end annotation
+.end field
+
+.field public dccWalletInfoCalculationProvider:Ljavax/inject/Provider;
+    .annotation system Ldalvik/annotation/Signature;
+        value = {
+            "Ljavax/inject/Provider<",
+            "Lde/rki/coronawarnapp/ccl/dccwalletinfo/calculation/DccWalletInfoCalculation;",
+            ">;"
+        }
+    .end annotation
+.end field
+
+.field public dccWalletInfoCleanerProvider:Ljavax/inject/Provider;
+    .annotation system Ldalvik/annotation/Signature;
+        value = {
+            "Ljavax/inject/Provider<",
+            "Lde/rki/coronawarnapp/ccl/dccwalletinfo/DccWalletInfoCleaner;",
+            ">;"
+        }
+    .end annotation
+.end field
+
+.field public dccWalletInfoDaoProvider:Ljavax/inject/Provider;
+    .annotation system Ldalvik/annotation/Signature;
+        value = {
+            "Ljavax/inject/Provider<",
+            "Lde/rki/coronawarnapp/ccl/dccwalletinfo/storage/database/DccWalletInfoDao;",
+            ">;"
+        }
+    .end annotation
+.end field
+
+.field public dccWalletInfoRepositoryProvider:Ljavax/inject/Provider;
+    .annotation system Ldalvik/annotation/Signature;
+        value = {
+            "Ljavax/inject/Provider<",
+            "Lde/rki/coronawarnapp/ccl/dccwalletinfo/storage/DccWalletInfoRepository;",
+            ">;"
+        }
+    .end annotation
+.end field
+
+.field public dccWalletInfoUpdateTaskProvider:Ljavax/inject/Provider;
+    .annotation system Ldalvik/annotation/Signature;
+        value = {
+            "Ljavax/inject/Provider<",
+            "Lde/rki/coronawarnapp/ccl/dccwalletinfo/update/DccWalletInfoUpdateTask;",
+            ">;"
+        }
+    .end annotation
+.end field
+
+.field public dccWalletInfoUpdateTriggerProvider:Ljavax/inject/Provider;
+    .annotation system Ldalvik/annotation/Signature;
+        value = {
+            "Ljavax/inject/Provider<",
+            "Lde/rki/coronawarnapp/ccl/dccwalletinfo/update/DccWalletInfoUpdateTrigger;",
             ">;"
         }
     .end annotation
@@ -1651,6 +1867,16 @@
         value = {
             "Ljavax/inject/Provider<",
             "Lde/rki/coronawarnapp/appconfig/sources/fallback/DefaultAppConfigSource;",
+            ">;"
+        }
+    .end annotation
+.end field
+
+.field public defaultCCLConfigurationProvider:Ljavax/inject/Provider;
+    .annotation system Ldalvik/annotation/Signature;
+        value = {
+            "Ljavax/inject/Provider<",
+            "Lde/rki/coronawarnapp/ccl/configuration/storage/DefaultCCLConfigurationProvider;",
             ">;"
         }
     .end annotation
@@ -1996,6 +2222,8 @@
     .end annotation
 .end field
 
+.field public final digitalCovidCertificateModule:Lcom/google/android/play/core/assetpacks/zzbf;
+
 .field public digitalCovidCertificateNotificationsProvider:Ljavax/inject/Provider;
     .annotation system Ldalvik/annotation/Signature;
         value = {
@@ -2320,7 +2548,7 @@
     .annotation system Ldalvik/annotation/Signature;
         value = {
             "Ljavax/inject/Provider<",
-            "Ljava/lang/Object;",
+            "Lde/rki/coronawarnapp/ccl/dccwalletinfo/storage/database/DccWalletInfoDatabase$Factory;",
             ">;"
         }
     .end annotation
@@ -2330,7 +2558,7 @@
     .annotation system Ldalvik/annotation/Signature;
         value = {
             "Ljavax/inject/Provider<",
-            "Ljava/lang/Object;",
+            "Lde/rki/coronawarnapp/ccl/dccwalletinfo/update/DccWalletInfoUpdateTask$Factory;",
             ">;"
         }
     .end annotation
@@ -2506,6 +2734,26 @@
     .end annotation
 .end field
 
+.field public factoryProvider31:Ljavax/inject/Provider;
+    .annotation system Ldalvik/annotation/Signature;
+        value = {
+            "Ljavax/inject/Provider<",
+            "Ljava/lang/Object;",
+            ">;"
+        }
+    .end annotation
+.end field
+
+.field public factoryProvider32:Ljavax/inject/Provider;
+    .annotation system Ldalvik/annotation/Signature;
+        value = {
+            "Ljavax/inject/Provider<",
+            "Ljava/lang/Object;",
+            ">;"
+        }
+    .end annotation
+.end field
+
 .field public factoryProvider4:Ljavax/inject/Provider;
     .annotation system Ldalvik/annotation/Signature;
         value = {
@@ -2647,6 +2895,16 @@
 .end field
 
 .field public httpCacheProvider3:Ljavax/inject/Provider;
+    .annotation system Ldalvik/annotation/Signature;
+        value = {
+            "Ljavax/inject/Provider<",
+            "Lokhttp3/Cache;",
+            ">;"
+        }
+    .end annotation
+.end field
+
+.field public httpCacheProvider4:Ljavax/inject/Provider;
     .annotation system Ldalvik/annotation/Signature;
         value = {
             "Ljavax/inject/Provider<",
@@ -2861,6 +3119,16 @@
         value = {
             "Ljavax/inject/Provider<",
             "Lde/rki/coronawarnapp/statistics/local/source/LocalStatisticsServer;",
+            ">;"
+        }
+    .end annotation
+.end field
+
+.field public localStorageDirProvider:Ljavax/inject/Provider;
+    .annotation system Ldalvik/annotation/Signature;
+        value = {
+            "Ljavax/inject/Provider<",
+            "Ljava/io/File;",
             ">;"
         }
     .end annotation
@@ -3133,7 +3401,7 @@
     .end annotation
 .end field
 
-.field public final organizerSubmissionModule:Lde/rki/coronawarnapp/bugreporting/BugReportingSharedModule;
+.field public final organizerSubmissionModule:Lde/rki/coronawarnapp/presencetracing/organizer/submission/OrganizerSubmissionModule;
 
 .field public pCRResultSchedulerProvider:Ljavax/inject/Provider;
     .annotation system Ldalvik/annotation/Signature;
@@ -3385,6 +3653,16 @@
     .end annotation
 .end field
 
+.field public provideApiProvider:Ljavax/inject/Provider;
+    .annotation system Ldalvik/annotation/Signature;
+        value = {
+            "Ljavax/inject/Provider<",
+            "Lde/rki/coronawarnapp/ccl/configuration/server/CCLConfigurationApiV1;",
+            ">;"
+        }
+    .end annotation
+.end field
+
 .field public provideAppConfigApiProvider:Ljavax/inject/Provider;
     .annotation system Ldalvik/annotation/Signature;
         value = {
@@ -3401,6 +3679,27 @@
             "Ljavax/inject/Provider<",
             "Ljava/lang/String;",
             ">;"
+        }
+    .end annotation
+.end field
+
+.field public provideCCLDirProvider:Ljavax/inject/Provider;
+    .annotation system Ldalvik/annotation/Signature;
+        value = {
+            "Ljavax/inject/Provider<",
+            "Ljava/io/File;",
+            ">;"
+        }
+    .end annotation
+.end field
+
+.field public provideCLLSettingsDataStoreProvider:Ljavax/inject/Provider;
+    .annotation system Ldalvik/annotation/Signature;
+        value = {
+            "Ljavax/inject/Provider<",
+            "Landroidx/datastore/core/DataStore<",
+            "Landroidx/datastore/preferences/core/Preferences;",
+            ">;>;"
         }
     .end annotation
 .end field
@@ -3460,6 +3759,16 @@
         value = {
             "Ljavax/inject/Provider<",
             "Lretrofit2/converter/gson/GsonConverterFactory;",
+            ">;"
+        }
+    .end annotation
+.end field
+
+.field public provideHttpClientProvider:Ljavax/inject/Provider;
+    .annotation system Ldalvik/annotation/Signature;
+        value = {
+            "Ljavax/inject/Provider<",
+            "Lokhttp3/OkHttpClient;",
             ">;"
         }
     .end annotation
@@ -3565,16 +3874,6 @@
     .end annotation
 .end field
 
-.field public providesDefaultCertLogicEngineProvider:Ljavax/inject/Provider;
-    .annotation system Ldalvik/annotation/Signature;
-        value = {
-            "Ljavax/inject/Provider<",
-            "Ldgca/verifier/app/engine/DefaultCertLogicEngine;",
-            ">;"
-        }
-    .end annotation
-.end field
-
 .field public qrCodeBitMatrixFetcherProvider:Ljavax/inject/Provider;
     .annotation system Ldalvik/annotation/Signature;
         value = {
@@ -3625,11 +3924,11 @@
     .end annotation
 .end field
 
-.field public rATProfileSettingsProvider:Ljavax/inject/Provider;
+.field public rATProfileSettingsDataStoreProvider:Ljavax/inject/Provider;
     .annotation system Ldalvik/annotation/Signature;
         value = {
             "Ljavax/inject/Provider<",
-            "Lde/rki/coronawarnapp/coronatest/antigen/profile/RATProfileSettings;",
+            "Lde/rki/coronawarnapp/coronatest/antigen/profile/RATProfileSettingsDataStore;",
             ">;"
         }
     .end annotation
@@ -3725,6 +4024,17 @@
     .end annotation
 .end field
 
+.field public ratProfileDataStoreProvider:Ljavax/inject/Provider;
+    .annotation system Ldalvik/annotation/Signature;
+        value = {
+            "Ljavax/inject/Provider<",
+            "Landroidx/datastore/core/DataStore<",
+            "Landroidx/datastore/preferences/core/Preferences;",
+            ">;>;"
+        }
+    .end annotation
+.end field
+
 .field public ratQrCodeCensorProvider:Ljavax/inject/Provider;
     .annotation system Ldalvik/annotation/Signature;
         value = {
@@ -3760,6 +4070,46 @@
         value = {
             "Ljavax/inject/Provider<",
             "Lde/rki/coronawarnapp/covidcertificate/recovery/core/storage/RecoveryCertificateStorage;",
+            ">;"
+        }
+    .end annotation
+.end field
+
+.field public recycleBinCleanUpSchedulerProvider:Ljavax/inject/Provider;
+    .annotation system Ldalvik/annotation/Signature;
+        value = {
+            "Ljavax/inject/Provider<",
+            "Lde/rki/coronawarnapp/reyclebin/cleanup/RecycleBinCleanUpScheduler;",
+            ">;"
+        }
+    .end annotation
+.end field
+
+.field public recycleBinCleanUpServiceProvider:Ljavax/inject/Provider;
+    .annotation system Ldalvik/annotation/Signature;
+        value = {
+            "Ljavax/inject/Provider<",
+            "Lde/rki/coronawarnapp/reyclebin/cleanup/RecycleBinCleanUpService;",
+            ">;"
+        }
+    .end annotation
+.end field
+
+.field public recycledCertificatesProvider:Ljavax/inject/Provider;
+    .annotation system Ldalvik/annotation/Signature;
+        value = {
+            "Ljavax/inject/Provider<",
+            "Lde/rki/coronawarnapp/reyclebin/covidcertificate/RecycledCertificatesProvider;",
+            ">;"
+        }
+    .end annotation
+.end field
+
+.field public recycledCoronaTestsProvider:Ljavax/inject/Provider;
+    .annotation system Ldalvik/annotation/Signature;
+        value = {
+            "Ljavax/inject/Provider<",
+            "Lde/rki/coronawarnapp/reyclebin/coronatest/RecycledCoronaTestsProvider;",
             ">;"
         }
     .end annotation
@@ -3865,6 +4215,16 @@
         value = {
             "Ljavax/inject/Provider<",
             "Lde/rki/coronawarnapp/risk/RiskLevelTask;",
+            ">;"
+        }
+    .end annotation
+.end field
+
+.field public rootDetectionDialogFragmentSubcomponentFactoryProvider:Ljavax/inject/Provider;
+    .annotation system Ldalvik/annotation/Signature;
+        value = {
+            "Ljavax/inject/Provider<",
+            "Ljava/lang/Object;",
             ">;"
         }
     .end annotation
@@ -4297,6 +4657,16 @@
     .end annotation
 .end field
 
+.field public ticketingJwtCensorProvider:Ljavax/inject/Provider;
+    .annotation system Ldalvik/annotation/Signature;
+        value = {
+            "Ljavax/inject/Provider<",
+            "Lde/rki/coronawarnapp/bugreporting/censors/BugCensor;",
+            ">;"
+        }
+    .end annotation
+.end field
+
 .field public timeStamperProvider:Ljavax/inject/Provider;
     .annotation system Ldalvik/annotation/Signature;
         value = {
@@ -4579,94 +4949,10 @@
 
 
 # direct methods
-.method public constructor <init>(Lde/rki/coronawarnapp/util/di/AndroidModule;Lde/rki/coronawarnapp/contactdiary/storage/ContactDiaryStorageModule;Lde/rki/coronawarnapp/util/coil/CoilModule;Lde/rki/coronawarnapp/risk/RiskModule;Lde/rki/coronawarnapp/nearby/ENFModule;Lde/rki/coronawarnapp/http/HttpModule;Lde/rki/coronawarnapp/environment/download/DownloadCDNModule;Lde/rki/coronawarnapp/environment/submission/SubmissionCDNModule;Lde/rki/coronawarnapp/environment/verification/VerificationCDNModule;Lde/rki/coronawarnapp/environment/datadonation/DataDonationCDNModule;Lde/rki/coronawarnapp/environment/bugreporting/BugReportingServerModule;Lde/rki/coronawarnapp/environment/covidcertificate/DCCModule;Lde/rki/coronawarnapp/diagnosiskeys/DiagnosisKeysModule;Lde/rki/coronawarnapp/appconfig/AppConfigModule;Lde/rki/coronawarnapp/submission/SubmissionModule;Lde/rki/coronawarnapp/coronatest/server/VerificationModule;Lcom/upokecenter/cbor/CBORInteger;Lde/rki/coronawarnapp/task/internal/TaskModule;Lde/rki/coronawarnapp/bugreporting/BugReportingModule;Lde/rki/coronawarnapp/bugreporting/BugReportingSharedModule;Lde/rki/coronawarnapp/util/serialization/SerializationModule;Lde/rki/coronawarnapp/statistics/StatisticsModule;Lde/rki/coronawarnapp/datadonation/DataDonationModule;Lde/rki/coronawarnapp/datadonation/survey/SurveyModule;Lde/rki/coronawarnapp/datadonation/analytics/AnalyticsModule;Lde/rki/coronawarnapp/util/security/SecurityModule;Lde/rki/coronawarnapp/environment/presencetracing/qrcodeposter/QrCodePosterTemplateModule;Lcom/google/android/play/core/common/zzc;Lde/rki/coronawarnapp/bugreporting/BugReportingSharedModule;Lde/rki/coronawarnapp/covidcertificate/DigitalCovidCertificateModule;Lde/rki/coronawarnapp/covidcertificate/valueset/CertificateValueSetModule;Lde/rki/coronawarnapp/covidcertificate/test/core/server/TestCertificateServerModule;Lde/rki/coronawarnapp/covidcertificate/validation/core/DccValidationModule;Lde/rki/coronawarnapp/covidcertificate/signature/core/server/DscServerModule;Lde/rki/coronawarnapp/rootdetection/RootDetectionModule;Lde/rki/coronawarnapp/qrcode/QrCodeScannerModule;Lde/rki/coronawarnapp/rootdetection/RootDetectionModule;Lcom/upokecenter/cbor/CBORUuidConverter;Lde/rki/coronawarnapp/CoronaWarnApplication;Lde/rki/coronawarnapp/util/di/DaggerApplicationComponent-IA;)V
-    .locals 28
-    .annotation system Ldalvik/annotation/MethodParameters;
-        accessFlags = {
-            0x0,
-            0x0,
-            0x0,
-            0x0,
-            0x0,
-            0x0,
-            0x0,
-            0x0,
-            0x0,
-            0x0,
-            0x0,
-            0x0,
-            0x0,
-            0x0,
-            0x0,
-            0x0,
-            0x0,
-            0x0,
-            0x0,
-            0x0,
-            0x0,
-            0x0,
-            0x0,
-            0x0,
-            0x0,
-            0x0,
-            0x0,
-            0x0,
-            0x0,
-            0x0,
-            0x0,
-            0x0,
-            0x0,
-            0x0,
-            0x0,
-            0x0,
-            0x0,
-            0x0,
-            0x0
-        }
-        names = {
-            "androidModuleParam",
-            "contactDiaryStorageModuleParam",
-            "coilModuleParam",
-            "riskModuleParam",
-            "eNFModuleParam",
-            "httpModuleParam",
-            "downloadCDNModuleParam",
-            "submissionCDNModuleParam",
-            "verificationCDNModuleParam",
-            "dataDonationCDNModuleParam",
-            "bugReportingServerModuleParam",
-            "dCCModuleParam",
-            "diagnosisKeysModuleParam",
-            "appConfigModuleParam",
-            "submissionModuleParam",
-            "verificationModuleParam",
-            "playbookModuleParam",
-            "taskModuleParam",
-            "bugReportingModuleParam",
-            "bugReportingSharedModuleParam",
-            "serializationModuleParam",
-            "statisticsModuleParam",
-            "dataDonationModuleParam",
-            "surveyModuleParam",
-            "analyticsModuleParam",
-            "securityModuleParam",
-            "qrCodePosterTemplateModuleParam",
-            "presenceTracingWarningModuleParam",
-            "organizerSubmissionModuleParam",
-            "digitalCovidCertificateModuleParam",
-            "certificateValueSetModuleParam",
-            "testCertificateServerModuleParam",
-            "dccValidationModuleParam",
-            "dscServerModuleParam",
-            "exportCertificateModuleParam",
-            "qrCodeScannerModuleParam",
-            "rootDetectionModuleParam",
-            "inAppUpdateModuleParam",
-            "appParam"
-        }
-    .end annotation
+.method public constructor <init>(Lde/rki/coronawarnapp/util/di/AndroidModule;Lde/rki/coronawarnapp/contactdiary/storage/ContactDiaryStorageModule;Lde/rki/coronawarnapp/util/coil/CoilModule;Lde/rki/coronawarnapp/risk/RiskModule;Lde/rki/coronawarnapp/nearby/ENFModule;Lde/rki/coronawarnapp/http/HttpModule;Lde/rki/coronawarnapp/environment/download/DownloadCDNModule;Lde/rki/coronawarnapp/environment/submission/SubmissionCDNModule;Lde/rki/coronawarnapp/environment/verification/VerificationCDNModule;Lde/rki/coronawarnapp/environment/datadonation/DataDonationCDNModule;Lde/rki/coronawarnapp/environment/bugreporting/BugReportingServerModule;Lde/rki/coronawarnapp/environment/covidcertificate/DCCModule;Lde/rki/coronawarnapp/diagnosiskeys/DiagnosisKeysModule;Lde/rki/coronawarnapp/appconfig/AppConfigModule;Lde/rki/coronawarnapp/submission/SubmissionModule;Lorg/bouncycastle/crypto/modes/kgcm/KGCMUtil_512;Lde/rki/coronawarnapp/playbook/PlaybookModule;Lde/rki/coronawarnapp/task/internal/TaskModule;Lde/rki/coronawarnapp/bugreporting/BugReportingModule;Lde/rki/coronawarnapp/bugreporting/BugReportingSharedModule;Lde/rki/coronawarnapp/util/serialization/SerializationModule;Lde/rki/coronawarnapp/statistics/StatisticsModule;Lde/rki/coronawarnapp/datadonation/DataDonationModule;Lde/rki/coronawarnapp/datadonation/survey/SurveyModule;Lcom/upokecenter/cbor/CBOREInteger;Lorg/bouncycastle/util/Fingerprint;Lde/rki/coronawarnapp/environment/presencetracing/qrcodeposter/QrCodePosterTemplateModule;Lcom/upokecenter/cbor/CBORExtendedFloat;Lde/rki/coronawarnapp/presencetracing/organizer/submission/OrganizerSubmissionModule;Lde/rki/coronawarnapp/coronatest/antigen/profile/RatProfileModule;Lcom/google/android/play/core/assetpacks/zzbf;Lde/rki/coronawarnapp/covidcertificate/valueset/CertificateValueSetModule;Lde/rki/coronawarnapp/covidcertificate/test/core/server/TestCertificateServerModule;Lde/rki/coronawarnapp/covidcertificate/validation/core/DccValidationModule;Lde/rki/coronawarnapp/covidcertificate/signature/core/server/DscServerModule;Lde/rki/coronawarnapp/covidcertificate/pdf/core/ExportCertificateModule;Lde/rki/coronawarnapp/qrcode/QrCodeScannerModule;Lorg/bouncycastle/util/Fingerprint;Lde/rki/coronawarnapp/update/InAppUpdateModule;Lde/rki/coronawarnapp/dccticketing/core/DccTicketingCoreModule;Lde/rki/coronawarnapp/CoronaWarnApplication;Lde/rki/coronawarnapp/util/di/DaggerApplicationComponent-IA;)V
+    .locals 57
 
-    move-object/from16 v13, p0
+    move-object/from16 v15, p0
 
     move-object/from16 v14, p1
 
@@ -4678,81 +4964,95 @@
 
     move-object/from16 v5, p7
 
-    move-object/from16 v15, p10
-
-    move-object/from16 v12, p12
+    move-object/from16 v13, p11
 
     move-object/from16 v1, p14
 
-    move-object/from16 v2, p21
+    move-object/from16 v12, p20
 
-    move-object/from16 v11, p25
+    move-object/from16 v2, p27
 
-    move-object/from16 v10, p31
+    move-object/from16 v11, p36
+
+    move-object/from16 v10, p37
+
+    move-object/from16 v9, p40
 
     invoke-direct/range {p0 .. p0}, Ljava/lang/Object;-><init>()V
 
-    iput-object v13, v13, Lde/rki/coronawarnapp/util/di/DaggerApplicationComponent;->applicationComponent:Lde/rki/coronawarnapp/util/di/DaggerApplicationComponent;
+    iput-object v15, v15, Lde/rki/coronawarnapp/util/di/DaggerApplicationComponent;->applicationComponent:Lde/rki/coronawarnapp/util/di/DaggerApplicationComponent;
 
     move-object/from16 v6, p29
 
-    iput-object v6, v13, Lde/rki/coronawarnapp/util/di/DaggerApplicationComponent;->organizerSubmissionModule:Lde/rki/coronawarnapp/bugreporting/BugReportingSharedModule;
+    iput-object v6, v15, Lde/rki/coronawarnapp/util/di/DaggerApplicationComponent;->organizerSubmissionModule:Lde/rki/coronawarnapp/presencetracing/organizer/submission/OrganizerSubmissionModule;
+
+    move-object/from16 v6, p31
+
+    iput-object v6, v15, Lde/rki/coronawarnapp/util/di/DaggerApplicationComponent;->digitalCovidCertificateModule:Lcom/google/android/play/core/assetpacks/zzbf;
+
+    iput-object v9, v15, Lde/rki/coronawarnapp/util/di/DaggerApplicationComponent;->dccTicketingCoreModule:Lde/rki/coronawarnapp/dccticketing/core/DccTicketingCoreModule;
 
     new-instance v6, Lde/rki/coronawarnapp/util/di/DaggerApplicationComponent$1;
 
-    invoke-direct {v6, v13}, Lde/rki/coronawarnapp/util/di/DaggerApplicationComponent$1;-><init>(Lde/rki/coronawarnapp/util/di/DaggerApplicationComponent;)V
+    invoke-direct {v6, v15}, Lde/rki/coronawarnapp/util/di/DaggerApplicationComponent$1;-><init>(Lde/rki/coronawarnapp/util/di/DaggerApplicationComponent;)V
 
-    iput-object v6, v13, Lde/rki/coronawarnapp/util/di/DaggerApplicationComponent;->exposureStateUpdateReceiverSubcomponentFactoryProvider:Ljavax/inject/Provider;
+    iput-object v6, v15, Lde/rki/coronawarnapp/util/di/DaggerApplicationComponent;->exposureStateUpdateReceiverSubcomponentFactoryProvider:Ljavax/inject/Provider;
 
     new-instance v6, Lde/rki/coronawarnapp/util/di/DaggerApplicationComponent$2;
 
-    invoke-direct {v6, v13}, Lde/rki/coronawarnapp/util/di/DaggerApplicationComponent$2;-><init>(Lde/rki/coronawarnapp/util/di/DaggerApplicationComponent;)V
+    invoke-direct {v6, v15}, Lde/rki/coronawarnapp/util/di/DaggerApplicationComponent$2;-><init>(Lde/rki/coronawarnapp/util/di/DaggerApplicationComponent;)V
 
-    iput-object v6, v13, Lde/rki/coronawarnapp/util/di/DaggerApplicationComponent;->notificationReceiverSubcomponentFactoryProvider:Ljavax/inject/Provider;
+    iput-object v6, v15, Lde/rki/coronawarnapp/util/di/DaggerApplicationComponent;->notificationReceiverSubcomponentFactoryProvider:Ljavax/inject/Provider;
 
     new-instance v6, Lde/rki/coronawarnapp/util/di/DaggerApplicationComponent$3;
 
-    invoke-direct {v6, v13}, Lde/rki/coronawarnapp/util/di/DaggerApplicationComponent$3;-><init>(Lde/rki/coronawarnapp/util/di/DaggerApplicationComponent;)V
+    invoke-direct {v6, v15}, Lde/rki/coronawarnapp/util/di/DaggerApplicationComponent$3;-><init>(Lde/rki/coronawarnapp/util/di/DaggerApplicationComponent;)V
 
-    iput-object v6, v13, Lde/rki/coronawarnapp/util/di/DaggerApplicationComponent;->autoCheckOutBootRestoreReceiverSubcomponentFactoryProvider:Ljavax/inject/Provider;
+    iput-object v6, v15, Lde/rki/coronawarnapp/util/di/DaggerApplicationComponent;->autoCheckOutBootRestoreReceiverSubcomponentFactoryProvider:Ljavax/inject/Provider;
 
     new-instance v6, Lde/rki/coronawarnapp/util/di/DaggerApplicationComponent$4;
 
-    invoke-direct {v6, v13}, Lde/rki/coronawarnapp/util/di/DaggerApplicationComponent$4;-><init>(Lde/rki/coronawarnapp/util/di/DaggerApplicationComponent;)V
+    invoke-direct {v6, v15}, Lde/rki/coronawarnapp/util/di/DaggerApplicationComponent$4;-><init>(Lde/rki/coronawarnapp/util/di/DaggerApplicationComponent;)V
 
-    iput-object v6, v13, Lde/rki/coronawarnapp/util/di/DaggerApplicationComponent;->autoCheckOutReceiverSubcomponentFactoryProvider:Ljavax/inject/Provider;
+    iput-object v6, v15, Lde/rki/coronawarnapp/util/di/DaggerApplicationComponent;->autoCheckOutReceiverSubcomponentFactoryProvider:Ljavax/inject/Provider;
 
     new-instance v6, Lde/rki/coronawarnapp/util/di/DaggerApplicationComponent$5;
 
-    invoke-direct {v6, v13}, Lde/rki/coronawarnapp/util/di/DaggerApplicationComponent$5;-><init>(Lde/rki/coronawarnapp/util/di/DaggerApplicationComponent;)V
+    invoke-direct {v6, v15}, Lde/rki/coronawarnapp/util/di/DaggerApplicationComponent$5;-><init>(Lde/rki/coronawarnapp/util/di/DaggerApplicationComponent;)V
 
-    iput-object v6, v13, Lde/rki/coronawarnapp/util/di/DaggerApplicationComponent;->mainActivitySubcomponentFactoryProvider:Ljavax/inject/Provider;
+    iput-object v6, v15, Lde/rki/coronawarnapp/util/di/DaggerApplicationComponent;->mainActivitySubcomponentFactoryProvider:Ljavax/inject/Provider;
 
     new-instance v6, Lde/rki/coronawarnapp/util/di/DaggerApplicationComponent$6;
 
-    invoke-direct {v6, v13}, Lde/rki/coronawarnapp/util/di/DaggerApplicationComponent$6;-><init>(Lde/rki/coronawarnapp/util/di/DaggerApplicationComponent;)V
+    invoke-direct {v6, v15}, Lde/rki/coronawarnapp/util/di/DaggerApplicationComponent$6;-><init>(Lde/rki/coronawarnapp/util/di/DaggerApplicationComponent;)V
 
-    iput-object v6, v13, Lde/rki/coronawarnapp/util/di/DaggerApplicationComponent;->launcherActivitySubcomponentFactoryProvider:Ljavax/inject/Provider;
+    iput-object v6, v15, Lde/rki/coronawarnapp/util/di/DaggerApplicationComponent;->launcherActivitySubcomponentFactoryProvider:Ljavax/inject/Provider;
 
     new-instance v6, Lde/rki/coronawarnapp/util/di/DaggerApplicationComponent$7;
 
-    invoke-direct {v6, v13}, Lde/rki/coronawarnapp/util/di/DaggerApplicationComponent$7;-><init>(Lde/rki/coronawarnapp/util/di/DaggerApplicationComponent;)V
+    invoke-direct {v6, v15}, Lde/rki/coronawarnapp/util/di/DaggerApplicationComponent$7;-><init>(Lde/rki/coronawarnapp/util/di/DaggerApplicationComponent;)V
 
-    iput-object v6, v13, Lde/rki/coronawarnapp/util/di/DaggerApplicationComponent;->onboardingActivitySubcomponentFactoryProvider:Ljavax/inject/Provider;
+    iput-object v6, v15, Lde/rki/coronawarnapp/util/di/DaggerApplicationComponent;->onboardingActivitySubcomponentFactoryProvider:Ljavax/inject/Provider;
 
     new-instance v6, Lde/rki/coronawarnapp/util/di/DaggerApplicationComponent$8;
 
-    invoke-direct {v6, v13}, Lde/rki/coronawarnapp/util/di/DaggerApplicationComponent$8;-><init>(Lde/rki/coronawarnapp/util/di/DaggerApplicationComponent;)V
+    invoke-direct {v6, v15}, Lde/rki/coronawarnapp/util/di/DaggerApplicationComponent$8;-><init>(Lde/rki/coronawarnapp/util/di/DaggerApplicationComponent;)V
 
-    iput-object v6, v13, Lde/rki/coronawarnapp/util/di/DaggerApplicationComponent;->surveyConsentFragmentSubcomponentFactoryProvider:Ljavax/inject/Provider;
+    iput-object v6, v15, Lde/rki/coronawarnapp/util/di/DaggerApplicationComponent;->surveyConsentFragmentSubcomponentFactoryProvider:Ljavax/inject/Provider;
+
+    new-instance v6, Lde/rki/coronawarnapp/util/di/DaggerApplicationComponent$9;
+
+    invoke-direct {v6, v15}, Lde/rki/coronawarnapp/util/di/DaggerApplicationComponent$9;-><init>(Lde/rki/coronawarnapp/util/di/DaggerApplicationComponent;)V
+
+    iput-object v6, v15, Lde/rki/coronawarnapp/util/di/DaggerApplicationComponent;->rootDetectionDialogFragmentSubcomponentFactoryProvider:Ljavax/inject/Provider;
 
     new-instance v6, Ldagger/internal/InstanceFactory;
 
-    move-object/from16 v7, p39
+    move-object/from16 v7, p41
 
     invoke-direct {v6, v7}, Ldagger/internal/InstanceFactory;-><init>(Ljava/lang/Object;)V
 
-    iput-object v6, v13, Lde/rki/coronawarnapp/util/di/DaggerApplicationComponent;->appProvider:Ljavax/inject/Provider;
+    iput-object v6, v15, Lde/rki/coronawarnapp/util/di/DaggerApplicationComponent;->appProvider:Ljavax/inject/Provider;
 
     new-instance v7, Lde/rki/coronawarnapp/util/di/AndroidModule_ApplicationFactory;
 
@@ -4774,7 +5074,7 @@
     move-object v7, v6
 
     :goto_0
-    iput-object v7, v13, Lde/rki/coronawarnapp/util/di/DaggerApplicationComponent;->applicationProvider:Ljavax/inject/Provider;
+    iput-object v7, v15, Lde/rki/coronawarnapp/util/di/DaggerApplicationComponent;->applicationProvider:Ljavax/inject/Provider;
 
     new-instance v6, Lde/rki/coronawarnapp/util/di/AndroidModule_ContextFactory;
 
@@ -4794,7 +5094,7 @@
     move-object v6, v7
 
     :goto_1
-    iput-object v6, v13, Lde/rki/coronawarnapp/util/di/DaggerApplicationComponent;->contextProvider:Ljavax/inject/Provider;
+    iput-object v6, v15, Lde/rki/coronawarnapp/util/di/DaggerApplicationComponent;->contextProvider:Ljavax/inject/Provider;
 
     new-instance v6, Lde/rki/coronawarnapp/util/di/AndroidModule_ProcressLifecycleOwnerFactory;
 
@@ -4814,7 +5114,7 @@
     move-object v6, v7
 
     :goto_2
-    iput-object v6, v13, Lde/rki/coronawarnapp/util/di/DaggerApplicationComponent;->procressLifecycleOwnerProvider:Ljavax/inject/Provider;
+    iput-object v6, v15, Lde/rki/coronawarnapp/util/di/DaggerApplicationComponent;->procressLifecycleOwnerProvider:Ljavax/inject/Provider;
 
     new-instance v7, Lde/rki/coronawarnapp/util/device/ForegroundState_Factory;
 
@@ -4834,9 +5134,9 @@
     move-object v7, v6
 
     :goto_3
-    iput-object v7, v13, Lde/rki/coronawarnapp/util/di/DaggerApplicationComponent;->foregroundStateProvider:Ljavax/inject/Provider;
+    iput-object v7, v15, Lde/rki/coronawarnapp/util/di/DaggerApplicationComponent;->foregroundStateProvider:Ljavax/inject/Provider;
 
-    iget-object v6, v13, Lde/rki/coronawarnapp/util/di/DaggerApplicationComponent;->contextProvider:Ljavax/inject/Provider;
+    iget-object v6, v15, Lde/rki/coronawarnapp/util/di/DaggerApplicationComponent;->contextProvider:Ljavax/inject/Provider;
 
     new-instance v7, Lde/rki/coronawarnapp/util/device/PowerManagement_Factory;
 
@@ -4856,9 +5156,9 @@
     move-object v7, v6
 
     :goto_4
-    iput-object v7, v13, Lde/rki/coronawarnapp/util/di/DaggerApplicationComponent;->powerManagementProvider:Ljavax/inject/Provider;
+    iput-object v7, v15, Lde/rki/coronawarnapp/util/di/DaggerApplicationComponent;->powerManagementProvider:Ljavax/inject/Provider;
 
-    iget-object v6, v13, Lde/rki/coronawarnapp/util/di/DaggerApplicationComponent;->contextProvider:Ljavax/inject/Provider;
+    iget-object v6, v15, Lde/rki/coronawarnapp/util/di/DaggerApplicationComponent;->contextProvider:Ljavax/inject/Provider;
 
     new-instance v7, Lde/rki/coronawarnapp/util/di/AndroidModule_ActivityManagerFactory;
 
@@ -4878,7 +5178,7 @@
     move-object v7, v6
 
     :goto_5
-    iput-object v7, v13, Lde/rki/coronawarnapp/util/di/DaggerApplicationComponent;->activityManagerProvider:Ljavax/inject/Provider;
+    iput-object v7, v15, Lde/rki/coronawarnapp/util/di/DaggerApplicationComponent;->activityManagerProvider:Ljavax/inject/Provider;
 
     sget-object v6, Lde/rki/coronawarnapp/util/coroutine/AppCoroutineScope_Factory$InstanceHolder;->INSTANCE:Lde/rki/coronawarnapp/util/coroutine/AppCoroutineScope_Factory;
 
@@ -4896,867 +5196,877 @@
     move-object v6, v7
 
     :goto_6
-    iput-object v6, v13, Lde/rki/coronawarnapp/util/di/DaggerApplicationComponent;->appCoroutineScopeProvider:Ljavax/inject/Provider;
+    iput-object v6, v15, Lde/rki/coronawarnapp/util/di/DaggerApplicationComponent;->appCoroutineScopeProvider:Ljavax/inject/Provider;
 
-    iget-object v7, v13, Lde/rki/coronawarnapp/util/di/DaggerApplicationComponent;->foregroundStateProvider:Ljavax/inject/Provider;
+    iget-object v7, v15, Lde/rki/coronawarnapp/util/di/DaggerApplicationComponent;->foregroundStateProvider:Ljavax/inject/Provider;
 
-    iget-object v8, v13, Lde/rki/coronawarnapp/util/di/DaggerApplicationComponent;->powerManagementProvider:Ljavax/inject/Provider;
+    iget-object v8, v15, Lde/rki/coronawarnapp/util/di/DaggerApplicationComponent;->powerManagementProvider:Ljavax/inject/Provider;
 
-    iget-object v9, v13, Lde/rki/coronawarnapp/util/di/DaggerApplicationComponent;->activityManagerProvider:Ljavax/inject/Provider;
+    iget-object v2, v15, Lde/rki/coronawarnapp/util/di/DaggerApplicationComponent;->activityManagerProvider:Ljavax/inject/Provider;
 
-    new-instance v10, Lde/rki/coronawarnapp/util/device/BackgroundModeStatus_Factory;
+    new-instance v9, Lde/rki/coronawarnapp/util/device/BackgroundModeStatus_Factory;
 
-    invoke-direct {v10, v7, v8, v9, v6}, Lde/rki/coronawarnapp/util/device/BackgroundModeStatus_Factory;-><init>(Ljavax/inject/Provider;Ljavax/inject/Provider;Ljavax/inject/Provider;Ljavax/inject/Provider;)V
+    invoke-direct {v9, v7, v8, v2, v6}, Lde/rki/coronawarnapp/util/device/BackgroundModeStatus_Factory;-><init>(Ljavax/inject/Provider;Ljavax/inject/Provider;Ljavax/inject/Provider;Ljavax/inject/Provider;)V
 
-    instance-of v6, v10, Ldagger/internal/DoubleCheck;
+    instance-of v2, v9, Ldagger/internal/DoubleCheck;
 
-    if-eqz v6, :cond_7
+    if-eqz v2, :cond_7
 
     goto :goto_7
 
     :cond_7
-    new-instance v6, Ldagger/internal/DoubleCheck;
+    new-instance v2, Ldagger/internal/DoubleCheck;
 
-    invoke-direct {v6, v10}, Ldagger/internal/DoubleCheck;-><init>(Ljavax/inject/Provider;)V
+    invoke-direct {v2, v9}, Ldagger/internal/DoubleCheck;-><init>(Ljavax/inject/Provider;)V
 
-    move-object v10, v6
+    move-object v9, v2
 
     :goto_7
-    iput-object v10, v13, Lde/rki/coronawarnapp/util/di/DaggerApplicationComponent;->backgroundModeStatusProvider:Ljavax/inject/Provider;
+    iput-object v9, v15, Lde/rki/coronawarnapp/util/di/DaggerApplicationComponent;->backgroundModeStatusProvider:Ljavax/inject/Provider;
 
-    sget-object v6, Lde/rki/coronawarnapp/risk/DefaultRiskLevels_Factory$InstanceHolder;->INSTANCE:Lde/rki/coronawarnapp/risk/DefaultRiskLevels_Factory;
+    sget-object v2, Lde/rki/coronawarnapp/risk/DefaultRiskLevels_Factory$InstanceHolder;->INSTANCE:Lde/rki/coronawarnapp/risk/DefaultRiskLevels_Factory;
 
-    instance-of v7, v6, Ldagger/internal/DoubleCheck;
+    instance-of v6, v2, Ldagger/internal/DoubleCheck;
 
-    if-eqz v7, :cond_8
+    if-eqz v6, :cond_8
 
     goto :goto_8
 
     :cond_8
-    new-instance v7, Ldagger/internal/DoubleCheck;
+    new-instance v6, Ldagger/internal/DoubleCheck;
 
-    invoke-direct {v7, v6}, Ldagger/internal/DoubleCheck;-><init>(Ljavax/inject/Provider;)V
+    invoke-direct {v6, v2}, Ldagger/internal/DoubleCheck;-><init>(Ljavax/inject/Provider;)V
 
-    move-object v6, v7
+    move-object v2, v6
 
     :goto_8
-    iput-object v6, v13, Lde/rki/coronawarnapp/util/di/DaggerApplicationComponent;->defaultRiskLevelsProvider:Ljavax/inject/Provider;
+    iput-object v2, v15, Lde/rki/coronawarnapp/util/di/DaggerApplicationComponent;->defaultRiskLevelsProvider:Ljavax/inject/Provider;
 
-    new-instance v7, Lde/rki/coronawarnapp/risk/RiskModule_BindRiskLevelCalculationFactory;
+    new-instance v6, Lde/rki/coronawarnapp/risk/RiskModule_BindRiskLevelCalculationFactory;
 
-    invoke-direct {v7, v3, v6}, Lde/rki/coronawarnapp/risk/RiskModule_BindRiskLevelCalculationFactory;-><init>(Lde/rki/coronawarnapp/risk/RiskModule;Ljavax/inject/Provider;)V
+    invoke-direct {v6, v3, v2}, Lde/rki/coronawarnapp/risk/RiskModule_BindRiskLevelCalculationFactory;-><init>(Lde/rki/coronawarnapp/risk/RiskModule;Ljavax/inject/Provider;)V
 
-    instance-of v6, v7, Ldagger/internal/DoubleCheck;
+    instance-of v2, v6, Ldagger/internal/DoubleCheck;
 
-    if-eqz v6, :cond_9
+    if-eqz v2, :cond_9
 
     goto :goto_9
 
     :cond_9
-    new-instance v6, Ldagger/internal/DoubleCheck;
+    new-instance v2, Ldagger/internal/DoubleCheck;
 
-    invoke-direct {v6, v7}, Ldagger/internal/DoubleCheck;-><init>(Ljavax/inject/Provider;)V
+    invoke-direct {v2, v6}, Ldagger/internal/DoubleCheck;-><init>(Ljavax/inject/Provider;)V
 
-    move-object v7, v6
+    move-object v6, v2
 
     :goto_9
-    iput-object v7, v13, Lde/rki/coronawarnapp/util/di/DaggerApplicationComponent;->bindRiskLevelCalculationProvider:Ljavax/inject/Provider;
+    iput-object v6, v15, Lde/rki/coronawarnapp/util/di/DaggerApplicationComponent;->bindRiskLevelCalculationProvider:Ljavax/inject/Provider;
 
-    iget-object v6, v13, Lde/rki/coronawarnapp/util/di/DaggerApplicationComponent;->contextProvider:Ljavax/inject/Provider;
+    iget-object v2, v15, Lde/rki/coronawarnapp/util/di/DaggerApplicationComponent;->contextProvider:Ljavax/inject/Provider;
 
-    new-instance v7, Lde/rki/coronawarnapp/nearby/ENFModule_ExposureNotificationClientFactory;
+    new-instance v6, Lde/rki/coronawarnapp/nearby/ENFModule_ExposureNotificationClientFactory;
 
-    invoke-direct {v7, v0, v6}, Lde/rki/coronawarnapp/nearby/ENFModule_ExposureNotificationClientFactory;-><init>(Lde/rki/coronawarnapp/nearby/ENFModule;Ljavax/inject/Provider;)V
+    invoke-direct {v6, v0, v2}, Lde/rki/coronawarnapp/nearby/ENFModule_ExposureNotificationClientFactory;-><init>(Lde/rki/coronawarnapp/nearby/ENFModule;Ljavax/inject/Provider;)V
 
-    instance-of v6, v7, Ldagger/internal/DoubleCheck;
+    instance-of v2, v6, Ldagger/internal/DoubleCheck;
 
-    if-eqz v6, :cond_a
+    if-eqz v2, :cond_a
 
     goto :goto_a
 
     :cond_a
-    new-instance v6, Ldagger/internal/DoubleCheck;
+    new-instance v2, Ldagger/internal/DoubleCheck;
 
-    invoke-direct {v6, v7}, Ldagger/internal/DoubleCheck;-><init>(Ljavax/inject/Provider;)V
+    invoke-direct {v2, v6}, Ldagger/internal/DoubleCheck;-><init>(Ljavax/inject/Provider;)V
 
-    move-object v7, v6
+    move-object v6, v2
 
     :goto_a
-    iput-object v7, v13, Lde/rki/coronawarnapp/util/di/DaggerApplicationComponent;->exposureNotificationClientProvider:Ljavax/inject/Provider;
+    iput-object v6, v15, Lde/rki/coronawarnapp/util/di/DaggerApplicationComponent;->exposureNotificationClientProvider:Ljavax/inject/Provider;
 
-    new-instance v6, Lde/rki/coronawarnapp/nearby/modules/version/DefaultENFVersion_Factory;
+    new-instance v2, Lde/rki/coronawarnapp/nearby/modules/version/DefaultENFVersion_Factory;
 
-    invoke-direct {v6, v7}, Lde/rki/coronawarnapp/nearby/modules/version/DefaultENFVersion_Factory;-><init>(Ljavax/inject/Provider;)V
+    invoke-direct {v2, v6}, Lde/rki/coronawarnapp/nearby/modules/version/DefaultENFVersion_Factory;-><init>(Ljavax/inject/Provider;)V
 
-    instance-of v7, v6, Ldagger/internal/DoubleCheck;
+    instance-of v6, v2, Ldagger/internal/DoubleCheck;
 
-    if-eqz v7, :cond_b
+    if-eqz v6, :cond_b
 
     goto :goto_b
 
     :cond_b
-    new-instance v7, Ldagger/internal/DoubleCheck;
+    new-instance v6, Ldagger/internal/DoubleCheck;
 
-    invoke-direct {v7, v6}, Ldagger/internal/DoubleCheck;-><init>(Ljavax/inject/Provider;)V
+    invoke-direct {v6, v2}, Ldagger/internal/DoubleCheck;-><init>(Ljavax/inject/Provider;)V
 
-    move-object v6, v7
+    move-object v2, v6
 
     :goto_b
-    iput-object v6, v13, Lde/rki/coronawarnapp/util/di/DaggerApplicationComponent;->defaultENFVersionProvider:Ljavax/inject/Provider;
+    iput-object v2, v15, Lde/rki/coronawarnapp/util/di/DaggerApplicationComponent;->defaultENFVersionProvider:Ljavax/inject/Provider;
 
-    new-instance v7, Lde/rki/coronawarnapp/nearby/ENFModule_EnfClientVersionFactory;
+    new-instance v6, Lde/rki/coronawarnapp/nearby/ENFModule_EnfClientVersionFactory;
 
-    invoke-direct {v7, v0, v6}, Lde/rki/coronawarnapp/nearby/ENFModule_EnfClientVersionFactory;-><init>(Lde/rki/coronawarnapp/nearby/ENFModule;Ljavax/inject/Provider;)V
+    invoke-direct {v6, v0, v2}, Lde/rki/coronawarnapp/nearby/ENFModule_EnfClientVersionFactory;-><init>(Lde/rki/coronawarnapp/nearby/ENFModule;Ljavax/inject/Provider;)V
 
-    instance-of v6, v7, Ldagger/internal/DoubleCheck;
+    instance-of v2, v6, Ldagger/internal/DoubleCheck;
 
-    if-eqz v6, :cond_c
+    if-eqz v2, :cond_c
 
     goto :goto_c
 
     :cond_c
-    new-instance v6, Ldagger/internal/DoubleCheck;
+    new-instance v2, Ldagger/internal/DoubleCheck;
 
-    invoke-direct {v6, v7}, Ldagger/internal/DoubleCheck;-><init>(Ljavax/inject/Provider;)V
+    invoke-direct {v2, v6}, Ldagger/internal/DoubleCheck;-><init>(Ljavax/inject/Provider;)V
 
-    move-object v7, v6
+    move-object v6, v2
 
     :goto_c
-    iput-object v7, v13, Lde/rki/coronawarnapp/util/di/DaggerApplicationComponent;->enfClientVersionProvider:Ljavax/inject/Provider;
+    iput-object v6, v15, Lde/rki/coronawarnapp/util/di/DaggerApplicationComponent;->enfClientVersionProvider:Ljavax/inject/Provider;
 
-    iget-object v6, v13, Lde/rki/coronawarnapp/util/di/DaggerApplicationComponent;->contextProvider:Ljavax/inject/Provider;
+    iget-object v2, v15, Lde/rki/coronawarnapp/util/di/DaggerApplicationComponent;->contextProvider:Ljavax/inject/Provider;
 
-    new-instance v7, Lde/rki/coronawarnapp/nearby/ENFClientLocalData_Factory;
+    new-instance v6, Lde/rki/coronawarnapp/nearby/ENFClientLocalData_Factory;
 
-    invoke-direct {v7, v6}, Lde/rki/coronawarnapp/nearby/ENFClientLocalData_Factory;-><init>(Ljavax/inject/Provider;)V
+    invoke-direct {v6, v2}, Lde/rki/coronawarnapp/nearby/ENFClientLocalData_Factory;-><init>(Ljavax/inject/Provider;)V
 
-    instance-of v6, v7, Ldagger/internal/DoubleCheck;
+    instance-of v2, v6, Ldagger/internal/DoubleCheck;
 
-    if-eqz v6, :cond_d
+    if-eqz v2, :cond_d
 
     goto :goto_d
 
     :cond_d
-    new-instance v6, Ldagger/internal/DoubleCheck;
+    new-instance v2, Ldagger/internal/DoubleCheck;
 
-    invoke-direct {v6, v7}, Ldagger/internal/DoubleCheck;-><init>(Ljavax/inject/Provider;)V
+    invoke-direct {v2, v6}, Ldagger/internal/DoubleCheck;-><init>(Ljavax/inject/Provider;)V
 
-    move-object v7, v6
+    move-object v6, v2
 
     :goto_d
-    iput-object v7, v13, Lde/rki/coronawarnapp/util/di/DaggerApplicationComponent;->eNFClientLocalDataProvider:Ljavax/inject/Provider;
+    iput-object v6, v15, Lde/rki/coronawarnapp/util/di/DaggerApplicationComponent;->eNFClientLocalDataProvider:Ljavax/inject/Provider;
 
-    sget-object v6, Lde/rki/coronawarnapp/util/TimeStamper_Factory$InstanceHolder;->INSTANCE:Lde/rki/coronawarnapp/util/TimeStamper_Factory;
+    sget-object v2, Lde/rki/coronawarnapp/util/TimeStamper_Factory$InstanceHolder;->INSTANCE:Lde/rki/coronawarnapp/util/TimeStamper_Factory;
 
-    instance-of v7, v6, Ldagger/internal/DoubleCheck;
+    instance-of v6, v2, Ldagger/internal/DoubleCheck;
 
-    if-eqz v7, :cond_e
+    if-eqz v6, :cond_e
 
     goto :goto_e
 
     :cond_e
-    new-instance v7, Ldagger/internal/DoubleCheck;
+    new-instance v6, Ldagger/internal/DoubleCheck;
 
-    invoke-direct {v7, v6}, Ldagger/internal/DoubleCheck;-><init>(Ljavax/inject/Provider;)V
+    invoke-direct {v6, v2}, Ldagger/internal/DoubleCheck;-><init>(Ljavax/inject/Provider;)V
 
-    move-object v6, v7
+    move-object v2, v6
 
     :goto_e
-    iput-object v6, v13, Lde/rki/coronawarnapp/util/di/DaggerApplicationComponent;->timeStamperProvider:Ljavax/inject/Provider;
+    iput-object v2, v15, Lde/rki/coronawarnapp/util/di/DaggerApplicationComponent;->timeStamperProvider:Ljavax/inject/Provider;
 
-    iget-object v7, v13, Lde/rki/coronawarnapp/util/di/DaggerApplicationComponent;->eNFClientLocalDataProvider:Ljavax/inject/Provider;
+    iget-object v6, v15, Lde/rki/coronawarnapp/util/di/DaggerApplicationComponent;->eNFClientLocalDataProvider:Ljavax/inject/Provider;
 
-    new-instance v8, Lde/rki/coronawarnapp/nearby/modules/diagnosiskeyprovider/SubmissionQuota_Factory;
+    new-instance v7, Lde/rki/coronawarnapp/nearby/modules/diagnosiskeyprovider/SubmissionQuota_Factory;
 
-    invoke-direct {v8, v7, v6}, Lde/rki/coronawarnapp/nearby/modules/diagnosiskeyprovider/SubmissionQuota_Factory;-><init>(Ljavax/inject/Provider;Ljavax/inject/Provider;)V
+    invoke-direct {v7, v6, v2}, Lde/rki/coronawarnapp/nearby/modules/diagnosiskeyprovider/SubmissionQuota_Factory;-><init>(Ljavax/inject/Provider;Ljavax/inject/Provider;)V
 
-    instance-of v6, v8, Ldagger/internal/DoubleCheck;
+    instance-of v2, v7, Ldagger/internal/DoubleCheck;
 
-    if-eqz v6, :cond_f
+    if-eqz v2, :cond_f
 
     goto :goto_f
 
     :cond_f
-    new-instance v6, Ldagger/internal/DoubleCheck;
+    new-instance v2, Ldagger/internal/DoubleCheck;
 
-    invoke-direct {v6, v8}, Ldagger/internal/DoubleCheck;-><init>(Ljavax/inject/Provider;)V
+    invoke-direct {v2, v7}, Ldagger/internal/DoubleCheck;-><init>(Ljavax/inject/Provider;)V
 
-    move-object v8, v6
+    move-object v7, v2
 
     :goto_f
-    iput-object v8, v13, Lde/rki/coronawarnapp/util/di/DaggerApplicationComponent;->submissionQuotaProvider:Ljavax/inject/Provider;
+    iput-object v7, v15, Lde/rki/coronawarnapp/util/di/DaggerApplicationComponent;->submissionQuotaProvider:Ljavax/inject/Provider;
 
-    iget-object v6, v13, Lde/rki/coronawarnapp/util/di/DaggerApplicationComponent;->exposureNotificationClientProvider:Ljavax/inject/Provider;
+    iget-object v2, v15, Lde/rki/coronawarnapp/util/di/DaggerApplicationComponent;->exposureNotificationClientProvider:Ljavax/inject/Provider;
 
-    new-instance v7, Lde/rki/coronawarnapp/nearby/modules/diagnosiskeysdatamapper/DefaultDiagnosisKeysDataMapper_Factory;
+    new-instance v6, Lde/rki/coronawarnapp/nearby/modules/diagnosiskeysdatamapper/DefaultDiagnosisKeysDataMapper_Factory;
 
-    invoke-direct {v7, v6}, Lde/rki/coronawarnapp/nearby/modules/diagnosiskeysdatamapper/DefaultDiagnosisKeysDataMapper_Factory;-><init>(Ljavax/inject/Provider;)V
+    invoke-direct {v6, v2}, Lde/rki/coronawarnapp/nearby/modules/diagnosiskeysdatamapper/DefaultDiagnosisKeysDataMapper_Factory;-><init>(Ljavax/inject/Provider;)V
 
-    instance-of v6, v7, Ldagger/internal/DoubleCheck;
+    instance-of v2, v6, Ldagger/internal/DoubleCheck;
 
-    if-eqz v6, :cond_10
+    if-eqz v2, :cond_10
 
     goto :goto_10
 
     :cond_10
-    new-instance v6, Ldagger/internal/DoubleCheck;
+    new-instance v2, Ldagger/internal/DoubleCheck;
 
-    invoke-direct {v6, v7}, Ldagger/internal/DoubleCheck;-><init>(Ljavax/inject/Provider;)V
+    invoke-direct {v2, v6}, Ldagger/internal/DoubleCheck;-><init>(Ljavax/inject/Provider;)V
 
-    move-object v7, v6
+    move-object v6, v2
 
     :goto_10
-    iput-object v7, v13, Lde/rki/coronawarnapp/util/di/DaggerApplicationComponent;->defaultDiagnosisKeysDataMapperProvider:Ljavax/inject/Provider;
+    iput-object v6, v15, Lde/rki/coronawarnapp/util/di/DaggerApplicationComponent;->defaultDiagnosisKeysDataMapperProvider:Ljavax/inject/Provider;
 
-    new-instance v6, Lde/rki/coronawarnapp/nearby/ENFModule_DiagnosisKeysDataMapperFactory;
+    new-instance v2, Lde/rki/coronawarnapp/nearby/ENFModule_DiagnosisKeysDataMapperFactory;
 
-    invoke-direct {v6, v0, v7}, Lde/rki/coronawarnapp/nearby/ENFModule_DiagnosisKeysDataMapperFactory;-><init>(Lde/rki/coronawarnapp/nearby/ENFModule;Ljavax/inject/Provider;)V
+    invoke-direct {v2, v0, v6}, Lde/rki/coronawarnapp/nearby/ENFModule_DiagnosisKeysDataMapperFactory;-><init>(Lde/rki/coronawarnapp/nearby/ENFModule;Ljavax/inject/Provider;)V
 
-    instance-of v7, v6, Ldagger/internal/DoubleCheck;
+    instance-of v6, v2, Ldagger/internal/DoubleCheck;
 
-    if-eqz v7, :cond_11
+    if-eqz v6, :cond_11
 
     goto :goto_11
 
     :cond_11
-    new-instance v7, Ldagger/internal/DoubleCheck;
+    new-instance v6, Ldagger/internal/DoubleCheck;
 
-    invoke-direct {v7, v6}, Ldagger/internal/DoubleCheck;-><init>(Ljavax/inject/Provider;)V
+    invoke-direct {v6, v2}, Ldagger/internal/DoubleCheck;-><init>(Ljavax/inject/Provider;)V
 
-    move-object v6, v7
+    move-object v2, v6
 
     :goto_11
-    iput-object v6, v13, Lde/rki/coronawarnapp/util/di/DaggerApplicationComponent;->diagnosisKeysDataMapperProvider:Ljavax/inject/Provider;
+    iput-object v2, v15, Lde/rki/coronawarnapp/util/di/DaggerApplicationComponent;->diagnosisKeysDataMapperProvider:Ljavax/inject/Provider;
 
-    iget-object v7, v13, Lde/rki/coronawarnapp/util/di/DaggerApplicationComponent;->enfClientVersionProvider:Ljavax/inject/Provider;
+    iget-object v6, v15, Lde/rki/coronawarnapp/util/di/DaggerApplicationComponent;->enfClientVersionProvider:Ljavax/inject/Provider;
 
-    iget-object v8, v13, Lde/rki/coronawarnapp/util/di/DaggerApplicationComponent;->submissionQuotaProvider:Ljavax/inject/Provider;
+    iget-object v7, v15, Lde/rki/coronawarnapp/util/di/DaggerApplicationComponent;->submissionQuotaProvider:Ljavax/inject/Provider;
 
-    iget-object v9, v13, Lde/rki/coronawarnapp/util/di/DaggerApplicationComponent;->exposureNotificationClientProvider:Ljavax/inject/Provider;
+    iget-object v8, v15, Lde/rki/coronawarnapp/util/di/DaggerApplicationComponent;->exposureNotificationClientProvider:Ljavax/inject/Provider;
 
-    new-instance v10, Lde/rki/coronawarnapp/nearby/modules/diagnosiskeyprovider/DefaultDiagnosisKeyProvider_Factory;
+    new-instance v9, Lde/rki/coronawarnapp/nearby/modules/diagnosiskeyprovider/DefaultDiagnosisKeyProvider_Factory;
 
-    invoke-direct {v10, v7, v8, v9, v6}, Lde/rki/coronawarnapp/nearby/modules/diagnosiskeyprovider/DefaultDiagnosisKeyProvider_Factory;-><init>(Ljavax/inject/Provider;Ljavax/inject/Provider;Ljavax/inject/Provider;Ljavax/inject/Provider;)V
+    invoke-direct {v9, v6, v7, v8, v2}, Lde/rki/coronawarnapp/nearby/modules/diagnosiskeyprovider/DefaultDiagnosisKeyProvider_Factory;-><init>(Ljavax/inject/Provider;Ljavax/inject/Provider;Ljavax/inject/Provider;Ljavax/inject/Provider;)V
 
-    instance-of v6, v10, Ldagger/internal/DoubleCheck;
+    instance-of v2, v9, Ldagger/internal/DoubleCheck;
 
-    if-eqz v6, :cond_12
+    if-eqz v2, :cond_12
 
     goto :goto_12
 
     :cond_12
-    new-instance v6, Ldagger/internal/DoubleCheck;
+    new-instance v2, Ldagger/internal/DoubleCheck;
 
-    invoke-direct {v6, v10}, Ldagger/internal/DoubleCheck;-><init>(Ljavax/inject/Provider;)V
+    invoke-direct {v2, v9}, Ldagger/internal/DoubleCheck;-><init>(Ljavax/inject/Provider;)V
 
-    move-object v10, v6
+    move-object v9, v2
 
     :goto_12
-    iput-object v10, v13, Lde/rki/coronawarnapp/util/di/DaggerApplicationComponent;->defaultDiagnosisKeyProvider:Ljavax/inject/Provider;
+    iput-object v9, v15, Lde/rki/coronawarnapp/util/di/DaggerApplicationComponent;->defaultDiagnosisKeyProvider:Ljavax/inject/Provider;
 
-    new-instance v6, Lde/rki/coronawarnapp/nearby/ENFModule_DiagnosisKeySubmitterFactory;
+    new-instance v2, Lde/rki/coronawarnapp/nearby/ENFModule_DiagnosisKeySubmitterFactory;
 
-    invoke-direct {v6, v0, v10}, Lde/rki/coronawarnapp/nearby/ENFModule_DiagnosisKeySubmitterFactory;-><init>(Lde/rki/coronawarnapp/nearby/ENFModule;Ljavax/inject/Provider;)V
+    invoke-direct {v2, v0, v9}, Lde/rki/coronawarnapp/nearby/ENFModule_DiagnosisKeySubmitterFactory;-><init>(Lde/rki/coronawarnapp/nearby/ENFModule;Ljavax/inject/Provider;)V
 
-    instance-of v7, v6, Ldagger/internal/DoubleCheck;
+    instance-of v6, v2, Ldagger/internal/DoubleCheck;
 
-    if-eqz v7, :cond_13
+    if-eqz v6, :cond_13
 
     goto :goto_13
 
     :cond_13
-    new-instance v7, Ldagger/internal/DoubleCheck;
+    new-instance v6, Ldagger/internal/DoubleCheck;
 
-    invoke-direct {v7, v6}, Ldagger/internal/DoubleCheck;-><init>(Ljavax/inject/Provider;)V
+    invoke-direct {v6, v2}, Ldagger/internal/DoubleCheck;-><init>(Ljavax/inject/Provider;)V
 
-    move-object v6, v7
+    move-object v2, v6
 
     :goto_13
-    iput-object v6, v13, Lde/rki/coronawarnapp/util/di/DaggerApplicationComponent;->diagnosisKeySubmitterProvider:Ljavax/inject/Provider;
+    iput-object v2, v15, Lde/rki/coronawarnapp/util/di/DaggerApplicationComponent;->diagnosisKeySubmitterProvider:Ljavax/inject/Provider;
 
-    iget-object v6, v13, Lde/rki/coronawarnapp/util/di/DaggerApplicationComponent;->contextProvider:Ljavax/inject/Provider;
+    iget-object v2, v15, Lde/rki/coronawarnapp/util/di/DaggerApplicationComponent;->contextProvider:Ljavax/inject/Provider;
 
-    new-instance v7, Lde/rki/coronawarnapp/storage/TracingSettings_Factory;
+    new-instance v6, Lde/rki/coronawarnapp/storage/TracingSettings_Factory;
 
-    invoke-direct {v7, v6}, Lde/rki/coronawarnapp/storage/TracingSettings_Factory;-><init>(Ljavax/inject/Provider;)V
+    invoke-direct {v6, v2}, Lde/rki/coronawarnapp/storage/TracingSettings_Factory;-><init>(Ljavax/inject/Provider;)V
 
-    instance-of v6, v7, Ldagger/internal/DoubleCheck;
+    instance-of v2, v6, Ldagger/internal/DoubleCheck;
 
-    if-eqz v6, :cond_14
+    if-eqz v2, :cond_14
 
     goto :goto_14
 
     :cond_14
-    new-instance v6, Ldagger/internal/DoubleCheck;
+    new-instance v2, Ldagger/internal/DoubleCheck;
 
-    invoke-direct {v6, v7}, Ldagger/internal/DoubleCheck;-><init>(Ljavax/inject/Provider;)V
+    invoke-direct {v2, v6}, Ldagger/internal/DoubleCheck;-><init>(Ljavax/inject/Provider;)V
 
-    move-object v7, v6
+    move-object v6, v2
 
     :goto_14
-    iput-object v7, v13, Lde/rki/coronawarnapp/util/di/DaggerApplicationComponent;->tracingSettingsProvider:Ljavax/inject/Provider;
+    iput-object v6, v15, Lde/rki/coronawarnapp/util/di/DaggerApplicationComponent;->tracingSettingsProvider:Ljavax/inject/Provider;
 
-    iget-object v6, v13, Lde/rki/coronawarnapp/util/di/DaggerApplicationComponent;->exposureNotificationClientProvider:Ljavax/inject/Provider;
+    iget-object v2, v15, Lde/rki/coronawarnapp/util/di/DaggerApplicationComponent;->exposureNotificationClientProvider:Ljavax/inject/Provider;
 
-    iget-object v8, v13, Lde/rki/coronawarnapp/util/di/DaggerApplicationComponent;->appCoroutineScopeProvider:Ljavax/inject/Provider;
+    iget-object v7, v15, Lde/rki/coronawarnapp/util/di/DaggerApplicationComponent;->appCoroutineScopeProvider:Ljavax/inject/Provider;
 
-    new-instance v9, Lde/rki/coronawarnapp/nearby/modules/tracing/DefaultTracingStatus_Factory;
+    new-instance v8, Lde/rki/coronawarnapp/nearby/modules/tracing/DefaultTracingStatus_Factory;
 
-    invoke-direct {v9, v6, v7, v8}, Lde/rki/coronawarnapp/nearby/modules/tracing/DefaultTracingStatus_Factory;-><init>(Ljavax/inject/Provider;Ljavax/inject/Provider;Ljavax/inject/Provider;)V
+    invoke-direct {v8, v2, v6, v7}, Lde/rki/coronawarnapp/nearby/modules/tracing/DefaultTracingStatus_Factory;-><init>(Ljavax/inject/Provider;Ljavax/inject/Provider;Ljavax/inject/Provider;)V
 
-    instance-of v6, v9, Ldagger/internal/DoubleCheck;
+    instance-of v2, v8, Ldagger/internal/DoubleCheck;
 
-    if-eqz v6, :cond_15
+    if-eqz v2, :cond_15
 
     goto :goto_15
 
     :cond_15
-    new-instance v6, Ldagger/internal/DoubleCheck;
+    new-instance v2, Ldagger/internal/DoubleCheck;
 
-    invoke-direct {v6, v9}, Ldagger/internal/DoubleCheck;-><init>(Ljavax/inject/Provider;)V
+    invoke-direct {v2, v8}, Ldagger/internal/DoubleCheck;-><init>(Ljavax/inject/Provider;)V
 
-    move-object v9, v6
+    move-object v8, v2
 
     :goto_15
-    iput-object v9, v13, Lde/rki/coronawarnapp/util/di/DaggerApplicationComponent;->defaultTracingStatusProvider:Ljavax/inject/Provider;
+    iput-object v8, v15, Lde/rki/coronawarnapp/util/di/DaggerApplicationComponent;->defaultTracingStatusProvider:Ljavax/inject/Provider;
 
-    new-instance v6, Lde/rki/coronawarnapp/nearby/ENFModule_TracingStatusFactory;
+    new-instance v2, Lde/rki/coronawarnapp/nearby/ENFModule_TracingStatusFactory;
 
-    invoke-direct {v6, v0, v9}, Lde/rki/coronawarnapp/nearby/ENFModule_TracingStatusFactory;-><init>(Lde/rki/coronawarnapp/nearby/ENFModule;Ljavax/inject/Provider;)V
+    invoke-direct {v2, v0, v8}, Lde/rki/coronawarnapp/nearby/ENFModule_TracingStatusFactory;-><init>(Lde/rki/coronawarnapp/nearby/ENFModule;Ljavax/inject/Provider;)V
 
-    instance-of v7, v6, Ldagger/internal/DoubleCheck;
+    instance-of v6, v2, Ldagger/internal/DoubleCheck;
 
-    if-eqz v7, :cond_16
+    if-eqz v6, :cond_16
 
     goto :goto_16
 
     :cond_16
-    new-instance v7, Ldagger/internal/DoubleCheck;
+    new-instance v6, Ldagger/internal/DoubleCheck;
 
-    invoke-direct {v7, v6}, Ldagger/internal/DoubleCheck;-><init>(Ljavax/inject/Provider;)V
+    invoke-direct {v6, v2}, Ldagger/internal/DoubleCheck;-><init>(Ljavax/inject/Provider;)V
 
-    move-object v6, v7
+    move-object v2, v6
 
     :goto_16
-    iput-object v6, v13, Lde/rki/coronawarnapp/util/di/DaggerApplicationComponent;->tracingStatusProvider:Ljavax/inject/Provider;
+    iput-object v2, v15, Lde/rki/coronawarnapp/util/di/DaggerApplicationComponent;->tracingStatusProvider:Ljavax/inject/Provider;
 
-    iget-object v6, v13, Lde/rki/coronawarnapp/util/di/DaggerApplicationComponent;->exposureNotificationClientProvider:Ljavax/inject/Provider;
+    iget-object v2, v15, Lde/rki/coronawarnapp/util/di/DaggerApplicationComponent;->exposureNotificationClientProvider:Ljavax/inject/Provider;
 
-    new-instance v7, Lde/rki/coronawarnapp/nearby/modules/locationless/DefaultScanningSupport_Factory;
+    new-instance v6, Lde/rki/coronawarnapp/nearby/modules/locationless/DefaultScanningSupport_Factory;
 
-    invoke-direct {v7, v6}, Lde/rki/coronawarnapp/nearby/modules/locationless/DefaultScanningSupport_Factory;-><init>(Ljavax/inject/Provider;)V
+    invoke-direct {v6, v2}, Lde/rki/coronawarnapp/nearby/modules/locationless/DefaultScanningSupport_Factory;-><init>(Ljavax/inject/Provider;)V
 
-    instance-of v6, v7, Ldagger/internal/DoubleCheck;
+    instance-of v2, v6, Ldagger/internal/DoubleCheck;
 
-    if-eqz v6, :cond_17
+    if-eqz v2, :cond_17
 
     goto :goto_17
 
     :cond_17
-    new-instance v6, Ldagger/internal/DoubleCheck;
+    new-instance v2, Ldagger/internal/DoubleCheck;
 
-    invoke-direct {v6, v7}, Ldagger/internal/DoubleCheck;-><init>(Ljavax/inject/Provider;)V
+    invoke-direct {v2, v6}, Ldagger/internal/DoubleCheck;-><init>(Ljavax/inject/Provider;)V
 
-    move-object v7, v6
+    move-object v6, v2
 
     :goto_17
-    iput-object v7, v13, Lde/rki/coronawarnapp/util/di/DaggerApplicationComponent;->defaultScanningSupportProvider:Ljavax/inject/Provider;
+    iput-object v6, v15, Lde/rki/coronawarnapp/util/di/DaggerApplicationComponent;->defaultScanningSupportProvider:Ljavax/inject/Provider;
 
-    new-instance v6, Lde/rki/coronawarnapp/nearby/ENFModule_ScanningSupportFactory;
+    new-instance v2, Lde/rki/coronawarnapp/nearby/ENFModule_ScanningSupportFactory;
 
-    invoke-direct {v6, v0, v7}, Lde/rki/coronawarnapp/nearby/ENFModule_ScanningSupportFactory;-><init>(Lde/rki/coronawarnapp/nearby/ENFModule;Ljavax/inject/Provider;)V
+    invoke-direct {v2, v0, v6}, Lde/rki/coronawarnapp/nearby/ENFModule_ScanningSupportFactory;-><init>(Lde/rki/coronawarnapp/nearby/ENFModule;Ljavax/inject/Provider;)V
 
-    instance-of v7, v6, Ldagger/internal/DoubleCheck;
+    instance-of v6, v2, Ldagger/internal/DoubleCheck;
 
-    if-eqz v7, :cond_18
+    if-eqz v6, :cond_18
 
     goto :goto_18
 
     :cond_18
-    new-instance v7, Ldagger/internal/DoubleCheck;
+    new-instance v6, Ldagger/internal/DoubleCheck;
 
-    invoke-direct {v7, v6}, Ldagger/internal/DoubleCheck;-><init>(Ljavax/inject/Provider;)V
+    invoke-direct {v6, v2}, Ldagger/internal/DoubleCheck;-><init>(Ljavax/inject/Provider;)V
 
-    move-object v6, v7
+    move-object v2, v6
 
     :goto_18
-    iput-object v6, v13, Lde/rki/coronawarnapp/util/di/DaggerApplicationComponent;->scanningSupportProvider:Ljavax/inject/Provider;
+    iput-object v2, v15, Lde/rki/coronawarnapp/util/di/DaggerApplicationComponent;->scanningSupportProvider:Ljavax/inject/Provider;
 
-    iget-object v6, v13, Lde/rki/coronawarnapp/util/di/DaggerApplicationComponent;->exposureNotificationClientProvider:Ljavax/inject/Provider;
+    iget-object v2, v15, Lde/rki/coronawarnapp/util/di/DaggerApplicationComponent;->exposureNotificationClientProvider:Ljavax/inject/Provider;
 
-    new-instance v7, Lde/rki/coronawarnapp/nearby/modules/exposurewindow/DefaultExposureWindowProvider_Factory;
+    new-instance v6, Lde/rki/coronawarnapp/nearby/modules/exposurewindow/DefaultExposureWindowProvider_Factory;
 
-    invoke-direct {v7, v6}, Lde/rki/coronawarnapp/nearby/modules/exposurewindow/DefaultExposureWindowProvider_Factory;-><init>(Ljavax/inject/Provider;)V
+    invoke-direct {v6, v2}, Lde/rki/coronawarnapp/nearby/modules/exposurewindow/DefaultExposureWindowProvider_Factory;-><init>(Ljavax/inject/Provider;)V
 
-    instance-of v6, v7, Ldagger/internal/DoubleCheck;
+    instance-of v2, v6, Ldagger/internal/DoubleCheck;
 
-    if-eqz v6, :cond_19
+    if-eqz v2, :cond_19
 
     goto :goto_19
 
     :cond_19
-    new-instance v6, Ldagger/internal/DoubleCheck;
+    new-instance v2, Ldagger/internal/DoubleCheck;
 
-    invoke-direct {v6, v7}, Ldagger/internal/DoubleCheck;-><init>(Ljavax/inject/Provider;)V
+    invoke-direct {v2, v6}, Ldagger/internal/DoubleCheck;-><init>(Ljavax/inject/Provider;)V
 
-    move-object v7, v6
+    move-object v6, v2
 
     :goto_19
-    iput-object v7, v13, Lde/rki/coronawarnapp/util/di/DaggerApplicationComponent;->defaultExposureWindowProvider:Ljavax/inject/Provider;
+    iput-object v6, v15, Lde/rki/coronawarnapp/util/di/DaggerApplicationComponent;->defaultExposureWindowProvider:Ljavax/inject/Provider;
 
-    new-instance v6, Lde/rki/coronawarnapp/nearby/ENFModule_ExposureWindowProviderFactory;
+    new-instance v2, Lde/rki/coronawarnapp/nearby/ENFModule_ExposureWindowProviderFactory;
 
-    invoke-direct {v6, v0, v7}, Lde/rki/coronawarnapp/nearby/ENFModule_ExposureWindowProviderFactory;-><init>(Lde/rki/coronawarnapp/nearby/ENFModule;Ljavax/inject/Provider;)V
+    invoke-direct {v2, v0, v6}, Lde/rki/coronawarnapp/nearby/ENFModule_ExposureWindowProviderFactory;-><init>(Lde/rki/coronawarnapp/nearby/ENFModule;Ljavax/inject/Provider;)V
 
-    instance-of v7, v6, Ldagger/internal/DoubleCheck;
+    instance-of v6, v2, Ldagger/internal/DoubleCheck;
 
-    if-eqz v7, :cond_1a
+    if-eqz v6, :cond_1a
 
     goto :goto_1a
 
     :cond_1a
-    new-instance v7, Ldagger/internal/DoubleCheck;
+    new-instance v6, Ldagger/internal/DoubleCheck;
 
-    invoke-direct {v7, v6}, Ldagger/internal/DoubleCheck;-><init>(Ljavax/inject/Provider;)V
+    invoke-direct {v6, v2}, Ldagger/internal/DoubleCheck;-><init>(Ljavax/inject/Provider;)V
 
-    move-object v6, v7
+    move-object v2, v6
 
     :goto_1a
-    iput-object v6, v13, Lde/rki/coronawarnapp/util/di/DaggerApplicationComponent;->exposureWindowProvider:Ljavax/inject/Provider;
+    iput-object v2, v15, Lde/rki/coronawarnapp/util/di/DaggerApplicationComponent;->exposureWindowProvider:Ljavax/inject/Provider;
 
-    sget-object v6, Lde/rki/coronawarnapp/util/coroutine/DefaultDispatcherProvider_Factory$InstanceHolder;->INSTANCE:Lde/rki/coronawarnapp/util/coroutine/DefaultDispatcherProvider_Factory;
+    sget-object v2, Lde/rki/coronawarnapp/util/coroutine/DefaultDispatcherProvider_Factory$InstanceHolder;->INSTANCE:Lde/rki/coronawarnapp/util/coroutine/DefaultDispatcherProvider_Factory;
 
-    instance-of v7, v6, Ldagger/internal/DoubleCheck;
+    instance-of v6, v2, Ldagger/internal/DoubleCheck;
 
-    if-eqz v7, :cond_1b
+    if-eqz v6, :cond_1b
 
     goto :goto_1b
 
     :cond_1b
-    new-instance v7, Ldagger/internal/DoubleCheck;
+    new-instance v6, Ldagger/internal/DoubleCheck;
 
-    invoke-direct {v7, v6}, Ldagger/internal/DoubleCheck;-><init>(Ljavax/inject/Provider;)V
+    invoke-direct {v6, v2}, Ldagger/internal/DoubleCheck;-><init>(Ljavax/inject/Provider;)V
 
-    move-object v6, v7
+    move-object v2, v6
 
     :goto_1b
-    iput-object v6, v13, Lde/rki/coronawarnapp/util/di/DaggerApplicationComponent;->defaultDispatcherProvider:Ljavax/inject/Provider;
+    iput-object v2, v15, Lde/rki/coronawarnapp/util/di/DaggerApplicationComponent;->defaultDispatcherProvider:Ljavax/inject/Provider;
 
-    new-instance v6, Lde/rki/coronawarnapp/util/serialization/SerializationModule_BaseGsonFactory;
+    new-instance v2, Lde/rki/coronawarnapp/util/serialization/SerializationModule_BaseGsonFactory;
 
-    invoke-direct {v6, v2}, Lde/rki/coronawarnapp/util/serialization/SerializationModule_BaseGsonFactory;-><init>(Lde/rki/coronawarnapp/util/serialization/SerializationModule;)V
+    move-object/from16 v9, p21
 
-    invoke-static {v6}, Ldagger/internal/SingleCheck;->provider(Ljavax/inject/Provider;)Ljavax/inject/Provider;
+    invoke-direct {v2, v9}, Lde/rki/coronawarnapp/util/serialization/SerializationModule_BaseGsonFactory;-><init>(Lde/rki/coronawarnapp/util/serialization/SerializationModule;)V
 
-    move-result-object v6
+    invoke-static {v2}, Ldagger/internal/SingleCheck;->provider(Ljavax/inject/Provider;)Ljavax/inject/Provider;
 
-    iput-object v6, v13, Lde/rki/coronawarnapp/util/di/DaggerApplicationComponent;->baseGsonProvider:Ljavax/inject/Provider;
+    move-result-object v2
 
-    iget-object v6, v13, Lde/rki/coronawarnapp/util/di/DaggerApplicationComponent;->contextProvider:Ljavax/inject/Provider;
+    iput-object v2, v15, Lde/rki/coronawarnapp/util/di/DaggerApplicationComponent;->baseGsonProvider:Ljavax/inject/Provider;
 
-    iget-object v7, v13, Lde/rki/coronawarnapp/util/di/DaggerApplicationComponent;->baseGsonProvider:Ljavax/inject/Provider;
+    iget-object v2, v15, Lde/rki/coronawarnapp/util/di/DaggerApplicationComponent;->contextProvider:Ljavax/inject/Provider;
 
-    new-instance v8, Lde/rki/coronawarnapp/nearby/modules/detectiontracker/ExposureDetectionTrackerStorage_Factory;
+    iget-object v6, v15, Lde/rki/coronawarnapp/util/di/DaggerApplicationComponent;->baseGsonProvider:Ljavax/inject/Provider;
 
-    invoke-direct {v8, v6, v7}, Lde/rki/coronawarnapp/nearby/modules/detectiontracker/ExposureDetectionTrackerStorage_Factory;-><init>(Ljavax/inject/Provider;Ljavax/inject/Provider;)V
+    new-instance v7, Lde/rki/coronawarnapp/nearby/modules/detectiontracker/ExposureDetectionTrackerStorage_Factory;
 
-    instance-of v6, v8, Ldagger/internal/DoubleCheck;
+    invoke-direct {v7, v2, v6}, Lde/rki/coronawarnapp/nearby/modules/detectiontracker/ExposureDetectionTrackerStorage_Factory;-><init>(Ljavax/inject/Provider;Ljavax/inject/Provider;)V
 
-    if-eqz v6, :cond_1c
+    instance-of v2, v7, Ldagger/internal/DoubleCheck;
+
+    if-eqz v2, :cond_1c
 
     goto :goto_1c
 
     :cond_1c
-    new-instance v6, Ldagger/internal/DoubleCheck;
+    new-instance v2, Ldagger/internal/DoubleCheck;
 
-    invoke-direct {v6, v8}, Ldagger/internal/DoubleCheck;-><init>(Ljavax/inject/Provider;)V
+    invoke-direct {v2, v7}, Ldagger/internal/DoubleCheck;-><init>(Ljavax/inject/Provider;)V
 
-    move-object v8, v6
+    move-object v7, v2
 
     :goto_1c
-    iput-object v8, v13, Lde/rki/coronawarnapp/util/di/DaggerApplicationComponent;->exposureDetectionTrackerStorageProvider:Ljavax/inject/Provider;
+    iput-object v7, v15, Lde/rki/coronawarnapp/util/di/DaggerApplicationComponent;->exposureDetectionTrackerStorageProvider:Ljavax/inject/Provider;
 
-    iget-object v6, v13, Lde/rki/coronawarnapp/util/di/DaggerApplicationComponent;->contextProvider:Ljavax/inject/Provider;
+    iget-object v2, v15, Lde/rki/coronawarnapp/util/di/DaggerApplicationComponent;->contextProvider:Ljavax/inject/Provider;
 
-    new-instance v7, Lde/rki/coronawarnapp/appconfig/AppConfigModule_RemoteAppConfigHttpCacheFactory;
+    new-instance v6, Lde/rki/coronawarnapp/appconfig/AppConfigModule_RemoteAppConfigHttpCacheFactory;
 
-    invoke-direct {v7, v1, v6}, Lde/rki/coronawarnapp/appconfig/AppConfigModule_RemoteAppConfigHttpCacheFactory;-><init>(Lde/rki/coronawarnapp/appconfig/AppConfigModule;Ljavax/inject/Provider;)V
+    invoke-direct {v6, v1, v2}, Lde/rki/coronawarnapp/appconfig/AppConfigModule_RemoteAppConfigHttpCacheFactory;-><init>(Lde/rki/coronawarnapp/appconfig/AppConfigModule;Ljavax/inject/Provider;)V
 
-    instance-of v6, v7, Ldagger/internal/DoubleCheck;
+    instance-of v2, v6, Ldagger/internal/DoubleCheck;
 
-    if-eqz v6, :cond_1d
+    if-eqz v2, :cond_1d
 
     goto :goto_1d
 
     :cond_1d
-    new-instance v6, Ldagger/internal/DoubleCheck;
+    new-instance v2, Ldagger/internal/DoubleCheck;
 
-    invoke-direct {v6, v7}, Ldagger/internal/DoubleCheck;-><init>(Ljavax/inject/Provider;)V
+    invoke-direct {v2, v6}, Ldagger/internal/DoubleCheck;-><init>(Ljavax/inject/Provider;)V
 
-    move-object v7, v6
+    move-object v6, v2
 
     :goto_1d
-    iput-object v7, v13, Lde/rki/coronawarnapp/util/di/DaggerApplicationComponent;->remoteAppConfigHttpCacheProvider:Ljavax/inject/Provider;
+    iput-object v6, v15, Lde/rki/coronawarnapp/util/di/DaggerApplicationComponent;->remoteAppConfigHttpCacheProvider:Ljavax/inject/Provider;
 
-    new-instance v6, Lde/rki/coronawarnapp/http/HttpModule_DefaultHttpClientFactory;
+    new-instance v2, Lde/rki/coronawarnapp/http/HttpModule_DefaultHttpClientFactory;
 
-    invoke-direct {v6, v4}, Lde/rki/coronawarnapp/http/HttpModule_DefaultHttpClientFactory;-><init>(Lde/rki/coronawarnapp/http/HttpModule;)V
+    invoke-direct {v2, v4}, Lde/rki/coronawarnapp/http/HttpModule_DefaultHttpClientFactory;-><init>(Lde/rki/coronawarnapp/http/HttpModule;)V
+
+    invoke-static {v2}, Ldagger/internal/SingleCheck;->provider(Ljavax/inject/Provider;)Ljavax/inject/Provider;
+
+    move-result-object v2
+
+    iput-object v2, v15, Lde/rki/coronawarnapp/util/di/DaggerApplicationComponent;->defaultHttpClientProvider:Ljavax/inject/Provider;
+
+    new-instance v6, Lde/rki/coronawarnapp/environment/download/DownloadCDNModule_CdnHttpClientFactory;
+
+    invoke-direct {v6, v5, v2}, Lde/rki/coronawarnapp/environment/download/DownloadCDNModule_CdnHttpClientFactory;-><init>(Lde/rki/coronawarnapp/environment/download/DownloadCDNModule;Ljavax/inject/Provider;)V
 
     invoke-static {v6}, Ldagger/internal/SingleCheck;->provider(Ljavax/inject/Provider;)Ljavax/inject/Provider;
 
-    move-result-object v6
+    move-result-object v2
 
-    iput-object v6, v13, Lde/rki/coronawarnapp/util/di/DaggerApplicationComponent;->defaultHttpClientProvider:Ljavax/inject/Provider;
+    iput-object v2, v15, Lde/rki/coronawarnapp/util/di/DaggerApplicationComponent;->cdnHttpClientProvider:Ljavax/inject/Provider;
 
-    new-instance v7, Lde/rki/coronawarnapp/environment/download/DownloadCDNModule_CdnHttpClientFactory;
+    iget-object v2, v15, Lde/rki/coronawarnapp/util/di/DaggerApplicationComponent;->contextProvider:Ljavax/inject/Provider;
 
-    invoke-direct {v7, v5, v6}, Lde/rki/coronawarnapp/environment/download/DownloadCDNModule_CdnHttpClientFactory;-><init>(Lde/rki/coronawarnapp/environment/download/DownloadCDNModule;Ljavax/inject/Provider;)V
+    iget-object v6, v15, Lde/rki/coronawarnapp/util/di/DaggerApplicationComponent;->baseGsonProvider:Ljavax/inject/Provider;
 
-    invoke-static {v7}, Ldagger/internal/SingleCheck;->provider(Ljavax/inject/Provider;)Ljavax/inject/Provider;
+    new-instance v7, Lde/rki/coronawarnapp/environment/EnvironmentSetup_Factory;
 
-    move-result-object v6
+    invoke-direct {v7, v2, v6}, Lde/rki/coronawarnapp/environment/EnvironmentSetup_Factory;-><init>(Ljavax/inject/Provider;Ljavax/inject/Provider;)V
 
-    iput-object v6, v13, Lde/rki/coronawarnapp/util/di/DaggerApplicationComponent;->cdnHttpClientProvider:Ljavax/inject/Provider;
+    instance-of v2, v7, Ldagger/internal/DoubleCheck;
 
-    iget-object v6, v13, Lde/rki/coronawarnapp/util/di/DaggerApplicationComponent;->contextProvider:Ljavax/inject/Provider;
-
-    iget-object v7, v13, Lde/rki/coronawarnapp/util/di/DaggerApplicationComponent;->baseGsonProvider:Ljavax/inject/Provider;
-
-    new-instance v8, Lde/rki/coronawarnapp/environment/EnvironmentSetup_Factory;
-
-    invoke-direct {v8, v6, v7}, Lde/rki/coronawarnapp/environment/EnvironmentSetup_Factory;-><init>(Ljavax/inject/Provider;Ljavax/inject/Provider;)V
-
-    instance-of v6, v8, Ldagger/internal/DoubleCheck;
-
-    if-eqz v6, :cond_1e
+    if-eqz v2, :cond_1e
 
     goto :goto_1e
 
     :cond_1e
-    new-instance v6, Ldagger/internal/DoubleCheck;
+    new-instance v2, Ldagger/internal/DoubleCheck;
 
-    invoke-direct {v6, v8}, Ldagger/internal/DoubleCheck;-><init>(Ljavax/inject/Provider;)V
+    invoke-direct {v2, v7}, Ldagger/internal/DoubleCheck;-><init>(Ljavax/inject/Provider;)V
 
-    move-object v8, v6
+    move-object v7, v2
 
     :goto_1e
-    iput-object v8, v13, Lde/rki/coronawarnapp/util/di/DaggerApplicationComponent;->environmentSetupProvider:Ljavax/inject/Provider;
+    iput-object v7, v15, Lde/rki/coronawarnapp/util/di/DaggerApplicationComponent;->environmentSetupProvider:Ljavax/inject/Provider;
 
-    new-instance v6, Lde/rki/coronawarnapp/environment/download/DownloadCDNModule_ProvideDownloadServerUrlFactory;
+    new-instance v2, Lde/rki/coronawarnapp/environment/download/DownloadCDNModule_ProvideDownloadServerUrlFactory;
 
-    invoke-direct {v6, v5, v8}, Lde/rki/coronawarnapp/environment/download/DownloadCDNModule_ProvideDownloadServerUrlFactory;-><init>(Lde/rki/coronawarnapp/environment/download/DownloadCDNModule;Ljavax/inject/Provider;)V
+    invoke-direct {v2, v5, v7}, Lde/rki/coronawarnapp/environment/download/DownloadCDNModule_ProvideDownloadServerUrlFactory;-><init>(Lde/rki/coronawarnapp/environment/download/DownloadCDNModule;Ljavax/inject/Provider;)V
 
-    instance-of v7, v6, Ldagger/internal/DoubleCheck;
+    instance-of v6, v2, Ldagger/internal/DoubleCheck;
 
-    if-eqz v7, :cond_1f
+    if-eqz v6, :cond_1f
 
     goto :goto_1f
 
     :cond_1f
-    new-instance v7, Ldagger/internal/DoubleCheck;
+    new-instance v6, Ldagger/internal/DoubleCheck;
 
-    invoke-direct {v7, v6}, Ldagger/internal/DoubleCheck;-><init>(Ljavax/inject/Provider;)V
+    invoke-direct {v6, v2}, Ldagger/internal/DoubleCheck;-><init>(Ljavax/inject/Provider;)V
 
-    move-object v6, v7
+    move-object v2, v6
 
     :goto_1f
-    iput-object v6, v13, Lde/rki/coronawarnapp/util/di/DaggerApplicationComponent;->provideDownloadServerUrlProvider:Ljavax/inject/Provider;
+    iput-object v2, v15, Lde/rki/coronawarnapp/util/di/DaggerApplicationComponent;->provideDownloadServerUrlProvider:Ljavax/inject/Provider;
 
-    new-instance v6, Lde/rki/coronawarnapp/http/HttpModule_ProvideGSONConverterFactory;
+    new-instance v2, Lde/rki/coronawarnapp/http/HttpModule_ProvideGSONConverterFactory;
 
-    invoke-direct {v6, v4}, Lde/rki/coronawarnapp/http/HttpModule_ProvideGSONConverterFactory;-><init>(Lde/rki/coronawarnapp/http/HttpModule;)V
+    invoke-direct {v2, v4}, Lde/rki/coronawarnapp/http/HttpModule_ProvideGSONConverterFactory;-><init>(Lde/rki/coronawarnapp/http/HttpModule;)V
 
-    invoke-static {v6}, Ldagger/internal/SingleCheck;->provider(Ljavax/inject/Provider;)Ljavax/inject/Provider;
+    invoke-static {v2}, Ldagger/internal/SingleCheck;->provider(Ljavax/inject/Provider;)Ljavax/inject/Provider;
 
-    move-result-object v6
+    move-result-object v2
 
-    iput-object v6, v13, Lde/rki/coronawarnapp/util/di/DaggerApplicationComponent;->provideGSONConverterProvider:Ljavax/inject/Provider;
+    iput-object v2, v15, Lde/rki/coronawarnapp/util/di/DaggerApplicationComponent;->provideGSONConverterProvider:Ljavax/inject/Provider;
 
-    iget-object v8, v13, Lde/rki/coronawarnapp/util/di/DaggerApplicationComponent;->remoteAppConfigHttpCacheProvider:Ljavax/inject/Provider;
+    iget-object v8, v15, Lde/rki/coronawarnapp/util/di/DaggerApplicationComponent;->remoteAppConfigHttpCacheProvider:Ljavax/inject/Provider;
 
-    iget-object v9, v13, Lde/rki/coronawarnapp/util/di/DaggerApplicationComponent;->cdnHttpClientProvider:Ljavax/inject/Provider;
+    iget-object v2, v15, Lde/rki/coronawarnapp/util/di/DaggerApplicationComponent;->cdnHttpClientProvider:Ljavax/inject/Provider;
 
-    iget-object v10, v13, Lde/rki/coronawarnapp/util/di/DaggerApplicationComponent;->provideDownloadServerUrlProvider:Ljavax/inject/Provider;
+    iget-object v7, v15, Lde/rki/coronawarnapp/util/di/DaggerApplicationComponent;->provideDownloadServerUrlProvider:Ljavax/inject/Provider;
 
-    iget-object v7, v13, Lde/rki/coronawarnapp/util/di/DaggerApplicationComponent;->provideGSONConverterProvider:Ljavax/inject/Provider;
+    iget-object v6, v15, Lde/rki/coronawarnapp/util/di/DaggerApplicationComponent;->provideGSONConverterProvider:Ljavax/inject/Provider;
 
-    new-instance v6, Lde/rki/coronawarnapp/appconfig/AppConfigModule_ProvideAppConfigApiFactory;
+    new-instance v5, Lde/rki/coronawarnapp/appconfig/AppConfigModule_ProvideAppConfigApiFactory;
 
-    move-object/from16 p29, v6
+    move-object/from16 v16, v6
 
-    move-object/from16 v16, v7
+    move-object v6, v5
+
+    move-object/from16 v17, v7
 
     move-object/from16 v7, p14
+
+    move-object v9, v2
+
+    move-object v2, v10
+
+    move-object/from16 v10, v17
 
     move-object/from16 v11, v16
 
     invoke-direct/range {v6 .. v11}, Lde/rki/coronawarnapp/appconfig/AppConfigModule_ProvideAppConfigApiFactory;-><init>(Lde/rki/coronawarnapp/appconfig/AppConfigModule;Ljavax/inject/Provider;Ljavax/inject/Provider;Ljavax/inject/Provider;Ljavax/inject/Provider;)V
 
-    instance-of v7, v6, Ldagger/internal/DoubleCheck;
+    instance-of v6, v5, Ldagger/internal/DoubleCheck;
 
-    if-eqz v7, :cond_20
+    if-eqz v6, :cond_20
 
     goto :goto_20
 
     :cond_20
-    new-instance v7, Ldagger/internal/DoubleCheck;
+    new-instance v6, Ldagger/internal/DoubleCheck;
 
-    invoke-direct {v7, v6}, Ldagger/internal/DoubleCheck;-><init>(Ljavax/inject/Provider;)V
+    invoke-direct {v6, v5}, Ldagger/internal/DoubleCheck;-><init>(Ljavax/inject/Provider;)V
 
-    move-object v6, v7
+    move-object v5, v6
 
     :goto_20
-    iput-object v6, v13, Lde/rki/coronawarnapp/util/di/DaggerApplicationComponent;->provideAppConfigApiProvider:Ljavax/inject/Provider;
+    iput-object v5, v15, Lde/rki/coronawarnapp/util/di/DaggerApplicationComponent;->provideAppConfigApiProvider:Ljavax/inject/Provider;
 
-    iget-object v6, v13, Lde/rki/coronawarnapp/util/di/DaggerApplicationComponent;->environmentSetupProvider:Ljavax/inject/Provider;
+    iget-object v5, v15, Lde/rki/coronawarnapp/util/di/DaggerApplicationComponent;->environmentSetupProvider:Ljavax/inject/Provider;
 
-    new-instance v7, Lde/rki/coronawarnapp/util/security/SignatureValidation_Factory;
+    new-instance v6, Lde/rki/coronawarnapp/util/security/SignatureValidation_Factory;
 
-    invoke-direct {v7, v6}, Lde/rki/coronawarnapp/util/security/SignatureValidation_Factory;-><init>(Ljavax/inject/Provider;)V
+    invoke-direct {v6, v5}, Lde/rki/coronawarnapp/util/security/SignatureValidation_Factory;-><init>(Ljavax/inject/Provider;)V
 
-    instance-of v6, v7, Ldagger/internal/DoubleCheck;
+    instance-of v5, v6, Ldagger/internal/DoubleCheck;
 
-    if-eqz v6, :cond_21
+    if-eqz v5, :cond_21
 
     goto :goto_21
 
     :cond_21
-    new-instance v6, Ldagger/internal/DoubleCheck;
+    new-instance v5, Ldagger/internal/DoubleCheck;
 
-    invoke-direct {v6, v7}, Ldagger/internal/DoubleCheck;-><init>(Ljavax/inject/Provider;)V
+    invoke-direct {v5, v6}, Ldagger/internal/DoubleCheck;-><init>(Ljavax/inject/Provider;)V
 
-    move-object v7, v6
+    move-object v6, v5
 
     :goto_21
-    iput-object v7, v13, Lde/rki/coronawarnapp/util/di/DaggerApplicationComponent;->signatureValidationProvider:Ljavax/inject/Provider;
+    iput-object v6, v15, Lde/rki/coronawarnapp/util/di/DaggerApplicationComponent;->signatureValidationProvider:Ljavax/inject/Provider;
 
-    iget-object v6, v13, Lde/rki/coronawarnapp/util/di/DaggerApplicationComponent;->contextProvider:Ljavax/inject/Provider;
+    iget-object v5, v15, Lde/rki/coronawarnapp/util/di/DaggerApplicationComponent;->contextProvider:Ljavax/inject/Provider;
 
-    iget-object v7, v13, Lde/rki/coronawarnapp/util/di/DaggerApplicationComponent;->baseGsonProvider:Ljavax/inject/Provider;
+    iget-object v6, v15, Lde/rki/coronawarnapp/util/di/DaggerApplicationComponent;->baseGsonProvider:Ljavax/inject/Provider;
 
-    new-instance v8, Lde/rki/coronawarnapp/storage/TestSettings_Factory;
+    new-instance v7, Lde/rki/coronawarnapp/storage/TestSettings_Factory;
 
-    invoke-direct {v8, v6, v7}, Lde/rki/coronawarnapp/storage/TestSettings_Factory;-><init>(Ljavax/inject/Provider;Ljavax/inject/Provider;)V
+    invoke-direct {v7, v5, v6}, Lde/rki/coronawarnapp/storage/TestSettings_Factory;-><init>(Ljavax/inject/Provider;Ljavax/inject/Provider;)V
 
-    instance-of v6, v8, Ldagger/internal/DoubleCheck;
+    instance-of v5, v7, Ldagger/internal/DoubleCheck;
 
-    if-eqz v6, :cond_22
+    if-eqz v5, :cond_22
 
     goto :goto_22
 
     :cond_22
-    new-instance v6, Ldagger/internal/DoubleCheck;
+    new-instance v5, Ldagger/internal/DoubleCheck;
 
-    invoke-direct {v6, v8}, Ldagger/internal/DoubleCheck;-><init>(Ljavax/inject/Provider;)V
+    invoke-direct {v5, v7}, Ldagger/internal/DoubleCheck;-><init>(Ljavax/inject/Provider;)V
 
-    move-object v8, v6
+    move-object v7, v5
 
     :goto_22
-    iput-object v8, v13, Lde/rki/coronawarnapp/util/di/DaggerApplicationComponent;->testSettingsProvider:Ljavax/inject/Provider;
+    iput-object v7, v15, Lde/rki/coronawarnapp/util/di/DaggerApplicationComponent;->testSettingsProvider:Ljavax/inject/Provider;
 
-    iget-object v6, v13, Lde/rki/coronawarnapp/util/di/DaggerApplicationComponent;->provideAppConfigApiProvider:Ljavax/inject/Provider;
+    iget-object v5, v15, Lde/rki/coronawarnapp/util/di/DaggerApplicationComponent;->provideAppConfigApiProvider:Ljavax/inject/Provider;
 
-    iget-object v7, v13, Lde/rki/coronawarnapp/util/di/DaggerApplicationComponent;->signatureValidationProvider:Ljavax/inject/Provider;
+    iget-object v6, v15, Lde/rki/coronawarnapp/util/di/DaggerApplicationComponent;->signatureValidationProvider:Ljavax/inject/Provider;
 
-    iget-object v8, v13, Lde/rki/coronawarnapp/util/di/DaggerApplicationComponent;->timeStamperProvider:Ljavax/inject/Provider;
+    iget-object v7, v15, Lde/rki/coronawarnapp/util/di/DaggerApplicationComponent;->timeStamperProvider:Ljavax/inject/Provider;
 
-    iget-object v9, v13, Lde/rki/coronawarnapp/util/di/DaggerApplicationComponent;->testSettingsProvider:Ljavax/inject/Provider;
+    iget-object v8, v15, Lde/rki/coronawarnapp/util/di/DaggerApplicationComponent;->testSettingsProvider:Ljavax/inject/Provider;
 
-    new-instance v10, Lde/rki/coronawarnapp/appconfig/sources/remote/AppConfigServer_Factory;
+    new-instance v9, Lde/rki/coronawarnapp/appconfig/sources/remote/AppConfigServer_Factory;
 
-    invoke-direct {v10, v6, v7, v8, v9}, Lde/rki/coronawarnapp/appconfig/sources/remote/AppConfigServer_Factory;-><init>(Ljavax/inject/Provider;Ljavax/inject/Provider;Ljavax/inject/Provider;Ljavax/inject/Provider;)V
+    invoke-direct {v9, v5, v6, v7, v8}, Lde/rki/coronawarnapp/appconfig/sources/remote/AppConfigServer_Factory;-><init>(Ljavax/inject/Provider;Ljavax/inject/Provider;Ljavax/inject/Provider;Ljavax/inject/Provider;)V
 
-    invoke-static {v10}, Ldagger/internal/SingleCheck;->provider(Ljavax/inject/Provider;)Ljavax/inject/Provider;
+    invoke-static {v9}, Ldagger/internal/SingleCheck;->provider(Ljavax/inject/Provider;)Ljavax/inject/Provider;
 
-    move-result-object v6
+    move-result-object v5
 
-    iput-object v6, v13, Lde/rki/coronawarnapp/util/di/DaggerApplicationComponent;->appConfigServerProvider:Ljavax/inject/Provider;
+    iput-object v5, v15, Lde/rki/coronawarnapp/util/di/DaggerApplicationComponent;->appConfigServerProvider:Ljavax/inject/Provider;
 
-    iget-object v6, v13, Lde/rki/coronawarnapp/util/di/DaggerApplicationComponent;->contextProvider:Ljavax/inject/Provider;
+    iget-object v5, v15, Lde/rki/coronawarnapp/util/di/DaggerApplicationComponent;->contextProvider:Ljavax/inject/Provider;
 
-    iget-object v7, v13, Lde/rki/coronawarnapp/util/di/DaggerApplicationComponent;->timeStamperProvider:Ljavax/inject/Provider;
+    iget-object v6, v15, Lde/rki/coronawarnapp/util/di/DaggerApplicationComponent;->timeStamperProvider:Ljavax/inject/Provider;
 
-    iget-object v8, v13, Lde/rki/coronawarnapp/util/di/DaggerApplicationComponent;->baseGsonProvider:Ljavax/inject/Provider;
+    iget-object v7, v15, Lde/rki/coronawarnapp/util/di/DaggerApplicationComponent;->baseGsonProvider:Ljavax/inject/Provider;
 
-    new-instance v9, Lde/rki/coronawarnapp/appconfig/sources/local/AppConfigStorage_Factory;
+    new-instance v8, Lde/rki/coronawarnapp/appconfig/sources/local/AppConfigStorage_Factory;
 
-    invoke-direct {v9, v6, v7, v8}, Lde/rki/coronawarnapp/appconfig/sources/local/AppConfigStorage_Factory;-><init>(Ljavax/inject/Provider;Ljavax/inject/Provider;Ljavax/inject/Provider;)V
+    invoke-direct {v8, v5, v6, v7}, Lde/rki/coronawarnapp/appconfig/sources/local/AppConfigStorage_Factory;-><init>(Ljavax/inject/Provider;Ljavax/inject/Provider;Ljavax/inject/Provider;)V
 
-    instance-of v6, v9, Ldagger/internal/DoubleCheck;
+    instance-of v5, v8, Ldagger/internal/DoubleCheck;
 
-    if-eqz v6, :cond_23
+    if-eqz v5, :cond_23
 
     goto :goto_23
 
     :cond_23
-    new-instance v6, Ldagger/internal/DoubleCheck;
+    new-instance v5, Ldagger/internal/DoubleCheck;
 
-    invoke-direct {v6, v9}, Ldagger/internal/DoubleCheck;-><init>(Ljavax/inject/Provider;)V
+    invoke-direct {v5, v8}, Ldagger/internal/DoubleCheck;-><init>(Ljavax/inject/Provider;)V
 
-    move-object v9, v6
+    move-object v8, v5
 
     :goto_23
-    iput-object v9, v13, Lde/rki/coronawarnapp/util/di/DaggerApplicationComponent;->appConfigStorageProvider:Ljavax/inject/Provider;
+    iput-object v8, v15, Lde/rki/coronawarnapp/util/di/DaggerApplicationComponent;->appConfigStorageProvider:Ljavax/inject/Provider;
 
-    sget-object v6, Lde/rki/coronawarnapp/appconfig/mapping/CWAConfigMapper_Factory$InstanceHolder;->INSTANCE:Lde/rki/coronawarnapp/appconfig/mapping/CWAConfigMapper_Factory;
+    sget-object v5, Lde/rki/coronawarnapp/appconfig/mapping/CWAConfigMapper_Factory$InstanceHolder;->INSTANCE:Lde/rki/coronawarnapp/appconfig/mapping/CWAConfigMapper_Factory;
 
-    invoke-static {v6}, Ldagger/internal/SingleCheck;->provider(Ljavax/inject/Provider;)Ljavax/inject/Provider;
+    invoke-static {v5}, Ldagger/internal/SingleCheck;->provider(Ljavax/inject/Provider;)Ljavax/inject/Provider;
 
-    move-result-object v6
+    move-result-object v5
 
-    iput-object v6, v13, Lde/rki/coronawarnapp/util/di/DaggerApplicationComponent;->cWAConfigMapperProvider:Ljavax/inject/Provider;
+    iput-object v5, v15, Lde/rki/coronawarnapp/util/di/DaggerApplicationComponent;->cWAConfigMapperProvider:Ljavax/inject/Provider;
 
-    new-instance v7, Lde/rki/coronawarnapp/appconfig/AppConfigModule_CwaMapperFactory;
+    new-instance v6, Lde/rki/coronawarnapp/appconfig/AppConfigModule_CwaMapperFactory;
 
-    invoke-direct {v7, v1, v6}, Lde/rki/coronawarnapp/appconfig/AppConfigModule_CwaMapperFactory;-><init>(Lde/rki/coronawarnapp/appconfig/AppConfigModule;Ljavax/inject/Provider;)V
+    invoke-direct {v6, v1, v5}, Lde/rki/coronawarnapp/appconfig/AppConfigModule_CwaMapperFactory;-><init>(Lde/rki/coronawarnapp/appconfig/AppConfigModule;Ljavax/inject/Provider;)V
 
-    iput-object v7, v13, Lde/rki/coronawarnapp/util/di/DaggerApplicationComponent;->cwaMapperProvider:Ljavax/inject/Provider;
+    iput-object v6, v15, Lde/rki/coronawarnapp/util/di/DaggerApplicationComponent;->cwaMapperProvider:Ljavax/inject/Provider;
 
-    sget-object v6, Lde/rki/coronawarnapp/appconfig/mapping/KeyDownloadParametersMapper_Factory$InstanceHolder;->INSTANCE:Lde/rki/coronawarnapp/appconfig/mapping/KeyDownloadParametersMapper_Factory;
+    sget-object v5, Lde/rki/coronawarnapp/appconfig/mapping/KeyDownloadParametersMapper_Factory$InstanceHolder;->INSTANCE:Lde/rki/coronawarnapp/appconfig/mapping/KeyDownloadParametersMapper_Factory;
 
-    invoke-static {v6}, Ldagger/internal/SingleCheck;->provider(Ljavax/inject/Provider;)Ljavax/inject/Provider;
+    invoke-static {v5}, Ldagger/internal/SingleCheck;->provider(Ljavax/inject/Provider;)Ljavax/inject/Provider;
 
-    move-result-object v6
+    move-result-object v5
 
-    iput-object v6, v13, Lde/rki/coronawarnapp/util/di/DaggerApplicationComponent;->keyDownloadParametersMapperProvider:Ljavax/inject/Provider;
+    iput-object v5, v15, Lde/rki/coronawarnapp/util/di/DaggerApplicationComponent;->keyDownloadParametersMapperProvider:Ljavax/inject/Provider;
 
-    new-instance v7, Lde/rki/coronawarnapp/appconfig/AppConfigModule_DownloadMapperFactory;
+    new-instance v6, Lde/rki/coronawarnapp/appconfig/AppConfigModule_DownloadMapperFactory;
 
-    invoke-direct {v7, v1, v6}, Lde/rki/coronawarnapp/appconfig/AppConfigModule_DownloadMapperFactory;-><init>(Lde/rki/coronawarnapp/appconfig/AppConfigModule;Ljavax/inject/Provider;)V
+    invoke-direct {v6, v1, v5}, Lde/rki/coronawarnapp/appconfig/AppConfigModule_DownloadMapperFactory;-><init>(Lde/rki/coronawarnapp/appconfig/AppConfigModule;Ljavax/inject/Provider;)V
 
-    iput-object v7, v13, Lde/rki/coronawarnapp/util/di/DaggerApplicationComponent;->downloadMapperProvider:Ljavax/inject/Provider;
+    iput-object v6, v15, Lde/rki/coronawarnapp/util/di/DaggerApplicationComponent;->downloadMapperProvider:Ljavax/inject/Provider;
 
-    sget-object v6, Lde/rki/coronawarnapp/appconfig/mapping/ExposureDetectionConfigMapper_Factory$InstanceHolder;->INSTANCE:Lde/rki/coronawarnapp/appconfig/mapping/ExposureDetectionConfigMapper_Factory;
+    sget-object v5, Lde/rki/coronawarnapp/appconfig/mapping/ExposureDetectionConfigMapper_Factory$InstanceHolder;->INSTANCE:Lde/rki/coronawarnapp/appconfig/mapping/ExposureDetectionConfigMapper_Factory;
 
-    invoke-static {v6}, Ldagger/internal/SingleCheck;->provider(Ljavax/inject/Provider;)Ljavax/inject/Provider;
+    invoke-static {v5}, Ldagger/internal/SingleCheck;->provider(Ljavax/inject/Provider;)Ljavax/inject/Provider;
 
-    move-result-object v6
+    move-result-object v5
 
-    iput-object v6, v13, Lde/rki/coronawarnapp/util/di/DaggerApplicationComponent;->exposureDetectionConfigMapperProvider:Ljavax/inject/Provider;
+    iput-object v5, v15, Lde/rki/coronawarnapp/util/di/DaggerApplicationComponent;->exposureDetectionConfigMapperProvider:Ljavax/inject/Provider;
 
-    new-instance v7, Lde/rki/coronawarnapp/appconfig/AppConfigModule_ExposureMapperFactory;
+    new-instance v6, Lde/rki/coronawarnapp/appconfig/AppConfigModule_ExposureMapperFactory;
 
-    invoke-direct {v7, v1, v6}, Lde/rki/coronawarnapp/appconfig/AppConfigModule_ExposureMapperFactory;-><init>(Lde/rki/coronawarnapp/appconfig/AppConfigModule;Ljavax/inject/Provider;)V
+    invoke-direct {v6, v1, v5}, Lde/rki/coronawarnapp/appconfig/AppConfigModule_ExposureMapperFactory;-><init>(Lde/rki/coronawarnapp/appconfig/AppConfigModule;Ljavax/inject/Provider;)V
 
-    iput-object v7, v13, Lde/rki/coronawarnapp/util/di/DaggerApplicationComponent;->exposureMapperProvider:Ljavax/inject/Provider;
+    iput-object v6, v15, Lde/rki/coronawarnapp/util/di/DaggerApplicationComponent;->exposureMapperProvider:Ljavax/inject/Provider;
 
-    sget-object v6, Lde/rki/coronawarnapp/appconfig/mapping/ExposureWindowRiskCalculationConfigMapper_Factory$InstanceHolder;->INSTANCE:Lde/rki/coronawarnapp/appconfig/mapping/ExposureWindowRiskCalculationConfigMapper_Factory;
+    sget-object v5, Lde/rki/coronawarnapp/appconfig/mapping/ExposureWindowRiskCalculationConfigMapper_Factory$InstanceHolder;->INSTANCE:Lde/rki/coronawarnapp/appconfig/mapping/ExposureWindowRiskCalculationConfigMapper_Factory;
 
-    invoke-static {v6}, Ldagger/internal/SingleCheck;->provider(Ljavax/inject/Provider;)Ljavax/inject/Provider;
+    invoke-static {v5}, Ldagger/internal/SingleCheck;->provider(Ljavax/inject/Provider;)Ljavax/inject/Provider;
 
-    move-result-object v6
+    move-result-object v5
 
-    iput-object v6, v13, Lde/rki/coronawarnapp/util/di/DaggerApplicationComponent;->exposureWindowRiskCalculationConfigMapperProvider:Ljavax/inject/Provider;
+    iput-object v5, v15, Lde/rki/coronawarnapp/util/di/DaggerApplicationComponent;->exposureWindowRiskCalculationConfigMapperProvider:Ljavax/inject/Provider;
 
-    new-instance v7, Lde/rki/coronawarnapp/appconfig/AppConfigModule_WindowRiskMapperFactory;
+    new-instance v6, Lde/rki/coronawarnapp/appconfig/AppConfigModule_WindowRiskMapperFactory;
 
-    invoke-direct {v7, v1, v6}, Lde/rki/coronawarnapp/appconfig/AppConfigModule_WindowRiskMapperFactory;-><init>(Lde/rki/coronawarnapp/appconfig/AppConfigModule;Ljavax/inject/Provider;)V
+    invoke-direct {v6, v1, v5}, Lde/rki/coronawarnapp/appconfig/AppConfigModule_WindowRiskMapperFactory;-><init>(Lde/rki/coronawarnapp/appconfig/AppConfigModule;Ljavax/inject/Provider;)V
 
-    iput-object v7, v13, Lde/rki/coronawarnapp/util/di/DaggerApplicationComponent;->windowRiskMapperProvider:Ljavax/inject/Provider;
+    iput-object v6, v15, Lde/rki/coronawarnapp/util/di/DaggerApplicationComponent;->windowRiskMapperProvider:Ljavax/inject/Provider;
 
-    sget-object v6, Lde/rki/coronawarnapp/appconfig/mapping/SurveyConfigMapper_Factory$InstanceHolder;->INSTANCE:Lde/rki/coronawarnapp/appconfig/mapping/SurveyConfigMapper_Factory;
+    sget-object v5, Lde/rki/coronawarnapp/appconfig/mapping/SurveyConfigMapper_Factory$InstanceHolder;->INSTANCE:Lde/rki/coronawarnapp/appconfig/mapping/SurveyConfigMapper_Factory;
 
-    invoke-static {v6}, Ldagger/internal/SingleCheck;->provider(Ljavax/inject/Provider;)Ljavax/inject/Provider;
+    invoke-static {v5}, Ldagger/internal/SingleCheck;->provider(Ljavax/inject/Provider;)Ljavax/inject/Provider;
 
-    move-result-object v6
+    move-result-object v5
 
-    iput-object v6, v13, Lde/rki/coronawarnapp/util/di/DaggerApplicationComponent;->surveyConfigMapperProvider:Ljavax/inject/Provider;
+    iput-object v5, v15, Lde/rki/coronawarnapp/util/di/DaggerApplicationComponent;->surveyConfigMapperProvider:Ljavax/inject/Provider;
 
-    new-instance v7, Lde/rki/coronawarnapp/appconfig/AppConfigModule_SurveyMapperFactory;
+    new-instance v6, Lde/rki/coronawarnapp/appconfig/AppConfigModule_SurveyMapperFactory;
 
-    invoke-direct {v7, v1, v6}, Lde/rki/coronawarnapp/appconfig/AppConfigModule_SurveyMapperFactory;-><init>(Lde/rki/coronawarnapp/appconfig/AppConfigModule;Ljavax/inject/Provider;)V
+    invoke-direct {v6, v1, v5}, Lde/rki/coronawarnapp/appconfig/AppConfigModule_SurveyMapperFactory;-><init>(Lde/rki/coronawarnapp/appconfig/AppConfigModule;Ljavax/inject/Provider;)V
 
-    iput-object v7, v13, Lde/rki/coronawarnapp/util/di/DaggerApplicationComponent;->surveyMapperProvider:Ljavax/inject/Provider;
+    iput-object v6, v15, Lde/rki/coronawarnapp/util/di/DaggerApplicationComponent;->surveyMapperProvider:Ljavax/inject/Provider;
 
-    sget-object v6, Lde/rki/coronawarnapp/appconfig/mapping/AnalyticsConfigMapper_Factory$InstanceHolder;->INSTANCE:Lde/rki/coronawarnapp/appconfig/mapping/AnalyticsConfigMapper_Factory;
+    sget-object v5, Lde/rki/coronawarnapp/appconfig/mapping/AnalyticsConfigMapper_Factory$InstanceHolder;->INSTANCE:Lde/rki/coronawarnapp/appconfig/mapping/AnalyticsConfigMapper_Factory;
 
-    invoke-static {v6}, Ldagger/internal/SingleCheck;->provider(Ljavax/inject/Provider;)Ljavax/inject/Provider;
+    invoke-static {v5}, Ldagger/internal/SingleCheck;->provider(Ljavax/inject/Provider;)Ljavax/inject/Provider;
 
-    move-result-object v6
+    move-result-object v5
 
-    iput-object v6, v13, Lde/rki/coronawarnapp/util/di/DaggerApplicationComponent;->analyticsConfigMapperProvider:Ljavax/inject/Provider;
+    iput-object v5, v15, Lde/rki/coronawarnapp/util/di/DaggerApplicationComponent;->analyticsConfigMapperProvider:Ljavax/inject/Provider;
 
-    new-instance v7, Lde/rki/coronawarnapp/appconfig/AppConfigModule_AnalyticsMapperFactory;
+    new-instance v6, Lde/rki/coronawarnapp/appconfig/AppConfigModule_AnalyticsMapperFactory;
 
-    invoke-direct {v7, v1, v6}, Lde/rki/coronawarnapp/appconfig/AppConfigModule_AnalyticsMapperFactory;-><init>(Lde/rki/coronawarnapp/appconfig/AppConfigModule;Ljavax/inject/Provider;)V
+    invoke-direct {v6, v1, v5}, Lde/rki/coronawarnapp/appconfig/AppConfigModule_AnalyticsMapperFactory;-><init>(Lde/rki/coronawarnapp/appconfig/AppConfigModule;Ljavax/inject/Provider;)V
 
-    iput-object v7, v13, Lde/rki/coronawarnapp/util/di/DaggerApplicationComponent;->analyticsMapperProvider:Ljavax/inject/Provider;
+    iput-object v6, v15, Lde/rki/coronawarnapp/util/di/DaggerApplicationComponent;->analyticsMapperProvider:Ljavax/inject/Provider;
 
-    sget-object v6, Lde/rki/coronawarnapp/appconfig/mapping/LogUploadConfigMapper_Factory$InstanceHolder;->INSTANCE:Lde/rki/coronawarnapp/appconfig/mapping/LogUploadConfigMapper_Factory;
+    sget-object v5, Lde/rki/coronawarnapp/appconfig/mapping/LogUploadConfigMapper_Factory$InstanceHolder;->INSTANCE:Lde/rki/coronawarnapp/appconfig/mapping/LogUploadConfigMapper_Factory;
 
-    invoke-static {v6}, Ldagger/internal/SingleCheck;->provider(Ljavax/inject/Provider;)Ljavax/inject/Provider;
+    invoke-static {v5}, Ldagger/internal/SingleCheck;->provider(Ljavax/inject/Provider;)Ljavax/inject/Provider;
 
-    move-result-object v6
+    move-result-object v5
 
-    iput-object v6, v13, Lde/rki/coronawarnapp/util/di/DaggerApplicationComponent;->logUploadConfigMapperProvider:Ljavax/inject/Provider;
+    iput-object v5, v15, Lde/rki/coronawarnapp/util/di/DaggerApplicationComponent;->logUploadConfigMapperProvider:Ljavax/inject/Provider;
 
-    new-instance v7, Lde/rki/coronawarnapp/appconfig/AppConfigModule_LogUploadMapperFactory;
+    new-instance v6, Lde/rki/coronawarnapp/appconfig/AppConfigModule_LogUploadMapperFactory;
 
-    invoke-direct {v7, v1, v6}, Lde/rki/coronawarnapp/appconfig/AppConfigModule_LogUploadMapperFactory;-><init>(Lde/rki/coronawarnapp/appconfig/AppConfigModule;Ljavax/inject/Provider;)V
+    invoke-direct {v6, v1, v5}, Lde/rki/coronawarnapp/appconfig/AppConfigModule_LogUploadMapperFactory;-><init>(Lde/rki/coronawarnapp/appconfig/AppConfigModule;Ljavax/inject/Provider;)V
 
-    iput-object v7, v13, Lde/rki/coronawarnapp/util/di/DaggerApplicationComponent;->logUploadMapperProvider:Ljavax/inject/Provider;
+    iput-object v6, v15, Lde/rki/coronawarnapp/util/di/DaggerApplicationComponent;->logUploadMapperProvider:Ljavax/inject/Provider;
 
-    sget-object v6, Lde/rki/coronawarnapp/appconfig/mapping/PresenceTracingConfigMapper_Factory$InstanceHolder;->INSTANCE:Lde/rki/coronawarnapp/appconfig/mapping/PresenceTracingConfigMapper_Factory;
+    sget-object v5, Lde/rki/coronawarnapp/appconfig/mapping/PresenceTracingConfigMapper_Factory$InstanceHolder;->INSTANCE:Lde/rki/coronawarnapp/appconfig/mapping/PresenceTracingConfigMapper_Factory;
 
-    invoke-static {v6}, Ldagger/internal/SingleCheck;->provider(Ljavax/inject/Provider;)Ljavax/inject/Provider;
+    invoke-static {v5}, Ldagger/internal/SingleCheck;->provider(Ljavax/inject/Provider;)Ljavax/inject/Provider;
 
-    move-result-object v6
+    move-result-object v5
 
-    iput-object v6, v13, Lde/rki/coronawarnapp/util/di/DaggerApplicationComponent;->presenceTracingConfigMapperProvider:Ljavax/inject/Provider;
+    iput-object v5, v15, Lde/rki/coronawarnapp/util/di/DaggerApplicationComponent;->presenceTracingConfigMapperProvider:Ljavax/inject/Provider;
 
-    new-instance v7, Lde/rki/coronawarnapp/appconfig/AppConfigModule_PresenceTracingMapperFactory;
+    new-instance v6, Lde/rki/coronawarnapp/appconfig/AppConfigModule_PresenceTracingMapperFactory;
 
-    invoke-direct {v7, v1, v6}, Lde/rki/coronawarnapp/appconfig/AppConfigModule_PresenceTracingMapperFactory;-><init>(Lde/rki/coronawarnapp/appconfig/AppConfigModule;Ljavax/inject/Provider;)V
+    invoke-direct {v6, v1, v5}, Lde/rki/coronawarnapp/appconfig/AppConfigModule_PresenceTracingMapperFactory;-><init>(Lde/rki/coronawarnapp/appconfig/AppConfigModule;Ljavax/inject/Provider;)V
 
-    iput-object v7, v13, Lde/rki/coronawarnapp/util/di/DaggerApplicationComponent;->presenceTracingMapperProvider:Ljavax/inject/Provider;
+    iput-object v6, v15, Lde/rki/coronawarnapp/util/di/DaggerApplicationComponent;->presenceTracingMapperProvider:Ljavax/inject/Provider;
 
-    sget-object v6, Lde/rki/coronawarnapp/appconfig/mapping/CoronaTestConfigMapper_Factory$InstanceHolder;->INSTANCE:Lde/rki/coronawarnapp/appconfig/mapping/CoronaTestConfigMapper_Factory;
+    sget-object v5, Lde/rki/coronawarnapp/appconfig/mapping/CoronaTestConfigMapper_Factory$InstanceHolder;->INSTANCE:Lde/rki/coronawarnapp/appconfig/mapping/CoronaTestConfigMapper_Factory;
 
-    invoke-static {v6}, Ldagger/internal/SingleCheck;->provider(Ljavax/inject/Provider;)Ljavax/inject/Provider;
+    invoke-static {v5}, Ldagger/internal/SingleCheck;->provider(Ljavax/inject/Provider;)Ljavax/inject/Provider;
 
-    move-result-object v6
+    move-result-object v5
 
-    iput-object v6, v13, Lde/rki/coronawarnapp/util/di/DaggerApplicationComponent;->coronaTestConfigMapperProvider:Ljavax/inject/Provider;
+    iput-object v5, v15, Lde/rki/coronawarnapp/util/di/DaggerApplicationComponent;->coronaTestConfigMapperProvider:Ljavax/inject/Provider;
 
-    new-instance v7, Lde/rki/coronawarnapp/appconfig/AppConfigModule_CoronaTestConfigMapperFactory;
+    new-instance v6, Lde/rki/coronawarnapp/appconfig/AppConfigModule_CoronaTestConfigMapperFactory;
 
-    invoke-direct {v7, v1, v6}, Lde/rki/coronawarnapp/appconfig/AppConfigModule_CoronaTestConfigMapperFactory;-><init>(Lde/rki/coronawarnapp/appconfig/AppConfigModule;Ljavax/inject/Provider;)V
+    invoke-direct {v6, v1, v5}, Lde/rki/coronawarnapp/appconfig/AppConfigModule_CoronaTestConfigMapperFactory;-><init>(Lde/rki/coronawarnapp/appconfig/AppConfigModule;Ljavax/inject/Provider;)V
 
-    iput-object v7, v13, Lde/rki/coronawarnapp/util/di/DaggerApplicationComponent;->coronaTestConfigMapperProvider2:Ljavax/inject/Provider;
+    iput-object v6, v15, Lde/rki/coronawarnapp/util/di/DaggerApplicationComponent;->coronaTestConfigMapperProvider2:Ljavax/inject/Provider;
 
-    sget-object v6, Lde/rki/coronawarnapp/appconfig/mapping/CovidCertificateConfigMapper_Factory$InstanceHolder;->INSTANCE:Lde/rki/coronawarnapp/appconfig/mapping/CovidCertificateConfigMapper_Factory;
+    sget-object v5, Lde/rki/coronawarnapp/appconfig/mapping/CovidCertificateConfigMapper_Factory$InstanceHolder;->INSTANCE:Lde/rki/coronawarnapp/appconfig/mapping/CovidCertificateConfigMapper_Factory;
 
-    invoke-static {v6}, Ldagger/internal/SingleCheck;->provider(Ljavax/inject/Provider;)Ljavax/inject/Provider;
+    invoke-static {v5}, Ldagger/internal/SingleCheck;->provider(Ljavax/inject/Provider;)Ljavax/inject/Provider;
 
-    move-result-object v6
+    move-result-object v5
 
-    iput-object v6, v13, Lde/rki/coronawarnapp/util/di/DaggerApplicationComponent;->covidCertificateConfigMapperProvider:Ljavax/inject/Provider;
+    iput-object v5, v15, Lde/rki/coronawarnapp/util/di/DaggerApplicationComponent;->covidCertificateConfigMapperProvider:Ljavax/inject/Provider;
 
-    new-instance v7, Lde/rki/coronawarnapp/appconfig/AppConfigModule_CovidCertificateConfigMapperFactory;
+    new-instance v6, Lde/rki/coronawarnapp/appconfig/AppConfigModule_CovidCertificateConfigMapperFactory;
 
-    invoke-direct {v7, v1, v6}, Lde/rki/coronawarnapp/appconfig/AppConfigModule_CovidCertificateConfigMapperFactory;-><init>(Lde/rki/coronawarnapp/appconfig/AppConfigModule;Ljavax/inject/Provider;)V
+    invoke-direct {v6, v1, v5}, Lde/rki/coronawarnapp/appconfig/AppConfigModule_CovidCertificateConfigMapperFactory;-><init>(Lde/rki/coronawarnapp/appconfig/AppConfigModule;Ljavax/inject/Provider;)V
 
-    iput-object v7, v13, Lde/rki/coronawarnapp/util/di/DaggerApplicationComponent;->covidCertificateConfigMapperProvider2:Ljavax/inject/Provider;
+    iput-object v6, v15, Lde/rki/coronawarnapp/util/di/DaggerApplicationComponent;->covidCertificateConfigMapperProvider2:Ljavax/inject/Provider;
 
-    iget-object v1, v13, Lde/rki/coronawarnapp/util/di/DaggerApplicationComponent;->cwaMapperProvider:Ljavax/inject/Provider;
+    iget-object v1, v15, Lde/rki/coronawarnapp/util/di/DaggerApplicationComponent;->cwaMapperProvider:Ljavax/inject/Provider;
 
-    iget-object v6, v13, Lde/rki/coronawarnapp/util/di/DaggerApplicationComponent;->downloadMapperProvider:Ljavax/inject/Provider;
+    iget-object v5, v15, Lde/rki/coronawarnapp/util/di/DaggerApplicationComponent;->downloadMapperProvider:Ljavax/inject/Provider;
 
-    iget-object v7, v13, Lde/rki/coronawarnapp/util/di/DaggerApplicationComponent;->exposureMapperProvider:Ljavax/inject/Provider;
+    iget-object v6, v15, Lde/rki/coronawarnapp/util/di/DaggerApplicationComponent;->exposureMapperProvider:Ljavax/inject/Provider;
 
-    iget-object v8, v13, Lde/rki/coronawarnapp/util/di/DaggerApplicationComponent;->windowRiskMapperProvider:Ljavax/inject/Provider;
+    iget-object v7, v15, Lde/rki/coronawarnapp/util/di/DaggerApplicationComponent;->windowRiskMapperProvider:Ljavax/inject/Provider;
 
-    iget-object v9, v13, Lde/rki/coronawarnapp/util/di/DaggerApplicationComponent;->surveyMapperProvider:Ljavax/inject/Provider;
+    iget-object v8, v15, Lde/rki/coronawarnapp/util/di/DaggerApplicationComponent;->surveyMapperProvider:Ljavax/inject/Provider;
 
-    iget-object v10, v13, Lde/rki/coronawarnapp/util/di/DaggerApplicationComponent;->analyticsMapperProvider:Ljavax/inject/Provider;
+    iget-object v9, v15, Lde/rki/coronawarnapp/util/di/DaggerApplicationComponent;->analyticsMapperProvider:Ljavax/inject/Provider;
 
-    iget-object v11, v13, Lde/rki/coronawarnapp/util/di/DaggerApplicationComponent;->logUploadMapperProvider:Ljavax/inject/Provider;
+    iget-object v10, v15, Lde/rki/coronawarnapp/util/di/DaggerApplicationComponent;->logUploadMapperProvider:Ljavax/inject/Provider;
 
-    iget-object v2, v13, Lde/rki/coronawarnapp/util/di/DaggerApplicationComponent;->presenceTracingMapperProvider:Ljavax/inject/Provider;
+    iget-object v11, v15, Lde/rki/coronawarnapp/util/di/DaggerApplicationComponent;->presenceTracingMapperProvider:Ljavax/inject/Provider;
 
-    iget-object v5, v13, Lde/rki/coronawarnapp/util/di/DaggerApplicationComponent;->coronaTestConfigMapperProvider2:Ljavax/inject/Provider;
+    iget-object v2, v15, Lde/rki/coronawarnapp/util/di/DaggerApplicationComponent;->coronaTestConfigMapperProvider2:Ljavax/inject/Provider;
 
-    iget-object v12, v13, Lde/rki/coronawarnapp/util/di/DaggerApplicationComponent;->covidCertificateConfigMapperProvider2:Ljavax/inject/Provider;
+    iget-object v12, v15, Lde/rki/coronawarnapp/util/di/DaggerApplicationComponent;->covidCertificateConfigMapperProvider2:Ljavax/inject/Provider;
 
     new-instance v27, Lde/rki/coronawarnapp/appconfig/mapping/ConfigParser_Factory;
 
@@ -5764,21 +6074,21 @@
 
     move-object/from16 v17, v1
 
-    move-object/from16 v18, v6
+    move-object/from16 v18, v5
 
-    move-object/from16 v19, v7
+    move-object/from16 v19, v6
 
-    move-object/from16 v20, v8
+    move-object/from16 v20, v7
 
-    move-object/from16 v21, v9
+    move-object/from16 v21, v8
 
-    move-object/from16 v22, v10
+    move-object/from16 v22, v9
 
-    move-object/from16 v23, v11
+    move-object/from16 v23, v10
 
-    move-object/from16 v24, v2
+    move-object/from16 v24, v11
 
-    move-object/from16 v25, v5
+    move-object/from16 v25, v2
 
     move-object/from16 v26, v12
 
@@ -5788,17 +6098,17 @@
 
     move-result-object v1
 
-    iput-object v1, v13, Lde/rki/coronawarnapp/util/di/DaggerApplicationComponent;->configParserProvider:Ljavax/inject/Provider;
+    iput-object v1, v15, Lde/rki/coronawarnapp/util/di/DaggerApplicationComponent;->configParserProvider:Ljavax/inject/Provider;
 
-    iget-object v6, v13, Lde/rki/coronawarnapp/util/di/DaggerApplicationComponent;->appConfigServerProvider:Ljavax/inject/Provider;
+    iget-object v6, v15, Lde/rki/coronawarnapp/util/di/DaggerApplicationComponent;->appConfigServerProvider:Ljavax/inject/Provider;
 
-    iget-object v7, v13, Lde/rki/coronawarnapp/util/di/DaggerApplicationComponent;->remoteAppConfigHttpCacheProvider:Ljavax/inject/Provider;
+    iget-object v7, v15, Lde/rki/coronawarnapp/util/di/DaggerApplicationComponent;->remoteAppConfigHttpCacheProvider:Ljavax/inject/Provider;
 
-    iget-object v8, v13, Lde/rki/coronawarnapp/util/di/DaggerApplicationComponent;->appConfigStorageProvider:Ljavax/inject/Provider;
+    iget-object v8, v15, Lde/rki/coronawarnapp/util/di/DaggerApplicationComponent;->appConfigStorageProvider:Ljavax/inject/Provider;
 
-    iget-object v9, v13, Lde/rki/coronawarnapp/util/di/DaggerApplicationComponent;->configParserProvider:Ljavax/inject/Provider;
+    iget-object v9, v15, Lde/rki/coronawarnapp/util/di/DaggerApplicationComponent;->configParserProvider:Ljavax/inject/Provider;
 
-    iget-object v10, v13, Lde/rki/coronawarnapp/util/di/DaggerApplicationComponent;->defaultDispatcherProvider:Ljavax/inject/Provider;
+    iget-object v10, v15, Lde/rki/coronawarnapp/util/di/DaggerApplicationComponent;->defaultDispatcherProvider:Ljavax/inject/Provider;
 
     new-instance v1, Lde/rki/coronawarnapp/appconfig/sources/remote/RemoteAppConfigSource_Factory;
 
@@ -5820,13 +6130,13 @@
     move-object v1, v2
 
     :goto_24
-    iput-object v1, v13, Lde/rki/coronawarnapp/util/di/DaggerApplicationComponent;->remoteAppConfigSourceProvider:Ljavax/inject/Provider;
+    iput-object v1, v15, Lde/rki/coronawarnapp/util/di/DaggerApplicationComponent;->remoteAppConfigSourceProvider:Ljavax/inject/Provider;
 
-    iget-object v1, v13, Lde/rki/coronawarnapp/util/di/DaggerApplicationComponent;->appConfigStorageProvider:Ljavax/inject/Provider;
+    iget-object v1, v15, Lde/rki/coronawarnapp/util/di/DaggerApplicationComponent;->appConfigStorageProvider:Ljavax/inject/Provider;
 
-    iget-object v2, v13, Lde/rki/coronawarnapp/util/di/DaggerApplicationComponent;->configParserProvider:Ljavax/inject/Provider;
+    iget-object v2, v15, Lde/rki/coronawarnapp/util/di/DaggerApplicationComponent;->configParserProvider:Ljavax/inject/Provider;
 
-    iget-object v5, v13, Lde/rki/coronawarnapp/util/di/DaggerApplicationComponent;->defaultDispatcherProvider:Ljavax/inject/Provider;
+    iget-object v5, v15, Lde/rki/coronawarnapp/util/di/DaggerApplicationComponent;->defaultDispatcherProvider:Ljavax/inject/Provider;
 
     new-instance v6, Lde/rki/coronawarnapp/appconfig/sources/local/LocalAppConfigSource_Factory;
 
@@ -5846,11 +6156,11 @@
     move-object v6, v1
 
     :goto_25
-    iput-object v6, v13, Lde/rki/coronawarnapp/util/di/DaggerApplicationComponent;->localAppConfigSourceProvider:Ljavax/inject/Provider;
+    iput-object v6, v15, Lde/rki/coronawarnapp/util/di/DaggerApplicationComponent;->localAppConfigSourceProvider:Ljavax/inject/Provider;
 
-    iget-object v1, v13, Lde/rki/coronawarnapp/util/di/DaggerApplicationComponent;->contextProvider:Ljavax/inject/Provider;
+    iget-object v1, v15, Lde/rki/coronawarnapp/util/di/DaggerApplicationComponent;->contextProvider:Ljavax/inject/Provider;
 
-    iget-object v2, v13, Lde/rki/coronawarnapp/util/di/DaggerApplicationComponent;->configParserProvider:Ljavax/inject/Provider;
+    iget-object v2, v15, Lde/rki/coronawarnapp/util/di/DaggerApplicationComponent;->configParserProvider:Ljavax/inject/Provider;
 
     new-instance v5, Lde/rki/coronawarnapp/appconfig/sources/fallback/DefaultAppConfigSource_Factory;
 
@@ -5860,25 +6170,25 @@
 
     move-result-object v1
 
-    iput-object v1, v13, Lde/rki/coronawarnapp/util/di/DaggerApplicationComponent;->defaultAppConfigSourceProvider:Ljavax/inject/Provider;
+    iput-object v1, v15, Lde/rki/coronawarnapp/util/di/DaggerApplicationComponent;->defaultAppConfigSourceProvider:Ljavax/inject/Provider;
 
-    iget-object v1, v13, Lde/rki/coronawarnapp/util/di/DaggerApplicationComponent;->contextProvider:Ljavax/inject/Provider;
+    iget-object v1, v15, Lde/rki/coronawarnapp/util/di/DaggerApplicationComponent;->contextProvider:Ljavax/inject/Provider;
 
     new-instance v2, Lde/rki/coronawarnapp/main/CWASettings_Factory;
 
     invoke-direct {v2, v1}, Lde/rki/coronawarnapp/main/CWASettings_Factory;-><init>(Ljavax/inject/Provider;)V
 
-    iput-object v2, v13, Lde/rki/coronawarnapp/util/di/DaggerApplicationComponent;->cWASettingsProvider:Ljavax/inject/Provider;
+    iput-object v2, v15, Lde/rki/coronawarnapp/util/di/DaggerApplicationComponent;->cWASettingsProvider:Ljavax/inject/Provider;
 
-    iget-object v6, v13, Lde/rki/coronawarnapp/util/di/DaggerApplicationComponent;->remoteAppConfigSourceProvider:Ljavax/inject/Provider;
+    iget-object v6, v15, Lde/rki/coronawarnapp/util/di/DaggerApplicationComponent;->remoteAppConfigSourceProvider:Ljavax/inject/Provider;
 
-    iget-object v7, v13, Lde/rki/coronawarnapp/util/di/DaggerApplicationComponent;->localAppConfigSourceProvider:Ljavax/inject/Provider;
+    iget-object v7, v15, Lde/rki/coronawarnapp/util/di/DaggerApplicationComponent;->localAppConfigSourceProvider:Ljavax/inject/Provider;
 
-    iget-object v8, v13, Lde/rki/coronawarnapp/util/di/DaggerApplicationComponent;->defaultAppConfigSourceProvider:Ljavax/inject/Provider;
+    iget-object v8, v15, Lde/rki/coronawarnapp/util/di/DaggerApplicationComponent;->defaultAppConfigSourceProvider:Ljavax/inject/Provider;
 
-    iget-object v9, v13, Lde/rki/coronawarnapp/util/di/DaggerApplicationComponent;->cWASettingsProvider:Ljavax/inject/Provider;
+    iget-object v9, v15, Lde/rki/coronawarnapp/util/di/DaggerApplicationComponent;->cWASettingsProvider:Ljavax/inject/Provider;
 
-    iget-object v10, v13, Lde/rki/coronawarnapp/util/di/DaggerApplicationComponent;->timeStamperProvider:Ljavax/inject/Provider;
+    iget-object v10, v15, Lde/rki/coronawarnapp/util/di/DaggerApplicationComponent;->timeStamperProvider:Ljavax/inject/Provider;
 
     new-instance v1, Lde/rki/coronawarnapp/appconfig/internal/AppConfigSource_Factory;
 
@@ -5890,11 +6200,11 @@
 
     move-result-object v1
 
-    iput-object v1, v13, Lde/rki/coronawarnapp/util/di/DaggerApplicationComponent;->appConfigSourceProvider:Ljavax/inject/Provider;
+    iput-object v1, v15, Lde/rki/coronawarnapp/util/di/DaggerApplicationComponent;->appConfigSourceProvider:Ljavax/inject/Provider;
 
-    iget-object v2, v13, Lde/rki/coronawarnapp/util/di/DaggerApplicationComponent;->defaultDispatcherProvider:Ljavax/inject/Provider;
+    iget-object v2, v15, Lde/rki/coronawarnapp/util/di/DaggerApplicationComponent;->defaultDispatcherProvider:Ljavax/inject/Provider;
 
-    iget-object v5, v13, Lde/rki/coronawarnapp/util/di/DaggerApplicationComponent;->appCoroutineScopeProvider:Ljavax/inject/Provider;
+    iget-object v5, v15, Lde/rki/coronawarnapp/util/di/DaggerApplicationComponent;->appCoroutineScopeProvider:Ljavax/inject/Provider;
 
     new-instance v6, Lde/rki/coronawarnapp/appconfig/AppConfigProvider_Factory;
 
@@ -5914,17 +6224,17 @@
     move-object v6, v1
 
     :goto_26
-    iput-object v6, v13, Lde/rki/coronawarnapp/util/di/DaggerApplicationComponent;->appConfigProvider:Ljavax/inject/Provider;
+    iput-object v6, v15, Lde/rki/coronawarnapp/util/di/DaggerApplicationComponent;->appConfigProvider:Ljavax/inject/Provider;
 
-    iget-object v8, v13, Lde/rki/coronawarnapp/util/di/DaggerApplicationComponent;->appCoroutineScopeProvider:Ljavax/inject/Provider;
+    iget-object v8, v15, Lde/rki/coronawarnapp/util/di/DaggerApplicationComponent;->appCoroutineScopeProvider:Ljavax/inject/Provider;
 
-    iget-object v9, v13, Lde/rki/coronawarnapp/util/di/DaggerApplicationComponent;->defaultDispatcherProvider:Ljavax/inject/Provider;
+    iget-object v9, v15, Lde/rki/coronawarnapp/util/di/DaggerApplicationComponent;->defaultDispatcherProvider:Ljavax/inject/Provider;
 
-    iget-object v10, v13, Lde/rki/coronawarnapp/util/di/DaggerApplicationComponent;->exposureDetectionTrackerStorageProvider:Ljavax/inject/Provider;
+    iget-object v10, v15, Lde/rki/coronawarnapp/util/di/DaggerApplicationComponent;->exposureDetectionTrackerStorageProvider:Ljavax/inject/Provider;
 
-    iget-object v11, v13, Lde/rki/coronawarnapp/util/di/DaggerApplicationComponent;->timeStamperProvider:Ljavax/inject/Provider;
+    iget-object v11, v15, Lde/rki/coronawarnapp/util/di/DaggerApplicationComponent;->timeStamperProvider:Ljavax/inject/Provider;
 
-    iget-object v12, v13, Lde/rki/coronawarnapp/util/di/DaggerApplicationComponent;->appConfigProvider:Ljavax/inject/Provider;
+    iget-object v12, v15, Lde/rki/coronawarnapp/util/di/DaggerApplicationComponent;->appConfigProvider:Ljavax/inject/Provider;
 
     new-instance v1, Lde/rki/coronawarnapp/nearby/modules/detectiontracker/DefaultExposureDetectionTracker_Factory;
 
@@ -5946,7 +6256,7 @@
     move-object v1, v2
 
     :goto_27
-    iput-object v1, v13, Lde/rki/coronawarnapp/util/di/DaggerApplicationComponent;->defaultExposureDetectionTrackerProvider:Ljavax/inject/Provider;
+    iput-object v1, v15, Lde/rki/coronawarnapp/util/di/DaggerApplicationComponent;->defaultExposureDetectionTrackerProvider:Ljavax/inject/Provider;
 
     new-instance v2, Lde/rki/coronawarnapp/nearby/ENFModule_CalculationTrackerFactory;
 
@@ -5966,13 +6276,13 @@
     move-object v2, v1
 
     :goto_28
-    iput-object v2, v13, Lde/rki/coronawarnapp/util/di/DaggerApplicationComponent;->calculationTrackerProvider:Ljavax/inject/Provider;
+    iput-object v2, v15, Lde/rki/coronawarnapp/util/di/DaggerApplicationComponent;->calculationTrackerProvider:Ljavax/inject/Provider;
 
-    iget-object v1, v13, Lde/rki/coronawarnapp/util/di/DaggerApplicationComponent;->exposureNotificationClientProvider:Ljavax/inject/Provider;
+    iget-object v1, v15, Lde/rki/coronawarnapp/util/di/DaggerApplicationComponent;->exposureNotificationClientProvider:Ljavax/inject/Provider;
 
-    iget-object v2, v13, Lde/rki/coronawarnapp/util/di/DaggerApplicationComponent;->enfClientVersionProvider:Ljavax/inject/Provider;
+    iget-object v2, v15, Lde/rki/coronawarnapp/util/di/DaggerApplicationComponent;->enfClientVersionProvider:Ljavax/inject/Provider;
 
-    iget-object v5, v13, Lde/rki/coronawarnapp/util/di/DaggerApplicationComponent;->contextProvider:Ljavax/inject/Provider;
+    iget-object v5, v15, Lde/rki/coronawarnapp/util/di/DaggerApplicationComponent;->contextProvider:Ljavax/inject/Provider;
 
     new-instance v6, Lde/rki/coronawarnapp/nearby/modules/tekhistory/DefaultTEKHistoryProvider_Factory;
 
@@ -5992,7 +6302,7 @@
     move-object v6, v1
 
     :goto_29
-    iput-object v6, v13, Lde/rki/coronawarnapp/util/di/DaggerApplicationComponent;->defaultTEKHistoryProvider:Ljavax/inject/Provider;
+    iput-object v6, v15, Lde/rki/coronawarnapp/util/di/DaggerApplicationComponent;->defaultTEKHistoryProvider:Ljavax/inject/Provider;
 
     new-instance v1, Lde/rki/coronawarnapp/nearby/ENFModule_TekHistoryFactory;
 
@@ -6012,23 +6322,23 @@
     move-object v1, v0
 
     :goto_2a
-    iput-object v1, v13, Lde/rki/coronawarnapp/util/di/DaggerApplicationComponent;->tekHistoryProvider:Ljavax/inject/Provider;
+    iput-object v1, v15, Lde/rki/coronawarnapp/util/di/DaggerApplicationComponent;->tekHistoryProvider:Ljavax/inject/Provider;
 
-    iget-object v0, v13, Lde/rki/coronawarnapp/util/di/DaggerApplicationComponent;->exposureNotificationClientProvider:Ljavax/inject/Provider;
+    iget-object v0, v15, Lde/rki/coronawarnapp/util/di/DaggerApplicationComponent;->exposureNotificationClientProvider:Ljavax/inject/Provider;
 
-    iget-object v1, v13, Lde/rki/coronawarnapp/util/di/DaggerApplicationComponent;->diagnosisKeySubmitterProvider:Ljavax/inject/Provider;
+    iget-object v1, v15, Lde/rki/coronawarnapp/util/di/DaggerApplicationComponent;->diagnosisKeySubmitterProvider:Ljavax/inject/Provider;
 
-    iget-object v2, v13, Lde/rki/coronawarnapp/util/di/DaggerApplicationComponent;->tracingStatusProvider:Ljavax/inject/Provider;
+    iget-object v2, v15, Lde/rki/coronawarnapp/util/di/DaggerApplicationComponent;->tracingStatusProvider:Ljavax/inject/Provider;
 
-    iget-object v5, v13, Lde/rki/coronawarnapp/util/di/DaggerApplicationComponent;->scanningSupportProvider:Ljavax/inject/Provider;
+    iget-object v5, v15, Lde/rki/coronawarnapp/util/di/DaggerApplicationComponent;->scanningSupportProvider:Ljavax/inject/Provider;
 
-    iget-object v6, v13, Lde/rki/coronawarnapp/util/di/DaggerApplicationComponent;->exposureWindowProvider:Ljavax/inject/Provider;
+    iget-object v6, v15, Lde/rki/coronawarnapp/util/di/DaggerApplicationComponent;->exposureWindowProvider:Ljavax/inject/Provider;
 
-    iget-object v7, v13, Lde/rki/coronawarnapp/util/di/DaggerApplicationComponent;->calculationTrackerProvider:Ljavax/inject/Provider;
+    iget-object v7, v15, Lde/rki/coronawarnapp/util/di/DaggerApplicationComponent;->calculationTrackerProvider:Ljavax/inject/Provider;
 
-    iget-object v8, v13, Lde/rki/coronawarnapp/util/di/DaggerApplicationComponent;->enfClientVersionProvider:Ljavax/inject/Provider;
+    iget-object v8, v15, Lde/rki/coronawarnapp/util/di/DaggerApplicationComponent;->enfClientVersionProvider:Ljavax/inject/Provider;
 
-    iget-object v9, v13, Lde/rki/coronawarnapp/util/di/DaggerApplicationComponent;->tekHistoryProvider:Ljavax/inject/Provider;
+    iget-object v9, v15, Lde/rki/coronawarnapp/util/di/DaggerApplicationComponent;->tekHistoryProvider:Ljavax/inject/Provider;
 
     new-instance v10, Lde/rki/coronawarnapp/nearby/ENFClient_Factory;
 
@@ -6066,9 +6376,9 @@
     move-object v10, v0
 
     :goto_2b
-    iput-object v10, v13, Lde/rki/coronawarnapp/util/di/DaggerApplicationComponent;->eNFClientProvider:Ljavax/inject/Provider;
+    iput-object v10, v15, Lde/rki/coronawarnapp/util/di/DaggerApplicationComponent;->eNFClientProvider:Ljavax/inject/Provider;
 
-    iget-object v0, v13, Lde/rki/coronawarnapp/util/di/DaggerApplicationComponent;->contextProvider:Ljavax/inject/Provider;
+    iget-object v0, v15, Lde/rki/coronawarnapp/util/di/DaggerApplicationComponent;->contextProvider:Ljavax/inject/Provider;
 
     new-instance v1, Lde/rki/coronawarnapp/risk/RiskLevelSettings_Factory;
 
@@ -6088,17 +6398,17 @@
     move-object v1, v0
 
     :goto_2c
-    iput-object v1, v13, Lde/rki/coronawarnapp/util/di/DaggerApplicationComponent;->riskLevelSettingsProvider:Ljavax/inject/Provider;
+    iput-object v1, v15, Lde/rki/coronawarnapp/util/di/DaggerApplicationComponent;->riskLevelSettingsProvider:Ljavax/inject/Provider;
 
-    iget-object v0, v13, Lde/rki/coronawarnapp/util/di/DaggerApplicationComponent;->contextProvider:Ljavax/inject/Provider;
+    iget-object v0, v15, Lde/rki/coronawarnapp/util/di/DaggerApplicationComponent;->contextProvider:Ljavax/inject/Provider;
 
     new-instance v1, Lde/rki/coronawarnapp/risk/storage/internal/RiskResultDatabase_Factory_Factory;
 
     invoke-direct {v1, v0}, Lde/rki/coronawarnapp/risk/storage/internal/RiskResultDatabase_Factory_Factory;-><init>(Ljavax/inject/Provider;)V
 
-    iput-object v1, v13, Lde/rki/coronawarnapp/util/di/DaggerApplicationComponent;->factoryProvider:Ljavax/inject/Provider;
+    iput-object v1, v15, Lde/rki/coronawarnapp/util/di/DaggerApplicationComponent;->factoryProvider:Ljavax/inject/Provider;
 
-    iget-object v0, v13, Lde/rki/coronawarnapp/util/di/DaggerApplicationComponent;->appConfigProvider:Ljavax/inject/Provider;
+    iget-object v0, v15, Lde/rki/coronawarnapp/util/di/DaggerApplicationComponent;->appConfigProvider:Ljavax/inject/Provider;
 
     new-instance v1, Lde/rki/coronawarnapp/presencetracing/risk/calculation/PresenceTracingRiskMapper_Factory;
 
@@ -6118,27 +6428,27 @@
     move-object v1, v0
 
     :goto_2d
-    iput-object v1, v13, Lde/rki/coronawarnapp/util/di/DaggerApplicationComponent;->presenceTracingRiskMapperProvider:Ljavax/inject/Provider;
+    iput-object v1, v15, Lde/rki/coronawarnapp/util/di/DaggerApplicationComponent;->presenceTracingRiskMapperProvider:Ljavax/inject/Provider;
 
     new-instance v0, Lde/rki/coronawarnapp/presencetracing/risk/calculation/PresenceTracingRiskCalculator_Factory;
 
     invoke-direct {v0, v1}, Lde/rki/coronawarnapp/presencetracing/risk/calculation/PresenceTracingRiskCalculator_Factory;-><init>(Ljavax/inject/Provider;)V
 
-    iput-object v0, v13, Lde/rki/coronawarnapp/util/di/DaggerApplicationComponent;->presenceTracingRiskCalculatorProvider:Ljavax/inject/Provider;
+    iput-object v0, v15, Lde/rki/coronawarnapp/util/di/DaggerApplicationComponent;->presenceTracingRiskCalculatorProvider:Ljavax/inject/Provider;
 
-    iget-object v0, v13, Lde/rki/coronawarnapp/util/di/DaggerApplicationComponent;->contextProvider:Ljavax/inject/Provider;
+    iget-object v0, v15, Lde/rki/coronawarnapp/util/di/DaggerApplicationComponent;->contextProvider:Ljavax/inject/Provider;
 
     new-instance v1, Lde/rki/coronawarnapp/presencetracing/risk/storage/PresenceTracingRiskDatabase_Factory_Factory;
 
     invoke-direct {v1, v0}, Lde/rki/coronawarnapp/presencetracing/risk/storage/PresenceTracingRiskDatabase_Factory_Factory;-><init>(Ljavax/inject/Provider;)V
 
-    iput-object v1, v13, Lde/rki/coronawarnapp/util/di/DaggerApplicationComponent;->factoryProvider2:Ljavax/inject/Provider;
+    iput-object v1, v15, Lde/rki/coronawarnapp/util/di/DaggerApplicationComponent;->factoryProvider2:Ljavax/inject/Provider;
 
-    iget-object v0, v13, Lde/rki/coronawarnapp/util/di/DaggerApplicationComponent;->presenceTracingRiskCalculatorProvider:Ljavax/inject/Provider;
+    iget-object v0, v15, Lde/rki/coronawarnapp/util/di/DaggerApplicationComponent;->presenceTracingRiskCalculatorProvider:Ljavax/inject/Provider;
 
-    iget-object v1, v13, Lde/rki/coronawarnapp/util/di/DaggerApplicationComponent;->factoryProvider2:Ljavax/inject/Provider;
+    iget-object v1, v15, Lde/rki/coronawarnapp/util/di/DaggerApplicationComponent;->factoryProvider2:Ljavax/inject/Provider;
 
-    iget-object v2, v13, Lde/rki/coronawarnapp/util/di/DaggerApplicationComponent;->timeStamperProvider:Ljavax/inject/Provider;
+    iget-object v2, v15, Lde/rki/coronawarnapp/util/di/DaggerApplicationComponent;->timeStamperProvider:Ljavax/inject/Provider;
 
     new-instance v5, Lde/rki/coronawarnapp/presencetracing/risk/storage/PresenceTracingRiskRepository_Factory;
 
@@ -6158,9 +6468,9 @@
     move-object v5, v0
 
     :goto_2e
-    iput-object v5, v13, Lde/rki/coronawarnapp/util/di/DaggerApplicationComponent;->presenceTracingRiskRepositoryProvider:Ljavax/inject/Provider;
+    iput-object v5, v15, Lde/rki/coronawarnapp/util/di/DaggerApplicationComponent;->presenceTracingRiskRepositoryProvider:Ljavax/inject/Provider;
 
-    iget-object v0, v13, Lde/rki/coronawarnapp/util/di/DaggerApplicationComponent;->timeStamperProvider:Ljavax/inject/Provider;
+    iget-object v0, v15, Lde/rki/coronawarnapp/util/di/DaggerApplicationComponent;->timeStamperProvider:Ljavax/inject/Provider;
 
     new-instance v1, Lde/rki/coronawarnapp/risk/storage/internal/RiskCombinator_Factory;
 
@@ -6170,17 +6480,17 @@
 
     move-result-object v0
 
-    iput-object v0, v13, Lde/rki/coronawarnapp/util/di/DaggerApplicationComponent;->riskCombinatorProvider:Ljavax/inject/Provider;
+    iput-object v0, v15, Lde/rki/coronawarnapp/util/di/DaggerApplicationComponent;->riskCombinatorProvider:Ljavax/inject/Provider;
 
-    iget-object v6, v13, Lde/rki/coronawarnapp/util/di/DaggerApplicationComponent;->factoryProvider:Ljavax/inject/Provider;
+    iget-object v6, v15, Lde/rki/coronawarnapp/util/di/DaggerApplicationComponent;->factoryProvider:Ljavax/inject/Provider;
 
-    iget-object v7, v13, Lde/rki/coronawarnapp/util/di/DaggerApplicationComponent;->presenceTracingRiskRepositoryProvider:Ljavax/inject/Provider;
+    iget-object v7, v15, Lde/rki/coronawarnapp/util/di/DaggerApplicationComponent;->presenceTracingRiskRepositoryProvider:Ljavax/inject/Provider;
 
-    iget-object v8, v13, Lde/rki/coronawarnapp/util/di/DaggerApplicationComponent;->appCoroutineScopeProvider:Ljavax/inject/Provider;
+    iget-object v8, v15, Lde/rki/coronawarnapp/util/di/DaggerApplicationComponent;->appCoroutineScopeProvider:Ljavax/inject/Provider;
 
-    iget-object v9, v13, Lde/rki/coronawarnapp/util/di/DaggerApplicationComponent;->riskCombinatorProvider:Ljavax/inject/Provider;
+    iget-object v9, v15, Lde/rki/coronawarnapp/util/di/DaggerApplicationComponent;->riskCombinatorProvider:Ljavax/inject/Provider;
 
-    iget-object v10, v13, Lde/rki/coronawarnapp/util/di/DaggerApplicationComponent;->timeStamperProvider:Ljavax/inject/Provider;
+    iget-object v10, v15, Lde/rki/coronawarnapp/util/di/DaggerApplicationComponent;->timeStamperProvider:Ljavax/inject/Provider;
 
     new-instance v0, Lde/rki/coronawarnapp/risk/storage/DefaultRiskLevelStorage_Factory;
 
@@ -6202,7 +6512,7 @@
     move-object v0, v1
 
     :goto_2f
-    iput-object v0, v13, Lde/rki/coronawarnapp/util/di/DaggerApplicationComponent;->defaultRiskLevelStorageProvider:Ljavax/inject/Provider;
+    iput-object v0, v15, Lde/rki/coronawarnapp/util/di/DaggerApplicationComponent;->defaultRiskLevelStorageProvider:Ljavax/inject/Provider;
 
     new-instance v1, Lde/rki/coronawarnapp/risk/RiskModule_RiskLevelStorageFactory;
 
@@ -6222,21 +6532,21 @@
     move-object v1, v0
 
     :goto_30
-    iput-object v1, v13, Lde/rki/coronawarnapp/util/di/DaggerApplicationComponent;->riskLevelStorageProvider:Ljavax/inject/Provider;
+    iput-object v1, v15, Lde/rki/coronawarnapp/util/di/DaggerApplicationComponent;->riskLevelStorageProvider:Ljavax/inject/Provider;
 
-    iget-object v0, v13, Lde/rki/coronawarnapp/util/di/DaggerApplicationComponent;->contextProvider:Ljavax/inject/Provider;
+    iget-object v0, v15, Lde/rki/coronawarnapp/util/di/DaggerApplicationComponent;->contextProvider:Ljavax/inject/Provider;
 
     new-instance v1, Lde/rki/coronawarnapp/diagnosiskeys/storage/KeyCacheDatabase_Factory_Factory;
 
     invoke-direct {v1, v0}, Lde/rki/coronawarnapp/diagnosiskeys/storage/KeyCacheDatabase_Factory_Factory;-><init>(Ljavax/inject/Provider;)V
 
-    iput-object v1, v13, Lde/rki/coronawarnapp/util/di/DaggerApplicationComponent;->factoryProvider3:Ljavax/inject/Provider;
+    iput-object v1, v15, Lde/rki/coronawarnapp/util/di/DaggerApplicationComponent;->factoryProvider3:Ljavax/inject/Provider;
 
-    iget-object v0, v13, Lde/rki/coronawarnapp/util/di/DaggerApplicationComponent;->contextProvider:Ljavax/inject/Provider;
+    iget-object v0, v15, Lde/rki/coronawarnapp/util/di/DaggerApplicationComponent;->contextProvider:Ljavax/inject/Provider;
 
-    iget-object v1, v13, Lde/rki/coronawarnapp/util/di/DaggerApplicationComponent;->factoryProvider3:Ljavax/inject/Provider;
+    iget-object v1, v15, Lde/rki/coronawarnapp/util/di/DaggerApplicationComponent;->factoryProvider3:Ljavax/inject/Provider;
 
-    iget-object v2, v13, Lde/rki/coronawarnapp/util/di/DaggerApplicationComponent;->timeStamperProvider:Ljavax/inject/Provider;
+    iget-object v2, v15, Lde/rki/coronawarnapp/util/di/DaggerApplicationComponent;->timeStamperProvider:Ljavax/inject/Provider;
 
     new-instance v5, Lde/rki/coronawarnapp/diagnosiskeys/storage/KeyCacheRepository_Factory;
 
@@ -6256,11 +6566,11 @@
     move-object v5, v0
 
     :goto_31
-    iput-object v5, v13, Lde/rki/coronawarnapp/util/di/DaggerApplicationComponent;->keyCacheRepositoryProvider:Ljavax/inject/Provider;
+    iput-object v5, v15, Lde/rki/coronawarnapp/util/di/DaggerApplicationComponent;->keyCacheRepositoryProvider:Ljavax/inject/Provider;
 
-    iget-object v0, v13, Lde/rki/coronawarnapp/util/di/DaggerApplicationComponent;->contextProvider:Ljavax/inject/Provider;
+    iget-object v0, v15, Lde/rki/coronawarnapp/util/di/DaggerApplicationComponent;->contextProvider:Ljavax/inject/Provider;
 
-    iget-object v1, v13, Lde/rki/coronawarnapp/util/di/DaggerApplicationComponent;->baseGsonProvider:Ljavax/inject/Provider;
+    iget-object v1, v15, Lde/rki/coronawarnapp/util/di/DaggerApplicationComponent;->baseGsonProvider:Ljavax/inject/Provider;
 
     new-instance v2, Lde/rki/coronawarnapp/coronatest/storage/CoronaTestStorage_Factory;
 
@@ -6280,7 +6590,7 @@
     move-object v2, v0
 
     :goto_32
-    iput-object v2, v13, Lde/rki/coronawarnapp/util/di/DaggerApplicationComponent;->coronaTestStorageProvider:Ljavax/inject/Provider;
+    iput-object v2, v15, Lde/rki/coronawarnapp/util/di/DaggerApplicationComponent;->coronaTestStorageProvider:Ljavax/inject/Provider;
 
     new-instance v0, Lde/rki/coronawarnapp/http/HttpModule_RestrictedConnectionSpecsFactory;
 
@@ -6290,25 +6600,25 @@
 
     move-result-object v0
 
-    iput-object v0, v13, Lde/rki/coronawarnapp/util/di/DaggerApplicationComponent;->restrictedConnectionSpecsProvider:Ljavax/inject/Provider;
+    iput-object v0, v15, Lde/rki/coronawarnapp/util/di/DaggerApplicationComponent;->restrictedConnectionSpecsProvider:Ljavax/inject/Provider;
 
-    iget-object v0, v13, Lde/rki/coronawarnapp/util/di/DaggerApplicationComponent;->defaultHttpClientProvider:Ljavax/inject/Provider;
+    iget-object v0, v15, Lde/rki/coronawarnapp/util/di/DaggerApplicationComponent;->defaultHttpClientProvider:Ljavax/inject/Provider;
 
-    iget-object v1, v13, Lde/rki/coronawarnapp/util/di/DaggerApplicationComponent;->restrictedConnectionSpecsProvider:Ljavax/inject/Provider;
+    iget-object v1, v15, Lde/rki/coronawarnapp/util/di/DaggerApplicationComponent;->restrictedConnectionSpecsProvider:Ljavax/inject/Provider;
 
     new-instance v2, Lde/rki/coronawarnapp/coronatest/server/VerificationModule_CdnHttpClientFactory;
 
     move-object/from16 v6, p16
 
-    invoke-direct {v2, v6, v0, v1}, Lde/rki/coronawarnapp/coronatest/server/VerificationModule_CdnHttpClientFactory;-><init>(Lde/rki/coronawarnapp/coronatest/server/VerificationModule;Ljavax/inject/Provider;Ljavax/inject/Provider;)V
+    invoke-direct {v2, v6, v0, v1}, Lde/rki/coronawarnapp/coronatest/server/VerificationModule_CdnHttpClientFactory;-><init>(Lorg/bouncycastle/crypto/modes/kgcm/KGCMUtil_512;Ljavax/inject/Provider;Ljavax/inject/Provider;)V
 
     invoke-static {v2}, Ldagger/internal/SingleCheck;->provider(Ljavax/inject/Provider;)Ljavax/inject/Provider;
 
     move-result-object v0
 
-    iput-object v0, v13, Lde/rki/coronawarnapp/util/di/DaggerApplicationComponent;->cdnHttpClientProvider2:Ljavax/inject/Provider;
+    iput-object v0, v15, Lde/rki/coronawarnapp/util/di/DaggerApplicationComponent;->cdnHttpClientProvider2:Ljavax/inject/Provider;
 
-    iget-object v0, v13, Lde/rki/coronawarnapp/util/di/DaggerApplicationComponent;->environmentSetupProvider:Ljavax/inject/Provider;
+    iget-object v0, v15, Lde/rki/coronawarnapp/util/di/DaggerApplicationComponent;->environmentSetupProvider:Ljavax/inject/Provider;
 
     new-instance v1, Lde/rki/coronawarnapp/environment/verification/VerificationCDNModule_ProvideVerificationUrlFactory;
 
@@ -6330,15 +6640,15 @@
     move-object v1, v0
 
     :goto_33
-    iput-object v1, v13, Lde/rki/coronawarnapp/util/di/DaggerApplicationComponent;->provideVerificationUrlProvider:Ljavax/inject/Provider;
+    iput-object v1, v15, Lde/rki/coronawarnapp/util/di/DaggerApplicationComponent;->provideVerificationUrlProvider:Ljavax/inject/Provider;
 
-    iget-object v7, v13, Lde/rki/coronawarnapp/util/di/DaggerApplicationComponent;->contextProvider:Ljavax/inject/Provider;
+    iget-object v7, v15, Lde/rki/coronawarnapp/util/di/DaggerApplicationComponent;->contextProvider:Ljavax/inject/Provider;
 
-    iget-object v8, v13, Lde/rki/coronawarnapp/util/di/DaggerApplicationComponent;->cdnHttpClientProvider2:Ljavax/inject/Provider;
+    iget-object v8, v15, Lde/rki/coronawarnapp/util/di/DaggerApplicationComponent;->cdnHttpClientProvider2:Ljavax/inject/Provider;
 
-    iget-object v9, v13, Lde/rki/coronawarnapp/util/di/DaggerApplicationComponent;->provideVerificationUrlProvider:Ljavax/inject/Provider;
+    iget-object v9, v15, Lde/rki/coronawarnapp/util/di/DaggerApplicationComponent;->provideVerificationUrlProvider:Ljavax/inject/Provider;
 
-    iget-object v10, v13, Lde/rki/coronawarnapp/util/di/DaggerApplicationComponent;->provideGSONConverterProvider:Ljavax/inject/Provider;
+    iget-object v10, v15, Lde/rki/coronawarnapp/util/di/DaggerApplicationComponent;->provideGSONConverterProvider:Ljavax/inject/Provider;
 
     new-instance v0, Lde/rki/coronawarnapp/coronatest/server/VerificationModule_ProvideVerificationApiFactory;
 
@@ -6346,7 +6656,7 @@
 
     move-object/from16 v6, p16
 
-    invoke-direct/range {v5 .. v10}, Lde/rki/coronawarnapp/coronatest/server/VerificationModule_ProvideVerificationApiFactory;-><init>(Lde/rki/coronawarnapp/coronatest/server/VerificationModule;Ljavax/inject/Provider;Ljavax/inject/Provider;Ljavax/inject/Provider;Ljavax/inject/Provider;)V
+    invoke-direct/range {v5 .. v10}, Lde/rki/coronawarnapp/coronatest/server/VerificationModule_ProvideVerificationApiFactory;-><init>(Lorg/bouncycastle/crypto/modes/kgcm/KGCMUtil_512;Ljavax/inject/Provider;Ljavax/inject/Provider;Ljavax/inject/Provider;Ljavax/inject/Provider;)V
 
     instance-of v1, v0, Ldagger/internal/DoubleCheck;
 
@@ -6362,35 +6672,27 @@
     move-object v0, v1
 
     :goto_34
-    iput-object v0, v13, Lde/rki/coronawarnapp/util/di/DaggerApplicationComponent;->provideVerificationApiProvider:Ljavax/inject/Provider;
+    iput-object v0, v15, Lde/rki/coronawarnapp/util/di/DaggerApplicationComponent;->provideVerificationApiProvider:Ljavax/inject/Provider;
 
     new-instance v0, Lde/rki/coronawarnapp/util/security/SecurityModule_FastRandomFactory;
 
     move-object/from16 v11, p26
 
-    invoke-direct {v0, v11}, Lde/rki/coronawarnapp/util/security/SecurityModule_FastRandomFactory;-><init>(Lde/rki/coronawarnapp/util/security/SecurityModule;)V
+    invoke-direct {v0, v11}, Lde/rki/coronawarnapp/util/security/SecurityModule_FastRandomFactory;-><init>(Lorg/bouncycastle/util/Fingerprint;)V
 
     invoke-static {v0}, Ldagger/internal/SingleCheck;->provider(Ljavax/inject/Provider;)Ljavax/inject/Provider;
 
     move-result-object v0
 
-    iput-object v0, v13, Lde/rki/coronawarnapp/util/di/DaggerApplicationComponent;->fastRandomProvider:Ljavax/inject/Provider;
-
-    new-instance v1, Lde/rki/coronawarnapp/util/PaddingTool_Factory;
-
-    invoke-direct {v1, v0}, Lde/rki/coronawarnapp/util/PaddingTool_Factory;-><init>(Ljavax/inject/Provider;)V
-
-    invoke-static {v1}, Ldagger/internal/SingleCheck;->provider(Ljavax/inject/Provider;)Ljavax/inject/Provider;
-
-    move-result-object v0
-
-    iput-object v0, v13, Lde/rki/coronawarnapp/util/di/DaggerApplicationComponent;->paddingToolProvider:Ljavax/inject/Provider;
+    iput-object v0, v15, Lde/rki/coronawarnapp/util/di/DaggerApplicationComponent;->fastRandomProvider:Ljavax/inject/Provider;
 
     move-object/from16 v0, p0
 
     move-object/from16 v1, p1
 
-    move-object/from16 v12, p21
+    move-object/from16 v12, p27
+
+    move-object/from16 v10, p37
 
     move-object/from16 v2, p2
 
@@ -6408,201 +6710,509 @@
 
     move-object/from16 v9, p17
 
-    move-object/from16 v10, p18
+    move-object/from16 v10, p22
 
     move-object/from16 v12, p28
 
-    invoke-virtual/range {v0 .. v12}, Lde/rki/coronawarnapp/util/di/DaggerApplicationComponent;->initialize2(Lde/rki/coronawarnapp/util/di/AndroidModule;Lde/rki/coronawarnapp/contactdiary/storage/ContactDiaryStorageModule;Lde/rki/coronawarnapp/risk/RiskModule;Lde/rki/coronawarnapp/http/HttpModule;Lde/rki/coronawarnapp/environment/download/DownloadCDNModule;Lde/rki/coronawarnapp/environment/submission/SubmissionCDNModule;Lde/rki/coronawarnapp/diagnosiskeys/DiagnosisKeysModule;Lde/rki/coronawarnapp/submission/SubmissionModule;Lcom/upokecenter/cbor/CBORInteger;Lde/rki/coronawarnapp/task/internal/TaskModule;Lde/rki/coronawarnapp/util/security/SecurityModule;Lcom/google/android/play/core/common/zzc;)V
+    move-object/from16 v13, p32
 
-    iget-object v0, v13, Lde/rki/coronawarnapp/util/di/DaggerApplicationComponent;->coronaTestRepositoryProvider:Ljavax/inject/Provider;
+    move-object/from16 v14, p34
 
-    iget-object v1, v13, Lde/rki/coronawarnapp/util/di/DaggerApplicationComponent;->timeStamperProvider:Ljavax/inject/Provider;
+    invoke-virtual/range {v0 .. v14}, Lde/rki/coronawarnapp/util/di/DaggerApplicationComponent;->initialize2(Lde/rki/coronawarnapp/util/di/AndroidModule;Lde/rki/coronawarnapp/contactdiary/storage/ContactDiaryStorageModule;Lde/rki/coronawarnapp/risk/RiskModule;Lde/rki/coronawarnapp/http/HttpModule;Lde/rki/coronawarnapp/environment/download/DownloadCDNModule;Lde/rki/coronawarnapp/environment/submission/SubmissionCDNModule;Lde/rki/coronawarnapp/diagnosiskeys/DiagnosisKeysModule;Lde/rki/coronawarnapp/submission/SubmissionModule;Lde/rki/coronawarnapp/playbook/PlaybookModule;Lde/rki/coronawarnapp/statistics/StatisticsModule;Lorg/bouncycastle/util/Fingerprint;Lcom/upokecenter/cbor/CBORExtendedFloat;Lde/rki/coronawarnapp/covidcertificate/valueset/CertificateValueSetModule;Lde/rki/coronawarnapp/covidcertificate/validation/core/DccValidationModule;)V
 
-    iget-object v2, v13, Lde/rki/coronawarnapp/util/di/DaggerApplicationComponent;->rAResultSchedulerProvider:Ljavax/inject/Provider;
+    move-object/from16 v2, p10
 
-    new-instance v3, Lde/rki/coronawarnapp/coronatest/type/rapidantigen/execution/RAResultRetrievalWorker_Factory;
+    move-object/from16 v3, p12
 
-    invoke-direct {v3, v0, v1, v2}, Lde/rki/coronawarnapp/coronatest/type/rapidantigen/execution/RAResultRetrievalWorker_Factory;-><init>(Ljavax/inject/Provider;Ljavax/inject/Provider;Ljavax/inject/Provider;)V
+    move-object/from16 v4, p18
 
-    new-instance v0, Lde/rki/coronawarnapp/coronatest/type/rapidantigen/execution/RAResultRetrievalWorker_Factory_Impl;
+    move-object/from16 v5, p21
 
-    invoke-direct {v0, v3}, Lde/rki/coronawarnapp/coronatest/type/rapidantigen/execution/RAResultRetrievalWorker_Factory_Impl;-><init>(Lde/rki/coronawarnapp/coronatest/type/rapidantigen/execution/RAResultRetrievalWorker_Factory;)V
+    move-object/from16 v6, p23
 
-    new-instance v1, Ldagger/internal/InstanceFactory;
+    move-object/from16 v7, p25
 
-    invoke-direct {v1, v0}, Ldagger/internal/InstanceFactory;-><init>(Ljava/lang/Object;)V
+    move-object/from16 v8, p32
 
-    iput-object v1, v13, Lde/rki/coronawarnapp/util/di/DaggerApplicationComponent;->factoryProvider19:Ljavax/inject/Provider;
+    move-object/from16 v9, p33
 
-    iget-object v0, v13, Lde/rki/coronawarnapp/util/di/DaggerApplicationComponent;->contextProvider:Ljavax/inject/Provider;
+    move-object/from16 v10, p35
 
-    iget-object v1, v13, Lde/rki/coronawarnapp/util/di/DaggerApplicationComponent;->foregroundStateProvider:Ljavax/inject/Provider;
+    invoke-virtual/range {v0 .. v10}, Lde/rki/coronawarnapp/util/di/DaggerApplicationComponent;->initialize3(Lde/rki/coronawarnapp/util/di/AndroidModule;Lde/rki/coronawarnapp/environment/datadonation/DataDonationCDNModule;Lde/rki/coronawarnapp/environment/covidcertificate/DCCModule;Lde/rki/coronawarnapp/task/internal/TaskModule;Lde/rki/coronawarnapp/util/serialization/SerializationModule;Lde/rki/coronawarnapp/datadonation/DataDonationModule;Lcom/upokecenter/cbor/CBOREInteger;Lde/rki/coronawarnapp/covidcertificate/valueset/CertificateValueSetModule;Lde/rki/coronawarnapp/covidcertificate/test/core/server/TestCertificateServerModule;Lde/rki/coronawarnapp/covidcertificate/signature/core/server/DscServerModule;)V
 
-    iget-object v2, v13, Lde/rki/coronawarnapp/util/di/DaggerApplicationComponent;->generalNotificationsProvider:Ljavax/inject/Provider;
+    move-object/from16 v2, p3
 
-    new-instance v3, Lde/rki/coronawarnapp/deadman/DeadmanNotificationSender_Factory;
+    move-object/from16 v3, p19
 
-    invoke-direct {v3, v0, v1, v2}, Lde/rki/coronawarnapp/deadman/DeadmanNotificationSender_Factory;-><init>(Ljavax/inject/Provider;Ljavax/inject/Provider;Ljavax/inject/Provider;)V
+    move-object/from16 v4, p20
+
+    move-object/from16 v5, p22
+
+    move-object/from16 v6, p24
+
+    invoke-virtual/range {v0 .. v7}, Lde/rki/coronawarnapp/util/di/DaggerApplicationComponent;->initialize4(Lde/rki/coronawarnapp/util/di/AndroidModule;Lde/rki/coronawarnapp/util/coil/CoilModule;Lde/rki/coronawarnapp/bugreporting/BugReportingModule;Lde/rki/coronawarnapp/bugreporting/BugReportingSharedModule;Lde/rki/coronawarnapp/statistics/StatisticsModule;Lde/rki/coronawarnapp/datadonation/survey/SurveyModule;Lcom/upokecenter/cbor/CBOREInteger;)V
+
+    sget-object v0, Lde/rki/coronawarnapp/bugreporting/censors/submission/PcrTeleTanCensor_Factory$InstanceHolder;->INSTANCE:Lde/rki/coronawarnapp/bugreporting/censors/submission/PcrTeleTanCensor_Factory;
+
+    invoke-static {v0}, Ldagger/internal/SingleCheck;->provider(Ljavax/inject/Provider;)Ljavax/inject/Provider;
+
+    move-result-object v0
+
+    iput-object v0, v15, Lde/rki/coronawarnapp/util/di/DaggerApplicationComponent;->pcrTeleTanCensorProvider:Ljavax/inject/Provider;
+
+    new-instance v1, Lde/rki/coronawarnapp/bugreporting/BugReportingSharedModule_PcrTeleTanCensorFactory;
+
+    move-object/from16 v2, p20
+
+    invoke-direct {v1, v2, v0}, Lde/rki/coronawarnapp/bugreporting/BugReportingSharedModule_PcrTeleTanCensorFactory;-><init>(Lde/rki/coronawarnapp/bugreporting/BugReportingSharedModule;Ljavax/inject/Provider;)V
+
+    iput-object v1, v15, Lde/rki/coronawarnapp/util/di/DaggerApplicationComponent;->pcrTeleTanCensorProvider2:Ljavax/inject/Provider;
+
+    sget-object v0, Lde/rki/coronawarnapp/bugreporting/censors/submission/RatQrCodeCensor_Factory$InstanceHolder;->INSTANCE:Lde/rki/coronawarnapp/bugreporting/censors/submission/RatQrCodeCensor_Factory;
+
+    invoke-static {v0}, Ldagger/internal/SingleCheck;->provider(Ljavax/inject/Provider;)Ljavax/inject/Provider;
+
+    move-result-object v0
+
+    iput-object v0, v15, Lde/rki/coronawarnapp/util/di/DaggerApplicationComponent;->ratQrCodeCensorProvider:Ljavax/inject/Provider;
+
+    new-instance v1, Lde/rki/coronawarnapp/bugreporting/BugReportingSharedModule_RatQrCodeCensorFactory;
+
+    invoke-direct {v1, v2, v0}, Lde/rki/coronawarnapp/bugreporting/BugReportingSharedModule_RatQrCodeCensorFactory;-><init>(Lde/rki/coronawarnapp/bugreporting/BugReportingSharedModule;Ljavax/inject/Provider;)V
+
+    iput-object v1, v15, Lde/rki/coronawarnapp/util/di/DaggerApplicationComponent;->ratQrCodeCensorProvider2:Ljavax/inject/Provider;
+
+    iget-object v0, v15, Lde/rki/coronawarnapp/util/di/DaggerApplicationComponent;->scopeProvider:Ljavax/inject/Provider;
+
+    iget-object v1, v15, Lde/rki/coronawarnapp/util/di/DaggerApplicationComponent;->coronaTestRepositoryProvider:Ljavax/inject/Provider;
+
+    new-instance v3, Lde/rki/coronawarnapp/bugreporting/censors/submission/RACoronaTestCensor_Factory;
+
+    invoke-direct {v3, v0, v1}, Lde/rki/coronawarnapp/bugreporting/censors/submission/RACoronaTestCensor_Factory;-><init>(Ljavax/inject/Provider;Ljavax/inject/Provider;)V
+
+    iput-object v3, v15, Lde/rki/coronawarnapp/util/di/DaggerApplicationComponent;->rACoronaTestCensorProvider:Ljavax/inject/Provider;
+
+    new-instance v1, Lde/rki/coronawarnapp/bugreporting/BugReportingSharedModule_RaCoronaTestCensorFactory;
+
+    invoke-direct {v1, v2, v3}, Lde/rki/coronawarnapp/bugreporting/BugReportingSharedModule_RaCoronaTestCensorFactory;-><init>(Lde/rki/coronawarnapp/bugreporting/BugReportingSharedModule;Ljavax/inject/Provider;)V
+
+    iput-object v1, v15, Lde/rki/coronawarnapp/util/di/DaggerApplicationComponent;->raCoronaTestCensorProvider:Ljavax/inject/Provider;
+
+    iget-object v1, v15, Lde/rki/coronawarnapp/util/di/DaggerApplicationComponent;->contactDiaryRepoProvider:Ljavax/inject/Provider;
+
+    new-instance v3, Lde/rki/coronawarnapp/bugreporting/censors/contactdiary/DiaryPersonCensor_Factory;
+
+    invoke-direct {v3, v0, v1}, Lde/rki/coronawarnapp/bugreporting/censors/contactdiary/DiaryPersonCensor_Factory;-><init>(Ljavax/inject/Provider;Ljavax/inject/Provider;)V
 
     invoke-static {v3}, Ldagger/internal/SingleCheck;->provider(Ljavax/inject/Provider;)Ljavax/inject/Provider;
 
     move-result-object v0
 
-    iput-object v0, v13, Lde/rki/coronawarnapp/util/di/DaggerApplicationComponent;->deadmanNotificationSenderProvider:Ljavax/inject/Provider;
+    iput-object v0, v15, Lde/rki/coronawarnapp/util/di/DaggerApplicationComponent;->diaryPersonCensorProvider:Ljavax/inject/Provider;
 
-    new-instance v1, Lde/rki/coronawarnapp/deadman/DeadmanNotificationOneTimeWorker_Factory;
+    new-instance v1, Lde/rki/coronawarnapp/bugreporting/BugReportingSharedModule_DiaryPersonCensorFactory;
 
-    invoke-direct {v1, v0}, Lde/rki/coronawarnapp/deadman/DeadmanNotificationOneTimeWorker_Factory;-><init>(Ljavax/inject/Provider;)V
+    invoke-direct {v1, v2, v0}, Lde/rki/coronawarnapp/bugreporting/BugReportingSharedModule_DiaryPersonCensorFactory;-><init>(Lde/rki/coronawarnapp/bugreporting/BugReportingSharedModule;Ljavax/inject/Provider;)V
 
-    new-instance v0, Lde/rki/coronawarnapp/deadman/DeadmanNotificationOneTimeWorker_Factory_Impl;
+    iput-object v1, v15, Lde/rki/coronawarnapp/util/di/DaggerApplicationComponent;->diaryPersonCensorProvider2:Ljavax/inject/Provider;
 
-    invoke-direct {v0, v1}, Lde/rki/coronawarnapp/deadman/DeadmanNotificationOneTimeWorker_Factory_Impl;-><init>(Lde/rki/coronawarnapp/deadman/DeadmanNotificationOneTimeWorker_Factory;)V
+    iget-object v0, v15, Lde/rki/coronawarnapp/util/di/DaggerApplicationComponent;->scopeProvider:Ljavax/inject/Provider;
 
-    new-instance v1, Ldagger/internal/InstanceFactory;
+    iget-object v1, v15, Lde/rki/coronawarnapp/util/di/DaggerApplicationComponent;->contactDiaryRepoProvider:Ljavax/inject/Provider;
 
-    invoke-direct {v1, v0}, Ldagger/internal/InstanceFactory;-><init>(Ljava/lang/Object;)V
+    new-instance v3, Lde/rki/coronawarnapp/bugreporting/censors/contactdiary/DiaryEncounterCensor_Factory;
 
-    iput-object v1, v13, Lde/rki/coronawarnapp/util/di/DaggerApplicationComponent;->factoryProvider20:Ljavax/inject/Provider;
+    invoke-direct {v3, v0, v1}, Lde/rki/coronawarnapp/bugreporting/censors/contactdiary/DiaryEncounterCensor_Factory;-><init>(Ljavax/inject/Provider;Ljavax/inject/Provider;)V
 
-    iget-object v0, v13, Lde/rki/coronawarnapp/util/di/DaggerApplicationComponent;->timeStamperProvider:Ljavax/inject/Provider;
-
-    iget-object v1, v13, Lde/rki/coronawarnapp/util/di/DaggerApplicationComponent;->keyCacheRepositoryProvider:Ljavax/inject/Provider;
-
-    new-instance v2, Lde/rki/coronawarnapp/deadman/DeadmanNotificationTimeCalculation_Factory;
-
-    invoke-direct {v2, v0, v1}, Lde/rki/coronawarnapp/deadman/DeadmanNotificationTimeCalculation_Factory;-><init>(Ljavax/inject/Provider;Ljavax/inject/Provider;)V
-
-    invoke-static {v2}, Ldagger/internal/SingleCheck;->provider(Ljavax/inject/Provider;)Ljavax/inject/Provider;
+    invoke-static {v3}, Ldagger/internal/SingleCheck;->provider(Ljavax/inject/Provider;)Ljavax/inject/Provider;
 
     move-result-object v0
 
-    iput-object v0, v13, Lde/rki/coronawarnapp/util/di/DaggerApplicationComponent;->deadmanNotificationTimeCalculationProvider:Ljavax/inject/Provider;
+    iput-object v0, v15, Lde/rki/coronawarnapp/util/di/DaggerApplicationComponent;->diaryEncounterCensorProvider:Ljavax/inject/Provider;
 
-    sget-object v0, Lde/rki/coronawarnapp/deadman/DeadmanNotificationWorkBuilder_Factory$InstanceHolder;->INSTANCE:Lde/rki/coronawarnapp/deadman/DeadmanNotificationWorkBuilder_Factory;
+    new-instance v1, Lde/rki/coronawarnapp/bugreporting/BugReportingSharedModule_DiaryEncounterCensorFactory;
+
+    invoke-direct {v1, v2, v0}, Lde/rki/coronawarnapp/bugreporting/BugReportingSharedModule_DiaryEncounterCensorFactory;-><init>(Lde/rki/coronawarnapp/bugreporting/BugReportingSharedModule;Ljavax/inject/Provider;)V
+
+    iput-object v1, v15, Lde/rki/coronawarnapp/util/di/DaggerApplicationComponent;->diaryEncounterCensorProvider2:Ljavax/inject/Provider;
+
+    iget-object v0, v15, Lde/rki/coronawarnapp/util/di/DaggerApplicationComponent;->scopeProvider:Ljavax/inject/Provider;
+
+    iget-object v1, v15, Lde/rki/coronawarnapp/util/di/DaggerApplicationComponent;->contactDiaryRepoProvider:Ljavax/inject/Provider;
+
+    new-instance v3, Lde/rki/coronawarnapp/bugreporting/censors/contactdiary/DiaryLocationCensor_Factory;
+
+    invoke-direct {v3, v0, v1}, Lde/rki/coronawarnapp/bugreporting/censors/contactdiary/DiaryLocationCensor_Factory;-><init>(Ljavax/inject/Provider;Ljavax/inject/Provider;)V
+
+    invoke-static {v3}, Ldagger/internal/SingleCheck;->provider(Ljavax/inject/Provider;)Ljavax/inject/Provider;
+
+    move-result-object v0
+
+    iput-object v0, v15, Lde/rki/coronawarnapp/util/di/DaggerApplicationComponent;->diaryLocationCensorProvider:Ljavax/inject/Provider;
+
+    new-instance v1, Lde/rki/coronawarnapp/bugreporting/BugReportingSharedModule_DiaryLocationCensorFactory;
+
+    invoke-direct {v1, v2, v0}, Lde/rki/coronawarnapp/bugreporting/BugReportingSharedModule_DiaryLocationCensorFactory;-><init>(Lde/rki/coronawarnapp/bugreporting/BugReportingSharedModule;Ljavax/inject/Provider;)V
+
+    iput-object v1, v15, Lde/rki/coronawarnapp/util/di/DaggerApplicationComponent;->diaryLocationCensorProvider2:Ljavax/inject/Provider;
+
+    iget-object v0, v15, Lde/rki/coronawarnapp/util/di/DaggerApplicationComponent;->scopeProvider:Ljavax/inject/Provider;
+
+    iget-object v1, v15, Lde/rki/coronawarnapp/util/di/DaggerApplicationComponent;->contactDiaryRepoProvider:Ljavax/inject/Provider;
+
+    new-instance v3, Lde/rki/coronawarnapp/bugreporting/censors/contactdiary/DiaryVisitCensor_Factory;
+
+    invoke-direct {v3, v0, v1}, Lde/rki/coronawarnapp/bugreporting/censors/contactdiary/DiaryVisitCensor_Factory;-><init>(Ljavax/inject/Provider;Ljavax/inject/Provider;)V
+
+    invoke-static {v3}, Ldagger/internal/SingleCheck;->provider(Ljavax/inject/Provider;)Ljavax/inject/Provider;
+
+    move-result-object v0
+
+    iput-object v0, v15, Lde/rki/coronawarnapp/util/di/DaggerApplicationComponent;->diaryVisitCensorProvider:Ljavax/inject/Provider;
+
+    new-instance v1, Lde/rki/coronawarnapp/bugreporting/BugReportingSharedModule_DiaryVisitCensorFactory;
+
+    invoke-direct {v1, v2, v0}, Lde/rki/coronawarnapp/bugreporting/BugReportingSharedModule_DiaryVisitCensorFactory;-><init>(Lde/rki/coronawarnapp/bugreporting/BugReportingSharedModule;Ljavax/inject/Provider;)V
+
+    iput-object v1, v15, Lde/rki/coronawarnapp/util/di/DaggerApplicationComponent;->diaryVisitCensorProvider2:Ljavax/inject/Provider;
+
+    iget-object v0, v15, Lde/rki/coronawarnapp/util/di/DaggerApplicationComponent;->scopeProvider:Ljavax/inject/Provider;
+
+    iget-object v1, v15, Lde/rki/coronawarnapp/util/di/DaggerApplicationComponent;->checkInRepositoryProvider:Ljavax/inject/Provider;
+
+    new-instance v3, Lde/rki/coronawarnapp/bugreporting/censors/presencetracing/CheckInsCensor_Factory;
+
+    invoke-direct {v3, v0, v1}, Lde/rki/coronawarnapp/bugreporting/censors/presencetracing/CheckInsCensor_Factory;-><init>(Ljavax/inject/Provider;Ljavax/inject/Provider;)V
+
+    invoke-static {v3}, Ldagger/internal/SingleCheck;->provider(Ljavax/inject/Provider;)Ljavax/inject/Provider;
+
+    move-result-object v0
+
+    iput-object v0, v15, Lde/rki/coronawarnapp/util/di/DaggerApplicationComponent;->checkInsCensorProvider:Ljavax/inject/Provider;
+
+    new-instance v1, Lde/rki/coronawarnapp/bugreporting/BugReportingSharedModule_CheckInsCensorFactory;
+
+    invoke-direct {v1, v2, v0}, Lde/rki/coronawarnapp/bugreporting/BugReportingSharedModule_CheckInsCensorFactory;-><init>(Lde/rki/coronawarnapp/bugreporting/BugReportingSharedModule;Ljavax/inject/Provider;)V
+
+    iput-object v1, v15, Lde/rki/coronawarnapp/util/di/DaggerApplicationComponent;->checkInsCensorProvider2:Ljavax/inject/Provider;
+
+    iget-object v0, v15, Lde/rki/coronawarnapp/util/di/DaggerApplicationComponent;->scopeProvider:Ljavax/inject/Provider;
+
+    iget-object v1, v15, Lde/rki/coronawarnapp/util/di/DaggerApplicationComponent;->defaultTraceLocationRepositoryProvider:Ljavax/inject/Provider;
+
+    new-instance v3, Lde/rki/coronawarnapp/bugreporting/censors/presencetracing/TraceLocationCensor_Factory;
+
+    invoke-direct {v3, v0, v1}, Lde/rki/coronawarnapp/bugreporting/censors/presencetracing/TraceLocationCensor_Factory;-><init>(Ljavax/inject/Provider;Ljavax/inject/Provider;)V
+
+    invoke-static {v3}, Ldagger/internal/SingleCheck;->provider(Ljavax/inject/Provider;)Ljavax/inject/Provider;
+
+    move-result-object v0
+
+    iput-object v0, v15, Lde/rki/coronawarnapp/util/di/DaggerApplicationComponent;->traceLocationCensorProvider:Ljavax/inject/Provider;
+
+    new-instance v1, Lde/rki/coronawarnapp/bugreporting/BugReportingSharedModule_TraceLocationsCensorFactory;
+
+    invoke-direct {v1, v2, v0}, Lde/rki/coronawarnapp/bugreporting/BugReportingSharedModule_TraceLocationsCensorFactory;-><init>(Lde/rki/coronawarnapp/bugreporting/BugReportingSharedModule;Ljavax/inject/Provider;)V
+
+    iput-object v1, v15, Lde/rki/coronawarnapp/util/di/DaggerApplicationComponent;->traceLocationsCensorProvider:Ljavax/inject/Provider;
+
+    iget-object v0, v15, Lde/rki/coronawarnapp/util/di/DaggerApplicationComponent;->contextProvider:Ljavax/inject/Provider;
+
+    new-instance v1, Lde/rki/coronawarnapp/coronatest/antigen/profile/RatProfileModule_RatProfileDataStoreFactory;
+
+    move-object/from16 v3, p30
+
+    invoke-direct {v1, v3, v0}, Lde/rki/coronawarnapp/coronatest/antigen/profile/RatProfileModule_RatProfileDataStoreFactory;-><init>(Lde/rki/coronawarnapp/coronatest/antigen/profile/RatProfileModule;Ljavax/inject/Provider;)V
+
+    iput-object v1, v15, Lde/rki/coronawarnapp/util/di/DaggerApplicationComponent;->ratProfileDataStoreProvider:Ljavax/inject/Provider;
+
+    iget-object v0, v15, Lde/rki/coronawarnapp/util/di/DaggerApplicationComponent;->baseGsonProvider:Ljavax/inject/Provider;
+
+    iget-object v3, v15, Lde/rki/coronawarnapp/util/di/DaggerApplicationComponent;->appCoroutineScopeProvider:Ljavax/inject/Provider;
+
+    new-instance v4, Lde/rki/coronawarnapp/coronatest/antigen/profile/RATProfileSettingsDataStore_Factory;
+
+    invoke-direct {v4, v1, v0, v3}, Lde/rki/coronawarnapp/coronatest/antigen/profile/RATProfileSettingsDataStore_Factory;-><init>(Ljavax/inject/Provider;Ljavax/inject/Provider;Ljavax/inject/Provider;)V
+
+    invoke-static {v4}, Ldagger/internal/SingleCheck;->provider(Ljavax/inject/Provider;)Ljavax/inject/Provider;
+
+    move-result-object v0
+
+    iput-object v0, v15, Lde/rki/coronawarnapp/util/di/DaggerApplicationComponent;->rATProfileSettingsDataStoreProvider:Ljavax/inject/Provider;
+
+    new-instance v1, Lde/rki/coronawarnapp/bugreporting/censors/submission/RatProfileCensor_Factory;
+
+    invoke-direct {v1, v0}, Lde/rki/coronawarnapp/bugreporting/censors/submission/RatProfileCensor_Factory;-><init>(Ljavax/inject/Provider;)V
+
+    iput-object v1, v15, Lde/rki/coronawarnapp/util/di/DaggerApplicationComponent;->ratProfileCensorProvider:Ljavax/inject/Provider;
+
+    new-instance v0, Lde/rki/coronawarnapp/bugreporting/BugReportingSharedModule_RatProfileCensorFactory;
+
+    invoke-direct {v0, v2, v1}, Lde/rki/coronawarnapp/bugreporting/BugReportingSharedModule_RatProfileCensorFactory;-><init>(Lde/rki/coronawarnapp/bugreporting/BugReportingSharedModule;Ljavax/inject/Provider;)V
+
+    iput-object v0, v15, Lde/rki/coronawarnapp/util/di/DaggerApplicationComponent;->ratProfileCensorProvider2:Ljavax/inject/Provider;
+
+    sget-object v0, Lde/rki/coronawarnapp/bugreporting/censors/dcc/DccQrCodeCensor_Factory$InstanceHolder;->INSTANCE:Lde/rki/coronawarnapp/bugreporting/censors/dcc/DccQrCodeCensor_Factory;
 
     invoke-static {v0}, Ldagger/internal/SingleCheck;->provider(Ljavax/inject/Provider;)Ljavax/inject/Provider;
 
     move-result-object v0
 
-    iput-object v0, v13, Lde/rki/coronawarnapp/util/di/DaggerApplicationComponent;->deadmanNotificationWorkBuilderProvider:Ljavax/inject/Provider;
+    iput-object v0, v15, Lde/rki/coronawarnapp/util/di/DaggerApplicationComponent;->dccQrCodeCensorProvider:Ljavax/inject/Provider;
 
-    iget-object v0, v13, Lde/rki/coronawarnapp/util/di/DaggerApplicationComponent;->contextProvider:Ljavax/inject/Provider;
+    new-instance v1, Lde/rki/coronawarnapp/bugreporting/BugReportingSharedModule_CertificateQrCodeCensorFactory;
 
-    new-instance v1, Lde/rki/coronawarnapp/storage/OnboardingSettings_Factory;
+    invoke-direct {v1, v2, v0}, Lde/rki/coronawarnapp/bugreporting/BugReportingSharedModule_CertificateQrCodeCensorFactory;-><init>(Lde/rki/coronawarnapp/bugreporting/BugReportingSharedModule;Ljavax/inject/Provider;)V
 
-    invoke-direct {v1, v0}, Lde/rki/coronawarnapp/storage/OnboardingSettings_Factory;-><init>(Ljavax/inject/Provider;)V
+    iput-object v1, v15, Lde/rki/coronawarnapp/util/di/DaggerApplicationComponent;->certificateQrCodeCensorProvider:Ljavax/inject/Provider;
 
-    sget-object v0, Ldagger/internal/DoubleCheck;->UNINITIALIZED:Ljava/lang/Object;
-
-    instance-of v0, v1, Ldagger/internal/DoubleCheck;
-
-    if-eqz v0, :cond_35
-
-    move-object v7, v1
-
-    goto :goto_35
-
-    :cond_35
-    new-instance v0, Ldagger/internal/DoubleCheck;
-
-    invoke-direct {v0, v1}, Ldagger/internal/DoubleCheck;-><init>(Ljavax/inject/Provider;)V
-
-    move-object v7, v0
-
-    :goto_35
-    iput-object v7, v13, Lde/rki/coronawarnapp/util/di/DaggerApplicationComponent;->onboardingSettingsProvider:Ljavax/inject/Provider;
-
-    iget-object v3, v13, Lde/rki/coronawarnapp/util/di/DaggerApplicationComponent;->appCoroutineScopeProvider:Ljavax/inject/Provider;
-
-    iget-object v4, v13, Lde/rki/coronawarnapp/util/di/DaggerApplicationComponent;->deadmanNotificationTimeCalculationProvider:Ljavax/inject/Provider;
-
-    iget-object v5, v13, Lde/rki/coronawarnapp/util/di/DaggerApplicationComponent;->workManagerProvider:Ljavax/inject/Provider;
-
-    iget-object v6, v13, Lde/rki/coronawarnapp/util/di/DaggerApplicationComponent;->deadmanNotificationWorkBuilderProvider:Ljavax/inject/Provider;
-
-    iget-object v8, v13, Lde/rki/coronawarnapp/util/di/DaggerApplicationComponent;->eNFClientProvider:Ljavax/inject/Provider;
-
-    iget-object v9, v13, Lde/rki/coronawarnapp/util/di/DaggerApplicationComponent;->coronaTestRepositoryProvider:Ljavax/inject/Provider;
-
-    new-instance v0, Lde/rki/coronawarnapp/deadman/DeadmanNotificationScheduler_Factory;
-
-    move-object v2, v0
-
-    invoke-direct/range {v2 .. v9}, Lde/rki/coronawarnapp/deadman/DeadmanNotificationScheduler_Factory;-><init>(Ljavax/inject/Provider;Ljavax/inject/Provider;Ljavax/inject/Provider;Ljavax/inject/Provider;Ljavax/inject/Provider;Ljavax/inject/Provider;Ljavax/inject/Provider;)V
+    sget-object v0, Lde/rki/coronawarnapp/bugreporting/censors/contactdiary/OrganizerRegistrationTokenCensor_Factory$InstanceHolder;->INSTANCE:Lde/rki/coronawarnapp/bugreporting/censors/contactdiary/OrganizerRegistrationTokenCensor_Factory;
 
     invoke-static {v0}, Ldagger/internal/SingleCheck;->provider(Ljavax/inject/Provider;)Ljavax/inject/Provider;
 
     move-result-object v0
 
-    iput-object v0, v13, Lde/rki/coronawarnapp/util/di/DaggerApplicationComponent;->deadmanNotificationSchedulerProvider:Ljavax/inject/Provider;
+    iput-object v0, v15, Lde/rki/coronawarnapp/util/di/DaggerApplicationComponent;->organizerRegistrationTokenCensorProvider:Ljavax/inject/Provider;
 
-    new-instance v1, Lde/rki/coronawarnapp/deadman/DeadmanNotificationPeriodicWorker_Factory;
+    new-instance v1, Lde/rki/coronawarnapp/bugreporting/BugReportingSharedModule_OrganizerRegistrationTokenCensorFactory;
 
-    invoke-direct {v1, v0}, Lde/rki/coronawarnapp/deadman/DeadmanNotificationPeriodicWorker_Factory;-><init>(Ljavax/inject/Provider;)V
+    invoke-direct {v1, v2, v0}, Lde/rki/coronawarnapp/bugreporting/BugReportingSharedModule_OrganizerRegistrationTokenCensorFactory;-><init>(Lde/rki/coronawarnapp/bugreporting/BugReportingSharedModule;Ljavax/inject/Provider;)V
 
-    new-instance v0, Lde/rki/coronawarnapp/deadman/DeadmanNotificationPeriodicWorker_Factory_Impl;
+    iput-object v1, v15, Lde/rki/coronawarnapp/util/di/DaggerApplicationComponent;->organizerRegistrationTokenCensorProvider2:Ljavax/inject/Provider;
 
-    invoke-direct {v0, v1}, Lde/rki/coronawarnapp/deadman/DeadmanNotificationPeriodicWorker_Factory_Impl;-><init>(Lde/rki/coronawarnapp/deadman/DeadmanNotificationPeriodicWorker_Factory;)V
+    iget-object v0, v15, Lde/rki/coronawarnapp/util/di/DaggerApplicationComponent;->personCertificatesSettingsProvider:Ljavax/inject/Provider;
 
-    new-instance v1, Ldagger/internal/InstanceFactory;
+    new-instance v1, Lde/rki/coronawarnapp/bugreporting/censors/dcc/CwaUserCensor_Factory;
 
-    invoke-direct {v1, v0}, Ldagger/internal/InstanceFactory;-><init>(Ljava/lang/Object;)V
-
-    iput-object v1, v13, Lde/rki/coronawarnapp/util/di/DaggerApplicationComponent;->factoryProvider21:Ljavax/inject/Provider;
-
-    iget-object v0, v13, Lde/rki/coronawarnapp/util/di/DaggerApplicationComponent;->taskControllerProvider:Ljavax/inject/Provider;
-
-    new-instance v1, Lde/rki/coronawarnapp/submission/auto/SubmissionWorker_Factory;
-
-    invoke-direct {v1, v0}, Lde/rki/coronawarnapp/submission/auto/SubmissionWorker_Factory;-><init>(Ljavax/inject/Provider;)V
-
-    new-instance v2, Lde/rki/coronawarnapp/submission/auto/SubmissionWorker_Factory_Impl;
-
-    invoke-direct {v2, v1}, Lde/rki/coronawarnapp/submission/auto/SubmissionWorker_Factory_Impl;-><init>(Lde/rki/coronawarnapp/submission/auto/SubmissionWorker_Factory;)V
-
-    new-instance v1, Ldagger/internal/InstanceFactory;
-
-    invoke-direct {v1, v2}, Ldagger/internal/InstanceFactory;-><init>(Ljava/lang/Object;)V
-
-    iput-object v1, v13, Lde/rki/coronawarnapp/util/di/DaggerApplicationComponent;->factoryProvider22:Ljavax/inject/Provider;
-
-    new-instance v1, Lde/rki/coronawarnapp/contactdiary/retention/ContactDiaryRetentionWorker_Factory;
-
-    invoke-direct {v1, v0}, Lde/rki/coronawarnapp/contactdiary/retention/ContactDiaryRetentionWorker_Factory;-><init>(Ljavax/inject/Provider;)V
-
-    new-instance v0, Lde/rki/coronawarnapp/contactdiary/retention/ContactDiaryRetentionWorker_Factory_Impl;
-
-    invoke-direct {v0, v1}, Lde/rki/coronawarnapp/contactdiary/retention/ContactDiaryRetentionWorker_Factory_Impl;-><init>(Lde/rki/coronawarnapp/contactdiary/retention/ContactDiaryRetentionWorker_Factory;)V
-
-    new-instance v1, Ldagger/internal/InstanceFactory;
-
-    invoke-direct {v1, v0}, Ldagger/internal/InstanceFactory;-><init>(Ljava/lang/Object;)V
-
-    iput-object v1, v13, Lde/rki/coronawarnapp/util/di/DaggerApplicationComponent;->factoryProvider23:Ljavax/inject/Provider;
-
-    iget-object v0, v13, Lde/rki/coronawarnapp/util/di/DaggerApplicationComponent;->defaultHttpClientProvider:Ljavax/inject/Provider;
-
-    new-instance v1, Lde/rki/coronawarnapp/environment/datadonation/DataDonationCDNModule_CdnHttpClientFactory;
-
-    invoke-direct {v1, v15, v0}, Lde/rki/coronawarnapp/environment/datadonation/DataDonationCDNModule_CdnHttpClientFactory;-><init>(Lde/rki/coronawarnapp/environment/datadonation/DataDonationCDNModule;Ljavax/inject/Provider;)V
+    invoke-direct {v1, v0}, Lde/rki/coronawarnapp/bugreporting/censors/dcc/CwaUserCensor_Factory;-><init>(Ljavax/inject/Provider;)V
 
     invoke-static {v1}, Ldagger/internal/SingleCheck;->provider(Ljavax/inject/Provider;)Ljavax/inject/Provider;
 
     move-result-object v0
 
-    iput-object v0, v13, Lde/rki/coronawarnapp/util/di/DaggerApplicationComponent;->cdnHttpClientProvider4:Ljavax/inject/Provider;
+    iput-object v0, v15, Lde/rki/coronawarnapp/util/di/DaggerApplicationComponent;->cwaUserCensorProvider:Ljavax/inject/Provider;
 
-    iget-object v0, v13, Lde/rki/coronawarnapp/util/di/DaggerApplicationComponent;->environmentSetupProvider:Ljavax/inject/Provider;
+    new-instance v1, Lde/rki/coronawarnapp/bugreporting/BugReportingSharedModule_CwaUserCensorFactory;
 
-    new-instance v1, Lde/rki/coronawarnapp/environment/datadonation/DataDonationCDNModule_ProvideDonationServerUrlFactory;
+    invoke-direct {v1, v2, v0}, Lde/rki/coronawarnapp/bugreporting/BugReportingSharedModule_CwaUserCensorFactory;-><init>(Lde/rki/coronawarnapp/bugreporting/BugReportingSharedModule;Ljavax/inject/Provider;)V
 
-    invoke-direct {v1, v15, v0}, Lde/rki/coronawarnapp/environment/datadonation/DataDonationCDNModule_ProvideDonationServerUrlFactory;-><init>(Lde/rki/coronawarnapp/environment/datadonation/DataDonationCDNModule;Ljavax/inject/Provider;)V
+    iput-object v1, v15, Lde/rki/coronawarnapp/util/di/DaggerApplicationComponent;->cwaUserCensorProvider2:Ljavax/inject/Provider;
+
+    sget-object v0, Lde/rki/coronawarnapp/bugreporting/censors/dccticketing/DccTicketingJwtCensor_Factory$InstanceHolder;->INSTANCE:Lde/rki/coronawarnapp/bugreporting/censors/dccticketing/DccTicketingJwtCensor_Factory;
+
+    sget-object v1, Ldagger/internal/DoubleCheck;->UNINITIALIZED:Ljava/lang/Object;
+
+    instance-of v1, v0, Ldagger/internal/DoubleCheck;
+
+    if-eqz v1, :cond_35
+
+    goto :goto_35
+
+    :cond_35
+    new-instance v1, Ldagger/internal/DoubleCheck;
+
+    invoke-direct {v1, v0}, Ldagger/internal/DoubleCheck;-><init>(Ljavax/inject/Provider;)V
+
+    move-object v0, v1
+
+    :goto_35
+    iput-object v0, v15, Lde/rki/coronawarnapp/util/di/DaggerApplicationComponent;->dccTicketingJwtCensorProvider:Ljavax/inject/Provider;
+
+    new-instance v1, Lde/rki/coronawarnapp/bugreporting/BugReportingSharedModule_TicketingJwtCensorFactory;
+
+    invoke-direct {v1, v2, v0}, Lde/rki/coronawarnapp/bugreporting/BugReportingSharedModule_TicketingJwtCensorFactory;-><init>(Lde/rki/coronawarnapp/bugreporting/BugReportingSharedModule;Ljavax/inject/Provider;)V
+
+    iput-object v1, v15, Lde/rki/coronawarnapp/util/di/DaggerApplicationComponent;->ticketingJwtCensorProvider:Ljavax/inject/Provider;
+
+    const/16 v0, 0x11
+
+    const/4 v1, 0x0
+
+    invoke-static {v0, v1}, Ldagger/internal/SetFactory;->builder(II)Ldagger/internal/SetFactory$Builder;
+
+    move-result-object v0
+
+    iget-object v1, v15, Lde/rki/coronawarnapp/util/di/DaggerApplicationComponent;->registrationTokenCensorProvider:Ljavax/inject/Provider;
+
+    iget-object v3, v0, Ldagger/internal/SetFactory$Builder;->individualProviders:Ljava/util/List;
+
+    invoke-interface {v3, v1}, Ljava/util/List;->add(Ljava/lang/Object;)Z
+
+    iget-object v1, v15, Lde/rki/coronawarnapp/util/di/DaggerApplicationComponent;->testCertificateCensorProvider:Ljavax/inject/Provider;
+
+    iget-object v3, v0, Ldagger/internal/SetFactory$Builder;->individualProviders:Ljava/util/List;
+
+    invoke-interface {v3, v1}, Ljava/util/List;->add(Ljava/lang/Object;)Z
+
+    iget-object v1, v15, Lde/rki/coronawarnapp/util/di/DaggerApplicationComponent;->pcrQrCodeCensorProvider2:Ljavax/inject/Provider;
+
+    iget-object v3, v0, Ldagger/internal/SetFactory$Builder;->individualProviders:Ljava/util/List;
+
+    invoke-interface {v3, v1}, Ljava/util/List;->add(Ljava/lang/Object;)Z
+
+    iget-object v1, v15, Lde/rki/coronawarnapp/util/di/DaggerApplicationComponent;->pcrTeleTanCensorProvider2:Ljavax/inject/Provider;
+
+    iget-object v3, v0, Ldagger/internal/SetFactory$Builder;->individualProviders:Ljava/util/List;
+
+    invoke-interface {v3, v1}, Ljava/util/List;->add(Ljava/lang/Object;)Z
+
+    iget-object v1, v15, Lde/rki/coronawarnapp/util/di/DaggerApplicationComponent;->ratQrCodeCensorProvider2:Ljavax/inject/Provider;
+
+    iget-object v3, v0, Ldagger/internal/SetFactory$Builder;->individualProviders:Ljava/util/List;
+
+    invoke-interface {v3, v1}, Ljava/util/List;->add(Ljava/lang/Object;)Z
+
+    iget-object v1, v15, Lde/rki/coronawarnapp/util/di/DaggerApplicationComponent;->raCoronaTestCensorProvider:Ljavax/inject/Provider;
+
+    iget-object v3, v0, Ldagger/internal/SetFactory$Builder;->individualProviders:Ljava/util/List;
+
+    invoke-interface {v3, v1}, Ljava/util/List;->add(Ljava/lang/Object;)Z
+
+    iget-object v1, v15, Lde/rki/coronawarnapp/util/di/DaggerApplicationComponent;->diaryPersonCensorProvider2:Ljavax/inject/Provider;
+
+    iget-object v3, v0, Ldagger/internal/SetFactory$Builder;->individualProviders:Ljava/util/List;
+
+    invoke-interface {v3, v1}, Ljava/util/List;->add(Ljava/lang/Object;)Z
+
+    iget-object v1, v15, Lde/rki/coronawarnapp/util/di/DaggerApplicationComponent;->diaryEncounterCensorProvider2:Ljavax/inject/Provider;
+
+    iget-object v3, v0, Ldagger/internal/SetFactory$Builder;->individualProviders:Ljava/util/List;
+
+    invoke-interface {v3, v1}, Ljava/util/List;->add(Ljava/lang/Object;)Z
+
+    iget-object v1, v15, Lde/rki/coronawarnapp/util/di/DaggerApplicationComponent;->diaryLocationCensorProvider2:Ljavax/inject/Provider;
+
+    iget-object v3, v0, Ldagger/internal/SetFactory$Builder;->individualProviders:Ljava/util/List;
+
+    invoke-interface {v3, v1}, Ljava/util/List;->add(Ljava/lang/Object;)Z
+
+    iget-object v1, v15, Lde/rki/coronawarnapp/util/di/DaggerApplicationComponent;->diaryVisitCensorProvider2:Ljavax/inject/Provider;
+
+    iget-object v3, v0, Ldagger/internal/SetFactory$Builder;->individualProviders:Ljava/util/List;
+
+    invoke-interface {v3, v1}, Ljava/util/List;->add(Ljava/lang/Object;)Z
+
+    iget-object v1, v15, Lde/rki/coronawarnapp/util/di/DaggerApplicationComponent;->checkInsCensorProvider2:Ljavax/inject/Provider;
+
+    iget-object v3, v0, Ldagger/internal/SetFactory$Builder;->individualProviders:Ljava/util/List;
+
+    invoke-interface {v3, v1}, Ljava/util/List;->add(Ljava/lang/Object;)Z
+
+    iget-object v1, v15, Lde/rki/coronawarnapp/util/di/DaggerApplicationComponent;->traceLocationsCensorProvider:Ljavax/inject/Provider;
+
+    iget-object v3, v0, Ldagger/internal/SetFactory$Builder;->individualProviders:Ljava/util/List;
+
+    invoke-interface {v3, v1}, Ljava/util/List;->add(Ljava/lang/Object;)Z
+
+    iget-object v1, v15, Lde/rki/coronawarnapp/util/di/DaggerApplicationComponent;->ratProfileCensorProvider2:Ljavax/inject/Provider;
+
+    iget-object v3, v0, Ldagger/internal/SetFactory$Builder;->individualProviders:Ljava/util/List;
+
+    invoke-interface {v3, v1}, Ljava/util/List;->add(Ljava/lang/Object;)Z
+
+    iget-object v1, v15, Lde/rki/coronawarnapp/util/di/DaggerApplicationComponent;->certificateQrCodeCensorProvider:Ljavax/inject/Provider;
+
+    iget-object v3, v0, Ldagger/internal/SetFactory$Builder;->individualProviders:Ljava/util/List;
+
+    invoke-interface {v3, v1}, Ljava/util/List;->add(Ljava/lang/Object;)Z
+
+    iget-object v1, v15, Lde/rki/coronawarnapp/util/di/DaggerApplicationComponent;->organizerRegistrationTokenCensorProvider2:Ljavax/inject/Provider;
+
+    iget-object v3, v0, Ldagger/internal/SetFactory$Builder;->individualProviders:Ljava/util/List;
+
+    invoke-interface {v3, v1}, Ljava/util/List;->add(Ljava/lang/Object;)Z
+
+    iget-object v1, v15, Lde/rki/coronawarnapp/util/di/DaggerApplicationComponent;->cwaUserCensorProvider2:Ljavax/inject/Provider;
+
+    iget-object v3, v0, Ldagger/internal/SetFactory$Builder;->individualProviders:Ljava/util/List;
+
+    invoke-interface {v3, v1}, Ljava/util/List;->add(Ljava/lang/Object;)Z
+
+    iget-object v1, v15, Lde/rki/coronawarnapp/util/di/DaggerApplicationComponent;->ticketingJwtCensorProvider:Ljavax/inject/Provider;
+
+    iget-object v3, v0, Ldagger/internal/SetFactory$Builder;->individualProviders:Ljava/util/List;
+
+    invoke-interface {v3, v1}, Ljava/util/List;->add(Ljava/lang/Object;)Z
+
+    invoke-virtual {v0}, Ldagger/internal/SetFactory$Builder;->build()Ldagger/internal/SetFactory;
+
+    move-result-object v0
+
+    iput-object v0, v15, Lde/rki/coronawarnapp/util/di/DaggerApplicationComponent;->setOfBugCensorProvider:Ljavax/inject/Provider;
+
+    iget-object v0, v15, Lde/rki/coronawarnapp/util/di/DaggerApplicationComponent;->contextProvider:Ljavax/inject/Provider;
+
+    new-instance v1, Lde/rki/coronawarnapp/util/di/AndroidModule_ApplicationInfoFactory;
+
+    move-object/from16 v3, p1
+
+    invoke-direct {v1, v3, v0}, Lde/rki/coronawarnapp/util/di/AndroidModule_ApplicationInfoFactory;-><init>(Lde/rki/coronawarnapp/util/di/AndroidModule;Ljavax/inject/Provider;)V
+
+    iput-object v1, v15, Lde/rki/coronawarnapp/util/di/DaggerApplicationComponent;->applicationInfoProvider:Ljavax/inject/Provider;
+
+    iget-object v0, v15, Lde/rki/coronawarnapp/util/di/DaggerApplicationComponent;->encryptedPreferencesFactoryProvider:Ljavax/inject/Provider;
+
+    new-instance v4, Lde/rki/coronawarnapp/util/encryptionmigration/EncryptedPreferencesHelper_Factory;
+
+    invoke-direct {v4, v1, v0}, Lde/rki/coronawarnapp/util/encryptionmigration/EncryptedPreferencesHelper_Factory;-><init>(Ljavax/inject/Provider;Ljavax/inject/Provider;)V
+
+    iput-object v4, v15, Lde/rki/coronawarnapp/util/di/DaggerApplicationComponent;->encryptedPreferencesHelperProvider:Ljavax/inject/Provider;
+
+    iget-object v0, v15, Lde/rki/coronawarnapp/util/di/DaggerApplicationComponent;->contextProvider:Ljavax/inject/Provider;
+
+    iget-object v1, v15, Lde/rki/coronawarnapp/util/di/DaggerApplicationComponent;->encryptedPreferencesHelperProvider:Ljavax/inject/Provider;
+
+    iget-object v4, v15, Lde/rki/coronawarnapp/util/di/DaggerApplicationComponent;->cWASettingsProvider:Ljavax/inject/Provider;
+
+    iget-object v5, v15, Lde/rki/coronawarnapp/util/di/DaggerApplicationComponent;->submissionSettingsProvider:Ljavax/inject/Provider;
+
+    iget-object v6, v15, Lde/rki/coronawarnapp/util/di/DaggerApplicationComponent;->tracingSettingsProvider:Ljavax/inject/Provider;
+
+    iget-object v7, v15, Lde/rki/coronawarnapp/util/di/DaggerApplicationComponent;->onboardingSettingsProvider:Ljavax/inject/Provider;
+
+    iget-object v8, v15, Lde/rki/coronawarnapp/util/di/DaggerApplicationComponent;->encryptionErrorResetToolProvider:Ljavax/inject/Provider;
+
+    new-instance v9, Lde/rki/coronawarnapp/util/encryptionmigration/EncryptedPreferencesMigration_Factory;
+
+    move-object/from16 p2, v9
+
+    move-object/from16 p3, v0
+
+    move-object/from16 p4, v1
+
+    move-object/from16 p5, v4
+
+    move-object/from16 p6, v5
+
+    move-object/from16 p7, v6
+
+    move-object/from16 p8, v7
+
+    move-object/from16 p9, v8
+
+    invoke-direct/range {p2 .. p9}, Lde/rki/coronawarnapp/util/encryptionmigration/EncryptedPreferencesMigration_Factory;-><init>(Ljavax/inject/Provider;Ljavax/inject/Provider;Ljavax/inject/Provider;Ljavax/inject/Provider;Ljavax/inject/Provider;Ljavax/inject/Provider;Ljavax/inject/Provider;)V
+
+    iput-object v9, v15, Lde/rki/coronawarnapp/util/di/DaggerApplicationComponent;->encryptedPreferencesMigrationProvider:Ljavax/inject/Provider;
+
+    iget-object v0, v15, Lde/rki/coronawarnapp/util/di/DaggerApplicationComponent;->contextProvider:Ljavax/inject/Provider;
+
+    new-instance v1, Lde/rki/coronawarnapp/rootdetection/RootDetectionModule_ProvideRootBeerFactory;
+
+    move-object/from16 v4, p38
+
+    invoke-direct {v1, v4, v0}, Lde/rki/coronawarnapp/rootdetection/RootDetectionModule_ProvideRootBeerFactory;-><init>(Lorg/bouncycastle/util/Fingerprint;Ljavax/inject/Provider;)V
+
+    iput-object v1, v15, Lde/rki/coronawarnapp/util/di/DaggerApplicationComponent;->provideRootBeerProvider:Ljavax/inject/Provider;
+
+    iget-object v0, v15, Lde/rki/coronawarnapp/util/di/DaggerApplicationComponent;->contextProvider:Ljavax/inject/Provider;
+
+    new-instance v1, Lde/rki/coronawarnapp/contactdiary/storage/ContactDiaryPreferences_Factory;
+
+    invoke-direct {v1, v0}, Lde/rki/coronawarnapp/contactdiary/storage/ContactDiaryPreferences_Factory;-><init>(Ljavax/inject/Provider;)V
 
     instance-of v0, v1, Ldagger/internal/DoubleCheck;
 
     if-eqz v0, :cond_36
-
-    move-object v0, v1
 
     goto :goto_36
 
@@ -6611,64 +7221,40 @@
 
     invoke-direct {v0, v1}, Ldagger/internal/DoubleCheck;-><init>(Ljavax/inject/Provider;)V
 
+    move-object v1, v0
+
     :goto_36
-    iput-object v0, v13, Lde/rki/coronawarnapp/util/di/DaggerApplicationComponent;->provideDonationServerUrlProvider:Ljavax/inject/Provider;
+    iput-object v1, v15, Lde/rki/coronawarnapp/util/di/DaggerApplicationComponent;->contactDiaryPreferencesProvider:Ljavax/inject/Provider;
 
-    iget-object v1, v13, Lde/rki/coronawarnapp/util/di/DaggerApplicationComponent;->cdnHttpClientProvider4:Ljavax/inject/Provider;
+    new-instance v0, Lde/rki/coronawarnapp/contactdiary/ui/ContactDiarySettings_Factory;
 
-    iget-object v2, v13, Lde/rki/coronawarnapp/util/di/DaggerApplicationComponent;->provideProtoConverterProvider:Ljavax/inject/Provider;
+    invoke-direct {v0, v1}, Lde/rki/coronawarnapp/contactdiary/ui/ContactDiarySettings_Factory;-><init>(Ljavax/inject/Provider;)V
 
-    iget-object v3, v13, Lde/rki/coronawarnapp/util/di/DaggerApplicationComponent;->provideGSONConverterProvider:Ljavax/inject/Provider;
+    instance-of v1, v0, Ldagger/internal/DoubleCheck;
 
-    new-instance v4, Lde/rki/coronawarnapp/datadonation/analytics/AnalyticsModule_ProvideAnalyticsSubmissionApiFactory;
-
-    move-object/from16 p4, v4
-
-    move-object/from16 p5, p25
-
-    move-object/from16 p6, v1
-
-    move-object/from16 p7, v0
-
-    move-object/from16 p8, v2
-
-    move-object/from16 p9, v3
-
-    invoke-direct/range {p4 .. p9}, Lde/rki/coronawarnapp/datadonation/analytics/AnalyticsModule_ProvideAnalyticsSubmissionApiFactory;-><init>(Lde/rki/coronawarnapp/datadonation/analytics/AnalyticsModule;Ljavax/inject/Provider;Ljavax/inject/Provider;Ljavax/inject/Provider;Ljavax/inject/Provider;)V
-
-    invoke-static {v4}, Ldagger/internal/SingleCheck;->provider(Ljavax/inject/Provider;)Ljavax/inject/Provider;
-
-    move-result-object v0
-
-    iput-object v0, v13, Lde/rki/coronawarnapp/util/di/DaggerApplicationComponent;->provideAnalyticsSubmissionApiProvider:Ljavax/inject/Provider;
-
-    new-instance v1, Lde/rki/coronawarnapp/datadonation/analytics/server/DataDonationAnalyticsServer_Factory;
-
-    invoke-direct {v1, v0}, Lde/rki/coronawarnapp/datadonation/analytics/server/DataDonationAnalyticsServer_Factory;-><init>(Ljavax/inject/Provider;)V
-
-    instance-of v0, v1, Ldagger/internal/DoubleCheck;
-
-    if-eqz v0, :cond_37
+    if-eqz v1, :cond_37
 
     goto :goto_37
 
     :cond_37
-    new-instance v0, Ldagger/internal/DoubleCheck;
+    new-instance v1, Ldagger/internal/DoubleCheck;
 
-    invoke-direct {v0, v1}, Ldagger/internal/DoubleCheck;-><init>(Ljavax/inject/Provider;)V
+    invoke-direct {v1, v0}, Ldagger/internal/DoubleCheck;-><init>(Ljavax/inject/Provider;)V
 
-    move-object v1, v0
+    move-object v0, v1
 
     :goto_37
-    iput-object v1, v13, Lde/rki/coronawarnapp/util/di/DaggerApplicationComponent;->dataDonationAnalyticsServerProvider:Ljavax/inject/Provider;
+    iput-object v0, v15, Lde/rki/coronawarnapp/util/di/DaggerApplicationComponent;->contactDiarySettingsProvider:Ljavax/inject/Provider;
 
-    iget-object v0, v13, Lde/rki/coronawarnapp/util/di/DaggerApplicationComponent;->contextProvider:Ljavax/inject/Provider;
+    iget-object v0, v15, Lde/rki/coronawarnapp/util/di/DaggerApplicationComponent;->coronaTestRepositoryProvider:Ljavax/inject/Provider;
 
-    new-instance v1, Lde/rki/coronawarnapp/util/di/AndroidModule_SafetyNetFactory;
+    iget-object v1, v15, Lde/rki/coronawarnapp/util/di/DaggerApplicationComponent;->providePlaybookProvider:Ljavax/inject/Provider;
 
-    invoke-direct {v1, v14, v0}, Lde/rki/coronawarnapp/util/di/AndroidModule_SafetyNetFactory;-><init>(Lde/rki/coronawarnapp/util/di/AndroidModule;Ljavax/inject/Provider;)V
+    new-instance v4, Lde/rki/coronawarnapp/playbook/BackgroundNoise_Factory;
 
-    instance-of v0, v1, Ldagger/internal/DoubleCheck;
+    invoke-direct {v4, v0, v1}, Lde/rki/coronawarnapp/playbook/BackgroundNoise_Factory;-><init>(Ljavax/inject/Provider;Ljavax/inject/Provider;)V
+
+    instance-of v0, v4, Ldagger/internal/DoubleCheck;
 
     if-eqz v0, :cond_38
 
@@ -6677,90 +7263,52 @@
     :cond_38
     new-instance v0, Ldagger/internal/DoubleCheck;
 
-    invoke-direct {v0, v1}, Ldagger/internal/DoubleCheck;-><init>(Ljavax/inject/Provider;)V
+    invoke-direct {v0, v4}, Ldagger/internal/DoubleCheck;-><init>(Ljavax/inject/Provider;)V
 
-    move-object v1, v0
+    move-object v4, v0
 
     :goto_38
-    iput-object v1, v13, Lde/rki/coronawarnapp/util/di/DaggerApplicationComponent;->safetyNetProvider:Ljavax/inject/Provider;
+    iput-object v4, v15, Lde/rki/coronawarnapp/util/di/DaggerApplicationComponent;->backgroundNoiseProvider:Ljavax/inject/Provider;
 
-    iget-object v0, v13, Lde/rki/coronawarnapp/util/di/DaggerApplicationComponent;->environmentSetupProvider:Ljavax/inject/Provider;
+    iget-object v0, v15, Lde/rki/coronawarnapp/util/di/DaggerApplicationComponent;->appCoroutineScopeProvider:Ljavax/inject/Provider;
 
-    new-instance v2, Lde/rki/coronawarnapp/datadonation/safetynet/SafetyNetClientWrapper_Factory;
+    iget-object v1, v15, Lde/rki/coronawarnapp/util/di/DaggerApplicationComponent;->submissionSettingsProvider:Ljavax/inject/Provider;
 
-    invoke-direct {v2, v1, v0}, Lde/rki/coronawarnapp/datadonation/safetynet/SafetyNetClientWrapper_Factory;-><init>(Ljavax/inject/Provider;Ljavax/inject/Provider;)V
+    iget-object v4, v15, Lde/rki/coronawarnapp/util/di/DaggerApplicationComponent;->tEKHistoryStorageProvider:Ljavax/inject/Provider;
 
-    invoke-static {v2}, Ldagger/internal/SingleCheck;->provider(Ljavax/inject/Provider;)Ljavax/inject/Provider;
+    iget-object v5, v15, Lde/rki/coronawarnapp/util/di/DaggerApplicationComponent;->coronaTestRepositoryProvider:Ljavax/inject/Provider;
 
-    move-result-object v0
+    new-instance v6, Lde/rki/coronawarnapp/submission/SubmissionRepository_Factory;
 
-    iput-object v0, v13, Lde/rki/coronawarnapp/util/di/DaggerApplicationComponent;->safetyNetClientWrapperProvider:Ljavax/inject/Provider;
+    invoke-direct {v6, v0, v1, v4, v5}, Lde/rki/coronawarnapp/submission/SubmissionRepository_Factory;-><init>(Ljavax/inject/Provider;Ljavax/inject/Provider;Ljavax/inject/Provider;Ljavax/inject/Provider;)V
 
-    iget-object v0, v13, Lde/rki/coronawarnapp/util/di/DaggerApplicationComponent;->contextProvider:Ljavax/inject/Provider;
+    instance-of v0, v6, Ldagger/internal/DoubleCheck;
 
-    new-instance v1, Lde/rki/coronawarnapp/util/gplay/GoogleApiVersion_Factory;
-
-    invoke-direct {v1, v0}, Lde/rki/coronawarnapp/util/gplay/GoogleApiVersion_Factory;-><init>(Ljavax/inject/Provider;)V
-
-    invoke-static {v1}, Ldagger/internal/SingleCheck;->provider(Ljavax/inject/Provider;)Ljavax/inject/Provider;
-
-    move-result-object v0
-
-    iput-object v0, v13, Lde/rki/coronawarnapp/util/di/DaggerApplicationComponent;->googleApiVersionProvider:Ljavax/inject/Provider;
-
-    iget-object v2, v13, Lde/rki/coronawarnapp/util/di/DaggerApplicationComponent;->contextProvider:Ljavax/inject/Provider;
-
-    iget-object v3, v13, Lde/rki/coronawarnapp/util/di/DaggerApplicationComponent;->safetyNetClientWrapperProvider:Ljavax/inject/Provider;
-
-    iget-object v4, v13, Lde/rki/coronawarnapp/util/di/DaggerApplicationComponent;->strongRandomProvider:Ljavax/inject/Provider;
-
-    iget-object v5, v13, Lde/rki/coronawarnapp/util/di/DaggerApplicationComponent;->appConfigProvider:Ljavax/inject/Provider;
-
-    iget-object v6, v13, Lde/rki/coronawarnapp/util/di/DaggerApplicationComponent;->googleApiVersionProvider:Ljavax/inject/Provider;
-
-    iget-object v7, v13, Lde/rki/coronawarnapp/util/di/DaggerApplicationComponent;->cWASettingsProvider:Ljavax/inject/Provider;
-
-    iget-object v8, v13, Lde/rki/coronawarnapp/util/di/DaggerApplicationComponent;->timeStamperProvider:Ljavax/inject/Provider;
-
-    iget-object v9, v13, Lde/rki/coronawarnapp/util/di/DaggerApplicationComponent;->testSettingsProvider:Ljavax/inject/Provider;
-
-    new-instance v0, Lde/rki/coronawarnapp/datadonation/safetynet/CWASafetyNet_Factory;
-
-    move-object v1, v0
-
-    invoke-direct/range {v1 .. v9}, Lde/rki/coronawarnapp/datadonation/safetynet/CWASafetyNet_Factory;-><init>(Ljavax/inject/Provider;Ljavax/inject/Provider;Ljavax/inject/Provider;Ljavax/inject/Provider;Ljavax/inject/Provider;Ljavax/inject/Provider;Ljavax/inject/Provider;Ljavax/inject/Provider;)V
-
-    instance-of v1, v0, Ldagger/internal/DoubleCheck;
-
-    if-eqz v1, :cond_39
+    if-eqz v0, :cond_39
 
     goto :goto_39
 
     :cond_39
-    new-instance v1, Ldagger/internal/DoubleCheck;
+    new-instance v0, Ldagger/internal/DoubleCheck;
 
-    invoke-direct {v1, v0}, Ldagger/internal/DoubleCheck;-><init>(Ljavax/inject/Provider;)V
+    invoke-direct {v0, v6}, Ldagger/internal/DoubleCheck;-><init>(Ljavax/inject/Provider;)V
 
-    move-object v0, v1
+    move-object v6, v0
 
     :goto_39
-    iput-object v0, v13, Lde/rki/coronawarnapp/util/di/DaggerApplicationComponent;->cWASafetyNetProvider:Ljavax/inject/Provider;
+    iput-object v6, v15, Lde/rki/coronawarnapp/util/di/DaggerApplicationComponent;->submissionRepositoryProvider:Ljavax/inject/Provider;
 
-    new-instance v1, Lde/rki/coronawarnapp/datadonation/DataDonationModule_DeviceAttestationFactory;
+    iget-object v0, v15, Lde/rki/coronawarnapp/util/di/DaggerApplicationComponent;->appConfigProvider:Ljavax/inject/Provider;
 
-    move-object/from16 v2, p23
+    iget-object v1, v15, Lde/rki/coronawarnapp/util/di/DaggerApplicationComponent;->cWASettingsProvider:Ljavax/inject/Provider;
 
-    invoke-direct {v1, v2, v0}, Lde/rki/coronawarnapp/datadonation/DataDonationModule_DeviceAttestationFactory;-><init>(Lde/rki/coronawarnapp/datadonation/DataDonationModule;Ljavax/inject/Provider;)V
+    iget-object v4, v15, Lde/rki/coronawarnapp/util/di/DaggerApplicationComponent;->networkStateProvider:Ljavax/inject/Provider;
 
-    iput-object v1, v13, Lde/rki/coronawarnapp/util/di/DaggerApplicationComponent;->deviceAttestationProvider:Ljavax/inject/Provider;
+    new-instance v5, Lde/rki/coronawarnapp/storage/interoperability/InteroperabilityRepository_Factory;
 
-    iget-object v0, v13, Lde/rki/coronawarnapp/util/di/DaggerApplicationComponent;->analyticsExposureWindowRepositoryProvider:Ljavax/inject/Provider;
+    invoke-direct {v5, v0, v1, v4}, Lde/rki/coronawarnapp/storage/interoperability/InteroperabilityRepository_Factory;-><init>(Ljavax/inject/Provider;Ljavax/inject/Provider;Ljavax/inject/Provider;)V
 
-    new-instance v1, Lde/rki/coronawarnapp/datadonation/analytics/modules/exposurewindows/AnalyticsExposureWindowDonor_Factory;
-
-    invoke-direct {v1, v0}, Lde/rki/coronawarnapp/datadonation/analytics/modules/exposurewindows/AnalyticsExposureWindowDonor_Factory;-><init>(Ljavax/inject/Provider;)V
-
-    instance-of v0, v1, Ldagger/internal/DoubleCheck;
+    instance-of v0, v5, Ldagger/internal/DoubleCheck;
 
     if-eqz v0, :cond_3a
 
@@ -6769,50 +7317,44 @@
     :cond_3a
     new-instance v0, Ldagger/internal/DoubleCheck;
 
-    invoke-direct {v0, v1}, Ldagger/internal/DoubleCheck;-><init>(Ljavax/inject/Provider;)V
+    invoke-direct {v0, v5}, Ldagger/internal/DoubleCheck;-><init>(Ljavax/inject/Provider;)V
 
-    move-object v1, v0
+    move-object v5, v0
 
     :goto_3a
-    iput-object v1, v13, Lde/rki/coronawarnapp/util/di/DaggerApplicationComponent;->analyticsExposureWindowDonorProvider:Ljavax/inject/Provider;
+    iput-object v5, v15, Lde/rki/coronawarnapp/util/di/DaggerApplicationComponent;->interoperabilityRepositoryProvider:Ljavax/inject/Provider;
 
-    new-instance v0, Lde/rki/coronawarnapp/datadonation/analytics/AnalyticsModule_NewExposureWindowsFactory;
+    new-instance v0, Lde/rki/coronawarnapp/util/di/AndroidModule_BluetoothAdapterFactory;
 
-    move-object/from16 v2, p25
+    invoke-direct {v0, v3}, Lde/rki/coronawarnapp/util/di/AndroidModule_BluetoothAdapterFactory;-><init>(Lde/rki/coronawarnapp/util/di/AndroidModule;)V
 
-    invoke-direct {v0, v2, v1}, Lde/rki/coronawarnapp/datadonation/analytics/AnalyticsModule_NewExposureWindowsFactory;-><init>(Lde/rki/coronawarnapp/datadonation/analytics/AnalyticsModule;Ljavax/inject/Provider;)V
+    instance-of v1, v0, Ldagger/internal/DoubleCheck;
 
-    iput-object v0, v13, Lde/rki/coronawarnapp/util/di/DaggerApplicationComponent;->newExposureWindowsProvider:Ljavax/inject/Provider;
-
-    iget-object v0, v13, Lde/rki/coronawarnapp/util/di/DaggerApplicationComponent;->analyticsPCRKeySubmissionStorageProvider:Ljavax/inject/Provider;
-
-    new-instance v1, Lde/rki/coronawarnapp/datadonation/analytics/modules/keysubmission/AnalyticsPCRKeySubmissionRepository_Factory;
-
-    invoke-direct {v1, v0}, Lde/rki/coronawarnapp/datadonation/analytics/modules/keysubmission/AnalyticsPCRKeySubmissionRepository_Factory;-><init>(Ljavax/inject/Provider;)V
-
-    instance-of v0, v1, Ldagger/internal/DoubleCheck;
-
-    if-eqz v0, :cond_3b
+    if-eqz v1, :cond_3b
 
     goto :goto_3b
 
     :cond_3b
-    new-instance v0, Ldagger/internal/DoubleCheck;
+    new-instance v1, Ldagger/internal/DoubleCheck;
 
-    invoke-direct {v0, v1}, Ldagger/internal/DoubleCheck;-><init>(Ljavax/inject/Provider;)V
+    invoke-direct {v1, v0}, Ldagger/internal/DoubleCheck;-><init>(Ljavax/inject/Provider;)V
 
-    move-object v1, v0
+    move-object v0, v1
 
     :goto_3b
-    iput-object v1, v13, Lde/rki/coronawarnapp/util/di/DaggerApplicationComponent;->analyticsPCRKeySubmissionRepositoryProvider:Ljavax/inject/Provider;
+    iput-object v0, v15, Lde/rki/coronawarnapp/util/di/DaggerApplicationComponent;->bluetoothAdapterProvider:Ljavax/inject/Provider;
 
-    iget-object v0, v13, Lde/rki/coronawarnapp/util/di/DaggerApplicationComponent;->timeStamperProvider:Ljavax/inject/Provider;
+    iget-object v0, v15, Lde/rki/coronawarnapp/util/di/DaggerApplicationComponent;->contextProvider:Ljavax/inject/Provider;
 
-    new-instance v3, Lde/rki/coronawarnapp/datadonation/analytics/modules/keysubmission/AnalyticsPCRKeySubmissionDonor_Factory;
+    iget-object v1, v15, Lde/rki/coronawarnapp/util/di/DaggerApplicationComponent;->appCoroutineScopeProvider:Ljavax/inject/Provider;
 
-    invoke-direct {v3, v1, v0}, Lde/rki/coronawarnapp/datadonation/analytics/modules/keysubmission/AnalyticsPCRKeySubmissionDonor_Factory;-><init>(Ljavax/inject/Provider;Ljavax/inject/Provider;)V
+    iget-object v3, v15, Lde/rki/coronawarnapp/util/di/DaggerApplicationComponent;->bluetoothAdapterProvider:Ljavax/inject/Provider;
 
-    instance-of v0, v3, Ldagger/internal/DoubleCheck;
+    new-instance v4, Lde/rki/coronawarnapp/util/bluetooth/BluetoothProvider_Factory;
+
+    invoke-direct {v4, v0, v1, v3}, Lde/rki/coronawarnapp/util/bluetooth/BluetoothProvider_Factory;-><init>(Ljavax/inject/Provider;Ljavax/inject/Provider;Ljavax/inject/Provider;)V
+
+    instance-of v0, v4, Ldagger/internal/DoubleCheck;
 
     if-eqz v0, :cond_3c
 
@@ -6821,26 +7363,22 @@
     :cond_3c
     new-instance v0, Ldagger/internal/DoubleCheck;
 
-    invoke-direct {v0, v3}, Ldagger/internal/DoubleCheck;-><init>(Ljavax/inject/Provider;)V
+    invoke-direct {v0, v4}, Ldagger/internal/DoubleCheck;-><init>(Ljavax/inject/Provider;)V
 
-    move-object v3, v0
+    move-object v4, v0
 
     :goto_3c
-    iput-object v3, v13, Lde/rki/coronawarnapp/util/di/DaggerApplicationComponent;->analyticsPCRKeySubmissionDonorProvider:Ljavax/inject/Provider;
+    iput-object v4, v15, Lde/rki/coronawarnapp/util/di/DaggerApplicationComponent;->bluetoothProvider:Ljavax/inject/Provider;
 
-    new-instance v0, Lde/rki/coronawarnapp/datadonation/analytics/AnalyticsModule_PcrKeySubmissionFactory;
+    iget-object v0, v15, Lde/rki/coronawarnapp/util/di/DaggerApplicationComponent;->contextProvider:Ljavax/inject/Provider;
 
-    invoke-direct {v0, v2, v3}, Lde/rki/coronawarnapp/datadonation/analytics/AnalyticsModule_PcrKeySubmissionFactory;-><init>(Lde/rki/coronawarnapp/datadonation/analytics/AnalyticsModule;Ljavax/inject/Provider;)V
+    iget-object v1, v15, Lde/rki/coronawarnapp/util/di/DaggerApplicationComponent;->appCoroutineScopeProvider:Ljavax/inject/Provider;
 
-    iput-object v0, v13, Lde/rki/coronawarnapp/util/di/DaggerApplicationComponent;->pcrKeySubmissionProvider:Ljavax/inject/Provider;
+    new-instance v3, Lde/rki/coronawarnapp/util/location/LocationProvider_Factory;
 
-    iget-object v0, v13, Lde/rki/coronawarnapp/util/di/DaggerApplicationComponent;->analyticsRAKeySubmissionStorageProvider:Ljavax/inject/Provider;
+    invoke-direct {v3, v0, v1}, Lde/rki/coronawarnapp/util/location/LocationProvider_Factory;-><init>(Ljavax/inject/Provider;Ljavax/inject/Provider;)V
 
-    new-instance v1, Lde/rki/coronawarnapp/datadonation/analytics/modules/keysubmission/AnalyticsRAKeySubmissionRepository_Factory;
-
-    invoke-direct {v1, v0}, Lde/rki/coronawarnapp/datadonation/analytics/modules/keysubmission/AnalyticsRAKeySubmissionRepository_Factory;-><init>(Ljavax/inject/Provider;)V
-
-    instance-of v0, v1, Ldagger/internal/DoubleCheck;
+    instance-of v0, v3, Ldagger/internal/DoubleCheck;
 
     if-eqz v0, :cond_3d
 
@@ -6849,20 +7387,24 @@
     :cond_3d
     new-instance v0, Ldagger/internal/DoubleCheck;
 
-    invoke-direct {v0, v1}, Ldagger/internal/DoubleCheck;-><init>(Ljavax/inject/Provider;)V
+    invoke-direct {v0, v3}, Ldagger/internal/DoubleCheck;-><init>(Ljavax/inject/Provider;)V
 
-    move-object v1, v0
+    move-object v3, v0
 
     :goto_3d
-    iput-object v1, v13, Lde/rki/coronawarnapp/util/di/DaggerApplicationComponent;->analyticsRAKeySubmissionRepositoryProvider:Ljavax/inject/Provider;
+    iput-object v3, v15, Lde/rki/coronawarnapp/util/di/DaggerApplicationComponent;->locationProvider:Ljavax/inject/Provider;
 
-    iget-object v0, v13, Lde/rki/coronawarnapp/util/di/DaggerApplicationComponent;->timeStamperProvider:Ljavax/inject/Provider;
+    iget-object v0, v15, Lde/rki/coronawarnapp/util/di/DaggerApplicationComponent;->bluetoothProvider:Ljavax/inject/Provider;
 
-    new-instance v3, Lde/rki/coronawarnapp/datadonation/analytics/modules/keysubmission/AnalyticsRAKeySubmissionDonor_Factory;
+    iget-object v1, v15, Lde/rki/coronawarnapp/util/di/DaggerApplicationComponent;->locationProvider:Ljavax/inject/Provider;
 
-    invoke-direct {v3, v1, v0}, Lde/rki/coronawarnapp/datadonation/analytics/modules/keysubmission/AnalyticsRAKeySubmissionDonor_Factory;-><init>(Ljavax/inject/Provider;Ljavax/inject/Provider;)V
+    iget-object v3, v15, Lde/rki/coronawarnapp/util/di/DaggerApplicationComponent;->eNFClientProvider:Ljavax/inject/Provider;
 
-    instance-of v0, v3, Ldagger/internal/DoubleCheck;
+    new-instance v4, Lde/rki/coronawarnapp/tracing/GeneralTracingStatus_Factory;
+
+    invoke-direct {v4, v0, v1, v3}, Lde/rki/coronawarnapp/tracing/GeneralTracingStatus_Factory;-><init>(Ljavax/inject/Provider;Ljavax/inject/Provider;Ljavax/inject/Provider;)V
+
+    instance-of v0, v4, Ldagger/internal/DoubleCheck;
 
     if-eqz v0, :cond_3e
 
@@ -6871,28 +7413,56 @@
     :cond_3e
     new-instance v0, Ldagger/internal/DoubleCheck;
 
-    invoke-direct {v0, v3}, Ldagger/internal/DoubleCheck;-><init>(Ljavax/inject/Provider;)V
+    invoke-direct {v0, v4}, Ldagger/internal/DoubleCheck;-><init>(Ljavax/inject/Provider;)V
 
-    move-object v3, v0
+    move-object v4, v0
 
     :goto_3e
-    iput-object v3, v13, Lde/rki/coronawarnapp/util/di/DaggerApplicationComponent;->analyticsRAKeySubmissionDonorProvider:Ljavax/inject/Provider;
+    iput-object v4, v15, Lde/rki/coronawarnapp/util/di/DaggerApplicationComponent;->generalTracingStatusProvider:Ljavax/inject/Provider;
 
-    new-instance v0, Lde/rki/coronawarnapp/datadonation/analytics/AnalyticsModule_RaKeySubmissionFactory;
+    iget-object v0, v15, Lde/rki/coronawarnapp/util/di/DaggerApplicationComponent;->appCoroutineScopeProvider:Ljavax/inject/Provider;
 
-    invoke-direct {v0, v2, v3}, Lde/rki/coronawarnapp/datadonation/analytics/AnalyticsModule_RaKeySubmissionFactory;-><init>(Lde/rki/coronawarnapp/datadonation/analytics/AnalyticsModule;Ljavax/inject/Provider;)V
+    iget-object v1, v15, Lde/rki/coronawarnapp/util/di/DaggerApplicationComponent;->taskControllerProvider:Ljavax/inject/Provider;
 
-    iput-object v0, v13, Lde/rki/coronawarnapp/util/di/DaggerApplicationComponent;->raKeySubmissionProvider:Ljavax/inject/Provider;
+    iget-object v3, v15, Lde/rki/coronawarnapp/util/di/DaggerApplicationComponent;->eNFClientProvider:Ljavax/inject/Provider;
 
-    iget-object v0, v13, Lde/rki/coronawarnapp/util/di/DaggerApplicationComponent;->analyticsPCRTestResultSettingsProvider:Ljavax/inject/Provider;
+    iget-object v4, v15, Lde/rki/coronawarnapp/util/di/DaggerApplicationComponent;->timeStamperProvider:Ljavax/inject/Provider;
 
-    iget-object v1, v13, Lde/rki/coronawarnapp/util/di/DaggerApplicationComponent;->timeStamperProvider:Ljavax/inject/Provider;
+    iget-object v5, v15, Lde/rki/coronawarnapp/util/di/DaggerApplicationComponent;->calculationTrackerProvider:Ljavax/inject/Provider;
 
-    new-instance v3, Lde/rki/coronawarnapp/datadonation/analytics/modules/testresult/AnalyticsPCRTestResultDonor_Factory;
+    iget-object v6, v15, Lde/rki/coronawarnapp/util/di/DaggerApplicationComponent;->backgroundModeStatusProvider:Ljavax/inject/Provider;
 
-    invoke-direct {v3, v0, v1}, Lde/rki/coronawarnapp/datadonation/analytics/modules/testresult/AnalyticsPCRTestResultDonor_Factory;-><init>(Ljavax/inject/Provider;Ljavax/inject/Provider;)V
+    iget-object v7, v15, Lde/rki/coronawarnapp/util/di/DaggerApplicationComponent;->exposureWindowRiskWorkSchedulerProvider:Ljavax/inject/Provider;
 
-    instance-of v0, v3, Ldagger/internal/DoubleCheck;
+    iget-object v8, v15, Lde/rki/coronawarnapp/util/di/DaggerApplicationComponent;->presenceTracingRiskWorkSchedulerProvider:Ljavax/inject/Provider;
+
+    iget-object v9, v15, Lde/rki/coronawarnapp/util/di/DaggerApplicationComponent;->networkStateProvider:Ljavax/inject/Provider;
+
+    new-instance v10, Lde/rki/coronawarnapp/storage/TracingRepository_Factory;
+
+    move-object/from16 p1, v10
+
+    move-object/from16 p2, v0
+
+    move-object/from16 p3, v1
+
+    move-object/from16 p4, v3
+
+    move-object/from16 p5, v4
+
+    move-object/from16 p6, v5
+
+    move-object/from16 p7, v6
+
+    move-object/from16 p8, v7
+
+    move-object/from16 p9, v8
+
+    move-object/from16 p10, v9
+
+    invoke-direct/range {p1 .. p10}, Lde/rki/coronawarnapp/storage/TracingRepository_Factory;-><init>(Ljavax/inject/Provider;Ljavax/inject/Provider;Ljavax/inject/Provider;Ljavax/inject/Provider;Ljavax/inject/Provider;Ljavax/inject/Provider;Ljavax/inject/Provider;Ljavax/inject/Provider;Ljavax/inject/Provider;)V
+
+    instance-of v0, v10, Ldagger/internal/DoubleCheck;
 
     if-eqz v0, :cond_3f
 
@@ -6901,28 +7471,20 @@
     :cond_3f
     new-instance v0, Ldagger/internal/DoubleCheck;
 
-    invoke-direct {v0, v3}, Ldagger/internal/DoubleCheck;-><init>(Ljavax/inject/Provider;)V
+    invoke-direct {v0, v10}, Ldagger/internal/DoubleCheck;-><init>(Ljavax/inject/Provider;)V
 
-    move-object v3, v0
+    move-object v10, v0
 
     :goto_3f
-    iput-object v3, v13, Lde/rki/coronawarnapp/util/di/DaggerApplicationComponent;->analyticsPCRTestResultDonorProvider:Ljavax/inject/Provider;
+    iput-object v10, v15, Lde/rki/coronawarnapp/util/di/DaggerApplicationComponent;->tracingRepositoryProvider:Ljavax/inject/Provider;
 
-    new-instance v0, Lde/rki/coronawarnapp/datadonation/analytics/AnalyticsModule_PcrTestResultFactory;
+    iget-object v0, v15, Lde/rki/coronawarnapp/util/di/DaggerApplicationComponent;->contextProvider:Ljavax/inject/Provider;
 
-    invoke-direct {v0, v2, v3}, Lde/rki/coronawarnapp/datadonation/analytics/AnalyticsModule_PcrTestResultFactory;-><init>(Lde/rki/coronawarnapp/datadonation/analytics/AnalyticsModule;Ljavax/inject/Provider;)V
+    new-instance v1, Lde/rki/coronawarnapp/installTime/InstallTimeProvider_Factory;
 
-    iput-object v0, v13, Lde/rki/coronawarnapp/util/di/DaggerApplicationComponent;->pcrTestResultProvider:Ljavax/inject/Provider;
+    invoke-direct {v1, v0}, Lde/rki/coronawarnapp/installTime/InstallTimeProvider_Factory;-><init>(Ljavax/inject/Provider;)V
 
-    iget-object v0, v13, Lde/rki/coronawarnapp/util/di/DaggerApplicationComponent;->analyticsRATestResultSettingsProvider:Ljavax/inject/Provider;
-
-    iget-object v1, v13, Lde/rki/coronawarnapp/util/di/DaggerApplicationComponent;->timeStamperProvider:Ljavax/inject/Provider;
-
-    new-instance v3, Lde/rki/coronawarnapp/datadonation/analytics/modules/testresult/AnalyticsRATestResultDonor_Factory;
-
-    invoke-direct {v3, v0, v1}, Lde/rki/coronawarnapp/datadonation/analytics/modules/testresult/AnalyticsRATestResultDonor_Factory;-><init>(Ljavax/inject/Provider;Ljavax/inject/Provider;)V
-
-    instance-of v0, v3, Ldagger/internal/DoubleCheck;
+    instance-of v0, v1, Ldagger/internal/DoubleCheck;
 
     if-eqz v0, :cond_40
 
@@ -6931,28 +7493,38 @@
     :cond_40
     new-instance v0, Ldagger/internal/DoubleCheck;
 
-    invoke-direct {v0, v3}, Ldagger/internal/DoubleCheck;-><init>(Ljavax/inject/Provider;)V
+    invoke-direct {v0, v1}, Ldagger/internal/DoubleCheck;-><init>(Ljavax/inject/Provider;)V
 
-    move-object v3, v0
+    move-object v1, v0
 
     :goto_40
-    iput-object v3, v13, Lde/rki/coronawarnapp/util/di/DaggerApplicationComponent;->analyticsRATestResultDonorProvider:Ljavax/inject/Provider;
+    iput-object v1, v15, Lde/rki/coronawarnapp/util/di/DaggerApplicationComponent;->installTimeProvider:Ljavax/inject/Provider;
 
-    new-instance v0, Lde/rki/coronawarnapp/datadonation/analytics/AnalyticsModule_RaTestResultFactory;
+    iget-object v0, v15, Lde/rki/coronawarnapp/util/di/DaggerApplicationComponent;->cdnHttpClientProvider:Ljavax/inject/Provider;
 
-    invoke-direct {v0, v2, v3}, Lde/rki/coronawarnapp/datadonation/analytics/AnalyticsModule_RaTestResultFactory;-><init>(Lde/rki/coronawarnapp/datadonation/analytics/AnalyticsModule;Ljavax/inject/Provider;)V
+    iget-object v1, v15, Lde/rki/coronawarnapp/util/di/DaggerApplicationComponent;->provideDownloadServerUrlProvider:Ljavax/inject/Provider;
 
-    iput-object v0, v13, Lde/rki/coronawarnapp/util/di/DaggerApplicationComponent;->raTestResultProvider:Ljavax/inject/Provider;
+    iget-object v3, v15, Lde/rki/coronawarnapp/util/di/DaggerApplicationComponent;->provideGSONConverterProvider:Ljavax/inject/Provider;
 
-    iget-object v0, v13, Lde/rki/coronawarnapp/util/di/DaggerApplicationComponent;->riskLevelStorageProvider:Ljavax/inject/Provider;
+    iget-object v4, v15, Lde/rki/coronawarnapp/util/di/DaggerApplicationComponent;->httpCacheProvider2:Ljavax/inject/Provider;
 
-    iget-object v1, v13, Lde/rki/coronawarnapp/util/di/DaggerApplicationComponent;->analyticsSettingsProvider:Ljavax/inject/Provider;
+    new-instance v5, Lde/rki/coronawarnapp/statistics/StatisticsModule_ApiFactory;
 
-    new-instance v3, Lde/rki/coronawarnapp/datadonation/analytics/modules/exposureriskmetadata/ExposureRiskMetadataDonor_Factory;
+    move-object/from16 p1, v5
 
-    invoke-direct {v3, v0, v1}, Lde/rki/coronawarnapp/datadonation/analytics/modules/exposureriskmetadata/ExposureRiskMetadataDonor_Factory;-><init>(Ljavax/inject/Provider;Ljavax/inject/Provider;)V
+    move-object/from16 p2, p22
 
-    instance-of v0, v3, Ldagger/internal/DoubleCheck;
+    move-object/from16 p3, v0
+
+    move-object/from16 p4, v1
+
+    move-object/from16 p5, v3
+
+    move-object/from16 p6, v4
+
+    invoke-direct/range {p1 .. p6}, Lde/rki/coronawarnapp/statistics/StatisticsModule_ApiFactory;-><init>(Lde/rki/coronawarnapp/statistics/StatisticsModule;Ljavax/inject/Provider;Ljavax/inject/Provider;Ljavax/inject/Provider;Ljavax/inject/Provider;)V
+
+    instance-of v0, v5, Ldagger/internal/DoubleCheck;
 
     if-eqz v0, :cond_41
 
@@ -6961,24 +7533,32 @@
     :cond_41
     new-instance v0, Ldagger/internal/DoubleCheck;
 
-    invoke-direct {v0, v3}, Ldagger/internal/DoubleCheck;-><init>(Ljavax/inject/Provider;)V
+    invoke-direct {v0, v5}, Ldagger/internal/DoubleCheck;-><init>(Ljavax/inject/Provider;)V
 
-    move-object v3, v0
+    move-object v5, v0
 
     :goto_41
-    iput-object v3, v13, Lde/rki/coronawarnapp/util/di/DaggerApplicationComponent;->exposureRiskMetadataDonorProvider:Ljavax/inject/Provider;
+    iput-object v5, v15, Lde/rki/coronawarnapp/util/di/DaggerApplicationComponent;->apiProvider2:Ljavax/inject/Provider;
 
-    new-instance v0, Lde/rki/coronawarnapp/datadonation/analytics/AnalyticsModule_ExposureRiskMetadataFactory;
+    iget-object v0, v15, Lde/rki/coronawarnapp/util/di/DaggerApplicationComponent;->signatureValidationProvider:Ljavax/inject/Provider;
 
-    invoke-direct {v0, v2, v3}, Lde/rki/coronawarnapp/datadonation/analytics/AnalyticsModule_ExposureRiskMetadataFactory;-><init>(Lde/rki/coronawarnapp/datadonation/analytics/AnalyticsModule;Ljavax/inject/Provider;)V
+    iget-object v1, v15, Lde/rki/coronawarnapp/util/di/DaggerApplicationComponent;->httpCacheProvider2:Ljavax/inject/Provider;
 
-    iput-object v0, v13, Lde/rki/coronawarnapp/util/di/DaggerApplicationComponent;->exposureRiskMetadataProvider:Ljavax/inject/Provider;
+    new-instance v3, Lde/rki/coronawarnapp/statistics/source/StatisticsServer_Factory;
 
-    iget-object v0, v13, Lde/rki/coronawarnapp/util/di/DaggerApplicationComponent;->analyticsSettingsProvider:Ljavax/inject/Provider;
+    invoke-direct {v3, v5, v0, v1}, Lde/rki/coronawarnapp/statistics/source/StatisticsServer_Factory;-><init>(Ljavax/inject/Provider;Ljavax/inject/Provider;Ljavax/inject/Provider;)V
 
-    new-instance v1, Lde/rki/coronawarnapp/datadonation/analytics/modules/usermetadata/UserMetadataDonor_Factory;
+    invoke-static {v3}, Ldagger/internal/SingleCheck;->provider(Ljavax/inject/Provider;)Ljavax/inject/Provider;
 
-    invoke-direct {v1, v0}, Lde/rki/coronawarnapp/datadonation/analytics/modules/usermetadata/UserMetadataDonor_Factory;-><init>(Ljavax/inject/Provider;)V
+    move-result-object v0
+
+    iput-object v0, v15, Lde/rki/coronawarnapp/util/di/DaggerApplicationComponent;->statisticsServerProvider:Ljavax/inject/Provider;
+
+    iget-object v0, v15, Lde/rki/coronawarnapp/util/di/DaggerApplicationComponent;->cacheDirProvider:Ljavax/inject/Provider;
+
+    new-instance v1, Lde/rki/coronawarnapp/statistics/source/StatisticsCache_Factory;
+
+    invoke-direct {v1, v0}, Lde/rki/coronawarnapp/statistics/source/StatisticsCache_Factory;-><init>(Ljavax/inject/Provider;)V
 
     instance-of v0, v1, Ldagger/internal/DoubleCheck;
 
@@ -6994,23 +7574,47 @@
     move-object v1, v0
 
     :goto_42
-    iput-object v1, v13, Lde/rki/coronawarnapp/util/di/DaggerApplicationComponent;->userMetadataDonorProvider:Ljavax/inject/Provider;
+    iput-object v1, v15, Lde/rki/coronawarnapp/util/di/DaggerApplicationComponent;->statisticsCacheProvider:Ljavax/inject/Provider;
 
-    new-instance v0, Lde/rki/coronawarnapp/datadonation/analytics/AnalyticsModule_UserMetadataFactory;
+    sget-object v0, Lde/rki/coronawarnapp/statistics/source/StatisticsParser_Factory$InstanceHolder;->INSTANCE:Lde/rki/coronawarnapp/statistics/source/StatisticsParser_Factory;
 
-    invoke-direct {v0, v2, v1}, Lde/rki/coronawarnapp/datadonation/analytics/AnalyticsModule_UserMetadataFactory;-><init>(Lde/rki/coronawarnapp/datadonation/analytics/AnalyticsModule;Ljavax/inject/Provider;)V
+    invoke-static {v0}, Ldagger/internal/SingleCheck;->provider(Ljavax/inject/Provider;)Ljavax/inject/Provider;
 
-    iput-object v0, v13, Lde/rki/coronawarnapp/util/di/DaggerApplicationComponent;->userMetadataProvider:Ljavax/inject/Provider;
+    move-result-object v0
 
-    iget-object v0, v13, Lde/rki/coronawarnapp/util/di/DaggerApplicationComponent;->appConfigProvider:Ljavax/inject/Provider;
+    iput-object v0, v15, Lde/rki/coronawarnapp/util/di/DaggerApplicationComponent;->statisticsParserProvider:Ljavax/inject/Provider;
 
-    iget-object v1, v13, Lde/rki/coronawarnapp/util/di/DaggerApplicationComponent;->eNFClientProvider:Ljavax/inject/Provider;
+    iget-object v0, v15, Lde/rki/coronawarnapp/util/di/DaggerApplicationComponent;->appCoroutineScopeProvider:Ljavax/inject/Provider;
 
-    new-instance v3, Lde/rki/coronawarnapp/datadonation/analytics/modules/clientmetadata/ClientMetadataDonor_Factory;
+    iget-object v1, v15, Lde/rki/coronawarnapp/util/di/DaggerApplicationComponent;->statisticsServerProvider:Ljavax/inject/Provider;
 
-    invoke-direct {v3, v0, v1}, Lde/rki/coronawarnapp/datadonation/analytics/modules/clientmetadata/ClientMetadataDonor_Factory;-><init>(Ljavax/inject/Provider;Ljavax/inject/Provider;)V
+    iget-object v3, v15, Lde/rki/coronawarnapp/util/di/DaggerApplicationComponent;->statisticsCacheProvider:Ljavax/inject/Provider;
 
-    instance-of v0, v3, Ldagger/internal/DoubleCheck;
+    iget-object v4, v15, Lde/rki/coronawarnapp/util/di/DaggerApplicationComponent;->statisticsParserProvider:Ljavax/inject/Provider;
+
+    iget-object v5, v15, Lde/rki/coronawarnapp/util/di/DaggerApplicationComponent;->foregroundStateProvider:Ljavax/inject/Provider;
+
+    iget-object v6, v15, Lde/rki/coronawarnapp/util/di/DaggerApplicationComponent;->defaultDispatcherProvider:Ljavax/inject/Provider;
+
+    new-instance v7, Lde/rki/coronawarnapp/statistics/source/StatisticsProvider_Factory;
+
+    move-object/from16 p1, v7
+
+    move-object/from16 p2, v0
+
+    move-object/from16 p3, v1
+
+    move-object/from16 p4, v3
+
+    move-object/from16 p5, v4
+
+    move-object/from16 p6, v5
+
+    move-object/from16 p7, v6
+
+    invoke-direct/range {p1 .. p7}, Lde/rki/coronawarnapp/statistics/source/StatisticsProvider_Factory;-><init>(Ljavax/inject/Provider;Ljavax/inject/Provider;Ljavax/inject/Provider;Ljavax/inject/Provider;Ljavax/inject/Provider;Ljavax/inject/Provider;)V
+
+    instance-of v0, v7, Ldagger/internal/DoubleCheck;
 
     if-eqz v0, :cond_43
 
@@ -7019,86 +7623,18 @@
     :cond_43
     new-instance v0, Ldagger/internal/DoubleCheck;
 
-    invoke-direct {v0, v3}, Ldagger/internal/DoubleCheck;-><init>(Ljavax/inject/Provider;)V
+    invoke-direct {v0, v7}, Ldagger/internal/DoubleCheck;-><init>(Ljavax/inject/Provider;)V
 
-    move-object v3, v0
+    move-object v7, v0
 
     :goto_43
-    iput-object v3, v13, Lde/rki/coronawarnapp/util/di/DaggerApplicationComponent;->clientMetadataDonorProvider:Ljavax/inject/Provider;
+    iput-object v7, v15, Lde/rki/coronawarnapp/util/di/DaggerApplicationComponent;->statisticsProvider:Ljavax/inject/Provider;
 
-    new-instance v0, Lde/rki/coronawarnapp/datadonation/analytics/AnalyticsModule_ClientMetadataFactory;
+    iget-object v0, v15, Lde/rki/coronawarnapp/util/di/DaggerApplicationComponent;->contextProvider:Ljavax/inject/Provider;
 
-    invoke-direct {v0, v2, v3}, Lde/rki/coronawarnapp/datadonation/analytics/AnalyticsModule_ClientMetadataFactory;-><init>(Lde/rki/coronawarnapp/datadonation/analytics/AnalyticsModule;Ljavax/inject/Provider;)V
+    new-instance v1, Lde/rki/coronawarnapp/util/shortcuts/AppShortcutsHelper_Factory;
 
-    iput-object v0, v13, Lde/rki/coronawarnapp/util/di/DaggerApplicationComponent;->clientMetadataProvider:Ljavax/inject/Provider;
-
-    const/16 v0, 0x8
-
-    const/4 v1, 0x0
-
-    invoke-static {v0, v1}, Ldagger/internal/SetFactory;->builder(II)Ldagger/internal/SetFactory$Builder;
-
-    move-result-object v0
-
-    iget-object v1, v13, Lde/rki/coronawarnapp/util/di/DaggerApplicationComponent;->newExposureWindowsProvider:Ljavax/inject/Provider;
-
-    iget-object v3, v0, Ldagger/internal/SetFactory$Builder;->individualProviders:Ljava/util/List;
-
-    invoke-interface {v3, v1}, Ljava/util/List;->add(Ljava/lang/Object;)Z
-
-    iget-object v1, v13, Lde/rki/coronawarnapp/util/di/DaggerApplicationComponent;->pcrKeySubmissionProvider:Ljavax/inject/Provider;
-
-    iget-object v3, v0, Ldagger/internal/SetFactory$Builder;->individualProviders:Ljava/util/List;
-
-    invoke-interface {v3, v1}, Ljava/util/List;->add(Ljava/lang/Object;)Z
-
-    iget-object v1, v13, Lde/rki/coronawarnapp/util/di/DaggerApplicationComponent;->raKeySubmissionProvider:Ljavax/inject/Provider;
-
-    iget-object v3, v0, Ldagger/internal/SetFactory$Builder;->individualProviders:Ljava/util/List;
-
-    invoke-interface {v3, v1}, Ljava/util/List;->add(Ljava/lang/Object;)Z
-
-    iget-object v1, v13, Lde/rki/coronawarnapp/util/di/DaggerApplicationComponent;->pcrTestResultProvider:Ljavax/inject/Provider;
-
-    iget-object v3, v0, Ldagger/internal/SetFactory$Builder;->individualProviders:Ljava/util/List;
-
-    invoke-interface {v3, v1}, Ljava/util/List;->add(Ljava/lang/Object;)Z
-
-    iget-object v1, v13, Lde/rki/coronawarnapp/util/di/DaggerApplicationComponent;->raTestResultProvider:Ljavax/inject/Provider;
-
-    iget-object v3, v0, Ldagger/internal/SetFactory$Builder;->individualProviders:Ljava/util/List;
-
-    invoke-interface {v3, v1}, Ljava/util/List;->add(Ljava/lang/Object;)Z
-
-    iget-object v1, v13, Lde/rki/coronawarnapp/util/di/DaggerApplicationComponent;->exposureRiskMetadataProvider:Ljavax/inject/Provider;
-
-    iget-object v3, v0, Ldagger/internal/SetFactory$Builder;->individualProviders:Ljava/util/List;
-
-    invoke-interface {v3, v1}, Ljava/util/List;->add(Ljava/lang/Object;)Z
-
-    iget-object v1, v13, Lde/rki/coronawarnapp/util/di/DaggerApplicationComponent;->userMetadataProvider:Ljavax/inject/Provider;
-
-    iget-object v3, v0, Ldagger/internal/SetFactory$Builder;->individualProviders:Ljava/util/List;
-
-    invoke-interface {v3, v1}, Ljava/util/List;->add(Ljava/lang/Object;)Z
-
-    iget-object v1, v13, Lde/rki/coronawarnapp/util/di/DaggerApplicationComponent;->clientMetadataProvider:Ljavax/inject/Provider;
-
-    iget-object v3, v0, Ldagger/internal/SetFactory$Builder;->individualProviders:Ljava/util/List;
-
-    invoke-interface {v3, v1}, Ljava/util/List;->add(Ljava/lang/Object;)Z
-
-    invoke-virtual {v0}, Ldagger/internal/SetFactory$Builder;->build()Ldagger/internal/SetFactory;
-
-    move-result-object v0
-
-    iput-object v0, v13, Lde/rki/coronawarnapp/util/di/DaggerApplicationComponent;->setOfDonorModuleProvider:Ljavax/inject/Provider;
-
-    sget-object v0, Lde/rki/coronawarnapp/datadonation/analytics/storage/DefaultLastAnalyticsSubmissionLogger_Factory$InstanceHolder;->INSTANCE:Lde/rki/coronawarnapp/datadonation/analytics/storage/DefaultLastAnalyticsSubmissionLogger_Factory;
-
-    new-instance v1, Lde/rki/coronawarnapp/datadonation/analytics/AnalyticsModule_AnalyticsLoggerFactory;
-
-    invoke-direct {v1, v2, v0}, Lde/rki/coronawarnapp/datadonation/analytics/AnalyticsModule_AnalyticsLoggerFactory;-><init>(Lde/rki/coronawarnapp/datadonation/analytics/AnalyticsModule;Ljavax/inject/Provider;)V
+    invoke-direct {v1, v0}, Lde/rki/coronawarnapp/util/shortcuts/AppShortcutsHelper_Factory;-><init>(Ljavax/inject/Provider;)V
 
     instance-of v0, v1, Ldagger/internal/DoubleCheck;
 
@@ -7114,213 +7650,59 @@
     move-object v1, v0
 
     :goto_44
-    iput-object v1, v13, Lde/rki/coronawarnapp/util/di/DaggerApplicationComponent;->analyticsLoggerProvider:Ljavax/inject/Provider;
+    iput-object v1, v15, Lde/rki/coronawarnapp/util/di/DaggerApplicationComponent;->appShortcutsHelperProvider:Ljavax/inject/Provider;
 
-    iget-object v3, v13, Lde/rki/coronawarnapp/util/di/DaggerApplicationComponent;->dataDonationAnalyticsServerProvider:Ljavax/inject/Provider;
+    iget-object v0, v15, Lde/rki/coronawarnapp/util/di/DaggerApplicationComponent;->contextProvider:Ljavax/inject/Provider;
 
-    iget-object v4, v13, Lde/rki/coronawarnapp/util/di/DaggerApplicationComponent;->appConfigProvider:Ljavax/inject/Provider;
+    new-instance v1, Lde/rki/coronawarnapp/ui/presencetracing/TraceLocationPreferences_Factory;
 
-    iget-object v5, v13, Lde/rki/coronawarnapp/util/di/DaggerApplicationComponent;->deviceAttestationProvider:Ljavax/inject/Provider;
+    invoke-direct {v1, v0}, Lde/rki/coronawarnapp/ui/presencetracing/TraceLocationPreferences_Factory;-><init>(Ljavax/inject/Provider;)V
 
-    iget-object v6, v13, Lde/rki/coronawarnapp/util/di/DaggerApplicationComponent;->setOfDonorModuleProvider:Ljavax/inject/Provider;
+    instance-of v0, v1, Ldagger/internal/DoubleCheck;
 
-    iget-object v7, v13, Lde/rki/coronawarnapp/util/di/DaggerApplicationComponent;->analyticsSettingsProvider:Ljavax/inject/Provider;
-
-    iget-object v8, v13, Lde/rki/coronawarnapp/util/di/DaggerApplicationComponent;->analyticsLoggerProvider:Ljavax/inject/Provider;
-
-    iget-object v9, v13, Lde/rki/coronawarnapp/util/di/DaggerApplicationComponent;->timeStamperProvider:Ljavax/inject/Provider;
-
-    iget-object v10, v13, Lde/rki/coronawarnapp/util/di/DaggerApplicationComponent;->onboardingSettingsProvider:Ljavax/inject/Provider;
-
-    new-instance v0, Lde/rki/coronawarnapp/datadonation/analytics/Analytics_Factory;
-
-    move-object v2, v0
-
-    invoke-direct/range {v2 .. v10}, Lde/rki/coronawarnapp/datadonation/analytics/Analytics_Factory;-><init>(Ljavax/inject/Provider;Ljavax/inject/Provider;Ljavax/inject/Provider;Ljavax/inject/Provider;Ljavax/inject/Provider;Ljavax/inject/Provider;Ljavax/inject/Provider;Ljavax/inject/Provider;)V
-
-    instance-of v1, v0, Ldagger/internal/DoubleCheck;
-
-    if-eqz v1, :cond_45
+    if-eqz v0, :cond_45
 
     goto :goto_45
 
     :cond_45
+    new-instance v0, Ldagger/internal/DoubleCheck;
+
+    invoke-direct {v0, v1}, Ldagger/internal/DoubleCheck;-><init>(Ljavax/inject/Provider;)V
+
+    move-object v1, v0
+
+    :goto_45
+    iput-object v1, v15, Lde/rki/coronawarnapp/util/di/DaggerApplicationComponent;->traceLocationPreferencesProvider:Ljavax/inject/Provider;
+
+    new-instance v0, Lde/rki/coronawarnapp/ui/presencetracing/organizer/TraceLocationOrganizerSettings_Factory;
+
+    invoke-direct {v0, v1}, Lde/rki/coronawarnapp/ui/presencetracing/organizer/TraceLocationOrganizerSettings_Factory;-><init>(Ljavax/inject/Provider;)V
+
+    instance-of v1, v0, Ldagger/internal/DoubleCheck;
+
+    if-eqz v1, :cond_46
+
+    goto :goto_46
+
+    :cond_46
     new-instance v1, Ldagger/internal/DoubleCheck;
 
     invoke-direct {v1, v0}, Ldagger/internal/DoubleCheck;-><init>(Ljavax/inject/Provider;)V
 
     move-object v0, v1
 
-    :goto_45
-    iput-object v0, v13, Lde/rki/coronawarnapp/util/di/DaggerApplicationComponent;->analyticsProvider:Ljavax/inject/Provider;
+    :goto_46
+    iput-object v0, v15, Lde/rki/coronawarnapp/util/di/DaggerApplicationComponent;->traceLocationOrganizerSettingsProvider:Ljavax/inject/Provider;
 
-    new-instance v1, Lde/rki/coronawarnapp/datadonation/analytics/worker/DataDonationAnalyticsPeriodicWorker_Factory;
+    iget-object v0, v15, Lde/rki/coronawarnapp/util/di/DaggerApplicationComponent;->foregroundStateProvider:Ljavax/inject/Provider;
 
-    invoke-direct {v1, v0}, Lde/rki/coronawarnapp/datadonation/analytics/worker/DataDonationAnalyticsPeriodicWorker_Factory;-><init>(Ljavax/inject/Provider;)V
+    iget-object v1, v15, Lde/rki/coronawarnapp/util/di/DaggerApplicationComponent;->notificationManagerCompatProvider:Ljavax/inject/Provider;
 
-    new-instance v0, Lde/rki/coronawarnapp/datadonation/analytics/worker/DataDonationAnalyticsPeriodicWorker_Factory_Impl;
+    new-instance v3, Lde/rki/coronawarnapp/ui/settings/notifications/NotificationSettings_Factory;
 
-    invoke-direct {v0, v1}, Lde/rki/coronawarnapp/datadonation/analytics/worker/DataDonationAnalyticsPeriodicWorker_Factory_Impl;-><init>(Lde/rki/coronawarnapp/datadonation/analytics/worker/DataDonationAnalyticsPeriodicWorker_Factory;)V
-
-    new-instance v1, Ldagger/internal/InstanceFactory;
-
-    invoke-direct {v1, v0}, Ldagger/internal/InstanceFactory;-><init>(Ljava/lang/Object;)V
-
-    iput-object v1, v13, Lde/rki/coronawarnapp/util/di/DaggerApplicationComponent;->factoryProvider24:Ljavax/inject/Provider;
-
-    iget-object v0, v13, Lde/rki/coronawarnapp/util/di/DaggerApplicationComponent;->contextProvider:Ljavax/inject/Provider;
-
-    iget-object v1, v13, Lde/rki/coronawarnapp/util/di/DaggerApplicationComponent;->notificationManagerCompatProvider:Ljavax/inject/Provider;
-
-    new-instance v2, Lde/rki/coronawarnapp/presencetracing/common/PresenceTracingNotifications_Factory;
-
-    invoke-direct {v2, v0, v1}, Lde/rki/coronawarnapp/presencetracing/common/PresenceTracingNotifications_Factory;-><init>(Ljavax/inject/Provider;Ljavax/inject/Provider;)V
-
-    invoke-static {v2}, Ldagger/internal/SingleCheck;->provider(Ljavax/inject/Provider;)Ljavax/inject/Provider;
-
-    move-result-object v0
-
-    iput-object v0, v13, Lde/rki/coronawarnapp/util/di/DaggerApplicationComponent;->presenceTracingNotificationsProvider:Ljavax/inject/Provider;
-
-    sget-object v0, Lde/rki/coronawarnapp/util/notifications/NavDeepLinkBuilderFactory_Factory$InstanceHolder;->INSTANCE:Lde/rki/coronawarnapp/util/notifications/NavDeepLinkBuilderFactory_Factory;
-
-    invoke-static {v0}, Ldagger/internal/SingleCheck;->provider(Ljavax/inject/Provider;)Ljavax/inject/Provider;
-
-    move-result-object v0
-
-    iput-object v0, v13, Lde/rki/coronawarnapp/util/di/DaggerApplicationComponent;->navDeepLinkBuilderFactoryProvider:Ljavax/inject/Provider;
-
-    iget-object v0, v13, Lde/rki/coronawarnapp/util/di/DaggerApplicationComponent;->contextProvider:Ljavax/inject/Provider;
-
-    iget-object v1, v13, Lde/rki/coronawarnapp/util/di/DaggerApplicationComponent;->foregroundStateProvider:Ljavax/inject/Provider;
-
-    iget-object v2, v13, Lde/rki/coronawarnapp/util/di/DaggerApplicationComponent;->presenceTracingNotificationsProvider:Ljavax/inject/Provider;
-
-    iget-object v3, v13, Lde/rki/coronawarnapp/util/di/DaggerApplicationComponent;->navDeepLinkBuilderFactoryProvider:Ljavax/inject/Provider;
-
-    new-instance v4, Lde/rki/coronawarnapp/presencetracing/checkins/checkout/CheckOutNotification_Factory;
-
-    invoke-direct {v4, v0, v1, v2, v3}, Lde/rki/coronawarnapp/presencetracing/checkins/checkout/CheckOutNotification_Factory;-><init>(Ljavax/inject/Provider;Ljavax/inject/Provider;Ljavax/inject/Provider;Ljavax/inject/Provider;)V
-
-    invoke-static {v4}, Ldagger/internal/SingleCheck;->provider(Ljavax/inject/Provider;)Ljavax/inject/Provider;
-
-    move-result-object v0
-
-    iput-object v0, v13, Lde/rki/coronawarnapp/util/di/DaggerApplicationComponent;->checkOutNotificationProvider:Ljavax/inject/Provider;
-
-    iget-object v0, v13, Lde/rki/coronawarnapp/util/di/DaggerApplicationComponent;->autoCheckOutProvider:Ljavax/inject/Provider;
-
-    iget-object v1, v13, Lde/rki/coronawarnapp/util/di/DaggerApplicationComponent;->checkOutNotificationProvider:Ljavax/inject/Provider;
-
-    new-instance v2, Lde/rki/coronawarnapp/presencetracing/checkins/checkout/auto/AutoCheckOutWorker_Factory;
-
-    invoke-direct {v2, v0, v1}, Lde/rki/coronawarnapp/presencetracing/checkins/checkout/auto/AutoCheckOutWorker_Factory;-><init>(Ljavax/inject/Provider;Ljavax/inject/Provider;)V
-
-    new-instance v0, Lde/rki/coronawarnapp/presencetracing/checkins/checkout/auto/AutoCheckOutWorker_Factory_Impl;
-
-    invoke-direct {v0, v2}, Lde/rki/coronawarnapp/presencetracing/checkins/checkout/auto/AutoCheckOutWorker_Factory_Impl;-><init>(Lde/rki/coronawarnapp/presencetracing/checkins/checkout/auto/AutoCheckOutWorker_Factory;)V
-
-    new-instance v1, Ldagger/internal/InstanceFactory;
-
-    invoke-direct {v1, v0}, Ldagger/internal/InstanceFactory;-><init>(Ljava/lang/Object;)V
-
-    iput-object v1, v13, Lde/rki/coronawarnapp/util/di/DaggerApplicationComponent;->factoryProvider25:Ljavax/inject/Provider;
-
-    iget-object v0, v13, Lde/rki/coronawarnapp/util/di/DaggerApplicationComponent;->factoryProvider8:Ljavax/inject/Provider;
-
-    iget-object v1, v13, Lde/rki/coronawarnapp/util/di/DaggerApplicationComponent;->appCoroutineScopeProvider:Ljavax/inject/Provider;
-
-    iget-object v2, v13, Lde/rki/coronawarnapp/util/di/DaggerApplicationComponent;->timeStamperProvider:Ljavax/inject/Provider;
-
-    new-instance v3, Lde/rki/coronawarnapp/presencetracing/storage/repo/DefaultTraceLocationRepository_Factory;
-
-    invoke-direct {v3, v0, v1, v2}, Lde/rki/coronawarnapp/presencetracing/storage/repo/DefaultTraceLocationRepository_Factory;-><init>(Ljavax/inject/Provider;Ljavax/inject/Provider;Ljavax/inject/Provider;)V
+    invoke-direct {v3, v0, v1}, Lde/rki/coronawarnapp/ui/settings/notifications/NotificationSettings_Factory;-><init>(Ljavax/inject/Provider;Ljavax/inject/Provider;)V
 
     instance-of v0, v3, Ldagger/internal/DoubleCheck;
-
-    if-eqz v0, :cond_46
-
-    goto :goto_46
-
-    :cond_46
-    new-instance v0, Ldagger/internal/DoubleCheck;
-
-    invoke-direct {v0, v3}, Ldagger/internal/DoubleCheck;-><init>(Ljavax/inject/Provider;)V
-
-    move-object v3, v0
-
-    :goto_46
-    iput-object v3, v13, Lde/rki/coronawarnapp/util/di/DaggerApplicationComponent;->defaultTraceLocationRepositoryProvider:Ljavax/inject/Provider;
-
-    iget-object v0, v13, Lde/rki/coronawarnapp/util/di/DaggerApplicationComponent;->timeStamperProvider:Ljavax/inject/Provider;
-
-    new-instance v1, Lde/rki/coronawarnapp/presencetracing/storage/retention/TraceLocationCleaner_Factory;
-
-    invoke-direct {v1, v3, v0}, Lde/rki/coronawarnapp/presencetracing/storage/retention/TraceLocationCleaner_Factory;-><init>(Ljavax/inject/Provider;Ljavax/inject/Provider;)V
-
-    invoke-static {v1}, Ldagger/internal/SingleCheck;->provider(Ljavax/inject/Provider;)Ljavax/inject/Provider;
-
-    move-result-object v0
-
-    iput-object v0, v13, Lde/rki/coronawarnapp/util/di/DaggerApplicationComponent;->traceLocationCleanerProvider:Ljavax/inject/Provider;
-
-    iget-object v0, v13, Lde/rki/coronawarnapp/util/di/DaggerApplicationComponent;->checkInRepositoryProvider:Ljavax/inject/Provider;
-
-    iget-object v1, v13, Lde/rki/coronawarnapp/util/di/DaggerApplicationComponent;->timeStamperProvider:Ljavax/inject/Provider;
-
-    new-instance v2, Lde/rki/coronawarnapp/presencetracing/storage/retention/CheckInCleaner_Factory;
-
-    invoke-direct {v2, v0, v1}, Lde/rki/coronawarnapp/presencetracing/storage/retention/CheckInCleaner_Factory;-><init>(Ljavax/inject/Provider;Ljavax/inject/Provider;)V
-
-    invoke-static {v2}, Ldagger/internal/SingleCheck;->provider(Ljavax/inject/Provider;)Ljavax/inject/Provider;
-
-    move-result-object v0
-
-    iput-object v0, v13, Lde/rki/coronawarnapp/util/di/DaggerApplicationComponent;->checkInCleanerProvider:Ljavax/inject/Provider;
-
-    iget-object v0, v13, Lde/rki/coronawarnapp/util/di/DaggerApplicationComponent;->traceLocationCleanerProvider:Ljavax/inject/Provider;
-
-    iget-object v1, v13, Lde/rki/coronawarnapp/util/di/DaggerApplicationComponent;->checkInCleanerProvider:Ljavax/inject/Provider;
-
-    new-instance v2, Lde/rki/coronawarnapp/presencetracing/storage/retention/TraceLocationDbCleanUpPeriodicWorker_Factory;
-
-    invoke-direct {v2, v0, v1}, Lde/rki/coronawarnapp/presencetracing/storage/retention/TraceLocationDbCleanUpPeriodicWorker_Factory;-><init>(Ljavax/inject/Provider;Ljavax/inject/Provider;)V
-
-    new-instance v0, Lde/rki/coronawarnapp/presencetracing/storage/retention/TraceLocationDbCleanUpPeriodicWorker_Factory_Impl;
-
-    invoke-direct {v0, v2}, Lde/rki/coronawarnapp/presencetracing/storage/retention/TraceLocationDbCleanUpPeriodicWorker_Factory_Impl;-><init>(Lde/rki/coronawarnapp/presencetracing/storage/retention/TraceLocationDbCleanUpPeriodicWorker_Factory;)V
-
-    new-instance v1, Ldagger/internal/InstanceFactory;
-
-    invoke-direct {v1, v0}, Ldagger/internal/InstanceFactory;-><init>(Ljava/lang/Object;)V
-
-    iput-object v1, v13, Lde/rki/coronawarnapp/util/di/DaggerApplicationComponent;->factoryProvider26:Ljavax/inject/Provider;
-
-    iget-object v0, v13, Lde/rki/coronawarnapp/util/di/DaggerApplicationComponent;->taskControllerProvider:Ljavax/inject/Provider;
-
-    new-instance v1, Lde/rki/coronawarnapp/presencetracing/risk/execution/PresenceTracingWarningWorker_Factory;
-
-    invoke-direct {v1, v0}, Lde/rki/coronawarnapp/presencetracing/risk/execution/PresenceTracingWarningWorker_Factory;-><init>(Ljavax/inject/Provider;)V
-
-    new-instance v0, Lde/rki/coronawarnapp/presencetracing/risk/execution/PresenceTracingWarningWorker_Factory_Impl;
-
-    invoke-direct {v0, v1}, Lde/rki/coronawarnapp/presencetracing/risk/execution/PresenceTracingWarningWorker_Factory_Impl;-><init>(Lde/rki/coronawarnapp/presencetracing/risk/execution/PresenceTracingWarningWorker_Factory;)V
-
-    new-instance v1, Ldagger/internal/InstanceFactory;
-
-    invoke-direct {v1, v0}, Ldagger/internal/InstanceFactory;-><init>(Ljava/lang/Object;)V
-
-    iput-object v1, v13, Lde/rki/coronawarnapp/util/di/DaggerApplicationComponent;->factoryProvider27:Ljavax/inject/Provider;
-
-    iget-object v0, v13, Lde/rki/coronawarnapp/util/di/DaggerApplicationComponent;->contextProvider:Ljavax/inject/Provider;
-
-    iget-object v1, v13, Lde/rki/coronawarnapp/util/di/DaggerApplicationComponent;->baseGsonProvider:Ljavax/inject/Provider;
-
-    new-instance v2, Lde/rki/coronawarnapp/covidcertificate/test/core/storage/TestCertificateStorage_Factory;
-
-    invoke-direct {v2, v0, v1}, Lde/rki/coronawarnapp/covidcertificate/test/core/storage/TestCertificateStorage_Factory;-><init>(Ljavax/inject/Provider;Ljavax/inject/Provider;)V
-
-    instance-of v0, v2, Ldagger/internal/DoubleCheck;
 
     if-eqz v0, :cond_47
 
@@ -7329,326 +7711,42 @@
     :cond_47
     new-instance v0, Ldagger/internal/DoubleCheck;
 
-    invoke-direct {v0, v2}, Ldagger/internal/DoubleCheck;-><init>(Ljavax/inject/Provider;)V
+    invoke-direct {v0, v3}, Ldagger/internal/DoubleCheck;-><init>(Ljavax/inject/Provider;)V
 
-    move-object v2, v0
+    move-object v3, v0
 
     :goto_47
-    iput-object v2, v13, Lde/rki/coronawarnapp/util/di/DaggerApplicationComponent;->testCertificateStorageProvider:Ljavax/inject/Provider;
+    iput-object v3, v15, Lde/rki/coronawarnapp/util/di/DaggerApplicationComponent;->notificationSettingsProvider:Ljavax/inject/Provider;
 
-    sget-object v0, Lde/rki/coronawarnapp/covidcertificate/common/cryptography/AesCryptography_Factory$InstanceHolder;->INSTANCE:Lde/rki/coronawarnapp/covidcertificate/common/cryptography/AesCryptography_Factory;
+    new-instance v0, Lde/rki/coronawarnapp/bugreporting/BugReportingSharedModule_DebugLoggerFactory;
 
-    new-instance v1, Lde/rki/coronawarnapp/covidcertificate/common/decoder/DccCoseDecoder_Factory;
+    invoke-direct {v0, v2}, Lde/rki/coronawarnapp/bugreporting/BugReportingSharedModule_DebugLoggerFactory;-><init>(Lde/rki/coronawarnapp/bugreporting/BugReportingSharedModule;)V
 
-    invoke-direct {v1, v0}, Lde/rki/coronawarnapp/covidcertificate/common/decoder/DccCoseDecoder_Factory;-><init>(Ljavax/inject/Provider;)V
+    instance-of v1, v0, Ldagger/internal/DoubleCheck;
 
-    iput-object v1, v13, Lde/rki/coronawarnapp/util/di/DaggerApplicationComponent;->dccCoseDecoderProvider:Ljavax/inject/Provider;
-
-    sget-object v0, Lde/rki/coronawarnapp/covidcertificate/common/decoder/DccHeaderParser_Factory$InstanceHolder;->INSTANCE:Lde/rki/coronawarnapp/covidcertificate/common/decoder/DccHeaderParser_Factory;
-
-    invoke-static {v0}, Ldagger/internal/SingleCheck;->provider(Ljavax/inject/Provider;)Ljavax/inject/Provider;
-
-    move-result-object v0
-
-    iput-object v0, v13, Lde/rki/coronawarnapp/util/di/DaggerApplicationComponent;->dccHeaderParserProvider:Ljavax/inject/Provider;
-
-    iget-object v0, v13, Lde/rki/coronawarnapp/util/di/DaggerApplicationComponent;->contextProvider:Ljavax/inject/Provider;
-
-    new-instance v1, Lde/rki/coronawarnapp/util/di/AndroidModule_AssetManagerFactory;
-
-    invoke-direct {v1, v14, v0}, Lde/rki/coronawarnapp/util/di/AndroidModule_AssetManagerFactory;-><init>(Lde/rki/coronawarnapp/util/di/AndroidModule;Ljavax/inject/Provider;)V
-
-    iput-object v1, v13, Lde/rki/coronawarnapp/util/di/DaggerApplicationComponent;->assetManagerProvider:Ljavax/inject/Provider;
-
-    new-instance v0, Lde/rki/coronawarnapp/covidcertificate/common/certificate/DccJsonSchema_Factory;
-
-    invoke-direct {v0, v1}, Lde/rki/coronawarnapp/covidcertificate/common/certificate/DccJsonSchema_Factory;-><init>(Ljavax/inject/Provider;)V
-
-    invoke-static {v0}, Ldagger/internal/SingleCheck;->provider(Ljavax/inject/Provider;)Ljavax/inject/Provider;
-
-    move-result-object v0
-
-    iput-object v0, v13, Lde/rki/coronawarnapp/util/di/DaggerApplicationComponent;->dccJsonSchemaProvider:Ljavax/inject/Provider;
-
-    new-instance v0, Lde/rki/coronawarnapp/util/serialization/SerializationModule_JacksonObjectMapperFactory;
-
-    move-object/from16 v1, p21
-
-    invoke-direct {v0, v1}, Lde/rki/coronawarnapp/util/serialization/SerializationModule_JacksonObjectMapperFactory;-><init>(Lde/rki/coronawarnapp/util/serialization/SerializationModule;)V
-
-    invoke-static {v0}, Ldagger/internal/SingleCheck;->provider(Ljavax/inject/Provider;)Ljavax/inject/Provider;
-
-    move-result-object v0
-
-    iput-object v0, v13, Lde/rki/coronawarnapp/util/di/DaggerApplicationComponent;->jacksonObjectMapperProvider:Ljavax/inject/Provider;
-
-    new-instance v1, Lde/rki/coronawarnapp/util/serialization/validation/JsonSchemaValidator_Factory;
-
-    invoke-direct {v1, v0}, Lde/rki/coronawarnapp/util/serialization/validation/JsonSchemaValidator_Factory;-><init>(Ljavax/inject/Provider;)V
-
-    invoke-static {v1}, Ldagger/internal/SingleCheck;->provider(Ljavax/inject/Provider;)Ljavax/inject/Provider;
-
-    move-result-object v0
-
-    iput-object v0, v13, Lde/rki/coronawarnapp/util/di/DaggerApplicationComponent;->jsonSchemaValidatorProvider:Ljavax/inject/Provider;
-
-    iget-object v0, v13, Lde/rki/coronawarnapp/util/di/DaggerApplicationComponent;->dccJsonSchemaProvider:Ljavax/inject/Provider;
-
-    iget-object v1, v13, Lde/rki/coronawarnapp/util/di/DaggerApplicationComponent;->jsonSchemaValidatorProvider:Ljavax/inject/Provider;
-
-    new-instance v2, Lde/rki/coronawarnapp/covidcertificate/common/certificate/DccJsonSchemaValidator_Factory;
-
-    invoke-direct {v2, v0, v1}, Lde/rki/coronawarnapp/covidcertificate/common/certificate/DccJsonSchemaValidator_Factory;-><init>(Ljavax/inject/Provider;Ljavax/inject/Provider;)V
-
-    invoke-static {v2}, Ldagger/internal/SingleCheck;->provider(Ljavax/inject/Provider;)Ljavax/inject/Provider;
-
-    move-result-object v0
-
-    iput-object v0, v13, Lde/rki/coronawarnapp/util/di/DaggerApplicationComponent;->dccJsonSchemaValidatorProvider:Ljavax/inject/Provider;
-
-    iget-object v0, v13, Lde/rki/coronawarnapp/util/di/DaggerApplicationComponent;->baseGsonProvider:Ljavax/inject/Provider;
-
-    iget-object v1, v13, Lde/rki/coronawarnapp/util/di/DaggerApplicationComponent;->dccJsonSchemaValidatorProvider:Ljavax/inject/Provider;
-
-    new-instance v2, Lde/rki/coronawarnapp/covidcertificate/common/certificate/DccV1Parser_Factory;
-
-    invoke-direct {v2, v0, v1}, Lde/rki/coronawarnapp/covidcertificate/common/certificate/DccV1Parser_Factory;-><init>(Ljavax/inject/Provider;Ljavax/inject/Provider;)V
-
-    invoke-static {v2}, Ldagger/internal/SingleCheck;->provider(Ljavax/inject/Provider;)Ljavax/inject/Provider;
-
-    move-result-object v0
-
-    iput-object v0, v13, Lde/rki/coronawarnapp/util/di/DaggerApplicationComponent;->dccV1ParserProvider:Ljavax/inject/Provider;
-
-    iget-object v0, v13, Lde/rki/coronawarnapp/util/di/DaggerApplicationComponent;->dccCoseDecoderProvider:Ljavax/inject/Provider;
-
-    iget-object v1, v13, Lde/rki/coronawarnapp/util/di/DaggerApplicationComponent;->dccHeaderParserProvider:Ljavax/inject/Provider;
-
-    iget-object v2, v13, Lde/rki/coronawarnapp/util/di/DaggerApplicationComponent;->dccV1ParserProvider:Ljavax/inject/Provider;
-
-    new-instance v3, Lde/rki/coronawarnapp/covidcertificate/common/certificate/DccQrCodeExtractor_Factory;
-
-    invoke-direct {v3, v0, v1, v2}, Lde/rki/coronawarnapp/covidcertificate/common/certificate/DccQrCodeExtractor_Factory;-><init>(Ljavax/inject/Provider;Ljavax/inject/Provider;Ljavax/inject/Provider;)V
-
-    iput-object v3, v13, Lde/rki/coronawarnapp/util/di/DaggerApplicationComponent;->dccQrCodeExtractorProvider:Ljavax/inject/Provider;
-
-    iget-object v0, v13, Lde/rki/coronawarnapp/util/di/DaggerApplicationComponent;->defaultHttpClientProvider:Ljavax/inject/Provider;
-
-    new-instance v1, Lde/rki/coronawarnapp/environment/covidcertificate/DCCModule_DccHttpClientFactory;
-
-    move-object/from16 v2, p12
-
-    invoke-direct {v1, v2, v0}, Lde/rki/coronawarnapp/environment/covidcertificate/DCCModule_DccHttpClientFactory;-><init>(Lde/rki/coronawarnapp/environment/covidcertificate/DCCModule;Ljavax/inject/Provider;)V
-
-    invoke-static {v1}, Ldagger/internal/SingleCheck;->provider(Ljavax/inject/Provider;)Ljavax/inject/Provider;
-
-    move-result-object v0
-
-    iput-object v0, v13, Lde/rki/coronawarnapp/util/di/DaggerApplicationComponent;->dccHttpClientProvider:Ljavax/inject/Provider;
-
-    iget-object v0, v13, Lde/rki/coronawarnapp/util/di/DaggerApplicationComponent;->environmentSetupProvider:Ljavax/inject/Provider;
-
-    new-instance v1, Lde/rki/coronawarnapp/environment/covidcertificate/DCCModule_DccServerUrlFactory;
-
-    invoke-direct {v1, v2, v0}, Lde/rki/coronawarnapp/environment/covidcertificate/DCCModule_DccServerUrlFactory;-><init>(Lde/rki/coronawarnapp/environment/covidcertificate/DCCModule;Ljavax/inject/Provider;)V
-
-    instance-of v0, v1, Ldagger/internal/DoubleCheck;
-
-    if-eqz v0, :cond_48
+    if-eqz v1, :cond_48
 
     goto :goto_48
 
     :cond_48
-    new-instance v0, Ldagger/internal/DoubleCheck;
+    new-instance v1, Ldagger/internal/DoubleCheck;
 
-    invoke-direct {v0, v1}, Ldagger/internal/DoubleCheck;-><init>(Ljavax/inject/Provider;)V
+    invoke-direct {v1, v0}, Ldagger/internal/DoubleCheck;-><init>(Ljavax/inject/Provider;)V
 
-    move-object v1, v0
+    move-object v0, v1
 
     :goto_48
-    iput-object v1, v13, Lde/rki/coronawarnapp/util/di/DaggerApplicationComponent;->dccServerUrlProvider:Ljavax/inject/Provider;
+    iput-object v0, v15, Lde/rki/coronawarnapp/util/di/DaggerApplicationComponent;->debugLoggerProvider:Ljavax/inject/Provider;
 
-    iget-object v0, v13, Lde/rki/coronawarnapp/util/di/DaggerApplicationComponent;->dccHttpClientProvider:Ljavax/inject/Provider;
+    iget-object v0, v15, Lde/rki/coronawarnapp/util/di/DaggerApplicationComponent;->contextProvider:Ljavax/inject/Provider;
 
-    iget-object v1, v13, Lde/rki/coronawarnapp/util/di/DaggerApplicationComponent;->dccServerUrlProvider:Ljavax/inject/Provider;
+    iget-object v1, v15, Lde/rki/coronawarnapp/util/di/DaggerApplicationComponent;->baseGsonProvider:Ljavax/inject/Provider;
 
-    iget-object v2, v13, Lde/rki/coronawarnapp/util/di/DaggerApplicationComponent;->provideGSONConverterProvider:Ljavax/inject/Provider;
+    new-instance v3, Lde/rki/coronawarnapp/bugreporting/BugReportingSettings_Factory;
 
-    new-instance v3, Lde/rki/coronawarnapp/covidcertificate/test/core/server/TestCertificateServerModule_ApiV1Factory;
+    invoke-direct {v3, v0, v1}, Lde/rki/coronawarnapp/bugreporting/BugReportingSettings_Factory;-><init>(Ljavax/inject/Provider;Ljavax/inject/Provider;)V
 
-    move-object/from16 v4, p32
-
-    invoke-direct {v3, v4, v0, v1, v2}, Lde/rki/coronawarnapp/covidcertificate/test/core/server/TestCertificateServerModule_ApiV1Factory;-><init>(Lde/rki/coronawarnapp/covidcertificate/test/core/server/TestCertificateServerModule;Ljavax/inject/Provider;Ljavax/inject/Provider;Ljavax/inject/Provider;)V
-
-    invoke-static {v3}, Ldagger/internal/SingleCheck;->provider(Ljavax/inject/Provider;)Ljavax/inject/Provider;
-
-    move-result-object v0
-
-    iput-object v0, v13, Lde/rki/coronawarnapp/util/di/DaggerApplicationComponent;->apiV1Provider2:Ljavax/inject/Provider;
-
-    iget-object v1, v13, Lde/rki/coronawarnapp/util/di/DaggerApplicationComponent;->defaultDispatcherProvider:Ljavax/inject/Provider;
-
-    iget-object v2, v13, Lde/rki/coronawarnapp/util/di/DaggerApplicationComponent;->networkStateProvider:Ljavax/inject/Provider;
-
-    new-instance v3, Lde/rki/coronawarnapp/covidcertificate/test/core/server/TestCertificateServer_Factory;
-
-    invoke-direct {v3, v0, v1, v2}, Lde/rki/coronawarnapp/covidcertificate/test/core/server/TestCertificateServer_Factory;-><init>(Ljavax/inject/Provider;Ljavax/inject/Provider;Ljavax/inject/Provider;)V
-
-    invoke-static {v3}, Ldagger/internal/SingleCheck;->provider(Ljavax/inject/Provider;)Ljavax/inject/Provider;
-
-    move-result-object v0
-
-    iput-object v0, v13, Lde/rki/coronawarnapp/util/di/DaggerApplicationComponent;->testCertificateServerProvider:Ljavax/inject/Provider;
-
-    sget-object v0, Lde/rki/coronawarnapp/util/encryption/rsa/RSACryptography_Factory$InstanceHolder;->INSTANCE:Lde/rki/coronawarnapp/util/encryption/rsa/RSACryptography_Factory;
-
-    invoke-static {v0}, Ldagger/internal/SingleCheck;->provider(Ljavax/inject/Provider;)Ljavax/inject/Provider;
-
-    move-result-object v0
-
-    iput-object v0, v13, Lde/rki/coronawarnapp/util/di/DaggerApplicationComponent;->rSACryptographyProvider:Ljavax/inject/Provider;
-
-    sget-object v0, Lde/rki/coronawarnapp/util/encryption/rsa/RSAKeyPairGenerator_Factory$InstanceHolder;->INSTANCE:Lde/rki/coronawarnapp/util/encryption/rsa/RSAKeyPairGenerator_Factory;
-
-    invoke-static {v0}, Ldagger/internal/SingleCheck;->provider(Ljavax/inject/Provider;)Ljavax/inject/Provider;
-
-    move-result-object v0
-
-    iput-object v0, v13, Lde/rki/coronawarnapp/util/di/DaggerApplicationComponent;->rSAKeyPairGeneratorProvider:Ljavax/inject/Provider;
-
-    iget-object v0, v13, Lde/rki/coronawarnapp/util/di/DaggerApplicationComponent;->timeStamperProvider:Ljavax/inject/Provider;
-
-    iget-object v1, v13, Lde/rki/coronawarnapp/util/di/DaggerApplicationComponent;->testCertificateServerProvider:Ljavax/inject/Provider;
-
-    iget-object v2, v13, Lde/rki/coronawarnapp/util/di/DaggerApplicationComponent;->rSACryptographyProvider:Ljavax/inject/Provider;
-
-    iget-object v3, v13, Lde/rki/coronawarnapp/util/di/DaggerApplicationComponent;->appConfigProvider:Ljavax/inject/Provider;
-
-    iget-object v4, v13, Lde/rki/coronawarnapp/util/di/DaggerApplicationComponent;->dccQrCodeExtractorProvider:Ljavax/inject/Provider;
-
-    iget-object v5, v13, Lde/rki/coronawarnapp/util/di/DaggerApplicationComponent;->rSAKeyPairGeneratorProvider:Ljavax/inject/Provider;
-
-    new-instance v6, Lde/rki/coronawarnapp/covidcertificate/test/core/TestCertificateProcessor_Factory;
-
-    move-object/from16 p4, v6
-
-    move-object/from16 p5, v0
-
-    move-object/from16 p6, v1
-
-    move-object/from16 p7, v2
-
-    move-object/from16 p8, v3
-
-    move-object/from16 p9, v4
-
-    move-object/from16 p10, v5
-
-    invoke-direct/range {p4 .. p10}, Lde/rki/coronawarnapp/covidcertificate/test/core/TestCertificateProcessor_Factory;-><init>(Ljavax/inject/Provider;Ljavax/inject/Provider;Ljavax/inject/Provider;Ljavax/inject/Provider;Ljavax/inject/Provider;Ljavax/inject/Provider;)V
-
-    invoke-static {v6}, Ldagger/internal/SingleCheck;->provider(Ljavax/inject/Provider;)Ljavax/inject/Provider;
-
-    move-result-object v0
-
-    iput-object v0, v13, Lde/rki/coronawarnapp/util/di/DaggerApplicationComponent;->testCertificateProcessorProvider:Ljavax/inject/Provider;
-
-    iget-object v0, v13, Lde/rki/coronawarnapp/util/di/DaggerApplicationComponent;->contextProvider:Ljavax/inject/Provider;
-
-    new-instance v1, Lde/rki/coronawarnapp/covidcertificate/valueset/CertificateValueSetModule_CacheFactory;
-
-    move-object/from16 v2, p31
-
-    invoke-direct {v1, v2, v0}, Lde/rki/coronawarnapp/covidcertificate/valueset/CertificateValueSetModule_CacheFactory;-><init>(Lde/rki/coronawarnapp/covidcertificate/valueset/CertificateValueSetModule;Ljavax/inject/Provider;)V
-
-    invoke-static {v1}, Ldagger/internal/SingleCheck;->provider(Ljavax/inject/Provider;)Ljavax/inject/Provider;
-
-    move-result-object v0
-
-    iput-object v0, v13, Lde/rki/coronawarnapp/util/di/DaggerApplicationComponent;->cacheProvider:Ljavax/inject/Provider;
-
-    iget-object v0, v13, Lde/rki/coronawarnapp/util/di/DaggerApplicationComponent;->cdnHttpClientProvider:Ljavax/inject/Provider;
-
-    iget-object v1, v13, Lde/rki/coronawarnapp/util/di/DaggerApplicationComponent;->provideDownloadServerUrlProvider:Ljavax/inject/Provider;
-
-    iget-object v3, v13, Lde/rki/coronawarnapp/util/di/DaggerApplicationComponent;->cacheProvider:Ljavax/inject/Provider;
-
-    new-instance v4, Lde/rki/coronawarnapp/covidcertificate/valueset/ValueSetsRepository_Factory;
-
-    invoke-direct {v4, v2, v0, v1, v3}, Lde/rki/coronawarnapp/covidcertificate/valueset/ValueSetsRepository_Factory;-><init>(Lde/rki/coronawarnapp/covidcertificate/valueset/CertificateValueSetModule;Ljavax/inject/Provider;Ljavax/inject/Provider;Ljavax/inject/Provider;)V
-
-    invoke-static {v4}, Ldagger/internal/SingleCheck;->provider(Ljavax/inject/Provider;)Ljavax/inject/Provider;
-
-    move-result-object v0
-
-    iput-object v0, v13, Lde/rki/coronawarnapp/util/di/DaggerApplicationComponent;->apiProvider:Ljavax/inject/Provider;
-
-    iget-object v0, v13, Lde/rki/coronawarnapp/util/di/DaggerApplicationComponent;->cacheProvider:Ljavax/inject/Provider;
-
-    iget-object v1, v13, Lde/rki/coronawarnapp/util/di/DaggerApplicationComponent;->apiProvider:Ljavax/inject/Provider;
-
-    iget-object v2, v13, Lde/rki/coronawarnapp/util/di/DaggerApplicationComponent;->defaultDispatcherProvider:Ljavax/inject/Provider;
-
-    iget-object v3, v13, Lde/rki/coronawarnapp/util/di/DaggerApplicationComponent;->signatureValidationProvider:Ljavax/inject/Provider;
-
-    new-instance v4, Lde/rki/coronawarnapp/covidcertificate/valueset/server/CertificateValueSetServer_Factory;
-
-    invoke-direct {v4, v0, v1, v2, v3}, Lde/rki/coronawarnapp/covidcertificate/valueset/server/CertificateValueSetServer_Factory;-><init>(Ljavax/inject/Provider;Ljavax/inject/Provider;Ljavax/inject/Provider;Ljavax/inject/Provider;)V
-
-    invoke-static {v4}, Ldagger/internal/SingleCheck;->provider(Ljavax/inject/Provider;)Ljavax/inject/Provider;
-
-    move-result-object v0
-
-    iput-object v0, v13, Lde/rki/coronawarnapp/util/di/DaggerApplicationComponent;->certificateValueSetServerProvider:Ljavax/inject/Provider;
-
-    iget-object v0, v13, Lde/rki/coronawarnapp/util/di/DaggerApplicationComponent;->contextProvider:Ljavax/inject/Provider;
-
-    iget-object v1, v13, Lde/rki/coronawarnapp/util/di/DaggerApplicationComponent;->baseGsonProvider:Ljavax/inject/Provider;
-
-    new-instance v2, Lde/rki/coronawarnapp/covidcertificate/valueset/valuesets/ValueSetsStorage_Factory;
-
-    invoke-direct {v2, v0, v1}, Lde/rki/coronawarnapp/covidcertificate/valueset/valuesets/ValueSetsStorage_Factory;-><init>(Ljavax/inject/Provider;Ljavax/inject/Provider;)V
-
-    invoke-static {v2}, Ldagger/internal/SingleCheck;->provider(Ljavax/inject/Provider;)Ljavax/inject/Provider;
-
-    move-result-object v0
-
-    iput-object v0, v13, Lde/rki/coronawarnapp/util/di/DaggerApplicationComponent;->valueSetsStorageProvider:Ljavax/inject/Provider;
-
-    iget-object v0, v13, Lde/rki/coronawarnapp/util/di/DaggerApplicationComponent;->certificateValueSetServerProvider:Ljavax/inject/Provider;
-
-    iget-object v1, v13, Lde/rki/coronawarnapp/util/di/DaggerApplicationComponent;->valueSetsStorageProvider:Ljavax/inject/Provider;
-
-    iget-object v2, v13, Lde/rki/coronawarnapp/util/di/DaggerApplicationComponent;->appCoroutineScopeProvider:Ljavax/inject/Provider;
-
-    iget-object v3, v13, Lde/rki/coronawarnapp/util/di/DaggerApplicationComponent;->defaultDispatcherProvider:Ljavax/inject/Provider;
-
-    new-instance v4, Lde/rki/coronawarnapp/covidcertificate/valueset/ValueSetsRepository_Factory;
-
-    invoke-direct {v4, v0, v1, v2, v3}, Lde/rki/coronawarnapp/covidcertificate/valueset/ValueSetsRepository_Factory;-><init>(Ljavax/inject/Provider;Ljavax/inject/Provider;Ljavax/inject/Provider;Ljavax/inject/Provider;)V
-
-    invoke-static {v4}, Ldagger/internal/SingleCheck;->provider(Ljavax/inject/Provider;)Ljavax/inject/Provider;
-
-    move-result-object v0
-
-    iput-object v0, v13, Lde/rki/coronawarnapp/util/di/DaggerApplicationComponent;->valueSetsRepositoryProvider:Ljavax/inject/Provider;
-
-    sget-object v0, Lde/rki/coronawarnapp/covidcertificate/signature/core/DscDataParser_Factory$InstanceHolder;->INSTANCE:Lde/rki/coronawarnapp/covidcertificate/signature/core/DscDataParser_Factory;
-
-    invoke-static {v0}, Ldagger/internal/SingleCheck;->provider(Ljavax/inject/Provider;)Ljavax/inject/Provider;
-
-    move-result-object v0
-
-    iput-object v0, v13, Lde/rki/coronawarnapp/util/di/DaggerApplicationComponent;->dscDataParserProvider:Ljavax/inject/Provider;
-
-    iget-object v0, v13, Lde/rki/coronawarnapp/util/di/DaggerApplicationComponent;->assetManagerProvider:Ljavax/inject/Provider;
-
-    iget-object v1, v13, Lde/rki/coronawarnapp/util/di/DaggerApplicationComponent;->dscDataParserProvider:Ljavax/inject/Provider;
-
-    new-instance v2, Lde/rki/coronawarnapp/covidcertificate/signature/core/storage/DefaultDscSource_Factory;
-
-    invoke-direct {v2, v0, v1}, Lde/rki/coronawarnapp/covidcertificate/signature/core/storage/DefaultDscSource_Factory;-><init>(Ljavax/inject/Provider;Ljavax/inject/Provider;)V
-
-    instance-of v0, v2, Ldagger/internal/DoubleCheck;
+    instance-of v0, v3, Ldagger/internal/DoubleCheck;
 
     if-eqz v0, :cond_49
 
@@ -7657,22 +7755,50 @@
     :cond_49
     new-instance v0, Ldagger/internal/DoubleCheck;
 
-    invoke-direct {v0, v2}, Ldagger/internal/DoubleCheck;-><init>(Ljavax/inject/Provider;)V
+    invoke-direct {v0, v3}, Ldagger/internal/DoubleCheck;-><init>(Ljavax/inject/Provider;)V
 
-    move-object v2, v0
+    move-object v3, v0
 
     :goto_49
-    iput-object v2, v13, Lde/rki/coronawarnapp/util/di/DaggerApplicationComponent;->defaultDscSourceProvider:Ljavax/inject/Provider;
+    iput-object v3, v15, Lde/rki/coronawarnapp/util/di/DaggerApplicationComponent;->bugReportingSettingsProvider:Ljavax/inject/Provider;
 
-    iget-object v0, v13, Lde/rki/coronawarnapp/util/di/DaggerApplicationComponent;->contextProvider:Ljavax/inject/Provider;
+    iget-object v0, v15, Lde/rki/coronawarnapp/util/di/DaggerApplicationComponent;->contextProvider:Ljavax/inject/Provider;
 
-    iget-object v1, v13, Lde/rki/coronawarnapp/util/di/DaggerApplicationComponent;->dscDataParserProvider:Ljavax/inject/Provider;
+    iget-object v1, v15, Lde/rki/coronawarnapp/util/di/DaggerApplicationComponent;->debugLoggerProvider:Ljavax/inject/Provider;
 
-    new-instance v2, Lde/rki/coronawarnapp/covidcertificate/signature/core/storage/LocalDscStorage_Factory;
+    iget-object v3, v15, Lde/rki/coronawarnapp/util/di/DaggerApplicationComponent;->timeStamperProvider:Ljavax/inject/Provider;
 
-    invoke-direct {v2, v0, v1}, Lde/rki/coronawarnapp/covidcertificate/signature/core/storage/LocalDscStorage_Factory;-><init>(Ljavax/inject/Provider;Ljavax/inject/Provider;)V
+    new-instance v4, Lde/rki/coronawarnapp/bugreporting/debuglog/internal/LogSnapshotter_Factory;
 
-    instance-of v0, v2, Ldagger/internal/DoubleCheck;
+    invoke-direct {v4, v0, v1, v3}, Lde/rki/coronawarnapp/bugreporting/debuglog/internal/LogSnapshotter_Factory;-><init>(Ljavax/inject/Provider;Ljavax/inject/Provider;Ljavax/inject/Provider;)V
+
+    invoke-static {v4}, Ldagger/internal/SingleCheck;->provider(Ljavax/inject/Provider;)Ljavax/inject/Provider;
+
+    move-result-object v0
+
+    iput-object v0, v15, Lde/rki/coronawarnapp/util/di/DaggerApplicationComponent;->logSnapshotterProvider:Ljavax/inject/Provider;
+
+    iget-object v0, v15, Lde/rki/coronawarnapp/util/di/DaggerApplicationComponent;->defaultHttpClientProvider:Ljavax/inject/Provider;
+
+    new-instance v1, Lde/rki/coronawarnapp/environment/bugreporting/BugReportingServerModule_CdnHttpClientFactory;
+
+    move-object/from16 v3, p11
+
+    invoke-direct {v1, v3, v0}, Lde/rki/coronawarnapp/environment/bugreporting/BugReportingServerModule_CdnHttpClientFactory;-><init>(Lde/rki/coronawarnapp/environment/bugreporting/BugReportingServerModule;Ljavax/inject/Provider;)V
+
+    invoke-static {v1}, Ldagger/internal/SingleCheck;->provider(Ljavax/inject/Provider;)Ljavax/inject/Provider;
+
+    move-result-object v0
+
+    iput-object v0, v15, Lde/rki/coronawarnapp/util/di/DaggerApplicationComponent;->cdnHttpClientProvider5:Ljavax/inject/Provider;
+
+    iget-object v0, v15, Lde/rki/coronawarnapp/util/di/DaggerApplicationComponent;->environmentSetupProvider:Ljavax/inject/Provider;
+
+    new-instance v1, Lde/rki/coronawarnapp/environment/bugreporting/BugReportingServerModule_ProvideBugReportingServerUrlFactory;
+
+    invoke-direct {v1, v3, v0}, Lde/rki/coronawarnapp/environment/bugreporting/BugReportingServerModule_ProvideBugReportingServerUrlFactory;-><init>(Lde/rki/coronawarnapp/environment/bugreporting/BugReportingServerModule;Ljavax/inject/Provider;)V
+
+    instance-of v0, v1, Ldagger/internal/DoubleCheck;
 
     if-eqz v0, :cond_4a
 
@@ -7681,22 +7807,110 @@
     :cond_4a
     new-instance v0, Ldagger/internal/DoubleCheck;
 
-    invoke-direct {v0, v2}, Ldagger/internal/DoubleCheck;-><init>(Ljavax/inject/Provider;)V
+    invoke-direct {v0, v1}, Ldagger/internal/DoubleCheck;-><init>(Ljavax/inject/Provider;)V
 
-    move-object v2, v0
+    move-object v1, v0
 
     :goto_4a
-    iput-object v2, v13, Lde/rki/coronawarnapp/util/di/DaggerApplicationComponent;->localDscStorageProvider:Ljavax/inject/Provider;
+    iput-object v1, v15, Lde/rki/coronawarnapp/util/di/DaggerApplicationComponent;->provideBugReportingServerUrlProvider:Ljavax/inject/Provider;
 
-    iget-object v0, v13, Lde/rki/coronawarnapp/util/di/DaggerApplicationComponent;->contextProvider:Ljavax/inject/Provider;
+    iget-object v0, v15, Lde/rki/coronawarnapp/util/di/DaggerApplicationComponent;->cdnHttpClientProvider5:Ljavax/inject/Provider;
 
-    new-instance v1, Lde/rki/coronawarnapp/statistics/StatisticsModule_CacheDirFactory;
+    iget-object v1, v15, Lde/rki/coronawarnapp/util/di/DaggerApplicationComponent;->provideBugReportingServerUrlProvider:Ljavax/inject/Provider;
 
-    move-object/from16 v9, p22
+    iget-object v3, v15, Lde/rki/coronawarnapp/util/di/DaggerApplicationComponent;->provideProtoConverterProvider:Ljavax/inject/Provider;
 
-    invoke-direct {v1, v9, v0}, Lde/rki/coronawarnapp/statistics/StatisticsModule_CacheDirFactory;-><init>(Lde/rki/coronawarnapp/statistics/StatisticsModule;Ljavax/inject/Provider;)V
+    iget-object v4, v15, Lde/rki/coronawarnapp/util/di/DaggerApplicationComponent;->provideGSONConverterProvider:Ljavax/inject/Provider;
 
-    instance-of v0, v1, Ldagger/internal/DoubleCheck;
+    new-instance v5, Lde/rki/coronawarnapp/bugreporting/BugReportingSharedModule_LogUploadApiFactory;
+
+    move-object/from16 p1, v5
+
+    move-object/from16 p2, p20
+
+    move-object/from16 p3, v0
+
+    move-object/from16 p4, v1
+
+    move-object/from16 p5, v3
+
+    move-object/from16 p6, v4
+
+    invoke-direct/range {p1 .. p6}, Lde/rki/coronawarnapp/bugreporting/BugReportingSharedModule_LogUploadApiFactory;-><init>(Lde/rki/coronawarnapp/bugreporting/BugReportingSharedModule;Ljavax/inject/Provider;Ljavax/inject/Provider;Ljavax/inject/Provider;Ljavax/inject/Provider;)V
+
+    invoke-static {v5}, Ldagger/internal/SingleCheck;->provider(Ljavax/inject/Provider;)Ljavax/inject/Provider;
+
+    move-result-object v0
+
+    iput-object v0, v15, Lde/rki/coronawarnapp/util/di/DaggerApplicationComponent;->logUploadApiProvider:Ljavax/inject/Provider;
+
+    iget-object v1, v15, Lde/rki/coronawarnapp/util/di/DaggerApplicationComponent;->timeStamperProvider:Ljavax/inject/Provider;
+
+    new-instance v3, Lde/rki/coronawarnapp/bugreporting/debuglog/upload/server/LogUploadServer_Factory;
+
+    invoke-direct {v3, v0, v1}, Lde/rki/coronawarnapp/bugreporting/debuglog/upload/server/LogUploadServer_Factory;-><init>(Ljavax/inject/Provider;Ljavax/inject/Provider;)V
+
+    invoke-static {v3}, Ldagger/internal/SingleCheck;->provider(Ljavax/inject/Provider;)Ljavax/inject/Provider;
+
+    move-result-object v0
+
+    iput-object v0, v15, Lde/rki/coronawarnapp/util/di/DaggerApplicationComponent;->logUploadServerProvider:Ljavax/inject/Provider;
+
+    iget-object v0, v15, Lde/rki/coronawarnapp/util/di/DaggerApplicationComponent;->cdnHttpClientProvider4:Ljavax/inject/Provider;
+
+    iget-object v1, v15, Lde/rki/coronawarnapp/util/di/DaggerApplicationComponent;->provideDonationServerUrlProvider:Ljavax/inject/Provider;
+
+    iget-object v3, v15, Lde/rki/coronawarnapp/util/di/DaggerApplicationComponent;->provideProtoConverterProvider:Ljavax/inject/Provider;
+
+    iget-object v4, v15, Lde/rki/coronawarnapp/util/di/DaggerApplicationComponent;->provideGSONConverterProvider:Ljavax/inject/Provider;
+
+    new-instance v5, Lde/rki/coronawarnapp/bugreporting/BugReportingSharedModule_LogUploadAuthApiFactory;
+
+    move-object/from16 p1, v5
+
+    move-object/from16 p3, v0
+
+    move-object/from16 p4, v1
+
+    move-object/from16 p5, v3
+
+    move-object/from16 p6, v4
+
+    invoke-direct/range {p1 .. p6}, Lde/rki/coronawarnapp/bugreporting/BugReportingSharedModule_LogUploadAuthApiFactory;-><init>(Lde/rki/coronawarnapp/bugreporting/BugReportingSharedModule;Ljavax/inject/Provider;Ljavax/inject/Provider;Ljavax/inject/Provider;Ljavax/inject/Provider;)V
+
+    invoke-static {v5}, Ldagger/internal/SingleCheck;->provider(Ljavax/inject/Provider;)Ljavax/inject/Provider;
+
+    move-result-object v0
+
+    iput-object v0, v15, Lde/rki/coronawarnapp/util/di/DaggerApplicationComponent;->logUploadAuthApiProvider:Ljavax/inject/Provider;
+
+    iget-object v1, v15, Lde/rki/coronawarnapp/util/di/DaggerApplicationComponent;->deviceAttestationProvider:Ljavax/inject/Provider;
+
+    iget-object v2, v15, Lde/rki/coronawarnapp/util/di/DaggerApplicationComponent;->appConfigProvider:Ljavax/inject/Provider;
+
+    new-instance v3, Lde/rki/coronawarnapp/bugreporting/debuglog/upload/server/auth/LogUploadAuthorizer_Factory;
+
+    invoke-direct {v3, v0, v1, v2}, Lde/rki/coronawarnapp/bugreporting/debuglog/upload/server/auth/LogUploadAuthorizer_Factory;-><init>(Ljavax/inject/Provider;Ljavax/inject/Provider;Ljavax/inject/Provider;)V
+
+    invoke-static {v3}, Ldagger/internal/SingleCheck;->provider(Ljavax/inject/Provider;)Ljavax/inject/Provider;
+
+    move-result-object v0
+
+    iput-object v0, v15, Lde/rki/coronawarnapp/util/di/DaggerApplicationComponent;->logUploadAuthorizerProvider:Ljavax/inject/Provider;
+
+    iget-object v0, v15, Lde/rki/coronawarnapp/util/di/DaggerApplicationComponent;->logSnapshotterProvider:Ljavax/inject/Provider;
+
+    iget-object v1, v15, Lde/rki/coronawarnapp/util/di/DaggerApplicationComponent;->logUploadServerProvider:Ljavax/inject/Provider;
+
+    iget-object v2, v15, Lde/rki/coronawarnapp/util/di/DaggerApplicationComponent;->logUploadAuthorizerProvider:Ljavax/inject/Provider;
+
+    iget-object v3, v15, Lde/rki/coronawarnapp/util/di/DaggerApplicationComponent;->bugReportingSettingsProvider:Ljavax/inject/Provider;
+
+    new-instance v4, Lde/rki/coronawarnapp/bugreporting/debuglog/upload/SnapshotUploader_Factory;
+
+    invoke-direct {v4, v0, v1, v2, v3}, Lde/rki/coronawarnapp/bugreporting/debuglog/upload/SnapshotUploader_Factory;-><init>(Ljavax/inject/Provider;Ljavax/inject/Provider;Ljavax/inject/Provider;Ljavax/inject/Provider;)V
+
+    instance-of v0, v4, Ldagger/internal/DoubleCheck;
 
     if-eqz v0, :cond_4b
 
@@ -7705,74 +7919,48 @@
     :cond_4b
     new-instance v0, Ldagger/internal/DoubleCheck;
 
-    invoke-direct {v0, v1}, Ldagger/internal/DoubleCheck;-><init>(Ljavax/inject/Provider;)V
+    invoke-direct {v0, v4}, Ldagger/internal/DoubleCheck;-><init>(Ljavax/inject/Provider;)V
 
-    move-object v1, v0
+    move-object v4, v0
 
     :goto_4b
-    iput-object v1, v13, Lde/rki/coronawarnapp/util/di/DaggerApplicationComponent;->cacheDirProvider:Ljavax/inject/Provider;
+    iput-object v4, v15, Lde/rki/coronawarnapp/util/di/DaggerApplicationComponent;->snapshotUploaderProvider:Ljavax/inject/Provider;
 
-    new-instance v0, Lde/rki/coronawarnapp/covidcertificate/validation/core/DccValidationModule_HttpCacheFactory;
+    iget-object v0, v15, Lde/rki/coronawarnapp/util/di/DaggerApplicationComponent;->defaultTraceLocationRepositoryProvider:Ljavax/inject/Provider;
 
-    move-object/from16 v8, p33
+    iget-object v1, v15, Lde/rki/coronawarnapp/util/di/DaggerApplicationComponent;->strongRandomProvider:Ljavax/inject/Provider;
 
-    invoke-direct {v0, v8, v1}, Lde/rki/coronawarnapp/covidcertificate/validation/core/DccValidationModule_HttpCacheFactory;-><init>(Lde/rki/coronawarnapp/covidcertificate/validation/core/DccValidationModule;Ljavax/inject/Provider;)V
+    iget-object v2, v15, Lde/rki/coronawarnapp/util/di/DaggerApplicationComponent;->environmentSetupProvider:Ljavax/inject/Provider;
 
-    instance-of v1, v0, Ldagger/internal/DoubleCheck;
+    new-instance v3, Lde/rki/coronawarnapp/presencetracing/locations/TraceLocationCreator_Factory;
 
-    if-eqz v1, :cond_4c
+    invoke-direct {v3, v0, v1, v2}, Lde/rki/coronawarnapp/presencetracing/locations/TraceLocationCreator_Factory;-><init>(Ljavax/inject/Provider;Ljavax/inject/Provider;Ljavax/inject/Provider;)V
+
+    instance-of v0, v3, Ldagger/internal/DoubleCheck;
+
+    if-eqz v0, :cond_4c
 
     goto :goto_4c
 
     :cond_4c
-    new-instance v1, Ldagger/internal/DoubleCheck;
+    new-instance v0, Ldagger/internal/DoubleCheck;
 
-    invoke-direct {v1, v0}, Ldagger/internal/DoubleCheck;-><init>(Ljavax/inject/Provider;)V
+    invoke-direct {v0, v3}, Ldagger/internal/DoubleCheck;-><init>(Ljavax/inject/Provider;)V
 
-    move-object v0, v1
+    move-object v3, v0
 
     :goto_4c
-    iput-object v0, v13, Lde/rki/coronawarnapp/util/di/DaggerApplicationComponent;->httpCacheProvider:Ljavax/inject/Provider;
+    iput-object v3, v15, Lde/rki/coronawarnapp/util/di/DaggerApplicationComponent;->traceLocationCreatorProvider:Ljavax/inject/Provider;
 
-    iget-object v0, v13, Lde/rki/coronawarnapp/util/di/DaggerApplicationComponent;->cdnHttpClientProvider:Ljavax/inject/Provider;
+    iget-object v0, v15, Lde/rki/coronawarnapp/util/di/DaggerApplicationComponent;->contextProvider:Ljavax/inject/Provider;
 
-    iget-object v1, v13, Lde/rki/coronawarnapp/util/di/DaggerApplicationComponent;->provideDownloadServerUrlProvider:Ljavax/inject/Provider;
+    new-instance v1, Lde/rki/coronawarnapp/environment/presencetracing/qrcodeposter/QrCodePosterTemplateModule_CacheDirFactory;
 
-    iget-object v2, v13, Lde/rki/coronawarnapp/util/di/DaggerApplicationComponent;->httpCacheProvider:Ljavax/inject/Provider;
+    move-object/from16 v2, p27
 
-    iget-object v3, v13, Lde/rki/coronawarnapp/util/di/DaggerApplicationComponent;->provideGSONConverterProvider:Ljavax/inject/Provider;
+    invoke-direct {v1, v2, v0}, Lde/rki/coronawarnapp/environment/presencetracing/qrcodeposter/QrCodePosterTemplateModule_CacheDirFactory;-><init>(Lde/rki/coronawarnapp/environment/presencetracing/qrcodeposter/QrCodePosterTemplateModule;Ljavax/inject/Provider;)V
 
-    new-instance v4, Lde/rki/coronawarnapp/covidcertificate/signature/core/server/DscServerModule_ApiV1Factory;
-
-    move-object/from16 p4, v4
-
-    move-object/from16 p5, p34
-
-    move-object/from16 p6, v0
-
-    move-object/from16 p7, v1
-
-    move-object/from16 p8, v2
-
-    move-object/from16 p9, v3
-
-    invoke-direct/range {p4 .. p9}, Lde/rki/coronawarnapp/covidcertificate/signature/core/server/DscServerModule_ApiV1Factory;-><init>(Lde/rki/coronawarnapp/covidcertificate/signature/core/server/DscServerModule;Ljavax/inject/Provider;Ljavax/inject/Provider;Ljavax/inject/Provider;Ljavax/inject/Provider;)V
-
-    invoke-static {v4}, Ldagger/internal/SingleCheck;->provider(Ljavax/inject/Provider;)Ljavax/inject/Provider;
-
-    move-result-object v0
-
-    iput-object v0, v13, Lde/rki/coronawarnapp/util/di/DaggerApplicationComponent;->apiV1Provider3:Ljavax/inject/Provider;
-
-    iget-object v0, v13, Lde/rki/coronawarnapp/util/di/DaggerApplicationComponent;->signatureValidationProvider:Ljavax/inject/Provider;
-
-    iget-object v1, v13, Lde/rki/coronawarnapp/util/di/DaggerApplicationComponent;->apiV1Provider3:Ljavax/inject/Provider;
-
-    new-instance v2, Lde/rki/coronawarnapp/covidcertificate/signature/core/server/DscServer_Factory;
-
-    invoke-direct {v2, v0, v1}, Lde/rki/coronawarnapp/covidcertificate/signature/core/server/DscServer_Factory;-><init>(Ljavax/inject/Provider;Ljavax/inject/Provider;)V
-
-    instance-of v0, v2, Ldagger/internal/DoubleCheck;
+    instance-of v0, v1, Ldagger/internal/DoubleCheck;
 
     if-eqz v0, :cond_4d
 
@@ -7781,176 +7969,82 @@
     :cond_4d
     new-instance v0, Ldagger/internal/DoubleCheck;
 
-    invoke-direct {v0, v2}, Ldagger/internal/DoubleCheck;-><init>(Ljavax/inject/Provider;)V
+    invoke-direct {v0, v1}, Ldagger/internal/DoubleCheck;-><init>(Ljavax/inject/Provider;)V
 
-    move-object v2, v0
+    move-object v1, v0
 
     :goto_4d
-    iput-object v2, v13, Lde/rki/coronawarnapp/util/di/DaggerApplicationComponent;->dscServerProvider:Ljavax/inject/Provider;
+    iput-object v1, v15, Lde/rki/coronawarnapp/util/di/DaggerApplicationComponent;->cacheDirProvider3:Ljavax/inject/Provider;
 
-    iget-object v0, v13, Lde/rki/coronawarnapp/util/di/DaggerApplicationComponent;->appCoroutineScopeProvider:Ljavax/inject/Provider;
+    new-instance v0, Lde/rki/coronawarnapp/environment/presencetracing/qrcodeposter/QrCodePosterTemplateModule_HttpCacheFactory;
 
-    iget-object v1, v13, Lde/rki/coronawarnapp/util/di/DaggerApplicationComponent;->defaultDispatcherProvider:Ljavax/inject/Provider;
+    invoke-direct {v0, v2, v1}, Lde/rki/coronawarnapp/environment/presencetracing/qrcodeposter/QrCodePosterTemplateModule_HttpCacheFactory;-><init>(Lde/rki/coronawarnapp/environment/presencetracing/qrcodeposter/QrCodePosterTemplateModule;Ljavax/inject/Provider;)V
 
-    iget-object v2, v13, Lde/rki/coronawarnapp/util/di/DaggerApplicationComponent;->defaultDscSourceProvider:Ljavax/inject/Provider;
+    instance-of v1, v0, Ldagger/internal/DoubleCheck;
 
-    iget-object v3, v13, Lde/rki/coronawarnapp/util/di/DaggerApplicationComponent;->localDscStorageProvider:Ljavax/inject/Provider;
-
-    iget-object v4, v13, Lde/rki/coronawarnapp/util/di/DaggerApplicationComponent;->dscServerProvider:Ljavax/inject/Provider;
-
-    iget-object v5, v13, Lde/rki/coronawarnapp/util/di/DaggerApplicationComponent;->dscDataParserProvider:Ljavax/inject/Provider;
-
-    new-instance v6, Lde/rki/coronawarnapp/covidcertificate/signature/core/DscRepository_Factory;
-
-    move-object/from16 p4, v6
-
-    move-object/from16 p5, v0
-
-    move-object/from16 p6, v1
-
-    move-object/from16 p7, v2
-
-    move-object/from16 p8, v3
-
-    move-object/from16 p9, v4
-
-    move-object/from16 p10, v5
-
-    invoke-direct/range {p4 .. p10}, Lde/rki/coronawarnapp/covidcertificate/signature/core/DscRepository_Factory;-><init>(Ljavax/inject/Provider;Ljavax/inject/Provider;Ljavax/inject/Provider;Ljavax/inject/Provider;Ljavax/inject/Provider;Ljavax/inject/Provider;)V
-
-    instance-of v0, v6, Ldagger/internal/DoubleCheck;
-
-    if-eqz v0, :cond_4e
+    if-eqz v1, :cond_4e
 
     goto :goto_4e
 
     :cond_4e
-    new-instance v0, Ldagger/internal/DoubleCheck;
-
-    invoke-direct {v0, v6}, Ldagger/internal/DoubleCheck;-><init>(Ljavax/inject/Provider;)V
-
-    move-object v6, v0
-
-    :goto_4e
-    iput-object v6, v13, Lde/rki/coronawarnapp/util/di/DaggerApplicationComponent;->dscRepositoryProvider:Ljavax/inject/Provider;
-
-    sget-object v0, Lde/rki/coronawarnapp/SecurityProvider_Factory$InstanceHolder;->INSTANCE:Lde/rki/coronawarnapp/SecurityProvider_Factory;
-
-    instance-of v1, v0, Ldagger/internal/DoubleCheck;
-
-    if-eqz v1, :cond_4f
-
-    goto :goto_4f
-
-    :cond_4f
     new-instance v1, Ldagger/internal/DoubleCheck;
 
     invoke-direct {v1, v0}, Ldagger/internal/DoubleCheck;-><init>(Ljavax/inject/Provider;)V
 
     move-object v0, v1
 
+    :goto_4e
+    iput-object v0, v15, Lde/rki/coronawarnapp/util/di/DaggerApplicationComponent;->httpCacheProvider3:Ljavax/inject/Provider;
+
+    iget-object v0, v15, Lde/rki/coronawarnapp/util/di/DaggerApplicationComponent;->cdnHttpClientProvider:Ljavax/inject/Provider;
+
+    iget-object v1, v15, Lde/rki/coronawarnapp/util/di/DaggerApplicationComponent;->provideDownloadServerUrlProvider:Ljavax/inject/Provider;
+
+    iget-object v3, v15, Lde/rki/coronawarnapp/util/di/DaggerApplicationComponent;->httpCacheProvider3:Ljavax/inject/Provider;
+
+    new-instance v4, Lde/rki/coronawarnapp/environment/presencetracing/qrcodeposter/QrCodePosterTemplateModule_ApiFactory;
+
+    invoke-direct {v4, v2, v0, v1, v3}, Lde/rki/coronawarnapp/environment/presencetracing/qrcodeposter/QrCodePosterTemplateModule_ApiFactory;-><init>(Lde/rki/coronawarnapp/environment/presencetracing/qrcodeposter/QrCodePosterTemplateModule;Ljavax/inject/Provider;Ljavax/inject/Provider;Ljavax/inject/Provider;)V
+
+    instance-of v0, v4, Ldagger/internal/DoubleCheck;
+
+    if-eqz v0, :cond_4f
+
+    goto :goto_4f
+
+    :cond_4f
+    new-instance v0, Ldagger/internal/DoubleCheck;
+
+    invoke-direct {v0, v4}, Ldagger/internal/DoubleCheck;-><init>(Ljavax/inject/Provider;)V
+
+    move-object v4, v0
+
     :goto_4f
-    iput-object v0, v13, Lde/rki/coronawarnapp/util/di/DaggerApplicationComponent;->securityProvider:Ljavax/inject/Provider;
+    iput-object v4, v15, Lde/rki/coronawarnapp/util/di/DaggerApplicationComponent;->apiProvider3:Ljavax/inject/Provider;
 
-    iget-object v1, v13, Lde/rki/coronawarnapp/util/di/DaggerApplicationComponent;->dscRepositoryProvider:Ljavax/inject/Provider;
+    iget-object v0, v15, Lde/rki/coronawarnapp/util/di/DaggerApplicationComponent;->contextProvider:Ljavax/inject/Provider;
 
-    new-instance v2, Lde/rki/coronawarnapp/covidcertificate/signature/core/DscSignatureValidator_Factory;
+    new-instance v1, Lde/rki/coronawarnapp/presencetracing/locations/server/qrcodepostertemplate/DefaultQrCodePosterTemplateSource_Factory;
 
-    invoke-direct {v2, v0, v1}, Lde/rki/coronawarnapp/covidcertificate/signature/core/DscSignatureValidator_Factory;-><init>(Ljavax/inject/Provider;Ljavax/inject/Provider;)V
+    invoke-direct {v1, v0}, Lde/rki/coronawarnapp/presencetracing/locations/server/qrcodepostertemplate/DefaultQrCodePosterTemplateSource_Factory;-><init>(Ljavax/inject/Provider;)V
 
-    invoke-static {v2}, Ldagger/internal/SingleCheck;->provider(Ljavax/inject/Provider;)Ljavax/inject/Provider;
-
-    move-result-object v0
-
-    iput-object v0, v13, Lde/rki/coronawarnapp/util/di/DaggerApplicationComponent;->dscSignatureValidatorProvider:Ljavax/inject/Provider;
-
-    sget-object v0, Lde/rki/coronawarnapp/covidcertificate/expiration/DccExpirationChecker_Factory$InstanceHolder;->INSTANCE:Lde/rki/coronawarnapp/covidcertificate/expiration/DccExpirationChecker_Factory;
-
-    invoke-static {v0}, Ldagger/internal/SingleCheck;->provider(Ljavax/inject/Provider;)Ljavax/inject/Provider;
+    invoke-static {v1}, Ldagger/internal/SingleCheck;->provider(Ljavax/inject/Provider;)Ljavax/inject/Provider;
 
     move-result-object v0
 
-    iput-object v0, v13, Lde/rki/coronawarnapp/util/di/DaggerApplicationComponent;->dccExpirationCheckerProvider:Ljavax/inject/Provider;
+    iput-object v0, v15, Lde/rki/coronawarnapp/util/di/DaggerApplicationComponent;->defaultQrCodePosterTemplateSourceProvider:Ljavax/inject/Provider;
 
-    iget-object v0, v13, Lde/rki/coronawarnapp/util/di/DaggerApplicationComponent;->timeStamperProvider:Ljavax/inject/Provider;
+    iget-object v0, v15, Lde/rki/coronawarnapp/util/di/DaggerApplicationComponent;->apiProvider3:Ljavax/inject/Provider;
 
-    iget-object v1, v13, Lde/rki/coronawarnapp/util/di/DaggerApplicationComponent;->appConfigProvider:Ljavax/inject/Provider;
+    iget-object v1, v15, Lde/rki/coronawarnapp/util/di/DaggerApplicationComponent;->defaultQrCodePosterTemplateSourceProvider:Ljavax/inject/Provider;
 
-    iget-object v2, v13, Lde/rki/coronawarnapp/util/di/DaggerApplicationComponent;->dscRepositoryProvider:Ljavax/inject/Provider;
+    iget-object v2, v15, Lde/rki/coronawarnapp/util/di/DaggerApplicationComponent;->signatureValidationProvider:Ljavax/inject/Provider;
 
-    iget-object v3, v13, Lde/rki/coronawarnapp/util/di/DaggerApplicationComponent;->dscSignatureValidatorProvider:Ljavax/inject/Provider;
+    new-instance v3, Lde/rki/coronawarnapp/presencetracing/locations/server/qrcodepostertemplate/QrCodePosterTemplateServer_Factory;
 
-    iget-object v4, v13, Lde/rki/coronawarnapp/util/di/DaggerApplicationComponent;->dccExpirationCheckerProvider:Ljavax/inject/Provider;
+    invoke-direct {v3, v0, v1, v2}, Lde/rki/coronawarnapp/presencetracing/locations/server/qrcodepostertemplate/QrCodePosterTemplateServer_Factory;-><init>(Ljavax/inject/Provider;Ljavax/inject/Provider;Ljavax/inject/Provider;)V
 
-    new-instance v5, Lde/rki/coronawarnapp/covidcertificate/common/statecheck/DccStateChecker_Factory;
-
-    move-object/from16 p4, v5
-
-    move-object/from16 p5, v0
-
-    move-object/from16 p6, v1
-
-    move-object/from16 p7, v2
-
-    move-object/from16 p8, v3
-
-    move-object/from16 p9, v4
-
-    invoke-direct/range {p4 .. p9}, Lde/rki/coronawarnapp/covidcertificate/common/statecheck/DccStateChecker_Factory;-><init>(Ljavax/inject/Provider;Ljavax/inject/Provider;Ljavax/inject/Provider;Ljavax/inject/Provider;Ljavax/inject/Provider;)V
-
-    invoke-static {v5}, Ldagger/internal/SingleCheck;->provider(Ljavax/inject/Provider;)Ljavax/inject/Provider;
-
-    move-result-object v0
-
-    iput-object v0, v13, Lde/rki/coronawarnapp/util/di/DaggerApplicationComponent;->dccStateCheckerProvider:Ljavax/inject/Provider;
-
-    iget-object v0, v13, Lde/rki/coronawarnapp/util/di/DaggerApplicationComponent;->appCoroutineScopeProvider:Ljavax/inject/Provider;
-
-    iget-object v1, v13, Lde/rki/coronawarnapp/util/di/DaggerApplicationComponent;->defaultDispatcherProvider:Ljavax/inject/Provider;
-
-    iget-object v2, v13, Lde/rki/coronawarnapp/util/di/DaggerApplicationComponent;->testCertificateStorageProvider:Ljavax/inject/Provider;
-
-    iget-object v3, v13, Lde/rki/coronawarnapp/util/di/DaggerApplicationComponent;->dccQrCodeExtractorProvider:Ljavax/inject/Provider;
-
-    iget-object v4, v13, Lde/rki/coronawarnapp/util/di/DaggerApplicationComponent;->testCertificateProcessorProvider:Ljavax/inject/Provider;
-
-    iget-object v5, v13, Lde/rki/coronawarnapp/util/di/DaggerApplicationComponent;->timeStamperProvider:Ljavax/inject/Provider;
-
-    iget-object v6, v13, Lde/rki/coronawarnapp/util/di/DaggerApplicationComponent;->valueSetsRepositoryProvider:Ljavax/inject/Provider;
-
-    iget-object v7, v13, Lde/rki/coronawarnapp/util/di/DaggerApplicationComponent;->rSAKeyPairGeneratorProvider:Ljavax/inject/Provider;
-
-    iget-object v10, v13, Lde/rki/coronawarnapp/util/di/DaggerApplicationComponent;->dccStateCheckerProvider:Ljavax/inject/Provider;
-
-    iget-object v11, v13, Lde/rki/coronawarnapp/util/di/DaggerApplicationComponent;->dscRepositoryProvider:Ljavax/inject/Provider;
-
-    new-instance v12, Lde/rki/coronawarnapp/covidcertificate/test/core/TestCertificateRepository_Factory;
-
-    move-object v15, v12
-
-    move-object/from16 v16, v0
-
-    move-object/from16 v17, v1
-
-    move-object/from16 v18, v2
-
-    move-object/from16 v19, v3
-
-    move-object/from16 v20, v4
-
-    move-object/from16 v21, v5
-
-    move-object/from16 v22, v6
-
-    move-object/from16 v23, v7
-
-    move-object/from16 v24, v10
-
-    move-object/from16 v25, v11
-
-    invoke-direct/range {v15 .. v25}, Lde/rki/coronawarnapp/covidcertificate/test/core/TestCertificateRepository_Factory;-><init>(Ljavax/inject/Provider;Ljavax/inject/Provider;Ljavax/inject/Provider;Ljavax/inject/Provider;Ljavax/inject/Provider;Ljavax/inject/Provider;Ljavax/inject/Provider;Ljavax/inject/Provider;Ljavax/inject/Provider;Ljavax/inject/Provider;)V
-
-    instance-of v0, v12, Ldagger/internal/DoubleCheck;
+    instance-of v0, v3, Ldagger/internal/DoubleCheck;
 
     if-eqz v0, :cond_50
 
@@ -7959,80 +8053,24 @@
     :cond_50
     new-instance v0, Ldagger/internal/DoubleCheck;
 
-    invoke-direct {v0, v12}, Ldagger/internal/DoubleCheck;-><init>(Ljavax/inject/Provider;)V
+    invoke-direct {v0, v3}, Ldagger/internal/DoubleCheck;-><init>(Ljavax/inject/Provider;)V
 
-    move-object v12, v0
+    move-object v3, v0
 
     :goto_50
-    iput-object v12, v13, Lde/rki/coronawarnapp/util/di/DaggerApplicationComponent;->testCertificateRepositoryProvider:Ljavax/inject/Provider;
+    iput-object v3, v15, Lde/rki/coronawarnapp/util/di/DaggerApplicationComponent;->qrCodePosterTemplateServerProvider:Ljavax/inject/Provider;
 
-    new-instance v0, Lde/rki/coronawarnapp/covidcertificate/test/core/execution/TestCertificateRetrievalWorker_Factory;
+    sget-object v0, Lde/rki/coronawarnapp/qrcode/provider/image/BaseImageUriResolver_Factory$InstanceHolder;->INSTANCE:Lde/rki/coronawarnapp/qrcode/provider/image/BaseImageUriResolver_Factory;
 
-    invoke-direct {v0, v12}, Lde/rki/coronawarnapp/covidcertificate/test/core/execution/TestCertificateRetrievalWorker_Factory;-><init>(Ljavax/inject/Provider;)V
+    sget-object v1, Lde/rki/coronawarnapp/qrcode/provider/image/NewImageUriResolver_Factory$InstanceHolder;->INSTANCE:Lde/rki/coronawarnapp/qrcode/provider/image/NewImageUriResolver_Factory;
 
-    new-instance v1, Lde/rki/coronawarnapp/covidcertificate/test/core/execution/TestCertificateRetrievalWorker_Factory_Impl;
+    new-instance v2, Lde/rki/coronawarnapp/qrcode/QrCodeScannerModule_BindImageResolverFactory;
 
-    invoke-direct {v1, v0}, Lde/rki/coronawarnapp/covidcertificate/test/core/execution/TestCertificateRetrievalWorker_Factory_Impl;-><init>(Lde/rki/coronawarnapp/covidcertificate/test/core/execution/TestCertificateRetrievalWorker_Factory;)V
+    move-object/from16 v3, p37
 
-    new-instance v0, Ldagger/internal/InstanceFactory;
+    invoke-direct {v2, v3, v0, v1}, Lde/rki/coronawarnapp/qrcode/QrCodeScannerModule_BindImageResolverFactory;-><init>(Lde/rki/coronawarnapp/qrcode/QrCodeScannerModule;Ljavax/inject/Provider;Ljavax/inject/Provider;)V
 
-    invoke-direct {v0, v1}, Ldagger/internal/InstanceFactory;-><init>(Ljava/lang/Object;)V
-
-    iput-object v0, v13, Lde/rki/coronawarnapp/util/di/DaggerApplicationComponent;->factoryProvider28:Ljavax/inject/Provider;
-
-    iget-object v0, v13, Lde/rki/coronawarnapp/util/di/DaggerApplicationComponent;->contextProvider:Ljavax/inject/Provider;
-
-    iget-object v1, v13, Lde/rki/coronawarnapp/util/di/DaggerApplicationComponent;->notificationManagerCompatProvider:Ljavax/inject/Provider;
-
-    new-instance v2, Lde/rki/coronawarnapp/covidcertificate/common/notification/DigitalCovidCertificateNotifications_Factory;
-
-    invoke-direct {v2, v0, v1}, Lde/rki/coronawarnapp/covidcertificate/common/notification/DigitalCovidCertificateNotifications_Factory;-><init>(Ljavax/inject/Provider;Ljavax/inject/Provider;)V
-
-    invoke-static {v2}, Ldagger/internal/SingleCheck;->provider(Ljavax/inject/Provider;)Ljavax/inject/Provider;
-
-    move-result-object v0
-
-    iput-object v0, v13, Lde/rki/coronawarnapp/util/di/DaggerApplicationComponent;->digitalCovidCertificateNotificationsProvider:Ljavax/inject/Provider;
-
-    iget-object v0, v13, Lde/rki/coronawarnapp/util/di/DaggerApplicationComponent;->contextProvider:Ljavax/inject/Provider;
-
-    iget-object v1, v13, Lde/rki/coronawarnapp/util/di/DaggerApplicationComponent;->digitalCovidCertificateNotificationsProvider:Ljavax/inject/Provider;
-
-    iget-object v2, v13, Lde/rki/coronawarnapp/util/di/DaggerApplicationComponent;->navDeepLinkBuilderFactoryProvider:Ljavax/inject/Provider;
-
-    new-instance v3, Lde/rki/coronawarnapp/covidcertificate/expiration/DccExpirationNotification_Factory;
-
-    invoke-direct {v3, v0, v1, v2}, Lde/rki/coronawarnapp/covidcertificate/expiration/DccExpirationNotification_Factory;-><init>(Ljavax/inject/Provider;Ljavax/inject/Provider;Ljavax/inject/Provider;)V
-
-    invoke-static {v3}, Ldagger/internal/SingleCheck;->provider(Ljavax/inject/Provider;)Ljavax/inject/Provider;
-
-    move-result-object v0
-
-    iput-object v0, v13, Lde/rki/coronawarnapp/util/di/DaggerApplicationComponent;->dccExpirationNotificationProvider:Ljavax/inject/Provider;
-
-    iget-object v0, v13, Lde/rki/coronawarnapp/util/di/DaggerApplicationComponent;->dccQrCodeExtractorProvider:Ljavax/inject/Provider;
-
-    new-instance v1, Lde/rki/coronawarnapp/covidcertificate/vaccination/core/repository/storage/ContainerPostProcessor_Factory;
-
-    invoke-direct {v1, v0}, Lde/rki/coronawarnapp/covidcertificate/vaccination/core/repository/storage/ContainerPostProcessor_Factory;-><init>(Ljavax/inject/Provider;)V
-
-    invoke-static {v1}, Ldagger/internal/SingleCheck;->provider(Ljavax/inject/Provider;)Ljavax/inject/Provider;
-
-    move-result-object v0
-
-    iput-object v0, v13, Lde/rki/coronawarnapp/util/di/DaggerApplicationComponent;->containerPostProcessorProvider:Ljavax/inject/Provider;
-
-    iget-object v0, v13, Lde/rki/coronawarnapp/util/di/DaggerApplicationComponent;->contextProvider:Ljavax/inject/Provider;
-
-    iget-object v1, v13, Lde/rki/coronawarnapp/util/di/DaggerApplicationComponent;->baseGsonProvider:Ljavax/inject/Provider;
-
-    iget-object v2, v13, Lde/rki/coronawarnapp/util/di/DaggerApplicationComponent;->containerPostProcessorProvider:Ljavax/inject/Provider;
-
-    new-instance v3, Lde/rki/coronawarnapp/covidcertificate/vaccination/core/repository/storage/VaccinationStorage_Factory;
-
-    invoke-direct {v3, v0, v1, v2}, Lde/rki/coronawarnapp/covidcertificate/vaccination/core/repository/storage/VaccinationStorage_Factory;-><init>(Ljavax/inject/Provider;Ljavax/inject/Provider;Ljavax/inject/Provider;)V
-
-    instance-of v0, v3, Ldagger/internal/DoubleCheck;
+    instance-of v0, v2, Ldagger/internal/DoubleCheck;
 
     if-eqz v0, :cond_51
 
@@ -8041,60 +8079,480 @@
     :cond_51
     new-instance v0, Ldagger/internal/DoubleCheck;
 
-    invoke-direct {v0, v3}, Ldagger/internal/DoubleCheck;-><init>(Ljavax/inject/Provider;)V
+    invoke-direct {v0, v2}, Ldagger/internal/DoubleCheck;-><init>(Ljavax/inject/Provider;)V
 
-    move-object v3, v0
+    move-object v2, v0
 
     :goto_51
-    iput-object v3, v13, Lde/rki/coronawarnapp/util/di/DaggerApplicationComponent;->vaccinationStorageProvider:Ljavax/inject/Provider;
+    iput-object v2, v15, Lde/rki/coronawarnapp/util/di/DaggerApplicationComponent;->bindImageResolverProvider:Ljavax/inject/Provider;
 
-    move-object/from16 v0, p0
+    new-instance v0, Lde/rki/coronawarnapp/qrcode/QrCodeScannerModule_QrCodeReaderFactory;
 
-    move-object/from16 v1, p1
+    invoke-direct {v0, v3}, Lde/rki/coronawarnapp/qrcode/QrCodeScannerModule_QrCodeReaderFactory;-><init>(Lde/rki/coronawarnapp/qrcode/QrCodeScannerModule;)V
 
-    move-object/from16 v2, p3
+    instance-of v1, v0, Ldagger/internal/DoubleCheck;
 
-    move-object/from16 v3, p19
+    if-eqz v1, :cond_52
 
-    move-object/from16 v4, p20
+    goto :goto_52
 
-    move-object/from16 v5, p22
+    :cond_52
+    new-instance v1, Ldagger/internal/DoubleCheck;
 
-    move-object/from16 v6, p24
+    invoke-direct {v1, v0}, Ldagger/internal/DoubleCheck;-><init>(Ljavax/inject/Provider;)V
 
-    move-object/from16 v7, p30
+    move-object v0, v1
 
-    move-object/from16 v8, p33
+    :goto_52
+    iput-object v0, v15, Lde/rki/coronawarnapp/util/di/DaggerApplicationComponent;->qrCodeReaderProvider:Ljavax/inject/Provider;
 
-    invoke-virtual/range {v0 .. v8}, Lde/rki/coronawarnapp/util/di/DaggerApplicationComponent;->initialize4(Lde/rki/coronawarnapp/util/di/AndroidModule;Lde/rki/coronawarnapp/util/coil/CoilModule;Lde/rki/coronawarnapp/bugreporting/BugReportingModule;Lde/rki/coronawarnapp/bugreporting/BugReportingSharedModule;Lde/rki/coronawarnapp/statistics/StatisticsModule;Lde/rki/coronawarnapp/datadonation/survey/SurveyModule;Lde/rki/coronawarnapp/covidcertificate/DigitalCovidCertificateModule;Lde/rki/coronawarnapp/covidcertificate/validation/core/DccValidationModule;)V
+    iget-object v0, v15, Lde/rki/coronawarnapp/util/di/DaggerApplicationComponent;->appCoroutineScopeProvider:Ljavax/inject/Provider;
 
-    move-object/from16 v2, p11
+    iget-object v1, v15, Lde/rki/coronawarnapp/util/di/DaggerApplicationComponent;->defaultDispatcherProvider:Ljavax/inject/Provider;
 
-    move-object/from16 v3, p20
+    iget-object v2, v15, Lde/rki/coronawarnapp/util/di/DaggerApplicationComponent;->baseGsonProvider:Ljavax/inject/Provider;
 
-    move-object/from16 v4, p22
+    iget-object v3, v15, Lde/rki/coronawarnapp/util/di/DaggerApplicationComponent;->dccValidationServerProvider:Ljavax/inject/Provider;
 
-    move-object/from16 v5, p27
+    iget-object v4, v15, Lde/rki/coronawarnapp/util/di/DaggerApplicationComponent;->dccValidationCacheProvider:Ljavax/inject/Provider;
 
-    move-object/from16 v6, p35
+    iget-object v5, v15, Lde/rki/coronawarnapp/util/di/DaggerApplicationComponent;->dccValidationRuleConverterProvider:Ljavax/inject/Provider;
 
-    move-object/from16 v7, p36
+    new-instance v6, Lde/rki/coronawarnapp/covidcertificate/validation/core/DccValidationRepository_Factory;
 
-    move-object/from16 v8, p37
+    move-object/from16 p1, v6
 
-    move-object/from16 v9, p38
+    move-object/from16 p2, v0
 
-    invoke-virtual/range {v0 .. v9}, Lde/rki/coronawarnapp/util/di/DaggerApplicationComponent;->initialize5(Lde/rki/coronawarnapp/util/di/AndroidModule;Lde/rki/coronawarnapp/environment/bugreporting/BugReportingServerModule;Lde/rki/coronawarnapp/bugreporting/BugReportingSharedModule;Lde/rki/coronawarnapp/statistics/StatisticsModule;Lde/rki/coronawarnapp/environment/presencetracing/qrcodeposter/QrCodePosterTemplateModule;Lde/rki/coronawarnapp/rootdetection/RootDetectionModule;Lde/rki/coronawarnapp/qrcode/QrCodeScannerModule;Lde/rki/coronawarnapp/rootdetection/RootDetectionModule;Lcom/upokecenter/cbor/CBORUuidConverter;)V
+    move-object/from16 p3, v1
+
+    move-object/from16 p4, v2
+
+    move-object/from16 p5, v3
+
+    move-object/from16 p6, v4
+
+    move-object/from16 p7, v5
+
+    invoke-direct/range {p1 .. p7}, Lde/rki/coronawarnapp/covidcertificate/validation/core/DccValidationRepository_Factory;-><init>(Ljavax/inject/Provider;Ljavax/inject/Provider;Ljavax/inject/Provider;Ljavax/inject/Provider;Ljavax/inject/Provider;Ljavax/inject/Provider;)V
+
+    instance-of v0, v6, Ldagger/internal/DoubleCheck;
+
+    if-eqz v0, :cond_53
+
+    goto :goto_53
+
+    :cond_53
+    new-instance v0, Ldagger/internal/DoubleCheck;
+
+    invoke-direct {v0, v6}, Ldagger/internal/DoubleCheck;-><init>(Ljavax/inject/Provider;)V
+
+    move-object v6, v0
+
+    :goto_53
+    iput-object v6, v15, Lde/rki/coronawarnapp/util/di/DaggerApplicationComponent;->dccValidationRepositoryProvider:Ljavax/inject/Provider;
+
+    iget-object v0, v15, Lde/rki/coronawarnapp/util/di/DaggerApplicationComponent;->contextProvider:Ljavax/inject/Provider;
+
+    new-instance v1, Lde/rki/coronawarnapp/covidcertificate/pdf/core/ExportCertificateModule_CacheDirFactory;
+
+    move-object/from16 v2, p36
+
+    invoke-direct {v1, v2, v0}, Lde/rki/coronawarnapp/covidcertificate/pdf/core/ExportCertificateModule_CacheDirFactory;-><init>(Lde/rki/coronawarnapp/covidcertificate/pdf/core/ExportCertificateModule;Ljavax/inject/Provider;)V
+
+    instance-of v0, v1, Ldagger/internal/DoubleCheck;
+
+    if-eqz v0, :cond_54
+
+    goto :goto_54
+
+    :cond_54
+    new-instance v0, Ldagger/internal/DoubleCheck;
+
+    invoke-direct {v0, v1}, Ldagger/internal/DoubleCheck;-><init>(Ljavax/inject/Provider;)V
+
+    move-object v1, v0
+
+    :goto_54
+    iput-object v1, v15, Lde/rki/coronawarnapp/util/di/DaggerApplicationComponent;->cacheDirProvider4:Ljavax/inject/Provider;
+
+    iget-object v0, v15, Lde/rki/coronawarnapp/util/di/DaggerApplicationComponent;->contextProvider:Ljavax/inject/Provider;
+
+    new-instance v1, Lde/rki/coronawarnapp/covidcertificate/pdf/core/ExportCertificateModule_ProvideFontFactory;
+
+    invoke-direct {v1, v2, v0}, Lde/rki/coronawarnapp/covidcertificate/pdf/core/ExportCertificateModule_ProvideFontFactory;-><init>(Lde/rki/coronawarnapp/covidcertificate/pdf/core/ExportCertificateModule;Ljavax/inject/Provider;)V
+
+    instance-of v0, v1, Ldagger/internal/DoubleCheck;
+
+    if-eqz v0, :cond_55
+
+    goto :goto_55
+
+    :cond_55
+    new-instance v0, Ldagger/internal/DoubleCheck;
+
+    invoke-direct {v0, v1}, Ldagger/internal/DoubleCheck;-><init>(Ljavax/inject/Provider;)V
+
+    move-object v1, v0
+
+    :goto_55
+    iput-object v1, v15, Lde/rki/coronawarnapp/util/di/DaggerApplicationComponent;->provideFontProvider:Ljavax/inject/Provider;
+
+    iget-object v0, v15, Lde/rki/coronawarnapp/util/di/DaggerApplicationComponent;->defaultHttpClientProvider:Ljavax/inject/Provider;
+
+    new-instance v1, Lde/rki/coronawarnapp/dccticketing/core/DccTicketingCoreModule_ProvideHttpClientFactory;
+
+    move-object/from16 v2, p40
+
+    invoke-direct {v1, v2, v0}, Lde/rki/coronawarnapp/dccticketing/core/DccTicketingCoreModule_ProvideHttpClientFactory;-><init>(Lde/rki/coronawarnapp/dccticketing/core/DccTicketingCoreModule;Ljavax/inject/Provider;)V
+
+    iput-object v1, v15, Lde/rki/coronawarnapp/util/di/DaggerApplicationComponent;->provideHttpClientProvider:Ljavax/inject/Provider;
+
+    iget-object v0, v15, Lde/rki/coronawarnapp/util/di/DaggerApplicationComponent;->contextProvider:Ljavax/inject/Provider;
+
+    new-instance v1, Lde/rki/coronawarnapp/dccticketing/core/DccTicketingCoreModule_HttpCacheFactory;
+
+    invoke-direct {v1, v2, v0}, Lde/rki/coronawarnapp/dccticketing/core/DccTicketingCoreModule_HttpCacheFactory;-><init>(Lde/rki/coronawarnapp/dccticketing/core/DccTicketingCoreModule;Ljavax/inject/Provider;)V
+
+    instance-of v0, v1, Ldagger/internal/DoubleCheck;
+
+    if-eqz v0, :cond_56
+
+    goto :goto_56
+
+    :cond_56
+    new-instance v0, Ldagger/internal/DoubleCheck;
+
+    invoke-direct {v0, v1}, Ldagger/internal/DoubleCheck;-><init>(Ljavax/inject/Provider;)V
+
+    move-object v1, v0
+
+    :goto_56
+    iput-object v1, v15, Lde/rki/coronawarnapp/util/di/DaggerApplicationComponent;->httpCacheProvider4:Ljavax/inject/Provider;
+
+    iget-object v0, v15, Lde/rki/coronawarnapp/util/di/DaggerApplicationComponent;->cdnHttpClientProvider:Ljavax/inject/Provider;
+
+    iget-object v1, v15, Lde/rki/coronawarnapp/util/di/DaggerApplicationComponent;->provideDownloadServerUrlProvider:Ljavax/inject/Provider;
+
+    iget-object v3, v15, Lde/rki/coronawarnapp/util/di/DaggerApplicationComponent;->httpCacheProvider4:Ljavax/inject/Provider;
+
+    new-instance v4, Lde/rki/coronawarnapp/dccticketing/core/DccTicketingCoreModule_AllowListApiFactory;
+
+    invoke-direct {v4, v2, v0, v1, v3}, Lde/rki/coronawarnapp/dccticketing/core/DccTicketingCoreModule_AllowListApiFactory;-><init>(Lde/rki/coronawarnapp/dccticketing/core/DccTicketingCoreModule;Ljavax/inject/Provider;Ljavax/inject/Provider;Ljavax/inject/Provider;)V
+
+    invoke-static {v4}, Ldagger/internal/SingleCheck;->provider(Ljavax/inject/Provider;)Ljavax/inject/Provider;
+
+    move-result-object v0
+
+    iput-object v0, v15, Lde/rki/coronawarnapp/util/di/DaggerApplicationComponent;->allowListApiProvider:Ljavax/inject/Provider;
+
+    iget-object v0, v15, Lde/rki/coronawarnapp/util/di/DaggerApplicationComponent;->signatureValidationProvider:Ljavax/inject/Provider;
+
+    iget-object v1, v15, Lde/rki/coronawarnapp/util/di/DaggerApplicationComponent;->allowListApiProvider:Ljavax/inject/Provider;
+
+    new-instance v3, Lde/rki/coronawarnapp/dccticketing/core/allowlist/server/DccTicketingAllowListServer_Factory;
+
+    invoke-direct {v3, v0, v1}, Lde/rki/coronawarnapp/dccticketing/core/allowlist/server/DccTicketingAllowListServer_Factory;-><init>(Ljavax/inject/Provider;Ljavax/inject/Provider;)V
+
+    invoke-static {v3}, Ldagger/internal/SingleCheck;->provider(Ljavax/inject/Provider;)Ljavax/inject/Provider;
+
+    move-result-object v0
+
+    iput-object v0, v15, Lde/rki/coronawarnapp/util/di/DaggerApplicationComponent;->dccTicketingAllowListServerProvider:Ljavax/inject/Provider;
+
+    iget-object v0, v15, Lde/rki/coronawarnapp/util/di/DaggerApplicationComponent;->contextProvider:Ljavax/inject/Provider;
+
+    new-instance v1, Lde/rki/coronawarnapp/dccticketing/core/DccTicketingCoreModule_LocalStorageDirFactory;
+
+    invoke-direct {v1, v2, v0}, Lde/rki/coronawarnapp/dccticketing/core/DccTicketingCoreModule_LocalStorageDirFactory;-><init>(Lde/rki/coronawarnapp/dccticketing/core/DccTicketingCoreModule;Ljavax/inject/Provider;)V
+
+    instance-of v0, v1, Ldagger/internal/DoubleCheck;
+
+    if-eqz v0, :cond_57
+
+    goto :goto_57
+
+    :cond_57
+    new-instance v0, Ldagger/internal/DoubleCheck;
+
+    invoke-direct {v0, v1}, Ldagger/internal/DoubleCheck;-><init>(Ljavax/inject/Provider;)V
+
+    move-object v1, v0
+
+    :goto_57
+    iput-object v1, v15, Lde/rki/coronawarnapp/util/di/DaggerApplicationComponent;->localStorageDirProvider:Ljavax/inject/Provider;
+
+    new-instance v0, Lde/rki/coronawarnapp/dccticketing/core/allowlist/repo/storage/DccTicketingAllowListStorage_Factory;
+
+    invoke-direct {v0, v1}, Lde/rki/coronawarnapp/dccticketing/core/allowlist/repo/storage/DccTicketingAllowListStorage_Factory;-><init>(Ljavax/inject/Provider;)V
+
+    invoke-static {v0}, Ldagger/internal/SingleCheck;->provider(Ljavax/inject/Provider;)Ljavax/inject/Provider;
+
+    move-result-object v0
+
+    iput-object v0, v15, Lde/rki/coronawarnapp/util/di/DaggerApplicationComponent;->dccTicketingAllowListStorageProvider:Ljavax/inject/Provider;
+
+    sget-object v0, Lde/rki/coronawarnapp/dccticketing/core/allowlist/internal/DccTicketingAllowListParser_Factory$InstanceHolder;->INSTANCE:Lde/rki/coronawarnapp/dccticketing/core/allowlist/internal/DccTicketingAllowListParser_Factory;
+
+    invoke-static {v0}, Ldagger/internal/SingleCheck;->provider(Ljavax/inject/Provider;)Ljavax/inject/Provider;
+
+    move-result-object v0
+
+    iput-object v0, v15, Lde/rki/coronawarnapp/util/di/DaggerApplicationComponent;->dccTicketingAllowListParserProvider:Ljavax/inject/Provider;
+
+    iget-object v0, v15, Lde/rki/coronawarnapp/util/di/DaggerApplicationComponent;->appCoroutineScopeProvider:Ljavax/inject/Provider;
+
+    iget-object v1, v15, Lde/rki/coronawarnapp/util/di/DaggerApplicationComponent;->defaultDispatcherProvider:Ljavax/inject/Provider;
+
+    iget-object v2, v15, Lde/rki/coronawarnapp/util/di/DaggerApplicationComponent;->dccTicketingAllowListServerProvider:Ljavax/inject/Provider;
+
+    iget-object v3, v15, Lde/rki/coronawarnapp/util/di/DaggerApplicationComponent;->dccTicketingAllowListStorageProvider:Ljavax/inject/Provider;
+
+    iget-object v4, v15, Lde/rki/coronawarnapp/util/di/DaggerApplicationComponent;->dccTicketingAllowListParserProvider:Ljavax/inject/Provider;
+
+    new-instance v5, Lde/rki/coronawarnapp/dccticketing/core/allowlist/repo/DccTicketingAllowListRepository_Factory;
+
+    move-object/from16 p1, v5
+
+    move-object/from16 p2, v0
+
+    move-object/from16 p3, v1
+
+    move-object/from16 p4, v2
+
+    move-object/from16 p5, v3
+
+    move-object/from16 p6, v4
+
+    invoke-direct/range {p1 .. p6}, Lde/rki/coronawarnapp/dccticketing/core/allowlist/repo/DccTicketingAllowListRepository_Factory;-><init>(Ljavax/inject/Provider;Ljavax/inject/Provider;Ljavax/inject/Provider;Ljavax/inject/Provider;Ljavax/inject/Provider;)V
+
+    instance-of v0, v5, Ldagger/internal/DoubleCheck;
+
+    if-eqz v0, :cond_58
+
+    goto :goto_58
+
+    :cond_58
+    new-instance v0, Ldagger/internal/DoubleCheck;
+
+    invoke-direct {v0, v5}, Ldagger/internal/DoubleCheck;-><init>(Ljavax/inject/Provider;)V
+
+    move-object v5, v0
+
+    :goto_58
+    iput-object v5, v15, Lde/rki/coronawarnapp/util/di/DaggerApplicationComponent;->dccTicketingAllowListRepositoryProvider:Ljavax/inject/Provider;
+
+    iget-object v0, v15, Lde/rki/coronawarnapp/util/di/DaggerApplicationComponent;->contextProvider:Ljavax/inject/Provider;
+
+    new-instance v1, Lde/rki/coronawarnapp/dccticketing/core/qrcode/DccTicketingQrCodeSettings_Factory;
+
+    invoke-direct {v1, v0}, Lde/rki/coronawarnapp/dccticketing/core/qrcode/DccTicketingQrCodeSettings_Factory;-><init>(Ljavax/inject/Provider;)V
+
+    iput-object v1, v15, Lde/rki/coronawarnapp/util/di/DaggerApplicationComponent;->dccTicketingQrCodeSettingsProvider:Ljavax/inject/Provider;
+
+    iget-object v0, v15, Lde/rki/coronawarnapp/util/di/DaggerApplicationComponent;->keyCacheRepositoryProvider:Ljavax/inject/Provider;
+
+    move-object/from16 v17, v0
+
+    iget-object v0, v15, Lde/rki/coronawarnapp/util/di/DaggerApplicationComponent;->appConfigProvider:Ljavax/inject/Provider;
+
+    move-object/from16 v18, v0
+
+    iget-object v0, v15, Lde/rki/coronawarnapp/util/di/DaggerApplicationComponent;->submissionRepositoryProvider:Ljavax/inject/Provider;
+
+    move-object/from16 v19, v0
+
+    iget-object v0, v15, Lde/rki/coronawarnapp/util/di/DaggerApplicationComponent;->calculationTrackerProvider:Ljavax/inject/Provider;
+
+    move-object/from16 v20, v0
+
+    iget-object v0, v15, Lde/rki/coronawarnapp/util/di/DaggerApplicationComponent;->downloadDiagnosisKeysSettingsProvider:Ljavax/inject/Provider;
+
+    move-object/from16 v21, v0
+
+    iget-object v0, v15, Lde/rki/coronawarnapp/util/di/DaggerApplicationComponent;->riskLevelStorageProvider:Ljavax/inject/Provider;
+
+    move-object/from16 v22, v0
+
+    iget-object v0, v15, Lde/rki/coronawarnapp/util/di/DaggerApplicationComponent;->contactDiaryRepoProvider:Ljavax/inject/Provider;
+
+    move-object/from16 v23, v0
+
+    iget-object v0, v15, Lde/rki/coronawarnapp/util/di/DaggerApplicationComponent;->contactDiaryPreferencesProvider:Ljavax/inject/Provider;
+
+    move-object/from16 v24, v0
+
+    iget-object v0, v15, Lde/rki/coronawarnapp/util/di/DaggerApplicationComponent;->traceLocationPreferencesProvider:Ljavax/inject/Provider;
+
+    move-object/from16 v25, v0
+
+    iget-object v0, v15, Lde/rki/coronawarnapp/util/di/DaggerApplicationComponent;->cWASettingsProvider:Ljavax/inject/Provider;
+
+    move-object/from16 v26, v0
+
+    iget-object v0, v15, Lde/rki/coronawarnapp/util/di/DaggerApplicationComponent;->statisticsProvider:Ljavax/inject/Provider;
+
+    move-object/from16 v27, v0
+
+    iget-object v0, v15, Lde/rki/coronawarnapp/util/di/DaggerApplicationComponent;->localStatisticsProvider:Ljavax/inject/Provider;
+
+    move-object/from16 v28, v0
+
+    iget-object v0, v15, Lde/rki/coronawarnapp/util/di/DaggerApplicationComponent;->surveySettingsProvider:Ljavax/inject/Provider;
+
+    move-object/from16 v29, v0
+
+    iget-object v0, v15, Lde/rki/coronawarnapp/util/di/DaggerApplicationComponent;->analyticsSettingsProvider:Ljavax/inject/Provider;
+
+    move-object/from16 v30, v0
+
+    iget-object v0, v15, Lde/rki/coronawarnapp/util/di/DaggerApplicationComponent;->analyticsProvider:Ljavax/inject/Provider;
+
+    move-object/from16 v31, v0
+
+    iget-object v0, v15, Lde/rki/coronawarnapp/util/di/DaggerApplicationComponent;->bugReportingSettingsProvider:Ljavax/inject/Provider;
+
+    move-object/from16 v32, v0
+
+    iget-object v0, v15, Lde/rki/coronawarnapp/util/di/DaggerApplicationComponent;->tracingSettingsProvider:Ljavax/inject/Provider;
+
+    move-object/from16 v33, v0
+
+    iget-object v0, v15, Lde/rki/coronawarnapp/util/di/DaggerApplicationComponent;->onboardingSettingsProvider:Ljavax/inject/Provider;
+
+    move-object/from16 v34, v0
+
+    iget-object v0, v15, Lde/rki/coronawarnapp/util/di/DaggerApplicationComponent;->submissionSettingsProvider:Ljavax/inject/Provider;
+
+    move-object/from16 v35, v0
+
+    iget-object v0, v15, Lde/rki/coronawarnapp/util/di/DaggerApplicationComponent;->defaultTraceLocationRepositoryProvider:Ljavax/inject/Provider;
+
+    move-object/from16 v36, v0
+
+    iget-object v0, v15, Lde/rki/coronawarnapp/util/di/DaggerApplicationComponent;->checkInRepositoryProvider:Ljavax/inject/Provider;
+
+    move-object/from16 v37, v0
+
+    iget-object v0, v15, Lde/rki/coronawarnapp/util/di/DaggerApplicationComponent;->traceLocationSettingsProvider:Ljavax/inject/Provider;
+
+    move-object/from16 v38, v0
+
+    iget-object v0, v15, Lde/rki/coronawarnapp/util/di/DaggerApplicationComponent;->traceWarningRepositoryProvider:Ljavax/inject/Provider;
+
+    move-object/from16 v39, v0
+
+    iget-object v0, v15, Lde/rki/coronawarnapp/util/di/DaggerApplicationComponent;->coronaTestRepositoryProvider:Ljavax/inject/Provider;
+
+    move-object/from16 v40, v0
+
+    iget-object v0, v15, Lde/rki/coronawarnapp/util/di/DaggerApplicationComponent;->rATProfileSettingsDataStoreProvider:Ljavax/inject/Provider;
+
+    move-object/from16 v41, v0
+
+    iget-object v0, v15, Lde/rki/coronawarnapp/util/di/DaggerApplicationComponent;->valueSetsRepositoryProvider:Ljavax/inject/Provider;
+
+    move-object/from16 v42, v0
+
+    iget-object v0, v15, Lde/rki/coronawarnapp/util/di/DaggerApplicationComponent;->covidCertificateSettingsProvider:Ljavax/inject/Provider;
+
+    move-object/from16 v43, v0
+
+    iget-object v0, v15, Lde/rki/coronawarnapp/util/di/DaggerApplicationComponent;->vaccinationRepositoryProvider:Ljavax/inject/Provider;
+
+    move-object/from16 v44, v0
+
+    iget-object v0, v15, Lde/rki/coronawarnapp/util/di/DaggerApplicationComponent;->testCertificateRepositoryProvider:Ljavax/inject/Provider;
+
+    move-object/from16 v45, v0
+
+    iget-object v0, v15, Lde/rki/coronawarnapp/util/di/DaggerApplicationComponent;->personCertificatesSettingsProvider:Ljavax/inject/Provider;
+
+    move-object/from16 v46, v0
+
+    iget-object v0, v15, Lde/rki/coronawarnapp/util/di/DaggerApplicationComponent;->dccValidationRepositoryProvider:Ljavax/inject/Provider;
+
+    move-object/from16 v47, v0
+
+    iget-object v0, v15, Lde/rki/coronawarnapp/util/di/DaggerApplicationComponent;->recoveryCertificateRepositoryProvider:Ljavax/inject/Provider;
+
+    move-object/from16 v48, v0
+
+    iget-object v0, v15, Lde/rki/coronawarnapp/util/di/DaggerApplicationComponent;->dscRepositoryProvider:Ljavax/inject/Provider;
+
+    move-object/from16 v49, v0
+
+    iget-object v0, v15, Lde/rki/coronawarnapp/util/di/DaggerApplicationComponent;->boosterRulesRepositoryProvider:Ljavax/inject/Provider;
+
+    move-object/from16 v50, v0
+
+    iget-object v0, v15, Lde/rki/coronawarnapp/util/di/DaggerApplicationComponent;->analyticsExposureWindowsSettingsProvider:Ljavax/inject/Provider;
+
+    move-object/from16 v51, v0
+
+    iget-object v0, v15, Lde/rki/coronawarnapp/util/di/DaggerApplicationComponent;->dccTicketingAllowListRepositoryProvider:Ljavax/inject/Provider;
+
+    move-object/from16 v52, v0
+
+    iget-object v0, v15, Lde/rki/coronawarnapp/util/di/DaggerApplicationComponent;->dccTicketingQrCodeSettingsProvider:Ljavax/inject/Provider;
+
+    move-object/from16 v53, v0
+
+    iget-object v0, v15, Lde/rki/coronawarnapp/util/di/DaggerApplicationComponent;->cCLConfigurationRepositoryProvider:Ljavax/inject/Provider;
+
+    move-object/from16 v54, v0
+
+    iget-object v0, v15, Lde/rki/coronawarnapp/util/di/DaggerApplicationComponent;->dccWalletInfoRepositoryProvider:Ljavax/inject/Provider;
+
+    move-object/from16 v55, v0
+
+    iget-object v0, v15, Lde/rki/coronawarnapp/util/di/DaggerApplicationComponent;->cCLSettingsProvider:Ljavax/inject/Provider;
+
+    move-object/from16 v56, v0
+
+    new-instance v0, Lde/rki/coronawarnapp/util/DataReset_Factory;
+
+    move-object/from16 v16, v0
+
+    invoke-direct/range {v16 .. v56}, Lde/rki/coronawarnapp/util/DataReset_Factory;-><init>(Ljavax/inject/Provider;Ljavax/inject/Provider;Ljavax/inject/Provider;Ljavax/inject/Provider;Ljavax/inject/Provider;Ljavax/inject/Provider;Ljavax/inject/Provider;Ljavax/inject/Provider;Ljavax/inject/Provider;Ljavax/inject/Provider;Ljavax/inject/Provider;Ljavax/inject/Provider;Ljavax/inject/Provider;Ljavax/inject/Provider;Ljavax/inject/Provider;Ljavax/inject/Provider;Ljavax/inject/Provider;Ljavax/inject/Provider;Ljavax/inject/Provider;Ljavax/inject/Provider;Ljavax/inject/Provider;Ljavax/inject/Provider;Ljavax/inject/Provider;Ljavax/inject/Provider;Ljavax/inject/Provider;Ljavax/inject/Provider;Ljavax/inject/Provider;Ljavax/inject/Provider;Ljavax/inject/Provider;Ljavax/inject/Provider;Ljavax/inject/Provider;Ljavax/inject/Provider;Ljavax/inject/Provider;Ljavax/inject/Provider;Ljavax/inject/Provider;Ljavax/inject/Provider;Ljavax/inject/Provider;Ljavax/inject/Provider;Ljavax/inject/Provider;Ljavax/inject/Provider;)V
+
+    instance-of v1, v0, Ldagger/internal/DoubleCheck;
+
+    if-eqz v1, :cond_59
+
+    goto :goto_59
+
+    :cond_59
+    new-instance v1, Ldagger/internal/DoubleCheck;
+
+    invoke-direct {v1, v0}, Ldagger/internal/DoubleCheck;-><init>(Ljavax/inject/Provider;)V
+
+    move-object v0, v1
+
+    :goto_59
+    iput-object v0, v15, Lde/rki/coronawarnapp/util/di/DaggerApplicationComponent;->dataResetProvider:Ljavax/inject/Provider;
+
+    iget-object v0, v15, Lde/rki/coronawarnapp/util/di/DaggerApplicationComponent;->contextProvider:Ljavax/inject/Provider;
+
+    new-instance v1, Lde/rki/coronawarnapp/update/InAppUpdateModule_AppUpdateManagerFactory;
+
+    move-object/from16 v2, p39
+
+    invoke-direct {v1, v2, v0}, Lde/rki/coronawarnapp/update/InAppUpdateModule_AppUpdateManagerFactory;-><init>(Lde/rki/coronawarnapp/update/InAppUpdateModule;Ljavax/inject/Provider;)V
+
+    iput-object v1, v15, Lde/rki/coronawarnapp/util/di/DaggerApplicationComponent;->appUpdateManagerProvider:Ljavax/inject/Provider;
 
     return-void
 .end method
 
 
 # virtual methods
-.method public final initialize2(Lde/rki/coronawarnapp/util/di/AndroidModule;Lde/rki/coronawarnapp/contactdiary/storage/ContactDiaryStorageModule;Lde/rki/coronawarnapp/risk/RiskModule;Lde/rki/coronawarnapp/http/HttpModule;Lde/rki/coronawarnapp/environment/download/DownloadCDNModule;Lde/rki/coronawarnapp/environment/submission/SubmissionCDNModule;Lde/rki/coronawarnapp/diagnosiskeys/DiagnosisKeysModule;Lde/rki/coronawarnapp/submission/SubmissionModule;Lcom/upokecenter/cbor/CBORInteger;Lde/rki/coronawarnapp/task/internal/TaskModule;Lde/rki/coronawarnapp/util/security/SecurityModule;Lcom/google/android/play/core/common/zzc;)V
-    .locals 21
+.method public final initialize2(Lde/rki/coronawarnapp/util/di/AndroidModule;Lde/rki/coronawarnapp/contactdiary/storage/ContactDiaryStorageModule;Lde/rki/coronawarnapp/risk/RiskModule;Lde/rki/coronawarnapp/http/HttpModule;Lde/rki/coronawarnapp/environment/download/DownloadCDNModule;Lde/rki/coronawarnapp/environment/submission/SubmissionCDNModule;Lde/rki/coronawarnapp/diagnosiskeys/DiagnosisKeysModule;Lde/rki/coronawarnapp/submission/SubmissionModule;Lde/rki/coronawarnapp/playbook/PlaybookModule;Lde/rki/coronawarnapp/statistics/StatisticsModule;Lorg/bouncycastle/util/Fingerprint;Lcom/upokecenter/cbor/CBORExtendedFloat;Lde/rki/coronawarnapp/covidcertificate/valueset/CertificateValueSetModule;Lde/rki/coronawarnapp/covidcertificate/validation/core/DccValidationModule;)V
+    .locals 24
     .annotation system Ldalvik/annotation/MethodParameters;
         accessFlags = {
+            0x10,
+            0x10,
             0x10,
             0x10,
             0x10,
@@ -8165,6 +8623,7 @@
             "qrCodePosterTemplateModuleParam",
             "presenceTracingWarningModuleParam",
             "organizerSubmissionModuleParam",
+            "ratProfileModuleParam",
             "digitalCovidCertificateModuleParam",
             "certificateValueSetModuleParam",
             "testCertificateServerModuleParam",
@@ -8174,6 +8633,7 @@
             "qrCodeScannerModuleParam",
             "rootDetectionModuleParam",
             "inAppUpdateModuleParam",
+            "dccTicketingCoreModuleParam",
             "appParam"
         }
     .end annotation
@@ -8184,13 +8644,27 @@
 
     move-object/from16 v9, p8
 
-    iget-object v2, v0, Lde/rki/coronawarnapp/util/di/DaggerApplicationComponent;->provideVerificationApiProvider:Ljavax/inject/Provider;
+    move-object/from16 v10, p12
 
-    iget-object v3, v0, Lde/rki/coronawarnapp/util/di/DaggerApplicationComponent;->paddingToolProvider:Ljavax/inject/Provider;
+    move-object/from16 v11, p14
+
+    iget-object v2, v0, Lde/rki/coronawarnapp/util/di/DaggerApplicationComponent;->fastRandomProvider:Ljavax/inject/Provider;
+
+    new-instance v3, Lde/rki/coronawarnapp/util/PaddingTool_Factory;
+
+    invoke-direct {v3, v2}, Lde/rki/coronawarnapp/util/PaddingTool_Factory;-><init>(Ljavax/inject/Provider;)V
+
+    invoke-static {v3}, Ldagger/internal/SingleCheck;->provider(Ljavax/inject/Provider;)Ljavax/inject/Provider;
+
+    move-result-object v2
+
+    iput-object v2, v0, Lde/rki/coronawarnapp/util/di/DaggerApplicationComponent;->paddingToolProvider:Ljavax/inject/Provider;
+
+    iget-object v3, v0, Lde/rki/coronawarnapp/util/di/DaggerApplicationComponent;->provideVerificationApiProvider:Ljavax/inject/Provider;
 
     new-instance v4, Lde/rki/coronawarnapp/coronatest/server/VerificationServer_Factory;
 
-    invoke-direct {v4, v2, v3}, Lde/rki/coronawarnapp/coronatest/server/VerificationServer_Factory;-><init>(Ljavax/inject/Provider;Ljavax/inject/Provider;)V
+    invoke-direct {v4, v3, v2}, Lde/rki/coronawarnapp/coronatest/server/VerificationServer_Factory;-><init>(Ljavax/inject/Provider;Ljavax/inject/Provider;)V
 
     sget-object v2, Ldagger/internal/DoubleCheck;->UNINITIALIZED:Ljava/lang/Object;
 
@@ -8268,15 +8742,15 @@
 
     iget-object v8, v0, Lde/rki/coronawarnapp/util/di/DaggerApplicationComponent;->provideGSONConverterProvider:Ljavax/inject/Provider;
 
-    new-instance v10, Lde/rki/coronawarnapp/submission/SubmissionModule_ProvideSubmissionApiFactory;
+    new-instance v12, Lde/rki/coronawarnapp/submission/SubmissionModule_ProvideSubmissionApiFactory;
 
-    move-object v2, v10
+    move-object v2, v12
 
     move-object/from16 v3, p8
 
     invoke-direct/range {v2 .. v8}, Lde/rki/coronawarnapp/submission/SubmissionModule_ProvideSubmissionApiFactory;-><init>(Lde/rki/coronawarnapp/submission/SubmissionModule;Ljavax/inject/Provider;Ljavax/inject/Provider;Ljavax/inject/Provider;Ljavax/inject/Provider;Ljavax/inject/Provider;)V
 
-    instance-of v2, v10, Ldagger/internal/DoubleCheck;
+    instance-of v2, v12, Ldagger/internal/DoubleCheck;
 
     if-eqz v2, :cond_2
 
@@ -8285,12 +8759,12 @@
     :cond_2
     new-instance v2, Ldagger/internal/DoubleCheck;
 
-    invoke-direct {v2, v10}, Ldagger/internal/DoubleCheck;-><init>(Ljavax/inject/Provider;)V
+    invoke-direct {v2, v12}, Ldagger/internal/DoubleCheck;-><init>(Ljavax/inject/Provider;)V
 
-    move-object v10, v2
+    move-object v12, v2
 
     :goto_2
-    iput-object v10, v0, Lde/rki/coronawarnapp/util/di/DaggerApplicationComponent;->provideSubmissionApiProvider:Ljavax/inject/Provider;
+    iput-object v12, v0, Lde/rki/coronawarnapp/util/di/DaggerApplicationComponent;->provideSubmissionApiProvider:Ljavax/inject/Provider;
 
     iget-object v2, v0, Lde/rki/coronawarnapp/util/di/DaggerApplicationComponent;->appConfigProvider:Ljavax/inject/Provider;
 
@@ -8298,7 +8772,7 @@
 
     new-instance v4, Lde/rki/coronawarnapp/submission/server/SubmissionServer_Factory;
 
-    invoke-direct {v4, v10, v2, v3}, Lde/rki/coronawarnapp/submission/server/SubmissionServer_Factory;-><init>(Ljavax/inject/Provider;Ljavax/inject/Provider;Ljavax/inject/Provider;)V
+    invoke-direct {v4, v12, v2, v3}, Lde/rki/coronawarnapp/submission/server/SubmissionServer_Factory;-><init>(Ljavax/inject/Provider;Ljavax/inject/Provider;Ljavax/inject/Provider;)V
 
     instance-of v2, v4, Ldagger/internal/DoubleCheck;
 
@@ -8342,7 +8816,7 @@
 
     move-object/from16 v4, p9
 
-    invoke-direct {v2, v4, v3}, Lde/rki/coronawarnapp/playbook/PlaybookModule_ProvidePlaybookFactory;-><init>(Lcom/upokecenter/cbor/CBORInteger;Ljavax/inject/Provider;)V
+    invoke-direct {v2, v4, v3}, Lde/rki/coronawarnapp/playbook/PlaybookModule_ProvidePlaybookFactory;-><init>(Lde/rki/coronawarnapp/playbook/PlaybookModule;Ljavax/inject/Provider;)V
 
     instance-of v3, v2, Ldagger/internal/DoubleCheck;
 
@@ -8394,7 +8868,7 @@
 
     if-eqz v2, :cond_6
 
-    move-object v12, v3
+    move-object v14, v3
 
     goto :goto_6
 
@@ -8403,38 +8877,42 @@
 
     invoke-direct {v2, v3}, Ldagger/internal/DoubleCheck;-><init>(Ljavax/inject/Provider;)V
 
-    move-object v12, v2
+    move-object v14, v2
 
     :goto_6
-    iput-object v12, v0, Lde/rki/coronawarnapp/util/di/DaggerApplicationComponent;->analyticsSettingsProvider:Ljavax/inject/Provider;
+    iput-object v14, v0, Lde/rki/coronawarnapp/util/di/DaggerApplicationComponent;->analyticsSettingsProvider:Ljavax/inject/Provider;
 
     iget-object v2, v0, Lde/rki/coronawarnapp/util/di/DaggerApplicationComponent;->contextProvider:Ljavax/inject/Provider;
 
-    new-instance v13, Lde/rki/coronawarnapp/datadonation/analytics/modules/keysubmission/AnalyticsPCRKeySubmissionStorage_Factory;
+    new-instance v15, Lde/rki/coronawarnapp/datadonation/analytics/modules/keysubmission/AnalyticsPCRKeySubmissionStorage_Factory;
 
-    invoke-direct {v13, v2}, Lde/rki/coronawarnapp/datadonation/analytics/modules/keysubmission/AnalyticsPCRKeySubmissionStorage_Factory;-><init>(Ljavax/inject/Provider;)V
+    invoke-direct {v15, v2}, Lde/rki/coronawarnapp/datadonation/analytics/modules/keysubmission/AnalyticsPCRKeySubmissionStorage_Factory;-><init>(Ljavax/inject/Provider;)V
 
-    iput-object v13, v0, Lde/rki/coronawarnapp/util/di/DaggerApplicationComponent;->analyticsPCRKeySubmissionStorageProvider:Ljavax/inject/Provider;
+    iput-object v15, v0, Lde/rki/coronawarnapp/util/di/DaggerApplicationComponent;->analyticsPCRKeySubmissionStorageProvider:Ljavax/inject/Provider;
 
-    new-instance v14, Lde/rki/coronawarnapp/datadonation/analytics/modules/keysubmission/AnalyticsRAKeySubmissionStorage_Factory;
+    new-instance v3, Lde/rki/coronawarnapp/datadonation/analytics/modules/keysubmission/AnalyticsRAKeySubmissionStorage_Factory;
 
-    invoke-direct {v14, v2}, Lde/rki/coronawarnapp/datadonation/analytics/modules/keysubmission/AnalyticsRAKeySubmissionStorage_Factory;-><init>(Ljavax/inject/Provider;)V
+    invoke-direct {v3, v2}, Lde/rki/coronawarnapp/datadonation/analytics/modules/keysubmission/AnalyticsRAKeySubmissionStorage_Factory;-><init>(Ljavax/inject/Provider;)V
 
-    iput-object v14, v0, Lde/rki/coronawarnapp/util/di/DaggerApplicationComponent;->analyticsRAKeySubmissionStorageProvider:Ljavax/inject/Provider;
+    iput-object v3, v0, Lde/rki/coronawarnapp/util/di/DaggerApplicationComponent;->analyticsRAKeySubmissionStorageProvider:Ljavax/inject/Provider;
 
-    iget-object v3, v0, Lde/rki/coronawarnapp/util/di/DaggerApplicationComponent;->timeStamperProvider:Ljavax/inject/Provider;
+    iget-object v13, v0, Lde/rki/coronawarnapp/util/di/DaggerApplicationComponent;->timeStamperProvider:Ljavax/inject/Provider;
 
-    iget-object v15, v0, Lde/rki/coronawarnapp/util/di/DaggerApplicationComponent;->riskLevelStorageProvider:Ljavax/inject/Provider;
+    iget-object v4, v0, Lde/rki/coronawarnapp/util/di/DaggerApplicationComponent;->riskLevelStorageProvider:Ljavax/inject/Provider;
 
-    new-instance v4, Lde/rki/coronawarnapp/datadonation/analytics/modules/keysubmission/AnalyticsKeySubmissionCollector_Factory;
+    new-instance v5, Lde/rki/coronawarnapp/datadonation/analytics/modules/keysubmission/AnalyticsKeySubmissionCollector_Factory;
 
-    move-object v10, v4
+    move-object v12, v5
 
-    move-object v11, v3
+    move-object/from16 v16, v3
 
-    invoke-direct/range {v10 .. v15}, Lde/rki/coronawarnapp/datadonation/analytics/modules/keysubmission/AnalyticsKeySubmissionCollector_Factory;-><init>(Ljavax/inject/Provider;Ljavax/inject/Provider;Ljavax/inject/Provider;Ljavax/inject/Provider;Ljavax/inject/Provider;)V
+    move-object/from16 v17, v4
 
-    iput-object v4, v0, Lde/rki/coronawarnapp/util/di/DaggerApplicationComponent;->analyticsKeySubmissionCollectorProvider:Ljavax/inject/Provider;
+    invoke-direct/range {v12 .. v17}, Lde/rki/coronawarnapp/datadonation/analytics/modules/keysubmission/AnalyticsKeySubmissionCollector_Factory;-><init>(Ljavax/inject/Provider;Ljavax/inject/Provider;Ljavax/inject/Provider;Ljavax/inject/Provider;Ljavax/inject/Provider;)V
+
+    iput-object v5, v0, Lde/rki/coronawarnapp/util/di/DaggerApplicationComponent;->analyticsKeySubmissionCollectorProvider:Ljavax/inject/Provider;
+
+    iget-object v3, v0, Lde/rki/coronawarnapp/util/di/DaggerApplicationComponent;->baseGsonProvider:Ljavax/inject/Provider;
 
     new-instance v4, Lde/rki/coronawarnapp/datadonation/analytics/modules/testresult/AnalyticsPCRTestResultSettings_Factory;
 
@@ -8458,7 +8936,7 @@
 
     iget-object v2, v0, Lde/rki/coronawarnapp/util/di/DaggerApplicationComponent;->contextProvider:Ljavax/inject/Provider;
 
-    iget-object v3, v0, Lde/rki/coronawarnapp/util/di/DaggerApplicationComponent;->timeStamperProvider:Ljavax/inject/Provider;
+    iget-object v3, v0, Lde/rki/coronawarnapp/util/di/DaggerApplicationComponent;->baseGsonProvider:Ljavax/inject/Provider;
 
     new-instance v4, Lde/rki/coronawarnapp/datadonation/analytics/modules/testresult/AnalyticsRATestResultSettings_Factory;
 
@@ -8468,7 +8946,7 @@
 
     if-eqz v2, :cond_8
 
-    move-object v13, v4
+    move-object v15, v4
 
     goto :goto_8
 
@@ -8477,36 +8955,50 @@
 
     invoke-direct {v2, v4}, Ldagger/internal/DoubleCheck;-><init>(Ljavax/inject/Provider;)V
 
-    move-object v13, v2
-
-    :goto_8
-    iput-object v13, v0, Lde/rki/coronawarnapp/util/di/DaggerApplicationComponent;->analyticsRATestResultSettingsProvider:Ljavax/inject/Provider;
-
-    iget-object v11, v0, Lde/rki/coronawarnapp/util/di/DaggerApplicationComponent;->analyticsSettingsProvider:Ljavax/inject/Provider;
-
-    iget-object v12, v0, Lde/rki/coronawarnapp/util/di/DaggerApplicationComponent;->analyticsPCRTestResultSettingsProvider:Ljavax/inject/Provider;
-
-    iget-object v14, v0, Lde/rki/coronawarnapp/util/di/DaggerApplicationComponent;->riskLevelStorageProvider:Ljavax/inject/Provider;
-
-    iget-object v2, v0, Lde/rki/coronawarnapp/util/di/DaggerApplicationComponent;->timeStamperProvider:Ljavax/inject/Provider;
-
-    new-instance v3, Lde/rki/coronawarnapp/datadonation/analytics/modules/testresult/AnalyticsTestResultCollector_Factory;
-
-    move-object v10, v3
-
     move-object v15, v2
 
-    invoke-direct/range {v10 .. v15}, Lde/rki/coronawarnapp/datadonation/analytics/modules/testresult/AnalyticsTestResultCollector_Factory;-><init>(Ljavax/inject/Provider;Ljavax/inject/Provider;Ljavax/inject/Provider;Ljavax/inject/Provider;Ljavax/inject/Provider;)V
+    :goto_8
+    iput-object v15, v0, Lde/rki/coronawarnapp/util/di/DaggerApplicationComponent;->analyticsRATestResultSettingsProvider:Ljavax/inject/Provider;
 
-    iput-object v3, v0, Lde/rki/coronawarnapp/util/di/DaggerApplicationComponent;->analyticsTestResultCollectorProvider:Ljavax/inject/Provider;
+    iget-object v2, v0, Lde/rki/coronawarnapp/util/di/DaggerApplicationComponent;->contextProvider:Ljavax/inject/Provider;
 
-    iget-object v4, v0, Lde/rki/coronawarnapp/util/di/DaggerApplicationComponent;->coronaTestServiceProvider:Ljavax/inject/Provider;
+    iget-object v3, v0, Lde/rki/coronawarnapp/util/di/DaggerApplicationComponent;->baseGsonProvider:Ljavax/inject/Provider;
 
-    iget-object v5, v0, Lde/rki/coronawarnapp/util/di/DaggerApplicationComponent;->analyticsKeySubmissionCollectorProvider:Ljavax/inject/Provider;
+    new-instance v4, Lde/rki/coronawarnapp/datadonation/analytics/modules/testresult/AnalyticsExposureWindowsSettings_Factory;
+
+    invoke-direct {v4, v2, v3}, Lde/rki/coronawarnapp/datadonation/analytics/modules/testresult/AnalyticsExposureWindowsSettings_Factory;-><init>(Ljavax/inject/Provider;Ljavax/inject/Provider;)V
+
+    iput-object v4, v0, Lde/rki/coronawarnapp/util/di/DaggerApplicationComponent;->analyticsExposureWindowsSettingsProvider:Ljavax/inject/Provider;
+
+    iget-object v13, v0, Lde/rki/coronawarnapp/util/di/DaggerApplicationComponent;->analyticsSettingsProvider:Ljavax/inject/Provider;
+
+    iget-object v14, v0, Lde/rki/coronawarnapp/util/di/DaggerApplicationComponent;->analyticsPCRTestResultSettingsProvider:Ljavax/inject/Provider;
+
+    iget-object v2, v0, Lde/rki/coronawarnapp/util/di/DaggerApplicationComponent;->riskLevelStorageProvider:Ljavax/inject/Provider;
+
+    iget-object v3, v0, Lde/rki/coronawarnapp/util/di/DaggerApplicationComponent;->timeStamperProvider:Ljavax/inject/Provider;
+
+    new-instance v5, Lde/rki/coronawarnapp/datadonation/analytics/modules/testresult/AnalyticsTestResultCollector_Factory;
+
+    move-object v12, v5
+
+    move-object/from16 v16, v2
+
+    move-object/from16 v17, v3
+
+    move-object/from16 v18, v4
+
+    invoke-direct/range {v12 .. v18}, Lde/rki/coronawarnapp/datadonation/analytics/modules/testresult/AnalyticsTestResultCollector_Factory;-><init>(Ljavax/inject/Provider;Ljavax/inject/Provider;Ljavax/inject/Provider;Ljavax/inject/Provider;Ljavax/inject/Provider;Ljavax/inject/Provider;)V
+
+    iput-object v5, v0, Lde/rki/coronawarnapp/util/di/DaggerApplicationComponent;->analyticsTestResultCollectorProvider:Ljavax/inject/Provider;
+
+    iget-object v2, v0, Lde/rki/coronawarnapp/util/di/DaggerApplicationComponent;->coronaTestServiceProvider:Ljavax/inject/Provider;
+
+    iget-object v4, v0, Lde/rki/coronawarnapp/util/di/DaggerApplicationComponent;->analyticsKeySubmissionCollectorProvider:Ljavax/inject/Provider;
 
     new-instance v6, Lde/rki/coronawarnapp/coronatest/type/pcr/PCRTestProcessor_Factory;
 
-    invoke-direct {v6, v2, v4, v5, v3}, Lde/rki/coronawarnapp/coronatest/type/pcr/PCRTestProcessor_Factory;-><init>(Ljavax/inject/Provider;Ljavax/inject/Provider;Ljavax/inject/Provider;Ljavax/inject/Provider;)V
+    invoke-direct {v6, v3, v2, v4, v5}, Lde/rki/coronawarnapp/coronatest/type/pcr/PCRTestProcessor_Factory;-><init>(Ljavax/inject/Provider;Ljavax/inject/Provider;Ljavax/inject/Provider;Ljavax/inject/Provider;)V
 
     invoke-static {v6}, Ldagger/internal/SingleCheck;->provider(Ljavax/inject/Provider;)Ljavax/inject/Provider;
 
@@ -8632,6 +9124,8 @@
 
     if-eqz v2, :cond_b
 
+    move-object v2, v3
+
     goto :goto_b
 
     :cond_b
@@ -8639,44 +9133,46 @@
 
     invoke-direct {v2, v3}, Ldagger/internal/DoubleCheck;-><init>(Ljavax/inject/Provider;)V
 
-    move-object v3, v2
-
     :goto_b
-    iput-object v3, v0, Lde/rki/coronawarnapp/util/di/DaggerApplicationComponent;->contactDiaryRepoProvider:Ljavax/inject/Provider;
+    iput-object v2, v0, Lde/rki/coronawarnapp/util/di/DaggerApplicationComponent;->contactDiaryRepoProvider:Ljavax/inject/Provider;
 
-    iget-object v11, v0, Lde/rki/coronawarnapp/util/di/DaggerApplicationComponent;->appCoroutineScopeProvider:Ljavax/inject/Provider;
+    iget-object v13, v0, Lde/rki/coronawarnapp/util/di/DaggerApplicationComponent;->appCoroutineScopeProvider:Ljavax/inject/Provider;
 
-    iget-object v12, v0, Lde/rki/coronawarnapp/util/di/DaggerApplicationComponent;->defaultDispatcherProvider:Ljavax/inject/Provider;
+    iget-object v14, v0, Lde/rki/coronawarnapp/util/di/DaggerApplicationComponent;->defaultDispatcherProvider:Ljavax/inject/Provider;
 
-    iget-object v13, v0, Lde/rki/coronawarnapp/util/di/DaggerApplicationComponent;->coronaTestStorageProvider:Ljavax/inject/Provider;
+    iget-object v15, v0, Lde/rki/coronawarnapp/util/di/DaggerApplicationComponent;->coronaTestStorageProvider:Ljavax/inject/Provider;
 
-    iget-object v14, v0, Lde/rki/coronawarnapp/util/di/DaggerApplicationComponent;->setOfCoronaTestProcessorProvider:Ljavax/inject/Provider;
+    iget-object v3, v0, Lde/rki/coronawarnapp/util/di/DaggerApplicationComponent;->setOfCoronaTestProcessorProvider:Ljavax/inject/Provider;
 
-    iget-object v15, v0, Lde/rki/coronawarnapp/util/di/DaggerApplicationComponent;->pCRTestMigrationProvider:Ljavax/inject/Provider;
+    iget-object v4, v0, Lde/rki/coronawarnapp/util/di/DaggerApplicationComponent;->pCRTestMigrationProvider:Ljavax/inject/Provider;
 
-    new-instance v2, Lde/rki/coronawarnapp/coronatest/CoronaTestRepository_Factory;
+    new-instance v5, Lde/rki/coronawarnapp/coronatest/CoronaTestRepository_Factory;
 
-    move-object v10, v2
+    move-object v12, v5
 
     move-object/from16 v16, v3
 
-    invoke-direct/range {v10 .. v16}, Lde/rki/coronawarnapp/coronatest/CoronaTestRepository_Factory;-><init>(Ljavax/inject/Provider;Ljavax/inject/Provider;Ljavax/inject/Provider;Ljavax/inject/Provider;Ljavax/inject/Provider;Ljavax/inject/Provider;)V
+    move-object/from16 v17, v4
 
-    instance-of v3, v2, Ldagger/internal/DoubleCheck;
+    move-object/from16 v18, v2
 
-    if-eqz v3, :cond_c
+    invoke-direct/range {v12 .. v18}, Lde/rki/coronawarnapp/coronatest/CoronaTestRepository_Factory;-><init>(Ljavax/inject/Provider;Ljavax/inject/Provider;Ljavax/inject/Provider;Ljavax/inject/Provider;Ljavax/inject/Provider;Ljavax/inject/Provider;)V
+
+    instance-of v2, v5, Ldagger/internal/DoubleCheck;
+
+    if-eqz v2, :cond_c
 
     goto :goto_c
 
     :cond_c
-    new-instance v3, Ldagger/internal/DoubleCheck;
+    new-instance v2, Ldagger/internal/DoubleCheck;
 
-    invoke-direct {v3, v2}, Ldagger/internal/DoubleCheck;-><init>(Ljavax/inject/Provider;)V
+    invoke-direct {v2, v5}, Ldagger/internal/DoubleCheck;-><init>(Ljavax/inject/Provider;)V
 
-    move-object v2, v3
+    move-object v5, v2
 
     :goto_c
-    iput-object v2, v0, Lde/rki/coronawarnapp/util/di/DaggerApplicationComponent;->coronaTestRepositoryProvider:Ljavax/inject/Provider;
+    iput-object v5, v0, Lde/rki/coronawarnapp/util/di/DaggerApplicationComponent;->coronaTestRepositoryProvider:Ljavax/inject/Provider;
 
     iget-object v2, v0, Lde/rki/coronawarnapp/util/di/DaggerApplicationComponent;->contextProvider:Ljavax/inject/Provider;
 
@@ -8716,27 +9212,31 @@
 
     iput-object v3, v0, Lde/rki/coronawarnapp/util/di/DaggerApplicationComponent;->analyticsExposureWindowCollectorProvider:Ljavax/inject/Provider;
 
-    iget-object v11, v0, Lde/rki/coronawarnapp/util/di/DaggerApplicationComponent;->bindRiskLevelCalculationProvider:Ljavax/inject/Provider;
+    iget-object v13, v0, Lde/rki/coronawarnapp/util/di/DaggerApplicationComponent;->bindRiskLevelCalculationProvider:Ljavax/inject/Provider;
 
-    iget-object v12, v0, Lde/rki/coronawarnapp/util/di/DaggerApplicationComponent;->eNFClientProvider:Ljavax/inject/Provider;
+    iget-object v14, v0, Lde/rki/coronawarnapp/util/di/DaggerApplicationComponent;->eNFClientProvider:Ljavax/inject/Provider;
 
-    iget-object v13, v0, Lde/rki/coronawarnapp/util/di/DaggerApplicationComponent;->timeStamperProvider:Ljavax/inject/Provider;
+    iget-object v15, v0, Lde/rki/coronawarnapp/util/di/DaggerApplicationComponent;->timeStamperProvider:Ljavax/inject/Provider;
 
-    iget-object v14, v0, Lde/rki/coronawarnapp/util/di/DaggerApplicationComponent;->backgroundModeStatusProvider:Ljavax/inject/Provider;
+    iget-object v2, v0, Lde/rki/coronawarnapp/util/di/DaggerApplicationComponent;->backgroundModeStatusProvider:Ljavax/inject/Provider;
 
-    iget-object v15, v0, Lde/rki/coronawarnapp/util/di/DaggerApplicationComponent;->riskLevelSettingsProvider:Ljavax/inject/Provider;
+    iget-object v4, v0, Lde/rki/coronawarnapp/util/di/DaggerApplicationComponent;->riskLevelSettingsProvider:Ljavax/inject/Provider;
 
-    iget-object v2, v0, Lde/rki/coronawarnapp/util/di/DaggerApplicationComponent;->appConfigProvider:Ljavax/inject/Provider;
+    iget-object v5, v0, Lde/rki/coronawarnapp/util/di/DaggerApplicationComponent;->appConfigProvider:Ljavax/inject/Provider;
 
-    iget-object v4, v0, Lde/rki/coronawarnapp/util/di/DaggerApplicationComponent;->riskLevelStorageProvider:Ljavax/inject/Provider;
+    iget-object v6, v0, Lde/rki/coronawarnapp/util/di/DaggerApplicationComponent;->riskLevelStorageProvider:Ljavax/inject/Provider;
 
-    iget-object v5, v0, Lde/rki/coronawarnapp/util/di/DaggerApplicationComponent;->keyCacheRepositoryProvider:Ljavax/inject/Provider;
+    iget-object v7, v0, Lde/rki/coronawarnapp/util/di/DaggerApplicationComponent;->keyCacheRepositoryProvider:Ljavax/inject/Provider;
 
-    iget-object v6, v0, Lde/rki/coronawarnapp/util/di/DaggerApplicationComponent;->coronaTestRepositoryProvider:Ljavax/inject/Provider;
+    iget-object v8, v0, Lde/rki/coronawarnapp/util/di/DaggerApplicationComponent;->coronaTestRepositoryProvider:Ljavax/inject/Provider;
 
-    new-instance v7, Lde/rki/coronawarnapp/risk/RiskLevelTask_Factory;
+    iget-object v12, v0, Lde/rki/coronawarnapp/util/di/DaggerApplicationComponent;->analyticsTestResultCollectorProvider:Ljavax/inject/Provider;
 
-    move-object v10, v7
+    new-instance v11, Lde/rki/coronawarnapp/risk/RiskLevelTask_Factory;
+
+    move-object/from16 v23, v12
+
+    move-object v12, v11
 
     move-object/from16 v16, v2
 
@@ -8746,17 +9246,21 @@
 
     move-object/from16 v19, v6
 
-    move-object/from16 v20, v3
+    move-object/from16 v20, v7
 
-    invoke-direct/range {v10 .. v20}, Lde/rki/coronawarnapp/risk/RiskLevelTask_Factory;-><init>(Ljavax/inject/Provider;Ljavax/inject/Provider;Ljavax/inject/Provider;Ljavax/inject/Provider;Ljavax/inject/Provider;Ljavax/inject/Provider;Ljavax/inject/Provider;Ljavax/inject/Provider;Ljavax/inject/Provider;Ljavax/inject/Provider;)V
+    move-object/from16 v21, v8
 
-    iput-object v7, v0, Lde/rki/coronawarnapp/util/di/DaggerApplicationComponent;->riskLevelTaskProvider:Ljavax/inject/Provider;
+    move-object/from16 v22, v3
+
+    invoke-direct/range {v12 .. v23}, Lde/rki/coronawarnapp/risk/RiskLevelTask_Factory;-><init>(Ljavax/inject/Provider;Ljavax/inject/Provider;Ljavax/inject/Provider;Ljavax/inject/Provider;Ljavax/inject/Provider;Ljavax/inject/Provider;Ljavax/inject/Provider;Ljavax/inject/Provider;Ljavax/inject/Provider;Ljavax/inject/Provider;Ljavax/inject/Provider;)V
+
+    iput-object v11, v0, Lde/rki/coronawarnapp/util/di/DaggerApplicationComponent;->riskLevelTaskProvider:Ljavax/inject/Provider;
 
     iget-object v2, v0, Lde/rki/coronawarnapp/util/di/DaggerApplicationComponent;->calculationTrackerProvider:Ljavax/inject/Provider;
 
     new-instance v3, Lde/rki/coronawarnapp/risk/RiskLevelTask_Factory_Factory;
 
-    invoke-direct {v3, v7, v2}, Lde/rki/coronawarnapp/risk/RiskLevelTask_Factory_Factory;-><init>(Ljavax/inject/Provider;Ljavax/inject/Provider;)V
+    invoke-direct {v3, v11, v2}, Lde/rki/coronawarnapp/risk/RiskLevelTask_Factory_Factory;-><init>(Ljavax/inject/Provider;Ljavax/inject/Provider;)V
 
     iput-object v3, v0, Lde/rki/coronawarnapp/util/di/DaggerApplicationComponent;->factoryProvider6:Ljavax/inject/Provider;
 
@@ -8788,75 +9292,65 @@
 
     iput-object v2, v0, Lde/rki/coronawarnapp/util/di/DaggerApplicationComponent;->deviceStorageProvider:Ljavax/inject/Provider;
 
-    iget-object v5, v0, Lde/rki/coronawarnapp/util/di/DaggerApplicationComponent;->cdnHttpClientProvider:Ljavax/inject/Provider;
+    iget-object v2, v0, Lde/rki/coronawarnapp/util/di/DaggerApplicationComponent;->cdnHttpClientProvider:Ljavax/inject/Provider;
 
-    iget-object v6, v0, Lde/rki/coronawarnapp/util/di/DaggerApplicationComponent;->provideDownloadServerUrlProvider:Ljavax/inject/Provider;
+    iget-object v3, v0, Lde/rki/coronawarnapp/util/di/DaggerApplicationComponent;->provideDownloadServerUrlProvider:Ljavax/inject/Provider;
 
-    iget-object v7, v0, Lde/rki/coronawarnapp/util/di/DaggerApplicationComponent;->provideGSONConverterProvider:Ljavax/inject/Provider;
+    iget-object v4, v0, Lde/rki/coronawarnapp/util/di/DaggerApplicationComponent;->provideGSONConverterProvider:Ljavax/inject/Provider;
 
-    new-instance v2, Lde/rki/coronawarnapp/presencetracing/warning/PresenceTracingWarningModule_ApiV1Factory;
+    new-instance v5, Lde/rki/coronawarnapp/presencetracing/warning/PresenceTracingWarningModule_ApiV1Factory;
 
-    const/4 v8, 0x0
+    invoke-direct {v5, v10, v2, v3, v4}, Lde/rki/coronawarnapp/presencetracing/warning/PresenceTracingWarningModule_ApiV1Factory;-><init>(Lcom/upokecenter/cbor/CBORExtendedFloat;Ljavax/inject/Provider;Ljavax/inject/Provider;Ljavax/inject/Provider;)V
 
-    move-object v3, v2
+    instance-of v2, v5, Ldagger/internal/DoubleCheck;
 
-    move-object/from16 v4, p12
-
-    invoke-direct/range {v3 .. v8}, Lde/rki/coronawarnapp/presencetracing/warning/PresenceTracingWarningModule_ApiV1Factory;-><init>(Lcom/google/android/play/core/common/zzc;Ljavax/inject/Provider;Ljavax/inject/Provider;Ljavax/inject/Provider;I)V
-
-    instance-of v3, v2, Ldagger/internal/DoubleCheck;
-
-    if-eqz v3, :cond_e
+    if-eqz v2, :cond_e
 
     goto :goto_e
 
     :cond_e
-    new-instance v3, Ldagger/internal/DoubleCheck;
+    new-instance v2, Ldagger/internal/DoubleCheck;
 
-    invoke-direct {v3, v2}, Ldagger/internal/DoubleCheck;-><init>(Ljavax/inject/Provider;)V
+    invoke-direct {v2, v5}, Ldagger/internal/DoubleCheck;-><init>(Ljavax/inject/Provider;)V
 
-    move-object v2, v3
+    move-object v5, v2
 
     :goto_e
-    iput-object v2, v0, Lde/rki/coronawarnapp/util/di/DaggerApplicationComponent;->apiV1Provider:Ljavax/inject/Provider;
+    iput-object v5, v0, Lde/rki/coronawarnapp/util/di/DaggerApplicationComponent;->apiV1Provider:Ljavax/inject/Provider;
 
-    iget-object v5, v0, Lde/rki/coronawarnapp/util/di/DaggerApplicationComponent;->cdnHttpClientProvider:Ljavax/inject/Provider;
+    iget-object v2, v0, Lde/rki/coronawarnapp/util/di/DaggerApplicationComponent;->cdnHttpClientProvider:Ljavax/inject/Provider;
 
-    iget-object v6, v0, Lde/rki/coronawarnapp/util/di/DaggerApplicationComponent;->provideDownloadServerUrlProvider:Ljavax/inject/Provider;
+    iget-object v3, v0, Lde/rki/coronawarnapp/util/di/DaggerApplicationComponent;->provideDownloadServerUrlProvider:Ljavax/inject/Provider;
 
-    iget-object v7, v0, Lde/rki/coronawarnapp/util/di/DaggerApplicationComponent;->provideGSONConverterProvider:Ljavax/inject/Provider;
+    iget-object v4, v0, Lde/rki/coronawarnapp/util/di/DaggerApplicationComponent;->provideGSONConverterProvider:Ljavax/inject/Provider;
 
-    new-instance v2, Lde/rki/coronawarnapp/presencetracing/warning/PresenceTracingWarningModule_ApiV1Factory;
+    new-instance v5, Lde/rki/coronawarnapp/presencetracing/warning/PresenceTracingWarningModule_ApiV2Factory;
 
-    const/4 v8, 0x1
+    invoke-direct {v5, v10, v2, v3, v4}, Lde/rki/coronawarnapp/presencetracing/warning/PresenceTracingWarningModule_ApiV2Factory;-><init>(Lcom/upokecenter/cbor/CBORExtendedFloat;Ljavax/inject/Provider;Ljavax/inject/Provider;Ljavax/inject/Provider;)V
 
-    move-object v3, v2
+    instance-of v2, v5, Ldagger/internal/DoubleCheck;
 
-    move-object/from16 v4, p12
-
-    invoke-direct/range {v3 .. v8}, Lde/rki/coronawarnapp/presencetracing/warning/PresenceTracingWarningModule_ApiV1Factory;-><init>(Lcom/google/android/play/core/common/zzc;Ljavax/inject/Provider;Ljavax/inject/Provider;Ljavax/inject/Provider;I)V
-
-    instance-of v3, v2, Ldagger/internal/DoubleCheck;
-
-    if-eqz v3, :cond_f
+    if-eqz v2, :cond_f
 
     goto :goto_f
 
     :cond_f
-    new-instance v3, Ldagger/internal/DoubleCheck;
+    new-instance v2, Ldagger/internal/DoubleCheck;
 
-    invoke-direct {v3, v2}, Ldagger/internal/DoubleCheck;-><init>(Ljavax/inject/Provider;)V
+    invoke-direct {v2, v5}, Ldagger/internal/DoubleCheck;-><init>(Ljavax/inject/Provider;)V
 
-    move-object v2, v3
+    move-object v5, v2
 
     :goto_f
-    iput-object v2, v0, Lde/rki/coronawarnapp/util/di/DaggerApplicationComponent;->apiV2Provider:Ljavax/inject/Provider;
+    iput-object v5, v0, Lde/rki/coronawarnapp/util/di/DaggerApplicationComponent;->apiV2Provider:Ljavax/inject/Provider;
 
-    iget-object v3, v0, Lde/rki/coronawarnapp/util/di/DaggerApplicationComponent;->apiV1Provider:Ljavax/inject/Provider;
+    iget-object v2, v0, Lde/rki/coronawarnapp/util/di/DaggerApplicationComponent;->apiV1Provider:Ljavax/inject/Provider;
+
+    iget-object v3, v0, Lde/rki/coronawarnapp/util/di/DaggerApplicationComponent;->apiV2Provider:Ljavax/inject/Provider;
 
     new-instance v4, Lde/rki/coronawarnapp/presencetracing/warning/download/server/TraceWarningServer_Factory;
 
-    invoke-direct {v4, v3, v2}, Lde/rki/coronawarnapp/presencetracing/warning/download/server/TraceWarningServer_Factory;-><init>(Ljavax/inject/Provider;Ljavax/inject/Provider;)V
+    invoke-direct {v4, v2, v3}, Lde/rki/coronawarnapp/presencetracing/warning/download/server/TraceWarningServer_Factory;-><init>(Ljavax/inject/Provider;Ljavax/inject/Provider;)V
 
     instance-of v2, v4, Ldagger/internal/DoubleCheck;
 
@@ -8881,6 +9375,10 @@
     invoke-direct {v3, v2}, Lde/rki/coronawarnapp/presencetracing/warning/storage/TraceWarningDatabase_Factory_Factory;-><init>(Ljavax/inject/Provider;)V
 
     iput-object v3, v0, Lde/rki/coronawarnapp/util/di/DaggerApplicationComponent;->factoryProvider7:Ljavax/inject/Provider;
+
+    iget-object v2, v0, Lde/rki/coronawarnapp/util/di/DaggerApplicationComponent;->contextProvider:Ljavax/inject/Provider;
+
+    iget-object v3, v0, Lde/rki/coronawarnapp/util/di/DaggerApplicationComponent;->factoryProvider7:Ljavax/inject/Provider;
 
     iget-object v4, v0, Lde/rki/coronawarnapp/util/di/DaggerApplicationComponent;->timeStamperProvider:Ljavax/inject/Provider;
 
@@ -8952,27 +9450,29 @@
 
     iput-object v2, v0, Lde/rki/coronawarnapp/util/di/DaggerApplicationComponent;->traceWarningPackageDownloaderProvider:Ljavax/inject/Provider;
 
-    iget-object v11, v0, Lde/rki/coronawarnapp/util/di/DaggerApplicationComponent;->deviceStorageProvider:Ljavax/inject/Provider;
+    iget-object v12, v0, Lde/rki/coronawarnapp/util/di/DaggerApplicationComponent;->deviceStorageProvider:Ljavax/inject/Provider;
 
-    iget-object v12, v0, Lde/rki/coronawarnapp/util/di/DaggerApplicationComponent;->traceWarningServerProvider:Ljavax/inject/Provider;
+    iget-object v13, v0, Lde/rki/coronawarnapp/util/di/DaggerApplicationComponent;->traceWarningServerProvider:Ljavax/inject/Provider;
 
-    iget-object v13, v0, Lde/rki/coronawarnapp/util/di/DaggerApplicationComponent;->traceWarningRepositoryProvider:Ljavax/inject/Provider;
+    iget-object v14, v0, Lde/rki/coronawarnapp/util/di/DaggerApplicationComponent;->traceWarningRepositoryProvider:Ljavax/inject/Provider;
 
-    iget-object v14, v0, Lde/rki/coronawarnapp/util/di/DaggerApplicationComponent;->appConfigProvider:Ljavax/inject/Provider;
+    iget-object v15, v0, Lde/rki/coronawarnapp/util/di/DaggerApplicationComponent;->appConfigProvider:Ljavax/inject/Provider;
 
-    iget-object v15, v0, Lde/rki/coronawarnapp/util/di/DaggerApplicationComponent;->checkInRepositoryProvider:Ljavax/inject/Provider;
+    iget-object v2, v0, Lde/rki/coronawarnapp/util/di/DaggerApplicationComponent;->checkInRepositoryProvider:Ljavax/inject/Provider;
 
-    iget-object v2, v0, Lde/rki/coronawarnapp/util/di/DaggerApplicationComponent;->traceWarningPackageDownloaderProvider:Ljavax/inject/Provider;
+    iget-object v3, v0, Lde/rki/coronawarnapp/util/di/DaggerApplicationComponent;->traceWarningPackageDownloaderProvider:Ljavax/inject/Provider;
 
-    new-instance v3, Lde/rki/coronawarnapp/presencetracing/warning/download/TraceWarningPackageSyncTool_Factory;
+    new-instance v4, Lde/rki/coronawarnapp/presencetracing/warning/download/TraceWarningPackageSyncTool_Factory;
 
-    move-object v10, v3
+    move-object v11, v4
 
     move-object/from16 v16, v2
 
-    invoke-direct/range {v10 .. v16}, Lde/rki/coronawarnapp/presencetracing/warning/download/TraceWarningPackageSyncTool_Factory;-><init>(Ljavax/inject/Provider;Ljavax/inject/Provider;Ljavax/inject/Provider;Ljavax/inject/Provider;Ljavax/inject/Provider;Ljavax/inject/Provider;)V
+    move-object/from16 v17, v3
 
-    invoke-static {v3}, Ldagger/internal/SingleCheck;->provider(Ljavax/inject/Provider;)Ljavax/inject/Provider;
+    invoke-direct/range {v11 .. v17}, Lde/rki/coronawarnapp/presencetracing/warning/download/TraceWarningPackageSyncTool_Factory;-><init>(Ljavax/inject/Provider;Ljavax/inject/Provider;Ljavax/inject/Provider;Ljavax/inject/Provider;Ljavax/inject/Provider;Ljavax/inject/Provider;)V
+
+    invoke-static {v4}, Ldagger/internal/SingleCheck;->provider(Ljavax/inject/Provider;)Ljavax/inject/Provider;
 
     move-result-object v2
 
@@ -8982,7 +9482,7 @@
 
     move-object/from16 v3, p11
 
-    invoke-direct {v2, v3}, Lde/rki/coronawarnapp/util/security/SecurityModule_StrongRandomFactory;-><init>(Lde/rki/coronawarnapp/util/security/SecurityModule;)V
+    invoke-direct {v2, v3}, Lde/rki/coronawarnapp/util/security/SecurityModule_StrongRandomFactory;-><init>(Lorg/bouncycastle/util/Fingerprint;)V
 
     invoke-static {v2}, Ldagger/internal/SingleCheck;->provider(Ljavax/inject/Provider;)Ljavax/inject/Provider;
 
@@ -8990,7 +9490,7 @@
 
     iput-object v2, v0, Lde/rki/coronawarnapp/util/di/DaggerApplicationComponent;->strongRandomProvider:Ljavax/inject/Provider;
 
-    sget-object v3, Lde/rki/coronawarnapp/covidcertificate/common/cryptography/AesCryptography_Factory$InstanceHolder;->INSTANCE:Lde/rki/coronawarnapp/covidcertificate/common/cryptography/AesCryptography_Factory;
+    sget-object v3, Lde/rki/coronawarnapp/util/encryption/aes/AesCryptography_Factory$InstanceHolder;->INSTANCE:Lde/rki/coronawarnapp/util/encryption/aes/AesCryptography_Factory;
 
     new-instance v4, Lde/rki/coronawarnapp/presencetracing/checkins/cryptography/CheckInCryptography_Factory;
 
@@ -9056,27 +9556,29 @@
 
     iput-object v2, v0, Lde/rki/coronawarnapp/util/di/DaggerApplicationComponent;->autoCheckOutIntentFactoryProvider:Ljavax/inject/Provider;
 
-    iget-object v11, v0, Lde/rki/coronawarnapp/util/di/DaggerApplicationComponent;->appCoroutineScopeProvider:Ljavax/inject/Provider;
+    iget-object v12, v0, Lde/rki/coronawarnapp/util/di/DaggerApplicationComponent;->appCoroutineScopeProvider:Ljavax/inject/Provider;
 
-    iget-object v12, v0, Lde/rki/coronawarnapp/util/di/DaggerApplicationComponent;->checkInRepositoryProvider:Ljavax/inject/Provider;
+    iget-object v13, v0, Lde/rki/coronawarnapp/util/di/DaggerApplicationComponent;->checkInRepositoryProvider:Ljavax/inject/Provider;
 
-    iget-object v13, v0, Lde/rki/coronawarnapp/util/di/DaggerApplicationComponent;->checkOutHandlerProvider:Ljavax/inject/Provider;
+    iget-object v14, v0, Lde/rki/coronawarnapp/util/di/DaggerApplicationComponent;->checkOutHandlerProvider:Ljavax/inject/Provider;
 
-    iget-object v14, v0, Lde/rki/coronawarnapp/util/di/DaggerApplicationComponent;->alarmManagerProvider:Ljavax/inject/Provider;
+    iget-object v15, v0, Lde/rki/coronawarnapp/util/di/DaggerApplicationComponent;->alarmManagerProvider:Ljavax/inject/Provider;
 
-    iget-object v15, v0, Lde/rki/coronawarnapp/util/di/DaggerApplicationComponent;->timeStamperProvider:Ljavax/inject/Provider;
+    iget-object v2, v0, Lde/rki/coronawarnapp/util/di/DaggerApplicationComponent;->timeStamperProvider:Ljavax/inject/Provider;
 
-    iget-object v2, v0, Lde/rki/coronawarnapp/util/di/DaggerApplicationComponent;->autoCheckOutIntentFactoryProvider:Ljavax/inject/Provider;
+    iget-object v3, v0, Lde/rki/coronawarnapp/util/di/DaggerApplicationComponent;->autoCheckOutIntentFactoryProvider:Ljavax/inject/Provider;
 
-    new-instance v3, Lde/rki/coronawarnapp/presencetracing/checkins/checkout/auto/AutoCheckOut_Factory;
+    new-instance v4, Lde/rki/coronawarnapp/presencetracing/checkins/checkout/auto/AutoCheckOut_Factory;
 
-    move-object v10, v3
+    move-object v11, v4
 
     move-object/from16 v16, v2
 
-    invoke-direct/range {v10 .. v16}, Lde/rki/coronawarnapp/presencetracing/checkins/checkout/auto/AutoCheckOut_Factory;-><init>(Ljavax/inject/Provider;Ljavax/inject/Provider;Ljavax/inject/Provider;Ljavax/inject/Provider;Ljavax/inject/Provider;Ljavax/inject/Provider;)V
+    move-object/from16 v17, v3
 
-    instance-of v2, v3, Ldagger/internal/DoubleCheck;
+    invoke-direct/range {v11 .. v17}, Lde/rki/coronawarnapp/presencetracing/checkins/checkout/auto/AutoCheckOut_Factory;-><init>(Ljavax/inject/Provider;Ljavax/inject/Provider;Ljavax/inject/Provider;Ljavax/inject/Provider;Ljavax/inject/Provider;Ljavax/inject/Provider;)V
+
+    instance-of v2, v4, Ldagger/internal/DoubleCheck;
 
     if-eqz v2, :cond_13
 
@@ -9085,34 +9587,34 @@
     :cond_13
     new-instance v2, Ldagger/internal/DoubleCheck;
 
-    invoke-direct {v2, v3}, Ldagger/internal/DoubleCheck;-><init>(Ljavax/inject/Provider;)V
+    invoke-direct {v2, v4}, Ldagger/internal/DoubleCheck;-><init>(Ljavax/inject/Provider;)V
 
-    move-object v3, v2
+    move-object v4, v2
 
     :goto_13
-    iput-object v3, v0, Lde/rki/coronawarnapp/util/di/DaggerApplicationComponent;->autoCheckOutProvider:Ljavax/inject/Provider;
+    iput-object v4, v0, Lde/rki/coronawarnapp/util/di/DaggerApplicationComponent;->autoCheckOutProvider:Ljavax/inject/Provider;
 
-    iget-object v11, v0, Lde/rki/coronawarnapp/util/di/DaggerApplicationComponent;->traceWarningPackageSyncToolProvider:Ljavax/inject/Provider;
+    iget-object v12, v0, Lde/rki/coronawarnapp/util/di/DaggerApplicationComponent;->traceWarningPackageSyncToolProvider:Ljavax/inject/Provider;
 
-    iget-object v12, v0, Lde/rki/coronawarnapp/util/di/DaggerApplicationComponent;->checkInWarningMatcherProvider:Ljavax/inject/Provider;
+    iget-object v13, v0, Lde/rki/coronawarnapp/util/di/DaggerApplicationComponent;->checkInWarningMatcherProvider:Ljavax/inject/Provider;
 
-    iget-object v13, v0, Lde/rki/coronawarnapp/util/di/DaggerApplicationComponent;->presenceTracingRiskRepositoryProvider:Ljavax/inject/Provider;
+    iget-object v14, v0, Lde/rki/coronawarnapp/util/di/DaggerApplicationComponent;->presenceTracingRiskRepositoryProvider:Ljavax/inject/Provider;
 
-    iget-object v14, v0, Lde/rki/coronawarnapp/util/di/DaggerApplicationComponent;->traceWarningRepositoryProvider:Ljavax/inject/Provider;
+    iget-object v15, v0, Lde/rki/coronawarnapp/util/di/DaggerApplicationComponent;->traceWarningRepositoryProvider:Ljavax/inject/Provider;
 
-    iget-object v15, v0, Lde/rki/coronawarnapp/util/di/DaggerApplicationComponent;->checkInRepositoryProvider:Ljavax/inject/Provider;
+    iget-object v2, v0, Lde/rki/coronawarnapp/util/di/DaggerApplicationComponent;->checkInRepositoryProvider:Ljavax/inject/Provider;
 
-    iget-object v2, v0, Lde/rki/coronawarnapp/util/di/DaggerApplicationComponent;->presenceTracingRiskMapperProvider:Ljavax/inject/Provider;
+    iget-object v3, v0, Lde/rki/coronawarnapp/util/di/DaggerApplicationComponent;->presenceTracingRiskMapperProvider:Ljavax/inject/Provider;
 
-    iget-object v3, v0, Lde/rki/coronawarnapp/util/di/DaggerApplicationComponent;->coronaTestRepositoryProvider:Ljavax/inject/Provider;
+    iget-object v4, v0, Lde/rki/coronawarnapp/util/di/DaggerApplicationComponent;->coronaTestRepositoryProvider:Ljavax/inject/Provider;
 
-    iget-object v4, v0, Lde/rki/coronawarnapp/util/di/DaggerApplicationComponent;->autoCheckOutProvider:Ljavax/inject/Provider;
+    iget-object v5, v0, Lde/rki/coronawarnapp/util/di/DaggerApplicationComponent;->autoCheckOutProvider:Ljavax/inject/Provider;
 
-    iget-object v5, v0, Lde/rki/coronawarnapp/util/di/DaggerApplicationComponent;->appConfigProvider:Ljavax/inject/Provider;
+    iget-object v6, v0, Lde/rki/coronawarnapp/util/di/DaggerApplicationComponent;->appConfigProvider:Ljavax/inject/Provider;
 
-    new-instance v6, Lde/rki/coronawarnapp/presencetracing/risk/execution/PresenceTracingWarningTask_Factory;
+    new-instance v7, Lde/rki/coronawarnapp/presencetracing/risk/execution/PresenceTracingWarningTask_Factory;
 
-    move-object v10, v6
+    move-object v11, v7
 
     move-object/from16 v16, v2
 
@@ -9122,23 +9624,23 @@
 
     move-object/from16 v19, v5
 
-    invoke-direct/range {v10 .. v19}, Lde/rki/coronawarnapp/presencetracing/risk/execution/PresenceTracingWarningTask_Factory;-><init>(Ljavax/inject/Provider;Ljavax/inject/Provider;Ljavax/inject/Provider;Ljavax/inject/Provider;Ljavax/inject/Provider;Ljavax/inject/Provider;Ljavax/inject/Provider;Ljavax/inject/Provider;Ljavax/inject/Provider;)V
+    move-object/from16 v20, v6
 
-    iput-object v6, v0, Lde/rki/coronawarnapp/util/di/DaggerApplicationComponent;->presenceTracingWarningTaskProvider:Ljavax/inject/Provider;
+    invoke-direct/range {v11 .. v20}, Lde/rki/coronawarnapp/presencetracing/risk/execution/PresenceTracingWarningTask_Factory;-><init>(Ljavax/inject/Provider;Ljavax/inject/Provider;Ljavax/inject/Provider;Ljavax/inject/Provider;Ljavax/inject/Provider;Ljavax/inject/Provider;Ljavax/inject/Provider;Ljavax/inject/Provider;Ljavax/inject/Provider;)V
+
+    iput-object v7, v0, Lde/rki/coronawarnapp/util/di/DaggerApplicationComponent;->presenceTracingWarningTaskProvider:Ljavax/inject/Provider;
 
     iget-object v2, v0, Lde/rki/coronawarnapp/util/di/DaggerApplicationComponent;->appConfigProvider:Ljavax/inject/Provider;
 
     new-instance v3, Lde/rki/coronawarnapp/presencetracing/risk/execution/PresenceTracingWarningTask_Factory_Factory;
 
-    invoke-direct {v3, v6, v2}, Lde/rki/coronawarnapp/presencetracing/risk/execution/PresenceTracingWarningTask_Factory_Factory;-><init>(Ljavax/inject/Provider;Ljavax/inject/Provider;)V
+    invoke-direct {v3, v7, v2}, Lde/rki/coronawarnapp/presencetracing/risk/execution/PresenceTracingWarningTask_Factory_Factory;-><init>(Ljavax/inject/Provider;Ljavax/inject/Provider;)V
 
     iput-object v3, v0, Lde/rki/coronawarnapp/util/di/DaggerApplicationComponent;->factoryProvider9:Ljavax/inject/Provider;
 
     new-instance v2, Lde/rki/coronawarnapp/presencetracing/warning/PresenceTracingWarningModule_TaskFactoryFactory;
 
-    move-object/from16 v4, p12
-
-    invoke-direct {v2, v4, v3}, Lde/rki/coronawarnapp/presencetracing/warning/PresenceTracingWarningModule_TaskFactoryFactory;-><init>(Lcom/google/android/play/core/common/zzc;Ljavax/inject/Provider;)V
+    invoke-direct {v2, v10, v3}, Lde/rki/coronawarnapp/presencetracing/warning/PresenceTracingWarningModule_TaskFactoryFactory;-><init>(Lcom/upokecenter/cbor/CBORExtendedFloat;Ljavax/inject/Provider;)V
 
     iput-object v2, v0, Lde/rki/coronawarnapp/util/di/DaggerApplicationComponent;->taskFactoryProvider:Ljavax/inject/Provider;
 
@@ -9564,8 +10066,6 @@
 
     new-instance v8, Lde/rki/coronawarnapp/diagnosiskeys/download/DayPackageSyncTool_Factory;
 
-    const/4 v9, 0x0
-
     move-object/from16 p1, v8
 
     move-object/from16 p2, v1
@@ -9582,9 +10082,7 @@
 
     move-object/from16 p8, v7
 
-    move/from16 p9, v9
-
-    invoke-direct/range {p1 .. p9}, Lde/rki/coronawarnapp/diagnosiskeys/download/DayPackageSyncTool_Factory;-><init>(Ljavax/inject/Provider;Ljavax/inject/Provider;Ljavax/inject/Provider;Ljavax/inject/Provider;Ljavax/inject/Provider;Ljavax/inject/Provider;Ljavax/inject/Provider;I)V
+    invoke-direct/range {p1 .. p8}, Lde/rki/coronawarnapp/diagnosiskeys/download/DayPackageSyncTool_Factory;-><init>(Ljavax/inject/Provider;Ljavax/inject/Provider;Ljavax/inject/Provider;Ljavax/inject/Provider;Ljavax/inject/Provider;Ljavax/inject/Provider;Ljavax/inject/Provider;)V
 
     invoke-static {v8}, Ldagger/internal/SingleCheck;->provider(Ljavax/inject/Provider;)Ljavax/inject/Provider;
 
@@ -9606,9 +10104,7 @@
 
     iget-object v7, v0, Lde/rki/coronawarnapp/util/di/DaggerApplicationComponent;->defaultDispatcherProvider:Ljavax/inject/Provider;
 
-    new-instance v8, Lde/rki/coronawarnapp/diagnosiskeys/download/DayPackageSyncTool_Factory;
-
-    const/4 v9, 0x2
+    new-instance v8, Lde/rki/coronawarnapp/diagnosiskeys/download/HourPackageSyncTool_Factory;
 
     move-object/from16 p1, v8
 
@@ -9626,9 +10122,7 @@
 
     move-object/from16 p8, v7
 
-    move/from16 p9, v9
-
-    invoke-direct/range {p1 .. p9}, Lde/rki/coronawarnapp/diagnosiskeys/download/DayPackageSyncTool_Factory;-><init>(Ljavax/inject/Provider;Ljavax/inject/Provider;Ljavax/inject/Provider;Ljavax/inject/Provider;Ljavax/inject/Provider;Ljavax/inject/Provider;Ljavax/inject/Provider;I)V
+    invoke-direct/range {p1 .. p8}, Lde/rki/coronawarnapp/diagnosiskeys/download/HourPackageSyncTool_Factory;-><init>(Ljavax/inject/Provider;Ljavax/inject/Provider;Ljavax/inject/Provider;Ljavax/inject/Provider;Ljavax/inject/Provider;Ljavax/inject/Provider;Ljavax/inject/Provider;)V
 
     invoke-static {v8}, Ldagger/internal/SingleCheck;->provider(Ljavax/inject/Provider;)Ljavax/inject/Provider;
 
@@ -9738,9 +10232,7 @@
 
     iget-object v7, v0, Lde/rki/coronawarnapp/util/di/DaggerApplicationComponent;->coronaTestRepositoryProvider:Ljavax/inject/Provider;
 
-    new-instance v8, Lde/rki/coronawarnapp/diagnosiskeys/download/DayPackageSyncTool_Factory;
-
-    const/4 v9, 0x1
+    new-instance v8, Lde/rki/coronawarnapp/diagnosiskeys/download/DownloadDiagnosisKeysTask_Factory;
 
     move-object/from16 p1, v8
 
@@ -9758,9 +10250,7 @@
 
     move-object/from16 p8, v7
 
-    move/from16 p9, v9
-
-    invoke-direct/range {p1 .. p9}, Lde/rki/coronawarnapp/diagnosiskeys/download/DayPackageSyncTool_Factory;-><init>(Ljavax/inject/Provider;Ljavax/inject/Provider;Ljavax/inject/Provider;Ljavax/inject/Provider;Ljavax/inject/Provider;Ljavax/inject/Provider;Ljavax/inject/Provider;I)V
+    invoke-direct/range {p1 .. p8}, Lde/rki/coronawarnapp/diagnosiskeys/download/DownloadDiagnosisKeysTask_Factory;-><init>(Ljavax/inject/Provider;Ljavax/inject/Provider;Ljavax/inject/Provider;Ljavax/inject/Provider;Ljavax/inject/Provider;Ljavax/inject/Provider;Ljavax/inject/Provider;)V
 
     iput-object v8, v0, Lde/rki/coronawarnapp/util/di/DaggerApplicationComponent;->downloadDiagnosisKeysTaskProvider:Ljavax/inject/Provider;
 
@@ -9772,268 +10262,259 @@
 
     iput-object v2, v0, Lde/rki/coronawarnapp/util/di/DaggerApplicationComponent;->factoryProvider13:Ljavax/inject/Provider;
 
-    const/4 v1, 0x5
+    iget-object v1, v0, Lde/rki/coronawarnapp/util/di/DaggerApplicationComponent;->baseGsonProvider:Ljavax/inject/Provider;
 
-    invoke-static {v1}, Ldagger/internal/MapFactory;->builder(I)Ldagger/internal/MapFactory$Builder;
+    new-instance v2, Lde/rki/coronawarnapp/covidcertificate/validation/core/rule/DccValidationRuleConverter_Factory;
 
-    move-result-object v1
+    invoke-direct {v2, v1}, Lde/rki/coronawarnapp/covidcertificate/validation/core/rule/DccValidationRuleConverter_Factory;-><init>(Ljavax/inject/Provider;)V
 
-    const-class v2, Lde/rki/coronawarnapp/risk/RiskLevelTask;
-
-    iget-object v3, v0, Lde/rki/coronawarnapp/util/di/DaggerApplicationComponent;->riskLevelTaskFactoryProvider:Ljavax/inject/Provider;
-
-    iget-object v4, v1, Ldagger/internal/AbstractMapFactory$Builder;->map:Ljava/util/LinkedHashMap;
-
-    const-string v5, "provider"
-
-    invoke-static {v3, v5}, Ljava/util/Objects;->requireNonNull(Ljava/lang/Object;Ljava/lang/String;)Ljava/lang/Object;
-
-    invoke-virtual {v4, v2, v3}, Ljava/util/LinkedHashMap;->put(Ljava/lang/Object;Ljava/lang/Object;)Ljava/lang/Object;
-
-    const-class v2, Lde/rki/coronawarnapp/presencetracing/risk/execution/PresenceTracingWarningTask;
-
-    iget-object v3, v0, Lde/rki/coronawarnapp/util/di/DaggerApplicationComponent;->taskFactoryProvider:Ljavax/inject/Provider;
-
-    iget-object v4, v1, Ldagger/internal/AbstractMapFactory$Builder;->map:Ljava/util/LinkedHashMap;
-
-    invoke-static {v3, v5}, Ljava/util/Objects;->requireNonNull(Ljava/lang/Object;Ljava/lang/String;)Ljava/lang/Object;
-
-    invoke-virtual {v4, v2, v3}, Ljava/util/LinkedHashMap;->put(Ljava/lang/Object;Ljava/lang/Object;)Ljava/lang/Object;
-
-    const-class v2, Lde/rki/coronawarnapp/contactdiary/retention/ContactDiaryCleanTask;
-
-    iget-object v3, v0, Lde/rki/coronawarnapp/util/di/DaggerApplicationComponent;->factoryProvider10:Ljavax/inject/Provider;
-
-    iget-object v4, v1, Ldagger/internal/AbstractMapFactory$Builder;->map:Ljava/util/LinkedHashMap;
-
-    invoke-static {v3, v5}, Ljava/util/Objects;->requireNonNull(Ljava/lang/Object;Ljava/lang/String;)Ljava/lang/Object;
-
-    invoke-virtual {v4, v2, v3}, Ljava/util/LinkedHashMap;->put(Ljava/lang/Object;Ljava/lang/Object;)Ljava/lang/Object;
-
-    const-class v2, Lde/rki/coronawarnapp/submission/task/SubmissionTask;
-
-    iget-object v3, v0, Lde/rki/coronawarnapp/util/di/DaggerApplicationComponent;->factoryProvider12:Ljavax/inject/Provider;
-
-    iget-object v4, v1, Ldagger/internal/AbstractMapFactory$Builder;->map:Ljava/util/LinkedHashMap;
-
-    invoke-static {v3, v5}, Ljava/util/Objects;->requireNonNull(Ljava/lang/Object;Ljava/lang/String;)Ljava/lang/Object;
-
-    invoke-virtual {v4, v2, v3}, Ljava/util/LinkedHashMap;->put(Ljava/lang/Object;Ljava/lang/Object;)Ljava/lang/Object;
-
-    const-class v2, Lde/rki/coronawarnapp/diagnosiskeys/download/DownloadDiagnosisKeysTask;
-
-    iget-object v3, v0, Lde/rki/coronawarnapp/util/di/DaggerApplicationComponent;->factoryProvider13:Ljavax/inject/Provider;
-
-    iget-object v4, v1, Ldagger/internal/AbstractMapFactory$Builder;->map:Ljava/util/LinkedHashMap;
-
-    invoke-static {v3, v5}, Ljava/util/Objects;->requireNonNull(Ljava/lang/Object;Ljava/lang/String;)Ljava/lang/Object;
-
-    invoke-virtual {v4, v2, v3}, Ljava/util/LinkedHashMap;->put(Ljava/lang/Object;Ljava/lang/Object;)Ljava/lang/Object;
-
-    invoke-virtual {v1}, Ldagger/internal/MapFactory$Builder;->build()Ldagger/internal/MapFactory;
+    invoke-static {v2}, Ldagger/internal/SingleCheck;->provider(Ljavax/inject/Provider;)Ljavax/inject/Provider;
 
     move-result-object v1
 
-    iput-object v1, v0, Lde/rki/coronawarnapp/util/di/DaggerApplicationComponent;->mapOfClassOfAndTaskFactoryOfAndProvider:Ljavax/inject/Provider;
+    iput-object v1, v0, Lde/rki/coronawarnapp/util/di/DaggerApplicationComponent;->dccValidationRuleConverterProvider:Ljavax/inject/Provider;
 
-    sget-object v1, Lde/rki/coronawarnapp/task/internal/DefaultTaskCoroutineScope_Factory$InstanceHolder;->INSTANCE:Lde/rki/coronawarnapp/task/internal/DefaultTaskCoroutineScope_Factory;
+    iget-object v1, v0, Lde/rki/coronawarnapp/util/di/DaggerApplicationComponent;->contextProvider:Ljavax/inject/Provider;
 
-    instance-of v2, v1, Ldagger/internal/DoubleCheck;
+    new-instance v2, Lde/rki/coronawarnapp/covidcertificate/valueset/CertificateValueSetModule_CacheFactory;
 
-    if-eqz v2, :cond_20
+    move-object/from16 v3, p13
+
+    invoke-direct {v2, v3, v1}, Lde/rki/coronawarnapp/covidcertificate/valueset/CertificateValueSetModule_CacheFactory;-><init>(Lde/rki/coronawarnapp/covidcertificate/valueset/CertificateValueSetModule;Ljavax/inject/Provider;)V
+
+    invoke-static {v2}, Ldagger/internal/SingleCheck;->provider(Ljavax/inject/Provider;)Ljavax/inject/Provider;
+
+    move-result-object v1
+
+    iput-object v1, v0, Lde/rki/coronawarnapp/util/di/DaggerApplicationComponent;->cacheProvider:Ljavax/inject/Provider;
+
+    iget-object v1, v0, Lde/rki/coronawarnapp/util/di/DaggerApplicationComponent;->cdnHttpClientProvider:Ljavax/inject/Provider;
+
+    iget-object v2, v0, Lde/rki/coronawarnapp/util/di/DaggerApplicationComponent;->provideDownloadServerUrlProvider:Ljavax/inject/Provider;
+
+    iget-object v3, v0, Lde/rki/coronawarnapp/util/di/DaggerApplicationComponent;->cacheProvider:Ljavax/inject/Provider;
+
+    new-instance v4, Lde/rki/coronawarnapp/covidcertificate/validation/core/DccValidationModule_CountryApiFactory;
+
+    move-object/from16 v5, p14
+
+    invoke-direct {v4, v5, v1, v2, v3}, Lde/rki/coronawarnapp/covidcertificate/validation/core/DccValidationModule_CountryApiFactory;-><init>(Lde/rki/coronawarnapp/covidcertificate/validation/core/DccValidationModule;Ljavax/inject/Provider;Ljavax/inject/Provider;Ljavax/inject/Provider;)V
+
+    invoke-static {v4}, Ldagger/internal/SingleCheck;->provider(Ljavax/inject/Provider;)Ljavax/inject/Provider;
+
+    move-result-object v1
+
+    iput-object v1, v0, Lde/rki/coronawarnapp/util/di/DaggerApplicationComponent;->countryApiProvider:Ljavax/inject/Provider;
+
+    iget-object v1, v0, Lde/rki/coronawarnapp/util/di/DaggerApplicationComponent;->cdnHttpClientProvider:Ljavax/inject/Provider;
+
+    iget-object v2, v0, Lde/rki/coronawarnapp/util/di/DaggerApplicationComponent;->provideDownloadServerUrlProvider:Ljavax/inject/Provider;
+
+    iget-object v3, v0, Lde/rki/coronawarnapp/util/di/DaggerApplicationComponent;->cacheProvider:Ljavax/inject/Provider;
+
+    new-instance v4, Lde/rki/coronawarnapp/covidcertificate/validation/core/DccValidationModule_RulesApiFactory;
+
+    invoke-direct {v4, v5, v1, v2, v3}, Lde/rki/coronawarnapp/covidcertificate/validation/core/DccValidationModule_RulesApiFactory;-><init>(Lde/rki/coronawarnapp/covidcertificate/validation/core/DccValidationModule;Ljavax/inject/Provider;Ljavax/inject/Provider;Ljavax/inject/Provider;)V
+
+    invoke-static {v4}, Ldagger/internal/SingleCheck;->provider(Ljavax/inject/Provider;)Ljavax/inject/Provider;
+
+    move-result-object v1
+
+    iput-object v1, v0, Lde/rki/coronawarnapp/util/di/DaggerApplicationComponent;->rulesApiProvider:Ljavax/inject/Provider;
+
+    iget-object v1, v0, Lde/rki/coronawarnapp/util/di/DaggerApplicationComponent;->contextProvider:Ljavax/inject/Provider;
+
+    new-instance v2, Lde/rki/coronawarnapp/statistics/StatisticsModule_CacheDirFactory;
+
+    move-object/from16 v3, p10
+
+    invoke-direct {v2, v3, v1}, Lde/rki/coronawarnapp/statistics/StatisticsModule_CacheDirFactory;-><init>(Lde/rki/coronawarnapp/statistics/StatisticsModule;Ljavax/inject/Provider;)V
+
+    instance-of v1, v2, Ldagger/internal/DoubleCheck;
+
+    if-eqz v1, :cond_20
 
     goto :goto_20
 
     :cond_20
-    new-instance v2, Ldagger/internal/DoubleCheck;
-
-    invoke-direct {v2, v1}, Ldagger/internal/DoubleCheck;-><init>(Ljavax/inject/Provider;)V
-
-    move-object v1, v2
-
-    :goto_20
-    iput-object v1, v0, Lde/rki/coronawarnapp/util/di/DaggerApplicationComponent;->defaultTaskCoroutineScopeProvider:Ljavax/inject/Provider;
-
-    new-instance v2, Lde/rki/coronawarnapp/task/internal/TaskModule_ProvideScopeFactory;
-
-    move-object/from16 v3, p10
-
-    invoke-direct {v2, v3, v1}, Lde/rki/coronawarnapp/task/internal/TaskModule_ProvideScopeFactory;-><init>(Lde/rki/coronawarnapp/task/internal/TaskModule;Ljavax/inject/Provider;)V
-
-    instance-of v1, v2, Ldagger/internal/DoubleCheck;
-
-    if-eqz v1, :cond_21
-
-    goto :goto_21
-
-    :cond_21
     new-instance v1, Ldagger/internal/DoubleCheck;
 
     invoke-direct {v1, v2}, Ldagger/internal/DoubleCheck;-><init>(Ljavax/inject/Provider;)V
 
     move-object v2, v1
 
+    :goto_20
+    iput-object v2, v0, Lde/rki/coronawarnapp/util/di/DaggerApplicationComponent;->cacheDirProvider:Ljavax/inject/Provider;
+
+    new-instance v1, Lde/rki/coronawarnapp/covidcertificate/validation/core/DccValidationModule_HttpCacheFactory;
+
+    invoke-direct {v1, v5, v2}, Lde/rki/coronawarnapp/covidcertificate/validation/core/DccValidationModule_HttpCacheFactory;-><init>(Lde/rki/coronawarnapp/covidcertificate/validation/core/DccValidationModule;Ljavax/inject/Provider;)V
+
+    instance-of v2, v1, Ldagger/internal/DoubleCheck;
+
+    if-eqz v2, :cond_21
+
+    goto :goto_21
+
+    :cond_21
+    new-instance v2, Ldagger/internal/DoubleCheck;
+
+    invoke-direct {v2, v1}, Ldagger/internal/DoubleCheck;-><init>(Ljavax/inject/Provider;)V
+
+    move-object v1, v2
+
     :goto_21
-    iput-object v2, v0, Lde/rki/coronawarnapp/util/di/DaggerApplicationComponent;->provideScopeProvider:Ljavax/inject/Provider;
+    iput-object v1, v0, Lde/rki/coronawarnapp/util/di/DaggerApplicationComponent;->httpCacheProvider:Ljavax/inject/Provider;
 
-    iget-object v1, v0, Lde/rki/coronawarnapp/util/di/DaggerApplicationComponent;->taskControllerProvider:Ljavax/inject/Provider;
+    iget-object v1, v0, Lde/rki/coronawarnapp/util/di/DaggerApplicationComponent;->countryApiProvider:Ljavax/inject/Provider;
 
-    iget-object v2, v0, Lde/rki/coronawarnapp/util/di/DaggerApplicationComponent;->mapOfClassOfAndTaskFactoryOfAndProvider:Ljavax/inject/Provider;
+    iget-object v2, v0, Lde/rki/coronawarnapp/util/di/DaggerApplicationComponent;->rulesApiProvider:Ljavax/inject/Provider;
 
-    iget-object v3, v0, Lde/rki/coronawarnapp/util/di/DaggerApplicationComponent;->provideScopeProvider:Ljavax/inject/Provider;
+    iget-object v3, v0, Lde/rki/coronawarnapp/util/di/DaggerApplicationComponent;->httpCacheProvider:Ljavax/inject/Provider;
 
-    iget-object v4, v0, Lde/rki/coronawarnapp/util/di/DaggerApplicationComponent;->timeStamperProvider:Ljavax/inject/Provider;
+    iget-object v4, v0, Lde/rki/coronawarnapp/util/di/DaggerApplicationComponent;->signatureValidationProvider:Ljavax/inject/Provider;
 
-    new-instance v5, Lde/rki/coronawarnapp/task/TaskController_Factory;
+    iget-object v6, v0, Lde/rki/coronawarnapp/util/di/DaggerApplicationComponent;->defaultDispatcherProvider:Ljavax/inject/Provider;
 
-    invoke-direct {v5, v2, v3, v4}, Lde/rki/coronawarnapp/task/TaskController_Factory;-><init>(Ljavax/inject/Provider;Ljavax/inject/Provider;Ljavax/inject/Provider;)V
+    new-instance v7, Lde/rki/coronawarnapp/covidcertificate/validation/core/server/DccValidationServer_Factory;
 
-    instance-of v2, v5, Ldagger/internal/DoubleCheck;
+    move-object/from16 p1, v7
 
-    if-eqz v2, :cond_22
+    move-object/from16 p2, v1
+
+    move-object/from16 p3, v2
+
+    move-object/from16 p4, v3
+
+    move-object/from16 p5, v4
+
+    move-object/from16 p6, v6
+
+    invoke-direct/range {p1 .. p6}, Lde/rki/coronawarnapp/covidcertificate/validation/core/server/DccValidationServer_Factory;-><init>(Ljavax/inject/Provider;Ljavax/inject/Provider;Ljavax/inject/Provider;Ljavax/inject/Provider;Ljavax/inject/Provider;)V
+
+    invoke-static {v7}, Ldagger/internal/SingleCheck;->provider(Ljavax/inject/Provider;)Ljavax/inject/Provider;
+
+    move-result-object v1
+
+    iput-object v1, v0, Lde/rki/coronawarnapp/util/di/DaggerApplicationComponent;->dccValidationServerProvider:Ljavax/inject/Provider;
+
+    iget-object v1, v0, Lde/rki/coronawarnapp/util/di/DaggerApplicationComponent;->contextProvider:Ljavax/inject/Provider;
+
+    new-instance v2, Lde/rki/coronawarnapp/covidcertificate/validation/core/DccValidationModule_CacheDirFactory;
+
+    invoke-direct {v2, v5, v1}, Lde/rki/coronawarnapp/covidcertificate/validation/core/DccValidationModule_CacheDirFactory;-><init>(Lde/rki/coronawarnapp/covidcertificate/validation/core/DccValidationModule;Ljavax/inject/Provider;)V
+
+    instance-of v1, v2, Ldagger/internal/DoubleCheck;
+
+    if-eqz v1, :cond_22
 
     goto :goto_22
 
     :cond_22
-    new-instance v2, Ldagger/internal/DoubleCheck;
+    new-instance v1, Ldagger/internal/DoubleCheck;
 
-    invoke-direct {v2, v5}, Ldagger/internal/DoubleCheck;-><init>(Ljavax/inject/Provider;)V
+    invoke-direct {v1, v2}, Ldagger/internal/DoubleCheck;-><init>(Ljavax/inject/Provider;)V
 
-    move-object v5, v2
+    move-object v2, v1
 
     :goto_22
-    check-cast v1, Ldagger/internal/DelegateFactory;
+    iput-object v2, v0, Lde/rki/coronawarnapp/util/di/DaggerApplicationComponent;->cacheDirProvider2:Ljavax/inject/Provider;
 
-    iget-object v2, v1, Ldagger/internal/DelegateFactory;->delegate:Ljavax/inject/Provider;
+    new-instance v1, Lde/rki/coronawarnapp/covidcertificate/validation/core/DccValidationCache_Factory;
 
-    if-nez v2, :cond_24
+    invoke-direct {v1, v2}, Lde/rki/coronawarnapp/covidcertificate/validation/core/DccValidationCache_Factory;-><init>(Ljavax/inject/Provider;)V
 
-    iput-object v5, v1, Ldagger/internal/DelegateFactory;->delegate:Ljavax/inject/Provider;
+    instance-of v2, v1, Ldagger/internal/DoubleCheck;
 
-    iget-object v1, v0, Lde/rki/coronawarnapp/util/di/DaggerApplicationComponent;->taskControllerProvider:Ljavax/inject/Provider;
-
-    new-instance v2, Lde/rki/coronawarnapp/nearby/ExposureStateUpdateWorker_Factory;
-
-    invoke-direct {v2, v1}, Lde/rki/coronawarnapp/nearby/ExposureStateUpdateWorker_Factory;-><init>(Ljavax/inject/Provider;)V
-
-    new-instance v1, Lde/rki/coronawarnapp/nearby/ExposureStateUpdateWorker_Factory_Impl;
-
-    invoke-direct {v1, v2}, Lde/rki/coronawarnapp/nearby/ExposureStateUpdateWorker_Factory_Impl;-><init>(Lde/rki/coronawarnapp/nearby/ExposureStateUpdateWorker_Factory;)V
-
-    new-instance v2, Ldagger/internal/InstanceFactory;
-
-    invoke-direct {v2, v1}, Ldagger/internal/InstanceFactory;-><init>(Ljava/lang/Object;)V
-
-    iput-object v2, v0, Lde/rki/coronawarnapp/util/di/DaggerApplicationComponent;->factoryProvider14:Ljavax/inject/Provider;
-
-    iget-object v1, v0, Lde/rki/coronawarnapp/util/di/DaggerApplicationComponent;->providePlaybookProvider:Ljavax/inject/Provider;
-
-    new-instance v2, Lde/rki/coronawarnapp/deniability/BackgroundNoiseOneTimeWorker_Factory;
-
-    invoke-direct {v2, v1}, Lde/rki/coronawarnapp/deniability/BackgroundNoiseOneTimeWorker_Factory;-><init>(Ljavax/inject/Provider;)V
-
-    new-instance v1, Lde/rki/coronawarnapp/deniability/BackgroundNoiseOneTimeWorker_Factory_Impl;
-
-    invoke-direct {v1, v2}, Lde/rki/coronawarnapp/deniability/BackgroundNoiseOneTimeWorker_Factory_Impl;-><init>(Lde/rki/coronawarnapp/deniability/BackgroundNoiseOneTimeWorker_Factory;)V
-
-    new-instance v2, Ldagger/internal/InstanceFactory;
-
-    invoke-direct {v2, v1}, Ldagger/internal/InstanceFactory;-><init>(Ljava/lang/Object;)V
-
-    iput-object v2, v0, Lde/rki/coronawarnapp/util/di/DaggerApplicationComponent;->factoryProvider15:Ljavax/inject/Provider;
-
-    iget-object v1, v0, Lde/rki/coronawarnapp/util/di/DaggerApplicationComponent;->timeStamperProvider:Ljavax/inject/Provider;
-
-    iget-object v2, v0, Lde/rki/coronawarnapp/util/di/DaggerApplicationComponent;->coronaTestRepositoryProvider:Ljavax/inject/Provider;
-
-    iget-object v3, v0, Lde/rki/coronawarnapp/util/di/DaggerApplicationComponent;->noiseSchedulerProvider:Ljavax/inject/Provider;
-
-    new-instance v4, Lde/rki/coronawarnapp/deniability/BackgroundNoisePeriodicWorker_Factory;
-
-    invoke-direct {v4, v1, v2, v3}, Lde/rki/coronawarnapp/deniability/BackgroundNoisePeriodicWorker_Factory;-><init>(Ljavax/inject/Provider;Ljavax/inject/Provider;Ljavax/inject/Provider;)V
-
-    new-instance v1, Lde/rki/coronawarnapp/deniability/BackgroundNoisePeriodicWorker_Factory_Impl;
-
-    invoke-direct {v1, v4}, Lde/rki/coronawarnapp/deniability/BackgroundNoisePeriodicWorker_Factory_Impl;-><init>(Lde/rki/coronawarnapp/deniability/BackgroundNoisePeriodicWorker_Factory;)V
-
-    new-instance v2, Ldagger/internal/InstanceFactory;
-
-    invoke-direct {v2, v1}, Ldagger/internal/InstanceFactory;-><init>(Ljava/lang/Object;)V
-
-    iput-object v2, v0, Lde/rki/coronawarnapp/util/di/DaggerApplicationComponent;->factoryProvider16:Ljavax/inject/Provider;
-
-    iget-object v1, v0, Lde/rki/coronawarnapp/util/di/DaggerApplicationComponent;->taskControllerProvider:Ljavax/inject/Provider;
-
-    new-instance v2, Lde/rki/coronawarnapp/diagnosiskeys/execution/DiagnosisKeyRetrievalWorker_Factory;
-
-    invoke-direct {v2, v1}, Lde/rki/coronawarnapp/diagnosiskeys/execution/DiagnosisKeyRetrievalWorker_Factory;-><init>(Ljavax/inject/Provider;)V
-
-    new-instance v1, Lde/rki/coronawarnapp/diagnosiskeys/execution/DiagnosisKeyRetrievalWorker_Factory_Impl;
-
-    invoke-direct {v1, v2}, Lde/rki/coronawarnapp/diagnosiskeys/execution/DiagnosisKeyRetrievalWorker_Factory_Impl;-><init>(Lde/rki/coronawarnapp/diagnosiskeys/execution/DiagnosisKeyRetrievalWorker_Factory;)V
-
-    new-instance v2, Ldagger/internal/InstanceFactory;
-
-    invoke-direct {v2, v1}, Ldagger/internal/InstanceFactory;-><init>(Ljava/lang/Object;)V
-
-    iput-object v2, v0, Lde/rki/coronawarnapp/util/di/DaggerApplicationComponent;->factoryProvider17:Ljavax/inject/Provider;
-
-    iget-object v1, v0, Lde/rki/coronawarnapp/util/di/DaggerApplicationComponent;->coronaTestRepositoryProvider:Ljavax/inject/Provider;
-
-    new-instance v2, Lde/rki/coronawarnapp/coronatest/type/pcr/execution/PCRResultRetrievalWorker_Factory;
-
-    invoke-direct {v2, v1}, Lde/rki/coronawarnapp/coronatest/type/pcr/execution/PCRResultRetrievalWorker_Factory;-><init>(Ljavax/inject/Provider;)V
-
-    new-instance v1, Lde/rki/coronawarnapp/coronatest/type/pcr/execution/PCRResultRetrievalWorker_Factory_Impl;
-
-    invoke-direct {v1, v2}, Lde/rki/coronawarnapp/coronatest/type/pcr/execution/PCRResultRetrievalWorker_Factory_Impl;-><init>(Lde/rki/coronawarnapp/coronatest/type/pcr/execution/PCRResultRetrievalWorker_Factory;)V
-
-    new-instance v2, Ldagger/internal/InstanceFactory;
-
-    invoke-direct {v2, v1}, Ldagger/internal/InstanceFactory;-><init>(Ljava/lang/Object;)V
-
-    iput-object v2, v0, Lde/rki/coronawarnapp/util/di/DaggerApplicationComponent;->factoryProvider18:Ljavax/inject/Provider;
-
-    iget-object v1, v0, Lde/rki/coronawarnapp/util/di/DaggerApplicationComponent;->appCoroutineScopeProvider:Ljavax/inject/Provider;
-
-    iget-object v2, v0, Lde/rki/coronawarnapp/util/di/DaggerApplicationComponent;->workManagerProvider:Ljavax/inject/Provider;
-
-    iget-object v3, v0, Lde/rki/coronawarnapp/util/di/DaggerApplicationComponent;->coronaTestRepositoryProvider:Ljavax/inject/Provider;
-
-    new-instance v4, Lde/rki/coronawarnapp/coronatest/type/rapidantigen/execution/RAResultScheduler_Factory;
-
-    invoke-direct {v4, v1, v2, v3}, Lde/rki/coronawarnapp/coronatest/type/rapidantigen/execution/RAResultScheduler_Factory;-><init>(Ljavax/inject/Provider;Ljavax/inject/Provider;Ljavax/inject/Provider;)V
-
-    instance-of v1, v4, Ldagger/internal/DoubleCheck;
-
-    if-eqz v1, :cond_23
+    if-eqz v2, :cond_23
 
     goto :goto_23
 
     :cond_23
-    new-instance v1, Ldagger/internal/DoubleCheck;
+    new-instance v2, Ldagger/internal/DoubleCheck;
 
-    invoke-direct {v1, v4}, Ldagger/internal/DoubleCheck;-><init>(Ljavax/inject/Provider;)V
+    invoke-direct {v2, v1}, Ldagger/internal/DoubleCheck;-><init>(Ljavax/inject/Provider;)V
 
-    move-object v4, v1
+    move-object v1, v2
 
     :goto_23
-    iput-object v4, v0, Lde/rki/coronawarnapp/util/di/DaggerApplicationComponent;->rAResultSchedulerProvider:Ljavax/inject/Provider;
+    iput-object v1, v0, Lde/rki/coronawarnapp/util/di/DaggerApplicationComponent;->dccValidationCacheProvider:Ljavax/inject/Provider;
+
+    iget-object v1, v0, Lde/rki/coronawarnapp/util/di/DaggerApplicationComponent;->appCoroutineScopeProvider:Ljavax/inject/Provider;
+
+    iget-object v2, v0, Lde/rki/coronawarnapp/util/di/DaggerApplicationComponent;->defaultDispatcherProvider:Ljavax/inject/Provider;
+
+    iget-object v3, v0, Lde/rki/coronawarnapp/util/di/DaggerApplicationComponent;->dccValidationRuleConverterProvider:Ljavax/inject/Provider;
+
+    iget-object v4, v0, Lde/rki/coronawarnapp/util/di/DaggerApplicationComponent;->dccValidationServerProvider:Ljavax/inject/Provider;
+
+    iget-object v5, v0, Lde/rki/coronawarnapp/util/di/DaggerApplicationComponent;->dccValidationCacheProvider:Ljavax/inject/Provider;
+
+    new-instance v6, Lde/rki/coronawarnapp/covidcertificate/booster/BoosterRulesRepository_Factory;
+
+    move-object/from16 p1, v6
+
+    move-object/from16 p2, v1
+
+    move-object/from16 p3, v2
+
+    move-object/from16 p4, v3
+
+    move-object/from16 p5, v4
+
+    move-object/from16 p6, v5
+
+    invoke-direct/range {p1 .. p6}, Lde/rki/coronawarnapp/covidcertificate/booster/BoosterRulesRepository_Factory;-><init>(Ljavax/inject/Provider;Ljavax/inject/Provider;Ljavax/inject/Provider;Ljavax/inject/Provider;Ljavax/inject/Provider;)V
+
+    invoke-static {v6}, Ldagger/internal/SingleCheck;->provider(Ljavax/inject/Provider;)Ljavax/inject/Provider;
+
+    move-result-object v1
+
+    iput-object v1, v0, Lde/rki/coronawarnapp/util/di/DaggerApplicationComponent;->boosterRulesRepositoryProvider:Ljavax/inject/Provider;
+
+    iget-object v1, v0, Lde/rki/coronawarnapp/util/di/DaggerApplicationComponent;->contextProvider:Ljavax/inject/Provider;
+
+    iget-object v2, v0, Lde/rki/coronawarnapp/util/di/DaggerApplicationComponent;->notificationManagerCompatProvider:Ljavax/inject/Provider;
+
+    new-instance v3, Lde/rki/coronawarnapp/covidcertificate/common/notification/DigitalCovidCertificateNotifications_Factory;
+
+    invoke-direct {v3, v1, v2}, Lde/rki/coronawarnapp/covidcertificate/common/notification/DigitalCovidCertificateNotifications_Factory;-><init>(Ljavax/inject/Provider;Ljavax/inject/Provider;)V
+
+    invoke-static {v3}, Ldagger/internal/SingleCheck;->provider(Ljavax/inject/Provider;)Ljavax/inject/Provider;
+
+    move-result-object v1
+
+    iput-object v1, v0, Lde/rki/coronawarnapp/util/di/DaggerApplicationComponent;->digitalCovidCertificateNotificationsProvider:Ljavax/inject/Provider;
+
+    sget-object v1, Lde/rki/coronawarnapp/util/notifications/NavDeepLinkBuilderFactory_Factory$InstanceHolder;->INSTANCE:Lde/rki/coronawarnapp/util/notifications/NavDeepLinkBuilderFactory_Factory;
+
+    invoke-static {v1}, Ldagger/internal/SingleCheck;->provider(Ljavax/inject/Provider;)Ljavax/inject/Provider;
+
+    move-result-object v1
+
+    iput-object v1, v0, Lde/rki/coronawarnapp/util/di/DaggerApplicationComponent;->navDeepLinkBuilderFactoryProvider:Ljavax/inject/Provider;
+
+    iget-object v1, v0, Lde/rki/coronawarnapp/util/di/DaggerApplicationComponent;->contextProvider:Ljavax/inject/Provider;
+
+    iget-object v2, v0, Lde/rki/coronawarnapp/util/di/DaggerApplicationComponent;->digitalCovidCertificateNotificationsProvider:Ljavax/inject/Provider;
+
+    iget-object v3, v0, Lde/rki/coronawarnapp/util/di/DaggerApplicationComponent;->navDeepLinkBuilderFactoryProvider:Ljavax/inject/Provider;
+
+    new-instance v4, Lde/rki/coronawarnapp/covidcertificate/booster/BoosterNotificationSender_Factory;
+
+    invoke-direct {v4, v1, v2, v3}, Lde/rki/coronawarnapp/covidcertificate/booster/BoosterNotificationSender_Factory;-><init>(Ljavax/inject/Provider;Ljavax/inject/Provider;Ljavax/inject/Provider;)V
+
+    iput-object v4, v0, Lde/rki/coronawarnapp/util/di/DaggerApplicationComponent;->boosterNotificationSenderProvider:Ljavax/inject/Provider;
 
     return-void
-
-    :cond_24
-    new-instance v1, Ljava/lang/IllegalStateException;
-
-    invoke-direct {v1}, Ljava/lang/IllegalStateException;-><init>()V
-
-    throw v1
 .end method
 
-.method public final initialize4(Lde/rki/coronawarnapp/util/di/AndroidModule;Lde/rki/coronawarnapp/util/coil/CoilModule;Lde/rki/coronawarnapp/bugreporting/BugReportingModule;Lde/rki/coronawarnapp/bugreporting/BugReportingSharedModule;Lde/rki/coronawarnapp/statistics/StatisticsModule;Lde/rki/coronawarnapp/datadonation/survey/SurveyModule;Lde/rki/coronawarnapp/covidcertificate/DigitalCovidCertificateModule;Lde/rki/coronawarnapp/covidcertificate/validation/core/DccValidationModule;)V
-    .locals 17
+.method public final initialize3(Lde/rki/coronawarnapp/util/di/AndroidModule;Lde/rki/coronawarnapp/environment/datadonation/DataDonationCDNModule;Lde/rki/coronawarnapp/environment/covidcertificate/DCCModule;Lde/rki/coronawarnapp/task/internal/TaskModule;Lde/rki/coronawarnapp/util/serialization/SerializationModule;Lde/rki/coronawarnapp/datadonation/DataDonationModule;Lcom/upokecenter/cbor/CBOREInteger;Lde/rki/coronawarnapp/covidcertificate/valueset/CertificateValueSetModule;Lde/rki/coronawarnapp/covidcertificate/test/core/server/TestCertificateServerModule;Lde/rki/coronawarnapp/covidcertificate/signature/core/server/DscServerModule;)V
+    .locals 21
     .annotation system Ldalvik/annotation/MethodParameters;
         accessFlags = {
+            0x10,
+            0x10,
             0x10,
             0x10,
             0x10,
@@ -10104,6 +10585,7 @@
             "qrCodePosterTemplateModuleParam",
             "presenceTracingWarningModuleParam",
             "organizerSubmissionModuleParam",
+            "ratProfileModuleParam",
             "digitalCovidCertificateModuleParam",
             "certificateValueSetModuleParam",
             "testCertificateServerModuleParam",
@@ -10113,6 +10595,1788 @@
             "qrCodeScannerModuleParam",
             "rootDetectionModuleParam",
             "inAppUpdateModuleParam",
+            "dccTicketingCoreModuleParam",
+            "appParam"
+        }
+    .end annotation
+
+    move-object/from16 v0, p0
+
+    move-object/from16 v1, p1
+
+    move-object/from16 v2, p2
+
+    move-object/from16 v3, p3
+
+    iget-object v4, v0, Lde/rki/coronawarnapp/util/di/DaggerApplicationComponent;->cdnHttpClientProvider:Ljavax/inject/Provider;
+
+    iget-object v5, v0, Lde/rki/coronawarnapp/util/di/DaggerApplicationComponent;->provideDownloadServerUrlProvider:Ljavax/inject/Provider;
+
+    iget-object v6, v0, Lde/rki/coronawarnapp/util/di/DaggerApplicationComponent;->cacheProvider:Ljavax/inject/Provider;
+
+    new-instance v7, Lde/rki/coronawarnapp/covidcertificate/valueset/CertificateValueSetModule_ApiFactory;
+
+    move-object/from16 v8, p8
+
+    invoke-direct {v7, v8, v4, v5, v6}, Lde/rki/coronawarnapp/covidcertificate/valueset/CertificateValueSetModule_ApiFactory;-><init>(Lde/rki/coronawarnapp/covidcertificate/valueset/CertificateValueSetModule;Ljavax/inject/Provider;Ljavax/inject/Provider;Ljavax/inject/Provider;)V
+
+    invoke-static {v7}, Ldagger/internal/SingleCheck;->provider(Ljavax/inject/Provider;)Ljavax/inject/Provider;
+
+    move-result-object v4
+
+    iput-object v4, v0, Lde/rki/coronawarnapp/util/di/DaggerApplicationComponent;->apiProvider:Ljavax/inject/Provider;
+
+    iget-object v5, v0, Lde/rki/coronawarnapp/util/di/DaggerApplicationComponent;->cacheProvider:Ljavax/inject/Provider;
+
+    iget-object v6, v0, Lde/rki/coronawarnapp/util/di/DaggerApplicationComponent;->defaultDispatcherProvider:Ljavax/inject/Provider;
+
+    iget-object v7, v0, Lde/rki/coronawarnapp/util/di/DaggerApplicationComponent;->signatureValidationProvider:Ljavax/inject/Provider;
+
+    new-instance v8, Lde/rki/coronawarnapp/covidcertificate/valueset/server/CertificateValueSetServer_Factory;
+
+    invoke-direct {v8, v5, v4, v6, v7}, Lde/rki/coronawarnapp/covidcertificate/valueset/server/CertificateValueSetServer_Factory;-><init>(Ljavax/inject/Provider;Ljavax/inject/Provider;Ljavax/inject/Provider;Ljavax/inject/Provider;)V
+
+    invoke-static {v8}, Ldagger/internal/SingleCheck;->provider(Ljavax/inject/Provider;)Ljavax/inject/Provider;
+
+    move-result-object v4
+
+    iput-object v4, v0, Lde/rki/coronawarnapp/util/di/DaggerApplicationComponent;->certificateValueSetServerProvider:Ljavax/inject/Provider;
+
+    iget-object v4, v0, Lde/rki/coronawarnapp/util/di/DaggerApplicationComponent;->contextProvider:Ljavax/inject/Provider;
+
+    iget-object v5, v0, Lde/rki/coronawarnapp/util/di/DaggerApplicationComponent;->baseGsonProvider:Ljavax/inject/Provider;
+
+    new-instance v6, Lde/rki/coronawarnapp/covidcertificate/valueset/valuesets/ValueSetsStorage_Factory;
+
+    invoke-direct {v6, v4, v5}, Lde/rki/coronawarnapp/covidcertificate/valueset/valuesets/ValueSetsStorage_Factory;-><init>(Ljavax/inject/Provider;Ljavax/inject/Provider;)V
+
+    invoke-static {v6}, Ldagger/internal/SingleCheck;->provider(Ljavax/inject/Provider;)Ljavax/inject/Provider;
+
+    move-result-object v9
+
+    iput-object v9, v0, Lde/rki/coronawarnapp/util/di/DaggerApplicationComponent;->valueSetsStorageProvider:Ljavax/inject/Provider;
+
+    iget-object v8, v0, Lde/rki/coronawarnapp/util/di/DaggerApplicationComponent;->certificateValueSetServerProvider:Ljavax/inject/Provider;
+
+    iget-object v10, v0, Lde/rki/coronawarnapp/util/di/DaggerApplicationComponent;->appCoroutineScopeProvider:Ljavax/inject/Provider;
+
+    iget-object v11, v0, Lde/rki/coronawarnapp/util/di/DaggerApplicationComponent;->defaultDispatcherProvider:Ljavax/inject/Provider;
+
+    iget-object v12, v0, Lde/rki/coronawarnapp/util/di/DaggerApplicationComponent;->contextProvider:Ljavax/inject/Provider;
+
+    new-instance v4, Lde/rki/coronawarnapp/covidcertificate/valueset/ValueSetsRepository_Factory;
+
+    move-object v7, v4
+
+    invoke-direct/range {v7 .. v12}, Lde/rki/coronawarnapp/covidcertificate/valueset/ValueSetsRepository_Factory;-><init>(Ljavax/inject/Provider;Ljavax/inject/Provider;Ljavax/inject/Provider;Ljavax/inject/Provider;Ljavax/inject/Provider;)V
+
+    invoke-static {v4}, Ldagger/internal/SingleCheck;->provider(Ljavax/inject/Provider;)Ljavax/inject/Provider;
+
+    move-result-object v4
+
+    iput-object v4, v0, Lde/rki/coronawarnapp/util/di/DaggerApplicationComponent;->valueSetsRepositoryProvider:Ljavax/inject/Provider;
+
+    sget-object v4, Lde/rki/coronawarnapp/util/encryption/aes/AesCryptography_Factory$InstanceHolder;->INSTANCE:Lde/rki/coronawarnapp/util/encryption/aes/AesCryptography_Factory;
+
+    new-instance v5, Lde/rki/coronawarnapp/covidcertificate/common/decoder/DccCoseDecoder_Factory;
+
+    invoke-direct {v5, v4}, Lde/rki/coronawarnapp/covidcertificate/common/decoder/DccCoseDecoder_Factory;-><init>(Ljavax/inject/Provider;)V
+
+    iput-object v5, v0, Lde/rki/coronawarnapp/util/di/DaggerApplicationComponent;->dccCoseDecoderProvider:Ljavax/inject/Provider;
+
+    sget-object v4, Lde/rki/coronawarnapp/covidcertificate/common/decoder/DccHeaderParser_Factory$InstanceHolder;->INSTANCE:Lde/rki/coronawarnapp/covidcertificate/common/decoder/DccHeaderParser_Factory;
+
+    invoke-static {v4}, Ldagger/internal/SingleCheck;->provider(Ljavax/inject/Provider;)Ljavax/inject/Provider;
+
+    move-result-object v4
+
+    iput-object v4, v0, Lde/rki/coronawarnapp/util/di/DaggerApplicationComponent;->dccHeaderParserProvider:Ljavax/inject/Provider;
+
+    iget-object v4, v0, Lde/rki/coronawarnapp/util/di/DaggerApplicationComponent;->contextProvider:Ljavax/inject/Provider;
+
+    new-instance v5, Lde/rki/coronawarnapp/util/di/AndroidModule_AssetManagerFactory;
+
+    invoke-direct {v5, v1, v4}, Lde/rki/coronawarnapp/util/di/AndroidModule_AssetManagerFactory;-><init>(Lde/rki/coronawarnapp/util/di/AndroidModule;Ljavax/inject/Provider;)V
+
+    iput-object v5, v0, Lde/rki/coronawarnapp/util/di/DaggerApplicationComponent;->assetManagerProvider:Ljavax/inject/Provider;
+
+    new-instance v4, Lde/rki/coronawarnapp/covidcertificate/common/certificate/DccJsonSchema_Factory;
+
+    invoke-direct {v4, v5}, Lde/rki/coronawarnapp/covidcertificate/common/certificate/DccJsonSchema_Factory;-><init>(Ljavax/inject/Provider;)V
+
+    invoke-static {v4}, Ldagger/internal/SingleCheck;->provider(Ljavax/inject/Provider;)Ljavax/inject/Provider;
+
+    move-result-object v4
+
+    iput-object v4, v0, Lde/rki/coronawarnapp/util/di/DaggerApplicationComponent;->dccJsonSchemaProvider:Ljavax/inject/Provider;
+
+    new-instance v4, Lde/rki/coronawarnapp/util/serialization/SerializationModule_JacksonObjectMapperFactory;
+
+    move-object/from16 v5, p5
+
+    invoke-direct {v4, v5}, Lde/rki/coronawarnapp/util/serialization/SerializationModule_JacksonObjectMapperFactory;-><init>(Lde/rki/coronawarnapp/util/serialization/SerializationModule;)V
+
+    invoke-static {v4}, Ldagger/internal/SingleCheck;->provider(Ljavax/inject/Provider;)Ljavax/inject/Provider;
+
+    move-result-object v4
+
+    iput-object v4, v0, Lde/rki/coronawarnapp/util/di/DaggerApplicationComponent;->jacksonObjectMapperProvider:Ljavax/inject/Provider;
+
+    new-instance v5, Lde/rki/coronawarnapp/util/serialization/validation/JsonSchemaValidator_Factory;
+
+    invoke-direct {v5, v4}, Lde/rki/coronawarnapp/util/serialization/validation/JsonSchemaValidator_Factory;-><init>(Ljavax/inject/Provider;)V
+
+    invoke-static {v5}, Ldagger/internal/SingleCheck;->provider(Ljavax/inject/Provider;)Ljavax/inject/Provider;
+
+    move-result-object v4
+
+    iput-object v4, v0, Lde/rki/coronawarnapp/util/di/DaggerApplicationComponent;->jsonSchemaValidatorProvider:Ljavax/inject/Provider;
+
+    iget-object v5, v0, Lde/rki/coronawarnapp/util/di/DaggerApplicationComponent;->dccJsonSchemaProvider:Ljavax/inject/Provider;
+
+    new-instance v6, Lde/rki/coronawarnapp/covidcertificate/common/certificate/DccJsonSchemaValidator_Factory;
+
+    invoke-direct {v6, v5, v4}, Lde/rki/coronawarnapp/covidcertificate/common/certificate/DccJsonSchemaValidator_Factory;-><init>(Ljavax/inject/Provider;Ljavax/inject/Provider;)V
+
+    invoke-static {v6}, Ldagger/internal/SingleCheck;->provider(Ljavax/inject/Provider;)Ljavax/inject/Provider;
+
+    move-result-object v4
+
+    iput-object v4, v0, Lde/rki/coronawarnapp/util/di/DaggerApplicationComponent;->dccJsonSchemaValidatorProvider:Ljavax/inject/Provider;
+
+    iget-object v5, v0, Lde/rki/coronawarnapp/util/di/DaggerApplicationComponent;->baseGsonProvider:Ljavax/inject/Provider;
+
+    new-instance v6, Lde/rki/coronawarnapp/covidcertificate/common/certificate/DccV1Parser_Factory;
+
+    invoke-direct {v6, v5, v4}, Lde/rki/coronawarnapp/covidcertificate/common/certificate/DccV1Parser_Factory;-><init>(Ljavax/inject/Provider;Ljavax/inject/Provider;)V
+
+    invoke-static {v6}, Ldagger/internal/SingleCheck;->provider(Ljavax/inject/Provider;)Ljavax/inject/Provider;
+
+    move-result-object v4
+
+    iput-object v4, v0, Lde/rki/coronawarnapp/util/di/DaggerApplicationComponent;->dccV1ParserProvider:Ljavax/inject/Provider;
+
+    iget-object v5, v0, Lde/rki/coronawarnapp/util/di/DaggerApplicationComponent;->dccCoseDecoderProvider:Ljavax/inject/Provider;
+
+    iget-object v6, v0, Lde/rki/coronawarnapp/util/di/DaggerApplicationComponent;->dccHeaderParserProvider:Ljavax/inject/Provider;
+
+    new-instance v7, Lde/rki/coronawarnapp/covidcertificate/common/certificate/DccQrCodeExtractor_Factory;
+
+    invoke-direct {v7, v5, v6, v4}, Lde/rki/coronawarnapp/covidcertificate/common/certificate/DccQrCodeExtractor_Factory;-><init>(Ljavax/inject/Provider;Ljavax/inject/Provider;Ljavax/inject/Provider;)V
+
+    iput-object v7, v0, Lde/rki/coronawarnapp/util/di/DaggerApplicationComponent;->dccQrCodeExtractorProvider:Ljavax/inject/Provider;
+
+    new-instance v4, Lde/rki/coronawarnapp/covidcertificate/vaccination/core/repository/storage/ContainerPostProcessor_Factory;
+
+    invoke-direct {v4, v7}, Lde/rki/coronawarnapp/covidcertificate/vaccination/core/repository/storage/ContainerPostProcessor_Factory;-><init>(Ljavax/inject/Provider;)V
+
+    invoke-static {v4}, Ldagger/internal/SingleCheck;->provider(Ljavax/inject/Provider;)Ljavax/inject/Provider;
+
+    move-result-object v4
+
+    iput-object v4, v0, Lde/rki/coronawarnapp/util/di/DaggerApplicationComponent;->containerPostProcessorProvider:Ljavax/inject/Provider;
+
+    iget-object v5, v0, Lde/rki/coronawarnapp/util/di/DaggerApplicationComponent;->contextProvider:Ljavax/inject/Provider;
+
+    iget-object v6, v0, Lde/rki/coronawarnapp/util/di/DaggerApplicationComponent;->baseGsonProvider:Ljavax/inject/Provider;
+
+    new-instance v7, Lde/rki/coronawarnapp/covidcertificate/vaccination/core/repository/storage/VaccinationStorage_Factory;
+
+    invoke-direct {v7, v5, v6, v4}, Lde/rki/coronawarnapp/covidcertificate/vaccination/core/repository/storage/VaccinationStorage_Factory;-><init>(Ljavax/inject/Provider;Ljavax/inject/Provider;Ljavax/inject/Provider;)V
+
+    sget-object v4, Ldagger/internal/DoubleCheck;->UNINITIALIZED:Ljava/lang/Object;
+
+    instance-of v4, v7, Ldagger/internal/DoubleCheck;
+
+    if-eqz v4, :cond_0
+
+    goto :goto_0
+
+    :cond_0
+    new-instance v4, Ldagger/internal/DoubleCheck;
+
+    invoke-direct {v4, v7}, Ldagger/internal/DoubleCheck;-><init>(Ljavax/inject/Provider;)V
+
+    move-object v7, v4
+
+    :goto_0
+    iput-object v7, v0, Lde/rki/coronawarnapp/util/di/DaggerApplicationComponent;->vaccinationStorageProvider:Ljavax/inject/Provider;
+
+    sget-object v4, Lde/rki/coronawarnapp/covidcertificate/signature/core/DscDataParser_Factory$InstanceHolder;->INSTANCE:Lde/rki/coronawarnapp/covidcertificate/signature/core/DscDataParser_Factory;
+
+    invoke-static {v4}, Ldagger/internal/SingleCheck;->provider(Ljavax/inject/Provider;)Ljavax/inject/Provider;
+
+    move-result-object v4
+
+    iput-object v4, v0, Lde/rki/coronawarnapp/util/di/DaggerApplicationComponent;->dscDataParserProvider:Ljavax/inject/Provider;
+
+    iget-object v5, v0, Lde/rki/coronawarnapp/util/di/DaggerApplicationComponent;->assetManagerProvider:Ljavax/inject/Provider;
+
+    new-instance v6, Lde/rki/coronawarnapp/covidcertificate/signature/core/storage/DefaultDscSource_Factory;
+
+    invoke-direct {v6, v5, v4}, Lde/rki/coronawarnapp/covidcertificate/signature/core/storage/DefaultDscSource_Factory;-><init>(Ljavax/inject/Provider;Ljavax/inject/Provider;)V
+
+    instance-of v4, v6, Ldagger/internal/DoubleCheck;
+
+    if-eqz v4, :cond_1
+
+    goto :goto_1
+
+    :cond_1
+    new-instance v4, Ldagger/internal/DoubleCheck;
+
+    invoke-direct {v4, v6}, Ldagger/internal/DoubleCheck;-><init>(Ljavax/inject/Provider;)V
+
+    move-object v6, v4
+
+    :goto_1
+    iput-object v6, v0, Lde/rki/coronawarnapp/util/di/DaggerApplicationComponent;->defaultDscSourceProvider:Ljavax/inject/Provider;
+
+    iget-object v4, v0, Lde/rki/coronawarnapp/util/di/DaggerApplicationComponent;->contextProvider:Ljavax/inject/Provider;
+
+    iget-object v5, v0, Lde/rki/coronawarnapp/util/di/DaggerApplicationComponent;->dscDataParserProvider:Ljavax/inject/Provider;
+
+    new-instance v6, Lde/rki/coronawarnapp/covidcertificate/signature/core/storage/LocalDscStorage_Factory;
+
+    invoke-direct {v6, v4, v5}, Lde/rki/coronawarnapp/covidcertificate/signature/core/storage/LocalDscStorage_Factory;-><init>(Ljavax/inject/Provider;Ljavax/inject/Provider;)V
+
+    instance-of v4, v6, Ldagger/internal/DoubleCheck;
+
+    if-eqz v4, :cond_2
+
+    goto :goto_2
+
+    :cond_2
+    new-instance v4, Ldagger/internal/DoubleCheck;
+
+    invoke-direct {v4, v6}, Ldagger/internal/DoubleCheck;-><init>(Ljavax/inject/Provider;)V
+
+    move-object v6, v4
+
+    :goto_2
+    iput-object v6, v0, Lde/rki/coronawarnapp/util/di/DaggerApplicationComponent;->localDscStorageProvider:Ljavax/inject/Provider;
+
+    iget-object v9, v0, Lde/rki/coronawarnapp/util/di/DaggerApplicationComponent;->cdnHttpClientProvider:Ljavax/inject/Provider;
+
+    iget-object v10, v0, Lde/rki/coronawarnapp/util/di/DaggerApplicationComponent;->provideDownloadServerUrlProvider:Ljavax/inject/Provider;
+
+    iget-object v11, v0, Lde/rki/coronawarnapp/util/di/DaggerApplicationComponent;->httpCacheProvider:Ljavax/inject/Provider;
+
+    iget-object v12, v0, Lde/rki/coronawarnapp/util/di/DaggerApplicationComponent;->provideGSONConverterProvider:Ljavax/inject/Provider;
+
+    new-instance v4, Lde/rki/coronawarnapp/covidcertificate/signature/core/server/DscServerModule_ApiV1Factory;
+
+    move-object v7, v4
+
+    move-object/from16 v8, p10
+
+    invoke-direct/range {v7 .. v12}, Lde/rki/coronawarnapp/covidcertificate/signature/core/server/DscServerModule_ApiV1Factory;-><init>(Lde/rki/coronawarnapp/covidcertificate/signature/core/server/DscServerModule;Ljavax/inject/Provider;Ljavax/inject/Provider;Ljavax/inject/Provider;Ljavax/inject/Provider;)V
+
+    invoke-static {v4}, Ldagger/internal/SingleCheck;->provider(Ljavax/inject/Provider;)Ljavax/inject/Provider;
+
+    move-result-object v4
+
+    iput-object v4, v0, Lde/rki/coronawarnapp/util/di/DaggerApplicationComponent;->apiV1Provider2:Ljavax/inject/Provider;
+
+    iget-object v5, v0, Lde/rki/coronawarnapp/util/di/DaggerApplicationComponent;->signatureValidationProvider:Ljavax/inject/Provider;
+
+    new-instance v6, Lde/rki/coronawarnapp/covidcertificate/signature/core/server/DscServer_Factory;
+
+    invoke-direct {v6, v5, v4}, Lde/rki/coronawarnapp/covidcertificate/signature/core/server/DscServer_Factory;-><init>(Ljavax/inject/Provider;Ljavax/inject/Provider;)V
+
+    instance-of v4, v6, Ldagger/internal/DoubleCheck;
+
+    if-eqz v4, :cond_3
+
+    move-object v12, v6
+
+    goto :goto_3
+
+    :cond_3
+    new-instance v4, Ldagger/internal/DoubleCheck;
+
+    invoke-direct {v4, v6}, Ldagger/internal/DoubleCheck;-><init>(Ljavax/inject/Provider;)V
+
+    move-object v12, v4
+
+    :goto_3
+    iput-object v12, v0, Lde/rki/coronawarnapp/util/di/DaggerApplicationComponent;->dscServerProvider:Ljavax/inject/Provider;
+
+    iget-object v8, v0, Lde/rki/coronawarnapp/util/di/DaggerApplicationComponent;->appCoroutineScopeProvider:Ljavax/inject/Provider;
+
+    iget-object v9, v0, Lde/rki/coronawarnapp/util/di/DaggerApplicationComponent;->defaultDispatcherProvider:Ljavax/inject/Provider;
+
+    iget-object v10, v0, Lde/rki/coronawarnapp/util/di/DaggerApplicationComponent;->defaultDscSourceProvider:Ljavax/inject/Provider;
+
+    iget-object v11, v0, Lde/rki/coronawarnapp/util/di/DaggerApplicationComponent;->localDscStorageProvider:Ljavax/inject/Provider;
+
+    iget-object v13, v0, Lde/rki/coronawarnapp/util/di/DaggerApplicationComponent;->dscDataParserProvider:Ljavax/inject/Provider;
+
+    new-instance v4, Lde/rki/coronawarnapp/covidcertificate/signature/core/DscRepository_Factory;
+
+    move-object v7, v4
+
+    invoke-direct/range {v7 .. v13}, Lde/rki/coronawarnapp/covidcertificate/signature/core/DscRepository_Factory;-><init>(Ljavax/inject/Provider;Ljavax/inject/Provider;Ljavax/inject/Provider;Ljavax/inject/Provider;Ljavax/inject/Provider;Ljavax/inject/Provider;)V
+
+    instance-of v5, v4, Ldagger/internal/DoubleCheck;
+
+    if-eqz v5, :cond_4
+
+    goto :goto_4
+
+    :cond_4
+    new-instance v5, Ldagger/internal/DoubleCheck;
+
+    invoke-direct {v5, v4}, Ldagger/internal/DoubleCheck;-><init>(Ljavax/inject/Provider;)V
+
+    move-object v4, v5
+
+    :goto_4
+    iput-object v4, v0, Lde/rki/coronawarnapp/util/di/DaggerApplicationComponent;->dscRepositoryProvider:Ljavax/inject/Provider;
+
+    sget-object v4, Lde/rki/coronawarnapp/SecurityProvider_Factory$InstanceHolder;->INSTANCE:Lde/rki/coronawarnapp/SecurityProvider_Factory;
+
+    instance-of v5, v4, Ldagger/internal/DoubleCheck;
+
+    if-eqz v5, :cond_5
+
+    goto :goto_5
+
+    :cond_5
+    new-instance v5, Ldagger/internal/DoubleCheck;
+
+    invoke-direct {v5, v4}, Ldagger/internal/DoubleCheck;-><init>(Ljavax/inject/Provider;)V
+
+    move-object v4, v5
+
+    :goto_5
+    iput-object v4, v0, Lde/rki/coronawarnapp/util/di/DaggerApplicationComponent;->securityProvider:Ljavax/inject/Provider;
+
+    iget-object v5, v0, Lde/rki/coronawarnapp/util/di/DaggerApplicationComponent;->dscRepositoryProvider:Ljavax/inject/Provider;
+
+    new-instance v6, Lde/rki/coronawarnapp/covidcertificate/signature/core/DscSignatureValidator_Factory;
+
+    invoke-direct {v6, v4, v5}, Lde/rki/coronawarnapp/covidcertificate/signature/core/DscSignatureValidator_Factory;-><init>(Ljavax/inject/Provider;Ljavax/inject/Provider;)V
+
+    invoke-static {v6}, Ldagger/internal/SingleCheck;->provider(Ljavax/inject/Provider;)Ljavax/inject/Provider;
+
+    move-result-object v4
+
+    iput-object v4, v0, Lde/rki/coronawarnapp/util/di/DaggerApplicationComponent;->dscSignatureValidatorProvider:Ljavax/inject/Provider;
+
+    sget-object v4, Lde/rki/coronawarnapp/covidcertificate/expiration/DccExpirationChecker_Factory$InstanceHolder;->INSTANCE:Lde/rki/coronawarnapp/covidcertificate/expiration/DccExpirationChecker_Factory;
+
+    invoke-static {v4}, Ldagger/internal/SingleCheck;->provider(Ljavax/inject/Provider;)Ljavax/inject/Provider;
+
+    move-result-object v11
+
+    iput-object v11, v0, Lde/rki/coronawarnapp/util/di/DaggerApplicationComponent;->dccExpirationCheckerProvider:Ljavax/inject/Provider;
+
+    iget-object v6, v0, Lde/rki/coronawarnapp/util/di/DaggerApplicationComponent;->timeStamperProvider:Ljavax/inject/Provider;
+
+    iget-object v7, v0, Lde/rki/coronawarnapp/util/di/DaggerApplicationComponent;->appConfigProvider:Ljavax/inject/Provider;
+
+    iget-object v8, v0, Lde/rki/coronawarnapp/util/di/DaggerApplicationComponent;->dscRepositoryProvider:Ljavax/inject/Provider;
+
+    iget-object v9, v0, Lde/rki/coronawarnapp/util/di/DaggerApplicationComponent;->dscSignatureValidatorProvider:Ljavax/inject/Provider;
+
+    sget-object v10, Lde/rki/coronawarnapp/covidcertificate/validation/core/BlocklistValidator_Factory$InstanceHolder;->INSTANCE:Lde/rki/coronawarnapp/covidcertificate/validation/core/BlocklistValidator_Factory;
+
+    new-instance v4, Lde/rki/coronawarnapp/covidcertificate/common/statecheck/DccStateChecker_Factory;
+
+    move-object v5, v4
+
+    invoke-direct/range {v5 .. v11}, Lde/rki/coronawarnapp/covidcertificate/common/statecheck/DccStateChecker_Factory;-><init>(Ljavax/inject/Provider;Ljavax/inject/Provider;Ljavax/inject/Provider;Ljavax/inject/Provider;Ljavax/inject/Provider;Ljavax/inject/Provider;)V
+
+    invoke-static {v4}, Ldagger/internal/SingleCheck;->provider(Ljavax/inject/Provider;)Ljavax/inject/Provider;
+
+    move-result-object v4
+
+    iput-object v4, v0, Lde/rki/coronawarnapp/util/di/DaggerApplicationComponent;->dccStateCheckerProvider:Ljavax/inject/Provider;
+
+    iget-object v13, v0, Lde/rki/coronawarnapp/util/di/DaggerApplicationComponent;->defaultDispatcherProvider:Ljavax/inject/Provider;
+
+    iget-object v14, v0, Lde/rki/coronawarnapp/util/di/DaggerApplicationComponent;->valueSetsRepositoryProvider:Ljavax/inject/Provider;
+
+    iget-object v15, v0, Lde/rki/coronawarnapp/util/di/DaggerApplicationComponent;->timeStamperProvider:Ljavax/inject/Provider;
+
+    iget-object v5, v0, Lde/rki/coronawarnapp/util/di/DaggerApplicationComponent;->vaccinationStorageProvider:Ljavax/inject/Provider;
+
+    iget-object v6, v0, Lde/rki/coronawarnapp/util/di/DaggerApplicationComponent;->dccQrCodeExtractorProvider:Ljavax/inject/Provider;
+
+    iget-object v7, v0, Lde/rki/coronawarnapp/util/di/DaggerApplicationComponent;->appCoroutineScopeProvider:Ljavax/inject/Provider;
+
+    iget-object v8, v0, Lde/rki/coronawarnapp/util/di/DaggerApplicationComponent;->dscRepositoryProvider:Ljavax/inject/Provider;
+
+    new-instance v9, Lde/rki/coronawarnapp/covidcertificate/vaccination/core/repository/VaccinationRepository_Factory;
+
+    move-object v12, v9
+
+    move-object/from16 v16, v5
+
+    move-object/from16 v17, v6
+
+    move-object/from16 v18, v4
+
+    move-object/from16 v19, v7
+
+    move-object/from16 v20, v8
+
+    invoke-direct/range {v12 .. v20}, Lde/rki/coronawarnapp/covidcertificate/vaccination/core/repository/VaccinationRepository_Factory;-><init>(Ljavax/inject/Provider;Ljavax/inject/Provider;Ljavax/inject/Provider;Ljavax/inject/Provider;Ljavax/inject/Provider;Ljavax/inject/Provider;Ljavax/inject/Provider;Ljavax/inject/Provider;)V
+
+    instance-of v4, v9, Ldagger/internal/DoubleCheck;
+
+    if-eqz v4, :cond_6
+
+    goto :goto_6
+
+    :cond_6
+    new-instance v4, Ldagger/internal/DoubleCheck;
+
+    invoke-direct {v4, v9}, Ldagger/internal/DoubleCheck;-><init>(Ljavax/inject/Provider;)V
+
+    move-object v9, v4
+
+    :goto_6
+    iput-object v9, v0, Lde/rki/coronawarnapp/util/di/DaggerApplicationComponent;->vaccinationRepositoryProvider:Ljavax/inject/Provider;
+
+    iget-object v4, v0, Lde/rki/coronawarnapp/util/di/DaggerApplicationComponent;->boosterNotificationSenderProvider:Ljavax/inject/Provider;
+
+    iget-object v5, v0, Lde/rki/coronawarnapp/util/di/DaggerApplicationComponent;->timeStamperProvider:Ljavax/inject/Provider;
+
+    new-instance v6, Lde/rki/coronawarnapp/covidcertificate/booster/BoosterNotificationService_Factory;
+
+    invoke-direct {v6, v4, v9, v5}, Lde/rki/coronawarnapp/covidcertificate/booster/BoosterNotificationService_Factory;-><init>(Ljavax/inject/Provider;Ljavax/inject/Provider;Ljavax/inject/Provider;)V
+
+    instance-of v4, v6, Ldagger/internal/DoubleCheck;
+
+    if-eqz v4, :cond_7
+
+    goto :goto_7
+
+    :cond_7
+    new-instance v4, Ldagger/internal/DoubleCheck;
+
+    invoke-direct {v4, v6}, Ldagger/internal/DoubleCheck;-><init>(Ljavax/inject/Provider;)V
+
+    move-object v6, v4
+
+    :goto_7
+    iput-object v6, v0, Lde/rki/coronawarnapp/util/di/DaggerApplicationComponent;->boosterNotificationServiceProvider:Ljavax/inject/Provider;
+
+    iget-object v4, v0, Lde/rki/coronawarnapp/util/di/DaggerApplicationComponent;->contextProvider:Ljavax/inject/Provider;
+
+    iget-object v5, v0, Lde/rki/coronawarnapp/util/di/DaggerApplicationComponent;->baseGsonProvider:Ljavax/inject/Provider;
+
+    new-instance v6, Lde/rki/coronawarnapp/covidcertificate/person/core/PersonCertificatesSettings_Factory;
+
+    invoke-direct {v6, v4, v5}, Lde/rki/coronawarnapp/covidcertificate/person/core/PersonCertificatesSettings_Factory;-><init>(Ljavax/inject/Provider;Ljavax/inject/Provider;)V
+
+    instance-of v4, v6, Ldagger/internal/DoubleCheck;
+
+    if-eqz v4, :cond_8
+
+    goto :goto_8
+
+    :cond_8
+    new-instance v4, Ldagger/internal/DoubleCheck;
+
+    invoke-direct {v4, v6}, Ldagger/internal/DoubleCheck;-><init>(Ljavax/inject/Provider;)V
+
+    move-object v6, v4
+
+    :goto_8
+    iput-object v6, v0, Lde/rki/coronawarnapp/util/di/DaggerApplicationComponent;->personCertificatesSettingsProvider:Ljavax/inject/Provider;
+
+    iget-object v4, v0, Lde/rki/coronawarnapp/util/di/DaggerApplicationComponent;->contextProvider:Ljavax/inject/Provider;
+
+    iget-object v5, v0, Lde/rki/coronawarnapp/util/di/DaggerApplicationComponent;->baseGsonProvider:Ljavax/inject/Provider;
+
+    new-instance v6, Lde/rki/coronawarnapp/covidcertificate/test/core/storage/TestCertificateStorage_Factory;
+
+    invoke-direct {v6, v4, v5}, Lde/rki/coronawarnapp/covidcertificate/test/core/storage/TestCertificateStorage_Factory;-><init>(Ljavax/inject/Provider;Ljavax/inject/Provider;)V
+
+    instance-of v4, v6, Ldagger/internal/DoubleCheck;
+
+    if-eqz v4, :cond_9
+
+    goto :goto_9
+
+    :cond_9
+    new-instance v4, Ldagger/internal/DoubleCheck;
+
+    invoke-direct {v4, v6}, Ldagger/internal/DoubleCheck;-><init>(Ljavax/inject/Provider;)V
+
+    move-object v6, v4
+
+    :goto_9
+    iput-object v6, v0, Lde/rki/coronawarnapp/util/di/DaggerApplicationComponent;->testCertificateStorageProvider:Ljavax/inject/Provider;
+
+    iget-object v4, v0, Lde/rki/coronawarnapp/util/di/DaggerApplicationComponent;->defaultHttpClientProvider:Ljavax/inject/Provider;
+
+    new-instance v5, Lde/rki/coronawarnapp/environment/covidcertificate/DCCModule_DccHttpClientFactory;
+
+    invoke-direct {v5, v3, v4}, Lde/rki/coronawarnapp/environment/covidcertificate/DCCModule_DccHttpClientFactory;-><init>(Lde/rki/coronawarnapp/environment/covidcertificate/DCCModule;Ljavax/inject/Provider;)V
+
+    invoke-static {v5}, Ldagger/internal/SingleCheck;->provider(Ljavax/inject/Provider;)Ljavax/inject/Provider;
+
+    move-result-object v4
+
+    iput-object v4, v0, Lde/rki/coronawarnapp/util/di/DaggerApplicationComponent;->dccHttpClientProvider:Ljavax/inject/Provider;
+
+    iget-object v4, v0, Lde/rki/coronawarnapp/util/di/DaggerApplicationComponent;->environmentSetupProvider:Ljavax/inject/Provider;
+
+    new-instance v5, Lde/rki/coronawarnapp/environment/covidcertificate/DCCModule_DccServerUrlFactory;
+
+    invoke-direct {v5, v3, v4}, Lde/rki/coronawarnapp/environment/covidcertificate/DCCModule_DccServerUrlFactory;-><init>(Lde/rki/coronawarnapp/environment/covidcertificate/DCCModule;Ljavax/inject/Provider;)V
+
+    instance-of v3, v5, Ldagger/internal/DoubleCheck;
+
+    if-eqz v3, :cond_a
+
+    goto :goto_a
+
+    :cond_a
+    new-instance v3, Ldagger/internal/DoubleCheck;
+
+    invoke-direct {v3, v5}, Ldagger/internal/DoubleCheck;-><init>(Ljavax/inject/Provider;)V
+
+    move-object v5, v3
+
+    :goto_a
+    iput-object v5, v0, Lde/rki/coronawarnapp/util/di/DaggerApplicationComponent;->dccServerUrlProvider:Ljavax/inject/Provider;
+
+    iget-object v3, v0, Lde/rki/coronawarnapp/util/di/DaggerApplicationComponent;->dccHttpClientProvider:Ljavax/inject/Provider;
+
+    iget-object v4, v0, Lde/rki/coronawarnapp/util/di/DaggerApplicationComponent;->provideGSONConverterProvider:Ljavax/inject/Provider;
+
+    new-instance v6, Lde/rki/coronawarnapp/covidcertificate/test/core/server/TestCertificateServerModule_ApiV1Factory;
+
+    move-object/from16 v7, p9
+
+    invoke-direct {v6, v7, v3, v5, v4}, Lde/rki/coronawarnapp/covidcertificate/test/core/server/TestCertificateServerModule_ApiV1Factory;-><init>(Lde/rki/coronawarnapp/covidcertificate/test/core/server/TestCertificateServerModule;Ljavax/inject/Provider;Ljavax/inject/Provider;Ljavax/inject/Provider;)V
+
+    invoke-static {v6}, Ldagger/internal/SingleCheck;->provider(Ljavax/inject/Provider;)Ljavax/inject/Provider;
+
+    move-result-object v3
+
+    iput-object v3, v0, Lde/rki/coronawarnapp/util/di/DaggerApplicationComponent;->apiV1Provider3:Ljavax/inject/Provider;
+
+    iget-object v4, v0, Lde/rki/coronawarnapp/util/di/DaggerApplicationComponent;->defaultDispatcherProvider:Ljavax/inject/Provider;
+
+    iget-object v5, v0, Lde/rki/coronawarnapp/util/di/DaggerApplicationComponent;->networkStateProvider:Ljavax/inject/Provider;
+
+    new-instance v6, Lde/rki/coronawarnapp/covidcertificate/test/core/server/TestCertificateServer_Factory;
+
+    invoke-direct {v6, v3, v4, v5}, Lde/rki/coronawarnapp/covidcertificate/test/core/server/TestCertificateServer_Factory;-><init>(Ljavax/inject/Provider;Ljavax/inject/Provider;Ljavax/inject/Provider;)V
+
+    invoke-static {v6}, Ldagger/internal/SingleCheck;->provider(Ljavax/inject/Provider;)Ljavax/inject/Provider;
+
+    move-result-object v3
+
+    iput-object v3, v0, Lde/rki/coronawarnapp/util/di/DaggerApplicationComponent;->testCertificateServerProvider:Ljavax/inject/Provider;
+
+    sget-object v3, Lde/rki/coronawarnapp/util/encryption/rsa/RSACryptography_Factory$InstanceHolder;->INSTANCE:Lde/rki/coronawarnapp/util/encryption/rsa/RSACryptography_Factory;
+
+    invoke-static {v3}, Ldagger/internal/SingleCheck;->provider(Ljavax/inject/Provider;)Ljavax/inject/Provider;
+
+    move-result-object v3
+
+    iput-object v3, v0, Lde/rki/coronawarnapp/util/di/DaggerApplicationComponent;->rSACryptographyProvider:Ljavax/inject/Provider;
+
+    sget-object v3, Lde/rki/coronawarnapp/util/encryption/rsa/RSAKeyPairGenerator_Factory$InstanceHolder;->INSTANCE:Lde/rki/coronawarnapp/util/encryption/rsa/RSAKeyPairGenerator_Factory;
+
+    invoke-static {v3}, Ldagger/internal/SingleCheck;->provider(Ljavax/inject/Provider;)Ljavax/inject/Provider;
+
+    move-result-object v10
+
+    iput-object v10, v0, Lde/rki/coronawarnapp/util/di/DaggerApplicationComponent;->rSAKeyPairGeneratorProvider:Ljavax/inject/Provider;
+
+    iget-object v5, v0, Lde/rki/coronawarnapp/util/di/DaggerApplicationComponent;->timeStamperProvider:Ljavax/inject/Provider;
+
+    iget-object v6, v0, Lde/rki/coronawarnapp/util/di/DaggerApplicationComponent;->testCertificateServerProvider:Ljavax/inject/Provider;
+
+    iget-object v7, v0, Lde/rki/coronawarnapp/util/di/DaggerApplicationComponent;->rSACryptographyProvider:Ljavax/inject/Provider;
+
+    iget-object v8, v0, Lde/rki/coronawarnapp/util/di/DaggerApplicationComponent;->appConfigProvider:Ljavax/inject/Provider;
+
+    iget-object v9, v0, Lde/rki/coronawarnapp/util/di/DaggerApplicationComponent;->dccQrCodeExtractorProvider:Ljavax/inject/Provider;
+
+    new-instance v3, Lde/rki/coronawarnapp/covidcertificate/test/core/TestCertificateProcessor_Factory;
+
+    move-object v4, v3
+
+    invoke-direct/range {v4 .. v10}, Lde/rki/coronawarnapp/covidcertificate/test/core/TestCertificateProcessor_Factory;-><init>(Ljavax/inject/Provider;Ljavax/inject/Provider;Ljavax/inject/Provider;Ljavax/inject/Provider;Ljavax/inject/Provider;Ljavax/inject/Provider;)V
+
+    invoke-static {v3}, Ldagger/internal/SingleCheck;->provider(Ljavax/inject/Provider;)Ljavax/inject/Provider;
+
+    move-result-object v3
+
+    iput-object v3, v0, Lde/rki/coronawarnapp/util/di/DaggerApplicationComponent;->testCertificateProcessorProvider:Ljavax/inject/Provider;
+
+    iget-object v5, v0, Lde/rki/coronawarnapp/util/di/DaggerApplicationComponent;->appCoroutineScopeProvider:Ljavax/inject/Provider;
+
+    iget-object v6, v0, Lde/rki/coronawarnapp/util/di/DaggerApplicationComponent;->defaultDispatcherProvider:Ljavax/inject/Provider;
+
+    iget-object v7, v0, Lde/rki/coronawarnapp/util/di/DaggerApplicationComponent;->testCertificateStorageProvider:Ljavax/inject/Provider;
+
+    iget-object v8, v0, Lde/rki/coronawarnapp/util/di/DaggerApplicationComponent;->dccQrCodeExtractorProvider:Ljavax/inject/Provider;
+
+    iget-object v9, v0, Lde/rki/coronawarnapp/util/di/DaggerApplicationComponent;->testCertificateProcessorProvider:Ljavax/inject/Provider;
+
+    iget-object v10, v0, Lde/rki/coronawarnapp/util/di/DaggerApplicationComponent;->timeStamperProvider:Ljavax/inject/Provider;
+
+    iget-object v11, v0, Lde/rki/coronawarnapp/util/di/DaggerApplicationComponent;->valueSetsRepositoryProvider:Ljavax/inject/Provider;
+
+    iget-object v12, v0, Lde/rki/coronawarnapp/util/di/DaggerApplicationComponent;->rSAKeyPairGeneratorProvider:Ljavax/inject/Provider;
+
+    iget-object v13, v0, Lde/rki/coronawarnapp/util/di/DaggerApplicationComponent;->dccStateCheckerProvider:Ljavax/inject/Provider;
+
+    iget-object v14, v0, Lde/rki/coronawarnapp/util/di/DaggerApplicationComponent;->dscRepositoryProvider:Ljavax/inject/Provider;
+
+    new-instance v3, Lde/rki/coronawarnapp/covidcertificate/test/core/TestCertificateRepository_Factory;
+
+    move-object v4, v3
+
+    invoke-direct/range {v4 .. v14}, Lde/rki/coronawarnapp/covidcertificate/test/core/TestCertificateRepository_Factory;-><init>(Ljavax/inject/Provider;Ljavax/inject/Provider;Ljavax/inject/Provider;Ljavax/inject/Provider;Ljavax/inject/Provider;Ljavax/inject/Provider;Ljavax/inject/Provider;Ljavax/inject/Provider;Ljavax/inject/Provider;Ljavax/inject/Provider;)V
+
+    instance-of v4, v3, Ldagger/internal/DoubleCheck;
+
+    if-eqz v4, :cond_b
+
+    goto :goto_b
+
+    :cond_b
+    new-instance v4, Ldagger/internal/DoubleCheck;
+
+    invoke-direct {v4, v3}, Ldagger/internal/DoubleCheck;-><init>(Ljavax/inject/Provider;)V
+
+    move-object v3, v4
+
+    :goto_b
+    iput-object v3, v0, Lde/rki/coronawarnapp/util/di/DaggerApplicationComponent;->testCertificateRepositoryProvider:Ljavax/inject/Provider;
+
+    iget-object v3, v0, Lde/rki/coronawarnapp/util/di/DaggerApplicationComponent;->contextProvider:Ljavax/inject/Provider;
+
+    iget-object v4, v0, Lde/rki/coronawarnapp/util/di/DaggerApplicationComponent;->baseGsonProvider:Ljavax/inject/Provider;
+
+    new-instance v5, Lde/rki/coronawarnapp/covidcertificate/recovery/core/storage/RecoveryCertificateStorage_Factory;
+
+    invoke-direct {v5, v3, v4}, Lde/rki/coronawarnapp/covidcertificate/recovery/core/storage/RecoveryCertificateStorage_Factory;-><init>(Ljavax/inject/Provider;Ljavax/inject/Provider;)V
+
+    instance-of v3, v5, Ldagger/internal/DoubleCheck;
+
+    if-eqz v3, :cond_c
+
+    goto :goto_c
+
+    :cond_c
+    new-instance v3, Ldagger/internal/DoubleCheck;
+
+    invoke-direct {v3, v5}, Ldagger/internal/DoubleCheck;-><init>(Ljavax/inject/Provider;)V
+
+    move-object v5, v3
+
+    :goto_c
+    iput-object v5, v0, Lde/rki/coronawarnapp/util/di/DaggerApplicationComponent;->recoveryCertificateStorageProvider:Ljavax/inject/Provider;
+
+    iget-object v7, v0, Lde/rki/coronawarnapp/util/di/DaggerApplicationComponent;->appCoroutineScopeProvider:Ljavax/inject/Provider;
+
+    iget-object v8, v0, Lde/rki/coronawarnapp/util/di/DaggerApplicationComponent;->defaultDispatcherProvider:Ljavax/inject/Provider;
+
+    iget-object v9, v0, Lde/rki/coronawarnapp/util/di/DaggerApplicationComponent;->dccQrCodeExtractorProvider:Ljavax/inject/Provider;
+
+    iget-object v10, v0, Lde/rki/coronawarnapp/util/di/DaggerApplicationComponent;->valueSetsRepositoryProvider:Ljavax/inject/Provider;
+
+    iget-object v11, v0, Lde/rki/coronawarnapp/util/di/DaggerApplicationComponent;->recoveryCertificateStorageProvider:Ljavax/inject/Provider;
+
+    iget-object v12, v0, Lde/rki/coronawarnapp/util/di/DaggerApplicationComponent;->dccStateCheckerProvider:Ljavax/inject/Provider;
+
+    iget-object v13, v0, Lde/rki/coronawarnapp/util/di/DaggerApplicationComponent;->timeStamperProvider:Ljavax/inject/Provider;
+
+    iget-object v14, v0, Lde/rki/coronawarnapp/util/di/DaggerApplicationComponent;->dscRepositoryProvider:Ljavax/inject/Provider;
+
+    new-instance v3, Lde/rki/coronawarnapp/covidcertificate/recovery/core/RecoveryCertificateRepository_Factory;
+
+    move-object v6, v3
+
+    invoke-direct/range {v6 .. v14}, Lde/rki/coronawarnapp/covidcertificate/recovery/core/RecoveryCertificateRepository_Factory;-><init>(Ljavax/inject/Provider;Ljavax/inject/Provider;Ljavax/inject/Provider;Ljavax/inject/Provider;Ljavax/inject/Provider;Ljavax/inject/Provider;Ljavax/inject/Provider;Ljavax/inject/Provider;)V
+
+    instance-of v4, v3, Ldagger/internal/DoubleCheck;
+
+    if-eqz v4, :cond_d
+
+    goto :goto_d
+
+    :cond_d
+    new-instance v4, Ldagger/internal/DoubleCheck;
+
+    invoke-direct {v4, v3}, Ldagger/internal/DoubleCheck;-><init>(Ljavax/inject/Provider;)V
+
+    move-object v3, v4
+
+    :goto_d
+    iput-object v3, v0, Lde/rki/coronawarnapp/util/di/DaggerApplicationComponent;->recoveryCertificateRepositoryProvider:Ljavax/inject/Provider;
+
+    iget-object v5, v0, Lde/rki/coronawarnapp/util/di/DaggerApplicationComponent;->vaccinationRepositoryProvider:Ljavax/inject/Provider;
+
+    iget-object v6, v0, Lde/rki/coronawarnapp/util/di/DaggerApplicationComponent;->testCertificateRepositoryProvider:Ljavax/inject/Provider;
+
+    iget-object v7, v0, Lde/rki/coronawarnapp/util/di/DaggerApplicationComponent;->recoveryCertificateRepositoryProvider:Ljavax/inject/Provider;
+
+    iget-object v8, v0, Lde/rki/coronawarnapp/util/di/DaggerApplicationComponent;->appCoroutineScopeProvider:Ljavax/inject/Provider;
+
+    iget-object v9, v0, Lde/rki/coronawarnapp/util/di/DaggerApplicationComponent;->defaultDispatcherProvider:Ljavax/inject/Provider;
+
+    new-instance v3, Lde/rki/coronawarnapp/covidcertificate/common/certificate/CertificateProvider_Factory;
+
+    move-object v4, v3
+
+    invoke-direct/range {v4 .. v9}, Lde/rki/coronawarnapp/covidcertificate/common/certificate/CertificateProvider_Factory;-><init>(Ljavax/inject/Provider;Ljavax/inject/Provider;Ljavax/inject/Provider;Ljavax/inject/Provider;Ljavax/inject/Provider;)V
+
+    invoke-static {v3}, Ldagger/internal/SingleCheck;->provider(Ljavax/inject/Provider;)Ljavax/inject/Provider;
+
+    move-result-object v3
+
+    iput-object v3, v0, Lde/rki/coronawarnapp/util/di/DaggerApplicationComponent;->certificateProvider:Ljavax/inject/Provider;
+
+    iget-object v3, v0, Lde/rki/coronawarnapp/util/di/DaggerApplicationComponent;->contextProvider:Ljavax/inject/Provider;
+
+    new-instance v4, Lde/rki/coronawarnapp/ccl/dccwalletinfo/storage/database/DccWalletInfoDatabase_Factory_Factory;
+
+    invoke-direct {v4, v3}, Lde/rki/coronawarnapp/ccl/dccwalletinfo/storage/database/DccWalletInfoDatabase_Factory_Factory;-><init>(Ljavax/inject/Provider;)V
+
+    iput-object v4, v0, Lde/rki/coronawarnapp/util/di/DaggerApplicationComponent;->factoryProvider14:Ljavax/inject/Provider;
+
+    new-instance v3, Lde/rki/coronawarnapp/ccl/CCLModule_Companion_DccWalletInfoDaoFactory;
+
+    invoke-direct {v3, v4}, Lde/rki/coronawarnapp/ccl/CCLModule_Companion_DccWalletInfoDaoFactory;-><init>(Ljavax/inject/Provider;)V
+
+    instance-of v4, v3, Ldagger/internal/DoubleCheck;
+
+    if-eqz v4, :cond_e
+
+    goto :goto_e
+
+    :cond_e
+    new-instance v4, Ldagger/internal/DoubleCheck;
+
+    invoke-direct {v4, v3}, Ldagger/internal/DoubleCheck;-><init>(Ljavax/inject/Provider;)V
+
+    move-object v3, v4
+
+    :goto_e
+    iput-object v3, v0, Lde/rki/coronawarnapp/util/di/DaggerApplicationComponent;->dccWalletInfoDaoProvider:Ljavax/inject/Provider;
+
+    iget-object v4, v0, Lde/rki/coronawarnapp/util/di/DaggerApplicationComponent;->appCoroutineScopeProvider:Ljavax/inject/Provider;
+
+    new-instance v5, Lde/rki/coronawarnapp/ccl/dccwalletinfo/storage/DccWalletInfoRepository_Factory;
+
+    invoke-direct {v5, v3, v4}, Lde/rki/coronawarnapp/ccl/dccwalletinfo/storage/DccWalletInfoRepository_Factory;-><init>(Ljavax/inject/Provider;Ljavax/inject/Provider;)V
+
+    instance-of v3, v5, Ldagger/internal/DoubleCheck;
+
+    if-eqz v3, :cond_f
+
+    goto :goto_f
+
+    :cond_f
+    new-instance v3, Ldagger/internal/DoubleCheck;
+
+    invoke-direct {v3, v5}, Ldagger/internal/DoubleCheck;-><init>(Ljavax/inject/Provider;)V
+
+    move-object v5, v3
+
+    :goto_f
+    iput-object v5, v0, Lde/rki/coronawarnapp/util/di/DaggerApplicationComponent;->dccWalletInfoRepositoryProvider:Ljavax/inject/Provider;
+
+    iget-object v3, v0, Lde/rki/coronawarnapp/util/di/DaggerApplicationComponent;->personCertificatesSettingsProvider:Ljavax/inject/Provider;
+
+    iget-object v4, v0, Lde/rki/coronawarnapp/util/di/DaggerApplicationComponent;->certificateProvider:Ljavax/inject/Provider;
+
+    iget-object v5, v0, Lde/rki/coronawarnapp/util/di/DaggerApplicationComponent;->dccWalletInfoRepositoryProvider:Ljavax/inject/Provider;
+
+    iget-object v6, v0, Lde/rki/coronawarnapp/util/di/DaggerApplicationComponent;->appCoroutineScopeProvider:Ljavax/inject/Provider;
+
+    new-instance v7, Lde/rki/coronawarnapp/covidcertificate/person/core/PersonCertificatesProvider_Factory;
+
+    invoke-direct {v7, v3, v4, v5, v6}, Lde/rki/coronawarnapp/covidcertificate/person/core/PersonCertificatesProvider_Factory;-><init>(Ljavax/inject/Provider;Ljavax/inject/Provider;Ljavax/inject/Provider;Ljavax/inject/Provider;)V
+
+    invoke-static {v7}, Ldagger/internal/SingleCheck;->provider(Ljavax/inject/Provider;)Ljavax/inject/Provider;
+
+    move-result-object v3
+
+    iput-object v3, v0, Lde/rki/coronawarnapp/util/di/DaggerApplicationComponent;->personCertificatesProvider:Ljavax/inject/Provider;
+
+    iget-object v3, v0, Lde/rki/coronawarnapp/util/di/DaggerApplicationComponent;->contextProvider:Ljavax/inject/Provider;
+
+    new-instance v4, Lde/rki/coronawarnapp/ccl/configuration/CCLConfigurationModule_ProvideCCLDirFactory;
+
+    invoke-direct {v4, v3}, Lde/rki/coronawarnapp/ccl/configuration/CCLConfigurationModule_ProvideCCLDirFactory;-><init>(Ljavax/inject/Provider;)V
+
+    instance-of v3, v4, Ldagger/internal/DoubleCheck;
+
+    if-eqz v3, :cond_10
+
+    goto :goto_10
+
+    :cond_10
+    new-instance v3, Ldagger/internal/DoubleCheck;
+
+    invoke-direct {v3, v4}, Ldagger/internal/DoubleCheck;-><init>(Ljavax/inject/Provider;)V
+
+    move-object v4, v3
+
+    :goto_10
+    iput-object v4, v0, Lde/rki/coronawarnapp/util/di/DaggerApplicationComponent;->provideCCLDirProvider:Ljavax/inject/Provider;
+
+    new-instance v3, Lde/rki/coronawarnapp/ccl/configuration/storage/CCLConfigurationStorage_Factory;
+
+    invoke-direct {v3, v4}, Lde/rki/coronawarnapp/ccl/configuration/storage/CCLConfigurationStorage_Factory;-><init>(Ljavax/inject/Provider;)V
+
+    iput-object v3, v0, Lde/rki/coronawarnapp/util/di/DaggerApplicationComponent;->cCLConfigurationStorageProvider:Ljavax/inject/Provider;
+
+    iget-object v3, v0, Lde/rki/coronawarnapp/util/di/DaggerApplicationComponent;->contextProvider:Ljavax/inject/Provider;
+
+    new-instance v4, Lde/rki/coronawarnapp/ccl/configuration/storage/DefaultCCLConfigurationProvider_Factory;
+
+    invoke-direct {v4, v3}, Lde/rki/coronawarnapp/ccl/configuration/storage/DefaultCCLConfigurationProvider_Factory;-><init>(Ljavax/inject/Provider;)V
+
+    iput-object v4, v0, Lde/rki/coronawarnapp/util/di/DaggerApplicationComponent;->defaultCCLConfigurationProvider:Ljavax/inject/Provider;
+
+    iget-object v3, v0, Lde/rki/coronawarnapp/util/di/DaggerApplicationComponent;->jacksonObjectMapperProvider:Ljavax/inject/Provider;
+
+    new-instance v4, Lde/rki/coronawarnapp/ccl/configuration/common/CCLConfigurationParser_Factory;
+
+    invoke-direct {v4, v3}, Lde/rki/coronawarnapp/ccl/configuration/common/CCLConfigurationParser_Factory;-><init>(Ljavax/inject/Provider;)V
+
+    iput-object v4, v0, Lde/rki/coronawarnapp/util/di/DaggerApplicationComponent;->cCLConfigurationParserProvider:Ljavax/inject/Provider;
+
+    iget-object v3, v0, Lde/rki/coronawarnapp/util/di/DaggerApplicationComponent;->cdnHttpClientProvider:Ljavax/inject/Provider;
+
+    iget-object v4, v0, Lde/rki/coronawarnapp/util/di/DaggerApplicationComponent;->provideDownloadServerUrlProvider:Ljavax/inject/Provider;
+
+    iget-object v5, v0, Lde/rki/coronawarnapp/util/di/DaggerApplicationComponent;->provideCCLDirProvider:Ljavax/inject/Provider;
+
+    new-instance v6, Lde/rki/coronawarnapp/ccl/configuration/CCLConfigurationModule_ProvideApiFactory;
+
+    invoke-direct {v6, v3, v4, v5}, Lde/rki/coronawarnapp/ccl/configuration/CCLConfigurationModule_ProvideApiFactory;-><init>(Ljavax/inject/Provider;Ljavax/inject/Provider;Ljavax/inject/Provider;)V
+
+    instance-of v3, v6, Ldagger/internal/DoubleCheck;
+
+    if-eqz v3, :cond_11
+
+    goto :goto_11
+
+    :cond_11
+    new-instance v3, Ldagger/internal/DoubleCheck;
+
+    invoke-direct {v3, v6}, Ldagger/internal/DoubleCheck;-><init>(Ljavax/inject/Provider;)V
+
+    move-object v6, v3
+
+    :goto_11
+    iput-object v6, v0, Lde/rki/coronawarnapp/util/di/DaggerApplicationComponent;->provideApiProvider:Ljavax/inject/Provider;
+
+    iget-object v3, v0, Lde/rki/coronawarnapp/util/di/DaggerApplicationComponent;->defaultDispatcherProvider:Ljavax/inject/Provider;
+
+    iget-object v4, v0, Lde/rki/coronawarnapp/util/di/DaggerApplicationComponent;->signatureValidationProvider:Ljavax/inject/Provider;
+
+    new-instance v5, Lde/rki/coronawarnapp/ccl/configuration/server/CCLConfigurationServer_Factory;
+
+    invoke-direct {v5, v6, v3, v4}, Lde/rki/coronawarnapp/ccl/configuration/server/CCLConfigurationServer_Factory;-><init>(Ljavax/inject/Provider;Ljavax/inject/Provider;Ljavax/inject/Provider;)V
+
+    invoke-static {v5}, Ldagger/internal/SingleCheck;->provider(Ljavax/inject/Provider;)Ljavax/inject/Provider;
+
+    move-result-object v3
+
+    iput-object v3, v0, Lde/rki/coronawarnapp/util/di/DaggerApplicationComponent;->cCLConfigurationServerProvider:Ljavax/inject/Provider;
+
+    iget-object v5, v0, Lde/rki/coronawarnapp/util/di/DaggerApplicationComponent;->appCoroutineScopeProvider:Ljavax/inject/Provider;
+
+    iget-object v6, v0, Lde/rki/coronawarnapp/util/di/DaggerApplicationComponent;->defaultDispatcherProvider:Ljavax/inject/Provider;
+
+    iget-object v7, v0, Lde/rki/coronawarnapp/util/di/DaggerApplicationComponent;->cCLConfigurationStorageProvider:Ljavax/inject/Provider;
+
+    iget-object v8, v0, Lde/rki/coronawarnapp/util/di/DaggerApplicationComponent;->defaultCCLConfigurationProvider:Ljavax/inject/Provider;
+
+    iget-object v9, v0, Lde/rki/coronawarnapp/util/di/DaggerApplicationComponent;->cCLConfigurationParserProvider:Ljavax/inject/Provider;
+
+    iget-object v10, v0, Lde/rki/coronawarnapp/util/di/DaggerApplicationComponent;->cCLConfigurationServerProvider:Ljavax/inject/Provider;
+
+    new-instance v3, Lde/rki/coronawarnapp/ccl/configuration/storage/CCLConfigurationRepository_Factory;
+
+    move-object v4, v3
+
+    invoke-direct/range {v4 .. v10}, Lde/rki/coronawarnapp/ccl/configuration/storage/CCLConfigurationRepository_Factory;-><init>(Ljavax/inject/Provider;Ljavax/inject/Provider;Ljavax/inject/Provider;Ljavax/inject/Provider;Ljavax/inject/Provider;Ljavax/inject/Provider;)V
+
+    instance-of v4, v3, Ldagger/internal/DoubleCheck;
+
+    if-eqz v4, :cond_12
+
+    goto :goto_12
+
+    :cond_12
+    new-instance v4, Ldagger/internal/DoubleCheck;
+
+    invoke-direct {v4, v3}, Ldagger/internal/DoubleCheck;-><init>(Ljavax/inject/Provider;)V
+
+    move-object v3, v4
+
+    :goto_12
+    iput-object v3, v0, Lde/rki/coronawarnapp/util/di/DaggerApplicationComponent;->cCLConfigurationRepositoryProvider:Ljavax/inject/Provider;
+
+    iget-object v3, v0, Lde/rki/coronawarnapp/util/di/DaggerApplicationComponent;->jacksonObjectMapperProvider:Ljavax/inject/Provider;
+
+    iget-object v4, v0, Lde/rki/coronawarnapp/util/di/DaggerApplicationComponent;->appCoroutineScopeProvider:Ljavax/inject/Provider;
+
+    iget-object v5, v0, Lde/rki/coronawarnapp/util/di/DaggerApplicationComponent;->cCLConfigurationRepositoryProvider:Ljavax/inject/Provider;
+
+    iget-object v6, v0, Lde/rki/coronawarnapp/util/di/DaggerApplicationComponent;->defaultDispatcherProvider:Ljavax/inject/Provider;
+
+    new-instance v7, Lde/rki/coronawarnapp/ccl/dccwalletinfo/calculation/CCLJsonFunctions_Factory;
+
+    invoke-direct {v7, v3, v4, v5, v6}, Lde/rki/coronawarnapp/ccl/dccwalletinfo/calculation/CCLJsonFunctions_Factory;-><init>(Ljavax/inject/Provider;Ljavax/inject/Provider;Ljavax/inject/Provider;Ljavax/inject/Provider;)V
+
+    instance-of v3, v7, Ldagger/internal/DoubleCheck;
+
+    if-eqz v3, :cond_13
+
+    goto :goto_13
+
+    :cond_13
+    new-instance v3, Ldagger/internal/DoubleCheck;
+
+    invoke-direct {v3, v7}, Ldagger/internal/DoubleCheck;-><init>(Ljavax/inject/Provider;)V
+
+    move-object v7, v3
+
+    :goto_13
+    iput-object v7, v0, Lde/rki/coronawarnapp/util/di/DaggerApplicationComponent;->cCLJsonFunctionsProvider:Ljavax/inject/Provider;
+
+    iget-object v3, v0, Lde/rki/coronawarnapp/util/di/DaggerApplicationComponent;->jacksonObjectMapperProvider:Ljavax/inject/Provider;
+
+    iget-object v4, v0, Lde/rki/coronawarnapp/util/di/DaggerApplicationComponent;->baseGsonProvider:Ljavax/inject/Provider;
+
+    iget-object v5, v0, Lde/rki/coronawarnapp/util/di/DaggerApplicationComponent;->cCLJsonFunctionsProvider:Ljavax/inject/Provider;
+
+    iget-object v6, v0, Lde/rki/coronawarnapp/util/di/DaggerApplicationComponent;->defaultDispatcherProvider:Ljavax/inject/Provider;
+
+    new-instance v7, Lde/rki/coronawarnapp/ccl/dccwalletinfo/calculation/DccWalletInfoCalculation_Factory;
+
+    invoke-direct {v7, v3, v4, v5, v6}, Lde/rki/coronawarnapp/ccl/dccwalletinfo/calculation/DccWalletInfoCalculation_Factory;-><init>(Ljavax/inject/Provider;Ljavax/inject/Provider;Ljavax/inject/Provider;Ljavax/inject/Provider;)V
+
+    iput-object v7, v0, Lde/rki/coronawarnapp/util/di/DaggerApplicationComponent;->dccWalletInfoCalculationProvider:Ljavax/inject/Provider;
+
+    iget-object v9, v0, Lde/rki/coronawarnapp/util/di/DaggerApplicationComponent;->boosterRulesRepositoryProvider:Ljavax/inject/Provider;
+
+    iget-object v10, v0, Lde/rki/coronawarnapp/util/di/DaggerApplicationComponent;->boosterNotificationServiceProvider:Ljavax/inject/Provider;
+
+    iget-object v11, v0, Lde/rki/coronawarnapp/util/di/DaggerApplicationComponent;->personCertificatesProvider:Ljavax/inject/Provider;
+
+    iget-object v12, v0, Lde/rki/coronawarnapp/util/di/DaggerApplicationComponent;->dccWalletInfoRepositoryProvider:Ljavax/inject/Provider;
+
+    iget-object v13, v0, Lde/rki/coronawarnapp/util/di/DaggerApplicationComponent;->dccWalletInfoCalculationProvider:Ljavax/inject/Provider;
+
+    iget-object v14, v0, Lde/rki/coronawarnapp/util/di/DaggerApplicationComponent;->timeStamperProvider:Ljavax/inject/Provider;
+
+    new-instance v3, Lde/rki/coronawarnapp/ccl/dccwalletinfo/calculation/DccWalletInfoCalculationManager_Factory;
+
+    move-object v8, v3
+
+    invoke-direct/range {v8 .. v14}, Lde/rki/coronawarnapp/ccl/dccwalletinfo/calculation/DccWalletInfoCalculationManager_Factory;-><init>(Ljavax/inject/Provider;Ljavax/inject/Provider;Ljavax/inject/Provider;Ljavax/inject/Provider;Ljavax/inject/Provider;Ljavax/inject/Provider;)V
+
+    iput-object v3, v0, Lde/rki/coronawarnapp/util/di/DaggerApplicationComponent;->dccWalletInfoCalculationManagerProvider:Ljavax/inject/Provider;
+
+    iget-object v3, v0, Lde/rki/coronawarnapp/util/di/DaggerApplicationComponent;->personCertificatesProvider:Ljavax/inject/Provider;
+
+    iget-object v4, v0, Lde/rki/coronawarnapp/util/di/DaggerApplicationComponent;->dccWalletInfoRepositoryProvider:Ljavax/inject/Provider;
+
+    new-instance v5, Lde/rki/coronawarnapp/ccl/dccwalletinfo/DccWalletInfoCleaner_Factory;
+
+    invoke-direct {v5, v3, v4}, Lde/rki/coronawarnapp/ccl/dccwalletinfo/DccWalletInfoCleaner_Factory;-><init>(Ljavax/inject/Provider;Ljavax/inject/Provider;)V
+
+    iput-object v5, v0, Lde/rki/coronawarnapp/util/di/DaggerApplicationComponent;->dccWalletInfoCleanerProvider:Ljavax/inject/Provider;
+
+    iget-object v3, v0, Lde/rki/coronawarnapp/util/di/DaggerApplicationComponent;->dccWalletInfoCalculationManagerProvider:Ljavax/inject/Provider;
+
+    iget-object v4, v0, Lde/rki/coronawarnapp/util/di/DaggerApplicationComponent;->dccWalletInfoCleanerProvider:Ljavax/inject/Provider;
+
+    new-instance v5, Lde/rki/coronawarnapp/ccl/dccwalletinfo/update/DccWalletInfoUpdateTask_Factory;
+
+    invoke-direct {v5, v3, v4}, Lde/rki/coronawarnapp/ccl/dccwalletinfo/update/DccWalletInfoUpdateTask_Factory;-><init>(Ljavax/inject/Provider;Ljavax/inject/Provider;)V
+
+    iput-object v5, v0, Lde/rki/coronawarnapp/util/di/DaggerApplicationComponent;->dccWalletInfoUpdateTaskProvider:Ljavax/inject/Provider;
+
+    new-instance v3, Lde/rki/coronawarnapp/ccl/dccwalletinfo/update/DccWalletInfoUpdateTask_Factory_Factory;
+
+    invoke-direct {v3, v5}, Lde/rki/coronawarnapp/ccl/dccwalletinfo/update/DccWalletInfoUpdateTask_Factory_Factory;-><init>(Ljavax/inject/Provider;)V
+
+    iput-object v3, v0, Lde/rki/coronawarnapp/util/di/DaggerApplicationComponent;->factoryProvider15:Ljavax/inject/Provider;
+
+    const/4 v3, 0x6
+
+    invoke-static {v3}, Ldagger/internal/MapFactory;->builder(I)Ldagger/internal/MapFactory$Builder;
+
+    move-result-object v3
+
+    const-class v4, Lde/rki/coronawarnapp/risk/RiskLevelTask;
+
+    iget-object v5, v0, Lde/rki/coronawarnapp/util/di/DaggerApplicationComponent;->riskLevelTaskFactoryProvider:Ljavax/inject/Provider;
+
+    iget-object v6, v3, Ldagger/internal/AbstractMapFactory$Builder;->map:Ljava/util/LinkedHashMap;
+
+    const-string v7, "provider"
+
+    invoke-static {v5, v7}, Ljava/util/Objects;->requireNonNull(Ljava/lang/Object;Ljava/lang/String;)Ljava/lang/Object;
+
+    invoke-virtual {v6, v4, v5}, Ljava/util/LinkedHashMap;->put(Ljava/lang/Object;Ljava/lang/Object;)Ljava/lang/Object;
+
+    const-class v4, Lde/rki/coronawarnapp/presencetracing/risk/execution/PresenceTracingWarningTask;
+
+    iget-object v5, v0, Lde/rki/coronawarnapp/util/di/DaggerApplicationComponent;->taskFactoryProvider:Ljavax/inject/Provider;
+
+    iget-object v6, v3, Ldagger/internal/AbstractMapFactory$Builder;->map:Ljava/util/LinkedHashMap;
+
+    invoke-static {v5, v7}, Ljava/util/Objects;->requireNonNull(Ljava/lang/Object;Ljava/lang/String;)Ljava/lang/Object;
+
+    invoke-virtual {v6, v4, v5}, Ljava/util/LinkedHashMap;->put(Ljava/lang/Object;Ljava/lang/Object;)Ljava/lang/Object;
+
+    const-class v4, Lde/rki/coronawarnapp/contactdiary/retention/ContactDiaryCleanTask;
+
+    iget-object v5, v0, Lde/rki/coronawarnapp/util/di/DaggerApplicationComponent;->factoryProvider10:Ljavax/inject/Provider;
+
+    iget-object v6, v3, Ldagger/internal/AbstractMapFactory$Builder;->map:Ljava/util/LinkedHashMap;
+
+    invoke-static {v5, v7}, Ljava/util/Objects;->requireNonNull(Ljava/lang/Object;Ljava/lang/String;)Ljava/lang/Object;
+
+    invoke-virtual {v6, v4, v5}, Ljava/util/LinkedHashMap;->put(Ljava/lang/Object;Ljava/lang/Object;)Ljava/lang/Object;
+
+    const-class v4, Lde/rki/coronawarnapp/submission/task/SubmissionTask;
+
+    iget-object v5, v0, Lde/rki/coronawarnapp/util/di/DaggerApplicationComponent;->factoryProvider12:Ljavax/inject/Provider;
+
+    iget-object v6, v3, Ldagger/internal/AbstractMapFactory$Builder;->map:Ljava/util/LinkedHashMap;
+
+    invoke-static {v5, v7}, Ljava/util/Objects;->requireNonNull(Ljava/lang/Object;Ljava/lang/String;)Ljava/lang/Object;
+
+    invoke-virtual {v6, v4, v5}, Ljava/util/LinkedHashMap;->put(Ljava/lang/Object;Ljava/lang/Object;)Ljava/lang/Object;
+
+    const-class v4, Lde/rki/coronawarnapp/diagnosiskeys/download/DownloadDiagnosisKeysTask;
+
+    iget-object v5, v0, Lde/rki/coronawarnapp/util/di/DaggerApplicationComponent;->factoryProvider13:Ljavax/inject/Provider;
+
+    iget-object v6, v3, Ldagger/internal/AbstractMapFactory$Builder;->map:Ljava/util/LinkedHashMap;
+
+    invoke-static {v5, v7}, Ljava/util/Objects;->requireNonNull(Ljava/lang/Object;Ljava/lang/String;)Ljava/lang/Object;
+
+    invoke-virtual {v6, v4, v5}, Ljava/util/LinkedHashMap;->put(Ljava/lang/Object;Ljava/lang/Object;)Ljava/lang/Object;
+
+    const-class v4, Lde/rki/coronawarnapp/ccl/dccwalletinfo/update/DccWalletInfoUpdateTask;
+
+    iget-object v5, v0, Lde/rki/coronawarnapp/util/di/DaggerApplicationComponent;->factoryProvider15:Ljavax/inject/Provider;
+
+    iget-object v6, v3, Ldagger/internal/AbstractMapFactory$Builder;->map:Ljava/util/LinkedHashMap;
+
+    invoke-static {v5, v7}, Ljava/util/Objects;->requireNonNull(Ljava/lang/Object;Ljava/lang/String;)Ljava/lang/Object;
+
+    invoke-virtual {v6, v4, v5}, Ljava/util/LinkedHashMap;->put(Ljava/lang/Object;Ljava/lang/Object;)Ljava/lang/Object;
+
+    invoke-virtual {v3}, Ldagger/internal/MapFactory$Builder;->build()Ldagger/internal/MapFactory;
+
+    move-result-object v3
+
+    iput-object v3, v0, Lde/rki/coronawarnapp/util/di/DaggerApplicationComponent;->mapOfClassOfAndTaskFactoryOfAndProvider:Ljavax/inject/Provider;
+
+    sget-object v3, Lde/rki/coronawarnapp/task/internal/DefaultTaskCoroutineScope_Factory$InstanceHolder;->INSTANCE:Lde/rki/coronawarnapp/task/internal/DefaultTaskCoroutineScope_Factory;
+
+    instance-of v4, v3, Ldagger/internal/DoubleCheck;
+
+    if-eqz v4, :cond_14
+
+    goto :goto_14
+
+    :cond_14
+    new-instance v4, Ldagger/internal/DoubleCheck;
+
+    invoke-direct {v4, v3}, Ldagger/internal/DoubleCheck;-><init>(Ljavax/inject/Provider;)V
+
+    move-object v3, v4
+
+    :goto_14
+    iput-object v3, v0, Lde/rki/coronawarnapp/util/di/DaggerApplicationComponent;->defaultTaskCoroutineScopeProvider:Ljavax/inject/Provider;
+
+    new-instance v4, Lde/rki/coronawarnapp/task/internal/TaskModule_ProvideScopeFactory;
+
+    move-object/from16 v5, p4
+
+    invoke-direct {v4, v5, v3}, Lde/rki/coronawarnapp/task/internal/TaskModule_ProvideScopeFactory;-><init>(Lde/rki/coronawarnapp/task/internal/TaskModule;Ljavax/inject/Provider;)V
+
+    instance-of v3, v4, Ldagger/internal/DoubleCheck;
+
+    if-eqz v3, :cond_15
+
+    goto :goto_15
+
+    :cond_15
+    new-instance v3, Ldagger/internal/DoubleCheck;
+
+    invoke-direct {v3, v4}, Ldagger/internal/DoubleCheck;-><init>(Ljavax/inject/Provider;)V
+
+    move-object v4, v3
+
+    :goto_15
+    iput-object v4, v0, Lde/rki/coronawarnapp/util/di/DaggerApplicationComponent;->provideScopeProvider:Ljavax/inject/Provider;
+
+    iget-object v3, v0, Lde/rki/coronawarnapp/util/di/DaggerApplicationComponent;->taskControllerProvider:Ljavax/inject/Provider;
+
+    iget-object v4, v0, Lde/rki/coronawarnapp/util/di/DaggerApplicationComponent;->mapOfClassOfAndTaskFactoryOfAndProvider:Ljavax/inject/Provider;
+
+    iget-object v5, v0, Lde/rki/coronawarnapp/util/di/DaggerApplicationComponent;->provideScopeProvider:Ljavax/inject/Provider;
+
+    iget-object v6, v0, Lde/rki/coronawarnapp/util/di/DaggerApplicationComponent;->timeStamperProvider:Ljavax/inject/Provider;
+
+    new-instance v7, Lde/rki/coronawarnapp/task/TaskController_Factory;
+
+    invoke-direct {v7, v4, v5, v6}, Lde/rki/coronawarnapp/task/TaskController_Factory;-><init>(Ljavax/inject/Provider;Ljavax/inject/Provider;Ljavax/inject/Provider;)V
+
+    instance-of v4, v7, Ldagger/internal/DoubleCheck;
+
+    if-eqz v4, :cond_16
+
+    goto :goto_16
+
+    :cond_16
+    new-instance v4, Ldagger/internal/DoubleCheck;
+
+    invoke-direct {v4, v7}, Ldagger/internal/DoubleCheck;-><init>(Ljavax/inject/Provider;)V
+
+    move-object v7, v4
+
+    :goto_16
+    check-cast v3, Ldagger/internal/DelegateFactory;
+
+    iget-object v4, v3, Ldagger/internal/DelegateFactory;->delegate:Ljavax/inject/Provider;
+
+    if-nez v4, :cond_20
+
+    iput-object v7, v3, Ldagger/internal/DelegateFactory;->delegate:Ljavax/inject/Provider;
+
+    iget-object v3, v0, Lde/rki/coronawarnapp/util/di/DaggerApplicationComponent;->taskControllerProvider:Ljavax/inject/Provider;
+
+    new-instance v4, Lde/rki/coronawarnapp/nearby/ExposureStateUpdateWorker_Factory;
+
+    invoke-direct {v4, v3}, Lde/rki/coronawarnapp/nearby/ExposureStateUpdateWorker_Factory;-><init>(Ljavax/inject/Provider;)V
+
+    new-instance v3, Lde/rki/coronawarnapp/nearby/ExposureStateUpdateWorker_Factory_Impl;
+
+    invoke-direct {v3, v4}, Lde/rki/coronawarnapp/nearby/ExposureStateUpdateWorker_Factory_Impl;-><init>(Lde/rki/coronawarnapp/nearby/ExposureStateUpdateWorker_Factory;)V
+
+    new-instance v4, Ldagger/internal/InstanceFactory;
+
+    invoke-direct {v4, v3}, Ldagger/internal/InstanceFactory;-><init>(Ljava/lang/Object;)V
+
+    iput-object v4, v0, Lde/rki/coronawarnapp/util/di/DaggerApplicationComponent;->factoryProvider16:Ljavax/inject/Provider;
+
+    iget-object v3, v0, Lde/rki/coronawarnapp/util/di/DaggerApplicationComponent;->providePlaybookProvider:Ljavax/inject/Provider;
+
+    new-instance v4, Lde/rki/coronawarnapp/deniability/BackgroundNoiseOneTimeWorker_Factory;
+
+    invoke-direct {v4, v3}, Lde/rki/coronawarnapp/deniability/BackgroundNoiseOneTimeWorker_Factory;-><init>(Ljavax/inject/Provider;)V
+
+    new-instance v3, Lde/rki/coronawarnapp/deniability/BackgroundNoiseOneTimeWorker_Factory_Impl;
+
+    invoke-direct {v3, v4}, Lde/rki/coronawarnapp/deniability/BackgroundNoiseOneTimeWorker_Factory_Impl;-><init>(Lde/rki/coronawarnapp/deniability/BackgroundNoiseOneTimeWorker_Factory;)V
+
+    new-instance v4, Ldagger/internal/InstanceFactory;
+
+    invoke-direct {v4, v3}, Ldagger/internal/InstanceFactory;-><init>(Ljava/lang/Object;)V
+
+    iput-object v4, v0, Lde/rki/coronawarnapp/util/di/DaggerApplicationComponent;->factoryProvider17:Ljavax/inject/Provider;
+
+    iget-object v3, v0, Lde/rki/coronawarnapp/util/di/DaggerApplicationComponent;->timeStamperProvider:Ljavax/inject/Provider;
+
+    iget-object v4, v0, Lde/rki/coronawarnapp/util/di/DaggerApplicationComponent;->coronaTestRepositoryProvider:Ljavax/inject/Provider;
+
+    iget-object v5, v0, Lde/rki/coronawarnapp/util/di/DaggerApplicationComponent;->noiseSchedulerProvider:Ljavax/inject/Provider;
+
+    new-instance v6, Lde/rki/coronawarnapp/deniability/BackgroundNoisePeriodicWorker_Factory;
+
+    invoke-direct {v6, v3, v4, v5}, Lde/rki/coronawarnapp/deniability/BackgroundNoisePeriodicWorker_Factory;-><init>(Ljavax/inject/Provider;Ljavax/inject/Provider;Ljavax/inject/Provider;)V
+
+    new-instance v3, Lde/rki/coronawarnapp/deniability/BackgroundNoisePeriodicWorker_Factory_Impl;
+
+    invoke-direct {v3, v6}, Lde/rki/coronawarnapp/deniability/BackgroundNoisePeriodicWorker_Factory_Impl;-><init>(Lde/rki/coronawarnapp/deniability/BackgroundNoisePeriodicWorker_Factory;)V
+
+    new-instance v4, Ldagger/internal/InstanceFactory;
+
+    invoke-direct {v4, v3}, Ldagger/internal/InstanceFactory;-><init>(Ljava/lang/Object;)V
+
+    iput-object v4, v0, Lde/rki/coronawarnapp/util/di/DaggerApplicationComponent;->factoryProvider18:Ljavax/inject/Provider;
+
+    iget-object v3, v0, Lde/rki/coronawarnapp/util/di/DaggerApplicationComponent;->taskControllerProvider:Ljavax/inject/Provider;
+
+    new-instance v4, Lde/rki/coronawarnapp/diagnosiskeys/execution/DiagnosisKeyRetrievalWorker_Factory;
+
+    invoke-direct {v4, v3}, Lde/rki/coronawarnapp/diagnosiskeys/execution/DiagnosisKeyRetrievalWorker_Factory;-><init>(Ljavax/inject/Provider;)V
+
+    new-instance v3, Lde/rki/coronawarnapp/diagnosiskeys/execution/DiagnosisKeyRetrievalWorker_Factory_Impl;
+
+    invoke-direct {v3, v4}, Lde/rki/coronawarnapp/diagnosiskeys/execution/DiagnosisKeyRetrievalWorker_Factory_Impl;-><init>(Lde/rki/coronawarnapp/diagnosiskeys/execution/DiagnosisKeyRetrievalWorker_Factory;)V
+
+    new-instance v4, Ldagger/internal/InstanceFactory;
+
+    invoke-direct {v4, v3}, Ldagger/internal/InstanceFactory;-><init>(Ljava/lang/Object;)V
+
+    iput-object v4, v0, Lde/rki/coronawarnapp/util/di/DaggerApplicationComponent;->factoryProvider19:Ljavax/inject/Provider;
+
+    iget-object v3, v0, Lde/rki/coronawarnapp/util/di/DaggerApplicationComponent;->coronaTestRepositoryProvider:Ljavax/inject/Provider;
+
+    new-instance v4, Lde/rki/coronawarnapp/coronatest/type/pcr/execution/PCRResultRetrievalWorker_Factory;
+
+    invoke-direct {v4, v3}, Lde/rki/coronawarnapp/coronatest/type/pcr/execution/PCRResultRetrievalWorker_Factory;-><init>(Ljavax/inject/Provider;)V
+
+    new-instance v3, Lde/rki/coronawarnapp/coronatest/type/pcr/execution/PCRResultRetrievalWorker_Factory_Impl;
+
+    invoke-direct {v3, v4}, Lde/rki/coronawarnapp/coronatest/type/pcr/execution/PCRResultRetrievalWorker_Factory_Impl;-><init>(Lde/rki/coronawarnapp/coronatest/type/pcr/execution/PCRResultRetrievalWorker_Factory;)V
+
+    new-instance v4, Ldagger/internal/InstanceFactory;
+
+    invoke-direct {v4, v3}, Ldagger/internal/InstanceFactory;-><init>(Ljava/lang/Object;)V
+
+    iput-object v4, v0, Lde/rki/coronawarnapp/util/di/DaggerApplicationComponent;->factoryProvider20:Ljavax/inject/Provider;
+
+    iget-object v3, v0, Lde/rki/coronawarnapp/util/di/DaggerApplicationComponent;->appCoroutineScopeProvider:Ljavax/inject/Provider;
+
+    iget-object v4, v0, Lde/rki/coronawarnapp/util/di/DaggerApplicationComponent;->workManagerProvider:Ljavax/inject/Provider;
+
+    iget-object v5, v0, Lde/rki/coronawarnapp/util/di/DaggerApplicationComponent;->coronaTestRepositoryProvider:Ljavax/inject/Provider;
+
+    new-instance v6, Lde/rki/coronawarnapp/coronatest/type/rapidantigen/execution/RAResultScheduler_Factory;
+
+    invoke-direct {v6, v3, v4, v5}, Lde/rki/coronawarnapp/coronatest/type/rapidantigen/execution/RAResultScheduler_Factory;-><init>(Ljavax/inject/Provider;Ljavax/inject/Provider;Ljavax/inject/Provider;)V
+
+    instance-of v3, v6, Ldagger/internal/DoubleCheck;
+
+    if-eqz v3, :cond_17
+
+    goto :goto_17
+
+    :cond_17
+    new-instance v3, Ldagger/internal/DoubleCheck;
+
+    invoke-direct {v3, v6}, Ldagger/internal/DoubleCheck;-><init>(Ljavax/inject/Provider;)V
+
+    move-object v6, v3
+
+    :goto_17
+    iput-object v6, v0, Lde/rki/coronawarnapp/util/di/DaggerApplicationComponent;->rAResultSchedulerProvider:Ljavax/inject/Provider;
+
+    iget-object v3, v0, Lde/rki/coronawarnapp/util/di/DaggerApplicationComponent;->coronaTestRepositoryProvider:Ljavax/inject/Provider;
+
+    iget-object v4, v0, Lde/rki/coronawarnapp/util/di/DaggerApplicationComponent;->timeStamperProvider:Ljavax/inject/Provider;
+
+    iget-object v5, v0, Lde/rki/coronawarnapp/util/di/DaggerApplicationComponent;->rAResultSchedulerProvider:Ljavax/inject/Provider;
+
+    new-instance v6, Lde/rki/coronawarnapp/coronatest/type/rapidantigen/execution/RAResultRetrievalWorker_Factory;
+
+    invoke-direct {v6, v3, v4, v5}, Lde/rki/coronawarnapp/coronatest/type/rapidantigen/execution/RAResultRetrievalWorker_Factory;-><init>(Ljavax/inject/Provider;Ljavax/inject/Provider;Ljavax/inject/Provider;)V
+
+    new-instance v3, Lde/rki/coronawarnapp/coronatest/type/rapidantigen/execution/RAResultRetrievalWorker_Factory_Impl;
+
+    invoke-direct {v3, v6}, Lde/rki/coronawarnapp/coronatest/type/rapidantigen/execution/RAResultRetrievalWorker_Factory_Impl;-><init>(Lde/rki/coronawarnapp/coronatest/type/rapidantigen/execution/RAResultRetrievalWorker_Factory;)V
+
+    new-instance v4, Ldagger/internal/InstanceFactory;
+
+    invoke-direct {v4, v3}, Ldagger/internal/InstanceFactory;-><init>(Ljava/lang/Object;)V
+
+    iput-object v4, v0, Lde/rki/coronawarnapp/util/di/DaggerApplicationComponent;->factoryProvider21:Ljavax/inject/Provider;
+
+    iget-object v3, v0, Lde/rki/coronawarnapp/util/di/DaggerApplicationComponent;->contextProvider:Ljavax/inject/Provider;
+
+    iget-object v4, v0, Lde/rki/coronawarnapp/util/di/DaggerApplicationComponent;->foregroundStateProvider:Ljavax/inject/Provider;
+
+    iget-object v5, v0, Lde/rki/coronawarnapp/util/di/DaggerApplicationComponent;->generalNotificationsProvider:Ljavax/inject/Provider;
+
+    new-instance v6, Lde/rki/coronawarnapp/deadman/DeadmanNotificationSender_Factory;
+
+    invoke-direct {v6, v3, v4, v5}, Lde/rki/coronawarnapp/deadman/DeadmanNotificationSender_Factory;-><init>(Ljavax/inject/Provider;Ljavax/inject/Provider;Ljavax/inject/Provider;)V
+
+    invoke-static {v6}, Ldagger/internal/SingleCheck;->provider(Ljavax/inject/Provider;)Ljavax/inject/Provider;
+
+    move-result-object v3
+
+    iput-object v3, v0, Lde/rki/coronawarnapp/util/di/DaggerApplicationComponent;->deadmanNotificationSenderProvider:Ljavax/inject/Provider;
+
+    new-instance v4, Lde/rki/coronawarnapp/deadman/DeadmanNotificationOneTimeWorker_Factory;
+
+    invoke-direct {v4, v3}, Lde/rki/coronawarnapp/deadman/DeadmanNotificationOneTimeWorker_Factory;-><init>(Ljavax/inject/Provider;)V
+
+    new-instance v3, Lde/rki/coronawarnapp/deadman/DeadmanNotificationOneTimeWorker_Factory_Impl;
+
+    invoke-direct {v3, v4}, Lde/rki/coronawarnapp/deadman/DeadmanNotificationOneTimeWorker_Factory_Impl;-><init>(Lde/rki/coronawarnapp/deadman/DeadmanNotificationOneTimeWorker_Factory;)V
+
+    new-instance v4, Ldagger/internal/InstanceFactory;
+
+    invoke-direct {v4, v3}, Ldagger/internal/InstanceFactory;-><init>(Ljava/lang/Object;)V
+
+    iput-object v4, v0, Lde/rki/coronawarnapp/util/di/DaggerApplicationComponent;->factoryProvider22:Ljavax/inject/Provider;
+
+    iget-object v3, v0, Lde/rki/coronawarnapp/util/di/DaggerApplicationComponent;->timeStamperProvider:Ljavax/inject/Provider;
+
+    iget-object v4, v0, Lde/rki/coronawarnapp/util/di/DaggerApplicationComponent;->keyCacheRepositoryProvider:Ljavax/inject/Provider;
+
+    new-instance v5, Lde/rki/coronawarnapp/deadman/DeadmanNotificationTimeCalculation_Factory;
+
+    invoke-direct {v5, v3, v4}, Lde/rki/coronawarnapp/deadman/DeadmanNotificationTimeCalculation_Factory;-><init>(Ljavax/inject/Provider;Ljavax/inject/Provider;)V
+
+    invoke-static {v5}, Ldagger/internal/SingleCheck;->provider(Ljavax/inject/Provider;)Ljavax/inject/Provider;
+
+    move-result-object v3
+
+    iput-object v3, v0, Lde/rki/coronawarnapp/util/di/DaggerApplicationComponent;->deadmanNotificationTimeCalculationProvider:Ljavax/inject/Provider;
+
+    sget-object v3, Lde/rki/coronawarnapp/deadman/DeadmanNotificationWorkBuilder_Factory$InstanceHolder;->INSTANCE:Lde/rki/coronawarnapp/deadman/DeadmanNotificationWorkBuilder_Factory;
+
+    invoke-static {v3}, Ldagger/internal/SingleCheck;->provider(Ljavax/inject/Provider;)Ljavax/inject/Provider;
+
+    move-result-object v3
+
+    iput-object v3, v0, Lde/rki/coronawarnapp/util/di/DaggerApplicationComponent;->deadmanNotificationWorkBuilderProvider:Ljavax/inject/Provider;
+
+    iget-object v3, v0, Lde/rki/coronawarnapp/util/di/DaggerApplicationComponent;->contextProvider:Ljavax/inject/Provider;
+
+    new-instance v4, Lde/rki/coronawarnapp/storage/OnboardingSettings_Factory;
+
+    invoke-direct {v4, v3}, Lde/rki/coronawarnapp/storage/OnboardingSettings_Factory;-><init>(Ljavax/inject/Provider;)V
+
+    instance-of v3, v4, Ldagger/internal/DoubleCheck;
+
+    if-eqz v3, :cond_18
+
+    goto :goto_18
+
+    :cond_18
+    new-instance v3, Ldagger/internal/DoubleCheck;
+
+    invoke-direct {v3, v4}, Ldagger/internal/DoubleCheck;-><init>(Ljavax/inject/Provider;)V
+
+    move-object v4, v3
+
+    :goto_18
+    iput-object v4, v0, Lde/rki/coronawarnapp/util/di/DaggerApplicationComponent;->onboardingSettingsProvider:Ljavax/inject/Provider;
+
+    iget-object v6, v0, Lde/rki/coronawarnapp/util/di/DaggerApplicationComponent;->appCoroutineScopeProvider:Ljavax/inject/Provider;
+
+    iget-object v7, v0, Lde/rki/coronawarnapp/util/di/DaggerApplicationComponent;->deadmanNotificationTimeCalculationProvider:Ljavax/inject/Provider;
+
+    iget-object v8, v0, Lde/rki/coronawarnapp/util/di/DaggerApplicationComponent;->workManagerProvider:Ljavax/inject/Provider;
+
+    iget-object v9, v0, Lde/rki/coronawarnapp/util/di/DaggerApplicationComponent;->deadmanNotificationWorkBuilderProvider:Ljavax/inject/Provider;
+
+    iget-object v10, v0, Lde/rki/coronawarnapp/util/di/DaggerApplicationComponent;->onboardingSettingsProvider:Ljavax/inject/Provider;
+
+    iget-object v11, v0, Lde/rki/coronawarnapp/util/di/DaggerApplicationComponent;->eNFClientProvider:Ljavax/inject/Provider;
+
+    iget-object v12, v0, Lde/rki/coronawarnapp/util/di/DaggerApplicationComponent;->coronaTestRepositoryProvider:Ljavax/inject/Provider;
+
+    new-instance v3, Lde/rki/coronawarnapp/deadman/DeadmanNotificationScheduler_Factory;
+
+    move-object v5, v3
+
+    invoke-direct/range {v5 .. v12}, Lde/rki/coronawarnapp/deadman/DeadmanNotificationScheduler_Factory;-><init>(Ljavax/inject/Provider;Ljavax/inject/Provider;Ljavax/inject/Provider;Ljavax/inject/Provider;Ljavax/inject/Provider;Ljavax/inject/Provider;Ljavax/inject/Provider;)V
+
+    invoke-static {v3}, Ldagger/internal/SingleCheck;->provider(Ljavax/inject/Provider;)Ljavax/inject/Provider;
+
+    move-result-object v3
+
+    iput-object v3, v0, Lde/rki/coronawarnapp/util/di/DaggerApplicationComponent;->deadmanNotificationSchedulerProvider:Ljavax/inject/Provider;
+
+    new-instance v4, Lde/rki/coronawarnapp/deadman/DeadmanNotificationPeriodicWorker_Factory;
+
+    invoke-direct {v4, v3}, Lde/rki/coronawarnapp/deadman/DeadmanNotificationPeriodicWorker_Factory;-><init>(Ljavax/inject/Provider;)V
+
+    new-instance v3, Lde/rki/coronawarnapp/deadman/DeadmanNotificationPeriodicWorker_Factory_Impl;
+
+    invoke-direct {v3, v4}, Lde/rki/coronawarnapp/deadman/DeadmanNotificationPeriodicWorker_Factory_Impl;-><init>(Lde/rki/coronawarnapp/deadman/DeadmanNotificationPeriodicWorker_Factory;)V
+
+    new-instance v4, Ldagger/internal/InstanceFactory;
+
+    invoke-direct {v4, v3}, Ldagger/internal/InstanceFactory;-><init>(Ljava/lang/Object;)V
+
+    iput-object v4, v0, Lde/rki/coronawarnapp/util/di/DaggerApplicationComponent;->factoryProvider23:Ljavax/inject/Provider;
+
+    iget-object v3, v0, Lde/rki/coronawarnapp/util/di/DaggerApplicationComponent;->taskControllerProvider:Ljavax/inject/Provider;
+
+    new-instance v4, Lde/rki/coronawarnapp/submission/auto/SubmissionWorker_Factory;
+
+    invoke-direct {v4, v3}, Lde/rki/coronawarnapp/submission/auto/SubmissionWorker_Factory;-><init>(Ljavax/inject/Provider;)V
+
+    new-instance v3, Lde/rki/coronawarnapp/submission/auto/SubmissionWorker_Factory_Impl;
+
+    invoke-direct {v3, v4}, Lde/rki/coronawarnapp/submission/auto/SubmissionWorker_Factory_Impl;-><init>(Lde/rki/coronawarnapp/submission/auto/SubmissionWorker_Factory;)V
+
+    new-instance v4, Ldagger/internal/InstanceFactory;
+
+    invoke-direct {v4, v3}, Ldagger/internal/InstanceFactory;-><init>(Ljava/lang/Object;)V
+
+    iput-object v4, v0, Lde/rki/coronawarnapp/util/di/DaggerApplicationComponent;->factoryProvider24:Ljavax/inject/Provider;
+
+    iget-object v3, v0, Lde/rki/coronawarnapp/util/di/DaggerApplicationComponent;->taskControllerProvider:Ljavax/inject/Provider;
+
+    new-instance v4, Lde/rki/coronawarnapp/contactdiary/retention/ContactDiaryRetentionWorker_Factory;
+
+    invoke-direct {v4, v3}, Lde/rki/coronawarnapp/contactdiary/retention/ContactDiaryRetentionWorker_Factory;-><init>(Ljavax/inject/Provider;)V
+
+    new-instance v3, Lde/rki/coronawarnapp/contactdiary/retention/ContactDiaryRetentionWorker_Factory_Impl;
+
+    invoke-direct {v3, v4}, Lde/rki/coronawarnapp/contactdiary/retention/ContactDiaryRetentionWorker_Factory_Impl;-><init>(Lde/rki/coronawarnapp/contactdiary/retention/ContactDiaryRetentionWorker_Factory;)V
+
+    new-instance v4, Ldagger/internal/InstanceFactory;
+
+    invoke-direct {v4, v3}, Ldagger/internal/InstanceFactory;-><init>(Ljava/lang/Object;)V
+
+    iput-object v4, v0, Lde/rki/coronawarnapp/util/di/DaggerApplicationComponent;->factoryProvider25:Ljavax/inject/Provider;
+
+    iget-object v3, v0, Lde/rki/coronawarnapp/util/di/DaggerApplicationComponent;->defaultHttpClientProvider:Ljavax/inject/Provider;
+
+    new-instance v4, Lde/rki/coronawarnapp/environment/datadonation/DataDonationCDNModule_CdnHttpClientFactory;
+
+    invoke-direct {v4, v2, v3}, Lde/rki/coronawarnapp/environment/datadonation/DataDonationCDNModule_CdnHttpClientFactory;-><init>(Lde/rki/coronawarnapp/environment/datadonation/DataDonationCDNModule;Ljavax/inject/Provider;)V
+
+    invoke-static {v4}, Ldagger/internal/SingleCheck;->provider(Ljavax/inject/Provider;)Ljavax/inject/Provider;
+
+    move-result-object v3
+
+    iput-object v3, v0, Lde/rki/coronawarnapp/util/di/DaggerApplicationComponent;->cdnHttpClientProvider4:Ljavax/inject/Provider;
+
+    iget-object v3, v0, Lde/rki/coronawarnapp/util/di/DaggerApplicationComponent;->environmentSetupProvider:Ljavax/inject/Provider;
+
+    new-instance v4, Lde/rki/coronawarnapp/environment/datadonation/DataDonationCDNModule_ProvideDonationServerUrlFactory;
+
+    invoke-direct {v4, v2, v3}, Lde/rki/coronawarnapp/environment/datadonation/DataDonationCDNModule_ProvideDonationServerUrlFactory;-><init>(Lde/rki/coronawarnapp/environment/datadonation/DataDonationCDNModule;Ljavax/inject/Provider;)V
+
+    instance-of v2, v4, Ldagger/internal/DoubleCheck;
+
+    if-eqz v2, :cond_19
+
+    goto :goto_19
+
+    :cond_19
+    new-instance v2, Ldagger/internal/DoubleCheck;
+
+    invoke-direct {v2, v4}, Ldagger/internal/DoubleCheck;-><init>(Ljavax/inject/Provider;)V
+
+    move-object v4, v2
+
+    :goto_19
+    iput-object v4, v0, Lde/rki/coronawarnapp/util/di/DaggerApplicationComponent;->provideDonationServerUrlProvider:Ljavax/inject/Provider;
+
+    iget-object v7, v0, Lde/rki/coronawarnapp/util/di/DaggerApplicationComponent;->cdnHttpClientProvider4:Ljavax/inject/Provider;
+
+    iget-object v8, v0, Lde/rki/coronawarnapp/util/di/DaggerApplicationComponent;->provideDonationServerUrlProvider:Ljavax/inject/Provider;
+
+    iget-object v9, v0, Lde/rki/coronawarnapp/util/di/DaggerApplicationComponent;->provideProtoConverterProvider:Ljavax/inject/Provider;
+
+    iget-object v10, v0, Lde/rki/coronawarnapp/util/di/DaggerApplicationComponent;->provideGSONConverterProvider:Ljavax/inject/Provider;
+
+    new-instance v2, Lde/rki/coronawarnapp/datadonation/analytics/AnalyticsModule_ProvideAnalyticsSubmissionApiFactory;
+
+    move-object v5, v2
+
+    move-object/from16 v6, p7
+
+    invoke-direct/range {v5 .. v10}, Lde/rki/coronawarnapp/datadonation/analytics/AnalyticsModule_ProvideAnalyticsSubmissionApiFactory;-><init>(Lcom/upokecenter/cbor/CBOREInteger;Ljavax/inject/Provider;Ljavax/inject/Provider;Ljavax/inject/Provider;Ljavax/inject/Provider;)V
+
+    invoke-static {v2}, Ldagger/internal/SingleCheck;->provider(Ljavax/inject/Provider;)Ljavax/inject/Provider;
+
+    move-result-object v2
+
+    iput-object v2, v0, Lde/rki/coronawarnapp/util/di/DaggerApplicationComponent;->provideAnalyticsSubmissionApiProvider:Ljavax/inject/Provider;
+
+    new-instance v3, Lde/rki/coronawarnapp/datadonation/analytics/server/DataDonationAnalyticsServer_Factory;
+
+    invoke-direct {v3, v2}, Lde/rki/coronawarnapp/datadonation/analytics/server/DataDonationAnalyticsServer_Factory;-><init>(Ljavax/inject/Provider;)V
+
+    instance-of v2, v3, Ldagger/internal/DoubleCheck;
+
+    if-eqz v2, :cond_1a
+
+    goto :goto_1a
+
+    :cond_1a
+    new-instance v2, Ldagger/internal/DoubleCheck;
+
+    invoke-direct {v2, v3}, Ldagger/internal/DoubleCheck;-><init>(Ljavax/inject/Provider;)V
+
+    move-object v3, v2
+
+    :goto_1a
+    iput-object v3, v0, Lde/rki/coronawarnapp/util/di/DaggerApplicationComponent;->dataDonationAnalyticsServerProvider:Ljavax/inject/Provider;
+
+    iget-object v2, v0, Lde/rki/coronawarnapp/util/di/DaggerApplicationComponent;->contextProvider:Ljavax/inject/Provider;
+
+    new-instance v3, Lde/rki/coronawarnapp/util/di/AndroidModule_SafetyNetFactory;
+
+    invoke-direct {v3, v1, v2}, Lde/rki/coronawarnapp/util/di/AndroidModule_SafetyNetFactory;-><init>(Lde/rki/coronawarnapp/util/di/AndroidModule;Ljavax/inject/Provider;)V
+
+    instance-of v1, v3, Ldagger/internal/DoubleCheck;
+
+    if-eqz v1, :cond_1b
+
+    goto :goto_1b
+
+    :cond_1b
+    new-instance v1, Ldagger/internal/DoubleCheck;
+
+    invoke-direct {v1, v3}, Ldagger/internal/DoubleCheck;-><init>(Ljavax/inject/Provider;)V
+
+    move-object v3, v1
+
+    :goto_1b
+    iput-object v3, v0, Lde/rki/coronawarnapp/util/di/DaggerApplicationComponent;->safetyNetProvider:Ljavax/inject/Provider;
+
+    iget-object v1, v0, Lde/rki/coronawarnapp/util/di/DaggerApplicationComponent;->environmentSetupProvider:Ljavax/inject/Provider;
+
+    new-instance v2, Lde/rki/coronawarnapp/datadonation/safetynet/SafetyNetClientWrapper_Factory;
+
+    invoke-direct {v2, v3, v1}, Lde/rki/coronawarnapp/datadonation/safetynet/SafetyNetClientWrapper_Factory;-><init>(Ljavax/inject/Provider;Ljavax/inject/Provider;)V
+
+    invoke-static {v2}, Ldagger/internal/SingleCheck;->provider(Ljavax/inject/Provider;)Ljavax/inject/Provider;
+
+    move-result-object v1
+
+    iput-object v1, v0, Lde/rki/coronawarnapp/util/di/DaggerApplicationComponent;->safetyNetClientWrapperProvider:Ljavax/inject/Provider;
+
+    iget-object v1, v0, Lde/rki/coronawarnapp/util/di/DaggerApplicationComponent;->contextProvider:Ljavax/inject/Provider;
+
+    new-instance v2, Lde/rki/coronawarnapp/util/gplay/GoogleApiVersion_Factory;
+
+    invoke-direct {v2, v1}, Lde/rki/coronawarnapp/util/gplay/GoogleApiVersion_Factory;-><init>(Ljavax/inject/Provider;)V
+
+    invoke-static {v2}, Ldagger/internal/SingleCheck;->provider(Ljavax/inject/Provider;)Ljavax/inject/Provider;
+
+    move-result-object v1
+
+    iput-object v1, v0, Lde/rki/coronawarnapp/util/di/DaggerApplicationComponent;->googleApiVersionProvider:Ljavax/inject/Provider;
+
+    iget-object v3, v0, Lde/rki/coronawarnapp/util/di/DaggerApplicationComponent;->contextProvider:Ljavax/inject/Provider;
+
+    iget-object v4, v0, Lde/rki/coronawarnapp/util/di/DaggerApplicationComponent;->safetyNetClientWrapperProvider:Ljavax/inject/Provider;
+
+    iget-object v5, v0, Lde/rki/coronawarnapp/util/di/DaggerApplicationComponent;->strongRandomProvider:Ljavax/inject/Provider;
+
+    iget-object v6, v0, Lde/rki/coronawarnapp/util/di/DaggerApplicationComponent;->appConfigProvider:Ljavax/inject/Provider;
+
+    iget-object v7, v0, Lde/rki/coronawarnapp/util/di/DaggerApplicationComponent;->googleApiVersionProvider:Ljavax/inject/Provider;
+
+    iget-object v8, v0, Lde/rki/coronawarnapp/util/di/DaggerApplicationComponent;->cWASettingsProvider:Ljavax/inject/Provider;
+
+    iget-object v9, v0, Lde/rki/coronawarnapp/util/di/DaggerApplicationComponent;->timeStamperProvider:Ljavax/inject/Provider;
+
+    iget-object v10, v0, Lde/rki/coronawarnapp/util/di/DaggerApplicationComponent;->testSettingsProvider:Ljavax/inject/Provider;
+
+    new-instance v1, Lde/rki/coronawarnapp/datadonation/safetynet/CWASafetyNet_Factory;
+
+    move-object v2, v1
+
+    invoke-direct/range {v2 .. v10}, Lde/rki/coronawarnapp/datadonation/safetynet/CWASafetyNet_Factory;-><init>(Ljavax/inject/Provider;Ljavax/inject/Provider;Ljavax/inject/Provider;Ljavax/inject/Provider;Ljavax/inject/Provider;Ljavax/inject/Provider;Ljavax/inject/Provider;Ljavax/inject/Provider;)V
+
+    instance-of v2, v1, Ldagger/internal/DoubleCheck;
+
+    if-eqz v2, :cond_1c
+
+    goto :goto_1c
+
+    :cond_1c
+    new-instance v2, Ldagger/internal/DoubleCheck;
+
+    invoke-direct {v2, v1}, Ldagger/internal/DoubleCheck;-><init>(Ljavax/inject/Provider;)V
+
+    move-object v1, v2
+
+    :goto_1c
+    iput-object v1, v0, Lde/rki/coronawarnapp/util/di/DaggerApplicationComponent;->cWASafetyNetProvider:Ljavax/inject/Provider;
+
+    new-instance v2, Lde/rki/coronawarnapp/datadonation/DataDonationModule_DeviceAttestationFactory;
+
+    move-object/from16 v3, p6
+
+    invoke-direct {v2, v3, v1}, Lde/rki/coronawarnapp/datadonation/DataDonationModule_DeviceAttestationFactory;-><init>(Lde/rki/coronawarnapp/datadonation/DataDonationModule;Ljavax/inject/Provider;)V
+
+    iput-object v2, v0, Lde/rki/coronawarnapp/util/di/DaggerApplicationComponent;->deviceAttestationProvider:Ljavax/inject/Provider;
+
+    iget-object v1, v0, Lde/rki/coronawarnapp/util/di/DaggerApplicationComponent;->analyticsExposureWindowRepositoryProvider:Ljavax/inject/Provider;
+
+    new-instance v2, Lde/rki/coronawarnapp/datadonation/analytics/modules/exposurewindows/AnalyticsExposureWindowDonor_Factory;
+
+    invoke-direct {v2, v1}, Lde/rki/coronawarnapp/datadonation/analytics/modules/exposurewindows/AnalyticsExposureWindowDonor_Factory;-><init>(Ljavax/inject/Provider;)V
+
+    instance-of v1, v2, Ldagger/internal/DoubleCheck;
+
+    if-eqz v1, :cond_1d
+
+    goto :goto_1d
+
+    :cond_1d
+    new-instance v1, Ldagger/internal/DoubleCheck;
+
+    invoke-direct {v1, v2}, Ldagger/internal/DoubleCheck;-><init>(Ljavax/inject/Provider;)V
+
+    move-object v2, v1
+
+    :goto_1d
+    iput-object v2, v0, Lde/rki/coronawarnapp/util/di/DaggerApplicationComponent;->analyticsExposureWindowDonorProvider:Ljavax/inject/Provider;
+
+    new-instance v1, Lde/rki/coronawarnapp/datadonation/analytics/AnalyticsModule_NewExposureWindowsFactory;
+
+    move-object/from16 v3, p7
+
+    invoke-direct {v1, v3, v2}, Lde/rki/coronawarnapp/datadonation/analytics/AnalyticsModule_NewExposureWindowsFactory;-><init>(Lcom/upokecenter/cbor/CBOREInteger;Ljavax/inject/Provider;)V
+
+    iput-object v1, v0, Lde/rki/coronawarnapp/util/di/DaggerApplicationComponent;->newExposureWindowsProvider:Ljavax/inject/Provider;
+
+    iget-object v1, v0, Lde/rki/coronawarnapp/util/di/DaggerApplicationComponent;->analyticsPCRKeySubmissionStorageProvider:Ljavax/inject/Provider;
+
+    new-instance v2, Lde/rki/coronawarnapp/datadonation/analytics/modules/keysubmission/AnalyticsPCRKeySubmissionRepository_Factory;
+
+    invoke-direct {v2, v1}, Lde/rki/coronawarnapp/datadonation/analytics/modules/keysubmission/AnalyticsPCRKeySubmissionRepository_Factory;-><init>(Ljavax/inject/Provider;)V
+
+    instance-of v1, v2, Ldagger/internal/DoubleCheck;
+
+    if-eqz v1, :cond_1e
+
+    goto :goto_1e
+
+    :cond_1e
+    new-instance v1, Ldagger/internal/DoubleCheck;
+
+    invoke-direct {v1, v2}, Ldagger/internal/DoubleCheck;-><init>(Ljavax/inject/Provider;)V
+
+    move-object v2, v1
+
+    :goto_1e
+    iput-object v2, v0, Lde/rki/coronawarnapp/util/di/DaggerApplicationComponent;->analyticsPCRKeySubmissionRepositoryProvider:Ljavax/inject/Provider;
+
+    iget-object v1, v0, Lde/rki/coronawarnapp/util/di/DaggerApplicationComponent;->timeStamperProvider:Ljavax/inject/Provider;
+
+    new-instance v3, Lde/rki/coronawarnapp/datadonation/analytics/modules/keysubmission/AnalyticsPCRKeySubmissionDonor_Factory;
+
+    invoke-direct {v3, v2, v1}, Lde/rki/coronawarnapp/datadonation/analytics/modules/keysubmission/AnalyticsPCRKeySubmissionDonor_Factory;-><init>(Ljavax/inject/Provider;Ljavax/inject/Provider;)V
+
+    instance-of v1, v3, Ldagger/internal/DoubleCheck;
+
+    if-eqz v1, :cond_1f
+
+    goto :goto_1f
+
+    :cond_1f
+    new-instance v1, Ldagger/internal/DoubleCheck;
+
+    invoke-direct {v1, v3}, Ldagger/internal/DoubleCheck;-><init>(Ljavax/inject/Provider;)V
+
+    move-object v3, v1
+
+    :goto_1f
+    iput-object v3, v0, Lde/rki/coronawarnapp/util/di/DaggerApplicationComponent;->analyticsPCRKeySubmissionDonorProvider:Ljavax/inject/Provider;
+
+    return-void
+
+    :cond_20
+    new-instance v1, Ljava/lang/IllegalStateException;
+
+    invoke-direct {v1}, Ljava/lang/IllegalStateException;-><init>()V
+
+    throw v1
+.end method
+
+.method public final initialize4(Lde/rki/coronawarnapp/util/di/AndroidModule;Lde/rki/coronawarnapp/util/coil/CoilModule;Lde/rki/coronawarnapp/bugreporting/BugReportingModule;Lde/rki/coronawarnapp/bugreporting/BugReportingSharedModule;Lde/rki/coronawarnapp/statistics/StatisticsModule;Lde/rki/coronawarnapp/datadonation/survey/SurveyModule;Lcom/upokecenter/cbor/CBOREInteger;)V
+    .locals 16
+    .annotation system Ldalvik/annotation/MethodParameters;
+        accessFlags = {
+            0x10,
+            0x10,
+            0x10,
+            0x10,
+            0x10,
+            0x10,
+            0x10,
+            0x10,
+            0x10,
+            0x10,
+            0x10,
+            0x10,
+            0x10,
+            0x10,
+            0x10,
+            0x10,
+            0x10,
+            0x10,
+            0x10,
+            0x10,
+            0x10,
+            0x10,
+            0x10,
+            0x10,
+            0x10,
+            0x10,
+            0x10,
+            0x10,
+            0x10,
+            0x10,
+            0x10,
+            0x10,
+            0x10,
+            0x10,
+            0x10,
+            0x10,
+            0x10,
+            0x10,
+            0x10,
+            0x10,
+            0x10
+        }
+        names = {
+            "androidModuleParam",
+            "contactDiaryStorageModuleParam",
+            "coilModuleParam",
+            "riskModuleParam",
+            "eNFModuleParam",
+            "httpModuleParam",
+            "downloadCDNModuleParam",
+            "submissionCDNModuleParam",
+            "verificationCDNModuleParam",
+            "dataDonationCDNModuleParam",
+            "bugReportingServerModuleParam",
+            "dCCModuleParam",
+            "diagnosisKeysModuleParam",
+            "appConfigModuleParam",
+            "submissionModuleParam",
+            "verificationModuleParam",
+            "playbookModuleParam",
+            "taskModuleParam",
+            "bugReportingModuleParam",
+            "bugReportingSharedModuleParam",
+            "serializationModuleParam",
+            "statisticsModuleParam",
+            "dataDonationModuleParam",
+            "surveyModuleParam",
+            "analyticsModuleParam",
+            "securityModuleParam",
+            "qrCodePosterTemplateModuleParam",
+            "presenceTracingWarningModuleParam",
+            "organizerSubmissionModuleParam",
+            "ratProfileModuleParam",
+            "digitalCovidCertificateModuleParam",
+            "certificateValueSetModuleParam",
+            "testCertificateServerModuleParam",
+            "dccValidationModuleParam",
+            "dscServerModuleParam",
+            "exportCertificateModuleParam",
+            "qrCodeScannerModuleParam",
+            "rootDetectionModuleParam",
+            "inAppUpdateModuleParam",
+            "dccTicketingCoreModuleParam",
             "appParam"
         }
     .end annotation
@@ -10125,93 +12389,77 @@
 
     move-object/from16 v3, p4
 
-    iget-object v5, v0, Lde/rki/coronawarnapp/util/di/DaggerApplicationComponent;->defaultDispatcherProvider:Ljavax/inject/Provider;
+    move-object/from16 v4, p7
 
-    iget-object v6, v0, Lde/rki/coronawarnapp/util/di/DaggerApplicationComponent;->valueSetsRepositoryProvider:Ljavax/inject/Provider;
+    iget-object v5, v0, Lde/rki/coronawarnapp/util/di/DaggerApplicationComponent;->analyticsPCRKeySubmissionDonorProvider:Ljavax/inject/Provider;
 
-    iget-object v7, v0, Lde/rki/coronawarnapp/util/di/DaggerApplicationComponent;->timeStamperProvider:Ljavax/inject/Provider;
+    new-instance v6, Lde/rki/coronawarnapp/datadonation/analytics/AnalyticsModule_PcrKeySubmissionFactory;
 
-    iget-object v8, v0, Lde/rki/coronawarnapp/util/di/DaggerApplicationComponent;->vaccinationStorageProvider:Ljavax/inject/Provider;
+    invoke-direct {v6, v4, v5}, Lde/rki/coronawarnapp/datadonation/analytics/AnalyticsModule_PcrKeySubmissionFactory;-><init>(Lcom/upokecenter/cbor/CBOREInteger;Ljavax/inject/Provider;)V
 
-    iget-object v9, v0, Lde/rki/coronawarnapp/util/di/DaggerApplicationComponent;->dccQrCodeExtractorProvider:Ljavax/inject/Provider;
+    iput-object v6, v0, Lde/rki/coronawarnapp/util/di/DaggerApplicationComponent;->pcrKeySubmissionProvider:Ljavax/inject/Provider;
 
-    iget-object v10, v0, Lde/rki/coronawarnapp/util/di/DaggerApplicationComponent;->dccStateCheckerProvider:Ljavax/inject/Provider;
+    iget-object v5, v0, Lde/rki/coronawarnapp/util/di/DaggerApplicationComponent;->analyticsRAKeySubmissionStorageProvider:Ljavax/inject/Provider;
 
-    iget-object v11, v0, Lde/rki/coronawarnapp/util/di/DaggerApplicationComponent;->appCoroutineScopeProvider:Ljavax/inject/Provider;
+    new-instance v6, Lde/rki/coronawarnapp/datadonation/analytics/modules/keysubmission/AnalyticsRAKeySubmissionRepository_Factory;
 
-    iget-object v12, v0, Lde/rki/coronawarnapp/util/di/DaggerApplicationComponent;->dscRepositoryProvider:Ljavax/inject/Provider;
+    invoke-direct {v6, v5}, Lde/rki/coronawarnapp/datadonation/analytics/modules/keysubmission/AnalyticsRAKeySubmissionRepository_Factory;-><init>(Ljavax/inject/Provider;)V
 
-    new-instance v13, Lde/rki/coronawarnapp/covidcertificate/vaccination/core/repository/VaccinationRepository_Factory;
+    sget-object v5, Ldagger/internal/DoubleCheck;->UNINITIALIZED:Ljava/lang/Object;
 
-    move-object v4, v13
+    instance-of v5, v6, Ldagger/internal/DoubleCheck;
 
-    invoke-direct/range {v4 .. v12}, Lde/rki/coronawarnapp/covidcertificate/vaccination/core/repository/VaccinationRepository_Factory;-><init>(Ljavax/inject/Provider;Ljavax/inject/Provider;Ljavax/inject/Provider;Ljavax/inject/Provider;Ljavax/inject/Provider;Ljavax/inject/Provider;Ljavax/inject/Provider;Ljavax/inject/Provider;)V
-
-    sget-object v4, Ldagger/internal/DoubleCheck;->UNINITIALIZED:Ljava/lang/Object;
-
-    instance-of v4, v13, Ldagger/internal/DoubleCheck;
-
-    if-eqz v4, :cond_0
+    if-eqz v5, :cond_0
 
     goto :goto_0
 
     :cond_0
-    new-instance v4, Ldagger/internal/DoubleCheck;
+    new-instance v5, Ldagger/internal/DoubleCheck;
 
-    invoke-direct {v4, v13}, Ldagger/internal/DoubleCheck;-><init>(Ljavax/inject/Provider;)V
+    invoke-direct {v5, v6}, Ldagger/internal/DoubleCheck;-><init>(Ljavax/inject/Provider;)V
 
-    move-object v13, v4
+    move-object v6, v5
 
     :goto_0
-    iput-object v13, v0, Lde/rki/coronawarnapp/util/di/DaggerApplicationComponent;->vaccinationRepositoryProvider:Ljavax/inject/Provider;
+    iput-object v6, v0, Lde/rki/coronawarnapp/util/di/DaggerApplicationComponent;->analyticsRAKeySubmissionRepositoryProvider:Ljavax/inject/Provider;
 
-    iget-object v4, v0, Lde/rki/coronawarnapp/util/di/DaggerApplicationComponent;->contextProvider:Ljavax/inject/Provider;
+    iget-object v5, v0, Lde/rki/coronawarnapp/util/di/DaggerApplicationComponent;->timeStamperProvider:Ljavax/inject/Provider;
 
-    iget-object v5, v0, Lde/rki/coronawarnapp/util/di/DaggerApplicationComponent;->baseGsonProvider:Ljavax/inject/Provider;
+    new-instance v7, Lde/rki/coronawarnapp/datadonation/analytics/modules/keysubmission/AnalyticsRAKeySubmissionDonor_Factory;
 
-    new-instance v6, Lde/rki/coronawarnapp/covidcertificate/recovery/core/storage/RecoveryCertificateStorage_Factory;
+    invoke-direct {v7, v6, v5}, Lde/rki/coronawarnapp/datadonation/analytics/modules/keysubmission/AnalyticsRAKeySubmissionDonor_Factory;-><init>(Ljavax/inject/Provider;Ljavax/inject/Provider;)V
 
-    invoke-direct {v6, v4, v5}, Lde/rki/coronawarnapp/covidcertificate/recovery/core/storage/RecoveryCertificateStorage_Factory;-><init>(Ljavax/inject/Provider;Ljavax/inject/Provider;)V
+    instance-of v5, v7, Ldagger/internal/DoubleCheck;
 
-    instance-of v4, v6, Ldagger/internal/DoubleCheck;
-
-    if-eqz v4, :cond_1
-
-    move-object v12, v6
+    if-eqz v5, :cond_1
 
     goto :goto_1
 
     :cond_1
-    new-instance v4, Ldagger/internal/DoubleCheck;
+    new-instance v5, Ldagger/internal/DoubleCheck;
 
-    invoke-direct {v4, v6}, Ldagger/internal/DoubleCheck;-><init>(Ljavax/inject/Provider;)V
+    invoke-direct {v5, v7}, Ldagger/internal/DoubleCheck;-><init>(Ljavax/inject/Provider;)V
 
-    move-object v12, v4
+    move-object v7, v5
 
     :goto_1
-    iput-object v12, v0, Lde/rki/coronawarnapp/util/di/DaggerApplicationComponent;->recoveryCertificateStorageProvider:Ljavax/inject/Provider;
+    iput-object v7, v0, Lde/rki/coronawarnapp/util/di/DaggerApplicationComponent;->analyticsRAKeySubmissionDonorProvider:Ljavax/inject/Provider;
 
-    iget-object v8, v0, Lde/rki/coronawarnapp/util/di/DaggerApplicationComponent;->appCoroutineScopeProvider:Ljavax/inject/Provider;
+    new-instance v5, Lde/rki/coronawarnapp/datadonation/analytics/AnalyticsModule_RaKeySubmissionFactory;
 
-    iget-object v9, v0, Lde/rki/coronawarnapp/util/di/DaggerApplicationComponent;->defaultDispatcherProvider:Ljavax/inject/Provider;
+    invoke-direct {v5, v4, v7}, Lde/rki/coronawarnapp/datadonation/analytics/AnalyticsModule_RaKeySubmissionFactory;-><init>(Lcom/upokecenter/cbor/CBOREInteger;Ljavax/inject/Provider;)V
 
-    iget-object v10, v0, Lde/rki/coronawarnapp/util/di/DaggerApplicationComponent;->dccQrCodeExtractorProvider:Ljavax/inject/Provider;
+    iput-object v5, v0, Lde/rki/coronawarnapp/util/di/DaggerApplicationComponent;->raKeySubmissionProvider:Ljavax/inject/Provider;
 
-    iget-object v11, v0, Lde/rki/coronawarnapp/util/di/DaggerApplicationComponent;->valueSetsRepositoryProvider:Ljavax/inject/Provider;
+    iget-object v5, v0, Lde/rki/coronawarnapp/util/di/DaggerApplicationComponent;->analyticsPCRTestResultSettingsProvider:Ljavax/inject/Provider;
 
-    iget-object v13, v0, Lde/rki/coronawarnapp/util/di/DaggerApplicationComponent;->dccStateCheckerProvider:Ljavax/inject/Provider;
+    iget-object v6, v0, Lde/rki/coronawarnapp/util/di/DaggerApplicationComponent;->timeStamperProvider:Ljavax/inject/Provider;
 
-    iget-object v14, v0, Lde/rki/coronawarnapp/util/di/DaggerApplicationComponent;->timeStamperProvider:Ljavax/inject/Provider;
+    new-instance v7, Lde/rki/coronawarnapp/datadonation/analytics/modules/testresult/AnalyticsPCRTestResultDonor_Factory;
 
-    iget-object v15, v0, Lde/rki/coronawarnapp/util/di/DaggerApplicationComponent;->dscRepositoryProvider:Ljavax/inject/Provider;
+    invoke-direct {v7, v5, v6}, Lde/rki/coronawarnapp/datadonation/analytics/modules/testresult/AnalyticsPCRTestResultDonor_Factory;-><init>(Ljavax/inject/Provider;Ljavax/inject/Provider;)V
 
-    new-instance v4, Lde/rki/coronawarnapp/covidcertificate/recovery/core/RecoveryCertificateRepository_Factory;
-
-    move-object v7, v4
-
-    invoke-direct/range {v7 .. v15}, Lde/rki/coronawarnapp/covidcertificate/recovery/core/RecoveryCertificateRepository_Factory;-><init>(Ljavax/inject/Provider;Ljavax/inject/Provider;Ljavax/inject/Provider;Ljavax/inject/Provider;Ljavax/inject/Provider;Ljavax/inject/Provider;Ljavax/inject/Provider;Ljavax/inject/Provider;)V
-
-    instance-of v5, v4, Ldagger/internal/DoubleCheck;
+    instance-of v5, v7, Ldagger/internal/DoubleCheck;
 
     if-eqz v5, :cond_2
 
@@ -10220,12 +12468,434 @@
     :cond_2
     new-instance v5, Ldagger/internal/DoubleCheck;
 
+    invoke-direct {v5, v7}, Ldagger/internal/DoubleCheck;-><init>(Ljavax/inject/Provider;)V
+
+    move-object v7, v5
+
+    :goto_2
+    iput-object v7, v0, Lde/rki/coronawarnapp/util/di/DaggerApplicationComponent;->analyticsPCRTestResultDonorProvider:Ljavax/inject/Provider;
+
+    new-instance v5, Lde/rki/coronawarnapp/datadonation/analytics/AnalyticsModule_PcrTestResultFactory;
+
+    invoke-direct {v5, v4, v7}, Lde/rki/coronawarnapp/datadonation/analytics/AnalyticsModule_PcrTestResultFactory;-><init>(Lcom/upokecenter/cbor/CBOREInteger;Ljavax/inject/Provider;)V
+
+    iput-object v5, v0, Lde/rki/coronawarnapp/util/di/DaggerApplicationComponent;->pcrTestResultProvider:Ljavax/inject/Provider;
+
+    iget-object v5, v0, Lde/rki/coronawarnapp/util/di/DaggerApplicationComponent;->analyticsRATestResultSettingsProvider:Ljavax/inject/Provider;
+
+    iget-object v6, v0, Lde/rki/coronawarnapp/util/di/DaggerApplicationComponent;->timeStamperProvider:Ljavax/inject/Provider;
+
+    new-instance v7, Lde/rki/coronawarnapp/datadonation/analytics/modules/testresult/AnalyticsRATestResultDonor_Factory;
+
+    invoke-direct {v7, v5, v6}, Lde/rki/coronawarnapp/datadonation/analytics/modules/testresult/AnalyticsRATestResultDonor_Factory;-><init>(Ljavax/inject/Provider;Ljavax/inject/Provider;)V
+
+    instance-of v5, v7, Ldagger/internal/DoubleCheck;
+
+    if-eqz v5, :cond_3
+
+    goto :goto_3
+
+    :cond_3
+    new-instance v5, Ldagger/internal/DoubleCheck;
+
+    invoke-direct {v5, v7}, Ldagger/internal/DoubleCheck;-><init>(Ljavax/inject/Provider;)V
+
+    move-object v7, v5
+
+    :goto_3
+    iput-object v7, v0, Lde/rki/coronawarnapp/util/di/DaggerApplicationComponent;->analyticsRATestResultDonorProvider:Ljavax/inject/Provider;
+
+    new-instance v5, Lde/rki/coronawarnapp/datadonation/analytics/AnalyticsModule_RaTestResultFactory;
+
+    invoke-direct {v5, v4, v7}, Lde/rki/coronawarnapp/datadonation/analytics/AnalyticsModule_RaTestResultFactory;-><init>(Lcom/upokecenter/cbor/CBOREInteger;Ljavax/inject/Provider;)V
+
+    iput-object v5, v0, Lde/rki/coronawarnapp/util/di/DaggerApplicationComponent;->raTestResultProvider:Ljavax/inject/Provider;
+
+    iget-object v5, v0, Lde/rki/coronawarnapp/util/di/DaggerApplicationComponent;->riskLevelStorageProvider:Ljavax/inject/Provider;
+
+    iget-object v6, v0, Lde/rki/coronawarnapp/util/di/DaggerApplicationComponent;->analyticsSettingsProvider:Ljavax/inject/Provider;
+
+    new-instance v7, Lde/rki/coronawarnapp/datadonation/analytics/modules/exposureriskmetadata/ExposureRiskMetadataDonor_Factory;
+
+    invoke-direct {v7, v5, v6}, Lde/rki/coronawarnapp/datadonation/analytics/modules/exposureriskmetadata/ExposureRiskMetadataDonor_Factory;-><init>(Ljavax/inject/Provider;Ljavax/inject/Provider;)V
+
+    instance-of v5, v7, Ldagger/internal/DoubleCheck;
+
+    if-eqz v5, :cond_4
+
+    goto :goto_4
+
+    :cond_4
+    new-instance v5, Ldagger/internal/DoubleCheck;
+
+    invoke-direct {v5, v7}, Ldagger/internal/DoubleCheck;-><init>(Ljavax/inject/Provider;)V
+
+    move-object v7, v5
+
+    :goto_4
+    iput-object v7, v0, Lde/rki/coronawarnapp/util/di/DaggerApplicationComponent;->exposureRiskMetadataDonorProvider:Ljavax/inject/Provider;
+
+    new-instance v5, Lde/rki/coronawarnapp/datadonation/analytics/AnalyticsModule_ExposureRiskMetadataFactory;
+
+    invoke-direct {v5, v4, v7}, Lde/rki/coronawarnapp/datadonation/analytics/AnalyticsModule_ExposureRiskMetadataFactory;-><init>(Lcom/upokecenter/cbor/CBOREInteger;Ljavax/inject/Provider;)V
+
+    iput-object v5, v0, Lde/rki/coronawarnapp/util/di/DaggerApplicationComponent;->exposureRiskMetadataProvider:Ljavax/inject/Provider;
+
+    iget-object v5, v0, Lde/rki/coronawarnapp/util/di/DaggerApplicationComponent;->analyticsSettingsProvider:Ljavax/inject/Provider;
+
+    new-instance v6, Lde/rki/coronawarnapp/datadonation/analytics/modules/usermetadata/UserMetadataDonor_Factory;
+
+    invoke-direct {v6, v5}, Lde/rki/coronawarnapp/datadonation/analytics/modules/usermetadata/UserMetadataDonor_Factory;-><init>(Ljavax/inject/Provider;)V
+
+    instance-of v5, v6, Ldagger/internal/DoubleCheck;
+
+    if-eqz v5, :cond_5
+
+    goto :goto_5
+
+    :cond_5
+    new-instance v5, Ldagger/internal/DoubleCheck;
+
+    invoke-direct {v5, v6}, Ldagger/internal/DoubleCheck;-><init>(Ljavax/inject/Provider;)V
+
+    move-object v6, v5
+
+    :goto_5
+    iput-object v6, v0, Lde/rki/coronawarnapp/util/di/DaggerApplicationComponent;->userMetadataDonorProvider:Ljavax/inject/Provider;
+
+    new-instance v5, Lde/rki/coronawarnapp/datadonation/analytics/AnalyticsModule_UserMetadataFactory;
+
+    invoke-direct {v5, v4, v6}, Lde/rki/coronawarnapp/datadonation/analytics/AnalyticsModule_UserMetadataFactory;-><init>(Lcom/upokecenter/cbor/CBOREInteger;Ljavax/inject/Provider;)V
+
+    iput-object v5, v0, Lde/rki/coronawarnapp/util/di/DaggerApplicationComponent;->userMetadataProvider:Ljavax/inject/Provider;
+
+    iget-object v5, v0, Lde/rki/coronawarnapp/util/di/DaggerApplicationComponent;->appConfigProvider:Ljavax/inject/Provider;
+
+    iget-object v6, v0, Lde/rki/coronawarnapp/util/di/DaggerApplicationComponent;->eNFClientProvider:Ljavax/inject/Provider;
+
+    new-instance v7, Lde/rki/coronawarnapp/datadonation/analytics/modules/clientmetadata/ClientMetadataDonor_Factory;
+
+    invoke-direct {v7, v5, v6}, Lde/rki/coronawarnapp/datadonation/analytics/modules/clientmetadata/ClientMetadataDonor_Factory;-><init>(Ljavax/inject/Provider;Ljavax/inject/Provider;)V
+
+    instance-of v5, v7, Ldagger/internal/DoubleCheck;
+
+    if-eqz v5, :cond_6
+
+    goto :goto_6
+
+    :cond_6
+    new-instance v5, Ldagger/internal/DoubleCheck;
+
+    invoke-direct {v5, v7}, Ldagger/internal/DoubleCheck;-><init>(Ljavax/inject/Provider;)V
+
+    move-object v7, v5
+
+    :goto_6
+    iput-object v7, v0, Lde/rki/coronawarnapp/util/di/DaggerApplicationComponent;->clientMetadataDonorProvider:Ljavax/inject/Provider;
+
+    new-instance v5, Lde/rki/coronawarnapp/datadonation/analytics/AnalyticsModule_ClientMetadataFactory;
+
+    invoke-direct {v5, v4, v7}, Lde/rki/coronawarnapp/datadonation/analytics/AnalyticsModule_ClientMetadataFactory;-><init>(Lcom/upokecenter/cbor/CBOREInteger;Ljavax/inject/Provider;)V
+
+    iput-object v5, v0, Lde/rki/coronawarnapp/util/di/DaggerApplicationComponent;->clientMetadataProvider:Ljavax/inject/Provider;
+
+    const/16 v5, 0x8
+
+    const/4 v6, 0x0
+
+    invoke-static {v5, v6}, Ldagger/internal/SetFactory;->builder(II)Ldagger/internal/SetFactory$Builder;
+
+    move-result-object v5
+
+    iget-object v6, v0, Lde/rki/coronawarnapp/util/di/DaggerApplicationComponent;->newExposureWindowsProvider:Ljavax/inject/Provider;
+
+    iget-object v7, v5, Ldagger/internal/SetFactory$Builder;->individualProviders:Ljava/util/List;
+
+    invoke-interface {v7, v6}, Ljava/util/List;->add(Ljava/lang/Object;)Z
+
+    iget-object v6, v0, Lde/rki/coronawarnapp/util/di/DaggerApplicationComponent;->pcrKeySubmissionProvider:Ljavax/inject/Provider;
+
+    iget-object v7, v5, Ldagger/internal/SetFactory$Builder;->individualProviders:Ljava/util/List;
+
+    invoke-interface {v7, v6}, Ljava/util/List;->add(Ljava/lang/Object;)Z
+
+    iget-object v6, v0, Lde/rki/coronawarnapp/util/di/DaggerApplicationComponent;->raKeySubmissionProvider:Ljavax/inject/Provider;
+
+    iget-object v7, v5, Ldagger/internal/SetFactory$Builder;->individualProviders:Ljava/util/List;
+
+    invoke-interface {v7, v6}, Ljava/util/List;->add(Ljava/lang/Object;)Z
+
+    iget-object v6, v0, Lde/rki/coronawarnapp/util/di/DaggerApplicationComponent;->pcrTestResultProvider:Ljavax/inject/Provider;
+
+    iget-object v7, v5, Ldagger/internal/SetFactory$Builder;->individualProviders:Ljava/util/List;
+
+    invoke-interface {v7, v6}, Ljava/util/List;->add(Ljava/lang/Object;)Z
+
+    iget-object v6, v0, Lde/rki/coronawarnapp/util/di/DaggerApplicationComponent;->raTestResultProvider:Ljavax/inject/Provider;
+
+    iget-object v7, v5, Ldagger/internal/SetFactory$Builder;->individualProviders:Ljava/util/List;
+
+    invoke-interface {v7, v6}, Ljava/util/List;->add(Ljava/lang/Object;)Z
+
+    iget-object v6, v0, Lde/rki/coronawarnapp/util/di/DaggerApplicationComponent;->exposureRiskMetadataProvider:Ljavax/inject/Provider;
+
+    iget-object v7, v5, Ldagger/internal/SetFactory$Builder;->individualProviders:Ljava/util/List;
+
+    invoke-interface {v7, v6}, Ljava/util/List;->add(Ljava/lang/Object;)Z
+
+    iget-object v6, v0, Lde/rki/coronawarnapp/util/di/DaggerApplicationComponent;->userMetadataProvider:Ljavax/inject/Provider;
+
+    iget-object v7, v5, Ldagger/internal/SetFactory$Builder;->individualProviders:Ljava/util/List;
+
+    invoke-interface {v7, v6}, Ljava/util/List;->add(Ljava/lang/Object;)Z
+
+    iget-object v6, v0, Lde/rki/coronawarnapp/util/di/DaggerApplicationComponent;->clientMetadataProvider:Ljavax/inject/Provider;
+
+    iget-object v7, v5, Ldagger/internal/SetFactory$Builder;->individualProviders:Ljava/util/List;
+
+    invoke-interface {v7, v6}, Ljava/util/List;->add(Ljava/lang/Object;)Z
+
+    invoke-virtual {v5}, Ldagger/internal/SetFactory$Builder;->build()Ldagger/internal/SetFactory;
+
+    move-result-object v5
+
+    iput-object v5, v0, Lde/rki/coronawarnapp/util/di/DaggerApplicationComponent;->setOfDonorModuleProvider:Ljavax/inject/Provider;
+
+    sget-object v5, Lde/rki/coronawarnapp/datadonation/analytics/storage/DefaultLastAnalyticsSubmissionLogger_Factory$InstanceHolder;->INSTANCE:Lde/rki/coronawarnapp/datadonation/analytics/storage/DefaultLastAnalyticsSubmissionLogger_Factory;
+
+    new-instance v6, Lde/rki/coronawarnapp/datadonation/analytics/AnalyticsModule_AnalyticsLoggerFactory;
+
+    invoke-direct {v6, v4, v5}, Lde/rki/coronawarnapp/datadonation/analytics/AnalyticsModule_AnalyticsLoggerFactory;-><init>(Lcom/upokecenter/cbor/CBOREInteger;Ljavax/inject/Provider;)V
+
+    instance-of v4, v6, Ldagger/internal/DoubleCheck;
+
+    if-eqz v4, :cond_7
+
+    move-object v13, v6
+
+    goto :goto_7
+
+    :cond_7
+    new-instance v4, Ldagger/internal/DoubleCheck;
+
+    invoke-direct {v4, v6}, Ldagger/internal/DoubleCheck;-><init>(Ljavax/inject/Provider;)V
+
+    move-object v13, v4
+
+    :goto_7
+    iput-object v13, v0, Lde/rki/coronawarnapp/util/di/DaggerApplicationComponent;->analyticsLoggerProvider:Ljavax/inject/Provider;
+
+    iget-object v8, v0, Lde/rki/coronawarnapp/util/di/DaggerApplicationComponent;->dataDonationAnalyticsServerProvider:Ljavax/inject/Provider;
+
+    iget-object v9, v0, Lde/rki/coronawarnapp/util/di/DaggerApplicationComponent;->appConfigProvider:Ljavax/inject/Provider;
+
+    iget-object v10, v0, Lde/rki/coronawarnapp/util/di/DaggerApplicationComponent;->deviceAttestationProvider:Ljavax/inject/Provider;
+
+    iget-object v11, v0, Lde/rki/coronawarnapp/util/di/DaggerApplicationComponent;->setOfDonorModuleProvider:Ljavax/inject/Provider;
+
+    iget-object v12, v0, Lde/rki/coronawarnapp/util/di/DaggerApplicationComponent;->analyticsSettingsProvider:Ljavax/inject/Provider;
+
+    iget-object v14, v0, Lde/rki/coronawarnapp/util/di/DaggerApplicationComponent;->timeStamperProvider:Ljavax/inject/Provider;
+
+    iget-object v15, v0, Lde/rki/coronawarnapp/util/di/DaggerApplicationComponent;->onboardingSettingsProvider:Ljavax/inject/Provider;
+
+    new-instance v4, Lde/rki/coronawarnapp/datadonation/analytics/Analytics_Factory;
+
+    move-object v7, v4
+
+    invoke-direct/range {v7 .. v15}, Lde/rki/coronawarnapp/datadonation/analytics/Analytics_Factory;-><init>(Ljavax/inject/Provider;Ljavax/inject/Provider;Ljavax/inject/Provider;Ljavax/inject/Provider;Ljavax/inject/Provider;Ljavax/inject/Provider;Ljavax/inject/Provider;Ljavax/inject/Provider;)V
+
+    instance-of v5, v4, Ldagger/internal/DoubleCheck;
+
+    if-eqz v5, :cond_8
+
+    goto :goto_8
+
+    :cond_8
+    new-instance v5, Ldagger/internal/DoubleCheck;
+
     invoke-direct {v5, v4}, Ldagger/internal/DoubleCheck;-><init>(Ljavax/inject/Provider;)V
 
     move-object v4, v5
 
-    :goto_2
-    iput-object v4, v0, Lde/rki/coronawarnapp/util/di/DaggerApplicationComponent;->recoveryCertificateRepositoryProvider:Ljavax/inject/Provider;
+    :goto_8
+    iput-object v4, v0, Lde/rki/coronawarnapp/util/di/DaggerApplicationComponent;->analyticsProvider:Ljavax/inject/Provider;
+
+    new-instance v5, Lde/rki/coronawarnapp/datadonation/analytics/worker/DataDonationAnalyticsPeriodicWorker_Factory;
+
+    invoke-direct {v5, v4}, Lde/rki/coronawarnapp/datadonation/analytics/worker/DataDonationAnalyticsPeriodicWorker_Factory;-><init>(Ljavax/inject/Provider;)V
+
+    new-instance v4, Lde/rki/coronawarnapp/datadonation/analytics/worker/DataDonationAnalyticsPeriodicWorker_Factory_Impl;
+
+    invoke-direct {v4, v5}, Lde/rki/coronawarnapp/datadonation/analytics/worker/DataDonationAnalyticsPeriodicWorker_Factory_Impl;-><init>(Lde/rki/coronawarnapp/datadonation/analytics/worker/DataDonationAnalyticsPeriodicWorker_Factory;)V
+
+    new-instance v5, Ldagger/internal/InstanceFactory;
+
+    invoke-direct {v5, v4}, Ldagger/internal/InstanceFactory;-><init>(Ljava/lang/Object;)V
+
+    iput-object v5, v0, Lde/rki/coronawarnapp/util/di/DaggerApplicationComponent;->factoryProvider26:Ljavax/inject/Provider;
+
+    iget-object v4, v0, Lde/rki/coronawarnapp/util/di/DaggerApplicationComponent;->contextProvider:Ljavax/inject/Provider;
+
+    iget-object v5, v0, Lde/rki/coronawarnapp/util/di/DaggerApplicationComponent;->notificationManagerCompatProvider:Ljavax/inject/Provider;
+
+    new-instance v6, Lde/rki/coronawarnapp/presencetracing/common/PresenceTracingNotifications_Factory;
+
+    invoke-direct {v6, v4, v5}, Lde/rki/coronawarnapp/presencetracing/common/PresenceTracingNotifications_Factory;-><init>(Ljavax/inject/Provider;Ljavax/inject/Provider;)V
+
+    invoke-static {v6}, Ldagger/internal/SingleCheck;->provider(Ljavax/inject/Provider;)Ljavax/inject/Provider;
+
+    move-result-object v4
+
+    iput-object v4, v0, Lde/rki/coronawarnapp/util/di/DaggerApplicationComponent;->presenceTracingNotificationsProvider:Ljavax/inject/Provider;
+
+    iget-object v5, v0, Lde/rki/coronawarnapp/util/di/DaggerApplicationComponent;->contextProvider:Ljavax/inject/Provider;
+
+    iget-object v6, v0, Lde/rki/coronawarnapp/util/di/DaggerApplicationComponent;->foregroundStateProvider:Ljavax/inject/Provider;
+
+    iget-object v7, v0, Lde/rki/coronawarnapp/util/di/DaggerApplicationComponent;->navDeepLinkBuilderFactoryProvider:Ljavax/inject/Provider;
+
+    new-instance v8, Lde/rki/coronawarnapp/presencetracing/checkins/checkout/CheckOutNotification_Factory;
+
+    invoke-direct {v8, v5, v6, v4, v7}, Lde/rki/coronawarnapp/presencetracing/checkins/checkout/CheckOutNotification_Factory;-><init>(Ljavax/inject/Provider;Ljavax/inject/Provider;Ljavax/inject/Provider;Ljavax/inject/Provider;)V
+
+    invoke-static {v8}, Ldagger/internal/SingleCheck;->provider(Ljavax/inject/Provider;)Ljavax/inject/Provider;
+
+    move-result-object v4
+
+    iput-object v4, v0, Lde/rki/coronawarnapp/util/di/DaggerApplicationComponent;->checkOutNotificationProvider:Ljavax/inject/Provider;
+
+    iget-object v5, v0, Lde/rki/coronawarnapp/util/di/DaggerApplicationComponent;->autoCheckOutProvider:Ljavax/inject/Provider;
+
+    new-instance v6, Lde/rki/coronawarnapp/presencetracing/checkins/checkout/auto/AutoCheckOutWorker_Factory;
+
+    invoke-direct {v6, v5, v4}, Lde/rki/coronawarnapp/presencetracing/checkins/checkout/auto/AutoCheckOutWorker_Factory;-><init>(Ljavax/inject/Provider;Ljavax/inject/Provider;)V
+
+    new-instance v4, Lde/rki/coronawarnapp/presencetracing/checkins/checkout/auto/AutoCheckOutWorker_Factory_Impl;
+
+    invoke-direct {v4, v6}, Lde/rki/coronawarnapp/presencetracing/checkins/checkout/auto/AutoCheckOutWorker_Factory_Impl;-><init>(Lde/rki/coronawarnapp/presencetracing/checkins/checkout/auto/AutoCheckOutWorker_Factory;)V
+
+    new-instance v5, Ldagger/internal/InstanceFactory;
+
+    invoke-direct {v5, v4}, Ldagger/internal/InstanceFactory;-><init>(Ljava/lang/Object;)V
+
+    iput-object v5, v0, Lde/rki/coronawarnapp/util/di/DaggerApplicationComponent;->factoryProvider27:Ljavax/inject/Provider;
+
+    iget-object v4, v0, Lde/rki/coronawarnapp/util/di/DaggerApplicationComponent;->factoryProvider8:Ljavax/inject/Provider;
+
+    iget-object v5, v0, Lde/rki/coronawarnapp/util/di/DaggerApplicationComponent;->appCoroutineScopeProvider:Ljavax/inject/Provider;
+
+    iget-object v6, v0, Lde/rki/coronawarnapp/util/di/DaggerApplicationComponent;->timeStamperProvider:Ljavax/inject/Provider;
+
+    new-instance v7, Lde/rki/coronawarnapp/presencetracing/storage/repo/DefaultTraceLocationRepository_Factory;
+
+    invoke-direct {v7, v4, v5, v6}, Lde/rki/coronawarnapp/presencetracing/storage/repo/DefaultTraceLocationRepository_Factory;-><init>(Ljavax/inject/Provider;Ljavax/inject/Provider;Ljavax/inject/Provider;)V
+
+    instance-of v4, v7, Ldagger/internal/DoubleCheck;
+
+    if-eqz v4, :cond_9
+
+    goto :goto_9
+
+    :cond_9
+    new-instance v4, Ldagger/internal/DoubleCheck;
+
+    invoke-direct {v4, v7}, Ldagger/internal/DoubleCheck;-><init>(Ljavax/inject/Provider;)V
+
+    move-object v7, v4
+
+    :goto_9
+    iput-object v7, v0, Lde/rki/coronawarnapp/util/di/DaggerApplicationComponent;->defaultTraceLocationRepositoryProvider:Ljavax/inject/Provider;
+
+    iget-object v4, v0, Lde/rki/coronawarnapp/util/di/DaggerApplicationComponent;->timeStamperProvider:Ljavax/inject/Provider;
+
+    new-instance v5, Lde/rki/coronawarnapp/presencetracing/storage/retention/TraceLocationCleaner_Factory;
+
+    invoke-direct {v5, v7, v4}, Lde/rki/coronawarnapp/presencetracing/storage/retention/TraceLocationCleaner_Factory;-><init>(Ljavax/inject/Provider;Ljavax/inject/Provider;)V
+
+    invoke-static {v5}, Ldagger/internal/SingleCheck;->provider(Ljavax/inject/Provider;)Ljavax/inject/Provider;
+
+    move-result-object v4
+
+    iput-object v4, v0, Lde/rki/coronawarnapp/util/di/DaggerApplicationComponent;->traceLocationCleanerProvider:Ljavax/inject/Provider;
+
+    iget-object v4, v0, Lde/rki/coronawarnapp/util/di/DaggerApplicationComponent;->checkInRepositoryProvider:Ljavax/inject/Provider;
+
+    iget-object v5, v0, Lde/rki/coronawarnapp/util/di/DaggerApplicationComponent;->timeStamperProvider:Ljavax/inject/Provider;
+
+    new-instance v6, Lde/rki/coronawarnapp/presencetracing/storage/retention/CheckInCleaner_Factory;
+
+    invoke-direct {v6, v4, v5}, Lde/rki/coronawarnapp/presencetracing/storage/retention/CheckInCleaner_Factory;-><init>(Ljavax/inject/Provider;Ljavax/inject/Provider;)V
+
+    invoke-static {v6}, Ldagger/internal/SingleCheck;->provider(Ljavax/inject/Provider;)Ljavax/inject/Provider;
+
+    move-result-object v4
+
+    iput-object v4, v0, Lde/rki/coronawarnapp/util/di/DaggerApplicationComponent;->checkInCleanerProvider:Ljavax/inject/Provider;
+
+    iget-object v5, v0, Lde/rki/coronawarnapp/util/di/DaggerApplicationComponent;->traceLocationCleanerProvider:Ljavax/inject/Provider;
+
+    new-instance v6, Lde/rki/coronawarnapp/presencetracing/storage/retention/TraceLocationDbCleanUpPeriodicWorker_Factory;
+
+    invoke-direct {v6, v5, v4}, Lde/rki/coronawarnapp/presencetracing/storage/retention/TraceLocationDbCleanUpPeriodicWorker_Factory;-><init>(Ljavax/inject/Provider;Ljavax/inject/Provider;)V
+
+    new-instance v4, Lde/rki/coronawarnapp/presencetracing/storage/retention/TraceLocationDbCleanUpPeriodicWorker_Factory_Impl;
+
+    invoke-direct {v4, v6}, Lde/rki/coronawarnapp/presencetracing/storage/retention/TraceLocationDbCleanUpPeriodicWorker_Factory_Impl;-><init>(Lde/rki/coronawarnapp/presencetracing/storage/retention/TraceLocationDbCleanUpPeriodicWorker_Factory;)V
+
+    new-instance v5, Ldagger/internal/InstanceFactory;
+
+    invoke-direct {v5, v4}, Ldagger/internal/InstanceFactory;-><init>(Ljava/lang/Object;)V
+
+    iput-object v5, v0, Lde/rki/coronawarnapp/util/di/DaggerApplicationComponent;->factoryProvider28:Ljavax/inject/Provider;
+
+    iget-object v4, v0, Lde/rki/coronawarnapp/util/di/DaggerApplicationComponent;->taskControllerProvider:Ljavax/inject/Provider;
+
+    new-instance v5, Lde/rki/coronawarnapp/presencetracing/risk/execution/PresenceTracingWarningWorker_Factory;
+
+    invoke-direct {v5, v4}, Lde/rki/coronawarnapp/presencetracing/risk/execution/PresenceTracingWarningWorker_Factory;-><init>(Ljavax/inject/Provider;)V
+
+    new-instance v4, Lde/rki/coronawarnapp/presencetracing/risk/execution/PresenceTracingWarningWorker_Factory_Impl;
+
+    invoke-direct {v4, v5}, Lde/rki/coronawarnapp/presencetracing/risk/execution/PresenceTracingWarningWorker_Factory_Impl;-><init>(Lde/rki/coronawarnapp/presencetracing/risk/execution/PresenceTracingWarningWorker_Factory;)V
+
+    new-instance v5, Ldagger/internal/InstanceFactory;
+
+    invoke-direct {v5, v4}, Ldagger/internal/InstanceFactory;-><init>(Ljava/lang/Object;)V
+
+    iput-object v5, v0, Lde/rki/coronawarnapp/util/di/DaggerApplicationComponent;->factoryProvider29:Ljavax/inject/Provider;
+
+    iget-object v4, v0, Lde/rki/coronawarnapp/util/di/DaggerApplicationComponent;->testCertificateRepositoryProvider:Ljavax/inject/Provider;
+
+    new-instance v5, Lde/rki/coronawarnapp/covidcertificate/test/core/execution/TestCertificateRetrievalWorker_Factory;
+
+    invoke-direct {v5, v4}, Lde/rki/coronawarnapp/covidcertificate/test/core/execution/TestCertificateRetrievalWorker_Factory;-><init>(Ljavax/inject/Provider;)V
+
+    new-instance v4, Lde/rki/coronawarnapp/covidcertificate/test/core/execution/TestCertificateRetrievalWorker_Factory_Impl;
+
+    invoke-direct {v4, v5}, Lde/rki/coronawarnapp/covidcertificate/test/core/execution/TestCertificateRetrievalWorker_Factory_Impl;-><init>(Lde/rki/coronawarnapp/covidcertificate/test/core/execution/TestCertificateRetrievalWorker_Factory;)V
+
+    new-instance v5, Ldagger/internal/InstanceFactory;
+
+    invoke-direct {v5, v4}, Ldagger/internal/InstanceFactory;-><init>(Ljava/lang/Object;)V
+
+    iput-object v5, v0, Lde/rki/coronawarnapp/util/di/DaggerApplicationComponent;->factoryProvider30:Ljavax/inject/Provider;
+
+    iget-object v4, v0, Lde/rki/coronawarnapp/util/di/DaggerApplicationComponent;->contextProvider:Ljavax/inject/Provider;
+
+    iget-object v5, v0, Lde/rki/coronawarnapp/util/di/DaggerApplicationComponent;->digitalCovidCertificateNotificationsProvider:Ljavax/inject/Provider;
+
+    iget-object v6, v0, Lde/rki/coronawarnapp/util/di/DaggerApplicationComponent;->navDeepLinkBuilderFactoryProvider:Ljavax/inject/Provider;
+
+    new-instance v7, Lde/rki/coronawarnapp/covidcertificate/expiration/DccExpirationNotification_Factory;
+
+    invoke-direct {v7, v4, v5, v6}, Lde/rki/coronawarnapp/covidcertificate/expiration/DccExpirationNotification_Factory;-><init>(Ljavax/inject/Provider;Ljavax/inject/Provider;Ljavax/inject/Provider;)V
+
+    invoke-static {v7}, Ldagger/internal/SingleCheck;->provider(Ljavax/inject/Provider;)Ljavax/inject/Provider;
+
+    move-result-object v4
+
+    iput-object v4, v0, Lde/rki/coronawarnapp/util/di/DaggerApplicationComponent;->dccExpirationNotificationProvider:Ljavax/inject/Provider;
 
     iget-object v4, v0, Lde/rki/coronawarnapp/util/di/DaggerApplicationComponent;->contextProvider:Ljavax/inject/Provider;
 
@@ -10235,20 +12905,20 @@
 
     instance-of v4, v5, Ldagger/internal/DoubleCheck;
 
-    if-eqz v4, :cond_3
+    if-eqz v4, :cond_a
 
     move-object v10, v5
 
-    goto :goto_3
+    goto :goto_a
 
-    :cond_3
+    :cond_a
     new-instance v4, Ldagger/internal/DoubleCheck;
 
     invoke-direct {v4, v5}, Ldagger/internal/DoubleCheck;-><init>(Ljavax/inject/Provider;)V
 
     move-object v10, v4
 
-    :goto_3
+    :goto_a
     iput-object v10, v0, Lde/rki/coronawarnapp/util/di/DaggerApplicationComponent;->covidCertificateSettingsProvider:Ljavax/inject/Provider;
 
     iget-object v7, v0, Lde/rki/coronawarnapp/util/di/DaggerApplicationComponent;->dccExpirationNotificationProvider:Ljavax/inject/Provider;
@@ -10269,18 +12939,18 @@
 
     instance-of v5, v4, Ldagger/internal/DoubleCheck;
 
-    if-eqz v5, :cond_4
+    if-eqz v5, :cond_b
 
-    goto :goto_4
+    goto :goto_b
 
-    :cond_4
+    :cond_b
     new-instance v5, Ldagger/internal/DoubleCheck;
 
     invoke-direct {v5, v4}, Ldagger/internal/DoubleCheck;-><init>(Ljavax/inject/Provider;)V
 
     move-object v4, v5
 
-    :goto_4
+    :goto_b
     iput-object v4, v0, Lde/rki/coronawarnapp/util/di/DaggerApplicationComponent;->dccExpirationNotificationServiceProvider:Ljavax/inject/Provider;
 
     new-instance v5, Lde/rki/coronawarnapp/covidcertificate/common/statecheck/DccStateCheckWorker_Factory;
@@ -10295,301 +12965,129 @@
 
     invoke-direct {v5, v4}, Ldagger/internal/InstanceFactory;-><init>(Ljava/lang/Object;)V
 
-    iput-object v5, v0, Lde/rki/coronawarnapp/util/di/DaggerApplicationComponent;->factoryProvider29:Ljavax/inject/Provider;
+    iput-object v5, v0, Lde/rki/coronawarnapp/util/di/DaggerApplicationComponent;->factoryProvider31:Ljavax/inject/Provider;
 
     iget-object v4, v0, Lde/rki/coronawarnapp/util/di/DaggerApplicationComponent;->contextProvider:Ljavax/inject/Provider;
 
-    iget-object v5, v0, Lde/rki/coronawarnapp/util/di/DaggerApplicationComponent;->digitalCovidCertificateNotificationsProvider:Ljavax/inject/Provider;
+    new-instance v5, Lde/rki/coronawarnapp/ccl/CCLModule_Companion_ProvideCLLSettingsDataStoreFactory;
 
-    iget-object v6, v0, Lde/rki/coronawarnapp/util/di/DaggerApplicationComponent;->navDeepLinkBuilderFactoryProvider:Ljavax/inject/Provider;
-
-    new-instance v7, Lde/rki/coronawarnapp/covidcertificate/booster/BoosterNotification_Factory;
-
-    invoke-direct {v7, v4, v5, v6}, Lde/rki/coronawarnapp/covidcertificate/booster/BoosterNotification_Factory;-><init>(Ljavax/inject/Provider;Ljavax/inject/Provider;Ljavax/inject/Provider;)V
-
-    iput-object v7, v0, Lde/rki/coronawarnapp/util/di/DaggerApplicationComponent;->boosterNotificationProvider:Ljavax/inject/Provider;
-
-    iget-object v5, v0, Lde/rki/coronawarnapp/util/di/DaggerApplicationComponent;->baseGsonProvider:Ljavax/inject/Provider;
-
-    new-instance v6, Lde/rki/coronawarnapp/covidcertificate/person/core/PersonCertificatesSettings_Factory;
-
-    invoke-direct {v6, v4, v5}, Lde/rki/coronawarnapp/covidcertificate/person/core/PersonCertificatesSettings_Factory;-><init>(Ljavax/inject/Provider;Ljavax/inject/Provider;)V
-
-    instance-of v4, v6, Ldagger/internal/DoubleCheck;
-
-    if-eqz v4, :cond_5
-
-    move-object v8, v6
-
-    goto :goto_5
-
-    :cond_5
-    new-instance v4, Ldagger/internal/DoubleCheck;
-
-    invoke-direct {v4, v6}, Ldagger/internal/DoubleCheck;-><init>(Ljavax/inject/Provider;)V
-
-    move-object v8, v4
-
-    :goto_5
-    iput-object v8, v0, Lde/rki/coronawarnapp/util/di/DaggerApplicationComponent;->personCertificatesSettingsProvider:Ljavax/inject/Provider;
-
-    iget-object v9, v0, Lde/rki/coronawarnapp/util/di/DaggerApplicationComponent;->vaccinationRepositoryProvider:Ljavax/inject/Provider;
-
-    iget-object v10, v0, Lde/rki/coronawarnapp/util/di/DaggerApplicationComponent;->testCertificateRepositoryProvider:Ljavax/inject/Provider;
-
-    iget-object v11, v0, Lde/rki/coronawarnapp/util/di/DaggerApplicationComponent;->recoveryCertificateRepositoryProvider:Ljavax/inject/Provider;
-
-    iget-object v12, v0, Lde/rki/coronawarnapp/util/di/DaggerApplicationComponent;->appCoroutineScopeProvider:Ljavax/inject/Provider;
-
-    new-instance v4, Lde/rki/coronawarnapp/covidcertificate/person/core/PersonCertificatesProvider_Factory;
-
-    move-object v7, v4
-
-    invoke-direct/range {v7 .. v12}, Lde/rki/coronawarnapp/covidcertificate/person/core/PersonCertificatesProvider_Factory;-><init>(Ljavax/inject/Provider;Ljavax/inject/Provider;Ljavax/inject/Provider;Ljavax/inject/Provider;Ljavax/inject/Provider;)V
-
-    invoke-static {v4}, Ldagger/internal/SingleCheck;->provider(Ljavax/inject/Provider;)Ljavax/inject/Provider;
-
-    move-result-object v4
-
-    iput-object v4, v0, Lde/rki/coronawarnapp/util/di/DaggerApplicationComponent;->personCertificatesProvider:Ljavax/inject/Provider;
-
-    iget-object v4, v0, Lde/rki/coronawarnapp/util/di/DaggerApplicationComponent;->baseGsonProvider:Ljavax/inject/Provider;
-
-    new-instance v5, Lde/rki/coronawarnapp/covidcertificate/validation/core/rule/DccValidationRuleConverter_Factory;
-
-    invoke-direct {v5, v4}, Lde/rki/coronawarnapp/covidcertificate/validation/core/rule/DccValidationRuleConverter_Factory;-><init>(Ljavax/inject/Provider;)V
-
-    invoke-static {v5}, Ldagger/internal/SingleCheck;->provider(Ljavax/inject/Provider;)Ljavax/inject/Provider;
-
-    move-result-object v4
-
-    iput-object v4, v0, Lde/rki/coronawarnapp/util/di/DaggerApplicationComponent;->dccValidationRuleConverterProvider:Ljavax/inject/Provider;
-
-    iget-object v7, v0, Lde/rki/coronawarnapp/util/di/DaggerApplicationComponent;->cdnHttpClientProvider:Ljavax/inject/Provider;
-
-    iget-object v8, v0, Lde/rki/coronawarnapp/util/di/DaggerApplicationComponent;->provideDownloadServerUrlProvider:Ljavax/inject/Provider;
-
-    iget-object v9, v0, Lde/rki/coronawarnapp/util/di/DaggerApplicationComponent;->cacheProvider:Ljavax/inject/Provider;
-
-    new-instance v4, Lde/rki/coronawarnapp/covidcertificate/validation/core/DccValidator_Factory;
-
-    const/4 v10, 0x1
-
-    move-object v5, v4
-
-    move-object/from16 v6, p8
-
-    invoke-direct/range {v5 .. v10}, Lde/rki/coronawarnapp/covidcertificate/validation/core/DccValidator_Factory;-><init>(Lde/rki/coronawarnapp/covidcertificate/validation/core/DccValidationModule;Ljavax/inject/Provider;Ljavax/inject/Provider;Ljavax/inject/Provider;I)V
-
-    invoke-static {v4}, Ldagger/internal/SingleCheck;->provider(Ljavax/inject/Provider;)Ljavax/inject/Provider;
-
-    move-result-object v4
-
-    iput-object v4, v0, Lde/rki/coronawarnapp/util/di/DaggerApplicationComponent;->countryApiProvider:Ljavax/inject/Provider;
-
-    iget-object v7, v0, Lde/rki/coronawarnapp/util/di/DaggerApplicationComponent;->cdnHttpClientProvider:Ljavax/inject/Provider;
-
-    iget-object v8, v0, Lde/rki/coronawarnapp/util/di/DaggerApplicationComponent;->provideDownloadServerUrlProvider:Ljavax/inject/Provider;
-
-    iget-object v9, v0, Lde/rki/coronawarnapp/util/di/DaggerApplicationComponent;->cacheProvider:Ljavax/inject/Provider;
-
-    new-instance v4, Lde/rki/coronawarnapp/covidcertificate/validation/core/DccValidator_Factory;
-
-    const/4 v10, 0x2
-
-    move-object v5, v4
-
-    invoke-direct/range {v5 .. v10}, Lde/rki/coronawarnapp/covidcertificate/validation/core/DccValidator_Factory;-><init>(Lde/rki/coronawarnapp/covidcertificate/validation/core/DccValidationModule;Ljavax/inject/Provider;Ljavax/inject/Provider;Ljavax/inject/Provider;I)V
-
-    invoke-static {v4}, Ldagger/internal/SingleCheck;->provider(Ljavax/inject/Provider;)Ljavax/inject/Provider;
-
-    move-result-object v13
-
-    iput-object v13, v0, Lde/rki/coronawarnapp/util/di/DaggerApplicationComponent;->rulesApiProvider:Ljavax/inject/Provider;
-
-    iget-object v12, v0, Lde/rki/coronawarnapp/util/di/DaggerApplicationComponent;->countryApiProvider:Ljavax/inject/Provider;
-
-    iget-object v14, v0, Lde/rki/coronawarnapp/util/di/DaggerApplicationComponent;->httpCacheProvider:Ljavax/inject/Provider;
-
-    iget-object v15, v0, Lde/rki/coronawarnapp/util/di/DaggerApplicationComponent;->signatureValidationProvider:Ljavax/inject/Provider;
-
-    iget-object v4, v0, Lde/rki/coronawarnapp/util/di/DaggerApplicationComponent;->defaultDispatcherProvider:Ljavax/inject/Provider;
-
-    new-instance v5, Lde/rki/coronawarnapp/covidcertificate/validation/core/server/DccValidationServer_Factory;
-
-    move-object v11, v5
-
-    move-object/from16 v16, v4
-
-    invoke-direct/range {v11 .. v16}, Lde/rki/coronawarnapp/covidcertificate/validation/core/server/DccValidationServer_Factory;-><init>(Ljavax/inject/Provider;Ljavax/inject/Provider;Ljavax/inject/Provider;Ljavax/inject/Provider;Ljavax/inject/Provider;)V
-
-    invoke-static {v5}, Ldagger/internal/SingleCheck;->provider(Ljavax/inject/Provider;)Ljavax/inject/Provider;
-
-    move-result-object v4
-
-    iput-object v4, v0, Lde/rki/coronawarnapp/util/di/DaggerApplicationComponent;->dccValidationServerProvider:Ljavax/inject/Provider;
-
-    iget-object v4, v0, Lde/rki/coronawarnapp/util/di/DaggerApplicationComponent;->contextProvider:Ljavax/inject/Provider;
-
-    new-instance v5, Lde/rki/coronawarnapp/covidcertificate/validation/core/DccValidationModule_CacheDirFactory;
-
-    invoke-direct {v5, v6, v4}, Lde/rki/coronawarnapp/covidcertificate/validation/core/DccValidationModule_CacheDirFactory;-><init>(Lde/rki/coronawarnapp/covidcertificate/validation/core/DccValidationModule;Ljavax/inject/Provider;)V
+    invoke-direct {v5, v4}, Lde/rki/coronawarnapp/ccl/CCLModule_Companion_ProvideCLLSettingsDataStoreFactory;-><init>(Ljavax/inject/Provider;)V
 
     instance-of v4, v5, Ldagger/internal/DoubleCheck;
 
-    if-eqz v4, :cond_6
+    if-eqz v4, :cond_c
 
-    goto :goto_6
+    goto :goto_c
 
-    :cond_6
+    :cond_c
     new-instance v4, Ldagger/internal/DoubleCheck;
 
     invoke-direct {v4, v5}, Ldagger/internal/DoubleCheck;-><init>(Ljavax/inject/Provider;)V
 
     move-object v5, v4
 
-    :goto_6
-    iput-object v5, v0, Lde/rki/coronawarnapp/util/di/DaggerApplicationComponent;->cacheDirProvider2:Ljavax/inject/Provider;
+    :goto_c
+    iput-object v5, v0, Lde/rki/coronawarnapp/util/di/DaggerApplicationComponent;->provideCLLSettingsDataStoreProvider:Ljavax/inject/Provider;
 
-    new-instance v4, Lde/rki/coronawarnapp/covidcertificate/validation/core/DccValidationCache_Factory;
+    iget-object v4, v0, Lde/rki/coronawarnapp/util/di/DaggerApplicationComponent;->appCoroutineScopeProvider:Ljavax/inject/Provider;
 
-    invoke-direct {v4, v5}, Lde/rki/coronawarnapp/covidcertificate/validation/core/DccValidationCache_Factory;-><init>(Ljavax/inject/Provider;)V
+    new-instance v6, Lde/rki/coronawarnapp/ccl/configuration/update/CCLSettings_Factory;
 
-    instance-of v5, v4, Ldagger/internal/DoubleCheck;
-
-    if-eqz v5, :cond_7
-
-    move-object v11, v4
-
-    goto :goto_7
-
-    :cond_7
-    new-instance v5, Ldagger/internal/DoubleCheck;
-
-    invoke-direct {v5, v4}, Ldagger/internal/DoubleCheck;-><init>(Ljavax/inject/Provider;)V
-
-    move-object v11, v5
-
-    :goto_7
-    iput-object v11, v0, Lde/rki/coronawarnapp/util/di/DaggerApplicationComponent;->dccValidationCacheProvider:Ljavax/inject/Provider;
-
-    iget-object v7, v0, Lde/rki/coronawarnapp/util/di/DaggerApplicationComponent;->appCoroutineScopeProvider:Ljavax/inject/Provider;
-
-    iget-object v8, v0, Lde/rki/coronawarnapp/util/di/DaggerApplicationComponent;->defaultDispatcherProvider:Ljavax/inject/Provider;
-
-    iget-object v9, v0, Lde/rki/coronawarnapp/util/di/DaggerApplicationComponent;->dccValidationRuleConverterProvider:Ljavax/inject/Provider;
-
-    iget-object v10, v0, Lde/rki/coronawarnapp/util/di/DaggerApplicationComponent;->dccValidationServerProvider:Ljavax/inject/Provider;
-
-    new-instance v4, Lde/rki/coronawarnapp/covidcertificate/booster/BoosterRulesRepository_Factory;
-
-    move-object v6, v4
-
-    invoke-direct/range {v6 .. v11}, Lde/rki/coronawarnapp/covidcertificate/booster/BoosterRulesRepository_Factory;-><init>(Ljavax/inject/Provider;Ljavax/inject/Provider;Ljavax/inject/Provider;Ljavax/inject/Provider;Ljavax/inject/Provider;)V
-
-    invoke-static {v4}, Ldagger/internal/SingleCheck;->provider(Ljavax/inject/Provider;)Ljavax/inject/Provider;
-
-    move-result-object v4
-
-    iput-object v4, v0, Lde/rki/coronawarnapp/util/di/DaggerApplicationComponent;->boosterRulesRepositoryProvider:Ljavax/inject/Provider;
-
-    iget-object v4, v0, Lde/rki/coronawarnapp/util/di/DaggerApplicationComponent;->dccJsonSchemaProvider:Ljavax/inject/Provider;
-
-    iget-object v5, v0, Lde/rki/coronawarnapp/util/di/DaggerApplicationComponent;->jacksonObjectMapperProvider:Ljavax/inject/Provider;
-
-    new-instance v6, Lde/rki/coronawarnapp/covidcertificate/DigitalCovidCertificateModule_ProvidesDefaultCertLogicEngineFactory;
-
-    move-object/from16 v7, p7
-
-    invoke-direct {v6, v7, v4, v5}, Lde/rki/coronawarnapp/covidcertificate/DigitalCovidCertificateModule_ProvidesDefaultCertLogicEngineFactory;-><init>(Lde/rki/coronawarnapp/covidcertificate/DigitalCovidCertificateModule;Ljavax/inject/Provider;Ljavax/inject/Provider;)V
+    invoke-direct {v6, v5, v4}, Lde/rki/coronawarnapp/ccl/configuration/update/CCLSettings_Factory;-><init>(Ljavax/inject/Provider;Ljavax/inject/Provider;)V
 
     invoke-static {v6}, Ldagger/internal/SingleCheck;->provider(Ljavax/inject/Provider;)Ljavax/inject/Provider;
 
     move-result-object v4
 
-    iput-object v4, v0, Lde/rki/coronawarnapp/util/di/DaggerApplicationComponent;->providesDefaultCertLogicEngineProvider:Ljavax/inject/Provider;
+    iput-object v4, v0, Lde/rki/coronawarnapp/util/di/DaggerApplicationComponent;->cCLSettingsProvider:Ljavax/inject/Provider;
 
-    iget-object v5, v0, Lde/rki/coronawarnapp/util/di/DaggerApplicationComponent;->boosterRulesRepositoryProvider:Ljavax/inject/Provider;
+    iget-object v6, v0, Lde/rki/coronawarnapp/util/di/DaggerApplicationComponent;->personCertificatesProvider:Ljavax/inject/Provider;
 
-    iget-object v6, v0, Lde/rki/coronawarnapp/util/di/DaggerApplicationComponent;->jacksonObjectMapperProvider:Ljavax/inject/Provider;
+    iget-object v7, v0, Lde/rki/coronawarnapp/util/di/DaggerApplicationComponent;->appCoroutineScopeProvider:Ljavax/inject/Provider;
 
-    new-instance v7, Lde/rki/coronawarnapp/covidcertificate/booster/DccBoosterRulesValidator_Factory;
+    iget-object v8, v0, Lde/rki/coronawarnapp/util/di/DaggerApplicationComponent;->taskControllerProvider:Ljavax/inject/Provider;
 
-    invoke-direct {v7, v5, v4, v6}, Lde/rki/coronawarnapp/covidcertificate/booster/DccBoosterRulesValidator_Factory;-><init>(Ljavax/inject/Provider;Ljavax/inject/Provider;Ljavax/inject/Provider;)V
+    iget-object v9, v0, Lde/rki/coronawarnapp/util/di/DaggerApplicationComponent;->dccWalletInfoCalculationManagerProvider:Ljavax/inject/Provider;
 
-    instance-of v4, v7, Ldagger/internal/DoubleCheck;
+    iget-object v10, v0, Lde/rki/coronawarnapp/util/di/DaggerApplicationComponent;->dccWalletInfoCleanerProvider:Ljavax/inject/Provider;
 
-    if-eqz v4, :cond_8
+    new-instance v4, Lde/rki/coronawarnapp/ccl/dccwalletinfo/update/DccWalletInfoUpdateTrigger_Factory;
 
-    move-object v12, v7
+    move-object v5, v4
 
-    goto :goto_8
-
-    :cond_8
-    new-instance v4, Ldagger/internal/DoubleCheck;
-
-    invoke-direct {v4, v7}, Ldagger/internal/DoubleCheck;-><init>(Ljavax/inject/Provider;)V
-
-    move-object v12, v4
-
-    :goto_8
-    iput-object v12, v0, Lde/rki/coronawarnapp/util/di/DaggerApplicationComponent;->dccBoosterRulesValidatorProvider:Ljavax/inject/Provider;
-
-    iget-object v9, v0, Lde/rki/coronawarnapp/util/di/DaggerApplicationComponent;->boosterNotificationProvider:Ljavax/inject/Provider;
-
-    iget-object v10, v0, Lde/rki/coronawarnapp/util/di/DaggerApplicationComponent;->personCertificatesProvider:Ljavax/inject/Provider;
-
-    iget-object v11, v0, Lde/rki/coronawarnapp/util/di/DaggerApplicationComponent;->covidCertificateSettingsProvider:Ljavax/inject/Provider;
-
-    iget-object v13, v0, Lde/rki/coronawarnapp/util/di/DaggerApplicationComponent;->vaccinationRepositoryProvider:Ljavax/inject/Provider;
-
-    iget-object v14, v0, Lde/rki/coronawarnapp/util/di/DaggerApplicationComponent;->timeStamperProvider:Ljavax/inject/Provider;
-
-    new-instance v4, Lde/rki/coronawarnapp/covidcertificate/booster/BoosterNotificationService_Factory;
-
-    move-object v8, v4
-
-    invoke-direct/range {v8 .. v14}, Lde/rki/coronawarnapp/covidcertificate/booster/BoosterNotificationService_Factory;-><init>(Ljavax/inject/Provider;Ljavax/inject/Provider;Ljavax/inject/Provider;Ljavax/inject/Provider;Ljavax/inject/Provider;Ljavax/inject/Provider;)V
+    invoke-direct/range {v5 .. v10}, Lde/rki/coronawarnapp/ccl/dccwalletinfo/update/DccWalletInfoUpdateTrigger_Factory;-><init>(Ljavax/inject/Provider;Ljavax/inject/Provider;Ljavax/inject/Provider;Ljavax/inject/Provider;Ljavax/inject/Provider;)V
 
     instance-of v5, v4, Ldagger/internal/DoubleCheck;
 
-    if-eqz v5, :cond_9
+    if-eqz v5, :cond_d
 
-    goto :goto_9
+    goto :goto_d
 
-    :cond_9
+    :cond_d
     new-instance v5, Ldagger/internal/DoubleCheck;
 
     invoke-direct {v5, v4}, Ldagger/internal/DoubleCheck;-><init>(Ljavax/inject/Provider;)V
 
     move-object v4, v5
 
-    :goto_9
-    iput-object v4, v0, Lde/rki/coronawarnapp/util/di/DaggerApplicationComponent;->boosterNotificationServiceProvider:Ljavax/inject/Provider;
+    :goto_d
+    iput-object v4, v0, Lde/rki/coronawarnapp/util/di/DaggerApplicationComponent;->dccWalletInfoUpdateTriggerProvider:Ljavax/inject/Provider;
 
-    new-instance v5, Lde/rki/coronawarnapp/covidcertificate/booster/BoosterCheckWorker_Factory;
+    iget-object v6, v0, Lde/rki/coronawarnapp/util/di/DaggerApplicationComponent;->timeStamperProvider:Ljavax/inject/Provider;
 
-    invoke-direct {v5, v4}, Lde/rki/coronawarnapp/covidcertificate/booster/BoosterCheckWorker_Factory;-><init>(Ljavax/inject/Provider;)V
+    iget-object v7, v0, Lde/rki/coronawarnapp/util/di/DaggerApplicationComponent;->cCLSettingsProvider:Ljavax/inject/Provider;
 
-    new-instance v4, Lde/rki/coronawarnapp/covidcertificate/booster/BoosterCheckWorker_Factory_Impl;
+    iget-object v8, v0, Lde/rki/coronawarnapp/util/di/DaggerApplicationComponent;->boosterRulesRepositoryProvider:Ljavax/inject/Provider;
 
-    invoke-direct {v4, v5}, Lde/rki/coronawarnapp/covidcertificate/booster/BoosterCheckWorker_Factory_Impl;-><init>(Lde/rki/coronawarnapp/covidcertificate/booster/BoosterCheckWorker_Factory;)V
+    iget-object v9, v0, Lde/rki/coronawarnapp/util/di/DaggerApplicationComponent;->cCLConfigurationRepositoryProvider:Ljavax/inject/Provider;
+
+    iget-object v10, v0, Lde/rki/coronawarnapp/util/di/DaggerApplicationComponent;->dccWalletInfoUpdateTriggerProvider:Ljavax/inject/Provider;
+
+    new-instance v4, Lde/rki/coronawarnapp/ccl/configuration/update/CCLConfigurationUpdater_Factory;
+
+    move-object v5, v4
+
+    invoke-direct/range {v5 .. v10}, Lde/rki/coronawarnapp/ccl/configuration/update/CCLConfigurationUpdater_Factory;-><init>(Ljavax/inject/Provider;Ljavax/inject/Provider;Ljavax/inject/Provider;Ljavax/inject/Provider;Ljavax/inject/Provider;)V
+
+    instance-of v5, v4, Ldagger/internal/DoubleCheck;
+
+    if-eqz v5, :cond_e
+
+    goto :goto_e
+
+    :cond_e
+    new-instance v5, Ldagger/internal/DoubleCheck;
+
+    invoke-direct {v5, v4}, Ldagger/internal/DoubleCheck;-><init>(Ljavax/inject/Provider;)V
+
+    move-object v4, v5
+
+    :goto_e
+    iput-object v4, v0, Lde/rki/coronawarnapp/util/di/DaggerApplicationComponent;->cCLConfigurationUpdaterProvider:Ljavax/inject/Provider;
+
+    new-instance v5, Lde/rki/coronawarnapp/ccl/configuration/update/CCLConfigurationUpdateWorker_Factory;
+
+    invoke-direct {v5, v4}, Lde/rki/coronawarnapp/ccl/configuration/update/CCLConfigurationUpdateWorker_Factory;-><init>(Ljavax/inject/Provider;)V
+
+    new-instance v4, Lde/rki/coronawarnapp/ccl/configuration/update/CCLConfigurationUpdateWorker_Factory_Impl;
+
+    invoke-direct {v4, v5}, Lde/rki/coronawarnapp/ccl/configuration/update/CCLConfigurationUpdateWorker_Factory_Impl;-><init>(Lde/rki/coronawarnapp/ccl/configuration/update/CCLConfigurationUpdateWorker_Factory;)V
 
     new-instance v5, Ldagger/internal/InstanceFactory;
 
     invoke-direct {v5, v4}, Ldagger/internal/InstanceFactory;-><init>(Ljava/lang/Object;)V
 
-    iput-object v5, v0, Lde/rki/coronawarnapp/util/di/DaggerApplicationComponent;->factoryProvider30:Ljavax/inject/Provider;
+    iput-object v5, v0, Lde/rki/coronawarnapp/util/di/DaggerApplicationComponent;->factoryProvider32:Ljavax/inject/Provider;
 
     const/16 v4, 0x11
 
-    invoke-static {v4}, Lkotlin/collections/ArraysUtilJVM;->newLinkedHashMapWithExpectedSize(I)Ljava/util/LinkedHashMap;
+    invoke-static {v4}, Ldagger/internal/DaggerCollections;->newLinkedHashMapWithExpectedSize(I)Ljava/util/LinkedHashMap;
 
     move-result-object v4
 
     const-class v5, Lde/rki/coronawarnapp/nearby/ExposureStateUpdateWorker;
 
-    iget-object v6, v0, Lde/rki/coronawarnapp/util/di/DaggerApplicationComponent;->factoryProvider14:Ljavax/inject/Provider;
+    iget-object v6, v0, Lde/rki/coronawarnapp/util/di/DaggerApplicationComponent;->factoryProvider16:Ljavax/inject/Provider;
 
     const-string v7, "provider"
 
@@ -10599,7 +13097,7 @@
 
     const-class v5, Lde/rki/coronawarnapp/deniability/BackgroundNoiseOneTimeWorker;
 
-    iget-object v6, v0, Lde/rki/coronawarnapp/util/di/DaggerApplicationComponent;->factoryProvider15:Ljavax/inject/Provider;
+    iget-object v6, v0, Lde/rki/coronawarnapp/util/di/DaggerApplicationComponent;->factoryProvider17:Ljavax/inject/Provider;
 
     invoke-static {v6, v7}, Ljava/util/Objects;->requireNonNull(Ljava/lang/Object;Ljava/lang/String;)Ljava/lang/Object;
 
@@ -10607,7 +13105,7 @@
 
     const-class v5, Lde/rki/coronawarnapp/deniability/BackgroundNoisePeriodicWorker;
 
-    iget-object v6, v0, Lde/rki/coronawarnapp/util/di/DaggerApplicationComponent;->factoryProvider16:Ljavax/inject/Provider;
+    iget-object v6, v0, Lde/rki/coronawarnapp/util/di/DaggerApplicationComponent;->factoryProvider18:Ljavax/inject/Provider;
 
     invoke-static {v6, v7}, Ljava/util/Objects;->requireNonNull(Ljava/lang/Object;Ljava/lang/String;)Ljava/lang/Object;
 
@@ -10615,7 +13113,7 @@
 
     const-class v5, Lde/rki/coronawarnapp/diagnosiskeys/execution/DiagnosisKeyRetrievalWorker;
 
-    iget-object v6, v0, Lde/rki/coronawarnapp/util/di/DaggerApplicationComponent;->factoryProvider17:Ljavax/inject/Provider;
+    iget-object v6, v0, Lde/rki/coronawarnapp/util/di/DaggerApplicationComponent;->factoryProvider19:Ljavax/inject/Provider;
 
     invoke-static {v6, v7}, Ljava/util/Objects;->requireNonNull(Ljava/lang/Object;Ljava/lang/String;)Ljava/lang/Object;
 
@@ -10623,7 +13121,7 @@
 
     const-class v5, Lde/rki/coronawarnapp/coronatest/type/pcr/execution/PCRResultRetrievalWorker;
 
-    iget-object v6, v0, Lde/rki/coronawarnapp/util/di/DaggerApplicationComponent;->factoryProvider18:Ljavax/inject/Provider;
+    iget-object v6, v0, Lde/rki/coronawarnapp/util/di/DaggerApplicationComponent;->factoryProvider20:Ljavax/inject/Provider;
 
     invoke-static {v6, v7}, Ljava/util/Objects;->requireNonNull(Ljava/lang/Object;Ljava/lang/String;)Ljava/lang/Object;
 
@@ -10631,7 +13129,7 @@
 
     const-class v5, Lde/rki/coronawarnapp/coronatest/type/rapidantigen/execution/RAResultRetrievalWorker;
 
-    iget-object v6, v0, Lde/rki/coronawarnapp/util/di/DaggerApplicationComponent;->factoryProvider19:Ljavax/inject/Provider;
+    iget-object v6, v0, Lde/rki/coronawarnapp/util/di/DaggerApplicationComponent;->factoryProvider21:Ljavax/inject/Provider;
 
     invoke-static {v6, v7}, Ljava/util/Objects;->requireNonNull(Ljava/lang/Object;Ljava/lang/String;)Ljava/lang/Object;
 
@@ -10639,7 +13137,7 @@
 
     const-class v5, Lde/rki/coronawarnapp/deadman/DeadmanNotificationOneTimeWorker;
 
-    iget-object v6, v0, Lde/rki/coronawarnapp/util/di/DaggerApplicationComponent;->factoryProvider20:Ljavax/inject/Provider;
+    iget-object v6, v0, Lde/rki/coronawarnapp/util/di/DaggerApplicationComponent;->factoryProvider22:Ljavax/inject/Provider;
 
     invoke-static {v6, v7}, Ljava/util/Objects;->requireNonNull(Ljava/lang/Object;Ljava/lang/String;)Ljava/lang/Object;
 
@@ -10647,7 +13145,7 @@
 
     const-class v5, Lde/rki/coronawarnapp/deadman/DeadmanNotificationPeriodicWorker;
 
-    iget-object v6, v0, Lde/rki/coronawarnapp/util/di/DaggerApplicationComponent;->factoryProvider21:Ljavax/inject/Provider;
+    iget-object v6, v0, Lde/rki/coronawarnapp/util/di/DaggerApplicationComponent;->factoryProvider23:Ljavax/inject/Provider;
 
     invoke-static {v6, v7}, Ljava/util/Objects;->requireNonNull(Ljava/lang/Object;Ljava/lang/String;)Ljava/lang/Object;
 
@@ -10655,7 +13153,7 @@
 
     const-class v5, Lde/rki/coronawarnapp/submission/auto/SubmissionWorker;
 
-    iget-object v6, v0, Lde/rki/coronawarnapp/util/di/DaggerApplicationComponent;->factoryProvider22:Ljavax/inject/Provider;
+    iget-object v6, v0, Lde/rki/coronawarnapp/util/di/DaggerApplicationComponent;->factoryProvider24:Ljavax/inject/Provider;
 
     invoke-static {v6, v7}, Ljava/util/Objects;->requireNonNull(Ljava/lang/Object;Ljava/lang/String;)Ljava/lang/Object;
 
@@ -10663,7 +13161,7 @@
 
     const-class v5, Lde/rki/coronawarnapp/contactdiary/retention/ContactDiaryRetentionWorker;
 
-    iget-object v6, v0, Lde/rki/coronawarnapp/util/di/DaggerApplicationComponent;->factoryProvider23:Ljavax/inject/Provider;
+    iget-object v6, v0, Lde/rki/coronawarnapp/util/di/DaggerApplicationComponent;->factoryProvider25:Ljavax/inject/Provider;
 
     invoke-static {v6, v7}, Ljava/util/Objects;->requireNonNull(Ljava/lang/Object;Ljava/lang/String;)Ljava/lang/Object;
 
@@ -10671,7 +13169,7 @@
 
     const-class v5, Lde/rki/coronawarnapp/datadonation/analytics/worker/DataDonationAnalyticsPeriodicWorker;
 
-    iget-object v6, v0, Lde/rki/coronawarnapp/util/di/DaggerApplicationComponent;->factoryProvider24:Ljavax/inject/Provider;
+    iget-object v6, v0, Lde/rki/coronawarnapp/util/di/DaggerApplicationComponent;->factoryProvider26:Ljavax/inject/Provider;
 
     invoke-static {v6, v7}, Ljava/util/Objects;->requireNonNull(Ljava/lang/Object;Ljava/lang/String;)Ljava/lang/Object;
 
@@ -10679,7 +13177,7 @@
 
     const-class v5, Lde/rki/coronawarnapp/presencetracing/checkins/checkout/auto/AutoCheckOutWorker;
 
-    iget-object v6, v0, Lde/rki/coronawarnapp/util/di/DaggerApplicationComponent;->factoryProvider25:Ljavax/inject/Provider;
+    iget-object v6, v0, Lde/rki/coronawarnapp/util/di/DaggerApplicationComponent;->factoryProvider27:Ljavax/inject/Provider;
 
     invoke-static {v6, v7}, Ljava/util/Objects;->requireNonNull(Ljava/lang/Object;Ljava/lang/String;)Ljava/lang/Object;
 
@@ -10687,7 +13185,7 @@
 
     const-class v5, Lde/rki/coronawarnapp/presencetracing/storage/retention/TraceLocationDbCleanUpPeriodicWorker;
 
-    iget-object v6, v0, Lde/rki/coronawarnapp/util/di/DaggerApplicationComponent;->factoryProvider26:Ljavax/inject/Provider;
+    iget-object v6, v0, Lde/rki/coronawarnapp/util/di/DaggerApplicationComponent;->factoryProvider28:Ljavax/inject/Provider;
 
     invoke-static {v6, v7}, Ljava/util/Objects;->requireNonNull(Ljava/lang/Object;Ljava/lang/String;)Ljava/lang/Object;
 
@@ -10695,7 +13193,7 @@
 
     const-class v5, Lde/rki/coronawarnapp/presencetracing/risk/execution/PresenceTracingWarningWorker;
 
-    iget-object v6, v0, Lde/rki/coronawarnapp/util/di/DaggerApplicationComponent;->factoryProvider27:Ljavax/inject/Provider;
+    iget-object v6, v0, Lde/rki/coronawarnapp/util/di/DaggerApplicationComponent;->factoryProvider29:Ljavax/inject/Provider;
 
     invoke-static {v6, v7}, Ljava/util/Objects;->requireNonNull(Ljava/lang/Object;Ljava/lang/String;)Ljava/lang/Object;
 
@@ -10703,7 +13201,7 @@
 
     const-class v5, Lde/rki/coronawarnapp/covidcertificate/test/core/execution/TestCertificateRetrievalWorker;
 
-    iget-object v6, v0, Lde/rki/coronawarnapp/util/di/DaggerApplicationComponent;->factoryProvider28:Ljavax/inject/Provider;
+    iget-object v6, v0, Lde/rki/coronawarnapp/util/di/DaggerApplicationComponent;->factoryProvider30:Ljavax/inject/Provider;
 
     invoke-static {v6, v7}, Ljava/util/Objects;->requireNonNull(Ljava/lang/Object;Ljava/lang/String;)Ljava/lang/Object;
 
@@ -10711,15 +13209,15 @@
 
     const-class v5, Lde/rki/coronawarnapp/covidcertificate/common/statecheck/DccStateCheckWorker;
 
-    iget-object v6, v0, Lde/rki/coronawarnapp/util/di/DaggerApplicationComponent;->factoryProvider29:Ljavax/inject/Provider;
+    iget-object v6, v0, Lde/rki/coronawarnapp/util/di/DaggerApplicationComponent;->factoryProvider31:Ljavax/inject/Provider;
 
     invoke-static {v6, v7}, Ljava/util/Objects;->requireNonNull(Ljava/lang/Object;Ljava/lang/String;)Ljava/lang/Object;
 
     invoke-virtual {v4, v5, v6}, Ljava/util/LinkedHashMap;->put(Ljava/lang/Object;Ljava/lang/Object;)Ljava/lang/Object;
 
-    const-class v5, Lde/rki/coronawarnapp/covidcertificate/booster/BoosterCheckWorker;
+    const-class v5, Lde/rki/coronawarnapp/ccl/configuration/update/CCLConfigurationUpdateWorker;
 
-    iget-object v6, v0, Lde/rki/coronawarnapp/util/di/DaggerApplicationComponent;->factoryProvider30:Ljavax/inject/Provider;
+    iget-object v6, v0, Lde/rki/coronawarnapp/util/di/DaggerApplicationComponent;->factoryProvider32:Ljavax/inject/Provider;
 
     invoke-static {v6, v7}, Ljava/util/Objects;->requireNonNull(Ljava/lang/Object;Ljava/lang/String;)Ljava/lang/Object;
 
@@ -10743,71 +13241,77 @@
 
     iput-object v4, v0, Lde/rki/coronawarnapp/util/di/DaggerApplicationComponent;->cWAWorkerFactoryProvider:Ljavax/inject/Provider;
 
-    iget-object v5, v0, Lde/rki/coronawarnapp/util/di/DaggerApplicationComponent;->contextProvider:Ljavax/inject/Provider;
+    iget-object v4, v0, Lde/rki/coronawarnapp/util/di/DaggerApplicationComponent;->contextProvider:Ljavax/inject/Provider;
+
+    iget-object v5, v0, Lde/rki/coronawarnapp/util/di/DaggerApplicationComponent;->cWAWorkerFactoryProvider:Ljavax/inject/Provider;
 
     new-instance v6, Lde/rki/coronawarnapp/util/worker/WorkManagerProvider_Factory;
 
-    invoke-direct {v6, v5, v4}, Lde/rki/coronawarnapp/util/worker/WorkManagerProvider_Factory;-><init>(Ljavax/inject/Provider;Ljavax/inject/Provider;)V
+    invoke-direct {v6, v4, v5}, Lde/rki/coronawarnapp/util/worker/WorkManagerProvider_Factory;-><init>(Ljavax/inject/Provider;Ljavax/inject/Provider;)V
 
     instance-of v4, v6, Ldagger/internal/DoubleCheck;
 
-    if-eqz v4, :cond_a
+    if-eqz v4, :cond_f
 
-    goto :goto_a
+    goto :goto_f
 
-    :cond_a
+    :cond_f
     new-instance v4, Ldagger/internal/DoubleCheck;
 
     invoke-direct {v4, v6}, Ldagger/internal/DoubleCheck;-><init>(Ljavax/inject/Provider;)V
 
     move-object v6, v4
 
-    :goto_a
+    :goto_f
     iput-object v6, v0, Lde/rki/coronawarnapp/util/di/DaggerApplicationComponent;->workManagerProvider2:Ljavax/inject/Provider;
 
     iget-object v4, v0, Lde/rki/coronawarnapp/util/di/DaggerApplicationComponent;->workManagerProvider:Ljavax/inject/Provider;
 
-    new-instance v5, Lde/rki/coronawarnapp/util/di/AndroidModule_WorkManagerFactory;
+    iget-object v5, v0, Lde/rki/coronawarnapp/util/di/DaggerApplicationComponent;->workManagerProvider2:Ljavax/inject/Provider;
+
+    new-instance v6, Lde/rki/coronawarnapp/util/di/AndroidModule_WorkManagerFactory;
 
     move-object/from16 v7, p1
 
-    invoke-direct {v5, v7, v6}, Lde/rki/coronawarnapp/util/di/AndroidModule_WorkManagerFactory;-><init>(Lde/rki/coronawarnapp/util/di/AndroidModule;Ljavax/inject/Provider;)V
+    invoke-direct {v6, v7, v5}, Lde/rki/coronawarnapp/util/di/AndroidModule_WorkManagerFactory;-><init>(Lde/rki/coronawarnapp/util/di/AndroidModule;Ljavax/inject/Provider;)V
 
-    instance-of v6, v5, Ldagger/internal/DoubleCheck;
+    instance-of v5, v6, Ldagger/internal/DoubleCheck;
 
-    if-eqz v6, :cond_b
+    if-eqz v5, :cond_10
 
-    goto :goto_b
+    goto :goto_10
 
-    :cond_b
-    new-instance v6, Ldagger/internal/DoubleCheck;
+    :cond_10
+    new-instance v5, Ldagger/internal/DoubleCheck;
 
-    invoke-direct {v6, v5}, Ldagger/internal/DoubleCheck;-><init>(Ljavax/inject/Provider;)V
+    invoke-direct {v5, v6}, Ldagger/internal/DoubleCheck;-><init>(Ljavax/inject/Provider;)V
 
-    move-object v5, v6
+    move-object v6, v5
 
-    :goto_b
+    :goto_10
     check-cast v4, Ldagger/internal/DelegateFactory;
 
-    iget-object v6, v4, Ldagger/internal/DelegateFactory;->delegate:Ljavax/inject/Provider;
+    iget-object v5, v4, Ldagger/internal/DelegateFactory;->delegate:Ljavax/inject/Provider;
 
-    if-nez v6, :cond_26
+    if-nez v5, :cond_2b
 
-    iput-object v5, v4, Ldagger/internal/DelegateFactory;->delegate:Ljavax/inject/Provider;
+    iput-object v6, v4, Ldagger/internal/DelegateFactory;->delegate:Ljavax/inject/Provider;
 
     sget-object v4, Lde/rki/coronawarnapp/diagnosiskeys/execution/DiagnosisKeyRetrievalWorkBuilder_Factory$InstanceHolder;->INSTANCE:Lde/rki/coronawarnapp/diagnosiskeys/execution/DiagnosisKeyRetrievalWorkBuilder_Factory;
 
     invoke-static {v4}, Ldagger/internal/SingleCheck;->provider(Ljavax/inject/Provider;)Ljavax/inject/Provider;
 
-    move-result-object v9
+    move-result-object v4
 
-    iput-object v9, v0, Lde/rki/coronawarnapp/util/di/DaggerApplicationComponent;->diagnosisKeyRetrievalWorkBuilderProvider:Ljavax/inject/Provider;
+    iput-object v4, v0, Lde/rki/coronawarnapp/util/di/DaggerApplicationComponent;->diagnosisKeyRetrievalWorkBuilderProvider:Ljavax/inject/Provider;
 
     iget-object v6, v0, Lde/rki/coronawarnapp/util/di/DaggerApplicationComponent;->appCoroutineScopeProvider:Ljavax/inject/Provider;
 
     iget-object v7, v0, Lde/rki/coronawarnapp/util/di/DaggerApplicationComponent;->workManagerProvider:Ljavax/inject/Provider;
 
     iget-object v8, v0, Lde/rki/coronawarnapp/util/di/DaggerApplicationComponent;->taskControllerProvider:Ljavax/inject/Provider;
+
+    iget-object v9, v0, Lde/rki/coronawarnapp/util/di/DaggerApplicationComponent;->diagnosisKeyRetrievalWorkBuilderProvider:Ljavax/inject/Provider;
 
     iget-object v10, v0, Lde/rki/coronawarnapp/util/di/DaggerApplicationComponent;->backgroundModeStatusProvider:Ljavax/inject/Provider;
 
@@ -10845,18 +13349,18 @@
 
     instance-of v4, v5, Ldagger/internal/DoubleCheck;
 
-    if-eqz v4, :cond_c
+    if-eqz v4, :cond_11
 
-    goto :goto_c
+    goto :goto_11
 
-    :cond_c
+    :cond_11
     new-instance v4, Ldagger/internal/DoubleCheck;
 
     invoke-direct {v4, v5}, Ldagger/internal/DoubleCheck;-><init>(Ljavax/inject/Provider;)V
 
     move-object v5, v4
 
-    :goto_c
+    :goto_11
     iput-object v5, v0, Lde/rki/coronawarnapp/util/di/DaggerApplicationComponent;->traceLocationSettingsProvider:Ljavax/inject/Provider;
 
     iget-object v7, v0, Lde/rki/coronawarnapp/util/di/DaggerApplicationComponent;->appCoroutineScopeProvider:Ljavax/inject/Provider;
@@ -10903,18 +13407,18 @@
 
     instance-of v5, v4, Ldagger/internal/DoubleCheck;
 
-    if-eqz v5, :cond_d
+    if-eqz v5, :cond_12
 
-    goto :goto_d
+    goto :goto_12
 
-    :cond_d
+    :cond_12
     new-instance v5, Ldagger/internal/DoubleCheck;
 
     invoke-direct {v5, v4}, Ldagger/internal/DoubleCheck;-><init>(Ljavax/inject/Provider;)V
 
     move-object v4, v5
 
-    :goto_d
+    :goto_12
     iput-object v4, v0, Lde/rki/coronawarnapp/util/di/DaggerApplicationComponent;->watchdogServiceProvider:Ljavax/inject/Provider;
 
     iget-object v7, v0, Lde/rki/coronawarnapp/util/di/DaggerApplicationComponent;->cdnHttpClientProvider4:Ljavax/inject/Provider;
@@ -10935,18 +13439,18 @@
 
     instance-of v5, v4, Ldagger/internal/DoubleCheck;
 
-    if-eqz v5, :cond_e
+    if-eqz v5, :cond_13
 
-    goto :goto_e
+    goto :goto_13
 
-    :cond_e
+    :cond_13
     new-instance v5, Ldagger/internal/DoubleCheck;
 
     invoke-direct {v5, v4}, Ldagger/internal/DoubleCheck;-><init>(Ljavax/inject/Provider;)V
 
     move-object v4, v5
 
-    :goto_e
+    :goto_13
     iput-object v4, v0, Lde/rki/coronawarnapp/util/di/DaggerApplicationComponent;->provideSurveyApiProvider:Ljavax/inject/Provider;
 
     iget-object v5, v0, Lde/rki/coronawarnapp/util/di/DaggerApplicationComponent;->defaultDispatcherProvider:Ljavax/inject/Provider;
@@ -10957,18 +13461,18 @@
 
     instance-of v4, v6, Ldagger/internal/DoubleCheck;
 
-    if-eqz v4, :cond_f
+    if-eqz v4, :cond_14
 
-    goto :goto_f
+    goto :goto_14
 
-    :cond_f
+    :cond_14
     new-instance v4, Ldagger/internal/DoubleCheck;
 
     invoke-direct {v4, v6}, Ldagger/internal/DoubleCheck;-><init>(Ljavax/inject/Provider;)V
 
     move-object v6, v4
 
-    :goto_f
+    :goto_14
     iput-object v6, v0, Lde/rki/coronawarnapp/util/di/DaggerApplicationComponent;->surveyServerProvider:Ljavax/inject/Provider;
 
     iget-object v4, v0, Lde/rki/coronawarnapp/util/di/DaggerApplicationComponent;->contextProvider:Ljavax/inject/Provider;
@@ -10981,18 +13485,18 @@
 
     instance-of v4, v6, Ldagger/internal/DoubleCheck;
 
-    if-eqz v4, :cond_10
+    if-eqz v4, :cond_15
 
-    goto :goto_10
+    goto :goto_15
 
-    :cond_10
+    :cond_15
     new-instance v4, Ldagger/internal/DoubleCheck;
 
     invoke-direct {v4, v6}, Ldagger/internal/DoubleCheck;-><init>(Ljavax/inject/Provider;)V
 
     move-object v6, v4
 
-    :goto_10
+    :goto_15
     iput-object v6, v0, Lde/rki/coronawarnapp/util/di/DaggerApplicationComponent;->surveySettingsProvider:Ljavax/inject/Provider;
 
     new-instance v4, Lde/rki/coronawarnapp/datadonation/storage/OTPRepository_Factory;
@@ -11001,18 +13505,18 @@
 
     instance-of v5, v4, Ldagger/internal/DoubleCheck;
 
-    if-eqz v5, :cond_11
+    if-eqz v5, :cond_16
 
-    goto :goto_11
+    goto :goto_16
 
-    :cond_11
+    :cond_16
     new-instance v5, Ldagger/internal/DoubleCheck;
 
     invoke-direct {v5, v4}, Ldagger/internal/DoubleCheck;-><init>(Ljavax/inject/Provider;)V
 
     move-object v4, v5
 
-    :goto_11
+    :goto_16
     iput-object v4, v0, Lde/rki/coronawarnapp/util/di/DaggerApplicationComponent;->oTPRepositoryProvider:Ljavax/inject/Provider;
 
     iget-object v4, v0, Lde/rki/coronawarnapp/util/di/DaggerApplicationComponent;->appConfigProvider:Ljavax/inject/Provider;
@@ -11049,18 +13553,18 @@
 
     instance-of v5, v4, Ldagger/internal/DoubleCheck;
 
-    if-eqz v5, :cond_12
+    if-eqz v5, :cond_17
 
-    goto :goto_12
+    goto :goto_17
 
-    :cond_12
+    :cond_17
     new-instance v5, Ldagger/internal/DoubleCheck;
 
     invoke-direct {v5, v4}, Ldagger/internal/DoubleCheck;-><init>(Ljavax/inject/Provider;)V
 
     move-object v4, v5
 
-    :goto_12
+    :goto_17
     iput-object v4, v0, Lde/rki/coronawarnapp/util/di/DaggerApplicationComponent;->surveysProvider:Ljavax/inject/Provider;
 
     sget-object v4, Lde/rki/coronawarnapp/contactdiary/retention/ContactDiaryWorkBuilder_Factory$InstanceHolder;->INSTANCE:Lde/rki/coronawarnapp/contactdiary/retention/ContactDiaryWorkBuilder_Factory;
@@ -11153,18 +13657,18 @@
 
     instance-of v4, v8, Ldagger/internal/DoubleCheck;
 
-    if-eqz v4, :cond_13
+    if-eqz v4, :cond_18
 
-    goto :goto_13
+    goto :goto_18
 
-    :cond_13
+    :cond_18
     new-instance v4, Ldagger/internal/DoubleCheck;
 
     invoke-direct {v4, v8}, Ldagger/internal/DoubleCheck;-><init>(Ljavax/inject/Provider;)V
 
     move-object v8, v4
 
-    :goto_13
+    :goto_18
     iput-object v8, v0, Lde/rki/coronawarnapp/util/di/DaggerApplicationComponent;->deviceTimeHandlerProvider:Ljavax/inject/Provider;
 
     iget-object v4, v0, Lde/rki/coronawarnapp/util/di/DaggerApplicationComponent;->workManagerProvider:Ljavax/inject/Provider;
@@ -11209,18 +13713,18 @@
 
     instance-of v4, v8, Ldagger/internal/DoubleCheck;
 
-    if-eqz v4, :cond_14
+    if-eqz v4, :cond_19
 
-    goto :goto_14
+    goto :goto_19
 
-    :cond_14
+    :cond_19
     new-instance v4, Ldagger/internal/DoubleCheck;
 
     invoke-direct {v4, v8}, Ldagger/internal/DoubleCheck;-><init>(Ljavax/inject/Provider;)V
 
     move-object v8, v4
 
-    :goto_14
+    :goto_19
     iput-object v8, v0, Lde/rki/coronawarnapp/util/di/DaggerApplicationComponent;->shareTestResultNotificationServiceProvider:Ljavax/inject/Provider;
 
     iget-object v4, v0, Lde/rki/coronawarnapp/util/di/DaggerApplicationComponent;->appCoroutineScopeProvider:Ljavax/inject/Provider;
@@ -11235,18 +13739,18 @@
 
     instance-of v4, v7, Ldagger/internal/DoubleCheck;
 
-    if-eqz v4, :cond_15
+    if-eqz v4, :cond_1a
 
-    goto :goto_15
+    goto :goto_1a
 
-    :cond_15
+    :cond_1a
     new-instance v4, Ldagger/internal/DoubleCheck;
 
     invoke-direct {v4, v7}, Ldagger/internal/DoubleCheck;-><init>(Ljavax/inject/Provider;)V
 
     move-object v7, v4
 
-    :goto_15
+    :goto_1a
     iput-object v7, v0, Lde/rki/coronawarnapp/util/di/DaggerApplicationComponent;->pCRResultSchedulerProvider:Ljavax/inject/Provider;
 
     iget-object v9, v0, Lde/rki/coronawarnapp/util/di/DaggerApplicationComponent;->contextProvider:Ljavax/inject/Provider;
@@ -11269,18 +13773,18 @@
 
     instance-of v5, v4, Ldagger/internal/DoubleCheck;
 
-    if-eqz v5, :cond_16
+    if-eqz v5, :cond_1b
 
-    goto :goto_16
+    goto :goto_1b
 
-    :cond_16
+    :cond_1b
     new-instance v5, Ldagger/internal/DoubleCheck;
 
     invoke-direct {v5, v4}, Ldagger/internal/DoubleCheck;-><init>(Ljavax/inject/Provider;)V
 
     move-object v4, v5
 
-    :goto_16
+    :goto_1b
     iput-object v4, v0, Lde/rki/coronawarnapp/util/di/DaggerApplicationComponent;->rATTestResultAvailableNotificationServiceProvider:Ljavax/inject/Provider;
 
     iget-object v6, v0, Lde/rki/coronawarnapp/util/di/DaggerApplicationComponent;->appCoroutineScopeProvider:Ljavax/inject/Provider;
@@ -11301,18 +13805,18 @@
 
     instance-of v5, v4, Ldagger/internal/DoubleCheck;
 
-    if-eqz v5, :cond_17
+    if-eqz v5, :cond_1c
 
-    goto :goto_17
+    goto :goto_1c
 
-    :cond_17
+    :cond_1c
     new-instance v5, Ldagger/internal/DoubleCheck;
 
     invoke-direct {v5, v4}, Ldagger/internal/DoubleCheck;-><init>(Ljavax/inject/Provider;)V
 
     move-object v4, v5
 
-    :goto_17
+    :goto_1c
     iput-object v4, v0, Lde/rki/coronawarnapp/util/di/DaggerApplicationComponent;->testCertificateRetrievalSchedulerProvider:Ljavax/inject/Provider;
 
     iget-object v4, v0, Lde/rki/coronawarnapp/util/di/DaggerApplicationComponent;->contextProvider:Ljavax/inject/Provider;
@@ -11325,18 +13829,18 @@
 
     instance-of v4, v6, Ldagger/internal/DoubleCheck;
 
-    if-eqz v4, :cond_18
+    if-eqz v4, :cond_1d
 
-    goto :goto_18
+    goto :goto_1d
 
-    :cond_18
+    :cond_1d
     new-instance v4, Ldagger/internal/DoubleCheck;
 
     invoke-direct {v4, v6}, Ldagger/internal/DoubleCheck;-><init>(Ljavax/inject/Provider;)V
 
     move-object v6, v4
 
-    :goto_18
+    :goto_1d
     iput-object v6, v0, Lde/rki/coronawarnapp/util/di/DaggerApplicationComponent;->localStatisticsConfigStorageProvider:Ljavax/inject/Provider;
 
     iget-object v4, v0, Lde/rki/coronawarnapp/util/di/DaggerApplicationComponent;->cacheDirProvider:Ljavax/inject/Provider;
@@ -11349,18 +13853,18 @@
 
     instance-of v4, v5, Ldagger/internal/DoubleCheck;
 
-    if-eqz v4, :cond_19
+    if-eqz v4, :cond_1e
 
-    goto :goto_19
+    goto :goto_1e
 
-    :cond_19
+    :cond_1e
     new-instance v4, Ldagger/internal/DoubleCheck;
 
     invoke-direct {v4, v5}, Ldagger/internal/DoubleCheck;-><init>(Ljavax/inject/Provider;)V
 
     move-object v5, v4
 
-    :goto_19
+    :goto_1e
     iput-object v5, v0, Lde/rki/coronawarnapp/util/di/DaggerApplicationComponent;->httpCacheProvider2:Ljavax/inject/Provider;
 
     iget-object v8, v0, Lde/rki/coronawarnapp/util/di/DaggerApplicationComponent;->cdnHttpClientProvider:Ljavax/inject/Provider;
@@ -11371,30 +13875,28 @@
 
     iget-object v11, v0, Lde/rki/coronawarnapp/util/di/DaggerApplicationComponent;->httpCacheProvider2:Ljavax/inject/Provider;
 
-    new-instance v4, Lde/rki/coronawarnapp/statistics/StatisticsModule_ApiFactory;
-
-    const/4 v12, 0x1
+    new-instance v4, Lde/rki/coronawarnapp/statistics/StatisticsModule_LocalApiFactory;
 
     move-object v6, v4
 
     move-object/from16 v7, p5
 
-    invoke-direct/range {v6 .. v12}, Lde/rki/coronawarnapp/statistics/StatisticsModule_ApiFactory;-><init>(Lde/rki/coronawarnapp/statistics/StatisticsModule;Ljavax/inject/Provider;Ljavax/inject/Provider;Ljavax/inject/Provider;Ljavax/inject/Provider;I)V
+    invoke-direct/range {v6 .. v11}, Lde/rki/coronawarnapp/statistics/StatisticsModule_LocalApiFactory;-><init>(Lde/rki/coronawarnapp/statistics/StatisticsModule;Ljavax/inject/Provider;Ljavax/inject/Provider;Ljavax/inject/Provider;Ljavax/inject/Provider;)V
 
     instance-of v5, v4, Ldagger/internal/DoubleCheck;
 
-    if-eqz v5, :cond_1a
+    if-eqz v5, :cond_1f
 
-    goto :goto_1a
+    goto :goto_1f
 
-    :cond_1a
+    :cond_1f
     new-instance v5, Ldagger/internal/DoubleCheck;
 
     invoke-direct {v5, v4}, Ldagger/internal/DoubleCheck;-><init>(Ljavax/inject/Provider;)V
 
     move-object v4, v5
 
-    :goto_1a
+    :goto_1f
     iput-object v4, v0, Lde/rki/coronawarnapp/util/di/DaggerApplicationComponent;->localApiProvider:Ljavax/inject/Provider;
 
     iget-object v5, v0, Lde/rki/coronawarnapp/util/di/DaggerApplicationComponent;->signatureValidationProvider:Ljavax/inject/Provider;
@@ -11419,18 +13921,18 @@
 
     instance-of v4, v5, Ldagger/internal/DoubleCheck;
 
-    if-eqz v4, :cond_1b
+    if-eqz v4, :cond_20
 
-    goto :goto_1b
+    goto :goto_20
 
-    :cond_1b
+    :cond_20
     new-instance v4, Ldagger/internal/DoubleCheck;
 
     invoke-direct {v4, v5}, Ldagger/internal/DoubleCheck;-><init>(Ljavax/inject/Provider;)V
 
     move-object v5, v4
 
-    :goto_1b
+    :goto_20
     iput-object v5, v0, Lde/rki/coronawarnapp/util/di/DaggerApplicationComponent;->localStatisticsCacheProvider:Ljavax/inject/Provider;
 
     iget-object v4, v0, Lde/rki/coronawarnapp/util/di/DaggerApplicationComponent;->localStatisticsConfigStorageProvider:Ljavax/inject/Provider;
@@ -11465,18 +13967,18 @@
 
     instance-of v5, v4, Ldagger/internal/DoubleCheck;
 
-    if-eqz v5, :cond_1c
+    if-eqz v5, :cond_21
 
-    goto :goto_1c
+    goto :goto_21
 
-    :cond_1c
+    :cond_21
     new-instance v5, Ldagger/internal/DoubleCheck;
 
     invoke-direct {v5, v4}, Ldagger/internal/DoubleCheck;-><init>(Ljavax/inject/Provider;)V
 
     move-object v4, v5
 
-    :goto_1c
+    :goto_21
     iput-object v4, v0, Lde/rki/coronawarnapp/util/di/DaggerApplicationComponent;->localStatisticsProvider:Ljavax/inject/Provider;
 
     iget-object v4, v0, Lde/rki/coronawarnapp/util/di/DaggerApplicationComponent;->foregroundStateProvider:Ljavax/inject/Provider;
@@ -11493,18 +13995,18 @@
 
     instance-of v4, v8, Ldagger/internal/DoubleCheck;
 
-    if-eqz v4, :cond_1d
+    if-eqz v4, :cond_22
 
-    goto :goto_1d
+    goto :goto_22
 
-    :cond_1d
+    :cond_22
     new-instance v4, Ldagger/internal/DoubleCheck;
 
     invoke-direct {v4, v8}, Ldagger/internal/DoubleCheck;-><init>(Ljavax/inject/Provider;)V
 
     move-object v8, v4
 
-    :goto_1d
+    :goto_22
     iput-object v8, v0, Lde/rki/coronawarnapp/util/di/DaggerApplicationComponent;->localStatisticsRetrievalSchedulerProvider:Ljavax/inject/Provider;
 
     sget-object v4, Lde/rki/coronawarnapp/util/qrcode/coil/QrCodeBitMatrixFetcher_Factory$InstanceHolder;->INSTANCE:Lde/rki/coronawarnapp/util/qrcode/coil/QrCodeBitMatrixFetcher_Factory;
@@ -11545,18 +14047,18 @@
 
     instance-of v1, v4, Ldagger/internal/DoubleCheck;
 
-    if-eqz v1, :cond_1e
+    if-eqz v1, :cond_23
 
-    goto :goto_1e
+    goto :goto_23
 
-    :cond_1e
+    :cond_23
     new-instance v1, Ldagger/internal/DoubleCheck;
 
     invoke-direct {v1, v4}, Ldagger/internal/DoubleCheck;-><init>(Ljavax/inject/Provider;)V
 
     move-object v4, v1
 
-    :goto_1e
+    :goto_23
     iput-object v4, v0, Lde/rki/coronawarnapp/util/di/DaggerApplicationComponent;->imageLoaderFactoryProvider:Ljavax/inject/Provider;
 
     iget-object v6, v0, Lde/rki/coronawarnapp/util/di/DaggerApplicationComponent;->appCoroutineScopeProvider:Ljavax/inject/Provider;
@@ -11579,47 +14081,95 @@
 
     instance-of v4, v1, Ldagger/internal/DoubleCheck;
 
-    if-eqz v4, :cond_1f
+    if-eqz v4, :cond_24
 
-    goto :goto_1f
+    goto :goto_24
 
-    :cond_1f
+    :cond_24
     new-instance v4, Ldagger/internal/DoubleCheck;
 
     invoke-direct {v4, v1}, Ldagger/internal/DoubleCheck;-><init>(Ljavax/inject/Provider;)V
 
     move-object v1, v4
 
-    :goto_1f
+    :goto_24
     iput-object v1, v0, Lde/rki/coronawarnapp/util/di/DaggerApplicationComponent;->dccStateCheckSchedulerProvider:Ljavax/inject/Provider;
+
+    iget-object v1, v0, Lde/rki/coronawarnapp/util/di/DaggerApplicationComponent;->vaccinationRepositoryProvider:Ljavax/inject/Provider;
+
+    iget-object v4, v0, Lde/rki/coronawarnapp/util/di/DaggerApplicationComponent;->testCertificateRepositoryProvider:Ljavax/inject/Provider;
+
+    iget-object v5, v0, Lde/rki/coronawarnapp/util/di/DaggerApplicationComponent;->recoveryCertificateRepositoryProvider:Ljavax/inject/Provider;
+
+    iget-object v6, v0, Lde/rki/coronawarnapp/util/di/DaggerApplicationComponent;->appCoroutineScopeProvider:Ljavax/inject/Provider;
+
+    new-instance v7, Lde/rki/coronawarnapp/reyclebin/covidcertificate/RecycledCertificatesProvider_Factory;
+
+    invoke-direct {v7, v1, v4, v5, v6}, Lde/rki/coronawarnapp/reyclebin/covidcertificate/RecycledCertificatesProvider_Factory;-><init>(Ljavax/inject/Provider;Ljavax/inject/Provider;Ljavax/inject/Provider;Ljavax/inject/Provider;)V
+
+    invoke-static {v7}, Ldagger/internal/SingleCheck;->provider(Ljavax/inject/Provider;)Ljavax/inject/Provider;
+
+    move-result-object v1
+
+    iput-object v1, v0, Lde/rki/coronawarnapp/util/di/DaggerApplicationComponent;->recycledCertificatesProvider:Ljavax/inject/Provider;
+
+    iget-object v1, v0, Lde/rki/coronawarnapp/util/di/DaggerApplicationComponent;->coronaTestRepositoryProvider:Ljavax/inject/Provider;
+
+    iget-object v4, v0, Lde/rki/coronawarnapp/util/di/DaggerApplicationComponent;->analyticsKeySubmissionCollectorProvider:Ljavax/inject/Provider;
+
+    iget-object v5, v0, Lde/rki/coronawarnapp/util/di/DaggerApplicationComponent;->analyticsTestResultCollectorProvider:Ljavax/inject/Provider;
+
+    new-instance v6, Lde/rki/coronawarnapp/reyclebin/coronatest/RecycledCoronaTestsProvider_Factory;
+
+    invoke-direct {v6, v1, v4, v5}, Lde/rki/coronawarnapp/reyclebin/coronatest/RecycledCoronaTestsProvider_Factory;-><init>(Ljavax/inject/Provider;Ljavax/inject/Provider;Ljavax/inject/Provider;)V
+
+    invoke-static {v6}, Ldagger/internal/SingleCheck;->provider(Ljavax/inject/Provider;)Ljavax/inject/Provider;
+
+    move-result-object v1
+
+    iput-object v1, v0, Lde/rki/coronawarnapp/util/di/DaggerApplicationComponent;->recycledCoronaTestsProvider:Ljavax/inject/Provider;
+
+    iget-object v1, v0, Lde/rki/coronawarnapp/util/di/DaggerApplicationComponent;->recycledCertificatesProvider:Ljavax/inject/Provider;
+
+    iget-object v4, v0, Lde/rki/coronawarnapp/util/di/DaggerApplicationComponent;->recycledCoronaTestsProvider:Ljavax/inject/Provider;
+
+    iget-object v5, v0, Lde/rki/coronawarnapp/util/di/DaggerApplicationComponent;->timeStamperProvider:Ljavax/inject/Provider;
+
+    new-instance v6, Lde/rki/coronawarnapp/reyclebin/cleanup/RecycleBinCleanUpService_Factory;
+
+    invoke-direct {v6, v1, v4, v5}, Lde/rki/coronawarnapp/reyclebin/cleanup/RecycleBinCleanUpService_Factory;-><init>(Ljavax/inject/Provider;Ljavax/inject/Provider;Ljavax/inject/Provider;)V
+
+    invoke-static {v6}, Ldagger/internal/SingleCheck;->provider(Ljavax/inject/Provider;)Ljavax/inject/Provider;
+
+    move-result-object v1
+
+    iput-object v1, v0, Lde/rki/coronawarnapp/util/di/DaggerApplicationComponent;->recycleBinCleanUpServiceProvider:Ljavax/inject/Provider;
 
     iget-object v1, v0, Lde/rki/coronawarnapp/util/di/DaggerApplicationComponent;->appCoroutineScopeProvider:Ljavax/inject/Provider;
 
     iget-object v4, v0, Lde/rki/coronawarnapp/util/di/DaggerApplicationComponent;->foregroundStateProvider:Ljavax/inject/Provider;
 
-    iget-object v5, v0, Lde/rki/coronawarnapp/util/di/DaggerApplicationComponent;->workManagerProvider:Ljavax/inject/Provider;
+    iget-object v5, v0, Lde/rki/coronawarnapp/util/di/DaggerApplicationComponent;->recycleBinCleanUpServiceProvider:Ljavax/inject/Provider;
 
-    iget-object v6, v0, Lde/rki/coronawarnapp/util/di/DaggerApplicationComponent;->boosterNotificationServiceProvider:Ljavax/inject/Provider;
+    new-instance v6, Lde/rki/coronawarnapp/reyclebin/cleanup/RecycleBinCleanUpScheduler_Factory;
 
-    new-instance v7, Lde/rki/coronawarnapp/covidcertificate/booster/BoosterCheckScheduler_Factory;
+    invoke-direct {v6, v1, v4, v5}, Lde/rki/coronawarnapp/reyclebin/cleanup/RecycleBinCleanUpScheduler_Factory;-><init>(Ljavax/inject/Provider;Ljavax/inject/Provider;Ljavax/inject/Provider;)V
 
-    invoke-direct {v7, v1, v4, v5, v6}, Lde/rki/coronawarnapp/covidcertificate/booster/BoosterCheckScheduler_Factory;-><init>(Ljavax/inject/Provider;Ljavax/inject/Provider;Ljavax/inject/Provider;Ljavax/inject/Provider;)V
+    instance-of v1, v6, Ldagger/internal/DoubleCheck;
 
-    instance-of v1, v7, Ldagger/internal/DoubleCheck;
+    if-eqz v1, :cond_25
 
-    if-eqz v1, :cond_20
+    goto :goto_25
 
-    goto :goto_20
-
-    :cond_20
+    :cond_25
     new-instance v1, Ldagger/internal/DoubleCheck;
 
-    invoke-direct {v1, v7}, Ldagger/internal/DoubleCheck;-><init>(Ljavax/inject/Provider;)V
+    invoke-direct {v1, v6}, Ldagger/internal/DoubleCheck;-><init>(Ljavax/inject/Provider;)V
 
-    move-object v7, v1
+    move-object v6, v1
 
-    :goto_20
-    iput-object v7, v0, Lde/rki/coronawarnapp/util/di/DaggerApplicationComponent;->boosterCheckSchedulerProvider:Ljavax/inject/Provider;
+    :goto_25
+    iput-object v6, v0, Lde/rki/coronawarnapp/util/di/DaggerApplicationComponent;->recycleBinCleanUpSchedulerProvider:Ljavax/inject/Provider;
 
     new-instance v1, Lde/rki/coronawarnapp/bugreporting/BugReportingModule_LoggingHistoryFactory;
 
@@ -11627,18 +14177,18 @@
 
     instance-of v4, v1, Ldagger/internal/DoubleCheck;
 
-    if-eqz v4, :cond_21
+    if-eqz v4, :cond_26
 
-    goto :goto_21
+    goto :goto_26
 
-    :cond_21
+    :cond_26
     new-instance v4, Ldagger/internal/DoubleCheck;
 
     invoke-direct {v4, v1}, Ldagger/internal/DoubleCheck;-><init>(Ljavax/inject/Provider;)V
 
     move-object v1, v4
 
-    :goto_21
+    :goto_26
     iput-object v1, v0, Lde/rki/coronawarnapp/util/di/DaggerApplicationComponent;->loggingHistoryProvider:Ljavax/inject/Provider;
 
     iget-object v1, v0, Lde/rki/coronawarnapp/util/di/DaggerApplicationComponent;->contextProvider:Ljavax/inject/Provider;
@@ -11649,18 +14199,18 @@
 
     instance-of v1, v4, Ldagger/internal/DoubleCheck;
 
-    if-eqz v1, :cond_22
+    if-eqz v1, :cond_27
 
-    goto :goto_22
+    goto :goto_27
 
-    :cond_22
+    :cond_27
     new-instance v1, Ldagger/internal/DoubleCheck;
 
     invoke-direct {v1, v4}, Ldagger/internal/DoubleCheck;-><init>(Ljavax/inject/Provider;)V
 
     move-object v4, v1
 
-    :goto_22
+    :goto_27
     iput-object v4, v0, Lde/rki/coronawarnapp/util/di/DaggerApplicationComponent;->encryptedPreferencesFactoryProvider:Ljavax/inject/Provider;
 
     iget-object v1, v0, Lde/rki/coronawarnapp/util/di/DaggerApplicationComponent;->contextProvider:Ljavax/inject/Provider;
@@ -11671,18 +14221,18 @@
 
     instance-of v1, v4, Ldagger/internal/DoubleCheck;
 
-    if-eqz v1, :cond_23
+    if-eqz v1, :cond_28
 
-    goto :goto_23
+    goto :goto_28
 
-    :cond_23
+    :cond_28
     new-instance v1, Ldagger/internal/DoubleCheck;
 
     invoke-direct {v1, v4}, Ldagger/internal/DoubleCheck;-><init>(Ljavax/inject/Provider;)V
 
     move-object v4, v1
 
-    :goto_23
+    :goto_28
     iput-object v4, v0, Lde/rki/coronawarnapp/util/di/DaggerApplicationComponent;->encryptionErrorResetToolProvider:Ljavax/inject/Provider;
 
     new-instance v1, Lde/rki/coronawarnapp/bugreporting/BugReportingModule_ReporterFactory;
@@ -11691,18 +14241,18 @@
 
     instance-of v2, v1, Ldagger/internal/DoubleCheck;
 
-    if-eqz v2, :cond_24
+    if-eqz v2, :cond_29
 
-    goto :goto_24
+    goto :goto_29
 
-    :cond_24
+    :cond_29
     new-instance v2, Ldagger/internal/DoubleCheck;
 
     invoke-direct {v2, v1}, Ldagger/internal/DoubleCheck;-><init>(Ljavax/inject/Provider;)V
 
     move-object v1, v2
 
-    :goto_24
+    :goto_29
     iput-object v1, v0, Lde/rki/coronawarnapp/util/di/DaggerApplicationComponent;->reporterProvider:Ljavax/inject/Provider;
 
     new-instance v1, Lde/rki/coronawarnapp/bugreporting/BugReportingSharedModule_ScopeFactory;
@@ -11711,18 +14261,18 @@
 
     instance-of v2, v1, Ldagger/internal/DoubleCheck;
 
-    if-eqz v2, :cond_25
+    if-eqz v2, :cond_2a
 
-    goto :goto_25
+    goto :goto_2a
 
-    :cond_25
+    :cond_2a
     new-instance v2, Ldagger/internal/DoubleCheck;
 
     invoke-direct {v2, v1}, Ldagger/internal/DoubleCheck;-><init>(Ljavax/inject/Provider;)V
 
     move-object v1, v2
 
-    :goto_25
+    :goto_2a
     iput-object v1, v0, Lde/rki/coronawarnapp/util/di/DaggerApplicationComponent;->scopeProvider:Ljavax/inject/Provider;
 
     iget-object v2, v0, Lde/rki/coronawarnapp/util/di/DaggerApplicationComponent;->coronaTestRepositoryProvider:Ljavax/inject/Provider;
@@ -11739,9 +14289,9 @@
 
     iput-object v1, v0, Lde/rki/coronawarnapp/util/di/DaggerApplicationComponent;->coronaTestCensorProvider:Ljavax/inject/Provider;
 
-    new-instance v2, Lde/rki/coronawarnapp/bugreporting/BugReportingSettings_Factory;
+    new-instance v2, Lde/rki/coronawarnapp/bugreporting/BugReportingSharedModule_RegistrationTokenCensorFactory;
 
-    invoke-direct {v2, v3, v1}, Lde/rki/coronawarnapp/bugreporting/BugReportingSettings_Factory;-><init>(Lde/rki/coronawarnapp/bugreporting/BugReportingSharedModule;Ljavax/inject/Provider;)V
+    invoke-direct {v2, v3, v1}, Lde/rki/coronawarnapp/bugreporting/BugReportingSharedModule_RegistrationTokenCensorFactory;-><init>(Lde/rki/coronawarnapp/bugreporting/BugReportingSharedModule;Ljavax/inject/Provider;)V
 
     iput-object v2, v0, Lde/rki/coronawarnapp/util/di/DaggerApplicationComponent;->registrationTokenCensorProvider:Ljavax/inject/Provider;
 
@@ -11761,9 +14311,7 @@
 
     new-instance v2, Lde/rki/coronawarnapp/bugreporting/BugReportingSharedModule_TestCertificateCensorFactory;
 
-    const/4 v4, 0x0
-
-    invoke-direct {v2, v3, v1, v4}, Lde/rki/coronawarnapp/bugreporting/BugReportingSharedModule_TestCertificateCensorFactory;-><init>(Lde/rki/coronawarnapp/bugreporting/BugReportingSharedModule;Ljavax/inject/Provider;I)V
+    invoke-direct {v2, v3, v1}, Lde/rki/coronawarnapp/bugreporting/BugReportingSharedModule_TestCertificateCensorFactory;-><init>(Lde/rki/coronawarnapp/bugreporting/BugReportingSharedModule;Ljavax/inject/Provider;)V
 
     iput-object v2, v0, Lde/rki/coronawarnapp/util/di/DaggerApplicationComponent;->testCertificateCensorProvider:Ljavax/inject/Provider;
 
@@ -11781,223 +14329,9 @@
 
     iput-object v2, v0, Lde/rki/coronawarnapp/util/di/DaggerApplicationComponent;->pcrQrCodeCensorProvider2:Ljavax/inject/Provider;
 
-    sget-object v1, Lde/rki/coronawarnapp/bugreporting/censors/submission/PcrTeleTanCensor_Factory$InstanceHolder;->INSTANCE:Lde/rki/coronawarnapp/bugreporting/censors/submission/PcrTeleTanCensor_Factory;
-
-    invoke-static {v1}, Ldagger/internal/SingleCheck;->provider(Ljavax/inject/Provider;)Ljavax/inject/Provider;
-
-    move-result-object v1
-
-    iput-object v1, v0, Lde/rki/coronawarnapp/util/di/DaggerApplicationComponent;->pcrTeleTanCensorProvider:Ljavax/inject/Provider;
-
-    new-instance v2, Lde/rki/coronawarnapp/bugreporting/BugReportingSharedModule_PcrTeleTanCensorFactory;
-
-    invoke-direct {v2, v3, v1}, Lde/rki/coronawarnapp/bugreporting/BugReportingSharedModule_PcrTeleTanCensorFactory;-><init>(Lde/rki/coronawarnapp/bugreporting/BugReportingSharedModule;Ljavax/inject/Provider;)V
-
-    iput-object v2, v0, Lde/rki/coronawarnapp/util/di/DaggerApplicationComponent;->pcrTeleTanCensorProvider2:Ljavax/inject/Provider;
-
-    sget-object v1, Lde/rki/coronawarnapp/bugreporting/censors/submission/RatQrCodeCensor_Factory$InstanceHolder;->INSTANCE:Lde/rki/coronawarnapp/bugreporting/censors/submission/RatQrCodeCensor_Factory;
-
-    invoke-static {v1}, Ldagger/internal/SingleCheck;->provider(Ljavax/inject/Provider;)Ljavax/inject/Provider;
-
-    move-result-object v1
-
-    iput-object v1, v0, Lde/rki/coronawarnapp/util/di/DaggerApplicationComponent;->ratQrCodeCensorProvider:Ljavax/inject/Provider;
-
-    new-instance v2, Lde/rki/coronawarnapp/bugreporting/BugReportingSharedModule_RatQrCodeCensorFactory;
-
-    invoke-direct {v2, v3, v1}, Lde/rki/coronawarnapp/bugreporting/BugReportingSharedModule_RatQrCodeCensorFactory;-><init>(Lde/rki/coronawarnapp/bugreporting/BugReportingSharedModule;Ljavax/inject/Provider;)V
-
-    iput-object v2, v0, Lde/rki/coronawarnapp/util/di/DaggerApplicationComponent;->ratQrCodeCensorProvider2:Ljavax/inject/Provider;
-
-    iget-object v1, v0, Lde/rki/coronawarnapp/util/di/DaggerApplicationComponent;->scopeProvider:Ljavax/inject/Provider;
-
-    iget-object v2, v0, Lde/rki/coronawarnapp/util/di/DaggerApplicationComponent;->coronaTestRepositoryProvider:Ljavax/inject/Provider;
-
-    new-instance v5, Lde/rki/coronawarnapp/bugreporting/censors/submission/RACoronaTestCensor_Factory;
-
-    invoke-direct {v5, v1, v2}, Lde/rki/coronawarnapp/bugreporting/censors/submission/RACoronaTestCensor_Factory;-><init>(Ljavax/inject/Provider;Ljavax/inject/Provider;)V
-
-    iput-object v5, v0, Lde/rki/coronawarnapp/util/di/DaggerApplicationComponent;->rACoronaTestCensorProvider:Ljavax/inject/Provider;
-
-    new-instance v1, Lde/rki/coronawarnapp/bugreporting/BugReportingSharedModule_RaCoronaTestCensorFactory;
-
-    invoke-direct {v1, v3, v5}, Lde/rki/coronawarnapp/bugreporting/BugReportingSharedModule_RaCoronaTestCensorFactory;-><init>(Lde/rki/coronawarnapp/bugreporting/BugReportingSharedModule;Ljavax/inject/Provider;)V
-
-    iput-object v1, v0, Lde/rki/coronawarnapp/util/di/DaggerApplicationComponent;->raCoronaTestCensorProvider:Ljavax/inject/Provider;
-
-    iget-object v1, v0, Lde/rki/coronawarnapp/util/di/DaggerApplicationComponent;->scopeProvider:Ljavax/inject/Provider;
-
-    iget-object v2, v0, Lde/rki/coronawarnapp/util/di/DaggerApplicationComponent;->contactDiaryRepoProvider:Ljavax/inject/Provider;
-
-    new-instance v5, Lde/rki/coronawarnapp/bugreporting/censors/contactdiary/DiaryPersonCensor_Factory;
-
-    invoke-direct {v5, v1, v2}, Lde/rki/coronawarnapp/bugreporting/censors/contactdiary/DiaryPersonCensor_Factory;-><init>(Ljavax/inject/Provider;Ljavax/inject/Provider;)V
-
-    invoke-static {v5}, Ldagger/internal/SingleCheck;->provider(Ljavax/inject/Provider;)Ljavax/inject/Provider;
-
-    move-result-object v1
-
-    iput-object v1, v0, Lde/rki/coronawarnapp/util/di/DaggerApplicationComponent;->diaryPersonCensorProvider:Ljavax/inject/Provider;
-
-    new-instance v2, Lde/rki/coronawarnapp/bugreporting/BugReportingSharedModule_DiaryPersonCensorFactory;
-
-    invoke-direct {v2, v3, v1}, Lde/rki/coronawarnapp/bugreporting/BugReportingSharedModule_DiaryPersonCensorFactory;-><init>(Lde/rki/coronawarnapp/bugreporting/BugReportingSharedModule;Ljavax/inject/Provider;)V
-
-    iput-object v2, v0, Lde/rki/coronawarnapp/util/di/DaggerApplicationComponent;->diaryPersonCensorProvider2:Ljavax/inject/Provider;
-
-    iget-object v1, v0, Lde/rki/coronawarnapp/util/di/DaggerApplicationComponent;->scopeProvider:Ljavax/inject/Provider;
-
-    iget-object v2, v0, Lde/rki/coronawarnapp/util/di/DaggerApplicationComponent;->contactDiaryRepoProvider:Ljavax/inject/Provider;
-
-    new-instance v5, Lde/rki/coronawarnapp/bugreporting/censors/contactdiary/DiaryEncounterCensor_Factory;
-
-    invoke-direct {v5, v1, v2}, Lde/rki/coronawarnapp/bugreporting/censors/contactdiary/DiaryEncounterCensor_Factory;-><init>(Ljavax/inject/Provider;Ljavax/inject/Provider;)V
-
-    invoke-static {v5}, Ldagger/internal/SingleCheck;->provider(Ljavax/inject/Provider;)Ljavax/inject/Provider;
-
-    move-result-object v1
-
-    iput-object v1, v0, Lde/rki/coronawarnapp/util/di/DaggerApplicationComponent;->diaryEncounterCensorProvider:Ljavax/inject/Provider;
-
-    new-instance v2, Lde/rki/coronawarnapp/bugreporting/BugReportingSharedModule_DiaryEncounterCensorFactory;
-
-    invoke-direct {v2, v3, v1}, Lde/rki/coronawarnapp/bugreporting/BugReportingSharedModule_DiaryEncounterCensorFactory;-><init>(Lde/rki/coronawarnapp/bugreporting/BugReportingSharedModule;Ljavax/inject/Provider;)V
-
-    iput-object v2, v0, Lde/rki/coronawarnapp/util/di/DaggerApplicationComponent;->diaryEncounterCensorProvider2:Ljavax/inject/Provider;
-
-    iget-object v1, v0, Lde/rki/coronawarnapp/util/di/DaggerApplicationComponent;->scopeProvider:Ljavax/inject/Provider;
-
-    iget-object v2, v0, Lde/rki/coronawarnapp/util/di/DaggerApplicationComponent;->contactDiaryRepoProvider:Ljavax/inject/Provider;
-
-    new-instance v5, Lde/rki/coronawarnapp/bugreporting/censors/contactdiary/DiaryLocationCensor_Factory;
-
-    invoke-direct {v5, v1, v2}, Lde/rki/coronawarnapp/bugreporting/censors/contactdiary/DiaryLocationCensor_Factory;-><init>(Ljavax/inject/Provider;Ljavax/inject/Provider;)V
-
-    invoke-static {v5}, Ldagger/internal/SingleCheck;->provider(Ljavax/inject/Provider;)Ljavax/inject/Provider;
-
-    move-result-object v1
-
-    iput-object v1, v0, Lde/rki/coronawarnapp/util/di/DaggerApplicationComponent;->diaryLocationCensorProvider:Ljavax/inject/Provider;
-
-    new-instance v2, Lde/rki/coronawarnapp/bugreporting/BugReportingSharedModule_DiaryLocationCensorFactory;
-
-    invoke-direct {v2, v3, v1}, Lde/rki/coronawarnapp/bugreporting/BugReportingSharedModule_DiaryLocationCensorFactory;-><init>(Lde/rki/coronawarnapp/bugreporting/BugReportingSharedModule;Ljavax/inject/Provider;)V
-
-    iput-object v2, v0, Lde/rki/coronawarnapp/util/di/DaggerApplicationComponent;->diaryLocationCensorProvider2:Ljavax/inject/Provider;
-
-    iget-object v1, v0, Lde/rki/coronawarnapp/util/di/DaggerApplicationComponent;->scopeProvider:Ljavax/inject/Provider;
-
-    iget-object v2, v0, Lde/rki/coronawarnapp/util/di/DaggerApplicationComponent;->contactDiaryRepoProvider:Ljavax/inject/Provider;
-
-    new-instance v5, Lde/rki/coronawarnapp/bugreporting/censors/contactdiary/DiaryVisitCensor_Factory;
-
-    invoke-direct {v5, v1, v2}, Lde/rki/coronawarnapp/bugreporting/censors/contactdiary/DiaryVisitCensor_Factory;-><init>(Ljavax/inject/Provider;Ljavax/inject/Provider;)V
-
-    invoke-static {v5}, Ldagger/internal/SingleCheck;->provider(Ljavax/inject/Provider;)Ljavax/inject/Provider;
-
-    move-result-object v1
-
-    iput-object v1, v0, Lde/rki/coronawarnapp/util/di/DaggerApplicationComponent;->diaryVisitCensorProvider:Ljavax/inject/Provider;
-
-    new-instance v2, Lde/rki/coronawarnapp/bugreporting/BugReportingSharedModule_DiaryVisitCensorFactory;
-
-    invoke-direct {v2, v3, v1}, Lde/rki/coronawarnapp/bugreporting/BugReportingSharedModule_DiaryVisitCensorFactory;-><init>(Lde/rki/coronawarnapp/bugreporting/BugReportingSharedModule;Ljavax/inject/Provider;)V
-
-    iput-object v2, v0, Lde/rki/coronawarnapp/util/di/DaggerApplicationComponent;->diaryVisitCensorProvider2:Ljavax/inject/Provider;
-
-    iget-object v1, v0, Lde/rki/coronawarnapp/util/di/DaggerApplicationComponent;->scopeProvider:Ljavax/inject/Provider;
-
-    iget-object v2, v0, Lde/rki/coronawarnapp/util/di/DaggerApplicationComponent;->checkInRepositoryProvider:Ljavax/inject/Provider;
-
-    new-instance v5, Lde/rki/coronawarnapp/bugreporting/censors/presencetracing/CheckInsCensor_Factory;
-
-    invoke-direct {v5, v1, v2}, Lde/rki/coronawarnapp/bugreporting/censors/presencetracing/CheckInsCensor_Factory;-><init>(Ljavax/inject/Provider;Ljavax/inject/Provider;)V
-
-    invoke-static {v5}, Ldagger/internal/SingleCheck;->provider(Ljavax/inject/Provider;)Ljavax/inject/Provider;
-
-    move-result-object v1
-
-    iput-object v1, v0, Lde/rki/coronawarnapp/util/di/DaggerApplicationComponent;->checkInsCensorProvider:Ljavax/inject/Provider;
-
-    new-instance v2, Lde/rki/coronawarnapp/bugreporting/BugReportingSharedModule_CheckInsCensorFactory;
-
-    invoke-direct {v2, v3, v1, v4}, Lde/rki/coronawarnapp/bugreporting/BugReportingSharedModule_CheckInsCensorFactory;-><init>(Lde/rki/coronawarnapp/bugreporting/BugReportingSharedModule;Ljavax/inject/Provider;I)V
-
-    iput-object v2, v0, Lde/rki/coronawarnapp/util/di/DaggerApplicationComponent;->checkInsCensorProvider2:Ljavax/inject/Provider;
-
-    iget-object v1, v0, Lde/rki/coronawarnapp/util/di/DaggerApplicationComponent;->scopeProvider:Ljavax/inject/Provider;
-
-    iget-object v2, v0, Lde/rki/coronawarnapp/util/di/DaggerApplicationComponent;->defaultTraceLocationRepositoryProvider:Ljavax/inject/Provider;
-
-    new-instance v4, Lde/rki/coronawarnapp/bugreporting/censors/presencetracing/TraceLocationCensor_Factory;
-
-    invoke-direct {v4, v1, v2}, Lde/rki/coronawarnapp/bugreporting/censors/presencetracing/TraceLocationCensor_Factory;-><init>(Ljavax/inject/Provider;Ljavax/inject/Provider;)V
-
-    invoke-static {v4}, Ldagger/internal/SingleCheck;->provider(Ljavax/inject/Provider;)Ljavax/inject/Provider;
-
-    move-result-object v1
-
-    iput-object v1, v0, Lde/rki/coronawarnapp/util/di/DaggerApplicationComponent;->traceLocationCensorProvider:Ljavax/inject/Provider;
-
-    new-instance v2, Lde/rki/coronawarnapp/bugreporting/BugReportingSharedModule_CheckInsCensorFactory;
-
-    const/4 v4, 0x1
-
-    invoke-direct {v2, v3, v1, v4}, Lde/rki/coronawarnapp/bugreporting/BugReportingSharedModule_CheckInsCensorFactory;-><init>(Lde/rki/coronawarnapp/bugreporting/BugReportingSharedModule;Ljavax/inject/Provider;I)V
-
-    iput-object v2, v0, Lde/rki/coronawarnapp/util/di/DaggerApplicationComponent;->traceLocationsCensorProvider:Ljavax/inject/Provider;
-
-    iget-object v1, v0, Lde/rki/coronawarnapp/util/di/DaggerApplicationComponent;->contextProvider:Ljavax/inject/Provider;
-
-    iget-object v2, v0, Lde/rki/coronawarnapp/util/di/DaggerApplicationComponent;->baseGsonProvider:Ljavax/inject/Provider;
-
-    new-instance v5, Lde/rki/coronawarnapp/coronatest/antigen/profile/RATProfileSettings_Factory;
-
-    invoke-direct {v5, v1, v2}, Lde/rki/coronawarnapp/coronatest/antigen/profile/RATProfileSettings_Factory;-><init>(Ljavax/inject/Provider;Ljavax/inject/Provider;)V
-
-    invoke-static {v5}, Ldagger/internal/SingleCheck;->provider(Ljavax/inject/Provider;)Ljavax/inject/Provider;
-
-    move-result-object v1
-
-    iput-object v1, v0, Lde/rki/coronawarnapp/util/di/DaggerApplicationComponent;->rATProfileSettingsProvider:Ljavax/inject/Provider;
-
-    new-instance v2, Lde/rki/coronawarnapp/bugreporting/censors/submission/RatProfileCensor_Factory;
-
-    invoke-direct {v2, v1}, Lde/rki/coronawarnapp/bugreporting/censors/submission/RatProfileCensor_Factory;-><init>(Ljavax/inject/Provider;)V
-
-    iput-object v2, v0, Lde/rki/coronawarnapp/util/di/DaggerApplicationComponent;->ratProfileCensorProvider:Ljavax/inject/Provider;
-
-    new-instance v1, Lde/rki/coronawarnapp/bugreporting/BugReportingSharedModule_RatProfileCensorFactory;
-
-    invoke-direct {v1, v3, v2}, Lde/rki/coronawarnapp/bugreporting/BugReportingSharedModule_RatProfileCensorFactory;-><init>(Lde/rki/coronawarnapp/bugreporting/BugReportingSharedModule;Ljavax/inject/Provider;)V
-
-    iput-object v1, v0, Lde/rki/coronawarnapp/util/di/DaggerApplicationComponent;->ratProfileCensorProvider2:Ljavax/inject/Provider;
-
-    sget-object v1, Lde/rki/coronawarnapp/bugreporting/censors/dcc/DccQrCodeCensor_Factory$InstanceHolder;->INSTANCE:Lde/rki/coronawarnapp/bugreporting/censors/dcc/DccQrCodeCensor_Factory;
-
-    invoke-static {v1}, Ldagger/internal/SingleCheck;->provider(Ljavax/inject/Provider;)Ljavax/inject/Provider;
-
-    move-result-object v1
-
-    iput-object v1, v0, Lde/rki/coronawarnapp/util/di/DaggerApplicationComponent;->dccQrCodeCensorProvider:Ljavax/inject/Provider;
-
-    new-instance v2, Lde/rki/coronawarnapp/bugreporting/BugReportingSharedModule_TestCertificateCensorFactory;
-
-    invoke-direct {v2, v3, v1, v4}, Lde/rki/coronawarnapp/bugreporting/BugReportingSharedModule_TestCertificateCensorFactory;-><init>(Lde/rki/coronawarnapp/bugreporting/BugReportingSharedModule;Ljavax/inject/Provider;I)V
-
-    iput-object v2, v0, Lde/rki/coronawarnapp/util/di/DaggerApplicationComponent;->certificateQrCodeCensorProvider:Ljavax/inject/Provider;
-
-    sget-object v1, Lde/rki/coronawarnapp/bugreporting/censors/contactdiary/OrganizerRegistrationTokenCensor_Factory$InstanceHolder;->INSTANCE:Lde/rki/coronawarnapp/bugreporting/censors/contactdiary/OrganizerRegistrationTokenCensor_Factory;
-
-    invoke-static {v1}, Ldagger/internal/SingleCheck;->provider(Ljavax/inject/Provider;)Ljavax/inject/Provider;
-
-    move-result-object v1
-
-    iput-object v1, v0, Lde/rki/coronawarnapp/util/di/DaggerApplicationComponent;->organizerRegistrationTokenCensorProvider:Ljavax/inject/Provider;
-
     return-void
 
-    :cond_26
+    :cond_2b
     new-instance v1, Ljava/lang/IllegalStateException;
 
     invoke-direct {v1}, Ljava/lang/IllegalStateException;-><init>()V
@@ -12005,1410 +14339,8 @@
     throw v1
 .end method
 
-.method public final initialize5(Lde/rki/coronawarnapp/util/di/AndroidModule;Lde/rki/coronawarnapp/environment/bugreporting/BugReportingServerModule;Lde/rki/coronawarnapp/bugreporting/BugReportingSharedModule;Lde/rki/coronawarnapp/statistics/StatisticsModule;Lde/rki/coronawarnapp/environment/presencetracing/qrcodeposter/QrCodePosterTemplateModule;Lde/rki/coronawarnapp/rootdetection/RootDetectionModule;Lde/rki/coronawarnapp/qrcode/QrCodeScannerModule;Lde/rki/coronawarnapp/rootdetection/RootDetectionModule;Lcom/upokecenter/cbor/CBORUuidConverter;)V
-    .locals 38
-    .annotation system Ldalvik/annotation/MethodParameters;
-        accessFlags = {
-            0x10,
-            0x10,
-            0x10,
-            0x10,
-            0x10,
-            0x10,
-            0x10,
-            0x10,
-            0x10,
-            0x10,
-            0x10,
-            0x10,
-            0x10,
-            0x10,
-            0x10,
-            0x10,
-            0x10,
-            0x10,
-            0x10,
-            0x10,
-            0x10,
-            0x10,
-            0x10,
-            0x10,
-            0x10,
-            0x10,
-            0x10,
-            0x10,
-            0x10,
-            0x10,
-            0x10,
-            0x10,
-            0x10,
-            0x10,
-            0x10,
-            0x10,
-            0x10,
-            0x10,
-            0x10
-        }
-        names = {
-            "androidModuleParam",
-            "contactDiaryStorageModuleParam",
-            "coilModuleParam",
-            "riskModuleParam",
-            "eNFModuleParam",
-            "httpModuleParam",
-            "downloadCDNModuleParam",
-            "submissionCDNModuleParam",
-            "verificationCDNModuleParam",
-            "dataDonationCDNModuleParam",
-            "bugReportingServerModuleParam",
-            "dCCModuleParam",
-            "diagnosisKeysModuleParam",
-            "appConfigModuleParam",
-            "submissionModuleParam",
-            "verificationModuleParam",
-            "playbookModuleParam",
-            "taskModuleParam",
-            "bugReportingModuleParam",
-            "bugReportingSharedModuleParam",
-            "serializationModuleParam",
-            "statisticsModuleParam",
-            "dataDonationModuleParam",
-            "surveyModuleParam",
-            "analyticsModuleParam",
-            "securityModuleParam",
-            "qrCodePosterTemplateModuleParam",
-            "presenceTracingWarningModuleParam",
-            "organizerSubmissionModuleParam",
-            "digitalCovidCertificateModuleParam",
-            "certificateValueSetModuleParam",
-            "testCertificateServerModuleParam",
-            "dccValidationModuleParam",
-            "dscServerModuleParam",
-            "exportCertificateModuleParam",
-            "qrCodeScannerModuleParam",
-            "rootDetectionModuleParam",
-            "inAppUpdateModuleParam",
-            "appParam"
-        }
-    .end annotation
-
-    move-object/from16 v0, p0
-
-    move-object/from16 v1, p1
-
-    move-object/from16 v2, p2
-
-    move-object/from16 v8, p3
-
-    move-object/from16 v9, p5
-
-    move-object/from16 v10, p6
-
-    move-object/from16 v11, p7
-
-    iget-object v3, v0, Lde/rki/coronawarnapp/util/di/DaggerApplicationComponent;->organizerRegistrationTokenCensorProvider:Ljavax/inject/Provider;
-
-    new-instance v4, Lde/rki/coronawarnapp/bugreporting/BugReportingSharedModule_OrganizerRegistrationTokenCensorFactory;
-
-    invoke-direct {v4, v8, v3}, Lde/rki/coronawarnapp/bugreporting/BugReportingSharedModule_OrganizerRegistrationTokenCensorFactory;-><init>(Lde/rki/coronawarnapp/bugreporting/BugReportingSharedModule;Ljavax/inject/Provider;)V
-
-    iput-object v4, v0, Lde/rki/coronawarnapp/util/di/DaggerApplicationComponent;->organizerRegistrationTokenCensorProvider2:Ljavax/inject/Provider;
-
-    iget-object v3, v0, Lde/rki/coronawarnapp/util/di/DaggerApplicationComponent;->personCertificatesSettingsProvider:Ljavax/inject/Provider;
-
-    new-instance v4, Lde/rki/coronawarnapp/bugreporting/censors/dcc/CwaUserCensor_Factory;
-
-    invoke-direct {v4, v3}, Lde/rki/coronawarnapp/bugreporting/censors/dcc/CwaUserCensor_Factory;-><init>(Ljavax/inject/Provider;)V
-
-    invoke-static {v4}, Ldagger/internal/SingleCheck;->provider(Ljavax/inject/Provider;)Ljavax/inject/Provider;
-
-    move-result-object v3
-
-    iput-object v3, v0, Lde/rki/coronawarnapp/util/di/DaggerApplicationComponent;->cwaUserCensorProvider:Ljavax/inject/Provider;
-
-    new-instance v4, Lde/rki/coronawarnapp/bugreporting/BugReportingSharedModule_CwaUserCensorFactory;
-
-    invoke-direct {v4, v8, v3}, Lde/rki/coronawarnapp/bugreporting/BugReportingSharedModule_CwaUserCensorFactory;-><init>(Lde/rki/coronawarnapp/bugreporting/BugReportingSharedModule;Ljavax/inject/Provider;)V
-
-    iput-object v4, v0, Lde/rki/coronawarnapp/util/di/DaggerApplicationComponent;->cwaUserCensorProvider2:Ljavax/inject/Provider;
-
-    const/16 v3, 0x10
-
-    const/4 v4, 0x0
-
-    invoke-static {v3, v4}, Ldagger/internal/SetFactory;->builder(II)Ldagger/internal/SetFactory$Builder;
-
-    move-result-object v3
-
-    iget-object v4, v0, Lde/rki/coronawarnapp/util/di/DaggerApplicationComponent;->registrationTokenCensorProvider:Ljavax/inject/Provider;
-
-    iget-object v5, v3, Ldagger/internal/SetFactory$Builder;->individualProviders:Ljava/util/List;
-
-    invoke-interface {v5, v4}, Ljava/util/List;->add(Ljava/lang/Object;)Z
-
-    iget-object v4, v0, Lde/rki/coronawarnapp/util/di/DaggerApplicationComponent;->testCertificateCensorProvider:Ljavax/inject/Provider;
-
-    iget-object v5, v3, Ldagger/internal/SetFactory$Builder;->individualProviders:Ljava/util/List;
-
-    invoke-interface {v5, v4}, Ljava/util/List;->add(Ljava/lang/Object;)Z
-
-    iget-object v4, v0, Lde/rki/coronawarnapp/util/di/DaggerApplicationComponent;->pcrQrCodeCensorProvider2:Ljavax/inject/Provider;
-
-    iget-object v5, v3, Ldagger/internal/SetFactory$Builder;->individualProviders:Ljava/util/List;
-
-    invoke-interface {v5, v4}, Ljava/util/List;->add(Ljava/lang/Object;)Z
-
-    iget-object v4, v0, Lde/rki/coronawarnapp/util/di/DaggerApplicationComponent;->pcrTeleTanCensorProvider2:Ljavax/inject/Provider;
-
-    iget-object v5, v3, Ldagger/internal/SetFactory$Builder;->individualProviders:Ljava/util/List;
-
-    invoke-interface {v5, v4}, Ljava/util/List;->add(Ljava/lang/Object;)Z
-
-    iget-object v4, v0, Lde/rki/coronawarnapp/util/di/DaggerApplicationComponent;->ratQrCodeCensorProvider2:Ljavax/inject/Provider;
-
-    iget-object v5, v3, Ldagger/internal/SetFactory$Builder;->individualProviders:Ljava/util/List;
-
-    invoke-interface {v5, v4}, Ljava/util/List;->add(Ljava/lang/Object;)Z
-
-    iget-object v4, v0, Lde/rki/coronawarnapp/util/di/DaggerApplicationComponent;->raCoronaTestCensorProvider:Ljavax/inject/Provider;
-
-    iget-object v5, v3, Ldagger/internal/SetFactory$Builder;->individualProviders:Ljava/util/List;
-
-    invoke-interface {v5, v4}, Ljava/util/List;->add(Ljava/lang/Object;)Z
-
-    iget-object v4, v0, Lde/rki/coronawarnapp/util/di/DaggerApplicationComponent;->diaryPersonCensorProvider2:Ljavax/inject/Provider;
-
-    iget-object v5, v3, Ldagger/internal/SetFactory$Builder;->individualProviders:Ljava/util/List;
-
-    invoke-interface {v5, v4}, Ljava/util/List;->add(Ljava/lang/Object;)Z
-
-    iget-object v4, v0, Lde/rki/coronawarnapp/util/di/DaggerApplicationComponent;->diaryEncounterCensorProvider2:Ljavax/inject/Provider;
-
-    iget-object v5, v3, Ldagger/internal/SetFactory$Builder;->individualProviders:Ljava/util/List;
-
-    invoke-interface {v5, v4}, Ljava/util/List;->add(Ljava/lang/Object;)Z
-
-    iget-object v4, v0, Lde/rki/coronawarnapp/util/di/DaggerApplicationComponent;->diaryLocationCensorProvider2:Ljavax/inject/Provider;
-
-    iget-object v5, v3, Ldagger/internal/SetFactory$Builder;->individualProviders:Ljava/util/List;
-
-    invoke-interface {v5, v4}, Ljava/util/List;->add(Ljava/lang/Object;)Z
-
-    iget-object v4, v0, Lde/rki/coronawarnapp/util/di/DaggerApplicationComponent;->diaryVisitCensorProvider2:Ljavax/inject/Provider;
-
-    iget-object v5, v3, Ldagger/internal/SetFactory$Builder;->individualProviders:Ljava/util/List;
-
-    invoke-interface {v5, v4}, Ljava/util/List;->add(Ljava/lang/Object;)Z
-
-    iget-object v4, v0, Lde/rki/coronawarnapp/util/di/DaggerApplicationComponent;->checkInsCensorProvider2:Ljavax/inject/Provider;
-
-    iget-object v5, v3, Ldagger/internal/SetFactory$Builder;->individualProviders:Ljava/util/List;
-
-    invoke-interface {v5, v4}, Ljava/util/List;->add(Ljava/lang/Object;)Z
-
-    iget-object v4, v0, Lde/rki/coronawarnapp/util/di/DaggerApplicationComponent;->traceLocationsCensorProvider:Ljavax/inject/Provider;
-
-    iget-object v5, v3, Ldagger/internal/SetFactory$Builder;->individualProviders:Ljava/util/List;
-
-    invoke-interface {v5, v4}, Ljava/util/List;->add(Ljava/lang/Object;)Z
-
-    iget-object v4, v0, Lde/rki/coronawarnapp/util/di/DaggerApplicationComponent;->ratProfileCensorProvider2:Ljavax/inject/Provider;
-
-    iget-object v5, v3, Ldagger/internal/SetFactory$Builder;->individualProviders:Ljava/util/List;
-
-    invoke-interface {v5, v4}, Ljava/util/List;->add(Ljava/lang/Object;)Z
-
-    iget-object v4, v0, Lde/rki/coronawarnapp/util/di/DaggerApplicationComponent;->certificateQrCodeCensorProvider:Ljavax/inject/Provider;
-
-    iget-object v5, v3, Ldagger/internal/SetFactory$Builder;->individualProviders:Ljava/util/List;
-
-    invoke-interface {v5, v4}, Ljava/util/List;->add(Ljava/lang/Object;)Z
-
-    iget-object v4, v0, Lde/rki/coronawarnapp/util/di/DaggerApplicationComponent;->organizerRegistrationTokenCensorProvider2:Ljavax/inject/Provider;
-
-    iget-object v5, v3, Ldagger/internal/SetFactory$Builder;->individualProviders:Ljava/util/List;
-
-    invoke-interface {v5, v4}, Ljava/util/List;->add(Ljava/lang/Object;)Z
-
-    iget-object v4, v0, Lde/rki/coronawarnapp/util/di/DaggerApplicationComponent;->cwaUserCensorProvider2:Ljavax/inject/Provider;
-
-    iget-object v5, v3, Ldagger/internal/SetFactory$Builder;->individualProviders:Ljava/util/List;
-
-    invoke-interface {v5, v4}, Ljava/util/List;->add(Ljava/lang/Object;)Z
-
-    invoke-virtual {v3}, Ldagger/internal/SetFactory$Builder;->build()Ldagger/internal/SetFactory;
-
-    move-result-object v3
-
-    iput-object v3, v0, Lde/rki/coronawarnapp/util/di/DaggerApplicationComponent;->setOfBugCensorProvider:Ljavax/inject/Provider;
-
-    iget-object v3, v0, Lde/rki/coronawarnapp/util/di/DaggerApplicationComponent;->contextProvider:Ljavax/inject/Provider;
-
-    new-instance v4, Lde/rki/coronawarnapp/util/di/AndroidModule_ApplicationInfoFactory;
-
-    invoke-direct {v4, v1, v3}, Lde/rki/coronawarnapp/util/di/AndroidModule_ApplicationInfoFactory;-><init>(Lde/rki/coronawarnapp/util/di/AndroidModule;Ljavax/inject/Provider;)V
-
-    iput-object v4, v0, Lde/rki/coronawarnapp/util/di/DaggerApplicationComponent;->applicationInfoProvider:Ljavax/inject/Provider;
-
-    iget-object v5, v0, Lde/rki/coronawarnapp/util/di/DaggerApplicationComponent;->encryptedPreferencesFactoryProvider:Ljavax/inject/Provider;
-
-    new-instance v14, Lde/rki/coronawarnapp/util/encryptionmigration/EncryptedPreferencesHelper_Factory;
-
-    invoke-direct {v14, v4, v5}, Lde/rki/coronawarnapp/util/encryptionmigration/EncryptedPreferencesHelper_Factory;-><init>(Ljavax/inject/Provider;Ljavax/inject/Provider;)V
-
-    iput-object v14, v0, Lde/rki/coronawarnapp/util/di/DaggerApplicationComponent;->encryptedPreferencesHelperProvider:Ljavax/inject/Provider;
-
-    iget-object v15, v0, Lde/rki/coronawarnapp/util/di/DaggerApplicationComponent;->cWASettingsProvider:Ljavax/inject/Provider;
-
-    iget-object v4, v0, Lde/rki/coronawarnapp/util/di/DaggerApplicationComponent;->submissionSettingsProvider:Ljavax/inject/Provider;
-
-    iget-object v5, v0, Lde/rki/coronawarnapp/util/di/DaggerApplicationComponent;->tracingSettingsProvider:Ljavax/inject/Provider;
-
-    iget-object v6, v0, Lde/rki/coronawarnapp/util/di/DaggerApplicationComponent;->onboardingSettingsProvider:Ljavax/inject/Provider;
-
-    iget-object v7, v0, Lde/rki/coronawarnapp/util/di/DaggerApplicationComponent;->encryptionErrorResetToolProvider:Ljavax/inject/Provider;
-
-    new-instance v13, Lde/rki/coronawarnapp/util/encryptionmigration/EncryptedPreferencesMigration_Factory;
-
-    move-object v12, v13
-
-    move-object v10, v13
-
-    move-object v13, v3
-
-    move-object/from16 v16, v4
-
-    move-object/from16 v17, v5
-
-    move-object/from16 v18, v6
-
-    move-object/from16 v19, v7
-
-    invoke-direct/range {v12 .. v19}, Lde/rki/coronawarnapp/util/encryptionmigration/EncryptedPreferencesMigration_Factory;-><init>(Ljavax/inject/Provider;Ljavax/inject/Provider;Ljavax/inject/Provider;Ljavax/inject/Provider;Ljavax/inject/Provider;Ljavax/inject/Provider;Ljavax/inject/Provider;)V
-
-    iput-object v10, v0, Lde/rki/coronawarnapp/util/di/DaggerApplicationComponent;->encryptedPreferencesMigrationProvider:Ljavax/inject/Provider;
-
-    new-instance v4, Lde/rki/coronawarnapp/contactdiary/storage/ContactDiaryPreferences_Factory;
-
-    invoke-direct {v4, v3}, Lde/rki/coronawarnapp/contactdiary/storage/ContactDiaryPreferences_Factory;-><init>(Ljavax/inject/Provider;)V
-
-    sget-object v3, Ldagger/internal/DoubleCheck;->UNINITIALIZED:Ljava/lang/Object;
-
-    instance-of v3, v4, Ldagger/internal/DoubleCheck;
-
-    if-eqz v3, :cond_0
-
-    goto :goto_0
-
-    :cond_0
-    new-instance v3, Ldagger/internal/DoubleCheck;
-
-    invoke-direct {v3, v4}, Ldagger/internal/DoubleCheck;-><init>(Ljavax/inject/Provider;)V
-
-    move-object v4, v3
-
-    :goto_0
-    iput-object v4, v0, Lde/rki/coronawarnapp/util/di/DaggerApplicationComponent;->contactDiaryPreferencesProvider:Ljavax/inject/Provider;
-
-    new-instance v3, Lde/rki/coronawarnapp/contactdiary/ui/ContactDiarySettings_Factory;
-
-    invoke-direct {v3, v4}, Lde/rki/coronawarnapp/contactdiary/ui/ContactDiarySettings_Factory;-><init>(Ljavax/inject/Provider;)V
-
-    instance-of v4, v3, Ldagger/internal/DoubleCheck;
-
-    if-eqz v4, :cond_1
-
-    goto :goto_1
-
-    :cond_1
-    new-instance v4, Ldagger/internal/DoubleCheck;
-
-    invoke-direct {v4, v3}, Ldagger/internal/DoubleCheck;-><init>(Ljavax/inject/Provider;)V
-
-    move-object v3, v4
-
-    :goto_1
-    iput-object v3, v0, Lde/rki/coronawarnapp/util/di/DaggerApplicationComponent;->contactDiarySettingsProvider:Ljavax/inject/Provider;
-
-    iget-object v3, v0, Lde/rki/coronawarnapp/util/di/DaggerApplicationComponent;->coronaTestRepositoryProvider:Ljavax/inject/Provider;
-
-    iget-object v4, v0, Lde/rki/coronawarnapp/util/di/DaggerApplicationComponent;->providePlaybookProvider:Ljavax/inject/Provider;
-
-    new-instance v5, Lde/rki/coronawarnapp/playbook/BackgroundNoise_Factory;
-
-    invoke-direct {v5, v3, v4}, Lde/rki/coronawarnapp/playbook/BackgroundNoise_Factory;-><init>(Ljavax/inject/Provider;Ljavax/inject/Provider;)V
-
-    instance-of v3, v5, Ldagger/internal/DoubleCheck;
-
-    if-eqz v3, :cond_2
-
-    goto :goto_2
-
-    :cond_2
-    new-instance v3, Ldagger/internal/DoubleCheck;
-
-    invoke-direct {v3, v5}, Ldagger/internal/DoubleCheck;-><init>(Ljavax/inject/Provider;)V
-
-    move-object v5, v3
-
-    :goto_2
-    iput-object v5, v0, Lde/rki/coronawarnapp/util/di/DaggerApplicationComponent;->backgroundNoiseProvider:Ljavax/inject/Provider;
-
-    iget-object v3, v0, Lde/rki/coronawarnapp/util/di/DaggerApplicationComponent;->appCoroutineScopeProvider:Ljavax/inject/Provider;
-
-    iget-object v4, v0, Lde/rki/coronawarnapp/util/di/DaggerApplicationComponent;->submissionSettingsProvider:Ljavax/inject/Provider;
-
-    iget-object v5, v0, Lde/rki/coronawarnapp/util/di/DaggerApplicationComponent;->tEKHistoryStorageProvider:Ljavax/inject/Provider;
-
-    iget-object v6, v0, Lde/rki/coronawarnapp/util/di/DaggerApplicationComponent;->coronaTestRepositoryProvider:Ljavax/inject/Provider;
-
-    new-instance v7, Lde/rki/coronawarnapp/submission/SubmissionRepository_Factory;
-
-    invoke-direct {v7, v3, v4, v5, v6}, Lde/rki/coronawarnapp/submission/SubmissionRepository_Factory;-><init>(Ljavax/inject/Provider;Ljavax/inject/Provider;Ljavax/inject/Provider;Ljavax/inject/Provider;)V
-
-    instance-of v3, v7, Ldagger/internal/DoubleCheck;
-
-    if-eqz v3, :cond_3
-
-    goto :goto_3
-
-    :cond_3
-    new-instance v3, Ldagger/internal/DoubleCheck;
-
-    invoke-direct {v3, v7}, Ldagger/internal/DoubleCheck;-><init>(Ljavax/inject/Provider;)V
-
-    move-object v7, v3
-
-    :goto_3
-    iput-object v7, v0, Lde/rki/coronawarnapp/util/di/DaggerApplicationComponent;->submissionRepositoryProvider:Ljavax/inject/Provider;
-
-    iget-object v3, v0, Lde/rki/coronawarnapp/util/di/DaggerApplicationComponent;->contextProvider:Ljavax/inject/Provider;
-
-    new-instance v4, Lde/rki/coronawarnapp/util/permission/CameraSettings_Factory;
-
-    invoke-direct {v4, v3}, Lde/rki/coronawarnapp/util/permission/CameraSettings_Factory;-><init>(Ljavax/inject/Provider;)V
-
-    instance-of v3, v4, Ldagger/internal/DoubleCheck;
-
-    if-eqz v3, :cond_4
-
-    goto :goto_4
-
-    :cond_4
-    new-instance v3, Ldagger/internal/DoubleCheck;
-
-    invoke-direct {v3, v4}, Ldagger/internal/DoubleCheck;-><init>(Ljavax/inject/Provider;)V
-
-    move-object v4, v3
-
-    :goto_4
-    iput-object v4, v0, Lde/rki/coronawarnapp/util/di/DaggerApplicationComponent;->cameraSettingsProvider:Ljavax/inject/Provider;
-
-    iget-object v3, v0, Lde/rki/coronawarnapp/util/di/DaggerApplicationComponent;->appConfigProvider:Ljavax/inject/Provider;
-
-    iget-object v4, v0, Lde/rki/coronawarnapp/util/di/DaggerApplicationComponent;->cWASettingsProvider:Ljavax/inject/Provider;
-
-    iget-object v5, v0, Lde/rki/coronawarnapp/util/di/DaggerApplicationComponent;->networkStateProvider:Ljavax/inject/Provider;
-
-    new-instance v6, Lde/rki/coronawarnapp/storage/interoperability/InteroperabilityRepository_Factory;
-
-    invoke-direct {v6, v3, v4, v5}, Lde/rki/coronawarnapp/storage/interoperability/InteroperabilityRepository_Factory;-><init>(Ljavax/inject/Provider;Ljavax/inject/Provider;Ljavax/inject/Provider;)V
-
-    instance-of v3, v6, Ldagger/internal/DoubleCheck;
-
-    if-eqz v3, :cond_5
-
-    goto :goto_5
-
-    :cond_5
-    new-instance v3, Ldagger/internal/DoubleCheck;
-
-    invoke-direct {v3, v6}, Ldagger/internal/DoubleCheck;-><init>(Ljavax/inject/Provider;)V
-
-    move-object v6, v3
-
-    :goto_5
-    iput-object v6, v0, Lde/rki/coronawarnapp/util/di/DaggerApplicationComponent;->interoperabilityRepositoryProvider:Ljavax/inject/Provider;
-
-    new-instance v3, Lde/rki/coronawarnapp/util/di/AndroidModule_BluetoothAdapterFactory;
-
-    invoke-direct {v3, v1}, Lde/rki/coronawarnapp/util/di/AndroidModule_BluetoothAdapterFactory;-><init>(Lde/rki/coronawarnapp/util/di/AndroidModule;)V
-
-    instance-of v1, v3, Ldagger/internal/DoubleCheck;
-
-    if-eqz v1, :cond_6
-
-    goto :goto_6
-
-    :cond_6
-    new-instance v1, Ldagger/internal/DoubleCheck;
-
-    invoke-direct {v1, v3}, Ldagger/internal/DoubleCheck;-><init>(Ljavax/inject/Provider;)V
-
-    move-object v3, v1
-
-    :goto_6
-    iput-object v3, v0, Lde/rki/coronawarnapp/util/di/DaggerApplicationComponent;->bluetoothAdapterProvider:Ljavax/inject/Provider;
-
-    iget-object v1, v0, Lde/rki/coronawarnapp/util/di/DaggerApplicationComponent;->contextProvider:Ljavax/inject/Provider;
-
-    iget-object v4, v0, Lde/rki/coronawarnapp/util/di/DaggerApplicationComponent;->appCoroutineScopeProvider:Ljavax/inject/Provider;
-
-    new-instance v5, Lde/rki/coronawarnapp/util/bluetooth/BluetoothProvider_Factory;
-
-    invoke-direct {v5, v1, v4, v3}, Lde/rki/coronawarnapp/util/bluetooth/BluetoothProvider_Factory;-><init>(Ljavax/inject/Provider;Ljavax/inject/Provider;Ljavax/inject/Provider;)V
-
-    instance-of v1, v5, Ldagger/internal/DoubleCheck;
-
-    if-eqz v1, :cond_7
-
-    goto :goto_7
-
-    :cond_7
-    new-instance v1, Ldagger/internal/DoubleCheck;
-
-    invoke-direct {v1, v5}, Ldagger/internal/DoubleCheck;-><init>(Ljavax/inject/Provider;)V
-
-    move-object v5, v1
-
-    :goto_7
-    iput-object v5, v0, Lde/rki/coronawarnapp/util/di/DaggerApplicationComponent;->bluetoothProvider:Ljavax/inject/Provider;
-
-    iget-object v1, v0, Lde/rki/coronawarnapp/util/di/DaggerApplicationComponent;->contextProvider:Ljavax/inject/Provider;
-
-    iget-object v3, v0, Lde/rki/coronawarnapp/util/di/DaggerApplicationComponent;->appCoroutineScopeProvider:Ljavax/inject/Provider;
-
-    new-instance v4, Lde/rki/coronawarnapp/util/location/LocationProvider_Factory;
-
-    invoke-direct {v4, v1, v3}, Lde/rki/coronawarnapp/util/location/LocationProvider_Factory;-><init>(Ljavax/inject/Provider;Ljavax/inject/Provider;)V
-
-    instance-of v1, v4, Ldagger/internal/DoubleCheck;
-
-    if-eqz v1, :cond_8
-
-    goto :goto_8
-
-    :cond_8
-    new-instance v1, Ldagger/internal/DoubleCheck;
-
-    invoke-direct {v1, v4}, Ldagger/internal/DoubleCheck;-><init>(Ljavax/inject/Provider;)V
-
-    move-object v4, v1
-
-    :goto_8
-    iput-object v4, v0, Lde/rki/coronawarnapp/util/di/DaggerApplicationComponent;->locationProvider:Ljavax/inject/Provider;
-
-    iget-object v1, v0, Lde/rki/coronawarnapp/util/di/DaggerApplicationComponent;->bluetoothProvider:Ljavax/inject/Provider;
-
-    iget-object v3, v0, Lde/rki/coronawarnapp/util/di/DaggerApplicationComponent;->eNFClientProvider:Ljavax/inject/Provider;
-
-    new-instance v5, Lde/rki/coronawarnapp/tracing/GeneralTracingStatus_Factory;
-
-    invoke-direct {v5, v1, v4, v3}, Lde/rki/coronawarnapp/tracing/GeneralTracingStatus_Factory;-><init>(Ljavax/inject/Provider;Ljavax/inject/Provider;Ljavax/inject/Provider;)V
-
-    instance-of v1, v5, Ldagger/internal/DoubleCheck;
-
-    if-eqz v1, :cond_9
-
-    goto :goto_9
-
-    :cond_9
-    new-instance v1, Ldagger/internal/DoubleCheck;
-
-    invoke-direct {v1, v5}, Ldagger/internal/DoubleCheck;-><init>(Ljavax/inject/Provider;)V
-
-    move-object v5, v1
-
-    :goto_9
-    iput-object v5, v0, Lde/rki/coronawarnapp/util/di/DaggerApplicationComponent;->generalTracingStatusProvider:Ljavax/inject/Provider;
-
-    iget-object v13, v0, Lde/rki/coronawarnapp/util/di/DaggerApplicationComponent;->appCoroutineScopeProvider:Ljavax/inject/Provider;
-
-    iget-object v14, v0, Lde/rki/coronawarnapp/util/di/DaggerApplicationComponent;->taskControllerProvider:Ljavax/inject/Provider;
-
-    iget-object v15, v0, Lde/rki/coronawarnapp/util/di/DaggerApplicationComponent;->eNFClientProvider:Ljavax/inject/Provider;
-
-    iget-object v1, v0, Lde/rki/coronawarnapp/util/di/DaggerApplicationComponent;->timeStamperProvider:Ljavax/inject/Provider;
-
-    iget-object v3, v0, Lde/rki/coronawarnapp/util/di/DaggerApplicationComponent;->calculationTrackerProvider:Ljavax/inject/Provider;
-
-    iget-object v4, v0, Lde/rki/coronawarnapp/util/di/DaggerApplicationComponent;->backgroundModeStatusProvider:Ljavax/inject/Provider;
-
-    iget-object v5, v0, Lde/rki/coronawarnapp/util/di/DaggerApplicationComponent;->exposureWindowRiskWorkSchedulerProvider:Ljavax/inject/Provider;
-
-    iget-object v6, v0, Lde/rki/coronawarnapp/util/di/DaggerApplicationComponent;->presenceTracingRiskWorkSchedulerProvider:Ljavax/inject/Provider;
-
-    iget-object v7, v0, Lde/rki/coronawarnapp/util/di/DaggerApplicationComponent;->networkStateProvider:Ljavax/inject/Provider;
-
-    new-instance v10, Lde/rki/coronawarnapp/storage/TracingRepository_Factory;
-
-    move-object v12, v10
-
-    move-object/from16 v16, v1
-
-    move-object/from16 v17, v3
-
-    move-object/from16 v18, v4
-
-    move-object/from16 v19, v5
-
-    move-object/from16 v20, v6
-
-    move-object/from16 v21, v7
-
-    invoke-direct/range {v12 .. v21}, Lde/rki/coronawarnapp/storage/TracingRepository_Factory;-><init>(Ljavax/inject/Provider;Ljavax/inject/Provider;Ljavax/inject/Provider;Ljavax/inject/Provider;Ljavax/inject/Provider;Ljavax/inject/Provider;Ljavax/inject/Provider;Ljavax/inject/Provider;Ljavax/inject/Provider;)V
-
-    instance-of v1, v10, Ldagger/internal/DoubleCheck;
-
-    if-eqz v1, :cond_a
-
-    goto :goto_a
-
-    :cond_a
-    new-instance v1, Ldagger/internal/DoubleCheck;
-
-    invoke-direct {v1, v10}, Ldagger/internal/DoubleCheck;-><init>(Ljavax/inject/Provider;)V
-
-    move-object v10, v1
-
-    :goto_a
-    iput-object v10, v0, Lde/rki/coronawarnapp/util/di/DaggerApplicationComponent;->tracingRepositoryProvider:Ljavax/inject/Provider;
-
-    iget-object v1, v0, Lde/rki/coronawarnapp/util/di/DaggerApplicationComponent;->contextProvider:Ljavax/inject/Provider;
-
-    new-instance v3, Lde/rki/coronawarnapp/installTime/InstallTimeProvider_Factory;
-
-    invoke-direct {v3, v1}, Lde/rki/coronawarnapp/installTime/InstallTimeProvider_Factory;-><init>(Ljavax/inject/Provider;)V
-
-    instance-of v1, v3, Ldagger/internal/DoubleCheck;
-
-    if-eqz v1, :cond_b
-
-    goto :goto_b
-
-    :cond_b
-    new-instance v1, Ldagger/internal/DoubleCheck;
-
-    invoke-direct {v1, v3}, Ldagger/internal/DoubleCheck;-><init>(Ljavax/inject/Provider;)V
-
-    move-object v3, v1
-
-    :goto_b
-    iput-object v3, v0, Lde/rki/coronawarnapp/util/di/DaggerApplicationComponent;->installTimeProvider:Ljavax/inject/Provider;
-
-    iget-object v14, v0, Lde/rki/coronawarnapp/util/di/DaggerApplicationComponent;->cdnHttpClientProvider:Ljavax/inject/Provider;
-
-    iget-object v15, v0, Lde/rki/coronawarnapp/util/di/DaggerApplicationComponent;->provideDownloadServerUrlProvider:Ljavax/inject/Provider;
-
-    iget-object v1, v0, Lde/rki/coronawarnapp/util/di/DaggerApplicationComponent;->provideGSONConverterProvider:Ljavax/inject/Provider;
-
-    iget-object v3, v0, Lde/rki/coronawarnapp/util/di/DaggerApplicationComponent;->httpCacheProvider2:Ljavax/inject/Provider;
-
-    new-instance v4, Lde/rki/coronawarnapp/statistics/StatisticsModule_ApiFactory;
-
-    const/16 v18, 0x0
-
-    move-object v12, v4
-
-    move-object/from16 v13, p4
-
-    move-object/from16 v16, v1
-
-    move-object/from16 v17, v3
-
-    invoke-direct/range {v12 .. v18}, Lde/rki/coronawarnapp/statistics/StatisticsModule_ApiFactory;-><init>(Lde/rki/coronawarnapp/statistics/StatisticsModule;Ljavax/inject/Provider;Ljavax/inject/Provider;Ljavax/inject/Provider;Ljavax/inject/Provider;I)V
-
-    instance-of v1, v4, Ldagger/internal/DoubleCheck;
-
-    if-eqz v1, :cond_c
-
-    goto :goto_c
-
-    :cond_c
-    new-instance v1, Ldagger/internal/DoubleCheck;
-
-    invoke-direct {v1, v4}, Ldagger/internal/DoubleCheck;-><init>(Ljavax/inject/Provider;)V
-
-    move-object v4, v1
-
-    :goto_c
-    iput-object v4, v0, Lde/rki/coronawarnapp/util/di/DaggerApplicationComponent;->apiProvider2:Ljavax/inject/Provider;
-
-    iget-object v1, v0, Lde/rki/coronawarnapp/util/di/DaggerApplicationComponent;->signatureValidationProvider:Ljavax/inject/Provider;
-
-    iget-object v3, v0, Lde/rki/coronawarnapp/util/di/DaggerApplicationComponent;->httpCacheProvider2:Ljavax/inject/Provider;
-
-    new-instance v5, Lde/rki/coronawarnapp/statistics/source/StatisticsServer_Factory;
-
-    invoke-direct {v5, v4, v1, v3}, Lde/rki/coronawarnapp/statistics/source/StatisticsServer_Factory;-><init>(Ljavax/inject/Provider;Ljavax/inject/Provider;Ljavax/inject/Provider;)V
-
-    invoke-static {v5}, Ldagger/internal/SingleCheck;->provider(Ljavax/inject/Provider;)Ljavax/inject/Provider;
-
-    move-result-object v1
-
-    iput-object v1, v0, Lde/rki/coronawarnapp/util/di/DaggerApplicationComponent;->statisticsServerProvider:Ljavax/inject/Provider;
-
-    iget-object v1, v0, Lde/rki/coronawarnapp/util/di/DaggerApplicationComponent;->cacheDirProvider:Ljavax/inject/Provider;
-
-    new-instance v3, Lde/rki/coronawarnapp/statistics/source/StatisticsCache_Factory;
-
-    invoke-direct {v3, v1}, Lde/rki/coronawarnapp/statistics/source/StatisticsCache_Factory;-><init>(Ljavax/inject/Provider;)V
-
-    instance-of v1, v3, Ldagger/internal/DoubleCheck;
-
-    if-eqz v1, :cond_d
-
-    goto :goto_d
-
-    :cond_d
-    new-instance v1, Ldagger/internal/DoubleCheck;
-
-    invoke-direct {v1, v3}, Ldagger/internal/DoubleCheck;-><init>(Ljavax/inject/Provider;)V
-
-    move-object v3, v1
-
-    :goto_d
-    iput-object v3, v0, Lde/rki/coronawarnapp/util/di/DaggerApplicationComponent;->statisticsCacheProvider:Ljavax/inject/Provider;
-
-    sget-object v1, Lde/rki/coronawarnapp/statistics/source/StatisticsParser_Factory$InstanceHolder;->INSTANCE:Lde/rki/coronawarnapp/statistics/source/StatisticsParser_Factory;
-
-    invoke-static {v1}, Ldagger/internal/SingleCheck;->provider(Ljavax/inject/Provider;)Ljavax/inject/Provider;
-
-    move-result-object v1
-
-    iput-object v1, v0, Lde/rki/coronawarnapp/util/di/DaggerApplicationComponent;->statisticsParserProvider:Ljavax/inject/Provider;
-
-    iget-object v13, v0, Lde/rki/coronawarnapp/util/di/DaggerApplicationComponent;->appCoroutineScopeProvider:Ljavax/inject/Provider;
-
-    iget-object v14, v0, Lde/rki/coronawarnapp/util/di/DaggerApplicationComponent;->statisticsServerProvider:Ljavax/inject/Provider;
-
-    iget-object v15, v0, Lde/rki/coronawarnapp/util/di/DaggerApplicationComponent;->statisticsCacheProvider:Ljavax/inject/Provider;
-
-    iget-object v3, v0, Lde/rki/coronawarnapp/util/di/DaggerApplicationComponent;->foregroundStateProvider:Ljavax/inject/Provider;
-
-    iget-object v4, v0, Lde/rki/coronawarnapp/util/di/DaggerApplicationComponent;->defaultDispatcherProvider:Ljavax/inject/Provider;
-
-    new-instance v5, Lde/rki/coronawarnapp/statistics/source/StatisticsProvider_Factory;
-
-    move-object v12, v5
-
-    move-object/from16 v16, v1
-
-    move-object/from16 v17, v3
-
-    move-object/from16 v18, v4
-
-    invoke-direct/range {v12 .. v18}, Lde/rki/coronawarnapp/statistics/source/StatisticsProvider_Factory;-><init>(Ljavax/inject/Provider;Ljavax/inject/Provider;Ljavax/inject/Provider;Ljavax/inject/Provider;Ljavax/inject/Provider;Ljavax/inject/Provider;)V
-
-    instance-of v1, v5, Ldagger/internal/DoubleCheck;
-
-    if-eqz v1, :cond_e
-
-    goto :goto_e
-
-    :cond_e
-    new-instance v1, Ldagger/internal/DoubleCheck;
-
-    invoke-direct {v1, v5}, Ldagger/internal/DoubleCheck;-><init>(Ljavax/inject/Provider;)V
-
-    move-object v5, v1
-
-    :goto_e
-    iput-object v5, v0, Lde/rki/coronawarnapp/util/di/DaggerApplicationComponent;->statisticsProvider:Ljavax/inject/Provider;
-
-    iget-object v1, v0, Lde/rki/coronawarnapp/util/di/DaggerApplicationComponent;->contextProvider:Ljavax/inject/Provider;
-
-    new-instance v3, Lde/rki/coronawarnapp/util/shortcuts/AppShortcutsHelper_Factory;
-
-    invoke-direct {v3, v1}, Lde/rki/coronawarnapp/util/shortcuts/AppShortcutsHelper_Factory;-><init>(Ljavax/inject/Provider;)V
-
-    instance-of v1, v3, Ldagger/internal/DoubleCheck;
-
-    if-eqz v1, :cond_f
-
-    goto :goto_f
-
-    :cond_f
-    new-instance v1, Ldagger/internal/DoubleCheck;
-
-    invoke-direct {v1, v3}, Ldagger/internal/DoubleCheck;-><init>(Ljavax/inject/Provider;)V
-
-    move-object v3, v1
-
-    :goto_f
-    iput-object v3, v0, Lde/rki/coronawarnapp/util/di/DaggerApplicationComponent;->appShortcutsHelperProvider:Ljavax/inject/Provider;
-
-    iget-object v1, v0, Lde/rki/coronawarnapp/util/di/DaggerApplicationComponent;->contextProvider:Ljavax/inject/Provider;
-
-    new-instance v3, Lde/rki/coronawarnapp/ui/presencetracing/TraceLocationPreferences_Factory;
-
-    invoke-direct {v3, v1}, Lde/rki/coronawarnapp/ui/presencetracing/TraceLocationPreferences_Factory;-><init>(Ljavax/inject/Provider;)V
-
-    instance-of v1, v3, Ldagger/internal/DoubleCheck;
-
-    if-eqz v1, :cond_10
-
-    goto :goto_10
-
-    :cond_10
-    new-instance v1, Ldagger/internal/DoubleCheck;
-
-    invoke-direct {v1, v3}, Ldagger/internal/DoubleCheck;-><init>(Ljavax/inject/Provider;)V
-
-    move-object v3, v1
-
-    :goto_10
-    iput-object v3, v0, Lde/rki/coronawarnapp/util/di/DaggerApplicationComponent;->traceLocationPreferencesProvider:Ljavax/inject/Provider;
-
-    new-instance v1, Lde/rki/coronawarnapp/ui/presencetracing/organizer/TraceLocationOrganizerSettings_Factory;
-
-    invoke-direct {v1, v3}, Lde/rki/coronawarnapp/ui/presencetracing/organizer/TraceLocationOrganizerSettings_Factory;-><init>(Ljavax/inject/Provider;)V
-
-    instance-of v3, v1, Ldagger/internal/DoubleCheck;
-
-    if-eqz v3, :cond_11
-
-    goto :goto_11
-
-    :cond_11
-    new-instance v3, Ldagger/internal/DoubleCheck;
-
-    invoke-direct {v3, v1}, Ldagger/internal/DoubleCheck;-><init>(Ljavax/inject/Provider;)V
-
-    move-object v1, v3
-
-    :goto_11
-    iput-object v1, v0, Lde/rki/coronawarnapp/util/di/DaggerApplicationComponent;->traceLocationOrganizerSettingsProvider:Ljavax/inject/Provider;
-
-    iget-object v1, v0, Lde/rki/coronawarnapp/util/di/DaggerApplicationComponent;->foregroundStateProvider:Ljavax/inject/Provider;
-
-    iget-object v3, v0, Lde/rki/coronawarnapp/util/di/DaggerApplicationComponent;->notificationManagerCompatProvider:Ljavax/inject/Provider;
-
-    new-instance v4, Lde/rki/coronawarnapp/ui/settings/notifications/NotificationSettings_Factory;
-
-    invoke-direct {v4, v1, v3}, Lde/rki/coronawarnapp/ui/settings/notifications/NotificationSettings_Factory;-><init>(Ljavax/inject/Provider;Ljavax/inject/Provider;)V
-
-    instance-of v1, v4, Ldagger/internal/DoubleCheck;
-
-    if-eqz v1, :cond_12
-
-    goto :goto_12
-
-    :cond_12
-    new-instance v1, Ldagger/internal/DoubleCheck;
-
-    invoke-direct {v1, v4}, Ldagger/internal/DoubleCheck;-><init>(Ljavax/inject/Provider;)V
-
-    move-object v4, v1
-
-    :goto_12
-    iput-object v4, v0, Lde/rki/coronawarnapp/util/di/DaggerApplicationComponent;->notificationSettingsProvider:Ljavax/inject/Provider;
-
-    new-instance v1, Lde/rki/coronawarnapp/bugreporting/BugReportingSharedModule_DebugLoggerFactory;
-
-    invoke-direct {v1, v8}, Lde/rki/coronawarnapp/bugreporting/BugReportingSharedModule_DebugLoggerFactory;-><init>(Lde/rki/coronawarnapp/bugreporting/BugReportingSharedModule;)V
-
-    instance-of v3, v1, Ldagger/internal/DoubleCheck;
-
-    if-eqz v3, :cond_13
-
-    goto :goto_13
-
-    :cond_13
-    new-instance v3, Ldagger/internal/DoubleCheck;
-
-    invoke-direct {v3, v1}, Ldagger/internal/DoubleCheck;-><init>(Ljavax/inject/Provider;)V
-
-    move-object v1, v3
-
-    :goto_13
-    iput-object v1, v0, Lde/rki/coronawarnapp/util/di/DaggerApplicationComponent;->debugLoggerProvider:Ljavax/inject/Provider;
-
-    iget-object v1, v0, Lde/rki/coronawarnapp/util/di/DaggerApplicationComponent;->contextProvider:Ljavax/inject/Provider;
-
-    iget-object v3, v0, Lde/rki/coronawarnapp/util/di/DaggerApplicationComponent;->baseGsonProvider:Ljavax/inject/Provider;
-
-    new-instance v4, Lde/rki/coronawarnapp/bugreporting/BugReportingSettings_Factory;
-
-    invoke-direct {v4, v1, v3}, Lde/rki/coronawarnapp/bugreporting/BugReportingSettings_Factory;-><init>(Ljavax/inject/Provider;Ljavax/inject/Provider;)V
-
-    instance-of v1, v4, Ldagger/internal/DoubleCheck;
-
-    if-eqz v1, :cond_14
-
-    goto :goto_14
-
-    :cond_14
-    new-instance v1, Ldagger/internal/DoubleCheck;
-
-    invoke-direct {v1, v4}, Ldagger/internal/DoubleCheck;-><init>(Ljavax/inject/Provider;)V
-
-    move-object v4, v1
-
-    :goto_14
-    iput-object v4, v0, Lde/rki/coronawarnapp/util/di/DaggerApplicationComponent;->bugReportingSettingsProvider:Ljavax/inject/Provider;
-
-    iget-object v1, v0, Lde/rki/coronawarnapp/util/di/DaggerApplicationComponent;->contextProvider:Ljavax/inject/Provider;
-
-    iget-object v3, v0, Lde/rki/coronawarnapp/util/di/DaggerApplicationComponent;->debugLoggerProvider:Ljavax/inject/Provider;
-
-    iget-object v4, v0, Lde/rki/coronawarnapp/util/di/DaggerApplicationComponent;->timeStamperProvider:Ljavax/inject/Provider;
-
-    new-instance v5, Lde/rki/coronawarnapp/bugreporting/debuglog/internal/LogSnapshotter_Factory;
-
-    invoke-direct {v5, v1, v3, v4}, Lde/rki/coronawarnapp/bugreporting/debuglog/internal/LogSnapshotter_Factory;-><init>(Ljavax/inject/Provider;Ljavax/inject/Provider;Ljavax/inject/Provider;)V
-
-    invoke-static {v5}, Ldagger/internal/SingleCheck;->provider(Ljavax/inject/Provider;)Ljavax/inject/Provider;
-
-    move-result-object v1
-
-    iput-object v1, v0, Lde/rki/coronawarnapp/util/di/DaggerApplicationComponent;->logSnapshotterProvider:Ljavax/inject/Provider;
-
-    iget-object v1, v0, Lde/rki/coronawarnapp/util/di/DaggerApplicationComponent;->defaultHttpClientProvider:Ljavax/inject/Provider;
-
-    new-instance v3, Lde/rki/coronawarnapp/environment/bugreporting/BugReportingServerModule_CdnHttpClientFactory;
-
-    invoke-direct {v3, v2, v1}, Lde/rki/coronawarnapp/environment/bugreporting/BugReportingServerModule_CdnHttpClientFactory;-><init>(Lde/rki/coronawarnapp/environment/bugreporting/BugReportingServerModule;Ljavax/inject/Provider;)V
-
-    invoke-static {v3}, Ldagger/internal/SingleCheck;->provider(Ljavax/inject/Provider;)Ljavax/inject/Provider;
-
-    move-result-object v1
-
-    iput-object v1, v0, Lde/rki/coronawarnapp/util/di/DaggerApplicationComponent;->cdnHttpClientProvider5:Ljavax/inject/Provider;
-
-    iget-object v1, v0, Lde/rki/coronawarnapp/util/di/DaggerApplicationComponent;->environmentSetupProvider:Ljavax/inject/Provider;
-
-    new-instance v3, Lde/rki/coronawarnapp/environment/bugreporting/BugReportingServerModule_ProvideBugReportingServerUrlFactory;
-
-    invoke-direct {v3, v2, v1}, Lde/rki/coronawarnapp/environment/bugreporting/BugReportingServerModule_ProvideBugReportingServerUrlFactory;-><init>(Lde/rki/coronawarnapp/environment/bugreporting/BugReportingServerModule;Ljavax/inject/Provider;)V
-
-    instance-of v1, v3, Ldagger/internal/DoubleCheck;
-
-    if-eqz v1, :cond_15
-
-    move-object v4, v3
-
-    goto :goto_15
-
-    :cond_15
-    new-instance v1, Ldagger/internal/DoubleCheck;
-
-    invoke-direct {v1, v3}, Ldagger/internal/DoubleCheck;-><init>(Ljavax/inject/Provider;)V
-
-    move-object v4, v1
-
-    :goto_15
-    iput-object v4, v0, Lde/rki/coronawarnapp/util/di/DaggerApplicationComponent;->provideBugReportingServerUrlProvider:Ljavax/inject/Provider;
-
-    iget-object v3, v0, Lde/rki/coronawarnapp/util/di/DaggerApplicationComponent;->cdnHttpClientProvider5:Ljavax/inject/Provider;
-
-    iget-object v5, v0, Lde/rki/coronawarnapp/util/di/DaggerApplicationComponent;->provideProtoConverterProvider:Ljavax/inject/Provider;
-
-    iget-object v6, v0, Lde/rki/coronawarnapp/util/di/DaggerApplicationComponent;->provideGSONConverterProvider:Ljavax/inject/Provider;
-
-    new-instance v10, Lde/rki/coronawarnapp/bugreporting/BugReportingSharedModule_LogUploadApiFactory;
-
-    const/4 v7, 0x0
-
-    move-object v1, v10
-
-    move-object/from16 v2, p3
-
-    invoke-direct/range {v1 .. v7}, Lde/rki/coronawarnapp/bugreporting/BugReportingSharedModule_LogUploadApiFactory;-><init>(Lde/rki/coronawarnapp/bugreporting/BugReportingSharedModule;Ljavax/inject/Provider;Ljavax/inject/Provider;Ljavax/inject/Provider;Ljavax/inject/Provider;I)V
-
-    invoke-static {v10}, Ldagger/internal/SingleCheck;->provider(Ljavax/inject/Provider;)Ljavax/inject/Provider;
-
-    move-result-object v1
-
-    iput-object v1, v0, Lde/rki/coronawarnapp/util/di/DaggerApplicationComponent;->logUploadApiProvider:Ljavax/inject/Provider;
-
-    iget-object v2, v0, Lde/rki/coronawarnapp/util/di/DaggerApplicationComponent;->timeStamperProvider:Ljavax/inject/Provider;
-
-    new-instance v3, Lde/rki/coronawarnapp/bugreporting/debuglog/upload/server/LogUploadServer_Factory;
-
-    invoke-direct {v3, v1, v2}, Lde/rki/coronawarnapp/bugreporting/debuglog/upload/server/LogUploadServer_Factory;-><init>(Ljavax/inject/Provider;Ljavax/inject/Provider;)V
-
-    invoke-static {v3}, Ldagger/internal/SingleCheck;->provider(Ljavax/inject/Provider;)Ljavax/inject/Provider;
-
-    move-result-object v1
-
-    iput-object v1, v0, Lde/rki/coronawarnapp/util/di/DaggerApplicationComponent;->logUploadServerProvider:Ljavax/inject/Provider;
-
-    iget-object v3, v0, Lde/rki/coronawarnapp/util/di/DaggerApplicationComponent;->cdnHttpClientProvider4:Ljavax/inject/Provider;
-
-    iget-object v4, v0, Lde/rki/coronawarnapp/util/di/DaggerApplicationComponent;->provideDonationServerUrlProvider:Ljavax/inject/Provider;
-
-    iget-object v5, v0, Lde/rki/coronawarnapp/util/di/DaggerApplicationComponent;->provideProtoConverterProvider:Ljavax/inject/Provider;
-
-    iget-object v6, v0, Lde/rki/coronawarnapp/util/di/DaggerApplicationComponent;->provideGSONConverterProvider:Ljavax/inject/Provider;
-
-    new-instance v10, Lde/rki/coronawarnapp/bugreporting/BugReportingSharedModule_LogUploadApiFactory;
-
-    const/4 v7, 0x1
-
-    move-object v1, v10
-
-    move-object/from16 v2, p3
-
-    invoke-direct/range {v1 .. v7}, Lde/rki/coronawarnapp/bugreporting/BugReportingSharedModule_LogUploadApiFactory;-><init>(Lde/rki/coronawarnapp/bugreporting/BugReportingSharedModule;Ljavax/inject/Provider;Ljavax/inject/Provider;Ljavax/inject/Provider;Ljavax/inject/Provider;I)V
-
-    invoke-static {v10}, Ldagger/internal/SingleCheck;->provider(Ljavax/inject/Provider;)Ljavax/inject/Provider;
-
-    move-result-object v1
-
-    iput-object v1, v0, Lde/rki/coronawarnapp/util/di/DaggerApplicationComponent;->logUploadAuthApiProvider:Ljavax/inject/Provider;
-
-    iget-object v2, v0, Lde/rki/coronawarnapp/util/di/DaggerApplicationComponent;->deviceAttestationProvider:Ljavax/inject/Provider;
-
-    iget-object v3, v0, Lde/rki/coronawarnapp/util/di/DaggerApplicationComponent;->appConfigProvider:Ljavax/inject/Provider;
-
-    new-instance v4, Lde/rki/coronawarnapp/bugreporting/debuglog/upload/server/auth/LogUploadAuthorizer_Factory;
-
-    invoke-direct {v4, v1, v2, v3}, Lde/rki/coronawarnapp/bugreporting/debuglog/upload/server/auth/LogUploadAuthorizer_Factory;-><init>(Ljavax/inject/Provider;Ljavax/inject/Provider;Ljavax/inject/Provider;)V
-
-    invoke-static {v4}, Ldagger/internal/SingleCheck;->provider(Ljavax/inject/Provider;)Ljavax/inject/Provider;
-
-    move-result-object v1
-
-    iput-object v1, v0, Lde/rki/coronawarnapp/util/di/DaggerApplicationComponent;->logUploadAuthorizerProvider:Ljavax/inject/Provider;
-
-    iget-object v2, v0, Lde/rki/coronawarnapp/util/di/DaggerApplicationComponent;->logSnapshotterProvider:Ljavax/inject/Provider;
-
-    iget-object v3, v0, Lde/rki/coronawarnapp/util/di/DaggerApplicationComponent;->logUploadServerProvider:Ljavax/inject/Provider;
-
-    iget-object v4, v0, Lde/rki/coronawarnapp/util/di/DaggerApplicationComponent;->bugReportingSettingsProvider:Ljavax/inject/Provider;
-
-    new-instance v5, Lde/rki/coronawarnapp/bugreporting/debuglog/upload/SnapshotUploader_Factory;
-
-    invoke-direct {v5, v2, v3, v1, v4}, Lde/rki/coronawarnapp/bugreporting/debuglog/upload/SnapshotUploader_Factory;-><init>(Ljavax/inject/Provider;Ljavax/inject/Provider;Ljavax/inject/Provider;Ljavax/inject/Provider;)V
-
-    instance-of v1, v5, Ldagger/internal/DoubleCheck;
-
-    if-eqz v1, :cond_16
-
-    goto :goto_16
-
-    :cond_16
-    new-instance v1, Ldagger/internal/DoubleCheck;
-
-    invoke-direct {v1, v5}, Ldagger/internal/DoubleCheck;-><init>(Ljavax/inject/Provider;)V
-
-    move-object v5, v1
-
-    :goto_16
-    iput-object v5, v0, Lde/rki/coronawarnapp/util/di/DaggerApplicationComponent;->snapshotUploaderProvider:Ljavax/inject/Provider;
-
-    iget-object v1, v0, Lde/rki/coronawarnapp/util/di/DaggerApplicationComponent;->defaultTraceLocationRepositoryProvider:Ljavax/inject/Provider;
-
-    iget-object v2, v0, Lde/rki/coronawarnapp/util/di/DaggerApplicationComponent;->strongRandomProvider:Ljavax/inject/Provider;
-
-    iget-object v3, v0, Lde/rki/coronawarnapp/util/di/DaggerApplicationComponent;->environmentSetupProvider:Ljavax/inject/Provider;
-
-    new-instance v4, Lde/rki/coronawarnapp/presencetracing/locations/TraceLocationCreator_Factory;
-
-    invoke-direct {v4, v1, v2, v3}, Lde/rki/coronawarnapp/presencetracing/locations/TraceLocationCreator_Factory;-><init>(Ljavax/inject/Provider;Ljavax/inject/Provider;Ljavax/inject/Provider;)V
-
-    instance-of v1, v4, Ldagger/internal/DoubleCheck;
-
-    if-eqz v1, :cond_17
-
-    goto :goto_17
-
-    :cond_17
-    new-instance v1, Ldagger/internal/DoubleCheck;
-
-    invoke-direct {v1, v4}, Ldagger/internal/DoubleCheck;-><init>(Ljavax/inject/Provider;)V
-
-    move-object v4, v1
-
-    :goto_17
-    iput-object v4, v0, Lde/rki/coronawarnapp/util/di/DaggerApplicationComponent;->traceLocationCreatorProvider:Ljavax/inject/Provider;
-
-    iget-object v1, v0, Lde/rki/coronawarnapp/util/di/DaggerApplicationComponent;->contextProvider:Ljavax/inject/Provider;
-
-    new-instance v2, Lde/rki/coronawarnapp/environment/presencetracing/qrcodeposter/QrCodePosterTemplateModule_CacheDirFactory;
-
-    invoke-direct {v2, v9, v1}, Lde/rki/coronawarnapp/environment/presencetracing/qrcodeposter/QrCodePosterTemplateModule_CacheDirFactory;-><init>(Lde/rki/coronawarnapp/environment/presencetracing/qrcodeposter/QrCodePosterTemplateModule;Ljavax/inject/Provider;)V
-
-    instance-of v1, v2, Ldagger/internal/DoubleCheck;
-
-    if-eqz v1, :cond_18
-
-    goto :goto_18
-
-    :cond_18
-    new-instance v1, Ldagger/internal/DoubleCheck;
-
-    invoke-direct {v1, v2}, Ldagger/internal/DoubleCheck;-><init>(Ljavax/inject/Provider;)V
-
-    move-object v2, v1
-
-    :goto_18
-    iput-object v2, v0, Lde/rki/coronawarnapp/util/di/DaggerApplicationComponent;->cacheDirProvider3:Ljavax/inject/Provider;
-
-    new-instance v1, Lde/rki/coronawarnapp/environment/presencetracing/qrcodeposter/QrCodePosterTemplateModule_HttpCacheFactory;
-
-    invoke-direct {v1, v9, v2}, Lde/rki/coronawarnapp/environment/presencetracing/qrcodeposter/QrCodePosterTemplateModule_HttpCacheFactory;-><init>(Lde/rki/coronawarnapp/environment/presencetracing/qrcodeposter/QrCodePosterTemplateModule;Ljavax/inject/Provider;)V
-
-    instance-of v2, v1, Ldagger/internal/DoubleCheck;
-
-    if-eqz v2, :cond_19
-
-    goto :goto_19
-
-    :cond_19
-    new-instance v2, Ldagger/internal/DoubleCheck;
-
-    invoke-direct {v2, v1}, Ldagger/internal/DoubleCheck;-><init>(Ljavax/inject/Provider;)V
-
-    move-object v1, v2
-
-    :goto_19
-    iput-object v1, v0, Lde/rki/coronawarnapp/util/di/DaggerApplicationComponent;->httpCacheProvider3:Ljavax/inject/Provider;
-
-    iget-object v2, v0, Lde/rki/coronawarnapp/util/di/DaggerApplicationComponent;->cdnHttpClientProvider:Ljavax/inject/Provider;
-
-    iget-object v3, v0, Lde/rki/coronawarnapp/util/di/DaggerApplicationComponent;->provideDownloadServerUrlProvider:Ljavax/inject/Provider;
-
-    new-instance v4, Lde/rki/coronawarnapp/environment/presencetracing/qrcodeposter/QrCodePosterTemplateModule_ApiFactory;
-
-    invoke-direct {v4, v9, v2, v3, v1}, Lde/rki/coronawarnapp/environment/presencetracing/qrcodeposter/QrCodePosterTemplateModule_ApiFactory;-><init>(Lde/rki/coronawarnapp/environment/presencetracing/qrcodeposter/QrCodePosterTemplateModule;Ljavax/inject/Provider;Ljavax/inject/Provider;Ljavax/inject/Provider;)V
-
-    instance-of v1, v4, Ldagger/internal/DoubleCheck;
-
-    if-eqz v1, :cond_1a
-
-    goto :goto_1a
-
-    :cond_1a
-    new-instance v1, Ldagger/internal/DoubleCheck;
-
-    invoke-direct {v1, v4}, Ldagger/internal/DoubleCheck;-><init>(Ljavax/inject/Provider;)V
-
-    move-object v4, v1
-
-    :goto_1a
-    iput-object v4, v0, Lde/rki/coronawarnapp/util/di/DaggerApplicationComponent;->apiProvider3:Ljavax/inject/Provider;
-
-    iget-object v1, v0, Lde/rki/coronawarnapp/util/di/DaggerApplicationComponent;->contextProvider:Ljavax/inject/Provider;
-
-    new-instance v2, Lde/rki/coronawarnapp/presencetracing/locations/server/qrcodepostertemplate/DefaultQrCodePosterTemplateSource_Factory;
-
-    invoke-direct {v2, v1}, Lde/rki/coronawarnapp/presencetracing/locations/server/qrcodepostertemplate/DefaultQrCodePosterTemplateSource_Factory;-><init>(Ljavax/inject/Provider;)V
-
-    invoke-static {v2}, Ldagger/internal/SingleCheck;->provider(Ljavax/inject/Provider;)Ljavax/inject/Provider;
-
-    move-result-object v1
-
-    iput-object v1, v0, Lde/rki/coronawarnapp/util/di/DaggerApplicationComponent;->defaultQrCodePosterTemplateSourceProvider:Ljavax/inject/Provider;
-
-    iget-object v2, v0, Lde/rki/coronawarnapp/util/di/DaggerApplicationComponent;->apiProvider3:Ljavax/inject/Provider;
-
-    iget-object v3, v0, Lde/rki/coronawarnapp/util/di/DaggerApplicationComponent;->signatureValidationProvider:Ljavax/inject/Provider;
-
-    new-instance v4, Lde/rki/coronawarnapp/presencetracing/locations/server/qrcodepostertemplate/QrCodePosterTemplateServer_Factory;
-
-    invoke-direct {v4, v2, v1, v3}, Lde/rki/coronawarnapp/presencetracing/locations/server/qrcodepostertemplate/QrCodePosterTemplateServer_Factory;-><init>(Ljavax/inject/Provider;Ljavax/inject/Provider;Ljavax/inject/Provider;)V
-
-    instance-of v1, v4, Ldagger/internal/DoubleCheck;
-
-    if-eqz v1, :cond_1b
-
-    goto :goto_1b
-
-    :cond_1b
-    new-instance v1, Ldagger/internal/DoubleCheck;
-
-    invoke-direct {v1, v4}, Ldagger/internal/DoubleCheck;-><init>(Ljavax/inject/Provider;)V
-
-    move-object v4, v1
-
-    :goto_1b
-    iput-object v4, v0, Lde/rki/coronawarnapp/util/di/DaggerApplicationComponent;->qrCodePosterTemplateServerProvider:Ljavax/inject/Provider;
-
-    sget-object v1, Lde/rki/coronawarnapp/qrcode/provider/image/BaseImageUriResolver_Factory$InstanceHolder;->INSTANCE:Lde/rki/coronawarnapp/qrcode/provider/image/BaseImageUriResolver_Factory;
-
-    sget-object v2, Lde/rki/coronawarnapp/qrcode/provider/image/NewImageUriResolver_Factory$InstanceHolder;->INSTANCE:Lde/rki/coronawarnapp/qrcode/provider/image/NewImageUriResolver_Factory;
-
-    new-instance v3, Lde/rki/coronawarnapp/qrcode/QrCodeScannerModule_BindImageResolverFactory;
-
-    invoke-direct {v3, v11, v1, v2}, Lde/rki/coronawarnapp/qrcode/QrCodeScannerModule_BindImageResolverFactory;-><init>(Lde/rki/coronawarnapp/qrcode/QrCodeScannerModule;Ljavax/inject/Provider;Ljavax/inject/Provider;)V
-
-    instance-of v1, v3, Ldagger/internal/DoubleCheck;
-
-    if-eqz v1, :cond_1c
-
-    goto :goto_1c
-
-    :cond_1c
-    new-instance v1, Ldagger/internal/DoubleCheck;
-
-    invoke-direct {v1, v3}, Ldagger/internal/DoubleCheck;-><init>(Ljavax/inject/Provider;)V
-
-    move-object v3, v1
-
-    :goto_1c
-    iput-object v3, v0, Lde/rki/coronawarnapp/util/di/DaggerApplicationComponent;->bindImageResolverProvider:Ljavax/inject/Provider;
-
-    new-instance v1, Lde/rki/coronawarnapp/qrcode/QrCodeScannerModule_QrCodeReaderFactory;
-
-    invoke-direct {v1, v11}, Lde/rki/coronawarnapp/qrcode/QrCodeScannerModule_QrCodeReaderFactory;-><init>(Lde/rki/coronawarnapp/qrcode/QrCodeScannerModule;)V
-
-    instance-of v2, v1, Ldagger/internal/DoubleCheck;
-
-    if-eqz v2, :cond_1d
-
-    goto :goto_1d
-
-    :cond_1d
-    new-instance v2, Ldagger/internal/DoubleCheck;
-
-    invoke-direct {v2, v1}, Ldagger/internal/DoubleCheck;-><init>(Ljavax/inject/Provider;)V
-
-    move-object v1, v2
-
-    :goto_1d
-    iput-object v1, v0, Lde/rki/coronawarnapp/util/di/DaggerApplicationComponent;->qrCodeReaderProvider:Ljavax/inject/Provider;
-
-    iget-object v3, v0, Lde/rki/coronawarnapp/util/di/DaggerApplicationComponent;->appCoroutineScopeProvider:Ljavax/inject/Provider;
-
-    iget-object v4, v0, Lde/rki/coronawarnapp/util/di/DaggerApplicationComponent;->defaultDispatcherProvider:Ljavax/inject/Provider;
-
-    iget-object v5, v0, Lde/rki/coronawarnapp/util/di/DaggerApplicationComponent;->baseGsonProvider:Ljavax/inject/Provider;
-
-    iget-object v6, v0, Lde/rki/coronawarnapp/util/di/DaggerApplicationComponent;->dccValidationServerProvider:Ljavax/inject/Provider;
-
-    iget-object v7, v0, Lde/rki/coronawarnapp/util/di/DaggerApplicationComponent;->dccValidationCacheProvider:Ljavax/inject/Provider;
-
-    iget-object v8, v0, Lde/rki/coronawarnapp/util/di/DaggerApplicationComponent;->dccValidationRuleConverterProvider:Ljavax/inject/Provider;
-
-    new-instance v1, Lde/rki/coronawarnapp/covidcertificate/validation/core/DccValidationRepository_Factory;
-
-    move-object v2, v1
-
-    invoke-direct/range {v2 .. v8}, Lde/rki/coronawarnapp/covidcertificate/validation/core/DccValidationRepository_Factory;-><init>(Ljavax/inject/Provider;Ljavax/inject/Provider;Ljavax/inject/Provider;Ljavax/inject/Provider;Ljavax/inject/Provider;Ljavax/inject/Provider;)V
-
-    instance-of v2, v1, Ldagger/internal/DoubleCheck;
-
-    if-eqz v2, :cond_1e
-
-    goto :goto_1e
-
-    :cond_1e
-    new-instance v2, Ldagger/internal/DoubleCheck;
-
-    invoke-direct {v2, v1}, Ldagger/internal/DoubleCheck;-><init>(Ljavax/inject/Provider;)V
-
-    move-object v1, v2
-
-    :goto_1e
-    iput-object v1, v0, Lde/rki/coronawarnapp/util/di/DaggerApplicationComponent;->dccValidationRepositoryProvider:Ljavax/inject/Provider;
-
-    iget-object v1, v0, Lde/rki/coronawarnapp/util/di/DaggerApplicationComponent;->contextProvider:Ljavax/inject/Provider;
-
-    new-instance v2, Lde/rki/coronawarnapp/covidcertificate/pdf/core/ExportCertificateModule_CacheDirFactory;
-
-    move-object/from16 v3, p6
-
-    invoke-direct {v2, v3, v1}, Lde/rki/coronawarnapp/covidcertificate/pdf/core/ExportCertificateModule_CacheDirFactory;-><init>(Lde/rki/coronawarnapp/rootdetection/RootDetectionModule;Ljavax/inject/Provider;)V
-
-    instance-of v1, v2, Ldagger/internal/DoubleCheck;
-
-    if-eqz v1, :cond_1f
-
-    goto :goto_1f
-
-    :cond_1f
-    new-instance v1, Ldagger/internal/DoubleCheck;
-
-    invoke-direct {v1, v2}, Ldagger/internal/DoubleCheck;-><init>(Ljavax/inject/Provider;)V
-
-    move-object v2, v1
-
-    :goto_1f
-    iput-object v2, v0, Lde/rki/coronawarnapp/util/di/DaggerApplicationComponent;->cacheDirProvider4:Ljavax/inject/Provider;
-
-    iget-object v1, v0, Lde/rki/coronawarnapp/util/di/DaggerApplicationComponent;->contextProvider:Ljavax/inject/Provider;
-
-    new-instance v2, Lde/rki/coronawarnapp/covidcertificate/pdf/core/ExportCertificateModule_ProvideFontFactory;
-
-    invoke-direct {v2, v3, v1}, Lde/rki/coronawarnapp/covidcertificate/pdf/core/ExportCertificateModule_ProvideFontFactory;-><init>(Lde/rki/coronawarnapp/rootdetection/RootDetectionModule;Ljavax/inject/Provider;)V
-
-    instance-of v1, v2, Ldagger/internal/DoubleCheck;
-
-    if-eqz v1, :cond_20
-
-    goto :goto_20
-
-    :cond_20
-    new-instance v1, Ldagger/internal/DoubleCheck;
-
-    invoke-direct {v1, v2}, Ldagger/internal/DoubleCheck;-><init>(Ljavax/inject/Provider;)V
-
-    move-object v2, v1
-
-    :goto_20
-    iput-object v2, v0, Lde/rki/coronawarnapp/util/di/DaggerApplicationComponent;->provideFontProvider:Ljavax/inject/Provider;
-
-    iget-object v4, v0, Lde/rki/coronawarnapp/util/di/DaggerApplicationComponent;->keyCacheRepositoryProvider:Ljavax/inject/Provider;
-
-    iget-object v5, v0, Lde/rki/coronawarnapp/util/di/DaggerApplicationComponent;->appConfigProvider:Ljavax/inject/Provider;
-
-    iget-object v6, v0, Lde/rki/coronawarnapp/util/di/DaggerApplicationComponent;->submissionRepositoryProvider:Ljavax/inject/Provider;
-
-    iget-object v7, v0, Lde/rki/coronawarnapp/util/di/DaggerApplicationComponent;->calculationTrackerProvider:Ljavax/inject/Provider;
-
-    iget-object v8, v0, Lde/rki/coronawarnapp/util/di/DaggerApplicationComponent;->downloadDiagnosisKeysSettingsProvider:Ljavax/inject/Provider;
-
-    iget-object v9, v0, Lde/rki/coronawarnapp/util/di/DaggerApplicationComponent;->riskLevelStorageProvider:Ljavax/inject/Provider;
-
-    iget-object v10, v0, Lde/rki/coronawarnapp/util/di/DaggerApplicationComponent;->contactDiaryRepoProvider:Ljavax/inject/Provider;
-
-    iget-object v11, v0, Lde/rki/coronawarnapp/util/di/DaggerApplicationComponent;->contactDiaryPreferencesProvider:Ljavax/inject/Provider;
-
-    iget-object v12, v0, Lde/rki/coronawarnapp/util/di/DaggerApplicationComponent;->traceLocationPreferencesProvider:Ljavax/inject/Provider;
-
-    iget-object v13, v0, Lde/rki/coronawarnapp/util/di/DaggerApplicationComponent;->cWASettingsProvider:Ljavax/inject/Provider;
-
-    iget-object v14, v0, Lde/rki/coronawarnapp/util/di/DaggerApplicationComponent;->statisticsProvider:Ljavax/inject/Provider;
-
-    iget-object v15, v0, Lde/rki/coronawarnapp/util/di/DaggerApplicationComponent;->localStatisticsProvider:Ljavax/inject/Provider;
-
-    iget-object v1, v0, Lde/rki/coronawarnapp/util/di/DaggerApplicationComponent;->surveySettingsProvider:Ljavax/inject/Provider;
-
-    move-object/from16 v16, v1
-
-    iget-object v1, v0, Lde/rki/coronawarnapp/util/di/DaggerApplicationComponent;->analyticsSettingsProvider:Ljavax/inject/Provider;
-
-    move-object/from16 v17, v1
-
-    iget-object v1, v0, Lde/rki/coronawarnapp/util/di/DaggerApplicationComponent;->analyticsProvider:Ljavax/inject/Provider;
-
-    move-object/from16 v18, v1
-
-    iget-object v1, v0, Lde/rki/coronawarnapp/util/di/DaggerApplicationComponent;->bugReportingSettingsProvider:Ljavax/inject/Provider;
-
-    move-object/from16 v19, v1
-
-    iget-object v1, v0, Lde/rki/coronawarnapp/util/di/DaggerApplicationComponent;->tracingSettingsProvider:Ljavax/inject/Provider;
-
-    move-object/from16 v20, v1
-
-    iget-object v1, v0, Lde/rki/coronawarnapp/util/di/DaggerApplicationComponent;->onboardingSettingsProvider:Ljavax/inject/Provider;
-
-    move-object/from16 v21, v1
-
-    iget-object v1, v0, Lde/rki/coronawarnapp/util/di/DaggerApplicationComponent;->submissionSettingsProvider:Ljavax/inject/Provider;
-
-    move-object/from16 v22, v1
-
-    iget-object v1, v0, Lde/rki/coronawarnapp/util/di/DaggerApplicationComponent;->defaultTraceLocationRepositoryProvider:Ljavax/inject/Provider;
-
-    move-object/from16 v23, v1
-
-    iget-object v1, v0, Lde/rki/coronawarnapp/util/di/DaggerApplicationComponent;->checkInRepositoryProvider:Ljavax/inject/Provider;
-
-    move-object/from16 v24, v1
-
-    iget-object v1, v0, Lde/rki/coronawarnapp/util/di/DaggerApplicationComponent;->traceLocationSettingsProvider:Ljavax/inject/Provider;
-
-    move-object/from16 v25, v1
-
-    iget-object v1, v0, Lde/rki/coronawarnapp/util/di/DaggerApplicationComponent;->traceWarningRepositoryProvider:Ljavax/inject/Provider;
-
-    move-object/from16 v26, v1
-
-    iget-object v1, v0, Lde/rki/coronawarnapp/util/di/DaggerApplicationComponent;->coronaTestRepositoryProvider:Ljavax/inject/Provider;
-
-    move-object/from16 v27, v1
-
-    iget-object v1, v0, Lde/rki/coronawarnapp/util/di/DaggerApplicationComponent;->rATProfileSettingsProvider:Ljavax/inject/Provider;
-
-    move-object/from16 v28, v1
-
-    iget-object v1, v0, Lde/rki/coronawarnapp/util/di/DaggerApplicationComponent;->valueSetsRepositoryProvider:Ljavax/inject/Provider;
-
-    move-object/from16 v29, v1
-
-    iget-object v1, v0, Lde/rki/coronawarnapp/util/di/DaggerApplicationComponent;->covidCertificateSettingsProvider:Ljavax/inject/Provider;
-
-    move-object/from16 v30, v1
-
-    iget-object v1, v0, Lde/rki/coronawarnapp/util/di/DaggerApplicationComponent;->vaccinationRepositoryProvider:Ljavax/inject/Provider;
-
-    move-object/from16 v31, v1
-
-    iget-object v1, v0, Lde/rki/coronawarnapp/util/di/DaggerApplicationComponent;->testCertificateRepositoryProvider:Ljavax/inject/Provider;
-
-    move-object/from16 v32, v1
-
-    iget-object v1, v0, Lde/rki/coronawarnapp/util/di/DaggerApplicationComponent;->personCertificatesSettingsProvider:Ljavax/inject/Provider;
-
-    move-object/from16 v33, v1
-
-    iget-object v1, v0, Lde/rki/coronawarnapp/util/di/DaggerApplicationComponent;->dccValidationRepositoryProvider:Ljavax/inject/Provider;
-
-    move-object/from16 v34, v1
-
-    iget-object v1, v0, Lde/rki/coronawarnapp/util/di/DaggerApplicationComponent;->recoveryCertificateRepositoryProvider:Ljavax/inject/Provider;
-
-    move-object/from16 v35, v1
-
-    iget-object v1, v0, Lde/rki/coronawarnapp/util/di/DaggerApplicationComponent;->dscRepositoryProvider:Ljavax/inject/Provider;
-
-    move-object/from16 v36, v1
-
-    iget-object v1, v0, Lde/rki/coronawarnapp/util/di/DaggerApplicationComponent;->boosterRulesRepositoryProvider:Ljavax/inject/Provider;
-
-    move-object/from16 v37, v1
-
-    new-instance v1, Lde/rki/coronawarnapp/util/DataReset_Factory;
-
-    move-object v3, v1
-
-    invoke-direct/range {v3 .. v37}, Lde/rki/coronawarnapp/util/DataReset_Factory;-><init>(Ljavax/inject/Provider;Ljavax/inject/Provider;Ljavax/inject/Provider;Ljavax/inject/Provider;Ljavax/inject/Provider;Ljavax/inject/Provider;Ljavax/inject/Provider;Ljavax/inject/Provider;Ljavax/inject/Provider;Ljavax/inject/Provider;Ljavax/inject/Provider;Ljavax/inject/Provider;Ljavax/inject/Provider;Ljavax/inject/Provider;Ljavax/inject/Provider;Ljavax/inject/Provider;Ljavax/inject/Provider;Ljavax/inject/Provider;Ljavax/inject/Provider;Ljavax/inject/Provider;Ljavax/inject/Provider;Ljavax/inject/Provider;Ljavax/inject/Provider;Ljavax/inject/Provider;Ljavax/inject/Provider;Ljavax/inject/Provider;Ljavax/inject/Provider;Ljavax/inject/Provider;Ljavax/inject/Provider;Ljavax/inject/Provider;Ljavax/inject/Provider;Ljavax/inject/Provider;Ljavax/inject/Provider;Ljavax/inject/Provider;)V
-
-    instance-of v2, v1, Ldagger/internal/DoubleCheck;
-
-    if-eqz v2, :cond_21
-
-    goto :goto_21
-
-    :cond_21
-    new-instance v2, Ldagger/internal/DoubleCheck;
-
-    invoke-direct {v2, v1}, Ldagger/internal/DoubleCheck;-><init>(Ljavax/inject/Provider;)V
-
-    move-object v1, v2
-
-    :goto_21
-    iput-object v1, v0, Lde/rki/coronawarnapp/util/di/DaggerApplicationComponent;->dataResetProvider:Ljavax/inject/Provider;
-
-    iget-object v1, v0, Lde/rki/coronawarnapp/util/di/DaggerApplicationComponent;->contextProvider:Ljavax/inject/Provider;
-
-    new-instance v2, Lde/rki/coronawarnapp/rootdetection/RootDetectionModule_ProvideRootBeerFactory;
-
-    move-object/from16 v3, p8
-
-    invoke-direct {v2, v3, v1}, Lde/rki/coronawarnapp/rootdetection/RootDetectionModule_ProvideRootBeerFactory;-><init>(Lde/rki/coronawarnapp/rootdetection/RootDetectionModule;Ljavax/inject/Provider;)V
-
-    iput-object v2, v0, Lde/rki/coronawarnapp/util/di/DaggerApplicationComponent;->provideRootBeerProvider:Ljavax/inject/Provider;
-
-    iget-object v1, v0, Lde/rki/coronawarnapp/util/di/DaggerApplicationComponent;->contextProvider:Ljavax/inject/Provider;
-
-    new-instance v2, Lde/rki/coronawarnapp/update/InAppUpdateModule_AppUpdateManagerFactory;
-
-    move-object/from16 v3, p9
-
-    invoke-direct {v2, v3, v1}, Lde/rki/coronawarnapp/update/InAppUpdateModule_AppUpdateManagerFactory;-><init>(Lcom/upokecenter/cbor/CBORUuidConverter;Ljavax/inject/Provider;)V
-
-    iput-object v2, v0, Lde/rki/coronawarnapp/util/di/DaggerApplicationComponent;->appUpdateManagerProvider:Ljavax/inject/Provider;
-
-    return-void
-.end method
-
 .method public inject(Ljava/lang/Object;)V
-    .locals 17
+    .locals 14
     .annotation system Ldalvik/annotation/MethodParameters;
         accessFlags = {
             0x1000
@@ -13418,99 +14350,547 @@
         }
     .end annotation
 
-    move-object/from16 v0, p0
+    check-cast p1, Lde/rki/coronawarnapp/CoronaWarnApplication;
 
-    move-object/from16 v1, p1
+    invoke-static {p1}, Ljava/util/Objects;->requireNonNull(Ljava/lang/Object;)Ljava/lang/Object;
 
-    check-cast v1, Lde/rki/coronawarnapp/CoronaWarnApplication;
+    const/16 v0, 0x9
 
-    invoke-static {v1}, Ljava/util/Objects;->requireNonNull(Ljava/lang/Object;)Ljava/lang/Object;
+    invoke-static {v0}, Lcom/google/common/collect/ImmutableMap;->builderWithExpectedSize(I)Lcom/google/common/collect/ImmutableMap$Builder;
 
-    const/16 v2, 0x8
+    move-result-object v0
 
-    invoke-static {v2}, Lcom/google/common/collect/ImmutableMap;->builderWithExpectedSize(I)Lcom/google/common/collect/ImmutableMap$Builder;
+    const-class v1, Lde/rki/coronawarnapp/receiver/ExposureStateUpdateReceiver;
 
-    move-result-object v2
+    iget-object v2, p0, Lde/rki/coronawarnapp/util/di/DaggerApplicationComponent;->exposureStateUpdateReceiverSubcomponentFactoryProvider:Ljavax/inject/Provider;
 
-    const-class v3, Lde/rki/coronawarnapp/receiver/ExposureStateUpdateReceiver;
+    invoke-virtual {v0, v1, v2}, Lcom/google/common/collect/ImmutableMap$Builder;->put(Ljava/lang/Object;Ljava/lang/Object;)Lcom/google/common/collect/ImmutableMap$Builder;
 
-    iget-object v4, v0, Lde/rki/coronawarnapp/util/di/DaggerApplicationComponent;->exposureStateUpdateReceiverSubcomponentFactoryProvider:Ljavax/inject/Provider;
+    const-class v1, Lde/rki/coronawarnapp/notification/NotificationReceiver;
 
-    invoke-virtual {v2, v3, v4}, Lcom/google/common/collect/ImmutableMap$Builder;->put(Ljava/lang/Object;Ljava/lang/Object;)Lcom/google/common/collect/ImmutableMap$Builder;
+    iget-object v2, p0, Lde/rki/coronawarnapp/util/di/DaggerApplicationComponent;->notificationReceiverSubcomponentFactoryProvider:Ljavax/inject/Provider;
 
-    const-class v3, Lde/rki/coronawarnapp/notification/NotificationReceiver;
+    invoke-virtual {v0, v1, v2}, Lcom/google/common/collect/ImmutableMap$Builder;->put(Ljava/lang/Object;Ljava/lang/Object;)Lcom/google/common/collect/ImmutableMap$Builder;
 
-    iget-object v4, v0, Lde/rki/coronawarnapp/util/di/DaggerApplicationComponent;->notificationReceiverSubcomponentFactoryProvider:Ljavax/inject/Provider;
+    const-class v1, Lde/rki/coronawarnapp/presencetracing/checkins/checkout/auto/AutoCheckOutBootRestoreReceiver;
 
-    invoke-virtual {v2, v3, v4}, Lcom/google/common/collect/ImmutableMap$Builder;->put(Ljava/lang/Object;Ljava/lang/Object;)Lcom/google/common/collect/ImmutableMap$Builder;
+    iget-object v2, p0, Lde/rki/coronawarnapp/util/di/DaggerApplicationComponent;->autoCheckOutBootRestoreReceiverSubcomponentFactoryProvider:Ljavax/inject/Provider;
 
-    const-class v3, Lde/rki/coronawarnapp/presencetracing/checkins/checkout/auto/AutoCheckOutBootRestoreReceiver;
+    invoke-virtual {v0, v1, v2}, Lcom/google/common/collect/ImmutableMap$Builder;->put(Ljava/lang/Object;Ljava/lang/Object;)Lcom/google/common/collect/ImmutableMap$Builder;
 
-    iget-object v4, v0, Lde/rki/coronawarnapp/util/di/DaggerApplicationComponent;->autoCheckOutBootRestoreReceiverSubcomponentFactoryProvider:Ljavax/inject/Provider;
+    const-class v1, Lde/rki/coronawarnapp/presencetracing/checkins/checkout/auto/AutoCheckOutReceiver;
 
-    invoke-virtual {v2, v3, v4}, Lcom/google/common/collect/ImmutableMap$Builder;->put(Ljava/lang/Object;Ljava/lang/Object;)Lcom/google/common/collect/ImmutableMap$Builder;
+    iget-object v2, p0, Lde/rki/coronawarnapp/util/di/DaggerApplicationComponent;->autoCheckOutReceiverSubcomponentFactoryProvider:Ljavax/inject/Provider;
 
-    const-class v3, Lde/rki/coronawarnapp/presencetracing/checkins/checkout/auto/AutoCheckOutReceiver;
+    invoke-virtual {v0, v1, v2}, Lcom/google/common/collect/ImmutableMap$Builder;->put(Ljava/lang/Object;Ljava/lang/Object;)Lcom/google/common/collect/ImmutableMap$Builder;
 
-    iget-object v4, v0, Lde/rki/coronawarnapp/util/di/DaggerApplicationComponent;->autoCheckOutReceiverSubcomponentFactoryProvider:Ljavax/inject/Provider;
+    const-class v1, Lde/rki/coronawarnapp/ui/main/MainActivity;
 
-    invoke-virtual {v2, v3, v4}, Lcom/google/common/collect/ImmutableMap$Builder;->put(Ljava/lang/Object;Ljava/lang/Object;)Lcom/google/common/collect/ImmutableMap$Builder;
+    iget-object v2, p0, Lde/rki/coronawarnapp/util/di/DaggerApplicationComponent;->mainActivitySubcomponentFactoryProvider:Ljavax/inject/Provider;
 
-    const-class v3, Lde/rki/coronawarnapp/ui/main/MainActivity;
+    invoke-virtual {v0, v1, v2}, Lcom/google/common/collect/ImmutableMap$Builder;->put(Ljava/lang/Object;Ljava/lang/Object;)Lcom/google/common/collect/ImmutableMap$Builder;
 
-    iget-object v4, v0, Lde/rki/coronawarnapp/util/di/DaggerApplicationComponent;->mainActivitySubcomponentFactoryProvider:Ljavax/inject/Provider;
+    const-class v1, Lde/rki/coronawarnapp/ui/launcher/LauncherActivity;
 
-    invoke-virtual {v2, v3, v4}, Lcom/google/common/collect/ImmutableMap$Builder;->put(Ljava/lang/Object;Ljava/lang/Object;)Lcom/google/common/collect/ImmutableMap$Builder;
+    iget-object v2, p0, Lde/rki/coronawarnapp/util/di/DaggerApplicationComponent;->launcherActivitySubcomponentFactoryProvider:Ljavax/inject/Provider;
 
-    const-class v3, Lde/rki/coronawarnapp/ui/launcher/LauncherActivity;
+    invoke-virtual {v0, v1, v2}, Lcom/google/common/collect/ImmutableMap$Builder;->put(Ljava/lang/Object;Ljava/lang/Object;)Lcom/google/common/collect/ImmutableMap$Builder;
 
-    iget-object v4, v0, Lde/rki/coronawarnapp/util/di/DaggerApplicationComponent;->launcherActivitySubcomponentFactoryProvider:Ljavax/inject/Provider;
+    const-class v1, Lde/rki/coronawarnapp/ui/onboarding/OnboardingActivity;
 
-    invoke-virtual {v2, v3, v4}, Lcom/google/common/collect/ImmutableMap$Builder;->put(Ljava/lang/Object;Ljava/lang/Object;)Lcom/google/common/collect/ImmutableMap$Builder;
+    iget-object v2, p0, Lde/rki/coronawarnapp/util/di/DaggerApplicationComponent;->onboardingActivitySubcomponentFactoryProvider:Ljavax/inject/Provider;
 
-    const-class v3, Lde/rki/coronawarnapp/ui/onboarding/OnboardingActivity;
+    invoke-virtual {v0, v1, v2}, Lcom/google/common/collect/ImmutableMap$Builder;->put(Ljava/lang/Object;Ljava/lang/Object;)Lcom/google/common/collect/ImmutableMap$Builder;
 
-    iget-object v4, v0, Lde/rki/coronawarnapp/util/di/DaggerApplicationComponent;->onboardingActivitySubcomponentFactoryProvider:Ljavax/inject/Provider;
+    const-class v1, Lde/rki/coronawarnapp/datadonation/survey/consent/SurveyConsentFragment;
 
-    invoke-virtual {v2, v3, v4}, Lcom/google/common/collect/ImmutableMap$Builder;->put(Ljava/lang/Object;Ljava/lang/Object;)Lcom/google/common/collect/ImmutableMap$Builder;
+    iget-object v2, p0, Lde/rki/coronawarnapp/util/di/DaggerApplicationComponent;->surveyConsentFragmentSubcomponentFactoryProvider:Ljavax/inject/Provider;
 
-    const-class v3, Lde/rki/coronawarnapp/datadonation/survey/consent/SurveyConsentFragment;
+    invoke-virtual {v0, v1, v2}, Lcom/google/common/collect/ImmutableMap$Builder;->put(Ljava/lang/Object;Ljava/lang/Object;)Lcom/google/common/collect/ImmutableMap$Builder;
 
-    iget-object v4, v0, Lde/rki/coronawarnapp/util/di/DaggerApplicationComponent;->surveyConsentFragmentSubcomponentFactoryProvider:Ljavax/inject/Provider;
+    const-class v1, Lde/rki/coronawarnapp/rootdetection/ui/RootDetectionDialogFragment;
 
-    invoke-virtual {v2, v3, v4}, Lcom/google/common/collect/ImmutableMap$Builder;->put(Ljava/lang/Object;Ljava/lang/Object;)Lcom/google/common/collect/ImmutableMap$Builder;
+    iget-object v2, p0, Lde/rki/coronawarnapp/util/di/DaggerApplicationComponent;->rootDetectionDialogFragmentSubcomponentFactoryProvider:Ljavax/inject/Provider;
 
-    invoke-virtual {v2}, Lcom/google/common/collect/ImmutableMap$Builder;->build()Lcom/google/common/collect/ImmutableMap;
+    invoke-virtual {v0, v1, v2}, Lcom/google/common/collect/ImmutableMap$Builder;->put(Ljava/lang/Object;Ljava/lang/Object;)Lcom/google/common/collect/ImmutableMap$Builder;
 
-    move-result-object v2
+    invoke-virtual {v0}, Lcom/google/common/collect/ImmutableMap$Builder;->build()Lcom/google/common/collect/ImmutableMap;
 
-    sget-object v3, Lcom/google/common/collect/RegularImmutableMap;->EMPTY:Lcom/google/common/collect/ImmutableMap;
+    move-result-object v0
 
-    new-instance v4, Ldagger/android/DispatchingAndroidInjector;
+    sget-object v1, Lcom/google/common/collect/RegularImmutableMap;->EMPTY:Lcom/google/common/collect/ImmutableMap;
 
-    invoke-direct {v4, v2, v3}, Ldagger/android/DispatchingAndroidInjector;-><init>(Ljava/util/Map;Ljava/util/Map;)V
+    new-instance v2, Ldagger/android/DispatchingAndroidInjector;
 
-    iput-object v4, v1, Lde/rki/coronawarnapp/CoronaWarnApplication;->androidInjector:Ldagger/android/DispatchingAndroidInjector;
+    invoke-direct {v2, v0, v1}, Ldagger/android/DispatchingAndroidInjector;-><init>(Ljava/util/Map;Ljava/util/Map;)V
 
-    iget-object v2, v0, Lde/rki/coronawarnapp/util/di/DaggerApplicationComponent;->watchdogServiceProvider:Ljavax/inject/Provider;
+    iput-object v2, p1, Lde/rki/coronawarnapp/CoronaWarnApplication;->androidInjector:Ldagger/android/DispatchingAndroidInjector;
+
+    iget-object v0, p0, Lde/rki/coronawarnapp/util/di/DaggerApplicationComponent;->watchdogServiceProvider:Ljavax/inject/Provider;
+
+    invoke-interface {v0}, Ljavax/inject/Provider;->get()Ljava/lang/Object;
+
+    move-result-object v0
+
+    check-cast v0, Lde/rki/coronawarnapp/util/WatchdogService;
+
+    iput-object v0, p1, Lde/rki/coronawarnapp/CoronaWarnApplication;->watchdogService:Lde/rki/coronawarnapp/util/WatchdogService;
+
+    iget-object v0, p0, Lde/rki/coronawarnapp/util/di/DaggerApplicationComponent;->taskControllerProvider:Ljavax/inject/Provider;
+
+    invoke-interface {v0}, Ljavax/inject/Provider;->get()Ljava/lang/Object;
+
+    move-result-object v0
+
+    check-cast v0, Lde/rki/coronawarnapp/task/TaskController;
+
+    iget-object v0, p0, Lde/rki/coronawarnapp/util/di/DaggerApplicationComponent;->foregroundStateProvider:Ljavax/inject/Provider;
+
+    invoke-interface {v0}, Ljavax/inject/Provider;->get()Ljava/lang/Object;
+
+    move-result-object v0
+
+    check-cast v0, Lde/rki/coronawarnapp/util/device/ForegroundState;
+
+    iput-object v0, p1, Lde/rki/coronawarnapp/CoronaWarnApplication;->foregroundState:Lde/rki/coronawarnapp/util/device/ForegroundState;
+
+    iget-object v0, p0, Lde/rki/coronawarnapp/util/di/DaggerApplicationComponent;->workManagerProvider:Ljavax/inject/Provider;
+
+    invoke-interface {v0}, Ljavax/inject/Provider;->get()Ljava/lang/Object;
+
+    move-result-object v0
+
+    check-cast v0, Landroidx/work/WorkManager;
+
+    iput-object v0, p1, Lde/rki/coronawarnapp/CoronaWarnApplication;->workManager:Landroidx/work/WorkManager;
+
+    new-instance v0, Lde/rki/coronawarnapp/appconfig/ConfigChangeDetector;
+
+    iget-object v1, p0, Lde/rki/coronawarnapp/util/di/DaggerApplicationComponent;->appConfigProvider:Ljavax/inject/Provider;
+
+    invoke-interface {v1}, Ljavax/inject/Provider;->get()Ljava/lang/Object;
+
+    move-result-object v1
+
+    move-object v2, v1
+
+    check-cast v2, Lde/rki/coronawarnapp/appconfig/AppConfigProvider;
+
+    iget-object v1, p0, Lde/rki/coronawarnapp/util/di/DaggerApplicationComponent;->taskControllerProvider:Ljavax/inject/Provider;
+
+    invoke-interface {v1}, Ljavax/inject/Provider;->get()Ljava/lang/Object;
+
+    move-result-object v1
+
+    move-object v3, v1
+
+    check-cast v3, Lde/rki/coronawarnapp/task/TaskController;
+
+    iget-object v1, p0, Lde/rki/coronawarnapp/util/di/DaggerApplicationComponent;->appCoroutineScopeProvider:Ljavax/inject/Provider;
+
+    invoke-interface {v1}, Ljavax/inject/Provider;->get()Ljava/lang/Object;
+
+    move-result-object v1
+
+    move-object v4, v1
+
+    check-cast v4, Lkotlinx/coroutines/CoroutineScope;
+
+    iget-object v1, p0, Lde/rki/coronawarnapp/util/di/DaggerApplicationComponent;->riskLevelSettingsProvider:Ljavax/inject/Provider;
+
+    invoke-interface {v1}, Ljavax/inject/Provider;->get()Ljava/lang/Object;
+
+    move-result-object v1
+
+    move-object v5, v1
+
+    check-cast v5, Lde/rki/coronawarnapp/risk/RiskLevelSettings;
+
+    iget-object v1, p0, Lde/rki/coronawarnapp/util/di/DaggerApplicationComponent;->riskLevelStorageProvider:Ljavax/inject/Provider;
+
+    invoke-interface {v1}, Ljavax/inject/Provider;->get()Ljava/lang/Object;
+
+    move-result-object v1
+
+    move-object v6, v1
+
+    check-cast v6, Lde/rki/coronawarnapp/risk/storage/RiskLevelStorage;
+
+    move-object v1, v0
+
+    invoke-direct/range {v1 .. v6}, Lde/rki/coronawarnapp/appconfig/ConfigChangeDetector;-><init>(Lde/rki/coronawarnapp/appconfig/AppConfigProvider;Lde/rki/coronawarnapp/task/TaskController;Lkotlinx/coroutines/CoroutineScope;Lde/rki/coronawarnapp/risk/RiskLevelSettings;Lde/rki/coronawarnapp/risk/storage/RiskLevelStorage;)V
+
+    iput-object v0, p1, Lde/rki/coronawarnapp/CoronaWarnApplication;->configChangeDetector:Lde/rki/coronawarnapp/appconfig/ConfigChangeDetector;
+
+    new-instance v0, Lde/rki/coronawarnapp/risk/changedetection/EwRiskLevelChangeDetector;
+
+    iget-object v1, p0, Lde/rki/coronawarnapp/util/di/DaggerApplicationComponent;->appCoroutineScopeProvider:Ljavax/inject/Provider;
+
+    invoke-interface {v1}, Ljavax/inject/Provider;->get()Ljava/lang/Object;
+
+    move-result-object v1
+
+    check-cast v1, Lkotlinx/coroutines/CoroutineScope;
+
+    iget-object v2, p0, Lde/rki/coronawarnapp/util/di/DaggerApplicationComponent;->riskLevelStorageProvider:Ljavax/inject/Provider;
 
     invoke-interface {v2}, Ljavax/inject/Provider;->get()Ljava/lang/Object;
 
     move-result-object v2
 
-    check-cast v2, Lde/rki/coronawarnapp/util/WatchdogService;
+    check-cast v2, Lde/rki/coronawarnapp/risk/storage/RiskLevelStorage;
 
-    iput-object v2, v1, Lde/rki/coronawarnapp/CoronaWarnApplication;->watchdogService:Lde/rki/coronawarnapp/util/WatchdogService;
+    iget-object v3, p0, Lde/rki/coronawarnapp/util/di/DaggerApplicationComponent;->riskLevelSettingsProvider:Ljavax/inject/Provider;
 
-    iget-object v2, v0, Lde/rki/coronawarnapp/util/di/DaggerApplicationComponent;->taskControllerProvider:Ljavax/inject/Provider;
+    invoke-interface {v3}, Ljavax/inject/Provider;->get()Ljava/lang/Object;
 
-    invoke-interface {v2}, Ljavax/inject/Provider;->get()Ljava/lang/Object;
+    move-result-object v3
 
-    move-result-object v2
+    check-cast v3, Lde/rki/coronawarnapp/risk/RiskLevelSettings;
 
-    check-cast v2, Lde/rki/coronawarnapp/task/TaskController;
+    iget-object v4, p0, Lde/rki/coronawarnapp/util/di/DaggerApplicationComponent;->surveysProvider:Ljavax/inject/Provider;
 
-    iget-object v2, v0, Lde/rki/coronawarnapp/util/di/DaggerApplicationComponent;->foregroundStateProvider:Ljavax/inject/Provider;
+    invoke-interface {v4}, Ljavax/inject/Provider;->get()Ljava/lang/Object;
+
+    move-result-object v4
+
+    check-cast v4, Lde/rki/coronawarnapp/datadonation/survey/Surveys;
+
+    invoke-direct {v0, v1, v2, v3, v4}, Lde/rki/coronawarnapp/risk/changedetection/EwRiskLevelChangeDetector;-><init>(Lkotlinx/coroutines/CoroutineScope;Lde/rki/coronawarnapp/risk/storage/RiskLevelStorage;Lde/rki/coronawarnapp/risk/RiskLevelSettings;Lde/rki/coronawarnapp/datadonation/survey/Surveys;)V
+
+    iput-object v0, p1, Lde/rki/coronawarnapp/CoronaWarnApplication;->ewRiskLevelChangeDetector:Lde/rki/coronawarnapp/risk/changedetection/EwRiskLevelChangeDetector;
+
+    new-instance v0, Lde/rki/coronawarnapp/risk/changedetection/CombinedRiskLevelChangeDetector;
+
+    iget-object v1, p0, Lde/rki/coronawarnapp/util/di/DaggerApplicationComponent;->contextProvider:Ljavax/inject/Provider;
+
+    invoke-interface {v1}, Ljavax/inject/Provider;->get()Ljava/lang/Object;
+
+    move-result-object v1
+
+    move-object v6, v1
+
+    check-cast v6, Landroid/content/Context;
+
+    iget-object v1, p0, Lde/rki/coronawarnapp/util/di/DaggerApplicationComponent;->appCoroutineScopeProvider:Ljavax/inject/Provider;
+
+    invoke-interface {v1}, Ljavax/inject/Provider;->get()Ljava/lang/Object;
+
+    move-result-object v1
+
+    move-object v7, v1
+
+    check-cast v7, Lkotlinx/coroutines/CoroutineScope;
+
+    iget-object v1, p0, Lde/rki/coronawarnapp/util/di/DaggerApplicationComponent;->riskLevelStorageProvider:Ljavax/inject/Provider;
+
+    invoke-interface {v1}, Ljavax/inject/Provider;->get()Ljava/lang/Object;
+
+    move-result-object v1
+
+    move-object v8, v1
+
+    check-cast v8, Lde/rki/coronawarnapp/risk/storage/RiskLevelStorage;
+
+    iget-object v1, p0, Lde/rki/coronawarnapp/util/di/DaggerApplicationComponent;->riskLevelSettingsProvider:Ljavax/inject/Provider;
+
+    invoke-interface {v1}, Ljavax/inject/Provider;->get()Ljava/lang/Object;
+
+    move-result-object v1
+
+    move-object v9, v1
+
+    check-cast v9, Lde/rki/coronawarnapp/risk/RiskLevelSettings;
+
+    iget-object v1, p0, Lde/rki/coronawarnapp/util/di/DaggerApplicationComponent;->notificationManagerCompatProvider:Ljavax/inject/Provider;
+
+    invoke-interface {v1}, Ljavax/inject/Provider;->get()Ljava/lang/Object;
+
+    move-result-object v1
+
+    move-object v10, v1
+
+    check-cast v10, Landroidx/core/app/NotificationManagerCompat;
+
+    iget-object v1, p0, Lde/rki/coronawarnapp/util/di/DaggerApplicationComponent;->generalNotificationsProvider:Ljavax/inject/Provider;
+
+    invoke-interface {v1}, Ljavax/inject/Provider;->get()Ljava/lang/Object;
+
+    move-result-object v1
+
+    move-object v11, v1
+
+    check-cast v11, Lde/rki/coronawarnapp/notification/GeneralNotifications;
+
+    iget-object v1, p0, Lde/rki/coronawarnapp/util/di/DaggerApplicationComponent;->coronaTestRepositoryProvider:Ljavax/inject/Provider;
+
+    invoke-interface {v1}, Ljavax/inject/Provider;->get()Ljava/lang/Object;
+
+    move-result-object v1
+
+    move-object v12, v1
+
+    check-cast v12, Lde/rki/coronawarnapp/coronatest/CoronaTestRepository;
+
+    iget-object v1, p0, Lde/rki/coronawarnapp/util/di/DaggerApplicationComponent;->tracingSettingsProvider:Ljavax/inject/Provider;
+
+    invoke-interface {v1}, Ljavax/inject/Provider;->get()Ljava/lang/Object;
+
+    move-result-object v1
+
+    move-object v13, v1
+
+    check-cast v13, Lde/rki/coronawarnapp/storage/TracingSettings;
+
+    move-object v5, v0
+
+    invoke-direct/range {v5 .. v13}, Lde/rki/coronawarnapp/risk/changedetection/CombinedRiskLevelChangeDetector;-><init>(Landroid/content/Context;Lkotlinx/coroutines/CoroutineScope;Lde/rki/coronawarnapp/risk/storage/RiskLevelStorage;Lde/rki/coronawarnapp/risk/RiskLevelSettings;Landroidx/core/app/NotificationManagerCompat;Lde/rki/coronawarnapp/notification/GeneralNotifications;Lde/rki/coronawarnapp/coronatest/CoronaTestRepository;Lde/rki/coronawarnapp/storage/TracingSettings;)V
+
+    iput-object v0, p1, Lde/rki/coronawarnapp/CoronaWarnApplication;->combinedRiskLevelChangeDetector:Lde/rki/coronawarnapp/risk/changedetection/CombinedRiskLevelChangeDetector;
+
+    iget-object v0, p0, Lde/rki/coronawarnapp/util/di/DaggerApplicationComponent;->deadmanNotificationSchedulerProvider:Ljavax/inject/Provider;
+
+    invoke-interface {v0}, Ljavax/inject/Provider;->get()Ljava/lang/Object;
+
+    move-result-object v0
+
+    check-cast v0, Lde/rki/coronawarnapp/deadman/DeadmanNotificationScheduler;
+
+    iput-object v0, p1, Lde/rki/coronawarnapp/CoronaWarnApplication;->deadmanNotificationScheduler:Lde/rki/coronawarnapp/deadman/DeadmanNotificationScheduler;
+
+    iget-object v0, p0, Lde/rki/coronawarnapp/util/di/DaggerApplicationComponent;->contactDiaryWorkSchedulerProvider:Ljavax/inject/Provider;
+
+    invoke-interface {v0}, Ljavax/inject/Provider;->get()Ljava/lang/Object;
+
+    move-result-object v0
+
+    check-cast v0, Lde/rki/coronawarnapp/contactdiary/retention/ContactDiaryWorkScheduler;
+
+    iput-object v0, p1, Lde/rki/coronawarnapp/CoronaWarnApplication;->contactDiaryWorkScheduler:Lde/rki/coronawarnapp/contactdiary/retention/ContactDiaryWorkScheduler;
+
+    iget-object v0, p0, Lde/rki/coronawarnapp/util/di/DaggerApplicationComponent;->dataDonationAnalyticsSchedulerProvider:Ljavax/inject/Provider;
+
+    invoke-interface {v0}, Ljavax/inject/Provider;->get()Ljava/lang/Object;
+
+    move-result-object v0
+
+    check-cast v0, Lde/rki/coronawarnapp/datadonation/analytics/worker/DataDonationAnalyticsScheduler;
+
+    iget-object v0, p0, Lde/rki/coronawarnapp/util/di/DaggerApplicationComponent;->generalNotificationsProvider:Ljavax/inject/Provider;
+
+    invoke-interface {v0}, Ljavax/inject/Provider;->get()Ljava/lang/Object;
+
+    move-result-object v0
+
+    check-cast v0, Lde/rki/coronawarnapp/notification/GeneralNotifications;
+
+    iget-object v0, p0, Lde/rki/coronawarnapp/util/di/DaggerApplicationComponent;->deviceTimeHandlerProvider:Ljavax/inject/Provider;
+
+    invoke-interface {v0}, Ljavax/inject/Provider;->get()Ljava/lang/Object;
+
+    move-result-object v0
+
+    check-cast v0, Lde/rki/coronawarnapp/appconfig/devicetime/DeviceTimeHandler;
+
+    iput-object v0, p1, Lde/rki/coronawarnapp/CoronaWarnApplication;->deviceTimeHandler:Lde/rki/coronawarnapp/appconfig/devicetime/DeviceTimeHandler;
+
+    iget-object v0, p0, Lde/rki/coronawarnapp/util/di/DaggerApplicationComponent;->autoSubmissionProvider:Ljavax/inject/Provider;
+
+    invoke-interface {v0}, Ljavax/inject/Provider;->get()Ljava/lang/Object;
+
+    move-result-object v0
+
+    check-cast v0, Lde/rki/coronawarnapp/submission/auto/AutoSubmission;
+
+    iput-object v0, p1, Lde/rki/coronawarnapp/CoronaWarnApplication;->autoSubmission:Lde/rki/coronawarnapp/submission/auto/AutoSubmission;
+
+    iget-object v0, p0, Lde/rki/coronawarnapp/util/di/DaggerApplicationComponent;->coronaTestRepositoryProvider:Ljavax/inject/Provider;
+
+    invoke-interface {v0}, Ljavax/inject/Provider;->get()Ljava/lang/Object;
+
+    move-result-object v0
+
+    check-cast v0, Lde/rki/coronawarnapp/coronatest/CoronaTestRepository;
+
+    iget-object v0, p0, Lde/rki/coronawarnapp/util/di/DaggerApplicationComponent;->autoCheckOutProvider:Ljavax/inject/Provider;
+
+    invoke-interface {v0}, Ljavax/inject/Provider;->get()Ljava/lang/Object;
+
+    move-result-object v0
+
+    check-cast v0, Lde/rki/coronawarnapp/presencetracing/checkins/checkout/auto/AutoCheckOut;
+
+    iput-object v0, p1, Lde/rki/coronawarnapp/CoronaWarnApplication;->autoCheckOut:Lde/rki/coronawarnapp/presencetracing/checkins/checkout/auto/AutoCheckOut;
+
+    iget-object v0, p0, Lde/rki/coronawarnapp/util/di/DaggerApplicationComponent;->traceLocationDbCleanUpSchedulerProvider:Ljavax/inject/Provider;
+
+    invoke-interface {v0}, Ljavax/inject/Provider;->get()Ljava/lang/Object;
+
+    move-result-object v0
+
+    check-cast v0, Lde/rki/coronawarnapp/presencetracing/storage/retention/TraceLocationDbCleanUpScheduler;
+
+    iput-object v0, p1, Lde/rki/coronawarnapp/CoronaWarnApplication;->traceLocationDbCleanupScheduler:Lde/rki/coronawarnapp/presencetracing/storage/retention/TraceLocationDbCleanUpScheduler;
+
+    iget-object v0, p0, Lde/rki/coronawarnapp/util/di/DaggerApplicationComponent;->shareTestResultNotificationServiceProvider:Ljavax/inject/Provider;
+
+    invoke-interface {v0}, Ljavax/inject/Provider;->get()Ljava/lang/Object;
+
+    move-result-object v0
+
+    check-cast v0, Lde/rki/coronawarnapp/coronatest/notification/ShareTestResultNotificationService;
+
+    iput-object v0, p1, Lde/rki/coronawarnapp/CoronaWarnApplication;->shareTestResultNotificationService:Lde/rki/coronawarnapp/coronatest/notification/ShareTestResultNotificationService;
+
+    iget-object v0, p0, Lde/rki/coronawarnapp/util/di/DaggerApplicationComponent;->exposureWindowRiskWorkSchedulerProvider:Ljavax/inject/Provider;
+
+    invoke-interface {v0}, Ljavax/inject/Provider;->get()Ljava/lang/Object;
+
+    move-result-object v0
+
+    check-cast v0, Lde/rki/coronawarnapp/risk/execution/ExposureWindowRiskWorkScheduler;
+
+    iput-object v0, p1, Lde/rki/coronawarnapp/CoronaWarnApplication;->exposureWindowRiskWorkScheduler:Lde/rki/coronawarnapp/risk/execution/ExposureWindowRiskWorkScheduler;
+
+    iget-object v0, p0, Lde/rki/coronawarnapp/util/di/DaggerApplicationComponent;->presenceTracingRiskWorkSchedulerProvider:Ljavax/inject/Provider;
+
+    invoke-interface {v0}, Ljavax/inject/Provider;->get()Ljava/lang/Object;
+
+    move-result-object v0
+
+    check-cast v0, Lde/rki/coronawarnapp/presencetracing/risk/execution/PresenceTracingRiskWorkScheduler;
+
+    iput-object v0, p1, Lde/rki/coronawarnapp/CoronaWarnApplication;->presenceTracingRiskWorkScheduler:Lde/rki/coronawarnapp/presencetracing/risk/execution/PresenceTracingRiskWorkScheduler;
+
+    iget-object v0, p0, Lde/rki/coronawarnapp/util/di/DaggerApplicationComponent;->pCRResultSchedulerProvider:Ljavax/inject/Provider;
+
+    invoke-interface {v0}, Ljavax/inject/Provider;->get()Ljava/lang/Object;
+
+    move-result-object v0
+
+    check-cast v0, Lde/rki/coronawarnapp/coronatest/type/pcr/execution/PCRResultScheduler;
+
+    iput-object v0, p1, Lde/rki/coronawarnapp/CoronaWarnApplication;->pcrTestResultScheduler:Lde/rki/coronawarnapp/coronatest/type/pcr/execution/PCRResultScheduler;
+
+    iget-object v0, p0, Lde/rki/coronawarnapp/util/di/DaggerApplicationComponent;->rAResultSchedulerProvider:Ljavax/inject/Provider;
+
+    invoke-interface {v0}, Ljavax/inject/Provider;->get()Ljava/lang/Object;
+
+    move-result-object v0
+
+    check-cast v0, Lde/rki/coronawarnapp/coronatest/type/rapidantigen/execution/RAResultScheduler;
+
+    iput-object v0, p1, Lde/rki/coronawarnapp/CoronaWarnApplication;->raTestResultScheduler:Lde/rki/coronawarnapp/coronatest/type/rapidantigen/execution/RAResultScheduler;
+
+    iget-object v0, p0, Lde/rki/coronawarnapp/util/di/DaggerApplicationComponent;->pCRTestResultAvailableNotificationServiceProvider:Ljavax/inject/Provider;
+
+    invoke-interface {v0}, Ljavax/inject/Provider;->get()Ljava/lang/Object;
+
+    move-result-object v0
+
+    check-cast v0, Lde/rki/coronawarnapp/coronatest/type/pcr/notification/PCRTestResultAvailableNotificationService;
+
+    iput-object v0, p1, Lde/rki/coronawarnapp/CoronaWarnApplication;->pcrTestResultAvailableNotificationService:Lde/rki/coronawarnapp/coronatest/type/pcr/notification/PCRTestResultAvailableNotificationService;
+
+    iget-object v0, p0, Lde/rki/coronawarnapp/util/di/DaggerApplicationComponent;->rATTestResultAvailableNotificationServiceProvider:Ljavax/inject/Provider;
+
+    invoke-interface {v0}, Ljavax/inject/Provider;->get()Ljava/lang/Object;
+
+    move-result-object v0
+
+    check-cast v0, Lde/rki/coronawarnapp/coronatest/type/rapidantigen/notification/RATTestResultAvailableNotificationService;
+
+    iput-object v0, p1, Lde/rki/coronawarnapp/CoronaWarnApplication;->raTestResultAvailableNotificationService:Lde/rki/coronawarnapp/coronatest/type/rapidantigen/notification/RATTestResultAvailableNotificationService;
+
+    iget-object v0, p0, Lde/rki/coronawarnapp/util/di/DaggerApplicationComponent;->testCertificateRetrievalSchedulerProvider:Ljavax/inject/Provider;
+
+    invoke-interface {v0}, Ljavax/inject/Provider;->get()Ljava/lang/Object;
+
+    move-result-object v0
+
+    check-cast v0, Lde/rki/coronawarnapp/covidcertificate/test/core/execution/TestCertificateRetrievalScheduler;
+
+    iput-object v0, p1, Lde/rki/coronawarnapp/CoronaWarnApplication;->testCertificateRetrievalScheduler:Lde/rki/coronawarnapp/covidcertificate/test/core/execution/TestCertificateRetrievalScheduler;
+
+    iget-object v0, p0, Lde/rki/coronawarnapp/util/di/DaggerApplicationComponent;->environmentSetupProvider:Ljavax/inject/Provider;
+
+    invoke-interface {v0}, Ljavax/inject/Provider;->get()Ljava/lang/Object;
+
+    move-result-object v0
+
+    check-cast v0, Lde/rki/coronawarnapp/environment/EnvironmentSetup;
+
+    iput-object v0, p1, Lde/rki/coronawarnapp/CoronaWarnApplication;->environmentSetup:Lde/rki/coronawarnapp/environment/EnvironmentSetup;
+
+    iget-object v0, p0, Lde/rki/coronawarnapp/util/di/DaggerApplicationComponent;->localStatisticsRetrievalSchedulerProvider:Ljavax/inject/Provider;
+
+    invoke-interface {v0}, Ljavax/inject/Provider;->get()Ljava/lang/Object;
+
+    move-result-object v0
+
+    check-cast v0, Lde/rki/coronawarnapp/statistics/local/source/LocalStatisticsRetrievalScheduler;
+
+    iput-object v0, p1, Lde/rki/coronawarnapp/CoronaWarnApplication;->localStatisticsRetrievalScheduler:Lde/rki/coronawarnapp/statistics/local/source/LocalStatisticsRetrievalScheduler;
+
+    iget-object v0, p0, Lde/rki/coronawarnapp/util/di/DaggerApplicationComponent;->imageLoaderFactoryProvider:Ljavax/inject/Provider;
+
+    invoke-interface {v0}, Ljavax/inject/Provider;->get()Ljava/lang/Object;
+
+    move-result-object v0
+
+    check-cast v0, Lcoil/ImageLoaderFactory;
+
+    iput-object v0, p1, Lde/rki/coronawarnapp/CoronaWarnApplication;->imageLoaderFactory:Lcoil/ImageLoaderFactory;
+
+    iget-object v0, p0, Lde/rki/coronawarnapp/util/di/DaggerApplicationComponent;->dccStateCheckSchedulerProvider:Ljavax/inject/Provider;
+
+    invoke-interface {v0}, Ljavax/inject/Provider;->get()Ljava/lang/Object;
+
+    move-result-object v0
+
+    check-cast v0, Lde/rki/coronawarnapp/covidcertificate/common/statecheck/DccStateCheckScheduler;
+
+    iput-object v0, p1, Lde/rki/coronawarnapp/CoronaWarnApplication;->dccStateCheckScheduler:Lde/rki/coronawarnapp/covidcertificate/common/statecheck/DccStateCheckScheduler;
+
+    iget-object v0, p0, Lde/rki/coronawarnapp/util/di/DaggerApplicationComponent;->securityProvider:Ljavax/inject/Provider;
+
+    invoke-interface {v0}, Ljavax/inject/Provider;->get()Ljava/lang/Object;
+
+    move-result-object v0
+
+    check-cast v0, Lde/rki/coronawarnapp/SecurityProvider;
+
+    iput-object v0, p1, Lde/rki/coronawarnapp/CoronaWarnApplication;->securityProvider:Lde/rki/coronawarnapp/SecurityProvider;
+
+    iget-object v0, p0, Lde/rki/coronawarnapp/util/di/DaggerApplicationComponent;->recycleBinCleanUpSchedulerProvider:Ljavax/inject/Provider;
+
+    invoke-interface {v0}, Ljavax/inject/Provider;->get()Ljava/lang/Object;
+
+    move-result-object v0
+
+    check-cast v0, Lde/rki/coronawarnapp/reyclebin/cleanup/RecycleBinCleanUpScheduler;
+
+    iput-object v0, p1, Lde/rki/coronawarnapp/CoronaWarnApplication;->recycleBinCleanUpScheduler:Lde/rki/coronawarnapp/reyclebin/cleanup/RecycleBinCleanUpScheduler;
+
+    iget-object v0, p0, Lde/rki/coronawarnapp/util/di/DaggerApplicationComponent;->vaccinationStorageProvider:Ljavax/inject/Provider;
+
+    invoke-interface {v0}, Ljavax/inject/Provider;->get()Ljava/lang/Object;
+
+    move-result-object v0
+
+    check-cast v0, Lde/rki/coronawarnapp/covidcertificate/vaccination/core/repository/storage/VaccinationStorage;
+
+    new-instance v0, Lde/rki/coronawarnapp/ccl/configuration/update/CCLConfigurationUpdateScheduler;
+
+    iget-object v1, p0, Lde/rki/coronawarnapp/util/di/DaggerApplicationComponent;->appCoroutineScopeProvider:Ljavax/inject/Provider;
+
+    invoke-interface {v1}, Ljavax/inject/Provider;->get()Ljava/lang/Object;
+
+    move-result-object v1
+
+    check-cast v1, Lkotlinx/coroutines/CoroutineScope;
+
+    iget-object v2, p0, Lde/rki/coronawarnapp/util/di/DaggerApplicationComponent;->foregroundStateProvider:Ljavax/inject/Provider;
 
     invoke-interface {v2}, Ljavax/inject/Provider;->get()Ljava/lang/Object;
 
@@ -13518,455 +14898,45 @@
 
     check-cast v2, Lde/rki/coronawarnapp/util/device/ForegroundState;
 
-    iput-object v2, v1, Lde/rki/coronawarnapp/CoronaWarnApplication;->foregroundState:Lde/rki/coronawarnapp/util/device/ForegroundState;
-
-    iget-object v2, v0, Lde/rki/coronawarnapp/util/di/DaggerApplicationComponent;->workManagerProvider:Ljavax/inject/Provider;
-
-    invoke-interface {v2}, Ljavax/inject/Provider;->get()Ljava/lang/Object;
-
-    move-result-object v2
-
-    check-cast v2, Landroidx/work/WorkManager;
-
-    iput-object v2, v1, Lde/rki/coronawarnapp/CoronaWarnApplication;->workManager:Landroidx/work/WorkManager;
-
-    new-instance v2, Lde/rki/coronawarnapp/appconfig/ConfigChangeDetector;
-
-    iget-object v3, v0, Lde/rki/coronawarnapp/util/di/DaggerApplicationComponent;->appConfigProvider:Ljavax/inject/Provider;
+    iget-object v3, p0, Lde/rki/coronawarnapp/util/di/DaggerApplicationComponent;->cCLConfigurationUpdaterProvider:Ljavax/inject/Provider;
 
     invoke-interface {v3}, Ljavax/inject/Provider;->get()Ljava/lang/Object;
 
     move-result-object v3
 
-    move-object v4, v3
+    check-cast v3, Lde/rki/coronawarnapp/ccl/configuration/update/CCLConfigurationUpdater;
 
-    check-cast v4, Lde/rki/coronawarnapp/appconfig/AppConfigProvider;
-
-    iget-object v3, v0, Lde/rki/coronawarnapp/util/di/DaggerApplicationComponent;->taskControllerProvider:Ljavax/inject/Provider;
-
-    invoke-interface {v3}, Ljavax/inject/Provider;->get()Ljava/lang/Object;
-
-    move-result-object v3
-
-    move-object v5, v3
-
-    check-cast v5, Lde/rki/coronawarnapp/task/TaskController;
-
-    iget-object v3, v0, Lde/rki/coronawarnapp/util/di/DaggerApplicationComponent;->appCoroutineScopeProvider:Ljavax/inject/Provider;
-
-    invoke-interface {v3}, Ljavax/inject/Provider;->get()Ljava/lang/Object;
-
-    move-result-object v3
-
-    move-object v6, v3
-
-    check-cast v6, Lkotlinx/coroutines/CoroutineScope;
-
-    iget-object v3, v0, Lde/rki/coronawarnapp/util/di/DaggerApplicationComponent;->riskLevelSettingsProvider:Ljavax/inject/Provider;
-
-    invoke-interface {v3}, Ljavax/inject/Provider;->get()Ljava/lang/Object;
-
-    move-result-object v3
-
-    move-object v7, v3
-
-    check-cast v7, Lde/rki/coronawarnapp/risk/RiskLevelSettings;
-
-    iget-object v3, v0, Lde/rki/coronawarnapp/util/di/DaggerApplicationComponent;->riskLevelStorageProvider:Ljavax/inject/Provider;
-
-    invoke-interface {v3}, Ljavax/inject/Provider;->get()Ljava/lang/Object;
-
-    move-result-object v3
-
-    move-object v8, v3
-
-    check-cast v8, Lde/rki/coronawarnapp/risk/storage/RiskLevelStorage;
-
-    move-object v3, v2
-
-    invoke-direct/range {v3 .. v8}, Lde/rki/coronawarnapp/appconfig/ConfigChangeDetector;-><init>(Lde/rki/coronawarnapp/appconfig/AppConfigProvider;Lde/rki/coronawarnapp/task/TaskController;Lkotlinx/coroutines/CoroutineScope;Lde/rki/coronawarnapp/risk/RiskLevelSettings;Lde/rki/coronawarnapp/risk/storage/RiskLevelStorage;)V
-
-    iput-object v2, v1, Lde/rki/coronawarnapp/CoronaWarnApplication;->configChangeDetector:Lde/rki/coronawarnapp/appconfig/ConfigChangeDetector;
-
-    new-instance v2, Lde/rki/coronawarnapp/risk/changedetection/EwRiskLevelChangeDetector;
-
-    iget-object v3, v0, Lde/rki/coronawarnapp/util/di/DaggerApplicationComponent;->appCoroutineScopeProvider:Ljavax/inject/Provider;
-
-    invoke-interface {v3}, Ljavax/inject/Provider;->get()Ljava/lang/Object;
-
-    move-result-object v3
-
-    check-cast v3, Lkotlinx/coroutines/CoroutineScope;
-
-    iget-object v4, v0, Lde/rki/coronawarnapp/util/di/DaggerApplicationComponent;->riskLevelStorageProvider:Ljavax/inject/Provider;
+    iget-object v4, p0, Lde/rki/coronawarnapp/util/di/DaggerApplicationComponent;->workManagerProvider:Ljavax/inject/Provider;
 
     invoke-interface {v4}, Ljavax/inject/Provider;->get()Ljava/lang/Object;
 
     move-result-object v4
 
-    check-cast v4, Lde/rki/coronawarnapp/risk/storage/RiskLevelStorage;
+    check-cast v4, Landroidx/work/WorkManager;
 
-    iget-object v5, v0, Lde/rki/coronawarnapp/util/di/DaggerApplicationComponent;->riskLevelSettingsProvider:Ljavax/inject/Provider;
+    invoke-direct {v0, v1, v2, v3, v4}, Lde/rki/coronawarnapp/ccl/configuration/update/CCLConfigurationUpdateScheduler;-><init>(Lkotlinx/coroutines/CoroutineScope;Lde/rki/coronawarnapp/util/device/ForegroundState;Lde/rki/coronawarnapp/ccl/configuration/update/CCLConfigurationUpdater;Landroidx/work/WorkManager;)V
 
-    invoke-interface {v5}, Ljavax/inject/Provider;->get()Ljava/lang/Object;
+    iput-object v0, p1, Lde/rki/coronawarnapp/CoronaWarnApplication;->cclConfigurationUpdaterScheduler:Lde/rki/coronawarnapp/ccl/configuration/update/CCLConfigurationUpdateScheduler;
 
-    move-result-object v5
+    iget-object v0, p0, Lde/rki/coronawarnapp/util/di/DaggerApplicationComponent;->appCoroutineScopeProvider:Ljavax/inject/Provider;
 
-    check-cast v5, Lde/rki/coronawarnapp/risk/RiskLevelSettings;
+    invoke-interface {v0}, Ljavax/inject/Provider;->get()Ljava/lang/Object;
 
-    iget-object v6, v0, Lde/rki/coronawarnapp/util/di/DaggerApplicationComponent;->surveysProvider:Ljavax/inject/Provider;
+    move-result-object v0
 
-    invoke-interface {v6}, Ljavax/inject/Provider;->get()Ljava/lang/Object;
+    check-cast v0, Lkotlinx/coroutines/CoroutineScope;
 
-    move-result-object v6
+    iput-object v0, p1, Lde/rki/coronawarnapp/CoronaWarnApplication;->appScope:Lkotlinx/coroutines/CoroutineScope;
 
-    check-cast v6, Lde/rki/coronawarnapp/datadonation/survey/Surveys;
+    iget-object v0, p0, Lde/rki/coronawarnapp/util/di/DaggerApplicationComponent;->loggingHistoryProvider:Ljavax/inject/Provider;
 
-    invoke-direct {v2, v3, v4, v5, v6}, Lde/rki/coronawarnapp/risk/changedetection/EwRiskLevelChangeDetector;-><init>(Lkotlinx/coroutines/CoroutineScope;Lde/rki/coronawarnapp/risk/storage/RiskLevelStorage;Lde/rki/coronawarnapp/risk/RiskLevelSettings;Lde/rki/coronawarnapp/datadonation/survey/Surveys;)V
+    invoke-interface {v0}, Ljavax/inject/Provider;->get()Ljava/lang/Object;
 
-    iput-object v2, v1, Lde/rki/coronawarnapp/CoronaWarnApplication;->ewRiskLevelChangeDetector:Lde/rki/coronawarnapp/risk/changedetection/EwRiskLevelChangeDetector;
+    move-result-object v0
 
-    new-instance v2, Lde/rki/coronawarnapp/risk/changedetection/CombinedRiskLevelChangeDetector;
+    check-cast v0, Ltimber/log/Timber$Tree;
 
-    iget-object v3, v0, Lde/rki/coronawarnapp/util/di/DaggerApplicationComponent;->contextProvider:Ljavax/inject/Provider;
-
-    invoke-interface {v3}, Ljavax/inject/Provider;->get()Ljava/lang/Object;
-
-    move-result-object v3
-
-    move-object v8, v3
-
-    check-cast v8, Landroid/content/Context;
-
-    iget-object v3, v0, Lde/rki/coronawarnapp/util/di/DaggerApplicationComponent;->appCoroutineScopeProvider:Ljavax/inject/Provider;
-
-    invoke-interface {v3}, Ljavax/inject/Provider;->get()Ljava/lang/Object;
-
-    move-result-object v3
-
-    move-object v9, v3
-
-    check-cast v9, Lkotlinx/coroutines/CoroutineScope;
-
-    iget-object v3, v0, Lde/rki/coronawarnapp/util/di/DaggerApplicationComponent;->riskLevelStorageProvider:Ljavax/inject/Provider;
-
-    invoke-interface {v3}, Ljavax/inject/Provider;->get()Ljava/lang/Object;
-
-    move-result-object v3
-
-    move-object v10, v3
-
-    check-cast v10, Lde/rki/coronawarnapp/risk/storage/RiskLevelStorage;
-
-    iget-object v3, v0, Lde/rki/coronawarnapp/util/di/DaggerApplicationComponent;->riskLevelSettingsProvider:Ljavax/inject/Provider;
-
-    invoke-interface {v3}, Ljavax/inject/Provider;->get()Ljava/lang/Object;
-
-    move-result-object v3
-
-    move-object v11, v3
-
-    check-cast v11, Lde/rki/coronawarnapp/risk/RiskLevelSettings;
-
-    iget-object v3, v0, Lde/rki/coronawarnapp/util/di/DaggerApplicationComponent;->notificationManagerCompatProvider:Ljavax/inject/Provider;
-
-    invoke-interface {v3}, Ljavax/inject/Provider;->get()Ljava/lang/Object;
-
-    move-result-object v3
-
-    move-object v12, v3
-
-    check-cast v12, Landroidx/core/app/NotificationManagerCompat;
-
-    iget-object v3, v0, Lde/rki/coronawarnapp/util/di/DaggerApplicationComponent;->foregroundStateProvider:Ljavax/inject/Provider;
-
-    invoke-interface {v3}, Ljavax/inject/Provider;->get()Ljava/lang/Object;
-
-    move-result-object v3
-
-    move-object v13, v3
-
-    check-cast v13, Lde/rki/coronawarnapp/util/device/ForegroundState;
-
-    iget-object v3, v0, Lde/rki/coronawarnapp/util/di/DaggerApplicationComponent;->generalNotificationsProvider:Ljavax/inject/Provider;
-
-    invoke-interface {v3}, Ljavax/inject/Provider;->get()Ljava/lang/Object;
-
-    move-result-object v3
-
-    move-object v14, v3
-
-    check-cast v14, Lde/rki/coronawarnapp/notification/GeneralNotifications;
-
-    iget-object v3, v0, Lde/rki/coronawarnapp/util/di/DaggerApplicationComponent;->coronaTestRepositoryProvider:Ljavax/inject/Provider;
-
-    invoke-interface {v3}, Ljavax/inject/Provider;->get()Ljava/lang/Object;
-
-    move-result-object v3
-
-    move-object v15, v3
-
-    check-cast v15, Lde/rki/coronawarnapp/coronatest/CoronaTestRepository;
-
-    iget-object v3, v0, Lde/rki/coronawarnapp/util/di/DaggerApplicationComponent;->tracingSettingsProvider:Ljavax/inject/Provider;
-
-    invoke-interface {v3}, Ljavax/inject/Provider;->get()Ljava/lang/Object;
-
-    move-result-object v3
-
-    move-object/from16 v16, v3
-
-    check-cast v16, Lde/rki/coronawarnapp/storage/TracingSettings;
-
-    move-object v7, v2
-
-    invoke-direct/range {v7 .. v16}, Lde/rki/coronawarnapp/risk/changedetection/CombinedRiskLevelChangeDetector;-><init>(Landroid/content/Context;Lkotlinx/coroutines/CoroutineScope;Lde/rki/coronawarnapp/risk/storage/RiskLevelStorage;Lde/rki/coronawarnapp/risk/RiskLevelSettings;Landroidx/core/app/NotificationManagerCompat;Lde/rki/coronawarnapp/util/device/ForegroundState;Lde/rki/coronawarnapp/notification/GeneralNotifications;Lde/rki/coronawarnapp/coronatest/CoronaTestRepository;Lde/rki/coronawarnapp/storage/TracingSettings;)V
-
-    iput-object v2, v1, Lde/rki/coronawarnapp/CoronaWarnApplication;->combinedRiskLevelChangeDetector:Lde/rki/coronawarnapp/risk/changedetection/CombinedRiskLevelChangeDetector;
-
-    iget-object v2, v0, Lde/rki/coronawarnapp/util/di/DaggerApplicationComponent;->deadmanNotificationSchedulerProvider:Ljavax/inject/Provider;
-
-    invoke-interface {v2}, Ljavax/inject/Provider;->get()Ljava/lang/Object;
-
-    move-result-object v2
-
-    check-cast v2, Lde/rki/coronawarnapp/deadman/DeadmanNotificationScheduler;
-
-    iput-object v2, v1, Lde/rki/coronawarnapp/CoronaWarnApplication;->deadmanNotificationScheduler:Lde/rki/coronawarnapp/deadman/DeadmanNotificationScheduler;
-
-    iget-object v2, v0, Lde/rki/coronawarnapp/util/di/DaggerApplicationComponent;->contactDiaryWorkSchedulerProvider:Ljavax/inject/Provider;
-
-    invoke-interface {v2}, Ljavax/inject/Provider;->get()Ljava/lang/Object;
-
-    move-result-object v2
-
-    check-cast v2, Lde/rki/coronawarnapp/contactdiary/retention/ContactDiaryWorkScheduler;
-
-    iput-object v2, v1, Lde/rki/coronawarnapp/CoronaWarnApplication;->contactDiaryWorkScheduler:Lde/rki/coronawarnapp/contactdiary/retention/ContactDiaryWorkScheduler;
-
-    iget-object v2, v0, Lde/rki/coronawarnapp/util/di/DaggerApplicationComponent;->dataDonationAnalyticsSchedulerProvider:Ljavax/inject/Provider;
-
-    invoke-interface {v2}, Ljavax/inject/Provider;->get()Ljava/lang/Object;
-
-    move-result-object v2
-
-    check-cast v2, Lde/rki/coronawarnapp/datadonation/analytics/worker/DataDonationAnalyticsScheduler;
-
-    iget-object v2, v0, Lde/rki/coronawarnapp/util/di/DaggerApplicationComponent;->generalNotificationsProvider:Ljavax/inject/Provider;
-
-    invoke-interface {v2}, Ljavax/inject/Provider;->get()Ljava/lang/Object;
-
-    move-result-object v2
-
-    check-cast v2, Lde/rki/coronawarnapp/notification/GeneralNotifications;
-
-    iget-object v2, v0, Lde/rki/coronawarnapp/util/di/DaggerApplicationComponent;->deviceTimeHandlerProvider:Ljavax/inject/Provider;
-
-    invoke-interface {v2}, Ljavax/inject/Provider;->get()Ljava/lang/Object;
-
-    move-result-object v2
-
-    check-cast v2, Lde/rki/coronawarnapp/appconfig/devicetime/DeviceTimeHandler;
-
-    iput-object v2, v1, Lde/rki/coronawarnapp/CoronaWarnApplication;->deviceTimeHandler:Lde/rki/coronawarnapp/appconfig/devicetime/DeviceTimeHandler;
-
-    iget-object v2, v0, Lde/rki/coronawarnapp/util/di/DaggerApplicationComponent;->autoSubmissionProvider:Ljavax/inject/Provider;
-
-    invoke-interface {v2}, Ljavax/inject/Provider;->get()Ljava/lang/Object;
-
-    move-result-object v2
-
-    check-cast v2, Lde/rki/coronawarnapp/submission/auto/AutoSubmission;
-
-    iput-object v2, v1, Lde/rki/coronawarnapp/CoronaWarnApplication;->autoSubmission:Lde/rki/coronawarnapp/submission/auto/AutoSubmission;
-
-    iget-object v2, v0, Lde/rki/coronawarnapp/util/di/DaggerApplicationComponent;->coronaTestRepositoryProvider:Ljavax/inject/Provider;
-
-    invoke-interface {v2}, Ljavax/inject/Provider;->get()Ljava/lang/Object;
-
-    move-result-object v2
-
-    check-cast v2, Lde/rki/coronawarnapp/coronatest/CoronaTestRepository;
-
-    iget-object v2, v0, Lde/rki/coronawarnapp/util/di/DaggerApplicationComponent;->autoCheckOutProvider:Ljavax/inject/Provider;
-
-    invoke-interface {v2}, Ljavax/inject/Provider;->get()Ljava/lang/Object;
-
-    move-result-object v2
-
-    check-cast v2, Lde/rki/coronawarnapp/presencetracing/checkins/checkout/auto/AutoCheckOut;
-
-    iput-object v2, v1, Lde/rki/coronawarnapp/CoronaWarnApplication;->autoCheckOut:Lde/rki/coronawarnapp/presencetracing/checkins/checkout/auto/AutoCheckOut;
-
-    iget-object v2, v0, Lde/rki/coronawarnapp/util/di/DaggerApplicationComponent;->traceLocationDbCleanUpSchedulerProvider:Ljavax/inject/Provider;
-
-    invoke-interface {v2}, Ljavax/inject/Provider;->get()Ljava/lang/Object;
-
-    move-result-object v2
-
-    check-cast v2, Lde/rki/coronawarnapp/presencetracing/storage/retention/TraceLocationDbCleanUpScheduler;
-
-    iput-object v2, v1, Lde/rki/coronawarnapp/CoronaWarnApplication;->traceLocationDbCleanupScheduler:Lde/rki/coronawarnapp/presencetracing/storage/retention/TraceLocationDbCleanUpScheduler;
-
-    iget-object v2, v0, Lde/rki/coronawarnapp/util/di/DaggerApplicationComponent;->shareTestResultNotificationServiceProvider:Ljavax/inject/Provider;
-
-    invoke-interface {v2}, Ljavax/inject/Provider;->get()Ljava/lang/Object;
-
-    move-result-object v2
-
-    check-cast v2, Lde/rki/coronawarnapp/coronatest/notification/ShareTestResultNotificationService;
-
-    iput-object v2, v1, Lde/rki/coronawarnapp/CoronaWarnApplication;->shareTestResultNotificationService:Lde/rki/coronawarnapp/coronatest/notification/ShareTestResultNotificationService;
-
-    iget-object v2, v0, Lde/rki/coronawarnapp/util/di/DaggerApplicationComponent;->exposureWindowRiskWorkSchedulerProvider:Ljavax/inject/Provider;
-
-    invoke-interface {v2}, Ljavax/inject/Provider;->get()Ljava/lang/Object;
-
-    move-result-object v2
-
-    check-cast v2, Lde/rki/coronawarnapp/risk/execution/ExposureWindowRiskWorkScheduler;
-
-    iput-object v2, v1, Lde/rki/coronawarnapp/CoronaWarnApplication;->exposureWindowRiskWorkScheduler:Lde/rki/coronawarnapp/risk/execution/ExposureWindowRiskWorkScheduler;
-
-    iget-object v2, v0, Lde/rki/coronawarnapp/util/di/DaggerApplicationComponent;->presenceTracingRiskWorkSchedulerProvider:Ljavax/inject/Provider;
-
-    invoke-interface {v2}, Ljavax/inject/Provider;->get()Ljava/lang/Object;
-
-    move-result-object v2
-
-    check-cast v2, Lde/rki/coronawarnapp/presencetracing/risk/execution/PresenceTracingRiskWorkScheduler;
-
-    iput-object v2, v1, Lde/rki/coronawarnapp/CoronaWarnApplication;->presenceTracingRiskWorkScheduler:Lde/rki/coronawarnapp/presencetracing/risk/execution/PresenceTracingRiskWorkScheduler;
-
-    iget-object v2, v0, Lde/rki/coronawarnapp/util/di/DaggerApplicationComponent;->pCRResultSchedulerProvider:Ljavax/inject/Provider;
-
-    invoke-interface {v2}, Ljavax/inject/Provider;->get()Ljava/lang/Object;
-
-    move-result-object v2
-
-    check-cast v2, Lde/rki/coronawarnapp/coronatest/type/pcr/execution/PCRResultScheduler;
-
-    iput-object v2, v1, Lde/rki/coronawarnapp/CoronaWarnApplication;->pcrTestResultScheduler:Lde/rki/coronawarnapp/coronatest/type/pcr/execution/PCRResultScheduler;
-
-    iget-object v2, v0, Lde/rki/coronawarnapp/util/di/DaggerApplicationComponent;->rAResultSchedulerProvider:Ljavax/inject/Provider;
-
-    invoke-interface {v2}, Ljavax/inject/Provider;->get()Ljava/lang/Object;
-
-    move-result-object v2
-
-    check-cast v2, Lde/rki/coronawarnapp/coronatest/type/rapidantigen/execution/RAResultScheduler;
-
-    iput-object v2, v1, Lde/rki/coronawarnapp/CoronaWarnApplication;->raTestResultScheduler:Lde/rki/coronawarnapp/coronatest/type/rapidantigen/execution/RAResultScheduler;
-
-    iget-object v2, v0, Lde/rki/coronawarnapp/util/di/DaggerApplicationComponent;->pCRTestResultAvailableNotificationServiceProvider:Ljavax/inject/Provider;
-
-    invoke-interface {v2}, Ljavax/inject/Provider;->get()Ljava/lang/Object;
-
-    move-result-object v2
-
-    check-cast v2, Lde/rki/coronawarnapp/coronatest/type/pcr/notification/PCRTestResultAvailableNotificationService;
-
-    iput-object v2, v1, Lde/rki/coronawarnapp/CoronaWarnApplication;->pcrTestResultAvailableNotificationService:Lde/rki/coronawarnapp/coronatest/type/pcr/notification/PCRTestResultAvailableNotificationService;
-
-    iget-object v2, v0, Lde/rki/coronawarnapp/util/di/DaggerApplicationComponent;->rATTestResultAvailableNotificationServiceProvider:Ljavax/inject/Provider;
-
-    invoke-interface {v2}, Ljavax/inject/Provider;->get()Ljava/lang/Object;
-
-    move-result-object v2
-
-    check-cast v2, Lde/rki/coronawarnapp/coronatest/type/rapidantigen/notification/RATTestResultAvailableNotificationService;
-
-    iput-object v2, v1, Lde/rki/coronawarnapp/CoronaWarnApplication;->raTestResultAvailableNotificationService:Lde/rki/coronawarnapp/coronatest/type/rapidantigen/notification/RATTestResultAvailableNotificationService;
-
-    iget-object v2, v0, Lde/rki/coronawarnapp/util/di/DaggerApplicationComponent;->testCertificateRetrievalSchedulerProvider:Ljavax/inject/Provider;
-
-    invoke-interface {v2}, Ljavax/inject/Provider;->get()Ljava/lang/Object;
-
-    move-result-object v2
-
-    check-cast v2, Lde/rki/coronawarnapp/covidcertificate/test/core/execution/TestCertificateRetrievalScheduler;
-
-    iput-object v2, v1, Lde/rki/coronawarnapp/CoronaWarnApplication;->testCertificateRetrievalScheduler:Lde/rki/coronawarnapp/covidcertificate/test/core/execution/TestCertificateRetrievalScheduler;
-
-    iget-object v2, v0, Lde/rki/coronawarnapp/util/di/DaggerApplicationComponent;->environmentSetupProvider:Ljavax/inject/Provider;
-
-    invoke-interface {v2}, Ljavax/inject/Provider;->get()Ljava/lang/Object;
-
-    move-result-object v2
-
-    check-cast v2, Lde/rki/coronawarnapp/environment/EnvironmentSetup;
-
-    iput-object v2, v1, Lde/rki/coronawarnapp/CoronaWarnApplication;->environmentSetup:Lde/rki/coronawarnapp/environment/EnvironmentSetup;
-
-    iget-object v2, v0, Lde/rki/coronawarnapp/util/di/DaggerApplicationComponent;->localStatisticsRetrievalSchedulerProvider:Ljavax/inject/Provider;
-
-    invoke-interface {v2}, Ljavax/inject/Provider;->get()Ljava/lang/Object;
-
-    move-result-object v2
-
-    check-cast v2, Lde/rki/coronawarnapp/statistics/local/source/LocalStatisticsRetrievalScheduler;
-
-    iput-object v2, v1, Lde/rki/coronawarnapp/CoronaWarnApplication;->localStatisticsRetrievalScheduler:Lde/rki/coronawarnapp/statistics/local/source/LocalStatisticsRetrievalScheduler;
-
-    iget-object v2, v0, Lde/rki/coronawarnapp/util/di/DaggerApplicationComponent;->imageLoaderFactoryProvider:Ljavax/inject/Provider;
-
-    invoke-interface {v2}, Ljavax/inject/Provider;->get()Ljava/lang/Object;
-
-    move-result-object v2
-
-    check-cast v2, Lcoil/ImageLoaderFactory;
-
-    iput-object v2, v1, Lde/rki/coronawarnapp/CoronaWarnApplication;->imageLoaderFactory:Lcoil/ImageLoaderFactory;
-
-    iget-object v2, v0, Lde/rki/coronawarnapp/util/di/DaggerApplicationComponent;->dccStateCheckSchedulerProvider:Ljavax/inject/Provider;
-
-    invoke-interface {v2}, Ljavax/inject/Provider;->get()Ljava/lang/Object;
-
-    move-result-object v2
-
-    check-cast v2, Lde/rki/coronawarnapp/covidcertificate/common/statecheck/DccStateCheckScheduler;
-
-    iput-object v2, v1, Lde/rki/coronawarnapp/CoronaWarnApplication;->dccStateCheckScheduler:Lde/rki/coronawarnapp/covidcertificate/common/statecheck/DccStateCheckScheduler;
-
-    iget-object v2, v0, Lde/rki/coronawarnapp/util/di/DaggerApplicationComponent;->securityProvider:Ljavax/inject/Provider;
-
-    invoke-interface {v2}, Ljavax/inject/Provider;->get()Ljava/lang/Object;
-
-    move-result-object v2
-
-    check-cast v2, Lde/rki/coronawarnapp/SecurityProvider;
-
-    iput-object v2, v1, Lde/rki/coronawarnapp/CoronaWarnApplication;->securityProvider:Lde/rki/coronawarnapp/SecurityProvider;
-
-    iget-object v2, v0, Lde/rki/coronawarnapp/util/di/DaggerApplicationComponent;->boosterCheckSchedulerProvider:Ljavax/inject/Provider;
-
-    invoke-interface {v2}, Ljavax/inject/Provider;->get()Ljava/lang/Object;
-
-    move-result-object v2
-
-    check-cast v2, Lde/rki/coronawarnapp/covidcertificate/booster/BoosterCheckScheduler;
-
-    iput-object v2, v1, Lde/rki/coronawarnapp/CoronaWarnApplication;->boosterCheckScheduler:Lde/rki/coronawarnapp/covidcertificate/booster/BoosterCheckScheduler;
-
-    iget-object v2, v0, Lde/rki/coronawarnapp/util/di/DaggerApplicationComponent;->appCoroutineScopeProvider:Ljavax/inject/Provider;
-
-    invoke-interface {v2}, Ljavax/inject/Provider;->get()Ljava/lang/Object;
-
-    move-result-object v2
-
-    check-cast v2, Lkotlinx/coroutines/CoroutineScope;
-
-    iput-object v2, v1, Lde/rki/coronawarnapp/CoronaWarnApplication;->appScope:Lkotlinx/coroutines/CoroutineScope;
-
-    iget-object v2, v0, Lde/rki/coronawarnapp/util/di/DaggerApplicationComponent;->loggingHistoryProvider:Ljavax/inject/Provider;
-
-    invoke-interface {v2}, Ljavax/inject/Provider;->get()Ljava/lang/Object;
-
-    move-result-object v2
-
-    check-cast v2, Ltimber/log/Timber$Tree;
-
-    iput-object v2, v1, Lde/rki/coronawarnapp/CoronaWarnApplication;->rollingLogHistory:Ltimber/log/Timber$Tree;
+    iput-object v0, p1, Lde/rki/coronawarnapp/CoronaWarnApplication;->rollingLogHistory:Ltimber/log/Timber$Tree;
 
     return-void
 .end method

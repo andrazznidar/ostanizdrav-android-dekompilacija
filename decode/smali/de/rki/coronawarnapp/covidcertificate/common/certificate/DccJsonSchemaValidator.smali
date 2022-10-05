@@ -53,7 +53,7 @@
 
     sget-object v3, Lde/rki/coronawarnapp/util/serialization/validation/JsonSchemaValidator$WhenMappings;->$EnumSwitchMapping$0:[I
 
-    invoke-static {v2}, Landroidx/constraintlayout/core/SolverVariable$Type$r8$EnumUnboxingUtility;->$enumboxing$ordinal(I)I
+    invoke-static {v2}, Landroidx/camera/camera2/internal/Camera2CameraImpl$InternalState$EnumUnboxingSharedUtility;->ordinal(I)I
 
     move-result v2
 

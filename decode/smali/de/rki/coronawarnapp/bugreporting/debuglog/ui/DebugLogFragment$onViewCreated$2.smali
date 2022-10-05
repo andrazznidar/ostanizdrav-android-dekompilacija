@@ -83,18 +83,14 @@
 
     if-eqz v4, :cond_0
 
-    const v4, 0x7f08010f
+    const v4, 0x7f080106
 
     goto :goto_0
 
     :cond_0
-    const v4, 0x7f080110
+    const v4, 0x7f080107
 
     :goto_0
-    const-string v5, "<this>"
-
-    invoke-static {v3, v5}, Lkotlin/jvm/internal/Intrinsics;->checkNotNullParameter(Ljava/lang/Object;Ljava/lang/String;)V
-
     sget-object v5, Landroidx/core/content/ContextCompat;->sLock:Ljava/lang/Object;
 
     invoke-static {v3, v4}, Landroidx/core/content/ContextCompat$Api21Impl;->getDrawable(Landroid/content/Context;I)Landroid/graphics/drawable/Drawable;
@@ -113,19 +109,19 @@
 
     if-eqz v4, :cond_1
 
-    const v3, 0x7f130195
+    const v3, 0x7f1301c9
 
     goto :goto_1
 
     :cond_1
     if-eqz v3, :cond_2
 
-    const v3, 0x7f130197
+    const v3, 0x7f1301cb
 
     goto :goto_1
 
     :cond_2
-    const v3, 0x7f130196
+    const v3, 0x7f1301ca
 
     :goto_1
     invoke-virtual {v1, v3}, Landroidx/fragment/app/Fragment;->getString(I)Ljava/lang/String;
@@ -136,7 +132,7 @@
 
     iget-object v2, v0, Lde/rki/coronawarnapp/databinding/BugreportingDebuglogFragmentBinding;->debuglogStatusSecondary:Landroid/widget/TextView;
 
-    const v3, 0x7f130194
+    const v3, 0x7f1301c8
 
     const/4 v4, 0x1
 
@@ -178,12 +174,12 @@
 
     if-eqz v3, :cond_3
 
-    const v3, 0x7f130176
+    const v3, 0x7f1301ad
 
     goto :goto_2
 
     :cond_3
-    const v3, 0x7f130175
+    const v3, 0x7f1301ac
 
     :goto_2
     invoke-virtual {v1, v3}, Landroidx/fragment/app/Fragment;->getString(I)Ljava/lang/String;
@@ -192,9 +188,9 @@
 
     invoke-virtual {v2, v3}, Landroid/widget/Button;->setText(Ljava/lang/CharSequence;)V
 
-    new-instance v3, Lde/rki/coronawarnapp/ui/settings/SettingsResetFragment$$ExternalSyntheticLambda0;
+    new-instance v3, Lde/rki/coronawarnapp/ui/settings/notifications/NotificationSettingsFragment$$ExternalSyntheticLambda0;
 
-    invoke-direct {v3, v1}, Lde/rki/coronawarnapp/ui/settings/SettingsResetFragment$$ExternalSyntheticLambda0;-><init>(Lde/rki/coronawarnapp/bugreporting/debuglog/ui/DebugLogFragment;)V
+    invoke-direct {v3, v1, v4}, Lde/rki/coronawarnapp/ui/settings/notifications/NotificationSettingsFragment$$ExternalSyntheticLambda0;-><init>(Landroidx/fragment/app/Fragment;I)V
 
     invoke-virtual {v2, v3}, Landroid/widget/Button;->setOnClickListener(Landroid/view/View$OnClickListener;)V
 
@@ -244,9 +240,9 @@
     :goto_4
     invoke-virtual {v2, v5}, Landroid/widget/Button;->setEnabled(Z)V
 
-    new-instance v5, Lde/rki/coronawarnapp/ui/onboarding/OnboardingFragment$$ExternalSyntheticLambda0;
+    new-instance v5, Lde/rki/coronawarnapp/bugreporting/debuglog/ui/DebugLogFragment$onViewCreated$2$$ExternalSyntheticLambda0;
 
-    invoke-direct {v5, v1}, Lde/rki/coronawarnapp/ui/onboarding/OnboardingFragment$$ExternalSyntheticLambda0;-><init>(Lde/rki/coronawarnapp/bugreporting/debuglog/ui/DebugLogFragment;)V
+    invoke-direct {v5, v1, v7}, Lde/rki/coronawarnapp/bugreporting/debuglog/ui/DebugLogFragment$onViewCreated$2$$ExternalSyntheticLambda0;-><init>(Landroidx/fragment/app/Fragment;I)V
 
     invoke-virtual {v2, v5}, Landroid/widget/Button;->setOnClickListener(Landroid/view/View$OnClickListener;)V
 
@@ -286,9 +282,9 @@
     :goto_6
     invoke-virtual {v0, v4}, Landroid/widget/Button;->setEnabled(Z)V
 
-    new-instance p1, Lde/rki/coronawarnapp/ui/onboarding/OnboardingFragment$$ExternalSyntheticLambda1;
+    new-instance p1, Lde/rki/coronawarnapp/bugreporting/debuglog/ui/DebugLogFragment$onViewCreated$2$$ExternalSyntheticLambda1;
 
-    invoke-direct {p1, v1}, Lde/rki/coronawarnapp/ui/onboarding/OnboardingFragment$$ExternalSyntheticLambda1;-><init>(Lde/rki/coronawarnapp/bugreporting/debuglog/ui/DebugLogFragment;)V
+    invoke-direct {p1, v1, v7}, Lde/rki/coronawarnapp/bugreporting/debuglog/ui/DebugLogFragment$onViewCreated$2$$ExternalSyntheticLambda1;-><init>(Landroidx/fragment/app/Fragment;I)V
 
     invoke-virtual {v0, p1}, Landroid/widget/Button;->setOnClickListener(Landroid/view/View$OnClickListener;)V
 

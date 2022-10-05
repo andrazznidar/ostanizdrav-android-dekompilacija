@@ -171,7 +171,7 @@
 
     const-string v3, "canceled"
 
-    invoke-static {v0, p0, v3}, Lokhttp3/internal/concurrent/TaskLoggerKt;->access$log(Lokhttp3/internal/concurrent/Task;Lokhttp3/internal/concurrent/TaskQueue;Ljava/lang/String;)V
+    invoke-static {v0, p0, v3}, Landroidx/lifecycle/ViewModelKt;->access$log(Lokhttp3/internal/concurrent/Task;Lokhttp3/internal/concurrent/TaskQueue;Ljava/lang/String;)V
 
     :cond_1
     iget-object v0, p0, Lokhttp3/internal/concurrent/TaskQueue;->futureTasks:Ljava/util/List;
@@ -223,7 +223,7 @@
 
     const-string p2, "schedule canceled (queue is shutdown)"
 
-    invoke-static {p1, p0, p2}, Lokhttp3/internal/concurrent/TaskLoggerKt;->access$log(Lokhttp3/internal/concurrent/Task;Lokhttp3/internal/concurrent/TaskQueue;Ljava/lang/String;)V
+    invoke-static {p1, p0, p2}, Landroidx/lifecycle/ViewModelKt;->access$log(Lokhttp3/internal/concurrent/Task;Lokhttp3/internal/concurrent/TaskQueue;Ljava/lang/String;)V
     :try_end_0
     .catchall {:try_start_0 .. :try_end_0} :catchall_0
 
@@ -248,7 +248,7 @@
 
     const-string p2, "schedule failed (queue is shutdown)"
 
-    invoke-static {p1, p0, p2}, Lokhttp3/internal/concurrent/TaskLoggerKt;->access$log(Lokhttp3/internal/concurrent/Task;Lokhttp3/internal/concurrent/TaskQueue;Ljava/lang/String;)V
+    invoke-static {p1, p0, p2}, Landroidx/lifecycle/ViewModelKt;->access$log(Lokhttp3/internal/concurrent/Task;Lokhttp3/internal/concurrent/TaskQueue;Ljava/lang/String;)V
 
     :cond_2
     new-instance p1, Ljava/util/concurrent/RejectedExecutionException;
@@ -290,9 +290,9 @@
 
     iget-object v0, p1, Lokhttp3/internal/concurrent/Task;->queue:Lokhttp3/internal/concurrent/TaskQueue;
 
-    const/4 v1, 0x0
+    const/4 v1, 0x1
 
-    const/4 v2, 0x1
+    const/4 v2, 0x0
 
     if-ne v0, p0, :cond_0
 
@@ -301,12 +301,12 @@
     :cond_0
     if-nez v0, :cond_1
 
-    move v0, v2
+    move v0, v1
 
     goto :goto_0
 
     :cond_1
-    move v0, v1
+    move v0, v2
 
     :goto_0
     if-eqz v0, :cond_c
@@ -354,10 +354,10 @@
 
     const-string p2, "already scheduled"
 
-    invoke-static {p1, p0, p2}, Lokhttp3/internal/concurrent/TaskLoggerKt;->access$log(Lokhttp3/internal/concurrent/Task;Lokhttp3/internal/concurrent/TaskQueue;Ljava/lang/String;)V
+    invoke-static {p1, p0, p2}, Landroidx/lifecycle/ViewModelKt;->access$log(Lokhttp3/internal/concurrent/Task;Lokhttp3/internal/concurrent/TaskQueue;Ljava/lang/String;)V
 
     :cond_2
-    return v1
+    return v2
 
     :cond_3
     iget-object v8, p0, Lokhttp3/internal/concurrent/TaskQueue;->futureTasks:Ljava/util/List;
@@ -389,7 +389,7 @@
 
     sub-long/2addr v5, v3
 
-    invoke-static {v5, v6}, Lokhttp3/internal/concurrent/TaskLoggerKt;->formatDuration(J)Ljava/lang/String;
+    invoke-static {v5, v6}, Landroidx/lifecycle/ViewModelKt;->formatDuration(J)Ljava/lang/String;
 
     move-result-object v0
 
@@ -410,7 +410,7 @@
 
     sub-long/2addr v5, v3
 
-    invoke-static {v5, v6}, Lokhttp3/internal/concurrent/TaskLoggerKt;->formatDuration(J)Ljava/lang/String;
+    invoke-static {v5, v6}, Landroidx/lifecycle/ViewModelKt;->formatDuration(J)Ljava/lang/String;
 
     move-result-object v0
 
@@ -421,7 +421,7 @@
     move-result-object p4
 
     :goto_2
-    invoke-static {p1, p0, p4}, Lokhttp3/internal/concurrent/TaskLoggerKt;->access$log(Lokhttp3/internal/concurrent/Task;Lokhttp3/internal/concurrent/TaskQueue;Ljava/lang/String;)V
+    invoke-static {p1, p0, p4}, Landroidx/lifecycle/ViewModelKt;->access$log(Lokhttp3/internal/concurrent/Task;Lokhttp3/internal/concurrent/TaskQueue;Ljava/lang/String;)V
 
     :cond_6
     iget-object p4, p0, Lokhttp3/internal/concurrent/TaskQueue;->futureTasks:Ljava/util/List;
@@ -430,7 +430,7 @@
 
     move-result-object p4
 
-    move v0, v1
+    move v0, v2
 
     :goto_3
     invoke-interface {p4}, Ljava/util/Iterator;->hasNext()Z
@@ -453,12 +453,12 @@
 
     if-lez v5, :cond_7
 
-    move v5, v2
+    move v5, v1
 
     goto :goto_4
 
     :cond_7
-    move v5, v1
+    move v5, v2
 
     :goto_4
     if-eqz v5, :cond_8
@@ -489,9 +489,12 @@
 
     if-nez v0, :cond_b
 
-    move v1, v2
+    goto :goto_6
 
     :cond_b
+    move v1, v2
+
+    :goto_6
     return v1
 
     :cond_c

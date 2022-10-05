@@ -126,7 +126,7 @@
 
     iget-object p1, p1, Lde/rki/coronawarnapp/util/shortcuts/AppShortcutsHelper;->context:Landroid/content/Context;
 
-    const v1, 0x7f130066
+    const v1, 0x7f130062
 
     invoke-virtual {p1, v1}, Landroid/content/Context;->getString(I)Ljava/lang/String;
 
@@ -148,7 +148,7 @@
 
     iget-object p1, p1, Lde/rki/coronawarnapp/util/shortcuts/AppShortcutsHelper;->context:Landroid/content/Context;
 
-    const v1, 0x7f0800e9
+    const v1, 0x7f0800df
 
     sget-object v2, Landroidx/core/graphics/drawable/IconCompat;->DEFAULT_TINT_MODE:Landroid/graphics/PorterDuff$Mode;
 
@@ -215,10 +215,6 @@
     array-length v1, v1
 
     if-eqz v1, :cond_a
-
-    const-string v1, "Builder(context, CONTACT\u2026t())\n            .build()"
-
-    invoke-static {v0, v1}, Lkotlin/jvm/internal/Intrinsics;->checkNotNullExpressionValue(Ljava/lang/Object;Ljava/lang/String;)V
 
     iget-object v1, p0, Lde/rki/coronawarnapp/util/shortcuts/AppShortcutsHelper$restoreAppShortcut$2;->this$0:Lde/rki/coronawarnapp/util/shortcuts/AppShortcutsHelper;
 

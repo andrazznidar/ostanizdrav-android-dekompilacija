@@ -4,9 +4,9 @@
 
 
 # instance fields
-.field public final hasDefaultValue:Z
+.field private final hasDefaultValue:Z
 
-.field public final type:Lkotlin/reflect/jvm/internal/impl/types/KotlinType;
+.field private final type:Lkotlin/reflect/jvm/internal/impl/types/KotlinType;
 
 
 # direct methods
@@ -24,4 +24,22 @@
     iput-boolean p2, p0, Lkotlin/reflect/jvm/internal/impl/load/java/descriptors/ValueParameterData;->hasDefaultValue:Z
 
     return-void
+.end method
+
+
+# virtual methods
+.method public final getHasDefaultValue()Z
+    .locals 1
+
+    iget-boolean v0, p0, Lkotlin/reflect/jvm/internal/impl/load/java/descriptors/ValueParameterData;->hasDefaultValue:Z
+
+    return v0
+.end method
+
+.method public final getType()Lkotlin/reflect/jvm/internal/impl/types/KotlinType;
+    .locals 1
+
+    iget-object v0, p0, Lkotlin/reflect/jvm/internal/impl/load/java/descriptors/ValueParameterData;->type:Lkotlin/reflect/jvm/internal/impl/types/KotlinType;
+
+    return-object v0
 .end method

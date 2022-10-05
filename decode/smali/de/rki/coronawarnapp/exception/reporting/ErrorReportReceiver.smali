@@ -48,9 +48,9 @@
     move-object v1, v3
 
     :cond_0
-    invoke-static {v1}, Lde/rki/coronawarnapp/exception/ExceptionCategory;->valueOf(Ljava/lang/String;)Lde/rki/coronawarnapp/exception/ExceptionCategory;
+    invoke-static {v1}, Lde/rki/coronawarnapp/exception/ExceptionCategory$EnumUnboxingLocalUtility;->valueOf(Ljava/lang/String;)I
 
-    move-result-object v1
+    move-result v1
 
     const-string v4, "prefix"
 
@@ -76,7 +76,7 @@
 
     move-result-object v6
 
-    const v7, 0x7f1301d1
+    const v7, 0x7f1301fd
 
     invoke-virtual {v6, v7}, Landroid/content/res/Resources;->getString(I)Ljava/lang/String;
 
@@ -124,7 +124,7 @@
 
     move-result-object v7
 
-    const v8, 0x7f1301cd
+    const v8, 0x7f1301f9
 
     invoke-virtual {v7, v8}, Landroid/content/res/Resources;->getString(I)Ljava/lang/String;
 
@@ -138,7 +138,7 @@
 
     move-result-object v7
 
-    const v8, 0x7f1301cb
+    const v8, 0x7f1301f7
 
     invoke-virtual {v7, v8}, Landroid/content/res/Resources;->getString(I)Ljava/lang/String;
 
@@ -152,7 +152,7 @@
 
     move-result-object v8
 
-    const v9, 0x7f1301ca
+    const v9, 0x7f1301f6
 
     invoke-virtual {v8, v9}, Landroid/content/res/Resources;->getString(I)Ljava/lang/String;
 
@@ -166,7 +166,7 @@
 
     move-result-object v8
 
-    const v9, 0x7f1301cc
+    const v9, 0x7f1301f8
 
     invoke-virtual {v8, v9}, Landroid/content/res/Resources;->getString(I)Ljava/lang/String;
 
@@ -213,27 +213,24 @@
 
     move-result-object v13
 
-    if-eqz v13, :cond_5
+    if-eqz v13, :cond_4
 
     invoke-virtual {v0, v9}, Landroid/content/Intent;->getStringExtra(Ljava/lang/String;)Ljava/lang/String;
 
     move-result-object v0
 
-    if-eqz v0, :cond_4
+    if-nez v0, :cond_5
 
-    goto :goto_0
-
-    :cond_4
     move-object v0, v3
 
     goto :goto_0
 
-    :cond_5
+    :cond_4
     invoke-virtual/range {p1 .. p1}, Landroid/content/Context;->getResources()Landroid/content/res/Resources;
 
     move-result-object v2
 
-    const v9, 0x7f1301cc
+    const v9, 0x7f1301f8
 
     invoke-virtual {v2, v9}, Landroid/content/res/Resources;->getString(I)Ljava/lang/String;
 
@@ -247,7 +244,7 @@
 
     move-result-object v2
 
-    const-string v8, "(this as java.lang.Strin\u2026.toUpperCase(Locale.ROOT)"
+    const-string/jumbo v8, "this as java.lang.String).toUpperCase(Locale.ROOT)"
 
     invoke-static {v2, v8}, Lkotlin/jvm/internal/Intrinsics;->checkNotNullExpressionValue(Ljava/lang/Object;Ljava/lang/String;)V
 
@@ -281,6 +278,7 @@
 
     move-result-object v0
 
+    :cond_5
     :goto_0
     sget-object v2, Ltimber/log/Timber;->Forest:Ltimber/log/Timber$Forest;
 
@@ -297,15 +295,17 @@
     move-object v3, v5
 
     :goto_1
-    new-instance v5, Ljava/lang/StringBuilder;
+    const-string v5, "["
 
-    invoke-direct {v5}, Ljava/lang/StringBuilder;-><init>()V
+    invoke-static {v5}, Landroid/support/v4/media/RatingCompat$$ExternalSyntheticOutline0;->m(Ljava/lang/String;)Ljava/lang/StringBuilder;
 
-    const-string v8, "["
+    move-result-object v5
 
-    invoke-virtual {v5, v8}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+    invoke-static {v1}, Lde/rki/coronawarnapp/exception/ExceptionCategory$EnumUnboxingLocalUtility;->stringValueOf(I)Ljava/lang/String;
 
-    invoke-virtual {v5, v1}, Ljava/lang/StringBuilder;->append(Ljava/lang/Object;)Ljava/lang/StringBuilder;
+    move-result-object v1
+
+    invoke-virtual {v5, v1}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
 
     const-string v1, "]"
 
@@ -317,7 +317,11 @@
 
     invoke-virtual {v5, v1}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
 
-    invoke-static {v5, v6, v3}, Landroidx/constraintlayout/core/widgets/Barrier$$ExternalSyntheticOutline0;->m(Ljava/lang/StringBuilder;Ljava/lang/String;Ljava/lang/String;)Ljava/lang/String;
+    invoke-virtual {v5, v6}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+
+    invoke-virtual {v5, v3}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+
+    invoke-virtual {v5}, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
 
     move-result-object v1
 

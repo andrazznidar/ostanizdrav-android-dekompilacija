@@ -47,7 +47,7 @@
 
 # virtual methods
 .method public invoke(Ljava/lang/Object;)Ljava/lang/Object;
-    .locals 4
+    .locals 3
 
     check-cast p1, Lde/rki/coronawarnapp/covidcertificate/validation/core/rule/DccValidationRule;
 
@@ -59,31 +59,25 @@
 
     move-result-object p1
 
-    const-string v0, "null cannot be cast to non-null type java.lang.String"
+    sget-object v0, Ljava/util/Locale;->ROOT:Ljava/util/Locale;
 
-    invoke-static {p1, v0}, Ljava/util/Objects;->requireNonNull(Ljava/lang/Object;Ljava/lang/String;)Ljava/lang/Object;
-
-    sget-object v1, Ljava/util/Locale;->ROOT:Ljava/util/Locale;
-
-    invoke-virtual {p1, v1}, Ljava/lang/String;->toUpperCase(Ljava/util/Locale;)Ljava/lang/String;
+    invoke-virtual {p1, v0}, Ljava/lang/String;->toUpperCase(Ljava/util/Locale;)Ljava/lang/String;
 
     move-result-object p1
 
-    const-string v2, "(this as java.lang.Strin\u2026.toUpperCase(Locale.ROOT)"
+    const-string/jumbo v1, "this as java.lang.String).toUpperCase(Locale.ROOT)"
 
-    invoke-static {p1, v2}, Lkotlin/jvm/internal/Intrinsics;->checkNotNullExpressionValue(Ljava/lang/Object;Ljava/lang/String;)V
+    invoke-static {p1, v1}, Lkotlin/jvm/internal/Intrinsics;->checkNotNullExpressionValue(Ljava/lang/Object;Ljava/lang/String;)V
 
-    iget-object v3, p0, Lde/rki/coronawarnapp/covidcertificate/validation/core/business/wrapper/MappingsKt$filterRelevantRules$1;->$country:Lde/rki/coronawarnapp/covidcertificate/validation/core/country/DccCountry;
+    iget-object v2, p0, Lde/rki/coronawarnapp/covidcertificate/validation/core/business/wrapper/MappingsKt$filterRelevantRules$1;->$country:Lde/rki/coronawarnapp/covidcertificate/validation/core/country/DccCountry;
 
-    iget-object v3, v3, Lde/rki/coronawarnapp/covidcertificate/validation/core/country/DccCountry;->countryCode:Ljava/lang/String;
+    iget-object v2, v2, Lde/rki/coronawarnapp/covidcertificate/validation/core/country/DccCountry;->countryCode:Ljava/lang/String;
 
-    invoke-static {v3, v0}, Ljava/util/Objects;->requireNonNull(Ljava/lang/Object;Ljava/lang/String;)Ljava/lang/Object;
-
-    invoke-virtual {v3, v1}, Ljava/lang/String;->toUpperCase(Ljava/util/Locale;)Ljava/lang/String;
+    invoke-virtual {v2, v0}, Ljava/lang/String;->toUpperCase(Ljava/util/Locale;)Ljava/lang/String;
 
     move-result-object v0
 
-    invoke-static {v0, v2}, Lkotlin/jvm/internal/Intrinsics;->checkNotNullExpressionValue(Ljava/lang/Object;Ljava/lang/String;)V
+    invoke-static {v0, v1}, Lkotlin/jvm/internal/Intrinsics;->checkNotNullExpressionValue(Ljava/lang/Object;Ljava/lang/String;)V
 
     invoke-static {p1, v0}, Lkotlin/jvm/internal/Intrinsics;->areEqual(Ljava/lang/Object;Ljava/lang/Object;)Z
 

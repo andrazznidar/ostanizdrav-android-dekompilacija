@@ -9,8 +9,7 @@
 # annotations
 .annotation system Ldalvik/annotation/MemberClasses;
     value = {
-        Lde/rki/coronawarnapp/contactdiary/ui/overview/adapter/day/contact/ContactItem$Data;,
-        Lde/rki/coronawarnapp/contactdiary/ui/overview/adapter/day/contact/ContactItem$Type;
+        Lde/rki/coronawarnapp/contactdiary/ui/overview/adapter/day/contact/ContactItem$Data;
     }
 .end annotation
 

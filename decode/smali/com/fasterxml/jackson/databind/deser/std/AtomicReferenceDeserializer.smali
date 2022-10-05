@@ -35,6 +35,19 @@
 
 
 # virtual methods
+.method public getAbsentValue(Lcom/fasterxml/jackson/databind/DeserializationContext;)Ljava/lang/Object;
+    .locals 0
+    .annotation system Ldalvik/annotation/Throws;
+        value = {
+            Lcom/fasterxml/jackson/databind/JsonMappingException;
+        }
+    .end annotation
+
+    const/4 p1, 0x0
+
+    return-object p1
+.end method
+
 .method public getEmptyValue(Lcom/fasterxml/jackson/databind/DeserializationContext;)Ljava/lang/Object;
     .locals 2
     .annotation system Ldalvik/annotation/Throws;

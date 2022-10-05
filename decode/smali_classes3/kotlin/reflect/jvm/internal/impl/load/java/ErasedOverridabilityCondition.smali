@@ -14,7 +14,7 @@
 .end annotation
 
 .annotation system Ldalvik/annotation/SourceDebugExtension;
-    value = "SMAP\nErasedOverridabilityCondition.kt\nKotlin\n*S Kotlin\n*F\n+ 1 ErasedOverridabilityCondition.kt\norg/jetbrains/kotlin/load/java/ErasedOverridabilityCondition\n+ 2 _Sequences.kt\nkotlin/sequences/SequencesKt___SequencesKt\n*L\n1#1,63:1\n1190#2,2:64\n*E\n*S KotlinDebug\n*F\n+ 1 ErasedOverridabilityCondition.kt\norg/jetbrains/kotlin/load/java/ErasedOverridabilityCondition\n*L\n44#1,2:64\n*E\n"
+    value = "SMAP\nErasedOverridabilityCondition.kt\nKotlin\n*S Kotlin\n*F\n+ 1 ErasedOverridabilityCondition.kt\norg/jetbrains/kotlin/load/java/ErasedOverridabilityCondition\n+ 2 _Sequences.kt\nkotlin/sequences/SequencesKt___SequencesKt\n*L\n1#1,63:1\n1224#2,2:64\n*S KotlinDebug\n*F\n+ 1 ErasedOverridabilityCondition.kt\norg/jetbrains/kotlin/load/java/ErasedOverridabilityCondition\n*L\n44#1:64,2\n*E\n"
 .end annotation
 
 
@@ -29,15 +29,15 @@
 
 
 # virtual methods
-.method public getContract$enumunboxing$()I
+.method public getContract()Lkotlin/reflect/jvm/internal/impl/resolve/ExternalOverridabilityCondition$Contract;
     .locals 1
 
-    const/4 v0, 0x2
+    sget-object v0, Lkotlin/reflect/jvm/internal/impl/resolve/ExternalOverridabilityCondition$Contract;->SUCCESS_ONLY:Lkotlin/reflect/jvm/internal/impl/resolve/ExternalOverridabilityCondition$Contract;
 
-    return v0
+    return-object v0
 .end method
 
-.method public isOverridable$enumunboxing$(Lkotlin/reflect/jvm/internal/impl/descriptors/CallableDescriptor;Lkotlin/reflect/jvm/internal/impl/descriptors/CallableDescriptor;Lkotlin/reflect/jvm/internal/impl/descriptors/ClassDescriptor;)I
+.method public isOverridable(Lkotlin/reflect/jvm/internal/impl/descriptors/CallableDescriptor;Lkotlin/reflect/jvm/internal/impl/descriptors/CallableDescriptor;Lkotlin/reflect/jvm/internal/impl/descriptors/ClassDescriptor;)Lkotlin/reflect/jvm/internal/impl/resolve/ExternalOverridabilityCondition$Result;
     .locals 5
 
     const-string p3, "superDescriptor"
@@ -50,11 +50,7 @@
 
     instance-of p3, p2, Lkotlin/reflect/jvm/internal/impl/load/java/descriptors/JavaMethodDescriptor;
 
-    const/4 v0, 0x1
-
-    const/4 v1, 0x4
-
-    if-eqz p3, :cond_a
+    if-eqz p3, :cond_b
 
     move-object p3, p2
 
@@ -62,81 +58,95 @@
 
     invoke-virtual {p3}, Lkotlin/reflect/jvm/internal/impl/descriptors/impl/FunctionDescriptorImpl;->getTypeParameters()Ljava/util/List;
 
-    move-result-object v2
+    move-result-object v0
 
-    invoke-interface {v2}, Ljava/util/Collection;->isEmpty()Z
+    const-string v1, "subDescriptor.typeParameters"
 
-    move-result v2
+    invoke-static {v0, v1}, Lkotlin/jvm/internal/Intrinsics;->checkNotNullExpressionValue(Ljava/lang/Object;Ljava/lang/String;)V
 
-    xor-int/2addr v2, v0
+    invoke-interface {v0}, Ljava/util/Collection;->isEmpty()Z
 
-    if-eqz v2, :cond_0
+    move-result v0
 
-    goto/16 :goto_4
+    const/4 v1, 0x1
+
+    xor-int/2addr v0, v1
+
+    if-eqz v0, :cond_0
+
+    goto/16 :goto_5
 
     :cond_0
     invoke-static {p1, p2}, Lkotlin/reflect/jvm/internal/impl/resolve/OverridingUtil;->getBasicOverridabilityProblem(Lkotlin/reflect/jvm/internal/impl/descriptors/CallableDescriptor;Lkotlin/reflect/jvm/internal/impl/descriptors/CallableDescriptor;)Lkotlin/reflect/jvm/internal/impl/resolve/OverridingUtil$OverrideCompatibilityInfo;
 
-    move-result-object v2
+    move-result-object v0
 
-    const/4 v3, 0x0
+    const/4 v2, 0x0
 
-    if-nez v2, :cond_1
+    if-nez v0, :cond_1
 
-    move-object v2, v3
+    move-object v0, v2
 
     goto :goto_0
 
     :cond_1
-    invoke-virtual {v2}, Lkotlin/reflect/jvm/internal/impl/resolve/OverridingUtil$OverrideCompatibilityInfo;->getResult()Lkotlin/reflect/jvm/internal/impl/resolve/OverridingUtil$OverrideCompatibilityInfo$Result;
+    invoke-virtual {v0}, Lkotlin/reflect/jvm/internal/impl/resolve/OverridingUtil$OverrideCompatibilityInfo;->getResult()Lkotlin/reflect/jvm/internal/impl/resolve/OverridingUtil$OverrideCompatibilityInfo$Result;
 
-    move-result-object v2
+    move-result-object v0
 
     :goto_0
-    if-eqz v2, :cond_2
+    if-eqz v0, :cond_2
 
-    return v1
+    sget-object p1, Lkotlin/reflect/jvm/internal/impl/resolve/ExternalOverridabilityCondition$Result;->UNKNOWN:Lkotlin/reflect/jvm/internal/impl/resolve/ExternalOverridabilityCondition$Result;
+
+    return-object p1
 
     :cond_2
     invoke-virtual {p3}, Lkotlin/reflect/jvm/internal/impl/descriptors/impl/FunctionDescriptorImpl;->getValueParameters()Ljava/util/List;
 
-    move-result-object v2
+    move-result-object v0
 
-    const-string v4, "subDescriptor.valueParameters"
+    const-string v3, "subDescriptor.valueParameters"
 
-    invoke-static {v2, v4}, Lkotlin/jvm/internal/Intrinsics;->checkNotNullExpressionValue(Ljava/lang/Object;Ljava/lang/String;)V
+    invoke-static {v0, v3}, Lkotlin/jvm/internal/Intrinsics;->checkNotNullExpressionValue(Ljava/lang/Object;Ljava/lang/String;)V
 
-    invoke-static {v2}, Lkotlin/collections/CollectionsKt___CollectionsKt;->asSequence(Ljava/lang/Iterable;)Lkotlin/sequences/Sequence;
+    invoke-static {v0}, Lkotlin/collections/CollectionsKt___CollectionsKt;->asSequence(Ljava/lang/Iterable;)Lkotlin/sequences/Sequence;
 
-    move-result-object v2
+    move-result-object v0
 
-    sget-object v4, Lkotlin/reflect/jvm/internal/impl/load/java/ErasedOverridabilityCondition$isOverridable$signatureTypes$1;->INSTANCE:Lkotlin/reflect/jvm/internal/impl/load/java/ErasedOverridabilityCondition$isOverridable$signatureTypes$1;
+    sget-object v3, Lkotlin/reflect/jvm/internal/impl/load/java/ErasedOverridabilityCondition$isOverridable$signatureTypes$1;->INSTANCE:Lkotlin/reflect/jvm/internal/impl/load/java/ErasedOverridabilityCondition$isOverridable$signatureTypes$1;
 
-    invoke-static {v2, v4}, Lkotlin/sequences/SequencesKt___SequencesKt;->map(Lkotlin/sequences/Sequence;Lkotlin/jvm/functions/Function1;)Lkotlin/sequences/Sequence;
+    invoke-static {v0, v3}, Lkotlin/sequences/SequencesKt___SequencesKt;->map(Lkotlin/sequences/Sequence;Lkotlin/jvm/functions/Function1;)Lkotlin/sequences/Sequence;
 
-    move-result-object v2
+    move-result-object v0
 
-    iget-object v4, p3, Lkotlin/reflect/jvm/internal/impl/descriptors/impl/FunctionDescriptorImpl;->unsubstitutedReturnType:Lkotlin/reflect/jvm/internal/impl/types/KotlinType;
+    invoke-virtual {p3}, Lkotlin/reflect/jvm/internal/impl/descriptors/impl/FunctionDescriptorImpl;->getReturnType()Lkotlin/reflect/jvm/internal/impl/types/KotlinType;
 
-    invoke-static {v4}, Lkotlin/jvm/internal/Intrinsics;->checkNotNull(Ljava/lang/Object;)V
+    move-result-object v3
 
-    invoke-static {v2, v4}, Lkotlin/sequences/SequencesKt___SequencesKt;->plus(Lkotlin/sequences/Sequence;Ljava/lang/Object;)Lkotlin/sequences/Sequence;
+    invoke-static {v3}, Lkotlin/jvm/internal/Intrinsics;->checkNotNull(Ljava/lang/Object;)V
 
-    move-result-object v2
+    invoke-static {v0, v3}, Lkotlin/sequences/SequencesKt___SequencesKt;->plus(Lkotlin/sequences/Sequence;Ljava/lang/Object;)Lkotlin/sequences/Sequence;
 
-    iget-object p3, p3, Lkotlin/reflect/jvm/internal/impl/descriptors/impl/FunctionDescriptorImpl;->extensionReceiverParameter:Lkotlin/reflect/jvm/internal/impl/descriptors/ReceiverParameterDescriptor;
+    move-result-object v0
+
+    invoke-virtual {p3}, Lkotlin/reflect/jvm/internal/impl/descriptors/impl/FunctionDescriptorImpl;->getExtensionReceiverParameter()Lkotlin/reflect/jvm/internal/impl/descriptors/ReceiverParameterDescriptor;
+
+    move-result-object p3
 
     if-nez p3, :cond_3
+
+    move-object p3, v2
 
     goto :goto_1
 
     :cond_3
     invoke-interface {p3}, Lkotlin/reflect/jvm/internal/impl/descriptors/ValueDescriptor;->getType()Lkotlin/reflect/jvm/internal/impl/types/KotlinType;
 
-    move-result-object v3
+    move-result-object p3
 
     :goto_1
-    invoke-static {v3}, Lkotlin/collections/CollectionsKt__CollectionsKt;->listOfNotNull(Ljava/lang/Object;)Ljava/util/List;
+    invoke-static {p3}, Lkotlin/collections/CollectionsKt__CollectionsKt;->listOfNotNull(Ljava/lang/Object;)Ljava/util/List;
 
     move-result-object p3
 
@@ -146,38 +156,38 @@
 
     const/4 v4, 0x0
 
-    aput-object v2, v3, v4
+    aput-object v0, v3, v4
 
     invoke-static {p3}, Lkotlin/collections/CollectionsKt___CollectionsKt;->asSequence(Ljava/lang/Iterable;)Lkotlin/sequences/Sequence;
 
     move-result-object p3
 
-    aput-object p3, v3, v0
+    aput-object p3, v3, v1
 
     invoke-static {v3}, Lkotlin/sequences/SequencesKt__SequencesKt;->sequenceOf([Ljava/lang/Object;)Lkotlin/sequences/Sequence;
 
     move-result-object p3
 
-    sget-object v2, Lkotlin/sequences/SequencesKt__SequencesKt$flatten$1;->INSTANCE:Lkotlin/sequences/SequencesKt__SequencesKt$flatten$1;
+    sget-object v0, Lkotlin/sequences/SequencesKt__SequencesKt$flatten$1;->INSTANCE:Lkotlin/sequences/SequencesKt__SequencesKt$flatten$1;
 
-    invoke-static {p3, v2}, Lkotlin/sequences/SequencesKt__SequencesKt;->flatten$SequencesKt__SequencesKt(Lkotlin/sequences/Sequence;Lkotlin/jvm/functions/Function1;)Lkotlin/sequences/Sequence;
+    invoke-static {p3, v0}, Lkotlin/sequences/SequencesKt__SequencesKt;->flatten$SequencesKt__SequencesKt(Lkotlin/sequences/Sequence;Lkotlin/jvm/functions/Function1;)Lkotlin/sequences/Sequence;
 
     move-result-object p3
 
     check-cast p3, Lkotlin/sequences/FlatteningSequence;
 
-    new-instance v2, Lkotlin/sequences/FlatteningSequence$iterator$1;
+    new-instance v0, Lkotlin/sequences/FlatteningSequence$iterator$1;
 
-    invoke-direct {v2, p3}, Lkotlin/sequences/FlatteningSequence$iterator$1;-><init>(Lkotlin/sequences/FlatteningSequence;)V
+    invoke-direct {v0, p3}, Lkotlin/sequences/FlatteningSequence$iterator$1;-><init>(Lkotlin/sequences/FlatteningSequence;)V
 
     :cond_4
-    invoke-virtual {v2}, Lkotlin/sequences/FlatteningSequence$iterator$1;->ensureItemIterator()Z
+    invoke-virtual {v0}, Lkotlin/sequences/FlatteningSequence$iterator$1;->ensureItemIterator()Z
 
     move-result p3
 
     if-eqz p3, :cond_6
 
-    invoke-virtual {v2}, Lkotlin/sequences/FlatteningSequence$iterator$1;->next()Ljava/lang/Object;
+    invoke-virtual {v0}, Lkotlin/sequences/FlatteningSequence$iterator$1;->next()Ljava/lang/Object;
 
     move-result-object p3
 
@@ -191,7 +201,7 @@
 
     move-result v3
 
-    xor-int/2addr v3, v0
+    xor-int/2addr v3, v1
 
     if-eqz v3, :cond_5
 
@@ -203,7 +213,7 @@
 
     if-nez p3, :cond_5
 
-    move p3, v0
+    move p3, v1
 
     goto :goto_2
 
@@ -213,7 +223,7 @@
     :goto_2
     if-eqz p3, :cond_4
 
-    move p3, v0
+    move p3, v1
 
     goto :goto_3
 
@@ -223,16 +233,20 @@
     :goto_3
     if-eqz p3, :cond_7
 
-    return v1
+    sget-object p1, Lkotlin/reflect/jvm/internal/impl/resolve/ExternalOverridabilityCondition$Result;->UNKNOWN:Lkotlin/reflect/jvm/internal/impl/resolve/ExternalOverridabilityCondition$Result;
+
+    return-object p1
 
     :cond_7
-    sget-object p3, Lkotlin/reflect/jvm/internal/impl/load/java/lazy/types/RawSubstitution;->INSTANCE:Lkotlin/reflect/jvm/internal/impl/load/java/lazy/types/RawSubstitution;
+    new-instance p3, Lkotlin/reflect/jvm/internal/impl/load/java/lazy/types/RawSubstitution;
 
-    new-instance v2, Lkotlin/reflect/jvm/internal/impl/types/TypeSubstitutor;
+    invoke-direct {p3, v2, v1, v2}, Lkotlin/reflect/jvm/internal/impl/load/java/lazy/types/RawSubstitution;-><init>(Lkotlin/reflect/jvm/internal/impl/load/java/lazy/types/TypeParameterUpperBoundEraser;ILkotlin/jvm/internal/DefaultConstructorMarker;)V
 
-    invoke-direct {v2, p3}, Lkotlin/reflect/jvm/internal/impl/types/TypeSubstitutor;-><init>(Lkotlin/reflect/jvm/internal/impl/types/TypeSubstitution;)V
+    invoke-virtual {p3}, Lkotlin/reflect/jvm/internal/impl/types/TypeSubstitution;->buildSubstitutor()Lkotlin/reflect/jvm/internal/impl/types/TypeSubstitutor;
 
-    invoke-interface {p1, v2}, Lkotlin/reflect/jvm/internal/impl/descriptors/Substitutable;->substitute(Lkotlin/reflect/jvm/internal/impl/types/TypeSubstitutor;)Lkotlin/reflect/jvm/internal/impl/descriptors/DeclarationDescriptorNonRoot;
+    move-result-object p3
+
+    invoke-interface {p1, p3}, Lkotlin/reflect/jvm/internal/impl/descriptors/Substitutable;->substitute(Lkotlin/reflect/jvm/internal/impl/types/TypeSubstitutor;)Lkotlin/reflect/jvm/internal/impl/descriptors/DeclarationDescriptorNonRoot;
 
     move-result-object p1
 
@@ -240,7 +254,9 @@
 
     if-nez p1, :cond_8
 
-    return v1
+    sget-object p1, Lkotlin/reflect/jvm/internal/impl/resolve/ExternalOverridabilityCondition$Result;->UNKNOWN:Lkotlin/reflect/jvm/internal/impl/resolve/ExternalOverridabilityCondition$Result;
+
+    return-object p1
 
     :cond_8
     instance-of p3, p1, Lkotlin/reflect/jvm/internal/impl/descriptors/SimpleFunctionDescriptor;
@@ -253,19 +269,19 @@
 
     invoke-interface {p3}, Lkotlin/reflect/jvm/internal/impl/descriptors/CallableDescriptor;->getTypeParameters()Ljava/util/List;
 
-    move-result-object v2
+    move-result-object v0
 
-    const-string v3, "erasedSuper.typeParameters"
+    const-string v2, "erasedSuper.typeParameters"
 
-    invoke-static {v2, v3}, Lkotlin/jvm/internal/Intrinsics;->checkNotNullExpressionValue(Ljava/lang/Object;Ljava/lang/String;)V
+    invoke-static {v0, v2}, Lkotlin/jvm/internal/Intrinsics;->checkNotNullExpressionValue(Ljava/lang/Object;Ljava/lang/String;)V
 
-    invoke-interface {v2}, Ljava/util/Collection;->isEmpty()Z
+    invoke-interface {v0}, Ljava/util/Collection;->isEmpty()Z
 
-    move-result v2
+    move-result v0
 
-    xor-int/2addr v2, v0
+    xor-int/2addr v0, v1
 
-    if-eqz v2, :cond_9
+    if-eqz v0, :cond_9
 
     invoke-interface {p3}, Lkotlin/reflect/jvm/internal/impl/descriptors/SimpleFunctionDescriptor;->newCopyBuilder()Lkotlin/reflect/jvm/internal/impl/descriptors/FunctionDescriptor$CopyBuilder;
 
@@ -281,8 +297,6 @@
 
     move-result-object p1
 
-    check-cast p1, Lkotlin/reflect/jvm/internal/impl/descriptors/SimpleFunctionDescriptor;
-
     invoke-static {p1}, Lkotlin/jvm/internal/Intrinsics;->checkNotNull(Ljava/lang/Object;)V
 
     :cond_9
@@ -296,7 +310,7 @@
 
     move-result-object p1
 
-    const-string p2, "DEFAULT.isOverridableByWithoutExternalConditions(erasedSuper, subDescriptor, false).result"
+    const-string p2, "DEFAULT.isOverridableByW\u2026Descriptor, false).result"
 
     invoke-static {p1, p2}, Lkotlin/jvm/internal/Intrinsics;->checkNotNullExpressionValue(Ljava/lang/Object;Ljava/lang/String;)V
 
@@ -308,14 +322,21 @@
 
     aget p1, p2, p1
 
-    if-ne p1, v0, :cond_a
+    if-ne p1, v1, :cond_a
 
-    goto :goto_5
+    sget-object p1, Lkotlin/reflect/jvm/internal/impl/resolve/ExternalOverridabilityCondition$Result;->OVERRIDABLE:Lkotlin/reflect/jvm/internal/impl/resolve/ExternalOverridabilityCondition$Result;
+
+    goto :goto_4
 
     :cond_a
-    :goto_4
-    move v0, v1
+    sget-object p1, Lkotlin/reflect/jvm/internal/impl/resolve/ExternalOverridabilityCondition$Result;->UNKNOWN:Lkotlin/reflect/jvm/internal/impl/resolve/ExternalOverridabilityCondition$Result;
 
+    :goto_4
+    return-object p1
+
+    :cond_b
     :goto_5
-    return v0
+    sget-object p1, Lkotlin/reflect/jvm/internal/impl/resolve/ExternalOverridabilityCondition$Result;->UNKNOWN:Lkotlin/reflect/jvm/internal/impl/resolve/ExternalOverridabilityCondition$Result;
+
+    return-object p1
 .end method

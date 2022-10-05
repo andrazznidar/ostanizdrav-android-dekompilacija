@@ -66,7 +66,7 @@
 
     sget-object v2, Lkotlin/text/Charsets;->UTF_8:Ljava/nio/charset/Charset;
 
-    const-string v3, "$this$appendText"
+    const-string v3, "<this>"
 
     invoke-static {v0, v3}, Lkotlin/jvm/internal/Intrinsics;->checkNotNullParameter(Ljava/lang/Object;Ljava/lang/String;)V
 
@@ -82,17 +82,9 @@
 
     move-result-object v1
 
-    const-string v2, "(this as java.lang.String).getBytes(charset)"
+    const-string/jumbo v2, "this as java.lang.String).getBytes(charset)"
 
     invoke-static {v1, v2}, Lkotlin/jvm/internal/Intrinsics;->checkNotNullExpressionValue(Ljava/lang/Object;Ljava/lang/String;)V
-
-    const-string v2, "$this$appendBytes"
-
-    invoke-static {v0, v2}, Lkotlin/jvm/internal/Intrinsics;->checkNotNullParameter(Ljava/lang/Object;Ljava/lang/String;)V
-
-    const-string v2, "array"
-
-    invoke-static {v1, v2}, Lkotlin/jvm/internal/Intrinsics;->checkNotNullParameter(Ljava/lang/Object;Ljava/lang/String;)V
 
     new-instance v2, Ljava/io/FileOutputStream;
 

@@ -14,6 +14,24 @@
 
 
 # virtual methods
+.method public abstract readTree(Lcom/fasterxml/jackson/core/JsonParser;)Lcom/fasterxml/jackson/core/TreeNode;
+    .annotation system Ldalvik/annotation/Signature;
+        value = {
+            "<T::",
+            "Lcom/fasterxml/jackson/core/TreeNode;",
+            ">(",
+            "Lcom/fasterxml/jackson/core/JsonParser;",
+            ")TT;"
+        }
+    .end annotation
+
+    .annotation system Ldalvik/annotation/Throws;
+        value = {
+            Ljava/io/IOException;
+        }
+    .end annotation
+.end method
+
 .method public abstract writeValue(Lcom/fasterxml/jackson/core/JsonGenerator;Ljava/lang/Object;)V
     .annotation system Ldalvik/annotation/Throws;
         value = {

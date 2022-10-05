@@ -20,19 +20,19 @@
 
 
 # direct methods
-.method public constructor <init>(Ljava/lang/Object;Landroidx/dynamicanimation/animation/FloatPropertyCompat;)V
+.method public constructor <init>(Ljava/lang/Object;Lboofcv/struct/border/ImageBorder;)V
     .locals 0
     .annotation system Ldalvik/annotation/Signature;
         value = {
             "<K:",
             "Ljava/lang/Object;",
             ">(TK;",
-            "Landroidx/dynamicanimation/animation/FloatPropertyCompat<",
-            "TK;>;)V"
+            "Lboofcv/struct/border/ImageBorder;",
+            ")V"
         }
     .end annotation
 
-    invoke-direct {p0, p1, p2}, Landroidx/dynamicanimation/animation/DynamicAnimation;-><init>(Ljava/lang/Object;Landroidx/dynamicanimation/animation/FloatPropertyCompat;)V
+    invoke-direct {p0, p1, p2}, Landroidx/dynamicanimation/animation/DynamicAnimation;-><init>(Ljava/lang/Object;Lboofcv/struct/border/ImageBorder;)V
 
     const/4 p1, 0x0
 

@@ -17,8 +17,8 @@
     c = "de.rki.coronawarnapp.coronatest.type.pcr.PCRTestProcessor"
     f = "PCRTestProcessor.kt"
     l = {
-        0x33,
-        0x34
+        0x34,
+        0x35
     }
     m = "create"
 .end annotation

@@ -1,4 +1,4 @@
-.class public final Lkotlin/reflect/jvm/internal/impl/types/checker/TypeIntersector$ResultNullability$UNKNOWN;
+.class final Lkotlin/reflect/jvm/internal/impl/types/checker/TypeIntersector$ResultNullability$UNKNOWN;
 .super Lkotlin/reflect/jvm/internal/impl/types/checker/TypeIntersector$ResultNullability;
 .source "IntersectionType.kt"
 

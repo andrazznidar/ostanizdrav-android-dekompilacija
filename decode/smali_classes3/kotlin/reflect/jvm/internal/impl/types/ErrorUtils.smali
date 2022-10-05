@@ -15,13 +15,13 @@
 
 
 # static fields
-.field public static final ERROR_CLASS:Lkotlin/reflect/jvm/internal/impl/types/ErrorUtils$ErrorClassDescriptor;
+.field private static final ERROR_CLASS:Lkotlin/reflect/jvm/internal/impl/types/ErrorUtils$ErrorClassDescriptor;
 
-.field public static final ERROR_MODULE:Lkotlin/reflect/jvm/internal/impl/descriptors/ModuleDescriptor;
+.field private static final ERROR_MODULE:Lkotlin/reflect/jvm/internal/impl/descriptors/ModuleDescriptor;
 
-.field public static final ERROR_PROPERTY:Lkotlin/reflect/jvm/internal/impl/descriptors/PropertyDescriptor;
+.field private static final ERROR_PROPERTY:Lkotlin/reflect/jvm/internal/impl/descriptors/PropertyDescriptor;
 
-.field public static final ERROR_PROPERTY_GROUP:Ljava/util/Set;
+.field private static final ERROR_PROPERTY_GROUP:Ljava/util/Set;
     .annotation system Ldalvik/annotation/Signature;
         value = {
             "Ljava/util/Set<",
@@ -31,13 +31,13 @@
     .end annotation
 .end field
 
-.field public static final ERROR_PROPERTY_TYPE:Lkotlin/reflect/jvm/internal/impl/types/KotlinType;
+.field private static final ERROR_PROPERTY_TYPE:Lkotlin/reflect/jvm/internal/impl/types/KotlinType;
 
 .field public static final ERROR_TYPE_FOR_LOOP_IN_SUPERTYPES:Lkotlin/reflect/jvm/internal/impl/types/SimpleType;
 
 
 # direct methods
-.method public static synthetic $$$reportNull$$$0(I)V
+.method private static synthetic $$$reportNull$$$0(I)V
     .locals 9
 
     const/16 v0, 0x13
@@ -339,7 +339,7 @@
 .end method
 
 .method public static constructor <clinit>()V
-    .locals 20
+    .locals 2
 
     new-instance v0, Lkotlin/reflect/jvm/internal/impl/types/ErrorUtils$1;
 
@@ -347,17 +347,17 @@
 
     sput-object v0, Lkotlin/reflect/jvm/internal/impl/types/ErrorUtils;->ERROR_MODULE:Lkotlin/reflect/jvm/internal/impl/descriptors/ModuleDescriptor;
 
-    new-instance v2, Lkotlin/reflect/jvm/internal/impl/types/ErrorUtils$ErrorClassDescriptor;
+    new-instance v0, Lkotlin/reflect/jvm/internal/impl/types/ErrorUtils$ErrorClassDescriptor;
 
-    const-string v0, "<ERROR CLASS>"
+    const-string v1, "<ERROR CLASS>"
 
-    invoke-static {v0}, Lkotlin/reflect/jvm/internal/impl/name/Name;->special(Ljava/lang/String;)Lkotlin/reflect/jvm/internal/impl/name/Name;
+    invoke-static {v1}, Lkotlin/reflect/jvm/internal/impl/name/Name;->special(Ljava/lang/String;)Lkotlin/reflect/jvm/internal/impl/name/Name;
 
-    move-result-object v0
+    move-result-object v1
 
-    invoke-direct {v2, v0}, Lkotlin/reflect/jvm/internal/impl/types/ErrorUtils$ErrorClassDescriptor;-><init>(Lkotlin/reflect/jvm/internal/impl/name/Name;)V
+    invoke-direct {v0, v1}, Lkotlin/reflect/jvm/internal/impl/types/ErrorUtils$ErrorClassDescriptor;-><init>(Lkotlin/reflect/jvm/internal/impl/name/Name;)V
 
-    sput-object v2, Lkotlin/reflect/jvm/internal/impl/types/ErrorUtils;->ERROR_CLASS:Lkotlin/reflect/jvm/internal/impl/types/ErrorUtils$ErrorClassDescriptor;
+    sput-object v0, Lkotlin/reflect/jvm/internal/impl/types/ErrorUtils;->ERROR_CLASS:Lkotlin/reflect/jvm/internal/impl/types/ErrorUtils$ErrorClassDescriptor;
 
     const-string v0, "<LOOP IN SUPERTYPES>"
 
@@ -375,33 +375,165 @@
 
     sput-object v0, Lkotlin/reflect/jvm/internal/impl/types/ErrorUtils;->ERROR_PROPERTY_TYPE:Lkotlin/reflect/jvm/internal/impl/types/KotlinType;
 
-    sget v1, Lkotlin/reflect/jvm/internal/impl/descriptors/annotations/Annotations;->$r8$clinit:I
+    invoke-static {}, Lkotlin/reflect/jvm/internal/impl/types/ErrorUtils;->createErrorProperty()Lkotlin/reflect/jvm/internal/impl/descriptors/impl/PropertyDescriptorImpl;
 
-    sget-object v4, Lkotlin/reflect/jvm/internal/impl/descriptors/annotations/Annotations$Companion;->EMPTY:Lkotlin/reflect/jvm/internal/impl/descriptors/annotations/Annotations;
+    move-result-object v0
 
-    sget-object v5, Lkotlin/reflect/jvm/internal/impl/descriptors/Modality;->OPEN:Lkotlin/reflect/jvm/internal/impl/descriptors/Modality;
+    sput-object v0, Lkotlin/reflect/jvm/internal/impl/types/ErrorUtils;->ERROR_PROPERTY:Lkotlin/reflect/jvm/internal/impl/descriptors/PropertyDescriptor;
 
-    sget-object v6, Lkotlin/reflect/jvm/internal/impl/descriptors/DescriptorVisibilities;->PUBLIC:Lkotlin/reflect/jvm/internal/impl/descriptors/DescriptorVisibility;
+    invoke-static {v0}, Ljava/util/Collections;->singleton(Ljava/lang/Object;)Ljava/util/Set;
 
-    const-string v1, "<ERROR PROPERTY>"
+    move-result-object v0
 
-    invoke-static {v1}, Lkotlin/reflect/jvm/internal/impl/name/Name;->special(Ljava/lang/String;)Lkotlin/reflect/jvm/internal/impl/name/Name;
+    sput-object v0, Lkotlin/reflect/jvm/internal/impl/types/ErrorUtils;->ERROR_PROPERTY_GROUP:Ljava/util/Set;
 
-    move-result-object v8
+    return-void
+.end method
 
-    sget-object v9, Lkotlin/reflect/jvm/internal/impl/descriptors/CallableMemberDescriptor$Kind;->DECLARATION:Lkotlin/reflect/jvm/internal/impl/descriptors/CallableMemberDescriptor$Kind;
+.method public static synthetic access$000()Ljava/util/Set;
+    .locals 1
 
-    sget-object v10, Lkotlin/reflect/jvm/internal/impl/descriptors/SourceElement;->NO_SOURCE:Lkotlin/reflect/jvm/internal/impl/descriptors/SourceElement;
+    sget-object v0, Lkotlin/reflect/jvm/internal/impl/types/ErrorUtils;->ERROR_PROPERTY_GROUP:Ljava/util/Set;
 
-    const/4 v15, 0x0
+    return-object v0
+.end method
 
-    if-eqz v6, :cond_0
+.method public static synthetic access$100(Lkotlin/reflect/jvm/internal/impl/types/ErrorUtils$ErrorScope;)Lkotlin/reflect/jvm/internal/impl/descriptors/SimpleFunctionDescriptor;
+    .locals 0
 
-    new-instance v14, Lkotlin/reflect/jvm/internal/impl/descriptors/impl/PropertyDescriptorImpl;
+    invoke-static {p0}, Lkotlin/reflect/jvm/internal/impl/types/ErrorUtils;->createErrorFunction(Lkotlin/reflect/jvm/internal/impl/types/ErrorUtils$ErrorScope;)Lkotlin/reflect/jvm/internal/impl/descriptors/SimpleFunctionDescriptor;
+
+    move-result-object p0
+
+    return-object p0
+.end method
+
+.method public static synthetic access$200(Ljava/lang/String;Lkotlin/reflect/jvm/internal/impl/types/ErrorUtils$ErrorClassDescriptor;)Lkotlin/reflect/jvm/internal/impl/types/TypeConstructor;
+    .locals 0
+
+    invoke-static {p0, p1}, Lkotlin/reflect/jvm/internal/impl/types/ErrorUtils;->createErrorTypeConstructorWithCustomDebugName(Ljava/lang/String;Lkotlin/reflect/jvm/internal/impl/types/ErrorUtils$ErrorClassDescriptor;)Lkotlin/reflect/jvm/internal/impl/types/TypeConstructor;
+
+    move-result-object p0
+
+    return-object p0
+.end method
+
+.method public static createErrorClass(Ljava/lang/String;)Lkotlin/reflect/jvm/internal/impl/descriptors/ClassDescriptor;
+    .locals 3
+
+    if-nez p0, :cond_0
+
+    const/4 v0, 0x1
+
+    invoke-static {v0}, Lkotlin/reflect/jvm/internal/impl/types/ErrorUtils;->$$$reportNull$$$0(I)V
+
+    :cond_0
+    new-instance v0, Lkotlin/reflect/jvm/internal/impl/types/ErrorUtils$ErrorClassDescriptor;
+
+    new-instance v1, Ljava/lang/StringBuilder;
+
+    invoke-direct {v1}, Ljava/lang/StringBuilder;-><init>()V
+
+    const-string v2, "<ERROR CLASS: "
+
+    invoke-virtual {v1, v2}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+
+    invoke-virtual {v1, p0}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+
+    const-string p0, ">"
+
+    invoke-virtual {v1, p0}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+
+    invoke-virtual {v1}, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
+
+    move-result-object p0
+
+    invoke-static {p0}, Lkotlin/reflect/jvm/internal/impl/name/Name;->special(Ljava/lang/String;)Lkotlin/reflect/jvm/internal/impl/name/Name;
+
+    move-result-object p0
+
+    invoke-direct {v0, p0}, Lkotlin/reflect/jvm/internal/impl/types/ErrorUtils$ErrorClassDescriptor;-><init>(Lkotlin/reflect/jvm/internal/impl/name/Name;)V
+
+    return-object v0
+.end method
+
+.method private static createErrorFunction(Lkotlin/reflect/jvm/internal/impl/types/ErrorUtils$ErrorScope;)Lkotlin/reflect/jvm/internal/impl/descriptors/SimpleFunctionDescriptor;
+    .locals 9
+
+    if-nez p0, :cond_0
+
+    const/4 v0, 0x5
+
+    invoke-static {v0}, Lkotlin/reflect/jvm/internal/impl/types/ErrorUtils;->$$$reportNull$$$0(I)V
+
+    :cond_0
+    new-instance v0, Lkotlin/reflect/jvm/internal/impl/types/error/ErrorSimpleFunctionDescriptorImpl;
+
+    sget-object v1, Lkotlin/reflect/jvm/internal/impl/types/ErrorUtils;->ERROR_CLASS:Lkotlin/reflect/jvm/internal/impl/types/ErrorUtils$ErrorClassDescriptor;
+
+    invoke-direct {v0, v1, p0}, Lkotlin/reflect/jvm/internal/impl/types/error/ErrorSimpleFunctionDescriptorImpl;-><init>(Lkotlin/reflect/jvm/internal/impl/descriptors/ClassDescriptor;Lkotlin/reflect/jvm/internal/impl/types/ErrorUtils$ErrorScope;)V
+
+    const/4 v2, 0x0
 
     const/4 v3, 0x0
 
-    const/4 v7, 0x1
+    invoke-static {}, Ljava/util/Collections;->emptyList()Ljava/util/List;
+
+    move-result-object v4
+
+    invoke-static {}, Ljava/util/Collections;->emptyList()Ljava/util/List;
+
+    move-result-object v5
+
+    const-string p0, "<ERROR FUNCTION RETURN TYPE>"
+
+    invoke-static {p0}, Lkotlin/reflect/jvm/internal/impl/types/ErrorUtils;->createErrorType(Ljava/lang/String;)Lkotlin/reflect/jvm/internal/impl/types/SimpleType;
+
+    move-result-object v6
+
+    sget-object v7, Lkotlin/reflect/jvm/internal/impl/descriptors/Modality;->OPEN:Lkotlin/reflect/jvm/internal/impl/descriptors/Modality;
+
+    sget-object v8, Lkotlin/reflect/jvm/internal/impl/descriptors/DescriptorVisibilities;->PUBLIC:Lkotlin/reflect/jvm/internal/impl/descriptors/DescriptorVisibility;
+
+    move-object v1, v0
+
+    invoke-virtual/range {v1 .. v8}, Lkotlin/reflect/jvm/internal/impl/descriptors/impl/SimpleFunctionDescriptorImpl;->initialize(Lkotlin/reflect/jvm/internal/impl/descriptors/ReceiverParameterDescriptor;Lkotlin/reflect/jvm/internal/impl/descriptors/ReceiverParameterDescriptor;Ljava/util/List;Ljava/util/List;Lkotlin/reflect/jvm/internal/impl/types/KotlinType;Lkotlin/reflect/jvm/internal/impl/descriptors/Modality;Lkotlin/reflect/jvm/internal/impl/descriptors/DescriptorVisibility;)Lkotlin/reflect/jvm/internal/impl/descriptors/impl/SimpleFunctionDescriptorImpl;
+
+    return-object v0
+.end method
+
+.method private static createErrorProperty()Lkotlin/reflect/jvm/internal/impl/descriptors/impl/PropertyDescriptorImpl;
+    .locals 14
+
+    sget-object v0, Lkotlin/reflect/jvm/internal/impl/types/ErrorUtils;->ERROR_CLASS:Lkotlin/reflect/jvm/internal/impl/types/ErrorUtils$ErrorClassDescriptor;
+
+    sget-object v1, Lkotlin/reflect/jvm/internal/impl/descriptors/annotations/Annotations;->Companion:Lkotlin/reflect/jvm/internal/impl/descriptors/annotations/Annotations$Companion;
+
+    invoke-virtual {v1}, Lkotlin/reflect/jvm/internal/impl/descriptors/annotations/Annotations$Companion;->getEMPTY()Lkotlin/reflect/jvm/internal/impl/descriptors/annotations/Annotations;
+
+    move-result-object v1
+
+    sget-object v2, Lkotlin/reflect/jvm/internal/impl/descriptors/Modality;->OPEN:Lkotlin/reflect/jvm/internal/impl/descriptors/Modality;
+
+    sget-object v3, Lkotlin/reflect/jvm/internal/impl/descriptors/DescriptorVisibilities;->PUBLIC:Lkotlin/reflect/jvm/internal/impl/descriptors/DescriptorVisibility;
+
+    const-string v4, "<ERROR PROPERTY>"
+
+    invoke-static {v4}, Lkotlin/reflect/jvm/internal/impl/name/Name;->special(Ljava/lang/String;)Lkotlin/reflect/jvm/internal/impl/name/Name;
+
+    move-result-object v5
+
+    sget-object v6, Lkotlin/reflect/jvm/internal/impl/descriptors/CallableMemberDescriptor$Kind;->DECLARATION:Lkotlin/reflect/jvm/internal/impl/descriptors/CallableMemberDescriptor$Kind;
+
+    sget-object v7, Lkotlin/reflect/jvm/internal/impl/descriptors/SourceElement;->NO_SOURCE:Lkotlin/reflect/jvm/internal/impl/descriptors/SourceElement;
+
+    const/4 v4, 0x1
+
+    const/4 v8, 0x0
+
+    const/4 v9, 0x0
+
+    const/4 v10, 0x0
 
     const/4 v11, 0x0
 
@@ -409,59 +541,33 @@
 
     const/4 v13, 0x0
 
-    const/16 v16, 0x0
-
-    const/16 v17, 0x0
-
-    const/16 v18, 0x0
-
-    move-object v1, v14
-
-    move-object/from16 v19, v14
-
-    move/from16 v14, v16
-
-    move/from16 v15, v17
-
-    move/from16 v16, v18
-
-    invoke-direct/range {v1 .. v16}, Lkotlin/reflect/jvm/internal/impl/descriptors/impl/PropertyDescriptorImpl;-><init>(Lkotlin/reflect/jvm/internal/impl/descriptors/DeclarationDescriptor;Lkotlin/reflect/jvm/internal/impl/descriptors/PropertyDescriptor;Lkotlin/reflect/jvm/internal/impl/descriptors/annotations/Annotations;Lkotlin/reflect/jvm/internal/impl/descriptors/Modality;Lkotlin/reflect/jvm/internal/impl/descriptors/DescriptorVisibility;ZLkotlin/reflect/jvm/internal/impl/name/Name;Lkotlin/reflect/jvm/internal/impl/descriptors/CallableMemberDescriptor$Kind;Lkotlin/reflect/jvm/internal/impl/descriptors/SourceElement;ZZZZZZ)V
-
-    invoke-static {}, Ljava/util/Collections;->emptyList()Ljava/util/List;
-
-    move-result-object v1
-
-    move-object/from16 v2, v19
-
-    const/4 v3, 0x0
-
-    invoke-virtual {v2, v0, v1, v3, v3}, Lkotlin/reflect/jvm/internal/impl/descriptors/impl/PropertyDescriptorImpl;->setType(Lkotlin/reflect/jvm/internal/impl/types/KotlinType;Ljava/util/List;Lkotlin/reflect/jvm/internal/impl/descriptors/ReceiverParameterDescriptor;Lkotlin/reflect/jvm/internal/impl/descriptors/ReceiverParameterDescriptor;)V
-
-    sput-object v2, Lkotlin/reflect/jvm/internal/impl/types/ErrorUtils;->ERROR_PROPERTY:Lkotlin/reflect/jvm/internal/impl/descriptors/PropertyDescriptor;
-
-    invoke-static {v2}, Ljava/util/Collections;->singleton(Ljava/lang/Object;)Ljava/util/Set;
+    invoke-static/range {v0 .. v13}, Lkotlin/reflect/jvm/internal/impl/descriptors/impl/PropertyDescriptorImpl;->create(Lkotlin/reflect/jvm/internal/impl/descriptors/DeclarationDescriptor;Lkotlin/reflect/jvm/internal/impl/descriptors/annotations/Annotations;Lkotlin/reflect/jvm/internal/impl/descriptors/Modality;Lkotlin/reflect/jvm/internal/impl/descriptors/DescriptorVisibility;ZLkotlin/reflect/jvm/internal/impl/name/Name;Lkotlin/reflect/jvm/internal/impl/descriptors/CallableMemberDescriptor$Kind;Lkotlin/reflect/jvm/internal/impl/descriptors/SourceElement;ZZZZZZ)Lkotlin/reflect/jvm/internal/impl/descriptors/impl/PropertyDescriptorImpl;
 
     move-result-object v0
 
-    sput-object v0, Lkotlin/reflect/jvm/internal/impl/types/ErrorUtils;->ERROR_PROPERTY_GROUP:Ljava/util/Set;
+    sget-object v1, Lkotlin/reflect/jvm/internal/impl/types/ErrorUtils;->ERROR_PROPERTY_TYPE:Lkotlin/reflect/jvm/internal/impl/types/KotlinType;
 
-    return-void
+    invoke-static {}, Ljava/util/Collections;->emptyList()Ljava/util/List;
 
-    :cond_0
-    move-object v3, v15
+    move-result-object v2
 
-    const/16 v0, 0xa
+    const/4 v3, 0x0
 
-    invoke-static {v0}, Lkotlin/reflect/jvm/internal/impl/descriptors/impl/PropertyDescriptorImpl;->$$$reportNull$$$0(I)V
+    invoke-virtual {v0, v1, v2, v3, v3}, Lkotlin/reflect/jvm/internal/impl/descriptors/impl/PropertyDescriptorImpl;->setType(Lkotlin/reflect/jvm/internal/impl/types/KotlinType;Ljava/util/List;Lkotlin/reflect/jvm/internal/impl/descriptors/ReceiverParameterDescriptor;Lkotlin/reflect/jvm/internal/impl/descriptors/ReceiverParameterDescriptor;)V
 
-    throw v3
+    return-object v0
 .end method
 
 .method public static createErrorScope(Ljava/lang/String;)Lkotlin/reflect/jvm/internal/impl/resolve/scopes/MemberScope;
     .locals 1
 
-    if-eqz p0, :cond_0
+    if-nez p0, :cond_0
 
+    const/4 v0, 0x2
+
+    invoke-static {v0}, Lkotlin/reflect/jvm/internal/impl/types/ErrorUtils;->$$$reportNull$$$0(I)V
+
+    :cond_0
     const/4 v0, 0x0
 
     invoke-static {p0, v0}, Lkotlin/reflect/jvm/internal/impl/types/ErrorUtils;->createErrorScope(Ljava/lang/String;Z)Lkotlin/reflect/jvm/internal/impl/resolve/scopes/MemberScope;
@@ -469,25 +575,21 @@
     move-result-object p0
 
     return-object p0
-
-    :cond_0
-    const/4 p0, 0x2
-
-    invoke-static {p0}, Lkotlin/reflect/jvm/internal/impl/types/ErrorUtils;->$$$reportNull$$$0(I)V
-
-    const/4 p0, 0x0
-
-    throw p0
 .end method
 
 .method public static createErrorScope(Ljava/lang/String;Z)Lkotlin/reflect/jvm/internal/impl/resolve/scopes/MemberScope;
     .locals 1
 
+    if-nez p0, :cond_0
+
+    const/4 v0, 0x3
+
+    invoke-static {v0}, Lkotlin/reflect/jvm/internal/impl/types/ErrorUtils;->$$$reportNull$$$0(I)V
+
+    :cond_0
     const/4 v0, 0x0
 
-    if-eqz p0, :cond_1
-
-    if-eqz p1, :cond_0
+    if-eqz p1, :cond_1
 
     new-instance p1, Lkotlin/reflect/jvm/internal/impl/types/ErrorUtils$ThrowingScope;
 
@@ -495,26 +597,24 @@
 
     return-object p1
 
-    :cond_0
+    :cond_1
     new-instance p1, Lkotlin/reflect/jvm/internal/impl/types/ErrorUtils$ErrorScope;
 
     invoke-direct {p1, p0, v0}, Lkotlin/reflect/jvm/internal/impl/types/ErrorUtils$ErrorScope;-><init>(Ljava/lang/String;Lkotlin/reflect/jvm/internal/impl/types/ErrorUtils$1;)V
 
     return-object p1
-
-    :cond_1
-    const/4 p0, 0x3
-
-    invoke-static {p0}, Lkotlin/reflect/jvm/internal/impl/types/ErrorUtils;->$$$reportNull$$$0(I)V
-
-    throw v0
 .end method
 
 .method public static createErrorType(Ljava/lang/String;)Lkotlin/reflect/jvm/internal/impl/types/SimpleType;
     .locals 1
 
-    if-eqz p0, :cond_0
+    if-nez p0, :cond_0
 
+    const/4 v0, 0x7
+
+    invoke-static {v0}, Lkotlin/reflect/jvm/internal/impl/types/ErrorUtils;->$$$reportNull$$$0(I)V
+
+    :cond_0
     invoke-static {}, Ljava/util/Collections;->emptyList()Ljava/util/List;
 
     move-result-object v0
@@ -524,27 +624,23 @@
     move-result-object p0
 
     return-object p0
-
-    :cond_0
-    const/4 p0, 0x7
-
-    invoke-static {p0}, Lkotlin/reflect/jvm/internal/impl/types/ErrorUtils;->$$$reportNull$$$0(I)V
-
-    const/4 p0, 0x0
-
-    throw p0
 .end method
 
 .method public static createErrorTypeConstructor(Ljava/lang/String;)Lkotlin/reflect/jvm/internal/impl/types/TypeConstructor;
     .locals 2
 
-    if-eqz p0, :cond_0
+    if-nez p0, :cond_0
 
+    const/16 v0, 0xf
+
+    invoke-static {v0}, Lkotlin/reflect/jvm/internal/impl/types/ErrorUtils;->$$$reportNull$$$0(I)V
+
+    :cond_0
     const-string v0, "[ERROR : "
 
     const-string v1, "]"
 
-    invoke-static {v0, p0, v1}, Landroidx/core/graphics/PathParser$$ExternalSyntheticOutline0;->m(Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;)Ljava/lang/String;
+    invoke-static {v0, p0, v1}, Landroidx/concurrent/futures/AbstractResolvableFuture$$ExternalSyntheticOutline1;->m(Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;)Ljava/lang/String;
 
     move-result-object p0
 
@@ -555,49 +651,53 @@
     move-result-object p0
 
     return-object p0
-
-    :cond_0
-    const/16 p0, 0xf
-
-    invoke-static {p0}, Lkotlin/reflect/jvm/internal/impl/types/ErrorUtils;->$$$reportNull$$$0(I)V
-
-    const/4 p0, 0x0
-
-    throw p0
 .end method
 
-.method public static createErrorTypeConstructorWithCustomDebugName(Ljava/lang/String;Lkotlin/reflect/jvm/internal/impl/types/ErrorUtils$ErrorClassDescriptor;)Lkotlin/reflect/jvm/internal/impl/types/TypeConstructor;
+.method public static createErrorTypeConstructorWithCustomDebugName(Ljava/lang/String;)Lkotlin/reflect/jvm/internal/impl/types/TypeConstructor;
     .locals 1
 
-    const/4 v0, 0x0
+    if-nez p0, :cond_0
 
-    if-eqz p0, :cond_1
+    const/16 v0, 0x10
 
-    if-eqz p1, :cond_0
+    invoke-static {v0}, Lkotlin/reflect/jvm/internal/impl/types/ErrorUtils;->$$$reportNull$$$0(I)V
 
+    :cond_0
+    sget-object v0, Lkotlin/reflect/jvm/internal/impl/types/ErrorUtils;->ERROR_CLASS:Lkotlin/reflect/jvm/internal/impl/types/ErrorUtils$ErrorClassDescriptor;
+
+    invoke-static {p0, v0}, Lkotlin/reflect/jvm/internal/impl/types/ErrorUtils;->createErrorTypeConstructorWithCustomDebugName(Ljava/lang/String;Lkotlin/reflect/jvm/internal/impl/types/ErrorUtils$ErrorClassDescriptor;)Lkotlin/reflect/jvm/internal/impl/types/TypeConstructor;
+
+    move-result-object p0
+
+    return-object p0
+.end method
+
+.method private static createErrorTypeConstructorWithCustomDebugName(Ljava/lang/String;Lkotlin/reflect/jvm/internal/impl/types/ErrorUtils$ErrorClassDescriptor;)Lkotlin/reflect/jvm/internal/impl/types/TypeConstructor;
+    .locals 1
+
+    if-nez p0, :cond_0
+
+    const/16 v0, 0x11
+
+    invoke-static {v0}, Lkotlin/reflect/jvm/internal/impl/types/ErrorUtils;->$$$reportNull$$$0(I)V
+
+    :cond_0
+    if-nez p1, :cond_1
+
+    const/16 v0, 0x12
+
+    invoke-static {v0}, Lkotlin/reflect/jvm/internal/impl/types/ErrorUtils;->$$$reportNull$$$0(I)V
+
+    :cond_1
     new-instance v0, Lkotlin/reflect/jvm/internal/impl/types/ErrorUtils$2;
 
     invoke-direct {v0, p1, p0}, Lkotlin/reflect/jvm/internal/impl/types/ErrorUtils$2;-><init>(Lkotlin/reflect/jvm/internal/impl/types/ErrorUtils$ErrorClassDescriptor;Ljava/lang/String;)V
 
     return-object v0
-
-    :cond_0
-    const/16 p0, 0x12
-
-    invoke-static {p0}, Lkotlin/reflect/jvm/internal/impl/types/ErrorUtils;->$$$reportNull$$$0(I)V
-
-    throw v0
-
-    :cond_1
-    const/16 p0, 0x11
-
-    invoke-static {p0}, Lkotlin/reflect/jvm/internal/impl/types/ErrorUtils;->$$$reportNull$$$0(I)V
-
-    throw v0
 .end method
 
 .method public static createErrorTypeWithArguments(Ljava/lang/String;Ljava/util/List;)Lkotlin/reflect/jvm/internal/impl/types/SimpleType;
-    .locals 8
+    .locals 3
     .annotation system Ldalvik/annotation/Signature;
         value = {
             "(",
@@ -609,68 +709,54 @@
         }
     .end annotation
 
-    const/4 v0, 0x0
+    if-nez p0, :cond_0
 
-    if-eqz p0, :cond_1
+    const/16 v0, 0xb
 
-    if-eqz p1, :cond_0
+    invoke-static {v0}, Lkotlin/reflect/jvm/internal/impl/types/ErrorUtils;->$$$reportNull$$$0(I)V
 
+    :cond_0
+    if-nez p1, :cond_1
+
+    const/16 v0, 0xc
+
+    invoke-static {v0}, Lkotlin/reflect/jvm/internal/impl/types/ErrorUtils;->$$$reportNull$$$0(I)V
+
+    :cond_1
     new-instance v0, Lkotlin/reflect/jvm/internal/impl/types/ErrorType;
 
     invoke-static {p0}, Lkotlin/reflect/jvm/internal/impl/types/ErrorUtils;->createErrorTypeConstructor(Ljava/lang/String;)Lkotlin/reflect/jvm/internal/impl/types/TypeConstructor;
 
-    move-result-object v2
+    move-result-object v1
 
     invoke-static {p0}, Lkotlin/reflect/jvm/internal/impl/types/ErrorUtils;->createErrorScope(Ljava/lang/String;)Lkotlin/reflect/jvm/internal/impl/resolve/scopes/MemberScope;
 
-    move-result-object v3
+    move-result-object p0
 
-    const/4 v5, 0x0
+    const/4 v2, 0x0
 
-    const-string p0, "constructor"
-
-    invoke-static {v2, p0}, Lkotlin/jvm/internal/Intrinsics;->checkNotNullParameter(Ljava/lang/Object;Ljava/lang/String;)V
-
-    const-string p0, "memberScope"
-
-    invoke-static {v3, p0}, Lkotlin/jvm/internal/Intrinsics;->checkNotNullParameter(Ljava/lang/Object;Ljava/lang/String;)V
-
-    const-string p0, "arguments"
-
-    invoke-static {p1, p0}, Lkotlin/jvm/internal/Intrinsics;->checkNotNullParameter(Ljava/lang/Object;Ljava/lang/String;)V
-
-    const/4 v6, 0x0
-
-    const/16 v7, 0x10
-
-    move-object v1, v0
-
-    move-object v4, p1
-
-    invoke-direct/range {v1 .. v7}, Lkotlin/reflect/jvm/internal/impl/types/ErrorType;-><init>(Lkotlin/reflect/jvm/internal/impl/types/TypeConstructor;Lkotlin/reflect/jvm/internal/impl/resolve/scopes/MemberScope;Ljava/util/List;ZLjava/lang/String;I)V
+    invoke-direct {v0, v1, p0, p1, v2}, Lkotlin/reflect/jvm/internal/impl/types/ErrorType;-><init>(Lkotlin/reflect/jvm/internal/impl/types/TypeConstructor;Lkotlin/reflect/jvm/internal/impl/resolve/scopes/MemberScope;Ljava/util/List;Z)V
 
     return-object v0
-
-    :cond_0
-    const/16 p0, 0xc
-
-    invoke-static {p0}, Lkotlin/reflect/jvm/internal/impl/types/ErrorUtils;->$$$reportNull$$$0(I)V
-
-    throw v0
-
-    :cond_1
-    const/16 p0, 0xb
-
-    invoke-static {p0}, Lkotlin/reflect/jvm/internal/impl/types/ErrorUtils;->$$$reportNull$$$0(I)V
-
-    throw v0
 .end method
 
 .method public static createErrorTypeWithCustomConstructor(Ljava/lang/String;Lkotlin/reflect/jvm/internal/impl/types/TypeConstructor;)Lkotlin/reflect/jvm/internal/impl/types/SimpleType;
     .locals 1
 
-    if-eqz p0, :cond_0
+    if-nez p0, :cond_0
 
+    const/16 v0, 0x9
+
+    invoke-static {v0}, Lkotlin/reflect/jvm/internal/impl/types/ErrorUtils;->$$$reportNull$$$0(I)V
+
+    :cond_0
+    if-nez p1, :cond_1
+
+    const/16 v0, 0xa
+
+    invoke-static {v0}, Lkotlin/reflect/jvm/internal/impl/types/ErrorUtils;->$$$reportNull$$$0(I)V
+
+    :cond_1
     new-instance v0, Lkotlin/reflect/jvm/internal/impl/types/ErrorType;
 
     invoke-static {p0}, Lkotlin/reflect/jvm/internal/impl/types/ErrorUtils;->createErrorScope(Ljava/lang/String;)Lkotlin/reflect/jvm/internal/impl/resolve/scopes/MemberScope;
@@ -680,34 +766,42 @@
     invoke-direct {v0, p1, p0}, Lkotlin/reflect/jvm/internal/impl/types/ErrorType;-><init>(Lkotlin/reflect/jvm/internal/impl/types/TypeConstructor;Lkotlin/reflect/jvm/internal/impl/resolve/scopes/MemberScope;)V
 
     return-object v0
-
-    :cond_0
-    const/16 p0, 0x9
-
-    invoke-static {p0}, Lkotlin/reflect/jvm/internal/impl/types/ErrorUtils;->$$$reportNull$$$0(I)V
-
-    const/4 p0, 0x0
-
-    throw p0
 .end method
 
-.method public static getErrorModule()Lkotlin/reflect/jvm/internal/impl/descriptors/ModuleDescriptor;
+.method public static createErrorTypeWithCustomDebugName(Ljava/lang/String;)Lkotlin/reflect/jvm/internal/impl/types/SimpleType;
     .locals 1
 
-    sget-object v0, Lkotlin/reflect/jvm/internal/impl/types/ErrorUtils;->ERROR_MODULE:Lkotlin/reflect/jvm/internal/impl/descriptors/ModuleDescriptor;
+    if-nez p0, :cond_0
 
-    if-eqz v0, :cond_0
-
-    return-object v0
-
-    :cond_0
-    const/16 v0, 0x13
+    const/16 v0, 0x8
 
     invoke-static {v0}, Lkotlin/reflect/jvm/internal/impl/types/ErrorUtils;->$$$reportNull$$$0(I)V
 
-    const/4 v0, 0x0
+    :cond_0
+    invoke-static {p0}, Lkotlin/reflect/jvm/internal/impl/types/ErrorUtils;->createErrorTypeConstructorWithCustomDebugName(Ljava/lang/String;)Lkotlin/reflect/jvm/internal/impl/types/TypeConstructor;
 
-    throw v0
+    move-result-object v0
+
+    invoke-static {p0, v0}, Lkotlin/reflect/jvm/internal/impl/types/ErrorUtils;->createErrorTypeWithCustomConstructor(Ljava/lang/String;Lkotlin/reflect/jvm/internal/impl/types/TypeConstructor;)Lkotlin/reflect/jvm/internal/impl/types/SimpleType;
+
+    move-result-object p0
+
+    return-object p0
+.end method
+
+.method public static getErrorModule()Lkotlin/reflect/jvm/internal/impl/descriptors/ModuleDescriptor;
+    .locals 2
+
+    sget-object v0, Lkotlin/reflect/jvm/internal/impl/types/ErrorUtils;->ERROR_MODULE:Lkotlin/reflect/jvm/internal/impl/descriptors/ModuleDescriptor;
+
+    if-nez v0, :cond_0
+
+    const/16 v1, 0x13
+
+    invoke-static {v1}, Lkotlin/reflect/jvm/internal/impl/types/ErrorUtils;->$$$reportNull$$$0(I)V
+
+    :cond_0
+    return-object v0
 .end method
 
 .method public static isError(Lkotlin/reflect/jvm/internal/impl/descriptors/DeclarationDescriptor;)Z
@@ -720,7 +814,9 @@
     return v0
 
     :cond_0
-    instance-of v1, p0, Lkotlin/reflect/jvm/internal/impl/types/ErrorUtils$ErrorClassDescriptor;
+    invoke-static {p0}, Lkotlin/reflect/jvm/internal/impl/types/ErrorUtils;->isErrorClass(Lkotlin/reflect/jvm/internal/impl/descriptors/DeclarationDescriptor;)Z
+
+    move-result v1
 
     if-nez v1, :cond_1
 
@@ -728,7 +824,9 @@
 
     move-result-object v1
 
-    instance-of v1, v1, Lkotlin/reflect/jvm/internal/impl/types/ErrorUtils$ErrorClassDescriptor;
+    invoke-static {v1}, Lkotlin/reflect/jvm/internal/impl/types/ErrorUtils;->isErrorClass(Lkotlin/reflect/jvm/internal/impl/descriptors/DeclarationDescriptor;)Z
+
+    move-result v1
 
     if-nez v1, :cond_1
 
@@ -741,4 +839,36 @@
 
     :cond_2
     return v0
+.end method
+
+.method private static isErrorClass(Lkotlin/reflect/jvm/internal/impl/descriptors/DeclarationDescriptor;)Z
+    .locals 0
+
+    instance-of p0, p0, Lkotlin/reflect/jvm/internal/impl/types/ErrorUtils$ErrorClassDescriptor;
+
+    return p0
+.end method
+
+.method public static isUninferredParameter(Lkotlin/reflect/jvm/internal/impl/types/KotlinType;)Z
+    .locals 0
+
+    if-eqz p0, :cond_0
+
+    invoke-virtual {p0}, Lkotlin/reflect/jvm/internal/impl/types/KotlinType;->getConstructor()Lkotlin/reflect/jvm/internal/impl/types/TypeConstructor;
+
+    move-result-object p0
+
+    instance-of p0, p0, Lkotlin/reflect/jvm/internal/impl/types/ErrorUtils$UninferredParameterTypeConstructor;
+
+    if-eqz p0, :cond_0
+
+    const/4 p0, 0x1
+
+    goto :goto_0
+
+    :cond_0
+    const/4 p0, 0x0
+
+    :goto_0
+    return p0
 .end method

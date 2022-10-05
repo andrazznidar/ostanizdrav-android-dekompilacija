@@ -5,7 +5,7 @@
 
 # annotations
 .annotation system Ldalvik/annotation/SourceDebugExtension;
-    value = "SMAP\n_Collections.kt\nKotlin\n*S Kotlin\n*F\n+ 1 _Collections.kt\nkotlin/collections/CollectionsKt___CollectionsKt\n+ 2 fake.kt\nkotlin/jvm/internal/FakeKt\n+ 3 ArraysJVM.kt\nkotlin/collections/ArraysKt__ArraysJVMKt\n+ 4 Maps.kt\nkotlin/collections/MapsKt__MapsKt\n+ 5 Iterators.kt\nkotlin/collections/CollectionsKt__IteratorsKt\n*L\n1#1,3537:1\n286#1,2:3538\n516#1,7:3540\n531#1,6:3547\n855#1,2:3554\n786#1:3556\n1858#1,2:3557\n787#1,2:3559\n1860#1:3561\n789#1:3562\n1858#1,3:3563\n807#1,2:3566\n845#1,2:3568\n1251#1,4:3574\n1220#1,4:3578\n1236#1,4:3582\n1283#1,4:3586\n1444#1,5:3590\n1459#1,5:3595\n1500#1,3:3600\n1503#1,3:3610\n1518#1,3:3613\n1521#1,3:3623\n1618#1,3:3640\n1588#1,4:3643\n1577#1:3647\n1858#1,2:3648\n1860#1:3651\n1578#1:3652\n1858#1,3:3653\n1609#1:3656\n1849#1:3657\n1850#1:3659\n1610#1:3660\n1849#1,2:3661\n1895#1,14:3663\n2190#1,14:3677\n1858#1,3:3691\n2691#1,3:3694\n2694#1,6:3698\n2716#1,3:3704\n2719#1,7:3708\n855#1,2:3715\n817#1:3717\n845#1,2:3718\n817#1:3720\n845#1,2:3721\n817#1:3723\n845#1,2:3724\n3259#1,8:3730\n3287#1,7:3738\n3318#1,10:3745\n1#2:3553\n1#2:3650\n1#2:3658\n1#2:3697\n1#2:3707\n37#3,2:3570\n37#3,2:3572\n355#4,7:3603\n355#4,7:3616\n355#4,7:3626\n355#4,7:3633\n32#5,2:3726\n32#5,2:3728\n*S KotlinDebug\n*F\n+ 1 _Collections.kt\nkotlin/collections/CollectionsKt___CollectionsKt\n*L\n167#1:3538,2\n177#1:3540,7\n187#1:3547,6\n764#1:3554,2\n775#1:3556\n775#1:3557,2\n775#1:3559,2\n775#1:3561\n775#1:3562\n786#1:3563,3\n798#1:3566,2\n817#1:3568,2\n1178#1:3574,4\n1193#1:3578,4\n1207#1:3582,4\n1270#1:3586,4\n1358#1:3590,5\n1371#1:3595,5\n1475#1:3600,3\n1475#1:3610,3\n1488#1:3613,3\n1488#1:3623,3\n1547#1:3640,3\n1557#1:3643,4\n1567#1:3647\n1567#1:3648,2\n1567#1:3651\n1567#1:3652\n1577#1:3653,3\n1601#1:3656\n1601#1:3657\n1601#1:3659\n1601#1:3660\n1609#1:3661,2\n1885#1:3663,14\n2180#1:3677,14\n2489#1:3691,3\n2793#1:3694,3\n2793#1:3698,6\n2811#1:3704,3\n2811#1:3708,7\n2987#1:3715,2\n2999#1:3717\n2999#1:3718,2\n3012#1:3720\n3012#1:3721,2\n3025#1:3723\n3025#1:3724,2\n3248#1:3730,8\n3276#1:3738,7\n3305#1:3745,10\n1567#1:3650\n1601#1:3658\n2793#1:3697\n2811#1:3707\n1030#1:3570,2\n1073#1:3572,2\n1475#1:3603,7\n1488#1:3616,7\n1502#1:3626,7\n1520#1:3633,7\n3193#1:3726,2\n3235#1:3728,2\n*E\n"
+    value = "SMAP\n_Collections.kt\nKotlin\n*S Kotlin\n*F\n+ 1 _Collections.kt\nkotlin/collections/CollectionsKt___CollectionsKt\n+ 2 fake.kt\nkotlin/jvm/internal/FakeKt\n+ 3 ArraysJVM.kt\nkotlin/collections/ArraysKt__ArraysJVMKt\n+ 4 Maps.kt\nkotlin/collections/MapsKt__MapsKt\n+ 5 Iterators.kt\nkotlin/collections/CollectionsKt__IteratorsKt\n*L\n1#1,3540:1\n286#1,2:3541\n516#1,7:3543\n531#1,6:3550\n855#1,2:3557\n786#1:3559\n1858#1,2:3560\n787#1,2:3562\n1860#1:3564\n789#1:3565\n1858#1,3:3566\n807#1,2:3569\n845#1,2:3571\n1251#1,4:3581\n1220#1,4:3585\n1236#1,4:3589\n1283#1,4:3593\n1444#1,5:3597\n1459#1,5:3602\n1500#1,3:3607\n1503#1,3:3617\n1518#1,3:3620\n1521#1,3:3630\n1618#1,3:3647\n1588#1,4:3650\n1577#1:3654\n1858#1,2:3655\n1860#1:3658\n1578#1:3659\n1858#1,3:3660\n1609#1:3663\n1849#1:3664\n1850#1:3666\n1610#1:3667\n1849#1,2:3668\n1895#1,14:3670\n2190#1,14:3684\n1858#1,3:3698\n2691#1,3:3701\n2694#1,6:3705\n2716#1,3:3711\n2719#1,7:3715\n855#1,2:3722\n817#1:3724\n845#1,2:3725\n817#1:3727\n845#1,2:3728\n817#1:3730\n845#1,2:3731\n3262#1,8:3737\n3290#1,7:3745\n3321#1,10:3752\n1#2:3556\n1#2:3657\n1#2:3665\n1#2:3704\n1#2:3714\n37#3:3573\n36#3,3:3574\n37#3:3577\n36#3,3:3578\n357#4,7:3610\n357#4,7:3623\n357#4,7:3633\n357#4,7:3640\n32#5,2:3733\n32#5,2:3735\n*S KotlinDebug\n*F\n+ 1 _Collections.kt\nkotlin/collections/CollectionsKt___CollectionsKt\n*L\n167#1:3541,2\n177#1:3543,7\n187#1:3550,6\n764#1:3557,2\n775#1:3559\n775#1:3560,2\n775#1:3562,2\n775#1:3564\n775#1:3565\n786#1:3566,3\n798#1:3569,2\n817#1:3571,2\n1178#1:3581,4\n1193#1:3585,4\n1207#1:3589,4\n1270#1:3593,4\n1358#1:3597,5\n1371#1:3602,5\n1475#1:3607,3\n1475#1:3617,3\n1488#1:3620,3\n1488#1:3630,3\n1547#1:3647,3\n1557#1:3650,4\n1567#1:3654\n1567#1:3655,2\n1567#1:3658\n1567#1:3659\n1577#1:3660,3\n1601#1:3663\n1601#1:3664\n1601#1:3666\n1601#1:3667\n1609#1:3668,2\n1885#1:3670,14\n2180#1:3684,14\n2489#1:3698,3\n2793#1:3701,3\n2793#1:3705,6\n2811#1:3711,3\n2811#1:3715,7\n2987#1:3722,2\n3000#1:3724\n3000#1:3725,2\n3014#1:3727\n3014#1:3728,2\n3028#1:3730\n3028#1:3731,2\n3251#1:3737,8\n3279#1:3745,7\n3308#1:3752,10\n1567#1:3657\n1601#1:3665\n2793#1:3704\n2811#1:3714\n1030#1:3573\n1030#1:3574,3\n1073#1:3577\n1073#1:3578,3\n1475#1:3610,7\n1488#1:3623,7\n1502#1:3633,7\n1520#1:3640,7\n3196#1:3733,2\n3238#1:3735,2\n*E\n"
 .end annotation
 
 
@@ -24,7 +24,7 @@
         }
     .end annotation
 
-    const-string v0, "$this$asSequence"
+    const-string v0, "<this>"
 
     invoke-static {p0, v0}, Lkotlin/jvm/internal/Intrinsics;->checkNotNullParameter(Ljava/lang/Object;Ljava/lang/String;)V
 
@@ -47,7 +47,7 @@
         }
     .end annotation
 
-    const-string v0, "$this$contains"
+    const-string v0, "<this>"
 
     invoke-static {p0, v0}, Lkotlin/jvm/internal/Intrinsics;->checkNotNullParameter(Ljava/lang/Object;Ljava/lang/String;)V
 
@@ -64,10 +64,6 @@
     return p0
 
     :cond_0
-    const-string v0, "$this$indexOf"
-
-    invoke-static {p0, v0}, Lkotlin/jvm/internal/Intrinsics;->checkNotNullParameter(Ljava/lang/Object;Ljava/lang/String;)V
-
     instance-of v0, p0, Ljava/util/List;
 
     const/4 v1, 0x0
@@ -137,7 +133,7 @@
 .end method
 
 .method public static final distinct(Ljava/lang/Iterable;)Ljava/util/List;
-    .locals 0
+    .locals 1
     .annotation system Ldalvik/annotation/Signature;
         value = {
             "<T:",
@@ -149,6 +145,10 @@
             "TT;>;"
         }
     .end annotation
+
+    const-string v0, "<this>"
+
+    invoke-static {p0, v0}, Lkotlin/jvm/internal/Intrinsics;->checkNotNullParameter(Ljava/lang/Object;Ljava/lang/String;)V
 
     invoke-static {p0}, Lkotlin/collections/CollectionsKt___CollectionsKt;->toMutableSet(Ljava/lang/Iterable;)Ljava/util/Set;
 
@@ -175,7 +175,7 @@
         }
     .end annotation
 
-    const-string v0, "$this$drop"
+    const-string v0, "<this>"
 
     invoke-static {p0, v0}, Lkotlin/jvm/internal/Intrinsics;->checkNotNullParameter(Ljava/lang/Object;Ljava/lang/String;)V
 
@@ -257,17 +257,19 @@
     :goto_1
     if-ge p1, v1, :cond_5
 
-    move-object v2, p0
+    add-int/lit8 v2, p1, 0x1
 
-    check-cast v2, Ljava/util/List;
+    move-object v3, p0
 
-    invoke-interface {v2, p1}, Ljava/util/List;->get(I)Ljava/lang/Object;
+    check-cast v3, Ljava/util/List;
 
-    move-result-object v2
+    invoke-interface {v3, p1}, Ljava/util/List;->get(I)Ljava/lang/Object;
 
-    invoke-virtual {v0, v2}, Ljava/util/ArrayList;->add(Ljava/lang/Object;)Z
+    move-result-object p1
 
-    add-int/lit8 p1, p1, 0x1
+    invoke-virtual {v0, p1}, Ljava/util/ArrayList;->add(Ljava/lang/Object;)Z
+
+    move p1, v2
 
     goto :goto_1
 
@@ -369,7 +371,7 @@
         }
     .end annotation
 
-    const-string v0, "$this$dropLast"
+    const-string v0, "<this>"
 
     invoke-static {p0, v0}, Lkotlin/jvm/internal/Intrinsics;->checkNotNullParameter(Ljava/lang/Object;Ljava/lang/String;)V
 
@@ -445,7 +447,7 @@
         }
     .end annotation
 
-    const-string v0, "$this$filter"
+    const-string v0, "<this>"
 
     invoke-static {p0, v0}, Lkotlin/jvm/internal/Intrinsics;->checkNotNullParameter(Ljava/lang/Object;Ljava/lang/String;)V
 
@@ -503,21 +505,13 @@
         }
     .end annotation
 
-    const-string v0, "$this$filterNotNull"
+    const-string v0, "<this>"
 
     invoke-static {p0, v0}, Lkotlin/jvm/internal/Intrinsics;->checkNotNullParameter(Ljava/lang/Object;Ljava/lang/String;)V
 
     new-instance v0, Ljava/util/ArrayList;
 
     invoke-direct {v0}, Ljava/util/ArrayList;-><init>()V
-
-    const-string v1, "$this$filterNotNullTo"
-
-    invoke-static {p0, v1}, Lkotlin/jvm/internal/Intrinsics;->checkNotNullParameter(Ljava/lang/Object;Ljava/lang/String;)V
-
-    const-string v1, "destination"
-
-    invoke-static {v0, v1}, Lkotlin/jvm/internal/Intrinsics;->checkNotNullParameter(Ljava/lang/Object;Ljava/lang/String;)V
 
     invoke-interface {p0}, Ljava/lang/Iterable;->iterator()Ljava/util/Iterator;
 
@@ -557,7 +551,7 @@
         }
     .end annotation
 
-    const-string v0, "$this$first"
+    const-string v0, "<this>"
 
     invoke-static {p0, v0}, Lkotlin/jvm/internal/Intrinsics;->checkNotNullParameter(Ljava/lang/Object;Ljava/lang/String;)V
 
@@ -612,7 +606,7 @@
         }
     .end annotation
 
-    const-string v0, "$this$first"
+    const-string v0, "<this>"
 
     invoke-static {p0, v0}, Lkotlin/jvm/internal/Intrinsics;->checkNotNullParameter(Ljava/lang/Object;Ljava/lang/String;)V
 
@@ -652,7 +646,7 @@
         }
     .end annotation
 
-    const-string v0, "$this$firstOrNull"
+    const-string v0, "<this>"
 
     invoke-static {p0, v0}, Lkotlin/jvm/internal/Intrinsics;->checkNotNullParameter(Ljava/lang/Object;Ljava/lang/String;)V
 
@@ -714,7 +708,7 @@
         }
     .end annotation
 
-    const-string v0, "$this$firstOrNull"
+    const-string v0, "<this>"
 
     invoke-static {p0, v0}, Lkotlin/jvm/internal/Intrinsics;->checkNotNullParameter(Ljava/lang/Object;Ljava/lang/String;)V
 
@@ -751,7 +745,7 @@
         }
     .end annotation
 
-    const-string v0, "$this$getOrNull"
+    const-string v0, "<this>"
 
     invoke-static {p0, v0}, Lkotlin/jvm/internal/Intrinsics;->checkNotNullParameter(Ljava/lang/Object;Ljava/lang/String;)V
 
@@ -792,7 +786,7 @@
         }
     .end annotation
 
-    const-string v0, "$this$intersect"
+    const-string v0, "<this>"
 
     invoke-static {p0, v0}, Lkotlin/jvm/internal/Intrinsics;->checkNotNullParameter(Ljava/lang/Object;Ljava/lang/String;)V
 
@@ -804,31 +798,10 @@
 
     move-result-object p0
 
-    invoke-static {p1, p0}, Lkotlin/collections/CollectionsKt__IteratorsJVMKt;->convertToSetForSetOperationWith(Ljava/lang/Iterable;Ljava/lang/Iterable;)Ljava/util/Collection;
+    invoke-static {p1, p0}, Lkotlin/collections/BrittleContainsOptimizationKt;->convertToSetForSetOperationWith(Ljava/lang/Iterable;Ljava/lang/Iterable;)Ljava/util/Collection;
 
     move-result-object p1
 
-    instance-of v0, p0, Lkotlin/jvm/internal/markers/KMappedMarker;
-
-    if-eqz v0, :cond_1
-
-    instance-of v0, p0, Lkotlin/jvm/internal/markers/KMutableCollection;
-
-    if-eqz v0, :cond_0
-
-    goto :goto_0
-
-    :cond_0
-    const-string p1, "kotlin.collections.MutableCollection"
-
-    invoke-static {p0, p1}, Lkotlin/jvm/internal/TypeIntrinsics;->throwCce(Ljava/lang/Object;Ljava/lang/String;)V
-
-    const/4 p0, 0x0
-
-    throw p0
-
-    :cond_1
-    :goto_0
     invoke-interface {p0, p1}, Ljava/util/Collection;->retainAll(Ljava/util/Collection;)Z
 
     return-object p0
@@ -857,7 +830,7 @@
         }
     .end annotation
 
-    const-string v0, "$this$joinTo"
+    const-string v0, "<this>"
 
     invoke-static {p0, v0}, Lkotlin/jvm/internal/Intrinsics;->checkNotNullParameter(Ljava/lang/Object;Ljava/lang/String;)V
 
@@ -914,7 +887,7 @@
     if-gt p3, p5, :cond_2
 
     :cond_1
-    invoke-static {p1, v0, p7}, Lkotlin/ExceptionsKt;->appendElement(Ljava/lang/Appendable;Ljava/lang/Object;Lkotlin/jvm/functions/Function1;)V
+    invoke-static {p1, v0, p7}, Lcom/google/common/base/Objects;->appendElement(Ljava/lang/Appendable;Ljava/lang/Object;Lkotlin/jvm/functions/Function1;)V
 
     goto :goto_0
 
@@ -1047,7 +1020,7 @@
         }
     .end annotation
 
-    const-string v0, "$this$joinToString"
+    const-string v0, "<this>"
 
     invoke-static {p0, v0}, Lkotlin/jvm/internal/Intrinsics;->checkNotNullParameter(Ljava/lang/Object;Ljava/lang/String;)V
 
@@ -1088,8 +1061,6 @@
     move-object v8, p6
 
     invoke-static/range {v1 .. v8}, Lkotlin/collections/CollectionsKt___CollectionsKt;->joinTo(Ljava/lang/Iterable;Ljava/lang/Appendable;Ljava/lang/CharSequence;Ljava/lang/CharSequence;Ljava/lang/CharSequence;ILjava/lang/CharSequence;Lkotlin/jvm/functions/Function1;)Ljava/lang/Appendable;
-
-    check-cast v0, Ljava/lang/StringBuilder;
 
     invoke-virtual {v0}, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
 
@@ -1263,7 +1234,7 @@
         }
     .end annotation
 
-    const-string v0, "$this$last"
+    const-string v0, "<this>"
 
     invoke-static {p0, v0}, Lkotlin/jvm/internal/Intrinsics;->checkNotNullParameter(Ljava/lang/Object;Ljava/lang/String;)V
 
@@ -1305,7 +1276,7 @@
         }
     .end annotation
 
-    const-string v0, "$this$lastOrNull"
+    const-string v0, "<this>"
 
     invoke-static {p0, v0}, Lkotlin/jvm/internal/Intrinsics;->checkNotNullParameter(Ljava/lang/Object;Ljava/lang/String;)V
 
@@ -1395,69 +1366,6 @@
     return-object v0
 .end method
 
-.method public static final maxWithOrNull(Ljava/lang/Iterable;Ljava/util/Comparator;)Ljava/lang/Object;
-    .locals 3
-    .annotation system Ldalvik/annotation/Signature;
-        value = {
-            "<T:",
-            "Ljava/lang/Object;",
-            ">(",
-            "Ljava/lang/Iterable<",
-            "+TT;>;",
-            "Ljava/util/Comparator<",
-            "-TT;>;)TT;"
-        }
-    .end annotation
-
-    invoke-interface {p0}, Ljava/lang/Iterable;->iterator()Ljava/util/Iterator;
-
-    move-result-object p0
-
-    invoke-interface {p0}, Ljava/util/Iterator;->hasNext()Z
-
-    move-result v0
-
-    if-nez v0, :cond_0
-
-    const/4 p0, 0x0
-
-    return-object p0
-
-    :cond_0
-    invoke-interface {p0}, Ljava/util/Iterator;->next()Ljava/lang/Object;
-
-    move-result-object v0
-
-    :cond_1
-    :goto_0
-    invoke-interface {p0}, Ljava/util/Iterator;->hasNext()Z
-
-    move-result v1
-
-    if-eqz v1, :cond_2
-
-    invoke-interface {p0}, Ljava/util/Iterator;->next()Ljava/lang/Object;
-
-    move-result-object v1
-
-    move-object v2, p1
-
-    check-cast v2, Lkotlin/comparisons/ComparisonsKt__ComparisonsKt$compareBy$1;
-
-    invoke-virtual {v2, v0, v1}, Lkotlin/comparisons/ComparisonsKt__ComparisonsKt$compareBy$1;->compare(Ljava/lang/Object;Ljava/lang/Object;)I
-
-    move-result v2
-
-    if-gez v2, :cond_1
-
-    move-object v0, v1
-
-    goto :goto_0
-
-    :cond_2
-    return-object v0
-.end method
-
 .method public static final minus(Ljava/lang/Iterable;Ljava/lang/Iterable;)Ljava/util/List;
     .locals 3
     .annotation system Ldalvik/annotation/Signature;
@@ -1474,7 +1382,7 @@
         }
     .end annotation
 
-    const-string v0, "$this$minus"
+    const-string v0, "<this>"
 
     invoke-static {p0, v0}, Lkotlin/jvm/internal/Intrinsics;->checkNotNullParameter(Ljava/lang/Object;Ljava/lang/String;)V
 
@@ -1482,7 +1390,7 @@
 
     invoke-static {p1, v0}, Lkotlin/jvm/internal/Intrinsics;->checkNotNullParameter(Ljava/lang/Object;Ljava/lang/String;)V
 
-    invoke-static {p1, p0}, Lkotlin/collections/CollectionsKt__IteratorsJVMKt;->convertToSetForSetOperationWith(Ljava/lang/Iterable;Ljava/lang/Iterable;)Ljava/util/Collection;
+    invoke-static {p1, p0}, Lkotlin/collections/BrittleContainsOptimizationKt;->convertToSetForSetOperationWith(Ljava/lang/Iterable;Ljava/lang/Iterable;)Ljava/util/Collection;
 
     move-result-object p1
 
@@ -1549,6 +1457,10 @@
         }
     .end annotation
 
+    const-string v0, "<this>"
+
+    invoke-static {p0, v0}, Lkotlin/jvm/internal/Intrinsics;->checkNotNullParameter(Ljava/lang/Object;Ljava/lang/String;)V
+
     const-string v0, "elements"
 
     invoke-static {p1, v0}, Lkotlin/jvm/internal/Intrinsics;->checkNotNullParameter(Ljava/lang/Object;Ljava/lang/String;)V
@@ -1591,7 +1503,7 @@
         }
     .end annotation
 
-    const-string v0, "$this$plus"
+    const-string v0, "<this>"
 
     invoke-static {p0, v0}, Lkotlin/jvm/internal/Intrinsics;->checkNotNullParameter(Ljava/lang/Object;Ljava/lang/String;)V
 
@@ -1635,7 +1547,7 @@
         }
     .end annotation
 
-    const-string v0, "$this$plus"
+    const-string v0, "<this>"
 
     invoke-static {p0, v0}, Lkotlin/jvm/internal/Intrinsics;->checkNotNullParameter(Ljava/lang/Object;Ljava/lang/String;)V
 
@@ -1693,7 +1605,7 @@
         }
     .end annotation
 
-    const-string v0, "$this$plus"
+    const-string v0, "<this>"
 
     invoke-static {p0, v0}, Lkotlin/jvm/internal/Intrinsics;->checkNotNullParameter(Ljava/lang/Object;Ljava/lang/String;)V
 
@@ -1728,7 +1640,7 @@
         }
     .end annotation
 
-    const-string v0, "$this$reversed"
+    const-string v0, "<this>"
 
     invoke-static {p0, v0}, Lkotlin/jvm/internal/Intrinsics;->checkNotNullParameter(Ljava/lang/Object;Ljava/lang/String;)V
 
@@ -1776,7 +1688,7 @@
         }
     .end annotation
 
-    const-string v0, "$this$single"
+    const-string v0, "<this>"
 
     invoke-static {p0, v0}, Lkotlin/jvm/internal/Intrinsics;->checkNotNullParameter(Ljava/lang/Object;Ljava/lang/String;)V
 
@@ -1846,7 +1758,7 @@
         }
     .end annotation
 
-    const-string v0, "$this$single"
+    const-string v0, "<this>"
 
     invoke-static {p0, v0}, Lkotlin/jvm/internal/Intrinsics;->checkNotNullParameter(Ljava/lang/Object;Ljava/lang/String;)V
 
@@ -1899,7 +1811,7 @@
         }
     .end annotation
 
-    const-string v0, "$this$singleOrNull"
+    const-string v0, "<this>"
 
     invoke-static {p0, v0}, Lkotlin/jvm/internal/Intrinsics;->checkNotNullParameter(Ljava/lang/Object;Ljava/lang/String;)V
 
@@ -1970,7 +1882,7 @@
         }
     .end annotation
 
-    const-string v0, "$this$singleOrNull"
+    const-string v0, "<this>"
 
     invoke-static {p0, v0}, Lkotlin/jvm/internal/Intrinsics;->checkNotNullParameter(Ljava/lang/Object;Ljava/lang/String;)V
 
@@ -1997,6 +1909,69 @@
     return-object p0
 .end method
 
+.method public static final sorted(Ljava/lang/Iterable;)Ljava/util/List;
+    .locals 3
+    .annotation system Ldalvik/annotation/Signature;
+        value = {
+            "<T::",
+            "Ljava/lang/Comparable<",
+            "-TT;>;>(",
+            "Ljava/lang/Iterable<",
+            "+TT;>;)",
+            "Ljava/util/List<",
+            "TT;>;"
+        }
+    .end annotation
+
+    move-object v0, p0
+
+    check-cast v0, Ljava/util/Collection;
+
+    invoke-interface {v0}, Ljava/util/Collection;->size()I
+
+    move-result v1
+
+    const/4 v2, 0x1
+
+    if-gt v1, v2, :cond_0
+
+    invoke-static {p0}, Lkotlin/collections/CollectionsKt___CollectionsKt;->toList(Ljava/lang/Iterable;)Ljava/util/List;
+
+    move-result-object p0
+
+    return-object p0
+
+    :cond_0
+    const/4 p0, 0x0
+
+    new-array p0, p0, [Ljava/lang/Comparable;
+
+    invoke-interface {v0, p0}, Ljava/util/Collection;->toArray([Ljava/lang/Object;)[Ljava/lang/Object;
+
+    move-result-object p0
+
+    const-string v0, "null cannot be cast to non-null type kotlin.Array<T of kotlin.collections.ArraysKt__ArraysJVMKt.toTypedArray>"
+
+    invoke-static {p0, v0}, Ljava/util/Objects;->requireNonNull(Ljava/lang/Object;Ljava/lang/String;)Ljava/lang/Object;
+
+    move-object v0, p0
+
+    check-cast v0, [Ljava/lang/Comparable;
+
+    array-length v1, v0
+
+    if-le v1, v2, :cond_1
+
+    invoke-static {v0}, Ljava/util/Arrays;->sort([Ljava/lang/Object;)V
+
+    :cond_1
+    invoke-static {p0}, Lkotlin/collections/ArraysKt___ArraysJvmKt;->asList([Ljava/lang/Object;)Ljava/util/List;
+
+    move-result-object p0
+
+    return-object p0
+.end method
+
 .method public static final sortedWith(Ljava/lang/Iterable;Ljava/util/Comparator;)Ljava/util/List;
     .locals 3
     .annotation system Ldalvik/annotation/Signature;
@@ -2013,7 +1988,7 @@
         }
     .end annotation
 
-    const-string v0, "$this$sortedWith"
+    const-string v0, "<this>"
 
     invoke-static {p0, v0}, Lkotlin/jvm/internal/Intrinsics;->checkNotNullParameter(Ljava/lang/Object;Ljava/lang/String;)V
 
@@ -2048,7 +2023,7 @@
 
     move-result-object p0
 
-    const-string v0, "null cannot be cast to non-null type kotlin.Array<T>"
+    const-string v0, "null cannot be cast to non-null type kotlin.Array<T of kotlin.collections.ArraysKt__ArraysJVMKt.toTypedArray>"
 
     invoke-static {p0, v0}, Ljava/util/Objects;->requireNonNull(Ljava/lang/Object;Ljava/lang/String;)Ljava/lang/Object;
 
@@ -2208,7 +2183,7 @@
         }
     .end annotation
 
-    const-string v0, "$this$takeLast"
+    const-string v0, "<this>"
 
     invoke-static {p0, v0}, Lkotlin/jvm/internal/Intrinsics;->checkNotNullParameter(Ljava/lang/Object;Ljava/lang/String;)V
 
@@ -2272,13 +2247,15 @@
     :goto_1
     if-ge p1, v1, :cond_5
 
+    add-int/lit8 v2, p1, 0x1
+
     invoke-interface {p0, p1}, Ljava/util/List;->get(I)Ljava/lang/Object;
 
-    move-result-object v2
+    move-result-object p1
 
-    invoke-virtual {v0, v2}, Ljava/util/ArrayList;->add(Ljava/lang/Object;)Z
+    invoke-virtual {v0, p1}, Ljava/util/ArrayList;->add(Ljava/lang/Object;)Z
 
-    add-int/lit8 p1, p1, 0x1
+    move p1, v2
 
     goto :goto_1
 
@@ -2337,6 +2314,10 @@
             ">;)[B"
         }
     .end annotation
+
+    const-string v0, "<this>"
+
+    invoke-static {p0, v0}, Lkotlin/jvm/internal/Intrinsics;->checkNotNullParameter(Ljava/lang/Object;Ljava/lang/String;)V
 
     invoke-interface {p0}, Ljava/util/Collection;->size()I
 
@@ -2515,7 +2496,7 @@
         }
     .end annotation
 
-    const-string v0, "$this$toList"
+    const-string v0, "<this>"
 
     invoke-static {p0, v0}, Lkotlin/jvm/internal/Intrinsics;->checkNotNullParameter(Ljava/lang/Object;Ljava/lang/String;)V
 
@@ -2642,7 +2623,7 @@
         }
     .end annotation
 
-    const-string v0, "$this$toMutableList"
+    const-string v0, "<this>"
 
     invoke-static {p0, v0}, Lkotlin/jvm/internal/Intrinsics;->checkNotNullParameter(Ljava/lang/Object;Ljava/lang/String;)V
 
@@ -2667,7 +2648,7 @@
         }
     .end annotation
 
-    const-string v0, "$this$toMutableSet"
+    const-string v0, "<this>"
 
     invoke-static {p0, v0}, Lkotlin/jvm/internal/Intrinsics;->checkNotNullParameter(Ljava/lang/Object;Ljava/lang/String;)V
 
@@ -2710,7 +2691,7 @@
         }
     .end annotation
 
-    const-string v0, "$this$toSet"
+    const-string v0, "<this>"
 
     invoke-static {p0, v0}, Lkotlin/jvm/internal/Intrinsics;->checkNotNullParameter(Ljava/lang/Object;Ljava/lang/String;)V
 
@@ -2775,7 +2756,7 @@
     move-result-object p0
 
     :goto_0
-    invoke-static {p0}, Lkotlin/collections/SetsKt__SetsKt;->setOf(Ljava/lang/Object;)Ljava/util/Set;
+    invoke-static {p0}, Lorg/bouncycastle/util/IPAddress;->setOf(Ljava/lang/Object;)Ljava/util/Set;
 
     move-result-object v1
 
@@ -2796,7 +2777,7 @@
 
     check-cast v0, Ljava/util/Set;
 
-    invoke-static {v0}, Lkotlin/collections/SetsKt__SetsKt;->optimizeReadOnlySet(Ljava/util/Set;)Ljava/util/Set;
+    invoke-static {v0}, Lorg/bouncycastle/util/IPAddress;->optimizeReadOnlySet(Ljava/util/Set;)Ljava/util/Set;
 
     move-result-object p0
 
@@ -2818,7 +2799,7 @@
         }
     .end annotation
 
-    const-string v0, "$this$withIndex"
+    const-string v0, "<this>"
 
     invoke-static {p0, v0}, Lkotlin/jvm/internal/Intrinsics;->checkNotNullParameter(Ljava/lang/Object;Ljava/lang/String;)V
 
@@ -2852,9 +2833,13 @@
         }
     .end annotation
 
-    const-string v0, "$this$zip"
+    const-string v0, "<this>"
 
     invoke-static {p0, v0}, Lkotlin/jvm/internal/Intrinsics;->checkNotNullParameter(Ljava/lang/Object;Ljava/lang/String;)V
+
+    const-string v0, "other"
+
+    invoke-static {p1, v0}, Lkotlin/jvm/internal/Intrinsics;->checkNotNullParameter(Ljava/lang/Object;Ljava/lang/String;)V
 
     invoke-interface {p0}, Ljava/lang/Iterable;->iterator()Ljava/util/Iterator;
 

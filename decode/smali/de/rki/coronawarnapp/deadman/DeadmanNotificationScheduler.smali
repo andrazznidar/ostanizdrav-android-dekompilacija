@@ -79,7 +79,7 @@
 
 # virtual methods
 .method public final scheduleOneTime(Lkotlin/coroutines/Continuation;)Ljava/lang/Object;
-    .locals 7
+    .locals 6
     .annotation system Ldalvik/annotation/Signature;
         value = {
             "(",
@@ -175,9 +175,9 @@
 
     move-result-wide v1
 
-    const-wide/16 v3, 0x0
+    const-wide/16 v4, 0x0
 
-    cmp-long p1, v1, v3
+    cmp-long p1, v1, v4
 
     if-gez p1, :cond_4
 
@@ -188,23 +188,23 @@
     :cond_4
     sget-object p1, Ltimber/log/Timber;->Forest:Ltimber/log/Timber$Forest;
 
-    const-string v3, "DeadmanNotification will be scheduled for "
+    const-string v4, "DeadmanNotification will be scheduled for "
 
-    const-string v4, " minutes in the future"
+    const-string v5, " minutes in the future"
 
-    invoke-static {v3, v1, v2, v4}, Landroidx/work/impl/utils/futures/AbstractFuture$$ExternalSyntheticOutline0;->m(Ljava/lang/String;JLjava/lang/String;)Ljava/lang/String;
+    invoke-static {v4, v1, v2, v5}, Landroidx/concurrent/futures/AbstractResolvableFuture$$ExternalSyntheticOutline0;->m(Ljava/lang/String;JLjava/lang/String;)Ljava/lang/String;
 
-    move-result-object v3
+    move-result-object v4
 
-    const/4 v4, 0x0
+    const/4 v5, 0x0
 
-    new-array v4, v4, [Ljava/lang/Object;
+    new-array v5, v5, [Ljava/lang/Object;
 
-    invoke-virtual {p1, v3, v4}, Ltimber/log/Timber$Forest;->d(Ljava/lang/String;[Ljava/lang/Object;)V
+    invoke-virtual {p1, v4, v5}, Ltimber/log/Timber$Forest;->d(Ljava/lang/String;[Ljava/lang/Object;)V
 
     iget-object p1, v0, Lde/rki/coronawarnapp/deadman/DeadmanNotificationScheduler;->workManager:Landroidx/work/WorkManager;
 
-    sget-object v3, Landroidx/work/ExistingWorkPolicy;->REPLACE:Landroidx/work/ExistingWorkPolicy;
+    sget-object v4, Landroidx/work/ExistingWorkPolicy;->REPLACE:Landroidx/work/ExistingWorkPolicy;
 
     iget-object v0, v0, Lde/rki/coronawarnapp/deadman/DeadmanNotificationScheduler;->workBuilder:Lde/rki/coronawarnapp/deadman/DeadmanNotificationWorkBuilder;
 
@@ -212,23 +212,21 @@
 
     new-instance v0, Landroidx/work/OneTimeWorkRequest$Builder;
 
-    const-class v4, Lde/rki/coronawarnapp/deadman/DeadmanNotificationOneTimeWorker;
+    const-class v5, Lde/rki/coronawarnapp/deadman/DeadmanNotificationOneTimeWorker;
 
-    invoke-direct {v0, v4}, Landroidx/work/OneTimeWorkRequest$Builder;-><init>(Ljava/lang/Class;)V
+    invoke-direct {v0, v5}, Landroidx/work/OneTimeWorkRequest$Builder;-><init>(Ljava/lang/Class;)V
 
-    sget-object v4, Ljava/util/concurrent/TimeUnit;->MINUTES:Ljava/util/concurrent/TimeUnit;
+    sget-object v5, Ljava/util/concurrent/TimeUnit;->MINUTES:Ljava/util/concurrent/TimeUnit;
 
-    invoke-virtual {v0, v1, v2, v4}, Landroidx/work/WorkRequest$Builder;->setInitialDelay(JLjava/util/concurrent/TimeUnit;)Landroidx/work/WorkRequest$Builder;
+    invoke-virtual {v0, v1, v2, v5}, Landroidx/work/WorkRequest$Builder;->setInitialDelay(JLjava/util/concurrent/TimeUnit;)Landroidx/work/WorkRequest$Builder;
 
     move-result-object v0
 
     check-cast v0, Landroidx/work/OneTimeWorkRequest$Builder;
 
-    sget-object v1, Landroidx/work/BackoffPolicy;->EXPONENTIAL:Landroidx/work/BackoffPolicy;
+    const-wide/16 v1, 0x8
 
-    const-wide/16 v5, 0x8
-
-    invoke-virtual {v0, v1, v5, v6, v4}, Landroidx/work/WorkRequest$Builder;->setBackoffCriteria(Landroidx/work/BackoffPolicy;JLjava/util/concurrent/TimeUnit;)Landroidx/work/WorkRequest$Builder;
+    invoke-virtual {v0, v3, v1, v2, v5}, Landroidx/work/WorkRequest$Builder;->setBackoffCriteria$enumunboxing$(IJLjava/util/concurrent/TimeUnit;)Landroidx/work/WorkRequest$Builder;
 
     move-result-object v0
 
@@ -246,7 +244,7 @@
 
     const-string v1, "DeadmanNotificationOneTimeWork"
 
-    invoke-virtual {p1, v1, v3, v0}, Landroidx/work/WorkManager;->enqueueUniqueWork(Ljava/lang/String;Landroidx/work/ExistingWorkPolicy;Landroidx/work/OneTimeWorkRequest;)Landroidx/work/Operation;
+    invoke-virtual {p1, v1, v4, v0}, Landroidx/work/WorkManager;->enqueueUniqueWork(Ljava/lang/String;Landroidx/work/ExistingWorkPolicy;Landroidx/work/OneTimeWorkRequest;)Landroidx/work/Operation;
 
     sget-object p1, Lkotlin/Unit;->INSTANCE:Lkotlin/Unit;
 

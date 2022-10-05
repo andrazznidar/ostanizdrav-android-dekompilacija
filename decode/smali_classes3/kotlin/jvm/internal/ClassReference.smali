@@ -19,7 +19,7 @@
 .end annotation
 
 .annotation system Ldalvik/annotation/SourceDebugExtension;
-    value = "SMAP\nClassReference.kt\nKotlin\n*S Kotlin\n*F\n+ 1 ClassReference.kt\nkotlin/jvm/internal/ClassReference\n+ 2 _Collections.kt\nkotlin/collections/CollectionsKt___CollectionsKt\n+ 3 Maps.kt\nkotlin/collections/MapsKt__MapsKt\n*L\n1#1,205:1\n1557#2:206\n1588#2,4:207\n1251#2,4:211\n1236#2,4:217\n436#3:215\n386#3:216\n*S KotlinDebug\n*F\n+ 1 ClassReference.kt\nkotlin/jvm/internal/ClassReference\n*L\n107#1:206\n107#1:207,4\n155#1:211,4\n163#1:217,4\n163#1:215\n163#1:216\n*E\n"
+    value = "SMAP\nClassReference.kt\nKotlin\n*S Kotlin\n*F\n+ 1 ClassReference.kt\nkotlin/jvm/internal/ClassReference\n+ 2 _Collections.kt\nkotlin/collections/CollectionsKt___CollectionsKt\n+ 3 Maps.kt\nkotlin/collections/MapsKt__MapsKt\n*L\n1#1,205:1\n1557#2:206\n1588#2,4:207\n1251#2,4:211\n1236#2,4:217\n438#3:215\n388#3:216\n*S KotlinDebug\n*F\n+ 1 ClassReference.kt\nkotlin/jvm/internal/ClassReference\n*L\n107#1:206\n107#1:207,4\n155#1:211,4\n163#1:217,4\n163#1:215\n163#1:216\n*E\n"
 .end annotation
 
 
@@ -542,17 +542,9 @@
 
     move-result-object v4
 
-    new-instance v6, Ljava/lang/StringBuilder;
+    const-string v6, ".Companion"
 
-    invoke-direct {v6}, Ljava/lang/StringBuilder;-><init>()V
-
-    invoke-virtual {v6, v2}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
-
-    const-string v2, ".Companion"
-
-    invoke-virtual {v6, v2}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
-
-    invoke-virtual {v6}, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
+    invoke-static {v2, v6}, Lkotlin/jvm/internal/Intrinsics;->stringPlus(Ljava/lang/String;Ljava/lang/Object;)Ljava/lang/String;
 
     move-result-object v2
 
@@ -604,17 +596,13 @@
 
     move-result-object v6
 
-    new-instance v7, Ljava/lang/StringBuilder;
+    invoke-static {v2}, Ljava/lang/Integer;->valueOf(I)Ljava/lang/Integer;
 
-    invoke-direct {v7}, Ljava/lang/StringBuilder;-><init>()V
+    move-result-object v2
 
-    const-string v8, "kotlin.Function"
+    const-string v7, "kotlin.Function"
 
-    invoke-virtual {v7, v8}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
-
-    invoke-virtual {v7, v2}, Ljava/lang/StringBuilder;->append(I)Ljava/lang/StringBuilder;
-
-    invoke-virtual {v7}, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
+    invoke-static {v7, v2}, Lkotlin/jvm/internal/Intrinsics;->stringPlus(Ljava/lang/String;Ljava/lang/Object;)Ljava/lang/String;
 
     move-result-object v2
 
@@ -739,6 +727,24 @@
     return p1
 .end method
 
+.method public getAnnotations()Ljava/util/List;
+    .locals 1
+    .annotation system Ldalvik/annotation/Signature;
+        value = {
+            "()",
+            "Ljava/util/List<",
+            "Ljava/lang/annotation/Annotation;",
+            ">;"
+        }
+    .end annotation
+
+    new-instance v0, Lkotlin/jvm/KotlinReflectionNotSupportedError;
+
+    invoke-direct {v0}, Lkotlin/jvm/KotlinReflectionNotSupportedError;-><init>()V
+
+    throw v0
+.end method
+
 .method public getConstructors()Ljava/util/Collection;
     .locals 1
     .annotation system Ldalvik/annotation/Signature;
@@ -836,7 +842,7 @@
 
     if-eqz v1, :cond_0
 
-    goto :goto_0
+    goto :goto_1
 
     :cond_0
     invoke-virtual {v0}, Ljava/lang/Class;->isLocalClass()Z
@@ -845,7 +851,7 @@
 
     if-eqz v1, :cond_1
 
-    goto :goto_0
+    goto :goto_1
 
     :cond_1
     invoke-virtual {v0}, Ljava/lang/Class;->isArray()Z
@@ -858,15 +864,11 @@
 
     move-result-object v0
 
-    const-string v1, "componentType"
-
-    invoke-static {v0, v1}, Lkotlin/jvm/internal/Intrinsics;->checkNotNullExpressionValue(Ljava/lang/Object;Ljava/lang/String;)V
-
     invoke-virtual {v0}, Ljava/lang/Class;->isPrimitive()Z
 
     move-result v1
 
-    if-eqz v1, :cond_2
+    if-eqz v1, :cond_3
 
     sget-object v1, Lkotlin/jvm/internal/ClassReference;->classFqNames:Ljava/util/HashMap;
 
@@ -880,25 +882,26 @@
 
     check-cast v0, Ljava/lang/String;
 
-    if-eqz v0, :cond_2
+    if-nez v0, :cond_2
 
+    goto :goto_0
+
+    :cond_2
     const-string v1, "Array"
 
-    invoke-static {v0, v1}, Landroidx/appcompat/view/SupportMenuInflater$$ExternalSyntheticOutline0;->m(Ljava/lang/String;Ljava/lang/String;)Ljava/lang/String;
+    invoke-static {v0, v1}, Lkotlin/jvm/internal/Intrinsics;->stringPlus(Ljava/lang/String;Ljava/lang/Object;)Ljava/lang/String;
 
     move-result-object v0
 
     move-object v2, v0
 
-    :cond_2
-    if-eqz v2, :cond_3
-
-    goto :goto_0
-
     :cond_3
+    :goto_0
+    if-nez v2, :cond_5
+
     const-string v2, "kotlin.Array"
 
-    goto :goto_0
+    goto :goto_1
 
     :cond_4
     sget-object v1, Lkotlin/jvm/internal/ClassReference;->classFqNames:Ljava/util/HashMap;
@@ -915,16 +918,14 @@
 
     check-cast v2, Ljava/lang/String;
 
-    if-eqz v2, :cond_5
+    if-nez v2, :cond_5
 
-    goto :goto_0
-
-    :cond_5
     invoke-virtual {v0}, Ljava/lang/Class;->getCanonicalName()Ljava/lang/String;
 
     move-result-object v2
 
-    :goto_0
+    :cond_5
+    :goto_1
     return-object v2
 .end method
 
@@ -965,14 +966,14 @@
 
     const/4 v3, 0x0
 
-    if-eqz v1, :cond_0
-
-    :goto_0
-    move-object v2, v3
-
-    goto/16 :goto_3
+    if-eqz v1, :cond_1
 
     :cond_0
+    move-object v2, v3
+
+    goto/16 :goto_1
+
+    :cond_1
     invoke-virtual {v0}, Ljava/lang/Class;->isLocalClass()Z
 
     move-result v1
@@ -991,99 +992,68 @@
 
     const/4 v5, 0x2
 
-    if-eqz v2, :cond_1
+    if-nez v2, :cond_3
 
-    new-instance v0, Ljava/lang/StringBuilder;
-
-    invoke-direct {v0}, Ljava/lang/StringBuilder;-><init>()V
-
-    invoke-virtual {v2}, Ljava/lang/reflect/Method;->getName()Ljava/lang/String;
-
-    move-result-object v2
-
-    invoke-virtual {v0, v2}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
-
-    invoke-virtual {v0, v4}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
-
-    invoke-virtual {v0}, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
-
-    move-result-object v0
-
-    invoke-static {v1, v0, v3, v5}, Lkotlin/text/StringsKt__StringsKt;->substringAfter$default(Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;I)Ljava/lang/String;
-
-    move-result-object v0
-
-    goto :goto_1
-
-    :cond_1
     invoke-virtual {v0}, Ljava/lang/Class;->getEnclosingConstructor()Ljava/lang/reflect/Constructor;
 
     move-result-object v0
 
-    if-eqz v0, :cond_2
+    if-nez v0, :cond_2
 
-    new-instance v2, Ljava/lang/StringBuilder;
-
-    invoke-direct {v2}, Ljava/lang/StringBuilder;-><init>()V
-
-    invoke-virtual {v0}, Ljava/lang/reflect/Constructor;->getName()Ljava/lang/String;
-
-    move-result-object v0
-
-    invoke-virtual {v2, v0}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
-
-    invoke-virtual {v2, v4}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
-
-    invoke-virtual {v2}, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
-
-    move-result-object v0
-
-    invoke-static {v1, v0, v3, v5}, Lkotlin/text/StringsKt__StringsKt;->substringAfter$default(Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;I)Ljava/lang/String;
-
-    move-result-object v0
-
-    :goto_1
-    move-object v2, v0
-
-    goto :goto_2
-
-    :cond_2
-    move-object v2, v3
-
-    :goto_2
-    if-eqz v2, :cond_3
-
-    goto :goto_3
-
-    :cond_3
     const/16 v0, 0x24
 
     invoke-static {v1, v0, v3, v5}, Lkotlin/text/StringsKt__StringsKt;->substringAfter$default(Ljava/lang/String;CLjava/lang/String;I)Ljava/lang/String;
 
     move-result-object v2
 
-    goto :goto_3
+    goto :goto_1
+
+    :cond_2
+    invoke-virtual {v0}, Ljava/lang/reflect/Constructor;->getName()Ljava/lang/String;
+
+    move-result-object v0
+
+    invoke-static {v0, v4}, Lkotlin/jvm/internal/Intrinsics;->stringPlus(Ljava/lang/String;Ljava/lang/Object;)Ljava/lang/String;
+
+    move-result-object v0
+
+    invoke-static {v1, v0, v3, v5}, Lkotlin/text/StringsKt__StringsKt;->substringAfter$default(Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;I)Ljava/lang/String;
+
+    move-result-object v2
+
+    goto :goto_1
+
+    :cond_3
+    invoke-virtual {v2}, Ljava/lang/reflect/Method;->getName()Ljava/lang/String;
+
+    move-result-object v0
+
+    invoke-static {v0, v4}, Lkotlin/jvm/internal/Intrinsics;->stringPlus(Ljava/lang/String;Ljava/lang/Object;)Ljava/lang/String;
+
+    move-result-object v0
+
+    invoke-static {v1, v0, v3, v5}, Lkotlin/text/StringsKt__StringsKt;->substringAfter$default(Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;I)Ljava/lang/String;
+
+    move-result-object v2
+
+    goto :goto_1
 
     :cond_4
     invoke-virtual {v0}, Ljava/lang/Class;->isArray()Z
 
     move-result v1
 
-    if-eqz v1, :cond_6
+    if-eqz v1, :cond_7
 
     invoke-virtual {v0}, Ljava/lang/Class;->getComponentType()Ljava/lang/Class;
 
     move-result-object v0
 
-    const-string v1, "componentType"
-
-    invoke-static {v0, v1}, Lkotlin/jvm/internal/Intrinsics;->checkNotNullExpressionValue(Ljava/lang/Object;Ljava/lang/String;)V
-
     invoke-virtual {v0}, Ljava/lang/Class;->isPrimitive()Z
 
     move-result v1
 
-    if-eqz v1, :cond_5
+    if-eqz v1, :cond_6
 
     sget-object v1, Lkotlin/jvm/internal/ClassReference;->simpleNames:Ljava/util/Map;
 
@@ -1099,18 +1069,22 @@
 
     check-cast v0, Ljava/lang/String;
 
-    if-eqz v0, :cond_5
+    if-nez v0, :cond_5
 
-    invoke-static {v0, v2}, Landroidx/appcompat/view/SupportMenuInflater$$ExternalSyntheticOutline0;->m(Ljava/lang/String;Ljava/lang/String;)Ljava/lang/String;
+    goto :goto_0
+
+    :cond_5
+    invoke-static {v0, v2}, Lkotlin/jvm/internal/Intrinsics;->stringPlus(Ljava/lang/String;Ljava/lang/Object;)Ljava/lang/String;
 
     move-result-object v3
 
-    :cond_5
-    if-eqz v3, :cond_8
-
-    goto/16 :goto_0
-
     :cond_6
+    :goto_0
+    if-nez v3, :cond_0
+
+    goto :goto_1
+
+    :cond_7
     sget-object v1, Lkotlin/jvm/internal/ClassReference;->simpleNames:Ljava/util/Map;
 
     invoke-virtual {v0}, Ljava/lang/Class;->getName()Ljava/lang/String;
@@ -1127,18 +1101,61 @@
 
     check-cast v2, Ljava/lang/String;
 
-    if-eqz v2, :cond_7
+    if-nez v2, :cond_8
 
-    goto :goto_3
-
-    :cond_7
     invoke-virtual {v0}, Ljava/lang/Class;->getSimpleName()Ljava/lang/String;
 
     move-result-object v2
 
     :cond_8
-    :goto_3
+    :goto_1
     return-object v2
+.end method
+
+.method public getSupertypes()Ljava/util/List;
+    .locals 1
+    .annotation system Ldalvik/annotation/Signature;
+        value = {
+            "()",
+            "Ljava/util/List<",
+            "Lkotlin/reflect/KType;",
+            ">;"
+        }
+    .end annotation
+
+    new-instance v0, Lkotlin/jvm/KotlinReflectionNotSupportedError;
+
+    invoke-direct {v0}, Lkotlin/jvm/KotlinReflectionNotSupportedError;-><init>()V
+
+    throw v0
+.end method
+
+.method public getTypeParameters()Ljava/util/List;
+    .locals 1
+    .annotation system Ldalvik/annotation/Signature;
+        value = {
+            "()",
+            "Ljava/util/List<",
+            "Lkotlin/reflect/KTypeParameter;",
+            ">;"
+        }
+    .end annotation
+
+    new-instance v0, Lkotlin/jvm/KotlinReflectionNotSupportedError;
+
+    invoke-direct {v0}, Lkotlin/jvm/KotlinReflectionNotSupportedError;-><init>()V
+
+    throw v0
+.end method
+
+.method public getVisibility()Lkotlin/reflect/KVisibility;
+    .locals 1
+
+    new-instance v0, Lkotlin/jvm/KotlinReflectionNotSupportedError;
+
+    invoke-direct {v0}, Lkotlin/jvm/KotlinReflectionNotSupportedError;-><init>()V
+
+    throw v0
 .end method
 
 .method public hashCode()I
@@ -1155,7 +1172,120 @@
     return v0
 .end method
 
+.method public isAbstract()Z
+    .locals 1
+
+    new-instance v0, Lkotlin/jvm/KotlinReflectionNotSupportedError;
+
+    invoke-direct {v0}, Lkotlin/jvm/KotlinReflectionNotSupportedError;-><init>()V
+
+    throw v0
+.end method
+
 .method public isCompanion()Z
+    .locals 1
+
+    new-instance v0, Lkotlin/jvm/KotlinReflectionNotSupportedError;
+
+    invoke-direct {v0}, Lkotlin/jvm/KotlinReflectionNotSupportedError;-><init>()V
+
+    throw v0
+.end method
+
+.method public isData()Z
+    .locals 1
+
+    new-instance v0, Lkotlin/jvm/KotlinReflectionNotSupportedError;
+
+    invoke-direct {v0}, Lkotlin/jvm/KotlinReflectionNotSupportedError;-><init>()V
+
+    throw v0
+.end method
+
+.method public isFinal()Z
+    .locals 1
+
+    new-instance v0, Lkotlin/jvm/KotlinReflectionNotSupportedError;
+
+    invoke-direct {v0}, Lkotlin/jvm/KotlinReflectionNotSupportedError;-><init>()V
+
+    throw v0
+.end method
+
+.method public isFun()Z
+    .locals 1
+
+    new-instance v0, Lkotlin/jvm/KotlinReflectionNotSupportedError;
+
+    invoke-direct {v0}, Lkotlin/jvm/KotlinReflectionNotSupportedError;-><init>()V
+
+    throw v0
+.end method
+
+.method public isInner()Z
+    .locals 1
+
+    new-instance v0, Lkotlin/jvm/KotlinReflectionNotSupportedError;
+
+    invoke-direct {v0}, Lkotlin/jvm/KotlinReflectionNotSupportedError;-><init>()V
+
+    throw v0
+.end method
+
+.method public isInstance(Ljava/lang/Object;)Z
+    .locals 2
+
+    iget-object v0, p0, Lkotlin/jvm/internal/ClassReference;->jClass:Ljava/lang/Class;
+
+    const-string v1, "jClass"
+
+    invoke-static {v0, v1}, Lkotlin/jvm/internal/Intrinsics;->checkNotNullParameter(Ljava/lang/Object;Ljava/lang/String;)V
+
+    sget-object v1, Lkotlin/jvm/internal/ClassReference;->FUNCTION_CLASSES:Ljava/util/Map;
+
+    invoke-interface {v1, v0}, Ljava/util/Map;->get(Ljava/lang/Object;)Ljava/lang/Object;
+
+    move-result-object v1
+
+    check-cast v1, Ljava/lang/Integer;
+
+    if-nez v1, :cond_1
+
+    invoke-virtual {v0}, Ljava/lang/Class;->isPrimitive()Z
+
+    move-result v1
+
+    if-eqz v1, :cond_0
+
+    invoke-static {v0}, Lkotlin/jvm/JvmClassMappingKt;->getKotlinClass(Ljava/lang/Class;)Lkotlin/reflect/KClass;
+
+    move-result-object v0
+
+    invoke-static {v0}, Lkotlin/jvm/JvmClassMappingKt;->getJavaObjectType(Lkotlin/reflect/KClass;)Ljava/lang/Class;
+
+    move-result-object v0
+
+    :cond_0
+    invoke-virtual {v0, p1}, Ljava/lang/Class;->isInstance(Ljava/lang/Object;)Z
+
+    move-result p1
+
+    goto :goto_0
+
+    :cond_1
+    invoke-virtual {v1}, Ljava/lang/Number;->intValue()I
+
+    move-result v0
+
+    invoke-static {p1, v0}, Lkotlin/jvm/internal/TypeIntrinsics;->isFunctionOfArity(Ljava/lang/Object;I)Z
+
+    move-result p1
+
+    :goto_0
+    return p1
+.end method
+
+.method public isOpen()Z
     .locals 1
 
     new-instance v0, Lkotlin/jvm/KotlinReflectionNotSupportedError;
@@ -1175,26 +1305,28 @@
     throw v0
 .end method
 
+.method public isValue()Z
+    .locals 1
+
+    new-instance v0, Lkotlin/jvm/KotlinReflectionNotSupportedError;
+
+    invoke-direct {v0}, Lkotlin/jvm/KotlinReflectionNotSupportedError;-><init>()V
+
+    throw v0
+.end method
+
 .method public toString()Ljava/lang/String;
     .locals 2
 
-    new-instance v0, Ljava/lang/StringBuilder;
+    iget-object v0, p0, Lkotlin/jvm/internal/ClassReference;->jClass:Ljava/lang/Class;
 
-    invoke-direct {v0}, Ljava/lang/StringBuilder;-><init>()V
+    invoke-virtual {v0}, Ljava/lang/Class;->toString()Ljava/lang/String;
 
-    iget-object v1, p0, Lkotlin/jvm/internal/ClassReference;->jClass:Ljava/lang/Class;
-
-    invoke-virtual {v1}, Ljava/lang/Class;->toString()Ljava/lang/String;
-
-    move-result-object v1
-
-    invoke-virtual {v0, v1}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+    move-result-object v0
 
     const-string v1, " (Kotlin reflection is not available)"
 
-    invoke-virtual {v0, v1}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
-
-    invoke-virtual {v0}, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
+    invoke-static {v0, v1}, Lkotlin/jvm/internal/Intrinsics;->stringPlus(Ljava/lang/String;Ljava/lang/Object;)Ljava/lang/String;
 
     move-result-object v0
 

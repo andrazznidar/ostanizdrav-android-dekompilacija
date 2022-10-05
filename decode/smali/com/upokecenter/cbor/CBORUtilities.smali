@@ -4,6 +4,8 @@
 
 
 # static fields
+.field public static final EInteger1970:Lcom/upokecenter/numbers/EInteger;
+
 .field public static final ValueLeapDays:[I
 
 .field public static final ValueLeapToMonth:[I
@@ -16,6 +18,18 @@
 # direct methods
 .method public static constructor <clinit>()V
     .locals 2
+
+    const/16 v0, 0x7b2
+
+    invoke-static {v0}, Lcom/upokecenter/numbers/EInteger;->FromInt32(I)Lcom/upokecenter/numbers/EInteger;
+
+    move-result-object v0
+
+    sput-object v0, Lcom/upokecenter/cbor/CBORUtilities;->EInteger1970:Lcom/upokecenter/numbers/EInteger;
+
+    const v0, 0x15180
+
+    invoke-static {v0}, Lcom/upokecenter/numbers/EInteger;->FromInt32(I)Lcom/upokecenter/numbers/EInteger;
 
     const/16 v0, 0xd
 
@@ -159,9 +173,9 @@
 
     if-eq v5, v6, :cond_4
 
-    aget-byte p0, p0, v4
+    and-int/lit16 p0, v5, 0xff
 
-    aget-byte p1, p1, v4
+    and-int/lit16 p1, v6, 0xff
 
     if-ge p0, p1, :cond_3
 
@@ -203,6 +217,453 @@
 
     :goto_2
     return v0
+.end method
+
+.method public static CheckLesserFields([I)V
+    .locals 6
+
+    const-string v0, "lesserFields"
+
+    invoke-static {p0, v0}, Ljava/util/Objects;->requireNonNull(Ljava/lang/Object;Ljava/lang/String;)Ljava/lang/Object;
+
+    array-length v0, p0
+
+    const/4 v1, 0x7
+
+    if-lt v0, v1, :cond_10
+
+    array-length v0, p0
+
+    if-lt v0, v1, :cond_f
+
+    const/4 v0, 0x0
+
+    aget v1, p0, v0
+
+    const-string v2, ") is not greater or equal to 1"
+
+    const-string v3, "\"month\" ("
+
+    const/4 v4, 0x1
+
+    if-lt v1, v4, :cond_e
+
+    aget v1, p0, v0
+
+    const/16 v5, 0xc
+
+    if-gt v1, v5, :cond_d
+
+    aget v1, p0, v4
+
+    if-lt v1, v4, :cond_c
+
+    aget v1, p0, v4
+
+    const/16 v2, 0x1f
+
+    if-gt v1, v2, :cond_b
+
+    aget v1, p0, v4
+
+    sget-object v2, Lcom/upokecenter/cbor/CBORUtilities;->ValueLeapDays:[I
+
+    aget v0, p0, v0
+
+    aget v0, v2, v0
+
+    if-gt v1, v0, :cond_a
+
+    const/4 v0, 0x2
+
+    aget v1, p0, v0
+
+    const-string v2, "\"hour\" ("
+
+    const-string v3, ") is not greater or equal to 0"
+
+    if-ltz v1, :cond_9
+
+    aget v1, p0, v0
+
+    const/16 v4, 0x17
+
+    if-gt v1, v4, :cond_8
+
+    const/4 v0, 0x3
+
+    aget v1, p0, v0
+
+    const-string v2, "\"minute\" ("
+
+    if-ltz v1, :cond_7
+
+    aget v1, p0, v0
+
+    const-string v4, ") is not less or equal to 59"
+
+    const/16 v5, 0x3b
+
+    if-gt v1, v5, :cond_6
+
+    const/4 v0, 0x4
+
+    aget v1, p0, v0
+
+    const-string v2, "\"second\" ("
+
+    if-ltz v1, :cond_5
+
+    aget v1, p0, v0
+
+    if-gt v1, v5, :cond_4
+
+    const/4 v0, 0x5
+
+    aget v1, p0, v0
+
+    const-string v2, "\"lesserFields[5]\" ("
+
+    if-ltz v1, :cond_3
+
+    aget v1, p0, v0
+
+    const v3, 0x3b9aca00
+
+    if-ge v1, v3, :cond_2
+
+    const/4 v0, 0x6
+
+    aget v1, p0, v0
+
+    const-string v2, "\"lesserFields[6]\" ("
+
+    const/16 v3, -0x59f
+
+    if-lt v1, v3, :cond_1
+
+    aget v1, p0, v0
+
+    const/16 v3, 0x59f
+
+    if-gt v1, v3, :cond_0
+
+    return-void
+
+    :cond_0
+    new-instance v1, Ljava/lang/IllegalArgumentException;
+
+    invoke-static {v2}, Landroid/support/v4/media/RatingCompat$$ExternalSyntheticOutline0;->m(Ljava/lang/String;)Ljava/lang/StringBuilder;
+
+    move-result-object v2
+
+    aget p0, p0, v0
+
+    const-string v0, ") is not less or equal to 1439"
+
+    invoke-static {v2, p0, v0}, Landroidx/camera/core/AutoValue_ImmutableImageInfo$$ExternalSyntheticOutline0;->m(Ljava/lang/StringBuilder;ILjava/lang/String;)Ljava/lang/String;
+
+    move-result-object p0
+
+    invoke-direct {v1, p0}, Ljava/lang/IllegalArgumentException;-><init>(Ljava/lang/String;)V
+
+    throw v1
+
+    :cond_1
+    new-instance v1, Ljava/lang/IllegalArgumentException;
+
+    invoke-static {v2}, Landroid/support/v4/media/RatingCompat$$ExternalSyntheticOutline0;->m(Ljava/lang/String;)Ljava/lang/StringBuilder;
+
+    move-result-object v2
+
+    aget p0, p0, v0
+
+    invoke-virtual {v2, p0}, Ljava/lang/StringBuilder;->append(I)Ljava/lang/StringBuilder;
+
+    const-string p0, ") is not greater or equal to "
+
+    invoke-virtual {v2, p0}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+
+    invoke-virtual {v2, v3}, Ljava/lang/StringBuilder;->append(I)Ljava/lang/StringBuilder;
+
+    invoke-virtual {v2}, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
+
+    move-result-object p0
+
+    invoke-direct {v1, p0}, Ljava/lang/IllegalArgumentException;-><init>(Ljava/lang/String;)V
+
+    throw v1
+
+    :cond_2
+    new-instance v1, Ljava/lang/IllegalArgumentException;
+
+    invoke-static {v2}, Landroid/support/v4/media/RatingCompat$$ExternalSyntheticOutline0;->m(Ljava/lang/String;)Ljava/lang/StringBuilder;
+
+    move-result-object v2
+
+    aget p0, p0, v0
+
+    invoke-virtual {v2, p0}, Ljava/lang/StringBuilder;->append(I)Ljava/lang/StringBuilder;
+
+    const-string p0, ") is not less than "
+
+    invoke-virtual {v2, p0}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+
+    invoke-virtual {v2, v3}, Ljava/lang/StringBuilder;->append(I)Ljava/lang/StringBuilder;
+
+    invoke-virtual {v2}, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
+
+    move-result-object p0
+
+    invoke-direct {v1, p0}, Ljava/lang/IllegalArgumentException;-><init>(Ljava/lang/String;)V
+
+    throw v1
+
+    :cond_3
+    new-instance v1, Ljava/lang/IllegalArgumentException;
+
+    invoke-static {v2}, Landroid/support/v4/media/RatingCompat$$ExternalSyntheticOutline0;->m(Ljava/lang/String;)Ljava/lang/StringBuilder;
+
+    move-result-object v2
+
+    aget p0, p0, v0
+
+    invoke-static {v2, p0, v3}, Landroidx/camera/core/AutoValue_ImmutableImageInfo$$ExternalSyntheticOutline0;->m(Ljava/lang/StringBuilder;ILjava/lang/String;)Ljava/lang/String;
+
+    move-result-object p0
+
+    invoke-direct {v1, p0}, Ljava/lang/IllegalArgumentException;-><init>(Ljava/lang/String;)V
+
+    throw v1
+
+    :cond_4
+    new-instance v1, Ljava/lang/IllegalArgumentException;
+
+    invoke-static {v2}, Landroid/support/v4/media/RatingCompat$$ExternalSyntheticOutline0;->m(Ljava/lang/String;)Ljava/lang/StringBuilder;
+
+    move-result-object v2
+
+    aget p0, p0, v0
+
+    invoke-static {v2, p0, v4}, Landroidx/camera/core/AutoValue_ImmutableImageInfo$$ExternalSyntheticOutline0;->m(Ljava/lang/StringBuilder;ILjava/lang/String;)Ljava/lang/String;
+
+    move-result-object p0
+
+    invoke-direct {v1, p0}, Ljava/lang/IllegalArgumentException;-><init>(Ljava/lang/String;)V
+
+    throw v1
+
+    :cond_5
+    new-instance v1, Ljava/lang/IllegalArgumentException;
+
+    invoke-static {v2}, Landroid/support/v4/media/RatingCompat$$ExternalSyntheticOutline0;->m(Ljava/lang/String;)Ljava/lang/StringBuilder;
+
+    move-result-object v2
+
+    aget p0, p0, v0
+
+    invoke-static {v2, p0, v3}, Landroidx/camera/core/AutoValue_ImmutableImageInfo$$ExternalSyntheticOutline0;->m(Ljava/lang/StringBuilder;ILjava/lang/String;)Ljava/lang/String;
+
+    move-result-object p0
+
+    invoke-direct {v1, p0}, Ljava/lang/IllegalArgumentException;-><init>(Ljava/lang/String;)V
+
+    throw v1
+
+    :cond_6
+    new-instance v1, Ljava/lang/IllegalArgumentException;
+
+    invoke-static {v2}, Landroid/support/v4/media/RatingCompat$$ExternalSyntheticOutline0;->m(Ljava/lang/String;)Ljava/lang/StringBuilder;
+
+    move-result-object v2
+
+    aget p0, p0, v0
+
+    invoke-static {v2, p0, v4}, Landroidx/camera/core/AutoValue_ImmutableImageInfo$$ExternalSyntheticOutline0;->m(Ljava/lang/StringBuilder;ILjava/lang/String;)Ljava/lang/String;
+
+    move-result-object p0
+
+    invoke-direct {v1, p0}, Ljava/lang/IllegalArgumentException;-><init>(Ljava/lang/String;)V
+
+    throw v1
+
+    :cond_7
+    new-instance v1, Ljava/lang/IllegalArgumentException;
+
+    invoke-static {v2}, Landroid/support/v4/media/RatingCompat$$ExternalSyntheticOutline0;->m(Ljava/lang/String;)Ljava/lang/StringBuilder;
+
+    move-result-object v2
+
+    aget p0, p0, v0
+
+    invoke-static {v2, p0, v3}, Landroidx/camera/core/AutoValue_ImmutableImageInfo$$ExternalSyntheticOutline0;->m(Ljava/lang/StringBuilder;ILjava/lang/String;)Ljava/lang/String;
+
+    move-result-object p0
+
+    invoke-direct {v1, p0}, Ljava/lang/IllegalArgumentException;-><init>(Ljava/lang/String;)V
+
+    throw v1
+
+    :cond_8
+    new-instance v1, Ljava/lang/IllegalArgumentException;
+
+    invoke-static {v2}, Landroid/support/v4/media/RatingCompat$$ExternalSyntheticOutline0;->m(Ljava/lang/String;)Ljava/lang/StringBuilder;
+
+    move-result-object v2
+
+    aget p0, p0, v0
+
+    const-string v0, ") is not less or equal to 23"
+
+    invoke-static {v2, p0, v0}, Landroidx/camera/core/AutoValue_ImmutableImageInfo$$ExternalSyntheticOutline0;->m(Ljava/lang/StringBuilder;ILjava/lang/String;)Ljava/lang/String;
+
+    move-result-object p0
+
+    invoke-direct {v1, p0}, Ljava/lang/IllegalArgumentException;-><init>(Ljava/lang/String;)V
+
+    throw v1
+
+    :cond_9
+    new-instance v1, Ljava/lang/IllegalArgumentException;
+
+    invoke-static {v2}, Landroid/support/v4/media/RatingCompat$$ExternalSyntheticOutline0;->m(Ljava/lang/String;)Ljava/lang/StringBuilder;
+
+    move-result-object v2
+
+    aget p0, p0, v0
+
+    invoke-static {v2, p0, v3}, Landroidx/camera/core/AutoValue_ImmutableImageInfo$$ExternalSyntheticOutline0;->m(Ljava/lang/StringBuilder;ILjava/lang/String;)Ljava/lang/String;
+
+    move-result-object p0
+
+    invoke-direct {v1, p0}, Ljava/lang/IllegalArgumentException;-><init>(Ljava/lang/String;)V
+
+    throw v1
+
+    :cond_a
+    new-instance p0, Ljava/lang/IllegalArgumentException;
+
+    invoke-direct {p0}, Ljava/lang/IllegalArgumentException;-><init>()V
+
+    throw p0
+
+    :cond_b
+    new-instance v0, Ljava/lang/IllegalArgumentException;
+
+    const-string v1, "\"day\" ("
+
+    invoke-static {v1}, Landroid/support/v4/media/RatingCompat$$ExternalSyntheticOutline0;->m(Ljava/lang/String;)Ljava/lang/StringBuilder;
+
+    move-result-object v1
+
+    aget p0, p0, v4
+
+    const-string v2, ") is not less or equal to 31"
+
+    invoke-static {v1, p0, v2}, Landroidx/camera/core/AutoValue_ImmutableImageInfo$$ExternalSyntheticOutline0;->m(Ljava/lang/StringBuilder;ILjava/lang/String;)Ljava/lang/String;
+
+    move-result-object p0
+
+    invoke-direct {v0, p0}, Ljava/lang/IllegalArgumentException;-><init>(Ljava/lang/String;)V
+
+    throw v0
+
+    :cond_c
+    new-instance v0, Ljava/lang/IllegalArgumentException;
+
+    const-string v1, "\"intDay\" ("
+
+    invoke-static {v1}, Landroid/support/v4/media/RatingCompat$$ExternalSyntheticOutline0;->m(Ljava/lang/String;)Ljava/lang/StringBuilder;
+
+    move-result-object v1
+
+    aget p0, p0, v4
+
+    invoke-static {v1, p0, v2}, Landroidx/camera/core/AutoValue_ImmutableImageInfo$$ExternalSyntheticOutline0;->m(Ljava/lang/StringBuilder;ILjava/lang/String;)Ljava/lang/String;
+
+    move-result-object p0
+
+    invoke-direct {v0, p0}, Ljava/lang/IllegalArgumentException;-><init>(Ljava/lang/String;)V
+
+    throw v0
+
+    :cond_d
+    new-instance v1, Ljava/lang/IllegalArgumentException;
+
+    invoke-static {v3}, Landroid/support/v4/media/RatingCompat$$ExternalSyntheticOutline0;->m(Ljava/lang/String;)Ljava/lang/StringBuilder;
+
+    move-result-object v2
+
+    aget p0, p0, v0
+
+    const-string v0, ") is not less or equal to 12"
+
+    invoke-static {v2, p0, v0}, Landroidx/camera/core/AutoValue_ImmutableImageInfo$$ExternalSyntheticOutline0;->m(Ljava/lang/StringBuilder;ILjava/lang/String;)Ljava/lang/String;
+
+    move-result-object p0
+
+    invoke-direct {v1, p0}, Ljava/lang/IllegalArgumentException;-><init>(Ljava/lang/String;)V
+
+    throw v1
+
+    :cond_e
+    new-instance v1, Ljava/lang/IllegalArgumentException;
+
+    invoke-static {v3}, Landroid/support/v4/media/RatingCompat$$ExternalSyntheticOutline0;->m(Ljava/lang/String;)Ljava/lang/StringBuilder;
+
+    move-result-object v3
+
+    aget p0, p0, v0
+
+    invoke-static {v3, p0, v2}, Landroidx/camera/core/AutoValue_ImmutableImageInfo$$ExternalSyntheticOutline0;->m(Ljava/lang/StringBuilder;ILjava/lang/String;)Ljava/lang/String;
+
+    move-result-object p0
+
+    invoke-direct {v1, p0}, Ljava/lang/IllegalArgumentException;-><init>(Ljava/lang/String;)V
+
+    throw v1
+
+    :cond_f
+    new-instance v0, Ljava/lang/IllegalArgumentException;
+
+    const-string v1, "\"lesserFields\" + \"\'s length\" ("
+
+    invoke-static {v1}, Landroid/support/v4/media/RatingCompat$$ExternalSyntheticOutline0;->m(Ljava/lang/String;)Ljava/lang/StringBuilder;
+
+    move-result-object v1
+
+    array-length p0, p0
+
+    const-string v2, ") is not greater or equal to 7"
+
+    invoke-static {v1, p0, v2}, Landroidx/camera/core/AutoValue_ImmutableImageInfo$$ExternalSyntheticOutline0;->m(Ljava/lang/StringBuilder;ILjava/lang/String;)Ljava/lang/String;
+
+    move-result-object p0
+
+    invoke-direct {v0, p0}, Ljava/lang/IllegalArgumentException;-><init>(Ljava/lang/String;)V
+
+    throw v0
+
+    :cond_10
+    new-instance v0, Ljava/lang/IllegalArgumentException;
+
+    const-string v1, " (7) is not less or equal to "
+
+    invoke-static {v1}, Landroid/support/v4/media/RatingCompat$$ExternalSyntheticOutline0;->m(Ljava/lang/String;)Ljava/lang/StringBuilder;
+
+    move-result-object v1
+
+    array-length p0, p0
+
+    invoke-virtual {v1, p0}, Ljava/lang/StringBuilder;->append(I)Ljava/lang/StringBuilder;
+
+    invoke-virtual {v1}, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
+
+    move-result-object p0
+
+    invoke-direct {v0, p0}, Ljava/lang/IllegalArgumentException;-><init>(Ljava/lang/String;)V
+
+    throw v0
 .end method
 
 .method public static CheckUtf8([B)Z
@@ -263,6 +724,451 @@
     add-int/lit8 v1, v1, 0x1
 
     goto :goto_0
+.end method
+
+.method public static CompareStringsAsUtf8LengthFirst(Ljava/lang/String;Ljava/lang/String;)I
+    .locals 24
+
+    move-object/from16 v0, p0
+
+    move-object/from16 v1, p1
+
+    const/4 v2, -0x1
+
+    const/4 v3, 0x0
+
+    if-nez v0, :cond_1
+
+    if-nez v1, :cond_0
+
+    move v2, v3
+
+    :cond_0
+    return v2
+
+    :cond_1
+    const/4 v4, 0x1
+
+    if-nez v1, :cond_2
+
+    return v4
+
+    :cond_2
+    invoke-virtual/range {p0 .. p0}, Ljava/lang/String;->length()I
+
+    move-result v5
+
+    invoke-virtual/range {p1 .. p1}, Ljava/lang/String;->length()I
+
+    move-result v6
+
+    if-nez v5, :cond_4
+
+    if-nez v6, :cond_3
+
+    move v2, v3
+
+    :cond_3
+    return v2
+
+    :cond_4
+    if-nez v6, :cond_6
+
+    if-nez v5, :cond_5
+
+    goto :goto_0
+
+    :cond_5
+    move v3, v4
+
+    :goto_0
+    return v3
+
+    :cond_6
+    const/16 v7, 0x80
+
+    if-ge v5, v7, :cond_13
+
+    if-ge v6, v7, :cond_13
+
+    mul-int/lit8 v8, v5, 0x3
+
+    if-ge v8, v6, :cond_7
+
+    return v2
+
+    :cond_7
+    mul-int/lit8 v8, v6, 0x3
+
+    if-ge v8, v5, :cond_8
+
+    return v4
+
+    :cond_8
+    move v8, v3
+
+    if-ne v5, v6, :cond_c
+
+    :goto_1
+    if-ge v8, v5, :cond_b
+
+    invoke-virtual {v0, v8}, Ljava/lang/String;->charAt(I)C
+
+    move-result v9
+
+    invoke-virtual {v1, v8}, Ljava/lang/String;->charAt(I)C
+
+    move-result v10
+
+    if-eq v9, v10, :cond_a
+
+    if-ge v9, v10, :cond_9
+
+    move v8, v2
+
+    goto :goto_2
+
+    :cond_9
+    move v8, v4
+
+    :goto_2
+    move v9, v3
+
+    goto :goto_3
+
+    :cond_a
+    add-int/lit8 v8, v8, 0x1
+
+    goto :goto_1
+
+    :cond_b
+    move v8, v3
+
+    move v9, v4
+
+    :goto_3
+    if-eqz v9, :cond_c
+
+    return v3
+
+    :cond_c
+    move v9, v3
+
+    :goto_4
+    if-ge v9, v5, :cond_e
+
+    invoke-virtual {v0, v9}, Ljava/lang/String;->charAt(I)C
+
+    move-result v10
+
+    if-lt v10, v7, :cond_d
+
+    move v9, v4
+
+    goto :goto_5
+
+    :cond_d
+    add-int/lit8 v9, v9, 0x1
+
+    goto :goto_4
+
+    :cond_e
+    move v9, v3
+
+    :goto_5
+    move v10, v3
+
+    :goto_6
+    if-ge v10, v6, :cond_10
+
+    invoke-virtual {v1, v10}, Ljava/lang/String;->charAt(I)C
+
+    move-result v11
+
+    if-lt v11, v7, :cond_f
+
+    move v9, v4
+
+    goto :goto_7
+
+    :cond_f
+    add-int/lit8 v10, v10, 0x1
+
+    goto :goto_6
+
+    :cond_10
+    :goto_7
+    if-nez v9, :cond_15
+
+    if-eq v5, v6, :cond_12
+
+    if-ge v5, v6, :cond_11
+
+    goto :goto_8
+
+    :cond_11
+    move v2, v4
+
+    :goto_8
+    return v2
+
+    :cond_12
+    if-ne v5, v6, :cond_15
+
+    return v8
+
+    :cond_13
+    mul-int/lit8 v8, v5, 0x3
+
+    int-to-long v8, v8
+
+    int-to-long v10, v6
+
+    cmp-long v8, v8, v10
+
+    if-gez v8, :cond_14
+
+    return v2
+
+    :cond_14
+    mul-int/lit8 v8, v6, 0x3
+
+    int-to-long v8, v8
+
+    int-to-long v10, v5
+
+    cmp-long v8, v8, v10
+
+    if-gez v8, :cond_15
+
+    return v4
+
+    :cond_15
+    const-wide/16 v8, 0x0
+
+    move v12, v3
+
+    move v13, v12
+
+    move v14, v13
+
+    move v15, v4
+
+    move-wide v10, v8
+
+    :goto_9
+    const-wide/16 v16, 0x2
+
+    const-wide/16 v18, 0x1
+
+    const-wide/16 v20, 0x3
+
+    const-wide/16 v22, 0x4
+
+    const/16 v3, 0x800
+
+    const/high16 v7, 0x10000
+
+    if-ne v12, v5, :cond_19
+
+    cmp-long v15, v8, v10
+
+    if-lez v15, :cond_16
+
+    return v2
+
+    :cond_16
+    if-ne v13, v6, :cond_17
+
+    goto :goto_c
+
+    :cond_17
+    if-nez v14, :cond_18
+
+    move v14, v2
+
+    :cond_18
+    const/4 v2, 0x0
+
+    const/4 v15, 0x0
+
+    goto :goto_b
+
+    :cond_19
+    invoke-static {v0, v12, v4}, Lcom/upokecenter/util/DataUtilities;->CodePointAt(Ljava/lang/String;II)I
+
+    move-result v2
+
+    if-ltz v2, :cond_29
+
+    if-lt v2, v7, :cond_1a
+
+    add-long v10, v10, v22
+
+    add-int/lit8 v12, v12, 0x2
+
+    goto :goto_b
+
+    :cond_1a
+    if-lt v2, v3, :cond_1b
+
+    add-long v10, v10, v20
+
+    :goto_a
+    add-int/lit8 v12, v12, 0x1
+
+    goto :goto_b
+
+    :cond_1b
+    const/16 v3, 0x80
+
+    if-lt v2, v3, :cond_1c
+
+    add-long v10, v10, v16
+
+    goto :goto_a
+
+    :cond_1c
+    add-long v10, v10, v18
+
+    goto :goto_a
+
+    :goto_b
+    if-ne v13, v6, :cond_22
+
+    cmp-long v3, v10, v8
+
+    if-lez v3, :cond_1d
+
+    return v4
+
+    :cond_1d
+    if-ne v12, v5, :cond_20
+
+    :goto_c
+    cmp-long v0, v10, v8
+
+    if-eqz v0, :cond_1f
+
+    if-gez v0, :cond_1e
+
+    const/4 v2, -0x1
+
+    goto :goto_d
+
+    :cond_1e
+    move v2, v4
+
+    goto :goto_d
+
+    :cond_1f
+    move v2, v14
+
+    :goto_d
+    return v2
+
+    :cond_20
+    if-nez v14, :cond_21
+
+    move v14, v4
+
+    :cond_21
+    const/4 v3, 0x0
+
+    const/16 v7, 0x80
+
+    const/4 v15, 0x0
+
+    goto :goto_f
+
+    :cond_22
+    invoke-static {v1, v13, v4}, Lcom/upokecenter/util/DataUtilities;->CodePointAt(Ljava/lang/String;II)I
+
+    move-result v3
+
+    if-ltz v3, :cond_28
+
+    if-lt v3, v7, :cond_23
+
+    add-long v8, v8, v22
+
+    add-int/lit8 v13, v13, 0x2
+
+    :goto_e
+    const/16 v7, 0x80
+
+    goto :goto_f
+
+    :cond_23
+    const/16 v7, 0x800
+
+    if-lt v3, v7, :cond_24
+
+    add-long v8, v8, v20
+
+    add-int/lit8 v13, v13, 0x1
+
+    goto :goto_e
+
+    :cond_24
+    const/16 v7, 0x80
+
+    if-lt v3, v7, :cond_25
+
+    add-int/lit8 v13, v13, 0x1
+
+    add-long v8, v8, v16
+
+    goto :goto_f
+
+    :cond_25
+    add-int/lit8 v13, v13, 0x1
+
+    add-long v8, v8, v18
+
+    :goto_f
+    if-eqz v15, :cond_27
+
+    if-nez v14, :cond_27
+
+    if-eq v2, v3, :cond_27
+
+    if-ge v2, v3, :cond_26
+
+    const/4 v2, -0x1
+
+    goto :goto_10
+
+    :cond_26
+    move v2, v4
+
+    :goto_10
+    move v14, v2
+
+    :cond_27
+    const/4 v2, -0x1
+
+    const/4 v3, 0x0
+
+    goto/16 :goto_9
+
+    :cond_28
+    new-instance v0, Ljava/lang/IllegalArgumentException;
+
+    const-string/jumbo v1, "strB has unpaired surrogate"
+
+    invoke-direct {v0, v1}, Ljava/lang/IllegalArgumentException;-><init>(Ljava/lang/String;)V
+
+    throw v0
+
+    :cond_29
+    new-instance v0, Ljava/lang/IllegalArgumentException;
+
+    const-string/jumbo v1, "strA has unpaired surrogate"
+
+    invoke-direct {v0, v1}, Ljava/lang/IllegalArgumentException;-><init>(Ljava/lang/String;)V
+
+    throw v0
 .end method
 
 .method public static CompareUtf16Utf8LengthFirst(Ljava/lang/String;[B)I
@@ -575,1310 +1481,6 @@
     throw v0
 .end method
 
-.method public static DateTimeToIntegerOrDouble(Lcom/upokecenter/numbers/EInteger;[I[I)Lcom/upokecenter/numbers/EFloat;
-    .locals 20
-
-    move-object/from16 v0, p0
-
-    move-object/from16 v1, p1
-
-    move-object/from16 v2, p2
-
-    array-length v3, v1
-
-    const/4 v4, 0x7
-
-    if-lt v3, v4, :cond_2e
-
-    array-length v3, v1
-
-    if-lt v3, v4, :cond_2d
-
-    array-length v3, v2
-
-    const/4 v4, 0x1
-
-    if-lt v3, v4, :cond_2c
-
-    array-length v3, v2
-
-    if-lt v3, v4, :cond_2b
-
-    const/4 v3, 0x6
-
-    aget v3, v1, v3
-
-    if-nez v3, :cond_2a
-
-    const/4 v3, 0x0
-
-    aget v5, v1, v3
-
-    aget v6, v1, v4
-
-    if-lez v5, :cond_29
-
-    const/16 v7, 0xc
-
-    if-gt v5, v7, :cond_29
-
-    if-lez v6, :cond_28
-
-    const/16 v7, 0x1f
-
-    if-gt v6, v7, :cond_28
-
-    invoke-static {v3}, Lcom/upokecenter/numbers/EInteger;->FromInt32(I)Lcom/upokecenter/numbers/EInteger;
-
-    move-result-object v3
-
-    const/16 v7, 0x7b2
-
-    invoke-virtual {v0, v7}, Lcom/upokecenter/numbers/EInteger;->compareTo(I)I
-
-    move-result v8
-
-    const v9, 0x23ab1
-
-    const/16 v10, 0x16d
-
-    const/16 v11, 0x191
-
-    const/16 v12, 0x190
-
-    const/4 v13, 0x4
-
-    const/16 v14, 0x64
-
-    const/4 v15, 0x3
-
-    if-gez v8, :cond_7
-
-    const/16 v7, 0x7b1
-
-    invoke-static {v7}, Lcom/upokecenter/numbers/EInteger;->FromInt32(I)Lcom/upokecenter/numbers/EInteger;
-
-    move-result-object v7
-
-    invoke-virtual {v7, v0}, Lcom/upokecenter/numbers/EInteger;->Subtract(Lcom/upokecenter/numbers/EInteger;)Lcom/upokecenter/numbers/EInteger;
-
-    move-result-object v8
-
-    invoke-virtual {v8, v11}, Lcom/upokecenter/numbers/EInteger;->compareTo(I)I
-
-    move-result v16
-
-    if-lez v16, :cond_0
-
-    invoke-virtual {v8, v11}, Lcom/upokecenter/numbers/EInteger;->Subtract(I)Lcom/upokecenter/numbers/EInteger;
-
-    move-result-object v11
-
-    invoke-virtual {v11, v12}, Lcom/upokecenter/numbers/EInteger;->Divide(I)Lcom/upokecenter/numbers/EInteger;
-
-    move-result-object v11
-
-    invoke-virtual {v11, v9}, Lcom/upokecenter/numbers/EInteger;->Multiply(I)Lcom/upokecenter/numbers/EInteger;
-
-    move-result-object v9
-
-    invoke-virtual {v3, v9}, Lcom/upokecenter/numbers/EInteger;->Subtract(Lcom/upokecenter/numbers/EInteger;)Lcom/upokecenter/numbers/EInteger;
-
-    move-result-object v3
-
-    invoke-virtual {v11, v12}, Lcom/upokecenter/numbers/EInteger;->Multiply(I)Lcom/upokecenter/numbers/EInteger;
-
-    move-result-object v9
-
-    invoke-virtual {v8, v9}, Lcom/upokecenter/numbers/EInteger;->Subtract(Lcom/upokecenter/numbers/EInteger;)Lcom/upokecenter/numbers/EInteger;
-
-    move-result-object v8
-
-    invoke-virtual {v11, v12}, Lcom/upokecenter/numbers/EInteger;->Multiply(I)Lcom/upokecenter/numbers/EInteger;
-
-    move-result-object v9
-
-    invoke-virtual {v7, v9}, Lcom/upokecenter/numbers/EInteger;->Subtract(Lcom/upokecenter/numbers/EInteger;)Lcom/upokecenter/numbers/EInteger;
-
-    move-result-object v7
-
-    :cond_0
-    invoke-virtual {v8, v10}, Lcom/upokecenter/numbers/EInteger;->Multiply(I)Lcom/upokecenter/numbers/EInteger;
-
-    move-result-object v8
-
-    invoke-virtual {v3, v8}, Lcom/upokecenter/numbers/EInteger;->Subtract(Lcom/upokecenter/numbers/EInteger;)Lcom/upokecenter/numbers/EInteger;
-
-    move-result-object v3
-
-    move v8, v4
-
-    :goto_0
-    invoke-virtual {v7, v0}, Lcom/upokecenter/numbers/EInteger;->compareTo(Lcom/upokecenter/numbers/EInteger;)I
-
-    move-result v9
-
-    if-lez v9, :cond_4
-
-    if-ne v8, v4, :cond_1
-
-    invoke-virtual {v7, v13}, Lcom/upokecenter/numbers/EInteger;->Remainder(I)Lcom/upokecenter/numbers/EInteger;
-
-    move-result-object v9
-
-    invoke-virtual {v9}, Lcom/upokecenter/numbers/EInteger;->signum()I
-
-    move-result v9
-
-    if-nez v9, :cond_1
-
-    move v8, v13
-
-    :cond_1
-    invoke-virtual {v7, v13}, Lcom/upokecenter/numbers/EInteger;->Remainder(I)Lcom/upokecenter/numbers/EInteger;
-
-    move-result-object v9
-
-    invoke-virtual {v9}, Lcom/upokecenter/numbers/EInteger;->signum()I
-
-    move-result v9
-
-    if-nez v9, :cond_3
-
-    invoke-virtual {v7, v14}, Lcom/upokecenter/numbers/EInteger;->Remainder(I)Lcom/upokecenter/numbers/EInteger;
-
-    move-result-object v9
-
-    invoke-virtual {v9}, Lcom/upokecenter/numbers/EInteger;->signum()I
-
-    move-result v9
-
-    if-nez v9, :cond_2
-
-    invoke-virtual {v7, v12}, Lcom/upokecenter/numbers/EInteger;->Remainder(I)Lcom/upokecenter/numbers/EInteger;
-
-    move-result-object v9
-
-    invoke-virtual {v9}, Lcom/upokecenter/numbers/EInteger;->signum()I
-
-    move-result v9
-
-    if-nez v9, :cond_3
-
-    :cond_2
-    invoke-virtual {v3, v4}, Lcom/upokecenter/numbers/EInteger;->Subtract(I)Lcom/upokecenter/numbers/EInteger;
-
-    move-result-object v3
-
-    :cond_3
-    invoke-virtual {v7, v8}, Lcom/upokecenter/numbers/EInteger;->Subtract(I)Lcom/upokecenter/numbers/EInteger;
-
-    move-result-object v7
-
-    goto :goto_0
-
-    :cond_4
-    invoke-virtual {v0, v13}, Lcom/upokecenter/numbers/EInteger;->Remainder(I)Lcom/upokecenter/numbers/EInteger;
-
-    move-result-object v7
-
-    invoke-virtual {v7}, Lcom/upokecenter/numbers/EInteger;->signum()I
-
-    move-result v7
-
-    if-nez v7, :cond_6
-
-    invoke-virtual {v0, v14}, Lcom/upokecenter/numbers/EInteger;->Remainder(I)Lcom/upokecenter/numbers/EInteger;
-
-    move-result-object v7
-
-    invoke-virtual {v7}, Lcom/upokecenter/numbers/EInteger;->signum()I
-
-    move-result v7
-
-    if-nez v7, :cond_5
-
-    invoke-virtual {v0, v12}, Lcom/upokecenter/numbers/EInteger;->Remainder(I)Lcom/upokecenter/numbers/EInteger;
-
-    move-result-object v0
-
-    invoke-virtual {v0}, Lcom/upokecenter/numbers/EInteger;->signum()I
-
-    move-result v0
-
-    if-eqz v0, :cond_5
-
-    goto :goto_1
-
-    :cond_5
-    sget-object v0, Lcom/upokecenter/cbor/CBORUtilities;->ValueLeapToMonth:[I
-
-    aget v0, v0, v5
-
-    rsub-int v0, v0, 0x16e
-
-    invoke-virtual {v3, v0}, Lcom/upokecenter/numbers/EInteger;->Subtract(I)Lcom/upokecenter/numbers/EInteger;
-
-    move-result-object v0
-
-    sget-object v3, Lcom/upokecenter/cbor/CBORUtilities;->ValueLeapDays:[I
-
-    aget v3, v3, v5
-
-    sub-int/2addr v3, v6
-
-    add-int/2addr v3, v4
-
-    invoke-virtual {v0, v3}, Lcom/upokecenter/numbers/EInteger;->Subtract(I)Lcom/upokecenter/numbers/EInteger;
-
-    move-result-object v0
-
-    goto/16 :goto_6
-
-    :cond_6
-    :goto_1
-    sget-object v0, Lcom/upokecenter/cbor/CBORUtilities;->ValueNormalToMonth:[I
-
-    aget v0, v0, v5
-
-    sub-int/2addr v10, v0
-
-    invoke-virtual {v3, v10}, Lcom/upokecenter/numbers/EInteger;->Subtract(I)Lcom/upokecenter/numbers/EInteger;
-
-    move-result-object v0
-
-    sget-object v3, Lcom/upokecenter/cbor/CBORUtilities;->ValueNormalDays:[I
-
-    aget v3, v3, v5
-
-    sub-int/2addr v3, v6
-
-    add-int/2addr v3, v4
-
-    invoke-virtual {v0, v3}, Lcom/upokecenter/numbers/EInteger;->Subtract(I)Lcom/upokecenter/numbers/EInteger;
-
-    move-result-object v0
-
-    goto/16 :goto_6
-
-    :cond_7
-    invoke-virtual {v0, v13}, Lcom/upokecenter/numbers/EInteger;->Remainder(I)Lcom/upokecenter/numbers/EInteger;
-
-    move-result-object v8
-
-    invoke-virtual {v8}, Lcom/upokecenter/numbers/EInteger;->signum()I
-
-    move-result v8
-
-    if-nez v8, :cond_9
-
-    invoke-virtual {v0, v14}, Lcom/upokecenter/numbers/EInteger;->Remainder(I)Lcom/upokecenter/numbers/EInteger;
-
-    move-result-object v8
-
-    invoke-virtual {v8}, Lcom/upokecenter/numbers/EInteger;->signum()I
-
-    move-result v8
-
-    if-nez v8, :cond_8
-
-    invoke-virtual {v0, v12}, Lcom/upokecenter/numbers/EInteger;->Remainder(I)Lcom/upokecenter/numbers/EInteger;
-
-    move-result-object v8
-
-    invoke-virtual {v8}, Lcom/upokecenter/numbers/EInteger;->signum()I
-
-    move-result v8
-
-    if-eqz v8, :cond_8
-
-    goto :goto_2
-
-    :cond_8
-    const/4 v4, 0x0
-
-    :cond_9
-    :goto_2
-    invoke-static {v7}, Lcom/upokecenter/numbers/EInteger;->FromInt32(I)Lcom/upokecenter/numbers/EInteger;
-
-    move-result-object v8
-
-    invoke-virtual {v8, v11}, Lcom/upokecenter/numbers/EInteger;->Add(I)Lcom/upokecenter/numbers/EInteger;
-
-    move-result-object v11
-
-    invoke-virtual {v11, v0}, Lcom/upokecenter/numbers/EInteger;->compareTo(Lcom/upokecenter/numbers/EInteger;)I
-
-    move-result v11
-
-    if-gez v11, :cond_a
-
-    const/4 v8, 0x2
-
-    invoke-virtual {v0, v8}, Lcom/upokecenter/numbers/EInteger;->Subtract(I)Lcom/upokecenter/numbers/EInteger;
-
-    move-result-object v8
-
-    invoke-virtual {v8, v7}, Lcom/upokecenter/numbers/EInteger;->Subtract(I)Lcom/upokecenter/numbers/EInteger;
-
-    move-result-object v11
-
-    invoke-virtual {v11, v12}, Lcom/upokecenter/numbers/EInteger;->Divide(I)Lcom/upokecenter/numbers/EInteger;
-
-    move-result-object v11
-
-    invoke-virtual {v11, v9}, Lcom/upokecenter/numbers/EInteger;->Multiply(I)Lcom/upokecenter/numbers/EInteger;
-
-    move-result-object v9
-
-    invoke-virtual {v3, v9}, Lcom/upokecenter/numbers/EInteger;->Add(Lcom/upokecenter/numbers/EInteger;)Lcom/upokecenter/numbers/EInteger;
-
-    move-result-object v3
-
-    invoke-virtual {v8, v7}, Lcom/upokecenter/numbers/EInteger;->Subtract(I)Lcom/upokecenter/numbers/EInteger;
-
-    move-result-object v7
-
-    invoke-virtual {v7, v12}, Lcom/upokecenter/numbers/EInteger;->Remainder(I)Lcom/upokecenter/numbers/EInteger;
-
-    move-result-object v7
-
-    invoke-virtual {v8, v7}, Lcom/upokecenter/numbers/EInteger;->Subtract(Lcom/upokecenter/numbers/EInteger;)Lcom/upokecenter/numbers/EInteger;
-
-    move-result-object v8
-
-    :cond_a
-    invoke-virtual {v0, v8}, Lcom/upokecenter/numbers/EInteger;->Subtract(Lcom/upokecenter/numbers/EInteger;)Lcom/upokecenter/numbers/EInteger;
-
-    move-result-object v7
-
-    invoke-virtual {v7, v10}, Lcom/upokecenter/numbers/EInteger;->Multiply(I)Lcom/upokecenter/numbers/EInteger;
-
-    move-result-object v7
-
-    invoke-virtual {v3, v7}, Lcom/upokecenter/numbers/EInteger;->Add(Lcom/upokecenter/numbers/EInteger;)Lcom/upokecenter/numbers/EInteger;
-
-    move-result-object v3
-
-    invoke-virtual {v8, v13}, Lcom/upokecenter/numbers/EInteger;->Remainder(I)Lcom/upokecenter/numbers/EInteger;
-
-    move-result-object v7
-
-    invoke-virtual {v7}, Lcom/upokecenter/numbers/EInteger;->signum()I
-
-    move-result v7
-
-    if-eqz v7, :cond_b
-
-    invoke-virtual {v8, v13}, Lcom/upokecenter/numbers/EInteger;->Remainder(I)Lcom/upokecenter/numbers/EInteger;
-
-    move-result-object v7
-
-    invoke-virtual {v7}, Lcom/upokecenter/numbers/EInteger;->ToInt32Checked()I
-
-    move-result v7
-
-    rsub-int/lit8 v7, v7, 0x4
-
-    invoke-virtual {v8, v7}, Lcom/upokecenter/numbers/EInteger;->Add(I)Lcom/upokecenter/numbers/EInteger;
-
-    move-result-object v7
-
-    goto :goto_3
-
-    :cond_b
-    move-object v7, v8
-
-    :goto_3
-    invoke-virtual {v0, v7}, Lcom/upokecenter/numbers/EInteger;->Subtract(Lcom/upokecenter/numbers/EInteger;)Lcom/upokecenter/numbers/EInteger;
-
-    move-result-object v7
-
-    invoke-virtual {v7, v15}, Lcom/upokecenter/numbers/EInteger;->Add(I)Lcom/upokecenter/numbers/EInteger;
-
-    move-result-object v7
-
-    invoke-virtual {v7, v13}, Lcom/upokecenter/numbers/EInteger;->Divide(I)Lcom/upokecenter/numbers/EInteger;
-
-    move-result-object v7
-
-    invoke-virtual {v3, v7}, Lcom/upokecenter/numbers/EInteger;->Add(Lcom/upokecenter/numbers/EInteger;)Lcom/upokecenter/numbers/EInteger;
-
-    move-result-object v3
-
-    invoke-virtual {v8, v14}, Lcom/upokecenter/numbers/EInteger;->Remainder(I)Lcom/upokecenter/numbers/EInteger;
-
-    move-result-object v7
-
-    invoke-virtual {v7}, Lcom/upokecenter/numbers/EInteger;->signum()I
-
-    move-result v7
-
-    if-eqz v7, :cond_c
-
-    invoke-virtual {v8, v14}, Lcom/upokecenter/numbers/EInteger;->Remainder(I)Lcom/upokecenter/numbers/EInteger;
-
-    move-result-object v7
-
-    invoke-virtual {v7}, Lcom/upokecenter/numbers/EInteger;->ToInt32Checked()I
-
-    move-result v7
-
-    rsub-int/lit8 v7, v7, 0x64
-
-    invoke-virtual {v8, v7}, Lcom/upokecenter/numbers/EInteger;->Add(I)Lcom/upokecenter/numbers/EInteger;
-
-    move-result-object v8
-
-    :cond_c
-    :goto_4
-    invoke-virtual {v8, v0}, Lcom/upokecenter/numbers/EInteger;->compareTo(Lcom/upokecenter/numbers/EInteger;)I
-
-    move-result v7
-
-    if-gez v7, :cond_e
-
-    invoke-virtual {v8, v12}, Lcom/upokecenter/numbers/EInteger;->Remainder(I)Lcom/upokecenter/numbers/EInteger;
-
-    move-result-object v7
-
-    invoke-virtual {v7}, Lcom/upokecenter/numbers/EInteger;->signum()I
-
-    move-result v7
-
-    if-eqz v7, :cond_d
-
-    const/4 v7, 0x1
-
-    invoke-virtual {v3, v7}, Lcom/upokecenter/numbers/EInteger;->Subtract(I)Lcom/upokecenter/numbers/EInteger;
-
-    move-result-object v3
-
-    :cond_d
-    invoke-virtual {v8, v14}, Lcom/upokecenter/numbers/EInteger;->Add(I)Lcom/upokecenter/numbers/EInteger;
-
-    move-result-object v8
-
-    goto :goto_4
-
-    :cond_e
-    if-eqz v4, :cond_f
-
-    sget-object v0, Lcom/upokecenter/cbor/CBORUtilities;->ValueNormalToMonth:[I
-
-    add-int/lit8 v5, v5, -0x1
-
-    aget v0, v0, v5
-
-    goto :goto_5
-
-    :cond_f
-    sget-object v0, Lcom/upokecenter/cbor/CBORUtilities;->ValueLeapToMonth:[I
-
-    add-int/lit8 v5, v5, -0x1
-
-    aget v0, v0, v5
-
-    :goto_5
-    invoke-virtual {v3, v0}, Lcom/upokecenter/numbers/EInteger;->Add(I)Lcom/upokecenter/numbers/EInteger;
-
-    move-result-object v0
-
-    add-int/lit8 v6, v6, -0x1
-
-    invoke-virtual {v0, v6}, Lcom/upokecenter/numbers/EInteger;->Add(I)Lcom/upokecenter/numbers/EInteger;
-
-    move-result-object v0
-
-    :goto_6
-    const/16 v3, 0x18
-
-    invoke-virtual {v0, v3}, Lcom/upokecenter/numbers/EInteger;->Multiply(I)Lcom/upokecenter/numbers/EInteger;
-
-    move-result-object v0
-
-    const/4 v3, 0x2
-
-    aget v3, v1, v3
-
-    invoke-virtual {v0, v3}, Lcom/upokecenter/numbers/EInteger;->Add(I)Lcom/upokecenter/numbers/EInteger;
-
-    move-result-object v0
-
-    const/16 v3, 0x3c
-
-    invoke-virtual {v0, v3}, Lcom/upokecenter/numbers/EInteger;->Multiply(I)Lcom/upokecenter/numbers/EInteger;
-
-    move-result-object v0
-
-    aget v4, v1, v15
-
-    invoke-virtual {v0, v4}, Lcom/upokecenter/numbers/EInteger;->Add(I)Lcom/upokecenter/numbers/EInteger;
-
-    move-result-object v0
-
-    invoke-virtual {v0, v3}, Lcom/upokecenter/numbers/EInteger;->Multiply(I)Lcom/upokecenter/numbers/EInteger;
-
-    move-result-object v0
-
-    aget v3, v1, v13
-
-    invoke-virtual {v0, v3}, Lcom/upokecenter/numbers/EInteger;->Add(I)Lcom/upokecenter/numbers/EInteger;
-
-    move-result-object v0
-
-    const/4 v3, 0x5
-
-    aget v4, v1, v3
-
-    if-nez v4, :cond_10
-
-    invoke-virtual {v0}, Lcom/upokecenter/numbers/EInteger;->GetUnsignedBitLengthAsInt64()J
-
-    move-result-wide v4
-
-    const-wide/16 v6, 0x40
-
-    cmp-long v4, v4, v6
-
-    if-gtz v4, :cond_10
-
-    const/4 v1, 0x0
-
-    aput v1, v2, v1
-
-    invoke-static {v0}, Lcom/upokecenter/numbers/EFloat;->FromEInteger(Lcom/upokecenter/numbers/EInteger;)Lcom/upokecenter/numbers/EFloat;
-
-    move-result-object v0
-
-    return-object v0
-
-    :cond_10
-    aget v1, v1, v3
-
-    invoke-static {v1}, Lcom/upokecenter/numbers/EDecimal;->FromInt32(I)Lcom/upokecenter/numbers/EDecimal;
-
-    move-result-object v1
-
-    const v3, 0x3b9aca00
-
-    invoke-static {v1}, Ljava/util/Objects;->requireNonNull(Ljava/lang/Object;)Ljava/lang/Object;
-
-    invoke-static {v3}, Lcom/upokecenter/numbers/EDecimal;->FromInt32(I)Lcom/upokecenter/numbers/EDecimal;
-
-    move-result-object v3
-
-    sget-object v4, Lcom/upokecenter/numbers/ERounding;->None:Lcom/upokecenter/numbers/ERounding;
-
-    invoke-static {v4}, Lcom/upokecenter/numbers/EContext;->ForRounding(Lcom/upokecenter/numbers/ERounding;)Lcom/upokecenter/numbers/EContext;
-
-    move-result-object v4
-
-    invoke-virtual {v1, v3, v4}, Lcom/upokecenter/numbers/EDecimal;->Divide(Lcom/upokecenter/numbers/EDecimal;Lcom/upokecenter/numbers/EContext;)Lcom/upokecenter/numbers/EDecimal;
-
-    move-result-object v1
-
-    invoke-static {v0}, Lcom/upokecenter/numbers/EDecimal;->FromEInteger(Lcom/upokecenter/numbers/EInteger;)Lcom/upokecenter/numbers/EDecimal;
-
-    move-result-object v0
-
-    invoke-virtual {v1}, Lcom/upokecenter/numbers/EDecimal;->isFinite()Z
-
-    move-result v3
-
-    if-eqz v3, :cond_11
-
-    if-eqz v0, :cond_11
-
-    invoke-virtual {v0}, Lcom/upokecenter/numbers/EDecimal;->isFinite()Z
-
-    move-result v3
-
-    if-eqz v3, :cond_11
-
-    iget-byte v3, v1, Lcom/upokecenter/numbers/EDecimal;->flags:B
-
-    iget-byte v4, v0, Lcom/upokecenter/numbers/EDecimal;->flags:B
-
-    or-int/2addr v3, v4
-
-    and-int/lit8 v3, v3, 0x1
-
-    if-nez v3, :cond_11
-
-    iget-object v3, v1, Lcom/upokecenter/numbers/EDecimal;->exponent:Lcom/upokecenter/numbers/FastIntegerFixed;
-
-    iget-object v4, v0, Lcom/upokecenter/numbers/EDecimal;->exponent:Lcom/upokecenter/numbers/FastIntegerFixed;
-
-    invoke-virtual {v3, v4}, Lcom/upokecenter/numbers/FastIntegerFixed;->compareTo(Lcom/upokecenter/numbers/FastIntegerFixed;)I
-
-    move-result v3
-
-    if-nez v3, :cond_11
-
-    iget-object v3, v1, Lcom/upokecenter/numbers/EDecimal;->unsignedMantissa:Lcom/upokecenter/numbers/FastIntegerFixed;
-
-    iget-object v0, v0, Lcom/upokecenter/numbers/EDecimal;->unsignedMantissa:Lcom/upokecenter/numbers/FastIntegerFixed;
-
-    invoke-static {v3, v0}, Lcom/upokecenter/numbers/FastIntegerFixed;->Add(Lcom/upokecenter/numbers/FastIntegerFixed;Lcom/upokecenter/numbers/FastIntegerFixed;)Lcom/upokecenter/numbers/FastIntegerFixed;
-
-    move-result-object v0
-
-    new-instance v3, Lcom/upokecenter/numbers/EDecimal;
-
-    iget-object v1, v1, Lcom/upokecenter/numbers/EDecimal;->exponent:Lcom/upokecenter/numbers/FastIntegerFixed;
-
-    const/4 v4, 0x0
-
-    invoke-direct {v3, v0, v1, v4}, Lcom/upokecenter/numbers/EDecimal;-><init>(Lcom/upokecenter/numbers/FastIntegerFixed;Lcom/upokecenter/numbers/FastIntegerFixed;B)V
-
-    goto :goto_7
-
-    :cond_11
-    sget-object v3, Lcom/upokecenter/numbers/EContext;->UnlimitedHalfEven:Lcom/upokecenter/numbers/EContext;
-
-    invoke-static {v3}, Lcom/upokecenter/numbers/EDecimal;->GetMathValue(Lcom/upokecenter/numbers/EContext;)Lcom/upokecenter/numbers/IRadixMath;
-
-    move-result-object v4
-
-    invoke-interface {v4, v1, v0, v3}, Lcom/upokecenter/numbers/IRadixMath;->Add(Ljava/lang/Object;Ljava/lang/Object;Lcom/upokecenter/numbers/EContext;)Ljava/lang/Object;
-
-    move-result-object v0
-
-    move-object v3, v0
-
-    check-cast v3, Lcom/upokecenter/numbers/EDecimal;
-
-    :goto_7
-    iget-byte v0, v3, Lcom/upokecenter/numbers/EDecimal;->flags:B
-
-    and-int/2addr v0, v15
-
-    const/4 v1, 0x2
-
-    if-ne v0, v1, :cond_12
-
-    const/4 v1, 0x1
-
-    goto :goto_8
-
-    :cond_12
-    const/4 v1, 0x0
-
-    :goto_8
-    if-eqz v1, :cond_13
-
-    goto/16 :goto_12
-
-    :cond_13
-    if-ne v0, v15, :cond_14
-
-    const/4 v0, 0x1
-
-    goto :goto_9
-
-    :cond_14
-    const/4 v0, 0x0
-
-    :goto_9
-    if-eqz v0, :cond_15
-
-    goto/16 :goto_11
-
-    :cond_15
-    invoke-virtual {v3}, Lcom/upokecenter/numbers/EDecimal;->isNegative()Z
-
-    move-result v0
-
-    const-wide/high16 v4, -0x8000000000000000L
-
-    if-eqz v0, :cond_16
-
-    invoke-virtual {v3}, Lcom/upokecenter/numbers/EDecimal;->isZero()Z
-
-    move-result v0
-
-    if-eqz v0, :cond_16
-
-    goto/16 :goto_13
-
-    :cond_16
-    invoke-virtual {v3}, Lcom/upokecenter/numbers/EDecimal;->isZero()Z
-
-    move-result v0
-
-    const-wide/16 v6, 0x0
-
-    if-eqz v0, :cond_17
-
-    move-wide v4, v6
-
-    goto/16 :goto_13
-
-    :cond_17
-    invoke-virtual {v3}, Lcom/upokecenter/numbers/EDecimal;->isFinite()Z
-
-    move-result v0
-
-    if-eqz v0, :cond_25
-
-    iget-object v0, v3, Lcom/upokecenter/numbers/EDecimal;->exponent:Lcom/upokecenter/numbers/FastIntegerFixed;
-
-    const/4 v1, 0x0
-
-    invoke-virtual {v0, v1}, Lcom/upokecenter/numbers/FastIntegerFixed;->CompareToInt(I)I
-
-    move-result v0
-
-    const-wide/high16 v8, 0x20000000000000L
-
-    if-nez v0, :cond_18
-
-    iget-object v0, v3, Lcom/upokecenter/numbers/EDecimal;->unsignedMantissa:Lcom/upokecenter/numbers/FastIntegerFixed;
-
-    invoke-virtual {v0}, Lcom/upokecenter/numbers/FastIntegerFixed;->CanFitInInt64()Z
-
-    move-result v0
-
-    if-eqz v0, :cond_18
-
-    iget-object v0, v3, Lcom/upokecenter/numbers/EDecimal;->unsignedMantissa:Lcom/upokecenter/numbers/FastIntegerFixed;
-
-    invoke-virtual {v0}, Lcom/upokecenter/numbers/FastIntegerFixed;->ToInt64()J
-
-    move-result-wide v10
-
-    cmp-long v0, v10, v8
-
-    if-gez v0, :cond_18
-
-    invoke-virtual {v3}, Lcom/upokecenter/numbers/EDecimal;->isNegative()Z
-
-    move-result v0
-
-    invoke-static {v10, v11, v1, v0}, Lcom/upokecenter/numbers/EDecimal;->IntegerToDoubleBits(JIZ)J
-
-    move-result-wide v4
-
-    goto/16 :goto_13
-
-    :cond_18
-    iget-object v0, v3, Lcom/upokecenter/numbers/EDecimal;->exponent:Lcom/upokecenter/numbers/FastIntegerFixed;
-
-    invoke-virtual {v0, v1}, Lcom/upokecenter/numbers/FastIntegerFixed;->CompareToInt(I)I
-
-    move-result v0
-
-    if-gez v0, :cond_23
-
-    iget-object v0, v3, Lcom/upokecenter/numbers/EDecimal;->exponent:Lcom/upokecenter/numbers/FastIntegerFixed;
-
-    const/4 v1, -0x8
-
-    invoke-virtual {v0, v1}, Lcom/upokecenter/numbers/FastIntegerFixed;->CompareToInt(I)I
-
-    move-result v0
-
-    if-ltz v0, :cond_23
-
-    iget-object v0, v3, Lcom/upokecenter/numbers/EDecimal;->unsignedMantissa:Lcom/upokecenter/numbers/FastIntegerFixed;
-
-    invoke-virtual {v0}, Lcom/upokecenter/numbers/FastIntegerFixed;->CanFitInInt32()Z
-
-    move-result v0
-
-    if-eqz v0, :cond_23
-
-    iget-object v0, v3, Lcom/upokecenter/numbers/EDecimal;->unsignedMantissa:Lcom/upokecenter/numbers/FastIntegerFixed;
-
-    invoke-virtual {v0}, Lcom/upokecenter/numbers/FastIntegerFixed;->ToInt32()I
-
-    move-result v0
-
-    iget-object v1, v3, Lcom/upokecenter/numbers/EDecimal;->exponent:Lcom/upokecenter/numbers/FastIntegerFixed;
-
-    invoke-virtual {v1}, Lcom/upokecenter/numbers/FastIntegerFixed;->ToInt32()I
-
-    move-result v1
-
-    neg-int v1, v1
-
-    sget-object v10, Lcom/upokecenter/numbers/EDecimal;->ValueTenPowers:[I
-
-    aget v1, v10, v1
-
-    const/high16 v10, -0x80000000
-
-    if-eq v0, v10, :cond_23
-
-    rem-int v10, v0, v1
-
-    if-nez v10, :cond_1a
-
-    div-int/2addr v0, v1
-
-    int-to-long v0, v0
-
-    invoke-virtual {v3}, Lcom/upokecenter/numbers/EDecimal;->isNegative()Z
-
-    move-result v3
-
-    const/4 v4, 0x0
-
-    invoke-static {v0, v1, v4, v3}, Lcom/upokecenter/numbers/EDecimal;->IntegerToDoubleBits(JIZ)J
-
-    move-result-wide v0
-
-    :cond_19
-    move-wide v4, v0
-
-    goto/16 :goto_13
-
-    :cond_1a
-    invoke-static {v0}, Ljava/lang/Math;->abs(I)I
-
-    move-result v10
-
-    int-to-long v10, v10
-
-    :goto_a
-    const-wide/32 v12, 0x100000
-
-    cmp-long v12, v10, v12
-
-    if-gez v12, :cond_1b
-
-    const/4 v12, 0x1
-
-    shl-long/2addr v10, v12
-
-    goto :goto_a
-
-    :cond_1b
-    invoke-static {v0}, Lcom/upokecenter/numbers/NumberUtility;->BitLength(I)I
-
-    move-result v10
-
-    invoke-static {v1}, Lcom/upokecenter/numbers/NumberUtility;->BitLength(I)I
-
-    move-result v11
-
-    if-gt v10, v11, :cond_1c
-
-    sub-int v10, v11, v10
-
-    add-int/lit8 v10, v10, 0x35
-
-    add-int/lit8 v10, v10, 0x1
-
-    const/4 v12, 0x0
-
-    goto :goto_b
-
-    :cond_1c
-    sub-int/2addr v10, v11
-
-    rsub-int/lit8 v10, v10, 0x36
-
-    const/4 v12, 0x0
-
-    invoke-static {v12, v10}, Ljava/lang/Math;->max(II)I
-
-    move-result v10
-
-    :goto_b
-    add-int/2addr v11, v10
-
-    const/16 v13, 0x3f
-
-    if-le v11, v13, :cond_1e
-
-    invoke-static {v0}, Lcom/upokecenter/numbers/EInteger;->FromInt32(I)Lcom/upokecenter/numbers/EInteger;
-
-    move-result-object v0
-
-    invoke-virtual {v0, v10}, Lcom/upokecenter/numbers/EInteger;->ShiftLeft(I)Lcom/upokecenter/numbers/EInteger;
-
-    move-result-object v0
-
-    invoke-static {v1}, Lcom/upokecenter/numbers/EInteger;->FromInt32(I)Lcom/upokecenter/numbers/EInteger;
-
-    move-result-object v1
-
-    invoke-virtual {v0, v1}, Lcom/upokecenter/numbers/EInteger;->DivRem(Lcom/upokecenter/numbers/EInteger;)[Lcom/upokecenter/numbers/EInteger;
-
-    move-result-object v0
-
-    aget-object v1, v0, v12
-
-    const/4 v11, 0x1
-
-    aget-object v0, v0, v11
-
-    invoke-virtual {v1}, Lcom/upokecenter/numbers/EInteger;->CanFitInInt64()Z
-
-    move-result v11
-
-    const-wide/16 v12, -0x1
-
-    if-eqz v11, :cond_1d
-
-    invoke-virtual {v0}, Lcom/upokecenter/numbers/EInteger;->CanFitInInt64()Z
-
-    move-result v11
-
-    if-eqz v11, :cond_1d
-
-    invoke-virtual {v1}, Lcom/upokecenter/numbers/EInteger;->ToInt64Checked()J
-
-    move-result-wide v12
-
-    invoke-virtual {v0}, Lcom/upokecenter/numbers/EInteger;->ToInt64Checked()J
-
-    move-result-wide v0
-
-    goto :goto_c
-
-    :cond_1d
-    move-wide v0, v12
-
-    goto :goto_c
-
-    :cond_1e
-    int-to-long v11, v0
-
-    shl-long/2addr v11, v10
-
-    int-to-long v0, v1
-
-    div-long v13, v11, v0
-
-    mul-long/2addr v0, v13
-
-    sub-long v0, v11, v0
-
-    move-wide v12, v13
-
-    :goto_c
-    neg-int v10, v10
-
-    cmp-long v11, v12, v8
-
-    if-ltz v11, :cond_23
-
-    :goto_d
-    const-wide/high16 v14, 0x40000000000000L
-
-    cmp-long v11, v12, v14
-
-    const-wide/16 v14, 0x1
-
-    if-ltz v11, :cond_1f
-
-    and-long/2addr v14, v12
-
-    or-long/2addr v0, v14
-
-    const/4 v11, 0x1
-
-    shr-long/2addr v12, v11
-
-    add-int/lit8 v10, v10, 0x1
-
-    goto :goto_d
-
-    :cond_1f
-    const-wide/16 v16, 0x3
-
-    and-long v18, v12, v16
-
-    cmp-long v11, v18, v16
-
-    if-nez v11, :cond_20
-
-    cmp-long v11, v0, v6
-
-    if-nez v11, :cond_20
-
-    goto :goto_e
-
-    :cond_20
-    and-long v16, v12, v14
-
-    cmp-long v11, v16, v6
-
-    if-eqz v11, :cond_21
-
-    cmp-long v0, v0, v6
-
-    if-eqz v0, :cond_21
-
-    :goto_e
-    const/4 v0, 0x1
-
-    shr-long v6, v12, v0
-
-    add-long/2addr v6, v14
-
-    goto :goto_f
-
-    :cond_21
-    const/4 v0, 0x1
-
-    shr-long v6, v12, v0
-
-    :goto_f
-    add-int/2addr v10, v0
-
-    :goto_10
-    cmp-long v1, v6, v8
-
-    if-ltz v1, :cond_22
-
-    shr-long/2addr v6, v0
-
-    add-int/lit8 v10, v10, 0x1
-
-    const/4 v0, 0x1
-
-    goto :goto_10
-
-    :cond_22
-    const-wide v0, 0xfffffffffffffL
-
-    and-long/2addr v0, v6
-
-    add-int/lit16 v10, v10, 0x433
-
-    int-to-long v6, v10
-
-    const/16 v8, 0x34
-
-    shl-long/2addr v6, v8
-
-    or-long/2addr v0, v6
-
-    invoke-virtual {v3}, Lcom/upokecenter/numbers/EDecimal;->isNegative()Z
-
-    move-result v3
-
-    if-eqz v3, :cond_19
-
-    or-long/2addr v4, v0
-
-    goto :goto_13
-
-    :cond_23
-    iget-object v0, v3, Lcom/upokecenter/numbers/EDecimal;->exponent:Lcom/upokecenter/numbers/FastIntegerFixed;
-
-    const/16 v1, 0x135
-
-    invoke-virtual {v0, v1}, Lcom/upokecenter/numbers/FastIntegerFixed;->CompareToInt(I)I
-
-    move-result v0
-
-    if-lez v0, :cond_25
-
-    invoke-virtual {v3}, Lcom/upokecenter/numbers/EDecimal;->isNegative()Z
-
-    move-result v0
-
-    if-eqz v0, :cond_24
-
-    :goto_11
-    const-wide/high16 v4, -0x10000000000000L    # Double.NEGATIVE_INFINITY
-
-    goto :goto_13
-
-    :cond_24
-    :goto_12
-    const-wide/high16 v4, 0x7ff0000000000000L    # Double.POSITIVE_INFINITY
-
-    goto :goto_13
-
-    :cond_25
-    sget-object v0, Lcom/upokecenter/numbers/EContext;->Binary64:Lcom/upokecenter/numbers/EContext;
-
-    invoke-virtual {v3, v0}, Lcom/upokecenter/numbers/EDecimal;->ToEFloat(Lcom/upokecenter/numbers/EContext;)Lcom/upokecenter/numbers/EFloat;
-
-    move-result-object v0
-
-    invoke-virtual {v0}, Lcom/upokecenter/numbers/EFloat;->ToDoubleBits()J
-
-    move-result-wide v4
-
-    :goto_13
-    invoke-static {v4, v5}, Ljava/lang/Double;->longBitsToDouble(J)D
-
-    move-result-wide v0
-
-    const-wide/high16 v3, 0x7ff0000000000000L    # Double.POSITIVE_INFINITY
-
-    cmpl-double v3, v0, v3
-
-    if-eqz v3, :cond_27
-
-    const-wide/high16 v3, -0x10000000000000L    # Double.NEGATIVE_INFINITY
-
-    cmpl-double v3, v0, v3
-
-    if-eqz v3, :cond_27
-
-    invoke-static {v0, v1}, Ljava/lang/Double;->isNaN(D)Z
-
-    move-result v3
-
-    if-eqz v3, :cond_26
-
-    const/4 v0, 0x2
-
-    const/4 v1, 0x0
-
-    goto :goto_14
-
-    :cond_26
-    const/4 v3, 0x0
-
-    const/4 v4, 0x1
-
-    aput v4, v2, v3
-
-    sget-object v2, Lcom/upokecenter/numbers/EFloat;->NaN:Lcom/upokecenter/numbers/EFloat;
-
-    invoke-static {v0, v1}, Ljava/lang/Double;->doubleToRawLongBits(D)J
-
-    move-result-wide v0
-
-    invoke-static {v0, v1}, Lcom/upokecenter/numbers/EFloat;->FromDoubleBits(J)Lcom/upokecenter/numbers/EFloat;
-
-    move-result-object v0
-
-    return-object v0
-
-    :cond_27
-    const/4 v1, 0x0
-
-    const/4 v0, 0x2
-
-    :goto_14
-    aput v0, v2, v1
-
-    const/4 v0, 0x0
-
-    return-object v0
-
-    :cond_28
-    new-instance v0, Ljava/lang/IllegalArgumentException;
-
-    const-string v1, "mday"
-
-    invoke-direct {v0, v1}, Ljava/lang/IllegalArgumentException;-><init>(Ljava/lang/String;)V
-
-    throw v0
-
-    :cond_29
-    new-instance v0, Ljava/lang/IllegalArgumentException;
-
-    const-string v1, "month"
-
-    invoke-direct {v0, v1}, Ljava/lang/IllegalArgumentException;-><init>(Ljava/lang/String;)V
-
-    throw v0
-
-    :cond_2a
-    new-instance v0, Ljava/lang/UnsupportedOperationException;
-
-    const-string v1, "Local time offsets not supported"
-
-    invoke-direct {v0, v1}, Ljava/lang/UnsupportedOperationException;-><init>(Ljava/lang/String;)V
-
-    throw v0
-
-    :cond_2b
-    new-instance v0, Ljava/lang/IllegalArgumentException;
-
-    const-string v1, "\"status\" + \"\'s length\" ("
-
-    invoke-static {v1}, Landroid/support/v4/media/RatingCompat$$ExternalSyntheticOutline0;->m(Ljava/lang/String;)Ljava/lang/StringBuilder;
-
-    move-result-object v1
-
-    array-length v2, v2
-
-    const-string v3, ") is not greater or equal to 1"
-
-    invoke-static {v1, v2, v3}, Landroidx/constraintlayout/core/widgets/ConstraintWidget$$ExternalSyntheticOutline0;->m(Ljava/lang/StringBuilder;ILjava/lang/String;)Ljava/lang/String;
-
-    move-result-object v1
-
-    invoke-direct {v0, v1}, Ljava/lang/IllegalArgumentException;-><init>(Ljava/lang/String;)V
-
-    throw v0
-
-    :cond_2c
-    new-instance v0, Ljava/lang/IllegalArgumentException;
-
-    const-string v1, " (1) is not less or equal to "
-
-    invoke-static {v1}, Landroid/support/v4/media/RatingCompat$$ExternalSyntheticOutline0;->m(Ljava/lang/String;)Ljava/lang/StringBuilder;
-
-    move-result-object v1
-
-    array-length v2, v2
-
-    invoke-virtual {v1, v2}, Ljava/lang/StringBuilder;->append(I)Ljava/lang/StringBuilder;
-
-    invoke-virtual {v1}, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
-
-    move-result-object v1
-
-    invoke-direct {v0, v1}, Ljava/lang/IllegalArgumentException;-><init>(Ljava/lang/String;)V
-
-    throw v0
-
-    :cond_2d
-    new-instance v0, Ljava/lang/IllegalArgumentException;
-
-    const-string v2, "\"lesserFields\" + \"\'s length\" ("
-
-    invoke-static {v2}, Landroid/support/v4/media/RatingCompat$$ExternalSyntheticOutline0;->m(Ljava/lang/String;)Ljava/lang/StringBuilder;
-
-    move-result-object v2
-
-    array-length v1, v1
-
-    const-string v3, ") is not greater or equal to 7"
-
-    invoke-static {v2, v1, v3}, Landroidx/constraintlayout/core/widgets/ConstraintWidget$$ExternalSyntheticOutline0;->m(Ljava/lang/StringBuilder;ILjava/lang/String;)Ljava/lang/String;
-
-    move-result-object v1
-
-    invoke-direct {v0, v1}, Ljava/lang/IllegalArgumentException;-><init>(Ljava/lang/String;)V
-
-    throw v0
-
-    :cond_2e
-    new-instance v0, Ljava/lang/IllegalArgumentException;
-
-    const-string v2, " (7) is not less or equal to "
-
-    invoke-static {v2}, Landroid/support/v4/media/RatingCompat$$ExternalSyntheticOutline0;->m(Ljava/lang/String;)Ljava/lang/StringBuilder;
-
-    move-result-object v2
-
-    array-length v1, v1
-
-    invoke-virtual {v2, v1}, Ljava/lang/StringBuilder;->append(I)Ljava/lang/StringBuilder;
-
-    invoke-virtual {v2}, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
-
-    move-result-object v1
-
-    invoke-direct {v0, v1}, Ljava/lang/IllegalArgumentException;-><init>(Ljava/lang/String;)V
-
-    throw v0
-.end method
-
 .method public static DoubleBitsFinite(J)Z
     .locals 2
 
@@ -2011,7 +1613,7 @@
 
     iget-boolean v9, p1, Lcom/upokecenter/numbers/EContext;->precisionInBits:Z
 
-    iget-object v10, p1, Lcom/upokecenter/numbers/EContext;->rounding:Lcom/upokecenter/numbers/ERounding;
+    iget v10, p1, Lcom/upokecenter/numbers/EContext;->rounding:I
 
     iget-boolean v11, p1, Lcom/upokecenter/numbers/EContext;->simplified:Z
 
@@ -2023,7 +1625,7 @@
 
     move-object v0, v13
 
-    invoke-direct/range {v0 .. v12}, Lcom/upokecenter/numbers/EContext;-><init>(ZLcom/upokecenter/numbers/EInteger;ZLcom/upokecenter/numbers/EInteger;Lcom/upokecenter/numbers/EInteger;IZZZLcom/upokecenter/numbers/ERounding;ZI)V
+    invoke-direct/range {v0 .. v12}, Lcom/upokecenter/numbers/EContext;-><init>(ZLcom/upokecenter/numbers/EInteger;ZLcom/upokecenter/numbers/EInteger;Lcom/upokecenter/numbers/EInteger;IZZZIZI)V
 
     invoke-virtual {p0, p1}, Lcom/upokecenter/numbers/EFloat;->RoundToPrecision(Lcom/upokecenter/numbers/EContext;)Lcom/upokecenter/numbers/EFloat;
 
@@ -2286,7 +1888,7 @@
 
     move-result-object p1
 
-    invoke-virtual {p0, p1}, Lcom/upokecenter/numbers/EDecimal;->CompareToValue(Lcom/upokecenter/numbers/EDecimal;)I
+    invoke-virtual {p0, p1}, Lcom/upokecenter/numbers/EDecimal;->compareTo(Lcom/upokecenter/numbers/EDecimal;)I
 
     move-result p0
 
@@ -2826,46 +2428,34 @@
     return-object p0
 .end method
 
-.method public static FloorDiv(Lcom/upokecenter/numbers/EInteger;Lcom/upokecenter/numbers/EInteger;)Lcom/upokecenter/numbers/EInteger;
-    .locals 2
+.method public static FloorDiv(JI)J
+    .locals 4
 
-    invoke-virtual {p0}, Lcom/upokecenter/numbers/EInteger;->signum()I
+    const-wide/16 v0, 0x0
 
-    move-result v0
+    cmp-long v0, p0, v0
 
     if-ltz v0, :cond_0
 
-    invoke-virtual {p0, p1}, Lcom/upokecenter/numbers/EInteger;->Divide(Lcom/upokecenter/numbers/EInteger;)Lcom/upokecenter/numbers/EInteger;
+    int-to-long v0, p2
 
-    move-result-object p0
+    div-long/2addr p0, v0
 
     goto :goto_0
 
     :cond_0
-    const/4 v0, -0x1
+    const-wide/16 v0, -0x1
 
-    invoke-static {v0}, Lcom/upokecenter/numbers/EInteger;->FromInt32(I)Lcom/upokecenter/numbers/EInteger;
+    sub-long p0, v0, p0
 
-    move-result-object v1
+    int-to-long v2, p2
 
-    invoke-static {v0}, Lcom/upokecenter/numbers/EInteger;->FromInt32(I)Lcom/upokecenter/numbers/EInteger;
+    div-long/2addr p0, v2
 
-    move-result-object v0
-
-    invoke-virtual {v0, p0}, Lcom/upokecenter/numbers/EInteger;->Subtract(Lcom/upokecenter/numbers/EInteger;)Lcom/upokecenter/numbers/EInteger;
-
-    move-result-object p0
-
-    invoke-virtual {p0, p1}, Lcom/upokecenter/numbers/EInteger;->Divide(Lcom/upokecenter/numbers/EInteger;)Lcom/upokecenter/numbers/EInteger;
-
-    move-result-object p0
-
-    invoke-virtual {v1, p0}, Lcom/upokecenter/numbers/EInteger;->Subtract(Lcom/upokecenter/numbers/EInteger;)Lcom/upokecenter/numbers/EInteger;
-
-    move-result-object p0
+    sub-long p0, v0, p0
 
     :goto_0
-    return-object p0
+    return-wide p0
 .end method
 
 .method public static HalfToDoublePrecision(I)J
@@ -3591,53 +3181,119 @@
 .method public static ToAtomDateTimeString(Lcom/upokecenter/numbers/EInteger;[I)Ljava/lang/String;
     .locals 17
 
-    const/4 v0, 0x6
+    move-object/from16 v0, p1
 
-    aget v1, p1, v0
+    array-length v1, v0
 
-    if-nez v1, :cond_4
+    const/4 v2, 0x7
+
+    if-lt v1, v2, :cond_c
+
+    array-length v1, v0
+
+    if-lt v1, v2, :cond_b
+
+    const/4 v1, 0x6
+
+    aget v2, v0, v1
+
+    if-nez v2, :cond_a
 
     invoke-virtual/range {p0 .. p0}, Lcom/upokecenter/numbers/EInteger;->ToInt32Checked()I
 
-    move-result v1
+    move-result v2
 
-    const-string/jumbo v2, "year("
+    const-string/jumbo v3, "year("
 
-    if-ltz v1, :cond_3
+    if-ltz v2, :cond_9
 
-    const/16 v3, 0x270f
+    const/16 v4, 0x270f
 
-    if-gt v1, v3, :cond_2
+    if-gt v2, v4, :cond_8
 
-    const/4 v2, 0x0
+    invoke-static/range {p1 .. p1}, Lcom/upokecenter/cbor/CBORUtilities;->CheckLesserFields([I)V
 
-    aget v3, p1, v2
+    const/4 v3, 0x0
 
-    const/4 v4, 0x1
+    aget v4, v0, v3
 
-    aget v5, p1, v4
+    const/4 v5, 0x2
 
-    const/4 v6, 0x2
+    const/4 v6, 0x1
 
-    aget v7, p1, v6
+    if-ne v4, v5, :cond_5
 
-    const/4 v8, 0x3
+    aget v4, v0, v6
 
-    aget v9, p1, v8
+    const/16 v7, 0x1d
 
-    const/4 v10, 0x4
+    if-ne v4, v7, :cond_5
 
-    aget v11, p1, v10
+    rem-int/lit16 v4, v2, 0x190
 
-    const/4 v12, 0x5
+    if-gez v4, :cond_0
 
-    aget v13, p1, v12
+    add-int/lit16 v4, v4, 0x190
+
+    :cond_0
+    rem-int/lit8 v7, v4, 0x4
+
+    if-nez v7, :cond_1
+
+    rem-int/lit8 v7, v4, 0x64
+
+    if-nez v7, :cond_2
+
+    :cond_1
+    rem-int/lit16 v4, v4, 0x190
+
+    if-nez v4, :cond_3
+
+    :cond_2
+    move v4, v6
+
+    goto :goto_0
+
+    :cond_3
+    move v4, v3
+
+    :goto_0
+    if-eqz v4, :cond_4
+
+    goto :goto_1
+
+    :cond_4
+    new-instance v0, Ljava/lang/IllegalArgumentException;
+
+    invoke-direct {v0}, Ljava/lang/IllegalArgumentException;-><init>()V
+
+    throw v0
+
+    :cond_5
+    :goto_1
+    aget v4, v0, v3
+
+    aget v7, v0, v6
+
+    aget v8, v0, v5
+
+    const/4 v9, 0x3
+
+    aget v10, v0, v9
+
+    const/4 v11, 0x4
+
+    aget v12, v0, v11
+
+    const/4 v13, 0x5
+
+    aget v0, v0, v13
 
     const/16 v14, 0x20
 
     new-array v14, v14, [C
 
-    div-int/lit16 v15, v1, 0x3e8
+    div-int/lit16 v15, v2, 0x3e8
 
     const/16 v16, 0xa
 
@@ -3647,19 +3303,9 @@
 
     int-to-char v15, v15
 
-    aput-char v15, v14, v2
+    aput-char v15, v14, v3
 
-    div-int/lit8 v15, v1, 0x64
-
-    rem-int/lit8 v15, v15, 0xa
-
-    add-int/lit8 v15, v15, 0x30
-
-    int-to-char v15, v15
-
-    aput-char v15, v14, v4
-
-    div-int/lit8 v15, v1, 0xa
+    div-int/lit8 v15, v2, 0x64
 
     rem-int/lit8 v15, v15, 0xa
 
@@ -3669,210 +3315,220 @@
 
     aput-char v15, v14, v6
 
-    rem-int/lit8 v1, v1, 0xa
+    div-int/lit8 v15, v2, 0xa
 
-    add-int/lit8 v1, v1, 0x30
+    rem-int/lit8 v15, v15, 0xa
 
-    int-to-char v1, v1
+    add-int/lit8 v15, v15, 0x30
 
-    aput-char v1, v14, v8
+    int-to-char v15, v15
 
-    const/16 v1, 0x2d
+    aput-char v15, v14, v5
 
-    aput-char v1, v14, v10
+    rem-int/lit8 v2, v2, 0xa
 
-    div-int/lit8 v6, v3, 0xa
+    add-int/lit8 v2, v2, 0x30
 
-    rem-int/lit8 v6, v6, 0xa
+    int-to-char v2, v2
 
-    add-int/lit8 v6, v6, 0x30
+    aput-char v2, v14, v9
 
-    int-to-char v6, v6
+    const/16 v2, 0x2d
 
-    aput-char v6, v14, v12
+    aput-char v2, v14, v11
 
-    rem-int/lit8 v3, v3, 0xa
-
-    add-int/lit8 v3, v3, 0x30
-
-    int-to-char v3, v3
-
-    aput-char v3, v14, v0
-
-    const/4 v0, 0x7
-
-    aput-char v1, v14, v0
-
-    const/16 v0, 0x8
-
-    div-int/lit8 v1, v5, 0xa
-
-    rem-int/lit8 v1, v1, 0xa
-
-    add-int/lit8 v1, v1, 0x30
-
-    int-to-char v1, v1
-
-    aput-char v1, v14, v0
-
-    const/16 v0, 0x9
+    div-int/lit8 v5, v4, 0xa
 
     rem-int/lit8 v5, v5, 0xa
 
     add-int/lit8 v5, v5, 0x30
 
-    int-to-char v1, v5
+    int-to-char v5, v5
 
-    aput-char v1, v14, v0
+    aput-char v5, v14, v13
 
-    const/16 v0, 0x54
+    rem-int/lit8 v4, v4, 0xa
 
-    aput-char v0, v14, v16
+    add-int/lit8 v4, v4, 0x30
 
-    const/16 v0, 0xb
+    int-to-char v4, v4
 
-    div-int/lit8 v1, v7, 0xa
+    aput-char v4, v14, v1
 
-    rem-int/lit8 v1, v1, 0xa
+    const/4 v1, 0x7
 
-    add-int/lit8 v1, v1, 0x30
+    aput-char v2, v14, v1
 
-    int-to-char v1, v1
+    const/16 v1, 0x8
 
-    aput-char v1, v14, v0
+    div-int/lit8 v2, v7, 0xa
 
-    const/16 v0, 0xc
+    rem-int/lit8 v2, v2, 0xa
+
+    add-int/lit8 v2, v2, 0x30
+
+    int-to-char v2, v2
+
+    aput-char v2, v14, v1
+
+    const/16 v1, 0x9
 
     rem-int/lit8 v7, v7, 0xa
 
     add-int/lit8 v7, v7, 0x30
 
-    int-to-char v1, v7
+    int-to-char v2, v7
 
-    aput-char v1, v14, v0
+    aput-char v2, v14, v1
 
-    const/16 v0, 0xd
+    const/16 v1, 0x54
 
-    const/16 v1, 0x3a
+    aput-char v1, v14, v16
 
-    aput-char v1, v14, v0
+    const/16 v1, 0xb
 
-    const/16 v0, 0xe
+    div-int/lit8 v2, v8, 0xa
 
-    div-int/lit8 v3, v9, 0xa
+    rem-int/lit8 v2, v2, 0xa
 
-    rem-int/lit8 v3, v3, 0xa
+    add-int/lit8 v2, v2, 0x30
 
-    add-int/lit8 v3, v3, 0x30
+    int-to-char v2, v2
 
-    int-to-char v3, v3
+    aput-char v2, v14, v1
 
-    aput-char v3, v14, v0
+    const/16 v1, 0xc
 
-    const/16 v0, 0xf
+    rem-int/lit8 v8, v8, 0xa
 
-    rem-int/lit8 v9, v9, 0xa
+    add-int/lit8 v8, v8, 0x30
 
-    add-int/lit8 v9, v9, 0x30
+    int-to-char v2, v8
 
-    int-to-char v3, v9
+    aput-char v2, v14, v1
 
-    aput-char v3, v14, v0
+    const/16 v1, 0xd
 
-    const/16 v0, 0x10
+    const/16 v2, 0x3a
 
-    aput-char v1, v14, v0
+    aput-char v2, v14, v1
 
-    const/16 v0, 0x11
+    const/16 v1, 0xe
 
-    div-int/lit8 v1, v11, 0xa
+    div-int/lit8 v4, v10, 0xa
 
-    rem-int/lit8 v1, v1, 0xa
+    rem-int/lit8 v4, v4, 0xa
 
-    add-int/lit8 v1, v1, 0x30
+    add-int/lit8 v4, v4, 0x30
 
-    int-to-char v1, v1
+    int-to-char v4, v4
 
-    aput-char v1, v14, v0
+    aput-char v4, v14, v1
 
-    const/16 v0, 0x12
+    const/16 v1, 0xf
 
-    rem-int/lit8 v11, v11, 0xa
+    rem-int/lit8 v10, v10, 0xa
 
-    add-int/lit8 v11, v11, 0x30
+    add-int/lit8 v10, v10, 0x30
 
-    int-to-char v1, v11
+    int-to-char v4, v10
 
-    aput-char v1, v14, v0
+    aput-char v4, v14, v1
 
-    const/16 v0, 0x5a
+    const/16 v1, 0x10
 
-    const/16 v1, 0x13
+    aput-char v2, v14, v1
 
-    const/16 v3, 0x14
+    const/16 v1, 0x11
 
-    if-lez v13, :cond_1
+    div-int/lit8 v2, v12, 0xa
+
+    rem-int/lit8 v2, v2, 0xa
+
+    add-int/lit8 v2, v2, 0x30
+
+    int-to-char v2, v2
+
+    aput-char v2, v14, v1
+
+    const/16 v1, 0x12
+
+    rem-int/lit8 v12, v12, 0xa
+
+    add-int/lit8 v12, v12, 0x30
+
+    int-to-char v2, v12
+
+    aput-char v2, v14, v1
+
+    const/16 v1, 0x5a
+
+    const/16 v2, 0x13
+
+    const/16 v4, 0x14
+
+    if-lez v0, :cond_7
 
     const/16 v5, 0x2e
 
-    aput-char v5, v14, v1
+    aput-char v5, v14, v2
 
-    const v1, 0x5f5e100
+    const v2, 0x5f5e100
 
-    move v5, v3
+    move v5, v4
 
-    :goto_0
-    if-lez v1, :cond_0
+    :goto_2
+    if-lez v2, :cond_6
 
-    if-eqz v13, :cond_0
+    if-eqz v0, :cond_6
 
-    div-int v6, v13, v1
+    div-int v7, v0, v2
 
-    rem-int/lit8 v6, v6, 0xa
+    rem-int/lit8 v7, v7, 0xa
 
-    mul-int v7, v6, v1
+    mul-int v8, v7, v2
 
-    sub-int/2addr v13, v7
+    sub-int/2addr v0, v8
 
-    add-int/lit8 v7, v5, 0x1
+    add-int/lit8 v8, v5, 0x1
 
-    add-int/lit8 v6, v6, 0x30
+    add-int/lit8 v7, v7, 0x30
 
-    int-to-char v6, v6
+    int-to-char v7, v7
 
-    aput-char v6, v14, v5
+    aput-char v7, v14, v5
 
-    add-int/lit8 v3, v3, 0x1
+    add-int/lit8 v4, v4, 0x1
 
-    div-int/lit8 v1, v1, 0xa
+    div-int/lit8 v2, v2, 0xa
 
-    move v5, v7
+    move v5, v8
 
-    goto :goto_0
+    goto :goto_2
 
-    :cond_0
-    aput-char v0, v14, v5
+    :cond_6
+    aput-char v1, v14, v5
 
-    add-int/2addr v3, v4
+    add-int/2addr v4, v6
 
-    goto :goto_1
+    goto :goto_3
 
-    :cond_1
-    aput-char v0, v14, v1
+    :cond_7
+    aput-char v1, v14, v2
 
-    :goto_1
+    :goto_3
     new-instance v0, Ljava/lang/String;
 
-    invoke-direct {v0, v14, v2, v3}, Ljava/lang/String;-><init>([CII)V
+    invoke-direct {v0, v14, v3, v4}, Ljava/lang/String;-><init>([CII)V
 
     return-object v0
 
-    :cond_2
+    :cond_8
     new-instance v0, Ljava/lang/IllegalArgumentException;
 
-    const-string v3, ") is not less or equal to 9999"
+    const-string v1, ") is not less or equal to 9999"
 
-    invoke-static {v2, v1, v3}, Landroidx/core/os/LocaleListCompatWrapper$$ExternalSyntheticOutline0;->m(Ljava/lang/String;ILjava/lang/String;)Ljava/lang/String;
+    invoke-static {v3, v2, v1}, Landroidx/core/os/LocaleListCompatWrapper$$ExternalSyntheticOutline0;->m(Ljava/lang/String;ILjava/lang/String;)Ljava/lang/String;
 
     move-result-object v1
 
@@ -3880,12 +3536,12 @@
 
     throw v0
 
-    :cond_3
+    :cond_9
     new-instance v0, Ljava/lang/IllegalArgumentException;
 
-    const-string v3, ") is not greater or equal to 0"
+    const-string v1, ") is not greater or equal to 0"
 
-    invoke-static {v2, v1, v3}, Landroidx/core/os/LocaleListCompatWrapper$$ExternalSyntheticOutline0;->m(Ljava/lang/String;ILjava/lang/String;)Ljava/lang/String;
+    invoke-static {v3, v2, v1}, Landroidx/core/os/LocaleListCompatWrapper$$ExternalSyntheticOutline0;->m(Ljava/lang/String;ILjava/lang/String;)Ljava/lang/String;
 
     move-result-object v1
 
@@ -3893,7 +3549,7 @@
 
     throw v0
 
-    :cond_4
+    :cond_a
     new-instance v0, Ljava/lang/UnsupportedOperationException;
 
     const-string v1, "Local time offsets not supported"
@@ -3901,6 +3557,48 @@
     invoke-direct {v0, v1}, Ljava/lang/UnsupportedOperationException;-><init>(Ljava/lang/String;)V
 
     throw v0
+
+    :cond_b
+    new-instance v1, Ljava/lang/IllegalArgumentException;
+
+    const-string v2, "\"lesserFields\" + \"\'s length\" ("
+
+    invoke-static {v2}, Landroid/support/v4/media/RatingCompat$$ExternalSyntheticOutline0;->m(Ljava/lang/String;)Ljava/lang/StringBuilder;
+
+    move-result-object v2
+
+    array-length v0, v0
+
+    const-string v3, ") is not greater or equal to 7"
+
+    invoke-static {v2, v0, v3}, Landroidx/camera/core/AutoValue_ImmutableImageInfo$$ExternalSyntheticOutline0;->m(Ljava/lang/StringBuilder;ILjava/lang/String;)Ljava/lang/String;
+
+    move-result-object v0
+
+    invoke-direct {v1, v0}, Ljava/lang/IllegalArgumentException;-><init>(Ljava/lang/String;)V
+
+    throw v1
+
+    :cond_c
+    new-instance v1, Ljava/lang/IllegalArgumentException;
+
+    const-string v2, " (7) is not less or equal to "
+
+    invoke-static {v2}, Landroid/support/v4/media/RatingCompat$$ExternalSyntheticOutline0;->m(Ljava/lang/String;)Ljava/lang/StringBuilder;
+
+    move-result-object v2
+
+    array-length v0, v0
+
+    invoke-virtual {v2, v0}, Ljava/lang/StringBuilder;->append(I)Ljava/lang/StringBuilder;
+
+    invoke-virtual {v2}, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
+
+    move-result-object v0
+
+    invoke-direct {v1, v0}, Ljava/lang/IllegalArgumentException;-><init>(Ljava/lang/String;)V
+
+    throw v1
 .end method
 
 .method public static TrimDotZero(Ljava/lang/String;)Ljava/lang/String;

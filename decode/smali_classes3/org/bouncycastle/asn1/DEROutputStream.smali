@@ -1,4 +1,4 @@
-.class public Lorg/bouncycastle/asn1/DEROutputStream;
+.class Lorg/bouncycastle/asn1/DEROutputStream;
 .super Lorg/bouncycastle/asn1/ASN1OutputStream;
 
 

@@ -26,7 +26,7 @@
     .end annotation
 .end method
 
-.method public abstract getQrCodeErrorCorrectionLevel()Lcom/google/zxing/qrcode/decoder/ErrorCorrectionLevel;
+.method public abstract getQrCodeErrorCorrectionLevel$enumunboxing$()I
 .end method
 
 .method public abstract getRiskCalculationParameters()Lde/rki/coronawarnapp/appconfig/PresenceTracingRiskCalculationParamContainer;

@@ -51,6 +51,48 @@
     return-void
 .end method
 
+.method public constructor <init>(Lcom/fasterxml/jackson/databind/jsontype/impl/StdTypeResolverBuilder;Ljava/lang/Class;)V
+    .locals 1
+    .annotation system Ldalvik/annotation/Signature;
+        value = {
+            "(",
+            "Lcom/fasterxml/jackson/databind/jsontype/impl/StdTypeResolverBuilder;",
+            "Ljava/lang/Class<",
+            "*>;)V"
+        }
+    .end annotation
+
+    invoke-direct {p0}, Ljava/lang/Object;-><init>()V
+
+    const/4 v0, 0x0
+
+    iput-boolean v0, p0, Lcom/fasterxml/jackson/databind/jsontype/impl/StdTypeResolverBuilder;->_typeIdVisible:Z
+
+    iget-object v0, p1, Lcom/fasterxml/jackson/databind/jsontype/impl/StdTypeResolverBuilder;->_idType:Lcom/fasterxml/jackson/annotation/JsonTypeInfo$Id;
+
+    iput-object v0, p0, Lcom/fasterxml/jackson/databind/jsontype/impl/StdTypeResolverBuilder;->_idType:Lcom/fasterxml/jackson/annotation/JsonTypeInfo$Id;
+
+    iget-object v0, p1, Lcom/fasterxml/jackson/databind/jsontype/impl/StdTypeResolverBuilder;->_includeAs:Lcom/fasterxml/jackson/annotation/JsonTypeInfo$As;
+
+    iput-object v0, p0, Lcom/fasterxml/jackson/databind/jsontype/impl/StdTypeResolverBuilder;->_includeAs:Lcom/fasterxml/jackson/annotation/JsonTypeInfo$As;
+
+    iget-object v0, p1, Lcom/fasterxml/jackson/databind/jsontype/impl/StdTypeResolverBuilder;->_typeProperty:Ljava/lang/String;
+
+    iput-object v0, p0, Lcom/fasterxml/jackson/databind/jsontype/impl/StdTypeResolverBuilder;->_typeProperty:Ljava/lang/String;
+
+    iget-boolean v0, p1, Lcom/fasterxml/jackson/databind/jsontype/impl/StdTypeResolverBuilder;->_typeIdVisible:Z
+
+    iput-boolean v0, p0, Lcom/fasterxml/jackson/databind/jsontype/impl/StdTypeResolverBuilder;->_typeIdVisible:Z
+
+    iget-object p1, p1, Lcom/fasterxml/jackson/databind/jsontype/impl/StdTypeResolverBuilder;->_customIdResolver:Lcom/fasterxml/jackson/databind/jsontype/TypeIdResolver;
+
+    iput-object p1, p0, Lcom/fasterxml/jackson/databind/jsontype/impl/StdTypeResolverBuilder;->_customIdResolver:Lcom/fasterxml/jackson/databind/jsontype/TypeIdResolver;
+
+    iput-object p2, p0, Lcom/fasterxml/jackson/databind/jsontype/impl/StdTypeResolverBuilder;->_defaultImpl:Ljava/lang/Class;
+
+    return-void
+.end method
+
 
 # virtual methods
 .method public buildTypeDeserializer(Lcom/fasterxml/jackson/databind/DeserializationConfig;Lcom/fasterxml/jackson/databind/JavaType;Ljava/util/Collection;)Lcom/fasterxml/jackson/databind/jsontype/TypeDeserializer;
@@ -118,7 +160,7 @@
 
     move-result v1
 
-    if-eq v1, v11, :cond_10
+    if-eq v1, v11, :cond_11
 
     if-ne v1, v13, :cond_3
 
@@ -145,61 +187,41 @@
 
     iget-object v0, v7, Lcom/fasterxml/jackson/databind/jsontype/impl/StdTypeResolverBuilder;->_defaultImpl:Ljava/lang/Class;
 
-    if-nez v0, :cond_4
+    if-eqz v0, :cond_9
 
-    sget-object v0, Lcom/fasterxml/jackson/databind/MapperFeature;->USE_BASE_TYPE_AS_DEFAULT_IMPL:Lcom/fasterxml/jackson/databind/MapperFeature;
+    const-class v1, Ljava/lang/Void;
 
-    invoke-virtual {p1, v0}, Lcom/fasterxml/jackson/databind/cfg/MapperConfig;->isEnabled(Lcom/fasterxml/jackson/databind/MapperFeature;)Z
+    if-eq v0, v1, :cond_8
 
-    move-result v0
+    const-class v1, Lde/rki/coronawarnapp/update/InAppUpdateModule;
 
-    if-eqz v0, :cond_8
-
-    invoke-virtual/range {p2 .. p2}, Lcom/fasterxml/jackson/databind/JavaType;->isAbstract()Z
-
-    move-result v0
-
-    if-nez v0, :cond_8
+    if-ne v0, v1, :cond_4
 
     goto :goto_1
 
     :cond_4
-    const-class v1, Ljava/lang/Void;
-
-    if-eq v0, v1, :cond_9
-
-    const-class v1, Lcom/fasterxml/jackson/databind/annotation/NoClass;
-
-    if-ne v0, v1, :cond_5
-
-    goto :goto_2
-
-    :cond_5
     iget-object v1, v9, Lcom/fasterxml/jackson/databind/JavaType;->_class:Ljava/lang/Class;
 
-    if-ne v1, v0, :cond_6
+    if-ne v1, v0, :cond_5
 
     move v1, v13
 
     goto :goto_0
 
-    :cond_6
+    :cond_5
     move v1, v12
 
     :goto_0
-    if-eqz v1, :cond_7
+    if-eqz v1, :cond_6
 
-    :goto_1
-    move-object v5, v9
+    goto :goto_3
 
-    goto :goto_4
-
-    :cond_7
+    :cond_6
     invoke-virtual {v9, v0}, Lcom/fasterxml/jackson/databind/JavaType;->isTypeOrSuperTypeOf(Ljava/lang/Class;)Z
 
     move-result v0
 
-    if-eqz v0, :cond_8
+    if-eqz v0, :cond_7
 
     iget-object v0, v8, Lcom/fasterxml/jackson/databind/cfg/MapperConfig;->_base:Lcom/fasterxml/jackson/databind/cfg/BaseSettings;
 
@@ -211,34 +233,65 @@
 
     move-result-object v0
 
+    goto :goto_2
+
+    :cond_7
+    iget-object v0, v7, Lcom/fasterxml/jackson/databind/jsontype/impl/StdTypeResolverBuilder;->_defaultImpl:Ljava/lang/Class;
+
+    invoke-virtual {v9, v0}, Lcom/fasterxml/jackson/databind/JavaType;->hasRawClass(Ljava/lang/Class;)Z
+
+    move-result v0
+
+    if-eqz v0, :cond_9
+
     goto :goto_3
 
     :cond_8
-    move-object v5, v10
-
-    goto :goto_4
-
-    :cond_9
-    :goto_2
+    :goto_1
     iget-object v1, v8, Lcom/fasterxml/jackson/databind/cfg/MapperConfig;->_base:Lcom/fasterxml/jackson/databind/cfg/BaseSettings;
 
     iget-object v1, v1, Lcom/fasterxml/jackson/databind/cfg/BaseSettings;->_typeFactory:Lcom/fasterxml/jackson/databind/type/TypeFactory;
 
     sget-object v3, Lcom/fasterxml/jackson/databind/type/TypeFactory;->EMPTY_BINDINGS:Lcom/fasterxml/jackson/databind/type/TypeBindings;
 
-    invoke-virtual {v1, v10, v0, v3}, Lcom/fasterxml/jackson/databind/type/TypeFactory;->_fromAny(Landroidx/fragment/app/FragmentStore;Ljava/lang/reflect/Type;Lcom/fasterxml/jackson/databind/type/TypeBindings;)Lcom/fasterxml/jackson/databind/JavaType;
+    invoke-virtual {v1, v10, v0, v3}, Lcom/fasterxml/jackson/databind/type/TypeFactory;->_fromAny(Lcom/fasterxml/jackson/databind/type/ClassStack;Ljava/lang/reflect/Type;Lcom/fasterxml/jackson/databind/type/TypeBindings;)Lcom/fasterxml/jackson/databind/JavaType;
 
     move-result-object v0
 
-    :goto_3
+    :goto_2
     move-object v5, v0
+
+    goto :goto_4
+
+    :cond_9
+    sget-object v0, Lcom/fasterxml/jackson/databind/MapperFeature;->USE_BASE_TYPE_AS_DEFAULT_IMPL:Lcom/fasterxml/jackson/databind/MapperFeature;
+
+    invoke-virtual {p1, v0}, Lcom/fasterxml/jackson/databind/cfg/MapperConfig;->isEnabled(Lcom/fasterxml/jackson/databind/MapperFeature;)Z
+
+    move-result v0
+
+    if-eqz v0, :cond_a
+
+    invoke-virtual/range {p2 .. p2}, Lcom/fasterxml/jackson/databind/JavaType;->isAbstract()Z
+
+    move-result v0
+
+    if-nez v0, :cond_a
+
+    :goto_3
+    move-object v5, v9
+
+    goto :goto_4
+
+    :cond_a
+    move-object v5, v10
 
     :goto_4
     iget-object v0, v7, Lcom/fasterxml/jackson/databind/jsontype/impl/StdTypeResolverBuilder;->_idType:Lcom/fasterxml/jackson/annotation/JsonTypeInfo$Id;
 
     sget-object v1, Lcom/fasterxml/jackson/annotation/JsonTypeInfo$Id;->DEDUCTION:Lcom/fasterxml/jackson/annotation/JsonTypeInfo$Id;
 
-    if-ne v0, v1, :cond_a
+    if-ne v0, v1, :cond_b
 
     new-instance v6, Lcom/fasterxml/jackson/databind/jsontype/impl/AsDeductionTypeDeserializer;
 
@@ -256,30 +309,30 @@
 
     return-object v6
 
-    :cond_a
+    :cond_b
     iget-object v0, v7, Lcom/fasterxml/jackson/databind/jsontype/impl/StdTypeResolverBuilder;->_includeAs:Lcom/fasterxml/jackson/annotation/JsonTypeInfo$As;
 
     invoke-virtual {v0}, Ljava/lang/Enum;->ordinal()I
 
     move-result v0
 
-    if-eqz v0, :cond_f
+    if-eqz v0, :cond_10
 
-    if-eq v0, v13, :cond_e
+    if-eq v0, v13, :cond_f
 
-    if-eq v0, v11, :cond_d
+    if-eq v0, v11, :cond_e
 
     const/4 v1, 0x3
 
-    if-eq v0, v1, :cond_c
+    if-eq v0, v1, :cond_d
 
     const/4 v1, 0x4
 
-    if-ne v0, v1, :cond_b
+    if-ne v0, v1, :cond_c
 
     goto :goto_5
 
-    :cond_b
+    :cond_c
     new-instance v0, Ljava/lang/IllegalStateException;
 
     const-string v1, "Do not know how to construct standard type serializer for inclusion type: "
@@ -300,7 +353,7 @@
 
     throw v0
 
-    :cond_c
+    :cond_d
     new-instance v6, Lcom/fasterxml/jackson/databind/jsontype/impl/AsExternalTypeDeserializer;
 
     iget-object v3, v7, Lcom/fasterxml/jackson/databind/jsontype/impl/StdTypeResolverBuilder;->_typeProperty:Ljava/lang/String;
@@ -315,7 +368,7 @@
 
     return-object v6
 
-    :cond_d
+    :cond_e
     new-instance v6, Lcom/fasterxml/jackson/databind/jsontype/impl/AsArrayTypeDeserializer;
 
     iget-object v3, v7, Lcom/fasterxml/jackson/databind/jsontype/impl/StdTypeResolverBuilder;->_typeProperty:Ljava/lang/String;
@@ -330,7 +383,7 @@
 
     return-object v6
 
-    :cond_e
+    :cond_f
     new-instance v6, Lcom/fasterxml/jackson/databind/jsontype/impl/AsWrapperTypeDeserializer;
 
     iget-object v3, v7, Lcom/fasterxml/jackson/databind/jsontype/impl/StdTypeResolverBuilder;->_typeProperty:Ljava/lang/String;
@@ -345,7 +398,7 @@
 
     return-object v6
 
-    :cond_f
+    :cond_10
     :goto_5
     new-instance v8, Lcom/fasterxml/jackson/databind/jsontype/impl/AsPropertyTypeDeserializer;
 
@@ -363,7 +416,7 @@
 
     return-object v8
 
-    :cond_10
+    :cond_11
     new-instance v1, Ljava/lang/IllegalArgumentException;
 
     new-array v2, v11, [Ljava/lang/Object;
@@ -912,4 +965,30 @@
     iput-object p1, p0, Lcom/fasterxml/jackson/databind/jsontype/impl/StdTypeResolverBuilder;->_typeProperty:Ljava/lang/String;
 
     return-object p0
+.end method
+
+.method public withDefaultImpl(Ljava/lang/Class;)Lcom/fasterxml/jackson/databind/jsontype/TypeResolverBuilder;
+    .locals 2
+
+    iget-object v0, p0, Lcom/fasterxml/jackson/databind/jsontype/impl/StdTypeResolverBuilder;->_defaultImpl:Ljava/lang/Class;
+
+    if-ne v0, p1, :cond_0
+
+    move-object v0, p0
+
+    goto :goto_0
+
+    :cond_0
+    const-class v0, Lcom/fasterxml/jackson/databind/jsontype/impl/StdTypeResolverBuilder;
+
+    const-string/jumbo v1, "withDefaultImpl"
+
+    invoke-static {v0, p0, v1}, Lcom/fasterxml/jackson/databind/util/ClassUtil;->verifyMustOverride(Ljava/lang/Class;Ljava/lang/Object;Ljava/lang/String;)V
+
+    new-instance v0, Lcom/fasterxml/jackson/databind/jsontype/impl/StdTypeResolverBuilder;
+
+    invoke-direct {v0, p0, p1}, Lcom/fasterxml/jackson/databind/jsontype/impl/StdTypeResolverBuilder;-><init>(Lcom/fasterxml/jackson/databind/jsontype/impl/StdTypeResolverBuilder;Ljava/lang/Class;)V
+
+    :goto_0
+    return-object v0
 .end method

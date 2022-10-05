@@ -51,7 +51,7 @@
 
 # virtual methods
 .method public invoke(Ljava/lang/Object;)Ljava/lang/Object;
-    .locals 4
+    .locals 3
 
     check-cast p1, Lde/rki/coronawarnapp/contactdiary/ui/onboarding/ContactDiaryOnboardingNavigationEvents;
 
@@ -86,7 +86,7 @@
 
     new-instance v0, Landroidx/navigation/ActionOnlyNavDirections;
 
-    const v1, 0x7f0a004b
+    const v1, 0x7f0a004d
 
     invoke-direct {v0, v1}, Landroidx/navigation/ActionOnlyNavDirections;-><init>(I)V
 
@@ -107,25 +107,19 @@
 
     iget-object p1, p1, Lde/rki/coronawarnapp/contactdiary/ui/onboarding/ContactDiaryOnboardingFragment;->settings:Lde/rki/coronawarnapp/contactdiary/ui/ContactDiarySettings;
 
-    const/4 v0, 0x0
-
     if-eqz p1, :cond_5
 
-    sget-object v1, Lde/rki/coronawarnapp/contactdiary/ui/ContactDiarySettings$OnboardingStatus;->RISK_STATUS_1_12:Lde/rki/coronawarnapp/contactdiary/ui/ContactDiarySettings$OnboardingStatus;
-
-    const-string/jumbo v2, "value"
-
-    invoke-static {v1, v2}, Lkotlin/jvm/internal/Intrinsics;->checkNotNullParameter(Ljava/lang/Object;Ljava/lang/String;)V
+    const/4 v0, 0x2
 
     iget-object p1, p1, Lde/rki/coronawarnapp/contactdiary/ui/ContactDiarySettings;->preferences:Lde/rki/coronawarnapp/contactdiary/storage/ContactDiaryPreferences;
 
     iget-object p1, p1, Lde/rki/coronawarnapp/contactdiary/storage/ContactDiaryPreferences;->onboardingStatusOrder:Lde/rki/coronawarnapp/util/preferences/FlowPreference;
 
-    new-instance v2, Lde/rki/coronawarnapp/contactdiary/ui/ContactDiarySettings$onboardingStatus$2;
+    new-instance v1, Lde/rki/coronawarnapp/contactdiary/ui/ContactDiarySettings$onboardingStatus$2;
 
-    invoke-direct {v2, v1}, Lde/rki/coronawarnapp/contactdiary/ui/ContactDiarySettings$onboardingStatus$2;-><init>(Lde/rki/coronawarnapp/contactdiary/ui/ContactDiarySettings$OnboardingStatus;)V
+    invoke-direct {v1, v0}, Lde/rki/coronawarnapp/contactdiary/ui/ContactDiarySettings$onboardingStatus$2;-><init>(I)V
 
-    invoke-virtual {p1, v2}, Lde/rki/coronawarnapp/util/preferences/FlowPreference;->update(Lkotlin/jvm/functions/Function1;)V
+    invoke-virtual {p1, v1}, Lde/rki/coronawarnapp/util/preferences/FlowPreference;->update(Lkotlin/jvm/functions/Function1;)V
 
     iget-object p1, p0, Lde/rki/coronawarnapp/contactdiary/ui/onboarding/ContactDiaryOnboardingFragment$onViewCreated$2;->this$0:Lde/rki/coronawarnapp/contactdiary/ui/onboarding/ContactDiaryOnboardingFragment;
 
@@ -133,66 +127,66 @@
 
     move-result-object p1
 
-    const/4 v1, 0x0
+    const/4 v0, 0x0
 
-    const/4 v2, 0x1
+    const/4 v1, 0x1
 
     if-nez p1, :cond_2
 
     goto :goto_0
 
     :cond_2
-    const-string v3, "goToDay"
+    const-string v2, "goToDay"
 
-    invoke-virtual {p1, v3}, Landroid/os/Bundle;->containsKey(Ljava/lang/String;)Z
+    invoke-virtual {p1, v2}, Landroid/os/Bundle;->containsKey(Ljava/lang/String;)Z
 
     move-result p1
 
-    if-ne p1, v2, :cond_3
+    if-ne p1, v1, :cond_3
 
-    move v1, v2
+    move v0, v1
 
     :cond_3
     :goto_0
-    if-eqz v1, :cond_4
+    if-eqz v0, :cond_4
 
     iget-object p1, p0, Lde/rki/coronawarnapp/contactdiary/ui/onboarding/ContactDiaryOnboardingFragment$onViewCreated$2;->this$0:Lde/rki/coronawarnapp/contactdiary/ui/onboarding/ContactDiaryOnboardingFragment;
 
-    invoke-static {p1}, Landroidx/navigation/fragment/FragmentKt;->findNavController(Landroidx/fragment/app/Fragment;)Landroidx/navigation/NavController;
+    invoke-static {p1}, Lboofcv/alg/filter/kernel/KernelMath;->findNavController(Landroidx/fragment/app/Fragment;)Landroidx/navigation/NavController;
 
     move-result-object p1
 
-    const v1, 0x7f0a01db
+    const v0, 0x7f0a01ff
 
-    invoke-virtual {p1, v1, v2}, Landroidx/navigation/NavController;->popBackStack(IZ)Z
+    invoke-virtual {p1, v0, v1}, Landroidx/navigation/NavController;->popBackStack(IZ)Z
 
-    new-instance v1, Lorg/joda/time/LocalDate;
+    new-instance v0, Lorg/joda/time/LocalDate;
 
-    invoke-direct {v1}, Lorg/joda/time/LocalDate;-><init>()V
+    invoke-direct {v0}, Lorg/joda/time/LocalDate;-><init>()V
 
-    new-instance v2, Ljava/lang/StringBuilder;
+    new-instance v1, Ljava/lang/StringBuilder;
 
-    invoke-direct {v2}, Ljava/lang/StringBuilder;-><init>()V
+    invoke-direct {v1}, Ljava/lang/StringBuilder;-><init>()V
 
-    const-string v3, "coronawarnapp://contact-journal/day/"
+    const-string v2, "coronawarnapp://contact-journal/day/"
 
-    invoke-virtual {v2, v3}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+    invoke-virtual {v1, v2}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
 
-    invoke-virtual {v2, v1}, Ljava/lang/StringBuilder;->append(Ljava/lang/Object;)Ljava/lang/StringBuilder;
+    invoke-virtual {v1, v0}, Ljava/lang/StringBuilder;->append(Ljava/lang/Object;)Ljava/lang/StringBuilder;
 
-    invoke-virtual {v2}, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
+    invoke-virtual {v1}, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
 
-    move-result-object v1
+    move-result-object v0
 
-    invoke-static {v1}, Landroid/net/Uri;->parse(Ljava/lang/String;)Landroid/net/Uri;
+    invoke-static {v0}, Landroid/net/Uri;->parse(Ljava/lang/String;)Landroid/net/Uri;
 
-    move-result-object v1
+    move-result-object v0
 
-    const-string v2, "parse(this)"
+    const-string v1, "parse(this)"
 
-    invoke-static {v1, v2}, Lkotlin/jvm/internal/Intrinsics;->checkNotNullExpressionValue(Ljava/lang/Object;Ljava/lang/String;)V
+    invoke-static {v0, v1}, Lkotlin/jvm/internal/Intrinsics;->checkNotNullExpressionValue(Ljava/lang/Object;Ljava/lang/String;)V
 
-    invoke-static {v1, v0, v0, p1, v0}, Landroidx/navigation/NavController$$ExternalSyntheticOutline0;->m(Landroid/net/Uri;Ljava/lang/String;Ljava/lang/String;Landroidx/navigation/NavController;Landroidx/navigation/NavOptions;)V
+    invoke-virtual {p1, v0}, Landroidx/navigation/NavController;->navigate(Landroid/net/Uri;)V
 
     goto :goto_1
 
@@ -201,7 +195,7 @@
 
     new-instance v0, Landroidx/navigation/ActionOnlyNavDirections;
 
-    const v1, 0x7f0a004c
+    const v1, 0x7f0a004e
 
     invoke-direct {v0, v1}, Landroidx/navigation/ActionOnlyNavDirections;-><init>(I)V
 
@@ -210,11 +204,13 @@
     goto :goto_1
 
     :cond_5
-    const-string p1, "settings"
+    const-string/jumbo p1, "settings"
 
     invoke-static {p1}, Lkotlin/jvm/internal/Intrinsics;->throwUninitializedPropertyAccessException(Ljava/lang/String;)V
 
-    throw v0
+    const/4 p1, 0x0
+
+    throw p1
 
     :cond_6
     :goto_1

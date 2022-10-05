@@ -18,7 +18,7 @@
 
 
 # instance fields
-.field public final collisionBehavior:Lde/rki/coronawarnapp/task/TaskFactory$Config$CollisionBehavior;
+.field public final collisionBehavior:I
 
 .field public final executionTimeout:Lorg/joda/time/Duration;
 
@@ -26,14 +26,12 @@
 
 
 # direct methods
-.method public constructor <init>(Lde/rki/coronawarnapp/nearby/modules/detectiontracker/ExposureDetectionTracker;Lorg/joda/time/Duration;Lde/rki/coronawarnapp/task/TaskFactory$Config$CollisionBehavior;I)V
+.method public constructor <init>(Lde/rki/coronawarnapp/nearby/modules/detectiontracker/ExposureDetectionTracker;Lorg/joda/time/Duration;II)V
     .locals 2
 
-    and-int/lit8 p2, p4, 0x2
+    and-int/lit8 v0, p4, 0x2
 
-    const/4 p3, 0x0
-
-    if-eqz p2, :cond_0
+    if-eqz v0, :cond_0
 
     const-wide/16 v0, 0x8
 
@@ -41,17 +39,12 @@
 
     move-result-object p2
 
-    goto :goto_0
-
     :cond_0
-    move-object p2, p3
-
-    :goto_0
     and-int/lit8 p4, p4, 0x4
 
     if-eqz p4, :cond_1
 
-    sget-object p3, Lde/rki/coronawarnapp/task/TaskFactory$Config$CollisionBehavior;->SKIP_IF_SIBLING_RUNNING:Lde/rki/coronawarnapp/task/TaskFactory$Config$CollisionBehavior;
+    const/4 p3, 0x2
 
     :cond_1
     const-string p4, "exposureDetectionTracker"
@@ -64,7 +57,7 @@
 
     const-string p4, "collisionBehavior"
 
-    invoke-static {p3, p4}, Lkotlin/jvm/internal/Intrinsics;->checkNotNullParameter(Ljava/lang/Object;Ljava/lang/String;)V
+    invoke-static {p3, p4}, Lkotlin/jvm/internal/Intrinsics$$ExternalSyntheticCheckNotZero0;->m(ILjava/lang/String;)V
 
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
@@ -72,7 +65,7 @@
 
     iput-object p2, p0, Lde/rki/coronawarnapp/risk/RiskLevelTask$Config;->executionTimeout:Lorg/joda/time/Duration;
 
-    iput-object p3, p0, Lde/rki/coronawarnapp/risk/RiskLevelTask$Config;->collisionBehavior:Lde/rki/coronawarnapp/task/TaskFactory$Config$CollisionBehavior;
+    iput p3, p0, Lde/rki/coronawarnapp/risk/RiskLevelTask$Config;->collisionBehavior:I
 
     return-void
 .end method
@@ -126,9 +119,9 @@
     return v2
 
     :cond_3
-    iget-object v1, p0, Lde/rki/coronawarnapp/risk/RiskLevelTask$Config;->collisionBehavior:Lde/rki/coronawarnapp/task/TaskFactory$Config$CollisionBehavior;
+    iget v1, p0, Lde/rki/coronawarnapp/risk/RiskLevelTask$Config;->collisionBehavior:I
 
-    iget-object p1, p1, Lde/rki/coronawarnapp/risk/RiskLevelTask$Config;->collisionBehavior:Lde/rki/coronawarnapp/task/TaskFactory$Config$CollisionBehavior;
+    iget p1, p1, Lde/rki/coronawarnapp/risk/RiskLevelTask$Config;->collisionBehavior:I
 
     if-eq v1, p1, :cond_4
 
@@ -138,22 +131,22 @@
     return v0
 .end method
 
-.method public getCollisionBehavior()Lde/rki/coronawarnapp/task/TaskFactory$Config$CollisionBehavior;
+.method public getCollisionBehavior$enumunboxing$()I
     .locals 1
 
-    iget-object v0, p0, Lde/rki/coronawarnapp/risk/RiskLevelTask$Config;->collisionBehavior:Lde/rki/coronawarnapp/task/TaskFactory$Config$CollisionBehavior;
+    iget v0, p0, Lde/rki/coronawarnapp/risk/RiskLevelTask$Config;->collisionBehavior:I
 
-    return-object v0
+    return v0
 .end method
 
-.method public getErrorHandling()Lde/rki/coronawarnapp/task/TaskFactory$Config$ErrorHandling;
+.method public getErrorHandling$enumunboxing$()I
     .locals 1
 
-    invoke-static {p0}, Lde/rki/coronawarnapp/task/TaskFactory$Config$DefaultImpls;->getErrorHandling(Lde/rki/coronawarnapp/task/TaskFactory$Config;)Lde/rki/coronawarnapp/task/TaskFactory$Config$ErrorHandling;
+    invoke-static {p0}, Lde/rki/coronawarnapp/task/TaskFactory$Config$DefaultImpls;->getErrorHandling(Lde/rki/coronawarnapp/task/TaskFactory$Config;)I
 
-    sget-object v0, Lde/rki/coronawarnapp/task/TaskFactory$Config$ErrorHandling;->ALERT:Lde/rki/coronawarnapp/task/TaskFactory$Config$ErrorHandling;
+    const/4 v0, 0x2
 
-    return-object v0
+    return v0
 .end method
 
 .method public getExecutionTimeout()Lorg/joda/time/Duration;
@@ -214,9 +207,9 @@
 
     mul-int/lit8 v1, v1, 0x1f
 
-    iget-object v0, p0, Lde/rki/coronawarnapp/risk/RiskLevelTask$Config;->collisionBehavior:Lde/rki/coronawarnapp/task/TaskFactory$Config$CollisionBehavior;
+    iget v0, p0, Lde/rki/coronawarnapp/risk/RiskLevelTask$Config;->collisionBehavior:I
 
-    invoke-virtual {v0}, Ljava/lang/Enum;->hashCode()I
+    invoke-static {v0}, Landroidx/camera/camera2/internal/Camera2CameraImpl$InternalState$EnumUnboxingSharedUtility;->ordinal(I)I
 
     move-result v0
 
@@ -232,7 +225,7 @@
 
     iget-object v1, p0, Lde/rki/coronawarnapp/risk/RiskLevelTask$Config;->executionTimeout:Lorg/joda/time/Duration;
 
-    iget-object v2, p0, Lde/rki/coronawarnapp/risk/RiskLevelTask$Config;->collisionBehavior:Lde/rki/coronawarnapp/task/TaskFactory$Config$CollisionBehavior;
+    iget v2, p0, Lde/rki/coronawarnapp/risk/RiskLevelTask$Config;->collisionBehavior:I
 
     new-instance v3, Ljava/lang/StringBuilder;
 
@@ -254,7 +247,11 @@
 
     invoke-virtual {v3, v0}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
 
-    invoke-virtual {v3, v2}, Ljava/lang/StringBuilder;->append(Ljava/lang/Object;)Ljava/lang/StringBuilder;
+    invoke-static {v2}, Lde/rki/coronawarnapp/task/TaskFactory$Config$CollisionBehavior$EnumUnboxingLocalUtility;->stringValueOf(I)Ljava/lang/String;
+
+    move-result-object v0
+
+    invoke-virtual {v3, v0}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
 
     const-string v0, ")"
 

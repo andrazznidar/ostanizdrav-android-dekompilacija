@@ -2,7 +2,7 @@
 .super Ljava/lang/Object;
 
 # interfaces
-.implements Lj$/time/temporal/x;
+.implements Lj$/time/temporal/w;
 
 
 # static fields
@@ -35,17 +35,17 @@
 .method public final a(Lj$/time/temporal/TemporalAccessor;)Ljava/lang/Object;
     .locals 2
 
-    sget v0, Lj$/time/temporal/w;->a:I
+    sget v0, Lj$/time/temporal/n;->a:I
 
     sget-object v0, Lj$/time/temporal/a;->OFFSET_SECONDS:Lj$/time/temporal/a;
 
-    invoke-interface {p1, v0}, Lj$/time/temporal/TemporalAccessor;->i(Lj$/time/temporal/o;)Z
+    invoke-interface {p1, v0}, Lj$/time/temporal/TemporalAccessor;->e(Lj$/time/temporal/o;)Z
 
     move-result v1
 
     if-eqz v1, :cond_0
 
-    invoke-interface {p1, v0}, Lj$/time/temporal/TemporalAccessor;->c(Lj$/time/temporal/o;)I
+    invoke-interface {p1, v0}, Lj$/time/temporal/TemporalAccessor;->d(Lj$/time/temporal/o;)I
 
     move-result p1
 

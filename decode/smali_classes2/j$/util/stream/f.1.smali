@@ -7,7 +7,7 @@
 
 
 # instance fields
-.field protected final a:Lj$/util/stream/z2;
+.field protected final a:Lj$/util/stream/D0;
 
 .field protected b:Lj$/util/Spliterator;
 
@@ -35,6 +35,24 @@
     return-void
 .end method
 
+.method protected constructor <init>(Lj$/util/stream/D0;Lj$/util/Spliterator;)V
+    .locals 1
+
+    const/4 v0, 0x0
+
+    invoke-direct {p0, v0}, Ljava/util/concurrent/CountedCompleter;-><init>(Ljava/util/concurrent/CountedCompleter;)V
+
+    iput-object p1, p0, Lj$/util/stream/f;->a:Lj$/util/stream/D0;
+
+    iput-object p2, p0, Lj$/util/stream/f;->b:Lj$/util/Spliterator;
+
+    const-wide/16 p1, 0x0
+
+    iput-wide p1, p0, Lj$/util/stream/f;->c:J
+
+    return-void
+.end method
+
 .method protected constructor <init>(Lj$/util/stream/f;Lj$/util/Spliterator;)V
     .locals 0
 
@@ -42,29 +60,11 @@
 
     iput-object p2, p0, Lj$/util/stream/f;->b:Lj$/util/Spliterator;
 
-    iget-object p2, p1, Lj$/util/stream/f;->a:Lj$/util/stream/z2;
+    iget-object p2, p1, Lj$/util/stream/f;->a:Lj$/util/stream/D0;
 
-    iput-object p2, p0, Lj$/util/stream/f;->a:Lj$/util/stream/z2;
+    iput-object p2, p0, Lj$/util/stream/f;->a:Lj$/util/stream/D0;
 
     iget-wide p1, p1, Lj$/util/stream/f;->c:J
-
-    iput-wide p1, p0, Lj$/util/stream/f;->c:J
-
-    return-void
-.end method
-
-.method protected constructor <init>(Lj$/util/stream/z2;Lj$/util/Spliterator;)V
-    .locals 1
-
-    const/4 v0, 0x0
-
-    invoke-direct {p0, v0}, Ljava/util/concurrent/CountedCompleter;-><init>(Ljava/util/concurrent/CountedCompleter;)V
-
-    iput-object p1, p0, Lj$/util/stream/f;->a:Lj$/util/stream/z2;
-
-    iput-object p2, p0, Lj$/util/stream/f;->b:Lj$/util/Spliterator;
-
-    const-wide/16 p1, 0x0
 
     iput-wide p1, p0, Lj$/util/stream/f;->c:J
 

@@ -83,11 +83,11 @@
 
     move-result-object v1
 
-    invoke-static {v1}, Lcom/google/crypto/tink/signature/SigUtil;->toHashType(Lcom/google/crypto/tink/proto/HashType;)Lcom/google/crypto/tink/subtle/Enums$HashType;
+    invoke-static {v1}, Lcom/google/crypto/tink/signature/SigUtil;->toHashType(Lcom/google/crypto/tink/proto/HashType;)I
 
-    move-result-object v1
+    move-result v1
 
-    invoke-static {v1}, Lcom/google/crypto/tink/subtle/Validators;->validateSignatureHash(Lcom/google/crypto/tink/subtle/Enums$HashType;)V
+    invoke-static {v1}, Lcom/google/crypto/tink/subtle/Validators;->validateSignatureHash(I)V
 
     sget-object v1, Lcom/google/crypto/tink/subtle/EngineFactory;->KEY_PAIR_GENERATOR:Lcom/google/crypto/tink/subtle/EngineFactory;
 

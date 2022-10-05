@@ -110,7 +110,7 @@
     return-void
 .end method
 
-.method public static synthetic -$$Nest$sfgetDEFAULT_INSTANCE()Lde/rki/coronawarnapp/server/protocols/internal/AttenuationDurationOuterClass$Weights;
+.method public static bridge synthetic -$$Nest$sfgetDEFAULT_INSTANCE()Lde/rki/coronawarnapp/server/protocols/internal/AttenuationDurationOuterClass$Weights;
     .locals 1
 
     sget-object v0, Lde/rki/coronawarnapp/server/protocols/internal/AttenuationDurationOuterClass$Weights;->DEFAULT_INSTANCE:Lde/rki/coronawarnapp/server/protocols/internal/AttenuationDurationOuterClass$Weights;
@@ -755,7 +755,7 @@
     :pswitch_4
     new-instance p1, Lde/rki/coronawarnapp/server/protocols/internal/AttenuationDurationOuterClass$Weights$Builder;
 
-    invoke-direct {p1, v0}, Lde/rki/coronawarnapp/server/protocols/internal/AttenuationDurationOuterClass$Weights$Builder;-><init>(Lde/rki/coronawarnapp/server/protocols/internal/AttenuationDurationOuterClass$Weights$Builder-IA;)V
+    invoke-direct {p1, v0}, Lde/rki/coronawarnapp/server/protocols/internal/AttenuationDurationOuterClass$Weights$Builder;-><init>(Lde/rki/jfn/TimeUnit$EnumUnboxingLocalUtility;)V
 
     return-object p1
 

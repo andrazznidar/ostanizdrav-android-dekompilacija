@@ -33,7 +33,7 @@
 # instance fields
 .field public backoffDelayDuration:J
 
-.field public backoffPolicy:Landroidx/work/BackoffPolicy;
+.field public backoffPolicy:I
 
 .field public constraints:Landroidx/work/Constraints;
 
@@ -114,9 +114,9 @@
 
     iput-object v0, p0, Landroidx/work/impl/model/WorkSpec;->constraints:Landroidx/work/Constraints;
 
-    sget-object v0, Landroidx/work/BackoffPolicy;->EXPONENTIAL:Landroidx/work/BackoffPolicy;
+    const/4 v0, 0x1
 
-    iput-object v0, p0, Landroidx/work/impl/model/WorkSpec;->backoffPolicy:Landroidx/work/BackoffPolicy;
+    iput v0, p0, Landroidx/work/impl/model/WorkSpec;->backoffPolicy:I
 
     const-wide/16 v0, 0x7530
 
@@ -182,9 +182,9 @@
 
     iput v0, p0, Landroidx/work/impl/model/WorkSpec;->runAttemptCount:I
 
-    iget-object v0, p1, Landroidx/work/impl/model/WorkSpec;->backoffPolicy:Landroidx/work/BackoffPolicy;
+    iget v0, p1, Landroidx/work/impl/model/WorkSpec;->backoffPolicy:I
 
-    iput-object v0, p0, Landroidx/work/impl/model/WorkSpec;->backoffPolicy:Landroidx/work/BackoffPolicy;
+    iput v0, p0, Landroidx/work/impl/model/WorkSpec;->backoffPolicy:I
 
     iget-wide v0, p1, Landroidx/work/impl/model/WorkSpec;->backoffDelayDuration:J
 
@@ -238,9 +238,9 @@
 
     iput-object v0, p0, Landroidx/work/impl/model/WorkSpec;->constraints:Landroidx/work/Constraints;
 
-    sget-object v0, Landroidx/work/BackoffPolicy;->EXPONENTIAL:Landroidx/work/BackoffPolicy;
+    const/4 v0, 0x1
 
-    iput-object v0, p0, Landroidx/work/impl/model/WorkSpec;->backoffPolicy:Landroidx/work/BackoffPolicy;
+    iput v0, p0, Landroidx/work/impl/model/WorkSpec;->backoffPolicy:I
 
     const-wide/16 v0, 0x7530
 
@@ -286,9 +286,9 @@
     :goto_0
     if-eqz v0, :cond_3
 
-    iget-object v0, p0, Landroidx/work/impl/model/WorkSpec;->backoffPolicy:Landroidx/work/BackoffPolicy;
+    iget v0, p0, Landroidx/work/impl/model/WorkSpec;->backoffPolicy:I
 
-    sget-object v1, Landroidx/work/BackoffPolicy;->LINEAR:Landroidx/work/BackoffPolicy;
+    const/4 v1, 0x2
 
     if-ne v0, v1, :cond_1
 
@@ -637,9 +637,9 @@
     return v2
 
     :cond_12
-    iget-object v1, p0, Landroidx/work/impl/model/WorkSpec;->backoffPolicy:Landroidx/work/BackoffPolicy;
+    iget v1, p0, Landroidx/work/impl/model/WorkSpec;->backoffPolicy:I
 
-    iget-object p1, p1, Landroidx/work/impl/model/WorkSpec;->backoffPolicy:Landroidx/work/BackoffPolicy;
+    iget p1, p1, Landroidx/work/impl/model/WorkSpec;->backoffPolicy:I
 
     if-ne v1, p1, :cond_13
 
@@ -789,9 +789,9 @@
 
     mul-int/lit8 v1, v1, 0x1f
 
-    iget-object v0, p0, Landroidx/work/impl/model/WorkSpec;->backoffPolicy:Landroidx/work/BackoffPolicy;
+    iget v0, p0, Landroidx/work/impl/model/WorkSpec;->backoffPolicy:I
 
-    invoke-virtual {v0}, Ljava/lang/Enum;->hashCode()I
+    invoke-static {v0}, Landroidx/camera/camera2/internal/Camera2CameraImpl$InternalState$EnumUnboxingSharedUtility;->ordinal(I)I
 
     move-result v0
 
@@ -889,7 +889,7 @@
 
     const-string/jumbo v2, "}"
 
-    invoke-static {v0, v1, v2}, Landroidx/constraintlayout/core/widgets/Barrier$$ExternalSyntheticOutline0;->m(Ljava/lang/StringBuilder;Ljava/lang/String;Ljava/lang/String;)Ljava/lang/String;
+    invoke-static {v0, v1, v2}, Landroidx/activity/ComponentActivity$2$$ExternalSyntheticOutline0;->m(Ljava/lang/StringBuilder;Ljava/lang/String;Ljava/lang/String;)Ljava/lang/String;
 
     move-result-object v0
 

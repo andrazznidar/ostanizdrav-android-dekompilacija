@@ -32,15 +32,15 @@
 .method public map(Lde/rki/coronawarnapp/server/protocols/internal/v2/AppConfigAndroid$ApplicationConfigurationAndroid;)Ljava/lang/Object;
     .locals 20
 
-    sget-object v1, Lcom/google/zxing/qrcode/decoder/ErrorCorrectionLevel;->H:Lcom/google/zxing/qrcode/decoder/ErrorCorrectionLevel;
-
     invoke-virtual/range {p1 .. p1}, Lde/rki/coronawarnapp/server/protocols/internal/v2/AppConfigAndroid$ApplicationConfigurationAndroid;->hasPresenceTracingParameters()Z
 
     move-result v0
 
-    const/4 v2, 0x3
+    const/4 v1, 0x3
 
-    const/4 v3, 0x7
+    const/4 v3, 0x4
+
+    const/4 v2, 0x7
 
     const/4 v4, 0x0
 
@@ -56,51 +56,47 @@
 
     invoke-virtual {v0, v6, v4}, Ltimber/log/Timber$Forest;->w(Ljava/lang/String;[Ljava/lang/Object;)V
 
-    new-instance v8, Lde/rki/coronawarnapp/appconfig/PresenceTracingConfigContainer;
+    new-instance v0, Lde/rki/coronawarnapp/appconfig/PresenceTracingConfigContainer;
 
     sget-object v4, Lkotlin/collections/EmptyList;->INSTANCE:Lkotlin/collections/EmptyList;
 
     new-instance v6, Lde/rki/coronawarnapp/appconfig/PresenceTracingRiskCalculationParamContainer;
 
-    invoke-direct {v6, v5, v5, v5, v3}, Lde/rki/coronawarnapp/appconfig/PresenceTracingRiskCalculationParamContainer;-><init>(Ljava/util/List;Ljava/util/List;Ljava/util/List;I)V
+    invoke-direct {v6, v5, v5, v5, v2}, Lde/rki/coronawarnapp/appconfig/PresenceTracingRiskCalculationParamContainer;-><init>(Ljava/util/List;Ljava/util/List;Ljava/util/List;I)V
 
     new-instance v7, Lde/rki/coronawarnapp/appconfig/PresenceTracingSubmissionParamContainer;
 
-    invoke-direct {v7, v5, v5, v2}, Lde/rki/coronawarnapp/appconfig/PresenceTracingSubmissionParamContainer;-><init>(Ljava/util/List;Ljava/util/List;I)V
+    invoke-direct {v7, v5, v5, v1}, Lde/rki/coronawarnapp/appconfig/PresenceTracingSubmissionParamContainer;-><init>(Ljava/util/List;Ljava/util/List;I)V
 
-    new-instance v5, Lde/rki/coronawarnapp/appconfig/PlausibleDeniabilityParametersContainer;
-
-    const/4 v10, 0x0
-
-    const-wide/16 v11, 0x0
-
-    const-wide/16 v13, 0x0
-
-    const/4 v15, 0x0
-
-    const/16 v16, 0xf
-
-    move-object v9, v5
-
-    invoke-direct/range {v9 .. v16}, Lde/rki/coronawarnapp/appconfig/PlausibleDeniabilityParametersContainer;-><init>(Ljava/util/List;DDLjava/util/List;I)V
+    new-instance v1, Lde/rki/coronawarnapp/appconfig/PlausibleDeniabilityParametersContainer;
 
     const/4 v9, 0x0
 
-    const/16 v10, 0x20
+    const-wide/16 v10, 0x0
 
-    move-object v0, v8
+    const-wide/16 v12, 0x0
 
-    move-object v2, v4
+    const/4 v14, 0x0
 
-    move-object v3, v6
+    const/16 v15, 0xf
 
-    move-object v4, v7
+    move-object v8, v1
 
-    move-object v6, v9
+    invoke-direct/range {v8 .. v15}, Lde/rki/coronawarnapp/appconfig/PlausibleDeniabilityParametersContainer;-><init>(Ljava/util/List;DDLjava/util/List;I)V
 
-    move v7, v10
+    const/4 v8, 0x0
 
-    invoke-direct/range {v0 .. v7}, Lde/rki/coronawarnapp/appconfig/PresenceTracingConfigContainer;-><init>(Lcom/google/zxing/qrcode/decoder/ErrorCorrectionLevel;Ljava/util/List;Lde/rki/coronawarnapp/appconfig/PresenceTracingRiskCalculationParamContainer;Lde/rki/coronawarnapp/appconfig/PresenceTracingSubmissionParamContainer;Lde/rki/coronawarnapp/appconfig/PlausibleDeniabilityParametersContainer;Ljava/util/List;I)V
+    const/16 v9, 0x20
+
+    move-object v2, v0
+
+    move-object v5, v6
+
+    move-object v6, v7
+
+    move-object v7, v1
+
+    invoke-direct/range {v2 .. v9}, Lde/rki/coronawarnapp/appconfig/PresenceTracingConfigContainer;-><init>(ILjava/util/List;Lde/rki/coronawarnapp/appconfig/PresenceTracingRiskCalculationParamContainer;Lde/rki/coronawarnapp/appconfig/PresenceTracingSubmissionParamContainer;Lde/rki/coronawarnapp/appconfig/PlausibleDeniabilityParametersContainer;Ljava/util/List;I)V
 
     goto/16 :goto_5
 
@@ -117,15 +113,15 @@
 
     invoke-virtual {v0}, Lde/rki/coronawarnapp/server/protocols/internal/v2/PresenceTracingParametersOuterClass$PresenceTracingParameters;->getRiskCalculationParameters()Lde/rki/coronawarnapp/server/protocols/internal/v2/PresenceTracingParametersOuterClass$PresenceTracingRiskCalculationParameters;
 
-    move-result-object v3
+    move-result-object v2
 
     const-string v6, "riskCalculationParameters"
 
-    invoke-static {v3, v6}, Lkotlin/jvm/internal/Intrinsics;->checkNotNullExpressionValue(Ljava/lang/Object;Ljava/lang/String;)V
+    invoke-static {v2, v6}, Lkotlin/jvm/internal/Intrinsics;->checkNotNullExpressionValue(Ljava/lang/Object;Ljava/lang/String;)V
 
     new-instance v6, Lde/rki/coronawarnapp/appconfig/PresenceTracingRiskCalculationParamContainer;
 
-    invoke-virtual {v3}, Lde/rki/coronawarnapp/server/protocols/internal/v2/PresenceTracingParametersOuterClass$PresenceTracingRiskCalculationParameters;->getTransmissionRiskValueMappingList()Ljava/util/List;
+    invoke-virtual {v2}, Lde/rki/coronawarnapp/server/protocols/internal/v2/PresenceTracingParametersOuterClass$PresenceTracingRiskCalculationParameters;->getTransmissionRiskValueMappingList()Ljava/util/List;
 
     move-result-object v7
 
@@ -133,7 +129,7 @@
 
     invoke-static {v7, v8}, Lkotlin/jvm/internal/Intrinsics;->checkNotNullExpressionValue(Ljava/lang/Object;Ljava/lang/String;)V
 
-    invoke-virtual {v3}, Lde/rki/coronawarnapp/server/protocols/internal/v2/PresenceTracingParametersOuterClass$PresenceTracingRiskCalculationParameters;->getNormalizedTimePerCheckInToRiskLevelMappingList()Ljava/util/List;
+    invoke-virtual {v2}, Lde/rki/coronawarnapp/server/protocols/internal/v2/PresenceTracingParametersOuterClass$PresenceTracingRiskCalculationParameters;->getNormalizedTimePerCheckInToRiskLevelMappingList()Ljava/util/List;
 
     move-result-object v8
 
@@ -141,15 +137,15 @@
 
     invoke-static {v8, v9}, Lkotlin/jvm/internal/Intrinsics;->checkNotNullExpressionValue(Ljava/lang/Object;Ljava/lang/String;)V
 
-    invoke-virtual {v3}, Lde/rki/coronawarnapp/server/protocols/internal/v2/PresenceTracingParametersOuterClass$PresenceTracingRiskCalculationParameters;->getNormalizedTimePerDayToRiskLevelMappingList()Ljava/util/List;
+    invoke-virtual {v2}, Lde/rki/coronawarnapp/server/protocols/internal/v2/PresenceTracingParametersOuterClass$PresenceTracingRiskCalculationParameters;->getNormalizedTimePerDayToRiskLevelMappingList()Ljava/util/List;
 
-    move-result-object v3
+    move-result-object v2
 
     const-string v9, "normalizedTimePerDayToRiskLevelMappingList"
 
-    invoke-static {v3, v9}, Lkotlin/jvm/internal/Intrinsics;->checkNotNullExpressionValue(Ljava/lang/Object;Ljava/lang/String;)V
+    invoke-static {v2, v9}, Lkotlin/jvm/internal/Intrinsics;->checkNotNullExpressionValue(Ljava/lang/Object;Ljava/lang/String;)V
 
-    invoke-direct {v6, v7, v8, v3}, Lde/rki/coronawarnapp/appconfig/PresenceTracingRiskCalculationParamContainer;-><init>(Ljava/util/List;Ljava/util/List;Ljava/util/List;)V
+    invoke-direct {v6, v7, v8, v2}, Lde/rki/coronawarnapp/appconfig/PresenceTracingRiskCalculationParamContainer;-><init>(Ljava/util/List;Ljava/util/List;Ljava/util/List;)V
 
     goto :goto_0
 
@@ -164,28 +160,28 @@
 
     new-instance v6, Lde/rki/coronawarnapp/appconfig/PresenceTracingRiskCalculationParamContainer;
 
-    invoke-direct {v6, v5, v5, v5, v3}, Lde/rki/coronawarnapp/appconfig/PresenceTracingRiskCalculationParamContainer;-><init>(Ljava/util/List;Ljava/util/List;Ljava/util/List;I)V
+    invoke-direct {v6, v5, v5, v5, v2}, Lde/rki/coronawarnapp/appconfig/PresenceTracingRiskCalculationParamContainer;-><init>(Ljava/util/List;Ljava/util/List;Ljava/util/List;I)V
 
     :goto_0
     move-object v10, v6
 
     invoke-virtual {v0}, Lde/rki/coronawarnapp/server/protocols/internal/v2/PresenceTracingParametersOuterClass$PresenceTracingParameters;->hasSubmissionParameters()Z
 
-    move-result v3
+    move-result v2
 
-    if-eqz v3, :cond_2
+    if-eqz v2, :cond_2
 
     invoke-virtual {v0}, Lde/rki/coronawarnapp/server/protocols/internal/v2/PresenceTracingParametersOuterClass$PresenceTracingParameters;->getSubmissionParameters()Lde/rki/coronawarnapp/server/protocols/internal/v2/PresenceTracingParametersOuterClass$PresenceTracingSubmissionParameters;
 
-    move-result-object v3
+    move-result-object v2
 
     const-string/jumbo v5, "submissionParameters"
 
-    invoke-static {v3, v5}, Lkotlin/jvm/internal/Intrinsics;->checkNotNullExpressionValue(Ljava/lang/Object;Ljava/lang/String;)V
+    invoke-static {v2, v5}, Lkotlin/jvm/internal/Intrinsics;->checkNotNullExpressionValue(Ljava/lang/Object;Ljava/lang/String;)V
 
     new-instance v5, Lde/rki/coronawarnapp/appconfig/PresenceTracingSubmissionParamContainer;
 
-    invoke-virtual {v3}, Lde/rki/coronawarnapp/server/protocols/internal/v2/PresenceTracingParametersOuterClass$PresenceTracingSubmissionParameters;->getDurationFiltersList()Ljava/util/List;
+    invoke-virtual {v2}, Lde/rki/coronawarnapp/server/protocols/internal/v2/PresenceTracingParametersOuterClass$PresenceTracingSubmissionParameters;->getDurationFiltersList()Ljava/util/List;
 
     move-result-object v6
 
@@ -193,53 +189,53 @@
 
     invoke-static {v6, v7}, Lkotlin/jvm/internal/Intrinsics;->checkNotNullExpressionValue(Ljava/lang/Object;Ljava/lang/String;)V
 
-    invoke-virtual {v3}, Lde/rki/coronawarnapp/server/protocols/internal/v2/PresenceTracingParametersOuterClass$PresenceTracingSubmissionParameters;->getAerosoleDecayLinearFunctionsList()Ljava/util/List;
+    invoke-virtual {v2}, Lde/rki/coronawarnapp/server/protocols/internal/v2/PresenceTracingParametersOuterClass$PresenceTracingSubmissionParameters;->getAerosoleDecayLinearFunctionsList()Ljava/util/List;
 
-    move-result-object v3
+    move-result-object v2
 
     const-string v7, "aerosoleDecayLinearFunctionsList"
 
-    invoke-static {v3, v7}, Lkotlin/jvm/internal/Intrinsics;->checkNotNullExpressionValue(Ljava/lang/Object;Ljava/lang/String;)V
+    invoke-static {v2, v7}, Lkotlin/jvm/internal/Intrinsics;->checkNotNullExpressionValue(Ljava/lang/Object;Ljava/lang/String;)V
 
-    invoke-direct {v5, v6, v3}, Lde/rki/coronawarnapp/appconfig/PresenceTracingSubmissionParamContainer;-><init>(Ljava/util/List;Ljava/util/List;)V
+    invoke-direct {v5, v6, v2}, Lde/rki/coronawarnapp/appconfig/PresenceTracingSubmissionParamContainer;-><init>(Ljava/util/List;Ljava/util/List;)V
 
     move-object v11, v5
 
     goto :goto_1
 
     :cond_2
-    sget-object v3, Ltimber/log/Timber;->Forest:Ltimber/log/Timber$Forest;
+    sget-object v2, Ltimber/log/Timber;->Forest:Ltimber/log/Timber$Forest;
 
     new-array v6, v4, [Ljava/lang/Object;
 
     const-string v7, "SubmissionParameters are missing"
 
-    invoke-virtual {v3, v7, v6}, Ltimber/log/Timber$Forest;->w(Ljava/lang/String;[Ljava/lang/Object;)V
+    invoke-virtual {v2, v7, v6}, Ltimber/log/Timber$Forest;->w(Ljava/lang/String;[Ljava/lang/Object;)V
 
-    new-instance v3, Lde/rki/coronawarnapp/appconfig/PresenceTracingSubmissionParamContainer;
+    new-instance v2, Lde/rki/coronawarnapp/appconfig/PresenceTracingSubmissionParamContainer;
 
-    invoke-direct {v3, v5, v5, v2}, Lde/rki/coronawarnapp/appconfig/PresenceTracingSubmissionParamContainer;-><init>(Ljava/util/List;Ljava/util/List;I)V
+    invoke-direct {v2, v5, v5, v1}, Lde/rki/coronawarnapp/appconfig/PresenceTracingSubmissionParamContainer;-><init>(Ljava/util/List;Ljava/util/List;I)V
 
-    move-object v11, v3
+    move-object v11, v2
 
     :goto_1
     invoke-virtual {v0}, Lde/rki/coronawarnapp/server/protocols/internal/v2/PresenceTracingParametersOuterClass$PresenceTracingParameters;->hasPlausibleDeniabilityParameters()Z
 
-    move-result v3
+    move-result v2
 
-    if-eqz v3, :cond_3
+    if-eqz v2, :cond_3
 
     invoke-virtual {v0}, Lde/rki/coronawarnapp/server/protocols/internal/v2/PresenceTracingParametersOuterClass$PresenceTracingParameters;->getPlausibleDeniabilityParameters()Lde/rki/coronawarnapp/server/protocols/internal/v2/PresenceTracingParametersOuterClass$PresenceTracingPlausibleDeniabilityParameters;
 
-    move-result-object v3
+    move-result-object v2
 
     const-string v5, "plausibleDeniabilityParameters"
 
-    invoke-static {v3, v5}, Lkotlin/jvm/internal/Intrinsics;->checkNotNullExpressionValue(Ljava/lang/Object;Ljava/lang/String;)V
+    invoke-static {v2, v5}, Lkotlin/jvm/internal/Intrinsics;->checkNotNullExpressionValue(Ljava/lang/Object;Ljava/lang/String;)V
 
     new-instance v5, Lde/rki/coronawarnapp/appconfig/PlausibleDeniabilityParametersContainer;
 
-    invoke-virtual {v3}, Lde/rki/coronawarnapp/server/protocols/internal/v2/PresenceTracingParametersOuterClass$PresenceTracingPlausibleDeniabilityParameters;->getCheckInSizesInBytesList()Ljava/util/List;
+    invoke-virtual {v2}, Lde/rki/coronawarnapp/server/protocols/internal/v2/PresenceTracingParametersOuterClass$PresenceTracingPlausibleDeniabilityParameters;->getCheckInSizesInBytesList()Ljava/util/List;
 
     move-result-object v13
 
@@ -247,40 +243,40 @@
 
     invoke-static {v13, v6}, Lkotlin/jvm/internal/Intrinsics;->checkNotNullExpressionValue(Ljava/lang/Object;Ljava/lang/String;)V
 
-    invoke-virtual {v3}, Lde/rki/coronawarnapp/server/protocols/internal/v2/PresenceTracingParametersOuterClass$PresenceTracingPlausibleDeniabilityParameters;->getProbabilityToFakeCheckInsIfNoCheckIns()D
+    invoke-virtual {v2}, Lde/rki/coronawarnapp/server/protocols/internal/v2/PresenceTracingParametersOuterClass$PresenceTracingPlausibleDeniabilityParameters;->getProbabilityToFakeCheckInsIfNoCheckIns()D
 
     move-result-wide v14
 
-    invoke-virtual {v3}, Lde/rki/coronawarnapp/server/protocols/internal/v2/PresenceTracingParametersOuterClass$PresenceTracingPlausibleDeniabilityParameters;->getProbabilityToFakeCheckInsIfSomeCheckIns()D
+    invoke-virtual {v2}, Lde/rki/coronawarnapp/server/protocols/internal/v2/PresenceTracingParametersOuterClass$PresenceTracingPlausibleDeniabilityParameters;->getProbabilityToFakeCheckInsIfSomeCheckIns()D
 
     move-result-wide v16
 
-    invoke-virtual {v3}, Lde/rki/coronawarnapp/server/protocols/internal/v2/PresenceTracingParametersOuterClass$PresenceTracingPlausibleDeniabilityParameters;->getNumberOfFakeCheckInsFunctionParametersOrBuilderList()Ljava/util/List;
+    invoke-virtual {v2}, Lde/rki/coronawarnapp/server/protocols/internal/v2/PresenceTracingParametersOuterClass$PresenceTracingPlausibleDeniabilityParameters;->getNumberOfFakeCheckInsFunctionParametersOrBuilderList()Ljava/util/List;
 
-    move-result-object v3
+    move-result-object v2
 
     const-string v6, "numberOfFakeCheckInsFunc\u2026onParametersOrBuilderList"
 
-    invoke-static {v3, v6}, Lkotlin/jvm/internal/Intrinsics;->checkNotNullExpressionValue(Ljava/lang/Object;Ljava/lang/String;)V
+    invoke-static {v2, v6}, Lkotlin/jvm/internal/Intrinsics;->checkNotNullExpressionValue(Ljava/lang/Object;Ljava/lang/String;)V
 
     move-object v12, v5
 
-    move-object/from16 v18, v3
+    move-object/from16 v18, v2
 
     invoke-direct/range {v12 .. v18}, Lde/rki/coronawarnapp/appconfig/PlausibleDeniabilityParametersContainer;-><init>(Ljava/util/List;DDLjava/util/List;)V
 
     goto :goto_2
 
     :cond_3
-    sget-object v3, Ltimber/log/Timber;->Forest:Ltimber/log/Timber$Forest;
+    sget-object v2, Ltimber/log/Timber;->Forest:Ltimber/log/Timber$Forest;
 
     new-array v5, v4, [Ljava/lang/Object;
 
     const-string v6, "plausibleDeniabilityParameters are missing"
 
-    invoke-virtual {v3, v6, v5}, Ltimber/log/Timber$Forest;->w(Ljava/lang/String;[Ljava/lang/Object;)V
+    invoke-virtual {v2, v6, v5}, Ltimber/log/Timber$Forest;->w(Ljava/lang/String;[Ljava/lang/Object;)V
 
-    new-instance v3, Lde/rki/coronawarnapp/appconfig/PlausibleDeniabilityParametersContainer;
+    new-instance v2, Lde/rki/coronawarnapp/appconfig/PlausibleDeniabilityParametersContainer;
 
     const/4 v13, 0x0
 
@@ -292,12 +288,12 @@
 
     const/16 v19, 0xf
 
-    move-object v12, v3
+    move-object v12, v2
 
     invoke-direct/range {v12 .. v19}, Lde/rki/coronawarnapp/appconfig/PlausibleDeniabilityParametersContainer;-><init>(Ljava/util/List;DDLjava/util/List;I)V
 
     :goto_2
-    new-instance v3, Lde/rki/coronawarnapp/appconfig/PresenceTracingConfigContainer;
+    new-instance v2, Lde/rki/coronawarnapp/appconfig/PresenceTracingConfigContainer;
 
     invoke-virtual {v0}, Lde/rki/coronawarnapp/server/protocols/internal/v2/PresenceTracingParametersOuterClass$PresenceTracingParameters;->getQrCodeErrorCorrectionLevel()Lde/rki/coronawarnapp/server/protocols/internal/v2/PresenceTracingParametersOuterClass$PresenceTracingParameters$QRCodeErrorCorrectionLevel;
 
@@ -315,51 +311,51 @@
 
     aget v5, v6, v5
 
-    const/4 v6, 0x1
+    const/4 v6, 0x2
+
+    const/4 v7, 0x1
+
+    if-eq v5, v7, :cond_7
 
     if-eq v5, v6, :cond_6
 
-    const/4 v6, 0x2
+    if-eq v5, v1, :cond_5
 
-    if-eq v5, v6, :cond_5
+    const/4 v6, 0x4
 
-    if-eq v5, v2, :cond_7
-
-    const/4 v2, 0x4
-
-    if-eq v5, v2, :cond_4
+    if-eq v5, v6, :cond_4
 
     goto :goto_3
 
     :cond_4
-    sget-object v1, Lcom/google/zxing/qrcode/decoder/ErrorCorrectionLevel;->Q:Lcom/google/zxing/qrcode/decoder/ErrorCorrectionLevel;
+    move v8, v1
 
-    goto :goto_3
+    goto :goto_4
 
     :cond_5
-    sget-object v1, Lcom/google/zxing/qrcode/decoder/ErrorCorrectionLevel;->M:Lcom/google/zxing/qrcode/decoder/ErrorCorrectionLevel;
+    :goto_3
+    move v8, v3
 
-    goto :goto_3
+    goto :goto_4
 
     :cond_6
-    sget-object v1, Lcom/google/zxing/qrcode/decoder/ErrorCorrectionLevel;->L:Lcom/google/zxing/qrcode/decoder/ErrorCorrectionLevel;
+    move v8, v6
+
+    goto :goto_4
 
     :cond_7
-    :goto_3
-    move-object v8, v1
+    move v8, v7
 
+    :goto_4
     invoke-virtual {v0}, Lde/rki/coronawarnapp/server/protocols/internal/v2/PresenceTracingParametersOuterClass$PresenceTracingParameters;->getRevokedTraceLocationVersionsList()Ljava/util/List;
 
     move-result-object v1
 
-    if-eqz v1, :cond_8
+    if-nez v1, :cond_8
 
-    goto :goto_4
-
-    :cond_8
     sget-object v1, Lkotlin/collections/EmptyList;->INSTANCE:Lkotlin/collections/EmptyList;
 
-    :goto_4
+    :cond_8
     move-object v9, v1
 
     invoke-virtual {v0}, Lde/rki/coronawarnapp/server/protocols/internal/v2/PresenceTracingParametersOuterClass$PresenceTracingParameters;->getQrCodeDescriptorsOrBuilderList()Ljava/util/List;
@@ -370,9 +366,9 @@
 
     invoke-static {v13, v0}, Lkotlin/jvm/internal/Intrinsics;->checkNotNullExpressionValue(Ljava/lang/Object;Ljava/lang/String;)V
 
-    move-object v7, v3
+    move-object v7, v2
 
-    invoke-direct/range {v7 .. v13}, Lde/rki/coronawarnapp/appconfig/PresenceTracingConfigContainer;-><init>(Lcom/google/zxing/qrcode/decoder/ErrorCorrectionLevel;Ljava/util/List;Lde/rki/coronawarnapp/appconfig/PresenceTracingRiskCalculationParamContainer;Lde/rki/coronawarnapp/appconfig/PresenceTracingSubmissionParamContainer;Lde/rki/coronawarnapp/appconfig/PlausibleDeniabilityParametersContainer;Ljava/util/List;)V
+    invoke-direct/range {v7 .. v13}, Lde/rki/coronawarnapp/appconfig/PresenceTracingConfigContainer;-><init>(ILjava/util/List;Lde/rki/coronawarnapp/appconfig/PresenceTracingRiskCalculationParamContainer;Lde/rki/coronawarnapp/appconfig/PresenceTracingSubmissionParamContainer;Lde/rki/coronawarnapp/appconfig/PlausibleDeniabilityParametersContainer;Ljava/util/List;)V
 
     sget-object v0, Ltimber/log/Timber;->Forest:Ltimber/log/Timber$Forest;
 
@@ -380,22 +376,22 @@
 
     invoke-direct {v1}, Ljava/lang/StringBuilder;-><init>()V
 
-    const-string v2, "PresenceTracingConfig: "
+    const-string v3, "PresenceTracingConfig: "
 
-    invoke-virtual {v1, v2}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+    invoke-virtual {v1, v3}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
 
-    invoke-virtual {v1, v3}, Ljava/lang/StringBuilder;->append(Ljava/lang/Object;)Ljava/lang/StringBuilder;
+    invoke-virtual {v1, v2}, Ljava/lang/StringBuilder;->append(Ljava/lang/Object;)Ljava/lang/StringBuilder;
 
     invoke-virtual {v1}, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
 
     move-result-object v1
 
-    new-array v2, v4, [Ljava/lang/Object;
+    new-array v3, v4, [Ljava/lang/Object;
 
-    invoke-virtual {v0, v1, v2}, Ltimber/log/Timber$Forest;->v(Ljava/lang/String;[Ljava/lang/Object;)V
+    invoke-virtual {v0, v1, v3}, Ltimber/log/Timber$Forest;->v(Ljava/lang/String;[Ljava/lang/Object;)V
 
-    move-object v8, v3
+    move-object v0, v2
 
     :goto_5
-    return-object v8
+    return-object v0
 .end method

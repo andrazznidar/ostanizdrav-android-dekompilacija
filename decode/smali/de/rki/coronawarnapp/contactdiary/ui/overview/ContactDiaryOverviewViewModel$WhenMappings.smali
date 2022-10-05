@@ -26,7 +26,7 @@
 .method public static constructor <clinit>()V
     .locals 4
 
-    invoke-static {}, Lde/rki/coronawarnapp/contactdiary/storage/entity/ContactDiaryCoronaTestEntity$TestResult;->values()[Lde/rki/coronawarnapp/contactdiary/storage/entity/ContactDiaryCoronaTestEntity$TestResult;
+    invoke-static {}, Lde/rki/coronawarnapp/util/di/DaggerApplicationComponent$DccValidationOpenFragmentSubcomponentImpl-IA;->_values()[I
 
     move-result-object v0
 
@@ -34,29 +34,25 @@
 
     new-array v0, v0, [I
 
-    sget-object v1, Lde/rki/coronawarnapp/contactdiary/storage/entity/ContactDiaryCoronaTestEntity$TestResult;->POSITIVE:Lde/rki/coronawarnapp/contactdiary/storage/entity/ContactDiaryCoronaTestEntity$TestResult;
+    const/4 v1, 0x1
 
-    invoke-virtual {v1}, Ljava/lang/Enum;->ordinal()I
+    invoke-static {v1}, Landroidx/camera/camera2/internal/Camera2CameraImpl$InternalState$EnumUnboxingSharedUtility;->ordinal(I)I
 
-    move-result v1
+    move-result v2
 
-    const/4 v2, 0x1
+    aput v1, v0, v2
 
-    aput v2, v0, v1
+    const/4 v2, 0x2
 
-    sget-object v1, Lde/rki/coronawarnapp/contactdiary/storage/entity/ContactDiaryCoronaTestEntity$TestResult;->NEGATIVE:Lde/rki/coronawarnapp/contactdiary/storage/entity/ContactDiaryCoronaTestEntity$TestResult;
+    invoke-static {v2}, Landroidx/camera/camera2/internal/Camera2CameraImpl$InternalState$EnumUnboxingSharedUtility;->ordinal(I)I
 
-    invoke-virtual {v1}, Ljava/lang/Enum;->ordinal()I
+    move-result v3
 
-    move-result v1
-
-    const/4 v3, 0x2
-
-    aput v3, v0, v1
+    aput v2, v0, v3
 
     sput-object v0, Lde/rki/coronawarnapp/contactdiary/ui/overview/ContactDiaryOverviewViewModel$WhenMappings;->$EnumSwitchMapping$0:[I
 
-    invoke-static {}, Lde/rki/coronawarnapp/contactdiary/storage/entity/ContactDiaryCoronaTestEntity$TestType;->values()[Lde/rki/coronawarnapp/contactdiary/storage/entity/ContactDiaryCoronaTestEntity$TestType;
+    invoke-static {}, Lde/rki/coronawarnapp/util/di/DaggerApplicationComponent$DccValidationPassedFragmentSubcomponentFactory-IA;->_values()[I
 
     move-result-object v0
 
@@ -64,21 +60,17 @@
 
     new-array v0, v0, [I
 
-    sget-object v1, Lde/rki/coronawarnapp/contactdiary/storage/entity/ContactDiaryCoronaTestEntity$TestType;->PCR:Lde/rki/coronawarnapp/contactdiary/storage/entity/ContactDiaryCoronaTestEntity$TestType;
+    invoke-static {v1}, Landroidx/camera/camera2/internal/Camera2CameraImpl$InternalState$EnumUnboxingSharedUtility;->ordinal(I)I
 
-    invoke-virtual {v1}, Ljava/lang/Enum;->ordinal()I
+    move-result v3
 
-    move-result v1
+    aput v1, v0, v3
 
-    aput v2, v0, v1
+    invoke-static {v2}, Landroidx/camera/camera2/internal/Camera2CameraImpl$InternalState$EnumUnboxingSharedUtility;->ordinal(I)I
 
-    sget-object v1, Lde/rki/coronawarnapp/contactdiary/storage/entity/ContactDiaryCoronaTestEntity$TestType;->ANTIGEN:Lde/rki/coronawarnapp/contactdiary/storage/entity/ContactDiaryCoronaTestEntity$TestType;
+    move-result v3
 
-    invoke-virtual {v1}, Ljava/lang/Enum;->ordinal()I
-
-    move-result v1
-
-    aput v3, v0, v1
+    aput v2, v0, v3
 
     sput-object v0, Lde/rki/coronawarnapp/contactdiary/ui/overview/ContactDiaryOverviewViewModel$WhenMappings;->$EnumSwitchMapping$1:[I
 
@@ -90,15 +82,11 @@
 
     new-array v0, v0, [I
 
-    sget-object v1, Lde/rki/coronawarnapp/contactdiary/model/ContactDiaryPersonEncounter$DurationClassification;->LESS_THAN_10_MINUTES:Lde/rki/coronawarnapp/contactdiary/model/ContactDiaryPersonEncounter$DurationClassification;
+    const/4 v3, 0x0
 
-    const/4 v1, 0x0
+    aput v1, v0, v3
 
     aput v2, v0, v1
-
-    sget-object v1, Lde/rki/coronawarnapp/contactdiary/model/ContactDiaryPersonEncounter$DurationClassification;->MORE_THAN_10_MINUTES:Lde/rki/coronawarnapp/contactdiary/model/ContactDiaryPersonEncounter$DurationClassification;
-
-    aput v3, v0, v2
 
     sput-object v0, Lde/rki/coronawarnapp/contactdiary/ui/overview/ContactDiaryOverviewViewModel$WhenMappings;->$EnumSwitchMapping$2:[I
 

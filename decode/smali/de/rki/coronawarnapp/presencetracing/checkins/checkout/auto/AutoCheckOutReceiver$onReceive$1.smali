@@ -174,10 +174,6 @@
 
     invoke-static {v0}, Landroidx/work/Data;->toByteArrayInternal(Landroidx/work/Data;)[B
 
-    const-string v4, "Builder()\n              \u2026                 .build()"
-
-    invoke-static {v0, v4}, Lkotlin/jvm/internal/Intrinsics;->checkNotNullExpressionValue(Ljava/lang/Object;Ljava/lang/String;)V
-
     new-instance v4, Landroidx/work/OneTimeWorkRequest$Builder;
 
     const-class v5, Lde/rki/coronawarnapp/presencetracing/checkins/checkout/auto/AutoCheckOutWorker;
@@ -257,7 +253,7 @@
 
     const-string v3, "Failed to process intent."
 
-    invoke-static {v0, v2, v3}, Lkotlinx/coroutines/channels/ChannelsKt;->reportProblem(Ljava/lang/Throwable;Ljava/lang/String;Ljava/lang/String;)V
+    invoke-static {v0, v2, v3}, Lde/rki/coronawarnapp/bugreporting/BugReporterKt;->reportProblem(Ljava/lang/Throwable;Ljava/lang/String;Ljava/lang/String;)V
     :try_end_2
     .catchall {:try_start_2 .. :try_end_2} :catchall_0
 

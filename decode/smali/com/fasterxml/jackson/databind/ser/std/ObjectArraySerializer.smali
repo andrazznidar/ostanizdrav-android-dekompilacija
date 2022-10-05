@@ -12,8 +12,7 @@
         "Lcom/fasterxml/jackson/databind/ser/std/ArraySerializerBase<",
         "[",
         "Ljava/lang/Object;",
-        ">;",
-        "Lcom/fasterxml/jackson/databind/ser/ContextualSerializer;"
+        ">;"
     }
 .end annotation
 
@@ -211,13 +210,13 @@
 
     if-eqz v1, :cond_1
 
-    invoke-virtual {v2, v1}, Lcom/fasterxml/jackson/databind/AnnotationIntrospector;->findContentSerializer(Lcom/fasterxml/jackson/databind/introspect/Annotated;)Ljava/lang/Object;
+    invoke-virtual {v2, v1}, Lcom/fasterxml/jackson/databind/AnnotationIntrospector;->findContentSerializer(Lorg/joda/time/Chronology;)Ljava/lang/Object;
 
     move-result-object v2
 
     if-eqz v2, :cond_1
 
-    invoke-virtual {p1, v1, v2}, Lcom/fasterxml/jackson/databind/SerializerProvider;->serializerInstance(Lcom/fasterxml/jackson/databind/introspect/Annotated;Ljava/lang/Object;)Lcom/fasterxml/jackson/databind/JsonSerializer;
+    invoke-virtual {p1, v1, v2}, Lcom/fasterxml/jackson/databind/SerializerProvider;->serializerInstance(Lorg/joda/time/Chronology;Ljava/lang/Object;)Lcom/fasterxml/jackson/databind/JsonSerializer;
 
     move-result-object v1
 

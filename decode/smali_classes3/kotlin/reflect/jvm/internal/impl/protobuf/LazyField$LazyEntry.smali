@@ -1,4 +1,4 @@
-.class public Lkotlin/reflect/jvm/internal/impl/protobuf/LazyField$LazyEntry;
+.class Lkotlin/reflect/jvm/internal/impl/protobuf/LazyField$LazyEntry;
 .super Ljava/lang/Object;
 .source "LazyField.java"
 
@@ -31,7 +31,7 @@
 
 
 # instance fields
-.field public entry:Ljava/util/Map$Entry;
+.field private entry:Ljava/util/Map$Entry;
     .annotation system Ldalvik/annotation/Signature;
         value = {
             "Ljava/util/Map$Entry<",
@@ -44,12 +44,29 @@
 
 
 # direct methods
-.method public constructor <init>(Ljava/util/Map$Entry;Lkotlin/reflect/jvm/internal/impl/protobuf/LazyField$1;)V
+.method private constructor <init>(Ljava/util/Map$Entry;)V
     .locals 0
+    .annotation system Ldalvik/annotation/Signature;
+        value = {
+            "(",
+            "Ljava/util/Map$Entry<",
+            "TK;",
+            "Lkotlin/reflect/jvm/internal/impl/protobuf/LazyField;",
+            ">;)V"
+        }
+    .end annotation
 
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
     iput-object p1, p0, Lkotlin/reflect/jvm/internal/impl/protobuf/LazyField$LazyEntry;->entry:Ljava/util/Map$Entry;
+
+    return-void
+.end method
+
+.method public synthetic constructor <init>(Ljava/util/Map$Entry;Lkotlin/reflect/jvm/internal/impl/protobuf/LazyField$1;)V
+    .locals 0
+
+    invoke-direct {p0, p1}, Lkotlin/reflect/jvm/internal/impl/protobuf/LazyField$LazyEntry;-><init>(Ljava/util/Map$Entry;)V
 
     return-void
 .end method
@@ -99,7 +116,7 @@
 .end method
 
 .method public setValue(Ljava/lang/Object;)Ljava/lang/Object;
-    .locals 2
+    .locals 1
 
     instance-of v0, p1, Lkotlin/reflect/jvm/internal/impl/protobuf/MessageLite;
 
@@ -115,15 +132,11 @@
 
     check-cast p1, Lkotlin/reflect/jvm/internal/impl/protobuf/MessageLite;
 
-    iget-object v1, v0, Lkotlin/reflect/jvm/internal/impl/protobuf/LazyFieldLite;->value:Lkotlin/reflect/jvm/internal/impl/protobuf/MessageLite;
+    invoke-virtual {v0, p1}, Lkotlin/reflect/jvm/internal/impl/protobuf/LazyFieldLite;->setValue(Lkotlin/reflect/jvm/internal/impl/protobuf/MessageLite;)Lkotlin/reflect/jvm/internal/impl/protobuf/MessageLite;
 
-    iput-object p1, v0, Lkotlin/reflect/jvm/internal/impl/protobuf/LazyFieldLite;->value:Lkotlin/reflect/jvm/internal/impl/protobuf/MessageLite;
+    move-result-object p1
 
-    const/4 p1, 0x1
-
-    iput-boolean p1, v0, Lkotlin/reflect/jvm/internal/impl/protobuf/LazyFieldLite;->isDirty:Z
-
-    return-object v1
+    return-object p1
 
     :cond_0
     new-instance p1, Ljava/lang/IllegalArgumentException;

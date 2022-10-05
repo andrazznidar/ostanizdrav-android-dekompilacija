@@ -1,4 +1,4 @@
-.class public final synthetic Lkotlin/reflect/jvm/internal/KPackageImpl$getLocalProperty$1$1$1;
+.class final synthetic Lkotlin/reflect/jvm/internal/KPackageImpl$getLocalProperty$1$1$1;
 .super Lkotlin/jvm/internal/FunctionReference;
 .source "KPackageImpl.kt"
 
@@ -24,6 +24,27 @@
         "Lkotlin/reflect/jvm/internal/impl/metadata/ProtoBuf$Property;",
         "Lkotlin/reflect/jvm/internal/impl/descriptors/PropertyDescriptor;",
         ">;"
+    }
+.end annotation
+
+.annotation runtime Lkotlin/Metadata;
+    d1 = {
+        "\u0000\u0014\n\u0000\n\u0002\u0018\u0002\n\u0000\n\u0002\u0018\u0002\n\u0000\n\u0002\u0018\u0002\n\u0000\u0010\u0000\u001a\u00020\u00012\u0006\u0010\u0002\u001a\u00020\u00032\u0006\u0010\u0004\u001a\u00020\u0005\u00a2\u0006\u0002\u0008\u0006"
+    }
+    d2 = {
+        "<anonymous>",
+        "Lkotlin/reflect/jvm/internal/impl/descriptors/PropertyDescriptor;",
+        "p1",
+        "Lkotlin/reflect/jvm/internal/impl/serialization/deserialization/MemberDeserializer;",
+        "p2",
+        "Lkotlin/reflect/jvm/internal/impl/metadata/ProtoBuf$Property;",
+        "invoke"
+    }
+    k = 0x3
+    mv = {
+        0x1,
+        0x5,
+        0x1
     }
 .end annotation
 
@@ -85,12 +106,22 @@
     return-object v0
 .end method
 
-.method public invoke(Ljava/lang/Object;Ljava/lang/Object;)Ljava/lang/Object;
-    .locals 1
+.method public bridge synthetic invoke(Ljava/lang/Object;Ljava/lang/Object;)Ljava/lang/Object;
+    .locals 0
 
     check-cast p1, Lkotlin/reflect/jvm/internal/impl/serialization/deserialization/MemberDeserializer;
 
     check-cast p2, Lkotlin/reflect/jvm/internal/impl/metadata/ProtoBuf$Property;
+
+    invoke-virtual {p0, p1, p2}, Lkotlin/reflect/jvm/internal/KPackageImpl$getLocalProperty$1$1$1;->invoke(Lkotlin/reflect/jvm/internal/impl/serialization/deserialization/MemberDeserializer;Lkotlin/reflect/jvm/internal/impl/metadata/ProtoBuf$Property;)Lkotlin/reflect/jvm/internal/impl/descriptors/PropertyDescriptor;
+
+    move-result-object p1
+
+    return-object p1
+.end method
+
+.method public final invoke(Lkotlin/reflect/jvm/internal/impl/serialization/deserialization/MemberDeserializer;Lkotlin/reflect/jvm/internal/impl/metadata/ProtoBuf$Property;)Lkotlin/reflect/jvm/internal/impl/descriptors/PropertyDescriptor;
+    .locals 1
 
     const-string v0, "p1"
 

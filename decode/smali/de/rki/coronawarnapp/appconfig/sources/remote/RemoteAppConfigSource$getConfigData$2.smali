@@ -155,7 +155,7 @@
     :catch_0
     move-exception p1
 
-    goto/16 :goto_2
+    goto :goto_2
 
     :cond_0
     new-instance p1, Ljava/lang/IllegalStateException;
@@ -174,11 +174,6 @@
 
     goto :goto_0
 
-    :catch_1
-    move-exception p1
-
-    goto :goto_4
-
     :cond_2
     invoke-static {p1}, Lkotlin/ResultKt;->throwOnFailure(Ljava/lang/Object;)V
 
@@ -190,7 +185,7 @@
 
     const-string v7, "getConfigData()"
 
-    invoke-virtual {p1, v7, v1}, Ltimber/log/Timber$Tree;->v(Ljava/lang/String;[Ljava/lang/Object;)V
+    invoke-virtual {p1, v7, v1}, Ltimber/log/Timber$Forest;->v(Ljava/lang/String;[Ljava/lang/Object;)V
 
     :try_start_2
     iget-object p1, p0, Lde/rki/coronawarnapp/appconfig/sources/remote/RemoteAppConfigSource$getConfigData$2;->this$0:Lde/rki/coronawarnapp/appconfig/sources/remote/RemoteAppConfigSource;
@@ -238,7 +233,7 @@
 
     new-array v9, v5, [Ljava/lang/Object;
 
-    invoke-virtual {v7, v8, v9}, Ltimber/log/Timber$Tree;->d(Ljava/lang/String;[Ljava/lang/Object;)V
+    invoke-virtual {v7, v8, v9}, Ltimber/log/Timber$Forest;->d(Ljava/lang/String;[Ljava/lang/Object;)V
 
     iget-object v4, v4, Lde/rki/coronawarnapp/appconfig/sources/remote/RemoteAppConfigSource;->storage:Lde/rki/coronawarnapp/appconfig/sources/local/AppConfigStorage;
 
@@ -272,7 +267,7 @@
 
     move-result-object v11
 
-    sget-object v13, Lde/rki/coronawarnapp/appconfig/ConfigData$Type;->FROM_SERVER:Lde/rki/coronawarnapp/appconfig/ConfigData$Type;
+    const/4 v13, 0x1
 
     invoke-virtual {v1}, Lde/rki/coronawarnapp/appconfig/internal/InternalConfigData;->getCacheValidity()Lorg/joda/time/Duration;
 
@@ -282,7 +277,7 @@
 
     move-object v7, p1
 
-    invoke-direct/range {v7 .. v13}, Lde/rki/coronawarnapp/appconfig/internal/ConfigDataContainer;-><init>(Lorg/joda/time/Instant;Lorg/joda/time/Duration;Lde/rki/coronawarnapp/appconfig/mapping/ConfigMapping;Ljava/lang/String;Lorg/joda/time/Duration;Lde/rki/coronawarnapp/appconfig/ConfigData$Type;)V
+    invoke-direct/range {v7 .. v13}, Lde/rki/coronawarnapp/appconfig/internal/ConfigDataContainer;-><init>(Lorg/joda/time/Instant;Lorg/joda/time/Duration;Lde/rki/coronawarnapp/appconfig/mapping/ConfigMapping;Ljava/lang/String;Lorg/joda/time/Duration;I)V
     :try_end_3
     .catch Ljava/lang/Exception; {:try_start_3 .. :try_end_3} :catch_0
 
@@ -299,12 +294,14 @@
 
     const-string v3, "Failed to parse AppConfig from server."
 
-    invoke-virtual {v0, p1, v3, v1}, Ltimber/log/Timber$Tree;->e(Ljava/lang/Throwable;Ljava/lang/String;[Ljava/lang/Object;)V
+    invoke-virtual {v0, p1, v3, v1}, Ltimber/log/Timber$Forest;->e(Ljava/lang/Throwable;Ljava/lang/String;[Ljava/lang/Object;)V
 
     :goto_3
     return-object v2
 
-    :goto_4
+    :catch_1
+    move-exception p1
+
     sget-object v0, Ltimber/log/Timber;->Forest:Ltimber/log/Timber$Forest;
 
     invoke-virtual {v0, v6}, Ltimber/log/Timber$Forest;->tag(Ljava/lang/String;)Ltimber/log/Timber$Tree;
@@ -313,7 +310,7 @@
 
     const-string v3, "Failed to download AppConfig from server ."
 
-    invoke-virtual {v0, p1, v3, v1}, Ltimber/log/Timber$Tree;->w(Ljava/lang/Throwable;Ljava/lang/String;[Ljava/lang/Object;)V
+    invoke-virtual {v0, p1, v3, v1}, Ltimber/log/Timber$Forest;->w(Ljava/lang/Throwable;Ljava/lang/String;[Ljava/lang/Object;)V
 
     return-object v2
 .end method

@@ -28,8 +28,8 @@
     <color name="cardview_shadow_start_color">#37000000</color>
     <color name="colorAccent">@color/colorSloBlue</color>
     <color name="colorAccentTintButton">@color/colorSloBlue</color>
-    <color name="colorAccentTintButtonPressed">@color/colorSloBlueDark</color>
-    <color name="colorAccentTintIcon">@color/colorSloBlue</color>
+    <color name="colorAccentTintButtonPressed">#ff02759e</color>
+    <color name="colorAccentTintIcon">@color/colorPrimary</color>
     <color name="colorBackground">#ffffffff</color>
     <color name="colorBrandPrimary">#ffbd1200</color>
     <color name="colorBrandSecondary">#ff80cdec</color>
@@ -47,12 +47,17 @@
     <color name="colorCalendarTodayBorder">@color/colorSloBlue</color>
     <color name="colorCalendarTodayText">@color/colorSloBlue</color>
     <color name="colorCardBackgroundHighlightGray">@color/cwaGrayHighlight</color>
+    <color name="colorCertificateCards">#ffffffff</color>
+    <color name="colorCertificateSelectorButtonStroke">#ffb9baba</color>
+    <color name="colorCertificateUserSwitch">#fff5f5f5</color>
     <color name="colorContactDiaryBackground">#ffffffff</color>
     <color name="colorContactDiaryListItem">#fff5f5f5</color>
     <color name="colorContactDiaryListItemPressed">#ffd7d7d7</color>
-    <color name="colorCrashReporter">@color/colorSloBlueDark</color>
+    <color name="colorCrashReporter">@color/colorTextSemanticNeutral</color>
     <color name="colorHairline">#3317191a</color>
     <color name="colorOnPrimary">#ff17191a</color>
+    <color name="colorPersonOverviewQrCardBorder">#ffededed</color>
+    <color name="colorPersonOverviewQrCardGrey">#fff8f8f8</color>
     <color name="colorPrimary">#ff0f6fc7</color>
     <color name="colorQrCodeScanMask">#bfffffff</color>
     <color name="colorQrCodeScanToolbar">#ff000000</color>
@@ -151,6 +156,7 @@
     <color name="design_fab_stroke_top_inner_color">#1affffff</color>
     <color name="design_fab_stroke_top_outer_color">#2effffff</color>
     <color name="design_snackbar_background_color">#ff323232</color>
+    <color name="dim_color">#80000000</color>
     <color name="dim_foreground_disabled_material_dark">#80bebebe</color>
     <color name="dim_foreground_disabled_material_light">#80323232</color>
     <color name="dim_foreground_material_dark">#ffbebebe</color>
@@ -221,14 +227,4 @@
     <color name="tooltip_background_dark">#e6616161</color>
     <color name="tooltip_background_light">#e6ffffff</color>
     <color name="whiteAlpha60">#99ffffff</color>
-    <color name="zxing_custom_possible_result_points">#903a89cf</color>
-    <color name="zxing_custom_result_view">#b0000000</color>
-    <color name="zxing_custom_viewfinder_laser">#ff1976d2</color>
-    <color name="zxing_custom_viewfinder_mask">#60000000</color>
-    <color name="zxing_possible_result_points">#c0ffbd21</color>
-    <color name="zxing_result_view">#b0000000</color>
-    <color name="zxing_status_text">#ffffffff</color>
-    <color name="zxing_transparent">#00000000</color>
-    <color name="zxing_viewfinder_laser">#ffcc0000</color>
-    <color name="zxing_viewfinder_mask">#60000000</color>
 </resources>

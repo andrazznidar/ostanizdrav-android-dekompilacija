@@ -14,3 +14,8 @@
 
     return-void
 .end method
+
+
+# virtual methods
+.method public abstract getLifecycle$lifecycle_runtime_ktx_release()Landroidx/lifecycle/Lifecycle;
+.end method

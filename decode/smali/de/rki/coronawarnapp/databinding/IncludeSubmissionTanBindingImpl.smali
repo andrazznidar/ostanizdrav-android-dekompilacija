@@ -45,7 +45,7 @@
 
     new-array v4, v2, [I
 
-    const v6, 0x7f0d010a
+    const v6, 0x7f0d0115
 
     aput v6, v4, v5
 
@@ -57,25 +57,25 @@
 
     sput-object v0, Lde/rki/coronawarnapp/databinding/IncludeSubmissionTanBindingImpl;->sViewsWithIds:Landroid/util/SparseIntArray;
 
-    const v1, 0x7f0a0729
+    const v1, 0x7f0a0776
 
     const/4 v2, 0x3
 
     invoke-virtual {v0, v1, v2}, Landroid/util/SparseIntArray;->put(II)V
 
-    const v1, 0x7f0a072f
+    const v1, 0x7f0a077c
 
     const/4 v2, 0x4
 
     invoke-virtual {v0, v1, v2}, Landroid/util/SparseIntArray;->put(II)V
 
-    const v1, 0x7f0a072b
+    const v1, 0x7f0a0778
 
     const/4 v2, 0x5
 
     invoke-virtual {v0, v1, v2}, Landroid/util/SparseIntArray;->put(II)V
 
-    const v1, 0x7f0a072d
+    const v1, 0x7f0a077a
 
     const/4 v2, 0x6
 

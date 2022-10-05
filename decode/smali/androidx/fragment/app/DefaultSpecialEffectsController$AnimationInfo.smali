@@ -55,9 +55,9 @@
 
     iget-object v1, v0, Landroidx/fragment/app/SpecialEffectsController$Operation;->mFragment:Landroidx/fragment/app/Fragment;
 
-    iget-object v0, v0, Landroidx/fragment/app/SpecialEffectsController$Operation;->mFinalState:Landroidx/fragment/app/SpecialEffectsController$Operation$State;
+    iget v0, v0, Landroidx/fragment/app/SpecialEffectsController$Operation;->mFinalState:I
 
-    sget-object v2, Landroidx/fragment/app/SpecialEffectsController$Operation$State;->VISIBLE:Landroidx/fragment/app/SpecialEffectsController$Operation$State;
+    const/4 v2, 0x2
 
     const/4 v3, 0x1
 

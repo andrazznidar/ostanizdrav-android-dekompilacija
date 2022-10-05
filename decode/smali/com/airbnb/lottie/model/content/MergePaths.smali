@@ -6,31 +6,23 @@
 .implements Lcom/airbnb/lottie/model/content/ContentModel;
 
 
-# annotations
-.annotation system Ldalvik/annotation/MemberClasses;
-    value = {
-        Lcom/airbnb/lottie/model/content/MergePaths$MergePathsMode;
-    }
-.end annotation
-
-
 # instance fields
 .field public final hidden:Z
 
-.field public final mode:Lcom/airbnb/lottie/model/content/MergePaths$MergePathsMode;
+.field public final mode:I
 
 .field public final name:Ljava/lang/String;
 
 
 # direct methods
-.method public constructor <init>(Ljava/lang/String;Lcom/airbnb/lottie/model/content/MergePaths$MergePathsMode;Z)V
+.method public constructor <init>(Ljava/lang/String;IZ)V
     .locals 0
 
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
     iput-object p1, p0, Lcom/airbnb/lottie/model/content/MergePaths;->name:Ljava/lang/String;
 
-    iput-object p2, p0, Lcom/airbnb/lottie/model/content/MergePaths;->mode:Lcom/airbnb/lottie/model/content/MergePaths$MergePathsMode;
+    iput p2, p0, Lcom/airbnb/lottie/model/content/MergePaths;->mode:I
 
     iput-boolean p3, p0, Lcom/airbnb/lottie/model/content/MergePaths;->hidden:Z
 
@@ -71,9 +63,13 @@
 
     move-result-object v0
 
-    iget-object v1, p0, Lcom/airbnb/lottie/model/content/MergePaths;->mode:Lcom/airbnb/lottie/model/content/MergePaths$MergePathsMode;
+    iget v1, p0, Lcom/airbnb/lottie/model/content/MergePaths;->mode:I
 
-    invoke-virtual {v0, v1}, Ljava/lang/StringBuilder;->append(Ljava/lang/Object;)Ljava/lang/StringBuilder;
+    invoke-static {v1}, Landroidx/camera/core/impl/SurfaceConfig$ConfigType$EnumUnboxingLocalUtility;->stringValueOf$1(I)Ljava/lang/String;
+
+    move-result-object v1
+
+    invoke-virtual {v0, v1}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
 
     const/16 v1, 0x7d
 

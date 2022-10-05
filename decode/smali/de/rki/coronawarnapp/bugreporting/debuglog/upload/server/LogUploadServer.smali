@@ -151,7 +151,7 @@
 
     sget-object v5, Lokhttp3/MediaType;->Companion:Lokhttp3/MediaType$Companion;
 
-    invoke-static {p2}, Lorg/joda/time/format/ISOPeriodFormat;->determineMimeType(Ljava/io/File;)Ljava/lang/String;
+    invoke-static {p2}, Lcom/google/common/base/Preconditions;->determineMimeType(Ljava/io/File;)Ljava/lang/String;
 
     move-result-object v5
 
@@ -163,13 +163,11 @@
 
     invoke-direct {v6, p2, v5}, Lokhttp3/RequestBody$Companion$asRequestBody$1;-><init>(Ljava/io/File;Lokhttp3/MediaType;)V
 
-    new-instance p2, Ljava/lang/StringBuilder;
+    const-string p2, "form-data; name="
 
-    invoke-direct {p2}, Ljava/lang/StringBuilder;-><init>()V
+    invoke-static {p2}, Landroid/support/v4/media/RatingCompat$$ExternalSyntheticOutline0;->m(Ljava/lang/String;)Ljava/lang/StringBuilder;
 
-    const-string v5, "form-data; name="
-
-    invoke-virtual {p2, v5}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+    move-result-object p2
 
     sget-object v5, Lokhttp3/MultipartBody;->Companion:Lokhttp3/MultipartBody$Companion;
 
@@ -387,11 +385,9 @@
 
     iget-object p1, p1, Lde/rki/coronawarnapp/bugreporting/debuglog/upload/server/LogUploadServer;->timeStamper:Lde/rki/coronawarnapp/util/TimeStamper;
 
-    invoke-static {p1}, Ljava/util/Objects;->requireNonNull(Ljava/lang/Object;)Ljava/lang/Object;
+    invoke-static {p1}, Lde/rki/coronawarnapp/appconfig/internal/AppConfigSource$$ExternalSyntheticOutline1;->m(Lde/rki/coronawarnapp/util/TimeStamper;)Lorg/joda/time/Instant;
 
-    new-instance p1, Lorg/joda/time/Instant;
-
-    invoke-direct {p1}, Lorg/joda/time/Instant;-><init>()V
+    move-result-object p1
 
     invoke-direct {p2, p3, p1}, Lde/rki/coronawarnapp/bugreporting/debuglog/upload/history/LogUpload;-><init>(Ljava/lang/String;Lorg/joda/time/Instant;)V
 

@@ -88,7 +88,7 @@
 
     const-string v1, "Failed to reset positive test result reminder for RAT test."
 
-    invoke-static {p1, v1, p3, v0}, Lkotlinx/coroutines/channels/ChannelsKt;->reportProblem$default(Ljava/lang/Throwable;Ljava/lang/String;Ljava/lang/String;I)V
+    invoke-static {p1, v1, p3, v0}, Lde/rki/coronawarnapp/bugreporting/BugReporterKt;->reportProblem$default(Ljava/lang/Throwable;Ljava/lang/String;Ljava/lang/String;I)V
 
     return-object p2
 .end method
@@ -108,7 +108,7 @@
 
     const-string v2, "Failed to reset positive test result reminder for RAT test."
 
-    invoke-static {p1, v2, v0, v1}, Lkotlinx/coroutines/channels/ChannelsKt;->reportProblem$default(Ljava/lang/Throwable;Ljava/lang/String;Ljava/lang/String;I)V
+    invoke-static {p1, v2, v0, v1}, Lde/rki/coronawarnapp/bugreporting/BugReporterKt;->reportProblem$default(Ljava/lang/Throwable;Ljava/lang/String;Ljava/lang/String;I)V
 
     sget-object p1, Lkotlin/Unit;->INSTANCE:Lkotlin/Unit;
 

@@ -6,9 +6,9 @@
 # static fields
 .field public static final INSTANCE:Lkotlin/reflect/jvm/internal/impl/metadata/jvm/deserialization/ClassMapperLite;
 
-.field public static final kotlin:Ljava/lang/String;
+.field private static final kotlin:Ljava/lang/String;
 
-.field public static final map:Ljava/util/Map;
+.field private static final map:Ljava/util/Map;
     .annotation system Ldalvik/annotation/Signature;
         value = {
             "Ljava/util/Map<",
@@ -227,7 +227,7 @@
 
     const-string v8, "Array"
 
-    invoke-static {v6, v7, v8}, Landroidx/constraintlayout/core/widgets/Barrier$$ExternalSyntheticOutline0;->m(Ljava/lang/StringBuilder;Ljava/lang/String;Ljava/lang/String;)Ljava/lang/String;
+    invoke-static {v6, v7, v8}, Landroidx/activity/ComponentActivity$2$$ExternalSyntheticOutline0;->m(Ljava/lang/StringBuilder;Ljava/lang/String;Ljava/lang/String;)Ljava/lang/String;
 
     move-result-object v6
 
@@ -553,7 +553,7 @@
     goto/16 :goto_4
 .end method
 
-.method public constructor <init>()V
+.method private constructor <init>()V
     .locals 0
 
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
@@ -561,7 +561,7 @@
     return-void
 .end method
 
-.method public static final map$lambda-0$add(Ljava/util/Map;Ljava/lang/String;Ljava/lang/String;)V
+.method private static final map$lambda-0$add(Ljava/util/Map;Ljava/lang/String;Ljava/lang/String;)V
     .locals 2
     .annotation system Ldalvik/annotation/Signature;
         value = {
@@ -628,9 +628,7 @@
 
     sget-object v0, Lkotlin/reflect/jvm/internal/impl/metadata/jvm/deserialization/ClassMapperLite;->map:Ljava/util/Map;
 
-    check-cast v0, Ljava/util/LinkedHashMap;
-
-    invoke-virtual {v0, p0}, Ljava/util/LinkedHashMap;->get(Ljava/lang/Object;)Ljava/lang/Object;
+    invoke-interface {v0, p0}, Ljava/util/Map;->get(Ljava/lang/Object;)Ljava/lang/Object;
 
     move-result-object v0
 

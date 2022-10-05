@@ -16,7 +16,7 @@
     c = "de.rki.coronawarnapp.risk.changedetection.CombinedRiskLevelChangeDetector$launch$$inlined$map$1$2"
     f = "CombinedRiskLevelChangeDetector.kt"
     l = {
-        0x89
+        0x90
     }
     m = "emit"
 .end annotation

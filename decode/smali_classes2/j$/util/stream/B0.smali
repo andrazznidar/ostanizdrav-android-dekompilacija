@@ -1,78 +1,89 @@
-.class public final synthetic Lj$/util/stream/B0;
+.class final Lj$/util/stream/B0;
 .super Ljava/lang/Object;
 
 # interfaces
-.implements Lj$/util/function/i;
+.implements Lj$/util/stream/M3;
 
 
 # instance fields
-.field public final synthetic a:I
+.field private final a:I
 
-.field public final synthetic b:Ljava/lang/Object;
+.field final b:Lj$/util/stream/A0;
+
+.field final c:Lj$/util/function/C;
 
 
 # direct methods
-.method public synthetic constructor <init>(Lj$/util/stream/F0;)V
-    .locals 1
-
-    const/4 v0, 0x1
-
-    iput v0, p0, Lj$/util/stream/B0;->a:I
+.method constructor <init>(ILj$/util/stream/A0;Lj$/util/function/C;)V
+    .locals 0
 
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
-    iput-object p1, p0, Lj$/util/stream/B0;->b:Ljava/lang/Object;
+    iput p1, p0, Lj$/util/stream/B0;->a:I
 
-    return-void
-.end method
+    iput-object p2, p0, Lj$/util/stream/B0;->b:Lj$/util/stream/A0;
 
-.method public synthetic constructor <init>(Lj$/util/stream/n3;)V
-    .locals 1
-
-    const/4 v0, 0x0
-
-    iput v0, p0, Lj$/util/stream/B0;->a:I
-
-    invoke-direct {p0}, Ljava/lang/Object;-><init>()V
-
-    iput-object p1, p0, Lj$/util/stream/B0;->b:Ljava/lang/Object;
+    iput-object p3, p0, Lj$/util/stream/B0;->c:Lj$/util/function/C;
 
     return-void
 .end method
 
 
 # virtual methods
-.method public final d(I)V
+.method public a()I
+    .locals 2
+
+    sget v0, Lj$/util/stream/e3;->u:I
+
+    sget v1, Lj$/util/stream/e3;->r:I
+
+    or-int/2addr v0, v1
+
+    return v0
+.end method
+
+.method public e(Lj$/util/stream/D0;Lj$/util/Spliterator;)Ljava/lang/Object;
     .locals 1
 
-    iget v0, p0, Lj$/util/stream/B0;->a:I
+    new-instance v0, Lj$/util/stream/C0;
 
-    packed-switch v0, :pswitch_data_0
+    invoke-direct {v0, p0, p1, p2}, Lj$/util/stream/C0;-><init>(Lj$/util/stream/B0;Lj$/util/stream/D0;Lj$/util/Spliterator;)V
 
-    goto :goto_0
+    invoke-virtual {v0}, Ljava/util/concurrent/CountedCompleter;->invoke()Ljava/lang/Object;
 
-    :pswitch_0
-    iget-object v0, p0, Lj$/util/stream/B0;->b:Ljava/lang/Object;
+    move-result-object p1
 
-    check-cast v0, Lj$/util/stream/n3;
+    check-cast p1, Ljava/lang/Boolean;
 
-    invoke-interface {v0, p1}, Lj$/util/stream/n3;->d(I)V
+    return-object p1
+.end method
 
-    return-void
+.method public f(Lj$/util/stream/D0;Lj$/util/Spliterator;)Ljava/lang/Object;
+    .locals 2
 
-    :goto_0
-    iget-object v0, p0, Lj$/util/stream/B0;->b:Ljava/lang/Object;
+    iget-object v0, p0, Lj$/util/stream/B0;->c:Lj$/util/function/C;
 
-    check-cast v0, Lj$/util/stream/F0;
+    invoke-interface {v0}, Lj$/util/function/C;->get()Ljava/lang/Object;
 
-    iget-object v0, v0, Lj$/util/stream/h3;->a:Lj$/util/stream/n3;
+    move-result-object v0
 
-    invoke-interface {v0, p1}, Lj$/util/stream/n3;->d(I)V
+    check-cast v0, Lj$/util/stream/z0;
 
-    return-void
+    check-cast p1, Lj$/util/stream/c;
 
-    :pswitch_data_0
-    .packed-switch 0x0
-        :pswitch_0
-    .end packed-switch
+    invoke-static {v0}, Ljava/util/Objects;->requireNonNull(Ljava/lang/Object;)Ljava/lang/Object;
+
+    invoke-virtual {p1, v0}, Lj$/util/stream/c;->T0(Lj$/util/stream/q2;)Lj$/util/stream/q2;
+
+    move-result-object v1
+
+    invoke-virtual {p1, v1, p2}, Lj$/util/stream/c;->o0(Lj$/util/stream/q2;Lj$/util/Spliterator;)V
+
+    iget-boolean p1, v0, Lj$/util/stream/z0;->b:Z
+
+    invoke-static {p1}, Ljava/lang/Boolean;->valueOf(Z)Ljava/lang/Boolean;
+
+    move-result-object p1
+
+    return-object p1
 .end method

@@ -386,7 +386,7 @@
 
     invoke-static {p2}, Ljava/util/Objects;->requireNonNull(Ljava/lang/Object;)Ljava/lang/Object;
 
-    invoke-super {p0, p1, p2}, Ljava/util/HashMap;->put(Ljava/lang/Object;Ljava/lang/Object;)Ljava/lang/Object;
+    invoke-super {p0, p1, p2}, Ljava/util/LinkedHashMap;->put(Ljava/lang/Object;Ljava/lang/Object;)Ljava/lang/Object;
 
     move-result-object p1
 
@@ -437,7 +437,7 @@
     goto :goto_0
 
     :cond_0
-    invoke-super {p0, p1}, Ljava/util/HashMap;->putAll(Ljava/util/Map;)V
+    invoke-super {p0, p1}, Ljava/util/LinkedHashMap;->putAll(Ljava/util/Map;)V
 
     return-void
 .end method
@@ -454,7 +454,7 @@
 
     invoke-virtual {p0}, Lcom/google/crypto/tink/shaded/protobuf/MapFieldLite;->ensureMutable()V
 
-    invoke-super {p0, p1}, Ljava/util/HashMap;->remove(Ljava/lang/Object;)Ljava/lang/Object;
+    invoke-super {p0, p1}, Ljava/util/LinkedHashMap;->remove(Ljava/lang/Object;)Ljava/lang/Object;
 
     move-result-object p1
 

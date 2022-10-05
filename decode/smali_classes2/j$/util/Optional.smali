@@ -169,7 +169,7 @@
 
     iget-object p1, p1, Lj$/util/Optional;->a:Ljava/lang/Object;
 
-    invoke-static {v0, p1}, Lj$/util/a;->t(Ljava/lang/Object;Ljava/lang/Object;)Z
+    invoke-static {v0, p1}, Lj$/util/a;->A(Ljava/lang/Object;Ljava/lang/Object;)Z
 
     move-result p1
 

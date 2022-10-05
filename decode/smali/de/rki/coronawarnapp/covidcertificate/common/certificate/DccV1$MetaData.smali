@@ -18,7 +18,13 @@
 .method public abstract getDateOfBirthFormatted()Ljava/lang/String;
 .end method
 
+.method public abstract getDob()Ljava/lang/String;
+.end method
+
 .method public abstract getNameData()Lde/rki/coronawarnapp/covidcertificate/common/certificate/DccV1$NameData;
+.end method
+
+.method public abstract getPayload()Lde/rki/coronawarnapp/covidcertificate/common/certificate/DccV1$Payload;
 .end method
 
 .method public abstract getPersonIdentifier()Lde/rki/coronawarnapp/covidcertificate/common/certificate/CertificatePersonIdentifier;

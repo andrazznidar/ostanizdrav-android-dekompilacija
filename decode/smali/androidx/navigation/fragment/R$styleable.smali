@@ -284,7 +284,7 @@
 
     new-array v2, v1, [I
 
-    const v4, 0x7f040381
+    const v4, 0x7f040383
 
     aput v4, v2, v3
 
@@ -292,7 +292,7 @@
 
     new-array v2, v1, [I
 
-    const v4, 0x7f0402db
+    const v4, 0x7f0402dc
 
     aput v4, v2, v3
 
@@ -330,7 +330,7 @@
         0x7f040003
         0x7f040128
         0x7f040129
-        0x7f0403c7
+        0x7f0403c9
     .end array-data
 
     :array_1
@@ -362,7 +362,7 @@
         0x7f0401af
         0x7f0401b0
         0x7f0401b1
-        0x7f04043c
+        0x7f04043e
     .end array-data
 
     :array_4
@@ -406,11 +406,11 @@
         0x7f040137
         0x7f04016d
         0x7f040177
-        0x7f040212
-        0x7f040312
+        0x7f040213
         0x7f040313
         0x7f040314
         0x7f040315
+        0x7f040316
     .end array-data
 
     :array_9
@@ -418,15 +418,15 @@
         0x1010003
         0x10101ed
         0x7f04003b
-        0x7f0402e6
+        0x7f0402e7
     .end array-data
 
     :array_a
     .array-data 4
         0x10104ee
         0x7f040003
-        0x7f0402b0
-        0x7f04043f
+        0x7f0402b1
+        0x7f040441
     .end array-data
 
     :array_b

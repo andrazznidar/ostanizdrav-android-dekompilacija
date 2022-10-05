@@ -20,11 +20,27 @@
 
 # instance fields
 .field public final synthetic $klass:Ljava/lang/Class;
+    .annotation system Ldalvik/annotation/Signature;
+        value = {
+            "Ljava/lang/Class<",
+            "Ljava/lang/Object;",
+            ">;"
+        }
+    .end annotation
+.end field
 
 
 # direct methods
 .method public constructor <init>(Ljava/lang/Class;)V
     .locals 0
+    .annotation system Ldalvik/annotation/Signature;
+        value = {
+            "(",
+            "Ljava/lang/Class<",
+            "Ljava/lang/Object;",
+            ">;)V"
+        }
+    .end annotation
 
     iput-object p1, p0, Lkotlin/sequences/SequencesKt___SequencesJvmKt$filterIsInstance$1;->$klass:Ljava/lang/Class;
 

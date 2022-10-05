@@ -1,4 +1,4 @@
-.class public final Lkotlin/reflect/jvm/internal/KClassImpl$Data$objectInstance$2;
+.class final Lkotlin/reflect/jvm/internal/KClassImpl$Data$objectInstance$2;
 .super Lkotlin/jvm/internal/Lambda;
 .source "KClassImpl.kt"
 
@@ -21,6 +21,25 @@
         "Lkotlin/jvm/internal/Lambda;",
         "Lkotlin/jvm/functions/Function0<",
         "TT;>;"
+    }
+.end annotation
+
+.annotation runtime Lkotlin/Metadata;
+    d1 = {
+        "\u0000\u000c\n\u0002\u0008\u0002\n\u0002\u0010\u0000\n\u0002\u0008\u0002\u0010\u0000\u001a\u0004\u0018\u0001H\u0001\"\u0008\u0008\u0000\u0010\u0001*\u00020\u0002H\n\u00a2\u0006\u0004\u0008\u0003\u0010\u0004"
+    }
+    d2 = {
+        "<anonymous>",
+        "T",
+        "",
+        "invoke",
+        "()Ljava/lang/Object;"
+    }
+    k = 0x3
+    mv = {
+        0x1,
+        0x5,
+        0x1
     }
 .end annotation
 
@@ -79,7 +98,7 @@
 
     sget-object v1, Lkotlin/reflect/jvm/internal/impl/builtins/CompanionObjectMapping;->INSTANCE:Lkotlin/reflect/jvm/internal/impl/builtins/CompanionObjectMapping;
 
-    invoke-static {v1, v0}, Landroidx/core/os/BundleKt;->isMappedIntrinsicCompanionObject(Lkotlin/reflect/jvm/internal/impl/builtins/CompanionObjectMapping;Lkotlin/reflect/jvm/internal/impl/descriptors/ClassDescriptor;)Z
+    invoke-static {v1, v0}, Lkotlin/reflect/jvm/internal/impl/builtins/CompanionObjectMappingUtilsKt;->isMappedIntrinsicCompanionObject(Lkotlin/reflect/jvm/internal/impl/builtins/CompanionObjectMapping;Lkotlin/reflect/jvm/internal/impl/descriptors/ClassDescriptor;)Z
 
     move-result v1
 
@@ -89,13 +108,15 @@
 
     iget-object v1, v1, Lkotlin/reflect/jvm/internal/KClassImpl$Data;->this$0:Lkotlin/reflect/jvm/internal/KClassImpl;
 
-    iget-object v1, v1, Lkotlin/reflect/jvm/internal/KClassImpl;->jClass:Ljava/lang/Class;
+    invoke-virtual {v1}, Lkotlin/reflect/jvm/internal/KClassImpl;->getJClass()Ljava/lang/Class;
+
+    move-result-object v1
 
     invoke-virtual {v1}, Ljava/lang/Class;->getEnclosingClass()Ljava/lang/Class;
 
     move-result-object v1
 
-    invoke-interface {v0}, Lkotlin/reflect/jvm/internal/impl/descriptors/DeclarationDescriptor;->getName()Lkotlin/reflect/jvm/internal/impl/name/Name;
+    invoke-interface {v0}, Lkotlin/reflect/jvm/internal/impl/descriptors/Named;->getName()Lkotlin/reflect/jvm/internal/impl/name/Name;
 
     move-result-object v0
 
@@ -114,7 +135,9 @@
 
     iget-object v0, v0, Lkotlin/reflect/jvm/internal/KClassImpl$Data;->this$0:Lkotlin/reflect/jvm/internal/KClassImpl;
 
-    iget-object v0, v0, Lkotlin/reflect/jvm/internal/KClassImpl;->jClass:Ljava/lang/Class;
+    invoke-virtual {v0}, Lkotlin/reflect/jvm/internal/KClassImpl;->getJClass()Ljava/lang/Class;
+
+    move-result-object v0
 
     const-string v1, "INSTANCE"
 

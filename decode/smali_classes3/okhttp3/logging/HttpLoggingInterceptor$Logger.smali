@@ -12,3 +12,8 @@
     accessFlags = 0x609
     name = "Logger"
 .end annotation
+
+
+# virtual methods
+.method public abstract log(Ljava/lang/String;)V
+.end method

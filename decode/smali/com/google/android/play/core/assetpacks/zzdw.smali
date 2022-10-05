@@ -82,7 +82,9 @@
 
     iget-object v0, p0, Lcom/google/android/play/core/assetpacks/zzdw;->zza:Lcom/google/android/play/core/assetpacks/zzbh;
 
-    iget-object v1, p1, Lorg/bouncycastle/asn1/OIDTokenizer;->oid:Ljava/lang/String;
+    iget-object v1, p1, Lorg/bouncycastle/crypto/util/SSHBuffer;->buffer:Ljava/lang/Object;
+
+    check-cast v1, Ljava/lang/String;
 
     iget v2, p1, Lcom/google/android/play/core/assetpacks/zzdt;->zza:I
 
@@ -94,7 +96,9 @@
 
     iget-object v1, p0, Lcom/google/android/play/core/assetpacks/zzdw;->zza:Lcom/google/android/play/core/assetpacks/zzbh;
 
-    iget-object v2, p1, Lorg/bouncycastle/asn1/OIDTokenizer;->oid:Ljava/lang/String;
+    iget-object v2, p1, Lorg/bouncycastle/crypto/util/SSHBuffer;->buffer:Ljava/lang/Object;
+
+    check-cast v2, Ljava/lang/String;
 
     iget v3, p1, Lcom/google/android/play/core/assetpacks/zzdt;->zza:I
 
@@ -136,7 +140,9 @@
 
     iget-object v1, p0, Lcom/google/android/play/core/assetpacks/zzdw;->zza:Lcom/google/android/play/core/assetpacks/zzbh;
 
-    iget-object v4, p1, Lorg/bouncycastle/asn1/OIDTokenizer;->oid:Ljava/lang/String;
+    iget-object v4, p1, Lorg/bouncycastle/crypto/util/SSHBuffer;->buffer:Ljava/lang/Object;
+
+    check-cast v4, Ljava/lang/String;
 
     iget v5, p1, Lcom/google/android/play/core/assetpacks/zzdt;->zza:I
 
@@ -156,7 +162,9 @@
 
     iget-object v0, p0, Lcom/google/android/play/core/assetpacks/zzdw;->zza:Lcom/google/android/play/core/assetpacks/zzbh;
 
-    iget-object v1, p1, Lorg/bouncycastle/asn1/OIDTokenizer;->oid:Ljava/lang/String;
+    iget-object v1, p1, Lorg/bouncycastle/crypto/util/SSHBuffer;->buffer:Ljava/lang/Object;
+
+    check-cast v1, Ljava/lang/String;
 
     iget v4, p1, Lcom/google/android/play/core/assetpacks/zzdt;->zza:I
 
@@ -176,7 +184,9 @@
 
     iget-object v0, p0, Lcom/google/android/play/core/assetpacks/zzdw;->zza:Lcom/google/android/play/core/assetpacks/zzbh;
 
-    iget-object v1, p1, Lorg/bouncycastle/asn1/OIDTokenizer;->oid:Ljava/lang/String;
+    iget-object v1, p1, Lorg/bouncycastle/crypto/util/SSHBuffer;->buffer:Ljava/lang/Object;
+
+    check-cast v1, Ljava/lang/String;
 
     iget v4, p1, Lcom/google/android/play/core/assetpacks/zzdt;->zza:I
 
@@ -205,7 +215,11 @@
     :try_start_0
     iget-object v4, p0, Lcom/google/android/play/core/assetpacks/zzdw;->zzg:Lcom/google/android/play/core/assetpacks/zzdy;
 
-    iget-object v5, p1, Lorg/bouncycastle/asn1/OIDTokenizer;->oid:Ljava/lang/String;
+    iget-object v0, p1, Lorg/bouncycastle/crypto/util/SSHBuffer;->buffer:Ljava/lang/Object;
+
+    move-object v5, v0
+
+    check-cast v5, Ljava/lang/String;
 
     iget v6, p1, Lcom/google/android/play/core/assetpacks/zzdt;->zza:I
 
@@ -225,9 +239,9 @@
 
     check-cast v0, Ljava/util/concurrent/Executor;
 
-    new-instance v1, Lcom/google/android/gms/tasks/zzk;
+    new-instance v1, Lcom/google/android/play/core/assetpacks/zzdv;
 
-    invoke-direct {v1, p0, p1}, Lcom/google/android/gms/tasks/zzk;-><init>(Lcom/google/android/play/core/assetpacks/zzdw;Lcom/google/android/play/core/assetpacks/zzdt;)V
+    invoke-direct {v1, p0, p1}, Lcom/google/android/play/core/assetpacks/zzdv;-><init>(Lcom/google/android/play/core/assetpacks/zzdw;Lcom/google/android/play/core/assetpacks/zzdt;)V
 
     invoke-interface {v0, v1}, Ljava/util/concurrent/Executor;->execute(Ljava/lang/Runnable;)V
 
@@ -242,7 +256,9 @@
 
     new-array v4, v4, [Ljava/lang/Object;
 
-    iget-object v5, p1, Lorg/bouncycastle/asn1/OIDTokenizer;->oid:Ljava/lang/String;
+    iget-object v5, p1, Lorg/bouncycastle/crypto/util/SSHBuffer;->buffer:Ljava/lang/Object;
+
+    check-cast v5, Ljava/lang/String;
 
     aput-object v5, v4, v2
 
@@ -258,7 +274,7 @@
 
     move-result-object v0
 
-    iget p1, p1, Lorg/bouncycastle/asn1/OIDTokenizer;->index:I
+    iget p1, p1, Lorg/bouncycastle/crypto/util/SSHBuffer;->pos:I
 
     invoke-direct {v1, v0, p1}, Lcom/google/android/play/core/assetpacks/zzch;-><init>(Ljava/lang/String;I)V
 
@@ -286,7 +302,9 @@
     :goto_0
     iget-object v0, p0, Lcom/google/android/play/core/assetpacks/zzdw;->zzc:Lcom/google/android/play/core/assetpacks/zzdb;
 
-    iget-object v1, p1, Lorg/bouncycastle/asn1/OIDTokenizer;->oid:Ljava/lang/String;
+    iget-object v1, p1, Lorg/bouncycastle/crypto/util/SSHBuffer;->buffer:Ljava/lang/Object;
+
+    check-cast v1, Ljava/lang/String;
 
     iget v2, p1, Lcom/google/android/play/core/assetpacks/zzdt;->zza:I
 
@@ -296,7 +314,9 @@
 
     iget-object v0, p0, Lcom/google/android/play/core/assetpacks/zzdw;->zze:Lcom/google/android/play/core/assetpacks/zzcl;
 
-    iget-object v1, p1, Lorg/bouncycastle/asn1/OIDTokenizer;->oid:Ljava/lang/String;
+    iget-object v1, p1, Lorg/bouncycastle/crypto/util/SSHBuffer;->buffer:Ljava/lang/Object;
+
+    check-cast v1, Ljava/lang/String;
 
     invoke-virtual {v0, v1}, Lcom/google/android/play/core/assetpacks/zzcl;->zzc(Ljava/lang/String;)V
 
@@ -308,9 +328,11 @@
 
     check-cast v0, Lcom/google/android/play/core/assetpacks/zzy;
 
-    iget v1, p1, Lorg/bouncycastle/asn1/OIDTokenizer;->index:I
+    iget v1, p1, Lorg/bouncycastle/crypto/util/SSHBuffer;->pos:I
 
-    iget-object p1, p1, Lorg/bouncycastle/asn1/OIDTokenizer;->oid:Ljava/lang/String;
+    iget-object p1, p1, Lorg/bouncycastle/crypto/util/SSHBuffer;->buffer:Ljava/lang/Object;
+
+    check-cast p1, Ljava/lang/String;
 
     invoke-interface {v0, v1, p1}, Lcom/google/android/play/core/assetpacks/zzy;->zzh(ILjava/lang/String;)V
 
@@ -319,7 +341,7 @@
     :cond_1
     new-instance v0, Lcom/google/android/play/core/assetpacks/zzch;
 
-    iget p1, p1, Lorg/bouncycastle/asn1/OIDTokenizer;->index:I
+    iget p1, p1, Lorg/bouncycastle/crypto/util/SSHBuffer;->pos:I
 
     const-string v1, "Cannot move metadata files to final location."
 
@@ -330,7 +352,7 @@
     :cond_2
     new-instance v0, Lcom/google/android/play/core/assetpacks/zzch;
 
-    iget p1, p1, Lorg/bouncycastle/asn1/OIDTokenizer;->index:I
+    iget p1, p1, Lorg/bouncycastle/crypto/util/SSHBuffer;->pos:I
 
     const-string v1, "Cannot move merged pack files to final location."
 
@@ -343,7 +365,9 @@
 
     new-array v1, v3, [Ljava/lang/Object;
 
-    iget-object v3, p1, Lorg/bouncycastle/asn1/OIDTokenizer;->oid:Ljava/lang/String;
+    iget-object v3, p1, Lorg/bouncycastle/crypto/util/SSHBuffer;->buffer:Ljava/lang/Object;
+
+    check-cast v3, Ljava/lang/String;
 
     aput-object v3, v1, v2
 
@@ -353,7 +377,7 @@
 
     move-result-object v1
 
-    iget p1, p1, Lorg/bouncycastle/asn1/OIDTokenizer;->index:I
+    iget p1, p1, Lorg/bouncycastle/crypto/util/SSHBuffer;->pos:I
 
     invoke-direct {v0, v1, p1}, Lcom/google/android/play/core/assetpacks/zzch;-><init>(Ljava/lang/String;I)V
 

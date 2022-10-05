@@ -71,9 +71,9 @@
 
     iget-object v0, v0, Landroidx/fragment/app/Fragment;->mView:Landroid/view/View;
 
-    iget-object v1, v1, Landroidx/fragment/app/SpecialEffectsController$Operation;->mFinalState:Landroidx/fragment/app/SpecialEffectsController$Operation$State;
+    iget v1, v1, Landroidx/fragment/app/SpecialEffectsController$Operation;->mFinalState:I
 
-    invoke-virtual {v1, v0}, Landroidx/fragment/app/SpecialEffectsController$Operation$State;->applyState(Landroid/view/View;)V
+    invoke-static {v1, v0}, Landroidx/fragment/app/SpecialEffectsController$Operation$State$EnumUnboxingLocalUtility;->_applyState(ILandroid/view/View;)V
 
     :cond_0
     return-void

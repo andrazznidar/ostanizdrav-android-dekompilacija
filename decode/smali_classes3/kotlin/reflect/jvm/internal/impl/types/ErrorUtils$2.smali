@@ -1,4 +1,4 @@
-.class public final Lkotlin/reflect/jvm/internal/impl/types/ErrorUtils$2;
+.class final Lkotlin/reflect/jvm/internal/impl/types/ErrorUtils$2;
 .super Ljava/lang/Object;
 .source "ErrorUtils.java"
 
@@ -24,7 +24,7 @@
 
 
 # direct methods
-.method public static synthetic $$$reportNull$$$0(I)V
+.method private static synthetic $$$reportNull$$$0(I)V
     .locals 7
 
     const/4 v0, 0x3
@@ -156,22 +156,20 @@
 
 # virtual methods
 .method public getBuiltIns()Lkotlin/reflect/jvm/internal/impl/builtins/KotlinBuiltIns;
-    .locals 1
+    .locals 2
 
-    sget-object v0, Lkotlin/reflect/jvm/internal/impl/builtins/DefaultBuiltIns;->Instance:Lkotlin/reflect/jvm/internal/impl/builtins/DefaultBuiltIns;
+    invoke-static {}, Lkotlin/reflect/jvm/internal/impl/builtins/DefaultBuiltIns;->getInstance()Lkotlin/reflect/jvm/internal/impl/builtins/DefaultBuiltIns;
 
-    if-eqz v0, :cond_0
+    move-result-object v0
 
-    return-object v0
+    if-nez v0, :cond_0
+
+    const/4 v1, 0x2
+
+    invoke-static {v1}, Lkotlin/reflect/jvm/internal/impl/types/ErrorUtils$2;->$$$reportNull$$$0(I)V
 
     :cond_0
-    const/4 v0, 0x2
-
-    invoke-static {v0}, Lkotlin/reflect/jvm/internal/impl/types/ErrorUtils$2;->$$$reportNull$$$0(I)V
-
-    const/4 v0, 0x0
-
-    throw v0
+    return-object v0
 .end method
 
 .method public getDeclarationDescriptor()Lkotlin/reflect/jvm/internal/impl/descriptors/ClassifierDescriptor;
@@ -225,18 +223,14 @@
 .method public refine(Lkotlin/reflect/jvm/internal/impl/types/checker/KotlinTypeRefiner;)Lkotlin/reflect/jvm/internal/impl/types/TypeConstructor;
     .locals 0
 
-    if-eqz p1, :cond_0
+    if-nez p1, :cond_0
 
-    return-object p0
-
-    :cond_0
     const/4 p1, 0x3
 
     invoke-static {p1}, Lkotlin/reflect/jvm/internal/impl/types/ErrorUtils$2;->$$$reportNull$$$0(I)V
 
-    const/4 p1, 0x0
-
-    throw p1
+    :cond_0
+    return-object p0
 .end method
 
 .method public toString()Ljava/lang/String;

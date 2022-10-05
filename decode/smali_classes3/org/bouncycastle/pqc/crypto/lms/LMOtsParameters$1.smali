@@ -1,4 +1,4 @@
-.class public final Lorg/bouncycastle/pqc/crypto/lms/LMOtsParameters$1;
+.class final Lorg/bouncycastle/pqc/crypto/lms/LMOtsParameters$1;
 .super Ljava/util/HashMap;
 
 
@@ -30,7 +30,9 @@
 
     sget-object v0, Lorg/bouncycastle/pqc/crypto/lms/LMOtsParameters;->sha256_n32_w1:Lorg/bouncycastle/pqc/crypto/lms/LMOtsParameters;
 
-    iget v1, v0, Lorg/bouncycastle/pqc/crypto/lms/LMOtsParameters;->type:I
+    invoke-static {v0}, Lorg/bouncycastle/pqc/crypto/lms/LMOtsParameters;->access$000(Lorg/bouncycastle/pqc/crypto/lms/LMOtsParameters;)I
+
+    move-result v1
 
     invoke-static {v1}, Ljava/lang/Integer;->valueOf(I)Ljava/lang/Integer;
 
@@ -40,7 +42,9 @@
 
     sget-object v0, Lorg/bouncycastle/pqc/crypto/lms/LMOtsParameters;->sha256_n32_w2:Lorg/bouncycastle/pqc/crypto/lms/LMOtsParameters;
 
-    iget v1, v0, Lorg/bouncycastle/pqc/crypto/lms/LMOtsParameters;->type:I
+    invoke-static {v0}, Lorg/bouncycastle/pqc/crypto/lms/LMOtsParameters;->access$000(Lorg/bouncycastle/pqc/crypto/lms/LMOtsParameters;)I
+
+    move-result v1
 
     invoke-static {v1}, Ljava/lang/Integer;->valueOf(I)Ljava/lang/Integer;
 
@@ -50,7 +54,9 @@
 
     sget-object v0, Lorg/bouncycastle/pqc/crypto/lms/LMOtsParameters;->sha256_n32_w4:Lorg/bouncycastle/pqc/crypto/lms/LMOtsParameters;
 
-    iget v1, v0, Lorg/bouncycastle/pqc/crypto/lms/LMOtsParameters;->type:I
+    invoke-static {v0}, Lorg/bouncycastle/pqc/crypto/lms/LMOtsParameters;->access$000(Lorg/bouncycastle/pqc/crypto/lms/LMOtsParameters;)I
+
+    move-result v1
 
     invoke-static {v1}, Ljava/lang/Integer;->valueOf(I)Ljava/lang/Integer;
 
@@ -60,7 +66,9 @@
 
     sget-object v0, Lorg/bouncycastle/pqc/crypto/lms/LMOtsParameters;->sha256_n32_w8:Lorg/bouncycastle/pqc/crypto/lms/LMOtsParameters;
 
-    iget v1, v0, Lorg/bouncycastle/pqc/crypto/lms/LMOtsParameters;->type:I
+    invoke-static {v0}, Lorg/bouncycastle/pqc/crypto/lms/LMOtsParameters;->access$000(Lorg/bouncycastle/pqc/crypto/lms/LMOtsParameters;)I
+
+    move-result v1
 
     invoke-static {v1}, Ljava/lang/Integer;->valueOf(I)Ljava/lang/Integer;
 

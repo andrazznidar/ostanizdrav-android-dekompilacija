@@ -25,7 +25,7 @@
     c = "de.rki.coronawarnapp.covidcertificate.person.ui.details.PersonDetailsViewModel$onValidateCertificate$1"
     f = "PersonDetailsViewModel.kt"
     l = {
-        0x79
+        0xa8
     }
     m = "invokeSuspend"
 .end annotation

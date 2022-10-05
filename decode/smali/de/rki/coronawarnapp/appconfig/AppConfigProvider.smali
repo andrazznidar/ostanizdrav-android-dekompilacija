@@ -61,8 +61,6 @@
 
     move-result-object v4
 
-    sget p2, Lkotlinx/coroutines/flow/SharingStarted;->$r8$clinit:I
-
     sget-object v5, Lkotlinx/coroutines/flow/SharingStarted$Companion;->Lazily:Lkotlinx/coroutines/flow/SharingStarted;
 
     new-instance v6, Lde/rki/coronawarnapp/appconfig/AppConfigProvider$configHolder$1;
@@ -129,7 +127,7 @@
 
     check-cast v0, Lkotlinx/coroutines/DeferredCoroutine;
 
-    invoke-virtual {v0, p1}, Lkotlinx/coroutines/DeferredCoroutine;->await(Lkotlin/coroutines/Continuation;)Ljava/lang/Object;
+    invoke-virtual {v0, p1}, Lkotlinx/coroutines/JobSupport;->awaitInternal$kotlinx_coroutines_core(Lkotlin/coroutines/Continuation;)Ljava/lang/Object;
 
     move-result-object p1
 

@@ -1,4 +1,4 @@
-.class public final Lkotlin/reflect/jvm/internal/impl/utils/DFS$1;
+.class final Lkotlin/reflect/jvm/internal/impl/utils/DFS$1;
 .super Lkotlin/reflect/jvm/internal/impl/utils/DFS$AbstractNodeHandler;
 .source "DFS.java"
 
@@ -84,7 +84,7 @@
     return p1
 .end method
 
-.method public result()Ljava/lang/Object;
+.method public result()Ljava/lang/Boolean;
     .locals 2
 
     iget-object v0, p0, Lkotlin/reflect/jvm/internal/impl/utils/DFS$1;->val$result:[Z
@@ -94,6 +94,16 @@
     aget-boolean v0, v0, v1
 
     invoke-static {v0}, Ljava/lang/Boolean;->valueOf(Z)Ljava/lang/Boolean;
+
+    move-result-object v0
+
+    return-object v0
+.end method
+
+.method public bridge synthetic result()Ljava/lang/Object;
+    .locals 1
+
+    invoke-virtual {p0}, Lkotlin/reflect/jvm/internal/impl/utils/DFS$1;->result()Ljava/lang/Boolean;
 
     move-result-object v0
 

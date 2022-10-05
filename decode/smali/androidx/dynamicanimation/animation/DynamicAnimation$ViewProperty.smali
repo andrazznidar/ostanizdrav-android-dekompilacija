@@ -1,5 +1,5 @@
 .class public abstract Landroidx/dynamicanimation/animation/DynamicAnimation$ViewProperty;
-.super Landroidx/dynamicanimation/animation/FloatPropertyCompat;
+.super Lboofcv/struct/border/ImageBorder;
 .source "DynamicAnimation.java"
 
 
@@ -15,9 +15,7 @@
 
 .annotation system Ldalvik/annotation/Signature;
     value = {
-        "Landroidx/dynamicanimation/animation/FloatPropertyCompat<",
-        "Landroid/view/View;",
-        ">;"
+        "Lboofcv/struct/border/ImageBorder;"
     }
 .end annotation
 
@@ -26,7 +24,9 @@
 .method public constructor <init>(Ljava/lang/String;Landroidx/dynamicanimation/animation/DynamicAnimation$1;)V
     .locals 0
 
-    invoke-direct {p0, p1}, Landroidx/dynamicanimation/animation/FloatPropertyCompat;-><init>(Ljava/lang/String;)V
+    const/4 p2, 0x1
+
+    invoke-direct {p0, p1, p2}, Lboofcv/struct/border/ImageBorder;-><init>(Ljava/lang/Object;I)V
 
     return-void
 .end method

@@ -49,7 +49,7 @@
 
 # direct methods
 .method public static constructor <clinit>()V
-    .locals 26
+    .locals 17
 
     new-instance v0, Lokhttp3/CacheControl$Companion;
 
@@ -59,9 +59,67 @@
 
     sput-object v0, Lokhttp3/CacheControl;->Companion:Lokhttp3/CacheControl$Companion;
 
+    new-instance v0, Lokhttp3/CacheControl;
+
+    const/4 v3, 0x1
+
+    const/4 v4, 0x0
+
     const/4 v10, -0x1
 
-    const/16 v21, 0x1
+    const/4 v6, -0x1
+
+    const/4 v7, 0x0
+
+    const/4 v8, 0x0
+
+    const/4 v9, 0x0
+
+    const/4 v11, -0x1
+
+    const/4 v12, 0x0
+
+    const/4 v13, 0x0
+
+    const/4 v14, 0x0
+
+    const/4 v15, 0x0
+
+    const/16 v16, 0x0
+
+    move-object v2, v0
+
+    move v5, v10
+
+    invoke-direct/range {v2 .. v16}, Lokhttp3/CacheControl;-><init>(ZZIIZZZIIZZZLjava/lang/String;Lkotlin/jvm/internal/DefaultConstructorMarker;)V
+
+    sput-object v0, Lokhttp3/CacheControl;->FORCE_NETWORK:Lokhttp3/CacheControl;
+
+    sget-object v0, Ljava/util/concurrent/TimeUnit;->SECONDS:Ljava/util/concurrent/TimeUnit;
+
+    const-string v1, "timeUnit"
+
+    invoke-static {v0, v1}, Lkotlin/jvm/internal/Intrinsics;->checkNotNullParameter(Ljava/lang/Object;Ljava/lang/String;)V
+
+    const v1, 0x7fffffff
+
+    int-to-long v2, v1
+
+    invoke-virtual {v0, v2, v3}, Ljava/util/concurrent/TimeUnit;->toSeconds(J)J
+
+    move-result-wide v4
+
+    cmp-long v0, v4, v2
+
+    if-lez v0, :cond_0
+
+    goto :goto_0
+
+    :cond_0
+    long-to-int v1, v4
+
+    :goto_0
+    move v10, v1
 
     new-instance v0, Lokhttp3/CacheControl;
 
@@ -83,77 +141,17 @@
 
     const/16 v16, 0x0
 
+    const/4 v3, 0x0
+
     const/4 v4, 0x0
 
-    const/4 v12, 0x0
+    const/4 v5, -0x1
+
+    const/4 v12, 0x1
 
     move-object v2, v0
 
-    move/from16 v3, v21
-
-    move v5, v10
-
     invoke-direct/range {v2 .. v16}, Lokhttp3/CacheControl;-><init>(ZZIIZZZIIZZZLjava/lang/String;Lkotlin/jvm/internal/DefaultConstructorMarker;)V
-
-    sput-object v0, Lokhttp3/CacheControl;->FORCE_NETWORK:Lokhttp3/CacheControl;
-
-    const/4 v13, 0x0
-
-    const/4 v12, 0x0
-
-    const/4 v14, -0x1
-
-    sget-object v0, Ljava/util/concurrent/TimeUnit;->SECONDS:Ljava/util/concurrent/TimeUnit;
-
-    const-string v1, "timeUnit"
-
-    invoke-static {v0, v1}, Lkotlin/jvm/internal/Intrinsics;->checkNotNullParameter(Ljava/lang/Object;Ljava/lang/String;)V
-
-    const v1, 0x7fffffff
-
-    int-to-long v2, v1
-
-    invoke-virtual {v0, v2, v3}, Ljava/util/concurrent/TimeUnit;->toSeconds(J)J
-
-    move-result-wide v4
-
-    cmp-long v0, v4, v2
-
-    if-lez v0, :cond_0
-
-    move/from16 v19, v1
-
-    goto :goto_0
-
-    :cond_0
-    long-to-int v0, v4
-
-    move/from16 v19, v0
-
-    :goto_0
-    new-instance v0, Lokhttp3/CacheControl;
-
-    const/4 v15, -0x1
-
-    const/16 v16, 0x0
-
-    const/16 v17, 0x0
-
-    const/16 v18, 0x0
-
-    const/16 v20, -0x1
-
-    const/16 v22, 0x0
-
-    const/16 v23, 0x0
-
-    const/16 v24, 0x0
-
-    const/16 v25, 0x0
-
-    move-object v11, v0
-
-    invoke-direct/range {v11 .. v25}, Lokhttp3/CacheControl;-><init>(ZZIIZZZIIZZZLjava/lang/String;Lkotlin/jvm/internal/DefaultConstructorMarker;)V
 
     sput-object v0, Lokhttp3/CacheControl;->FORCE_CACHE:Lokhttp3/CacheControl;
 

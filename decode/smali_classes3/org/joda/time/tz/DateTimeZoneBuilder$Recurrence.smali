@@ -155,7 +155,7 @@
 .end method
 
 .method public next(JII)J
-    .locals 7
+    .locals 8
 
     iget-object v0, p0, Lorg/joda/time/tz/DateTimeZoneBuilder$Recurrence;->iOfYear:Lorg/joda/time/tz/DateTimeZoneBuilder$OfYear;
 
@@ -205,6 +205,12 @@
     iget-object v5, v1, Lorg/joda/time/chrono/AssembledChronology;->iMillisOfDay:Lorg/joda/time/DateTimeField;
 
     iget v6, v0, Lorg/joda/time/tz/DateTimeZoneBuilder$OfYear;->iMillisOfDay:I
+
+    const v7, 0x5265bff
+
+    invoke-static {v6, v7}, Ljava/lang/Math;->min(II)I
+
+    move-result v6
 
     invoke-virtual {v5, v3, v4, v6}, Lorg/joda/time/DateTimeField;->add(JI)J
 

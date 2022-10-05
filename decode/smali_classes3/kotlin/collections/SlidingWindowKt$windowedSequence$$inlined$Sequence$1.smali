@@ -7,13 +7,21 @@
 
 
 # annotations
+.annotation system Ldalvik/annotation/EnclosingMethod;
+    value = Lkotlin/collections/SlidingWindowKt;->windowedSequence(Lkotlin/sequences/Sequence;IIZZ)Lkotlin/sequences/Sequence;
+.end annotation
+
+.annotation system Ldalvik/annotation/InnerClass;
+    accessFlags = 0x19
+    name = null
+.end annotation
+
 .annotation system Ldalvik/annotation/Signature;
     value = {
         "Ljava/lang/Object;",
         "Lkotlin/sequences/Sequence<",
         "Ljava/util/List<",
-        "Ljava/lang/Object;",
-        ">;>;"
+        "+TT;>;>;"
     }
 .end annotation
 
@@ -62,8 +70,7 @@
             "()",
             "Ljava/util/Iterator<",
             "Ljava/util/List<",
-            "Ljava/lang/Object;",
-            ">;>;"
+            "+TT;>;>;"
         }
     .end annotation
 

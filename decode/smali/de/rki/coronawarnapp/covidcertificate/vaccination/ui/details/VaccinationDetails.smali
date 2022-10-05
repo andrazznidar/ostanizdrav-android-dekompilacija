@@ -10,9 +10,16 @@
 
 
 # direct methods
-.method public constructor <init>(Lde/rki/coronawarnapp/covidcertificate/vaccination/core/VaccinationCertificate;Z)V
+.method public constructor <init>(Lde/rki/coronawarnapp/covidcertificate/vaccination/core/VaccinationCertificate;ZI)V
     .locals 0
 
+    and-int/lit8 p3, p3, 0x2
+
+    if-eqz p3, :cond_0
+
+    const/4 p2, 0x0
+
+    :cond_0
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
     iput-object p1, p0, Lde/rki/coronawarnapp/covidcertificate/vaccination/ui/details/VaccinationDetails;->certificate:Lde/rki/coronawarnapp/covidcertificate/vaccination/core/VaccinationCertificate;

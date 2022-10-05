@@ -1,126 +1,139 @@
-.class abstract Lj$/util/stream/x2;
-.super Ljava/util/concurrent/CountedCompleter;
+.class Lj$/util/stream/x2;
+.super Lj$/util/stream/j2;
 
 
 # instance fields
-.field protected final a:Lj$/util/stream/B1;
+.field b:J
 
-.field protected final b:I
+.field c:J
+
+.field final synthetic d:Lj$/util/stream/y2;
 
 
 # direct methods
-.method constructor <init>(Lj$/util/stream/B1;I)V
-    .locals 0
+.method constructor <init>(Lj$/util/stream/y2;Lj$/util/stream/q2;)V
+    .locals 2
 
-    invoke-direct {p0}, Ljava/util/concurrent/CountedCompleter;-><init>()V
+    iput-object p1, p0, Lj$/util/stream/x2;->d:Lj$/util/stream/y2;
 
-    iput-object p1, p0, Lj$/util/stream/x2;->a:Lj$/util/stream/B1;
+    invoke-direct {p0, p2}, Lj$/util/stream/j2;-><init>(Lj$/util/stream/q2;)V
 
-    iput p2, p0, Lj$/util/stream/x2;->b:I
+    iget-wide v0, p1, Lj$/util/stream/y2;->u:J
 
-    return-void
-.end method
+    iput-wide v0, p0, Lj$/util/stream/x2;->b:J
 
-.method constructor <init>(Lj$/util/stream/x2;Lj$/util/stream/B1;I)V
-    .locals 0
+    iget-wide p1, p1, Lj$/util/stream/y2;->v:J
 
-    invoke-direct {p0, p1}, Ljava/util/concurrent/CountedCompleter;-><init>(Ljava/util/concurrent/CountedCompleter;)V
+    const-wide/16 v0, 0x0
 
-    iput-object p2, p0, Lj$/util/stream/x2;->a:Lj$/util/stream/B1;
+    cmp-long v0, p1, v0
 
-    iput p3, p0, Lj$/util/stream/x2;->b:I
+    if-ltz v0, :cond_0
+
+    goto :goto_0
+
+    :cond_0
+    const-wide p1, 0x7fffffffffffffffL
+
+    :goto_0
+    iput-wide p1, p0, Lj$/util/stream/x2;->c:J
 
     return-void
 .end method
 
 
 # virtual methods
-.method abstract a()V
-.end method
+.method public c(D)V
+    .locals 7
 
-.method abstract b(II)Lj$/util/stream/x2;
-.end method
+    iget-wide v0, p0, Lj$/util/stream/x2;->b:J
 
-.method public compute()V
-    .locals 8
+    const-wide/16 v2, 0x0
 
-    move-object v0, p0
+    cmp-long v4, v0, v2
 
-    :goto_0
-    iget-object v1, v0, Lj$/util/stream/x2;->a:Lj$/util/stream/B1;
+    const-wide/16 v5, 0x1
 
-    invoke-interface {v1}, Lj$/util/stream/B1;->m()I
+    if-nez v4, :cond_0
 
-    move-result v1
+    iget-wide v0, p0, Lj$/util/stream/x2;->c:J
 
-    if-nez v1, :cond_0
+    cmp-long v2, v0, v2
 
-    invoke-virtual {v0}, Lj$/util/stream/x2;->a()V
+    if-lez v2, :cond_1
 
-    invoke-virtual {v0}, Ljava/util/concurrent/CountedCompleter;->propagateCompletion()V
+    sub-long/2addr v0, v5
 
-    return-void
+    iput-wide v0, p0, Lj$/util/stream/x2;->c:J
+
+    iget-object v0, p0, Lj$/util/stream/j2;->a:Lj$/util/stream/q2;
+
+    invoke-interface {v0, p1, p2}, Lj$/util/stream/q2;->c(D)V
+
+    goto :goto_0
 
     :cond_0
-    iget-object v1, v0, Lj$/util/stream/x2;->a:Lj$/util/stream/B1;
+    sub-long/2addr v0, v5
 
-    invoke-interface {v1}, Lj$/util/stream/B1;->m()I
+    iput-wide v0, p0, Lj$/util/stream/x2;->b:J
 
-    move-result v1
+    :cond_1
+    :goto_0
+    return-void
+.end method
 
-    add-int/lit8 v1, v1, -0x1
+.method public i(J)V
+    .locals 8
 
-    invoke-virtual {v0, v1}, Ljava/util/concurrent/CountedCompleter;->setPendingCount(I)V
+    iget-object v0, p0, Lj$/util/stream/j2;->a:Lj$/util/stream/q2;
 
-    const/4 v1, 0x0
+    iget-object v1, p0, Lj$/util/stream/x2;->d:Lj$/util/stream/y2;
 
-    move v2, v1
+    iget-wide v4, v1, Lj$/util/stream/y2;->u:J
 
-    :goto_1
-    iget-object v3, v0, Lj$/util/stream/x2;->a:Lj$/util/stream/B1;
+    iget-wide v6, p0, Lj$/util/stream/x2;->c:J
 
-    invoke-interface {v3}, Lj$/util/stream/B1;->m()I
+    move-wide v2, p1
 
-    move-result v3
+    invoke-static/range {v2 .. v7}, Lj$/util/stream/D0;->d0(JJJ)J
 
-    add-int/lit8 v3, v3, -0x1
+    move-result-wide p1
 
-    if-ge v1, v3, :cond_1
+    invoke-interface {v0, p1, p2}, Lj$/util/stream/q2;->i(J)V
 
-    iget v3, v0, Lj$/util/stream/x2;->b:I
+    return-void
+.end method
 
-    add-int/2addr v3, v2
+.method public r()Z
+    .locals 4
 
-    invoke-virtual {v0, v1, v3}, Lj$/util/stream/x2;->b(II)Lj$/util/stream/x2;
+    iget-wide v0, p0, Lj$/util/stream/x2;->c:J
 
-    move-result-object v3
+    const-wide/16 v2, 0x0
 
-    int-to-long v4, v2
+    cmp-long v0, v0, v2
 
-    iget-object v2, v3, Lj$/util/stream/x2;->a:Lj$/util/stream/B1;
+    if-eqz v0, :cond_1
 
-    invoke-interface {v2}, Lj$/util/stream/B1;->count()J
+    iget-object v0, p0, Lj$/util/stream/j2;->a:Lj$/util/stream/q2;
 
-    move-result-wide v6
+    invoke-interface {v0}, Lj$/util/stream/q2;->r()Z
 
-    add-long/2addr v4, v6
+    move-result v0
 
-    long-to-int v2, v4
+    if-eqz v0, :cond_0
 
-    invoke-virtual {v3}, Ljava/util/concurrent/CountedCompleter;->fork()Ljava/util/concurrent/ForkJoinTask;
+    goto :goto_0
 
-    add-int/lit8 v1, v1, 0x1
+    :cond_0
+    const/4 v0, 0x0
 
     goto :goto_1
 
     :cond_1
-    iget v3, v0, Lj$/util/stream/x2;->b:I
+    :goto_0
+    const/4 v0, 0x1
 
-    add-int/2addr v3, v2
-
-    invoke-virtual {v0, v1, v3}, Lj$/util/stream/x2;->b(II)Lj$/util/stream/x2;
-
-    move-result-object v0
-
-    goto :goto_0
+    :goto_1
+    return v0
 .end method

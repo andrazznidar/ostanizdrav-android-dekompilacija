@@ -1,13 +1,13 @@
-.class public Lorg/bouncycastle/asn1/ConstructedOctetStream;
+.class Lorg/bouncycastle/asn1/ConstructedOctetStream;
 .super Ljava/io/InputStream;
 
 
 # instance fields
-.field public _currentStream:Ljava/io/InputStream;
+.field private _currentStream:Ljava/io/InputStream;
 
-.field public _first:Z
+.field private _first:Z
 
-.field public final _parser:Lorg/bouncycastle/asn1/ASN1StreamParser;
+.field private final _parser:Lorg/bouncycastle/asn1/ASN1StreamParser;
 
 
 # direct methods
@@ -25,9 +25,7 @@
     return-void
 .end method
 
-
-# virtual methods
-.method public final getNextParser()Lorg/bouncycastle/asn1/ASN1OctetStringParser;
+.method private getNextParser()Lorg/bouncycastle/asn1/ASN1OctetStringParser;
     .locals 3
     .annotation system Ldalvik/annotation/Throws;
         value = {
@@ -80,6 +78,8 @@
     throw v1
 .end method
 
+
+# virtual methods
 .method public read()I
     .locals 3
     .annotation system Ldalvik/annotation/Throws;
@@ -101,7 +101,7 @@
     return v1
 
     :cond_0
-    invoke-virtual {p0}, Lorg/bouncycastle/asn1/ConstructedOctetStream;->getNextParser()Lorg/bouncycastle/asn1/ASN1OctetStringParser;
+    invoke-direct {p0}, Lorg/bouncycastle/asn1/ConstructedOctetStream;->getNextParser()Lorg/bouncycastle/asn1/ASN1OctetStringParser;
 
     move-result-object v0
 
@@ -129,7 +129,7 @@
     return v0
 
     :cond_3
-    invoke-virtual {p0}, Lorg/bouncycastle/asn1/ConstructedOctetStream;->getNextParser()Lorg/bouncycastle/asn1/ASN1OctetStringParser;
+    invoke-direct {p0}, Lorg/bouncycastle/asn1/ConstructedOctetStream;->getNextParser()Lorg/bouncycastle/asn1/ASN1OctetStringParser;
 
     move-result-object v0
 
@@ -175,7 +175,7 @@
     return v2
 
     :cond_0
-    invoke-virtual {p0}, Lorg/bouncycastle/asn1/ConstructedOctetStream;->getNextParser()Lorg/bouncycastle/asn1/ASN1OctetStringParser;
+    invoke-direct {p0}, Lorg/bouncycastle/asn1/ConstructedOctetStream;->getNextParser()Lorg/bouncycastle/asn1/ASN1OctetStringParser;
 
     move-result-object v0
 
@@ -213,7 +213,7 @@
     return v1
 
     :cond_4
-    invoke-virtual {p0}, Lorg/bouncycastle/asn1/ConstructedOctetStream;->getNextParser()Lorg/bouncycastle/asn1/ASN1OctetStringParser;
+    invoke-direct {p0}, Lorg/bouncycastle/asn1/ConstructedOctetStream;->getNextParser()Lorg/bouncycastle/asn1/ASN1OctetStringParser;
 
     move-result-object v0
 

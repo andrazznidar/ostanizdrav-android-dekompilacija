@@ -40,7 +40,7 @@
     return-void
 .end method
 
-.method public synthetic constructor <init>(Lde/rki/coronawarnapp/server/protocols/internal/ppdd/ElsOtpRequestIos$ELSOneTimePasswordRequestIOS$Builder-IA;)V
+.method public synthetic constructor <init>(Landroidx/constraintlayout/core/widgets/analyzer/DependencyNode$Type$EnumUnboxingLocalUtility;)V
     .locals 0
 
     invoke-direct {p0}, Lde/rki/coronawarnapp/server/protocols/internal/ppdd/ElsOtpRequestIos$ELSOneTimePasswordRequestIOS$Builder;-><init>()V

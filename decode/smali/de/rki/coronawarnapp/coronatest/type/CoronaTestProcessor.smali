@@ -121,6 +121,34 @@
     .end annotation
 .end method
 
+.method public abstract recycle(Lde/rki/coronawarnapp/coronatest/type/CoronaTest;Lkotlin/coroutines/Continuation;)Ljava/lang/Object;
+    .annotation system Ldalvik/annotation/Signature;
+        value = {
+            "(",
+            "Lde/rki/coronawarnapp/coronatest/type/CoronaTest;",
+            "Lkotlin/coroutines/Continuation<",
+            "-",
+            "Lde/rki/coronawarnapp/coronatest/type/CoronaTest;",
+            ">;)",
+            "Ljava/lang/Object;"
+        }
+    .end annotation
+.end method
+
+.method public abstract restore(Lde/rki/coronawarnapp/coronatest/type/CoronaTest;Lkotlin/coroutines/Continuation;)Ljava/lang/Object;
+    .annotation system Ldalvik/annotation/Signature;
+        value = {
+            "(",
+            "Lde/rki/coronawarnapp/coronatest/type/CoronaTest;",
+            "Lkotlin/coroutines/Continuation<",
+            "-",
+            "Lde/rki/coronawarnapp/coronatest/type/CoronaTest;",
+            ">;)",
+            "Ljava/lang/Object;"
+        }
+    .end annotation
+.end method
+
 .method public abstract updateResultNotification(Lde/rki/coronawarnapp/coronatest/type/CoronaTest;ZLkotlin/coroutines/Continuation;)Ljava/lang/Object;
     .annotation system Ldalvik/annotation/Signature;
         value = {

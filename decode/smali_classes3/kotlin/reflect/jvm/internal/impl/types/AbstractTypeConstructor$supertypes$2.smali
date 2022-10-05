@@ -1,4 +1,4 @@
-.class public final Lkotlin/reflect/jvm/internal/impl/types/AbstractTypeConstructor$supertypes$2;
+.class final Lkotlin/reflect/jvm/internal/impl/types/AbstractTypeConstructor$supertypes$2;
 .super Lkotlin/jvm/internal/Lambda;
 .source "AbstractTypeConstructor.kt"
 
@@ -56,12 +56,24 @@
 
 
 # virtual methods
-.method public invoke(Ljava/lang/Object;)Ljava/lang/Object;
-    .locals 1
+.method public bridge synthetic invoke(Ljava/lang/Object;)Ljava/lang/Object;
+    .locals 0
 
     check-cast p1, Ljava/lang/Boolean;
 
     invoke-virtual {p1}, Ljava/lang/Boolean;->booleanValue()Z
+
+    move-result p1
+
+    invoke-virtual {p0, p1}, Lkotlin/reflect/jvm/internal/impl/types/AbstractTypeConstructor$supertypes$2;->invoke(Z)Lkotlin/reflect/jvm/internal/impl/types/AbstractTypeConstructor$Supertypes;
+
+    move-result-object p1
+
+    return-object p1
+.end method
+
+.method public final invoke(Z)Lkotlin/reflect/jvm/internal/impl/types/AbstractTypeConstructor$Supertypes;
+    .locals 1
 
     new-instance p1, Lkotlin/reflect/jvm/internal/impl/types/AbstractTypeConstructor$Supertypes;
 

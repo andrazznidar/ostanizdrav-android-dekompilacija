@@ -3,6 +3,30 @@
 
 
 # direct methods
+.method public constructor <init>(BI)V
+    .locals 0
+
+    invoke-direct {p0, p1, p2}, Lorg/bouncycastle/asn1/ASN1BitString;-><init>(BI)V
+
+    return-void
+.end method
+
+.method public constructor <init>(I)V
+    .locals 1
+
+    invoke-static {p1}, Lorg/bouncycastle/asn1/ASN1BitString;->getBytes(I)[B
+
+    move-result-object v0
+
+    invoke-static {p1}, Lorg/bouncycastle/asn1/ASN1BitString;->getPadBits(I)I
+
+    move-result p1
+
+    invoke-direct {p0, v0, p1}, Lorg/bouncycastle/asn1/ASN1BitString;-><init>([BI)V
+
+    return-void
+.end method
+
 .method public constructor <init>(Lorg/bouncycastle/asn1/ASN1Encodable;)V
     .locals 1
     .annotation system Ldalvik/annotation/Throws;
@@ -33,7 +57,7 @@
 
     const/4 v0, 0x0
 
-    invoke-direct {p0, p1, v0}, Lorg/bouncycastle/asn1/ASN1BitString;-><init>([BI)V
+    invoke-direct {p0, p1, v0}, Lorg/bouncycastle/asn1/DERBitString;-><init>([BI)V
 
     return-void
 .end method
@@ -44,6 +68,50 @@
     invoke-direct {p0, p1, p2}, Lorg/bouncycastle/asn1/ASN1BitString;-><init>([BI)V
 
     return-void
+.end method
+
+.method public static fromOctetString([B)Lorg/bouncycastle/asn1/DERBitString;
+    .locals 5
+
+    array-length v0, p0
+
+    const/4 v1, 0x1
+
+    if-lt v0, v1, :cond_1
+
+    const/4 v0, 0x0
+
+    aget-byte v2, p0, v0
+
+    array-length v3, p0
+
+    sub-int/2addr v3, v1
+
+    new-array v4, v3, [B
+
+    if-eqz v3, :cond_0
+
+    array-length v3, p0
+
+    sub-int/2addr v3, v1
+
+    invoke-static {p0, v1, v4, v0, v3}, Ljava/lang/System;->arraycopy(Ljava/lang/Object;ILjava/lang/Object;II)V
+
+    :cond_0
+    new-instance p0, Lorg/bouncycastle/asn1/DERBitString;
+
+    invoke-direct {p0, v4, v2}, Lorg/bouncycastle/asn1/DERBitString;-><init>([BI)V
+
+    return-object p0
+
+    :cond_1
+    new-instance p0, Ljava/lang/IllegalArgumentException;
+
+    const-string v0, "truncated BIT STRING detected"
+
+    invoke-direct {p0, v0}, Ljava/lang/IllegalArgumentException;-><init>(Ljava/lang/String;)V
+
+    throw p0
 .end method
 
 .method public static getInstance(Ljava/lang/Object;)Lorg/bouncycastle/asn1/DERBitString;
@@ -103,13 +171,7 @@
 
     move-result-object v1
 
-    invoke-virtual {p0}, Ljava/lang/Exception;->toString()Ljava/lang/String;
-
-    move-result-object p0
-
-    invoke-virtual {v1, p0}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
-
-    invoke-virtual {v1}, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
+    invoke-static {p0, v1}, Lorg/bouncycastle/asn1/ASN1Enumerated$$ExternalSyntheticOutline0;->m(Ljava/lang/Exception;Ljava/lang/StringBuilder;)Ljava/lang/String;
 
     move-result-object p0
 
@@ -126,17 +188,7 @@
 
     move-result-object v1
 
-    invoke-virtual {p0}, Ljava/lang/Object;->getClass()Ljava/lang/Class;
-
-    move-result-object p0
-
-    invoke-virtual {p0}, Ljava/lang/Class;->getName()Ljava/lang/String;
-
-    move-result-object p0
-
-    invoke-virtual {v1, p0}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
-
-    invoke-virtual {v1}, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
+    invoke-static {p0, v1}, Lcom/fasterxml/jackson/core/JsonGenerator$$ExternalSyntheticOutline0;->m(Ljava/lang/Object;Ljava/lang/StringBuilder;)Ljava/lang/String;
 
     move-result-object p0
 
@@ -151,6 +203,45 @@
     return-object p0
 .end method
 
+.method public static getInstance(Lorg/bouncycastle/asn1/ASN1TaggedObject;Z)Lorg/bouncycastle/asn1/DERBitString;
+    .locals 0
+
+    invoke-virtual {p0}, Lorg/bouncycastle/asn1/ASN1TaggedObject;->getObject()Lorg/bouncycastle/asn1/ASN1Primitive;
+
+    move-result-object p0
+
+    if-nez p1, :cond_1
+
+    instance-of p1, p0, Lorg/bouncycastle/asn1/DERBitString;
+
+    if-eqz p1, :cond_0
+
+    goto :goto_0
+
+    :cond_0
+    invoke-static {p0}, Lorg/bouncycastle/asn1/ASN1OctetString;->getInstance(Ljava/lang/Object;)Lorg/bouncycastle/asn1/ASN1OctetString;
+
+    move-result-object p0
+
+    invoke-virtual {p0}, Lorg/bouncycastle/asn1/ASN1OctetString;->getOctets()[B
+
+    move-result-object p0
+
+    invoke-static {p0}, Lorg/bouncycastle/asn1/DERBitString;->fromOctetString([B)Lorg/bouncycastle/asn1/DERBitString;
+
+    move-result-object p0
+
+    return-object p0
+
+    :cond_1
+    :goto_0
+    invoke-static {p0}, Lorg/bouncycastle/asn1/DERBitString;->getInstance(Ljava/lang/Object;)Lorg/bouncycastle/asn1/DERBitString;
+
+    move-result-object p0
+
+    return-object p0
+.end method
+
 
 # virtual methods
 .method public encode(Lorg/bouncycastle/asn1/ASN1OutputStream;Z)V
@@ -161,81 +252,66 @@
         }
     .end annotation
 
-    iget-object v0, p0, Lorg/bouncycastle/asn1/ASN1BitString;->data:[B
+    iget-object v4, p0, Lorg/bouncycastle/asn1/ASN1BitString;->data:[B
 
-    array-length v1, v0
+    array-length v0, v4
 
-    const/4 v2, 0x3
+    if-eqz v0, :cond_1
 
-    if-eqz v1, :cond_2
+    iget v1, p0, Lorg/bouncycastle/asn1/ASN1BitString;->padBits:I
 
-    iget v3, p0, Lorg/bouncycastle/asn1/ASN1BitString;->padBits:I
+    if-eqz v1, :cond_1
 
-    if-eqz v3, :cond_2
+    add-int/lit8 v6, v0, -0x1
 
-    add-int/lit8 v1, v1, -0x1
+    aget-byte v0, v4, v6
 
-    aget-byte v4, v0, v1
+    aget-byte v2, v4, v6
 
-    aget-byte v5, v0, v1
+    const/16 v3, 0xff
 
-    const/16 v6, 0xff
+    shl-int v5, v3, v1
 
-    shl-int v7, v6, v3
+    and-int/2addr v2, v5
 
-    and-int/2addr v5, v7
+    int-to-byte v2, v2
 
-    int-to-byte v5, v5
-
-    if-ne v4, v5, :cond_0
+    if-ne v0, v2, :cond_0
 
     goto :goto_0
 
     :cond_0
-    aget-byte v4, v0, v1
+    aget-byte v0, v4, v6
 
-    shl-int v5, v6, v3
+    shl-int v2, v3, v1
 
-    and-int/2addr v4, v5
+    and-int/2addr v0, v2
 
-    int-to-byte v4, v4
+    int-to-byte v7, v0
 
-    int-to-byte v3, v3
+    const/4 v2, 0x3
+
+    int-to-byte v3, v1
 
     const/4 v5, 0x0
 
-    if-eqz p2, :cond_1
+    move-object v0, p1
 
-    iget-object p2, p1, Lorg/bouncycastle/asn1/ASN1OutputStream;->os:Ljava/io/OutputStream;
+    move v1, p2
 
-    invoke-virtual {p2, v2}, Ljava/io/OutputStream;->write(I)V
-
-    :cond_1
-    add-int/lit8 p2, v1, 0x2
-
-    invoke-virtual {p1, p2}, Lorg/bouncycastle/asn1/ASN1OutputStream;->writeLength(I)V
-
-    iget-object p2, p1, Lorg/bouncycastle/asn1/ASN1OutputStream;->os:Ljava/io/OutputStream;
-
-    invoke-virtual {p2, v3}, Ljava/io/OutputStream;->write(I)V
-
-    iget-object p2, p1, Lorg/bouncycastle/asn1/ASN1OutputStream;->os:Ljava/io/OutputStream;
-
-    invoke-virtual {p2, v0, v5, v1}, Ljava/io/OutputStream;->write([BII)V
-
-    iget-object p1, p1, Lorg/bouncycastle/asn1/ASN1OutputStream;->os:Ljava/io/OutputStream;
-
-    invoke-virtual {p1, v4}, Ljava/io/OutputStream;->write(I)V
+    invoke-virtual/range {v0 .. v7}, Lorg/bouncycastle/asn1/ASN1OutputStream;->writeEncoded(ZIB[BIIB)V
 
     goto :goto_1
 
-    :cond_2
+    :cond_1
     :goto_0
+    const/4 v0, 0x3
+
     iget v1, p0, Lorg/bouncycastle/asn1/ASN1BitString;->padBits:I
 
     int-to-byte v1, v1
 
-    invoke-virtual {p1, p2, v2, v1, v0}, Lorg/bouncycastle/asn1/ASN1OutputStream;->writeEncoded(ZIB[B)V
+    invoke-virtual {p1, p2, v0, v1, v4}, Lorg/bouncycastle/asn1/ASN1OutputStream;->writeEncoded(ZIB[B)V
 
     :goto_1
     return-void

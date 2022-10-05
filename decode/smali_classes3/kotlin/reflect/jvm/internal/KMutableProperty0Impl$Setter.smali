@@ -3,7 +3,7 @@
 .source "KProperty0Impl.kt"
 
 # interfaces
-.implements Lkotlin/jvm/functions/Function1;
+.implements Lkotlin/reflect/KMutableProperty0$Setter;
 
 
 # annotations
@@ -22,13 +22,43 @@
         "Ljava/lang/Object;",
         ">",
         "Lkotlin/reflect/jvm/internal/KPropertyImpl$Setter<",
+        "TR;>;",
+        "Lkotlin/reflect/KMutableProperty0$Setter<",
         "TR;>;"
+    }
+.end annotation
+
+.annotation runtime Lkotlin/Metadata;
+    d1 = {
+        "\u0000 \n\u0002\u0018\u0002\n\u0000\n\u0002\u0018\u0002\n\u0002\u0018\u0002\n\u0000\n\u0002\u0018\u0002\n\u0002\u0008\u0004\n\u0002\u0010\u0002\n\u0002\u0008\u0003\u0018\u0000*\u0004\u0008\u0001\u0010\u00012\u0008\u0012\u0004\u0012\u0002H\u00010\u00022\u0008\u0012\u0004\u0012\u0002H\u00010\u0003B\u0013\u0012\u000c\u0010\u0004\u001a\u0008\u0012\u0004\u0012\u00028\u00010\u0005\u00a2\u0006\u0002\u0010\u0006J\u0016\u0010\t\u001a\u00020\n2\u0006\u0010\u000b\u001a\u00028\u0001H\u0096\u0002\u00a2\u0006\u0002\u0010\u000cR\u001a\u0010\u0004\u001a\u0008\u0012\u0004\u0012\u00028\u00010\u0005X\u0096\u0004\u00a2\u0006\u0008\n\u0000\u001a\u0004\u0008\u0007\u0010\u0008\u00a8\u0006\r"
+    }
+    d2 = {
+        "Lkotlin/reflect/jvm/internal/KMutableProperty0Impl$Setter;",
+        "R",
+        "Lkotlin/reflect/jvm/internal/KPropertyImpl$Setter;",
+        "Lkotlin/reflect/KMutableProperty0$Setter;",
+        "property",
+        "Lkotlin/reflect/jvm/internal/KMutableProperty0Impl;",
+        "(Lkotlin/reflect/jvm/internal/KMutableProperty0Impl;)V",
+        "getProperty",
+        "()Lkotlin/reflect/jvm/internal/KMutableProperty0Impl;",
+        "invoke",
+        "",
+        "value",
+        "(Ljava/lang/Object;)V",
+        "kotlin-reflection"
+    }
+    k = 0x1
+    mv = {
+        0x1,
+        0x5,
+        0x1
     }
 .end annotation
 
 
 # instance fields
-.field public final property:Lkotlin/reflect/jvm/internal/KMutableProperty0Impl;
+.field private final property:Lkotlin/reflect/jvm/internal/KMutableProperty0Impl;
     .annotation system Ldalvik/annotation/Signature;
         value = {
             "Lkotlin/reflect/jvm/internal/KMutableProperty0Impl<",
@@ -62,50 +92,64 @@
 
 
 # virtual methods
-.method public getProperty()Lkotlin/reflect/KProperty;
+.method public bridge synthetic getProperty()Lkotlin/reflect/KProperty;
     .locals 1
 
-    iget-object v0, p0, Lkotlin/reflect/jvm/internal/KMutableProperty0Impl$Setter;->property:Lkotlin/reflect/jvm/internal/KMutableProperty0Impl;
-
-    return-object v0
-.end method
-
-.method public getProperty()Lkotlin/reflect/jvm/internal/KPropertyImpl;
-    .locals 1
-
-    iget-object v0, p0, Lkotlin/reflect/jvm/internal/KMutableProperty0Impl$Setter;->property:Lkotlin/reflect/jvm/internal/KMutableProperty0Impl;
-
-    return-object v0
-.end method
-
-.method public invoke(Ljava/lang/Object;)Ljava/lang/Object;
-    .locals 3
-
-    iget-object v0, p0, Lkotlin/reflect/jvm/internal/KMutableProperty0Impl$Setter;->property:Lkotlin/reflect/jvm/internal/KMutableProperty0Impl;
-
-    iget-object v0, v0, Lkotlin/reflect/jvm/internal/KMutableProperty0Impl;->_setter:Lkotlin/reflect/jvm/internal/ReflectProperties$LazyVal;
-
-    invoke-virtual {v0}, Lkotlin/reflect/jvm/internal/ReflectProperties$LazyVal;->invoke()Ljava/lang/Object;
+    invoke-virtual {p0}, Lkotlin/reflect/jvm/internal/KMutableProperty0Impl$Setter;->getProperty()Lkotlin/reflect/jvm/internal/KMutableProperty0Impl;
 
     move-result-object v0
 
-    const-string v1, "_setter()"
+    return-object v0
+.end method
 
-    invoke-static {v0, v1}, Lkotlin/jvm/internal/Intrinsics;->checkNotNullExpressionValue(Ljava/lang/Object;Ljava/lang/String;)V
+.method public getProperty()Lkotlin/reflect/jvm/internal/KMutableProperty0Impl;
+    .locals 1
+    .annotation system Ldalvik/annotation/Signature;
+        value = {
+            "()",
+            "Lkotlin/reflect/jvm/internal/KMutableProperty0Impl<",
+            "TR;>;"
+        }
+    .end annotation
 
-    check-cast v0, Lkotlin/reflect/jvm/internal/KMutableProperty0Impl$Setter;
+    iget-object v0, p0, Lkotlin/reflect/jvm/internal/KMutableProperty0Impl$Setter;->property:Lkotlin/reflect/jvm/internal/KMutableProperty0Impl;
 
-    const/4 v1, 0x1
+    return-object v0
+.end method
 
-    new-array v1, v1, [Ljava/lang/Object;
+.method public bridge synthetic getProperty()Lkotlin/reflect/jvm/internal/KPropertyImpl;
+    .locals 1
 
-    const/4 v2, 0x0
+    invoke-virtual {p0}, Lkotlin/reflect/jvm/internal/KMutableProperty0Impl$Setter;->getProperty()Lkotlin/reflect/jvm/internal/KMutableProperty0Impl;
 
-    aput-object p1, v1, v2
+    move-result-object v0
 
-    invoke-virtual {v0, v1}, Lkotlin/reflect/jvm/internal/KCallableImpl;->call([Ljava/lang/Object;)Ljava/lang/Object;
+    return-object v0
+.end method
+
+.method public bridge synthetic invoke(Ljava/lang/Object;)Ljava/lang/Object;
+    .locals 0
+
+    invoke-virtual {p0, p1}, Lkotlin/reflect/jvm/internal/KMutableProperty0Impl$Setter;->invoke(Ljava/lang/Object;)V
 
     sget-object p1, Lkotlin/Unit;->INSTANCE:Lkotlin/Unit;
 
     return-object p1
+.end method
+
+.method public invoke(Ljava/lang/Object;)V
+    .locals 1
+    .annotation system Ldalvik/annotation/Signature;
+        value = {
+            "(TR;)V"
+        }
+    .end annotation
+
+    invoke-virtual {p0}, Lkotlin/reflect/jvm/internal/KMutableProperty0Impl$Setter;->getProperty()Lkotlin/reflect/jvm/internal/KMutableProperty0Impl;
+
+    move-result-object v0
+
+    invoke-virtual {v0, p1}, Lkotlin/reflect/jvm/internal/KMutableProperty0Impl;->set(Ljava/lang/Object;)V
+
+    return-void
 .end method

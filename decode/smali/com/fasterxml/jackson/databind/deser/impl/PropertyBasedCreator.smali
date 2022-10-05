@@ -107,7 +107,7 @@
 
     if-eqz v4, :cond_1
 
-    invoke-virtual {v3, v4}, Lcom/fasterxml/jackson/databind/AnnotationIntrospector;->findPropertyAliases(Lcom/fasterxml/jackson/databind/introspect/Annotated;)Ljava/util/List;
+    invoke-virtual {v3, v4}, Lcom/fasterxml/jackson/databind/AnnotationIntrospector;->findPropertyAliases(Lorg/joda/time/Chronology;)Ljava/util/List;
 
     move-result-object v2
 

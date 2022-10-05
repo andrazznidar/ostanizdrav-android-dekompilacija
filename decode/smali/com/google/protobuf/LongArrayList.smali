@@ -116,7 +116,7 @@
 
     const/4 v5, 0x1
 
-    invoke-static {p2, v3, v4, v5}, Lcom/google/crypto/tink/shaded/protobuf/BooleanArrayList$$ExternalSyntheticOutline0;->m(IIII)I
+    invoke-static {p2, v3, v4, v5}, Landroidx/datastore/preferences/protobuf/BooleanArrayList$$ExternalSyntheticOutline0;->m(IIII)I
 
     move-result p2
 

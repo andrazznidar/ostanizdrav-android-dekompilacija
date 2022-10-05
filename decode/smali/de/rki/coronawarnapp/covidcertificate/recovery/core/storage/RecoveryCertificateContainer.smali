@@ -15,6 +15,8 @@
 
 .field public final qrCodeExtractor:Lde/rki/coronawarnapp/covidcertificate/common/certificate/DccQrCodeExtractor;
 
+.field public final recycledAt:Lorg/joda/time/Instant;
+
 
 # direct methods
 .method public constructor <init>(Lde/rki/coronawarnapp/covidcertificate/recovery/core/storage/StoredRecoveryCertificateData;Lde/rki/coronawarnapp/covidcertificate/common/certificate/DccQrCodeExtractor;Z)V
@@ -36,15 +38,21 @@
 
     iput-boolean p3, p0, Lde/rki/coronawarnapp/covidcertificate/recovery/core/storage/RecoveryCertificateContainer;->isUpdatingData:Z
 
-    new-instance p1, Lde/rki/coronawarnapp/covidcertificate/recovery/core/storage/RecoveryCertificateContainer$certificateData$2;
+    new-instance p2, Lde/rki/coronawarnapp/covidcertificate/recovery/core/storage/RecoveryCertificateContainer$certificateData$2;
 
-    invoke-direct {p1, p0}, Lde/rki/coronawarnapp/covidcertificate/recovery/core/storage/RecoveryCertificateContainer$certificateData$2;-><init>(Lde/rki/coronawarnapp/covidcertificate/recovery/core/storage/RecoveryCertificateContainer;)V
+    invoke-direct {p2, p0}, Lde/rki/coronawarnapp/covidcertificate/recovery/core/storage/RecoveryCertificateContainer$certificateData$2;-><init>(Lde/rki/coronawarnapp/covidcertificate/recovery/core/storage/RecoveryCertificateContainer;)V
 
-    invoke-static {p1}, Lkotlin/LazyKt__LazyKt;->lazy(Lkotlin/jvm/functions/Function0;)Lkotlin/Lazy;
+    invoke-static {p2}, Lkotlin/LazyKt__LazyJVMKt;->lazy(Lkotlin/jvm/functions/Function0;)Lkotlin/Lazy;
+
+    move-result-object p2
+
+    iput-object p2, p0, Lde/rki/coronawarnapp/covidcertificate/recovery/core/storage/RecoveryCertificateContainer;->certificateData$delegate:Lkotlin/Lazy;
+
+    invoke-virtual {p1}, Lde/rki/coronawarnapp/covidcertificate/recovery/core/storage/StoredRecoveryCertificateData;->getRecycledAt()Lorg/joda/time/Instant;
 
     move-result-object p1
 
-    iput-object p1, p0, Lde/rki/coronawarnapp/covidcertificate/recovery/core/storage/RecoveryCertificateContainer;->certificateData$delegate:Lkotlin/Lazy;
+    iput-object p1, p0, Lde/rki/coronawarnapp/covidcertificate/recovery/core/storage/RecoveryCertificateContainer;->recycledAt:Lorg/joda/time/Instant;
 
     return-void
 .end method
@@ -91,6 +99,79 @@
     invoke-direct {p0, p1, p2, p3}, Lde/rki/coronawarnapp/covidcertificate/recovery/core/storage/RecoveryCertificateContainer;-><init>(Lde/rki/coronawarnapp/covidcertificate/recovery/core/storage/StoredRecoveryCertificateData;Lde/rki/coronawarnapp/covidcertificate/common/certificate/DccQrCodeExtractor;Z)V
 
     return-object p0
+.end method
+
+.method public static toRecoveryCertificate$default(Lde/rki/coronawarnapp/covidcertificate/recovery/core/storage/RecoveryCertificateContainer;Lde/rki/coronawarnapp/covidcertificate/valueset/valuesets/VaccinationValueSets;Lde/rki/coronawarnapp/covidcertificate/common/certificate/CwaCovidCertificate$State;Ljava/util/Locale;I)Lde/rki/coronawarnapp/covidcertificate/recovery/core/RecoveryCertificate;
+    .locals 9
+
+    and-int/lit8 p3, p4, 0x1
+
+    const/4 v0, 0x0
+
+    if-eqz p3, :cond_0
+
+    move-object v5, v0
+
+    goto :goto_0
+
+    :cond_0
+    move-object v5, p1
+
+    :goto_0
+    and-int/lit8 p1, p4, 0x4
+
+    if-eqz p1, :cond_1
+
+    invoke-static {}, Ljava/util/Locale;->getDefault()Ljava/util/Locale;
+
+    move-result-object v0
+
+    const-string p1, "getDefault()"
+
+    invoke-static {v0, p1}, Lkotlin/jvm/internal/Intrinsics;->checkNotNullExpressionValue(Ljava/lang/Object;Ljava/lang/String;)V
+
+    :cond_1
+    move-object v7, v0
+
+    invoke-static {p0}, Ljava/util/Objects;->requireNonNull(Ljava/lang/Object;)Ljava/lang/Object;
+
+    const-string p1, "certificateState"
+
+    invoke-static {p2, p1}, Lkotlin/jvm/internal/Intrinsics;->checkNotNullParameter(Ljava/lang/Object;Ljava/lang/String;)V
+
+    const-string/jumbo p1, "userLocale"
+
+    invoke-static {v7, p1}, Lkotlin/jvm/internal/Intrinsics;->checkNotNullParameter(Ljava/lang/Object;Ljava/lang/String;)V
+
+    invoke-virtual {p0}, Lde/rki/coronawarnapp/covidcertificate/recovery/core/storage/RecoveryCertificateContainer;->getCertificateData$Corona_Warn_App_deviceRelease()Lde/rki/coronawarnapp/covidcertificate/common/certificate/DccData;
+
+    move-result-object p1
+
+    iget-object v8, p1, Lde/rki/coronawarnapp/covidcertificate/common/certificate/DccData;->header:Lde/rki/coronawarnapp/covidcertificate/common/certificate/DccHeader;
+
+    invoke-virtual {p0}, Lde/rki/coronawarnapp/covidcertificate/recovery/core/storage/RecoveryCertificateContainer;->getCertificateData$Corona_Warn_App_deviceRelease()Lde/rki/coronawarnapp/covidcertificate/common/certificate/DccData;
+
+    move-result-object p1
+
+    iget-object p1, p1, Lde/rki/coronawarnapp/covidcertificate/common/certificate/DccData;->certificate:Lde/rki/coronawarnapp/covidcertificate/common/certificate/DccV1$MetaData;
+
+    move-object v4, p1
+
+    check-cast v4, Lde/rki/coronawarnapp/covidcertificate/common/certificate/RecoveryDccV1;
+
+    iget-object v6, v4, Lde/rki/coronawarnapp/covidcertificate/common/certificate/RecoveryDccV1;->recovery:Lde/rki/coronawarnapp/covidcertificate/common/certificate/DccV1$RecoveryCertificateData;
+
+    new-instance p1, Lde/rki/coronawarnapp/covidcertificate/recovery/core/storage/RecoveryCertificateContainer$toRecoveryCertificate$1;
+
+    move-object v1, p1
+
+    move-object v2, p0
+
+    move-object v3, p2
+
+    invoke-direct/range {v1 .. v8}, Lde/rki/coronawarnapp/covidcertificate/recovery/core/storage/RecoveryCertificateContainer$toRecoveryCertificate$1;-><init>(Lde/rki/coronawarnapp/covidcertificate/recovery/core/storage/RecoveryCertificateContainer;Lde/rki/coronawarnapp/covidcertificate/common/certificate/CwaCovidCertificate$State;Lde/rki/coronawarnapp/covidcertificate/common/certificate/RecoveryDccV1;Lde/rki/coronawarnapp/covidcertificate/valueset/valuesets/VaccinationValueSets;Lde/rki/coronawarnapp/covidcertificate/common/certificate/DccV1$RecoveryCertificateData;Ljava/util/Locale;Lde/rki/coronawarnapp/covidcertificate/common/certificate/DccHeader;)V
+
+    return-object p1
 .end method
 
 
@@ -181,21 +262,41 @@
 
     new-instance v0, Lde/rki/coronawarnapp/covidcertificate/common/repository/RecoveryCertificateContainerId;
 
-    invoke-virtual {p0}, Lde/rki/coronawarnapp/covidcertificate/recovery/core/storage/RecoveryCertificateContainer;->getCertificateData$Corona_Warn_App_deviceRelease()Lde/rki/coronawarnapp/covidcertificate/common/certificate/DccData;
-
-    move-result-object v1
-
-    iget-object v1, v1, Lde/rki/coronawarnapp/covidcertificate/common/certificate/DccData;->certificate:Lde/rki/coronawarnapp/covidcertificate/common/certificate/DccV1$MetaData;
-
-    check-cast v1, Lde/rki/coronawarnapp/covidcertificate/common/certificate/RecoveryDccV1;
-
-    iget-object v1, v1, Lde/rki/coronawarnapp/covidcertificate/common/certificate/RecoveryDccV1;->recovery:Lde/rki/coronawarnapp/covidcertificate/common/certificate/DccV1$RecoveryCertificateData;
-
-    invoke-virtual {v1}, Lde/rki/coronawarnapp/covidcertificate/common/certificate/DccV1$RecoveryCertificateData;->getUniqueCertificateIdentifier()Ljava/lang/String;
+    invoke-virtual {p0}, Lde/rki/coronawarnapp/covidcertificate/recovery/core/storage/RecoveryCertificateContainer;->getQrCodeHash()Ljava/lang/String;
 
     move-result-object v1
 
     invoke-direct {v0, v1}, Lde/rki/coronawarnapp/covidcertificate/common/repository/RecoveryCertificateContainerId;-><init>(Ljava/lang/String;)V
+
+    return-object v0
+.end method
+
+.method public getQrCodeHash()Ljava/lang/String;
+    .locals 4
+
+    sget-object v0, Lde/rki/coronawarnapp/util/HashExtensions;->INSTANCE:Lde/rki/coronawarnapp/util/HashExtensions;
+
+    iget-object v1, p0, Lde/rki/coronawarnapp/covidcertificate/recovery/core/storage/RecoveryCertificateContainer;->data:Lde/rki/coronawarnapp/covidcertificate/recovery/core/storage/StoredRecoveryCertificateData;
+
+    invoke-virtual {v1}, Lde/rki/coronawarnapp/covidcertificate/recovery/core/storage/StoredRecoveryCertificateData;->getRecoveryCertificateQrCode()Ljava/lang/String;
+
+    move-result-object v1
+
+    const/4 v2, 0x0
+
+    const/4 v3, 0x1
+
+    invoke-static {v0, v1, v2, v3}, Lde/rki/coronawarnapp/util/HashExtensions;->toSHA256$default(Lde/rki/coronawarnapp/util/HashExtensions;Ljava/lang/String;II)Ljava/lang/String;
+
+    move-result-object v0
+
+    return-object v0
+.end method
+
+.method public getRecycledAt()Lorg/joda/time/Instant;
+    .locals 1
+
+    iget-object v0, p0, Lde/rki/coronawarnapp/covidcertificate/recovery/core/storage/RecoveryCertificateContainer;->recycledAt:Lorg/joda/time/Instant;
 
     return-object v0
 .end method
@@ -231,6 +332,26 @@
     add-int/2addr v1, v0
 
     return v1
+.end method
+
+.method public isNotRecycled()Z
+    .locals 1
+
+    invoke-static {p0}, Lde/rki/coronawarnapp/covidcertificate/common/repository/CertificateRepoContainer$DefaultImpls;->isNotRecycled(Lde/rki/coronawarnapp/covidcertificate/common/repository/CertificateRepoContainer;)Z
+
+    move-result v0
+
+    return v0
+.end method
+
+.method public isRecycled()Z
+    .locals 1
+
+    invoke-static {p0}, Lde/rki/coronawarnapp/covidcertificate/common/repository/CertificateRepoContainer$DefaultImpls;->isRecycled(Lde/rki/coronawarnapp/covidcertificate/common/repository/CertificateRepoContainer;)Z
+
+    move-result v0
+
+    return v0
 .end method
 
 .method public toString()Ljava/lang/String;

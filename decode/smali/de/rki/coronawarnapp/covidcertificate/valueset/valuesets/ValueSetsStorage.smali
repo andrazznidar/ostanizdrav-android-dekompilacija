@@ -5,7 +5,7 @@
 
 # annotations
 .annotation system Ldalvik/annotation/SourceDebugExtension;
-    value = "SMAP\nValueSetsStorage.kt\nKotlin\n*S Kotlin\n*F\n+ 1 ValueSetsStorage.kt\nde/rki/coronawarnapp/covidcertificate/valueset/valuesets/ValueSetsStorage\n+ 2 Mutex.kt\nkotlinx/coroutines/sync/MutexKt\n+ 3 GsonExtensions.kt\nde/rki/coronawarnapp/util/serialization/GsonExtensionsKt\n+ 4 fake.kt\nkotlin/jvm/internal/FakeKt\n+ 5 SharedPreferences.kt\nandroidx/core/content/SharedPreferencesKt\n*L\n1#1,62:1\n109#2,8:63\n118#2,2:76\n109#2,8:78\n118#2,2:94\n10#3,4:71\n1#4:75\n43#5,8:86\n43#5,8:96\n*S KotlinDebug\n*F\n+ 1 ValueSetsStorage.kt\nde/rki/coronawarnapp/covidcertificate/valueset/valuesets/ValueSetsStorage\n*L\n28#1:63,8\n28#1:76,2\n37#1:78,8\n37#1:94,2\n32#1:71,4\n39#1:86,8\n49#1:96,8\n*E\n"
+    value = "SMAP\nValueSetsStorage.kt\nKotlin\n*S Kotlin\n*F\n+ 1 ValueSetsStorage.kt\nde/rki/coronawarnapp/covidcertificate/valueset/valuesets/ValueSetsStorage\n+ 2 Mutex.kt\nkotlinx/coroutines/sync/MutexKt\n+ 3 GsonExtensions.kt\nde/rki/coronawarnapp/util/serialization/GsonExtensionsKt\n+ 4 fake.kt\nkotlin/jvm/internal/FakeKt\n+ 5 SharedPreferences.kt\nandroidx/core/content/SharedPreferencesKt\n*L\n1#1,62:1\n109#2,8:63\n118#2,2:76\n109#2,8:78\n118#2,2:94\n11#3,4:71\n1#4:75\n43#5,8:86\n43#5,8:96\n*S KotlinDebug\n*F\n+ 1 ValueSetsStorage.kt\nde/rki/coronawarnapp/covidcertificate/valueset/valuesets/ValueSetsStorage\n*L\n28#1:63,8\n28#1:76,2\n37#1:78,8\n37#1:94,2\n32#1:71,4\n39#1:86,8\n49#1:96,8\n*E\n"
 .end annotation
 
 
@@ -51,7 +51,7 @@
 
     invoke-direct {p1, p0}, Lde/rki/coronawarnapp/covidcertificate/valueset/valuesets/ValueSetsStorage$prefs$2;-><init>(Lde/rki/coronawarnapp/covidcertificate/valueset/valuesets/ValueSetsStorage;)V
 
-    invoke-static {p1}, Lkotlin/LazyKt__LazyKt;->lazy(Lkotlin/jvm/functions/Function0;)Lkotlin/Lazy;
+    invoke-static {p1}, Lkotlin/LazyKt__LazyJVMKt;->lazy(Lkotlin/jvm/functions/Function0;)Lkotlin/Lazy;
 
     move-result-object p1
 

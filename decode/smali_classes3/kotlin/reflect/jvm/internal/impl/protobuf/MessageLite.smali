@@ -15,6 +15,18 @@
 
 
 # virtual methods
+.method public abstract getParserForType()Lkotlin/reflect/jvm/internal/impl/protobuf/Parser;
+    .annotation system Ldalvik/annotation/Signature;
+        value = {
+            "()",
+            "Lkotlin/reflect/jvm/internal/impl/protobuf/Parser<",
+            "+",
+            "Lkotlin/reflect/jvm/internal/impl/protobuf/MessageLite;",
+            ">;"
+        }
+    .end annotation
+.end method
+
 .method public abstract getSerializedSize()I
 .end method
 

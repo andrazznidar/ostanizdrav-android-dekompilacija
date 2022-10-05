@@ -27,6 +27,22 @@
     return-object v0
 .end method
 
+.method public getDelegate(Ljava/lang/Object;)Ljava/lang/Object;
+    .locals 1
+
+    invoke-virtual {p0}, Lkotlin/jvm/internal/PropertyReference;->getReflected()Lkotlin/reflect/KProperty;
+
+    move-result-object v0
+
+    check-cast v0, Lkotlin/reflect/KMutableProperty1;
+
+    invoke-interface {v0, p1}, Lkotlin/reflect/KProperty1;->getDelegate(Ljava/lang/Object;)Ljava/lang/Object;
+
+    move-result-object p1
+
+    return-object p1
+.end method
+
 .method public bridge synthetic getGetter()Lkotlin/reflect/KProperty$Getter;
     .locals 1
 
@@ -80,25 +96,9 @@
 .end method
 
 .method public invoke(Ljava/lang/Object;)Ljava/lang/Object;
-    .locals 3
+    .locals 0
 
-    move-object v0, p0
-
-    check-cast v0, Lkotlin/jvm/internal/MutablePropertyReference1Impl;
-
-    invoke-virtual {v0}, Lkotlin/jvm/internal/MutablePropertyReference1;->getGetter()Lkotlin/reflect/KProperty1$Getter;
-
-    move-result-object v0
-
-    const/4 v1, 0x1
-
-    new-array v1, v1, [Ljava/lang/Object;
-
-    const/4 v2, 0x0
-
-    aput-object p1, v1, v2
-
-    invoke-interface {v0, v1}, Lkotlin/reflect/KCallable;->call([Ljava/lang/Object;)Ljava/lang/Object;
+    invoke-interface {p0, p1}, Lkotlin/reflect/KProperty1;->get(Ljava/lang/Object;)Ljava/lang/Object;
 
     move-result-object p1
 

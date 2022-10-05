@@ -27,7 +27,19 @@
 
 
 # static fields
-.field public static final synthetic $r8$clinit:I
+.field public static final Companion:Lkotlin/reflect/jvm/internal/impl/descriptors/annotations/Annotations$Companion;
+
+
+# direct methods
+.method static constructor <clinit>()V
+    .locals 1
+
+    sget-object v0, Lkotlin/reflect/jvm/internal/impl/descriptors/annotations/Annotations$Companion;->$$INSTANCE:Lkotlin/reflect/jvm/internal/impl/descriptors/annotations/Annotations$Companion;
+
+    sput-object v0, Lkotlin/reflect/jvm/internal/impl/descriptors/annotations/Annotations;->Companion:Lkotlin/reflect/jvm/internal/impl/descriptors/annotations/Annotations$Companion;
+
+    return-void
+.end method
 
 
 # virtual methods

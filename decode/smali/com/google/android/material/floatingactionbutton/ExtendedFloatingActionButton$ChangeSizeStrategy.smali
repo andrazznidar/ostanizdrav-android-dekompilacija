@@ -23,12 +23,12 @@
 
 
 # direct methods
-.method public constructor <init>(Lcom/google/android/material/floatingactionbutton/ExtendedFloatingActionButton;Lcom/google/android/play/core/assetpacks/zzv;Lcom/google/android/material/floatingactionbutton/ExtendedFloatingActionButton$Size;Z)V
+.method public constructor <init>(Lcom/google/android/material/floatingactionbutton/ExtendedFloatingActionButton;Lorg/bouncycastle/crypto/generators/DHKeyPairGenerator;Lcom/google/android/material/floatingactionbutton/ExtendedFloatingActionButton$Size;Z)V
     .locals 0
 
     iput-object p1, p0, Lcom/google/android/material/floatingactionbutton/ExtendedFloatingActionButton$ChangeSizeStrategy;->this$0:Lcom/google/android/material/floatingactionbutton/ExtendedFloatingActionButton;
 
-    invoke-direct {p0, p1, p2}, Lcom/google/android/material/floatingactionbutton/BaseMotionStrategy;-><init>(Lcom/google/android/material/floatingactionbutton/ExtendedFloatingActionButton;Lcom/google/android/play/core/assetpacks/zzv;)V
+    invoke-direct {p0, p1, p2}, Lcom/google/android/material/floatingactionbutton/BaseMotionStrategy;-><init>(Lcom/google/android/material/floatingactionbutton/ExtendedFloatingActionButton;Lorg/bouncycastle/crypto/generators/DHKeyPairGenerator;)V
 
     iput-object p3, p0, Lcom/google/android/material/floatingactionbutton/ExtendedFloatingActionButton$ChangeSizeStrategy;->size:Lcom/google/android/material/floatingactionbutton/ExtendedFloatingActionButton$Size;
 
@@ -351,9 +351,9 @@
 .method public onAnimationStart(Landroid/animation/Animator;)V
     .locals 2
 
-    iget-object v0, p0, Lcom/google/android/material/floatingactionbutton/BaseMotionStrategy;->tracker:Lcom/google/android/play/core/assetpacks/zzv;
+    iget-object v0, p0, Lcom/google/android/material/floatingactionbutton/BaseMotionStrategy;->tracker:Lorg/bouncycastle/crypto/generators/DHKeyPairGenerator;
 
-    iget-object v1, v0, Lcom/google/android/play/core/assetpacks/zzv;->zza:Ljava/lang/Object;
+    iget-object v1, v0, Lorg/bouncycastle/crypto/generators/DHKeyPairGenerator;->param:Ljava/lang/Object;
 
     check-cast v1, Landroid/animation/Animator;
 
@@ -362,7 +362,7 @@
     invoke-virtual {v1}, Landroid/animation/Animator;->cancel()V
 
     :cond_0
-    iput-object p1, v0, Lcom/google/android/play/core/assetpacks/zzv;->zza:Ljava/lang/Object;
+    iput-object p1, v0, Lorg/bouncycastle/crypto/generators/DHKeyPairGenerator;->param:Ljava/lang/Object;
 
     iget-object p1, p0, Lcom/google/android/material/floatingactionbutton/ExtendedFloatingActionButton$ChangeSizeStrategy;->this$0:Lcom/google/android/material/floatingactionbutton/ExtendedFloatingActionButton;
 

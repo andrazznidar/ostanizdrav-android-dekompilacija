@@ -88,9 +88,11 @@
 
     if-eqz v3, :cond_3
 
-    const-string v6, "Expect"
+    iget-object v6, v0, Lokhttp3/Request;->headers:Lokhttp3/Headers;
 
-    invoke-virtual {v0, v6}, Lokhttp3/Request;->header(Ljava/lang/String;)Ljava/lang/String;
+    const-string v10, "Expect"
+
+    invoke-virtual {v6, v10}, Lokhttp3/Headers;->get(Ljava/lang/String;)Ljava/lang/String;
 
     move-result-object v6
 
@@ -572,7 +574,9 @@
 
     const-string v3, "Connection"
 
-    invoke-virtual {v1, v3}, Lokhttp3/Request;->header(Ljava/lang/String;)Ljava/lang/String;
+    iget-object v1, v1, Lokhttp3/Request;->headers:Lokhttp3/Headers;
+
+    invoke-virtual {v1, v3}, Lokhttp3/Headers;->get(Ljava/lang/String;)Ljava/lang/String;
 
     move-result-object v1
 

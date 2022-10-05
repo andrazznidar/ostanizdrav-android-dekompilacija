@@ -114,28 +114,30 @@
     return-object v0
 .end method
 
-.method public getQrCode()Ljava/lang/String;
+.method public getHash()Ljava/lang/String;
     .locals 1
 
-    iget-object v0, p0, Lde/rki/coronawarnapp/covidcertificate/test/core/qrcode/TestCertificateQRCode;->qrCode:Ljava/lang/String;
+    invoke-static {p0}, Lde/rki/coronawarnapp/covidcertificate/common/qrcode/DccQrCode$DefaultImpls;->getHash(Lde/rki/coronawarnapp/covidcertificate/common/qrcode/DccQrCode;)Ljava/lang/String;
+
+    move-result-object v0
 
     return-object v0
 .end method
 
-.method public getUniqueCertificateIdentifier()Ljava/lang/String;
+.method public getPersonIdentifier()Lde/rki/coronawarnapp/covidcertificate/common/certificate/CertificatePersonIdentifier;
     .locals 1
 
-    iget-object v0, p0, Lde/rki/coronawarnapp/covidcertificate/test/core/qrcode/TestCertificateQRCode;->data:Lde/rki/coronawarnapp/covidcertificate/common/certificate/DccData;
-
-    iget-object v0, v0, Lde/rki/coronawarnapp/covidcertificate/common/certificate/DccData;->certificate:Lde/rki/coronawarnapp/covidcertificate/common/certificate/DccV1$MetaData;
-
-    check-cast v0, Lde/rki/coronawarnapp/covidcertificate/common/certificate/TestDccV1;
-
-    iget-object v0, v0, Lde/rki/coronawarnapp/covidcertificate/common/certificate/TestDccV1;->test:Lde/rki/coronawarnapp/covidcertificate/common/certificate/DccV1$TestCertificateData;
-
-    invoke-virtual {v0}, Lde/rki/coronawarnapp/covidcertificate/common/certificate/DccV1$TestCertificateData;->getUniqueCertificateIdentifier()Ljava/lang/String;
+    invoke-static {p0}, Lde/rki/coronawarnapp/covidcertificate/common/qrcode/DccQrCode$DefaultImpls;->getPersonIdentifier(Lde/rki/coronawarnapp/covidcertificate/common/qrcode/DccQrCode;)Lde/rki/coronawarnapp/covidcertificate/common/certificate/CertificatePersonIdentifier;
 
     move-result-object v0
+
+    return-object v0
+.end method
+
+.method public getQrCode()Ljava/lang/String;
+    .locals 1
+
+    iget-object v0, p0, Lde/rki/coronawarnapp/covidcertificate/test/core/qrcode/TestCertificateQRCode;->qrCode:Ljava/lang/String;
 
     return-object v0
 .end method

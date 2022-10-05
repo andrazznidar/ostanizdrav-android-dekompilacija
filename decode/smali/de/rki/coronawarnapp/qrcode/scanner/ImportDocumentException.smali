@@ -6,25 +6,21 @@
 .implements Lde/rki/coronawarnapp/util/HasHumanReadableError;
 
 
-# annotations
-.annotation system Ldalvik/annotation/MemberClasses;
-    value = {
-        Lde/rki/coronawarnapp/qrcode/scanner/ImportDocumentException$ErrorCode;
-    }
-.end annotation
-
-
 # instance fields
-.field public final errorCode:Lde/rki/coronawarnapp/qrcode/scanner/ImportDocumentException$ErrorCode;
+.field public final errorCode:I
 
 
 # direct methods
-.method public constructor <init>(Lde/rki/coronawarnapp/qrcode/scanner/ImportDocumentException$ErrorCode;)V
-    .locals 0
+.method public constructor <init>(I)V
+    .locals 1
+
+    const-string v0, "errorCode"
+
+    invoke-static {p1, v0}, Lkotlin/jvm/internal/Intrinsics$$ExternalSyntheticCheckNotZero0;->m(ILjava/lang/String;)V
 
     invoke-direct {p0}, Ljava/lang/Exception;-><init>()V
 
-    iput-object p1, p0, Lde/rki/coronawarnapp/qrcode/scanner/ImportDocumentException;->errorCode:Lde/rki/coronawarnapp/qrcode/scanner/ImportDocumentException$ErrorCode;
+    iput p1, p0, Lde/rki/coronawarnapp/qrcode/scanner/ImportDocumentException;->errorCode:I
 
     return-void
 .end method
@@ -52,9 +48,9 @@
     :cond_1
     check-cast p1, Lde/rki/coronawarnapp/qrcode/scanner/ImportDocumentException;
 
-    iget-object v1, p0, Lde/rki/coronawarnapp/qrcode/scanner/ImportDocumentException;->errorCode:Lde/rki/coronawarnapp/qrcode/scanner/ImportDocumentException$ErrorCode;
+    iget v1, p0, Lde/rki/coronawarnapp/qrcode/scanner/ImportDocumentException;->errorCode:I
 
-    iget-object p1, p1, Lde/rki/coronawarnapp/qrcode/scanner/ImportDocumentException;->errorCode:Lde/rki/coronawarnapp/qrcode/scanner/ImportDocumentException$ErrorCode;
+    iget p1, p1, Lde/rki/coronawarnapp/qrcode/scanner/ImportDocumentException;->errorCode:I
 
     if-eq v1, p1, :cond_2
 
@@ -67,9 +63,9 @@
 .method public hashCode()I
     .locals 1
 
-    iget-object v0, p0, Lde/rki/coronawarnapp/qrcode/scanner/ImportDocumentException;->errorCode:Lde/rki/coronawarnapp/qrcode/scanner/ImportDocumentException$ErrorCode;
+    iget v0, p0, Lde/rki/coronawarnapp/qrcode/scanner/ImportDocumentException;->errorCode:I
 
-    invoke-virtual {v0}, Ljava/lang/Enum;->hashCode()I
+    invoke-static {v0}, Landroidx/camera/camera2/internal/Camera2CameraImpl$InternalState$EnumUnboxingSharedUtility;->ordinal(I)I
 
     move-result v0
 
@@ -83,13 +79,13 @@
 
     invoke-static {p1, v0}, Lkotlin/jvm/internal/Intrinsics;->checkNotNullParameter(Ljava/lang/Object;Ljava/lang/String;)V
 
-    iget-object v0, p0, Lde/rki/coronawarnapp/qrcode/scanner/ImportDocumentException;->errorCode:Lde/rki/coronawarnapp/qrcode/scanner/ImportDocumentException$ErrorCode;
+    iget v0, p0, Lde/rki/coronawarnapp/qrcode/scanner/ImportDocumentException;->errorCode:I
 
-    invoke-virtual {v0}, Ljava/lang/Enum;->ordinal()I
+    invoke-static {v0}, Landroidx/camera/camera2/internal/Camera2CameraImpl$InternalState$EnumUnboxingSharedUtility;->ordinal(I)I
 
     move-result v0
 
-    const v1, 0x7f130379
+    const v1, 0x7f13036d
 
     if-eqz v0, :cond_2
 
@@ -107,7 +103,7 @@
 
     move-result-object v1
 
-    const v2, 0x7f130377
+    const v2, 0x7f13036b
 
     invoke-virtual {p1, v2}, Landroid/content/Context;->getString(I)Ljava/lang/String;
 
@@ -131,13 +127,13 @@
     :cond_1
     new-instance v0, Lde/rki/coronawarnapp/util/HumanReadableError;
 
-    const v1, 0x7f13037b
+    const v1, 0x7f130377
 
     invoke-virtual {p1, v1}, Landroid/content/Context;->getString(I)Ljava/lang/String;
 
     move-result-object v1
 
-    const v2, 0x7f13037a
+    const v2, 0x7f130376
 
     invoke-virtual {p1, v2}, Landroid/content/Context;->getString(I)Ljava/lang/String;
 
@@ -158,7 +154,7 @@
 
     move-result-object v1
 
-    const v2, 0x7f130378
+    const v2, 0x7f13036c
 
     invoke-virtual {p1, v2}, Landroid/content/Context;->getString(I)Ljava/lang/String;
 
@@ -177,7 +173,7 @@
 .method public toString()Ljava/lang/String;
     .locals 3
 
-    iget-object v0, p0, Lde/rki/coronawarnapp/qrcode/scanner/ImportDocumentException;->errorCode:Lde/rki/coronawarnapp/qrcode/scanner/ImportDocumentException$ErrorCode;
+    iget v0, p0, Lde/rki/coronawarnapp/qrcode/scanner/ImportDocumentException;->errorCode:I
 
     new-instance v1, Ljava/lang/StringBuilder;
 
@@ -187,7 +183,11 @@
 
     invoke-virtual {v1, v2}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
 
-    invoke-virtual {v1, v0}, Ljava/lang/StringBuilder;->append(Ljava/lang/Object;)Ljava/lang/StringBuilder;
+    invoke-static {v0}, Lorg/bouncycastle/jcajce/provider/asymmetric/DSA$Mappings$$ExternalSyntheticOutline0;->stringValueOf(I)Ljava/lang/String;
+
+    move-result-object v0
+
+    invoke-virtual {v1, v0}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
 
     const-string v0, ")"
 

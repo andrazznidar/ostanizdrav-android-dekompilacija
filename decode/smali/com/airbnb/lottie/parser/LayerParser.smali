@@ -164,8 +164,6 @@
 
     const/4 v6, 0x0
 
-    const/16 v16, 0x0
-
     const/16 v19, 0x0
 
     const/16 v20, 0x0
@@ -177,6 +175,8 @@
     const/16 v30, 0x1
 
     const/16 v31, 0x0
+
+    move/from16 v16, v32
 
     move-wide v14, v13
 
@@ -532,11 +532,11 @@
 
     invoke-virtual/range {p0 .. p0}, Lcom/airbnb/lottie/parser/moshi/JsonReader;->endObject()V
 
-    new-instance v4, Landroidx/constraintlayout/core/Cache;
+    new-instance v4, Lcom/airbnb/lottie/model/animatable/AnimatableTextProperties;
 
     move-object/from16 v6, v37
 
-    invoke-direct {v4, v11, v6, v2, v3}, Landroidx/constraintlayout/core/Cache;-><init>(Lcom/airbnb/lottie/model/animatable/AnimatableColorValue;Lcom/airbnb/lottie/model/animatable/AnimatableColorValue;Lcom/airbnb/lottie/model/animatable/AnimatableFloatValue;Lcom/airbnb/lottie/model/animatable/AnimatableFloatValue;)V
+    invoke-direct {v4, v11, v6, v2, v3}, Lcom/airbnb/lottie/model/animatable/AnimatableTextProperties;-><init>(Lcom/airbnb/lottie/model/animatable/AnimatableColorValue;Lcom/airbnb/lottie/model/animatable/AnimatableColorValue;Lcom/airbnb/lottie/model/animatable/AnimatableFloatValue;Lcom/airbnb/lottie/model/animatable/AnimatableFloatValue;)V
 
     move-object v2, v4
 
@@ -551,11 +551,11 @@
 
     if-nez v2, :cond_b
 
-    new-instance v2, Landroidx/constraintlayout/core/Cache;
+    new-instance v2, Lcom/airbnb/lottie/model/animatable/AnimatableTextProperties;
 
     const/4 v3, 0x0
 
-    invoke-direct {v2, v3, v3, v3, v3}, Landroidx/constraintlayout/core/Cache;-><init>(Lcom/airbnb/lottie/model/animatable/AnimatableColorValue;Lcom/airbnb/lottie/model/animatable/AnimatableColorValue;Lcom/airbnb/lottie/model/animatable/AnimatableFloatValue;Lcom/airbnb/lottie/model/animatable/AnimatableFloatValue;)V
+    invoke-direct {v2, v3, v3, v3, v3}, Lcom/airbnb/lottie/model/animatable/AnimatableTextProperties;-><init>(Lcom/airbnb/lottie/model/animatable/AnimatableColorValue;Lcom/airbnb/lottie/model/animatable/AnimatableColorValue;Lcom/airbnb/lottie/model/animatable/AnimatableFloatValue;Lcom/airbnb/lottie/model/animatable/AnimatableFloatValue;)V
 
     goto :goto_7
 
@@ -986,7 +986,7 @@
 
     move-result v2
 
-    invoke-static {}, Landroidx/constraintlayout/core/SolverVariable$Type$r8$EnumUnboxingUtility;->com$airbnb$lottie$model$layer$Layer$MatteType$s$values()[I
+    invoke-static {}, Lde/rki/jfn/operators/ArrayOperator$Filter$$ExternalSyntheticOutline0;->_values()[I
 
     move-result-object v3
 
@@ -1016,13 +1016,13 @@
     goto/16 :goto_17
 
     :cond_1c
-    invoke-static {}, Landroidx/constraintlayout/core/SolverVariable$Type$r8$EnumUnboxingUtility;->com$airbnb$lottie$model$layer$Layer$MatteType$s$values()[I
+    invoke-static {}, Lde/rki/jfn/operators/ArrayOperator$Filter$$ExternalSyntheticOutline0;->_values()[I
 
     move-result-object v3
 
     aget v30, v3, v2
 
-    invoke-static/range {v30 .. v30}, Landroidx/constraintlayout/core/SolverVariable$Type$r8$EnumUnboxingUtility;->$enumboxing$ordinal(I)I
+    invoke-static/range {v30 .. v30}, Landroidx/camera/camera2/internal/Camera2CameraImpl$InternalState$EnumUnboxingSharedUtility;->ordinal(I)I
 
     move-result v2
 
@@ -1170,17 +1170,17 @@
 
     move-result v2
 
-    sget-object v16, Lcom/airbnb/lottie/model/layer/Layer$LayerType;->UNKNOWN:Lcom/airbnb/lottie/model/layer/Layer$LayerType;
+    const/16 v16, 0x7
 
     const/4 v4, 0x6
 
     if-ge v2, v4, :cond_1f
 
-    invoke-static {}, Lcom/airbnb/lottie/model/layer/Layer$LayerType;->values()[Lcom/airbnb/lottie/model/layer/Layer$LayerType;
+    invoke-static {}, Lcom/airbnb/lottie/model/layer/Layer$LayerType$EnumUnboxingLocalUtility;->_values()[I
 
     move-result-object v4
 
-    aget-object v16, v4, v2
+    aget v16, v4, v2
 
     :cond_1f
     :goto_17
@@ -1386,7 +1386,7 @@
 
     move-wide/from16 v4, v40
 
-    move-object/from16 v6, v16
+    move/from16 v6, v16
 
     move-wide/from16 v7, v17
 
@@ -1422,7 +1422,7 @@
 
     move/from16 v24, v32
 
-    invoke-direct/range {v0 .. v24}, Lcom/airbnb/lottie/model/layer/Layer;-><init>(Ljava/util/List;Lcom/airbnb/lottie/LottieComposition;Ljava/lang/String;JLcom/airbnb/lottie/model/layer/Layer$LayerType;JLjava/lang/String;Ljava/util/List;Lcom/airbnb/lottie/model/animatable/AnimatableTransform;IIIFFIILcom/airbnb/lottie/model/animatable/AnimatableTextFrame;Landroidx/constraintlayout/core/Cache;Ljava/util/List;ILcom/airbnb/lottie/model/animatable/AnimatableFloatValue;Z)V
+    invoke-direct/range {v0 .. v24}, Lcom/airbnb/lottie/model/layer/Layer;-><init>(Ljava/util/List;Lcom/airbnb/lottie/LottieComposition;Ljava/lang/String;JIJLjava/lang/String;Ljava/util/List;Lcom/airbnb/lottie/model/animatable/AnimatableTransform;IIIFFIILcom/airbnb/lottie/model/animatable/AnimatableTextFrame;Lcom/airbnb/lottie/model/animatable/AnimatableTextProperties;Ljava/util/List;ILcom/airbnb/lottie/model/animatable/AnimatableFloatValue;Z)V
 
     return-object v33
 

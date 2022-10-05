@@ -12,6 +12,7 @@
     </domain-config>
     <domain-config cleartextTrafficPermitted="false">
         <domain includeSubdomains="false">svc90.cwa.gov.si</domain>
+        <domain includeSubdomains="false">data-ppa.gov.si</domain>
         <trust-anchors>
             <certificates overridePins="false" src="system" />
         </trust-anchors>

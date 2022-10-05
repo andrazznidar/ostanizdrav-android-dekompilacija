@@ -1,4 +1,4 @@
-.class public final Lkotlin/reflect/jvm/internal/impl/types/StarProjectionImpl$_type$2;
+.class final Lkotlin/reflect/jvm/internal/impl/types/StarProjectionImpl$_type$2;
 .super Lkotlin/jvm/internal/Lambda;
 .source "StarProjectionImpl.kt"
 
@@ -45,12 +45,24 @@
 
 
 # virtual methods
-.method public invoke()Ljava/lang/Object;
+.method public bridge synthetic invoke()Ljava/lang/Object;
+    .locals 1
+
+    invoke-virtual {p0}, Lkotlin/reflect/jvm/internal/impl/types/StarProjectionImpl$_type$2;->invoke()Lkotlin/reflect/jvm/internal/impl/types/KotlinType;
+
+    move-result-object v0
+
+    return-object v0
+.end method
+
+.method public final invoke()Lkotlin/reflect/jvm/internal/impl/types/KotlinType;
     .locals 1
 
     iget-object v0, p0, Lkotlin/reflect/jvm/internal/impl/types/StarProjectionImpl$_type$2;->this$0:Lkotlin/reflect/jvm/internal/impl/types/StarProjectionImpl;
 
-    iget-object v0, v0, Lkotlin/reflect/jvm/internal/impl/types/StarProjectionImpl;->typeParameter:Lkotlin/reflect/jvm/internal/impl/descriptors/TypeParameterDescriptor;
+    invoke-static {v0}, Lkotlin/reflect/jvm/internal/impl/types/StarProjectionImpl;->access$getTypeParameter$p(Lkotlin/reflect/jvm/internal/impl/types/StarProjectionImpl;)Lkotlin/reflect/jvm/internal/impl/descriptors/TypeParameterDescriptor;
+
+    move-result-object v0
 
     invoke-static {v0}, Lkotlin/reflect/jvm/internal/impl/types/StarProjectionImplKt;->starProjectionType(Lkotlin/reflect/jvm/internal/impl/descriptors/TypeParameterDescriptor;)Lkotlin/reflect/jvm/internal/impl/types/KotlinType;
 

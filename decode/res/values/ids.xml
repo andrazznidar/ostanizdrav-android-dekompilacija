@@ -34,6 +34,7 @@
     <item type="id" name="accessibility_custom_action_8" />
     <item type="id" name="accessibility_custom_action_9" />
     <item type="id" name="action0" />
+    <item type="id" name="action_RecyclerBinOverviewFragment_self" />
     <item type="id" name="action_bar" />
     <item type="id" name="action_bar_activity_content" />
     <item type="id" name="action_bar_container" />
@@ -52,6 +53,7 @@
     <item type="id" name="action_checkInsFragment_to_confirmCheckInFragment_cleanHistory" />
     <item type="id" name="action_checkInsFragment_to_editCheckInFragment" />
     <item type="id" name="action_checkInsFragment_to_qrCodeDetailFragment" />
+    <item type="id" name="action_consentTwoFragment_to_validationResultFragment" />
     <item type="id" name="action_contactDiaryDayFragment_to_contactDiaryAddLocationFragment" />
     <item type="id" name="action_contactDiaryDayFragment_to_contactDiaryAddPersonFragment" />
     <item type="id" name="action_contactDiaryDayFragment_to_contactDiaryCommentInfoFragment" />
@@ -67,6 +69,9 @@
     <item type="id" name="action_context_bar" />
     <item type="id" name="action_covidCertificateOnboardingFragment_to_personOverviewFragment" />
     <item type="id" name="action_covidCertificateOnboardingFragment_to_privacyFragment" />
+    <item type="id" name="action_dccTicketingCertificateSelectionFragment_to_dccTicketingConsentTwoFragment" />
+    <item type="id" name="action_dccTicketingConsentOneFragment_to_dccTicketingCertificateSelectionFragment" />
+    <item type="id" name="action_dcc_ticketing_nav_graph_pop" />
     <item type="id" name="action_debugLogUploadFragment_to_debugLogLegalFragment" />
     <item type="id" name="action_debuglogFragment_to_debugLogUploadFragment" />
     <item type="id" name="action_debuglogFragment_to_informationPrivacyFragment" />
@@ -123,6 +128,7 @@
     <item type="id" name="action_onboardingPrivacyFragment_to_onboardingTracingFragment" />
     <item type="id" name="action_onboardingTestFragment_to_onboardingNotificationsFragment" />
     <item type="id" name="action_onboardingTracingFragment_to_onboardingTestFragment" />
+    <item type="id" name="action_personDetailsFragment_to_boosterInfoDetailsFragment" />
     <item type="id" name="action_personDetailsFragment_to_covPassInfoFragment" />
     <item type="id" name="action_personDetailsFragment_to_recoveryCertificateDetailsFragment" />
     <item type="id" name="action_personDetailsFragment_to_testCertificateDetailsFragment" />
@@ -142,7 +148,12 @@
     <item type="id" name="action_recoveryCertificateDetailsFragment_to_certificatePdfExportInfoFragment" />
     <item type="id" name="action_recoveryCertificateDetailsFragment_to_covPassInfoFragment" />
     <item type="id" name="action_recoveryCertificateDetailsFragment_to_validationStartFragment" />
+    <item type="id" name="action_recyclerBinOverviewFragment_to_mainFragment" />
+    <item type="id" name="action_recyclerBinOverviewFragment_to_pendingTestResult" />
+    <item type="id" name="action_recyclerBinOverviewFragment_to_submissionDeletionWarningFragment" />
     <item type="id" name="action_requestCovidCertificateFragment" />
+    <item type="id" name="action_riskDetailsFragment_to_homeRules" />
+    <item type="id" name="action_riskDetailsFragment_to_hygieneRules" />
     <item type="id" name="action_riskDetailsFragment_to_settingsTracingFragment" />
     <item type="id" name="action_riskDetailsFragment_to_surveyConsentFragment" />
     <item type="id" name="action_settingsFragment_self" />
@@ -161,9 +172,12 @@
     <item type="id" name="action_submissionConsentFragment_to_informationPrivacyFragment" />
     <item type="id" name="action_submissionContactFragment_to_submissionTanFragment" />
     <item type="id" name="action_submissionDeletionFragment_to_submissionTestResultNoConsentFragment" />
+    <item type="id" name="action_submissionDeletionWarningFragment_to_SubmissionTestResultKeysSharedFragment" />
+    <item type="id" name="action_submissionDeletionWarningFragment_to_negativeRatFragment" />
     <item type="id" name="action_submissionDeletionWarningFragment_to_requestCovidCertificateFragment" />
     <item type="id" name="action_submissionDeletionWarningFragment_to_submissionConsentFragment" />
     <item type="id" name="action_submissionDeletionWarningFragment_to_submissionTestResultAvailableFragment" />
+    <item type="id" name="action_submissionDeletionWarningFragment_to_submissionTestResultNegativeFragment" />
     <item type="id" name="action_submissionDeletionWarningFragment_to_submissionTestResultPendingFragment" />
     <item type="id" name="action_submissionDispatcherFragment_to_rapid_test_profile_nav_graph" />
     <item type="id" name="action_submissionDispatcherFragment_to_submissionContactFragment" />
@@ -224,8 +238,15 @@
     <item type="id" name="action_traceLocationsFragment_to_traceLocationCategoryFragment" />
     <item type="id" name="action_traceLocationsFragment_to_traceLocationCreateFragment" />
     <item type="id" name="action_traceLocationsFragment_to_traceLocationWarnInfoFragment" />
+    <item type="id" name="action_universalScanner_to_mainFragment" />
+    <item type="id" name="action_universalScanner_to_pendingTestResult" />
     <item type="id" name="action_universalScanner_to_submissionConsentFragment" />
     <item type="id" name="action_universalScanner_to_submissionDeletionWarningFragment" />
+    <item type="id" name="action_universalScanner_to_submissionResultPositiveOtherWarningNoConsentFragment" />
+    <item type="id" name="action_universalScanner_to_submissionTestResultInvalidFragment" />
+    <item type="id" name="action_universalScanner_to_submissionTestResultKeysSharedFragment" />
+    <item type="id" name="action_universalScanner_to_submissionTestResultNegativeFragment" />
+    <item type="id" name="action_universalScanner_to_universalScannerInformationFragment" />
     <item type="id" name="action_vaccinationDetailsFragment_to_certificatePdfExportInfoFragment" />
     <item type="id" name="action_vaccinationDetailsFragment_to_covPassInfoFragment" />
     <item type="id" name="action_vaccinationDetailsFragment_to_validationStartFragment" />
@@ -242,25 +263,31 @@
     <item type="id" name="age_group_row_subtitle" />
     <item type="id" name="agree_button" />
     <item type="id" name="alertTitle" />
+    <item type="id" name="allowed_certificates" />
     <item type="id" name="analyticsUserInputFragment" />
+    <item type="id" name="androidx_window_activity_scope" />
     <item type="id" name="appBarLayout" />
     <item type="id" name="app_bar_layout" />
     <item type="id" name="applied_vaccination_rates_container" />
     <item type="id" name="arrow" />
     <item type="id" name="arrow_icon" />
     <item type="id" name="background_image" />
+    <item type="id" name="badge" />
     <item type="id" name="birthDateGroup" />
+    <item type="id" name="birth_date" />
     <item type="id" name="birth_date_description" />
     <item type="id" name="birth_date_input_edit" />
     <item type="id" name="birth_date_input_layout" />
     <item type="id" name="blog_link" />
     <item type="id" name="body" />
-    <item type="id" name="body_2_faq" />
     <item type="id" name="body_end" />
     <item type="id" name="body_start" />
     <item type="id" name="body_text" />
+    <item type="id" name="booking_label" />
+    <item type="id" name="booking_provider_details" />
     <item type="id" name="bookmark" />
     <item type="id" name="bookmark_info" />
+    <item type="id" name="boosterInfoDetailsFragment" />
     <item type="id" name="booster_badge" />
     <item type="id" name="bottom_app_bar" />
     <item type="id" name="bottom_barrier" />
@@ -298,6 +325,7 @@
     <item type="id" name="button_barrier_event_card" />
     <item type="id" name="button_container" />
     <item type="id" name="button_continue" />
+    <item type="id" name="button_done" />
     <item type="id" name="button_icon" />
     <item type="id" name="button_open_file" />
     <item type="id" name="button_submit" />
@@ -309,6 +337,7 @@
     <item type="id" name="calendar_layout" />
     <item type="id" name="calendar_month" />
     <item type="id" name="calendar_recycler_view" />
+    <item type="id" name="camera_preview" />
     <item type="id" name="cancel_action" />
     <item type="id" name="cancel_button" />
     <item type="id" name="caption" />
@@ -316,6 +345,8 @@
     <item type="id" name="card_title" />
     <item type="id" name="category_header" />
     <item type="id" name="category_root" />
+    <item type="id" name="ccl_version" />
+    <item type="id" name="certificate" />
     <item type="id" name="certificatePdfExportInfoFragment" />
     <item type="id" name="certificatePosterFragment" />
     <item type="id" name="certificate_badge_count" />
@@ -323,12 +354,19 @@
     <item type="id" name="certificate_bg" />
     <item type="id" name="certificate_country" />
     <item type="id" name="certificate_date" />
+    <item type="id" name="certificate_deletion_date_info" />
     <item type="id" name="certificate_expiration" />
     <item type="id" name="certificate_icon" />
     <item type="id" name="certificate_id" />
+    <item type="id" name="certificate_info_line_1" />
+    <item type="id" name="certificate_info_line_2" />
     <item type="id" name="certificate_issuer" />
+    <item type="id" name="certificate_person_name" />
     <item type="id" name="certificate_proof" />
     <item type="id" name="certificate_subtitle" />
+    <item type="id" name="certificate_toggle_group" />
+    <item type="id" name="certificate_type" />
+    <item type="id" name="certificate_types" />
     <item type="id" name="certification_period_end" />
     <item type="id" name="certification_period_start" />
     <item type="id" name="checkAnotherCountryButton" />
@@ -376,8 +414,6 @@
     <item type="id" name="chronometer_minutes" />
     <item type="id" name="chronometer_seconds" />
     <item type="id" name="circle_center" />
-    <item type="id" name="circle_progress_body" />
-    <item type="id" name="circle_progress_icon" />
     <item type="id" name="circumstances" />
     <item type="id" name="city_input_edit" />
     <item type="id" name="city_input_layout" />
@@ -416,10 +452,6 @@
     <item type="id" name="contactDiaryOverviewFragment" />
     <item type="id" name="contactDiaryPersonListFragment" />
     <item type="id" name="contactDiaryPlaceListFragment" />
-    <item type="id" name="contact_diary_card_homescreen_body" />
-    <item type="id" name="contact_diary_card_homescreen_button" />
-    <item type="id" name="contact_diary_card_homescreen_icon" />
-    <item type="id" name="contact_diary_card_homescreen_title" />
     <item type="id" name="contact_diary_corona_test_body" />
     <item type="id" name="contact_diary_corona_test_image" />
     <item type="id" name="contact_diary_corona_test_title" />
@@ -482,7 +514,6 @@
     <item type="id" name="contagious_icon" />
     <item type="id" name="contagious_subtitle" />
     <item type="id" name="container" />
-    <item type="id" name="container_layout" />
     <item type="id" name="content" />
     <item type="id" name="contentPanel" />
     <item type="id" name="content_barrier" />
@@ -519,6 +550,7 @@
     <item type="id" name="customPanel" />
     <item type="id" name="cwa_user_switch" />
     <item type="id" name="dataBinding" />
+    <item type="id" name="data_details" />
     <item type="id" name="data_processing_body" />
     <item type="id" name="data_processing_point_1" />
     <item type="id" name="data_processing_point_1_text" />
@@ -547,9 +579,14 @@
     <item type="id" name="day_risk_enf" />
     <item type="id" name="day_risk_event" />
     <item type="id" name="day_test_result" />
+    <item type="id" name="dccTicketingCertificateSelectionFragment" />
+    <item type="id" name="dccTicketingConsentOneFragment" />
+    <item type="id" name="dccTicketingConsentTwoFragment" />
+    <item type="id" name="dccTicketingValidationResultFragment" />
     <item type="id" name="dccValidationFailedFragment" />
     <item type="id" name="dccValidationOpenFragment" />
     <item type="id" name="dccValidationPassedFragment" />
+    <item type="id" name="dcc_ticketing_nav_graph" />
     <item type="id" name="debugLogLegalFragment" />
     <item type="id" name="debugLogUploadFragment" />
     <item type="id" name="debug_log_analysis_title" />
@@ -677,6 +714,8 @@
     <item type="id" name="extra_pcr_bulletpoint_text" />
     <item type="id" name="fab_tooltip" />
     <item type="id" name="faq" />
+    <item type="id" name="faq_link" />
+    <item type="id" name="faq_text" />
     <item type="id" name="federalStateSelectionFragment" />
     <item type="id" name="federal_state_row" />
     <item type="id" name="federal_state_row_body" />
@@ -684,6 +723,7 @@
     <item type="id" name="fifth_bulletpoint_text" />
     <item type="id" name="findings" />
     <item type="id" name="finish_button" />
+    <item type="id" name="first_bulletpoint_icon" />
     <item type="id" name="first_bulletpoint_subtitle" />
     <item type="id" name="first_bulletpoint_text" />
     <item type="id" name="first_bulletpoint_title" />
@@ -696,11 +736,14 @@
     <item type="id" name="flag_eu" />
     <item type="id" name="flow" />
     <item type="id" name="flow_layout" />
+    <item type="id" name="forth_bulletpoint_text" />
     <item type="id" name="forward_icon" />
+    <item type="id" name="fourth_bulletpoint_icon" />
     <item type="id" name="fourth_bulletpoint_text" />
     <item type="id" name="fragment_container_view_tag" />
     <item type="id" name="fullname" />
     <item type="id" name="further_info" />
+    <item type="id" name="further_info_body" />
     <item type="id" name="further_info_text" />
     <item type="id" name="further_info_title" />
     <item type="id" name="ghost_view" />
@@ -730,14 +773,17 @@
     <item type="id" name="header_button_back" />
     <item type="id" name="header_checkbox" />
     <item type="id" name="header_image" />
+    <item type="id" name="header_text" />
     <item type="id" name="header_text_layout" />
     <item type="id" name="header_title" />
     <item type="id" name="headline" />
     <item type="id" name="highlight_duration" />
     <item type="id" name="highlight_duration_label" />
     <item type="id" name="home" />
+    <item type="id" name="homeRulesFragment" />
     <item type="id" name="horizontal_guideline" />
     <item type="id" name="hours" />
+    <item type="id" name="hygieneRulesFragment" />
     <item type="id" name="icaoname" />
     <item type="id" name="icon" />
     <item type="id" name="icon_background" />
@@ -746,10 +792,11 @@
     <item type="id" name="icon_frame" />
     <item type="id" name="icon_group" />
     <item type="id" name="icon_signature" />
+    <item type="id" name="illness_icon" />
+    <item type="id" name="illness_subtitle" />
     <item type="id" name="illustration" />
     <item type="id" name="illustration_image" />
     <item type="id" name="image" />
-    <item type="id" name="image_qr_code" />
     <item type="id" name="incidence_container" />
     <item type="id" name="include_submission_consent_body" />
     <item type="id" name="include_submission_consent_intro" />
@@ -758,6 +805,7 @@
     <item type="id" name="info" />
     <item type="id" name="info_box" />
     <item type="id" name="info_button" />
+    <item type="id" name="info_icon" />
     <item type="id" name="info_statistics" />
     <item type="id" name="info_text_view" />
     <item type="id" name="informationAboutFragment" />
@@ -858,6 +906,13 @@
     <item type="id" name="layout_end" />
     <item type="id" name="layout_length_of_stay" />
     <item type="id" name="legal_body" />
+    <item type="id" name="legal_bulletpoint_one" />
+    <item type="id" name="legal_bulletpoint_two" />
+    <item type="id" name="legal_bulletpoint_two_four" />
+    <item type="id" name="legal_bulletpoint_two_one" />
+    <item type="id" name="legal_bulletpoint_two_three" />
+    <item type="id" name="legal_bulletpoint_two_two" />
+    <item type="id" name="legal_first_bulletpoint_text" />
     <item type="id" name="legal_layout" />
     <item type="id" name="legal_point_consent" />
     <item type="id" name="legal_point_identity" />
@@ -865,9 +920,16 @@
     <item type="id" name="legal_point_sixteen" />
     <item type="id" name="legal_point_three" />
     <item type="id" name="legal_point_two" />
+    <item type="id" name="legal_second_bulletpoint_text" />
+    <item type="id" name="legal_second_four_bulletpoint_text" />
+    <item type="id" name="legal_second_one_bulletpoint_text" />
+    <item type="id" name="legal_second_three_bulletpoint_text" />
+    <item type="id" name="legal_second_two_bulletpoint_text" />
     <item type="id" name="legal_title" />
     <item type="id" name="line1" />
     <item type="id" name="line3" />
+    <item type="id" name="line_home" />
+    <item type="id" name="line_hygiene" />
     <item type="id" name="link_to_faq" />
     <item type="id" name="list" />
     <item type="id" name="list_item" />
@@ -879,6 +941,9 @@
     <item type="id" name="loadingButtonContainer" />
     <item type="id" name="loadingFragment" />
     <item type="id" name="loading_button" />
+    <item type="id" name="loading_layout_group" />
+    <item type="id" name="loading_progress_bar" />
+    <item type="id" name="loading_text" />
     <item type="id" name="location_close_button" />
     <item type="id" name="location_delete_button" />
     <item type="id" name="location_email_input" />
@@ -974,13 +1039,14 @@
     <item type="id" name="menu_contact_diary_information" />
     <item type="id" name="menu_covid_certificate_delete" />
     <item type="id" name="menu_covid_certificate_export" />
-    <item type="id" name="menu_delete" />
     <item type="id" name="menu_duplicate" />
     <item type="id" name="menu_information" />
     <item type="id" name="menu_recovery_certificate_delete" />
     <item type="id" name="menu_recovery_certificate_export" />
     <item type="id" name="menu_remove_all" />
     <item type="id" name="menu_remove_item" />
+    <item type="id" name="menu_remove_permanently" />
+    <item type="id" name="menu_restore" />
     <item type="id" name="menu_show_print" />
     <item type="id" name="menu_warn_guests" />
     <item type="id" name="message" />
@@ -1034,7 +1100,6 @@
     <item type="id" name="navigation_row_icon" />
     <item type="id" name="navigation_row_subtitle" />
     <item type="id" name="navigation_row_title" />
-    <item type="id" name="negative_test_proof_additional_information" />
     <item type="id" name="negative_test_proof_body" />
     <item type="id" name="negative_test_proof_title" />
     <item type="id" name="nested_scroll_view" />
@@ -1045,6 +1110,7 @@
     <item type="id" name="new_release_info_next_button" />
     <item type="id" name="next_button" />
     <item type="id" name="next_steps_action" />
+    <item type="id" name="no_certificates_found" />
     <item type="id" name="no_countries_default_infoview" />
     <item type="id" name="no_countries_riskdetails_infoview" />
     <item type="id" name="no_network_description" />
@@ -1052,12 +1118,10 @@
     <item type="id" name="no_network_title" />
     <item type="id" name="note_bulletpoint_four" />
     <item type="id" name="note_bulletpoint_one" />
-    <item type="id" name="note_bulletpoint_three" />
     <item type="id" name="note_bulletpoint_two" />
     <item type="id" name="note_subtitle" />
     <item type="id" name="note_text_four" />
     <item type="id" name="note_text_one" />
-    <item type="id" name="note_text_three" />
     <item type="id" name="note_text_two" />
     <item type="id" name="notification_background" />
     <item type="id" name="notification_badge" />
@@ -1120,7 +1184,6 @@
     <item type="id" name="onboarding_subtitle" />
     <item type="id" name="onboarding_test_container" />
     <item type="id" name="onboarding_tracing_container" />
-    <item type="id" name="one_shot_info" />
     <item type="id" name="open_system_settings_button" />
     <item type="id" name="other_info_body" />
     <item type="id" name="other_info_point_1" />
@@ -1159,6 +1222,7 @@
     <item type="id" name="persons_recycler_view" />
     <item type="id" name="persons_vaccinated_completely_container" />
     <item type="id" name="persons_vaccinated_once_container" />
+    <item type="id" name="persons_vaccinated_with_booster_container" />
     <item type="id" name="phone_input_edit" />
     <item type="id" name="phone_input_layout" />
     <item type="id" name="place_input_edit" />
@@ -1171,9 +1235,12 @@
     <item type="id" name="ppaMoreInfoFragment" />
     <item type="id" name="prc_icon" />
     <item type="id" name="primary" />
+    <item type="id" name="primary_certificate_button" />
+    <item type="id" name="primary_description" />
     <item type="id" name="primary_footnote" />
     <item type="id" name="primary_label" />
     <item type="id" name="primary_subtitle" />
+    <item type="id" name="primary_trend_arrow" />
     <item type="id" name="primary_value" />
     <item type="id" name="privacyFragment" />
     <item type="id" name="privacy_card" />
@@ -1192,6 +1259,8 @@
     <item type="id" name="progress_indicator" />
     <item type="id" name="progress_message" />
     <item type="id" name="progress_spinner" />
+    <item type="id" name="provider" />
+    <item type="id" name="provider_label" />
     <item type="id" name="qrCodeDetailFragment" />
     <item type="id" name="qrCodeFullScreenFragment" />
     <item type="id" name="qrCodeImage" />
@@ -1204,8 +1273,8 @@
     <item type="id" name="qr_code_print_button" />
     <item type="id" name="qr_code_processing_message" />
     <item type="id" name="qr_code_processing_view" />
+    <item type="id" name="qr_code_scan_background" />
     <item type="id" name="qr_code_scan_guideline_center" />
-    <item type="id" name="qr_code_scan_preview" />
     <item type="id" name="qr_code_scan_spinner" />
     <item type="id" name="qr_code_scan_subtitle" />
     <item type="id" name="qr_code_scan_title" />
@@ -1261,6 +1330,8 @@
     <item type="id" name="recovered_from_disease" />
     <item type="id" name="recoveryCertificateDetailsFragment" />
     <item type="id" name="recovery_certificate_name" />
+    <item type="id" name="recyclerBinOverviewFragment" />
+    <item type="id" name="recycler_bin_list" />
     <item type="id" name="recycler_view" />
     <item type="id" name="recycler_view_categories" />
     <item type="id" name="recycler_view_certificates_list" />
@@ -1270,6 +1341,7 @@
     <item type="id" name="request_green_certificate_info_text" />
     <item type="id" name="request_green_certificate_proof_icon" />
     <item type="id" name="request_green_certificate_proof_text" />
+    <item type="id" name="required_certificates_title" />
     <item type="id" name="result_received_counter" />
     <item type="id" name="result_received_counter_bottom_part" />
     <item type="id" name="result_received_time_and_date" />
@@ -1292,8 +1364,6 @@
     <item type="id" name="risk_details_behavior_bullet_point_1_icon" />
     <item type="id" name="risk_details_behavior_bullet_point_2" />
     <item type="id" name="risk_details_behavior_bullet_point_2_icon" />
-    <item type="id" name="risk_details_behavior_bullet_point_3" />
-    <item type="id" name="risk_details_behavior_bullet_point_3_icon" />
     <item type="id" name="risk_details_behavior_headline" />
     <item type="id" name="risk_details_behavior_subtitle" />
     <item type="id" name="risk_details_body" />
@@ -1357,11 +1427,13 @@
     <item type="id" name="rule_description" />
     <item type="id" name="rule_icon" />
     <item type="id" name="rule_id" />
+    <item type="id" name="rule_id_text" />
     <item type="id" name="rule_id_title" />
     <item type="id" name="save_non_transition_alpha" />
     <item type="id" name="save_overlay_view" />
     <item type="id" name="scan_item" />
     <item type="id" name="scanner_fab" />
+    <item type="id" name="scanner_preview" />
     <item type="id" name="scrollIndicatorDown" />
     <item type="id" name="scrollIndicatorUp" />
     <item type="id" name="scrollView" />
@@ -1377,18 +1449,24 @@
     <item type="id" name="search_plate" />
     <item type="id" name="search_src_text" />
     <item type="id" name="search_voice_btn" />
+    <item type="id" name="second_bulletpoint_icon" />
     <item type="id" name="second_bulletpoint_subtitle" />
     <item type="id" name="second_bulletpoint_text" />
     <item type="id" name="second_bulletpoint_title" />
     <item type="id" name="second_row_icon" />
     <item type="id" name="second_row_text" />
     <item type="id" name="secondary" />
+    <item type="id" name="secondary_certificate_button" />
+    <item type="id" name="secondary_description" />
     <item type="id" name="secondary_label" />
+    <item type="id" name="secondary_subtitle" />
+    <item type="id" name="secondary_trend_arrow" />
     <item type="id" name="secondary_value" />
     <item type="id" name="seekbar" />
     <item type="id" name="seekbar_value" />
     <item type="id" name="select_all_button" />
     <item type="id" name="select_dialog_listview" />
+    <item type="id" name="selection_title" />
     <item type="id" name="selection_type" />
     <item type="id" name="settingsBackgroundPriorityFragment" />
     <item type="id" name="settingsFragment" />
@@ -1408,9 +1486,6 @@
     <item type="id" name="settings_notifications" />
     <item type="id" name="settings_notifications_container" />
     <item type="id" name="settings_notifications_header" />
-    <item type="id" name="settings_plain_row" />
-    <item type="id" name="settings_plain_row_header_body" />
-    <item type="id" name="settings_plain_row_header_subtitle" />
     <item type="id" name="settings_ppa_header" />
     <item type="id" name="settings_ppa_switch_row" />
     <item type="id" name="settings_privacy_preserving_analytics" />
@@ -1439,7 +1514,7 @@
     <item type="id" name="settings_tracing_status_bluetooth" />
     <item type="id" name="settings_tracing_status_connection" />
     <item type="id" name="settings_tracing_status_location" />
-    <item type="id" name="seven_day_hospitalization_card_container" />
+    <item type="id" name="seven_day_incidence_and_hospitalization_card_container" />
     <item type="id" name="seven_day_r_value_container" />
     <item type="id" name="shadow_view" />
     <item type="id" name="share_icon" />
@@ -1454,6 +1529,7 @@
     <item type="id" name="skip_button" />
     <item type="id" name="snackbar_action" />
     <item type="id" name="snackbar_text" />
+    <item type="id" name="socialMediaMenuItem" />
     <item type="id" name="spacer" />
     <item type="id" name="spacer_info_start" />
     <item type="id" name="special_effects_controller_view_tag" />
@@ -1478,17 +1554,19 @@
     <item type="id" name="statistics_explanation_trend_stable_arrow" />
     <item type="id" name="statistics_explanation_trend_stable_title" />
     <item type="id" name="statistics_explanation_trend_text" />
-    <item type="id" name="statistics_faq_link" />
-    <item type="id" name="statistics_faq_text" />
+    <item type="id" name="statistics_faq" />
     <item type="id" name="statistics_recyclerview" />
     <item type="id" name="status" />
+    <item type="id" name="status_badge" />
     <item type="id" name="status_bar_latest_event_content" />
+    <item type="id" name="status_text" />
     <item type="id" name="step_entry_icon" />
     <item type="id" name="step_entry_line" />
     <item type="id" name="step_entry_placeholder" />
     <item type="id" name="step_entry_wrapper_children" />
     <item type="id" name="street_input_edit" />
     <item type="id" name="street_input_layout" />
+    <item type="id" name="subject" />
     <item type="id" name="submenuarrow" />
     <item type="id" name="submissionConsentFragment" />
     <item type="id" name="submissionContactFragment" />
@@ -1546,7 +1624,6 @@
     <item type="id" name="submission_contact_step_1" />
     <item type="id" name="submission_contact_step_1_body" />
     <item type="id" name="submission_contact_step_2" />
-    <item type="id" name="submission_country_header_description" />
     <item type="id" name="submission_country_no_selection_container" />
     <item type="id" name="submission_country_no_selection_header" />
     <item type="id" name="submission_country_selection_button" />
@@ -1573,15 +1650,13 @@
     <item type="id" name="submission_dispatcher_test_center" />
     <item type="id" name="submission_done_button_continue_with_symptom_recording" />
     <item type="id" name="submission_done_button_done" />
-    <item type="id" name="submission_done_card_content" />
-    <item type="id" name="submission_done_card_illustration" />
-    <item type="id" name="submission_done_card_title" />
     <item type="id" name="submission_done_contact_button_finish_flow" />
     <item type="id" name="submission_done_contagious" />
     <item type="id" name="submission_done_container" />
     <item type="id" name="submission_done_content" />
     <item type="id" name="submission_done_headline" />
     <item type="id" name="submission_done_hero_illustration" />
+    <item type="id" name="submission_done_illness" />
     <item type="id" name="submission_done_isolate" />
     <item type="id" name="submission_done_no_consent_body" />
     <item type="id" name="submission_done_no_consent_container" />
@@ -1594,13 +1669,11 @@
     <item type="id" name="submission_no_consent_main_fourth_point" />
     <item type="id" name="submission_no_consent_main_second_point" />
     <item type="id" name="submission_no_consent_main_third_point" />
-    <item type="id" name="submission_positive_location_card_16_years" />
     <item type="id" name="submission_positive_other_privacy" />
     <item type="id" name="submission_positive_other_privacy_container" />
     <item type="id" name="submission_positive_other_warning_headline" />
     <item type="id" name="submission_positive_other_warning_hero_illustration" />
     <item type="id" name="submission_positive_other_warning_no_consent_button_next" />
-    <item type="id" name="submission_positive_other_warning_text" />
     <item type="id" name="submission_positive_other_warning_text_first_part" />
     <item type="id" name="submission_qr_code_scan_spinner" />
     <item type="id" name="submission_star_checkmark" />
@@ -1610,7 +1683,6 @@
     <item type="id" name="submission_status_card_fetching_title" />
     <item type="id" name="submission_status_card_positive_button" />
     <item type="id" name="submission_status_card_positive_button_delete" />
-    <item type="id" name="submission_status_card_unregistered_barrier" />
     <item type="id" name="submission_symptom_calendar_body" />
     <item type="id" name="submission_symptom_calendar_header" />
     <item type="id" name="submission_symptom_calendar_headline" />
@@ -1733,17 +1805,12 @@
     <item type="id" name="test_name" />
     <item type="id" name="test_name_title" />
     <item type="id" name="test_nav_graph" />
+    <item type="id" name="test_partner" />
+    <item type="id" name="test_partner_label" />
     <item type="id" name="test_radiobutton_android_button_tint" />
     <item type="id" name="test_radiobutton_app_button_tint" />
     <item type="id" name="test_result" />
     <item type="id" name="test_result_card" />
-    <item type="id" name="test_result_card_content" />
-    <item type="id" name="test_result_card_headline" />
-    <item type="id" name="test_result_card_positive_body" />
-    <item type="id" name="test_result_card_positive_icon" />
-    <item type="id" name="test_result_card_positive_title" />
-    <item type="id" name="test_result_card_registered_at_text" />
-    <item type="id" name="test_result_card_status_icon" />
     <item type="id" name="test_result_illustration_divider" />
     <item type="id" name="test_result_invalid_steps_invalid_result" />
     <item type="id" name="test_result_invalid_steps_pcr_added" />
@@ -1759,8 +1826,6 @@
     <item type="id" name="test_result_pending_steps_rat_added" />
     <item type="id" name="test_result_pending_steps_waiting_antigen_result" />
     <item type="id" name="test_result_pending_steps_waiting_pcr_result" />
-    <item type="id" name="test_result_positive_steps_added" />
-    <item type="id" name="test_result_positive_steps_warning_others" />
     <item type="id" name="test_result_section_content" />
     <item type="id" name="test_result_section_headline" />
     <item type="id" name="test_result_section_registered_at_text" />
@@ -1783,12 +1848,14 @@
     <item type="id" name="text_signature" />
     <item type="id" name="text_start_guideline" />
     <item type="id" name="text_top_guideline" />
+    <item type="id" name="text_view_info" />
     <item type="id" name="textinput_counter" />
     <item type="id" name="textinput_error" />
     <item type="id" name="textinput_helper_text" />
     <item type="id" name="textinput_placeholder" />
     <item type="id" name="textinput_prefix_text" />
     <item type="id" name="textinput_suffix_text" />
+    <item type="id" name="third_bulletpoint_icon" />
     <item type="id" name="third_bulletpoint_text" />
     <item type="id" name="time" />
     <item type="id" name="title" />
@@ -1863,6 +1930,7 @@
     <item type="id" name="trend_arrow" />
     <item type="id" name="unchecked" />
     <item type="id" name="universalScanner" />
+    <item type="id" name="universalScannerInformationFragment" />
     <item type="id" name="up" />
     <item type="id" name="update_action" />
     <item type="id" name="upload_action" />
@@ -1893,6 +1961,7 @@
     <item type="id" name="validationStartFragment" />
     <item type="id" name="validationTimeInfoFragment" />
     <item type="id" name="validation_notes" />
+    <item type="id" name="validation_result_fragments" />
     <item type="id" name="validation_rule_map" />
     <item type="id" name="validation_rules_result_valid_card" />
     <item type="id" name="validation_rules_result_valid_title" />
@@ -1909,17 +1978,4 @@
     <item type="id" name="zero_corner_chip" />
     <item type="id" name="zip_code_input_edit" />
     <item type="id" name="zip_code_input_layout" />
-    <item type="id" name="zxing_back_button" />
-    <item type="id" name="zxing_barcode_scanner" />
-    <item type="id" name="zxing_barcode_surface" />
-    <item type="id" name="zxing_camera_closed" />
-    <item type="id" name="zxing_camera_error" />
-    <item type="id" name="zxing_decode" />
-    <item type="id" name="zxing_decode_failed" />
-    <item type="id" name="zxing_decode_succeeded" />
-    <item type="id" name="zxing_possible_result_points" />
-    <item type="id" name="zxing_preview_failed" />
-    <item type="id" name="zxing_prewiew_size_ready" />
-    <item type="id" name="zxing_status_view" />
-    <item type="id" name="zxing_viewfinder_view" />
 </resources>

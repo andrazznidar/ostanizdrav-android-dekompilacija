@@ -15,9 +15,7 @@
 
 .annotation system Ldalvik/annotation/Signature;
     value = {
-        "Landroidx/room/EntityInsertionAdapter<",
-        "Landroidx/work/impl/model/WorkSpec;",
-        ">;"
+        "Landroidx/room/EntityInsertionAdapter;"
     }
 .end annotation
 
@@ -208,9 +206,9 @@
 
     invoke-virtual {v9, v2, v7, v8}, Landroid/database/sqlite/SQLiteProgram;->bindLong(IJ)V
 
-    iget-object v2, v0, Landroidx/work/impl/model/WorkSpec;->backoffPolicy:Landroidx/work/BackoffPolicy;
+    iget v2, v0, Landroidx/work/impl/model/WorkSpec;->backoffPolicy:I
 
-    invoke-virtual {v2}, Ljava/lang/Enum;->ordinal()I
+    invoke-static {v2}, Landroidx/camera/camera2/internal/Camera2CameraImpl$InternalState$EnumUnboxingSharedUtility;->ordinal(I)I
 
     move-result v7
 
@@ -235,7 +233,11 @@
 
     invoke-virtual {v1, v9}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
 
-    invoke-virtual {v1, v2}, Ljava/lang/StringBuilder;->append(Ljava/lang/Object;)Ljava/lang/StringBuilder;
+    invoke-static {v2}, Landroidx/work/BackoffPolicy$EnumUnboxingLocalUtility;->stringValueOf(I)Ljava/lang/String;
+
+    move-result-object v2
+
+    invoke-virtual {v1, v2}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
 
     invoke-virtual {v1, v8}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
 
@@ -436,7 +438,7 @@
 
     if-nez v2, :cond_c
 
-    goto :goto_c
+    goto/16 :goto_f
 
     :cond_c
     new-instance v2, Ljava/io/ByteArrayOutputStream;
@@ -448,7 +450,7 @@
 
     invoke-direct {v4, v2}, Ljava/io/ObjectOutputStream;-><init>(Ljava/io/OutputStream;)V
     :try_end_0
-    .catch Ljava/io/IOException; {:try_start_0 .. :try_end_0} :catch_1
+    .catch Ljava/io/IOException; {:try_start_0 .. :try_end_0} :catch_3
     .catchall {:try_start_0 .. :try_end_0} :catchall_1
 
     :try_start_1
@@ -494,52 +496,25 @@
 
     goto :goto_8
 
-    :cond_d
-    :try_start_2
-    invoke-virtual {v4}, Ljava/io/ObjectOutputStream;->close()V
-    :try_end_2
-    .catch Ljava/io/IOException; {:try_start_2 .. :try_end_2} :catch_2
-
-    goto :goto_a
-
     :catchall_0
     move-exception v0
 
-    move-object v1, v0
-
-    goto :goto_e
+    goto :goto_a
 
     :catch_0
     move-exception v0
 
-    move-object v3, v4
+    goto :goto_b
+
+    :cond_d
+    :try_start_2
+    invoke-virtual {v4}, Ljava/io/ObjectOutputStream;->close()V
+    :try_end_2
+    .catch Ljava/io/IOException; {:try_start_2 .. :try_end_2} :catch_1
 
     goto :goto_9
 
-    :catchall_1
-    move-exception v0
-
-    goto :goto_d
-
     :catch_1
-    move-exception v0
-
-    :goto_9
-    :try_start_3
-    invoke-virtual {v0}, Ljava/io/IOException;->printStackTrace()V
-    :try_end_3
-    .catchall {:try_start_3 .. :try_end_3} :catchall_1
-
-    if-eqz v3, :cond_e
-
-    :try_start_4
-    invoke-virtual {v3}, Ljava/io/ObjectOutputStream;->close()V
-    :try_end_4
-    .catch Ljava/io/IOException; {:try_start_4 .. :try_end_4} :catch_2
-
-    goto :goto_a
-
-    :catch_2
     move-exception v0
 
     move-object v3, v0
@@ -547,60 +522,51 @@
     invoke-virtual {v3}, Ljava/io/IOException;->printStackTrace()V
 
     :cond_e
-    :goto_a
-    :try_start_5
+    :goto_9
+    :try_start_3
     invoke-virtual {v2}, Ljava/io/ByteArrayOutputStream;->close()V
-    :try_end_5
-    .catch Ljava/io/IOException; {:try_start_5 .. :try_end_5} :catch_3
+    :try_end_3
+    .catch Ljava/io/IOException; {:try_start_3 .. :try_end_3} :catch_2
 
-    goto :goto_b
+    goto :goto_e
+
+    :catch_2
+    move-exception v0
+
+    goto :goto_d
+
+    :goto_a
+    move-object v1, v0
+
+    goto :goto_11
+
+    :goto_b
+    move-object v3, v4
+
+    goto :goto_c
+
+    :catchall_1
+    move-exception v0
+
+    goto :goto_10
 
     :catch_3
     move-exception v0
 
-    move-object v3, v0
-
-    invoke-virtual {v3}, Ljava/io/IOException;->printStackTrace()V
-
-    :goto_b
-    invoke-virtual {v2}, Ljava/io/ByteArrayOutputStream;->toByteArray()[B
-
-    move-result-object v3
-
     :goto_c
-    if-nez v3, :cond_f
+    :try_start_4
+    invoke-virtual {v0}, Ljava/io/IOException;->printStackTrace()V
+    :try_end_4
+    .catchall {:try_start_4 .. :try_end_4} :catchall_1
 
-    iget-object v0, v1, Landroidx/sqlite/db/framework/FrameworkSQLiteProgram;->mDelegate:Landroid/database/sqlite/SQLiteProgram;
+    if-eqz v3, :cond_e
 
-    const/16 v2, 0x18
+    :try_start_5
+    invoke-virtual {v3}, Ljava/io/ObjectOutputStream;->close()V
+    :try_end_5
+    .catch Ljava/io/IOException; {:try_start_5 .. :try_end_5} :catch_4
 
-    invoke-virtual {v0, v2}, Landroid/database/sqlite/SQLiteProgram;->bindNull(I)V
-
-    goto :goto_11
-
-    :cond_f
-    const/16 v2, 0x18
-
-    iget-object v0, v1, Landroidx/sqlite/db/framework/FrameworkSQLiteProgram;->mDelegate:Landroid/database/sqlite/SQLiteProgram;
-
-    invoke-virtual {v0, v2, v3}, Landroid/database/sqlite/SQLiteProgram;->bindBlob(I[B)V
-
-    goto :goto_11
-
-    :goto_d
-    move-object v1, v0
-
-    move-object v4, v3
-
-    :goto_e
-    if-eqz v4, :cond_10
-
-    :try_start_6
-    invoke-virtual {v4}, Ljava/io/ObjectOutputStream;->close()V
-    :try_end_6
-    .catch Ljava/io/IOException; {:try_start_6 .. :try_end_6} :catch_4
-
-    goto :goto_f
+    goto :goto_9
 
     :catch_4
     move-exception v0
@@ -609,23 +575,75 @@
 
     invoke-virtual {v3}, Ljava/io/IOException;->printStackTrace()V
 
-    :cond_10
+    goto :goto_9
+
+    :goto_d
+    invoke-virtual {v0}, Ljava/io/IOException;->printStackTrace()V
+
+    :goto_e
+    invoke-virtual {v2}, Ljava/io/ByteArrayOutputStream;->toByteArray()[B
+
+    move-result-object v3
+
     :goto_f
+    if-nez v3, :cond_f
+
+    iget-object v0, v1, Landroidx/sqlite/db/framework/FrameworkSQLiteProgram;->mDelegate:Landroid/database/sqlite/SQLiteProgram;
+
+    const/16 v2, 0x18
+
+    invoke-virtual {v0, v2}, Landroid/database/sqlite/SQLiteProgram;->bindNull(I)V
+
+    goto :goto_14
+
+    :cond_f
+    const/16 v2, 0x18
+
+    iget-object v0, v1, Landroidx/sqlite/db/framework/FrameworkSQLiteProgram;->mDelegate:Landroid/database/sqlite/SQLiteProgram;
+
+    invoke-virtual {v0, v2, v3}, Landroid/database/sqlite/SQLiteProgram;->bindBlob(I[B)V
+
+    goto :goto_14
+
+    :goto_10
+    move-object v1, v0
+
+    move-object v4, v3
+
+    :goto_11
+    if-eqz v4, :cond_10
+
+    :try_start_6
+    invoke-virtual {v4}, Ljava/io/ObjectOutputStream;->close()V
+    :try_end_6
+    .catch Ljava/io/IOException; {:try_start_6 .. :try_end_6} :catch_5
+
+    goto :goto_12
+
+    :catch_5
+    move-exception v0
+
+    move-object v3, v0
+
+    invoke-virtual {v3}, Ljava/io/IOException;->printStackTrace()V
+
+    :cond_10
+    :goto_12
     :try_start_7
     invoke-virtual {v2}, Ljava/io/ByteArrayOutputStream;->close()V
     :try_end_7
-    .catch Ljava/io/IOException; {:try_start_7 .. :try_end_7} :catch_5
+    .catch Ljava/io/IOException; {:try_start_7 .. :try_end_7} :catch_6
 
-    goto :goto_10
+    goto :goto_13
 
-    :catch_5
+    :catch_6
     move-exception v0
 
     move-object v2, v0
 
     invoke-virtual {v2}, Ljava/io/IOException;->printStackTrace()V
 
-    :goto_10
+    :goto_13
     throw v1
 
     :cond_11
@@ -665,7 +683,7 @@
 
     invoke-virtual {v0, v1}, Landroid/database/sqlite/SQLiteProgram;->bindNull(I)V
 
-    :goto_11
+    :goto_14
     return-void
 .end method
 

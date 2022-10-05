@@ -21,31 +21,31 @@
 
     sput-object v0, Lde/rki/coronawarnapp/databinding/HomeIncompatibleCardLayoutBindingImpl;->sViewsWithIds:Landroid/util/SparseIntArray;
 
-    const v1, 0x7f0a0415
+    const v1, 0x7f0a045a
 
     const/4 v2, 0x1
 
     invoke-virtual {v0, v1, v2}, Landroid/util/SparseIntArray;->put(II)V
 
-    const v1, 0x7f0a0416
+    const v1, 0x7f0a045b
 
     const/4 v2, 0x2
 
     invoke-virtual {v0, v1, v2}, Landroid/util/SparseIntArray;->put(II)V
 
-    const v1, 0x7f0a0414
+    const v1, 0x7f0a0459
 
     const/4 v2, 0x3
 
     invoke-virtual {v0, v1, v2}, Landroid/util/SparseIntArray;->put(II)V
 
-    const v1, 0x7f0a07e8
+    const v1, 0x7f0a0830
 
     const/4 v2, 0x4
 
     invoke-virtual {v0, v1, v2}, Landroid/util/SparseIntArray;->put(II)V
 
-    const v1, 0x7f0a0413
+    const v1, 0x7f0a0458
 
     const/4 v2, 0x5
 

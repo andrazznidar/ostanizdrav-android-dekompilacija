@@ -6,17 +6,6 @@
 .implements Ljava/lang/Runnable;
 
 
-# annotations
-.annotation system Ldalvik/annotation/EnclosingMethod;
-    value = Landroidx/fragment/app/SpecialEffectsController;->enqueue(Landroidx/fragment/app/SpecialEffectsController$Operation$State;Landroidx/fragment/app/SpecialEffectsController$Operation$LifecycleImpact;Landroidx/fragment/app/FragmentStateManager;)V
-.end annotation
-
-.annotation system Ldalvik/annotation/InnerClass;
-    accessFlags = 0x1
-    name = null
-.end annotation
-
-
 # instance fields
 .field public final synthetic this$0:Landroidx/fragment/app/SpecialEffectsController;
 
@@ -55,13 +44,13 @@
 
     iget-object v0, p0, Landroidx/fragment/app/SpecialEffectsController$1;->val$operation:Landroidx/fragment/app/SpecialEffectsController$FragmentStateManagerOperation;
 
-    iget-object v1, v0, Landroidx/fragment/app/SpecialEffectsController$Operation;->mFinalState:Landroidx/fragment/app/SpecialEffectsController$Operation$State;
+    iget v1, v0, Landroidx/fragment/app/SpecialEffectsController$Operation;->mFinalState:I
 
     iget-object v0, v0, Landroidx/fragment/app/SpecialEffectsController$Operation;->mFragment:Landroidx/fragment/app/Fragment;
 
     iget-object v0, v0, Landroidx/fragment/app/Fragment;->mView:Landroid/view/View;
 
-    invoke-virtual {v1, v0}, Landroidx/fragment/app/SpecialEffectsController$Operation$State;->applyState(Landroid/view/View;)V
+    invoke-static {v1, v0}, Landroidx/fragment/app/SpecialEffectsController$Operation$State$EnumUnboxingLocalUtility;->_applyState(ILandroid/view/View;)V
 
     :cond_0
     return-void

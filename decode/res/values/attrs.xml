@@ -750,6 +750,10 @@
     <attr name="imagePanY" format="float" />
     <attr name="imageRotate" format="float" />
     <attr name="imageZoom" format="float" />
+    <attr name="implementationMode">
+        <enum name="performance" value="0" />
+        <enum name="compatible" value="1" />
+    </attr>
     <attr name="indeterminateAnimationType">
         <enum name="contiguous" value="0" />
         <enum name="disjoint" value="1" />
@@ -1352,6 +1356,14 @@
     <attr name="roundPercent" format="float" />
     <attr name="saturation" format="float" />
     <attr name="scaleFromTextSize" format="dimension" />
+    <attr name="scaleType">
+        <enum name="fillStart" value="0" />
+        <enum name="fillCenter" value="1" />
+        <enum name="fillEnd" value="2" />
+        <enum name="fitStart" value="3" />
+        <enum name="fitCenter" value="4" />
+        <enum name="fitEnd" value="5" />
+    </attr>
     <attr name="scopeUris" format="reference|string" />
     <attr name="scrimAnimationDuration" format="integer" />
     <attr name="scrimBackground" format="reference|color" />
@@ -1756,18 +1768,4 @@
     <attr name="yearSelectedStyle" format="reference" />
     <attr name="yearStyle" format="reference" />
     <attr name="yearTodayStyle" format="reference" />
-    <attr name="zxing_framing_rect_height" format="dimension" />
-    <attr name="zxing_framing_rect_width" format="dimension" />
-    <attr name="zxing_possible_result_points" format="color" />
-    <attr name="zxing_preview_scaling_strategy">
-        <enum name="centerCrop" value="1" />
-        <enum name="fitCenter" value="2" />
-        <enum name="fitXY" value="3" />
-    </attr>
-    <attr name="zxing_result_view" format="color" />
-    <attr name="zxing_scanner_layout" format="reference" />
-    <attr name="zxing_use_texture_view" format="boolean" />
-    <attr name="zxing_viewfinder_laser" format="color" />
-    <attr name="zxing_viewfinder_laser_visibility" format="boolean" />
-    <attr name="zxing_viewfinder_mask" format="color" />
 </resources>

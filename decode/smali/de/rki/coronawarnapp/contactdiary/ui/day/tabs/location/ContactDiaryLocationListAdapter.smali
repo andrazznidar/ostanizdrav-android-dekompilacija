@@ -9,9 +9,6 @@
         "Lde/rki/coronawarnapp/contactdiary/util/AbstractAdapter<",
         "Lde/rki/coronawarnapp/contactdiary/ui/day/tabs/location/DiaryLocationListItem;",
         "Lde/rki/coronawarnapp/contactdiary/ui/day/tabs/location/DiaryLocationViewHolder;",
-        ">;",
-        "Lde/rki/coronawarnapp/util/lists/diffutil/AsyncDiffUtilAdapter<",
-        "Lde/rki/coronawarnapp/contactdiary/ui/day/tabs/location/DiaryLocationListItem;",
         ">;"
     }
 .end annotation

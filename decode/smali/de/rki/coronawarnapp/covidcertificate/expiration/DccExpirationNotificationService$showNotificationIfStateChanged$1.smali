@@ -17,12 +17,13 @@
     c = "de.rki.coronawarnapp.covidcertificate.expiration.DccExpirationNotificationService"
     f = "DccExpirationNotificationService.kt"
     l = {
-        0x74,
-        0x29,
-        0x33,
-        0x3f,
-        0x43,
-        0x4f
+        0x81,
+        0x2a,
+        0x34,
+        0x40,
+        0x44,
+        0x50,
+        0x5c
     }
     m = "showNotificationIfStateChanged"
 .end annotation

@@ -12,7 +12,19 @@
 
 
 # static fields
-.field public static final synthetic $r8$clinit:I
+.field public static final Companion:Lkotlin/reflect/jvm/internal/impl/serialization/deserialization/ContractDeserializer$Companion;
+
+
+# direct methods
+.method public static constructor <clinit>()V
+    .locals 1
+
+    sget-object v0, Lkotlin/reflect/jvm/internal/impl/serialization/deserialization/ContractDeserializer$Companion;->$$INSTANCE:Lkotlin/reflect/jvm/internal/impl/serialization/deserialization/ContractDeserializer$Companion;
+
+    sput-object v0, Lkotlin/reflect/jvm/internal/impl/serialization/deserialization/ContractDeserializer;->Companion:Lkotlin/reflect/jvm/internal/impl/serialization/deserialization/ContractDeserializer$Companion;
+
+    return-void
+.end method
 
 
 # virtual methods

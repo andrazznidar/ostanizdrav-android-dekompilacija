@@ -20,7 +20,7 @@
 
 
 # instance fields
-.field public final list:Lkotlin/reflect/jvm/internal/impl/protobuf/LazyStringList;
+.field private final list:Lkotlin/reflect/jvm/internal/impl/protobuf/LazyStringList;
 
 
 # direct methods
@@ -32,6 +32,14 @@
     iput-object p1, p0, Lkotlin/reflect/jvm/internal/impl/protobuf/UnmodifiableLazyStringList;->list:Lkotlin/reflect/jvm/internal/impl/protobuf/LazyStringList;
 
     return-void
+.end method
+
+.method public static synthetic access$000(Lkotlin/reflect/jvm/internal/impl/protobuf/UnmodifiableLazyStringList;)Lkotlin/reflect/jvm/internal/impl/protobuf/LazyStringList;
+    .locals 0
+
+    iget-object p0, p0, Lkotlin/reflect/jvm/internal/impl/protobuf/UnmodifiableLazyStringList;->list:Lkotlin/reflect/jvm/internal/impl/protobuf/LazyStringList;
+
+    return-object p0
 .end method
 
 
@@ -46,7 +54,17 @@
     throw p1
 .end method
 
-.method public get(I)Ljava/lang/Object;
+.method public bridge synthetic get(I)Ljava/lang/Object;
+    .locals 0
+
+    invoke-virtual {p0, p1}, Lkotlin/reflect/jvm/internal/impl/protobuf/UnmodifiableLazyStringList;->get(I)Ljava/lang/String;
+
+    move-result-object p1
+
+    return-object p1
+.end method
+
+.method public get(I)Ljava/lang/String;
     .locals 1
 
     iget-object v0, p0, Lkotlin/reflect/jvm/internal/impl/protobuf/UnmodifiableLazyStringList;->list:Lkotlin/reflect/jvm/internal/impl/protobuf/LazyStringList;

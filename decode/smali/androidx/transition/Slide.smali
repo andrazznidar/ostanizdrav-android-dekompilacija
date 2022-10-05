@@ -109,7 +109,7 @@
 
     iput v1, v0, Landroidx/transition/SidePropagation;->mSide:I
 
-    iput-object v0, p0, Landroidx/transition/Transition;->mPropagation:Landroidx/transition/TransitionPropagation;
+    iput-object v0, p0, Landroidx/transition/Transition;->mPropagation:Lorg/joda/time/Chronology;
 
     return-void
 .end method

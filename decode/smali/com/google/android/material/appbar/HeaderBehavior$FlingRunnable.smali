@@ -90,6 +90,8 @@
 
     iget-object v0, p0, Lcom/google/android/material/appbar/HeaderBehavior$FlingRunnable;->layout:Landroid/view/View;
 
+    sget-object v1, Landroidx/core/view/ViewCompat;->sViewPropertyAnimatorMap:Ljava/util/WeakHashMap;
+
     invoke-virtual {v0, p0}, Landroid/view/View;->postOnAnimation(Ljava/lang/Runnable;)V
 
     goto :goto_0
@@ -101,27 +103,7 @@
 
     iget-object v2, p0, Lcom/google/android/material/appbar/HeaderBehavior$FlingRunnable;->layout:Landroid/view/View;
 
-    check-cast v0, Lcom/google/android/material/appbar/AppBarLayout$BaseBehavior;
-
-    invoke-static {v0}, Ljava/util/Objects;->requireNonNull(Ljava/lang/Object;)Ljava/lang/Object;
-
-    check-cast v2, Lcom/google/android/material/appbar/AppBarLayout;
-
-    invoke-virtual {v0, v1, v2}, Lcom/google/android/material/appbar/AppBarLayout$BaseBehavior;->snapToChildIfNeeded(Landroidx/coordinatorlayout/widget/CoordinatorLayout;Lcom/google/android/material/appbar/AppBarLayout;)V
-
-    iget-boolean v3, v2, Lcom/google/android/material/appbar/AppBarLayout;->liftOnScroll:Z
-
-    if-eqz v3, :cond_1
-
-    invoke-virtual {v0, v1}, Lcom/google/android/material/appbar/AppBarLayout$BaseBehavior;->findFirstScrollingChild(Landroidx/coordinatorlayout/widget/CoordinatorLayout;)Landroid/view/View;
-
-    move-result-object v0
-
-    invoke-virtual {v2, v0}, Lcom/google/android/material/appbar/AppBarLayout;->shouldLift(Landroid/view/View;)Z
-
-    move-result v0
-
-    invoke-virtual {v2, v0}, Lcom/google/android/material/appbar/AppBarLayout;->setLiftedState(Z)Z
+    invoke-virtual {v0, v1, v2}, Lcom/google/android/material/appbar/HeaderBehavior;->onFlingFinished(Landroidx/coordinatorlayout/widget/CoordinatorLayout;Landroid/view/View;)V
 
     :cond_1
     :goto_0

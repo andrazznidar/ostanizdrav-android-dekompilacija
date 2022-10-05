@@ -67,7 +67,7 @@
 
     move-result-object p1
 
-    instance-of p1, p1, Lde/rki/coronawarnapp/covidcertificate/person/ui/details/items/VaccinationInfoCard$Item;
+    instance-of p1, p1, Lde/rki/coronawarnapp/covidcertificate/person/ui/details/items/ConfirmedStatusCard$Item;
 
     invoke-static {p1}, Ljava/lang/Boolean;->valueOf(Z)Ljava/lang/Boolean;
 

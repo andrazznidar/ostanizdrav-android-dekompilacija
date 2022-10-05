@@ -26,7 +26,8 @@
         ">",
         "Ljava/lang/Object;",
         "Ljava/util/Map$Entry<",
-        "TK;TV;>;"
+        "TK;TV;>;",
+        "Lkotlin/jvm/internal/markers/KMappedMarker;"
     }
 .end annotation
 
@@ -167,29 +168,32 @@
 
     const/4 v1, 0x0
 
-    if-eqz v0, :cond_0
+    if-nez v0, :cond_0
 
-    invoke-virtual {v0}, Ljava/lang/Object;->hashCode()I
-
-    move-result v0
+    move v0, v1
 
     goto :goto_0
 
     :cond_0
-    move v0, v1
+    invoke-virtual {v0}, Ljava/lang/Object;->hashCode()I
+
+    move-result v0
 
     :goto_0
     invoke-virtual {p0}, Lkotlin/collections/builders/MapBuilder$EntryRef;->getValue()Ljava/lang/Object;
 
     move-result-object v2
 
-    if-eqz v2, :cond_1
+    if-nez v2, :cond_1
 
+    goto :goto_1
+
+    :cond_1
     invoke-virtual {v2}, Ljava/lang/Object;->hashCode()I
 
     move-result v1
 
-    :cond_1
+    :goto_1
     xor-int/2addr v0, v1
 
     return v0

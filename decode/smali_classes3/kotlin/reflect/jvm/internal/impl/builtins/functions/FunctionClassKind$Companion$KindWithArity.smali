@@ -15,14 +15,18 @@
 
 
 # instance fields
-.field public final arity:I
+.field private final arity:I
 
-.field public final kind:Lkotlin/reflect/jvm/internal/impl/builtins/functions/FunctionClassKind;
+.field private final kind:Lkotlin/reflect/jvm/internal/impl/builtins/functions/FunctionClassKind;
 
 
 # direct methods
 .method public constructor <init>(Lkotlin/reflect/jvm/internal/impl/builtins/functions/FunctionClassKind;I)V
-    .locals 0
+    .locals 1
+
+    const-string v0, "kind"
+
+    invoke-static {p1, v0}, Lkotlin/jvm/internal/Intrinsics;->checkNotNullParameter(Ljava/lang/Object;Ljava/lang/String;)V
 
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
@@ -35,6 +39,22 @@
 
 
 # virtual methods
+.method public final component1()Lkotlin/reflect/jvm/internal/impl/builtins/functions/FunctionClassKind;
+    .locals 1
+
+    iget-object v0, p0, Lkotlin/reflect/jvm/internal/impl/builtins/functions/FunctionClassKind$Companion$KindWithArity;->kind:Lkotlin/reflect/jvm/internal/impl/builtins/functions/FunctionClassKind;
+
+    return-object v0
+.end method
+
+.method public final component2()I
+    .locals 1
+
+    iget v0, p0, Lkotlin/reflect/jvm/internal/impl/builtins/functions/FunctionClassKind$Companion$KindWithArity;->arity:I
+
+    return v0
+.end method
+
 .method public equals(Ljava/lang/Object;)Z
     .locals 4
 
@@ -75,6 +95,14 @@
 
     :cond_3
     return v0
+.end method
+
+.method public final getKind()Lkotlin/reflect/jvm/internal/impl/builtins/functions/FunctionClassKind;
+    .locals 1
+
+    iget-object v0, p0, Lkotlin/reflect/jvm/internal/impl/builtins/functions/FunctionClassKind$Companion$KindWithArity;->kind:Lkotlin/reflect/jvm/internal/impl/builtins/functions/FunctionClassKind;
+
+    return-object v0
 .end method
 
 .method public hashCode()I

@@ -49,7 +49,7 @@
 
     new-array v4, v2, [I
 
-    const v6, 0x7f0d00d8
+    const v6, 0x7f0d00e9
 
     aput v6, v4, v5
 
@@ -87,13 +87,13 @@
 
     sput-object v0, Lde/rki/coronawarnapp/databinding/FragmentSettingsBackgroundPriorityBindingImpl;->sViewsWithIds:Landroid/util/SparseIntArray;
 
-    const v1, 0x7f0a0649
+    const v1, 0x7f0a0699
 
     const/16 v2, 0x9
 
     invoke-virtual {v0, v1, v2}, Landroid/util/SparseIntArray;->put(II)V
 
-    const v1, 0x7f0a064b
+    const v1, 0x7f0a069b
 
     const/16 v2, 0xa
 
@@ -112,11 +112,11 @@
 
     :array_1
     .array-data 4
-        0x7f0d00d9
-        0x7f0d00d6
-        0x7f0d00f8
-        0x7f0d010a
-        0x7f0d0109
+        0x7f0d00ea
+        0x7f0d00e7
+        0x7f0d0103
+        0x7f0d0115
+        0x7f0d0114
     .end array-data
 .end method
 
@@ -346,12 +346,12 @@
 
     if-eqz v7, :cond_0
 
-    const v7, 0x7f130456
+    const v7, 0x7f13046f
 
     goto :goto_0
 
     :cond_0
-    const v7, 0x7f130455
+    const v7, 0x7f13046e
 
     :goto_0
     invoke-virtual {v6, v7}, Landroid/content/Context;->getString(I)Ljava/lang/String;
@@ -376,12 +376,12 @@
 
     if-eqz v8, :cond_1
 
-    const v8, 0x7f080195
+    const v8, 0x7f080194
 
     goto :goto_1
 
     :cond_1
-    const v8, 0x7f080194
+    const v8, 0x7f080193
 
     :goto_1
     sget-object v9, Landroidx/core/content/ContextCompat;->sLock:Ljava/lang/Object;
@@ -404,12 +404,12 @@
 
     if-eqz v4, :cond_2
 
-    const v4, 0x7f130468
+    const v4, 0x7f130479
 
     goto :goto_2
 
     :cond_2
-    const v4, 0x7f130467
+    const v4, 0x7f130478
 
     :goto_2
     invoke-virtual {v8, v4}, Landroid/content/Context;->getString(I)Ljava/lang/String;
@@ -448,17 +448,17 @@
 
     iget-object v1, p0, Landroidx/databinding/ViewDataBinding;->mRoot:Landroid/view/View;
 
-    const v2, 0x7f0800d0
+    const v2, 0x7f0800c1
 
-    invoke-static {v1, v2, v0}, Lde/rki/coronawarnapp/databinding/FragmentInformationAboutBindingImpl$$ExternalSyntheticOutline0;->m(Landroid/view/View;ILde/rki/coronawarnapp/databinding/IncludeHeaderBinding;)V
+    invoke-static {v1, v2, v0}, Landroidx/constraintlayout/core/widgets/analyzer/DependencyNode$Type$EnumUnboxingLocalUtility;->m(Landroid/view/View;ILde/rki/coronawarnapp/databinding/IncludeHeaderBinding;)V
 
     iget-object v0, p0, Lde/rki/coronawarnapp/databinding/FragmentSettingsBackgroundPriorityBinding;->settingsBackgroundPriorityHeader:Lde/rki/coronawarnapp/databinding/IncludeHeaderBinding;
 
     iget-object v1, p0, Landroidx/databinding/ViewDataBinding;->mRoot:Landroid/view/View;
 
-    const v2, 0x7f130457
+    const v2, 0x7f130470
 
-    invoke-static {v1, v2, v0}, Lde/rki/coronawarnapp/databinding/FragmentInformationAboutBindingImpl$$ExternalSyntheticOutline1;->m(Landroid/view/View;ILde/rki/coronawarnapp/databinding/IncludeHeaderBinding;)V
+    invoke-static {v1, v2, v0}, Lde/rki/coronawarnapp/server/protocols/internal/ppdd/PpaData$ExposureRiskMetadata$Builder-IA;->m(Landroid/view/View;ILde/rki/coronawarnapp/databinding/IncludeHeaderBinding;)V
 
     iget-object v0, p0, Lde/rki/coronawarnapp/databinding/FragmentSettingsBackgroundPriorityBinding;->settingsBackgroundPriorityHeaderDetails:Lde/rki/coronawarnapp/databinding/IncludeInformationDetailsBinding;
 
@@ -468,7 +468,7 @@
 
     move-result-object v1
 
-    const v2, 0x7f13044e
+    const v2, 0x7f130468
 
     invoke-virtual {v1, v2}, Landroid/content/res/Resources;->getString(I)Ljava/lang/String;
 
@@ -484,7 +484,7 @@
 
     move-result-object v1
 
-    const v2, 0x7f130453
+    const v2, 0x7f13046d
 
     invoke-virtual {v1, v2}, Landroid/content/res/Resources;->getString(I)Ljava/lang/String;
 
@@ -500,7 +500,7 @@
 
     move-result-object v1
 
-    const v2, 0x7f130450
+    const v2, 0x7f13046a
 
     invoke-virtual {v1, v2}, Landroid/content/res/Resources;->getString(I)Ljava/lang/String;
 
@@ -516,7 +516,7 @@
 
     move-result-object v1
 
-    const v2, 0x7f130451
+    const v2, 0x7f13046b
 
     invoke-virtual {v1, v2}, Landroid/content/res/Resources;->getString(I)Ljava/lang/String;
 
@@ -532,7 +532,7 @@
 
     move-result-object v1
 
-    const v2, 0x7f130452
+    const v2, 0x7f13046c
 
     invoke-virtual {v1, v2}, Landroid/content/res/Resources;->getString(I)Ljava/lang/String;
 
@@ -820,7 +820,7 @@
     :try_end_0
     .catchall {:try_start_0 .. :try_end_0} :catchall_0
 
-    const/16 p1, 0x29
+    const/16 p1, 0x27
 
     invoke-virtual {p0, p1}, Landroidx/databinding/BaseObservable;->notifyPropertyChanged(I)V
 

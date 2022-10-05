@@ -22,7 +22,7 @@
     .annotation system Ldalvik/annotation/Signature;
         value = {
             "Ljavax/inject/Provider<",
-            "Lde/rki/coronawarnapp/coronatest/antigen/profile/RATProfileSettings;",
+            "Lde/rki/coronawarnapp/coronatest/antigen/profile/RATProfileSettingsDataStore;",
             ">;"
         }
     .end annotation
@@ -45,7 +45,7 @@
         value = {
             "(",
             "Ljavax/inject/Provider<",
-            "Lde/rki/coronawarnapp/coronatest/antigen/profile/RATProfileSettings;",
+            "Lde/rki/coronawarnapp/coronatest/antigen/profile/RATProfileSettingsDataStore;",
             ">;)V"
         }
     .end annotation
@@ -68,11 +68,11 @@
 
     move-result-object v0
 
-    check-cast v0, Lde/rki/coronawarnapp/coronatest/antigen/profile/RATProfileSettings;
+    check-cast v0, Lde/rki/coronawarnapp/coronatest/antigen/profile/RATProfileSettingsDataStore;
 
     new-instance v1, Lde/rki/coronawarnapp/bugreporting/censors/submission/RatProfileCensor;
 
-    invoke-direct {v1, v0}, Lde/rki/coronawarnapp/bugreporting/censors/submission/RatProfileCensor;-><init>(Lde/rki/coronawarnapp/coronatest/antigen/profile/RATProfileSettings;)V
+    invoke-direct {v1, v0}, Lde/rki/coronawarnapp/bugreporting/censors/submission/RatProfileCensor;-><init>(Lde/rki/coronawarnapp/coronatest/antigen/profile/RATProfileSettingsDataStore;)V
 
     return-object v1
 .end method

@@ -5,7 +5,7 @@
 
 # annotations
 .annotation system Ldalvik/annotation/SourceDebugExtension;
-    value = "SMAP\nPresenceTracingRiskCalculator.kt\nKotlin\n*S Kotlin\n*F\n+ 1 PresenceTracingRiskCalculator.kt\nde/rki/coronawarnapp/presencetracing/risk/calculation/PresenceTracingRiskCalculator\n+ 2 _Collections.kt\nkotlin/collections/CollectionsKt___CollectionsKt\n+ 3 Maps.kt\nkotlin/collections/MapsKt__MapsKt\n+ 4 _Maps.kt\nkotlin/collections/MapsKt___MapsKt\n+ 5 fake.kt\nkotlin/jvm/internal/FakeKt\n*L\n1#1,65:1\n1475#2:66\n1500#2,3:67\n1503#2,3:77\n1475#2:83\n1500#2,3:84\n1503#2,3:94\n1547#2:104\n1618#2,3:105\n1475#2:108\n1500#2,3:109\n1503#2,3:119\n355#3,7:70\n355#3,7:87\n355#3,7:112\n76#4:80\n96#4,2:81\n125#4:97\n152#4,3:98\n98#4,3:101\n125#4:122\n152#4,3:123\n1#5:126\n*S KotlinDebug\n*F\n+ 1 PresenceTracingRiskCalculator.kt\nde/rki/coronawarnapp/presencetracing/risk/calculation/PresenceTracingRiskCalculator\n*L\n10#1:66\n10#1:67,3\n10#1:77,3\n13#1:83\n13#1:84,3\n13#1:94,3\n32#1:104\n32#1:105,3\n44#1:108\n44#1:109,3\n44#1:119,3\n10#1:70,7\n13#1:87,7\n44#1:112,7\n12#1:80\n12#1:81,2\n15#1:97\n15#1:98,3\n12#1:101,3\n44#1:122\n44#1:123,3\n*E\n"
+    value = "SMAP\nPresenceTracingRiskCalculator.kt\nKotlin\n*S Kotlin\n*F\n+ 1 PresenceTracingRiskCalculator.kt\nde/rki/coronawarnapp/presencetracing/risk/calculation/PresenceTracingRiskCalculator\n+ 2 _Collections.kt\nkotlin/collections/CollectionsKt___CollectionsKt\n+ 3 Maps.kt\nkotlin/collections/MapsKt__MapsKt\n+ 4 _Maps.kt\nkotlin/collections/MapsKt___MapsKt\n+ 5 fake.kt\nkotlin/jvm/internal/FakeKt\n*L\n1#1,65:1\n1475#2:66\n1500#2,3:67\n1503#2,3:77\n1475#2:83\n1500#2,3:84\n1503#2,3:94\n1547#2:104\n1618#2,3:105\n1475#2:108\n1500#2,3:109\n1503#2,3:119\n357#3,7:70\n357#3,7:87\n357#3,7:112\n76#4:80\n96#4,2:81\n125#4:97\n152#4,3:98\n98#4,3:101\n125#4:122\n152#4,3:123\n1#5:126\n*S KotlinDebug\n*F\n+ 1 PresenceTracingRiskCalculator.kt\nde/rki/coronawarnapp/presencetracing/risk/calculation/PresenceTracingRiskCalculator\n*L\n10#1:66\n10#1:67,3\n10#1:77,3\n13#1:83\n13#1:84,3\n13#1:94,3\n32#1:104\n32#1:105,3\n44#1:108\n44#1:109,3\n44#1:119,3\n10#1:70,7\n13#1:87,7\n44#1:112,7\n12#1:80\n12#1:81,2\n15#1:97\n15#1:98,3\n12#1:101,3\n44#1:122\n44#1:123,3\n*E\n"
 .end annotation
 
 
@@ -387,9 +387,7 @@
 
     check-cast v2, Ljava/lang/Iterable;
 
-    const/4 v5, 0x0
-
-    int-to-double v7, v5
+    const-wide/16 v7, 0x0
 
     invoke-interface {v2}, Ljava/lang/Iterable;->iterator()Ljava/util/Iterator;
 
@@ -538,11 +536,11 @@
 
     iget-object v8, v1, Lde/rki/coronawarnapp/presencetracing/risk/calculation/PresenceTracingRiskCalculator$calculateNormalizedTime$1;->L$8:Ljava/lang/Object;
 
-    check-cast v8, Ljava/util/Iterator;
+    check-cast v8, Ljava/util/Collection;
 
     iget-object v9, v1, Lde/rki/coronawarnapp/presencetracing/risk/calculation/PresenceTracingRiskCalculator$calculateNormalizedTime$1;->L$7:Ljava/lang/Object;
 
-    check-cast v9, Ljava/util/Collection;
+    check-cast v9, Ljava/util/Iterator;
 
     iget-object v10, v1, Lde/rki/coronawarnapp/presencetracing/risk/calculation/PresenceTracingRiskCalculator$calculateNormalizedTime$1;->L$6:Ljava/lang/Object;
 
@@ -754,9 +752,7 @@
 
     check-cast v10, Ljava/lang/Iterable;
 
-    const/4 v11, 0x0
-
-    int-to-double v11, v11
+    const-wide/16 v11, 0x0
 
     invoke-interface {v10}, Ljava/lang/Iterable;->iterator()Ljava/util/Iterator;
 
@@ -764,28 +760,30 @@
 
     move-object v13, v7
 
-    move-object v15, v13
+    move-object v14, v13
 
-    move-object v14, v8
+    move-object v15, v8
 
-    move-object v8, v10
+    move-object/from16 v18, v10
 
     move-object v10, v9
 
+    move-object/from16 v9, v18
+
     :goto_5
-    invoke-interface {v8}, Ljava/util/Iterator;->hasNext()Z
+    invoke-interface {v9}, Ljava/util/Iterator;->hasNext()Z
 
     move-result v7
 
     if-eqz v7, :cond_8
 
-    invoke-interface {v8}, Ljava/util/Iterator;->next()Ljava/lang/Object;
+    invoke-interface {v9}, Ljava/util/Iterator;->next()Ljava/lang/Object;
 
     move-result-object v7
 
     check-cast v7, Lde/rki/coronawarnapp/presencetracing/risk/calculation/CheckInWarningOverlap;
 
-    iget-object v9, v5, Lde/rki/coronawarnapp/presencetracing/risk/calculation/PresenceTracingRiskCalculator;->presenceTracingRiskMapper:Lde/rki/coronawarnapp/presencetracing/risk/calculation/PresenceTracingRiskMapper;
+    iget-object v8, v5, Lde/rki/coronawarnapp/presencetracing/risk/calculation/PresenceTracingRiskCalculator;->presenceTracingRiskMapper:Lde/rki/coronawarnapp/presencetracing/risk/calculation/PresenceTracingRiskMapper;
 
     iget v2, v7, Lde/rki/coronawarnapp/presencetracing/risk/calculation/CheckInWarningOverlap;->transmissionRiskLevel:I
 
@@ -799,13 +797,13 @@
 
     iput-object v13, v1, Lde/rki/coronawarnapp/presencetracing/risk/calculation/PresenceTracingRiskCalculator$calculateNormalizedTime$1;->L$4:Ljava/lang/Object;
 
-    iput-object v14, v1, Lde/rki/coronawarnapp/presencetracing/risk/calculation/PresenceTracingRiskCalculator$calculateNormalizedTime$1;->L$5:Ljava/lang/Object;
+    iput-object v15, v1, Lde/rki/coronawarnapp/presencetracing/risk/calculation/PresenceTracingRiskCalculator$calculateNormalizedTime$1;->L$5:Ljava/lang/Object;
 
     iput-object v10, v1, Lde/rki/coronawarnapp/presencetracing/risk/calculation/PresenceTracingRiskCalculator$calculateNormalizedTime$1;->L$6:Ljava/lang/Object;
 
-    iput-object v15, v1, Lde/rki/coronawarnapp/presencetracing/risk/calculation/PresenceTracingRiskCalculator$calculateNormalizedTime$1;->L$7:Ljava/lang/Object;
+    iput-object v9, v1, Lde/rki/coronawarnapp/presencetracing/risk/calculation/PresenceTracingRiskCalculator$calculateNormalizedTime$1;->L$7:Ljava/lang/Object;
 
-    iput-object v8, v1, Lde/rki/coronawarnapp/presencetracing/risk/calculation/PresenceTracingRiskCalculator$calculateNormalizedTime$1;->L$8:Ljava/lang/Object;
+    iput-object v14, v1, Lde/rki/coronawarnapp/presencetracing/risk/calculation/PresenceTracingRiskCalculator$calculateNormalizedTime$1;->L$8:Ljava/lang/Object;
 
     iput-object v7, v1, Lde/rki/coronawarnapp/presencetracing/risk/calculation/PresenceTracingRiskCalculator$calculateNormalizedTime$1;->L$9:Ljava/lang/Object;
 
@@ -817,7 +815,7 @@
 
     iput v0, v1, Lde/rki/coronawarnapp/presencetracing/risk/calculation/PresenceTracingRiskCalculator$calculateNormalizedTime$1;->label:I
 
-    invoke-virtual {v9, v2, v1}, Lde/rki/coronawarnapp/presencetracing/risk/calculation/PresenceTracingRiskMapper;->lookupTransmissionRiskValue(ILkotlin/coroutines/Continuation;)Ljava/lang/Object;
+    invoke-virtual {v8, v2, v1}, Lde/rki/coronawarnapp/presencetracing/risk/calculation/PresenceTracingRiskMapper;->lookupTransmissionRiskValue(ILkotlin/coroutines/Continuation;)Ljava/lang/Object;
 
     move-result-object v2
 
@@ -826,15 +824,15 @@
     return-object v3
 
     :cond_7
-    move-object v9, v15
+    move-object v8, v14
+
+    move-object/from16 v14, p1
+
+    move-object/from16 v18, v15
 
     move-object v15, v4
 
     move-object v4, v7
-
-    move-object/from16 v18, v14
-
-    move-object/from16 v14, p1
 
     move-object/from16 v19, v13
 
@@ -869,19 +867,17 @@
 
     move-object v4, v15
 
-    move-object v15, v9
+    move-object v15, v11
 
     move-object v13, v12
 
-    move-wide/from16 v18, v0
-
-    move-object/from16 v1, p1
+    move-wide v11, v0
 
     move-object v0, v14
 
-    move-object v14, v11
+    move-object/from16 v1, p1
 
-    move-wide/from16 v11, v18
+    move-object v14, v8
 
     goto :goto_5
 
@@ -912,7 +908,7 @@
 
     invoke-direct/range {v7 .. v12}, Lde/rki/coronawarnapp/presencetracing/risk/calculation/CheckInNormalizedTime;-><init>(JLorg/joda/time/LocalDate;D)V
 
-    invoke-interface {v15, v0}, Ljava/util/Collection;->add(Ljava/lang/Object;)Z
+    invoke-interface {v14, v0}, Ljava/util/Collection;->add(Ljava/lang/Object;)Z
 
     move-object/from16 v2, p0
 
@@ -920,7 +916,7 @@
 
     move-object v7, v13
 
-    move-object v8, v14
+    move-object v8, v15
 
     goto/16 :goto_4
 

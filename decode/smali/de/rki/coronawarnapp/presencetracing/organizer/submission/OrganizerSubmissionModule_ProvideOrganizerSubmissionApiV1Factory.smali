@@ -28,7 +28,7 @@
     .end annotation
 .end field
 
-.field public final module:Lde/rki/coronawarnapp/bugreporting/BugReportingSharedModule;
+.field public final module:Lde/rki/coronawarnapp/presencetracing/organizer/submission/OrganizerSubmissionModule;
 
 .field public final protoConverterFactoryProvider:Ljavax/inject/Provider;
     .annotation system Ldalvik/annotation/Signature;
@@ -52,7 +52,7 @@
 
 
 # direct methods
-.method public constructor <init>(Lde/rki/coronawarnapp/bugreporting/BugReportingSharedModule;Ljavax/inject/Provider;Ljavax/inject/Provider;Ljavax/inject/Provider;)V
+.method public constructor <init>(Lde/rki/coronawarnapp/presencetracing/organizer/submission/OrganizerSubmissionModule;Ljavax/inject/Provider;Ljavax/inject/Provider;Ljavax/inject/Provider;)V
     .locals 0
     .annotation system Ldalvik/annotation/MethodParameters;
         accessFlags = {
@@ -72,7 +72,7 @@
     .annotation system Ldalvik/annotation/Signature;
         value = {
             "(",
-            "Lde/rki/coronawarnapp/bugreporting/BugReportingSharedModule;",
+            "Lde/rki/coronawarnapp/presencetracing/organizer/submission/OrganizerSubmissionModule;",
             "Ljavax/inject/Provider<",
             "Lokhttp3/OkHttpClient;",
             ">;",
@@ -87,7 +87,7 @@
 
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
-    iput-object p1, p0, Lde/rki/coronawarnapp/presencetracing/organizer/submission/OrganizerSubmissionModule_ProvideOrganizerSubmissionApiV1Factory;->module:Lde/rki/coronawarnapp/bugreporting/BugReportingSharedModule;
+    iput-object p1, p0, Lde/rki/coronawarnapp/presencetracing/organizer/submission/OrganizerSubmissionModule_ProvideOrganizerSubmissionApiV1Factory;->module:Lde/rki/coronawarnapp/presencetracing/organizer/submission/OrganizerSubmissionModule;
 
     iput-object p2, p0, Lde/rki/coronawarnapp/presencetracing/organizer/submission/OrganizerSubmissionModule_ProvideOrganizerSubmissionApiV1Factory;->clientProvider:Ljavax/inject/Provider;
 
@@ -103,7 +103,7 @@
 .method public get()Ljava/lang/Object;
     .locals 4
 
-    iget-object v0, p0, Lde/rki/coronawarnapp/presencetracing/organizer/submission/OrganizerSubmissionModule_ProvideOrganizerSubmissionApiV1Factory;->module:Lde/rki/coronawarnapp/bugreporting/BugReportingSharedModule;
+    iget-object v0, p0, Lde/rki/coronawarnapp/presencetracing/organizer/submission/OrganizerSubmissionModule_ProvideOrganizerSubmissionApiV1Factory;->module:Lde/rki/coronawarnapp/presencetracing/organizer/submission/OrganizerSubmissionModule;
 
     iget-object v1, p0, Lde/rki/coronawarnapp/presencetracing/organizer/submission/OrganizerSubmissionModule_ProvideOrganizerSubmissionApiV1Factory;->clientProvider:Ljavax/inject/Provider;
 

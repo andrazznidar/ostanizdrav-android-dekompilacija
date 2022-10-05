@@ -52,32 +52,30 @@
         }
     .end annotation
 
-    invoke-virtual {p1}, Lcom/airbnb/lottie/parser/moshi/JsonReader;->peek()Lcom/airbnb/lottie/parser/moshi/JsonReader$Token;
+    invoke-virtual {p1}, Lcom/airbnb/lottie/parser/moshi/JsonReader;->peek$enumunboxing$()I
 
-    move-result-object v0
+    move-result v0
 
-    sget-object v1, Lcom/airbnb/lottie/parser/moshi/JsonReader$Token;->BEGIN_ARRAY:Lcom/airbnb/lottie/parser/moshi/JsonReader$Token;
+    const/4 v1, 0x1
 
     if-ne v0, v1, :cond_0
-
-    const/4 v0, 0x1
 
     goto :goto_0
 
     :cond_0
-    const/4 v0, 0x0
+    const/4 v1, 0x0
 
     :goto_0
-    if-eqz v0, :cond_1
+    if-eqz v1, :cond_1
 
     invoke-virtual {p1}, Lcom/airbnb/lottie/parser/moshi/JsonReader;->beginArray()V
 
     :cond_1
     invoke-virtual {p1}, Lcom/airbnb/lottie/parser/moshi/JsonReader;->nextDouble()D
 
-    move-result-wide v1
+    move-result-wide v2
 
-    double-to-float v1, v1
+    double-to-float v0, v2
 
     invoke-virtual {p1}, Lcom/airbnb/lottie/parser/moshi/JsonReader;->nextDouble()D
 
@@ -97,24 +95,24 @@
     goto :goto_1
 
     :cond_2
-    if-eqz v0, :cond_3
+    if-eqz v1, :cond_3
 
     invoke-virtual {p1}, Lcom/airbnb/lottie/parser/moshi/JsonReader;->endArray()V
 
     :cond_3
     new-instance p1, Lcom/airbnb/lottie/value/ScaleXY;
 
-    const/high16 v0, 0x42c80000    # 100.0f
+    const/high16 v1, 0x42c80000    # 100.0f
 
-    div-float/2addr v1, v0
+    div-float/2addr v0, v1
 
-    mul-float/2addr v1, p2
+    mul-float/2addr v0, p2
 
-    div-float/2addr v2, v0
+    div-float/2addr v2, v1
 
     mul-float/2addr v2, p2
 
-    invoke-direct {p1, v1, v2}, Lcom/airbnb/lottie/value/ScaleXY;-><init>(FF)V
+    invoke-direct {p1, v0, v2}, Lcom/airbnb/lottie/value/ScaleXY;-><init>(FF)V
 
     return-object p1
 .end method

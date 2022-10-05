@@ -54,6 +54,23 @@
     return-void
 .end method
 
+.method public currentName()Ljava/lang/String;
+    .locals 1
+    .annotation system Ldalvik/annotation/Throws;
+        value = {
+            Ljava/io/IOException;
+        }
+    .end annotation
+
+    iget-object v0, p0, Lcom/fasterxml/jackson/core/util/JsonParserDelegate;->delegate:Lcom/fasterxml/jackson/core/JsonParser;
+
+    invoke-virtual {v0}, Lcom/fasterxml/jackson/core/JsonParser;->currentName()Ljava/lang/String;
+
+    move-result-object v0
+
+    return-object v0
+.end method
+
 .method public currentToken()Lcom/fasterxml/jackson/core/JsonToken;
     .locals 1
 
@@ -732,6 +749,16 @@
     return-object v0
 .end method
 
+.method public overrideFormatFeatures(II)Lcom/fasterxml/jackson/core/JsonParser;
+    .locals 1
+
+    iget-object v0, p0, Lcom/fasterxml/jackson/core/util/JsonParserDelegate;->delegate:Lcom/fasterxml/jackson/core/JsonParser;
+
+    invoke-virtual {v0, p1, p2}, Lcom/fasterxml/jackson/core/JsonParser;->overrideFormatFeatures(II)Lcom/fasterxml/jackson/core/JsonParser;
+
+    return-object p0
+.end method
+
 .method public overrideStdFeatures(II)Lcom/fasterxml/jackson/core/JsonParser;
     .locals 1
 
@@ -791,4 +818,14 @@
     invoke-virtual {v0, p1}, Lcom/fasterxml/jackson/core/JsonParser;->setFeatureMask(I)Lcom/fasterxml/jackson/core/JsonParser;
 
     return-object p0
+.end method
+
+.method public setSchema(Lcom/fasterxml/jackson/core/FormatSchema;)V
+    .locals 1
+
+    iget-object v0, p0, Lcom/fasterxml/jackson/core/util/JsonParserDelegate;->delegate:Lcom/fasterxml/jackson/core/JsonParser;
+
+    invoke-virtual {v0, p1}, Lcom/fasterxml/jackson/core/JsonParser;->setSchema(Lcom/fasterxml/jackson/core/FormatSchema;)V
+
+    return-void
 .end method

@@ -3,11 +3,30 @@
 .source "CBORDoubleBits.java"
 
 # interfaces
+.implements Lcom/google/android/play/core/internal/zzct;
 .implements Lcom/upokecenter/cbor/ICBORNumber;
 
 
+# static fields
+.field public static final RESUME_TOKEN:Lkotlinx/coroutines/internal/Symbol;
+
+
 # direct methods
-.method public constructor <init>()V
+.method static synthetic constructor <clinit>()V
+    .locals 2
+
+    new-instance v0, Lkotlinx/coroutines/internal/Symbol;
+
+    const-string v1, "RESUME_TOKEN"
+
+    invoke-direct {v0, v1}, Lkotlinx/coroutines/internal/Symbol;-><init>(Ljava/lang/String;)V
+
+    sput-object v0, Lcom/upokecenter/cbor/CBORDoubleBits;->RESUME_TOKEN:Lkotlinx/coroutines/internal/Symbol;
+
+    return-void
+.end method
+
+.method public synthetic constructor <init>()V
     .locals 0
 
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
@@ -238,6 +257,8 @@
     cmp-long v3, v1, v3
 
     if-nez v3, :cond_6
+
+    if-nez v7, :cond_6
 
     if-eqz v0, :cond_5
 
@@ -503,6 +524,8 @@
     invoke-virtual {p1}, Ljava/lang/Long;->longValue()J
 
     move-result-wide v0
+
+    sget-object p1, Lcom/upokecenter/cbor/CBORUtilities;->EInteger1970:Lcom/upokecenter/numbers/EInteger;
 
     const-wide v2, 0xffffffffL
 
@@ -1010,6 +1033,8 @@
 
     move-result-wide v0
 
+    sget-object p1, Lcom/upokecenter/cbor/CBORUtilities;->EInteger1970:Lcom/upokecenter/numbers/EInteger;
+
     const-wide v2, 0x7fffffffffffffffL
 
     and-long/2addr v0, v2
@@ -1171,4 +1196,20 @@
 
     :goto_0
     return p1
+.end method
+
+.method public zza()Ljava/lang/Object;
+    .locals 2
+
+    sget-object v0, Lcom/google/android/play/core/assetpacks/zzo;->zza:Lcom/google/android/play/core/assetpacks/zzo;
+
+    invoke-static {v0}, Ljava/util/concurrent/Executors;->newSingleThreadExecutor(Ljava/util/concurrent/ThreadFactory;)Ljava/util/concurrent/ExecutorService;
+
+    move-result-object v0
+
+    const-string v1, "Cannot return null from a non-@Nullable @Provides method"
+
+    invoke-static {v0, v1}, Ljava/util/Objects;->requireNonNull(Ljava/lang/Object;Ljava/lang/String;)Ljava/lang/Object;
+
+    return-object v0
 .end method

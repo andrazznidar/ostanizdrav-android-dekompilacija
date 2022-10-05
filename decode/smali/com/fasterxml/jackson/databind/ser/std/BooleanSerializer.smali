@@ -18,9 +18,7 @@
 
 .annotation system Ldalvik/annotation/Signature;
     value = {
-        "Lcom/fasterxml/jackson/databind/ser/std/StdScalarSerializer<",
-        "Ljava/lang/Object;",
-        ">;",
+        "Lcom/fasterxml/jackson/databind/ser/std/StdScalarSerializer;",
         "Lcom/fasterxml/jackson/databind/ser/ContextualSerializer;"
     }
 .end annotation
@@ -74,21 +72,21 @@
         }
     .end annotation
 
-    const-class v0, Ljava/lang/Boolean;
+    iget-object v0, p0, Lcom/fasterxml/jackson/databind/ser/std/StdSerializer;->_handledType:Ljava/lang/Class;
 
     invoke-virtual {p0, p1, p2, v0}, Lcom/fasterxml/jackson/databind/ser/std/StdSerializer;->findFormatOverrides(Lcom/fasterxml/jackson/databind/SerializerProvider;Lcom/fasterxml/jackson/databind/BeanProperty;Ljava/lang/Class;)Lcom/fasterxml/jackson/annotation/JsonFormat$Value;
 
     move-result-object p1
 
-    if-eqz p1, :cond_0
+    if-eqz p1, :cond_1
 
     iget-object p1, p1, Lcom/fasterxml/jackson/annotation/JsonFormat$Value;->_shape:Lcom/fasterxml/jackson/annotation/JsonFormat$Shape;
 
     invoke-virtual {p1}, Lcom/fasterxml/jackson/annotation/JsonFormat$Shape;->isNumeric()Z
 
-    move-result p1
+    move-result p2
 
-    if-eqz p1, :cond_0
+    if-eqz p2, :cond_0
 
     new-instance p1, Lcom/fasterxml/jackson/databind/ser/std/BooleanSerializer$AsNumber;
 
@@ -99,6 +97,19 @@
     return-object p1
 
     :cond_0
+    sget-object p2, Lcom/fasterxml/jackson/annotation/JsonFormat$Shape;->STRING:Lcom/fasterxml/jackson/annotation/JsonFormat$Shape;
+
+    if-ne p1, p2, :cond_1
+
+    new-instance p1, Lcom/fasterxml/jackson/databind/ser/std/ToStringSerializer;
+
+    iget-object p2, p0, Lcom/fasterxml/jackson/databind/ser/std/StdSerializer;->_handledType:Ljava/lang/Class;
+
+    invoke-direct {p1, p2}, Lcom/fasterxml/jackson/databind/ser/std/ToStringSerializer;-><init>(Ljava/lang/Class;)V
+
+    return-object p1
+
+    :cond_1
     return-object p0
 .end method
 

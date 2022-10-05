@@ -27,8 +27,6 @@
 .method public constructor <init>(Lkotlin/jvm/internal/DefaultConstructorMarker;)V
     .locals 1
 
-    sget p1, Lkotlin/coroutines/ContinuationInterceptor;->$r8$clinit:I
-
     sget-object p1, Lkotlin/coroutines/ContinuationInterceptor$Key;->$$INSTANCE:Lkotlin/coroutines/ContinuationInterceptor$Key;
 
     sget-object v0, Lkotlinx/coroutines/CoroutineDispatcher$Key$1;->INSTANCE:Lkotlinx/coroutines/CoroutineDispatcher$Key$1;

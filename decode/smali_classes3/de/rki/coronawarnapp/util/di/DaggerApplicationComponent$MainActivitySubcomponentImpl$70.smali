@@ -45,7 +45,7 @@
 .method public get()Ljava/lang/Object;
     .locals 4
 
-    new-instance v0, Lde/rki/coronawarnapp/util/di/DaggerApplicationComponent$MAM_NRIS_NewReleaseInfoFragmentSubcomponentFactory;
+    new-instance v0, Lde/rki/coronawarnapp/util/di/DaggerApplicationComponent$DccTicketingConsentOneFragmentSubcomponentFactory;
 
     iget-object v1, p0, Lde/rki/coronawarnapp/util/di/DaggerApplicationComponent$MainActivitySubcomponentImpl$70;->this$0:Lde/rki/coronawarnapp/util/di/DaggerApplicationComponent$MainActivitySubcomponentImpl;
 
@@ -55,7 +55,7 @@
 
     const/4 v3, 0x0
 
-    invoke-direct {v0, v2, v1, v3}, Lde/rki/coronawarnapp/util/di/DaggerApplicationComponent$MAM_NRIS_NewReleaseInfoFragmentSubcomponentFactory;-><init>(Lde/rki/coronawarnapp/util/di/DaggerApplicationComponent;Lde/rki/coronawarnapp/util/di/DaggerApplicationComponent$MainActivitySubcomponentImpl;Lde/rki/coronawarnapp/util/di/DaggerApplicationComponent$MAM_NRIS_NewReleaseInfoFragmentSubcomponentFactory-IA;)V
+    invoke-direct {v0, v2, v1, v3}, Lde/rki/coronawarnapp/util/di/DaggerApplicationComponent$DccTicketingConsentOneFragmentSubcomponentFactory;-><init>(Lde/rki/coronawarnapp/util/di/DaggerApplicationComponent;Lde/rki/coronawarnapp/util/di/DaggerApplicationComponent$MainActivitySubcomponentImpl;Lde/rki/coronawarnapp/util/di/DaggerApplicationComponent$DccTicketingConsentOneFragmentSubcomponentFactory-IA;)V
 
     return-object v0
 .end method

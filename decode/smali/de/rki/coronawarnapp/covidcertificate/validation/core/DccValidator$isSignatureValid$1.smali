@@ -5,7 +5,7 @@
 
 # annotations
 .annotation system Ldalvik/annotation/EnclosingMethod;
-    value = Lde/rki/coronawarnapp/covidcertificate/validation/core/DccValidator;->isSignatureValid(Lde/rki/coronawarnapp/covidcertificate/common/certificate/DccData;Lkotlin/coroutines/Continuation;)Ljava/lang/Object;
+    value = Lde/rki/coronawarnapp/covidcertificate/validation/core/DccValidator;->isSignatureValid(Lde/rki/coronawarnapp/covidcertificate/common/certificate/DccData;Ljava/util/Date;Lkotlin/coroutines/Continuation;)Ljava/lang/Object;
 .end annotation
 
 .annotation system Ldalvik/annotation/InnerClass;
@@ -17,7 +17,7 @@
     c = "de.rki.coronawarnapp.covidcertificate.validation.core.DccValidator"
     f = "DccValidator.kt"
     l = {
-        0x36
+        0x37
     }
     m = "isSignatureValid"
 .end annotation
@@ -71,7 +71,7 @@
 
     const/4 v0, 0x0
 
-    invoke-virtual {p1, v0, p0}, Lde/rki/coronawarnapp/covidcertificate/validation/core/DccValidator;->isSignatureValid(Lde/rki/coronawarnapp/covidcertificate/common/certificate/DccData;Lkotlin/coroutines/Continuation;)Ljava/lang/Object;
+    invoke-virtual {p1, v0, v0, p0}, Lde/rki/coronawarnapp/covidcertificate/validation/core/DccValidator;->isSignatureValid(Lde/rki/coronawarnapp/covidcertificate/common/certificate/DccData;Ljava/util/Date;Lkotlin/coroutines/Continuation;)Ljava/lang/Object;
 
     move-result-object p1
 

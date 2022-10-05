@@ -61,14 +61,12 @@
     return-object v0
 .end method
 
-.method public asAnnotationMap()Lokhttp3/ConnectionPool;
-    .locals 2
+.method public asAnnotationMap()Lcom/fasterxml/jackson/databind/introspect/AnnotationMap;
+    .locals 1
 
-    new-instance v0, Lokhttp3/ConnectionPool;
+    new-instance v0, Lcom/fasterxml/jackson/databind/introspect/AnnotationMap;
 
-    const/4 v1, 0x2
-
-    invoke-direct {v0, v1}, Lokhttp3/ConnectionPool;-><init>(I)V
+    invoke-direct {v0}, Lcom/fasterxml/jackson/databind/introspect/AnnotationMap;-><init>()V
 
     return-object v0
 .end method

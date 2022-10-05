@@ -7,7 +7,7 @@
 
 
 # static fields
-.field public static final zza:Lkotlin/jvm/internal/SpreadBuilder;
+.field public static final zza:Lcom/google/android/play/core/internal/zzag;
 
 .field public static final zzb:Landroid/content/Intent;
 
@@ -46,13 +46,13 @@
 .method public static constructor <clinit>()V
     .locals 2
 
-    new-instance v0, Lkotlin/jvm/internal/SpreadBuilder;
+    new-instance v0, Lcom/google/android/play/core/internal/zzag;
 
     const-string v1, "AssetPackServiceImpl"
 
-    invoke-direct {v0, v1}, Lkotlin/jvm/internal/SpreadBuilder;-><init>(Ljava/lang/String;)V
+    invoke-direct {v0, v1}, Lcom/google/android/play/core/internal/zzag;-><init>(Ljava/lang/String;)V
 
-    sput-object v0, Lcom/google/android/play/core/assetpacks/zzaw;->zza:Lkotlin/jvm/internal/SpreadBuilder;
+    sput-object v0, Lcom/google/android/play/core/assetpacks/zzaw;->zza:Lcom/google/android/play/core/internal/zzag;
 
     new-instance v0, Landroid/content/Intent;
 
@@ -114,7 +114,7 @@
     move-object v1, p1
 
     :goto_0
-    sget-object p3, Lcom/google/android/play/core/assetpacks/zzaw;->zza:Lkotlin/jvm/internal/SpreadBuilder;
+    sget-object p3, Lcom/google/android/play/core/assetpacks/zzaw;->zza:Lcom/google/android/play/core/internal/zzag;
 
     sget-object v7, Lcom/google/android/play/core/assetpacks/zzaw;->zzb:Landroid/content/Intent;
 
@@ -132,7 +132,7 @@
 
     move-object v5, v8
 
-    invoke-direct/range {v0 .. v6}, Lcom/google/android/play/core/internal/zzas;-><init>(Landroid/content/Context;Lkotlin/jvm/internal/SpreadBuilder;Ljava/lang/String;Landroid/content/Intent;Lcom/google/android/play/core/internal/zzan;Lcom/google/android/play/core/internal/zzam;)V
+    invoke-direct/range {v0 .. v6}, Lcom/google/android/play/core/internal/zzas;-><init>(Landroid/content/Context;Lcom/google/android/play/core/internal/zzag;Ljava/lang/String;Landroid/content/Intent;Lcom/google/android/play/core/internal/zzan;Lcom/google/android/play/core/internal/zzam;)V
 
     iput-object p2, p0, Lcom/google/android/play/core/assetpacks/zzaw;->zzf:Lcom/google/android/play/core/internal/zzas;
 
@@ -166,12 +166,12 @@
 
     move-object v8, p1
 
-    invoke-direct/range {v2 .. v8}, Lcom/google/android/play/core/internal/zzas;-><init>(Landroid/content/Context;Lkotlin/jvm/internal/SpreadBuilder;Ljava/lang/String;Landroid/content/Intent;Lcom/google/android/play/core/internal/zzan;Lcom/google/android/play/core/internal/zzam;)V
+    invoke-direct/range {v2 .. v8}, Lcom/google/android/play/core/internal/zzas;-><init>(Landroid/content/Context;Lcom/google/android/play/core/internal/zzag;Ljava/lang/String;Landroid/content/Intent;Lcom/google/android/play/core/internal/zzan;Lcom/google/android/play/core/internal/zzam;)V
 
     iput-object p2, p0, Lcom/google/android/play/core/assetpacks/zzaw;->zzg:Lcom/google/android/play/core/internal/zzas;
 
     :cond_2
-    sget-object p1, Lcom/google/android/play/core/assetpacks/zzaw;->zza:Lkotlin/jvm/internal/SpreadBuilder;
+    sget-object p1, Lcom/google/android/play/core/assetpacks/zzaw;->zza:Lcom/google/android/play/core/internal/zzag;
 
     const/4 p2, 0x0
 
@@ -179,7 +179,7 @@
 
     const-string p3, "AssetPackService initiated."
 
-    invoke-virtual {p1, p3, p2}, Lkotlin/jvm/internal/SpreadBuilder;->zza(Ljava/lang/String;[Ljava/lang/Object;)I
+    invoke-virtual {p1, p3, p2}, Lcom/google/android/play/core/internal/zzag;->zza(Ljava/lang/String;[Ljava/lang/Object;)I
 
     return-void
 .end method
@@ -243,7 +243,7 @@
 .end method
 
 .method public static zzC()Lcom/google/android/play/core/tasks/zzm;
-    .locals 6
+    .locals 5
     .annotation system Ldalvik/annotation/Signature;
         value = {
             "<T:",
@@ -253,29 +253,29 @@
         }
     .end annotation
 
-    sget-object v0, Lcom/google/android/play/core/assetpacks/zzaw;->zza:Lkotlin/jvm/internal/SpreadBuilder;
+    sget-object v0, Lcom/google/android/play/core/assetpacks/zzaw;->zza:Lcom/google/android/play/core/internal/zzag;
 
     const/4 v1, 0x1
 
-    new-array v2, v1, [Ljava/lang/Object;
+    new-array v1, v1, [Ljava/lang/Object;
 
-    const/16 v3, -0xb
+    const/16 v2, -0xb
 
-    invoke-static {v3}, Ljava/lang/Integer;->valueOf(I)Ljava/lang/Integer;
+    invoke-static {v2}, Ljava/lang/Integer;->valueOf(I)Ljava/lang/Integer;
 
-    move-result-object v4
+    move-result-object v3
 
-    const/4 v5, 0x0
+    const/4 v4, 0x0
 
-    aput-object v4, v2, v5
+    aput-object v3, v1, v4
 
-    const-string v4, "onError(%d)"
+    const-string v3, "onError(%d)"
 
-    invoke-virtual {v0, v4, v2}, Lkotlin/jvm/internal/SpreadBuilder;->zzb(Ljava/lang/String;[Ljava/lang/Object;)I
+    invoke-virtual {v0, v3, v1}, Lcom/google/android/play/core/internal/zzag;->zzb(Ljava/lang/String;[Ljava/lang/Object;)I
 
-    new-instance v0, Lcom/google/android/play/core/install/InstallException;
+    new-instance v0, Lcom/google/android/play/core/assetpacks/AssetPackException;
 
-    invoke-direct {v0, v3, v1}, Lcom/google/android/play/core/install/InstallException;-><init>(II)V
+    invoke-direct {v0, v2}, Lcom/google/android/play/core/assetpacks/AssetPackException;-><init>(I)V
 
     new-instance v1, Lcom/google/android/play/core/tasks/zzm;
 
@@ -393,7 +393,7 @@
 
     if-eqz v0, :cond_0
 
-    sget-object v0, Lcom/google/android/play/core/assetpacks/zzaw;->zza:Lkotlin/jvm/internal/SpreadBuilder;
+    sget-object v0, Lcom/google/android/play/core/assetpacks/zzaw;->zza:Lcom/google/android/play/core/internal/zzag;
 
     const/4 v1, 0x0
 
@@ -401,7 +401,7 @@
 
     const-string v2, "notifyModuleCompleted"
 
-    invoke-virtual {v0, v2, v1}, Lkotlin/jvm/internal/SpreadBuilder;->zzd(Ljava/lang/String;[Ljava/lang/Object;)I
+    invoke-virtual {v0, v2, v1}, Lcom/google/android/play/core/internal/zzag;->zzd(Ljava/lang/String;[Ljava/lang/Object;)I
 
     new-instance v0, Lcom/google/android/play/core/tasks/zzi;
 
@@ -442,7 +442,7 @@
 .end method
 
 .method public final zza(ILjava/lang/String;Ljava/lang/String;I)Lcom/google/android/play/core/tasks/zzm;
-    .locals 13
+    .locals 11
     .annotation system Ldalvik/annotation/Signature;
         value = {
             "(I",
@@ -453,20 +453,18 @@
         }
     .end annotation
 
-    move-object v9, p0
-
-    iget-object v0, v9, Lcom/google/android/play/core/assetpacks/zzaw;->zzf:Lcom/google/android/play/core/internal/zzas;
+    iget-object v0, p0, Lcom/google/android/play/core/assetpacks/zzaw;->zzf:Lcom/google/android/play/core/internal/zzas;
 
     if-nez v0, :cond_0
 
     invoke-static {}, Lcom/google/android/play/core/assetpacks/zzaw;->zzC()Lcom/google/android/play/core/tasks/zzm;
 
-    move-result-object v0
+    move-result-object p1
 
-    return-object v0
+    return-object p1
 
     :cond_0
-    sget-object v0, Lcom/google/android/play/core/assetpacks/zzaw;->zza:Lkotlin/jvm/internal/SpreadBuilder;
+    sget-object v0, Lcom/google/android/play/core/assetpacks/zzaw;->zza:Lcom/google/android/play/core/internal/zzag;
 
     const/4 v1, 0x4
 
@@ -482,7 +480,7 @@
 
     const/4 v2, 0x2
 
-    invoke-static/range {p4 .. p4}, Ljava/lang/Integer;->valueOf(I)Ljava/lang/Integer;
+    invoke-static {p4}, Ljava/lang/Integer;->valueOf(I)Ljava/lang/Integer;
 
     move-result-object v3
 
@@ -498,41 +496,39 @@
 
     const-string v2, "getChunkFileDescriptor(%s, %s, %d, session=%d)"
 
-    invoke-virtual {v0, v2, v1}, Lkotlin/jvm/internal/SpreadBuilder;->zzd(Ljava/lang/String;[Ljava/lang/Object;)I
+    invoke-virtual {v0, v2, v1}, Lcom/google/android/play/core/internal/zzag;->zzd(Ljava/lang/String;[Ljava/lang/Object;)I
 
-    new-instance v10, Lcom/google/android/play/core/tasks/zzi;
+    new-instance v0, Lcom/google/android/play/core/tasks/zzi;
 
-    invoke-direct {v10}, Lcom/google/android/play/core/tasks/zzi;-><init>()V
+    invoke-direct {v0}, Lcom/google/android/play/core/tasks/zzi;-><init>()V
 
-    iget-object v11, v9, Lcom/google/android/play/core/assetpacks/zzaw;->zzf:Lcom/google/android/play/core/internal/zzas;
+    iget-object v1, p0, Lcom/google/android/play/core/assetpacks/zzaw;->zzf:Lcom/google/android/play/core/internal/zzas;
 
-    new-instance v12, Lcom/google/android/play/core/assetpacks/zzag;
+    new-instance v2, Lcom/google/android/play/core/assetpacks/zzaj;
 
-    const/4 v8, 0x1
+    move-object v3, v2
 
-    move-object v0, v12
+    move-object v4, p0
 
-    move-object v1, p0
+    move-object v5, v0
 
-    move-object v2, v10
+    move v6, p1
 
-    move v3, p1
+    move-object v7, p2
 
-    move-object v4, p2
+    move-object v8, p3
 
-    move-object/from16 v5, p3
+    move v9, p4
 
-    move/from16 v6, p4
+    move-object v10, v0
 
-    move-object v7, v10
+    invoke-direct/range {v3 .. v10}, Lcom/google/android/play/core/assetpacks/zzaj;-><init>(Lcom/google/android/play/core/assetpacks/zzaw;Lcom/google/android/play/core/tasks/zzi;ILjava/lang/String;Ljava/lang/String;ILcom/google/android/play/core/tasks/zzi;)V
 
-    invoke-direct/range {v0 .. v8}, Lcom/google/android/play/core/assetpacks/zzag;-><init>(Lcom/google/android/play/core/assetpacks/zzaw;Lcom/google/android/play/core/tasks/zzi;ILjava/lang/String;Ljava/lang/String;ILcom/google/android/play/core/tasks/zzi;I)V
+    invoke-virtual {v1, v2, v0}, Lcom/google/android/play/core/internal/zzas;->zzq(Lcom/google/android/play/core/internal/zzah;Lcom/google/android/play/core/tasks/zzi;)V
 
-    invoke-virtual {v11, v12, v10}, Lcom/google/android/play/core/internal/zzas;->zzq(Lcom/google/android/play/core/internal/zzah;Lcom/google/android/play/core/tasks/zzi;)V
+    iget-object p1, v0, Lcom/google/android/play/core/tasks/zzi;->zza:Lcom/google/android/play/core/tasks/zzm;
 
-    iget-object v0, v10, Lcom/google/android/play/core/tasks/zzi;->zza:Lcom/google/android/play/core/tasks/zzm;
-
-    return-object v0
+    return-object p1
 .end method
 
 .method public final zzd(Ljava/util/Map;)Lcom/google/android/play/core/tasks/zzm;
@@ -559,7 +555,7 @@
     return-object p1
 
     :cond_0
-    sget-object v0, Lcom/google/android/play/core/assetpacks/zzaw;->zza:Lkotlin/jvm/internal/SpreadBuilder;
+    sget-object v0, Lcom/google/android/play/core/assetpacks/zzaw;->zza:Lcom/google/android/play/core/internal/zzag;
 
     const/4 v1, 0x0
 
@@ -567,7 +563,7 @@
 
     const-string/jumbo v2, "syncPacks"
 
-    invoke-virtual {v0, v2, v1}, Lkotlin/jvm/internal/SpreadBuilder;->zzd(Ljava/lang/String;[Ljava/lang/Object;)I
+    invoke-virtual {v0, v2, v1}, Lcom/google/android/play/core/internal/zzag;->zzd(Ljava/lang/String;[Ljava/lang/Object;)I
 
     new-instance v0, Lcom/google/android/play/core/tasks/zzi;
 
@@ -604,7 +600,7 @@
     return-void
 
     :cond_0
-    sget-object v0, Lcom/google/android/play/core/assetpacks/zzaw;->zza:Lkotlin/jvm/internal/SpreadBuilder;
+    sget-object v0, Lcom/google/android/play/core/assetpacks/zzaw;->zza:Lcom/google/android/play/core/internal/zzag;
 
     const/4 v1, 0x1
 
@@ -616,7 +612,7 @@
 
     const-string v2, "cancelDownloads(%s)"
 
-    invoke-virtual {v0, v2, v1}, Lkotlin/jvm/internal/SpreadBuilder;->zzd(Ljava/lang/String;[Ljava/lang/Object;)I
+    invoke-virtual {v0, v2, v1}, Lcom/google/android/play/core/internal/zzag;->zzd(Ljava/lang/String;[Ljava/lang/Object;)I
 
     new-instance v0, Lcom/google/android/play/core/tasks/zzi;
 
@@ -645,13 +641,13 @@
 
     if-nez v0, :cond_0
 
-    sget-object v0, Lcom/google/android/play/core/assetpacks/zzaw;->zza:Lkotlin/jvm/internal/SpreadBuilder;
+    sget-object v0, Lcom/google/android/play/core/assetpacks/zzaw;->zza:Lcom/google/android/play/core/internal/zzag;
 
     const-string v2, "Keep alive connection manager is not initialized."
 
     new-array v1, v1, [Ljava/lang/Object;
 
-    invoke-virtual {v0, v2, v1}, Lkotlin/jvm/internal/SpreadBuilder;->zze(Ljava/lang/String;[Ljava/lang/Object;)I
+    invoke-virtual {v0, v2, v1}, Lcom/google/android/play/core/internal/zzag;->zze(Ljava/lang/String;[Ljava/lang/Object;)I
     :try_end_0
     .catchall {:try_start_0 .. :try_end_0} :catchall_0
 
@@ -661,13 +657,13 @@
 
     :cond_0
     :try_start_1
-    sget-object v0, Lcom/google/android/play/core/assetpacks/zzaw;->zza:Lkotlin/jvm/internal/SpreadBuilder;
+    sget-object v0, Lcom/google/android/play/core/assetpacks/zzaw;->zza:Lcom/google/android/play/core/internal/zzag;
 
     const-string v2, "keepAlive"
 
     new-array v3, v1, [Ljava/lang/Object;
 
-    invoke-virtual {v0, v2, v3}, Lkotlin/jvm/internal/SpreadBuilder;->zzd(Ljava/lang/String;[Ljava/lang/Object;)I
+    invoke-virtual {v0, v2, v3}, Lcom/google/android/play/core/internal/zzag;->zzd(Ljava/lang/String;[Ljava/lang/Object;)I
 
     iget-object v2, p0, Lcom/google/android/play/core/assetpacks/zzaw;->zzh:Ljava/util/concurrent/atomic/AtomicBoolean;
 
@@ -683,7 +679,7 @@
 
     new-array v1, v1, [Ljava/lang/Object;
 
-    invoke-virtual {v0, v2, v1}, Lkotlin/jvm/internal/SpreadBuilder;->zzd(Ljava/lang/String;[Ljava/lang/Object;)I
+    invoke-virtual {v0, v2, v1}, Lcom/google/android/play/core/internal/zzag;->zzd(Ljava/lang/String;[Ljava/lang/Object;)I
     :try_end_1
     .catchall {:try_start_1 .. :try_end_1} :catchall_0
 
@@ -720,15 +716,13 @@
 .end method
 
 .method public final zzg(ILjava/lang/String;Ljava/lang/String;I)V
-    .locals 13
+    .locals 11
 
-    move-object v9, p0
-
-    iget-object v0, v9, Lcom/google/android/play/core/assetpacks/zzaw;->zzf:Lcom/google/android/play/core/internal/zzas;
+    iget-object v0, p0, Lcom/google/android/play/core/assetpacks/zzaw;->zzf:Lcom/google/android/play/core/internal/zzas;
 
     if-eqz v0, :cond_0
 
-    sget-object v0, Lcom/google/android/play/core/assetpacks/zzaw;->zza:Lkotlin/jvm/internal/SpreadBuilder;
+    sget-object v0, Lcom/google/android/play/core/assetpacks/zzaw;->zza:Lcom/google/android/play/core/internal/zzag;
 
     const/4 v1, 0x0
 
@@ -736,50 +730,46 @@
 
     const-string v2, "notifyChunkTransferred"
 
-    invoke-virtual {v0, v2, v1}, Lkotlin/jvm/internal/SpreadBuilder;->zzd(Ljava/lang/String;[Ljava/lang/Object;)I
+    invoke-virtual {v0, v2, v1}, Lcom/google/android/play/core/internal/zzag;->zzd(Ljava/lang/String;[Ljava/lang/Object;)I
 
-    new-instance v10, Lcom/google/android/play/core/tasks/zzi;
+    new-instance v0, Lcom/google/android/play/core/tasks/zzi;
 
-    invoke-direct {v10}, Lcom/google/android/play/core/tasks/zzi;-><init>()V
+    invoke-direct {v0}, Lcom/google/android/play/core/tasks/zzi;-><init>()V
 
-    iget-object v11, v9, Lcom/google/android/play/core/assetpacks/zzaw;->zzf:Lcom/google/android/play/core/internal/zzas;
+    iget-object v1, p0, Lcom/google/android/play/core/assetpacks/zzaw;->zzf:Lcom/google/android/play/core/internal/zzas;
 
-    new-instance v12, Lcom/google/android/play/core/assetpacks/zzag;
+    new-instance v2, Lcom/google/android/play/core/assetpacks/zzag;
 
-    const/4 v8, 0x0
+    move-object v3, v2
 
-    move-object v0, v12
+    move-object v4, p0
 
-    move-object v1, p0
+    move-object v5, v0
 
-    move-object v2, v10
+    move v6, p1
 
-    move v3, p1
+    move-object v7, p2
 
-    move-object v4, p2
+    move-object v8, p3
 
-    move-object/from16 v5, p3
+    move v9, p4
 
-    move/from16 v6, p4
+    move-object v10, v0
 
-    move-object v7, v10
+    invoke-direct/range {v3 .. v10}, Lcom/google/android/play/core/assetpacks/zzag;-><init>(Lcom/google/android/play/core/assetpacks/zzaw;Lcom/google/android/play/core/tasks/zzi;ILjava/lang/String;Ljava/lang/String;ILcom/google/android/play/core/tasks/zzi;)V
 
-    invoke-direct/range {v0 .. v8}, Lcom/google/android/play/core/assetpacks/zzag;-><init>(Lcom/google/android/play/core/assetpacks/zzaw;Lcom/google/android/play/core/tasks/zzi;ILjava/lang/String;Ljava/lang/String;ILcom/google/android/play/core/tasks/zzi;I)V
-
-    invoke-virtual {v11, v12, v10}, Lcom/google/android/play/core/internal/zzas;->zzq(Lcom/google/android/play/core/internal/zzah;Lcom/google/android/play/core/tasks/zzi;)V
+    invoke-virtual {v1, v2, v0}, Lcom/google/android/play/core/internal/zzas;->zzq(Lcom/google/android/play/core/internal/zzah;Lcom/google/android/play/core/tasks/zzi;)V
 
     return-void
 
     :cond_0
-    new-instance v0, Lcom/google/android/play/core/assetpacks/zzch;
+    new-instance p2, Lcom/google/android/play/core/assetpacks/zzch;
 
-    const-string v1, "The Play Store app is not installed or is an unofficial version."
+    const-string p3, "The Play Store app is not installed or is an unofficial version."
 
-    move v2, p1
+    invoke-direct {p2, p3, p1}, Lcom/google/android/play/core/assetpacks/zzch;-><init>(Ljava/lang/String;I)V
 
-    invoke-direct {v0, v1, p1}, Lcom/google/android/play/core/assetpacks/zzch;-><init>(Ljava/lang/String;I)V
-
-    throw v0
+    throw p2
 .end method
 
 .method public final zzh(ILjava/lang/String;)V
@@ -799,7 +789,7 @@
 
     if-eqz v0, :cond_0
 
-    sget-object v0, Lcom/google/android/play/core/assetpacks/zzaw;->zza:Lkotlin/jvm/internal/SpreadBuilder;
+    sget-object v0, Lcom/google/android/play/core/assetpacks/zzaw;->zza:Lcom/google/android/play/core/internal/zzag;
 
     const/4 v1, 0x0
 
@@ -807,7 +797,7 @@
 
     const-string v2, "notifySessionFailed"
 
-    invoke-virtual {v0, v2, v1}, Lkotlin/jvm/internal/SpreadBuilder;->zzd(Ljava/lang/String;[Ljava/lang/Object;)I
+    invoke-virtual {v0, v2, v1}, Lcom/google/android/play/core/internal/zzag;->zzd(Ljava/lang/String;[Ljava/lang/Object;)I
 
     new-instance v0, Lcom/google/android/play/core/tasks/zzi;
 

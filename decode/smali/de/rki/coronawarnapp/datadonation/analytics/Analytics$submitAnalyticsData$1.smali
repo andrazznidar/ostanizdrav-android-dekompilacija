@@ -17,10 +17,10 @@
     c = "de.rki.coronawarnapp.datadonation.analytics.Analytics"
     f = "Analytics.kt"
     l = {
-        0x72,
-        0x79,
-        0x85,
-        0x90
+        0x75,
+        0x7c,
+        0x88,
+        0x93
     }
     m = "submitAnalyticsData"
 .end annotation

@@ -1,44 +1,49 @@
 .class Lj$/time/format/c;
-.super Lj$/time/format/B;
+.super Ljava/lang/Object;
 
-
-# instance fields
-.field final synthetic d:Lj$/time/format/A;
+# interfaces
+.implements Ljava/util/Comparator;
 
 
 # direct methods
-.method constructor <init>(Lj$/time/format/g;Lj$/time/format/A;)V
+.method public synthetic constructor <init>(I)V
     .locals 0
 
-    iput-object p2, p0, Lj$/time/format/c;->d:Lj$/time/format/A;
-
-    invoke-direct {p0}, Lj$/time/format/B;-><init>()V
+    invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
     return-void
 .end method
 
 
 # virtual methods
-.method public d(Lj$/time/temporal/o;JLj$/time/format/G;Ljava/util/Locale;)Ljava/lang/String;
+.method public compare(Ljava/lang/Object;Ljava/lang/Object;)I
     .locals 0
 
-    iget-object p1, p0, Lj$/time/format/c;->d:Lj$/time/format/A;
+    check-cast p1, Ljava/util/Map$Entry;
 
-    invoke-virtual {p1, p2, p3, p4}, Lj$/time/format/A;->a(JLj$/time/format/G;)Ljava/lang/String;
+    check-cast p2, Ljava/util/Map$Entry;
+
+    invoke-interface {p2}, Ljava/util/Map$Entry;->getKey()Ljava/lang/Object;
+
+    move-result-object p2
+
+    check-cast p2, Ljava/lang/String;
+
+    invoke-virtual {p2}, Ljava/lang/String;->length()I
+
+    move-result p2
+
+    invoke-interface {p1}, Ljava/util/Map$Entry;->getKey()Ljava/lang/Object;
 
     move-result-object p1
 
-    return-object p1
-.end method
+    check-cast p1, Ljava/lang/String;
 
-.method public e(Lj$/time/temporal/o;Lj$/time/format/G;Ljava/util/Locale;)Ljava/util/Iterator;
-    .locals 0
+    invoke-virtual {p1}, Ljava/lang/String;->length()I
 
-    iget-object p1, p0, Lj$/time/format/c;->d:Lj$/time/format/A;
+    move-result p1
 
-    invoke-virtual {p1, p2}, Lj$/time/format/A;->b(Lj$/time/format/G;)Ljava/util/Iterator;
+    sub-int/2addr p2, p1
 
-    move-result-object p1
-
-    return-object p1
+    return p2
 .end method

@@ -103,3 +103,17 @@
 
     return-wide p1
 .end method
+
+.method public toTimeZone()Ljava/util/TimeZone;
+    .locals 3
+
+    new-instance v0, Ljava/util/SimpleTimeZone;
+
+    iget-object v1, p0, Lorg/joda/time/DateTimeZone;->iID:Ljava/lang/String;
+
+    const/4 v2, 0x0
+
+    invoke-direct {v0, v2, v1}, Ljava/util/SimpleTimeZone;-><init>(ILjava/lang/String;)V
+
+    return-object v0
+.end method

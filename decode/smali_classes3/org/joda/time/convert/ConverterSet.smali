@@ -297,7 +297,7 @@
 
     const-string v1, "\" from remaining set: "
 
-    invoke-static {p1, v0, v1}, Lcom/fasterxml/jackson/annotation/JsonInclude$Value$$ExternalSyntheticOutline0;->m(Ljava/lang/Class;Ljava/lang/StringBuilder;Ljava/lang/String;)V
+    invoke-static {p1, v0, v1}, Landroidx/datastore/preferences/protobuf/MessageSchema$$ExternalSyntheticOutline0;->m(Ljava/lang/Class;Ljava/lang/StringBuilder;Ljava/lang/String;)V
 
     :goto_6
     if-ge v2, v8, :cond_f

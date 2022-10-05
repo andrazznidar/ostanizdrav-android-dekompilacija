@@ -41,7 +41,7 @@
 
     new-array v5, v2, [I
 
-    const v6, 0x7f0d00d8
+    const v6, 0x7f0d00e9
 
     aput v6, v5, v4
 
@@ -61,7 +61,7 @@
 
     new-array v5, v2, [I
 
-    const v6, 0x7f0d00d9
+    const v6, 0x7f0d00ea
 
     aput v6, v5, v4
 
@@ -196,17 +196,17 @@
 
     iget-object v1, p0, Landroidx/databinding/ViewDataBinding;->mRoot:Landroid/view/View;
 
-    const v2, 0x7f0800d0
+    const v2, 0x7f0800c1
 
-    invoke-static {v1, v2, v0}, Lde/rki/coronawarnapp/databinding/FragmentInformationAboutBindingImpl$$ExternalSyntheticOutline0;->m(Landroid/view/View;ILde/rki/coronawarnapp/databinding/IncludeHeaderBinding;)V
+    invoke-static {v1, v2, v0}, Landroidx/constraintlayout/core/widgets/analyzer/DependencyNode$Type$EnumUnboxingLocalUtility;->m(Landroid/view/View;ILde/rki/coronawarnapp/databinding/IncludeHeaderBinding;)V
 
     iget-object v0, p0, Lde/rki/coronawarnapp/databinding/FragmentInformationTechnicalBinding;->informationTechnicalHeader:Lde/rki/coronawarnapp/databinding/IncludeHeaderBinding;
 
     iget-object v1, p0, Landroidx/databinding/ViewDataBinding;->mRoot:Landroid/view/View;
 
-    const v2, 0x7f130221
+    const v2, 0x7f130244
 
-    invoke-static {v1, v2, v0}, Lde/rki/coronawarnapp/databinding/FragmentInformationAboutBindingImpl$$ExternalSyntheticOutline1;->m(Landroid/view/View;ILde/rki/coronawarnapp/databinding/IncludeHeaderBinding;)V
+    invoke-static {v1, v2, v0}, Lde/rki/coronawarnapp/server/protocols/internal/ppdd/PpaData$ExposureRiskMetadata$Builder-IA;->m(Landroid/view/View;ILde/rki/coronawarnapp/databinding/IncludeHeaderBinding;)V
 
     iget-object v0, p0, Lde/rki/coronawarnapp/databinding/FragmentInformationTechnicalBinding;->informationTechnicalHeaderDetails:Lde/rki/coronawarnapp/databinding/IncludeInformationDetailsBinding;
 
@@ -218,7 +218,7 @@
 
     const-string/jumbo v2, "technical.html"
 
-    invoke-static {v1, v2}, Lcom/google/android/gms/internal/nearby/zzfc;->parseHtmlFromAssets(Landroid/content/Context;Ljava/lang/String;)Landroid/text/Spanned;
+    invoke-static {v1, v2}, Lorg/ejml/dense/row/misc/ImplCommonOps_DDMA;->parseHtmlFromAssets(Landroid/content/Context;Ljava/lang/String;)Landroid/text/Spanned;
 
     move-result-object v1
 
@@ -232,7 +232,7 @@
 
     move-result-object v1
 
-    const v2, 0x7f080137
+    const v2, 0x7f08012c
 
     invoke-static {v1, v2}, Landroidx/appcompat/content/res/AppCompatResources;->getDrawable(Landroid/content/Context;I)Landroid/graphics/drawable/Drawable;
 
@@ -248,7 +248,7 @@
 
     move-result-object v1
 
-    const v2, 0x7f130220
+    const v2, 0x7f130243
 
     invoke-virtual {v1, v2}, Landroid/content/res/Resources;->getString(I)Ljava/lang/String;
 

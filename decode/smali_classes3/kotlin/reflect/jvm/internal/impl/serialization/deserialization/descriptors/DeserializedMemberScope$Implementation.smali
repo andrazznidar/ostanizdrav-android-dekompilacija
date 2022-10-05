@@ -1,4 +1,4 @@
-.class public interface abstract Lkotlin/reflect/jvm/internal/impl/serialization/deserialization/descriptors/DeserializedMemberScope$Implementation;
+.class interface abstract Lkotlin/reflect/jvm/internal/impl/serialization/deserialization/descriptors/DeserializedMemberScope$Implementation;
 .super Ljava/lang/Object;
 .source "DeserializedMemberScope.kt"
 

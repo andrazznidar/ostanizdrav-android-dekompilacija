@@ -17,3 +17,11 @@
         "TT;>;"
     }
 .end annotation
+
+
+# virtual methods
+.method public abstract synthetic invoke()Ljava/lang/Object;
+.end method
+
+.method public abstract isComputed()Z
+.end method

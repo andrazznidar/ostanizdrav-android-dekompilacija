@@ -9,6 +9,10 @@
 # instance fields
 .field public final error:Ljava/lang/Throwable;
 
+.field public final isAllowListError:Z
+
+.field public final isDccTicketingError:Z
+
 
 # direct methods
 .method public constructor <init>(Ljava/lang/Throwable;)V
@@ -21,6 +25,14 @@
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
     iput-object p1, p0, Lde/rki/coronawarnapp/qrcode/ui/Error;->error:Ljava/lang/Throwable;
+
+    instance-of v0, p1, Lde/rki/coronawarnapp/dccticketing/core/qrcode/DccTicketingInvalidQrCodeException;
+
+    iput-boolean v0, p0, Lde/rki/coronawarnapp/qrcode/ui/Error;->isDccTicketingError:Z
+
+    instance-of p1, p1, Lde/rki/coronawarnapp/dccticketing/core/allowlist/internal/DccTicketingAllowListException;
+
+    iput-boolean p1, p0, Lde/rki/coronawarnapp/qrcode/ui/Error;->isAllowListError:Z
 
     return-void
 .end method

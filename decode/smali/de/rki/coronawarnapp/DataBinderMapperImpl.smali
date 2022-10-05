@@ -13,811 +13,763 @@
 
     new-instance v0, Landroid/util/SparseIntArray;
 
-    const/16 v1, 0x86
+    const/16 v1, 0x7e
 
     invoke-direct {v0, v1}, Landroid/util/SparseIntArray;-><init>(I)V
 
     sput-object v0, Lde/rki/coronawarnapp/DataBinderMapperImpl;->INTERNAL_LAYOUT_ID_LOOKUP:Landroid/util/SparseIntArray;
 
-    const v2, 0x7f0d002d
+    const v2, 0x7f0d002e
 
     const/4 v3, 0x1
 
     invoke-virtual {v0, v2, v3}, Landroid/util/SparseIntArray;->put(II)V
 
-    const v2, 0x7f0d002f
+    const v2, 0x7f0d0030
 
     const/4 v3, 0x2
 
     invoke-virtual {v0, v2, v3}, Landroid/util/SparseIntArray;->put(II)V
 
-    const v2, 0x7f0d0030
+    const v2, 0x7f0d0031
 
     const/4 v3, 0x3
 
     invoke-virtual {v0, v2, v3}, Landroid/util/SparseIntArray;->put(II)V
 
-    const v2, 0x7f0d0031
+    const v2, 0x7f0d0032
 
     const/4 v3, 0x4
 
     invoke-virtual {v0, v2, v3}, Landroid/util/SparseIntArray;->put(II)V
 
-    const v2, 0x7f0d0032
+    const v2, 0x7f0d0034
 
     const/4 v3, 0x5
 
     invoke-virtual {v0, v2, v3}, Landroid/util/SparseIntArray;->put(II)V
 
-    const v2, 0x7f0d0034
+    const v2, 0x7f0d0035
 
     const/4 v3, 0x6
 
     invoke-virtual {v0, v2, v3}, Landroid/util/SparseIntArray;->put(II)V
 
-    const v2, 0x7f0d0035
+    const v2, 0x7f0d0041
 
     const/4 v3, 0x7
 
     invoke-virtual {v0, v2, v3}, Landroid/util/SparseIntArray;->put(II)V
 
-    const v2, 0x7f0d0041
+    const v2, 0x7f0d0043
 
     const/16 v3, 0x8
 
     invoke-virtual {v0, v2, v3}, Landroid/util/SparseIntArray;->put(II)V
 
-    const v2, 0x7f0d0043
+    const v2, 0x7f0d007d
 
     const/16 v3, 0x9
 
     invoke-virtual {v0, v2, v3}, Landroid/util/SparseIntArray;->put(II)V
 
-    const v2, 0x7f0d006f
+    const v2, 0x7f0d007e
 
     const/16 v3, 0xa
 
     invoke-virtual {v0, v2, v3}, Landroid/util/SparseIntArray;->put(II)V
 
-    const v2, 0x7f0d0070
+    const v2, 0x7f0d007f
 
     const/16 v3, 0xb
 
     invoke-virtual {v0, v2, v3}, Landroid/util/SparseIntArray;->put(II)V
 
-    const v2, 0x7f0d0071
+    const v2, 0x7f0d0080
 
     const/16 v3, 0xc
 
     invoke-virtual {v0, v2, v3}, Landroid/util/SparseIntArray;->put(II)V
 
-    const v2, 0x7f0d0072
+    const v2, 0x7f0d0081
 
     const/16 v3, 0xd
 
     invoke-virtual {v0, v2, v3}, Landroid/util/SparseIntArray;->put(II)V
 
-    const v2, 0x7f0d0073
+    const v2, 0x7f0d0082
 
     const/16 v3, 0xe
 
     invoke-virtual {v0, v2, v3}, Landroid/util/SparseIntArray;->put(II)V
 
-    const v2, 0x7f0d0074
+    const v2, 0x7f0d0083
 
     const/16 v3, 0xf
 
     invoke-virtual {v0, v2, v3}, Landroid/util/SparseIntArray;->put(II)V
 
-    const v2, 0x7f0d0075
+    const v2, 0x7f0d0084
 
     const/16 v3, 0x10
 
     invoke-virtual {v0, v2, v3}, Landroid/util/SparseIntArray;->put(II)V
 
-    const v2, 0x7f0d0076
+    const v2, 0x7f0d0085
 
     const/16 v3, 0x11
 
     invoke-virtual {v0, v2, v3}, Landroid/util/SparseIntArray;->put(II)V
 
-    const v2, 0x7f0d0077
+    const v2, 0x7f0d0086
 
     const/16 v3, 0x12
 
     invoke-virtual {v0, v2, v3}, Landroid/util/SparseIntArray;->put(II)V
 
-    const v2, 0x7f0d0078
+    const v2, 0x7f0d0087
 
     const/16 v3, 0x13
 
     invoke-virtual {v0, v2, v3}, Landroid/util/SparseIntArray;->put(II)V
 
-    const v2, 0x7f0d0079
+    const v2, 0x7f0d0088
 
     const/16 v3, 0x14
 
     invoke-virtual {v0, v2, v3}, Landroid/util/SparseIntArray;->put(II)V
 
-    const v2, 0x7f0d007a
+    const v2, 0x7f0d0089
 
     const/16 v3, 0x15
 
     invoke-virtual {v0, v2, v3}, Landroid/util/SparseIntArray;->put(II)V
 
-    const v2, 0x7f0d007b
+    const v2, 0x7f0d008a
 
     const/16 v3, 0x16
 
     invoke-virtual {v0, v2, v3}, Landroid/util/SparseIntArray;->put(II)V
 
-    const v2, 0x7f0d007c
+    const v2, 0x7f0d008b
 
     const/16 v3, 0x17
 
     invoke-virtual {v0, v2, v3}, Landroid/util/SparseIntArray;->put(II)V
 
-    const v2, 0x7f0d007d
+    const v2, 0x7f0d008c
 
     const/16 v3, 0x18
 
     invoke-virtual {v0, v2, v3}, Landroid/util/SparseIntArray;->put(II)V
 
-    const v2, 0x7f0d007e
+    const v2, 0x7f0d008d
 
     const/16 v3, 0x19
 
     invoke-virtual {v0, v2, v3}, Landroid/util/SparseIntArray;->put(II)V
 
-    const v2, 0x7f0d007f
+    const v2, 0x7f0d008e
 
     const/16 v3, 0x1a
 
     invoke-virtual {v0, v2, v3}, Landroid/util/SparseIntArray;->put(II)V
 
-    const v2, 0x7f0d0080
+    const v2, 0x7f0d008f
 
     const/16 v3, 0x1b
 
     invoke-virtual {v0, v2, v3}, Landroid/util/SparseIntArray;->put(II)V
 
-    const v2, 0x7f0d0081
+    const v2, 0x7f0d0095
 
     const/16 v3, 0x1c
 
     invoke-virtual {v0, v2, v3}, Landroid/util/SparseIntArray;->put(II)V
 
-    const v2, 0x7f0d0087
+    const v2, 0x7f0d0096
 
     const/16 v3, 0x1d
 
     invoke-virtual {v0, v2, v3}, Landroid/util/SparseIntArray;->put(II)V
 
-    const v2, 0x7f0d0088
+    const v2, 0x7f0d0098
 
     const/16 v3, 0x1e
 
     invoke-virtual {v0, v2, v3}, Landroid/util/SparseIntArray;->put(II)V
 
-    const v2, 0x7f0d008a
+    const v2, 0x7f0d0099
 
     const/16 v3, 0x1f
 
     invoke-virtual {v0, v2, v3}, Landroid/util/SparseIntArray;->put(II)V
 
-    const v2, 0x7f0d008b
+    const v2, 0x7f0d009a
 
     const/16 v3, 0x20
 
     invoke-virtual {v0, v2, v3}, Landroid/util/SparseIntArray;->put(II)V
 
-    const v2, 0x7f0d008c
+    const v2, 0x7f0d009b
 
     const/16 v3, 0x21
 
     invoke-virtual {v0, v2, v3}, Landroid/util/SparseIntArray;->put(II)V
 
-    const v2, 0x7f0d008d
+    const v2, 0x7f0d009d
 
     const/16 v3, 0x22
 
     invoke-virtual {v0, v2, v3}, Landroid/util/SparseIntArray;->put(II)V
 
-    const v2, 0x7f0d008f
+    const v2, 0x7f0d009e
 
     const/16 v3, 0x23
 
     invoke-virtual {v0, v2, v3}, Landroid/util/SparseIntArray;->put(II)V
 
-    const v2, 0x7f0d0090
+    const v2, 0x7f0d009f
 
     const/16 v3, 0x24
 
     invoke-virtual {v0, v2, v3}, Landroid/util/SparseIntArray;->put(II)V
 
-    const v2, 0x7f0d0091
+    const v2, 0x7f0d00a1
 
     const/16 v3, 0x25
 
     invoke-virtual {v0, v2, v3}, Landroid/util/SparseIntArray;->put(II)V
 
-    const v2, 0x7f0d0093
+    const v2, 0x7f0d00a2
 
     const/16 v3, 0x26
 
     invoke-virtual {v0, v2, v3}, Landroid/util/SparseIntArray;->put(II)V
 
-    const v2, 0x7f0d0094
+    const v2, 0x7f0d00a3
 
     const/16 v3, 0x27
 
     invoke-virtual {v0, v2, v3}, Landroid/util/SparseIntArray;->put(II)V
 
-    const v2, 0x7f0d0095
+    const v2, 0x7f0d00a4
 
     const/16 v3, 0x28
 
     invoke-virtual {v0, v2, v3}, Landroid/util/SparseIntArray;->put(II)V
 
-    const v2, 0x7f0d0096
+    const v2, 0x7f0d00a5
 
     const/16 v3, 0x29
 
     invoke-virtual {v0, v2, v3}, Landroid/util/SparseIntArray;->put(II)V
 
-    const v2, 0x7f0d0097
+    const v2, 0x7f0d00a6
 
     const/16 v3, 0x2a
 
     invoke-virtual {v0, v2, v3}, Landroid/util/SparseIntArray;->put(II)V
 
-    const v2, 0x7f0d0098
+    const v2, 0x7f0d00a7
 
     const/16 v3, 0x2b
 
     invoke-virtual {v0, v2, v3}, Landroid/util/SparseIntArray;->put(II)V
 
-    const v2, 0x7f0d0099
+    const v2, 0x7f0d00a8
 
     const/16 v3, 0x2c
 
     invoke-virtual {v0, v2, v3}, Landroid/util/SparseIntArray;->put(II)V
 
-    const v2, 0x7f0d009a
+    const v2, 0x7f0d00a9
 
     const/16 v3, 0x2d
 
     invoke-virtual {v0, v2, v3}, Landroid/util/SparseIntArray;->put(II)V
 
-    const v2, 0x7f0d009b
+    const v2, 0x7f0d00aa
 
     const/16 v3, 0x2e
 
     invoke-virtual {v0, v2, v3}, Landroid/util/SparseIntArray;->put(II)V
 
-    const v2, 0x7f0d009c
+    const v2, 0x7f0d00ab
 
     const/16 v3, 0x2f
 
     invoke-virtual {v0, v2, v3}, Landroid/util/SparseIntArray;->put(II)V
 
-    const v2, 0x7f0d009d
+    const v2, 0x7f0d00ac
 
     const/16 v3, 0x30
 
     invoke-virtual {v0, v2, v3}, Landroid/util/SparseIntArray;->put(II)V
 
-    const v2, 0x7f0d009e
+    const v2, 0x7f0d00ad
 
     const/16 v3, 0x31
 
     invoke-virtual {v0, v2, v3}, Landroid/util/SparseIntArray;->put(II)V
 
-    const v2, 0x7f0d009f
+    const v2, 0x7f0d00ae
 
     const/16 v3, 0x32
 
     invoke-virtual {v0, v2, v3}, Landroid/util/SparseIntArray;->put(II)V
 
-    const v2, 0x7f0d00a0
+    const v2, 0x7f0d00af
 
     const/16 v3, 0x33
 
     invoke-virtual {v0, v2, v3}, Landroid/util/SparseIntArray;->put(II)V
 
-    const v2, 0x7f0d00a1
+    const v2, 0x7f0d00b1
 
     const/16 v3, 0x34
 
     invoke-virtual {v0, v2, v3}, Landroid/util/SparseIntArray;->put(II)V
 
-    const v2, 0x7f0d00a3
+    const v2, 0x7f0d00ba
 
     const/16 v3, 0x35
 
     invoke-virtual {v0, v2, v3}, Landroid/util/SparseIntArray;->put(II)V
 
-    const v2, 0x7f0d00a9
+    const v2, 0x7f0d00bb
 
     const/16 v3, 0x36
 
     invoke-virtual {v0, v2, v3}, Landroid/util/SparseIntArray;->put(II)V
 
-    const v2, 0x7f0d00aa
+    const v2, 0x7f0d00bc
 
     const/16 v3, 0x37
 
     invoke-virtual {v0, v2, v3}, Landroid/util/SparseIntArray;->put(II)V
 
-    const v2, 0x7f0d00ab
+    const v2, 0x7f0d00be
 
     const/16 v3, 0x38
 
     invoke-virtual {v0, v2, v3}, Landroid/util/SparseIntArray;->put(II)V
 
-    const v2, 0x7f0d00ad
+    const v2, 0x7f0d00c1
 
     const/16 v3, 0x39
 
     invoke-virtual {v0, v2, v3}, Landroid/util/SparseIntArray;->put(II)V
 
-    const v2, 0x7f0d00b0
+    const v2, 0x7f0d00c2
 
     const/16 v3, 0x3a
 
     invoke-virtual {v0, v2, v3}, Landroid/util/SparseIntArray;->put(II)V
 
-    const v2, 0x7f0d00b1
+    const v2, 0x7f0d00c3
 
     const/16 v3, 0x3b
 
     invoke-virtual {v0, v2, v3}, Landroid/util/SparseIntArray;->put(II)V
 
-    const v2, 0x7f0d00b2
+    const v2, 0x7f0d00c4
 
     const/16 v3, 0x3c
 
     invoke-virtual {v0, v2, v3}, Landroid/util/SparseIntArray;->put(II)V
 
-    const v2, 0x7f0d00b4
+    const v2, 0x7f0d00c5
 
     const/16 v3, 0x3d
 
     invoke-virtual {v0, v2, v3}, Landroid/util/SparseIntArray;->put(II)V
 
-    const v2, 0x7f0d00b5
+    const v2, 0x7f0d00c6
 
     const/16 v3, 0x3e
 
     invoke-virtual {v0, v2, v3}, Landroid/util/SparseIntArray;->put(II)V
 
-    const v2, 0x7f0d00b6
+    const v2, 0x7f0d00c7
 
     const/16 v3, 0x3f
 
     invoke-virtual {v0, v2, v3}, Landroid/util/SparseIntArray;->put(II)V
 
-    const v2, 0x7f0d00b7
+    const v2, 0x7f0d00c8
 
     const/16 v3, 0x40
 
     invoke-virtual {v0, v2, v3}, Landroid/util/SparseIntArray;->put(II)V
 
-    const v2, 0x7f0d00b8
+    const v2, 0x7f0d00c9
 
     const/16 v3, 0x41
 
     invoke-virtual {v0, v2, v3}, Landroid/util/SparseIntArray;->put(II)V
 
-    const v2, 0x7f0d00c9
+    const v2, 0x7f0d00da
 
     const/16 v3, 0x42
 
     invoke-virtual {v0, v2, v3}, Landroid/util/SparseIntArray;->put(II)V
 
-    const v2, 0x7f0d00ca
+    const v2, 0x7f0d00db
 
     const/16 v3, 0x43
 
     invoke-virtual {v0, v2, v3}, Landroid/util/SparseIntArray;->put(II)V
 
-    const v2, 0x7f0d00cb
+    const v2, 0x7f0d00dd
 
     const/16 v3, 0x44
 
     invoke-virtual {v0, v2, v3}, Landroid/util/SparseIntArray;->put(II)V
 
-    const v2, 0x7f0d00cd
+    const v2, 0x7f0d00de
 
     const/16 v3, 0x45
 
     invoke-virtual {v0, v2, v3}, Landroid/util/SparseIntArray;->put(II)V
 
-    const v2, 0x7f0d00ce
+    const v2, 0x7f0d00df
 
     const/16 v3, 0x46
 
     invoke-virtual {v0, v2, v3}, Landroid/util/SparseIntArray;->put(II)V
 
-    const v2, 0x7f0d00cf
+    const v2, 0x7f0d00e2
 
     const/16 v3, 0x47
 
     invoke-virtual {v0, v2, v3}, Landroid/util/SparseIntArray;->put(II)V
 
-    const v2, 0x7f0d00d1
+    const v2, 0x7f0d00e3
 
     const/16 v3, 0x48
 
     invoke-virtual {v0, v2, v3}, Landroid/util/SparseIntArray;->put(II)V
 
-    const v2, 0x7f0d00d2
+    const v2, 0x7f0d00e5
 
     const/16 v3, 0x49
 
     invoke-virtual {v0, v2, v3}, Landroid/util/SparseIntArray;->put(II)V
 
-    const v2, 0x7f0d00d4
+    const v2, 0x7f0d00e6
 
     const/16 v3, 0x4a
 
     invoke-virtual {v0, v2, v3}, Landroid/util/SparseIntArray;->put(II)V
 
-    const v2, 0x7f0d00d5
+    const v2, 0x7f0d00e7
 
     const/16 v3, 0x4b
 
     invoke-virtual {v0, v2, v3}, Landroid/util/SparseIntArray;->put(II)V
 
-    const v2, 0x7f0d00d6
+    const v2, 0x7f0d00e9
 
     const/16 v3, 0x4c
 
     invoke-virtual {v0, v2, v3}, Landroid/util/SparseIntArray;->put(II)V
 
-    const v2, 0x7f0d00d8
+    const v2, 0x7f0d00ea
 
     const/16 v3, 0x4d
 
     invoke-virtual {v0, v2, v3}, Landroid/util/SparseIntArray;->put(II)V
 
-    const v2, 0x7f0d00d9
+    const v2, 0x7f0d00eb
 
     const/16 v3, 0x4e
 
     invoke-virtual {v0, v2, v3}, Landroid/util/SparseIntArray;->put(II)V
 
-    const v2, 0x7f0d00da
+    const v2, 0x7f0d00ec
 
     const/16 v3, 0x4f
 
     invoke-virtual {v0, v2, v3}, Landroid/util/SparseIntArray;->put(II)V
 
-    const v2, 0x7f0d00db
+    const v2, 0x7f0d00ed
 
     const/16 v3, 0x50
 
     invoke-virtual {v0, v2, v3}, Landroid/util/SparseIntArray;->put(II)V
 
-    const v2, 0x7f0d00dc
+    const v2, 0x7f0d00ee
 
     const/16 v3, 0x51
 
     invoke-virtual {v0, v2, v3}, Landroid/util/SparseIntArray;->put(II)V
 
-    const v2, 0x7f0d00dd
+    const v2, 0x7f0d00ef
 
     const/16 v3, 0x52
 
     invoke-virtual {v0, v2, v3}, Landroid/util/SparseIntArray;->put(II)V
 
-    const v2, 0x7f0d00de
+    const v2, 0x7f0d00f0
 
     const/16 v3, 0x53
 
     invoke-virtual {v0, v2, v3}, Landroid/util/SparseIntArray;->put(II)V
 
-    const v2, 0x7f0d00df
+    const v2, 0x7f0d00f1
 
     const/16 v3, 0x54
 
     invoke-virtual {v0, v2, v3}, Landroid/util/SparseIntArray;->put(II)V
 
-    const v2, 0x7f0d00e0
+    const v2, 0x7f0d00f2
 
     const/16 v3, 0x55
 
     invoke-virtual {v0, v2, v3}, Landroid/util/SparseIntArray;->put(II)V
 
-    const v2, 0x7f0d00e1
+    const v2, 0x7f0d00f3
 
     const/16 v3, 0x56
 
     invoke-virtual {v0, v2, v3}, Landroid/util/SparseIntArray;->put(II)V
 
-    const v2, 0x7f0d00e2
+    const v2, 0x7f0d00f4
 
     const/16 v3, 0x57
 
     invoke-virtual {v0, v2, v3}, Landroid/util/SparseIntArray;->put(II)V
 
-    const v2, 0x7f0d00e3
+    const v2, 0x7f0d00f5
 
     const/16 v3, 0x58
 
     invoke-virtual {v0, v2, v3}, Landroid/util/SparseIntArray;->put(II)V
 
-    const v2, 0x7f0d00e4
+    const v2, 0x7f0d00f6
 
     const/16 v3, 0x59
 
     invoke-virtual {v0, v2, v3}, Landroid/util/SparseIntArray;->put(II)V
 
-    const v2, 0x7f0d00e5
+    const v2, 0x7f0d00f8
 
     const/16 v3, 0x5a
 
     invoke-virtual {v0, v2, v3}, Landroid/util/SparseIntArray;->put(II)V
 
-    const v2, 0x7f0d00e6
+    const v2, 0x7f0d00f9
 
     const/16 v3, 0x5b
 
     invoke-virtual {v0, v2, v3}, Landroid/util/SparseIntArray;->put(II)V
 
-    const v2, 0x7f0d00e7
+    const v2, 0x7f0d00fa
 
     const/16 v3, 0x5c
 
     invoke-virtual {v0, v2, v3}, Landroid/util/SparseIntArray;->put(II)V
 
-    const v2, 0x7f0d00e9
+    const v2, 0x7f0d00fb
 
     const/16 v3, 0x5d
 
     invoke-virtual {v0, v2, v3}, Landroid/util/SparseIntArray;->put(II)V
 
-    const v2, 0x7f0d00ea
+    const v2, 0x7f0d00fc
 
     const/16 v3, 0x5e
 
     invoke-virtual {v0, v2, v3}, Landroid/util/SparseIntArray;->put(II)V
 
-    const v2, 0x7f0d00eb
+    const v2, 0x7f0d00fd
 
     const/16 v3, 0x5f
 
     invoke-virtual {v0, v2, v3}, Landroid/util/SparseIntArray;->put(II)V
 
-    const v2, 0x7f0d00ec
+    const v2, 0x7f0d00fe
 
     const/16 v3, 0x60
 
     invoke-virtual {v0, v2, v3}, Landroid/util/SparseIntArray;->put(II)V
 
-    const v2, 0x7f0d00ed
+    const v2, 0x7f0d00ff
 
     const/16 v3, 0x61
 
     invoke-virtual {v0, v2, v3}, Landroid/util/SparseIntArray;->put(II)V
 
-    const v2, 0x7f0d00ee
+    const v2, 0x7f0d0100
 
     const/16 v3, 0x62
 
     invoke-virtual {v0, v2, v3}, Landroid/util/SparseIntArray;->put(II)V
 
-    const v2, 0x7f0d00ef
+    const v2, 0x7f0d0101
 
     const/16 v3, 0x63
 
     invoke-virtual {v0, v2, v3}, Landroid/util/SparseIntArray;->put(II)V
 
-    const v2, 0x7f0d00f0
+    const v2, 0x7f0d0102
 
     const/16 v3, 0x64
 
     invoke-virtual {v0, v2, v3}, Landroid/util/SparseIntArray;->put(II)V
 
-    const v2, 0x7f0d00f1
+    const v2, 0x7f0d0103
 
     const/16 v3, 0x65
 
     invoke-virtual {v0, v2, v3}, Landroid/util/SparseIntArray;->put(II)V
 
-    const v2, 0x7f0d00f2
+    const v2, 0x7f0d0104
 
     const/16 v3, 0x66
 
     invoke-virtual {v0, v2, v3}, Landroid/util/SparseIntArray;->put(II)V
 
-    const v2, 0x7f0d00f3
+    const v2, 0x7f0d0114
 
     const/16 v3, 0x67
 
     invoke-virtual {v0, v2, v3}, Landroid/util/SparseIntArray;->put(II)V
 
-    const v2, 0x7f0d00f4
+    const v2, 0x7f0d0115
 
     const/16 v3, 0x68
 
     invoke-virtual {v0, v2, v3}, Landroid/util/SparseIntArray;->put(II)V
 
-    const v2, 0x7f0d00f5
+    const v2, 0x7f0d0133
 
     const/16 v3, 0x69
 
     invoke-virtual {v0, v2, v3}, Landroid/util/SparseIntArray;->put(II)V
 
-    const v2, 0x7f0d00f6
+    const v2, 0x7f0d0134
 
     const/16 v3, 0x6a
 
     invoke-virtual {v0, v2, v3}, Landroid/util/SparseIntArray;->put(II)V
 
-    const v2, 0x7f0d00f7
+    const v2, 0x7f0d016d
 
     const/16 v3, 0x6b
 
     invoke-virtual {v0, v2, v3}, Landroid/util/SparseIntArray;->put(II)V
 
-    const v2, 0x7f0d00f8
+    const v2, 0x7f0d016e
 
     const/16 v3, 0x6c
 
     invoke-virtual {v0, v2, v3}, Landroid/util/SparseIntArray;->put(II)V
 
-    const v2, 0x7f0d00f9
+    const v2, 0x7f0d0199
 
     const/16 v3, 0x6d
 
     invoke-virtual {v0, v2, v3}, Landroid/util/SparseIntArray;->put(II)V
 
-    const v2, 0x7f0d0109
+    const v2, 0x7f0d019a
 
     const/16 v3, 0x6e
 
     invoke-virtual {v0, v2, v3}, Landroid/util/SparseIntArray;->put(II)V
 
-    const v2, 0x7f0d010a
+    const v2, 0x7f0d019b
 
     const/16 v3, 0x6f
 
     invoke-virtual {v0, v2, v3}, Landroid/util/SparseIntArray;->put(II)V
 
-    const v2, 0x7f0d0128
+    const v2, 0x7f0d019c
 
     const/16 v3, 0x70
 
     invoke-virtual {v0, v2, v3}, Landroid/util/SparseIntArray;->put(II)V
 
-    const v2, 0x7f0d0129
+    const v2, 0x7f0d019d
 
     const/16 v3, 0x71
 
     invoke-virtual {v0, v2, v3}, Landroid/util/SparseIntArray;->put(II)V
 
-    const v2, 0x7f0d015c
+    const v2, 0x7f0d019e
 
     const/16 v3, 0x72
 
     invoke-virtual {v0, v2, v3}, Landroid/util/SparseIntArray;->put(II)V
 
-    const v2, 0x7f0d015d
+    const v2, 0x7f0d01a0
 
     const/16 v3, 0x73
 
     invoke-virtual {v0, v2, v3}, Landroid/util/SparseIntArray;->put(II)V
 
-    const v2, 0x7f0d0189
+    const v2, 0x7f0d01a1
 
     const/16 v3, 0x74
 
     invoke-virtual {v0, v2, v3}, Landroid/util/SparseIntArray;->put(II)V
 
-    const v2, 0x7f0d018a
+    const v2, 0x7f0d01a2
 
     const/16 v3, 0x75
 
     invoke-virtual {v0, v2, v3}, Landroid/util/SparseIntArray;->put(II)V
 
-    const v2, 0x7f0d018b
+    const v2, 0x7f0d01a3
 
     const/16 v3, 0x76
 
     invoke-virtual {v0, v2, v3}, Landroid/util/SparseIntArray;->put(II)V
 
-    const v2, 0x7f0d018c
+    const v2, 0x7f0d01a7
 
     const/16 v3, 0x77
 
     invoke-virtual {v0, v2, v3}, Landroid/util/SparseIntArray;->put(II)V
 
-    const v2, 0x7f0d018d
+    const v2, 0x7f0d01a8
 
     const/16 v3, 0x78
 
     invoke-virtual {v0, v2, v3}, Landroid/util/SparseIntArray;->put(II)V
 
-    const v2, 0x7f0d018e
+    const v2, 0x7f0d01a9
 
     const/16 v3, 0x79
 
     invoke-virtual {v0, v2, v3}, Landroid/util/SparseIntArray;->put(II)V
 
-    const v2, 0x7f0d018f
+    const v2, 0x7f0d01aa
 
     const/16 v3, 0x7a
 
     invoke-virtual {v0, v2, v3}, Landroid/util/SparseIntArray;->put(II)V
 
-    const v2, 0x7f0d0190
+    const v2, 0x7f0d01b1
 
     const/16 v3, 0x7b
 
     invoke-virtual {v0, v2, v3}, Landroid/util/SparseIntArray;->put(II)V
 
-    const v2, 0x7f0d0191
+    const v2, 0x7f0d01ba
 
     const/16 v3, 0x7c
 
     invoke-virtual {v0, v2, v3}, Landroid/util/SparseIntArray;->put(II)V
 
-    const v2, 0x7f0d0192
+    const v2, 0x7f0d01bb
 
     const/16 v3, 0x7d
 
     invoke-virtual {v0, v2, v3}, Landroid/util/SparseIntArray;->put(II)V
 
-    const v2, 0x7f0d0193
-
-    const/16 v3, 0x7e
-
-    invoke-virtual {v0, v2, v3}, Landroid/util/SparseIntArray;->put(II)V
-
-    const v2, 0x7f0d0197
-
-    const/16 v3, 0x7f
-
-    invoke-virtual {v0, v2, v3}, Landroid/util/SparseIntArray;->put(II)V
-
-    const v2, 0x7f0d0198
-
-    const/16 v3, 0x80
-
-    invoke-virtual {v0, v2, v3}, Landroid/util/SparseIntArray;->put(II)V
-
-    const v2, 0x7f0d0199
-
-    const/16 v3, 0x81
-
-    invoke-virtual {v0, v2, v3}, Landroid/util/SparseIntArray;->put(II)V
-
-    const v2, 0x7f0d019a
-
-    const/16 v3, 0x82
-
-    invoke-virtual {v0, v2, v3}, Landroid/util/SparseIntArray;->put(II)V
-
-    const v2, 0x7f0d01a1
-
-    const/16 v3, 0x83
-
-    invoke-virtual {v0, v2, v3}, Landroid/util/SparseIntArray;->put(II)V
-
-    const v2, 0x7f0d01ac
-
-    const/16 v3, 0x84
-
-    invoke-virtual {v0, v2, v3}, Landroid/util/SparseIntArray;->put(II)V
-
-    const v2, 0x7f0d01ad
-
-    const/16 v3, 0x85
-
-    invoke-virtual {v0, v2, v3}, Landroid/util/SparseIntArray;->put(II)V
-
-    const v2, 0x7f0d01ae
+    const v2, 0x7f0d01bc
 
     invoke-virtual {v0, v2, v1}, Landroid/util/SparseIntArray;->put(II)V
 
@@ -920,7 +872,7 @@
     goto/16 :goto_0
 
     :pswitch_0
-    const-string p3, "layout/include_submission_done_0"
+    const-string p3, "layout/include_submission_tan_0"
 
     invoke-virtual {p3, v1}, Ljava/lang/String;->equals(Ljava/lang/Object;)Z
 
@@ -928,13 +880,97 @@
 
     if-eqz p3, :cond_2
 
+    new-instance v0, Lde/rki/coronawarnapp/databinding/IncludeSubmissionTanBindingImpl;
+
+    invoke-direct {v0, p1, p2}, Lde/rki/coronawarnapp/databinding/IncludeSubmissionTanBindingImpl;-><init>(Landroidx/databinding/DataBindingComponent;Landroid/view/View;)V
+
+    goto/16 :goto_0
+
+    :cond_2
+    new-instance p1, Ljava/lang/IllegalArgumentException;
+
+    const-string p2, "The tag for include_submission_tan is invalid. Received: "
+
+    invoke-static {p2, v1}, Lcom/fasterxml/jackson/databind/ser/impl/MapEntrySerializer$$ExternalSyntheticOutline0;->m(Ljava/lang/String;Ljava/lang/Object;)Ljava/lang/String;
+
+    move-result-object p2
+
+    invoke-direct {p1, p2}, Ljava/lang/IllegalArgumentException;-><init>(Ljava/lang/String;)V
+
+    throw p1
+
+    :pswitch_1
+    const-string p3, "layout/include_submission_done_further_info_0"
+
+    invoke-virtual {p3, v1}, Ljava/lang/String;->equals(Ljava/lang/Object;)Z
+
+    move-result p3
+
+    if-eqz p3, :cond_3
+
+    new-instance v0, Lde/rki/coronawarnapp/databinding/IncludeSubmissionDoneFurtherInfoBindingImpl;
+
+    invoke-direct {v0, p1, p2}, Lde/rki/coronawarnapp/databinding/IncludeSubmissionDoneFurtherInfoBindingImpl;-><init>(Landroidx/databinding/DataBindingComponent;Landroid/view/View;)V
+
+    goto/16 :goto_0
+
+    :cond_3
+    new-instance p1, Ljava/lang/IllegalArgumentException;
+
+    const-string p2, "The tag for include_submission_done_further_info is invalid. Received: "
+
+    invoke-static {p2, v1}, Lcom/fasterxml/jackson/databind/ser/impl/MapEntrySerializer$$ExternalSyntheticOutline0;->m(Ljava/lang/String;Ljava/lang/Object;)Ljava/lang/String;
+
+    move-result-object p2
+
+    invoke-direct {p1, p2}, Ljava/lang/IllegalArgumentException;-><init>(Ljava/lang/String;)V
+
+    throw p1
+
+    :pswitch_2
+    const-string p3, "layout/include_submission_done_content_0"
+
+    invoke-virtual {p3, v1}, Ljava/lang/String;->equals(Ljava/lang/Object;)Z
+
+    move-result p3
+
+    if-eqz p3, :cond_4
+
+    new-instance v0, Lde/rki/coronawarnapp/databinding/IncludeSubmissionDoneContentBindingImpl;
+
+    invoke-direct {v0, p1, p2}, Lde/rki/coronawarnapp/databinding/IncludeSubmissionDoneContentBindingImpl;-><init>(Landroidx/databinding/DataBindingComponent;Landroid/view/View;)V
+
+    goto/16 :goto_0
+
+    :cond_4
+    new-instance p1, Ljava/lang/IllegalArgumentException;
+
+    const-string p2, "The tag for include_submission_done_content is invalid. Received: "
+
+    invoke-static {p2, v1}, Lcom/fasterxml/jackson/databind/ser/impl/MapEntrySerializer$$ExternalSyntheticOutline0;->m(Ljava/lang/String;Ljava/lang/Object;)Ljava/lang/String;
+
+    move-result-object p2
+
+    invoke-direct {p1, p2}, Ljava/lang/IllegalArgumentException;-><init>(Ljava/lang/String;)V
+
+    throw p1
+
+    :pswitch_3
+    const-string p3, "layout/include_submission_done_0"
+
+    invoke-virtual {p3, v1}, Ljava/lang/String;->equals(Ljava/lang/Object;)Z
+
+    move-result p3
+
+    if-eqz p3, :cond_5
+
     new-instance v0, Lde/rki/coronawarnapp/databinding/IncludeSubmissionDoneBindingImpl;
 
     invoke-direct {v0, p1, p2}, Lde/rki/coronawarnapp/databinding/IncludeSubmissionDoneBindingImpl;-><init>(Landroidx/databinding/DataBindingComponent;Landroid/view/View;)V
 
     goto/16 :goto_0
 
-    :cond_2
+    :cond_5
     new-instance p1, Ljava/lang/IllegalArgumentException;
 
     const-string p2, "The tag for include_submission_done is invalid. Received: "
@@ -947,14 +983,14 @@
 
     throw p1
 
-    :pswitch_1
+    :pswitch_4
     const-string p3, "layout/include_submission_country_selector_0"
 
     invoke-virtual {p3, v1}, Ljava/lang/String;->equals(Ljava/lang/Object;)Z
 
     move-result p3
 
-    if-eqz p3, :cond_3
+    if-eqz p3, :cond_6
 
     new-instance v0, Lde/rki/coronawarnapp/databinding/IncludeSubmissionCountrySelectorBindingImpl;
 
@@ -962,7 +998,7 @@
 
     goto/16 :goto_0
 
-    :cond_3
+    :cond_6
     new-instance p1, Ljava/lang/IllegalArgumentException;
 
     const-string p2, "The tag for include_submission_country_selector is invalid. Received: "
@@ -975,14 +1011,14 @@
 
     throw p1
 
-    :pswitch_2
+    :pswitch_5
     const-string p3, "layout/include_submission_country_no_selection_0"
 
     invoke-virtual {p3, v1}, Ljava/lang/String;->equals(Ljava/lang/Object;)Z
 
     move-result p3
 
-    if-eqz p3, :cond_4
+    if-eqz p3, :cond_7
 
     new-instance v0, Lde/rki/coronawarnapp/databinding/IncludeSubmissionCountryNoSelectionBindingImpl;
 
@@ -990,7 +1026,7 @@
 
     goto/16 :goto_0
 
-    :cond_4
+    :cond_7
     new-instance p1, Ljava/lang/IllegalArgumentException;
 
     const-string p2, "The tag for include_submission_country_no_selection is invalid. Received: "
@@ -1003,14 +1039,14 @@
 
     throw p1
 
-    :pswitch_3
+    :pswitch_6
     const-string p3, "layout/include_submission_country_item_0"
 
     invoke-virtual {p3, v1}, Ljava/lang/String;->equals(Ljava/lang/Object;)Z
 
     move-result p3
 
-    if-eqz p3, :cond_5
+    if-eqz p3, :cond_8
 
     new-instance v0, Lde/rki/coronawarnapp/databinding/IncludeSubmissionCountryItemBindingImpl;
 
@@ -1018,7 +1054,7 @@
 
     goto/16 :goto_0
 
-    :cond_5
+    :cond_8
     new-instance p1, Ljava/lang/IllegalArgumentException;
 
     const-string p2, "The tag for include_submission_country_item is invalid. Received: "
@@ -1031,14 +1067,14 @@
 
     throw p1
 
-    :pswitch_4
+    :pswitch_7
     const-string p3, "layout/include_submission_contact_0"
 
     invoke-virtual {p3, v1}, Ljava/lang/String;->equals(Ljava/lang/Object;)Z
 
     move-result p3
 
-    if-eqz p3, :cond_6
+    if-eqz p3, :cond_9
 
     new-instance v0, Lde/rki/coronawarnapp/databinding/IncludeSubmissionContactBindingImpl;
 
@@ -1046,7 +1082,7 @@
 
     goto/16 :goto_0
 
-    :cond_6
+    :cond_9
     new-instance p1, Ljava/lang/IllegalArgumentException;
 
     const-string p2, "The tag for include_submission_contact is invalid. Received: "
@@ -1059,14 +1095,14 @@
 
     throw p1
 
-    :pswitch_5
+    :pswitch_8
     const-string p3, "layout/include_submission_consent_intro_0"
 
     invoke-virtual {p3, v1}, Ljava/lang/String;->equals(Ljava/lang/Object;)Z
 
     move-result p3
 
-    if-eqz p3, :cond_7
+    if-eqz p3, :cond_a
 
     new-instance v0, Lde/rki/coronawarnapp/databinding/IncludeSubmissionConsentIntroBindingImpl;
 
@@ -1074,7 +1110,7 @@
 
     goto/16 :goto_0
 
-    :cond_7
+    :cond_a
     new-instance p1, Ljava/lang/IllegalArgumentException;
 
     const-string p2, "The tag for include_submission_consent_intro is invalid. Received: "
@@ -1087,14 +1123,14 @@
 
     throw p1
 
-    :pswitch_6
+    :pswitch_9
     const-string p3, "layout/include_submission_consent_body_0"
 
     invoke-virtual {p3, v1}, Ljava/lang/String;->equals(Ljava/lang/Object;)Z
 
     move-result p3
 
-    if-eqz p3, :cond_8
+    if-eqz p3, :cond_b
 
     new-instance v0, Lde/rki/coronawarnapp/databinding/IncludeSubmissionConsentBodyBindingImpl;
 
@@ -1102,7 +1138,7 @@
 
     goto/16 :goto_0
 
-    :cond_8
+    :cond_b
     new-instance p1, Ljava/lang/IllegalArgumentException;
 
     const-string p2, "The tag for include_submission_consent_body is invalid. Received: "
@@ -1115,14 +1151,14 @@
 
     throw p1
 
-    :pswitch_7
+    :pswitch_a
     const-string p3, "layout/include_submission_behaviour_row_0"
 
     invoke-virtual {p3, v1}, Ljava/lang/String;->equals(Ljava/lang/Object;)Z
 
     move-result p3
 
-    if-eqz p3, :cond_9
+    if-eqz p3, :cond_c
 
     new-instance v0, Lde/rki/coronawarnapp/databinding/IncludeSubmissionBehaviourRowBindingImpl;
 
@@ -1130,7 +1166,7 @@
 
     goto/16 :goto_0
 
-    :cond_9
+    :cond_c
     new-instance p1, Ljava/lang/IllegalArgumentException;
 
     const-string p2, "The tag for include_submission_behaviour_row is invalid. Received: "
@@ -1143,42 +1179,14 @@
 
     throw p1
 
-    :pswitch_8
-    const-string p3, "layout/include_settings_plain_row_0"
-
-    invoke-virtual {p3, v1}, Ljava/lang/String;->equals(Ljava/lang/Object;)Z
-
-    move-result p3
-
-    if-eqz p3, :cond_a
-
-    new-instance v0, Lde/rki/coronawarnapp/databinding/IncludeSettingsPlainRowBindingImpl;
-
-    invoke-direct {v0, p1, p2}, Lde/rki/coronawarnapp/databinding/IncludeSettingsPlainRowBindingImpl;-><init>(Landroidx/databinding/DataBindingComponent;Landroid/view/View;)V
-
-    goto/16 :goto_0
-
-    :cond_a
-    new-instance p1, Ljava/lang/IllegalArgumentException;
-
-    const-string p2, "The tag for include_settings_plain_row is invalid. Received: "
-
-    invoke-static {p2, v1}, Lcom/fasterxml/jackson/databind/ser/impl/MapEntrySerializer$$ExternalSyntheticOutline0;->m(Ljava/lang/String;Ljava/lang/Object;)Ljava/lang/String;
-
-    move-result-object p2
-
-    invoke-direct {p1, p2}, Ljava/lang/IllegalArgumentException;-><init>(Ljava/lang/String;)V
-
-    throw p1
-
-    :pswitch_9
+    :pswitch_b
     const-string p3, "layout/include_setting_row_0"
 
     invoke-virtual {p3, v1}, Ljava/lang/String;->equals(Ljava/lang/Object;)Z
 
     move-result p3
 
-    if-eqz p3, :cond_b
+    if-eqz p3, :cond_d
 
     new-instance v0, Lde/rki/coronawarnapp/databinding/IncludeSettingRowBindingImpl;
 
@@ -1186,7 +1194,7 @@
 
     goto/16 :goto_0
 
-    :cond_b
+    :cond_d
     new-instance p1, Ljava/lang/IllegalArgumentException;
 
     const-string p2, "The tag for include_setting_row is invalid. Received: "
@@ -1199,14 +1207,14 @@
 
     throw p1
 
-    :pswitch_a
+    :pswitch_c
     const-string p3, "layout/include_row_0"
 
     invoke-virtual {p3, v1}, Ljava/lang/String;->equals(Ljava/lang/Object;)Z
 
     move-result p3
 
-    if-eqz p3, :cond_c
+    if-eqz p3, :cond_e
 
     new-instance v0, Lde/rki/coronawarnapp/databinding/IncludeRowBindingImpl;
 
@@ -1214,7 +1222,7 @@
 
     goto/16 :goto_0
 
-    :cond_c
+    :cond_e
     new-instance p1, Ljava/lang/IllegalArgumentException;
 
     const-string p2, "The tag for include_row is invalid. Received: "
@@ -1227,14 +1235,14 @@
 
     throw p1
 
-    :pswitch_b
+    :pswitch_d
     const-string p3, "layout/include_privacy_card_no_consent_0"
 
     invoke-virtual {p3, v1}, Ljava/lang/String;->equals(Ljava/lang/Object;)Z
 
     move-result p3
 
-    if-eqz p3, :cond_d
+    if-eqz p3, :cond_f
 
     new-instance v0, Lde/rki/coronawarnapp/databinding/IncludePrivacyCardNoConsentBindingImpl;
 
@@ -1242,7 +1250,7 @@
 
     goto/16 :goto_0
 
-    :cond_d
+    :cond_f
     new-instance p1, Ljava/lang/IllegalArgumentException;
 
     const-string p2, "The tag for include_privacy_card_no_consent is invalid. Received: "
@@ -1255,42 +1263,14 @@
 
     throw p1
 
-    :pswitch_c
-    const-string p3, "layout/include_privacy_card_0"
-
-    invoke-virtual {p3, v1}, Ljava/lang/String;->equals(Ljava/lang/Object;)Z
-
-    move-result p3
-
-    if-eqz p3, :cond_e
-
-    new-instance v0, Lde/rki/coronawarnapp/databinding/IncludePrivacyCardBindingImpl;
-
-    invoke-direct {v0, p1, p2}, Lde/rki/coronawarnapp/databinding/IncludePrivacyCardBindingImpl;-><init>(Landroidx/databinding/DataBindingComponent;Landroid/view/View;)V
-
-    goto/16 :goto_0
-
-    :cond_e
-    new-instance p1, Ljava/lang/IllegalArgumentException;
-
-    const-string p2, "The tag for include_privacy_card is invalid. Received: "
-
-    invoke-static {p2, v1}, Lcom/fasterxml/jackson/databind/ser/impl/MapEntrySerializer$$ExternalSyntheticOutline0;->m(Ljava/lang/String;Ljava/lang/Object;)Ljava/lang/String;
-
-    move-result-object p2
-
-    invoke-direct {p1, p2}, Ljava/lang/IllegalArgumentException;-><init>(Ljava/lang/String;)V
-
-    throw p1
-
-    :pswitch_d
+    :pswitch_e
     const-string p3, "layout/include_onboarding_0"
 
     invoke-virtual {p3, v1}, Ljava/lang/String;->equals(Ljava/lang/Object;)Z
 
     move-result p3
 
-    if-eqz p3, :cond_f
+    if-eqz p3, :cond_10
 
     new-instance v0, Lde/rki/coronawarnapp/databinding/IncludeOnboardingBindingImpl;
 
@@ -1298,7 +1278,7 @@
 
     goto/16 :goto_0
 
-    :cond_f
+    :cond_10
     new-instance p1, Ljava/lang/IllegalArgumentException;
 
     const-string p2, "The tag for include_onboarding is invalid. Received: "
@@ -1311,14 +1291,14 @@
 
     throw p1
 
-    :pswitch_e
+    :pswitch_f
     const-string p3, "layout/include_navigation_row_0"
 
     invoke-virtual {p3, v1}, Ljava/lang/String;->equals(Ljava/lang/Object;)Z
 
     move-result p3
 
-    if-eqz p3, :cond_10
+    if-eqz p3, :cond_11
 
     new-instance v0, Lde/rki/coronawarnapp/databinding/IncludeNavigationRowBindingImpl;
 
@@ -1326,7 +1306,7 @@
 
     goto/16 :goto_0
 
-    :cond_10
+    :cond_11
     new-instance p1, Ljava/lang/IllegalArgumentException;
 
     const-string p2, "The tag for include_navigation_row is invalid. Received: "
@@ -1339,14 +1319,14 @@
 
     throw p1
 
-    :pswitch_f
+    :pswitch_10
     const-string p3, "layout/include_main_overview_segment_0"
 
     invoke-virtual {p3, v1}, Ljava/lang/String;->equals(Ljava/lang/Object;)Z
 
     move-result p3
 
-    if-eqz p3, :cond_11
+    if-eqz p3, :cond_12
 
     new-instance v0, Lde/rki/coronawarnapp/databinding/IncludeMainOverviewSegmentBindingImpl;
 
@@ -1354,7 +1334,7 @@
 
     goto/16 :goto_0
 
-    :cond_11
+    :cond_12
     new-instance p1, Ljava/lang/IllegalArgumentException;
 
     const-string p2, "The tag for include_main_overview_segment is invalid. Received: "
@@ -1367,14 +1347,14 @@
 
     throw p1
 
-    :pswitch_10
+    :pswitch_11
     const-string p3, "layout/include_main_overview_row_0"
 
     invoke-virtual {p3, v1}, Ljava/lang/String;->equals(Ljava/lang/Object;)Z
 
     move-result p3
 
-    if-eqz p3, :cond_12
+    if-eqz p3, :cond_13
 
     new-instance v0, Lde/rki/coronawarnapp/databinding/IncludeMainOverviewRowBindingImpl;
 
@@ -1382,7 +1362,7 @@
 
     goto/16 :goto_0
 
-    :cond_12
+    :cond_13
     new-instance p1, Ljava/lang/IllegalArgumentException;
 
     const-string p2, "The tag for include_main_overview_row is invalid. Received: "
@@ -1395,14 +1375,14 @@
 
     throw p1
 
-    :pswitch_11
+    :pswitch_12
     const-string p3, "layout/include_main_overview_glossary_0"
 
     invoke-virtual {p3, v1}, Ljava/lang/String;->equals(Ljava/lang/Object;)Z
 
     move-result p3
 
-    if-eqz p3, :cond_13
+    if-eqz p3, :cond_14
 
     new-instance v0, Lde/rki/coronawarnapp/databinding/IncludeMainOverviewGlossaryBindingImpl;
 
@@ -1410,7 +1390,7 @@
 
     goto/16 :goto_0
 
-    :cond_13
+    :cond_14
     new-instance p1, Ljava/lang/IllegalArgumentException;
 
     const-string p2, "The tag for include_main_overview_glossary is invalid. Received: "
@@ -1423,14 +1403,14 @@
 
     throw p1
 
-    :pswitch_12
+    :pswitch_13
     const-string p3, "layout/include_interoperability_0"
 
     invoke-virtual {p3, v1}, Ljava/lang/String;->equals(Ljava/lang/Object;)Z
 
     move-result p3
 
-    if-eqz p3, :cond_14
+    if-eqz p3, :cond_15
 
     new-instance v0, Lde/rki/coronawarnapp/databinding/IncludeInteroperabilityBindingImpl;
 
@@ -1438,7 +1418,7 @@
 
     goto/16 :goto_0
 
-    :cond_14
+    :cond_15
     new-instance p1, Ljava/lang/IllegalArgumentException;
 
     const-string p2, "The tag for include_interoperability is invalid. Received: "
@@ -1451,14 +1431,14 @@
 
     throw p1
 
-    :pswitch_13
+    :pswitch_14
     const-string p3, "layout/include_interop_riskdetails_no_countries_infoview_0"
 
     invoke-virtual {p3, v1}, Ljava/lang/String;->equals(Ljava/lang/Object;)Z
 
     move-result p3
 
-    if-eqz p3, :cond_15
+    if-eqz p3, :cond_16
 
     new-instance v0, Lde/rki/coronawarnapp/databinding/IncludeInteropRiskdetailsNoCountriesInfoviewBindingImpl;
 
@@ -1466,7 +1446,7 @@
 
     goto/16 :goto_0
 
-    :cond_15
+    :cond_16
     new-instance p1, Ljava/lang/IllegalArgumentException;
 
     const-string p2, "The tag for include_interop_riskdetails_no_countries_infoview is invalid. Received: "
@@ -1479,14 +1459,14 @@
 
     throw p1
 
-    :pswitch_14
+    :pswitch_15
     const-string p3, "layout/include_interop_no_countries_infoview_0"
 
     invoke-virtual {p3, v1}, Ljava/lang/String;->equals(Ljava/lang/Object;)Z
 
     move-result p3
 
-    if-eqz p3, :cond_16
+    if-eqz p3, :cond_17
 
     new-instance v0, Lde/rki/coronawarnapp/databinding/IncludeInteropNoCountriesInfoviewBindingImpl;
 
@@ -1494,7 +1474,7 @@
 
     goto/16 :goto_0
 
-    :cond_16
+    :cond_17
     new-instance p1, Ljava/lang/IllegalArgumentException;
 
     const-string p2, "The tag for include_interop_no_countries_infoview is invalid. Received: "
@@ -1507,14 +1487,14 @@
 
     throw p1
 
-    :pswitch_15
+    :pswitch_16
     const-string p3, "layout/include_interop_list_participating_countries_overview_0"
 
     invoke-virtual {p3, v1}, Ljava/lang/String;->equals(Ljava/lang/Object;)Z
 
     move-result p3
 
-    if-eqz p3, :cond_17
+    if-eqz p3, :cond_18
 
     new-instance v0, Lde/rki/coronawarnapp/databinding/IncludeInteropListParticipatingCountriesOverviewBindingImpl;
 
@@ -1522,7 +1502,7 @@
 
     goto/16 :goto_0
 
-    :cond_17
+    :cond_18
     new-instance p1, Ljava/lang/IllegalArgumentException;
 
     const-string p2, "The tag for include_interop_list_participating_countries_overview is invalid. Received: "
@@ -1535,14 +1515,14 @@
 
     throw p1
 
-    :pswitch_16
+    :pswitch_17
     const-string p3, "layout/include_information_details_0"
 
     invoke-virtual {p3, v1}, Ljava/lang/String;->equals(Ljava/lang/Object;)Z
 
     move-result p3
 
-    if-eqz p3, :cond_18
+    if-eqz p3, :cond_19
 
     new-instance v0, Lde/rki/coronawarnapp/databinding/IncludeInformationDetailsBindingImpl;
 
@@ -1550,7 +1530,7 @@
 
     goto/16 :goto_0
 
-    :cond_18
+    :cond_19
     new-instance p1, Ljava/lang/IllegalArgumentException;
 
     const-string p2, "The tag for include_information_details is invalid. Received: "
@@ -1563,14 +1543,14 @@
 
     throw p1
 
-    :pswitch_17
+    :pswitch_18
     const-string p3, "layout/include_header_0"
 
     invoke-virtual {p3, v1}, Ljava/lang/String;->equals(Ljava/lang/Object;)Z
 
     move-result p3
 
-    if-eqz p3, :cond_19
+    if-eqz p3, :cond_1a
 
     new-instance v0, Lde/rki/coronawarnapp/databinding/IncludeHeaderBindingImpl;
 
@@ -1578,7 +1558,7 @@
 
     goto/16 :goto_0
 
-    :cond_19
+    :cond_1a
     new-instance p1, Ljava/lang/IllegalArgumentException;
 
     const-string p2, "The tag for include_header is invalid. Received: "
@@ -1591,14 +1571,14 @@
 
     throw p1
 
-    :pswitch_18
+    :pswitch_19
     const-string p3, "layout/include_divider_0"
 
     invoke-virtual {p3, v1}, Ljava/lang/String;->equals(Ljava/lang/Object;)Z
 
     move-result p3
 
-    if-eqz p3, :cond_1a
+    if-eqz p3, :cond_1b
 
     new-instance v0, Lde/rki/coronawarnapp/databinding/IncludeDividerBindingImpl;
 
@@ -1606,7 +1586,7 @@
 
     goto/16 :goto_0
 
-    :cond_1a
+    :cond_1b
     new-instance p1, Ljava/lang/IllegalArgumentException;
 
     const-string p2, "The tag for include_divider is invalid. Received: "
@@ -1619,14 +1599,14 @@
 
     throw p1
 
-    :pswitch_19
+    :pswitch_1a
     const-string p3, "layout/include_dispatcher_card_0"
 
     invoke-virtual {p3, v1}, Ljava/lang/String;->equals(Ljava/lang/Object;)Z
 
     move-result p3
 
-    if-eqz p3, :cond_1b
+    if-eqz p3, :cond_1c
 
     new-instance v0, Lde/rki/coronawarnapp/databinding/IncludeDispatcherCardBindingImpl;
 
@@ -1634,7 +1614,7 @@
 
     goto/16 :goto_0
 
-    :cond_1b
+    :cond_1c
     new-instance p1, Ljava/lang/IllegalArgumentException;
 
     const-string p2, "The tag for include_dispatcher_card is invalid. Received: "
@@ -1647,14 +1627,14 @@
 
     throw p1
 
-    :pswitch_1a
+    :pswitch_1b
     const-string p3, "layout/include_debuglog_privacy_card_0"
 
     invoke-virtual {p3, v1}, Ljava/lang/String;->equals(Ljava/lang/Object;)Z
 
     move-result p3
 
-    if-eqz p3, :cond_1c
+    if-eqz p3, :cond_1d
 
     new-instance v0, Lde/rki/coronawarnapp/databinding/IncludeDebuglogPrivacyCardBindingImpl;
 
@@ -1662,7 +1642,7 @@
 
     goto/16 :goto_0
 
-    :cond_1c
+    :cond_1d
     new-instance p1, Ljava/lang/IllegalArgumentException;
 
     const-string p2, "The tag for include_debuglog_privacy_card is invalid. Received: "
@@ -1675,14 +1655,14 @@
 
     throw p1
 
-    :pswitch_1b
+    :pswitch_1c
     const-string p3, "layout/include_debugging_debuglog_share_privacy_card_0"
 
     invoke-virtual {p3, v1}, Ljava/lang/String;->equals(Ljava/lang/Object;)Z
 
     move-result p3
 
-    if-eqz p3, :cond_1d
+    if-eqz p3, :cond_1e
 
     new-instance v0, Lde/rki/coronawarnapp/databinding/IncludeDebuggingDebuglogSharePrivacyCardBindingImpl;
 
@@ -1690,7 +1670,7 @@
 
     goto/16 :goto_0
 
-    :cond_1d
+    :cond_1e
     new-instance p1, Ljava/lang/IllegalArgumentException;
 
     const-string p2, "The tag for include_debugging_debuglog_share_privacy_card is invalid. Received: "
@@ -1703,14 +1683,14 @@
 
     throw p1
 
-    :pswitch_1c
+    :pswitch_1d
     const-string p3, "layout/include_contact_form_0"
 
     invoke-virtual {p3, v1}, Ljava/lang/String;->equals(Ljava/lang/Object;)Z
 
     move-result p3
 
-    if-eqz p3, :cond_1e
+    if-eqz p3, :cond_1f
 
     new-instance v0, Lde/rki/coronawarnapp/databinding/IncludeContactFormBindingImpl;
 
@@ -1718,7 +1698,7 @@
 
     goto/16 :goto_0
 
-    :cond_1e
+    :cond_1f
     new-instance p1, Ljava/lang/IllegalArgumentException;
 
     const-string p2, "The tag for include_contact_form is invalid. Received: "
@@ -1731,14 +1711,14 @@
 
     throw p1
 
-    :pswitch_1d
+    :pswitch_1e
     const-string p3, "layout/include_button_icon_0"
 
     invoke-virtual {p3, v1}, Ljava/lang/String;->equals(Ljava/lang/Object;)Z
 
     move-result p3
 
-    if-eqz p3, :cond_1f
+    if-eqz p3, :cond_20
 
     new-instance v0, Lde/rki/coronawarnapp/databinding/IncludeButtonIconBindingImpl;
 
@@ -1746,7 +1726,7 @@
 
     goto/16 :goto_0
 
-    :cond_1f
+    :cond_20
     new-instance p1, Ljava/lang/IllegalArgumentException;
 
     const-string p2, "The tag for include_button_icon is invalid. Received: "
@@ -1759,14 +1739,14 @@
 
     throw p1
 
-    :pswitch_1e
+    :pswitch_1f
     const-string p3, "layout/include_bullet_point_0"
 
     invoke-virtual {p3, v1}, Ljava/lang/String;->equals(Ljava/lang/Object;)Z
 
     move-result p3
 
-    if-eqz p3, :cond_20
+    if-eqz p3, :cond_21
 
     new-instance v0, Lde/rki/coronawarnapp/databinding/IncludeBulletPointBindingImpl;
 
@@ -1774,7 +1754,7 @@
 
     goto/16 :goto_0
 
-    :cond_20
+    :cond_21
     new-instance p1, Ljava/lang/IllegalArgumentException;
 
     const-string p2, "The tag for include_bullet_point is invalid. Received: "
@@ -1787,14 +1767,14 @@
 
     throw p1
 
-    :pswitch_1f
+    :pswitch_20
     const-string p3, "layout/include_16_years_0"
 
     invoke-virtual {p3, v1}, Ljava/lang/String;->equals(Ljava/lang/Object;)Z
 
     move-result p3
 
-    if-eqz p3, :cond_21
+    if-eqz p3, :cond_22
 
     new-instance v0, Lde/rki/coronawarnapp/databinding/Include16YearsBindingImpl;
 
@@ -1802,7 +1782,7 @@
 
     goto/16 :goto_0
 
-    :cond_21
+    :cond_22
     new-instance p1, Ljava/lang/IllegalArgumentException;
 
     const-string p2, "The tag for include_16_years is invalid. Received: "
@@ -1815,14 +1795,14 @@
 
     throw p1
 
-    :pswitch_20
+    :pswitch_21
     const-string p3, "layout/home_submission_status_card_unregistered_0"
 
     invoke-virtual {p3, v1}, Ljava/lang/String;->equals(Ljava/lang/Object;)Z
 
     move-result p3
 
-    if-eqz p3, :cond_22
+    if-eqz p3, :cond_23
 
     new-instance v0, Lde/rki/coronawarnapp/databinding/HomeSubmissionStatusCardUnregisteredBindingImpl;
 
@@ -1830,7 +1810,7 @@
 
     goto/16 :goto_0
 
-    :cond_22
+    :cond_23
     new-instance p1, Ljava/lang/IllegalArgumentException;
 
     const-string p2, "The tag for home_submission_status_card_unregistered is invalid. Received: "
@@ -1843,14 +1823,14 @@
 
     throw p1
 
-    :pswitch_21
+    :pswitch_22
     const-string p3, "layout/home_submission_status_card_fetching_0"
 
     invoke-virtual {p3, v1}, Ljava/lang/String;->equals(Ljava/lang/Object;)Z
 
     move-result p3
 
-    if-eqz p3, :cond_23
+    if-eqz p3, :cond_24
 
     new-instance v0, Lde/rki/coronawarnapp/databinding/HomeSubmissionStatusCardFetchingBindingImpl;
 
@@ -1858,7 +1838,7 @@
 
     goto/16 :goto_0
 
-    :cond_23
+    :cond_24
     new-instance p1, Ljava/lang/IllegalArgumentException;
 
     const-string p2, "The tag for home_submission_status_card_fetching is invalid. Received: "
@@ -1871,25 +1851,25 @@
 
     throw p1
 
-    :pswitch_22
-    const-string p3, "layout/home_submission_status_card_done_0"
+    :pswitch_23
+    const-string p3, "layout/home_statistics_cards_vaccinated_with_booster_layout_0"
 
     invoke-virtual {p3, v1}, Ljava/lang/String;->equals(Ljava/lang/Object;)Z
 
     move-result p3
 
-    if-eqz p3, :cond_24
+    if-eqz p3, :cond_25
 
-    new-instance v0, Lde/rki/coronawarnapp/databinding/HomeSubmissionStatusCardDoneBindingImpl;
+    new-instance v0, Lde/rki/coronawarnapp/databinding/HomeStatisticsCardsVaccinatedWithBoosterLayoutBindingImpl;
 
-    invoke-direct {v0, p1, p2}, Lde/rki/coronawarnapp/databinding/HomeSubmissionStatusCardDoneBindingImpl;-><init>(Landroidx/databinding/DataBindingComponent;Landroid/view/View;)V
+    invoke-direct {v0, p1, p2}, Lde/rki/coronawarnapp/databinding/HomeStatisticsCardsVaccinatedWithBoosterLayoutBindingImpl;-><init>(Landroidx/databinding/DataBindingComponent;Landroid/view/View;)V
 
     goto/16 :goto_0
 
-    :cond_24
+    :cond_25
     new-instance p1, Ljava/lang/IllegalArgumentException;
 
-    const-string p2, "The tag for home_submission_status_card_done is invalid. Received: "
+    const-string p2, "The tag for home_statistics_cards_vaccinated_with_booster_layout is invalid. Received: "
 
     invoke-static {p2, v1}, Lcom/fasterxml/jackson/databind/ser/impl/MapEntrySerializer$$ExternalSyntheticOutline0;->m(Ljava/lang/String;Ljava/lang/Object;)Ljava/lang/String;
 
@@ -1899,14 +1879,14 @@
 
     throw p1
 
-    :pswitch_23
+    :pswitch_24
     const-string p3, "layout/home_statistics_cards_vaccinated_once_layout_0"
 
     invoke-virtual {p3, v1}, Ljava/lang/String;->equals(Ljava/lang/Object;)Z
 
     move-result p3
 
-    if-eqz p3, :cond_25
+    if-eqz p3, :cond_26
 
     new-instance v0, Lde/rki/coronawarnapp/databinding/HomeStatisticsCardsVaccinatedOnceLayoutBindingImpl;
 
@@ -1914,7 +1894,7 @@
 
     goto/16 :goto_0
 
-    :cond_25
+    :cond_26
     new-instance p1, Ljava/lang/IllegalArgumentException;
 
     const-string p2, "The tag for home_statistics_cards_vaccinated_once_layout is invalid. Received: "
@@ -1927,14 +1907,14 @@
 
     throw p1
 
-    :pswitch_24
+    :pswitch_25
     const-string p3, "layout/home_statistics_cards_vaccinated_completely_layout_0"
 
     invoke-virtual {p3, v1}, Ljava/lang/String;->equals(Ljava/lang/Object;)Z
 
     move-result p3
 
-    if-eqz p3, :cond_26
+    if-eqz p3, :cond_27
 
     new-instance v0, Lde/rki/coronawarnapp/databinding/HomeStatisticsCardsVaccinatedCompletelyLayoutBindingImpl;
 
@@ -1942,7 +1922,7 @@
 
     goto/16 :goto_0
 
-    :cond_26
+    :cond_27
     new-instance p1, Ljava/lang/IllegalArgumentException;
 
     const-string p2, "The tag for home_statistics_cards_vaccinated_completely_layout is invalid. Received: "
@@ -1955,36 +1935,8 @@
 
     throw p1
 
-    :pswitch_25
-    const-string p3, "layout/home_statistics_cards_sevendayrvalue_layout_0"
-
-    invoke-virtual {p3, v1}, Ljava/lang/String;->equals(Ljava/lang/Object;)Z
-
-    move-result p3
-
-    if-eqz p3, :cond_27
-
-    new-instance v0, Lde/rki/coronawarnapp/databinding/HomeStatisticsCardsSevendayrvalueLayoutBindingImpl;
-
-    invoke-direct {v0, p1, p2}, Lde/rki/coronawarnapp/databinding/HomeStatisticsCardsSevendayrvalueLayoutBindingImpl;-><init>(Landroidx/databinding/DataBindingComponent;Landroid/view/View;)V
-
-    goto/16 :goto_0
-
-    :cond_27
-    new-instance p1, Ljava/lang/IllegalArgumentException;
-
-    const-string p2, "The tag for home_statistics_cards_sevendayrvalue_layout is invalid. Received: "
-
-    invoke-static {p2, v1}, Lcom/fasterxml/jackson/databind/ser/impl/MapEntrySerializer$$ExternalSyntheticOutline0;->m(Ljava/lang/String;Ljava/lang/Object;)Ljava/lang/String;
-
-    move-result-object p2
-
-    invoke-direct {p1, p2}, Ljava/lang/IllegalArgumentException;-><init>(Ljava/lang/String;)V
-
-    throw p1
-
     :pswitch_26
-    const-string p3, "layout/home_statistics_cards_seven_day_hospitalization_layout_0"
+    const-string p3, "layout/home_statistics_cards_sevendayrvalue_layout_0"
 
     invoke-virtual {p3, v1}, Ljava/lang/String;->equals(Ljava/lang/Object;)Z
 
@@ -1992,16 +1944,16 @@
 
     if-eqz p3, :cond_28
 
-    new-instance v0, Lde/rki/coronawarnapp/databinding/HomeStatisticsCardsSevenDayHospitalizationLayoutBindingImpl;
+    new-instance v0, Lde/rki/coronawarnapp/databinding/HomeStatisticsCardsSevendayrvalueLayoutBindingImpl;
 
-    invoke-direct {v0, p1, p2}, Lde/rki/coronawarnapp/databinding/HomeStatisticsCardsSevenDayHospitalizationLayoutBindingImpl;-><init>(Landroidx/databinding/DataBindingComponent;Landroid/view/View;)V
+    invoke-direct {v0, p1, p2}, Lde/rki/coronawarnapp/databinding/HomeStatisticsCardsSevendayrvalueLayoutBindingImpl;-><init>(Landroidx/databinding/DataBindingComponent;Landroid/view/View;)V
 
     goto/16 :goto_0
 
     :cond_28
     new-instance p1, Ljava/lang/IllegalArgumentException;
 
-    const-string p2, "The tag for home_statistics_cards_seven_day_hospitalization_layout is invalid. Received: "
+    const-string p2, "The tag for home_statistics_cards_sevendayrvalue_layout is invalid. Received: "
 
     invoke-static {p2, v1}, Lcom/fasterxml/jackson/databind/ser/impl/MapEntrySerializer$$ExternalSyntheticOutline0;->m(Ljava/lang/String;Ljava/lang/Object;)Ljava/lang/String;
 
@@ -2040,7 +1992,7 @@
     throw p1
 
     :pswitch_28
-    const-string p3, "layout/home_statistics_cards_keysubmissions_layout_0"
+    const-string p3, "layout/home_statistics_cards_local_incidence_and_hospitalization_layout_0"
 
     invoke-virtual {p3, v1}, Ljava/lang/String;->equals(Ljava/lang/Object;)Z
 
@@ -2048,13 +2000,41 @@
 
     if-eqz p3, :cond_2a
 
+    new-instance v0, Lde/rki/coronawarnapp/databinding/HomeStatisticsCardsLocalIncidenceAndHospitalizationLayoutBindingImpl;
+
+    invoke-direct {v0, p1, p2}, Lde/rki/coronawarnapp/databinding/HomeStatisticsCardsLocalIncidenceAndHospitalizationLayoutBindingImpl;-><init>(Landroidx/databinding/DataBindingComponent;Landroid/view/View;)V
+
+    goto/16 :goto_0
+
+    :cond_2a
+    new-instance p1, Ljava/lang/IllegalArgumentException;
+
+    const-string p2, "The tag for home_statistics_cards_local_incidence_and_hospitalization_layout is invalid. Received: "
+
+    invoke-static {p2, v1}, Lcom/fasterxml/jackson/databind/ser/impl/MapEntrySerializer$$ExternalSyntheticOutline0;->m(Ljava/lang/String;Ljava/lang/Object;)Ljava/lang/String;
+
+    move-result-object p2
+
+    invoke-direct {p1, p2}, Ljava/lang/IllegalArgumentException;-><init>(Ljava/lang/String;)V
+
+    throw p1
+
+    :pswitch_29
+    const-string p3, "layout/home_statistics_cards_keysubmissions_layout_0"
+
+    invoke-virtual {p3, v1}, Ljava/lang/String;->equals(Ljava/lang/Object;)Z
+
+    move-result p3
+
+    if-eqz p3, :cond_2b
+
     new-instance v0, Lde/rki/coronawarnapp/databinding/HomeStatisticsCardsKeysubmissionsLayoutBindingImpl;
 
     invoke-direct {v0, p1, p2}, Lde/rki/coronawarnapp/databinding/HomeStatisticsCardsKeysubmissionsLayoutBindingImpl;-><init>(Landroidx/databinding/DataBindingComponent;Landroid/view/View;)V
 
     goto/16 :goto_0
 
-    :cond_2a
+    :cond_2b
     new-instance p1, Ljava/lang/IllegalArgumentException;
 
     const-string p2, "The tag for home_statistics_cards_keysubmissions_layout is invalid. Received: "
@@ -2067,14 +2047,14 @@
 
     throw p1
 
-    :pswitch_29
+    :pswitch_2a
     const-string p3, "layout/home_statistics_cards_infections_layout_0"
 
     invoke-virtual {p3, v1}, Ljava/lang/String;->equals(Ljava/lang/Object;)Z
 
     move-result p3
 
-    if-eqz p3, :cond_2b
+    if-eqz p3, :cond_2c
 
     new-instance v0, Lde/rki/coronawarnapp/databinding/HomeStatisticsCardsInfectionsLayoutBindingImpl;
 
@@ -2082,7 +2062,7 @@
 
     goto/16 :goto_0
 
-    :cond_2b
+    :cond_2c
     new-instance p1, Ljava/lang/IllegalArgumentException;
 
     const-string p2, "The tag for home_statistics_cards_infections_layout is invalid. Received: "
@@ -2095,14 +2075,14 @@
 
     throw p1
 
-    :pswitch_2a
+    :pswitch_2b
     const-string p3, "layout/home_statistics_cards_incidence_layout_0"
 
     invoke-virtual {p3, v1}, Ljava/lang/String;->equals(Ljava/lang/Object;)Z
 
     move-result p3
 
-    if-eqz p3, :cond_2c
+    if-eqz p3, :cond_2d
 
     new-instance v0, Lde/rki/coronawarnapp/databinding/HomeStatisticsCardsIncidenceLayoutBindingImpl;
 
@@ -2110,7 +2090,7 @@
 
     goto/16 :goto_0
 
-    :cond_2c
+    :cond_2d
     new-instance p1, Ljava/lang/IllegalArgumentException;
 
     const-string p2, "The tag for home_statistics_cards_incidence_layout is invalid. Received: "
@@ -2123,14 +2103,14 @@
 
     throw p1
 
-    :pswitch_2b
+    :pswitch_2c
     const-string p3, "layout/home_statistics_cards_applied_vaccination_rates_layout_0"
 
     invoke-virtual {p3, v1}, Ljava/lang/String;->equals(Ljava/lang/Object;)Z
 
     move-result p3
 
-    if-eqz p3, :cond_2d
+    if-eqz p3, :cond_2e
 
     new-instance v0, Lde/rki/coronawarnapp/databinding/HomeStatisticsCardsAppliedVaccinationRatesLayoutBindingImpl;
 
@@ -2138,7 +2118,7 @@
 
     goto/16 :goto_0
 
-    :cond_2d
+    :cond_2e
     new-instance p1, Ljava/lang/IllegalArgumentException;
 
     const-string p2, "The tag for home_statistics_cards_applied_vaccination_rates_layout is invalid. Received: "
@@ -2151,14 +2131,14 @@
 
     throw p1
 
-    :pswitch_2c
+    :pswitch_2d
     const-string p3, "layout/home_incompatible_card_layout_0"
 
     invoke-virtual {p3, v1}, Ljava/lang/String;->equals(Ljava/lang/Object;)Z
 
     move-result p3
 
-    if-eqz p3, :cond_2e
+    if-eqz p3, :cond_2f
 
     new-instance v0, Lde/rki/coronawarnapp/databinding/HomeIncompatibleCardLayoutBindingImpl;
 
@@ -2166,7 +2146,7 @@
 
     goto/16 :goto_0
 
-    :cond_2e
+    :cond_2f
     new-instance p1, Ljava/lang/IllegalArgumentException;
 
     const-string p2, "The tag for home_incompatible_card_layout is invalid. Received: "
@@ -2179,22 +2159,22 @@
 
     throw p1
 
-    :pswitch_2d
+    :pswitch_2e
     const-string p3, "layout/home_fragment_layout_0"
 
     invoke-virtual {p3, v1}, Ljava/lang/String;->equals(Ljava/lang/Object;)Z
 
     move-result p3
 
-    if-eqz p3, :cond_2f
+    if-eqz p3, :cond_30
 
     new-instance v0, Lde/rki/coronawarnapp/databinding/HomeFragmentLayoutBindingImpl;
 
     invoke-direct {v0, p1, p2}, Lde/rki/coronawarnapp/databinding/HomeFragmentLayoutBindingImpl;-><init>(Landroidx/databinding/DataBindingComponent;Landroid/view/View;)V
 
-    goto/16 :goto_0
+    goto :goto_0
 
-    :cond_2f
+    :cond_30
     new-instance p1, Ljava/lang/IllegalArgumentException;
 
     const-string p2, "The tag for home_fragment_layout is invalid. Received: "
@@ -2207,14 +2187,14 @@
 
     throw p1
 
-    :pswitch_2e
+    :pswitch_2f
     const-string p3, "layout/home_faq_card_layout_0"
 
     invoke-virtual {p3, v1}, Ljava/lang/String;->equals(Ljava/lang/Object;)Z
 
     move-result p3
 
-    if-eqz p3, :cond_30
+    if-eqz p3, :cond_31
 
     new-instance v0, Lde/rki/coronawarnapp/databinding/HomeFaqCardLayoutBindingImpl;
 
@@ -2222,7 +2202,7 @@
 
     goto :goto_0
 
-    :cond_30
+    :cond_31
     new-instance p1, Ljava/lang/IllegalArgumentException;
 
     const-string p2, "The tag for home_faq_card_layout is invalid. Received: "
@@ -2235,14 +2215,14 @@
 
     throw p1
 
-    :pswitch_2f
+    :pswitch_30
     const-string p3, "layout/fragment_test_home_test_cards_layout_0"
 
     invoke-virtual {p3, v1}, Ljava/lang/String;->equals(Ljava/lang/Object;)Z
 
     move-result p3
 
-    if-eqz p3, :cond_31
+    if-eqz p3, :cond_32
 
     new-instance v0, Lde/rki/coronawarnapp/databinding/FragmentTestHomeTestCardsLayoutBindingImpl;
 
@@ -2250,7 +2230,7 @@
 
     goto :goto_0
 
-    :cond_31
+    :cond_32
     new-instance p1, Ljava/lang/IllegalArgumentException;
 
     const-string p2, "The tag for fragment_test_home_test_cards_layout is invalid. Received: "
@@ -2263,36 +2243,8 @@
 
     throw p1
 
-    :pswitch_30
-    const-string p3, "layout/fragment_submission_your_consent_0"
-
-    invoke-virtual {p3, v1}, Ljava/lang/String;->equals(Ljava/lang/Object;)Z
-
-    move-result p3
-
-    if-eqz p3, :cond_32
-
-    new-instance v0, Lde/rki/coronawarnapp/databinding/FragmentSubmissionYourConsentBindingImpl;
-
-    invoke-direct {v0, p1, p2}, Lde/rki/coronawarnapp/databinding/FragmentSubmissionYourConsentBindingImpl;-><init>(Landroidx/databinding/DataBindingComponent;Landroid/view/View;)V
-
-    goto :goto_0
-
-    :cond_32
-    new-instance p1, Ljava/lang/IllegalArgumentException;
-
-    const-string p2, "The tag for fragment_submission_your_consent is invalid. Received: "
-
-    invoke-static {p2, v1}, Lcom/fasterxml/jackson/databind/ser/impl/MapEntrySerializer$$ExternalSyntheticOutline0;->m(Ljava/lang/String;Ljava/lang/Object;)Ljava/lang/String;
-
-    move-result-object p2
-
-    invoke-direct {p1, p2}, Ljava/lang/IllegalArgumentException;-><init>(Ljava/lang/String;)V
-
-    throw p1
-
     :pswitch_31
-    const-string p3, "layout/fragment_submission_test_result_positive_no_consent_0"
+    const-string p3, "layout/fragment_submission_your_consent_0"
 
     invoke-virtual {p3, v1}, Ljava/lang/String;->equals(Ljava/lang/Object;)Z
 
@@ -2300,16 +2252,16 @@
 
     if-eqz p3, :cond_33
 
-    new-instance v0, Lde/rki/coronawarnapp/databinding/FragmentSubmissionTestResultPositiveNoConsentBindingImpl;
+    new-instance v0, Lde/rki/coronawarnapp/databinding/FragmentSubmissionYourConsentBindingImpl;
 
-    invoke-direct {v0, p1, p2}, Lde/rki/coronawarnapp/databinding/FragmentSubmissionTestResultPositiveNoConsentBindingImpl;-><init>(Landroidx/databinding/DataBindingComponent;Landroid/view/View;)V
+    invoke-direct {v0, p1, p2}, Lde/rki/coronawarnapp/databinding/FragmentSubmissionYourConsentBindingImpl;-><init>(Landroidx/databinding/DataBindingComponent;Landroid/view/View;)V
 
     goto :goto_0
 
     :cond_33
     new-instance p1, Ljava/lang/IllegalArgumentException;
 
-    const-string p2, "The tag for fragment_submission_test_result_positive_no_consent is invalid. Received: "
+    const-string p2, "The tag for fragment_submission_your_consent is invalid. Received: "
 
     invoke-static {p2, v1}, Lcom/fasterxml/jackson/databind/ser/impl/MapEntrySerializer$$ExternalSyntheticOutline0;->m(Ljava/lang/String;Ljava/lang/Object;)Ljava/lang/String;
 
@@ -2328,7 +2280,7 @@
     goto/16 :goto_1
 
     :pswitch_32
-    const-string p3, "layout/fragment_submission_test_result_positive_keys_shared_0"
+    const-string p3, "layout/fragment_submission_test_result_positive_no_consent_0"
 
     invoke-virtual {p3, v1}, Ljava/lang/String;->equals(Ljava/lang/Object;)Z
 
@@ -2336,13 +2288,41 @@
 
     if-eqz p3, :cond_35
 
+    new-instance v0, Lde/rki/coronawarnapp/databinding/FragmentSubmissionTestResultPositiveNoConsentBindingImpl;
+
+    invoke-direct {v0, p1, p2}, Lde/rki/coronawarnapp/databinding/FragmentSubmissionTestResultPositiveNoConsentBindingImpl;-><init>(Landroidx/databinding/DataBindingComponent;Landroid/view/View;)V
+
+    goto/16 :goto_1
+
+    :cond_35
+    new-instance p1, Ljava/lang/IllegalArgumentException;
+
+    const-string p2, "The tag for fragment_submission_test_result_positive_no_consent is invalid. Received: "
+
+    invoke-static {p2, v1}, Lcom/fasterxml/jackson/databind/ser/impl/MapEntrySerializer$$ExternalSyntheticOutline0;->m(Ljava/lang/String;Ljava/lang/Object;)Ljava/lang/String;
+
+    move-result-object p2
+
+    invoke-direct {p1, p2}, Ljava/lang/IllegalArgumentException;-><init>(Ljava/lang/String;)V
+
+    throw p1
+
+    :pswitch_33
+    const-string p3, "layout/fragment_submission_test_result_positive_keys_shared_0"
+
+    invoke-virtual {p3, v1}, Ljava/lang/String;->equals(Ljava/lang/Object;)Z
+
+    move-result p3
+
+    if-eqz p3, :cond_36
+
     new-instance v0, Lde/rki/coronawarnapp/databinding/FragmentSubmissionTestResultPositiveKeysSharedBindingImpl;
 
     invoke-direct {v0, p1, p2}, Lde/rki/coronawarnapp/databinding/FragmentSubmissionTestResultPositiveKeysSharedBindingImpl;-><init>(Landroidx/databinding/DataBindingComponent;Landroid/view/View;)V
 
     goto/16 :goto_1
 
-    :cond_35
+    :cond_36
     new-instance p1, Ljava/lang/IllegalArgumentException;
 
     const-string p2, "The tag for fragment_submission_test_result_positive_keys_shared is invalid. Received: "
@@ -2355,14 +2335,14 @@
 
     throw p1
 
-    :pswitch_33
+    :pswitch_34
     const-string p3, "layout/fragment_submission_test_result_pending_0"
 
     invoke-virtual {p3, v1}, Ljava/lang/String;->equals(Ljava/lang/Object;)Z
 
     move-result p3
 
-    if-eqz p3, :cond_36
+    if-eqz p3, :cond_37
 
     new-instance v0, Lde/rki/coronawarnapp/databinding/FragmentSubmissionTestResultPendingBindingImpl;
 
@@ -2370,7 +2350,7 @@
 
     goto/16 :goto_1
 
-    :cond_36
+    :cond_37
     new-instance p1, Ljava/lang/IllegalArgumentException;
 
     const-string p2, "The tag for fragment_submission_test_result_pending is invalid. Received: "
@@ -2383,14 +2363,14 @@
 
     throw p1
 
-    :pswitch_34
+    :pswitch_35
     const-string p3, "layout/fragment_submission_test_result_negative_0"
 
     invoke-virtual {p3, v1}, Ljava/lang/String;->equals(Ljava/lang/Object;)Z
 
     move-result p3
 
-    if-eqz p3, :cond_37
+    if-eqz p3, :cond_38
 
     new-instance v0, Lde/rki/coronawarnapp/databinding/FragmentSubmissionTestResultNegativeBindingImpl;
 
@@ -2398,7 +2378,7 @@
 
     goto/16 :goto_1
 
-    :cond_37
+    :cond_38
     new-instance p1, Ljava/lang/IllegalArgumentException;
 
     const-string p2, "The tag for fragment_submission_test_result_negative is invalid. Received: "
@@ -2411,14 +2391,14 @@
 
     throw p1
 
-    :pswitch_35
+    :pswitch_36
     const-string p3, "layout/fragment_submission_test_result_invalid_0"
 
     invoke-virtual {p3, v1}, Ljava/lang/String;->equals(Ljava/lang/Object;)Z
 
     move-result p3
 
-    if-eqz p3, :cond_38
+    if-eqz p3, :cond_39
 
     new-instance v0, Lde/rki/coronawarnapp/databinding/FragmentSubmissionTestResultInvalidBindingImpl;
 
@@ -2426,7 +2406,7 @@
 
     goto/16 :goto_1
 
-    :cond_38
+    :cond_39
     new-instance p1, Ljava/lang/IllegalArgumentException;
 
     const-string p2, "The tag for fragment_submission_test_result_invalid is invalid. Received: "
@@ -2439,14 +2419,14 @@
 
     throw p1
 
-    :pswitch_36
+    :pswitch_37
     const-string p3, "layout/fragment_submission_test_result_consent_given_0"
 
     invoke-virtual {p3, v1}, Ljava/lang/String;->equals(Ljava/lang/Object;)Z
 
     move-result p3
 
-    if-eqz p3, :cond_39
+    if-eqz p3, :cond_3a
 
     new-instance v0, Lde/rki/coronawarnapp/databinding/FragmentSubmissionTestResultConsentGivenBindingImpl;
 
@@ -2454,7 +2434,7 @@
 
     goto/16 :goto_1
 
-    :cond_39
+    :cond_3a
     new-instance p1, Ljava/lang/IllegalArgumentException;
 
     const-string p2, "The tag for fragment_submission_test_result_consent_given is invalid. Received: "
@@ -2467,14 +2447,14 @@
 
     throw p1
 
-    :pswitch_37
+    :pswitch_38
     const-string p3, "layout/fragment_submission_test_result_available_0"
 
     invoke-virtual {p3, v1}, Ljava/lang/String;->equals(Ljava/lang/Object;)Z
 
     move-result p3
 
-    if-eqz p3, :cond_3a
+    if-eqz p3, :cond_3b
 
     new-instance v0, Lde/rki/coronawarnapp/databinding/FragmentSubmissionTestResultAvailableBindingImpl;
 
@@ -2482,7 +2462,7 @@
 
     goto/16 :goto_1
 
-    :cond_3a
+    :cond_3b
     new-instance p1, Ljava/lang/IllegalArgumentException;
 
     const-string p2, "The tag for fragment_submission_test_result_available is invalid. Received: "
@@ -2495,14 +2475,14 @@
 
     throw p1
 
-    :pswitch_38
+    :pswitch_39
     const-string p3, "layout/fragment_submission_tan_0"
 
     invoke-virtual {p3, v1}, Ljava/lang/String;->equals(Ljava/lang/Object;)Z
 
     move-result p3
 
-    if-eqz p3, :cond_3b
+    if-eqz p3, :cond_3c
 
     new-instance v0, Lde/rki/coronawarnapp/databinding/FragmentSubmissionTanBindingImpl;
 
@@ -2510,7 +2490,7 @@
 
     goto/16 :goto_1
 
-    :cond_3b
+    :cond_3c
     new-instance p1, Ljava/lang/IllegalArgumentException;
 
     const-string p2, "The tag for fragment_submission_tan is invalid. Received: "
@@ -2523,14 +2503,14 @@
 
     throw p1
 
-    :pswitch_39
+    :pswitch_3a
     const-string p3, "layout/fragment_submission_symptom_intro_0"
 
     invoke-virtual {p3, v1}, Ljava/lang/String;->equals(Ljava/lang/Object;)Z
 
     move-result p3
 
-    if-eqz p3, :cond_3c
+    if-eqz p3, :cond_3d
 
     new-instance v0, Lde/rki/coronawarnapp/databinding/FragmentSubmissionSymptomIntroBindingImpl;
 
@@ -2538,7 +2518,7 @@
 
     goto/16 :goto_1
 
-    :cond_3c
+    :cond_3d
     new-instance p1, Ljava/lang/IllegalArgumentException;
 
     const-string p2, "The tag for fragment_submission_symptom_intro is invalid. Received: "
@@ -2551,14 +2531,14 @@
 
     throw p1
 
-    :pswitch_3a
+    :pswitch_3b
     const-string p3, "layout/fragment_submission_symptom_calendar_0"
 
     invoke-virtual {p3, v1}, Ljava/lang/String;->equals(Ljava/lang/Object;)Z
 
     move-result p3
 
-    if-eqz p3, :cond_3d
+    if-eqz p3, :cond_3e
 
     new-instance v0, Lde/rki/coronawarnapp/databinding/FragmentSubmissionSymptomCalendarBindingImpl;
 
@@ -2566,7 +2546,7 @@
 
     goto/16 :goto_1
 
-    :cond_3d
+    :cond_3e
     new-instance p1, Ljava/lang/IllegalArgumentException;
 
     const-string p2, "The tag for fragment_submission_symptom_calendar is invalid. Received: "
@@ -2579,14 +2559,14 @@
 
     throw p1
 
-    :pswitch_3b
+    :pswitch_3c
     const-string p3, "layout/fragment_submission_result_ready_0"
 
     invoke-virtual {p3, v1}, Ljava/lang/String;->equals(Ljava/lang/Object;)Z
 
     move-result p3
 
-    if-eqz p3, :cond_3e
+    if-eqz p3, :cond_3f
 
     new-instance v0, Lde/rki/coronawarnapp/databinding/FragmentSubmissionResultReadyBindingImpl;
 
@@ -2594,7 +2574,7 @@
 
     goto/16 :goto_1
 
-    :cond_3e
+    :cond_3f
     new-instance p1, Ljava/lang/IllegalArgumentException;
 
     const-string p2, "The tag for fragment_submission_result_ready is invalid. Received: "
@@ -2607,14 +2587,14 @@
 
     throw p1
 
-    :pswitch_3c
+    :pswitch_3d
     const-string p3, "layout/fragment_submission_no_consent_positive_other_warning_0"
 
     invoke-virtual {p3, v1}, Ljava/lang/String;->equals(Ljava/lang/Object;)Z
 
     move-result p3
 
-    if-eqz p3, :cond_3f
+    if-eqz p3, :cond_40
 
     new-instance v0, Lde/rki/coronawarnapp/databinding/FragmentSubmissionNoConsentPositiveOtherWarningBindingImpl;
 
@@ -2622,7 +2602,7 @@
 
     goto/16 :goto_1
 
-    :cond_3f
+    :cond_40
     new-instance p1, Ljava/lang/IllegalArgumentException;
 
     const-string p2, "The tag for fragment_submission_no_consent_positive_other_warning is invalid. Received: "
@@ -2635,14 +2615,14 @@
 
     throw p1
 
-    :pswitch_3d
+    :pswitch_3e
     const-string p3, "layout/fragment_submission_done_0"
 
     invoke-virtual {p3, v1}, Ljava/lang/String;->equals(Ljava/lang/Object;)Z
 
     move-result p3
 
-    if-eqz p3, :cond_40
+    if-eqz p3, :cond_41
 
     new-instance v0, Lde/rki/coronawarnapp/databinding/FragmentSubmissionDoneBindingImpl;
 
@@ -2650,7 +2630,7 @@
 
     goto/16 :goto_1
 
-    :cond_40
+    :cond_41
     new-instance p1, Ljava/lang/IllegalArgumentException;
 
     const-string p2, "The tag for fragment_submission_done is invalid. Received: "
@@ -2663,14 +2643,14 @@
 
     throw p1
 
-    :pswitch_3e
+    :pswitch_3f
     const-string p3, "layout/fragment_submission_dispatcher_0"
 
     invoke-virtual {p3, v1}, Ljava/lang/String;->equals(Ljava/lang/Object;)Z
 
     move-result p3
 
-    if-eqz p3, :cond_41
+    if-eqz p3, :cond_42
 
     new-instance v0, Lde/rki/coronawarnapp/databinding/FragmentSubmissionDispatcherBindingImpl;
 
@@ -2678,7 +2658,7 @@
 
     goto/16 :goto_1
 
-    :cond_41
+    :cond_42
     new-instance p1, Ljava/lang/IllegalArgumentException;
 
     const-string p2, "The tag for fragment_submission_dispatcher is invalid. Received: "
@@ -2691,14 +2671,14 @@
 
     throw p1
 
-    :pswitch_3f
+    :pswitch_40
     const-string p3, "layout/fragment_submission_country_selection_0"
 
     invoke-virtual {p3, v1}, Ljava/lang/String;->equals(Ljava/lang/Object;)Z
 
     move-result p3
 
-    if-eqz p3, :cond_42
+    if-eqz p3, :cond_43
 
     new-instance v0, Lde/rki/coronawarnapp/databinding/FragmentSubmissionCountrySelectionBindingImpl;
 
@@ -2706,7 +2686,7 @@
 
     goto/16 :goto_1
 
-    :cond_42
+    :cond_43
     new-instance p1, Ljava/lang/IllegalArgumentException;
 
     const-string p2, "The tag for fragment_submission_country_selection is invalid. Received: "
@@ -2719,14 +2699,14 @@
 
     throw p1
 
-    :pswitch_40
+    :pswitch_41
     const-string p3, "layout/fragment_submission_contact_0"
 
     invoke-virtual {p3, v1}, Ljava/lang/String;->equals(Ljava/lang/Object;)Z
 
     move-result p3
 
-    if-eqz p3, :cond_43
+    if-eqz p3, :cond_44
 
     new-instance v0, Lde/rki/coronawarnapp/databinding/FragmentSubmissionContactBindingImpl;
 
@@ -2734,7 +2714,7 @@
 
     goto/16 :goto_1
 
-    :cond_43
+    :cond_44
     new-instance p1, Ljava/lang/IllegalArgumentException;
 
     const-string p2, "The tag for fragment_submission_contact is invalid. Received: "
@@ -2747,14 +2727,14 @@
 
     throw p1
 
-    :pswitch_41
+    :pswitch_42
     const-string p3, "layout/fragment_submission_consent_0"
 
     invoke-virtual {p3, v1}, Ljava/lang/String;->equals(Ljava/lang/Object;)Z
 
     move-result p3
 
-    if-eqz p3, :cond_44
+    if-eqz p3, :cond_45
 
     new-instance v0, Lde/rki/coronawarnapp/databinding/FragmentSubmissionConsentBindingImpl;
 
@@ -2762,7 +2742,7 @@
 
     goto/16 :goto_1
 
-    :cond_44
+    :cond_45
     new-instance p1, Ljava/lang/IllegalArgumentException;
 
     const-string p2, "The tag for fragment_submission_consent is invalid. Received: "
@@ -2775,14 +2755,14 @@
 
     throw p1
 
-    :pswitch_42
+    :pswitch_43
     const-string p3, "layout/fragment_statistics_explanation_0"
 
     invoke-virtual {p3, v1}, Ljava/lang/String;->equals(Ljava/lang/Object;)Z
 
     move-result p3
 
-    if-eqz p3, :cond_45
+    if-eqz p3, :cond_46
 
     new-instance v0, Lde/rki/coronawarnapp/databinding/FragmentStatisticsExplanationBindingImpl;
 
@@ -2790,7 +2770,7 @@
 
     goto/16 :goto_1
 
-    :cond_45
+    :cond_46
     new-instance p1, Ljava/lang/IllegalArgumentException;
 
     const-string p2, "The tag for fragment_statistics_explanation is invalid. Received: "
@@ -2803,14 +2783,14 @@
 
     throw p1
 
-    :pswitch_43
+    :pswitch_44
     const-string p3, "layout/fragment_settings_tracing_0"
 
     invoke-virtual {p3, v1}, Ljava/lang/String;->equals(Ljava/lang/Object;)Z
 
     move-result p3
 
-    if-eqz p3, :cond_46
+    if-eqz p3, :cond_47
 
     new-instance v0, Lde/rki/coronawarnapp/databinding/FragmentSettingsTracingBindingImpl;
 
@@ -2818,7 +2798,7 @@
 
     goto/16 :goto_1
 
-    :cond_46
+    :cond_47
     new-instance p1, Ljava/lang/IllegalArgumentException;
 
     const-string p2, "The tag for fragment_settings_tracing is invalid. Received: "
@@ -2831,14 +2811,14 @@
 
     throw p1
 
-    :pswitch_44
+    :pswitch_45
     const-string p3, "layout/fragment_settings_reset_0"
 
     invoke-virtual {p3, v1}, Ljava/lang/String;->equals(Ljava/lang/Object;)Z
 
     move-result p3
 
-    if-eqz p3, :cond_47
+    if-eqz p3, :cond_48
 
     new-instance v0, Lde/rki/coronawarnapp/databinding/FragmentSettingsResetBindingImpl;
 
@@ -2846,7 +2826,7 @@
 
     goto/16 :goto_1
 
-    :cond_47
+    :cond_48
     new-instance p1, Ljava/lang/IllegalArgumentException;
 
     const-string p2, "The tag for fragment_settings_reset is invalid. Received: "
@@ -2859,14 +2839,14 @@
 
     throw p1
 
-    :pswitch_45
+    :pswitch_46
     const-string p3, "layout/fragment_settings_privacy_preserving_analytics_0"
 
     invoke-virtual {p3, v1}, Ljava/lang/String;->equals(Ljava/lang/Object;)Z
 
     move-result p3
 
-    if-eqz p3, :cond_48
+    if-eqz p3, :cond_49
 
     new-instance v0, Lde/rki/coronawarnapp/databinding/FragmentSettingsPrivacyPreservingAnalyticsBindingImpl;
 
@@ -2874,7 +2854,7 @@
 
     goto/16 :goto_1
 
-    :cond_48
+    :cond_49
     new-instance p1, Ljava/lang/IllegalArgumentException;
 
     const-string p2, "The tag for fragment_settings_privacy_preserving_analytics is invalid. Received: "
@@ -2887,14 +2867,14 @@
 
     throw p1
 
-    :pswitch_46
+    :pswitch_47
     const-string p3, "layout/fragment_settings_background_priority_0"
 
     invoke-virtual {p3, v1}, Ljava/lang/String;->equals(Ljava/lang/Object;)Z
 
     move-result p3
 
-    if-eqz p3, :cond_49
+    if-eqz p3, :cond_4a
 
     new-instance v0, Lde/rki/coronawarnapp/databinding/FragmentSettingsBackgroundPriorityBindingImpl;
 
@@ -2902,7 +2882,7 @@
 
     goto/16 :goto_1
 
-    :cond_49
+    :cond_4a
     new-instance p1, Ljava/lang/IllegalArgumentException;
 
     const-string p2, "The tag for fragment_settings_background_priority is invalid. Received: "
@@ -2915,14 +2895,14 @@
 
     throw p1
 
-    :pswitch_47
+    :pswitch_48
     const-string p3, "layout/fragment_settings_0"
 
     invoke-virtual {p3, v1}, Ljava/lang/String;->equals(Ljava/lang/Object;)Z
 
     move-result p3
 
-    if-eqz p3, :cond_4a
+    if-eqz p3, :cond_4b
 
     new-instance v0, Lde/rki/coronawarnapp/databinding/FragmentSettingsBindingImpl;
 
@@ -2930,7 +2910,7 @@
 
     goto/16 :goto_1
 
-    :cond_4a
+    :cond_4b
     new-instance p1, Ljava/lang/IllegalArgumentException;
 
     const-string p2, "The tag for fragment_settings is invalid. Received: "
@@ -2943,14 +2923,14 @@
 
     throw p1
 
-    :pswitch_48
+    :pswitch_49
     const-string p3, "layout/fragment_ppa_more_info_0"
 
     invoke-virtual {p3, v1}, Ljava/lang/String;->equals(Ljava/lang/Object;)Z
 
     move-result p3
 
-    if-eqz p3, :cond_4b
+    if-eqz p3, :cond_4c
 
     new-instance v0, Lde/rki/coronawarnapp/databinding/FragmentPpaMoreInfoBindingImpl;
 
@@ -2958,7 +2938,7 @@
 
     goto/16 :goto_1
 
-    :cond_4b
+    :cond_4c
     new-instance p1, Ljava/lang/IllegalArgumentException;
 
     const-string p2, "The tag for fragment_ppa_more_info is invalid. Received: "
@@ -2971,14 +2951,14 @@
 
     throw p1
 
-    :pswitch_49
+    :pswitch_4a
     const-string p3, "layout/fragment_onboarding_tracing_0"
 
     invoke-virtual {p3, v1}, Ljava/lang/String;->equals(Ljava/lang/Object;)Z
 
     move-result p3
 
-    if-eqz p3, :cond_4c
+    if-eqz p3, :cond_4d
 
     new-instance v0, Lde/rki/coronawarnapp/databinding/FragmentOnboardingTracingBindingImpl;
 
@@ -2986,7 +2966,7 @@
 
     goto/16 :goto_1
 
-    :cond_4c
+    :cond_4d
     new-instance p1, Ljava/lang/IllegalArgumentException;
 
     const-string p2, "The tag for fragment_onboarding_tracing is invalid. Received: "
@@ -2999,14 +2979,14 @@
 
     throw p1
 
-    :pswitch_4a
+    :pswitch_4b
     const-string p3, "layout/fragment_onboarding_test_0"
 
     invoke-virtual {p3, v1}, Ljava/lang/String;->equals(Ljava/lang/Object;)Z
 
     move-result p3
 
-    if-eqz p3, :cond_4d
+    if-eqz p3, :cond_4e
 
     new-instance v0, Lde/rki/coronawarnapp/databinding/FragmentOnboardingTestBindingImpl;
 
@@ -3014,7 +2994,7 @@
 
     goto/16 :goto_1
 
-    :cond_4d
+    :cond_4e
     new-instance p1, Ljava/lang/IllegalArgumentException;
 
     const-string p2, "The tag for fragment_onboarding_test is invalid. Received: "
@@ -3027,14 +3007,14 @@
 
     throw p1
 
-    :pswitch_4b
+    :pswitch_4c
     const-string p3, "layout/fragment_onboarding_privacy_0"
 
     invoke-virtual {p3, v1}, Ljava/lang/String;->equals(Ljava/lang/Object;)Z
 
     move-result p3
 
-    if-eqz p3, :cond_4e
+    if-eqz p3, :cond_4f
 
     new-instance v0, Lde/rki/coronawarnapp/databinding/FragmentOnboardingPrivacyBindingImpl;
 
@@ -3042,7 +3022,7 @@
 
     goto/16 :goto_1
 
-    :cond_4e
+    :cond_4f
     new-instance p1, Ljava/lang/IllegalArgumentException;
 
     const-string p2, "The tag for fragment_onboarding_privacy is invalid. Received: "
@@ -3055,14 +3035,14 @@
 
     throw p1
 
-    :pswitch_4c
+    :pswitch_4d
     const-string p3, "layout/fragment_onboarding_ppa_0"
 
     invoke-virtual {p3, v1}, Ljava/lang/String;->equals(Ljava/lang/Object;)Z
 
     move-result p3
 
-    if-eqz p3, :cond_4f
+    if-eqz p3, :cond_50
 
     new-instance v0, Lde/rki/coronawarnapp/databinding/FragmentOnboardingPpaBindingImpl;
 
@@ -3070,7 +3050,7 @@
 
     goto/16 :goto_1
 
-    :cond_4f
+    :cond_50
     new-instance p1, Ljava/lang/IllegalArgumentException;
 
     const-string p2, "The tag for fragment_onboarding_ppa is invalid. Received: "
@@ -3083,14 +3063,14 @@
 
     throw p1
 
-    :pswitch_4d
+    :pswitch_4e
     const-string p3, "layout/fragment_onboarding_notifications_0"
 
     invoke-virtual {p3, v1}, Ljava/lang/String;->equals(Ljava/lang/Object;)Z
 
     move-result p3
 
-    if-eqz p3, :cond_50
+    if-eqz p3, :cond_51
 
     new-instance v0, Lde/rki/coronawarnapp/databinding/FragmentOnboardingNotificationsBindingImpl;
 
@@ -3098,7 +3078,7 @@
 
     goto/16 :goto_1
 
-    :cond_50
+    :cond_51
     new-instance p1, Ljava/lang/IllegalArgumentException;
 
     const-string p2, "The tag for fragment_onboarding_notifications is invalid. Received: "
@@ -3111,14 +3091,14 @@
 
     throw p1
 
-    :pswitch_4e
+    :pswitch_4f
     const-string p3, "layout/fragment_onboarding_delta_ppa_0"
 
     invoke-virtual {p3, v1}, Ljava/lang/String;->equals(Ljava/lang/Object;)Z
 
     move-result p3
 
-    if-eqz p3, :cond_51
+    if-eqz p3, :cond_52
 
     new-instance v0, Lde/rki/coronawarnapp/databinding/FragmentOnboardingDeltaPpaBindingImpl;
 
@@ -3126,7 +3106,7 @@
 
     goto/16 :goto_1
 
-    :cond_51
+    :cond_52
     new-instance p1, Ljava/lang/IllegalArgumentException;
 
     const-string p2, "The tag for fragment_onboarding_delta_ppa is invalid. Received: "
@@ -3139,14 +3119,14 @@
 
     throw p1
 
-    :pswitch_4f
+    :pswitch_50
     const-string p3, "layout/fragment_onboarding_delta_interoperability_0"
 
     invoke-virtual {p3, v1}, Ljava/lang/String;->equals(Ljava/lang/Object;)Z
 
     move-result p3
 
-    if-eqz p3, :cond_52
+    if-eqz p3, :cond_53
 
     new-instance v0, Lde/rki/coronawarnapp/databinding/FragmentOnboardingDeltaInteroperabilityBindingImpl;
 
@@ -3154,7 +3134,7 @@
 
     goto/16 :goto_1
 
-    :cond_52
+    :cond_53
     new-instance p1, Ljava/lang/IllegalArgumentException;
 
     const-string p2, "The tag for fragment_onboarding_delta_interoperability is invalid. Received: "
@@ -3167,14 +3147,14 @@
 
     throw p1
 
-    :pswitch_50
+    :pswitch_51
     const-string p3, "layout/fragment_onboarding_0"
 
     invoke-virtual {p3, v1}, Ljava/lang/String;->equals(Ljava/lang/Object;)Z
 
     move-result p3
 
-    if-eqz p3, :cond_53
+    if-eqz p3, :cond_54
 
     new-instance v0, Lde/rki/coronawarnapp/databinding/FragmentOnboardingBindingImpl;
 
@@ -3182,7 +3162,7 @@
 
     goto/16 :goto_1
 
-    :cond_53
+    :cond_54
     new-instance p1, Ljava/lang/IllegalArgumentException;
 
     const-string p2, "The tag for fragment_onboarding is invalid. Received: "
@@ -3195,14 +3175,14 @@
 
     throw p1
 
-    :pswitch_51
+    :pswitch_52
     const-string p3, "layout/fragment_main_share_0"
 
     invoke-virtual {p3, v1}, Ljava/lang/String;->equals(Ljava/lang/Object;)Z
 
     move-result p3
 
-    if-eqz p3, :cond_54
+    if-eqz p3, :cond_55
 
     new-instance v0, Lde/rki/coronawarnapp/databinding/FragmentMainShareBindingImpl;
 
@@ -3210,7 +3190,7 @@
 
     goto/16 :goto_1
 
-    :cond_54
+    :cond_55
     new-instance p1, Ljava/lang/IllegalArgumentException;
 
     const-string p2, "The tag for fragment_main_share is invalid. Received: "
@@ -3223,14 +3203,14 @@
 
     throw p1
 
-    :pswitch_52
+    :pswitch_53
     const-string p3, "layout/fragment_main_overview_0"
 
     invoke-virtual {p3, v1}, Ljava/lang/String;->equals(Ljava/lang/Object;)Z
 
     move-result p3
 
-    if-eqz p3, :cond_55
+    if-eqz p3, :cond_56
 
     new-instance v0, Lde/rki/coronawarnapp/databinding/FragmentMainOverviewBindingImpl;
 
@@ -3238,7 +3218,7 @@
 
     goto/16 :goto_1
 
-    :cond_55
+    :cond_56
     new-instance p1, Ljava/lang/IllegalArgumentException;
 
     const-string p2, "The tag for fragment_main_overview is invalid. Received: "
@@ -3251,14 +3231,14 @@
 
     throw p1
 
-    :pswitch_53
+    :pswitch_54
     const-string p3, "layout/fragment_interoperability_configuration_0"
 
     invoke-virtual {p3, v1}, Ljava/lang/String;->equals(Ljava/lang/Object;)Z
 
     move-result p3
 
-    if-eqz p3, :cond_56
+    if-eqz p3, :cond_57
 
     new-instance v0, Lde/rki/coronawarnapp/databinding/FragmentInteroperabilityConfigurationBindingImpl;
 
@@ -3266,7 +3246,7 @@
 
     goto/16 :goto_1
 
-    :cond_56
+    :cond_57
     new-instance p1, Ljava/lang/IllegalArgumentException;
 
     const-string p2, "The tag for fragment_interoperability_configuration is invalid. Received: "
@@ -3279,14 +3259,14 @@
 
     throw p1
 
-    :pswitch_54
+    :pswitch_55
     const-string p3, "layout/fragment_information_terms_0"
 
     invoke-virtual {p3, v1}, Ljava/lang/String;->equals(Ljava/lang/Object;)Z
 
     move-result p3
 
-    if-eqz p3, :cond_57
+    if-eqz p3, :cond_58
 
     new-instance v0, Lde/rki/coronawarnapp/databinding/FragmentInformationTermsBindingImpl;
 
@@ -3294,7 +3274,7 @@
 
     goto/16 :goto_1
 
-    :cond_57
+    :cond_58
     new-instance p1, Ljava/lang/IllegalArgumentException;
 
     const-string p2, "The tag for fragment_information_terms is invalid. Received: "
@@ -3307,14 +3287,14 @@
 
     throw p1
 
-    :pswitch_55
+    :pswitch_56
     const-string p3, "layout/fragment_information_technical_0"
 
     invoke-virtual {p3, v1}, Ljava/lang/String;->equals(Ljava/lang/Object;)Z
 
     move-result p3
 
-    if-eqz p3, :cond_58
+    if-eqz p3, :cond_59
 
     new-instance v0, Lde/rki/coronawarnapp/databinding/FragmentInformationTechnicalBindingImpl;
 
@@ -3322,7 +3302,7 @@
 
     goto/16 :goto_1
 
-    :cond_58
+    :cond_59
     new-instance p1, Ljava/lang/IllegalArgumentException;
 
     const-string p2, "The tag for fragment_information_technical is invalid. Received: "
@@ -3335,14 +3315,14 @@
 
     throw p1
 
-    :pswitch_56
+    :pswitch_57
     const-string p3, "layout/fragment_information_privacy_0"
 
     invoke-virtual {p3, v1}, Ljava/lang/String;->equals(Ljava/lang/Object;)Z
 
     move-result p3
 
-    if-eqz p3, :cond_59
+    if-eqz p3, :cond_5a
 
     new-instance v0, Lde/rki/coronawarnapp/databinding/FragmentInformationPrivacyBindingImpl;
 
@@ -3350,7 +3330,7 @@
 
     goto/16 :goto_1
 
-    :cond_59
+    :cond_5a
     new-instance p1, Ljava/lang/IllegalArgumentException;
 
     const-string p2, "The tag for fragment_information_privacy is invalid. Received: "
@@ -3363,14 +3343,14 @@
 
     throw p1
 
-    :pswitch_57
+    :pswitch_58
     const-string p3, "layout/fragment_information_legal_0"
 
     invoke-virtual {p3, v1}, Ljava/lang/String;->equals(Ljava/lang/Object;)Z
 
     move-result p3
 
-    if-eqz p3, :cond_5a
+    if-eqz p3, :cond_5b
 
     new-instance v0, Lde/rki/coronawarnapp/databinding/FragmentInformationLegalBindingImpl;
 
@@ -3378,7 +3358,7 @@
 
     goto/16 :goto_1
 
-    :cond_5a
+    :cond_5b
     new-instance p1, Ljava/lang/IllegalArgumentException;
 
     const-string p2, "The tag for fragment_information_legal is invalid. Received: "
@@ -3391,14 +3371,14 @@
 
     throw p1
 
-    :pswitch_58
+    :pswitch_59
     const-string p3, "layout/fragment_information_contact_0"
 
     invoke-virtual {p3, v1}, Ljava/lang/String;->equals(Ljava/lang/Object;)Z
 
     move-result p3
 
-    if-eqz p3, :cond_5b
+    if-eqz p3, :cond_5c
 
     new-instance v0, Lde/rki/coronawarnapp/databinding/FragmentInformationContactBindingImpl;
 
@@ -3406,7 +3386,7 @@
 
     goto/16 :goto_1
 
-    :cond_5b
+    :cond_5c
     new-instance p1, Ljava/lang/IllegalArgumentException;
 
     const-string p2, "The tag for fragment_information_contact is invalid. Received: "
@@ -3419,14 +3399,14 @@
 
     throw p1
 
-    :pswitch_59
+    :pswitch_5a
     const-string p3, "layout/fragment_information_about_0"
 
     invoke-virtual {p3, v1}, Ljava/lang/String;->equals(Ljava/lang/Object;)Z
 
     move-result p3
 
-    if-eqz p3, :cond_5c
+    if-eqz p3, :cond_5d
 
     new-instance v0, Lde/rki/coronawarnapp/databinding/FragmentInformationAboutBindingImpl;
 
@@ -3434,7 +3414,7 @@
 
     goto/16 :goto_1
 
-    :cond_5c
+    :cond_5d
     new-instance p1, Ljava/lang/IllegalArgumentException;
 
     const-string p2, "The tag for fragment_information_about is invalid. Received: "
@@ -3447,14 +3427,14 @@
 
     throw p1
 
-    :pswitch_5a
+    :pswitch_5b
     const-string p3, "layout/fragment_information_0"
 
     invoke-virtual {p3, v1}, Ljava/lang/String;->equals(Ljava/lang/Object;)Z
 
     move-result p3
 
-    if-eqz p3, :cond_5d
+    if-eqz p3, :cond_5e
 
     new-instance v0, Lde/rki/coronawarnapp/databinding/FragmentInformationBindingImpl;
 
@@ -3462,7 +3442,7 @@
 
     goto/16 :goto_1
 
-    :cond_5d
+    :cond_5e
     new-instance p1, Ljava/lang/IllegalArgumentException;
 
     const-string p2, "The tag for fragment_information is invalid. Received: "
@@ -3475,14 +3455,14 @@
 
     throw p1
 
-    :pswitch_5b
+    :pswitch_5c
     const-string p3, "layout/contact_diary_privacy_card_0"
 
     invoke-virtual {p3, v1}, Ljava/lang/String;->equals(Ljava/lang/Object;)Z
 
     move-result p3
 
-    if-eqz p3, :cond_5e
+    if-eqz p3, :cond_5f
 
     new-instance v0, Lde/rki/coronawarnapp/databinding/ContactDiaryPrivacyCardBindingImpl;
 
@@ -3490,7 +3470,7 @@
 
     goto/16 :goto_1
 
-    :cond_5e
+    :cond_5f
     new-instance p1, Ljava/lang/IllegalArgumentException;
 
     const-string p2, "The tag for contact_diary_privacy_card is invalid. Received: "
@@ -3503,14 +3483,14 @@
 
     throw p1
 
-    :pswitch_5c
+    :pswitch_5d
     const-string p3, "layout/contact_diary_person_list_fragment_0"
 
     invoke-virtual {p3, v1}, Ljava/lang/String;->equals(Ljava/lang/Object;)Z
 
     move-result p3
 
-    if-eqz p3, :cond_5f
+    if-eqz p3, :cond_60
 
     new-instance v0, Lde/rki/coronawarnapp/databinding/ContactDiaryPersonListFragmentBindingImpl;
 
@@ -3518,7 +3498,7 @@
 
     goto/16 :goto_1
 
-    :cond_5f
+    :cond_60
     new-instance p1, Ljava/lang/IllegalArgumentException;
 
     const-string p2, "The tag for contact_diary_person_list_fragment is invalid. Received: "
@@ -3531,14 +3511,14 @@
 
     throw p1
 
-    :pswitch_5d
+    :pswitch_5e
     const-string p3, "layout/contact_diary_onboarding_row_0"
 
     invoke-virtual {p3, v1}, Ljava/lang/String;->equals(Ljava/lang/Object;)Z
 
     move-result p3
 
-    if-eqz p3, :cond_60
+    if-eqz p3, :cond_61
 
     new-instance v0, Lde/rki/coronawarnapp/databinding/ContactDiaryOnboardingRowBindingImpl;
 
@@ -3546,7 +3526,7 @@
 
     goto/16 :goto_1
 
-    :cond_60
+    :cond_61
     new-instance p1, Ljava/lang/IllegalArgumentException;
 
     const-string p2, "The tag for contact_diary_onboarding_row is invalid. Received: "
@@ -3559,14 +3539,14 @@
 
     throw p1
 
-    :pswitch_5e
+    :pswitch_5f
     const-string p3, "layout/contact_diary_onboarding_fragment_0"
 
     invoke-virtual {p3, v1}, Ljava/lang/String;->equals(Ljava/lang/Object;)Z
 
     move-result p3
 
-    if-eqz p3, :cond_61
+    if-eqz p3, :cond_62
 
     new-instance v0, Lde/rki/coronawarnapp/databinding/ContactDiaryOnboardingFragmentBindingImpl;
 
@@ -3574,7 +3554,7 @@
 
     goto/16 :goto_1
 
-    :cond_61
+    :cond_62
     new-instance p1, Ljava/lang/IllegalArgumentException;
 
     const-string p2, "The tag for contact_diary_onboarding_fragment is invalid. Received: "
@@ -3587,36 +3567,8 @@
 
     throw p1
 
-    :pswitch_5f
-    const-string p3, "layout/contact_diary_location_list_fragment_0"
-
-    invoke-virtual {p3, v1}, Ljava/lang/String;->equals(Ljava/lang/Object;)Z
-
-    move-result p3
-
-    if-eqz p3, :cond_62
-
-    new-instance v0, Lde/rki/coronawarnapp/databinding/ContactDiaryLocationListFragmentBindingImpl;
-
-    invoke-direct {v0, p1, p2}, Lde/rki/coronawarnapp/databinding/ContactDiaryLocationListFragmentBindingImpl;-><init>(Landroidx/databinding/DataBindingComponent;Landroid/view/View;)V
-
-    goto/16 :goto_1
-
-    :cond_62
-    new-instance p1, Ljava/lang/IllegalArgumentException;
-
-    const-string p2, "The tag for contact_diary_location_list_fragment is invalid. Received: "
-
-    invoke-static {p2, v1}, Lcom/fasterxml/jackson/databind/ser/impl/MapEntrySerializer$$ExternalSyntheticOutline0;->m(Ljava/lang/String;Ljava/lang/Object;)Ljava/lang/String;
-
-    move-result-object p2
-
-    invoke-direct {p1, p2}, Ljava/lang/IllegalArgumentException;-><init>(Ljava/lang/String;)V
-
-    throw p1
-
     :pswitch_60
-    const-string p3, "layout/contact_diary_homescreen_card_include_0"
+    const-string p3, "layout/contact_diary_location_list_fragment_0"
 
     invoke-virtual {p3, v1}, Ljava/lang/String;->equals(Ljava/lang/Object;)Z
 
@@ -3624,16 +3576,16 @@
 
     if-eqz p3, :cond_63
 
-    new-instance v0, Lde/rki/coronawarnapp/databinding/ContactDiaryHomescreenCardIncludeBindingImpl;
+    new-instance v0, Lde/rki/coronawarnapp/databinding/ContactDiaryLocationListFragmentBindingImpl;
 
-    invoke-direct {v0, p1, p2}, Lde/rki/coronawarnapp/databinding/ContactDiaryHomescreenCardIncludeBindingImpl;-><init>(Landroidx/databinding/DataBindingComponent;Landroid/view/View;)V
+    invoke-direct {v0, p1, p2}, Lde/rki/coronawarnapp/databinding/ContactDiaryLocationListFragmentBindingImpl;-><init>(Landroidx/databinding/DataBindingComponent;Landroid/view/View;)V
 
     goto :goto_1
 
     :cond_63
     new-instance p1, Ljava/lang/IllegalArgumentException;
 
-    const-string p2, "The tag for contact_diary_homescreen_card_include is invalid. Received: "
+    const-string p2, "The tag for contact_diary_location_list_fragment is invalid. Received: "
 
     invoke-static {p2, v1}, Lcom/fasterxml/jackson/databind/ser/impl/MapEntrySerializer$$ExternalSyntheticOutline0;->m(Ljava/lang/String;Ljava/lang/Object;)Ljava/lang/String;
 
@@ -3896,11 +3848,11 @@
 
     if-eqz v1, :cond_5
 
-    const/16 v2, 0x6e
+    const/16 v2, 0x67
 
     if-eq p3, v2, :cond_3
 
-    const/16 v2, 0x6f
+    const/16 v2, 0x68
 
     if-eq p3, v2, :cond_1
 
@@ -4340,7 +4292,7 @@
     throw p1
 
     :pswitch_c
-    const-string p3, "layout/tracing_details_find_details_in_journal_0"
+    const-string p3, "layout/tracing_details_access_survey_card_0"
 
     invoke-virtual {p3, p4}, Ljava/lang/String;->equals(Ljava/lang/Object;)Z
 
@@ -4348,41 +4300,13 @@
 
     if-eqz p3, :cond_c
 
-    new-instance p3, Lde/rki/coronawarnapp/databinding/TracingDetailsFindDetailsInJournalBindingImpl;
-
-    invoke-direct {p3, p1, p2}, Lde/rki/coronawarnapp/databinding/TracingDetailsFindDetailsInJournalBindingImpl;-><init>(Landroidx/databinding/DataBindingComponent;Landroid/view/View;)V
-
-    return-object p3
-
-    :cond_c
-    new-instance p1, Ljava/lang/IllegalArgumentException;
-
-    const-string p2, "The tag for tracing_details_find_details_in_journal is invalid. Received: "
-
-    invoke-static {p2, p4}, Lcom/fasterxml/jackson/databind/ser/impl/MapEntrySerializer$$ExternalSyntheticOutline0;->m(Ljava/lang/String;Ljava/lang/Object;)Ljava/lang/String;
-
-    move-result-object p2
-
-    invoke-direct {p1, p2}, Ljava/lang/IllegalArgumentException;-><init>(Ljava/lang/String;)V
-
-    throw p1
-
-    :pswitch_d
-    const-string p3, "layout/tracing_details_access_survey_card_0"
-
-    invoke-virtual {p3, p4}, Ljava/lang/String;->equals(Ljava/lang/Object;)Z
-
-    move-result p3
-
-    if-eqz p3, :cond_d
-
     new-instance p3, Lde/rki/coronawarnapp/databinding/TracingDetailsAccessSurveyCardBindingImpl;
 
     invoke-direct {p3, p1, p2}, Lde/rki/coronawarnapp/databinding/TracingDetailsAccessSurveyCardBindingImpl;-><init>(Landroidx/databinding/DataBindingComponent;Landroid/view/View;)V
 
     return-object p3
 
-    :cond_d
+    :cond_c
     new-instance p1, Ljava/lang/IllegalArgumentException;
 
     const-string p2, "The tag for tracing_details_access_survey_card is invalid. Received: "
@@ -4395,14 +4319,14 @@
 
     throw p1
 
-    :pswitch_e
+    :pswitch_d
     const-string p3, "layout/tracing_content_progress_view_0"
 
     invoke-virtual {p3, p4}, Ljava/lang/String;->equals(Ljava/lang/Object;)Z
 
     move-result p3
 
-    if-eqz p3, :cond_e
+    if-eqz p3, :cond_d
 
     new-instance p3, Lde/rki/coronawarnapp/databinding/TracingContentProgressViewBindingImpl;
 
@@ -4410,7 +4334,7 @@
 
     return-object p3
 
-    :cond_e
+    :cond_d
     new-instance p1, Ljava/lang/IllegalArgumentException;
 
     const-string p2, "The tag for tracing_content_progress_view is invalid. Received: "
@@ -4423,14 +4347,14 @@
 
     throw p1
 
-    :pswitch_f
+    :pswitch_e
     const-string p3, "layout/tracing_content_low_view_0"
 
     invoke-virtual {p3, p4}, Ljava/lang/String;->equals(Ljava/lang/Object;)Z
 
     move-result p3
 
-    if-eqz p3, :cond_f
+    if-eqz p3, :cond_e
 
     new-instance p3, Lde/rki/coronawarnapp/databinding/TracingContentLowViewBindingImpl;
 
@@ -4438,7 +4362,7 @@
 
     return-object p3
 
-    :cond_f
+    :cond_e
     new-instance p1, Ljava/lang/IllegalArgumentException;
 
     const-string p2, "The tag for tracing_content_low_view is invalid. Received: "
@@ -4451,14 +4375,14 @@
 
     throw p1
 
-    :pswitch_10
+    :pswitch_f
     const-string p3, "layout/tracing_content_increased_view_0"
 
     invoke-virtual {p3, p4}, Ljava/lang/String;->equals(Ljava/lang/Object;)Z
 
     move-result p3
 
-    if-eqz p3, :cond_10
+    if-eqz p3, :cond_f
 
     new-instance p3, Lde/rki/coronawarnapp/databinding/TracingContentIncreasedViewBindingImpl;
 
@@ -4466,7 +4390,7 @@
 
     return-object p3
 
-    :cond_10
+    :cond_f
     new-instance p1, Ljava/lang/IllegalArgumentException;
 
     const-string p2, "The tag for tracing_content_increased_view is invalid. Received: "
@@ -4479,14 +4403,14 @@
 
     throw p1
 
-    :pswitch_11
+    :pswitch_10
     const-string p3, "layout/tracing_content_failed_view_0"
 
     invoke-virtual {p3, p4}, Ljava/lang/String;->equals(Ljava/lang/Object;)Z
 
     move-result p3
 
-    if-eqz p3, :cond_11
+    if-eqz p3, :cond_10
 
     new-instance p3, Lde/rki/coronawarnapp/databinding/TracingContentFailedViewBindingImpl;
 
@@ -4494,7 +4418,7 @@
 
     return-object p3
 
-    :cond_11
+    :cond_10
     new-instance p1, Ljava/lang/IllegalArgumentException;
 
     const-string p2, "The tag for tracing_content_failed_view is invalid. Received: "
@@ -4507,14 +4431,14 @@
 
     throw p1
 
-    :pswitch_12
+    :pswitch_11
     const-string p3, "layout/tracing_content_disabled_view_0"
 
     invoke-virtual {p3, p4}, Ljava/lang/String;->equals(Ljava/lang/Object;)Z
 
     move-result p3
 
-    if-eqz p3, :cond_12
+    if-eqz p3, :cond_11
 
     new-instance p3, Lde/rki/coronawarnapp/databinding/TracingContentDisabledViewBindingImpl;
 
@@ -4522,7 +4446,7 @@
 
     return-object p3
 
-    :cond_12
+    :cond_11
     new-instance p1, Ljava/lang/IllegalArgumentException;
 
     const-string p2, "The tag for tracing_content_disabled_view is invalid. Received: "
@@ -4535,14 +4459,14 @@
 
     throw p1
 
-    :pswitch_13
+    :pswitch_12
     const-string p3, "layout/survey_consent_fragment_0"
 
     invoke-virtual {p3, p4}, Ljava/lang/String;->equals(Ljava/lang/Object;)Z
 
     move-result p3
 
-    if-eqz p3, :cond_13
+    if-eqz p3, :cond_12
 
     new-instance p3, Lde/rki/coronawarnapp/databinding/SurveyConsentFragmentBindingImpl;
 
@@ -4550,7 +4474,7 @@
 
     return-object p3
 
-    :cond_13
+    :cond_12
     new-instance p1, Ljava/lang/IllegalArgumentException;
 
     const-string p2, "The tag for survey_consent_fragment is invalid. Received: "
@@ -4563,14 +4487,14 @@
 
     throw p1
 
-    :pswitch_14
+    :pswitch_13
     const-string p3, "layout/survey_consent_detail_fragment_0"
 
     invoke-virtual {p3, p4}, Ljava/lang/String;->equals(Ljava/lang/Object;)Z
 
     move-result p3
 
-    if-eqz p3, :cond_14
+    if-eqz p3, :cond_13
 
     new-instance p3, Lde/rki/coronawarnapp/databinding/SurveyConsentDetailFragmentBindingImpl;
 
@@ -4578,7 +4502,7 @@
 
     return-object p3
 
-    :cond_14
+    :cond_13
     new-instance p1, Ljava/lang/IllegalArgumentException;
 
     const-string p2, "The tag for survey_consent_detail_fragment is invalid. Received: "
@@ -4591,14 +4515,14 @@
 
     throw p1
 
-    :pswitch_15
+    :pswitch_14
     const-string p3, "layout/new_release_info_screen_fragment_0"
 
     invoke-virtual {p3, p4}, Ljava/lang/String;->equals(Ljava/lang/Object;)Z
 
     move-result p3
 
-    if-eqz p3, :cond_15
+    if-eqz p3, :cond_14
 
     new-instance p3, Lde/rki/coronawarnapp/databinding/NewReleaseInfoScreenFragmentBindingImpl;
 
@@ -4606,7 +4530,7 @@
 
     return-object p3
 
-    :cond_15
+    :cond_14
     new-instance p1, Ljava/lang/IllegalArgumentException;
 
     const-string p2, "The tag for new_release_info_screen_fragment is invalid. Received: "
@@ -4619,14 +4543,14 @@
 
     throw p1
 
-    :pswitch_16
+    :pswitch_15
     const-string p3, "layout/new_release_info_item_0"
 
     invoke-virtual {p3, p4}, Ljava/lang/String;->equals(Ljava/lang/Object;)Z
 
     move-result p3
 
-    if-eqz p3, :cond_16
+    if-eqz p3, :cond_15
 
     new-instance p3, Lde/rki/coronawarnapp/databinding/NewReleaseInfoItemBindingImpl;
 
@@ -4634,7 +4558,7 @@
 
     return-object p3
 
-    :cond_16
+    :cond_15
     new-instance p1, Ljava/lang/IllegalArgumentException;
 
     const-string p2, "The tag for new_release_info_item is invalid. Received: "
@@ -4647,14 +4571,14 @@
 
     throw p1
 
-    :pswitch_17
+    :pswitch_16
     const-string p3, "layout/merge_guidelines_side_0"
 
     invoke-virtual {p3, p4}, Ljava/lang/String;->equals(Ljava/lang/Object;)Z
 
     move-result p3
 
-    if-eqz p3, :cond_17
+    if-eqz p3, :cond_16
 
     new-instance p3, Lde/rki/coronawarnapp/databinding/MergeGuidelinesSideBindingImpl;
 
@@ -4666,7 +4590,7 @@
 
     return-object p3
 
-    :cond_17
+    :cond_16
     new-instance p1, Ljava/lang/IllegalArgumentException;
 
     const-string p2, "The tag for merge_guidelines_side is invalid. Received: "
@@ -4679,14 +4603,14 @@
 
     throw p1
 
-    :pswitch_18
+    :pswitch_17
     const-string p3, "layout/merge_guidelines_card_0"
 
     invoke-virtual {p3, p4}, Ljava/lang/String;->equals(Ljava/lang/Object;)Z
 
     move-result p3
 
-    if-eqz p3, :cond_18
+    if-eqz p3, :cond_17
 
     new-instance p3, Lde/rki/coronawarnapp/databinding/MergeGuidelinesCardBindingImpl;
 
@@ -4698,7 +4622,7 @@
 
     return-object p3
 
-    :cond_18
+    :cond_17
     new-instance p1, Ljava/lang/IllegalArgumentException;
 
     const-string p2, "The tag for merge_guidelines_card is invalid. Received: "
@@ -4711,14 +4635,14 @@
 
     throw p1
 
-    :pswitch_19
+    :pswitch_18
     const-string p3, "layout/include_tracing_status_card_location_0"
 
     invoke-virtual {p3, p4}, Ljava/lang/String;->equals(Ljava/lang/Object;)Z
 
     move-result p3
 
-    if-eqz p3, :cond_19
+    if-eqz p3, :cond_18
 
     new-instance p3, Lde/rki/coronawarnapp/databinding/IncludeTracingStatusCardLocationBindingImpl;
 
@@ -4726,7 +4650,7 @@
 
     return-object p3
 
-    :cond_19
+    :cond_18
     new-instance p1, Ljava/lang/IllegalArgumentException;
 
     const-string p2, "The tag for include_tracing_status_card_location is invalid. Received: "
@@ -4739,14 +4663,14 @@
 
     throw p1
 
-    :pswitch_1a
+    :pswitch_19
     const-string p3, "layout/include_tracing_status_card_0"
 
     invoke-virtual {p3, p4}, Ljava/lang/String;->equals(Ljava/lang/Object;)Z
 
     move-result p3
 
-    if-eqz p3, :cond_1a
+    if-eqz p3, :cond_19
 
     new-instance p3, Lde/rki/coronawarnapp/databinding/IncludeTracingStatusCardBindingImpl;
 
@@ -4754,206 +4678,10 @@
 
     return-object p3
 
-    :cond_1a
+    :cond_19
     new-instance p1, Ljava/lang/IllegalArgumentException;
 
     const-string p2, "The tag for include_tracing_status_card is invalid. Received: "
-
-    invoke-static {p2, p4}, Lcom/fasterxml/jackson/databind/ser/impl/MapEntrySerializer$$ExternalSyntheticOutline0;->m(Ljava/lang/String;Ljava/lang/Object;)Ljava/lang/String;
-
-    move-result-object p2
-
-    invoke-direct {p1, p2}, Ljava/lang/IllegalArgumentException;-><init>(Ljava/lang/String;)V
-
-    throw p1
-
-    :pswitch_1b
-    const-string p3, "layout/include_test_result_positive_steps_0"
-
-    invoke-virtual {p3, p4}, Ljava/lang/String;->equals(Ljava/lang/Object;)Z
-
-    move-result p3
-
-    if-eqz p3, :cond_1b
-
-    new-instance p3, Lde/rki/coronawarnapp/databinding/IncludeTestResultPositiveStepsBindingImpl;
-
-    invoke-direct {p3, p1, p2}, Lde/rki/coronawarnapp/databinding/IncludeTestResultPositiveStepsBindingImpl;-><init>(Landroidx/databinding/DataBindingComponent;Landroid/view/View;)V
-
-    return-object p3
-
-    :cond_1b
-    new-instance p1, Ljava/lang/IllegalArgumentException;
-
-    const-string p2, "The tag for include_test_result_positive_steps is invalid. Received: "
-
-    invoke-static {p2, p4}, Lcom/fasterxml/jackson/databind/ser/impl/MapEntrySerializer$$ExternalSyntheticOutline0;->m(Ljava/lang/String;Ljava/lang/Object;)Ljava/lang/String;
-
-    move-result-object p2
-
-    invoke-direct {p1, p2}, Ljava/lang/IllegalArgumentException;-><init>(Ljava/lang/String;)V
-
-    throw p1
-
-    :pswitch_1c
-    const-string p3, "layout/include_test_result_card_positive_0"
-
-    invoke-virtual {p3, p4}, Ljava/lang/String;->equals(Ljava/lang/Object;)Z
-
-    move-result p3
-
-    if-eqz p3, :cond_1c
-
-    new-instance p3, Lde/rki/coronawarnapp/databinding/IncludeTestResultCardPositiveBindingImpl;
-
-    invoke-direct {p3, p1, p2}, Lde/rki/coronawarnapp/databinding/IncludeTestResultCardPositiveBindingImpl;-><init>(Landroidx/databinding/DataBindingComponent;Landroid/view/View;)V
-
-    return-object p3
-
-    :cond_1c
-    new-instance p1, Ljava/lang/IllegalArgumentException;
-
-    const-string p2, "The tag for include_test_result_card_positive is invalid. Received: "
-
-    invoke-static {p2, p4}, Lcom/fasterxml/jackson/databind/ser/impl/MapEntrySerializer$$ExternalSyntheticOutline0;->m(Ljava/lang/String;Ljava/lang/Object;)Ljava/lang/String;
-
-    move-result-object p2
-
-    invoke-direct {p1, p2}, Ljava/lang/IllegalArgumentException;-><init>(Ljava/lang/String;)V
-
-    throw p1
-
-    :pswitch_1d
-    const-string p3, "layout/include_test_result_card_0"
-
-    invoke-virtual {p3, p4}, Ljava/lang/String;->equals(Ljava/lang/Object;)Z
-
-    move-result p3
-
-    if-eqz p3, :cond_1d
-
-    new-instance p3, Lde/rki/coronawarnapp/databinding/IncludeTestResultCardBindingImpl;
-
-    invoke-direct {p3, p1, p2}, Lde/rki/coronawarnapp/databinding/IncludeTestResultCardBindingImpl;-><init>(Landroidx/databinding/DataBindingComponent;Landroid/view/View;)V
-
-    return-object p3
-
-    :cond_1d
-    new-instance p1, Ljava/lang/IllegalArgumentException;
-
-    const-string p2, "The tag for include_test_result_card is invalid. Received: "
-
-    invoke-static {p2, p4}, Lcom/fasterxml/jackson/databind/ser/impl/MapEntrySerializer$$ExternalSyntheticOutline0;->m(Ljava/lang/String;Ljava/lang/Object;)Ljava/lang/String;
-
-    move-result-object p2
-
-    invoke-direct {p1, p2}, Ljava/lang/IllegalArgumentException;-><init>(Ljava/lang/String;)V
-
-    throw p1
-
-    :pswitch_1e
-    const-string p3, "layout/include_submission_tan_0"
-
-    invoke-virtual {p3, p4}, Ljava/lang/String;->equals(Ljava/lang/Object;)Z
-
-    move-result p3
-
-    if-eqz p3, :cond_1e
-
-    new-instance p3, Lde/rki/coronawarnapp/databinding/IncludeSubmissionTanBindingImpl;
-
-    invoke-direct {p3, p1, p2}, Lde/rki/coronawarnapp/databinding/IncludeSubmissionTanBindingImpl;-><init>(Landroidx/databinding/DataBindingComponent;Landroid/view/View;)V
-
-    return-object p3
-
-    :cond_1e
-    new-instance p1, Ljava/lang/IllegalArgumentException;
-
-    const-string p2, "The tag for include_submission_tan is invalid. Received: "
-
-    invoke-static {p2, p4}, Lcom/fasterxml/jackson/databind/ser/impl/MapEntrySerializer$$ExternalSyntheticOutline0;->m(Ljava/lang/String;Ljava/lang/Object;)Ljava/lang/String;
-
-    move-result-object p2
-
-    invoke-direct {p1, p2}, Ljava/lang/IllegalArgumentException;-><init>(Ljava/lang/String;)V
-
-    throw p1
-
-    :pswitch_1f
-    const-string p3, "layout/include_submission_positive_other_warning_0"
-
-    invoke-virtual {p3, p4}, Ljava/lang/String;->equals(Ljava/lang/Object;)Z
-
-    move-result p3
-
-    if-eqz p3, :cond_1f
-
-    new-instance p3, Lde/rki/coronawarnapp/databinding/IncludeSubmissionPositiveOtherWarningBindingImpl;
-
-    invoke-direct {p3, p1, p2}, Lde/rki/coronawarnapp/databinding/IncludeSubmissionPositiveOtherWarningBindingImpl;-><init>(Landroidx/databinding/DataBindingComponent;Landroid/view/View;)V
-
-    return-object p3
-
-    :cond_1f
-    new-instance p1, Ljava/lang/IllegalArgumentException;
-
-    const-string p2, "The tag for include_submission_positive_other_warning is invalid. Received: "
-
-    invoke-static {p2, p4}, Lcom/fasterxml/jackson/databind/ser/impl/MapEntrySerializer$$ExternalSyntheticOutline0;->m(Ljava/lang/String;Ljava/lang/Object;)Ljava/lang/String;
-
-    move-result-object p2
-
-    invoke-direct {p1, p2}, Ljava/lang/IllegalArgumentException;-><init>(Ljava/lang/String;)V
-
-    throw p1
-
-    :pswitch_20
-    const-string p3, "layout/include_submission_done_further_info_0"
-
-    invoke-virtual {p3, p4}, Ljava/lang/String;->equals(Ljava/lang/Object;)Z
-
-    move-result p3
-
-    if-eqz p3, :cond_20
-
-    new-instance p3, Lde/rki/coronawarnapp/databinding/IncludeSubmissionDoneFurtherInfoBindingImpl;
-
-    invoke-direct {p3, p1, p2}, Lde/rki/coronawarnapp/databinding/IncludeSubmissionDoneFurtherInfoBindingImpl;-><init>(Landroidx/databinding/DataBindingComponent;Landroid/view/View;)V
-
-    return-object p3
-
-    :cond_20
-    new-instance p1, Ljava/lang/IllegalArgumentException;
-
-    const-string p2, "The tag for include_submission_done_further_info is invalid. Received: "
-
-    invoke-static {p2, p4}, Lcom/fasterxml/jackson/databind/ser/impl/MapEntrySerializer$$ExternalSyntheticOutline0;->m(Ljava/lang/String;Ljava/lang/Object;)Ljava/lang/String;
-
-    move-result-object p2
-
-    invoke-direct {p1, p2}, Ljava/lang/IllegalArgumentException;-><init>(Ljava/lang/String;)V
-
-    throw p1
-
-    :pswitch_21
-    const-string p3, "layout/include_submission_done_content_0"
-
-    invoke-virtual {p3, p4}, Ljava/lang/String;->equals(Ljava/lang/Object;)Z
-
-    move-result p3
-
-    if-eqz p3, :cond_21
-
-    new-instance p3, Lde/rki/coronawarnapp/databinding/IncludeSubmissionDoneContentBindingImpl;
-
-    invoke-direct {p3, p1, p2}, Lde/rki/coronawarnapp/databinding/IncludeSubmissionDoneContentBindingImpl;-><init>(Landroidx/databinding/DataBindingComponent;Landroid/view/View;)V
-
-    return-object p3
-
-    :cond_21
-    new-instance p1, Ljava/lang/IllegalArgumentException;
-
-    const-string p2, "The tag for include_submission_done_content is invalid. Received: "
 
     invoke-static {p2, p4}, Lcom/fasterxml/jackson/databind/ser/impl/MapEntrySerializer$$ExternalSyntheticOutline0;->m(Ljava/lang/String;Ljava/lang/Object;)Ljava/lang/String;
 
@@ -4967,14 +4695,6 @@
 
     :pswitch_data_0
     .packed-switch 0x65
-        :pswitch_21
-        :pswitch_20
-        :pswitch_1f
-        :pswitch_1e
-        :pswitch_1d
-        :pswitch_1c
-        :pswitch_1b
-        :pswitch_1a
         :pswitch_19
         :pswitch_18
         :pswitch_17

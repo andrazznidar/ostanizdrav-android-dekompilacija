@@ -30,7 +30,7 @@
 # instance fields
 .field public final zzb:Landroid/content/Context;
 
-.field public final zzc:Lkotlin/jvm/internal/SpreadBuilder;
+.field public final zzc:Lcom/google/android/play/core/internal/zzag;
 
 .field public final zzd:Ljava/lang/String;
 
@@ -105,13 +105,13 @@
     return-void
 .end method
 
-.method public constructor <init>(Landroid/content/Context;Lkotlin/jvm/internal/SpreadBuilder;Ljava/lang/String;Landroid/content/Intent;Lcom/google/android/play/core/internal/zzan;Lcom/google/android/play/core/internal/zzam;)V
+.method public constructor <init>(Landroid/content/Context;Lcom/google/android/play/core/internal/zzag;Ljava/lang/String;Landroid/content/Intent;Lcom/google/android/play/core/internal/zzan;Lcom/google/android/play/core/internal/zzam;)V
     .locals 0
     .annotation system Ldalvik/annotation/Signature;
         value = {
             "(",
             "Landroid/content/Context;",
-            "Lkotlin/jvm/internal/SpreadBuilder;",
+            "Lcom/google/android/play/core/internal/zzag;",
             "Ljava/lang/String;",
             "Landroid/content/Intent;",
             "Lcom/google/android/play/core/internal/zzan<",
@@ -149,7 +149,7 @@
 
     iput-object p1, p0, Lcom/google/android/play/core/internal/zzas;->zzb:Landroid/content/Context;
 
-    iput-object p2, p0, Lcom/google/android/play/core/internal/zzas;->zzc:Lkotlin/jvm/internal/SpreadBuilder;
+    iput-object p2, p0, Lcom/google/android/play/core/internal/zzas;->zzc:Lcom/google/android/play/core/internal/zzag;
 
     iput-object p3, p0, Lcom/google/android/play/core/internal/zzas;->zzd:Ljava/lang/String;
 

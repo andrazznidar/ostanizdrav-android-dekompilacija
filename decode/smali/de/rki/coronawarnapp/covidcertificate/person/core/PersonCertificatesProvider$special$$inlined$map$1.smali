@@ -8,7 +8,7 @@
 
 # annotations
 .annotation system Ldalvik/annotation/EnclosingMethod;
-    value = Lde/rki/coronawarnapp/covidcertificate/person/core/PersonCertificatesProvider;-><init>(Lde/rki/coronawarnapp/covidcertificate/person/core/PersonCertificatesSettings;Lde/rki/coronawarnapp/covidcertificate/vaccination/core/repository/VaccinationRepository;Lde/rki/coronawarnapp/covidcertificate/test/core/TestCertificateRepository;Lde/rki/coronawarnapp/covidcertificate/recovery/core/RecoveryCertificateRepository;Lkotlinx/coroutines/CoroutineScope;)V
+    value = Lde/rki/coronawarnapp/covidcertificate/person/core/PersonCertificatesProvider;-><init>(Lde/rki/coronawarnapp/covidcertificate/person/core/PersonCertificatesSettings;Lde/rki/coronawarnapp/covidcertificate/common/certificate/CertificateProvider;Lde/rki/coronawarnapp/ccl/dccwalletinfo/storage/DccWalletInfoRepository;Lkotlinx/coroutines/CoroutineScope;)V
 .end annotation
 
 .annotation system Ldalvik/annotation/InnerClass;
@@ -20,10 +20,8 @@
     value = {
         "Ljava/lang/Object;",
         "Lkotlinx/coroutines/flow/Flow<",
-        "Ljava/util/List<",
-        "+",
-        "Lde/rki/coronawarnapp/covidcertificate/test/core/TestCertificate;",
-        ">;>;"
+        "Ljava/lang/Integer;",
+        ">;"
     }
 .end annotation
 

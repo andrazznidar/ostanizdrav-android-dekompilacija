@@ -96,7 +96,6 @@
 
     move-result-object v4
 
-    :cond_1
     :goto_1
     invoke-interface {v4}, Ljava/util/Iterator;->hasNext()Z
 
@@ -114,15 +113,18 @@
 
     instance-of v7, v5, Lde/rki/coronawarnapp/diagnosiskeys/download/LocationDays;
 
-    if-eqz v7, :cond_2
+    if-eqz v7, :cond_1
 
     move-object v6, v5
 
     check-cast v6, Lde/rki/coronawarnapp/diagnosiskeys/download/LocationDays;
 
-    :cond_2
-    if-eqz v6, :cond_1
+    :cond_1
+    if-nez v6, :cond_2
 
+    goto :goto_1
+
+    :cond_2
     invoke-virtual {v3, v6}, Ljava/util/ArrayList;->add(Ljava/lang/Object;)Z
 
     goto :goto_1
@@ -205,7 +207,6 @@
 
     move-result-object v4
 
-    :cond_9
     :goto_4
     invoke-interface {v4}, Ljava/util/Iterator;->hasNext()Z
 
@@ -221,18 +222,21 @@
 
     instance-of v9, v8, Lde/rki/coronawarnapp/diagnosiskeys/download/LocationHours;
 
-    if-eqz v9, :cond_a
+    if-eqz v9, :cond_9
 
     check-cast v8, Lde/rki/coronawarnapp/diagnosiskeys/download/LocationHours;
 
     goto :goto_5
 
-    :cond_a
+    :cond_9
     move-object v8, v6
 
     :goto_5
-    if-eqz v8, :cond_9
+    if-nez v8, :cond_a
 
+    goto :goto_4
+
+    :cond_a
     invoke-virtual {v3, v8}, Ljava/util/ArrayList;->add(Ljava/lang/Object;)Z
 
     goto :goto_4

@@ -67,7 +67,9 @@
 
     float-to-int v0, v0
 
-    iget-object v1, p1, Lcom/google/android/material/progressindicator/IndeterminateAnimatorDelegate;->segmentPositions:[F
+    iget-object v1, p1, Landroidx/appcompat/view/menu/BaseMenuWrapper;->mMenuItems:Ljava/lang/Object;
+
+    check-cast v1, [F
 
     const/high16 v2, 0x44be0000    # 1520.0f
 
@@ -98,11 +100,13 @@
 
     const/16 v4, 0x29b
 
-    invoke-virtual {p1, v0, v1, v4}, Lcom/google/android/material/progressindicator/IndeterminateAnimatorDelegate;->getFractionInRange(III)F
+    invoke-virtual {p1, v0, v1, v4}, Landroidx/appcompat/view/menu/BaseMenuWrapper;->getFractionInRange(III)F
 
     move-result v1
 
-    iget-object v5, p1, Lcom/google/android/material/progressindicator/IndeterminateAnimatorDelegate;->segmentPositions:[F
+    iget-object v5, p1, Landroidx/appcompat/view/menu/BaseMenuWrapper;->mMenuItems:Ljava/lang/Object;
+
+    check-cast v5, [F
 
     aget v6, v5, v2
 
@@ -124,11 +128,13 @@
 
     aget v1, v1, p2
 
-    invoke-virtual {p1, v0, v1, v4}, Lcom/google/android/material/progressindicator/IndeterminateAnimatorDelegate;->getFractionInRange(III)F
+    invoke-virtual {p1, v0, v1, v4}, Landroidx/appcompat/view/menu/BaseMenuWrapper;->getFractionInRange(III)F
 
     move-result v1
 
-    iget-object v4, p1, Lcom/google/android/material/progressindicator/IndeterminateAnimatorDelegate;->segmentPositions:[F
+    iget-object v4, p1, Landroidx/appcompat/view/menu/BaseMenuWrapper;->mMenuItems:Ljava/lang/Object;
+
+    check-cast v4, [F
 
     aget v5, v4, v3
 
@@ -149,7 +155,9 @@
     goto :goto_0
 
     :cond_0
-    iget-object p2, p1, Lcom/google/android/material/progressindicator/IndeterminateAnimatorDelegate;->segmentPositions:[F
+    iget-object p2, p1, Landroidx/appcompat/view/menu/BaseMenuWrapper;->mMenuItems:Ljava/lang/Object;
+
+    check-cast p2, [F
 
     aget v4, p2, v3
 
@@ -192,7 +200,7 @@
 
     const/16 v4, 0x14d
 
-    invoke-virtual {p1, v0, v2, v4}, Lcom/google/android/material/progressindicator/IndeterminateAnimatorDelegate;->getFractionInRange(III)F
+    invoke-virtual {p1, v0, v2, v4}, Landroidx/appcompat/view/menu/BaseMenuWrapper;->getFractionInRange(III)F
 
     move-result v2
 
@@ -228,11 +236,13 @@
 
     aget p2, v0, p2
 
-    iget-object v0, p1, Lcom/google/android/material/progressindicator/IndeterminateAnimatorDelegate;->drawable:Lcom/google/android/material/progressindicator/IndeterminateDrawable;
+    iget-object v0, p1, Landroidx/appcompat/view/menu/BaseMenuWrapper;->mContext:Ljava/lang/Object;
+
+    check-cast v0, Lcom/google/android/material/progressindicator/IndeterminateDrawable;
 
     iget v0, v0, Lcom/google/android/material/progressindicator/DrawableWithAnimatedVisibilityChange;->totalAlpha:I
 
-    invoke-static {p2, v0}, Ldagger/android/AndroidInjection;->compositeARGBWithAlpha(II)I
+    invoke-static {p2, v0}, Lkotlin/math/MathKt__MathJVMKt;->compositeARGBWithAlpha(II)I
 
     move-result p2
 
@@ -242,11 +252,13 @@
 
     aget v0, v0, v1
 
-    iget-object v1, p1, Lcom/google/android/material/progressindicator/IndeterminateAnimatorDelegate;->drawable:Lcom/google/android/material/progressindicator/IndeterminateDrawable;
+    iget-object v1, p1, Landroidx/appcompat/view/menu/BaseMenuWrapper;->mContext:Ljava/lang/Object;
+
+    check-cast v1, Lcom/google/android/material/progressindicator/IndeterminateDrawable;
 
     iget v1, v1, Lcom/google/android/material/progressindicator/DrawableWithAnimatedVisibilityChange;->totalAlpha:I
 
-    invoke-static {v0, v1}, Ldagger/android/AndroidInjection;->compositeARGBWithAlpha(II)I
+    invoke-static {v0, v1}, Lkotlin/math/MathKt__MathJVMKt;->compositeARGBWithAlpha(II)I
 
     move-result v0
 
@@ -256,7 +268,9 @@
 
     move-result v1
 
-    iget-object v2, p1, Lcom/google/android/material/progressindicator/IndeterminateAnimatorDelegate;->segmentColors:[I
+    iget-object v2, p1, Landroidx/appcompat/view/menu/BaseMenuWrapper;->mSubMenus:Ljava/lang/Object;
+
+    check-cast v2, [I
 
     sget-object v4, Lcom/google/android/material/animation/ArgbEvaluatorCompat;->instance:Lcom/google/android/material/animation/ArgbEvaluatorCompat;
 
@@ -287,7 +301,9 @@
 
     :cond_2
     :goto_2
-    iget-object p1, p1, Lcom/google/android/material/progressindicator/IndeterminateAnimatorDelegate;->drawable:Lcom/google/android/material/progressindicator/IndeterminateDrawable;
+    iget-object p1, p1, Landroidx/appcompat/view/menu/BaseMenuWrapper;->mContext:Ljava/lang/Object;
+
+    check-cast p1, Lcom/google/android/material/progressindicator/IndeterminateDrawable;
 
     invoke-virtual {p1}, Landroid/graphics/drawable/Drawable;->invalidateSelf()V
 

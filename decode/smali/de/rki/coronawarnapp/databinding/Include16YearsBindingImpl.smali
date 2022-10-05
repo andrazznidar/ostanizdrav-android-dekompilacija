@@ -21,13 +21,13 @@
 
     sput-object v0, Lde/rki/coronawarnapp/databinding/Include16YearsBindingImpl;->sViewsWithIds:Landroid/util/SparseIntArray;
 
-    const v1, 0x7f0a0669
+    const v1, 0x7f0a06b9
 
     const/4 v2, 0x1
 
     invoke-virtual {v0, v1, v2}, Landroid/util/SparseIntArray;->put(II)V
 
-    const v1, 0x7f0a0668
+    const v1, 0x7f0a06b8
 
     const/4 v2, 0x2
 

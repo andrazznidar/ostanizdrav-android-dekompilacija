@@ -764,13 +764,13 @@
 
     move-result v5
 
-    const/4 v6, 0x3
+    const/4 v6, 0x2
 
-    const/16 v7, 0x1a
+    const/4 v7, 0x3
 
-    const/16 v8, 0x18
+    const/16 v8, 0x1a
 
-    const/4 v9, 0x2
+    const/16 v9, 0x18
 
     const/4 v10, 0x1
 
@@ -780,9 +780,9 @@
 
     if-eq v5, v10, :cond_4
 
-    if-eq v5, v9, :cond_3
+    if-eq v5, v6, :cond_3
 
-    if-eq v5, v6, :cond_1
+    if-eq v5, v7, :cond_1
 
     const/4 v12, 0x4
 
@@ -793,16 +793,16 @@
     :cond_0
     sget v5, Landroid/os/Build$VERSION;->SDK_INT:I
 
-    if-lt v5, v7, :cond_2
+    if-lt v5, v8, :cond_2
 
     goto :goto_2
 
     :cond_1
     sget v5, Landroid/os/Build$VERSION;->SDK_INT:I
 
-    if-lt v5, v8, :cond_2
+    if-lt v5, v9, :cond_2
 
-    move v12, v6
+    move v12, v7
 
     goto :goto_2
 
@@ -831,7 +831,7 @@
     goto :goto_1
 
     :cond_3
-    move v12, v9
+    move v12, v6
 
     goto :goto_2
 
@@ -895,11 +895,9 @@
 
     if-nez v4, :cond_7
 
-    iget-object v4, v2, Landroidx/work/impl/model/WorkSpec;->backoffPolicy:Landroidx/work/BackoffPolicy;
+    iget v4, v2, Landroidx/work/impl/model/WorkSpec;->backoffPolicy:I
 
-    sget-object v5, Landroidx/work/BackoffPolicy;->LINEAR:Landroidx/work/BackoffPolicy;
-
-    if-ne v4, v5, :cond_6
+    if-ne v4, v6, :cond_6
 
     move v4, v11
 
@@ -932,18 +930,18 @@
 
     sget v12, Landroid/os/Build$VERSION;->SDK_INT:I
 
-    const/16 v6, 0x1c
+    const/16 v7, 0x1c
 
-    if-gt v12, v6, :cond_8
+    if-gt v12, v7, :cond_8
 
     invoke-virtual {v0, v4, v5}, Landroid/app/job/JobInfo$Builder;->setMinimumLatency(J)Landroid/app/job/JobInfo$Builder;
 
     goto :goto_4
 
     :cond_8
-    cmp-long v6, v4, v14
+    cmp-long v7, v4, v14
 
-    if-lez v6, :cond_9
+    if-lez v7, :cond_9
 
     invoke-virtual {v0, v4, v5}, Landroid/app/job/JobInfo$Builder;->setMinimumLatency(J)Landroid/app/job/JobInfo$Builder;
 
@@ -953,7 +951,7 @@
     invoke-virtual {v0, v10}, Landroid/app/job/JobInfo$Builder;->setImportantWhileForeground(Z)Landroid/app/job/JobInfo$Builder;
 
     :goto_4
-    if-lt v12, v8, :cond_c
+    if-lt v12, v9, :cond_c
 
     iget-object v4, v3, Landroidx/work/Constraints;->mContentUriTriggers:Landroidx/work/ContentUriTriggers;
 
@@ -994,15 +992,15 @@
 
     check-cast v5, Landroidx/work/ContentUriTriggers$Trigger;
 
-    iget-boolean v6, v5, Landroidx/work/ContentUriTriggers$Trigger;->mTriggerForDescendants:Z
+    iget-boolean v7, v5, Landroidx/work/ContentUriTriggers$Trigger;->mTriggerForDescendants:Z
 
-    new-instance v8, Landroid/app/job/JobInfo$TriggerContentUri;
+    new-instance v9, Landroid/app/job/JobInfo$TriggerContentUri;
 
     iget-object v5, v5, Landroidx/work/ContentUriTriggers$Trigger;->mUri:Landroid/net/Uri;
 
-    invoke-direct {v8, v5, v6}, Landroid/app/job/JobInfo$TriggerContentUri;-><init>(Landroid/net/Uri;I)V
+    invoke-direct {v9, v5, v7}, Landroid/app/job/JobInfo$TriggerContentUri;-><init>(Landroid/net/Uri;I)V
 
-    invoke-virtual {v0, v8}, Landroid/app/job/JobInfo$Builder;->addTriggerContentUri(Landroid/app/job/JobInfo$TriggerContentUri;)Landroid/app/job/JobInfo$Builder;
+    invoke-virtual {v0, v9}, Landroid/app/job/JobInfo$Builder;->addTriggerContentUri(Landroid/app/job/JobInfo$TriggerContentUri;)Landroid/app/job/JobInfo$Builder;
 
     goto :goto_6
 
@@ -1020,7 +1018,7 @@
 
     sget v4, Landroid/os/Build$VERSION;->SDK_INT:I
 
-    if-lt v4, v7, :cond_d
+    if-lt v4, v8, :cond_d
 
     iget-boolean v4, v3, Landroidx/work/Constraints;->mRequiresBatteryNotLow:Z
 
@@ -1041,27 +1039,27 @@
 
     sget-object v4, Landroidx/work/impl/background/systemjob/SystemJobScheduler;->TAG:Ljava/lang/String;
 
-    new-array v5, v9, [Ljava/lang/Object;
+    new-array v5, v6, [Ljava/lang/Object;
 
-    iget-object v6, v2, Landroidx/work/impl/model/WorkSpec;->id:Ljava/lang/String;
+    iget-object v7, v2, Landroidx/work/impl/model/WorkSpec;->id:Ljava/lang/String;
 
-    aput-object v6, v5, v11
+    aput-object v7, v5, v11
 
     invoke-static/range {p2 .. p2}, Ljava/lang/Integer;->valueOf(I)Ljava/lang/Integer;
 
-    move-result-object v6
+    move-result-object v7
 
-    aput-object v6, v5, v10
+    aput-object v7, v5, v10
 
-    const-string v6, "Scheduling work ID %s Job ID %s"
+    const-string v7, "Scheduling work ID %s Job ID %s"
 
-    invoke-static {v6, v5}, Ljava/lang/String;->format(Ljava/lang/String;[Ljava/lang/Object;)Ljava/lang/String;
+    invoke-static {v7, v5}, Ljava/lang/String;->format(Ljava/lang/String;[Ljava/lang/Object;)Ljava/lang/String;
 
     move-result-object v5
 
-    new-array v6, v11, [Ljava/lang/Throwable;
+    new-array v7, v11, [Ljava/lang/Throwable;
 
-    invoke-virtual {v3, v4, v5, v6}, Landroidx/work/Logger;->debug(Ljava/lang/String;Ljava/lang/String;[Ljava/lang/Throwable;)V
+    invoke-virtual {v3, v4, v5, v7}, Landroidx/work/Logger;->debug(Ljava/lang/String;Ljava/lang/String;[Ljava/lang/Throwable;)V
 
     :try_start_0
     iget-object v3, v1, Landroidx/work/impl/background/systemjob/SystemJobScheduler;->mJobScheduler:Landroid/app/job/JobScheduler;
@@ -1170,13 +1168,13 @@
 
     sget v5, Landroid/os/Build$VERSION;->SDK_INT:I
 
-    const/16 v6, 0x17
+    const/16 v7, 0x17
 
-    if-ne v5, v6, :cond_f
+    if-ne v5, v7, :cond_f
 
     iget v2, v2, Landroidx/work/Configuration;->mMaxSchedulerLimit:I
 
-    div-int/2addr v2, v9
+    div-int/2addr v2, v6
 
     goto :goto_9
 
@@ -1188,7 +1186,7 @@
 
     move-result-object v2
 
-    aput-object v2, v4, v9
+    aput-object v2, v4, v6
 
     const-string v2, "JobScheduler 100 job limit exceeded.  We count %d WorkManager jobs in JobScheduler; we have %d tracked jobs in our DB; our Configuration limit is %d."
 

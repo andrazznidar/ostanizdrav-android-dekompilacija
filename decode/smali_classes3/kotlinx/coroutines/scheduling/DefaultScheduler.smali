@@ -45,7 +45,7 @@
 
     const-string v4, "kotlinx.coroutines.io.parallelism"
 
-    invoke-static/range {v4 .. v9}, Lkotlinx/coroutines/internal/SystemPropsKt;->systemProp$default(Ljava/lang/String;IIIILjava/lang/Object;)I
+    invoke-static/range {v4 .. v9}, Lorg/ejml/dense/row/CommonOps_ZDRM;->systemProp$default(Ljava/lang/String;IIIILjava/lang/Object;)I
 
     move-result v2
 

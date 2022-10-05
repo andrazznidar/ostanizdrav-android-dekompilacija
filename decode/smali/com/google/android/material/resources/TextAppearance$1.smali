@@ -5,7 +5,7 @@
 
 # annotations
 .annotation system Ldalvik/annotation/EnclosingMethod;
-    value = Lcom/google/android/material/resources/TextAppearance;->getFontAsync(Landroid/content/Context;Lcom/google/android/material/resources/TextAppearanceFontCallback;)V
+    value = Lcom/google/android/material/resources/TextAppearance;->getFontAsync(Landroid/content/Context;Lorg/joda/time/Chronology;)V
 .end annotation
 
 .annotation system Ldalvik/annotation/InnerClass;
@@ -17,16 +17,16 @@
 # instance fields
 .field public final synthetic this$0:Lcom/google/android/material/resources/TextAppearance;
 
-.field public final synthetic val$callback:Lcom/google/android/material/resources/TextAppearanceFontCallback;
+.field public final synthetic val$callback:Lorg/joda/time/Chronology;
 
 
 # direct methods
-.method public constructor <init>(Lcom/google/android/material/resources/TextAppearance;Lcom/google/android/material/resources/TextAppearanceFontCallback;)V
+.method public constructor <init>(Lcom/google/android/material/resources/TextAppearance;Lorg/joda/time/Chronology;)V
     .locals 0
 
     iput-object p1, p0, Lcom/google/android/material/resources/TextAppearance$1;->this$0:Lcom/google/android/material/resources/TextAppearance;
 
-    iput-object p2, p0, Lcom/google/android/material/resources/TextAppearance$1;->val$callback:Lcom/google/android/material/resources/TextAppearanceFontCallback;
+    iput-object p2, p0, Lcom/google/android/material/resources/TextAppearance$1;->val$callback:Lorg/joda/time/Chronology;
 
     invoke-direct {p0}, Landroidx/core/content/res/ResourcesCompat$FontCallback;-><init>()V
 
@@ -44,9 +44,9 @@
 
     iput-boolean v1, v0, Lcom/google/android/material/resources/TextAppearance;->fontResolved:Z
 
-    iget-object v0, p0, Lcom/google/android/material/resources/TextAppearance$1;->val$callback:Lcom/google/android/material/resources/TextAppearanceFontCallback;
+    iget-object v0, p0, Lcom/google/android/material/resources/TextAppearance$1;->val$callback:Lorg/joda/time/Chronology;
 
-    invoke-virtual {v0, p1}, Lcom/google/android/material/resources/TextAppearanceFontCallback;->onFontRetrievalFailed(I)V
+    invoke-virtual {v0, p1}, Lorg/joda/time/Chronology;->onFontRetrievalFailed(I)V
 
     return-void
 .end method
@@ -70,13 +70,13 @@
 
     iput-boolean v0, p1, Lcom/google/android/material/resources/TextAppearance;->fontResolved:Z
 
-    iget-object v0, p0, Lcom/google/android/material/resources/TextAppearance$1;->val$callback:Lcom/google/android/material/resources/TextAppearanceFontCallback;
+    iget-object v0, p0, Lcom/google/android/material/resources/TextAppearance$1;->val$callback:Lorg/joda/time/Chronology;
 
     iget-object p1, p1, Lcom/google/android/material/resources/TextAppearance;->font:Landroid/graphics/Typeface;
 
     const/4 v1, 0x0
 
-    invoke-virtual {v0, p1, v1}, Lcom/google/android/material/resources/TextAppearanceFontCallback;->onFontRetrieved(Landroid/graphics/Typeface;Z)V
+    invoke-virtual {v0, p1, v1}, Lorg/joda/time/Chronology;->onFontRetrieved(Landroid/graphics/Typeface;Z)V
 
     return-void
 .end method

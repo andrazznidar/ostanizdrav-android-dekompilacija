@@ -6,13 +6,12 @@
 # annotations
 .annotation system Ldalvik/annotation/MemberClasses;
     value = {
-        Lde/rki/coronawarnapp/covidcertificate/common/certificate/DccV1Parser$Mode;,
         Lde/rki/coronawarnapp/covidcertificate/common/certificate/DccV1Parser$Body;
     }
 .end annotation
 
 .annotation system Ldalvik/annotation/SourceDebugExtension;
-    value = "SMAP\nDccV1Parser.kt\nKotlin\n*S Kotlin\n*F\n+ 1 DccV1Parser.kt\nde/rki/coronawarnapp/covidcertificate/common/certificate/DccV1Parser\n+ 2 GsonExtensions.kt\nde/rki/coronawarnapp/util/serialization/GsonExtensionsKt\n+ 3 _Collections.kt\nkotlin/collections/CollectionsKt___CollectionsKt\n+ 4 fake.kt\nkotlin/jvm/internal/FakeKt\n*L\n1#1,161:1\n10#2,4:162\n1895#3,14:166\n1783#3,2:180\n1785#3:183\n1783#3,3:184\n1#4:182\n*S KotlinDebug\n*F\n+ 1 DccV1Parser.kt\nde/rki/coronawarnapp/covidcertificate/common/certificate/DccV1Parser\n*L\n42#1:162,4\n73#1:166,14\n121#1:180,2\n121#1:183\n129#1:184,3\n*E\n"
+    value = "SMAP\nDccV1Parser.kt\nKotlin\n*S Kotlin\n*F\n+ 1 DccV1Parser.kt\nde/rki/coronawarnapp/covidcertificate/common/certificate/DccV1Parser\n+ 2 GsonExtensions.kt\nde/rki/coronawarnapp/util/serialization/GsonExtensionsKt\n+ 3 _Collections.kt\nkotlin/collections/CollectionsKt___CollectionsKt\n+ 4 fake.kt\nkotlin/jvm/internal/FakeKt\n*L\n1#1,161:1\n11#2,4:162\n1895#3,14:166\n1783#3,2:180\n1785#3:183\n1783#3,3:184\n1#4:182\n*S KotlinDebug\n*F\n+ 1 DccV1Parser.kt\nde/rki/coronawarnapp/covidcertificate/common/certificate/DccV1Parser\n*L\n42#1:162,4\n73#1:166,14\n121#1:180,2\n121#1:183\n129#1:184,3\n*E\n"
 .end annotation
 
 
@@ -73,16 +72,16 @@
 
 
 # virtual methods
-.method public final checkModeRestrictions(Lde/rki/coronawarnapp/covidcertificate/common/certificate/DccV1;Lde/rki/coronawarnapp/covidcertificate/common/certificate/DccV1Parser$Mode;)Lde/rki/coronawarnapp/covidcertificate/common/certificate/DccV1;
+.method public final checkModeRestrictions$enumunboxing$(Lde/rki/coronawarnapp/covidcertificate/common/certificate/DccV1;I)Lde/rki/coronawarnapp/covidcertificate/common/certificate/DccV1;
     .locals 11
 
     sget-object v0, Lde/rki/coronawarnapp/covidcertificate/common/exception/InvalidHealthCertificateException$ErrorCode;->NO_VACCINATION_ENTRY:Lde/rki/coronawarnapp/covidcertificate/common/exception/InvalidHealthCertificateException$ErrorCode;
 
-    invoke-virtual {p2}, Ljava/lang/Enum;->ordinal()I
-
-    move-result p2
-
     const/4 v1, 0x0
+
+    if-eqz p2, :cond_1b
+
+    add-int/lit8 p2, p2, -0x1
 
     const/4 v2, 0x0
 
@@ -427,14 +426,17 @@
     :cond_1a
     :goto_c
     return-object p1
+
+    :cond_1b
+    throw v1
 .end method
 
-.method public final checkSchema(Ljava/lang/String;Lde/rki/coronawarnapp/covidcertificate/common/certificate/DccV1Parser$Mode;)Ljava/lang/String;
+.method public final checkSchema$enumunboxing$(Ljava/lang/String;I)Ljava/lang/String;
     .locals 3
 
-    invoke-virtual {p2}, Ljava/lang/Enum;->ordinal()I
+    if-eqz p2, :cond_1
 
-    move-result p2
+    add-int/lit8 p2, p2, -0x1
 
     packed-switch p2, :pswitch_data_0
 
@@ -480,6 +482,11 @@
     invoke-direct {v1, p2}, Ljava/lang/IllegalArgumentException;-><init>(Ljava/lang/String;)V
 
     invoke-direct {p1, v0, v1}, Lde/rki/coronawarnapp/covidcertificate/common/exception/InvalidHealthCertificateException;-><init>(Lde/rki/coronawarnapp/covidcertificate/common/exception/InvalidHealthCertificateException$ErrorCode;Ljava/lang/Throwable;)V
+
+    throw p1
+
+    :cond_1
+    const/4 p1, 0x0
 
     throw p1
 
@@ -692,12 +699,16 @@
     return-object p1
 .end method
 
-.method public final parse(Lcom/upokecenter/cbor/CBORObject;Lde/rki/coronawarnapp/covidcertificate/common/certificate/DccV1Parser$Mode;)Lde/rki/coronawarnapp/covidcertificate/common/certificate/DccV1Parser$Body;
+.method public final parse$enumunboxing$(Lcom/upokecenter/cbor/CBORObject;I)Lde/rki/coronawarnapp/covidcertificate/common/certificate/DccV1Parser$Body;
     .locals 2
 
     const-string v0, "map"
 
     invoke-static {p1, v0}, Lkotlin/jvm/internal/Intrinsics;->checkNotNullParameter(Ljava/lang/Object;Ljava/lang/String;)V
+
+    const-string v0, "mode"
+
+    invoke-static {p2, v0}, Lkotlin/jvm/internal/Intrinsics$$ExternalSyntheticCheckNotZero0;->m(ILjava/lang/String;)V
 
     :try_start_0
     sget-object v0, Lde/rki/coronawarnapp/covidcertificate/common/certificate/DccV1Parser;->keyHCert:Lcom/upokecenter/cbor/CBORObject;
@@ -730,11 +741,11 @@
 
     check-cast p1, Lde/rki/coronawarnapp/covidcertificate/common/certificate/DccV1;
 
-    invoke-virtual {p0, p1, p2}, Lde/rki/coronawarnapp/covidcertificate/common/certificate/DccV1Parser;->toValidated(Lde/rki/coronawarnapp/covidcertificate/common/certificate/DccV1;Lde/rki/coronawarnapp/covidcertificate/common/certificate/DccV1Parser$Mode;)Lde/rki/coronawarnapp/covidcertificate/common/certificate/DccV1;
+    invoke-virtual {p0, p1, p2}, Lde/rki/coronawarnapp/covidcertificate/common/certificate/DccV1Parser;->toValidated$enumunboxing$(Lde/rki/coronawarnapp/covidcertificate/common/certificate/DccV1;I)Lde/rki/coronawarnapp/covidcertificate/common/certificate/DccV1;
 
     move-result-object p1
 
-    invoke-virtual {p0, v0, p2}, Lde/rki/coronawarnapp/covidcertificate/common/certificate/DccV1Parser;->checkSchema(Ljava/lang/String;Lde/rki/coronawarnapp/covidcertificate/common/certificate/DccV1Parser$Mode;)Ljava/lang/String;
+    invoke-virtual {p0, v0, p2}, Lde/rki/coronawarnapp/covidcertificate/common/certificate/DccV1Parser;->checkSchema$enumunboxing$(Ljava/lang/String;I)Ljava/lang/String;
 
     new-instance p2, Lde/rki/coronawarnapp/covidcertificate/common/certificate/DccV1Parser$Body;
 
@@ -863,11 +874,11 @@
     throw p1
 .end method
 
-.method public final toValidated(Lde/rki/coronawarnapp/covidcertificate/common/certificate/DccV1;Lde/rki/coronawarnapp/covidcertificate/common/certificate/DccV1Parser$Mode;)Lde/rki/coronawarnapp/covidcertificate/common/certificate/DccV1;
+.method public final toValidated$enumunboxing$(Lde/rki/coronawarnapp/covidcertificate/common/certificate/DccV1;I)Lde/rki/coronawarnapp/covidcertificate/common/certificate/DccV1;
     .locals 2
 
     :try_start_0
-    invoke-virtual {p0, p1, p2}, Lde/rki/coronawarnapp/covidcertificate/common/certificate/DccV1Parser;->checkModeRestrictions(Lde/rki/coronawarnapp/covidcertificate/common/certificate/DccV1;Lde/rki/coronawarnapp/covidcertificate/common/certificate/DccV1Parser$Mode;)Lde/rki/coronawarnapp/covidcertificate/common/certificate/DccV1;
+    invoke-virtual {p0, p1, p2}, Lde/rki/coronawarnapp/covidcertificate/common/certificate/DccV1Parser;->checkModeRestrictions$enumunboxing$(Lde/rki/coronawarnapp/covidcertificate/common/certificate/DccV1;I)Lde/rki/coronawarnapp/covidcertificate/common/certificate/DccV1;
 
     move-result-object p1
 

@@ -1387,7 +1387,7 @@
     :cond_9
     iget-object v1, p0, Landroidx/work/impl/WorkerWrapper;->mConfiguration:Landroidx/work/Configuration;
 
-    iget-object v1, v1, Landroidx/work/Configuration;->mInputMergerFactory:Landroidx/work/InputMergerFactory;
+    iget-object v1, v1, Landroidx/work/Configuration;->mInputMergerFactory:Lorg/bouncycastle/util/Pack;
 
     iget-object v3, p0, Landroidx/work/impl/WorkerWrapper;->mWorkSpec:Landroidx/work/impl/model/WorkSpec;
 

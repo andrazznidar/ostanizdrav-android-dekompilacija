@@ -9,9 +9,17 @@
 # instance fields
 .field public final backgroundImage:Landroid/widget/ImageView;
 
+.field public final certificateBadgeCount:Landroid/widget/TextView;
+
+.field public final certificateBadgeText:Landroid/widget/TextView;
+
+.field public final expirationStatusIcon:Landroid/widget/ImageView;
+
+.field public final expirationStatusText:Landroid/widget/TextView;
+
 .field public final name:Landroid/widget/TextView;
 
-.field public final qrCodeCard:Lde/rki/coronawarnapp/databinding/IncludeCertificateQrcodeCardBinding;
+.field public final qrCodeCard:Lde/rki/coronawarnapp/databinding/IncludeCertificateOverviewQrCardBinding;
 
 .field public final rootView:Landroidx/constraintlayout/widget/ConstraintLayout;
 
@@ -19,10 +27,14 @@
 
 
 # direct methods
-.method public constructor <init>(Landroidx/constraintlayout/widget/ConstraintLayout;Landroid/widget/ImageView;Landroid/widget/ImageView;Landroid/widget/TextView;Landroid/widget/TextView;Lde/rki/coronawarnapp/databinding/IncludeCertificateQrcodeCardBinding;Landroid/view/View;Landroid/widget/ImageView;)V
+.method public constructor <init>(Landroidx/constraintlayout/widget/ConstraintLayout;Landroid/widget/ImageView;Landroid/widget/ImageView;Landroid/widget/TextView;Landroid/widget/TextView;Landroid/widget/TextView;Landroid/widget/ImageView;Landroid/widget/TextView;Landroid/widget/TextView;Lde/rki/coronawarnapp/databinding/IncludeCertificateOverviewQrCardBinding;Landroid/view/View;Landroid/widget/ImageView;)V
     .locals 0
     .annotation system Ldalvik/annotation/MethodParameters;
         accessFlags = {
+            0x0,
+            0x0,
+            0x0,
+            0x0,
             0x0,
             0x0,
             0x0,
@@ -36,7 +48,11 @@
             "rootView",
             "arrowIcon",
             "backgroundImage",
+            "certificateBadgeCount",
+            "certificateBadgeText",
             "certificateSubtitle",
+            "expirationStatusIcon",
+            "expirationStatusText",
             "name",
             "qrCodeCard",
             "qrcodeCenterGuideline",
@@ -50,11 +66,19 @@
 
     iput-object p3, p0, Lde/rki/coronawarnapp/databinding/PersonOverviewItemBinding;->backgroundImage:Landroid/widget/ImageView;
 
-    iput-object p5, p0, Lde/rki/coronawarnapp/databinding/PersonOverviewItemBinding;->name:Landroid/widget/TextView;
+    iput-object p4, p0, Lde/rki/coronawarnapp/databinding/PersonOverviewItemBinding;->certificateBadgeCount:Landroid/widget/TextView;
 
-    iput-object p6, p0, Lde/rki/coronawarnapp/databinding/PersonOverviewItemBinding;->qrCodeCard:Lde/rki/coronawarnapp/databinding/IncludeCertificateQrcodeCardBinding;
+    iput-object p5, p0, Lde/rki/coronawarnapp/databinding/PersonOverviewItemBinding;->certificateBadgeText:Landroid/widget/TextView;
 
-    iput-object p8, p0, Lde/rki/coronawarnapp/databinding/PersonOverviewItemBinding;->starsImage:Landroid/widget/ImageView;
+    iput-object p7, p0, Lde/rki/coronawarnapp/databinding/PersonOverviewItemBinding;->expirationStatusIcon:Landroid/widget/ImageView;
+
+    iput-object p8, p0, Lde/rki/coronawarnapp/databinding/PersonOverviewItemBinding;->expirationStatusText:Landroid/widget/TextView;
+
+    iput-object p9, p0, Lde/rki/coronawarnapp/databinding/PersonOverviewItemBinding;->name:Landroid/widget/TextView;
+
+    iput-object p10, p0, Lde/rki/coronawarnapp/databinding/PersonOverviewItemBinding;->qrCodeCard:Lde/rki/coronawarnapp/databinding/IncludeCertificateOverviewQrCardBinding;
+
+    iput-object p12, p0, Lde/rki/coronawarnapp/databinding/PersonOverviewItemBinding;->starsImage:Landroid/widget/ImageView;
 
     return-void
 .end method

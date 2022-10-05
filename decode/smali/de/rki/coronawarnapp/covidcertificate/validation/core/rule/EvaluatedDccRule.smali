@@ -19,7 +19,7 @@
 
 
 # instance fields
-.field public final result:Lde/rki/coronawarnapp/covidcertificate/validation/core/rule/DccValidationRule$Result;
+.field public final result:I
 
 .field public final rule:Lde/rki/coronawarnapp/covidcertificate/validation/core/rule/DccValidationRule;
 
@@ -37,7 +37,7 @@
     return-void
 .end method
 
-.method public constructor <init>(Lde/rki/coronawarnapp/covidcertificate/validation/core/rule/DccValidationRule;Lde/rki/coronawarnapp/covidcertificate/validation/core/rule/DccValidationRule$Result;)V
+.method public constructor <init>(Lde/rki/coronawarnapp/covidcertificate/validation/core/rule/DccValidationRule;I)V
     .locals 1
 
     const-string v0, "rule"
@@ -46,13 +46,13 @@
 
     const-string v0, "result"
 
-    invoke-static {p2, v0}, Lkotlin/jvm/internal/Intrinsics;->checkNotNullParameter(Ljava/lang/Object;Ljava/lang/String;)V
+    invoke-static {p2, v0}, Lkotlin/jvm/internal/Intrinsics$$ExternalSyntheticCheckNotZero0;->m(ILjava/lang/String;)V
 
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
     iput-object p1, p0, Lde/rki/coronawarnapp/covidcertificate/validation/core/rule/EvaluatedDccRule;->rule:Lde/rki/coronawarnapp/covidcertificate/validation/core/rule/DccValidationRule;
 
-    iput-object p2, p0, Lde/rki/coronawarnapp/covidcertificate/validation/core/rule/EvaluatedDccRule;->result:Lde/rki/coronawarnapp/covidcertificate/validation/core/rule/DccValidationRule$Result;
+    iput p2, p0, Lde/rki/coronawarnapp/covidcertificate/validation/core/rule/EvaluatedDccRule;->result:I
 
     return-void
 .end method
@@ -101,9 +101,9 @@
     return v2
 
     :cond_2
-    iget-object v1, p0, Lde/rki/coronawarnapp/covidcertificate/validation/core/rule/EvaluatedDccRule;->result:Lde/rki/coronawarnapp/covidcertificate/validation/core/rule/DccValidationRule$Result;
+    iget v1, p0, Lde/rki/coronawarnapp/covidcertificate/validation/core/rule/EvaluatedDccRule;->result:I
 
-    iget-object p1, p1, Lde/rki/coronawarnapp/covidcertificate/validation/core/rule/EvaluatedDccRule;->result:Lde/rki/coronawarnapp/covidcertificate/validation/core/rule/DccValidationRule$Result;
+    iget p1, p1, Lde/rki/coronawarnapp/covidcertificate/validation/core/rule/EvaluatedDccRule;->result:I
 
     if-eq v1, p1, :cond_3
 
@@ -124,9 +124,9 @@
 
     mul-int/lit8 v0, v0, 0x1f
 
-    iget-object v1, p0, Lde/rki/coronawarnapp/covidcertificate/validation/core/rule/EvaluatedDccRule;->result:Lde/rki/coronawarnapp/covidcertificate/validation/core/rule/DccValidationRule$Result;
+    iget v1, p0, Lde/rki/coronawarnapp/covidcertificate/validation/core/rule/EvaluatedDccRule;->result:I
 
-    invoke-virtual {v1}, Ljava/lang/Enum;->hashCode()I
+    invoke-static {v1}, Landroidx/camera/camera2/internal/Camera2CameraImpl$InternalState$EnumUnboxingSharedUtility;->ordinal(I)I
 
     move-result v1
 
@@ -140,7 +140,7 @@
 
     iget-object v0, p0, Lde/rki/coronawarnapp/covidcertificate/validation/core/rule/EvaluatedDccRule;->rule:Lde/rki/coronawarnapp/covidcertificate/validation/core/rule/DccValidationRule;
 
-    iget-object v1, p0, Lde/rki/coronawarnapp/covidcertificate/validation/core/rule/EvaluatedDccRule;->result:Lde/rki/coronawarnapp/covidcertificate/validation/core/rule/DccValidationRule$Result;
+    iget v1, p0, Lde/rki/coronawarnapp/covidcertificate/validation/core/rule/EvaluatedDccRule;->result:I
 
     new-instance v2, Ljava/lang/StringBuilder;
 
@@ -156,7 +156,11 @@
 
     invoke-virtual {v2, v0}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
 
-    invoke-virtual {v2, v1}, Ljava/lang/StringBuilder;->append(Ljava/lang/Object;)Ljava/lang/StringBuilder;
+    invoke-static {v1}, Lde/rki/coronawarnapp/server/protocols/internal/RiskScoreParametersOuterClass$RiskScoreParameters$Builder-IA;->stringValueOf(I)Ljava/lang/String;
+
+    move-result-object v0
+
+    invoke-virtual {v2, v0}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
 
     const-string v0, ")"
 
@@ -180,9 +184,9 @@
 
     invoke-virtual {v0, p1, p2}, Lde/rki/coronawarnapp/covidcertificate/validation/core/rule/DccValidationRule;->writeToParcel(Landroid/os/Parcel;I)V
 
-    iget-object p2, p0, Lde/rki/coronawarnapp/covidcertificate/validation/core/rule/EvaluatedDccRule;->result:Lde/rki/coronawarnapp/covidcertificate/validation/core/rule/DccValidationRule$Result;
+    iget p2, p0, Lde/rki/coronawarnapp/covidcertificate/validation/core/rule/EvaluatedDccRule;->result:I
 
-    invoke-virtual {p2}, Ljava/lang/Enum;->name()Ljava/lang/String;
+    invoke-static {p2}, Lde/rki/coronawarnapp/server/protocols/internal/RiskScoreParametersOuterClass$RiskScoreParameters$Builder-IA;->name(I)Ljava/lang/String;
 
     move-result-object p2
 

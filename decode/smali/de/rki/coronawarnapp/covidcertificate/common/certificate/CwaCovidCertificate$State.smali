@@ -22,46 +22,51 @@
         Lde/rki/coronawarnapp/covidcertificate/common/certificate/CwaCovidCertificate$State$ExpiringSoon;,
         Lde/rki/coronawarnapp/covidcertificate/common/certificate/CwaCovidCertificate$State$Expired;,
         Lde/rki/coronawarnapp/covidcertificate/common/certificate/CwaCovidCertificate$State$Invalid;,
+        Lde/rki/coronawarnapp/covidcertificate/common/certificate/CwaCovidCertificate$State$Blocked;,
+        Lde/rki/coronawarnapp/covidcertificate/common/certificate/CwaCovidCertificate$State$Recycled;,
         Lde/rki/coronawarnapp/covidcertificate/common/certificate/CwaCovidCertificate$State$Companion;
     }
 .end annotation
 
 .annotation runtime Lkotlin/Metadata;
-    bv = {
-        0x1,
-        0x0,
-        0x3
-    }
     d1 = {
-        "\u0000\"\n\u0002\u0018\u0002\n\u0002\u0010\u0000\n\u0002\u0010\u000e\n\u0002\u0008\u000b\n\u0002\u0018\u0002\n\u0002\u0018\u0002\n\u0002\u0018\u0002\n\u0002\u0018\u0002\n\u0000\u00087\u0018\u0000 \t2\u00020\u0001:\u0005\t\n\u000b\u000c\rB\u0011\u0008\u0004\u0012\u0006\u0010\u0003\u001a\u00020\u0002\u00a2\u0006\u0004\u0008\u0007\u0010\u0008R\u0019\u0010\u0003\u001a\u00020\u00028\u0006@\u0006\u00a2\u0006\u000c\n\u0004\u0008\u0003\u0010\u0004\u001a\u0004\u0008\u0005\u0010\u0006\u0082\u0001\u0004\u000e\u000f\u0010\u0011\u00a8\u0006\u0012"
+        "\u0000<\n\u0002\u0018\u0002\n\u0002\u0010\u0000\n\u0000\n\u0002\u0010\u000e\n\u0002\u0008\u0004\n\u0002\u0010\u000b\n\u0002\u0008\u0002\n\u0002\u0010\u0008\n\u0002\u0008\u0007\n\u0002\u0018\u0002\n\u0002\u0018\u0002\n\u0002\u0018\u0002\n\u0002\u0018\u0002\n\u0002\u0018\u0002\n\u0002\u0018\u0002\n\u0000\u00087\u0018\u0000 \r2\u00020\u0001:\u0007\u000c\r\u000e\u000f\u0010\u0011\u0012B\u000f\u0008\u0004\u0012\u0006\u0010\u0002\u001a\u00020\u0003\u00a2\u0006\u0002\u0010\u0004J\u0013\u0010\u0007\u001a\u00020\u00082\u0008\u0010\t\u001a\u0004\u0018\u00010\u0001H\u0096\u0002J\u0008\u0010\n\u001a\u00020\u000bH\u0016R\u0011\u0010\u0002\u001a\u00020\u0003\u00a2\u0006\u0008\n\u0000\u001a\u0004\u0008\u0005\u0010\u0006\u0082\u0001\u0006\u0013\u0014\u0015\u0016\u0017\u0018\u00a8\u0006\u0019"
     }
     d2 = {
         "Lde/rki/coronawarnapp/covidcertificate/common/certificate/CwaCovidCertificate$State;",
         "",
-        "",
         "type",
-        "Ljava/lang/String;",
+        "",
+        "(Ljava/lang/String;)V",
         "getType",
         "()Ljava/lang/String;",
-        "<init>",
-        "(Ljava/lang/String;)V",
+        "equals",
+        "",
+        "other",
+        "hashCode",
+        "",
+        "Blocked",
         "Companion",
         "Expired",
         "ExpiringSoon",
         "Invalid",
+        "Recycled",
         "Valid",
         "Lde/rki/coronawarnapp/covidcertificate/common/certificate/CwaCovidCertificate$State$Valid;",
         "Lde/rki/coronawarnapp/covidcertificate/common/certificate/CwaCovidCertificate$State$ExpiringSoon;",
         "Lde/rki/coronawarnapp/covidcertificate/common/certificate/CwaCovidCertificate$State$Expired;",
         "Lde/rki/coronawarnapp/covidcertificate/common/certificate/CwaCovidCertificate$State$Invalid;",
+        "Lde/rki/coronawarnapp/covidcertificate/common/certificate/CwaCovidCertificate$State$Blocked;",
+        "Lde/rki/coronawarnapp/covidcertificate/common/certificate/CwaCovidCertificate$State$Recycled;",
         "Corona-Warn-App_deviceRelease"
     }
     k = 0x1
     mv = {
         0x1,
-        0x5,
-        0x1
+        0x6,
+        0x0
     }
+    xi = 0x30
 .end annotation
 
 
@@ -129,6 +134,12 @@
 
     invoke-virtual {v1, v0, v2}, Lde/rki/coronawarnapp/util/serialization/adapter/RuntimeTypeAdapterFactory;->registerSubtype(Ljava/lang/Class;Ljava/lang/String;)Lde/rki/coronawarnapp/util/serialization/adapter/RuntimeTypeAdapterFactory;
 
+    const-class v0, Lde/rki/coronawarnapp/covidcertificate/common/certificate/CwaCovidCertificate$State$Blocked;
+
+    const-string v2, "Blocked"
+
+    invoke-virtual {v1, v0, v2}, Lde/rki/coronawarnapp/util/serialization/adapter/RuntimeTypeAdapterFactory;->registerSubtype(Ljava/lang/Class;Ljava/lang/String;)Lde/rki/coronawarnapp/util/serialization/adapter/RuntimeTypeAdapterFactory;
+
     sput-object v1, Lde/rki/coronawarnapp/covidcertificate/common/certificate/CwaCovidCertificate$State;->typeAdapter:Lde/rki/coronawarnapp/util/serialization/adapter/RuntimeTypeAdapterFactory;
 
     return-void
@@ -162,10 +173,56 @@
 
 
 # virtual methods
+.method public equals(Ljava/lang/Object;)Z
+    .locals 2
+
+    instance-of v0, p0, Lde/rki/coronawarnapp/covidcertificate/common/certificate/CwaCovidCertificate$State$Blocked;
+
+    const/4 v1, 0x1
+
+    if-eqz v0, :cond_0
+
+    instance-of v0, p1, Lde/rki/coronawarnapp/covidcertificate/common/certificate/CwaCovidCertificate$State$Blocked;
+
+    if-eqz v0, :cond_0
+
+    return v1
+
+    :cond_0
+    instance-of v0, p0, Lde/rki/coronawarnapp/covidcertificate/common/certificate/CwaCovidCertificate$State$Recycled;
+
+    if-eqz v0, :cond_1
+
+    instance-of v0, p1, Lde/rki/coronawarnapp/covidcertificate/common/certificate/CwaCovidCertificate$State$Recycled;
+
+    if-eqz v0, :cond_1
+
+    return v1
+
+    :cond_1
+    invoke-super {p0, p1}, Ljava/lang/Object;->equals(Ljava/lang/Object;)Z
+
+    move-result p1
+
+    return p1
+.end method
+
 .method public final getType()Ljava/lang/String;
     .locals 1
 
     iget-object v0, p0, Lde/rki/coronawarnapp/covidcertificate/common/certificate/CwaCovidCertificate$State;->type:Ljava/lang/String;
 
     return-object v0
+.end method
+
+.method public hashCode()I
+    .locals 1
+
+    iget-object v0, p0, Lde/rki/coronawarnapp/covidcertificate/common/certificate/CwaCovidCertificate$State;->type:Ljava/lang/String;
+
+    invoke-virtual {v0}, Ljava/lang/String;->hashCode()I
+
+    move-result v0
+
+    return v0
 .end method

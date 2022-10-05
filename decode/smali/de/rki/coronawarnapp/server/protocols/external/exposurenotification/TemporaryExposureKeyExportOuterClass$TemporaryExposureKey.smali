@@ -167,7 +167,7 @@
     :pswitch_1
     new-instance p1, Lde/rki/coronawarnapp/server/protocols/external/exposurenotification/TemporaryExposureKeyExportOuterClass$TemporaryExposureKey$Builder;
 
-    invoke-direct {p1, v1}, Lde/rki/coronawarnapp/server/protocols/external/exposurenotification/TemporaryExposureKeyExportOuterClass$TemporaryExposureKey$Builder;-><init>(Lde/rki/coronawarnapp/server/protocols/external/exposurenotification/TemporaryExposureKeyExportOuterClass$TemporaryExposureKey$Builder-IA;)V
+    invoke-direct {p1, v1}, Lde/rki/coronawarnapp/server/protocols/external/exposurenotification/TemporaryExposureKeyExportOuterClass$TemporaryExposureKey$Builder;-><init>(Landroidx/camera/core/impl/SurfaceConfig$ConfigSize$EnumUnboxingLocalUtility;)V
 
     return-object p1
 
@@ -253,7 +253,7 @@
 
     move-result p1
 
-    invoke-static {p1}, Landroidx/constraintlayout/core/SolverVariable$Type$r8$EnumUnboxingUtility;->de$rki$coronawarnapp$server$protocols$external$exposurenotification$DiagnosisKeyBatchOuterClass$ReportType$s$forNumber(I)I
+    invoke-static {p1}, Lorg/conscrypt/OpenSSLProvider$$ExternalSyntheticOutline0;->_forNumber(I)I
 
     move-result p3
 

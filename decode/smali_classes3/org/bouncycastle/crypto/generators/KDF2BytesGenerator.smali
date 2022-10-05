@@ -1,0 +1,238 @@
+.class public Lorg/bouncycastle/crypto/generators/KDF2BytesGenerator;
+.super Ljava/lang/Object;
+
+# interfaces
+.implements Lorg/bouncycastle/crypto/DerivationFunction;
+
+
+# instance fields
+.field public digest:Lorg/bouncycastle/crypto/Digest;
+
+.field public iv:[B
+
+.field public shared:[B
+
+
+# direct methods
+.method public constructor <init>(Lorg/bouncycastle/crypto/Digest;)V
+    .locals 0
+
+    invoke-direct {p0}, Ljava/lang/Object;-><init>()V
+
+    iput-object p1, p0, Lorg/bouncycastle/crypto/generators/KDF2BytesGenerator;->digest:Lorg/bouncycastle/crypto/Digest;
+
+    return-void
+.end method
+
+
+# virtual methods
+.method public generateBytes([BII)I
+    .locals 16
+
+    move-object/from16 v0, p0
+
+    move-object/from16 v1, p1
+
+    move/from16 v2, p3
+
+    array-length v3, v1
+
+    sub-int/2addr v3, v2
+
+    move/from16 v4, p2
+
+    if-lt v3, v4, :cond_5
+
+    int-to-long v5, v2
+
+    iget-object v3, v0, Lorg/bouncycastle/crypto/generators/KDF2BytesGenerator;->digest:Lorg/bouncycastle/crypto/Digest;
+
+    invoke-interface {v3}, Lorg/bouncycastle/crypto/Digest;->getDigestSize()I
+
+    move-result v3
+
+    const-wide v7, 0x1ffffffffL
+
+    cmp-long v7, v5, v7
+
+    if-gtz v7, :cond_4
+
+    int-to-long v7, v3
+
+    add-long v9, v5, v7
+
+    const-wide/16 v11, 0x1
+
+    sub-long/2addr v9, v11
+
+    div-long/2addr v9, v7
+
+    long-to-int v7, v9
+
+    iget-object v8, v0, Lorg/bouncycastle/crypto/generators/KDF2BytesGenerator;->digest:Lorg/bouncycastle/crypto/Digest;
+
+    invoke-interface {v8}, Lorg/bouncycastle/crypto/Digest;->getDigestSize()I
+
+    move-result v8
+
+    new-array v8, v8, [B
+
+    const/4 v9, 0x4
+
+    new-array v10, v9, [B
+
+    const/4 v11, 0x0
+
+    const/4 v12, 0x1
+
+    invoke-static {v12, v10, v11}, Lorg/bouncycastle/util/Pack;->intToBigEndian(I[BI)V
+
+    move v13, v11
+
+    move v14, v13
+
+    :goto_0
+    if-ge v13, v7, :cond_3
+
+    iget-object v15, v0, Lorg/bouncycastle/crypto/generators/KDF2BytesGenerator;->digest:Lorg/bouncycastle/crypto/Digest;
+
+    iget-object v12, v0, Lorg/bouncycastle/crypto/generators/KDF2BytesGenerator;->shared:[B
+
+    array-length v9, v12
+
+    invoke-interface {v15, v12, v11, v9}, Lorg/bouncycastle/crypto/Digest;->update([BII)V
+
+    iget-object v9, v0, Lorg/bouncycastle/crypto/generators/KDF2BytesGenerator;->digest:Lorg/bouncycastle/crypto/Digest;
+
+    const/4 v12, 0x4
+
+    invoke-interface {v9, v10, v11, v12}, Lorg/bouncycastle/crypto/Digest;->update([BII)V
+
+    iget-object v9, v0, Lorg/bouncycastle/crypto/generators/KDF2BytesGenerator;->iv:[B
+
+    if-eqz v9, :cond_0
+
+    iget-object v15, v0, Lorg/bouncycastle/crypto/generators/KDF2BytesGenerator;->digest:Lorg/bouncycastle/crypto/Digest;
+
+    array-length v12, v9
+
+    invoke-interface {v15, v9, v11, v12}, Lorg/bouncycastle/crypto/Digest;->update([BII)V
+
+    :cond_0
+    iget-object v9, v0, Lorg/bouncycastle/crypto/generators/KDF2BytesGenerator;->digest:Lorg/bouncycastle/crypto/Digest;
+
+    invoke-interface {v9, v8, v11}, Lorg/bouncycastle/crypto/Digest;->doFinal([BI)I
+
+    if-le v2, v3, :cond_1
+
+    invoke-static {v8, v11, v1, v4, v3}, Ljava/lang/System;->arraycopy(Ljava/lang/Object;ILjava/lang/Object;II)V
+
+    add-int/2addr v4, v3
+
+    sub-int/2addr v2, v3
+
+    goto :goto_1
+
+    :cond_1
+    invoke-static {v8, v11, v1, v4, v2}, Ljava/lang/System;->arraycopy(Ljava/lang/Object;ILjava/lang/Object;II)V
+
+    :goto_1
+    const/4 v9, 0x3
+
+    aget-byte v12, v10, v9
+
+    const/4 v15, 0x1
+
+    add-int/2addr v12, v15
+
+    int-to-byte v12, v12
+
+    aput-byte v12, v10, v9
+
+    if-nez v12, :cond_2
+
+    add-int/lit16 v14, v14, 0x100
+
+    invoke-static {v14, v10, v11}, Lorg/bouncycastle/util/Pack;->intToBigEndian(I[BI)V
+
+    :cond_2
+    add-int/lit8 v13, v13, 0x1
+
+    move v12, v15
+
+    const/4 v9, 0x4
+
+    goto :goto_0
+
+    :cond_3
+    iget-object v1, v0, Lorg/bouncycastle/crypto/generators/KDF2BytesGenerator;->digest:Lorg/bouncycastle/crypto/Digest;
+
+    invoke-interface {v1}, Lorg/bouncycastle/crypto/Digest;->reset()V
+
+    long-to-int v1, v5
+
+    return v1
+
+    :cond_4
+    new-instance v1, Ljava/lang/IllegalArgumentException;
+
+    const-string v2, "Output length too large"
+
+    invoke-direct {v1, v2}, Ljava/lang/IllegalArgumentException;-><init>(Ljava/lang/String;)V
+
+    throw v1
+
+    :cond_5
+    new-instance v1, Lorg/bouncycastle/crypto/OutputLengthException;
+
+    const-string v2, "output buffer too small"
+
+    invoke-direct {v1, v2}, Lorg/bouncycastle/crypto/OutputLengthException;-><init>(Ljava/lang/String;)V
+
+    throw v1
+.end method
+
+.method public init(Lorg/bouncycastle/crypto/DerivationParameters;)V
+    .locals 1
+
+    instance-of v0, p1, Lorg/bouncycastle/crypto/params/KDFParameters;
+
+    if-eqz v0, :cond_0
+
+    check-cast p1, Lorg/bouncycastle/crypto/params/KDFParameters;
+
+    iget-object v0, p1, Lorg/bouncycastle/crypto/params/KDFParameters;->shared:[B
+
+    iput-object v0, p0, Lorg/bouncycastle/crypto/generators/KDF2BytesGenerator;->shared:[B
+
+    iget-object p1, p1, Lorg/bouncycastle/crypto/params/KDFParameters;->iv:[B
+
+    iput-object p1, p0, Lorg/bouncycastle/crypto/generators/KDF2BytesGenerator;->iv:[B
+
+    goto :goto_0
+
+    :cond_0
+    instance-of v0, p1, Lorg/bouncycastle/crypto/params/ISO18033KDFParameters;
+
+    if-eqz v0, :cond_1
+
+    check-cast p1, Lorg/bouncycastle/crypto/params/ISO18033KDFParameters;
+
+    const/4 p1, 0x0
+
+    iput-object p1, p0, Lorg/bouncycastle/crypto/generators/KDF2BytesGenerator;->shared:[B
+
+    iput-object p1, p0, Lorg/bouncycastle/crypto/generators/KDF2BytesGenerator;->iv:[B
+
+    :goto_0
+    return-void
+
+    :cond_1
+    new-instance p1, Ljava/lang/IllegalArgumentException;
+
+    const-string v0, "KDF parameters required for generator"
+
+    invoke-direct {p1, v0}, Ljava/lang/IllegalArgumentException;-><init>(Ljava/lang/String;)V
+
+    throw p1
+.end method

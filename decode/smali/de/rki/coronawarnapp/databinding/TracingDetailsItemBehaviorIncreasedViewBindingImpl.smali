@@ -21,49 +21,49 @@
 
     sput-object v0, Lde/rki/coronawarnapp/databinding/TracingDetailsItemBehaviorIncreasedViewBindingImpl;->sViewsWithIds:Landroid/util/SparseIntArray;
 
-    const v1, 0x7f0a05c0
+    const v1, 0x7f0a060b
 
     const/4 v2, 0x1
 
     invoke-virtual {v0, v1, v2}, Landroid/util/SparseIntArray;->put(II)V
 
-    const v1, 0x7f0a05c1
+    const v1, 0x7f0a060c
 
     const/4 v2, 0x2
 
     invoke-virtual {v0, v1, v2}, Landroid/util/SparseIntArray;->put(II)V
 
-    const v1, 0x7f0a05bb
+    const v1, 0x7f0a0431
 
     const/4 v2, 0x3
 
     invoke-virtual {v0, v1, v2}, Landroid/util/SparseIntArray;->put(II)V
 
-    const v1, 0x7f0a05ba
+    const v1, 0x7f0a0432
 
     const/4 v2, 0x4
 
     invoke-virtual {v0, v1, v2}, Landroid/util/SparseIntArray;->put(II)V
 
-    const v1, 0x7f0a05bd
+    const v1, 0x7f0a0608
 
     const/4 v2, 0x5
 
     invoke-virtual {v0, v1, v2}, Landroid/util/SparseIntArray;->put(II)V
 
-    const v1, 0x7f0a05bc
+    const v1, 0x7f0a0607
 
     const/4 v2, 0x6
 
     invoke-virtual {v0, v1, v2}, Landroid/util/SparseIntArray;->put(II)V
 
-    const v1, 0x7f0a05bf
+    const v1, 0x7f0a060a
 
     const/4 v2, 0x7
 
     invoke-virtual {v0, v1, v2}, Landroid/util/SparseIntArray;->put(II)V
 
-    const v1, 0x7f0a05be
+    const v1, 0x7f0a0609
 
     const/16 v2, 0x8
 
@@ -101,21 +101,21 @@
 
     move-result-object v15
 
-    const/4 v0, 0x4
+    const/4 v0, 0x3
 
     aget-object v0, v15, v0
 
     move-object v4, v0
 
-    check-cast v4, Landroid/widget/TextView;
+    check-cast v4, Lde/rki/coronawarnapp/tracing/ui/details/items/behavior/BehaviorInfoRow;
 
-    const/4 v0, 0x3
+    const/4 v0, 0x4
 
     aget-object v0, v15, v0
 
     move-object v5, v0
 
-    check-cast v5, Landroid/widget/ImageView;
+    check-cast v5, Lde/rki/coronawarnapp/tracing/ui/details/items/behavior/BehaviorInfoRow;
 
     const/4 v0, 0x6
 
@@ -173,7 +173,7 @@
 
     move-object/from16 v2, p2
 
-    invoke-direct/range {v0 .. v11}, Lde/rki/coronawarnapp/databinding/TracingDetailsItemBehaviorIncreasedViewBinding;-><init>(Ljava/lang/Object;Landroid/view/View;ILandroid/widget/TextView;Landroid/widget/ImageView;Landroid/widget/TextView;Landroid/widget/ImageView;Landroid/widget/TextView;Landroid/widget/ImageView;Landroid/widget/TextView;Landroid/widget/TextView;)V
+    invoke-direct/range {v0 .. v11}, Lde/rki/coronawarnapp/databinding/TracingDetailsItemBehaviorIncreasedViewBinding;-><init>(Ljava/lang/Object;Landroid/view/View;ILde/rki/coronawarnapp/tracing/ui/details/items/behavior/BehaviorInfoRow;Lde/rki/coronawarnapp/tracing/ui/details/items/behavior/BehaviorInfoRow;Landroid/widget/TextView;Landroid/widget/ImageView;Landroid/widget/TextView;Landroid/widget/ImageView;Landroid/widget/TextView;Landroid/widget/TextView;)V
 
     const-wide/16 v0, -0x1
 

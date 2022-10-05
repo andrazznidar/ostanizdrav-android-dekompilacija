@@ -9,7 +9,7 @@
 # instance fields
 .field private final a:Z
 
-.field private final b:I
+.field private final b:D
 
 
 # direct methods
@@ -26,7 +26,7 @@
 .end method
 
 .method private constructor <init>()V
-    .locals 1
+    .locals 2
 
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
@@ -34,12 +34,14 @@
 
     iput-boolean v0, p0, Lj$/util/j;->a:Z
 
-    iput v0, p0, Lj$/util/j;->b:I
+    const-wide/high16 v0, 0x7ff8000000000000L    # Double.NaN
+
+    iput-wide v0, p0, Lj$/util/j;->b:D
 
     return-void
 .end method
 
-.method private constructor <init>(I)V
+.method private constructor <init>(D)V
     .locals 1
 
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
@@ -48,7 +50,7 @@
 
     iput-boolean v0, p0, Lj$/util/j;->a:Z
 
-    iput p1, p0, Lj$/util/j;->b:I
+    iput-wide p1, p0, Lj$/util/j;->b:D
 
     return-void
 .end method
@@ -61,28 +63,28 @@
     return-object v0
 .end method
 
-.method public static d(I)Lj$/util/j;
+.method public static d(D)Lj$/util/j;
     .locals 1
 
     new-instance v0, Lj$/util/j;
 
-    invoke-direct {v0, p0}, Lj$/util/j;-><init>(I)V
+    invoke-direct {v0, p0, p1}, Lj$/util/j;-><init>(D)V
 
     return-object v0
 .end method
 
 
 # virtual methods
-.method public b()I
+.method public b()D
     .locals 2
 
     iget-boolean v0, p0, Lj$/util/j;->a:Z
 
     if-eqz v0, :cond_0
 
-    iget v0, p0, Lj$/util/j;->b:I
+    iget-wide v0, p0, Lj$/util/j;->b:D
 
-    return v0
+    return-wide v0
 
     :cond_0
     new-instance v0, Ljava/util/NoSuchElementException;
@@ -103,7 +105,7 @@
 .end method
 
 .method public equals(Ljava/lang/Object;)Z
-    .locals 4
+    .locals 7
 
     const/4 v0, 0x1
 
@@ -131,11 +133,15 @@
 
     if-eqz v3, :cond_2
 
-    iget v1, p0, Lj$/util/j;->b:I
+    iget-wide v3, p0, Lj$/util/j;->b:D
 
-    iget p1, p1, Lj$/util/j;->b:I
+    iget-wide v5, p1, Lj$/util/j;->b:D
 
-    if-ne v1, p1, :cond_3
+    invoke-static {v3, v4, v5, v6}, Ljava/lang/Double;->compare(DD)I
+
+    move-result p1
+
+    if-nez p1, :cond_3
 
     goto :goto_0
 
@@ -154,13 +160,25 @@
 .end method
 
 .method public hashCode()I
-    .locals 1
+    .locals 4
 
     iget-boolean v0, p0, Lj$/util/j;->a:Z
 
     if-eqz v0, :cond_0
 
-    iget v0, p0, Lj$/util/j;->b:I
+    iget-wide v0, p0, Lj$/util/j;->b:D
+
+    invoke-static {v0, v1}, Ljava/lang/Double;->doubleToLongBits(D)J
+
+    move-result-wide v0
+
+    const/16 v2, 0x20
+
+    ushr-long v2, v0, v2
+
+    xor-long/2addr v0, v2
+
+    long-to-int v0, v0
 
     goto :goto_0
 
@@ -172,7 +190,7 @@
 .end method
 
 .method public toString()Ljava/lang/String;
-    .locals 3
+    .locals 4
 
     iget-boolean v0, p0, Lj$/util/j;->a:Z
 
@@ -182,17 +200,17 @@
 
     new-array v0, v0, [Ljava/lang/Object;
 
-    iget v1, p0, Lj$/util/j;->b:I
+    const/4 v1, 0x0
 
-    invoke-static {v1}, Ljava/lang/Integer;->valueOf(I)Ljava/lang/Integer;
+    iget-wide v2, p0, Lj$/util/j;->b:D
 
-    move-result-object v1
+    invoke-static {v2, v3}, Ljava/lang/Double;->valueOf(D)Ljava/lang/Double;
 
-    const/4 v2, 0x0
+    move-result-object v2
 
-    aput-object v1, v0, v2
+    aput-object v2, v0, v1
 
-    const-string v1, "OptionalInt[%s]"
+    const-string v1, "OptionalDouble[%s]"
 
     invoke-static {v1, v0}, Ljava/lang/String;->format(Ljava/lang/String;[Ljava/lang/Object;)Ljava/lang/String;
 
@@ -201,7 +219,7 @@
     goto :goto_0
 
     :cond_0
-    const-string v0, "OptionalInt.empty"
+    const-string v0, "OptionalDouble.empty"
 
     :goto_0
     return-object v0

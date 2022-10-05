@@ -1,4 +1,4 @@
-.class public synthetic Lkotlin/reflect/jvm/internal/impl/metadata/jvm/JvmProtoBuf$1;
+.class synthetic Lkotlin/reflect/jvm/internal/impl/metadata/jvm/JvmProtoBuf$1;
 .super Ljava/lang/Object;
 .source "JvmProtoBuf.java"
 

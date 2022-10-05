@@ -118,15 +118,13 @@
 
     sget-object v1, Landroid/graphics/Bitmap$Config;->ALPHA_8:Landroid/graphics/Bitmap$Config;
 
-    const/4 v2, 0x2
-
-    const/4 v3, 0x1
+    const/4 v2, 0x1
 
     if-ne p3, v1, :cond_0
 
-    move v2, v3
+    move v1, v2
 
-    goto :goto_0
+    goto :goto_1
 
     :cond_0
     sget-object v1, Landroid/graphics/Bitmap$Config;->RGB_565:Landroid/graphics/Bitmap$Config;
@@ -140,36 +138,39 @@
 
     if-ne p3, v1, :cond_2
 
-    goto :goto_0
+    :goto_0
+    const/4 v1, 0x2
+
+    goto :goto_1
 
     :cond_2
     sget v1, Landroid/os/Build$VERSION;->SDK_INT:I
 
-    const/16 v2, 0x1a
+    const/16 v3, 0x1a
 
-    if-lt v1, v2, :cond_3
+    if-lt v1, v3, :cond_3
 
     sget-object v1, Landroid/graphics/Bitmap$Config;->RGBA_F16:Landroid/graphics/Bitmap$Config;
 
     if-ne p3, v1, :cond_3
 
-    const/16 v2, 0x8
+    const/16 v1, 0x8
 
-    goto :goto_0
+    goto :goto_1
 
     :cond_3
-    const/4 v2, 0x4
+    const/4 v1, 0x4
 
-    :goto_0
-    mul-int/2addr v0, v2
+    :goto_1
+    mul-int/2addr v0, v1
 
     iget-object v1, p0, Lcoil/bitmap/SizeStrategy;->sizes:Ljava/util/TreeMap;
 
     invoke-static {v0}, Ljava/lang/Integer;->valueOf(I)Ljava/lang/Integer;
 
-    move-result-object v2
+    move-result-object v3
 
-    invoke-virtual {v1, v2}, Ljava/util/TreeMap;->ceilingKey(Ljava/lang/Object;)Ljava/lang/Object;
+    invoke-virtual {v1, v3}, Ljava/util/TreeMap;->ceilingKey(Ljava/lang/Object;)Ljava/lang/Object;
 
     move-result-object v1
 
@@ -177,41 +178,41 @@
 
     if-nez v1, :cond_4
 
-    goto :goto_3
+    goto :goto_4
 
     :cond_4
     invoke-virtual {v1}, Ljava/lang/Number;->intValue()I
 
-    move-result v2
+    move-result v3
 
     mul-int/lit8 v4, v0, 0x4
 
-    if-gt v2, v4, :cond_5
-
-    goto :goto_1
-
-    :cond_5
-    const/4 v3, 0x0
-
-    :goto_1
-    if-eqz v3, :cond_6
+    if-gt v3, v4, :cond_5
 
     goto :goto_2
+
+    :cond_5
+    const/4 v2, 0x0
+
+    :goto_2
+    if-eqz v2, :cond_6
+
+    goto :goto_3
 
     :cond_6
     const/4 v1, 0x0
 
-    :goto_2
+    :goto_3
     if-nez v1, :cond_7
 
-    goto :goto_3
+    goto :goto_4
 
     :cond_7
     invoke-virtual {v1}, Ljava/lang/Integer;->intValue()I
 
     move-result v0
 
-    :goto_3
+    :goto_4
     iget-object v1, p0, Lcoil/bitmap/SizeStrategy;->entries:Lcoil/collection/LinkedMultimap;
 
     invoke-static {v0}, Ljava/lang/Integer;->valueOf(I)Ljava/lang/Integer;
@@ -326,13 +327,11 @@
 
     sget-object p2, Landroid/graphics/Bitmap$Config;->ALPHA_8:Landroid/graphics/Bitmap$Config;
 
-    const/4 v1, 0x2
-
     if-ne p3, p2, :cond_0
 
-    const/4 v1, 0x1
+    const/4 p2, 0x1
 
-    goto :goto_0
+    goto :goto_1
 
     :cond_0
     sget-object p2, Landroid/graphics/Bitmap$Config;->RGB_565:Landroid/graphics/Bitmap$Config;
@@ -346,7 +345,10 @@
 
     if-ne p3, p2, :cond_2
 
-    goto :goto_0
+    :goto_0
+    const/4 p2, 0x2
+
+    goto :goto_1
 
     :cond_2
     sget p2, Landroid/os/Build$VERSION;->SDK_INT:I
@@ -359,15 +361,15 @@
 
     if-ne p3, p2, :cond_3
 
-    const/16 v1, 0x8
+    const/16 p2, 0x8
 
-    goto :goto_0
+    goto :goto_1
 
     :cond_3
-    const/4 v1, 0x4
+    const/4 p2, 0x4
 
-    :goto_0
-    mul-int/2addr p1, v1
+    :goto_1
+    mul-int/2addr p1, p2
 
     invoke-virtual {v0, p1}, Ljava/lang/StringBuilder;->append(I)Ljava/lang/StringBuilder;
 

@@ -17,7 +17,7 @@
     c = "de.rki.coronawarnapp.datadonation.safetynet.CWASafetyNet"
     f = "CWASafetyNet.kt"
     l = {
-        0x5f
+        0x66
     }
     m = "requireCorrectDeviceTime"
 .end annotation

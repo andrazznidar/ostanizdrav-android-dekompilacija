@@ -98,19 +98,13 @@
     :cond_2
     new-instance p0, Ljava/lang/IllegalArgumentException;
 
-    new-instance p1, Ljava/lang/StringBuilder;
+    const-string p1, "Cannot coerce value to an empty range: maximum "
 
-    invoke-direct {p1}, Ljava/lang/StringBuilder;-><init>()V
+    const-string v0, " is less than minimum "
 
-    const-string v0, "Cannot coerce value to an empty range: maximum "
+    invoke-static {p1, p4, p5, v0}, Landroidx/camera/core/CameraX$$ExternalSyntheticOutline0;->m(Ljava/lang/String;JLjava/lang/String;)Ljava/lang/StringBuilder;
 
-    invoke-virtual {p1, v0}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
-
-    invoke-virtual {p1, p4, p5}, Ljava/lang/StringBuilder;->append(J)Ljava/lang/StringBuilder;
-
-    const-string p4, " is less than minimum "
-
-    invoke-virtual {p1, p4}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+    move-result-object p1
 
     invoke-virtual {p1, p2, p3}, Ljava/lang/StringBuilder;->append(J)Ljava/lang/StringBuilder;
 
@@ -194,7 +188,7 @@
 .method public static final step(Lkotlin/ranges/IntProgression;I)Lkotlin/ranges/IntProgression;
     .locals 3
 
-    const-string v0, "$this$step"
+    const-string v0, "<this>"
 
     invoke-static {p0, v0}, Lkotlin/jvm/internal/Intrinsics;->checkNotNullParameter(Ljava/lang/Object;Ljava/lang/String;)V
 

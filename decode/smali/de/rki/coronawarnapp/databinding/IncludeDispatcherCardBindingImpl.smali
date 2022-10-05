@@ -204,7 +204,7 @@
 
     move-result-object v0
 
-    const v3, 0x7f08011d
+    const v3, 0x7f080112
 
     invoke-static {v0, v3}, Landroidx/appcompat/content/res/AppCompatResources;->getDrawable(Landroid/content/Context;I)Landroid/graphics/drawable/Drawable;
 
@@ -246,7 +246,7 @@
 
     iget-object v0, v1, Lde/rki/coronawarnapp/databinding/IncludeDispatcherCardBinding;->submissionDispatcherCardText:Landroid/widget/TextView;
 
-    invoke-static {v0, v9}, Lcom/google/android/gms/nearby/connection/zzq;->setCWAContentDescription(Landroid/view/View;Ljava/lang/String;)V
+    invoke-static {v0, v9}, Lboofcv/core/image/impl/ImplConvertPlanarToGray;->setCWAContentDescription(Landroid/view/View;Ljava/lang/String;)V
 
     :cond_8
     return-void
@@ -403,7 +403,7 @@
     :try_end_0
     .catchall {:try_start_0 .. :try_end_0} :catchall_0
 
-    const/16 p1, 0x13
+    const/16 p1, 0x12
 
     invoke-virtual {p0, p1}, Landroidx/databinding/BaseObservable;->notifyPropertyChanged(I)V
 
@@ -450,7 +450,7 @@
     :try_end_0
     .catchall {:try_start_0 .. :try_end_0} :catchall_0
 
-    const/16 p1, 0x16
+    const/16 p1, 0x15
 
     invoke-virtual {p0, p1}, Landroidx/databinding/BaseObservable;->notifyPropertyChanged(I)V
 
@@ -497,7 +497,7 @@
     :try_end_0
     .catchall {:try_start_0 .. :try_end_0} :catchall_0
 
-    const/16 p1, 0x19
+    const/16 p1, 0x18
 
     invoke-virtual {p0, p1}, Landroidx/databinding/BaseObservable;->notifyPropertyChanged(I)V
 

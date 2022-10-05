@@ -19,3 +19,8 @@
 
     return-void
 .end method
+
+
+# virtual methods
+.method public abstract getName()Ljava/lang/String;
+.end method

@@ -23,19 +23,19 @@
 
     sput-object v0, Lde/rki/coronawarnapp/databinding/IncludeMainOverviewRowBindingImpl;->sViewsWithIds:Landroid/util/SparseIntArray;
 
-    const v1, 0x7f0a042a
+    const v1, 0x7f0a046f
 
     const/4 v2, 0x3
 
     invoke-virtual {v0, v1, v2}, Landroid/util/SparseIntArray;->put(II)V
 
-    const v1, 0x7f0a0341
+    const v1, 0x7f0a0370
 
     const/4 v2, 0x4
 
     invoke-virtual {v0, v1, v2}, Landroid/util/SparseIntArray;->put(II)V
 
-    const v1, 0x7f0a0347
+    const v1, 0x7f0a0376
 
     const/4 v2, 0x5
 
@@ -180,7 +180,7 @@
 
     if-eqz v10, :cond_0
 
-    invoke-static {v0}, Lcom/google/android/gms/internal/nearby/zzfc;->formatVisibilityIcon(Ljava/lang/Object;)I
+    invoke-static {v0}, Lorg/ejml/dense/row/misc/ImplCommonOps_DDMA;->formatVisibilityIcon(Ljava/lang/Object;)I
 
     move-result v10
 
@@ -256,7 +256,7 @@
     :cond_5
     iget-object v6, v1, Lde/rki/coronawarnapp/databinding/IncludeMainOverviewRowBindingImpl;->mboundView1:Landroid/widget/ImageView;
 
-    const v11, 0x7f060040
+    const v11, 0x7f060041
 
     invoke-static {v6, v11}, Landroidx/databinding/ViewDataBinding;->getColorFromResource(Landroid/view/View;I)I
 
@@ -298,7 +298,7 @@
 
     iget-object v0, v1, Lde/rki/coronawarnapp/databinding/IncludeMainOverviewRowBindingImpl;->mboundView1:Landroid/widget/ImageView;
 
-    invoke-static {v0, v11}, Ldagger/android/AndroidInjection;->setTint(Landroid/widget/ImageView;I)V
+    invoke-static {v0, v11}, Lorg/ejml/sparse/csc/CommonOps_DSCC;->setTint(Landroid/widget/ImageView;I)V
 
     :cond_9
     return-void
@@ -408,7 +408,7 @@
     :try_end_0
     .catchall {:try_start_0 .. :try_end_0} :catchall_0
 
-    const/16 p1, 0x16
+    const/16 p1, 0x15
 
     invoke-virtual {p0, p1}, Landroidx/databinding/BaseObservable;->notifyPropertyChanged(I)V
 
@@ -455,7 +455,7 @@
     :try_end_0
     .catchall {:try_start_0 .. :try_end_0} :catchall_0
 
-    const/16 p1, 0x18
+    const/16 p1, 0x17
 
     invoke-virtual {p0, p1}, Landroidx/databinding/BaseObservable;->notifyPropertyChanged(I)V
 
@@ -502,7 +502,7 @@
     :try_end_0
     .catchall {:try_start_0 .. :try_end_0} :catchall_0
 
-    const/16 p1, 0x2d
+    const/16 p1, 0x2b
 
     invoke-virtual {p0, p1}, Landroidx/databinding/BaseObservable;->notifyPropertyChanged(I)V
 

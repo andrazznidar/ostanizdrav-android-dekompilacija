@@ -4,6 +4,12 @@
 
 
 # annotations
+.annotation system Ldalvik/annotation/MemberClasses;
+    value = {
+        Lkotlin/reflect/jvm/internal/impl/descriptors/annotations/KotlinTarget$Companion;
+    }
+.end annotation
+
 .annotation system Ldalvik/annotation/Signature;
     value = {
         "Ljava/lang/Enum<",
@@ -13,18 +19,54 @@
 .end annotation
 
 .annotation system Ldalvik/annotation/SourceDebugExtension;
-    value = "SMAP\nKotlinTarget.kt\nKotlin\n*S Kotlin\n*F\n+ 1 KotlinTarget.kt\norg/jetbrains/kotlin/descriptors/annotations/KotlinTarget\n+ 2 _Arrays.kt\nkotlin/collections/ArraysKt___ArraysKt\n*L\n1#1,122:1\n3755#2:123\n4270#2,2:124\n*E\n*S KotlinDebug\n*F\n+ 1 KotlinTarget.kt\norg/jetbrains/kotlin/descriptors/annotations/KotlinTarget\n*L\n77#1:123\n77#1,2:124\n*E\n"
+    value = "SMAP\nKotlinTarget.kt\nKotlin\n*S Kotlin\n*F\n+ 1 KotlinTarget.kt\norg/jetbrains/kotlin/descriptors/annotations/KotlinTarget\n+ 2 _Arrays.kt\nkotlin/collections/ArraysKt___ArraysKt\n*L\n1#1,125:1\n3785#2:126\n4300#2,2:127\n*S KotlinDebug\n*F\n+ 1 KotlinTarget.kt\norg/jetbrains/kotlin/descriptors/annotations/KotlinTarget\n*L\n78#1:126\n78#1:127,2\n*E\n"
 .end annotation
 
 
 # static fields
-.field public static final synthetic $VALUES:[Lkotlin/reflect/jvm/internal/impl/descriptors/annotations/KotlinTarget;
+.field private static final synthetic $VALUES:[Lkotlin/reflect/jvm/internal/impl/descriptors/annotations/KotlinTarget;
+
+.field private static final ALL_TARGET_SET:Ljava/util/Set;
+    .annotation system Ldalvik/annotation/Signature;
+        value = {
+            "Ljava/util/Set<",
+            "Lkotlin/reflect/jvm/internal/impl/descriptors/annotations/KotlinTarget;",
+            ">;"
+        }
+    .end annotation
+.end field
 
 .field public static final enum ANNOTATION_CLASS:Lkotlin/reflect/jvm/internal/impl/descriptors/annotations/KotlinTarget;
 
+.field public static final enum ANONYMOUS_FUNCTION:Lkotlin/reflect/jvm/internal/impl/descriptors/annotations/KotlinTarget;
+
 .field public static final enum CLASS:Lkotlin/reflect/jvm/internal/impl/descriptors/annotations/KotlinTarget;
 
+.field public static final enum CLASS_ONLY:Lkotlin/reflect/jvm/internal/impl/descriptors/annotations/KotlinTarget;
+
+.field public static final enum COMPANION_OBJECT:Lkotlin/reflect/jvm/internal/impl/descriptors/annotations/KotlinTarget;
+
 .field public static final enum CONSTRUCTOR:Lkotlin/reflect/jvm/internal/impl/descriptors/annotations/KotlinTarget;
+
+.field public static final Companion:Lkotlin/reflect/jvm/internal/impl/descriptors/annotations/KotlinTarget$Companion;
+
+.field private static final DEFAULT_TARGET_SET:Ljava/util/Set;
+    .annotation system Ldalvik/annotation/Signature;
+        value = {
+            "Ljava/util/Set<",
+            "Lkotlin/reflect/jvm/internal/impl/descriptors/annotations/KotlinTarget;",
+            ">;"
+        }
+    .end annotation
+.end field
+
+.field public static final enum DESTRUCTURING_DECLARATION:Lkotlin/reflect/jvm/internal/impl/descriptors/annotations/KotlinTarget;
+
+.field public static final enum ENUM_CLASS:Lkotlin/reflect/jvm/internal/impl/descriptors/annotations/KotlinTarget;
+
+.field public static final enum ENUM_ENTRY:Lkotlin/reflect/jvm/internal/impl/descriptors/annotations/KotlinTarget;
+
+.field public static final enum EXPRESSION:Lkotlin/reflect/jvm/internal/impl/descriptors/annotations/KotlinTarget;
 
 .field public static final enum FIELD:Lkotlin/reflect/jvm/internal/impl/descriptors/annotations/KotlinTarget;
 
@@ -32,19 +74,61 @@
 
 .field public static final enum FUNCTION:Lkotlin/reflect/jvm/internal/impl/descriptors/annotations/KotlinTarget;
 
+.field public static final enum INITIALIZER:Lkotlin/reflect/jvm/internal/impl/descriptors/annotations/KotlinTarget;
+
+.field public static final enum INTERFACE:Lkotlin/reflect/jvm/internal/impl/descriptors/annotations/KotlinTarget;
+
+.field public static final enum LAMBDA_EXPRESSION:Lkotlin/reflect/jvm/internal/impl/descriptors/annotations/KotlinTarget;
+
+.field public static final enum LOCAL_CLASS:Lkotlin/reflect/jvm/internal/impl/descriptors/annotations/KotlinTarget;
+
+.field public static final enum LOCAL_FUNCTION:Lkotlin/reflect/jvm/internal/impl/descriptors/annotations/KotlinTarget;
+
 .field public static final enum LOCAL_VARIABLE:Lkotlin/reflect/jvm/internal/impl/descriptors/annotations/KotlinTarget;
+
+.field public static final enum MEMBER_FUNCTION:Lkotlin/reflect/jvm/internal/impl/descriptors/annotations/KotlinTarget;
+
+.field public static final enum MEMBER_PROPERTY:Lkotlin/reflect/jvm/internal/impl/descriptors/annotations/KotlinTarget;
+
+.field public static final enum MEMBER_PROPERTY_WITHOUT_FIELD_OR_DELEGATE:Lkotlin/reflect/jvm/internal/impl/descriptors/annotations/KotlinTarget;
+
+.field public static final enum MEMBER_PROPERTY_WITH_BACKING_FIELD:Lkotlin/reflect/jvm/internal/impl/descriptors/annotations/KotlinTarget;
+
+.field public static final enum MEMBER_PROPERTY_WITH_DELEGATE:Lkotlin/reflect/jvm/internal/impl/descriptors/annotations/KotlinTarget;
+
+.field public static final enum OBJECT:Lkotlin/reflect/jvm/internal/impl/descriptors/annotations/KotlinTarget;
+
+.field public static final enum OBJECT_LITERAL:Lkotlin/reflect/jvm/internal/impl/descriptors/annotations/KotlinTarget;
 
 .field public static final enum PROPERTY:Lkotlin/reflect/jvm/internal/impl/descriptors/annotations/KotlinTarget;
 
 .field public static final enum PROPERTY_GETTER:Lkotlin/reflect/jvm/internal/impl/descriptors/annotations/KotlinTarget;
 
+.field public static final enum PROPERTY_PARAMETER:Lkotlin/reflect/jvm/internal/impl/descriptors/annotations/KotlinTarget;
+
 .field public static final enum PROPERTY_SETTER:Lkotlin/reflect/jvm/internal/impl/descriptors/annotations/KotlinTarget;
+
+.field public static final enum STAR_PROJECTION:Lkotlin/reflect/jvm/internal/impl/descriptors/annotations/KotlinTarget;
+
+.field public static final enum TOP_LEVEL_FUNCTION:Lkotlin/reflect/jvm/internal/impl/descriptors/annotations/KotlinTarget;
+
+.field public static final enum TOP_LEVEL_PROPERTY:Lkotlin/reflect/jvm/internal/impl/descriptors/annotations/KotlinTarget;
+
+.field public static final enum TOP_LEVEL_PROPERTY_WITHOUT_FIELD_OR_DELEGATE:Lkotlin/reflect/jvm/internal/impl/descriptors/annotations/KotlinTarget;
+
+.field public static final enum TOP_LEVEL_PROPERTY_WITH_BACKING_FIELD:Lkotlin/reflect/jvm/internal/impl/descriptors/annotations/KotlinTarget;
+
+.field public static final enum TOP_LEVEL_PROPERTY_WITH_DELEGATE:Lkotlin/reflect/jvm/internal/impl/descriptors/annotations/KotlinTarget;
 
 .field public static final enum TYPE:Lkotlin/reflect/jvm/internal/impl/descriptors/annotations/KotlinTarget;
 
+.field public static final enum TYPEALIAS:Lkotlin/reflect/jvm/internal/impl/descriptors/annotations/KotlinTarget;
+
 .field public static final enum TYPE_PARAMETER:Lkotlin/reflect/jvm/internal/impl/descriptors/annotations/KotlinTarget;
 
-.field public static final USE_SITE_MAPPING:Ljava/util/Map;
+.field public static final enum TYPE_PROJECTION:Lkotlin/reflect/jvm/internal/impl/descriptors/annotations/KotlinTarget;
+
+.field private static final USE_SITE_MAPPING:Ljava/util/Map;
     .annotation system Ldalvik/annotation/Signature;
         value = {
             "Ljava/util/Map<",
@@ -57,7 +141,7 @@
 
 .field public static final enum VALUE_PARAMETER:Lkotlin/reflect/jvm/internal/impl/descriptors/annotations/KotlinTarget;
 
-.field public static final map:Ljava/util/HashMap;
+.field private static final map:Ljava/util/HashMap;
     .annotation system Ldalvik/annotation/Signature;
         value = {
             "Ljava/util/HashMap<",
@@ -70,14 +154,272 @@
 
 
 # instance fields
-.field public final isDefault:Z
+.field private final description:Ljava/lang/String;
+
+.field private final isDefault:Z
 
 
 # direct methods
-.method public static constructor <clinit>()V
-    .locals 51
+.method private static final synthetic $values()[Lkotlin/reflect/jvm/internal/impl/descriptors/annotations/KotlinTarget;
+    .locals 3
 
-    new-instance v6, Lkotlin/reflect/jvm/internal/impl/descriptors/annotations/KotlinTarget;
+    const/16 v0, 0x29
+
+    new-array v0, v0, [Lkotlin/reflect/jvm/internal/impl/descriptors/annotations/KotlinTarget;
+
+    sget-object v1, Lkotlin/reflect/jvm/internal/impl/descriptors/annotations/KotlinTarget;->CLASS:Lkotlin/reflect/jvm/internal/impl/descriptors/annotations/KotlinTarget;
+
+    const/4 v2, 0x0
+
+    aput-object v1, v0, v2
+
+    sget-object v1, Lkotlin/reflect/jvm/internal/impl/descriptors/annotations/KotlinTarget;->ANNOTATION_CLASS:Lkotlin/reflect/jvm/internal/impl/descriptors/annotations/KotlinTarget;
+
+    const/4 v2, 0x1
+
+    aput-object v1, v0, v2
+
+    sget-object v1, Lkotlin/reflect/jvm/internal/impl/descriptors/annotations/KotlinTarget;->TYPE_PARAMETER:Lkotlin/reflect/jvm/internal/impl/descriptors/annotations/KotlinTarget;
+
+    const/4 v2, 0x2
+
+    aput-object v1, v0, v2
+
+    sget-object v1, Lkotlin/reflect/jvm/internal/impl/descriptors/annotations/KotlinTarget;->PROPERTY:Lkotlin/reflect/jvm/internal/impl/descriptors/annotations/KotlinTarget;
+
+    const/4 v2, 0x3
+
+    aput-object v1, v0, v2
+
+    sget-object v1, Lkotlin/reflect/jvm/internal/impl/descriptors/annotations/KotlinTarget;->FIELD:Lkotlin/reflect/jvm/internal/impl/descriptors/annotations/KotlinTarget;
+
+    const/4 v2, 0x4
+
+    aput-object v1, v0, v2
+
+    sget-object v1, Lkotlin/reflect/jvm/internal/impl/descriptors/annotations/KotlinTarget;->LOCAL_VARIABLE:Lkotlin/reflect/jvm/internal/impl/descriptors/annotations/KotlinTarget;
+
+    const/4 v2, 0x5
+
+    aput-object v1, v0, v2
+
+    sget-object v1, Lkotlin/reflect/jvm/internal/impl/descriptors/annotations/KotlinTarget;->VALUE_PARAMETER:Lkotlin/reflect/jvm/internal/impl/descriptors/annotations/KotlinTarget;
+
+    const/4 v2, 0x6
+
+    aput-object v1, v0, v2
+
+    sget-object v1, Lkotlin/reflect/jvm/internal/impl/descriptors/annotations/KotlinTarget;->CONSTRUCTOR:Lkotlin/reflect/jvm/internal/impl/descriptors/annotations/KotlinTarget;
+
+    const/4 v2, 0x7
+
+    aput-object v1, v0, v2
+
+    sget-object v1, Lkotlin/reflect/jvm/internal/impl/descriptors/annotations/KotlinTarget;->FUNCTION:Lkotlin/reflect/jvm/internal/impl/descriptors/annotations/KotlinTarget;
+
+    const/16 v2, 0x8
+
+    aput-object v1, v0, v2
+
+    sget-object v1, Lkotlin/reflect/jvm/internal/impl/descriptors/annotations/KotlinTarget;->PROPERTY_GETTER:Lkotlin/reflect/jvm/internal/impl/descriptors/annotations/KotlinTarget;
+
+    const/16 v2, 0x9
+
+    aput-object v1, v0, v2
+
+    sget-object v1, Lkotlin/reflect/jvm/internal/impl/descriptors/annotations/KotlinTarget;->PROPERTY_SETTER:Lkotlin/reflect/jvm/internal/impl/descriptors/annotations/KotlinTarget;
+
+    const/16 v2, 0xa
+
+    aput-object v1, v0, v2
+
+    sget-object v1, Lkotlin/reflect/jvm/internal/impl/descriptors/annotations/KotlinTarget;->TYPE:Lkotlin/reflect/jvm/internal/impl/descriptors/annotations/KotlinTarget;
+
+    const/16 v2, 0xb
+
+    aput-object v1, v0, v2
+
+    sget-object v1, Lkotlin/reflect/jvm/internal/impl/descriptors/annotations/KotlinTarget;->EXPRESSION:Lkotlin/reflect/jvm/internal/impl/descriptors/annotations/KotlinTarget;
+
+    const/16 v2, 0xc
+
+    aput-object v1, v0, v2
+
+    sget-object v1, Lkotlin/reflect/jvm/internal/impl/descriptors/annotations/KotlinTarget;->FILE:Lkotlin/reflect/jvm/internal/impl/descriptors/annotations/KotlinTarget;
+
+    const/16 v2, 0xd
+
+    aput-object v1, v0, v2
+
+    sget-object v1, Lkotlin/reflect/jvm/internal/impl/descriptors/annotations/KotlinTarget;->TYPEALIAS:Lkotlin/reflect/jvm/internal/impl/descriptors/annotations/KotlinTarget;
+
+    const/16 v2, 0xe
+
+    aput-object v1, v0, v2
+
+    sget-object v1, Lkotlin/reflect/jvm/internal/impl/descriptors/annotations/KotlinTarget;->TYPE_PROJECTION:Lkotlin/reflect/jvm/internal/impl/descriptors/annotations/KotlinTarget;
+
+    const/16 v2, 0xf
+
+    aput-object v1, v0, v2
+
+    sget-object v1, Lkotlin/reflect/jvm/internal/impl/descriptors/annotations/KotlinTarget;->STAR_PROJECTION:Lkotlin/reflect/jvm/internal/impl/descriptors/annotations/KotlinTarget;
+
+    const/16 v2, 0x10
+
+    aput-object v1, v0, v2
+
+    sget-object v1, Lkotlin/reflect/jvm/internal/impl/descriptors/annotations/KotlinTarget;->PROPERTY_PARAMETER:Lkotlin/reflect/jvm/internal/impl/descriptors/annotations/KotlinTarget;
+
+    const/16 v2, 0x11
+
+    aput-object v1, v0, v2
+
+    sget-object v1, Lkotlin/reflect/jvm/internal/impl/descriptors/annotations/KotlinTarget;->CLASS_ONLY:Lkotlin/reflect/jvm/internal/impl/descriptors/annotations/KotlinTarget;
+
+    const/16 v2, 0x12
+
+    aput-object v1, v0, v2
+
+    sget-object v1, Lkotlin/reflect/jvm/internal/impl/descriptors/annotations/KotlinTarget;->OBJECT:Lkotlin/reflect/jvm/internal/impl/descriptors/annotations/KotlinTarget;
+
+    const/16 v2, 0x13
+
+    aput-object v1, v0, v2
+
+    sget-object v1, Lkotlin/reflect/jvm/internal/impl/descriptors/annotations/KotlinTarget;->COMPANION_OBJECT:Lkotlin/reflect/jvm/internal/impl/descriptors/annotations/KotlinTarget;
+
+    const/16 v2, 0x14
+
+    aput-object v1, v0, v2
+
+    sget-object v1, Lkotlin/reflect/jvm/internal/impl/descriptors/annotations/KotlinTarget;->INTERFACE:Lkotlin/reflect/jvm/internal/impl/descriptors/annotations/KotlinTarget;
+
+    const/16 v2, 0x15
+
+    aput-object v1, v0, v2
+
+    sget-object v1, Lkotlin/reflect/jvm/internal/impl/descriptors/annotations/KotlinTarget;->ENUM_CLASS:Lkotlin/reflect/jvm/internal/impl/descriptors/annotations/KotlinTarget;
+
+    const/16 v2, 0x16
+
+    aput-object v1, v0, v2
+
+    sget-object v1, Lkotlin/reflect/jvm/internal/impl/descriptors/annotations/KotlinTarget;->ENUM_ENTRY:Lkotlin/reflect/jvm/internal/impl/descriptors/annotations/KotlinTarget;
+
+    const/16 v2, 0x17
+
+    aput-object v1, v0, v2
+
+    sget-object v1, Lkotlin/reflect/jvm/internal/impl/descriptors/annotations/KotlinTarget;->LOCAL_CLASS:Lkotlin/reflect/jvm/internal/impl/descriptors/annotations/KotlinTarget;
+
+    const/16 v2, 0x18
+
+    aput-object v1, v0, v2
+
+    sget-object v1, Lkotlin/reflect/jvm/internal/impl/descriptors/annotations/KotlinTarget;->LOCAL_FUNCTION:Lkotlin/reflect/jvm/internal/impl/descriptors/annotations/KotlinTarget;
+
+    const/16 v2, 0x19
+
+    aput-object v1, v0, v2
+
+    sget-object v1, Lkotlin/reflect/jvm/internal/impl/descriptors/annotations/KotlinTarget;->MEMBER_FUNCTION:Lkotlin/reflect/jvm/internal/impl/descriptors/annotations/KotlinTarget;
+
+    const/16 v2, 0x1a
+
+    aput-object v1, v0, v2
+
+    sget-object v1, Lkotlin/reflect/jvm/internal/impl/descriptors/annotations/KotlinTarget;->TOP_LEVEL_FUNCTION:Lkotlin/reflect/jvm/internal/impl/descriptors/annotations/KotlinTarget;
+
+    const/16 v2, 0x1b
+
+    aput-object v1, v0, v2
+
+    sget-object v1, Lkotlin/reflect/jvm/internal/impl/descriptors/annotations/KotlinTarget;->MEMBER_PROPERTY:Lkotlin/reflect/jvm/internal/impl/descriptors/annotations/KotlinTarget;
+
+    const/16 v2, 0x1c
+
+    aput-object v1, v0, v2
+
+    sget-object v1, Lkotlin/reflect/jvm/internal/impl/descriptors/annotations/KotlinTarget;->MEMBER_PROPERTY_WITH_BACKING_FIELD:Lkotlin/reflect/jvm/internal/impl/descriptors/annotations/KotlinTarget;
+
+    const/16 v2, 0x1d
+
+    aput-object v1, v0, v2
+
+    sget-object v1, Lkotlin/reflect/jvm/internal/impl/descriptors/annotations/KotlinTarget;->MEMBER_PROPERTY_WITH_DELEGATE:Lkotlin/reflect/jvm/internal/impl/descriptors/annotations/KotlinTarget;
+
+    const/16 v2, 0x1e
+
+    aput-object v1, v0, v2
+
+    sget-object v1, Lkotlin/reflect/jvm/internal/impl/descriptors/annotations/KotlinTarget;->MEMBER_PROPERTY_WITHOUT_FIELD_OR_DELEGATE:Lkotlin/reflect/jvm/internal/impl/descriptors/annotations/KotlinTarget;
+
+    const/16 v2, 0x1f
+
+    aput-object v1, v0, v2
+
+    sget-object v1, Lkotlin/reflect/jvm/internal/impl/descriptors/annotations/KotlinTarget;->TOP_LEVEL_PROPERTY:Lkotlin/reflect/jvm/internal/impl/descriptors/annotations/KotlinTarget;
+
+    const/16 v2, 0x20
+
+    aput-object v1, v0, v2
+
+    sget-object v1, Lkotlin/reflect/jvm/internal/impl/descriptors/annotations/KotlinTarget;->TOP_LEVEL_PROPERTY_WITH_BACKING_FIELD:Lkotlin/reflect/jvm/internal/impl/descriptors/annotations/KotlinTarget;
+
+    const/16 v2, 0x21
+
+    aput-object v1, v0, v2
+
+    sget-object v1, Lkotlin/reflect/jvm/internal/impl/descriptors/annotations/KotlinTarget;->TOP_LEVEL_PROPERTY_WITH_DELEGATE:Lkotlin/reflect/jvm/internal/impl/descriptors/annotations/KotlinTarget;
+
+    const/16 v2, 0x22
+
+    aput-object v1, v0, v2
+
+    sget-object v1, Lkotlin/reflect/jvm/internal/impl/descriptors/annotations/KotlinTarget;->TOP_LEVEL_PROPERTY_WITHOUT_FIELD_OR_DELEGATE:Lkotlin/reflect/jvm/internal/impl/descriptors/annotations/KotlinTarget;
+
+    const/16 v2, 0x23
+
+    aput-object v1, v0, v2
+
+    sget-object v1, Lkotlin/reflect/jvm/internal/impl/descriptors/annotations/KotlinTarget;->INITIALIZER:Lkotlin/reflect/jvm/internal/impl/descriptors/annotations/KotlinTarget;
+
+    const/16 v2, 0x24
+
+    aput-object v1, v0, v2
+
+    sget-object v1, Lkotlin/reflect/jvm/internal/impl/descriptors/annotations/KotlinTarget;->DESTRUCTURING_DECLARATION:Lkotlin/reflect/jvm/internal/impl/descriptors/annotations/KotlinTarget;
+
+    const/16 v2, 0x25
+
+    aput-object v1, v0, v2
+
+    sget-object v1, Lkotlin/reflect/jvm/internal/impl/descriptors/annotations/KotlinTarget;->LAMBDA_EXPRESSION:Lkotlin/reflect/jvm/internal/impl/descriptors/annotations/KotlinTarget;
+
+    const/16 v2, 0x26
+
+    aput-object v1, v0, v2
+
+    sget-object v1, Lkotlin/reflect/jvm/internal/impl/descriptors/annotations/KotlinTarget;->ANONYMOUS_FUNCTION:Lkotlin/reflect/jvm/internal/impl/descriptors/annotations/KotlinTarget;
+
+    const/16 v2, 0x27
+
+    aput-object v1, v0, v2
+
+    sget-object v1, Lkotlin/reflect/jvm/internal/impl/descriptors/annotations/KotlinTarget;->OBJECT_LITERAL:Lkotlin/reflect/jvm/internal/impl/descriptors/annotations/KotlinTarget;
+
+    const/16 v2, 0x28
+
+    aput-object v1, v0, v2
+
+    return-object v0
+.end method
+
+.method public static constructor <clinit>()V
+    .locals 19
+
+    new-instance v7, Lkotlin/reflect/jvm/internal/impl/descriptors/annotations/KotlinTarget;
 
     const-string v1, "CLASS"
 
@@ -89,697 +431,543 @@
 
     const/4 v5, 0x2
 
-    move-object v0, v6
+    const/4 v6, 0x0
 
-    invoke-direct/range {v0 .. v5}, Lkotlin/reflect/jvm/internal/impl/descriptors/annotations/KotlinTarget;-><init>(Ljava/lang/String;ILjava/lang/String;ZI)V
+    move-object v0, v7
 
-    sput-object v6, Lkotlin/reflect/jvm/internal/impl/descriptors/annotations/KotlinTarget;->CLASS:Lkotlin/reflect/jvm/internal/impl/descriptors/annotations/KotlinTarget;
+    invoke-direct/range {v0 .. v6}, Lkotlin/reflect/jvm/internal/impl/descriptors/annotations/KotlinTarget;-><init>(Ljava/lang/String;ILjava/lang/String;ZILkotlin/jvm/internal/DefaultConstructorMarker;)V
+
+    sput-object v7, Lkotlin/reflect/jvm/internal/impl/descriptors/annotations/KotlinTarget;->CLASS:Lkotlin/reflect/jvm/internal/impl/descriptors/annotations/KotlinTarget;
 
     new-instance v0, Lkotlin/reflect/jvm/internal/impl/descriptors/annotations/KotlinTarget;
 
-    const-string v8, "ANNOTATION_CLASS"
+    const-string v9, "ANNOTATION_CLASS"
 
-    const/4 v9, 0x1
+    const/4 v10, 0x1
 
-    const-string v10, "annotation class"
+    const-string v11, "annotation class"
 
-    const/4 v11, 0x0
+    const/4 v12, 0x0
 
-    const/4 v12, 0x2
+    const/4 v13, 0x2
 
-    move-object v7, v0
+    const/4 v14, 0x0
 
-    invoke-direct/range {v7 .. v12}, Lkotlin/reflect/jvm/internal/impl/descriptors/annotations/KotlinTarget;-><init>(Ljava/lang/String;ILjava/lang/String;ZI)V
+    move-object v8, v0
+
+    invoke-direct/range {v8 .. v14}, Lkotlin/reflect/jvm/internal/impl/descriptors/annotations/KotlinTarget;-><init>(Ljava/lang/String;ILjava/lang/String;ZILkotlin/jvm/internal/DefaultConstructorMarker;)V
 
     sput-object v0, Lkotlin/reflect/jvm/internal/impl/descriptors/annotations/KotlinTarget;->ANNOTATION_CLASS:Lkotlin/reflect/jvm/internal/impl/descriptors/annotations/KotlinTarget;
 
-    new-instance v1, Lkotlin/reflect/jvm/internal/impl/descriptors/annotations/KotlinTarget;
+    new-instance v0, Lkotlin/reflect/jvm/internal/impl/descriptors/annotations/KotlinTarget;
 
-    const-string v2, "TYPE_PARAMETER"
+    const-string v1, "TYPE_PARAMETER"
 
-    const/4 v3, 0x2
+    const/4 v2, 0x2
 
-    const-string v4, "type parameter"
+    const-string v3, "type parameter"
 
-    const/4 v5, 0x0
+    invoke-direct {v0, v1, v2, v3, v4}, Lkotlin/reflect/jvm/internal/impl/descriptors/annotations/KotlinTarget;-><init>(Ljava/lang/String;ILjava/lang/String;Z)V
 
-    invoke-direct {v1, v2, v3, v4, v5}, Lkotlin/reflect/jvm/internal/impl/descriptors/annotations/KotlinTarget;-><init>(Ljava/lang/String;ILjava/lang/String;Z)V
+    sput-object v0, Lkotlin/reflect/jvm/internal/impl/descriptors/annotations/KotlinTarget;->TYPE_PARAMETER:Lkotlin/reflect/jvm/internal/impl/descriptors/annotations/KotlinTarget;
 
-    sput-object v1, Lkotlin/reflect/jvm/internal/impl/descriptors/annotations/KotlinTarget;->TYPE_PARAMETER:Lkotlin/reflect/jvm/internal/impl/descriptors/annotations/KotlinTarget;
+    new-instance v0, Lkotlin/reflect/jvm/internal/impl/descriptors/annotations/KotlinTarget;
 
-    new-instance v2, Lkotlin/reflect/jvm/internal/impl/descriptors/annotations/KotlinTarget;
+    const-string v6, "PROPERTY"
 
-    const-string v8, "PROPERTY"
+    const/4 v7, 0x3
 
-    const/4 v9, 0x3
+    const-string v8, "property"
 
-    const-string v10, "property"
+    const/4 v9, 0x0
 
-    move-object v7, v2
+    const/4 v10, 0x2
 
-    invoke-direct/range {v7 .. v12}, Lkotlin/reflect/jvm/internal/impl/descriptors/annotations/KotlinTarget;-><init>(Ljava/lang/String;ILjava/lang/String;ZI)V
+    const/4 v11, 0x0
 
-    sput-object v2, Lkotlin/reflect/jvm/internal/impl/descriptors/annotations/KotlinTarget;->PROPERTY:Lkotlin/reflect/jvm/internal/impl/descriptors/annotations/KotlinTarget;
+    move-object v5, v0
 
-    new-instance v4, Lkotlin/reflect/jvm/internal/impl/descriptors/annotations/KotlinTarget;
+    invoke-direct/range {v5 .. v11}, Lkotlin/reflect/jvm/internal/impl/descriptors/annotations/KotlinTarget;-><init>(Ljava/lang/String;ILjava/lang/String;ZILkotlin/jvm/internal/DefaultConstructorMarker;)V
 
-    const-string v14, "FIELD"
+    sput-object v0, Lkotlin/reflect/jvm/internal/impl/descriptors/annotations/KotlinTarget;->PROPERTY:Lkotlin/reflect/jvm/internal/impl/descriptors/annotations/KotlinTarget;
 
-    const/4 v15, 0x4
+    new-instance v0, Lkotlin/reflect/jvm/internal/impl/descriptors/annotations/KotlinTarget;
 
-    const-string v16, "field"
+    const-string v13, "FIELD"
 
-    const/16 v17, 0x0
+    const/4 v14, 0x4
 
-    const/16 v18, 0x2
+    const-string v15, "field"
 
-    move-object v13, v4
+    const/16 v16, 0x0
 
-    invoke-direct/range {v13 .. v18}, Lkotlin/reflect/jvm/internal/impl/descriptors/annotations/KotlinTarget;-><init>(Ljava/lang/String;ILjava/lang/String;ZI)V
-
-    sput-object v4, Lkotlin/reflect/jvm/internal/impl/descriptors/annotations/KotlinTarget;->FIELD:Lkotlin/reflect/jvm/internal/impl/descriptors/annotations/KotlinTarget;
-
-    new-instance v13, Lkotlin/reflect/jvm/internal/impl/descriptors/annotations/KotlinTarget;
-
-    const-string v8, "LOCAL_VARIABLE"
-
-    const/4 v9, 0x5
-
-    const-string v10, "local variable"
-
-    move-object v7, v13
-
-    invoke-direct/range {v7 .. v12}, Lkotlin/reflect/jvm/internal/impl/descriptors/annotations/KotlinTarget;-><init>(Ljava/lang/String;ILjava/lang/String;ZI)V
-
-    sput-object v13, Lkotlin/reflect/jvm/internal/impl/descriptors/annotations/KotlinTarget;->LOCAL_VARIABLE:Lkotlin/reflect/jvm/internal/impl/descriptors/annotations/KotlinTarget;
-
-    new-instance v7, Lkotlin/reflect/jvm/internal/impl/descriptors/annotations/KotlinTarget;
-
-    const-string v15, "VALUE_PARAMETER"
-
-    const/16 v16, 0x6
-
-    const-string v17, "value parameter"
+    const/16 v17, 0x2
 
     const/16 v18, 0x0
 
-    const/16 v19, 0x2
+    move-object v12, v0
 
-    move-object v14, v7
+    invoke-direct/range {v12 .. v18}, Lkotlin/reflect/jvm/internal/impl/descriptors/annotations/KotlinTarget;-><init>(Ljava/lang/String;ILjava/lang/String;ZILkotlin/jvm/internal/DefaultConstructorMarker;)V
 
-    invoke-direct/range {v14 .. v19}, Lkotlin/reflect/jvm/internal/impl/descriptors/annotations/KotlinTarget;-><init>(Ljava/lang/String;ILjava/lang/String;ZI)V
+    sput-object v0, Lkotlin/reflect/jvm/internal/impl/descriptors/annotations/KotlinTarget;->FIELD:Lkotlin/reflect/jvm/internal/impl/descriptors/annotations/KotlinTarget;
 
-    sput-object v7, Lkotlin/reflect/jvm/internal/impl/descriptors/annotations/KotlinTarget;->VALUE_PARAMETER:Lkotlin/reflect/jvm/internal/impl/descriptors/annotations/KotlinTarget;
+    new-instance v0, Lkotlin/reflect/jvm/internal/impl/descriptors/annotations/KotlinTarget;
 
-    new-instance v8, Lkotlin/reflect/jvm/internal/impl/descriptors/annotations/KotlinTarget;
+    const-string v6, "LOCAL_VARIABLE"
 
-    const-string v21, "CONSTRUCTOR"
+    const/4 v7, 0x5
 
-    const/16 v22, 0x7
+    const-string v8, "local variable"
 
-    const-string v23, "constructor"
+    move-object v5, v0
 
-    const/16 v24, 0x0
+    invoke-direct/range {v5 .. v11}, Lkotlin/reflect/jvm/internal/impl/descriptors/annotations/KotlinTarget;-><init>(Ljava/lang/String;ILjava/lang/String;ZILkotlin/jvm/internal/DefaultConstructorMarker;)V
 
-    const/16 v25, 0x2
+    sput-object v0, Lkotlin/reflect/jvm/internal/impl/descriptors/annotations/KotlinTarget;->LOCAL_VARIABLE:Lkotlin/reflect/jvm/internal/impl/descriptors/annotations/KotlinTarget;
 
-    move-object/from16 v20, v8
+    new-instance v0, Lkotlin/reflect/jvm/internal/impl/descriptors/annotations/KotlinTarget;
 
-    invoke-direct/range {v20 .. v25}, Lkotlin/reflect/jvm/internal/impl/descriptors/annotations/KotlinTarget;-><init>(Ljava/lang/String;ILjava/lang/String;ZI)V
+    const-string v13, "VALUE_PARAMETER"
 
-    sput-object v8, Lkotlin/reflect/jvm/internal/impl/descriptors/annotations/KotlinTarget;->CONSTRUCTOR:Lkotlin/reflect/jvm/internal/impl/descriptors/annotations/KotlinTarget;
+    const/4 v14, 0x6
 
-    new-instance v9, Lkotlin/reflect/jvm/internal/impl/descriptors/annotations/KotlinTarget;
+    const-string v15, "value parameter"
 
-    const-string v15, "FUNCTION"
+    move-object v12, v0
 
-    const/16 v16, 0x8
+    invoke-direct/range {v12 .. v18}, Lkotlin/reflect/jvm/internal/impl/descriptors/annotations/KotlinTarget;-><init>(Ljava/lang/String;ILjava/lang/String;ZILkotlin/jvm/internal/DefaultConstructorMarker;)V
 
-    const-string v17, "function"
+    sput-object v0, Lkotlin/reflect/jvm/internal/impl/descriptors/annotations/KotlinTarget;->VALUE_PARAMETER:Lkotlin/reflect/jvm/internal/impl/descriptors/annotations/KotlinTarget;
 
-    move-object v14, v9
+    new-instance v0, Lkotlin/reflect/jvm/internal/impl/descriptors/annotations/KotlinTarget;
 
-    invoke-direct/range {v14 .. v19}, Lkotlin/reflect/jvm/internal/impl/descriptors/annotations/KotlinTarget;-><init>(Ljava/lang/String;ILjava/lang/String;ZI)V
+    const-string v6, "CONSTRUCTOR"
 
-    sput-object v9, Lkotlin/reflect/jvm/internal/impl/descriptors/annotations/KotlinTarget;->FUNCTION:Lkotlin/reflect/jvm/internal/impl/descriptors/annotations/KotlinTarget;
+    const/4 v7, 0x7
 
-    new-instance v10, Lkotlin/reflect/jvm/internal/impl/descriptors/annotations/KotlinTarget;
+    const-string v8, "constructor"
 
-    const-string v21, "PROPERTY_GETTER"
+    move-object v5, v0
 
-    const/16 v22, 0x9
+    invoke-direct/range {v5 .. v11}, Lkotlin/reflect/jvm/internal/impl/descriptors/annotations/KotlinTarget;-><init>(Ljava/lang/String;ILjava/lang/String;ZILkotlin/jvm/internal/DefaultConstructorMarker;)V
 
-    const-string v23, "getter"
+    sput-object v0, Lkotlin/reflect/jvm/internal/impl/descriptors/annotations/KotlinTarget;->CONSTRUCTOR:Lkotlin/reflect/jvm/internal/impl/descriptors/annotations/KotlinTarget;
 
-    move-object/from16 v20, v10
+    new-instance v0, Lkotlin/reflect/jvm/internal/impl/descriptors/annotations/KotlinTarget;
 
-    invoke-direct/range {v20 .. v25}, Lkotlin/reflect/jvm/internal/impl/descriptors/annotations/KotlinTarget;-><init>(Ljava/lang/String;ILjava/lang/String;ZI)V
+    const-string v13, "FUNCTION"
 
-    sput-object v10, Lkotlin/reflect/jvm/internal/impl/descriptors/annotations/KotlinTarget;->PROPERTY_GETTER:Lkotlin/reflect/jvm/internal/impl/descriptors/annotations/KotlinTarget;
+    const/16 v14, 0x8
 
-    new-instance v11, Lkotlin/reflect/jvm/internal/impl/descriptors/annotations/KotlinTarget;
+    const-string v15, "function"
 
-    const-string v15, "PROPERTY_SETTER"
+    move-object v12, v0
 
-    const/16 v16, 0xa
+    invoke-direct/range {v12 .. v18}, Lkotlin/reflect/jvm/internal/impl/descriptors/annotations/KotlinTarget;-><init>(Ljava/lang/String;ILjava/lang/String;ZILkotlin/jvm/internal/DefaultConstructorMarker;)V
 
-    const-string v17, "setter"
+    sput-object v0, Lkotlin/reflect/jvm/internal/impl/descriptors/annotations/KotlinTarget;->FUNCTION:Lkotlin/reflect/jvm/internal/impl/descriptors/annotations/KotlinTarget;
 
-    move-object v14, v11
+    new-instance v0, Lkotlin/reflect/jvm/internal/impl/descriptors/annotations/KotlinTarget;
 
-    invoke-direct/range {v14 .. v19}, Lkotlin/reflect/jvm/internal/impl/descriptors/annotations/KotlinTarget;-><init>(Ljava/lang/String;ILjava/lang/String;ZI)V
+    const-string v6, "PROPERTY_GETTER"
 
-    sput-object v11, Lkotlin/reflect/jvm/internal/impl/descriptors/annotations/KotlinTarget;->PROPERTY_SETTER:Lkotlin/reflect/jvm/internal/impl/descriptors/annotations/KotlinTarget;
+    const/16 v7, 0x9
 
-    new-instance v12, Lkotlin/reflect/jvm/internal/impl/descriptors/annotations/KotlinTarget;
+    const-string v8, "getter"
 
-    const-string v14, "TYPE"
+    move-object v5, v0
 
-    const/16 v15, 0xb
+    invoke-direct/range {v5 .. v11}, Lkotlin/reflect/jvm/internal/impl/descriptors/annotations/KotlinTarget;-><init>(Ljava/lang/String;ILjava/lang/String;ZILkotlin/jvm/internal/DefaultConstructorMarker;)V
 
-    const-string v3, "type usage"
+    sput-object v0, Lkotlin/reflect/jvm/internal/impl/descriptors/annotations/KotlinTarget;->PROPERTY_GETTER:Lkotlin/reflect/jvm/internal/impl/descriptors/annotations/KotlinTarget;
 
-    invoke-direct {v12, v14, v15, v3, v5}, Lkotlin/reflect/jvm/internal/impl/descriptors/annotations/KotlinTarget;-><init>(Ljava/lang/String;ILjava/lang/String;Z)V
+    new-instance v0, Lkotlin/reflect/jvm/internal/impl/descriptors/annotations/KotlinTarget;
 
-    sput-object v12, Lkotlin/reflect/jvm/internal/impl/descriptors/annotations/KotlinTarget;->TYPE:Lkotlin/reflect/jvm/internal/impl/descriptors/annotations/KotlinTarget;
+    const-string v13, "PROPERTY_SETTER"
 
-    new-instance v3, Lkotlin/reflect/jvm/internal/impl/descriptors/annotations/KotlinTarget;
+    const/16 v14, 0xa
 
-    const-string v14, "EXPRESSION"
+    const-string v15, "setter"
 
-    const/16 v15, 0xc
+    move-object v12, v0
 
-    move-object/from16 v18, v12
+    invoke-direct/range {v12 .. v18}, Lkotlin/reflect/jvm/internal/impl/descriptors/annotations/KotlinTarget;-><init>(Ljava/lang/String;ILjava/lang/String;ZILkotlin/jvm/internal/DefaultConstructorMarker;)V
 
-    const-string v12, "expression"
+    sput-object v0, Lkotlin/reflect/jvm/internal/impl/descriptors/annotations/KotlinTarget;->PROPERTY_SETTER:Lkotlin/reflect/jvm/internal/impl/descriptors/annotations/KotlinTarget;
 
-    invoke-direct {v3, v14, v15, v12, v5}, Lkotlin/reflect/jvm/internal/impl/descriptors/annotations/KotlinTarget;-><init>(Ljava/lang/String;ILjava/lang/String;Z)V
+    new-instance v0, Lkotlin/reflect/jvm/internal/impl/descriptors/annotations/KotlinTarget;
 
-    new-instance v12, Lkotlin/reflect/jvm/internal/impl/descriptors/annotations/KotlinTarget;
+    const-string v1, "TYPE"
 
-    const-string v14, "FILE"
+    const/16 v3, 0xb
 
-    const/16 v15, 0xd
+    const-string v5, "type usage"
 
-    move-object/from16 v20, v3
+    invoke-direct {v0, v1, v3, v5, v4}, Lkotlin/reflect/jvm/internal/impl/descriptors/annotations/KotlinTarget;-><init>(Ljava/lang/String;ILjava/lang/String;Z)V
 
-    const-string v3, "file"
+    sput-object v0, Lkotlin/reflect/jvm/internal/impl/descriptors/annotations/KotlinTarget;->TYPE:Lkotlin/reflect/jvm/internal/impl/descriptors/annotations/KotlinTarget;
 
-    invoke-direct {v12, v14, v15, v3, v5}, Lkotlin/reflect/jvm/internal/impl/descriptors/annotations/KotlinTarget;-><init>(Ljava/lang/String;ILjava/lang/String;Z)V
+    new-instance v0, Lkotlin/reflect/jvm/internal/impl/descriptors/annotations/KotlinTarget;
 
-    sput-object v12, Lkotlin/reflect/jvm/internal/impl/descriptors/annotations/KotlinTarget;->FILE:Lkotlin/reflect/jvm/internal/impl/descriptors/annotations/KotlinTarget;
+    const-string v1, "EXPRESSION"
 
-    new-instance v3, Lkotlin/reflect/jvm/internal/impl/descriptors/annotations/KotlinTarget;
+    const/16 v3, 0xc
 
-    const-string v14, "TYPEALIAS"
+    const-string v5, "expression"
 
-    const/16 v15, 0xe
+    invoke-direct {v0, v1, v3, v5, v4}, Lkotlin/reflect/jvm/internal/impl/descriptors/annotations/KotlinTarget;-><init>(Ljava/lang/String;ILjava/lang/String;Z)V
 
-    move-object/from16 v22, v12
+    sput-object v0, Lkotlin/reflect/jvm/internal/impl/descriptors/annotations/KotlinTarget;->EXPRESSION:Lkotlin/reflect/jvm/internal/impl/descriptors/annotations/KotlinTarget;
 
-    const-string v12, "typealias"
+    new-instance v0, Lkotlin/reflect/jvm/internal/impl/descriptors/annotations/KotlinTarget;
 
-    invoke-direct {v3, v14, v15, v12, v5}, Lkotlin/reflect/jvm/internal/impl/descriptors/annotations/KotlinTarget;-><init>(Ljava/lang/String;ILjava/lang/String;Z)V
+    const-string v1, "FILE"
 
-    new-instance v12, Lkotlin/reflect/jvm/internal/impl/descriptors/annotations/KotlinTarget;
+    const/16 v3, 0xd
 
-    const-string v14, "TYPE_PROJECTION"
+    const-string v5, "file"
 
-    const/16 v15, 0xf
+    invoke-direct {v0, v1, v3, v5, v4}, Lkotlin/reflect/jvm/internal/impl/descriptors/annotations/KotlinTarget;-><init>(Ljava/lang/String;ILjava/lang/String;Z)V
 
-    move-object/from16 v24, v3
+    sput-object v0, Lkotlin/reflect/jvm/internal/impl/descriptors/annotations/KotlinTarget;->FILE:Lkotlin/reflect/jvm/internal/impl/descriptors/annotations/KotlinTarget;
 
-    const-string v3, "type projection"
+    new-instance v0, Lkotlin/reflect/jvm/internal/impl/descriptors/annotations/KotlinTarget;
 
-    invoke-direct {v12, v14, v15, v3, v5}, Lkotlin/reflect/jvm/internal/impl/descriptors/annotations/KotlinTarget;-><init>(Ljava/lang/String;ILjava/lang/String;Z)V
+    const-string v1, "TYPEALIAS"
 
-    new-instance v3, Lkotlin/reflect/jvm/internal/impl/descriptors/annotations/KotlinTarget;
+    const/16 v3, 0xe
 
-    const-string v14, "STAR_PROJECTION"
+    const-string v5, "typealias"
 
-    const/16 v15, 0x10
+    invoke-direct {v0, v1, v3, v5, v4}, Lkotlin/reflect/jvm/internal/impl/descriptors/annotations/KotlinTarget;-><init>(Ljava/lang/String;ILjava/lang/String;Z)V
 
-    move-object/from16 v26, v12
+    sput-object v0, Lkotlin/reflect/jvm/internal/impl/descriptors/annotations/KotlinTarget;->TYPEALIAS:Lkotlin/reflect/jvm/internal/impl/descriptors/annotations/KotlinTarget;
 
-    const-string v12, "star projection"
+    new-instance v0, Lkotlin/reflect/jvm/internal/impl/descriptors/annotations/KotlinTarget;
 
-    invoke-direct {v3, v14, v15, v12, v5}, Lkotlin/reflect/jvm/internal/impl/descriptors/annotations/KotlinTarget;-><init>(Ljava/lang/String;ILjava/lang/String;Z)V
+    const-string v1, "TYPE_PROJECTION"
 
-    new-instance v12, Lkotlin/reflect/jvm/internal/impl/descriptors/annotations/KotlinTarget;
+    const/16 v3, 0xf
 
-    const-string v14, "PROPERTY_PARAMETER"
+    const-string v5, "type projection"
 
-    const/16 v15, 0x11
+    invoke-direct {v0, v1, v3, v5, v4}, Lkotlin/reflect/jvm/internal/impl/descriptors/annotations/KotlinTarget;-><init>(Ljava/lang/String;ILjava/lang/String;Z)V
 
-    move-object/from16 v27, v3
+    sput-object v0, Lkotlin/reflect/jvm/internal/impl/descriptors/annotations/KotlinTarget;->TYPE_PROJECTION:Lkotlin/reflect/jvm/internal/impl/descriptors/annotations/KotlinTarget;
 
-    const-string v3, "property constructor parameter"
+    new-instance v0, Lkotlin/reflect/jvm/internal/impl/descriptors/annotations/KotlinTarget;
 
-    invoke-direct {v12, v14, v15, v3, v5}, Lkotlin/reflect/jvm/internal/impl/descriptors/annotations/KotlinTarget;-><init>(Ljava/lang/String;ILjava/lang/String;Z)V
+    const-string v1, "STAR_PROJECTION"
 
-    new-instance v3, Lkotlin/reflect/jvm/internal/impl/descriptors/annotations/KotlinTarget;
+    const/16 v3, 0x10
 
-    const-string v14, "CLASS_ONLY"
+    const-string v5, "star projection"
 
-    const/16 v15, 0x12
+    invoke-direct {v0, v1, v3, v5, v4}, Lkotlin/reflect/jvm/internal/impl/descriptors/annotations/KotlinTarget;-><init>(Ljava/lang/String;ILjava/lang/String;Z)V
 
-    move-object/from16 v28, v12
+    sput-object v0, Lkotlin/reflect/jvm/internal/impl/descriptors/annotations/KotlinTarget;->STAR_PROJECTION:Lkotlin/reflect/jvm/internal/impl/descriptors/annotations/KotlinTarget;
 
-    const-string v12, "class"
+    new-instance v0, Lkotlin/reflect/jvm/internal/impl/descriptors/annotations/KotlinTarget;
 
-    invoke-direct {v3, v14, v15, v12, v5}, Lkotlin/reflect/jvm/internal/impl/descriptors/annotations/KotlinTarget;-><init>(Ljava/lang/String;ILjava/lang/String;Z)V
+    const-string v1, "PROPERTY_PARAMETER"
 
-    new-instance v12, Lkotlin/reflect/jvm/internal/impl/descriptors/annotations/KotlinTarget;
+    const/16 v3, 0x11
 
-    const-string v14, "OBJECT"
+    const-string v5, "property constructor parameter"
 
-    const/16 v15, 0x13
+    invoke-direct {v0, v1, v3, v5, v4}, Lkotlin/reflect/jvm/internal/impl/descriptors/annotations/KotlinTarget;-><init>(Ljava/lang/String;ILjava/lang/String;Z)V
 
-    move-object/from16 v29, v3
+    sput-object v0, Lkotlin/reflect/jvm/internal/impl/descriptors/annotations/KotlinTarget;->PROPERTY_PARAMETER:Lkotlin/reflect/jvm/internal/impl/descriptors/annotations/KotlinTarget;
 
-    const-string v3, "object"
+    new-instance v0, Lkotlin/reflect/jvm/internal/impl/descriptors/annotations/KotlinTarget;
 
-    invoke-direct {v12, v14, v15, v3, v5}, Lkotlin/reflect/jvm/internal/impl/descriptors/annotations/KotlinTarget;-><init>(Ljava/lang/String;ILjava/lang/String;Z)V
+    const-string v1, "CLASS_ONLY"
 
-    new-instance v3, Lkotlin/reflect/jvm/internal/impl/descriptors/annotations/KotlinTarget;
+    const/16 v3, 0x12
 
-    const-string v14, "COMPANION_OBJECT"
+    const-string v5, "class"
 
-    const/16 v15, 0x14
+    invoke-direct {v0, v1, v3, v5, v4}, Lkotlin/reflect/jvm/internal/impl/descriptors/annotations/KotlinTarget;-><init>(Ljava/lang/String;ILjava/lang/String;Z)V
 
-    move-object/from16 v30, v12
+    sput-object v0, Lkotlin/reflect/jvm/internal/impl/descriptors/annotations/KotlinTarget;->CLASS_ONLY:Lkotlin/reflect/jvm/internal/impl/descriptors/annotations/KotlinTarget;
 
-    const-string v12, "companion object"
+    new-instance v0, Lkotlin/reflect/jvm/internal/impl/descriptors/annotations/KotlinTarget;
 
-    invoke-direct {v3, v14, v15, v12, v5}, Lkotlin/reflect/jvm/internal/impl/descriptors/annotations/KotlinTarget;-><init>(Ljava/lang/String;ILjava/lang/String;Z)V
+    const-string v1, "OBJECT"
 
-    new-instance v12, Lkotlin/reflect/jvm/internal/impl/descriptors/annotations/KotlinTarget;
+    const/16 v3, 0x13
 
-    const-string v14, "INTERFACE"
+    const-string v5, "object"
 
-    const/16 v15, 0x15
+    invoke-direct {v0, v1, v3, v5, v4}, Lkotlin/reflect/jvm/internal/impl/descriptors/annotations/KotlinTarget;-><init>(Ljava/lang/String;ILjava/lang/String;Z)V
 
-    move-object/from16 v31, v3
+    sput-object v0, Lkotlin/reflect/jvm/internal/impl/descriptors/annotations/KotlinTarget;->OBJECT:Lkotlin/reflect/jvm/internal/impl/descriptors/annotations/KotlinTarget;
 
-    const-string v3, "interface"
+    new-instance v0, Lkotlin/reflect/jvm/internal/impl/descriptors/annotations/KotlinTarget;
 
-    invoke-direct {v12, v14, v15, v3, v5}, Lkotlin/reflect/jvm/internal/impl/descriptors/annotations/KotlinTarget;-><init>(Ljava/lang/String;ILjava/lang/String;Z)V
+    const-string v1, "COMPANION_OBJECT"
 
-    new-instance v3, Lkotlin/reflect/jvm/internal/impl/descriptors/annotations/KotlinTarget;
+    const/16 v3, 0x14
 
-    const-string v14, "ENUM_CLASS"
+    const-string v5, "companion object"
 
-    const/16 v15, 0x16
+    invoke-direct {v0, v1, v3, v5, v4}, Lkotlin/reflect/jvm/internal/impl/descriptors/annotations/KotlinTarget;-><init>(Ljava/lang/String;ILjava/lang/String;Z)V
 
-    move-object/from16 v32, v12
+    sput-object v0, Lkotlin/reflect/jvm/internal/impl/descriptors/annotations/KotlinTarget;->COMPANION_OBJECT:Lkotlin/reflect/jvm/internal/impl/descriptors/annotations/KotlinTarget;
 
-    const-string v12, "enum class"
+    new-instance v0, Lkotlin/reflect/jvm/internal/impl/descriptors/annotations/KotlinTarget;
 
-    invoke-direct {v3, v14, v15, v12, v5}, Lkotlin/reflect/jvm/internal/impl/descriptors/annotations/KotlinTarget;-><init>(Ljava/lang/String;ILjava/lang/String;Z)V
+    const-string v1, "INTERFACE"
 
-    new-instance v12, Lkotlin/reflect/jvm/internal/impl/descriptors/annotations/KotlinTarget;
+    const/16 v3, 0x15
 
-    const-string v14, "ENUM_ENTRY"
+    const-string v5, "interface"
 
-    const/16 v15, 0x17
+    invoke-direct {v0, v1, v3, v5, v4}, Lkotlin/reflect/jvm/internal/impl/descriptors/annotations/KotlinTarget;-><init>(Ljava/lang/String;ILjava/lang/String;Z)V
 
-    move-object/from16 v33, v3
+    sput-object v0, Lkotlin/reflect/jvm/internal/impl/descriptors/annotations/KotlinTarget;->INTERFACE:Lkotlin/reflect/jvm/internal/impl/descriptors/annotations/KotlinTarget;
 
-    const-string v3, "enum entry"
+    new-instance v0, Lkotlin/reflect/jvm/internal/impl/descriptors/annotations/KotlinTarget;
 
-    invoke-direct {v12, v14, v15, v3, v5}, Lkotlin/reflect/jvm/internal/impl/descriptors/annotations/KotlinTarget;-><init>(Ljava/lang/String;ILjava/lang/String;Z)V
+    const-string v1, "ENUM_CLASS"
 
-    new-instance v3, Lkotlin/reflect/jvm/internal/impl/descriptors/annotations/KotlinTarget;
+    const/16 v3, 0x16
 
-    const-string v14, "LOCAL_CLASS"
+    const-string v5, "enum class"
 
-    const/16 v15, 0x18
+    invoke-direct {v0, v1, v3, v5, v4}, Lkotlin/reflect/jvm/internal/impl/descriptors/annotations/KotlinTarget;-><init>(Ljava/lang/String;ILjava/lang/String;Z)V
 
-    move-object/from16 v34, v12
+    sput-object v0, Lkotlin/reflect/jvm/internal/impl/descriptors/annotations/KotlinTarget;->ENUM_CLASS:Lkotlin/reflect/jvm/internal/impl/descriptors/annotations/KotlinTarget;
 
-    const-string v12, "local class"
+    new-instance v0, Lkotlin/reflect/jvm/internal/impl/descriptors/annotations/KotlinTarget;
 
-    invoke-direct {v3, v14, v15, v12, v5}, Lkotlin/reflect/jvm/internal/impl/descriptors/annotations/KotlinTarget;-><init>(Ljava/lang/String;ILjava/lang/String;Z)V
+    const-string v1, "ENUM_ENTRY"
 
-    new-instance v12, Lkotlin/reflect/jvm/internal/impl/descriptors/annotations/KotlinTarget;
+    const/16 v3, 0x17
 
-    const-string v14, "LOCAL_FUNCTION"
+    const-string v5, "enum entry"
 
-    const/16 v15, 0x19
+    invoke-direct {v0, v1, v3, v5, v4}, Lkotlin/reflect/jvm/internal/impl/descriptors/annotations/KotlinTarget;-><init>(Ljava/lang/String;ILjava/lang/String;Z)V
 
-    move-object/from16 v35, v3
+    sput-object v0, Lkotlin/reflect/jvm/internal/impl/descriptors/annotations/KotlinTarget;->ENUM_ENTRY:Lkotlin/reflect/jvm/internal/impl/descriptors/annotations/KotlinTarget;
 
-    const-string v3, "local function"
+    new-instance v0, Lkotlin/reflect/jvm/internal/impl/descriptors/annotations/KotlinTarget;
 
-    invoke-direct {v12, v14, v15, v3, v5}, Lkotlin/reflect/jvm/internal/impl/descriptors/annotations/KotlinTarget;-><init>(Ljava/lang/String;ILjava/lang/String;Z)V
+    const-string v1, "LOCAL_CLASS"
 
-    new-instance v3, Lkotlin/reflect/jvm/internal/impl/descriptors/annotations/KotlinTarget;
+    const/16 v3, 0x18
 
-    const-string v14, "MEMBER_FUNCTION"
+    const-string v5, "local class"
 
-    const/16 v15, 0x1a
+    invoke-direct {v0, v1, v3, v5, v4}, Lkotlin/reflect/jvm/internal/impl/descriptors/annotations/KotlinTarget;-><init>(Ljava/lang/String;ILjava/lang/String;Z)V
 
-    move-object/from16 v36, v12
+    sput-object v0, Lkotlin/reflect/jvm/internal/impl/descriptors/annotations/KotlinTarget;->LOCAL_CLASS:Lkotlin/reflect/jvm/internal/impl/descriptors/annotations/KotlinTarget;
 
-    const-string v12, "member function"
+    new-instance v0, Lkotlin/reflect/jvm/internal/impl/descriptors/annotations/KotlinTarget;
 
-    invoke-direct {v3, v14, v15, v12, v5}, Lkotlin/reflect/jvm/internal/impl/descriptors/annotations/KotlinTarget;-><init>(Ljava/lang/String;ILjava/lang/String;Z)V
+    const-string v1, "LOCAL_FUNCTION"
 
-    new-instance v12, Lkotlin/reflect/jvm/internal/impl/descriptors/annotations/KotlinTarget;
+    const/16 v3, 0x19
 
-    const-string v14, "TOP_LEVEL_FUNCTION"
+    const-string v5, "local function"
 
-    const/16 v15, 0x1b
+    invoke-direct {v0, v1, v3, v5, v4}, Lkotlin/reflect/jvm/internal/impl/descriptors/annotations/KotlinTarget;-><init>(Ljava/lang/String;ILjava/lang/String;Z)V
 
-    move-object/from16 v37, v3
+    sput-object v0, Lkotlin/reflect/jvm/internal/impl/descriptors/annotations/KotlinTarget;->LOCAL_FUNCTION:Lkotlin/reflect/jvm/internal/impl/descriptors/annotations/KotlinTarget;
 
-    const-string v3, "top level function"
+    new-instance v0, Lkotlin/reflect/jvm/internal/impl/descriptors/annotations/KotlinTarget;
 
-    invoke-direct {v12, v14, v15, v3, v5}, Lkotlin/reflect/jvm/internal/impl/descriptors/annotations/KotlinTarget;-><init>(Ljava/lang/String;ILjava/lang/String;Z)V
+    const-string v1, "MEMBER_FUNCTION"
 
-    new-instance v3, Lkotlin/reflect/jvm/internal/impl/descriptors/annotations/KotlinTarget;
+    const/16 v3, 0x1a
 
-    const-string v14, "MEMBER_PROPERTY"
+    const-string v5, "member function"
 
-    const/16 v15, 0x1c
+    invoke-direct {v0, v1, v3, v5, v4}, Lkotlin/reflect/jvm/internal/impl/descriptors/annotations/KotlinTarget;-><init>(Ljava/lang/String;ILjava/lang/String;Z)V
 
-    move-object/from16 v38, v12
+    sput-object v0, Lkotlin/reflect/jvm/internal/impl/descriptors/annotations/KotlinTarget;->MEMBER_FUNCTION:Lkotlin/reflect/jvm/internal/impl/descriptors/annotations/KotlinTarget;
 
-    const-string v12, "member property"
+    new-instance v0, Lkotlin/reflect/jvm/internal/impl/descriptors/annotations/KotlinTarget;
 
-    invoke-direct {v3, v14, v15, v12, v5}, Lkotlin/reflect/jvm/internal/impl/descriptors/annotations/KotlinTarget;-><init>(Ljava/lang/String;ILjava/lang/String;Z)V
+    const-string v1, "TOP_LEVEL_FUNCTION"
 
-    new-instance v12, Lkotlin/reflect/jvm/internal/impl/descriptors/annotations/KotlinTarget;
+    const/16 v3, 0x1b
 
-    const-string v14, "MEMBER_PROPERTY_WITH_BACKING_FIELD"
+    const-string v5, "top level function"
 
-    const/16 v15, 0x1d
+    invoke-direct {v0, v1, v3, v5, v4}, Lkotlin/reflect/jvm/internal/impl/descriptors/annotations/KotlinTarget;-><init>(Ljava/lang/String;ILjava/lang/String;Z)V
 
-    move-object/from16 v39, v3
+    sput-object v0, Lkotlin/reflect/jvm/internal/impl/descriptors/annotations/KotlinTarget;->TOP_LEVEL_FUNCTION:Lkotlin/reflect/jvm/internal/impl/descriptors/annotations/KotlinTarget;
 
-    const-string v3, "member property with backing field"
+    new-instance v0, Lkotlin/reflect/jvm/internal/impl/descriptors/annotations/KotlinTarget;
 
-    invoke-direct {v12, v14, v15, v3, v5}, Lkotlin/reflect/jvm/internal/impl/descriptors/annotations/KotlinTarget;-><init>(Ljava/lang/String;ILjava/lang/String;Z)V
+    const-string v1, "MEMBER_PROPERTY"
 
-    new-instance v3, Lkotlin/reflect/jvm/internal/impl/descriptors/annotations/KotlinTarget;
+    const/16 v3, 0x1c
 
-    const-string v14, "MEMBER_PROPERTY_WITH_DELEGATE"
+    const-string v5, "member property"
 
-    const/16 v15, 0x1e
+    invoke-direct {v0, v1, v3, v5, v4}, Lkotlin/reflect/jvm/internal/impl/descriptors/annotations/KotlinTarget;-><init>(Ljava/lang/String;ILjava/lang/String;Z)V
 
-    move-object/from16 v40, v12
+    sput-object v0, Lkotlin/reflect/jvm/internal/impl/descriptors/annotations/KotlinTarget;->MEMBER_PROPERTY:Lkotlin/reflect/jvm/internal/impl/descriptors/annotations/KotlinTarget;
 
-    const-string v12, "member property with delegate"
+    new-instance v0, Lkotlin/reflect/jvm/internal/impl/descriptors/annotations/KotlinTarget;
 
-    invoke-direct {v3, v14, v15, v12, v5}, Lkotlin/reflect/jvm/internal/impl/descriptors/annotations/KotlinTarget;-><init>(Ljava/lang/String;ILjava/lang/String;Z)V
+    const-string v1, "MEMBER_PROPERTY_WITH_BACKING_FIELD"
 
-    new-instance v12, Lkotlin/reflect/jvm/internal/impl/descriptors/annotations/KotlinTarget;
+    const/16 v3, 0x1d
 
-    const-string v14, "MEMBER_PROPERTY_WITHOUT_FIELD_OR_DELEGATE"
+    const-string v5, "member property with backing field"
 
-    const/16 v15, 0x1f
+    invoke-direct {v0, v1, v3, v5, v4}, Lkotlin/reflect/jvm/internal/impl/descriptors/annotations/KotlinTarget;-><init>(Ljava/lang/String;ILjava/lang/String;Z)V
 
-    move-object/from16 v41, v3
+    sput-object v0, Lkotlin/reflect/jvm/internal/impl/descriptors/annotations/KotlinTarget;->MEMBER_PROPERTY_WITH_BACKING_FIELD:Lkotlin/reflect/jvm/internal/impl/descriptors/annotations/KotlinTarget;
 
-    const-string v3, "member property without backing field or delegate"
+    new-instance v0, Lkotlin/reflect/jvm/internal/impl/descriptors/annotations/KotlinTarget;
 
-    invoke-direct {v12, v14, v15, v3, v5}, Lkotlin/reflect/jvm/internal/impl/descriptors/annotations/KotlinTarget;-><init>(Ljava/lang/String;ILjava/lang/String;Z)V
+    const-string v1, "MEMBER_PROPERTY_WITH_DELEGATE"
 
-    new-instance v3, Lkotlin/reflect/jvm/internal/impl/descriptors/annotations/KotlinTarget;
+    const/16 v3, 0x1e
 
-    const-string v14, "TOP_LEVEL_PROPERTY"
+    const-string v5, "member property with delegate"
 
-    const/16 v15, 0x20
+    invoke-direct {v0, v1, v3, v5, v4}, Lkotlin/reflect/jvm/internal/impl/descriptors/annotations/KotlinTarget;-><init>(Ljava/lang/String;ILjava/lang/String;Z)V
 
-    move-object/from16 v42, v12
+    sput-object v0, Lkotlin/reflect/jvm/internal/impl/descriptors/annotations/KotlinTarget;->MEMBER_PROPERTY_WITH_DELEGATE:Lkotlin/reflect/jvm/internal/impl/descriptors/annotations/KotlinTarget;
 
-    const-string v12, "top level property"
+    new-instance v0, Lkotlin/reflect/jvm/internal/impl/descriptors/annotations/KotlinTarget;
 
-    invoke-direct {v3, v14, v15, v12, v5}, Lkotlin/reflect/jvm/internal/impl/descriptors/annotations/KotlinTarget;-><init>(Ljava/lang/String;ILjava/lang/String;Z)V
+    const-string v1, "MEMBER_PROPERTY_WITHOUT_FIELD_OR_DELEGATE"
 
-    new-instance v12, Lkotlin/reflect/jvm/internal/impl/descriptors/annotations/KotlinTarget;
+    const/16 v3, 0x1f
 
-    const-string v14, "TOP_LEVEL_PROPERTY_WITH_BACKING_FIELD"
+    const-string v5, "member property without backing field or delegate"
 
-    const/16 v15, 0x21
+    invoke-direct {v0, v1, v3, v5, v4}, Lkotlin/reflect/jvm/internal/impl/descriptors/annotations/KotlinTarget;-><init>(Ljava/lang/String;ILjava/lang/String;Z)V
 
-    move-object/from16 v43, v3
+    sput-object v0, Lkotlin/reflect/jvm/internal/impl/descriptors/annotations/KotlinTarget;->MEMBER_PROPERTY_WITHOUT_FIELD_OR_DELEGATE:Lkotlin/reflect/jvm/internal/impl/descriptors/annotations/KotlinTarget;
 
-    const-string v3, "top level property with backing field"
+    new-instance v0, Lkotlin/reflect/jvm/internal/impl/descriptors/annotations/KotlinTarget;
 
-    invoke-direct {v12, v14, v15, v3, v5}, Lkotlin/reflect/jvm/internal/impl/descriptors/annotations/KotlinTarget;-><init>(Ljava/lang/String;ILjava/lang/String;Z)V
+    const-string v1, "TOP_LEVEL_PROPERTY"
 
-    new-instance v3, Lkotlin/reflect/jvm/internal/impl/descriptors/annotations/KotlinTarget;
+    const/16 v3, 0x20
 
-    const-string v14, "TOP_LEVEL_PROPERTY_WITH_DELEGATE"
+    const-string v5, "top level property"
 
-    const/16 v15, 0x22
+    invoke-direct {v0, v1, v3, v5, v4}, Lkotlin/reflect/jvm/internal/impl/descriptors/annotations/KotlinTarget;-><init>(Ljava/lang/String;ILjava/lang/String;Z)V
 
-    move-object/from16 v44, v12
+    sput-object v0, Lkotlin/reflect/jvm/internal/impl/descriptors/annotations/KotlinTarget;->TOP_LEVEL_PROPERTY:Lkotlin/reflect/jvm/internal/impl/descriptors/annotations/KotlinTarget;
 
-    const-string v12, "top level property with delegate"
+    new-instance v0, Lkotlin/reflect/jvm/internal/impl/descriptors/annotations/KotlinTarget;
 
-    invoke-direct {v3, v14, v15, v12, v5}, Lkotlin/reflect/jvm/internal/impl/descriptors/annotations/KotlinTarget;-><init>(Ljava/lang/String;ILjava/lang/String;Z)V
+    const-string v1, "TOP_LEVEL_PROPERTY_WITH_BACKING_FIELD"
 
-    new-instance v12, Lkotlin/reflect/jvm/internal/impl/descriptors/annotations/KotlinTarget;
+    const/16 v3, 0x21
 
-    const-string v14, "TOP_LEVEL_PROPERTY_WITHOUT_FIELD_OR_DELEGATE"
+    const-string v5, "top level property with backing field"
 
-    const/16 v15, 0x23
+    invoke-direct {v0, v1, v3, v5, v4}, Lkotlin/reflect/jvm/internal/impl/descriptors/annotations/KotlinTarget;-><init>(Ljava/lang/String;ILjava/lang/String;Z)V
 
-    move-object/from16 v45, v3
+    sput-object v0, Lkotlin/reflect/jvm/internal/impl/descriptors/annotations/KotlinTarget;->TOP_LEVEL_PROPERTY_WITH_BACKING_FIELD:Lkotlin/reflect/jvm/internal/impl/descriptors/annotations/KotlinTarget;
 
-    const-string v3, "top level property without backing field or delegate"
+    new-instance v0, Lkotlin/reflect/jvm/internal/impl/descriptors/annotations/KotlinTarget;
 
-    invoke-direct {v12, v14, v15, v3, v5}, Lkotlin/reflect/jvm/internal/impl/descriptors/annotations/KotlinTarget;-><init>(Ljava/lang/String;ILjava/lang/String;Z)V
+    const-string v1, "TOP_LEVEL_PROPERTY_WITH_DELEGATE"
 
-    new-instance v3, Lkotlin/reflect/jvm/internal/impl/descriptors/annotations/KotlinTarget;
+    const/16 v3, 0x22
 
-    const-string v14, "INITIALIZER"
+    const-string v5, "top level property with delegate"
 
-    const/16 v15, 0x24
+    invoke-direct {v0, v1, v3, v5, v4}, Lkotlin/reflect/jvm/internal/impl/descriptors/annotations/KotlinTarget;-><init>(Ljava/lang/String;ILjava/lang/String;Z)V
 
-    move-object/from16 v46, v12
+    sput-object v0, Lkotlin/reflect/jvm/internal/impl/descriptors/annotations/KotlinTarget;->TOP_LEVEL_PROPERTY_WITH_DELEGATE:Lkotlin/reflect/jvm/internal/impl/descriptors/annotations/KotlinTarget;
 
-    const-string v12, "initializer"
+    new-instance v0, Lkotlin/reflect/jvm/internal/impl/descriptors/annotations/KotlinTarget;
 
-    invoke-direct {v3, v14, v15, v12, v5}, Lkotlin/reflect/jvm/internal/impl/descriptors/annotations/KotlinTarget;-><init>(Ljava/lang/String;ILjava/lang/String;Z)V
+    const-string v1, "TOP_LEVEL_PROPERTY_WITHOUT_FIELD_OR_DELEGATE"
 
-    new-instance v12, Lkotlin/reflect/jvm/internal/impl/descriptors/annotations/KotlinTarget;
+    const/16 v3, 0x23
 
-    const-string v14, "DESTRUCTURING_DECLARATION"
+    const-string v5, "top level property without backing field or delegate"
 
-    const/16 v15, 0x25
+    invoke-direct {v0, v1, v3, v5, v4}, Lkotlin/reflect/jvm/internal/impl/descriptors/annotations/KotlinTarget;-><init>(Ljava/lang/String;ILjava/lang/String;Z)V
 
-    move-object/from16 v47, v3
+    sput-object v0, Lkotlin/reflect/jvm/internal/impl/descriptors/annotations/KotlinTarget;->TOP_LEVEL_PROPERTY_WITHOUT_FIELD_OR_DELEGATE:Lkotlin/reflect/jvm/internal/impl/descriptors/annotations/KotlinTarget;
 
-    const-string v3, "destructuring declaration"
+    new-instance v0, Lkotlin/reflect/jvm/internal/impl/descriptors/annotations/KotlinTarget;
 
-    invoke-direct {v12, v14, v15, v3, v5}, Lkotlin/reflect/jvm/internal/impl/descriptors/annotations/KotlinTarget;-><init>(Ljava/lang/String;ILjava/lang/String;Z)V
+    const-string v1, "INITIALIZER"
 
-    new-instance v3, Lkotlin/reflect/jvm/internal/impl/descriptors/annotations/KotlinTarget;
+    const/16 v3, 0x24
 
-    const-string v14, "LAMBDA_EXPRESSION"
+    const-string v5, "initializer"
 
-    const/16 v15, 0x26
+    invoke-direct {v0, v1, v3, v5, v4}, Lkotlin/reflect/jvm/internal/impl/descriptors/annotations/KotlinTarget;-><init>(Ljava/lang/String;ILjava/lang/String;Z)V
 
-    move-object/from16 v48, v12
+    sput-object v0, Lkotlin/reflect/jvm/internal/impl/descriptors/annotations/KotlinTarget;->INITIALIZER:Lkotlin/reflect/jvm/internal/impl/descriptors/annotations/KotlinTarget;
 
-    const-string v12, "lambda expression"
+    new-instance v0, Lkotlin/reflect/jvm/internal/impl/descriptors/annotations/KotlinTarget;
 
-    invoke-direct {v3, v14, v15, v12, v5}, Lkotlin/reflect/jvm/internal/impl/descriptors/annotations/KotlinTarget;-><init>(Ljava/lang/String;ILjava/lang/String;Z)V
+    const-string v1, "DESTRUCTURING_DECLARATION"
 
-    new-instance v12, Lkotlin/reflect/jvm/internal/impl/descriptors/annotations/KotlinTarget;
+    const/16 v3, 0x25
 
-    const-string v14, "ANONYMOUS_FUNCTION"
+    const-string v5, "destructuring declaration"
 
-    const/16 v15, 0x27
+    invoke-direct {v0, v1, v3, v5, v4}, Lkotlin/reflect/jvm/internal/impl/descriptors/annotations/KotlinTarget;-><init>(Ljava/lang/String;ILjava/lang/String;Z)V
 
-    move-object/from16 v49, v3
+    sput-object v0, Lkotlin/reflect/jvm/internal/impl/descriptors/annotations/KotlinTarget;->DESTRUCTURING_DECLARATION:Lkotlin/reflect/jvm/internal/impl/descriptors/annotations/KotlinTarget;
 
-    const-string v3, "anonymous function"
+    new-instance v0, Lkotlin/reflect/jvm/internal/impl/descriptors/annotations/KotlinTarget;
 
-    invoke-direct {v12, v14, v15, v3, v5}, Lkotlin/reflect/jvm/internal/impl/descriptors/annotations/KotlinTarget;-><init>(Ljava/lang/String;ILjava/lang/String;Z)V
+    const-string v1, "LAMBDA_EXPRESSION"
 
-    new-instance v3, Lkotlin/reflect/jvm/internal/impl/descriptors/annotations/KotlinTarget;
+    const/16 v3, 0x26
 
-    const-string v14, "OBJECT_LITERAL"
+    const-string v5, "lambda expression"
 
-    const/16 v15, 0x28
+    invoke-direct {v0, v1, v3, v5, v4}, Lkotlin/reflect/jvm/internal/impl/descriptors/annotations/KotlinTarget;-><init>(Ljava/lang/String;ILjava/lang/String;Z)V
 
-    move-object/from16 v50, v12
+    sput-object v0, Lkotlin/reflect/jvm/internal/impl/descriptors/annotations/KotlinTarget;->LAMBDA_EXPRESSION:Lkotlin/reflect/jvm/internal/impl/descriptors/annotations/KotlinTarget;
 
-    const-string v12, "object literal"
+    new-instance v0, Lkotlin/reflect/jvm/internal/impl/descriptors/annotations/KotlinTarget;
 
-    invoke-direct {v3, v14, v15, v12, v5}, Lkotlin/reflect/jvm/internal/impl/descriptors/annotations/KotlinTarget;-><init>(Ljava/lang/String;ILjava/lang/String;Z)V
+    const-string v1, "ANONYMOUS_FUNCTION"
 
-    const/16 v12, 0x29
+    const/16 v3, 0x27
 
-    new-array v12, v12, [Lkotlin/reflect/jvm/internal/impl/descriptors/annotations/KotlinTarget;
+    const-string v5, "anonymous function"
 
-    aput-object v6, v12, v5
+    invoke-direct {v0, v1, v3, v5, v4}, Lkotlin/reflect/jvm/internal/impl/descriptors/annotations/KotlinTarget;-><init>(Ljava/lang/String;ILjava/lang/String;Z)V
 
-    const/4 v6, 0x1
+    sput-object v0, Lkotlin/reflect/jvm/internal/impl/descriptors/annotations/KotlinTarget;->ANONYMOUS_FUNCTION:Lkotlin/reflect/jvm/internal/impl/descriptors/annotations/KotlinTarget;
 
-    aput-object v0, v12, v6
+    new-instance v0, Lkotlin/reflect/jvm/internal/impl/descriptors/annotations/KotlinTarget;
 
-    const/4 v0, 0x2
+    const-string v1, "OBJECT_LITERAL"
 
-    aput-object v1, v12, v0
+    const/16 v3, 0x28
 
-    const/4 v0, 0x3
+    const-string v5, "object literal"
 
-    aput-object v2, v12, v0
+    invoke-direct {v0, v1, v3, v5, v4}, Lkotlin/reflect/jvm/internal/impl/descriptors/annotations/KotlinTarget;-><init>(Ljava/lang/String;ILjava/lang/String;Z)V
 
-    const/4 v0, 0x4
+    sput-object v0, Lkotlin/reflect/jvm/internal/impl/descriptors/annotations/KotlinTarget;->OBJECT_LITERAL:Lkotlin/reflect/jvm/internal/impl/descriptors/annotations/KotlinTarget;
 
-    aput-object v4, v12, v0
+    invoke-static {}, Lkotlin/reflect/jvm/internal/impl/descriptors/annotations/KotlinTarget;->$values()[Lkotlin/reflect/jvm/internal/impl/descriptors/annotations/KotlinTarget;
 
-    const/4 v0, 0x5
+    move-result-object v0
 
-    aput-object v13, v12, v0
+    sput-object v0, Lkotlin/reflect/jvm/internal/impl/descriptors/annotations/KotlinTarget;->$VALUES:[Lkotlin/reflect/jvm/internal/impl/descriptors/annotations/KotlinTarget;
 
-    const/4 v0, 0x6
+    new-instance v0, Lkotlin/reflect/jvm/internal/impl/descriptors/annotations/KotlinTarget$Companion;
 
-    aput-object v7, v12, v0
+    const/4 v1, 0x0
 
-    const/4 v0, 0x7
+    invoke-direct {v0, v1}, Lkotlin/reflect/jvm/internal/impl/descriptors/annotations/KotlinTarget$Companion;-><init>(Lkotlin/jvm/internal/DefaultConstructorMarker;)V
 
-    aput-object v8, v12, v0
-
-    const/16 v0, 0x8
-
-    aput-object v9, v12, v0
-
-    const/16 v0, 0x9
-
-    aput-object v10, v12, v0
-
-    const/16 v0, 0xa
-
-    aput-object v11, v12, v0
-
-    const/16 v0, 0xb
-
-    aput-object v18, v12, v0
-
-    const/16 v0, 0xc
-
-    aput-object v20, v12, v0
-
-    const/16 v0, 0xd
-
-    aput-object v22, v12, v0
-
-    const/16 v0, 0xe
-
-    aput-object v24, v12, v0
-
-    const/16 v0, 0xf
-
-    aput-object v26, v12, v0
-
-    const/16 v0, 0x10
-
-    aput-object v27, v12, v0
-
-    const/16 v0, 0x11
-
-    aput-object v28, v12, v0
-
-    const/16 v0, 0x12
-
-    aput-object v29, v12, v0
-
-    const/16 v0, 0x13
-
-    aput-object v30, v12, v0
-
-    const/16 v0, 0x14
-
-    aput-object v31, v12, v0
-
-    const/16 v0, 0x15
-
-    aput-object v32, v12, v0
-
-    const/16 v0, 0x16
-
-    aput-object v33, v12, v0
-
-    const/16 v0, 0x17
-
-    aput-object v34, v12, v0
-
-    const/16 v0, 0x18
-
-    aput-object v35, v12, v0
-
-    const/16 v0, 0x19
-
-    aput-object v36, v12, v0
-
-    const/16 v0, 0x1a
-
-    aput-object v37, v12, v0
-
-    const/16 v0, 0x1b
-
-    aput-object v38, v12, v0
-
-    const/16 v0, 0x1c
-
-    aput-object v39, v12, v0
-
-    const/16 v0, 0x1d
-
-    aput-object v40, v12, v0
-
-    const/16 v0, 0x1e
-
-    aput-object v41, v12, v0
-
-    const/16 v0, 0x1f
-
-    aput-object v42, v12, v0
-
-    const/16 v0, 0x20
-
-    aput-object v43, v12, v0
-
-    const/16 v0, 0x21
-
-    aput-object v44, v12, v0
-
-    const/16 v0, 0x22
-
-    aput-object v45, v12, v0
-
-    const/16 v0, 0x23
-
-    aput-object v46, v12, v0
-
-    const/16 v0, 0x24
-
-    aput-object v47, v12, v0
-
-    const/16 v0, 0x25
-
-    aput-object v48, v12, v0
-
-    const/16 v0, 0x26
-
-    aput-object v49, v12, v0
-
-    const/16 v0, 0x27
-
-    aput-object v50, v12, v0
-
-    const/16 v0, 0x28
-
-    aput-object v3, v12, v0
-
-    sput-object v12, Lkotlin/reflect/jvm/internal/impl/descriptors/annotations/KotlinTarget;->$VALUES:[Lkotlin/reflect/jvm/internal/impl/descriptors/annotations/KotlinTarget;
+    sput-object v0, Lkotlin/reflect/jvm/internal/impl/descriptors/annotations/KotlinTarget;->Companion:Lkotlin/reflect/jvm/internal/impl/descriptors/annotations/KotlinTarget$Companion;
 
     new-instance v0, Ljava/util/HashMap;
 
@@ -793,22 +981,22 @@
 
     array-length v1, v0
 
-    move v2, v5
+    move v3, v4
 
     :goto_0
-    if-ge v2, v1, :cond_0
+    if-ge v3, v1, :cond_0
 
-    aget-object v3, v0, v2
+    aget-object v5, v0, v3
 
-    add-int/lit8 v2, v2, 0x1
+    add-int/lit8 v3, v3, 0x1
 
-    sget-object v4, Lkotlin/reflect/jvm/internal/impl/descriptors/annotations/KotlinTarget;->map:Ljava/util/HashMap;
+    sget-object v6, Lkotlin/reflect/jvm/internal/impl/descriptors/annotations/KotlinTarget;->map:Ljava/util/HashMap;
 
-    invoke-virtual {v3}, Ljava/lang/Enum;->name()Ljava/lang/String;
+    invoke-virtual {v5}, Ljava/lang/Enum;->name()Ljava/lang/String;
 
     move-result-object v7
 
-    invoke-virtual {v4, v7, v3}, Ljava/util/HashMap;->put(Ljava/lang/Object;Ljava/lang/Object;)Ljava/lang/Object;
+    invoke-interface {v6, v7, v5}, Ljava/util/Map;->put(Ljava/lang/Object;Ljava/lang/Object;)Ljava/lang/Object;
 
     goto :goto_0
 
@@ -821,28 +1009,34 @@
 
     invoke-direct {v1}, Ljava/util/ArrayList;-><init>()V
 
-    array-length v2, v0
+    array-length v3, v0
 
-    move v3, v5
+    move v5, v4
 
     :goto_1
-    if-ge v3, v2, :cond_2
+    if-ge v5, v3, :cond_2
 
-    aget-object v4, v0, v3
+    aget-object v6, v0, v5
 
-    iget-boolean v7, v4, Lkotlin/reflect/jvm/internal/impl/descriptors/annotations/KotlinTarget;->isDefault:Z
+    invoke-virtual {v6}, Lkotlin/reflect/jvm/internal/impl/descriptors/annotations/KotlinTarget;->isDefault()Z
+
+    move-result v7
 
     if-eqz v7, :cond_1
 
-    invoke-virtual {v1, v4}, Ljava/util/ArrayList;->add(Ljava/lang/Object;)Z
+    invoke-interface {v1, v6}, Ljava/util/Collection;->add(Ljava/lang/Object;)Z
 
     :cond_1
-    add-int/lit8 v3, v3, 0x1
+    add-int/lit8 v5, v5, 0x1
 
     goto :goto_1
 
     :cond_2
     invoke-static {v1}, Lkotlin/collections/CollectionsKt___CollectionsKt;->toSet(Ljava/lang/Iterable;)Ljava/util/Set;
+
+    move-result-object v0
+
+    sput-object v0, Lkotlin/reflect/jvm/internal/impl/descriptors/annotations/KotlinTarget;->DEFAULT_TARGET_SET:Ljava/util/Set;
 
     invoke-static {}, Lkotlin/reflect/jvm/internal/impl/descriptors/annotations/KotlinTarget;->values()[Lkotlin/reflect/jvm/internal/impl/descriptors/annotations/KotlinTarget;
 
@@ -850,95 +1044,99 @@
 
     invoke-static {v0}, Lkotlin/collections/ArraysKt___ArraysKt;->toSet([Ljava/lang/Object;)Ljava/util/Set;
 
+    move-result-object v0
+
+    sput-object v0, Lkotlin/reflect/jvm/internal/impl/descriptors/annotations/KotlinTarget;->ALL_TARGET_SET:Ljava/util/Set;
+
     const/16 v0, 0x9
 
     new-array v0, v0, [Lkotlin/Pair;
 
     sget-object v1, Lkotlin/reflect/jvm/internal/impl/descriptors/annotations/AnnotationUseSiteTarget;->CONSTRUCTOR_PARAMETER:Lkotlin/reflect/jvm/internal/impl/descriptors/annotations/AnnotationUseSiteTarget;
 
-    sget-object v2, Lkotlin/reflect/jvm/internal/impl/descriptors/annotations/KotlinTarget;->VALUE_PARAMETER:Lkotlin/reflect/jvm/internal/impl/descriptors/annotations/KotlinTarget;
+    sget-object v3, Lkotlin/reflect/jvm/internal/impl/descriptors/annotations/KotlinTarget;->VALUE_PARAMETER:Lkotlin/reflect/jvm/internal/impl/descriptors/annotations/KotlinTarget;
 
-    new-instance v3, Lkotlin/Pair;
+    new-instance v5, Lkotlin/Pair;
 
-    invoke-direct {v3, v1, v2}, Lkotlin/Pair;-><init>(Ljava/lang/Object;Ljava/lang/Object;)V
+    invoke-direct {v5, v1, v3}, Lkotlin/Pair;-><init>(Ljava/lang/Object;Ljava/lang/Object;)V
 
-    aput-object v3, v0, v5
+    aput-object v5, v0, v4
 
     sget-object v1, Lkotlin/reflect/jvm/internal/impl/descriptors/annotations/AnnotationUseSiteTarget;->FIELD:Lkotlin/reflect/jvm/internal/impl/descriptors/annotations/AnnotationUseSiteTarget;
 
-    sget-object v3, Lkotlin/reflect/jvm/internal/impl/descriptors/annotations/KotlinTarget;->FIELD:Lkotlin/reflect/jvm/internal/impl/descriptors/annotations/KotlinTarget;
-
-    new-instance v4, Lkotlin/Pair;
-
-    invoke-direct {v4, v1, v3}, Lkotlin/Pair;-><init>(Ljava/lang/Object;Ljava/lang/Object;)V
-
-    aput-object v4, v0, v6
-
-    sget-object v1, Lkotlin/reflect/jvm/internal/impl/descriptors/annotations/AnnotationUseSiteTarget;->PROPERTY:Lkotlin/reflect/jvm/internal/impl/descriptors/annotations/AnnotationUseSiteTarget;
-
-    sget-object v4, Lkotlin/reflect/jvm/internal/impl/descriptors/annotations/KotlinTarget;->PROPERTY:Lkotlin/reflect/jvm/internal/impl/descriptors/annotations/KotlinTarget;
+    sget-object v4, Lkotlin/reflect/jvm/internal/impl/descriptors/annotations/KotlinTarget;->FIELD:Lkotlin/reflect/jvm/internal/impl/descriptors/annotations/KotlinTarget;
 
     new-instance v5, Lkotlin/Pair;
 
     invoke-direct {v5, v1, v4}, Lkotlin/Pair;-><init>(Ljava/lang/Object;Ljava/lang/Object;)V
 
-    const/4 v1, 0x2
+    const/4 v1, 0x1
 
     aput-object v5, v0, v1
 
+    sget-object v1, Lkotlin/reflect/jvm/internal/impl/descriptors/annotations/AnnotationUseSiteTarget;->PROPERTY:Lkotlin/reflect/jvm/internal/impl/descriptors/annotations/AnnotationUseSiteTarget;
+
+    sget-object v5, Lkotlin/reflect/jvm/internal/impl/descriptors/annotations/KotlinTarget;->PROPERTY:Lkotlin/reflect/jvm/internal/impl/descriptors/annotations/KotlinTarget;
+
+    new-instance v6, Lkotlin/Pair;
+
+    invoke-direct {v6, v1, v5}, Lkotlin/Pair;-><init>(Ljava/lang/Object;Ljava/lang/Object;)V
+
+    aput-object v6, v0, v2
+
     const/4 v1, 0x3
 
-    sget-object v4, Lkotlin/reflect/jvm/internal/impl/descriptors/annotations/AnnotationUseSiteTarget;->FILE:Lkotlin/reflect/jvm/internal/impl/descriptors/annotations/AnnotationUseSiteTarget;
+    sget-object v2, Lkotlin/reflect/jvm/internal/impl/descriptors/annotations/AnnotationUseSiteTarget;->FILE:Lkotlin/reflect/jvm/internal/impl/descriptors/annotations/AnnotationUseSiteTarget;
 
     sget-object v5, Lkotlin/reflect/jvm/internal/impl/descriptors/annotations/KotlinTarget;->FILE:Lkotlin/reflect/jvm/internal/impl/descriptors/annotations/KotlinTarget;
 
     new-instance v6, Lkotlin/Pair;
 
-    invoke-direct {v6, v4, v5}, Lkotlin/Pair;-><init>(Ljava/lang/Object;Ljava/lang/Object;)V
+    invoke-direct {v6, v2, v5}, Lkotlin/Pair;-><init>(Ljava/lang/Object;Ljava/lang/Object;)V
 
     aput-object v6, v0, v1
 
     const/4 v1, 0x4
 
-    sget-object v4, Lkotlin/reflect/jvm/internal/impl/descriptors/annotations/AnnotationUseSiteTarget;->PROPERTY_GETTER:Lkotlin/reflect/jvm/internal/impl/descriptors/annotations/AnnotationUseSiteTarget;
+    sget-object v2, Lkotlin/reflect/jvm/internal/impl/descriptors/annotations/AnnotationUseSiteTarget;->PROPERTY_GETTER:Lkotlin/reflect/jvm/internal/impl/descriptors/annotations/AnnotationUseSiteTarget;
 
     sget-object v5, Lkotlin/reflect/jvm/internal/impl/descriptors/annotations/KotlinTarget;->PROPERTY_GETTER:Lkotlin/reflect/jvm/internal/impl/descriptors/annotations/KotlinTarget;
 
     new-instance v6, Lkotlin/Pair;
 
-    invoke-direct {v6, v4, v5}, Lkotlin/Pair;-><init>(Ljava/lang/Object;Ljava/lang/Object;)V
+    invoke-direct {v6, v2, v5}, Lkotlin/Pair;-><init>(Ljava/lang/Object;Ljava/lang/Object;)V
 
     aput-object v6, v0, v1
 
     const/4 v1, 0x5
 
-    sget-object v4, Lkotlin/reflect/jvm/internal/impl/descriptors/annotations/AnnotationUseSiteTarget;->PROPERTY_SETTER:Lkotlin/reflect/jvm/internal/impl/descriptors/annotations/AnnotationUseSiteTarget;
+    sget-object v2, Lkotlin/reflect/jvm/internal/impl/descriptors/annotations/AnnotationUseSiteTarget;->PROPERTY_SETTER:Lkotlin/reflect/jvm/internal/impl/descriptors/annotations/AnnotationUseSiteTarget;
 
     sget-object v5, Lkotlin/reflect/jvm/internal/impl/descriptors/annotations/KotlinTarget;->PROPERTY_SETTER:Lkotlin/reflect/jvm/internal/impl/descriptors/annotations/KotlinTarget;
 
     new-instance v6, Lkotlin/Pair;
 
-    invoke-direct {v6, v4, v5}, Lkotlin/Pair;-><init>(Ljava/lang/Object;Ljava/lang/Object;)V
+    invoke-direct {v6, v2, v5}, Lkotlin/Pair;-><init>(Ljava/lang/Object;Ljava/lang/Object;)V
 
     aput-object v6, v0, v1
 
     const/4 v1, 0x6
 
-    sget-object v4, Lkotlin/reflect/jvm/internal/impl/descriptors/annotations/AnnotationUseSiteTarget;->RECEIVER:Lkotlin/reflect/jvm/internal/impl/descriptors/annotations/AnnotationUseSiteTarget;
+    sget-object v2, Lkotlin/reflect/jvm/internal/impl/descriptors/annotations/AnnotationUseSiteTarget;->RECEIVER:Lkotlin/reflect/jvm/internal/impl/descriptors/annotations/AnnotationUseSiteTarget;
 
     new-instance v5, Lkotlin/Pair;
 
-    invoke-direct {v5, v4, v2}, Lkotlin/Pair;-><init>(Ljava/lang/Object;Ljava/lang/Object;)V
+    invoke-direct {v5, v2, v3}, Lkotlin/Pair;-><init>(Ljava/lang/Object;Ljava/lang/Object;)V
 
     aput-object v5, v0, v1
 
     const/4 v1, 0x7
 
-    sget-object v4, Lkotlin/reflect/jvm/internal/impl/descriptors/annotations/AnnotationUseSiteTarget;->SETTER_PARAMETER:Lkotlin/reflect/jvm/internal/impl/descriptors/annotations/AnnotationUseSiteTarget;
+    sget-object v2, Lkotlin/reflect/jvm/internal/impl/descriptors/annotations/AnnotationUseSiteTarget;->SETTER_PARAMETER:Lkotlin/reflect/jvm/internal/impl/descriptors/annotations/AnnotationUseSiteTarget;
 
     new-instance v5, Lkotlin/Pair;
 
-    invoke-direct {v5, v4, v2}, Lkotlin/Pair;-><init>(Ljava/lang/Object;Ljava/lang/Object;)V
+    invoke-direct {v5, v2, v3}, Lkotlin/Pair;-><init>(Ljava/lang/Object;Ljava/lang/Object;)V
 
     aput-object v5, v0, v1
 
@@ -946,11 +1144,11 @@
 
     sget-object v2, Lkotlin/reflect/jvm/internal/impl/descriptors/annotations/AnnotationUseSiteTarget;->PROPERTY_DELEGATE_FIELD:Lkotlin/reflect/jvm/internal/impl/descriptors/annotations/AnnotationUseSiteTarget;
 
-    new-instance v4, Lkotlin/Pair;
+    new-instance v3, Lkotlin/Pair;
 
-    invoke-direct {v4, v2, v3}, Lkotlin/Pair;-><init>(Ljava/lang/Object;Ljava/lang/Object;)V
+    invoke-direct {v3, v2, v4}, Lkotlin/Pair;-><init>(Ljava/lang/Object;Ljava/lang/Object;)V
 
-    aput-object v4, v0, v1
+    aput-object v3, v0, v1
 
     invoke-static {v0}, Lkotlin/collections/MapsKt___MapsKt;->mapOf([Lkotlin/Pair;)Ljava/util/Map;
 
@@ -961,7 +1159,7 @@
     return-void
 .end method
 
-.method public constructor <init>(Ljava/lang/String;ILjava/lang/String;Z)V
+.method private constructor <init>(Ljava/lang/String;ILjava/lang/String;Z)V
     .locals 0
     .annotation system Ldalvik/annotation/Signature;
         value = {
@@ -973,34 +1171,30 @@
 
     invoke-direct {p0, p1, p2}, Ljava/lang/Enum;-><init>(Ljava/lang/String;I)V
 
+    iput-object p3, p0, Lkotlin/reflect/jvm/internal/impl/descriptors/annotations/KotlinTarget;->description:Ljava/lang/String;
+
     iput-boolean p4, p0, Lkotlin/reflect/jvm/internal/impl/descriptors/annotations/KotlinTarget;->isDefault:Z
 
     return-void
 .end method
 
-.method public constructor <init>(Ljava/lang/String;ILjava/lang/String;ZI)V
+.method public synthetic constructor <init>(Ljava/lang/String;ILjava/lang/String;ZILkotlin/jvm/internal/DefaultConstructorMarker;)V
     .locals 0
 
-    and-int/lit8 p3, p5, 0x2
+    and-int/lit8 p5, p5, 0x2
 
-    if-eqz p3, :cond_0
+    if-eqz p5, :cond_0
 
     const/4 p4, 0x1
 
     :cond_0
-    invoke-direct {p0, p1, p2}, Ljava/lang/Enum;-><init>(Ljava/lang/String;I)V
-
-    iput-boolean p4, p0, Lkotlin/reflect/jvm/internal/impl/descriptors/annotations/KotlinTarget;->isDefault:Z
+    invoke-direct {p0, p1, p2, p3, p4}, Lkotlin/reflect/jvm/internal/impl/descriptors/annotations/KotlinTarget;-><init>(Ljava/lang/String;ILjava/lang/String;Z)V
 
     return-void
 .end method
 
 .method public static valueOf(Ljava/lang/String;)Lkotlin/reflect/jvm/internal/impl/descriptors/annotations/KotlinTarget;
     .locals 1
-
-    const-string v0, "value"
-
-    invoke-static {p0, v0}, Lkotlin/jvm/internal/Intrinsics;->checkNotNullParameter(Ljava/lang/Object;Ljava/lang/String;)V
 
     const-class v0, Lkotlin/reflect/jvm/internal/impl/descriptors/annotations/KotlinTarget;
 
@@ -1014,19 +1208,25 @@
 .end method
 
 .method public static values()[Lkotlin/reflect/jvm/internal/impl/descriptors/annotations/KotlinTarget;
-    .locals 4
+    .locals 1
 
     sget-object v0, Lkotlin/reflect/jvm/internal/impl/descriptors/annotations/KotlinTarget;->$VALUES:[Lkotlin/reflect/jvm/internal/impl/descriptors/annotations/KotlinTarget;
 
-    array-length v1, v0
+    invoke-virtual {v0}, [Ljava/lang/Object;->clone()Ljava/lang/Object;
 
-    new-array v1, v1, [Lkotlin/reflect/jvm/internal/impl/descriptors/annotations/KotlinTarget;
+    move-result-object v0
 
-    array-length v2, v0
+    check-cast v0, [Lkotlin/reflect/jvm/internal/impl/descriptors/annotations/KotlinTarget;
 
-    const/4 v3, 0x0
+    return-object v0
+.end method
 
-    invoke-static {v0, v3, v1, v3, v2}, Ljava/lang/System;->arraycopy(Ljava/lang/Object;ILjava/lang/Object;II)V
 
-    return-object v1
+# virtual methods
+.method public final isDefault()Z
+    .locals 1
+
+    iget-boolean v0, p0, Lkotlin/reflect/jvm/internal/impl/descriptors/annotations/KotlinTarget;->isDefault:Z
+
+    return v0
 .end method

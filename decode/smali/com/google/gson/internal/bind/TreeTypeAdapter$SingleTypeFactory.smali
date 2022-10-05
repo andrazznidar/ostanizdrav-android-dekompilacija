@@ -121,7 +121,7 @@
     const/4 p1, 0x1
 
     :goto_3
-    invoke-static {p1}, Lcom/google/gson/internal/$Gson$Preconditions;->checkArgument(Z)V
+    invoke-static {p1}, Lkotlinx/coroutines/flow/FlowKt;->checkArgument(Z)V
 
     iput-object p2, p0, Lcom/google/gson/internal/bind/TreeTypeAdapter$SingleTypeFactory;->exactType:Lcom/google/gson/reflect/TypeToken;
 

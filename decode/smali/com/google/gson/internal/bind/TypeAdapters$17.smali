@@ -16,7 +16,7 @@
 .annotation system Ldalvik/annotation/Signature;
     value = {
         "Lcom/google/gson/TypeAdapter<",
-        "Ljava/math/BigDecimal;",
+        "Ljava/math/BigInteger;",
         ">;"
     }
 .end annotation
@@ -57,13 +57,13 @@
 
     :cond_0
     :try_start_0
-    new-instance v0, Ljava/math/BigDecimal;
+    new-instance v0, Ljava/math/BigInteger;
 
     invoke-virtual {p1}, Lcom/google/gson/stream/JsonReader;->nextString()Ljava/lang/String;
 
     move-result-object p1
 
-    invoke-direct {v0, p1}, Ljava/math/BigDecimal;-><init>(Ljava/lang/String;)V
+    invoke-direct {v0, p1}, Ljava/math/BigInteger;-><init>(Ljava/lang/String;)V
     :try_end_0
     .catch Ljava/lang/NumberFormatException; {:try_start_0 .. :try_end_0} :catch_0
 
@@ -90,7 +90,7 @@
         }
     .end annotation
 
-    check-cast p2, Ljava/math/BigDecimal;
+    check-cast p2, Ljava/math/BigInteger;
 
     invoke-virtual {p1, p2}, Lcom/google/gson/stream/JsonWriter;->value(Ljava/lang/Number;)Lcom/google/gson/stream/JsonWriter;
 

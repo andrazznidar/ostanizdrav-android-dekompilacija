@@ -1,87 +1,85 @@
 .class public final Lde/rki/coronawarnapp/covidcertificate/person/ui/details/PersonDetailsViewModel$addCardItem$1;
-.super Lkotlin/coroutines/jvm/internal/ContinuationImpl;
+.super Lkotlin/jvm/internal/Lambda;
 .source "PersonDetailsViewModel.kt"
+
+# interfaces
+.implements Lkotlin/jvm/functions/Function0;
 
 
 # annotations
-.annotation system Ldalvik/annotation/EnclosingMethod;
-    value = Lde/rki/coronawarnapp/covidcertificate/person/ui/details/PersonDetailsViewModel;->addCardItem(Ljava/util/List;Lde/rki/coronawarnapp/covidcertificate/common/certificate/CwaCovidCertificate;Lde/rki/coronawarnapp/covidcertificate/common/certificate/CwaCovidCertificate;Lkotlin/coroutines/Continuation;)Ljava/lang/Object;
-.end annotation
-
-.annotation system Ldalvik/annotation/InnerClass;
-    accessFlags = 0x19
-    name = null
-.end annotation
-
-.annotation runtime Lkotlin/coroutines/jvm/internal/DebugMetadata;
-    c = "de.rki.coronawarnapp.covidcertificate.person.ui.details.PersonDetailsViewModel"
-    f = "PersonDetailsViewModel.kt"
-    l = {
-        0x98
+.annotation system Ldalvik/annotation/Signature;
+    value = {
+        "Lkotlin/jvm/internal/Lambda;",
+        "Lkotlin/jvm/functions/Function0<",
+        "Lkotlin/Unit;",
+        ">;"
     }
-    m = "addCardItem"
 .end annotation
 
 
 # instance fields
-.field public L$0:Ljava/lang/Object;
+.field public final synthetic $certificate:Lde/rki/coronawarnapp/covidcertificate/common/certificate/CwaCovidCertificate;
 
-.field public L$1:Ljava/lang/Object;
-
-.field public L$2:Ljava/lang/Object;
-
-.field public Z$0:Z
-
-.field public label:I
-
-.field public synthetic result:Ljava/lang/Object;
+.field public final synthetic $isCurrentCertificate:Z
 
 .field public final synthetic this$0:Lde/rki/coronawarnapp/covidcertificate/person/ui/details/PersonDetailsViewModel;
 
 
 # direct methods
-.method public constructor <init>(Lde/rki/coronawarnapp/covidcertificate/person/ui/details/PersonDetailsViewModel;Lkotlin/coroutines/Continuation;)V
+.method public constructor <init>(Lde/rki/coronawarnapp/covidcertificate/person/ui/details/PersonDetailsViewModel;Lde/rki/coronawarnapp/covidcertificate/common/certificate/CwaCovidCertificate;Z)V
     .locals 0
-    .annotation system Ldalvik/annotation/Signature;
-        value = {
-            "(",
-            "Lde/rki/coronawarnapp/covidcertificate/person/ui/details/PersonDetailsViewModel;",
-            "Lkotlin/coroutines/Continuation<",
-            "-",
-            "Lde/rki/coronawarnapp/covidcertificate/person/ui/details/PersonDetailsViewModel$addCardItem$1;",
-            ">;)V"
-        }
-    .end annotation
 
     iput-object p1, p0, Lde/rki/coronawarnapp/covidcertificate/person/ui/details/PersonDetailsViewModel$addCardItem$1;->this$0:Lde/rki/coronawarnapp/covidcertificate/person/ui/details/PersonDetailsViewModel;
 
-    invoke-direct {p0, p2}, Lkotlin/coroutines/jvm/internal/ContinuationImpl;-><init>(Lkotlin/coroutines/Continuation;)V
+    iput-object p2, p0, Lde/rki/coronawarnapp/covidcertificate/person/ui/details/PersonDetailsViewModel$addCardItem$1;->$certificate:Lde/rki/coronawarnapp/covidcertificate/common/certificate/CwaCovidCertificate;
+
+    iput-boolean p3, p0, Lde/rki/coronawarnapp/covidcertificate/person/ui/details/PersonDetailsViewModel$addCardItem$1;->$isCurrentCertificate:Z
+
+    const/4 p1, 0x0
+
+    invoke-direct {p0, p1}, Lkotlin/jvm/internal/Lambda;-><init>(I)V
 
     return-void
 .end method
 
 
 # virtual methods
-.method public final invokeSuspend(Ljava/lang/Object;)Ljava/lang/Object;
-    .locals 1
+.method public invoke()Ljava/lang/Object;
+    .locals 6
 
-    iput-object p1, p0, Lde/rki/coronawarnapp/covidcertificate/person/ui/details/PersonDetailsViewModel$addCardItem$1;->result:Ljava/lang/Object;
+    iget-object v0, p0, Lde/rki/coronawarnapp/covidcertificate/person/ui/details/PersonDetailsViewModel$addCardItem$1;->this$0:Lde/rki/coronawarnapp/covidcertificate/person/ui/details/PersonDetailsViewModel;
 
-    iget p1, p0, Lde/rki/coronawarnapp/covidcertificate/person/ui/details/PersonDetailsViewModel$addCardItem$1;->label:I
+    iget-object v0, v0, Lde/rki/coronawarnapp/covidcertificate/person/ui/details/PersonDetailsViewModel;->events:Lde/rki/coronawarnapp/util/ui/SingleLiveEvent;
 
-    const/high16 v0, -0x80000000
+    new-instance v1, Lde/rki/coronawarnapp/covidcertificate/person/ui/details/OpenTestCertificateDetails;
 
-    or-int/2addr p1, v0
+    iget-object v2, p0, Lde/rki/coronawarnapp/covidcertificate/person/ui/details/PersonDetailsViewModel$addCardItem$1;->$certificate:Lde/rki/coronawarnapp/covidcertificate/common/certificate/CwaCovidCertificate;
 
-    iput p1, p0, Lde/rki/coronawarnapp/covidcertificate/person/ui/details/PersonDetailsViewModel$addCardItem$1;->label:I
+    check-cast v2, Lde/rki/coronawarnapp/covidcertificate/test/core/TestCertificate;
 
-    iget-object p1, p0, Lde/rki/coronawarnapp/covidcertificate/person/ui/details/PersonDetailsViewModel$addCardItem$1;->this$0:Lde/rki/coronawarnapp/covidcertificate/person/ui/details/PersonDetailsViewModel;
+    invoke-interface {v2}, Lde/rki/coronawarnapp/covidcertificate/test/core/TestCertificate;->getContainerId()Lde/rki/coronawarnapp/covidcertificate/common/repository/TestCertificateContainerId;
 
-    const/4 v0, 0x0
+    move-result-object v2
 
-    invoke-virtual {p1, v0, v0, v0, p0}, Lde/rki/coronawarnapp/covidcertificate/person/ui/details/PersonDetailsViewModel;->addCardItem(Ljava/util/List;Lde/rki/coronawarnapp/covidcertificate/common/certificate/CwaCovidCertificate;Lde/rki/coronawarnapp/covidcertificate/common/certificate/CwaCovidCertificate;Lkotlin/coroutines/Continuation;)Ljava/lang/Object;
+    iget-object v3, p0, Lde/rki/coronawarnapp/covidcertificate/person/ui/details/PersonDetailsViewModel$addCardItem$1;->this$0:Lde/rki/coronawarnapp/covidcertificate/person/ui/details/PersonDetailsViewModel;
 
-    move-result-object p1
+    iget-object v4, p0, Lde/rki/coronawarnapp/covidcertificate/person/ui/details/PersonDetailsViewModel$addCardItem$1;->$certificate:Lde/rki/coronawarnapp/covidcertificate/common/certificate/CwaCovidCertificate;
 
-    return-object p1
+    invoke-interface {v4}, Lde/rki/coronawarnapp/covidcertificate/common/certificate/CwaCovidCertificate;->isDisplayValid()Z
+
+    move-result v4
+
+    iget-boolean v5, p0, Lde/rki/coronawarnapp/covidcertificate/person/ui/details/PersonDetailsViewModel$addCardItem$1;->$isCurrentCertificate:Z
+
+    invoke-static {v3, v4, v5}, Lde/rki/coronawarnapp/covidcertificate/person/ui/details/PersonDetailsViewModel;->access$getItemColorShade(Lde/rki/coronawarnapp/covidcertificate/person/ui/details/PersonDetailsViewModel;ZZ)Lde/rki/coronawarnapp/covidcertificate/person/ui/overview/PersonColorShade;
+
+    move-result-object v3
+
+    invoke-direct {v1, v2, v3}, Lde/rki/coronawarnapp/covidcertificate/person/ui/details/OpenTestCertificateDetails;-><init>(Lde/rki/coronawarnapp/covidcertificate/common/repository/TestCertificateContainerId;Lde/rki/coronawarnapp/covidcertificate/person/ui/overview/PersonColorShade;)V
+
+    invoke-virtual {v0, v1}, Landroidx/lifecycle/MutableLiveData;->postValue(Ljava/lang/Object;)V
+
+    sget-object v0, Lkotlin/Unit;->INSTANCE:Lkotlin/Unit;
+
+    return-object v0
 .end method

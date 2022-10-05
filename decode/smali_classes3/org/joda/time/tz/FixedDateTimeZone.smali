@@ -155,3 +155,65 @@
 
     return-wide p1
 .end method
+
+.method public toTimeZone()Ljava/util/TimeZone;
+    .locals 3
+
+    iget-object v0, p0, Lorg/joda/time/DateTimeZone;->iID:Ljava/lang/String;
+
+    invoke-virtual {v0}, Ljava/lang/String;->length()I
+
+    move-result v1
+
+    const/4 v2, 0x6
+
+    if-ne v1, v2, :cond_1
+
+    const-string v1, "+"
+
+    invoke-virtual {v0, v1}, Ljava/lang/String;->startsWith(Ljava/lang/String;)Z
+
+    move-result v1
+
+    if-nez v1, :cond_0
+
+    const-string v1, "-"
+
+    invoke-virtual {v0, v1}, Ljava/lang/String;->startsWith(Ljava/lang/String;)Z
+
+    move-result v0
+
+    if-eqz v0, :cond_1
+
+    :cond_0
+    const-string v0, "GMT"
+
+    invoke-static {v0}, Landroid/support/v4/media/RatingCompat$$ExternalSyntheticOutline0;->m(Ljava/lang/String;)Ljava/lang/StringBuilder;
+
+    move-result-object v0
+
+    iget-object v1, p0, Lorg/joda/time/DateTimeZone;->iID:Ljava/lang/String;
+
+    invoke-virtual {v0, v1}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+
+    invoke-virtual {v0}, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
+
+    move-result-object v0
+
+    invoke-static {v0}, Lj$/util/DesugarTimeZone;->getTimeZone(Ljava/lang/String;)Ljava/util/TimeZone;
+
+    move-result-object v0
+
+    return-object v0
+
+    :cond_1
+    new-instance v0, Ljava/util/SimpleTimeZone;
+
+    iget v1, p0, Lorg/joda/time/tz/FixedDateTimeZone;->iWallOffset:I
+
+    iget-object v2, p0, Lorg/joda/time/DateTimeZone;->iID:Ljava/lang/String;
+
+    invoke-direct {v0, v1, v2}, Ljava/util/SimpleTimeZone;-><init>(ILjava/lang/String;)V
+
+    return-object v0
+.end method

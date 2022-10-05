@@ -572,7 +572,7 @@
 
     iput v0, p0, Lcom/airbnb/lottie/LottieAnimationView;->buildDrawingCacheDepth:I
 
-    invoke-super {p0, p1}, Landroid/view/View;->buildDrawingCache(Z)V
+    invoke-super {p0, p1}, Landroid/widget/ImageView;->buildDrawingCache(Z)V
 
     iget v0, p0, Lcom/airbnb/lottie/LottieAnimationView;->buildDrawingCacheDepth:I
 
@@ -1024,7 +1024,7 @@
 
     if-nez v0, :cond_0
 
-    invoke-super {p0, p1}, Landroid/view/View;->onRestoreInstanceState(Landroid/os/Parcelable;)V
+    invoke-super {p0, p1}, Landroid/widget/ImageView;->onRestoreInstanceState(Landroid/os/Parcelable;)V
 
     return-void
 
@@ -1035,7 +1035,7 @@
 
     move-result-object v0
 
-    invoke-super {p0, v0}, Landroid/view/View;->onRestoreInstanceState(Landroid/os/Parcelable;)V
+    invoke-super {p0, v0}, Landroid/widget/ImageView;->onRestoreInstanceState(Landroid/os/Parcelable;)V
 
     iget-object v0, p1, Lcom/airbnb/lottie/LottieAnimationView$SavedState;->animationName:Ljava/lang/String;
 
@@ -1092,7 +1092,7 @@
 .method public onSaveInstanceState()Landroid/os/Parcelable;
     .locals 3
 
-    invoke-super {p0}, Landroid/view/View;->onSaveInstanceState()Landroid/os/Parcelable;
+    invoke-super {p0}, Landroid/widget/ImageView;->onSaveInstanceState()Landroid/os/Parcelable;
 
     move-result-object v0
 
@@ -1488,6 +1488,8 @@
 
     invoke-direct {v0, p1}, Ljava/io/ByteArrayInputStream;-><init>([B)V
 
+    sget-object p1, Lcom/airbnb/lottie/LottieCompositionFactory;->taskCache:Ljava/util/Map;
+
     new-instance p1, Lcom/airbnb/lottie/LottieCompositionFactory$4;
 
     const/4 v1, 0x0
@@ -1538,6 +1540,8 @@
     move-result-object v0
 
     const/4 v1, 0x0
+
+    sget-object v2, Lcom/airbnb/lottie/LottieCompositionFactory;->taskCache:Ljava/util/Map;
 
     new-instance v2, Lcom/airbnb/lottie/LottieCompositionFactory$1;
 

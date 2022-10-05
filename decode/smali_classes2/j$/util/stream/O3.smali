@@ -1,158 +1,51 @@
-.class final Lj$/util/stream/O3;
-.super Lj$/util/stream/G3;
+.class public final synthetic Lj$/util/stream/O3;
+.super Ljava/lang/Object;
+
+# interfaces
+.implements Ljava/security/PrivilegedAction;
 
 
-# instance fields
-.field private d:Ljava/util/ArrayList;
+# static fields
+.field public static final synthetic a:Lj$/util/stream/O3;
 
 
 # direct methods
-.method constructor <init>(Lj$/util/stream/n3;Ljava/util/Comparator;)V
+.method static synthetic constructor <clinit>()V
+    .locals 1
+
+    new-instance v0, Lj$/util/stream/O3;
+
+    invoke-direct {v0}, Lj$/util/stream/O3;-><init>()V
+
+    sput-object v0, Lj$/util/stream/O3;->a:Lj$/util/stream/O3;
+
+    return-void
+.end method
+
+.method private synthetic constructor <init>()V
     .locals 0
 
-    invoke-direct {p0, p1, p2}, Lj$/util/stream/G3;-><init>(Lj$/util/stream/n3;Ljava/util/Comparator;)V
+    invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
     return-void
 .end method
 
 
 # virtual methods
-.method public i(Ljava/lang/Object;)V
+.method public final run()Ljava/lang/Object;
     .locals 1
 
-    iget-object v0, p0, Lj$/util/stream/O3;->d:Ljava/util/ArrayList;
+    sget-boolean v0, Lj$/util/stream/P3;->a:Z
 
-    invoke-virtual {v0, p1}, Ljava/util/ArrayList;->add(Ljava/lang/Object;)Z
+    const-string v0, "org.openjdk.java.util.stream.tripwire"
 
-    return-void
-.end method
+    invoke-static {v0}, Ljava/lang/Boolean;->getBoolean(Ljava/lang/String;)Z
 
-.method public w()V
-    .locals 3
+    move-result v0
 
-    iget-object v0, p0, Lj$/util/stream/O3;->d:Ljava/util/ArrayList;
-
-    iget-object v1, p0, Lj$/util/stream/G3;->b:Ljava/util/Comparator;
-
-    invoke-static {v0, v1}, Lj$/util/a;->C(Ljava/util/List;Ljava/util/Comparator;)V
-
-    iget-object v0, p0, Lj$/util/stream/j3;->a:Lj$/util/stream/n3;
-
-    iget-object v1, p0, Lj$/util/stream/O3;->d:Ljava/util/ArrayList;
-
-    invoke-virtual {v1}, Ljava/util/ArrayList;->size()I
-
-    move-result v1
-
-    int-to-long v1, v1
-
-    invoke-interface {v0, v1, v2}, Lj$/util/stream/n3;->x(J)V
-
-    iget-boolean v0, p0, Lj$/util/stream/G3;->c:Z
-
-    if-nez v0, :cond_0
-
-    iget-object v0, p0, Lj$/util/stream/O3;->d:Ljava/util/ArrayList;
-
-    iget-object v1, p0, Lj$/util/stream/j3;->a:Lj$/util/stream/n3;
-
-    invoke-static {v1}, Ljava/util/Objects;->requireNonNull(Ljava/lang/Object;)Ljava/lang/Object;
-
-    new-instance v2, Lj$/util/stream/b;
-
-    invoke-direct {v2, v1}, Lj$/util/stream/b;-><init>(Lj$/util/stream/n3;)V
-
-    invoke-static {v0, v2}, Lj$/util/Collection$-EL;->a(Ljava/util/Collection;Lj$/util/function/Consumer;)V
-
-    goto :goto_1
-
-    :cond_0
-    iget-object v0, p0, Lj$/util/stream/O3;->d:Ljava/util/ArrayList;
-
-    invoke-virtual {v0}, Ljava/util/ArrayList;->iterator()Ljava/util/Iterator;
+    invoke-static {v0}, Ljava/lang/Boolean;->valueOf(Z)Ljava/lang/Boolean;
 
     move-result-object v0
 
-    :goto_0
-    invoke-interface {v0}, Ljava/util/Iterator;->hasNext()Z
-
-    move-result v1
-
-    if-eqz v1, :cond_2
-
-    invoke-interface {v0}, Ljava/util/Iterator;->next()Ljava/lang/Object;
-
-    move-result-object v1
-
-    iget-object v2, p0, Lj$/util/stream/j3;->a:Lj$/util/stream/n3;
-
-    invoke-interface {v2}, Lj$/util/stream/n3;->z()Z
-
-    move-result v2
-
-    if-eqz v2, :cond_1
-
-    goto :goto_1
-
-    :cond_1
-    iget-object v2, p0, Lj$/util/stream/j3;->a:Lj$/util/stream/n3;
-
-    invoke-interface {v2, v1}, Lj$/util/function/Consumer;->i(Ljava/lang/Object;)V
-
-    goto :goto_0
-
-    :cond_2
-    :goto_1
-    iget-object v0, p0, Lj$/util/stream/j3;->a:Lj$/util/stream/n3;
-
-    invoke-interface {v0}, Lj$/util/stream/n3;->w()V
-
-    const/4 v0, 0x0
-
-    iput-object v0, p0, Lj$/util/stream/O3;->d:Ljava/util/ArrayList;
-
-    return-void
-.end method
-
-.method public x(J)V
-    .locals 2
-
-    const-wide/32 v0, 0x7ffffff7
-
-    cmp-long v0, p1, v0
-
-    if-gez v0, :cond_1
-
-    const-wide/16 v0, 0x0
-
-    cmp-long v0, p1, v0
-
-    if-ltz v0, :cond_0
-
-    new-instance v0, Ljava/util/ArrayList;
-
-    long-to-int p1, p1
-
-    invoke-direct {v0, p1}, Ljava/util/ArrayList;-><init>(I)V
-
-    goto :goto_0
-
-    :cond_0
-    new-instance v0, Ljava/util/ArrayList;
-
-    invoke-direct {v0}, Ljava/util/ArrayList;-><init>()V
-
-    :goto_0
-    iput-object v0, p0, Lj$/util/stream/O3;->d:Ljava/util/ArrayList;
-
-    return-void
-
-    :cond_1
-    new-instance p1, Ljava/lang/IllegalArgumentException;
-
-    const-string p2, "Stream size exceeds max array size"
-
-    invoke-direct {p1, p2}, Ljava/lang/IllegalArgumentException;-><init>(Ljava/lang/String;)V
-
-    throw p1
+    return-object v0
 .end method

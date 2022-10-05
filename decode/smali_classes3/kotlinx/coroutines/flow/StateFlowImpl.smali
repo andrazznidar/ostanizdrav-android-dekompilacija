@@ -19,6 +19,7 @@
         ">;",
         "Lkotlinx/coroutines/flow/MutableStateFlow<",
         "TT;>;",
+        "Lkotlinx/coroutines/flow/Flow;",
         "Lkotlinx/coroutines/flow/internal/FusibleFlow<",
         "TT;>;"
     }
@@ -253,9 +254,9 @@
 
     :goto_1
     :try_start_4
-    iget-object v2, v4, Lkotlin/coroutines/jvm/internal/ContinuationImpl;->_context:Lkotlin/coroutines/CoroutineContext;
+    invoke-interface {v4}, Lkotlin/coroutines/Continuation;->getContext()Lkotlin/coroutines/CoroutineContext;
 
-    invoke-static {v2}, Lkotlin/jvm/internal/Intrinsics;->checkNotNull(Ljava/lang/Object;)V
+    move-result-object v2
 
     sget v5, Lkotlinx/coroutines/Job;->$r8$clinit:I
 
@@ -288,7 +289,7 @@
 
     move-result v14
 
-    if-eqz v14, :cond_10
+    if-eqz v14, :cond_f
 
     :goto_3
     if-eqz v0, :cond_8
@@ -377,7 +378,7 @@
 
     new-instance v6, Lkotlinx/coroutines/CancellableContinuationImpl;
 
-    invoke-static {v4}, Lkotlinx/coroutines/flow/FlowKt;->intercepted(Lkotlin/coroutines/Continuation;)Lkotlin/coroutines/Continuation;
+    invoke-static {v4}, Lcom/google/android/gms/nearby/messages/internal/zzag;->intercepted(Lkotlin/coroutines/Continuation;)Lkotlin/coroutines/Continuation;
 
     move-result-object v15
 
@@ -405,16 +406,9 @@
 
     if-ne v6, v3, :cond_e
 
-    const-string v13, "frame"
-
-    invoke-static {v4, v13}, Lkotlin/jvm/internal/Intrinsics;->checkNotNullParameter(Ljava/lang/Object;Ljava/lang/String;)V
-
-    :cond_e
-    if-ne v6, v3, :cond_f
-
     goto :goto_8
 
-    :cond_f
+    :cond_e
     sget-object v6, Lkotlin/Unit;->INSTANCE:Lkotlin/Unit;
 
     :goto_8
@@ -422,7 +416,7 @@
 
     return-object v2
 
-    :cond_10
+    :cond_f
     invoke-interface {v5}, Lkotlinx/coroutines/Job;->getCancellationException()Ljava/util/concurrent/CancellationException;
 
     move-result-object v0

@@ -3,7 +3,7 @@
 .source "FlowPreference.kt"
 
 # interfaces
-.implements Lkotlin/jvm/functions/Function2;
+.implements Lkotlin/jvm/functions/Function3;
 
 
 # annotations
@@ -19,118 +19,165 @@
 .annotation system Ldalvik/annotation/Signature;
     value = {
         "Lkotlin/jvm/internal/Lambda;",
-        "Lkotlin/jvm/functions/Function2<",
-        "Landroid/content/SharedPreferences;",
+        "Lkotlin/jvm/functions/Function3<",
+        "Landroid/content/SharedPreferences$Editor;",
         "Ljava/lang/String;",
-        "Ljava/lang/Boolean;",
+        "Ljava/lang/Integer;",
+        "Lkotlin/Unit;",
         ">;"
     }
 .end annotation
 
 .annotation system Ldalvik/annotation/SourceDebugExtension;
-    value = "SMAP\nFlowPreference.kt\nKotlin\n*S Kotlin\n*F\n+ 1 FlowPreference.kt\nde/rki/coronawarnapp/util/preferences/FlowPreference$Companion$basicReader$1\n+ 2 fake.kt\nkotlin/jvm/internal/FakeKt\n*L\n1#1,108:1\n1#2:109\n*E\n"
+    value = "SMAP\nFlowPreference.kt\nKotlin\n*S Kotlin\n*F\n+ 1 FlowPreference.kt\nde/rki/coronawarnapp/util/preferences/FlowPreference$Companion$basicWriter$1\n*L\n1#1,108:1\n*E\n"
 .end annotation
 
 
+# static fields
+.field public static final INSTANCE:Lde/rki/coronawarnapp/datadonation/analytics/storage/AnalyticsSettings$special$$inlined$createFlowPreference$2;
+
+
 # direct methods
-.method public constructor <init>(Ljava/lang/Object;)V
-    .locals 0
+.method public static constructor <clinit>()V
+    .locals 1
 
-    const/4 p1, 0x2
+    new-instance v0, Lde/rki/coronawarnapp/datadonation/analytics/storage/AnalyticsSettings$special$$inlined$createFlowPreference$2;
 
-    invoke-direct {p0, p1}, Lkotlin/jvm/internal/Lambda;-><init>(I)V
+    invoke-direct {v0}, Lde/rki/coronawarnapp/datadonation/analytics/storage/AnalyticsSettings$special$$inlined$createFlowPreference$2;-><init>()V
+
+    sput-object v0, Lde/rki/coronawarnapp/datadonation/analytics/storage/AnalyticsSettings$special$$inlined$createFlowPreference$2;->INSTANCE:Lde/rki/coronawarnapp/datadonation/analytics/storage/AnalyticsSettings$special$$inlined$createFlowPreference$2;
+
+    return-void
+.end method
+
+.method public constructor <init>()V
+    .locals 1
+
+    const/4 v0, 0x3
+
+    invoke-direct {p0, v0}, Lkotlin/jvm/internal/Lambda;-><init>(I)V
 
     return-void
 .end method
 
 
 # virtual methods
-.method public invoke(Ljava/lang/Object;Ljava/lang/Object;)Ljava/lang/Object;
-    .locals 3
+.method public invoke(Ljava/lang/Object;Ljava/lang/Object;Ljava/lang/Object;)Ljava/lang/Object;
+    .locals 2
 
-    check-cast p1, Landroid/content/SharedPreferences;
+    check-cast p1, Landroid/content/SharedPreferences$Editor;
 
     check-cast p2, Ljava/lang/String;
 
     const-string v0, "$this$null"
 
-    const-string v1, "key"
+    invoke-static {p1, v0}, Lkotlin/jvm/internal/Intrinsics;->checkNotNullParameter(Ljava/lang/Object;Ljava/lang/String;)V
 
-    const-class v2, Ljava/lang/Boolean;
+    const-string v0, "key"
 
-    invoke-static {p1, v0, p2, v1, v2}, Lde/rki/coronawarnapp/contactdiary/storage/ContactDiaryPreferences$special$$inlined$createFlowPreference$1$$ExternalSyntheticOutline0;->m(Landroid/content/SharedPreferences;Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;Ljava/lang/Class;)Lkotlin/reflect/KClass;
+    invoke-static {p2, v0}, Lkotlin/jvm/internal/Intrinsics;->checkNotNullParameter(Ljava/lang/Object;Ljava/lang/String;)V
 
-    move-result-object v0
+    instance-of v0, p3, Ljava/lang/Boolean;
 
-    const-class v1, Lorg/joda/time/Instant;
+    if-eqz v0, :cond_0
 
-    invoke-static {v1}, Lkotlin/jvm/internal/Reflection;->getOrCreateKotlinClass(Ljava/lang/Class;)Lkotlin/reflect/KClass;
+    check-cast p3, Ljava/lang/Boolean;
 
-    move-result-object v1
+    invoke-virtual {p3}, Ljava/lang/Boolean;->booleanValue()Z
 
-    invoke-static {v0, v1}, Lkotlin/jvm/internal/Intrinsics;->areEqual(Ljava/lang/Object;Ljava/lang/Object;)Z
+    move-result p3
 
-    move-result v0
-
-    if-eqz v0, :cond_1
-
-    invoke-interface {p1}, Landroid/content/SharedPreferences;->getAll()Ljava/util/Map;
-
-    move-result-object p1
-
-    invoke-interface {p1, p2}, Ljava/util/Map;->get(Ljava/lang/Object;)Ljava/lang/Object;
-
-    move-result-object p1
-
-    if-nez p1, :cond_0
-
-    const/4 p1, 0x0
+    invoke-interface {p1, p2, p3}, Landroid/content/SharedPreferences$Editor;->putBoolean(Ljava/lang/String;Z)Landroid/content/SharedPreferences$Editor;
 
     goto :goto_0
 
     :cond_0
-    check-cast p1, Ljava/lang/Long;
+    instance-of v0, p3, Ljava/lang/String;
 
-    invoke-virtual {p1}, Ljava/lang/Long;->longValue()J
+    if-eqz v0, :cond_1
 
-    move-result-wide p1
+    check-cast p3, Ljava/lang/String;
 
-    new-instance v0, Lorg/joda/time/Instant;
+    invoke-interface {p1, p2, p3}, Landroid/content/SharedPreferences$Editor;->putString(Ljava/lang/String;Ljava/lang/String;)Landroid/content/SharedPreferences$Editor;
 
-    invoke-direct {v0, p1, p2}, Lorg/joda/time/Instant;-><init>(J)V
-
-    move-object p1, v0
-
-    check-cast p1, Ljava/lang/Boolean;
-
-    :goto_0
-    if-nez p1, :cond_3
-
-    sget-object p1, Ljava/lang/Boolean;->FALSE:Ljava/lang/Boolean;
-
-    goto :goto_1
+    goto :goto_0
 
     :cond_1
-    invoke-interface {p1}, Landroid/content/SharedPreferences;->getAll()Ljava/util/Map;
+    instance-of v0, p3, Ljava/lang/Integer;
 
-    move-result-object p1
+    if-eqz v0, :cond_2
 
-    invoke-interface {p1, p2}, Ljava/util/Map;->get(Ljava/lang/Object;)Ljava/lang/Object;
+    check-cast p3, Ljava/lang/Number;
 
-    move-result-object p1
+    invoke-virtual {p3}, Ljava/lang/Number;->intValue()I
 
-    if-nez p1, :cond_2
+    move-result p3
 
-    sget-object p1, Ljava/lang/Boolean;->FALSE:Ljava/lang/Boolean;
+    invoke-interface {p1, p2, p3}, Landroid/content/SharedPreferences$Editor;->putInt(Ljava/lang/String;I)Landroid/content/SharedPreferences$Editor;
+
+    goto :goto_0
 
     :cond_2
-    const-string p2, "null cannot be cast to non-null type kotlin.Boolean"
+    instance-of v0, p3, Ljava/lang/Long;
 
-    invoke-static {p1, p2}, Ljava/util/Objects;->requireNonNull(Ljava/lang/Object;Ljava/lang/String;)Ljava/lang/Object;
+    if-eqz v0, :cond_3
 
-    check-cast p1, Ljava/lang/Boolean;
+    check-cast p3, Ljava/lang/Number;
+
+    invoke-virtual {p3}, Ljava/lang/Number;->longValue()J
+
+    move-result-wide v0
+
+    invoke-interface {p1, p2, v0, v1}, Landroid/content/SharedPreferences$Editor;->putLong(Ljava/lang/String;J)Landroid/content/SharedPreferences$Editor;
+
+    goto :goto_0
 
     :cond_3
-    :goto_1
+    instance-of v0, p3, Ljava/lang/Float;
+
+    if-eqz v0, :cond_4
+
+    check-cast p3, Ljava/lang/Number;
+
+    invoke-virtual {p3}, Ljava/lang/Number;->floatValue()F
+
+    move-result p3
+
+    invoke-interface {p1, p2, p3}, Landroid/content/SharedPreferences$Editor;->putFloat(Ljava/lang/String;F)Landroid/content/SharedPreferences$Editor;
+
+    goto :goto_0
+
+    :cond_4
+    instance-of v0, p3, Lorg/joda/time/Instant;
+
+    if-eqz v0, :cond_5
+
+    check-cast p3, Lorg/joda/time/Instant;
+
+    iget-wide v0, p3, Lorg/joda/time/Instant;->iMillis:J
+
+    invoke-interface {p1, p2, v0, v1}, Landroid/content/SharedPreferences$Editor;->putLong(Ljava/lang/String;J)Landroid/content/SharedPreferences$Editor;
+
+    goto :goto_0
+
+    :cond_5
+    if-nez p3, :cond_6
+
+    invoke-interface {p1, p2}, Landroid/content/SharedPreferences$Editor;->remove(Ljava/lang/String;)Landroid/content/SharedPreferences$Editor;
+
+    :goto_0
+    sget-object p1, Lkotlin/Unit;->INSTANCE:Lkotlin/Unit;
+
     return-object p1
+
+    :cond_6
+    new-instance p1, Lkotlin/NotImplementedError;
+
+    const/4 p2, 0x0
+
+    const/4 p3, 0x1
+
+    invoke-direct {p1, p2, p3}, Lkotlin/NotImplementedError;-><init>(Ljava/lang/String;I)V
+
+    throw p1
 .end method

@@ -1,43 +1,121 @@
-.class public final synthetic Lj$/util/stream/M1;
-.super Ljava/lang/Object;
+.class Lj$/util/stream/M1;
+.super Lj$/util/stream/Z1;
 
 # interfaces
-.implements Lj$/util/function/n;
+.implements Lj$/util/stream/Y1;
 
 
-# static fields
-.field public static final synthetic a:Lj$/util/stream/M1;
+# instance fields
+.field final synthetic b:Ljava/lang/Object;
+
+.field final synthetic c:Lj$/util/function/BiFunction;
+
+.field final synthetic d:Lj$/util/function/c;
 
 
 # direct methods
-.method static synthetic constructor <clinit>()V
-    .locals 1
-
-    new-instance v0, Lj$/util/stream/M1;
-
-    invoke-direct {v0}, Lj$/util/stream/M1;-><init>()V
-
-    sput-object v0, Lj$/util/stream/M1;->a:Lj$/util/stream/M1;
-
-    return-void
-.end method
-
-.method private synthetic constructor <init>()V
+.method constructor <init>(Ljava/lang/Object;Lj$/util/function/BiFunction;Lj$/util/function/c;)V
     .locals 0
 
-    invoke-direct {p0}, Ljava/lang/Object;-><init>()V
+    iput-object p1, p0, Lj$/util/stream/M1;->b:Ljava/lang/Object;
+
+    iput-object p2, p0, Lj$/util/stream/M1;->c:Lj$/util/function/BiFunction;
+
+    iput-object p3, p0, Lj$/util/stream/M1;->d:Lj$/util/function/c;
+
+    invoke-direct {p0}, Lj$/util/stream/Z1;-><init>()V
 
     return-void
 .end method
 
 
 # virtual methods
-.method public final q(J)Ljava/lang/Object;
+.method public synthetic accept(I)V
     .locals 0
 
-    invoke-static {p1, p2}, Lj$/util/stream/y2;->q(J)Lj$/util/stream/s1;
+    invoke-static {}, Lj$/util/stream/D0;->O()V
+
+    const/4 p1, 0x0
+
+    throw p1
+.end method
+
+.method public synthetic c(D)V
+    .locals 0
+
+    invoke-static {}, Lj$/util/stream/D0;->K()V
+
+    const/4 p1, 0x0
+
+    throw p1
+.end method
+
+.method public synthetic d(J)V
+    .locals 0
+
+    invoke-static {}, Lj$/util/stream/D0;->P()V
+
+    const/4 p1, 0x0
+
+    throw p1
+.end method
+
+.method public synthetic g()V
+    .locals 0
+
+    return-void
+.end method
+
+.method public i(J)V
+    .locals 0
+
+    iget-object p1, p0, Lj$/util/stream/M1;->b:Ljava/lang/Object;
+
+    iput-object p1, p0, Lj$/util/stream/Z1;->a:Ljava/lang/Object;
+
+    return-void
+.end method
+
+.method public j(Ljava/lang/Object;)V
+    .locals 2
+
+    iget-object v0, p0, Lj$/util/stream/M1;->c:Lj$/util/function/BiFunction;
+
+    iget-object v1, p0, Lj$/util/stream/Z1;->a:Ljava/lang/Object;
+
+    invoke-interface {v0, v1, p1}, Lj$/util/function/BiFunction;->apply(Ljava/lang/Object;Ljava/lang/Object;)Ljava/lang/Object;
 
     move-result-object p1
 
-    return-object p1
+    iput-object p1, p0, Lj$/util/stream/Z1;->a:Ljava/lang/Object;
+
+    return-void
+.end method
+
+.method public q(Lj$/util/stream/Y1;)V
+    .locals 2
+
+    check-cast p1, Lj$/util/stream/M1;
+
+    iget-object v0, p0, Lj$/util/stream/M1;->d:Lj$/util/function/c;
+
+    iget-object v1, p0, Lj$/util/stream/Z1;->a:Ljava/lang/Object;
+
+    iget-object p1, p1, Lj$/util/stream/Z1;->a:Ljava/lang/Object;
+
+    invoke-interface {v0, v1, p1}, Lj$/util/function/BiFunction;->apply(Ljava/lang/Object;Ljava/lang/Object;)Ljava/lang/Object;
+
+    move-result-object p1
+
+    iput-object p1, p0, Lj$/util/stream/Z1;->a:Ljava/lang/Object;
+
+    return-void
+.end method
+
+.method public synthetic r()Z
+    .locals 1
+
+    const/4 v0, 0x0
+
+    return v0
 .end method

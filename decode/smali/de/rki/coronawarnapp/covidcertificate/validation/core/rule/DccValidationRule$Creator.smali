@@ -52,9 +52,9 @@
 
     invoke-virtual/range {p1 .. p1}, Landroid/os/Parcel;->readString()Ljava/lang/String;
 
-    move-result-object v2
+    move-result-object v1
 
-    invoke-static {v2}, Lde/rki/coronawarnapp/covidcertificate/validation/core/rule/DccValidationRule$Type;->valueOf(Ljava/lang/String;)Lde/rki/coronawarnapp/covidcertificate/validation/core/rule/DccValidationRule$Type;
+    invoke-static {v1}, Lde/rki/coronawarnapp/covidcertificate/validation/core/rule/DccValidationRule$Type;->valueOf(Ljava/lang/String;)Lde/rki/coronawarnapp/covidcertificate/validation/core/rule/DccValidationRule$Type;
 
     move-result-object v4
 
@@ -84,26 +84,26 @@
 
     invoke-virtual/range {p1 .. p1}, Landroid/os/Parcel;->readInt()I
 
-    move-result v2
+    move-result v1
 
     new-instance v11, Ljava/util/ArrayList;
 
-    invoke-direct {v11, v2}, Ljava/util/ArrayList;-><init>(I)V
+    invoke-direct {v11, v1}, Ljava/util/ArrayList;-><init>(I)V
 
-    const/4 v12, 0x0
+    const/4 v2, 0x0
 
     :goto_0
-    if-eq v12, v2, :cond_0
+    if-eq v2, v1, :cond_0
 
-    sget-object v13, Lde/rki/coronawarnapp/covidcertificate/validation/core/rule/DccValidationRule$Description;->CREATOR:Landroid/os/Parcelable$Creator;
+    sget-object v12, Lde/rki/coronawarnapp/covidcertificate/validation/core/rule/DccValidationRule$Description;->CREATOR:Landroid/os/Parcelable$Creator;
 
-    invoke-interface {v13, v0}, Landroid/os/Parcelable$Creator;->createFromParcel(Landroid/os/Parcel;)Ljava/lang/Object;
+    invoke-interface {v12, v0}, Landroid/os/Parcelable$Creator;->createFromParcel(Landroid/os/Parcel;)Ljava/lang/Object;
 
-    move-result-object v13
+    move-result-object v12
 
-    invoke-virtual {v11, v13}, Ljava/util/ArrayList;->add(Ljava/lang/Object;)Z
+    invoke-virtual {v11, v12}, Ljava/util/ArrayList;->add(Ljava/lang/Object;)Z
 
-    add-int/lit8 v12, v12, 0x1
+    add-int/lit8 v2, v2, 0x1
 
     goto :goto_0
 
@@ -119,8 +119,6 @@
     invoke-virtual/range {p1 .. p1}, Landroid/os/Parcel;->createStringArrayList()Ljava/util/ArrayList;
 
     move-result-object v14
-
-    invoke-static {v0, v1}, Lkotlin/jvm/internal/Intrinsics;->checkNotNullParameter(Ljava/lang/Object;Ljava/lang/String;)V
 
     sget-object v1, Lde/rki/coronawarnapp/util/serialization/SerializationModule;->Companion:Lde/rki/coronawarnapp/util/serialization/SerializationModule;
 

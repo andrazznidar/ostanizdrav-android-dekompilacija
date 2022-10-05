@@ -29,7 +29,7 @@
 
 # direct methods
 .method public static constructor <clinit>()V
-    .locals 5
+    .locals 3
 
     const/4 v0, 0x6
 
@@ -37,9 +37,9 @@
 
     new-instance v1, Lcom/upokecenter/cbor/CBORInteger;
 
-    const/4 v2, 0x0
+    invoke-direct {v1}, Lcom/upokecenter/cbor/CBORInteger;-><init>()V
 
-    invoke-direct {v1, v2}, Lcom/upokecenter/cbor/CBORInteger;-><init>(I)V
+    const/4 v2, 0x0
 
     aput-object v1, v0, v2
 
@@ -47,37 +47,37 @@
 
     invoke-direct {v1}, Lcom/upokecenter/cbor/CBORDoubleBits;-><init>()V
 
-    const/4 v3, 0x1
+    const/4 v2, 0x1
 
-    aput-object v1, v0, v3
+    aput-object v1, v0, v2
 
     new-instance v1, Lcom/upokecenter/cbor/CBOREInteger;
 
-    invoke-direct {v1, v2}, Lcom/upokecenter/cbor/CBOREInteger;-><init>(I)V
+    invoke-direct {v1}, Lcom/upokecenter/cbor/CBOREInteger;-><init>()V
 
-    const/4 v4, 0x2
+    const/4 v2, 0x2
 
-    aput-object v1, v0, v4
+    aput-object v1, v0, v2
 
-    new-instance v1, Lde/rki/coronawarnapp/nearby/ENFModule;
+    new-instance v1, Lcom/upokecenter/cbor/CBORExtendedDecimal;
 
-    invoke-direct {v1, v3}, Lde/rki/coronawarnapp/nearby/ENFModule;-><init>(I)V
+    invoke-direct {v1}, Lcom/upokecenter/cbor/CBORExtendedDecimal;-><init>()V
 
-    const/4 v3, 0x3
+    const/4 v2, 0x3
 
-    aput-object v1, v0, v3
+    aput-object v1, v0, v2
 
     new-instance v1, Lcom/upokecenter/cbor/CBORExtendedFloat;
 
-    invoke-direct {v1, v2}, Lcom/upokecenter/cbor/CBORExtendedFloat;-><init>(I)V
+    invoke-direct {v1}, Lcom/upokecenter/cbor/CBORExtendedFloat;-><init>()V
 
     const/4 v2, 0x4
 
     aput-object v1, v0, v2
 
-    new-instance v1, Lcom/upokecenter/cbor/CBORExtendedRational;
+    new-instance v1, Lkotlinx/coroutines/CoroutineScopeKt;
 
-    invoke-direct {v1}, Lcom/upokecenter/cbor/CBORExtendedRational;-><init>()V
+    invoke-direct {v1}, Lkotlinx/coroutines/CoroutineScopeKt;-><init>()V
 
     const/4 v2, 0x5
 
@@ -779,7 +779,7 @@
 
     if-gez v1, :cond_12
 
-    goto/16 :goto_5
+    goto :goto_5
 
     :cond_12
     invoke-virtual {v0, v5}, Lcom/upokecenter/cbor/CBORObject;->get(I)Lcom/upokecenter/cbor/CBORObject;
@@ -882,21 +882,9 @@
     goto :goto_4
 
     :pswitch_3
-    new-instance v0, Lcom/upokecenter/numbers/ERational;
+    invoke-virtual {v9}, Lcom/upokecenter/numbers/ERational;->Negate()Lcom/upokecenter/numbers/ERational;
 
-    iget-object v1, v9, Lcom/upokecenter/numbers/ERational;->unsignedNumerator:Lcom/upokecenter/numbers/FastIntegerFixed;
-
-    iget-object v2, v9, Lcom/upokecenter/numbers/ERational;->denominator:Lcom/upokecenter/numbers/FastIntegerFixed;
-
-    iget-byte v3, v9, Lcom/upokecenter/numbers/ERational;->flags:B
-
-    xor-int/2addr v3, v4
-
-    int-to-byte v3, v3
-
-    invoke-direct {v0, v1, v2, v3}, Lcom/upokecenter/numbers/ERational;-><init>(Lcom/upokecenter/numbers/FastIntegerFixed;Lcom/upokecenter/numbers/FastIntegerFixed;B)V
-
-    move-object v9, v0
+    move-result-object v9
 
     :cond_1a
     :goto_4
@@ -1282,6 +1270,8 @@
 
     return-object v0
 
+    nop
+
     :pswitch_data_0
     .packed-switch 0x0
         :pswitch_4
@@ -1310,9 +1300,9 @@
 .method public static GetNumberInterface(I)Lcom/upokecenter/cbor/ICBORNumber;
     .locals 1
 
-    invoke-static {p0}, Landroidx/constraintlayout/core/SolverVariable$Type$r8$EnumUnboxingUtility;->$enumboxing$ordinal(I)I
+    if-eqz p0, :cond_6
 
-    move-result p0
+    add-int/lit8 p0, p0, -0x1
 
     if-eqz p0, :cond_5
 
@@ -1385,6 +1375,11 @@
     aget-object p0, p0, v0
 
     return-object p0
+
+    :cond_6
+    const/4 p0, 0x0
+
+    throw p0
 .end method
 
 .method public static IntegerOrBignum(Lcom/upokecenter/cbor/CBORObject;)Lcom/upokecenter/numbers/EInteger;
@@ -1558,7 +1553,7 @@
 
     iget v0, p0, Lcom/upokecenter/cbor/CBORNumber;->kind:I
 
-    invoke-static {v0}, Landroidx/constraintlayout/core/SolverVariable$Type$r8$EnumUnboxingUtility;->$enumboxing$ordinal(I)I
+    invoke-static {v0}, Landroidx/camera/camera2/internal/Camera2CameraImpl$InternalState$EnumUnboxingSharedUtility;->ordinal(I)I
 
     move-result v0
 
@@ -1612,7 +1607,7 @@
 
     iget v0, p0, Lcom/upokecenter/cbor/CBORNumber;->kind:I
 
-    invoke-static {v0}, Landroidx/constraintlayout/core/SolverVariable$Type$r8$EnumUnboxingUtility;->$enumboxing$ordinal(I)I
+    invoke-static {v0}, Landroidx/camera/camera2/internal/Camera2CameraImpl$InternalState$EnumUnboxingSharedUtility;->ordinal(I)I
 
     move-result v0
 
@@ -1715,7 +1710,7 @@
 
     iget v0, p0, Lcom/upokecenter/cbor/CBORNumber;->kind:I
 
-    invoke-static {v0}, Landroidx/constraintlayout/core/SolverVariable$Type$r8$EnumUnboxingUtility;->$enumboxing$ordinal(I)I
+    invoke-static {v0}, Landroidx/camera/camera2/internal/Camera2CameraImpl$InternalState$EnumUnboxingSharedUtility;->ordinal(I)I
 
     move-result v0
 
@@ -1746,18 +1741,6 @@
     iget-object v0, p0, Lcom/upokecenter/cbor/CBORNumber;->value:Ljava/lang/Object;
 
     check-cast v0, Lcom/upokecenter/numbers/ERational;
-
-    invoke-virtual {v0}, Lcom/upokecenter/numbers/ERational;->getNumerator()Lcom/upokecenter/numbers/EInteger;
-
-    move-result-object v1
-
-    invoke-virtual {v1}, Lcom/upokecenter/numbers/EInteger;->toString()Ljava/lang/String;
-
-    invoke-virtual {v0}, Lcom/upokecenter/numbers/ERational;->getDenominator()Lcom/upokecenter/numbers/EInteger;
-
-    move-result-object v1
-
-    invoke-virtual {v1}, Lcom/upokecenter/numbers/EInteger;->toString()Ljava/lang/String;
 
     sget-object v1, Lcom/upokecenter/numbers/EContext;->Decimal128:Lcom/upokecenter/numbers/EContext;
 
@@ -1993,7 +1976,7 @@
 
     if-ne v2, v3, :cond_11
 
-    invoke-static {v2}, Landroidx/constraintlayout/core/SolverVariable$Type$r8$EnumUnboxingUtility;->$enumboxing$ordinal(I)I
+    invoke-static {v2}, Landroidx/camera/camera2/internal/Camera2CameraImpl$InternalState$EnumUnboxingSharedUtility;->ordinal(I)I
 
     move-result v2
 
@@ -2046,7 +2029,7 @@
 
     check-cast p1, Lcom/upokecenter/numbers/EDecimal;
 
-    invoke-virtual {v4, p1}, Lcom/upokecenter/numbers/EDecimal;->CompareToValue(Lcom/upokecenter/numbers/EDecimal;)I
+    invoke-virtual {v4, p1}, Lcom/upokecenter/numbers/EDecimal;->compareTo(Lcom/upokecenter/numbers/EDecimal;)I
 
     move-result v0
 
@@ -2439,7 +2422,7 @@
 
     move-result-object p1
 
-    invoke-virtual {v0, p1}, Lcom/upokecenter/numbers/EDecimal;->CompareToValue(Lcom/upokecenter/numbers/EDecimal;)I
+    invoke-virtual {v0, p1}, Lcom/upokecenter/numbers/EDecimal;->compareTo(Lcom/upokecenter/numbers/EDecimal;)I
 
     move-result v0
 
@@ -2453,7 +2436,7 @@
 
     iget v0, p0, Lcom/upokecenter/cbor/CBORNumber;->kind:I
 
-    invoke-static {v0}, Landroidx/constraintlayout/core/SolverVariable$Type$r8$EnumUnboxingUtility;->$enumboxing$ordinal(I)I
+    invoke-static {v0}, Landroidx/camera/camera2/internal/Camera2CameraImpl$InternalState$EnumUnboxingSharedUtility;->ordinal(I)I
 
     move-result v0
 

@@ -801,7 +801,6 @@
 
     move-result-object v0
 
-    :cond_15
     :goto_10
     invoke-interface {v0}, Ljava/util/Iterator;->hasNext()Z
 
@@ -835,13 +834,13 @@
 
     move-result-object v5
 
-    :cond_16
+    :cond_15
     :goto_11
     invoke-interface {v5}, Ljava/util/Iterator;->hasNext()Z
 
     move-result v10
 
-    if-eqz v10, :cond_1b
+    if-eqz v10, :cond_1a
 
     invoke-interface {v5}, Ljava/util/Iterator;->next()Ljava/lang/Object;
 
@@ -855,21 +854,21 @@
 
     move-result v13
 
-    if-eqz v13, :cond_17
+    if-eqz v13, :cond_16
 
     goto :goto_13
 
-    :cond_17
+    :cond_16
     invoke-virtual {v2}, Ljava/util/ArrayList;->iterator()Ljava/util/Iterator;
 
     move-result-object v13
 
-    :cond_18
+    :cond_17
     invoke-interface {v13}, Ljava/util/Iterator;->hasNext()Z
 
     move-result v14
 
-    if-eqz v14, :cond_1a
+    if-eqz v14, :cond_19
 
     invoke-interface {v13}, Ljava/util/Iterator;->next()Ljava/lang/Object;
 
@@ -885,7 +884,7 @@
 
     move-result v15
 
-    if-eqz v15, :cond_19
+    if-eqz v15, :cond_18
 
     iget-object v14, v14, Lde/rki/coronawarnapp/diagnosiskeys/storage/CachedKey;->info:Lde/rki/coronawarnapp/diagnosiskeys/storage/CachedKeyInfo;
 
@@ -895,52 +894,55 @@
 
     move-result v14
 
-    if-eqz v14, :cond_19
+    if-eqz v14, :cond_18
 
     move v14, v8
 
     goto :goto_12
 
-    :cond_19
+    :cond_18
     move v14, v9
 
     :goto_12
-    if-eqz v14, :cond_18
+    if-eqz v14, :cond_17
 
     move v11, v9
 
     goto :goto_14
 
-    :cond_1a
+    :cond_19
     :goto_13
     move v11, v8
 
     :goto_14
-    if-eqz v11, :cond_16
+    if-eqz v11, :cond_15
 
     invoke-virtual {v7, v10}, Ljava/util/ArrayList;->add(Ljava/lang/Object;)Z
 
     goto :goto_11
 
-    :cond_1b
+    :cond_1a
     invoke-virtual {v7}, Ljava/util/ArrayList;->isEmpty()Z
 
     move-result v5
 
-    if-eqz v5, :cond_1c
+    if-eqz v5, :cond_1b
 
     move-object v5, v3
 
     goto :goto_15
 
-    :cond_1c
+    :cond_1b
     new-instance v5, Lkotlin/Pair;
 
     invoke-direct {v5, v6, v7}, Lkotlin/Pair;-><init>(Ljava/lang/Object;Ljava/lang/Object;)V
 
     :goto_15
-    if-eqz v5, :cond_15
+    if-nez v5, :cond_1c
 
+    goto :goto_10
+
+    :cond_1c
     invoke-virtual {v4, v5}, Ljava/util/ArrayList;->add(Ljava/lang/Object;)Z
 
     goto :goto_10
@@ -1461,12 +1463,12 @@
 
     invoke-static {v2}, Lkotlin/ResultKt;->throwOnFailure(Ljava/lang/Object;)V
 
-    goto/16 :goto_9
+    goto/16 :goto_a
 
     :pswitch_1
     invoke-static {v2}, Lkotlin/ResultKt;->throwOnFailure(Ljava/lang/Object;)V
 
-    goto/16 :goto_8
+    goto/16 :goto_9
 
     :pswitch_2
     iget-object v1, v3, Lde/rki/coronawarnapp/diagnosiskeys/download/HourPackageSyncTool$syncMissingHourPackages$1;->L$2:Ljava/lang/Object;
@@ -1483,7 +1485,7 @@
 
     invoke-static {v2}, Lkotlin/ResultKt;->throwOnFailure(Ljava/lang/Object;)V
 
-    goto/16 :goto_7
+    goto/16 :goto_8
 
     :pswitch_3
     iget-boolean v1, v3, Lde/rki/coronawarnapp/diagnosiskeys/download/HourPackageSyncTool$syncMissingHourPackages$1;->Z$1:Z
@@ -1728,11 +1730,14 @@
     :try_end_1
     .catch Lde/rki/coronawarnapp/exception/http/CwaServerError; {:try_start_1 .. :try_end_1} :catch_0
 
-    if-eqz v2, :cond_6
+    if-nez v2, :cond_6
 
-    invoke-interface {v13, v2}, Ljava/util/Collection;->add(Ljava/lang/Object;)Z
+    goto :goto_7
 
     :cond_6
+    invoke-interface {v13, v2}, Ljava/util/Collection;->add(Ljava/lang/Object;)Z
+
+    :goto_7
     move-object v2, v12
 
     move-object v12, v13
@@ -1825,7 +1830,7 @@
 
     move-object v10, v11
 
-    :goto_7
+    :goto_8
     iput-object v7, v3, Lde/rki/coronawarnapp/diagnosiskeys/download/HourPackageSyncTool$syncMissingHourPackages$1;->L$0:Ljava/lang/Object;
 
     iput-object v7, v3, Lde/rki/coronawarnapp/diagnosiskeys/download/HourPackageSyncTool$syncMissingHourPackages$1;->L$1:Ljava/lang/Object;
@@ -1845,7 +1850,7 @@
     return-object v4
 
     :cond_a
-    :goto_8
+    :goto_9
     move-object v1, v2
 
     check-cast v1, Ljava/util/Collection;
@@ -1885,7 +1890,7 @@
     return-object v4
 
     :cond_b
-    :goto_9
+    :goto_a
     check-cast v2, Ljava/lang/Iterable;
 
     invoke-static {v2}, Lkotlin/collections/CollectionsKt___CollectionsKt;->filterNotNull(Ljava/lang/Iterable;)Ljava/util/List;
@@ -1942,7 +1947,7 @@
 
     const-string v10, "/"
 
-    invoke-static {v7, v5, v10, v6}, Lcom/airbnb/lottie/utils/GammaEvaluator$$ExternalSyntheticOutline0;->m(Ljava/lang/String;ILjava/lang/String;I)Ljava/lang/String;
+    invoke-static {v7, v5, v10, v6}, Landroidx/camera/camera2/internal/Camera2CameraImpl$$ExternalSyntheticOutline0;->m(Ljava/lang/String;ILjava/lang/String;I)Ljava/lang/String;
 
     move-result-object v5
 
@@ -1962,15 +1967,17 @@
 
     if-ne v1, v4, :cond_c
 
-    goto :goto_a
+    goto :goto_b
 
     :cond_c
     move v8, v9
 
-    :goto_a
+    :goto_b
     invoke-direct {v3, v8, v2}, Lde/rki/coronawarnapp/diagnosiskeys/download/BaseKeyPackageSyncTool$SyncResult;-><init>(ZLjava/util/List;)V
 
     return-object v3
+
+    nop
 
     :pswitch_data_0
     .packed-switch 0x0

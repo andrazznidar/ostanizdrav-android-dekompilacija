@@ -21,13 +21,13 @@
 
     sput-object v0, Lde/rki/coronawarnapp/databinding/TracingContentFailedViewBindingImpl;->sViewsWithIds:Landroid/util/SparseIntArray;
 
-    const v1, 0x7f0a05b3
+    const v1, 0x7f0a0600
 
     const/4 v2, 0x5
 
     invoke-virtual {v0, v1, v2}, Landroid/util/SparseIntArray;->put(II)V
 
-    const v1, 0x7f0a05b1
+    const v1, 0x7f0a05fe
 
     const/4 v2, 0x6
 
@@ -218,7 +218,7 @@
 
     if-ne v7, v8, :cond_0
 
-    const v7, 0x7f1303e3
+    const v7, 0x7f1303f6
 
     goto :goto_0
 
@@ -230,12 +230,12 @@
     throw v0
 
     :cond_1
-    const v7, 0x7f1303e8
+    const v7, 0x7f1303fa
 
     goto :goto_0
 
     :cond_2
-    const v7, 0x7f1303e9
+    const v7, 0x7f1303fb
 
     :goto_0
     invoke-virtual {v6, v7}, Landroid/content/Context;->getString(I)Ljava/lang/String;
@@ -246,7 +246,7 @@
 
     invoke-static {v7, v8}, Lkotlin/jvm/internal/Intrinsics;->checkNotNullExpressionValue(Ljava/lang/Object;Ljava/lang/String;)V
 
-    const v8, 0x7f1303ed
+    const v8, 0x7f1303ff
 
     invoke-virtual {v6, v8}, Landroid/content/Context;->getString(I)Ljava/lang/String;
 
@@ -260,9 +260,9 @@
 
     aput-object v7, v8, v2
 
-    const-string v7, "java.lang.String.format(this, *args)"
+    const-string v7, "format(this, *args)"
 
-    invoke-static {v8, v3, v6, v7}, Lde/rki/coronawarnapp/coronatest/server/VerificationServer$retrieveRegistrationToken$2$$ExternalSyntheticOutline0;->m([Ljava/lang/Object;ILjava/lang/String;Ljava/lang/String;)Ljava/lang/String;
+    invoke-static {v8, v3, v6, v7}, Landroidx/lifecycle/ViewModelKt$$ExternalSyntheticOutline0;->m([Ljava/lang/Object;ILjava/lang/String;Ljava/lang/String;)Ljava/lang/String;
 
     move-result-object v6
 
@@ -280,7 +280,7 @@
 
     if-eqz v8, :cond_3
 
-    const v9, 0x7f1303dd
+    const v9, 0x7f1303f1
 
     new-array v10, v3, [Ljava/lang/Object;
 
@@ -301,7 +301,7 @@
     goto :goto_1
 
     :cond_3
-    const v2, 0x7f1303d9
+    const v2, 0x7f1303f0
 
     invoke-virtual {v7, v2}, Landroid/content/Context;->getString(I)Ljava/lang/String;
 
@@ -464,7 +464,7 @@
     :try_end_0
     .catchall {:try_start_0 .. :try_end_0} :catchall_0
 
-    const/16 p1, 0x29
+    const/16 p1, 0x27
 
     invoke-virtual {p0, p1}, Landroidx/databinding/BaseObservable;->notifyPropertyChanged(I)V
 

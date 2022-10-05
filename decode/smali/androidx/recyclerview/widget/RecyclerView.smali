@@ -4150,7 +4150,7 @@
 
     iget v3, v0, Landroidx/recyclerview/widget/RecyclerView$Adapter;->mStateRestorationPolicy:I
 
-    invoke-static {v3}, Landroidx/constraintlayout/core/SolverVariable$Type$r8$EnumUnboxingUtility;->$enumboxing$ordinal(I)I
+    invoke-static {v3}, Landroidx/camera/camera2/internal/Camera2CameraImpl$InternalState$EnumUnboxingSharedUtility;->ordinal(I)I
 
     move-result v3
 
@@ -4477,7 +4477,7 @@
 .method public draw(Landroid/graphics/Canvas;)V
     .locals 7
 
-    invoke-super {p0, p1}, Landroid/view/View;->draw(Landroid/graphics/Canvas;)V
+    invoke-super {p0, p1}, Landroid/view/ViewGroup;->draw(Landroid/graphics/Canvas;)V
 
     iget-object v0, p0, Landroidx/recyclerview/widget/RecyclerView;->mItemDecorations:Ljava/util/ArrayList;
 
@@ -5147,7 +5147,7 @@
 
     move-result-object v0
 
-    invoke-super {p0}, Landroid/view/View;->toString()Ljava/lang/String;
+    invoke-super {p0}, Landroid/view/ViewGroup;->toString()Ljava/lang/String;
 
     move-result-object v1
 
@@ -6228,7 +6228,7 @@
     return v0
 
     :cond_0
-    invoke-super {p0}, Landroid/view/View;->getBaseline()I
+    invoke-super {p0}, Landroid/view/ViewGroup;->getBaseline()I
 
     move-result v0
 
@@ -7106,7 +7106,7 @@
 .method public onDraw(Landroid/graphics/Canvas;)V
     .locals 4
 
-    invoke-super {p0, p1}, Landroid/view/View;->onDraw(Landroid/graphics/Canvas;)V
+    invoke-super {p0, p1}, Landroid/view/ViewGroup;->onDraw(Landroid/graphics/Canvas;)V
 
     iget-object v0, p0, Landroidx/recyclerview/widget/RecyclerView;->mItemDecorations:Ljava/util/ArrayList;
 
@@ -8246,7 +8246,7 @@
 
     if-nez v0, :cond_0
 
-    invoke-super {p0, p1}, Landroid/view/View;->onRestoreInstanceState(Landroid/os/Parcelable;)V
+    invoke-super {p0, p1}, Landroid/view/ViewGroup;->onRestoreInstanceState(Landroid/os/Parcelable;)V
 
     return-void
 
@@ -8257,7 +8257,7 @@
 
     iget-object p1, p1, Landroidx/customview/view/AbsSavedState;->mSuperState:Landroid/os/Parcelable;
 
-    invoke-super {p0, p1}, Landroid/view/View;->onRestoreInstanceState(Landroid/os/Parcelable;)V
+    invoke-super {p0, p1}, Landroid/view/ViewGroup;->onRestoreInstanceState(Landroid/os/Parcelable;)V
 
     invoke-virtual {p0}, Landroidx/recyclerview/widget/RecyclerView;->requestLayout()V
 
@@ -8269,7 +8269,7 @@
 
     new-instance v0, Landroidx/recyclerview/widget/RecyclerView$SavedState;
 
-    invoke-super {p0}, Landroid/view/View;->onSaveInstanceState()Landroid/os/Parcelable;
+    invoke-super {p0}, Landroid/view/ViewGroup;->onSaveInstanceState()Landroid/os/Parcelable;
 
     move-result-object v1
 
@@ -8310,7 +8310,7 @@
 .method public onSizeChanged(IIII)V
     .locals 0
 
-    invoke-super {p0, p1, p2, p3, p4}, Landroid/view/View;->onSizeChanged(IIII)V
+    invoke-super {p0, p1, p2, p3, p4}, Landroid/view/ViewGroup;->onSizeChanged(IIII)V
 
     if-ne p1, p3, :cond_0
 
@@ -10297,7 +10297,7 @@
 
     if-nez v0, :cond_0
 
-    invoke-super {p0}, Landroid/view/View;->requestLayout()V
+    invoke-super {p0}, Landroid/view/ViewGroup;->requestLayout()V
 
     goto :goto_0
 
@@ -11078,7 +11078,7 @@
     return-void
 
     :cond_3
-    invoke-super {p0, p1}, Landroid/view/View;->sendAccessibilityEventUnchecked(Landroid/view/accessibility/AccessibilityEvent;)V
+    invoke-super {p0, p1}, Landroid/view/ViewGroup;->sendAccessibilityEventUnchecked(Landroid/view/accessibility/AccessibilityEvent;)V
 
     return-void
 .end method
@@ -11819,7 +11819,7 @@
 
     invoke-direct {v1}, Ljava/lang/StringBuilder;-><init>()V
 
-    const-string v2, "setScrollingTouchSlop(): bad argument constant "
+    const-string/jumbo v2, "setScrollingTouchSlop(): bad argument constant "
 
     invoke-virtual {v1, v2}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
 

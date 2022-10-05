@@ -2,12 +2,15 @@
 .super Ljava/lang/Object;
 
 # interfaces
-.implements Ljava/security/Key;
-.implements Ljava/security/PublicKey;
+.implements Lorg/bouncycastle/pqc/jcajce/interfaces/NHPublicKey;
+
+
+# static fields
+.field private static final serialVersionUID:J = 0x1L
 
 
 # instance fields
-.field public transient params:Lorg/bouncycastle/pqc/crypto/newhope/NHPublicKeyParameters;
+.field private transient params:Lorg/bouncycastle/pqc/crypto/newhope/NHPublicKeyParameters;
 
 
 # direct methods
@@ -21,6 +24,29 @@
 
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
+    invoke-direct {p0, p1}, Lorg/bouncycastle/pqc/jcajce/provider/newhope/BCNHPublicKey;->init(Lorg/bouncycastle/asn1/x509/SubjectPublicKeyInfo;)V
+
+    return-void
+.end method
+
+.method public constructor <init>(Lorg/bouncycastle/pqc/crypto/newhope/NHPublicKeyParameters;)V
+    .locals 0
+
+    invoke-direct {p0}, Ljava/lang/Object;-><init>()V
+
+    iput-object p1, p0, Lorg/bouncycastle/pqc/jcajce/provider/newhope/BCNHPublicKey;->params:Lorg/bouncycastle/pqc/crypto/newhope/NHPublicKeyParameters;
+
+    return-void
+.end method
+
+.method private init(Lorg/bouncycastle/asn1/x509/SubjectPublicKeyInfo;)V
+    .locals 0
+    .annotation system Ldalvik/annotation/Throws;
+        value = {
+            Ljava/io/IOException;
+        }
+    .end annotation
+
     invoke-static {p1}, Lorg/bouncycastle/pqc/crypto/util/PublicKeyFactory;->createKey(Lorg/bouncycastle/asn1/x509/SubjectPublicKeyInfo;)Lorg/bouncycastle/crypto/params/AsymmetricKeyParameter;
 
     move-result-object p1
@@ -28,6 +54,51 @@
     check-cast p1, Lorg/bouncycastle/pqc/crypto/newhope/NHPublicKeyParameters;
 
     iput-object p1, p0, Lorg/bouncycastle/pqc/jcajce/provider/newhope/BCNHPublicKey;->params:Lorg/bouncycastle/pqc/crypto/newhope/NHPublicKeyParameters;
+
+    return-void
+.end method
+
+.method private readObject(Ljava/io/ObjectInputStream;)V
+    .locals 0
+    .annotation system Ldalvik/annotation/Throws;
+        value = {
+            Ljava/io/IOException;,
+            Ljava/lang/ClassNotFoundException;
+        }
+    .end annotation
+
+    invoke-virtual {p1}, Ljava/io/ObjectInputStream;->defaultReadObject()V
+
+    invoke-virtual {p1}, Ljava/io/ObjectInputStream;->readObject()Ljava/lang/Object;
+
+    move-result-object p1
+
+    check-cast p1, [B
+
+    invoke-static {p1}, Lorg/bouncycastle/asn1/x509/SubjectPublicKeyInfo;->getInstance(Ljava/lang/Object;)Lorg/bouncycastle/asn1/x509/SubjectPublicKeyInfo;
+
+    move-result-object p1
+
+    invoke-direct {p0, p1}, Lorg/bouncycastle/pqc/jcajce/provider/newhope/BCNHPublicKey;->init(Lorg/bouncycastle/asn1/x509/SubjectPublicKeyInfo;)V
+
+    return-void
+.end method
+
+.method private writeObject(Ljava/io/ObjectOutputStream;)V
+    .locals 1
+    .annotation system Ldalvik/annotation/Throws;
+        value = {
+            Ljava/io/IOException;
+        }
+    .end annotation
+
+    invoke-virtual {p1}, Ljava/io/ObjectOutputStream;->defaultWriteObject()V
+
+    invoke-virtual {p0}, Lorg/bouncycastle/pqc/jcajce/provider/newhope/BCNHPublicKey;->getEncoded()[B
+
+    move-result-object v0
+
+    invoke-virtual {p1, v0}, Ljava/io/ObjectOutputStream;->writeObject(Ljava/lang/Object;)V
 
     return-void
 .end method
@@ -109,6 +180,26 @@
     .locals 1
 
     const-string v0, "X.509"
+
+    return-object v0
+.end method
+
+.method public getKeyParams()Lorg/bouncycastle/crypto/CipherParameters;
+    .locals 1
+
+    iget-object v0, p0, Lorg/bouncycastle/pqc/jcajce/provider/newhope/BCNHPublicKey;->params:Lorg/bouncycastle/pqc/crypto/newhope/NHPublicKeyParameters;
+
+    return-object v0
+.end method
+
+.method public getPublicData()[B
+    .locals 1
+
+    iget-object v0, p0, Lorg/bouncycastle/pqc/jcajce/provider/newhope/BCNHPublicKey;->params:Lorg/bouncycastle/pqc/crypto/newhope/NHPublicKeyParameters;
+
+    invoke-virtual {v0}, Lorg/bouncycastle/pqc/crypto/newhope/NHPublicKeyParameters;->getPubData()[B
+
+    move-result-object v0
 
     return-object v0
 .end method

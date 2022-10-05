@@ -4,13 +4,13 @@
 
 
 # instance fields
-.field public final classProto:Lkotlin/reflect/jvm/internal/impl/metadata/ProtoBuf$Class;
+.field private final classProto:Lkotlin/reflect/jvm/internal/impl/metadata/ProtoBuf$Class;
 
-.field public final metadataVersion:Lkotlin/reflect/jvm/internal/impl/metadata/deserialization/BinaryVersion;
+.field private final metadataVersion:Lkotlin/reflect/jvm/internal/impl/metadata/deserialization/BinaryVersion;
 
-.field public final nameResolver:Lkotlin/reflect/jvm/internal/impl/metadata/deserialization/NameResolver;
+.field private final nameResolver:Lkotlin/reflect/jvm/internal/impl/metadata/deserialization/NameResolver;
 
-.field public final sourceElement:Lkotlin/reflect/jvm/internal/impl/descriptors/SourceElement;
+.field private final sourceElement:Lkotlin/reflect/jvm/internal/impl/descriptors/SourceElement;
 
 
 # direct methods
@@ -48,6 +48,38 @@
 
 
 # virtual methods
+.method public final component1()Lkotlin/reflect/jvm/internal/impl/metadata/deserialization/NameResolver;
+    .locals 1
+
+    iget-object v0, p0, Lkotlin/reflect/jvm/internal/impl/serialization/deserialization/ClassData;->nameResolver:Lkotlin/reflect/jvm/internal/impl/metadata/deserialization/NameResolver;
+
+    return-object v0
+.end method
+
+.method public final component2()Lkotlin/reflect/jvm/internal/impl/metadata/ProtoBuf$Class;
+    .locals 1
+
+    iget-object v0, p0, Lkotlin/reflect/jvm/internal/impl/serialization/deserialization/ClassData;->classProto:Lkotlin/reflect/jvm/internal/impl/metadata/ProtoBuf$Class;
+
+    return-object v0
+.end method
+
+.method public final component3()Lkotlin/reflect/jvm/internal/impl/metadata/deserialization/BinaryVersion;
+    .locals 1
+
+    iget-object v0, p0, Lkotlin/reflect/jvm/internal/impl/serialization/deserialization/ClassData;->metadataVersion:Lkotlin/reflect/jvm/internal/impl/metadata/deserialization/BinaryVersion;
+
+    return-object v0
+.end method
+
+.method public final component4()Lkotlin/reflect/jvm/internal/impl/descriptors/SourceElement;
+    .locals 1
+
+    iget-object v0, p0, Lkotlin/reflect/jvm/internal/impl/serialization/deserialization/ClassData;->sourceElement:Lkotlin/reflect/jvm/internal/impl/descriptors/SourceElement;
+
+    return-object v0
+.end method
+
 .method public equals(Ljava/lang/Object;)Z
     .locals 4
 

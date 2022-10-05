@@ -45,84 +45,38 @@
 
 # virtual methods
 .method public equals(Ljava/lang/Object;)Z
-    .locals 4
+    .locals 1
 
-    const/4 v0, 0x1
+    if-eqz p1, :cond_1
 
-    if-ne p0, p1, :cond_0
+    instance-of v0, p1, Lde/rki/coronawarnapp/covidcertificate/common/certificate/CertificatePersonIdentifier;
 
-    return v0
+    if-nez v0, :cond_0
+
+    goto :goto_0
 
     :cond_0
-    instance-of v1, p1, Lde/rki/coronawarnapp/covidcertificate/common/certificate/CertificatePersonIdentifier;
-
-    const/4 v2, 0x0
-
-    if-nez v1, :cond_1
-
-    return v2
-
-    :cond_1
-    check-cast p1, Lde/rki/coronawarnapp/covidcertificate/common/certificate/CertificatePersonIdentifier;
-
-    iget-object v1, p0, Lde/rki/coronawarnapp/covidcertificate/common/certificate/CertificatePersonIdentifier;->dateOfBirthFormatted:Ljava/lang/String;
-
-    iget-object v3, p1, Lde/rki/coronawarnapp/covidcertificate/common/certificate/CertificatePersonIdentifier;->dateOfBirthFormatted:Ljava/lang/String;
-
-    invoke-static {v1, v3}, Lkotlin/jvm/internal/Intrinsics;->areEqual(Ljava/lang/Object;Ljava/lang/Object;)Z
-
-    move-result v1
-
-    if-nez v1, :cond_2
-
-    return v2
-
-    :cond_2
-    iget-object v1, p0, Lde/rki/coronawarnapp/covidcertificate/common/certificate/CertificatePersonIdentifier;->lastNameStandardized:Ljava/lang/String;
-
-    iget-object v3, p1, Lde/rki/coronawarnapp/covidcertificate/common/certificate/CertificatePersonIdentifier;->lastNameStandardized:Ljava/lang/String;
-
-    invoke-static {v1, v3}, Lkotlin/jvm/internal/Intrinsics;->areEqual(Ljava/lang/Object;Ljava/lang/Object;)Z
-
-    move-result v1
-
-    if-nez v1, :cond_3
-
-    return v2
-
-    :cond_3
-    iget-object v1, p0, Lde/rki/coronawarnapp/covidcertificate/common/certificate/CertificatePersonIdentifier;->firstNameStandardized:Ljava/lang/String;
-
-    iget-object p1, p1, Lde/rki/coronawarnapp/covidcertificate/common/certificate/CertificatePersonIdentifier;->firstNameStandardized:Ljava/lang/String;
-
-    invoke-static {v1, p1}, Lkotlin/jvm/internal/Intrinsics;->areEqual(Ljava/lang/Object;Ljava/lang/Object;)Z
-
-    move-result p1
-
-    if-nez p1, :cond_4
-
-    return v2
-
-    :cond_4
-    return v0
-.end method
-
-.method public final getCode$Corona_Warn_App_deviceRelease()Ljava/lang/String;
-    .locals 4
-
-    iget-object v0, p0, Lde/rki/coronawarnapp/covidcertificate/common/certificate/CertificatePersonIdentifier;->lastNameStandardized:Ljava/lang/String;
-
-    iget-object v1, p0, Lde/rki/coronawarnapp/covidcertificate/common/certificate/CertificatePersonIdentifier;->firstNameStandardized:Ljava/lang/String;
-
-    iget-object v2, p0, Lde/rki/coronawarnapp/covidcertificate/common/certificate/CertificatePersonIdentifier;->dateOfBirthFormatted:Ljava/lang/String;
-
-    const-string v3, "#"
-
-    invoke-static {v2, v3, v0, v3, v1}, Landroidx/fragment/app/FragmentContainerView$$ExternalSyntheticOutline0;->m(Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;)Ljava/lang/String;
+    invoke-virtual {p0}, Lde/rki/coronawarnapp/covidcertificate/common/certificate/CertificatePersonIdentifier;->getGroupingKey$Corona_Warn_App_deviceRelease()Ljava/lang/String;
 
     move-result-object v0
 
-    return-object v0
+    check-cast p1, Lde/rki/coronawarnapp/covidcertificate/common/certificate/CertificatePersonIdentifier;
+
+    invoke-virtual {p1}, Lde/rki/coronawarnapp/covidcertificate/common/certificate/CertificatePersonIdentifier;->getGroupingKey$Corona_Warn_App_deviceRelease()Ljava/lang/String;
+
+    move-result-object p1
+
+    invoke-static {v0, p1}, Lkotlin/jvm/internal/Intrinsics;->areEqual(Ljava/lang/Object;Ljava/lang/Object;)Z
+
+    move-result p1
+
+    return p1
+
+    :cond_1
+    :goto_0
+    const/4 p1, 0x0
+
+    return p1
 .end method
 
 .method public final getCodeSHA256()Ljava/lang/String;
@@ -130,7 +84,7 @@
 
     sget-object v0, Lde/rki/coronawarnapp/util/HashExtensions;->INSTANCE:Lde/rki/coronawarnapp/util/HashExtensions;
 
-    invoke-virtual {p0}, Lde/rki/coronawarnapp/covidcertificate/common/certificate/CertificatePersonIdentifier;->getCode$Corona_Warn_App_deviceRelease()Ljava/lang/String;
+    invoke-virtual {p0}, Lde/rki/coronawarnapp/covidcertificate/common/certificate/CertificatePersonIdentifier;->getGroupingKey$Corona_Warn_App_deviceRelease()Ljava/lang/String;
 
     move-result-object v1
 
@@ -138,7 +92,7 @@
 
     const/4 v3, 0x1
 
-    invoke-static {v0, v1, v2, v3}, Lde/rki/coronawarnapp/util/HashExtensions;->toSHA256$default(Lde/rki/coronawarnapp/util/HashExtensions;Ljava/lang/String;Lde/rki/coronawarnapp/util/HashExtensions$Format;I)Ljava/lang/String;
+    invoke-static {v0, v1, v2, v3}, Lde/rki/coronawarnapp/util/HashExtensions;->toSHA256$default(Lde/rki/coronawarnapp/util/HashExtensions;Ljava/lang/String;II)Ljava/lang/String;
 
     move-result-object v0
 
@@ -161,32 +115,18 @@
     return-object v0
 .end method
 
-.method public final getLastNameStandardized()Ljava/lang/String;
-    .locals 1
+.method public final getGroupingKey$Corona_Warn_App_deviceRelease()Ljava/lang/String;
+    .locals 4
 
     iget-object v0, p0, Lde/rki/coronawarnapp/covidcertificate/common/certificate/CertificatePersonIdentifier;->lastNameStandardized:Ljava/lang/String;
 
-    return-object v0
-.end method
+    invoke-static {v0}, Lkotlin/text/StringsKt__StringsKt;->trim(Ljava/lang/CharSequence;)Ljava/lang/CharSequence;
 
-.method public hashCode()I
-    .locals 3
+    move-result-object v0
 
-    iget-object v0, p0, Lde/rki/coronawarnapp/covidcertificate/common/certificate/CertificatePersonIdentifier;->dateOfBirthFormatted:Ljava/lang/String;
+    invoke-virtual {v0}, Ljava/lang/Object;->toString()Ljava/lang/String;
 
-    invoke-virtual {v0}, Ljava/lang/String;->hashCode()I
-
-    move-result v0
-
-    mul-int/lit8 v0, v0, 0x1f
-
-    iget-object v1, p0, Lde/rki/coronawarnapp/covidcertificate/common/certificate/CertificatePersonIdentifier;->lastNameStandardized:Ljava/lang/String;
-
-    const/16 v2, 0x1f
-
-    invoke-static {v1, v0, v2}, Landroidx/room/util/TableInfo$ForeignKey$$ExternalSyntheticOutline0;->m(Ljava/lang/String;II)I
-
-    move-result v0
+    move-result-object v0
 
     iget-object v1, p0, Lde/rki/coronawarnapp/covidcertificate/common/certificate/CertificatePersonIdentifier;->firstNameStandardized:Ljava/lang/String;
 
@@ -197,12 +137,92 @@
     goto :goto_0
 
     :cond_0
-    invoke-virtual {v1}, Ljava/lang/String;->hashCode()I
+    invoke-static {v1}, Lkotlin/text/StringsKt__StringsKt;->trim(Ljava/lang/CharSequence;)Ljava/lang/CharSequence;
 
-    move-result v1
+    move-result-object v1
+
+    invoke-virtual {v1}, Ljava/lang/Object;->toString()Ljava/lang/String;
+
+    move-result-object v1
 
     :goto_0
-    add-int/2addr v0, v1
+    iget-object v2, p0, Lde/rki/coronawarnapp/covidcertificate/common/certificate/CertificatePersonIdentifier;->dateOfBirthFormatted:Ljava/lang/String;
+
+    const-string v3, "#"
+
+    invoke-static {v2, v3, v0, v3, v1}, Landroidx/camera/camera2/internal/compat/CameraDeviceCompatBaseImpl$$ExternalSyntheticOutline0;->m(Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;)Ljava/lang/String;
+
+    move-result-object v0
+
+    const-string v1, "<this>"
+
+    invoke-static {v0, v1}, Lkotlin/jvm/internal/Intrinsics;->checkNotNullParameter(Ljava/lang/Object;Ljava/lang/String;)V
+
+    const-string v1, "\\s+"
+
+    invoke-static {v1}, Ljava/util/regex/Pattern;->compile(Ljava/lang/String;)Ljava/util/regex/Pattern;
+
+    move-result-object v1
+
+    const-string v2, "compile(pattern)"
+
+    invoke-static {v1, v2}, Lkotlin/jvm/internal/Intrinsics;->checkNotNullExpressionValue(Ljava/lang/Object;Ljava/lang/String;)V
+
+    invoke-virtual {v1, v0}, Ljava/util/regex/Pattern;->matcher(Ljava/lang/CharSequence;)Ljava/util/regex/Matcher;
+
+    move-result-object v0
+
+    const-string v1, " "
+
+    invoke-virtual {v0, v1}, Ljava/util/regex/Matcher;->replaceAll(Ljava/lang/String;)Ljava/lang/String;
+
+    move-result-object v0
+
+    const-string v1, "nativePattern.matcher(in\u2026).replaceAll(replacement)"
+
+    invoke-static {v0, v1}, Lkotlin/jvm/internal/Intrinsics;->checkNotNullExpressionValue(Ljava/lang/Object;Ljava/lang/String;)V
+
+    const-string v3, "<+"
+
+    invoke-static {v3}, Ljava/util/regex/Pattern;->compile(Ljava/lang/String;)Ljava/util/regex/Pattern;
+
+    move-result-object v3
+
+    invoke-static {v3, v2}, Lkotlin/jvm/internal/Intrinsics;->checkNotNullExpressionValue(Ljava/lang/Object;Ljava/lang/String;)V
+
+    invoke-virtual {v3, v0}, Ljava/util/regex/Pattern;->matcher(Ljava/lang/CharSequence;)Ljava/util/regex/Matcher;
+
+    move-result-object v0
+
+    const-string v2, "<"
+
+    invoke-virtual {v0, v2}, Ljava/util/regex/Matcher;->replaceAll(Ljava/lang/String;)Ljava/lang/String;
+
+    move-result-object v0
+
+    invoke-static {v0, v1}, Lkotlin/jvm/internal/Intrinsics;->checkNotNullExpressionValue(Ljava/lang/Object;Ljava/lang/String;)V
+
+    return-object v0
+.end method
+
+.method public final getLastNameStandardized()Ljava/lang/String;
+    .locals 1
+
+    iget-object v0, p0, Lde/rki/coronawarnapp/covidcertificate/common/certificate/CertificatePersonIdentifier;->lastNameStandardized:Ljava/lang/String;
+
+    return-object v0
+.end method
+
+.method public hashCode()I
+    .locals 1
+
+    invoke-virtual {p0}, Lde/rki/coronawarnapp/covidcertificate/common/certificate/CertificatePersonIdentifier;->getGroupingKey$Corona_Warn_App_deviceRelease()Ljava/lang/String;
+
+    move-result-object v0
+
+    invoke-virtual {v0}, Ljava/lang/String;->hashCode()I
+
+    move-result v0
 
     return v0
 .end method
@@ -228,7 +248,7 @@
 
     const-string v1, ")"
 
-    invoke-static {v0, v2, v1}, Landroidx/constraintlayout/core/widgets/Barrier$$ExternalSyntheticOutline0;->m(Ljava/lang/StringBuilder;Ljava/lang/String;Ljava/lang/String;)Ljava/lang/String;
+    invoke-static {v0, v2, v1}, Landroidx/activity/ComponentActivity$2$$ExternalSyntheticOutline0;->m(Ljava/lang/StringBuilder;Ljava/lang/String;Ljava/lang/String;)Ljava/lang/String;
 
     move-result-object v0
 

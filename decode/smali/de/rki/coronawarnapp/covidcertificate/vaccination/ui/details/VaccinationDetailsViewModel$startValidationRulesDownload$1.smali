@@ -25,7 +25,7 @@
     c = "de.rki.coronawarnapp.covidcertificate.vaccination.ui.details.VaccinationDetailsViewModel$startValidationRulesDownload$1"
     f = "VaccinationDetailsViewModel.kt"
     l = {
-        0x4f
+        0x46
     }
     m = "invokeSuspend"
 .end annotation
@@ -127,11 +127,6 @@
 
     goto :goto_0
 
-    :catch_0
-    move-exception p1
-
-    goto :goto_1
-
     :cond_0
     new-instance p1, Ljava/lang/IllegalStateException;
 
@@ -175,9 +170,11 @@
     :try_end_1
     .catch Ljava/lang/Exception; {:try_start_1 .. :try_end_1} :catch_0
 
-    goto :goto_2
+    goto :goto_1
 
-    :goto_1
+    :catch_0
+    move-exception p1
+
     sget-object v0, Ltimber/log/Timber;->Forest:Ltimber/log/Timber$Forest;
 
     new-array v1, v2, [Ljava/lang/Object;
@@ -200,7 +197,7 @@
 
     invoke-virtual {v0, p1}, Landroidx/lifecycle/MutableLiveData;->postValue(Ljava/lang/Object;)V
 
-    :goto_2
+    :goto_1
     sget-object p1, Lkotlin/Unit;->INSTANCE:Lkotlin/Unit;
 
     return-object p1

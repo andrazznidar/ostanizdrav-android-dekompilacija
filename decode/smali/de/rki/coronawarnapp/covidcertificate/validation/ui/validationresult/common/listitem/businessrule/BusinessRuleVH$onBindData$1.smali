@@ -32,7 +32,7 @@
 .end annotation
 
 .annotation system Ldalvik/annotation/SourceDebugExtension;
-    value = "SMAP\nBusinessRuleVH.kt\nKotlin\n*S Kotlin\n*F\n+ 1 BusinessRuleVH.kt\nde/rki/coronawarnapp/covidcertificate/validation/ui/validationresult/common/listitem/businessrule/BusinessRuleVH$onBindData$1\n+ 2 _Collections.kt\nkotlin/collections/CollectionsKt___CollectionsKt\n*L\n1#1,57:1\n798#2,11:58\n*S KotlinDebug\n*F\n+ 1 BusinessRuleVH.kt\nde/rki/coronawarnapp/covidcertificate/validation/ui/validationresult/common/listitem/businessrule/BusinessRuleVH$onBindData$1\n*L\n31#1:58,11\n*E\n"
+    value = "SMAP\nBusinessRuleVH.kt\nKotlin\n*S Kotlin\n*F\n+ 1 BusinessRuleVH.kt\nde/rki/coronawarnapp/covidcertificate/validation/ui/validationresult/common/listitem/businessrule/BusinessRuleVH$onBindData$1\n+ 2 _Collections.kt\nkotlin/collections/CollectionsKt___CollectionsKt\n*L\n1#1,55:1\n798#2,11:56\n*S KotlinDebug\n*F\n+ 1 BusinessRuleVH.kt\nde/rki/coronawarnapp/covidcertificate/validation/ui/validationresult/common/listitem/businessrule/BusinessRuleVH$onBindData$1\n*L\n31#1:56,11\n*E\n"
 .end annotation
 
 
@@ -105,7 +105,7 @@
     goto :goto_0
 
     :cond_1
-    invoke-static {v0}, Lkotlin/collections/CollectionsKt___CollectionsKt;->singleOrNull(Ljava/util/List;)Ljava/lang/Object;
+    invoke-static {v0}, Lkotlin/collections/CollectionsKt___CollectionsKt;->lastOrNull(Ljava/util/List;)Ljava/lang/Object;
 
     move-result-object p3
 
@@ -169,7 +169,7 @@
 
     const/4 v3, 0x2
 
-    invoke-static {v0, v1, v2, v3}, Lde/rki/coronawarnapp/util/lists/diffutil/SmartDiffUtilKt;->update$default(Landroidx/recyclerview/widget/RecyclerView$Adapter;Ljava/util/List;ZI)V
+    invoke-static {v0, v1, v2, v3}, Lcom/google/common/collect/Sets;->update$default(Landroidx/recyclerview/widget/RecyclerView$Adapter;Ljava/util/List;ZI)V
 
     iget-object v0, p1, Lde/rki/coronawarnapp/databinding/CovidCertificateValidationResultRuleItemBinding;->ruleId:Landroid/widget/TextView;
 

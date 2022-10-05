@@ -11,10 +11,6 @@
 .end annotation
 
 
-# static fields
-.field public static final synthetic $r8$clinit:I
-
-
 # virtual methods
 .method public abstract isOnline()Z
 .end method

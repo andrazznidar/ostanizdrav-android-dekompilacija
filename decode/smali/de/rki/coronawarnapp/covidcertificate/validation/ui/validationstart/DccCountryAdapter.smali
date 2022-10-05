@@ -29,7 +29,7 @@
 .method public constructor <init>(Landroid/content/Context;)V
     .locals 1
 
-    const v0, 0x7f0d0054
+    const v0, 0x7f0d0053
 
     invoke-direct {p0, p1, v0}, Landroid/widget/ArrayAdapter;-><init>(Landroid/content/Context;I)V
 
@@ -87,7 +87,7 @@
 
     move-result-object p2
 
-    const v0, 0x7f0d0054
+    const v0, 0x7f0d0053
 
     const/4 v1, 0x0
 

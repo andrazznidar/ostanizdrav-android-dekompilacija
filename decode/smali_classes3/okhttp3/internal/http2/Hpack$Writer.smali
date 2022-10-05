@@ -304,10 +304,6 @@
 
     sget-object v0, Lokhttp3/internal/http2/Huffman;->INSTANCE:Lokhttp3/internal/http2/Huffman;
 
-    const-string v0, "bytes"
-
-    invoke-static {p1, v0}, Lkotlin/jvm/internal/Intrinsics;->checkNotNullParameter(Ljava/lang/Object;Ljava/lang/String;)V
-
     invoke-virtual {p1}, Lokio/ByteString;->getSize$okio()I
 
     move-result v0
@@ -365,14 +361,6 @@
     invoke-direct {v0}, Lokio/Buffer;-><init>()V
 
     sget-object v5, Lokhttp3/internal/http2/Huffman;->INSTANCE:Lokhttp3/internal/http2/Huffman;
-
-    const-string v5, "source"
-
-    invoke-static {p1, v5}, Lkotlin/jvm/internal/Intrinsics;->checkNotNullParameter(Ljava/lang/Object;Ljava/lang/String;)V
-
-    const-string v5, "sink"
-
-    invoke-static {v0, v5}, Lkotlin/jvm/internal/Intrinsics;->checkNotNullParameter(Ljava/lang/Object;Ljava/lang/String;)V
 
     invoke-virtual {p1}, Lokio/ByteString;->getSize$okio()I
 

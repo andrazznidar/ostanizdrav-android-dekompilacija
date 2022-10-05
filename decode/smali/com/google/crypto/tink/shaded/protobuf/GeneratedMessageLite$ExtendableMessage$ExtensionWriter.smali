@@ -14,6 +14,20 @@
 .end annotation
 
 
+# instance fields
+.field public final iter:Ljava/util/Iterator;
+    .annotation system Ldalvik/annotation/Signature;
+        value = {
+            "Ljava/util/Iterator<",
+            "Ljava/util/Map$Entry<",
+            "Lcom/google/crypto/tink/shaded/protobuf/GeneratedMessageLite$ExtensionDescriptor;",
+            "Ljava/lang/Object;",
+            ">;>;"
+        }
+    .end annotation
+.end field
+
+
 # direct methods
 .method public constructor <init>(Lcom/google/crypto/tink/shaded/protobuf/GeneratedMessageLite$ExtendableMessage;ZLcom/google/crypto/tink/shaded/protobuf/GeneratedMessageLite$1;)V
     .locals 0
@@ -25,6 +39,8 @@
     invoke-virtual {p1}, Lcom/google/crypto/tink/shaded/protobuf/FieldSet;->iterator()Ljava/util/Iterator;
 
     move-result-object p1
+
+    iput-object p1, p0, Lcom/google/crypto/tink/shaded/protobuf/GeneratedMessageLite$ExtendableMessage$ExtensionWriter;->iter:Ljava/util/Iterator;
 
     invoke-interface {p1}, Ljava/util/Iterator;->hasNext()Z
 

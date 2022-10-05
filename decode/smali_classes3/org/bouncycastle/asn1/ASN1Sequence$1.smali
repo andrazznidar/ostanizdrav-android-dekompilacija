@@ -1,4 +1,4 @@
-.class public Lorg/bouncycastle/asn1/ASN1Sequence$1;
+.class Lorg/bouncycastle/asn1/ASN1Sequence$1;
 .super Ljava/lang/Object;
 
 # interfaces
@@ -17,7 +17,7 @@
 
 
 # instance fields
-.field public pos:I
+.field private pos:I
 
 .field public final synthetic this$0:Lorg/bouncycastle/asn1/ASN1Sequence;
 

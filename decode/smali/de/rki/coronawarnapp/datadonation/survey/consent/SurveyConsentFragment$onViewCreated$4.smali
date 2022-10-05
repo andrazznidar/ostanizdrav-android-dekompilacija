@@ -80,9 +80,9 @@
     :cond_0
     new-instance p1, Lde/rki/coronawarnapp/util/DialogHelper$DialogInstance;
 
-    const v5, 0x7f13015a
+    const v5, 0x7f130148
 
-    const v7, 0x7f130159
+    const v7, 0x7f130147
 
     const/4 v8, 0x0
 

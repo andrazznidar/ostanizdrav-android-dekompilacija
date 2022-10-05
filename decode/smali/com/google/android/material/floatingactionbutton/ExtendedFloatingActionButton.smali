@@ -171,19 +171,19 @@
 
     iput v10, v0, Lcom/google/android/material/floatingactionbutton/ExtendedFloatingActionButton;->animState:I
 
-    new-instance v1, Lcom/google/android/play/core/assetpacks/zzv;
+    new-instance v1, Lorg/bouncycastle/crypto/generators/DHKeyPairGenerator;
 
-    invoke-direct {v1}, Lcom/google/android/play/core/assetpacks/zzv;-><init>()V
+    invoke-direct {v1}, Lorg/bouncycastle/crypto/generators/DHKeyPairGenerator;-><init>()V
 
     new-instance v11, Lcom/google/android/material/floatingactionbutton/ExtendedFloatingActionButton$ShowStrategy;
 
-    invoke-direct {v11, v0, v1}, Lcom/google/android/material/floatingactionbutton/ExtendedFloatingActionButton$ShowStrategy;-><init>(Lcom/google/android/material/floatingactionbutton/ExtendedFloatingActionButton;Lcom/google/android/play/core/assetpacks/zzv;)V
+    invoke-direct {v11, v0, v1}, Lcom/google/android/material/floatingactionbutton/ExtendedFloatingActionButton$ShowStrategy;-><init>(Lcom/google/android/material/floatingactionbutton/ExtendedFloatingActionButton;Lorg/bouncycastle/crypto/generators/DHKeyPairGenerator;)V
 
     iput-object v11, v0, Lcom/google/android/material/floatingactionbutton/ExtendedFloatingActionButton;->showStrategy:Lcom/google/android/material/floatingactionbutton/MotionStrategy;
 
     new-instance v12, Lcom/google/android/material/floatingactionbutton/ExtendedFloatingActionButton$HideStrategy;
 
-    invoke-direct {v12, v0, v1}, Lcom/google/android/material/floatingactionbutton/ExtendedFloatingActionButton$HideStrategy;-><init>(Lcom/google/android/material/floatingactionbutton/ExtendedFloatingActionButton;Lcom/google/android/play/core/assetpacks/zzv;)V
+    invoke-direct {v12, v0, v1}, Lcom/google/android/material/floatingactionbutton/ExtendedFloatingActionButton$HideStrategy;-><init>(Lcom/google/android/material/floatingactionbutton/ExtendedFloatingActionButton;Lorg/bouncycastle/crypto/generators/DHKeyPairGenerator;)V
 
     iput-object v12, v0, Lcom/google/android/material/floatingactionbutton/ExtendedFloatingActionButton;->hideStrategy:Lcom/google/android/material/floatingactionbutton/MotionStrategy;
 
@@ -267,9 +267,9 @@
 
     iput v6, v0, Lcom/google/android/material/floatingactionbutton/ExtendedFloatingActionButton;->extendedPaddingEnd:I
 
-    new-instance v6, Lcom/google/android/play/core/assetpacks/zzv;
+    new-instance v6, Lorg/bouncycastle/crypto/generators/DHKeyPairGenerator;
 
-    invoke-direct {v6}, Lcom/google/android/play/core/assetpacks/zzv;-><init>()V
+    invoke-direct {v6}, Lorg/bouncycastle/crypto/generators/DHKeyPairGenerator;-><init>()V
 
     new-instance v15, Lcom/google/android/material/floatingactionbutton/ExtendedFloatingActionButton$ChangeSizeStrategy;
 
@@ -277,7 +277,7 @@
 
     invoke-direct {v10, v0}, Lcom/google/android/material/floatingactionbutton/ExtendedFloatingActionButton$1;-><init>(Lcom/google/android/material/floatingactionbutton/ExtendedFloatingActionButton;)V
 
-    invoke-direct {v15, v0, v6, v10, v13}, Lcom/google/android/material/floatingactionbutton/ExtendedFloatingActionButton$ChangeSizeStrategy;-><init>(Lcom/google/android/material/floatingactionbutton/ExtendedFloatingActionButton;Lcom/google/android/play/core/assetpacks/zzv;Lcom/google/android/material/floatingactionbutton/ExtendedFloatingActionButton$Size;Z)V
+    invoke-direct {v15, v0, v6, v10, v13}, Lcom/google/android/material/floatingactionbutton/ExtendedFloatingActionButton$ChangeSizeStrategy;-><init>(Lcom/google/android/material/floatingactionbutton/ExtendedFloatingActionButton;Lorg/bouncycastle/crypto/generators/DHKeyPairGenerator;Lcom/google/android/material/floatingactionbutton/ExtendedFloatingActionButton$Size;Z)V
 
     iput-object v15, v0, Lcom/google/android/material/floatingactionbutton/ExtendedFloatingActionButton;->extendStrategy:Lcom/google/android/material/floatingactionbutton/MotionStrategy;
 
@@ -289,7 +289,7 @@
 
     const/4 v7, 0x0
 
-    invoke-direct {v10, v0, v6, v13, v7}, Lcom/google/android/material/floatingactionbutton/ExtendedFloatingActionButton$ChangeSizeStrategy;-><init>(Lcom/google/android/material/floatingactionbutton/ExtendedFloatingActionButton;Lcom/google/android/play/core/assetpacks/zzv;Lcom/google/android/material/floatingactionbutton/ExtendedFloatingActionButton$Size;Z)V
+    invoke-direct {v10, v0, v6, v13, v7}, Lcom/google/android/material/floatingactionbutton/ExtendedFloatingActionButton$ChangeSizeStrategy;-><init>(Lcom/google/android/material/floatingactionbutton/ExtendedFloatingActionButton;Lorg/bouncycastle/crypto/generators/DHKeyPairGenerator;Lcom/google/android/material/floatingactionbutton/ExtendedFloatingActionButton$Size;Z)V
 
     iput-object v10, v0, Lcom/google/android/material/floatingactionbutton/ExtendedFloatingActionButton;->shrinkStrategy:Lcom/google/android/material/floatingactionbutton/MotionStrategy;
 
@@ -725,7 +725,7 @@
 .method public setPadding(IIII)V
     .locals 0
 
-    invoke-super {p0, p1, p2, p3, p4}, Landroid/widget/TextView;->setPadding(IIII)V
+    invoke-super {p0, p1, p2, p3, p4}, Landroid/widget/Button;->setPadding(IIII)V
 
     iget-boolean p1, p0, Lcom/google/android/material/floatingactionbutton/ExtendedFloatingActionButton;->isExtended:Z
 
@@ -756,7 +756,7 @@
 .method public setPaddingRelative(IIII)V
     .locals 0
 
-    invoke-super {p0, p1, p2, p3, p4}, Landroid/widget/TextView;->setPaddingRelative(IIII)V
+    invoke-super {p0, p1, p2, p3, p4}, Landroid/widget/Button;->setPaddingRelative(IIII)V
 
     iget-boolean p2, p0, Lcom/google/android/material/floatingactionbutton/ExtendedFloatingActionButton;->isExtended:Z
 
@@ -833,7 +833,7 @@
 .method public setTextColor(I)V
     .locals 0
 
-    invoke-super {p0, p1}, Landroid/widget/TextView;->setTextColor(I)V
+    invoke-super {p0, p1}, Landroid/widget/Button;->setTextColor(I)V
 
     invoke-virtual {p0}, Lcom/google/android/material/floatingactionbutton/ExtendedFloatingActionButton;->saveOriginalTextCsl()V
 
@@ -843,7 +843,7 @@
 .method public setTextColor(Landroid/content/res/ColorStateList;)V
     .locals 0
 
-    invoke-super {p0, p1}, Landroid/widget/TextView;->setTextColor(Landroid/content/res/ColorStateList;)V
+    invoke-super {p0, p1}, Landroid/widget/Button;->setTextColor(Landroid/content/res/ColorStateList;)V
 
     invoke-virtual {p0}, Lcom/google/android/material/floatingactionbutton/ExtendedFloatingActionButton;->saveOriginalTextCsl()V
 
@@ -853,7 +853,7 @@
 .method public silentlyUpdateTextColor(Landroid/content/res/ColorStateList;)V
     .locals 0
 
-    invoke-super {p0, p1}, Landroid/widget/TextView;->setTextColor(Landroid/content/res/ColorStateList;)V
+    invoke-super {p0, p1}, Landroid/widget/Button;->setTextColor(Landroid/content/res/ColorStateList;)V
 
     return-void
 .end method

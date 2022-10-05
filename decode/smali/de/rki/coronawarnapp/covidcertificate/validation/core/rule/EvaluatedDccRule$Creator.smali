@@ -58,11 +58,11 @@
 
     move-result-object p1
 
-    invoke-static {p1}, Lde/rki/coronawarnapp/covidcertificate/validation/core/rule/DccValidationRule$Result;->valueOf(Ljava/lang/String;)Lde/rki/coronawarnapp/covidcertificate/validation/core/rule/DccValidationRule$Result;
+    invoke-static {p1}, Lde/rki/coronawarnapp/server/protocols/internal/RiskScoreParametersOuterClass$RiskScoreParameters$Builder-IA;->valueOf(Ljava/lang/String;)I
 
-    move-result-object p1
+    move-result p1
 
-    invoke-direct {v0, v1, p1}, Lde/rki/coronawarnapp/covidcertificate/validation/core/rule/EvaluatedDccRule;-><init>(Lde/rki/coronawarnapp/covidcertificate/validation/core/rule/DccValidationRule;Lde/rki/coronawarnapp/covidcertificate/validation/core/rule/DccValidationRule$Result;)V
+    invoke-direct {v0, v1, p1}, Lde/rki/coronawarnapp/covidcertificate/validation/core/rule/EvaluatedDccRule;-><init>(Lde/rki/coronawarnapp/covidcertificate/validation/core/rule/DccValidationRule;I)V
 
     return-object v0
 .end method

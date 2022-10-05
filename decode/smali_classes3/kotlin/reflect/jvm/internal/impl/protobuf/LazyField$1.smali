@@ -1,4 +1,4 @@
-.class public synthetic Lkotlin/reflect/jvm/internal/impl/protobuf/LazyField$1;
+.class synthetic Lkotlin/reflect/jvm/internal/impl/protobuf/LazyField$1;
 .super Ljava/lang/Object;
 .source "LazyField.java"
 

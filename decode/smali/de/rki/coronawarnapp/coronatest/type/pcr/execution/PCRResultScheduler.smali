@@ -153,7 +153,7 @@
 
     invoke-direct {v2}, Ljava/lang/StringBuilder;-><init>()V
 
-    const-string v7, "setPcrPeriodicTestPollingEnabled(enabled="
+    const-string/jumbo v7, "setPcrPeriodicTestPollingEnabled(enabled="
 
     invoke-virtual {v2, v7}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
 
@@ -271,11 +271,11 @@
 
     check-cast v1, Landroidx/work/PeriodicWorkRequest$Builder;
 
-    sget-object v2, Landroidx/work/BackoffPolicy;->LINEAR:Landroidx/work/BackoffPolicy;
+    const/4 v2, 0x2
 
     const-wide/16 v5, 0x1
 
-    invoke-virtual {v1, v2, v5, v6, v0}, Landroidx/work/WorkRequest$Builder;->setBackoffCriteria(Landroidx/work/BackoffPolicy;JLjava/util/concurrent/TimeUnit;)Landroidx/work/WorkRequest$Builder;
+    invoke-virtual {v1, v2, v5, v6, v0}, Landroidx/work/WorkRequest$Builder;->setBackoffCriteria$enumunboxing$(IJLjava/util/concurrent/TimeUnit;)Landroidx/work/WorkRequest$Builder;
 
     move-result-object v0
 

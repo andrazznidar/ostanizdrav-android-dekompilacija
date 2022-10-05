@@ -22,11 +22,11 @@
 
 
 # instance fields
-.field public chainAddress:I
+.field private chainAddress:I
 
-.field public hashAddress:I
+.field private hashAddress:I
 
-.field public otsAddress:I
+.field private otsAddress:I
 
 
 # direct methods
@@ -46,6 +46,30 @@
     return-void
 .end method
 
+.method public static synthetic access$000(Lorg/bouncycastle/pqc/crypto/xmss/OTSHashAddress$Builder;)I
+    .locals 0
+
+    iget p0, p0, Lorg/bouncycastle/pqc/crypto/xmss/OTSHashAddress$Builder;->otsAddress:I
+
+    return p0
+.end method
+
+.method public static synthetic access$100(Lorg/bouncycastle/pqc/crypto/xmss/OTSHashAddress$Builder;)I
+    .locals 0
+
+    iget p0, p0, Lorg/bouncycastle/pqc/crypto/xmss/OTSHashAddress$Builder;->chainAddress:I
+
+    return p0
+.end method
+
+.method public static synthetic access$200(Lorg/bouncycastle/pqc/crypto/xmss/OTSHashAddress$Builder;)I
+    .locals 0
+
+    iget p0, p0, Lorg/bouncycastle/pqc/crypto/xmss/OTSHashAddress$Builder;->hashAddress:I
+
+    return p0
+.end method
+
 
 # virtual methods
 .method public build()Lorg/bouncycastle/pqc/crypto/xmss/XMSSAddress;
@@ -60,8 +84,42 @@
     return-object v0
 .end method
 
-.method public getThis()Lorg/bouncycastle/pqc/crypto/xmss/XMSSAddress$Builder;
+.method public getThis()Lorg/bouncycastle/pqc/crypto/xmss/OTSHashAddress$Builder;
     .locals 0
+
+    return-object p0
+.end method
+
+.method public bridge synthetic getThis()Lorg/bouncycastle/pqc/crypto/xmss/XMSSAddress$Builder;
+    .locals 1
+
+    invoke-virtual {p0}, Lorg/bouncycastle/pqc/crypto/xmss/OTSHashAddress$Builder;->getThis()Lorg/bouncycastle/pqc/crypto/xmss/OTSHashAddress$Builder;
+
+    move-result-object v0
+
+    return-object v0
+.end method
+
+.method public withChainAddress(I)Lorg/bouncycastle/pqc/crypto/xmss/OTSHashAddress$Builder;
+    .locals 0
+
+    iput p1, p0, Lorg/bouncycastle/pqc/crypto/xmss/OTSHashAddress$Builder;->chainAddress:I
+
+    return-object p0
+.end method
+
+.method public withHashAddress(I)Lorg/bouncycastle/pqc/crypto/xmss/OTSHashAddress$Builder;
+    .locals 0
+
+    iput p1, p0, Lorg/bouncycastle/pqc/crypto/xmss/OTSHashAddress$Builder;->hashAddress:I
+
+    return-object p0
+.end method
+
+.method public withOTSAddress(I)Lorg/bouncycastle/pqc/crypto/xmss/OTSHashAddress$Builder;
+    .locals 0
+
+    iput p1, p0, Lorg/bouncycastle/pqc/crypto/xmss/OTSHashAddress$Builder;->otsAddress:I
 
     return-object p0
 .end method

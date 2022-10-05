@@ -75,9 +75,7 @@
 
     iput-wide v2, p0, Lde/rki/coronawarnapp/databinding/IncludeSubmissionCountryItemBindingImpl;->mDirtyFlags:J
 
-    iget-object p1, p0, Lde/rki/coronawarnapp/databinding/IncludeSubmissionCountryItemBinding;->submissionCountrySelectorCountryBody:Ljava/lang/Object;
-
-    check-cast p1, Landroidx/constraintlayout/widget/ConstraintLayout;
+    iget-object p1, p0, Lde/rki/coronawarnapp/databinding/IncludeSubmissionCountryItemBinding;->submissionCountrySelectorCountryBody:Landroidx/constraintlayout/widget/ConstraintLayout;
 
     invoke-virtual {p1, v1}, Landroid/view/ViewGroup;->setTag(Ljava/lang/Object;)V
 
@@ -89,9 +87,7 @@
 
     invoke-virtual {p1, v1}, Landroid/widget/TextView;->setTag(Ljava/lang/Object;)V
 
-    iget-object p1, p0, Lde/rki/coronawarnapp/databinding/IncludeSubmissionCountryItemBinding;->submissionCountrySelectorCountryRadiobutton:Ljava/lang/Object;
-
-    check-cast p1, Landroid/widget/CheckBox;
+    iget-object p1, p0, Lde/rki/coronawarnapp/databinding/IncludeSubmissionCountryItemBinding;->submissionCountrySelectorCountryRadiobutton:Landroid/widget/CheckBox;
 
     invoke-virtual {p1, v1}, Landroid/widget/CheckBox;->setTag(Ljava/lang/Object;)V
 
@@ -122,10 +118,6 @@
     :try_end_0
     .catchall {:try_start_0 .. :try_end_0} :catchall_0
 
-    iget-object v4, p0, Lde/rki/coronawarnapp/databinding/IncludeSubmissionCountryItemBinding;->mSubmissionCountry:Ljava/lang/Object;
-
-    check-cast v4, Lde/rki/coronawarnapp/ui/submission/SubmissionCountry;
-
     const-wide/16 v4, 0x3
 
     and-long/2addr v0, v4
@@ -146,23 +138,15 @@
 
     invoke-static {v1, v2}, Lkotlin/jvm/internal/Intrinsics;->checkNotNullParameter(Ljava/lang/Object;Ljava/lang/String;)V
 
-    const-string v2, "<this>"
+    const v2, 0x7f0801b1
 
-    const v3, 0x7f0801b8
+    sget-object v3, Landroidx/core/content/ContextCompat;->sLock:Ljava/lang/Object;
 
-    invoke-static {v1, v2}, Lkotlin/jvm/internal/Intrinsics;->checkNotNullParameter(Ljava/lang/Object;Ljava/lang/String;)V
-
-    sget-object v2, Landroidx/core/content/ContextCompat;->sLock:Ljava/lang/Object;
-
-    invoke-static {v1, v3}, Landroidx/core/content/ContextCompat$Api21Impl;->getDrawable(Landroid/content/Context;I)Landroid/graphics/drawable/Drawable;
+    invoke-static {v1, v2}, Landroidx/core/content/ContextCompat$Api21Impl;->getDrawable(Landroid/content/Context;I)Landroid/graphics/drawable/Drawable;
 
     move-result-object v1
 
     const-string v2, ""
-
-    const-string v3, "country"
-
-    invoke-static {v2, v3}, Lkotlin/jvm/internal/Intrinsics;->checkNotNullExpressionValue(Ljava/lang/Object;Ljava/lang/String;)V
 
     goto :goto_0
 
@@ -182,9 +166,7 @@
 
     invoke-static {v0, v2}, Landroidx/databinding/adapters/TextViewBindingAdapter;->setText(Landroid/widget/TextView;Ljava/lang/CharSequence;)V
 
-    iget-object v0, p0, Lde/rki/coronawarnapp/databinding/IncludeSubmissionCountryItemBinding;->submissionCountrySelectorCountryRadiobutton:Ljava/lang/Object;
-
-    check-cast v0, Landroid/widget/CheckBox;
+    iget-object v0, p0, Lde/rki/coronawarnapp/databinding/IncludeSubmissionCountryItemBinding;->submissionCountrySelectorCountryRadiobutton:Landroid/widget/CheckBox;
 
     invoke-virtual {v0}, Landroid/widget/CompoundButton;->isChecked()Z
 

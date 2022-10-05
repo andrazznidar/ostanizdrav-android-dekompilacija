@@ -60,15 +60,15 @@
 
     invoke-static {p0, v0}, Lkotlin/jvm/internal/Intrinsics;->checkNotNullParameter(Ljava/lang/Object;Ljava/lang/String;)V
 
-    new-instance v1, Ljava/util/ArrayList;
+    new-instance v0, Ljava/util/ArrayList;
 
-    const/16 v2, 0xa
+    const/16 v1, 0xa
 
-    invoke-static {p0, v2}, Lkotlin/collections/CollectionsKt__IteratorsJVMKt;->collectionSizeOrDefault(Ljava/lang/Iterable;I)I
+    invoke-static {p0, v1}, Lkotlin/collections/CollectionsKt__IteratorsJVMKt;->collectionSizeOrDefault(Ljava/lang/Iterable;I)I
 
-    move-result v2
+    move-result v1
 
-    invoke-direct {v1, v2}, Ljava/util/ArrayList;-><init>(I)V
+    invoke-direct {v0, v1}, Ljava/util/ArrayList;-><init>(I)V
 
     invoke-interface {p0}, Ljava/lang/Iterable;->iterator()Ljava/util/Iterator;
 
@@ -77,48 +77,46 @@
     :goto_0
     invoke-interface {p0}, Ljava/util/Iterator;->hasNext()Z
 
-    move-result v2
+    move-result v1
 
-    if-eqz v2, :cond_0
+    if-eqz v1, :cond_0
 
     invoke-interface {p0}, Ljava/util/Iterator;->next()Ljava/lang/Object;
 
-    move-result-object v2
+    move-result-object v1
 
-    check-cast v2, Lde/rki/coronawarnapp/contactdiary/storage/entity/ContactDiaryPersonEncounterWrapper;
+    check-cast v1, Lde/rki/coronawarnapp/contactdiary/storage/entity/ContactDiaryPersonEncounterWrapper;
 
-    invoke-static {v2}, Lde/rki/coronawarnapp/contactdiary/storage/entity/ContactDiaryPersonEncounterWrapperKt;->toContactDiaryPersonEncounter(Lde/rki/coronawarnapp/contactdiary/storage/entity/ContactDiaryPersonEncounterWrapper;)Lde/rki/coronawarnapp/contactdiary/model/ContactDiaryPersonEncounter;
+    invoke-static {v1}, Lde/rki/coronawarnapp/contactdiary/storage/entity/ContactDiaryPersonEncounterWrapperKt;->toContactDiaryPersonEncounter(Lde/rki/coronawarnapp/contactdiary/storage/entity/ContactDiaryPersonEncounterWrapper;)Lde/rki/coronawarnapp/contactdiary/model/ContactDiaryPersonEncounter;
 
-    move-result-object v2
+    move-result-object v1
 
-    invoke-interface {v1, v2}, Ljava/util/Collection;->add(Ljava/lang/Object;)Z
+    invoke-interface {v0, v1}, Ljava/util/Collection;->add(Ljava/lang/Object;)Z
 
     goto :goto_0
 
     :cond_0
-    invoke-static {v1, v0}, Lkotlin/jvm/internal/Intrinsics;->checkNotNullParameter(Ljava/lang/Object;Ljava/lang/String;)V
-
     const/4 p0, 0x2
 
     new-array p0, p0, [Lkotlin/jvm/functions/Function1;
 
-    sget-object v0, Lde/rki/coronawarnapp/contactdiary/model/ContactDiaryPersonEncounterKt$sortByNameAndIdASC$1;->INSTANCE:Lde/rki/coronawarnapp/contactdiary/model/ContactDiaryPersonEncounterKt$sortByNameAndIdASC$1;
+    sget-object v1, Lde/rki/coronawarnapp/contactdiary/model/ContactDiaryPersonEncounterKt$sortByNameAndIdASC$1;->INSTANCE:Lde/rki/coronawarnapp/contactdiary/model/ContactDiaryPersonEncounterKt$sortByNameAndIdASC$1;
 
     const/4 v2, 0x0
 
-    aput-object v0, p0, v2
+    aput-object v1, p0, v2
 
-    sget-object v0, Lde/rki/coronawarnapp/contactdiary/model/ContactDiaryPersonEncounterKt$sortByNameAndIdASC$2;->INSTANCE:Lde/rki/coronawarnapp/contactdiary/model/ContactDiaryPersonEncounterKt$sortByNameAndIdASC$2;
+    sget-object v1, Lde/rki/coronawarnapp/contactdiary/model/ContactDiaryPersonEncounterKt$sortByNameAndIdASC$2;->INSTANCE:Lde/rki/coronawarnapp/contactdiary/model/ContactDiaryPersonEncounterKt$sortByNameAndIdASC$2;
 
     const/4 v2, 0x1
 
-    aput-object v0, p0, v2
+    aput-object v1, p0, v2
 
     invoke-static {p0}, Lkotlin/comparisons/ComparisonsKt__ComparisonsKt;->compareBy([Lkotlin/jvm/functions/Function1;)Ljava/util/Comparator;
 
     move-result-object p0
 
-    invoke-static {v1, p0}, Lkotlin/collections/CollectionsKt___CollectionsKt;->sortedWith(Ljava/lang/Iterable;Ljava/util/Comparator;)Ljava/util/List;
+    invoke-static {v0, p0}, Lkotlin/collections/CollectionsKt___CollectionsKt;->sortedWith(Ljava/lang/Iterable;Ljava/util/Comparator;)Ljava/util/List;
 
     move-result-object p0
 

@@ -23,7 +23,7 @@
 
     move-result-object v0
 
-    const-string v1, "Charset.forName(\"UTF-8\")"
+    const-string v1, "forName(\"UTF-8\")"
 
     invoke-static {v0, v1}, Lkotlin/jvm/internal/Intrinsics;->checkNotNullExpressionValue(Ljava/lang/Object;Ljava/lang/String;)V
 
@@ -35,7 +35,7 @@
 
     move-result-object v0
 
-    const-string v1, "Charset.forName(\"UTF-16\")"
+    const-string v1, "forName(\"UTF-16\")"
 
     invoke-static {v0, v1}, Lkotlin/jvm/internal/Intrinsics;->checkNotNullExpressionValue(Ljava/lang/Object;Ljava/lang/String;)V
 
@@ -45,7 +45,7 @@
 
     move-result-object v0
 
-    const-string v1, "Charset.forName(\"UTF-16BE\")"
+    const-string v1, "forName(\"UTF-16BE\")"
 
     invoke-static {v0, v1}, Lkotlin/jvm/internal/Intrinsics;->checkNotNullExpressionValue(Ljava/lang/Object;Ljava/lang/String;)V
 
@@ -55,7 +55,7 @@
 
     move-result-object v0
 
-    const-string v1, "Charset.forName(\"UTF-16LE\")"
+    const-string v1, "forName(\"UTF-16LE\")"
 
     invoke-static {v0, v1}, Lkotlin/jvm/internal/Intrinsics;->checkNotNullExpressionValue(Ljava/lang/Object;Ljava/lang/String;)V
 
@@ -65,7 +65,7 @@
 
     move-result-object v0
 
-    const-string v1, "Charset.forName(\"US-ASCII\")"
+    const-string v1, "forName(\"US-ASCII\")"
 
     invoke-static {v0, v1}, Lkotlin/jvm/internal/Intrinsics;->checkNotNullExpressionValue(Ljava/lang/Object;Ljava/lang/String;)V
 
@@ -75,7 +75,7 @@
 
     move-result-object v0
 
-    const-string v1, "Charset.forName(\"ISO-8859-1\")"
+    const-string v1, "forName(\"ISO-8859-1\")"
 
     invoke-static {v0, v1}, Lkotlin/jvm/internal/Intrinsics;->checkNotNullExpressionValue(Ljava/lang/Object;Ljava/lang/String;)V
 

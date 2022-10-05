@@ -716,7 +716,7 @@
 
     invoke-virtual/range {v0 .. v6}, Lcom/google/android/material/textfield/IndicatorViewController;->createCaptionAnimators(Ljava/util/List;ZLandroid/widget/TextView;III)V
 
-    invoke-static {v12, v13}, Lcom/google/android/material/animation/AnimatorSetCompat;->playTogether(Landroid/animation/AnimatorSet;Ljava/util/List;)V
+    invoke-static {v12, v13}, Lboofcv/alg/shapes/polygon/UtilShapePolygon;->playTogether(Landroid/animation/AnimatorSet;Ljava/util/List;)V
 
     invoke-virtual {p0, p1}, Lcom/google/android/material/textfield/IndicatorViewController;->getCaptionViewFromDisplayState(I)Landroid/widget/TextView;
 

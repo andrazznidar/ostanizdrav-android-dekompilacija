@@ -57,7 +57,7 @@
 
 # virtual methods
 .method public invoke(Ljava/lang/Object;)Ljava/lang/Object;
-    .locals 4
+    .locals 3
 
     check-cast p1, Ljava/lang/Throwable;
 
@@ -67,43 +67,35 @@
 
     invoke-static {}, Ljava/lang/System;->currentTimeMillis()J
 
-    const-string v0, "Low storage check failed."
+    new-instance v0, Ljava/io/StringWriter;
 
-    const-string v1, "message"
+    const/16 v1, 0x100
 
-    invoke-static {v0, v1}, Lkotlin/jvm/internal/Intrinsics;->checkNotNullParameter(Ljava/lang/Object;Ljava/lang/String;)V
+    invoke-direct {v0, v1}, Ljava/io/StringWriter;-><init>(I)V
 
-    const-string/jumbo v1, "t"
+    new-instance v1, Ljava/io/PrintWriter;
 
-    invoke-static {p1, v1}, Lkotlin/jvm/internal/Intrinsics;->checkNotNullParameter(Ljava/lang/Object;Ljava/lang/String;)V
+    const/4 v2, 0x0
 
-    new-instance v1, Ljava/io/StringWriter;
+    invoke-direct {v1, v0, v2}, Ljava/io/PrintWriter;-><init>(Ljava/io/Writer;Z)V
 
-    const/16 v2, 0x100
+    invoke-virtual {p1, v1}, Ljava/lang/Throwable;->printStackTrace(Ljava/io/PrintWriter;)V
 
-    invoke-direct {v1, v2}, Ljava/io/StringWriter;-><init>(I)V
+    invoke-virtual {v1}, Ljava/io/PrintWriter;->flush()V
 
-    new-instance v2, Ljava/io/PrintWriter;
-
-    const/4 v3, 0x0
-
-    invoke-direct {v2, v1, v3}, Ljava/io/PrintWriter;-><init>(Ljava/io/Writer;Z)V
-
-    invoke-virtual {p1, v2}, Ljava/lang/Throwable;->printStackTrace(Ljava/io/PrintWriter;)V
-
-    invoke-virtual {v2}, Ljava/io/PrintWriter;->flush()V
-
-    invoke-virtual {v1}, Ljava/io/StringWriter;->toString()Ljava/lang/String;
+    invoke-virtual {v0}, Ljava/io/StringWriter;->toString()Ljava/lang/String;
 
     move-result-object p1
 
-    const-string/jumbo v1, "sw.toString()"
+    const-string/jumbo v0, "sw.toString()"
 
-    invoke-static {p1, v1}, Lkotlin/jvm/internal/Intrinsics;->checkNotNullExpressionValue(Ljava/lang/Object;Ljava/lang/String;)V
+    invoke-static {p1, v0}, Lkotlin/jvm/internal/Intrinsics;->checkNotNullExpressionValue(Ljava/lang/Object;Ljava/lang/String;)V
+
+    const-string v0, "Low storage check failed."
 
     const-string v1, "\n"
 
-    invoke-static {v0, v1, p1}, Landroidx/core/graphics/PathParser$$ExternalSyntheticOutline0;->m(Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;)Ljava/lang/String;
+    invoke-static {v0, v1, p1}, Landroidx/concurrent/futures/AbstractResolvableFuture$$ExternalSyntheticOutline1;->m(Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;)Ljava/lang/String;
 
     move-result-object p1
 

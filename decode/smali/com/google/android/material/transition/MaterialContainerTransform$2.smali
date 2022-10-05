@@ -77,16 +77,18 @@
     goto :goto_0
 
     :cond_0
-    new-instance v0, Lkotlin/jvm/internal/SpreadBuilder;
+    new-instance v0, Lcom/google/android/material/internal/ViewOverlayApi18;
 
-    invoke-direct {v0, p1}, Lkotlin/jvm/internal/SpreadBuilder;-><init>(Landroid/view/View;)V
+    invoke-direct {v0, p1}, Lcom/google/android/material/internal/ViewOverlayApi18;-><init>(Landroid/view/View;)V
 
     move-object p1, v0
 
     :goto_0
     iget-object v0, p0, Lcom/google/android/material/transition/MaterialContainerTransform$2;->val$transitionDrawable:Lcom/google/android/material/transition/MaterialContainerTransform$TransitionDrawable;
 
-    invoke-virtual {p1, v0}, Lkotlin/jvm/internal/SpreadBuilder;->remove(Landroid/graphics/drawable/Drawable;)V
+    iget-object p1, p1, Lcom/google/android/material/internal/ViewOverlayApi18;->viewOverlay:Landroid/view/ViewOverlay;
+
+    invoke-virtual {p1, v0}, Landroid/view/ViewOverlay;->remove(Landroid/graphics/drawable/Drawable;)V
 
     return-void
 .end method
@@ -103,16 +105,18 @@
     goto :goto_0
 
     :cond_0
-    new-instance v0, Lkotlin/jvm/internal/SpreadBuilder;
+    new-instance v0, Lcom/google/android/material/internal/ViewOverlayApi18;
 
-    invoke-direct {v0, p1}, Lkotlin/jvm/internal/SpreadBuilder;-><init>(Landroid/view/View;)V
+    invoke-direct {v0, p1}, Lcom/google/android/material/internal/ViewOverlayApi18;-><init>(Landroid/view/View;)V
 
     move-object p1, v0
 
     :goto_0
     iget-object v0, p0, Lcom/google/android/material/transition/MaterialContainerTransform$2;->val$transitionDrawable:Lcom/google/android/material/transition/MaterialContainerTransform$TransitionDrawable;
 
-    invoke-virtual {p1, v0}, Lkotlin/jvm/internal/SpreadBuilder;->add(Landroid/graphics/drawable/Drawable;)V
+    iget-object p1, p1, Lcom/google/android/material/internal/ViewOverlayApi18;->viewOverlay:Landroid/view/ViewOverlay;
+
+    invoke-virtual {p1, v0}, Landroid/view/ViewOverlay;->add(Landroid/graphics/drawable/Drawable;)V
 
     iget-object p1, p0, Lcom/google/android/material/transition/MaterialContainerTransform$2;->val$startView:Landroid/view/View;
 

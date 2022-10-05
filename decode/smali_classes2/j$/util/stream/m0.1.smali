@@ -1,51 +1,45 @@
-.class final Lj$/util/stream/m0;
-.super Lj$/util/stream/o0;
+.class public final synthetic Lj$/util/stream/m0;
+.super Ljava/lang/Object;
 
 # interfaces
-.implements Lj$/util/stream/m3;
+.implements Lj$/util/function/C;
 
 
-# instance fields
-.field final b:Lj$/util/function/m;
+# static fields
+.field public static final synthetic a:Lj$/util/stream/m0;
 
 
 # direct methods
-.method constructor <init>(Lj$/util/function/m;Z)V
+.method static synthetic constructor <clinit>()V
+    .locals 1
+
+    new-instance v0, Lj$/util/stream/m0;
+
+    invoke-direct {v0}, Lj$/util/stream/m0;-><init>()V
+
+    sput-object v0, Lj$/util/stream/m0;->a:Lj$/util/stream/m0;
+
+    return-void
+.end method
+
+.method private synthetic constructor <init>()V
     .locals 0
 
-    invoke-direct {p0, p2}, Lj$/util/stream/o0;-><init>(Z)V
-
-    iput-object p1, p0, Lj$/util/stream/m0;->b:Lj$/util/function/m;
+    invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
     return-void
 .end method
 
 
 # virtual methods
-.method public e(J)V
+.method public final get()Ljava/lang/Object;
     .locals 1
 
-    iget-object v0, p0, Lj$/util/stream/m0;->b:Lj$/util/function/m;
+    sget v0, Lj$/util/stream/s0;->t:I
 
-    invoke-interface {v0, p1, p2}, Lj$/util/function/m;->e(J)V
+    const/4 v0, 0x2
 
-    return-void
-.end method
+    new-array v0, v0, [J
 
-.method public synthetic h(Ljava/lang/Long;)V
-    .locals 0
-
-    invoke-static {p0, p1}, Lj$/util/stream/p1;->c(Lj$/util/stream/m3;Ljava/lang/Long;)V
-
-    return-void
-.end method
-
-.method public bridge synthetic i(Ljava/lang/Object;)V
-    .locals 0
-
-    check-cast p1, Ljava/lang/Long;
-
-    invoke-virtual {p0, p1}, Lj$/util/stream/m0;->h(Ljava/lang/Long;)V
-
-    return-void
+    return-object v0
 .end method

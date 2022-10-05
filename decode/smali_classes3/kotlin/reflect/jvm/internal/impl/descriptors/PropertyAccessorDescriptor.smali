@@ -3,7 +3,7 @@
 .source "PropertyAccessorDescriptor.java"
 
 # interfaces
-.implements Lkotlin/reflect/jvm/internal/impl/descriptors/FunctionDescriptor;
+.implements Lkotlin/reflect/jvm/internal/impl/descriptors/VariableAccessorDescriptor;
 
 
 # virtual methods

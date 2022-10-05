@@ -12,6 +12,12 @@
 
 
 # virtual methods
+.method public abstract getDccPersonCountMax()I
+.end method
+
+.method public abstract getDccPersonWarnThreshold()I
+.end method
+
 .method public abstract getMinVersionCode()J
 .end method
 
@@ -24,6 +30,9 @@
             ">;"
         }
     .end annotation
+.end method
+
+.method public abstract getValidationServiceMinVersion()I
 .end method
 
 .method public abstract isDeviceTimeCheckEnabled()Z

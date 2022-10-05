@@ -94,7 +94,7 @@
 .method public onAttachedToWindow()V
     .locals 1
 
-    invoke-super {p0}, Landroid/widget/AbsListView;->onAttachedToWindow()V
+    invoke-super {p0}, Landroid/widget/GridView;->onAttachedToWindow()V
 
     invoke-virtual {p0}, Lcom/google/android/material/datepicker/MaterialCalendarGridView;->getAdapter()Lcom/google/android/material/datepicker/MonthAdapter;
 
@@ -108,7 +108,7 @@
 .method public final onDraw(Landroid/graphics/Canvas;)V
     .locals 2
 
-    invoke-super {p0, p1}, Landroid/view/View;->onDraw(Landroid/graphics/Canvas;)V
+    invoke-super {p0, p1}, Landroid/widget/GridView;->onDraw(Landroid/graphics/Canvas;)V
 
     invoke-virtual {p0}, Lcom/google/android/material/datepicker/MaterialCalendarGridView;->getAdapter()Lcom/google/android/material/datepicker/MonthAdapter;
 

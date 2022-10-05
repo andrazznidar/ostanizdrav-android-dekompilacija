@@ -15,12 +15,10 @@
 
 
 # static fields
-.field public static final INDICATOR_LENGTH_IN_LEVEL:Landroidx/dynamicanimation/animation/FloatPropertyCompat;
+.field public static final INDICATOR_LENGTH_IN_LEVEL:Lboofcv/struct/border/ImageBorder;
     .annotation system Ldalvik/annotation/Signature;
         value = {
-            "Landroidx/dynamicanimation/animation/FloatPropertyCompat<",
-            "Lcom/google/android/material/progressindicator/DeterminateDrawable;",
-            ">;"
+            "Lboofcv/struct/border/ImageBorder;"
         }
     .end annotation
 .end field
@@ -55,7 +53,7 @@
 
     invoke-direct {v0, v1}, Lcom/google/android/material/progressindicator/DeterminateDrawable$1;-><init>(Ljava/lang/String;)V
 
-    sput-object v0, Lcom/google/android/material/progressindicator/DeterminateDrawable;->INDICATOR_LENGTH_IN_LEVEL:Landroidx/dynamicanimation/animation/FloatPropertyCompat;
+    sput-object v0, Lcom/google/android/material/progressindicator/DeterminateDrawable;->INDICATOR_LENGTH_IN_LEVEL:Lboofcv/struct/border/ImageBorder;
 
     return-void
 .end method
@@ -102,9 +100,9 @@
 
     new-instance p1, Landroidx/dynamicanimation/animation/SpringAnimation;
 
-    sget-object v0, Lcom/google/android/material/progressindicator/DeterminateDrawable;->INDICATOR_LENGTH_IN_LEVEL:Landroidx/dynamicanimation/animation/FloatPropertyCompat;
+    sget-object v0, Lcom/google/android/material/progressindicator/DeterminateDrawable;->INDICATOR_LENGTH_IN_LEVEL:Lboofcv/struct/border/ImageBorder;
 
-    invoke-direct {p1, p0, v0}, Landroidx/dynamicanimation/animation/SpringAnimation;-><init>(Ljava/lang/Object;Landroidx/dynamicanimation/animation/FloatPropertyCompat;)V
+    invoke-direct {p1, p0, v0}, Landroidx/dynamicanimation/animation/SpringAnimation;-><init>(Ljava/lang/Object;Lboofcv/struct/border/ImageBorder;)V
 
     iput-object p1, p0, Lcom/google/android/material/progressindicator/DeterminateDrawable;->springAnimator:Landroidx/dynamicanimation/animation/SpringAnimation;
 
@@ -188,7 +186,7 @@
 
     iget v1, p0, Lcom/google/android/material/progressindicator/DrawableWithAnimatedVisibilityChange;->totalAlpha:I
 
-    invoke-static {v0, v1}, Ldagger/android/AndroidInjection;->compositeARGBWithAlpha(II)I
+    invoke-static {v0, v1}, Lkotlin/math/MathKt__MathJVMKt;->compositeARGBWithAlpha(II)I
 
     move-result v7
 
@@ -385,11 +383,11 @@
 
     if-nez v1, :cond_3
 
-    iget-object v1, v0, Landroidx/dynamicanimation/animation/DynamicAnimation;->mProperty:Landroidx/dynamicanimation/animation/FloatPropertyCompat;
+    iget-object v1, v0, Landroidx/dynamicanimation/animation/DynamicAnimation;->mProperty:Lboofcv/struct/border/ImageBorder;
 
     iget-object v3, v0, Landroidx/dynamicanimation/animation/DynamicAnimation;->mTarget:Ljava/lang/Object;
 
-    invoke-virtual {v1, v3}, Landroidx/dynamicanimation/animation/FloatPropertyCompat;->getValue(Ljava/lang/Object;)F
+    invoke-virtual {v1, v3}, Lboofcv/struct/border/ImageBorder;->getValue(Ljava/lang/Object;)F
 
     move-result v1
 

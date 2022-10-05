@@ -1,83 +1,95 @@
 .class public final synthetic Lde/rki/coronawarnapp/contactdiary/ui/day/tabs/common/DiaryCircumstancesTextView$$ExternalSyntheticLambda0;
 .super Ljava/lang/Object;
+.source "R8$$SyntheticClass"
 
 # interfaces
-.implements Landroid/view/View$OnFocusChangeListener;
+.implements Landroid/view/View$OnClickListener;
 
 
 # instance fields
-.field public final synthetic f$0:Lde/rki/coronawarnapp/contactdiary/ui/day/tabs/common/DiaryCircumstancesTextView;
+.field public final synthetic $r8$classId:I
 
-.field public final synthetic f$1:Landroid/widget/EditText;
+.field public final synthetic f$0:Ljava/lang/Object;
 
 
 # direct methods
-.method public synthetic constructor <init>(Lde/rki/coronawarnapp/contactdiary/ui/day/tabs/common/DiaryCircumstancesTextView;Landroid/widget/EditText;)V
+.method public synthetic constructor <init>(Ljava/lang/Object;I)V
     .locals 0
 
+    iput p2, p0, Lde/rki/coronawarnapp/contactdiary/ui/day/tabs/common/DiaryCircumstancesTextView$$ExternalSyntheticLambda0;->$r8$classId:I
+
+    iput-object p1, p0, Lde/rki/coronawarnapp/contactdiary/ui/day/tabs/common/DiaryCircumstancesTextView$$ExternalSyntheticLambda0;->f$0:Ljava/lang/Object;
+
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
-
-    iput-object p1, p0, Lde/rki/coronawarnapp/contactdiary/ui/day/tabs/common/DiaryCircumstancesTextView$$ExternalSyntheticLambda0;->f$0:Lde/rki/coronawarnapp/contactdiary/ui/day/tabs/common/DiaryCircumstancesTextView;
-
-    iput-object p2, p0, Lde/rki/coronawarnapp/contactdiary/ui/day/tabs/common/DiaryCircumstancesTextView$$ExternalSyntheticLambda0;->f$1:Landroid/widget/EditText;
 
     return-void
 .end method
 
 
 # virtual methods
-.method public final onFocusChange(Landroid/view/View;Z)V
-    .locals 4
+.method public final onClick(Landroid/view/View;)V
+    .locals 2
 
-    iget-object v0, p0, Lde/rki/coronawarnapp/contactdiary/ui/day/tabs/common/DiaryCircumstancesTextView$$ExternalSyntheticLambda0;->f$0:Lde/rki/coronawarnapp/contactdiary/ui/day/tabs/common/DiaryCircumstancesTextView;
+    iget p1, p0, Lde/rki/coronawarnapp/contactdiary/ui/day/tabs/common/DiaryCircumstancesTextView$$ExternalSyntheticLambda0;->$r8$classId:I
 
-    iget-object v1, p0, Lde/rki/coronawarnapp/contactdiary/ui/day/tabs/common/DiaryCircumstancesTextView$$ExternalSyntheticLambda0;->f$1:Landroid/widget/EditText;
+    const-string/jumbo v0, "this$0"
 
-    sget v2, Lde/rki/coronawarnapp/contactdiary/ui/day/tabs/common/DiaryCircumstancesTextView;->$r8$clinit:I
-
-    const-string/jumbo v2, "this$0"
-
-    invoke-static {v0, v2}, Lkotlin/jvm/internal/Intrinsics;->checkNotNullParameter(Ljava/lang/Object;Ljava/lang/String;)V
-
-    const/4 v2, 0x0
-
-    const/4 v3, 0x1
-
-    if-eqz p2, :cond_0
-
-    sget-object p2, Ltimber/log/Timber;->Forest:Ltimber/log/Timber$Forest;
-
-    new-array v0, v3, [Ljava/lang/Object;
-
-    aput-object p1, v0, v2
-
-    const-string p1, "Focused on %s"
-
-    invoke-virtual {p2, p1, v0}, Ltimber/log/Timber$Forest;->v(Ljava/lang/String;[Ljava/lang/Object;)V
+    packed-switch p1, :pswitch_data_0
 
     goto :goto_0
 
-    :cond_0
-    sget-object p2, Ltimber/log/Timber;->Forest:Ltimber/log/Timber$Forest;
+    :pswitch_0
+    iget-object p1, p0, Lde/rki/coronawarnapp/contactdiary/ui/day/tabs/common/DiaryCircumstancesTextView$$ExternalSyntheticLambda0;->f$0:Ljava/lang/Object;
 
-    new-array v3, v3, [Ljava/lang/Object;
+    check-cast p1, Lde/rki/coronawarnapp/ui/presencetracing/organizer/qrinfo/TraceLocationQRInfoFragment;
 
-    aput-object p1, v3, v2
+    sget-object v1, Lde/rki/coronawarnapp/ui/presencetracing/organizer/qrinfo/TraceLocationQRInfoFragment;->$$delegatedProperties:[Lkotlin/reflect/KProperty;
 
-    const-string p1, "Lost focus on %s"
+    invoke-static {p1, v0}, Lkotlin/jvm/internal/Intrinsics;->checkNotNullParameter(Ljava/lang/Object;Ljava/lang/String;)V
 
-    invoke-virtual {p2, p1, v3}, Ltimber/log/Timber$Forest;->v(Ljava/lang/String;[Ljava/lang/Object;)V
-
-    invoke-virtual {v1}, Landroid/widget/EditText;->getText()Landroid/text/Editable;
+    invoke-virtual {p1}, Lde/rki/coronawarnapp/ui/presencetracing/organizer/qrinfo/TraceLocationQRInfoFragment;->getVm()Lde/rki/coronawarnapp/ui/presencetracing/organizer/qrinfo/TraceLocationQRInfoViewModel;
 
     move-result-object p1
 
-    invoke-virtual {p1}, Ljava/lang/Object;->toString()Ljava/lang/String;
+    iget-object p1, p1, Lde/rki/coronawarnapp/ui/presencetracing/organizer/qrinfo/TraceLocationQRInfoViewModel;->routeToScreen:Lde/rki/coronawarnapp/util/ui/SingleLiveEvent;
 
-    move-result-object p1
+    sget-object v0, Lde/rki/coronawarnapp/ui/presencetracing/organizer/qrinfo/TraceLocationQRInfoNavigationEvents$NavigateToMyQrCodes;->INSTANCE:Lde/rki/coronawarnapp/ui/presencetracing/organizer/qrinfo/TraceLocationQRInfoNavigationEvents$NavigateToMyQrCodes;
 
-    invoke-virtual {v0, p1}, Lde/rki/coronawarnapp/contactdiary/ui/day/tabs/common/DiaryCircumstancesTextView;->notifyTextChanged(Ljava/lang/String;)V
+    invoke-virtual {p1, v0}, Landroidx/lifecycle/MutableLiveData;->postValue(Ljava/lang/Object;)V
+
+    return-void
+
+    :pswitch_1
+    iget-object p1, p0, Lde/rki/coronawarnapp/contactdiary/ui/day/tabs/common/DiaryCircumstancesTextView$$ExternalSyntheticLambda0;->f$0:Ljava/lang/Object;
+
+    check-cast p1, Lkotlin/jvm/functions/Function0;
+
+    sget v0, Lde/rki/coronawarnapp/contactdiary/ui/day/tabs/common/DiaryCircumstancesTextView;->$r8$clinit:I
+
+    const-string v0, "$listener"
+
+    invoke-static {p1, v0}, Lkotlin/jvm/internal/Intrinsics;->checkNotNullParameter(Ljava/lang/Object;Ljava/lang/String;)V
+
+    invoke-interface {p1}, Lkotlin/jvm/functions/Function0;->invoke()Ljava/lang/Object;
+
+    return-void
 
     :goto_0
+    iget-object p1, p0, Lde/rki/coronawarnapp/contactdiary/ui/day/tabs/common/DiaryCircumstancesTextView$$ExternalSyntheticLambda0;->f$0:Ljava/lang/Object;
+
+    check-cast p1, Lde/rki/coronawarnapp/ui/submission/testresult/pending/SubmissionTestResultPendingFragment;
+
+    sget-object v1, Lde/rki/coronawarnapp/ui/submission/testresult/pending/SubmissionTestResultPendingFragment;->$$delegatedProperties:[Lkotlin/reflect/KProperty;
+
+    invoke-static {p1, v0}, Lkotlin/jvm/internal/Intrinsics;->checkNotNullParameter(Ljava/lang/Object;Ljava/lang/String;)V
+
+    invoke-static {p1}, Lde/rki/coronawarnapp/util/ui/FragmentExtensionsKt;->popBackStack(Landroidx/fragment/app/Fragment;)Z
+
     return-void
+
+    :pswitch_data_0
+    .packed-switch 0x0
+        :pswitch_1
+        :pswitch_0
+    .end packed-switch
 .end method

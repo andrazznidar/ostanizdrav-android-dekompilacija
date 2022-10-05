@@ -10,10 +10,8 @@
 .annotation system Ldalvik/annotation/Signature;
     value = {
         "Lde/rki/coronawarnapp/util/lists/modular/ModularAdapter<",
-        "Lde/rki/coronawarnapp/covidcertificate/validation/ui/validationresult/common/listitem/BaseValidationResultVH<",
-        "Lde/rki/coronawarnapp/covidcertificate/validation/ui/validationresult/common/listitem/ValidationResultItem;",
-        "Landroidx/viewbinding/ViewBinding;",
-        ">;>;",
+        "Lde/rki/coronawarnapp/dccticketing/ui/validationresult/items/BaseValidationResultVH;",
+        ">;",
         "Lde/rki/coronawarnapp/util/lists/diffutil/AsyncDiffUtilAdapter<",
         "Lde/rki/coronawarnapp/covidcertificate/validation/ui/validationresult/common/listitem/ValidationResultItem;",
         ">;"

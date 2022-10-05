@@ -1,4 +1,4 @@
-.class public Lcom/google/android/play/core/assetpacks/zzv;
+.class public final Lcom/google/android/play/core/assetpacks/zzv;
 .super Ljava/lang/Object;
 .source "com.google.android.play:core@@1.10.1"
 
@@ -18,7 +18,7 @@
 
 
 # instance fields
-.field public zza:Ljava/lang/Object;
+.field public final zza:Lcom/google/android/play/core/internal/zzct;
     .annotation system Ldalvik/annotation/Signature;
         value = {
             "Lcom/google/android/play/core/internal/zzct<",
@@ -30,32 +30,30 @@
 
 
 # direct methods
-.method public constructor <init>()V
-    .locals 0
-
-    invoke-direct {p0}, Ljava/lang/Object;-><init>()V
-
-    return-void
-.end method
-
 .method public constructor <init>(Lcom/google/android/play/core/internal/zzct;)V
     .locals 0
+    .annotation system Ldalvik/annotation/Signature;
+        value = {
+            "(",
+            "Lcom/google/android/play/core/internal/zzct<",
+            "Landroid/content/Context;",
+            ">;)V"
+        }
+    .end annotation
 
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
-    iput-object p1, p0, Lcom/google/android/play/core/assetpacks/zzv;->zza:Ljava/lang/Object;
+    iput-object p1, p0, Lcom/google/android/play/core/assetpacks/zzv;->zza:Lcom/google/android/play/core/internal/zzct;
 
     return-void
 .end method
 
 
 # virtual methods
-.method public bridge synthetic zza()Ljava/lang/Object;
+.method public final bridge synthetic zza()Ljava/lang/Object;
     .locals 1
 
-    iget-object v0, p0, Lcom/google/android/play/core/assetpacks/zzv;->zza:Ljava/lang/Object;
-
-    check-cast v0, Lcom/google/android/play/core/internal/zzct;
+    iget-object v0, p0, Lcom/google/android/play/core/assetpacks/zzv;->zza:Lcom/google/android/play/core/internal/zzct;
 
     check-cast v0, Lcom/google/android/play/core/assetpacks/zzu;
 

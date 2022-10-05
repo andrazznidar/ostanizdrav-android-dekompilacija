@@ -195,6 +195,11 @@
 
     goto :goto_3
 
+    :catchall_0
+    move-exception p0
+
+    goto :goto_4
+
     :cond_2
     invoke-interface {v5}, Landroid/database/Cursor;->close()V
 
@@ -264,9 +269,7 @@
 
     goto/16 :goto_0
 
-    :catchall_0
-    move-exception p0
-
+    :goto_4
     invoke-interface {v5}, Landroid/database/Cursor;->close()V
 
     invoke-virtual {v8}, Landroidx/room/RoomSQLiteQuery;->release()V
@@ -326,42 +329,40 @@
 
     sub-long/2addr v5, v7
 
-    move-object v7, v2
+    check-cast v2, Landroidx/work/impl/model/WorkSpecDao_Impl;
 
-    check-cast v7, Landroidx/work/impl/model/WorkSpecDao_Impl;
+    invoke-static {v2}, Ljava/util/Objects;->requireNonNull(Ljava/lang/Object;)Ljava/lang/Object;
 
-    invoke-static {v7}, Ljava/util/Objects;->requireNonNull(Ljava/lang/Object;)Ljava/lang/Object;
+    const-string v7, "SELECT `required_network_type`, `requires_charging`, `requires_device_idle`, `requires_battery_not_low`, `requires_storage_not_low`, `trigger_content_update_delay`, `trigger_max_content_delay`, `content_uri_triggers`, `WorkSpec`.`id` AS `id`, `WorkSpec`.`state` AS `state`, `WorkSpec`.`worker_class_name` AS `worker_class_name`, `WorkSpec`.`input_merger_class_name` AS `input_merger_class_name`, `WorkSpec`.`input` AS `input`, `WorkSpec`.`output` AS `output`, `WorkSpec`.`initial_delay` AS `initial_delay`, `WorkSpec`.`interval_duration` AS `interval_duration`, `WorkSpec`.`flex_duration` AS `flex_duration`, `WorkSpec`.`run_attempt_count` AS `run_attempt_count`, `WorkSpec`.`backoff_policy` AS `backoff_policy`, `WorkSpec`.`backoff_delay_duration` AS `backoff_delay_duration`, `WorkSpec`.`period_start_time` AS `period_start_time`, `WorkSpec`.`minimum_retention_duration` AS `minimum_retention_duration`, `WorkSpec`.`schedule_requested_at` AS `schedule_requested_at`, `WorkSpec`.`run_in_foreground` AS `run_in_foreground` FROM workspec WHERE period_start_time >= ? AND state IN (2, 3, 5) ORDER BY period_start_time DESC"
 
-    const-string v8, "SELECT `required_network_type`, `requires_charging`, `requires_device_idle`, `requires_battery_not_low`, `requires_storage_not_low`, `trigger_content_update_delay`, `trigger_max_content_delay`, `content_uri_triggers`, `WorkSpec`.`id` AS `id`, `WorkSpec`.`state` AS `state`, `WorkSpec`.`worker_class_name` AS `worker_class_name`, `WorkSpec`.`input_merger_class_name` AS `input_merger_class_name`, `WorkSpec`.`input` AS `input`, `WorkSpec`.`output` AS `output`, `WorkSpec`.`initial_delay` AS `initial_delay`, `WorkSpec`.`interval_duration` AS `interval_duration`, `WorkSpec`.`flex_duration` AS `flex_duration`, `WorkSpec`.`run_attempt_count` AS `run_attempt_count`, `WorkSpec`.`backoff_policy` AS `backoff_policy`, `WorkSpec`.`backoff_delay_duration` AS `backoff_delay_duration`, `WorkSpec`.`period_start_time` AS `period_start_time`, `WorkSpec`.`minimum_retention_duration` AS `minimum_retention_duration`, `WorkSpec`.`schedule_requested_at` AS `schedule_requested_at`, `WorkSpec`.`run_in_foreground` AS `run_in_foreground` FROM workspec WHERE period_start_time >= ? AND state IN (2, 3, 5) ORDER BY period_start_time DESC"
+    const/4 v8, 0x1
 
-    const/4 v9, 0x1
+    invoke-static {v7, v8}, Landroidx/room/RoomSQLiteQuery;->acquire(Ljava/lang/String;I)Landroidx/room/RoomSQLiteQuery;
 
-    invoke-static {v8, v9}, Landroidx/room/RoomSQLiteQuery;->acquire(Ljava/lang/String;I)Landroidx/room/RoomSQLiteQuery;
+    move-result-object v7
 
-    move-result-object v8
+    invoke-virtual {v7, v8, v5, v6}, Landroidx/room/RoomSQLiteQuery;->bindLong(IJ)V
 
-    invoke-virtual {v8, v9, v5, v6}, Landroidx/room/RoomSQLiteQuery;->bindLong(IJ)V
-
-    iget-object v5, v7, Landroidx/work/impl/model/WorkSpecDao_Impl;->__db:Landroidx/room/RoomDatabase;
+    iget-object v5, v2, Landroidx/work/impl/model/WorkSpecDao_Impl;->__db:Landroidx/room/RoomDatabase;
 
     invoke-virtual {v5}, Landroidx/room/RoomDatabase;->assertNotSuspendingTransaction()V
 
-    iget-object v5, v7, Landroidx/work/impl/model/WorkSpecDao_Impl;->__db:Landroidx/room/RoomDatabase;
+    iget-object v5, v2, Landroidx/work/impl/model/WorkSpecDao_Impl;->__db:Landroidx/room/RoomDatabase;
 
     const/4 v6, 0x0
 
-    const/4 v7, 0x0
+    const/4 v9, 0x0
 
-    invoke-static {v5, v8, v7, v6}, Landroidx/room/util/DBUtil;->query(Landroidx/room/RoomDatabase;Landroidx/sqlite/db/SupportSQLiteQuery;ZLandroid/os/CancellationSignal;)Landroid/database/Cursor;
+    invoke-static {v5, v7, v6, v9}, Landroidx/room/util/DBUtil;->query(Landroidx/room/RoomDatabase;Landroidx/sqlite/db/SupportSQLiteQuery;ZLandroid/os/CancellationSignal;)Landroid/database/Cursor;
 
     move-result-object v5
 
     :try_start_0
-    const-string v6, "required_network_type"
+    const-string v9, "required_network_type"
 
-    invoke-static {v5, v6}, Landroidx/room/util/CursorUtil;->getColumnIndexOrThrow(Landroid/database/Cursor;Ljava/lang/String;)I
+    invoke-static {v5, v9}, Landroidx/room/util/CursorUtil;->getColumnIndexOrThrow(Landroid/database/Cursor;Ljava/lang/String;)I
 
-    move-result v6
+    move-result v9
 
     const-string v10, "requires_charging"
 
@@ -399,17 +400,17 @@
 
     move-result v15
 
-    const-string v9, "content_uri_triggers"
+    const-string v8, "content_uri_triggers"
 
-    invoke-static {v5, v9}, Landroidx/room/util/CursorUtil;->getColumnIndexOrThrow(Landroid/database/Cursor;Ljava/lang/String;)I
+    invoke-static {v5, v8}, Landroidx/room/util/CursorUtil;->getColumnIndexOrThrow(Landroid/database/Cursor;Ljava/lang/String;)I
 
-    move-result v9
+    move-result v8
 
-    const-string v7, "id"
+    const-string v6, "id"
 
-    invoke-static {v5, v7}, Landroidx/room/util/CursorUtil;->getColumnIndexOrThrow(Landroid/database/Cursor;Ljava/lang/String;)I
+    invoke-static {v5, v6}, Landroidx/room/util/CursorUtil;->getColumnIndexOrThrow(Landroid/database/Cursor;Ljava/lang/String;)I
 
-    move-result v7
+    move-result v6
 
     const-string/jumbo v1, "state"
 
@@ -451,90 +452,90 @@
     :try_end_0
     .catchall {:try_start_0 .. :try_end_0} :catchall_1
 
-    move-object/from16 v20, v8
+    move-object/from16 v20, v7
 
     :try_start_1
-    const-string v8, "initial_delay"
+    const-string v7, "initial_delay"
 
-    invoke-static {v5, v8}, Landroidx/room/util/CursorUtil;->getColumnIndexOrThrow(Landroid/database/Cursor;Ljava/lang/String;)I
+    invoke-static {v5, v7}, Landroidx/room/util/CursorUtil;->getColumnIndexOrThrow(Landroid/database/Cursor;Ljava/lang/String;)I
 
-    move-result v8
+    move-result v7
 
-    move/from16 v21, v8
+    move/from16 v21, v7
 
-    const-string v8, "interval_duration"
+    const-string v7, "interval_duration"
 
-    invoke-static {v5, v8}, Landroidx/room/util/CursorUtil;->getColumnIndexOrThrow(Landroid/database/Cursor;Ljava/lang/String;)I
+    invoke-static {v5, v7}, Landroidx/room/util/CursorUtil;->getColumnIndexOrThrow(Landroid/database/Cursor;Ljava/lang/String;)I
 
-    move-result v8
+    move-result v7
 
-    move/from16 v22, v8
+    move/from16 v22, v7
 
-    const-string v8, "flex_duration"
+    const-string v7, "flex_duration"
 
-    invoke-static {v5, v8}, Landroidx/room/util/CursorUtil;->getColumnIndexOrThrow(Landroid/database/Cursor;Ljava/lang/String;)I
+    invoke-static {v5, v7}, Landroidx/room/util/CursorUtil;->getColumnIndexOrThrow(Landroid/database/Cursor;Ljava/lang/String;)I
 
-    move-result v8
+    move-result v7
 
-    move/from16 v23, v8
+    move/from16 v23, v7
 
-    const-string v8, "run_attempt_count"
+    const-string v7, "run_attempt_count"
 
-    invoke-static {v5, v8}, Landroidx/room/util/CursorUtil;->getColumnIndexOrThrow(Landroid/database/Cursor;Ljava/lang/String;)I
+    invoke-static {v5, v7}, Landroidx/room/util/CursorUtil;->getColumnIndexOrThrow(Landroid/database/Cursor;Ljava/lang/String;)I
 
-    move-result v8
+    move-result v7
 
-    move/from16 v24, v8
+    move/from16 v24, v7
 
-    const-string v8, "backoff_policy"
+    const-string v7, "backoff_policy"
 
-    invoke-static {v5, v8}, Landroidx/room/util/CursorUtil;->getColumnIndexOrThrow(Landroid/database/Cursor;Ljava/lang/String;)I
+    invoke-static {v5, v7}, Landroidx/room/util/CursorUtil;->getColumnIndexOrThrow(Landroid/database/Cursor;Ljava/lang/String;)I
 
-    move-result v8
+    move-result v7
 
-    move/from16 v25, v8
+    move/from16 v25, v7
 
-    const-string v8, "backoff_delay_duration"
+    const-string v7, "backoff_delay_duration"
 
-    invoke-static {v5, v8}, Landroidx/room/util/CursorUtil;->getColumnIndexOrThrow(Landroid/database/Cursor;Ljava/lang/String;)I
+    invoke-static {v5, v7}, Landroidx/room/util/CursorUtil;->getColumnIndexOrThrow(Landroid/database/Cursor;Ljava/lang/String;)I
 
-    move-result v8
+    move-result v7
 
-    move/from16 v26, v8
+    move/from16 v26, v7
 
-    const-string v8, "period_start_time"
+    const-string v7, "period_start_time"
 
-    invoke-static {v5, v8}, Landroidx/room/util/CursorUtil;->getColumnIndexOrThrow(Landroid/database/Cursor;Ljava/lang/String;)I
+    invoke-static {v5, v7}, Landroidx/room/util/CursorUtil;->getColumnIndexOrThrow(Landroid/database/Cursor;Ljava/lang/String;)I
 
-    move-result v8
+    move-result v7
 
-    move/from16 v27, v8
+    move/from16 v27, v7
 
-    const-string v8, "minimum_retention_duration"
+    const-string v7, "minimum_retention_duration"
 
-    invoke-static {v5, v8}, Landroidx/room/util/CursorUtil;->getColumnIndexOrThrow(Landroid/database/Cursor;Ljava/lang/String;)I
+    invoke-static {v5, v7}, Landroidx/room/util/CursorUtil;->getColumnIndexOrThrow(Landroid/database/Cursor;Ljava/lang/String;)I
 
-    move-result v8
+    move-result v7
 
-    move/from16 v28, v8
+    move/from16 v28, v7
 
-    const-string v8, "schedule_requested_at"
+    const-string v7, "schedule_requested_at"
 
-    invoke-static {v5, v8}, Landroidx/room/util/CursorUtil;->getColumnIndexOrThrow(Landroid/database/Cursor;Ljava/lang/String;)I
+    invoke-static {v5, v7}, Landroidx/room/util/CursorUtil;->getColumnIndexOrThrow(Landroid/database/Cursor;Ljava/lang/String;)I
 
-    move-result v8
+    move-result v7
 
-    move/from16 v29, v8
+    move/from16 v29, v7
 
-    const-string v8, "run_in_foreground"
+    const-string v7, "run_in_foreground"
 
-    invoke-static {v5, v8}, Landroidx/room/util/CursorUtil;->getColumnIndexOrThrow(Landroid/database/Cursor;Ljava/lang/String;)I
+    invoke-static {v5, v7}, Landroidx/room/util/CursorUtil;->getColumnIndexOrThrow(Landroid/database/Cursor;Ljava/lang/String;)I
 
-    move-result v8
+    move-result v7
 
-    move/from16 v30, v8
+    move/from16 v30, v7
 
-    new-instance v8, Ljava/util/ArrayList;
+    new-instance v7, Ljava/util/ArrayList;
 
     move/from16 v31, v2
 
@@ -542,7 +543,7 @@
 
     move-result v2
 
-    invoke-direct {v8, v2}, Ljava/util/ArrayList;-><init>(I)V
+    invoke-direct {v7, v2}, Ljava/util/ArrayList;-><init>(I)V
 
     :goto_0
     invoke-interface {v5}, Landroid/database/Cursor;->moveToNext()Z
@@ -551,15 +552,15 @@
 
     if-eqz v2, :cond_5
 
-    invoke-interface {v5, v7}, Landroid/database/Cursor;->getString(I)Ljava/lang/String;
+    invoke-interface {v5, v6}, Landroid/database/Cursor;->getString(I)Ljava/lang/String;
 
     move-result-object v2
 
-    move/from16 v32, v7
+    move/from16 v32, v6
 
     invoke-interface {v5, v0}, Landroid/database/Cursor;->getString(I)Ljava/lang/String;
 
-    move-result-object v7
+    move-result-object v6
 
     move/from16 v33, v0
 
@@ -567,111 +568,109 @@
 
     invoke-direct {v0}, Landroidx/work/Constraints;-><init>()V
 
-    invoke-interface {v5, v6}, Landroid/database/Cursor;->getInt(I)I
+    invoke-interface {v5, v9}, Landroid/database/Cursor;->getInt(I)I
 
     move-result v34
 
-    move/from16 v35, v6
+    move/from16 v35, v9
 
     invoke-static/range {v34 .. v34}, Landroidx/work/impl/model/WorkTypeConverters;->intToNetworkType(I)Landroidx/work/NetworkType;
 
-    move-result-object v6
+    move-result-object v9
 
-    iput-object v6, v0, Landroidx/work/Constraints;->mRequiredNetworkType:Landroidx/work/NetworkType;
+    iput-object v9, v0, Landroidx/work/Constraints;->mRequiredNetworkType:Landroidx/work/NetworkType;
 
     invoke-interface {v5, v10}, Landroid/database/Cursor;->getInt(I)I
 
-    move-result v6
+    move-result v9
 
-    if-eqz v6, :cond_0
+    if-eqz v9, :cond_0
 
-    const/4 v6, 0x1
+    const/4 v9, 0x1
 
     goto :goto_1
 
     :cond_0
-    const/4 v6, 0x0
+    const/4 v9, 0x0
 
     :goto_1
-    iput-boolean v6, v0, Landroidx/work/Constraints;->mRequiresCharging:Z
+    iput-boolean v9, v0, Landroidx/work/Constraints;->mRequiresCharging:Z
 
     invoke-interface {v5, v11}, Landroid/database/Cursor;->getInt(I)I
 
-    move-result v6
+    move-result v9
 
-    if-eqz v6, :cond_1
+    if-eqz v9, :cond_1
 
-    const/4 v6, 0x1
+    const/4 v9, 0x1
 
     goto :goto_2
 
     :cond_1
-    const/4 v6, 0x0
+    const/4 v9, 0x0
 
     :goto_2
-    iput-boolean v6, v0, Landroidx/work/Constraints;->mRequiresDeviceIdle:Z
+    iput-boolean v9, v0, Landroidx/work/Constraints;->mRequiresDeviceIdle:Z
 
     invoke-interface {v5, v12}, Landroid/database/Cursor;->getInt(I)I
 
-    move-result v6
+    move-result v9
 
-    if-eqz v6, :cond_2
+    if-eqz v9, :cond_2
 
-    const/4 v6, 0x1
+    const/4 v9, 0x1
 
     goto :goto_3
 
     :cond_2
-    const/4 v6, 0x0
+    const/4 v9, 0x0
 
     :goto_3
-    iput-boolean v6, v0, Landroidx/work/Constraints;->mRequiresBatteryNotLow:Z
+    iput-boolean v9, v0, Landroidx/work/Constraints;->mRequiresBatteryNotLow:Z
 
     invoke-interface {v5, v13}, Landroid/database/Cursor;->getInt(I)I
 
-    move-result v6
+    move-result v9
 
-    if-eqz v6, :cond_3
+    if-eqz v9, :cond_3
 
-    const/4 v6, 0x1
+    const/4 v9, 0x1
 
     goto :goto_4
 
     :cond_3
-    const/4 v6, 0x0
+    const/4 v9, 0x0
 
     :goto_4
-    iput-boolean v6, v0, Landroidx/work/Constraints;->mRequiresStorageNotLow:Z
+    iput-boolean v9, v0, Landroidx/work/Constraints;->mRequiresStorageNotLow:Z
 
-    move v6, v10
-
-    move/from16 v34, v11
+    move/from16 v34, v10
 
     invoke-interface {v5, v14}, Landroid/database/Cursor;->getLong(I)J
 
-    move-result-wide v10
+    move-result-wide v9
 
-    iput-wide v10, v0, Landroidx/work/Constraints;->mTriggerContentUpdateDelay:J
+    iput-wide v9, v0, Landroidx/work/Constraints;->mTriggerContentUpdateDelay:J
 
     invoke-interface {v5, v15}, Landroid/database/Cursor;->getLong(I)J
 
-    move-result-wide v10
+    move-result-wide v9
 
-    iput-wide v10, v0, Landroidx/work/Constraints;->mTriggerMaxContentDelay:J
+    iput-wide v9, v0, Landroidx/work/Constraints;->mTriggerMaxContentDelay:J
 
-    invoke-interface {v5, v9}, Landroid/database/Cursor;->getBlob(I)[B
+    invoke-interface {v5, v8}, Landroid/database/Cursor;->getBlob(I)[B
 
-    move-result-object v10
+    move-result-object v9
 
-    invoke-static {v10}, Landroidx/work/impl/model/WorkTypeConverters;->byteArrayToContentUriTriggers([B)Landroidx/work/ContentUriTriggers;
+    invoke-static {v9}, Landroidx/work/impl/model/WorkTypeConverters;->byteArrayToContentUriTriggers([B)Landroidx/work/ContentUriTriggers;
 
-    move-result-object v10
+    move-result-object v9
 
-    iput-object v10, v0, Landroidx/work/Constraints;->mContentUriTriggers:Landroidx/work/ContentUriTriggers;
+    iput-object v9, v0, Landroidx/work/Constraints;->mContentUriTriggers:Landroidx/work/ContentUriTriggers;
 
-    new-instance v10, Landroidx/work/impl/model/WorkSpec;
+    new-instance v9, Landroidx/work/impl/model/WorkSpec;
 
-    invoke-direct {v10, v2, v7}, Landroidx/work/impl/model/WorkSpec;-><init>(Ljava/lang/String;Ljava/lang/String;)V
+    invoke-direct {v9, v2, v6}, Landroidx/work/impl/model/WorkSpec;-><init>(Ljava/lang/String;Ljava/lang/String;)V
 
     invoke-interface {v5, v1}, Landroid/database/Cursor;->getInt(I)I
 
@@ -681,13 +680,13 @@
 
     move-result-object v2
 
-    iput-object v2, v10, Landroidx/work/impl/model/WorkSpec;->state:Landroidx/work/WorkInfo$State;
+    iput-object v2, v9, Landroidx/work/impl/model/WorkSpec;->state:Landroidx/work/WorkInfo$State;
 
     invoke-interface {v5, v3}, Landroid/database/Cursor;->getString(I)Ljava/lang/String;
 
     move-result-object v2
 
-    iput-object v2, v10, Landroidx/work/impl/model/WorkSpec;->inputMergerClassName:Ljava/lang/String;
+    iput-object v2, v9, Landroidx/work/impl/model/WorkSpec;->inputMergerClassName:Ljava/lang/String;
 
     invoke-interface {v5, v4}, Landroid/database/Cursor;->getBlob(I)[B
 
@@ -697,31 +696,31 @@
 
     move-result-object v2
 
-    iput-object v2, v10, Landroidx/work/impl/model/WorkSpec;->input:Landroidx/work/Data;
+    iput-object v2, v9, Landroidx/work/impl/model/WorkSpec;->input:Landroidx/work/Data;
 
     move/from16 v2, v31
 
     invoke-interface {v5, v2}, Landroid/database/Cursor;->getBlob(I)[B
 
-    move-result-object v7
+    move-result-object v6
 
-    invoke-static {v7}, Landroidx/work/Data;->fromByteArray([B)Landroidx/work/Data;
+    invoke-static {v6}, Landroidx/work/Data;->fromByteArray([B)Landroidx/work/Data;
 
-    move-result-object v7
+    move-result-object v6
 
-    iput-object v7, v10, Landroidx/work/impl/model/WorkSpec;->output:Landroidx/work/Data;
+    iput-object v6, v9, Landroidx/work/impl/model/WorkSpec;->output:Landroidx/work/Data;
 
-    move v11, v1
+    move v10, v1
 
     move/from16 v31, v2
 
-    move/from16 v7, v21
+    move/from16 v6, v21
 
-    invoke-interface {v5, v7}, Landroid/database/Cursor;->getLong(I)J
+    invoke-interface {v5, v6}, Landroid/database/Cursor;->getLong(I)J
 
     move-result-wide v1
 
-    iput-wide v1, v10, Landroidx/work/impl/model/WorkSpec;->initialDelay:J
+    iput-wide v1, v9, Landroidx/work/impl/model/WorkSpec;->initialDelay:J
 
     move/from16 v21, v3
 
@@ -731,7 +730,7 @@
 
     move-result-wide v2
 
-    iput-wide v2, v10, Landroidx/work/impl/model/WorkSpec;->intervalDuration:J
+    iput-wide v2, v9, Landroidx/work/impl/model/WorkSpec;->intervalDuration:J
 
     move/from16 v22, v4
 
@@ -741,7 +740,7 @@
 
     move-result-wide v3
 
-    iput-wide v3, v10, Landroidx/work/impl/model/WorkSpec;->flexDuration:J
+    iput-wide v3, v9, Landroidx/work/impl/model/WorkSpec;->flexDuration:J
 
     move/from16 v3, v24
 
@@ -749,7 +748,7 @@
 
     move-result v4
 
-    iput v4, v10, Landroidx/work/impl/model/WorkSpec;->runAttemptCount:I
+    iput v4, v9, Landroidx/work/impl/model/WorkSpec;->runAttemptCount:I
 
     move/from16 v4, v25
 
@@ -759,11 +758,11 @@
 
     move/from16 v24, v1
 
-    invoke-static/range {v23 .. v23}, Landroidx/work/impl/model/WorkTypeConverters;->intToBackoffPolicy(I)Landroidx/work/BackoffPolicy;
+    invoke-static/range {v23 .. v23}, Landroidx/work/impl/model/WorkTypeConverters;->intToBackoffPolicy(I)I
 
-    move-result-object v1
+    move-result v1
 
-    iput-object v1, v10, Landroidx/work/impl/model/WorkSpec;->backoffPolicy:Landroidx/work/BackoffPolicy;
+    iput v1, v9, Landroidx/work/impl/model/WorkSpec;->backoffPolicy:I
 
     move/from16 v23, v2
 
@@ -775,7 +774,7 @@
 
     move-result-wide v2
 
-    iput-wide v2, v10, Landroidx/work/impl/model/WorkSpec;->backoffDelayDuration:J
+    iput-wide v2, v9, Landroidx/work/impl/model/WorkSpec;->backoffDelayDuration:J
 
     move/from16 v26, v4
 
@@ -785,7 +784,7 @@
 
     move-result-wide v3
 
-    iput-wide v3, v10, Landroidx/work/impl/model/WorkSpec;->periodStartTime:J
+    iput-wide v3, v9, Landroidx/work/impl/model/WorkSpec;->periodStartTime:J
 
     move v4, v1
 
@@ -797,7 +796,7 @@
 
     move-result-wide v1
 
-    iput-wide v1, v10, Landroidx/work/impl/model/WorkSpec;->minimumRetentionDuration:J
+    iput-wide v1, v9, Landroidx/work/impl/model/WorkSpec;->minimumRetentionDuration:J
 
     move/from16 v28, v3
 
@@ -807,7 +806,7 @@
 
     move-result-wide v2
 
-    iput-wide v2, v10, Landroidx/work/impl/model/WorkSpec;->scheduleRequestedAt:J
+    iput-wide v2, v9, Landroidx/work/impl/model/WorkSpec;->scheduleRequestedAt:J
 
     move/from16 v2, v30
 
@@ -825,11 +824,11 @@
     const/4 v3, 0x0
 
     :goto_5
-    iput-boolean v3, v10, Landroidx/work/impl/model/WorkSpec;->runInForeground:Z
+    iput-boolean v3, v9, Landroidx/work/impl/model/WorkSpec;->runInForeground:Z
 
-    iput-object v0, v10, Landroidx/work/impl/model/WorkSpec;->constraints:Landroidx/work/Constraints;
+    iput-object v0, v9, Landroidx/work/impl/model/WorkSpec;->constraints:Landroidx/work/Constraints;
 
-    invoke-virtual {v8, v10}, Ljava/util/ArrayList;->add(Ljava/lang/Object;)Z
+    invoke-virtual {v7, v9}, Ljava/util/ArrayList;->add(Ljava/lang/Object;)Z
     :try_end_1
     .catchall {:try_start_1 .. :try_end_1} :catchall_0
 
@@ -837,21 +836,19 @@
 
     move/from16 v30, v2
 
-    move v10, v6
-
-    move v1, v11
+    move v1, v10
 
     move/from16 v3, v21
 
     move/from16 v0, v33
 
-    move/from16 v11, v34
+    move/from16 v10, v34
 
-    move/from16 v6, v35
+    move/from16 v9, v35
 
-    move/from16 v21, v7
+    move/from16 v21, v6
 
-    move/from16 v7, v32
+    move/from16 v6, v32
 
     move/from16 v36, v26
 
@@ -872,21 +869,19 @@
 
     invoke-virtual/range {v20 .. v20}, Landroidx/room/RoomSQLiteQuery;->release()V
 
-    move-object/from16 v2, v19
-
-    check-cast v2, Landroidx/work/impl/model/WorkSpecDao_Impl;
-
-    invoke-virtual {v2}, Landroidx/work/impl/model/WorkSpecDao_Impl;->getRunningWork()Ljava/util/List;
+    invoke-virtual/range {v19 .. v19}, Landroidx/work/impl/model/WorkSpecDao_Impl;->getRunningWork()Ljava/util/List;
 
     move-result-object v0
 
     const/16 v1, 0xc8
 
+    move-object/from16 v2, v19
+
     invoke-virtual {v2, v1}, Landroidx/work/impl/model/WorkSpecDao_Impl;->getAllEligibleWorkSpecsForScheduling(I)Ljava/util/List;
 
     move-result-object v1
 
-    invoke-virtual {v8}, Ljava/util/ArrayList;->isEmpty()Z
+    invoke-virtual {v7}, Ljava/util/ArrayList;->isEmpty()Z
 
     move-result v2
 
@@ -910,24 +905,24 @@
 
     move-result-object v2
 
-    move-object/from16 v7, v16
+    move-object/from16 v8, v16
 
     move-object/from16 v5, v17
 
     move-object/from16 v6, v18
 
-    invoke-static {v5, v6, v7, v8}, Landroidx/work/impl/workers/DiagnosticsWorker;->workSpecRows(Landroidx/work/impl/model/WorkNameDao;Landroidx/work/impl/model/WorkTagDao;Landroidx/work/impl/model/SystemIdInfoDao;Ljava/util/List;)Ljava/lang/String;
+    invoke-static {v5, v6, v8, v7}, Landroidx/work/impl/workers/DiagnosticsWorker;->workSpecRows(Landroidx/work/impl/model/WorkNameDao;Landroidx/work/impl/model/WorkTagDao;Landroidx/work/impl/model/SystemIdInfoDao;Ljava/util/List;)Ljava/lang/String;
 
-    move-result-object v8
+    move-result-object v7
 
     new-array v9, v4, [Ljava/lang/Throwable;
 
-    invoke-virtual {v2, v3, v8, v9}, Landroidx/work/Logger;->info(Ljava/lang/String;Ljava/lang/String;[Ljava/lang/Throwable;)V
+    invoke-virtual {v2, v3, v7, v9}, Landroidx/work/Logger;->info(Ljava/lang/String;Ljava/lang/String;[Ljava/lang/Throwable;)V
 
     goto :goto_6
 
     :cond_6
-    move-object/from16 v7, v16
+    move-object/from16 v8, v16
 
     move-object/from16 v5, v17
 
@@ -952,23 +947,23 @@
 
     sget-object v3, Landroidx/work/impl/workers/DiagnosticsWorker;->TAG:Ljava/lang/String;
 
-    new-array v8, v4, [Ljava/lang/Throwable;
+    new-array v7, v4, [Ljava/lang/Throwable;
 
     const-string v9, "Running work:\n\n"
 
-    invoke-virtual {v2, v3, v9, v8}, Landroidx/work/Logger;->info(Ljava/lang/String;Ljava/lang/String;[Ljava/lang/Throwable;)V
+    invoke-virtual {v2, v3, v9, v7}, Landroidx/work/Logger;->info(Ljava/lang/String;Ljava/lang/String;[Ljava/lang/Throwable;)V
 
     invoke-static {}, Landroidx/work/Logger;->get()Landroidx/work/Logger;
 
     move-result-object v2
 
-    invoke-static {v5, v6, v7, v0}, Landroidx/work/impl/workers/DiagnosticsWorker;->workSpecRows(Landroidx/work/impl/model/WorkNameDao;Landroidx/work/impl/model/WorkTagDao;Landroidx/work/impl/model/SystemIdInfoDao;Ljava/util/List;)Ljava/lang/String;
+    invoke-static {v5, v6, v8, v0}, Landroidx/work/impl/workers/DiagnosticsWorker;->workSpecRows(Landroidx/work/impl/model/WorkNameDao;Landroidx/work/impl/model/WorkTagDao;Landroidx/work/impl/model/SystemIdInfoDao;Ljava/util/List;)Ljava/lang/String;
 
     move-result-object v0
 
-    new-array v8, v4, [Ljava/lang/Throwable;
+    new-array v7, v4, [Ljava/lang/Throwable;
 
-    invoke-virtual {v2, v3, v0, v8}, Landroidx/work/Logger;->info(Ljava/lang/String;Ljava/lang/String;[Ljava/lang/Throwable;)V
+    invoke-virtual {v2, v3, v0, v7}, Landroidx/work/Logger;->info(Ljava/lang/String;Ljava/lang/String;[Ljava/lang/Throwable;)V
 
     :cond_7
     move-object v0, v1
@@ -989,15 +984,15 @@
 
     new-array v3, v4, [Ljava/lang/Throwable;
 
-    const-string v8, "Enqueued work:\n\n"
+    const-string v7, "Enqueued work:\n\n"
 
-    invoke-virtual {v0, v2, v8, v3}, Landroidx/work/Logger;->info(Ljava/lang/String;Ljava/lang/String;[Ljava/lang/Throwable;)V
+    invoke-virtual {v0, v2, v7, v3}, Landroidx/work/Logger;->info(Ljava/lang/String;Ljava/lang/String;[Ljava/lang/Throwable;)V
 
     invoke-static {}, Landroidx/work/Logger;->get()Landroidx/work/Logger;
 
     move-result-object v0
 
-    invoke-static {v5, v6, v7, v1}, Landroidx/work/impl/workers/DiagnosticsWorker;->workSpecRows(Landroidx/work/impl/model/WorkNameDao;Landroidx/work/impl/model/WorkTagDao;Landroidx/work/impl/model/SystemIdInfoDao;Ljava/util/List;)Ljava/lang/String;
+    invoke-static {v5, v6, v8, v1}, Landroidx/work/impl/workers/DiagnosticsWorker;->workSpecRows(Landroidx/work/impl/model/WorkNameDao;Landroidx/work/impl/model/WorkTagDao;Landroidx/work/impl/model/SystemIdInfoDao;Ljava/util/List;)Ljava/lang/String;
 
     move-result-object v1
 
@@ -1020,7 +1015,7 @@
     :catchall_1
     move-exception v0
 
-    move-object/from16 v20, v8
+    move-object/from16 v20, v7
 
     :goto_7
     invoke-interface {v5}, Landroid/database/Cursor;->close()V

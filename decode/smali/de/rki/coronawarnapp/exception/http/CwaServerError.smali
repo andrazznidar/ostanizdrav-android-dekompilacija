@@ -18,9 +18,9 @@
 
     if-gt p3, p1, :cond_0
 
-    const/16 p3, 0x257
+    const/16 p3, 0x258
 
-    if-gt p1, p3, :cond_0
+    if-ge p1, p3, :cond_0
 
     const/4 p2, 0x1
 
@@ -66,7 +66,7 @@
 
     new-instance v0, Lde/rki/coronawarnapp/util/HumanReadableError;
 
-    const v1, 0x7f13054f
+    const v1, 0x7f13054b
 
     invoke-virtual {p1, v1}, Landroid/content/Context;->getString(I)Ljava/lang/String;
 

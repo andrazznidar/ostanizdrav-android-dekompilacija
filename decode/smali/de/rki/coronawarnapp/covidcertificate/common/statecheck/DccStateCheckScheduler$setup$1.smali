@@ -121,7 +121,7 @@
 
     const-string v3, "Monitoring foregroundstate (expiration checks) "
 
-    invoke-virtual {p1, v3, v2}, Ltimber/log/Timber$Tree;->v(Ljava/lang/String;[Ljava/lang/Object;)V
+    invoke-virtual {p1, v3, v2}, Ltimber/log/Timber$Forest;->v(Ljava/lang/String;[Ljava/lang/Object;)V
 
     iget-object v2, p0, Lde/rki/coronawarnapp/covidcertificate/common/statecheck/DccStateCheckScheduler$setup$1;->this$0:Lde/rki/coronawarnapp/covidcertificate/common/statecheck/DccStateCheckScheduler;
 
@@ -149,13 +149,13 @@
 
     invoke-direct {v2, v3, v4, v5, v1}, Landroidx/work/PeriodicWorkRequest$Builder;-><init>(Ljava/lang/Class;JLjava/util/concurrent/TimeUnit;)V
 
-    sget-object v1, Landroidx/work/BackoffPolicy;->LINEAR:Landroidx/work/BackoffPolicy;
+    sget-object v1, Ljava/util/concurrent/TimeUnit;->MINUTES:Ljava/util/concurrent/TimeUnit;
 
-    sget-object v3, Ljava/util/concurrent/TimeUnit;->MINUTES:Ljava/util/concurrent/TimeUnit;
+    const/4 v3, 0x2
 
     const-wide/16 v4, 0x1
 
-    invoke-virtual {v2, v1, v4, v5, v3}, Landroidx/work/WorkRequest$Builder;->setBackoffCriteria(Landroidx/work/BackoffPolicy;JLjava/util/concurrent/TimeUnit;)Landroidx/work/WorkRequest$Builder;
+    invoke-virtual {v2, v3, v4, v5, v1}, Landroidx/work/WorkRequest$Builder;->setBackoffCriteria$enumunboxing$(IJLjava/util/concurrent/TimeUnit;)Landroidx/work/WorkRequest$Builder;
 
     move-result-object v1
 

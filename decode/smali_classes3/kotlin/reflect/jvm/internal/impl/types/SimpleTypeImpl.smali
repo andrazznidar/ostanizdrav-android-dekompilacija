@@ -1,10 +1,10 @@
-.class public final Lkotlin/reflect/jvm/internal/impl/types/SimpleTypeImpl;
+.class final Lkotlin/reflect/jvm/internal/impl/types/SimpleTypeImpl;
 .super Lkotlin/reflect/jvm/internal/impl/types/SimpleType;
 .source "KotlinTypeFactory.kt"
 
 
 # instance fields
-.field public final arguments:Ljava/util/List;
+.field private final arguments:Ljava/util/List;
     .annotation system Ldalvik/annotation/Signature;
         value = {
             "Ljava/util/List<",
@@ -14,13 +14,13 @@
     .end annotation
 .end field
 
-.field public final constructor:Lkotlin/reflect/jvm/internal/impl/types/TypeConstructor;
+.field private final constructor:Lkotlin/reflect/jvm/internal/impl/types/TypeConstructor;
 
-.field public final isMarkedNullable:Z
+.field private final isMarkedNullable:Z
 
-.field public final memberScope:Lkotlin/reflect/jvm/internal/impl/resolve/scopes/MemberScope;
+.field private final memberScope:Lkotlin/reflect/jvm/internal/impl/resolve/scopes/MemberScope;
 
-.field public final refinedTypeFactory:Lkotlin/jvm/functions/Function1;
+.field private final refinedTypeFactory:Lkotlin/jvm/functions/Function1;
     .annotation system Ldalvik/annotation/Signature;
         value = {
             "Lkotlin/jvm/functions/Function1<",
@@ -34,7 +34,7 @@
 
 # direct methods
 .method public constructor <init>(Lkotlin/reflect/jvm/internal/impl/types/TypeConstructor;Ljava/util/List;ZLkotlin/reflect/jvm/internal/impl/resolve/scopes/MemberScope;Lkotlin/jvm/functions/Function1;)V
-    .locals 0
+    .locals 1
     .annotation system Ldalvik/annotation/Signature;
         value = {
             "(",
@@ -53,6 +53,22 @@
         }
     .end annotation
 
+    const-string v0, "constructor"
+
+    invoke-static {p1, v0}, Lkotlin/jvm/internal/Intrinsics;->checkNotNullParameter(Ljava/lang/Object;Ljava/lang/String;)V
+
+    const-string v0, "arguments"
+
+    invoke-static {p2, v0}, Lkotlin/jvm/internal/Intrinsics;->checkNotNullParameter(Ljava/lang/Object;Ljava/lang/String;)V
+
+    const-string v0, "memberScope"
+
+    invoke-static {p4, v0}, Lkotlin/jvm/internal/Intrinsics;->checkNotNullParameter(Ljava/lang/Object;Ljava/lang/String;)V
+
+    const-string v0, "refinedTypeFactory"
+
+    invoke-static {p5, v0}, Lkotlin/jvm/internal/Intrinsics;->checkNotNullParameter(Ljava/lang/Object;Ljava/lang/String;)V
+
     invoke-direct {p0}, Lkotlin/reflect/jvm/internal/impl/types/SimpleType;-><init>()V
 
     iput-object p1, p0, Lkotlin/reflect/jvm/internal/impl/types/SimpleTypeImpl;->constructor:Lkotlin/reflect/jvm/internal/impl/types/TypeConstructor;
@@ -65,38 +81,48 @@
 
     iput-object p5, p0, Lkotlin/reflect/jvm/internal/impl/types/SimpleTypeImpl;->refinedTypeFactory:Lkotlin/jvm/functions/Function1;
 
-    instance-of p2, p4, Lkotlin/reflect/jvm/internal/impl/types/ErrorUtils$ErrorScope;
+    invoke-virtual {p0}, Lkotlin/reflect/jvm/internal/impl/types/SimpleTypeImpl;->getMemberScope()Lkotlin/reflect/jvm/internal/impl/resolve/scopes/MemberScope;
 
-    if-nez p2, :cond_0
+    move-result-object p1
+
+    instance-of p1, p1, Lkotlin/reflect/jvm/internal/impl/types/ErrorUtils$ErrorScope;
+
+    if-nez p1, :cond_0
 
     return-void
 
     :cond_0
-    new-instance p2, Ljava/lang/IllegalStateException;
+    new-instance p1, Ljava/lang/IllegalStateException;
 
-    new-instance p3, Ljava/lang/StringBuilder;
+    const-string p2, "SimpleTypeImpl should not be created for error type: "
 
-    invoke-direct {p3}, Ljava/lang/StringBuilder;-><init>()V
+    invoke-static {p2}, Landroid/support/v4/media/RatingCompat$$ExternalSyntheticOutline0;->m(Ljava/lang/String;)Ljava/lang/StringBuilder;
 
-    const-string p5, "SimpleTypeImpl should not be created for error type: "
+    move-result-object p2
 
-    invoke-virtual {p3, p5}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+    invoke-virtual {p0}, Lkotlin/reflect/jvm/internal/impl/types/SimpleTypeImpl;->getMemberScope()Lkotlin/reflect/jvm/internal/impl/resolve/scopes/MemberScope;
 
-    invoke-virtual {p3, p4}, Ljava/lang/StringBuilder;->append(Ljava/lang/Object;)Ljava/lang/StringBuilder;
+    move-result-object p3
 
-    const/16 p4, 0xa
+    invoke-virtual {p2, p3}, Ljava/lang/StringBuilder;->append(Ljava/lang/Object;)Ljava/lang/StringBuilder;
 
-    invoke-virtual {p3, p4}, Ljava/lang/StringBuilder;->append(C)Ljava/lang/StringBuilder;
+    const/16 p3, 0xa
 
-    invoke-virtual {p3, p1}, Ljava/lang/StringBuilder;->append(Ljava/lang/Object;)Ljava/lang/StringBuilder;
+    invoke-virtual {p2, p3}, Ljava/lang/StringBuilder;->append(C)Ljava/lang/StringBuilder;
 
-    invoke-virtual {p3}, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
+    invoke-virtual {p0}, Lkotlin/reflect/jvm/internal/impl/types/SimpleTypeImpl;->getConstructor()Lkotlin/reflect/jvm/internal/impl/types/TypeConstructor;
 
-    move-result-object p1
+    move-result-object p3
 
-    invoke-direct {p2, p1}, Ljava/lang/IllegalStateException;-><init>(Ljava/lang/String;)V
+    invoke-virtual {p2, p3}, Ljava/lang/StringBuilder;->append(Ljava/lang/Object;)Ljava/lang/StringBuilder;
 
-    throw p2
+    invoke-virtual {p2}, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
+
+    move-result-object p2
+
+    invoke-direct {p1, p2}, Ljava/lang/IllegalStateException;-><init>(Ljava/lang/String;)V
+
+    throw p1
 .end method
 
 
@@ -104,9 +130,11 @@
 .method public getAnnotations()Lkotlin/reflect/jvm/internal/impl/descriptors/annotations/Annotations;
     .locals 1
 
-    sget v0, Lkotlin/reflect/jvm/internal/impl/descriptors/annotations/Annotations;->$r8$clinit:I
+    sget-object v0, Lkotlin/reflect/jvm/internal/impl/descriptors/annotations/Annotations;->Companion:Lkotlin/reflect/jvm/internal/impl/descriptors/annotations/Annotations$Companion;
 
-    sget-object v0, Lkotlin/reflect/jvm/internal/impl/descriptors/annotations/Annotations$Companion;->EMPTY:Lkotlin/reflect/jvm/internal/impl/descriptors/annotations/Annotations;
+    invoke-virtual {v0}, Lkotlin/reflect/jvm/internal/impl/descriptors/annotations/Annotations$Companion;->getEMPTY()Lkotlin/reflect/jvm/internal/impl/descriptors/annotations/Annotations;
+
+    move-result-object v0
 
     return-object v0
 .end method
@@ -154,7 +182,9 @@
 .method public makeNullableAsSpecified(Z)Lkotlin/reflect/jvm/internal/impl/types/SimpleType;
     .locals 1
 
-    iget-boolean v0, p0, Lkotlin/reflect/jvm/internal/impl/types/SimpleTypeImpl;->isMarkedNullable:Z
+    invoke-virtual {p0}, Lkotlin/reflect/jvm/internal/impl/types/SimpleTypeImpl;->isMarkedNullable()Z
+
+    move-result v0
 
     if-ne p1, v0, :cond_0
 
@@ -180,7 +210,27 @@
     return-object p1
 .end method
 
-.method public refine(Lkotlin/reflect/jvm/internal/impl/types/checker/KotlinTypeRefiner;)Lkotlin/reflect/jvm/internal/impl/types/KotlinType;
+.method public bridge synthetic makeNullableAsSpecified(Z)Lkotlin/reflect/jvm/internal/impl/types/UnwrappedType;
+    .locals 0
+
+    invoke-virtual {p0, p1}, Lkotlin/reflect/jvm/internal/impl/types/SimpleTypeImpl;->makeNullableAsSpecified(Z)Lkotlin/reflect/jvm/internal/impl/types/SimpleType;
+
+    move-result-object p1
+
+    return-object p1
+.end method
+
+.method public bridge synthetic refine(Lkotlin/reflect/jvm/internal/impl/types/checker/KotlinTypeRefiner;)Lkotlin/reflect/jvm/internal/impl/types/KotlinType;
+    .locals 0
+
+    invoke-virtual {p0, p1}, Lkotlin/reflect/jvm/internal/impl/types/SimpleTypeImpl;->refine(Lkotlin/reflect/jvm/internal/impl/types/checker/KotlinTypeRefiner;)Lkotlin/reflect/jvm/internal/impl/types/SimpleType;
+
+    move-result-object p1
+
+    return-object p1
+.end method
+
+.method public refine(Lkotlin/reflect/jvm/internal/impl/types/checker/KotlinTypeRefiner;)Lkotlin/reflect/jvm/internal/impl/types/SimpleType;
     .locals 1
 
     const-string v0, "kotlinTypeRefiner"
@@ -203,26 +253,13 @@
     return-object p1
 .end method
 
-.method public refine(Lkotlin/reflect/jvm/internal/impl/types/checker/KotlinTypeRefiner;)Lkotlin/reflect/jvm/internal/impl/types/UnwrappedType;
-    .locals 1
+.method public bridge synthetic refine(Lkotlin/reflect/jvm/internal/impl/types/checker/KotlinTypeRefiner;)Lkotlin/reflect/jvm/internal/impl/types/UnwrappedType;
+    .locals 0
 
-    const-string v0, "kotlinTypeRefiner"
-
-    invoke-static {p1, v0}, Lkotlin/jvm/internal/Intrinsics;->checkNotNullParameter(Ljava/lang/Object;Ljava/lang/String;)V
-
-    iget-object v0, p0, Lkotlin/reflect/jvm/internal/impl/types/SimpleTypeImpl;->refinedTypeFactory:Lkotlin/jvm/functions/Function1;
-
-    invoke-interface {v0, p1}, Lkotlin/jvm/functions/Function1;->invoke(Ljava/lang/Object;)Ljava/lang/Object;
+    invoke-virtual {p0, p1}, Lkotlin/reflect/jvm/internal/impl/types/SimpleTypeImpl;->refine(Lkotlin/reflect/jvm/internal/impl/types/checker/KotlinTypeRefiner;)Lkotlin/reflect/jvm/internal/impl/types/SimpleType;
 
     move-result-object p1
 
-    check-cast p1, Lkotlin/reflect/jvm/internal/impl/types/SimpleType;
-
-    if-nez p1, :cond_0
-
-    move-object p1, p0
-
-    :cond_0
     return-object p1
 .end method
 

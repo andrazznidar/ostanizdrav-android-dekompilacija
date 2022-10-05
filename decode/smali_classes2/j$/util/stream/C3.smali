@@ -1,407 +1,90 @@
-.class abstract Lj$/util/stream/C3;
-.super Ljava/lang/Object;
+.class final Lj$/util/stream/C3;
+.super Lj$/util/stream/F3;
+
+# interfaces
+.implements Lj$/util/x;
+.implements Lj$/util/function/g;
+
+
+# instance fields
+.field e:D
 
 
 # direct methods
-.method static synthetic a(JJ)J
+.method constructor <init>(Lj$/util/x;JJ)V
     .locals 0
 
-    invoke-static {p0, p1, p2, p3}, Lj$/util/stream/C3;->d(JJ)J
+    invoke-direct/range {p0 .. p5}, Lj$/util/stream/F3;-><init>(Lj$/util/D;JJ)V
 
-    move-result-wide p0
-
-    return-wide p0
+    return-void
 .end method
 
-.method static b(Lj$/util/stream/g4;Lj$/util/Spliterator;JJ)Lj$/util/Spliterator;
-    .locals 6
+.method constructor <init>(Lj$/util/x;Lj$/util/stream/C3;)V
+    .locals 0
 
-    invoke-static {p2, p3, p4, p5}, Lj$/util/stream/C3;->d(JJ)J
+    invoke-direct {p0, p1, p2}, Lj$/util/stream/F3;-><init>(Lj$/util/D;Lj$/util/stream/F3;)V
 
-    move-result-wide v4
-
-    sget-object p4, Lj$/util/stream/A3;->a:[I
-
-    invoke-virtual {p0}, Ljava/lang/Enum;->ordinal()I
-
-    move-result p5
-
-    aget p4, p4, p5
-
-    const/4 p5, 0x1
-
-    if-eq p4, p5, :cond_3
-
-    const/4 p5, 0x2
-
-    if-eq p4, p5, :cond_2
-
-    const/4 p5, 0x3
-
-    if-eq p4, p5, :cond_1
-
-    const/4 p5, 0x4
-
-    if-ne p4, p5, :cond_0
-
-    new-instance p0, Lj$/util/stream/w4;
-
-    move-object v1, p1
-
-    check-cast v1, Lj$/util/Spliterator$a;
-
-    move-object v0, p0
-
-    move-wide v2, p2
-
-    invoke-direct/range {v0 .. v5}, Lj$/util/stream/w4;-><init>(Lj$/util/Spliterator$a;JJ)V
-
-    goto :goto_0
-
-    :cond_0
-    new-instance p1, Ljava/lang/IllegalStateException;
-
-    new-instance p2, Ljava/lang/StringBuilder;
-
-    invoke-direct {p2}, Ljava/lang/StringBuilder;-><init>()V
-
-    const-string p3, "Unknown shape "
-
-    invoke-virtual {p2, p3}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
-
-    invoke-virtual {p2, p0}, Ljava/lang/StringBuilder;->append(Ljava/lang/Object;)Ljava/lang/StringBuilder;
-
-    invoke-virtual {p2}, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
-
-    move-result-object p0
-
-    invoke-direct {p1, p0}, Ljava/lang/IllegalStateException;-><init>(Ljava/lang/String;)V
-
-    throw p1
-
-    :cond_1
-    new-instance p0, Lj$/util/stream/A4;
-
-    move-object v1, p1
-
-    check-cast v1, Lj$/util/Spliterator$c;
-
-    move-object v0, p0
-
-    move-wide v2, p2
-
-    invoke-direct/range {v0 .. v5}, Lj$/util/stream/A4;-><init>(Lj$/util/Spliterator$c;JJ)V
-
-    goto :goto_0
-
-    :cond_2
-    new-instance p0, Lj$/util/stream/y4;
-
-    move-object v1, p1
-
-    check-cast v1, Lj$/util/Spliterator$b;
-
-    move-object v0, p0
-
-    move-wide v2, p2
-
-    invoke-direct/range {v0 .. v5}, Lj$/util/stream/y4;-><init>(Lj$/util/Spliterator$b;JJ)V
-
-    goto :goto_0
-
-    :cond_3
-    new-instance p0, Lj$/util/stream/E4;
-
-    move-object v0, p0
-
-    move-object v1, p1
-
-    move-wide v2, p2
-
-    invoke-direct/range {v0 .. v5}, Lj$/util/stream/E4;-><init>(Lj$/util/Spliterator;JJ)V
-
-    :goto_0
-    return-object p0
+    return-void
 .end method
 
-.method static c(JJJ)J
-    .locals 3
 
-    const-wide/16 v0, 0x0
+# virtual methods
+.method public synthetic a(Lj$/util/function/Consumer;)Z
+    .locals 0
 
-    cmp-long v0, p0, v0
+    invoke-static {p0, p1}, Lj$/util/a;->q(Lj$/util/x;Lj$/util/function/Consumer;)Z
 
-    const-wide/16 v1, -0x1
+    move-result p1
 
-    if-ltz v0, :cond_0
-
-    sub-long/2addr p0, p2
-
-    invoke-static {p0, p1, p4, p5}, Ljava/lang/Math;->min(JJ)J
-
-    move-result-wide p0
-
-    invoke-static {v1, v2, p0, p1}, Ljava/lang/Math;->max(JJ)J
-
-    move-result-wide v1
-
-    :cond_0
-    return-wide v1
+    return p1
 .end method
 
-.method private static d(JJ)J
-    .locals 5
+.method public c(D)V
+    .locals 0
 
-    const-wide/16 v0, 0x0
+    iput-wide p1, p0, Lj$/util/stream/C3;->e:D
 
-    cmp-long v2, p2, v0
-
-    const-wide v3, 0x7fffffffffffffffL
-
-    if-ltz v2, :cond_0
-
-    add-long/2addr p0, p2
-
-    goto :goto_0
-
-    :cond_0
-    move-wide p0, v3
-
-    :goto_0
-    cmp-long p2, p0, v0
-
-    if-ltz p2, :cond_1
-
-    move-wide v3, p0
-
-    :cond_1
-    return-wide v3
+    return-void
 .end method
 
-.method private static e(J)I
-    .locals 3
+.method public synthetic forEachRemaining(Lj$/util/function/Consumer;)V
+    .locals 0
 
-    sget v0, Lj$/util/stream/f4;->t:I
+    invoke-static {p0, p1}, Lj$/util/a;->c(Lj$/util/x;Lj$/util/function/Consumer;)V
 
-    const-wide/16 v1, -0x1
-
-    cmp-long p0, p0, v1
-
-    if-eqz p0, :cond_0
-
-    sget p0, Lj$/util/stream/f4;->u:I
-
-    goto :goto_0
-
-    :cond_0
-    const/4 p0, 0x0
-
-    :goto_0
-    or-int/2addr p0, v0
-
-    return p0
+    return-void
 .end method
 
-.method public static f(Lj$/util/stream/c;JJ)Lj$/util/stream/U;
-    .locals 9
+.method protected o(Lj$/util/Spliterator;)Lj$/util/Spliterator;
+    .locals 1
 
-    const-wide/16 v0, 0x0
+    check-cast p1, Lj$/util/x;
 
-    cmp-long v0, p1, v0
+    new-instance v0, Lj$/util/stream/C3;
 
-    if-ltz v0, :cond_0
-
-    new-instance v0, Lj$/util/stream/z3;
-
-    sget-object v3, Lj$/util/stream/g4;->DOUBLE_VALUE:Lj$/util/stream/g4;
-
-    invoke-static {p3, p4}, Lj$/util/stream/C3;->e(J)I
-
-    move-result v4
-
-    move-object v1, v0
-
-    move-object v2, p0
-
-    move-wide v5, p1
-
-    move-wide v7, p3
-
-    invoke-direct/range {v1 .. v8}, Lj$/util/stream/z3;-><init>(Lj$/util/stream/c;Lj$/util/stream/g4;IJJ)V
+    invoke-direct {v0, p1, p0}, Lj$/util/stream/C3;-><init>(Lj$/util/x;Lj$/util/stream/C3;)V
 
     return-object v0
-
-    :cond_0
-    new-instance p0, Ljava/lang/IllegalArgumentException;
-
-    new-instance p3, Ljava/lang/StringBuilder;
-
-    invoke-direct {p3}, Ljava/lang/StringBuilder;-><init>()V
-
-    const-string p4, "Skip must be non-negative: "
-
-    invoke-virtual {p3, p4}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
-
-    invoke-virtual {p3, p1, p2}, Ljava/lang/StringBuilder;->append(J)Ljava/lang/StringBuilder;
-
-    invoke-virtual {p3}, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
-
-    move-result-object p1
-
-    invoke-direct {p0, p1}, Ljava/lang/IllegalArgumentException;-><init>(Ljava/lang/String;)V
-
-    throw p0
 .end method
 
-.method public static g(Lj$/util/stream/c;JJ)Lj$/util/stream/M0;
-    .locals 9
+.method protected s(Ljava/lang/Object;)V
+    .locals 2
 
-    const-wide/16 v0, 0x0
+    check-cast p1, Lj$/util/function/g;
 
-    cmp-long v0, p1, v0
+    iget-wide v0, p0, Lj$/util/stream/C3;->e:D
 
-    if-ltz v0, :cond_0
+    invoke-interface {p1, v0, v1}, Lj$/util/function/g;->c(D)V
 
-    new-instance v0, Lj$/util/stream/t3;
-
-    sget-object v3, Lj$/util/stream/g4;->INT_VALUE:Lj$/util/stream/g4;
-
-    invoke-static {p3, p4}, Lj$/util/stream/C3;->e(J)I
-
-    move-result v4
-
-    move-object v1, v0
-
-    move-object v2, p0
-
-    move-wide v5, p1
-
-    move-wide v7, p3
-
-    invoke-direct/range {v1 .. v8}, Lj$/util/stream/t3;-><init>(Lj$/util/stream/c;Lj$/util/stream/g4;IJJ)V
-
-    return-object v0
-
-    :cond_0
-    new-instance p0, Ljava/lang/IllegalArgumentException;
-
-    new-instance p3, Ljava/lang/StringBuilder;
-
-    invoke-direct {p3}, Ljava/lang/StringBuilder;-><init>()V
-
-    const-string p4, "Skip must be non-negative: "
-
-    invoke-virtual {p3, p4}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
-
-    invoke-virtual {p3, p1, p2}, Ljava/lang/StringBuilder;->append(J)Ljava/lang/StringBuilder;
-
-    invoke-virtual {p3}, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
-
-    move-result-object p1
-
-    invoke-direct {p0, p1}, Ljava/lang/IllegalArgumentException;-><init>(Ljava/lang/String;)V
-
-    throw p0
+    return-void
 .end method
 
-.method public static h(Lj$/util/stream/c;JJ)Lj$/util/stream/f1;
-    .locals 9
+.method protected t(I)Lj$/util/stream/j3;
+    .locals 1
 
-    const-wide/16 v0, 0x0
+    new-instance v0, Lj$/util/stream/g3;
 
-    cmp-long v0, p1, v0
-
-    if-ltz v0, :cond_0
-
-    new-instance v0, Lj$/util/stream/w3;
-
-    sget-object v3, Lj$/util/stream/g4;->LONG_VALUE:Lj$/util/stream/g4;
-
-    invoke-static {p3, p4}, Lj$/util/stream/C3;->e(J)I
-
-    move-result v4
-
-    move-object v1, v0
-
-    move-object v2, p0
-
-    move-wide v5, p1
-
-    move-wide v7, p3
-
-    invoke-direct/range {v1 .. v8}, Lj$/util/stream/w3;-><init>(Lj$/util/stream/c;Lj$/util/stream/g4;IJJ)V
+    invoke-direct {v0, p1}, Lj$/util/stream/g3;-><init>(I)V
 
     return-object v0
-
-    :cond_0
-    new-instance p0, Ljava/lang/IllegalArgumentException;
-
-    new-instance p3, Ljava/lang/StringBuilder;
-
-    invoke-direct {p3}, Ljava/lang/StringBuilder;-><init>()V
-
-    const-string p4, "Skip must be non-negative: "
-
-    invoke-virtual {p3, p4}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
-
-    invoke-virtual {p3, p1, p2}, Ljava/lang/StringBuilder;->append(J)Ljava/lang/StringBuilder;
-
-    invoke-virtual {p3}, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
-
-    move-result-object p1
-
-    invoke-direct {p0, p1}, Ljava/lang/IllegalArgumentException;-><init>(Ljava/lang/String;)V
-
-    throw p0
-.end method
-
-.method public static i(Lj$/util/stream/c;JJ)Lj$/util/stream/c4;
-    .locals 9
-
-    const-wide/16 v0, 0x0
-
-    cmp-long v0, p1, v0
-
-    if-ltz v0, :cond_0
-
-    new-instance v0, Lj$/util/stream/q3;
-
-    sget-object v3, Lj$/util/stream/g4;->REFERENCE:Lj$/util/stream/g4;
-
-    invoke-static {p3, p4}, Lj$/util/stream/C3;->e(J)I
-
-    move-result v4
-
-    move-object v1, v0
-
-    move-object v2, p0
-
-    move-wide v5, p1
-
-    move-wide v7, p3
-
-    invoke-direct/range {v1 .. v8}, Lj$/util/stream/q3;-><init>(Lj$/util/stream/c;Lj$/util/stream/g4;IJJ)V
-
-    return-object v0
-
-    :cond_0
-    new-instance p0, Ljava/lang/IllegalArgumentException;
-
-    new-instance p3, Ljava/lang/StringBuilder;
-
-    invoke-direct {p3}, Ljava/lang/StringBuilder;-><init>()V
-
-    const-string p4, "Skip must be non-negative: "
-
-    invoke-virtual {p3, p4}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
-
-    invoke-virtual {p3, p1, p2}, Ljava/lang/StringBuilder;->append(J)Ljava/lang/StringBuilder;
-
-    invoke-virtual {p3}, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
-
-    move-result-object p1
-
-    invoke-direct {p0, p1}, Ljava/lang/IllegalArgumentException;-><init>(Ljava/lang/String;)V
-
-    throw p0
 .end method

@@ -61,9 +61,7 @@
     return-object p1
 
     :cond_0
-    sget-object v0, Ljava/math/BigDecimal;->ZERO:Ljava/math/BigDecimal;
-
-    invoke-virtual {p1, v0}, Ljava/math/BigDecimal;->compareTo(Ljava/math/BigDecimal;)I
+    invoke-virtual {p1}, Ljava/math/BigDecimal;->signum()I
 
     move-result v0
 
@@ -71,19 +69,37 @@
 
     sget-object p1, Lcom/fasterxml/jackson/databind/node/DecimalNode;->ZERO:Lcom/fasterxml/jackson/databind/node/DecimalNode;
 
-    goto :goto_0
+    return-object p1
 
     :cond_1
+    :try_start_0
     invoke-virtual {p1}, Ljava/math/BigDecimal;->stripTrailingZeros()Ljava/math/BigDecimal;
 
     move-result-object p1
+    :try_end_0
+    .catch Ljava/lang/ArithmeticException; {:try_start_0 .. :try_end_0} :catch_0
 
+    :catch_0
     new-instance v0, Lcom/fasterxml/jackson/databind/node/DecimalNode;
 
     invoke-direct {v0, p1}, Lcom/fasterxml/jackson/databind/node/DecimalNode;-><init>(Ljava/math/BigDecimal;)V
 
-    move-object p1, v0
+    return-object v0
+.end method
 
-    :goto_0
+.method public numberNode(Ljava/math/BigInteger;)Lcom/fasterxml/jackson/databind/node/ValueNode;
+    .locals 1
+
+    if-nez p1, :cond_0
+
+    sget-object p1, Lcom/fasterxml/jackson/databind/node/NullNode;->instance:Lcom/fasterxml/jackson/databind/node/NullNode;
+
     return-object p1
+
+    :cond_0
+    new-instance v0, Lcom/fasterxml/jackson/databind/node/BigIntegerNode;
+
+    invoke-direct {v0, p1}, Lcom/fasterxml/jackson/databind/node/BigIntegerNode;-><init>(Ljava/math/BigInteger;)V
+
+    return-object v0
 .end method

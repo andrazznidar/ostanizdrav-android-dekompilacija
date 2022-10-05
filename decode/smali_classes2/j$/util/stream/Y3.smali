@@ -1,93 +1,89 @@
-.class Lj$/util/stream/Y3;
-.super Lj$/util/stream/a4$a;
+.class final Lj$/util/stream/y3;
+.super Lj$/util/stream/z3;
 
 # interfaces
-.implements Lj$/util/Spliterator$c;
-
-
-# instance fields
-.field final synthetic g:Lj$/util/stream/Z3;
+.implements Lj$/util/B;
 
 
 # direct methods
-.method constructor <init>(Lj$/util/stream/Z3;IIII)V
+.method constructor <init>(Lj$/util/B;JJ)V
     .locals 0
 
-    iput-object p1, p0, Lj$/util/stream/Y3;->g:Lj$/util/stream/Z3;
+    invoke-direct/range {p0 .. p5}, Lj$/util/stream/z3;-><init>(Lj$/util/D;JJ)V
 
-    invoke-direct/range {p0 .. p5}, Lj$/util/stream/a4$a;-><init>(Lj$/util/stream/a4;IIII)V
+    return-void
+.end method
+
+.method constructor <init>(Lj$/util/B;JJJJ)V
+    .locals 11
+
+    const/4 v10, 0x0
+
+    move-object v0, p0
+
+    move-object v1, p1
+
+    move-wide v2, p2
+
+    move-wide v4, p4
+
+    move-wide/from16 v6, p6
+
+    move-wide/from16 v8, p8
+
+    invoke-direct/range {v0 .. v10}, Lj$/util/stream/z3;-><init>(Lj$/util/D;JJJJLj$/util/stream/D0;)V
 
     return-void
 .end method
 
 
 # virtual methods
-.method a(Ljava/lang/Object;ILjava/lang/Object;)V
-    .locals 2
-
-    check-cast p1, [J
-
-    check-cast p3, Lj$/util/function/m;
-
-    aget-wide v0, p1, p2
-
-    invoke-interface {p3, v0, v1}, Lj$/util/function/m;->e(J)V
-
-    return-void
-.end method
-
-.method public synthetic b(Lj$/util/function/Consumer;)Z
+.method public synthetic a(Lj$/util/function/Consumer;)Z
     .locals 0
 
-    invoke-static {p0, p1}, Lj$/util/a;->l(Lj$/util/Spliterator$c;Lj$/util/function/Consumer;)Z
+    invoke-static {p0, p1}, Lj$/util/a;->s(Lj$/util/B;Lj$/util/function/Consumer;)Z
 
     move-result p1
 
     return p1
 .end method
 
-.method c(Ljava/lang/Object;II)Lj$/util/Spliterator$d;
-    .locals 1
+.method protected b(Lj$/util/Spliterator;JJJJ)Lj$/util/Spliterator;
+    .locals 11
 
-    check-cast p1, [J
+    move-object v1, p1
 
-    add-int/2addr p3, p2
+    check-cast v1, Lj$/util/B;
 
-    const/16 v0, 0x410
+    new-instance v10, Lj$/util/stream/y3;
 
-    invoke-static {p1, p2, p3, v0}, Lj$/util/H;->l([JIII)Lj$/util/Spliterator$c;
+    move-object v0, v10
 
-    move-result-object p1
+    move-wide v2, p2
 
-    return-object p1
+    move-wide v4, p4
+
+    move-wide/from16 v6, p6
+
+    move-wide/from16 v8, p8
+
+    invoke-direct/range {v0 .. v9}, Lj$/util/stream/y3;-><init>(Lj$/util/B;JJJJ)V
+
+    return-object v10
 .end method
 
-.method d(IIII)Lj$/util/Spliterator$d;
-    .locals 7
+.method protected bridge synthetic c()Ljava/lang/Object;
+    .locals 1
 
-    new-instance v6, Lj$/util/stream/Y3;
+    sget-object v0, Lj$/util/stream/x3;->a:Lj$/util/stream/x3;
 
-    iget-object v1, p0, Lj$/util/stream/Y3;->g:Lj$/util/stream/Z3;
-
-    move-object v0, v6
-
-    move v2, p1
-
-    move v3, p2
-
-    move v4, p3
-
-    move v5, p4
-
-    invoke-direct/range {v0 .. v5}, Lj$/util/stream/Y3;-><init>(Lj$/util/stream/Z3;IIII)V
-
-    return-object v6
+    return-object v0
 .end method
 
 .method public synthetic forEachRemaining(Lj$/util/function/Consumer;)V
     .locals 0
 
-    invoke-static {p0, p1}, Lj$/util/a;->d(Lj$/util/Spliterator$c;Lj$/util/function/Consumer;)V
+    invoke-static {p0, p1}, Lj$/util/a;->g(Lj$/util/B;Lj$/util/function/Consumer;)V
 
     return-void
 .end method

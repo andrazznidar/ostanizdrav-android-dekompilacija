@@ -109,7 +109,7 @@
 
     sput-object v0, Lorg/joda/time/Days;->MIN_VALUE:Lorg/joda/time/Days;
 
-    invoke-static {}, Lorg/joda/time/format/ISOPeriodFormat;->standard()Lorg/joda/time/format/PeriodFormatter;
+    invoke-static {}, Lkotlin/internal/ProgressionUtilKt;->standard()Lorg/joda/time/format/PeriodFormatter;
 
     move-result-object v0
 
@@ -210,6 +210,22 @@
     .end packed-switch
 .end method
 
+.method public static daysBetween(Lorg/joda/time/ReadableInstant;Lorg/joda/time/ReadableInstant;)Lorg/joda/time/Days;
+    .locals 1
+
+    sget-object v0, Lorg/joda/time/DurationFieldType;->DAYS_TYPE:Lorg/joda/time/DurationFieldType;
+
+    invoke-static {p0, p1, v0}, Lorg/joda/time/base/BaseSingleFieldPeriod;->between(Lorg/joda/time/ReadableInstant;Lorg/joda/time/ReadableInstant;Lorg/joda/time/DurationFieldType;)I
+
+    move-result p0
+
+    invoke-static {p0}, Lorg/joda/time/Days;->days(I)Lorg/joda/time/Days;
+
+    move-result-object p0
+
+    return-object p0
+.end method
+
 .method public static daysBetween(Lorg/joda/time/ReadablePartial;Lorg/joda/time/ReadablePartial;)Lorg/joda/time/Days;
     .locals 7
 
@@ -265,17 +281,17 @@
 
     move-object v2, p0
 
-    check-cast v2, Lorg/joda/time/base/BaseLocal;
+    check-cast v2, Lorg/joda/time/base/AbstractPartial;
 
-    invoke-virtual {v2, v0}, Lorg/joda/time/base/BaseLocal;->getFieldType(I)Lorg/joda/time/DateTimeFieldType;
+    invoke-virtual {v2, v0}, Lorg/joda/time/base/AbstractPartial;->getFieldType(I)Lorg/joda/time/DateTimeFieldType;
 
     move-result-object v2
 
     move-object v3, p1
 
-    check-cast v3, Lorg/joda/time/base/BaseLocal;
+    check-cast v3, Lorg/joda/time/base/AbstractPartial;
 
-    invoke-virtual {v3, v0}, Lorg/joda/time/base/BaseLocal;->getFieldType(I)Lorg/joda/time/DateTimeFieldType;
+    invoke-virtual {v3, v0}, Lorg/joda/time/base/AbstractPartial;->getFieldType(I)Lorg/joda/time/DateTimeFieldType;
 
     move-result-object v3
 
@@ -306,9 +322,9 @@
 
     move-object v4, p0
 
-    check-cast v4, Lorg/joda/time/base/BaseLocal;
+    check-cast v4, Lorg/joda/time/base/AbstractPartial;
 
-    invoke-virtual {v4, v3}, Lorg/joda/time/base/BaseLocal;->getField(I)Lorg/joda/time/DateTimeField;
+    invoke-virtual {v4, v3}, Lorg/joda/time/base/AbstractPartial;->getField(I)Lorg/joda/time/DateTimeField;
 
     move-result-object v4
 

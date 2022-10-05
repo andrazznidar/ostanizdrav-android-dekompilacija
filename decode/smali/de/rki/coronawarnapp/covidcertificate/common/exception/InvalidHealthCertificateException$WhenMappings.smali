@@ -42,6 +42,12 @@
 
     aput v2, v0, v1
 
+    const/16 v1, 0x24
+
+    const/4 v2, 0x3
+
+    aput v2, v0, v1
+
     sput-object v0, Lde/rki/coronawarnapp/covidcertificate/common/exception/InvalidHealthCertificateException$WhenMappings;->$EnumSwitchMapping$0:[I
 
     return-void

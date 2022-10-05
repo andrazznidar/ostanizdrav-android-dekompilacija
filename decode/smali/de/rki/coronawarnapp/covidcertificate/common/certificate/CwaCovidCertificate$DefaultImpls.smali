@@ -15,14 +15,10 @@
 
 
 # direct methods
-.method public static isValid(Lde/rki/coronawarnapp/covidcertificate/common/certificate/CwaCovidCertificate;)Z
-    .locals 3
+.method public static isDisplayValid(Lde/rki/coronawarnapp/covidcertificate/common/certificate/CwaCovidCertificate;)Z
+    .locals 1
 
     instance-of v0, p0, Lde/rki/coronawarnapp/covidcertificate/test/core/TestCertificate;
-
-    const/4 v1, 0x0
-
-    const/4 v2, 0x1
 
     if-eqz v0, :cond_0
 
@@ -32,7 +28,7 @@
 
     instance-of p0, p0, Lde/rki/coronawarnapp/covidcertificate/common/certificate/CwaCovidCertificate$State$Invalid;
 
-    if-nez p0, :cond_2
+    if-nez p0, :cond_1
 
     goto :goto_0
 
@@ -43,7 +39,7 @@
 
     instance-of v0, v0, Lde/rki/coronawarnapp/covidcertificate/common/certificate/CwaCovidCertificate$State$Valid;
 
-    if-nez v0, :cond_1
+    if-nez v0, :cond_2
 
     invoke-interface {p0}, Lde/rki/coronawarnapp/covidcertificate/common/certificate/CwaCovidCertificate;->getState()Lde/rki/coronawarnapp/covidcertificate/common/certificate/CwaCovidCertificate$State;
 
@@ -51,12 +47,37 @@
 
     instance-of p0, p0, Lde/rki/coronawarnapp/covidcertificate/common/certificate/CwaCovidCertificate$State$ExpiringSoon;
 
-    if-eqz p0, :cond_2
+    if-eqz p0, :cond_1
+
+    goto :goto_0
 
     :cond_1
-    :goto_0
-    move v1, v2
+    const/4 p0, 0x0
+
+    goto :goto_1
 
     :cond_2
-    return v1
+    :goto_0
+    const/4 p0, 0x1
+
+    :goto_1
+    return p0
+.end method
+
+.method public static isNotBlocked(Lde/rki/coronawarnapp/covidcertificate/common/certificate/CwaCovidCertificate;)Z
+    .locals 1
+
+    invoke-interface {p0}, Lde/rki/coronawarnapp/covidcertificate/common/certificate/CwaCovidCertificate;->getState()Lde/rki/coronawarnapp/covidcertificate/common/certificate/CwaCovidCertificate$State;
+
+    move-result-object p0
+
+    sget-object v0, Lde/rki/coronawarnapp/covidcertificate/common/certificate/CwaCovidCertificate$State$Blocked;->INSTANCE:Lde/rki/coronawarnapp/covidcertificate/common/certificate/CwaCovidCertificate$State$Blocked;
+
+    invoke-static {p0, v0}, Lkotlin/jvm/internal/Intrinsics;->areEqual(Ljava/lang/Object;Ljava/lang/Object;)Z
+
+    move-result p0
+
+    xor-int/lit8 p0, p0, 0x1
+
+    return p0
 .end method

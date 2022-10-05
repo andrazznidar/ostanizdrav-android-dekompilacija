@@ -14,7 +14,7 @@
 .end annotation
 
 .annotation system Ldalvik/annotation/SourceDebugExtension;
-    value = "SMAP\nRecoveryCertificateDetailsFragment.kt\nKotlin\n*S Kotlin\n*F\n+ 1 RecoveryCertificateDetailsFragment.kt\nde/rki/coronawarnapp/covidcertificate/recovery/ui/details/RecoveryCertificateDetailsFragment$Companion\n+ 2 Uri.kt\nandroidx/core/net/UriKt\n*L\n1#1,218:1\n29#2:219\n*S KotlinDebug\n*F\n+ 1 RecoveryCertificateDetailsFragment.kt\nde/rki/coronawarnapp/covidcertificate/recovery/ui/details/RecoveryCertificateDetailsFragment$Companion\n*L\n214#1:219\n*E\n"
+    value = "SMAP\nRecoveryCertificateDetailsFragment.kt\nKotlin\n*S Kotlin\n*F\n+ 1 RecoveryCertificateDetailsFragment.kt\nde/rki/coronawarnapp/covidcertificate/recovery/ui/details/RecoveryCertificateDetailsFragment$Companion\n+ 2 Uri.kt\nandroidx/core/net/UriKt\n*L\n1#1,226:1\n29#2:227\n*S KotlinDebug\n*F\n+ 1 RecoveryCertificateDetailsFragment.kt\nde/rki/coronawarnapp/covidcertificate/recovery/ui/details/RecoveryCertificateDetailsFragment$Companion\n*L\n222#1:227\n*E\n"
 .end annotation
 
 

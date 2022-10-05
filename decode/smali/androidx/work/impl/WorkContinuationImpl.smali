@@ -1,5 +1,5 @@
 .class public Landroidx/work/impl/WorkContinuationImpl;
-.super Landroidx/work/WorkContinuation;
+.super Lorg/joda/time/Chronology;
 .source "WorkContinuationImpl.java"
 
 
@@ -110,7 +110,7 @@
         }
     .end annotation
 
-    invoke-direct {p0}, Landroidx/work/WorkContinuation;-><init>()V
+    invoke-direct {p0}, Lorg/joda/time/Chronology;-><init>()V
 
     iput-object p1, p0, Landroidx/work/impl/WorkContinuationImpl;->mWorkManagerImpl:Landroidx/work/impl/WorkManagerImpl;
 
@@ -410,6 +410,14 @@
 
     :goto_0
     iget-object v0, p0, Landroidx/work/impl/WorkContinuationImpl;->mOperation:Landroidx/work/Operation;
+
+    return-object v0
+.end method
+
+.method public getName()Ljava/lang/String;
+    .locals 1
+
+    iget-object v0, p0, Landroidx/work/impl/WorkContinuationImpl;->mName:Ljava/lang/String;
 
     return-object v0
 .end method

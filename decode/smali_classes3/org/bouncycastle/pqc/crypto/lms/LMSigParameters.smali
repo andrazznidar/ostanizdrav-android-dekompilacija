@@ -13,7 +13,7 @@
 
 .field public static final lms_sha256_n32_h5:Lorg/bouncycastle/pqc/crypto/lms/LMSigParameters;
 
-.field public static paramBuilders:Ljava/util/Map;
+.field private static paramBuilders:Ljava/util/Map;
     .annotation system Ldalvik/annotation/Signature;
         value = {
             "Ljava/util/Map<",
@@ -26,13 +26,13 @@
 
 
 # instance fields
-.field public final digestOid:Lorg/bouncycastle/asn1/ASN1ObjectIdentifier;
+.field private final digestOid:Lorg/bouncycastle/asn1/ASN1ObjectIdentifier;
 
-.field public final h:I
+.field private final h:I
 
-.field public final m:I
+.field private final m:I
 
-.field public final type:I
+.field private final type:I
 
 
 # direct methods
@@ -116,6 +116,14 @@
     return-void
 .end method
 
+.method public static synthetic access$000(Lorg/bouncycastle/pqc/crypto/lms/LMSigParameters;)I
+    .locals 0
+
+    iget p0, p0, Lorg/bouncycastle/pqc/crypto/lms/LMSigParameters;->type:I
+
+    return p0
+.end method
+
 .method public static getParametersForType(I)Lorg/bouncycastle/pqc/crypto/lms/LMSigParameters;
     .locals 1
 
@@ -125,13 +133,45 @@
 
     move-result-object p0
 
-    check-cast v0, Ljava/util/HashMap;
-
-    invoke-virtual {v0, p0}, Ljava/util/HashMap;->get(Ljava/lang/Object;)Ljava/lang/Object;
+    invoke-interface {v0, p0}, Ljava/util/Map;->get(Ljava/lang/Object;)Ljava/lang/Object;
 
     move-result-object p0
 
     check-cast p0, Lorg/bouncycastle/pqc/crypto/lms/LMSigParameters;
 
     return-object p0
+.end method
+
+
+# virtual methods
+.method public getDigestOID()Lorg/bouncycastle/asn1/ASN1ObjectIdentifier;
+    .locals 1
+
+    iget-object v0, p0, Lorg/bouncycastle/pqc/crypto/lms/LMSigParameters;->digestOid:Lorg/bouncycastle/asn1/ASN1ObjectIdentifier;
+
+    return-object v0
+.end method
+
+.method public getH()I
+    .locals 1
+
+    iget v0, p0, Lorg/bouncycastle/pqc/crypto/lms/LMSigParameters;->h:I
+
+    return v0
+.end method
+
+.method public getM()I
+    .locals 1
+
+    iget v0, p0, Lorg/bouncycastle/pqc/crypto/lms/LMSigParameters;->m:I
+
+    return v0
+.end method
+
+.method public getType()I
+    .locals 1
+
+    iget v0, p0, Lorg/bouncycastle/pqc/crypto/lms/LMSigParameters;->type:I
+
+    return v0
 .end method

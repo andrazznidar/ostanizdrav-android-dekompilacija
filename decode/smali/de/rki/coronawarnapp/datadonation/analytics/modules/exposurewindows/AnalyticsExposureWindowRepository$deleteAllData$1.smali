@@ -17,11 +17,11 @@
     c = "de.rki.coronawarnapp.datadonation.analytics.modules.exposurewindows.AnalyticsExposureWindowRepository"
     f = "AnalyticsExposureWindowRepository.kt"
     l = {
+        0x35,
         0x36,
         0x37,
         0x38,
-        0x39,
-        0x39
+        0x38
     }
     m = "deleteAllData"
 .end annotation

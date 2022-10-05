@@ -13,13 +13,37 @@
     name = "Data"
 .end annotation
 
+.annotation runtime Lkotlin/Metadata;
+    d1 = {
+        "\u0000\u0014\n\u0002\u0018\u0002\n\u0002\u0010\u0000\n\u0002\u0008\u0002\n\u0002\u0018\u0002\n\u0002\u0008\u0005\u0008\u00a6\u0004\u0018\u00002\u00020\u0001B\u0005\u00a2\u0006\u0002\u0010\u0002R\u001b\u0010\u0003\u001a\u00020\u00048FX\u0086\u0084\u0002\u00a2\u0006\u000c\n\u0004\u0008\u0007\u0010\u0008\u001a\u0004\u0008\u0005\u0010\u0006\u00a8\u0006\t"
+    }
+    d2 = {
+        "Lkotlin/reflect/jvm/internal/KDeclarationContainerImpl$Data;",
+        "",
+        "(Lkotlin/reflect/jvm/internal/KDeclarationContainerImpl;)V",
+        "moduleData",
+        "Lkotlin/reflect/jvm/internal/impl/descriptors/runtime/components/RuntimeModuleData;",
+        "getModuleData",
+        "()Lorg/jetbrains/kotlin/descriptors/runtime/components/RuntimeModuleData;",
+        "moduleData$delegate",
+        "Lkotlin/reflect/jvm/internal/ReflectProperties$LazySoftVal;",
+        "kotlin-reflection"
+    }
+    k = 0x1
+    mv = {
+        0x1,
+        0x5,
+        0x1
+    }
+.end annotation
+
 
 # static fields
 .field public static final synthetic $$delegatedProperties:[Lkotlin/reflect/KProperty;
 
 
 # instance fields
-.field public final moduleData$delegate:Lkotlin/reflect/jvm/internal/ReflectProperties$LazySoftVal;
+.field private final moduleData$delegate:Lkotlin/reflect/jvm/internal/ReflectProperties$LazySoftVal;
 
 .field public final synthetic this$0:Lkotlin/reflect/jvm/internal/KDeclarationContainerImpl;
 
@@ -82,4 +106,26 @@
     iput-object p1, p0, Lkotlin/reflect/jvm/internal/KDeclarationContainerImpl$Data;->moduleData$delegate:Lkotlin/reflect/jvm/internal/ReflectProperties$LazySoftVal;
 
     return-void
+.end method
+
+
+# virtual methods
+.method public final getModuleData()Lkotlin/reflect/jvm/internal/impl/descriptors/runtime/components/RuntimeModuleData;
+    .locals 3
+
+    iget-object v0, p0, Lkotlin/reflect/jvm/internal/KDeclarationContainerImpl$Data;->moduleData$delegate:Lkotlin/reflect/jvm/internal/ReflectProperties$LazySoftVal;
+
+    sget-object v1, Lkotlin/reflect/jvm/internal/KDeclarationContainerImpl$Data;->$$delegatedProperties:[Lkotlin/reflect/KProperty;
+
+    const/4 v2, 0x0
+
+    aget-object v1, v1, v2
+
+    invoke-virtual {v0, p0, v1}, Lkotlin/reflect/jvm/internal/ReflectProperties$Val;->getValue(Ljava/lang/Object;Ljava/lang/Object;)Ljava/lang/Object;
+
+    move-result-object v0
+
+    check-cast v0, Lkotlin/reflect/jvm/internal/impl/descriptors/runtime/components/RuntimeModuleData;
+
+    return-object v0
 .end method

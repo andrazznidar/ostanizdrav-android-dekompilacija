@@ -2,7 +2,8 @@
 .super Ljava/lang/Object;
 
 # interfaces
-.implements Lorg/bouncycastle/crypto/Digest;
+.implements Lorg/bouncycastle/crypto/ExtendedDigest;
+.implements Lorg/bouncycastle/util/Memoable;
 
 
 # instance fields
@@ -32,8 +33,48 @@
     return-void
 .end method
 
+.method public constructor <init>(Lorg/bouncycastle/crypto/digests/GeneralDigest;)V
+    .locals 1
+
+    invoke-direct {p0}, Ljava/lang/Object;-><init>()V
+
+    const/4 v0, 0x4
+
+    new-array v0, v0, [B
+
+    iput-object v0, p0, Lorg/bouncycastle/crypto/digests/GeneralDigest;->xBuf:[B
+
+    invoke-virtual {p0, p1}, Lorg/bouncycastle/crypto/digests/GeneralDigest;->copyIn(Lorg/bouncycastle/crypto/digests/GeneralDigest;)V
+
+    return-void
+.end method
+
 
 # virtual methods
+.method public copyIn(Lorg/bouncycastle/crypto/digests/GeneralDigest;)V
+    .locals 4
+
+    iget-object v0, p1, Lorg/bouncycastle/crypto/digests/GeneralDigest;->xBuf:[B
+
+    iget-object v1, p0, Lorg/bouncycastle/crypto/digests/GeneralDigest;->xBuf:[B
+
+    array-length v2, v0
+
+    const/4 v3, 0x0
+
+    invoke-static {v0, v3, v1, v3, v2}, Ljava/lang/System;->arraycopy(Ljava/lang/Object;ILjava/lang/Object;II)V
+
+    iget v0, p1, Lorg/bouncycastle/crypto/digests/GeneralDigest;->xBufOff:I
+
+    iput v0, p0, Lorg/bouncycastle/crypto/digests/GeneralDigest;->xBufOff:I
+
+    iget-wide v0, p1, Lorg/bouncycastle/crypto/digests/GeneralDigest;->byteCount:J
+
+    iput-wide v0, p0, Lorg/bouncycastle/crypto/digests/GeneralDigest;->byteCount:J
+
+    return-void
+.end method
+
 .method public finish()V
     .locals 3
 
@@ -62,6 +103,14 @@
     invoke-virtual {p0}, Lorg/bouncycastle/crypto/digests/GeneralDigest;->processBlock()V
 
     return-void
+.end method
+
+.method public getByteLength()I
+    .locals 1
+
+    const/16 v0, 0x40
+
+    return v0
 .end method
 
 .method public abstract processBlock()V

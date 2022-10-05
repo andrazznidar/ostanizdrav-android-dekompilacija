@@ -36,8 +36,6 @@
 
     invoke-direct {p1, p2, p2}, Lcoil/size/PixelSize;-><init>(II)V
 
-    sget p2, Lcoil/size/SizeResolver;->$r8$clinit:I
-
     new-instance p2, Lcoil/size/RealSizeResolver;
 
     invoke-direct {p2, p1}, Lcoil/size/RealSizeResolver;-><init>(Lcoil/size/Size;)V

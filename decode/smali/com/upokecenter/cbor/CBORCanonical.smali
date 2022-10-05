@@ -189,6 +189,18 @@
     return-void
 .end method
 
+.method public static CtapCanonicalEncode(Lcom/upokecenter/cbor/CBORObject;)[B
+    .locals 1
+
+    const/4 v0, 0x0
+
+    invoke-static {p0, v0}, Lcom/upokecenter/cbor/CBORCanonical;->CtapCanonicalEncode(Lcom/upokecenter/cbor/CBORObject;I)[B
+
+    move-result-object p0
+
+    return-object p0
+.end method
+
 .method public static CtapCanonicalEncode(Lcom/upokecenter/cbor/CBORObject;I)[B
     .locals 14
 

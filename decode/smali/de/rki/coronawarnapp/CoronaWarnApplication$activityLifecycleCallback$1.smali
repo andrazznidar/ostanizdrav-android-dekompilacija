@@ -37,7 +37,7 @@
 
     invoke-direct {v0, p1}, Lde/rki/coronawarnapp/CoronaWarnApplication$activityLifecycleCallback$1$localBM$2;-><init>(Lde/rki/coronawarnapp/CoronaWarnApplication;)V
 
-    invoke-static {v0}, Lkotlin/LazyKt__LazyKt;->lazy(Lkotlin/jvm/functions/Function0;)Lkotlin/Lazy;
+    invoke-static {v0}, Lkotlin/LazyKt__LazyJVMKt;->lazy(Lkotlin/jvm/functions/Function0;)Lkotlin/Lazy;
 
     move-result-object p1
 

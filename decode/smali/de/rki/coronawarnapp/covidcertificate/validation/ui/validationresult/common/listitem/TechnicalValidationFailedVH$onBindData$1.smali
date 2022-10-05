@@ -32,7 +32,7 @@
 .end annotation
 
 .annotation system Ldalvik/annotation/SourceDebugExtension;
-    value = "SMAP\nTechnicalValidationFailedVH.kt\nKotlin\n*S Kotlin\n*F\n+ 1 TechnicalValidationFailedVH.kt\nde/rki/coronawarnapp/covidcertificate/validation/ui/validationresult/common/listitem/TechnicalValidationFailedVH$onBindData$1\n+ 2 _Collections.kt\nkotlin/collections/CollectionsKt___CollectionsKt\n+ 3 View.kt\nandroidx/core/view/ViewKt\n*L\n1#1,58:1\n798#2,11:59\n296#3,2:70\n296#3,2:72\n296#3,2:74\n296#3,2:76\n296#3,2:78\n*S KotlinDebug\n*F\n+ 1 TechnicalValidationFailedVH.kt\nde/rki/coronawarnapp/covidcertificate/validation/ui/validationresult/common/listitem/TechnicalValidationFailedVH$onBindData$1\n*L\n33#1:59,11\n35#1:70,2\n36#1:72,2\n37#1:74,2\n38#1:76,2\n39#1:78,2\n*E\n"
+    value = "SMAP\nTechnicalValidationFailedVH.kt\nKotlin\n*S Kotlin\n*F\n+ 1 TechnicalValidationFailedVH.kt\nde/rki/coronawarnapp/covidcertificate/validation/ui/validationresult/common/listitem/TechnicalValidationFailedVH$onBindData$1\n+ 2 _Collections.kt\nkotlin/collections/CollectionsKt___CollectionsKt\n+ 3 View.kt\nandroidx/core/view/ViewKt\n*L\n1#1,56:1\n798#2,11:57\n296#3,2:68\n296#3,2:70\n296#3,2:72\n296#3,2:74\n296#3,2:76\n*S KotlinDebug\n*F\n+ 1 TechnicalValidationFailedVH.kt\nde/rki/coronawarnapp/covidcertificate/validation/ui/validationresult/common/listitem/TechnicalValidationFailedVH$onBindData$1\n*L\n33#1:57,11\n35#1:68,2\n36#1:70,2\n37#1:72,2\n38#1:74,2\n39#1:76,2\n*E\n"
 .end annotation
 
 
@@ -105,7 +105,7 @@
     goto :goto_0
 
     :cond_1
-    invoke-static {v0}, Lkotlin/collections/CollectionsKt___CollectionsKt;->singleOrNull(Ljava/util/List;)Ljava/lang/Object;
+    invoke-static {v0}, Lkotlin/collections/CollectionsKt___CollectionsKt;->lastOrNull(Ljava/util/List;)Ljava/lang/Object;
 
     move-result-object p3
 
@@ -269,7 +269,7 @@
 
     move-result-object p3
 
-    const v0, 0x7f130729
+    const v0, 0x7f1306bf
 
     const/4 v1, 0x2
 

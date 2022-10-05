@@ -16,6 +16,9 @@
     }
 .end annotation
 
+.annotation runtime Lkotlin/jvm/JvmInline;
+.end annotation
+
 
 # instance fields
 .field public final data:B
@@ -34,7 +37,7 @@
 
 
 # virtual methods
-.method public compareTo(Ljava/lang/Object;)I
+.method public synthetic compareTo(Ljava/lang/Object;)I
     .locals 1
 
     check-cast p1, Lkotlin/UByte;
@@ -55,29 +58,32 @@
 .end method
 
 .method public equals(Ljava/lang/Object;)Z
-    .locals 2
+    .locals 3
 
     iget-byte v0, p0, Lkotlin/UByte;->data:B
 
     instance-of v1, p1, Lkotlin/UByte;
 
-    if-eqz v1, :cond_0
+    const/4 v2, 0x0
 
-    check-cast p1, Lkotlin/UByte;
-
-    iget-byte p1, p1, Lkotlin/UByte;->data:B
-
-    if-ne v0, p1, :cond_0
-
-    const/4 p1, 0x1
+    if-nez v1, :cond_0
 
     goto :goto_0
 
     :cond_0
-    const/4 p1, 0x0
+    check-cast p1, Lkotlin/UByte;
+
+    iget-byte p1, p1, Lkotlin/UByte;->data:B
+
+    if-eq v0, p1, :cond_1
+
+    goto :goto_0
+
+    :cond_1
+    const/4 v2, 0x1
 
     :goto_0
-    return p1
+    return v2
 .end method
 
 .method public hashCode()I

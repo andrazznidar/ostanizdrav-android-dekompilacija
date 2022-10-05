@@ -96,7 +96,7 @@
 
     iget-object v0, p0, Lcom/airbnb/lottie/model/animatable/AnimatableSplitDimensionPathValue;->animatableXDimension:Lcom/airbnb/lottie/model/animatable/AnimatableFloatValue;
 
-    invoke-virtual {v0}, Lcom/airbnb/lottie/model/animatable/BaseAnimatableValue;->isStatic()Z
+    invoke-virtual {v0}, Lboofcv/struct/border/ImageBorder;->isStatic()Z
 
     move-result v0
 
@@ -104,7 +104,7 @@
 
     iget-object v0, p0, Lcom/airbnb/lottie/model/animatable/AnimatableSplitDimensionPathValue;->animatableYDimension:Lcom/airbnb/lottie/model/animatable/AnimatableFloatValue;
 
-    invoke-virtual {v0}, Lcom/airbnb/lottie/model/animatable/BaseAnimatableValue;->isStatic()Z
+    invoke-virtual {v0}, Lboofcv/struct/border/ImageBorder;->isStatic()Z
 
     move-result v0
 

@@ -34,7 +34,7 @@
     c = "de.rki.coronawarnapp.datadonation.analytics.Analytics$submitAnalyticsData$result$1"
     f = "Analytics.kt"
     l = {
-        0x7a
+        0x7d
     }
     m = "invokeSuspend"
 .end annotation

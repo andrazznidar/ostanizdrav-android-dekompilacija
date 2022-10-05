@@ -33,133 +33,25 @@
 
     iget p1, p1, Lcom/google/zxing/ResultPoint;->y:F
 
-    invoke-static {v0, p0, v1, p1}, Lcom/google/zxing/common/detector/MathUtils;->distance(FFFF)F
+    sub-float/2addr v0, v1
 
-    move-result p0
+    sub-float/2addr p0, p1
+
+    mul-float/2addr v0, v0
+
+    mul-float/2addr p0, p0
+
+    add-float/2addr p0, v0
+
+    float-to-double p0, p0
+
+    invoke-static {p0, p1}, Ljava/lang/Math;->sqrt(D)D
+
+    move-result-wide p0
+
+    double-to-float p0, p0
 
     return p0
-.end method
-
-.method public static orderBestPatterns([Lcom/google/zxing/ResultPoint;)V
-    .locals 11
-
-    const/4 v0, 0x0
-
-    aget-object v1, p0, v0
-
-    const/4 v2, 0x1
-
-    aget-object v3, p0, v2
-
-    invoke-static {v1, v3}, Lcom/google/zxing/ResultPoint;->distance(Lcom/google/zxing/ResultPoint;Lcom/google/zxing/ResultPoint;)F
-
-    move-result v1
-
-    aget-object v3, p0, v2
-
-    const/4 v4, 0x2
-
-    aget-object v5, p0, v4
-
-    invoke-static {v3, v5}, Lcom/google/zxing/ResultPoint;->distance(Lcom/google/zxing/ResultPoint;Lcom/google/zxing/ResultPoint;)F
-
-    move-result v3
-
-    aget-object v5, p0, v0
-
-    aget-object v6, p0, v4
-
-    invoke-static {v5, v6}, Lcom/google/zxing/ResultPoint;->distance(Lcom/google/zxing/ResultPoint;Lcom/google/zxing/ResultPoint;)F
-
-    move-result v5
-
-    cmpl-float v6, v3, v1
-
-    if-ltz v6, :cond_0
-
-    cmpl-float v6, v3, v5
-
-    if-ltz v6, :cond_0
-
-    aget-object v1, p0, v0
-
-    aget-object v3, p0, v2
-
-    aget-object v5, p0, v4
-
-    goto :goto_0
-
-    :cond_0
-    cmpl-float v3, v5, v3
-
-    if-ltz v3, :cond_1
-
-    cmpl-float v1, v5, v1
-
-    if-ltz v1, :cond_1
-
-    aget-object v1, p0, v2
-
-    aget-object v3, p0, v0
-
-    aget-object v5, p0, v4
-
-    goto :goto_0
-
-    :cond_1
-    aget-object v1, p0, v4
-
-    aget-object v3, p0, v0
-
-    aget-object v5, p0, v2
-
-    :goto_0
-    iget v6, v1, Lcom/google/zxing/ResultPoint;->x:F
-
-    iget v7, v1, Lcom/google/zxing/ResultPoint;->y:F
-
-    iget v8, v5, Lcom/google/zxing/ResultPoint;->x:F
-
-    sub-float/2addr v8, v6
-
-    iget v9, v3, Lcom/google/zxing/ResultPoint;->y:F
-
-    sub-float/2addr v9, v7
-
-    mul-float/2addr v9, v8
-
-    iget v8, v5, Lcom/google/zxing/ResultPoint;->y:F
-
-    sub-float/2addr v8, v7
-
-    iget v7, v3, Lcom/google/zxing/ResultPoint;->x:F
-
-    sub-float/2addr v7, v6
-
-    mul-float/2addr v7, v8
-
-    sub-float/2addr v9, v7
-
-    const/4 v6, 0x0
-
-    cmpg-float v6, v9, v6
-
-    if-gez v6, :cond_2
-
-    move-object v10, v5
-
-    move-object v5, v3
-
-    move-object v3, v10
-
-    :cond_2
-    aput-object v3, p0, v0
-
-    aput-object v1, p0, v2
-
-    aput-object v5, p0, v4
-
-    return-void
 .end method
 
 

@@ -49,7 +49,7 @@
 
     move-object v1, v7
 
-    invoke-direct/range {v1 .. v6}, Lcom/fasterxml/jackson/databind/cfg/DeserializerFactoryConfig;-><init>([Lcom/fasterxml/jackson/databind/deser/Deserializers;[Lcom/fasterxml/jackson/databind/deser/KeyDeserializers;[Lcom/fasterxml/jackson/databind/deser/BeanDeserializerModifier;[Lcom/fasterxml/jackson/databind/AbstractTypeResolver;[Lcom/fasterxml/jackson/databind/deser/ValueInstantiators;)V
+    invoke-direct/range {v1 .. v6}, Lcom/fasterxml/jackson/databind/cfg/DeserializerFactoryConfig;-><init>([Lcom/fasterxml/jackson/databind/deser/Deserializers;[Lcom/fasterxml/jackson/databind/deser/KeyDeserializers;[Lcom/fasterxml/jackson/databind/deser/BeanDeserializerModifier;[Lorg/joda/time/Chronology;[Lcom/fasterxml/jackson/databind/deser/ValueInstantiators;)V
 
     invoke-direct {v0, v7}, Lcom/fasterxml/jackson/databind/deser/BeanDeserializerFactory;-><init>(Lcom/fasterxml/jackson/databind/cfg/DeserializerFactoryConfig;)V
 
@@ -597,7 +597,7 @@
     :goto_5
     if-eqz v13, :cond_10
 
-    invoke-virtual {v13}, Lcom/fasterxml/jackson/databind/introspect/Annotated;->getRawType()Ljava/lang/Class;
+    invoke-virtual {v13}, Lorg/joda/time/Chronology;->getRawType()Ljava/lang/Class;
 
     move-result-object v7
 
@@ -616,7 +616,7 @@
 
     new-array v2, v6, [Ljava/lang/Object;
 
-    invoke-virtual {v13}, Lcom/fasterxml/jackson/databind/introspect/Annotated;->getName()Ljava/lang/String;
+    invoke-virtual {v13}, Lorg/joda/time/Chronology;->getName()Ljava/lang/String;
 
     move-result-object v3
 
@@ -661,7 +661,7 @@
 
     new-instance v22, Lcom/fasterxml/jackson/databind/BeanProperty$Std;
 
-    invoke-virtual {v13}, Lcom/fasterxml/jackson/databind/introspect/Annotated;->getName()Ljava/lang/String;
+    invoke-virtual {v13}, Lorg/joda/time/Chronology;->getName()Ljava/lang/String;
 
     move-result-object v16
 
@@ -715,7 +715,7 @@
 
     new-instance v22, Lcom/fasterxml/jackson/databind/BeanProperty$Std;
 
-    invoke-virtual {v13}, Lcom/fasterxml/jackson/databind/introspect/Annotated;->getName()Ljava/lang/String;
+    invoke-virtual {v13}, Lorg/joda/time/Chronology;->getName()Ljava/lang/String;
 
     move-result-object v16
 
@@ -736,7 +736,7 @@
     goto :goto_7
 
     :goto_8
-    invoke-virtual {v0, v1, v13}, Lcom/fasterxml/jackson/databind/deser/BasicDeserializerFactory;->findKeyDeserializerFromAnnotation(Lcom/fasterxml/jackson/databind/DeserializationContext;Lcom/fasterxml/jackson/databind/introspect/Annotated;)Lcom/fasterxml/jackson/databind/KeyDeserializer;
+    invoke-virtual {v0, v1, v13}, Lcom/fasterxml/jackson/databind/deser/BasicDeserializerFactory;->findKeyDeserializerFromAnnotation(Lcom/fasterxml/jackson/databind/DeserializationContext;Lorg/joda/time/Chronology;)Lcom/fasterxml/jackson/databind/KeyDeserializer;
 
     move-result-object v16
 
@@ -780,13 +780,13 @@
 
     if-eqz v8, :cond_16
 
-    invoke-virtual {v8, v13}, Lcom/fasterxml/jackson/databind/AnnotationIntrospector;->findContentDeserializer(Lcom/fasterxml/jackson/databind/introspect/Annotated;)Ljava/lang/Object;
+    invoke-virtual {v8, v13}, Lcom/fasterxml/jackson/databind/AnnotationIntrospector;->findContentDeserializer(Lorg/joda/time/Chronology;)Ljava/lang/Object;
 
     move-result-object v8
 
     if-eqz v8, :cond_16
 
-    invoke-virtual {v1, v13, v8}, Lcom/fasterxml/jackson/databind/DeserializationContext;->deserializerInstance(Lcom/fasterxml/jackson/databind/introspect/Annotated;Ljava/lang/Object;)Lcom/fasterxml/jackson/databind/JsonDeserializer;
+    invoke-virtual {v1, v13, v8}, Lcom/fasterxml/jackson/databind/DeserializationContext;->deserializerInstance(Lorg/joda/time/Chronology;Ljava/lang/Object;)Lcom/fasterxml/jackson/databind/JsonDeserializer;
 
     move-result-object v8
 
@@ -1040,6 +1040,8 @@
     move-object/from16 v18, v4
 
     iget-object v4, v8, Lcom/fasterxml/jackson/databind/cfg/MapperConfigBase;->_configOverrides:Lcom/fasterxml/jackson/databind/cfg/ConfigOverrides;
+
+    invoke-static {v4}, Ljava/util/Objects;->requireNonNull(Ljava/lang/Object;)Ljava/lang/Object;
 
     invoke-virtual {v8, v6}, Lcom/fasterxml/jackson/databind/cfg/MapperConfig;->introspectClassAnnotations(Ljava/lang/Class;)Lcom/fasterxml/jackson/databind/BeanDescription;
 
@@ -1512,7 +1514,7 @@
 
     check-cast v2, Lcom/fasterxml/jackson/databind/introspect/AnnotatedMember;
 
-    invoke-virtual {v2}, Lcom/fasterxml/jackson/databind/introspect/Annotated;->getName()Ljava/lang/String;
+    invoke-virtual {v2}, Lorg/joda/time/Chronology;->getName()Ljava/lang/String;
 
     move-result-object v3
 
@@ -1520,7 +1522,7 @@
 
     move-result-object v3
 
-    invoke-virtual {v2}, Lcom/fasterxml/jackson/databind/introspect/Annotated;->getType()Lcom/fasterxml/jackson/databind/JavaType;
+    invoke-virtual {v2}, Lorg/joda/time/Chronology;->getType()Lcom/fasterxml/jackson/databind/JavaType;
 
     move-result-object v4
 
@@ -1599,7 +1601,7 @@
 
     iget-object v3, v0, Lcom/fasterxml/jackson/databind/introspect/BasicBeanDescription;->_classInfo:Lcom/fasterxml/jackson/databind/introspect/AnnotatedClass;
 
-    invoke-virtual {p1, v3, v1}, Lcom/fasterxml/jackson/databind/DatabindContext;->objectIdResolverInstance(Lcom/fasterxml/jackson/databind/introspect/Annotated;Lcom/fasterxml/jackson/databind/introspect/ObjectIdInfo;)Lcom/fasterxml/jackson/annotation/ObjectIdResolver;
+    invoke-virtual {p1, v3, v1}, Lcom/fasterxml/jackson/databind/DatabindContext;->objectIdResolverInstance(Lorg/joda/time/Chronology;Lcom/fasterxml/jackson/databind/introspect/ObjectIdInfo;)Lcom/fasterxml/jackson/annotation/ObjectIdResolver;
 
     move-result-object v9
 
@@ -1687,7 +1689,7 @@
 
     iget-object v0, v0, Lcom/fasterxml/jackson/databind/introspect/BasicBeanDescription;->_classInfo:Lcom/fasterxml/jackson/databind/introspect/AnnotatedClass;
 
-    invoke-virtual {p1, v0, v1}, Lcom/fasterxml/jackson/databind/DatabindContext;->objectIdGeneratorInstance(Lcom/fasterxml/jackson/databind/introspect/Annotated;Lcom/fasterxml/jackson/databind/introspect/ObjectIdInfo;)Lcom/fasterxml/jackson/annotation/ObjectIdGenerator;
+    invoke-virtual {p1, v0, v1}, Lcom/fasterxml/jackson/databind/DatabindContext;->objectIdGeneratorInstance(Lorg/joda/time/Chronology;Lcom/fasterxml/jackson/databind/introspect/ObjectIdInfo;)Lcom/fasterxml/jackson/annotation/ObjectIdGenerator;
 
     move-result-object v0
 
@@ -1867,15 +1869,17 @@
 
     invoke-static {p2}, Lcom/fasterxml/jackson/databind/util/ClassUtil;->exceptionMessage(Ljava/lang/Throwable;)Ljava/lang/String;
 
-    move-result-object p2
+    move-result-object v0
 
-    const/4 v0, 0x0
+    const/4 v1, 0x0
 
-    new-instance v1, Lcom/fasterxml/jackson/databind/exc/InvalidDefinitionException;
+    new-instance v2, Lcom/fasterxml/jackson/databind/exc/InvalidDefinitionException;
 
-    invoke-direct {v1, p1, p2, p3, v0}, Lcom/fasterxml/jackson/databind/exc/InvalidDefinitionException;-><init>(Lcom/fasterxml/jackson/core/JsonParser;Ljava/lang/String;Lcom/fasterxml/jackson/databind/BeanDescription;Lcom/fasterxml/jackson/databind/introspect/BeanPropertyDefinition;)V
+    invoke-direct {v2, p1, v0, p3, v1}, Lcom/fasterxml/jackson/databind/exc/InvalidDefinitionException;-><init>(Lcom/fasterxml/jackson/core/JsonParser;Ljava/lang/String;Lcom/fasterxml/jackson/databind/BeanDescription;Lcom/fasterxml/jackson/databind/introspect/BeanPropertyDefinition;)V
 
-    throw v1
+    invoke-virtual {v2, p2}, Ljava/io/IOException;->initCause(Ljava/lang/Throwable;)Ljava/lang/Throwable;
+
+    throw v2
 
     :catch_1
     move-exception p1
@@ -1924,7 +1928,7 @@
 
     if-eqz v2, :cond_1
 
-    new-instance v8, Lcom/fasterxml/jackson/databind/deser/impl/FieldProperty;
+    new-instance v8, Lcom/fasterxml/jackson/databind/deser/impl/MethodProperty;
 
     check-cast p2, Lcom/fasterxml/jackson/databind/introspect/BasicBeanDescription;
 
@@ -1942,7 +1946,7 @@
 
     move-object v4, p4
 
-    invoke-direct/range {v2 .. v7}, Lcom/fasterxml/jackson/databind/deser/impl/FieldProperty;-><init>(Lcom/fasterxml/jackson/databind/introspect/BeanPropertyDefinition;Lcom/fasterxml/jackson/databind/JavaType;Lcom/fasterxml/jackson/databind/jsontype/TypeDeserializer;Lcom/fasterxml/jackson/databind/util/Annotations;Lcom/fasterxml/jackson/databind/introspect/AnnotatedMethod;)V
+    invoke-direct/range {v2 .. v7}, Lcom/fasterxml/jackson/databind/deser/impl/MethodProperty;-><init>(Lcom/fasterxml/jackson/databind/introspect/BeanPropertyDefinition;Lcom/fasterxml/jackson/databind/JavaType;Lcom/fasterxml/jackson/databind/jsontype/TypeDeserializer;Lcom/fasterxml/jackson/databind/util/Annotations;Lcom/fasterxml/jackson/databind/introspect/AnnotatedMethod;)V
 
     goto :goto_0
 
@@ -1968,7 +1972,7 @@
     invoke-direct/range {v2 .. v7}, Lcom/fasterxml/jackson/databind/deser/impl/FieldProperty;-><init>(Lcom/fasterxml/jackson/databind/introspect/BeanPropertyDefinition;Lcom/fasterxml/jackson/databind/JavaType;Lcom/fasterxml/jackson/databind/jsontype/TypeDeserializer;Lcom/fasterxml/jackson/databind/util/Annotations;Lcom/fasterxml/jackson/databind/introspect/AnnotatedField;)V
 
     :goto_0
-    invoke-virtual {p0, p1, v0}, Lcom/fasterxml/jackson/databind/deser/BasicDeserializerFactory;->findDeserializerFromAnnotation(Lcom/fasterxml/jackson/databind/DeserializationContext;Lcom/fasterxml/jackson/databind/introspect/Annotated;)Lcom/fasterxml/jackson/databind/JsonDeserializer;
+    invoke-virtual {p0, p1, v0}, Lcom/fasterxml/jackson/databind/deser/BasicDeserializerFactory;->findDeserializerFromAnnotation(Lcom/fasterxml/jackson/databind/DeserializationContext;Lorg/joda/time/Chronology;)Lcom/fasterxml/jackson/databind/JsonDeserializer;
 
     move-result-object p2
 
@@ -1985,7 +1989,7 @@
 
     move-result-object p1
 
-    invoke-virtual {v8, p1}, Lcom/fasterxml/jackson/databind/deser/impl/FieldProperty;->withValueDeserializer(Lcom/fasterxml/jackson/databind/JsonDeserializer;)Lcom/fasterxml/jackson/databind/deser/SettableBeanProperty;
+    invoke-virtual {v8, p1}, Lcom/fasterxml/jackson/databind/deser/SettableBeanProperty;->withValueDeserializer(Lcom/fasterxml/jackson/databind/JsonDeserializer;)Lcom/fasterxml/jackson/databind/deser/SettableBeanProperty;
 
     move-result-object v8
 
@@ -2079,7 +2083,7 @@
 
     invoke-direct/range {v0 .. v5}, Lcom/fasterxml/jackson/databind/deser/impl/SetterlessProperty;-><init>(Lcom/fasterxml/jackson/databind/introspect/BeanPropertyDefinition;Lcom/fasterxml/jackson/databind/JavaType;Lcom/fasterxml/jackson/databind/jsontype/TypeDeserializer;Lcom/fasterxml/jackson/databind/util/Annotations;Lcom/fasterxml/jackson/databind/introspect/AnnotatedMethod;)V
 
-    invoke-virtual {p0, p1, v6}, Lcom/fasterxml/jackson/databind/deser/BasicDeserializerFactory;->findDeserializerFromAnnotation(Lcom/fasterxml/jackson/databind/DeserializationContext;Lcom/fasterxml/jackson/databind/introspect/Annotated;)Lcom/fasterxml/jackson/databind/JsonDeserializer;
+    invoke-virtual {p0, p1, v6}, Lcom/fasterxml/jackson/databind/deser/BasicDeserializerFactory;->findDeserializerFromAnnotation(Lcom/fasterxml/jackson/databind/DeserializationContext;Lorg/joda/time/Chronology;)Lcom/fasterxml/jackson/databind/JsonDeserializer;
 
     move-result-object p2
 

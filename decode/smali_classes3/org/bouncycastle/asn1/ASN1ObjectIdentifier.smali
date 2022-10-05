@@ -11,7 +11,9 @@
 
 
 # static fields
-.field public static final pool:Ljava/util/concurrent/ConcurrentMap;
+.field private static final LONG_LIMIT:J = 0xffffffffffff80L
+
+.field private static final pool:Ljava/util/concurrent/ConcurrentMap;
     .annotation system Ldalvik/annotation/Signature;
         value = {
             "Ljava/util/concurrent/ConcurrentMap<",
@@ -24,13 +26,13 @@
 
 
 # instance fields
-.field public body:[B
+.field private body:[B
 
-.field public final identifier:Ljava/lang/String;
+.field private final identifier:Ljava/lang/String;
 
 
 # direct methods
-.method public static constructor <clinit>()V
+.method static constructor <clinit>()V
     .locals 1
 
     new-instance v0, Lj$/util/concurrent/ConcurrentHashMap;
@@ -47,66 +49,28 @@
 
     invoke-direct {p0}, Lorg/bouncycastle/asn1/ASN1Primitive;-><init>()V
 
-    invoke-virtual {p1}, Ljava/lang/String;->length()I
+    const-string v0, "\'identifier\' cannot be null"
+
+    invoke-static {p1, v0}, Ljava/util/Objects;->requireNonNull(Ljava/lang/Object;Ljava/lang/String;)Ljava/lang/Object;
+
+    invoke-static {p1}, Lorg/bouncycastle/asn1/ASN1ObjectIdentifier;->isValidIdentifier(Ljava/lang/String;)Z
 
     move-result v0
 
-    const/4 v1, 0x0
-
-    const/4 v2, 0x3
-
-    if-lt v0, v2, :cond_2
-
-    const/4 v0, 0x1
-
-    invoke-virtual {p1, v0}, Ljava/lang/String;->charAt(I)C
-
-    move-result v0
-
-    const/16 v2, 0x2e
-
-    if-eq v0, v2, :cond_0
-
-    goto :goto_0
-
-    :cond_0
-    invoke-virtual {p1, v1}, Ljava/lang/String;->charAt(I)C
-
-    move-result v0
-
-    const/16 v2, 0x30
-
-    if-lt v0, v2, :cond_2
-
-    const/16 v2, 0x32
-
-    if-le v0, v2, :cond_1
-
-    goto :goto_0
-
-    :cond_1
-    const/4 v0, 0x2
-
-    invoke-static {p1, v0}, Lorg/bouncycastle/asn1/ASN1ObjectIdentifier;->isValidBranchID(Ljava/lang/String;I)Z
-
-    move-result v1
-
-    :cond_2
-    :goto_0
-    if-eqz v1, :cond_3
+    if-eqz v0, :cond_0
 
     iput-object p1, p0, Lorg/bouncycastle/asn1/ASN1ObjectIdentifier;->identifier:Ljava/lang/String;
 
     return-void
 
-    :cond_3
+    :cond_0
     new-instance v0, Ljava/lang/IllegalArgumentException;
 
     const-string v1, "string "
 
     const-string v2, " not an OID"
 
-    invoke-static {v1, p1, v2}, Landroidx/core/graphics/PathParser$$ExternalSyntheticOutline0;->m(Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;)Ljava/lang/String;
+    invoke-static {v1, p1, v2}, Landroidx/concurrent/futures/AbstractResolvableFuture$$ExternalSyntheticOutline1;->m(Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;)Ljava/lang/String;
 
     move-result-object p1
 
@@ -132,11 +96,19 @@
 
     invoke-direct {v0}, Ljava/lang/StringBuilder;-><init>()V
 
-    iget-object p1, p1, Lorg/bouncycastle/asn1/ASN1ObjectIdentifier;->identifier:Ljava/lang/String;
+    invoke-virtual {p1}, Lorg/bouncycastle/asn1/ASN1ObjectIdentifier;->getId()Ljava/lang/String;
 
-    const-string v1, "."
+    move-result-object p1
 
-    invoke-static {v0, p1, v1, p2}, Landroidx/fragment/app/BackStackRecord$$ExternalSyntheticOutline0;->m(Ljava/lang/StringBuilder;Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;)Ljava/lang/String;
+    invoke-virtual {v0, p1}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+
+    const-string p1, "."
+
+    invoke-virtual {v0, p1}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+
+    invoke-virtual {v0, p2}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+
+    invoke-virtual {v0}, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
 
     move-result-object p1
 
@@ -151,7 +123,7 @@
 
     const-string v1, " not a valid OID branch"
 
-    invoke-static {v0, p2, v1}, Landroidx/core/graphics/PathParser$$ExternalSyntheticOutline0;->m(Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;)Ljava/lang/String;
+    invoke-static {v0, p2, v1}, Landroidx/concurrent/futures/AbstractResolvableFuture$$ExternalSyntheticOutline1;->m(Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;)Ljava/lang/String;
 
     move-result-object p2
 
@@ -338,6 +310,167 @@
     return-void
 .end method
 
+.method private doOutput(Ljava/io/ByteArrayOutputStream;)V
+    .locals 7
+
+    new-instance v0, Lorg/bouncycastle/asn1/OIDTokenizer;
+
+    iget-object v1, p0, Lorg/bouncycastle/asn1/ASN1ObjectIdentifier;->identifier:Ljava/lang/String;
+
+    invoke-direct {v0, v1}, Lorg/bouncycastle/asn1/OIDTokenizer;-><init>(Ljava/lang/String;)V
+
+    invoke-virtual {v0}, Lorg/bouncycastle/asn1/OIDTokenizer;->nextToken()Ljava/lang/String;
+
+    move-result-object v1
+
+    invoke-static {v1}, Ljava/lang/Integer;->parseInt(Ljava/lang/String;)I
+
+    move-result v1
+
+    mul-int/lit8 v1, v1, 0x28
+
+    invoke-virtual {v0}, Lorg/bouncycastle/asn1/OIDTokenizer;->nextToken()Ljava/lang/String;
+
+    move-result-object v2
+
+    invoke-virtual {v2}, Ljava/lang/String;->length()I
+
+    move-result v3
+
+    const/16 v4, 0x12
+
+    if-gt v3, v4, :cond_0
+
+    int-to-long v5, v1
+
+    invoke-static {v2}, Ljava/lang/Long;->parseLong(Ljava/lang/String;)J
+
+    move-result-wide v1
+
+    add-long/2addr v1, v5
+
+    :goto_0
+    invoke-direct {p0, p1, v1, v2}, Lorg/bouncycastle/asn1/ASN1ObjectIdentifier;->writeField(Ljava/io/ByteArrayOutputStream;J)V
+
+    goto :goto_1
+
+    :cond_0
+    new-instance v3, Ljava/math/BigInteger;
+
+    invoke-direct {v3, v2}, Ljava/math/BigInteger;-><init>(Ljava/lang/String;)V
+
+    int-to-long v1, v1
+
+    invoke-static {v1, v2}, Ljava/math/BigInteger;->valueOf(J)Ljava/math/BigInteger;
+
+    move-result-object v1
+
+    invoke-virtual {v3, v1}, Ljava/math/BigInteger;->add(Ljava/math/BigInteger;)Ljava/math/BigInteger;
+
+    move-result-object v1
+
+    invoke-direct {p0, p1, v1}, Lorg/bouncycastle/asn1/ASN1ObjectIdentifier;->writeField(Ljava/io/ByteArrayOutputStream;Ljava/math/BigInteger;)V
+
+    :goto_1
+    invoke-virtual {v0}, Lorg/bouncycastle/asn1/OIDTokenizer;->hasMoreTokens()Z
+
+    move-result v1
+
+    if-eqz v1, :cond_2
+
+    invoke-virtual {v0}, Lorg/bouncycastle/asn1/OIDTokenizer;->nextToken()Ljava/lang/String;
+
+    move-result-object v1
+
+    invoke-virtual {v1}, Ljava/lang/String;->length()I
+
+    move-result v2
+
+    if-gt v2, v4, :cond_1
+
+    invoke-static {v1}, Ljava/lang/Long;->parseLong(Ljava/lang/String;)J
+
+    move-result-wide v1
+
+    goto :goto_0
+
+    :cond_1
+    new-instance v2, Ljava/math/BigInteger;
+
+    invoke-direct {v2, v1}, Ljava/math/BigInteger;-><init>(Ljava/lang/String;)V
+
+    invoke-direct {p0, p1, v2}, Lorg/bouncycastle/asn1/ASN1ObjectIdentifier;->writeField(Ljava/io/ByteArrayOutputStream;Ljava/math/BigInteger;)V
+
+    goto :goto_1
+
+    :cond_2
+    return-void
+.end method
+
+.method public static fromOctetString([B)Lorg/bouncycastle/asn1/ASN1ObjectIdentifier;
+    .locals 2
+
+    new-instance v0, Lorg/bouncycastle/asn1/ASN1ObjectIdentifier$OidHandle;
+
+    invoke-direct {v0, p0}, Lorg/bouncycastle/asn1/ASN1ObjectIdentifier$OidHandle;-><init>([B)V
+
+    sget-object v1, Lorg/bouncycastle/asn1/ASN1ObjectIdentifier;->pool:Ljava/util/concurrent/ConcurrentMap;
+
+    invoke-interface {v1, v0}, Ljava/util/concurrent/ConcurrentMap;->get(Ljava/lang/Object;)Ljava/lang/Object;
+
+    move-result-object v0
+
+    check-cast v0, Lorg/bouncycastle/asn1/ASN1ObjectIdentifier;
+
+    if-nez v0, :cond_0
+
+    new-instance v0, Lorg/bouncycastle/asn1/ASN1ObjectIdentifier;
+
+    invoke-direct {v0, p0}, Lorg/bouncycastle/asn1/ASN1ObjectIdentifier;-><init>([B)V
+
+    :cond_0
+    return-object v0
+.end method
+
+.method private declared-synchronized getBody()[B
+    .locals 1
+
+    monitor-enter p0
+
+    :try_start_0
+    iget-object v0, p0, Lorg/bouncycastle/asn1/ASN1ObjectIdentifier;->body:[B
+
+    if-nez v0, :cond_0
+
+    new-instance v0, Ljava/io/ByteArrayOutputStream;
+
+    invoke-direct {v0}, Ljava/io/ByteArrayOutputStream;-><init>()V
+
+    invoke-direct {p0, v0}, Lorg/bouncycastle/asn1/ASN1ObjectIdentifier;->doOutput(Ljava/io/ByteArrayOutputStream;)V
+
+    invoke-virtual {v0}, Ljava/io/ByteArrayOutputStream;->toByteArray()[B
+
+    move-result-object v0
+
+    iput-object v0, p0, Lorg/bouncycastle/asn1/ASN1ObjectIdentifier;->body:[B
+
+    :cond_0
+    iget-object v0, p0, Lorg/bouncycastle/asn1/ASN1ObjectIdentifier;->body:[B
+    :try_end_0
+    .catchall {:try_start_0 .. :try_end_0} :catchall_0
+
+    monitor-exit p0
+
+    return-object v0
+
+    :catchall_0
+    move-exception v0
+
+    monitor-exit p0
+
+    throw v0
+.end method
+
 .method public static getInstance(Ljava/lang/Object;)Lorg/bouncycastle/asn1/ASN1ObjectIdentifier;
     .locals 2
 
@@ -399,13 +532,7 @@
 
     move-result-object v1
 
-    invoke-virtual {p0}, Ljava/io/IOException;->getMessage()Ljava/lang/String;
-
-    move-result-object p0
-
-    invoke-virtual {v1, p0}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
-
-    invoke-virtual {v1}, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
+    invoke-static {p0, v1}, Lorg/bouncycastle/asn1/ASN1ApplicationSpecific$$ExternalSyntheticOutline0;->m(Ljava/io/IOException;Ljava/lang/StringBuilder;)Ljava/lang/String;
 
     move-result-object p0
 
@@ -422,17 +549,7 @@
 
     move-result-object v1
 
-    invoke-virtual {p0}, Ljava/lang/Object;->getClass()Ljava/lang/Class;
-
-    move-result-object p0
-
-    invoke-virtual {p0}, Ljava/lang/Class;->getName()Ljava/lang/String;
-
-    move-result-object p0
-
-    invoke-virtual {v1, p0}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
-
-    invoke-virtual {v1}, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
+    invoke-static {p0, v1}, Lcom/fasterxml/jackson/core/JsonGenerator$$ExternalSyntheticOutline0;->m(Ljava/lang/Object;Ljava/lang/StringBuilder;)Ljava/lang/String;
 
     move-result-object p0
 
@@ -447,7 +564,46 @@
     return-object p0
 .end method
 
-.method public static isValidBranchID(Ljava/lang/String;I)Z
+.method public static getInstance(Lorg/bouncycastle/asn1/ASN1TaggedObject;Z)Lorg/bouncycastle/asn1/ASN1ObjectIdentifier;
+    .locals 0
+
+    invoke-virtual {p0}, Lorg/bouncycastle/asn1/ASN1TaggedObject;->getObject()Lorg/bouncycastle/asn1/ASN1Primitive;
+
+    move-result-object p0
+
+    if-nez p1, :cond_1
+
+    instance-of p1, p0, Lorg/bouncycastle/asn1/ASN1ObjectIdentifier;
+
+    if-eqz p1, :cond_0
+
+    goto :goto_0
+
+    :cond_0
+    invoke-static {p0}, Lorg/bouncycastle/asn1/ASN1OctetString;->getInstance(Ljava/lang/Object;)Lorg/bouncycastle/asn1/ASN1OctetString;
+
+    move-result-object p0
+
+    invoke-virtual {p0}, Lorg/bouncycastle/asn1/ASN1OctetString;->getOctets()[B
+
+    move-result-object p0
+
+    invoke-static {p0}, Lorg/bouncycastle/asn1/ASN1ObjectIdentifier;->fromOctetString([B)Lorg/bouncycastle/asn1/ASN1ObjectIdentifier;
+
+    move-result-object p0
+
+    return-object p0
+
+    :cond_1
+    :goto_0
+    invoke-static {p0}, Lorg/bouncycastle/asn1/ASN1ObjectIdentifier;->getInstance(Ljava/lang/Object;)Lorg/bouncycastle/asn1/ASN1ObjectIdentifier;
+
+    move-result-object p0
+
+    return-object p0
+.end method
+
+.method private static isValidBranchID(Ljava/lang/String;I)Z
     .locals 7
 
     invoke-virtual {p0}, Ljava/lang/String;->length()I
@@ -528,392 +684,61 @@
     return v1
 .end method
 
+.method private static isValidIdentifier(Ljava/lang/String;)Z
+    .locals 3
 
-# virtual methods
-.method public asn1Equals(Lorg/bouncycastle/asn1/ASN1Primitive;)Z
-    .locals 1
+    invoke-virtual {p0}, Ljava/lang/String;->length()I
 
-    if-ne p1, p0, :cond_0
+    move-result v0
 
-    const/4 p1, 0x1
+    const/4 v1, 0x0
 
-    return p1
+    const/4 v2, 0x3
 
-    :cond_0
-    instance-of v0, p1, Lorg/bouncycastle/asn1/ASN1ObjectIdentifier;
+    if-lt v0, v2, :cond_2
 
-    if-nez v0, :cond_1
+    const/4 v0, 0x1
 
-    const/4 p1, 0x0
+    invoke-virtual {p0, v0}, Ljava/lang/String;->charAt(I)C
 
-    return p1
-
-    :cond_1
-    iget-object v0, p0, Lorg/bouncycastle/asn1/ASN1ObjectIdentifier;->identifier:Ljava/lang/String;
-
-    check-cast p1, Lorg/bouncycastle/asn1/ASN1ObjectIdentifier;
-
-    iget-object p1, p1, Lorg/bouncycastle/asn1/ASN1ObjectIdentifier;->identifier:Ljava/lang/String;
-
-    invoke-virtual {v0, p1}, Ljava/lang/String;->equals(Ljava/lang/Object;)Z
-
-    move-result p1
-
-    return p1
-.end method
-
-.method public final doOutput(Ljava/io/ByteArrayOutputStream;)V
-    .locals 17
-
-    move-object/from16 v0, p0
-
-    iget-object v1, v0, Lorg/bouncycastle/asn1/ASN1ObjectIdentifier;->identifier:Ljava/lang/String;
+    move-result v0
 
     const/16 v2, 0x2e
 
-    const/4 v3, 0x0
-
-    invoke-virtual {v1, v2, v3}, Ljava/lang/String;->indexOf(II)I
-
-    move-result v4
-
-    const/4 v5, -0x1
-
-    const/4 v6, 0x1
-
-    if-ne v4, v5, :cond_0
-
-    invoke-virtual {v1, v3}, Ljava/lang/String;->substring(I)Ljava/lang/String;
-
-    move-result-object v4
-
-    move v7, v5
+    if-eq v0, v2, :cond_0
 
     goto :goto_0
 
     :cond_0
-    invoke-virtual {v1, v3, v4}, Ljava/lang/String;->substring(II)Ljava/lang/String;
-
-    move-result-object v7
-
-    add-int/2addr v4, v6
-
-    move-object/from16 v16, v7
-
-    move v7, v4
-
-    move-object/from16 v4, v16
-
-    :goto_0
-    invoke-static {v4}, Ljava/lang/Integer;->parseInt(Ljava/lang/String;)I
-
-    move-result v4
-
-    mul-int/lit8 v4, v4, 0x28
-
-    const/4 v8, 0x0
-
-    if-ne v7, v5, :cond_1
-
-    move v9, v7
-
-    move-object v7, v8
-
-    goto :goto_1
-
-    :cond_1
-    invoke-virtual {v1, v2, v7}, Ljava/lang/String;->indexOf(II)I
-
-    move-result v9
-
-    if-ne v9, v5, :cond_2
-
-    invoke-virtual {v1, v7}, Ljava/lang/String;->substring(I)Ljava/lang/String;
-
-    move-result-object v7
-
-    move v9, v5
-
-    goto :goto_1
-
-    :cond_2
-    invoke-virtual {v1, v7, v9}, Ljava/lang/String;->substring(II)Ljava/lang/String;
-
-    move-result-object v7
-
-    add-int/2addr v9, v6
-
-    :goto_1
-    invoke-virtual {v7}, Ljava/lang/String;->length()I
-
-    move-result v10
-
-    const/16 v11, 0x12
-
-    if-gt v10, v11, :cond_3
-
-    int-to-long v12, v4
-
-    invoke-static {v7}, Ljava/lang/Long;->parseLong(Ljava/lang/String;)J
-
-    move-result-wide v14
-
-    add-long/2addr v12, v14
-
-    move-object/from16 v7, p1
-
-    move-object v4, v0
-
-    goto :goto_5
-
-    :cond_3
-    new-instance v10, Ljava/math/BigInteger;
-
-    invoke-direct {v10, v7}, Ljava/math/BigInteger;-><init>(Ljava/lang/String;)V
-
-    int-to-long v12, v4
-
-    invoke-static {v12, v13}, Ljava/math/BigInteger;->valueOf(J)Ljava/math/BigInteger;
-
-    move-result-object v4
-
-    invoke-virtual {v10, v4}, Ljava/math/BigInteger;->add(Ljava/math/BigInteger;)Ljava/math/BigInteger;
-
-    move-result-object v4
-
-    move-object/from16 v7, p1
-
-    invoke-virtual {v0, v7, v4}, Lorg/bouncycastle/asn1/ASN1ObjectIdentifier;->writeField(Ljava/io/ByteArrayOutputStream;Ljava/math/BigInteger;)V
-
-    move-object v4, v0
-
-    :goto_2
-    if-eq v9, v5, :cond_4
-
-    move v10, v6
-
-    goto :goto_3
-
-    :cond_4
-    move v10, v3
-
-    :goto_3
-    if-eqz v10, :cond_8
-
-    if-ne v9, v5, :cond_5
-
-    move v10, v9
-
-    move-object v9, v8
-
-    goto :goto_4
-
-    :cond_5
-    invoke-virtual {v1, v2, v9}, Ljava/lang/String;->indexOf(II)I
-
-    move-result v10
-
-    if-ne v10, v5, :cond_6
-
-    invoke-virtual {v1, v9}, Ljava/lang/String;->substring(I)Ljava/lang/String;
-
-    move-result-object v9
-
-    move v10, v5
-
-    goto :goto_4
-
-    :cond_6
-    invoke-virtual {v1, v9, v10}, Ljava/lang/String;->substring(II)Ljava/lang/String;
-
-    move-result-object v9
-
-    add-int/lit8 v10, v10, 0x1
-
-    :goto_4
-    invoke-virtual {v9}, Ljava/lang/String;->length()I
-
-    move-result v12
-
-    if-gt v12, v11, :cond_7
-
-    invoke-static {v9}, Ljava/lang/Long;->parseLong(Ljava/lang/String;)J
-
-    move-result-wide v12
-
-    move v9, v10
-
-    :goto_5
-    invoke-virtual {v4, v7, v12, v13}, Lorg/bouncycastle/asn1/ASN1ObjectIdentifier;->writeField(Ljava/io/ByteArrayOutputStream;J)V
-
-    goto :goto_2
-
-    :cond_7
-    new-instance v12, Ljava/math/BigInteger;
-
-    invoke-direct {v12, v9}, Ljava/math/BigInteger;-><init>(Ljava/lang/String;)V
-
-    invoke-virtual {v4, v7, v12}, Lorg/bouncycastle/asn1/ASN1ObjectIdentifier;->writeField(Ljava/io/ByteArrayOutputStream;Ljava/math/BigInteger;)V
-
-    move v9, v10
-
-    goto :goto_2
-
-    :cond_8
-    return-void
-.end method
-
-.method public encode(Lorg/bouncycastle/asn1/ASN1OutputStream;Z)V
-    .locals 2
-    .annotation system Ldalvik/annotation/Throws;
-        value = {
-            Ljava/io/IOException;
-        }
-    .end annotation
-
-    invoke-virtual {p0}, Lorg/bouncycastle/asn1/ASN1ObjectIdentifier;->getBody()[B
-
-    move-result-object v0
-
-    const/4 v1, 0x6
-
-    invoke-virtual {p1, p2, v1, v0}, Lorg/bouncycastle/asn1/ASN1OutputStream;->writeEncoded(ZI[B)V
-
-    return-void
-.end method
-
-.method public encodedLength()I
-    .locals 2
-    .annotation system Ldalvik/annotation/Throws;
-        value = {
-            Ljava/io/IOException;
-        }
-    .end annotation
-
-    invoke-virtual {p0}, Lorg/bouncycastle/asn1/ASN1ObjectIdentifier;->getBody()[B
-
-    move-result-object v0
-
-    array-length v0, v0
-
-    invoke-static {v0}, Lorg/bouncycastle/asn1/StreamUtil;->calculateBodyLength(I)I
-
-    move-result v1
-
-    add-int/lit8 v1, v1, 0x1
-
-    add-int/2addr v1, v0
-
-    return v1
-.end method
-
-.method public final declared-synchronized getBody()[B
-    .locals 1
-
-    monitor-enter p0
-
-    :try_start_0
-    iget-object v0, p0, Lorg/bouncycastle/asn1/ASN1ObjectIdentifier;->body:[B
-
-    if-nez v0, :cond_0
-
-    new-instance v0, Ljava/io/ByteArrayOutputStream;
-
-    invoke-direct {v0}, Ljava/io/ByteArrayOutputStream;-><init>()V
-
-    invoke-virtual {p0, v0}, Lorg/bouncycastle/asn1/ASN1ObjectIdentifier;->doOutput(Ljava/io/ByteArrayOutputStream;)V
-
-    invoke-virtual {v0}, Ljava/io/ByteArrayOutputStream;->toByteArray()[B
-
-    move-result-object v0
-
-    iput-object v0, p0, Lorg/bouncycastle/asn1/ASN1ObjectIdentifier;->body:[B
-
-    :cond_0
-    iget-object v0, p0, Lorg/bouncycastle/asn1/ASN1ObjectIdentifier;->body:[B
-    :try_end_0
-    .catchall {:try_start_0 .. :try_end_0} :catchall_0
-
-    monitor-exit p0
-
-    return-object v0
-
-    :catchall_0
-    move-exception v0
-
-    monitor-exit p0
-
-    throw v0
-.end method
-
-.method public hashCode()I
-    .locals 1
-
-    iget-object v0, p0, Lorg/bouncycastle/asn1/ASN1ObjectIdentifier;->identifier:Ljava/lang/String;
-
-    invoke-virtual {v0}, Ljava/lang/String;->hashCode()I
+    invoke-virtual {p0, v1}, Ljava/lang/String;->charAt(I)C
 
     move-result v0
 
-    return v0
+    const/16 v2, 0x30
+
+    if-lt v0, v2, :cond_2
+
+    const/16 v2, 0x32
+
+    if-le v0, v2, :cond_1
+
+    goto :goto_0
+
+    :cond_1
+    const/4 v0, 0x2
+
+    invoke-static {p0, v0}, Lorg/bouncycastle/asn1/ASN1ObjectIdentifier;->isValidBranchID(Ljava/lang/String;I)Z
+
+    move-result p0
+
+    return p0
+
+    :cond_2
+    :goto_0
+    return v1
 .end method
 
-.method public intern()Lorg/bouncycastle/asn1/ASN1ObjectIdentifier;
-    .locals 3
-
-    new-instance v0, Lorg/bouncycastle/asn1/ASN1ObjectIdentifier$OidHandle;
-
-    invoke-virtual {p0}, Lorg/bouncycastle/asn1/ASN1ObjectIdentifier;->getBody()[B
-
-    move-result-object v1
-
-    invoke-direct {v0, v1}, Lorg/bouncycastle/asn1/ASN1ObjectIdentifier$OidHandle;-><init>([B)V
-
-    sget-object v1, Lorg/bouncycastle/asn1/ASN1ObjectIdentifier;->pool:Ljava/util/concurrent/ConcurrentMap;
-
-    check-cast v1, Lj$/util/concurrent/ConcurrentHashMap;
-
-    invoke-virtual {v1, v0}, Lj$/util/concurrent/ConcurrentHashMap;->get(Ljava/lang/Object;)Ljava/lang/Object;
-
-    move-result-object v2
-
-    check-cast v2, Lorg/bouncycastle/asn1/ASN1ObjectIdentifier;
-
-    if-nez v2, :cond_0
-
-    invoke-virtual {v1, v0, p0}, Lj$/util/concurrent/ConcurrentHashMap;->putIfAbsent(Ljava/lang/Object;Ljava/lang/Object;)Ljava/lang/Object;
-
-    move-result-object v0
-
-    move-object v2, v0
-
-    check-cast v2, Lorg/bouncycastle/asn1/ASN1ObjectIdentifier;
-
-    if-nez v2, :cond_0
-
-    move-object v2, p0
-
-    :cond_0
-    return-object v2
-.end method
-
-.method public isConstructed()Z
-    .locals 1
-
-    const/4 v0, 0x0
-
-    return v0
-.end method
-
-.method public toString()Ljava/lang/String;
-    .locals 1
-
-    iget-object v0, p0, Lorg/bouncycastle/asn1/ASN1ObjectIdentifier;->identifier:Ljava/lang/String;
-
-    return-object v0
-.end method
-
-.method public final writeField(Ljava/io/ByteArrayOutputStream;J)V
+.method private writeField(Ljava/io/ByteArrayOutputStream;J)V
     .locals 5
 
     const/16 v0, 0x9
@@ -963,7 +788,7 @@
     return-void
 .end method
 
-.method public final writeField(Ljava/io/ByteArrayOutputStream;Ljava/math/BigInteger;)V
+.method private writeField(Ljava/io/ByteArrayOutputStream;Ljava/math/BigInteger;)V
     .locals 7
 
     invoke-virtual {p2}, Ljava/math/BigInteger;->bitLength()I
@@ -1027,4 +852,217 @@
 
     :goto_1
     return-void
+.end method
+
+
+# virtual methods
+.method public asn1Equals(Lorg/bouncycastle/asn1/ASN1Primitive;)Z
+    .locals 1
+
+    if-ne p1, p0, :cond_0
+
+    const/4 p1, 0x1
+
+    return p1
+
+    :cond_0
+    instance-of v0, p1, Lorg/bouncycastle/asn1/ASN1ObjectIdentifier;
+
+    if-nez v0, :cond_1
+
+    const/4 p1, 0x0
+
+    return p1
+
+    :cond_1
+    iget-object v0, p0, Lorg/bouncycastle/asn1/ASN1ObjectIdentifier;->identifier:Ljava/lang/String;
+
+    check-cast p1, Lorg/bouncycastle/asn1/ASN1ObjectIdentifier;
+
+    iget-object p1, p1, Lorg/bouncycastle/asn1/ASN1ObjectIdentifier;->identifier:Ljava/lang/String;
+
+    invoke-virtual {v0, p1}, Ljava/lang/String;->equals(Ljava/lang/Object;)Z
+
+    move-result p1
+
+    return p1
+.end method
+
+.method public branch(Ljava/lang/String;)Lorg/bouncycastle/asn1/ASN1ObjectIdentifier;
+    .locals 1
+
+    new-instance v0, Lorg/bouncycastle/asn1/ASN1ObjectIdentifier;
+
+    invoke-direct {v0, p0, p1}, Lorg/bouncycastle/asn1/ASN1ObjectIdentifier;-><init>(Lorg/bouncycastle/asn1/ASN1ObjectIdentifier;Ljava/lang/String;)V
+
+    return-object v0
+.end method
+
+.method public encode(Lorg/bouncycastle/asn1/ASN1OutputStream;Z)V
+    .locals 2
+    .annotation system Ldalvik/annotation/Throws;
+        value = {
+            Ljava/io/IOException;
+        }
+    .end annotation
+
+    invoke-direct {p0}, Lorg/bouncycastle/asn1/ASN1ObjectIdentifier;->getBody()[B
+
+    move-result-object v0
+
+    const/4 v1, 0x6
+
+    invoke-virtual {p1, p2, v1, v0}, Lorg/bouncycastle/asn1/ASN1OutputStream;->writeEncoded(ZI[B)V
+
+    return-void
+.end method
+
+.method public encodedLength()I
+    .locals 2
+    .annotation system Ldalvik/annotation/Throws;
+        value = {
+            Ljava/io/IOException;
+        }
+    .end annotation
+
+    invoke-direct {p0}, Lorg/bouncycastle/asn1/ASN1ObjectIdentifier;->getBody()[B
+
+    move-result-object v0
+
+    array-length v0, v0
+
+    invoke-static {v0}, Lorg/bouncycastle/asn1/StreamUtil;->calculateBodyLength(I)I
+
+    move-result v1
+
+    add-int/lit8 v1, v1, 0x1
+
+    add-int/2addr v1, v0
+
+    return v1
+.end method
+
+.method public getId()Ljava/lang/String;
+    .locals 1
+
+    iget-object v0, p0, Lorg/bouncycastle/asn1/ASN1ObjectIdentifier;->identifier:Ljava/lang/String;
+
+    return-object v0
+.end method
+
+.method public hashCode()I
+    .locals 1
+
+    iget-object v0, p0, Lorg/bouncycastle/asn1/ASN1ObjectIdentifier;->identifier:Ljava/lang/String;
+
+    invoke-virtual {v0}, Ljava/lang/String;->hashCode()I
+
+    move-result v0
+
+    return v0
+.end method
+
+.method public intern()Lorg/bouncycastle/asn1/ASN1ObjectIdentifier;
+    .locals 3
+
+    new-instance v0, Lorg/bouncycastle/asn1/ASN1ObjectIdentifier$OidHandle;
+
+    invoke-direct {p0}, Lorg/bouncycastle/asn1/ASN1ObjectIdentifier;->getBody()[B
+
+    move-result-object v1
+
+    invoke-direct {v0, v1}, Lorg/bouncycastle/asn1/ASN1ObjectIdentifier$OidHandle;-><init>([B)V
+
+    sget-object v1, Lorg/bouncycastle/asn1/ASN1ObjectIdentifier;->pool:Ljava/util/concurrent/ConcurrentMap;
+
+    invoke-interface {v1, v0}, Ljava/util/concurrent/ConcurrentMap;->get(Ljava/lang/Object;)Ljava/lang/Object;
+
+    move-result-object v2
+
+    check-cast v2, Lorg/bouncycastle/asn1/ASN1ObjectIdentifier;
+
+    if-nez v2, :cond_0
+
+    invoke-interface {v1, v0, p0}, Ljava/util/concurrent/ConcurrentMap;->putIfAbsent(Ljava/lang/Object;Ljava/lang/Object;)Ljava/lang/Object;
+
+    move-result-object v0
+
+    move-object v2, v0
+
+    check-cast v2, Lorg/bouncycastle/asn1/ASN1ObjectIdentifier;
+
+    if-nez v2, :cond_0
+
+    move-object v2, p0
+
+    :cond_0
+    return-object v2
+.end method
+
+.method public isConstructed()Z
+    .locals 1
+
+    const/4 v0, 0x0
+
+    return v0
+.end method
+
+.method public on(Lorg/bouncycastle/asn1/ASN1ObjectIdentifier;)Z
+    .locals 3
+
+    invoke-virtual {p0}, Lorg/bouncycastle/asn1/ASN1ObjectIdentifier;->getId()Ljava/lang/String;
+
+    move-result-object v0
+
+    invoke-virtual {p1}, Lorg/bouncycastle/asn1/ASN1ObjectIdentifier;->getId()Ljava/lang/String;
+
+    move-result-object p1
+
+    invoke-virtual {v0}, Ljava/lang/String;->length()I
+
+    move-result v1
+
+    invoke-virtual {p1}, Ljava/lang/String;->length()I
+
+    move-result v2
+
+    if-le v1, v2, :cond_0
+
+    invoke-virtual {p1}, Ljava/lang/String;->length()I
+
+    move-result v1
+
+    invoke-virtual {v0, v1}, Ljava/lang/String;->charAt(I)C
+
+    move-result v1
+
+    const/16 v2, 0x2e
+
+    if-ne v1, v2, :cond_0
+
+    invoke-virtual {v0, p1}, Ljava/lang/String;->startsWith(Ljava/lang/String;)Z
+
+    move-result p1
+
+    if-eqz p1, :cond_0
+
+    const/4 p1, 0x1
+
+    goto :goto_0
+
+    :cond_0
+    const/4 p1, 0x0
+
+    :goto_0
+    return p1
+.end method
+
+.method public toString()Ljava/lang/String;
+    .locals 1
+
+    invoke-virtual {p0}, Lorg/bouncycastle/asn1/ASN1ObjectIdentifier;->getId()Ljava/lang/String;
+
+    move-result-object v0
+
+    return-object v0
 .end method

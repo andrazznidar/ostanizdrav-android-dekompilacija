@@ -1,5 +1,5 @@
 .class public final Lcom/google/android/material/resources/CancelableFontCallback;
-.super Lcom/google/android/material/resources/TextAppearanceFontCallback;
+.super Lorg/joda/time/Chronology;
 .source "CancelableFontCallback.java"
 
 
@@ -23,7 +23,7 @@
 .method public constructor <init>(Lcom/google/android/material/resources/CancelableFontCallback$ApplyFont;Landroid/graphics/Typeface;)V
     .locals 0
 
-    invoke-direct {p0}, Lcom/google/android/material/resources/TextAppearanceFontCallback;-><init>()V
+    invoke-direct {p0}, Lorg/joda/time/Chronology;-><init>()V
 
     iput-object p2, p0, Lcom/google/android/material/resources/CancelableFontCallback;->fallbackFont:Landroid/graphics/Typeface;
 

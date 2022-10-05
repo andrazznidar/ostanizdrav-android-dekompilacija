@@ -24,6 +24,12 @@
 
     if-eqz v0, :cond_1
 
+    invoke-virtual {p0}, Lde/rki/coronawarnapp/coronatest/type/rapidantigen/RACoronaTest;->isViewed()Z
+
+    move-result v0
+
+    if-eqz v0, :cond_1
+
     new-instance p1, Lde/rki/coronawarnapp/coronatest/type/rapidantigen/SubmissionStateRAT$SubmissionDone;
 
     invoke-virtual {p0}, Lde/rki/coronawarnapp/coronatest/type/rapidantigen/RACoronaTest;->getRegisteredAt()Lorg/joda/time/Instant;
@@ -58,53 +64,38 @@
     goto :goto_1
 
     :cond_3
-    invoke-virtual {p0, p1, p2}, Lde/rki/coronawarnapp/coronatest/type/rapidantigen/RACoronaTest;->getState(Lorg/joda/time/Instant;Lde/rki/coronawarnapp/appconfig/CoronaTestConfig;)Lde/rki/coronawarnapp/coronatest/type/rapidantigen/RACoronaTest$State;
-
-    move-result-object p1
-
-    invoke-virtual {p1}, Ljava/lang/Enum;->ordinal()I
+    invoke-virtual {p0, p1, p2}, Lde/rki/coronawarnapp/coronatest/type/rapidantigen/RACoronaTest;->getState$enumunboxing$(Lorg/joda/time/Instant;Lde/rki/coronawarnapp/appconfig/CoronaTestConfig;)I
 
     move-result p1
 
-    if-eqz p1, :cond_a
+    invoke-static {p1}, Landroidx/camera/camera2/internal/Camera2CameraImpl$InternalState$EnumUnboxingSharedUtility;->ordinal(I)I
 
-    const/4 p2, 0x1
+    move-result p1
 
-    if-eq p1, p2, :cond_9
+    packed-switch p1, :pswitch_data_0
 
-    const/4 p2, 0x2
-
-    if-eq p1, p2, :cond_7
-
-    const/4 p2, 0x3
-
-    if-eq p1, p2, :cond_6
-
-    const/4 p0, 0x4
-
-    if-eq p1, p0, :cond_5
-
-    const/4 p0, 0x5
-
-    if-ne p1, p0, :cond_4
-
-    sget-object p0, Lde/rki/coronawarnapp/coronatest/type/rapidantigen/SubmissionStateRAT$TestOutdated;->INSTANCE:Lde/rki/coronawarnapp/coronatest/type/rapidantigen/SubmissionStateRAT$TestOutdated;
-
-    goto :goto_1
-
-    :cond_4
     new-instance p0, Lkotlin/NoWhenBranchMatchedException;
 
     invoke-direct {p0}, Lkotlin/NoWhenBranchMatchedException;-><init>()V
 
     throw p0
 
-    :cond_5
+    :pswitch_0
+    sget-object p0, Lde/rki/coronawarnapp/coronatest/type/rapidantigen/SubmissionStateRAT$NoTest;->INSTANCE:Lde/rki/coronawarnapp/coronatest/type/rapidantigen/SubmissionStateRAT$NoTest;
+
+    goto :goto_1
+
+    :pswitch_1
+    sget-object p0, Lde/rki/coronawarnapp/coronatest/type/rapidantigen/SubmissionStateRAT$TestOutdated;->INSTANCE:Lde/rki/coronawarnapp/coronatest/type/rapidantigen/SubmissionStateRAT$TestOutdated;
+
+    goto :goto_1
+
+    :pswitch_2
     sget-object p0, Lde/rki/coronawarnapp/coronatest/type/rapidantigen/SubmissionStateRAT$TestInvalid;->INSTANCE:Lde/rki/coronawarnapp/coronatest/type/rapidantigen/SubmissionStateRAT$TestInvalid;
 
     goto :goto_1
 
-    :cond_6
+    :pswitch_3
     new-instance p1, Lde/rki/coronawarnapp/coronatest/type/rapidantigen/SubmissionStateRAT$TestNegative;
 
     invoke-virtual {p0}, Lde/rki/coronawarnapp/coronatest/type/rapidantigen/RACoronaTest;->getTestTakenAt()Lorg/joda/time/Instant;
@@ -115,12 +106,12 @@
 
     goto :goto_0
 
-    :cond_7
+    :pswitch_4
     invoke-virtual {p0}, Lde/rki/coronawarnapp/coronatest/type/rapidantigen/RACoronaTest;->isViewed()Z
 
     move-result p1
 
-    if-eqz p1, :cond_8
+    if-eqz p1, :cond_4
 
     new-instance p1, Lde/rki/coronawarnapp/coronatest/type/rapidantigen/SubmissionStateRAT$TestPositive;
 
@@ -132,19 +123,32 @@
 
     goto :goto_0
 
-    :cond_8
+    :cond_4
     sget-object p0, Lde/rki/coronawarnapp/coronatest/type/rapidantigen/SubmissionStateRAT$TestResultReady;->INSTANCE:Lde/rki/coronawarnapp/coronatest/type/rapidantigen/SubmissionStateRAT$TestResultReady;
 
     goto :goto_1
 
-    :cond_9
+    :pswitch_5
     sget-object p0, Lde/rki/coronawarnapp/coronatest/type/rapidantigen/SubmissionStateRAT$TestError;->INSTANCE:Lde/rki/coronawarnapp/coronatest/type/rapidantigen/SubmissionStateRAT$TestError;
 
     goto :goto_1
 
-    :cond_a
+    :pswitch_6
     sget-object p0, Lde/rki/coronawarnapp/coronatest/type/rapidantigen/SubmissionStateRAT$TestPending;->INSTANCE:Lde/rki/coronawarnapp/coronatest/type/rapidantigen/SubmissionStateRAT$TestPending;
 
     :goto_1
     return-object p0
+
+    nop
+
+    :pswitch_data_0
+    .packed-switch 0x0
+        :pswitch_6
+        :pswitch_5
+        :pswitch_4
+        :pswitch_3
+        :pswitch_2
+        :pswitch_1
+        :pswitch_0
+    .end packed-switch
 .end method

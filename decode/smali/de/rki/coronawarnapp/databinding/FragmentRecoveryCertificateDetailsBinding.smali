@@ -27,7 +27,7 @@
 
 .field public final expandedImage:Landroid/widget/ImageView;
 
-.field public final expirationNotice:Lde/rki/coronawarnapp/databinding/FabTooltipBinding;
+.field public final expirationNotice:Lde/rki/coronawarnapp/databinding/IncludeExpirationNoticeCardBinding;
 
 .field public final fullname:Landroid/widget/TextView;
 
@@ -51,7 +51,7 @@
 
 
 # direct methods
-.method public constructor <init>(Landroid/widget/LinearLayout;Lcom/google/android/material/appbar/AppBarLayout;Landroid/widget/TextView;Landroid/widget/TextView;Landroid/widget/TextView;Landroid/widget/TextView;Landroid/widget/TextView;Lcom/google/android/material/appbar/CollapsingToolbarLayout;Landroidx/coordinatorlayout/widget/CoordinatorLayout;Landroid/widget/TextView;Landroid/widget/TextView;Landroid/widget/ImageView;Landroid/widget/ImageView;Lde/rki/coronawarnapp/databinding/FabTooltipBinding;Landroid/widget/TextView;Landroid/widget/LinearLayout;Landroid/widget/TextView;Lde/rki/coronawarnapp/databinding/IncludeCertificateQrcodeCardBinding;Landroid/widget/TextView;Landroidx/core/widget/NestedScrollView;Lde/rki/coronawarnapp/ui/view/ProgressLoadingButton;Landroid/widget/TextView;Landroid/widget/TextView;Lcom/google/android/material/appbar/MaterialToolbar;Lde/rki/coronawarnapp/covidcertificate/common/certificate/TravelNoticeView;)V
+.method public constructor <init>(Landroid/widget/LinearLayout;Lcom/google/android/material/appbar/AppBarLayout;Landroid/widget/TextView;Landroid/widget/TextView;Landroid/widget/TextView;Landroid/widget/TextView;Landroid/widget/TextView;Lcom/google/android/material/appbar/CollapsingToolbarLayout;Landroidx/coordinatorlayout/widget/CoordinatorLayout;Landroid/widget/TextView;Landroid/widget/TextView;Landroid/widget/ImageView;Landroid/widget/ImageView;Lde/rki/coronawarnapp/databinding/IncludeExpirationNoticeCardBinding;Landroid/widget/TextView;Landroid/widget/LinearLayout;Landroid/widget/TextView;Lde/rki/coronawarnapp/databinding/IncludeCertificateQrcodeCardBinding;Landroid/widget/TextView;Landroidx/core/widget/NestedScrollView;Lde/rki/coronawarnapp/ui/view/ProgressLoadingButton;Landroid/widget/TextView;Landroid/widget/TextView;Lcom/google/android/material/appbar/MaterialToolbar;Lde/rki/coronawarnapp/covidcertificate/common/certificate/TravelNoticeView;)V
     .locals 2
     .annotation system Ldalvik/annotation/MethodParameters;
         accessFlags = {
@@ -160,7 +160,7 @@
 
     move-object/from16 v1, p14
 
-    iput-object v1, v0, Lde/rki/coronawarnapp/databinding/FragmentRecoveryCertificateDetailsBinding;->expirationNotice:Lde/rki/coronawarnapp/databinding/FabTooltipBinding;
+    iput-object v1, v0, Lde/rki/coronawarnapp/databinding/FragmentRecoveryCertificateDetailsBinding;->expirationNotice:Lde/rki/coronawarnapp/databinding/IncludeExpirationNoticeCardBinding;
 
     move-object/from16 v1, p15
 
@@ -214,7 +214,7 @@
 
     move-object/from16 v0, p0
 
-    const v1, 0x7f0a0110
+    const v1, 0x7f0a0127
 
     invoke-static {v0, v1}, Landroidx/viewbinding/ViewBindings;->findChildViewById(Landroid/view/View;I)Landroid/view/View;
 
@@ -226,7 +226,7 @@
 
     if-eqz v5, :cond_0
 
-    const v1, 0x7f0a0177
+    const v1, 0x7f0a0195
 
     invoke-static {v0, v1}, Landroidx/viewbinding/ViewBindings;->findChildViewById(Landroid/view/View;I)Landroid/view/View;
 
@@ -238,7 +238,7 @@
 
     if-eqz v6, :cond_0
 
-    const v1, 0x7f0a017b
+    const v1, 0x7f0a019a
 
     invoke-static {v0, v1}, Landroidx/viewbinding/ViewBindings;->findChildViewById(Landroid/view/View;I)Landroid/view/View;
 
@@ -250,7 +250,7 @@
 
     if-eqz v7, :cond_0
 
-    const v1, 0x7f0a017c
+    const v1, 0x7f0a019d
 
     invoke-static {v0, v1}, Landroidx/viewbinding/ViewBindings;->findChildViewById(Landroid/view/View;I)Landroid/view/View;
 
@@ -262,7 +262,7 @@
 
     if-eqz v8, :cond_0
 
-    const v1, 0x7f0a017f
+    const v1, 0x7f0a01a4
 
     invoke-static {v0, v1}, Landroidx/viewbinding/ViewBindings;->findChildViewById(Landroid/view/View;I)Landroid/view/View;
 
@@ -274,7 +274,7 @@
 
     if-eqz v9, :cond_0
 
-    const v1, 0x7f0a0180
+    const v1, 0x7f0a01a5
 
     invoke-static {v0, v1}, Landroidx/viewbinding/ViewBindings;->findChildViewById(Landroid/view/View;I)Landroid/view/View;
 
@@ -286,7 +286,7 @@
 
     if-eqz v10, :cond_0
 
-    const v1, 0x7f0a01bd
+    const v1, 0x7f0a01e0
 
     invoke-static {v0, v1}, Landroidx/viewbinding/ViewBindings;->findChildViewById(Landroid/view/View;I)Landroid/view/View;
 
@@ -298,7 +298,7 @@
 
     if-eqz v11, :cond_0
 
-    const v1, 0x7f0a022b
+    const v1, 0x7f0a024a
 
     invoke-static {v0, v1}, Landroidx/viewbinding/ViewBindings;->findChildViewById(Landroid/view/View;I)Landroid/view/View;
 
@@ -310,7 +310,7 @@
 
     if-eqz v12, :cond_0
 
-    const v1, 0x7f0a025f
+    const v1, 0x7f0a027f
 
     invoke-static {v0, v1}, Landroidx/viewbinding/ViewBindings;->findChildViewById(Landroid/view/View;I)Landroid/view/View;
 
@@ -322,7 +322,7 @@
 
     if-eqz v13, :cond_0
 
-    const v1, 0x7f0a0260
+    const v1, 0x7f0a0280
 
     invoke-static {v0, v1}, Landroidx/viewbinding/ViewBindings;->findChildViewById(Landroid/view/View;I)Landroid/view/View;
 
@@ -334,7 +334,7 @@
 
     if-eqz v14, :cond_0
 
-    const v1, 0x7f0a02f3
+    const v1, 0x7f0a0318
 
     invoke-static {v0, v1}, Landroidx/viewbinding/ViewBindings;->findChildViewById(Landroid/view/View;I)Landroid/view/View;
 
@@ -346,7 +346,7 @@
 
     if-eqz v15, :cond_0
 
-    const v1, 0x7f0a02fa
+    const v1, 0x7f0a031f
 
     invoke-static {v0, v1}, Landroidx/viewbinding/ViewBindings;->findChildViewById(Landroid/view/View;I)Landroid/view/View;
 
@@ -358,7 +358,7 @@
 
     if-eqz v16, :cond_0
 
-    const v1, 0x7f0a0300
+    const v1, 0x7f0a0325
 
     invoke-static {v0, v1}, Landroidx/viewbinding/ViewBindings;->findChildViewById(Landroid/view/View;I)Landroid/view/View;
 
@@ -366,11 +366,11 @@
 
     if-eqz v2, :cond_0
 
-    invoke-static {v2}, Lde/rki/coronawarnapp/databinding/FabTooltipBinding;->bind$2(Landroid/view/View;)Lde/rki/coronawarnapp/databinding/FabTooltipBinding;
+    invoke-static {v2}, Lde/rki/coronawarnapp/databinding/IncludeExpirationNoticeCardBinding;->bind(Landroid/view/View;)Lde/rki/coronawarnapp/databinding/IncludeExpirationNoticeCardBinding;
 
     move-result-object v17
 
-    const v1, 0x7f0a032d
+    const v1, 0x7f0a035b
 
     invoke-static {v0, v1}, Landroidx/viewbinding/ViewBindings;->findChildViewById(Landroid/view/View;I)Landroid/view/View;
 
@@ -382,7 +382,7 @@
 
     if-eqz v18, :cond_0
 
-    const v1, 0x7f0a0352
+    const v1, 0x7f0a0382
 
     invoke-static {v0, v1}, Landroidx/viewbinding/ViewBindings;->findChildViewById(Landroid/view/View;I)Landroid/view/View;
 
@@ -394,7 +394,7 @@
 
     if-eqz v19, :cond_0
 
-    const v1, 0x7f0a035e
+    const v1, 0x7f0a0390
 
     invoke-static {v0, v1}, Landroidx/viewbinding/ViewBindings;->findChildViewById(Landroid/view/View;I)Landroid/view/View;
 
@@ -406,7 +406,7 @@
 
     if-eqz v20, :cond_0
 
-    const v1, 0x7f0a0557
+    const v1, 0x7f0a05a1
 
     invoke-static {v0, v1}, Landroidx/viewbinding/ViewBindings;->findChildViewById(Landroid/view/View;I)Landroid/view/View;
 
@@ -418,7 +418,7 @@
 
     move-result-object v21
 
-    const v1, 0x7f0a0596
+    const v1, 0x7f0a05e0
 
     invoke-static {v0, v1}, Landroidx/viewbinding/ViewBindings;->findChildViewById(Landroid/view/View;I)Landroid/view/View;
 
@@ -430,7 +430,7 @@
 
     if-eqz v22, :cond_0
 
-    const v1, 0x7f0a060c
+    const v1, 0x7f0a0659
 
     invoke-static {v0, v1}, Landroidx/viewbinding/ViewBindings;->findChildViewById(Landroid/view/View;I)Landroid/view/View;
 
@@ -442,7 +442,7 @@
 
     if-eqz v23, :cond_0
 
-    const v1, 0x7f0a0689
+    const v1, 0x7f0a06da
 
     invoke-static {v0, v1}, Landroidx/viewbinding/ViewBindings;->findChildViewById(Landroid/view/View;I)Landroid/view/View;
 
@@ -454,7 +454,7 @@
 
     if-eqz v24, :cond_0
 
-    const v1, 0x7f0a075e
+    const v1, 0x7f0a07ab
 
     invoke-static {v0, v1}, Landroidx/viewbinding/ViewBindings;->findChildViewById(Landroid/view/View;I)Landroid/view/View;
 
@@ -466,7 +466,7 @@
 
     if-eqz v25, :cond_0
 
-    const v1, 0x7f0a07db
+    const v1, 0x7f0a0823
 
     invoke-static {v0, v1}, Landroidx/viewbinding/ViewBindings;->findChildViewById(Landroid/view/View;I)Landroid/view/View;
 
@@ -478,7 +478,7 @@
 
     if-eqz v26, :cond_0
 
-    const v1, 0x7f0a07e4
+    const v1, 0x7f0a082c
 
     invoke-static {v0, v1}, Landroidx/viewbinding/ViewBindings;->findChildViewById(Landroid/view/View;I)Landroid/view/View;
 
@@ -490,7 +490,7 @@
 
     if-eqz v27, :cond_0
 
-    const v1, 0x7f0a0820
+    const v1, 0x7f0a0868
 
     invoke-static {v0, v1}, Landroidx/viewbinding/ViewBindings;->findChildViewById(Landroid/view/View;I)Landroid/view/View;
 
@@ -510,7 +510,7 @@
 
     check-cast v4, Landroid/widget/LinearLayout;
 
-    invoke-direct/range {v3 .. v28}, Lde/rki/coronawarnapp/databinding/FragmentRecoveryCertificateDetailsBinding;-><init>(Landroid/widget/LinearLayout;Lcom/google/android/material/appbar/AppBarLayout;Landroid/widget/TextView;Landroid/widget/TextView;Landroid/widget/TextView;Landroid/widget/TextView;Landroid/widget/TextView;Lcom/google/android/material/appbar/CollapsingToolbarLayout;Landroidx/coordinatorlayout/widget/CoordinatorLayout;Landroid/widget/TextView;Landroid/widget/TextView;Landroid/widget/ImageView;Landroid/widget/ImageView;Lde/rki/coronawarnapp/databinding/FabTooltipBinding;Landroid/widget/TextView;Landroid/widget/LinearLayout;Landroid/widget/TextView;Lde/rki/coronawarnapp/databinding/IncludeCertificateQrcodeCardBinding;Landroid/widget/TextView;Landroidx/core/widget/NestedScrollView;Lde/rki/coronawarnapp/ui/view/ProgressLoadingButton;Landroid/widget/TextView;Landroid/widget/TextView;Lcom/google/android/material/appbar/MaterialToolbar;Lde/rki/coronawarnapp/covidcertificate/common/certificate/TravelNoticeView;)V
+    invoke-direct/range {v3 .. v28}, Lde/rki/coronawarnapp/databinding/FragmentRecoveryCertificateDetailsBinding;-><init>(Landroid/widget/LinearLayout;Lcom/google/android/material/appbar/AppBarLayout;Landroid/widget/TextView;Landroid/widget/TextView;Landroid/widget/TextView;Landroid/widget/TextView;Landroid/widget/TextView;Lcom/google/android/material/appbar/CollapsingToolbarLayout;Landroidx/coordinatorlayout/widget/CoordinatorLayout;Landroid/widget/TextView;Landroid/widget/TextView;Landroid/widget/ImageView;Landroid/widget/ImageView;Lde/rki/coronawarnapp/databinding/IncludeExpirationNoticeCardBinding;Landroid/widget/TextView;Landroid/widget/LinearLayout;Landroid/widget/TextView;Lde/rki/coronawarnapp/databinding/IncludeCertificateQrcodeCardBinding;Landroid/widget/TextView;Landroidx/core/widget/NestedScrollView;Lde/rki/coronawarnapp/ui/view/ProgressLoadingButton;Landroid/widget/TextView;Landroid/widget/TextView;Lcom/google/android/material/appbar/MaterialToolbar;Lde/rki/coronawarnapp/covidcertificate/common/certificate/TravelNoticeView;)V
 
     return-object v1
 

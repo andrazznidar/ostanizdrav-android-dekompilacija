@@ -8,17 +8,15 @@
 
 
 # instance fields
-.field public final synthetic $r8$classId:I
+.field public iDurationConverters:Lorg/joda/time/convert/ConverterSet;
 
-.field public iDurationConverters:Ljava/lang/Object;
+.field public iInstantConverters:Lorg/joda/time/convert/ConverterSet;
 
-.field public iInstantConverters:Ljava/lang/Object;
+.field public iIntervalConverters:Lorg/joda/time/convert/ConverterSet;
 
-.field public iIntervalConverters:Ljava/lang/Object;
+.field public iPartialConverters:Lorg/joda/time/convert/ConverterSet;
 
-.field public iPartialConverters:Ljava/lang/Object;
-
-.field public iPeriodConverters:Ljava/lang/Object;
+.field public iPeriodConverters:Lorg/joda/time/convert/ConverterSet;
 
 
 # direct methods
@@ -27,175 +25,135 @@
 
     move-object/from16 v0, p0
 
-    const/4 v1, 0x0
-
-    iput v1, v0, Lorg/joda/time/convert/ConverterManager;->$r8$classId:I
-
     invoke-direct/range {p0 .. p0}, Ljava/lang/Object;-><init>()V
 
-    new-instance v2, Lorg/joda/time/convert/ConverterSet;
+    new-instance v1, Lorg/joda/time/convert/ConverterSet;
 
-    const/4 v3, 0x6
+    const/4 v2, 0x6
 
-    new-array v4, v3, [Lorg/joda/time/convert/Converter;
+    new-array v3, v2, [Lorg/joda/time/convert/Converter;
 
-    sget-object v5, Lorg/joda/time/convert/ReadableInstantConverter;->INSTANCE:Lorg/joda/time/convert/ReadableInstantConverter;
+    sget-object v4, Lorg/joda/time/convert/ReadableInstantConverter;->INSTANCE:Lorg/joda/time/convert/ReadableInstantConverter;
 
-    aput-object v5, v4, v1
+    const/4 v5, 0x0
+
+    aput-object v4, v3, v5
 
     sget-object v6, Lorg/joda/time/convert/StringConverter;->INSTANCE:Lorg/joda/time/convert/StringConverter;
 
     const/4 v7, 0x1
 
-    aput-object v6, v4, v7
+    aput-object v6, v3, v7
 
     sget-object v8, Lorg/joda/time/convert/CalendarConverter;->INSTANCE:Lorg/joda/time/convert/CalendarConverter;
 
     const/4 v9, 0x2
 
-    aput-object v8, v4, v9
+    aput-object v8, v3, v9
 
     sget-object v10, Lorg/joda/time/convert/DateConverter;->INSTANCE:Lorg/joda/time/convert/DateConverter;
 
     const/4 v11, 0x3
 
-    aput-object v10, v4, v11
+    aput-object v10, v3, v11
 
     sget-object v12, Lorg/joda/time/convert/LongConverter;->INSTANCE:Lorg/joda/time/convert/LongConverter;
 
     const/4 v13, 0x4
 
-    aput-object v12, v4, v13
+    aput-object v12, v3, v13
 
     sget-object v14, Lorg/joda/time/convert/NullConverter;->INSTANCE:Lorg/joda/time/convert/NullConverter;
 
     const/4 v15, 0x5
 
-    aput-object v14, v4, v15
+    aput-object v14, v3, v15
 
-    invoke-direct {v2, v4}, Lorg/joda/time/convert/ConverterSet;-><init>([Lorg/joda/time/convert/Converter;)V
+    invoke-direct {v1, v3}, Lorg/joda/time/convert/ConverterSet;-><init>([Lorg/joda/time/convert/Converter;)V
 
-    iput-object v2, v0, Lorg/joda/time/convert/ConverterManager;->iInstantConverters:Ljava/lang/Object;
+    iput-object v1, v0, Lorg/joda/time/convert/ConverterManager;->iInstantConverters:Lorg/joda/time/convert/ConverterSet;
 
-    new-instance v2, Lorg/joda/time/convert/ConverterSet;
+    new-instance v1, Lorg/joda/time/convert/ConverterSet;
 
-    const/4 v4, 0x7
+    const/4 v3, 0x7
 
-    new-array v4, v4, [Lorg/joda/time/convert/Converter;
+    new-array v3, v3, [Lorg/joda/time/convert/Converter;
 
     sget-object v16, Lorg/joda/time/convert/ReadablePartialConverter;->INSTANCE:Lorg/joda/time/convert/ReadablePartialConverter;
 
-    aput-object v16, v4, v1
-
-    aput-object v5, v4, v7
-
-    aput-object v6, v4, v9
-
-    aput-object v8, v4, v11
-
-    aput-object v10, v4, v13
-
-    aput-object v12, v4, v15
-
-    aput-object v14, v4, v3
-
-    invoke-direct {v2, v4}, Lorg/joda/time/convert/ConverterSet;-><init>([Lorg/joda/time/convert/Converter;)V
-
-    iput-object v2, v0, Lorg/joda/time/convert/ConverterManager;->iPartialConverters:Ljava/lang/Object;
-
-    new-instance v2, Lorg/joda/time/convert/ConverterSet;
-
-    new-array v3, v15, [Lorg/joda/time/convert/Converter;
-
-    sget-object v4, Lorg/joda/time/convert/ReadableDurationConverter;->INSTANCE:Lorg/joda/time/convert/ReadableDurationConverter;
-
-    aput-object v4, v3, v1
-
-    sget-object v5, Lorg/joda/time/convert/ReadableIntervalConverter;->INSTANCE:Lorg/joda/time/convert/ReadableIntervalConverter;
-
-    aput-object v5, v3, v7
-
-    aput-object v6, v3, v9
-
-    aput-object v12, v3, v11
-
-    aput-object v14, v3, v13
-
-    invoke-direct {v2, v3}, Lorg/joda/time/convert/ConverterSet;-><init>([Lorg/joda/time/convert/Converter;)V
-
-    iput-object v2, v0, Lorg/joda/time/convert/ConverterManager;->iDurationConverters:Ljava/lang/Object;
-
-    new-instance v2, Lorg/joda/time/convert/ConverterSet;
-
-    new-array v3, v15, [Lorg/joda/time/convert/Converter;
-
-    aput-object v4, v3, v1
-
-    sget-object v4, Lorg/joda/time/convert/ReadablePeriodConverter;->INSTANCE:Lorg/joda/time/convert/ReadablePeriodConverter;
+    aput-object v16, v3, v5
 
     aput-object v4, v3, v7
 
-    aput-object v5, v3, v9
+    aput-object v6, v3, v9
 
-    aput-object v6, v3, v11
+    aput-object v8, v3, v11
 
-    aput-object v14, v3, v13
+    aput-object v10, v3, v13
 
-    invoke-direct {v2, v3}, Lorg/joda/time/convert/ConverterSet;-><init>([Lorg/joda/time/convert/Converter;)V
+    aput-object v12, v3, v15
 
-    iput-object v2, v0, Lorg/joda/time/convert/ConverterManager;->iPeriodConverters:Ljava/lang/Object;
+    aput-object v14, v3, v2
 
-    new-instance v2, Lorg/joda/time/convert/ConverterSet;
+    invoke-direct {v1, v3}, Lorg/joda/time/convert/ConverterSet;-><init>([Lorg/joda/time/convert/Converter;)V
 
-    new-array v3, v11, [Lorg/joda/time/convert/Converter;
+    iput-object v1, v0, Lorg/joda/time/convert/ConverterManager;->iPartialConverters:Lorg/joda/time/convert/ConverterSet;
 
-    aput-object v5, v3, v1
+    new-instance v1, Lorg/joda/time/convert/ConverterSet;
 
-    aput-object v6, v3, v7
+    new-array v2, v15, [Lorg/joda/time/convert/Converter;
 
-    aput-object v14, v3, v9
+    sget-object v3, Lorg/joda/time/convert/ReadableDurationConverter;->INSTANCE:Lorg/joda/time/convert/ReadableDurationConverter;
 
-    invoke-direct {v2, v3}, Lorg/joda/time/convert/ConverterSet;-><init>([Lorg/joda/time/convert/Converter;)V
+    aput-object v3, v2, v5
 
-    iput-object v2, v0, Lorg/joda/time/convert/ConverterManager;->iIntervalConverters:Ljava/lang/Object;
+    sget-object v4, Lorg/joda/time/convert/ReadableIntervalConverter;->INSTANCE:Lorg/joda/time/convert/ReadableIntervalConverter;
 
-    return-void
-.end method
+    aput-object v4, v2, v7
 
-.method public constructor <init>(Lkotlin/reflect/jvm/internal/impl/load/java/lazy/JavaResolverComponents;Lkotlin/reflect/jvm/internal/impl/load/java/lazy/TypeParameterResolver;Lkotlin/Lazy;)V
-    .locals 1
+    aput-object v6, v2, v9
 
-    const/4 v0, 0x1
+    aput-object v12, v2, v11
 
-    iput v0, p0, Lorg/joda/time/convert/ConverterManager;->$r8$classId:I
+    aput-object v14, v2, v13
 
-    const-string v0, "components"
+    invoke-direct {v1, v2}, Lorg/joda/time/convert/ConverterSet;-><init>([Lorg/joda/time/convert/Converter;)V
 
-    invoke-static {p1, v0}, Lkotlin/jvm/internal/Intrinsics;->checkNotNullParameter(Ljava/lang/Object;Ljava/lang/String;)V
+    iput-object v1, v0, Lorg/joda/time/convert/ConverterManager;->iDurationConverters:Lorg/joda/time/convert/ConverterSet;
 
-    const-string v0, "typeParameterResolver"
+    new-instance v1, Lorg/joda/time/convert/ConverterSet;
 
-    invoke-static {p2, v0}, Lkotlin/jvm/internal/Intrinsics;->checkNotNullParameter(Ljava/lang/Object;Ljava/lang/String;)V
+    new-array v2, v15, [Lorg/joda/time/convert/Converter;
 
-    const-string v0, "delegateForDefaultTypeQualifiers"
+    aput-object v3, v2, v5
 
-    invoke-static {p3, v0}, Lkotlin/jvm/internal/Intrinsics;->checkNotNullParameter(Ljava/lang/Object;Ljava/lang/String;)V
+    sget-object v3, Lorg/joda/time/convert/ReadablePeriodConverter;->INSTANCE:Lorg/joda/time/convert/ReadablePeriodConverter;
 
-    invoke-direct {p0}, Ljava/lang/Object;-><init>()V
+    aput-object v3, v2, v7
 
-    iput-object p1, p0, Lorg/joda/time/convert/ConverterManager;->iInstantConverters:Ljava/lang/Object;
+    aput-object v4, v2, v9
 
-    iput-object p2, p0, Lorg/joda/time/convert/ConverterManager;->iPartialConverters:Ljava/lang/Object;
+    aput-object v6, v2, v11
 
-    iput-object p3, p0, Lorg/joda/time/convert/ConverterManager;->iDurationConverters:Ljava/lang/Object;
+    aput-object v14, v2, v13
 
-    iput-object p3, p0, Lorg/joda/time/convert/ConverterManager;->iPeriodConverters:Ljava/lang/Object;
+    invoke-direct {v1, v2}, Lorg/joda/time/convert/ConverterSet;-><init>([Lorg/joda/time/convert/Converter;)V
 
-    new-instance p1, Lkotlin/reflect/jvm/internal/impl/load/java/lazy/types/JavaTypeResolver;
+    iput-object v1, v0, Lorg/joda/time/convert/ConverterManager;->iPeriodConverters:Lorg/joda/time/convert/ConverterSet;
 
-    invoke-direct {p1, p0, p2}, Lkotlin/reflect/jvm/internal/impl/load/java/lazy/types/JavaTypeResolver;-><init>(Lorg/joda/time/convert/ConverterManager;Lkotlin/reflect/jvm/internal/impl/load/java/lazy/TypeParameterResolver;)V
+    new-instance v1, Lorg/joda/time/convert/ConverterSet;
 
-    iput-object p1, p0, Lorg/joda/time/convert/ConverterManager;->iIntervalConverters:Ljava/lang/Object;
+    new-array v2, v11, [Lorg/joda/time/convert/Converter;
+
+    aput-object v4, v2, v5
+
+    aput-object v6, v2, v7
+
+    aput-object v14, v2, v9
+
+    invoke-direct {v1, v2}, Lorg/joda/time/convert/ConverterSet;-><init>([Lorg/joda/time/convert/Converter;)V
+
+    iput-object v1, v0, Lorg/joda/time/convert/ConverterManager;->iIntervalConverters:Lorg/joda/time/convert/ConverterSet;
 
     return-void
 .end method
@@ -221,28 +179,10 @@
 
 
 # virtual methods
-.method public getDefaultTypeQualifiers()Lkotlin/reflect/jvm/internal/impl/load/java/JavaTypeQualifiersByElementType;
-    .locals 1
-
-    iget-object v0, p0, Lorg/joda/time/convert/ConverterManager;->iPeriodConverters:Ljava/lang/Object;
-
-    check-cast v0, Lkotlin/Lazy;
-
-    invoke-interface {v0}, Lkotlin/Lazy;->getValue()Ljava/lang/Object;
-
-    move-result-object v0
-
-    check-cast v0, Lkotlin/reflect/jvm/internal/impl/load/java/JavaTypeQualifiersByElementType;
-
-    return-object v0
-.end method
-
 .method public getInstantConverter(Ljava/lang/Object;)Lorg/joda/time/convert/InstantConverter;
     .locals 2
 
-    iget-object v0, p0, Lorg/joda/time/convert/ConverterManager;->iInstantConverters:Ljava/lang/Object;
-
-    check-cast v0, Lorg/joda/time/convert/ConverterSet;
+    iget-object v0, p0, Lorg/joda/time/convert/ConverterManager;->iInstantConverters:Lorg/joda/time/convert/ConverterSet;
 
     if-nez p1, :cond_0
 
@@ -302,55 +242,16 @@
     throw v0
 .end method
 
-.method public getModule()Lkotlin/reflect/jvm/internal/impl/descriptors/ModuleDescriptor;
-    .locals 1
-
-    iget-object v0, p0, Lorg/joda/time/convert/ConverterManager;->iInstantConverters:Ljava/lang/Object;
-
-    check-cast v0, Lkotlin/reflect/jvm/internal/impl/load/java/lazy/JavaResolverComponents;
-
-    iget-object v0, v0, Lkotlin/reflect/jvm/internal/impl/load/java/lazy/JavaResolverComponents;->module:Lkotlin/reflect/jvm/internal/impl/descriptors/ModuleDescriptor;
-
-    return-object v0
-.end method
-
-.method public getStorageManager()Lkotlin/reflect/jvm/internal/impl/storage/StorageManager;
-    .locals 1
-
-    iget-object v0, p0, Lorg/joda/time/convert/ConverterManager;->iInstantConverters:Ljava/lang/Object;
-
-    check-cast v0, Lkotlin/reflect/jvm/internal/impl/load/java/lazy/JavaResolverComponents;
-
-    iget-object v0, v0, Lkotlin/reflect/jvm/internal/impl/load/java/lazy/JavaResolverComponents;->storageManager:Lkotlin/reflect/jvm/internal/impl/storage/StorageManager;
-
-    return-object v0
-.end method
-
 .method public toString()Ljava/lang/String;
-    .locals 2
+    .locals 3
 
-    iget v0, p0, Lorg/joda/time/convert/ConverterManager;->$r8$classId:I
+    const-string v0, "ConverterManager["
 
-    packed-switch v0, :pswitch_data_0
-
-    invoke-super {p0}, Ljava/lang/Object;->toString()Ljava/lang/String;
+    invoke-static {v0}, Landroid/support/v4/media/RatingCompat$$ExternalSyntheticOutline0;->m(Ljava/lang/String;)Ljava/lang/StringBuilder;
 
     move-result-object v0
 
-    return-object v0
-
-    :pswitch_0
-    new-instance v0, Ljava/lang/StringBuilder;
-
-    invoke-direct {v0}, Ljava/lang/StringBuilder;-><init>()V
-
-    const-string v1, "ConverterManager["
-
-    invoke-virtual {v0, v1}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
-
-    iget-object v1, p0, Lorg/joda/time/convert/ConverterManager;->iInstantConverters:Ljava/lang/Object;
-
-    check-cast v1, Lorg/joda/time/convert/ConverterSet;
+    iget-object v1, p0, Lorg/joda/time/convert/ConverterManager;->iInstantConverters:Lorg/joda/time/convert/ConverterSet;
 
     iget-object v1, v1, Lorg/joda/time/convert/ConverterSet;->iConverters:[Lorg/joda/time/convert/Converter;
 
@@ -362,9 +263,7 @@
 
     invoke-virtual {v0, v1}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
 
-    iget-object v1, p0, Lorg/joda/time/convert/ConverterManager;->iPartialConverters:Ljava/lang/Object;
-
-    check-cast v1, Lorg/joda/time/convert/ConverterSet;
+    iget-object v1, p0, Lorg/joda/time/convert/ConverterManager;->iPartialConverters:Lorg/joda/time/convert/ConverterSet;
 
     iget-object v1, v1, Lorg/joda/time/convert/ConverterSet;->iConverters:[Lorg/joda/time/convert/Converter;
 
@@ -376,9 +275,7 @@
 
     invoke-virtual {v0, v1}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
 
-    iget-object v1, p0, Lorg/joda/time/convert/ConverterManager;->iDurationConverters:Ljava/lang/Object;
-
-    check-cast v1, Lorg/joda/time/convert/ConverterSet;
+    iget-object v1, p0, Lorg/joda/time/convert/ConverterManager;->iDurationConverters:Lorg/joda/time/convert/ConverterSet;
 
     iget-object v1, v1, Lorg/joda/time/convert/ConverterSet;->iConverters:[Lorg/joda/time/convert/Converter;
 
@@ -390,9 +287,7 @@
 
     invoke-virtual {v0, v1}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
 
-    iget-object v1, p0, Lorg/joda/time/convert/ConverterManager;->iPeriodConverters:Ljava/lang/Object;
-
-    check-cast v1, Lorg/joda/time/convert/ConverterSet;
+    iget-object v1, p0, Lorg/joda/time/convert/ConverterManager;->iPeriodConverters:Lorg/joda/time/convert/ConverterSet;
 
     iget-object v1, v1, Lorg/joda/time/convert/ConverterSet;->iConverters:[Lorg/joda/time/convert/Converter;
 
@@ -404,28 +299,17 @@
 
     invoke-virtual {v0, v1}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
 
-    iget-object v1, p0, Lorg/joda/time/convert/ConverterManager;->iIntervalConverters:Ljava/lang/Object;
-
-    check-cast v1, Lorg/joda/time/convert/ConverterSet;
+    iget-object v1, p0, Lorg/joda/time/convert/ConverterManager;->iIntervalConverters:Lorg/joda/time/convert/ConverterSet;
 
     iget-object v1, v1, Lorg/joda/time/convert/ConverterSet;->iConverters:[Lorg/joda/time/convert/Converter;
 
     array-length v1, v1
 
-    invoke-virtual {v0, v1}, Ljava/lang/StringBuilder;->append(I)Ljava/lang/StringBuilder;
+    const-string v2, " interval]"
 
-    const-string v1, " interval]"
-
-    invoke-virtual {v0, v1}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
-
-    invoke-virtual {v0}, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
+    invoke-static {v0, v1, v2}, Landroidx/camera/core/AutoValue_ImmutableImageInfo$$ExternalSyntheticOutline0;->m(Ljava/lang/StringBuilder;ILjava/lang/String;)Ljava/lang/String;
 
     move-result-object v0
 
     return-object v0
-
-    :pswitch_data_0
-    .packed-switch 0x0
-        :pswitch_0
-    .end packed-switch
 .end method

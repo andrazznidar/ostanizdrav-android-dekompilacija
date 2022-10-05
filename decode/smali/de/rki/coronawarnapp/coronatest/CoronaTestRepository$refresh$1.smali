@@ -17,10 +17,10 @@
     c = "de.rki.coronawarnapp.coronatest.CoronaTestRepository"
     f = "CoronaTestRepository.kt"
     l = {
-        0xa9,
-        0xb0,
-        0xb5,
-        0xd0
+        0xd4,
+        0xdb,
+        0xe0,
+        0xfb
     }
     m = "refresh"
 .end annotation

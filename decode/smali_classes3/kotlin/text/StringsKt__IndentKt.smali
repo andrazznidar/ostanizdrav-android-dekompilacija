@@ -1,11 +1,11 @@
 .class public Lkotlin/text/StringsKt__IndentKt;
-.super Lkotlin/ExceptionsKt;
+.super Lcom/google/common/base/Objects;
 .source "Indent.kt"
 
 
 # annotations
 .annotation system Ldalvik/annotation/SourceDebugExtension;
-    value = "SMAP\nIndent.kt\nKotlin\n*S Kotlin\n*F\n+ 1 Indent.kt\nkotlin/text/StringsKt__IndentKt\n+ 2 fake.kt\nkotlin/jvm/internal/FakeKt\n+ 3 _Collections.kt\nkotlin/collections/CollectionsKt___CollectionsKt\n+ 4 _Strings.kt\nkotlin/text/StringsKt___StringsKt\n*L\n1#1,121:1\n111#1,9:123\n111#1,9:161\n1#2:122\n1#2:151\n1#2:183\n1#2:205\n1567#3,11:132\n1858#3,2:143\n1860#3:152\n1578#3:153\n764#3:154\n855#3,2:155\n1547#3:157\n1618#3,3:158\n1567#3,11:170\n1858#3,2:181\n1860#3:184\n1578#3:185\n1567#3,11:192\n1858#3,2:203\n1860#3:206\n1578#3:207\n150#4,6:145\n150#4,6:186\n*S KotlinDebug\n*F\n+ 1 Indent.kt\nkotlin/text/StringsKt__IndentKt\n*L\n37#1:123,9\n76#1:161,9\n37#1:151\n76#1:183\n112#1:205\n37#1:132,11\n37#1:143,2\n37#1:152\n37#1:153\n72#1:154\n72#1:155,2\n73#1:157\n73#1:158,3\n76#1:170,11\n76#1:181,2\n76#1:184\n76#1:185\n112#1:192,11\n112#1:203,2\n112#1:206\n112#1:207\n38#1:145,6\n99#1:186,6\n*E\n"
+    value = "SMAP\nIndent.kt\nKotlin\n*S Kotlin\n*F\n+ 1 Indent.kt\nkotlin/text/StringsKt__IndentKt\n+ 2 fake.kt\nkotlin/jvm/internal/FakeKt\n+ 3 _Collections.kt\nkotlin/collections/CollectionsKt___CollectionsKt\n+ 4 _Strings.kt\nkotlin/text/StringsKt___StringsKt\n*L\n1#1,121:1\n111#1,2:123\n113#1,4:138\n118#1,2:151\n111#1,2:160\n113#1,4:175\n118#1,2:182\n1#2:122\n1#2:148\n1#2:179\n1#2:203\n1567#3,11:125\n1858#3,2:136\n1860#3:149\n1578#3:150\n764#3:153\n855#3,2:154\n1547#3:156\n1618#3,3:157\n1567#3,11:162\n1858#3,2:173\n1860#3:180\n1578#3:181\n1567#3,11:190\n1858#3,2:201\n1860#3:204\n1578#3:205\n150#4,6:142\n150#4,6:184\n*S KotlinDebug\n*F\n+ 1 Indent.kt\nkotlin/text/StringsKt__IndentKt\n*L\n37#1:123,2\n37#1:138,4\n37#1:151,2\n76#1:160,2\n76#1:175,4\n76#1:182,2\n37#1:148\n76#1:179\n112#1:203\n37#1:125,11\n37#1:136,2\n37#1:149\n37#1:150\n72#1:153\n72#1:154,2\n73#1:156\n73#1:157,3\n76#1:162,11\n76#1:173,2\n76#1:180\n76#1:181\n112#1:190,11\n112#1:201,2\n112#1:204\n112#1:205\n38#1:142,6\n99#1:184,6\n*E\n"
 .end annotation
 
 
@@ -56,23 +56,13 @@
 .end method
 
 .method public static final trimIndent(Ljava/lang/String;)Ljava/lang/String;
-    .locals 17
+    .locals 18
 
-    move-object/from16 v0, p0
+    const-string v0, "<this>"
 
-    const-string v1, "$this$trimIndent"
+    move-object/from16 v1, p0
 
-    invoke-static {v0, v1}, Lkotlin/jvm/internal/Intrinsics;->checkNotNullParameter(Ljava/lang/Object;Ljava/lang/String;)V
-
-    const-string v1, "$this$replaceIndent"
-
-    invoke-static {v0, v1}, Lkotlin/jvm/internal/Intrinsics;->checkNotNullParameter(Ljava/lang/Object;Ljava/lang/String;)V
-
-    const-string v1, ""
-
-    const-string v2, "newIndent"
-
-    invoke-static {v1, v2}, Lkotlin/jvm/internal/Intrinsics;->checkNotNullParameter(Ljava/lang/Object;Ljava/lang/String;)V
+    invoke-static {v1, v0}, Lkotlin/jvm/internal/Intrinsics;->checkNotNullParameter(Ljava/lang/Object;Ljava/lang/String;)V
 
     invoke-static/range {p0 .. p0}, Lkotlin/text/StringsKt__StringsKt;->lines(Ljava/lang/CharSequence;)Ljava/util/List;
 
@@ -155,22 +145,24 @@
 
     if-ge v7, v8, :cond_3
 
+    add-int/lit8 v10, v7, 0x1
+
     invoke-virtual {v5, v7}, Ljava/lang/String;->charAt(I)C
 
-    move-result v10
+    move-result v11
 
-    invoke-static {v10}, Lkotlin/text/CharsKt__CharKt;->isWhitespace(C)Z
+    invoke-static {v11}, Lkotlin/text/CharsKt__CharKt;->isWhitespace(C)Z
 
-    move-result v10
+    move-result v11
 
-    xor-int/2addr v10, v6
+    xor-int/2addr v11, v6
 
-    if-eqz v10, :cond_2
+    if-eqz v11, :cond_2
 
     goto :goto_3
 
     :cond_2
-    add-int/lit8 v7, v7, 0x1
+    move v7, v10
 
     goto :goto_2
 
@@ -194,10 +186,6 @@
     goto :goto_1
 
     :cond_5
-    const-string v3, "$this$minOrNull"
-
-    invoke-static {v4, v3}, Lkotlin/jvm/internal/Intrinsics;->checkNotNullParameter(Ljava/lang/Object;Ljava/lang/String;)V
-
     invoke-virtual {v4}, Ljava/util/ArrayList;->iterator()Ljava/util/Iterator;
 
     move-result-object v3
@@ -249,21 +237,21 @@
     :goto_5
     check-cast v4, Ljava/lang/Integer;
 
-    if-eqz v4, :cond_9
+    if-nez v4, :cond_9
 
-    invoke-virtual {v4}, Ljava/lang/Integer;->intValue()I
-
-    move-result v3
+    move v3, v7
 
     goto :goto_6
 
     :cond_9
-    move v3, v7
+    invoke-virtual {v4}, Ljava/lang/Integer;->intValue()I
+
+    move-result v3
 
     :goto_6
     invoke-virtual/range {p0 .. p0}, Ljava/lang/String;->length()I
 
-    move-result v0
+    move-result v1
 
     invoke-interface {v2}, Ljava/util/List;->size()I
 
@@ -271,117 +259,115 @@
 
     mul-int/2addr v4, v7
 
-    add-int/2addr v4, v0
+    add-int/2addr v4, v1
+
+    const-string v1, ""
 
     invoke-static {v1}, Lkotlin/text/StringsKt__IndentKt;->getIndentFunction$StringsKt__IndentKt(Ljava/lang/String;)Lkotlin/jvm/functions/Function1;
 
-    move-result-object v0
+    move-result-object v1
 
     invoke-static {v2}, Lkotlin/collections/CollectionsKt__CollectionsKt;->getLastIndex(Ljava/util/List;)I
 
-    move-result v1
+    move-result v8
 
-    new-instance v8, Ljava/util/ArrayList;
+    new-instance v9, Ljava/util/ArrayList;
 
-    invoke-direct {v8}, Ljava/util/ArrayList;-><init>()V
+    invoke-direct {v9}, Ljava/util/ArrayList;-><init>()V
 
     invoke-interface {v2}, Ljava/lang/Iterable;->iterator()Ljava/util/Iterator;
 
     move-result-object v2
 
-    move v9, v7
+    move v10, v7
 
     :goto_7
     invoke-interface {v2}, Ljava/util/Iterator;->hasNext()Z
 
-    move-result v10
+    move-result v11
 
-    if-eqz v10, :cond_12
+    if-eqz v11, :cond_11
 
     invoke-interface {v2}, Ljava/util/Iterator;->next()Ljava/lang/Object;
 
-    move-result-object v10
+    move-result-object v11
 
-    add-int/lit8 v11, v9, 0x1
+    add-int/lit8 v12, v10, 0x1
 
-    if-ltz v9, :cond_11
+    if-ltz v10, :cond_10
 
-    check-cast v10, Ljava/lang/String;
+    check-cast v11, Ljava/lang/String;
 
-    if-eqz v9, :cond_a
+    if-eqz v10, :cond_a
 
-    if-ne v9, v1, :cond_b
+    if-ne v10, v8, :cond_b
 
     :cond_a
-    invoke-static {v10}, Lkotlin/text/StringsKt__StringsJVMKt;->isBlank(Ljava/lang/CharSequence;)Z
+    invoke-static {v11}, Lkotlin/text/StringsKt__StringsJVMKt;->isBlank(Ljava/lang/CharSequence;)Z
 
-    move-result v9
+    move-result v10
 
-    if-eqz v9, :cond_b
+    if-eqz v10, :cond_b
 
     move-object v10, v5
 
     goto :goto_a
 
     :cond_b
-    const-string v9, "$this$drop"
-
-    invoke-static {v10, v9}, Lkotlin/jvm/internal/Intrinsics;->checkNotNullParameter(Ljava/lang/Object;Ljava/lang/String;)V
+    invoke-static {v11, v0}, Lkotlin/jvm/internal/Intrinsics;->checkNotNullParameter(Ljava/lang/Object;Ljava/lang/String;)V
 
     if-ltz v3, :cond_c
 
-    move v9, v6
+    move v10, v6
 
     goto :goto_8
 
     :cond_c
-    move v9, v7
+    move v10, v7
 
     :goto_8
-    if-eqz v9, :cond_10
+    if-eqz v10, :cond_f
 
-    invoke-virtual {v10}, Ljava/lang/String;->length()I
+    invoke-virtual {v11}, Ljava/lang/String;->length()I
 
-    move-result v9
+    move-result v10
 
-    if-le v3, v9, :cond_d
+    if-le v3, v10, :cond_d
 
     goto :goto_9
 
     :cond_d
-    move v9, v3
+    move v10, v3
 
     :goto_9
-    invoke-virtual {v10, v9}, Ljava/lang/String;->substring(I)Ljava/lang/String;
+    invoke-virtual {v11, v10}, Ljava/lang/String;->substring(I)Ljava/lang/String;
 
-    move-result-object v9
+    move-result-object v10
 
-    const-string v12, "(this as java.lang.String).substring(startIndex)"
+    const-string v11, "this as java.lang.String).substring(startIndex)"
 
-    invoke-static {v9, v12}, Lkotlin/jvm/internal/Intrinsics;->checkNotNullExpressionValue(Ljava/lang/Object;Ljava/lang/String;)V
+    invoke-static {v10, v11}, Lkotlin/jvm/internal/Intrinsics;->checkNotNullExpressionValue(Ljava/lang/Object;Ljava/lang/String;)V
 
-    invoke-interface {v0, v9}, Lkotlin/jvm/functions/Function1;->invoke(Ljava/lang/Object;)Ljava/lang/Object;
+    invoke-interface {v1, v10}, Lkotlin/jvm/functions/Function1;->invoke(Ljava/lang/Object;)Ljava/lang/Object;
 
-    move-result-object v9
+    move-result-object v10
 
-    check-cast v9, Ljava/lang/String;
+    check-cast v10, Ljava/lang/String;
 
-    if-eqz v9, :cond_e
+    :goto_a
+    if-nez v10, :cond_e
 
-    move-object v10, v9
+    goto :goto_b
 
     :cond_e
-    :goto_a
-    if-eqz v10, :cond_f
+    invoke-virtual {v9, v10}, Ljava/util/ArrayList;->add(Ljava/lang/Object;)Z
 
-    invoke-virtual {v8, v10}, Ljava/util/ArrayList;->add(Ljava/lang/Object;)Z
-
-    :cond_f
-    move v9, v11
+    :goto_b
+    move v10, v12
 
     goto :goto_7
 
-    :cond_10
+    :cond_f
     const-string v0, "Requested character count "
 
     const-string v1, " is less than zero."
@@ -400,17 +386,15 @@
 
     throw v1
 
-    :cond_11
+    :cond_10
     invoke-static {}, Lkotlin/collections/CollectionsKt__CollectionsKt;->throwIndexOverflow()V
 
     throw v5
 
-    :cond_12
+    :cond_11
     new-instance v0, Ljava/lang/StringBuilder;
 
     invoke-direct {v0, v4}, Ljava/lang/StringBuilder;-><init>(I)V
-
-    const/4 v11, 0x0
 
     const/4 v12, 0x0
 
@@ -420,13 +404,15 @@
 
     const/4 v15, 0x0
 
-    const/16 v16, 0x7c
+    const/16 v16, 0x0
 
-    const-string v10, "\n"
+    const/16 v17, 0x7c
 
-    move-object v9, v0
+    const-string v11, "\n"
 
-    invoke-static/range {v8 .. v16}, Lkotlin/collections/CollectionsKt___CollectionsKt;->joinTo$default(Ljava/lang/Iterable;Ljava/lang/Appendable;Ljava/lang/CharSequence;Ljava/lang/CharSequence;Ljava/lang/CharSequence;ILjava/lang/CharSequence;Lkotlin/jvm/functions/Function1;I)Ljava/lang/Appendable;
+    move-object v10, v0
+
+    invoke-static/range {v9 .. v17}, Lkotlin/collections/CollectionsKt___CollectionsKt;->joinTo$default(Ljava/lang/Iterable;Ljava/lang/Appendable;Ljava/lang/CharSequence;Ljava/lang/CharSequence;Ljava/lang/CharSequence;ILjava/lang/CharSequence;Lkotlin/jvm/functions/Function1;I)Ljava/lang/Appendable;
 
     invoke-virtual {v0}, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
 
@@ -456,7 +442,7 @@
     move-object p1, p2
 
     :goto_0
-    const-string v0, "$this$trimMargin"
+    const-string v0, "<this>"
 
     invoke-static {p0, v0}, Lkotlin/jvm/internal/Intrinsics;->checkNotNullParameter(Ljava/lang/Object;Ljava/lang/String;)V
 
@@ -554,22 +540,24 @@
 
     if-ge v8, v5, :cond_4
 
+    add-int/lit8 v10, v8, 0x1
+
     invoke-virtual {v6, v8}, Ljava/lang/String;->charAt(I)C
 
-    move-result v10
+    move-result v11
 
-    invoke-static {v10}, Lkotlin/text/CharsKt__CharKt;->isWhitespace(C)Z
+    invoke-static {v11}, Lkotlin/text/CharsKt__CharKt;->isWhitespace(C)Z
 
-    move-result v10
+    move-result v11
 
-    xor-int/lit8 v10, v10, 0x1
+    xor-int/lit8 v11, v11, 0x1
 
-    if-eqz v10, :cond_3
+    if-eqz v11, :cond_3
 
     goto :goto_3
 
     :cond_3
-    add-int/lit8 v8, v8, 0x1
+    move v8, v10
 
     goto :goto_2
 
@@ -600,7 +588,7 @@
 
     move-result-object v5
 
-    const-string v8, "(this as java.lang.String).substring(startIndex)"
+    const-string v8, "this as java.lang.String).substring(startIndex)"
 
     invoke-static {v5, v8}, Lkotlin/jvm/internal/Intrinsics;->checkNotNullExpressionValue(Ljava/lang/Object;Ljava/lang/String;)V
 
@@ -611,25 +599,28 @@
     move-object v5, p2
 
     :goto_5
-    if-eqz v5, :cond_7
+    if-nez v5, :cond_7
 
+    goto :goto_6
+
+    :cond_7
     invoke-interface {p0, v5}, Lkotlin/jvm/functions/Function1;->invoke(Ljava/lang/Object;)Ljava/lang/Object;
 
     move-result-object v5
 
-    check-cast v5, Ljava/lang/String;
-
-    if-eqz v5, :cond_7
-
     move-object v6, v5
 
-    :cond_7
-    :goto_6
-    if-eqz v6, :cond_8
+    check-cast v6, Ljava/lang/String;
 
-    invoke-virtual {v4, v6}, Ljava/util/ArrayList;->add(Ljava/lang/Object;)Z
+    :goto_6
+    if-nez v6, :cond_8
+
+    goto :goto_7
 
     :cond_8
+    invoke-virtual {v4, v6}, Ljava/util/ArrayList;->add(Ljava/lang/Object;)Z
+
+    :goto_7
     move v5, v7
 
     goto :goto_1

@@ -15,7 +15,7 @@
 
 
 # instance fields
-.field public final fqName:Lkotlin/reflect/jvm/internal/impl/name/FqName;
+.field private final fqName:Lkotlin/reflect/jvm/internal/impl/name/FqName;
 
 
 # direct methods

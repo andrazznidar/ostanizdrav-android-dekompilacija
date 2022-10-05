@@ -733,7 +733,7 @@
 
     move-result-object v1
 
-    invoke-virtual {v0, v1}, Lcom/google/gson/internal/Excluder;->isAnonymousOrLocal(Ljava/lang/Class;)Z
+    invoke-virtual {v0, v1}, Lcom/google/gson/internal/Excluder;->isAnonymousOrNonStaticLocal(Ljava/lang/Class;)Z
 
     move-result v1
 
@@ -758,9 +758,9 @@
 
     if-nez v0, :cond_9
 
-    new-instance v0, Lokhttp3/ConnectionPool;
+    new-instance v0, Lcom/google/gson/FieldAttributes;
 
-    invoke-direct {v0, p1}, Lokhttp3/ConnectionPool;-><init>(Ljava/lang/reflect/Field;)V
+    invoke-direct {v0, p1}, Lcom/google/gson/FieldAttributes;-><init>(Ljava/lang/reflect/Field;)V
 
     invoke-interface {p2}, Ljava/util/List;->iterator()Ljava/util/Iterator;
 
@@ -779,7 +779,7 @@
 
     check-cast p2, Lcom/google/gson/ExclusionStrategy;
 
-    invoke-interface {p2, v0}, Lcom/google/gson/ExclusionStrategy;->shouldSkipField(Lokhttp3/ConnectionPool;)Z
+    invoke-interface {p2, v0}, Lcom/google/gson/ExclusionStrategy;->shouldSkipField(Lcom/google/gson/FieldAttributes;)Z
 
     move-result p2
 

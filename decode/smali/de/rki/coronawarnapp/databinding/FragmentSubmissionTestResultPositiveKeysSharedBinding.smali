@@ -8,6 +8,8 @@
 
 .field public final submissionDoneContagious:Lde/rki/coronawarnapp/databinding/IncludeSubmissionBehaviourRowBinding;
 
+.field public final submissionDoneIllness:Lde/rki/coronawarnapp/databinding/IncludeSubmissionBehaviourRowBinding;
+
 .field public final submissionDoneIsolate:Lde/rki/coronawarnapp/databinding/IncludeSubmissionBehaviourRowBinding;
 
 .field public final submissionDonePcrValidation:Lde/rki/coronawarnapp/databinding/IncludeSubmissionBehaviourRowBinding;
@@ -20,10 +22,11 @@
 
 
 # direct methods
-.method public constructor <init>(Ljava/lang/Object;Landroid/view/View;ILandroid/widget/Button;Landroidx/constraintlayout/widget/Guideline;Landroidx/constraintlayout/widget/Guideline;Landroid/widget/ScrollView;Lde/rki/coronawarnapp/databinding/IncludeSubmissionBehaviourRowBinding;Lde/rki/coronawarnapp/databinding/IncludeSubmissionBehaviourRowBinding;Lde/rki/coronawarnapp/databinding/IncludeSubmissionBehaviourRowBinding;Landroid/widget/TextView;Landroid/widget/TextView;Landroidx/constraintlayout/widget/ConstraintLayout;Lde/rki/coronawarnapp/ui/view/TestResultSectionView;Lcom/google/android/material/appbar/MaterialToolbar;)V
-    .locals 0
+.method public constructor <init>(Ljava/lang/Object;Landroid/view/View;ILandroid/widget/Button;Landroidx/constraintlayout/widget/Guideline;Landroidx/constraintlayout/widget/Guideline;Landroid/widget/ScrollView;Lde/rki/coronawarnapp/databinding/IncludeSubmissionBehaviourRowBinding;Lde/rki/coronawarnapp/databinding/IncludeSubmissionBehaviourRowBinding;Lde/rki/coronawarnapp/databinding/IncludeSubmissionBehaviourRowBinding;Lde/rki/coronawarnapp/databinding/IncludeSubmissionBehaviourRowBinding;Landroid/widget/TextView;Landroid/widget/TextView;Landroidx/constraintlayout/widget/ConstraintLayout;Lde/rki/coronawarnapp/ui/view/TestResultSectionView;Lcom/google/android/material/appbar/MaterialToolbar;)V
+    .locals 2
     .annotation system Ldalvik/annotation/MethodParameters;
         accessFlags = {
+            0x0,
             0x0,
             0x0,
             0x0,
@@ -49,6 +52,7 @@
             "guidelineActionLarge",
             "scrollView",
             "submissionDoneContagious",
+            "submissionDoneIllness",
             "submissionDoneIsolate",
             "submissionDonePcrValidation",
             "submissionDoneSubtitle",
@@ -59,21 +63,41 @@
         }
     .end annotation
 
+    move-object v0, p0
+
     invoke-direct {p0, p1, p2, p3}, Landroidx/databinding/ViewDataBinding;-><init>(Ljava/lang/Object;Landroid/view/View;I)V
 
-    iput-object p4, p0, Lde/rki/coronawarnapp/databinding/FragmentSubmissionTestResultPositiveKeysSharedBinding;->deleteTest:Landroid/widget/Button;
+    move-object v1, p4
 
-    iput-object p8, p0, Lde/rki/coronawarnapp/databinding/FragmentSubmissionTestResultPositiveKeysSharedBinding;->submissionDoneContagious:Lde/rki/coronawarnapp/databinding/IncludeSubmissionBehaviourRowBinding;
+    iput-object v1, v0, Lde/rki/coronawarnapp/databinding/FragmentSubmissionTestResultPositiveKeysSharedBinding;->deleteTest:Landroid/widget/Button;
 
-    iput-object p9, p0, Lde/rki/coronawarnapp/databinding/FragmentSubmissionTestResultPositiveKeysSharedBinding;->submissionDoneIsolate:Lde/rki/coronawarnapp/databinding/IncludeSubmissionBehaviourRowBinding;
+    move-object v1, p8
 
-    iput-object p10, p0, Lde/rki/coronawarnapp/databinding/FragmentSubmissionTestResultPositiveKeysSharedBinding;->submissionDonePcrValidation:Lde/rki/coronawarnapp/databinding/IncludeSubmissionBehaviourRowBinding;
+    iput-object v1, v0, Lde/rki/coronawarnapp/databinding/FragmentSubmissionTestResultPositiveKeysSharedBinding;->submissionDoneContagious:Lde/rki/coronawarnapp/databinding/IncludeSubmissionBehaviourRowBinding;
 
-    iput-object p13, p0, Lde/rki/coronawarnapp/databinding/FragmentSubmissionTestResultPositiveKeysSharedBinding;->submissionTestResultContainer:Landroidx/constraintlayout/widget/ConstraintLayout;
+    move-object v1, p9
 
-    iput-object p14, p0, Lde/rki/coronawarnapp/databinding/FragmentSubmissionTestResultPositiveKeysSharedBinding;->submissionTestResultSection:Lde/rki/coronawarnapp/ui/view/TestResultSectionView;
+    iput-object v1, v0, Lde/rki/coronawarnapp/databinding/FragmentSubmissionTestResultPositiveKeysSharedBinding;->submissionDoneIllness:Lde/rki/coronawarnapp/databinding/IncludeSubmissionBehaviourRowBinding;
 
-    iput-object p15, p0, Lde/rki/coronawarnapp/databinding/FragmentSubmissionTestResultPositiveKeysSharedBinding;->toolbar:Lcom/google/android/material/appbar/MaterialToolbar;
+    move-object v1, p10
+
+    iput-object v1, v0, Lde/rki/coronawarnapp/databinding/FragmentSubmissionTestResultPositiveKeysSharedBinding;->submissionDoneIsolate:Lde/rki/coronawarnapp/databinding/IncludeSubmissionBehaviourRowBinding;
+
+    move-object v1, p11
+
+    iput-object v1, v0, Lde/rki/coronawarnapp/databinding/FragmentSubmissionTestResultPositiveKeysSharedBinding;->submissionDonePcrValidation:Lde/rki/coronawarnapp/databinding/IncludeSubmissionBehaviourRowBinding;
+
+    move-object/from16 v1, p14
+
+    iput-object v1, v0, Lde/rki/coronawarnapp/databinding/FragmentSubmissionTestResultPositiveKeysSharedBinding;->submissionTestResultContainer:Landroidx/constraintlayout/widget/ConstraintLayout;
+
+    move-object/from16 v1, p15
+
+    iput-object v1, v0, Lde/rki/coronawarnapp/databinding/FragmentSubmissionTestResultPositiveKeysSharedBinding;->submissionTestResultSection:Lde/rki/coronawarnapp/ui/view/TestResultSectionView;
+
+    move-object/from16 v1, p16
+
+    iput-object v1, v0, Lde/rki/coronawarnapp/databinding/FragmentSubmissionTestResultPositiveKeysSharedBinding;->toolbar:Lcom/google/android/material/appbar/MaterialToolbar;
 
     return-void
 .end method
@@ -91,7 +115,7 @@
 
     sget-object v0, Landroidx/databinding/DataBindingUtil;->sMapper:Landroidx/databinding/DataBinderMapper;
 
-    const v0, 0x7f0d009f
+    const v0, 0x7f0d00ad
 
     const/4 v1, 0x0
 

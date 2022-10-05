@@ -20,11 +20,25 @@
 
 # instance fields
 .field public final synthetic $this_withIndex:[Ljava/lang/Object;
+    .annotation system Ldalvik/annotation/Signature;
+        value = {
+            "[",
+            "Ljava/lang/Object;"
+        }
+    .end annotation
+.end field
 
 
 # direct methods
 .method public constructor <init>([Ljava/lang/Object;)V
     .locals 0
+    .annotation system Ldalvik/annotation/Signature;
+        value = {
+            "([",
+            "Ljava/lang/Object;",
+            ")V"
+        }
+    .end annotation
 
     iput-object p1, p0, Lkotlin/collections/ArraysKt___ArraysKt$withIndex$1;->$this_withIndex:[Ljava/lang/Object;
 

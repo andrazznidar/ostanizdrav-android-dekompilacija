@@ -1,4 +1,4 @@
-.class public final Lorg/bouncycastle/jcajce/provider/symmetric/util/ClassUtil$1;
+.class final Lorg/bouncycastle/jcajce/provider/symmetric/util/ClassUtil$1;
 .super Ljava/lang/Object;
 
 # interfaces

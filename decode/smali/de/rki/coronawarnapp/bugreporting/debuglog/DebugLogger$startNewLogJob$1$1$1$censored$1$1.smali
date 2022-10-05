@@ -220,10 +220,6 @@
 
     invoke-static {v1, v2}, Lkotlin/jvm/internal/Intrinsics;->checkNotNullParameter(Ljava/lang/Object;Ljava/lang/String;)V
 
-    const-string v2, "error"
-
-    invoke-static {p1, v2}, Lkotlin/jvm/internal/Intrinsics;->checkNotNullParameter(Ljava/lang/Object;Ljava/lang/String;)V
-
     new-instance v2, Lde/rki/coronawarnapp/bugreporting/censors/BugCensor$CensorContainer;
 
     new-instance v3, Lde/rki/coronawarnapp/bugreporting/censors/BugCensor$CensorContainer$Action;
@@ -276,7 +272,7 @@
 
     invoke-direct {v3, v4, v5}, Lde/rki/coronawarnapp/bugreporting/censors/BugCensor$CensorContainer$Action;-><init>(Lkotlin/ranges/IntRange;Lde/rki/coronawarnapp/bugreporting/censors/BugCensor$CensorContainer$Action$StringModifier;)V
 
-    invoke-static {v3}, Lkotlin/collections/SetsKt__SetsKt;->setOf(Ljava/lang/Object;)Ljava/util/Set;
+    invoke-static {v3}, Lorg/bouncycastle/util/IPAddress;->setOf(Ljava/lang/Object;)Ljava/util/Set;
 
     move-result-object p1
 

@@ -253,7 +253,7 @@
 
     iget-object v0, p0, Lde/rki/coronawarnapp/covidcertificate/validation/ui/validationstart/ValidationStartViewModel$UIState;->localTime:Lorg/joda/time/LocalTime;
 
-    invoke-virtual {v0}, Lorg/joda/time/base/BaseLocal;->hashCode()I
+    invoke-virtual {v0}, Lorg/joda/time/base/AbstractPartial;->hashCode()I
 
     move-result v0
 

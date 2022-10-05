@@ -152,11 +152,9 @@
 
     check-cast v2, Lkotlin/coroutines/jvm/internal/ContinuationImpl;
 
-    iget-object v2, v2, Lkotlin/coroutines/jvm/internal/ContinuationImpl;->_context:Lkotlin/coroutines/CoroutineContext;
+    invoke-virtual {v2}, Lkotlin/coroutines/jvm/internal/ContinuationImpl;->getContext()Lkotlin/coroutines/CoroutineContext;
 
-    invoke-static {v2}, Lkotlin/jvm/internal/Intrinsics;->checkNotNull(Ljava/lang/Object;)V
-
-    sget v3, Lkotlinx/coroutines/Job;->$r8$clinit:I
+    move-result-object v2
 
     sget-object v3, Lkotlinx/coroutines/Job$Key;->$$INSTANCE:Lkotlinx/coroutines/Job$Key;
 

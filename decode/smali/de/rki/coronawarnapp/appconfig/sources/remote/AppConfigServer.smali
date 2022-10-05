@@ -365,11 +365,7 @@
 
     sget-object p1, Lde/rki/coronawarnapp/appconfig/sources/remote/AppConfigServer;->DATE_FORMAT:Lorg/joda/time/format/DateTimeFormatter;
 
-    invoke-virtual {p1, v9}, Lorg/joda/time/format/DateTimeFormatter;->parseDateTime(Ljava/lang/String;)Lorg/joda/time/DateTime;
-
-    move-result-object p1
-
-    invoke-virtual {p1}, Lorg/joda/time/base/AbstractInstant;->toInstant()Lorg/joda/time/Instant;
+    invoke-static {v9, p1}, Lorg/joda/time/Instant;->parse(Ljava/lang/String;Lorg/joda/time/format/DateTimeFormatter;)Lorg/joda/time/Instant;
 
     move-result-object v6
 

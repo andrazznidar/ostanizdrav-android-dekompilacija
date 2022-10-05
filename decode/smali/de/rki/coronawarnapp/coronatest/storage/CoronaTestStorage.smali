@@ -45,7 +45,7 @@
 
     invoke-direct {p1, p0}, Lde/rki/coronawarnapp/coronatest/storage/CoronaTestStorage$prefs$2;-><init>(Lde/rki/coronawarnapp/coronatest/storage/CoronaTestStorage;)V
 
-    invoke-static {p1}, Lkotlin/LazyKt__LazyKt;->lazy(Lkotlin/jvm/functions/Function0;)Lkotlin/Lazy;
+    invoke-static {p1}, Lkotlin/LazyKt__LazyJVMKt;->lazy(Lkotlin/jvm/functions/Function0;)Lkotlin/Lazy;
 
     move-result-object p1
 
@@ -55,7 +55,7 @@
 
     invoke-direct {p1, p0}, Lde/rki/coronawarnapp/coronatest/storage/CoronaTestStorage$gson$2;-><init>(Lde/rki/coronawarnapp/coronatest/storage/CoronaTestStorage;)V
 
-    invoke-static {p1}, Lkotlin/LazyKt__LazyKt;->lazy(Lkotlin/jvm/functions/Function0;)Lkotlin/Lazy;
+    invoke-static {p1}, Lkotlin/LazyKt__LazyJVMKt;->lazy(Lkotlin/jvm/functions/Function0;)Lkotlin/Lazy;
 
     move-result-object p1
 
@@ -63,7 +63,7 @@
 
     sget-object p1, Lde/rki/coronawarnapp/coronatest/storage/CoronaTestStorage$typeTokenPCR$2;->INSTANCE:Lde/rki/coronawarnapp/coronatest/storage/CoronaTestStorage$typeTokenPCR$2;
 
-    invoke-static {p1}, Lkotlin/LazyKt__LazyKt;->lazy(Lkotlin/jvm/functions/Function0;)Lkotlin/Lazy;
+    invoke-static {p1}, Lkotlin/LazyKt__LazyJVMKt;->lazy(Lkotlin/jvm/functions/Function0;)Lkotlin/Lazy;
 
     move-result-object p1
 
@@ -71,7 +71,7 @@
 
     sget-object p1, Lde/rki/coronawarnapp/coronatest/storage/CoronaTestStorage$typeTokenRA$2;->INSTANCE:Lde/rki/coronawarnapp/coronatest/storage/CoronaTestStorage$typeTokenRA$2;
 
-    invoke-static {p1}, Lkotlin/LazyKt__LazyKt;->lazy(Lkotlin/jvm/functions/Function0;)Lkotlin/Lazy;
+    invoke-static {p1}, Lkotlin/LazyKt__LazyJVMKt;->lazy(Lkotlin/jvm/functions/Function0;)Lkotlin/Lazy;
 
     move-result-object p1
 

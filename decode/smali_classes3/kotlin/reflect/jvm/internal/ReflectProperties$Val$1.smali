@@ -1,4 +1,4 @@
-.class public final Lkotlin/reflect/jvm/internal/ReflectProperties$Val$1;
+.class final Lkotlin/reflect/jvm/internal/ReflectProperties$Val$1;
 .super Ljava/lang/Object;
 .source "ReflectProperties.java"
 

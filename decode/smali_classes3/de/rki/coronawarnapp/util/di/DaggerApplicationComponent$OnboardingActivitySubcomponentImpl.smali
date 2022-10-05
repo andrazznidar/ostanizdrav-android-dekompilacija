@@ -134,18 +134,8 @@
 
 
 # direct methods
-.method public constructor <init>(Lde/rki/coronawarnapp/util/di/DaggerApplicationComponent;Lde/rki/coronawarnapp/ui/onboarding/OnboardingActivity;Lde/rki/coronawarnapp/util/di/DaggerApplicationComponent$OnboardingActivitySubcomponentImpl-IA;)V
+.method public constructor <init>(Lde/rki/coronawarnapp/util/di/DaggerApplicationComponent;Lde/rki/coronawarnapp/ui/onboarding/OnboardingActivity;Landroidx/activity/ComponentActivity$2$$ExternalSyntheticOutline0;)V
     .locals 0
-    .annotation system Ldalvik/annotation/MethodParameters;
-        accessFlags = {
-            0x0,
-            0x0
-        }
-        names = {
-            "applicationComponent",
-            "arg0Param"
-        }
-    .end annotation
 
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
@@ -237,7 +227,7 @@
 
     check-cast p1, Lde/rki/coronawarnapp/ui/onboarding/OnboardingActivity;
 
-    const/16 v0, 0x13
+    const/16 v0, 0x14
 
     invoke-static {v0}, Lcom/google/common/collect/ImmutableMap;->builderWithExpectedSize(I)Lcom/google/common/collect/ImmutableMap$Builder;
 
@@ -304,6 +294,14 @@
     iget-object v2, p0, Lde/rki/coronawarnapp/util/di/DaggerApplicationComponent$OnboardingActivitySubcomponentImpl;->applicationComponent:Lde/rki/coronawarnapp/util/di/DaggerApplicationComponent;
 
     iget-object v2, v2, Lde/rki/coronawarnapp/util/di/DaggerApplicationComponent;->surveyConsentFragmentSubcomponentFactoryProvider:Ljavax/inject/Provider;
+
+    invoke-virtual {v0, v1, v2}, Lcom/google/common/collect/ImmutableMap$Builder;->put(Ljava/lang/Object;Ljava/lang/Object;)Lcom/google/common/collect/ImmutableMap$Builder;
+
+    const-class v1, Lde/rki/coronawarnapp/rootdetection/ui/RootDetectionDialogFragment;
+
+    iget-object v2, p0, Lde/rki/coronawarnapp/util/di/DaggerApplicationComponent$OnboardingActivitySubcomponentImpl;->applicationComponent:Lde/rki/coronawarnapp/util/di/DaggerApplicationComponent;
+
+    iget-object v2, v2, Lde/rki/coronawarnapp/util/di/DaggerApplicationComponent;->rootDetectionDialogFragmentSubcomponentFactoryProvider:Ljavax/inject/Provider;
 
     invoke-virtual {v0, v1, v2}, Lcom/google/common/collect/ImmutableMap$Builder;->put(Ljava/lang/Object;Ljava/lang/Object;)Lcom/google/common/collect/ImmutableMap$Builder;
 

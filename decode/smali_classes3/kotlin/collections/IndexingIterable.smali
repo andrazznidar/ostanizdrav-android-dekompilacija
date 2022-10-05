@@ -67,7 +67,7 @@
         }
     .end annotation
 
-    new-instance v0, Lkotlin/jvm/internal/ArrayIterator;
+    new-instance v0, Lkotlin/collections/IndexingIterator;
 
     iget-object v1, p0, Lkotlin/collections/IndexingIterable;->iteratorFactory:Lkotlin/jvm/functions/Function0;
 
@@ -77,7 +77,7 @@
 
     check-cast v1, Ljava/util/Iterator;
 
-    invoke-direct {v0, v1}, Lkotlin/jvm/internal/ArrayIterator;-><init>(Ljava/util/Iterator;)V
+    invoke-direct {v0, v1}, Lkotlin/collections/IndexingIterator;-><init>(Ljava/util/Iterator;)V
 
     return-object v0
 .end method

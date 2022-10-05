@@ -10,61 +10,56 @@
 
 .field public static volatile INITIALIZATION_STATE:I
 
-.field public static final NOP_FALLBACK_FACTORY:Lorg/slf4j/helpers/NOPLoggerFactory;
+.field public static final NOP_FALLBACK_FACTORY:Lkotlin/io/ByteStreamsKt;
 
 .field public static STATIC_LOGGER_BINDER_PATH:Ljava/lang/String;
 
-.field public static final SUBST_FACTORY:Lcom/google/android/gms/tasks/zzr;
+.field public static final SUBST_FACTORY:Lorg/slf4j/helpers/SubstituteLoggerFactory;
 
 
 # direct methods
 .method public static constructor <clinit>()V
     .locals 2
 
-    new-instance v0, Lcom/google/android/gms/tasks/zzr;
+    new-instance v0, Lorg/slf4j/helpers/SubstituteLoggerFactory;
 
-    const/4 v1, 0x1
+    invoke-direct {v0}, Lorg/slf4j/helpers/SubstituteLoggerFactory;-><init>()V
 
-    invoke-direct {v0, v1}, Lcom/google/android/gms/tasks/zzr;-><init>(I)V
+    sput-object v0, Lorg/slf4j/LoggerFactory;->SUBST_FACTORY:Lorg/slf4j/helpers/SubstituteLoggerFactory;
 
-    sput-object v0, Lorg/slf4j/LoggerFactory;->SUBST_FACTORY:Lcom/google/android/gms/tasks/zzr;
+    new-instance v0, Lkotlin/io/ByteStreamsKt;
 
-    new-instance v0, Lorg/slf4j/helpers/NOPLoggerFactory;
+    invoke-direct {v0}, Lkotlin/io/ByteStreamsKt;-><init>()V
 
-    const/4 v1, 0x0
-
-    invoke-direct {v0, v1}, Lorg/slf4j/helpers/NOPLoggerFactory;-><init>(I)V
-
-    sput-object v0, Lorg/slf4j/LoggerFactory;->NOP_FALLBACK_FACTORY:Lorg/slf4j/helpers/NOPLoggerFactory;
+    sput-object v0, Lorg/slf4j/LoggerFactory;->NOP_FALLBACK_FACTORY:Lkotlin/io/ByteStreamsKt;
 
     const-string v0, "slf4j.detectLoggerNameMismatch"
+
+    const/4 v1, 0x0
 
     :try_start_0
     invoke-static {v0}, Ljava/lang/System;->getProperty(Ljava/lang/String;)Ljava/lang/String;
 
-    move-result-object v0
+    move-result-object v1
     :try_end_0
     .catch Ljava/lang/SecurityException; {:try_start_0 .. :try_end_0} :catch_0
 
-    goto :goto_0
-
     :catch_0
+    if-nez v1, :cond_0
+
     const/4 v0, 0x0
 
-    :goto_0
-    if-nez v0, :cond_0
-
-    goto :goto_1
+    goto :goto_0
 
     :cond_0
-    const-string v1, "true"
+    const-string v0, "true"
 
-    invoke-virtual {v0, v1}, Ljava/lang/String;->equalsIgnoreCase(Ljava/lang/String;)Z
+    invoke-virtual {v1, v0}, Ljava/lang/String;->equalsIgnoreCase(Ljava/lang/String;)Z
 
-    move-result v1
+    move-result v0
 
-    :goto_1
-    sput-boolean v1, Lorg/slf4j/LoggerFactory;->DETECT_LOGGER_NAME_MISMATCH:Z
+    :goto_0
+    sput-boolean v0, Lorg/slf4j/LoggerFactory;->DETECT_LOGGER_NAME_MISMATCH:Z
 
     const-string v0, "1.6"
 
@@ -397,7 +392,7 @@
 
     if-ne v0, v1, :cond_2
 
-    sget-object v0, Lorg/slf4j/LoggerFactory;->NOP_FALLBACK_FACTORY:Lorg/slf4j/helpers/NOPLoggerFactory;
+    sget-object v0, Lorg/slf4j/LoggerFactory;->NOP_FALLBACK_FACTORY:Lkotlin/io/ByteStreamsKt;
 
     return-object v0
 
@@ -431,7 +426,7 @@
     throw v0
 
     :cond_5
-    sget-object v0, Lorg/slf4j/LoggerFactory;->SUBST_FACTORY:Lcom/google/android/gms/tasks/zzr;
+    sget-object v0, Lorg/slf4j/LoggerFactory;->SUBST_FACTORY:Lorg/slf4j/helpers/SubstituteLoggerFactory;
 
     return-object v0
 .end method
@@ -668,20 +663,18 @@
 .method public static postBindCleanUp()V
     .locals 12
 
-    sget-object v0, Lorg/slf4j/LoggerFactory;->SUBST_FACTORY:Lcom/google/android/gms/tasks/zzr;
+    sget-object v0, Lorg/slf4j/LoggerFactory;->SUBST_FACTORY:Lorg/slf4j/helpers/SubstituteLoggerFactory;
 
     monitor-enter v0
 
     const/4 v1, 0x1
 
     :try_start_0
-    iput-boolean v1, v0, Lcom/google/android/gms/tasks/zzr;->zzc:Z
+    iput-boolean v1, v0, Lorg/slf4j/helpers/SubstituteLoggerFactory;->postInitialization:Z
 
     new-instance v2, Ljava/util/ArrayList;
 
-    iget-object v3, v0, Lcom/google/android/gms/tasks/zzr;->zza:Ljava/lang/Object;
-
-    check-cast v3, Ljava/util/Map;
+    iget-object v3, v0, Lorg/slf4j/helpers/SubstituteLoggerFactory;->loggers:Ljava/util/Map;
 
     invoke-interface {v3}, Ljava/util/Map;->values()Ljava/util/Collection;
 
@@ -721,13 +714,9 @@
     :try_end_0
     .catchall {:try_start_0 .. :try_end_0} :catchall_0
 
-    sget-object v0, Lorg/slf4j/LoggerFactory;->SUBST_FACTORY:Lcom/google/android/gms/tasks/zzr;
+    sget-object v0, Lorg/slf4j/LoggerFactory;->SUBST_FACTORY:Lorg/slf4j/helpers/SubstituteLoggerFactory;
 
-    iget-object v0, v0, Lcom/google/android/gms/tasks/zzr;->zzb:Ljava/lang/Object;
-
-    move-object v2, v0
-
-    check-cast v2, Ljava/util/concurrent/LinkedBlockingQueue;
+    iget-object v2, v0, Lorg/slf4j/helpers/SubstituteLoggerFactory;->eventQueue:Ljava/util/concurrent/LinkedBlockingQueue;
 
     invoke-virtual {v2}, Ljava/util/concurrent/LinkedBlockingQueue;->size()I
 
@@ -750,17 +739,13 @@
 
     if-nez v7, :cond_1
 
-    sget-object v0, Lorg/slf4j/LoggerFactory;->SUBST_FACTORY:Lcom/google/android/gms/tasks/zzr;
+    sget-object v0, Lorg/slf4j/LoggerFactory;->SUBST_FACTORY:Lorg/slf4j/helpers/SubstituteLoggerFactory;
 
-    iget-object v1, v0, Lcom/google/android/gms/tasks/zzr;->zza:Ljava/lang/Object;
-
-    check-cast v1, Ljava/util/Map;
+    iget-object v1, v0, Lorg/slf4j/helpers/SubstituteLoggerFactory;->loggers:Ljava/util/Map;
 
     invoke-interface {v1}, Ljava/util/Map;->clear()V
 
-    iget-object v0, v0, Lcom/google/android/gms/tasks/zzr;->zzb:Ljava/lang/Object;
-
-    check-cast v0, Ljava/util/concurrent/LinkedBlockingQueue;
+    iget-object v0, v0, Lorg/slf4j/helpers/SubstituteLoggerFactory;->eventQueue:Ljava/util/concurrent/LinkedBlockingQueue;
 
     invoke-virtual {v0}, Ljava/util/concurrent/LinkedBlockingQueue;->clear()V
 

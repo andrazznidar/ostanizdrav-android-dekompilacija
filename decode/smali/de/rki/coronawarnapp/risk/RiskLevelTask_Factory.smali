@@ -28,6 +28,16 @@
     .end annotation
 .end field
 
+.field public final analyticsTestResultCollectorProvider:Ljavax/inject/Provider;
+    .annotation system Ldalvik/annotation/Signature;
+        value = {
+            "Ljavax/inject/Provider<",
+            "Lde/rki/coronawarnapp/datadonation/analytics/modules/testresult/AnalyticsTestResultCollector;",
+            ">;"
+        }
+    .end annotation
+.end field
+
 .field public final appConfigProvider:Ljavax/inject/Provider;
     .annotation system Ldalvik/annotation/Signature;
         value = {
@@ -120,10 +130,11 @@
 
 
 # direct methods
-.method public constructor <init>(Ljavax/inject/Provider;Ljavax/inject/Provider;Ljavax/inject/Provider;Ljavax/inject/Provider;Ljavax/inject/Provider;Ljavax/inject/Provider;Ljavax/inject/Provider;Ljavax/inject/Provider;Ljavax/inject/Provider;Ljavax/inject/Provider;)V
+.method public constructor <init>(Ljavax/inject/Provider;Ljavax/inject/Provider;Ljavax/inject/Provider;Ljavax/inject/Provider;Ljavax/inject/Provider;Ljavax/inject/Provider;Ljavax/inject/Provider;Ljavax/inject/Provider;Ljavax/inject/Provider;Ljavax/inject/Provider;Ljavax/inject/Provider;)V
     .locals 0
     .annotation system Ldalvik/annotation/MethodParameters;
         accessFlags = {
+            0x0,
             0x0,
             0x0,
             0x0,
@@ -145,7 +156,8 @@
             "riskLevelStorageProvider",
             "keyCacheRepositoryProvider",
             "coronaTestRepositoryProvider",
-            "analyticsExposureWindowCollectorProvider"
+            "analyticsExposureWindowCollectorProvider",
+            "analyticsTestResultCollectorProvider"
         }
     .end annotation
 
@@ -181,6 +193,9 @@
             ">;",
             "Ljavax/inject/Provider<",
             "Lde/rki/coronawarnapp/datadonation/analytics/modules/exposurewindows/AnalyticsExposureWindowCollector;",
+            ">;",
+            "Ljavax/inject/Provider<",
+            "Lde/rki/coronawarnapp/datadonation/analytics/modules/testresult/AnalyticsTestResultCollector;",
             ">;)V"
         }
     .end annotation
@@ -207,13 +222,15 @@
 
     iput-object p10, p0, Lde/rki/coronawarnapp/risk/RiskLevelTask_Factory;->analyticsExposureWindowCollectorProvider:Ljavax/inject/Provider;
 
+    iput-object p11, p0, Lde/rki/coronawarnapp/risk/RiskLevelTask_Factory;->analyticsTestResultCollectorProvider:Ljavax/inject/Provider;
+
     return-void
 .end method
 
 
 # virtual methods
 .method public get()Ljava/lang/Object;
-    .locals 12
+    .locals 13
 
     iget-object v0, p0, Lde/rki/coronawarnapp/risk/RiskLevelTask_Factory;->riskLevelsProvider:Ljavax/inject/Provider;
 
@@ -315,11 +332,21 @@
 
     check-cast v11, Lde/rki/coronawarnapp/datadonation/analytics/modules/exposurewindows/AnalyticsExposureWindowCollector;
 
+    iget-object v0, p0, Lde/rki/coronawarnapp/risk/RiskLevelTask_Factory;->analyticsTestResultCollectorProvider:Ljavax/inject/Provider;
+
+    invoke-interface {v0}, Ljavax/inject/Provider;->get()Ljava/lang/Object;
+
+    move-result-object v0
+
+    move-object v12, v0
+
+    check-cast v12, Lde/rki/coronawarnapp/datadonation/analytics/modules/testresult/AnalyticsTestResultCollector;
+
     new-instance v0, Lde/rki/coronawarnapp/risk/RiskLevelTask;
 
     move-object v1, v0
 
-    invoke-direct/range {v1 .. v11}, Lde/rki/coronawarnapp/risk/RiskLevelTask;-><init>(Lde/rki/coronawarnapp/risk/RiskLevels;Lde/rki/coronawarnapp/nearby/ENFClient;Lde/rki/coronawarnapp/util/TimeStamper;Lde/rki/coronawarnapp/util/device/BackgroundModeStatus;Lde/rki/coronawarnapp/risk/RiskLevelSettings;Lde/rki/coronawarnapp/appconfig/AppConfigProvider;Lde/rki/coronawarnapp/risk/storage/RiskLevelStorage;Lde/rki/coronawarnapp/diagnosiskeys/storage/KeyCacheRepository;Lde/rki/coronawarnapp/coronatest/CoronaTestRepository;Lde/rki/coronawarnapp/datadonation/analytics/modules/exposurewindows/AnalyticsExposureWindowCollector;)V
+    invoke-direct/range {v1 .. v12}, Lde/rki/coronawarnapp/risk/RiskLevelTask;-><init>(Lde/rki/coronawarnapp/risk/RiskLevels;Lde/rki/coronawarnapp/nearby/ENFClient;Lde/rki/coronawarnapp/util/TimeStamper;Lde/rki/coronawarnapp/util/device/BackgroundModeStatus;Lde/rki/coronawarnapp/risk/RiskLevelSettings;Lde/rki/coronawarnapp/appconfig/AppConfigProvider;Lde/rki/coronawarnapp/risk/storage/RiskLevelStorage;Lde/rki/coronawarnapp/diagnosiskeys/storage/KeyCacheRepository;Lde/rki/coronawarnapp/coronatest/CoronaTestRepository;Lde/rki/coronawarnapp/datadonation/analytics/modules/exposurewindows/AnalyticsExposureWindowCollector;Lde/rki/coronawarnapp/datadonation/analytics/modules/testresult/AnalyticsTestResultCollector;)V
 
     return-object v0
 .end method

@@ -38,7 +38,7 @@
 
 # virtual methods
 .method public createFromParcel(Landroid/os/Parcel;)Ljava/lang/Object;
-    .locals 11
+    .locals 12
 
     const-string v0, "parcel"
 
@@ -85,17 +85,17 @@
 
     move-result-object v6
 
+    invoke-virtual {p1}, Landroid/os/Parcel;->readString()Ljava/lang/String;
+
+    move-result-object v7
+
     invoke-virtual {p1}, Landroid/os/Parcel;->readSerializable()Ljava/io/Serializable;
 
     move-result-object v1
 
-    move-object v7, v1
+    move-object v8, v1
 
-    check-cast v7, Lorg/joda/time/Instant;
-
-    invoke-virtual {p1}, Landroid/os/Parcel;->readString()Ljava/lang/String;
-
-    move-result-object v8
+    check-cast v8, Lorg/joda/time/Instant;
 
     invoke-virtual {p1}, Landroid/os/Parcel;->readString()Ljava/lang/String;
 
@@ -104,6 +104,10 @@
     invoke-virtual {p1}, Landroid/os/Parcel;->readString()Ljava/lang/String;
 
     move-result-object v10
+
+    invoke-virtual {p1}, Landroid/os/Parcel;->readString()Ljava/lang/String;
+
+    move-result-object v11
 
     invoke-virtual {p1}, Landroid/os/Parcel;->readString()Ljava/lang/String;
 
@@ -123,9 +127,11 @@
 
     move-object v9, v10
 
-    move-object v10, p1
+    move-object v10, v11
 
-    invoke-direct/range {v1 .. v10}, Lde/rki/coronawarnapp/coronatest/qrcode/CoronaTestQRCode$RapidAntigen;-><init>(Lorg/joda/time/LocalDate;ZZLjava/lang/String;Lorg/joda/time/Instant;Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;)V
+    move-object v11, p1
+
+    invoke-direct/range {v1 .. v11}, Lde/rki/coronawarnapp/coronatest/qrcode/CoronaTestQRCode$RapidAntigen;-><init>(Lorg/joda/time/LocalDate;ZZLjava/lang/String;Ljava/lang/String;Lorg/joda/time/Instant;Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;)V
 
     return-object v0
 .end method

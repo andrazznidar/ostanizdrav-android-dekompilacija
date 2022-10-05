@@ -44,29 +44,27 @@
 
     invoke-static {p1, v0}, Lkotlin/jvm/internal/Intrinsics;->checkNotNullParameter(Ljava/lang/Object;Ljava/lang/String;)V
 
-    new-instance v1, Lde/rki/coronawarnapp/presencetracing/checkins/qrcode/VerifiedTraceLocation;
-
-    invoke-static {p1, v0}, Lkotlin/jvm/internal/Intrinsics;->checkNotNullParameter(Ljava/lang/Object;Ljava/lang/String;)V
+    new-instance v0, Lde/rki/coronawarnapp/presencetracing/checkins/qrcode/VerifiedTraceLocation;
 
     invoke-virtual {p1}, Landroid/os/Parcel;->readInt()I
 
-    move-result v0
+    move-result v1
 
-    new-array v0, v0, [B
+    new-array v1, v1, [B
 
-    invoke-virtual {p1, v0}, Landroid/os/Parcel;->readByteArray([B)V
+    invoke-virtual {p1, v1}, Landroid/os/Parcel;->readByteArray([B)V
 
-    invoke-static {v0}, Lde/rki/coronawarnapp/server/protocols/internal/pt/TraceLocationOuterClass$QRCodePayload;->parseFrom([B)Lde/rki/coronawarnapp/server/protocols/internal/pt/TraceLocationOuterClass$QRCodePayload;
+    invoke-static {v1}, Lde/rki/coronawarnapp/server/protocols/internal/pt/TraceLocationOuterClass$QRCodePayload;->parseFrom([B)Lde/rki/coronawarnapp/server/protocols/internal/pt/TraceLocationOuterClass$QRCodePayload;
 
     move-result-object p1
 
-    const-string v0, "parseFrom(rawSignedTraceLocation)"
+    const-string v1, "parseFrom(rawSignedTraceLocation)"
 
-    invoke-static {p1, v0}, Lkotlin/jvm/internal/Intrinsics;->checkNotNullExpressionValue(Ljava/lang/Object;Ljava/lang/String;)V
+    invoke-static {p1, v1}, Lkotlin/jvm/internal/Intrinsics;->checkNotNullExpressionValue(Ljava/lang/Object;Ljava/lang/String;)V
 
-    invoke-direct {v1, p1}, Lde/rki/coronawarnapp/presencetracing/checkins/qrcode/VerifiedTraceLocation;-><init>(Lde/rki/coronawarnapp/server/protocols/internal/pt/TraceLocationOuterClass$QRCodePayload;)V
+    invoke-direct {v0, p1}, Lde/rki/coronawarnapp/presencetracing/checkins/qrcode/VerifiedTraceLocation;-><init>(Lde/rki/coronawarnapp/server/protocols/internal/pt/TraceLocationOuterClass$QRCodePayload;)V
 
-    return-object v1
+    return-object v0
 .end method
 
 .method public newArray(I)[Ljava/lang/Object;

@@ -122,7 +122,7 @@
 .end method
 
 .method public static bind(Landroid/view/View;)Lde/rki/coronawarnapp/databinding/ValidationStartFragmentBinding;
-    .locals 32
+    .locals 30
     .annotation system Ldalvik/annotation/MethodParameters;
         accessFlags = {
             0x0
@@ -134,7 +134,7 @@
 
     move-object/from16 v0, p0
 
-    const v1, 0x7f0a0129
+    const v1, 0x7f0a0142
 
     invoke-static {v0, v1}, Landroidx/viewbinding/ViewBindings;->findChildViewById(Landroid/view/View;I)Landroid/view/View;
 
@@ -148,7 +148,7 @@
 
     if-eqz v5, :cond_1
 
-    const v1, 0x7f0a017d
+    const v1, 0x7f0a019f
 
     invoke-static {v0, v1}, Landroidx/viewbinding/ViewBindings;->findChildViewById(Landroid/view/View;I)Landroid/view/View;
 
@@ -160,7 +160,7 @@
 
     if-eqz v6, :cond_1
 
-    const v1, 0x7f0a0236
+    const v1, 0x7f0a0255
 
     invoke-static {v0, v1}, Landroidx/viewbinding/ViewBindings;->findChildViewById(Landroid/view/View;I)Landroid/view/View;
 
@@ -172,7 +172,7 @@
 
     if-eqz v7, :cond_1
 
-    const v1, 0x7f0a023b
+    const v1, 0x7f0a025a
 
     invoke-static {v0, v1}, Landroidx/viewbinding/ViewBindings;->findChildViewById(Landroid/view/View;I)Landroid/view/View;
 
@@ -184,7 +184,7 @@
 
     if-eqz v8, :cond_1
 
-    const v1, 0x7f0a025a
+    const v1, 0x7f0a027a
 
     invoke-static {v0, v1}, Landroidx/viewbinding/ViewBindings;->findChildViewById(Landroid/view/View;I)Landroid/view/View;
 
@@ -196,7 +196,7 @@
 
     if-eqz v9, :cond_1
 
-    const v1, 0x7f0a025b
+    const v1, 0x7f0a027b
 
     invoke-static {v0, v1}, Landroidx/viewbinding/ViewBindings;->findChildViewById(Landroid/view/View;I)Landroid/view/View;
 
@@ -208,7 +208,7 @@
 
     if-eqz v10, :cond_1
 
-    const v1, 0x7f0a025e
+    const v1, 0x7f0a027e
 
     invoke-static {v0, v1}, Landroidx/viewbinding/ViewBindings;->findChildViewById(Landroid/view/View;I)Landroid/view/View;
 
@@ -220,7 +220,7 @@
 
     if-eqz v11, :cond_1
 
-    const v1, 0x7f0a0261
+    const v1, 0x7f0a0281
 
     invoke-static {v0, v1}, Landroidx/viewbinding/ViewBindings;->findChildViewById(Landroid/view/View;I)Landroid/view/View;
 
@@ -232,7 +232,7 @@
 
     if-eqz v12, :cond_1
 
-    const v1, 0x7f0a030a
+    const v1, 0x7f0a032f
 
     invoke-static {v0, v1}, Landroidx/viewbinding/ViewBindings;->findChildViewById(Landroid/view/View;I)Landroid/view/View;
 
@@ -244,7 +244,7 @@
 
     if-eqz v13, :cond_1
 
-    const v1, 0x7f0a0543
+    const v1, 0x7f0a058b
 
     invoke-static {v0, v1}, Landroidx/viewbinding/ViewBindings;->findChildViewById(Landroid/view/View;I)Landroid/view/View;
 
@@ -256,7 +256,7 @@
 
     if-eqz v14, :cond_1
 
-    const v1, 0x7f0a0544
+    const v1, 0x7f0a058c
 
     invoke-static {v0, v1}, Landroidx/viewbinding/ViewBindings;->findChildViewById(Landroid/view/View;I)Landroid/view/View;
 
@@ -268,7 +268,7 @@
 
     if-eqz v15, :cond_1
 
-    const v1, 0x7f0a0549
+    const v1, 0x7f0a0591
 
     invoke-static {v0, v1}, Landroidx/viewbinding/ViewBindings;->findChildViewById(Landroid/view/View;I)Landroid/view/View;
 
@@ -280,7 +280,7 @@
 
     if-eqz v16, :cond_1
 
-    const v1, 0x7f0a054a
+    const v1, 0x7f0a0592
 
     invoke-static {v0, v1}, Landroidx/viewbinding/ViewBindings;->findChildViewById(Landroid/view/View;I)Landroid/view/View;
 
@@ -292,7 +292,7 @@
 
     if-eqz v17, :cond_1
 
-    const v1, 0x7f0a0689
+    const v1, 0x7f0a06da
 
     invoke-static {v0, v1}, Landroidx/viewbinding/ViewBindings;->findChildViewById(Landroid/view/View;I)Landroid/view/View;
 
@@ -304,7 +304,7 @@
 
     if-eqz v18, :cond_1
 
-    const v1, 0x7f0a075e
+    const v1, 0x7f0a07ab
 
     invoke-static {v0, v1}, Landroidx/viewbinding/ViewBindings;->findChildViewById(Landroid/view/View;I)Landroid/view/View;
 
@@ -316,7 +316,7 @@
 
     if-eqz v19, :cond_1
 
-    const v1, 0x7f0a07e4
+    const v1, 0x7f0a082c
 
     invoke-static {v0, v1}, Landroidx/viewbinding/ViewBindings;->findChildViewById(Landroid/view/View;I)Landroid/view/View;
 
@@ -328,7 +328,7 @@
 
     if-eqz v20, :cond_1
 
-    const v1, 0x7f0a0848
+    const v1, 0x7f0a0891
 
     invoke-static {v0, v1}, Landroidx/viewbinding/ViewBindings;->findChildViewById(Landroid/view/View;I)Landroid/view/View;
 
@@ -336,7 +336,7 @@
 
     if-eqz v3, :cond_1
 
-    const v1, 0x7f0a04b6
+    const v1, 0x7f0a04fc
 
     invoke-static {v3, v1}, Landroidx/viewbinding/ViewBindings;->findChildViewById(Landroid/view/View;I)Landroid/view/View;
 
@@ -348,7 +348,7 @@
 
     move-result-object v23
 
-    const v1, 0x7f0a04b7
+    const v1, 0x7f0a04fd
 
     invoke-static {v3, v1}, Landroidx/viewbinding/ViewBindings;->findChildViewById(Landroid/view/View;I)Landroid/view/View;
 
@@ -360,7 +360,7 @@
 
     move-result-object v24
 
-    const v1, 0x7f0a04b8
+    const v1, 0x7f0a04fe
 
     invoke-static {v3, v1}, Landroidx/viewbinding/ViewBindings;->findChildViewById(Landroid/view/View;I)Landroid/view/View;
 
@@ -372,19 +372,19 @@
 
     move-result-object v25
 
-    const v1, 0x7f0a04b9
+    const v1, 0x7f0a04ff
 
     invoke-static {v3, v1}, Landroidx/viewbinding/ViewBindings;->findChildViewById(Landroid/view/View;I)Landroid/view/View;
 
     move-result-object v4
 
-    if-eqz v4, :cond_0
+    move-object/from16 v26, v4
 
-    invoke-static {v4}, Lde/rki/coronawarnapp/databinding/IncludeBulletPointBinding;->bind(Landroid/view/View;)Lde/rki/coronawarnapp/databinding/IncludeBulletPointBinding;
+    check-cast v26, Landroid/widget/TextView;
 
-    move-result-object v26
+    if-eqz v26, :cond_0
 
-    const v1, 0x7f0a04ba
+    const v1, 0x7f0a0500
 
     invoke-static {v3, v1}, Landroidx/viewbinding/ViewBindings;->findChildViewById(Landroid/view/View;I)Landroid/view/View;
 
@@ -396,7 +396,7 @@
 
     if-eqz v27, :cond_0
 
-    const v1, 0x7f0a04bb
+    const v1, 0x7f0a0501
 
     invoke-static {v3, v1}, Landroidx/viewbinding/ViewBindings;->findChildViewById(Landroid/view/View;I)Landroid/view/View;
 
@@ -408,7 +408,7 @@
 
     if-eqz v28, :cond_0
 
-    const v1, 0x7f0a04bc
+    const v1, 0x7f0a0502
 
     invoke-static {v3, v1}, Landroidx/viewbinding/ViewBindings;->findChildViewById(Landroid/view/View;I)Landroid/view/View;
 
@@ -420,30 +420,6 @@
 
     if-eqz v29, :cond_0
 
-    const v1, 0x7f0a04bd
-
-    invoke-static {v3, v1}, Landroidx/viewbinding/ViewBindings;->findChildViewById(Landroid/view/View;I)Landroid/view/View;
-
-    move-result-object v4
-
-    move-object/from16 v30, v4
-
-    check-cast v30, Landroid/widget/TextView;
-
-    if-eqz v30, :cond_0
-
-    const v1, 0x7f0a04be
-
-    invoke-static {v3, v1}, Landroidx/viewbinding/ViewBindings;->findChildViewById(Landroid/view/View;I)Landroid/view/View;
-
-    move-result-object v4
-
-    move-object/from16 v31, v4
-
-    check-cast v31, Landroid/widget/TextView;
-
-    if-eqz v31, :cond_0
-
     new-instance v1, Lde/rki/coronawarnapp/databinding/ValidationStartFragmentNotesBinding;
 
     move-object/from16 v22, v3
@@ -452,7 +428,7 @@
 
     move-object/from16 v21, v1
 
-    invoke-direct/range {v21 .. v31}, Lde/rki/coronawarnapp/databinding/ValidationStartFragmentNotesBinding;-><init>(Landroidx/constraintlayout/widget/ConstraintLayout;Lde/rki/coronawarnapp/databinding/IncludeBulletPointBinding;Lde/rki/coronawarnapp/databinding/IncludeBulletPointBinding;Lde/rki/coronawarnapp/databinding/IncludeBulletPointBinding;Lde/rki/coronawarnapp/databinding/IncludeBulletPointBinding;Landroid/widget/TextView;Landroid/widget/TextView;Landroid/widget/TextView;Landroid/widget/TextView;Landroid/widget/TextView;)V
+    invoke-direct/range {v21 .. v29}, Lde/rki/coronawarnapp/databinding/ValidationStartFragmentNotesBinding;-><init>(Landroidx/constraintlayout/widget/ConstraintLayout;Lde/rki/coronawarnapp/databinding/IncludeBulletPointBinding;Lde/rki/coronawarnapp/databinding/IncludeBulletPointBinding;Lde/rki/coronawarnapp/databinding/IncludeBulletPointBinding;Landroid/widget/TextView;Landroid/widget/TextView;Landroid/widget/TextView;Landroid/widget/TextView;)V
 
     new-instance v2, Lde/rki/coronawarnapp/databinding/ValidationStartFragmentBinding;
 

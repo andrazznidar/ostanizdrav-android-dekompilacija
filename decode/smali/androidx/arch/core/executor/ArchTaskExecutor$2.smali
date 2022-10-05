@@ -35,9 +35,9 @@
 
     move-result-object v0
 
-    iget-object v0, v0, Landroidx/arch/core/executor/ArchTaskExecutor;->mDelegate:Landroidx/arch/core/executor/TaskExecutor;
+    iget-object v0, v0, Landroidx/arch/core/executor/ArchTaskExecutor;->mDelegate:Lorg/joda/time/Chronology;
 
-    invoke-virtual {v0, p1}, Landroidx/arch/core/executor/TaskExecutor;->executeOnDiskIO(Ljava/lang/Runnable;)V
+    invoke-virtual {v0, p1}, Lorg/joda/time/Chronology;->executeOnDiskIO(Ljava/lang/Runnable;)V
 
     return-void
 .end method

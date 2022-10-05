@@ -5,11 +5,7 @@
 
 # annotations
 .annotation runtime Lkotlin/Metadata;
-    bv = {
-        0x1,
-        0x0,
-        0x3
-    }
+    bv = {}
     d1 = {
         "\u0000\n\n\u0002\u0018\u0002\n\u0002\u0018\u0002\n\u0000\u0018\u00002\u00020\u0001\u00a8\u0006\u0002"
     }
@@ -21,8 +17,8 @@
     k = 0x1
     mv = {
         0x1,
-        0x5,
-        0x1
+        0x6,
+        0x0
     }
 .end annotation
 
@@ -43,7 +39,7 @@
 
     move-result-object p2
 
-    const v0, 0x7f0d00fa
+    const v0, 0x7f0d0105
 
     const/4 v1, 0x1
 
@@ -69,7 +65,7 @@
 
     invoke-virtual {p0, p2}, Landroid/widget/LinearLayout;->setBackgroundResource(I)V
 
-    const p2, 0x7f0a0821
+    const p2, 0x7f0a0869
 
     invoke-static {p0, p2}, Landroidx/viewbinding/ViewBindings;->findChildViewById(Landroid/view/View;I)Landroid/view/View;
 
@@ -79,7 +75,7 @@
 
     if-eqz v0, :cond_2
 
-    const p2, 0x7f0a0822
+    const p2, 0x7f0a086a
 
     invoke-static {p0, p2}, Landroidx/viewbinding/ViewBindings;->findChildViewById(Landroid/view/View;I)Landroid/view/View;
 
@@ -93,7 +89,7 @@
 
     move-result-object p2
 
-    const v2, 0x7f130143
+    const v2, 0x7f130134
 
     invoke-virtual {p1, v2}, Landroid/content/Context;->getString(I)Ljava/lang/String;
 
@@ -105,7 +101,7 @@
 
     if-eqz p2, :cond_0
 
-    const p2, 0x7f1301ed
+    const p2, 0x7f130215
 
     invoke-static {v1, v2, p2, p2}, LTextViewUrlExtensionsKt;->setTextWithUrl(Landroid/widget/TextView;III)V
 
@@ -114,7 +110,7 @@
 
     move-result-object p2
 
-    const v1, 0x7f130142
+    const v1, 0x7f130133
 
     invoke-virtual {p1, v1}, Landroid/content/Context;->getString(I)Ljava/lang/String;
 
@@ -126,7 +122,7 @@
 
     if-eqz p1, :cond_1
 
-    const p1, 0x7f1301ee
+    const p1, 0x7f130216
 
     invoke-static {v0, v1, p1, p1}, LTextViewUrlExtensionsKt;->setTextWithUrl(Landroid/widget/TextView;III)V
 

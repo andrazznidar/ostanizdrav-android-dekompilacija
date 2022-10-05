@@ -100,7 +100,7 @@
     :try_start_0
     new-instance v0, Lkotlinx/coroutines/CancellableContinuationImpl;
 
-    invoke-static {p2}, Lkotlinx/coroutines/flow/FlowKt;->intercepted(Lkotlin/coroutines/Continuation;)Lkotlin/coroutines/Continuation;
+    invoke-static {p2}, Lcom/google/android/gms/nearby/messages/internal/zzag;->intercepted(Lkotlin/coroutines/Continuation;)Lkotlin/coroutines/Continuation;
 
     move-result-object v2
 

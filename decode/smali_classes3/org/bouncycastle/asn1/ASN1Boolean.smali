@@ -5,11 +5,15 @@
 # static fields
 .field public static final FALSE:Lorg/bouncycastle/asn1/ASN1Boolean;
 
+.field private static final FALSE_VALUE:B = 0x0t
+
 .field public static final TRUE:Lorg/bouncycastle/asn1/ASN1Boolean;
+
+.field private static final TRUE_VALUE:B = -0x1t
 
 
 # instance fields
-.field public final value:B
+.field private final value:B
 
 
 # direct methods
@@ -35,7 +39,7 @@
     return-void
 .end method
 
-.method public constructor <init>(B)V
+.method private constructor <init>(B)V
     .locals 0
 
     invoke-direct {p0}, Lorg/bouncycastle/asn1/ASN1Primitive;-><init>()V
@@ -43,6 +47,194 @@
     iput-byte p1, p0, Lorg/bouncycastle/asn1/ASN1Boolean;->value:B
 
     return-void
+.end method
+
+.method public static fromOctetString([B)Lorg/bouncycastle/asn1/ASN1Boolean;
+    .locals 2
+
+    array-length v0, p0
+
+    const/4 v1, 0x1
+
+    if-ne v0, v1, :cond_2
+
+    const/4 v0, 0x0
+
+    aget-byte p0, p0, v0
+
+    const/4 v0, -0x1
+
+    if-eq p0, v0, :cond_1
+
+    if-eqz p0, :cond_0
+
+    new-instance v0, Lorg/bouncycastle/asn1/ASN1Boolean;
+
+    invoke-direct {v0, p0}, Lorg/bouncycastle/asn1/ASN1Boolean;-><init>(B)V
+
+    return-object v0
+
+    :cond_0
+    sget-object p0, Lorg/bouncycastle/asn1/ASN1Boolean;->FALSE:Lorg/bouncycastle/asn1/ASN1Boolean;
+
+    return-object p0
+
+    :cond_1
+    sget-object p0, Lorg/bouncycastle/asn1/ASN1Boolean;->TRUE:Lorg/bouncycastle/asn1/ASN1Boolean;
+
+    return-object p0
+
+    :cond_2
+    new-instance p0, Ljava/lang/IllegalArgumentException;
+
+    const-string v0, "BOOLEAN value should have 1 byte in it"
+
+    invoke-direct {p0, v0}, Ljava/lang/IllegalArgumentException;-><init>(Ljava/lang/String;)V
+
+    throw p0
+.end method
+
+.method public static getInstance(I)Lorg/bouncycastle/asn1/ASN1Boolean;
+    .locals 0
+
+    if-eqz p0, :cond_0
+
+    sget-object p0, Lorg/bouncycastle/asn1/ASN1Boolean;->TRUE:Lorg/bouncycastle/asn1/ASN1Boolean;
+
+    goto :goto_0
+
+    :cond_0
+    sget-object p0, Lorg/bouncycastle/asn1/ASN1Boolean;->FALSE:Lorg/bouncycastle/asn1/ASN1Boolean;
+
+    :goto_0
+    return-object p0
+.end method
+
+.method public static getInstance(Ljava/lang/Object;)Lorg/bouncycastle/asn1/ASN1Boolean;
+    .locals 2
+
+    if-eqz p0, :cond_2
+
+    instance-of v0, p0, Lorg/bouncycastle/asn1/ASN1Boolean;
+
+    if-eqz v0, :cond_0
+
+    goto :goto_0
+
+    :cond_0
+    instance-of v0, p0, [B
+
+    if-eqz v0, :cond_1
+
+    check-cast p0, [B
+
+    :try_start_0
+    invoke-static {p0}, Lorg/bouncycastle/asn1/ASN1Primitive;->fromByteArray([B)Lorg/bouncycastle/asn1/ASN1Primitive;
+
+    move-result-object p0
+
+    check-cast p0, Lorg/bouncycastle/asn1/ASN1Boolean;
+    :try_end_0
+    .catch Ljava/io/IOException; {:try_start_0 .. :try_end_0} :catch_0
+
+    return-object p0
+
+    :catch_0
+    move-exception p0
+
+    new-instance v0, Ljava/lang/IllegalArgumentException;
+
+    const-string v1, "failed to construct boolean from byte[]: "
+
+    invoke-static {v1}, Landroid/support/v4/media/RatingCompat$$ExternalSyntheticOutline0;->m(Ljava/lang/String;)Ljava/lang/StringBuilder;
+
+    move-result-object v1
+
+    invoke-static {p0, v1}, Lorg/bouncycastle/asn1/ASN1ApplicationSpecific$$ExternalSyntheticOutline0;->m(Ljava/io/IOException;Ljava/lang/StringBuilder;)Ljava/lang/String;
+
+    move-result-object p0
+
+    invoke-direct {v0, p0}, Ljava/lang/IllegalArgumentException;-><init>(Ljava/lang/String;)V
+
+    throw v0
+
+    :cond_1
+    new-instance v0, Ljava/lang/IllegalArgumentException;
+
+    const-string v1, "illegal object in getInstance: "
+
+    invoke-static {v1}, Landroid/support/v4/media/RatingCompat$$ExternalSyntheticOutline0;->m(Ljava/lang/String;)Ljava/lang/StringBuilder;
+
+    move-result-object v1
+
+    invoke-static {p0, v1}, Lcom/fasterxml/jackson/core/JsonGenerator$$ExternalSyntheticOutline0;->m(Ljava/lang/Object;Ljava/lang/StringBuilder;)Ljava/lang/String;
+
+    move-result-object p0
+
+    invoke-direct {v0, p0}, Ljava/lang/IllegalArgumentException;-><init>(Ljava/lang/String;)V
+
+    throw v0
+
+    :cond_2
+    :goto_0
+    check-cast p0, Lorg/bouncycastle/asn1/ASN1Boolean;
+
+    return-object p0
+.end method
+
+.method public static getInstance(Lorg/bouncycastle/asn1/ASN1TaggedObject;Z)Lorg/bouncycastle/asn1/ASN1Boolean;
+    .locals 0
+
+    invoke-virtual {p0}, Lorg/bouncycastle/asn1/ASN1TaggedObject;->getObject()Lorg/bouncycastle/asn1/ASN1Primitive;
+
+    move-result-object p0
+
+    if-nez p1, :cond_1
+
+    instance-of p1, p0, Lorg/bouncycastle/asn1/ASN1Boolean;
+
+    if-eqz p1, :cond_0
+
+    goto :goto_0
+
+    :cond_0
+    invoke-static {p0}, Lorg/bouncycastle/asn1/ASN1OctetString;->getInstance(Ljava/lang/Object;)Lorg/bouncycastle/asn1/ASN1OctetString;
+
+    move-result-object p0
+
+    invoke-virtual {p0}, Lorg/bouncycastle/asn1/ASN1OctetString;->getOctets()[B
+
+    move-result-object p0
+
+    invoke-static {p0}, Lorg/bouncycastle/asn1/ASN1Boolean;->fromOctetString([B)Lorg/bouncycastle/asn1/ASN1Boolean;
+
+    move-result-object p0
+
+    return-object p0
+
+    :cond_1
+    :goto_0
+    invoke-static {p0}, Lorg/bouncycastle/asn1/ASN1Boolean;->getInstance(Ljava/lang/Object;)Lorg/bouncycastle/asn1/ASN1Boolean;
+
+    move-result-object p0
+
+    return-object p0
+.end method
+
+.method public static getInstance(Z)Lorg/bouncycastle/asn1/ASN1Boolean;
+    .locals 0
+
+    if-eqz p0, :cond_0
+
+    sget-object p0, Lorg/bouncycastle/asn1/ASN1Boolean;->TRUE:Lorg/bouncycastle/asn1/ASN1Boolean;
+
+    goto :goto_0
+
+    :cond_0
+    sget-object p0, Lorg/bouncycastle/asn1/ASN1Boolean;->FALSE:Lorg/bouncycastle/asn1/ASN1Boolean;
+
+    :goto_0
+    return-object p0
 .end method
 
 
@@ -89,18 +281,7 @@
 
     const/4 v1, 0x1
 
-    if-eqz p2, :cond_0
-
-    iget-object p2, p1, Lorg/bouncycastle/asn1/ASN1OutputStream;->os:Ljava/io/OutputStream;
-
-    invoke-virtual {p2, v1}, Ljava/io/OutputStream;->write(I)V
-
-    :cond_0
-    invoke-virtual {p1, v1}, Lorg/bouncycastle/asn1/ASN1OutputStream;->writeLength(I)V
-
-    iget-object p1, p1, Lorg/bouncycastle/asn1/ASN1OutputStream;->os:Ljava/io/OutputStream;
-
-    invoke-virtual {p1, v0}, Ljava/io/OutputStream;->write(I)V
+    invoke-virtual {p1, p2, v1, v0}, Lorg/bouncycastle/asn1/ASN1OutputStream;->writeEncoded(ZIB)V
 
     return-void
 .end method

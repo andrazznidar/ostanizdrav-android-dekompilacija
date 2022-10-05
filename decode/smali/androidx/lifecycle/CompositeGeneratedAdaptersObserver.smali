@@ -24,46 +24,46 @@
 
 # virtual methods
 .method public onStateChanged(Landroidx/lifecycle/LifecycleOwner;Landroidx/lifecycle/Lifecycle$Event;)V
-    .locals 7
+    .locals 6
 
-    new-instance v0, Lcom/upokecenter/cbor/StringRefs;
+    new-instance v0, Lkotlinx/coroutines/ExecutorsKt;
 
-    const/4 v1, 0x1
+    invoke-direct {v0}, Lkotlinx/coroutines/ExecutorsKt;-><init>()V
 
-    invoke-direct {v0, v1}, Lcom/upokecenter/cbor/StringRefs;-><init>(I)V
+    iget-object v1, p0, Landroidx/lifecycle/CompositeGeneratedAdaptersObserver;->mGeneratedAdapters:[Landroidx/lifecycle/GeneratedAdapter;
 
-    iget-object v2, p0, Landroidx/lifecycle/CompositeGeneratedAdaptersObserver;->mGeneratedAdapters:[Landroidx/lifecycle/GeneratedAdapter;
+    array-length v2, v1
 
-    array-length v3, v2
+    const/4 v3, 0x0
 
-    const/4 v4, 0x0
-
-    move v5, v4
+    move v4, v3
 
     :goto_0
-    if-ge v5, v3, :cond_0
+    if-ge v4, v2, :cond_0
 
-    aget-object v6, v2, v5
+    aget-object v5, v1, v4
 
-    invoke-interface {v6, p1, p2, v4, v0}, Landroidx/lifecycle/GeneratedAdapter;->callMethods(Landroidx/lifecycle/LifecycleOwner;Landroidx/lifecycle/Lifecycle$Event;ZLcom/upokecenter/cbor/StringRefs;)V
+    invoke-interface {v5, p1, p2, v3, v0}, Landroidx/lifecycle/GeneratedAdapter;->callMethods(Landroidx/lifecycle/LifecycleOwner;Landroidx/lifecycle/Lifecycle$Event;ZLkotlinx/coroutines/ExecutorsKt;)V
 
-    add-int/lit8 v5, v5, 0x1
+    add-int/lit8 v4, v4, 0x1
 
     goto :goto_0
 
     :cond_0
-    iget-object v2, p0, Landroidx/lifecycle/CompositeGeneratedAdaptersObserver;->mGeneratedAdapters:[Landroidx/lifecycle/GeneratedAdapter;
+    iget-object v1, p0, Landroidx/lifecycle/CompositeGeneratedAdaptersObserver;->mGeneratedAdapters:[Landroidx/lifecycle/GeneratedAdapter;
 
-    array-length v3, v2
+    array-length v2, v1
 
     :goto_1
-    if-ge v4, v3, :cond_1
+    if-ge v3, v2, :cond_1
 
-    aget-object v5, v2, v4
+    aget-object v4, v1, v3
 
-    invoke-interface {v5, p1, p2, v1, v0}, Landroidx/lifecycle/GeneratedAdapter;->callMethods(Landroidx/lifecycle/LifecycleOwner;Landroidx/lifecycle/Lifecycle$Event;ZLcom/upokecenter/cbor/StringRefs;)V
+    const/4 v5, 0x1
 
-    add-int/lit8 v4, v4, 0x1
+    invoke-interface {v4, p1, p2, v5, v0}, Landroidx/lifecycle/GeneratedAdapter;->callMethods(Landroidx/lifecycle/LifecycleOwner;Landroidx/lifecycle/Lifecycle$Event;ZLkotlinx/coroutines/ExecutorsKt;)V
+
+    add-int/lit8 v3, v3, 0x1
 
     goto :goto_1
 

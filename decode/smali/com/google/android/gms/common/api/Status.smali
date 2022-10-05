@@ -407,7 +407,7 @@
     :cond_0
     iget v1, p0, Lcom/google/android/gms/common/api/Status;->zzc:I
 
-    invoke-static {v1}, Lkotlin/sequences/SequencesKt__SequencesJVMKt;->getStatusCodeString$com$google$android$gms$common$api$CommonStatusCodes(I)Ljava/lang/String;
+    invoke-static {v1}, Lorg/bouncycastle/util/Longs;->getStatusCodeString$com$google$android$gms$common$api$CommonStatusCodes(I)Ljava/lang/String;
 
     move-result-object v1
 

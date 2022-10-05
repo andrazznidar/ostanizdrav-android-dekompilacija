@@ -3,11 +3,12 @@
 .source "CBOREInteger.java"
 
 # interfaces
+.implements Lcom/google/android/play/core/internal/zzct;
 .implements Lcom/upokecenter/cbor/ICBORNumber;
 
 
 # direct methods
-.method public constructor <init>(I)V
+.method public synthetic constructor <init>()V
     .locals 0
 
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
@@ -156,4 +157,14 @@
     move-result p1
 
     return p1
+.end method
+
+.method public bridge synthetic zza()Ljava/lang/Object;
+    .locals 1
+
+    new-instance v0, Lcom/google/android/play/core/common/zza;
+
+    invoke-direct {v0}, Lcom/google/android/play/core/common/zza;-><init>()V
+
+    return-object v0
 .end method

@@ -11,7 +11,7 @@
 .end annotation
 
 .annotation system Ldalvik/annotation/SourceDebugExtension;
-    value = "SMAP\nAnalytics.kt\nKotlin\n*S Kotlin\n*F\n+ 1 Analytics.kt\nde/rki/coronawarnapp/datadonation/analytics/Analytics\n+ 2 _Collections.kt\nkotlin/collections/CollectionsKt___CollectionsKt\n+ 3 fake.kt\nkotlin/jvm/internal/FakeKt\n+ 4 Mutex.kt\nkotlinx/coroutines/sync/MutexKt\n*L\n1#1,249:1\n1601#2,9:250\n1849#2:259\n1850#2:261\n1610#2:262\n1849#2,2:263\n1849#2,2:265\n1849#2,2:286\n1#3:260\n109#4,11:267\n109#4,8:278\n118#4,2:288\n*S KotlinDebug\n*F\n+ 1 Analytics.kt\nde/rki/coronawarnapp/datadonation/analytics/Analytics\n*L\n84#1:250,9\n84#1:259\n84#1:261\n84#1:262\n95#1:263,2\n129#1:265,2\n213#1:286,2\n84#1:260\n180#1:267,11\n212#1:278,8\n212#1:288,2\n*E\n"
+    value = "SMAP\nAnalytics.kt\nKotlin\n*S Kotlin\n*F\n+ 1 Analytics.kt\nde/rki/coronawarnapp/datadonation/analytics/Analytics\n+ 2 _Collections.kt\nkotlin/collections/CollectionsKt___CollectionsKt\n+ 3 fake.kt\nkotlin/jvm/internal/FakeKt\n+ 4 Mutex.kt\nkotlinx/coroutines/sync/MutexKt\n*L\n1#1,252:1\n1601#2,9:253\n1849#2:262\n1850#2:264\n1610#2:265\n1849#2,2:266\n1849#2,2:268\n1849#2,2:289\n1#3:263\n109#4,11:270\n109#4,8:281\n118#4,2:291\n*S KotlinDebug\n*F\n+ 1 Analytics.kt\nde/rki/coronawarnapp/datadonation/analytics/Analytics\n*L\n87#1:253,9\n87#1:262\n87#1:264\n87#1:265\n98#1:266,2\n132#1:268,2\n216#1:289,2\n87#1:263\n183#1:270,11\n215#1:281,8\n215#1:291,2\n*E\n"
 .end annotation
 
 
@@ -79,7 +79,7 @@
 
     invoke-static {p4, v0}, Lkotlin/jvm/internal/Intrinsics;->checkNotNullParameter(Ljava/lang/Object;Ljava/lang/String;)V
 
-    const-string v0, "settings"
+    const-string/jumbo v0, "settings"
 
     invoke-static {p5, v0}, Lkotlin/jvm/internal/Intrinsics;->checkNotNullParameter(Ljava/lang/Object;Ljava/lang/String;)V
 
@@ -167,15 +167,15 @@
 
     const/4 v3, 0x2
 
-    const/4 v4, 0x1
+    const-string v4, "Analytics"
 
-    const-string v5, "Analytics"
+    const/4 v5, 0x1
 
     const/4 v6, 0x0
 
     if-eqz v2, :cond_3
 
-    if-eq v2, v4, :cond_2
+    if-eq v2, v5, :cond_2
 
     if-ne v2, v3, :cond_1
 
@@ -229,7 +229,7 @@
 
     sget-object v2, Ltimber/log/Timber;->Forest:Ltimber/log/Timber$Forest;
 
-    invoke-virtual {v2, v5}, Ltimber/log/Timber$Forest;->tag(Ljava/lang/String;)Ltimber/log/Timber$Tree;
+    invoke-virtual {v2, v4}, Ltimber/log/Timber$Forest;->tag(Ljava/lang/String;)Ltimber/log/Timber$Tree;
 
     const-string v7, "Starting safety net device attestation"
 
@@ -245,7 +245,7 @@
 
     iput-object p2, v0, Lde/rki/coronawarnapp/datadonation/analytics/Analytics$trySubmission$1;->L$2:Ljava/lang/Object;
 
-    iput v4, v0, Lde/rki/coronawarnapp/datadonation/analytics/Analytics$trySubmission$1;->label:I
+    iput v5, v0, Lde/rki/coronawarnapp/datadonation/analytics/Analytics$trySubmission$1;->label:I
 
     invoke-interface {v2, p3, v0}, Lde/rki/coronawarnapp/datadonation/safetynet/DeviceAttestation;->attest(Lde/rki/coronawarnapp/datadonation/safetynet/DeviceAttestation$Request;Lkotlin/coroutines/Continuation;)Ljava/lang/Object;
 
@@ -267,7 +267,7 @@
 
     sget-object p1, Ltimber/log/Timber;->Forest:Ltimber/log/Timber$Forest;
 
-    invoke-virtual {p1, v5}, Ltimber/log/Timber$Forest;->tag(Ljava/lang/String;)Ltimber/log/Timber$Tree;
+    invoke-virtual {p1, v4}, Ltimber/log/Timber$Forest;->tag(Ljava/lang/String;)Ltimber/log/Timber$Tree;
 
     const-string v2, "Safety net attestation passed"
 
@@ -297,7 +297,7 @@
 
     check-cast p2, Lde/rki/coronawarnapp/server/protocols/internal/ppdd/PpaDataRequestAndroid$PPADataRequestAndroid;
 
-    invoke-virtual {p1, v5}, Ltimber/log/Timber$Forest;->tag(Ljava/lang/String;)Ltimber/log/Timber$Tree;
+    invoke-virtual {p1, v4}, Ltimber/log/Timber$Forest;->tag(Ljava/lang/String;)Ltimber/log/Timber$Tree;
 
     const-string p3, "Starting analytics upload"
 
@@ -333,7 +333,7 @@
     :goto_2
     sget-object p0, Ltimber/log/Timber;->Forest:Ltimber/log/Timber$Forest;
 
-    invoke-virtual {p0, v5}, Ltimber/log/Timber$Forest;->tag(Ljava/lang/String;)Ltimber/log/Timber$Tree;
+    invoke-virtual {p0, v4}, Ltimber/log/Timber$Forest;->tag(Ljava/lang/String;)Ltimber/log/Timber$Tree;
 
     const-string p1, "Analytics upload finished"
 
@@ -343,7 +343,7 @@
 
     new-instance p0, Lde/rki/coronawarnapp/datadonation/analytics/Analytics$Result;
 
-    invoke-direct {p0, v4, v6, v3}, Lde/rki/coronawarnapp/datadonation/analytics/Analytics$Result;-><init>(ZZI)V
+    invoke-direct {p0, v5, v6, v3}, Lde/rki/coronawarnapp/datadonation/analytics/Analytics$Result;-><init>(ZZI)V
     :try_end_2
     .catch Ljava/lang/Exception; {:try_start_2 .. :try_end_2} :catch_0
 
@@ -354,29 +354,45 @@
 
     const-string p1, "An error occurred during analytics submission"
 
-    invoke-static {p0, v5, p1}, Lkotlinx/coroutines/channels/ChannelsKt;->reportProblem(Ljava/lang/Throwable;Ljava/lang/String;Ljava/lang/String;)V
+    invoke-static {p0, v4, p1}, Lde/rki/coronawarnapp/bugreporting/BugReporterKt;->reportProblem(Ljava/lang/Throwable;Ljava/lang/String;Ljava/lang/String;)V
 
     instance-of p1, p0, Lde/rki/coronawarnapp/datadonation/safetynet/SafetyNetException;
 
     if-eqz p1, :cond_6
 
+    new-array p1, v3, [Lde/rki/coronawarnapp/datadonation/safetynet/SafetyNetException$Type;
+
+    sget-object p2, Lde/rki/coronawarnapp/datadonation/safetynet/SafetyNetException$Type;->ATTESTATION_REQUEST_FAILED:Lde/rki/coronawarnapp/datadonation/safetynet/SafetyNetException$Type;
+
+    aput-object p2, p1, v6
+
+    sget-object p2, Lde/rki/coronawarnapp/datadonation/safetynet/SafetyNetException$Type;->INTERNAL_ERROR:Lde/rki/coronawarnapp/datadonation/safetynet/SafetyNetException$Type;
+
+    aput-object p2, p1, v5
+
+    invoke-static {p1}, Lkotlin/collections/CollectionsKt__CollectionsKt;->listOf([Ljava/lang/Object;)Ljava/util/List;
+
+    move-result-object p1
+
     check-cast p0, Lde/rki/coronawarnapp/datadonation/safetynet/SafetyNetException;
 
     iget-object p0, p0, Lde/rki/coronawarnapp/datadonation/safetynet/SafetyNetException;->type:Lde/rki/coronawarnapp/datadonation/safetynet/SafetyNetException$Type;
 
-    sget-object p1, Lde/rki/coronawarnapp/datadonation/safetynet/SafetyNetException$Type;->ATTESTATION_REQUEST_FAILED:Lde/rki/coronawarnapp/datadonation/safetynet/SafetyNetException$Type;
+    invoke-interface {p1, p0}, Ljava/util/List;->contains(Ljava/lang/Object;)Z
 
-    if-ne p0, p1, :cond_6
+    move-result p0
+
+    if-eqz p0, :cond_6
 
     goto :goto_3
 
     :cond_6
-    move v4, v6
+    move v5, v6
 
     :goto_3
     new-instance p0, Lde/rki/coronawarnapp/datadonation/analytics/Analytics$Result;
 
-    invoke-direct {p0, v6, v4}, Lde/rki/coronawarnapp/datadonation/analytics/Analytics$Result;-><init>(ZZ)V
+    invoke-direct {p0, v6, v5}, Lde/rki/coronawarnapp/datadonation/analytics/Analytics$Result;-><init>(ZZ)V
 
     :goto_4
     move-object v1, p0
@@ -481,7 +497,7 @@
     :try_end_0
     .catch Ljava/lang/Exception; {:try_start_0 .. :try_end_0} :catch_0
 
-    goto/16 :goto_6
+    goto/16 :goto_7
 
     :catch_0
     move-exception v0
@@ -494,7 +510,7 @@
 
     move/from16 v9, v16
 
-    goto/16 :goto_8
+    goto/16 :goto_9
 
     :cond_1
     new-instance v0, Ljava/lang/IllegalStateException;
@@ -745,16 +761,19 @@
 
     move-result-object v8
 
-    invoke-static {v0, v13, v8}, Lkotlinx/coroutines/channels/ChannelsKt;->reportProblem(Ljava/lang/Throwable;Ljava/lang/String;Ljava/lang/String;)V
+    invoke-static {v0, v13, v8}, Lde/rki/coronawarnapp/bugreporting/BugReporterKt;->reportProblem(Ljava/lang/Throwable;Ljava/lang/String;Ljava/lang/String;)V
 
     const/4 v0, 0x0
 
     :goto_5
-    if-eqz v0, :cond_5
+    if-nez v0, :cond_5
 
-    invoke-interface {v14, v0}, Ljava/util/Collection;->add(Ljava/lang/Object;)Z
+    goto :goto_6
 
     :cond_5
+    invoke-interface {v14, v0}, Ljava/util/Collection;->add(Ljava/lang/Object;)Z
+
+    :goto_6
     const/4 v9, 0x0
 
     const/4 v10, 0x2
@@ -785,7 +804,7 @@
     move-object v2, v4
 
     :cond_7
-    :goto_6
+    :goto_7
     invoke-interface {v12}, Ljava/util/Iterator;->hasNext()Z
 
     move-result v0
@@ -860,24 +879,24 @@
     :catch_3
     move-exception v0
 
-    goto :goto_8
+    goto :goto_9
 
     :catch_4
     move-exception v0
 
-    :goto_7
+    :goto_8
     const/4 v9, 0x2
 
-    goto :goto_8
+    goto :goto_9
 
     :catch_5
     move-exception v0
 
     const/4 v8, 0x0
 
-    goto :goto_7
+    goto :goto_8
 
-    :goto_8
+    :goto_9
     new-instance v15, Ljava/lang/StringBuilder;
 
     invoke-direct {v15}, Ljava/lang/StringBuilder;-><init>()V
@@ -898,9 +917,9 @@
 
     move-result-object v4
 
-    invoke-static {v0, v7, v4}, Lkotlinx/coroutines/channels/ChannelsKt;->reportProblem(Ljava/lang/Throwable;Ljava/lang/String;Ljava/lang/String;)V
+    invoke-static {v0, v7, v4}, Lde/rki/coronawarnapp/bugreporting/BugReporterKt;->reportProblem(Ljava/lang/Throwable;Ljava/lang/String;Ljava/lang/String;)V
 
-    goto :goto_6
+    goto :goto_7
 
     :cond_8
     return-object v13
@@ -1772,7 +1791,7 @@
 
     move-result-object v2
 
-    invoke-static {v0, v7, v2}, Lkotlinx/coroutines/channels/ChannelsKt;->reportProblem(Ljava/lang/Throwable;Ljava/lang/String;Ljava/lang/String;)V
+    invoke-static {v0, v7, v2}, Lde/rki/coronawarnapp/bugreporting/BugReporterKt;->reportProblem(Ljava/lang/Throwable;Ljava/lang/String;Ljava/lang/String;)V
 
     goto/16 :goto_1
 

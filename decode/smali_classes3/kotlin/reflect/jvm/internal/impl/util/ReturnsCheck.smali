@@ -17,9 +17,11 @@
 
 
 # instance fields
-.field public final description:Ljava/lang/String;
+.field private final description:Ljava/lang/String;
 
-.field public final type:Lkotlin/jvm/functions/Function1;
+.field private final name:Ljava/lang/String;
+
+.field private final type:Lkotlin/jvm/functions/Function1;
     .annotation system Ldalvik/annotation/Signature;
         value = {
             "Lkotlin/jvm/functions/Function1<",
@@ -32,10 +34,24 @@
 
 
 # direct methods
-.method public constructor <init>(Ljava/lang/String;Lkotlin/jvm/functions/Function1;Lkotlin/jvm/internal/DefaultConstructorMarker;)V
+.method private constructor <init>(Ljava/lang/String;Lkotlin/jvm/functions/Function1;)V
     .locals 0
+    .annotation system Ldalvik/annotation/Signature;
+        value = {
+            "(",
+            "Ljava/lang/String;",
+            "Lkotlin/jvm/functions/Function1<",
+            "-",
+            "Lkotlin/reflect/jvm/internal/impl/builtins/KotlinBuiltIns;",
+            "+",
+            "Lkotlin/reflect/jvm/internal/impl/types/KotlinType;",
+            ">;)V"
+        }
+    .end annotation
 
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
+
+    iput-object p1, p0, Lkotlin/reflect/jvm/internal/impl/util/ReturnsCheck;->name:Ljava/lang/String;
 
     iput-object p2, p0, Lkotlin/reflect/jvm/internal/impl/util/ReturnsCheck;->type:Lkotlin/jvm/functions/Function1;
 
@@ -50,10 +66,22 @@
     return-void
 .end method
 
+.method public synthetic constructor <init>(Ljava/lang/String;Lkotlin/jvm/functions/Function1;Lkotlin/jvm/internal/DefaultConstructorMarker;)V
+    .locals 0
+
+    invoke-direct {p0, p1, p2}, Lkotlin/reflect/jvm/internal/impl/util/ReturnsCheck;-><init>(Ljava/lang/String;Lkotlin/jvm/functions/Function1;)V
+
+    return-void
+.end method
+
 
 # virtual methods
 .method public check(Lkotlin/reflect/jvm/internal/impl/descriptors/FunctionDescriptor;)Z
     .locals 2
+
+    const-string v0, "functionDescriptor"
+
+    invoke-static {p1, v0}, Lkotlin/jvm/internal/Intrinsics;->checkNotNullParameter(Ljava/lang/Object;Ljava/lang/String;)V
 
     invoke-interface {p1}, Lkotlin/reflect/jvm/internal/impl/descriptors/CallableDescriptor;->getReturnType()Lkotlin/reflect/jvm/internal/impl/types/KotlinType;
 

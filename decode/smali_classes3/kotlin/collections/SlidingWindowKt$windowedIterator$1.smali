@@ -49,6 +49,13 @@
 
 # instance fields
 .field public final synthetic $iterator:Ljava/util/Iterator;
+    .annotation system Ldalvik/annotation/Signature;
+        value = {
+            "Ljava/util/Iterator<",
+            "TT;>;"
+        }
+    .end annotation
+.end field
 
 .field public final synthetic $partialWindows:Z
 
@@ -72,6 +79,17 @@
 # direct methods
 .method public constructor <init>(IILjava/util/Iterator;ZZLkotlin/coroutines/Continuation;)V
     .locals 0
+    .annotation system Ldalvik/annotation/Signature;
+        value = {
+            "(II",
+            "Ljava/util/Iterator<",
+            "+TT;>;ZZ",
+            "Lkotlin/coroutines/Continuation<",
+            "-",
+            "Lkotlin/collections/SlidingWindowKt$windowedIterator$1;",
+            ">;)V"
+        }
+    .end annotation
 
     iput p1, p0, Lkotlin/collections/SlidingWindowKt$windowedIterator$1;->$size:I
 
@@ -106,35 +124,33 @@
         }
     .end annotation
 
-    const-string v0, "completion"
+    new-instance v7, Lkotlin/collections/SlidingWindowKt$windowedIterator$1;
 
-    invoke-static {p2, v0}, Lkotlin/jvm/internal/Intrinsics;->checkNotNullParameter(Ljava/lang/Object;Ljava/lang/String;)V
+    iget v1, p0, Lkotlin/collections/SlidingWindowKt$windowedIterator$1;->$size:I
 
-    new-instance v0, Lkotlin/collections/SlidingWindowKt$windowedIterator$1;
+    iget v2, p0, Lkotlin/collections/SlidingWindowKt$windowedIterator$1;->$step:I
 
-    iget v2, p0, Lkotlin/collections/SlidingWindowKt$windowedIterator$1;->$size:I
+    iget-object v3, p0, Lkotlin/collections/SlidingWindowKt$windowedIterator$1;->$iterator:Ljava/util/Iterator;
 
-    iget v3, p0, Lkotlin/collections/SlidingWindowKt$windowedIterator$1;->$step:I
+    iget-boolean v4, p0, Lkotlin/collections/SlidingWindowKt$windowedIterator$1;->$reuseBuffer:Z
 
-    iget-object v4, p0, Lkotlin/collections/SlidingWindowKt$windowedIterator$1;->$iterator:Ljava/util/Iterator;
+    iget-boolean v5, p0, Lkotlin/collections/SlidingWindowKt$windowedIterator$1;->$partialWindows:Z
 
-    iget-boolean v5, p0, Lkotlin/collections/SlidingWindowKt$windowedIterator$1;->$reuseBuffer:Z
+    move-object v0, v7
 
-    iget-boolean v6, p0, Lkotlin/collections/SlidingWindowKt$windowedIterator$1;->$partialWindows:Z
+    move-object v6, p2
 
-    move-object v1, v0
+    invoke-direct/range {v0 .. v6}, Lkotlin/collections/SlidingWindowKt$windowedIterator$1;-><init>(IILjava/util/Iterator;ZZLkotlin/coroutines/Continuation;)V
 
-    move-object v7, p2
+    iput-object p1, v7, Lkotlin/collections/SlidingWindowKt$windowedIterator$1;->L$0:Ljava/lang/Object;
 
-    invoke-direct/range {v1 .. v7}, Lkotlin/collections/SlidingWindowKt$windowedIterator$1;-><init>(IILjava/util/Iterator;ZZLkotlin/coroutines/Continuation;)V
-
-    iput-object p1, v0, Lkotlin/collections/SlidingWindowKt$windowedIterator$1;->L$0:Ljava/lang/Object;
-
-    return-object v0
+    return-object v7
 .end method
 
-.method public final invoke(Ljava/lang/Object;Ljava/lang/Object;)Ljava/lang/Object;
+.method public invoke(Ljava/lang/Object;Ljava/lang/Object;)Ljava/lang/Object;
     .locals 0
+
+    check-cast p1, Lkotlin/sequences/SequenceScope;
 
     check-cast p2, Lkotlin/coroutines/Continuation;
 
@@ -506,7 +522,7 @@
 
     move-result-object v4
 
-    const-string v12, "java.util.Arrays.copyOf(this, newSize)"
+    const-string v12, "copyOf(this, newSize)"
 
     invoke-static {v4, v12}, Lkotlin/jvm/internal/Intrinsics;->checkNotNullExpressionValue(Ljava/lang/Object;Ljava/lang/String;)V
 

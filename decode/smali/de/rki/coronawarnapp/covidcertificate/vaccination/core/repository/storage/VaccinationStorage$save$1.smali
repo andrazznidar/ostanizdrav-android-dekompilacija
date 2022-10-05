@@ -17,7 +17,7 @@
     c = "de.rki.coronawarnapp.covidcertificate.vaccination.core.repository.storage.VaccinationStorage"
     f = "VaccinationStorage.kt"
     l = {
-        0x4e
+        0x62
     }
     m = "save"
 .end annotation

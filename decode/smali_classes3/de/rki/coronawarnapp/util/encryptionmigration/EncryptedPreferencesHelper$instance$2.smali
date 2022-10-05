@@ -50,7 +50,7 @@
 
 # virtual methods
 .method public invoke()Ljava/lang/Object;
-    .locals 9
+    .locals 8
 
     iget-object v0, p0, Lde/rki/coronawarnapp/util/encryptionmigration/EncryptedPreferencesHelper$instance$2;->this$0:Lde/rki/coronawarnapp/util/encryptionmigration/EncryptedPreferencesHelper;
 
@@ -70,26 +70,22 @@
 
     invoke-static {v0}, Ljava/util/Objects;->requireNonNull(Ljava/lang/Object;)Ljava/lang/Object;
 
-    const-string v2, "fileName"
-
-    invoke-static {v1, v2}, Lkotlin/jvm/internal/Intrinsics;->checkNotNullParameter(Ljava/lang/Object;Ljava/lang/String;)V
-
     :try_start_0
-    sget-object v3, Lde/rki/coronawarnapp/util/RetryMechanism;->INSTANCE:Lde/rki/coronawarnapp/util/RetryMechanism;
+    sget-object v2, Lde/rki/coronawarnapp/util/RetryMechanism;->INSTANCE:Lde/rki/coronawarnapp/util/RetryMechanism;
+
+    const/4 v3, 0x0
 
     const/4 v4, 0x0
 
     const/4 v5, 0x0
 
-    const/4 v6, 0x0
+    new-instance v6, Lde/rki/coronawarnapp/util/encryptionmigration/EncryptedPreferencesFactory$create$1;
 
-    new-instance v7, Lde/rki/coronawarnapp/util/encryptionmigration/EncryptedPreferencesFactory$create$1;
+    invoke-direct {v6, v0, v1}, Lde/rki/coronawarnapp/util/encryptionmigration/EncryptedPreferencesFactory$create$1;-><init>(Lde/rki/coronawarnapp/util/encryptionmigration/EncryptedPreferencesFactory;Ljava/lang/String;)V
 
-    invoke-direct {v7, v0, v1}, Lde/rki/coronawarnapp/util/encryptionmigration/EncryptedPreferencesFactory$create$1;-><init>(Lde/rki/coronawarnapp/util/encryptionmigration/EncryptedPreferencesFactory;Ljava/lang/String;)V
+    const/4 v7, 0x7
 
-    const/4 v8, 0x7
-
-    invoke-static/range {v3 .. v8}, Lde/rki/coronawarnapp/util/RetryMechanism;->retryWithBackOff$default(Lde/rki/coronawarnapp/util/RetryMechanism;Lkotlin/jvm/functions/Function1;Lkotlin/jvm/functions/Function1;Lkotlin/jvm/functions/Function1;Lkotlin/jvm/functions/Function0;I)Ljava/lang/Object;
+    invoke-static/range {v2 .. v7}, Lde/rki/coronawarnapp/util/RetryMechanism;->retryWithBackOff$default(Lde/rki/coronawarnapp/util/RetryMechanism;Lkotlin/jvm/functions/Function1;Lkotlin/jvm/functions/Function1;Lkotlin/jvm/functions/Function1;Lkotlin/jvm/functions/Function0;I)Ljava/lang/Object;
 
     move-result-object v0
 

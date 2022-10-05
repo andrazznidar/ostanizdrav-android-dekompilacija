@@ -81,7 +81,7 @@
     return-void
 .end method
 
-.method public synthetic constructor <init>(Lcom/google/android/gms/internal/nearby/zzch;)V
+.method public synthetic constructor <init>(Landroidx/databinding/adapters/Converters;)V
     .locals 0
 
     invoke-direct {p0}, Lcom/google/android/gms/common/internal/safeparcel/AbstractSafeParcelable;-><init>()V

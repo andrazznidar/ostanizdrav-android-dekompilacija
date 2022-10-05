@@ -61,9 +61,7 @@
 .field public static final sRectPool:Landroidx/core/util/Pools$SimplePool;
     .annotation system Ldalvik/annotation/Signature;
         value = {
-            "Landroidx/core/util/Pools$SimplePool<",
-            "Landroid/graphics/Rect;",
-            ">;"
+            "Landroidx/core/util/Pools$SimplePool;"
         }
     .end annotation
 .end field
@@ -76,10 +74,12 @@
 
 .field public mBehaviorTouchView:Landroid/view/View;
 
-.field public final mChildDag:Landroidx/constraintlayout/core/Cache;
+.field public final mChildDag:Landroidx/coordinatorlayout/widget/DirectedAcyclicGraph;
     .annotation system Ldalvik/annotation/Signature;
         value = {
-            "Landroidx/constraintlayout/core/Cache;"
+            "Landroidx/coordinatorlayout/widget/DirectedAcyclicGraph<",
+            "Landroid/view/View;",
+            ">;"
         }
     .end annotation
 .end field
@@ -205,7 +205,7 @@
 .end method
 
 .method public constructor <init>(Landroid/content/Context;Landroid/util/AttributeSet;)V
-    .locals 10
+    .locals 9
 
     sget v5, Landroidx/coordinatorlayout/R$attr;->coordinatorLayoutStyle:I
 
@@ -217,13 +217,11 @@
 
     iput-object v0, p0, Landroidx/coordinatorlayout/widget/CoordinatorLayout;->mDependencySortedChildren:Ljava/util/List;
 
-    new-instance v0, Landroidx/constraintlayout/core/Cache;
+    new-instance v0, Landroidx/coordinatorlayout/widget/DirectedAcyclicGraph;
 
-    const/4 v7, 0x1
+    invoke-direct {v0}, Landroidx/coordinatorlayout/widget/DirectedAcyclicGraph;-><init>()V
 
-    invoke-direct {v0, v7}, Landroidx/constraintlayout/core/Cache;-><init>(I)V
-
-    iput-object v0, p0, Landroidx/coordinatorlayout/widget/CoordinatorLayout;->mChildDag:Landroidx/constraintlayout/core/Cache;
+    iput-object v0, p0, Landroidx/coordinatorlayout/widget/CoordinatorLayout;->mChildDag:Landroidx/coordinatorlayout/widget/DirectedAcyclicGraph;
 
     new-instance v0, Ljava/util/ArrayList;
 
@@ -253,7 +251,7 @@
 
     iput-object v0, p0, Landroidx/coordinatorlayout/widget/CoordinatorLayout;->mNestedScrollingParentHelper:Landroidx/core/view/NestedScrollingParentHelper;
 
-    const/4 v8, 0x0
+    const/4 v7, 0x0
 
     if-nez v5, :cond_0
 
@@ -261,7 +259,7 @@
 
     sget v1, Landroidx/coordinatorlayout/R$style;->Widget_Support_CoordinatorLayout:I
 
-    invoke-virtual {p1, p2, v0, v8, v1}, Landroid/content/Context;->obtainStyledAttributes(Landroid/util/AttributeSet;[III)Landroid/content/res/TypedArray;
+    invoke-virtual {p1, p2, v0, v7, v1}, Landroid/content/Context;->obtainStyledAttributes(Landroid/util/AttributeSet;[III)Landroid/content/res/TypedArray;
 
     move-result-object v0
 
@@ -270,12 +268,12 @@
     :cond_0
     sget-object v0, Landroidx/coordinatorlayout/R$styleable;->CoordinatorLayout:[I
 
-    invoke-virtual {p1, p2, v0, v5, v8}, Landroid/content/Context;->obtainStyledAttributes(Landroid/util/AttributeSet;[III)Landroid/content/res/TypedArray;
+    invoke-virtual {p1, p2, v0, v5, v7}, Landroid/content/Context;->obtainStyledAttributes(Landroid/util/AttributeSet;[III)Landroid/content/res/TypedArray;
 
     move-result-object v0
 
     :goto_0
-    move-object v9, v0
+    move-object v8, v0
 
     sget v0, Landroid/os/Build$VERSION;->SDK_INT:I
 
@@ -297,7 +295,7 @@
 
     move-object v3, p2
 
-    move-object v4, v9
+    move-object v4, v8
 
     invoke-virtual/range {v0 .. v6}, Landroid/view/ViewGroup;->saveAttributeDataForStyleable(Landroid/content/Context;[ILandroid/util/AttributeSet;Landroid/content/res/TypedArray;II)V
 
@@ -314,7 +312,7 @@
 
     move-object v3, p2
 
-    move-object v4, v9
+    move-object v4, v8
 
     invoke-virtual/range {v0 .. v6}, Landroid/view/ViewGroup;->saveAttributeDataForStyleable(Landroid/content/Context;[ILandroid/util/AttributeSet;Landroid/content/res/TypedArray;II)V
 
@@ -322,7 +320,7 @@
     :goto_1
     sget v0, Landroidx/coordinatorlayout/R$styleable;->CoordinatorLayout_keylines:I
 
-    invoke-virtual {v9, v0, v8}, Landroid/content/res/TypedArray;->getResourceId(II)I
+    invoke-virtual {v8, v0, v7}, Landroid/content/res/TypedArray;->getResourceId(II)I
 
     move-result v0
 
@@ -349,11 +347,11 @@
     array-length v1, v1
 
     :goto_2
-    if-ge v8, v1, :cond_3
+    if-ge v7, v1, :cond_3
 
     iget-object v2, p0, Landroidx/coordinatorlayout/widget/CoordinatorLayout;->mKeylines:[I
 
-    aget v3, v2, v8
+    aget v3, v2, v7
 
     int-to-float v3, v3
 
@@ -361,22 +359,22 @@
 
     float-to-int v3, v3
 
-    aput v3, v2, v8
+    aput v3, v2, v7
 
-    add-int/lit8 v8, v8, 0x1
+    add-int/lit8 v7, v7, 0x1
 
     goto :goto_2
 
     :cond_3
     sget v0, Landroidx/coordinatorlayout/R$styleable;->CoordinatorLayout_statusBarBackground:I
 
-    invoke-virtual {v9, v0}, Landroid/content/res/TypedArray;->getDrawable(I)Landroid/graphics/drawable/Drawable;
+    invoke-virtual {v8, v0}, Landroid/content/res/TypedArray;->getDrawable(I)Landroid/graphics/drawable/Drawable;
 
     move-result-object v0
 
     iput-object v0, p0, Landroidx/coordinatorlayout/widget/CoordinatorLayout;->mStatusBarBackground:Landroid/graphics/drawable/Drawable;
 
-    invoke-virtual {v9}, Landroid/content/res/TypedArray;->recycle()V
+    invoke-virtual {v8}, Landroid/content/res/TypedArray;->recycle()V
 
     invoke-virtual {p0}, Landroidx/coordinatorlayout/widget/CoordinatorLayout;->setupForInsets()V
 
@@ -394,7 +392,9 @@
 
     if-nez v0, :cond_4
 
-    invoke-virtual {p0, v7}, Landroid/view/View;->setImportantForAccessibility(I)V
+    const/4 v0, 0x1
+
+    invoke-virtual {p0, v0}, Landroid/view/View;->setImportantForAccessibility(I)V
 
     :cond_4
     return-void
@@ -530,11 +530,9 @@
 .method public dispatchDependentViewsChanged(Landroid/view/View;)V
     .locals 4
 
-    iget-object v0, p0, Landroidx/coordinatorlayout/widget/CoordinatorLayout;->mChildDag:Landroidx/constraintlayout/core/Cache;
+    iget-object v0, p0, Landroidx/coordinatorlayout/widget/CoordinatorLayout;->mChildDag:Landroidx/coordinatorlayout/widget/DirectedAcyclicGraph;
 
-    iget-object v0, v0, Landroidx/constraintlayout/core/Cache;->arrayRowPool:Ljava/lang/Object;
-
-    check-cast v0, Landroidx/collection/SimpleArrayMap;
+    iget-object v0, v0, Landroidx/coordinatorlayout/widget/DirectedAcyclicGraph;->mGraph:Landroidx/collection/SimpleArrayMap;
 
     const/4 v1, 0x0
 
@@ -778,11 +776,9 @@
         }
     .end annotation
 
-    iget-object v0, p0, Landroidx/coordinatorlayout/widget/CoordinatorLayout;->mChildDag:Landroidx/constraintlayout/core/Cache;
+    iget-object v0, p0, Landroidx/coordinatorlayout/widget/CoordinatorLayout;->mChildDag:Landroidx/coordinatorlayout/widget/DirectedAcyclicGraph;
 
-    iget-object v1, v0, Landroidx/constraintlayout/core/Cache;->arrayRowPool:Ljava/lang/Object;
-
-    check-cast v1, Landroidx/collection/SimpleArrayMap;
+    iget-object v1, v0, Landroidx/coordinatorlayout/widget/DirectedAcyclicGraph;->mGraph:Landroidx/collection/SimpleArrayMap;
 
     iget v1, v1, Landroidx/collection/SimpleArrayMap;->mSize:I
 
@@ -793,9 +789,7 @@
     :goto_0
     if-ge v3, v1, :cond_2
 
-    iget-object v4, v0, Landroidx/constraintlayout/core/Cache;->arrayRowPool:Ljava/lang/Object;
-
-    check-cast v4, Landroidx/collection/SimpleArrayMap;
+    iget-object v4, v0, Landroidx/coordinatorlayout/widget/DirectedAcyclicGraph;->mGraph:Landroidx/collection/SimpleArrayMap;
 
     invoke-virtual {v4, v3}, Landroidx/collection/SimpleArrayMap;->valueAt(I)Ljava/lang/Object;
 
@@ -818,9 +812,7 @@
     invoke-direct {v2}, Ljava/util/ArrayList;-><init>()V
 
     :cond_0
-    iget-object v4, v0, Landroidx/constraintlayout/core/Cache;->arrayRowPool:Ljava/lang/Object;
-
-    check-cast v4, Landroidx/collection/SimpleArrayMap;
+    iget-object v4, v0, Landroidx/coordinatorlayout/widget/DirectedAcyclicGraph;->mGraph:Landroidx/collection/SimpleArrayMap;
 
     invoke-virtual {v4, v3}, Landroidx/collection/SimpleArrayMap;->keyAt(I)Ljava/lang/Object;
 
@@ -885,11 +877,9 @@
         }
     .end annotation
 
-    iget-object v0, p0, Landroidx/coordinatorlayout/widget/CoordinatorLayout;->mChildDag:Landroidx/constraintlayout/core/Cache;
+    iget-object v0, p0, Landroidx/coordinatorlayout/widget/CoordinatorLayout;->mChildDag:Landroidx/coordinatorlayout/widget/DirectedAcyclicGraph;
 
-    iget-object v0, v0, Landroidx/constraintlayout/core/Cache;->arrayRowPool:Ljava/lang/Object;
-
-    check-cast v0, Landroidx/collection/SimpleArrayMap;
+    iget-object v0, v0, Landroidx/coordinatorlayout/widget/DirectedAcyclicGraph;->mGraph:Landroidx/collection/SimpleArrayMap;
 
     const/4 v1, 0x0
 
@@ -1421,7 +1411,7 @@
 .method public getSuggestedMinimumHeight()I
     .locals 3
 
-    invoke-super {p0}, Landroid/view/View;->getSuggestedMinimumHeight()I
+    invoke-super {p0}, Landroid/view/ViewGroup;->getSuggestedMinimumHeight()I
 
     move-result v0
 
@@ -1445,7 +1435,7 @@
 .method public getSuggestedMinimumWidth()I
     .locals 3
 
-    invoke-super {p0}, Landroid/view/View;->getSuggestedMinimumWidth()I
+    invoke-super {p0}, Landroid/view/ViewGroup;->getSuggestedMinimumWidth()I
 
     move-result v0
 
@@ -2430,7 +2420,7 @@
 .method public onDraw(Landroid/graphics/Canvas;)V
     .locals 4
 
-    invoke-super {p0, p1}, Landroid/view/View;->onDraw(Landroid/graphics/Canvas;)V
+    invoke-super {p0, p1}, Landroid/view/ViewGroup;->onDraw(Landroid/graphics/Canvas;)V
 
     iget-boolean v0, p0, Landroidx/coordinatorlayout/widget/CoordinatorLayout;->mDrawStatusBarBackground:Z
 
@@ -3070,11 +3060,9 @@
 
     move-result-object v3
 
-    iget-object v4, v7, Landroidx/coordinatorlayout/widget/CoordinatorLayout;->mChildDag:Landroidx/constraintlayout/core/Cache;
+    iget-object v4, v7, Landroidx/coordinatorlayout/widget/CoordinatorLayout;->mChildDag:Landroidx/coordinatorlayout/widget/DirectedAcyclicGraph;
 
-    iget-object v5, v4, Landroidx/constraintlayout/core/Cache;->arrayRowPool:Ljava/lang/Object;
-
-    check-cast v5, Landroidx/collection/SimpleArrayMap;
+    iget-object v5, v4, Landroidx/coordinatorlayout/widget/DirectedAcyclicGraph;->mGraph:Landroidx/collection/SimpleArrayMap;
 
     iget v5, v5, Landroidx/collection/SimpleArrayMap;->mSize:I
 
@@ -3083,9 +3071,7 @@
     :goto_1
     if-ge v6, v5, :cond_1
 
-    iget-object v9, v4, Landroidx/constraintlayout/core/Cache;->arrayRowPool:Ljava/lang/Object;
-
-    check-cast v9, Landroidx/collection/SimpleArrayMap;
+    iget-object v9, v4, Landroidx/coordinatorlayout/widget/DirectedAcyclicGraph;->mGraph:Landroidx/collection/SimpleArrayMap;
 
     invoke-virtual {v9, v6}, Landroidx/collection/SimpleArrayMap;->valueAt(I)Ljava/lang/Object;
 
@@ -4223,7 +4209,7 @@
 
     if-nez v0, :cond_0
 
-    invoke-super {p0, p1}, Landroid/view/View;->onRestoreInstanceState(Landroid/os/Parcelable;)V
+    invoke-super {p0, p1}, Landroid/view/ViewGroup;->onRestoreInstanceState(Landroid/os/Parcelable;)V
 
     return-void
 
@@ -4232,7 +4218,7 @@
 
     iget-object v0, p1, Landroidx/customview/view/AbsSavedState;->mSuperState:Landroid/os/Parcelable;
 
-    invoke-super {p0, v0}, Landroid/view/View;->onRestoreInstanceState(Landroid/os/Parcelable;)V
+    invoke-super {p0, v0}, Landroid/view/ViewGroup;->onRestoreInstanceState(Landroid/os/Parcelable;)V
 
     iget-object p1, p1, Landroidx/coordinatorlayout/widget/CoordinatorLayout$SavedState;->behaviorStates:Landroid/util/SparseArray;
 
@@ -4289,7 +4275,7 @@
 
     new-instance v0, Landroidx/coordinatorlayout/widget/CoordinatorLayout$SavedState;
 
-    invoke-super {p0}, Landroid/view/View;->onSaveInstanceState()Landroid/os/Parcelable;
+    invoke-super {p0}, Landroid/view/ViewGroup;->onSaveInstanceState()Landroid/os/Parcelable;
 
     move-result-object v1
 
@@ -4584,7 +4570,7 @@
 
     if-nez v7, :cond_2
 
-    invoke-super/range {p0 .. p1}, Landroid/view/View;->onTouchEvent(Landroid/view/MotionEvent;)Z
+    invoke-super/range {p0 .. p1}, Landroid/view/ViewGroup;->onTouchEvent(Landroid/view/MotionEvent;)Z
 
     move-result v1
 
@@ -4613,7 +4599,7 @@
 
     move-result-object v8
 
-    invoke-super {v0, v8}, Landroid/view/View;->onTouchEvent(Landroid/view/MotionEvent;)Z
+    invoke-super {v0, v8}, Landroid/view/ViewGroup;->onTouchEvent(Landroid/view/MotionEvent;)Z
 
     :cond_3
     :goto_2
@@ -4862,11 +4848,9 @@
 
     invoke-interface {v0}, Ljava/util/List;->clear()V
 
-    iget-object v0, p0, Landroidx/coordinatorlayout/widget/CoordinatorLayout;->mChildDag:Landroidx/constraintlayout/core/Cache;
+    iget-object v0, p0, Landroidx/coordinatorlayout/widget/CoordinatorLayout;->mChildDag:Landroidx/coordinatorlayout/widget/DirectedAcyclicGraph;
 
-    iget-object v1, v0, Landroidx/constraintlayout/core/Cache;->arrayRowPool:Ljava/lang/Object;
-
-    check-cast v1, Landroidx/collection/SimpleArrayMap;
+    iget-object v1, v0, Landroidx/coordinatorlayout/widget/DirectedAcyclicGraph;->mGraph:Landroidx/collection/SimpleArrayMap;
 
     iget v1, v1, Landroidx/collection/SimpleArrayMap;->mSize:I
 
@@ -4877,9 +4861,7 @@
     :goto_0
     if-ge v3, v1, :cond_1
 
-    iget-object v4, v0, Landroidx/constraintlayout/core/Cache;->arrayRowPool:Ljava/lang/Object;
-
-    check-cast v4, Landroidx/collection/SimpleArrayMap;
+    iget-object v4, v0, Landroidx/coordinatorlayout/widget/DirectedAcyclicGraph;->mGraph:Landroidx/collection/SimpleArrayMap;
 
     invoke-virtual {v4, v3}, Landroidx/collection/SimpleArrayMap;->valueAt(I)Ljava/lang/Object;
 
@@ -4889,7 +4871,11 @@
 
     if-eqz v4, :cond_0
 
-    invoke-virtual {v0, v4}, Landroidx/constraintlayout/core/Cache;->poolList(Ljava/util/ArrayList;)V
+    invoke-virtual {v4}, Ljava/util/ArrayList;->clear()V
+
+    iget-object v5, v0, Landroidx/coordinatorlayout/widget/DirectedAcyclicGraph;->mListPool:Landroidx/core/util/Pools$SimplePool;
+
+    invoke-virtual {v5, v4}, Landroidx/core/util/Pools$SimplePool;->release(Ljava/lang/Object;)Z
 
     :cond_0
     add-int/lit8 v3, v3, 0x1
@@ -4897,9 +4883,7 @@
     goto :goto_0
 
     :cond_1
-    iget-object v0, v0, Landroidx/constraintlayout/core/Cache;->arrayRowPool:Ljava/lang/Object;
-
-    check-cast v0, Landroidx/collection/SimpleArrayMap;
+    iget-object v0, v0, Landroidx/coordinatorlayout/widget/DirectedAcyclicGraph;->mGraph:Landroidx/collection/SimpleArrayMap;
 
     invoke-virtual {v0}, Landroidx/collection/SimpleArrayMap;->clear()V
 
@@ -4910,7 +4894,7 @@
     move v1, v2
 
     :goto_1
-    if-ge v1, v0, :cond_1e
+    if-ge v1, v0, :cond_1f
 
     invoke-virtual {p0, v1}, Landroid/view/ViewGroup;->getChildAt(I)Landroid/view/View;
 
@@ -5095,7 +5079,7 @@
 
     move-result v5
 
-    if-eqz v5, :cond_1d
+    if-eqz v5, :cond_1e
 
     iput-object v7, v4, Landroidx/coordinatorlayout/widget/CoordinatorLayout$LayoutParams;->mAnchorDirectChild:Landroid/view/View;
 
@@ -5103,14 +5087,14 @@
 
     :cond_10
     :goto_7
-    iget-object v5, p0, Landroidx/coordinatorlayout/widget/CoordinatorLayout;->mChildDag:Landroidx/constraintlayout/core/Cache;
+    iget-object v5, p0, Landroidx/coordinatorlayout/widget/CoordinatorLayout;->mChildDag:Landroidx/coordinatorlayout/widget/DirectedAcyclicGraph;
 
-    invoke-virtual {v5, v3}, Landroidx/constraintlayout/core/Cache;->addNode(Ljava/lang/Object;)V
+    invoke-virtual {v5, v3}, Landroidx/coordinatorlayout/widget/DirectedAcyclicGraph;->addNode(Ljava/lang/Object;)V
 
     move v5, v2
 
     :goto_8
-    if-ge v5, v0, :cond_1c
+    if-ge v5, v0, :cond_1d
 
     if-ne v5, v1, :cond_11
 
@@ -5187,13 +5171,11 @@
     move v9, v8
 
     :goto_b
-    if-eqz v9, :cond_1b
+    if-eqz v9, :cond_1c
 
-    iget-object v9, p0, Landroidx/coordinatorlayout/widget/CoordinatorLayout;->mChildDag:Landroidx/constraintlayout/core/Cache;
+    iget-object v9, p0, Landroidx/coordinatorlayout/widget/CoordinatorLayout;->mChildDag:Landroidx/coordinatorlayout/widget/DirectedAcyclicGraph;
 
-    iget-object v9, v9, Landroidx/constraintlayout/core/Cache;->arrayRowPool:Ljava/lang/Object;
-
-    check-cast v9, Landroidx/collection/SimpleArrayMap;
+    iget-object v9, v9, Landroidx/coordinatorlayout/widget/DirectedAcyclicGraph;->mGraph:Landroidx/collection/SimpleArrayMap;
 
     invoke-virtual {v9, v6}, Landroidx/collection/SimpleArrayMap;->indexOfKey(Ljava/lang/Object;)I
 
@@ -5211,16 +5193,14 @@
     :goto_c
     if-nez v9, :cond_16
 
-    iget-object v9, p0, Landroidx/coordinatorlayout/widget/CoordinatorLayout;->mChildDag:Landroidx/constraintlayout/core/Cache;
+    iget-object v9, p0, Landroidx/coordinatorlayout/widget/CoordinatorLayout;->mChildDag:Landroidx/coordinatorlayout/widget/DirectedAcyclicGraph;
 
-    invoke-virtual {v9, v6}, Landroidx/constraintlayout/core/Cache;->addNode(Ljava/lang/Object;)V
+    invoke-virtual {v9, v6}, Landroidx/coordinatorlayout/widget/DirectedAcyclicGraph;->addNode(Ljava/lang/Object;)V
 
     :cond_16
-    iget-object v9, p0, Landroidx/coordinatorlayout/widget/CoordinatorLayout;->mChildDag:Landroidx/constraintlayout/core/Cache;
+    iget-object v9, p0, Landroidx/coordinatorlayout/widget/CoordinatorLayout;->mChildDag:Landroidx/coordinatorlayout/widget/DirectedAcyclicGraph;
 
-    iget-object v10, v9, Landroidx/constraintlayout/core/Cache;->arrayRowPool:Ljava/lang/Object;
-
-    check-cast v10, Landroidx/collection/SimpleArrayMap;
+    iget-object v10, v9, Landroidx/coordinatorlayout/widget/DirectedAcyclicGraph;->mGraph:Landroidx/collection/SimpleArrayMap;
 
     invoke-virtual {v10, v6}, Landroidx/collection/SimpleArrayMap;->indexOfKey(Ljava/lang/Object;)I
 
@@ -5236,11 +5216,9 @@
     move v10, v2
 
     :goto_d
-    if-eqz v10, :cond_1a
+    if-eqz v10, :cond_1b
 
-    iget-object v10, v9, Landroidx/constraintlayout/core/Cache;->arrayRowPool:Ljava/lang/Object;
-
-    check-cast v10, Landroidx/collection/SimpleArrayMap;
+    iget-object v10, v9, Landroidx/coordinatorlayout/widget/DirectedAcyclicGraph;->mGraph:Landroidx/collection/SimpleArrayMap;
 
     invoke-virtual {v10, v3}, Landroidx/collection/SimpleArrayMap;->indexOfKey(Ljava/lang/Object;)I
 
@@ -5256,11 +5234,9 @@
     move v10, v2
 
     :goto_e
-    if-eqz v10, :cond_1a
+    if-eqz v10, :cond_1b
 
-    iget-object v10, v9, Landroidx/constraintlayout/core/Cache;->arrayRowPool:Ljava/lang/Object;
-
-    check-cast v10, Landroidx/collection/SimpleArrayMap;
+    iget-object v10, v9, Landroidx/coordinatorlayout/widget/DirectedAcyclicGraph;->mGraph:Landroidx/collection/SimpleArrayMap;
 
     invoke-virtual {v10, v6, v7}, Landroidx/collection/SimpleArrayMap;->getOrDefault(Ljava/lang/Object;Ljava/lang/Object;)Ljava/lang/Object;
 
@@ -5268,24 +5244,33 @@
 
     check-cast v10, Ljava/util/ArrayList;
 
-    if-nez v10, :cond_19
+    if-nez v10, :cond_1a
 
-    invoke-virtual {v9}, Landroidx/constraintlayout/core/Cache;->getEmptyList()Ljava/util/ArrayList;
+    iget-object v10, v9, Landroidx/coordinatorlayout/widget/DirectedAcyclicGraph;->mListPool:Landroidx/core/util/Pools$SimplePool;
+
+    invoke-virtual {v10}, Landroidx/core/util/Pools$SimplePool;->acquire()Ljava/lang/Object;
 
     move-result-object v10
 
-    iget-object v9, v9, Landroidx/constraintlayout/core/Cache;->arrayRowPool:Ljava/lang/Object;
+    check-cast v10, Ljava/util/ArrayList;
 
-    check-cast v9, Landroidx/collection/SimpleArrayMap;
+    if-nez v10, :cond_19
+
+    new-instance v10, Ljava/util/ArrayList;
+
+    invoke-direct {v10}, Ljava/util/ArrayList;-><init>()V
+
+    :cond_19
+    iget-object v9, v9, Landroidx/coordinatorlayout/widget/DirectedAcyclicGraph;->mGraph:Landroidx/collection/SimpleArrayMap;
 
     invoke-virtual {v9, v6, v10}, Landroidx/collection/SimpleArrayMap;->put(Ljava/lang/Object;Ljava/lang/Object;)Ljava/lang/Object;
 
-    :cond_19
+    :cond_1a
     invoke-virtual {v10, v3}, Ljava/util/ArrayList;->add(Ljava/lang/Object;)Z
 
     goto :goto_f
 
-    :cond_1a
+    :cond_1b
     new-instance v0, Ljava/lang/IllegalArgumentException;
 
     const-string v1, "All nodes must be present in the graph before being added as an edge"
@@ -5294,18 +5279,18 @@
 
     throw v0
 
-    :cond_1b
+    :cond_1c
     :goto_f
     add-int/lit8 v5, v5, 0x1
 
     goto/16 :goto_8
 
-    :cond_1c
+    :cond_1d
     add-int/lit8 v1, v1, 0x1
 
     goto/16 :goto_1
 
-    :cond_1d
+    :cond_1e
     new-instance v0, Ljava/lang/IllegalStateException;
 
     const-string v1, "Could not find CoordinatorLayout descendant view with id "
@@ -5340,58 +5325,44 @@
 
     throw v0
 
-    :cond_1e
+    :cond_1f
     iget-object v0, p0, Landroidx/coordinatorlayout/widget/CoordinatorLayout;->mDependencySortedChildren:Ljava/util/List;
 
-    iget-object v1, p0, Landroidx/coordinatorlayout/widget/CoordinatorLayout;->mChildDag:Landroidx/constraintlayout/core/Cache;
+    iget-object v1, p0, Landroidx/coordinatorlayout/widget/CoordinatorLayout;->mChildDag:Landroidx/coordinatorlayout/widget/DirectedAcyclicGraph;
 
-    iget-object v3, v1, Landroidx/constraintlayout/core/Cache;->solverVariablePool:Ljava/lang/Object;
-
-    check-cast v3, Ljava/util/ArrayList;
+    iget-object v3, v1, Landroidx/coordinatorlayout/widget/DirectedAcyclicGraph;->mSortResult:Ljava/util/ArrayList;
 
     invoke-virtual {v3}, Ljava/util/ArrayList;->clear()V
 
-    iget-object v3, v1, Landroidx/constraintlayout/core/Cache;->mIndexedVariables:Ljava/lang/Object;
-
-    check-cast v3, Ljava/util/HashSet;
+    iget-object v3, v1, Landroidx/coordinatorlayout/widget/DirectedAcyclicGraph;->mSortTmpMarked:Ljava/util/HashSet;
 
     invoke-virtual {v3}, Ljava/util/HashSet;->clear()V
 
-    iget-object v3, v1, Landroidx/constraintlayout/core/Cache;->arrayRowPool:Ljava/lang/Object;
-
-    check-cast v3, Landroidx/collection/SimpleArrayMap;
+    iget-object v3, v1, Landroidx/coordinatorlayout/widget/DirectedAcyclicGraph;->mGraph:Landroidx/collection/SimpleArrayMap;
 
     iget v3, v3, Landroidx/collection/SimpleArrayMap;->mSize:I
 
     :goto_10
-    if-ge v2, v3, :cond_1f
+    if-ge v2, v3, :cond_20
 
-    iget-object v4, v1, Landroidx/constraintlayout/core/Cache;->arrayRowPool:Ljava/lang/Object;
-
-    check-cast v4, Landroidx/collection/SimpleArrayMap;
+    iget-object v4, v1, Landroidx/coordinatorlayout/widget/DirectedAcyclicGraph;->mGraph:Landroidx/collection/SimpleArrayMap;
 
     invoke-virtual {v4, v2}, Landroidx/collection/SimpleArrayMap;->keyAt(I)Ljava/lang/Object;
 
     move-result-object v4
 
-    iget-object v5, v1, Landroidx/constraintlayout/core/Cache;->solverVariablePool:Ljava/lang/Object;
+    iget-object v5, v1, Landroidx/coordinatorlayout/widget/DirectedAcyclicGraph;->mSortResult:Ljava/util/ArrayList;
 
-    check-cast v5, Ljava/util/ArrayList;
+    iget-object v6, v1, Landroidx/coordinatorlayout/widget/DirectedAcyclicGraph;->mSortTmpMarked:Ljava/util/HashSet;
 
-    iget-object v6, v1, Landroidx/constraintlayout/core/Cache;->mIndexedVariables:Ljava/lang/Object;
-
-    check-cast v6, Ljava/util/HashSet;
-
-    invoke-virtual {v1, v4, v5, v6}, Landroidx/constraintlayout/core/Cache;->dfs(Ljava/lang/Object;Ljava/util/ArrayList;Ljava/util/HashSet;)V
+    invoke-virtual {v1, v4, v5, v6}, Landroidx/coordinatorlayout/widget/DirectedAcyclicGraph;->dfs(Ljava/lang/Object;Ljava/util/ArrayList;Ljava/util/HashSet;)V
 
     add-int/lit8 v2, v2, 0x1
 
     goto :goto_10
 
-    :cond_1f
-    iget-object v1, v1, Landroidx/constraintlayout/core/Cache;->solverVariablePool:Ljava/lang/Object;
-
-    check-cast v1, Ljava/util/ArrayList;
+    :cond_20
+    iget-object v1, v1, Landroidx/coordinatorlayout/widget/DirectedAcyclicGraph;->mSortResult:Ljava/util/ArrayList;
 
     invoke-interface {v0, v1}, Ljava/util/List;->addAll(Ljava/util/Collection;)Z
 
@@ -5554,7 +5525,7 @@
 .method public setFitsSystemWindows(Z)V
     .locals 0
 
-    invoke-super {p0, p1}, Landroid/view/View;->setFitsSystemWindows(Z)V
+    invoke-super {p0, p1}, Landroid/view/ViewGroup;->setFitsSystemWindows(Z)V
 
     invoke-virtual {p0}, Landroidx/coordinatorlayout/widget/CoordinatorLayout;->setupForInsets()V
 
@@ -5743,7 +5714,7 @@
 .method public setVisibility(I)V
     .locals 2
 
-    invoke-super {p0, p1}, Landroid/view/View;->setVisibility(I)V
+    invoke-super {p0, p1}, Landroid/view/ViewGroup;->setVisibility(I)V
 
     const/4 v0, 0x0
 
@@ -5819,7 +5790,7 @@
 .method public verifyDrawable(Landroid/graphics/drawable/Drawable;)Z
     .locals 1
 
-    invoke-super {p0, p1}, Landroid/view/View;->verifyDrawable(Landroid/graphics/drawable/Drawable;)Z
+    invoke-super {p0, p1}, Landroid/view/ViewGroup;->verifyDrawable(Landroid/graphics/drawable/Drawable;)Z
 
     move-result v0
 

@@ -10,14 +10,18 @@
 
 
 # instance fields
-.field public final arrayNestedness:I
+.field private final arrayNestedness:I
 
-.field public final classId:Lkotlin/reflect/jvm/internal/impl/name/ClassId;
+.field private final classId:Lkotlin/reflect/jvm/internal/impl/name/ClassId;
 
 
 # direct methods
 .method public constructor <init>(Lkotlin/reflect/jvm/internal/impl/name/ClassId;I)V
-    .locals 0
+    .locals 1
+
+    const-string v0, "classId"
+
+    invoke-static {p1, v0}, Lkotlin/jvm/internal/Intrinsics;->checkNotNullParameter(Ljava/lang/Object;Ljava/lang/String;)V
 
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
@@ -30,6 +34,22 @@
 
 
 # virtual methods
+.method public final component1()Lkotlin/reflect/jvm/internal/impl/name/ClassId;
+    .locals 1
+
+    iget-object v0, p0, Lkotlin/reflect/jvm/internal/impl/resolve/constants/ClassLiteralValue;->classId:Lkotlin/reflect/jvm/internal/impl/name/ClassId;
+
+    return-object v0
+.end method
+
+.method public final component2()I
+    .locals 1
+
+    iget v0, p0, Lkotlin/reflect/jvm/internal/impl/resolve/constants/ClassLiteralValue;->arrayNestedness:I
+
+    return v0
+.end method
+
 .method public equals(Ljava/lang/Object;)Z
     .locals 4
 
@@ -76,6 +96,22 @@
     return v0
 .end method
 
+.method public final getArrayNestedness()I
+    .locals 1
+
+    iget v0, p0, Lkotlin/reflect/jvm/internal/impl/resolve/constants/ClassLiteralValue;->arrayNestedness:I
+
+    return v0
+.end method
+
+.method public final getClassId()Lkotlin/reflect/jvm/internal/impl/name/ClassId;
+    .locals 1
+
+    iget-object v0, p0, Lkotlin/reflect/jvm/internal/impl/resolve/constants/ClassLiteralValue;->classId:Lkotlin/reflect/jvm/internal/impl/name/ClassId;
+
+    return-object v0
+.end method
+
 .method public hashCode()I
     .locals 2
 
@@ -101,7 +137,9 @@
 
     invoke-direct {v0}, Ljava/lang/StringBuilder;-><init>()V
 
-    iget v1, p0, Lkotlin/reflect/jvm/internal/impl/resolve/constants/ClassLiteralValue;->arrayNestedness:I
+    invoke-virtual {p0}, Lkotlin/reflect/jvm/internal/impl/resolve/constants/ClassLiteralValue;->getArrayNestedness()I
+
+    move-result v1
 
     const/4 v2, 0x0
 
@@ -119,11 +157,15 @@
     goto :goto_0
 
     :cond_0
-    iget-object v1, p0, Lkotlin/reflect/jvm/internal/impl/resolve/constants/ClassLiteralValue;->classId:Lkotlin/reflect/jvm/internal/impl/name/ClassId;
+    invoke-virtual {p0}, Lkotlin/reflect/jvm/internal/impl/resolve/constants/ClassLiteralValue;->getClassId()Lkotlin/reflect/jvm/internal/impl/name/ClassId;
+
+    move-result-object v1
 
     invoke-virtual {v0, v1}, Ljava/lang/StringBuilder;->append(Ljava/lang/Object;)Ljava/lang/StringBuilder;
 
-    iget v1, p0, Lkotlin/reflect/jvm/internal/impl/resolve/constants/ClassLiteralValue;->arrayNestedness:I
+    invoke-virtual {p0}, Lkotlin/reflect/jvm/internal/impl/resolve/constants/ClassLiteralValue;->getArrayNestedness()I
+
+    move-result v1
 
     :goto_1
     if-ge v2, v1, :cond_1

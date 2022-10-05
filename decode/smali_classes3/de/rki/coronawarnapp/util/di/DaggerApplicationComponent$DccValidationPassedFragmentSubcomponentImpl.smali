@@ -89,6 +89,16 @@
     .end annotation
 .end field
 
+.field public providesDefaultCertLogicEngineProvider:Ljavax/inject/Provider;
+    .annotation system Ldalvik/annotation/Signature;
+        value = {
+            "Ljavax/inject/Provider<",
+            "Ldgca/verifier/app/engine/DefaultCertLogicEngine;",
+            ">;"
+        }
+    .end annotation
+.end field
+
 .field public valueSetWrapperProvider:Ljavax/inject/Provider;
     .annotation system Ldalvik/annotation/Signature;
         value = {
@@ -101,20 +111,8 @@
 
 
 # direct methods
-.method public constructor <init>(Lde/rki/coronawarnapp/util/di/DaggerApplicationComponent;Lde/rki/coronawarnapp/util/di/DaggerApplicationComponent$MainActivitySubcomponentImpl;Lde/rki/coronawarnapp/covidcertificate/validation/ui/validationresult/passed/DccValidationPassedFragment;Lde/rki/coronawarnapp/util/di/DaggerApplicationComponent$DccValidationPassedFragmentSubcomponentImpl-IA;)V
+.method public constructor <init>(Lde/rki/coronawarnapp/util/di/DaggerApplicationComponent;Lde/rki/coronawarnapp/util/di/DaggerApplicationComponent$MainActivitySubcomponentImpl;Lde/rki/coronawarnapp/covidcertificate/validation/ui/validationresult/passed/DccValidationPassedFragment;Lde/rki/coronawarnapp/contactdiary/ui/ContactDiarySettings$OnboardingStatus$EnumUnboxingLocalUtility;)V
     .locals 6
-    .annotation system Ldalvik/annotation/MethodParameters;
-        accessFlags = {
-            0x0,
-            0x0,
-            0x0
-        }
-        names = {
-            "applicationComponent",
-            "mainActivitySubcomponentImpl",
-            "arg0Param"
-        }
-    .end annotation
 
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
@@ -132,13 +130,29 @@
 
     iput-object v0, p0, Lde/rki/coronawarnapp/util/di/DaggerApplicationComponent$DccValidationPassedFragmentSubcomponentImpl;->valueSetWrapperProvider:Ljavax/inject/Provider;
 
-    iget-object p3, p1, Lde/rki/coronawarnapp/util/di/DaggerApplicationComponent;->providesDefaultCertLogicEngineProvider:Ljavax/inject/Provider;
+    iget-object p3, p1, Lde/rki/coronawarnapp/util/di/DaggerApplicationComponent;->digitalCovidCertificateModule:Lcom/google/android/play/core/assetpacks/zzbf;
 
-    new-instance p4, Lde/rki/coronawarnapp/covidcertificate/validation/core/business/wrapper/CertLogicEngineWrapper_Factory;
+    iget-object p4, p1, Lde/rki/coronawarnapp/util/di/DaggerApplicationComponent;->dccJsonSchemaProvider:Ljavax/inject/Provider;
 
-    invoke-direct {p4, v0, p3}, Lde/rki/coronawarnapp/covidcertificate/validation/core/business/wrapper/CertLogicEngineWrapper_Factory;-><init>(Ljavax/inject/Provider;Ljavax/inject/Provider;)V
+    iget-object v0, p1, Lde/rki/coronawarnapp/util/di/DaggerApplicationComponent;->jacksonObjectMapperProvider:Ljavax/inject/Provider;
 
-    invoke-static {p4}, Ldagger/internal/SingleCheck;->provider(Ljavax/inject/Provider;)Ljavax/inject/Provider;
+    new-instance v1, Lde/rki/coronawarnapp/covidcertificate/DigitalCovidCertificateModule_ProvidesDefaultCertLogicEngineFactory;
+
+    invoke-direct {v1, p3, p4, v0}, Lde/rki/coronawarnapp/covidcertificate/DigitalCovidCertificateModule_ProvidesDefaultCertLogicEngineFactory;-><init>(Lcom/google/android/play/core/assetpacks/zzbf;Ljavax/inject/Provider;Ljavax/inject/Provider;)V
+
+    invoke-static {v1}, Ldagger/internal/SingleCheck;->provider(Ljavax/inject/Provider;)Ljavax/inject/Provider;
+
+    move-result-object p3
+
+    iput-object p3, p0, Lde/rki/coronawarnapp/util/di/DaggerApplicationComponent$DccValidationPassedFragmentSubcomponentImpl;->providesDefaultCertLogicEngineProvider:Ljavax/inject/Provider;
+
+    iget-object p4, p0, Lde/rki/coronawarnapp/util/di/DaggerApplicationComponent$DccValidationPassedFragmentSubcomponentImpl;->valueSetWrapperProvider:Ljavax/inject/Provider;
+
+    new-instance v0, Lde/rki/coronawarnapp/covidcertificate/validation/core/business/wrapper/CertLogicEngineWrapper_Factory;
+
+    invoke-direct {v0, p4, p3}, Lde/rki/coronawarnapp/covidcertificate/validation/core/business/wrapper/CertLogicEngineWrapper_Factory;-><init>(Ljavax/inject/Provider;Ljavax/inject/Provider;)V
+
+    invoke-static {v0}, Ldagger/internal/SingleCheck;->provider(Ljavax/inject/Provider;)Ljavax/inject/Provider;
 
     move-result-object p3
 
@@ -172,7 +186,7 @@
 
     iget-object p4, p1, Lde/rki/coronawarnapp/util/di/DaggerApplicationComponent;->dccValidationRepositoryProvider:Ljavax/inject/Provider;
 
-    iget-object v0, p2, Lde/rki/coronawarnapp/util/di/DaggerApplicationComponent$MainActivitySubcomponentImpl;->certificateProvider:Ljavax/inject/Provider;
+    iget-object v0, p1, Lde/rki/coronawarnapp/util/di/DaggerApplicationComponent;->certificateProvider:Ljavax/inject/Provider;
 
     iget-object p1, p1, Lde/rki/coronawarnapp/util/di/DaggerApplicationComponent;->networkStateProvider:Ljavax/inject/Provider;
 
@@ -186,7 +200,7 @@
 
     iput-object p1, p0, Lde/rki/coronawarnapp/util/di/DaggerApplicationComponent$DccValidationPassedFragmentSubcomponentImpl;->factoryProvider:Ljavax/inject/Provider;
 
-    const/16 p1, 0x1a
+    const/16 p1, 0x1b
 
     invoke-static {p1}, Ldagger/internal/MapFactory;->builder(I)Ldagger/internal/MapFactory$Builder;
 
@@ -204,7 +218,7 @@
 
     invoke-virtual {p4, p1, p3}, Ljava/util/LinkedHashMap;->put(Ljava/lang/Object;Ljava/lang/Object;)Ljava/lang/Object;
 
-    const-class p1, Lde/rki/coronawarnapp/ui/main/MainActivityViewModel;
+    const-class p1, Lde/rki/coronawarnapp/rootdetection/ui/RootDetectionDialogViewModel;
 
     iget-object p3, p2, Lde/rki/coronawarnapp/util/di/DaggerApplicationComponent$MainActivitySubcomponentImpl;->factoryProvider2:Ljavax/inject/Provider;
 
@@ -214,7 +228,7 @@
 
     invoke-virtual {p4, p1, p3}, Ljava/util/LinkedHashMap;->put(Ljava/lang/Object;Ljava/lang/Object;)Ljava/lang/Object;
 
-    const-class p1, Lde/rki/coronawarnapp/ui/onboarding/OnboardingDeltaNotificationsViewModel;
+    const-class p1, Lde/rki/coronawarnapp/ui/main/MainActivityViewModel;
 
     iget-object p3, p2, Lde/rki/coronawarnapp/util/di/DaggerApplicationComponent$MainActivitySubcomponentImpl;->factoryProvider3:Ljavax/inject/Provider;
 
@@ -224,7 +238,7 @@
 
     invoke-virtual {p4, p1, p3}, Ljava/util/LinkedHashMap;->put(Ljava/lang/Object;Ljava/lang/Object;)Ljava/lang/Object;
 
-    const-class p1, Lde/rki/coronawarnapp/ui/onboarding/OnboardingAnalyticsViewModel;
+    const-class p1, Lde/rki/coronawarnapp/ui/onboarding/OnboardingDeltaNotificationsViewModel;
 
     iget-object p3, p2, Lde/rki/coronawarnapp/util/di/DaggerApplicationComponent$MainActivitySubcomponentImpl;->factoryProvider4:Ljavax/inject/Provider;
 
@@ -234,7 +248,7 @@
 
     invoke-virtual {p4, p1, p3}, Ljava/util/LinkedHashMap;->put(Ljava/lang/Object;Ljava/lang/Object;)Ljava/lang/Object;
 
-    const-class p1, Lde/rki/coronawarnapp/ui/onboarding/OnboardingDeltaInteroperabilityFragmentViewModel;
+    const-class p1, Lde/rki/coronawarnapp/ui/onboarding/OnboardingAnalyticsViewModel;
 
     iget-object p3, p2, Lde/rki/coronawarnapp/util/di/DaggerApplicationComponent$MainActivitySubcomponentImpl;->factoryProvider5:Ljavax/inject/Provider;
 
@@ -244,9 +258,9 @@
 
     invoke-virtual {p4, p1, p3}, Ljava/util/LinkedHashMap;->put(Ljava/lang/Object;Ljava/lang/Object;)Ljava/lang/Object;
 
-    const-class p1, Lde/rki/coronawarnapp/ui/main/home/HomeFragmentViewModel;
+    const-class p1, Lde/rki/coronawarnapp/ui/onboarding/OnboardingDeltaInteroperabilityFragmentViewModel;
 
-    iget-object p3, p2, Lde/rki/coronawarnapp/util/di/DaggerApplicationComponent$MainActivitySubcomponentImpl;->factoryProvider7:Ljavax/inject/Provider;
+    iget-object p3, p2, Lde/rki/coronawarnapp/util/di/DaggerApplicationComponent$MainActivitySubcomponentImpl;->factoryProvider6:Ljavax/inject/Provider;
 
     iget-object p4, v5, Ldagger/internal/AbstractMapFactory$Builder;->map:Ljava/util/LinkedHashMap;
 
@@ -254,7 +268,7 @@
 
     invoke-virtual {p4, p1, p3}, Ljava/util/LinkedHashMap;->put(Ljava/lang/Object;Ljava/lang/Object;)Ljava/lang/Object;
 
-    const-class p1, Lde/rki/coronawarnapp/tracing/ui/details/TracingDetailsFragmentViewModel;
+    const-class p1, Lde/rki/coronawarnapp/ui/main/home/HomeFragmentViewModel;
 
     iget-object p3, p2, Lde/rki/coronawarnapp/util/di/DaggerApplicationComponent$MainActivitySubcomponentImpl;->factoryProvider8:Ljavax/inject/Provider;
 
@@ -264,7 +278,7 @@
 
     invoke-virtual {p4, p1, p3}, Ljava/util/LinkedHashMap;->put(Ljava/lang/Object;Ljava/lang/Object;)Ljava/lang/Object;
 
-    const-class p1, Lde/rki/coronawarnapp/ui/settings/start/SettingsFragmentViewModel;
+    const-class p1, Lde/rki/coronawarnapp/tracing/ui/details/TracingDetailsFragmentViewModel;
 
     iget-object p3, p2, Lde/rki/coronawarnapp/util/di/DaggerApplicationComponent$MainActivitySubcomponentImpl;->factoryProvider9:Ljavax/inject/Provider;
 
@@ -274,9 +288,9 @@
 
     invoke-virtual {p4, p1, p3}, Ljava/util/LinkedHashMap;->put(Ljava/lang/Object;Ljava/lang/Object;)Ljava/lang/Object;
 
-    const-class p1, Lde/rki/coronawarnapp/tracing/ui/settings/SettingsTracingFragmentViewModel;
+    const-class p1, Lde/rki/coronawarnapp/ui/settings/start/SettingsFragmentViewModel;
 
-    iget-object p3, p2, Lde/rki/coronawarnapp/util/di/DaggerApplicationComponent$MainActivitySubcomponentImpl;->factoryProvider11:Ljavax/inject/Provider;
+    iget-object p3, p2, Lde/rki/coronawarnapp/util/di/DaggerApplicationComponent$MainActivitySubcomponentImpl;->factoryProvider10:Ljavax/inject/Provider;
 
     iget-object p4, v5, Ldagger/internal/AbstractMapFactory$Builder;->map:Ljava/util/LinkedHashMap;
 
@@ -284,7 +298,7 @@
 
     invoke-virtual {p4, p1, p3}, Ljava/util/LinkedHashMap;->put(Ljava/lang/Object;Ljava/lang/Object;)Ljava/lang/Object;
 
-    const-class p1, Lde/rki/coronawarnapp/ui/settings/notifications/NotificationSettingsFragmentViewModel;
+    const-class p1, Lde/rki/coronawarnapp/tracing/ui/settings/SettingsTracingFragmentViewModel;
 
     iget-object p3, p2, Lde/rki/coronawarnapp/util/di/DaggerApplicationComponent$MainActivitySubcomponentImpl;->factoryProvider12:Ljavax/inject/Provider;
 
@@ -294,7 +308,7 @@
 
     invoke-virtual {p4, p1, p3}, Ljava/util/LinkedHashMap;->put(Ljava/lang/Object;Ljava/lang/Object;)Ljava/lang/Object;
 
-    const-class p1, Lde/rki/coronawarnapp/ui/settings/backgroundpriority/SettingsBackgroundPriorityFragmentViewModel;
+    const-class p1, Lde/rki/coronawarnapp/ui/settings/notifications/NotificationSettingsFragmentViewModel;
 
     iget-object p3, p2, Lde/rki/coronawarnapp/util/di/DaggerApplicationComponent$MainActivitySubcomponentImpl;->factoryProvider13:Ljavax/inject/Provider;
 
@@ -304,7 +318,7 @@
 
     invoke-virtual {p4, p1, p3}, Ljava/util/LinkedHashMap;->put(Ljava/lang/Object;Ljava/lang/Object;)Ljava/lang/Object;
 
-    const-class p1, Lde/rki/coronawarnapp/ui/settings/analytics/SettingsPrivacyPreservingAnalyticsViewModel;
+    const-class p1, Lde/rki/coronawarnapp/ui/settings/backgroundpriority/SettingsBackgroundPriorityFragmentViewModel;
 
     iget-object p3, p2, Lde/rki/coronawarnapp/util/di/DaggerApplicationComponent$MainActivitySubcomponentImpl;->factoryProvider14:Ljavax/inject/Provider;
 
@@ -314,7 +328,7 @@
 
     invoke-virtual {p4, p1, p3}, Ljava/util/LinkedHashMap;->put(Ljava/lang/Object;Ljava/lang/Object;)Ljava/lang/Object;
 
-    const-class p1, Lde/rki/coronawarnapp/statistics/ui/stateselection/FederalStateSelectionViewModel;
+    const-class p1, Lde/rki/coronawarnapp/ui/settings/analytics/SettingsPrivacyPreservingAnalyticsViewModel;
 
     iget-object p3, p2, Lde/rki/coronawarnapp/util/di/DaggerApplicationComponent$MainActivitySubcomponentImpl;->factoryProvider15:Ljavax/inject/Provider;
 
@@ -324,7 +338,7 @@
 
     invoke-virtual {p4, p1, p3}, Ljava/util/LinkedHashMap;->put(Ljava/lang/Object;Ljava/lang/Object;)Ljava/lang/Object;
 
-    const-class p1, Lde/rki/coronawarnapp/ui/information/InformationFragmentViewModel;
+    const-class p1, Lde/rki/coronawarnapp/statistics/ui/stateselection/FederalStateSelectionViewModel;
 
     iget-object p3, p2, Lde/rki/coronawarnapp/util/di/DaggerApplicationComponent$MainActivitySubcomponentImpl;->factoryProvider16:Ljavax/inject/Provider;
 
@@ -334,7 +348,7 @@
 
     invoke-virtual {p4, p1, p3}, Ljava/util/LinkedHashMap;->put(Ljava/lang/Object;Ljava/lang/Object;)Ljava/lang/Object;
 
-    const-class p1, Lde/rki/coronawarnapp/bugreporting/debuglog/ui/DebugLogViewModel;
+    const-class p1, Lde/rki/coronawarnapp/ui/information/InformationFragmentViewModel;
 
     iget-object p3, p2, Lde/rki/coronawarnapp/util/di/DaggerApplicationComponent$MainActivitySubcomponentImpl;->factoryProvider17:Ljavax/inject/Provider;
 
@@ -344,7 +358,7 @@
 
     invoke-virtual {p4, p1, p3}, Ljava/util/LinkedHashMap;->put(Ljava/lang/Object;Ljava/lang/Object;)Ljava/lang/Object;
 
-    const-class p1, Lde/rki/coronawarnapp/bugreporting/debuglog/ui/upload/history/LogUploadHistoryViewModel;
+    const-class p1, Lde/rki/coronawarnapp/bugreporting/debuglog/ui/DebugLogViewModel;
 
     iget-object p3, p2, Lde/rki/coronawarnapp/util/di/DaggerApplicationComponent$MainActivitySubcomponentImpl;->factoryProvider18:Ljavax/inject/Provider;
 
@@ -354,7 +368,7 @@
 
     invoke-virtual {p4, p1, p3}, Ljava/util/LinkedHashMap;->put(Ljava/lang/Object;Ljava/lang/Object;)Ljava/lang/Object;
 
-    const-class p1, Lde/rki/coronawarnapp/bugreporting/debuglog/ui/legal/DebugLogLegalViewModel;
+    const-class p1, Lde/rki/coronawarnapp/bugreporting/debuglog/ui/upload/history/LogUploadHistoryViewModel;
 
     iget-object p3, p2, Lde/rki/coronawarnapp/util/di/DaggerApplicationComponent$MainActivitySubcomponentImpl;->factoryProvider19:Ljavax/inject/Provider;
 
@@ -364,7 +378,7 @@
 
     invoke-virtual {p4, p1, p3}, Ljava/util/LinkedHashMap;->put(Ljava/lang/Object;Ljava/lang/Object;)Ljava/lang/Object;
 
-    const-class p1, Lde/rki/coronawarnapp/bugreporting/debuglog/ui/upload/DebugLogUploadViewModel;
+    const-class p1, Lde/rki/coronawarnapp/bugreporting/debuglog/ui/legal/DebugLogLegalViewModel;
 
     iget-object p3, p2, Lde/rki/coronawarnapp/util/di/DaggerApplicationComponent$MainActivitySubcomponentImpl;->factoryProvider20:Ljavax/inject/Provider;
 
@@ -374,7 +388,7 @@
 
     invoke-virtual {p4, p1, p3}, Ljava/util/LinkedHashMap;->put(Ljava/lang/Object;Ljava/lang/Object;)Ljava/lang/Object;
 
-    const-class p1, Lde/rki/coronawarnapp/release/NewReleaseInfoViewModel;
+    const-class p1, Lde/rki/coronawarnapp/bugreporting/debuglog/ui/upload/DebugLogUploadViewModel;
 
     iget-object p3, p2, Lde/rki/coronawarnapp/util/di/DaggerApplicationComponent$MainActivitySubcomponentImpl;->factoryProvider21:Ljavax/inject/Provider;
 
@@ -384,7 +398,7 @@
 
     invoke-virtual {p4, p1, p3}, Ljava/util/LinkedHashMap;->put(Ljava/lang/Object;Ljava/lang/Object;)Ljava/lang/Object;
 
-    const-class p1, Lde/rki/coronawarnapp/datadonation/analytics/ui/input/AnalyticsUserInputViewModel;
+    const-class p1, Lde/rki/coronawarnapp/release/NewReleaseInfoViewModel;
 
     iget-object p3, p2, Lde/rki/coronawarnapp/util/di/DaggerApplicationComponent$MainActivitySubcomponentImpl;->factoryProvider22:Ljavax/inject/Provider;
 
@@ -394,7 +408,7 @@
 
     invoke-virtual {p4, p1, p3}, Ljava/util/LinkedHashMap;->put(Ljava/lang/Object;Ljava/lang/Object;)Ljava/lang/Object;
 
-    const-class p1, Lde/rki/coronawarnapp/covidcertificate/validation/ui/validationresult/failed/DccValidationFailedViewModel;
+    const-class p1, Lde/rki/coronawarnapp/datadonation/analytics/ui/input/AnalyticsUserInputViewModel;
 
     iget-object p3, p2, Lde/rki/coronawarnapp/util/di/DaggerApplicationComponent$MainActivitySubcomponentImpl;->factoryProvider23:Ljavax/inject/Provider;
 
@@ -404,7 +418,7 @@
 
     invoke-virtual {p4, p1, p3}, Ljava/util/LinkedHashMap;->put(Ljava/lang/Object;Ljava/lang/Object;)Ljava/lang/Object;
 
-    const-class p1, Lde/rki/coronawarnapp/covidcertificate/validation/ui/validationresult/open/DccValidationOpenViewModel;
+    const-class p1, Lde/rki/coronawarnapp/covidcertificate/validation/ui/validationresult/failed/DccValidationFailedViewModel;
 
     iget-object p3, p2, Lde/rki/coronawarnapp/util/di/DaggerApplicationComponent$MainActivitySubcomponentImpl;->factoryProvider24:Ljavax/inject/Provider;
 
@@ -414,7 +428,7 @@
 
     invoke-virtual {p4, p1, p3}, Ljava/util/LinkedHashMap;->put(Ljava/lang/Object;Ljava/lang/Object;)Ljava/lang/Object;
 
-    const-class p1, Lde/rki/coronawarnapp/covidcertificate/validation/ui/validationresult/passed/DccValidationPassedViewModel;
+    const-class p1, Lde/rki/coronawarnapp/covidcertificate/validation/ui/validationresult/open/DccValidationOpenViewModel;
 
     iget-object p3, p2, Lde/rki/coronawarnapp/util/di/DaggerApplicationComponent$MainActivitySubcomponentImpl;->factoryProvider25:Ljavax/inject/Provider;
 
@@ -424,7 +438,7 @@
 
     invoke-virtual {p4, p1, p3}, Ljava/util/LinkedHashMap;->put(Ljava/lang/Object;Ljava/lang/Object;)Ljava/lang/Object;
 
-    const-class p1, Lde/rki/coronawarnapp/contactdiary/ui/edit/ContactDiaryEditLocationsViewModel;
+    const-class p1, Lde/rki/coronawarnapp/covidcertificate/validation/ui/validationresult/passed/DccValidationPassedViewModel;
 
     iget-object p3, p2, Lde/rki/coronawarnapp/util/di/DaggerApplicationComponent$MainActivitySubcomponentImpl;->factoryProvider26:Ljavax/inject/Provider;
 
@@ -434,9 +448,19 @@
 
     invoke-virtual {p4, p1, p3}, Ljava/util/LinkedHashMap;->put(Ljava/lang/Object;Ljava/lang/Object;)Ljava/lang/Object;
 
+    const-class p1, Lde/rki/coronawarnapp/contactdiary/ui/edit/ContactDiaryEditLocationsViewModel;
+
+    iget-object p3, p2, Lde/rki/coronawarnapp/util/di/DaggerApplicationComponent$MainActivitySubcomponentImpl;->factoryProvider27:Ljavax/inject/Provider;
+
+    iget-object p4, v5, Ldagger/internal/AbstractMapFactory$Builder;->map:Ljava/util/LinkedHashMap;
+
+    invoke-static {p3, v1}, Ljava/util/Objects;->requireNonNull(Ljava/lang/Object;Ljava/lang/String;)Ljava/lang/Object;
+
+    invoke-virtual {p4, p1, p3}, Ljava/util/LinkedHashMap;->put(Ljava/lang/Object;Ljava/lang/Object;)Ljava/lang/Object;
+
     const-class p1, Lde/rki/coronawarnapp/contactdiary/ui/edit/ContactDiaryEditPersonsViewModel;
 
-    iget-object p2, p2, Lde/rki/coronawarnapp/util/di/DaggerApplicationComponent$MainActivitySubcomponentImpl;->factoryProvider27:Ljavax/inject/Provider;
+    iget-object p2, p2, Lde/rki/coronawarnapp/util/di/DaggerApplicationComponent$MainActivitySubcomponentImpl;->factoryProvider28:Ljavax/inject/Provider;
 
     iget-object p3, v5, Ldagger/internal/AbstractMapFactory$Builder;->map:Ljava/util/LinkedHashMap;
 
@@ -452,13 +476,13 @@
 
     move-object v0, v4
 
-    invoke-static/range {v0 .. v5}, Lde/rki/coronawarnapp/util/di/DaggerApplicationComponent$CertificatePosterFragmentSubcomponentImpl$$ExternalSyntheticOutline0;->m(Ljavax/inject/Provider;Ljava/lang/String;Ljava/util/LinkedHashMap;Ljava/lang/Class;Ljavax/inject/Provider;Ldagger/internal/MapFactory$Builder;)Ldagger/internal/MapFactory;
+    invoke-static/range {v0 .. v5}, Lde/rki/coronawarnapp/tracing/ui/TracingExplanationDialog$$ExternalSyntheticOutline0;->m(Ljavax/inject/Provider;Ljava/lang/String;Ljava/util/LinkedHashMap;Ljava/lang/Class;Ljavax/inject/Provider;Ldagger/internal/MapFactory$Builder;)Ldagger/internal/MapFactory;
 
     move-result-object p1
 
     iput-object p1, p0, Lde/rki/coronawarnapp/util/di/DaggerApplicationComponent$DccValidationPassedFragmentSubcomponentImpl;->mapOfClassOfAndCWAViewModelFactoryOfProvider:Ljavax/inject/Provider;
 
-    invoke-static {p1}, Lde/rki/coronawarnapp/util/di/DaggerApplicationComponent$CertificatePosterFragmentSubcomponentImpl$$ExternalSyntheticOutline1;->m(Ldagger/internal/MapFactory;)Ljavax/inject/Provider;
+    invoke-static {p1}, Lde/rki/coronawarnapp/util/di/DaggerApplicationComponent$BoosterInfoDetailsFragmentSubcomponentImpl$$ExternalSyntheticOutline1;->m(Ldagger/internal/MapFactory;)Ljavax/inject/Provider;
 
     move-result-object p1
 

@@ -32,7 +32,7 @@
 .end annotation
 
 .annotation system Ldalvik/annotation/SourceDebugExtension;
-    value = "SMAP\nRuleHeaderVH.kt\nKotlin\n*S Kotlin\n*F\n+ 1 RuleHeaderVH.kt\nde/rki/coronawarnapp/covidcertificate/validation/ui/validationresult/common/listitem/RuleHeaderVH$onBindData$1\n+ 2 _Collections.kt\nkotlin/collections/CollectionsKt___CollectionsKt\n+ 3 View.kt\nandroidx/core/view/ViewKt\n*L\n1#1,43:1\n798#2,11:44\n296#3,2:55\n*S KotlinDebug\n*F\n+ 1 RuleHeaderVH.kt\nde/rki/coronawarnapp/covidcertificate/validation/ui/validationresult/common/listitem/RuleHeaderVH$onBindData$1\n*L\n25#1:44,11\n27#1:55,2\n*E\n"
+    value = "SMAP\nRuleHeaderVH.kt\nKotlin\n*S Kotlin\n*F\n+ 1 RuleHeaderVH.kt\nde/rki/coronawarnapp/covidcertificate/validation/ui/validationresult/common/listitem/RuleHeaderVH$onBindData$1\n+ 2 _Collections.kt\nkotlin/collections/CollectionsKt___CollectionsKt\n+ 3 View.kt\nandroidx/core/view/ViewKt\n*L\n1#1,41:1\n798#2,11:42\n296#3,2:53\n*S KotlinDebug\n*F\n+ 1 RuleHeaderVH.kt\nde/rki/coronawarnapp/covidcertificate/validation/ui/validationresult/common/listitem/RuleHeaderVH$onBindData$1\n*L\n25#1:42,11\n27#1:53,2\n*E\n"
 .end annotation
 
 
@@ -105,7 +105,7 @@
     goto :goto_0
 
     :cond_1
-    invoke-static {v0}, Lkotlin/collections/CollectionsKt___CollectionsKt;->singleOrNull(Ljava/util/List;)Ljava/lang/Object;
+    invoke-static {v0}, Lkotlin/collections/CollectionsKt___CollectionsKt;->lastOrNull(Ljava/util/List;)Ljava/lang/Object;
 
     move-result-object p3
 

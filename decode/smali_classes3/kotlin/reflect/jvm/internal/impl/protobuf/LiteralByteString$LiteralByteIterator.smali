@@ -1,4 +1,4 @@
-.class public Lkotlin/reflect/jvm/internal/impl/protobuf/LiteralByteString$LiteralByteIterator;
+.class Lkotlin/reflect/jvm/internal/impl/protobuf/LiteralByteString$LiteralByteIterator;
 .super Ljava/lang/Object;
 .source "LiteralByteString.java"
 
@@ -19,30 +19,38 @@
 
 
 # instance fields
-.field public final limit:I
+.field private final limit:I
 
-.field public position:I
+.field private position:I
 
 .field public final synthetic this$0:Lkotlin/reflect/jvm/internal/impl/protobuf/LiteralByteString;
 
 
 # direct methods
-.method public constructor <init>(Lkotlin/reflect/jvm/internal/impl/protobuf/LiteralByteString;Lkotlin/reflect/jvm/internal/impl/protobuf/LiteralByteString$1;)V
-    .locals 0
+.method private constructor <init>(Lkotlin/reflect/jvm/internal/impl/protobuf/LiteralByteString;)V
+    .locals 1
 
     iput-object p1, p0, Lkotlin/reflect/jvm/internal/impl/protobuf/LiteralByteString$LiteralByteIterator;->this$0:Lkotlin/reflect/jvm/internal/impl/protobuf/LiteralByteString;
 
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
-    const/4 p2, 0x0
+    const/4 v0, 0x0
 
-    iput p2, p0, Lkotlin/reflect/jvm/internal/impl/protobuf/LiteralByteString$LiteralByteIterator;->position:I
+    iput v0, p0, Lkotlin/reflect/jvm/internal/impl/protobuf/LiteralByteString$LiteralByteIterator;->position:I
 
-    iget-object p1, p1, Lkotlin/reflect/jvm/internal/impl/protobuf/LiteralByteString;->bytes:[B
+    invoke-virtual {p1}, Lkotlin/reflect/jvm/internal/impl/protobuf/LiteralByteString;->size()I
 
-    array-length p1, p1
+    move-result p1
 
     iput p1, p0, Lkotlin/reflect/jvm/internal/impl/protobuf/LiteralByteString$LiteralByteIterator;->limit:I
+
+    return-void
+.end method
+
+.method public synthetic constructor <init>(Lkotlin/reflect/jvm/internal/impl/protobuf/LiteralByteString;Lkotlin/reflect/jvm/internal/impl/protobuf/LiteralByteString$1;)V
+    .locals 0
+
+    invoke-direct {p0, p1}, Lkotlin/reflect/jvm/internal/impl/protobuf/LiteralByteString$LiteralByteIterator;-><init>(Lkotlin/reflect/jvm/internal/impl/protobuf/LiteralByteString;)V
 
     return-void
 .end method
@@ -53,6 +61,18 @@
     .locals 0
 
     invoke-static {p0, p1}, Lj$/util/Iterator$-CC;->$default$forEachRemaining(Ljava/util/Iterator;Lj$/util/function/Consumer;)V
+
+    return-void
+.end method
+
+.method public synthetic forEachRemaining(Ljava/util/function/Consumer;)V
+    .locals 0
+
+    invoke-static {p1}, Lj$/util/function/Consumer$VivifiedWrapper;->convert(Ljava/util/function/Consumer;)Lj$/util/function/Consumer;
+
+    move-result-object p1
+
+    invoke-virtual {p0, p1}, Lkotlin/reflect/jvm/internal/impl/protobuf/LiteralByteString$LiteralByteIterator;->forEachRemaining(Lj$/util/function/Consumer;)V
 
     return-void
 .end method
@@ -77,7 +97,7 @@
     return v0
 .end method
 
-.method public next()Ljava/lang/Object;
+.method public next()Ljava/lang/Byte;
     .locals 1
 
     invoke-virtual {p0}, Lkotlin/reflect/jvm/internal/impl/protobuf/LiteralByteString$LiteralByteIterator;->nextByte()B
@@ -85,6 +105,16 @@
     move-result v0
 
     invoke-static {v0}, Ljava/lang/Byte;->valueOf(B)Ljava/lang/Byte;
+
+    move-result-object v0
+
+    return-object v0
+.end method
+
+.method public bridge synthetic next()Ljava/lang/Object;
+    .locals 1
+
+    invoke-virtual {p0}, Lkotlin/reflect/jvm/internal/impl/protobuf/LiteralByteString$LiteralByteIterator;->next()Ljava/lang/Byte;
 
     move-result-object v0
 

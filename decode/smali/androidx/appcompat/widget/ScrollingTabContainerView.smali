@@ -36,7 +36,7 @@
 .method public onAttachedToWindow()V
     .locals 0
 
-    invoke-super {p0}, Landroid/view/ViewGroup;->onAttachedToWindow()V
+    invoke-super {p0}, Landroid/widget/HorizontalScrollView;->onAttachedToWindow()V
 
     return-void
 .end method
@@ -44,7 +44,7 @@
 .method public onConfigurationChanged(Landroid/content/res/Configuration;)V
     .locals 5
 
-    invoke-super {p0, p1}, Landroid/view/View;->onConfigurationChanged(Landroid/content/res/Configuration;)V
+    invoke-super {p0, p1}, Landroid/widget/HorizontalScrollView;->onConfigurationChanged(Landroid/content/res/Configuration;)V
 
     invoke-virtual {p0}, Landroid/widget/HorizontalScrollView;->getContext()Landroid/content/Context;
 
@@ -113,7 +113,7 @@
 .method public onDetachedFromWindow()V
     .locals 0
 
-    invoke-super {p0}, Landroid/view/ViewGroup;->onDetachedFromWindow()V
+    invoke-super {p0}, Landroid/widget/HorizontalScrollView;->onDetachedFromWindow()V
 
     return-void
 .end method

@@ -1,4 +1,4 @@
-.class public final Lkotlin/reflect/jvm/internal/impl/types/KotlinTypeFactory$ExpandedTypeOrRefinedConstructor;
+.class final Lkotlin/reflect/jvm/internal/impl/types/KotlinTypeFactory$ExpandedTypeOrRefinedConstructor;
 .super Ljava/lang/Object;
 .source "KotlinTypeFactory.kt"
 
@@ -15,9 +15,9 @@
 
 
 # instance fields
-.field public final expandedType:Lkotlin/reflect/jvm/internal/impl/types/SimpleType;
+.field private final expandedType:Lkotlin/reflect/jvm/internal/impl/types/SimpleType;
 
-.field public final refinedConstructor:Lkotlin/reflect/jvm/internal/impl/types/TypeConstructor;
+.field private final refinedConstructor:Lkotlin/reflect/jvm/internal/impl/types/TypeConstructor;
 
 
 # direct methods
@@ -31,4 +31,22 @@
     iput-object p2, p0, Lkotlin/reflect/jvm/internal/impl/types/KotlinTypeFactory$ExpandedTypeOrRefinedConstructor;->refinedConstructor:Lkotlin/reflect/jvm/internal/impl/types/TypeConstructor;
 
     return-void
+.end method
+
+
+# virtual methods
+.method public final getExpandedType()Lkotlin/reflect/jvm/internal/impl/types/SimpleType;
+    .locals 1
+
+    iget-object v0, p0, Lkotlin/reflect/jvm/internal/impl/types/KotlinTypeFactory$ExpandedTypeOrRefinedConstructor;->expandedType:Lkotlin/reflect/jvm/internal/impl/types/SimpleType;
+
+    return-object v0
+.end method
+
+.method public final getRefinedConstructor()Lkotlin/reflect/jvm/internal/impl/types/TypeConstructor;
+    .locals 1
+
+    iget-object v0, p0, Lkotlin/reflect/jvm/internal/impl/types/KotlinTypeFactory$ExpandedTypeOrRefinedConstructor;->refinedConstructor:Lkotlin/reflect/jvm/internal/impl/types/TypeConstructor;
+
+    return-object v0
 .end method

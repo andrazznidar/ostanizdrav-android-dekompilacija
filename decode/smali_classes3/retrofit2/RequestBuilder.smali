@@ -435,8 +435,6 @@
 
     invoke-static {p2, v1}, Lkotlin/jvm/internal/Intrinsics;->checkNotNullParameter(Ljava/lang/Object;Ljava/lang/String;)V
 
-    invoke-static {p2, v1}, Lkotlin/jvm/internal/Intrinsics;->checkNotNullParameter(Ljava/lang/Object;Ljava/lang/String;)V
-
     const/4 v1, 0x0
 
     if-eqz p1, :cond_0
@@ -496,10 +494,6 @@
     new-instance v2, Lokhttp3/MultipartBody$Part;
 
     invoke-direct {v2, p1, p2, v1}, Lokhttp3/MultipartBody$Part;-><init>(Lokhttp3/Headers;Lokhttp3/RequestBody;Lkotlin/jvm/internal/DefaultConstructorMarker;)V
-
-    const-string p1, "part"
-
-    invoke-static {v2, p1}, Lkotlin/jvm/internal/Intrinsics;->checkNotNullParameter(Ljava/lang/Object;Ljava/lang/String;)V
 
     iget-object p1, v0, Lokhttp3/MultipartBody$Builder;->parts:Ljava/util/List;
 

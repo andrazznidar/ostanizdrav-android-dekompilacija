@@ -310,7 +310,7 @@
 .end method
 
 .method public getPath()Ljava/lang/String;
-    .locals 4
+    .locals 5
 
     const/16 v0, 0x24
 
@@ -325,17 +325,19 @@
 
     if-ge v1, v2, :cond_2
 
-    iget-object v2, p0, Lcom/google/gson/internal/bind/JsonTreeReader;->stack:[Ljava/lang/Object;
+    iget-object v3, p0, Lcom/google/gson/internal/bind/JsonTreeReader;->stack:[Ljava/lang/Object;
 
-    aget-object v3, v2, v1
+    aget-object v4, v3, v1
 
-    instance-of v3, v3, Lcom/google/gson/JsonArray;
+    instance-of v4, v4, Lcom/google/gson/JsonArray;
 
-    if-eqz v3, :cond_0
+    if-eqz v4, :cond_0
 
     add-int/lit8 v1, v1, 0x1
 
-    aget-object v2, v2, v1
+    if-ge v1, v2, :cond_1
+
+    aget-object v2, v3, v1
 
     instance-of v2, v2, Ljava/util/Iterator;
 
@@ -358,15 +360,17 @@
     goto :goto_1
 
     :cond_0
-    aget-object v3, v2, v1
+    aget-object v4, v3, v1
 
-    instance-of v3, v3, Lcom/google/gson/JsonObject;
+    instance-of v4, v4, Lcom/google/gson/JsonObject;
 
-    if-eqz v3, :cond_1
+    if-eqz v4, :cond_1
 
     add-int/lit8 v1, v1, 0x1
 
-    aget-object v2, v2, v1
+    if-ge v1, v2, :cond_1
+
+    aget-object v2, v3, v1
 
     instance-of v2, v2, Ljava/util/Iterator;
 
@@ -1317,11 +1321,25 @@
 .end method
 
 .method public toString()Ljava/lang/String;
-    .locals 1
+    .locals 2
 
     const-class v0, Lcom/google/gson/internal/bind/JsonTreeReader;
 
     const-string v0, "JsonTreeReader"
+
+    invoke-static {v0}, Landroid/support/v4/media/RatingCompat$$ExternalSyntheticOutline0;->m(Ljava/lang/String;)Ljava/lang/StringBuilder;
+
+    move-result-object v0
+
+    invoke-direct {p0}, Lcom/google/gson/internal/bind/JsonTreeReader;->locationString()Ljava/lang/String;
+
+    move-result-object v1
+
+    invoke-virtual {v0, v1}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+
+    invoke-virtual {v0}, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
+
+    move-result-object v0
 
     return-object v0
 .end method

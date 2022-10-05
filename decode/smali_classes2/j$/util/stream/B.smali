@@ -1,65 +1,113 @@
-.class public final synthetic Lj$/util/stream/B;
-.super Ljava/lang/Object;
-
-# interfaces
-.implements Lj$/util/function/BiConsumer;
+.class Lj$/util/stream/B;
+.super Lj$/util/stream/r0;
 
 
-# static fields
-.field public static final synthetic a:Lj$/util/stream/B;
+# instance fields
+.field public final synthetic u:I
+
+.field final synthetic v:Ljava/lang/Object;
 
 
 # direct methods
-.method static synthetic constructor <clinit>()V
-    .locals 1
-
-    new-instance v0, Lj$/util/stream/B;
-
-    invoke-direct {v0}, Lj$/util/stream/B;-><init>()V
-
-    sput-object v0, Lj$/util/stream/B;->a:Lj$/util/stream/B;
-
-    return-void
-.end method
-
-.method private synthetic constructor <init>()V
+.method public synthetic constructor <init>(Lj$/util/stream/c;Lj$/util/stream/c;IILjava/lang/Object;I)V
     .locals 0
 
-    invoke-direct {p0}, Ljava/lang/Object;-><init>()V
+    iput p6, p0, Lj$/util/stream/B;->u:I
+
+    iput-object p5, p0, Lj$/util/stream/B;->v:Ljava/lang/Object;
+
+    invoke-direct {p0, p2, p3, p4}, Lj$/util/stream/r0;-><init>(Lj$/util/stream/c;II)V
 
     return-void
 .end method
 
 
 # virtual methods
-.method public final y(Ljava/lang/Object;Ljava/lang/Object;)V
-    .locals 5
+.method f1(ILj$/util/stream/q2;)Lj$/util/stream/q2;
+    .locals 1
 
-    check-cast p1, [D
+    iget p1, p0, Lj$/util/stream/B;->u:I
 
-    check-cast p2, [D
+    const/4 v0, 0x5
 
-    const/4 v0, 0x0
+    packed-switch p1, :pswitch_data_0
 
-    aget-wide v0, p2, v0
+    goto :goto_0
 
-    invoke-static {p1, v0, v1}, Lj$/util/stream/l;->b([DD)[D
+    :pswitch_0
+    new-instance p1, Lj$/util/stream/r;
+
+    invoke-direct {p1, p0, p2}, Lj$/util/stream/r;-><init>(Lj$/util/stream/B;Lj$/util/stream/q2;)V
+
+    return-object p1
+
+    :pswitch_1
+    new-instance p1, Lj$/util/stream/o0;
+
+    const/4 v0, 0x7
+
+    invoke-direct {p1, p0, p2, v0}, Lj$/util/stream/o0;-><init>(Lj$/util/stream/c;Lj$/util/stream/q2;I)V
+
+    return-object p1
+
+    :pswitch_2
+    new-instance p1, Lj$/util/stream/o0;
+
+    const/4 v0, 0x6
+
+    invoke-direct {p1, p0, p2, v0}, Lj$/util/stream/o0;-><init>(Lj$/util/stream/c;Lj$/util/stream/q2;I)V
+
+    return-object p1
+
+    :pswitch_3
+    new-instance p1, Lj$/util/stream/o0;
+
+    invoke-direct {p1, p0, p2, v0}, Lj$/util/stream/o0;-><init>(Lj$/util/stream/c;Lj$/util/stream/q2;I)V
+
+    return-object p1
+
+    :pswitch_4
+    new-instance p1, Lj$/util/stream/o0;
 
     const/4 v0, 0x1
 
-    aget-wide v0, p2, v0
+    invoke-direct {p1, p0, p2, v0}, Lj$/util/stream/o0;-><init>(Lj$/util/stream/c;Lj$/util/stream/q2;I)V
 
-    invoke-static {p1, v0, v1}, Lj$/util/stream/l;->b([DD)[D
+    return-object p1
 
-    const/4 v0, 0x2
+    :pswitch_5
+    new-instance p1, Lj$/util/stream/e0;
 
-    aget-wide v1, p1, v0
+    invoke-direct {p1, p0, p2, v0}, Lj$/util/stream/e0;-><init>(Lj$/util/stream/c;Lj$/util/stream/q2;I)V
 
-    aget-wide v3, p2, v0
+    return-object p1
 
-    add-double/2addr v1, v3
+    :pswitch_6
+    new-instance p1, Lj$/util/stream/x;
 
-    aput-wide v1, p1, v0
+    const/4 v0, 0x3
 
-    return-void
+    invoke-direct {p1, p0, p2, v0}, Lj$/util/stream/x;-><init>(Lj$/util/stream/c;Lj$/util/stream/q2;I)V
+
+    return-object p1
+
+    :goto_0
+    new-instance p1, Lj$/util/stream/c2;
+
+    const/4 v0, 0x4
+
+    invoke-direct {p1, p0, p2, v0}, Lj$/util/stream/c2;-><init>(Lj$/util/stream/c;Lj$/util/stream/q2;I)V
+
+    return-object p1
+
+    :pswitch_data_0
+    .packed-switch 0x0
+        :pswitch_6
+        :pswitch_5
+        :pswitch_4
+        :pswitch_3
+        :pswitch_2
+        :pswitch_1
+        :pswitch_0
+    .end packed-switch
 .end method

@@ -1,4 +1,4 @@
-.class public final Lkotlin/reflect/jvm/internal/impl/utils/FunctionsKt$ALWAYS_NULL$1;
+.class final Lkotlin/reflect/jvm/internal/impl/utils/FunctionsKt$ALWAYS_NULL$1;
 .super Lkotlin/jvm/internal/Lambda;
 .source "functions.kt"
 
@@ -47,6 +47,16 @@
 
 # virtual methods
 .method public bridge synthetic invoke(Ljava/lang/Object;)Ljava/lang/Object;
+    .locals 0
+
+    invoke-virtual {p0, p1}, Lkotlin/reflect/jvm/internal/impl/utils/FunctionsKt$ALWAYS_NULL$1;->invoke(Ljava/lang/Object;)Ljava/lang/Void;
+
+    move-result-object p1
+
+    return-object p1
+.end method
+
+.method public final invoke(Ljava/lang/Object;)Ljava/lang/Void;
     .locals 0
 
     const/4 p1, 0x0

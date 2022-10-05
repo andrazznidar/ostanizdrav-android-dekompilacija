@@ -117,7 +117,7 @@
 
     sget p4, Lcom/google/android/material/R$attr;->colorPrimary:I
 
-    invoke-static {p1, p4, v2}, Ldagger/android/AndroidInjection;->getColor(Landroid/content/Context;II)I
+    invoke-static {p1, p4, v2}, Lkotlin/math/MathKt__MathJVMKt;->getColor(Landroid/content/Context;II)I
 
     move-result p4
 
@@ -221,7 +221,7 @@
 
     iget p3, p0, Lcom/google/android/material/progressindicator/BaseProgressIndicatorSpec;->trackColor:I
 
-    invoke-static {p3, p1}, Ldagger/android/AndroidInjection;->compositeARGBWithAlpha(II)I
+    invoke-static {p3, p1}, Lkotlin/math/MathKt__MathJVMKt;->compositeARGBWithAlpha(II)I
 
     move-result p1
 

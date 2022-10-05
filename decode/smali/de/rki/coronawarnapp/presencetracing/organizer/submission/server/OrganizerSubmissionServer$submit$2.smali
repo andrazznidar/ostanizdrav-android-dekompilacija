@@ -26,7 +26,7 @@
     f = "OrganizerSubmissionServer.kt"
     l = {
         0x21,
-        0x34
+        0x35
     }
     m = "invokeSuspend"
 .end annotation

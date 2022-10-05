@@ -1,37 +1,93 @@
-.class public final synthetic Lcom/google/android/gms/signin/zaf;
+.class public synthetic Lcom/google/android/gms/signin/zaf;
 .super Ljava/lang/Object;
 .source "com.google.android.gms:play-services-base@@17.6.0"
 
 
 # direct methods
-.method public static final addEmojiFilter(Lcom/google/android/material/textfield/TextInputEditText;)Lcom/google/android/material/textfield/TextInputEditText;
-    .locals 4
+.method public static final toContactDiaryLocationEntity(Lde/rki/coronawarnapp/contactdiary/model/ContactDiaryLocation;)Lde/rki/coronawarnapp/contactdiary/storage/entity/ContactDiaryLocationEntity;
+    .locals 8
 
-    invoke-virtual {p0}, Landroid/widget/EditText;->getFilters()[Landroid/text/InputFilter;
+    const-string v0, "<this>"
 
-    move-result-object v0
+    invoke-static {p0, v0}, Lkotlin/jvm/internal/Intrinsics;->checkNotNullParameter(Ljava/lang/Object;Ljava/lang/String;)V
 
-    const-string v1, "filters"
+    new-instance v0, Lde/rki/coronawarnapp/contactdiary/storage/entity/ContactDiaryLocationEntity;
 
-    invoke-static {v0, v1}, Lkotlin/jvm/internal/Intrinsics;->checkNotNullExpressionValue(Ljava/lang/Object;Ljava/lang/String;)V
+    invoke-interface {p0}, Lde/rki/coronawarnapp/contactdiary/model/ContactDiaryLocation;->getLocationId()J
 
-    new-instance v1, Lde/rki/coronawarnapp/ui/view/EmojiFilter;
+    move-result-wide v2
 
-    invoke-direct {v1}, Lde/rki/coronawarnapp/ui/view/EmojiFilter;-><init>()V
+    invoke-interface {p0}, Lde/rki/coronawarnapp/contactdiary/model/ContactDiaryLocation;->getLocationName()Ljava/lang/String;
 
-    array-length v2, v0
+    move-result-object v1
 
-    add-int/lit8 v3, v2, 0x1
+    invoke-static {v1}, Lcom/google/android/gms/signin/zaf;->trimMaxCharacters(Ljava/lang/String;)Ljava/lang/String;
 
-    invoke-static {v0, v3}, Ljava/util/Arrays;->copyOf([Ljava/lang/Object;I)[Ljava/lang/Object;
+    move-result-object v4
 
-    move-result-object v0
+    invoke-interface {p0}, Lde/rki/coronawarnapp/contactdiary/model/ContactDiaryLocation;->getPhoneNumber()Ljava/lang/String;
 
-    aput-object v1, v0, v2
+    move-result-object v1
 
-    check-cast v0, [Landroid/text/InputFilter;
+    const/4 v5, 0x0
 
-    invoke-virtual {p0, v0}, Landroid/widget/EditText;->setFilters([Landroid/text/InputFilter;)V
+    if-nez v1, :cond_0
+
+    move-object v6, v5
+
+    goto :goto_0
+
+    :cond_0
+    invoke-static {v1}, Lcom/google/android/gms/signin/zaf;->trimMaxCharacters(Ljava/lang/String;)Ljava/lang/String;
+
+    move-result-object v1
+
+    move-object v6, v1
+
+    :goto_0
+    invoke-interface {p0}, Lde/rki/coronawarnapp/contactdiary/model/ContactDiaryLocation;->getEmailAddress()Ljava/lang/String;
+
+    move-result-object v1
+
+    if-nez v1, :cond_1
+
+    move-object v7, v5
+
+    goto :goto_1
+
+    :cond_1
+    invoke-static {v1}, Lcom/google/android/gms/signin/zaf;->trimMaxCharacters(Ljava/lang/String;)Ljava/lang/String;
+
+    move-result-object v1
+
+    move-object v7, v1
+
+    :goto_1
+    invoke-interface {p0}, Lde/rki/coronawarnapp/contactdiary/model/ContactDiaryLocation;->getTraceLocationID()Lokio/ByteString;
+
+    move-result-object p0
+
+    move-object v1, v0
+
+    move-object v5, v6
+
+    move-object v6, v7
+
+    move-object v7, p0
+
+    invoke-direct/range {v1 .. v7}, Lde/rki/coronawarnapp/contactdiary/storage/entity/ContactDiaryLocationEntity;-><init>(JLjava/lang/String;Ljava/lang/String;Ljava/lang/String;Lokio/ByteString;)V
+
+    return-object v0
+.end method
+
+.method public static final trimMaxCharacters(Ljava/lang/String;)Ljava/lang/String;
+    .locals 1
+
+    const/16 v0, 0xfa
+
+    invoke-static {p0, v0}, Lkotlinx/coroutines/channels/ChannelsKt;->trimToLength(Ljava/lang/String;I)Ljava/lang/String;
+
+    move-result-object p0
 
     return-object p0
 .end method

@@ -25,26 +25,6 @@
     .end annotation
 .end method
 
-.method public abstract Add(Ljava/lang/Object;Ljava/lang/Object;Lcom/upokecenter/numbers/EContext;)Ljava/lang/Object;
-    .annotation system Ldalvik/annotation/Signature;
-        value = {
-            "(TT;TT;",
-            "Lcom/upokecenter/numbers/EContext;",
-            ")TT;"
-        }
-    .end annotation
-.end method
-
-.method public abstract AddEx(Ljava/lang/Object;Ljava/lang/Object;Lcom/upokecenter/numbers/EContext;Z)Ljava/lang/Object;
-    .annotation system Ldalvik/annotation/Signature;
-        value = {
-            "(TT;TT;",
-            "Lcom/upokecenter/numbers/EContext;",
-            "Z)TT;"
-        }
-    .end annotation
-.end method
-
 .method public abstract Divide(Ljava/lang/Object;Ljava/lang/Object;Lcom/upokecenter/numbers/EContext;)Ljava/lang/Object;
     .annotation system Ldalvik/annotation/Signature;
         value = {
@@ -65,30 +45,10 @@
     .end annotation
 .end method
 
-.method public abstract Multiply(Ljava/lang/Object;Ljava/lang/Object;Lcom/upokecenter/numbers/EContext;)Ljava/lang/Object;
-    .annotation system Ldalvik/annotation/Signature;
-        value = {
-            "(TT;TT;",
-            "Lcom/upokecenter/numbers/EContext;",
-            ")TT;"
-        }
-    .end annotation
-.end method
-
 .method public abstract NextPlus(Ljava/lang/Object;Lcom/upokecenter/numbers/EContext;)Ljava/lang/Object;
     .annotation system Ldalvik/annotation/Signature;
         value = {
             "(TT;",
-            "Lcom/upokecenter/numbers/EContext;",
-            ")TT;"
-        }
-    .end annotation
-.end method
-
-.method public abstract Quantize(Ljava/lang/Object;Ljava/lang/Object;Lcom/upokecenter/numbers/EContext;)Ljava/lang/Object;
-    .annotation system Ldalvik/annotation/Signature;
-        value = {
-            "(TT;TT;",
             "Lcom/upokecenter/numbers/EContext;",
             ")TT;"
         }

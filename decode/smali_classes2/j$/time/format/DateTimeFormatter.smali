@@ -13,7 +13,7 @@
 
 
 # instance fields
-.field private final a:Lj$/time/format/g$a;
+.field private final a:Lj$/time/format/f;
 
 .field private final b:Ljava/util/Locale;
 
@@ -32,99 +32,97 @@
 .method static constructor <clinit>()V
     .locals 18
 
-    new-instance v0, Lj$/time/format/g;
+    new-instance v0, Lj$/time/format/w;
 
-    invoke-direct {v0}, Lj$/time/format/g;-><init>()V
+    invoke-direct {v0}, Lj$/time/format/w;-><init>()V
 
     sget-object v1, Lj$/time/temporal/a;->YEAR:Lj$/time/temporal/a;
 
-    sget-object v2, Lj$/time/format/F;->EXCEEDS_PAD:Lj$/time/format/F;
+    const/4 v2, 0x4
 
-    const/4 v3, 0x4
+    const/16 v3, 0xa
 
-    const/16 v4, 0xa
+    const/4 v4, 0x5
 
-    invoke-virtual {v0, v1, v3, v4, v2}, Lj$/time/format/g;->p(Lj$/time/temporal/o;IILj$/time/format/F;)Lj$/time/format/g;
-
-    move-result-object v0
+    invoke-virtual {v0, v1, v2, v3, v4}, Lj$/time/format/w;->p(Lj$/time/temporal/o;III)Lj$/time/format/w;
 
     const/16 v5, 0x2d
 
-    invoke-virtual {v0, v5}, Lj$/time/format/g;->e(C)Lj$/time/format/g;
+    invoke-virtual {v0, v5}, Lj$/time/format/w;->e(C)Lj$/time/format/w;
 
     sget-object v6, Lj$/time/temporal/a;->MONTH_OF_YEAR:Lj$/time/temporal/a;
 
     const/4 v7, 0x2
 
-    invoke-virtual {v0, v6, v7}, Lj$/time/format/g;->o(Lj$/time/temporal/o;I)Lj$/time/format/g;
+    invoke-virtual {v0, v6, v7}, Lj$/time/format/w;->o(Lj$/time/temporal/o;I)Lj$/time/format/w;
 
-    invoke-virtual {v0, v5}, Lj$/time/format/g;->e(C)Lj$/time/format/g;
+    invoke-virtual {v0, v5}, Lj$/time/format/w;->e(C)Lj$/time/format/w;
 
     sget-object v8, Lj$/time/temporal/a;->DAY_OF_MONTH:Lj$/time/temporal/a;
 
-    invoke-virtual {v0, v8, v7}, Lj$/time/format/g;->o(Lj$/time/temporal/o;I)Lj$/time/format/g;
+    invoke-virtual {v0, v8, v7}, Lj$/time/format/w;->o(Lj$/time/temporal/o;I)Lj$/time/format/w;
 
     sget-object v9, Lj$/time/format/E;->STRICT:Lj$/time/format/E;
 
     sget-object v10, Lj$/time/chrono/h;->a:Lj$/time/chrono/h;
 
-    invoke-virtual {v0, v9, v10}, Lj$/time/format/g;->x(Lj$/time/format/E;Lj$/time/chrono/g;)Lj$/time/format/DateTimeFormatter;
+    invoke-virtual {v0, v9, v10}, Lj$/time/format/w;->x(Lj$/time/format/E;Lj$/time/chrono/g;)Lj$/time/format/DateTimeFormatter;
 
     move-result-object v0
 
     sput-object v0, Lj$/time/format/DateTimeFormatter;->h:Lj$/time/format/DateTimeFormatter;
 
-    new-instance v11, Lj$/time/format/g;
+    new-instance v11, Lj$/time/format/w;
 
-    invoke-direct {v11}, Lj$/time/format/g;-><init>()V
+    invoke-direct {v11}, Lj$/time/format/w;-><init>()V
 
-    invoke-virtual {v11}, Lj$/time/format/g;->t()Lj$/time/format/g;
+    invoke-virtual {v11}, Lj$/time/format/w;->t()Lj$/time/format/w;
 
-    invoke-virtual {v11, v0}, Lj$/time/format/g;->a(Lj$/time/format/DateTimeFormatter;)Lj$/time/format/g;
+    invoke-virtual {v11, v0}, Lj$/time/format/w;->a(Lj$/time/format/DateTimeFormatter;)Lj$/time/format/w;
 
-    invoke-virtual {v11}, Lj$/time/format/g;->i()Lj$/time/format/g;
+    invoke-virtual {v11}, Lj$/time/format/w;->i()Lj$/time/format/w;
 
-    invoke-virtual {v11, v9, v10}, Lj$/time/format/g;->x(Lj$/time/format/E;Lj$/time/chrono/g;)Lj$/time/format/DateTimeFormatter;
+    invoke-virtual {v11, v9, v10}, Lj$/time/format/w;->x(Lj$/time/format/E;Lj$/time/chrono/g;)Lj$/time/format/DateTimeFormatter;
 
-    new-instance v11, Lj$/time/format/g;
+    new-instance v11, Lj$/time/format/w;
 
-    invoke-direct {v11}, Lj$/time/format/g;-><init>()V
+    invoke-direct {v11}, Lj$/time/format/w;-><init>()V
 
-    invoke-virtual {v11}, Lj$/time/format/g;->t()Lj$/time/format/g;
+    invoke-virtual {v11}, Lj$/time/format/w;->t()Lj$/time/format/w;
 
-    invoke-virtual {v11, v0}, Lj$/time/format/g;->a(Lj$/time/format/DateTimeFormatter;)Lj$/time/format/g;
+    invoke-virtual {v11, v0}, Lj$/time/format/w;->a(Lj$/time/format/DateTimeFormatter;)Lj$/time/format/w;
 
-    invoke-virtual {v11}, Lj$/time/format/g;->s()Lj$/time/format/g;
+    invoke-virtual {v11}, Lj$/time/format/w;->s()Lj$/time/format/w;
 
-    invoke-virtual {v11}, Lj$/time/format/g;->i()Lj$/time/format/g;
+    invoke-virtual {v11}, Lj$/time/format/w;->i()Lj$/time/format/w;
 
-    invoke-virtual {v11, v9, v10}, Lj$/time/format/g;->x(Lj$/time/format/E;Lj$/time/chrono/g;)Lj$/time/format/DateTimeFormatter;
+    invoke-virtual {v11, v9, v10}, Lj$/time/format/w;->x(Lj$/time/format/E;Lj$/time/chrono/g;)Lj$/time/format/DateTimeFormatter;
 
-    new-instance v11, Lj$/time/format/g;
+    new-instance v11, Lj$/time/format/w;
 
-    invoke-direct {v11}, Lj$/time/format/g;-><init>()V
+    invoke-direct {v11}, Lj$/time/format/w;-><init>()V
 
     sget-object v12, Lj$/time/temporal/a;->HOUR_OF_DAY:Lj$/time/temporal/a;
 
-    invoke-virtual {v11, v12, v7}, Lj$/time/format/g;->o(Lj$/time/temporal/o;I)Lj$/time/format/g;
+    invoke-virtual {v11, v12, v7}, Lj$/time/format/w;->o(Lj$/time/temporal/o;I)Lj$/time/format/w;
 
     const/16 v13, 0x3a
 
-    invoke-virtual {v11, v13}, Lj$/time/format/g;->e(C)Lj$/time/format/g;
+    invoke-virtual {v11, v13}, Lj$/time/format/w;->e(C)Lj$/time/format/w;
 
     sget-object v14, Lj$/time/temporal/a;->MINUTE_OF_HOUR:Lj$/time/temporal/a;
 
-    invoke-virtual {v11, v14, v7}, Lj$/time/format/g;->o(Lj$/time/temporal/o;I)Lj$/time/format/g;
+    invoke-virtual {v11, v14, v7}, Lj$/time/format/w;->o(Lj$/time/temporal/o;I)Lj$/time/format/w;
 
-    invoke-virtual {v11}, Lj$/time/format/g;->s()Lj$/time/format/g;
+    invoke-virtual {v11}, Lj$/time/format/w;->s()Lj$/time/format/w;
 
-    invoke-virtual {v11, v13}, Lj$/time/format/g;->e(C)Lj$/time/format/g;
+    invoke-virtual {v11, v13}, Lj$/time/format/w;->e(C)Lj$/time/format/w;
 
     sget-object v15, Lj$/time/temporal/a;->SECOND_OF_MINUTE:Lj$/time/temporal/a;
 
-    invoke-virtual {v11, v15, v7}, Lj$/time/format/g;->o(Lj$/time/temporal/o;I)Lj$/time/format/g;
+    invoke-virtual {v11, v15, v7}, Lj$/time/format/w;->o(Lj$/time/temporal/o;I)Lj$/time/format/w;
 
-    invoke-virtual {v11}, Lj$/time/format/g;->s()Lj$/time/format/g;
+    invoke-virtual {v11}, Lj$/time/format/w;->s()Lj$/time/format/w;
 
     sget-object v13, Lj$/time/temporal/a;->NANO_OF_SECOND:Lj$/time/temporal/a;
 
@@ -132,229 +130,225 @@
 
     const/16 v5, 0x9
 
-    const/4 v3, 0x1
+    const/4 v2, 0x1
 
-    invoke-virtual {v11, v13, v7, v5, v3}, Lj$/time/format/g;->b(Lj$/time/temporal/o;IIZ)Lj$/time/format/g;
+    invoke-virtual {v11, v13, v7, v5, v2}, Lj$/time/format/w;->b(Lj$/time/temporal/o;IIZ)Lj$/time/format/w;
 
     const/4 v5, 0x0
 
-    invoke-virtual {v11, v9, v5}, Lj$/time/format/g;->x(Lj$/time/format/E;Lj$/time/chrono/g;)Lj$/time/format/DateTimeFormatter;
+    invoke-virtual {v11, v9, v5}, Lj$/time/format/w;->x(Lj$/time/format/E;Lj$/time/chrono/g;)Lj$/time/format/DateTimeFormatter;
 
     move-result-object v7
 
-    new-instance v11, Lj$/time/format/g;
+    new-instance v11, Lj$/time/format/w;
 
-    invoke-direct {v11}, Lj$/time/format/g;-><init>()V
+    invoke-direct {v11}, Lj$/time/format/w;-><init>()V
 
-    invoke-virtual {v11}, Lj$/time/format/g;->t()Lj$/time/format/g;
+    invoke-virtual {v11}, Lj$/time/format/w;->t()Lj$/time/format/w;
 
-    invoke-virtual {v11, v7}, Lj$/time/format/g;->a(Lj$/time/format/DateTimeFormatter;)Lj$/time/format/g;
+    invoke-virtual {v11, v7}, Lj$/time/format/w;->a(Lj$/time/format/DateTimeFormatter;)Lj$/time/format/w;
 
-    invoke-virtual {v11}, Lj$/time/format/g;->i()Lj$/time/format/g;
+    invoke-virtual {v11}, Lj$/time/format/w;->i()Lj$/time/format/w;
 
-    invoke-virtual {v11, v9, v5}, Lj$/time/format/g;->x(Lj$/time/format/E;Lj$/time/chrono/g;)Lj$/time/format/DateTimeFormatter;
+    invoke-virtual {v11, v9, v5}, Lj$/time/format/w;->x(Lj$/time/format/E;Lj$/time/chrono/g;)Lj$/time/format/DateTimeFormatter;
 
-    new-instance v11, Lj$/time/format/g;
+    new-instance v11, Lj$/time/format/w;
 
-    invoke-direct {v11}, Lj$/time/format/g;-><init>()V
+    invoke-direct {v11}, Lj$/time/format/w;-><init>()V
 
-    invoke-virtual {v11}, Lj$/time/format/g;->t()Lj$/time/format/g;
+    invoke-virtual {v11}, Lj$/time/format/w;->t()Lj$/time/format/w;
 
-    invoke-virtual {v11, v7}, Lj$/time/format/g;->a(Lj$/time/format/DateTimeFormatter;)Lj$/time/format/g;
+    invoke-virtual {v11, v7}, Lj$/time/format/w;->a(Lj$/time/format/DateTimeFormatter;)Lj$/time/format/w;
 
-    invoke-virtual {v11}, Lj$/time/format/g;->s()Lj$/time/format/g;
+    invoke-virtual {v11}, Lj$/time/format/w;->s()Lj$/time/format/w;
 
-    invoke-virtual {v11}, Lj$/time/format/g;->i()Lj$/time/format/g;
+    invoke-virtual {v11}, Lj$/time/format/w;->i()Lj$/time/format/w;
 
-    invoke-virtual {v11, v9, v5}, Lj$/time/format/g;->x(Lj$/time/format/E;Lj$/time/chrono/g;)Lj$/time/format/DateTimeFormatter;
+    invoke-virtual {v11, v9, v5}, Lj$/time/format/w;->x(Lj$/time/format/E;Lj$/time/chrono/g;)Lj$/time/format/DateTimeFormatter;
 
-    new-instance v11, Lj$/time/format/g;
+    new-instance v11, Lj$/time/format/w;
 
-    invoke-direct {v11}, Lj$/time/format/g;-><init>()V
+    invoke-direct {v11}, Lj$/time/format/w;-><init>()V
 
-    invoke-virtual {v11}, Lj$/time/format/g;->t()Lj$/time/format/g;
+    invoke-virtual {v11}, Lj$/time/format/w;->t()Lj$/time/format/w;
 
-    invoke-virtual {v11, v0}, Lj$/time/format/g;->a(Lj$/time/format/DateTimeFormatter;)Lj$/time/format/g;
+    invoke-virtual {v11, v0}, Lj$/time/format/w;->a(Lj$/time/format/DateTimeFormatter;)Lj$/time/format/w;
 
     const/16 v0, 0x54
 
-    invoke-virtual {v11, v0}, Lj$/time/format/g;->e(C)Lj$/time/format/g;
+    invoke-virtual {v11, v0}, Lj$/time/format/w;->e(C)Lj$/time/format/w;
 
-    invoke-virtual {v11, v7}, Lj$/time/format/g;->a(Lj$/time/format/DateTimeFormatter;)Lj$/time/format/g;
+    invoke-virtual {v11, v7}, Lj$/time/format/w;->a(Lj$/time/format/DateTimeFormatter;)Lj$/time/format/w;
 
-    invoke-virtual {v11, v9, v10}, Lj$/time/format/g;->x(Lj$/time/format/E;Lj$/time/chrono/g;)Lj$/time/format/DateTimeFormatter;
+    invoke-virtual {v11, v9, v10}, Lj$/time/format/w;->x(Lj$/time/format/E;Lj$/time/chrono/g;)Lj$/time/format/DateTimeFormatter;
 
     move-result-object v0
 
-    new-instance v7, Lj$/time/format/g;
+    new-instance v7, Lj$/time/format/w;
 
-    invoke-direct {v7}, Lj$/time/format/g;-><init>()V
+    invoke-direct {v7}, Lj$/time/format/w;-><init>()V
 
-    invoke-virtual {v7}, Lj$/time/format/g;->t()Lj$/time/format/g;
+    invoke-virtual {v7}, Lj$/time/format/w;->t()Lj$/time/format/w;
 
-    invoke-virtual {v7, v0}, Lj$/time/format/g;->a(Lj$/time/format/DateTimeFormatter;)Lj$/time/format/g;
+    invoke-virtual {v7, v0}, Lj$/time/format/w;->a(Lj$/time/format/DateTimeFormatter;)Lj$/time/format/w;
 
-    invoke-virtual {v7}, Lj$/time/format/g;->i()Lj$/time/format/g;
+    invoke-virtual {v7}, Lj$/time/format/w;->i()Lj$/time/format/w;
 
-    invoke-virtual {v7, v9, v10}, Lj$/time/format/g;->x(Lj$/time/format/E;Lj$/time/chrono/g;)Lj$/time/format/DateTimeFormatter;
+    invoke-virtual {v7, v9, v10}, Lj$/time/format/w;->x(Lj$/time/format/E;Lj$/time/chrono/g;)Lj$/time/format/DateTimeFormatter;
 
     move-result-object v7
 
     sput-object v7, Lj$/time/format/DateTimeFormatter;->ISO_OFFSET_DATE_TIME:Lj$/time/format/DateTimeFormatter;
 
-    new-instance v11, Lj$/time/format/g;
+    new-instance v11, Lj$/time/format/w;
 
-    invoke-direct {v11}, Lj$/time/format/g;-><init>()V
+    invoke-direct {v11}, Lj$/time/format/w;-><init>()V
 
-    invoke-virtual {v11, v7}, Lj$/time/format/g;->a(Lj$/time/format/DateTimeFormatter;)Lj$/time/format/g;
+    invoke-virtual {v11, v7}, Lj$/time/format/w;->a(Lj$/time/format/DateTimeFormatter;)Lj$/time/format/w;
 
-    invoke-virtual {v11}, Lj$/time/format/g;->s()Lj$/time/format/g;
+    invoke-virtual {v11}, Lj$/time/format/w;->s()Lj$/time/format/w;
 
     const/16 v7, 0x5b
 
-    invoke-virtual {v11, v7}, Lj$/time/format/g;->e(C)Lj$/time/format/g;
+    invoke-virtual {v11, v7}, Lj$/time/format/w;->e(C)Lj$/time/format/w;
 
-    invoke-virtual {v11}, Lj$/time/format/g;->u()Lj$/time/format/g;
+    invoke-virtual {v11}, Lj$/time/format/w;->u()Lj$/time/format/w;
 
-    invoke-virtual {v11}, Lj$/time/format/g;->q()Lj$/time/format/g;
+    invoke-virtual {v11}, Lj$/time/format/w;->q()Lj$/time/format/w;
 
     const/16 v13, 0x5d
 
-    invoke-virtual {v11, v13}, Lj$/time/format/g;->e(C)Lj$/time/format/g;
+    invoke-virtual {v11, v13}, Lj$/time/format/w;->e(C)Lj$/time/format/w;
 
-    invoke-virtual {v11, v9, v10}, Lj$/time/format/g;->x(Lj$/time/format/E;Lj$/time/chrono/g;)Lj$/time/format/DateTimeFormatter;
+    invoke-virtual {v11, v9, v10}, Lj$/time/format/w;->x(Lj$/time/format/E;Lj$/time/chrono/g;)Lj$/time/format/DateTimeFormatter;
 
     move-result-object v11
 
     sput-object v11, Lj$/time/format/DateTimeFormatter;->i:Lj$/time/format/DateTimeFormatter;
 
-    new-instance v11, Lj$/time/format/g;
+    new-instance v11, Lj$/time/format/w;
 
-    invoke-direct {v11}, Lj$/time/format/g;-><init>()V
+    invoke-direct {v11}, Lj$/time/format/w;-><init>()V
 
-    invoke-virtual {v11, v0}, Lj$/time/format/g;->a(Lj$/time/format/DateTimeFormatter;)Lj$/time/format/g;
+    invoke-virtual {v11, v0}, Lj$/time/format/w;->a(Lj$/time/format/DateTimeFormatter;)Lj$/time/format/w;
 
-    invoke-virtual {v11}, Lj$/time/format/g;->s()Lj$/time/format/g;
+    invoke-virtual {v11}, Lj$/time/format/w;->s()Lj$/time/format/w;
 
-    invoke-virtual {v11}, Lj$/time/format/g;->i()Lj$/time/format/g;
+    invoke-virtual {v11}, Lj$/time/format/w;->i()Lj$/time/format/w;
 
-    invoke-virtual {v11}, Lj$/time/format/g;->s()Lj$/time/format/g;
+    invoke-virtual {v11}, Lj$/time/format/w;->s()Lj$/time/format/w;
 
-    invoke-virtual {v11, v7}, Lj$/time/format/g;->e(C)Lj$/time/format/g;
+    invoke-virtual {v11, v7}, Lj$/time/format/w;->e(C)Lj$/time/format/w;
 
-    invoke-virtual {v11}, Lj$/time/format/g;->u()Lj$/time/format/g;
+    invoke-virtual {v11}, Lj$/time/format/w;->u()Lj$/time/format/w;
 
-    invoke-virtual {v11}, Lj$/time/format/g;->q()Lj$/time/format/g;
+    invoke-virtual {v11}, Lj$/time/format/w;->q()Lj$/time/format/w;
 
-    invoke-virtual {v11, v13}, Lj$/time/format/g;->e(C)Lj$/time/format/g;
+    invoke-virtual {v11, v13}, Lj$/time/format/w;->e(C)Lj$/time/format/w;
 
-    invoke-virtual {v11, v9, v10}, Lj$/time/format/g;->x(Lj$/time/format/E;Lj$/time/chrono/g;)Lj$/time/format/DateTimeFormatter;
+    invoke-virtual {v11, v9, v10}, Lj$/time/format/w;->x(Lj$/time/format/E;Lj$/time/chrono/g;)Lj$/time/format/DateTimeFormatter;
 
-    new-instance v0, Lj$/time/format/g;
+    new-instance v0, Lj$/time/format/w;
 
-    invoke-direct {v0}, Lj$/time/format/g;-><init>()V
+    invoke-direct {v0}, Lj$/time/format/w;-><init>()V
 
-    invoke-virtual {v0}, Lj$/time/format/g;->t()Lj$/time/format/g;
+    invoke-virtual {v0}, Lj$/time/format/w;->t()Lj$/time/format/w;
 
     const/4 v7, 0x4
 
-    invoke-virtual {v0, v1, v7, v4, v2}, Lj$/time/format/g;->p(Lj$/time/temporal/o;IILj$/time/format/F;)Lj$/time/format/g;
-
-    move-result-object v0
+    invoke-virtual {v0, v1, v7, v3, v4}, Lj$/time/format/w;->p(Lj$/time/temporal/o;III)Lj$/time/format/w;
 
     const/16 v7, 0x2d
 
-    invoke-virtual {v0, v7}, Lj$/time/format/g;->e(C)Lj$/time/format/g;
+    invoke-virtual {v0, v7}, Lj$/time/format/w;->e(C)Lj$/time/format/w;
 
     sget-object v7, Lj$/time/temporal/a;->DAY_OF_YEAR:Lj$/time/temporal/a;
 
     const/4 v11, 0x3
 
-    invoke-virtual {v0, v7, v11}, Lj$/time/format/g;->o(Lj$/time/temporal/o;I)Lj$/time/format/g;
+    invoke-virtual {v0, v7, v11}, Lj$/time/format/w;->o(Lj$/time/temporal/o;I)Lj$/time/format/w;
 
-    invoke-virtual {v0}, Lj$/time/format/g;->s()Lj$/time/format/g;
+    invoke-virtual {v0}, Lj$/time/format/w;->s()Lj$/time/format/w;
 
-    invoke-virtual {v0}, Lj$/time/format/g;->i()Lj$/time/format/g;
+    invoke-virtual {v0}, Lj$/time/format/w;->i()Lj$/time/format/w;
 
-    invoke-virtual {v0, v9, v10}, Lj$/time/format/g;->x(Lj$/time/format/E;Lj$/time/chrono/g;)Lj$/time/format/DateTimeFormatter;
+    invoke-virtual {v0, v9, v10}, Lj$/time/format/w;->x(Lj$/time/format/E;Lj$/time/chrono/g;)Lj$/time/format/DateTimeFormatter;
 
-    new-instance v0, Lj$/time/format/g;
+    new-instance v0, Lj$/time/format/w;
 
-    invoke-direct {v0}, Lj$/time/format/g;-><init>()V
+    invoke-direct {v0}, Lj$/time/format/w;-><init>()V
 
-    invoke-virtual {v0}, Lj$/time/format/g;->t()Lj$/time/format/g;
+    invoke-virtual {v0}, Lj$/time/format/w;->t()Lj$/time/format/w;
 
     sget-object v7, Lj$/time/temporal/j;->c:Lj$/time/temporal/o;
 
     const/4 v11, 0x4
 
-    invoke-virtual {v0, v7, v11, v4, v2}, Lj$/time/format/g;->p(Lj$/time/temporal/o;IILj$/time/format/F;)Lj$/time/format/g;
+    invoke-virtual {v0, v7, v11, v3, v4}, Lj$/time/format/w;->p(Lj$/time/temporal/o;III)Lj$/time/format/w;
 
-    move-result-object v0
+    const-string v3, "-W"
 
-    const-string v2, "-W"
+    invoke-virtual {v0, v3}, Lj$/time/format/w;->f(Ljava/lang/String;)Lj$/time/format/w;
 
-    invoke-virtual {v0, v2}, Lj$/time/format/g;->f(Ljava/lang/String;)Lj$/time/format/g;
-
-    sget-object v2, Lj$/time/temporal/j;->b:Lj$/time/temporal/o;
+    sget-object v3, Lj$/time/temporal/j;->b:Lj$/time/temporal/o;
 
     const/4 v4, 0x2
 
-    invoke-virtual {v0, v2, v4}, Lj$/time/format/g;->o(Lj$/time/temporal/o;I)Lj$/time/format/g;
+    invoke-virtual {v0, v3, v4}, Lj$/time/format/w;->o(Lj$/time/temporal/o;I)Lj$/time/format/w;
 
-    const/16 v2, 0x2d
+    const/16 v3, 0x2d
 
-    invoke-virtual {v0, v2}, Lj$/time/format/g;->e(C)Lj$/time/format/g;
+    invoke-virtual {v0, v3}, Lj$/time/format/w;->e(C)Lj$/time/format/w;
 
-    sget-object v2, Lj$/time/temporal/a;->DAY_OF_WEEK:Lj$/time/temporal/a;
+    sget-object v3, Lj$/time/temporal/a;->DAY_OF_WEEK:Lj$/time/temporal/a;
 
-    invoke-virtual {v0, v2, v3}, Lj$/time/format/g;->o(Lj$/time/temporal/o;I)Lj$/time/format/g;
+    invoke-virtual {v0, v3, v2}, Lj$/time/format/w;->o(Lj$/time/temporal/o;I)Lj$/time/format/w;
 
-    invoke-virtual {v0}, Lj$/time/format/g;->s()Lj$/time/format/g;
+    invoke-virtual {v0}, Lj$/time/format/w;->s()Lj$/time/format/w;
 
-    invoke-virtual {v0}, Lj$/time/format/g;->i()Lj$/time/format/g;
+    invoke-virtual {v0}, Lj$/time/format/w;->i()Lj$/time/format/w;
 
-    invoke-virtual {v0, v9, v10}, Lj$/time/format/g;->x(Lj$/time/format/E;Lj$/time/chrono/g;)Lj$/time/format/DateTimeFormatter;
+    invoke-virtual {v0, v9, v10}, Lj$/time/format/w;->x(Lj$/time/format/E;Lj$/time/chrono/g;)Lj$/time/format/DateTimeFormatter;
 
-    new-instance v0, Lj$/time/format/g;
+    new-instance v0, Lj$/time/format/w;
 
-    invoke-direct {v0}, Lj$/time/format/g;-><init>()V
+    invoke-direct {v0}, Lj$/time/format/w;-><init>()V
 
-    invoke-virtual {v0}, Lj$/time/format/g;->t()Lj$/time/format/g;
+    invoke-virtual {v0}, Lj$/time/format/w;->t()Lj$/time/format/w;
 
-    invoke-virtual {v0}, Lj$/time/format/g;->c()Lj$/time/format/g;
+    invoke-virtual {v0}, Lj$/time/format/w;->c()Lj$/time/format/w;
 
-    invoke-virtual {v0, v9, v5}, Lj$/time/format/g;->x(Lj$/time/format/E;Lj$/time/chrono/g;)Lj$/time/format/DateTimeFormatter;
+    invoke-virtual {v0, v9, v5}, Lj$/time/format/w;->x(Lj$/time/format/E;Lj$/time/chrono/g;)Lj$/time/format/DateTimeFormatter;
 
     move-result-object v0
 
     sput-object v0, Lj$/time/format/DateTimeFormatter;->j:Lj$/time/format/DateTimeFormatter;
 
-    new-instance v0, Lj$/time/format/g;
+    new-instance v0, Lj$/time/format/w;
 
-    invoke-direct {v0}, Lj$/time/format/g;-><init>()V
+    invoke-direct {v0}, Lj$/time/format/w;-><init>()V
 
-    invoke-virtual {v0}, Lj$/time/format/g;->t()Lj$/time/format/g;
+    invoke-virtual {v0}, Lj$/time/format/w;->t()Lj$/time/format/w;
 
     const/4 v4, 0x4
 
-    invoke-virtual {v0, v1, v4}, Lj$/time/format/g;->o(Lj$/time/temporal/o;I)Lj$/time/format/g;
+    invoke-virtual {v0, v1, v4}, Lj$/time/format/w;->o(Lj$/time/temporal/o;I)Lj$/time/format/w;
 
     const/4 v4, 0x2
 
-    invoke-virtual {v0, v6, v4}, Lj$/time/format/g;->o(Lj$/time/temporal/o;I)Lj$/time/format/g;
+    invoke-virtual {v0, v6, v4}, Lj$/time/format/w;->o(Lj$/time/temporal/o;I)Lj$/time/format/w;
 
-    invoke-virtual {v0, v8, v4}, Lj$/time/format/g;->o(Lj$/time/temporal/o;I)Lj$/time/format/g;
+    invoke-virtual {v0, v8, v4}, Lj$/time/format/w;->o(Lj$/time/temporal/o;I)Lj$/time/format/w;
 
-    invoke-virtual {v0}, Lj$/time/format/g;->s()Lj$/time/format/g;
+    invoke-virtual {v0}, Lj$/time/format/w;->s()Lj$/time/format/w;
 
     const-string v4, "+HHMMss"
 
     const-string v5, "Z"
 
-    invoke-virtual {v0, v4, v5}, Lj$/time/format/g;->h(Ljava/lang/String;Ljava/lang/String;)Lj$/time/format/g;
+    invoke-virtual {v0, v4, v5}, Lj$/time/format/w;->h(Ljava/lang/String;Ljava/lang/String;)Lj$/time/format/w;
 
-    invoke-virtual {v0, v9, v10}, Lj$/time/format/g;->x(Lj$/time/format/E;Lj$/time/chrono/g;)Lj$/time/format/DateTimeFormatter;
+    invoke-virtual {v0, v9, v10}, Lj$/time/format/w;->x(Lj$/time/format/E;Lj$/time/chrono/g;)Lj$/time/format/DateTimeFormatter;
 
     new-instance v0, Ljava/util/HashMap;
 
@@ -416,21 +410,21 @@
 
     move-result-object v13
 
-    const-string v3, "Sat"
+    const-string v2, "Sat"
 
-    invoke-virtual {v0, v13, v3}, Ljava/util/HashMap;->put(Ljava/lang/Object;Ljava/lang/Object;)Ljava/lang/Object;
+    invoke-virtual {v0, v13, v2}, Ljava/util/HashMap;->put(Ljava/lang/Object;Ljava/lang/Object;)Ljava/lang/Object;
 
     const-wide/16 v16, 0x7
 
     invoke-static/range {v16 .. v17}, Ljava/lang/Long;->valueOf(J)Ljava/lang/Long;
 
-    move-result-object v3
+    move-result-object v2
 
     move-object/from16 v16, v10
 
     const-string v10, "Sun"
 
-    invoke-virtual {v0, v3, v10}, Ljava/util/HashMap;->put(Ljava/lang/Object;Ljava/lang/Object;)Ljava/lang/Object;
+    invoke-virtual {v0, v2, v10}, Ljava/util/HashMap;->put(Ljava/lang/Object;Ljava/lang/Object;)Ljava/lang/Object;
 
     new-instance v10, Ljava/util/HashMap;
 
@@ -464,141 +458,137 @@
 
     const-string v4, "Jul"
 
-    invoke-virtual {v10, v3, v4}, Ljava/util/HashMap;->put(Ljava/lang/Object;Ljava/lang/Object;)Ljava/lang/Object;
+    invoke-virtual {v10, v2, v4}, Ljava/util/HashMap;->put(Ljava/lang/Object;Ljava/lang/Object;)Ljava/lang/Object;
 
-    const-wide/16 v3, 0x8
+    const-wide/16 v4, 0x8
 
-    invoke-static {v3, v4}, Ljava/lang/Long;->valueOf(J)Ljava/lang/Long;
+    invoke-static {v4, v5}, Ljava/lang/Long;->valueOf(J)Ljava/lang/Long;
 
-    move-result-object v3
+    move-result-object v2
 
     const-string v4, "Aug"
 
-    invoke-virtual {v10, v3, v4}, Ljava/util/HashMap;->put(Ljava/lang/Object;Ljava/lang/Object;)Ljava/lang/Object;
+    invoke-virtual {v10, v2, v4}, Ljava/util/HashMap;->put(Ljava/lang/Object;Ljava/lang/Object;)Ljava/lang/Object;
 
-    const-wide/16 v3, 0x9
+    const-wide/16 v4, 0x9
 
-    invoke-static {v3, v4}, Ljava/lang/Long;->valueOf(J)Ljava/lang/Long;
+    invoke-static {v4, v5}, Ljava/lang/Long;->valueOf(J)Ljava/lang/Long;
 
-    move-result-object v3
+    move-result-object v2
 
     const-string v4, "Sep"
 
-    invoke-virtual {v10, v3, v4}, Ljava/util/HashMap;->put(Ljava/lang/Object;Ljava/lang/Object;)Ljava/lang/Object;
+    invoke-virtual {v10, v2, v4}, Ljava/util/HashMap;->put(Ljava/lang/Object;Ljava/lang/Object;)Ljava/lang/Object;
 
-    const-wide/16 v3, 0xa
+    const-wide/16 v4, 0xa
 
-    invoke-static {v3, v4}, Ljava/lang/Long;->valueOf(J)Ljava/lang/Long;
+    invoke-static {v4, v5}, Ljava/lang/Long;->valueOf(J)Ljava/lang/Long;
 
-    move-result-object v3
+    move-result-object v2
 
     const-string v4, "Oct"
 
-    invoke-virtual {v10, v3, v4}, Ljava/util/HashMap;->put(Ljava/lang/Object;Ljava/lang/Object;)Ljava/lang/Object;
+    invoke-virtual {v10, v2, v4}, Ljava/util/HashMap;->put(Ljava/lang/Object;Ljava/lang/Object;)Ljava/lang/Object;
 
-    const-wide/16 v3, 0xb
+    const-wide/16 v4, 0xb
 
-    invoke-static {v3, v4}, Ljava/lang/Long;->valueOf(J)Ljava/lang/Long;
+    invoke-static {v4, v5}, Ljava/lang/Long;->valueOf(J)Ljava/lang/Long;
 
-    move-result-object v3
+    move-result-object v2
 
     const-string v4, "Nov"
 
-    invoke-virtual {v10, v3, v4}, Ljava/util/HashMap;->put(Ljava/lang/Object;Ljava/lang/Object;)Ljava/lang/Object;
+    invoke-virtual {v10, v2, v4}, Ljava/util/HashMap;->put(Ljava/lang/Object;Ljava/lang/Object;)Ljava/lang/Object;
 
-    const-wide/16 v3, 0xc
+    const-wide/16 v4, 0xc
 
-    invoke-static {v3, v4}, Ljava/lang/Long;->valueOf(J)Ljava/lang/Long;
+    invoke-static {v4, v5}, Ljava/lang/Long;->valueOf(J)Ljava/lang/Long;
 
-    move-result-object v3
+    move-result-object v2
 
     const-string v4, "Dec"
 
-    invoke-virtual {v10, v3, v4}, Ljava/util/HashMap;->put(Ljava/lang/Object;Ljava/lang/Object;)Ljava/lang/Object;
+    invoke-virtual {v10, v2, v4}, Ljava/util/HashMap;->put(Ljava/lang/Object;Ljava/lang/Object;)Ljava/lang/Object;
 
-    new-instance v3, Lj$/time/format/g;
+    new-instance v2, Lj$/time/format/w;
 
-    invoke-direct {v3}, Lj$/time/format/g;-><init>()V
+    invoke-direct {v2}, Lj$/time/format/w;-><init>()V
 
-    invoke-virtual {v3}, Lj$/time/format/g;->t()Lj$/time/format/g;
+    invoke-virtual {v2}, Lj$/time/format/w;->t()Lj$/time/format/w;
 
-    invoke-virtual {v3}, Lj$/time/format/g;->v()Lj$/time/format/g;
+    invoke-virtual {v2}, Lj$/time/format/w;->v()Lj$/time/format/w;
 
-    invoke-virtual {v3}, Lj$/time/format/g;->s()Lj$/time/format/g;
+    invoke-virtual {v2}, Lj$/time/format/w;->s()Lj$/time/format/w;
 
-    invoke-virtual {v3, v2, v0}, Lj$/time/format/g;->l(Lj$/time/temporal/o;Ljava/util/Map;)Lj$/time/format/g;
+    invoke-virtual {v2, v3, v0}, Lj$/time/format/w;->l(Lj$/time/temporal/o;Ljava/util/Map;)Lj$/time/format/w;
 
     const-string v0, ", "
 
-    invoke-virtual {v3, v0}, Lj$/time/format/g;->f(Ljava/lang/String;)Lj$/time/format/g;
+    invoke-virtual {v2, v0}, Lj$/time/format/w;->f(Ljava/lang/String;)Lj$/time/format/w;
 
-    invoke-virtual {v3}, Lj$/time/format/g;->r()Lj$/time/format/g;
+    invoke-virtual {v2}, Lj$/time/format/w;->r()Lj$/time/format/w;
 
-    sget-object v0, Lj$/time/format/F;->NOT_NEGATIVE:Lj$/time/format/F;
+    const/4 v0, 0x1
 
-    const/4 v2, 0x1
+    const/4 v3, 0x2
 
-    const/4 v4, 0x2
+    const/4 v4, 0x4
 
-    invoke-virtual {v3, v8, v2, v4, v0}, Lj$/time/format/g;->p(Lj$/time/temporal/o;IILj$/time/format/F;)Lj$/time/format/g;
+    invoke-virtual {v2, v8, v0, v3, v4}, Lj$/time/format/w;->p(Lj$/time/temporal/o;III)Lj$/time/format/w;
 
-    move-result-object v0
+    const/16 v0, 0x20
 
-    const/16 v2, 0x20
+    invoke-virtual {v2, v0}, Lj$/time/format/w;->e(C)Lj$/time/format/w;
 
-    invoke-virtual {v0, v2}, Lj$/time/format/g;->e(C)Lj$/time/format/g;
+    invoke-virtual {v2, v6, v10}, Lj$/time/format/w;->l(Lj$/time/temporal/o;Ljava/util/Map;)Lj$/time/format/w;
 
-    invoke-virtual {v0, v6, v10}, Lj$/time/format/g;->l(Lj$/time/temporal/o;Ljava/util/Map;)Lj$/time/format/g;
+    invoke-virtual {v2, v0}, Lj$/time/format/w;->e(C)Lj$/time/format/w;
 
-    invoke-virtual {v0, v2}, Lj$/time/format/g;->e(C)Lj$/time/format/g;
+    invoke-virtual {v2, v1, v4}, Lj$/time/format/w;->o(Lj$/time/temporal/o;I)Lj$/time/format/w;
 
-    const/4 v3, 0x4
+    invoke-virtual {v2, v0}, Lj$/time/format/w;->e(C)Lj$/time/format/w;
 
-    invoke-virtual {v0, v1, v3}, Lj$/time/format/g;->o(Lj$/time/temporal/o;I)Lj$/time/format/g;
-
-    invoke-virtual {v0, v2}, Lj$/time/format/g;->e(C)Lj$/time/format/g;
-
-    invoke-virtual {v0, v12, v4}, Lj$/time/format/g;->o(Lj$/time/temporal/o;I)Lj$/time/format/g;
+    invoke-virtual {v2, v12, v3}, Lj$/time/format/w;->o(Lj$/time/temporal/o;I)Lj$/time/format/w;
 
     const/16 v1, 0x3a
 
-    invoke-virtual {v0, v1}, Lj$/time/format/g;->e(C)Lj$/time/format/g;
+    invoke-virtual {v2, v1}, Lj$/time/format/w;->e(C)Lj$/time/format/w;
 
-    invoke-virtual {v0, v14, v4}, Lj$/time/format/g;->o(Lj$/time/temporal/o;I)Lj$/time/format/g;
+    invoke-virtual {v2, v14, v3}, Lj$/time/format/w;->o(Lj$/time/temporal/o;I)Lj$/time/format/w;
 
-    invoke-virtual {v0}, Lj$/time/format/g;->s()Lj$/time/format/g;
+    invoke-virtual {v2}, Lj$/time/format/w;->s()Lj$/time/format/w;
 
-    invoke-virtual {v0, v1}, Lj$/time/format/g;->e(C)Lj$/time/format/g;
+    invoke-virtual {v2, v1}, Lj$/time/format/w;->e(C)Lj$/time/format/w;
 
     move-object/from16 v1, v17
 
-    invoke-virtual {v0, v1, v4}, Lj$/time/format/g;->o(Lj$/time/temporal/o;I)Lj$/time/format/g;
+    invoke-virtual {v2, v1, v3}, Lj$/time/format/w;->o(Lj$/time/temporal/o;I)Lj$/time/format/w;
 
-    invoke-virtual {v0}, Lj$/time/format/g;->r()Lj$/time/format/g;
+    invoke-virtual {v2}, Lj$/time/format/w;->r()Lj$/time/format/w;
 
-    invoke-virtual {v0, v2}, Lj$/time/format/g;->e(C)Lj$/time/format/g;
+    invoke-virtual {v2, v0}, Lj$/time/format/w;->e(C)Lj$/time/format/w;
 
-    const-string v1, "+HHMM"
+    const-string v0, "+HHMM"
 
-    const-string v2, "GMT"
+    const-string v1, "GMT"
 
-    invoke-virtual {v0, v1, v2}, Lj$/time/format/g;->h(Ljava/lang/String;Ljava/lang/String;)Lj$/time/format/g;
+    invoke-virtual {v2, v0, v1}, Lj$/time/format/w;->h(Ljava/lang/String;Ljava/lang/String;)Lj$/time/format/w;
 
-    sget-object v1, Lj$/time/format/E;->SMART:Lj$/time/format/E;
+    sget-object v0, Lj$/time/format/E;->SMART:Lj$/time/format/E;
 
-    move-object/from16 v2, v16
+    move-object/from16 v1, v16
 
-    invoke-virtual {v0, v1, v2}, Lj$/time/format/g;->x(Lj$/time/format/E;Lj$/time/chrono/g;)Lj$/time/format/DateTimeFormatter;
+    invoke-virtual {v2, v0, v1}, Lj$/time/format/w;->x(Lj$/time/format/E;Lj$/time/chrono/g;)Lj$/time/format/DateTimeFormatter;
 
     return-void
 .end method
 
-.method constructor <init>(Lj$/time/format/g$a;Ljava/util/Locale;Lj$/time/format/C;Lj$/time/format/E;Ljava/util/Set;Lj$/time/chrono/g;Lj$/time/ZoneId;)V
+.method constructor <init>(Lj$/time/format/f;Ljava/util/Locale;Lj$/time/format/C;Lj$/time/format/E;Ljava/util/Set;Lj$/time/chrono/g;Lj$/time/ZoneId;)V
     .locals 0
 
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
-    iput-object p1, p0, Lj$/time/format/DateTimeFormatter;->a:Lj$/time/format/g$a;
+    iput-object p1, p0, Lj$/time/format/DateTimeFormatter;->a:Lj$/time/format/f;
 
     const/4 p1, 0x0
 
@@ -638,9 +628,9 @@
 
     move-result v2
 
-    iget-object v3, p0, Lj$/time/format/DateTimeFormatter;->a:Lj$/time/format/g$a;
+    iget-object v3, p0, Lj$/time/format/DateTimeFormatter;->a:Lj$/time/format/f;
 
-    invoke-virtual {v3, v1, p1, v2}, Lj$/time/format/g$a;->b(Lj$/time/format/x;Ljava/lang/CharSequence;I)I
+    invoke-virtual {v3, v1, p1, v2}, Lj$/time/format/f;->b(Lj$/time/format/x;Ljava/lang/CharSequence;I)I
 
     move-result v2
 
@@ -806,13 +796,13 @@
 .method public static ofPattern(Ljava/lang/String;)Lj$/time/format/DateTimeFormatter;
     .locals 1
 
-    new-instance v0, Lj$/time/format/g;
+    new-instance v0, Lj$/time/format/w;
 
-    invoke-direct {v0}, Lj$/time/format/g;-><init>()V
+    invoke-direct {v0}, Lj$/time/format/w;-><init>()V
 
-    invoke-virtual {v0, p0}, Lj$/time/format/g;->j(Ljava/lang/String;)Lj$/time/format/g;
+    invoke-virtual {v0, p0}, Lj$/time/format/w;->j(Ljava/lang/String;)Lj$/time/format/w;
 
-    invoke-virtual {v0}, Lj$/time/format/g;->w()Lj$/time/format/DateTimeFormatter;
+    invoke-virtual {v0}, Lj$/time/format/w;->w()Lj$/time/format/DateTimeFormatter;
 
     move-result-object p0
 
@@ -853,7 +843,7 @@
     return-object v0
 .end method
 
-.method public e(Ljava/lang/CharSequence;Lj$/time/temporal/x;)Ljava/lang/Object;
+.method public e(Ljava/lang/CharSequence;Lj$/time/temporal/w;)Ljava/lang/Object;
     .locals 5
 
     const-string v0, "text"
@@ -869,7 +859,7 @@
 
     check-cast v0, Lj$/time/format/D;
 
-    invoke-virtual {v0, p2}, Lj$/time/format/D;->g(Lj$/time/temporal/x;)Ljava/lang/Object;
+    invoke-virtual {v0, p2}, Lj$/time/format/D;->i(Lj$/time/temporal/w;)Ljava/lang/Object;
 
     move-result-object p1
     :try_end_0
@@ -975,9 +965,9 @@
 
     invoke-direct {v1, p1, p0}, Lj$/time/format/z;-><init>(Lj$/time/temporal/TemporalAccessor;Lj$/time/format/DateTimeFormatter;)V
 
-    iget-object p1, p0, Lj$/time/format/DateTimeFormatter;->a:Lj$/time/format/g$a;
+    iget-object p1, p0, Lj$/time/format/DateTimeFormatter;->a:Lj$/time/format/f;
 
-    invoke-virtual {p1, v1, v0}, Lj$/time/format/g$a;->a(Lj$/time/format/z;Ljava/lang/StringBuilder;)Z
+    invoke-virtual {p1, v1, v0}, Lj$/time/format/f;->a(Lj$/time/format/z;Ljava/lang/StringBuilder;)Z
     :try_end_0
     .catch Ljava/io/IOException; {:try_start_0 .. :try_end_0} :catch_0
 
@@ -1001,12 +991,12 @@
     throw v0
 .end method
 
-.method g(Z)Lj$/time/format/g$a;
+.method g(Z)Lj$/time/format/f;
     .locals 1
 
-    iget-object v0, p0, Lj$/time/format/DateTimeFormatter;->a:Lj$/time/format/g$a;
+    iget-object v0, p0, Lj$/time/format/DateTimeFormatter;->a:Lj$/time/format/f;
 
-    invoke-virtual {v0, p1}, Lj$/time/format/g$a;->c(Z)Lj$/time/format/g$a;
+    invoke-virtual {v0, p1}, Lj$/time/format/f;->c(Z)Lj$/time/format/f;
 
     move-result-object p1
 
@@ -1016,9 +1006,9 @@
 .method public toString()Ljava/lang/String;
     .locals 3
 
-    iget-object v0, p0, Lj$/time/format/DateTimeFormatter;->a:Lj$/time/format/g$a;
+    iget-object v0, p0, Lj$/time/format/DateTimeFormatter;->a:Lj$/time/format/f;
 
-    invoke-virtual {v0}, Lj$/time/format/g$a;->toString()Ljava/lang/String;
+    invoke-virtual {v0}, Lj$/time/format/f;->toString()Ljava/lang/String;
 
     move-result-object v0
 

@@ -4,7 +4,7 @@
 
 
 # static fields
-.field public static final zzb:Lkotlin/jvm/internal/SpreadBuilder;
+.field public static final zzb:Lcom/google/android/play/core/internal/zzag;
 
 .field public static final zzc:Landroid/content/Intent;
 
@@ -31,13 +31,13 @@
 .method public static constructor <clinit>()V
     .locals 2
 
-    new-instance v0, Lkotlin/jvm/internal/SpreadBuilder;
+    new-instance v0, Lcom/google/android/play/core/internal/zzag;
 
     const-string v1, "AppUpdateService"
 
-    invoke-direct {v0, v1}, Lkotlin/jvm/internal/SpreadBuilder;-><init>(Ljava/lang/String;)V
+    invoke-direct {v0, v1}, Lcom/google/android/play/core/internal/zzag;-><init>(Ljava/lang/String;)V
 
-    sput-object v0, Lcom/google/android/play/core/appupdate/zzq;->zzb:Lkotlin/jvm/internal/SpreadBuilder;
+    sput-object v0, Lcom/google/android/play/core/appupdate/zzq;->zzb:Lcom/google/android/play/core/internal/zzag;
 
     new-instance v0, Landroid/content/Intent;
 
@@ -93,7 +93,7 @@
     move-object v1, p1
 
     :goto_0
-    sget-object v2, Lcom/google/android/play/core/appupdate/zzq;->zzb:Lkotlin/jvm/internal/SpreadBuilder;
+    sget-object v2, Lcom/google/android/play/core/appupdate/zzq;->zzb:Lcom/google/android/play/core/internal/zzag;
 
     sget-object v4, Lcom/google/android/play/core/appupdate/zzq;->zzc:Landroid/content/Intent;
 
@@ -105,7 +105,7 @@
 
     move-object v0, p2
 
-    invoke-direct/range {v0 .. v6}, Lcom/google/android/play/core/internal/zzas;-><init>(Landroid/content/Context;Lkotlin/jvm/internal/SpreadBuilder;Ljava/lang/String;Landroid/content/Intent;Lcom/google/android/play/core/internal/zzan;Lcom/google/android/play/core/internal/zzam;)V
+    invoke-direct/range {v0 .. v6}, Lcom/google/android/play/core/internal/zzas;-><init>(Landroid/content/Context;Lcom/google/android/play/core/internal/zzag;Ljava/lang/String;Landroid/content/Intent;Lcom/google/android/play/core/internal/zzan;Lcom/google/android/play/core/internal/zzam;)V
 
     iput-object p2, p0, Lcom/google/android/play/core/appupdate/zzq;->zza:Lcom/google/android/play/core/internal/zzas;
 
@@ -290,13 +290,13 @@
     goto :goto_0
 
     :catch_0
-    sget-object p0, Lcom/google/android/play/core/appupdate/zzq;->zzb:Lkotlin/jvm/internal/SpreadBuilder;
+    sget-object p0, Lcom/google/android/play/core/appupdate/zzq;->zzb:Lcom/google/android/play/core/internal/zzag;
 
     const-string v1, "The current version of the app could not be retrieved"
 
     new-array p1, p1, [Ljava/lang/Object;
 
-    invoke-virtual {p0, v1, p1}, Lkotlin/jvm/internal/SpreadBuilder;->zzb(Ljava/lang/String;[Ljava/lang/Object;)I
+    invoke-virtual {p0, v1, p1}, Lcom/google/android/play/core/internal/zzag;->zzb(Ljava/lang/String;[Ljava/lang/Object;)I
 
     const/4 p0, 0x0
 

@@ -2,40 +2,39 @@
 .super Ljava/lang/Object;
 
 # interfaces
-.implements Lj$/util/function/m;
-.implements Lj$/util/function/i;
+.implements Lj$/util/function/IntConsumer;
 
 
 # instance fields
 .field private count:J
 
-.field private max:J
+.field private max:I
 
-.field private min:J
+.field private min:I
 
 .field private sum:J
 
 
 # direct methods
 .method public constructor <init>()V
-    .locals 2
+    .locals 1
 
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
-    const-wide v0, 0x7fffffffffffffffL
+    const v0, 0x7fffffff
 
-    iput-wide v0, p0, Lj$/util/h;->min:J
+    iput v0, p0, Lj$/util/h;->min:I
 
-    const-wide/high16 v0, -0x8000000000000000L
+    const/high16 v0, -0x80000000
 
-    iput-wide v0, p0, Lj$/util/h;->max:J
+    iput v0, p0, Lj$/util/h;->max:I
 
     return-void
 .end method
 
 
 # virtual methods
-.method public b(Lj$/util/h;)V
+.method public a(Lj$/util/h;)V
     .locals 4
 
     iget-wide v0, p0, Lj$/util/h;->count:J
@@ -54,40 +53,30 @@
 
     iput-wide v0, p0, Lj$/util/h;->sum:J
 
-    iget-wide v0, p0, Lj$/util/h;->min:J
+    iget v0, p0, Lj$/util/h;->min:I
 
-    iget-wide v2, p1, Lj$/util/h;->min:J
+    iget v1, p1, Lj$/util/h;->min:I
 
-    invoke-static {v0, v1, v2, v3}, Ljava/lang/Math;->min(JJ)J
+    invoke-static {v0, v1}, Ljava/lang/Math;->min(II)I
 
-    move-result-wide v0
+    move-result v0
 
-    iput-wide v0, p0, Lj$/util/h;->min:J
+    iput v0, p0, Lj$/util/h;->min:I
 
-    iget-wide v0, p0, Lj$/util/h;->max:J
+    iget v0, p0, Lj$/util/h;->max:I
 
-    iget-wide v2, p1, Lj$/util/h;->max:J
+    iget p1, p1, Lj$/util/h;->max:I
 
-    invoke-static {v0, v1, v2, v3}, Ljava/lang/Math;->max(JJ)J
+    invoke-static {v0, p1}, Ljava/lang/Math;->max(II)I
 
-    move-result-wide v0
+    move-result p1
 
-    iput-wide v0, p0, Lj$/util/h;->max:J
-
-    return-void
-.end method
-
-.method public d(I)V
-    .locals 2
-
-    int-to-long v0, p1
-
-    invoke-virtual {p0, v0, v1}, Lj$/util/h;->e(J)V
+    iput p1, p0, Lj$/util/h;->max:I
 
     return-void
 .end method
 
-.method public e(J)V
+.method public accept(I)V
     .locals 4
 
     iget-wide v0, p0, Lj$/util/h;->count:J
@@ -100,27 +89,39 @@
 
     iget-wide v0, p0, Lj$/util/h;->sum:J
 
-    add-long/2addr v0, p1
+    int-to-long v2, p1
+
+    add-long/2addr v0, v2
 
     iput-wide v0, p0, Lj$/util/h;->sum:J
 
-    iget-wide v0, p0, Lj$/util/h;->min:J
+    iget v0, p0, Lj$/util/h;->min:I
 
-    invoke-static {v0, v1, p1, p2}, Ljava/lang/Math;->min(JJ)J
+    invoke-static {v0, p1}, Ljava/lang/Math;->min(II)I
 
-    move-result-wide v0
+    move-result v0
 
-    iput-wide v0, p0, Lj$/util/h;->min:J
+    iput v0, p0, Lj$/util/h;->min:I
 
-    iget-wide v0, p0, Lj$/util/h;->max:J
+    iget v0, p0, Lj$/util/h;->max:I
 
-    invoke-static {v0, v1, p1, p2}, Ljava/lang/Math;->max(JJ)J
+    invoke-static {v0, p1}, Ljava/lang/Math;->max(II)I
 
-    move-result-wide p1
+    move-result p1
 
-    iput-wide p1, p0, Lj$/util/h;->max:J
+    iput p1, p0, Lj$/util/h;->max:I
 
     return-void
+.end method
+
+.method public synthetic andThen(Lj$/util/function/IntConsumer;)Lj$/util/function/IntConsumer;
+    .locals 0
+
+    invoke-static {p0, p1}, Lj$/util/function/IntConsumer$-CC;->$default$andThen(Lj$/util/function/IntConsumer;Lj$/util/function/IntConsumer;)Lj$/util/function/IntConsumer;
+
+    move-result-object p1
+
+    return-object p1
 .end method
 
 .method public toString()Ljava/lang/String;
@@ -160,9 +161,9 @@
 
     aput-object v1, v0, v2
 
-    iget-wide v1, p0, Lj$/util/h;->min:J
+    iget v1, p0, Lj$/util/h;->min:I
 
-    invoke-static {v1, v2}, Ljava/lang/Long;->valueOf(J)Ljava/lang/Long;
+    invoke-static {v1}, Ljava/lang/Integer;->valueOf(I)Ljava/lang/Integer;
 
     move-result-object v1
 
@@ -200,15 +201,15 @@
 
     aput-object v1, v0, v2
 
-    iget-wide v1, p0, Lj$/util/h;->max:J
+    const/4 v1, 0x5
 
-    invoke-static {v1, v2}, Ljava/lang/Long;->valueOf(J)Ljava/lang/Long;
+    iget v2, p0, Lj$/util/h;->max:I
 
-    move-result-object v1
+    invoke-static {v2}, Ljava/lang/Integer;->valueOf(I)Ljava/lang/Integer;
 
-    const/4 v2, 0x5
+    move-result-object v2
 
-    aput-object v1, v0, v2
+    aput-object v2, v0, v1
 
     const-string v1, "%s{count=%d, sum=%d, min=%d, average=%f, max=%d}"
 

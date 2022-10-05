@@ -3,7 +3,276 @@
 
 
 # direct methods
-.method public static synthetic A(Ljava/util/Map;Ljava/lang/Object;Ljava/lang/Object;Ljava/lang/Object;)Z
+.method public synthetic constructor <init>()V
+    .locals 0
+
+    invoke-direct {p0}, Ljava/lang/Object;-><init>()V
+
+    return-void
+.end method
+
+.method public static A(Ljava/lang/Object;Ljava/lang/Object;)Z
+    .locals 0
+
+    if-eq p0, p1, :cond_1
+
+    if-eqz p0, :cond_0
+
+    invoke-virtual {p0, p1}, Ljava/lang/Object;->equals(Ljava/lang/Object;)Z
+
+    move-result p0
+
+    if-eqz p0, :cond_0
+
+    goto :goto_0
+
+    :cond_0
+    const/4 p0, 0x0
+
+    goto :goto_1
+
+    :cond_1
+    :goto_0
+    const/4 p0, 0x1
+
+    :goto_1
+    return p0
+.end method
+
+.method public static synthetic B(Ljava/util/Map;Lj$/util/function/BiConsumer;)V
+    .locals 1
+
+    instance-of v0, p0, Lj$/util/Map;
+
+    if-eqz v0, :cond_0
+
+    check-cast p0, Lj$/util/Map;
+
+    invoke-interface {p0, p1}, Lj$/util/Map;->forEach(Lj$/util/function/BiConsumer;)V
+
+    return-void
+
+    :cond_0
+    instance-of v0, p0, Ljava/util/concurrent/ConcurrentMap;
+
+    if-eqz v0, :cond_1
+
+    check-cast p0, Ljava/util/concurrent/ConcurrentMap;
+
+    invoke-static {p0, p1}, Lj$/time/temporal/n;->a(Ljava/util/concurrent/ConcurrentMap;Lj$/util/function/BiConsumer;)V
+
+    return-void
+
+    :cond_1
+    invoke-static {p0, p1}, Lj$/util/Map$-CC;->$default$forEach(Ljava/util/Map;Lj$/util/function/BiConsumer;)V
+
+    return-void
+.end method
+
+.method public static C(Ljava/util/Map;Ljava/lang/Object;Ljava/lang/Object;)Ljava/lang/Object;
+    .locals 1
+
+    instance-of v0, p0, Lj$/util/Map;
+
+    if-eqz v0, :cond_0
+
+    check-cast p0, Lj$/util/Map;
+
+    invoke-interface {p0, p1, p2}, Lj$/util/Map;->getOrDefault(Ljava/lang/Object;Ljava/lang/Object;)Ljava/lang/Object;
+
+    move-result-object p0
+
+    return-object p0
+
+    :cond_0
+    instance-of v0, p0, Ljava/util/concurrent/ConcurrentMap;
+
+    if-eqz v0, :cond_2
+
+    check-cast p0, Ljava/util/concurrent/ConcurrentMap;
+
+    invoke-interface {p0, p1}, Ljava/util/concurrent/ConcurrentMap;->get(Ljava/lang/Object;)Ljava/lang/Object;
+
+    move-result-object p0
+
+    if-eqz p0, :cond_1
+
+    move-object p2, p0
+
+    :cond_1
+    return-object p2
+
+    :cond_2
+    invoke-interface {p0, p1}, Ljava/util/Map;->get(Ljava/lang/Object;)Ljava/lang/Object;
+
+    move-result-object v0
+
+    if-nez v0, :cond_3
+
+    invoke-interface {p0, p1}, Ljava/util/Map;->containsKey(Ljava/lang/Object;)Z
+
+    move-result p0
+
+    if-eqz p0, :cond_4
+
+    :cond_3
+    move-object p2, v0
+
+    :cond_4
+    return-object p2
+.end method
+
+.method public static D(Ljava/util/Map;Ljava/lang/Object;Ljava/lang/Object;Lj$/util/function/BiFunction;)Ljava/lang/Object;
+    .locals 2
+
+    instance-of v0, p0, Lj$/util/Map;
+
+    if-eqz v0, :cond_0
+
+    check-cast p0, Lj$/util/Map;
+
+    invoke-interface {p0, p1, p2, p3}, Lj$/util/Map;->merge(Ljava/lang/Object;Ljava/lang/Object;Lj$/util/function/BiFunction;)Ljava/lang/Object;
+
+    move-result-object p0
+
+    return-object p0
+
+    :cond_0
+    instance-of v0, p0, Ljava/util/concurrent/ConcurrentMap;
+
+    if-eqz v0, :cond_5
+
+    move-object v0, p0
+
+    check-cast v0, Ljava/util/concurrent/ConcurrentMap;
+
+    invoke-static {p3}, Ljava/util/Objects;->requireNonNull(Ljava/lang/Object;)Ljava/lang/Object;
+
+    invoke-static {p2}, Ljava/util/Objects;->requireNonNull(Ljava/lang/Object;)Ljava/lang/Object;
+
+    :cond_1
+    invoke-interface {v0, p1}, Ljava/util/concurrent/ConcurrentMap;->get(Ljava/lang/Object;)Ljava/lang/Object;
+
+    move-result-object p0
+
+    :cond_2
+    if-eqz p0, :cond_4
+
+    invoke-interface {p3, p0, p2}, Lj$/util/function/BiFunction;->apply(Ljava/lang/Object;Ljava/lang/Object;)Ljava/lang/Object;
+
+    move-result-object v1
+
+    if-eqz v1, :cond_3
+
+    invoke-interface {v0, p1, p0, v1}, Ljava/util/concurrent/ConcurrentMap;->replace(Ljava/lang/Object;Ljava/lang/Object;Ljava/lang/Object;)Z
+
+    move-result p0
+
+    if-eqz p0, :cond_1
+
+    move-object p2, v1
+
+    goto :goto_0
+
+    :cond_3
+    invoke-interface {v0, p1, p0}, Ljava/util/concurrent/ConcurrentMap;->remove(Ljava/lang/Object;Ljava/lang/Object;)Z
+
+    move-result p0
+
+    if-eqz p0, :cond_1
+
+    const/4 p2, 0x0
+
+    goto :goto_0
+
+    :cond_4
+    invoke-interface {v0, p1, p2}, Ljava/util/concurrent/ConcurrentMap;->putIfAbsent(Ljava/lang/Object;Ljava/lang/Object;)Ljava/lang/Object;
+
+    move-result-object p0
+
+    if-nez p0, :cond_2
+
+    :goto_0
+    return-object p2
+
+    :cond_5
+    invoke-static {p0, p1, p2, p3}, Lj$/util/Map$-CC;->$default$merge(Ljava/util/Map;Ljava/lang/Object;Ljava/lang/Object;Lj$/util/function/BiFunction;)Ljava/lang/Object;
+
+    move-result-object p0
+
+    return-object p0
+.end method
+
+.method public static synthetic E(Ljava/util/Map;Ljava/lang/Object;Ljava/lang/Object;)Ljava/lang/Object;
+    .locals 1
+
+    instance-of v0, p0, Lj$/util/Map;
+
+    if-eqz v0, :cond_0
+
+    check-cast p0, Lj$/util/Map;
+
+    invoke-interface {p0, p1, p2}, Lj$/util/Map;->putIfAbsent(Ljava/lang/Object;Ljava/lang/Object;)Ljava/lang/Object;
+
+    move-result-object p0
+
+    return-object p0
+
+    :cond_0
+    invoke-static {p0, p1, p2}, Lj$/util/Map$-CC;->$default$putIfAbsent(Ljava/util/Map;Ljava/lang/Object;Ljava/lang/Object;)Ljava/lang/Object;
+
+    move-result-object p0
+
+    return-object p0
+.end method
+
+.method public static synthetic F(Ljava/util/Map;Ljava/lang/Object;Ljava/lang/Object;)Z
+    .locals 1
+
+    instance-of v0, p0, Lj$/util/Map;
+
+    if-eqz v0, :cond_0
+
+    check-cast p0, Lj$/util/Map;
+
+    invoke-interface {p0, p1, p2}, Lj$/util/Map;->remove(Ljava/lang/Object;Ljava/lang/Object;)Z
+
+    move-result p0
+
+    return p0
+
+    :cond_0
+    invoke-static {p0, p1, p2}, Lj$/util/Map$-CC;->$default$remove(Ljava/util/Map;Ljava/lang/Object;Ljava/lang/Object;)Z
+
+    move-result p0
+
+    return p0
+.end method
+
+.method public static synthetic G(Ljava/util/Map;Ljava/lang/Object;Ljava/lang/Object;)Ljava/lang/Object;
+    .locals 1
+
+    instance-of v0, p0, Lj$/util/Map;
+
+    if-eqz v0, :cond_0
+
+    check-cast p0, Lj$/util/Map;
+
+    invoke-interface {p0, p1, p2}, Lj$/util/Map;->replace(Ljava/lang/Object;Ljava/lang/Object;)Ljava/lang/Object;
+
+    move-result-object p0
+
+    return-object p0
+
+    :cond_0
+    invoke-static {p0, p1, p2}, Lj$/util/Map$-CC;->$default$replace(Ljava/util/Map;Ljava/lang/Object;Ljava/lang/Object;)Ljava/lang/Object;
+
+    move-result-object p0
+
+    return-object p0
+.end method
+
+.method public static synthetic H(Ljava/util/Map;Ljava/lang/Object;Ljava/lang/Object;Ljava/lang/Object;)Z
     .locals 1
 
     instance-of v0, p0, Lj$/util/Map;
@@ -26,7 +295,7 @@
     return p0
 .end method
 
-.method public static B(Ljava/util/Map;Lj$/util/function/BiFunction;)V
+.method public static I(Ljava/util/Map;Lj$/util/function/BiFunction;)V
     .locals 1
 
     instance-of v0, p0, Lj$/util/Map;
@@ -48,22 +317,22 @@
 
     invoke-static {p1}, Ljava/util/Objects;->requireNonNull(Ljava/lang/Object;)Ljava/lang/Object;
 
-    new-instance v0, Lj$/util/concurrent/a;
+    new-instance v0, Lj$/util/concurrent/t;
 
-    invoke-direct {v0, p0, p1}, Lj$/util/concurrent/a;-><init>(Ljava/util/concurrent/ConcurrentMap;Lj$/util/function/BiFunction;)V
+    invoke-direct {v0, p0, p1}, Lj$/util/concurrent/t;-><init>(Ljava/util/concurrent/ConcurrentMap;Lj$/util/function/BiFunction;)V
 
-    instance-of p1, p0, Lj$/util/concurrent/b;
+    instance-of p1, p0, Lj$/util/concurrent/u;
 
     if-eqz p1, :cond_1
 
-    check-cast p0, Lj$/util/concurrent/b;
+    check-cast p0, Lj$/util/concurrent/u;
 
-    invoke-interface {p0, v0}, Lj$/util/concurrent/b;->forEach(Lj$/util/function/BiConsumer;)V
+    invoke-interface {p0, v0}, Lj$/util/concurrent/u;->forEach(Lj$/util/function/BiConsumer;)V
 
     goto :goto_0
 
     :cond_1
-    invoke-static {p0, v0}, Lj$/lang/d;->a(Ljava/util/concurrent/ConcurrentMap;Lj$/util/function/BiConsumer;)V
+    invoke-static {p0, v0}, Lj$/time/temporal/n;->a(Ljava/util/concurrent/ConcurrentMap;Lj$/util/function/BiConsumer;)V
 
     :goto_0
     return-void
@@ -74,7 +343,7 @@
     return-void
 .end method
 
-.method public static C(Ljava/util/List;Ljava/util/Comparator;)V
+.method public static J(Ljava/util/List;Ljava/util/Comparator;)V
     .locals 3
 
     sget-object v0, Lj$/util/DesugarCollections;->b:Ljava/lang/Class;
@@ -122,7 +391,7 @@
     return-void
 .end method
 
-.method public static synthetic D(Ljava/util/Comparator;Ljava/util/Comparator;)Ljava/util/Comparator;
+.method public static synthetic K(Ljava/util/Comparator;Ljava/util/Comparator;)Ljava/util/Comparator;
     .locals 1
 
     instance-of v0, p0, Lj$/util/Comparator;
@@ -145,59 +414,92 @@
     return-object p0
 .end method
 
-.method public static a(Ljava/util/Collection;Lj$/util/function/Consumer;)V
-    .locals 1
+.method public static b(Lj$/util/o;Lj$/util/function/Consumer;)V
+    .locals 2
 
+    instance-of v0, p1, Lj$/util/function/g;
+
+    if-eqz v0, :cond_0
+
+    check-cast p1, Lj$/util/function/g;
+
+    check-cast p0, Lj$/util/H;
+
+    invoke-virtual {p0, p1}, Lj$/util/H;->a(Lj$/util/function/g;)V
+
+    goto :goto_1
+
+    :cond_0
     invoke-static {p1}, Ljava/util/Objects;->requireNonNull(Ljava/lang/Object;)Ljava/lang/Object;
 
-    invoke-interface {p0}, Ljava/util/Collection;->iterator()Ljava/util/Iterator;
+    sget-boolean v0, Lj$/util/V;->a:Z
 
-    move-result-object p0
+    if-nez v0, :cond_2
+
+    check-cast p0, Lj$/util/H;
 
     :goto_0
-    invoke-interface {p0}, Ljava/util/Iterator;->hasNext()Z
+    invoke-virtual {p0}, Lj$/util/H;->hasNext()Z
 
     move-result v0
 
-    if-eqz v0, :cond_0
+    if-eqz v0, :cond_1
 
-    invoke-interface {p0}, Ljava/util/Iterator;->next()Ljava/lang/Object;
+    invoke-virtual {p0}, Lj$/util/H;->nextDouble()D
+
+    move-result-wide v0
+
+    invoke-static {v0, v1}, Ljava/lang/Double;->valueOf(D)Ljava/lang/Double;
 
     move-result-object v0
 
-    invoke-interface {p1, v0}, Lj$/util/function/Consumer;->i(Ljava/lang/Object;)V
+    invoke-interface {p1, v0}, Lj$/util/function/Consumer;->j(Ljava/lang/Object;)V
 
     goto :goto_0
 
-    :cond_0
+    :cond_1
+    :goto_1
     return-void
+
+    :cond_2
+    invoke-virtual {p0}, Ljava/lang/Object;->getClass()Ljava/lang/Class;
+
+    move-result-object p0
+
+    const-string p1, "{0} calling PrimitiveIterator.OfDouble.forEachRemainingDouble(action::accept)"
+
+    invoke-static {p0, p1}, Lj$/util/V;->a(Ljava/lang/Class;Ljava/lang/String;)V
+
+    const/4 p0, 0x0
+
+    throw p0
 .end method
 
-.method public static b(Lj$/util/Spliterator$a;Lj$/util/function/Consumer;)V
+.method public static c(Lj$/util/x;Lj$/util/function/Consumer;)V
     .locals 1
 
-    instance-of v0, p1, Lj$/util/function/e;
+    instance-of v0, p1, Lj$/util/function/g;
 
     if-eqz v0, :cond_0
 
-    check-cast p1, Lj$/util/function/e;
+    check-cast p1, Lj$/util/function/g;
 
-    invoke-interface {p0, p1}, Lj$/util/Spliterator$a;->h(Lj$/util/function/e;)V
+    invoke-interface {p0, p1}, Lj$/util/x;->l(Lj$/util/function/g;)V
 
     goto :goto_0
 
     :cond_0
-    sget-boolean v0, Lj$/util/J;->a:Z
+    sget-boolean v0, Lj$/util/V;->a:Z
 
     if-nez v0, :cond_1
 
     invoke-static {p1}, Ljava/util/Objects;->requireNonNull(Ljava/lang/Object;)Ljava/lang/Object;
 
-    new-instance v0, Lj$/util/l;
+    new-instance v0, Lj$/util/m;
 
-    invoke-direct {v0, p1}, Lj$/util/l;-><init>(Lj$/util/function/Consumer;)V
+    invoke-direct {v0, p1}, Lj$/util/m;-><init>(Lj$/util/function/Consumer;)V
 
-    invoke-interface {p0, v0}, Lj$/util/Spliterator$a;->h(Lj$/util/function/e;)V
+    invoke-interface {p0, v0}, Lj$/util/x;->l(Lj$/util/function/g;)V
 
     :goto_0
     return-void
@@ -209,38 +511,38 @@
 
     const-string p1, "{0} calling Spliterator.OfDouble.forEachRemaining((DoubleConsumer) action::accept)"
 
-    invoke-static {p0, p1}, Lj$/util/J;->a(Ljava/lang/Class;Ljava/lang/String;)V
+    invoke-static {p0, p1}, Lj$/util/V;->a(Ljava/lang/Class;Ljava/lang/String;)V
 
     const/4 p0, 0x0
 
     throw p0
 .end method
 
-.method public static c(Lj$/util/Spliterator$b;Lj$/util/function/Consumer;)V
+.method public static d(Lj$/util/z;Lj$/util/function/Consumer;)V
     .locals 1
 
-    instance-of v0, p1, Lj$/util/function/i;
+    instance-of v0, p1, Lj$/util/function/IntConsumer;
 
     if-eqz v0, :cond_0
 
-    check-cast p1, Lj$/util/function/i;
+    check-cast p1, Lj$/util/function/IntConsumer;
 
-    invoke-interface {p0, p1}, Lj$/util/Spliterator$b;->f(Lj$/util/function/i;)V
+    invoke-interface {p0, p1}, Lj$/util/z;->m(Lj$/util/function/IntConsumer;)V
 
     goto :goto_0
 
     :cond_0
-    sget-boolean v0, Lj$/util/J;->a:Z
+    sget-boolean v0, Lj$/util/V;->a:Z
 
     if-nez v0, :cond_1
 
     invoke-static {p1}, Ljava/util/Objects;->requireNonNull(Ljava/lang/Object;)Ljava/lang/Object;
 
-    new-instance v0, Lj$/util/n;
+    new-instance v0, Lj$/util/p;
 
-    invoke-direct {v0, p1}, Lj$/util/n;-><init>(Lj$/util/function/Consumer;)V
+    invoke-direct {v0, p1}, Lj$/util/p;-><init>(Lj$/util/function/Consumer;)V
 
-    invoke-interface {p0, v0}, Lj$/util/Spliterator$b;->f(Lj$/util/function/i;)V
+    invoke-interface {p0, v0}, Lj$/util/z;->m(Lj$/util/function/IntConsumer;)V
 
     :goto_0
     return-void
@@ -252,38 +554,38 @@
 
     const-string p1, "{0} calling Spliterator.OfInt.forEachRemaining((IntConsumer) action::accept)"
 
-    invoke-static {p0, p1}, Lj$/util/J;->a(Ljava/lang/Class;Ljava/lang/String;)V
+    invoke-static {p0, p1}, Lj$/util/V;->a(Ljava/lang/Class;Ljava/lang/String;)V
 
     const/4 p0, 0x0
 
     throw p0
 .end method
 
-.method public static d(Lj$/util/Spliterator$c;Lj$/util/function/Consumer;)V
+.method public static g(Lj$/util/B;Lj$/util/function/Consumer;)V
     .locals 1
 
-    instance-of v0, p1, Lj$/util/function/m;
+    instance-of v0, p1, Lj$/util/function/t;
 
     if-eqz v0, :cond_0
 
-    check-cast p1, Lj$/util/function/m;
+    check-cast p1, Lj$/util/function/t;
 
-    invoke-interface {p0, p1}, Lj$/util/Spliterator$c;->g(Lj$/util/function/m;)V
+    invoke-interface {p0, p1}, Lj$/util/B;->e(Lj$/util/function/t;)V
 
     goto :goto_0
 
     :cond_0
-    sget-boolean v0, Lj$/util/J;->a:Z
+    sget-boolean v0, Lj$/util/V;->a:Z
 
     if-nez v0, :cond_1
 
     invoke-static {p1}, Ljava/util/Objects;->requireNonNull(Ljava/lang/Object;)Ljava/lang/Object;
 
-    new-instance v0, Lj$/util/p;
+    new-instance v0, Lj$/util/s;
 
-    invoke-direct {v0, p1}, Lj$/util/p;-><init>(Lj$/util/function/Consumer;)V
+    invoke-direct {v0, p1}, Lj$/util/s;-><init>(Lj$/util/function/Consumer;)V
 
-    invoke-interface {p0, v0}, Lj$/util/Spliterator$c;->g(Lj$/util/function/m;)V
+    invoke-interface {p0, v0}, Lj$/util/B;->e(Lj$/util/function/t;)V
 
     :goto_0
     return-void
@@ -295,14 +597,14 @@
 
     const-string p1, "{0} calling Spliterator.OfLong.forEachRemaining((LongConsumer) action::accept)"
 
-    invoke-static {p0, p1}, Lj$/util/J;->a(Ljava/lang/Class;Ljava/lang/String;)V
+    invoke-static {p0, p1}, Lj$/util/V;->a(Ljava/lang/Class;Ljava/lang/String;)V
 
     const/4 p0, 0x0
 
     throw p0
 .end method
 
-.method public static e(Lj$/util/Spliterator;)J
+.method public static i(Lj$/util/Spliterator;)J
     .locals 2
 
     invoke-interface {p0}, Lj$/util/Spliterator;->characteristics()I
@@ -326,7 +628,7 @@
     return-wide v0
 .end method
 
-.method public static f(Lj$/util/Spliterator;I)Z
+.method public static j(Lj$/util/Spliterator;I)Z
     .locals 0
 
     invoke-interface {p0}, Lj$/util/Spliterator;->characteristics()I
@@ -348,7 +650,7 @@
     return p0
 .end method
 
-.method public static g(Ljava/util/Collection;)Lj$/util/stream/c4;
+.method public static n(Ljava/util/Collection;)Lj$/util/stream/Stream;
     .locals 1
 
     invoke-static {p0}, Lj$/util/Collection$-EL;->b(Ljava/util/Collection;)Lj$/util/Spliterator;
@@ -357,14 +659,14 @@
 
     const/4 v0, 0x1
 
-    invoke-static {p0, v0}, Lj$/util/stream/p1;->y(Lj$/util/Spliterator;Z)Lj$/util/stream/c4;
+    invoke-static {p0, v0}, Lj$/util/stream/D0;->R0(Lj$/util/Spliterator;Z)Lj$/util/stream/Stream;
 
     move-result-object p0
 
     return-object p0
 .end method
 
-.method public static h(Ljava/util/Collection;Lj$/util/function/Predicate;)Z
+.method public static o(Ljava/util/Collection;Lj$/util/function/Predicate;)Z
     .locals 2
 
     sget-object v0, Lj$/util/DesugarCollections;->a:Ljava/lang/Class;
@@ -418,7 +720,7 @@
     return v0
 .end method
 
-.method public static i(Ljava/util/Collection;)Lj$/util/stream/c4;
+.method public static p(Ljava/util/Collection;)Lj$/util/stream/Stream;
     .locals 1
 
     invoke-static {p0}, Lj$/util/Collection$-EL;->b(Ljava/util/Collection;)Lj$/util/Spliterator;
@@ -427,40 +729,40 @@
 
     const/4 v0, 0x0
 
-    invoke-static {p0, v0}, Lj$/util/stream/p1;->y(Lj$/util/Spliterator;Z)Lj$/util/stream/c4;
+    invoke-static {p0, v0}, Lj$/util/stream/D0;->R0(Lj$/util/Spliterator;Z)Lj$/util/stream/Stream;
 
     move-result-object p0
 
     return-object p0
 .end method
 
-.method public static j(Lj$/util/Spliterator$a;Lj$/util/function/Consumer;)Z
+.method public static q(Lj$/util/x;Lj$/util/function/Consumer;)Z
     .locals 1
 
-    instance-of v0, p1, Lj$/util/function/e;
+    instance-of v0, p1, Lj$/util/function/g;
 
     if-eqz v0, :cond_0
 
-    check-cast p1, Lj$/util/function/e;
+    check-cast p1, Lj$/util/function/g;
 
-    invoke-interface {p0, p1}, Lj$/util/Spliterator$a;->l(Lj$/util/function/e;)Z
+    invoke-interface {p0, p1}, Lj$/util/x;->k(Lj$/util/function/g;)Z
 
     move-result p0
 
     return p0
 
     :cond_0
-    sget-boolean v0, Lj$/util/J;->a:Z
+    sget-boolean v0, Lj$/util/V;->a:Z
 
     if-nez v0, :cond_1
 
     invoke-static {p1}, Ljava/util/Objects;->requireNonNull(Ljava/lang/Object;)Ljava/lang/Object;
 
-    new-instance v0, Lj$/util/l;
+    new-instance v0, Lj$/util/m;
 
-    invoke-direct {v0, p1}, Lj$/util/l;-><init>(Lj$/util/function/Consumer;)V
+    invoke-direct {v0, p1}, Lj$/util/m;-><init>(Lj$/util/function/Consumer;)V
 
-    invoke-interface {p0, v0}, Lj$/util/Spliterator$a;->l(Lj$/util/function/e;)Z
+    invoke-interface {p0, v0}, Lj$/util/x;->k(Lj$/util/function/g;)Z
 
     move-result p0
 
@@ -473,40 +775,40 @@
 
     const-string p1, "{0} calling Spliterator.OfDouble.tryAdvance((DoubleConsumer) action::accept)"
 
-    invoke-static {p0, p1}, Lj$/util/J;->a(Ljava/lang/Class;Ljava/lang/String;)V
+    invoke-static {p0, p1}, Lj$/util/V;->a(Ljava/lang/Class;Ljava/lang/String;)V
 
     const/4 p0, 0x0
 
     throw p0
 .end method
 
-.method public static k(Lj$/util/Spliterator$b;Lj$/util/function/Consumer;)Z
+.method public static r(Lj$/util/z;Lj$/util/function/Consumer;)Z
     .locals 1
 
-    instance-of v0, p1, Lj$/util/function/i;
+    instance-of v0, p1, Lj$/util/function/IntConsumer;
 
     if-eqz v0, :cond_0
 
-    check-cast p1, Lj$/util/function/i;
+    check-cast p1, Lj$/util/function/IntConsumer;
 
-    invoke-interface {p0, p1}, Lj$/util/Spliterator$b;->j(Lj$/util/function/i;)Z
+    invoke-interface {p0, p1}, Lj$/util/z;->h(Lj$/util/function/IntConsumer;)Z
 
     move-result p0
 
     return p0
 
     :cond_0
-    sget-boolean v0, Lj$/util/J;->a:Z
+    sget-boolean v0, Lj$/util/V;->a:Z
 
     if-nez v0, :cond_1
 
     invoke-static {p1}, Ljava/util/Objects;->requireNonNull(Ljava/lang/Object;)Ljava/lang/Object;
 
-    new-instance v0, Lj$/util/n;
+    new-instance v0, Lj$/util/p;
 
-    invoke-direct {v0, p1}, Lj$/util/n;-><init>(Lj$/util/function/Consumer;)V
+    invoke-direct {v0, p1}, Lj$/util/p;-><init>(Lj$/util/function/Consumer;)V
 
-    invoke-interface {p0, v0}, Lj$/util/Spliterator$b;->j(Lj$/util/function/i;)Z
+    invoke-interface {p0, v0}, Lj$/util/z;->h(Lj$/util/function/IntConsumer;)Z
 
     move-result p0
 
@@ -519,40 +821,40 @@
 
     const-string p1, "{0} calling Spliterator.OfInt.tryAdvance((IntConsumer) action::accept)"
 
-    invoke-static {p0, p1}, Lj$/util/J;->a(Ljava/lang/Class;Ljava/lang/String;)V
+    invoke-static {p0, p1}, Lj$/util/V;->a(Ljava/lang/Class;Ljava/lang/String;)V
 
     const/4 p0, 0x0
 
     throw p0
 .end method
 
-.method public static l(Lj$/util/Spliterator$c;Lj$/util/function/Consumer;)Z
+.method public static s(Lj$/util/B;Lj$/util/function/Consumer;)Z
     .locals 1
 
-    instance-of v0, p1, Lj$/util/function/m;
+    instance-of v0, p1, Lj$/util/function/t;
 
     if-eqz v0, :cond_0
 
-    check-cast p1, Lj$/util/function/m;
+    check-cast p1, Lj$/util/function/t;
 
-    invoke-interface {p0, p1}, Lj$/util/Spliterator$c;->k(Lj$/util/function/m;)Z
+    invoke-interface {p0, p1}, Lj$/util/B;->f(Lj$/util/function/t;)Z
 
     move-result p0
 
     return p0
 
     :cond_0
-    sget-boolean v0, Lj$/util/J;->a:Z
+    sget-boolean v0, Lj$/util/V;->a:Z
 
     if-nez v0, :cond_1
 
     invoke-static {p1}, Ljava/util/Objects;->requireNonNull(Ljava/lang/Object;)Ljava/lang/Object;
 
-    new-instance v0, Lj$/util/p;
+    new-instance v0, Lj$/util/s;
 
-    invoke-direct {v0, p1}, Lj$/util/p;-><init>(Lj$/util/function/Consumer;)V
+    invoke-direct {v0, p1}, Lj$/util/s;-><init>(Lj$/util/function/Consumer;)V
 
-    invoke-interface {p0, v0}, Lj$/util/Spliterator$c;->k(Lj$/util/function/m;)Z
+    invoke-interface {p0, v0}, Lj$/util/B;->f(Lj$/util/function/t;)Z
 
     move-result p0
 
@@ -565,14 +867,14 @@
 
     const-string p1, "{0} calling Spliterator.OfLong.tryAdvance((LongConsumer) action::accept)"
 
-    invoke-static {p0, p1}, Lj$/util/J;->a(Ljava/lang/Class;Ljava/lang/String;)V
+    invoke-static {p0, p1}, Lj$/util/V;->a(Ljava/lang/Class;Ljava/lang/String;)V
 
     const/4 p0, 0x0
 
     throw p0
 .end method
 
-.method public static m(Ljava/util/Map;Ljava/lang/Object;Lj$/util/function/BiFunction;)Ljava/lang/Object;
+.method public static t(Ljava/util/Map;Ljava/lang/Object;Lj$/util/function/BiFunction;)Ljava/lang/Object;
     .locals 3
 
     instance-of v0, p0, Lj$/util/Map;
@@ -659,7 +961,7 @@
     return-object p0
 .end method
 
-.method public static n(Ljava/util/Map;Ljava/lang/Object;Lj$/util/function/Function;)Ljava/lang/Object;
+.method public static u(Ljava/util/Map;Ljava/lang/Object;Lj$/util/function/Function;)Ljava/lang/Object;
     .locals 1
 
     instance-of v0, p0, Lj$/util/Map;
@@ -717,7 +1019,7 @@
     return-object p0
 .end method
 
-.method public static o(Ljava/util/Map;Ljava/lang/Object;Lj$/util/function/BiFunction;)Ljava/lang/Object;
+.method public static v(Ljava/util/Map;Ljava/lang/Object;Lj$/util/function/BiFunction;)Ljava/lang/Object;
     .locals 2
 
     instance-of v0, p0, Lj$/util/Map;
@@ -785,7 +1087,7 @@
     return-object p0
 .end method
 
-.method public static p(Lj$/util/Optional;)Ljava/util/Optional;
+.method public static w(Lj$/util/Optional;)Ljava/util/Optional;
     .locals 1
 
     if-nez p0, :cond_0
@@ -819,7 +1121,7 @@
     return-object p0
 .end method
 
-.method public static q(Lj$/util/i;)Ljava/util/OptionalDouble;
+.method public static x(Lj$/util/j;)Ljava/util/OptionalDouble;
     .locals 2
 
     if-nez p0, :cond_0
@@ -829,13 +1131,13 @@
     return-object p0
 
     :cond_0
-    invoke-virtual {p0}, Lj$/util/i;->c()Z
+    invoke-virtual {p0}, Lj$/util/j;->c()Z
 
     move-result v0
 
     if-eqz v0, :cond_1
 
-    invoke-virtual {p0}, Lj$/util/i;->b()D
+    invoke-virtual {p0}, Lj$/util/j;->b()D
 
     move-result-wide v0
 
@@ -853,7 +1155,7 @@
     return-object p0
 .end method
 
-.method public static r(Lj$/util/j;)Ljava/util/OptionalInt;
+.method public static y(Lj$/util/k;)Ljava/util/OptionalInt;
     .locals 1
 
     if-nez p0, :cond_0
@@ -863,13 +1165,13 @@
     return-object p0
 
     :cond_0
-    invoke-virtual {p0}, Lj$/util/j;->c()Z
+    invoke-virtual {p0}, Lj$/util/k;->c()Z
 
     move-result v0
 
     if-eqz v0, :cond_1
 
-    invoke-virtual {p0}, Lj$/util/j;->b()I
+    invoke-virtual {p0}, Lj$/util/k;->b()I
 
     move-result p0
 
@@ -887,7 +1189,7 @@
     return-object p0
 .end method
 
-.method public static s(Lj$/util/k;)Ljava/util/OptionalLong;
+.method public static z(Lj$/util/l;)Ljava/util/OptionalLong;
     .locals 2
 
     if-nez p0, :cond_0
@@ -897,13 +1199,13 @@
     return-object p0
 
     :cond_0
-    invoke-virtual {p0}, Lj$/util/k;->c()Z
+    invoke-virtual {p0}, Lj$/util/l;->c()Z
 
     move-result v0
 
     if-eqz v0, :cond_1
 
-    invoke-virtual {p0}, Lj$/util/k;->b()J
+    invoke-virtual {p0}, Lj$/util/l;->b()J
 
     move-result-wide v0
 
@@ -921,263 +1223,46 @@
     return-object p0
 .end method
 
-.method public static t(Ljava/lang/Object;Ljava/lang/Object;)Z
-    .locals 0
 
-    if-eq p0, p1, :cond_1
-
-    if-eqz p0, :cond_0
-
-    invoke-virtual {p0, p1}, Ljava/lang/Object;->equals(Ljava/lang/Object;)Z
-
-    move-result p0
-
-    if-eqz p0, :cond_0
-
-    goto :goto_0
-
-    :cond_0
-    const/4 p0, 0x0
-
-    goto :goto_1
-
-    :cond_1
-    :goto_0
-    const/4 p0, 0x1
-
-    :goto_1
-    return p0
-.end method
-
-.method public static synthetic u(Ljava/util/Map;Lj$/util/function/BiConsumer;)V
+# virtual methods
+.method public characteristics()I
     .locals 1
 
-    instance-of v0, p0, Lj$/util/Map;
+    const/16 v0, 0x4040
 
-    if-eqz v0, :cond_0
-
-    check-cast p0, Lj$/util/Map;
-
-    invoke-interface {p0, p1}, Lj$/util/Map;->forEach(Lj$/util/function/BiConsumer;)V
-
-    return-void
-
-    :cond_0
-    instance-of v0, p0, Ljava/util/concurrent/ConcurrentMap;
-
-    if-eqz v0, :cond_1
-
-    check-cast p0, Ljava/util/concurrent/ConcurrentMap;
-
-    invoke-static {p0, p1}, Lj$/lang/d;->a(Ljava/util/concurrent/ConcurrentMap;Lj$/util/function/BiConsumer;)V
-
-    return-void
-
-    :cond_1
-    invoke-static {p0, p1}, Lj$/util/Map$-CC;->$default$forEach(Ljava/util/Map;Lj$/util/function/BiConsumer;)V
-
-    return-void
+    return v0
 .end method
 
-.method public static v(Ljava/util/Map;Ljava/lang/Object;Ljava/lang/Object;)Ljava/lang/Object;
-    .locals 1
-
-    instance-of v0, p0, Lj$/util/Map;
-
-    if-eqz v0, :cond_0
-
-    check-cast p0, Lj$/util/Map;
-
-    invoke-interface {p0, p1, p2}, Lj$/util/Map;->getOrDefault(Ljava/lang/Object;Ljava/lang/Object;)Ljava/lang/Object;
-
-    move-result-object p0
-
-    return-object p0
-
-    :cond_0
-    instance-of v0, p0, Ljava/util/concurrent/ConcurrentMap;
-
-    if-eqz v0, :cond_2
-
-    check-cast p0, Ljava/util/concurrent/ConcurrentMap;
-
-    invoke-interface {p0, p1}, Ljava/util/concurrent/ConcurrentMap;->get(Ljava/lang/Object;)Ljava/lang/Object;
-
-    move-result-object p0
-
-    if-eqz p0, :cond_1
-
-    move-object p2, p0
-
-    :cond_1
-    return-object p2
-
-    :cond_2
-    invoke-interface {p0, p1}, Ljava/util/Map;->get(Ljava/lang/Object;)Ljava/lang/Object;
-
-    move-result-object v0
-
-    if-nez v0, :cond_3
-
-    invoke-interface {p0, p1}, Ljava/util/Map;->containsKey(Ljava/lang/Object;)Z
-
-    move-result p0
-
-    if-eqz p0, :cond_4
-
-    :cond_3
-    move-object p2, v0
-
-    :cond_4
-    return-object p2
-.end method
-
-.method public static w(Ljava/util/Map;Ljava/lang/Object;Ljava/lang/Object;Lj$/util/function/BiFunction;)Ljava/lang/Object;
+.method public estimateSize()J
     .locals 2
 
-    instance-of v0, p0, Lj$/util/Map;
+    const-wide/16 v0, 0x0
 
-    if-eqz v0, :cond_0
-
-    check-cast p0, Lj$/util/Map;
-
-    invoke-interface {p0, p1, p2, p3}, Lj$/util/Map;->merge(Ljava/lang/Object;Ljava/lang/Object;Lj$/util/function/BiFunction;)Ljava/lang/Object;
-
-    move-result-object p0
-
-    return-object p0
-
-    :cond_0
-    instance-of v0, p0, Ljava/util/concurrent/ConcurrentMap;
-
-    if-eqz v0, :cond_5
-
-    move-object v0, p0
-
-    check-cast v0, Ljava/util/concurrent/ConcurrentMap;
-
-    invoke-static {p3}, Ljava/util/Objects;->requireNonNull(Ljava/lang/Object;)Ljava/lang/Object;
-
-    invoke-static {p2}, Ljava/util/Objects;->requireNonNull(Ljava/lang/Object;)Ljava/lang/Object;
-
-    :cond_1
-    invoke-interface {v0, p1}, Ljava/util/concurrent/ConcurrentMap;->get(Ljava/lang/Object;)Ljava/lang/Object;
-
-    move-result-object p0
-
-    :cond_2
-    if-eqz p0, :cond_4
-
-    invoke-interface {p3, p0, p2}, Lj$/util/function/BiFunction;->apply(Ljava/lang/Object;Ljava/lang/Object;)Ljava/lang/Object;
-
-    move-result-object v1
-
-    if-eqz v1, :cond_3
-
-    invoke-interface {v0, p1, p0, v1}, Ljava/util/concurrent/ConcurrentMap;->replace(Ljava/lang/Object;Ljava/lang/Object;Ljava/lang/Object;)Z
-
-    move-result p0
-
-    if-eqz p0, :cond_1
-
-    move-object p2, v1
-
-    goto :goto_0
-
-    :cond_3
-    invoke-interface {v0, p1, p0}, Ljava/util/concurrent/ConcurrentMap;->remove(Ljava/lang/Object;Ljava/lang/Object;)Z
-
-    move-result p0
-
-    if-eqz p0, :cond_1
-
-    const/4 p2, 0x0
-
-    goto :goto_0
-
-    :cond_4
-    invoke-interface {v0, p1, p2}, Ljava/util/concurrent/ConcurrentMap;->putIfAbsent(Ljava/lang/Object;Ljava/lang/Object;)Ljava/lang/Object;
-
-    move-result-object p0
-
-    if-nez p0, :cond_2
-
-    :goto_0
-    return-object p2
-
-    :cond_5
-    invoke-static {p0, p1, p2, p3}, Lj$/util/Map$-CC;->$default$merge(Ljava/util/Map;Ljava/lang/Object;Ljava/lang/Object;Lj$/util/function/BiFunction;)Ljava/lang/Object;
-
-    move-result-object p0
-
-    return-object p0
+    return-wide v0
 .end method
 
-.method public static synthetic x(Ljava/util/Map;Ljava/lang/Object;Ljava/lang/Object;)Ljava/lang/Object;
-    .locals 1
+.method public forEachRemaining(Ljava/lang/Object;)V
+    .locals 0
 
-    instance-of v0, p0, Lj$/util/Map;
+    invoke-static {p1}, Ljava/util/Objects;->requireNonNull(Ljava/lang/Object;)Ljava/lang/Object;
 
-    if-eqz v0, :cond_0
-
-    check-cast p0, Lj$/util/Map;
-
-    invoke-interface {p0, p1, p2}, Lj$/util/Map;->putIfAbsent(Ljava/lang/Object;Ljava/lang/Object;)Ljava/lang/Object;
-
-    move-result-object p0
-
-    return-object p0
-
-    :cond_0
-    invoke-static {p0, p1, p2}, Lj$/util/Map$-CC;->$default$putIfAbsent(Ljava/util/Map;Ljava/lang/Object;Ljava/lang/Object;)Ljava/lang/Object;
-
-    move-result-object p0
-
-    return-object p0
+    return-void
 .end method
 
-.method public static synthetic y(Ljava/util/Map;Ljava/lang/Object;Ljava/lang/Object;)Z
-    .locals 1
+.method public tryAdvance(Ljava/lang/Object;)Z
+    .locals 0
 
-    instance-of v0, p0, Lj$/util/Map;
+    invoke-static {p1}, Ljava/util/Objects;->requireNonNull(Ljava/lang/Object;)Ljava/lang/Object;
 
-    if-eqz v0, :cond_0
+    const/4 p1, 0x0
 
-    check-cast p0, Lj$/util/Map;
-
-    invoke-interface {p0, p1, p2}, Lj$/util/Map;->remove(Ljava/lang/Object;Ljava/lang/Object;)Z
-
-    move-result p0
-
-    return p0
-
-    :cond_0
-    invoke-static {p0, p1, p2}, Lj$/util/Map$-CC;->$default$remove(Ljava/util/Map;Ljava/lang/Object;Ljava/lang/Object;)Z
-
-    move-result p0
-
-    return p0
+    return p1
 .end method
 
-.method public static synthetic z(Ljava/util/Map;Ljava/lang/Object;Ljava/lang/Object;)Ljava/lang/Object;
+.method public trySplit()Lj$/util/Spliterator;
     .locals 1
 
-    instance-of v0, p0, Lj$/util/Map;
+    const/4 v0, 0x0
 
-    if-eqz v0, :cond_0
-
-    check-cast p0, Lj$/util/Map;
-
-    invoke-interface {p0, p1, p2}, Lj$/util/Map;->replace(Ljava/lang/Object;Ljava/lang/Object;)Ljava/lang/Object;
-
-    move-result-object p0
-
-    return-object p0
-
-    :cond_0
-    invoke-static {p0, p1, p2}, Lj$/util/Map$-CC;->$default$replace(Ljava/util/Map;Ljava/lang/Object;Ljava/lang/Object;)Ljava/lang/Object;
-
-    move-result-object p0
-
-    return-object p0
+    return-object v0
 .end method

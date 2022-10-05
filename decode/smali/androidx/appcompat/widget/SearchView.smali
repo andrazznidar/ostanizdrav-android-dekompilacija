@@ -1869,7 +1869,7 @@
 
     if-nez v0, :cond_0
 
-    invoke-super {p0, p1}, Landroid/view/View;->onRestoreInstanceState(Landroid/os/Parcelable;)V
+    invoke-super {p0, p1}, Landroid/view/ViewGroup;->onRestoreInstanceState(Landroid/os/Parcelable;)V
 
     return-void
 
@@ -1878,7 +1878,7 @@
 
     iget-object v0, p1, Landroidx/customview/view/AbsSavedState;->mSuperState:Landroid/os/Parcelable;
 
-    invoke-super {p0, v0}, Landroid/view/View;->onRestoreInstanceState(Landroid/os/Parcelable;)V
+    invoke-super {p0, v0}, Landroid/view/ViewGroup;->onRestoreInstanceState(Landroid/os/Parcelable;)V
 
     iget-boolean p1, p1, Landroidx/appcompat/widget/SearchView$SavedState;->isIconified:Z
 
@@ -1892,7 +1892,7 @@
 .method public onSaveInstanceState()Landroid/os/Parcelable;
     .locals 2
 
-    invoke-super {p0}, Landroid/view/View;->onSaveInstanceState()Landroid/os/Parcelable;
+    invoke-super {p0}, Landroid/view/ViewGroup;->onSaveInstanceState()Landroid/os/Parcelable;
 
     move-result-object v0
 
@@ -1996,7 +1996,7 @@
 .method public onWindowFocusChanged(Z)V
     .locals 0
 
-    invoke-super {p0, p1}, Landroid/view/View;->onWindowFocusChanged(Z)V
+    invoke-super {p0, p1}, Landroid/view/ViewGroup;->onWindowFocusChanged(Z)V
 
     iget-object p1, p0, Landroidx/appcompat/widget/SearchView;->mUpdateDrawableStateRunnable:Ljava/lang/Runnable;
 

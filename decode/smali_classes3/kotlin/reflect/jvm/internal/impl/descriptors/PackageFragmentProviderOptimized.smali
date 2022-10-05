@@ -18,3 +18,6 @@
         }
     .end annotation
 .end method
+
+.method public abstract isEmpty(Lkotlin/reflect/jvm/internal/impl/name/FqName;)Z
+.end method

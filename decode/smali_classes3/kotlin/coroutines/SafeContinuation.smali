@@ -80,6 +80,10 @@
         }
     .end annotation
 
+    const-string v0, "delegate"
+
+    invoke-static {p1, v0}, Lkotlin/jvm/internal/Intrinsics;->checkNotNullParameter(Ljava/lang/Object;Ljava/lang/String;)V
+
     sget-object v0, Lkotlin/coroutines/intrinsics/CoroutineSingletons;->UNDECIDED:Lkotlin/coroutines/intrinsics/CoroutineSingletons;
 
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
@@ -100,13 +104,16 @@
 
     instance-of v1, v0, Lkotlin/coroutines/jvm/internal/CoroutineStackFrame;
 
-    if-nez v1, :cond_0
+    if-eqz v1, :cond_0
 
-    const/4 v0, 0x0
-
-    :cond_0
     check-cast v0, Lkotlin/coroutines/jvm/internal/CoroutineStackFrame;
 
+    goto :goto_0
+
+    :cond_0
+    const/4 v0, 0x0
+
+    :goto_0
     return-object v0
 .end method
 
@@ -225,17 +232,11 @@
 .method public toString()Ljava/lang/String;
     .locals 2
 
-    const-string v0, "SafeContinuation for "
+    iget-object v0, p0, Lkotlin/coroutines/SafeContinuation;->delegate:Lkotlin/coroutines/Continuation;
 
-    invoke-static {v0}, Landroid/support/v4/media/RatingCompat$$ExternalSyntheticOutline0;->m(Ljava/lang/String;)Ljava/lang/StringBuilder;
+    const-string v1, "SafeContinuation for "
 
-    move-result-object v0
-
-    iget-object v1, p0, Lkotlin/coroutines/SafeContinuation;->delegate:Lkotlin/coroutines/Continuation;
-
-    invoke-virtual {v0, v1}, Ljava/lang/StringBuilder;->append(Ljava/lang/Object;)Ljava/lang/StringBuilder;
-
-    invoke-virtual {v0}, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
+    invoke-static {v1, v0}, Lkotlin/jvm/internal/Intrinsics;->stringPlus(Ljava/lang/String;Ljava/lang/Object;)Ljava/lang/String;
 
     move-result-object v0
 

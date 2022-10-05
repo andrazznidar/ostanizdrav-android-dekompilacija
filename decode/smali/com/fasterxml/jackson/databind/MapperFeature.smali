@@ -86,12 +86,12 @@
 # instance fields
 .field public final _defaultState:Z
 
-.field public final _mask:I
+.field public final _mask:J
 
 
 # direct methods
 .method public static constructor <clinit>()V
-    .locals 34
+    .locals 35
 
     new-instance v0, Lcom/fasterxml/jackson/databind/MapperFeature;
 
@@ -455,133 +455,149 @@
 
     sput-object v3, Lcom/fasterxml/jackson/databind/MapperFeature;->BLOCK_UNSAFE_POLYMORPHIC_BASE_TYPES:Lcom/fasterxml/jackson/databind/MapperFeature;
 
-    const/16 v6, 0x1f
+    new-instance v6, Lcom/fasterxml/jackson/databind/MapperFeature;
 
-    new-array v6, v6, [Lcom/fasterxml/jackson/databind/MapperFeature;
+    const-string v8, "APPLY_DEFAULT_VALUES"
 
-    aput-object v0, v6, v2
+    const/16 v2, 0x1f
 
-    const/4 v0, 0x1
+    move-object/from16 v34, v3
 
-    aput-object v1, v6, v0
+    const/4 v3, 0x1
+
+    invoke-direct {v6, v8, v2, v3}, Lcom/fasterxml/jackson/databind/MapperFeature;-><init>(Ljava/lang/String;IZ)V
+
+    const/16 v2, 0x20
+
+    new-array v2, v2, [Lcom/fasterxml/jackson/databind/MapperFeature;
+
+    const/4 v8, 0x0
+
+    aput-object v0, v2, v8
+
+    aput-object v1, v2, v3
 
     const/4 v0, 0x2
 
-    aput-object v4, v6, v0
+    aput-object v4, v2, v0
 
     const/4 v0, 0x3
 
-    aput-object v5, v6, v0
+    aput-object v5, v2, v0
 
     const/4 v0, 0x4
 
-    aput-object v7, v6, v0
+    aput-object v7, v2, v0
 
     const/4 v0, 0x5
 
-    aput-object v9, v6, v0
+    aput-object v9, v2, v0
 
     const/4 v0, 0x6
 
-    aput-object v11, v6, v0
+    aput-object v11, v2, v0
 
     const/4 v0, 0x7
 
-    aput-object v13, v6, v0
+    aput-object v13, v2, v0
 
     const/16 v0, 0x8
 
-    aput-object v15, v6, v0
+    aput-object v15, v2, v0
 
     const/16 v0, 0x9
 
-    aput-object v14, v6, v0
+    aput-object v14, v2, v0
 
     const/16 v0, 0xa
 
-    aput-object v12, v6, v0
+    aput-object v12, v2, v0
 
     const/16 v0, 0xb
 
-    aput-object v10, v6, v0
+    aput-object v10, v2, v0
 
     const/16 v0, 0xc
 
-    aput-object v17, v6, v0
+    aput-object v17, v2, v0
 
     const/16 v0, 0xd
 
-    aput-object v18, v6, v0
+    aput-object v18, v2, v0
 
     const/16 v0, 0xe
 
-    aput-object v19, v6, v0
+    aput-object v19, v2, v0
 
     const/16 v0, 0xf
 
-    aput-object v20, v6, v0
+    aput-object v20, v2, v0
 
     const/16 v0, 0x10
 
-    aput-object v21, v6, v0
+    aput-object v21, v2, v0
 
     const/16 v0, 0x11
 
-    aput-object v22, v6, v0
+    aput-object v22, v2, v0
 
     const/16 v0, 0x12
 
-    aput-object v23, v6, v0
+    aput-object v23, v2, v0
 
     const/16 v0, 0x13
 
-    aput-object v24, v6, v0
+    aput-object v24, v2, v0
 
     const/16 v0, 0x14
 
-    aput-object v25, v6, v0
+    aput-object v25, v2, v0
 
     const/16 v0, 0x15
 
-    aput-object v26, v6, v0
+    aput-object v26, v2, v0
 
     const/16 v0, 0x16
 
-    aput-object v27, v6, v0
+    aput-object v27, v2, v0
 
     const/16 v0, 0x17
 
-    aput-object v28, v6, v0
+    aput-object v28, v2, v0
 
     const/16 v0, 0x18
 
-    aput-object v29, v6, v0
+    aput-object v29, v2, v0
 
     const/16 v0, 0x19
 
-    aput-object v30, v6, v0
+    aput-object v30, v2, v0
 
     const/16 v0, 0x1a
 
-    aput-object v31, v6, v0
+    aput-object v31, v2, v0
 
     const/16 v0, 0x1b
 
-    aput-object v16, v6, v0
+    aput-object v16, v2, v0
 
     const/16 v0, 0x1c
 
-    aput-object v32, v6, v0
+    aput-object v32, v2, v0
 
     const/16 v0, 0x1d
 
-    aput-object v33, v6, v0
+    aput-object v33, v2, v0
 
     const/16 v0, 0x1e
 
-    aput-object v3, v6, v0
+    aput-object v34, v2, v0
 
-    sput-object v6, Lcom/fasterxml/jackson/databind/MapperFeature;->$VALUES:[Lcom/fasterxml/jackson/databind/MapperFeature;
+    const/16 v0, 0x1f
+
+    aput-object v6, v2, v0
+
+    sput-object v2, Lcom/fasterxml/jackson/databind/MapperFeature;->$VALUES:[Lcom/fasterxml/jackson/databind/MapperFeature;
 
     return-void
 .end method
@@ -602,11 +618,11 @@
 
     move-result p1
 
-    const/4 p2, 0x1
+    const-wide/16 p2, 0x1
 
-    shl-int p1, p2, p1
+    shl-long p1, p2, p1
 
-    iput p1, p0, Lcom/fasterxml/jackson/databind/MapperFeature;->_mask:I
+    iput-wide p1, p0, Lcom/fasterxml/jackson/databind/MapperFeature;->_mask:J
 
     return-void
 .end method
@@ -650,9 +666,13 @@
 .end method
 
 .method public getMask()I
-    .locals 1
+    .locals 2
+    .annotation runtime Ljava/lang/Deprecated;
+    .end annotation
 
-    iget v0, p0, Lcom/fasterxml/jackson/databind/MapperFeature;->_mask:I
+    iget-wide v0, p0, Lcom/fasterxml/jackson/databind/MapperFeature;->_mask:J
+
+    long-to-int v0, v0
 
     return v0
 .end method

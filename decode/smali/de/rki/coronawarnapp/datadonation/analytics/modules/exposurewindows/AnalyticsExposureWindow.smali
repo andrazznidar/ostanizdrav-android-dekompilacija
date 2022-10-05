@@ -1,10 +1,14 @@
 .class public final Lde/rki/coronawarnapp/datadonation/analytics/modules/exposurewindows/AnalyticsExposureWindow;
 .super Ljava/lang/Object;
-.source "AnalyticsExposureWindowModel.kt"
+.source "ExposureWindowModel.kt"
 
 
 # instance fields
-.field public final analyticsScanInstances:Ljava/util/List;
+.field private final analyticsScanInstances:Ljava/util/List;
+    .annotation runtime Lcom/google/gson/annotations/SerializedName;
+        value = "analyticsScanInstances"
+    .end annotation
+
     .annotation system Ldalvik/annotation/Signature;
         value = {
             "Ljava/util/List<",
@@ -14,17 +18,41 @@
     .end annotation
 .end field
 
-.field public final calibrationConfidence:I
+.field private final calibrationConfidence:I
+    .annotation runtime Lcom/google/gson/annotations/SerializedName;
+        value = "calibrationConfidence"
+    .end annotation
+.end field
 
-.field public final dateMillis:J
+.field private final dateMillis:J
+    .annotation runtime Lcom/google/gson/annotations/SerializedName;
+        value = "dateMillis"
+    .end annotation
+.end field
 
-.field public final infectiousness:I
+.field private final infectiousness:I
+    .annotation runtime Lcom/google/gson/annotations/SerializedName;
+        value = "infectiousness"
+    .end annotation
+.end field
 
-.field public final normalizedTime:D
+.field private final normalizedTime:D
+    .annotation runtime Lcom/google/gson/annotations/SerializedName;
+        value = "normalizedTime"
+    .end annotation
+.end field
 
-.field public final reportType:I
+.field private final reportType:I
+    .annotation runtime Lcom/google/gson/annotations/SerializedName;
+        value = "reportType"
+    .end annotation
+.end field
 
-.field public final transmissionRiskLevel:I
+.field private final transmissionRiskLevel:I
+    .annotation runtime Lcom/google/gson/annotations/SerializedName;
+        value = "transmissionRiskLevel"
+    .end annotation
+.end field
 
 
 # direct methods
@@ -165,6 +193,70 @@
     return v0
 .end method
 
+.method public final getAnalyticsScanInstances()Ljava/util/List;
+    .locals 1
+    .annotation system Ldalvik/annotation/Signature;
+        value = {
+            "()",
+            "Ljava/util/List<",
+            "Lde/rki/coronawarnapp/datadonation/analytics/modules/exposurewindows/AnalyticsScanInstance;",
+            ">;"
+        }
+    .end annotation
+
+    iget-object v0, p0, Lde/rki/coronawarnapp/datadonation/analytics/modules/exposurewindows/AnalyticsExposureWindow;->analyticsScanInstances:Ljava/util/List;
+
+    return-object v0
+.end method
+
+.method public final getCalibrationConfidence()I
+    .locals 1
+
+    iget v0, p0, Lde/rki/coronawarnapp/datadonation/analytics/modules/exposurewindows/AnalyticsExposureWindow;->calibrationConfidence:I
+
+    return v0
+.end method
+
+.method public final getDateMillis()J
+    .locals 2
+
+    iget-wide v0, p0, Lde/rki/coronawarnapp/datadonation/analytics/modules/exposurewindows/AnalyticsExposureWindow;->dateMillis:J
+
+    return-wide v0
+.end method
+
+.method public final getInfectiousness()I
+    .locals 1
+
+    iget v0, p0, Lde/rki/coronawarnapp/datadonation/analytics/modules/exposurewindows/AnalyticsExposureWindow;->infectiousness:I
+
+    return v0
+.end method
+
+.method public final getNormalizedTime()D
+    .locals 2
+
+    iget-wide v0, p0, Lde/rki/coronawarnapp/datadonation/analytics/modules/exposurewindows/AnalyticsExposureWindow;->normalizedTime:D
+
+    return-wide v0
+.end method
+
+.method public final getReportType()I
+    .locals 1
+
+    iget v0, p0, Lde/rki/coronawarnapp/datadonation/analytics/modules/exposurewindows/AnalyticsExposureWindow;->reportType:I
+
+    return v0
+.end method
+
+.method public final getTransmissionRiskLevel()I
+    .locals 1
+
+    iget v0, p0, Lde/rki/coronawarnapp/datadonation/analytics/modules/exposurewindows/AnalyticsExposureWindow;->transmissionRiskLevel:I
+
+    return v0
+.end method
+
 .method public hashCode()I
     .locals 6
 
@@ -227,6 +319,26 @@
     add-int/2addr v0, v1
 
     return v0
+.end method
+
+.method public final sha256Hash()Ljava/lang/String;
+    .locals 4
+
+    sget-object v0, Lde/rki/coronawarnapp/util/HashExtensions;->INSTANCE:Lde/rki/coronawarnapp/util/HashExtensions;
+
+    invoke-virtual {p0}, Lde/rki/coronawarnapp/datadonation/analytics/modules/exposurewindows/AnalyticsExposureWindow;->toString()Ljava/lang/String;
+
+    move-result-object v1
+
+    const/4 v2, 0x0
+
+    const/4 v3, 0x1
+
+    invoke-static {v0, v1, v2, v3}, Lde/rki/coronawarnapp/util/HashExtensions;->toSHA256$default(Lde/rki/coronawarnapp/util/HashExtensions;Ljava/lang/String;II)Ljava/lang/String;
+
+    move-result-object v0
+
+    return-object v0
 .end method
 
 .method public toString()Ljava/lang/String;

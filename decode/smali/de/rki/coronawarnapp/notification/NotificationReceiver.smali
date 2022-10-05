@@ -9,11 +9,7 @@
 .end annotation
 
 .annotation runtime Lkotlin/Metadata;
-    bv = {
-        0x1,
-        0x0,
-        0x3
-    }
+    bv = {}
     d1 = {
         "\u0000\u000c\n\u0002\u0018\u0002\n\u0002\u0018\u0002\n\u0002\u0008\u0003\u0018\u00002\u00020\u0001B\u0007\u00a2\u0006\u0004\u0008\u0002\u0010\u0003\u00a8\u0006\u0004"
     }
@@ -27,8 +23,8 @@
     k = 0x1
     mv = {
         0x1,
-        0x5,
-        0x1
+        0x6,
+        0x0
     }
 .end annotation
 
@@ -47,7 +43,7 @@
 
     const-class v0, Lde/rki/coronawarnapp/notification/NotificationReceiver;
 
-    invoke-static {v0}, Lde/rki/coronawarnapp/contactdiary/retention/ContactDiaryCleanTask$$ExternalSyntheticOutline0;->m(Ljava/lang/Class;)Ljava/lang/String;
+    invoke-static {v0}, Lorg/bouncycastle/crypto/digests/MD5Digest$$ExternalSyntheticOutline0;->m(Ljava/lang/Class;)Ljava/lang/String;
 
     move-result-object v0
 
@@ -77,7 +73,7 @@
 
     invoke-static {p2, v0}, Lkotlin/jvm/internal/Intrinsics;->checkNotNullParameter(Ljava/lang/Object;Ljava/lang/String;)V
 
-    invoke-static {p0, p1}, Ldagger/android/AndroidInjection;->inject(Landroid/content/BroadcastReceiver;Landroid/content/Context;)V
+    invoke-static {p0, p1}, Lkotlin/jvm/JvmClassMappingKt;->inject(Landroid/content/BroadcastReceiver;Landroid/content/Context;)V
 
     const-string p1, "NOTIFICATION_ID"
 
@@ -111,7 +107,7 @@
 
     invoke-virtual {p2, p1, v0}, Ltimber/log/Timber$Tree;->d(Ljava/lang/String;[Ljava/lang/Object;)V
 
-    goto/16 :goto_1
+    goto/16 :goto_0
 
     :pswitch_0
     const-string v2, "NOTIFICATION_TEST_TYPE"
@@ -128,10 +124,12 @@
 
     move v4, v1
 
-    :goto_0
+    :cond_0
     if-ge v4, v3, :cond_5
 
     aget-object v5, v2, v4
+
+    add-int/lit8 v4, v4, 0x1
 
     iget-object v6, v5, Lde/rki/coronawarnapp/coronatest/type/CoronaTest$Type;->raw:Ljava/lang/String;
 
@@ -139,7 +137,7 @@
 
     move-result v6
 
-    if-eqz v6, :cond_4
+    if-eqz v6, :cond_0
 
     sget-object p2, Ltimber/log/Timber;->Forest:Ltimber/log/Timber$Forest;
 
@@ -157,11 +155,7 @@
 
     iget-object v2, p0, Lde/rki/coronawarnapp/notification/NotificationReceiver;->shareTestResultNotificationService:Lde/rki/coronawarnapp/coronatest/notification/ShareTestResultNotificationService;
 
-    if-eqz v2, :cond_3
-
-    const-string/jumbo v3, "testType"
-
-    invoke-static {v5, v3}, Lkotlin/jvm/internal/Intrinsics;->checkNotNullParameter(Ljava/lang/Object;Ljava/lang/String;)V
+    if-eqz v2, :cond_4
 
     sget-object v3, Lde/rki/coronawarnapp/coronatest/notification/ShareTestResultNotificationService;->TAG:Ljava/lang/String;
 
@@ -185,7 +179,7 @@
 
     sget-object p2, Lde/rki/coronawarnapp/coronatest/type/CoronaTest$Type;->PCR:Lde/rki/coronawarnapp/coronatest/type/CoronaTest$Type;
 
-    if-ne v5, p2, :cond_1
+    if-ne v5, p2, :cond_2
 
     iget-object p2, v2, Lde/rki/coronawarnapp/coronatest/notification/ShareTestResultNotificationService;->cwaSettings:Lde/rki/coronawarnapp/main/CWASettings;
 
@@ -193,7 +187,7 @@
 
     move-result p2
 
-    if-lez p2, :cond_0
+    if-lez p2, :cond_1
 
     iget-object p2, v2, Lde/rki/coronawarnapp/coronatest/notification/ShareTestResultNotificationService;->cwaSettings:Lde/rki/coronawarnapp/main/CWASettings;
 
@@ -209,18 +203,18 @@
 
     invoke-virtual {p2, p1, v5}, Lde/rki/coronawarnapp/coronatest/notification/ShareTestResultNotification;->showSharePositiveTestResultNotification(ILde/rki/coronawarnapp/coronatest/type/CoronaTest$Type;)V
 
-    goto :goto_1
+    goto :goto_0
 
-    :cond_0
+    :cond_1
     iget-object p1, v2, Lde/rki/coronawarnapp/coronatest/notification/ShareTestResultNotificationService;->notification:Lde/rki/coronawarnapp/coronatest/notification/ShareTestResultNotification;
 
     const/16 p2, 0x65
 
     invoke-virtual {p1, v5, p2}, Lde/rki/coronawarnapp/coronatest/notification/ShareTestResultNotification;->cancelSharePositiveTestResultNotification(Lde/rki/coronawarnapp/coronatest/type/CoronaTest$Type;I)V
 
-    goto :goto_1
+    goto :goto_0
 
-    :cond_1
+    :cond_2
     sget-object p2, Lde/rki/coronawarnapp/coronatest/type/CoronaTest$Type;->RAPID_ANTIGEN:Lde/rki/coronawarnapp/coronatest/type/CoronaTest$Type;
 
     if-ne v5, p2, :cond_6
@@ -231,7 +225,7 @@
 
     move-result p2
 
-    if-lez p2, :cond_2
+    if-lez p2, :cond_3
 
     iget-object p2, v2, Lde/rki/coronawarnapp/coronatest/notification/ShareTestResultNotificationService;->cwaSettings:Lde/rki/coronawarnapp/main/CWASettings;
 
@@ -247,18 +241,18 @@
 
     invoke-virtual {p2, p1, v5}, Lde/rki/coronawarnapp/coronatest/notification/ShareTestResultNotification;->showSharePositiveTestResultNotification(ILde/rki/coronawarnapp/coronatest/type/CoronaTest$Type;)V
 
-    goto :goto_1
+    goto :goto_0
 
-    :cond_2
+    :cond_3
     iget-object p1, v2, Lde/rki/coronawarnapp/coronatest/notification/ShareTestResultNotificationService;->notification:Lde/rki/coronawarnapp/coronatest/notification/ShareTestResultNotification;
 
     const/16 p2, 0x66
 
     invoke-virtual {p1, v5, p2}, Lde/rki/coronawarnapp/coronatest/notification/ShareTestResultNotification;->cancelSharePositiveTestResultNotification(Lde/rki/coronawarnapp/coronatest/type/CoronaTest$Type;I)V
 
-    goto :goto_1
+    goto :goto_0
 
-    :cond_3
+    :cond_4
     const-string/jumbo p1, "shareTestResultNotificationService"
 
     invoke-static {p1}, Lkotlin/jvm/internal/Intrinsics;->throwUninitializedPropertyAccessException(Ljava/lang/String;)V
@@ -266,11 +260,6 @@
     const/4 p1, 0x0
 
     throw p1
-
-    :cond_4
-    add-int/lit8 v4, v4, 0x1
-
-    goto/16 :goto_0
 
     :cond_5
     new-instance p1, Ljava/util/NoSuchElementException;
@@ -282,7 +271,7 @@
     throw p1
 
     :cond_6
-    :goto_1
+    :goto_0
     return-void
 
     :pswitch_data_0

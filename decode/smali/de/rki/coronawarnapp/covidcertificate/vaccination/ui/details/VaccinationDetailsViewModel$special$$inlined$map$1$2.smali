@@ -98,7 +98,7 @@
 
     invoke-static {p2}, Lkotlin/ResultKt;->throwOnFailure(Ljava/lang/Object;)V
 
-    goto/16 :goto_9
+    goto/16 :goto_8
 
     :cond_1
     new-instance p1, Ljava/lang/IllegalStateException;
@@ -220,7 +220,7 @@
     if-nez p1, :cond_9
 
     :goto_4
-    move-object v7, v6
+    move-object v4, v6
 
     goto :goto_6
 
@@ -232,78 +232,57 @@
     :cond_a
     invoke-interface {p1}, Ljava/util/Iterator;->hasNext()Z
 
-    move-result v7
+    move-result v4
 
-    if-eqz v7, :cond_b
+    if-eqz v4, :cond_b
 
     invoke-interface {p1}, Ljava/util/Iterator;->next()Ljava/lang/Object;
 
+    move-result-object v4
+
+    move-object v7, v4
+
+    check-cast v7, Lde/rki/coronawarnapp/covidcertificate/vaccination/core/VaccinationCertificate;
+
+    invoke-interface {v7}, Lde/rki/coronawarnapp/covidcertificate/vaccination/core/VaccinationCertificate;->getContainerId()Lde/rki/coronawarnapp/covidcertificate/common/repository/VaccinationCertificateContainerId;
+
     move-result-object v7
 
-    move-object v8, v7
+    iget-object v8, v2, Lde/rki/coronawarnapp/covidcertificate/vaccination/ui/details/VaccinationDetailsViewModel;->containerId:Lde/rki/coronawarnapp/covidcertificate/common/repository/VaccinationCertificateContainerId;
 
-    check-cast v8, Lde/rki/coronawarnapp/covidcertificate/vaccination/core/VaccinationCertificate;
+    invoke-static {v7, v8}, Lkotlin/jvm/internal/Intrinsics;->areEqual(Ljava/lang/Object;Ljava/lang/Object;)Z
 
-    invoke-interface {v8}, Lde/rki/coronawarnapp/covidcertificate/vaccination/core/VaccinationCertificate;->getContainerId()Lde/rki/coronawarnapp/covidcertificate/common/repository/VaccinationCertificateContainerId;
+    move-result v7
 
-    move-result-object v8
-
-    iget-object v9, v2, Lde/rki/coronawarnapp/covidcertificate/vaccination/ui/details/VaccinationDetailsViewModel;->containerId:Lde/rki/coronawarnapp/covidcertificate/common/repository/VaccinationCertificateContainerId;
-
-    invoke-static {v8, v9}, Lkotlin/jvm/internal/Intrinsics;->areEqual(Ljava/lang/Object;Ljava/lang/Object;)Z
-
-    move-result v8
-
-    if-eqz v8, :cond_a
+    if-eqz v7, :cond_a
 
     goto :goto_5
 
     :cond_b
-    move-object v7, v6
+    move-object v4, v6
 
     :goto_5
-    check-cast v7, Lde/rki/coronawarnapp/covidcertificate/vaccination/core/VaccinationCertificate;
+    check-cast v4, Lde/rki/coronawarnapp/covidcertificate/vaccination/core/VaccinationCertificate;
 
     :goto_6
     new-instance p1, Lde/rki/coronawarnapp/covidcertificate/vaccination/ui/details/VaccinationDetails;
 
-    if-nez v4, :cond_c
+    const/4 v2, 0x2
 
-    move-object v2, v6
+    invoke-direct {p1, v4, v5, v2}, Lde/rki/coronawarnapp/covidcertificate/vaccination/ui/details/VaccinationDetails;-><init>(Lde/rki/coronawarnapp/covidcertificate/vaccination/core/VaccinationCertificate;ZI)V
+
+    iget-object v2, p0, Lde/rki/coronawarnapp/covidcertificate/vaccination/ui/details/VaccinationDetailsViewModel$special$$inlined$map$1$2;->this$0:Lde/rki/coronawarnapp/covidcertificate/vaccination/ui/details/VaccinationDetailsViewModel;
+
+    if-nez v4, :cond_c
 
     goto :goto_7
 
     :cond_c
-    new-instance v2, Lorg/joda/time/Instant;
-
-    invoke-direct {v2}, Lorg/joda/time/Instant;-><init>()V
-
-    invoke-virtual {v4, v2}, Lde/rki/coronawarnapp/covidcertificate/vaccination/core/VaccinatedPerson;->getVaccinationStatus(Lorg/joda/time/Instant;)Lde/rki/coronawarnapp/covidcertificate/vaccination/core/VaccinatedPerson$Status;
-
-    move-result-object v2
-
-    :goto_7
-    sget-object v4, Lde/rki/coronawarnapp/covidcertificate/vaccination/core/VaccinatedPerson$Status;->IMMUNITY:Lde/rki/coronawarnapp/covidcertificate/vaccination/core/VaccinatedPerson$Status;
-
-    if-ne v2, v4, :cond_d
-
-    move v5, v3
-
-    :cond_d
-    invoke-direct {p1, v7, v5}, Lde/rki/coronawarnapp/covidcertificate/vaccination/ui/details/VaccinationDetails;-><init>(Lde/rki/coronawarnapp/covidcertificate/vaccination/core/VaccinationCertificate;Z)V
-
-    iget-object v2, p0, Lde/rki/coronawarnapp/covidcertificate/vaccination/ui/details/VaccinationDetailsViewModel$special$$inlined$map$1$2;->this$0:Lde/rki/coronawarnapp/covidcertificate/vaccination/ui/details/VaccinationDetailsViewModel;
-
-    if-nez v7, :cond_e
-
-    goto :goto_8
-
-    :cond_e
-    invoke-interface {v7}, Lde/rki/coronawarnapp/covidcertificate/common/certificate/CwaCovidCertificate;->getQrCodeToDisplay()Lde/rki/coronawarnapp/util/qrcode/coil/CoilQrCode;
+    invoke-interface {v4}, Lde/rki/coronawarnapp/covidcertificate/common/certificate/CwaCovidCertificate;->getQrCodeToDisplay()Lde/rki/coronawarnapp/util/qrcode/coil/CoilQrCode;
 
     move-result-object v6
 
-    :goto_8
+    :goto_7
     iput-object v6, v2, Lde/rki/coronawarnapp/covidcertificate/vaccination/ui/details/VaccinationDetailsViewModel;->qrCode:Lde/rki/coronawarnapp/util/qrcode/coil/CoilQrCode;
 
     iput v3, v0, Lde/rki/coronawarnapp/covidcertificate/vaccination/ui/details/VaccinationDetailsViewModel$special$$inlined$map$1$2$1;->label:I
@@ -312,12 +291,12 @@
 
     move-result-object p1
 
-    if-ne p1, v1, :cond_f
+    if-ne p1, v1, :cond_d
 
     return-object v1
 
-    :cond_f
-    :goto_9
+    :cond_d
+    :goto_8
     sget-object p1, Lkotlin/Unit;->INSTANCE:Lkotlin/Unit;
 
     return-object p1

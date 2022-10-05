@@ -83,9 +83,9 @@
 
     iget-object v0, p0, Landroidx/lifecycle/LiveData;->mPostValueRunnable:Ljava/lang/Runnable;
 
-    iget-object p1, p1, Landroidx/arch/core/executor/ArchTaskExecutor;->mDelegate:Landroidx/arch/core/executor/TaskExecutor;
+    iget-object p1, p1, Landroidx/arch/core/executor/ArchTaskExecutor;->mDelegate:Lorg/joda/time/Chronology;
 
-    invoke-virtual {p1, v0}, Landroidx/arch/core/executor/TaskExecutor;->postToMainThread(Ljava/lang/Runnable;)V
+    invoke-virtual {p1, v0}, Lorg/joda/time/Chronology;->postToMainThread(Ljava/lang/Runnable;)V
 
     :goto_1
     return-void
@@ -109,7 +109,7 @@
         }
     .end annotation
 
-    const-string v0, "setValue"
+    const-string/jumbo v0, "setValue"
 
     invoke-static {v0}, Landroidx/lifecycle/LiveData;->assertMainThread(Ljava/lang/String;)V
 

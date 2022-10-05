@@ -18,7 +18,7 @@
 
 
 # instance fields
-.field public final zza:Ljava/lang/Object;
+.field public final zza:Lcom/google/android/play/core/internal/zzct;
     .annotation system Ldalvik/annotation/Signature;
         value = {
             "Lcom/google/android/play/core/internal/zzct<",
@@ -32,22 +32,28 @@
 # direct methods
 .method public constructor <init>(Lcom/google/android/play/core/internal/zzct;)V
     .locals 0
+    .annotation system Ldalvik/annotation/Signature;
+        value = {
+            "(",
+            "Lcom/google/android/play/core/internal/zzct<",
+            "Landroid/content/Context;",
+            ">;)V"
+        }
+    .end annotation
 
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
-    iput-object p1, p0, Lcom/google/android/play/core/appupdate/zzt;->zza:Ljava/lang/Object;
+    iput-object p1, p0, Lcom/google/android/play/core/appupdate/zzt;->zza:Lcom/google/android/play/core/internal/zzct;
 
     return-void
 .end method
 
 
 # virtual methods
-.method public bridge synthetic zza()Ljava/lang/Object;
+.method public final bridge synthetic zza()Ljava/lang/Object;
     .locals 2
 
-    iget-object v0, p0, Lcom/google/android/play/core/appupdate/zzt;->zza:Ljava/lang/Object;
-
-    check-cast v0, Lcom/google/android/play/core/internal/zzct;
+    iget-object v0, p0, Lcom/google/android/play/core/appupdate/zzt;->zza:Lcom/google/android/play/core/internal/zzct;
 
     check-cast v0, Lcom/google/android/play/core/appupdate/zzj;
 

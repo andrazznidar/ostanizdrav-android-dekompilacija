@@ -42,11 +42,31 @@
     :cond_0
     check-cast p1, Lkotlin/reflect/jvm/internal/impl/types/model/TypeArgumentMarker;
 
+    invoke-virtual {p0, p1}, Lkotlin/reflect/jvm/internal/impl/types/model/ArgumentList;->contains(Lkotlin/reflect/jvm/internal/impl/types/model/TypeArgumentMarker;)Z
+
+    move-result p1
+
+    return p1
+.end method
+
+.method public bridge contains(Lkotlin/reflect/jvm/internal/impl/types/model/TypeArgumentMarker;)Z
+    .locals 0
+
     invoke-super {p0, p1}, Ljava/util/ArrayList;->contains(Ljava/lang/Object;)Z
 
     move-result p1
 
     return p1
+.end method
+
+.method public bridge getSize()I
+    .locals 1
+
+    invoke-super {p0}, Ljava/util/ArrayList;->size()I
+
+    move-result v0
+
+    return v0
 .end method
 
 .method public final bridge indexOf(Ljava/lang/Object;)I
@@ -62,6 +82,16 @@
 
     :cond_0
     check-cast p1, Lkotlin/reflect/jvm/internal/impl/types/model/TypeArgumentMarker;
+
+    invoke-virtual {p0, p1}, Lkotlin/reflect/jvm/internal/impl/types/model/ArgumentList;->indexOf(Lkotlin/reflect/jvm/internal/impl/types/model/TypeArgumentMarker;)I
+
+    move-result p1
+
+    return p1
+.end method
+
+.method public bridge indexOf(Lkotlin/reflect/jvm/internal/impl/types/model/TypeArgumentMarker;)I
+    .locals 0
 
     invoke-super {p0, p1}, Ljava/util/ArrayList;->indexOf(Ljava/lang/Object;)I
 
@@ -84,6 +114,16 @@
     :cond_0
     check-cast p1, Lkotlin/reflect/jvm/internal/impl/types/model/TypeArgumentMarker;
 
+    invoke-virtual {p0, p1}, Lkotlin/reflect/jvm/internal/impl/types/model/ArgumentList;->lastIndexOf(Lkotlin/reflect/jvm/internal/impl/types/model/TypeArgumentMarker;)I
+
+    move-result p1
+
+    return p1
+.end method
+
+.method public bridge lastIndexOf(Lkotlin/reflect/jvm/internal/impl/types/model/TypeArgumentMarker;)I
+    .locals 0
+
     invoke-super {p0, p1}, Ljava/util/ArrayList;->lastIndexOf(Ljava/lang/Object;)I
 
     move-result p1
@@ -105,9 +145,29 @@
     :cond_0
     check-cast p1, Lkotlin/reflect/jvm/internal/impl/types/model/TypeArgumentMarker;
 
+    invoke-virtual {p0, p1}, Lkotlin/reflect/jvm/internal/impl/types/model/ArgumentList;->remove(Lkotlin/reflect/jvm/internal/impl/types/model/TypeArgumentMarker;)Z
+
+    move-result p1
+
+    return p1
+.end method
+
+.method public bridge remove(Lkotlin/reflect/jvm/internal/impl/types/model/TypeArgumentMarker;)Z
+    .locals 0
+
     invoke-super {p0, p1}, Ljava/util/ArrayList;->remove(Ljava/lang/Object;)Z
 
     move-result p1
 
     return p1
+.end method
+
+.method public final bridge size()I
+    .locals 1
+
+    invoke-virtual {p0}, Lkotlin/reflect/jvm/internal/impl/types/model/ArgumentList;->getSize()I
+
+    move-result v0
+
+    return v0
 .end method

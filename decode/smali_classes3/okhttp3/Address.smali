@@ -160,10 +160,6 @@
     move-object v5, v6
 
     :goto_0
-    const-string v7, "scheme"
-
-    invoke-static {v5, v7}, Lkotlin/jvm/internal/Intrinsics;->checkNotNullParameter(Ljava/lang/Object;Ljava/lang/String;)V
-
     const/4 v7, 0x1
 
     invoke-static {v5, v6, v7}, Lkotlin/text/StringsKt__StringsJVMKt;->equals(Ljava/lang/String;Ljava/lang/String;Z)Z
@@ -186,10 +182,6 @@
     iput-object v4, v3, Lokhttp3/HttpUrl$Builder;->scheme:Ljava/lang/String;
 
     :goto_1
-    const-string v4, "host"
-
-    invoke-static {p1, v4}, Lkotlin/jvm/internal/Intrinsics;->checkNotNullParameter(Ljava/lang/Object;Ljava/lang/String;)V
-
     sget-object v4, Lokhttp3/HttpUrl;->Companion:Lokhttp3/HttpUrl$Companion;
 
     const/4 v5, 0x0

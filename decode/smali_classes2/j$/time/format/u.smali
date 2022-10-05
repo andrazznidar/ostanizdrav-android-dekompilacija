@@ -1,203 +1,151 @@
-.class final Lj$/time/format/u;
+.class Lj$/time/format/u;
 .super Ljava/lang/Object;
 
 # interfaces
-.implements Lj$/time/format/h;
+.implements Lj$/time/format/g;
+
+
+# static fields
+.field private static volatile c:Ljava/util/Map$Entry;
+
+.field private static volatile d:Ljava/util/Map$Entry;
 
 
 # instance fields
-.field private a:C
+.field private final a:Lj$/time/temporal/w;
 
-.field private b:I
+.field private final b:Ljava/lang/String;
 
 
 # direct methods
-.method constructor <init>(CI)V
+.method constructor <init>(Lj$/time/temporal/w;Ljava/lang/String;)V
     .locals 0
 
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
-    iput-char p1, p0, Lj$/time/format/u;->a:C
+    iput-object p1, p0, Lj$/time/format/u;->a:Lj$/time/temporal/w;
 
-    iput p2, p0, Lj$/time/format/u;->b:I
+    iput-object p2, p0, Lj$/time/format/u;->b:Ljava/lang/String;
 
     return-void
 .end method
 
-.method private c(Ljava/util/Locale;)Lj$/time/format/h;
-    .locals 11
+.method private d(Lj$/time/format/x;Ljava/lang/CharSequence;IILj$/time/format/l;)I
+    .locals 3
 
-    sget-object v0, Lj$/time/temporal/C;->h:Lj$/time/temporal/y;
-
-    const-string v0, "locale"
-
-    invoke-static {p1, v0}, Ljava/util/Objects;->requireNonNull(Ljava/lang/Object;Ljava/lang/String;)Ljava/lang/Object;
-
-    new-instance v0, Ljava/util/Locale;
-
-    invoke-virtual {p1}, Ljava/util/Locale;->getLanguage()Ljava/lang/String;
-
-    move-result-object v1
-
-    invoke-virtual {p1}, Ljava/util/Locale;->getCountry()Ljava/lang/String;
-
-    move-result-object p1
-
-    invoke-direct {v0, v1, p1}, Ljava/util/Locale;-><init>(Ljava/lang/String;Ljava/lang/String;)V
-
-    invoke-static {v0}, Ljava/util/Calendar;->getInstance(Ljava/util/Locale;)Ljava/util/Calendar;
-
-    move-result-object p1
-
-    invoke-virtual {p1}, Ljava/util/Calendar;->getFirstDayOfWeek()I
-
-    move-result v0
-
-    sget-object v1, Lj$/time/e;->SUNDAY:Lj$/time/e;
-
-    add-int/lit8 v0, v0, -0x1
-
-    int-to-long v2, v0
-
-    invoke-virtual {v1, v2, v3}, Lj$/time/e;->l(J)Lj$/time/e;
+    invoke-interface {p2}, Ljava/lang/CharSequence;->toString()Ljava/lang/String;
 
     move-result-object v0
 
-    invoke-virtual {p1}, Ljava/util/Calendar;->getMinimalDaysInFirstWeek()I
+    invoke-virtual {v0, p3, p4}, Ljava/lang/String;->substring(II)Ljava/lang/String;
 
-    move-result p1
+    move-result-object v0
 
-    invoke-static {v0, p1}, Lj$/time/temporal/C;->g(Lj$/time/e;I)Lj$/time/temporal/C;
+    invoke-virtual {v0}, Ljava/lang/String;->toUpperCase()Ljava/lang/String;
 
-    move-result-object p1
+    move-result-object v0
 
-    iget-char v0, p0, Lj$/time/format/u;->a:C
+    invoke-interface {p2}, Ljava/lang/CharSequence;->length()I
 
-    const/16 v1, 0x57
+    move-result v1
 
-    const/4 v2, 0x2
-
-    if-eq v0, v1, :cond_5
-
-    const/16 v1, 0x59
-
-    if-eq v0, v1, :cond_2
-
-    const/16 v1, 0x63
-
-    if-eq v0, v1, :cond_1
-
-    const/16 v1, 0x65
-
-    if-eq v0, v1, :cond_1
-
-    const/16 v1, 0x77
-
-    if-ne v0, v1, :cond_0
-
-    invoke-virtual {p1}, Lj$/time/temporal/C;->j()Lj$/time/temporal/o;
-
-    move-result-object p1
-
-    goto :goto_1
-
-    :cond_0
-    new-instance p1, Ljava/lang/IllegalStateException;
-
-    const-string v0, "unreachable"
-
-    invoke-direct {p1, v0}, Ljava/lang/IllegalStateException;-><init>(Ljava/lang/String;)V
-
-    throw p1
-
-    :cond_1
-    invoke-virtual {p1}, Lj$/time/temporal/C;->d()Lj$/time/temporal/o;
-
-    move-result-object p1
-
-    goto :goto_1
-
-    :cond_2
-    invoke-virtual {p1}, Lj$/time/temporal/C;->h()Lj$/time/temporal/o;
-
-    move-result-object v4
-
-    iget v5, p0, Lj$/time/format/u;->b:I
-
-    if-ne v5, v2, :cond_3
-
-    new-instance p1, Lj$/time/format/r;
-
-    sget-object v8, Lj$/time/format/r;->i:Lj$/time/LocalDate;
-
-    const/4 v5, 0x2
-
-    const/4 v6, 0x2
-
-    const/4 v7, 0x0
-
-    const/4 v9, 0x0
-
-    const/4 v10, 0x0
-
-    move-object v3, p1
-
-    invoke-direct/range {v3 .. v10}, Lj$/time/format/r;-><init>(Lj$/time/temporal/o;IIILj$/time/chrono/b;ILj$/time/format/c;)V
-
-    return-object p1
-
-    :cond_3
-    new-instance p1, Lj$/time/format/l;
-
-    const/16 v6, 0x13
-
-    const/4 v0, 0x4
-
-    if-ge v5, v0, :cond_4
-
-    sget-object v0, Lj$/time/format/F;->NORMAL:Lj$/time/format/F;
+    if-lt p4, v1, :cond_0
 
     goto :goto_0
 
+    :cond_0
+    invoke-interface {p2, p4}, Ljava/lang/CharSequence;->charAt(I)C
+
+    move-result v1
+
+    const/16 v2, 0x30
+
+    if-eq v1, v2, :cond_4
+
+    invoke-interface {p2, p4}, Ljava/lang/CharSequence;->charAt(I)C
+
+    move-result v1
+
+    const/16 v2, 0x5a
+
+    invoke-virtual {p1, v1, v2}, Lj$/time/format/x;->b(CC)Z
+
+    move-result v1
+
+    if-eqz v1, :cond_1
+
+    goto :goto_0
+
+    :cond_1
+    invoke-virtual {p1}, Lj$/time/format/x;->d()Lj$/time/format/x;
+
+    move-result-object v1
+
+    invoke-virtual {p5, v1, p2, p4}, Lj$/time/format/l;->b(Lj$/time/format/x;Ljava/lang/CharSequence;I)I
+
+    move-result p2
+
+    if-gez p2, :cond_3
+
+    :try_start_0
+    sget-object p2, Lj$/time/format/l;->d:Lj$/time/format/l;
+
+    if-ne p5, p2, :cond_2
+
+    not-int p1, p3
+
+    return p1
+
+    :cond_2
+    invoke-static {v0}, Lj$/time/ZoneId;->m(Ljava/lang/String;)Lj$/time/ZoneId;
+
+    move-result-object p2
+
+    invoke-virtual {p1, p2}, Lj$/time/format/x;->n(Lj$/time/ZoneId;)V
+
+    return p4
+
+    :cond_3
+    sget-object p4, Lj$/time/temporal/a;->OFFSET_SECONDS:Lj$/time/temporal/a;
+
+    invoke-virtual {v1, p4}, Lj$/time/format/x;->j(Lj$/time/temporal/o;)Ljava/lang/Long;
+
+    move-result-object p4
+
+    invoke-virtual {p4}, Ljava/lang/Long;->longValue()J
+
+    move-result-wide p4
+
+    long-to-int p4, p4
+
+    invoke-static {p4}, Lj$/time/ZoneOffset;->s(I)Lj$/time/ZoneOffset;
+
+    move-result-object p4
+
+    invoke-static {v0, p4}, Lj$/time/ZoneId;->ofOffset(Ljava/lang/String;Lj$/time/ZoneOffset;)Lj$/time/ZoneId;
+
+    move-result-object p4
+
+    invoke-virtual {p1, p4}, Lj$/time/format/x;->n(Lj$/time/ZoneId;)V
+    :try_end_0
+    .catch Lj$/time/d; {:try_start_0 .. :try_end_0} :catch_0
+
+    return p2
+
+    :catch_0
+    not-int p1, p3
+
+    return p1
+
     :cond_4
-    sget-object v0, Lj$/time/format/F;->EXCEEDS_PAD:Lj$/time/format/F;
-
     :goto_0
-    move-object v7, v0
+    invoke-static {v0}, Lj$/time/ZoneId;->m(Ljava/lang/String;)Lj$/time/ZoneId;
 
-    const/4 v8, -0x1
+    move-result-object p2
 
-    move-object v3, p1
+    invoke-virtual {p1, p2}, Lj$/time/format/x;->n(Lj$/time/ZoneId;)V
 
-    invoke-direct/range {v3 .. v8}, Lj$/time/format/l;-><init>(Lj$/time/temporal/o;IILj$/time/format/F;I)V
-
-    return-object p1
-
-    :cond_5
-    invoke-virtual {p1}, Lj$/time/temporal/C;->i()Lj$/time/temporal/o;
-
-    move-result-object p1
-
-    :goto_1
-    new-instance v0, Lj$/time/format/l;
-
-    iget v1, p0, Lj$/time/format/u;->b:I
-
-    if-ne v1, v2, :cond_6
-
-    move v1, v2
-
-    goto :goto_2
-
-    :cond_6
-    const/4 v1, 0x1
-
-    :goto_2
-    sget-object v3, Lj$/time/format/F;->NOT_NEGATIVE:Lj$/time/format/F;
-
-    invoke-direct {v0, p1, v1, v2, v3}, Lj$/time/format/l;-><init>(Lj$/time/temporal/o;IILj$/time/format/F;)V
-
-    return-object v0
+    return p4
 .end method
 
 
@@ -205,171 +153,401 @@
 .method public a(Lj$/time/format/z;Ljava/lang/StringBuilder;)Z
     .locals 1
 
-    invoke-virtual {p1}, Lj$/time/format/z;->c()Ljava/util/Locale;
+    iget-object v0, p0, Lj$/time/format/u;->a:Lj$/time/temporal/w;
 
-    move-result-object v0
+    invoke-virtual {p1, v0}, Lj$/time/format/z;->f(Lj$/time/temporal/w;)Ljava/lang/Object;
 
-    invoke-direct {p0, v0}, Lj$/time/format/u;->c(Ljava/util/Locale;)Lj$/time/format/h;
+    move-result-object p1
 
-    move-result-object v0
+    check-cast p1, Lj$/time/ZoneId;
 
-    check-cast v0, Lj$/time/format/l;
+    if-nez p1, :cond_0
 
-    invoke-virtual {v0, p1, p2}, Lj$/time/format/l;->a(Lj$/time/format/z;Ljava/lang/StringBuilder;)Z
+    const/4 p1, 0x0
 
-    move-result p1
+    return p1
+
+    :cond_0
+    invoke-virtual {p1}, Lj$/time/ZoneId;->k()Ljava/lang/String;
+
+    move-result-object p1
+
+    invoke-virtual {p2, p1}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+
+    const/4 p1, 0x1
 
     return p1
 .end method
 
 .method public b(Lj$/time/format/x;Ljava/lang/CharSequence;I)I
-    .locals 1
+    .locals 9
 
-    invoke-virtual {p1}, Lj$/time/format/x;->i()Ljava/util/Locale;
+    invoke-interface {p2}, Ljava/lang/CharSequence;->length()I
 
-    move-result-object v0
+    move-result v0
 
-    invoke-direct {p0, v0}, Lj$/time/format/u;->c(Ljava/util/Locale;)Lj$/time/format/h;
+    if-gt p3, v0, :cond_8
 
-    move-result-object v0
+    if-ne p3, v0, :cond_0
 
-    check-cast v0, Lj$/time/format/l;
+    not-int v0, p3
 
-    invoke-virtual {v0, p1, p2, p3}, Lj$/time/format/l;->b(Lj$/time/format/x;Ljava/lang/CharSequence;I)I
-
-    move-result p1
-
-    return p1
-.end method
-
-.method public toString()Ljava/lang/String;
-    .locals 4
-
-    new-instance v0, Ljava/lang/StringBuilder;
-
-    const/16 v1, 0x1e
-
-    invoke-direct {v0, v1}, Ljava/lang/StringBuilder;-><init>(I)V
-
-    const-string v1, "Localized("
-
-    invoke-virtual {v0, v1}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
-
-    iget-char v1, p0, Lj$/time/format/u;->a:C
-
-    const-string v2, ","
-
-    const/16 v3, 0x59
-
-    if-ne v1, v3, :cond_3
-
-    iget v1, p0, Lj$/time/format/u;->b:I
-
-    const/4 v3, 0x1
-
-    if-ne v1, v3, :cond_0
-
-    const-string v1, "WeekBasedYear"
-
-    :goto_0
-    invoke-virtual {v0, v1}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
-
-    goto :goto_4
+    return v0
 
     :cond_0
-    const/4 v3, 0x2
+    invoke-interface {p2, p3}, Ljava/lang/CharSequence;->charAt(I)C
 
-    if-ne v1, v3, :cond_1
+    move-result v3
 
-    const-string v1, "ReducedValue(WeekBasedYear,2,2,2000-01-01)"
+    const/16 v5, 0x2b
+
+    if-eq v3, v5, :cond_7
+
+    const/16 v5, 0x2d
+
+    if-ne v3, v5, :cond_1
+
+    goto/16 :goto_0
+
+    :cond_1
+    add-int/lit8 v5, p3, 0x2
+
+    if-lt v0, v5, :cond_4
+
+    add-int/lit8 v6, p3, 0x1
+
+    invoke-interface {p2, v6}, Ljava/lang/CharSequence;->charAt(I)C
+
+    move-result v6
+
+    const/16 v7, 0x55
+
+    invoke-virtual {p1, v3, v7}, Lj$/time/format/x;->b(CC)Z
+
+    move-result v7
+
+    const/16 v8, 0x54
+
+    if-eqz v7, :cond_3
+
+    invoke-virtual {p1, v6, v8}, Lj$/time/format/x;->b(CC)Z
+
+    move-result v7
+
+    if-eqz v7, :cond_3
+
+    add-int/lit8 v6, p3, 0x3
+
+    if-lt v0, v6, :cond_2
+
+    invoke-interface {p2, v5}, Ljava/lang/CharSequence;->charAt(I)C
+
+    move-result v0
+
+    const/16 v3, 0x43
+
+    invoke-virtual {p1, v0, v3}, Lj$/time/format/x;->b(CC)Z
+
+    move-result v0
+
+    if-eqz v0, :cond_2
+
+    sget-object v5, Lj$/time/format/l;->e:Lj$/time/format/l;
+
+    move-object v0, p0
+
+    move-object v1, p1
+
+    move-object v2, p2
+
+    move v3, p3
+
+    move v4, v6
+
+    invoke-direct/range {v0 .. v5}, Lj$/time/format/u;->d(Lj$/time/format/x;Ljava/lang/CharSequence;IILj$/time/format/l;)I
+
+    move-result v0
+
+    return v0
+
+    :cond_2
+    sget-object v6, Lj$/time/format/l;->e:Lj$/time/format/l;
+
+    move-object v0, p0
+
+    move-object v1, p1
+
+    move-object v2, p2
+
+    move v3, p3
+
+    move v4, v5
+
+    move-object v5, v6
+
+    invoke-direct/range {v0 .. v5}, Lj$/time/format/u;->d(Lj$/time/format/x;Ljava/lang/CharSequence;IILj$/time/format/l;)I
+
+    move-result v0
+
+    return v0
+
+    :cond_3
+    const/16 v7, 0x47
+
+    invoke-virtual {p1, v3, v7}, Lj$/time/format/x;->b(CC)Z
+
+    move-result v7
+
+    if-eqz v7, :cond_4
+
+    add-int/lit8 v7, p3, 0x3
+
+    if-lt v0, v7, :cond_4
+
+    const/16 v0, 0x4d
+
+    invoke-virtual {p1, v6, v0}, Lj$/time/format/x;->b(CC)Z
+
+    move-result v0
+
+    if-eqz v0, :cond_4
+
+    invoke-interface {p2, v5}, Ljava/lang/CharSequence;->charAt(I)C
+
+    move-result v0
+
+    invoke-virtual {p1, v0, v8}, Lj$/time/format/x;->b(CC)Z
+
+    move-result v0
+
+    if-eqz v0, :cond_4
+
+    sget-object v5, Lj$/time/format/l;->e:Lj$/time/format/l;
+
+    move-object v0, p0
+
+    move-object v1, p1
+
+    move-object v2, p2
+
+    move v3, p3
+
+    move v4, v7
+
+    invoke-direct/range {v0 .. v5}, Lj$/time/format/u;->d(Lj$/time/format/x;Ljava/lang/CharSequence;IILj$/time/format/l;)I
+
+    move-result v0
+
+    return v0
+
+    :cond_4
+    invoke-virtual {p0, p1}, Lj$/time/format/u;->c(Lj$/time/format/x;)Lj$/time/format/o;
+
+    move-result-object v0
+
+    new-instance v5, Ljava/text/ParsePosition;
+
+    invoke-direct {v5, p3}, Ljava/text/ParsePosition;-><init>(I)V
+
+    invoke-virtual {v0, p2, v5}, Lj$/time/format/o;->d(Ljava/lang/CharSequence;Ljava/text/ParsePosition;)Ljava/lang/String;
+
+    move-result-object v0
+
+    if-nez v0, :cond_6
+
+    const/16 v0, 0x5a
+
+    invoke-virtual {p1, v3, v0}, Lj$/time/format/x;->b(CC)Z
+
+    move-result v0
+
+    if-eqz v0, :cond_5
+
+    sget-object v0, Lj$/time/ZoneOffset;->UTC:Lj$/time/ZoneOffset;
+
+    invoke-virtual {p1, v0}, Lj$/time/format/x;->n(Lj$/time/ZoneId;)V
+
+    add-int/lit8 v0, p3, 0x1
+
+    return v0
+
+    :cond_5
+    not-int v0, p3
+
+    return v0
+
+    :cond_6
+    invoke-static {v0}, Lj$/time/ZoneId;->m(Ljava/lang/String;)Lj$/time/ZoneId;
+
+    move-result-object v0
+
+    invoke-virtual {p1, v0}, Lj$/time/format/x;->n(Lj$/time/ZoneId;)V
+
+    invoke-virtual {v5}, Ljava/text/ParsePosition;->getIndex()I
+
+    move-result v0
+
+    return v0
+
+    :cond_7
+    :goto_0
+    sget-object v5, Lj$/time/format/l;->d:Lj$/time/format/l;
+
+    move-object v0, p0
+
+    move-object v1, p1
+
+    move-object v2, p2
+
+    move v3, p3
+
+    move v4, p3
+
+    invoke-direct/range {v0 .. v5}, Lj$/time/format/u;->d(Lj$/time/format/x;Ljava/lang/CharSequence;IILj$/time/format/l;)I
+
+    move-result v0
+
+    return v0
+
+    :cond_8
+    new-instance v0, Ljava/lang/IndexOutOfBoundsException;
+
+    invoke-direct {v0}, Ljava/lang/IndexOutOfBoundsException;-><init>()V
+
+    throw v0
+.end method
+
+.method protected c(Lj$/time/format/x;)Lj$/time/format/o;
+    .locals 4
+
+    invoke-static {}, Lj$/time/zone/g;->a()Ljava/util/Set;
+
+    move-result-object v0
+
+    move-object v1, v0
+
+    check-cast v1, Ljava/util/HashSet;
+
+    invoke-virtual {v1}, Ljava/util/HashSet;->size()I
+
+    move-result v1
+
+    invoke-virtual {p1}, Lj$/time/format/x;->k()Z
+
+    move-result v2
+
+    if-eqz v2, :cond_0
+
+    sget-object v2, Lj$/time/format/u;->c:Ljava/util/Map$Entry;
 
     goto :goto_0
 
+    :cond_0
+    sget-object v2, Lj$/time/format/u;->d:Ljava/util/Map$Entry;
+
+    :goto_0
+    if-eqz v2, :cond_1
+
+    invoke-interface {v2}, Ljava/util/Map$Entry;->getKey()Ljava/lang/Object;
+
+    move-result-object v3
+
+    check-cast v3, Ljava/lang/Integer;
+
+    invoke-virtual {v3}, Ljava/lang/Integer;->intValue()I
+
+    move-result v3
+
+    if-eq v3, v1, :cond_6
+
     :cond_1
-    const-string v1, "WeekBasedYear,"
+    monitor-enter p0
 
-    invoke-virtual {v0, v1}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+    :try_start_0
+    invoke-virtual {p1}, Lj$/time/format/x;->k()Z
 
-    iget v1, p0, Lj$/time/format/u;->b:I
+    move-result v2
 
-    invoke-virtual {v0, v1}, Ljava/lang/StringBuilder;->append(I)Ljava/lang/StringBuilder;
+    if-eqz v2, :cond_2
 
-    invoke-virtual {v0, v2}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
-
-    const/16 v1, 0x13
-
-    invoke-virtual {v0, v1}, Ljava/lang/StringBuilder;->append(I)Ljava/lang/StringBuilder;
-
-    invoke-virtual {v0, v2}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
-
-    iget v1, p0, Lj$/time/format/u;->b:I
-
-    const/4 v2, 0x4
-
-    if-ge v1, v2, :cond_2
-
-    sget-object v1, Lj$/time/format/F;->NORMAL:Lj$/time/format/F;
+    sget-object v2, Lj$/time/format/u;->c:Ljava/util/Map$Entry;
 
     goto :goto_1
 
     :cond_2
-    sget-object v1, Lj$/time/format/F;->EXCEEDS_PAD:Lj$/time/format/F;
+    sget-object v2, Lj$/time/format/u;->d:Ljava/util/Map$Entry;
 
     :goto_1
-    invoke-virtual {v0, v1}, Ljava/lang/StringBuilder;->append(Ljava/lang/Object;)Ljava/lang/StringBuilder;
+    if-eqz v2, :cond_3
 
-    goto :goto_4
+    invoke-interface {v2}, Ljava/util/Map$Entry;->getKey()Ljava/lang/Object;
+
+    move-result-object v3
+
+    check-cast v3, Ljava/lang/Integer;
+
+    invoke-virtual {v3}, Ljava/lang/Integer;->intValue()I
+
+    move-result v3
+
+    if-eq v3, v1, :cond_5
 
     :cond_3
-    const/16 v3, 0x57
+    new-instance v2, Ljava/util/AbstractMap$SimpleImmutableEntry;
 
-    if-eq v1, v3, :cond_6
+    invoke-static {v1}, Ljava/lang/Integer;->valueOf(I)Ljava/lang/Integer;
 
-    const/16 v3, 0x63
+    move-result-object v1
 
-    if-eq v1, v3, :cond_5
-
-    const/16 v3, 0x65
-
-    if-eq v1, v3, :cond_5
-
-    const/16 v3, 0x77
-
-    if-eq v1, v3, :cond_4
-
-    goto :goto_3
-
-    :cond_4
-    const-string v1, "WeekOfWeekBasedYear"
-
-    goto :goto_2
-
-    :cond_5
-    const-string v1, "DayOfWeek"
-
-    goto :goto_2
-
-    :cond_6
-    const-string v1, "WeekOfMonth"
-
-    :goto_2
-    invoke-virtual {v0, v1}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
-
-    :goto_3
-    invoke-virtual {v0, v2}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
-
-    iget v1, p0, Lj$/time/format/u;->b:I
-
-    invoke-virtual {v0, v1}, Ljava/lang/StringBuilder;->append(I)Ljava/lang/StringBuilder;
-
-    :goto_4
-    const-string v1, ")"
-
-    invoke-virtual {v0, v1}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
-
-    invoke-virtual {v0}, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
+    invoke-static {v0, p1}, Lj$/time/format/o;->g(Ljava/util/Set;Lj$/time/format/x;)Lj$/time/format/o;
 
     move-result-object v0
+
+    invoke-direct {v2, v1, v0}, Ljava/util/AbstractMap$SimpleImmutableEntry;-><init>(Ljava/lang/Object;Ljava/lang/Object;)V
+
+    invoke-virtual {p1}, Lj$/time/format/x;->k()Z
+
+    move-result p1
+
+    if-eqz p1, :cond_4
+
+    sput-object v2, Lj$/time/format/u;->c:Ljava/util/Map$Entry;
+
+    goto :goto_2
+
+    :cond_4
+    sput-object v2, Lj$/time/format/u;->d:Ljava/util/Map$Entry;
+
+    :cond_5
+    :goto_2
+    monitor-exit p0
+    :try_end_0
+    .catchall {:try_start_0 .. :try_end_0} :catchall_0
+
+    :cond_6
+    invoke-interface {v2}, Ljava/util/Map$Entry;->getValue()Ljava/lang/Object;
+
+    move-result-object p1
+
+    check-cast p1, Lj$/time/format/o;
+
+    return-object p1
+
+    :catchall_0
+    move-exception p1
+
+    :try_start_1
+    monitor-exit p0
+    :try_end_1
+    .catchall {:try_start_1 .. :try_end_1} :catchall_0
+
+    throw p1
+.end method
+
+.method public toString()Ljava/lang/String;
+    .locals 1
+
+    iget-object v0, p0, Lj$/time/format/u;->b:Ljava/lang/String;
 
     return-object v0
 .end method

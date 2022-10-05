@@ -67,7 +67,7 @@
 .method public drawableStateChanged()V
     .locals 1
 
-    invoke-super {p0}, Landroid/widget/CompoundButton;->drawableStateChanged()V
+    invoke-super {p0}, Landroid/widget/CheckBox;->drawableStateChanged()V
 
     iget-object v0, p0, Landroidx/appcompat/widget/AppCompatCheckBox;->mBackgroundTintHelper:Landroidx/appcompat/widget/AppCompatBackgroundHelper;
 
@@ -89,7 +89,7 @@
 .method public getCompoundPaddingLeft()I
     .locals 1
 
-    invoke-super {p0}, Landroid/widget/CompoundButton;->getCompoundPaddingLeft()I
+    invoke-super {p0}, Landroid/widget/CheckBox;->getCompoundPaddingLeft()I
 
     move-result v0
 
@@ -175,7 +175,7 @@
 .method public setBackgroundDrawable(Landroid/graphics/drawable/Drawable;)V
     .locals 0
 
-    invoke-super {p0, p1}, Landroid/view/View;->setBackgroundDrawable(Landroid/graphics/drawable/Drawable;)V
+    invoke-super {p0, p1}, Landroid/widget/CheckBox;->setBackgroundDrawable(Landroid/graphics/drawable/Drawable;)V
 
     iget-object p1, p0, Landroidx/appcompat/widget/AppCompatCheckBox;->mBackgroundTintHelper:Landroidx/appcompat/widget/AppCompatBackgroundHelper;
 
@@ -190,7 +190,7 @@
 .method public setBackgroundResource(I)V
     .locals 1
 
-    invoke-super {p0, p1}, Landroid/view/View;->setBackgroundResource(I)V
+    invoke-super {p0, p1}, Landroid/widget/CheckBox;->setBackgroundResource(I)V
 
     iget-object v0, p0, Landroidx/appcompat/widget/AppCompatCheckBox;->mBackgroundTintHelper:Landroidx/appcompat/widget/AppCompatBackgroundHelper;
 
@@ -221,7 +221,7 @@
 .method public setButtonDrawable(Landroid/graphics/drawable/Drawable;)V
     .locals 1
 
-    invoke-super {p0, p1}, Landroid/widget/CompoundButton;->setButtonDrawable(Landroid/graphics/drawable/Drawable;)V
+    invoke-super {p0, p1}, Landroid/widget/CheckBox;->setButtonDrawable(Landroid/graphics/drawable/Drawable;)V
 
     iget-object p1, p0, Landroidx/appcompat/widget/AppCompatCheckBox;->mCompoundButtonHelper:Landroidx/appcompat/widget/AppCompatCompoundButtonHelper;
 

@@ -153,6 +153,33 @@
     return v0
 .end method
 
+.method public reset(Ljava/lang/Class;)V
+    .locals 0
+    .annotation system Ldalvik/annotation/Signature;
+        value = {
+            "(",
+            "Ljava/lang/Class<",
+            "*>;)V"
+        }
+    .end annotation
+
+    iput-object p1, p0, Lcom/fasterxml/jackson/databind/type/ClassKey;->_class:Ljava/lang/Class;
+
+    invoke-virtual {p1}, Ljava/lang/Class;->getName()Ljava/lang/String;
+
+    move-result-object p1
+
+    iput-object p1, p0, Lcom/fasterxml/jackson/databind/type/ClassKey;->_className:Ljava/lang/String;
+
+    invoke-virtual {p1}, Ljava/lang/String;->hashCode()I
+
+    move-result p1
+
+    iput p1, p0, Lcom/fasterxml/jackson/databind/type/ClassKey;->_hashCode:I
+
+    return-void
+.end method
+
 .method public toString()Ljava/lang/String;
     .locals 1
 

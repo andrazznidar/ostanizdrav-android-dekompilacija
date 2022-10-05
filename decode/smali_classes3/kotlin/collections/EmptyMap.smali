@@ -62,15 +62,17 @@
 
     const/4 v1, 0x0
 
-    if-eqz v0, :cond_0
+    if-nez v0, :cond_0
 
+    return v1
+
+    :cond_0
     check-cast p1, Ljava/lang/Void;
 
     const-string v0, "value"
 
     invoke-static {p1, v0}, Lkotlin/jvm/internal/Intrinsics;->checkNotNullParameter(Ljava/lang/Object;Ljava/lang/String;)V
 
-    :cond_0
     return v1
 .end method
 
@@ -116,7 +118,7 @@
     return p1
 .end method
 
-.method public final bridge get(Ljava/lang/Object;)Ljava/lang/Object;
+.method public bridge synthetic get(Ljava/lang/Object;)Ljava/lang/Object;
     .locals 0
 
     const/4 p1, 0x0
@@ -156,8 +158,10 @@
     return-object v0
 .end method
 
-.method public synthetic put(Ljava/lang/Object;Ljava/lang/Object;)Ljava/lang/Object;
+.method public put(Ljava/lang/Object;Ljava/lang/Object;)Ljava/lang/Object;
     .locals 0
+
+    check-cast p2, Ljava/lang/Void;
 
     new-instance p1, Ljava/lang/UnsupportedOperationException;
 

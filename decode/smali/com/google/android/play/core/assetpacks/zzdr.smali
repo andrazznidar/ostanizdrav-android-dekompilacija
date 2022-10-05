@@ -4,7 +4,7 @@
 
 
 # static fields
-.field public static final zza:Lkotlin/jvm/internal/SpreadBuilder;
+.field public static final zza:Lcom/google/android/play/core/internal/zzag;
 
 
 # instance fields
@@ -15,13 +15,13 @@
 .method public static constructor <clinit>()V
     .locals 2
 
-    new-instance v0, Lkotlin/jvm/internal/SpreadBuilder;
+    new-instance v0, Lcom/google/android/play/core/internal/zzag;
 
     const-string v1, "MergeSliceTaskHandler"
 
-    invoke-direct {v0, v1}, Lkotlin/jvm/internal/SpreadBuilder;-><init>(Ljava/lang/String;)V
+    invoke-direct {v0, v1}, Lcom/google/android/play/core/internal/zzag;-><init>(Ljava/lang/String;)V
 
-    sput-object v0, Lcom/google/android/play/core/assetpacks/zzdr;->zza:Lkotlin/jvm/internal/SpreadBuilder;
+    sput-object v0, Lcom/google/android/play/core/assetpacks/zzdr;->zza:Lcom/google/android/play/core/internal/zzag;
 
     return-void
 .end method
@@ -102,7 +102,7 @@
 
     const-string v0, "Unable to delete directory: "
 
-    invoke-static {v1, v0, p0}, Landroidx/constraintlayout/core/widgets/Barrier$$ExternalSyntheticOutline0;->m(Ljava/lang/StringBuilder;Ljava/lang/String;Ljava/lang/String;)Ljava/lang/String;
+    invoke-static {v1, v0, p0}, Landroidx/activity/ComponentActivity$2$$ExternalSyntheticOutline0;->m(Ljava/lang/StringBuilder;Ljava/lang/String;Ljava/lang/String;)Ljava/lang/String;
 
     move-result-object p0
 
@@ -145,7 +145,7 @@
 
     const-string v0, "Unable to move file: "
 
-    invoke-static {v1, v0, p0}, Landroidx/constraintlayout/core/widgets/Barrier$$ExternalSyntheticOutline0;->m(Ljava/lang/StringBuilder;Ljava/lang/String;Ljava/lang/String;)Ljava/lang/String;
+    invoke-static {v1, v0, p0}, Landroidx/activity/ComponentActivity$2$$ExternalSyntheticOutline0;->m(Ljava/lang/StringBuilder;Ljava/lang/String;Ljava/lang/String;)Ljava/lang/String;
 
     move-result-object p0
 
@@ -172,7 +172,7 @@
 
     const-string v0, "File clashing with existing file from other slice: "
 
-    invoke-static {v1, v0, p1}, Landroidx/constraintlayout/core/widgets/Barrier$$ExternalSyntheticOutline0;->m(Ljava/lang/StringBuilder;Ljava/lang/String;Ljava/lang/String;)Ljava/lang/String;
+    invoke-static {v1, v0, p1}, Landroidx/activity/ComponentActivity$2$$ExternalSyntheticOutline0;->m(Ljava/lang/StringBuilder;Ljava/lang/String;Ljava/lang/String;)Ljava/lang/String;
 
     move-result-object p1
 
@@ -188,7 +188,9 @@
 
     iget-object v0, p0, Lcom/google/android/play/core/assetpacks/zzdr;->zzb:Lcom/google/android/play/core/assetpacks/zzbh;
 
-    iget-object v1, p1, Lorg/bouncycastle/asn1/OIDTokenizer;->oid:Ljava/lang/String;
+    iget-object v1, p1, Lorg/bouncycastle/crypto/util/SSHBuffer;->buffer:Ljava/lang/Object;
+
+    check-cast v1, Ljava/lang/String;
 
     iget v2, p1, Lcom/google/android/play/core/assetpacks/zzdq;->zza:I
 
@@ -212,7 +214,9 @@
 
     iget-object v1, p0, Lcom/google/android/play/core/assetpacks/zzdr;->zzb:Lcom/google/android/play/core/assetpacks/zzbh;
 
-    iget-object v4, p1, Lorg/bouncycastle/asn1/OIDTokenizer;->oid:Ljava/lang/String;
+    iget-object v4, p1, Lorg/bouncycastle/crypto/util/SSHBuffer;->buffer:Ljava/lang/Object;
+
+    check-cast v4, Ljava/lang/String;
 
     iget v5, p1, Lcom/google/android/play/core/assetpacks/zzdq;->zza:I
 
@@ -236,7 +240,9 @@
     :try_start_0
     iget-object v0, p0, Lcom/google/android/play/core/assetpacks/zzdr;->zzb:Lcom/google/android/play/core/assetpacks/zzbh;
 
-    iget-object v1, p1, Lorg/bouncycastle/asn1/OIDTokenizer;->oid:Ljava/lang/String;
+    iget-object v1, p1, Lorg/bouncycastle/crypto/util/SSHBuffer;->buffer:Ljava/lang/Object;
+
+    check-cast v1, Ljava/lang/String;
 
     iget v4, p1, Lcom/google/android/play/core/assetpacks/zzdq;->zza:I
 
@@ -248,7 +254,11 @@
 
     iget-object v4, p0, Lcom/google/android/play/core/assetpacks/zzdr;->zzb:Lcom/google/android/play/core/assetpacks/zzbh;
 
-    iget-object v5, p1, Lorg/bouncycastle/asn1/OIDTokenizer;->oid:Ljava/lang/String;
+    iget-object v1, p1, Lorg/bouncycastle/crypto/util/SSHBuffer;->buffer:Ljava/lang/Object;
+
+    move-object v5, v1
+
+    check-cast v5, Ljava/lang/String;
 
     iget v6, p1, Lcom/google/android/play/core/assetpacks/zzdq;->zza:I
 
@@ -265,7 +275,7 @@
     :catch_0
     move-exception v0
 
-    sget-object v1, Lcom/google/android/play/core/assetpacks/zzdr;->zza:Lkotlin/jvm/internal/SpreadBuilder;
+    sget-object v1, Lcom/google/android/play/core/assetpacks/zzdr;->zza:Lcom/google/android/play/core/internal/zzag;
 
     new-array v2, v2, [Ljava/lang/Object;
 
@@ -277,11 +287,11 @@
 
     const-string v3, "Writing merge checkpoint failed with %s."
 
-    invoke-virtual {v1, v3, v2}, Lkotlin/jvm/internal/SpreadBuilder;->zzb(Ljava/lang/String;[Ljava/lang/Object;)I
+    invoke-virtual {v1, v3, v2}, Lcom/google/android/play/core/internal/zzag;->zzb(Ljava/lang/String;[Ljava/lang/Object;)I
 
     new-instance v1, Lcom/google/android/play/core/assetpacks/zzch;
 
-    iget p1, p1, Lorg/bouncycastle/asn1/OIDTokenizer;->index:I
+    iget p1, p1, Lorg/bouncycastle/crypto/util/SSHBuffer;->pos:I
 
     const-string v2, "Writing merge checkpoint failed."
 
@@ -304,7 +314,7 @@
 
     move-result-object v1
 
-    iget p1, p1, Lorg/bouncycastle/asn1/OIDTokenizer;->index:I
+    iget p1, p1, Lorg/bouncycastle/crypto/util/SSHBuffer;->pos:I
 
     invoke-direct {v0, v1, p1}, Lcom/google/android/play/core/assetpacks/zzch;-><init>(Ljava/lang/String;I)V
 

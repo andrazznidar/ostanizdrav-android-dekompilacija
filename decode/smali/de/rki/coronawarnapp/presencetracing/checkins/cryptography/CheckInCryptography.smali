@@ -10,7 +10,7 @@
 
 
 # instance fields
-.field public final aesCryptography:Lde/rki/coronawarnapp/covidcertificate/common/cryptography/AesCryptography;
+.field public final aesCryptography:Lde/rki/coronawarnapp/util/encryption/aes/AesCryptography;
 
 .field public final secureRandom:Lkotlin/random/Random;
 
@@ -48,7 +48,7 @@
     return-void
 .end method
 
-.method public constructor <init>(Lkotlin/random/Random;Lde/rki/coronawarnapp/covidcertificate/common/cryptography/AesCryptography;)V
+.method public constructor <init>(Lkotlin/random/Random;Lde/rki/coronawarnapp/util/encryption/aes/AesCryptography;)V
     .locals 1
 
     const-string v0, "secureRandom"
@@ -63,7 +63,7 @@
 
     iput-object p1, p0, Lde/rki/coronawarnapp/presencetracing/checkins/cryptography/CheckInCryptography;->secureRandom:Lkotlin/random/Random;
 
-    iput-object p2, p0, Lde/rki/coronawarnapp/presencetracing/checkins/cryptography/CheckInCryptography;->aesCryptography:Lde/rki/coronawarnapp/covidcertificate/common/cryptography/AesCryptography;
+    iput-object p2, p0, Lde/rki/coronawarnapp/presencetracing/checkins/cryptography/CheckInCryptography;->aesCryptography:Lde/rki/coronawarnapp/util/encryption/aes/AesCryptography;
 
     return-void
 .end method
@@ -143,7 +143,7 @@
 
     invoke-direct {v0, v1}, Ljavax/crypto/spec/IvParameterSpec;-><init>([B)V
 
-    iget-object v1, p0, Lde/rki/coronawarnapp/presencetracing/checkins/cryptography/CheckInCryptography;->aesCryptography:Lde/rki/coronawarnapp/covidcertificate/common/cryptography/AesCryptography;
+    iget-object v1, p0, Lde/rki/coronawarnapp/presencetracing/checkins/cryptography/CheckInCryptography;->aesCryptography:Lde/rki/coronawarnapp/util/encryption/aes/AesCryptography;
 
     invoke-virtual {p2}, Lokio/ByteString;->toByteArray()[B
 
@@ -159,7 +159,7 @@
 
     invoke-static {v2, v3}, Lkotlin/jvm/internal/Intrinsics;->checkNotNullExpressionValue(Ljava/lang/Object;Ljava/lang/String;)V
 
-    invoke-virtual {v1, p2, v2, v0}, Lde/rki/coronawarnapp/covidcertificate/common/cryptography/AesCryptography;->decrypt([B[BLjavax/crypto/spec/IvParameterSpec;)[B
+    invoke-virtual {v1, p2, v2, v0}, Lde/rki/coronawarnapp/util/encryption/aes/AesCryptography;->decryptWithCBC([B[BLjavax/crypto/spec/IvParameterSpec;)[B
 
     move-result-object p2
 
@@ -218,7 +218,7 @@
     :cond_0
     new-instance p2, Ljava/lang/IllegalArgumentException;
 
-    invoke-static {v0}, Lcom/google/android/gms/internal/nearby/zzew;->base64([B)Ljava/lang/String;
+    invoke-static {v0}, Lorg/ejml/dense/row/CommonOps_ZDRM;->base64([B)Ljava/lang/String;
 
     move-result-object v0
 
@@ -234,27 +234,15 @@
 
     invoke-static {p1, v1}, Lkotlin/jvm/internal/Intrinsics;->checkNotNullExpressionValue(Ljava/lang/Object;Ljava/lang/String;)V
 
-    invoke-static {p1}, Lcom/google/android/gms/internal/nearby/zzew;->base64([B)Ljava/lang/String;
+    invoke-static {p1}, Lorg/ejml/dense/row/CommonOps_ZDRM;->base64([B)Ljava/lang/String;
 
     move-result-object p1
 
-    new-instance v1, Ljava/lang/StringBuilder;
+    const-string v1, "Message Authentication Codes are not the same "
 
-    invoke-direct {v1}, Ljava/lang/StringBuilder;-><init>()V
+    const-string v2, " != "
 
-    const-string v2, "Message Authentication Codes are not the same "
-
-    invoke-virtual {v1, v2}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
-
-    invoke-virtual {v1, v0}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
-
-    const-string v0, " != "
-
-    invoke-virtual {v1, v0}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
-
-    invoke-virtual {v1, p1}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
-
-    invoke-virtual {v1}, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
+    invoke-static {v1, v0, v2, p1}, Landroidx/fragment/app/FragmentManager$$ExternalSyntheticOutline0;->m(Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;)Ljava/lang/String;
 
     move-result-object p1
 
@@ -330,7 +318,7 @@
 
     invoke-virtual {v2, v1}, Lkotlin/random/Random;->nextBytes([B)[B
 
-    iget-object v2, p0, Lde/rki/coronawarnapp/presencetracing/checkins/cryptography/CheckInCryptography;->aesCryptography:Lde/rki/coronawarnapp/covidcertificate/common/cryptography/AesCryptography;
+    iget-object v2, p0, Lde/rki/coronawarnapp/presencetracing/checkins/cryptography/CheckInCryptography;->aesCryptography:Lde/rki/coronawarnapp/util/encryption/aes/AesCryptography;
 
     invoke-virtual {v0}, Lokio/ByteString;->toByteArray()[B
 
@@ -348,39 +336,9 @@
 
     invoke-direct {v3, v1}, Ljavax/crypto/spec/IvParameterSpec;-><init>([B)V
 
-    invoke-static {v2}, Ljava/util/Objects;->requireNonNull(Ljava/lang/Object;)Ljava/lang/Object;
-
-    const-string v2, "key"
-
-    invoke-static {v0, v2}, Lkotlin/jvm/internal/Intrinsics;->checkNotNullParameter(Ljava/lang/Object;Ljava/lang/String;)V
-
-    const-string v2, "data"
-
-    invoke-static {p2, v2}, Lkotlin/jvm/internal/Intrinsics;->checkNotNullParameter(Ljava/lang/Object;Ljava/lang/String;)V
-
-    const-string v2, "AES/CBC/PKCS5Padding"
-
-    invoke-static {v2}, Ljavax/crypto/Cipher;->getInstance(Ljava/lang/String;)Ljavax/crypto/Cipher;
-
-    move-result-object v2
-
-    new-instance v4, Ljavax/crypto/spec/SecretKeySpec;
-
-    const-string v5, "AES"
-
-    invoke-direct {v4, v0, v5}, Ljavax/crypto/spec/SecretKeySpec;-><init>([BLjava/lang/String;)V
-
-    const/4 v0, 0x1
-
-    invoke-virtual {v2, v0, v4, v3}, Ljavax/crypto/Cipher;->init(ILjava/security/Key;Ljava/security/spec/AlgorithmParameterSpec;)V
-
-    invoke-virtual {v2, p2}, Ljavax/crypto/Cipher;->doFinal([B)[B
+    invoke-virtual {v2, v0, p2, v3}, Lde/rki/coronawarnapp/util/encryption/aes/AesCryptography;->encryptWithCBC([B[BLjavax/crypto/spec/IvParameterSpec;)[B
 
     move-result-object p2
-
-    const-string/jumbo v0, "with(Cipher.getInstance(\u2026      doFinal(data)\n    }"
-
-    invoke-static {p2, v0}, Lkotlin/jvm/internal/Intrinsics;->checkNotNullExpressionValue(Ljava/lang/Object;Ljava/lang/String;)V
 
     iget-object v0, p1, Lde/rki/coronawarnapp/presencetracing/checkins/CheckIn;->traceLocationId:Lokio/ByteString;
 
@@ -410,7 +368,7 @@
 
     move-result-object p2
 
-    invoke-static {p2}, Lkotlinx/coroutines/CoroutineScopeKt;->toProtoByteString(Lokio/ByteString;)Lcom/google/protobuf/ByteString;
+    invoke-static {p2}, Lde/rki/coronawarnapp/util/ProtoBufKt;->toProtoByteString(Lokio/ByteString;)Lcom/google/protobuf/ByteString;
 
     move-result-object p2
 
@@ -422,7 +380,7 @@
 
     move-result-object v1
 
-    invoke-static {v1}, Lkotlinx/coroutines/CoroutineScopeKt;->toProtoByteString(Lokio/ByteString;)Lcom/google/protobuf/ByteString;
+    invoke-static {v1}, Lde/rki/coronawarnapp/util/ProtoBufKt;->toProtoByteString(Lokio/ByteString;)Lcom/google/protobuf/ByteString;
 
     move-result-object v1
 
@@ -434,7 +392,7 @@
 
     move-result-object p1
 
-    invoke-static {p1}, Lkotlinx/coroutines/CoroutineScopeKt;->toProtoByteString(Lokio/ByteString;)Lcom/google/protobuf/ByteString;
+    invoke-static {p1}, Lde/rki/coronawarnapp/util/ProtoBufKt;->toProtoByteString(Lokio/ByteString;)Lcom/google/protobuf/ByteString;
 
     move-result-object p1
 
@@ -446,7 +404,7 @@
 
     move-result-object p2
 
-    invoke-static {p2}, Lkotlinx/coroutines/CoroutineScopeKt;->toProtoByteString(Lokio/ByteString;)Lcom/google/protobuf/ByteString;
+    invoke-static {p2}, Lde/rki/coronawarnapp/util/ProtoBufKt;->toProtoByteString(Lokio/ByteString;)Lcom/google/protobuf/ByteString;
 
     move-result-object p2
 
@@ -492,7 +450,7 @@
 
     const/4 v3, 0x1
 
-    invoke-static {v1, p1, v2, v3}, Lde/rki/coronawarnapp/util/HashExtensions;->toSHA256$default(Lde/rki/coronawarnapp/util/HashExtensions;[BLde/rki/coronawarnapp/util/HashExtensions$Format;I)Ljava/lang/String;
+    invoke-static {v1, p1, v2, v3}, Lde/rki/coronawarnapp/util/HashExtensions;->toSHA256$default(Lde/rki/coronawarnapp/util/HashExtensions;[BII)Ljava/lang/String;
 
     move-result-object p1
 
@@ -562,7 +520,7 @@
 
     const/4 v3, 0x1
 
-    invoke-static {v1, p1, v2, v3}, Lde/rki/coronawarnapp/util/HashExtensions;->toSHA256$default(Lde/rki/coronawarnapp/util/HashExtensions;[BLde/rki/coronawarnapp/util/HashExtensions$Format;I)Ljava/lang/String;
+    invoke-static {v1, p1, v2, v3}, Lde/rki/coronawarnapp/util/HashExtensions;->toSHA256$default(Lde/rki/coronawarnapp/util/HashExtensions;[BII)Ljava/lang/String;
 
     move-result-object p1
 

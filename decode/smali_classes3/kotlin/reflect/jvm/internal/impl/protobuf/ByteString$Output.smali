@@ -15,15 +15,15 @@
 
 
 # static fields
-.field public static final EMPTY_BYTE_ARRAY:[B
+.field private static final EMPTY_BYTE_ARRAY:[B
 
 
 # instance fields
-.field public buffer:[B
+.field private buffer:[B
 
-.field public bufferPos:I
+.field private bufferPos:I
 
-.field public final flushedBuffers:Ljava/util/ArrayList;
+.field private final flushedBuffers:Ljava/util/ArrayList;
     .annotation system Ldalvik/annotation/Signature;
         value = {
             "Ljava/util/ArrayList<",
@@ -33,9 +33,9 @@
     .end annotation
 .end field
 
-.field public flushedBuffersTotalBytes:I
+.field private flushedBuffersTotalBytes:I
 
-.field public final initialCapacity:I
+.field private final initialCapacity:I
 
 
 # direct methods
@@ -82,9 +82,25 @@
     throw p1
 .end method
 
+.method private copyArray([BI)[B
+    .locals 2
 
-# virtual methods
-.method public final flushFullBuffer(I)V
+    new-array v0, p2, [B
+
+    array-length v1, p1
+
+    invoke-static {v1, p2}, Ljava/lang/Math;->min(II)I
+
+    move-result p2
+
+    const/4 v1, 0x0
+
+    invoke-static {p1, v1, v0, v1, p2}, Ljava/lang/System;->arraycopy(Ljava/lang/Object;ILjava/lang/Object;II)V
+
+    return-object v0
+.end method
+
+.method private flushFullBuffer(I)V
     .locals 3
 
     iget-object v0, p0, Lkotlin/reflect/jvm/internal/impl/protobuf/ByteString$Output;->flushedBuffers:Ljava/util/ArrayList;
@@ -130,8 +146,8 @@
     return-void
 .end method
 
-.method public final flushLastBuffer()V
-    .locals 5
+.method private flushLastBuffer()V
+    .locals 3
 
     iget v0, p0, Lkotlin/reflect/jvm/internal/impl/protobuf/ByteString$Output;->bufferPos:I
 
@@ -139,29 +155,21 @@
 
     array-length v2, v1
 
-    const/4 v3, 0x0
-
     if-ge v0, v2, :cond_0
 
     if-lez v0, :cond_1
 
-    new-array v2, v0, [B
+    invoke-direct {p0, v1, v0}, Lkotlin/reflect/jvm/internal/impl/protobuf/ByteString$Output;->copyArray([BI)[B
 
-    array-length v4, v1
+    move-result-object v0
 
-    invoke-static {v4, v0}, Ljava/lang/Math;->min(II)I
+    iget-object v1, p0, Lkotlin/reflect/jvm/internal/impl/protobuf/ByteString$Output;->flushedBuffers:Ljava/util/ArrayList;
 
-    move-result v0
+    new-instance v2, Lkotlin/reflect/jvm/internal/impl/protobuf/LiteralByteString;
 
-    invoke-static {v1, v3, v2, v3, v0}, Ljava/lang/System;->arraycopy(Ljava/lang/Object;ILjava/lang/Object;II)V
+    invoke-direct {v2, v0}, Lkotlin/reflect/jvm/internal/impl/protobuf/LiteralByteString;-><init>([B)V
 
-    iget-object v0, p0, Lkotlin/reflect/jvm/internal/impl/protobuf/ByteString$Output;->flushedBuffers:Ljava/util/ArrayList;
-
-    new-instance v1, Lkotlin/reflect/jvm/internal/impl/protobuf/LiteralByteString;
-
-    invoke-direct {v1, v2}, Lkotlin/reflect/jvm/internal/impl/protobuf/LiteralByteString;-><init>([B)V
-
-    invoke-virtual {v0, v1}, Ljava/util/ArrayList;->add(Ljava/lang/Object;)Z
+    invoke-virtual {v1, v2}, Ljava/util/ArrayList;->add(Ljava/lang/Object;)Z
 
     goto :goto_0
 
@@ -190,80 +198,57 @@
 
     iput v0, p0, Lkotlin/reflect/jvm/internal/impl/protobuf/ByteString$Output;->flushedBuffersTotalBytes:I
 
-    iput v3, p0, Lkotlin/reflect/jvm/internal/impl/protobuf/ByteString$Output;->bufferPos:I
+    const/4 v0, 0x0
+
+    iput v0, p0, Lkotlin/reflect/jvm/internal/impl/protobuf/ByteString$Output;->bufferPos:I
 
     return-void
 .end method
 
-.method public declared-synchronized toByteString()Lkotlin/reflect/jvm/internal/impl/protobuf/ByteString;
-    .locals 3
+
+# virtual methods
+.method public declared-synchronized size()I
+    .locals 2
 
     monitor-enter p0
 
     :try_start_0
-    invoke-virtual {p0}, Lkotlin/reflect/jvm/internal/impl/protobuf/ByteString$Output;->flushLastBuffer()V
+    iget v0, p0, Lkotlin/reflect/jvm/internal/impl/protobuf/ByteString$Output;->flushedBuffersTotalBytes:I
+
+    iget v1, p0, Lkotlin/reflect/jvm/internal/impl/protobuf/ByteString$Output;->bufferPos:I
+    :try_end_0
+    .catchall {:try_start_0 .. :try_end_0} :catchall_0
+
+    add-int/2addr v0, v1
+
+    monitor-exit p0
+
+    return v0
+
+    :catchall_0
+    move-exception v0
+
+    monitor-exit p0
+
+    throw v0
+.end method
+
+.method public declared-synchronized toByteString()Lkotlin/reflect/jvm/internal/impl/protobuf/ByteString;
+    .locals 1
+
+    monitor-enter p0
+
+    :try_start_0
+    invoke-direct {p0}, Lkotlin/reflect/jvm/internal/impl/protobuf/ByteString$Output;->flushLastBuffer()V
 
     iget-object v0, p0, Lkotlin/reflect/jvm/internal/impl/protobuf/ByteString$Output;->flushedBuffers:Ljava/util/ArrayList;
 
-    instance-of v1, v0, Ljava/util/Collection;
-
-    if-nez v1, :cond_1
-
-    new-instance v1, Ljava/util/ArrayList;
-
-    invoke-direct {v1}, Ljava/util/ArrayList;-><init>()V
-
-    invoke-interface {v0}, Ljava/lang/Iterable;->iterator()Ljava/util/Iterator;
-
-    move-result-object v0
-
-    :goto_0
-    invoke-interface {v0}, Ljava/util/Iterator;->hasNext()Z
-
-    move-result v2
-
-    if-eqz v2, :cond_0
-
-    invoke-interface {v0}, Ljava/util/Iterator;->next()Ljava/lang/Object;
-
-    move-result-object v2
-
-    check-cast v2, Lkotlin/reflect/jvm/internal/impl/protobuf/ByteString;
-
-    invoke-virtual {v1, v2}, Ljava/util/ArrayList;->add(Ljava/lang/Object;)Z
-
-    goto :goto_0
-
-    :cond_0
-    move-object v0, v1
-
-    :cond_1
-    invoke-interface {v0}, Ljava/util/Collection;->isEmpty()Z
-
-    move-result v1
-
-    if-eqz v1, :cond_2
-
-    sget-object v0, Lkotlin/reflect/jvm/internal/impl/protobuf/ByteString;->EMPTY:Lkotlin/reflect/jvm/internal/impl/protobuf/ByteString;
-
-    goto :goto_1
-
-    :cond_2
-    invoke-interface {v0}, Ljava/util/Collection;->iterator()Ljava/util/Iterator;
-
-    move-result-object v1
-
-    invoke-interface {v0}, Ljava/util/Collection;->size()I
-
-    move-result v0
-
-    invoke-static {v1, v0}, Lkotlin/reflect/jvm/internal/impl/protobuf/ByteString;->balancedConcat(Ljava/util/Iterator;I)Lkotlin/reflect/jvm/internal/impl/protobuf/ByteString;
+    invoke-static {v0}, Lkotlin/reflect/jvm/internal/impl/protobuf/ByteString;->copyFrom(Ljava/lang/Iterable;)Lkotlin/reflect/jvm/internal/impl/protobuf/ByteString;
 
     move-result-object v0
     :try_end_0
     .catchall {:try_start_0 .. :try_end_0} :catchall_0
 
-    :goto_1
     monitor-exit p0
 
     return-object v0
@@ -277,59 +262,43 @@
 .end method
 
 .method public toString()Ljava/lang/String;
-    .locals 4
+    .locals 3
 
-    const-string v0, "<ByteString.Output@%s size=%d>"
+    const/4 v0, 0x2
 
-    const/4 v1, 0x2
-
-    new-array v1, v1, [Ljava/lang/Object;
+    new-array v0, v0, [Ljava/lang/Object;
 
     invoke-static {p0}, Ljava/lang/System;->identityHashCode(Ljava/lang/Object;)I
 
-    move-result v2
+    move-result v1
 
-    invoke-static {v2}, Ljava/lang/Integer;->toHexString(I)Ljava/lang/String;
+    invoke-static {v1}, Ljava/lang/Integer;->toHexString(I)Ljava/lang/String;
 
-    move-result-object v2
+    move-result-object v1
 
-    const/4 v3, 0x0
+    const/4 v2, 0x0
 
-    aput-object v2, v1, v3
+    aput-object v1, v0, v2
 
-    monitor-enter p0
+    invoke-virtual {p0}, Lkotlin/reflect/jvm/internal/impl/protobuf/ByteString$Output;->size()I
 
-    :try_start_0
-    iget v2, p0, Lkotlin/reflect/jvm/internal/impl/protobuf/ByteString$Output;->flushedBuffersTotalBytes:I
+    move-result v1
 
-    iget v3, p0, Lkotlin/reflect/jvm/internal/impl/protobuf/ByteString$Output;->bufferPos:I
-    :try_end_0
-    .catchall {:try_start_0 .. :try_end_0} :catchall_0
+    invoke-static {v1}, Ljava/lang/Integer;->valueOf(I)Ljava/lang/Integer;
 
-    add-int/2addr v2, v3
+    move-result-object v1
 
-    monitor-exit p0
+    const/4 v2, 0x1
 
-    invoke-static {v2}, Ljava/lang/Integer;->valueOf(I)Ljava/lang/Integer;
+    aput-object v1, v0, v2
 
-    move-result-object v2
+    const-string v1, "<ByteString.Output@%s size=%d>"
 
-    const/4 v3, 0x1
-
-    aput-object v2, v1, v3
-
-    invoke-static {v0, v1}, Ljava/lang/String;->format(Ljava/lang/String;[Ljava/lang/Object;)Ljava/lang/String;
+    invoke-static {v1, v0}, Ljava/lang/String;->format(Ljava/lang/String;[Ljava/lang/Object;)Ljava/lang/String;
 
     move-result-object v0
 
     return-object v0
-
-    :catchall_0
-    move-exception v0
-
-    monitor-exit p0
-
-    throw v0
 .end method
 
 .method public declared-synchronized write(I)V
@@ -348,7 +317,7 @@
 
     const/4 v0, 0x1
 
-    invoke-virtual {p0, v0}, Lkotlin/reflect/jvm/internal/impl/protobuf/ByteString$Output;->flushFullBuffer(I)V
+    invoke-direct {p0, v0}, Lkotlin/reflect/jvm/internal/impl/protobuf/ByteString$Output;->flushFullBuffer(I)V
 
     :cond_0
     iget-object v0, p0, Lkotlin/reflect/jvm/internal/impl/protobuf/ByteString$Output;->buffer:[B
@@ -414,7 +383,7 @@
 
     sub-int/2addr p3, v1
 
-    invoke-virtual {p0, p3}, Lkotlin/reflect/jvm/internal/impl/protobuf/ByteString$Output;->flushFullBuffer(I)V
+    invoke-direct {p0, p3}, Lkotlin/reflect/jvm/internal/impl/protobuf/ByteString$Output;->flushFullBuffer(I)V
 
     iget-object v0, p0, Lkotlin/reflect/jvm/internal/impl/protobuf/ByteString$Output;->buffer:[B
 

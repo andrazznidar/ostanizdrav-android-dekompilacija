@@ -15,9 +15,9 @@
 
 
 # instance fields
-.field public final isAdditionalBuiltInsFeatureSupported:Z
+.field private final isAdditionalBuiltInsFeatureSupported:Z
 
-.field public final ownerModuleDescriptor:Lkotlin/reflect/jvm/internal/impl/descriptors/ModuleDescriptor;
+.field private final ownerModuleDescriptor:Lkotlin/reflect/jvm/internal/impl/descriptors/ModuleDescriptor;
 
 
 # direct methods
@@ -35,4 +35,22 @@
     iput-boolean p2, p0, Lkotlin/reflect/jvm/internal/impl/builtins/jvm/JvmBuiltIns$Settings;->isAdditionalBuiltInsFeatureSupported:Z
 
     return-void
+.end method
+
+
+# virtual methods
+.method public final getOwnerModuleDescriptor()Lkotlin/reflect/jvm/internal/impl/descriptors/ModuleDescriptor;
+    .locals 1
+
+    iget-object v0, p0, Lkotlin/reflect/jvm/internal/impl/builtins/jvm/JvmBuiltIns$Settings;->ownerModuleDescriptor:Lkotlin/reflect/jvm/internal/impl/descriptors/ModuleDescriptor;
+
+    return-object v0
+.end method
+
+.method public final isAdditionalBuiltInsFeatureSupported()Z
+    .locals 1
+
+    iget-boolean v0, p0, Lkotlin/reflect/jvm/internal/impl/builtins/jvm/JvmBuiltIns$Settings;->isAdditionalBuiltInsFeatureSupported:Z
+
+    return v0
 .end method

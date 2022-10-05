@@ -71,7 +71,7 @@
 
     iget-object v0, p0, Lde/rki/coronawarnapp/presencetracing/common/PresenceTracingNotifications;->context:Landroid/content/Context;
 
-    const v2, 0x7f1306d3
+    const v2, 0x7f130678
 
     invoke-virtual {v0, v2}, Landroid/content/Context;->getString(I)Ljava/lang/String;
 
@@ -81,17 +81,13 @@
 
     iget-object v0, p0, Lde/rki/coronawarnapp/presencetracing/common/PresenceTracingNotifications;->context:Landroid/content/Context;
 
-    const v2, 0x7f1306d2
+    const v2, 0x7f130677
 
     invoke-virtual {v0, v2}, Landroid/content/Context;->getString(I)Ljava/lang/String;
 
     move-result-object v0
 
     iput-object v0, v1, Landroidx/core/app/NotificationChannelCompat;->mDescription:Ljava/lang/String;
-
-    const-string v0, "Builder(\n            cha\u2026on))\n            .build()"
-
-    invoke-static {v1, v0}, Lkotlin/jvm/internal/Intrinsics;->checkNotNullExpressionValue(Ljava/lang/Object;Ljava/lang/String;)V
 
     iget-object v0, p0, Lde/rki/coronawarnapp/presencetracing/common/PresenceTracingNotifications;->notificationManagerCompat:Landroidx/core/app/NotificationManagerCompat;
 

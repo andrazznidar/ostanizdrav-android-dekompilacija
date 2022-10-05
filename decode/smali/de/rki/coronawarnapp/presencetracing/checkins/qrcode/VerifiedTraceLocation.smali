@@ -46,7 +46,7 @@
 
     iput-object p1, p0, Lde/rki/coronawarnapp/presencetracing/checkins/qrcode/VerifiedTraceLocation;->protoQrCodePayload:Lde/rki/coronawarnapp/server/protocols/internal/pt/TraceLocationOuterClass$QRCodePayload;
 
-    invoke-static {p1}, Lcom/google/android/material/shape/MaterialShapeUtils;->traceLocation(Lde/rki/coronawarnapp/server/protocols/internal/pt/TraceLocationOuterClass$QRCodePayload;)Lde/rki/coronawarnapp/presencetracing/checkins/qrcode/TraceLocation;
+    invoke-static {p1}, Lgeoregression/struct/ConvertFloatType;->traceLocation(Lde/rki/coronawarnapp/server/protocols/internal/pt/TraceLocationOuterClass$QRCodePayload;)Lde/rki/coronawarnapp/presencetracing/checkins/qrcode/TraceLocation;
 
     move-result-object p1
 
@@ -162,10 +162,6 @@
     const-string v0, "<this>"
 
     invoke-static {p2, v0}, Lkotlin/jvm/internal/Intrinsics;->checkNotNullParameter(Ljava/lang/Object;Ljava/lang/String;)V
-
-    const-string v0, "parcel"
-
-    invoke-static {p1, v0}, Lkotlin/jvm/internal/Intrinsics;->checkNotNullParameter(Ljava/lang/Object;Ljava/lang/String;)V
 
     invoke-virtual {p2}, Lcom/google/protobuf/AbstractMessageLite;->toByteArray()[B
 

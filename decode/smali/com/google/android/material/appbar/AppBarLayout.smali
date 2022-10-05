@@ -385,7 +385,7 @@
 .method public draw(Landroid/graphics/Canvas;)V
     .locals 3
 
-    invoke-super {p0, p1}, Landroid/view/View;->draw(Landroid/graphics/Canvas;)V
+    invoke-super {p0, p1}, Landroid/widget/LinearLayout;->draw(Landroid/graphics/Canvas;)V
 
     iget-object v0, p0, Lcom/google/android/material/appbar/AppBarLayout;->statusBarForeground:Landroid/graphics/drawable/Drawable;
 
@@ -434,7 +434,7 @@
 .method public drawableStateChanged()V
     .locals 3
 
-    invoke-super {p0}, Landroid/view/ViewGroup;->drawableStateChanged()V
+    invoke-super {p0}, Landroid/widget/LinearLayout;->drawableStateChanged()V
 
     invoke-virtual {p0}, Landroid/widget/LinearLayout;->getDrawableState()[I
 
@@ -1044,7 +1044,7 @@
 .method public onAttachedToWindow()V
     .locals 2
 
-    invoke-super {p0}, Landroid/view/ViewGroup;->onAttachedToWindow()V
+    invoke-super {p0}, Landroid/widget/LinearLayout;->onAttachedToWindow()V
 
     invoke-virtual {p0}, Landroid/view/View;->getBackground()Landroid/graphics/drawable/Drawable;
 
@@ -1056,7 +1056,7 @@
 
     check-cast v0, Lcom/google/android/material/shape/MaterialShapeDrawable;
 
-    invoke-static {p0, v0}, Lcom/google/android/material/shape/MaterialShapeUtils;->setParentAbsoluteElevation(Landroid/view/View;Lcom/google/android/material/shape/MaterialShapeDrawable;)V
+    invoke-static {p0, v0}, Lcom/google/common/base/Preconditions;->setParentAbsoluteElevation(Landroid/view/View;Lcom/google/android/material/shape/MaterialShapeDrawable;)V
 
     :cond_0
     return-void
@@ -1082,7 +1082,7 @@
 
     add-int/2addr p1, v1
 
-    invoke-super {p0, p1}, Landroid/view/ViewGroup;->onCreateDrawableState(I)[I
+    invoke-super {p0, p1}, Landroid/widget/LinearLayout;->onCreateDrawableState(I)[I
 
     move-result-object p1
 
@@ -1166,7 +1166,7 @@
 .method public onDetachedFromWindow()V
     .locals 1
 
-    invoke-super {p0}, Landroid/view/ViewGroup;->onDetachedFromWindow()V
+    invoke-super {p0}, Landroid/widget/LinearLayout;->onDetachedFromWindow()V
 
     iget-object v0, p0, Lcom/google/android/material/appbar/AppBarLayout;->liftOnScrollTargetView:Ljava/lang/ref/WeakReference;
 
@@ -1506,9 +1506,9 @@
 .method public setElevation(F)V
     .locals 0
 
-    invoke-super {p0, p1}, Landroid/view/View;->setElevation(F)V
+    invoke-super {p0, p1}, Landroid/widget/LinearLayout;->setElevation(F)V
 
-    invoke-static {p0, p1}, Lcom/google/android/material/shape/MaterialShapeUtils;->setElevation(Landroid/view/View;F)V
+    invoke-static {p0, p1}, Lcom/google/common/base/Preconditions;->setElevation(Landroid/view/View;F)V
 
     return-void
 .end method
@@ -1867,7 +1867,7 @@
 .method public setVisibility(I)V
     .locals 2
 
-    invoke-super {p0, p1}, Landroid/view/View;->setVisibility(I)V
+    invoke-super {p0, p1}, Landroid/widget/LinearLayout;->setVisibility(I)V
 
     const/4 v0, 0x0
 
@@ -2067,7 +2067,7 @@
 .method public verifyDrawable(Landroid/graphics/drawable/Drawable;)Z
     .locals 1
 
-    invoke-super {p0, p1}, Landroid/view/View;->verifyDrawable(Landroid/graphics/drawable/Drawable;)Z
+    invoke-super {p0, p1}, Landroid/widget/LinearLayout;->verifyDrawable(Landroid/graphics/drawable/Drawable;)Z
 
     move-result v0
 

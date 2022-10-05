@@ -1,9 +1,9 @@
-.class public Lorg/bouncycastle/asn1/StreamUtil;
+.class Lorg/bouncycastle/asn1/StreamUtil;
 .super Ljava/lang/Object;
 
 
 # static fields
-.field public static final MAX_MEMORY:J
+.field private static final MAX_MEMORY:J
 
 
 # direct methods
@@ -19,6 +19,14 @@
     move-result-wide v0
 
     sput-wide v0, Lorg/bouncycastle/asn1/StreamUtil;->MAX_MEMORY:J
+
+    return-void
+.end method
+
+.method public constructor <init>()V
+    .locals 0
+
+    invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
     return-void
 .end method
@@ -125,7 +133,9 @@
 
     check-cast p0, Lorg/bouncycastle/asn1/LimitedInputStream;
 
-    iget p0, p0, Lorg/bouncycastle/asn1/LimitedInputStream;->_limit:I
+    invoke-virtual {p0}, Lorg/bouncycastle/asn1/LimitedInputStream;->getLimit()I
+
+    move-result p0
 
     return p0
 
@@ -136,7 +146,9 @@
 
     check-cast p0, Lorg/bouncycastle/asn1/ASN1InputStream;
 
-    iget p0, p0, Lorg/bouncycastle/asn1/ASN1InputStream;->limit:I
+    invoke-virtual {p0}, Lorg/bouncycastle/asn1/ASN1InputStream;->getLimit()I
+
+    move-result p0
 
     return p0
 

@@ -1,371 +1,255 @@
-.class Lj$/util/stream/a1;
-.super Lj$/util/stream/i3;
-
-
-# instance fields
-.field public final synthetic b:I
-
-.field final synthetic c:Ljava/lang/Object;
+.class final Lj$/util/stream/a1;
+.super Lj$/util/stream/R0;
 
 
 # direct methods
-.method public constructor <init>(Lj$/util/stream/K;Lj$/util/stream/n3;)V
-    .locals 1
-
-    const/4 v0, 0x4
-
-    iput v0, p0, Lj$/util/stream/a1;->b:I
-
-    iput-object p1, p0, Lj$/util/stream/a1;->c:Ljava/lang/Object;
-
-    invoke-direct {p0, p2}, Lj$/util/stream/i3;-><init>(Lj$/util/stream/n3;)V
-
-    return-void
-.end method
-
-.method public constructor <init>(Lj$/util/stream/L;Lj$/util/stream/n3;)V
-    .locals 1
-
-    const/4 v0, 0x2
-
-    iput v0, p0, Lj$/util/stream/a1;->b:I
-
-    iput-object p1, p0, Lj$/util/stream/a1;->c:Ljava/lang/Object;
-
-    invoke-direct {p0, p2}, Lj$/util/stream/i3;-><init>(Lj$/util/stream/n3;)V
-
-    return-void
-.end method
-
-.method public constructor <init>(Lj$/util/stream/M;Lj$/util/stream/n3;)V
-    .locals 1
-
-    const/4 v0, 0x3
-
-    iput v0, p0, Lj$/util/stream/a1;->b:I
-
-    iput-object p1, p0, Lj$/util/stream/a1;->c:Ljava/lang/Object;
-
-    invoke-direct {p0, p2}, Lj$/util/stream/i3;-><init>(Lj$/util/stream/n3;)V
-
-    return-void
-.end method
-
-.method public constructor <init>(Lj$/util/stream/N;Lj$/util/stream/n3;)V
-    .locals 1
-
-    const/4 v0, 0x1
-
-    iput v0, p0, Lj$/util/stream/a1;->b:I
-
-    iput-object p1, p0, Lj$/util/stream/a1;->c:Ljava/lang/Object;
-
-    invoke-direct {p0, p2}, Lj$/util/stream/i3;-><init>(Lj$/util/stream/n3;)V
-
-    return-void
-.end method
-
-.method public constructor <init>(Lj$/util/stream/N;Lj$/util/stream/n3;Lj$/lang/a;)V
+.method constructor <init>(Lj$/util/stream/P0;Lj$/util/stream/P0;)V
     .locals 0
 
-    const/4 p3, 0x5
-
-    iput p3, p0, Lj$/util/stream/a1;->b:I
-
-    iput-object p1, p0, Lj$/util/stream/a1;->c:Ljava/lang/Object;
-
-    invoke-direct {p0, p2}, Lj$/util/stream/i3;-><init>(Lj$/util/stream/n3;)V
-
-    return-void
-.end method
-
-.method public constructor <init>(Lj$/util/stream/N;Lj$/util/stream/n3;Lj$/lang/b;)V
-    .locals 0
-
-    const/4 p3, 0x6
-
-    iput p3, p0, Lj$/util/stream/a1;->b:I
-
-    iput-object p1, p0, Lj$/util/stream/a1;->c:Ljava/lang/Object;
-
-    invoke-direct {p0, p2}, Lj$/util/stream/i3;-><init>(Lj$/util/stream/n3;)V
-
-    return-void
-.end method
-
-.method public constructor <init>(Lj$/util/stream/N;Lj$/util/stream/n3;Lj$/lang/c;)V
-    .locals 0
-
-    const/4 p3, 0x7
-
-    iput p3, p0, Lj$/util/stream/a1;->b:I
-
-    iput-object p1, p0, Lj$/util/stream/a1;->c:Ljava/lang/Object;
-
-    invoke-direct {p0, p2}, Lj$/util/stream/i3;-><init>(Lj$/util/stream/n3;)V
-
-    return-void
-.end method
-
-.method public constructor <init>(Lj$/util/stream/O;Lj$/util/stream/n3;)V
-    .locals 1
-
-    const/4 v0, 0x0
-
-    iput v0, p0, Lj$/util/stream/a1;->b:I
-
-    iput-object p1, p0, Lj$/util/stream/a1;->c:Ljava/lang/Object;
-
-    invoke-direct {p0, p2}, Lj$/util/stream/i3;-><init>(Lj$/util/stream/n3;)V
+    invoke-direct {p0, p1, p2}, Lj$/util/stream/R0;-><init>(Lj$/util/stream/P0;Lj$/util/stream/P0;)V
 
     return-void
 .end method
 
 
 # virtual methods
-.method public e(J)V
-    .locals 2
+.method public forEach(Lj$/util/function/Consumer;)V
+    .locals 1
 
-    iget v0, p0, Lj$/util/stream/a1;->b:I
+    iget-object v0, p0, Lj$/util/stream/R0;->a:Lj$/util/stream/P0;
 
-    packed-switch v0, :pswitch_data_0
+    invoke-interface {v0, p1}, Lj$/util/stream/P0;->forEach(Lj$/util/function/Consumer;)V
 
-    goto/16 :goto_2
+    iget-object v0, p0, Lj$/util/stream/R0;->b:Lj$/util/stream/P0;
 
-    :pswitch_0
-    iget-object v0, p0, Lj$/util/stream/a1;->c:Ljava/lang/Object;
+    invoke-interface {v0, p1}, Lj$/util/stream/P0;->forEach(Lj$/util/function/Consumer;)V
 
-    check-cast v0, Lj$/util/stream/N;
-
-    iget-object v0, v0, Lj$/util/stream/N;->m:Ljava/lang/Object;
-
-    check-cast v0, Lj$/wrappers/i;
-
-    invoke-virtual {v0, p1, p2}, Lj$/wrappers/i;->Q(J)Z
-
-    move-result v0
-
-    if-eqz v0, :cond_0
-
-    iget-object v0, p0, Lj$/util/stream/i3;->a:Lj$/util/stream/n3;
-
-    invoke-interface {v0, p1, p2}, Lj$/util/stream/n3;->e(J)V
-
-    :cond_0
     return-void
+.end method
 
-    :pswitch_1
-    iget-object v0, p0, Lj$/util/stream/a1;->c:Ljava/lang/Object;
+.method public m([Ljava/lang/Object;I)V
+    .locals 3
 
-    check-cast v0, Lj$/util/stream/N;
+    invoke-static {p1}, Ljava/util/Objects;->requireNonNull(Ljava/lang/Object;)Ljava/lang/Object;
 
-    iget-object v0, v0, Lj$/util/stream/N;->m:Ljava/lang/Object;
+    iget-object v0, p0, Lj$/util/stream/R0;->a:Lj$/util/stream/P0;
 
-    check-cast v0, Lj$/util/function/n;
+    invoke-interface {v0, p1, p2}, Lj$/util/stream/P0;->m([Ljava/lang/Object;I)V
 
-    invoke-interface {v0, p1, p2}, Lj$/util/function/n;->q(J)Ljava/lang/Object;
+    iget-object v0, p0, Lj$/util/stream/R0;->b:Lj$/util/stream/P0;
+
+    iget-object v1, p0, Lj$/util/stream/R0;->a:Lj$/util/stream/P0;
+
+    invoke-interface {v1}, Lj$/util/stream/P0;->count()J
+
+    move-result-wide v1
+
+    long-to-int v1, v1
+
+    add-int/2addr p2, v1
+
+    invoke-interface {v0, p1, p2}, Lj$/util/stream/P0;->m([Ljava/lang/Object;I)V
+
+    return-void
+.end method
+
+.method public o(Lj$/util/function/p;)[Ljava/lang/Object;
+    .locals 4
+
+    invoke-virtual {p0}, Lj$/util/stream/R0;->count()J
+
+    move-result-wide v0
+
+    const-wide/32 v2, 0x7ffffff7
+
+    cmp-long v2, v0, v2
+
+    if-gez v2, :cond_0
+
+    long-to-int v0, v0
+
+    invoke-interface {p1, v0}, Lj$/util/function/p;->t(I)Ljava/lang/Object;
 
     move-result-object p1
 
-    check-cast p1, Lj$/util/stream/f1;
+    check-cast p1, [Ljava/lang/Object;
 
-    if-eqz p1, :cond_1
+    const/4 v0, 0x0
 
-    :try_start_0
-    invoke-interface {p1}, Lj$/util/stream/f1;->sequential()Lj$/util/stream/f1;
+    invoke-virtual {p0, p1, v0}, Lj$/util/stream/a1;->m([Ljava/lang/Object;I)V
+
+    return-object p1
+
+    :cond_0
+    new-instance p1, Ljava/lang/IllegalArgumentException;
+
+    const-string v0, "Stream size exceeds max array size"
+
+    invoke-direct {p1, v0}, Ljava/lang/IllegalArgumentException;-><init>(Ljava/lang/String;)V
+
+    throw p1
+.end method
+
+.method public p(JJLj$/util/function/p;)Lj$/util/stream/P0;
+    .locals 9
+
+    const-wide/16 v0, 0x0
+
+    cmp-long v0, p1, v0
+
+    if-nez v0, :cond_0
+
+    invoke-virtual {p0}, Lj$/util/stream/R0;->count()J
+
+    move-result-wide v0
+
+    cmp-long v0, p3, v0
+
+    if-nez v0, :cond_0
+
+    return-object p0
+
+    :cond_0
+    iget-object v0, p0, Lj$/util/stream/R0;->a:Lj$/util/stream/P0;
+
+    invoke-interface {v0}, Lj$/util/stream/P0;->count()J
+
+    move-result-wide v7
+
+    cmp-long v0, p1, v7
+
+    if-ltz v0, :cond_1
+
+    iget-object v1, p0, Lj$/util/stream/R0;->b:Lj$/util/stream/P0;
+
+    sub-long v2, p1, v7
+
+    sub-long v4, p3, v7
+
+    move-object v6, p5
+
+    invoke-interface/range {v1 .. v6}, Lj$/util/stream/P0;->p(JJLj$/util/function/p;)Lj$/util/stream/P0;
+
+    move-result-object p1
+
+    return-object p1
+
+    :cond_1
+    cmp-long v0, p3, v7
+
+    if-gtz v0, :cond_2
+
+    iget-object v1, p0, Lj$/util/stream/R0;->a:Lj$/util/stream/P0;
+
+    move-wide v2, p1
+
+    move-wide v4, p3
+
+    move-object v6, p5
+
+    invoke-interface/range {v1 .. v6}, Lj$/util/stream/P0;->p(JJLj$/util/function/p;)Lj$/util/stream/P0;
+
+    move-result-object p1
+
+    return-object p1
+
+    :cond_2
+    const/4 v0, 0x1
+
+    iget-object v1, p0, Lj$/util/stream/R0;->a:Lj$/util/stream/P0;
+
+    move-wide v2, p1
+
+    move-wide v4, v7
+
+    move-object v6, p5
+
+    invoke-interface/range {v1 .. v6}, Lj$/util/stream/P0;->p(JJLj$/util/function/p;)Lj$/util/stream/P0;
+
+    move-result-object p1
+
+    iget-object v1, p0, Lj$/util/stream/R0;->b:Lj$/util/stream/P0;
+
+    const-wide/16 v2, 0x0
+
+    sub-long v4, p3, v7
+
+    invoke-interface/range {v1 .. v6}, Lj$/util/stream/P0;->p(JJLj$/util/function/p;)Lj$/util/stream/P0;
 
     move-result-object p2
 
-    new-instance v0, Lj$/util/stream/X0;
-
-    invoke-direct {v0, p0}, Lj$/util/stream/X0;-><init>(Lj$/util/stream/a1;)V
-
-    invoke-interface {p2, v0}, Lj$/util/stream/f1;->g(Lj$/util/function/m;)V
-    :try_end_0
-    .catchall {:try_start_0 .. :try_end_0} :catchall_0
-
-    goto :goto_1
-
-    :catchall_0
-    move-exception p2
-
-    :try_start_1
-    check-cast p1, Lj$/util/stream/c;
-
-    invoke-virtual {p1}, Lj$/util/stream/c;->close()V
-    :try_end_1
-    .catchall {:try_start_1 .. :try_end_1} :catchall_1
-
-    goto :goto_0
-
-    :catchall_1
-    move-exception p1
-
-    invoke-virtual {p2, p1}, Ljava/lang/Throwable;->addSuppressed(Ljava/lang/Throwable;)V
-
-    :goto_0
-    throw p2
-
-    :cond_1
-    :goto_1
-    if-eqz p1, :cond_2
-
-    check-cast p1, Lj$/util/stream/c;
-
-    invoke-virtual {p1}, Lj$/util/stream/c;->close()V
-
-    :cond_2
-    return-void
-
-    :pswitch_2
-    iget-object v0, p0, Lj$/util/stream/i3;->a:Lj$/util/stream/n3;
-
-    iget-object v1, p0, Lj$/util/stream/a1;->c:Ljava/lang/Object;
-
-    check-cast v1, Lj$/util/stream/K;
-
-    iget-object v1, v1, Lj$/util/stream/K;->m:Ljava/lang/Object;
-
-    check-cast v1, Lj$/wrappers/i;
-
-    invoke-virtual {v1, p1, p2}, Lj$/wrappers/i;->C(J)D
-
-    move-result-wide p1
-
-    invoke-interface {v0, p1, p2}, Lj$/util/stream/n3;->c(D)V
-
-    return-void
-
-    :pswitch_3
-    iget-object v0, p0, Lj$/util/stream/i3;->a:Lj$/util/stream/n3;
-
-    iget-object v1, p0, Lj$/util/stream/a1;->c:Ljava/lang/Object;
-
-    check-cast v1, Lj$/util/stream/M;
-
-    iget-object v1, v1, Lj$/util/stream/M;->m:Ljava/lang/Object;
-
-    check-cast v1, Lj$/wrappers/i;
-
-    invoke-virtual {v1, p1, p2}, Lj$/wrappers/i;->F(J)I
-
-    move-result p1
-
-    invoke-interface {v0, p1}, Lj$/util/stream/n3;->d(I)V
-
-    return-void
-
-    :pswitch_4
-    iget-object v0, p0, Lj$/util/stream/i3;->a:Lj$/util/stream/n3;
-
-    iget-object v1, p0, Lj$/util/stream/a1;->c:Ljava/lang/Object;
-
-    check-cast v1, Lj$/util/stream/L;
-
-    iget-object v1, v1, Lj$/util/stream/L;->m:Ljava/lang/Object;
-
-    check-cast v1, Lj$/util/function/n;
-
-    invoke-interface {v1, p1, p2}, Lj$/util/function/n;->q(J)Ljava/lang/Object;
+    invoke-static {v0, p1, p2}, Lj$/util/stream/D0;->n0(ILj$/util/stream/P0;Lj$/util/stream/P0;)Lj$/util/stream/P0;
 
     move-result-object p1
 
-    invoke-interface {v0, p1}, Lj$/util/function/Consumer;->i(Ljava/lang/Object;)V
-
-    return-void
-
-    :pswitch_5
-    iget-object v0, p0, Lj$/util/stream/i3;->a:Lj$/util/stream/n3;
-
-    iget-object v1, p0, Lj$/util/stream/a1;->c:Ljava/lang/Object;
-
-    check-cast v1, Lj$/util/stream/N;
-
-    iget-object v1, v1, Lj$/util/stream/N;->m:Ljava/lang/Object;
-
-    check-cast v1, Lj$/util/function/o;
-
-    invoke-interface {v1, p1, p2}, Lj$/util/function/o;->r(J)J
-
-    move-result-wide p1
-
-    invoke-interface {v0, p1, p2}, Lj$/util/stream/n3;->e(J)V
-
-    return-void
-
-    :pswitch_6
-    iget-object v0, p0, Lj$/util/stream/i3;->a:Lj$/util/stream/n3;
-
-    long-to-double p1, p1
-
-    invoke-interface {v0, p1, p2}, Lj$/util/stream/n3;->c(D)V
-
-    return-void
-
-    :goto_2
-    iget-object v0, p0, Lj$/util/stream/a1;->c:Ljava/lang/Object;
-
-    check-cast v0, Lj$/util/stream/N;
-
-    iget-object v0, v0, Lj$/util/stream/N;->m:Ljava/lang/Object;
-
-    check-cast v0, Lj$/util/function/m;
-
-    invoke-interface {v0, p1, p2}, Lj$/util/function/m;->e(J)V
-
-    iget-object v0, p0, Lj$/util/stream/i3;->a:Lj$/util/stream/n3;
-
-    invoke-interface {v0, p1, p2}, Lj$/util/stream/n3;->e(J)V
-
-    return-void
-
-    :pswitch_data_0
-    .packed-switch 0x0
-        :pswitch_6
-        :pswitch_5
-        :pswitch_4
-        :pswitch_3
-        :pswitch_2
-        :pswitch_1
-        :pswitch_0
-    .end packed-switch
+    return-object p1
 .end method
 
-.method public x(J)V
-    .locals 3
+.method public spliterator()Lj$/util/Spliterator;
+    .locals 1
 
-    iget v0, p0, Lj$/util/stream/a1;->b:I
+    new-instance v0, Lj$/util/stream/r1;
 
-    const-wide/16 v1, -0x1
+    invoke-direct {v0, p0}, Lj$/util/stream/r1;-><init>(Lj$/util/stream/P0;)V
 
-    packed-switch v0, :pswitch_data_0
+    return-object v0
+.end method
 
-    goto :goto_0
+.method public toString()Ljava/lang/String;
+    .locals 4
 
-    :pswitch_0
-    iget-object p1, p0, Lj$/util/stream/i3;->a:Lj$/util/stream/n3;
+    invoke-virtual {p0}, Lj$/util/stream/R0;->count()J
 
-    invoke-interface {p1, v1, v2}, Lj$/util/stream/n3;->x(J)V
+    move-result-wide v0
 
-    return-void
+    const-wide/16 v2, 0x20
 
-    :pswitch_1
-    iget-object p1, p0, Lj$/util/stream/i3;->a:Lj$/util/stream/n3;
+    cmp-long v0, v0, v2
 
-    invoke-interface {p1, v1, v2}, Lj$/util/stream/n3;->x(J)V
+    const/4 v1, 0x0
 
-    return-void
+    const/4 v2, 0x1
 
-    :goto_0
-    iget-object v0, p0, Lj$/util/stream/i3;->a:Lj$/util/stream/n3;
+    if-gez v0, :cond_0
 
-    invoke-interface {v0, p1, p2}, Lj$/util/stream/n3;->x(J)V
+    const/4 v0, 0x2
 
-    return-void
+    new-array v0, v0, [Ljava/lang/Object;
 
-    :pswitch_data_0
-    .packed-switch 0x5
-        :pswitch_1
-        :pswitch_0
-    .end packed-switch
+    iget-object v3, p0, Lj$/util/stream/R0;->a:Lj$/util/stream/P0;
+
+    aput-object v3, v0, v1
+
+    iget-object v1, p0, Lj$/util/stream/R0;->b:Lj$/util/stream/P0;
+
+    aput-object v1, v0, v2
+
+    const-string v1, "ConcNode[%s.%s]"
+
+    invoke-static {v1, v0}, Ljava/lang/String;->format(Ljava/lang/String;[Ljava/lang/Object;)Ljava/lang/String;
+
+    move-result-object v0
+
+    return-object v0
+
+    :cond_0
+    new-array v0, v2, [Ljava/lang/Object;
+
+    invoke-virtual {p0}, Lj$/util/stream/R0;->count()J
+
+    move-result-wide v2
+
+    invoke-static {v2, v3}, Ljava/lang/Long;->valueOf(J)Ljava/lang/Long;
+
+    move-result-object v2
+
+    aput-object v2, v0, v1
+
+    const-string v1, "ConcNode[size=%d]"
+
+    invoke-static {v1, v0}, Ljava/lang/String;->format(Ljava/lang/String;[Ljava/lang/Object;)Ljava/lang/String;
+
+    move-result-object v0
+
+    return-object v0
 .end method

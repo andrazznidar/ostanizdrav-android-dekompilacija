@@ -40,7 +40,7 @@
     return-void
 .end method
 
-.method public synthetic constructor <init>(Lde/rki/coronawarnapp/server/protocols/internal/AppConfig$ApplicationConfiguration$Builder-IA;)V
+.method public synthetic constructor <init>(Lcom/airbnb/lottie/model/content/PolystarShape$Type$EnumUnboxingLocalUtility;)V
     .locals 0
 
     invoke-direct {p0}, Lde/rki/coronawarnapp/server/protocols/internal/AppConfig$ApplicationConfiguration$Builder;-><init>()V

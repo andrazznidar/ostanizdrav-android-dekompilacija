@@ -1,19 +1,56 @@
 .class public Lkotlin/reflect/jvm/internal/CreateKCallableVisitor;
-.super Ljava/lang/Object;
+.super Lkotlin/reflect/jvm/internal/impl/descriptors/impl/DeclarationDescriptorVisitorEmptyBodies;
 .source "util.kt"
-
-# interfaces
-.implements Lkotlin/reflect/jvm/internal/impl/descriptors/DeclarationDescriptorVisitor;
 
 
 # annotations
+.annotation system Ldalvik/annotation/Signature;
+    value = {
+        "Lkotlin/reflect/jvm/internal/impl/descriptors/impl/DeclarationDescriptorVisitorEmptyBodies<",
+        "Lkotlin/reflect/jvm/internal/KCallableImpl<",
+        "*>;",
+        "Lkotlin/Unit;",
+        ">;"
+    }
+.end annotation
+
 .annotation system Ldalvik/annotation/SourceDebugExtension;
-    value = "SMAP\nutil.kt\nKotlin\n*S Kotlin\n*F\n+ 1 util.kt\nkotlin/reflect/jvm/internal/CreateKCallableVisitor\n+ 2 fake.kt\nkotlin/jvm/internal/FakeKt\n*L\n1#1,247:1\n1#2:248\n*E\n"
+    value = "SMAP\nutil.kt\nKotlin\n*S Kotlin\n*F\n+ 1 util.kt\nkotlin/reflect/jvm/internal/CreateKCallableVisitor\n+ 2 fake.kt\nkotlin/jvm/internal/FakeKt\n*L\n1#1,286:1\n1#2:287\n*E\n"
+.end annotation
+
+.annotation runtime Lkotlin/Metadata;
+    d1 = {
+        "\u0000*\n\u0002\u0018\u0002\n\u0002\u0018\u0002\n\u0002\u0018\u0002\n\u0002\u0010\u0002\n\u0000\n\u0002\u0018\u0002\n\u0002\u0008\u0003\n\u0002\u0018\u0002\n\u0002\u0008\u0003\n\u0002\u0018\u0002\n\u0002\u0008\u0002\u0008\u0010\u0018\u00002\u0012\u0012\u0008\u0012\u0006\u0012\u0002\u0008\u00030\u0002\u0012\u0004\u0012\u00020\u00030\u0001B\r\u0012\u0006\u0010\u0004\u001a\u00020\u0005\u00a2\u0006\u0002\u0010\u0006J!\u0010\u0007\u001a\u0006\u0012\u0002\u0008\u00030\u00022\u0006\u0010\u0008\u001a\u00020\t2\u0006\u0010\n\u001a\u00020\u0003H\u0016\u00a2\u0006\u0002\u0010\u000bJ!\u0010\u000c\u001a\u0006\u0012\u0002\u0008\u00030\u00022\u0006\u0010\u0008\u001a\u00020\r2\u0006\u0010\n\u001a\u00020\u0003H\u0016\u00a2\u0006\u0002\u0010\u000eR\u000e\u0010\u0004\u001a\u00020\u0005X\u0082\u0004\u00a2\u0006\u0002\n\u0000\u00a8\u0006\u000f"
+    }
+    d2 = {
+        "Lkotlin/reflect/jvm/internal/CreateKCallableVisitor;",
+        "Lkotlin/reflect/jvm/internal/impl/descriptors/impl/DeclarationDescriptorVisitorEmptyBodies;",
+        "Lkotlin/reflect/jvm/internal/KCallableImpl;",
+        "",
+        "container",
+        "Lkotlin/reflect/jvm/internal/KDeclarationContainerImpl;",
+        "(Lkotlin/reflect/jvm/internal/KDeclarationContainerImpl;)V",
+        "visitFunctionDescriptor",
+        "descriptor",
+        "Lkotlin/reflect/jvm/internal/impl/descriptors/FunctionDescriptor;",
+        "data",
+        "(Lorg/jetbrains/kotlin/descriptors/FunctionDescriptor;Lkotlin/Unit;)Lkotlin/reflect/jvm/internal/KCallableImpl;",
+        "visitPropertyDescriptor",
+        "Lkotlin/reflect/jvm/internal/impl/descriptors/PropertyDescriptor;",
+        "(Lorg/jetbrains/kotlin/descriptors/PropertyDescriptor;Lkotlin/Unit;)Lkotlin/reflect/jvm/internal/KCallableImpl;",
+        "kotlin-reflection"
+    }
+    k = 0x1
+    mv = {
+        0x1,
+        0x5,
+        0x1
+    }
 .end annotation
 
 
 # instance fields
-.field public final container:Lkotlin/reflect/jvm/internal/KDeclarationContainerImpl;
+.field private final container:Lkotlin/reflect/jvm/internal/KDeclarationContainerImpl;
 
 
 # direct methods
@@ -24,7 +61,7 @@
 
     invoke-static {p1, v0}, Lkotlin/jvm/internal/Intrinsics;->checkNotNullParameter(Ljava/lang/Object;Ljava/lang/String;)V
 
-    invoke-direct {p0}, Ljava/lang/Object;-><init>()V
+    invoke-direct {p0}, Lkotlin/reflect/jvm/internal/impl/descriptors/impl/DeclarationDescriptorVisitorEmptyBodies;-><init>()V
 
     iput-object p1, p0, Lkotlin/reflect/jvm/internal/CreateKCallableVisitor;->container:Lkotlin/reflect/jvm/internal/KDeclarationContainerImpl;
 
@@ -33,28 +70,30 @@
 
 
 # virtual methods
-.method public bridge synthetic visitClassDescriptor(Lkotlin/reflect/jvm/internal/impl/descriptors/ClassDescriptor;Ljava/lang/Object;)Ljava/lang/Object;
+.method public bridge synthetic visitFunctionDescriptor(Lkotlin/reflect/jvm/internal/impl/descriptors/FunctionDescriptor;Ljava/lang/Object;)Ljava/lang/Object;
     .locals 0
 
-    const/4 p1, 0x0
+    check-cast p2, Lkotlin/Unit;
 
-    return-object p1
-.end method
-
-.method public visitConstructorDescriptor(Lkotlin/reflect/jvm/internal/impl/descriptors/ConstructorDescriptor;Ljava/lang/Object;)Ljava/lang/Object;
-    .locals 0
-
-    invoke-virtual {p0, p1, p2}, Lkotlin/reflect/jvm/internal/CreateKCallableVisitor;->visitFunctionDescriptor(Lkotlin/reflect/jvm/internal/impl/descriptors/FunctionDescriptor;Ljava/lang/Object;)Ljava/lang/Object;
+    invoke-virtual {p0, p1, p2}, Lkotlin/reflect/jvm/internal/CreateKCallableVisitor;->visitFunctionDescriptor(Lkotlin/reflect/jvm/internal/impl/descriptors/FunctionDescriptor;Lkotlin/Unit;)Lkotlin/reflect/jvm/internal/KCallableImpl;
 
     move-result-object p1
 
     return-object p1
 .end method
 
-.method public visitFunctionDescriptor(Lkotlin/reflect/jvm/internal/impl/descriptors/FunctionDescriptor;Ljava/lang/Object;)Ljava/lang/Object;
+.method public visitFunctionDescriptor(Lkotlin/reflect/jvm/internal/impl/descriptors/FunctionDescriptor;Lkotlin/Unit;)Lkotlin/reflect/jvm/internal/KCallableImpl;
     .locals 1
-
-    check-cast p2, Lkotlin/Unit;
+    .annotation system Ldalvik/annotation/Signature;
+        value = {
+            "(",
+            "Lkotlin/reflect/jvm/internal/impl/descriptors/FunctionDescriptor;",
+            "Lkotlin/Unit;",
+            ")",
+            "Lkotlin/reflect/jvm/internal/KCallableImpl<",
+            "*>;"
+        }
+    .end annotation
 
     const-string v0, "descriptor"
 
@@ -73,83 +112,81 @@
     return-object p2
 .end method
 
-.method public bridge synthetic visitModuleDeclaration(Lkotlin/reflect/jvm/internal/impl/descriptors/ModuleDescriptor;Ljava/lang/Object;)Ljava/lang/Object;
+.method public bridge synthetic visitPropertyDescriptor(Lkotlin/reflect/jvm/internal/impl/descriptors/PropertyDescriptor;Ljava/lang/Object;)Ljava/lang/Object;
     .locals 0
-
-    const/4 p1, 0x0
-
-    return-object p1
-.end method
-
-.method public bridge synthetic visitPackageFragmentDescriptor(Lkotlin/reflect/jvm/internal/impl/descriptors/PackageFragmentDescriptor;Ljava/lang/Object;)Ljava/lang/Object;
-    .locals 0
-
-    const/4 p1, 0x0
-
-    return-object p1
-.end method
-
-.method public bridge synthetic visitPackageViewDescriptor(Lkotlin/reflect/jvm/internal/impl/descriptors/PackageViewDescriptor;Ljava/lang/Object;)Ljava/lang/Object;
-    .locals 0
-
-    const/4 p1, 0x0
-
-    return-object p1
-.end method
-
-.method public visitPropertyDescriptor(Lkotlin/reflect/jvm/internal/impl/descriptors/PropertyDescriptor;Ljava/lang/Object;)Ljava/lang/Object;
-    .locals 3
 
     check-cast p2, Lkotlin/Unit;
+
+    invoke-virtual {p0, p1, p2}, Lkotlin/reflect/jvm/internal/CreateKCallableVisitor;->visitPropertyDescriptor(Lkotlin/reflect/jvm/internal/impl/descriptors/PropertyDescriptor;Lkotlin/Unit;)Lkotlin/reflect/jvm/internal/KCallableImpl;
+
+    move-result-object p1
+
+    return-object p1
+.end method
+
+.method public visitPropertyDescriptor(Lkotlin/reflect/jvm/internal/impl/descriptors/PropertyDescriptor;Lkotlin/Unit;)Lkotlin/reflect/jvm/internal/KCallableImpl;
+    .locals 3
+    .annotation system Ldalvik/annotation/Signature;
+        value = {
+            "(",
+            "Lkotlin/reflect/jvm/internal/impl/descriptors/PropertyDescriptor;",
+            "Lkotlin/Unit;",
+            ")",
+            "Lkotlin/reflect/jvm/internal/KCallableImpl<",
+            "*>;"
+        }
+    .end annotation
+
+    const-string v0, "descriptor"
+
+    invoke-static {p1, v0}, Lkotlin/jvm/internal/Intrinsics;->checkNotNullParameter(Ljava/lang/Object;Ljava/lang/String;)V
 
     const-string v0, "data"
 
     invoke-static {p2, v0}, Lkotlin/jvm/internal/Intrinsics;->checkNotNullParameter(Ljava/lang/Object;Ljava/lang/String;)V
 
-    move-object p2, p1
+    invoke-interface {p1}, Lkotlin/reflect/jvm/internal/impl/descriptors/CallableDescriptor;->getDispatchReceiverParameter()Lkotlin/reflect/jvm/internal/impl/descriptors/ReceiverParameterDescriptor;
 
-    check-cast p2, Lkotlin/reflect/jvm/internal/impl/descriptors/impl/PropertyDescriptorImpl;
+    move-result-object p2
 
-    iget-object v0, p2, Lkotlin/reflect/jvm/internal/impl/descriptors/impl/PropertyDescriptorImpl;->dispatchReceiverParameter:Lkotlin/reflect/jvm/internal/impl/descriptors/ReceiverParameterDescriptor;
+    const/4 v0, 0x0
 
-    const/4 v1, 0x0
+    const/4 v1, 0x1
 
-    const/4 v2, 0x1
+    if-eqz p2, :cond_0
 
-    if-eqz v0, :cond_0
-
-    move v0, v2
+    move p2, v1
 
     goto :goto_0
 
     :cond_0
-    move v0, v1
+    move p2, v0
 
     :goto_0
-    iget-object p2, p2, Lkotlin/reflect/jvm/internal/impl/descriptors/impl/PropertyDescriptorImpl;->extensionReceiverParameter:Lkotlin/reflect/jvm/internal/impl/descriptors/ReceiverParameterDescriptor;
+    invoke-interface {p1}, Lkotlin/reflect/jvm/internal/impl/descriptors/CallableDescriptor;->getExtensionReceiverParameter()Lkotlin/reflect/jvm/internal/impl/descriptors/ReceiverParameterDescriptor;
 
-    if-eqz p2, :cond_1
+    move-result-object v2
 
-    move v1, v2
+    if-eqz v2, :cond_1
+
+    move v0, v1
 
     :cond_1
-    add-int/2addr v0, v1
+    add-int/2addr p2, v0
 
-    move-object p2, p1
+    invoke-interface {p1}, Lkotlin/reflect/jvm/internal/impl/descriptors/VariableDescriptor;->isVar()Z
 
-    check-cast p2, Lkotlin/reflect/jvm/internal/impl/descriptors/impl/VariableDescriptorWithInitializerImpl;
+    move-result v0
 
-    iget-boolean p2, p2, Lkotlin/reflect/jvm/internal/impl/descriptors/impl/VariableDescriptorWithInitializerImpl;->isVar:Z
+    const/4 v2, 0x2
 
-    const/4 v1, 0x2
+    if-eqz v0, :cond_4
 
-    if-eqz p2, :cond_4
+    if-eqz p2, :cond_3
 
-    if-eqz v0, :cond_3
+    if-eq p2, v1, :cond_2
 
-    if-eq v0, v2, :cond_2
-
-    if-ne v0, v1, :cond_5
+    if-ne p2, v2, :cond_5
 
     new-instance p2, Lkotlin/reflect/jvm/internal/KMutableProperty2Impl;
 
@@ -157,7 +194,7 @@
 
     invoke-direct {p2, v0, p1}, Lkotlin/reflect/jvm/internal/KMutableProperty2Impl;-><init>(Lkotlin/reflect/jvm/internal/KDeclarationContainerImpl;Lkotlin/reflect/jvm/internal/impl/descriptors/PropertyDescriptor;)V
 
-    goto :goto_1
+    return-object p2
 
     :cond_2
     new-instance p2, Lkotlin/reflect/jvm/internal/KMutableProperty1Impl;
@@ -166,7 +203,7 @@
 
     invoke-direct {p2, v0, p1}, Lkotlin/reflect/jvm/internal/KMutableProperty1Impl;-><init>(Lkotlin/reflect/jvm/internal/KDeclarationContainerImpl;Lkotlin/reflect/jvm/internal/impl/descriptors/PropertyDescriptor;)V
 
-    goto :goto_1
+    return-object p2
 
     :cond_3
     new-instance p2, Lkotlin/reflect/jvm/internal/KMutableProperty0Impl;
@@ -175,14 +212,14 @@
 
     invoke-direct {p2, v0, p1}, Lkotlin/reflect/jvm/internal/KMutableProperty0Impl;-><init>(Lkotlin/reflect/jvm/internal/KDeclarationContainerImpl;Lkotlin/reflect/jvm/internal/impl/descriptors/PropertyDescriptor;)V
 
-    goto :goto_1
+    return-object p2
 
     :cond_4
-    if-eqz v0, :cond_7
+    if-eqz p2, :cond_7
 
-    if-eq v0, v2, :cond_6
+    if-eq p2, v1, :cond_6
 
-    if-ne v0, v1, :cond_5
+    if-ne p2, v2, :cond_5
 
     new-instance p2, Lkotlin/reflect/jvm/internal/KProperty2Impl;
 
@@ -190,7 +227,7 @@
 
     invoke-direct {p2, v0, p1}, Lkotlin/reflect/jvm/internal/KProperty2Impl;-><init>(Lkotlin/reflect/jvm/internal/KDeclarationContainerImpl;Lkotlin/reflect/jvm/internal/impl/descriptors/PropertyDescriptor;)V
 
-    goto :goto_1
+    return-object p2
 
     :cond_5
     new-instance p2, Lkotlin/reflect/jvm/internal/KotlinReflectionInternalError;
@@ -220,7 +257,7 @@
 
     invoke-direct {p2, v0, p1}, Lkotlin/reflect/jvm/internal/KProperty1Impl;-><init>(Lkotlin/reflect/jvm/internal/KDeclarationContainerImpl;Lkotlin/reflect/jvm/internal/impl/descriptors/PropertyDescriptor;)V
 
-    goto :goto_1
+    return-object p2
 
     :cond_7
     new-instance p2, Lkotlin/reflect/jvm/internal/KProperty0Impl;
@@ -229,58 +266,5 @@
 
     invoke-direct {p2, v0, p1}, Lkotlin/reflect/jvm/internal/KProperty0Impl;-><init>(Lkotlin/reflect/jvm/internal/KDeclarationContainerImpl;Lkotlin/reflect/jvm/internal/impl/descriptors/PropertyDescriptor;)V
 
-    :goto_1
     return-object p2
-.end method
-
-.method public visitPropertyGetterDescriptor(Lkotlin/reflect/jvm/internal/impl/descriptors/PropertyGetterDescriptor;Ljava/lang/Object;)Ljava/lang/Object;
-    .locals 0
-
-    invoke-virtual {p0, p1, p2}, Lkotlin/reflect/jvm/internal/CreateKCallableVisitor;->visitFunctionDescriptor(Lkotlin/reflect/jvm/internal/impl/descriptors/FunctionDescriptor;Ljava/lang/Object;)Ljava/lang/Object;
-
-    move-result-object p1
-
-    return-object p1
-.end method
-
-.method public visitPropertySetterDescriptor(Lkotlin/reflect/jvm/internal/impl/descriptors/PropertySetterDescriptor;Ljava/lang/Object;)Ljava/lang/Object;
-    .locals 0
-
-    invoke-virtual {p0, p1, p2}, Lkotlin/reflect/jvm/internal/CreateKCallableVisitor;->visitFunctionDescriptor(Lkotlin/reflect/jvm/internal/impl/descriptors/FunctionDescriptor;Ljava/lang/Object;)Ljava/lang/Object;
-
-    move-result-object p1
-
-    return-object p1
-.end method
-
-.method public bridge synthetic visitReceiverParameterDescriptor(Lkotlin/reflect/jvm/internal/impl/descriptors/ReceiverParameterDescriptor;Ljava/lang/Object;)Ljava/lang/Object;
-    .locals 0
-
-    const/4 p1, 0x0
-
-    return-object p1
-.end method
-
-.method public bridge synthetic visitTypeAliasDescriptor(Lkotlin/reflect/jvm/internal/impl/descriptors/TypeAliasDescriptor;Ljava/lang/Object;)Ljava/lang/Object;
-    .locals 0
-
-    const/4 p1, 0x0
-
-    return-object p1
-.end method
-
-.method public bridge synthetic visitTypeParameterDescriptor(Lkotlin/reflect/jvm/internal/impl/descriptors/TypeParameterDescriptor;Ljava/lang/Object;)Ljava/lang/Object;
-    .locals 0
-
-    const/4 p1, 0x0
-
-    return-object p1
-.end method
-
-.method public bridge synthetic visitValueParameterDescriptor(Lkotlin/reflect/jvm/internal/impl/descriptors/ValueParameterDescriptor;Ljava/lang/Object;)Ljava/lang/Object;
-    .locals 0
-
-    const/4 p1, 0x0
-
-    return-object p1
 .end method

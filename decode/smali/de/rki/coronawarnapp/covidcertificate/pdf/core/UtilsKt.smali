@@ -5,94 +5,11 @@
 
 # annotations
 .annotation system Ldalvik/annotation/SourceDebugExtension;
-    value = "SMAP\nUtils.kt\nKotlin\n*S Kotlin\n*F\n+ 1 Utils.kt\nde/rki/coronawarnapp/covidcertificate/pdf/core/UtilsKt\n+ 2 _Collections.kt\nkotlin/collections/CollectionsKt___CollectionsKt\n*L\n1#1,47:1\n1858#2,3:48\n1358#2:51\n1444#2,2:52\n1547#2:54\n1618#2,3:55\n1446#2,3:58\n*S KotlinDebug\n*F\n+ 1 Utils.kt\nde/rki/coronawarnapp/covidcertificate/pdf/core/UtilsKt\n*L\n36#1:48,3\n42#1:51\n42#1:52,2\n43#1:54\n43#1:55,3\n42#1:58,3\n*E\n"
+    value = "SMAP\nUtils.kt\nKotlin\n*S Kotlin\n*F\n+ 1 Utils.kt\nde/rki/coronawarnapp/covidcertificate/pdf/core/UtilsKt\n+ 2 _Collections.kt\nkotlin/collections/CollectionsKt___CollectionsKt\n*L\n1#1,61:1\n1858#2,3:62\n1358#2:65\n1444#2,2:66\n1547#2:68\n1618#2,3:69\n1446#2,3:72\n*S KotlinDebug\n*F\n+ 1 Utils.kt\nde/rki/coronawarnapp/covidcertificate/pdf/core/UtilsKt\n*L\n37#1:62,3\n43#1:65\n43#1:66,2\n44#1:68\n44#1:69,3\n43#1:72,3\n*E\n"
 .end annotation
 
 
 # direct methods
-.method public static final drawTextIntoRectangle(Landroid/graphics/Canvas;Ljava/lang/String;Landroid/graphics/Paint;Lde/rki/coronawarnapp/covidcertificate/pdf/core/TextArea;)V
-    .locals 5
-
-    const-string/jumbo v0, "text"
-
-    invoke-static {p1, v0}, Lkotlin/jvm/internal/Intrinsics;->checkNotNullParameter(Ljava/lang/Object;Ljava/lang/String;)V
-
-    const-string v0, "paint"
-
-    invoke-static {p2, v0}, Lkotlin/jvm/internal/Intrinsics;->checkNotNullParameter(Ljava/lang/Object;Ljava/lang/String;)V
-
-    iget v0, p3, Lde/rki/coronawarnapp/covidcertificate/pdf/core/TextArea;->width:F
-
-    float-to-int v0, v0
-
-    invoke-static {p1, p2, v0}, Lde/rki/coronawarnapp/covidcertificate/pdf/core/UtilsKt;->getMultilineText(Ljava/lang/String;Landroid/graphics/Paint;I)Ljava/util/List;
-
-    move-result-object p1
-
-    iget v0, p3, Lde/rki/coronawarnapp/covidcertificate/pdf/core/TextArea;->x:F
-
-    iget p3, p3, Lde/rki/coronawarnapp/covidcertificate/pdf/core/TextArea;->y:F
-
-    invoke-virtual {p2}, Landroid/graphics/Paint;->getTextSize()F
-
-    move-result v1
-
-    add-float/2addr v1, p3
-
-    invoke-interface {p1}, Ljava/lang/Iterable;->iterator()Ljava/util/Iterator;
-
-    move-result-object p1
-
-    const/4 p3, 0x0
-
-    :goto_0
-    invoke-interface {p1}, Ljava/util/Iterator;->hasNext()Z
-
-    move-result v2
-
-    if-eqz v2, :cond_1
-
-    invoke-interface {p1}, Ljava/util/Iterator;->next()Ljava/lang/Object;
-
-    move-result-object v2
-
-    add-int/lit8 v3, p3, 0x1
-
-    if-ltz p3, :cond_0
-
-    check-cast v2, Ljava/lang/String;
-
-    invoke-virtual {p2}, Landroid/graphics/Paint;->getTextSize()F
-
-    move-result v4
-
-    int-to-float p3, p3
-
-    mul-float/2addr v4, p3
-
-    const p3, 0x3f99999a    # 1.2f
-
-    mul-float/2addr v4, p3
-
-    add-float/2addr v4, v1
-
-    invoke-virtual {p0, v2, v0, v4, p2}, Landroid/graphics/Canvas;->drawText(Ljava/lang/String;FFLandroid/graphics/Paint;)V
-
-    move p3, v3
-
-    goto :goto_0
-
-    :cond_0
-    invoke-static {}, Lkotlin/collections/CollectionsKt__CollectionsKt;->throwIndexOverflow()V
-
-    const/4 p0, 0x0
-
-    throw p0
-
-    :cond_1
-    return-void
-.end method
-
 .method public static final getMultilineText(Ljava/lang/String;Landroid/graphics/Paint;I)Ljava/util/List;
     .locals 8
     .annotation system Ldalvik/annotation/Signature;
@@ -129,7 +46,7 @@
 
     move-result v2
 
-    const-string v3, "(this as java.lang.Strin\u2026ing(startIndex, endIndex)"
+    const-string/jumbo v3, "this as java.lang.String\u2026ing(startIndex, endIndex)"
 
     const/4 v4, 0x0
 
@@ -197,7 +114,7 @@
 
     move-result-object p0
 
-    const-string v1, "(this as java.lang.String).substring(startIndex)"
+    const-string/jumbo v1, "this as java.lang.String).substring(startIndex)"
 
     invoke-static {p0, v1}, Lkotlin/jvm/internal/Intrinsics;->checkNotNullExpressionValue(Ljava/lang/Object;Ljava/lang/String;)V
 

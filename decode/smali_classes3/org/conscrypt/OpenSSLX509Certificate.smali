@@ -860,7 +860,7 @@
     return p1
 
     :cond_1
-    invoke-super {p0, p1}, Ljava/security/cert/Certificate;->equals(Ljava/lang/Object;)Z
+    invoke-super {p0, p1}, Ljava/security/cert/X509Certificate;->equals(Ljava/lang/Object;)Z
 
     move-result p1
 
@@ -1526,7 +1526,7 @@
     return v0
 
     :cond_0
-    invoke-super {p0}, Ljava/security/cert/Certificate;->hashCode()I
+    invoke-super {p0}, Ljava/security/cert/X509Certificate;->hashCode()I
 
     move-result v0
 

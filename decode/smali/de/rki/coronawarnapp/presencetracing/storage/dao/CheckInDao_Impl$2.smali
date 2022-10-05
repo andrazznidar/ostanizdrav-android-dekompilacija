@@ -1,5 +1,5 @@
 .class public Lde/rki/coronawarnapp/presencetracing/storage/dao/CheckInDao_Impl$2;
-.super Landroidx/room/EntityDeletionOrUpdateAdapter;
+.super Landroidx/room/EntityInsertionAdapter;
 .source "CheckInDao_Impl.java"
 
 
@@ -15,9 +15,7 @@
 
 .annotation system Ldalvik/annotation/Signature;
     value = {
-        "Landroidx/room/EntityDeletionOrUpdateAdapter<",
-        "Lde/rki/coronawarnapp/presencetracing/storage/entity/TraceLocationCheckInEntity;",
-        ">;"
+        "Landroidx/room/EntityInsertionAdapter;"
     }
 .end annotation
 
@@ -42,7 +40,7 @@
 
     iput-object p1, p0, Lde/rki/coronawarnapp/presencetracing/storage/dao/CheckInDao_Impl$2;->this$0:Lde/rki/coronawarnapp/presencetracing/storage/dao/CheckInDao_Impl;
 
-    invoke-direct {p0, p2}, Landroidx/room/EntityDeletionOrUpdateAdapter;-><init>(Landroidx/room/RoomDatabase;)V
+    invoke-direct {p0, p2}, Landroidx/room/EntityInsertionAdapter;-><init>(Landroidx/room/RoomDatabase;)V
 
     return-void
 .end method

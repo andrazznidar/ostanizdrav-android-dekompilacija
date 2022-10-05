@@ -4,20 +4,18 @@
 
 
 # static fields
-.field public static final zza:Lcom/google/android/play/core/common/zzc;
+.field public static final zza:Lcom/upokecenter/cbor/CBOREInteger;
 
 
 # direct methods
 .method public static constructor <clinit>()V
-    .locals 2
+    .locals 1
 
-    new-instance v0, Lcom/google/android/play/core/common/zzc;
+    new-instance v0, Lcom/upokecenter/cbor/CBOREInteger;
 
-    const/4 v1, 0x0
+    invoke-direct {v0}, Lcom/upokecenter/cbor/CBOREInteger;-><init>()V
 
-    invoke-direct {v0, v1}, Lcom/google/android/play/core/common/zzc;-><init>(I)V
-
-    sput-object v0, Lcom/google/android/play/core/common/zzb;->zza:Lcom/google/android/play/core/common/zzc;
+    sput-object v0, Lcom/google/android/play/core/common/zzb;->zza:Lcom/upokecenter/cbor/CBOREInteger;
 
     return-void
 .end method

@@ -5,13 +5,23 @@
 
 # annotations
 .annotation system Ldalvik/annotation/SourceDebugExtension;
-    value = "SMAP\nCapturedTypeConstructor.kt\nKotlin\n*S Kotlin\n*F\n+ 1 CapturedTypeConstructor.kt\norg/jetbrains/kotlin/resolve/calls/inference/CapturedTypeConstructorKt\n+ 2 _Collections.kt\nkotlin/collections/CollectionsKt___CollectionsKt\n+ 3 ArraysJVM.kt\nkotlin/collections/ArraysKt__ArraysJVMKt\n*L\n1#1,150:1\n1517#2:151\n1588#2,3:152\n37#3,2:155\n*E\n*S KotlinDebug\n*F\n+ 1 CapturedTypeConstructor.kt\norg/jetbrains/kotlin/resolve/calls/inference/CapturedTypeConstructorKt\n*L\n122#1:151\n122#1,3:152\n124#1,2:155\n*E\n"
+    value = "SMAP\nCapturedTypeConstructor.kt\nKotlin\n*S Kotlin\n*F\n+ 1 CapturedTypeConstructor.kt\norg/jetbrains/kotlin/resolve/calls/inference/CapturedTypeConstructorKt\n+ 2 _Collections.kt\nkotlin/collections/CollectionsKt___CollectionsKt\n+ 3 ArraysJVM.kt\nkotlin/collections/ArraysKt__ArraysJVMKt\n*L\n1#1,150:1\n1547#2:151\n1618#2,3:152\n37#3,2:155\n*S KotlinDebug\n*F\n+ 1 CapturedTypeConstructor.kt\norg/jetbrains/kotlin/resolve/calls/inference/CapturedTypeConstructorKt\n*L\n122#1:151\n122#1:152,3\n124#1:155,2\n*E\n"
 .end annotation
 
 
 # direct methods
-.method public static final createCapturedIfNeeded(Lkotlin/reflect/jvm/internal/impl/types/TypeProjection;Lkotlin/reflect/jvm/internal/impl/descriptors/TypeParameterDescriptor;)Lkotlin/reflect/jvm/internal/impl/types/TypeProjection;
-    .locals 4
+.method public static final synthetic access$createCapturedIfNeeded(Lkotlin/reflect/jvm/internal/impl/types/TypeProjection;Lkotlin/reflect/jvm/internal/impl/descriptors/TypeParameterDescriptor;)Lkotlin/reflect/jvm/internal/impl/types/TypeProjection;
+    .locals 0
+
+    invoke-static {p0, p1}, Lkotlin/reflect/jvm/internal/impl/resolve/calls/inference/CapturedTypeConstructorKt;->createCapturedIfNeeded(Lkotlin/reflect/jvm/internal/impl/types/TypeProjection;Lkotlin/reflect/jvm/internal/impl/descriptors/TypeParameterDescriptor;)Lkotlin/reflect/jvm/internal/impl/types/TypeProjection;
+
+    move-result-object p0
+
+    return-object p0
+.end method
+
+.method private static final createCapturedIfNeeded(Lkotlin/reflect/jvm/internal/impl/types/TypeProjection;Lkotlin/reflect/jvm/internal/impl/descriptors/TypeParameterDescriptor;)Lkotlin/reflect/jvm/internal/impl/types/TypeProjection;
+    .locals 3
 
     if-eqz p1, :cond_3
 
@@ -77,25 +87,11 @@
     :cond_2
     new-instance p1, Lkotlin/reflect/jvm/internal/impl/types/TypeProjectionImpl;
 
-    const-string v0, "typeProjection"
+    invoke-static {p0}, Lkotlin/reflect/jvm/internal/impl/resolve/calls/inference/CapturedTypeConstructorKt;->createCapturedType(Lkotlin/reflect/jvm/internal/impl/types/TypeProjection;)Lkotlin/reflect/jvm/internal/impl/types/KotlinType;
 
-    invoke-static {p0, v0}, Lkotlin/jvm/internal/Intrinsics;->checkNotNullParameter(Ljava/lang/Object;Ljava/lang/String;)V
+    move-result-object p0
 
-    new-instance v0, Lkotlin/reflect/jvm/internal/impl/resolve/calls/inference/CapturedType;
-
-    new-instance v1, Lkotlin/reflect/jvm/internal/impl/resolve/calls/inference/CapturedTypeConstructorImpl;
-
-    invoke-direct {v1, p0}, Lkotlin/reflect/jvm/internal/impl/resolve/calls/inference/CapturedTypeConstructorImpl;-><init>(Lkotlin/reflect/jvm/internal/impl/types/TypeProjection;)V
-
-    const/4 v2, 0x0
-
-    sget v3, Lkotlin/reflect/jvm/internal/impl/descriptors/annotations/Annotations;->$r8$clinit:I
-
-    sget-object v3, Lkotlin/reflect/jvm/internal/impl/descriptors/annotations/Annotations$Companion;->EMPTY:Lkotlin/reflect/jvm/internal/impl/descriptors/annotations/Annotations;
-
-    invoke-direct {v0, p0, v1, v2, v3}, Lkotlin/reflect/jvm/internal/impl/resolve/calls/inference/CapturedType;-><init>(Lkotlin/reflect/jvm/internal/impl/types/TypeProjection;Lkotlin/reflect/jvm/internal/impl/resolve/calls/inference/CapturedTypeConstructor;ZLkotlin/reflect/jvm/internal/impl/descriptors/annotations/Annotations;)V
-
-    invoke-direct {p1, v0}, Lkotlin/reflect/jvm/internal/impl/types/TypeProjectionImpl;-><init>(Lkotlin/reflect/jvm/internal/impl/types/KotlinType;)V
+    invoke-direct {p1, p0}, Lkotlin/reflect/jvm/internal/impl/types/TypeProjectionImpl;-><init>(Lkotlin/reflect/jvm/internal/impl/types/KotlinType;)V
 
     return-object p1
 
@@ -104,8 +100,40 @@
     return-object p0
 .end method
 
+.method public static final createCapturedType(Lkotlin/reflect/jvm/internal/impl/types/TypeProjection;)Lkotlin/reflect/jvm/internal/impl/types/KotlinType;
+    .locals 8
+
+    const-string v0, "typeProjection"
+
+    invoke-static {p0, v0}, Lkotlin/jvm/internal/Intrinsics;->checkNotNullParameter(Ljava/lang/Object;Ljava/lang/String;)V
+
+    new-instance v0, Lkotlin/reflect/jvm/internal/impl/resolve/calls/inference/CapturedType;
+
+    const/4 v3, 0x0
+
+    const/4 v4, 0x0
+
+    const/4 v5, 0x0
+
+    const/16 v6, 0xe
+
+    const/4 v7, 0x0
+
+    move-object v1, v0
+
+    move-object v2, p0
+
+    invoke-direct/range {v1 .. v7}, Lkotlin/reflect/jvm/internal/impl/resolve/calls/inference/CapturedType;-><init>(Lkotlin/reflect/jvm/internal/impl/types/TypeProjection;Lkotlin/reflect/jvm/internal/impl/resolve/calls/inference/CapturedTypeConstructor;ZLkotlin/reflect/jvm/internal/impl/descriptors/annotations/Annotations;ILkotlin/jvm/internal/DefaultConstructorMarker;)V
+
+    return-object v0
+.end method
+
 .method public static final isCaptured(Lkotlin/reflect/jvm/internal/impl/types/KotlinType;)Z
-    .locals 0
+    .locals 1
+
+    const-string v0, "<this>"
+
+    invoke-static {p0, v0}, Lkotlin/jvm/internal/Intrinsics;->checkNotNullParameter(Ljava/lang/Object;Ljava/lang/String;)V
 
     invoke-virtual {p0}, Lkotlin/reflect/jvm/internal/impl/types/KotlinType;->getConstructor()Lkotlin/reflect/jvm/internal/impl/types/TypeConstructor;
 
@@ -116,117 +144,120 @@
     return p0
 .end method
 
-.method public static wrapWithCapturingSubstitution$default(Lkotlin/reflect/jvm/internal/impl/types/TypeSubstitution;ZI)Lkotlin/reflect/jvm/internal/impl/types/TypeSubstitution;
-    .locals 7
+.method public static final wrapWithCapturingSubstitution(Lkotlin/reflect/jvm/internal/impl/types/TypeSubstitution;Z)Lkotlin/reflect/jvm/internal/impl/types/TypeSubstitution;
+    .locals 9
 
-    const/4 v0, 0x1
-
-    and-int/2addr p2, v0
-
-    if-eqz p2, :cond_0
-
-    move p1, v0
-
-    :cond_0
-    instance-of p2, p0, Lkotlin/reflect/jvm/internal/impl/types/IndexedParametersSubstitution;
-
-    if-eqz p2, :cond_3
-
-    check-cast p0, Lkotlin/reflect/jvm/internal/impl/types/IndexedParametersSubstitution;
-
-    iget-object p2, p0, Lkotlin/reflect/jvm/internal/impl/types/IndexedParametersSubstitution;->parameters:[Lkotlin/reflect/jvm/internal/impl/descriptors/TypeParameterDescriptor;
-
-    iget-object p0, p0, Lkotlin/reflect/jvm/internal/impl/types/IndexedParametersSubstitution;->arguments:[Lkotlin/reflect/jvm/internal/impl/types/TypeProjection;
-
-    const-string v0, "$this$zip"
+    const-string v0, "<this>"
 
     invoke-static {p0, v0}, Lkotlin/jvm/internal/Intrinsics;->checkNotNullParameter(Ljava/lang/Object;Ljava/lang/String;)V
 
+    instance-of v1, p0, Lkotlin/reflect/jvm/internal/impl/types/IndexedParametersSubstitution;
+
+    if-eqz v1, :cond_2
+
+    check-cast p0, Lkotlin/reflect/jvm/internal/impl/types/IndexedParametersSubstitution;
+
+    invoke-virtual {p0}, Lkotlin/reflect/jvm/internal/impl/types/IndexedParametersSubstitution;->getParameters()[Lkotlin/reflect/jvm/internal/impl/descriptors/TypeParameterDescriptor;
+
+    move-result-object v1
+
+    invoke-virtual {p0}, Lkotlin/reflect/jvm/internal/impl/types/IndexedParametersSubstitution;->getArguments()[Lkotlin/reflect/jvm/internal/impl/types/TypeProjection;
+
+    move-result-object v2
+
+    invoke-virtual {p0}, Lkotlin/reflect/jvm/internal/impl/types/IndexedParametersSubstitution;->getParameters()[Lkotlin/reflect/jvm/internal/impl/descriptors/TypeParameterDescriptor;
+
+    move-result-object p0
+
+    invoke-static {v2, v0}, Lkotlin/jvm/internal/Intrinsics;->checkNotNullParameter(Ljava/lang/Object;Ljava/lang/String;)V
+
     const-string v0, "other"
 
-    invoke-static {p2, v0}, Lkotlin/jvm/internal/Intrinsics;->checkNotNullParameter(Ljava/lang/Object;Ljava/lang/String;)V
+    invoke-static {p0, v0}, Lkotlin/jvm/internal/Intrinsics;->checkNotNullParameter(Ljava/lang/Object;Ljava/lang/String;)V
 
-    array-length v0, p0
+    array-length v0, v2
 
-    array-length v1, p2
+    array-length v3, p0
 
-    invoke-static {v0, v1}, Ljava/lang/Math;->min(II)I
+    invoke-static {v0, v3}, Ljava/lang/Math;->min(II)I
 
     move-result v0
 
-    new-instance v1, Ljava/util/ArrayList;
+    new-instance v3, Ljava/util/ArrayList;
 
-    invoke-direct {v1, v0}, Ljava/util/ArrayList;-><init>(I)V
+    invoke-direct {v3, v0}, Ljava/util/ArrayList;-><init>(I)V
 
-    const/4 v2, 0x0
+    const/4 v4, 0x0
 
-    move v3, v2
+    move v5, v4
 
     :goto_0
-    if-ge v3, v0, :cond_1
+    if-ge v5, v0, :cond_0
 
-    aget-object v4, p0, v3
+    add-int/lit8 v6, v5, 0x1
 
-    aget-object v5, p2, v3
+    aget-object v7, v2, v5
 
-    new-instance v6, Lkotlin/Pair;
+    aget-object v5, p0, v5
 
-    invoke-direct {v6, v4, v5}, Lkotlin/Pair;-><init>(Ljava/lang/Object;Ljava/lang/Object;)V
+    new-instance v8, Lkotlin/Pair;
 
-    invoke-virtual {v1, v6}, Ljava/util/ArrayList;->add(Ljava/lang/Object;)Z
+    invoke-direct {v8, v7, v5}, Lkotlin/Pair;-><init>(Ljava/lang/Object;Ljava/lang/Object;)V
 
-    add-int/lit8 v3, v3, 0x1
+    invoke-virtual {v3, v8}, Ljava/util/ArrayList;->add(Ljava/lang/Object;)Z
+
+    move v5, v6
 
     goto :goto_0
 
-    :cond_1
+    :cond_0
     new-instance p0, Ljava/util/ArrayList;
 
     const/16 v0, 0xa
 
-    invoke-static {v1, v0}, Lkotlin/collections/CollectionsKt__IteratorsJVMKt;->collectionSizeOrDefault(Ljava/lang/Iterable;I)I
+    invoke-static {v3, v0}, Lkotlin/collections/CollectionsKt__IteratorsJVMKt;->collectionSizeOrDefault(Ljava/lang/Iterable;I)I
 
     move-result v0
 
     invoke-direct {p0, v0}, Ljava/util/ArrayList;-><init>(I)V
 
-    invoke-virtual {v1}, Ljava/util/ArrayList;->iterator()Ljava/util/Iterator;
+    invoke-interface {v3}, Ljava/lang/Iterable;->iterator()Ljava/util/Iterator;
 
     move-result-object v0
 
     :goto_1
     invoke-interface {v0}, Ljava/util/Iterator;->hasNext()Z
 
-    move-result v1
+    move-result v2
 
-    if-eqz v1, :cond_2
+    if-eqz v2, :cond_1
 
     invoke-interface {v0}, Ljava/util/Iterator;->next()Ljava/lang/Object;
 
-    move-result-object v1
+    move-result-object v2
 
-    check-cast v1, Lkotlin/Pair;
+    check-cast v2, Lkotlin/Pair;
 
-    iget-object v3, v1, Lkotlin/Pair;->first:Ljava/lang/Object;
+    iget-object v3, v2, Lkotlin/Pair;->first:Ljava/lang/Object;
 
     check-cast v3, Lkotlin/reflect/jvm/internal/impl/types/TypeProjection;
 
-    iget-object v1, v1, Lkotlin/Pair;->second:Ljava/lang/Object;
+    iget-object v2, v2, Lkotlin/Pair;->second:Ljava/lang/Object;
 
-    check-cast v1, Lkotlin/reflect/jvm/internal/impl/descriptors/TypeParameterDescriptor;
+    check-cast v2, Lkotlin/reflect/jvm/internal/impl/descriptors/TypeParameterDescriptor;
 
-    invoke-static {v3, v1}, Lkotlin/reflect/jvm/internal/impl/resolve/calls/inference/CapturedTypeConstructorKt;->createCapturedIfNeeded(Lkotlin/reflect/jvm/internal/impl/types/TypeProjection;Lkotlin/reflect/jvm/internal/impl/descriptors/TypeParameterDescriptor;)Lkotlin/reflect/jvm/internal/impl/types/TypeProjection;
+    invoke-static {v3, v2}, Lkotlin/reflect/jvm/internal/impl/resolve/calls/inference/CapturedTypeConstructorKt;->createCapturedIfNeeded(Lkotlin/reflect/jvm/internal/impl/types/TypeProjection;Lkotlin/reflect/jvm/internal/impl/descriptors/TypeParameterDescriptor;)Lkotlin/reflect/jvm/internal/impl/types/TypeProjection;
 
-    move-result-object v1
+    move-result-object v2
 
-    invoke-virtual {p0, v1}, Ljava/util/ArrayList;->add(Ljava/lang/Object;)Z
+    invoke-interface {p0, v2}, Ljava/util/Collection;->add(Ljava/lang/Object;)Z
 
     goto :goto_1
 
-    :cond_2
-    new-array v0, v2, [Lkotlin/reflect/jvm/internal/impl/types/TypeProjection;
+    :cond_1
+    new-array v0, v4, [Lkotlin/reflect/jvm/internal/impl/types/TypeProjection;
 
-    invoke-virtual {p0, v0}, Ljava/util/ArrayList;->toArray([Ljava/lang/Object;)[Ljava/lang/Object;
+    invoke-interface {p0, v0}, Ljava/util/Collection;->toArray([Ljava/lang/Object;)[Ljava/lang/Object;
 
     move-result-object p0
 
@@ -238,15 +269,34 @@
 
     new-instance v0, Lkotlin/reflect/jvm/internal/impl/types/IndexedParametersSubstitution;
 
-    invoke-direct {v0, p2, p0, p1}, Lkotlin/reflect/jvm/internal/impl/types/IndexedParametersSubstitution;-><init>([Lkotlin/reflect/jvm/internal/impl/descriptors/TypeParameterDescriptor;[Lkotlin/reflect/jvm/internal/impl/types/TypeProjection;Z)V
+    invoke-direct {v0, v1, p0, p1}, Lkotlin/reflect/jvm/internal/impl/types/IndexedParametersSubstitution;-><init>([Lkotlin/reflect/jvm/internal/impl/descriptors/TypeParameterDescriptor;[Lkotlin/reflect/jvm/internal/impl/types/TypeProjection;Z)V
 
     goto :goto_2
 
-    :cond_3
+    :cond_2
     new-instance v0, Lkotlin/reflect/jvm/internal/impl/resolve/calls/inference/CapturedTypeConstructorKt$wrapWithCapturingSubstitution$2;
 
     invoke-direct {v0, p1, p0}, Lkotlin/reflect/jvm/internal/impl/resolve/calls/inference/CapturedTypeConstructorKt$wrapWithCapturingSubstitution$2;-><init>(ZLkotlin/reflect/jvm/internal/impl/types/TypeSubstitution;)V
 
     :goto_2
     return-object v0
+.end method
+
+.method public static synthetic wrapWithCapturingSubstitution$default(Lkotlin/reflect/jvm/internal/impl/types/TypeSubstitution;ZILjava/lang/Object;)Lkotlin/reflect/jvm/internal/impl/types/TypeSubstitution;
+    .locals 0
+
+    const/4 p3, 0x1
+
+    and-int/2addr p2, p3
+
+    if-eqz p2, :cond_0
+
+    move p1, p3
+
+    :cond_0
+    invoke-static {p0, p1}, Lkotlin/reflect/jvm/internal/impl/resolve/calls/inference/CapturedTypeConstructorKt;->wrapWithCapturingSubstitution(Lkotlin/reflect/jvm/internal/impl/types/TypeSubstitution;Z)Lkotlin/reflect/jvm/internal/impl/types/TypeSubstitution;
+
+    move-result-object p0
+
+    return-object p0
 .end method

@@ -39,7 +39,7 @@
 
     const/4 v0, 0x0
 
-    const v1, 0x7f0d00d6
+    const v1, 0x7f0d00e7
 
     invoke-static {v0, p0, v1}, Landroidx/databinding/ViewDataBinding;->bind(Ljava/lang/Object;Landroid/view/View;I)Landroidx/databinding/ViewDataBinding;
 

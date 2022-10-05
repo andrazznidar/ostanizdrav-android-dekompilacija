@@ -173,7 +173,7 @@
 .method public onVisibilityChanged(Landroid/view/View;I)V
     .locals 0
 
-    invoke-super {p0, p1, p2}, Landroid/view/View;->onVisibilityChanged(Landroid/view/View;I)V
+    invoke-super {p0, p1, p2}, Landroid/view/ViewGroup;->onVisibilityChanged(Landroid/view/View;I)V
 
     if-ne p1, p0, :cond_0
 

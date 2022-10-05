@@ -1,4 +1,4 @@
-.class public final Lkotlin/reflect/jvm/internal/impl/protobuf/ExtensionRegistryLite$ObjectIntPair;
+.class final Lkotlin/reflect/jvm/internal/impl/protobuf/ExtensionRegistryLite$ObjectIntPair;
 .super Ljava/lang/Object;
 .source "ExtensionRegistryLite.java"
 
@@ -15,9 +15,9 @@
 
 
 # instance fields
-.field public final number:I
+.field private final number:I
 
-.field public final object:Ljava/lang/Object;
+.field private final object:Ljava/lang/Object;
 
 
 # direct methods

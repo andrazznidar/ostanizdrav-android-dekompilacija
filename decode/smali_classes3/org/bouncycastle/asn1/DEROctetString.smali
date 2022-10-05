@@ -34,6 +34,31 @@
     return-void
 .end method
 
+.method public static encode(Lorg/bouncycastle/asn1/ASN1OutputStream;Z[BII)V
+    .locals 6
+    .annotation system Ldalvik/annotation/Throws;
+        value = {
+            Ljava/io/IOException;
+        }
+    .end annotation
+
+    const/4 v2, 0x4
+
+    move-object v0, p0
+
+    move v1, p1
+
+    move-object v3, p2
+
+    move v4, p3
+
+    move v5, p4
+
+    invoke-virtual/range {v0 .. v5}, Lorg/bouncycastle/asn1/ASN1OutputStream;->writeEncoded(ZI[BII)V
+
+    return-void
+.end method
+
 
 # virtual methods
 .method public encode(Lorg/bouncycastle/asn1/ASN1OutputStream;Z)V

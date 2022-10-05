@@ -100,10 +100,6 @@
 
     invoke-static {v7}, Ljava/util/Objects;->requireNonNull(Ljava/lang/Object;)Ljava/lang/Object;
 
-    const-string v3, "source"
-
-    invoke-static {v2, v3}, Lkotlin/jvm/internal/Intrinsics;->checkNotNullParameter(Ljava/lang/Object;Ljava/lang/String;)V
-
     new-instance v9, Lokio/Buffer;
 
     invoke-direct {v9}, Lokio/Buffer;-><init>()V
@@ -186,10 +182,6 @@
     return-void
 
     :cond_1
-    const-string v0, "source"
-
-    invoke-static {v2, v0}, Lkotlin/jvm/internal/Intrinsics;->checkNotNullParameter(Ljava/lang/Object;Ljava/lang/String;)V
-
     sget-object v0, Lokhttp3/internal/Util;->EMPTY_BYTE_ARRAY:[B
 
     iget-object v0, v3, Lokhttp3/internal/http2/Http2Stream;->source:Lokhttp3/internal/http2/Http2Stream$FramingSource;
@@ -197,10 +189,6 @@
     int-to-long v4, v10
 
     invoke-static {v0}, Ljava/util/Objects;->requireNonNull(Ljava/lang/Object;)Ljava/lang/Object;
-
-    const-string v6, "source"
-
-    invoke-static {v2, v6}, Lkotlin/jvm/internal/Intrinsics;->checkNotNullParameter(Ljava/lang/Object;Ljava/lang/String;)V
 
     :cond_2
     :goto_0
@@ -502,9 +490,9 @@
 
     move-result v1
 
-    const/16 v7, 0x5b
-
     const-wide/16 v13, 0x0
+
+    const/16 v7, 0x5b
 
     if-eqz v1, :cond_0
 
@@ -913,7 +901,7 @@
 
     const-string v2, " ping"
 
-    invoke-static {v0, v1, v2}, Landroidx/constraintlayout/core/widgets/Barrier$$ExternalSyntheticOutline0;->m(Ljava/lang/StringBuilder;Ljava/lang/String;Ljava/lang/String;)Ljava/lang/String;
+    invoke-static {v0, v1, v2}, Landroidx/activity/ComponentActivity$2$$ExternalSyntheticOutline0;->m(Ljava/lang/StringBuilder;Ljava/lang/String;Ljava/lang/String;)Ljava/lang/String;
 
     move-result-object v6
 
@@ -1151,17 +1139,15 @@
 
     const-string v3, " applyAndAckSettings"
 
-    invoke-static {v1, v2, v3}, Landroidx/constraintlayout/core/widgets/Barrier$$ExternalSyntheticOutline0;->m(Ljava/lang/StringBuilder;Ljava/lang/String;Ljava/lang/String;)Ljava/lang/String;
+    invoke-static {v1, v2, v3}, Landroidx/activity/ComponentActivity$2$$ExternalSyntheticOutline0;->m(Ljava/lang/StringBuilder;Ljava/lang/String;Ljava/lang/String;)Ljava/lang/String;
 
     move-result-object v7
 
-    const-wide/16 v1, 0x0
+    new-instance v1, Lokhttp3/internal/http2/Http2Connection$ReaderRunnable$settings$$inlined$execute$1;
 
     const/4 v8, 0x1
 
-    new-instance v3, Lokhttp3/internal/http2/Http2Connection$ReaderRunnable$settings$$inlined$execute$1;
-
-    move-object v4, v3
+    move-object v4, v1
 
     move-object v5, v7
 
@@ -1175,7 +1161,9 @@
 
     invoke-direct/range {v4 .. v11}, Lokhttp3/internal/http2/Http2Connection$ReaderRunnable$settings$$inlined$execute$1;-><init>(Ljava/lang/String;ZLjava/lang/String;ZLokhttp3/internal/http2/Http2Connection$ReaderRunnable;ZLokhttp3/internal/http2/Settings;)V
 
-    invoke-virtual {v0, v3, v1, v2}, Lokhttp3/internal/concurrent/TaskQueue;->schedule(Lokhttp3/internal/concurrent/Task;J)V
+    const-wide/16 p1, 0x0
+
+    invoke-virtual {v0, v1, p1, p2}, Lokhttp3/internal/concurrent/TaskQueue;->schedule(Lokhttp3/internal/concurrent/Task;J)V
 
     return-void
 .end method

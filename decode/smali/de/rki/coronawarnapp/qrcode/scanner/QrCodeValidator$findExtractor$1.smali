@@ -17,7 +17,7 @@
     c = "de.rki.coronawarnapp.qrcode.scanner.QrCodeValidator"
     f = "QrCodeValidator.kt"
     l = {
-        0x23
+        0x26
     }
     m = "findExtractor"
 .end annotation

@@ -313,7 +313,7 @@
     :cond_4
     new-instance v3, Lkotlin/Pair;
 
-    const-string/jumbo v9, "vaccines-covid-19-auth-holders "
+    const-string/jumbo v9, "vaccines-covid-19-auth-holders"
 
     invoke-direct {v3, v9, v6}, Lkotlin/Pair;-><init>(Ljava/lang/Object;Ljava/lang/Object;)V
 

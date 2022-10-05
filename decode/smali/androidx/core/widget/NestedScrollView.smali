@@ -419,7 +419,7 @@
 
     if-gtz v0, :cond_0
 
-    invoke-super {p0, p1}, Landroid/view/ViewGroup;->addView(Landroid/view/View;)V
+    invoke-super {p0, p1}, Landroid/widget/FrameLayout;->addView(Landroid/view/View;)V
 
     return-void
 
@@ -452,7 +452,7 @@
 
     if-gtz v0, :cond_0
 
-    invoke-super {p0, p1, p2}, Landroid/view/ViewGroup;->addView(Landroid/view/View;I)V
+    invoke-super {p0, p1, p2}, Landroid/widget/FrameLayout;->addView(Landroid/view/View;I)V
 
     return-void
 
@@ -487,7 +487,7 @@
 
     if-gtz v0, :cond_0
 
-    invoke-super {p0, p1, p2, p3}, Landroid/view/ViewGroup;->addView(Landroid/view/View;ILandroid/view/ViewGroup$LayoutParams;)V
+    invoke-super {p0, p1, p2, p3}, Landroid/widget/FrameLayout;->addView(Landroid/view/View;ILandroid/view/ViewGroup$LayoutParams;)V
 
     return-void
 
@@ -520,7 +520,7 @@
 
     if-gtz v0, :cond_0
 
-    invoke-super {p0, p1, p2}, Landroid/view/ViewGroup;->addView(Landroid/view/View;Landroid/view/ViewGroup$LayoutParams;)V
+    invoke-super {p0, p1, p2}, Landroid/widget/FrameLayout;->addView(Landroid/view/View;Landroid/view/ViewGroup$LayoutParams;)V
 
     return-void
 
@@ -727,7 +727,7 @@
 .method public computeHorizontalScrollExtent()I
     .locals 1
 
-    invoke-super {p0}, Landroid/view/View;->computeHorizontalScrollExtent()I
+    invoke-super {p0}, Landroid/widget/FrameLayout;->computeHorizontalScrollExtent()I
 
     move-result v0
 
@@ -737,7 +737,7 @@
 .method public computeHorizontalScrollOffset()I
     .locals 1
 
-    invoke-super {p0}, Landroid/view/View;->computeHorizontalScrollOffset()I
+    invoke-super {p0}, Landroid/widget/FrameLayout;->computeHorizontalScrollOffset()I
 
     move-result v0
 
@@ -747,7 +747,7 @@
 .method public computeHorizontalScrollRange()I
     .locals 1
 
-    invoke-super {p0}, Landroid/view/View;->computeHorizontalScrollRange()I
+    invoke-super {p0}, Landroid/widget/FrameLayout;->computeHorizontalScrollRange()I
 
     move-result v0
 
@@ -1136,7 +1136,7 @@
 .method public computeVerticalScrollExtent()I
     .locals 1
 
-    invoke-super {p0}, Landroid/view/View;->computeVerticalScrollExtent()I
+    invoke-super {p0}, Landroid/widget/FrameLayout;->computeVerticalScrollExtent()I
 
     move-result v0
 
@@ -1146,7 +1146,7 @@
 .method public computeVerticalScrollOffset()I
     .locals 2
 
-    invoke-super {p0}, Landroid/view/View;->computeVerticalScrollOffset()I
+    invoke-super {p0}, Landroid/widget/FrameLayout;->computeVerticalScrollOffset()I
 
     move-result v0
 
@@ -1246,7 +1246,7 @@
         }
     .end annotation
 
-    invoke-super {p0, p1}, Landroid/view/ViewGroup;->dispatchKeyEvent(Landroid/view/KeyEvent;)Z
+    invoke-super {p0, p1}, Landroid/widget/FrameLayout;->dispatchKeyEvent(Landroid/view/KeyEvent;)Z
 
     move-result v0
 
@@ -1475,7 +1475,7 @@
         }
     .end annotation
 
-    invoke-super {p0, p1}, Landroid/view/View;->draw(Landroid/graphics/Canvas;)V
+    invoke-super {p0, p1}, Landroid/widget/FrameLayout;->draw(Landroid/graphics/Canvas;)V
 
     iget-object v0, p0, Landroidx/core/widget/NestedScrollView;->mEdgeGlowTop:Landroid/widget/EdgeEffect;
 
@@ -2678,7 +2678,7 @@
 .method public onAttachedToWindow()V
     .locals 1
 
-    invoke-super {p0}, Landroid/view/ViewGroup;->onAttachedToWindow()V
+    invoke-super {p0}, Landroid/widget/FrameLayout;->onAttachedToWindow()V
 
     const/4 v0, 0x0
 
@@ -2774,7 +2774,7 @@
 
     move-result p1
 
-    invoke-super {p0, p1, v0}, Landroid/view/View;->scrollTo(II)V
+    invoke-super {p0, p1, v0}, Landroid/widget/FrameLayout;->scrollTo(II)V
 
     const/4 p1, 0x1
 
@@ -3715,7 +3715,7 @@
         }
     .end annotation
 
-    invoke-super {p0, p1, p2}, Landroid/view/View;->scrollTo(II)V
+    invoke-super {p0, p1, p2}, Landroid/widget/FrameLayout;->scrollTo(II)V
 
     return-void
 .end method
@@ -3818,7 +3818,7 @@
 
     if-nez v0, :cond_0
 
-    invoke-super {p0, p1}, Landroid/view/View;->onRestoreInstanceState(Landroid/os/Parcelable;)V
+    invoke-super {p0, p1}, Landroid/widget/FrameLayout;->onRestoreInstanceState(Landroid/os/Parcelable;)V
 
     return-void
 
@@ -3829,7 +3829,7 @@
 
     move-result-object v0
 
-    invoke-super {p0, v0}, Landroid/view/View;->onRestoreInstanceState(Landroid/os/Parcelable;)V
+    invoke-super {p0, v0}, Landroid/widget/FrameLayout;->onRestoreInstanceState(Landroid/os/Parcelable;)V
 
     iput-object p1, p0, Landroidx/core/widget/NestedScrollView;->mSavedState:Landroidx/core/widget/NestedScrollView$SavedState;
 
@@ -3841,7 +3841,7 @@
 .method public onSaveInstanceState()Landroid/os/Parcelable;
     .locals 2
 
-    invoke-super {p0}, Landroid/view/View;->onSaveInstanceState()Landroid/os/Parcelable;
+    invoke-super {p0}, Landroid/widget/FrameLayout;->onSaveInstanceState()Landroid/os/Parcelable;
 
     move-result-object v0
 
@@ -3875,7 +3875,7 @@
         }
     .end annotation
 
-    invoke-super {p0, p1, p2, p3, p4}, Landroid/view/View;->onScrollChanged(IIII)V
+    invoke-super {p0, p1, p2, p3, p4}, Landroid/widget/FrameLayout;->onScrollChanged(IIII)V
 
     iget-object p1, p0, Landroidx/core/widget/NestedScrollView;->mOnScrollChangeListener:Landroidx/core/widget/NestedScrollView$OnScrollChangeListener;
 
@@ -3967,7 +3967,7 @@
         }
     .end annotation
 
-    invoke-super {p0, p1, p2, p3, p4}, Landroid/view/View;->onSizeChanged(IIII)V
+    invoke-super {p0, p1, p2, p3, p4}, Landroid/widget/FrameLayout;->onSizeChanged(IIII)V
 
     invoke-virtual {p0}, Landroid/widget/FrameLayout;->findFocus()Landroid/view/View;
 
@@ -5095,7 +5095,7 @@
     iput-object p2, p0, Landroidx/core/widget/NestedScrollView;->mChildToScrollTo:Landroid/view/View;
 
     :goto_0
-    invoke-super {p0, p1, p2}, Landroid/view/ViewGroup;->requestChildFocus(Landroid/view/View;Landroid/view/View;)V
+    invoke-super {p0, p1, p2}, Landroid/widget/FrameLayout;->requestChildFocus(Landroid/view/View;Landroid/view/View;)V
 
     return-void
 .end method
@@ -5187,7 +5187,7 @@
     invoke-virtual {p0}, Landroidx/core/widget/NestedScrollView;->recycleVelocityTracker()V
 
     :cond_0
-    invoke-super {p0, p1}, Landroid/view/ViewGroup;->requestDisallowInterceptTouchEvent(Z)V
+    invoke-super {p0, p1}, Landroid/widget/FrameLayout;->requestDisallowInterceptTouchEvent(Z)V
 
     return-void
 .end method
@@ -5199,7 +5199,7 @@
 
     iput-boolean v0, p0, Landroidx/core/widget/NestedScrollView;->mIsLayoutDirty:Z
 
-    invoke-super {p0}, Landroid/view/View;->requestLayout()V
+    invoke-super {p0}, Landroid/widget/FrameLayout;->requestLayout()V
 
     return-void
 .end method
@@ -5552,7 +5552,7 @@
     if-eq p2, v0, :cond_1
 
     :cond_0
-    invoke-super {p0, p1, p2}, Landroid/view/View;->scrollTo(II)V
+    invoke-super {p0, p1, p2}, Landroid/widget/FrameLayout;->scrollTo(II)V
 
     :cond_1
     return-void

@@ -9,6 +9,8 @@
 # instance fields
 .field public final emptyLayout:Landroid/widget/LinearLayout;
 
+.field public final loadingLayoutGroup:Landroidx/constraintlayout/widget/Group;
+
 .field public final recyclerView:Landroidx/recyclerview/widget/RecyclerView;
 
 .field public final rootView:Landroidx/constraintlayout/widget/ConstraintLayout;
@@ -17,10 +19,14 @@
 
 
 # direct methods
-.method public constructor <init>(Landroidx/constraintlayout/widget/ConstraintLayout;Landroid/widget/LinearLayout;Landroidx/recyclerview/widget/RecyclerView;Lcom/google/android/material/appbar/MaterialToolbar;)V
+.method public constructor <init>(Landroidx/constraintlayout/widget/ConstraintLayout;Landroidx/constraintlayout/widget/ConstraintLayout;Landroid/widget/LinearLayout;Landroidx/constraintlayout/widget/Group;Landroid/widget/ProgressBar;Landroid/widget/TextView;Landroidx/recyclerview/widget/RecyclerView;Lcom/google/android/material/appbar/MaterialToolbar;)V
     .locals 0
     .annotation system Ldalvik/annotation/MethodParameters;
         accessFlags = {
+            0x0,
+            0x0,
+            0x0,
+            0x0,
             0x0,
             0x0,
             0x0,
@@ -28,7 +34,11 @@
         }
         names = {
             "rootView",
+            "contentContainer",
             "emptyLayout",
+            "loadingLayoutGroup",
+            "loadingProgressBar",
+            "loadingText",
             "recyclerView",
             "toolbar"
         }
@@ -38,17 +48,19 @@
 
     iput-object p1, p0, Lde/rki/coronawarnapp/databinding/PersonOverviewFragmentBinding;->rootView:Landroidx/constraintlayout/widget/ConstraintLayout;
 
-    iput-object p2, p0, Lde/rki/coronawarnapp/databinding/PersonOverviewFragmentBinding;->emptyLayout:Landroid/widget/LinearLayout;
+    iput-object p3, p0, Lde/rki/coronawarnapp/databinding/PersonOverviewFragmentBinding;->emptyLayout:Landroid/widget/LinearLayout;
 
-    iput-object p3, p0, Lde/rki/coronawarnapp/databinding/PersonOverviewFragmentBinding;->recyclerView:Landroidx/recyclerview/widget/RecyclerView;
+    iput-object p4, p0, Lde/rki/coronawarnapp/databinding/PersonOverviewFragmentBinding;->loadingLayoutGroup:Landroidx/constraintlayout/widget/Group;
 
-    iput-object p4, p0, Lde/rki/coronawarnapp/databinding/PersonOverviewFragmentBinding;->toolbar:Lcom/google/android/material/appbar/MaterialToolbar;
+    iput-object p7, p0, Lde/rki/coronawarnapp/databinding/PersonOverviewFragmentBinding;->recyclerView:Landroidx/recyclerview/widget/RecyclerView;
+
+    iput-object p8, p0, Lde/rki/coronawarnapp/databinding/PersonOverviewFragmentBinding;->toolbar:Lcom/google/android/material/appbar/MaterialToolbar;
 
     return-void
 .end method
 
 .method public static bind(Landroid/view/View;)Lde/rki/coronawarnapp/databinding/PersonOverviewFragmentBinding;
-    .locals 4
+    .locals 9
     .annotation system Ldalvik/annotation/MethodParameters;
         accessFlags = {
             0x0
@@ -58,43 +70,91 @@
         }
     .end annotation
 
-    const v0, 0x7f0a02e7
+    move-object v2, p0
+
+    check-cast v2, Landroidx/constraintlayout/widget/ConstraintLayout;
+
+    const v0, 0x7f0a030c
 
     invoke-static {p0, v0}, Landroidx/viewbinding/ViewBindings;->findChildViewById(Landroid/view/View;I)Landroid/view/View;
 
     move-result-object v1
 
-    check-cast v1, Landroid/widget/LinearLayout;
+    move-object v3, v1
 
-    if-eqz v1, :cond_0
-
-    const v0, 0x7f0a059a
-
-    invoke-static {p0, v0}, Landroidx/viewbinding/ViewBindings;->findChildViewById(Landroid/view/View;I)Landroid/view/View;
-
-    move-result-object v2
-
-    check-cast v2, Landroidx/recyclerview/widget/RecyclerView;
-
-    if-eqz v2, :cond_0
-
-    const v0, 0x7f0a07e4
-
-    invoke-static {p0, v0}, Landroidx/viewbinding/ViewBindings;->findChildViewById(Landroid/view/View;I)Landroid/view/View;
-
-    move-result-object v3
-
-    check-cast v3, Lcom/google/android/material/appbar/MaterialToolbar;
+    check-cast v3, Landroid/widget/LinearLayout;
 
     if-eqz v3, :cond_0
 
-    new-instance v0, Lde/rki/coronawarnapp/databinding/PersonOverviewFragmentBinding;
+    const v0, 0x7f0a0440
 
-    check-cast p0, Landroidx/constraintlayout/widget/ConstraintLayout;
+    invoke-static {p0, v0}, Landroidx/viewbinding/ViewBindings;->findChildViewById(Landroid/view/View;I)Landroid/view/View;
 
-    invoke-direct {v0, p0, v1, v2, v3}, Lde/rki/coronawarnapp/databinding/PersonOverviewFragmentBinding;-><init>(Landroidx/constraintlayout/widget/ConstraintLayout;Landroid/widget/LinearLayout;Landroidx/recyclerview/widget/RecyclerView;Lcom/google/android/material/appbar/MaterialToolbar;)V
+    move-result-object v1
 
-    return-object v0
+    move-object v4, v1
+
+    check-cast v4, Landroidx/constraintlayout/widget/Group;
+
+    if-eqz v4, :cond_0
+
+    const v0, 0x7f0a0441
+
+    invoke-static {p0, v0}, Landroidx/viewbinding/ViewBindings;->findChildViewById(Landroid/view/View;I)Landroid/view/View;
+
+    move-result-object v1
+
+    move-object v5, v1
+
+    check-cast v5, Landroid/widget/ProgressBar;
+
+    if-eqz v5, :cond_0
+
+    const v0, 0x7f0a0442
+
+    invoke-static {p0, v0}, Landroidx/viewbinding/ViewBindings;->findChildViewById(Landroid/view/View;I)Landroid/view/View;
+
+    move-result-object v1
+
+    move-object v6, v1
+
+    check-cast v6, Landroid/widget/TextView;
+
+    if-eqz v6, :cond_0
+
+    const v0, 0x7f0a05e6
+
+    invoke-static {p0, v0}, Landroidx/viewbinding/ViewBindings;->findChildViewById(Landroid/view/View;I)Landroid/view/View;
+
+    move-result-object v1
+
+    move-object v7, v1
+
+    check-cast v7, Landroidx/recyclerview/widget/RecyclerView;
+
+    if-eqz v7, :cond_0
+
+    const v0, 0x7f0a082c
+
+    invoke-static {p0, v0}, Landroidx/viewbinding/ViewBindings;->findChildViewById(Landroid/view/View;I)Landroid/view/View;
+
+    move-result-object v1
+
+    move-object v8, v1
+
+    check-cast v8, Lcom/google/android/material/appbar/MaterialToolbar;
+
+    if-eqz v8, :cond_0
+
+    new-instance p0, Lde/rki/coronawarnapp/databinding/PersonOverviewFragmentBinding;
+
+    move-object v0, p0
+
+    move-object v1, v2
+
+    invoke-direct/range {v0 .. v8}, Lde/rki/coronawarnapp/databinding/PersonOverviewFragmentBinding;-><init>(Landroidx/constraintlayout/widget/ConstraintLayout;Landroidx/constraintlayout/widget/ConstraintLayout;Landroid/widget/LinearLayout;Landroidx/constraintlayout/widget/Group;Landroid/widget/ProgressBar;Landroid/widget/TextView;Landroidx/recyclerview/widget/RecyclerView;Lcom/google/android/material/appbar/MaterialToolbar;)V
+
+    return-object p0
 
     :cond_0
     invoke-virtual {p0}, Landroid/view/View;->getResources()Landroid/content/res/Resources;

@@ -36,5 +36,8 @@
 
 
 # virtual methods
+.method public abstract getRawQrCode()Ljava/lang/String;
+.end method
+
 .method public abstract getType()Lde/rki/coronawarnapp/coronatest/type/CoronaTest$Type;
 .end method

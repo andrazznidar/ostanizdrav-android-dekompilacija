@@ -139,7 +139,7 @@
 
     check-cast v4, Lde/rki/coronawarnapp/presencetracing/storage/entity/TraceLocationCheckInEntity;
 
-    invoke-static {v4}, Lcom/google/android/play/core/assetpacks/zzd;->toCheckIn(Lde/rki/coronawarnapp/presencetracing/storage/entity/TraceLocationCheckInEntity;)Lde/rki/coronawarnapp/presencetracing/checkins/CheckIn;
+    invoke-static {v4}, Lboofcv/alg/misc/ImageStatistics;->toCheckIn(Lde/rki/coronawarnapp/presencetracing/storage/entity/TraceLocationCheckInEntity;)Lde/rki/coronawarnapp/presencetracing/checkins/CheckIn;
 
     move-result-object v4
 

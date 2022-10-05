@@ -15,7 +15,7 @@
 
 # virtual methods
 .method public DateTimeFieldsToCBORObject(Lcom/upokecenter/numbers/EInteger;[I)Lcom/upokecenter/cbor/CBORObject;
-    .locals 4
+    .locals 3
 
     const-string v0, "bigYear"
 
@@ -25,117 +25,87 @@
 
     const/4 v1, 0x7
 
-    if-lt v0, v1, :cond_5
-
-    const/4 v0, 0x1
+    if-lt v0, v1, :cond_2
 
     :try_start_0
-    invoke-static {v0}, Landroidx/constraintlayout/core/SolverVariable$Type$r8$EnumUnboxingUtility;->$enumboxing$ordinal(I)I
+    invoke-static {p2}, Lcom/upokecenter/cbor/CBORUtilities;->CheckLesserFields([I)V
+
+    const/4 v0, 0x0
+
+    aget v1, p2, v0
+
+    const/4 v2, 0x2
+
+    if-ne v1, v2, :cond_1
+
+    const/4 v1, 0x1
+
+    aget v1, p2, v1
+
+    const/16 v2, 0x1d
+
+    if-ne v1, v2, :cond_1
+
+    const/4 v1, 0x4
+
+    invoke-virtual {p1, v1}, Lcom/upokecenter/numbers/EInteger;->Remainder(I)Lcom/upokecenter/numbers/EInteger;
+
+    move-result-object v1
+
+    invoke-virtual {v1}, Lcom/upokecenter/numbers/EInteger;->signum()I
 
     move-result v1
 
-    const/4 v2, 0x0
+    if-nez v1, :cond_0
 
-    if-eqz v1, :cond_4
+    const/16 v1, 0x64
 
-    if-eq v1, v0, :cond_1
+    invoke-virtual {p1, v1}, Lcom/upokecenter/numbers/EInteger;->Remainder(I)Lcom/upokecenter/numbers/EInteger;
 
-    const/4 v3, 0x2
+    move-result-object v1
 
-    if-ne v1, v3, :cond_0
+    invoke-virtual {v1}, Lcom/upokecenter/numbers/EInteger;->signum()I
+
+    move-result v1
+
+    if-nez v1, :cond_1
+
+    const/16 v1, 0x190
+
+    invoke-virtual {p1, v1}, Lcom/upokecenter/numbers/EInteger;->Remainder(I)Lcom/upokecenter/numbers/EInteger;
+
+    move-result-object v1
+
+    invoke-virtual {v1}, Lcom/upokecenter/numbers/EInteger;->signum()I
+
+    move-result v1
+
+    if-nez v1, :cond_0
 
     goto :goto_0
 
     :cond_0
-    new-instance p1, Lcom/upokecenter/cbor/CBORException;
+    new-instance p1, Ljava/lang/IllegalArgumentException;
 
-    const-string p2, "Internal error"
-
-    invoke-direct {p1, p2}, Lcom/upokecenter/cbor/CBORException;-><init>(Ljava/lang/String;)V
+    invoke-direct {p1}, Ljava/lang/IllegalArgumentException;-><init>()V
 
     throw p1
-    :try_end_0
-    .catch Ljava/lang/IllegalArgumentException; {:try_start_0 .. :try_end_0} :catch_1
 
     :cond_1
     :goto_0
-    :try_start_1
-    new-array v1, v0, [I
-
-    invoke-static {p1, p2, v1}, Lcom/upokecenter/cbor/CBORUtilities;->DateTimeToIntegerOrDouble(Lcom/upokecenter/numbers/EInteger;[I[I)Lcom/upokecenter/numbers/EFloat;
-
-    move-result-object p1
-
-    aget p2, v1, v2
-
-    if-nez p2, :cond_2
-
-    invoke-virtual {p1}, Lcom/upokecenter/numbers/EFloat;->ToEInteger()Lcom/upokecenter/numbers/EInteger;
-
-    move-result-object p1
-
-    invoke-static {p1}, Lcom/upokecenter/cbor/CBORObject;->FromObject(Lcom/upokecenter/numbers/EInteger;)Lcom/upokecenter/cbor/CBORObject;
-
-    move-result-object p1
-
-    return-object p1
-
-    :cond_2
-    aget p2, v1, v2
-
-    if-ne p2, v0, :cond_3
-
-    const/16 p2, 0x8
-
-    invoke-virtual {p1}, Lcom/upokecenter/numbers/EFloat;->ToDoubleBits()J
-
-    move-result-wide v0
-
-    invoke-static {v0, v1, p2}, Lcom/upokecenter/cbor/CBORObject;->FromFloatingPointBits(JI)Lcom/upokecenter/cbor/CBORObject;
-
-    move-result-object p1
-
-    return-object p1
-
-    :cond_3
-    new-instance p1, Lcom/upokecenter/cbor/CBORException;
-
-    const-string p2, "Too big or small to fit an integer or floating-point number"
-
-    invoke-direct {p1, p2}, Lcom/upokecenter/cbor/CBORException;-><init>(Ljava/lang/String;)V
-
-    throw p1
-    :try_end_1
-    .catch Ljava/lang/IllegalArgumentException; {:try_start_1 .. :try_end_1} :catch_0
-
-    :catch_0
-    move-exception p1
-
-    :try_start_2
-    new-instance p2, Lcom/upokecenter/cbor/CBORException;
-
-    invoke-virtual {p1}, Ljava/lang/IllegalArgumentException;->getMessage()Ljava/lang/String;
-
-    move-result-object v0
-
-    invoke-direct {p2, v0, p1}, Lcom/upokecenter/cbor/CBORException;-><init>(Ljava/lang/String;Ljava/lang/Throwable;)V
-
-    throw p2
-
-    :cond_4
     invoke-static {p1, p2}, Lcom/upokecenter/cbor/CBORUtilities;->ToAtomDateTimeString(Lcom/upokecenter/numbers/EInteger;[I)Ljava/lang/String;
 
     move-result-object p1
 
-    invoke-static {p1, v2}, Lcom/upokecenter/cbor/CBORObject;->FromObjectAndTag(Ljava/lang/Object;I)Lcom/upokecenter/cbor/CBORObject;
+    invoke-static {p1, v0}, Lcom/upokecenter/cbor/CBORObject;->FromObjectAndTag(Ljava/lang/Object;I)Lcom/upokecenter/cbor/CBORObject;
 
     move-result-object p1
-    :try_end_2
-    .catch Ljava/lang/IllegalArgumentException; {:try_start_2 .. :try_end_2} :catch_1
+    :try_end_0
+    .catch Ljava/lang/IllegalArgumentException; {:try_start_0 .. :try_end_0} :catch_0
 
     return-object p1
 
-    :catch_1
+    :catch_0
     move-exception p1
 
     new-instance p2, Lcom/upokecenter/cbor/CBORException;
@@ -148,7 +118,7 @@
 
     throw p2
 
-    :cond_5
+    :cond_2
     new-instance p1, Ljava/lang/IllegalArgumentException;
 
     const-string v0, "\"lesserFields\" + \"\'s length\" ("
@@ -161,7 +131,7 @@
 
     const-string v1, ") is not greater or equal to 7"
 
-    invoke-static {v0, p2, v1}, Landroidx/constraintlayout/core/widgets/ConstraintWidget$$ExternalSyntheticOutline0;->m(Ljava/lang/StringBuilder;ILjava/lang/String;)Ljava/lang/String;
+    invoke-static {v0, p2, v1}, Landroidx/camera/core/AutoValue_ImmutableImageInfo$$ExternalSyntheticOutline0;->m(Ljava/lang/StringBuilder;ILjava/lang/String;)Ljava/lang/String;
 
     move-result-object p2
 

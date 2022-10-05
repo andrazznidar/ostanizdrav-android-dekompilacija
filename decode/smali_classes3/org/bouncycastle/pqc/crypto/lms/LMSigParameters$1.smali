@@ -1,4 +1,4 @@
-.class public final Lorg/bouncycastle/pqc/crypto/lms/LMSigParameters$1;
+.class final Lorg/bouncycastle/pqc/crypto/lms/LMSigParameters$1;
 .super Ljava/util/HashMap;
 
 
@@ -30,7 +30,9 @@
 
     sget-object v0, Lorg/bouncycastle/pqc/crypto/lms/LMSigParameters;->lms_sha256_n32_h5:Lorg/bouncycastle/pqc/crypto/lms/LMSigParameters;
 
-    iget v1, v0, Lorg/bouncycastle/pqc/crypto/lms/LMSigParameters;->type:I
+    invoke-static {v0}, Lorg/bouncycastle/pqc/crypto/lms/LMSigParameters;->access$000(Lorg/bouncycastle/pqc/crypto/lms/LMSigParameters;)I
+
+    move-result v1
 
     invoke-static {v1}, Ljava/lang/Integer;->valueOf(I)Ljava/lang/Integer;
 
@@ -40,7 +42,9 @@
 
     sget-object v0, Lorg/bouncycastle/pqc/crypto/lms/LMSigParameters;->lms_sha256_n32_h10:Lorg/bouncycastle/pqc/crypto/lms/LMSigParameters;
 
-    iget v1, v0, Lorg/bouncycastle/pqc/crypto/lms/LMSigParameters;->type:I
+    invoke-static {v0}, Lorg/bouncycastle/pqc/crypto/lms/LMSigParameters;->access$000(Lorg/bouncycastle/pqc/crypto/lms/LMSigParameters;)I
+
+    move-result v1
 
     invoke-static {v1}, Ljava/lang/Integer;->valueOf(I)Ljava/lang/Integer;
 
@@ -50,7 +54,9 @@
 
     sget-object v0, Lorg/bouncycastle/pqc/crypto/lms/LMSigParameters;->lms_sha256_n32_h15:Lorg/bouncycastle/pqc/crypto/lms/LMSigParameters;
 
-    iget v1, v0, Lorg/bouncycastle/pqc/crypto/lms/LMSigParameters;->type:I
+    invoke-static {v0}, Lorg/bouncycastle/pqc/crypto/lms/LMSigParameters;->access$000(Lorg/bouncycastle/pqc/crypto/lms/LMSigParameters;)I
+
+    move-result v1
 
     invoke-static {v1}, Ljava/lang/Integer;->valueOf(I)Ljava/lang/Integer;
 
@@ -60,7 +66,9 @@
 
     sget-object v0, Lorg/bouncycastle/pqc/crypto/lms/LMSigParameters;->lms_sha256_n32_h20:Lorg/bouncycastle/pqc/crypto/lms/LMSigParameters;
 
-    iget v1, v0, Lorg/bouncycastle/pqc/crypto/lms/LMSigParameters;->type:I
+    invoke-static {v0}, Lorg/bouncycastle/pqc/crypto/lms/LMSigParameters;->access$000(Lorg/bouncycastle/pqc/crypto/lms/LMSigParameters;)I
+
+    move-result v1
 
     invoke-static {v1}, Ljava/lang/Integer;->valueOf(I)Ljava/lang/Integer;
 
@@ -70,7 +78,9 @@
 
     sget-object v0, Lorg/bouncycastle/pqc/crypto/lms/LMSigParameters;->lms_sha256_n32_h25:Lorg/bouncycastle/pqc/crypto/lms/LMSigParameters;
 
-    iget v1, v0, Lorg/bouncycastle/pqc/crypto/lms/LMSigParameters;->type:I
+    invoke-static {v0}, Lorg/bouncycastle/pqc/crypto/lms/LMSigParameters;->access$000(Lorg/bouncycastle/pqc/crypto/lms/LMSigParameters;)I
+
+    move-result v1
 
     invoke-static {v1}, Ljava/lang/Integer;->valueOf(I)Ljava/lang/Integer;
 

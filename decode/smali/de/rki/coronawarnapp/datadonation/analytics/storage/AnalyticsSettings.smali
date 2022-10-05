@@ -87,7 +87,7 @@
 
 # direct methods
 .method public constructor <init>(Landroid/content/Context;)V
-    .locals 6
+    .locals 5
 
     const-string v0, "context"
 
@@ -101,7 +101,7 @@
 
     invoke-direct {p1, p0}, Lde/rki/coronawarnapp/datadonation/analytics/storage/AnalyticsSettings$prefs$2;-><init>(Lde/rki/coronawarnapp/datadonation/analytics/storage/AnalyticsSettings;)V
 
-    invoke-static {p1}, Lkotlin/LazyKt__LazyKt;->lazy(Lkotlin/jvm/functions/Function0;)Lkotlin/Lazy;
+    invoke-static {p1}, Lkotlin/LazyKt__LazyJVMKt;->lazy(Lkotlin/jvm/functions/Function0;)Lkotlin/Lazy;
 
     move-result-object p1
 
@@ -181,7 +181,7 @@
 
     invoke-direct {v3, v1}, Lde/rki/coronawarnapp/datadonation/analytics/storage/AnalyticsSettings$special$$inlined$createFlowPreference$1;-><init>(Ljava/lang/Object;)V
 
-    sget-object v1, Lde/rki/coronawarnapp/util/preferences/FlowPreference$Companion$basicWriter$1;->INSTANCE:Lde/rki/coronawarnapp/util/preferences/FlowPreference$Companion$basicWriter$1;
+    sget-object v1, Lde/rki/coronawarnapp/datadonation/analytics/storage/AnalyticsSettings$special$$inlined$createFlowPreference$2;->INSTANCE:Lde/rki/coronawarnapp/datadonation/analytics/storage/AnalyticsSettings$special$$inlined$createFlowPreference$2;
 
     const-string/jumbo v4, "userinfo.district"
 
@@ -195,37 +195,17 @@
 
     invoke-static {p1, v0}, Lkotlin/jvm/internal/Intrinsics;->checkNotNullExpressionValue(Ljava/lang/Object;Ljava/lang/String;)V
 
-    sget-object v2, Lde/rki/coronawarnapp/datadonation/analytics/storage/AnalyticsSettings$lastSubmittedTimestamp$1;->INSTANCE:Lde/rki/coronawarnapp/datadonation/analytics/storage/AnalyticsSettings$lastSubmittedTimestamp$1;
+    sget-object v1, Lde/rki/coronawarnapp/datadonation/analytics/storage/AnalyticsSettings$lastSubmittedTimestamp$1;->INSTANCE:Lde/rki/coronawarnapp/datadonation/analytics/storage/AnalyticsSettings$lastSubmittedTimestamp$1;
 
-    sget-object v3, Lde/rki/coronawarnapp/datadonation/analytics/storage/AnalyticsSettings$lastSubmittedTimestamp$2;->INSTANCE:Lde/rki/coronawarnapp/datadonation/analytics/storage/AnalyticsSettings$lastSubmittedTimestamp$2;
-
-    new-instance v4, Lde/rki/coronawarnapp/util/preferences/FlowPreference;
-
-    const-string v5, "analytics.submission.timestamp"
-
-    invoke-direct {v4, p1, v5, v2, v3}, Lde/rki/coronawarnapp/util/preferences/FlowPreference;-><init>(Landroid/content/SharedPreferences;Ljava/lang/String;Lkotlin/jvm/functions/Function2;Lkotlin/jvm/functions/Function3;)V
-
-    iput-object v4, p0, Lde/rki/coronawarnapp/datadonation/analytics/storage/AnalyticsSettings;->lastSubmittedTimestamp:Lde/rki/coronawarnapp/util/preferences/FlowPreference;
-
-    invoke-virtual {p0}, Lde/rki/coronawarnapp/datadonation/analytics/storage/AnalyticsSettings;->getPrefs()Landroid/content/SharedPreferences;
-
-    move-result-object p1
-
-    invoke-static {p1, v0}, Lkotlin/jvm/internal/Intrinsics;->checkNotNullExpressionValue(Ljava/lang/Object;Ljava/lang/String;)V
-
-    sget-object v2, Ljava/lang/Boolean;->FALSE:Ljava/lang/Boolean;
+    sget-object v2, Lde/rki/coronawarnapp/datadonation/analytics/storage/AnalyticsSettings$lastSubmittedTimestamp$2;->INSTANCE:Lde/rki/coronawarnapp/datadonation/analytics/storage/AnalyticsSettings$lastSubmittedTimestamp$2;
 
     new-instance v3, Lde/rki/coronawarnapp/util/preferences/FlowPreference;
 
-    new-instance v4, Lde/rki/coronawarnapp/datadonation/analytics/storage/AnalyticsSettings$special$$inlined$createFlowPreference$2;
+    const-string v4, "analytics.submission.timestamp"
 
-    invoke-direct {v4, v2}, Lde/rki/coronawarnapp/datadonation/analytics/storage/AnalyticsSettings$special$$inlined$createFlowPreference$2;-><init>(Ljava/lang/Object;)V
+    invoke-direct {v3, p1, v4, v1, v2}, Lde/rki/coronawarnapp/util/preferences/FlowPreference;-><init>(Landroid/content/SharedPreferences;Ljava/lang/String;Lkotlin/jvm/functions/Function2;Lkotlin/jvm/functions/Function3;)V
 
-    const-string v2, "analytics.enabled"
-
-    invoke-direct {v3, p1, v2, v4, v1}, Lde/rki/coronawarnapp/util/preferences/FlowPreference;-><init>(Landroid/content/SharedPreferences;Ljava/lang/String;Lkotlin/jvm/functions/Function2;Lkotlin/jvm/functions/Function3;)V
-
-    iput-object v3, p0, Lde/rki/coronawarnapp/datadonation/analytics/storage/AnalyticsSettings;->analyticsEnabled:Lde/rki/coronawarnapp/util/preferences/FlowPreference;
+    iput-object v3, p0, Lde/rki/coronawarnapp/datadonation/analytics/storage/AnalyticsSettings;->lastSubmittedTimestamp:Lde/rki/coronawarnapp/util/preferences/FlowPreference;
 
     invoke-virtual {p0}, Lde/rki/coronawarnapp/datadonation/analytics/storage/AnalyticsSettings;->getPrefs()Landroid/content/SharedPreferences;
 
@@ -233,23 +213,47 @@
 
     invoke-static {p1, v0}, Lkotlin/jvm/internal/Intrinsics;->checkNotNullExpressionValue(Ljava/lang/Object;Ljava/lang/String;)V
 
-    const-wide/16 v2, 0x0
-
-    invoke-static {v2, v3}, Ljava/lang/Long;->valueOf(J)Ljava/lang/Long;
-
-    move-result-object v0
+    sget-object v1, Ljava/lang/Boolean;->FALSE:Ljava/lang/Boolean;
 
     new-instance v2, Lde/rki/coronawarnapp/util/preferences/FlowPreference;
 
     new-instance v3, Lde/rki/coronawarnapp/datadonation/analytics/storage/AnalyticsSettings$special$$inlined$createFlowPreference$3;
 
-    invoke-direct {v3, v0}, Lde/rki/coronawarnapp/datadonation/analytics/storage/AnalyticsSettings$special$$inlined$createFlowPreference$3;-><init>(Ljava/lang/Object;)V
+    invoke-direct {v3, v1}, Lde/rki/coronawarnapp/datadonation/analytics/storage/AnalyticsSettings$special$$inlined$createFlowPreference$3;-><init>(Ljava/lang/Object;)V
 
-    const-string v0, "analytics.onboarding.versionCode"
+    sget-object v1, Lde/rki/coronawarnapp/datadonation/analytics/storage/AnalyticsSettings$special$$inlined$createFlowPreference$4;->INSTANCE:Lde/rki/coronawarnapp/datadonation/analytics/storage/AnalyticsSettings$special$$inlined$createFlowPreference$4;
 
-    invoke-direct {v2, p1, v0, v3, v1}, Lde/rki/coronawarnapp/util/preferences/FlowPreference;-><init>(Landroid/content/SharedPreferences;Ljava/lang/String;Lkotlin/jvm/functions/Function2;Lkotlin/jvm/functions/Function3;)V
+    const-string v4, "analytics.enabled"
 
-    iput-object v2, p0, Lde/rki/coronawarnapp/datadonation/analytics/storage/AnalyticsSettings;->lastOnboardingVersionCode:Lde/rki/coronawarnapp/util/preferences/FlowPreference;
+    invoke-direct {v2, p1, v4, v3, v1}, Lde/rki/coronawarnapp/util/preferences/FlowPreference;-><init>(Landroid/content/SharedPreferences;Ljava/lang/String;Lkotlin/jvm/functions/Function2;Lkotlin/jvm/functions/Function3;)V
+
+    iput-object v2, p0, Lde/rki/coronawarnapp/datadonation/analytics/storage/AnalyticsSettings;->analyticsEnabled:Lde/rki/coronawarnapp/util/preferences/FlowPreference;
+
+    invoke-virtual {p0}, Lde/rki/coronawarnapp/datadonation/analytics/storage/AnalyticsSettings;->getPrefs()Landroid/content/SharedPreferences;
+
+    move-result-object p1
+
+    invoke-static {p1, v0}, Lkotlin/jvm/internal/Intrinsics;->checkNotNullExpressionValue(Ljava/lang/Object;Ljava/lang/String;)V
+
+    const-wide/16 v0, 0x0
+
+    invoke-static {v0, v1}, Ljava/lang/Long;->valueOf(J)Ljava/lang/Long;
+
+    move-result-object v0
+
+    new-instance v1, Lde/rki/coronawarnapp/util/preferences/FlowPreference;
+
+    new-instance v2, Lde/rki/coronawarnapp/datadonation/analytics/storage/AnalyticsSettings$special$$inlined$createFlowPreference$5;
+
+    invoke-direct {v2, v0}, Lde/rki/coronawarnapp/datadonation/analytics/storage/AnalyticsSettings$special$$inlined$createFlowPreference$5;-><init>(Ljava/lang/Object;)V
+
+    sget-object v0, Lde/rki/coronawarnapp/datadonation/analytics/storage/AnalyticsSettings$special$$inlined$createFlowPreference$6;->INSTANCE:Lde/rki/coronawarnapp/datadonation/analytics/storage/AnalyticsSettings$special$$inlined$createFlowPreference$6;
+
+    const-string v3, "analytics.onboarding.versionCode"
+
+    invoke-direct {v1, p1, v3, v2, v0}, Lde/rki/coronawarnapp/util/preferences/FlowPreference;-><init>(Landroid/content/SharedPreferences;Ljava/lang/String;Lkotlin/jvm/functions/Function2;Lkotlin/jvm/functions/Function3;)V
+
+    iput-object v1, p0, Lde/rki/coronawarnapp/datadonation/analytics/storage/AnalyticsSettings;->lastOnboardingVersionCode:Lde/rki/coronawarnapp/util/preferences/FlowPreference;
 
     return-void
 .end method

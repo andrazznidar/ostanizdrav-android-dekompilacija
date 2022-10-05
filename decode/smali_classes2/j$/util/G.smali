@@ -1,265 +1,223 @@
-.class final Lj$/util/G;
+.class Lj$/util/G;
 .super Ljava/lang/Object;
 
 # interfaces
-.implements Lj$/util/Spliterator$c;
+.implements Lj$/util/u;
+.implements Lj$/util/function/t;
+.implements Lj$/util/Iterator;
 
 
 # instance fields
-.field private final a:[J
+.field a:Z
 
-.field private b:I
+.field b:J
 
-.field private final c:I
-
-.field private final d:I
+.field final synthetic c:Lj$/util/B;
 
 
 # direct methods
-.method public constructor <init>([JIII)V
+.method constructor <init>(Lj$/util/B;)V
     .locals 0
+
+    iput-object p1, p0, Lj$/util/G;->c:Lj$/util/B;
 
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
-    iput-object p1, p0, Lj$/util/G;->a:[J
+    const/4 p1, 0x0
 
-    iput p2, p0, Lj$/util/G;->b:I
-
-    iput p3, p0, Lj$/util/G;->c:I
-
-    or-int/lit8 p1, p4, 0x40
-
-    or-int/lit16 p1, p1, 0x4000
-
-    iput p1, p0, Lj$/util/G;->d:I
+    iput-boolean p1, p0, Lj$/util/G;->a:Z
 
     return-void
 .end method
 
 
 # virtual methods
-.method public synthetic b(Lj$/util/function/Consumer;)Z
-    .locals 0
-
-    invoke-static {p0, p1}, Lj$/util/a;->l(Lj$/util/Spliterator$c;Lj$/util/function/Consumer;)Z
-
-    move-result p1
-
-    return p1
-.end method
-
-.method public characteristics()I
-    .locals 1
-
-    iget v0, p0, Lj$/util/G;->d:I
-
-    return v0
-.end method
-
-.method public estimateSize()J
+.method public a(Lj$/util/function/t;)V
     .locals 2
-
-    iget v0, p0, Lj$/util/G;->c:I
-
-    iget v1, p0, Lj$/util/G;->b:I
-
-    sub-int/2addr v0, v1
-
-    int-to-long v0, v0
-
-    return-wide v0
-.end method
-
-.method public synthetic forEachRemaining(Lj$/util/function/Consumer;)V
-    .locals 0
-
-    invoke-static {p0, p1}, Lj$/util/a;->d(Lj$/util/Spliterator$c;Lj$/util/function/Consumer;)V
-
-    return-void
-.end method
-
-.method public bridge synthetic forEachRemaining(Ljava/lang/Object;)V
-    .locals 0
-
-    check-cast p1, Lj$/util/function/m;
-
-    invoke-virtual {p0, p1}, Lj$/util/G;->g(Lj$/util/function/m;)V
-
-    return-void
-.end method
-
-.method public g(Lj$/util/function/m;)V
-    .locals 5
 
     invoke-static {p1}, Ljava/util/Objects;->requireNonNull(Ljava/lang/Object;)Ljava/lang/Object;
 
-    iget-object v0, p0, Lj$/util/G;->a:[J
-
-    array-length v1, v0
-
-    iget v2, p0, Lj$/util/G;->c:I
-
-    if-lt v1, v2, :cond_1
-
-    iget v1, p0, Lj$/util/G;->b:I
-
-    if-ltz v1, :cond_1
-
-    iput v2, p0, Lj$/util/G;->b:I
-
-    if-ge v1, v2, :cond_1
-
-    :cond_0
-    aget-wide v3, v0, v1
-
-    invoke-interface {p1, v3, v4}, Lj$/util/function/m;->e(J)V
-
-    add-int/lit8 v1, v1, 0x1
-
-    if-lt v1, v2, :cond_0
-
-    :cond_1
-    return-void
-.end method
-
-.method public getComparator()Ljava/util/Comparator;
-    .locals 1
-
-    const/4 v0, 0x4
-
-    invoke-static {p0, v0}, Lj$/util/a;->f(Lj$/util/Spliterator;I)Z
+    :goto_0
+    invoke-virtual {p0}, Lj$/util/G;->hasNext()Z
 
     move-result v0
 
     if-eqz v0, :cond_0
 
-    const/4 v0, 0x0
-
-    return-object v0
-
-    :cond_0
-    new-instance v0, Ljava/lang/IllegalStateException;
-
-    invoke-direct {v0}, Ljava/lang/IllegalStateException;-><init>()V
-
-    throw v0
-.end method
-
-.method public synthetic getExactSizeIfKnown()J
-    .locals 2
-
-    invoke-static {p0}, Lj$/util/a;->e(Lj$/util/Spliterator;)J
+    invoke-virtual {p0}, Lj$/util/G;->nextLong()J
 
     move-result-wide v0
 
-    return-wide v0
-.end method
-
-.method public synthetic hasCharacteristics(I)Z
-    .locals 0
-
-    invoke-static {p0, p1}, Lj$/util/a;->f(Lj$/util/Spliterator;I)Z
-
-    move-result p1
-
-    return p1
-.end method
-
-.method public k(Lj$/util/function/m;)Z
-    .locals 3
-
-    invoke-static {p1}, Ljava/util/Objects;->requireNonNull(Ljava/lang/Object;)Ljava/lang/Object;
-
-    iget v0, p0, Lj$/util/G;->b:I
-
-    if-ltz v0, :cond_0
-
-    iget v1, p0, Lj$/util/G;->c:I
-
-    if-ge v0, v1, :cond_0
-
-    iget-object v1, p0, Lj$/util/G;->a:[J
-
-    add-int/lit8 v2, v0, 0x1
-
-    iput v2, p0, Lj$/util/G;->b:I
-
-    aget-wide v0, v1, v0
-
-    invoke-interface {p1, v0, v1}, Lj$/util/function/m;->e(J)V
-
-    const/4 p1, 0x1
-
-    return p1
-
-    :cond_0
-    const/4 p1, 0x0
-
-    return p1
-.end method
-
-.method public bridge synthetic tryAdvance(Ljava/lang/Object;)Z
-    .locals 0
-
-    check-cast p1, Lj$/util/function/m;
-
-    invoke-virtual {p0, p1}, Lj$/util/G;->k(Lj$/util/function/m;)Z
-
-    move-result p1
-
-    return p1
-.end method
-
-.method public trySplit()Lj$/util/Spliterator$c;
-    .locals 5
-
-    iget v0, p0, Lj$/util/G;->b:I
-
-    iget v1, p0, Lj$/util/G;->c:I
-
-    add-int/2addr v1, v0
-
-    ushr-int/lit8 v1, v1, 0x1
-
-    if-lt v0, v1, :cond_0
-
-    const/4 v0, 0x0
+    invoke-interface {p1, v0, v1}, Lj$/util/function/t;->d(J)V
 
     goto :goto_0
 
     :cond_0
-    new-instance v2, Lj$/util/G;
+    return-void
+.end method
 
-    iget-object v3, p0, Lj$/util/G;->a:[J
+.method public d(J)V
+    .locals 1
 
-    iput v1, p0, Lj$/util/G;->b:I
+    const/4 v0, 0x1
 
-    iget v4, p0, Lj$/util/G;->d:I
+    iput-boolean v0, p0, Lj$/util/G;->a:Z
 
-    invoke-direct {v2, v3, v0, v1, v4}, Lj$/util/G;-><init>([JIII)V
+    iput-wide p1, p0, Lj$/util/G;->b:J
 
-    move-object v0, v2
+    return-void
+.end method
+
+.method public forEachRemaining(Lj$/util/function/Consumer;)V
+    .locals 2
+
+    instance-of v0, p1, Lj$/util/function/t;
+
+    if-eqz v0, :cond_0
+
+    check-cast p1, Lj$/util/function/t;
+
+    invoke-virtual {p0, p1}, Lj$/util/G;->a(Lj$/util/function/t;)V
+
+    goto :goto_1
+
+    :cond_0
+    invoke-static {p1}, Ljava/util/Objects;->requireNonNull(Ljava/lang/Object;)Ljava/lang/Object;
+
+    sget-boolean v0, Lj$/util/V;->a:Z
+
+    if-nez v0, :cond_2
 
     :goto_0
-    return-object v0
+    invoke-virtual {p0}, Lj$/util/G;->hasNext()Z
+
+    move-result v0
+
+    if-eqz v0, :cond_1
+
+    invoke-virtual {p0}, Lj$/util/G;->nextLong()J
+
+    move-result-wide v0
+
+    invoke-static {v0, v1}, Ljava/lang/Long;->valueOf(J)Ljava/lang/Long;
+
+    move-result-object v0
+
+    invoke-interface {p1, v0}, Lj$/util/function/Consumer;->j(Ljava/lang/Object;)V
+
+    goto :goto_0
+
+    :cond_1
+    :goto_1
+    return-void
+
+    :cond_2
+    const-class p1, Lj$/util/G;
+
+    const-string v0, "{0} calling PrimitiveIterator.OfLong.forEachRemainingLong(action::accept)"
+
+    invoke-static {p1, v0}, Lj$/util/V;->a(Ljava/lang/Class;Ljava/lang/String;)V
+
+    const/4 p1, 0x0
+
+    throw p1
 .end method
 
-.method public bridge synthetic trySplit()Lj$/util/Spliterator$d;
+.method public hasNext()Z
     .locals 1
 
-    invoke-virtual {p0}, Lj$/util/G;->trySplit()Lj$/util/Spliterator$c;
+    iget-boolean v0, p0, Lj$/util/G;->a:Z
+
+    if-nez v0, :cond_0
+
+    iget-object v0, p0, Lj$/util/G;->c:Lj$/util/B;
+
+    invoke-interface {v0, p0}, Lj$/util/B;->f(Lj$/util/function/t;)Z
+
+    :cond_0
+    iget-boolean v0, p0, Lj$/util/G;->a:Z
+
+    return v0
+.end method
+
+.method public next()Ljava/lang/Long;
+    .locals 2
+
+    sget-boolean v0, Lj$/util/V;->a:Z
+
+    if-nez v0, :cond_0
+
+    invoke-virtual {p0}, Lj$/util/G;->nextLong()J
+
+    move-result-wide v0
+
+    invoke-static {v0, v1}, Ljava/lang/Long;->valueOf(J)Ljava/lang/Long;
+
+    move-result-object v0
+
+    return-object v0
+
+    :cond_0
+    const-class v0, Lj$/util/G;
+
+    const-string v1, "{0} calling PrimitiveIterator.OfLong.nextLong()"
+
+    invoke-static {v0, v1}, Lj$/util/V;->a(Ljava/lang/Class;Ljava/lang/String;)V
+
+    const/4 v0, 0x0
+
+    throw v0
+.end method
+
+.method public bridge synthetic next()Ljava/lang/Object;
+    .locals 1
+
+    invoke-virtual {p0}, Lj$/util/G;->next()Ljava/lang/Long;
 
     move-result-object v0
 
     return-object v0
 .end method
 
-.method public bridge synthetic trySplit()Lj$/util/Spliterator;
+.method public nextLong()J
+    .locals 2
+
+    iget-boolean v0, p0, Lj$/util/G;->a:Z
+
+    if-nez v0, :cond_1
+
+    invoke-virtual {p0}, Lj$/util/G;->hasNext()Z
+
+    move-result v0
+
+    if-eqz v0, :cond_0
+
+    goto :goto_0
+
+    :cond_0
+    new-instance v0, Ljava/util/NoSuchElementException;
+
+    invoke-direct {v0}, Ljava/util/NoSuchElementException;-><init>()V
+
+    throw v0
+
+    :cond_1
+    :goto_0
+    const/4 v0, 0x0
+
+    iput-boolean v0, p0, Lj$/util/G;->a:Z
+
+    iget-wide v0, p0, Lj$/util/G;->b:J
+
+    return-wide v0
+.end method
+
+.method public synthetic remove()V
     .locals 1
 
-    invoke-virtual {p0}, Lj$/util/G;->trySplit()Lj$/util/Spliterator$c;
+    invoke-static {}, Lj$/util/Iterator$-CC;->a()V
 
-    move-result-object v0
+    const/4 v0, 0x0
 
-    return-object v0
+    throw v0
 .end method

@@ -164,7 +164,7 @@
 
     if-eqz v8, :cond_0
 
-    const v6, 0x7f1303f5
+    const v6, 0x7f130404
 
     invoke-static {v6}, Ljava/lang/Integer;->valueOf(I)Ljava/lang/Integer;
 
@@ -181,7 +181,7 @@
 
     if-eqz v8, :cond_1
 
-    const v6, 0x7f1303f3
+    const v6, 0x7f130402
 
     invoke-static {v6}, Ljava/lang/Integer;->valueOf(I)Ljava/lang/Integer;
 
@@ -246,18 +246,14 @@
 
     if-eq v9, v1, :cond_4
 
-    const v9, 0x7f060085
+    const v9, 0x7f06008b
 
     goto :goto_2
 
     :cond_4
-    const v9, 0x7f06006f
+    const v9, 0x7f060075
 
     :goto_2
-    const-string v10, "<this>"
-
-    invoke-static {v6, v10}, Lkotlin/jvm/internal/Intrinsics;->checkNotNullParameter(Ljava/lang/Object;Ljava/lang/String;)V
-
     sget-object v10, Landroidx/core/content/ContextCompat;->sLock:Ljava/lang/Object;
 
     invoke-static {v6, v9}, Landroidx/core/content/ContextCompat$Api23Impl;->getColor(Landroid/content/Context;I)I
@@ -282,7 +278,7 @@
 
     if-eqz v7, :cond_5
 
-    const v3, 0x7f1303f4
+    const v3, 0x7f130403
 
     invoke-static {v3}, Ljava/lang/Integer;->valueOf(I)Ljava/lang/Integer;
 
@@ -299,7 +295,7 @@
 
     if-eqz v7, :cond_6
 
-    const v3, 0x7f1303f2
+    const v3, 0x7f130401
 
     invoke-static {v3}, Ljava/lang/Integer;->valueOf(I)Ljava/lang/Integer;
 
@@ -358,18 +354,14 @@
 
     if-eq v4, v1, :cond_9
 
-    const v4, 0x7f060057
+    const v4, 0x7f06005b
 
     goto :goto_5
 
     :cond_9
-    const v4, 0x7f06007f
+    const v4, 0x7f060085
 
     :goto_5
-    const-string v9, "<this>"
-
-    invoke-static {v7, v9}, Lkotlin/jvm/internal/Intrinsics;->checkNotNullParameter(Ljava/lang/Object;Ljava/lang/String;)V
-
     invoke-static {v7, v4}, Landroidx/core/content/ContextCompat$Api23Impl;->getColor(Landroid/content/Context;I)I
 
     move-result v4
@@ -416,7 +408,7 @@
 
     iget-object v0, p0, Lde/rki/coronawarnapp/databinding/TracingContentProgressViewBinding;->detailsIcon:Landroid/widget/ImageView;
 
-    invoke-static {v0, v6}, Ldagger/android/AndroidInjection;->setTint(Landroid/widget/ImageView;I)V
+    invoke-static {v0, v6}, Lorg/ejml/sparse/csc/CommonOps_DSCC;->setTint(Landroid/widget/ImageView;I)V
 
     iget-object v0, p0, Lde/rki/coronawarnapp/databinding/TracingContentProgressViewBinding;->headline:Landroid/widget/TextView;
 
@@ -546,7 +538,7 @@
     :try_end_0
     .catchall {:try_start_0 .. :try_end_0} :catchall_0
 
-    const/16 p1, 0x29
+    const/16 p1, 0x27
 
     invoke-virtual {p0, p1}, Landroidx/databinding/BaseObservable;->notifyPropertyChanged(I)V
 

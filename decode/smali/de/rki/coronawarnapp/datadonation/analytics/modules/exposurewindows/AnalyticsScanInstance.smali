@@ -1,14 +1,26 @@
 .class public final Lde/rki/coronawarnapp/datadonation/analytics/modules/exposurewindows/AnalyticsScanInstance;
 .super Ljava/lang/Object;
-.source "AnalyticsExposureWindowModel.kt"
+.source "ExposureWindowModel.kt"
 
 
 # instance fields
-.field public final minAttenuation:I
+.field private final minAttenuation:I
+    .annotation runtime Lcom/google/gson/annotations/SerializedName;
+        value = "minAttenuation"
+    .end annotation
+.end field
 
-.field public final secondsSinceLastScan:I
+.field private final secondsSinceLastScan:I
+    .annotation runtime Lcom/google/gson/annotations/SerializedName;
+        value = "secondsSinceLastScan"
+    .end annotation
+.end field
 
-.field public final typicalAttenuation:I
+.field private final typicalAttenuation:I
+    .annotation runtime Lcom/google/gson/annotations/SerializedName;
+        value = "typicalAttenuation"
+    .end annotation
+.end field
 
 
 # direct methods
@@ -79,6 +91,30 @@
     return v0
 .end method
 
+.method public final getMinAttenuation()I
+    .locals 1
+
+    iget v0, p0, Lde/rki/coronawarnapp/datadonation/analytics/modules/exposurewindows/AnalyticsScanInstance;->minAttenuation:I
+
+    return v0
+.end method
+
+.method public final getSecondsSinceLastScan()I
+    .locals 1
+
+    iget v0, p0, Lde/rki/coronawarnapp/datadonation/analytics/modules/exposurewindows/AnalyticsScanInstance;->secondsSinceLastScan:I
+
+    return v0
+.end method
+
+.method public final getTypicalAttenuation()I
+    .locals 1
+
+    iget v0, p0, Lde/rki/coronawarnapp/datadonation/analytics/modules/exposurewindows/AnalyticsScanInstance;->typicalAttenuation:I
+
+    return v0
+.end method
+
 .method public hashCode()I
     .locals 2
 
@@ -114,13 +150,13 @@
 
     const-string v5, ", secondsSinceLastScan="
 
-    invoke-static {v3, v0, v4, v1, v5}, Landroidx/recyclerview/widget/GridLayoutManager$$ExternalSyntheticOutline0;->m(Ljava/lang/String;ILjava/lang/String;ILjava/lang/String;)Ljava/lang/StringBuilder;
+    invoke-static {v3, v0, v4, v1, v5}, Landroidx/datastore/preferences/protobuf/ByteString$LiteralByteString$$ExternalSyntheticOutline0;->m(Ljava/lang/String;ILjava/lang/String;ILjava/lang/String;)Ljava/lang/StringBuilder;
 
     move-result-object v0
 
     const-string v1, ")"
 
-    invoke-static {v0, v2, v1}, Landroidx/constraintlayout/core/widgets/ConstraintWidget$$ExternalSyntheticOutline0;->m(Ljava/lang/StringBuilder;ILjava/lang/String;)Ljava/lang/String;
+    invoke-static {v0, v2, v1}, Landroidx/camera/core/AutoValue_ImmutableImageInfo$$ExternalSyntheticOutline0;->m(Ljava/lang/StringBuilder;ILjava/lang/String;)Ljava/lang/String;
 
     move-result-object v0
 

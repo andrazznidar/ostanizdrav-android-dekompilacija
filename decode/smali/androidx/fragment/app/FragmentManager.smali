@@ -30,7 +30,7 @@
 
 .field public final mBackStackIndex:Ljava/util/concurrent/atomic/AtomicInteger;
 
-.field public mContainer:Landroidx/fragment/app/FragmentContainer;
+.field public mContainer:Lorg/joda/time/Chronology;
 
 .field public mCreatedMenus:Ljava/util/ArrayList;
     .annotation system Ldalvik/annotation/Signature;
@@ -462,7 +462,7 @@
     return-object v0
 .end method
 
-.method public attachController(Landroidx/fragment/app/FragmentHostCallback;Landroidx/fragment/app/FragmentContainer;Landroidx/fragment/app/Fragment;)V
+.method public attachController(Landroidx/fragment/app/FragmentHostCallback;Lorg/joda/time/Chronology;Landroidx/fragment/app/Fragment;)V
     .locals 4
     .annotation build Landroid/annotation/SuppressLint;
         value = {
@@ -475,7 +475,7 @@
             "(",
             "Landroidx/fragment/app/FragmentHostCallback<",
             "*>;",
-            "Landroidx/fragment/app/FragmentContainer;",
+            "Lorg/joda/time/Chronology;",
             "Landroidx/fragment/app/Fragment;",
             ")V"
         }
@@ -487,7 +487,7 @@
 
     iput-object p1, p0, Landroidx/fragment/app/FragmentManager;->mHost:Landroidx/fragment/app/FragmentHostCallback;
 
-    iput-object p2, p0, Landroidx/fragment/app/FragmentManager;->mContainer:Landroidx/fragment/app/FragmentContainer;
+    iput-object p2, p0, Landroidx/fragment/app/FragmentManager;->mContainer:Lorg/joda/time/Chronology;
 
     iput-object p3, p0, Landroidx/fragment/app/FragmentManager;->mParent:Landroidx/fragment/app/Fragment;
 
@@ -707,7 +707,7 @@
 
     iget-object p2, p0, Landroidx/fragment/app/FragmentManager;->mNonConfig:Landroidx/fragment/app/FragmentManagerViewModel;
 
-    iput-object p2, p1, Landroidx/fragment/app/FragmentStore;->mNonConfig:Ljava/lang/Object;
+    iput-object p2, p1, Landroidx/fragment/app/FragmentStore;->mNonConfig:Landroidx/fragment/app/FragmentManagerViewModel;
 
     iget-object p1, p0, Landroidx/fragment/app/FragmentManager;->mHost:Landroidx/fragment/app/FragmentHostCallback;
 
@@ -731,7 +731,7 @@
 
     const-string v0, ":"
 
-    invoke-static {p2, p3, v0}, Landroidx/constraintlayout/core/widgets/Barrier$$ExternalSyntheticOutline0;->m(Ljava/lang/StringBuilder;Ljava/lang/String;Ljava/lang/String;)Ljava/lang/String;
+    invoke-static {p2, p3, v0}, Landroidx/activity/ComponentActivity$2$$ExternalSyntheticOutline0;->m(Ljava/lang/StringBuilder;Ljava/lang/String;Ljava/lang/String;)Ljava/lang/String;
 
     move-result-object p2
 
@@ -1072,7 +1072,7 @@
 
     iget-object v0, p1, Landroidx/fragment/app/FragmentHostCallback;->mContext:Landroid/content/Context;
 
-    iget-object v1, p0, Landroidx/fragment/app/FragmentManager;->mContainer:Landroidx/fragment/app/FragmentContainer;
+    iget-object v1, p0, Landroidx/fragment/app/FragmentManager;->mContainer:Lorg/joda/time/Chronology;
 
     const/4 v4, 0x0
 
@@ -1082,7 +1082,7 @@
 
     iget-object v7, p0, Landroidx/fragment/app/FragmentManager;->mFragmentTransitionCallback:Landroidx/fragment/app/FragmentTransition$Callback;
 
-    invoke-static/range {v0 .. v7}, Landroidx/fragment/app/FragmentTransition;->startTransitions(Landroid/content/Context;Landroidx/fragment/app/FragmentContainer;Ljava/util/ArrayList;Ljava/util/ArrayList;IIZLandroidx/fragment/app/FragmentTransition$Callback;)V
+    invoke-static/range {v0 .. v7}, Landroidx/fragment/app/FragmentTransition;->startTransitions(Landroid/content/Context;Lorg/joda/time/Chronology;Ljava/util/ArrayList;Ljava/util/ArrayList;IIZLandroidx/fragment/app/FragmentTransition$Callback;)V
 
     :cond_1
     if-eqz p4, :cond_2
@@ -1580,7 +1580,7 @@
 
     iput-object v0, p0, Landroidx/fragment/app/FragmentManager;->mHost:Landroidx/fragment/app/FragmentHostCallback;
 
-    iput-object v0, p0, Landroidx/fragment/app/FragmentManager;->mContainer:Landroidx/fragment/app/FragmentContainer;
+    iput-object v0, p0, Landroidx/fragment/app/FragmentManager;->mContainer:Lorg/joda/time/Chronology;
 
     iput-object v0, p0, Landroidx/fragment/app/FragmentManager;->mParent:Landroidx/fragment/app/Fragment;
 
@@ -1972,9 +1972,7 @@
 
     iget-object v2, p0, Landroidx/fragment/app/FragmentManager;->mFragmentStore:Landroidx/fragment/app/FragmentStore;
 
-    iget-object v2, v2, Landroidx/fragment/app/FragmentStore;->mActive:Ljava/lang/Object;
-
-    check-cast v2, Ljava/util/HashMap;
+    iget-object v2, v2, Landroidx/fragment/app/FragmentStore;->mActive:Ljava/util/HashMap;
 
     invoke-virtual {v2}, Ljava/util/HashMap;->values()Ljava/util/Collection;
 
@@ -2095,9 +2093,7 @@
 
     move-result-object v2
 
-    iget-object v3, v1, Landroidx/fragment/app/FragmentStore;->mActive:Ljava/lang/Object;
-
-    check-cast v3, Ljava/util/HashMap;
+    iget-object v3, v1, Landroidx/fragment/app/FragmentStore;->mActive:Ljava/util/HashMap;
 
     invoke-virtual {v3}, Ljava/util/HashMap;->isEmpty()Z
 
@@ -2111,9 +2107,7 @@
 
     invoke-virtual {p3, v3}, Ljava/io/PrintWriter;->println(Ljava/lang/String;)V
 
-    iget-object v3, v1, Landroidx/fragment/app/FragmentStore;->mActive:Ljava/lang/Object;
-
-    check-cast v3, Ljava/util/HashMap;
+    iget-object v3, v1, Landroidx/fragment/app/FragmentStore;->mActive:Ljava/util/HashMap;
 
     invoke-virtual {v3}, Ljava/util/HashMap;->values()Ljava/util/Collection;
 
@@ -2156,9 +2150,7 @@
     goto :goto_0
 
     :cond_1
-    iget-object p2, v1, Landroidx/fragment/app/FragmentStore;->mAdded:Ljava/lang/Object;
-
-    check-cast p2, Ljava/util/ArrayList;
+    iget-object p2, v1, Landroidx/fragment/app/FragmentStore;->mAdded:Ljava/util/ArrayList;
 
     invoke-virtual {p2}, Ljava/util/ArrayList;->size()I
 
@@ -2179,9 +2171,7 @@
     :goto_1
     if-ge v2, p2, :cond_2
 
-    iget-object v3, v1, Landroidx/fragment/app/FragmentStore;->mAdded:Ljava/lang/Object;
-
-    check-cast v3, Ljava/util/ArrayList;
+    iget-object v3, v1, Landroidx/fragment/app/FragmentStore;->mAdded:Ljava/util/ArrayList;
 
     invoke-virtual {v3, v2}, Ljava/util/ArrayList;->get(I)Ljava/lang/Object;
 
@@ -2419,7 +2409,7 @@
 
     invoke-virtual {p3, p2}, Ljava/io/PrintWriter;->print(Ljava/lang/String;)V
 
-    iget-object p2, p0, Landroidx/fragment/app/FragmentManager;->mContainer:Landroidx/fragment/app/FragmentContainer;
+    iget-object p2, p0, Landroidx/fragment/app/FragmentManager;->mContainer:Lorg/joda/time/Chronology;
 
     invoke-virtual {p3, p2}, Ljava/io/PrintWriter;->println(Ljava/lang/Object;)V
 
@@ -3972,9 +3962,7 @@
 
     iget-object v0, p0, Landroidx/fragment/app/FragmentManager;->mFragmentStore:Landroidx/fragment/app/FragmentStore;
 
-    iget-object v1, v0, Landroidx/fragment/app/FragmentStore;->mAdded:Ljava/lang/Object;
-
-    check-cast v1, Ljava/util/ArrayList;
+    iget-object v1, v0, Landroidx/fragment/app/FragmentStore;->mAdded:Ljava/util/ArrayList;
 
     invoke-virtual {v1}, Ljava/util/ArrayList;->size()I
 
@@ -3985,9 +3973,7 @@
 
     if-ltz v1, :cond_1
 
-    iget-object v2, v0, Landroidx/fragment/app/FragmentStore;->mAdded:Ljava/lang/Object;
-
-    check-cast v2, Ljava/util/ArrayList;
+    iget-object v2, v0, Landroidx/fragment/app/FragmentStore;->mAdded:Ljava/util/ArrayList;
 
     invoke-virtual {v2, v1}, Ljava/util/ArrayList;->get(I)Ljava/lang/Object;
 
@@ -4004,9 +3990,7 @@
     goto :goto_0
 
     :cond_1
-    iget-object v0, v0, Landroidx/fragment/app/FragmentStore;->mActive:Ljava/lang/Object;
-
-    check-cast v0, Ljava/util/HashMap;
+    iget-object v0, v0, Landroidx/fragment/app/FragmentStore;->mActive:Ljava/util/HashMap;
 
     invoke-virtual {v0}, Ljava/util/HashMap;->values()Ljava/util/Collection;
 
@@ -4055,9 +4039,7 @@
 
     if-eqz p1, :cond_1
 
-    iget-object v1, v0, Landroidx/fragment/app/FragmentStore;->mAdded:Ljava/lang/Object;
-
-    check-cast v1, Ljava/util/ArrayList;
+    iget-object v1, v0, Landroidx/fragment/app/FragmentStore;->mAdded:Ljava/util/ArrayList;
 
     invoke-virtual {v1}, Ljava/util/ArrayList;->size()I
 
@@ -4068,9 +4050,7 @@
 
     if-ltz v1, :cond_1
 
-    iget-object v2, v0, Landroidx/fragment/app/FragmentStore;->mAdded:Ljava/lang/Object;
-
-    check-cast v2, Ljava/util/ArrayList;
+    iget-object v2, v0, Landroidx/fragment/app/FragmentStore;->mAdded:Ljava/util/ArrayList;
 
     invoke-virtual {v2, v1}, Ljava/util/ArrayList;->get(I)Ljava/lang/Object;
 
@@ -4093,9 +4073,7 @@
     :cond_1
     if-eqz p1, :cond_3
 
-    iget-object v0, v0, Landroidx/fragment/app/FragmentStore;->mActive:Ljava/lang/Object;
-
-    check-cast v0, Ljava/util/HashMap;
+    iget-object v0, v0, Landroidx/fragment/app/FragmentStore;->mActive:Ljava/util/HashMap;
 
     invoke-virtual {v0}, Ljava/util/HashMap;->values()Ljava/util/Collection;
 
@@ -4158,19 +4136,19 @@
     return-object v1
 
     :cond_1
-    iget-object v0, p0, Landroidx/fragment/app/FragmentManager;->mContainer:Landroidx/fragment/app/FragmentContainer;
+    iget-object v0, p0, Landroidx/fragment/app/FragmentManager;->mContainer:Lorg/joda/time/Chronology;
 
-    invoke-virtual {v0}, Landroidx/fragment/app/FragmentContainer;->onHasView()Z
+    invoke-virtual {v0}, Lorg/joda/time/Chronology;->onHasView()Z
 
     move-result v0
 
     if-eqz v0, :cond_2
 
-    iget-object v0, p0, Landroidx/fragment/app/FragmentManager;->mContainer:Landroidx/fragment/app/FragmentContainer;
+    iget-object v0, p0, Landroidx/fragment/app/FragmentManager;->mContainer:Lorg/joda/time/Chronology;
 
     iget p1, p1, Landroidx/fragment/app/Fragment;->mContainerId:I
 
-    invoke-virtual {v0, p1}, Landroidx/fragment/app/FragmentContainer;->onFindViewById(I)Landroid/view/View;
+    invoke-virtual {v0, p1}, Lorg/joda/time/Chronology;->onFindViewById(I)Landroid/view/View;
 
     move-result-object p1
 
@@ -4489,9 +4467,7 @@
 
     iget-object p1, p0, Landroidx/fragment/app/FragmentManager;->mFragmentStore:Landroidx/fragment/app/FragmentStore;
 
-    iget-object p2, p1, Landroidx/fragment/app/FragmentStore;->mAdded:Ljava/lang/Object;
-
-    check-cast p2, Ljava/util/ArrayList;
+    iget-object p2, p1, Landroidx/fragment/app/FragmentStore;->mAdded:Ljava/util/ArrayList;
 
     invoke-virtual {p2}, Ljava/util/ArrayList;->iterator()Ljava/util/Iterator;
 
@@ -4511,9 +4487,7 @@
 
     check-cast v0, Landroidx/fragment/app/Fragment;
 
-    iget-object v1, p1, Landroidx/fragment/app/FragmentStore;->mActive:Ljava/lang/Object;
-
-    check-cast v1, Ljava/util/HashMap;
+    iget-object v1, p1, Landroidx/fragment/app/FragmentStore;->mActive:Ljava/util/HashMap;
 
     iget-object v0, v0, Landroidx/fragment/app/Fragment;->mWho:Ljava/lang/String;
 
@@ -4530,9 +4504,7 @@
     goto :goto_1
 
     :cond_4
-    iget-object p2, p1, Landroidx/fragment/app/FragmentStore;->mActive:Ljava/lang/Object;
-
-    check-cast p2, Ljava/util/HashMap;
+    iget-object p2, p1, Landroidx/fragment/app/FragmentStore;->mActive:Ljava/util/HashMap;
 
     invoke-virtual {p2}, Ljava/util/HashMap;->values()Ljava/util/Collection;
 
@@ -5721,9 +5693,7 @@
     :cond_1
     iget-object v2, v0, Landroidx/fragment/app/FragmentManager;->mFragmentStore:Landroidx/fragment/app/FragmentStore;
 
-    iget-object v2, v2, Landroidx/fragment/app/FragmentStore;->mActive:Ljava/lang/Object;
-
-    check-cast v2, Ljava/util/HashMap;
+    iget-object v2, v2, Landroidx/fragment/app/FragmentStore;->mActive:Ljava/util/HashMap;
 
     invoke-virtual {v2}, Ljava/util/HashMap;->clear()V
 
@@ -5984,9 +5954,7 @@
 
     iget-object v3, v1, Landroidx/fragment/app/FragmentManagerState;->mAdded:Ljava/util/ArrayList;
 
-    iget-object v8, v2, Landroidx/fragment/app/FragmentStore;->mAdded:Ljava/lang/Object;
-
-    check-cast v8, Ljava/util/ArrayList;
+    iget-object v8, v2, Landroidx/fragment/app/FragmentStore;->mAdded:Ljava/util/ArrayList;
 
     invoke-virtual {v8}, Ljava/util/ArrayList;->clear()V
 
@@ -6053,7 +6021,7 @@
 
     const-string v3, ")"
 
-    invoke-static {v2, v8, v3}, Landroidx/core/graphics/PathParser$$ExternalSyntheticOutline0;->m(Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;)Ljava/lang/String;
+    invoke-static {v2, v8, v3}, Landroidx/concurrent/futures/AbstractResolvableFuture$$ExternalSyntheticOutline1;->m(Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;)Ljava/lang/String;
 
     move-result-object v2
 
@@ -6481,9 +6449,7 @@
 
     new-instance v1, Ljava/util/ArrayList;
 
-    iget-object v3, v0, Landroidx/fragment/app/FragmentStore;->mActive:Ljava/lang/Object;
-
-    check-cast v3, Ljava/util/HashMap;
+    iget-object v3, v0, Landroidx/fragment/app/FragmentStore;->mActive:Ljava/util/HashMap;
 
     invoke-virtual {v3}, Ljava/util/HashMap;->size()I
 
@@ -6491,9 +6457,7 @@
 
     invoke-direct {v1, v3}, Ljava/util/ArrayList;-><init>(I)V
 
-    iget-object v0, v0, Landroidx/fragment/app/FragmentStore;->mActive:Ljava/lang/Object;
-
-    check-cast v0, Ljava/util/HashMap;
+    iget-object v0, v0, Landroidx/fragment/app/FragmentStore;->mActive:Ljava/util/HashMap;
 
     invoke-virtual {v0}, Ljava/util/HashMap;->values()Ljava/util/Collection;
 
@@ -6654,16 +6618,12 @@
     :cond_8
     iget-object v0, p0, Landroidx/fragment/app/FragmentManager;->mFragmentStore:Landroidx/fragment/app/FragmentStore;
 
-    iget-object v5, v0, Landroidx/fragment/app/FragmentStore;->mAdded:Ljava/lang/Object;
-
-    check-cast v5, Ljava/util/ArrayList;
+    iget-object v5, v0, Landroidx/fragment/app/FragmentStore;->mAdded:Ljava/util/ArrayList;
 
     monitor-enter v5
 
     :try_start_0
-    iget-object v6, v0, Landroidx/fragment/app/FragmentStore;->mAdded:Ljava/lang/Object;
-
-    check-cast v6, Ljava/util/ArrayList;
+    iget-object v6, v0, Landroidx/fragment/app/FragmentStore;->mAdded:Ljava/util/ArrayList;
 
     invoke-virtual {v6}, Ljava/util/ArrayList;->isEmpty()Z
 
@@ -6680,9 +6640,7 @@
     :cond_9
     new-instance v6, Ljava/util/ArrayList;
 
-    iget-object v7, v0, Landroidx/fragment/app/FragmentStore;->mAdded:Ljava/lang/Object;
-
-    check-cast v7, Ljava/util/ArrayList;
+    iget-object v7, v0, Landroidx/fragment/app/FragmentStore;->mAdded:Ljava/util/ArrayList;
 
     invoke-virtual {v7}, Ljava/util/ArrayList;->size()I
 
@@ -6690,9 +6648,7 @@
 
     invoke-direct {v6, v7}, Ljava/util/ArrayList;-><init>(I)V
 
-    iget-object v0, v0, Landroidx/fragment/app/FragmentStore;->mAdded:Ljava/lang/Object;
-
-    check-cast v0, Ljava/util/ArrayList;
+    iget-object v0, v0, Landroidx/fragment/app/FragmentStore;->mAdded:Ljava/util/ArrayList;
 
     invoke-virtual {v0}, Ljava/util/ArrayList;->iterator()Ljava/util/Iterator;
 
@@ -6999,11 +6955,13 @@
         }
     .end annotation
 
-    check-cast p2, Landroidx/activity/ComponentActivity;
+    invoke-interface {p2}, Landroidx/lifecycle/LifecycleOwner;->getLifecycle()Landroidx/lifecycle/Lifecycle;
 
-    iget-object p2, p2, Landroidx/activity/ComponentActivity;->mLifecycleRegistry:Landroidx/lifecycle/LifecycleRegistry;
+    move-result-object p2
 
-    iget-object v0, p2, Landroidx/lifecycle/LifecycleRegistry;->mState:Landroidx/lifecycle/Lifecycle$State;
+    invoke-virtual {p2}, Landroidx/lifecycle/Lifecycle;->getCurrentState()Landroidx/lifecycle/Lifecycle$State;
+
+    move-result-object v0
 
     sget-object v1, Landroidx/lifecycle/Lifecycle$State;->DESTROYED:Landroidx/lifecycle/Lifecycle$State;
 
@@ -7016,7 +6974,7 @@
 
     invoke-direct {v0, p0, p1, p3, p2}, Landroidx/fragment/app/FragmentManager$6;-><init>(Landroidx/fragment/app/FragmentManager;Ljava/lang/String;Landroidx/fragment/app/FragmentResultListener;Landroidx/lifecycle/Lifecycle;)V
 
-    invoke-virtual {p2, v0}, Landroidx/lifecycle/LifecycleRegistry;->addObserver(Landroidx/lifecycle/LifecycleObserver;)V
+    invoke-virtual {p2, v0}, Landroidx/lifecycle/Lifecycle;->addObserver(Landroidx/lifecycle/LifecycleObserver;)V
 
     iget-object v1, p0, Landroidx/fragment/app/FragmentManager;->mResultListeners:Ljava/util/Map;
 

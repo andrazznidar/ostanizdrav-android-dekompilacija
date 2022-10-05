@@ -22,10 +22,13 @@
 
 
 # direct methods
-.method public constructor <init>(Ljava/lang/Object;Landroid/view/View;ILandroid/widget/ImageView;Landroid/widget/TextView;Landroid/widget/ImageView;Landroid/widget/LinearLayout;Lde/rki/coronawarnapp/ui/view/BulletPointList;Landroid/widget/TextView;Landroid/widget/Button;Landroidx/constraintlayout/widget/ConstraintLayout;Landroid/widget/ScrollView;Lde/rki/coronawarnapp/databinding/IncludeHeaderBinding;Lde/rki/coronawarnapp/ui/view/TestResultSectionView;Landroid/widget/TextView;Landroidx/constraintlayout/widget/ConstraintLayout;Landroid/widget/TextView;Landroid/widget/TextView;Lde/rki/coronawarnapp/ui/view/SimpleStepEntry;Lde/rki/coronawarnapp/ui/view/SimpleStepEntry;Lde/rki/coronawarnapp/ui/view/SimpleStepEntry;Lde/rki/coronawarnapp/ui/view/SimpleStepEntry;)V
+.method public constructor <init>(Ljava/lang/Object;Landroid/view/View;ILandroid/widget/ImageView;Landroid/widget/TextView;Landroid/widget/ImageView;Landroid/widget/LinearLayout;Landroid/widget/TextView;Lde/rki/coronawarnapp/ui/view/BulletPointList;Landroid/widget/TextView;Landroid/widget/TextView;Landroid/widget/TextView;Landroid/widget/Button;Landroidx/constraintlayout/widget/ConstraintLayout;Landroid/widget/ScrollView;Lde/rki/coronawarnapp/databinding/IncludeHeaderBinding;Lde/rki/coronawarnapp/ui/view/TestResultSectionView;Landroid/widget/TextView;Landroidx/constraintlayout/widget/ConstraintLayout;Landroid/widget/TextView;Landroid/widget/TextView;Lde/rki/coronawarnapp/ui/view/SimpleStepEntry;Lde/rki/coronawarnapp/ui/view/SimpleStepEntry;Lde/rki/coronawarnapp/ui/view/SimpleStepEntry;Lde/rki/coronawarnapp/ui/view/SimpleStepEntry;)V
     .locals 2
     .annotation system Ldalvik/annotation/MethodParameters;
         accessFlags = {
+            0x0,
+            0x0,
+            0x0,
             0x0,
             0x0,
             0x0,
@@ -57,8 +60,11 @@
             "certificateDate",
             "certificateIcon",
             "furtherInfo",
+            "furtherInfoBody",
             "furtherInfoText",
             "furtherInfoTitle",
+            "negativeTestProofBody",
+            "negativeTestProofTitle",
             "submissionTestResultButtonNegativeRemoveTest",
             "submissionTestResultContainer",
             "submissionTestResultContent",
@@ -83,31 +89,31 @@
 
     iput-object v1, v0, Lde/rki/coronawarnapp/databinding/FragmentSubmissionTestResultNegativeBinding;->certificateDate:Landroid/widget/TextView;
 
-    move-object v1, p10
+    move-object v1, p13
 
     iput-object v1, v0, Lde/rki/coronawarnapp/databinding/FragmentSubmissionTestResultNegativeBinding;->submissionTestResultButtonNegativeRemoveTest:Landroid/widget/Button;
 
-    move-object v1, p11
+    move-object/from16 v1, p14
 
     iput-object v1, v0, Lde/rki/coronawarnapp/databinding/FragmentSubmissionTestResultNegativeBinding;->submissionTestResultContainer:Landroidx/constraintlayout/widget/ConstraintLayout;
 
-    move-object v1, p13
+    move-object/from16 v1, p16
 
     iput-object v1, v0, Lde/rki/coronawarnapp/databinding/FragmentSubmissionTestResultNegativeBinding;->submissionTestResultHeader:Lde/rki/coronawarnapp/databinding/IncludeHeaderBinding;
 
-    move-object/from16 v1, p14
+    move-object/from16 v1, p17
 
     iput-object v1, v0, Lde/rki/coronawarnapp/databinding/FragmentSubmissionTestResultNegativeBinding;->submissionTestResultSection:Lde/rki/coronawarnapp/ui/view/TestResultSectionView;
 
-    move-object/from16 v1, p16
+    move-object/from16 v1, p19
 
     iput-object v1, v0, Lde/rki/coronawarnapp/databinding/FragmentSubmissionTestResultNegativeBinding;->testCertificateCard:Landroidx/constraintlayout/widget/ConstraintLayout;
 
-    move-object/from16 v1, p20
+    move-object/from16 v1, p23
 
     iput-object v1, v0, Lde/rki/coronawarnapp/databinding/FragmentSubmissionTestResultNegativeBinding;->testResultNegativeStepsCertificate:Lde/rki/coronawarnapp/ui/view/SimpleStepEntry;
 
-    move-object/from16 v1, p22
+    move-object/from16 v1, p25
 
     iput-object v1, v0, Lde/rki/coronawarnapp/databinding/FragmentSubmissionTestResultNegativeBinding;->testResultNegativeStepsRemoveTest:Lde/rki/coronawarnapp/ui/view/SimpleStepEntry;
 
@@ -127,7 +133,7 @@
 
     sget-object v0, Landroidx/databinding/DataBindingUtil;->sMapper:Landroidx/databinding/DataBinderMapper;
 
-    const v0, 0x7f0d009d
+    const v0, 0x7f0d00ab
 
     const/4 v1, 0x0
 

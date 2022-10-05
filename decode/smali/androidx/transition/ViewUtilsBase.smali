@@ -23,7 +23,7 @@
 .method public clearNonTransitionAlpha(Landroid/view/View;)V
     .locals 0
 
-    const p0, 0x0
+    const/4 p0, 0x0
 
     throw p0
 .end method
@@ -31,7 +31,7 @@
 .method public getTransitionAlpha(Landroid/view/View;)F
     .locals 0
 
-    const p0, 0x0
+    const/4 p0, 0x0
 
     throw p0
 .end method
@@ -39,7 +39,7 @@
 .method public saveNonTransitionAlpha(Landroid/view/View;)V
     .locals 0
 
-    const p0, 0x0
+    const/4 p0, 0x0
 
     throw p0
 .end method
@@ -47,7 +47,7 @@
 .method public setLeftTopRightBottom(Landroid/view/View;IIII)V
     .locals 0
 
-    const p0, 0x0
+    const/4 p0, 0x0
 
     throw p0
 .end method
@@ -55,7 +55,7 @@
 .method public setTransitionAlpha(Landroid/view/View;F)V
     .locals 0
 
-    const p0, 0x0
+    const/4 p0, 0x0
 
     throw p0
 .end method
@@ -124,7 +124,7 @@
 .method public transformMatrixToGlobal(Landroid/view/View;Landroid/graphics/Matrix;)V
     .locals 0
 
-    const p0, 0x0
+    const/4 p0, 0x0
 
     throw p0
 .end method
@@ -132,7 +132,7 @@
 .method public transformMatrixToLocal(Landroid/view/View;Landroid/graphics/Matrix;)V
     .locals 0
 
-    const p0, 0x0
+    const/4 p0, 0x0
 
     throw p0
 .end method

@@ -142,6 +142,8 @@
 
     aget-object v8, p1, v7
 
+    add-int/lit8 v7, v7, 0x1
+
     sget-object v9, Lde/rki/coronawarnapp/server/protocols/internal/ppdd/PpaData$PPAAgeGroup;->UNRECOGNIZED:Lde/rki/coronawarnapp/server/protocols/internal/ppdd/PpaData$PPAAgeGroup;
 
     if-ne v8, v9, :cond_3
@@ -178,12 +180,12 @@
     move-object v8, v11
 
     :goto_3
-    if-eqz v8, :cond_5
+    if-nez v8, :cond_5
 
-    invoke-interface {v4, v8}, Ljava/util/Collection;->add(Ljava/lang/Object;)Z
+    goto :goto_1
 
     :cond_5
-    add-int/lit8 v7, v7, 0x1
+    invoke-interface {v4, v8}, Ljava/util/Collection;->add(Ljava/lang/Object;)Z
 
     goto :goto_1
 

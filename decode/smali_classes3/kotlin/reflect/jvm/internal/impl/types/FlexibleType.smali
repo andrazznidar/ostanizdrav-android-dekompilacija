@@ -7,9 +7,9 @@
 
 
 # instance fields
-.field public final lowerBound:Lkotlin/reflect/jvm/internal/impl/types/SimpleType;
+.field private final lowerBound:Lkotlin/reflect/jvm/internal/impl/types/SimpleType;
 
-.field public final upperBound:Lkotlin/reflect/jvm/internal/impl/types/SimpleType;
+.field private final upperBound:Lkotlin/reflect/jvm/internal/impl/types/SimpleType;
 
 
 # direct methods
@@ -90,6 +90,14 @@
 .method public abstract getDelegate()Lkotlin/reflect/jvm/internal/impl/types/SimpleType;
 .end method
 
+.method public final getLowerBound()Lkotlin/reflect/jvm/internal/impl/types/SimpleType;
+    .locals 1
+
+    iget-object v0, p0, Lkotlin/reflect/jvm/internal/impl/types/FlexibleType;->lowerBound:Lkotlin/reflect/jvm/internal/impl/types/SimpleType;
+
+    return-object v0
+.end method
+
 .method public getMemberScope()Lkotlin/reflect/jvm/internal/impl/resolve/scopes/MemberScope;
     .locals 1
 
@@ -100,6 +108,14 @@
     invoke-virtual {v0}, Lkotlin/reflect/jvm/internal/impl/types/KotlinType;->getMemberScope()Lkotlin/reflect/jvm/internal/impl/resolve/scopes/MemberScope;
 
     move-result-object v0
+
+    return-object v0
+.end method
+
+.method public final getUpperBound()Lkotlin/reflect/jvm/internal/impl/types/SimpleType;
+    .locals 1
+
+    iget-object v0, p0, Lkotlin/reflect/jvm/internal/impl/types/FlexibleType;->upperBound:Lkotlin/reflect/jvm/internal/impl/types/SimpleType;
 
     return-object v0
 .end method

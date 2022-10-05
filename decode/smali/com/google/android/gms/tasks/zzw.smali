@@ -44,7 +44,7 @@
 
 # direct methods
 .method public constructor <init>()V
-    .locals 2
+    .locals 1
 
     invoke-direct {p0}, Lcom/google/android/gms/tasks/Task;-><init>()V
 
@@ -56,9 +56,7 @@
 
     new-instance v0, Lcom/google/android/gms/tasks/zzr;
 
-    const/4 v1, 0x0
-
-    invoke-direct {v0, v1}, Lcom/google/android/gms/tasks/zzr;-><init>(I)V
+    invoke-direct {v0}, Lcom/google/android/gms/tasks/zzr;-><init>()V
 
     iput-object v0, p0, Lcom/google/android/gms/tasks/zzw;->zzb:Lcom/google/android/gms/tasks/zzr;
 
@@ -515,7 +513,7 @@
 
     const-string v2, "result "
 
-    invoke-static {v3, v2, v1}, Landroidx/constraintlayout/core/widgets/Barrier$$ExternalSyntheticOutline0;->m(Ljava/lang/StringBuilder;Ljava/lang/String;Ljava/lang/String;)Ljava/lang/String;
+    invoke-static {v3, v2, v1}, Landroidx/activity/ComponentActivity$2$$ExternalSyntheticOutline0;->m(Ljava/lang/StringBuilder;Ljava/lang/String;Ljava/lang/String;)Ljava/lang/String;
 
     move-result-object v1
 

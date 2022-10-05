@@ -8,7 +8,7 @@
 
 
 # direct methods
-.method public static constructor <clinit>()V
+.method static constructor <clinit>()V
     .locals 1
 
     new-instance v0, Lcom/fasterxml/jackson/databind/introspect/NopAnnotationIntrospector$1;

@@ -1,60 +1,132 @@
-.class final Lj$/util/stream/I1;
-.super Lj$/util/stream/O1;
+.class Lj$/util/stream/I1;
+.super Ljava/lang/Object;
+
+# interfaces
+.implements Lj$/util/stream/Y1;
+.implements Lj$/util/stream/n2;
 
 
-# static fields
-.field public static final synthetic k:I
+# instance fields
+.field private a:D
+
+.field final synthetic b:D
+
+.field final synthetic c:Lj$/util/function/e;
 
 
 # direct methods
-.method public constructor <init>(Lj$/util/stream/z2;Lj$/util/Spliterator;I)V
-    .locals 1
+.method constructor <init>(DLj$/util/function/e;)V
+    .locals 0
 
-    const/4 v0, 0x1
+    iput-wide p1, p0, Lj$/util/stream/I1;->b:D
 
-    if-eq p3, v0, :cond_1
+    iput-object p3, p0, Lj$/util/stream/I1;->c:Lj$/util/function/e;
 
-    const/4 v0, 0x2
-
-    if-eq p3, v0, :cond_0
-
-    sget-object p3, Lj$/util/stream/H1;->a:Lj$/util/stream/H1;
-
-    sget-object v0, Lj$/util/stream/G1;->a:Lj$/util/stream/G1;
-
-    invoke-direct {p0, p1, p2, p3, v0}, Lj$/util/stream/O1;-><init>(Lj$/util/stream/z2;Lj$/util/Spliterator;Lj$/util/function/n;Lj$/util/function/b;)V
-
-    return-void
-
-    :cond_0
-    sget-object p3, Lj$/util/stream/M1;->a:Lj$/util/stream/M1;
-
-    sget-object v0, Lj$/util/stream/L1;->a:Lj$/util/stream/L1;
-
-    invoke-direct {p0, p1, p2, p3, v0}, Lj$/util/stream/O1;-><init>(Lj$/util/stream/z2;Lj$/util/Spliterator;Lj$/util/function/n;Lj$/util/function/b;)V
-
-    return-void
-
-    :cond_1
-    sget-object p3, Lj$/util/stream/K1;->a:Lj$/util/stream/K1;
-
-    sget-object v0, Lj$/util/stream/J1;->a:Lj$/util/stream/J1;
-
-    invoke-direct {p0, p1, p2, p3, v0}, Lj$/util/stream/O1;-><init>(Lj$/util/stream/z2;Lj$/util/Spliterator;Lj$/util/function/n;Lj$/util/function/b;)V
+    invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
     return-void
 .end method
 
-.method public constructor <init>(Lj$/util/stream/z2;Lj$/util/function/j;Lj$/util/Spliterator;)V
-    .locals 1
 
-    new-instance v0, Lj$/util/stream/b;
+# virtual methods
+.method public synthetic a(Ljava/lang/Double;)V
+    .locals 0
 
-    invoke-direct {v0, p2}, Lj$/util/stream/b;-><init>(Lj$/util/function/j;)V
-
-    sget-object p2, Lj$/util/stream/N1;->a:Lj$/util/stream/N1;
-
-    invoke-direct {p0, p1, p3, v0, p2}, Lj$/util/stream/O1;-><init>(Lj$/util/stream/z2;Lj$/util/Spliterator;Lj$/util/function/n;Lj$/util/function/b;)V
+    invoke-static {p0, p1}, Lj$/util/stream/D0;->L(Lj$/util/stream/n2;Ljava/lang/Double;)V
 
     return-void
+.end method
+
+.method public synthetic accept(I)V
+    .locals 0
+
+    invoke-static {}, Lj$/util/stream/D0;->O()V
+
+    const/4 p1, 0x0
+
+    throw p1
+.end method
+
+.method public c(D)V
+    .locals 3
+
+    iget-object v0, p0, Lj$/util/stream/I1;->c:Lj$/util/function/e;
+
+    iget-wide v1, p0, Lj$/util/stream/I1;->a:D
+
+    invoke-interface {v0, v1, v2, p1, p2}, Lj$/util/function/e;->l(DD)D
+
+    move-result-wide p1
+
+    iput-wide p1, p0, Lj$/util/stream/I1;->a:D
+
+    return-void
+.end method
+
+.method public synthetic d(J)V
+    .locals 0
+
+    invoke-static {}, Lj$/util/stream/D0;->P()V
+
+    const/4 p1, 0x0
+
+    throw p1
+.end method
+
+.method public synthetic g()V
+    .locals 0
+
+    return-void
+.end method
+
+.method public get()Ljava/lang/Object;
+    .locals 2
+
+    iget-wide v0, p0, Lj$/util/stream/I1;->a:D
+
+    invoke-static {v0, v1}, Ljava/lang/Double;->valueOf(D)Ljava/lang/Double;
+
+    move-result-object v0
+
+    return-object v0
+.end method
+
+.method public i(J)V
+    .locals 0
+
+    iget-wide p1, p0, Lj$/util/stream/I1;->b:D
+
+    iput-wide p1, p0, Lj$/util/stream/I1;->a:D
+
+    return-void
+.end method
+
+.method public bridge synthetic j(Ljava/lang/Object;)V
+    .locals 0
+
+    check-cast p1, Ljava/lang/Double;
+
+    invoke-virtual {p0, p1}, Lj$/util/stream/I1;->a(Ljava/lang/Double;)V
+
+    return-void
+.end method
+
+.method public q(Lj$/util/stream/Y1;)V
+    .locals 2
+
+    check-cast p1, Lj$/util/stream/I1;
+
+    iget-wide v0, p1, Lj$/util/stream/I1;->a:D
+
+    invoke-virtual {p0, v0, v1}, Lj$/util/stream/I1;->c(D)V
+
+    return-void
+.end method
+
+.method public synthetic r()Z
+    .locals 1
+
+    const/4 v0, 0x0
+
+    return v0
 .end method

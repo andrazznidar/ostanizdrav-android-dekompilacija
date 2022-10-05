@@ -3,6 +3,16 @@
 .source "ObjectIdGenerators.java"
 
 
+# annotations
+.annotation system Ldalvik/annotation/Signature;
+    value = {
+        "Lcom/fasterxml/jackson/annotation/ObjectIdGenerator<",
+        "Ljava/lang/Object;",
+        ">;"
+    }
+.end annotation
+
+
 # instance fields
 .field public final _scope:Ljava/lang/Class;
     .annotation system Ldalvik/annotation/Signature;

@@ -63,7 +63,7 @@
 .method public getActionId()I
     .locals 1
 
-    const v0, 0x7f0a00db
+    const v0, 0x7f0a00e9
 
     return v0
 .end method
@@ -154,7 +154,7 @@
 
     const-string v2, ")"
 
-    invoke-static {v1, v0, v2}, Lde/rki/coronawarnapp/covidcertificate/expiration/DccExpirationNotification$$ExternalSyntheticOutline0;->m(Ljava/lang/String;Lde/rki/coronawarnapp/covidcertificate/common/repository/CertificateContainerId;Ljava/lang/String;)Ljava/lang/String;
+    invoke-static {v1, v0, v2}, Lorg/bouncycastle/jcajce/provider/asymmetric/EC$Mappings$$ExternalSyntheticOutline0;->m(Ljava/lang/String;Lde/rki/coronawarnapp/covidcertificate/common/repository/CertificateContainerId;Ljava/lang/String;)Ljava/lang/String;
 
     move-result-object v0
 

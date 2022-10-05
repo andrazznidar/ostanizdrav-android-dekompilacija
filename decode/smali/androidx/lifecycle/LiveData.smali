@@ -176,7 +176,7 @@
 
     const-string v2, " on a background thread"
 
-    invoke-static {v1, p0, v2}, Landroidx/core/graphics/PathParser$$ExternalSyntheticOutline0;->m(Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;)Ljava/lang/String;
+    invoke-static {v1, p0, v2}, Landroidx/concurrent/futures/AbstractResolvableFuture$$ExternalSyntheticOutline1;->m(Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;)Ljava/lang/String;
 
     move-result-object p0
 
@@ -540,7 +540,7 @@
         }
     .end annotation
 
-    const-string v0, "setValue"
+    const-string/jumbo v0, "setValue"
 
     invoke-static {v0}, Landroidx/lifecycle/LiveData;->assertMainThread(Ljava/lang/String;)V
 

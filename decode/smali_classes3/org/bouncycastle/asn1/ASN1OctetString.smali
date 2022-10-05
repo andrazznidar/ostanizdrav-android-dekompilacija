@@ -66,13 +66,7 @@
 
     move-result-object v1
 
-    invoke-virtual {p0}, Ljava/io/IOException;->getMessage()Ljava/lang/String;
-
-    move-result-object p0
-
-    invoke-virtual {v1, p0}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
-
-    invoke-virtual {v1}, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
+    invoke-static {p0, v1}, Lorg/bouncycastle/asn1/ASN1ApplicationSpecific$$ExternalSyntheticOutline0;->m(Ljava/io/IOException;Ljava/lang/StringBuilder;)Ljava/lang/String;
 
     move-result-object p0
 
@@ -110,17 +104,7 @@
 
     move-result-object v1
 
-    invoke-virtual {p0}, Ljava/lang/Object;->getClass()Ljava/lang/Class;
-
-    move-result-object p0
-
-    invoke-virtual {p0}, Ljava/lang/Class;->getName()Ljava/lang/String;
-
-    move-result-object p0
-
-    invoke-virtual {v1, p0}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
-
-    invoke-virtual {v1}, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
+    invoke-static {p0, v1}, Lcom/fasterxml/jackson/core/JsonGenerator$$ExternalSyntheticOutline0;->m(Ljava/lang/Object;Ljava/lang/StringBuilder;)Ljava/lang/String;
 
     move-result-object p0
 
@@ -140,7 +124,9 @@
 
     if-eqz p1, :cond_1
 
-    iget-boolean p1, p0, Lorg/bouncycastle/asn1/ASN1TaggedObject;->explicit:Z
+    invoke-virtual {p0}, Lorg/bouncycastle/asn1/ASN1TaggedObject;->isExplicit()Z
+
+    move-result p1
 
     if-eqz p1, :cond_0
 
@@ -168,7 +154,9 @@
 
     move-result-object p1
 
-    iget-boolean v0, p0, Lorg/bouncycastle/asn1/ASN1TaggedObject;->explicit:Z
+    invoke-virtual {p0}, Lorg/bouncycastle/asn1/ASN1TaggedObject;->isExplicit()Z
+
+    move-result v0
 
     if-eqz v0, :cond_3
 
@@ -318,10 +306,22 @@
     return p1
 .end method
 
-.method public getLoadedObject()Lorg/bouncycastle/asn1/ASN1Primitive;
-    .locals 0
+.method public abstract encode(Lorg/bouncycastle/asn1/ASN1OutputStream;Z)V
+    .annotation system Ldalvik/annotation/Throws;
+        value = {
+            Ljava/io/IOException;
+        }
+    .end annotation
+.end method
 
-    return-object p0
+.method public getLoadedObject()Lorg/bouncycastle/asn1/ASN1Primitive;
+    .locals 1
+
+    invoke-virtual {p0}, Lorg/bouncycastle/asn1/ASN1Primitive;->toASN1Primitive()Lorg/bouncycastle/asn1/ASN1Primitive;
+
+    move-result-object v0
+
+    return-object v0
 .end method
 
 .method public getOctetStream()Ljava/io/InputStream;
@@ -336,16 +336,32 @@
     return-object v0
 .end method
 
-.method public hashCode()I
+.method public getOctets()[B
     .locals 1
 
     iget-object v0, p0, Lorg/bouncycastle/asn1/ASN1OctetString;->string:[B
+
+    return-object v0
+.end method
+
+.method public hashCode()I
+    .locals 1
+
+    invoke-virtual {p0}, Lorg/bouncycastle/asn1/ASN1OctetString;->getOctets()[B
+
+    move-result-object v0
 
     invoke-static {v0}, Lorg/bouncycastle/util/Arrays;->hashCode([B)I
 
     move-result v0
 
     return v0
+.end method
+
+.method public parser()Lorg/bouncycastle/asn1/ASN1OctetStringParser;
+    .locals 0
+
+    return-object p0
 .end method
 
 .method public toDERObject()Lorg/bouncycastle/asn1/ASN1Primitive;
@@ -373,7 +389,7 @@
 .end method
 
 .method public toString()Ljava/lang/String;
-    .locals 4
+    .locals 2
 
     const-string v0, "#"
 
@@ -383,13 +399,7 @@
 
     iget-object v1, p0, Lorg/bouncycastle/asn1/ASN1OctetString;->string:[B
 
-    sget-object v2, Lorg/bouncycastle/util/encoders/Hex;->encoder:Lorg/bouncycastle/util/encoders/HexEncoder;
-
-    array-length v2, v1
-
-    const/4 v3, 0x0
-
-    invoke-static {v1, v3, v2}, Lorg/bouncycastle/util/encoders/Hex;->encode([BII)[B
+    invoke-static {v1}, Lorg/bouncycastle/util/encoders/Hex;->encode([B)[B
 
     move-result-object v1
 

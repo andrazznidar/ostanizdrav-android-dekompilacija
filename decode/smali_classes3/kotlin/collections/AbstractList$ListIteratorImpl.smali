@@ -21,15 +21,20 @@
         "Lkotlin/collections/AbstractList<",
         "TE;>.IteratorImpl;",
         "Ljava/util/ListIterator<",
-        "TE;>;",
-        "Lkotlin/jvm/internal/markers/KMappedMarker;",
-        "Lj$/util/Iterator;"
+        "TE;>;"
     }
 .end annotation
 
 
 # instance fields
 .field public final synthetic this$0:Lkotlin/collections/AbstractList;
+    .annotation system Ldalvik/annotation/Signature;
+        value = {
+            "Lkotlin/collections/AbstractList<",
+            "TE;>;"
+        }
+    .end annotation
+.end field
 
 
 # direct methods
@@ -64,7 +69,7 @@
 
     const-string v2, ", size: "
 
-    invoke-static {v1, p2, v2, p1}, Lcom/airbnb/lottie/utils/GammaEvaluator$$ExternalSyntheticOutline0;->m(Ljava/lang/String;ILjava/lang/String;I)Ljava/lang/String;
+    invoke-static {v1, p2, v2, p1}, Landroidx/camera/camera2/internal/Camera2CameraImpl$$ExternalSyntheticOutline0;->m(Ljava/lang/String;ILjava/lang/String;I)Ljava/lang/String;
 
     move-result-object p1
 

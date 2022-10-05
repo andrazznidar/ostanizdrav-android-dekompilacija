@@ -87,7 +87,7 @@
 
     aget-object v3, v1, v4
 
-    invoke-static {v0, v3}, Lcom/google/common/collect/CollectPreconditions;->checkEntryNotNull(Ljava/lang/Object;Ljava/lang/Object;)V
+    invoke-static {v0, v3}, Lorg/ejml/dense/row/misc/ImplCommonOps_DDMA;->checkEntryNotNull(Ljava/lang/Object;Ljava/lang/Object;)V
 
     new-instance v0, Lcom/google/common/collect/RegularImmutableMap;
 
@@ -161,7 +161,7 @@
 
     aget-object v4, v1, v4
 
-    invoke-static {v3, v4}, Lcom/google/common/collect/CollectPreconditions;->checkEntryNotNull(Ljava/lang/Object;Ljava/lang/Object;)V
+    invoke-static {v3, v4}, Lorg/ejml/dense/row/misc/ImplCommonOps_DDMA;->checkEntryNotNull(Ljava/lang/Object;Ljava/lang/Object;)V
 
     goto/16 :goto_8
 
@@ -193,13 +193,13 @@
 
     aget-object v8, v1, v8
 
-    invoke-static {v7, v8}, Lcom/google/common/collect/CollectPreconditions;->checkEntryNotNull(Ljava/lang/Object;Ljava/lang/Object;)V
+    invoke-static {v7, v8}, Lorg/ejml/dense/row/misc/ImplCommonOps_DDMA;->checkEntryNotNull(Ljava/lang/Object;Ljava/lang/Object;)V
 
     invoke-virtual {v7}, Ljava/lang/Object;->hashCode()I
 
     move-result v9
 
-    invoke-static {v9}, Landroidx/fragment/app/ViewKt;->smear(I)I
+    invoke-static {v9}, Lcom/google/common/collect/Hashing;->smear(I)I
 
     move-result v9
 
@@ -271,13 +271,13 @@
 
     aget-object v8, v1, v8
 
-    invoke-static {v7, v8}, Lcom/google/common/collect/CollectPreconditions;->checkEntryNotNull(Ljava/lang/Object;Ljava/lang/Object;)V
+    invoke-static {v7, v8}, Lorg/ejml/dense/row/misc/ImplCommonOps_DDMA;->checkEntryNotNull(Ljava/lang/Object;Ljava/lang/Object;)V
 
     invoke-virtual {v7}, Ljava/lang/Object;->hashCode()I
 
     move-result v9
 
-    invoke-static {v9}, Landroidx/fragment/app/ViewKt;->smear(I)I
+    invoke-static {v9}, Lcom/google/common/collect/Hashing;->smear(I)I
 
     move-result v9
 
@@ -340,13 +340,13 @@
 
     aget-object v9, v1, v9
 
-    invoke-static {v8, v9}, Lcom/google/common/collect/CollectPreconditions;->checkEntryNotNull(Ljava/lang/Object;Ljava/lang/Object;)V
+    invoke-static {v8, v9}, Lorg/ejml/dense/row/misc/ImplCommonOps_DDMA;->checkEntryNotNull(Ljava/lang/Object;Ljava/lang/Object;)V
 
     invoke-virtual {v8}, Ljava/lang/Object;->hashCode()I
 
     move-result v10
 
-    invoke-static {v10}, Landroidx/fragment/app/ViewKt;->smear(I)I
+    invoke-static {v10}, Lcom/google/common/collect/Hashing;->smear(I)I
 
     move-result v10
 
@@ -470,7 +470,7 @@
 
     :cond_3
     :goto_0
-    invoke-static {p1, p2}, Lcom/google/common/collect/CollectPreconditions;->checkEntryNotNull(Ljava/lang/Object;Ljava/lang/Object;)V
+    invoke-static {p1, p2}, Lorg/ejml/dense/row/misc/ImplCommonOps_DDMA;->checkEntryNotNull(Ljava/lang/Object;Ljava/lang/Object;)V
 
     iget-object v0, p0, Lcom/google/common/collect/ImmutableMap$Builder;->alternatingKeysAndValues:[Ljava/lang/Object;
 

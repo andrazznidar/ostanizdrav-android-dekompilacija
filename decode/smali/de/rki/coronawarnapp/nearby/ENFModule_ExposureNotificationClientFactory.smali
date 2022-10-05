@@ -85,10 +85,6 @@
 
     invoke-static {v1, v0}, Lkotlin/jvm/internal/Intrinsics;->checkNotNullParameter(Ljava/lang/Object;Ljava/lang/String;)V
 
-    const-string v0, "Context must not be null"
-
-    invoke-static {v1, v0}, Lcom/google/android/gms/common/internal/Preconditions;->checkNotNull(Ljava/lang/Object;Ljava/lang/Object;)Ljava/lang/Object;
-
     new-instance v0, Lcom/google/android/gms/internal/nearby/zzaw;
 
     invoke-direct {v0, v1}, Lcom/google/android/gms/internal/nearby/zzaw;-><init>(Landroid/content/Context;)V

@@ -28,11 +28,25 @@
 
 # instance fields
 .field public final synthetic $this_withIndex:Ljava/lang/Iterable;
+    .annotation system Ldalvik/annotation/Signature;
+        value = {
+            "Ljava/lang/Iterable<",
+            "TT;>;"
+        }
+    .end annotation
+.end field
 
 
 # direct methods
 .method public constructor <init>(Ljava/lang/Iterable;)V
     .locals 0
+    .annotation system Ldalvik/annotation/Signature;
+        value = {
+            "(",
+            "Ljava/lang/Iterable<",
+            "+TT;>;)V"
+        }
+    .end annotation
 
     iput-object p1, p0, Lkotlin/collections/CollectionsKt___CollectionsKt$withIndex$1;->$this_withIndex:Ljava/lang/Iterable;
 

@@ -25,7 +25,7 @@
     c = "de.rki.coronawarnapp.covidcertificate.pdf.ui.poster.CertificatePosterViewModel$generatePoster$1"
     f = "CertificatePosterViewModel.kt"
     l = {
-        0x3a
+        0x41
     }
     m = "invokeSuspend"
 .end annotation
@@ -184,9 +184,9 @@
 
     iget-object v1, v1, Lde/rki/coronawarnapp/covidcertificate/pdf/ui/poster/CertificatePosterViewModel;->pdfGenerator:Lde/rki/coronawarnapp/covidcertificate/pdf/core/PdfGenerator;
 
-    sget-object v5, Lde/rki/coronawarnapp/covidcertificate/pdf/core/PdfGenerator$BitmapQuality;->PREVIEW:Lde/rki/coronawarnapp/covidcertificate/pdf/core/PdfGenerator$BitmapQuality;
+    const/4 v5, 0x2
 
-    invoke-virtual {v1, p1, v5}, Lde/rki/coronawarnapp/covidcertificate/pdf/core/PdfGenerator;->renderPdfFileToBitmap(Ljava/io/File;Lde/rki/coronawarnapp/covidcertificate/pdf/core/PdfGenerator$BitmapQuality;)Landroid/graphics/Bitmap;
+    invoke-virtual {v1, p1, v5}, Lde/rki/coronawarnapp/covidcertificate/pdf/core/PdfGenerator;->renderPdfFileToBitmap$enumunboxing$(Ljava/io/File;I)Landroid/graphics/Bitmap;
 
     move-result-object v1
 

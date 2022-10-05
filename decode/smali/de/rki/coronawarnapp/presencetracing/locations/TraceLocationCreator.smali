@@ -120,11 +120,11 @@
 
     move-result-object v11
 
+    const-wide/16 v4, 0x0
+
     const/4 v14, 0x0
 
     const/16 v15, 0x201
-
-    const-wide/16 v4, 0x0
 
     move-object v3, v2
 

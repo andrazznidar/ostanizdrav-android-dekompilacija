@@ -4,7 +4,7 @@
 
 
 # instance fields
-.field public final zza:Ljava/lang/Object;
+.field public final zza:Landroid/content/Context;
 
 
 # direct methods
@@ -13,21 +13,7 @@
 
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
-    iput-object p1, p0, Lcom/google/android/play/core/appupdate/zzh;->zza:Ljava/lang/Object;
-
-    return-void
-.end method
-
-.method public constructor <init>(Lde/rki/coronawarnapp/ui/main/home/HomeFragment;)V
-    .locals 1
-
-    const-string v0, "homeFragment"
-
-    invoke-static {p1, v0}, Lkotlin/jvm/internal/Intrinsics;->checkNotNullParameter(Ljava/lang/Object;Ljava/lang/String;)V
-
-    invoke-direct {p0}, Ljava/lang/Object;-><init>()V
-
-    iput-object p1, p0, Lcom/google/android/play/core/appupdate/zzh;->zza:Ljava/lang/Object;
+    iput-object p1, p0, Lcom/google/android/play/core/appupdate/zzh;->zza:Landroid/content/Context;
 
     return-void
 .end method

@@ -1,4 +1,4 @@
-.class public final Lkotlin/reflect/jvm/internal/impl/load/java/typeEnhancement/EnhancementResult;
+.class final Lkotlin/reflect/jvm/internal/impl/load/java/typeEnhancement/EnhancementResult;
 .super Ljava/lang/Object;
 .source "typeEnhancement.kt"
 
@@ -15,9 +15,9 @@
 
 
 # instance fields
-.field public final enhancementAnnotations:Lkotlin/reflect/jvm/internal/impl/descriptors/annotations/Annotations;
+.field private final enhancementAnnotations:Lkotlin/reflect/jvm/internal/impl/descriptors/annotations/Annotations;
 
-.field public final result:Ljava/lang/Object;
+.field private final result:Ljava/lang/Object;
     .annotation system Ldalvik/annotation/Signature;
         value = {
             "TT;"
@@ -48,6 +48,27 @@
 
 
 # virtual methods
+.method public final component1()Ljava/lang/Object;
+    .locals 1
+    .annotation system Ldalvik/annotation/Signature;
+        value = {
+            "()TT;"
+        }
+    .end annotation
+
+    iget-object v0, p0, Lkotlin/reflect/jvm/internal/impl/load/java/typeEnhancement/EnhancementResult;->result:Ljava/lang/Object;
+
+    return-object v0
+.end method
+
+.method public final component2()Lkotlin/reflect/jvm/internal/impl/descriptors/annotations/Annotations;
+    .locals 1
+
+    iget-object v0, p0, Lkotlin/reflect/jvm/internal/impl/load/java/typeEnhancement/EnhancementResult;->enhancementAnnotations:Lkotlin/reflect/jvm/internal/impl/descriptors/annotations/Annotations;
+
+    return-object v0
+.end method
+
 .method public equals(Ljava/lang/Object;)Z
     .locals 4
 

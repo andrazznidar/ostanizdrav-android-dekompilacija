@@ -5,19 +5,84 @@
 
 # annotations
 .annotation system Ldalvik/annotation/SourceDebugExtension;
-    value = "SMAP\nTypeSubstitution.kt\nKotlin\n*S Kotlin\n*F\n+ 1 TypeSubstitution.kt\norg/jetbrains/kotlin/types/IndexedParametersSubstitution\n+ 2 ArraysJVM.kt\nkotlin/collections/ArraysKt__ArraysJVMKt\n*L\n1#1,173:1\n37#2,2:174\n*E\n*S KotlinDebug\n*F\n+ 1 TypeSubstitution.kt\norg/jetbrains/kotlin/types/IndexedParametersSubstitution\n*L\n102#1,2:174\n*E\n"
+    value = "SMAP\nTypeSubstitution.kt\nKotlin\n*S Kotlin\n*F\n+ 1 TypeSubstitution.kt\norg/jetbrains/kotlin/types/IndexedParametersSubstitution\n+ 2 ArraysJVM.kt\nkotlin/collections/ArraysKt__ArraysJVMKt\n*L\n1#1,192:1\n37#2,2:193\n*S KotlinDebug\n*F\n+ 1 TypeSubstitution.kt\norg/jetbrains/kotlin/types/IndexedParametersSubstitution\n*L\n121#1:193,2\n*E\n"
 .end annotation
 
 
 # instance fields
-.field public final approximateContravariantCapturedTypes:Z
+.field private final approximateContravariantCapturedTypes:Z
 
-.field public final arguments:[Lkotlin/reflect/jvm/internal/impl/types/TypeProjection;
+.field private final arguments:[Lkotlin/reflect/jvm/internal/impl/types/TypeProjection;
 
-.field public final parameters:[Lkotlin/reflect/jvm/internal/impl/descriptors/TypeParameterDescriptor;
+.field private final parameters:[Lkotlin/reflect/jvm/internal/impl/descriptors/TypeParameterDescriptor;
 
 
 # direct methods
+.method public constructor <init>(Ljava/util/List;Ljava/util/List;)V
+    .locals 8
+    .annotation system Ldalvik/annotation/Signature;
+        value = {
+            "(",
+            "Ljava/util/List<",
+            "+",
+            "Lkotlin/reflect/jvm/internal/impl/descriptors/TypeParameterDescriptor;",
+            ">;",
+            "Ljava/util/List<",
+            "+",
+            "Lkotlin/reflect/jvm/internal/impl/types/TypeProjection;",
+            ">;)V"
+        }
+    .end annotation
+
+    const-string v0, "parameters"
+
+    invoke-static {p1, v0}, Lkotlin/jvm/internal/Intrinsics;->checkNotNullParameter(Ljava/lang/Object;Ljava/lang/String;)V
+
+    const-string v0, "argumentsList"
+
+    invoke-static {p2, v0}, Lkotlin/jvm/internal/Intrinsics;->checkNotNullParameter(Ljava/lang/Object;Ljava/lang/String;)V
+
+    const/4 v0, 0x0
+
+    new-array v1, v0, [Lkotlin/reflect/jvm/internal/impl/descriptors/TypeParameterDescriptor;
+
+    invoke-interface {p1, v1}, Ljava/util/Collection;->toArray([Ljava/lang/Object;)[Ljava/lang/Object;
+
+    move-result-object p1
+
+    const-string v1, "null cannot be cast to non-null type kotlin.Array<T>"
+
+    invoke-static {p1, v1}, Ljava/util/Objects;->requireNonNull(Ljava/lang/Object;Ljava/lang/String;)Ljava/lang/Object;
+
+    move-object v3, p1
+
+    check-cast v3, [Lkotlin/reflect/jvm/internal/impl/descriptors/TypeParameterDescriptor;
+
+    new-array p1, v0, [Lkotlin/reflect/jvm/internal/impl/types/TypeProjection;
+
+    invoke-interface {p2, p1}, Ljava/util/Collection;->toArray([Ljava/lang/Object;)[Ljava/lang/Object;
+
+    move-result-object p1
+
+    invoke-static {p1, v1}, Ljava/util/Objects;->requireNonNull(Ljava/lang/Object;Ljava/lang/String;)Ljava/lang/Object;
+
+    move-object v4, p1
+
+    check-cast v4, [Lkotlin/reflect/jvm/internal/impl/types/TypeProjection;
+
+    const/4 v5, 0x0
+
+    const/4 v6, 0x4
+
+    const/4 v7, 0x0
+
+    move-object v2, p0
+
+    invoke-direct/range {v2 .. v7}, Lkotlin/reflect/jvm/internal/impl/types/IndexedParametersSubstitution;-><init>([Lkotlin/reflect/jvm/internal/impl/descriptors/TypeParameterDescriptor;[Lkotlin/reflect/jvm/internal/impl/types/TypeProjection;ZILkotlin/jvm/internal/DefaultConstructorMarker;)V
+
+    return-void
+.end method
+
 .method public constructor <init>([Lkotlin/reflect/jvm/internal/impl/descriptors/TypeParameterDescriptor;[Lkotlin/reflect/jvm/internal/impl/types/TypeProjection;Z)V
     .locals 1
 
@@ -40,6 +105,21 @@
     return-void
 .end method
 
+.method public synthetic constructor <init>([Lkotlin/reflect/jvm/internal/impl/descriptors/TypeParameterDescriptor;[Lkotlin/reflect/jvm/internal/impl/types/TypeProjection;ZILkotlin/jvm/internal/DefaultConstructorMarker;)V
+    .locals 0
+
+    and-int/lit8 p4, p4, 0x4
+
+    if-eqz p4, :cond_0
+
+    const/4 p3, 0x0
+
+    :cond_0
+    invoke-direct {p0, p1, p2, p3}, Lkotlin/reflect/jvm/internal/impl/types/IndexedParametersSubstitution;-><init>([Lkotlin/reflect/jvm/internal/impl/descriptors/TypeParameterDescriptor;[Lkotlin/reflect/jvm/internal/impl/types/TypeProjection;Z)V
+
+    return-void
+.end method
+
 
 # virtual methods
 .method public approximateContravariantCapturedTypes()Z
@@ -52,6 +132,10 @@
 
 .method public get(Lkotlin/reflect/jvm/internal/impl/types/KotlinType;)Lkotlin/reflect/jvm/internal/impl/types/TypeProjection;
     .locals 4
+
+    const-string v0, "key"
+
+    invoke-static {p1, v0}, Lkotlin/jvm/internal/Intrinsics;->checkNotNullParameter(Ljava/lang/Object;Ljava/lang/String;)V
 
     invoke-virtual {p1}, Lkotlin/reflect/jvm/internal/impl/types/KotlinType;->getConstructor()Lkotlin/reflect/jvm/internal/impl/types/TypeConstructor;
 
@@ -114,6 +198,22 @@
 
     :cond_2
     return-object v1
+.end method
+
+.method public final getArguments()[Lkotlin/reflect/jvm/internal/impl/types/TypeProjection;
+    .locals 1
+
+    iget-object v0, p0, Lkotlin/reflect/jvm/internal/impl/types/IndexedParametersSubstitution;->arguments:[Lkotlin/reflect/jvm/internal/impl/types/TypeProjection;
+
+    return-object v0
+.end method
+
+.method public final getParameters()[Lkotlin/reflect/jvm/internal/impl/descriptors/TypeParameterDescriptor;
+    .locals 1
+
+    iget-object v0, p0, Lkotlin/reflect/jvm/internal/impl/types/IndexedParametersSubstitution;->parameters:[Lkotlin/reflect/jvm/internal/impl/descriptors/TypeParameterDescriptor;
+
+    return-object v0
 .end method
 
 .method public isEmpty()Z

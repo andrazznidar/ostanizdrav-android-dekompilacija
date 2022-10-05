@@ -1,149 +1,166 @@
 .class public final synthetic Lde/rki/coronawarnapp/covidcertificate/validation/ui/validationstart/ValidationStartFragment$$ExternalSyntheticLambda1;
 .super Ljava/lang/Object;
+.source "R8$$SyntheticClass"
 
 # interfaces
-.implements Lcom/google/android/material/datepicker/MaterialPickerOnPositiveButtonClickListener;
+.implements Landroid/view/View$OnClickListener;
 
 
 # instance fields
-.field public final synthetic f$0:Lde/rki/coronawarnapp/covidcertificate/validation/ui/validationstart/ValidationStartFragment;
+.field public final synthetic f$0:Lde/rki/coronawarnapp/databinding/ValidationStartFragmentBinding;
+
+.field public final synthetic f$1:Lde/rki/coronawarnapp/covidcertificate/validation/ui/validationstart/ValidationStartFragment;
 
 
 # direct methods
-.method public synthetic constructor <init>(Lde/rki/coronawarnapp/covidcertificate/validation/ui/validationstart/ValidationStartFragment;)V
+.method public synthetic constructor <init>(Lde/rki/coronawarnapp/databinding/ValidationStartFragmentBinding;Lde/rki/coronawarnapp/covidcertificate/validation/ui/validationstart/ValidationStartFragment;)V
     .locals 0
 
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
-    iput-object p1, p0, Lde/rki/coronawarnapp/covidcertificate/validation/ui/validationstart/ValidationStartFragment$$ExternalSyntheticLambda1;->f$0:Lde/rki/coronawarnapp/covidcertificate/validation/ui/validationstart/ValidationStartFragment;
+    iput-object p1, p0, Lde/rki/coronawarnapp/covidcertificate/validation/ui/validationstart/ValidationStartFragment$$ExternalSyntheticLambda1;->f$0:Lde/rki/coronawarnapp/databinding/ValidationStartFragmentBinding;
+
+    iput-object p2, p0, Lde/rki/coronawarnapp/covidcertificate/validation/ui/validationstart/ValidationStartFragment$$ExternalSyntheticLambda1;->f$1:Lde/rki/coronawarnapp/covidcertificate/validation/ui/validationstart/ValidationStartFragment;
 
     return-void
 .end method
 
 
 # virtual methods
-.method public final onPositiveButtonClick(Ljava/lang/Object;)V
-    .locals 7
+.method public final onClick(Landroid/view/View;)V
+    .locals 6
 
-    iget-object v0, p0, Lde/rki/coronawarnapp/covidcertificate/validation/ui/validationstart/ValidationStartFragment$$ExternalSyntheticLambda1;->f$0:Lde/rki/coronawarnapp/covidcertificate/validation/ui/validationstart/ValidationStartFragment;
+    iget-object p1, p0, Lde/rki/coronawarnapp/covidcertificate/validation/ui/validationstart/ValidationStartFragment$$ExternalSyntheticLambda1;->f$0:Lde/rki/coronawarnapp/databinding/ValidationStartFragmentBinding;
 
-    check-cast p1, Ljava/lang/Long;
+    iget-object v0, p0, Lde/rki/coronawarnapp/covidcertificate/validation/ui/validationstart/ValidationStartFragment$$ExternalSyntheticLambda1;->f$1:Lde/rki/coronawarnapp/covidcertificate/validation/ui/validationstart/ValidationStartFragment;
 
     sget-object v1, Lde/rki/coronawarnapp/covidcertificate/validation/ui/validationstart/ValidationStartFragment;->$$delegatedProperties:[Lkotlin/reflect/KProperty;
+
+    const-string v1, "$this_with"
+
+    invoke-static {p1, v1}, Lkotlin/jvm/internal/Intrinsics;->checkNotNullParameter(Ljava/lang/Object;Ljava/lang/String;)V
 
     const-string/jumbo v1, "this$0"
 
     invoke-static {v0, v1}, Lkotlin/jvm/internal/Intrinsics;->checkNotNullParameter(Ljava/lang/Object;Ljava/lang/String;)V
 
-    new-instance v1, Lorg/joda/time/LocalDate;
+    iget-object p1, p1, Lde/rki/coronawarnapp/databinding/ValidationStartFragmentBinding;->countryPicker:Lcom/google/android/material/textfield/MaterialAutoCompleteTextView;
 
-    const-string v2, "it"
+    invoke-virtual {p1}, Landroid/widget/AutoCompleteTextView;->clearFocus()V
 
-    invoke-static {p1, v2}, Lkotlin/jvm/internal/Intrinsics;->checkNotNullExpressionValue(Ljava/lang/Object;Ljava/lang/String;)V
+    new-instance p1, Lorg/joda/time/DateTime;
 
-    invoke-virtual {p1}, Ljava/lang/Long;->longValue()J
+    invoke-direct {p1}, Lorg/joda/time/DateTime;-><init>()V
 
-    move-result-wide v2
+    const/4 v1, 0x1
 
-    invoke-direct {v1, v2, v3}, Lorg/joda/time/LocalDate;-><init>(J)V
+    iget-object v2, p1, Lorg/joda/time/base/BaseDateTime;->iChronology:Lorg/joda/time/Chronology;
 
-    invoke-virtual {v0}, Lde/rki/coronawarnapp/covidcertificate/validation/ui/validationstart/ValidationStartFragment;->getViewModel()Lde/rki/coronawarnapp/covidcertificate/validation/ui/validationstart/ValidationStartViewModel;
-
-    move-result-object p1
-
-    invoke-virtual {p1}, Lde/rki/coronawarnapp/covidcertificate/validation/ui/validationstart/ValidationStartViewModel;->getSelectedTime()Lorg/joda/time/LocalTime;
-
-    move-result-object p1
-
-    invoke-virtual {v0}, Landroidx/fragment/app/Fragment;->requireContext()Landroid/content/Context;
+    invoke-virtual {v2}, Lorg/joda/time/Chronology;->days()Lorg/joda/time/DurationField;
 
     move-result-object v2
 
-    invoke-static {v2}, Landroid/text/format/DateFormat;->is24HourFormat(Landroid/content/Context;)Z
+    iget-wide v3, p1, Lorg/joda/time/base/BaseDateTime;->iMillis:J
 
-    move-result v2
+    invoke-virtual {v2, v3, v4, v1}, Lorg/joda/time/DurationField;->subtract(JI)J
 
-    const/16 v3, 0xa
+    move-result-wide v1
 
-    const/16 v4, 0xc
+    invoke-virtual {p1, v1, v2}, Lorg/joda/time/DateTime;->withMillis(J)Lorg/joda/time/DateTime;
 
-    new-instance v5, Lcom/google/android/material/timepicker/TimeModel;
+    move-result-object p1
 
-    const/4 v6, 0x0
+    new-instance v1, Lcom/google/android/material/datepicker/CalendarConstraints$Builder;
 
-    invoke-direct {v5, v6, v6, v3, v2}, Lcom/google/android/material/timepicker/TimeModel;-><init>(IIII)V
+    invoke-direct {v1}, Lcom/google/android/material/datepicker/CalendarConstraints$Builder;-><init>()V
 
-    iput v6, v5, Lcom/google/android/material/timepicker/TimeModel;->minute:I
+    const/4 v2, 0x0
 
-    iput v6, v5, Lcom/google/android/material/timepicker/TimeModel;->period:I
+    iget-object v3, p1, Lorg/joda/time/base/BaseDateTime;->iChronology:Lorg/joda/time/Chronology;
 
-    iput v6, v5, Lcom/google/android/material/timepicker/TimeModel;->hour:I
+    invoke-virtual {v3}, Lorg/joda/time/Chronology;->secondOfMinute()Lorg/joda/time/DateTimeField;
 
-    invoke-virtual {p1}, Lorg/joda/time/LocalTime;->getHourOfDay()I
+    move-result-object v3
 
-    move-result v2
+    iget-wide v4, p1, Lorg/joda/time/base/BaseDateTime;->iMillis:J
 
-    if-lt v2, v4, :cond_0
+    invoke-virtual {v3, v4, v5, v2}, Lorg/joda/time/DateTimeField;->set(JI)J
 
-    const/4 v3, 0x1
+    move-result-wide v2
 
-    goto :goto_0
+    invoke-virtual {p1, v2, v3}, Lorg/joda/time/DateTime;->withMillis(J)Lorg/joda/time/DateTime;
 
-    :cond_0
-    move v3, v6
+    move-result-object p1
 
-    :goto_0
-    iput v3, v5, Lcom/google/android/material/timepicker/TimeModel;->period:I
+    iget-wide v2, p1, Lorg/joda/time/base/BaseDateTime;->iMillis:J
 
-    iput v2, v5, Lcom/google/android/material/timepicker/TimeModel;->hour:I
+    new-instance p1, Lcom/google/android/material/datepicker/DateValidatorPointForward;
 
-    invoke-virtual {p1}, Lorg/joda/time/LocalTime;->getMinuteOfHour()I
+    invoke-direct {p1, v2, v3}, Lcom/google/android/material/datepicker/DateValidatorPointForward;-><init>(J)V
 
-    move-result p1
+    iput-object p1, v1, Lcom/google/android/material/datepicker/CalendarConstraints$Builder;->validator:Lcom/google/android/material/datepicker/CalendarConstraints$DateValidator;
 
-    rem-int/lit8 p1, p1, 0x3c
+    invoke-virtual {v1}, Lcom/google/android/material/datepicker/CalendarConstraints$Builder;->build()Lcom/google/android/material/datepicker/CalendarConstraints;
 
-    iput p1, v5, Lcom/google/android/material/timepicker/TimeModel;->minute:I
+    move-result-object p1
 
-    new-instance p1, Lcom/google/android/material/timepicker/MaterialTimePicker;
+    invoke-virtual {v0}, Lde/rki/coronawarnapp/covidcertificate/validation/ui/validationstart/ValidationStartFragment;->getViewModel()Lde/rki/coronawarnapp/covidcertificate/validation/ui/validationstart/ValidationStartViewModel;
 
-    invoke-direct {p1}, Lcom/google/android/material/timepicker/MaterialTimePicker;-><init>()V
+    move-result-object v1
 
-    new-instance v2, Landroid/os/Bundle;
+    iget-object v1, v1, Lde/rki/coronawarnapp/covidcertificate/validation/ui/validationstart/ValidationStartViewModel;->uiState:Lkotlinx/coroutines/flow/MutableStateFlow;
 
-    invoke-direct {v2}, Landroid/os/Bundle;-><init>()V
+    invoke-interface {v1}, Lkotlinx/coroutines/flow/MutableStateFlow;->getValue()Ljava/lang/Object;
 
-    const-string v3, "TIME_PICKER_TIME_MODEL"
+    move-result-object v1
 
-    invoke-virtual {v2, v3, v5}, Landroid/os/Bundle;->putParcelable(Ljava/lang/String;Landroid/os/Parcelable;)V
+    check-cast v1, Lde/rki/coronawarnapp/covidcertificate/validation/ui/validationstart/ValidationStartViewModel$UIState;
 
-    const-string v3, "TIME_PICKER_INPUT_MODE"
+    iget-object v1, v1, Lde/rki/coronawarnapp/covidcertificate/validation/ui/validationstart/ValidationStartViewModel$UIState;->localDate:Lorg/joda/time/LocalDate;
 
-    invoke-virtual {v2, v3, v6}, Landroid/os/Bundle;->putInt(Ljava/lang/String;I)V
+    invoke-virtual {v0}, Lde/rki/coronawarnapp/covidcertificate/validation/ui/validationstart/ValidationStartFragment;->getViewModel()Lde/rki/coronawarnapp/covidcertificate/validation/ui/validationstart/ValidationStartViewModel;
 
-    const-string v3, "TIME_PICKER_TITLE_RES"
+    move-result-object v2
 
-    invoke-virtual {v2, v3, v6}, Landroid/os/Bundle;->putInt(Ljava/lang/String;I)V
+    invoke-virtual {v2}, Lde/rki/coronawarnapp/covidcertificate/validation/ui/validationstart/ValidationStartViewModel;->getSelectedTime()Lorg/joda/time/LocalTime;
 
-    const-string v3, "TIME_PICKER_OVERRIDE_THEME_RES_ID"
+    move-result-object v2
 
-    invoke-virtual {v2, v3, v6}, Landroid/os/Bundle;->putInt(Ljava/lang/String;I)V
+    invoke-virtual {v1, v2}, Lorg/joda/time/LocalDate;->toDateTime(Lorg/joda/time/LocalTime;)Lorg/joda/time/DateTime;
 
-    invoke-virtual {p1, v2}, Landroidx/fragment/app/Fragment;->setArguments(Landroid/os/Bundle;)V
+    move-result-object v1
 
-    new-instance v2, Lde/rki/coronawarnapp/ui/presencetracing/organizer/create/TraceLocationCreateFragment$$ExternalSyntheticLambda0;
+    invoke-static {}, Lcom/google/android/material/datepicker/MaterialDatePicker$Builder;->datePicker()Lcom/google/android/material/datepicker/MaterialDatePicker$Builder;
 
-    invoke-direct {v2, v0, v1, p1}, Lde/rki/coronawarnapp/ui/presencetracing/organizer/create/TraceLocationCreateFragment$$ExternalSyntheticLambda0;-><init>(Lde/rki/coronawarnapp/covidcertificate/validation/ui/validationstart/ValidationStartFragment;Lorg/joda/time/LocalDate;Lcom/google/android/material/timepicker/MaterialTimePicker;)V
+    move-result-object v2
 
-    iget-object v1, p1, Lcom/google/android/material/timepicker/MaterialTimePicker;->positiveButtonListeners:Ljava/util/Set;
+    iget-wide v3, v1, Lorg/joda/time/base/BaseDateTime;->iMillis:J
 
-    invoke-interface {v1, v2}, Ljava/util/Set;->add(Ljava/lang/Object;)Z
+    invoke-static {v3, v4}, Ljava/lang/Long;->valueOf(J)Ljava/lang/Long;
+
+    move-result-object v1
+
+    iput-object v1, v2, Lcom/google/android/material/datepicker/MaterialDatePicker$Builder;->selection:Ljava/lang/Object;
+
+    iput-object p1, v2, Lcom/google/android/material/datepicker/MaterialDatePicker$Builder;->calendarConstraints:Lcom/google/android/material/datepicker/CalendarConstraints;
+
+    invoke-virtual {v2}, Lcom/google/android/material/datepicker/MaterialDatePicker$Builder;->build()Lcom/google/android/material/datepicker/MaterialDatePicker;
+
+    move-result-object p1
+
+    new-instance v1, Lde/rki/coronawarnapp/covidcertificate/validation/ui/validationstart/ValidationStartFragment$$ExternalSyntheticLambda6;
+
+    invoke-direct {v1, v0}, Lde/rki/coronawarnapp/covidcertificate/validation/ui/validationstart/ValidationStartFragment$$ExternalSyntheticLambda6;-><init>(Lde/rki/coronawarnapp/covidcertificate/validation/ui/validationstart/ValidationStartFragment;)V
+
+    iget-object v2, p1, Lcom/google/android/material/datepicker/MaterialDatePicker;->onPositiveButtonClickListeners:Ljava/util/LinkedHashSet;
+
+    invoke-virtual {v2, v1}, Ljava/util/LinkedHashSet;->add(Ljava/lang/Object;)Z
 
     invoke-virtual {v0}, Landroidx/fragment/app/Fragment;->getChildFragmentManager()Landroidx/fragment/app/FragmentManager;
 
     move-result-object v0
 
-    const-string/jumbo v1, "time_picker"
+    const-string v1, "date_picker"
 
     invoke-virtual {p1, v0, v1}, Landroidx/fragment/app/DialogFragment;->show(Landroidx/fragment/app/FragmentManager;Ljava/lang/String;)V
 

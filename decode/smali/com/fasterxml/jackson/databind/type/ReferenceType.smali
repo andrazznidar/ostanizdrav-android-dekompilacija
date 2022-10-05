@@ -11,7 +11,7 @@
 
 # direct methods
 .method public constructor <init>(Ljava/lang/Class;Lcom/fasterxml/jackson/databind/type/TypeBindings;Lcom/fasterxml/jackson/databind/JavaType;[Lcom/fasterxml/jackson/databind/JavaType;Lcom/fasterxml/jackson/databind/JavaType;Lcom/fasterxml/jackson/databind/JavaType;Ljava/lang/Object;Ljava/lang/Object;Z)V
-    .locals 11
+    .locals 10
     .annotation system Ldalvik/annotation/Signature;
         value = {
             "(",
@@ -31,9 +31,9 @@
 
     move-object v9, p0
 
-    move-object/from16 v10, p5
+    invoke-static {p5}, Ljava/util/Objects;->hashCode(Ljava/lang/Object;)I
 
-    iget v5, v10, Lcom/fasterxml/jackson/databind/JavaType;->_hash:I
+    move-result v5
 
     move-object v0, p0
 
@@ -53,7 +53,9 @@
 
     invoke-direct/range {v0 .. v8}, Lcom/fasterxml/jackson/databind/type/SimpleType;-><init>(Ljava/lang/Class;Lcom/fasterxml/jackson/databind/type/TypeBindings;Lcom/fasterxml/jackson/databind/JavaType;[Lcom/fasterxml/jackson/databind/JavaType;ILjava/lang/Object;Ljava/lang/Object;Z)V
 
-    iput-object v10, v9, Lcom/fasterxml/jackson/databind/type/ReferenceType;->_referencedType:Lcom/fasterxml/jackson/databind/JavaType;
+    move-object v0, p5
+
+    iput-object v0, v9, Lcom/fasterxml/jackson/databind/type/ReferenceType;->_referencedType:Lcom/fasterxml/jackson/databind/JavaType;
 
     if-nez p6, :cond_0
 
@@ -87,13 +89,25 @@
 
     invoke-virtual {v0, v1}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
 
+    iget-object v1, p0, Lcom/fasterxml/jackson/databind/type/ReferenceType;->_referencedType:Lcom/fasterxml/jackson/databind/JavaType;
+
+    if-eqz v1, :cond_0
+
+    const/4 v1, 0x1
+
+    invoke-virtual {p0, v1}, Lcom/fasterxml/jackson/databind/type/TypeBase;->_hasNTypeParameters(I)Z
+
+    move-result v1
+
+    if-eqz v1, :cond_0
+
     const/16 v1, 0x3c
 
     invoke-virtual {v0, v1}, Ljava/lang/StringBuilder;->append(C)Ljava/lang/StringBuilder;
 
     iget-object v1, p0, Lcom/fasterxml/jackson/databind/type/ReferenceType;->_referencedType:Lcom/fasterxml/jackson/databind/JavaType;
 
-    invoke-virtual {v1}, Lcom/fasterxml/jackson/core/type/ResolvedType;->toCanonical()Ljava/lang/String;
+    invoke-virtual {v1}, Lorg/joda/time/Chronology;->toCanonical()Ljava/lang/String;
 
     move-result-object v1
 
@@ -103,6 +117,7 @@
 
     invoke-virtual {v0, v1}, Ljava/lang/StringBuilder;->append(C)Ljava/lang/StringBuilder;
 
+    :cond_0
     invoke-virtual {v0}, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
 
     move-result-object v0
@@ -206,7 +221,7 @@
     return-object p1
 .end method
 
-.method public getReferencedType()Lcom/fasterxml/jackson/core/type/ResolvedType;
+.method public getReferencedType()Lcom/fasterxml/jackson/databind/JavaType;
     .locals 1
 
     iget-object v0, p0, Lcom/fasterxml/jackson/databind/type/ReferenceType;->_referencedType:Lcom/fasterxml/jackson/databind/JavaType;
@@ -214,7 +229,7 @@
     return-object v0
 .end method
 
-.method public getReferencedType()Lcom/fasterxml/jackson/databind/JavaType;
+.method public getReferencedType()Lorg/joda/time/Chronology;
     .locals 1
 
     iget-object v0, p0, Lcom/fasterxml/jackson/databind/type/ReferenceType;->_referencedType:Lcom/fasterxml/jackson/databind/JavaType;

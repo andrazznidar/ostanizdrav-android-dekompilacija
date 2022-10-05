@@ -247,7 +247,7 @@
 
     check-cast p2, Landroidx/navigation/NavDeepLinkBuilder;
 
-    const v1, 0x7f100002
+    const v1, 0x7f100003
 
     invoke-virtual {p2, v1}, Landroidx/navigation/NavDeepLinkBuilder;->setGraph(I)Landroidx/navigation/NavDeepLinkBuilder;
 
@@ -261,9 +261,13 @@
 
     move-result-object v2
 
-    const/4 v5, 0x2
+    invoke-interface {p1}, Lde/rki/coronawarnapp/coronatest/type/CoronaTest;->getIdentifier()Ljava/lang/String;
 
-    invoke-direct {v1, v2, v3, v5}, Lde/rki/coronawarnapp/ui/submission/testresult/pending/SubmissionTestResultPendingFragmentArgs;-><init>(Lde/rki/coronawarnapp/coronatest/type/CoronaTest$Type;ZI)V
+    move-result-object v5
+
+    const/4 v6, 0x4
+
+    invoke-direct {v1, v2, v5, v3, v6}, Lde/rki/coronawarnapp/ui/submission/testresult/pending/SubmissionTestResultPendingFragmentArgs;-><init>(Lde/rki/coronawarnapp/coronatest/type/CoronaTest$Type;Ljava/lang/String;ZI)V
 
     const-class v2, Lde/rki/coronawarnapp/coronatest/type/CoronaTest$Type;
 
@@ -303,6 +307,12 @@
     invoke-virtual {v5, v7, v2}, Landroid/os/Bundle;->putSerializable(Ljava/lang/String;Ljava/io/Serializable;)V
 
     :goto_2
+    iget-object v2, v1, Lde/rki/coronawarnapp/ui/submission/testresult/pending/SubmissionTestResultPendingFragmentArgs;->testIdentifier:Ljava/lang/String;
+
+    const-string/jumbo v6, "testIdentifier"
+
+    invoke-virtual {v5, v6, v2}, Landroid/os/Bundle;->putString(Ljava/lang/String;Ljava/lang/String;)V
+
     iget-boolean v1, v1, Lde/rki/coronawarnapp/ui/submission/testresult/pending/SubmissionTestResultPendingFragmentArgs;->forceTestResultUpdate:Z
 
     const-string v2, "forceTestResultUpdate"
@@ -317,7 +327,7 @@
 
     invoke-virtual {v1, v2, v5}, Landroid/content/Intent;->putExtra(Ljava/lang/String;Landroid/os/Bundle;)Landroid/content/Intent;
 
-    const v1, 0x7f0a06ba
+    const v1, 0x7f0a070d
 
     invoke-virtual {p2, v1}, Landroidx/navigation/NavDeepLinkBuilder;->setDestination(I)Landroidx/navigation/NavDeepLinkBuilder;
 
@@ -337,7 +347,7 @@
 
     iget-object v2, v0, Lde/rki/coronawarnapp/coronatest/type/common/TestResultAvailableNotificationService;->context:Landroid/content/Context;
 
-    const v5, 0x7f1302cb
+    const v5, 0x7f1302de
 
     invoke-virtual {v2, v5}, Landroid/content/Context;->getString(I)Ljava/lang/String;
 
@@ -347,7 +357,7 @@
 
     iget-object v2, v0, Lde/rki/coronawarnapp/coronatest/type/common/TestResultAvailableNotificationService;->context:Landroid/content/Context;
 
-    const v5, 0x7f1302c6
+    const v5, 0x7f1302db
 
     invoke-virtual {v2, v5}, Landroid/content/Context;->getString(I)Ljava/lang/String;
 
@@ -357,7 +367,7 @@
 
     invoke-static {v2, v5}, Lkotlin/jvm/internal/Intrinsics;->checkNotNullExpressionValue(Ljava/lang/Object;Ljava/lang/String;)V
 
-    invoke-static {v1, v2}, Lcom/google/android/gms/internal/nearby/zznn;->setContentTextExpandable(Landroidx/core/app/NotificationCompat$Builder;Ljava/lang/String;)Landroidx/core/app/NotificationCompat$Builder;
+    invoke-static {v1, v2}, Lorg/ejml/ops/DConvertMatrixStruct;->setContentTextExpandable(Landroidx/core/app/NotificationCompat$Builder;Ljava/lang/String;)Landroidx/core/app/NotificationCompat$Builder;
 
     iput-object p2, v1, Landroidx/core/app/NotificationCompat$Builder;->mContentIntent:Landroid/app/PendingIntent;
 

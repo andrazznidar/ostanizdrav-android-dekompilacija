@@ -1,4 +1,4 @@
-.class public Lkotlin/reflect/jvm/internal/impl/protobuf/SmallSortedMap;
+.class Lkotlin/reflect/jvm/internal/impl/protobuf/SmallSortedMap;
 .super Ljava/util/AbstractMap;
 .source "SmallSortedMap.java"
 
@@ -26,12 +26,8 @@
 .end annotation
 
 
-# static fields
-.field public static final synthetic $r8$clinit:I
-
-
 # instance fields
-.field public entryList:Ljava/util/List;
+.field private entryList:Ljava/util/List;
     .annotation system Ldalvik/annotation/Signature;
         value = {
             "Ljava/util/List<",
@@ -41,9 +37,9 @@
     .end annotation
 .end field
 
-.field public isImmutable:Z
+.field private isImmutable:Z
 
-.field public volatile lazyEntrySet:Lkotlin/reflect/jvm/internal/impl/protobuf/SmallSortedMap$EntrySet;
+.field private volatile lazyEntrySet:Lkotlin/reflect/jvm/internal/impl/protobuf/SmallSortedMap$EntrySet;
     .annotation system Ldalvik/annotation/Signature;
         value = {
             "Lkotlin/reflect/jvm/internal/impl/protobuf/SmallSortedMap<",
@@ -52,9 +48,9 @@
     .end annotation
 .end field
 
-.field public final maxArraySize:I
+.field private final maxArraySize:I
 
-.field public overflowEntries:Ljava/util/Map;
+.field private overflowEntries:Ljava/util/Map;
     .annotation system Ldalvik/annotation/Signature;
         value = {
             "Ljava/util/Map<",
@@ -65,7 +61,7 @@
 
 
 # direct methods
-.method public constructor <init>(ILkotlin/reflect/jvm/internal/impl/protobuf/SmallSortedMap$1;)V
+.method private constructor <init>(I)V
     .locals 0
 
     invoke-direct {p0}, Ljava/util/AbstractMap;-><init>()V
@@ -87,9 +83,49 @@
     return-void
 .end method
 
+.method public synthetic constructor <init>(ILkotlin/reflect/jvm/internal/impl/protobuf/SmallSortedMap$1;)V
+    .locals 0
 
-# virtual methods
-.method public final binarySearchInArray(Ljava/lang/Comparable;)I
+    invoke-direct {p0, p1}, Lkotlin/reflect/jvm/internal/impl/protobuf/SmallSortedMap;-><init>(I)V
+
+    return-void
+.end method
+
+.method public static synthetic access$200(Lkotlin/reflect/jvm/internal/impl/protobuf/SmallSortedMap;)V
+    .locals 0
+
+    invoke-direct {p0}, Lkotlin/reflect/jvm/internal/impl/protobuf/SmallSortedMap;->checkMutable()V
+
+    return-void
+.end method
+
+.method public static synthetic access$400(Lkotlin/reflect/jvm/internal/impl/protobuf/SmallSortedMap;)Ljava/util/List;
+    .locals 0
+
+    iget-object p0, p0, Lkotlin/reflect/jvm/internal/impl/protobuf/SmallSortedMap;->entryList:Ljava/util/List;
+
+    return-object p0
+.end method
+
+.method public static synthetic access$500(Lkotlin/reflect/jvm/internal/impl/protobuf/SmallSortedMap;I)Ljava/lang/Object;
+    .locals 0
+
+    invoke-direct {p0, p1}, Lkotlin/reflect/jvm/internal/impl/protobuf/SmallSortedMap;->removeArrayEntryAt(I)Ljava/lang/Object;
+
+    move-result-object p0
+
+    return-object p0
+.end method
+
+.method public static synthetic access$600(Lkotlin/reflect/jvm/internal/impl/protobuf/SmallSortedMap;)Ljava/util/Map;
+    .locals 0
+
+    iget-object p0, p0, Lkotlin/reflect/jvm/internal/impl/protobuf/SmallSortedMap;->overflowEntries:Ljava/util/Map;
+
+    return-object p0
+.end method
+
+.method private binarySearchInArray(Ljava/lang/Comparable;)I
     .locals 4
     .annotation system Ldalvik/annotation/Signature;
         value = {
@@ -115,7 +151,9 @@
 
     check-cast v1, Lkotlin/reflect/jvm/internal/impl/protobuf/SmallSortedMap$Entry;
 
-    iget-object v1, v1, Lkotlin/reflect/jvm/internal/impl/protobuf/SmallSortedMap$Entry;->key:Ljava/lang/Comparable;
+    invoke-virtual {v1}, Lkotlin/reflect/jvm/internal/impl/protobuf/SmallSortedMap$Entry;->getKey()Ljava/lang/Comparable;
+
+    move-result-object v1
 
     invoke-interface {p1, v1}, Ljava/lang/Comparable;->compareTo(Ljava/lang/Object;)I
 
@@ -152,7 +190,9 @@
 
     check-cast v3, Lkotlin/reflect/jvm/internal/impl/protobuf/SmallSortedMap$Entry;
 
-    iget-object v3, v3, Lkotlin/reflect/jvm/internal/impl/protobuf/SmallSortedMap$Entry;->key:Ljava/lang/Comparable;
+    invoke-virtual {v3}, Lkotlin/reflect/jvm/internal/impl/protobuf/SmallSortedMap$Entry;->getKey()Ljava/lang/Comparable;
+
+    move-result-object v3
 
     invoke-interface {p1, v3}, Ljava/lang/Comparable;->compareTo(Ljava/lang/Object;)I
 
@@ -186,7 +226,7 @@
     return p1
 .end method
 
-.method public final checkMutable()V
+.method private checkMutable()V
     .locals 1
 
     iget-boolean v0, p0, Lkotlin/reflect/jvm/internal/impl/protobuf/SmallSortedMap;->isImmutable:Z
@@ -203,10 +243,166 @@
     throw v0
 .end method
 
+.method private ensureEntryArrayMutable()V
+    .locals 2
+
+    invoke-direct {p0}, Lkotlin/reflect/jvm/internal/impl/protobuf/SmallSortedMap;->checkMutable()V
+
+    iget-object v0, p0, Lkotlin/reflect/jvm/internal/impl/protobuf/SmallSortedMap;->entryList:Ljava/util/List;
+
+    invoke-interface {v0}, Ljava/util/List;->isEmpty()Z
+
+    move-result v0
+
+    if-eqz v0, :cond_0
+
+    iget-object v0, p0, Lkotlin/reflect/jvm/internal/impl/protobuf/SmallSortedMap;->entryList:Ljava/util/List;
+
+    instance-of v0, v0, Ljava/util/ArrayList;
+
+    if-nez v0, :cond_0
+
+    new-instance v0, Ljava/util/ArrayList;
+
+    iget v1, p0, Lkotlin/reflect/jvm/internal/impl/protobuf/SmallSortedMap;->maxArraySize:I
+
+    invoke-direct {v0, v1}, Ljava/util/ArrayList;-><init>(I)V
+
+    iput-object v0, p0, Lkotlin/reflect/jvm/internal/impl/protobuf/SmallSortedMap;->entryList:Ljava/util/List;
+
+    :cond_0
+    return-void
+.end method
+
+.method private getOverflowEntriesMutable()Ljava/util/SortedMap;
+    .locals 1
+    .annotation system Ldalvik/annotation/Signature;
+        value = {
+            "()",
+            "Ljava/util/SortedMap<",
+            "TK;TV;>;"
+        }
+    .end annotation
+
+    invoke-direct {p0}, Lkotlin/reflect/jvm/internal/impl/protobuf/SmallSortedMap;->checkMutable()V
+
+    iget-object v0, p0, Lkotlin/reflect/jvm/internal/impl/protobuf/SmallSortedMap;->overflowEntries:Ljava/util/Map;
+
+    invoke-interface {v0}, Ljava/util/Map;->isEmpty()Z
+
+    move-result v0
+
+    if-eqz v0, :cond_0
+
+    iget-object v0, p0, Lkotlin/reflect/jvm/internal/impl/protobuf/SmallSortedMap;->overflowEntries:Ljava/util/Map;
+
+    instance-of v0, v0, Ljava/util/TreeMap;
+
+    if-nez v0, :cond_0
+
+    new-instance v0, Ljava/util/TreeMap;
+
+    invoke-direct {v0}, Ljava/util/TreeMap;-><init>()V
+
+    iput-object v0, p0, Lkotlin/reflect/jvm/internal/impl/protobuf/SmallSortedMap;->overflowEntries:Ljava/util/Map;
+
+    :cond_0
+    iget-object v0, p0, Lkotlin/reflect/jvm/internal/impl/protobuf/SmallSortedMap;->overflowEntries:Ljava/util/Map;
+
+    check-cast v0, Ljava/util/SortedMap;
+
+    return-object v0
+.end method
+
+.method public static newFieldMap(I)Lkotlin/reflect/jvm/internal/impl/protobuf/SmallSortedMap;
+    .locals 1
+    .annotation system Ldalvik/annotation/Signature;
+        value = {
+            "<FieldDescriptorType::",
+            "Lkotlin/reflect/jvm/internal/impl/protobuf/FieldSet$FieldDescriptorLite<",
+            "TFieldDescriptorType;>;>(I)",
+            "Lkotlin/reflect/jvm/internal/impl/protobuf/SmallSortedMap<",
+            "TFieldDescriptorType;",
+            "Ljava/lang/Object;",
+            ">;"
+        }
+    .end annotation
+
+    new-instance v0, Lkotlin/reflect/jvm/internal/impl/protobuf/SmallSortedMap$1;
+
+    invoke-direct {v0, p0}, Lkotlin/reflect/jvm/internal/impl/protobuf/SmallSortedMap$1;-><init>(I)V
+
+    return-object v0
+.end method
+
+.method private removeArrayEntryAt(I)Ljava/lang/Object;
+    .locals 4
+    .annotation system Ldalvik/annotation/Signature;
+        value = {
+            "(I)TV;"
+        }
+    .end annotation
+
+    invoke-direct {p0}, Lkotlin/reflect/jvm/internal/impl/protobuf/SmallSortedMap;->checkMutable()V
+
+    iget-object v0, p0, Lkotlin/reflect/jvm/internal/impl/protobuf/SmallSortedMap;->entryList:Ljava/util/List;
+
+    invoke-interface {v0, p1}, Ljava/util/List;->remove(I)Ljava/lang/Object;
+
+    move-result-object p1
+
+    check-cast p1, Lkotlin/reflect/jvm/internal/impl/protobuf/SmallSortedMap$Entry;
+
+    invoke-virtual {p1}, Lkotlin/reflect/jvm/internal/impl/protobuf/SmallSortedMap$Entry;->getValue()Ljava/lang/Object;
+
+    move-result-object p1
+
+    iget-object v0, p0, Lkotlin/reflect/jvm/internal/impl/protobuf/SmallSortedMap;->overflowEntries:Ljava/util/Map;
+
+    invoke-interface {v0}, Ljava/util/Map;->isEmpty()Z
+
+    move-result v0
+
+    if-nez v0, :cond_0
+
+    invoke-direct {p0}, Lkotlin/reflect/jvm/internal/impl/protobuf/SmallSortedMap;->getOverflowEntriesMutable()Ljava/util/SortedMap;
+
+    move-result-object v0
+
+    invoke-interface {v0}, Ljava/util/SortedMap;->entrySet()Ljava/util/Set;
+
+    move-result-object v0
+
+    invoke-interface {v0}, Ljava/util/Set;->iterator()Ljava/util/Iterator;
+
+    move-result-object v0
+
+    iget-object v1, p0, Lkotlin/reflect/jvm/internal/impl/protobuf/SmallSortedMap;->entryList:Ljava/util/List;
+
+    new-instance v2, Lkotlin/reflect/jvm/internal/impl/protobuf/SmallSortedMap$Entry;
+
+    invoke-interface {v0}, Ljava/util/Iterator;->next()Ljava/lang/Object;
+
+    move-result-object v3
+
+    check-cast v3, Ljava/util/Map$Entry;
+
+    invoke-direct {v2, p0, v3}, Lkotlin/reflect/jvm/internal/impl/protobuf/SmallSortedMap$Entry;-><init>(Lkotlin/reflect/jvm/internal/impl/protobuf/SmallSortedMap;Ljava/util/Map$Entry;)V
+
+    invoke-interface {v1, v2}, Ljava/util/List;->add(Ljava/lang/Object;)Z
+
+    invoke-interface {v0}, Ljava/util/Iterator;->remove()V
+
+    :cond_0
+    return-object p1
+.end method
+
+
+# virtual methods
 .method public clear()V
     .locals 1
 
-    invoke-virtual {p0}, Lkotlin/reflect/jvm/internal/impl/protobuf/SmallSortedMap;->checkMutable()V
+    invoke-direct {p0}, Lkotlin/reflect/jvm/internal/impl/protobuf/SmallSortedMap;->checkMutable()V
 
     iget-object v0, p0, Lkotlin/reflect/jvm/internal/impl/protobuf/SmallSortedMap;->entryList:Ljava/util/List;
 
@@ -242,7 +438,7 @@
 
     check-cast p1, Ljava/lang/Comparable;
 
-    invoke-virtual {p0, p1}, Lkotlin/reflect/jvm/internal/impl/protobuf/SmallSortedMap;->binarySearchInArray(Ljava/lang/Comparable;)I
+    invoke-direct {p0, p1}, Lkotlin/reflect/jvm/internal/impl/protobuf/SmallSortedMap;->binarySearchInArray(Ljava/lang/Comparable;)I
 
     move-result v0
 
@@ -312,7 +508,7 @@
 
     check-cast p1, Ljava/lang/Comparable;
 
-    invoke-virtual {p0, p1}, Lkotlin/reflect/jvm/internal/impl/protobuf/SmallSortedMap;->binarySearchInArray(Ljava/lang/Comparable;)I
+    invoke-direct {p0, p1}, Lkotlin/reflect/jvm/internal/impl/protobuf/SmallSortedMap;->binarySearchInArray(Ljava/lang/Comparable;)I
 
     move-result v0
 
@@ -326,7 +522,9 @@
 
     check-cast p1, Lkotlin/reflect/jvm/internal/impl/protobuf/SmallSortedMap$Entry;
 
-    iget-object p1, p1, Lkotlin/reflect/jvm/internal/impl/protobuf/SmallSortedMap$Entry;->value:Ljava/lang/Object;
+    invoke-virtual {p1}, Lkotlin/reflect/jvm/internal/impl/protobuf/SmallSortedMap$Entry;->getValue()Ljava/lang/Object;
+
+    move-result-object p1
 
     return-object p1
 
@@ -392,7 +590,9 @@
 
     if-eqz v0, :cond_0
 
-    sget-object v0, Lkotlin/reflect/jvm/internal/impl/protobuf/SmallSortedMap$EmptySet;->ITERABLE:Ljava/lang/Iterable;
+    invoke-static {}, Lkotlin/reflect/jvm/internal/impl/protobuf/SmallSortedMap$EmptySet;->iterable()Ljava/lang/Iterable;
+
+    move-result-object v0
 
     goto :goto_0
 
@@ -407,17 +607,20 @@
     return-object v0
 .end method
 
-.method public final getOverflowEntriesMutable()Ljava/util/SortedMap;
+.method public isImmutable()Z
     .locals 1
-    .annotation system Ldalvik/annotation/Signature;
-        value = {
-            "()",
-            "Ljava/util/SortedMap<",
-            "TK;TV;>;"
-        }
-    .end annotation
 
-    invoke-virtual {p0}, Lkotlin/reflect/jvm/internal/impl/protobuf/SmallSortedMap;->checkMutable()V
+    iget-boolean v0, p0, Lkotlin/reflect/jvm/internal/impl/protobuf/SmallSortedMap;->isImmutable:Z
+
+    return v0
+.end method
+
+.method public makeImmutable()V
+    .locals 1
+
+    iget-boolean v0, p0, Lkotlin/reflect/jvm/internal/impl/protobuf/SmallSortedMap;->isImmutable:Z
+
+    if-nez v0, :cond_1
 
     iget-object v0, p0, Lkotlin/reflect/jvm/internal/impl/protobuf/SmallSortedMap;->overflowEntries:Ljava/util/Map;
 
@@ -427,24 +630,28 @@
 
     if-eqz v0, :cond_0
 
-    iget-object v0, p0, Lkotlin/reflect/jvm/internal/impl/protobuf/SmallSortedMap;->overflowEntries:Ljava/util/Map;
+    invoke-static {}, Ljava/util/Collections;->emptyMap()Ljava/util/Map;
 
-    instance-of v0, v0, Ljava/util/TreeMap;
+    move-result-object v0
 
-    if-nez v0, :cond_0
-
-    new-instance v0, Ljava/util/TreeMap;
-
-    invoke-direct {v0}, Ljava/util/TreeMap;-><init>()V
-
-    iput-object v0, p0, Lkotlin/reflect/jvm/internal/impl/protobuf/SmallSortedMap;->overflowEntries:Ljava/util/Map;
+    goto :goto_0
 
     :cond_0
     iget-object v0, p0, Lkotlin/reflect/jvm/internal/impl/protobuf/SmallSortedMap;->overflowEntries:Ljava/util/Map;
 
-    check-cast v0, Ljava/util/SortedMap;
+    invoke-static {v0}, Ljava/util/Collections;->unmodifiableMap(Ljava/util/Map;)Ljava/util/Map;
 
-    return-object v0
+    move-result-object v0
+
+    :goto_0
+    iput-object v0, p0, Lkotlin/reflect/jvm/internal/impl/protobuf/SmallSortedMap;->overflowEntries:Ljava/util/Map;
+
+    const/4 v0, 0x1
+
+    iput-boolean v0, p0, Lkotlin/reflect/jvm/internal/impl/protobuf/SmallSortedMap;->isImmutable:Z
+
+    :cond_1
+    return-void
 .end method
 
 .method public put(Ljava/lang/Comparable;Ljava/lang/Object;)Ljava/lang/Object;
@@ -455,9 +662,9 @@
         }
     .end annotation
 
-    invoke-virtual {p0}, Lkotlin/reflect/jvm/internal/impl/protobuf/SmallSortedMap;->checkMutable()V
+    invoke-direct {p0}, Lkotlin/reflect/jvm/internal/impl/protobuf/SmallSortedMap;->checkMutable()V
 
-    invoke-virtual {p0, p1}, Lkotlin/reflect/jvm/internal/impl/protobuf/SmallSortedMap;->binarySearchInArray(Ljava/lang/Comparable;)I
+    invoke-direct {p0, p1}, Lkotlin/reflect/jvm/internal/impl/protobuf/SmallSortedMap;->binarySearchInArray(Ljava/lang/Comparable;)I
 
     move-result v0
 
@@ -471,51 +678,24 @@
 
     check-cast p1, Lkotlin/reflect/jvm/internal/impl/protobuf/SmallSortedMap$Entry;
 
-    iget-object v0, p1, Lkotlin/reflect/jvm/internal/impl/protobuf/SmallSortedMap$Entry;->this$0:Lkotlin/reflect/jvm/internal/impl/protobuf/SmallSortedMap;
+    invoke-virtual {p1, p2}, Lkotlin/reflect/jvm/internal/impl/protobuf/SmallSortedMap$Entry;->setValue(Ljava/lang/Object;)Ljava/lang/Object;
 
-    invoke-virtual {v0}, Lkotlin/reflect/jvm/internal/impl/protobuf/SmallSortedMap;->checkMutable()V
+    move-result-object p1
 
-    iget-object v0, p1, Lkotlin/reflect/jvm/internal/impl/protobuf/SmallSortedMap$Entry;->value:Ljava/lang/Object;
-
-    iput-object p2, p1, Lkotlin/reflect/jvm/internal/impl/protobuf/SmallSortedMap$Entry;->value:Ljava/lang/Object;
-
-    return-object v0
+    return-object p1
 
     :cond_0
-    invoke-virtual {p0}, Lkotlin/reflect/jvm/internal/impl/protobuf/SmallSortedMap;->checkMutable()V
+    invoke-direct {p0}, Lkotlin/reflect/jvm/internal/impl/protobuf/SmallSortedMap;->ensureEntryArrayMutable()V
 
-    iget-object v1, p0, Lkotlin/reflect/jvm/internal/impl/protobuf/SmallSortedMap;->entryList:Ljava/util/List;
-
-    invoke-interface {v1}, Ljava/util/List;->isEmpty()Z
-
-    move-result v1
-
-    if-eqz v1, :cond_1
-
-    iget-object v1, p0, Lkotlin/reflect/jvm/internal/impl/protobuf/SmallSortedMap;->entryList:Ljava/util/List;
-
-    instance-of v1, v1, Ljava/util/ArrayList;
-
-    if-nez v1, :cond_1
-
-    new-instance v1, Ljava/util/ArrayList;
-
-    iget v2, p0, Lkotlin/reflect/jvm/internal/impl/protobuf/SmallSortedMap;->maxArraySize:I
-
-    invoke-direct {v1, v2}, Ljava/util/ArrayList;-><init>(I)V
-
-    iput-object v1, p0, Lkotlin/reflect/jvm/internal/impl/protobuf/SmallSortedMap;->entryList:Ljava/util/List;
-
-    :cond_1
     add-int/lit8 v0, v0, 0x1
 
     neg-int v0, v0
 
     iget v1, p0, Lkotlin/reflect/jvm/internal/impl/protobuf/SmallSortedMap;->maxArraySize:I
 
-    if-lt v0, v1, :cond_2
+    if-lt v0, v1, :cond_1
 
-    invoke-virtual {p0}, Lkotlin/reflect/jvm/internal/impl/protobuf/SmallSortedMap;->getOverflowEntriesMutable()Ljava/util/SortedMap;
+    invoke-direct {p0}, Lkotlin/reflect/jvm/internal/impl/protobuf/SmallSortedMap;->getOverflowEntriesMutable()Ljava/util/SortedMap;
 
     move-result-object v0
 
@@ -525,7 +705,7 @@
 
     return-object p1
 
-    :cond_2
+    :cond_1
     iget-object v1, p0, Lkotlin/reflect/jvm/internal/impl/protobuf/SmallSortedMap;->entryList:Ljava/util/List;
 
     invoke-interface {v1}, Ljava/util/List;->size()I
@@ -534,7 +714,7 @@
 
     iget v2, p0, Lkotlin/reflect/jvm/internal/impl/protobuf/SmallSortedMap;->maxArraySize:I
 
-    if-ne v1, v2, :cond_3
+    if-ne v1, v2, :cond_2
 
     iget-object v1, p0, Lkotlin/reflect/jvm/internal/impl/protobuf/SmallSortedMap;->entryList:Ljava/util/List;
 
@@ -546,17 +726,21 @@
 
     check-cast v1, Lkotlin/reflect/jvm/internal/impl/protobuf/SmallSortedMap$Entry;
 
-    invoke-virtual {p0}, Lkotlin/reflect/jvm/internal/impl/protobuf/SmallSortedMap;->getOverflowEntriesMutable()Ljava/util/SortedMap;
+    invoke-direct {p0}, Lkotlin/reflect/jvm/internal/impl/protobuf/SmallSortedMap;->getOverflowEntriesMutable()Ljava/util/SortedMap;
 
     move-result-object v2
 
-    iget-object v3, v1, Lkotlin/reflect/jvm/internal/impl/protobuf/SmallSortedMap$Entry;->key:Ljava/lang/Comparable;
+    invoke-virtual {v1}, Lkotlin/reflect/jvm/internal/impl/protobuf/SmallSortedMap$Entry;->getKey()Ljava/lang/Comparable;
 
-    iget-object v1, v1, Lkotlin/reflect/jvm/internal/impl/protobuf/SmallSortedMap$Entry;->value:Ljava/lang/Object;
+    move-result-object v3
+
+    invoke-virtual {v1}, Lkotlin/reflect/jvm/internal/impl/protobuf/SmallSortedMap$Entry;->getValue()Ljava/lang/Object;
+
+    move-result-object v1
 
     invoke-interface {v2, v3, v1}, Ljava/util/SortedMap;->put(Ljava/lang/Object;Ljava/lang/Object;)Ljava/lang/Object;
 
-    :cond_3
+    :cond_2
     iget-object v1, p0, Lkotlin/reflect/jvm/internal/impl/protobuf/SmallSortedMap;->entryList:Ljava/util/List;
 
     new-instance v2, Lkotlin/reflect/jvm/internal/impl/protobuf/SmallSortedMap$Entry;
@@ -566,6 +750,18 @@
     invoke-interface {v1, v0, v2}, Ljava/util/List;->add(ILjava/lang/Object;)V
 
     const/4 p1, 0x0
+
+    return-object p1
+.end method
+
+.method public bridge synthetic put(Ljava/lang/Object;Ljava/lang/Object;)Ljava/lang/Object;
+    .locals 0
+
+    check-cast p1, Ljava/lang/Comparable;
+
+    invoke-virtual {p0, p1, p2}, Lkotlin/reflect/jvm/internal/impl/protobuf/SmallSortedMap;->put(Ljava/lang/Comparable;Ljava/lang/Object;)Ljava/lang/Object;
+
+    move-result-object p1
 
     return-object p1
 .end method
@@ -580,17 +776,17 @@
         }
     .end annotation
 
-    invoke-virtual {p0}, Lkotlin/reflect/jvm/internal/impl/protobuf/SmallSortedMap;->checkMutable()V
+    invoke-direct {p0}, Lkotlin/reflect/jvm/internal/impl/protobuf/SmallSortedMap;->checkMutable()V
 
     check-cast p1, Ljava/lang/Comparable;
 
-    invoke-virtual {p0, p1}, Lkotlin/reflect/jvm/internal/impl/protobuf/SmallSortedMap;->binarySearchInArray(Ljava/lang/Comparable;)I
+    invoke-direct {p0, p1}, Lkotlin/reflect/jvm/internal/impl/protobuf/SmallSortedMap;->binarySearchInArray(Ljava/lang/Comparable;)I
 
     move-result v0
 
     if-ltz v0, :cond_0
 
-    invoke-virtual {p0, v0}, Lkotlin/reflect/jvm/internal/impl/protobuf/SmallSortedMap;->removeArrayEntryAt(I)Ljava/lang/Object;
+    invoke-direct {p0, v0}, Lkotlin/reflect/jvm/internal/impl/protobuf/SmallSortedMap;->removeArrayEntryAt(I)Ljava/lang/Object;
 
     move-result-object p1
 
@@ -616,66 +812,6 @@
 
     move-result-object p1
 
-    return-object p1
-.end method
-
-.method public final removeArrayEntryAt(I)Ljava/lang/Object;
-    .locals 4
-    .annotation system Ldalvik/annotation/Signature;
-        value = {
-            "(I)TV;"
-        }
-    .end annotation
-
-    invoke-virtual {p0}, Lkotlin/reflect/jvm/internal/impl/protobuf/SmallSortedMap;->checkMutable()V
-
-    iget-object v0, p0, Lkotlin/reflect/jvm/internal/impl/protobuf/SmallSortedMap;->entryList:Ljava/util/List;
-
-    invoke-interface {v0, p1}, Ljava/util/List;->remove(I)Ljava/lang/Object;
-
-    move-result-object p1
-
-    check-cast p1, Lkotlin/reflect/jvm/internal/impl/protobuf/SmallSortedMap$Entry;
-
-    iget-object p1, p1, Lkotlin/reflect/jvm/internal/impl/protobuf/SmallSortedMap$Entry;->value:Ljava/lang/Object;
-
-    iget-object v0, p0, Lkotlin/reflect/jvm/internal/impl/protobuf/SmallSortedMap;->overflowEntries:Ljava/util/Map;
-
-    invoke-interface {v0}, Ljava/util/Map;->isEmpty()Z
-
-    move-result v0
-
-    if-nez v0, :cond_0
-
-    invoke-virtual {p0}, Lkotlin/reflect/jvm/internal/impl/protobuf/SmallSortedMap;->getOverflowEntriesMutable()Ljava/util/SortedMap;
-
-    move-result-object v0
-
-    invoke-interface {v0}, Ljava/util/SortedMap;->entrySet()Ljava/util/Set;
-
-    move-result-object v0
-
-    invoke-interface {v0}, Ljava/util/Set;->iterator()Ljava/util/Iterator;
-
-    move-result-object v0
-
-    iget-object v1, p0, Lkotlin/reflect/jvm/internal/impl/protobuf/SmallSortedMap;->entryList:Ljava/util/List;
-
-    new-instance v2, Lkotlin/reflect/jvm/internal/impl/protobuf/SmallSortedMap$Entry;
-
-    invoke-interface {v0}, Ljava/util/Iterator;->next()Ljava/lang/Object;
-
-    move-result-object v3
-
-    check-cast v3, Ljava/util/Map$Entry;
-
-    invoke-direct {v2, p0, v3}, Lkotlin/reflect/jvm/internal/impl/protobuf/SmallSortedMap$Entry;-><init>(Lkotlin/reflect/jvm/internal/impl/protobuf/SmallSortedMap;Ljava/util/Map$Entry;)V
-
-    invoke-interface {v1, v2}, Ljava/util/List;->add(Ljava/lang/Object;)Z
-
-    invoke-interface {v0}, Ljava/util/Iterator;->remove()V
-
-    :cond_0
     return-object p1
 .end method
 

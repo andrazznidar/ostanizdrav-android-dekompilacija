@@ -15,12 +15,10 @@
 
 
 # instance fields
-.field public animatorDelegate:Lcom/google/android/material/progressindicator/IndeterminateAnimatorDelegate;
+.field public animatorDelegate:Landroidx/appcompat/view/menu/BaseMenuWrapper;
     .annotation system Ldalvik/annotation/Signature;
         value = {
-            "Lcom/google/android/material/progressindicator/IndeterminateAnimatorDelegate<",
-            "Landroid/animation/ObjectAnimator;",
-            ">;"
+            "Landroidx/appcompat/view/menu/BaseMenuWrapper;"
         }
     .end annotation
 .end field
@@ -36,7 +34,7 @@
 
 
 # direct methods
-.method public constructor <init>(Landroid/content/Context;Lcom/google/android/material/progressindicator/BaseProgressIndicatorSpec;Lcom/google/android/material/progressindicator/DrawingDelegate;Lcom/google/android/material/progressindicator/IndeterminateAnimatorDelegate;)V
+.method public constructor <init>(Landroid/content/Context;Lcom/google/android/material/progressindicator/BaseProgressIndicatorSpec;Lcom/google/android/material/progressindicator/DrawingDelegate;Landroidx/appcompat/view/menu/BaseMenuWrapper;)V
     .locals 0
     .annotation system Ldalvik/annotation/Signature;
         value = {
@@ -45,9 +43,8 @@
             "Lcom/google/android/material/progressindicator/BaseProgressIndicatorSpec;",
             "Lcom/google/android/material/progressindicator/DrawingDelegate<",
             "TS;>;",
-            "Lcom/google/android/material/progressindicator/IndeterminateAnimatorDelegate<",
-            "Landroid/animation/ObjectAnimator;",
-            ">;)V"
+            "Landroidx/appcompat/view/menu/BaseMenuWrapper;",
+            ")V"
         }
     .end annotation
 
@@ -57,9 +54,9 @@
 
     iput-object p0, p3, Lcom/google/android/material/progressindicator/DrawingDelegate;->drawable:Lcom/google/android/material/progressindicator/DrawableWithAnimatedVisibilityChange;
 
-    iput-object p4, p0, Lcom/google/android/material/progressindicator/IndeterminateDrawable;->animatorDelegate:Lcom/google/android/material/progressindicator/IndeterminateAnimatorDelegate;
+    iput-object p4, p0, Lcom/google/android/material/progressindicator/IndeterminateDrawable;->animatorDelegate:Landroidx/appcompat/view/menu/BaseMenuWrapper;
 
-    iput-object p0, p4, Lcom/google/android/material/progressindicator/IndeterminateAnimatorDelegate;->drawable:Lcom/google/android/material/progressindicator/IndeterminateDrawable;
+    iput-object p0, p4, Landroidx/appcompat/view/menu/BaseMenuWrapper;->mContext:Ljava/lang/Object;
 
     return-void
 .end method
@@ -121,9 +118,11 @@
     const/4 v0, 0x0
 
     :goto_0
-    iget-object v1, p0, Lcom/google/android/material/progressindicator/IndeterminateDrawable;->animatorDelegate:Lcom/google/android/material/progressindicator/IndeterminateAnimatorDelegate;
+    iget-object v1, p0, Lcom/google/android/material/progressindicator/IndeterminateDrawable;->animatorDelegate:Landroidx/appcompat/view/menu/BaseMenuWrapper;
 
-    iget-object v2, v1, Lcom/google/android/material/progressindicator/IndeterminateAnimatorDelegate;->segmentColors:[I
+    iget-object v2, v1, Landroidx/appcompat/view/menu/BaseMenuWrapper;->mSubMenus:Ljava/lang/Object;
+
+    check-cast v2, [I
 
     array-length v3, v2
 
@@ -133,7 +132,9 @@
 
     iget-object v6, p0, Lcom/google/android/material/progressindicator/DrawableWithAnimatedVisibilityChange;->paint:Landroid/graphics/Paint;
 
-    iget-object v1, v1, Lcom/google/android/material/progressindicator/IndeterminateAnimatorDelegate;->segmentPositions:[F
+    iget-object v1, v1, Landroidx/appcompat/view/menu/BaseMenuWrapper;->mMenuItems:Ljava/lang/Object;
+
+    check-cast v1, [F
 
     mul-int/lit8 v3, v0, 0x2
 
@@ -198,9 +199,9 @@
 
     if-nez v0, :cond_0
 
-    iget-object v0, p0, Lcom/google/android/material/progressindicator/IndeterminateDrawable;->animatorDelegate:Lcom/google/android/material/progressindicator/IndeterminateAnimatorDelegate;
+    iget-object v0, p0, Lcom/google/android/material/progressindicator/IndeterminateDrawable;->animatorDelegate:Landroidx/appcompat/view/menu/BaseMenuWrapper;
 
-    invoke-virtual {v0}, Lcom/google/android/material/progressindicator/IndeterminateAnimatorDelegate;->cancelAnimatorImmediately()V
+    invoke-virtual {v0}, Landroidx/appcompat/view/menu/BaseMenuWrapper;->cancelAnimatorImmediately()V
 
     :cond_0
     iget-object v0, p0, Lcom/google/android/material/progressindicator/DrawableWithAnimatedVisibilityChange;->animatorDurationScaleProvider:Lcom/google/android/material/progressindicator/AnimatorDurationScaleProvider;
@@ -220,9 +221,9 @@
     goto :goto_0
 
     :cond_1
-    iget-object p1, p0, Lcom/google/android/material/progressindicator/IndeterminateDrawable;->animatorDelegate:Lcom/google/android/material/progressindicator/IndeterminateAnimatorDelegate;
+    iget-object p1, p0, Lcom/google/android/material/progressindicator/IndeterminateDrawable;->animatorDelegate:Landroidx/appcompat/view/menu/BaseMenuWrapper;
 
-    invoke-virtual {p1}, Lcom/google/android/material/progressindicator/IndeterminateAnimatorDelegate;->startAnimator()V
+    invoke-virtual {p1}, Landroidx/appcompat/view/menu/BaseMenuWrapper;->startAnimator()V
 
     :cond_2
     :goto_0

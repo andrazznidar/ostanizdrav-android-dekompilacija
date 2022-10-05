@@ -4,7 +4,7 @@
 
 
 # direct methods
-.method public constructor <init>()V
+.method private constructor <init>()V
     .locals 1
 
     const/4 v0, 0x0
@@ -14,12 +14,10 @@
     return-void
 .end method
 
-.method public constructor <init>(Lkotlin/jvm/internal/DefaultConstructorMarker;)V
+.method public synthetic constructor <init>(Lkotlin/jvm/internal/DefaultConstructorMarker;)V
     .locals 0
 
-    const/4 p1, 0x0
-
-    invoke-direct {p0, p1}, Lkotlin/reflect/jvm/internal/impl/types/KotlinType;-><init>(Lkotlin/jvm/internal/DefaultConstructorMarker;)V
+    invoke-direct {p0}, Lkotlin/reflect/jvm/internal/impl/types/UnwrappedType;-><init>()V
 
     return-void
 .end method

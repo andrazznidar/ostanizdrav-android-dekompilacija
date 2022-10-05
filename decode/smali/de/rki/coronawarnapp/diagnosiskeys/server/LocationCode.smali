@@ -66,17 +66,13 @@
 
     iget-object v0, p0, Lde/rki/coronawarnapp/diagnosiskeys/server/LocationCode;->rawIdentifier:Ljava/lang/String;
 
-    const-string v1, "null cannot be cast to non-null type java.lang.String"
-
-    invoke-static {v0, v1}, Ljava/util/Objects;->requireNonNull(Ljava/lang/Object;Ljava/lang/String;)Ljava/lang/Object;
-
     sget-object v1, Ljava/util/Locale;->ROOT:Ljava/util/Locale;
 
     invoke-virtual {v0, v1}, Ljava/lang/String;->toUpperCase(Ljava/util/Locale;)Ljava/lang/String;
 
     move-result-object v0
 
-    const-string v1, "(this as java.lang.Strin\u2026.toUpperCase(Locale.ROOT)"
+    const-string/jumbo v1, "this as java.lang.String).toUpperCase(Locale.ROOT)"
 
     invoke-static {v0, v1}, Lkotlin/jvm/internal/Intrinsics;->checkNotNullExpressionValue(Ljava/lang/Object;Ljava/lang/String;)V
 
@@ -104,7 +100,7 @@
 
     const-string v2, ")"
 
-    invoke-static {v1, v0, v2}, Landroidx/core/graphics/PathParser$$ExternalSyntheticOutline0;->m(Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;)Ljava/lang/String;
+    invoke-static {v1, v0, v2}, Landroidx/concurrent/futures/AbstractResolvableFuture$$ExternalSyntheticOutline1;->m(Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;)Ljava/lang/String;
 
     move-result-object v0
 

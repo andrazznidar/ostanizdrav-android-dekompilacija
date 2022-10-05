@@ -76,14 +76,12 @@
     return-object p0
 .end method
 
-.method public asAnnotationMap()Lokhttp3/ConnectionPool;
+.method public asAnnotationMap()Lcom/fasterxml/jackson/databind/introspect/AnnotationMap;
     .locals 5
 
-    new-instance v0, Lokhttp3/ConnectionPool;
+    new-instance v0, Lcom/fasterxml/jackson/databind/introspect/AnnotationMap;
 
-    const/4 v1, 0x2
-
-    invoke-direct {v0, v1}, Lokhttp3/ConnectionPool;-><init>(I)V
+    invoke-direct {v0}, Lcom/fasterxml/jackson/databind/introspect/AnnotationMap;-><init>()V
 
     iget-object v1, p0, Lcom/fasterxml/jackson/databind/introspect/AnnotationCollector$NCollector;->_annotations:Ljava/util/HashMap;
 
@@ -109,9 +107,7 @@
 
     check-cast v2, Ljava/lang/annotation/Annotation;
 
-    iget-object v3, v0, Lokhttp3/ConnectionPool;->delegate:Ljava/lang/Object;
-
-    check-cast v3, Ljava/util/HashMap;
+    iget-object v3, v0, Lcom/fasterxml/jackson/databind/introspect/AnnotationMap;->_annotations:Ljava/util/HashMap;
 
     if-nez v3, :cond_1
 
@@ -119,12 +115,10 @@
 
     invoke-direct {v3}, Ljava/util/HashMap;-><init>()V
 
-    iput-object v3, v0, Lokhttp3/ConnectionPool;->delegate:Ljava/lang/Object;
+    iput-object v3, v0, Lcom/fasterxml/jackson/databind/introspect/AnnotationMap;->_annotations:Ljava/util/HashMap;
 
     :cond_1
-    iget-object v3, v0, Lokhttp3/ConnectionPool;->delegate:Ljava/lang/Object;
-
-    check-cast v3, Ljava/util/HashMap;
+    iget-object v3, v0, Lcom/fasterxml/jackson/databind/introspect/AnnotationMap;->_annotations:Ljava/util/HashMap;
 
     invoke-interface {v2}, Ljava/lang/annotation/Annotation;->annotationType()Ljava/lang/Class;
 
@@ -214,11 +208,11 @@
     return-object v2
 
     :cond_0
-    new-instance v0, Lokhttp3/ConnectionPool;
+    new-instance v0, Lcom/fasterxml/jackson/databind/introspect/AnnotationMap;
 
     iget-object v1, p0, Lcom/fasterxml/jackson/databind/introspect/AnnotationCollector$NCollector;->_annotations:Ljava/util/HashMap;
 
-    invoke-direct {v0, v1}, Lokhttp3/ConnectionPool;-><init>(Ljava/util/HashMap;)V
+    invoke-direct {v0, v1}, Lcom/fasterxml/jackson/databind/introspect/AnnotationMap;-><init>(Ljava/util/HashMap;)V
 
     return-object v0
 .end method

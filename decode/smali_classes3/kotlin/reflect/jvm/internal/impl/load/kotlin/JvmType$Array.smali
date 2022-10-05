@@ -15,7 +15,7 @@
 
 
 # instance fields
-.field public final elementType:Lkotlin/reflect/jvm/internal/impl/load/kotlin/JvmType;
+.field private final elementType:Lkotlin/reflect/jvm/internal/impl/load/kotlin/JvmType;
 
 
 # direct methods
@@ -33,4 +33,14 @@
     iput-object p1, p0, Lkotlin/reflect/jvm/internal/impl/load/kotlin/JvmType$Array;->elementType:Lkotlin/reflect/jvm/internal/impl/load/kotlin/JvmType;
 
     return-void
+.end method
+
+
+# virtual methods
+.method public final getElementType()Lkotlin/reflect/jvm/internal/impl/load/kotlin/JvmType;
+    .locals 1
+
+    iget-object v0, p0, Lkotlin/reflect/jvm/internal/impl/load/kotlin/JvmType$Array;->elementType:Lkotlin/reflect/jvm/internal/impl/load/kotlin/JvmType;
+
+    return-object v0
 .end method

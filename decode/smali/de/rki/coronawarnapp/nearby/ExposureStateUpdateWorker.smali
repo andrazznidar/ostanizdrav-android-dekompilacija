@@ -5,11 +5,7 @@
 
 # annotations
 .annotation runtime Lkotlin/Metadata;
-    bv = {
-        0x1,
-        0x0,
-        0x3
-    }
+    bv = {}
     d1 = {
         "\u0000\u001c\n\u0002\u0018\u0002\n\u0002\u0018\u0002\n\u0002\u0018\u0002\n\u0000\n\u0002\u0018\u0002\n\u0000\n\u0002\u0018\u0002\n\u0002\u0008\u0004\u0018\u00002\u00020\u0001B%\u0008\u0007\u0012\u0008\u0008\u0001\u0010\u0003\u001a\u00020\u0002\u0012\u0008\u0008\u0001\u0010\u0005\u001a\u00020\u0004\u0012\u0006\u0010\u0007\u001a\u00020\u0006\u00a2\u0006\u0004\u0008\u0008\u0010\t\u00a8\u0006\n"
     }
@@ -29,8 +25,8 @@
     k = 0x1
     mv = {
         0x1,
-        0x5,
-        0x1
+        0x6,
+        0x0
     }
 .end annotation
 
@@ -124,11 +120,6 @@
 
     goto :goto_1
 
-    :catch_0
-    move-exception p1
-
-    goto :goto_2
-
     :cond_1
     new-instance p1, Ljava/lang/IllegalStateException;
 
@@ -158,13 +149,13 @@
 
     const-string v8, "ExposureStateUpdateWorker"
 
-    const/4 v9, 0x0
-
     const/16 v10, 0x16
+
+    const/4 v9, 0x0
 
     move-object v4, v2
 
-    invoke-direct/range {v4 .. v10}, Lde/rki/coronawarnapp/task/common/DefaultTaskRequest;-><init>(Lkotlin/reflect/KClass;Lde/rki/coronawarnapp/task/Task$Arguments;Ljava/util/UUID;Ljava/lang/String;Lde/rki/coronawarnapp/task/TaskFactory$Config$ErrorHandling;I)V
+    invoke-direct/range {v4 .. v10}, Lde/rki/coronawarnapp/task/common/DefaultTaskRequest;-><init>(Lkotlin/reflect/KClass;Lde/rki/coronawarnapp/task/Task$Arguments;Ljava/util/UUID;Ljava/lang/String;II)V
 
     iput v3, v0, Lde/rki/coronawarnapp/nearby/ExposureStateUpdateWorker$doWork$1;->label:I
 
@@ -190,18 +181,20 @@
 
     new-array v1, v1, [Ljava/lang/Object;
 
-    invoke-virtual {p1, v0, v1}, Ltimber/log/Timber$Tree;->v(Ljava/lang/String;[Ljava/lang/Object;)V
+    invoke-virtual {p1, v0, v1}, Ltimber/log/Timber$Forest;->v(Ljava/lang/String;[Ljava/lang/Object;)V
     :try_end_1
     .catch Lcom/google/android/gms/common/api/ApiException; {:try_start_1 .. :try_end_1} :catch_0
 
-    goto :goto_3
+    goto :goto_2
+
+    :catch_0
+    move-exception p1
+
+    const/4 v0, 0x6
+
+    invoke-static {p1, v0}, Lde/rki/coronawarnapp/exception/reporting/ExceptionReporterKt;->report(Ljava/lang/Throwable;I)V
 
     :goto_2
-    sget-object v0, Lde/rki/coronawarnapp/exception/ExceptionCategory;->EXPOSURENOTIFICATION:Lde/rki/coronawarnapp/exception/ExceptionCategory;
-
-    invoke-static {p1, v0}, Lde/rki/coronawarnapp/exception/reporting/ExceptionReporterKt;->report(Ljava/lang/Throwable;Lde/rki/coronawarnapp/exception/ExceptionCategory;)V
-
-    :goto_3
     new-instance p1, Landroidx/work/ListenableWorker$Result$Success;
 
     invoke-direct {p1}, Landroidx/work/ListenableWorker$Result$Success;-><init>()V

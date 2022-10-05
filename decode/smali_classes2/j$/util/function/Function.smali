@@ -16,11 +16,38 @@
 
 
 # virtual methods
-.method public abstract a(Lj$/util/function/Function;)Lj$/util/function/Function;
+.method public abstract andThen(Lj$/util/function/Function;)Lj$/util/function/Function;
+    .annotation system Ldalvik/annotation/Signature;
+        value = {
+            "<V:",
+            "Ljava/lang/Object;",
+            ">(",
+            "Lj$/util/function/Function<",
+            "-TR;+TV;>;)",
+            "Lj$/util/function/Function<",
+            "TT;TV;>;"
+        }
+    .end annotation
 .end method
 
 .method public abstract apply(Ljava/lang/Object;)Ljava/lang/Object;
+    .annotation system Ldalvik/annotation/Signature;
+        value = {
+            "(TT;)TR;"
+        }
+    .end annotation
 .end method
 
-.method public abstract b(Lj$/util/function/Function;)Lj$/util/function/Function;
+.method public abstract compose(Lj$/util/function/Function;)Lj$/util/function/Function;
+    .annotation system Ldalvik/annotation/Signature;
+        value = {
+            "<V:",
+            "Ljava/lang/Object;",
+            ">(",
+            "Lj$/util/function/Function<",
+            "-TV;+TT;>;)",
+            "Lj$/util/function/Function<",
+            "TV;TR;>;"
+        }
+    .end annotation
 .end method

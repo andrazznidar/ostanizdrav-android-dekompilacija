@@ -180,6 +180,8 @@
 
     iget-object v1, p0, Lretrofit2/Retrofit$Builder;->platform:Lretrofit2/Platform;
 
+    invoke-static {v1}, Ljava/util/Objects;->requireNonNull(Ljava/lang/Object;)Ljava/lang/Object;
+
     new-instance v2, Lretrofit2/DefaultCallAdapterFactory;
 
     invoke-direct {v2, v7}, Lretrofit2/DefaultCallAdapterFactory;-><init>(Ljava/util/concurrent/Executor;)V

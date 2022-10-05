@@ -156,7 +156,7 @@
 
     new-array v4, v3, [Ljava/lang/Object;
 
-    invoke-virtual {v0, v2, v4}, Ltimber/log/Timber$Tree;->v(Ljava/lang/String;[Ljava/lang/Object;)V
+    invoke-virtual {v0, v2, v4}, Ltimber/log/Timber$Forest;->v(Ljava/lang/String;[Ljava/lang/Object;)V
 
     iget-object v2, p0, Lde/rki/coronawarnapp/presencetracing/risk/execution/PresenceTracingRiskWorkScheduler$setup$2;->this$0:Lde/rki/coronawarnapp/presencetracing/risk/execution/PresenceTracingRiskWorkScheduler;
 
@@ -168,7 +168,7 @@
 
     invoke-direct {v1}, Ljava/lang/StringBuilder;-><init>()V
 
-    const-string v4, "setPeriodicRiskCalculation(enabled="
+    const-string/jumbo v4, "setPeriodicRiskCalculation(enabled="
 
     invoke-virtual {v1, v4}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
 
@@ -212,11 +212,11 @@
 
     check-cast v1, Landroidx/work/PeriodicWorkRequest$Builder;
 
-    sget-object v3, Landroidx/work/BackoffPolicy;->EXPONENTIAL:Landroidx/work/BackoffPolicy;
+    const/4 v3, 0x1
 
     const-wide/16 v4, 0x8
 
-    invoke-virtual {v1, v3, v4, v5, p1}, Landroidx/work/WorkRequest$Builder;->setBackoffCriteria(Landroidx/work/BackoffPolicy;JLjava/util/concurrent/TimeUnit;)Landroidx/work/WorkRequest$Builder;
+    invoke-virtual {v1, v3, v4, v5, p1}, Landroidx/work/WorkRequest$Builder;->setBackoffCriteria$enumunboxing$(IJLjava/util/concurrent/TimeUnit;)Landroidx/work/WorkRequest$Builder;
 
     move-result-object p1
 
@@ -248,12 +248,12 @@
 
     check-cast p1, Landroidx/work/PeriodicWorkRequest;
 
-    invoke-virtual {v2, v0, p1}, Lde/rki/coronawarnapp/risk/execution/RiskWorkScheduler;->queueWorker$Corona_Warn_App_deviceRelease(Ljava/lang/String;Landroidx/work/PeriodicWorkRequest;)V
+    invoke-virtual {v2, v0, p1}, Lcom/nimbusds/jose/crypto/impl/BaseJWSProvider;->queueWorker$Corona_Warn_App_deviceRelease(Ljava/lang/String;Landroidx/work/PeriodicWorkRequest;)V
 
     goto :goto_0
 
     :cond_0
-    invoke-virtual {v2, v0}, Lde/rki/coronawarnapp/risk/execution/RiskWorkScheduler;->cancelWorker$Corona_Warn_App_deviceRelease(Ljava/lang/String;)V
+    invoke-virtual {v2, v0}, Lcom/nimbusds/jose/crypto/impl/BaseJWSProvider;->cancelWorker$Corona_Warn_App_deviceRelease(Ljava/lang/String;)V
 
     :goto_0
     sget-object p1, Lkotlin/Unit;->INSTANCE:Lkotlin/Unit;

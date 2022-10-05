@@ -131,9 +131,9 @@
 
     check-cast v5, Lcom/airbnb/lottie/model/layer/Layer;
 
-    iget-object v6, v5, Lcom/airbnb/lottie/model/layer/Layer;->layerType:Lcom/airbnb/lottie/model/layer/Layer$LayerType;
+    iget v6, v5, Lcom/airbnb/lottie/model/layer/Layer;->layerType:I
 
-    invoke-virtual {v6}, Ljava/lang/Enum;->ordinal()I
+    invoke-static {v6}, Landroidx/camera/camera2/internal/Camera2CameraImpl$InternalState$EnumUnboxingSharedUtility;->ordinal(I)I
 
     move-result v6
 
@@ -163,9 +163,13 @@
 
     move-result-object v6
 
-    iget-object v8, v5, Lcom/airbnb/lottie/model/layer/Layer;->layerType:Lcom/airbnb/lottie/model/layer/Layer$LayerType;
+    iget v8, v5, Lcom/airbnb/lottie/model/layer/Layer;->layerType:I
 
-    invoke-virtual {v6, v8}, Ljava/lang/StringBuilder;->append(Ljava/lang/Object;)Ljava/lang/StringBuilder;
+    invoke-static {v8}, Lcom/airbnb/lottie/model/layer/Layer$LayerType$EnumUnboxingLocalUtility;->stringValueOf(I)Ljava/lang/String;
+
+    move-result-object v8
+
+    invoke-virtual {v6, v8}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
 
     invoke-virtual {v6}, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
 
@@ -254,7 +258,7 @@
 
     iget v4, v5, Lcom/airbnb/lottie/model/layer/Layer;->matteType:I
 
-    invoke-static {v4}, Landroidx/constraintlayout/core/SolverVariable$Type$r8$EnumUnboxingUtility;->$enumboxing$ordinal(I)I
+    invoke-static {v4}, Landroidx/camera/camera2/internal/Camera2CameraImpl$InternalState$EnumUnboxingSharedUtility;->ordinal(I)I
 
     move-result v4
 

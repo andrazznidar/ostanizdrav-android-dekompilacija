@@ -135,9 +135,9 @@
 
     invoke-direct {v0}, Lcom/google/android/gms/common/api/internal/TaskApiCall$Builder;-><init>()V
 
-    new-instance v1, Lorg/bouncycastle/pqc/crypto/lms/Composer;
+    new-instance v1, Lcom/google/android/gms/internal/nearby/zzu;
 
-    invoke-direct {v1, p0}, Lorg/bouncycastle/pqc/crypto/lms/Composer;-><init>(Lcom/google/android/gms/internal/nearby/zzaw;)V
+    invoke-direct {v1, p0}, Lcom/google/android/gms/internal/nearby/zzu;-><init>(Lcom/google/android/gms/internal/nearby/zzaw;)V
 
     iput-object v1, v0, Lcom/google/android/gms/common/api/internal/TaskApiCall$Builder;->zaa:Lcom/google/android/gms/common/api/internal/RemoteCall;
 
@@ -163,7 +163,7 @@
 
     sget-wide v1, Lcom/google/android/gms/internal/nearby/zzaw;->zzc:J
 
-    invoke-static {v0, v1, v2}, Lcom/google/android/gms/internal/nearby/zzfc;->zza(Lcom/google/android/gms/tasks/Task;J)Lcom/google/android/gms/tasks/Task;
+    invoke-static {v0, v1, v2}, Landroidx/lifecycle/ViewModelKt;->zza(Lcom/google/android/gms/tasks/Task;J)Lcom/google/android/gms/tasks/Task;
 
     move-result-object v0
 
@@ -216,7 +216,7 @@
 
     sget-wide v1, Lcom/google/android/gms/internal/nearby/zzaw;->zzc:J
 
-    invoke-static {v0, v1, v2}, Lcom/google/android/gms/internal/nearby/zzfc;->zza(Lcom/google/android/gms/tasks/Task;J)Lcom/google/android/gms/tasks/Task;
+    invoke-static {v0, v1, v2}, Landroidx/lifecycle/ViewModelKt;->zza(Lcom/google/android/gms/tasks/Task;J)Lcom/google/android/gms/tasks/Task;
 
     move-result-object v0
 
@@ -239,9 +239,9 @@
 
     invoke-direct {v0}, Lcom/google/android/gms/common/api/internal/TaskApiCall$Builder;-><init>()V
 
-    new-instance v1, Lcom/upokecenter/cbor/StringRefs;
+    new-instance v1, Lcom/google/android/gms/internal/nearby/zzac;
 
-    invoke-direct {v1, p0}, Lcom/upokecenter/cbor/StringRefs;-><init>(Lcom/google/android/gms/internal/nearby/zzaw;)V
+    invoke-direct {v1, p0}, Lcom/google/android/gms/internal/nearby/zzac;-><init>(Lcom/google/android/gms/internal/nearby/zzaw;)V
 
     iput-object v1, v0, Lcom/google/android/gms/common/api/internal/TaskApiCall$Builder;->zaa:Lcom/google/android/gms/common/api/internal/RemoteCall;
 
@@ -267,7 +267,7 @@
 
     sget-wide v1, Lcom/google/android/gms/internal/nearby/zzaw;->zzc:J
 
-    invoke-static {v0, v1, v2}, Lcom/google/android/gms/internal/nearby/zzfc;->zza(Lcom/google/android/gms/tasks/Task;J)Lcom/google/android/gms/tasks/Task;
+    invoke-static {v0, v1, v2}, Landroidx/lifecycle/ViewModelKt;->zza(Lcom/google/android/gms/tasks/Task;J)Lcom/google/android/gms/tasks/Task;
 
     move-result-object v0
 
@@ -317,7 +317,7 @@
 
     sget-wide v1, Lcom/google/android/gms/internal/nearby/zzaw;->zzc:J
 
-    invoke-static {v0, v1, v2}, Lcom/google/android/gms/internal/nearby/zzfc;->zza(Lcom/google/android/gms/tasks/Task;J)Lcom/google/android/gms/tasks/Task;
+    invoke-static {v0, v1, v2}, Landroidx/lifecycle/ViewModelKt;->zza(Lcom/google/android/gms/tasks/Task;J)Lcom/google/android/gms/tasks/Task;
 
     move-result-object v0
 
@@ -339,9 +339,9 @@
 
     invoke-direct {v0}, Lcom/google/android/gms/common/api/internal/TaskApiCall$Builder;-><init>()V
 
-    new-instance v1, Lcom/upokecenter/cbor/SharedRefs;
+    new-instance v1, Lcom/google/android/gms/internal/nearby/zzab;
 
-    invoke-direct {v1, p0}, Lcom/upokecenter/cbor/SharedRefs;-><init>(Lcom/google/android/gms/internal/nearby/zzaw;)V
+    invoke-direct {v1, p0}, Lcom/google/android/gms/internal/nearby/zzab;-><init>(Lcom/google/android/gms/internal/nearby/zzaw;)V
 
     iput-object v1, v0, Lcom/google/android/gms/common/api/internal/TaskApiCall$Builder;->zaa:Lcom/google/android/gms/common/api/internal/RemoteCall;
 
@@ -367,7 +367,7 @@
 
     sget-wide v1, Lcom/google/android/gms/internal/nearby/zzaw;->zzc:J
 
-    invoke-static {v0, v1, v2}, Lcom/google/android/gms/internal/nearby/zzfc;->zza(Lcom/google/android/gms/tasks/Task;J)Lcom/google/android/gms/tasks/Task;
+    invoke-static {v0, v1, v2}, Landroidx/lifecycle/ViewModelKt;->zza(Lcom/google/android/gms/tasks/Task;J)Lcom/google/android/gms/tasks/Task;
 
     move-result-object v0
 
@@ -405,7 +405,7 @@
 .end method
 
 .method public final provideDiagnosisKeys(Ljava/util/List;)Lcom/google/android/gms/tasks/Task;
-    .locals 8
+    .locals 5
     .annotation system Ldalvik/annotation/Signature;
         value = {
             "(",
@@ -424,81 +424,73 @@
 
     invoke-virtual {v0}, Lcom/google/android/gms/nearby/exposurenotification/ExposureConfiguration$ExposureConfigurationBuilder;->build()Lcom/google/android/gms/nearby/exposurenotification/ExposureConfiguration;
 
-    move-result-object v4
-
-    new-instance v0, Lcom/google/android/gms/common/api/internal/TaskApiCall$Builder;
-
-    invoke-direct {v0}, Lcom/google/android/gms/common/api/internal/TaskApiCall$Builder;-><init>()V
-
-    new-instance v1, Lcom/google/android/gms/internal/nearby/zzq;
-
-    invoke-direct {v1, p0}, Lcom/google/android/gms/internal/nearby/zzq;-><init>(Lcom/google/android/gms/internal/nearby/zzaw;)V
-
-    iput-object v1, v0, Lcom/google/android/gms/common/api/internal/TaskApiCall$Builder;->zaa:Lcom/google/android/gms/common/api/internal/RemoteCall;
-
-    const/4 v1, 0x1
-
-    new-array v1, v1, [Lcom/google/android/gms/common/Feature;
-
-    sget-object v2, Lcom/google/android/gms/nearby/zza;->zzh:Lcom/google/android/gms/common/Feature;
-
-    const/4 v3, 0x0
-
-    aput-object v2, v1, v3
-
-    iput-object v1, v0, Lcom/google/android/gms/common/api/internal/TaskApiCall$Builder;->zac:[Lcom/google/android/gms/common/Feature;
-
-    invoke-virtual {v0}, Lcom/google/android/gms/common/api/internal/TaskApiCall$Builder;->build()Lcom/google/android/gms/common/api/internal/TaskApiCall;
-
     move-result-object v0
 
-    invoke-virtual {p0, v3, v0}, Lcom/google/android/gms/common/api/GoogleApi;->zae(ILcom/google/android/gms/common/api/internal/TaskApiCall;)Lcom/google/android/gms/tasks/Task;
+    new-instance v1, Lcom/google/android/gms/common/api/internal/TaskApiCall$Builder;
 
-    move-result-object v0
+    invoke-direct {v1}, Lcom/google/android/gms/common/api/internal/TaskApiCall$Builder;-><init>()V
 
-    sget-wide v1, Lcom/google/android/gms/internal/nearby/zzaw;->zzc:J
+    new-instance v2, Lcom/google/android/gms/internal/nearby/zzq;
 
-    invoke-static {v0, v1, v2}, Lcom/google/android/gms/internal/nearby/zzfc;->zza(Lcom/google/android/gms/tasks/Task;J)Lcom/google/android/gms/tasks/Task;
+    invoke-direct {v2, p0}, Lcom/google/android/gms/internal/nearby/zzq;-><init>(Lcom/google/android/gms/internal/nearby/zzaw;)V
 
-    move-result-object v0
+    iput-object v2, v1, Lcom/google/android/gms/common/api/internal/TaskApiCall$Builder;->zaa:Lcom/google/android/gms/common/api/internal/RemoteCall;
 
-    new-instance v7, Lcom/google/android/gms/internal/nearby/zzz;
+    const/4 v2, 0x1
 
-    const-string v5, "TYZWQ32170AXEUVCDW7A"
+    new-array v2, v2, [Lcom/google/android/gms/common/Feature;
 
-    const/4 v6, 0x1
+    sget-object v3, Lcom/google/android/gms/nearby/zza;->zzh:Lcom/google/android/gms/common/Feature;
 
-    move-object v1, v7
+    const/4 v4, 0x0
 
-    move-object v2, p0
+    aput-object v3, v2, v4
 
-    move-object v3, p1
+    iput-object v2, v1, Lcom/google/android/gms/common/api/internal/TaskApiCall$Builder;->zac:[Lcom/google/android/gms/common/Feature;
 
-    invoke-direct/range {v1 .. v6}, Lcom/google/android/gms/internal/nearby/zzz;-><init>(Lcom/google/android/gms/internal/nearby/zzaw;Ljava/util/List;Lcom/google/android/gms/nearby/exposurenotification/ExposureConfiguration;Ljava/lang/String;I)V
+    invoke-virtual {v1}, Lcom/google/android/gms/common/api/internal/TaskApiCall$Builder;->build()Lcom/google/android/gms/common/api/internal/TaskApiCall;
 
-    check-cast v0, Lcom/google/android/gms/tasks/zzw;
+    move-result-object v1
 
-    invoke-static {v0}, Ljava/util/Objects;->requireNonNull(Ljava/lang/Object;)Ljava/lang/Object;
+    invoke-virtual {p0, v4, v1}, Lcom/google/android/gms/common/api/GoogleApi;->zae(ILcom/google/android/gms/common/api/internal/TaskApiCall;)Lcom/google/android/gms/tasks/Task;
+
+    move-result-object v1
+
+    sget-wide v2, Lcom/google/android/gms/internal/nearby/zzaw;->zzc:J
+
+    invoke-static {v1, v2, v3}, Landroidx/lifecycle/ViewModelKt;->zza(Lcom/google/android/gms/tasks/Task;J)Lcom/google/android/gms/tasks/Task;
+
+    move-result-object v1
+
+    new-instance v2, Lcom/google/android/gms/internal/nearby/zzad;
+
+    const-string v3, "TYZWQ32170AXEUVCDW7A"
+
+    invoke-direct {v2, p0, p1, v0, v3}, Lcom/google/android/gms/internal/nearby/zzad;-><init>(Lcom/google/android/gms/internal/nearby/zzaw;Ljava/util/List;Lcom/google/android/gms/nearby/exposurenotification/ExposureConfiguration;Ljava/lang/String;)V
+
+    check-cast v1, Lcom/google/android/gms/tasks/zzw;
+
+    invoke-static {v1}, Ljava/util/Objects;->requireNonNull(Ljava/lang/Object;)Ljava/lang/Object;
 
     sget-object p1, Lcom/google/android/gms/tasks/TaskExecutors;->MAIN_THREAD:Ljava/util/concurrent/Executor;
 
-    new-instance v1, Lcom/google/android/gms/tasks/zzw;
+    new-instance v0, Lcom/google/android/gms/tasks/zzw;
 
-    invoke-direct {v1}, Lcom/google/android/gms/tasks/zzw;-><init>()V
+    invoke-direct {v0}, Lcom/google/android/gms/tasks/zzw;-><init>()V
 
-    iget-object v2, v0, Lcom/google/android/gms/tasks/zzw;->zzb:Lcom/google/android/gms/tasks/zzr;
+    iget-object v3, v1, Lcom/google/android/gms/tasks/zzw;->zzb:Lcom/google/android/gms/tasks/zzr;
 
-    new-instance v3, Lcom/google/android/gms/tasks/zzf;
+    new-instance v4, Lcom/google/android/gms/tasks/zzf;
 
-    invoke-direct {v3, p1, v7, v1}, Lcom/google/android/gms/tasks/zzf;-><init>(Ljava/util/concurrent/Executor;Lcom/google/android/gms/internal/nearby/zzz;Lcom/google/android/gms/tasks/zzw;)V
+    invoke-direct {v4, p1, v2, v0}, Lcom/google/android/gms/tasks/zzf;-><init>(Ljava/util/concurrent/Executor;Lcom/google/android/gms/internal/nearby/zzad;Lcom/google/android/gms/tasks/zzw;)V
 
-    invoke-virtual {v2, v3}, Lcom/google/android/gms/tasks/zzr;->zza(Lcom/google/android/gms/tasks/zzq;)V
+    invoke-virtual {v3, v4}, Lcom/google/android/gms/tasks/zzr;->zza(Lcom/google/android/gms/tasks/zzq;)V
 
-    invoke-virtual {v0}, Lcom/google/android/gms/tasks/zzw;->zzi()V
+    invoke-virtual {v1}, Lcom/google/android/gms/tasks/zzw;->zzi()V
 
-    sget-wide v2, Lcom/google/android/gms/internal/nearby/zzaw;->zzd:J
+    sget-wide v1, Lcom/google/android/gms/internal/nearby/zzaw;->zzd:J
 
-    invoke-static {v1, v2, v3}, Lcom/google/android/gms/internal/nearby/zzfc;->zza(Lcom/google/android/gms/tasks/Task;J)Lcom/google/android/gms/tasks/Task;
+    invoke-static {v0, v1, v2}, Landroidx/lifecycle/ViewModelKt;->zza(Lcom/google/android/gms/tasks/Task;J)Lcom/google/android/gms/tasks/Task;
 
     move-result-object p1
 
@@ -546,7 +538,7 @@
 
     sget-wide v1, Lcom/google/android/gms/internal/nearby/zzaw;->zzc:J
 
-    invoke-static {v0, v1, v2}, Lcom/google/android/gms/internal/nearby/zzfc;->zza(Lcom/google/android/gms/tasks/Task;J)Lcom/google/android/gms/tasks/Task;
+    invoke-static {v0, v1, v2}, Landroidx/lifecycle/ViewModelKt;->zza(Lcom/google/android/gms/tasks/Task;J)Lcom/google/android/gms/tasks/Task;
 
     move-result-object v0
 
@@ -594,7 +586,7 @@
 
     sget-wide v1, Lcom/google/android/gms/internal/nearby/zzaw;->zzc:J
 
-    invoke-static {v0, v1, v2}, Lcom/google/android/gms/internal/nearby/zzfc;->zza(Lcom/google/android/gms/tasks/Task;J)Lcom/google/android/gms/tasks/Task;
+    invoke-static {v0, v1, v2}, Landroidx/lifecycle/ViewModelKt;->zza(Lcom/google/android/gms/tasks/Task;J)Lcom/google/android/gms/tasks/Task;
 
     move-result-object v0
 
@@ -646,7 +638,7 @@
 
     sget-wide v0, Lcom/google/android/gms/internal/nearby/zzaw;->zzc:J
 
-    invoke-static {p1, v0, v1}, Lcom/google/android/gms/internal/nearby/zzfc;->zza(Lcom/google/android/gms/tasks/Task;J)Lcom/google/android/gms/tasks/Task;
+    invoke-static {p1, v0, v1}, Landroidx/lifecycle/ViewModelKt;->zza(Lcom/google/android/gms/tasks/Task;J)Lcom/google/android/gms/tasks/Task;
 
     move-result-object p1
 
@@ -694,7 +686,7 @@
 
     sget-wide v1, Lcom/google/android/gms/internal/nearby/zzaw;->zzc:J
 
-    invoke-static {v0, v1, v2}, Lcom/google/android/gms/internal/nearby/zzfc;->zza(Lcom/google/android/gms/tasks/Task;J)Lcom/google/android/gms/tasks/Task;
+    invoke-static {v0, v1, v2}, Landroidx/lifecycle/ViewModelKt;->zza(Lcom/google/android/gms/tasks/Task;J)Lcom/google/android/gms/tasks/Task;
 
     move-result-object v0
 
@@ -742,7 +734,7 @@
 
     sget-wide v1, Lcom/google/android/gms/internal/nearby/zzaw;->zzc:J
 
-    invoke-static {v0, v1, v2}, Lcom/google/android/gms/internal/nearby/zzfc;->zza(Lcom/google/android/gms/tasks/Task;J)Lcom/google/android/gms/tasks/Task;
+    invoke-static {v0, v1, v2}, Landroidx/lifecycle/ViewModelKt;->zza(Lcom/google/android/gms/tasks/Task;J)Lcom/google/android/gms/tasks/Task;
 
     move-result-object v0
 
@@ -768,9 +760,9 @@
 
     invoke-direct {v0}, Lcom/google/android/gms/common/api/internal/TaskApiCall$Builder;-><init>()V
 
-    new-instance v1, Landroidx/constraintlayout/core/Cache;
+    new-instance v1, Lcom/google/android/gms/internal/nearby/zzae;
 
-    invoke-direct {v1, p0, p2, p1, p3}, Landroidx/constraintlayout/core/Cache;-><init>(Lcom/google/android/gms/internal/nearby/zzaw;Lcom/google/android/gms/nearby/exposurenotification/ExposureConfiguration;Lcom/google/android/gms/nearby/exposurenotification/DiagnosisKeyFileProvider;Ljava/lang/String;)V
+    invoke-direct {v1, p0, p2, p1, p3}, Lcom/google/android/gms/internal/nearby/zzae;-><init>(Lcom/google/android/gms/internal/nearby/zzaw;Lcom/google/android/gms/nearby/exposurenotification/ExposureConfiguration;Lcom/google/android/gms/nearby/exposurenotification/DiagnosisKeyFileProvider;Ljava/lang/String;)V
 
     iput-object v1, v0, Lcom/google/android/gms/common/api/internal/TaskApiCall$Builder;->zaa:Lcom/google/android/gms/common/api/internal/RemoteCall;
 
@@ -796,7 +788,7 @@
 
     sget-wide p2, Lcom/google/android/gms/internal/nearby/zzaw;->zzd:J
 
-    invoke-static {p1, p2, p3}, Lcom/google/android/gms/internal/nearby/zzfc;->zza(Lcom/google/android/gms/tasks/Task;J)Lcom/google/android/gms/tasks/Task;
+    invoke-static {p1, p2, p3}, Landroidx/lifecycle/ViewModelKt;->zza(Lcom/google/android/gms/tasks/Task;J)Lcom/google/android/gms/tasks/Task;
 
     move-result-object p1
 

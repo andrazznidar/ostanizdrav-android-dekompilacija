@@ -1,5 +1,5 @@
 .class public final Lde/rki/coronawarnapp/risk/execution/ExposureWindowRiskWorkScheduler;
-.super Lde/rki/coronawarnapp/risk/execution/RiskWorkScheduler;
+.super Lcom/nimbusds/jose/crypto/impl/BaseJWSProvider;
 .source "ExposureWindowRiskWorkScheduler.kt"
 
 
@@ -63,7 +63,7 @@
 
     const-string v0, "EWRiskWorkScheduler"
 
-    invoke-direct {p0, p2, v0}, Lde/rki/coronawarnapp/risk/execution/RiskWorkScheduler;-><init>(Landroidx/work/WorkManager;Ljava/lang/String;)V
+    invoke-direct {p0, p2, v0}, Lcom/nimbusds/jose/crypto/impl/BaseJWSProvider;-><init>(Landroidx/work/WorkManager;Ljava/lang/String;)V
 
     iput-object p1, p0, Lde/rki/coronawarnapp/risk/execution/ExposureWindowRiskWorkScheduler;->appScope:Lkotlinx/coroutines/CoroutineScope;
 
@@ -97,7 +97,7 @@
 
     invoke-direct {v1}, Ljava/lang/StringBuilder;-><init>()V
 
-    const-string v2, "setPeriodicRiskCalculation(enabled="
+    const-string/jumbo v2, "setPeriodicRiskCalculation(enabled="
 
     invoke-virtual {v1, v2}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
 
@@ -115,7 +115,7 @@
 
     new-array v2, v2, [Ljava/lang/Object;
 
-    invoke-virtual {v0, v1, v2}, Ltimber/log/Timber$Tree;->i(Ljava/lang/String;[Ljava/lang/Object;)V
+    invoke-virtual {v0, v1, v2}, Ltimber/log/Timber$Forest;->i(Ljava/lang/String;[Ljava/lang/Object;)V
 
     const-string v0, "DiagnosisKeyRetrievalWorker"
 
@@ -143,11 +143,11 @@
 
     check-cast v1, Landroidx/work/PeriodicWorkRequest$Builder;
 
-    sget-object v2, Landroidx/work/BackoffPolicy;->EXPONENTIAL:Landroidx/work/BackoffPolicy;
+    const/4 v2, 0x1
 
     const-wide/16 v3, 0x8
 
-    invoke-virtual {v1, v2, v3, v4, p1}, Landroidx/work/WorkRequest$Builder;->setBackoffCriteria(Landroidx/work/BackoffPolicy;JLjava/util/concurrent/TimeUnit;)Landroidx/work/WorkRequest$Builder;
+    invoke-virtual {v1, v2, v3, v4, p1}, Landroidx/work/WorkRequest$Builder;->setBackoffCriteria$enumunboxing$(IJLjava/util/concurrent/TimeUnit;)Landroidx/work/WorkRequest$Builder;
 
     move-result-object p1
 
@@ -163,12 +163,12 @@
 
     check-cast p1, Landroidx/work/PeriodicWorkRequest;
 
-    invoke-virtual {p0, v0, p1}, Lde/rki/coronawarnapp/risk/execution/RiskWorkScheduler;->queueWorker$Corona_Warn_App_deviceRelease(Ljava/lang/String;Landroidx/work/PeriodicWorkRequest;)V
+    invoke-virtual {p0, v0, p1}, Lcom/nimbusds/jose/crypto/impl/BaseJWSProvider;->queueWorker$Corona_Warn_App_deviceRelease(Ljava/lang/String;Landroidx/work/PeriodicWorkRequest;)V
 
     goto :goto_0
 
     :cond_0
-    invoke-virtual {p0, v0}, Lde/rki/coronawarnapp/risk/execution/RiskWorkScheduler;->cancelWorker$Corona_Warn_App_deviceRelease(Ljava/lang/String;)V
+    invoke-virtual {p0, v0}, Lcom/nimbusds/jose/crypto/impl/BaseJWSProvider;->cancelWorker$Corona_Warn_App_deviceRelease(Ljava/lang/String;)V
 
     :goto_0
     return-void

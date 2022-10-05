@@ -4,7 +4,7 @@
 
 
 # static fields
-.field public static final zza:Lkotlin/jvm/internal/SpreadBuilder;
+.field public static final zza:Lcom/google/android/play/core/internal/zzag;
 
 
 # instance fields
@@ -41,13 +41,13 @@
 .method public static constructor <clinit>()V
     .locals 2
 
-    new-instance v0, Lkotlin/jvm/internal/SpreadBuilder;
+    new-instance v0, Lcom/google/android/play/core/internal/zzag;
 
     const-string v1, "ExtractorLooper"
 
-    invoke-direct {v0, v1}, Lkotlin/jvm/internal/SpreadBuilder;-><init>(Ljava/lang/String;)V
+    invoke-direct {v0, v1}, Lcom/google/android/play/core/internal/zzag;-><init>(Ljava/lang/String;)V
 
-    sput-object v0, Lcom/google/android/play/core/assetpacks/zzci;->zza:Lkotlin/jvm/internal/SpreadBuilder;
+    sput-object v0, Lcom/google/android/play/core/assetpacks/zzci;->zza:Lcom/google/android/play/core/internal/zzag;
 
     return-void
 .end method
@@ -106,47 +106,78 @@
 
 # virtual methods
 .method public final zzb(ILjava/lang/Exception;)V
-    .locals 4
-
-    const/4 v0, 0x0
-
-    const/4 v1, 0x1
+    .locals 3
 
     :try_start_0
-    iget-object v2, p0, Lcom/google/android/play/core/assetpacks/zzci;->zzb:Lcom/google/android/play/core/assetpacks/zzdb;
+    iget-object v0, p0, Lcom/google/android/play/core/assetpacks/zzci;->zzb:Lcom/google/android/play/core/assetpacks/zzdb;
 
-    new-instance v3, Lcom/google/android/play/core/assetpacks/zzco;
-
-    invoke-direct {v3, v2, p1, v1}, Lcom/google/android/play/core/assetpacks/zzco;-><init>(Lcom/google/android/play/core/assetpacks/zzdb;II)V
-
-    invoke-virtual {v2, v3}, Lcom/google/android/play/core/assetpacks/zzdb;->zzr(Lcom/google/android/play/core/assetpacks/zzda;)Ljava/lang/Object;
-
-    iget-object v2, p0, Lcom/google/android/play/core/assetpacks/zzci;->zzb:Lcom/google/android/play/core/assetpacks/zzdb;
-
-    new-instance v3, Lcom/google/android/play/core/assetpacks/zzco;
-
-    invoke-direct {v3, v2, p1, v0}, Lcom/google/android/play/core/assetpacks/zzco;-><init>(Lcom/google/android/play/core/assetpacks/zzdb;II)V
-
-    invoke-virtual {v2, v3}, Lcom/google/android/play/core/assetpacks/zzdb;->zzr(Lcom/google/android/play/core/assetpacks/zzda;)Ljava/lang/Object;
+    invoke-static {v0}, Ljava/util/Objects;->requireNonNull(Ljava/lang/Object;)Ljava/lang/Object;
     :try_end_0
     .catch Lcom/google/android/play/core/assetpacks/zzch; {:try_start_0 .. :try_end_0} :catch_0
 
+    :try_start_1
+    iget-object v1, v0, Lcom/google/android/play/core/assetpacks/zzdb;->zzg:Ljava/util/concurrent/locks/ReentrantLock;
+
+    invoke-virtual {v1}, Ljava/util/concurrent/locks/ReentrantLock;->lock()V
+
+    invoke-virtual {v0, p1}, Lcom/google/android/play/core/assetpacks/zzdb;->zzq(I)Lcom/google/android/play/core/assetpacks/zzcy;
+
+    move-result-object v1
+
+    iget-object v1, v1, Lcom/google/android/play/core/assetpacks/zzcy;->zzc:Lcom/google/android/play/core/assetpacks/zzcx;
+
+    const/4 v2, 0x5
+
+    iput v2, v1, Lcom/google/android/play/core/assetpacks/zzcx;->zzd:I
+    :try_end_1
+    .catchall {:try_start_1 .. :try_end_1} :catchall_0
+
+    :try_start_2
+    iget-object v0, v0, Lcom/google/android/play/core/assetpacks/zzdb;->zzg:Ljava/util/concurrent/locks/ReentrantLock;
+
+    invoke-virtual {v0}, Ljava/util/concurrent/locks/ReentrantLock;->unlock()V
+
+    iget-object v0, p0, Lcom/google/android/play/core/assetpacks/zzci;->zzb:Lcom/google/android/play/core/assetpacks/zzdb;
+
+    invoke-static {v0}, Ljava/util/Objects;->requireNonNull(Ljava/lang/Object;)Ljava/lang/Object;
+
+    new-instance v1, Lcom/google/android/play/core/assetpacks/zzco;
+
+    invoke-direct {v1, v0, p1}, Lcom/google/android/play/core/assetpacks/zzco;-><init>(Lcom/google/android/play/core/assetpacks/zzdb;I)V
+
+    invoke-virtual {v0, v1}, Lcom/google/android/play/core/assetpacks/zzdb;->zzr(Lcom/google/android/play/core/assetpacks/zzda;)Ljava/lang/Object;
+
     return-void
 
-    :catch_0
-    sget-object p1, Lcom/google/android/play/core/assetpacks/zzci;->zza:Lkotlin/jvm/internal/SpreadBuilder;
+    :catchall_0
+    move-exception p1
 
-    new-array v1, v1, [Ljava/lang/Object;
+    iget-object v0, v0, Lcom/google/android/play/core/assetpacks/zzdb;->zzg:Ljava/util/concurrent/locks/ReentrantLock;
+
+    invoke-virtual {v0}, Ljava/util/concurrent/locks/ReentrantLock;->unlock()V
+
+    throw p1
+    :try_end_2
+    .catch Lcom/google/android/play/core/assetpacks/zzch; {:try_start_2 .. :try_end_2} :catch_0
+
+    :catch_0
+    sget-object p1, Lcom/google/android/play/core/assetpacks/zzci;->zza:Lcom/google/android/play/core/internal/zzag;
+
+    const/4 v0, 0x1
+
+    new-array v0, v0, [Ljava/lang/Object;
+
+    const/4 v1, 0x0
 
     invoke-virtual {p2}, Ljava/lang/Exception;->getMessage()Ljava/lang/String;
 
     move-result-object p2
 
-    aput-object p2, v1, v0
+    aput-object p2, v0, v1
 
     const-string p2, "Error during error handling: %s"
 
-    invoke-virtual {p1, p2, v1}, Lkotlin/jvm/internal/SpreadBuilder;->zzb(Ljava/lang/String;[Ljava/lang/Object;)I
+    invoke-virtual {p1, p2, v0}, Lcom/google/android/play/core/internal/zzag;->zzb(Ljava/lang/String;[Ljava/lang/Object;)I
 
     return-void
 .end method

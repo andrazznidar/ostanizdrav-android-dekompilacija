@@ -186,7 +186,7 @@
 
     const-string v2, "\' is not recognised"
 
-    invoke-static {v1, p0, v2}, Landroidx/core/graphics/PathParser$$ExternalSyntheticOutline0;->m(Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;)Ljava/lang/String;
+    invoke-static {v1, p0, v2}, Landroidx/concurrent/futures/AbstractResolvableFuture$$ExternalSyntheticOutline1;->m(Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;)Ljava/lang/String;
 
     move-result-object p0
 
@@ -460,7 +460,7 @@
 
     const-string v2, "\' is not recognised"
 
-    invoke-static {v1, p0, v2}, Landroidx/core/graphics/PathParser$$ExternalSyntheticOutline0;->m(Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;)Ljava/lang/String;
+    invoke-static {v1, p0, v2}, Landroidx/concurrent/futures/AbstractResolvableFuture$$ExternalSyntheticOutline1;->m(Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;)Ljava/lang/String;
 
     move-result-object p0
 
@@ -1384,6 +1384,18 @@
     .locals 1
 
     iget-object v0, p0, Lorg/joda/time/DateTimeZone;->iID:Ljava/lang/String;
+
+    return-object v0
+.end method
+
+.method public toTimeZone()Ljava/util/TimeZone;
+    .locals 1
+
+    iget-object v0, p0, Lorg/joda/time/DateTimeZone;->iID:Ljava/lang/String;
+
+    invoke-static {v0}, Lj$/util/DesugarTimeZone;->getTimeZone(Ljava/lang/String;)Ljava/util/TimeZone;
+
+    move-result-object v0
 
     return-object v0
 .end method

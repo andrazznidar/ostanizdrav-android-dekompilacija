@@ -59,7 +59,7 @@
 
     sget-object p2, Landroidx/core/content/ContextCompat;->sLock:Ljava/lang/Object;
 
-    const p2, 0x7f080111
+    const p2, 0x7f080108
 
     invoke-static {p1, p2}, Landroidx/core/content/ContextCompat$Api21Impl;->getDrawable(Landroid/content/Context;I)Landroid/graphics/drawable/Drawable;
 
@@ -73,7 +73,7 @@
 
     move-result-object p2
 
-    const p3, 0x7f070206
+    const p3, 0x7f0701f8
 
     invoke-virtual {p2, p3}, Landroid/content/res/Resources;->getDimensionPixelSize(I)I
 
@@ -85,7 +85,7 @@
 
     move-result-object p2
 
-    const p3, 0x7f0701e3
+    const p3, 0x7f0701d8
 
     invoke-virtual {p2, p3}, Landroid/content/res/Resources;->getDimensionPixelSize(I)I
 
@@ -99,7 +99,7 @@
 
     invoke-direct {p2}, Landroid/graphics/Paint;-><init>()V
 
-    const p3, 0x7f060140
+    const p3, 0x7f060147
 
     invoke-static {p1, p3}, Landroidx/core/content/ContextCompat$Api23Impl;->getColor(Landroid/content/Context;I)I
 

@@ -1,4 +1,4 @@
-.class public Lorg/bouncycastle/asn1/BEROctetString$1;
+.class Lorg/bouncycastle/asn1/BEROctetString$1;
 .super Ljava/lang/Object;
 
 # interfaces
@@ -80,7 +80,9 @@
 
     sub-int/2addr v2, v0
 
-    iget v0, v1, Lorg/bouncycastle/asn1/BEROctetString;->chunkSize:I
+    invoke-static {v1}, Lorg/bouncycastle/asn1/BEROctetString;->access$000(Lorg/bouncycastle/asn1/BEROctetString;)I
+
+    move-result v0
 
     invoke-static {v2, v0}, Ljava/lang/Math;->min(II)I
 

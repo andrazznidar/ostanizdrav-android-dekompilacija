@@ -1,5 +1,6 @@
 .class public final synthetic Landroidx/appcompat/graphics/drawable/AnimatedStateListDrawableCompat$$ExternalSyntheticOutline0;
 .super Ljava/lang/Object;
+.source "R8$$SyntheticClass"
 
 
 # direct methods

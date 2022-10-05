@@ -9,7 +9,7 @@
 # static fields
 .field public static final DEFAULT_KEY_DESERIALIZERS:[Lcom/fasterxml/jackson/databind/deser/KeyDeserializers;
 
-.field public static final NO_ABSTRACT_TYPE_RESOLVERS:[Lcom/fasterxml/jackson/databind/AbstractTypeResolver;
+.field public static final NO_ABSTRACT_TYPE_RESOLVERS:[Lorg/joda/time/Chronology;
 
 .field public static final NO_DESERIALIZERS:[Lcom/fasterxml/jackson/databind/deser/Deserializers;
 
@@ -19,7 +19,7 @@
 
 
 # instance fields
-.field public final _abstractTypeResolvers:[Lcom/fasterxml/jackson/databind/AbstractTypeResolver;
+.field public final _abstractTypeResolvers:[Lorg/joda/time/Chronology;
 
 .field public final _additionalDeserializers:[Lcom/fasterxml/jackson/databind/deser/Deserializers;
 
@@ -44,9 +44,9 @@
 
     sput-object v1, Lcom/fasterxml/jackson/databind/cfg/DeserializerFactoryConfig;->NO_MODIFIERS:[Lcom/fasterxml/jackson/databind/deser/BeanDeserializerModifier;
 
-    new-array v1, v0, [Lcom/fasterxml/jackson/databind/AbstractTypeResolver;
+    new-array v1, v0, [Lorg/joda/time/Chronology;
 
-    sput-object v1, Lcom/fasterxml/jackson/databind/cfg/DeserializerFactoryConfig;->NO_ABSTRACT_TYPE_RESOLVERS:[Lcom/fasterxml/jackson/databind/AbstractTypeResolver;
+    sput-object v1, Lcom/fasterxml/jackson/databind/cfg/DeserializerFactoryConfig;->NO_ABSTRACT_TYPE_RESOLVERS:[Lorg/joda/time/Chronology;
 
     new-array v1, v0, [Lcom/fasterxml/jackson/databind/deser/ValueInstantiators;
 
@@ -67,7 +67,7 @@
     return-void
 .end method
 
-.method public constructor <init>([Lcom/fasterxml/jackson/databind/deser/Deserializers;[Lcom/fasterxml/jackson/databind/deser/KeyDeserializers;[Lcom/fasterxml/jackson/databind/deser/BeanDeserializerModifier;[Lcom/fasterxml/jackson/databind/AbstractTypeResolver;[Lcom/fasterxml/jackson/databind/deser/ValueInstantiators;)V
+.method public constructor <init>([Lcom/fasterxml/jackson/databind/deser/Deserializers;[Lcom/fasterxml/jackson/databind/deser/KeyDeserializers;[Lcom/fasterxml/jackson/databind/deser/BeanDeserializerModifier;[Lorg/joda/time/Chronology;[Lcom/fasterxml/jackson/databind/deser/ValueInstantiators;)V
     .locals 0
 
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
@@ -95,10 +95,10 @@
 
     if-nez p4, :cond_3
 
-    sget-object p4, Lcom/fasterxml/jackson/databind/cfg/DeserializerFactoryConfig;->NO_ABSTRACT_TYPE_RESOLVERS:[Lcom/fasterxml/jackson/databind/AbstractTypeResolver;
+    sget-object p4, Lcom/fasterxml/jackson/databind/cfg/DeserializerFactoryConfig;->NO_ABSTRACT_TYPE_RESOLVERS:[Lorg/joda/time/Chronology;
 
     :cond_3
-    iput-object p4, p0, Lcom/fasterxml/jackson/databind/cfg/DeserializerFactoryConfig;->_abstractTypeResolvers:[Lcom/fasterxml/jackson/databind/AbstractTypeResolver;
+    iput-object p4, p0, Lcom/fasterxml/jackson/databind/cfg/DeserializerFactoryConfig;->_abstractTypeResolvers:[Lorg/joda/time/Chronology;
 
     if-nez p5, :cond_4
 

@@ -6,13 +6,13 @@
 
 
 # instance fields
-.field public coeffquadratic:[[S
+.field private coeffquadratic:[[S
 
-.field public coeffscalar:[S
+.field private coeffscalar:[S
 
-.field public coeffsingular:[[S
+.field private coeffsingular:[[S
 
-.field public docLength:I
+.field private docLength:I
 
 
 # direct methods
@@ -30,4 +30,38 @@
     iput-object p4, p0, Lorg/bouncycastle/pqc/jcajce/spec/RainbowPublicKeySpec;->coeffscalar:[S
 
     return-void
+.end method
+
+
+# virtual methods
+.method public getCoeffQuadratic()[[S
+    .locals 1
+
+    iget-object v0, p0, Lorg/bouncycastle/pqc/jcajce/spec/RainbowPublicKeySpec;->coeffquadratic:[[S
+
+    return-object v0
+.end method
+
+.method public getCoeffScalar()[S
+    .locals 1
+
+    iget-object v0, p0, Lorg/bouncycastle/pqc/jcajce/spec/RainbowPublicKeySpec;->coeffscalar:[S
+
+    return-object v0
+.end method
+
+.method public getCoeffSingular()[[S
+    .locals 1
+
+    iget-object v0, p0, Lorg/bouncycastle/pqc/jcajce/spec/RainbowPublicKeySpec;->coeffsingular:[[S
+
+    return-object v0
+.end method
+
+.method public getDocLength()I
+    .locals 1
+
+    iget v0, p0, Lorg/bouncycastle/pqc/jcajce/spec/RainbowPublicKeySpec;->docLength:I
+
+    return v0
 .end method

@@ -5,7 +5,7 @@
 
 # annotations
 .annotation system Ldalvik/annotation/SourceDebugExtension;
-    value = "SMAP\nOrganizerSubmissionServer.kt\nKotlin\n*S Kotlin\n*F\n+ 1 OrganizerSubmissionServer.kt\nde/rki/coronawarnapp/presencetracing/organizer/submission/server/OrganizerSubmissionServer\n+ 2 Timber.kt\nde/rki/coronawarnapp/TimberKt\n*L\n1#1,59:1\n3#2:60\n*S KotlinDebug\n*F\n+ 1 OrganizerSubmissionServer.kt\nde/rki/coronawarnapp/presencetracing/organizer/submission/server/OrganizerSubmissionServer\n*L\n56#1:60\n*E\n"
+    value = "SMAP\nOrganizerSubmissionServer.kt\nKotlin\n*S Kotlin\n*F\n+ 1 OrganizerSubmissionServer.kt\nde/rki/coronawarnapp/presencetracing/organizer/submission/server/OrganizerSubmissionServer\n+ 2 Timber.kt\nde/rki/coronawarnapp/TimberKt\n*L\n1#1,60:1\n3#2:61\n*S KotlinDebug\n*F\n+ 1 OrganizerSubmissionServer.kt\nde/rki/coronawarnapp/presencetracing/organizer/submission/server/OrganizerSubmissionServer\n*L\n57#1:61\n*E\n"
 .end annotation
 
 
@@ -37,7 +37,7 @@
 
     const-class v0, Lde/rki/coronawarnapp/presencetracing/organizer/submission/server/OrganizerSubmissionServer;
 
-    invoke-static {v0}, Lde/rki/coronawarnapp/contactdiary/retention/ContactDiaryCleanTask$$ExternalSyntheticOutline0;->m(Ljava/lang/Class;)Ljava/lang/String;
+    invoke-static {v0}, Lorg/bouncycastle/crypto/digests/MD5Digest$$ExternalSyntheticOutline0;->m(Ljava/lang/Class;)Ljava/lang/String;
 
     move-result-object v0
 

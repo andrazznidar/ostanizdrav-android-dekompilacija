@@ -1,5 +1,6 @@
 .class public final synthetic Lkotlinx/coroutines/CommonPool$$ExternalSyntheticLambda1;
 .super Ljava/lang/Object;
+.source "R8$$SyntheticClass"
 
 # interfaces
 .implements Ljava/util/concurrent/ThreadFactory;

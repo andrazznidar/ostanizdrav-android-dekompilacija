@@ -15,7 +15,7 @@
 
 
 # instance fields
-.field public positioning:Lcom/google/android/material/animation/Positioning;
+.field public positioning:Lde/rki/coronawarnapp/nearby/ENFModule;
 
 .field public timings:Lcom/google/android/material/animation/MotionSpec;
 

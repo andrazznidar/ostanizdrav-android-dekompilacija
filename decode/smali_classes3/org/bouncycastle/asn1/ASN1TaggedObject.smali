@@ -2,7 +2,7 @@
 .super Lorg/bouncycastle/asn1/ASN1Primitive;
 
 # interfaces
-.implements Lorg/bouncycastle/asn1/InMemoryRepresentable;
+.implements Lorg/bouncycastle/asn1/ASN1TaggedObjectParser;
 
 
 # instance fields
@@ -25,16 +25,24 @@
 
     iput p2, p0, Lorg/bouncycastle/asn1/ASN1TaggedObject;->tagNo:I
 
-    if-nez p1, :cond_0
+    if-nez p1, :cond_1
 
-    const/4 p1, 0x0
+    instance-of p1, p3, Lorg/bouncycastle/asn1/ASN1Choice;
+
+    if-eqz p1, :cond_0
 
     goto :goto_0
 
     :cond_0
+    const/4 p1, 0x0
+
+    goto :goto_1
+
+    :cond_1
+    :goto_0
     const/4 p1, 0x1
 
-    :goto_0
+    :goto_1
     iput-boolean p1, p0, Lorg/bouncycastle/asn1/ASN1TaggedObject;->explicit:Z
 
     iput-object p3, p0, Lorg/bouncycastle/asn1/ASN1TaggedObject;->obj:Lorg/bouncycastle/asn1/ASN1Encodable;
@@ -84,13 +92,7 @@
 
     move-result-object v1
 
-    invoke-virtual {p0}, Ljava/io/IOException;->getMessage()Ljava/lang/String;
-
-    move-result-object p0
-
-    invoke-virtual {v1, p0}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
-
-    invoke-virtual {v1}, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
+    invoke-static {p0, v1}, Lorg/bouncycastle/asn1/ASN1ApplicationSpecific$$ExternalSyntheticOutline0;->m(Ljava/io/IOException;Ljava/lang/StringBuilder;)Ljava/lang/String;
 
     move-result-object p0
 
@@ -107,17 +109,7 @@
 
     move-result-object v1
 
-    invoke-virtual {p0}, Ljava/lang/Object;->getClass()Ljava/lang/Class;
-
-    move-result-object p0
-
-    invoke-virtual {p0}, Ljava/lang/Class;->getName()Ljava/lang/String;
-
-    move-result-object p0
-
-    invoke-virtual {v1, p0}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
-
-    invoke-virtual {v1}, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
+    invoke-static {p0, v1}, Lcom/fasterxml/jackson/core/JsonGenerator$$ExternalSyntheticOutline0;->m(Ljava/lang/Object;Ljava/lang/StringBuilder;)Ljava/lang/String;
 
     move-result-object p0
 
@@ -130,6 +122,31 @@
     check-cast p0, Lorg/bouncycastle/asn1/ASN1TaggedObject;
 
     return-object p0
+.end method
+
+.method public static getInstance(Lorg/bouncycastle/asn1/ASN1TaggedObject;Z)Lorg/bouncycastle/asn1/ASN1TaggedObject;
+    .locals 0
+
+    if-eqz p1, :cond_0
+
+    invoke-virtual {p0}, Lorg/bouncycastle/asn1/ASN1TaggedObject;->getObject()Lorg/bouncycastle/asn1/ASN1Primitive;
+
+    move-result-object p0
+
+    invoke-static {p0}, Lorg/bouncycastle/asn1/ASN1TaggedObject;->getInstance(Ljava/lang/Object;)Lorg/bouncycastle/asn1/ASN1TaggedObject;
+
+    move-result-object p0
+
+    return-object p0
+
+    :cond_0
+    new-instance p0, Ljava/lang/IllegalArgumentException;
+
+    const-string p1, "implicitly tagged tagged object"
+
+    invoke-direct {p0, p1}, Ljava/lang/IllegalArgumentException;-><init>(Ljava/lang/String;)V
+
+    throw p0
 .end method
 
 
@@ -191,10 +208,22 @@
     return v1
 .end method
 
-.method public getLoadedObject()Lorg/bouncycastle/asn1/ASN1Primitive;
-    .locals 0
+.method public abstract encode(Lorg/bouncycastle/asn1/ASN1OutputStream;Z)V
+    .annotation system Ldalvik/annotation/Throws;
+        value = {
+            Ljava/io/IOException;
+        }
+    .end annotation
+.end method
 
-    return-object p0
+.method public getLoadedObject()Lorg/bouncycastle/asn1/ASN1Primitive;
+    .locals 1
+
+    invoke-virtual {p0}, Lorg/bouncycastle/asn1/ASN1Primitive;->toASN1Primitive()Lorg/bouncycastle/asn1/ASN1Primitive;
+
+    move-result-object v0
+
+    return-object v0
 .end method
 
 .method public getObject()Lorg/bouncycastle/asn1/ASN1Primitive;
@@ -207,6 +236,89 @@
     move-result-object v0
 
     return-object v0
+.end method
+
+.method public getObjectParser(IZ)Lorg/bouncycastle/asn1/ASN1Encodable;
+    .locals 1
+    .annotation system Ldalvik/annotation/Throws;
+        value = {
+            Ljava/io/IOException;
+        }
+    .end annotation
+
+    const/4 v0, 0x4
+
+    if-eq p1, v0, :cond_3
+
+    const/16 v0, 0x10
+
+    if-eq p1, v0, :cond_2
+
+    const/16 v0, 0x11
+
+    if-eq p1, v0, :cond_1
+
+    if-eqz p2, :cond_0
+
+    invoke-virtual {p0}, Lorg/bouncycastle/asn1/ASN1TaggedObject;->getObject()Lorg/bouncycastle/asn1/ASN1Primitive;
+
+    move-result-object p1
+
+    return-object p1
+
+    :cond_0
+    new-instance p2, Lorg/bouncycastle/asn1/ASN1Exception;
+
+    const-string v0, "implicit tagging not implemented for tag: "
+
+    invoke-static {v0, p1}, Landroidx/appcompat/widget/AppCompatTextHelper$$ExternalSyntheticOutline0;->m(Ljava/lang/String;I)Ljava/lang/String;
+
+    move-result-object p1
+
+    invoke-direct {p2, p1}, Lorg/bouncycastle/asn1/ASN1Exception;-><init>(Ljava/lang/String;)V
+
+    throw p2
+
+    :cond_1
+    invoke-static {p0, p2}, Lorg/bouncycastle/asn1/ASN1Set;->getInstance(Lorg/bouncycastle/asn1/ASN1TaggedObject;Z)Lorg/bouncycastle/asn1/ASN1Set;
+
+    move-result-object p1
+
+    invoke-virtual {p1}, Lorg/bouncycastle/asn1/ASN1Set;->parser()Lorg/bouncycastle/asn1/ASN1SetParser;
+
+    move-result-object p1
+
+    return-object p1
+
+    :cond_2
+    invoke-static {p0, p2}, Lorg/bouncycastle/asn1/ASN1Sequence;->getInstance(Lorg/bouncycastle/asn1/ASN1TaggedObject;Z)Lorg/bouncycastle/asn1/ASN1Sequence;
+
+    move-result-object p1
+
+    invoke-virtual {p1}, Lorg/bouncycastle/asn1/ASN1Sequence;->parser()Lorg/bouncycastle/asn1/ASN1SequenceParser;
+
+    move-result-object p1
+
+    return-object p1
+
+    :cond_3
+    invoke-static {p0, p2}, Lorg/bouncycastle/asn1/ASN1OctetString;->getInstance(Lorg/bouncycastle/asn1/ASN1TaggedObject;Z)Lorg/bouncycastle/asn1/ASN1OctetString;
+
+    move-result-object p1
+
+    invoke-virtual {p1}, Lorg/bouncycastle/asn1/ASN1OctetString;->parser()Lorg/bouncycastle/asn1/ASN1OctetStringParser;
+
+    move-result-object p1
+
+    return-object p1
+.end method
+
+.method public getTagNo()I
+    .locals 1
+
+    iget v0, p0, Lorg/bouncycastle/asn1/ASN1TaggedObject;->tagNo:I
+
+    return v0
 .end method
 
 .method public hashCode()I
@@ -234,11 +346,19 @@
 
     move-result-object v1
 
-    invoke-virtual {v1}, Lorg/bouncycastle/asn1/ASN1Object;->hashCode()I
+    invoke-virtual {v1}, Lorg/bouncycastle/asn1/ASN1Primitive;->hashCode()I
 
     move-result v1
 
     xor-int/2addr v0, v1
+
+    return v0
+.end method
+
+.method public isExplicit()Z
+    .locals 1
+
+    iget-boolean v0, p0, Lorg/bouncycastle/asn1/ASN1TaggedObject;->explicit:Z
 
     return v0
 .end method

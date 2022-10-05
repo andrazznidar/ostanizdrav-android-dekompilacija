@@ -43,6 +43,8 @@
 
 .field public static final enum EVALUATION_TYPE_HARDWARE_BACKED_REQUIRED:Lde/rki/coronawarnapp/datadonation/safetynet/SafetyNetException$Type;
 
+.field public static final enum INTERNAL_ERROR:Lde/rki/coronawarnapp/datadonation/safetynet/SafetyNetException$Type;
+
 .field public static final enum NONCE_MISMATCH:Lde/rki/coronawarnapp/datadonation/safetynet/SafetyNetException$Type;
 
 .field public static final enum PLAY_SERVICES_VERSION_MISMATCH:Lde/rki/coronawarnapp/datadonation/safetynet/SafetyNetException$Type;
@@ -174,53 +176,69 @@
 
     sput-object v10, Lde/rki/coronawarnapp/datadonation/safetynet/SafetyNetException$Type;->TIME_SINCE_ONBOARDING_UNVERIFIED:Lde/rki/coronawarnapp/datadonation/safetynet/SafetyNetException$Type;
 
-    const/16 v8, 0xc
+    new-instance v8, Lde/rki/coronawarnapp/datadonation/safetynet/SafetyNetException$Type;
 
-    new-array v8, v8, [Lde/rki/coronawarnapp/datadonation/safetynet/SafetyNetException$Type;
+    const-string v6, "INTERNAL_ERROR"
 
-    aput-object v0, v8, v2
+    const/16 v4, 0xc
 
-    aput-object v1, v8, v4
+    invoke-direct {v8, v6, v4}, Lde/rki/coronawarnapp/datadonation/safetynet/SafetyNetException$Type;-><init>(Ljava/lang/String;I)V
+
+    sput-object v8, Lde/rki/coronawarnapp/datadonation/safetynet/SafetyNetException$Type;->INTERNAL_ERROR:Lde/rki/coronawarnapp/datadonation/safetynet/SafetyNetException$Type;
+
+    const/16 v6, 0xd
+
+    new-array v6, v6, [Lde/rki/coronawarnapp/datadonation/safetynet/SafetyNetException$Type;
+
+    aput-object v0, v6, v2
+
+    const/4 v0, 0x1
+
+    aput-object v1, v6, v0
 
     const/4 v0, 0x2
 
-    aput-object v3, v8, v0
+    aput-object v3, v6, v0
 
     const/4 v0, 0x3
 
-    aput-object v5, v8, v0
+    aput-object v5, v6, v0
 
     const/4 v0, 0x4
 
-    aput-object v7, v8, v0
+    aput-object v7, v6, v0
 
     const/4 v0, 0x5
 
-    aput-object v9, v8, v0
+    aput-object v9, v6, v0
 
     const/4 v0, 0x6
 
-    aput-object v11, v8, v0
+    aput-object v11, v6, v0
 
     const/4 v0, 0x7
 
-    aput-object v13, v8, v0
+    aput-object v13, v6, v0
 
     const/16 v0, 0x8
 
-    aput-object v15, v8, v0
+    aput-object v15, v6, v0
 
     const/16 v0, 0x9
 
-    aput-object v14, v8, v0
+    aput-object v14, v6, v0
 
     const/16 v0, 0xa
 
-    aput-object v12, v8, v0
+    aput-object v12, v6, v0
 
-    aput-object v10, v8, v6
+    const/16 v0, 0xb
 
-    sput-object v8, Lde/rki/coronawarnapp/datadonation/safetynet/SafetyNetException$Type;->$VALUES:[Lde/rki/coronawarnapp/datadonation/safetynet/SafetyNetException$Type;
+    aput-object v10, v6, v0
+
+    aput-object v8, v6, v4
+
+    sput-object v6, Lde/rki/coronawarnapp/datadonation/safetynet/SafetyNetException$Type;->$VALUES:[Lde/rki/coronawarnapp/datadonation/safetynet/SafetyNetException$Type;
 
     return-void
 .end method

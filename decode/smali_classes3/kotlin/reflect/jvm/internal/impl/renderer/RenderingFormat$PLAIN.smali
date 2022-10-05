@@ -1,4 +1,4 @@
-.class public final Lkotlin/reflect/jvm/internal/impl/renderer/RenderingFormat$PLAIN;
+.class final Lkotlin/reflect/jvm/internal/impl/renderer/RenderingFormat$PLAIN;
 .super Lkotlin/reflect/jvm/internal/impl/renderer/RenderingFormat;
 .source "DescriptorRenderer.kt"
 

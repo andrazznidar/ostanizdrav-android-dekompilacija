@@ -15,7 +15,7 @@
 
 
 # instance fields
-.field public final value:Ljava/lang/Object;
+.field private final value:Ljava/lang/Object;
     .annotation system Ldalvik/annotation/Signature;
         value = {
             "TT;"

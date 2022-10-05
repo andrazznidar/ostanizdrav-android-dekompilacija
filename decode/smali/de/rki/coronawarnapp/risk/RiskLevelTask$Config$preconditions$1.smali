@@ -30,14 +30,14 @@
 .end annotation
 
 .annotation system Ldalvik/annotation/SourceDebugExtension;
-    value = "SMAP\nRiskLevelTask.kt\nKotlin\n*S Kotlin\n*F\n+ 1 RiskLevelTask.kt\nde/rki/coronawarnapp/risk/RiskLevelTask$Config$preconditions$1\n+ 2 _Collections.kt\nkotlin/collections/CollectionsKt___CollectionsKt\n*L\n1#1,240:1\n1741#2,3:241\n*S KotlinDebug\n*F\n+ 1 RiskLevelTask.kt\nde/rki/coronawarnapp/risk/RiskLevelTask$Config$preconditions$1\n*L\n218#1:241,3\n*E\n"
+    value = "SMAP\nRiskLevelTask.kt\nKotlin\n*S Kotlin\n*F\n+ 1 RiskLevelTask.kt\nde/rki/coronawarnapp/risk/RiskLevelTask$Config$preconditions$1\n+ 2 _Collections.kt\nkotlin/collections/CollectionsKt___CollectionsKt\n*L\n1#1,243:1\n1741#2,3:244\n*S KotlinDebug\n*F\n+ 1 RiskLevelTask.kt\nde/rki/coronawarnapp/risk/RiskLevelTask$Config$preconditions$1\n*L\n221#1:244,3\n*E\n"
 .end annotation
 
 .annotation runtime Lkotlin/coroutines/jvm/internal/DebugMetadata;
     c = "de.rki.coronawarnapp.risk.RiskLevelTask$Config$preconditions$1"
     f = "RiskLevelTask.kt"
     l = {
-        0xda
+        0xdd
     }
     m = "invokeSuspend"
 .end annotation
@@ -74,6 +74,28 @@
 
 
 # virtual methods
+.method public final create(Lkotlin/coroutines/Continuation;)Lkotlin/coroutines/Continuation;
+    .locals 2
+    .annotation system Ldalvik/annotation/Signature;
+        value = {
+            "(",
+            "Lkotlin/coroutines/Continuation<",
+            "*>;)",
+            "Lkotlin/coroutines/Continuation<",
+            "Lkotlin/Unit;",
+            ">;"
+        }
+    .end annotation
+
+    new-instance v0, Lde/rki/coronawarnapp/risk/RiskLevelTask$Config$preconditions$1;
+
+    iget-object v1, p0, Lde/rki/coronawarnapp/risk/RiskLevelTask$Config$preconditions$1;->this$0:Lde/rki/coronawarnapp/risk/RiskLevelTask$Config;
+
+    invoke-direct {v0, v1, p1}, Lde/rki/coronawarnapp/risk/RiskLevelTask$Config$preconditions$1;-><init>(Lde/rki/coronawarnapp/risk/RiskLevelTask$Config;Lkotlin/coroutines/Continuation;)V
+
+    return-object v0
+.end method
+
 .method public invoke(Ljava/lang/Object;)Ljava/lang/Object;
     .locals 2
 

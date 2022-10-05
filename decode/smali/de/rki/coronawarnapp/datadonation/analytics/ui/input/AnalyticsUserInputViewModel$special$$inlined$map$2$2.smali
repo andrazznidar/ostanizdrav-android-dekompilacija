@@ -20,14 +20,15 @@
     value = {
         "Ljava/lang/Object;",
         "Lkotlinx/coroutines/flow/FlowCollector<",
-        "[",
+        "Ljava/util/List<",
+        "+",
         "Lde/rki/coronawarnapp/server/protocols/internal/ppdd/PpaData$PPAFederalState;",
-        ">;"
+        ">;>;"
     }
 .end annotation
 
 .annotation system Ldalvik/annotation/SourceDebugExtension;
-    value = "SMAP\nCollect.kt\nKotlin\n*S Kotlin\n*F\n+ 1 Collect.kt\nkotlinx/coroutines/flow/FlowKt__CollectKt$collect$3\n+ 2 Emitters.kt\nkotlinx/coroutines/flow/FlowKt__EmittersKt\n+ 3 Transform.kt\nkotlinx/coroutines/flow/FlowKt__TransformKt\n+ 4 AnalyticsUserInputViewModel.kt\nde/rki/coronawarnapp/datadonation/analytics/ui/input/AnalyticsUserInputViewModel\n+ 5 _Arrays.kt\nkotlin/collections/ArraysKt___ArraysKt\n+ 6 fake.kt\nkotlin/jvm/internal/FakeKt\n+ 7 _Collections.kt\nkotlin/collections/CollectionsKt___CollectionsKt\n*L\n1#1,134:1\n53#2:135\n48#3:136\n53#4,3:137\n56#4,6:150\n64#4:159\n67#4,3:161\n66#4,6:164\n11646#5,9:140\n13536#5:149\n13537#5:157\n11655#5:158\n1#6:156\n1043#7:160\n*S KotlinDebug\n*F\n+ 1 AnalyticsUserInputViewModel.kt\nde/rki/coronawarnapp/datadonation/analytics/ui/input/AnalyticsUserInputViewModel\n*L\n55#1:140,9\n55#1:149\n55#1:157\n55#1:158\n55#1:156\n64#1:160\n*E\n"
+    value = "SMAP\nCollect.kt\nKotlin\n*S Kotlin\n*F\n+ 1 Collect.kt\nkotlinx/coroutines/flow/FlowKt__CollectKt$collect$3\n+ 2 Emitters.kt\nkotlinx/coroutines/flow/FlowKt__EmittersKt\n+ 3 Transform.kt\nkotlinx/coroutines/flow/FlowKt__TransformKt\n+ 4 AnalyticsUserInputViewModel.kt\nde/rki/coronawarnapp/datadonation/analytics/ui/input/AnalyticsUserInputViewModel\n+ 5 _Collections.kt\nkotlin/collections/CollectionsKt___CollectionsKt\n+ 6 fake.kt\nkotlin/jvm/internal/FakeKt\n*L\n1#1,134:1\n53#2:135\n48#3:136\n53#4,3:137\n56#4,6:150\n64#4:159\n67#4,3:161\n66#4,6:164\n1601#5,9:140\n1849#5:149\n1850#5:157\n1610#5:158\n1043#5:160\n1#6:156\n*S KotlinDebug\n*F\n+ 1 AnalyticsUserInputViewModel.kt\nde/rki/coronawarnapp/datadonation/analytics/ui/input/AnalyticsUserInputViewModel\n*L\n55#1:140,9\n55#1:149\n55#1:157\n55#1:158\n64#1:160\n55#1:156\n*E\n"
 .end annotation
 
 
@@ -53,7 +54,7 @@
 
 # virtual methods
 .method public emit(Ljava/lang/Object;Lkotlin/coroutines/Continuation;)Ljava/lang/Object;
-    .locals 12
+    .locals 9
 
     instance-of v0, p2, Lde/rki/coronawarnapp/datadonation/analytics/ui/input/AnalyticsUserInputViewModel$special$$inlined$map$2$2$1;
 
@@ -113,7 +114,7 @@
 
     iget-object p2, p0, Lde/rki/coronawarnapp/datadonation/analytics/ui/input/AnalyticsUserInputViewModel$special$$inlined$map$2$2;->$this_unsafeFlow$inlined:Lkotlinx/coroutines/flow/FlowCollector;
 
-    check-cast p1, [Lde/rki/coronawarnapp/server/protocols/internal/ppdd/PpaData$PPAFederalState;
+    check-cast p1, Ljava/util/List;
 
     iget-object v2, p0, Lde/rki/coronawarnapp/datadonation/analytics/ui/input/AnalyticsUserInputViewModel$special$$inlined$map$2$2;->this$0:Lde/rki/coronawarnapp/datadonation/analytics/ui/input/AnalyticsUserInputViewModel;
 
@@ -131,75 +132,81 @@
 
     invoke-direct {v4}, Ljava/util/ArrayList;-><init>()V
 
-    array-length v5, p1
+    invoke-interface {p1}, Ljava/lang/Iterable;->iterator()Ljava/util/Iterator;
+
+    move-result-object p1
+
+    :goto_1
+    invoke-interface {p1}, Ljava/util/Iterator;->hasNext()Z
+
+    move-result v5
 
     const/4 v6, 0x0
 
-    move v7, v6
+    if-eqz v5, :cond_7
 
-    :goto_1
-    if-ge v7, v5, :cond_7
+    invoke-interface {p1}, Ljava/util/Iterator;->next()Ljava/lang/Object;
 
-    aget-object v8, p1, v7
+    move-result-object v5
 
-    sget-object v9, Lde/rki/coronawarnapp/server/protocols/internal/ppdd/PpaData$PPAFederalState;->UNRECOGNIZED:Lde/rki/coronawarnapp/server/protocols/internal/ppdd/PpaData$PPAFederalState;
+    check-cast v5, Lde/rki/coronawarnapp/server/protocols/internal/ppdd/PpaData$PPAFederalState;
 
-    const/4 v10, 0x0
+    sget-object v7, Lde/rki/coronawarnapp/server/protocols/internal/ppdd/PpaData$PPAFederalState;->UNRECOGNIZED:Lde/rki/coronawarnapp/server/protocols/internal/ppdd/PpaData$PPAFederalState;
 
-    if-ne v8, v9, :cond_3
+    const/4 v8, 0x0
+
+    if-ne v5, v7, :cond_3
 
     goto :goto_3
 
     :cond_3
-    sget-object v9, Lde/rki/coronawarnapp/server/protocols/internal/ppdd/PpaData$PPAFederalState;->FEDERAL_STATE_UNSPECIFIED:Lde/rki/coronawarnapp/server/protocols/internal/ppdd/PpaData$PPAFederalState;
+    sget-object v7, Lde/rki/coronawarnapp/server/protocols/internal/ppdd/PpaData$PPAFederalState;->FEDERAL_STATE_UNSPECIFIED:Lde/rki/coronawarnapp/server/protocols/internal/ppdd/PpaData$PPAFederalState;
 
-    if-ne v8, v9, :cond_4
+    if-ne v5, v7, :cond_4
 
     goto :goto_3
 
     :cond_4
-    if-ne v8, v2, :cond_5
+    if-ne v5, v2, :cond_5
 
-    move v9, v3
+    move v7, v3
 
     goto :goto_2
 
     :cond_5
-    move v9, v6
+    move v7, v6
 
     :goto_2
-    invoke-static {v8}, Lde/rki/coronawarnapp/datadonation/analytics/common/PpaDataExtensionsKt;->getLabelStringRes(Lde/rki/coronawarnapp/server/protocols/internal/ppdd/PpaData$PPAFederalState;)I
+    invoke-static {v5}, Lde/rki/coronawarnapp/datadonation/analytics/common/PpaDataExtensionsKt;->getLabelStringRes(Lde/rki/coronawarnapp/server/protocols/internal/ppdd/PpaData$PPAFederalState;)I
 
-    move-result v10
+    move-result v8
 
-    new-array v11, v6, [Ljava/lang/Object;
+    new-array v6, v6, [Ljava/lang/Object;
 
-    invoke-static {v10, v11}, Lde/rki/coronawarnapp/util/ui/LazyStringKt;->toResolvingString(I[Ljava/lang/Object;)Lde/rki/coronawarnapp/util/ui/LazyString;
+    invoke-static {v8, v6}, Lde/rki/coronawarnapp/util/ui/LazyStringKt;->toResolvingString(I[Ljava/lang/Object;)Lde/rki/coronawarnapp/util/ui/LazyString;
 
-    move-result-object v10
+    move-result-object v6
 
-    new-instance v11, Lde/rki/coronawarnapp/datadonation/analytics/ui/input/UserInfoItem;
+    new-instance v8, Lde/rki/coronawarnapp/datadonation/analytics/ui/input/UserInfoItem;
 
-    invoke-direct {v11, v10, v9, v8}, Lde/rki/coronawarnapp/datadonation/analytics/ui/input/UserInfoItem;-><init>(Lde/rki/coronawarnapp/util/ui/LazyString;ZLjava/lang/Object;)V
-
-    move-object v10, v11
+    invoke-direct {v8, v6, v7, v5}, Lde/rki/coronawarnapp/datadonation/analytics/ui/input/UserInfoItem;-><init>(Lde/rki/coronawarnapp/util/ui/LazyString;ZLjava/lang/Object;)V
 
     :goto_3
-    if-eqz v10, :cond_6
+    if-nez v8, :cond_6
 
-    invoke-interface {v4, v10}, Ljava/util/Collection;->add(Ljava/lang/Object;)Z
+    goto :goto_1
 
     :cond_6
-    add-int/lit8 v7, v7, 0x1
+    invoke-interface {v4, v8}, Ljava/util/Collection;->add(Ljava/lang/Object;)Z
 
     goto :goto_1
 
     :cond_7
-    new-instance p1, Lde/rki/coronawarnapp/datadonation/analytics/ui/input/AnalyticsUserInputViewModel$federalStateSource$lambda-4$$inlined$sortedBy$1;
+    new-instance p1, Lde/rki/coronawarnapp/datadonation/analytics/ui/input/AnalyticsUserInputViewModel$federalStateSource$lambda-5$$inlined$sortedBy$1;
 
     iget-object v5, p0, Lde/rki/coronawarnapp/datadonation/analytics/ui/input/AnalyticsUserInputViewModel$special$$inlined$map$2$2;->this$0:Lde/rki/coronawarnapp/datadonation/analytics/ui/input/AnalyticsUserInputViewModel;
 
-    invoke-direct {p1, v5}, Lde/rki/coronawarnapp/datadonation/analytics/ui/input/AnalyticsUserInputViewModel$federalStateSource$lambda-4$$inlined$sortedBy$1;-><init>(Lde/rki/coronawarnapp/datadonation/analytics/ui/input/AnalyticsUserInputViewModel;)V
+    invoke-direct {p1, v5}, Lde/rki/coronawarnapp/datadonation/analytics/ui/input/AnalyticsUserInputViewModel$federalStateSource$lambda-5$$inlined$sortedBy$1;-><init>(Lde/rki/coronawarnapp/datadonation/analytics/ui/input/AnalyticsUserInputViewModel;)V
 
     invoke-static {v4, p1}, Lkotlin/collections/CollectionsKt___CollectionsKt;->sortedWith(Ljava/lang/Iterable;Ljava/util/Comparator;)Ljava/util/List;
 

@@ -127,7 +127,9 @@
 
     new-instance p3, Lde/rki/coronawarnapp/datadonation/analytics/ui/input/UserInfoItemAdapter$$ExternalSyntheticLambda0;
 
-    invoke-direct {p3, p0, p2}, Lde/rki/coronawarnapp/datadonation/analytics/ui/input/UserInfoItemAdapter$$ExternalSyntheticLambda0;-><init>(Lde/rki/coronawarnapp/datadonation/analytics/ui/input/UserInfoItemAdapter;Lde/rki/coronawarnapp/datadonation/analytics/ui/input/UserInfoItem;)V
+    const/4 v0, 0x0
+
+    invoke-direct {p3, p0, p2, v0}, Lde/rki/coronawarnapp/datadonation/analytics/ui/input/UserInfoItemAdapter$$ExternalSyntheticLambda0;-><init>(Ljava/lang/Object;Ljava/lang/Object;I)V
 
     invoke-virtual {p1, p3}, Landroid/view/View;->setOnClickListener(Landroid/view/View$OnClickListener;)V
 

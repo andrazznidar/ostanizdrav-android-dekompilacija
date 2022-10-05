@@ -98,7 +98,7 @@
 
     const-string p3, "Failed to snapshot TestCertificateContainer data to storage."
 
-    invoke-static {p1, p2, p3}, Lkotlinx/coroutines/channels/ChannelsKt;->reportProblem(Ljava/lang/Throwable;Ljava/lang/String;Ljava/lang/String;)V
+    invoke-static {p1, p2, p3}, Lde/rki/coronawarnapp/bugreporting/BugReporterKt;->reportProblem(Ljava/lang/Throwable;Ljava/lang/String;Ljava/lang/String;)V
 
     throw p1
 .end method
@@ -116,7 +116,7 @@
 
     const-string v1, "Failed to snapshot TestCertificateContainer data to storage."
 
-    invoke-static {p1, v0, v1}, Lkotlinx/coroutines/channels/ChannelsKt;->reportProblem(Ljava/lang/Throwable;Ljava/lang/String;Ljava/lang/String;)V
+    invoke-static {p1, v0, v1}, Lde/rki/coronawarnapp/bugreporting/BugReporterKt;->reportProblem(Ljava/lang/Throwable;Ljava/lang/String;Ljava/lang/String;)V
 
     throw p1
 .end method

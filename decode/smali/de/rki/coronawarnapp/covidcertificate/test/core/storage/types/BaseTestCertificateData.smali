@@ -2,6 +2,9 @@
 .super Ljava/lang/Object;
 .source "BaseTestCertificateData.kt"
 
+# interfaces
+.implements Lde/rki/coronawarnapp/reyclebin/common/Recyclable;
+
 
 # direct methods
 .method public constructor <init>()V
@@ -34,7 +37,13 @@
 .method public abstract getLastSeenStateChange()Lde/rki/coronawarnapp/covidcertificate/common/certificate/CwaCovidCertificate$State;
 .end method
 
+.method public abstract getNotifiedBlockedAt()Lorg/joda/time/Instant;
+.end method
+
 .method public abstract getNotifiedInvalidAt()Lorg/joda/time/Instant;
+.end method
+
+.method public abstract getRecycledAt()Lorg/joda/time/Instant;
 .end method
 
 .method public abstract getRegisteredAt()Lorg/joda/time/Instant;

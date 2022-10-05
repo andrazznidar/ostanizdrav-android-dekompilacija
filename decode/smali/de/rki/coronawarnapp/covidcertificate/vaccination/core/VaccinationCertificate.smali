@@ -37,5 +37,5 @@
 .method public abstract getVaccineTypeName()Ljava/lang/String;
 .end method
 
-.method public abstract isFinalShot()Z
+.method public abstract isSeriesCompletingShot()Z
 .end method

@@ -1,4 +1,4 @@
-.class public final Lkotlin/reflect/jvm/internal/impl/utils/SmartSet$ArrayIterator;
+.class final Lkotlin/reflect/jvm/internal/impl/utils/SmartSet$ArrayIterator;
 .super Ljava/lang/Object;
 .source "SmartSet.kt"
 
@@ -26,13 +26,14 @@
         "Ljava/lang/Object;",
         "Ljava/util/Iterator<",
         "TT;>;",
+        "Lkotlin/jvm/internal/markers/KMappedMarker;",
         "Lj$/util/Iterator;"
     }
 .end annotation
 
 
 # instance fields
-.field public final arrayIterator:Ljava/util/Iterator;
+.field private final arrayIterator:Ljava/util/Iterator;
     .annotation system Ldalvik/annotation/Signature;
         value = {
             "Ljava/util/Iterator<",
@@ -44,12 +45,16 @@
 
 # direct methods
 .method public constructor <init>([Ljava/lang/Object;)V
-    .locals 0
+    .locals 1
     .annotation system Ldalvik/annotation/Signature;
         value = {
             "([TT;)V"
         }
     .end annotation
+
+    const-string v0, "array"
+
+    invoke-static {p1, v0}, Lkotlin/jvm/internal/Intrinsics;->checkNotNullParameter(Ljava/lang/Object;Ljava/lang/String;)V
 
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
@@ -66,6 +71,18 @@
 # virtual methods
 .method public synthetic forEachRemaining(Lj$/util/function/Consumer;)V
     .locals 0
+
+    invoke-static {p0, p1}, Lj$/util/Iterator$-CC;->$default$forEachRemaining(Ljava/util/Iterator;Lj$/util/function/Consumer;)V
+
+    return-void
+.end method
+
+.method public synthetic forEachRemaining(Ljava/util/function/Consumer;)V
+    .locals 0
+
+    invoke-static {p1}, Lj$/util/function/Consumer$VivifiedWrapper;->convert(Ljava/util/function/Consumer;)Lj$/util/function/Consumer;
+
+    move-result-object p1
 
     invoke-static {p0, p1}, Lj$/util/Iterator$-CC;->$default$forEachRemaining(Ljava/util/Iterator;Lj$/util/function/Consumer;)V
 
@@ -101,7 +118,7 @@
     return-object v0
 .end method
 
-.method public remove()V
+.method public remove()Ljava/lang/Void;
     .locals 1
 
     new-instance v0, Ljava/lang/UnsupportedOperationException;
@@ -109,4 +126,12 @@
     invoke-direct {v0}, Ljava/lang/UnsupportedOperationException;-><init>()V
 
     throw v0
+.end method
+
+.method public bridge synthetic remove()V
+    .locals 0
+
+    invoke-virtual {p0}, Lkotlin/reflect/jvm/internal/impl/utils/SmartSet$ArrayIterator;->remove()Ljava/lang/Void;
+
+    return-void
 .end method

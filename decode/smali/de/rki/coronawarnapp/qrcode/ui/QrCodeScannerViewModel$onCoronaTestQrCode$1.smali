@@ -8,7 +8,8 @@
     c = "de.rki.coronawarnapp.qrcode.ui.QrCodeScannerViewModel"
     f = "QrCodeScannerViewModel.kt"
     l = {
-        0x66
+        0xc2,
+        0xc6
     }
     m = "onCoronaTestQrCode"
 .end annotation

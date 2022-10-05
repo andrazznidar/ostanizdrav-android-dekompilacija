@@ -17,17 +17,17 @@
 
     add-int/lit8 p1, p1, 0x1
 
-    const/4 v1, 0x0
-
     iget-object p0, p0, Lokio/SegmentedByteString;->segments:[[B
 
     array-length p0, p0
 
-    const-string v2, "$this$binarySearch"
+    const-string v1, "$this$binarySearch"
 
-    invoke-static {v0, v2}, Lkotlin/jvm/internal/Intrinsics;->checkNotNullParameter(Ljava/lang/Object;Ljava/lang/String;)V
+    invoke-static {v0, v1}, Lkotlin/jvm/internal/Intrinsics;->checkNotNullParameter(Ljava/lang/Object;Ljava/lang/String;)V
 
     add-int/lit8 p0, p0, -0x1
+
+    const/4 v1, 0x0
 
     :goto_0
     if-gt v1, p0, :cond_1

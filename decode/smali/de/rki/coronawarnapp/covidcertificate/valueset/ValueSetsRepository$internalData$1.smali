@@ -8,7 +8,7 @@
 
 # annotations
 .annotation system Ldalvik/annotation/EnclosingMethod;
-    value = Lde/rki/coronawarnapp/covidcertificate/valueset/ValueSetsRepository;-><init>(Lde/rki/coronawarnapp/covidcertificate/valueset/server/CertificateValueSetServer;Lde/rki/coronawarnapp/covidcertificate/valueset/valuesets/ValueSetsStorage;Lkotlinx/coroutines/CoroutineScope;Lde/rki/coronawarnapp/util/coroutine/DispatcherProvider;)V
+    value = Lde/rki/coronawarnapp/covidcertificate/valueset/ValueSetsRepository;-><init>(Lde/rki/coronawarnapp/covidcertificate/valueset/server/CertificateValueSetServer;Lde/rki/coronawarnapp/covidcertificate/valueset/valuesets/ValueSetsStorage;Lkotlinx/coroutines/CoroutineScope;Lde/rki/coronawarnapp/util/coroutine/DispatcherProvider;Landroid/content/Context;)V
 .end annotation
 
 .annotation system Ldalvik/annotation/InnerClass;
@@ -31,14 +31,14 @@
 .end annotation
 
 .annotation system Ldalvik/annotation/SourceDebugExtension;
-    value = "SMAP\nValueSetsRepository.kt\nKotlin\n*S Kotlin\n*F\n+ 1 ValueSetsRepository.kt\nde/rki/coronawarnapp/covidcertificate/valueset/ValueSetsRepository$internalData$1\n+ 2 fake.kt\nkotlin/jvm/internal/FakeKt\n*L\n1#1,106:1\n1#2:107\n*E\n"
+    value = "SMAP\nValueSetsRepository.kt\nKotlin\n*S Kotlin\n*F\n+ 1 ValueSetsRepository.kt\nde/rki/coronawarnapp/covidcertificate/valueset/ValueSetsRepository$internalData$1\n+ 2 fake.kt\nkotlin/jvm/internal/FakeKt\n*L\n1#1,108:1\n1#2:109\n*E\n"
 .end annotation
 
 .annotation runtime Lkotlin/coroutines/jvm/internal/DebugMetadata;
     c = "de.rki.coronawarnapp.covidcertificate.valueset.ValueSetsRepository$internalData$1"
     f = "ValueSetsRepository.kt"
     l = {
-        0x2a
+        0x2d
     }
     m = "invokeSuspend"
 .end annotation
@@ -121,7 +121,7 @@
 .end method
 
 .method public final invokeSuspend(Ljava/lang/Object;)Ljava/lang/Object;
-    .locals 4
+    .locals 3
 
     sget-object v0, Lkotlin/coroutines/intrinsics/CoroutineSingletons;->COROUTINE_SUSPENDED:Lkotlin/coroutines/intrinsics/CoroutineSingletons;
 
@@ -169,17 +169,15 @@
 
     check-cast v0, Lde/rki/coronawarnapp/covidcertificate/valueset/valuesets/ValueSetsContainer;
 
-    sget-object v1, Ltimber/log/Timber;->Forest:Ltimber/log/Timber$Forest;
+    sget-object v0, Ltimber/log/Timber;->Forest:Ltimber/log/Timber$Forest;
 
-    new-array v2, v2, [Ljava/lang/Object;
+    const/4 v1, 0x0
 
-    const/4 v3, 0x0
+    new-array v1, v1, [Ljava/lang/Object;
 
-    aput-object v0, v2, v3
+    const-string v2, "Loaded initial value sets."
 
-    const-string v0, "Loaded initial value sets %s"
-
-    invoke-virtual {v1, v0, v2}, Ltimber/log/Timber$Forest;->v(Ljava/lang/String;[Ljava/lang/Object;)V
+    invoke-virtual {v0, v2, v1}, Ltimber/log/Timber$Forest;->v(Ljava/lang/String;[Ljava/lang/Object;)V
 
     return-object p1
 .end method

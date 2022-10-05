@@ -17,8 +17,8 @@
     c = "de.rki.coronawarnapp.contactdiary.storage.repo.DefaultContactDiaryRepository"
     f = "DefaultContactDiaryRepository.kt"
     l = {
-        0xf5,
-        0xf8
+        0xfb,
+        0xfe
     }
     m = "deletePersonEncounters"
 .end annotation

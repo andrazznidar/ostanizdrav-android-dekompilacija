@@ -29,7 +29,7 @@
 
     if-eqz v1, :cond_0
 
-    iget-object v0, v0, Lcom/google/android/play/core/internal/zzas;->zzc:Lkotlin/jvm/internal/SpreadBuilder;
+    iget-object v0, v0, Lcom/google/android/play/core/internal/zzas;->zzc:Lcom/google/android/play/core/internal/zzag;
 
     const/4 v1, 0x0
 
@@ -37,7 +37,7 @@
 
     const-string v3, "Unbind from service."
 
-    invoke-virtual {v0, v3, v2}, Lkotlin/jvm/internal/SpreadBuilder;->zzd(Ljava/lang/String;[Ljava/lang/Object;)I
+    invoke-virtual {v0, v3, v2}, Lcom/google/android/play/core/internal/zzag;->zzd(Ljava/lang/String;[Ljava/lang/Object;)I
 
     iget-object v0, p0, Lcom/google/android/play/core/internal/zzal;->zza:Lcom/google/android/play/core/internal/zzas;
 

@@ -1,4 +1,4 @@
-.class public final Lkotlin/reflect/jvm/internal/impl/resolve/scopes/DescriptorKindFilter$Companion$MaskToName;
+.class final Lkotlin/reflect/jvm/internal/impl/resolve/scopes/DescriptorKindFilter$Companion$MaskToName;
 .super Ljava/lang/Object;
 .source "MemberScope.kt"
 
@@ -15,14 +15,18 @@
 
 
 # instance fields
-.field public final mask:I
+.field private final mask:I
 
-.field public final name:Ljava/lang/String;
+.field private final name:Ljava/lang/String;
 
 
 # direct methods
 .method public constructor <init>(ILjava/lang/String;)V
-    .locals 0
+    .locals 1
+
+    const-string v0, "name"
+
+    invoke-static {p2, v0}, Lkotlin/jvm/internal/Intrinsics;->checkNotNullParameter(Ljava/lang/Object;Ljava/lang/String;)V
 
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
@@ -31,4 +35,22 @@
     iput-object p2, p0, Lkotlin/reflect/jvm/internal/impl/resolve/scopes/DescriptorKindFilter$Companion$MaskToName;->name:Ljava/lang/String;
 
     return-void
+.end method
+
+
+# virtual methods
+.method public final getMask()I
+    .locals 1
+
+    iget v0, p0, Lkotlin/reflect/jvm/internal/impl/resolve/scopes/DescriptorKindFilter$Companion$MaskToName;->mask:I
+
+    return v0
+.end method
+
+.method public final getName()Ljava/lang/String;
+    .locals 1
+
+    iget-object v0, p0, Lkotlin/reflect/jvm/internal/impl/resolve/scopes/DescriptorKindFilter$Companion$MaskToName;->name:Ljava/lang/String;
+
+    return-object v0
 .end method

@@ -425,7 +425,7 @@
 
     const-string v1, " because it already defines a field named "
 
-    invoke-static {v0, p2, v1}, Lcom/fasterxml/jackson/annotation/JsonInclude$Value$$ExternalSyntheticOutline0;->m(Ljava/lang/Class;Ljava/lang/StringBuilder;Ljava/lang/String;)V
+    invoke-static {v0, p2, v1}, Landroidx/datastore/preferences/protobuf/MessageSchema$$ExternalSyntheticOutline0;->m(Ljava/lang/Class;Ljava/lang/StringBuilder;Ljava/lang/String;)V
 
     iget-object v0, p0, Lde/rki/coronawarnapp/util/serialization/adapter/RuntimeTypeAdapterFactory$1;->this$0:Lde/rki/coronawarnapp/util/serialization/adapter/RuntimeTypeAdapterFactory;
 

@@ -1,75 +1,51 @@
-.class public final synthetic Lj$/util/stream/X;
-.super Ljava/lang/Object;
+.class final Lj$/util/stream/X;
+.super Lj$/util/stream/Z;
 
 # interfaces
-.implements Lj$/util/function/Predicate;
+.implements Lj$/util/stream/p2;
 
 
-# static fields
-.field public static final synthetic a:Lj$/util/stream/X;
+# instance fields
+.field final b:Lj$/util/function/t;
 
 
 # direct methods
-.method static synthetic constructor <clinit>()V
-    .locals 1
-
-    new-instance v0, Lj$/util/stream/X;
-
-    invoke-direct {v0}, Lj$/util/stream/X;-><init>()V
-
-    sput-object v0, Lj$/util/stream/X;->a:Lj$/util/stream/X;
-
-    return-void
-.end method
-
-.method private synthetic constructor <init>()V
+.method constructor <init>(Lj$/util/function/t;Z)V
     .locals 0
 
-    invoke-direct {p0}, Ljava/lang/Object;-><init>()V
+    invoke-direct {p0, p2}, Lj$/util/stream/Z;-><init>(Z)V
+
+    iput-object p1, p0, Lj$/util/stream/X;->b:Lj$/util/function/t;
 
     return-void
 .end method
 
 
 # virtual methods
-.method public synthetic and(Lj$/util/function/Predicate;)Lj$/util/function/Predicate;
-    .locals 0
-
-    invoke-static {p0, p1}, Lj$/util/function/Predicate$-CC;->$default$and(Lj$/util/function/Predicate;Lj$/util/function/Predicate;)Lj$/util/function/Predicate;
-
-    move-result-object p1
-
-    return-object p1
-.end method
-
-.method public synthetic negate()Lj$/util/function/Predicate;
+.method public d(J)V
     .locals 1
 
-    invoke-static {p0}, Lj$/util/function/Predicate$-CC;->$default$negate(Lj$/util/function/Predicate;)Lj$/util/function/Predicate;
+    iget-object v0, p0, Lj$/util/stream/X;->b:Lj$/util/function/t;
 
-    move-result-object v0
+    invoke-interface {v0, p1, p2}, Lj$/util/function/t;->d(J)V
 
-    return-object v0
+    return-void
 .end method
 
-.method public synthetic or(Lj$/util/function/Predicate;)Lj$/util/function/Predicate;
+.method public synthetic h(Ljava/lang/Long;)V
     .locals 0
 
-    invoke-static {p0, p1}, Lj$/util/function/Predicate$-CC;->$default$or(Lj$/util/function/Predicate;Lj$/util/function/Predicate;)Lj$/util/function/Predicate;
+    invoke-static {p0, p1}, Lj$/util/stream/D0;->N(Lj$/util/stream/p2;Ljava/lang/Long;)V
 
-    move-result-object p1
-
-    return-object p1
+    return-void
 .end method
 
-.method public final test(Ljava/lang/Object;)Z
+.method public bridge synthetic j(Ljava/lang/Object;)V
     .locals 0
 
-    check-cast p1, Lj$/util/j;
+    check-cast p1, Ljava/lang/Long;
 
-    invoke-virtual {p1}, Lj$/util/j;->c()Z
+    invoke-virtual {p0, p1}, Lj$/util/stream/X;->h(Ljava/lang/Long;)V
 
-    move-result p1
-
-    return p1
+    return-void
 .end method

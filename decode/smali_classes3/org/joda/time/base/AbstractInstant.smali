@@ -220,16 +220,28 @@
     return p1
 .end method
 
+.method public toDate()Ljava/util/Date;
+    .locals 3
+
+    new-instance v0, Ljava/util/Date;
+
+    invoke-interface {p0}, Lorg/joda/time/ReadableInstant;->getMillis()J
+
+    move-result-wide v1
+
+    invoke-direct {v0, v1, v2}, Ljava/util/Date;-><init>(J)V
+
+    return-object v0
+.end method
+
 .method public toDateTime()Lorg/joda/time/DateTime;
     .locals 4
 
     new-instance v0, Lorg/joda/time/DateTime;
 
-    move-object v1, p0
+    invoke-interface {p0}, Lorg/joda/time/ReadableInstant;->getMillis()J
 
-    check-cast v1, Lorg/joda/time/base/BaseDateTime;
-
-    iget-wide v1, v1, Lorg/joda/time/base/BaseDateTime;->iMillis:J
+    move-result-wide v1
 
     invoke-virtual {p0}, Lorg/joda/time/base/AbstractInstant;->getZone()Lorg/joda/time/DateTimeZone;
 

@@ -94,50 +94,63 @@
 .method public nextBytes([BII)[B
     .locals 6
 
-    array-length v0, p1
+    const/4 v0, 0x1
 
     const/4 v1, 0x0
 
-    const/4 v2, 0x1
+    if-ltz p2, :cond_0
 
-    if-gez p2, :cond_0
+    array-length v2, p1
+
+    if-gt p2, v2, :cond_0
+
+    move v2, v0
 
     goto :goto_0
 
     :cond_0
-    if-lt v0, p2, :cond_2
+    move v2, v1
 
-    array-length v0, p1
+    :goto_0
+    if-eqz v2, :cond_2
 
-    if-gez p3, :cond_1
+    if-ltz p3, :cond_1
 
-    goto :goto_0
+    array-length v2, p1
 
-    :cond_1
-    if-lt v0, p3, :cond_2
+    if-gt p3, v2, :cond_1
 
-    move v0, v2
+    move v2, v0
 
     goto :goto_1
 
-    :cond_2
-    :goto_0
-    move v0, v1
+    :cond_1
+    move v2, v1
 
     :goto_1
-    const-string v3, "fromIndex ("
+    if-eqz v2, :cond_2
 
-    if-eqz v0, :cond_7
-
-    if-gt p2, p3, :cond_3
+    move v2, v0
 
     goto :goto_2
 
-    :cond_3
+    :cond_2
     move v2, v1
 
     :goto_2
-    if-eqz v2, :cond_6
+    const-string v3, "fromIndex ("
+
+    if-eqz v2, :cond_7
+
+    if-gt p2, p3, :cond_3
+
+    goto :goto_3
+
+    :cond_3
+    move v0, v1
+
+    :goto_3
+    if-eqz v0, :cond_6
 
     sub-int v0, p3, p2
 
@@ -145,8 +158,10 @@
 
     move v2, v1
 
-    :goto_3
+    :goto_4
     if-ge v2, v0, :cond_4
+
+    add-int/lit8 v2, v2, 0x1
 
     invoke-virtual {p0}, Lkotlin/random/Random;->nextInt()I
 
@@ -182,9 +197,7 @@
 
     add-int/lit8 p2, p2, 0x4
 
-    add-int/lit8 v2, v2, 0x1
-
-    goto :goto_3
+    goto :goto_4
 
     :cond_4
     sub-int/2addr p3, p2
@@ -195,22 +208,24 @@
 
     move-result v0
 
-    :goto_4
+    :goto_5
     if-ge v1, p3, :cond_5
 
-    add-int v2, p2, v1
+    add-int/lit8 v2, v1, 0x1
 
-    mul-int/lit8 v3, v1, 0x8
+    add-int v3, p2, v1
 
-    ushr-int v3, v0, v3
+    mul-int/lit8 v1, v1, 0x8
 
-    int-to-byte v3, v3
+    ushr-int v1, v0, v1
 
-    aput-byte v3, p1, v2
+    int-to-byte v1, v1
 
-    add-int/lit8 v1, v1, 0x1
+    aput-byte v1, p1, v3
 
-    goto :goto_4
+    move v1, v2
+
+    goto :goto_5
 
     :cond_5
     return-object p1
@@ -239,7 +254,7 @@
 
     const-string v1, ") are out of range: 0.."
 
-    invoke-static {v3, p2, v0, p3, v1}, Landroidx/recyclerview/widget/GridLayoutManager$$ExternalSyntheticOutline0;->m(Ljava/lang/String;ILjava/lang/String;ILjava/lang/String;)Ljava/lang/StringBuilder;
+    invoke-static {v3, p2, v0, p3, v1}, Landroidx/datastore/preferences/protobuf/ByteString$LiteralByteString$$ExternalSyntheticOutline0;->m(Ljava/lang/String;ILjava/lang/String;ILjava/lang/String;)Ljava/lang/StringBuilder;
 
     move-result-object p2
 
@@ -287,9 +302,7 @@
 
     long-to-double v0, v0
 
-    const-wide/high16 v2, 0x20000000000000L
-
-    long-to-double v2, v2
+    const-wide/high16 v2, 0x4340000000000000L    # 9.007199254740992E15
 
     div-double/2addr v0, v2
 
@@ -447,9 +460,7 @@
 
     int-to-float v0, v0
 
-    const/high16 v1, 0x1000000
-
-    int-to-float v1, v1
+    const/high16 v1, 0x4b800000    # 1.6777216E7f
 
     div-float/2addr v0, v1
 
@@ -483,54 +494,62 @@
 .method public nextInt(II)I
     .locals 4
 
-    const/4 v0, 0x1
+    const/4 v0, 0x0
+
+    const/4 v1, 0x1
 
     if-le p2, p1, :cond_0
 
-    move v1, v0
+    move v2, v1
 
     goto :goto_0
 
     :cond_0
-    const/4 v1, 0x0
+    move v2, v0
 
     :goto_0
-    if-eqz v1, :cond_5
+    if-eqz v2, :cond_5
 
-    sub-int v1, p2, p1
+    sub-int v2, p2, p1
 
-    if-gtz v1, :cond_3
+    if-gtz v2, :cond_3
 
-    const/high16 v2, -0x80000000
+    const/high16 v3, -0x80000000
 
-    if-ne v1, v2, :cond_1
+    if-ne v2, v3, :cond_1
 
     goto :goto_2
 
     :cond_1
-    :goto_1
     invoke-virtual {p0}, Lkotlin/random/Random;->nextInt()I
 
-    move-result v0
+    move-result v2
 
-    if-le p1, v0, :cond_2
+    if-gt p1, v2, :cond_2
+
+    if-ge v2, p2, :cond_2
+
+    move v3, v1
 
     goto :goto_1
 
     :cond_2
-    if-le p2, v0, :cond_1
+    move v3, v0
 
-    return v0
+    :goto_1
+    if-eqz v3, :cond_1
+
+    return v2
 
     :cond_3
     :goto_2
-    neg-int p2, v1
+    neg-int p2, v2
 
-    and-int/2addr p2, v1
+    and-int/2addr p2, v2
 
-    if-ne p2, v1, :cond_4
+    if-ne p2, v2, :cond_4
 
-    invoke-static {v1}, Lkotlin/random/RandomKt;->fastLog2(I)I
+    invoke-static {v2}, Lkotlin/random/RandomKt;->fastLog2(I)I
 
     move-result p2
 
@@ -545,19 +564,19 @@
 
     move-result p2
 
-    ushr-int/2addr p2, v0
+    ushr-int/2addr p2, v1
 
-    rem-int v2, p2, v1
+    rem-int v0, p2, v2
 
-    sub-int/2addr p2, v2
+    sub-int/2addr p2, v0
 
-    add-int/lit8 v3, v1, -0x1
+    add-int/lit8 v3, v2, -0x1
 
     add-int/2addr v3, p2
 
     if-ltz v3, :cond_4
 
-    move p2, v2
+    move p2, v0
 
     :goto_3
     add-int/2addr p1, p2
@@ -613,49 +632,51 @@
 .end method
 
 .method public nextLong(JJ)J
-    .locals 10
+    .locals 9
 
     cmp-long v0, p3, p1
 
-    const/4 v1, 0x1
+    const/4 v1, 0x0
+
+    const/4 v2, 0x1
 
     if-lez v0, :cond_0
 
-    move v0, v1
+    move v0, v2
 
     goto :goto_0
 
     :cond_0
-    const/4 v0, 0x0
+    move v0, v1
 
     :goto_0
     if-eqz v0, :cond_6
 
-    sub-long v2, p3, p1
+    sub-long v3, p3, p1
 
-    const-wide/16 v4, 0x0
+    const-wide/16 v5, 0x0
 
-    cmp-long v0, v2, v4
+    cmp-long v0, v3, v5
 
     if-lez v0, :cond_4
 
-    neg-long p3, v2
+    neg-long p3, v3
 
-    and-long/2addr p3, v2
+    and-long/2addr p3, v3
 
-    cmp-long p3, p3, v2
+    cmp-long p3, p3, v3
 
     if-nez p3, :cond_3
 
-    long-to-int p3, v2
+    long-to-int p3, v3
 
     const/16 p4, 0x20
 
-    ushr-long/2addr v2, p4
+    ushr-long v0, v3, p4
 
-    long-to-int v0, v2
+    long-to-int v0, v0
 
-    const-wide v2, 0xffffffffL
+    const-wide v3, 0xffffffffL
 
     if-eqz p3, :cond_1
 
@@ -670,12 +691,12 @@
     :goto_1
     int-to-long p3, p3
 
-    and-long/2addr p3, v2
+    and-long/2addr p3, v3
 
     goto :goto_2
 
     :cond_1
-    if-ne v0, v1, :cond_2
+    if-ne v0, v2, :cond_2
 
     invoke-virtual {p0}, Lkotlin/random/Random;->nextInt()I
 
@@ -702,6 +723,8 @@
 
     int-to-long v0, v0
 
+    and-long/2addr v0, v3
+
     add-long/2addr p3, v0
 
     goto :goto_2
@@ -711,23 +734,23 @@
 
     move-result-wide p3
 
-    ushr-long/2addr p3, v1
+    ushr-long/2addr p3, v2
 
-    rem-long v6, p3, v2
+    rem-long v0, p3, v3
 
-    sub-long/2addr p3, v6
+    sub-long/2addr p3, v0
 
-    const-wide/16 v8, 0x1
+    const-wide/16 v7, 0x1
 
-    sub-long v8, v2, v8
+    sub-long v7, v3, v7
 
-    add-long/2addr v8, p3
+    add-long/2addr v7, p3
 
-    cmp-long p3, v8, v4
+    cmp-long p3, v7, v5
 
     if-ltz p3, :cond_3
 
-    move-wide p3, v6
+    move-wide p3, v0
 
     :goto_2
     add-long/2addr p1, p3
@@ -735,23 +758,29 @@
     return-wide p1
 
     :cond_4
-    :goto_3
     invoke-virtual {p0}, Lkotlin/random/Random;->nextLong()J
 
-    move-result-wide v0
+    move-result-wide v3
 
-    cmp-long v2, p1, v0
+    cmp-long v0, p1, v3
 
-    if-lez v2, :cond_5
+    if-gtz v0, :cond_5
+
+    cmp-long v0, v3, p3
+
+    if-gez v0, :cond_5
+
+    move v0, v2
 
     goto :goto_3
 
     :cond_5
-    cmp-long v2, p3, v0
+    move v0, v1
 
-    if-lez v2, :cond_4
+    :goto_3
+    if-eqz v0, :cond_4
 
-    return-wide v0
+    return-wide v3
 
     :cond_6
     invoke-static {p1, p2}, Ljava/lang/Long;->valueOf(J)Ljava/lang/Long;

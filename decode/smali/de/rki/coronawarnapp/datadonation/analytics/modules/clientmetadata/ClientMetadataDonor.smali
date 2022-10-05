@@ -164,7 +164,7 @@
 
     move-result-object v5
 
-    const/16 v6, 0xd
+    const/16 v6, 0x12
 
     invoke-virtual {v5, v6}, Lde/rki/coronawarnapp/server/protocols/internal/ppdd/PpaData$PPASemanticVersion$Builder;->setMinor(I)Lde/rki/coronawarnapp/server/protocols/internal/ppdd/PpaData$PPASemanticVersion$Builder;
 

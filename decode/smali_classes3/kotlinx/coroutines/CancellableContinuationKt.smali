@@ -10,6 +10,27 @@
 
 
 # direct methods
+.method public static final disposeOnCancellation(Lkotlinx/coroutines/CancellableContinuation;Lkotlinx/coroutines/DisposableHandle;)V
+    .locals 1
+    .annotation system Ldalvik/annotation/Signature;
+        value = {
+            "(",
+            "Lkotlinx/coroutines/CancellableContinuation<",
+            "*>;",
+            "Lkotlinx/coroutines/DisposableHandle;",
+            ")V"
+        }
+    .end annotation
+
+    new-instance v0, Lkotlinx/coroutines/DisposeOnCancel;
+
+    invoke-direct {v0, p1}, Lkotlinx/coroutines/DisposeOnCancel;-><init>(Lkotlinx/coroutines/DisposableHandle;)V
+
+    invoke-interface {p0, v0}, Lkotlinx/coroutines/CancellableContinuation;->invokeOnCancellation(Lkotlin/jvm/functions/Function1;)V
+
+    return-void
+.end method
+
 .method public static final getOrCreateCancellableContinuation(Lkotlin/coroutines/Continuation;)Lkotlinx/coroutines/CancellableContinuationImpl;
     .locals 3
     .annotation system Ldalvik/annotation/Signature;
@@ -47,24 +68,21 @@
 
     const/4 v1, 0x0
 
-    if-nez v0, :cond_1
+    if-nez v0, :cond_2
+
+    :cond_1
+    move-object v0, v1
 
     goto :goto_0
 
-    :cond_1
+    :cond_2
     invoke-virtual {v0}, Lkotlinx/coroutines/CancellableContinuationImpl;->resetStateReusable()Z
 
     move-result v2
 
-    if-eqz v2, :cond_2
+    if-eqz v2, :cond_1
 
-    goto :goto_1
-
-    :cond_2
     :goto_0
-    move-object v0, v1
-
-    :goto_1
     if-nez v0, :cond_3
 
     new-instance v0, Lkotlinx/coroutines/CancellableContinuationImpl;

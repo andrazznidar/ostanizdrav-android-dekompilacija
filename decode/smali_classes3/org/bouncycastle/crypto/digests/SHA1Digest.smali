@@ -35,8 +35,74 @@
     return-void
 .end method
 
+.method public constructor <init>(Lorg/bouncycastle/crypto/digests/SHA1Digest;)V
+    .locals 1
+
+    invoke-direct {p0, p1}, Lorg/bouncycastle/crypto/digests/GeneralDigest;-><init>(Lorg/bouncycastle/crypto/digests/GeneralDigest;)V
+
+    const/16 v0, 0x50
+
+    new-array v0, v0, [I
+
+    iput-object v0, p0, Lorg/bouncycastle/crypto/digests/SHA1Digest;->X:[I
+
+    invoke-virtual {p0, p1}, Lorg/bouncycastle/crypto/digests/SHA1Digest;->copyIn(Lorg/bouncycastle/crypto/digests/SHA1Digest;)V
+
+    return-void
+.end method
+
 
 # virtual methods
+.method public copy()Lorg/bouncycastle/util/Memoable;
+    .locals 1
+
+    new-instance v0, Lorg/bouncycastle/crypto/digests/SHA1Digest;
+
+    invoke-direct {v0, p0}, Lorg/bouncycastle/crypto/digests/SHA1Digest;-><init>(Lorg/bouncycastle/crypto/digests/SHA1Digest;)V
+
+    return-object v0
+.end method
+
+.method public final copyIn(Lorg/bouncycastle/crypto/digests/SHA1Digest;)V
+    .locals 4
+
+    iget v0, p1, Lorg/bouncycastle/crypto/digests/SHA1Digest;->H1:I
+
+    iput v0, p0, Lorg/bouncycastle/crypto/digests/SHA1Digest;->H1:I
+
+    iget v0, p1, Lorg/bouncycastle/crypto/digests/SHA1Digest;->H2:I
+
+    iput v0, p0, Lorg/bouncycastle/crypto/digests/SHA1Digest;->H2:I
+
+    iget v0, p1, Lorg/bouncycastle/crypto/digests/SHA1Digest;->H3:I
+
+    iput v0, p0, Lorg/bouncycastle/crypto/digests/SHA1Digest;->H3:I
+
+    iget v0, p1, Lorg/bouncycastle/crypto/digests/SHA1Digest;->H4:I
+
+    iput v0, p0, Lorg/bouncycastle/crypto/digests/SHA1Digest;->H4:I
+
+    iget v0, p1, Lorg/bouncycastle/crypto/digests/SHA1Digest;->H5:I
+
+    iput v0, p0, Lorg/bouncycastle/crypto/digests/SHA1Digest;->H5:I
+
+    iget-object v0, p1, Lorg/bouncycastle/crypto/digests/SHA1Digest;->X:[I
+
+    iget-object v1, p0, Lorg/bouncycastle/crypto/digests/SHA1Digest;->X:[I
+
+    array-length v2, v0
+
+    const/4 v3, 0x0
+
+    invoke-static {v0, v3, v1, v3, v2}, Ljava/lang/System;->arraycopy(Ljava/lang/Object;ILjava/lang/Object;II)V
+
+    iget p1, p1, Lorg/bouncycastle/crypto/digests/SHA1Digest;->xOff:I
+
+    iput p1, p0, Lorg/bouncycastle/crypto/digests/SHA1Digest;->xOff:I
+
+    return-void
+.end method
+
 .method public doFinal([BI)I
     .locals 2
 
@@ -970,5 +1036,17 @@
     goto :goto_0
 
     :cond_0
+    return-void
+.end method
+
+.method public reset(Lorg/bouncycastle/util/Memoable;)V
+    .locals 0
+
+    check-cast p1, Lorg/bouncycastle/crypto/digests/SHA1Digest;
+
+    invoke-virtual {p0, p1}, Lorg/bouncycastle/crypto/digests/GeneralDigest;->copyIn(Lorg/bouncycastle/crypto/digests/GeneralDigest;)V
+
+    invoke-virtual {p0, p1}, Lorg/bouncycastle/crypto/digests/SHA1Digest;->copyIn(Lorg/bouncycastle/crypto/digests/SHA1Digest;)V
+
     return-void
 .end method

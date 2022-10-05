@@ -60,7 +60,7 @@
 
     new-instance v2, Lkotlinx/coroutines/CancellableContinuationImpl;
 
-    invoke-static {p1}, Lkotlinx/coroutines/flow/FlowKt;->intercepted(Lkotlin/coroutines/Continuation;)Lkotlin/coroutines/Continuation;
+    invoke-static {p1}, Lcom/google/android/gms/nearby/messages/internal/zzag;->intercepted(Lkotlin/coroutines/Continuation;)Lkotlin/coroutines/Continuation;
 
     move-result-object p1
 
@@ -137,33 +137,4 @@
     move-result-object p0
 
     return-object p0
-.end method
-
-.method public static final from(Ljava/util/concurrent/Executor;)Lkotlinx/coroutines/CoroutineDispatcher;
-    .locals 2
-
-    instance-of v0, p0, Lkotlinx/coroutines/DispatcherExecutor;
-
-    const/4 v1, 0x0
-
-    if-eqz v0, :cond_0
-
-    move-object v0, p0
-
-    check-cast v0, Lkotlinx/coroutines/DispatcherExecutor;
-
-    goto :goto_0
-
-    :cond_0
-    move-object v0, v1
-
-    :goto_0
-    if-nez v0, :cond_1
-
-    new-instance v1, Lkotlinx/coroutines/ExecutorCoroutineDispatcherImpl;
-
-    invoke-direct {v1, p0}, Lkotlinx/coroutines/ExecutorCoroutineDispatcherImpl;-><init>(Ljava/util/concurrent/Executor;)V
-
-    :cond_1
-    return-object v1
 .end method

@@ -136,7 +136,7 @@
 
     if-eqz p4, :cond_7
 
-    invoke-static {p4}, Lcom/google/android/play/core/assetpacks/zzd;->toCheckIn(Lde/rki/coronawarnapp/presencetracing/storage/entity/TraceLocationCheckInEntity;)Lde/rki/coronawarnapp/presencetracing/checkins/CheckIn;
+    invoke-static {p4}, Lboofcv/alg/misc/ImageStatistics;->toCheckIn(Lde/rki/coronawarnapp/presencetracing/storage/entity/TraceLocationCheckInEntity;)Lde/rki/coronawarnapp/presencetracing/checkins/CheckIn;
 
     move-result-object p4
 
@@ -152,7 +152,7 @@
 
     if-nez p1, :cond_6
 
-    invoke-static {p3}, Lkotlin/TuplesKt;->toEntity(Lde/rki/coronawarnapp/presencetracing/checkins/CheckIn;)Lde/rki/coronawarnapp/presencetracing/storage/entity/TraceLocationCheckInEntity;
+    invoke-static {p3}, Lde/rki/coronawarnapp/risk/changedetection/CommonKt;->toEntity(Lde/rki/coronawarnapp/presencetracing/checkins/CheckIn;)Lde/rki/coronawarnapp/presencetracing/storage/entity/TraceLocationCheckInEntity;
 
     move-result-object p1
 
@@ -206,7 +206,7 @@
 
     const-string p4, " no longer exists."
 
-    invoke-static {p3, p1, p2, p4}, Landroidx/work/impl/utils/futures/AbstractFuture$$ExternalSyntheticOutline0;->m(Ljava/lang/String;JLjava/lang/String;)Ljava/lang/String;
+    invoke-static {p3, p1, p2, p4}, Landroidx/concurrent/futures/AbstractResolvableFuture$$ExternalSyntheticOutline0;->m(Ljava/lang/String;JLjava/lang/String;)Ljava/lang/String;
 
     move-result-object p1
 

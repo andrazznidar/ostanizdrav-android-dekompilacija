@@ -1,4 +1,4 @@
-.class public Lkotlin/reflect/jvm/internal/pcollections/ConsPStack$Itr;
+.class Lkotlin/reflect/jvm/internal/pcollections/ConsPStack$Itr;
 .super Ljava/lang/Object;
 .source "ConsPStack.java"
 
@@ -31,7 +31,7 @@
 
 
 # instance fields
-.field public next:Lkotlin/reflect/jvm/internal/pcollections/ConsPStack;
+.field private next:Lkotlin/reflect/jvm/internal/pcollections/ConsPStack;
     .annotation system Ldalvik/annotation/Signature;
         value = {
             "Lkotlin/reflect/jvm/internal/pcollections/ConsPStack<",
@@ -69,12 +69,26 @@
     return-void
 .end method
 
+.method public synthetic forEachRemaining(Ljava/util/function/Consumer;)V
+    .locals 0
+
+    invoke-static {p1}, Lj$/util/function/Consumer$VivifiedWrapper;->convert(Ljava/util/function/Consumer;)Lj$/util/function/Consumer;
+
+    move-result-object p1
+
+    invoke-virtual {p0, p1}, Lkotlin/reflect/jvm/internal/pcollections/ConsPStack$Itr;->forEachRemaining(Lj$/util/function/Consumer;)V
+
+    return-void
+.end method
+
 .method public hasNext()Z
     .locals 1
 
     iget-object v0, p0, Lkotlin/reflect/jvm/internal/pcollections/ConsPStack$Itr;->next:Lkotlin/reflect/jvm/internal/pcollections/ConsPStack;
 
-    iget v0, v0, Lkotlin/reflect/jvm/internal/pcollections/ConsPStack;->size:I
+    invoke-static {v0}, Lkotlin/reflect/jvm/internal/pcollections/ConsPStack;->access$000(Lkotlin/reflect/jvm/internal/pcollections/ConsPStack;)I
+
+    move-result v0
 
     if-lez v0, :cond_0
 

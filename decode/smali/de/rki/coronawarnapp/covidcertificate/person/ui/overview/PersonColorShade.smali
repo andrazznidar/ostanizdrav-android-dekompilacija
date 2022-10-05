@@ -24,9 +24,15 @@
 
 .field public static final enum COLOR_INVALID:Lde/rki/coronawarnapp/covidcertificate/person/ui/overview/PersonColorShade;
 
+.field public static final enum COLOR_UNDEFINED:Lde/rki/coronawarnapp/covidcertificate/person/ui/overview/PersonColorShade;
+
 
 # instance fields
+.field public final admissionBadgeBg:I
+
 .field public final background:I
+
+.field public final bookmarkIcon:I
 
 .field public final currentCertificateBg:I
 
@@ -35,110 +41,152 @@
 
 # direct methods
 .method public static constructor <clinit>()V
-    .locals 19
+    .locals 25
 
-    new-instance v6, Lde/rki/coronawarnapp/covidcertificate/person/ui/overview/PersonColorShade;
+    new-instance v8, Lde/rki/coronawarnapp/covidcertificate/person/ui/overview/PersonColorShade;
 
     const-string v1, "COLOR_1"
 
     const/4 v2, 0x0
 
-    const v3, 0x7f06013c
+    const v3, 0x7f060143
 
-    const v4, 0x7f08007d
+    const v4, 0x7f08006d
 
-    const v5, 0x7f080079
+    const v5, 0x7f080069
 
-    move-object v0, v6
+    const v6, 0x7f0800c7
 
-    invoke-direct/range {v0 .. v5}, Lde/rki/coronawarnapp/covidcertificate/person/ui/overview/PersonColorShade;-><init>(Ljava/lang/String;IIII)V
+    const v7, 0x7f0800bc
 
-    sput-object v6, Lde/rki/coronawarnapp/covidcertificate/person/ui/overview/PersonColorShade;->COLOR_1:Lde/rki/coronawarnapp/covidcertificate/person/ui/overview/PersonColorShade;
+    move-object v0, v8
+
+    invoke-direct/range {v0 .. v7}, Lde/rki/coronawarnapp/covidcertificate/person/ui/overview/PersonColorShade;-><init>(Ljava/lang/String;IIIIII)V
+
+    sput-object v8, Lde/rki/coronawarnapp/covidcertificate/person/ui/overview/PersonColorShade;->COLOR_1:Lde/rki/coronawarnapp/covidcertificate/person/ui/overview/PersonColorShade;
 
     new-instance v0, Lde/rki/coronawarnapp/covidcertificate/person/ui/overview/PersonColorShade;
 
-    const-string v8, "COLOR_2"
+    const-string v10, "COLOR_2"
 
-    const/4 v9, 0x1
+    const/4 v11, 0x1
 
-    const v10, 0x7f06013d
+    const v12, 0x7f060144
 
-    const v11, 0x7f08007e
+    const v13, 0x7f08006e
 
-    const v12, 0x7f08007a
+    const v14, 0x7f08006a
 
-    move-object v7, v0
+    const v15, 0x7f0800c8
 
-    invoke-direct/range {v7 .. v12}, Lde/rki/coronawarnapp/covidcertificate/person/ui/overview/PersonColorShade;-><init>(Ljava/lang/String;IIII)V
+    const v16, 0x7f0800bd
+
+    move-object v9, v0
+
+    invoke-direct/range {v9 .. v16}, Lde/rki/coronawarnapp/covidcertificate/person/ui/overview/PersonColorShade;-><init>(Ljava/lang/String;IIIIII)V
 
     sput-object v0, Lde/rki/coronawarnapp/covidcertificate/person/ui/overview/PersonColorShade;->COLOR_2:Lde/rki/coronawarnapp/covidcertificate/person/ui/overview/PersonColorShade;
 
     new-instance v1, Lde/rki/coronawarnapp/covidcertificate/person/ui/overview/PersonColorShade;
 
-    const-string v14, "COLOR_3"
+    const-string v18, "COLOR_3"
 
-    const/4 v15, 0x2
+    const/16 v19, 0x2
 
-    const v16, 0x7f06013e
+    const v20, 0x7f060145
 
-    const v17, 0x7f08007f
+    const v21, 0x7f08006f
 
-    const v18, 0x7f08007b
+    const v22, 0x7f08006b
 
-    move-object v13, v1
+    const v23, 0x7f0800c9
 
-    invoke-direct/range {v13 .. v18}, Lde/rki/coronawarnapp/covidcertificate/person/ui/overview/PersonColorShade;-><init>(Ljava/lang/String;IIII)V
+    const v24, 0x7f0800be
+
+    move-object/from16 v17, v1
+
+    invoke-direct/range {v17 .. v24}, Lde/rki/coronawarnapp/covidcertificate/person/ui/overview/PersonColorShade;-><init>(Ljava/lang/String;IIIIII)V
 
     sput-object v1, Lde/rki/coronawarnapp/covidcertificate/person/ui/overview/PersonColorShade;->COLOR_3:Lde/rki/coronawarnapp/covidcertificate/person/ui/overview/PersonColorShade;
 
     new-instance v2, Lde/rki/coronawarnapp/covidcertificate/person/ui/overview/PersonColorShade;
 
-    const-string v8, "COLOR_INVALID"
+    const-string v10, "COLOR_INVALID"
 
-    const/4 v9, 0x3
+    const/4 v11, 0x3
 
-    const v10, 0x7f06013f
+    const v12, 0x7f060146
 
-    const v11, 0x7f080080
+    const v13, 0x7f080070
 
-    const v12, 0x7f08007c
+    const v14, 0x7f08006c
 
-    move-object v7, v2
+    const v15, 0x7f0800c6
 
-    invoke-direct/range {v7 .. v12}, Lde/rki/coronawarnapp/covidcertificate/person/ui/overview/PersonColorShade;-><init>(Ljava/lang/String;IIII)V
+    const v16, 0x7f0800bc
+
+    move-object v9, v2
+
+    invoke-direct/range {v9 .. v16}, Lde/rki/coronawarnapp/covidcertificate/person/ui/overview/PersonColorShade;-><init>(Ljava/lang/String;IIIIII)V
 
     sput-object v2, Lde/rki/coronawarnapp/covidcertificate/person/ui/overview/PersonColorShade;->COLOR_INVALID:Lde/rki/coronawarnapp/covidcertificate/person/ui/overview/PersonColorShade;
 
-    const/4 v3, 0x4
+    new-instance v3, Lde/rki/coronawarnapp/covidcertificate/person/ui/overview/PersonColorShade;
 
-    new-array v3, v3, [Lde/rki/coronawarnapp/covidcertificate/person/ui/overview/PersonColorShade;
+    const-string v18, "COLOR_UNDEFINED"
 
-    const/4 v4, 0x0
+    const/16 v19, 0x4
 
-    aput-object v6, v3, v4
+    const v20, 0x7f060146
 
-    const/4 v4, 0x1
+    const v21, 0x7f080070
 
-    aput-object v0, v3, v4
+    const v22, 0x7f08006c
+
+    const v23, 0x7f0800c6
+
+    const v24, 0x7f0800bc
+
+    move-object/from16 v17, v3
+
+    invoke-direct/range {v17 .. v24}, Lde/rki/coronawarnapp/covidcertificate/person/ui/overview/PersonColorShade;-><init>(Ljava/lang/String;IIIIII)V
+
+    sput-object v3, Lde/rki/coronawarnapp/covidcertificate/person/ui/overview/PersonColorShade;->COLOR_UNDEFINED:Lde/rki/coronawarnapp/covidcertificate/person/ui/overview/PersonColorShade;
+
+    const/4 v4, 0x5
+
+    new-array v4, v4, [Lde/rki/coronawarnapp/covidcertificate/person/ui/overview/PersonColorShade;
+
+    const/4 v5, 0x0
+
+    aput-object v8, v4, v5
+
+    const/4 v5, 0x1
+
+    aput-object v0, v4, v5
 
     const/4 v0, 0x2
 
-    aput-object v1, v3, v0
+    aput-object v1, v4, v0
 
     const/4 v0, 0x3
 
-    aput-object v2, v3, v0
+    aput-object v2, v4, v0
 
-    sput-object v3, Lde/rki/coronawarnapp/covidcertificate/person/ui/overview/PersonColorShade;->$VALUES:[Lde/rki/coronawarnapp/covidcertificate/person/ui/overview/PersonColorShade;
+    const/4 v0, 0x4
+
+    aput-object v3, v4, v0
+
+    sput-object v4, Lde/rki/coronawarnapp/covidcertificate/person/ui/overview/PersonColorShade;->$VALUES:[Lde/rki/coronawarnapp/covidcertificate/person/ui/overview/PersonColorShade;
 
     return-void
 .end method
 
-.method public constructor <init>(Ljava/lang/String;IIII)V
+.method public constructor <init>(Ljava/lang/String;IIIIII)V
     .locals 0
     .annotation system Ldalvik/annotation/Signature;
         value = {
-            "(III)V"
+            "(IIIII)V"
         }
     .end annotation
 
@@ -149,6 +197,10 @@
     iput p4, p0, Lde/rki/coronawarnapp/covidcertificate/person/ui/overview/PersonColorShade;->background:I
 
     iput p5, p0, Lde/rki/coronawarnapp/covidcertificate/person/ui/overview/PersonColorShade;->currentCertificateBg:I
+
+    iput p6, p0, Lde/rki/coronawarnapp/covidcertificate/person/ui/overview/PersonColorShade;->bookmarkIcon:I
+
+    iput p7, p0, Lde/rki/coronawarnapp/covidcertificate/person/ui/overview/PersonColorShade;->admissionBadgeBg:I
 
     return-void
 .end method

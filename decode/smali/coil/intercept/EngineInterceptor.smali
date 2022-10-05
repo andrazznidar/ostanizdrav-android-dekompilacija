@@ -19,7 +19,7 @@
 
 .field public final logger:Lcoil/util/Logger;
 
-.field public final memoryCacheService:Lcoil/memory/DelegateService;
+.field public final memoryCacheService:Lcoil/memory/MemoryCacheService;
 
 .field public final referenceCounter:Lcoil/bitmap/BitmapReferenceCounter;
 
@@ -33,7 +33,7 @@
 
 
 # direct methods
-.method public constructor <init>(Lcoil/ComponentRegistry;Lcoil/bitmap/BitmapPool;Lcoil/bitmap/BitmapReferenceCounter;Lcoil/memory/StrongMemoryCache;Lcoil/memory/DelegateService;Lcoil/memory/RequestService;Lcoil/util/SystemCallbacks;Lcoil/decode/DrawableDecoderService;Lcoil/util/Logger;)V
+.method public constructor <init>(Lcoil/ComponentRegistry;Lcoil/bitmap/BitmapPool;Lcoil/bitmap/BitmapReferenceCounter;Lcoil/memory/StrongMemoryCache;Lcoil/memory/MemoryCacheService;Lcoil/memory/RequestService;Lcoil/util/SystemCallbacks;Lcoil/decode/DrawableDecoderService;Lcoil/util/Logger;)V
     .locals 1
 
     const-string v0, "referenceCounter"
@@ -54,7 +54,7 @@
 
     iput-object p4, p0, Lcoil/intercept/EngineInterceptor;->strongMemoryCache:Lcoil/memory/StrongMemoryCache;
 
-    iput-object p5, p0, Lcoil/intercept/EngineInterceptor;->memoryCacheService:Lcoil/memory/DelegateService;
+    iput-object p5, p0, Lcoil/intercept/EngineInterceptor;->memoryCacheService:Lcoil/memory/MemoryCacheService;
 
     iput-object p6, p0, Lcoil/intercept/EngineInterceptor;->requestService:Lcoil/memory/RequestService;
 
@@ -356,9 +356,9 @@
 
     if-eqz v2, :cond_5
 
-    iget-object v2, v12, Lcoil/intercept/EngineInterceptor;->memoryCacheService:Lcoil/memory/DelegateService;
+    iget-object v2, v12, Lcoil/intercept/EngineInterceptor;->memoryCacheService:Lcoil/memory/MemoryCacheService;
 
-    invoke-virtual {v2, v10}, Lcoil/memory/DelegateService;->get(Lcoil/memory/MemoryCache$Key;)Lcoil/memory/RealMemoryCache$Value;
+    invoke-virtual {v2, v10}, Lcoil/memory/MemoryCacheService;->get(Lcoil/memory/MemoryCache$Key;)Lcoil/memory/RealMemoryCache$Value;
 
     move-result-object v2
 
@@ -525,13 +525,13 @@
 
     instance-of v4, v3, Lcoil/size/OriginalSize;
 
-    const/4 v5, 0x0
+    const/4 v5, 0x1
 
-    const-string v6, "EngineInterceptor"
+    const/4 v6, 0x0
 
-    const/4 v7, 0x3
+    const-string v7, "EngineInterceptor"
 
-    const/4 v8, 0x1
+    const/4 v8, 0x3
 
     if-eqz v4, :cond_1
 
@@ -552,7 +552,7 @@
 
     move-result v3
 
-    if-gt v3, v7, :cond_c
+    if-gt v3, v8, :cond_c
 
     new-instance v3, Ljava/lang/StringBuilder;
 
@@ -570,7 +570,7 @@
 
     move-result-object v3
 
-    invoke-interface {v1, v6, v7, v3, v5}, Lcoil/util/Logger;->log(Ljava/lang/String;ILjava/lang/String;Ljava/lang/Throwable;)V
+    invoke-interface {v1, v7, v8, v3, v6}, Lcoil/util/Logger;->log(Ljava/lang/String;ILjava/lang/String;Ljava/lang/Throwable;)V
 
     goto/16 :goto_6
 
@@ -588,12 +588,12 @@
     goto :goto_0
 
     :cond_2
-    move-object v1, v5
+    move-object v1, v6
 
     :goto_0
     if-nez v1, :cond_3
 
-    move-object v1, v5
+    move-object v1, v6
 
     goto :goto_1
 
@@ -628,7 +628,7 @@
     if-nez v1, :cond_6
 
     :goto_2
-    move v1, v8
+    move v1, v5
 
     goto :goto_3
 
@@ -661,7 +661,7 @@
 
     move-result v9
 
-    if-gt v9, v8, :cond_7
+    if-gt v9, v5, :cond_7
 
     iget v9, v3, Lcoil/size/PixelSize;->height:I
 
@@ -671,7 +671,7 @@
 
     move-result v9
 
-    if-gt v9, v8, :cond_7
+    if-gt v9, v5, :cond_7
 
     goto/16 :goto_7
 
@@ -697,7 +697,7 @@
     goto :goto_5
 
     :cond_8
-    const/4 v8, 0x0
+    const/4 v5, 0x0
 
     :goto_5
     const-string v13, ")."
@@ -706,26 +706,26 @@
 
     const-string v15, ", "
 
-    if-nez v8, :cond_a
+    if-nez v5, :cond_a
 
     invoke-static/range {p3 .. p3}, Lcoil/util/-Requests;->getAllowInexactSize(Lcoil/request/ImageRequest;)Z
 
-    move-result v8
+    move-result v5
 
-    if-nez v8, :cond_a
+    if-nez v5, :cond_a
 
-    iget-object v8, v0, Lcoil/intercept/EngineInterceptor;->logger:Lcoil/util/Logger;
+    iget-object v5, v0, Lcoil/intercept/EngineInterceptor;->logger:Lcoil/util/Logger;
 
-    if-nez v8, :cond_9
+    if-nez v5, :cond_9
 
     goto/16 :goto_6
 
     :cond_9
-    invoke-interface {v8}, Lcoil/util/Logger;->getLevel()I
+    invoke-interface {v5}, Lcoil/util/Logger;->getLevel()I
 
     move-result v9
 
-    if-gt v9, v7, :cond_c
+    if-gt v9, v8, :cond_c
 
     new-instance v9, Ljava/lang/StringBuilder;
 
@@ -769,33 +769,33 @@
 
     move-result-object v1
 
-    invoke-interface {v8, v6, v7, v1, v5}, Lcoil/util/Logger;->log(Ljava/lang/String;ILjava/lang/String;Ljava/lang/Throwable;)V
+    invoke-interface {v5, v7, v8, v1, v6}, Lcoil/util/Logger;->log(Ljava/lang/String;ILjava/lang/String;Ljava/lang/Throwable;)V
 
     goto :goto_6
 
     :cond_a
-    cmpl-double v8, v9, v11
+    cmpl-double v5, v9, v11
 
-    if-lez v8, :cond_e
+    if-lez v5, :cond_e
 
     invoke-interface/range {p2 .. p2}, Lcoil/memory/RealMemoryCache$Value;->isSampled()Z
 
-    move-result v8
+    move-result v5
 
-    if-eqz v8, :cond_e
+    if-eqz v5, :cond_e
 
-    iget-object v8, v0, Lcoil/intercept/EngineInterceptor;->logger:Lcoil/util/Logger;
+    iget-object v5, v0, Lcoil/intercept/EngineInterceptor;->logger:Lcoil/util/Logger;
 
-    if-nez v8, :cond_b
+    if-nez v5, :cond_b
 
     goto :goto_6
 
     :cond_b
-    invoke-interface {v8}, Lcoil/util/Logger;->getLevel()I
+    invoke-interface {v5}, Lcoil/util/Logger;->getLevel()I
 
     move-result v9
 
-    if-gt v9, v7, :cond_c
+    if-gt v9, v8, :cond_c
 
     new-instance v9, Ljava/lang/StringBuilder;
 
@@ -839,11 +839,11 @@
 
     move-result-object v1
 
-    invoke-interface {v8, v6, v7, v1, v5}, Lcoil/util/Logger;->log(Ljava/lang/String;ILjava/lang/String;Ljava/lang/Throwable;)V
+    invoke-interface {v5, v7, v8, v1, v6}, Lcoil/util/Logger;->log(Ljava/lang/String;ILjava/lang/String;Ljava/lang/Throwable;)V
 
     :cond_c
     :goto_6
-    const/4 v8, 0x0
+    const/4 v5, 0x0
 
     goto :goto_7
 
@@ -855,10 +855,10 @@
     throw v1
 
     :cond_e
-    const/4 v8, 0x1
+    const/4 v5, 0x1
 
     :goto_7
-    if-nez v8, :cond_f
+    if-nez v5, :cond_f
 
     const/4 v1, 0x0
 
@@ -892,7 +892,7 @@
 
     move-result v3
 
-    if-gt v3, v7, :cond_11
+    if-gt v3, v8, :cond_11
 
     new-instance v3, Ljava/lang/StringBuilder;
 
@@ -910,7 +910,7 @@
 
     move-result-object v2
 
-    invoke-interface {v1, v6, v7, v2, v5}, Lcoil/util/Logger;->log(Ljava/lang/String;ILjava/lang/String;Ljava/lang/Throwable;)V
+    invoke-interface {v1, v7, v8, v2, v6}, Lcoil/util/Logger;->log(Ljava/lang/String;ILjava/lang/String;Ljava/lang/Throwable;)V
 
     :cond_11
     :goto_8

@@ -106,7 +106,7 @@
 
     move-result v5
 
-    if-eqz v5, :cond_1
+    if-eqz v5, :cond_5
 
     invoke-interface {v0, v1}, Landroid/database/Cursor;->getLong(I)J
 
@@ -134,12 +134,48 @@
     :goto_1
     iget-object v8, p0, Lde/rki/coronawarnapp/presencetracing/risk/storage/PresenceTracingRiskLevelResultDao_Impl$7;->this$0:Lde/rki/coronawarnapp/presencetracing/risk/storage/PresenceTracingRiskLevelResultDao_Impl;
 
-    iget-object v8, v8, Lde/rki/coronawarnapp/presencetracing/risk/storage/PresenceTracingRiskLevelResultDao_Impl;->__riskStateConverter:Lde/rki/coronawarnapp/presencetracing/risk/storage/RiskStateConverter;
+    iget-object v8, v8, Lde/rki/coronawarnapp/presencetracing/risk/storage/PresenceTracingRiskLevelResultDao_Impl;->__riskStateConverter:Lcom/google/android/play/core/assetpacks/zzbf;
 
-    invoke-virtual {v8, v7}, Lde/rki/coronawarnapp/presencetracing/risk/storage/RiskStateConverter;->toRiskStateCode(Ljava/lang/Integer;)Lde/rki/coronawarnapp/risk/RiskState;
+    invoke-static {v8}, Ljava/util/Objects;->requireNonNull(Ljava/lang/Object;)Ljava/lang/Object;
 
-    move-result-object v7
+    if-nez v7, :cond_1
 
+    goto :goto_2
+
+    :cond_1
+    invoke-virtual {v7}, Ljava/lang/Integer;->intValue()I
+
+    move-result v7
+
+    if-eqz v7, :cond_4
+
+    const/4 v8, 0x1
+
+    if-eq v7, v8, :cond_3
+
+    const/4 v8, 0x2
+
+    if-eq v7, v8, :cond_2
+
+    :goto_2
+    move-object v7, v3
+
+    goto :goto_3
+
+    :cond_2
+    sget-object v7, Lde/rki/coronawarnapp/risk/RiskState;->INCREASED_RISK:Lde/rki/coronawarnapp/risk/RiskState;
+
+    goto :goto_3
+
+    :cond_3
+    sget-object v7, Lde/rki/coronawarnapp/risk/RiskState;->LOW_RISK:Lde/rki/coronawarnapp/risk/RiskState;
+
+    goto :goto_3
+
+    :cond_4
+    sget-object v7, Lde/rki/coronawarnapp/risk/RiskState;->CALCULATION_FAILED:Lde/rki/coronawarnapp/risk/RiskState;
+
+    :goto_3
     new-instance v8, Lde/rki/coronawarnapp/presencetracing/risk/storage/PresenceTracingRiskLevelResultEntity;
 
     invoke-direct {v8, v5, v6, v7}, Lde/rki/coronawarnapp/presencetracing/risk/storage/PresenceTracingRiskLevelResultEntity;-><init>(JLde/rki/coronawarnapp/risk/RiskState;)V
@@ -150,7 +186,7 @@
 
     goto :goto_0
 
-    :cond_1
+    :cond_5
     invoke-interface {v0}, Landroid/database/Cursor;->close()V
 
     return-object v4

@@ -49,6 +49,16 @@
     return-object p1
 .end method
 
+.method public bridge synthetic get(Ljava/lang/String;)Lcom/fasterxml/jackson/core/TreeNode;
+    .locals 0
+
+    invoke-virtual {p0, p1}, Lcom/fasterxml/jackson/databind/node/BaseJsonNode;->get(Ljava/lang/String;)Lcom/fasterxml/jackson/databind/JsonNode;
+
+    move-result-object p1
+
+    return-object p1
+.end method
+
 .method public abstract hashCode()I
 .end method
 
@@ -143,8 +153,7 @@
 .method public abstract serialize(Lcom/fasterxml/jackson/core/JsonGenerator;Lcom/fasterxml/jackson/databind/SerializerProvider;)V
     .annotation system Ldalvik/annotation/Throws;
         value = {
-            Ljava/io/IOException;,
-            Lcom/fasterxml/jackson/core/JsonProcessingException;
+            Ljava/io/IOException;
         }
     .end annotation
 .end method
@@ -152,8 +161,7 @@
 .method public abstract serializeWithType(Lcom/fasterxml/jackson/core/JsonGenerator;Lcom/fasterxml/jackson/databind/SerializerProvider;Lcom/fasterxml/jackson/databind/jsontype/TypeSerializer;)V
     .annotation system Ldalvik/annotation/Throws;
         value = {
-            Ljava/io/IOException;,
-            Lcom/fasterxml/jackson/core/JsonProcessingException;
+            Ljava/io/IOException;
         }
     .end annotation
 .end method
@@ -211,11 +219,13 @@
 .end method
 
 .method public traverse()Lcom/fasterxml/jackson/core/JsonParser;
-    .locals 1
+    .locals 2
 
     new-instance v0, Lcom/fasterxml/jackson/databind/node/TreeTraversingParser;
 
-    invoke-direct {v0, p0}, Lcom/fasterxml/jackson/databind/node/TreeTraversingParser;-><init>(Lcom/fasterxml/jackson/databind/JsonNode;)V
+    const/4 v1, 0x0
+
+    invoke-direct {v0, p0, v1}, Lcom/fasterxml/jackson/databind/node/TreeTraversingParser;-><init>(Lcom/fasterxml/jackson/databind/JsonNode;Lcom/fasterxml/jackson/core/ObjectCodec;)V
 
     return-object v0
 .end method

@@ -3,14 +3,6 @@
 .source "EllipticCurves.java"
 
 
-# annotations
-.annotation system Ldalvik/annotation/MemberClasses;
-    value = {
-        Lcom/google/crypto/tink/subtle/EllipticCurves$CurveType;
-    }
-.end annotation
-
-
 # direct methods
 .method public static checkPointOnCurve(Ljava/security/spec/ECPoint;Ljava/security/spec/EllipticCurve;)V
     .locals 4
@@ -173,7 +165,7 @@
     throw p0
 .end method
 
-.method public static generateKeyPair(Lcom/google/crypto/tink/subtle/EllipticCurves$CurveType;)Ljava/security/KeyPair;
+.method public static generateKeyPair(I)Ljava/security/KeyPair;
     .locals 2
     .annotation system Ldalvik/annotation/MethodParameters;
         accessFlags = {
@@ -190,7 +182,7 @@
         }
     .end annotation
 
-    invoke-static {p0}, Lcom/google/crypto/tink/subtle/EllipticCurves;->getCurveSpec(Lcom/google/crypto/tink/subtle/EllipticCurves$CurveType;)Ljava/security/spec/ECParameterSpec;
+    invoke-static {p0}, Lcom/google/crypto/tink/subtle/EllipticCurves;->getCurveSpec(I)Ljava/security/spec/ECParameterSpec;
 
     move-result-object p0
 
@@ -213,7 +205,7 @@
     return-object p0
 .end method
 
-.method public static getCurveSpec(Lcom/google/crypto/tink/subtle/EllipticCurves$CurveType;)Ljava/security/spec/ECParameterSpec;
+.method public static getCurveSpec(I)Ljava/security/spec/ECParameterSpec;
     .locals 4
     .annotation system Ldalvik/annotation/MethodParameters;
         accessFlags = {
@@ -230,9 +222,9 @@
         }
     .end annotation
 
-    invoke-virtual {p0}, Ljava/lang/Enum;->ordinal()I
+    if-eqz p0, :cond_3
 
-    move-result v0
+    add-int/lit8 v0, p0, -0x1
 
     if-eqz v0, :cond_2
 
@@ -271,7 +263,11 @@
 
     invoke-virtual {v1, v2}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
 
-    invoke-virtual {v1, p0}, Ljava/lang/StringBuilder;->append(Ljava/lang/Object;)Ljava/lang/StringBuilder;
+    invoke-static {p0}, Lcom/google/crypto/tink/subtle/EllipticCurves$CurveType$EnumUnboxingLocalUtility;->stringValueOf(I)Ljava/lang/String;
+
+    move-result-object p0
+
+    invoke-virtual {v1, p0}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
 
     invoke-virtual {v1}, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
 
@@ -314,9 +310,14 @@
     move-result-object p0
 
     return-object p0
+
+    :cond_3
+    const/4 p0, 0x0
+
+    throw p0
 .end method
 
-.method public static getEcPrivateKey(Lcom/google/crypto/tink/subtle/EllipticCurves$CurveType;[B)Ljava/security/interfaces/ECPrivateKey;
+.method public static getEcPrivateKey(I[B)Ljava/security/interfaces/ECPrivateKey;
     .locals 2
     .annotation system Ldalvik/annotation/MethodParameters;
         accessFlags = {
@@ -335,7 +336,7 @@
         }
     .end annotation
 
-    invoke-static {p0}, Lcom/google/crypto/tink/subtle/EllipticCurves;->getCurveSpec(Lcom/google/crypto/tink/subtle/EllipticCurves$CurveType;)Ljava/security/spec/ECParameterSpec;
+    invoke-static {p0}, Lcom/google/crypto/tink/subtle/EllipticCurves;->getCurveSpec(I)Ljava/security/spec/ECParameterSpec;
 
     move-result-object p0
 
@@ -368,7 +369,7 @@
     return-object p0
 .end method
 
-.method public static getEcPublicKey(Lcom/google/crypto/tink/subtle/EllipticCurves$CurveType;[B[B)Ljava/security/interfaces/ECPublicKey;
+.method public static getEcPublicKey(I[B[B)Ljava/security/interfaces/ECPublicKey;
     .locals 2
     .annotation system Ldalvik/annotation/MethodParameters;
         accessFlags = {
@@ -389,7 +390,7 @@
         }
     .end annotation
 
-    invoke-static {p0}, Lcom/google/crypto/tink/subtle/EllipticCurves;->getCurveSpec(Lcom/google/crypto/tink/subtle/EllipticCurves$CurveType;)Ljava/security/spec/ECParameterSpec;
+    invoke-static {p0}, Lcom/google/crypto/tink/subtle/EllipticCurves;->getCurveSpec(I)Ljava/security/spec/ECParameterSpec;
 
     move-result-object p0
 

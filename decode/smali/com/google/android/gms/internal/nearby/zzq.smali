@@ -6,29 +6,19 @@
 .implements Lcom/google/android/gms/common/api/internal/RemoteCall;
 
 
-# instance fields
-.field public zza:Ljava/lang/Object;
-
-
 # direct methods
 .method public constructor <init>(Lcom/google/android/gms/internal/nearby/zzaw;)V
     .locals 0
 
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
-    iput-object p1, p0, Lcom/google/android/gms/internal/nearby/zzq;->zza:Ljava/lang/Object;
-
     return-void
 .end method
 
 
 # virtual methods
-.method public accept(Ljava/lang/Object;Ljava/lang/Object;)V
+.method public final accept(Ljava/lang/Object;Ljava/lang/Object;)V
     .locals 2
-
-    iget-object v0, p0, Lcom/google/android/gms/internal/nearby/zzq;->zza:Ljava/lang/Object;
-
-    check-cast v0, Lcom/google/android/gms/internal/nearby/zzaw;
 
     check-cast p1, Lcom/google/android/gms/internal/nearby/zzn;
 
@@ -48,7 +38,7 @@
 
     const/4 v1, 0x0
 
-    invoke-direct {p2, v1}, Lcom/google/android/gms/internal/nearby/zzcj;-><init>(Lcom/google/android/gms/internal/nearby/zzch;)V
+    invoke-direct {p2, v1}, Lcom/google/android/gms/internal/nearby/zzcj;-><init>(Landroidx/databinding/adapters/Converters;)V
 
     iput-object v0, p2, Lcom/google/android/gms/internal/nearby/zzcj;->zza:Lcom/google/android/gms/internal/nearby/zzdo;
 

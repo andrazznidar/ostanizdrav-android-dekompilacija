@@ -71,9 +71,9 @@
 
     move-result-object v1
 
-    invoke-static {v1}, Lcom/google/crypto/tink/prf/HkdfPrfKeyManager;->access$000(Lcom/google/crypto/tink/proto/HashType;)Lcom/google/crypto/tink/subtle/Enums$HashType;
+    invoke-static {v1}, Lcom/google/crypto/tink/prf/HkdfPrfKeyManager;->access$000(Lcom/google/crypto/tink/proto/HashType;)I
 
-    move-result-object v1
+    move-result v1
 
     invoke-virtual {p1}, Lcom/google/crypto/tink/proto/HkdfPrfKey;->getKeyValue()Lcom/google/crypto/tink/shaded/protobuf/ByteString;
 
@@ -95,7 +95,7 @@
 
     move-result-object p1
 
-    invoke-direct {v0, v1, v2, p1}, Lcom/google/crypto/tink/subtle/prf/HkdfStreamingPrf;-><init>(Lcom/google/crypto/tink/subtle/Enums$HashType;[B[B)V
+    invoke-direct {v0, v1, v2, p1}, Lcom/google/crypto/tink/subtle/prf/HkdfStreamingPrf;-><init>(I[B[B)V
 
     new-instance p1, Lcom/google/crypto/tink/subtle/prf/PrfImpl;
 

@@ -62,13 +62,13 @@
 
     invoke-virtual {v1}, Lcom/google/android/play/core/internal/zzas;->zzs()V
 
-    iget-object v0, v0, Lcom/google/android/play/core/appupdate/zzp;->zza:Lkotlin/jvm/internal/SpreadBuilder;
+    iget-object v0, v0, Lcom/google/android/play/core/appupdate/zzp;->zza:Lcom/google/android/play/core/internal/zzag;
 
     new-array v1, v3, [Ljava/lang/Object;
 
     const-string v2, "onCompleteUpdate"
 
-    invoke-virtual {v0, v2, v1}, Lkotlin/jvm/internal/SpreadBuilder;->zzd(Ljava/lang/String;[Ljava/lang/Object;)I
+    invoke-virtual {v0, v2, v1}, Lcom/google/android/play/core/internal/zzag;->zzd(Ljava/lang/String;[Ljava/lang/Object;)I
 
     goto/16 :goto_1
 
@@ -91,13 +91,13 @@
 
     invoke-virtual {v2}, Lcom/google/android/play/core/internal/zzas;->zzs()V
 
-    iget-object v2, v1, Lcom/google/android/play/core/appupdate/zzp;->zza:Lkotlin/jvm/internal/SpreadBuilder;
+    iget-object v2, v1, Lcom/google/android/play/core/appupdate/zzp;->zza:Lcom/google/android/play/core/internal/zzag;
 
     new-array v4, v3, [Ljava/lang/Object;
 
     const-string v5, "onRequestInfo"
 
-    invoke-virtual {v2, v5, v4}, Lkotlin/jvm/internal/SpreadBuilder;->zzd(Ljava/lang/String;[Ljava/lang/Object;)I
+    invoke-virtual {v2, v5, v4}, Lcom/google/android/play/core/internal/zzag;->zzd(Ljava/lang/String;[Ljava/lang/Object;)I
 
     const-string v2, "error.code"
 
@@ -111,15 +111,15 @@
 
     iget-object v1, v1, Lcom/google/android/play/core/appupdate/zzp;->zzb:Lcom/google/android/play/core/tasks/zzi;
 
-    new-instance v5, Lcom/google/android/play/core/install/InstallException;
+    new-instance v3, Lcom/google/android/play/core/install/InstallException;
 
     invoke-virtual {v0, v2, v4}, Landroid/os/Bundle;->getInt(Ljava/lang/String;I)I
 
     move-result v0
 
-    invoke-direct {v5, v0, v3}, Lcom/google/android/play/core/install/InstallException;-><init>(II)V
+    invoke-direct {v3, v0}, Lcom/google/android/play/core/install/InstallException;-><init>(I)V
 
-    invoke-virtual {v1, v5}, Lcom/google/android/play/core/tasks/zzi;->zzd(Ljava/lang/Exception;)Z
+    invoke-virtual {v1, v3}, Lcom/google/android/play/core/tasks/zzi;->zzd(Ljava/lang/Exception;)Z
 
     goto/16 :goto_1
 

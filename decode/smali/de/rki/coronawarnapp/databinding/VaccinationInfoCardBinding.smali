@@ -9,9 +9,7 @@
 # instance fields
 .field public final body:Landroid/widget/TextView;
 
-.field public final body2Faq:Landroid/widget/TextView;
-
-.field public final boosterBadge:Landroid/widget/ImageView;
+.field public final faq:Landroid/widget/TextView;
 
 .field public final rootView:Landroid/widget/LinearLayout;
 
@@ -21,11 +19,10 @@
 
 
 # direct methods
-.method public constructor <init>(Landroid/widget/LinearLayout;Landroid/widget/TextView;Landroid/widget/TextView;Landroid/widget/ImageView;Landroid/widget/TextView;Landroid/widget/TextView;)V
+.method public constructor <init>(Landroid/widget/LinearLayout;Landroid/widget/TextView;Landroid/widget/TextView;Landroid/widget/TextView;Landroid/widget/TextView;)V
     .locals 0
     .annotation system Ldalvik/annotation/MethodParameters;
         accessFlags = {
-            0x0,
             0x0,
             0x0,
             0x0,
@@ -35,8 +32,7 @@
         names = {
             "rootView",
             "body",
-            "body2Faq",
-            "boosterBadge",
+            "faq",
             "subtitle",
             "title"
         }
@@ -48,13 +44,11 @@
 
     iput-object p2, p0, Lde/rki/coronawarnapp/databinding/VaccinationInfoCardBinding;->body:Landroid/widget/TextView;
 
-    iput-object p3, p0, Lde/rki/coronawarnapp/databinding/VaccinationInfoCardBinding;->body2Faq:Landroid/widget/TextView;
+    iput-object p3, p0, Lde/rki/coronawarnapp/databinding/VaccinationInfoCardBinding;->faq:Landroid/widget/TextView;
 
-    iput-object p4, p0, Lde/rki/coronawarnapp/databinding/VaccinationInfoCardBinding;->boosterBadge:Landroid/widget/ImageView;
+    iput-object p4, p0, Lde/rki/coronawarnapp/databinding/VaccinationInfoCardBinding;->subtitle:Landroid/widget/TextView;
 
-    iput-object p5, p0, Lde/rki/coronawarnapp/databinding/VaccinationInfoCardBinding;->subtitle:Landroid/widget/TextView;
-
-    iput-object p6, p0, Lde/rki/coronawarnapp/databinding/VaccinationInfoCardBinding;->title:Landroid/widget/TextView;
+    iput-object p5, p0, Lde/rki/coronawarnapp/databinding/VaccinationInfoCardBinding;->title:Landroid/widget/TextView;
 
     return-void
 .end method

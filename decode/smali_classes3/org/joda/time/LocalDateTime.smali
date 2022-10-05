@@ -31,6 +31,50 @@
     return-void
 .end method
 
+.method public constructor <init>(IIIIIII)V
+    .locals 10
+
+    move-object v0, p0
+
+    sget-object v1, Lorg/joda/time/chrono/ISOChronology;->INSTANCE_UTC:Lorg/joda/time/chrono/ISOChronology;
+
+    invoke-direct {p0}, Lorg/joda/time/base/BaseLocal;-><init>()V
+
+    invoke-static {v1}, Lorg/joda/time/DateTimeUtils;->getChronology(Lorg/joda/time/Chronology;)Lorg/joda/time/Chronology;
+
+    move-result-object v1
+
+    invoke-virtual {v1}, Lorg/joda/time/Chronology;->withUTC()Lorg/joda/time/Chronology;
+
+    move-result-object v1
+
+    move-object v2, v1
+
+    move v3, p1
+
+    move v4, p2
+
+    move v5, p3
+
+    move v6, p4
+
+    move v7, p5
+
+    move/from16 v8, p6
+
+    move/from16 v9, p7
+
+    invoke-virtual/range {v2 .. v9}, Lorg/joda/time/Chronology;->getDateTimeMillis(IIIIIII)J
+
+    move-result-wide v2
+
+    iput-object v1, v0, Lorg/joda/time/LocalDateTime;->iChronology:Lorg/joda/time/Chronology;
+
+    iput-wide v2, v0, Lorg/joda/time/LocalDateTime;->iLocalMillis:J
+
+    return-void
+.end method
+
 .method public constructor <init>(JLorg/joda/time/Chronology;)V
     .locals 2
 
@@ -59,6 +103,78 @@
     iput-object p1, p0, Lorg/joda/time/LocalDateTime;->iChronology:Lorg/joda/time/Chronology;
 
     return-void
+.end method
+
+.method public static fromCalendarFields(Ljava/util/Calendar;)Lorg/joda/time/LocalDateTime;
+    .locals 12
+
+    const/4 v0, 0x0
+
+    invoke-virtual {p0, v0}, Ljava/util/Calendar;->get(I)I
+
+    move-result v0
+
+    const/4 v1, 0x1
+
+    invoke-virtual {p0, v1}, Ljava/util/Calendar;->get(I)I
+
+    move-result v2
+
+    new-instance v11, Lorg/joda/time/LocalDateTime;
+
+    if-ne v0, v1, :cond_0
+
+    goto :goto_0
+
+    :cond_0
+    rsub-int/lit8 v2, v2, 0x1
+
+    :goto_0
+    move v4, v2
+
+    const/4 v0, 0x2
+
+    invoke-virtual {p0, v0}, Ljava/util/Calendar;->get(I)I
+
+    move-result v0
+
+    add-int/lit8 v5, v0, 0x1
+
+    const/4 v0, 0x5
+
+    invoke-virtual {p0, v0}, Ljava/util/Calendar;->get(I)I
+
+    move-result v6
+
+    const/16 v0, 0xb
+
+    invoke-virtual {p0, v0}, Ljava/util/Calendar;->get(I)I
+
+    move-result v7
+
+    const/16 v0, 0xc
+
+    invoke-virtual {p0, v0}, Ljava/util/Calendar;->get(I)I
+
+    move-result v8
+
+    const/16 v0, 0xd
+
+    invoke-virtual {p0, v0}, Ljava/util/Calendar;->get(I)I
+
+    move-result v9
+
+    const/16 v0, 0xe
+
+    invoke-virtual {p0, v0}, Ljava/util/Calendar;->get(I)I
+
+    move-result v10
+
+    move-object v3, v11
+
+    invoke-direct/range {v3 .. v10}, Lorg/joda/time/LocalDateTime;-><init>(IIIIIII)V
+
+    return-object v11
 .end method
 
 .method public static now()Lorg/joda/time/LocalDateTime;
@@ -137,7 +253,7 @@
     return v0
 
     :cond_3
-    invoke-super {p0, p1}, Lorg/joda/time/base/BaseLocal;->compareTo(Lorg/joda/time/ReadablePartial;)I
+    invoke-super {p0, p1}, Lorg/joda/time/base/AbstractPartial;->compareTo(Lorg/joda/time/ReadablePartial;)I
 
     move-result p1
 
@@ -189,7 +305,7 @@
     return v0
 
     :cond_2
-    invoke-super {p0, p1}, Lorg/joda/time/base/BaseLocal;->equals(Ljava/lang/Object;)Z
+    invoke-super {p0, p1}, Lorg/joda/time/base/AbstractPartial;->equals(Ljava/lang/Object;)Z
 
     move-result p1
 

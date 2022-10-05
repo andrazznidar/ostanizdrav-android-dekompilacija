@@ -1,4 +1,4 @@
-.class public final Lkotlin/reflect/jvm/internal/pcollections/ConsPStack;
+.class final Lkotlin/reflect/jvm/internal/pcollections/ConsPStack;
 .super Ljava/lang/Object;
 .source "ConsPStack.java"
 
@@ -26,7 +26,7 @@
 
 
 # static fields
-.field public static final EMPTY:Lkotlin/reflect/jvm/internal/pcollections/ConsPStack;
+.field private static final EMPTY:Lkotlin/reflect/jvm/internal/pcollections/ConsPStack;
     .annotation system Ldalvik/annotation/Signature;
         value = {
             "Lkotlin/reflect/jvm/internal/pcollections/ConsPStack<",
@@ -55,7 +55,7 @@
     .end annotation
 .end field
 
-.field public final size:I
+.field private final size:I
 
 
 # direct methods
@@ -71,7 +71,7 @@
     return-void
 .end method
 
-.method public constructor <init>()V
+.method private constructor <init>()V
     .locals 1
 
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
@@ -89,7 +89,7 @@
     return-void
 .end method
 
-.method public constructor <init>(Ljava/lang/Object;Lkotlin/reflect/jvm/internal/pcollections/ConsPStack;)V
+.method private constructor <init>(Ljava/lang/Object;Lkotlin/reflect/jvm/internal/pcollections/ConsPStack;)V
     .locals 0
     .annotation system Ldalvik/annotation/Signature;
         value = {
@@ -114,13 +114,36 @@
     return-void
 .end method
 
+.method public static synthetic access$000(Lkotlin/reflect/jvm/internal/pcollections/ConsPStack;)I
+    .locals 0
 
-# virtual methods
-.method public iterator()Ljava/util/Iterator;
-    .locals 2
+    iget p0, p0, Lkotlin/reflect/jvm/internal/pcollections/ConsPStack;->size:I
+
+    return p0
+.end method
+
+.method public static empty()Lkotlin/reflect/jvm/internal/pcollections/ConsPStack;
+    .locals 1
     .annotation system Ldalvik/annotation/Signature;
         value = {
-            "()",
+            "<E:",
+            "Ljava/lang/Object;",
+            ">()",
+            "Lkotlin/reflect/jvm/internal/pcollections/ConsPStack<",
+            "TE;>;"
+        }
+    .end annotation
+
+    sget-object v0, Lkotlin/reflect/jvm/internal/pcollections/ConsPStack;->EMPTY:Lkotlin/reflect/jvm/internal/pcollections/ConsPStack;
+
+    return-object v0
+.end method
+
+.method private iterator(I)Ljava/util/Iterator;
+    .locals 1
+    .annotation system Ldalvik/annotation/Signature;
+        value = {
+            "(I)",
             "Ljava/util/Iterator<",
             "TE;>;"
         }
@@ -128,18 +151,16 @@
 
     new-instance v0, Lkotlin/reflect/jvm/internal/pcollections/ConsPStack$Itr;
 
-    const/4 v1, 0x0
+    invoke-direct {p0, p1}, Lkotlin/reflect/jvm/internal/pcollections/ConsPStack;->subList(I)Lkotlin/reflect/jvm/internal/pcollections/ConsPStack;
 
-    invoke-virtual {p0, v1}, Lkotlin/reflect/jvm/internal/pcollections/ConsPStack;->subList(I)Lkotlin/reflect/jvm/internal/pcollections/ConsPStack;
+    move-result-object p1
 
-    move-result-object v1
-
-    invoke-direct {v0, v1}, Lkotlin/reflect/jvm/internal/pcollections/ConsPStack$Itr;-><init>(Lkotlin/reflect/jvm/internal/pcollections/ConsPStack;)V
+    invoke-direct {v0, p1}, Lkotlin/reflect/jvm/internal/pcollections/ConsPStack$Itr;-><init>(Lkotlin/reflect/jvm/internal/pcollections/ConsPStack;)V
 
     return-object v0
 .end method
 
-.method public final minus(Ljava/lang/Object;)Lkotlin/reflect/jvm/internal/pcollections/ConsPStack;
+.method private minus(Ljava/lang/Object;)Lkotlin/reflect/jvm/internal/pcollections/ConsPStack;
     .locals 2
     .annotation system Ldalvik/annotation/Signature;
         value = {
@@ -173,7 +194,7 @@
     :cond_1
     iget-object v0, p0, Lkotlin/reflect/jvm/internal/pcollections/ConsPStack;->rest:Lkotlin/reflect/jvm/internal/pcollections/ConsPStack;
 
-    invoke-virtual {v0, p1}, Lkotlin/reflect/jvm/internal/pcollections/ConsPStack;->minus(Ljava/lang/Object;)Lkotlin/reflect/jvm/internal/pcollections/ConsPStack;
+    invoke-direct {v0, p1}, Lkotlin/reflect/jvm/internal/pcollections/ConsPStack;->minus(Ljava/lang/Object;)Lkotlin/reflect/jvm/internal/pcollections/ConsPStack;
 
     move-result-object p1
 
@@ -193,7 +214,7 @@
     return-object v0
 .end method
 
-.method public final subList(I)Lkotlin/reflect/jvm/internal/pcollections/ConsPStack;
+.method private subList(I)Lkotlin/reflect/jvm/internal/pcollections/ConsPStack;
     .locals 1
     .annotation system Ldalvik/annotation/Signature;
         value = {
@@ -218,7 +239,7 @@
 
     add-int/lit8 p1, p1, -0x1
 
-    invoke-virtual {v0, p1}, Lkotlin/reflect/jvm/internal/pcollections/ConsPStack;->subList(I)Lkotlin/reflect/jvm/internal/pcollections/ConsPStack;
+    invoke-direct {v0, p1}, Lkotlin/reflect/jvm/internal/pcollections/ConsPStack;->subList(I)Lkotlin/reflect/jvm/internal/pcollections/ConsPStack;
 
     move-result-object p1
 
@@ -230,4 +251,119 @@
     invoke-direct {p1}, Ljava/lang/IndexOutOfBoundsException;-><init>()V
 
     throw p1
+.end method
+
+
+# virtual methods
+.method public get(I)Ljava/lang/Object;
+    .locals 2
+    .annotation system Ldalvik/annotation/Signature;
+        value = {
+            "(I)TE;"
+        }
+    .end annotation
+
+    if-ltz p1, :cond_0
+
+    iget v0, p0, Lkotlin/reflect/jvm/internal/pcollections/ConsPStack;->size:I
+
+    if-gt p1, v0, :cond_0
+
+    :try_start_0
+    invoke-direct {p0, p1}, Lkotlin/reflect/jvm/internal/pcollections/ConsPStack;->iterator(I)Ljava/util/Iterator;
+
+    move-result-object v0
+
+    invoke-interface {v0}, Ljava/util/Iterator;->next()Ljava/lang/Object;
+
+    move-result-object p1
+    :try_end_0
+    .catch Ljava/util/NoSuchElementException; {:try_start_0 .. :try_end_0} :catch_0
+
+    return-object p1
+
+    :catch_0
+    new-instance v0, Ljava/lang/IndexOutOfBoundsException;
+
+    const-string v1, "Index: "
+
+    invoke-static {v1, p1}, Landroidx/appcompat/widget/AppCompatTextHelper$$ExternalSyntheticOutline0;->m(Ljava/lang/String;I)Ljava/lang/String;
+
+    move-result-object p1
+
+    invoke-direct {v0, p1}, Ljava/lang/IndexOutOfBoundsException;-><init>(Ljava/lang/String;)V
+
+    throw v0
+
+    :cond_0
+    new-instance p1, Ljava/lang/IndexOutOfBoundsException;
+
+    invoke-direct {p1}, Ljava/lang/IndexOutOfBoundsException;-><init>()V
+
+    throw p1
+.end method
+
+.method public iterator()Ljava/util/Iterator;
+    .locals 1
+    .annotation system Ldalvik/annotation/Signature;
+        value = {
+            "()",
+            "Ljava/util/Iterator<",
+            "TE;>;"
+        }
+    .end annotation
+
+    const/4 v0, 0x0
+
+    invoke-direct {p0, v0}, Lkotlin/reflect/jvm/internal/pcollections/ConsPStack;->iterator(I)Ljava/util/Iterator;
+
+    move-result-object v0
+
+    return-object v0
+.end method
+
+.method public minus(I)Lkotlin/reflect/jvm/internal/pcollections/ConsPStack;
+    .locals 0
+    .annotation system Ldalvik/annotation/Signature;
+        value = {
+            "(I)",
+            "Lkotlin/reflect/jvm/internal/pcollections/ConsPStack<",
+            "TE;>;"
+        }
+    .end annotation
+
+    invoke-virtual {p0, p1}, Lkotlin/reflect/jvm/internal/pcollections/ConsPStack;->get(I)Ljava/lang/Object;
+
+    move-result-object p1
+
+    invoke-direct {p0, p1}, Lkotlin/reflect/jvm/internal/pcollections/ConsPStack;->minus(Ljava/lang/Object;)Lkotlin/reflect/jvm/internal/pcollections/ConsPStack;
+
+    move-result-object p1
+
+    return-object p1
+.end method
+
+.method public plus(Ljava/lang/Object;)Lkotlin/reflect/jvm/internal/pcollections/ConsPStack;
+    .locals 1
+    .annotation system Ldalvik/annotation/Signature;
+        value = {
+            "(TE;)",
+            "Lkotlin/reflect/jvm/internal/pcollections/ConsPStack<",
+            "TE;>;"
+        }
+    .end annotation
+
+    new-instance v0, Lkotlin/reflect/jvm/internal/pcollections/ConsPStack;
+
+    invoke-direct {v0, p1, p0}, Lkotlin/reflect/jvm/internal/pcollections/ConsPStack;-><init>(Ljava/lang/Object;Lkotlin/reflect/jvm/internal/pcollections/ConsPStack;)V
+
+    return-object v0
+.end method
+
+.method public size()I
+    .locals 1
+
+    iget v0, p0, Lkotlin/reflect/jvm/internal/pcollections/ConsPStack;->size:I
+
+    return v0
 .end method

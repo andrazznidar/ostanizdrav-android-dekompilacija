@@ -57,6 +57,8 @@
 
 .field public static final TREND_FIELD_NUMBER:I = 0x4
 
+.field public static final UPDATEDAT_FIELD_NUMBER:I = 0x6
+
 .field public static final VALUE_FIELD_NUMBER:I = 0x2
 
 
@@ -68,6 +70,8 @@
 .field private trendSemantic_:I
 
 .field private trend_:I
+
+.field private updatedAt_:J
 
 .field private value_:D
 
@@ -101,6 +105,14 @@
     .locals 0
 
     invoke-direct {p0}, Lde/rki/coronawarnapp/server/protocols/internal/stats/KeyFigureCardOuterClass$KeyFigure;->clearTrendSemantic()V
+
+    return-void
+.end method
+
+.method public static bridge synthetic -$$Nest$mclearUpdatedAt(Lde/rki/coronawarnapp/server/protocols/internal/stats/KeyFigureCardOuterClass$KeyFigure;)V
+    .locals 0
+
+    invoke-direct {p0}, Lde/rki/coronawarnapp/server/protocols/internal/stats/KeyFigureCardOuterClass$KeyFigure;->clearUpdatedAt()V
 
     return-void
 .end method
@@ -169,6 +181,14 @@
     return-void
 .end method
 
+.method public static bridge synthetic -$$Nest$msetUpdatedAt(Lde/rki/coronawarnapp/server/protocols/internal/stats/KeyFigureCardOuterClass$KeyFigure;J)V
+    .locals 0
+
+    invoke-direct {p0, p1, p2}, Lde/rki/coronawarnapp/server/protocols/internal/stats/KeyFigureCardOuterClass$KeyFigure;->setUpdatedAt(J)V
+
+    return-void
+.end method
+
 .method public static bridge synthetic -$$Nest$msetValue(Lde/rki/coronawarnapp/server/protocols/internal/stats/KeyFigureCardOuterClass$KeyFigure;D)V
     .locals 0
 
@@ -177,7 +197,7 @@
     return-void
 .end method
 
-.method public static synthetic -$$Nest$sfgetDEFAULT_INSTANCE()Lde/rki/coronawarnapp/server/protocols/internal/stats/KeyFigureCardOuterClass$KeyFigure;
+.method public static bridge synthetic -$$Nest$sfgetDEFAULT_INSTANCE()Lde/rki/coronawarnapp/server/protocols/internal/stats/KeyFigureCardOuterClass$KeyFigure;
     .locals 1
 
     sget-object v0, Lde/rki/coronawarnapp/server/protocols/internal/stats/KeyFigureCardOuterClass$KeyFigure;->DEFAULT_INSTANCE:Lde/rki/coronawarnapp/server/protocols/internal/stats/KeyFigureCardOuterClass$KeyFigure;
@@ -243,6 +263,16 @@
     const/4 v0, 0x0
 
     iput v0, p0, Lde/rki/coronawarnapp/server/protocols/internal/stats/KeyFigureCardOuterClass$KeyFigure;->trendSemantic_:I
+
+    return-void
+.end method
+
+.method private clearUpdatedAt()V
+    .locals 2
+
+    const-wide/16 v0, 0x0
+
+    iput-wide v0, p0, Lde/rki/coronawarnapp/server/protocols/internal/stats/KeyFigureCardOuterClass$KeyFigure;->updatedAt_:J
 
     return-void
 .end method
@@ -583,6 +613,14 @@
     return-void
 .end method
 
+.method private setUpdatedAt(J)V
+    .locals 0
+
+    iput-wide p1, p0, Lde/rki/coronawarnapp/server/protocols/internal/stats/KeyFigureCardOuterClass$KeyFigure;->updatedAt_:J
+
+    return-void
+.end method
+
 .method private setValue(D)V
     .locals 0
 
@@ -663,32 +701,36 @@
 
     :cond_2
     :goto_1
-    if-nez v1, :cond_9
+    if-nez v1, :cond_a
 
     :try_start_1
     invoke-virtual {p2}, Lcom/google/protobuf/CodedInputStream;->readTag()I
 
     move-result p1
 
-    if-eqz p1, :cond_8
+    if-eqz p1, :cond_9
 
     const/16 p3, 0x8
 
-    if-eq p1, p3, :cond_7
+    if-eq p1, p3, :cond_8
 
     const/16 p3, 0x11
 
-    if-eq p1, p3, :cond_6
+    if-eq p1, p3, :cond_7
 
     const/16 p3, 0x18
 
-    if-eq p1, p3, :cond_5
+    if-eq p1, p3, :cond_6
 
     const/16 p3, 0x20
 
-    if-eq p1, p3, :cond_4
+    if-eq p1, p3, :cond_5
 
     const/16 p3, 0x28
+
+    if-eq p1, p3, :cond_4
+
+    const/16 p3, 0x30
 
     if-eq p1, p3, :cond_3
 
@@ -701,11 +743,11 @@
     goto :goto_2
 
     :cond_3
-    invoke-virtual {p2}, Lcom/google/protobuf/CodedInputStream;->readRawVarint32()I
+    invoke-virtual {p2}, Lcom/google/protobuf/CodedInputStream;->readRawVarint64()J
 
-    move-result p1
+    move-result-wide v3
 
-    iput p1, p0, Lde/rki/coronawarnapp/server/protocols/internal/stats/KeyFigureCardOuterClass$KeyFigure;->trendSemantic_:I
+    iput-wide v3, p0, Lde/rki/coronawarnapp/server/protocols/internal/stats/KeyFigureCardOuterClass$KeyFigure;->updatedAt_:J
 
     goto :goto_1
 
@@ -714,7 +756,7 @@
 
     move-result p1
 
-    iput p1, p0, Lde/rki/coronawarnapp/server/protocols/internal/stats/KeyFigureCardOuterClass$KeyFigure;->trend_:I
+    iput p1, p0, Lde/rki/coronawarnapp/server/protocols/internal/stats/KeyFigureCardOuterClass$KeyFigure;->trendSemantic_:I
 
     goto :goto_1
 
@@ -723,11 +765,20 @@
 
     move-result p1
 
-    iput p1, p0, Lde/rki/coronawarnapp/server/protocols/internal/stats/KeyFigureCardOuterClass$KeyFigure;->decimals_:I
+    iput p1, p0, Lde/rki/coronawarnapp/server/protocols/internal/stats/KeyFigureCardOuterClass$KeyFigure;->trend_:I
 
     goto :goto_1
 
     :cond_6
+    invoke-virtual {p2}, Lcom/google/protobuf/CodedInputStream;->readRawVarint32()I
+
+    move-result p1
+
+    iput p1, p0, Lde/rki/coronawarnapp/server/protocols/internal/stats/KeyFigureCardOuterClass$KeyFigure;->decimals_:I
+
+    goto :goto_1
+
+    :cond_7
     invoke-virtual {p2}, Lcom/google/protobuf/CodedInputStream;->readDouble()D
 
     move-result-wide v3
@@ -736,7 +787,7 @@
 
     goto :goto_1
 
-    :cond_7
+    :cond_8
     invoke-virtual {p2}, Lcom/google/protobuf/CodedInputStream;->readRawVarint32()I
 
     move-result p1
@@ -749,7 +800,7 @@
 
     goto :goto_1
 
-    :cond_8
+    :cond_9
     :goto_2
     move v1, v2
 
@@ -792,42 +843,44 @@
     :goto_3
     throw p1
 
-    :cond_9
+    :cond_a
     :pswitch_2
     sget-object p1, Lde/rki/coronawarnapp/server/protocols/internal/stats/KeyFigureCardOuterClass$KeyFigure;->DEFAULT_INSTANCE:Lde/rki/coronawarnapp/server/protocols/internal/stats/KeyFigureCardOuterClass$KeyFigure;
 
     return-object p1
 
     :pswitch_3
-    check-cast p2, Lcom/google/protobuf/GeneratedMessageLite$Visitor;
+    move-object v0, p2
+
+    check-cast v0, Lcom/google/protobuf/GeneratedMessageLite$Visitor;
 
     check-cast p3, Lde/rki/coronawarnapp/server/protocols/internal/stats/KeyFigureCardOuterClass$KeyFigure;
 
     iget p1, p0, Lde/rki/coronawarnapp/server/protocols/internal/stats/KeyFigureCardOuterClass$KeyFigure;->rank_:I
 
-    if-eqz p1, :cond_a
+    if-eqz p1, :cond_b
 
-    move v0, v2
+    move p2, v2
 
     goto :goto_4
 
-    :cond_a
-    move v0, v1
+    :cond_b
+    move p2, v1
 
     :goto_4
     iget v3, p3, Lde/rki/coronawarnapp/server/protocols/internal/stats/KeyFigureCardOuterClass$KeyFigure;->rank_:I
 
-    if-eqz v3, :cond_b
+    if-eqz v3, :cond_c
 
     move v4, v2
 
     goto :goto_5
 
-    :cond_b
+    :cond_c
     move v4, v1
 
     :goto_5
-    invoke-interface {p2, v0, p1, v4, v3}, Lcom/google/protobuf/GeneratedMessageLite$Visitor;->visitInt(ZIZI)I
+    invoke-interface {v0, p2, p1, v4, v3}, Lcom/google/protobuf/GeneratedMessageLite$Visitor;->visitInt(ZIZI)I
 
     move-result p1
 
@@ -835,69 +888,67 @@
 
     iget-wide v5, p0, Lde/rki/coronawarnapp/server/protocols/internal/stats/KeyFigureCardOuterClass$KeyFigure;->value_:D
 
-    const-wide/16 v3, 0x0
+    const-wide/16 p1, 0x0
 
-    cmpl-double p1, v5, v3
+    cmpl-double v3, v5, p1
 
-    if-eqz p1, :cond_c
+    if-eqz v3, :cond_d
 
-    move p1, v2
+    move v4, v2
 
     goto :goto_6
 
-    :cond_c
-    move p1, v1
+    :cond_d
+    move v4, v1
 
     :goto_6
     iget-wide v8, p3, Lde/rki/coronawarnapp/server/protocols/internal/stats/KeyFigureCardOuterClass$KeyFigure;->value_:D
 
-    cmpl-double v0, v8, v3
+    cmpl-double p1, v8, p1
 
-    if-eqz v0, :cond_d
+    if-eqz p1, :cond_e
 
     move v7, v2
 
     goto :goto_7
 
-    :cond_d
+    :cond_e
     move v7, v1
 
     :goto_7
-    move-object v3, p2
-
-    move v4, p1
+    move-object v3, v0
 
     invoke-interface/range {v3 .. v9}, Lcom/google/protobuf/GeneratedMessageLite$Visitor;->visitDouble(ZDZD)D
 
-    move-result-wide v3
+    move-result-wide p1
 
-    iput-wide v3, p0, Lde/rki/coronawarnapp/server/protocols/internal/stats/KeyFigureCardOuterClass$KeyFigure;->value_:D
+    iput-wide p1, p0, Lde/rki/coronawarnapp/server/protocols/internal/stats/KeyFigureCardOuterClass$KeyFigure;->value_:D
 
     iget p1, p0, Lde/rki/coronawarnapp/server/protocols/internal/stats/KeyFigureCardOuterClass$KeyFigure;->decimals_:I
 
-    if-eqz p1, :cond_e
+    if-eqz p1, :cond_f
 
-    move v0, v2
+    move p2, v2
 
     goto :goto_8
 
-    :cond_e
-    move v0, v1
+    :cond_f
+    move p2, v1
 
     :goto_8
     iget v3, p3, Lde/rki/coronawarnapp/server/protocols/internal/stats/KeyFigureCardOuterClass$KeyFigure;->decimals_:I
 
-    if-eqz v3, :cond_f
+    if-eqz v3, :cond_10
 
     move v4, v2
 
     goto :goto_9
 
-    :cond_f
+    :cond_10
     move v4, v1
 
     :goto_9
-    invoke-interface {p2, v0, p1, v4, v3}, Lcom/google/protobuf/GeneratedMessageLite$Visitor;->visitInt(ZIZI)I
+    invoke-interface {v0, p2, p1, v4, v3}, Lcom/google/protobuf/GeneratedMessageLite$Visitor;->visitInt(ZIZI)I
 
     move-result p1
 
@@ -905,29 +956,29 @@
 
     iget p1, p0, Lde/rki/coronawarnapp/server/protocols/internal/stats/KeyFigureCardOuterClass$KeyFigure;->trend_:I
 
-    if-eqz p1, :cond_10
+    if-eqz p1, :cond_11
 
-    move v0, v2
+    move p2, v2
 
     goto :goto_a
 
-    :cond_10
-    move v0, v1
+    :cond_11
+    move p2, v1
 
     :goto_a
     iget v3, p3, Lde/rki/coronawarnapp/server/protocols/internal/stats/KeyFigureCardOuterClass$KeyFigure;->trend_:I
 
-    if-eqz v3, :cond_11
+    if-eqz v3, :cond_12
 
     move v4, v2
 
     goto :goto_b
 
-    :cond_11
+    :cond_12
     move v4, v1
 
     :goto_b
-    invoke-interface {p2, v0, p1, v4, v3}, Lcom/google/protobuf/GeneratedMessageLite$Visitor;->visitInt(ZIZI)I
+    invoke-interface {v0, p2, p1, v4, v3}, Lcom/google/protobuf/GeneratedMessageLite$Visitor;->visitInt(ZIZI)I
 
     move-result p1
 
@@ -935,35 +986,82 @@
 
     iget p1, p0, Lde/rki/coronawarnapp/server/protocols/internal/stats/KeyFigureCardOuterClass$KeyFigure;->trendSemantic_:I
 
-    if-eqz p1, :cond_12
+    if-eqz p1, :cond_13
 
-    move v0, v2
+    move p2, v2
 
     goto :goto_c
 
-    :cond_12
-    move v0, v1
+    :cond_13
+    move p2, v1
 
     :goto_c
-    iget p3, p3, Lde/rki/coronawarnapp/server/protocols/internal/stats/KeyFigureCardOuterClass$KeyFigure;->trendSemantic_:I
+    iget v3, p3, Lde/rki/coronawarnapp/server/protocols/internal/stats/KeyFigureCardOuterClass$KeyFigure;->trendSemantic_:I
 
-    if-eqz p3, :cond_13
+    if-eqz v3, :cond_14
 
-    move v1, v2
+    move v4, v2
 
-    :cond_13
-    invoke-interface {p2, v0, p1, v1, p3}, Lcom/google/protobuf/GeneratedMessageLite$Visitor;->visitInt(ZIZI)I
+    goto :goto_d
+
+    :cond_14
+    move v4, v1
+
+    :goto_d
+    invoke-interface {v0, p2, p1, v4, v3}, Lcom/google/protobuf/GeneratedMessageLite$Visitor;->visitInt(ZIZI)I
 
     move-result p1
 
     iput p1, p0, Lde/rki/coronawarnapp/server/protocols/internal/stats/KeyFigureCardOuterClass$KeyFigure;->trendSemantic_:I
+
+    iget-wide p1, p0, Lde/rki/coronawarnapp/server/protocols/internal/stats/KeyFigureCardOuterClass$KeyFigure;->updatedAt_:J
+
+    const-wide/16 v3, 0x0
+
+    cmp-long v5, p1, v3
+
+    if-eqz v5, :cond_15
+
+    move v5, v2
+
+    goto :goto_e
+
+    :cond_15
+    move v5, v1
+
+    :goto_e
+    iget-wide v6, p3, Lde/rki/coronawarnapp/server/protocols/internal/stats/KeyFigureCardOuterClass$KeyFigure;->updatedAt_:J
+
+    cmp-long p3, v6, v3
+
+    if-eqz p3, :cond_16
+
+    move v4, v2
+
+    goto :goto_f
+
+    :cond_16
+    move v4, v1
+
+    :goto_f
+    move v1, v5
+
+    move-wide v2, p1
+
+    move-wide v5, v6
+
+    invoke-interface/range {v0 .. v6}, Lcom/google/protobuf/GeneratedMessageLite$Visitor;->visitLong(ZJZJ)J
+
+    move-result-wide p1
+
+    iput-wide p1, p0, Lde/rki/coronawarnapp/server/protocols/internal/stats/KeyFigureCardOuterClass$KeyFigure;->updatedAt_:J
 
     return-object p0
 
     :pswitch_4
     new-instance p1, Lde/rki/coronawarnapp/server/protocols/internal/stats/KeyFigureCardOuterClass$KeyFigure$Builder;
 
-    invoke-direct {p1, v0}, Lde/rki/coronawarnapp/server/protocols/internal/stats/KeyFigureCardOuterClass$KeyFigure$Builder;-><init>(Lde/rki/coronawarnapp/server/protocols/internal/stats/KeyFigureCardOuterClass$KeyFigure$Builder-IA;)V
+    invoke-direct {p1, v0}, Lde/rki/coronawarnapp/server/protocols/internal/stats/KeyFigureCardOuterClass$KeyFigure$Builder;-><init>(Lkotlin/jvm/internal/Intrinsics$$ExternalSyntheticCheckNotZero0;)V
 
     return-object p1
 
@@ -1135,6 +1233,23 @@
     add-int/2addr v0, v1
 
     :cond_5
+    iget-wide v1, p0, Lde/rki/coronawarnapp/server/protocols/internal/stats/KeyFigureCardOuterClass$KeyFigure;->updatedAt_:J
+
+    const-wide/16 v3, 0x0
+
+    cmp-long v3, v1, v3
+
+    if-eqz v3, :cond_6
+
+    const/4 v3, 0x6
+
+    invoke-static {v3, v1, v2}, Lcom/google/protobuf/CodedOutputStream;->computeInt64Size(IJ)I
+
+    move-result v1
+
+    add-int/2addr v0, v1
+
+    :cond_6
     iput v0, p0, Lcom/google/protobuf/GeneratedMessageLite;->memoizedSerializedSize:I
 
     return v0
@@ -1188,6 +1303,14 @@
     iget v0, p0, Lde/rki/coronawarnapp/server/protocols/internal/stats/KeyFigureCardOuterClass$KeyFigure;->trend_:I
 
     return v0
+.end method
+
+.method public getUpdatedAt()J
+    .locals 2
+
+    iget-wide v0, p0, Lde/rki/coronawarnapp/server/protocols/internal/stats/KeyFigureCardOuterClass$KeyFigure;->updatedAt_:J
+
+    return-wide v0
 .end method
 
 .method public getValue()D
@@ -1279,5 +1402,18 @@
     invoke-virtual {p1, v0, v1}, Lcom/google/protobuf/CodedOutputStream;->writeInt32(II)V
 
     :cond_4
+    iget-wide v0, p0, Lde/rki/coronawarnapp/server/protocols/internal/stats/KeyFigureCardOuterClass$KeyFigure;->updatedAt_:J
+
+    const-wide/16 v2, 0x0
+
+    cmp-long v2, v0, v2
+
+    if-eqz v2, :cond_5
+
+    const/4 v2, 0x6
+
+    invoke-virtual {p1, v2, v0, v1}, Lcom/google/protobuf/CodedOutputStream;->writeUInt64(IJ)V
+
+    :cond_5
     return-void
 .end method

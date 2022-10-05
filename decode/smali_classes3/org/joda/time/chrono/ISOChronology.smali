@@ -156,8 +156,6 @@
 
     new-instance v1, Lorg/joda/time/field/RemainderDateTimeField;
 
-    check-cast v0, Lorg/joda/time/field/DividedDateTimeField;
-
     sget-object v2, Lorg/joda/time/DateTimeFieldType;->YEAR_OF_CENTURY_TYPE:Lorg/joda/time/DateTimeFieldType;
 
     invoke-direct {v1, v0, v2}, Lorg/joda/time/field/RemainderDateTimeField;-><init>(Lorg/joda/time/field/DividedDateTimeField;Lorg/joda/time/DateTimeFieldType;)V

@@ -35,8 +35,10 @@
 
 
 # virtual methods
-.method public synthetic add(Ljava/lang/Object;)Z
+.method public add(Ljava/lang/Object;)Z
     .locals 1
+
+    check-cast p1, Ljava/lang/Void;
 
     new-instance p1, Ljava/lang/UnsupportedOperationException;
 
@@ -78,15 +80,17 @@
 
     const/4 v1, 0x0
 
-    if-eqz v0, :cond_0
+    if-nez v0, :cond_0
 
+    return v1
+
+    :cond_0
     check-cast p1, Ljava/lang/Void;
 
     const-string v0, "element"
 
     invoke-static {p1, v0}, Lkotlin/jvm/internal/Intrinsics;->checkNotNullParameter(Ljava/lang/Object;Ljava/lang/String;)V
 
-    :cond_0
     return v1
 .end method
 
@@ -209,7 +213,7 @@
 .end method
 
 .method public toArray([Ljava/lang/Object;)[Ljava/lang/Object;
-    .locals 0
+    .locals 1
     .annotation system Ldalvik/annotation/Signature;
         value = {
             "<T:",
@@ -217,6 +221,10 @@
             ">([TT;)[TT;"
         }
     .end annotation
+
+    const-string v0, "array"
+
+    invoke-static {p1, v0}, Lkotlin/jvm/internal/Intrinsics;->checkNotNullParameter(Ljava/lang/Object;Ljava/lang/String;)V
 
     invoke-static {p0, p1}, Lkotlin/jvm/internal/CollectionToArray;->toArray(Ljava/util/Collection;[Ljava/lang/Object;)[Ljava/lang/Object;
 

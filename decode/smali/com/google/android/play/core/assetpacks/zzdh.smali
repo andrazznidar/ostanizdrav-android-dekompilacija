@@ -54,7 +54,7 @@
     :catch_0
     move-exception v0
 
-    sget-object v1, Lcom/google/android/play/core/assetpacks/zzdl;->zza:Lkotlin/jvm/internal/SpreadBuilder;
+    sget-object v1, Lcom/google/android/play/core/assetpacks/zzdl;->zza:Lcom/google/android/play/core/internal/zzag;
 
     const/4 v2, 0x1
 
@@ -66,7 +66,7 @@
 
     const-string v0, "notifyModuleCompleted failed"
 
-    invoke-virtual {v1, v0, v2}, Lkotlin/jvm/internal/SpreadBuilder;->zze(Ljava/lang/String;[Ljava/lang/Object;)I
+    invoke-virtual {v1, v0, v2}, Lcom/google/android/play/core/internal/zzag;->zze(Ljava/lang/String;[Ljava/lang/Object;)I
 
     :goto_0
     return-void

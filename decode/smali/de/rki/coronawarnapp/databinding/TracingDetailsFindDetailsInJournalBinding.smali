@@ -1,37 +1,46 @@
-.class public abstract Lde/rki/coronawarnapp/databinding/TracingDetailsFindDetailsInJournalBinding;
-.super Landroidx/databinding/ViewDataBinding;
+.class public final Lde/rki/coronawarnapp/databinding/TracingDetailsFindDetailsInJournalBinding;
+.super Ljava/lang/Object;
 .source "TracingDetailsFindDetailsInJournalBinding.java"
 
-
-# static fields
-.field public static final synthetic $r8$clinit:I
+# interfaces
+.implements Landroidx/viewbinding/ViewBinding;
 
 
 # instance fields
 .field public final riskDetailsFindDetailsInJournal:Landroid/widget/TextView;
 
+.field public final rootView:Landroidx/constraintlayout/widget/ConstraintLayout;
+
 
 # direct methods
-.method public constructor <init>(Ljava/lang/Object;Landroid/view/View;ILandroid/widget/TextView;)V
+.method public constructor <init>(Landroidx/constraintlayout/widget/ConstraintLayout;Landroid/widget/TextView;)V
     .locals 0
     .annotation system Ldalvik/annotation/MethodParameters;
         accessFlags = {
             0x0,
-            0x0,
-            0x0,
             0x0
         }
         names = {
-            "_bindingComponent",
-            "_root",
-            "_localFieldCount",
+            "rootView",
             "riskDetailsFindDetailsInJournal"
         }
     .end annotation
 
-    invoke-direct {p0, p1, p2, p3}, Landroidx/databinding/ViewDataBinding;-><init>(Ljava/lang/Object;Landroid/view/View;I)V
+    invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
-    iput-object p4, p0, Lde/rki/coronawarnapp/databinding/TracingDetailsFindDetailsInJournalBinding;->riskDetailsFindDetailsInJournal:Landroid/widget/TextView;
+    iput-object p1, p0, Lde/rki/coronawarnapp/databinding/TracingDetailsFindDetailsInJournalBinding;->rootView:Landroidx/constraintlayout/widget/ConstraintLayout;
+
+    iput-object p2, p0, Lde/rki/coronawarnapp/databinding/TracingDetailsFindDetailsInJournalBinding;->riskDetailsFindDetailsInJournal:Landroid/widget/TextView;
 
     return-void
+.end method
+
+
+# virtual methods
+.method public getRoot()Landroid/view/View;
+    .locals 1
+
+    iget-object v0, p0, Lde/rki/coronawarnapp/databinding/TracingDetailsFindDetailsInJournalBinding;->rootView:Landroidx/constraintlayout/widget/ConstraintLayout;
+
+    return-object v0
 .end method

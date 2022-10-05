@@ -1,1 +1,2 @@
 com.fasterxml.jackson.module.kotlin.KotlinModule
+com.fasterxml.jackson.datatype.joda.JodaModule

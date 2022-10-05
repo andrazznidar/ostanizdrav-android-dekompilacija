@@ -32,9 +32,9 @@
 
     move-result v0
 
-    const/4 v1, 0x0
+    const/4 v1, 0x1
 
-    const/4 v2, 0x1
+    const/4 v2, 0x0
 
     if-eqz v0, :cond_d
 
@@ -60,7 +60,7 @@
 
     if-nez v3, :cond_b
 
-    new-instance v1, Lde/rki/coronawarnapp/appconfig/mapping/ExposureWindowRiskCalculationConfigMapper$ExposureWindowRiskCalculationContainer;
+    new-instance v2, Lde/rki/coronawarnapp/appconfig/mapping/ExposureWindowRiskCalculationConfigMapper$ExposureWindowRiskCalculationContainer;
 
     invoke-virtual {v0}, Lde/rki/coronawarnapp/server/protocols/internal/v2/RiskCalculationParametersOuterClass$RiskCalculationParameters;->getMinutesAtAttenuationFiltersList()Ljava/util/List;
 
@@ -128,7 +128,7 @@
 
     if-eqz v0, :cond_0
 
-    move v3, v2
+    move v3, v1
 
     goto :goto_0
 
@@ -148,7 +148,7 @@
 
     if-gt v3, v5, :cond_1
 
-    move v3, v2
+    move v3, v1
 
     goto :goto_1
 
@@ -156,7 +156,7 @@
     move v3, v4
 
     :goto_1
-    new-array v13, v2, [Ljava/lang/Object;
+    new-array v13, v1, [Ljava/lang/Object;
 
     invoke-static {v5}, Ljava/lang/Integer;->valueOf(I)Ljava/lang/Integer;
 
@@ -227,7 +227,7 @@
 
     if-gt v15, v4, :cond_2
 
-    move v4, v2
+    move v4, v1
 
     goto :goto_3
 
@@ -235,7 +235,7 @@
     const/4 v4, 0x0
 
     :goto_3
-    new-array v15, v2, [Ljava/lang/Object;
+    new-array v15, v1, [Ljava/lang/Object;
 
     invoke-static {v14}, Ljava/lang/Integer;->valueOf(I)Ljava/lang/Integer;
 
@@ -245,22 +245,22 @@
 
     aput-object v17, v15, v16
 
-    const-string v2, "Invalid day since onset %d"
+    const-string v1, "Invalid day since onset %d"
 
-    invoke-static {v4, v2, v15}, Lcom/google/android/gms/common/internal/Preconditions;->checkArgument(ZLjava/lang/String;[Ljava/lang/Object;)V
+    invoke-static {v4, v1, v15}, Lcom/google/android/gms/common/internal/Preconditions;->checkArgument(ZLjava/lang/String;[Ljava/lang/Object;)V
 
-    invoke-static {v5}, Lcom/google/android/gms/nearby/exposurenotification/zzj;->zza(I)Lcom/google/android/gms/nearby/exposurenotification/zzj;
+    invoke-static {v5}, Lcom/google/android/gms/nearby/exposurenotification/zzj$EnumUnboxingLocalUtility;->_zza(I)I
 
-    move-result-object v2
+    move-result v1
 
-    if-eqz v2, :cond_3
+    if-eqz v1, :cond_3
 
-    const/4 v2, 0x1
+    const/4 v1, 0x1
 
     goto :goto_4
 
     :cond_3
-    move/from16 v2, v16
+    move/from16 v1, v16
 
     :goto_4
     const/4 v4, 0x1
@@ -273,13 +273,13 @@
 
     aput-object v4, v15, v16
 
-    invoke-static {v2, v13, v15}, Lcom/google/android/gms/common/internal/Preconditions;->checkArgument(ZLjava/lang/String;[Ljava/lang/Object;)V
+    invoke-static {v1, v13, v15}, Lcom/google/android/gms/common/internal/Preconditions;->checkArgument(ZLjava/lang/String;[Ljava/lang/Object;)V
 
     add-int/lit8 v14, v14, 0xe
 
     aput-object v4, v3, v14
 
-    const/4 v2, 0x1
+    const/4 v1, 0x1
 
     const/4 v4, 0x0
 
@@ -292,15 +292,15 @@
 
     invoke-virtual/range {p1 .. p1}, Lde/rki/coronawarnapp/server/protocols/internal/v2/AppConfigAndroid$ApplicationConfigurationAndroid;->getDiagnosisKeysDataMapping()Lde/rki/coronawarnapp/server/protocols/internal/v2/AppConfigAndroid$DiagnosisKeysDataMapping;
 
-    move-result-object v2
+    move-result-object v1
 
-    invoke-virtual {v2}, Lde/rki/coronawarnapp/server/protocols/internal/v2/AppConfigAndroid$DiagnosisKeysDataMapping;->getInfectiousnessWhenDaysSinceOnsetMissing()I
+    invoke-virtual {v1}, Lde/rki/coronawarnapp/server/protocols/internal/v2/AppConfigAndroid$DiagnosisKeysDataMapping;->getInfectiousnessWhenDaysSinceOnsetMissing()I
 
-    move-result v2
+    move-result v1
 
-    invoke-static {v2}, Lcom/google/android/gms/nearby/exposurenotification/zzj;->zza(I)Lcom/google/android/gms/nearby/exposurenotification/zzj;
+    invoke-static {v1}, Lcom/google/android/gms/nearby/exposurenotification/zzj$EnumUnboxingLocalUtility;->_zza(I)I
 
-    move-result-object v3
+    move-result v3
 
     if-eqz v3, :cond_5
 
@@ -316,13 +316,13 @@
 
     new-array v5, v4, [Ljava/lang/Object;
 
-    invoke-static {v2}, Ljava/lang/Integer;->valueOf(I)Ljava/lang/Integer;
+    invoke-static {v1}, Ljava/lang/Integer;->valueOf(I)Ljava/lang/Integer;
 
-    move-result-object v2
+    move-result-object v1
 
     const/4 v4, 0x0
 
-    aput-object v2, v5, v4
+    aput-object v1, v5, v4
 
     invoke-static {v3, v13, v5}, Lcom/google/android/gms/common/internal/Preconditions;->checkArgument(ZLjava/lang/String;[Ljava/lang/Object;)V
 
@@ -406,7 +406,7 @@
 
     invoke-static {v4, v5}, Lcom/google/android/gms/common/internal/Preconditions;->checkArgument(ZLjava/lang/Object;)V
 
-    if-eqz v2, :cond_a
+    if-eqz v1, :cond_a
 
     const/4 v4, 0x1
 
@@ -422,56 +422,56 @@
 
     new-instance v13, Lcom/google/android/gms/nearby/exposurenotification/DiagnosisKeysDataMapping;
 
-    invoke-virtual {v2}, Ljava/lang/Integer;->intValue()I
+    invoke-virtual {v1}, Ljava/lang/Integer;->intValue()I
 
-    move-result v2
+    move-result v1
 
-    invoke-direct {v13, v0, v3, v2}, Lcom/google/android/gms/nearby/exposurenotification/DiagnosisKeysDataMapping;-><init>(Ljava/util/List;II)V
+    invoke-direct {v13, v0, v3, v1}, Lcom/google/android/gms/nearby/exposurenotification/DiagnosisKeysDataMapping;-><init>(Ljava/util/List;II)V
 
-    move-object v5, v1
+    move-object v5, v2
 
     invoke-direct/range {v5 .. v13}, Lde/rki/coronawarnapp/appconfig/mapping/ExposureWindowRiskCalculationConfigMapper$ExposureWindowRiskCalculationContainer;-><init>(Ljava/util/List;Ljava/util/List;Lde/rki/coronawarnapp/server/protocols/internal/v2/RiskCalculationParametersOuterClass$TransmissionRiskLevelEncoding;Ljava/util/List;Ljava/util/List;Ljava/util/List;Ljava/util/List;Lcom/google/android/gms/nearby/exposurenotification/DiagnosisKeysDataMapping;)V
 
-    return-object v1
+    return-object v2
 
     :cond_b
     const-string v0, "Transmission Risk Value Mapping List is empty which indicates an outdated app config"
 
-    sget-object v2, Ltimber/log/Timber;->Forest:Ltimber/log/Timber$Forest;
+    sget-object v1, Ltimber/log/Timber;->Forest:Ltimber/log/Timber$Forest;
 
     const/4 v3, 0x0
 
     new-array v3, v3, [Ljava/lang/Object;
 
-    invoke-virtual {v2, v0, v3}, Ltimber/log/Timber$Forest;->w(Ljava/lang/String;[Ljava/lang/Object;)V
+    invoke-virtual {v1, v0, v3}, Ltimber/log/Timber$Forest;->w(Ljava/lang/String;[Ljava/lang/Object;)V
 
-    new-instance v2, Lde/rki/coronawarnapp/appconfig/internal/ApplicationConfigurationInvalidException;
+    new-instance v1, Lde/rki/coronawarnapp/appconfig/internal/ApplicationConfigurationInvalidException;
 
     const/4 v3, 0x1
 
-    invoke-direct {v2, v1, v0, v3}, Lde/rki/coronawarnapp/appconfig/internal/ApplicationConfigurationInvalidException;-><init>(Ljava/lang/Exception;Ljava/lang/String;I)V
+    invoke-direct {v1, v2, v0, v3}, Lde/rki/coronawarnapp/appconfig/internal/ApplicationConfigurationInvalidException;-><init>(Ljava/lang/Exception;Ljava/lang/String;I)V
 
-    throw v2
+    throw v1
 
     :cond_c
-    move v3, v2
+    move v3, v1
 
     new-instance v0, Lde/rki/coronawarnapp/appconfig/internal/ApplicationConfigurationInvalidException;
 
-    const-string v2, "Diagnosis Keys Data Mapping is missing"
+    const-string v1, "Diagnosis Keys Data Mapping is missing"
 
-    invoke-direct {v0, v1, v2, v3}, Lde/rki/coronawarnapp/appconfig/internal/ApplicationConfigurationInvalidException;-><init>(Ljava/lang/Exception;Ljava/lang/String;I)V
+    invoke-direct {v0, v2, v1, v3}, Lde/rki/coronawarnapp/appconfig/internal/ApplicationConfigurationInvalidException;-><init>(Ljava/lang/Exception;Ljava/lang/String;I)V
 
     throw v0
 
     :cond_d
-    move v3, v2
+    move v3, v1
 
     new-instance v0, Lde/rki/coronawarnapp/appconfig/internal/ApplicationConfigurationInvalidException;
 
-    const-string v2, "Risk Calculation Parameters are missing"
+    const-string v1, "Risk Calculation Parameters are missing"
 
-    invoke-direct {v0, v1, v2, v3}, Lde/rki/coronawarnapp/appconfig/internal/ApplicationConfigurationInvalidException;-><init>(Ljava/lang/Exception;Ljava/lang/String;I)V
+    invoke-direct {v0, v2, v1, v3}, Lde/rki/coronawarnapp/appconfig/internal/ApplicationConfigurationInvalidException;-><init>(Ljava/lang/Exception;Ljava/lang/String;I)V
 
     throw v0
 .end method

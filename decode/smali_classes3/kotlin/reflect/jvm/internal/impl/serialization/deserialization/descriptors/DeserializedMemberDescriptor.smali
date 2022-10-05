@@ -3,8 +3,9 @@
 .source "DeserializedMemberDescriptor.kt"
 
 # interfaces
-.implements Lkotlin/reflect/jvm/internal/impl/descriptors/DeclarationDescriptor;
+.implements Lkotlin/reflect/jvm/internal/impl/descriptors/DeserializedDescriptor;
 .implements Lkotlin/reflect/jvm/internal/impl/descriptors/MemberDescriptor;
+.implements Lkotlin/reflect/jvm/internal/impl/serialization/deserialization/descriptors/DescriptorWithContainerSource;
 
 
 # annotations

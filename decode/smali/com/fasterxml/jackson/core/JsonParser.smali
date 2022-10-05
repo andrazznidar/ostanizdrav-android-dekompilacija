@@ -653,6 +653,30 @@
     return-object v0
 .end method
 
+.method public nextIntValue(I)I
+    .locals 2
+    .annotation system Ldalvik/annotation/Throws;
+        value = {
+            Ljava/io/IOException;
+        }
+    .end annotation
+
+    invoke-virtual {p0}, Lcom/fasterxml/jackson/core/JsonParser;->nextToken()Lcom/fasterxml/jackson/core/JsonToken;
+
+    move-result-object v0
+
+    sget-object v1, Lcom/fasterxml/jackson/core/JsonToken;->VALUE_NUMBER_INT:Lcom/fasterxml/jackson/core/JsonToken;
+
+    if-ne v0, v1, :cond_0
+
+    invoke-virtual {p0}, Lcom/fasterxml/jackson/core/JsonParser;->getIntValue()I
+
+    move-result p1
+
+    :cond_0
+    return p1
+.end method
+
 .method public nextTextValue()Ljava/lang/String;
     .locals 2
     .annotation system Ldalvik/annotation/Throws;
@@ -696,6 +720,12 @@
             Ljava/io/IOException;
         }
     .end annotation
+.end method
+
+.method public overrideFormatFeatures(II)Lcom/fasterxml/jackson/core/JsonParser;
+    .locals 0
+
+    return-object p0
 .end method
 
 .method public overrideStdFeatures(II)Lcom/fasterxml/jackson/core/JsonParser;
@@ -784,6 +814,50 @@
     iput p1, p0, Lcom/fasterxml/jackson/core/JsonParser;->_features:I
 
     return-object p0
+.end method
+
+.method public setSchema(Lcom/fasterxml/jackson/core/FormatSchema;)V
+    .locals 3
+
+    new-instance v0, Ljava/lang/UnsupportedOperationException;
+
+    const-string v1, "Parser of type "
+
+    invoke-static {v1}, Landroid/support/v4/media/RatingCompat$$ExternalSyntheticOutline0;->m(Ljava/lang/String;)Ljava/lang/StringBuilder;
+
+    move-result-object v1
+
+    invoke-virtual {p0}, Ljava/lang/Object;->getClass()Ljava/lang/Class;
+
+    move-result-object v2
+
+    invoke-virtual {v2}, Ljava/lang/Class;->getName()Ljava/lang/String;
+
+    move-result-object v2
+
+    invoke-virtual {v1, v2}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+
+    const-string v2, " does not support schema of type \'"
+
+    invoke-virtual {v1, v2}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+
+    invoke-interface {p1}, Lcom/fasterxml/jackson/core/FormatSchema;->getSchemaType()Ljava/lang/String;
+
+    move-result-object p1
+
+    invoke-virtual {v1, p1}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+
+    const-string p1, "\'"
+
+    invoke-virtual {v1, p1}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+
+    invoke-virtual {v1}, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
+
+    move-result-object p1
+
+    invoke-direct {v0, p1}, Ljava/lang/UnsupportedOperationException;-><init>(Ljava/lang/String;)V
+
+    throw v0
 .end method
 
 .method public abstract skipChildren()Lcom/fasterxml/jackson/core/JsonParser;

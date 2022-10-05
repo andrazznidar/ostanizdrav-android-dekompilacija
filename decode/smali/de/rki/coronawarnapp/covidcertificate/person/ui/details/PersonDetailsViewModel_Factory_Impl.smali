@@ -32,7 +32,7 @@
 
 # virtual methods
 .method public create(Ljava/lang/String;Lde/rki/coronawarnapp/covidcertificate/person/ui/overview/PersonColorShade;)Lde/rki/coronawarnapp/covidcertificate/person/ui/details/PersonDetailsViewModel;
-    .locals 11
+    .locals 10
     .annotation system Ldalvik/annotation/MethodParameters;
         accessFlags = {
             0x0,
@@ -86,35 +86,25 @@
 
     check-cast v6, Lde/rki/coronawarnapp/covidcertificate/validation/core/DccValidationRepository;
 
-    iget-object v1, v0, Lde/rki/coronawarnapp/covidcertificate/person/ui/details/PersonDetailsViewModel_Factory;->timeStamperProvider:Ljavax/inject/Provider;
-
-    invoke-interface {v1}, Ljavax/inject/Provider;->get()Ljava/lang/Object;
-
-    move-result-object v1
-
-    move-object v7, v1
-
-    check-cast v7, Lde/rki/coronawarnapp/util/TimeStamper;
-
-    iget-object v0, v0, Lde/rki/coronawarnapp/covidcertificate/person/ui/details/PersonDetailsViewModel_Factory;->appScopeProvider:Ljavax/inject/Provider;
+    iget-object v0, v0, Lde/rki/coronawarnapp/covidcertificate/person/ui/details/PersonDetailsViewModel_Factory;->formatProvider:Ljavax/inject/Provider;
 
     invoke-interface {v0}, Ljavax/inject/Provider;->get()Ljava/lang/Object;
 
     move-result-object v0
 
-    move-object v8, v0
+    move-object v9, v0
 
-    check-cast v8, Lkotlinx/coroutines/CoroutineScope;
+    check-cast v9, Lde/rki/coronawarnapp/ccl/ui/text/CCLTextFormatter;
 
     new-instance v0, Lde/rki/coronawarnapp/covidcertificate/person/ui/details/PersonDetailsViewModel;
 
     move-object v2, v0
 
-    move-object v9, p1
+    move-object v7, p1
 
-    move-object v10, p2
+    move-object v8, p2
 
-    invoke-direct/range {v2 .. v10}, Lde/rki/coronawarnapp/covidcertificate/person/ui/details/PersonDetailsViewModel;-><init>(Lde/rki/coronawarnapp/util/coroutine/DispatcherProvider;Lde/rki/coronawarnapp/covidcertificate/person/core/PersonCertificatesProvider;Lde/rki/coronawarnapp/covidcertificate/vaccination/core/repository/VaccinationRepository;Lde/rki/coronawarnapp/covidcertificate/validation/core/DccValidationRepository;Lde/rki/coronawarnapp/util/TimeStamper;Lkotlinx/coroutines/CoroutineScope;Ljava/lang/String;Lde/rki/coronawarnapp/covidcertificate/person/ui/overview/PersonColorShade;)V
+    invoke-direct/range {v2 .. v9}, Lde/rki/coronawarnapp/covidcertificate/person/ui/details/PersonDetailsViewModel;-><init>(Lde/rki/coronawarnapp/util/coroutine/DispatcherProvider;Lde/rki/coronawarnapp/covidcertificate/person/core/PersonCertificatesProvider;Lde/rki/coronawarnapp/covidcertificate/vaccination/core/repository/VaccinationRepository;Lde/rki/coronawarnapp/covidcertificate/validation/core/DccValidationRepository;Ljava/lang/String;Lde/rki/coronawarnapp/covidcertificate/person/ui/overview/PersonColorShade;Lde/rki/coronawarnapp/ccl/ui/text/CCLTextFormatter;)V
 
     return-object v0
 .end method

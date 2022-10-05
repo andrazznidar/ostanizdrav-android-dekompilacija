@@ -261,34 +261,37 @@
 
     move-object v8, v5
 
+    :cond_3
     :goto_1
     if-ge v6, v2, :cond_6
 
     aget-object v9, v1, v6
 
+    add-int/lit8 v6, v6, 0x1
+
     iget v10, v9, Lde/rki/coronawarnapp/coronatest/server/CoronaTestResult;->value:I
 
-    if-ne v10, v0, :cond_3
+    if-ne v10, v0, :cond_4
 
     move v10, v4
 
     goto :goto_2
 
-    :cond_3
+    :cond_4
     move v10, v3
 
     :goto_2
-    if-eqz v10, :cond_5
+    if-eqz v10, :cond_3
 
-    if-nez v7, :cond_4
+    if-nez v7, :cond_5
 
     move v7, v4
 
     move-object v8, v9
 
-    goto :goto_3
+    goto :goto_1
 
-    :cond_4
+    :cond_5
     new-instance p1, Ljava/lang/IllegalArgumentException;
 
     const-string v0, "Array contains more than one matching element."
@@ -296,12 +299,6 @@
     invoke-direct {p1, v0}, Ljava/lang/IllegalArgumentException;-><init>(Ljava/lang/String;)V
 
     throw p1
-
-    :cond_5
-    :goto_3
-    add-int/lit8 v6, v6, 0x1
-
-    goto :goto_1
 
     :cond_6
     if-eqz v7, :cond_8
@@ -312,7 +309,7 @@
 
     if-nez v0, :cond_7
 
-    goto :goto_4
+    goto :goto_3
 
     :cond_7
     invoke-virtual {v0}, Ljava/lang/Integer;->intValue()I
@@ -325,7 +322,7 @@
 
     move-result-object v5
 
-    :goto_4
+    :goto_3
     invoke-virtual {p1}, Lde/rki/coronawarnapp/coronatest/server/VerificationApiV1$TestResultResponse;->getLabId()Ljava/lang/String;
 
     move-result-object p1

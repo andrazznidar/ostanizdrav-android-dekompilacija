@@ -1,59 +1,85 @@
-.class public final synthetic Lj$/util/stream/J1;
-.super Ljava/lang/Object;
-
-# interfaces
-.implements Lj$/util/function/b;
+.class Lj$/util/stream/J1;
+.super Lj$/util/stream/a2;
 
 
-# static fields
-.field public static final synthetic a:Lj$/util/stream/J1;
+# instance fields
+.field public final synthetic b:I
+
+.field final synthetic c:Ljava/lang/Object;
 
 
 # direct methods
-.method static synthetic constructor <clinit>()V
-    .locals 1
-
-    new-instance v0, Lj$/util/stream/J1;
-
-    invoke-direct {v0}, Lj$/util/stream/J1;-><init>()V
-
-    sput-object v0, Lj$/util/stream/J1;->a:Lj$/util/stream/J1;
-
-    return-void
-.end method
-
-.method private synthetic constructor <init>()V
+.method public synthetic constructor <init>(ILjava/lang/Object;I)V
     .locals 0
 
-    invoke-direct {p0}, Ljava/lang/Object;-><init>()V
+    iput p3, p0, Lj$/util/stream/J1;->b:I
+
+    iput-object p2, p0, Lj$/util/stream/J1;->c:Ljava/lang/Object;
+
+    invoke-direct {p0, p1}, Lj$/util/stream/a2;-><init>(I)V
 
     return-void
 .end method
 
 
 # virtual methods
-.method public final apply(Ljava/lang/Object;Ljava/lang/Object;)Ljava/lang/Object;
-    .locals 1
+.method public b()Lj$/util/stream/Y1;
+    .locals 2
 
-    new-instance v0, Lj$/util/stream/Q1;
+    iget v0, p0, Lj$/util/stream/J1;->b:I
 
-    check-cast p1, Lj$/util/stream/x1;
+    packed-switch v0, :pswitch_data_0
 
-    check-cast p2, Lj$/util/stream/x1;
+    goto :goto_0
 
-    invoke-direct {v0, p1, p2}, Lj$/util/stream/Q1;-><init>(Lj$/util/stream/x1;Lj$/util/stream/x1;)V
+    :pswitch_0
+    new-instance v0, Lj$/util/stream/T1;
 
-    return-object v0
-.end method
+    iget-object v1, p0, Lj$/util/stream/J1;->c:Ljava/lang/Object;
 
-.method public b(Lj$/util/function/Function;)Lj$/util/function/BiFunction;
-    .locals 1
+    check-cast v1, Lj$/util/function/l;
 
-    invoke-static {p1}, Ljava/util/Objects;->requireNonNull(Ljava/lang/Object;)Ljava/lang/Object;
-
-    new-instance v0, Lj$/util/concurrent/a;
-
-    invoke-direct {v0, p0, p1}, Lj$/util/concurrent/a;-><init>(Lj$/util/function/BiFunction;Lj$/util/function/Function;)V
+    invoke-direct {v0, v1}, Lj$/util/stream/T1;-><init>(Lj$/util/function/l;)V
 
     return-object v0
+
+    :pswitch_1
+    new-instance v0, Lj$/util/stream/N1;
+
+    iget-object v1, p0, Lj$/util/stream/J1;->c:Ljava/lang/Object;
+
+    check-cast v1, Lj$/util/function/c;
+
+    invoke-direct {v0, v1}, Lj$/util/stream/N1;-><init>(Lj$/util/function/c;)V
+
+    return-object v0
+
+    :pswitch_2
+    new-instance v0, Lj$/util/stream/K1;
+
+    iget-object v1, p0, Lj$/util/stream/J1;->c:Ljava/lang/Object;
+
+    check-cast v1, Lj$/util/function/e;
+
+    invoke-direct {v0, v1}, Lj$/util/stream/K1;-><init>(Lj$/util/function/e;)V
+
+    return-object v0
+
+    :goto_0
+    new-instance v0, Lj$/util/stream/X1;
+
+    iget-object v1, p0, Lj$/util/stream/J1;->c:Ljava/lang/Object;
+
+    check-cast v1, Lj$/util/function/r;
+
+    invoke-direct {v0, v1}, Lj$/util/stream/X1;-><init>(Lj$/util/function/r;)V
+
+    return-object v0
+
+    :pswitch_data_0
+    .packed-switch 0x0
+        :pswitch_2
+        :pswitch_1
+        :pswitch_0
+    .end packed-switch
 .end method

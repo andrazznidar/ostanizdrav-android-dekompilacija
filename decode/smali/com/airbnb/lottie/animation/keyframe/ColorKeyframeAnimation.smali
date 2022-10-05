@@ -117,7 +117,7 @@
 
     move-result p1
 
-    invoke-static {p1, v0, v1}, Lcom/airbnb/lottie/utils/GammaEvaluator;->evaluate(FII)I
+    invoke-static {p1, v0, v1}, Lorg/ejml/ops/DConvertMatrixStruct;->evaluate(FII)I
 
     move-result p1
 

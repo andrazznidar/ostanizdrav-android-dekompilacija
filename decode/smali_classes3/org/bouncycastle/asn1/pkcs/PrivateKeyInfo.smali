@@ -3,20 +3,20 @@
 
 
 # instance fields
-.field public attributes:Lorg/bouncycastle/asn1/ASN1Set;
+.field private attributes:Lorg/bouncycastle/asn1/ASN1Set;
 
-.field public privateKey:Lorg/bouncycastle/asn1/ASN1OctetString;
+.field private privateKey:Lorg/bouncycastle/asn1/ASN1OctetString;
 
-.field public privateKeyAlgorithm:Lorg/bouncycastle/asn1/x509/AlgorithmIdentifier;
+.field private privateKeyAlgorithm:Lorg/bouncycastle/asn1/x509/AlgorithmIdentifier;
 
-.field public publicKey:Lorg/bouncycastle/asn1/ASN1BitString;
+.field private publicKey:Lorg/bouncycastle/asn1/ASN1BitString;
 
-.field public version:Lorg/bouncycastle/asn1/ASN1Integer;
+.field private version:Lorg/bouncycastle/asn1/ASN1Integer;
 
 
 # direct methods
-.method public constructor <init>(Lorg/bouncycastle/asn1/ASN1Sequence;)V
-    .locals 8
+.method private constructor <init>(Lorg/bouncycastle/asn1/ASN1Sequence;)V
+    .locals 5
 
     invoke-direct {p0}, Lorg/bouncycastle/asn1/ASN1Object;-><init>()V
 
@@ -34,124 +34,70 @@
 
     iput-object v0, p0, Lorg/bouncycastle/asn1/pkcs/PrivateKeyInfo;->version:Lorg/bouncycastle/asn1/ASN1Integer;
 
-    invoke-virtual {v0}, Lorg/bouncycastle/asn1/ASN1Integer;->intValueExact()I
+    invoke-static {v0}, Lorg/bouncycastle/asn1/pkcs/PrivateKeyInfo;->getVersionValue(Lorg/bouncycastle/asn1/ASN1Integer;)I
 
     move-result v0
 
-    if-ltz v0, :cond_e
+    invoke-interface {p1}, Ljava/util/Enumeration;->nextElement()Ljava/lang/Object;
 
-    const/4 v1, 0x1
+    move-result-object v1
 
-    if-gt v0, v1, :cond_e
+    invoke-static {v1}, Lorg/bouncycastle/asn1/x509/AlgorithmIdentifier;->getInstance(Ljava/lang/Object;)Lorg/bouncycastle/asn1/x509/AlgorithmIdentifier;
+
+    move-result-object v1
+
+    iput-object v1, p0, Lorg/bouncycastle/asn1/pkcs/PrivateKeyInfo;->privateKeyAlgorithm:Lorg/bouncycastle/asn1/x509/AlgorithmIdentifier;
 
     invoke-interface {p1}, Ljava/util/Enumeration;->nextElement()Ljava/lang/Object;
 
-    move-result-object v2
+    move-result-object v1
 
-    invoke-static {v2}, Lorg/bouncycastle/asn1/x509/AlgorithmIdentifier;->getInstance(Ljava/lang/Object;)Lorg/bouncycastle/asn1/x509/AlgorithmIdentifier;
+    invoke-static {v1}, Lorg/bouncycastle/asn1/ASN1OctetString;->getInstance(Ljava/lang/Object;)Lorg/bouncycastle/asn1/ASN1OctetString;
 
-    move-result-object v2
+    move-result-object v1
 
-    iput-object v2, p0, Lorg/bouncycastle/asn1/pkcs/PrivateKeyInfo;->privateKeyAlgorithm:Lorg/bouncycastle/asn1/x509/AlgorithmIdentifier;
+    iput-object v1, p0, Lorg/bouncycastle/asn1/pkcs/PrivateKeyInfo;->privateKey:Lorg/bouncycastle/asn1/ASN1OctetString;
 
-    invoke-interface {p1}, Ljava/util/Enumeration;->nextElement()Ljava/lang/Object;
-
-    move-result-object v2
-
-    invoke-static {v2}, Lorg/bouncycastle/asn1/ASN1OctetString;->getInstance(Ljava/lang/Object;)Lorg/bouncycastle/asn1/ASN1OctetString;
-
-    move-result-object v2
-
-    iput-object v2, p0, Lorg/bouncycastle/asn1/pkcs/PrivateKeyInfo;->privateKey:Lorg/bouncycastle/asn1/ASN1OctetString;
-
-    const/4 v2, -0x1
+    const/4 v1, -0x1
 
     :goto_0
     invoke-interface {p1}, Ljava/util/Enumeration;->hasMoreElements()Z
 
-    move-result v3
+    move-result v2
 
-    if-eqz v3, :cond_d
+    if-eqz v2, :cond_4
 
     invoke-interface {p1}, Ljava/util/Enumeration;->nextElement()Ljava/lang/Object;
 
-    move-result-object v3
-
-    check-cast v3, Lorg/bouncycastle/asn1/ASN1TaggedObject;
-
-    iget v4, v3, Lorg/bouncycastle/asn1/ASN1TaggedObject;->tagNo:I
-
-    if-le v4, v2, :cond_c
-
-    const/4 v2, 0x0
-
-    if-eqz v4, :cond_5
-
-    if-ne v4, v1, :cond_4
-
-    if-lt v0, v1, :cond_3
-
-    invoke-virtual {v3}, Lorg/bouncycastle/asn1/ASN1TaggedObject;->getObject()Lorg/bouncycastle/asn1/ASN1Primitive;
-
-    move-result-object v3
-
-    instance-of v5, v3, Lorg/bouncycastle/asn1/DERBitString;
-
-    if-eqz v5, :cond_0
-
-    invoke-static {v3}, Lorg/bouncycastle/asn1/DERBitString;->getInstance(Ljava/lang/Object;)Lorg/bouncycastle/asn1/DERBitString;
-
     move-result-object v2
+
+    check-cast v2, Lorg/bouncycastle/asn1/ASN1TaggedObject;
+
+    invoke-virtual {v2}, Lorg/bouncycastle/asn1/ASN1TaggedObject;->getTagNo()I
+
+    move-result v3
+
+    if-le v3, v1, :cond_3
+
+    const/4 v1, 0x0
+
+    if-eqz v3, :cond_2
+
+    const/4 v4, 0x1
+
+    if-ne v3, v4, :cond_1
+
+    if-lt v0, v4, :cond_0
+
+    invoke-static {v2, v1}, Lorg/bouncycastle/asn1/DERBitString;->getInstance(Lorg/bouncycastle/asn1/ASN1TaggedObject;Z)Lorg/bouncycastle/asn1/DERBitString;
+
+    move-result-object v1
+
+    iput-object v1, p0, Lorg/bouncycastle/asn1/pkcs/PrivateKeyInfo;->publicKey:Lorg/bouncycastle/asn1/ASN1BitString;
 
     goto :goto_1
 
     :cond_0
-    invoke-static {v3}, Lorg/bouncycastle/asn1/ASN1OctetString;->getInstance(Ljava/lang/Object;)Lorg/bouncycastle/asn1/ASN1OctetString;
-
-    move-result-object v3
-
-    iget-object v3, v3, Lorg/bouncycastle/asn1/ASN1OctetString;->string:[B
-
-    array-length v5, v3
-
-    if-lt v5, v1, :cond_2
-
-    aget-byte v5, v3, v2
-
-    array-length v6, v3
-
-    sub-int/2addr v6, v1
-
-    new-array v7, v6, [B
-
-    if-eqz v6, :cond_1
-
-    array-length v6, v3
-
-    sub-int/2addr v6, v1
-
-    invoke-static {v3, v1, v7, v2, v6}, Ljava/lang/System;->arraycopy(Ljava/lang/Object;ILjava/lang/Object;II)V
-
-    :cond_1
-    new-instance v2, Lorg/bouncycastle/asn1/DERBitString;
-
-    invoke-direct {v2, v7, v5}, Lorg/bouncycastle/asn1/DERBitString;-><init>([BI)V
-
-    :goto_1
-    iput-object v2, p0, Lorg/bouncycastle/asn1/pkcs/PrivateKeyInfo;->publicKey:Lorg/bouncycastle/asn1/ASN1BitString;
-
-    goto :goto_4
-
-    :cond_2
-    new-instance p1, Ljava/lang/IllegalArgumentException;
-
-    const-string v0, "truncated BIT STRING detected"
-
-    invoke-direct {p1, v0}, Ljava/lang/IllegalArgumentException;-><init>(Ljava/lang/String;)V
-
-    throw p1
-
-    :cond_3
     new-instance p1, Ljava/lang/IllegalArgumentException;
 
     const-string v0, "\'publicKey\' requires version v2(1) or later"
@@ -160,7 +106,7 @@
 
     throw p1
 
-    :cond_4
+    :cond_1
     new-instance p1, Ljava/lang/IllegalArgumentException;
 
     const-string v0, "unknown optional field in private key info"
@@ -169,121 +115,19 @@
 
     throw p1
 
-    :cond_5
-    invoke-virtual {v3}, Lorg/bouncycastle/asn1/ASN1TaggedObject;->getObject()Lorg/bouncycastle/asn1/ASN1Primitive;
-
-    move-result-object v5
-
-    iget-boolean v6, v3, Lorg/bouncycastle/asn1/ASN1TaggedObject;->explicit:Z
-
-    if-eqz v6, :cond_7
-
-    instance-of v2, v3, Lorg/bouncycastle/asn1/BERTaggedObject;
-
-    if-eqz v2, :cond_6
-
-    new-instance v2, Lorg/bouncycastle/asn1/BERSet;
-
-    invoke-direct {v2, v5}, Lorg/bouncycastle/asn1/BERSet;-><init>(Lorg/bouncycastle/asn1/ASN1Encodable;)V
-
-    goto :goto_3
-
-    :cond_6
-    new-instance v2, Lorg/bouncycastle/asn1/DLSet;
-
-    invoke-direct {v2, v5}, Lorg/bouncycastle/asn1/DLSet;-><init>(Lorg/bouncycastle/asn1/ASN1Encodable;)V
-
-    goto :goto_3
-
-    :cond_7
-    instance-of v6, v5, Lorg/bouncycastle/asn1/ASN1Set;
-
-    if-eqz v6, :cond_9
-
-    move-object v2, v5
-
-    check-cast v2, Lorg/bouncycastle/asn1/ASN1Set;
-
-    instance-of v3, v3, Lorg/bouncycastle/asn1/BERTaggedObject;
-
-    if-eqz v3, :cond_8
-
-    goto :goto_3
-
-    :cond_8
-    invoke-virtual {v2}, Lorg/bouncycastle/asn1/ASN1Set;->toDLObject()Lorg/bouncycastle/asn1/ASN1Primitive;
-
-    move-result-object v2
-
-    check-cast v2, Lorg/bouncycastle/asn1/ASN1Set;
-
-    goto :goto_3
-
-    :cond_9
-    instance-of v6, v5, Lorg/bouncycastle/asn1/ASN1Sequence;
-
-    if-eqz v6, :cond_b
-
-    check-cast v5, Lorg/bouncycastle/asn1/ASN1Sequence;
-
-    invoke-virtual {v5}, Lorg/bouncycastle/asn1/ASN1Sequence;->toArrayInternal()[Lorg/bouncycastle/asn1/ASN1Encodable;
-
-    move-result-object v5
-
-    instance-of v3, v3, Lorg/bouncycastle/asn1/BERTaggedObject;
-
-    if-eqz v3, :cond_a
-
-    new-instance v3, Lorg/bouncycastle/asn1/BERSet;
-
-    invoke-direct {v3, v2, v5}, Lorg/bouncycastle/asn1/BERSet;-><init>(Z[Lorg/bouncycastle/asn1/ASN1Encodable;)V
-
-    goto :goto_2
-
-    :cond_a
-    new-instance v3, Lorg/bouncycastle/asn1/DLSet;
-
-    invoke-direct {v3, v2, v5}, Lorg/bouncycastle/asn1/DLSet;-><init>(Z[Lorg/bouncycastle/asn1/ASN1Encodable;)V
-
-    :goto_2
-    move-object v2, v3
-
-    :goto_3
-    iput-object v2, p0, Lorg/bouncycastle/asn1/pkcs/PrivateKeyInfo;->attributes:Lorg/bouncycastle/asn1/ASN1Set;
-
-    :goto_4
-    move v2, v4
-
-    goto/16 :goto_0
-
-    :cond_b
-    new-instance p1, Ljava/lang/IllegalArgumentException;
-
-    const-string v0, "unknown object in getInstance: "
-
-    invoke-static {v0}, Landroid/support/v4/media/RatingCompat$$ExternalSyntheticOutline0;->m(Ljava/lang/String;)Ljava/lang/StringBuilder;
-
-    move-result-object v0
-
-    invoke-virtual {v3}, Ljava/lang/Object;->getClass()Ljava/lang/Class;
+    :cond_2
+    invoke-static {v2, v1}, Lorg/bouncycastle/asn1/ASN1Set;->getInstance(Lorg/bouncycastle/asn1/ASN1TaggedObject;Z)Lorg/bouncycastle/asn1/ASN1Set;
 
     move-result-object v1
 
-    invoke-virtual {v1}, Ljava/lang/Class;->getName()Ljava/lang/String;
+    iput-object v1, p0, Lorg/bouncycastle/asn1/pkcs/PrivateKeyInfo;->attributes:Lorg/bouncycastle/asn1/ASN1Set;
 
-    move-result-object v1
+    :goto_1
+    move v1, v3
 
-    invoke-virtual {v0, v1}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+    goto :goto_0
 
-    invoke-virtual {v0}, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
-
-    move-result-object v0
-
-    invoke-direct {p1, v0}, Ljava/lang/IllegalArgumentException;-><init>(Ljava/lang/String;)V
-
-    throw p1
-
-    :cond_c
+    :cond_3
     new-instance p1, Ljava/lang/IllegalArgumentException;
 
     const-string v0, "invalid optional field in private key info"
@@ -292,17 +136,38 @@
 
     throw p1
 
-    :cond_d
+    :cond_4
     return-void
+.end method
 
-    :cond_e
-    new-instance p1, Ljava/lang/IllegalArgumentException;
+.method public constructor <init>(Lorg/bouncycastle/asn1/x509/AlgorithmIdentifier;Lorg/bouncycastle/asn1/ASN1Encodable;)V
+    .locals 1
+    .annotation system Ldalvik/annotation/Throws;
+        value = {
+            Ljava/io/IOException;
+        }
+    .end annotation
 
-    const-string v0, "invalid version for private key info"
+    const/4 v0, 0x0
 
-    invoke-direct {p1, v0}, Ljava/lang/IllegalArgumentException;-><init>(Ljava/lang/String;)V
+    invoke-direct {p0, p1, p2, v0, v0}, Lorg/bouncycastle/asn1/pkcs/PrivateKeyInfo;-><init>(Lorg/bouncycastle/asn1/x509/AlgorithmIdentifier;Lorg/bouncycastle/asn1/ASN1Encodable;Lorg/bouncycastle/asn1/ASN1Set;[B)V
 
-    throw p1
+    return-void
+.end method
+
+.method public constructor <init>(Lorg/bouncycastle/asn1/x509/AlgorithmIdentifier;Lorg/bouncycastle/asn1/ASN1Encodable;Lorg/bouncycastle/asn1/ASN1Set;)V
+    .locals 1
+    .annotation system Ldalvik/annotation/Throws;
+        value = {
+            Ljava/io/IOException;
+        }
+    .end annotation
+
+    const/4 v0, 0x0
+
+    invoke-direct {p0, p1, p2, p3, v0}, Lorg/bouncycastle/asn1/pkcs/PrivateKeyInfo;-><init>(Lorg/bouncycastle/asn1/x509/AlgorithmIdentifier;Lorg/bouncycastle/asn1/ASN1Encodable;Lorg/bouncycastle/asn1/ASN1Set;[B)V
+
+    return-void
 .end method
 
 .method public constructor <init>(Lorg/bouncycastle/asn1/x509/AlgorithmIdentifier;Lorg/bouncycastle/asn1/ASN1Encodable;Lorg/bouncycastle/asn1/ASN1Set;[B)V
@@ -388,8 +253,113 @@
     return-object p0
 .end method
 
+.method public static getInstance(Lorg/bouncycastle/asn1/ASN1TaggedObject;Z)Lorg/bouncycastle/asn1/pkcs/PrivateKeyInfo;
+    .locals 0
+
+    invoke-static {p0, p1}, Lorg/bouncycastle/asn1/ASN1Sequence;->getInstance(Lorg/bouncycastle/asn1/ASN1TaggedObject;Z)Lorg/bouncycastle/asn1/ASN1Sequence;
+
+    move-result-object p0
+
+    invoke-static {p0}, Lorg/bouncycastle/asn1/pkcs/PrivateKeyInfo;->getInstance(Ljava/lang/Object;)Lorg/bouncycastle/asn1/pkcs/PrivateKeyInfo;
+
+    move-result-object p0
+
+    return-object p0
+.end method
+
+.method private static getVersionValue(Lorg/bouncycastle/asn1/ASN1Integer;)I
+    .locals 1
+
+    invoke-virtual {p0}, Lorg/bouncycastle/asn1/ASN1Integer;->intValueExact()I
+
+    move-result p0
+
+    if-ltz p0, :cond_0
+
+    const/4 v0, 0x1
+
+    if-gt p0, v0, :cond_0
+
+    return p0
+
+    :cond_0
+    new-instance p0, Ljava/lang/IllegalArgumentException;
+
+    const-string v0, "invalid version for private key info"
+
+    invoke-direct {p0, v0}, Ljava/lang/IllegalArgumentException;-><init>(Ljava/lang/String;)V
+
+    throw p0
+.end method
+
 
 # virtual methods
+.method public getAttributes()Lorg/bouncycastle/asn1/ASN1Set;
+    .locals 1
+
+    iget-object v0, p0, Lorg/bouncycastle/asn1/pkcs/PrivateKeyInfo;->attributes:Lorg/bouncycastle/asn1/ASN1Set;
+
+    return-object v0
+.end method
+
+.method public getPrivateKey()Lorg/bouncycastle/asn1/ASN1OctetString;
+    .locals 2
+
+    new-instance v0, Lorg/bouncycastle/asn1/DEROctetString;
+
+    iget-object v1, p0, Lorg/bouncycastle/asn1/pkcs/PrivateKeyInfo;->privateKey:Lorg/bouncycastle/asn1/ASN1OctetString;
+
+    invoke-virtual {v1}, Lorg/bouncycastle/asn1/ASN1OctetString;->getOctets()[B
+
+    move-result-object v1
+
+    invoke-direct {v0, v1}, Lorg/bouncycastle/asn1/DEROctetString;-><init>([B)V
+
+    return-object v0
+.end method
+
+.method public getPrivateKeyAlgorithm()Lorg/bouncycastle/asn1/x509/AlgorithmIdentifier;
+    .locals 1
+
+    iget-object v0, p0, Lorg/bouncycastle/asn1/pkcs/PrivateKeyInfo;->privateKeyAlgorithm:Lorg/bouncycastle/asn1/x509/AlgorithmIdentifier;
+
+    return-object v0
+.end method
+
+.method public getPublicKeyData()Lorg/bouncycastle/asn1/ASN1BitString;
+    .locals 1
+
+    iget-object v0, p0, Lorg/bouncycastle/asn1/pkcs/PrivateKeyInfo;->publicKey:Lorg/bouncycastle/asn1/ASN1BitString;
+
+    return-object v0
+.end method
+
+.method public getVersion()Lorg/bouncycastle/asn1/ASN1Integer;
+    .locals 1
+
+    iget-object v0, p0, Lorg/bouncycastle/asn1/pkcs/PrivateKeyInfo;->version:Lorg/bouncycastle/asn1/ASN1Integer;
+
+    return-object v0
+.end method
+
+.method public hasPublicKey()Z
+    .locals 1
+
+    iget-object v0, p0, Lorg/bouncycastle/asn1/pkcs/PrivateKeyInfo;->publicKey:Lorg/bouncycastle/asn1/ASN1BitString;
+
+    if-eqz v0, :cond_0
+
+    const/4 v0, 0x1
+
+    goto :goto_0
+
+    :cond_0
+    const/4 v0, 0x0
+
+    :goto_0
+    return v0
+.end method
+
 .method public parsePrivateKey()Lorg/bouncycastle/asn1/ASN1Encodable;
     .locals 1
     .annotation system Ldalvik/annotation/Throws;
@@ -400,12 +370,43 @@
 
     iget-object v0, p0, Lorg/bouncycastle/asn1/pkcs/PrivateKeyInfo;->privateKey:Lorg/bouncycastle/asn1/ASN1OctetString;
 
-    iget-object v0, v0, Lorg/bouncycastle/asn1/ASN1OctetString;->string:[B
+    invoke-virtual {v0}, Lorg/bouncycastle/asn1/ASN1OctetString;->getOctets()[B
+
+    move-result-object v0
 
     invoke-static {v0}, Lorg/bouncycastle/asn1/ASN1Primitive;->fromByteArray([B)Lorg/bouncycastle/asn1/ASN1Primitive;
 
     move-result-object v0
 
+    return-object v0
+.end method
+
+.method public parsePublicKey()Lorg/bouncycastle/asn1/ASN1Encodable;
+    .locals 1
+    .annotation system Ldalvik/annotation/Throws;
+        value = {
+            Ljava/io/IOException;
+        }
+    .end annotation
+
+    iget-object v0, p0, Lorg/bouncycastle/asn1/pkcs/PrivateKeyInfo;->publicKey:Lorg/bouncycastle/asn1/ASN1BitString;
+
+    if-nez v0, :cond_0
+
+    const/4 v0, 0x0
+
+    goto :goto_0
+
+    :cond_0
+    invoke-virtual {v0}, Lorg/bouncycastle/asn1/ASN1BitString;->getOctets()[B
+
+    move-result-object v0
+
+    invoke-static {v0}, Lorg/bouncycastle/asn1/ASN1Primitive;->fromByteArray([B)Lorg/bouncycastle/asn1/ASN1Primitive;
+
+    move-result-object v0
+
+    :goto_0
     return-object v0
 .end method
 
@@ -445,20 +446,20 @@
     :cond_0
     iget-object v1, p0, Lorg/bouncycastle/asn1/pkcs/PrivateKeyInfo;->publicKey:Lorg/bouncycastle/asn1/ASN1BitString;
 
-    const/4 v3, 0x1
-
     if-eqz v1, :cond_1
 
-    new-instance v4, Lorg/bouncycastle/asn1/DERTaggedObject;
+    new-instance v3, Lorg/bouncycastle/asn1/DERTaggedObject;
 
-    invoke-direct {v4, v2, v3, v1}, Lorg/bouncycastle/asn1/DERTaggedObject;-><init>(ZILorg/bouncycastle/asn1/ASN1Encodable;)V
+    const/4 v4, 0x1
 
-    invoke-virtual {v0, v4}, Lorg/bouncycastle/asn1/ASN1EncodableVector;->add(Lorg/bouncycastle/asn1/ASN1Encodable;)V
+    invoke-direct {v3, v2, v4, v1}, Lorg/bouncycastle/asn1/DERTaggedObject;-><init>(ZILorg/bouncycastle/asn1/ASN1Encodable;)V
+
+    invoke-virtual {v0, v3}, Lorg/bouncycastle/asn1/ASN1EncodableVector;->add(Lorg/bouncycastle/asn1/ASN1Encodable;)V
 
     :cond_1
-    new-instance v1, Lorg/bouncycastle/asn1/DLSequence;
+    new-instance v1, Lorg/bouncycastle/asn1/DERSequence;
 
-    invoke-direct {v1, v0, v3}, Lorg/bouncycastle/asn1/DLSequence;-><init>(Lorg/bouncycastle/asn1/ASN1EncodableVector;I)V
+    invoke-direct {v1, v0}, Lorg/bouncycastle/asn1/DERSequence;-><init>(Lorg/bouncycastle/asn1/ASN1EncodableVector;)V
 
     return-object v1
 .end method

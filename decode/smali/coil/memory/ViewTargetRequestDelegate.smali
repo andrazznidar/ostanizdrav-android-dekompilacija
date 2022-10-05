@@ -5,27 +5,13 @@
 
 # annotations
 .annotation runtime Lkotlin/Metadata;
-    bv = {
-        0x1,
-        0x0,
-        0x3
-    }
+    bv = {}
     d1 = {
-        "\u0000\"\n\u0002\u0018\u0002\n\u0002\u0018\u0002\n\u0002\u0018\u0002\n\u0000\n\u0002\u0018\u0002\n\u0000\n\u0002\u0018\u0002\n\u0000\n\u0002\u0018\u0002\n\u0002\u0008\u0004\u0008\u0000\u0018\u00002\u00020\u0001B\'\u0012\u0006\u0010\u0003\u001a\u00020\u0002\u0012\u0006\u0010\u0005\u001a\u00020\u0004\u0012\u0006\u0010\u0007\u001a\u00020\u0006\u0012\u0006\u0010\t\u001a\u00020\u0008\u00a2\u0006\u0004\u0008\n\u0010\u000b\u00a8\u0006\u000c"
+        "\u0000\n\n\u0002\u0018\u0002\n\u0002\u0018\u0002\n\u0000\u0008\u0000\u0018\u00002\u00020\u0001\u00a8\u0006\u0002"
     }
     d2 = {
         "Lcoil/memory/ViewTargetRequestDelegate;",
         "Lcoil/memory/RequestDelegate;",
-        "Lcoil/ImageLoader;",
-        "imageLoader",
-        "Lcoil/request/ImageRequest;",
-        "request",
-        "Lcoil/memory/TargetDelegate;",
-        "targetDelegate",
-        "Lkotlinx/coroutines/Job;",
-        "job",
-        "<init>",
-        "(Lcoil/ImageLoader;Lcoil/request/ImageRequest;Lcoil/memory/TargetDelegate;Lkotlinx/coroutines/Job;)V",
         "coil-base_release"
     }
     k = 0x1

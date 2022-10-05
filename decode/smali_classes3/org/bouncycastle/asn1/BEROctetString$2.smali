@@ -1,4 +1,4 @@
-.class public Lorg/bouncycastle/asn1/BEROctetString$2;
+.class Lorg/bouncycastle/asn1/BEROctetString$2;
 .super Ljava/lang/Object;
 
 # interfaces
@@ -46,7 +46,9 @@
 
     iget-object v1, p0, Lorg/bouncycastle/asn1/BEROctetString$2;->this$0:Lorg/bouncycastle/asn1/BEROctetString;
 
-    iget-object v1, v1, Lorg/bouncycastle/asn1/BEROctetString;->octs:[Lorg/bouncycastle/asn1/ASN1OctetString;
+    invoke-static {v1}, Lorg/bouncycastle/asn1/BEROctetString;->access$100(Lorg/bouncycastle/asn1/BEROctetString;)[Lorg/bouncycastle/asn1/ASN1OctetString;
+
+    move-result-object v1
 
     array-length v1, v1
 
@@ -70,17 +72,27 @@
 
     iget-object v1, p0, Lorg/bouncycastle/asn1/BEROctetString$2;->this$0:Lorg/bouncycastle/asn1/BEROctetString;
 
-    iget-object v1, v1, Lorg/bouncycastle/asn1/BEROctetString;->octs:[Lorg/bouncycastle/asn1/ASN1OctetString;
+    invoke-static {v1}, Lorg/bouncycastle/asn1/BEROctetString;->access$100(Lorg/bouncycastle/asn1/BEROctetString;)[Lorg/bouncycastle/asn1/ASN1OctetString;
 
-    array-length v2, v1
+    move-result-object v1
 
-    if-ge v0, v2, :cond_0
+    array-length v1, v1
 
-    add-int/lit8 v2, v0, 0x1
+    if-ge v0, v1, :cond_0
+
+    iget-object v0, p0, Lorg/bouncycastle/asn1/BEROctetString$2;->this$0:Lorg/bouncycastle/asn1/BEROctetString;
+
+    invoke-static {v0}, Lorg/bouncycastle/asn1/BEROctetString;->access$100(Lorg/bouncycastle/asn1/BEROctetString;)[Lorg/bouncycastle/asn1/ASN1OctetString;
+
+    move-result-object v0
+
+    iget v1, p0, Lorg/bouncycastle/asn1/BEROctetString$2;->counter:I
+
+    add-int/lit8 v2, v1, 0x1
 
     iput v2, p0, Lorg/bouncycastle/asn1/BEROctetString$2;->counter:I
 
-    aget-object v0, v1, v0
+    aget-object v0, v0, v1
 
     return-object v0
 

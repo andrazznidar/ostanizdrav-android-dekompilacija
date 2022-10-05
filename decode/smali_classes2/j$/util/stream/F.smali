@@ -1,78 +1,54 @@
-.class public final synthetic Lj$/util/stream/F;
-.super Ljava/lang/Object;
-
-# interfaces
-.implements Lj$/util/function/e;
-
-
-# instance fields
-.field public final synthetic a:I
-
-.field public final synthetic b:Ljava/lang/Object;
+.class abstract Lj$/util/stream/F;
+.super Lj$/util/stream/G;
 
 
 # direct methods
-.method public synthetic constructor <init>(Lj$/util/stream/J;)V
+.method static constructor <clinit>()V
     .locals 1
 
-    const/4 v0, 0x1
-
-    iput v0, p0, Lj$/util/stream/F;->a:I
-
-    invoke-direct {p0}, Ljava/lang/Object;-><init>()V
-
-    iput-object p1, p0, Lj$/util/stream/F;->b:Ljava/lang/Object;
+    const-class v0, Lj$/util/stream/G;
 
     return-void
 .end method
 
-.method public synthetic constructor <init>(Lj$/util/stream/n3;)V
-    .locals 1
+.method constructor <init>(Lj$/util/stream/c;II)V
+    .locals 0
 
-    const/4 v0, 0x0
-
-    iput v0, p0, Lj$/util/stream/F;->a:I
-
-    invoke-direct {p0}, Ljava/lang/Object;-><init>()V
-
-    iput-object p1, p0, Lj$/util/stream/F;->b:Ljava/lang/Object;
+    invoke-direct {p0, p1, p3}, Lj$/util/stream/G;-><init>(Lj$/util/stream/c;I)V
 
     return-void
 .end method
 
 
 # virtual methods
-.method public final c(D)V
+.method final e1()Z
     .locals 1
 
-    iget v0, p0, Lj$/util/stream/F;->a:I
+    const/4 v0, 0x0
 
-    packed-switch v0, :pswitch_data_0
+    return v0
+.end method
 
-    goto :goto_0
+.method public bridge synthetic parallel()Lj$/util/stream/I;
+    .locals 1
 
-    :pswitch_0
-    iget-object v0, p0, Lj$/util/stream/F;->b:Ljava/lang/Object;
+    invoke-virtual {p0}, Lj$/util/stream/c;->parallel()Lj$/util/stream/h;
 
-    check-cast v0, Lj$/util/stream/n3;
+    move-object v0, p0
 
-    invoke-interface {v0, p1, p2}, Lj$/util/stream/n3;->c(D)V
+    check-cast v0, Lj$/util/stream/I;
 
-    return-void
+    return-object v0
+.end method
 
-    :goto_0
-    iget-object v0, p0, Lj$/util/stream/F;->b:Ljava/lang/Object;
+.method public bridge synthetic sequential()Lj$/util/stream/I;
+    .locals 1
 
-    check-cast v0, Lj$/util/stream/J;
+    invoke-virtual {p0}, Lj$/util/stream/c;->sequential()Lj$/util/stream/h;
 
-    iget-object v0, v0, Lj$/util/stream/g3;->a:Lj$/util/stream/n3;
+    move-object v0, p0
 
-    invoke-interface {v0, p1, p2}, Lj$/util/stream/n3;->c(D)V
+    check-cast v0, Lj$/util/stream/I;
 
-    return-void
-
-    :pswitch_data_0
-    .packed-switch 0x0
-        :pswitch_0
-    .end packed-switch
+    return-object v0
 .end method

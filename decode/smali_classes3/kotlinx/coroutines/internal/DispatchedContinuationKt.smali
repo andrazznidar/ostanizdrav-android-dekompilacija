@@ -62,7 +62,7 @@
 
     check-cast p0, Lkotlinx/coroutines/internal/DispatchedContinuation;
 
-    invoke-static {p1, p2}, Lkotlinx/coroutines/SupervisorKt;->toState(Ljava/lang/Object;Lkotlin/jvm/functions/Function1;)Ljava/lang/Object;
+    invoke-static {p1, p2}, Lkotlinx/coroutines/CompletionStateKt;->toState(Ljava/lang/Object;Lkotlin/jvm/functions/Function1;)Ljava/lang/Object;
 
     move-result-object p2
 

@@ -15,7 +15,7 @@
 
 
 # instance fields
-.field public final actualVersion:Ljava/lang/Object;
+.field private final actualVersion:Ljava/lang/Object;
     .annotation system Ldalvik/annotation/Signature;
         value = {
             "TT;"
@@ -23,9 +23,9 @@
     .end annotation
 .end field
 
-.field public final classId:Lkotlin/reflect/jvm/internal/impl/name/ClassId;
+.field private final classId:Lkotlin/reflect/jvm/internal/impl/name/ClassId;
 
-.field public final expectedVersion:Ljava/lang/Object;
+.field private final expectedVersion:Ljava/lang/Object;
     .annotation system Ldalvik/annotation/Signature;
         value = {
             "TT;"
@@ -33,7 +33,7 @@
     .end annotation
 .end field
 
-.field public final filePath:Ljava/lang/String;
+.field private final filePath:Ljava/lang/String;
 
 
 # direct methods

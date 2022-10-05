@@ -529,7 +529,7 @@
 .end method
 
 .method public final getOverflowEntriesMutable()Ljava/util/SortedMap;
-    .locals 1
+    .locals 2
     .annotation system Ldalvik/annotation/Signature;
         value = {
             "()",
@@ -560,7 +560,9 @@
 
     iput-object v0, p0, Lcom/google/crypto/tink/shaded/protobuf/SmallSortedMap;->overflowEntries:Ljava/util/Map;
 
-    check-cast v0, Ljava/util/TreeMap;
+    move-object v1, v0
+
+    check-cast v1, Ljava/util/TreeMap;
 
     invoke-virtual {v0}, Ljava/util/TreeMap;->descendingMap()Ljava/util/NavigableMap;
 

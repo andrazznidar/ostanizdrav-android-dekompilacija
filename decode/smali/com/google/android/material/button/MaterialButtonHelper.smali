@@ -361,7 +361,7 @@
 
     sget v6, Lcom/google/android/material/R$attr;->colorSurface:I
 
-    invoke-static {v5, v6}, Ldagger/android/AndroidInjection;->getColor(Landroid/view/View;I)I
+    invoke-static {v5, v6}, Lkotlin/math/MathKt__MathJVMKt;->getColor(Landroid/view/View;I)I
 
     move-result v5
 
@@ -480,7 +480,7 @@
 
     sget v3, Lcom/google/android/material/R$attr;->colorSurface:I
 
-    invoke-static {v2, v3}, Ldagger/android/AndroidInjection;->getColor(Landroid/view/View;I)I
+    invoke-static {v2, v3}, Lkotlin/math/MathKt__MathJVMKt;->getColor(Landroid/view/View;I)I
 
     move-result v2
 

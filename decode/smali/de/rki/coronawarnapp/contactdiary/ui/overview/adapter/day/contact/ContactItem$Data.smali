@@ -33,11 +33,11 @@
 
 .field public final name:Ljava/lang/String;
 
-.field public final type:Lde/rki/coronawarnapp/contactdiary/ui/overview/adapter/day/contact/ContactItem$Type;
+.field public final type:I
 
 
 # direct methods
-.method public constructor <init>(ILjava/lang/String;Lorg/joda/time/Duration;Ljava/util/List;Ljava/lang/String;Lde/rki/coronawarnapp/contactdiary/ui/overview/adapter/day/contact/ContactItem$Type;)V
+.method public constructor <init>(ILjava/lang/String;Lorg/joda/time/Duration;Ljava/util/List;Ljava/lang/String;I)V
     .locals 1
     .annotation system Ldalvik/annotation/Signature;
         value = {
@@ -48,7 +48,7 @@
             "Ljava/lang/Integer;",
             ">;",
             "Ljava/lang/String;",
-            "Lde/rki/coronawarnapp/contactdiary/ui/overview/adapter/day/contact/ContactItem$Type;",
+            "Ljava/lang/Object;",
             ")V"
         }
     .end annotation
@@ -56,6 +56,10 @@
     const-string v0, "name"
 
     invoke-static {p2, v0}, Lkotlin/jvm/internal/Intrinsics;->checkNotNullParameter(Ljava/lang/Object;Ljava/lang/String;)V
+
+    const-string/jumbo v0, "type"
+
+    invoke-static {p6, v0}, Lkotlin/jvm/internal/Intrinsics$$ExternalSyntheticCheckNotZero0;->m(ILjava/lang/String;)V
 
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
@@ -69,7 +73,7 @@
 
     iput-object p5, p0, Lde/rki/coronawarnapp/contactdiary/ui/overview/adapter/day/contact/ContactItem$Data;->circumstances:Ljava/lang/String;
 
-    iput-object p6, p0, Lde/rki/coronawarnapp/contactdiary/ui/overview/adapter/day/contact/ContactItem$Data;->type:Lde/rki/coronawarnapp/contactdiary/ui/overview/adapter/day/contact/ContactItem$Type;
+    iput p6, p0, Lde/rki/coronawarnapp/contactdiary/ui/overview/adapter/day/contact/ContactItem$Data;->type:I
 
     return-void
 .end method
@@ -158,9 +162,9 @@
     return v2
 
     :cond_6
-    iget-object v1, p0, Lde/rki/coronawarnapp/contactdiary/ui/overview/adapter/day/contact/ContactItem$Data;->type:Lde/rki/coronawarnapp/contactdiary/ui/overview/adapter/day/contact/ContactItem$Type;
+    iget v1, p0, Lde/rki/coronawarnapp/contactdiary/ui/overview/adapter/day/contact/ContactItem$Data;->type:I
 
-    iget-object p1, p1, Lde/rki/coronawarnapp/contactdiary/ui/overview/adapter/day/contact/ContactItem$Data;->type:Lde/rki/coronawarnapp/contactdiary/ui/overview/adapter/day/contact/ContactItem$Type;
+    iget p1, p1, Lde/rki/coronawarnapp/contactdiary/ui/overview/adapter/day/contact/ContactItem$Data;->type:I
 
     if-eq v1, p1, :cond_7
 
@@ -239,9 +243,9 @@
 
     mul-int/lit8 v0, v0, 0x1f
 
-    iget-object v1, p0, Lde/rki/coronawarnapp/contactdiary/ui/overview/adapter/day/contact/ContactItem$Data;->type:Lde/rki/coronawarnapp/contactdiary/ui/overview/adapter/day/contact/ContactItem$Type;
+    iget v1, p0, Lde/rki/coronawarnapp/contactdiary/ui/overview/adapter/day/contact/ContactItem$Data;->type:I
 
-    invoke-virtual {v1}, Ljava/lang/Enum;->hashCode()I
+    invoke-static {v1}, Landroidx/camera/camera2/internal/Camera2CameraImpl$InternalState$EnumUnboxingSharedUtility;->ordinal(I)I
 
     move-result v1
 
@@ -263,7 +267,7 @@
 
     iget-object v4, p0, Lde/rki/coronawarnapp/contactdiary/ui/overview/adapter/day/contact/ContactItem$Data;->circumstances:Ljava/lang/String;
 
-    iget-object v5, p0, Lde/rki/coronawarnapp/contactdiary/ui/overview/adapter/day/contact/ContactItem$Data;->type:Lde/rki/coronawarnapp/contactdiary/ui/overview/adapter/day/contact/ContactItem$Type;
+    iget v5, p0, Lde/rki/coronawarnapp/contactdiary/ui/overview/adapter/day/contact/ContactItem$Data;->type:I
 
     new-instance v6, Ljava/lang/StringBuilder;
 
@@ -303,7 +307,11 @@
 
     invoke-virtual {v6, v0}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
 
-    invoke-virtual {v6, v5}, Ljava/lang/StringBuilder;->append(Ljava/lang/Object;)Ljava/lang/StringBuilder;
+    invoke-static {v5}, Lde/rki/coronawarnapp/util/di/DaggerApplicationComponent$OnboardingAnalyticsFragmentSubcomponentFactory-IA;->stringValueOf(I)Ljava/lang/String;
+
+    move-result-object v0
+
+    invoke-virtual {v6, v0}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
 
     const-string v0, ")"
 

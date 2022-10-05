@@ -1,14 +1,12 @@
 .class public final Lcom/google/android/material/progressindicator/CircularIndeterminateAnimatorDelegate;
-.super Lcom/google/android/material/progressindicator/IndeterminateAnimatorDelegate;
+.super Landroidx/appcompat/view/menu/BaseMenuWrapper;
 .source "CircularIndeterminateAnimatorDelegate.java"
 
 
 # annotations
 .annotation system Ldalvik/annotation/Signature;
     value = {
-        "Lcom/google/android/material/progressindicator/IndeterminateAnimatorDelegate<",
-        "Landroid/animation/ObjectAnimator;",
-        ">;"
+        "Landroidx/appcompat/view/menu/BaseMenuWrapper;"
     }
 .end annotation
 
@@ -137,7 +135,7 @@
 
     const/4 v0, 0x1
 
-    invoke-direct {p0, v0}, Lcom/google/android/material/progressindicator/IndeterminateAnimatorDelegate;-><init>(I)V
+    invoke-direct {p0, v0}, Landroidx/appcompat/view/menu/BaseMenuWrapper;-><init>(I)V
 
     const/4 v0, 0x0
 
@@ -203,7 +201,9 @@
     return-void
 
     :cond_0
-    iget-object v0, p0, Lcom/google/android/material/progressindicator/IndeterminateAnimatorDelegate;->drawable:Lcom/google/android/material/progressindicator/IndeterminateDrawable;
+    iget-object v0, p0, Landroidx/appcompat/view/menu/BaseMenuWrapper;->mContext:Ljava/lang/Object;
+
+    check-cast v0, Lcom/google/android/material/progressindicator/IndeterminateDrawable;
 
     invoke-virtual {v0}, Landroid/graphics/drawable/Drawable;->isVisible()Z
 
@@ -231,7 +231,9 @@
 
     iput v0, p0, Lcom/google/android/material/progressindicator/CircularIndeterminateAnimatorDelegate;->indicatorColorIndexOffset:I
 
-    iget-object v1, p0, Lcom/google/android/material/progressindicator/IndeterminateAnimatorDelegate;->segmentColors:[I
+    iget-object v1, p0, Landroidx/appcompat/view/menu/BaseMenuWrapper;->mSubMenus:Ljava/lang/Object;
+
+    check-cast v1, [I
 
     iget-object v2, p0, Lcom/google/android/material/progressindicator/CircularIndeterminateAnimatorDelegate;->baseSpec:Lcom/google/android/material/progressindicator/BaseProgressIndicatorSpec;
 
@@ -239,11 +241,13 @@
 
     aget v2, v2, v0
 
-    iget-object v3, p0, Lcom/google/android/material/progressindicator/IndeterminateAnimatorDelegate;->drawable:Lcom/google/android/material/progressindicator/IndeterminateDrawable;
+    iget-object v3, p0, Landroidx/appcompat/view/menu/BaseMenuWrapper;->mContext:Ljava/lang/Object;
+
+    check-cast v3, Lcom/google/android/material/progressindicator/IndeterminateDrawable;
 
     iget v3, v3, Lcom/google/android/material/progressindicator/DrawableWithAnimatedVisibilityChange;->totalAlpha:I
 
-    invoke-static {v2, v3}, Ldagger/android/AndroidInjection;->compositeARGBWithAlpha(II)I
+    invoke-static {v2, v3}, Lkotlin/math/MathKt__MathJVMKt;->compositeARGBWithAlpha(II)I
 
     move-result v2
 

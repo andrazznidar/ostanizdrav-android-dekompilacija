@@ -76,13 +76,13 @@
 
     iget v0, p3, Lcom/airbnb/lottie/model/content/GradientStroke;->capType:I
 
-    invoke-static {v0}, Landroidx/constraintlayout/core/SolverVariable$Type$r8$EnumUnboxingUtility;->com$airbnb$lottie$model$content$ShapeStroke$LineCapType$v$toPaintCap(I)Landroid/graphics/Paint$Cap;
+    invoke-static {v0}, Lcom/google/crypto/tink/subtle/Field25519$$ExternalSyntheticOutline0;->_toPaintCap(I)Landroid/graphics/Paint$Cap;
 
     move-result-object v4
 
     iget v0, p3, Lcom/airbnb/lottie/model/content/GradientStroke;->joinType:I
 
-    invoke-static {v0}, Landroidx/constraintlayout/core/SolverVariable$Type$r8$EnumUnboxingUtility;->com$airbnb$lottie$model$content$ShapeStroke$LineJoinType$v$toPaintJoin(I)Landroid/graphics/Paint$Join;
+    invoke-static {v0}, Lcom/airbnb/lottie/model/content/ShapeStroke$LineJoinType$EnumUnboxingLocalUtility;->_toPaintJoin(I)Landroid/graphics/Paint$Join;
 
     move-result-object v5
 

@@ -27,9 +27,7 @@
 .field public static final tabPool:Landroidx/core/util/Pools$SimplePool;
     .annotation system Ldalvik/annotation/Signature;
         value = {
-            "Landroidx/core/util/Pools$SimplePool<",
-            "Lcom/google/android/material/tabs/TabLayout$Tab;",
-            ">;"
+            "Landroidx/core/util/Pools$SimplePool;"
         }
     .end annotation
 .end field
@@ -1646,7 +1644,7 @@
 .method public onAttachedToWindow()V
     .locals 2
 
-    invoke-super {p0}, Landroid/view/ViewGroup;->onAttachedToWindow()V
+    invoke-super {p0}, Landroid/widget/HorizontalScrollView;->onAttachedToWindow()V
 
     invoke-virtual {p0}, Landroid/view/View;->getBackground()Landroid/graphics/drawable/Drawable;
 
@@ -1658,7 +1656,7 @@
 
     check-cast v0, Lcom/google/android/material/shape/MaterialShapeDrawable;
 
-    invoke-static {p0, v0}, Lcom/google/android/material/shape/MaterialShapeUtils;->setParentAbsoluteElevation(Landroid/view/View;Lcom/google/android/material/shape/MaterialShapeDrawable;)V
+    invoke-static {p0, v0}, Lcom/google/common/base/Preconditions;->setParentAbsoluteElevation(Landroid/view/View;Lcom/google/android/material/shape/MaterialShapeDrawable;)V
 
     :cond_0
     iget-object v0, p0, Lcom/google/android/material/tabs/TabLayout;->viewPager:Landroidx/viewpager/widget/ViewPager;
@@ -1686,7 +1684,7 @@
 .method public onDetachedFromWindow()V
     .locals 1
 
-    invoke-super {p0}, Landroid/view/ViewGroup;->onDetachedFromWindow()V
+    invoke-super {p0}, Landroid/widget/HorizontalScrollView;->onDetachedFromWindow()V
 
     iget-boolean v0, p0, Lcom/google/android/material/tabs/TabLayout;->setupViewPagerImplicitly:Z
 
@@ -1762,7 +1760,7 @@
     goto :goto_0
 
     :cond_1
-    invoke-super {p0, p1}, Landroid/view/View;->onDraw(Landroid/graphics/Canvas;)V
+    invoke-super {p0, p1}, Landroid/widget/HorizontalScrollView;->onDraw(Landroid/graphics/Canvas;)V
 
     return-void
 .end method
@@ -1770,7 +1768,7 @@
 .method public onInitializeAccessibilityNodeInfo(Landroid/view/accessibility/AccessibilityNodeInfo;)V
     .locals 3
 
-    invoke-super {p0, p1}, Landroid/view/View;->onInitializeAccessibilityNodeInfo(Landroid/view/accessibility/AccessibilityNodeInfo;)V
+    invoke-super {p0, p1}, Landroid/widget/HorizontalScrollView;->onInitializeAccessibilityNodeInfo(Landroid/view/accessibility/AccessibilityNodeInfo;)V
 
     invoke-virtual {p0}, Lcom/google/android/material/tabs/TabLayout;->getTabCount()I
 
@@ -2244,9 +2242,9 @@
 .method public setElevation(F)V
     .locals 0
 
-    invoke-super {p0, p1}, Landroid/view/View;->setElevation(F)V
+    invoke-super {p0, p1}, Landroid/widget/HorizontalScrollView;->setElevation(F)V
 
-    invoke-static {p0, p1}, Lcom/google/android/material/shape/MaterialShapeUtils;->setElevation(Landroid/view/View;F)V
+    invoke-static {p0, p1}, Lcom/google/common/base/Preconditions;->setElevation(Landroid/view/View;F)V
 
     return-void
 .end method

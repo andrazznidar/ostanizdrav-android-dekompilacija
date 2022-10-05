@@ -7,15 +7,6 @@
 
 
 # annotations
-.annotation system Ldalvik/annotation/EnclosingMethod;
-    value = Lde/rki/coronawarnapp/datadonation/analytics/modules/keysubmission/AnalyticsKeySubmissionCollector;->reportLastSubmissionFlowScreen(Lde/rki/coronawarnapp/datadonation/analytics/modules/keysubmission/Screen;Lde/rki/coronawarnapp/coronatest/type/CoronaTest$Type;)V
-.end annotation
-
-.annotation system Ldalvik/annotation/InnerClass;
-    accessFlags = 0x19
-    name = null
-.end annotation
-
 .annotation system Ldalvik/annotation/Signature;
     value = {
         "Lkotlin/jvm/internal/Lambda;",
@@ -28,14 +19,14 @@
 
 
 # instance fields
-.field public final synthetic $screen:Lde/rki/coronawarnapp/datadonation/analytics/modules/keysubmission/Screen;
+.field public final synthetic $screen:I
 
 
 # direct methods
-.method public constructor <init>(Lde/rki/coronawarnapp/datadonation/analytics/modules/keysubmission/Screen;)V
+.method public constructor <init>(I)V
     .locals 0
 
-    iput-object p1, p0, Lde/rki/coronawarnapp/datadonation/analytics/modules/keysubmission/AnalyticsKeySubmissionCollector$reportLastSubmissionFlowScreen$1;->$screen:Lde/rki/coronawarnapp/datadonation/analytics/modules/keysubmission/Screen;
+    iput p1, p0, Lde/rki/coronawarnapp/datadonation/analytics/modules/keysubmission/AnalyticsKeySubmissionCollector$reportLastSubmissionFlowScreen$1;->$screen:I
 
     const/4 p1, 0x1
 
@@ -53,9 +44,11 @@
 
     invoke-virtual {p1}, Ljava/lang/Number;->intValue()I
 
-    iget-object p1, p0, Lde/rki/coronawarnapp/datadonation/analytics/modules/keysubmission/AnalyticsKeySubmissionCollector$reportLastSubmissionFlowScreen$1;->$screen:Lde/rki/coronawarnapp/datadonation/analytics/modules/keysubmission/Screen;
+    iget p1, p0, Lde/rki/coronawarnapp/datadonation/analytics/modules/keysubmission/AnalyticsKeySubmissionCollector$reportLastSubmissionFlowScreen$1;->$screen:I
 
-    iget p1, p1, Lde/rki/coronawarnapp/datadonation/analytics/modules/keysubmission/Screen;->code:I
+    invoke-static {p1}, Landroidx/fragment/app/FragmentManager$$ExternalSyntheticOutline0;->getCode(I)I
+
+    move-result p1
 
     invoke-static {p1}, Ljava/lang/Integer;->valueOf(I)Ljava/lang/Integer;
 

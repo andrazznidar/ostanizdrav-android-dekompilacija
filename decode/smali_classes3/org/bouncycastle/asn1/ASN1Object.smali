@@ -15,27 +15,48 @@
     return-void
 .end method
 
+.method public static hasEncodedTagValue(Ljava/lang/Object;I)Z
+    .locals 2
+
+    instance-of v0, p0, [B
+
+    const/4 v1, 0x0
+
+    if-eqz v0, :cond_0
+
+    check-cast p0, [B
+
+    aget-byte p0, p0, v1
+
+    if-ne p0, p1, :cond_0
+
+    const/4 v1, 0x1
+
+    :cond_0
+    return v1
+.end method
+
 
 # virtual methods
 .method public encodeTo(Ljava/io/OutputStream;)V
-    .locals 1
+    .locals 0
     .annotation system Ldalvik/annotation/Throws;
         value = {
             Ljava/io/IOException;
         }
     .end annotation
 
-    new-instance v0, Lorg/bouncycastle/asn1/ASN1OutputStream;
+    invoke-static {p1}, Lorg/bouncycastle/asn1/ASN1OutputStream;->create(Ljava/io/OutputStream;)Lorg/bouncycastle/asn1/ASN1OutputStream;
 
-    invoke-direct {v0, p1}, Lorg/bouncycastle/asn1/ASN1OutputStream;-><init>(Ljava/io/OutputStream;)V
+    move-result-object p1
 
-    invoke-virtual {v0, p0}, Lorg/bouncycastle/asn1/ASN1OutputStream;->writeObject(Lorg/bouncycastle/asn1/ASN1Encodable;)V
+    invoke-virtual {p1, p0}, Lorg/bouncycastle/asn1/ASN1OutputStream;->writeObject(Lorg/bouncycastle/asn1/ASN1Encodable;)V
 
     return-void
 .end method
 
 .method public encodeTo(Ljava/io/OutputStream;Ljava/lang/String;)V
-    .locals 1
+    .locals 0
     .annotation system Ldalvik/annotation/Throws;
         value = {
             Ljava/io/IOException;
@@ -46,13 +67,7 @@
 
     move-result-object p1
 
-    invoke-interface {p0}, Lorg/bouncycastle/asn1/ASN1Encodable;->toASN1Primitive()Lorg/bouncycastle/asn1/ASN1Primitive;
-
-    move-result-object p2
-
-    const/4 v0, 0x1
-
-    invoke-virtual {p1, p2, v0}, Lorg/bouncycastle/asn1/ASN1OutputStream;->writePrimitive(Lorg/bouncycastle/asn1/ASN1Primitive;Z)V
+    invoke-virtual {p1, p0}, Lorg/bouncycastle/asn1/ASN1OutputStream;->writeObject(Lorg/bouncycastle/asn1/ASN1Encodable;)V
 
     return-void
 .end method
@@ -142,7 +157,7 @@
 
     move-result-object v0
 
-    invoke-virtual {v0}, Lorg/bouncycastle/asn1/ASN1Object;->hashCode()I
+    invoke-virtual {v0}, Lorg/bouncycastle/asn1/ASN1Primitive;->hashCode()I
 
     move-result v0
 

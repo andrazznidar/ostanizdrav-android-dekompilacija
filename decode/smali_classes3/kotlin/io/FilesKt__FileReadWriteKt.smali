@@ -5,7 +5,7 @@
 
 # annotations
 .annotation system Ldalvik/annotation/SourceDebugExtension;
-    value = "SMAP\nFileReadWrite.kt\nKotlin\n*S Kotlin\n*F\n+ 1 FileReadWrite.kt\nkotlin/io/FilesKt__FileReadWriteKt\n+ 2 fake.kt\nkotlin/jvm/internal/FakeKt\n*L\n1#1,233:1\n1#2:234\n*E\n"
+    value = "SMAP\nFileReadWrite.kt\nKotlin\n*S Kotlin\n*F\n+ 1 FileReadWrite.kt\nkotlin/io/FilesKt__FileReadWriteKt\n+ 2 fake.kt\nkotlin/jvm/internal/FakeKt\n*L\n1#1,233:1\n232#1:235\n1#2:234\n1#2:236\n*S KotlinDebug\n*F\n+ 1 FileReadWrite.kt\nkotlin/io/FilesKt__FileReadWriteKt\n*L\n231#1:235\n231#1:236\n*E\n"
 .end annotation
 
 
@@ -13,7 +13,7 @@
 .method public static final readBytes(Ljava/io/File;)[B
     .locals 9
 
-    const-string v0, "$this$readBytes"
+    const-string v0, "<this>"
 
     invoke-static {p0, v0}, Lkotlin/jvm/internal/Intrinsics;->checkNotNullParameter(Ljava/lang/Object;Ljava/lang/String;)V
 
@@ -28,9 +28,7 @@
     :try_end_0
     .catchall {:try_start_0 .. :try_end_0} :catchall_0
 
-    const v3, 0x7fffffff
-
-    int-to-long v3, v3
+    const-wide/32 v3, 0x7fffffff
 
     cmp-long v3, v1, v3
 
@@ -71,7 +69,7 @@
 
     :cond_1
     :goto_1
-    const-string v7, "java.util.Arrays.copyOf(this, newSize)"
+    const-string v7, "copyOf(this, newSize)"
 
     if-lez v5, :cond_2
 
@@ -271,9 +269,13 @@
 .method public static final writeBytes(Ljava/io/File;[B)V
     .locals 1
 
-    const-string v0, "$this$writeBytes"
+    const-string v0, "<this>"
 
     invoke-static {p0, v0}, Lkotlin/jvm/internal/Intrinsics;->checkNotNullParameter(Ljava/lang/Object;Ljava/lang/String;)V
+
+    const-string v0, "array"
+
+    invoke-static {p1, v0}, Lkotlin/jvm/internal/Intrinsics;->checkNotNullParameter(Ljava/lang/Object;Ljava/lang/String;)V
 
     new-instance v0, Ljava/io/FileOutputStream;
 
@@ -321,7 +323,7 @@
     const/4 p2, 0x0
 
     :goto_0
-    const-string p3, "$this$writeText"
+    const-string p3, "<this>"
 
     invoke-static {p0, p3}, Lkotlin/jvm/internal/Intrinsics;->checkNotNullParameter(Ljava/lang/Object;Ljava/lang/String;)V
 
@@ -333,7 +335,7 @@
 
     move-result-object p1
 
-    const-string p2, "(this as java.lang.String).getBytes(charset)"
+    const-string p2, "this as java.lang.String).getBytes(charset)"
 
     invoke-static {p1, p2}, Lkotlin/jvm/internal/Intrinsics;->checkNotNullExpressionValue(Ljava/lang/Object;Ljava/lang/String;)V
 

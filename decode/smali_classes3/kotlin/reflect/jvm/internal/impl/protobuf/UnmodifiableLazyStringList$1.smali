@@ -1,4 +1,4 @@
-.class public Lkotlin/reflect/jvm/internal/impl/protobuf/UnmodifiableLazyStringList$1;
+.class Lkotlin/reflect/jvm/internal/impl/protobuf/UnmodifiableLazyStringList$1;
 .super Ljava/lang/Object;
 .source "UnmodifiableLazyStringList.java"
 
@@ -39,14 +39,24 @@
     .end annotation
 .end field
 
+.field public final synthetic this$0:Lkotlin/reflect/jvm/internal/impl/protobuf/UnmodifiableLazyStringList;
+
+.field public final synthetic val$index:I
+
 
 # direct methods
 .method public constructor <init>(Lkotlin/reflect/jvm/internal/impl/protobuf/UnmodifiableLazyStringList;I)V
     .locals 0
 
+    iput-object p1, p0, Lkotlin/reflect/jvm/internal/impl/protobuf/UnmodifiableLazyStringList$1;->this$0:Lkotlin/reflect/jvm/internal/impl/protobuf/UnmodifiableLazyStringList;
+
+    iput p2, p0, Lkotlin/reflect/jvm/internal/impl/protobuf/UnmodifiableLazyStringList$1;->val$index:I
+
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
-    iget-object p1, p1, Lkotlin/reflect/jvm/internal/impl/protobuf/UnmodifiableLazyStringList;->list:Lkotlin/reflect/jvm/internal/impl/protobuf/LazyStringList;
+    invoke-static {p1}, Lkotlin/reflect/jvm/internal/impl/protobuf/UnmodifiableLazyStringList;->access$000(Lkotlin/reflect/jvm/internal/impl/protobuf/UnmodifiableLazyStringList;)Lkotlin/reflect/jvm/internal/impl/protobuf/LazyStringList;
+
+    move-result-object p1
 
     invoke-interface {p1, p2}, Ljava/util/List;->listIterator(I)Ljava/util/ListIterator;
 
@@ -59,10 +69,18 @@
 
 
 # virtual methods
-.method public add(Ljava/lang/Object;)V
+.method public bridge synthetic add(Ljava/lang/Object;)V
     .locals 0
 
     check-cast p1, Ljava/lang/String;
+
+    invoke-virtual {p0, p1}, Lkotlin/reflect/jvm/internal/impl/protobuf/UnmodifiableLazyStringList$1;->add(Ljava/lang/String;)V
+
+    return-void
+.end method
+
+.method public add(Ljava/lang/String;)V
+    .locals 0
 
     new-instance p1, Ljava/lang/UnsupportedOperationException;
 
@@ -75,6 +93,18 @@
     .locals 0
 
     invoke-static {p0, p1}, Lj$/util/Iterator$-CC;->$default$forEachRemaining(Ljava/util/Iterator;Lj$/util/function/Consumer;)V
+
+    return-void
+.end method
+
+.method public synthetic forEachRemaining(Ljava/util/function/Consumer;)V
+    .locals 0
+
+    invoke-static {p1}, Lj$/util/function/Consumer$VivifiedWrapper;->convert(Ljava/util/function/Consumer;)Lj$/util/function/Consumer;
+
+    move-result-object p1
+
+    invoke-virtual {p0, p1}, Lkotlin/reflect/jvm/internal/impl/protobuf/UnmodifiableLazyStringList$1;->forEachRemaining(Lj$/util/function/Consumer;)V
 
     return-void
 .end method
@@ -103,7 +133,17 @@
     return v0
 .end method
 
-.method public next()Ljava/lang/Object;
+.method public bridge synthetic next()Ljava/lang/Object;
+    .locals 1
+
+    invoke-virtual {p0}, Lkotlin/reflect/jvm/internal/impl/protobuf/UnmodifiableLazyStringList$1;->next()Ljava/lang/String;
+
+    move-result-object v0
+
+    return-object v0
+.end method
+
+.method public next()Ljava/lang/String;
     .locals 1
 
     iget-object v0, p0, Lkotlin/reflect/jvm/internal/impl/protobuf/UnmodifiableLazyStringList$1;->iter:Ljava/util/ListIterator;
@@ -129,7 +169,17 @@
     return v0
 .end method
 
-.method public previous()Ljava/lang/Object;
+.method public bridge synthetic previous()Ljava/lang/Object;
+    .locals 1
+
+    invoke-virtual {p0}, Lkotlin/reflect/jvm/internal/impl/protobuf/UnmodifiableLazyStringList$1;->previous()Ljava/lang/String;
+
+    move-result-object v0
+
+    return-object v0
+.end method
+
+.method public previous()Ljava/lang/String;
     .locals 1
 
     iget-object v0, p0, Lkotlin/reflect/jvm/internal/impl/protobuf/UnmodifiableLazyStringList$1;->iter:Ljava/util/ListIterator;
@@ -165,10 +215,18 @@
     throw v0
 .end method
 
-.method public set(Ljava/lang/Object;)V
+.method public bridge synthetic set(Ljava/lang/Object;)V
     .locals 0
 
     check-cast p1, Ljava/lang/String;
+
+    invoke-virtual {p0, p1}, Lkotlin/reflect/jvm/internal/impl/protobuf/UnmodifiableLazyStringList$1;->set(Ljava/lang/String;)V
+
+    return-void
+.end method
+
+.method public set(Ljava/lang/String;)V
+    .locals 0
 
     new-instance p1, Ljava/lang/UnsupportedOperationException;
 

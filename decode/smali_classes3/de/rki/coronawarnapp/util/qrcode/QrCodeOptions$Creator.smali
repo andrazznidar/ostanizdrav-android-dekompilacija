@@ -44,17 +44,15 @@
 
     invoke-static {p1, v0}, Lkotlin/jvm/internal/Intrinsics;->checkNotNullParameter(Ljava/lang/Object;Ljava/lang/String;)V
 
-    new-instance v1, Lde/rki/coronawarnapp/util/qrcode/QrCodeOptions;
+    new-instance v0, Lde/rki/coronawarnapp/util/qrcode/QrCodeOptions;
 
     invoke-virtual {p1}, Landroid/os/Parcel;->readString()Ljava/lang/String;
 
-    move-result-object v2
+    move-result-object v1
 
-    invoke-static {v2}, Lcom/google/zxing/qrcode/decoder/ErrorCorrectionLevel;->valueOf(Ljava/lang/String;)Lcom/google/zxing/qrcode/decoder/ErrorCorrectionLevel;
+    invoke-static {v1}, Lcom/google/zxing/qrcode/decoder/ErrorCorrectionLevel$EnumUnboxingLocalUtility;->valueOf(Ljava/lang/String;)I
 
-    move-result-object v2
-
-    invoke-static {p1, v0}, Lkotlin/jvm/internal/Intrinsics;->checkNotNullParameter(Ljava/lang/Object;Ljava/lang/String;)V
+    move-result v1
 
     invoke-virtual {p1}, Landroid/os/Parcel;->readString()Ljava/lang/String;
 
@@ -64,13 +62,13 @@
 
     move-result-object p1
 
-    const-string v0, "forName(parcel.readString())"
+    const-string v2, "forName(parcel.readString())"
 
-    invoke-static {p1, v0}, Lkotlin/jvm/internal/Intrinsics;->checkNotNullExpressionValue(Ljava/lang/Object;Ljava/lang/String;)V
+    invoke-static {p1, v2}, Lkotlin/jvm/internal/Intrinsics;->checkNotNullExpressionValue(Ljava/lang/Object;Ljava/lang/String;)V
 
-    invoke-direct {v1, v2, p1}, Lde/rki/coronawarnapp/util/qrcode/QrCodeOptions;-><init>(Lcom/google/zxing/qrcode/decoder/ErrorCorrectionLevel;Ljava/nio/charset/Charset;)V
+    invoke-direct {v0, v1, p1}, Lde/rki/coronawarnapp/util/qrcode/QrCodeOptions;-><init>(ILjava/nio/charset/Charset;)V
 
-    return-object v1
+    return-object v0
 .end method
 
 .method public newArray(I)[Ljava/lang/Object;

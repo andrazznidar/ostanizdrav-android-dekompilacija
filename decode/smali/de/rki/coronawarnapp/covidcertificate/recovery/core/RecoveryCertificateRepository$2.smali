@@ -34,14 +34,14 @@
 .end annotation
 
 .annotation system Ldalvik/annotation/SourceDebugExtension;
-    value = "SMAP\nRecoveryCertificateRepository.kt\nKotlin\n*S Kotlin\n*F\n+ 1 RecoveryCertificateRepository.kt\nde/rki/coronawarnapp/covidcertificate/recovery/core/RecoveryCertificateRepository$2\n+ 2 _Collections.kt\nkotlin/collections/CollectionsKt___CollectionsKt\n*L\n1#1,219:1\n1547#2:220\n1618#2,3:221\n*S KotlinDebug\n*F\n+ 1 RecoveryCertificateRepository.kt\nde/rki/coronawarnapp/covidcertificate/recovery/core/RecoveryCertificateRepository$2\n*L\n71#1:220\n71#1:221,3\n*E\n"
+    value = "SMAP\nRecoveryCertificateRepository.kt\nKotlin\n*S Kotlin\n*F\n+ 1 RecoveryCertificateRepository.kt\nde/rki/coronawarnapp/covidcertificate/recovery/core/RecoveryCertificateRepository$2\n+ 2 _Collections.kt\nkotlin/collections/CollectionsKt___CollectionsKt\n*L\n1#1,282:1\n1547#2:283\n1618#2,3:284\n*S KotlinDebug\n*F\n+ 1 RecoveryCertificateRepository.kt\nde/rki/coronawarnapp/covidcertificate/recovery/core/RecoveryCertificateRepository$2\n*L\n72#1:283\n72#1:284,3\n*E\n"
 .end annotation
 
 .annotation runtime Lkotlin/coroutines/jvm/internal/DebugMetadata;
     c = "de.rki.coronawarnapp.covidcertificate.recovery.core.RecoveryCertificateRepository$2"
     f = "RecoveryCertificateRepository.kt"
     l = {
-        0x47
+        0x48
     }
     m = "invokeSuspend"
 .end annotation
@@ -130,7 +130,7 @@
 .end method
 
 .method public final invokeSuspend(Ljava/lang/Object;)Ljava/lang/Object;
-    .locals 5
+    .locals 7
 
     sget-object v0, Lkotlin/coroutines/intrinsics/CoroutineSingletons;->COROUTINE_SUSPENDED:Lkotlin/coroutines/intrinsics/CoroutineSingletons;
 
@@ -172,9 +172,17 @@
 
     const/4 v4, 0x0
 
-    aput-object p1, v3, v4
+    invoke-interface {p1}, Ljava/util/Set;->size()I
 
-    const-string v4, "Recovery Certificate data changed: %s"
+    move-result v5
+
+    new-instance v6, Ljava/lang/Integer;
+
+    invoke-direct {v6, v5}, Ljava/lang/Integer;-><init>(I)V
+
+    aput-object v6, v3, v4
+
+    const-string v4, "Recovery Certificate data changed: %d items"
 
     invoke-virtual {v1, v4, v3}, Ltimber/log/Timber$Forest;->v(Ljava/lang/String;[Ljava/lang/Object;)V
 

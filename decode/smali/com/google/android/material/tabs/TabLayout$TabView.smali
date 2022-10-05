@@ -146,7 +146,7 @@
 .method public drawableStateChanged()V
     .locals 3
 
-    invoke-super {p0}, Landroid/view/ViewGroup;->drawableStateChanged()V
+    invoke-super {p0}, Landroid/widget/LinearLayout;->drawableStateChanged()V
 
     invoke-virtual {p0}, Landroid/widget/LinearLayout;->getDrawableState()[I
 
@@ -400,7 +400,7 @@
 .method public onInitializeAccessibilityNodeInfo(Landroid/view/accessibility/AccessibilityNodeInfo;)V
     .locals 7
 
-    invoke-super {p0, p1}, Landroid/view/View;->onInitializeAccessibilityNodeInfo(Landroid/view/accessibility/AccessibilityNodeInfo;)V
+    invoke-super {p0, p1}, Landroid/widget/LinearLayout;->onInitializeAccessibilityNodeInfo(Landroid/view/accessibility/AccessibilityNodeInfo;)V
 
     iget-object v0, p0, Lcom/google/android/material/tabs/TabLayout$TabView;->badgeDrawable:Lcom/google/android/material/badge/BadgeDrawable;
 
@@ -695,7 +695,7 @@
 .method public performClick()Z
     .locals 3
 
-    invoke-super {p0}, Landroid/view/View;->performClick()Z
+    invoke-super {p0}, Landroid/widget/LinearLayout;->performClick()Z
 
     move-result v0
 
@@ -752,7 +752,7 @@
     const/4 v0, 0x0
 
     :goto_0
-    invoke-super {p0, p1}, Landroid/view/View;->setSelected(Z)V
+    invoke-super {p0, p1}, Landroid/widget/LinearLayout;->setSelected(Z)V
 
     iget-object v0, p0, Lcom/google/android/material/tabs/TabLayout$TabView;->textView:Landroid/widget/TextView;
 

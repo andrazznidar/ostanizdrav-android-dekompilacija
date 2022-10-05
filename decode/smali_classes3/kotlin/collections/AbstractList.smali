@@ -23,8 +23,7 @@
         "Lkotlin/collections/AbstractCollection<",
         "TE;>;",
         "Ljava/util/List<",
-        "TE;>;",
-        "Lkotlin/jvm/internal/markers/KMappedMarker;"
+        "TE;>;"
     }
 .end annotation
 
@@ -101,10 +100,6 @@
     :cond_1
     check-cast p1, Ljava/util/Collection;
 
-    const-string v1, "c"
-
-    invoke-static {p0, v1}, Lkotlin/jvm/internal/Intrinsics;->checkNotNullParameter(Ljava/lang/Object;Ljava/lang/String;)V
-
     const-string v1, "other"
 
     invoke-static {p1, v1}, Lkotlin/jvm/internal/Intrinsics;->checkNotNullParameter(Ljava/lang/Object;Ljava/lang/String;)V
@@ -152,9 +147,7 @@
 
     move-result v3
 
-    xor-int/2addr v3, v0
-
-    if-eqz v3, :cond_3
+    if-nez v3, :cond_3
 
     goto :goto_0
 
@@ -173,10 +166,6 @@
 
 .method public hashCode()I
     .locals 3
-
-    const-string v0, "c"
-
-    invoke-static {p0, v0}, Lkotlin/jvm/internal/Intrinsics;->checkNotNullParameter(Ljava/lang/Object;Ljava/lang/String;)V
 
     invoke-interface {p0}, Ljava/util/Collection;->iterator()Ljava/util/Iterator;
 
@@ -197,16 +186,16 @@
 
     mul-int/lit8 v1, v1, 0x1f
 
-    if-eqz v2, :cond_0
+    if-nez v2, :cond_0
 
-    invoke-virtual {v2}, Ljava/lang/Object;->hashCode()I
-
-    move-result v2
+    const/4 v2, 0x0
 
     goto :goto_1
 
     :cond_0
-    const/4 v2, 0x0
+    invoke-virtual {v2}, Ljava/lang/Object;->hashCode()I
+
+    move-result v2
 
     :goto_1
     add-int/2addr v1, v2
@@ -219,6 +208,11 @@
 
 .method public indexOf(Ljava/lang/Object;)I
     .locals 3
+    .annotation system Ldalvik/annotation/Signature;
+        value = {
+            "(TE;)I"
+        }
+    .end annotation
 
     invoke-interface {p0}, Ljava/util/List;->iterator()Ljava/util/Iterator;
 
@@ -276,12 +270,17 @@
 
 .method public lastIndexOf(Ljava/lang/Object;)I
     .locals 2
+    .annotation system Ldalvik/annotation/Signature;
+        value = {
+            "(TE;)I"
+        }
+    .end annotation
 
-    invoke-virtual {p0}, Lkotlin/collections/AbstractCollection;->size()I
+    invoke-interface {p0}, Ljava/util/List;->size()I
 
     move-result v0
 
-    invoke-virtual {p0, v0}, Lkotlin/collections/AbstractList;->listIterator(I)Ljava/util/ListIterator;
+    invoke-interface {p0, v0}, Ljava/util/List;->listIterator(I)Ljava/util/ListIterator;
 
     move-result-object v0
 

@@ -1,4 +1,4 @@
-.class public Lkotlin/reflect/jvm/internal/impl/protobuf/SmallSortedMap$EmptySet;
+.class Lkotlin/reflect/jvm/internal/impl/protobuf/SmallSortedMap$EmptySet;
 .super Ljava/lang/Object;
 .source "SmallSortedMap.java"
 
@@ -15,7 +15,7 @@
 
 
 # static fields
-.field public static final ITERABLE:Ljava/lang/Iterable;
+.field private static final ITERABLE:Ljava/lang/Iterable;
     .annotation system Ldalvik/annotation/Signature;
         value = {
             "Ljava/lang/Iterable<",
@@ -25,7 +25,7 @@
     .end annotation
 .end field
 
-.field public static final ITERATOR:Ljava/util/Iterator;
+.field private static final ITERATOR:Ljava/util/Iterator;
     .annotation system Ldalvik/annotation/Signature;
         value = {
             "Ljava/util/Iterator<",
@@ -53,4 +53,29 @@
     sput-object v0, Lkotlin/reflect/jvm/internal/impl/protobuf/SmallSortedMap$EmptySet;->ITERABLE:Ljava/lang/Iterable;
 
     return-void
+.end method
+
+.method public static synthetic access$700()Ljava/util/Iterator;
+    .locals 1
+
+    sget-object v0, Lkotlin/reflect/jvm/internal/impl/protobuf/SmallSortedMap$EmptySet;->ITERATOR:Ljava/util/Iterator;
+
+    return-object v0
+.end method
+
+.method public static iterable()Ljava/lang/Iterable;
+    .locals 1
+    .annotation system Ldalvik/annotation/Signature;
+        value = {
+            "<T:",
+            "Ljava/lang/Object;",
+            ">()",
+            "Ljava/lang/Iterable<",
+            "TT;>;"
+        }
+    .end annotation
+
+    sget-object v0, Lkotlin/reflect/jvm/internal/impl/protobuf/SmallSortedMap$EmptySet;->ITERABLE:Ljava/lang/Iterable;
+
+    return-object v0
 .end method

@@ -16,7 +16,7 @@
 
 
 # instance fields
-.field public final certUuid:Ljava/lang/String;
+.field public final qrCodeHash:Ljava/lang/String;
 
 
 # direct methods
@@ -35,7 +35,7 @@
 .method public constructor <init>(Ljava/lang/String;)V
     .locals 1
 
-    const-string v0, "certUuid"
+    const-string v0, "qrCodeHash"
 
     invoke-static {p1, v0}, Lkotlin/jvm/internal/Intrinsics;->checkNotNullParameter(Ljava/lang/Object;Ljava/lang/String;)V
 
@@ -43,7 +43,7 @@
 
     invoke-direct {p0, v0}, Lde/rki/coronawarnapp/covidcertificate/common/repository/CertificateContainerId;-><init>(Lkotlin/jvm/internal/DefaultConstructorMarker;)V
 
-    iput-object p1, p0, Lde/rki/coronawarnapp/covidcertificate/common/repository/TestCertificateContainerId;->certUuid:Ljava/lang/String;
+    iput-object p1, p0, Lde/rki/coronawarnapp/covidcertificate/common/repository/TestCertificateContainerId;->qrCodeHash:Ljava/lang/String;
 
     return-void
 .end method
@@ -58,10 +58,10 @@
     return v0
 .end method
 
-.method public getIdentifier()Ljava/lang/String;
+.method public getQrCodeHash()Ljava/lang/String;
     .locals 1
 
-    iget-object v0, p0, Lde/rki/coronawarnapp/covidcertificate/common/repository/TestCertificateContainerId;->certUuid:Ljava/lang/String;
+    iget-object v0, p0, Lde/rki/coronawarnapp/covidcertificate/common/repository/TestCertificateContainerId;->qrCodeHash:Ljava/lang/String;
 
     return-object v0
 .end method
@@ -73,7 +73,7 @@
 
     invoke-static {p1, p2}, Lkotlin/jvm/internal/Intrinsics;->checkNotNullParameter(Ljava/lang/Object;Ljava/lang/String;)V
 
-    iget-object p2, p0, Lde/rki/coronawarnapp/covidcertificate/common/repository/TestCertificateContainerId;->certUuid:Ljava/lang/String;
+    iget-object p2, p0, Lde/rki/coronawarnapp/covidcertificate/common/repository/TestCertificateContainerId;->qrCodeHash:Ljava/lang/String;
 
     invoke-virtual {p1, p2}, Landroid/os/Parcel;->writeString(Ljava/lang/String;)V
 

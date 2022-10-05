@@ -93,7 +93,7 @@
 .method public static synthetic access$001(Landroidx/appcompat/widget/AbsActionBarView;I)V
     .locals 0
 
-    invoke-super {p0, p1}, Landroid/view/View;->setVisibility(I)V
+    invoke-super {p0, p1}, Landroid/view/ViewGroup;->setVisibility(I)V
 
     return-void
 .end method
@@ -101,7 +101,7 @@
 .method public static synthetic access$101(Landroidx/appcompat/widget/AbsActionBarView;I)V
     .locals 0
 
-    invoke-super {p0, p1}, Landroid/view/View;->setVisibility(I)V
+    invoke-super {p0, p1}, Landroid/view/ViewGroup;->setVisibility(I)V
 
     return-void
 .end method
@@ -168,7 +168,7 @@
 .method public onConfigurationChanged(Landroid/content/res/Configuration;)V
     .locals 4
 
-    invoke-super {p0, p1}, Landroid/view/View;->onConfigurationChanged(Landroid/content/res/Configuration;)V
+    invoke-super {p0, p1}, Landroid/view/ViewGroup;->onConfigurationChanged(Landroid/content/res/Configuration;)V
 
     invoke-virtual {p0}, Landroid/view/ViewGroup;->getContext()Landroid/content/Context;
 
@@ -318,7 +318,7 @@
 
     if-nez v3, :cond_1
 
-    invoke-super {p0, p1}, Landroid/view/View;->onHoverEvent(Landroid/view/MotionEvent;)Z
+    invoke-super {p0, p1}, Landroid/view/ViewGroup;->onHoverEvent(Landroid/view/MotionEvent;)Z
 
     move-result p1
 
@@ -364,7 +364,7 @@
 
     if-nez v2, :cond_1
 
-    invoke-super {p0, p1}, Landroid/view/View;->onTouchEvent(Landroid/view/MotionEvent;)Z
+    invoke-super {p0, p1}, Landroid/view/ViewGroup;->onTouchEvent(Landroid/view/MotionEvent;)Z
 
     move-result p1
 
@@ -431,7 +431,14 @@
     return v0
 .end method
 
-.method public abstract setContentHeight(I)V
+.method public setContentHeight(I)V
+    .locals 0
+
+    iput p1, p0, Landroidx/appcompat/widget/AbsActionBarView;->mContentHeight:I
+
+    invoke-virtual {p0}, Landroid/view/ViewGroup;->requestLayout()V
+
+    return-void
 .end method
 
 .method public setVisibility(I)V
@@ -450,7 +457,7 @@
     invoke-virtual {v0}, Landroidx/core/view/ViewPropertyAnimatorCompat;->cancel()V
 
     :cond_0
-    invoke-super {p0, p1}, Landroid/view/View;->setVisibility(I)V
+    invoke-super {p0, p1}, Landroid/view/ViewGroup;->setVisibility(I)V
 
     :cond_1
     return-void

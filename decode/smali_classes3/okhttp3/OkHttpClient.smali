@@ -778,10 +778,6 @@
 
     new-instance v0, Lokhttp3/OkHttpClient$Builder;
 
-    const-string v1, "okHttpClient"
-
-    invoke-static {p0, v1}, Lkotlin/jvm/internal/Intrinsics;->checkNotNullParameter(Ljava/lang/Object;Ljava/lang/String;)V
-
     invoke-direct {v0}, Lokhttp3/OkHttpClient$Builder;-><init>()V
 
     iget-object v1, p0, Lokhttp3/OkHttpClient;->dispatcher:Lokhttp3/Dispatcher;

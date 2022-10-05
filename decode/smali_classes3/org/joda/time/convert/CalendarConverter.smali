@@ -138,6 +138,8 @@
     :cond_2
     const/4 p1, 0x4
 
+    sget-object v2, Lorg/joda/time/chrono/GJChronology;->DEFAULT_CUTOVER:Lorg/joda/time/Instant;
+
     const-wide v2, -0xb1d069b5400L
 
     cmp-long v2, v0, v2

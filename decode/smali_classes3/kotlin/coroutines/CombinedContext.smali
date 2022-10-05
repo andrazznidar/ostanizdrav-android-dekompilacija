@@ -102,10 +102,6 @@
     goto :goto_0
 
     :cond_1
-    const-string v2, "null cannot be cast to non-null type kotlin.coroutines.CoroutineContext.Element"
-
-    invoke-static {v1, v2}, Ljava/util/Objects;->requireNonNull(Ljava/lang/Object;Ljava/lang/String;)Ljava/lang/Object;
-
     check-cast v1, Lkotlin/coroutines/CoroutineContext$Element;
 
     invoke-interface {v1}, Lkotlin/coroutines/CoroutineContext$Element;->getKey()Lkotlin/coroutines/CoroutineContext$Key;
@@ -188,27 +184,27 @@
 
     move-result-object v1
 
-    if-eqz v1, :cond_0
+    if-nez v1, :cond_1
 
-    return-object v1
-
-    :cond_0
     iget-object v0, v0, Lkotlin/coroutines/CombinedContext;->left:Lkotlin/coroutines/CoroutineContext;
 
     instance-of v1, v0, Lkotlin/coroutines/CombinedContext;
 
-    if-eqz v1, :cond_1
+    if-eqz v1, :cond_0
 
     check-cast v0, Lkotlin/coroutines/CombinedContext;
 
     goto :goto_0
 
-    :cond_1
+    :cond_0
     invoke-interface {v0, p1}, Lkotlin/coroutines/CoroutineContext;->get(Lkotlin/coroutines/CoroutineContext$Key;)Lkotlin/coroutines/CoroutineContext$Element;
 
     move-result-object p1
 
     return-object p1
+
+    :cond_1
+    return-object v1
 .end method
 
 .method public hashCode()I
@@ -252,13 +248,8 @@
 
     move-result-object v0
 
-    if-eqz v0, :cond_0
+    if-nez v0, :cond_2
 
-    iget-object p1, p0, Lkotlin/coroutines/CombinedContext;->left:Lkotlin/coroutines/CoroutineContext;
-
-    return-object p1
-
-    :cond_0
     iget-object v0, p0, Lkotlin/coroutines/CombinedContext;->left:Lkotlin/coroutines/CoroutineContext;
 
     invoke-interface {v0, p1}, Lkotlin/coroutines/CoroutineContext;->minusKey(Lkotlin/coroutines/CoroutineContext$Key;)Lkotlin/coroutines/CoroutineContext;
@@ -267,22 +258,22 @@
 
     iget-object v0, p0, Lkotlin/coroutines/CombinedContext;->left:Lkotlin/coroutines/CoroutineContext;
 
-    if-ne p1, v0, :cond_1
+    if-ne p1, v0, :cond_0
 
     move-object p1, p0
 
     goto :goto_0
 
-    :cond_1
+    :cond_0
     sget-object v0, Lkotlin/coroutines/EmptyCoroutineContext;->INSTANCE:Lkotlin/coroutines/EmptyCoroutineContext;
 
-    if-ne p1, v0, :cond_2
+    if-ne p1, v0, :cond_1
 
     iget-object p1, p0, Lkotlin/coroutines/CombinedContext;->element:Lkotlin/coroutines/CoroutineContext$Element;
 
     goto :goto_0
 
-    :cond_2
+    :cond_1
     new-instance v0, Lkotlin/coroutines/CombinedContext;
 
     iget-object v1, p0, Lkotlin/coroutines/CombinedContext;->element:Lkotlin/coroutines/CoroutineContext$Element;
@@ -293,33 +284,20 @@
 
     :goto_0
     return-object p1
+
+    :cond_2
+    iget-object p1, p0, Lkotlin/coroutines/CombinedContext;->left:Lkotlin/coroutines/CoroutineContext;
+
+    return-object p1
 .end method
 
 .method public plus(Lkotlin/coroutines/CoroutineContext;)Lkotlin/coroutines/CoroutineContext;
-    .locals 1
+    .locals 0
 
-    const-string v0, "context"
-
-    invoke-static {p1, v0}, Lkotlin/jvm/internal/Intrinsics;->checkNotNullParameter(Ljava/lang/Object;Ljava/lang/String;)V
-
-    sget-object v0, Lkotlin/coroutines/EmptyCoroutineContext;->INSTANCE:Lkotlin/coroutines/EmptyCoroutineContext;
-
-    if-ne p1, v0, :cond_0
-
-    move-object p1, p0
-
-    goto :goto_0
-
-    :cond_0
-    sget-object v0, Lkotlin/coroutines/CoroutineContext$plus$1;->INSTANCE:Lkotlin/coroutines/CoroutineContext$plus$1;
-
-    invoke-interface {p1, p0, v0}, Lkotlin/coroutines/CoroutineContext;->fold(Ljava/lang/Object;Lkotlin/jvm/functions/Function2;)Ljava/lang/Object;
+    invoke-static {p0, p1}, Lkotlin/coroutines/CoroutineContext$DefaultImpls;->plus(Lkotlin/coroutines/CoroutineContext;Lkotlin/coroutines/CoroutineContext;)Lkotlin/coroutines/CoroutineContext;
 
     move-result-object p1
 
-    check-cast p1, Lkotlin/coroutines/CoroutineContext;
-
-    :goto_0
     return-object p1
 .end method
 
@@ -335,29 +313,32 @@
 
     instance-of v2, v1, Lkotlin/coroutines/CombinedContext;
 
-    if-nez v2, :cond_0
+    if-eqz v2, :cond_0
 
-    const/4 v1, 0x0
-
-    :cond_0
     check-cast v1, Lkotlin/coroutines/CombinedContext;
 
-    if-eqz v1, :cond_1
+    goto :goto_1
 
+    :cond_0
+    const/4 v1, 0x0
+
+    :goto_1
+    if-nez v1, :cond_1
+
+    return v0
+
+    :cond_1
     add-int/lit8 v0, v0, 0x1
 
     goto :goto_0
-
-    :cond_1
-    return v0
 .end method
 
 .method public toString()Ljava/lang/String;
     .locals 3
 
-    const-string v0, "["
+    const/16 v0, 0x5b
 
-    invoke-static {v0}, Landroid/support/v4/media/RatingCompat$$ExternalSyntheticOutline0;->m(Ljava/lang/String;)Ljava/lang/StringBuilder;
+    invoke-static {v0}, Lcoil/bitmap/SizeStrategy$$ExternalSyntheticOutline0;->m(C)Ljava/lang/StringBuilder;
 
     move-result-object v0
 
@@ -371,9 +352,9 @@
 
     check-cast v1, Ljava/lang/String;
 
-    const-string v2, "]"
+    const/16 v2, 0x5d
 
-    invoke-static {v0, v1, v2}, Landroidx/constraintlayout/core/widgets/Barrier$$ExternalSyntheticOutline0;->m(Ljava/lang/StringBuilder;Ljava/lang/String;Ljava/lang/String;)Ljava/lang/String;
+    invoke-static {v0, v1, v2}, Lcom/airbnb/lottie/manager/ImageAssetManager$$ExternalSyntheticOutline0;->m(Ljava/lang/StringBuilder;Ljava/lang/String;C)Ljava/lang/String;
 
     move-result-object v0
 

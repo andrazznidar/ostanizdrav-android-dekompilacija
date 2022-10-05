@@ -69,9 +69,9 @@
 
     move-result-object v0
 
-    invoke-static {v0}, Lcom/google/crypto/tink/signature/SigUtil;->toCurveType(Lcom/google/crypto/tink/proto/EllipticCurveType;)Lcom/google/crypto/tink/subtle/EllipticCurves$CurveType;
+    invoke-static {v0}, Lcom/google/crypto/tink/signature/SigUtil;->toCurveType(Lcom/google/crypto/tink/proto/EllipticCurveType;)I
 
-    move-result-object v0
+    move-result v0
 
     invoke-virtual {p1}, Lcom/google/crypto/tink/proto/EcdsaPublicKey;->getX()Lcom/google/crypto/tink/shaded/protobuf/ByteString;
 
@@ -89,7 +89,7 @@
 
     move-result-object v2
 
-    invoke-static {v0, v1, v2}, Lcom/google/crypto/tink/subtle/EllipticCurves;->getEcPublicKey(Lcom/google/crypto/tink/subtle/EllipticCurves$CurveType;[B[B)Ljava/security/interfaces/ECPublicKey;
+    invoke-static {v0, v1, v2}, Lcom/google/crypto/tink/subtle/EllipticCurves;->getEcPublicKey(I[B[B)Ljava/security/interfaces/ECPublicKey;
 
     move-result-object v0
 
@@ -103,9 +103,9 @@
 
     move-result-object v2
 
-    invoke-static {v2}, Lcom/google/crypto/tink/signature/SigUtil;->toHashType(Lcom/google/crypto/tink/proto/HashType;)Lcom/google/crypto/tink/subtle/Enums$HashType;
+    invoke-static {v2}, Lcom/google/crypto/tink/signature/SigUtil;->toHashType(Lcom/google/crypto/tink/proto/HashType;)I
 
-    move-result-object v2
+    move-result v2
 
     invoke-virtual {p1}, Lcom/google/crypto/tink/proto/EcdsaPublicKey;->getParams()Lcom/google/crypto/tink/proto/EcdsaParams;
 
@@ -119,7 +119,7 @@
 
     move-result p1
 
-    invoke-direct {v1, v0, v2, p1}, Lcom/google/crypto/tink/subtle/EcdsaVerifyJce;-><init>(Ljava/security/interfaces/ECPublicKey;Lcom/google/crypto/tink/subtle/Enums$HashType;I)V
+    invoke-direct {v1, v0, v2, p1}, Lcom/google/crypto/tink/subtle/EcdsaVerifyJce;-><init>(Ljava/security/interfaces/ECPublicKey;II)V
 
     return-object v1
 .end method

@@ -172,7 +172,7 @@
 
     iget-object v1, v0, Lde/rki/coronawarnapp/deadman/DeadmanNotificationSender;->context:Landroid/content/Context;
 
-    const v2, 0x7f130409
+    const v2, 0x7f130422
 
     invoke-virtual {v1, v2}, Landroid/content/Context;->getString(I)Ljava/lang/String;
 
@@ -182,7 +182,7 @@
 
     iget-object v1, v0, Lde/rki/coronawarnapp/deadman/DeadmanNotificationSender;->context:Landroid/content/Context;
 
-    const v2, 0x7f130408
+    const v2, 0x7f130421
 
     invoke-virtual {v1, v2}, Landroid/content/Context;->getString(I)Ljava/lang/String;
 
@@ -192,7 +192,7 @@
 
     invoke-static {v1, v2}, Lkotlin/jvm/internal/Intrinsics;->checkNotNullExpressionValue(Ljava/lang/Object;Ljava/lang/String;)V
 
-    invoke-static {p1, v1}, Lcom/google/android/gms/internal/nearby/zznn;->setContentTextExpandable(Landroidx/core/app/NotificationCompat$Builder;Ljava/lang/String;)Landroidx/core/app/NotificationCompat$Builder;
+    invoke-static {p1, v1}, Lorg/ejml/ops/DConvertMatrixStruct;->setContentTextExpandable(Landroidx/core/app/NotificationCompat$Builder;Ljava/lang/String;)Landroidx/core/app/NotificationCompat$Builder;
 
     invoke-virtual {p1}, Landroidx/core/app/NotificationCompat$Builder;->build()Landroid/app/Notification;
 

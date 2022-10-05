@@ -4,7 +4,7 @@
 
 
 # static fields
-.field public static final zza:Lkotlin/jvm/internal/SpreadBuilder;
+.field public static final zza:Lcom/google/android/play/core/internal/zzag;
 
 
 # instance fields
@@ -41,13 +41,13 @@
 .method public static constructor <clinit>()V
     .locals 2
 
-    new-instance v0, Lkotlin/jvm/internal/SpreadBuilder;
+    new-instance v0, Lcom/google/android/play/core/internal/zzag;
 
     const-string v1, "ExtractChunkTaskHandler"
 
-    invoke-direct {v0, v1}, Lkotlin/jvm/internal/SpreadBuilder;-><init>(Ljava/lang/String;)V
+    invoke-direct {v0, v1}, Lcom/google/android/play/core/internal/zzag;-><init>(Ljava/lang/String;)V
 
-    sput-object v0, Lcom/google/android/play/core/assetpacks/zzcf;->zza:Lkotlin/jvm/internal/SpreadBuilder;
+    sput-object v0, Lcom/google/android/play/core/assetpacks/zzcf;->zza:Lcom/google/android/play/core/internal/zzag;
 
     return-void
 .end method
@@ -104,7 +104,11 @@
 
     iget-object v10, v1, Lcom/google/android/play/core/assetpacks/zzcf;->zzc:Lcom/google/android/play/core/assetpacks/zzbh;
 
-    iget-object v11, v2, Lorg/bouncycastle/asn1/OIDTokenizer;->oid:Ljava/lang/String;
+    iget-object v3, v2, Lorg/bouncycastle/crypto/util/SSHBuffer;->buffer:Ljava/lang/Object;
+
+    move-object v11, v3
+
+    check-cast v11, Ljava/lang/String;
 
     iget v12, v2, Lcom/google/android/play/core/assetpacks/zzce;->zza:I
 
@@ -215,13 +219,13 @@
 
     if-ne v4, v14, :cond_5
 
-    sget-object v4, Lcom/google/android/play/core/assetpacks/zzcf;->zza:Lkotlin/jvm/internal/SpreadBuilder;
+    sget-object v4, Lcom/google/android/play/core/assetpacks/zzcf;->zza:Lcom/google/android/play/core/internal/zzag;
 
     const-string v5, "Resuming central directory from last chunk."
 
     new-array v6, v12, [Ljava/lang/Object;
 
-    invoke-virtual {v4, v5, v6}, Lkotlin/jvm/internal/SpreadBuilder;->zza(Ljava/lang/String;[Ljava/lang/Object;)I
+    invoke-virtual {v4, v5, v6}, Lcom/google/android/play/core/internal/zzag;->zza(Ljava/lang/String;[Ljava/lang/Object;)I
 
     check-cast v3, Lcom/google/android/play/core/assetpacks/zzbp;
 
@@ -278,7 +282,7 @@
 
     const-string v3, "Chunk has ended twice during central directory. This should not be possible with chunk sizes of 50MB."
 
-    iget v4, v2, Lorg/bouncycastle/asn1/OIDTokenizer;->index:I
+    iget v4, v2, Lorg/bouncycastle/crypto/util/SSHBuffer;->pos:I
 
     invoke-direct {v0, v3, v4}, Lcom/google/android/play/core/assetpacks/zzch;-><init>(Ljava/lang/String;I)V
 
@@ -319,44 +323,46 @@
 
     move-result-object v3
 
-    iget v4, v2, Lorg/bouncycastle/asn1/OIDTokenizer;->index:I
+    iget v4, v2, Lorg/bouncycastle/crypto/util/SSHBuffer;->pos:I
 
     invoke-direct {v0, v3, v4}, Lcom/google/android/play/core/assetpacks/zzch;-><init>(Ljava/lang/String;I)V
 
     throw v0
 
     :cond_6
-    sget-object v3, Lcom/google/android/play/core/assetpacks/zzcf;->zza:Lkotlin/jvm/internal/SpreadBuilder;
+    sget-object v3, Lcom/google/android/play/core/assetpacks/zzcf;->zza:Lcom/google/android/play/core/internal/zzag;
 
     const-string v4, "Resuming zip entry from last chunk during local file header."
 
     new-array v5, v12, [Ljava/lang/Object;
 
-    invoke-virtual {v3, v4, v5}, Lkotlin/jvm/internal/SpreadBuilder;->zza(Ljava/lang/String;[Ljava/lang/Object;)I
+    invoke-virtual {v3, v4, v5}, Lcom/google/android/play/core/internal/zzag;->zza(Ljava/lang/String;[Ljava/lang/Object;)I
 
     iget-object v3, v1, Lcom/google/android/play/core/assetpacks/zzcf;->zzc:Lcom/google/android/play/core/assetpacks/zzbh;
 
-    iget-object v4, v2, Lorg/bouncycastle/asn1/OIDTokenizer;->oid:Ljava/lang/String;
-
-    iget v5, v2, Lcom/google/android/play/core/assetpacks/zzce;->zza:I
-
-    iget-wide v6, v2, Lcom/google/android/play/core/assetpacks/zzce;->zzb:J
-
-    iget-object v8, v2, Lcom/google/android/play/core/assetpacks/zzce;->zzd:Ljava/lang/String;
-
-    invoke-static {v3}, Ljava/util/Objects;->requireNonNull(Ljava/lang/Object;)Ljava/lang/Object;
-
-    new-instance v14, Ljava/io/File;
-
-    move-object/from16 v16, v3
+    iget-object v4, v2, Lorg/bouncycastle/crypto/util/SSHBuffer;->buffer:Ljava/lang/Object;
 
     move-object/from16 v17, v4
 
-    move/from16 v18, v5
+    check-cast v17, Ljava/lang/String;
 
-    move-wide/from16 v19, v6
+    iget v4, v2, Lcom/google/android/play/core/assetpacks/zzce;->zza:I
 
-    move-object/from16 v21, v8
+    iget-wide v5, v2, Lcom/google/android/play/core/assetpacks/zzce;->zzb:J
+
+    iget-object v7, v2, Lcom/google/android/play/core/assetpacks/zzce;->zzd:Ljava/lang/String;
+
+    invoke-static {v3}, Ljava/util/Objects;->requireNonNull(Ljava/lang/Object;)Ljava/lang/Object;
+
+    new-instance v8, Ljava/io/File;
+
+    move-object/from16 v16, v3
+
+    move/from16 v18, v4
+
+    move-wide/from16 v19, v5
+
+    move-object/from16 v21, v7
 
     invoke-virtual/range {v16 .. v21}, Lcom/google/android/play/core/assetpacks/zzbh;->zzo(Ljava/lang/String;IJLjava/lang/String;)Ljava/io/File;
 
@@ -364,9 +370,9 @@
 
     const-string v4, "checkpoint_ext.dat"
 
-    invoke-direct {v14, v3, v4}, Ljava/io/File;-><init>(Ljava/io/File;Ljava/lang/String;)V
+    invoke-direct {v8, v3, v4}, Ljava/io/File;-><init>(Ljava/io/File;Ljava/lang/String;)V
 
-    invoke-virtual {v14}, Ljava/io/File;->exists()Z
+    invoke-virtual {v8}, Ljava/io/File;->exists()Z
 
     move-result v3
 
@@ -376,7 +382,7 @@
 
     new-instance v4, Ljava/io/FileInputStream;
 
-    invoke-direct {v4, v14}, Ljava/io/FileInputStream;-><init>(Ljava/io/File;)V
+    invoke-direct {v4, v8}, Ljava/io/FileInputStream;-><init>(Ljava/io/File;)V
 
     invoke-direct {v3, v4, v9}, Ljava/io/SequenceInputStream;-><init>(Ljava/io/InputStream;Ljava/io/InputStream;)V
 
@@ -391,14 +397,14 @@
 
     const-string v3, "Checkpoint extension file not found."
 
-    iget v4, v2, Lorg/bouncycastle/asn1/OIDTokenizer;->index:I
+    iget v4, v2, Lorg/bouncycastle/crypto/util/SSHBuffer;->pos:I
 
     invoke-direct {v0, v3, v4}, Lcom/google/android/play/core/assetpacks/zzch;-><init>(Ljava/lang/String;I)V
 
     throw v0
 
     :cond_8
-    sget-object v4, Lcom/google/android/play/core/assetpacks/zzcf;->zza:Lkotlin/jvm/internal/SpreadBuilder;
+    sget-object v4, Lcom/google/android/play/core/assetpacks/zzcf;->zza:Lcom/google/android/play/core/internal/zzag;
 
     new-array v5, v11, [Ljava/lang/Object;
 
@@ -412,7 +418,7 @@
 
     const-string v6, "Resuming zip entry from last chunk during file %s."
 
-    invoke-virtual {v4, v6, v5}, Lkotlin/jvm/internal/SpreadBuilder;->zza(Ljava/lang/String;[Ljava/lang/Object;)I
+    invoke-virtual {v4, v6, v5}, Lcom/google/android/play/core/internal/zzag;->zza(Ljava/lang/String;[Ljava/lang/Object;)I
 
     new-instance v4, Ljava/io/File;
 
@@ -503,13 +509,13 @@
 
     if-eq v8, v3, :cond_e
 
-    sget-object v3, Lcom/google/android/play/core/assetpacks/zzcf;->zza:Lkotlin/jvm/internal/SpreadBuilder;
+    sget-object v3, Lcom/google/android/play/core/assetpacks/zzcf;->zza:Lcom/google/android/play/core/internal/zzag;
 
     const-string v5, "Chunk has ended while resuming the previous chunks file content."
 
     new-array v8, v12, [Ljava/lang/Object;
 
-    invoke-virtual {v3, v5, v8}, Lkotlin/jvm/internal/SpreadBuilder;->zza(Ljava/lang/String;[Ljava/lang/Object;)I
+    invoke-virtual {v3, v5, v8}, Lcom/google/android/play/core/internal/zzag;->zza(Ljava/lang/String;[Ljava/lang/Object;)I
 
     invoke-virtual {v4}, Ljava/io/File;->getCanonicalPath()Ljava/lang/String;
 
@@ -523,13 +529,13 @@
 
     move-wide v5, v6
 
-    move/from16 v18, v8
+    move/from16 v19, v8
 
     move-wide v7, v13
 
     move-object v13, v9
 
-    move/from16 v9, v18
+    move/from16 v9, v19
 
     :try_start_6
     invoke-virtual/range {v3 .. v9}, Lcom/google/android/play/core/assetpacks/zzek;->zzg(Ljava/lang/String;JJI)V
@@ -546,7 +552,7 @@
 
     const-string v3, "Partial file specified in checkpoint does not exist. Corrupt directory."
 
-    iget v4, v2, Lorg/bouncycastle/asn1/OIDTokenizer;->index:I
+    iget v4, v2, Lorg/bouncycastle/crypto/util/SSHBuffer;->pos:I
 
     invoke-direct {v0, v3, v4}, Lcom/google/android/play/core/assetpacks/zzch;-><init>(Ljava/lang/String;I)V
 
@@ -581,7 +587,7 @@
 
     move-result-object v3
 
-    iget v4, v2, Lorg/bouncycastle/asn1/OIDTokenizer;->index:I
+    iget v4, v2, Lorg/bouncycastle/crypto/util/SSHBuffer;->pos:I
 
     invoke-direct {v0, v3, v4}, Lcom/google/android/play/core/assetpacks/zzch;-><init>(Ljava/lang/String;I)V
 
@@ -710,13 +716,13 @@
 
     if-eqz v4, :cond_14
 
-    sget-object v4, Lcom/google/android/play/core/assetpacks/zzcf;->zza:Lkotlin/jvm/internal/SpreadBuilder;
+    sget-object v4, Lcom/google/android/play/core/assetpacks/zzcf;->zza:Lcom/google/android/play/core/internal/zzag;
 
     const-string v6, "Writing central directory metadata."
 
     new-array v7, v12, [Ljava/lang/Object;
 
-    invoke-virtual {v4, v6, v7}, Lkotlin/jvm/internal/SpreadBuilder;->zza(Ljava/lang/String;[Ljava/lang/Object;)I
+    invoke-virtual {v4, v6, v7}, Lcom/google/android/play/core/internal/zzag;->zza(Ljava/lang/String;[Ljava/lang/Object;)I
 
     move-object v4, v5
 
@@ -741,13 +747,13 @@
 
     if-eqz v4, :cond_15
 
-    sget-object v3, Lcom/google/android/play/core/assetpacks/zzcf;->zza:Lkotlin/jvm/internal/SpreadBuilder;
+    sget-object v3, Lcom/google/android/play/core/assetpacks/zzcf;->zza:Lcom/google/android/play/core/internal/zzag;
 
     const-string v4, "Writing slice checkpoint for partial local file header."
 
     new-array v6, v12, [Ljava/lang/Object;
 
-    invoke-virtual {v3, v4, v6}, Lkotlin/jvm/internal/SpreadBuilder;->zza(Ljava/lang/String;[Ljava/lang/Object;)I
+    invoke-virtual {v3, v4, v6}, Lcom/google/android/play/core/internal/zzag;->zza(Ljava/lang/String;[Ljava/lang/Object;)I
 
     check-cast v5, Lcom/google/android/play/core/assetpacks/zzbq;
 
@@ -764,13 +770,13 @@
 
     if-eqz v4, :cond_16
 
-    sget-object v3, Lcom/google/android/play/core/assetpacks/zzcf;->zza:Lkotlin/jvm/internal/SpreadBuilder;
+    sget-object v3, Lcom/google/android/play/core/assetpacks/zzcf;->zza:Lcom/google/android/play/core/internal/zzag;
 
     const-string v4, "Writing slice checkpoint for central directory."
 
     new-array v5, v12, [Ljava/lang/Object;
 
-    invoke-virtual {v3, v4, v5}, Lkotlin/jvm/internal/SpreadBuilder;->zza(Ljava/lang/String;[Ljava/lang/Object;)I
+    invoke-virtual {v3, v4, v5}, Lcom/google/android/play/core/internal/zzag;->zza(Ljava/lang/String;[Ljava/lang/Object;)I
 
     iget v3, v2, Lcom/google/android/play/core/assetpacks/zzce;->zzf:I
 
@@ -787,13 +793,13 @@
 
     if-nez v4, :cond_18
 
-    sget-object v4, Lcom/google/android/play/core/assetpacks/zzcf;->zza:Lkotlin/jvm/internal/SpreadBuilder;
+    sget-object v4, Lcom/google/android/play/core/assetpacks/zzcf;->zza:Lcom/google/android/play/core/internal/zzag;
 
     const-string v6, "Writing slice checkpoint for partial file."
 
     new-array v7, v12, [Ljava/lang/Object;
 
-    invoke-virtual {v4, v6, v7}, Lkotlin/jvm/internal/SpreadBuilder;->zza(Ljava/lang/String;[Ljava/lang/Object;)I
+    invoke-virtual {v4, v6, v7}, Lcom/google/android/play/core/internal/zzag;->zza(Ljava/lang/String;[Ljava/lang/Object;)I
 
     new-instance v4, Ljava/io/File;
 
@@ -837,13 +843,13 @@
     throw v0
 
     :cond_18
-    sget-object v4, Lcom/google/android/play/core/assetpacks/zzcf;->zza:Lkotlin/jvm/internal/SpreadBuilder;
+    sget-object v4, Lcom/google/android/play/core/assetpacks/zzcf;->zza:Lcom/google/android/play/core/internal/zzag;
 
     const-string v5, "Writing slice checkpoint for partial unextractable file."
 
     new-array v6, v12, [Ljava/lang/Object;
 
-    invoke-virtual {v4, v5, v6}, Lkotlin/jvm/internal/SpreadBuilder;->zza(Ljava/lang/String;[Ljava/lang/Object;)I
+    invoke-virtual {v4, v5, v6}, Lcom/google/android/play/core/internal/zzag;->zza(Ljava/lang/String;[Ljava/lang/Object;)I
 
     invoke-virtual {v0}, Lcom/google/android/play/core/assetpacks/zzek;->zzc()Ljava/io/File;
 
@@ -900,7 +906,7 @@
     :catch_0
     move-exception v0
 
-    sget-object v3, Lcom/google/android/play/core/assetpacks/zzcf;->zza:Lkotlin/jvm/internal/SpreadBuilder;
+    sget-object v3, Lcom/google/android/play/core/assetpacks/zzcf;->zza:Lcom/google/android/play/core/internal/zzag;
 
     new-array v4, v11, [Ljava/lang/Object;
 
@@ -912,13 +918,13 @@
 
     const-string v5, "Writing extraction finished checkpoint failed with %s."
 
-    invoke-virtual {v3, v5, v4}, Lkotlin/jvm/internal/SpreadBuilder;->zzb(Ljava/lang/String;[Ljava/lang/Object;)I
+    invoke-virtual {v3, v5, v4}, Lcom/google/android/play/core/internal/zzag;->zzb(Ljava/lang/String;[Ljava/lang/Object;)I
 
     new-instance v3, Lcom/google/android/play/core/assetpacks/zzch;
 
     const-string v4, "Writing extraction finished checkpoint failed."
 
-    iget v2, v2, Lorg/bouncycastle/asn1/OIDTokenizer;->index:I
+    iget v2, v2, Lorg/bouncycastle/crypto/util/SSHBuffer;->pos:I
 
     invoke-direct {v3, v4, v0, v2}, Lcom/google/android/play/core/assetpacks/zzch;-><init>(Ljava/lang/String;Ljava/lang/Exception;I)V
 
@@ -926,7 +932,7 @@
 
     :cond_1a
     :goto_9
-    sget-object v0, Lcom/google/android/play/core/assetpacks/zzcf;->zza:Lkotlin/jvm/internal/SpreadBuilder;
+    sget-object v0, Lcom/google/android/play/core/assetpacks/zzcf;->zza:Lcom/google/android/play/core/internal/zzag;
 
     const/4 v3, 0x4
 
@@ -944,11 +950,13 @@
 
     aput-object v4, v3, v11
 
-    iget-object v4, v2, Lorg/bouncycastle/asn1/OIDTokenizer;->oid:Ljava/lang/String;
+    iget-object v4, v2, Lorg/bouncycastle/crypto/util/SSHBuffer;->buffer:Ljava/lang/Object;
+
+    check-cast v4, Ljava/lang/String;
 
     aput-object v4, v3, v10
 
-    iget v4, v2, Lorg/bouncycastle/asn1/OIDTokenizer;->index:I
+    iget v4, v2, Lorg/bouncycastle/crypto/util/SSHBuffer;->pos:I
 
     invoke-static {v4}, Ljava/lang/Integer;->valueOf(I)Ljava/lang/Integer;
 
@@ -960,7 +968,7 @@
 
     const-string v4, "Extraction finished for chunk %s of slice %s of pack %s of session %s."
 
-    invoke-virtual {v0, v4, v3}, Lkotlin/jvm/internal/SpreadBuilder;->zzd(Ljava/lang/String;[Ljava/lang/Object;)I
+    invoke-virtual {v0, v4, v3}, Lcom/google/android/play/core/internal/zzag;->zzd(Ljava/lang/String;[Ljava/lang/Object;)I
 
     iget-object v0, v1, Lcom/google/android/play/core/assetpacks/zzcf;->zzd:Lcom/google/android/play/core/internal/zzco;
 
@@ -970,9 +978,11 @@
 
     check-cast v0, Lcom/google/android/play/core/assetpacks/zzy;
 
-    iget v3, v2, Lorg/bouncycastle/asn1/OIDTokenizer;->index:I
+    iget v3, v2, Lorg/bouncycastle/crypto/util/SSHBuffer;->pos:I
 
-    iget-object v4, v2, Lorg/bouncycastle/asn1/OIDTokenizer;->oid:Ljava/lang/String;
+    iget-object v4, v2, Lorg/bouncycastle/crypto/util/SSHBuffer;->buffer:Ljava/lang/Object;
+
+    check-cast v4, Ljava/lang/String;
 
     iget-object v5, v2, Lcom/google/android/play/core/assetpacks/zzce;->zzd:Ljava/lang/String;
 
@@ -990,7 +1000,7 @@
     goto :goto_a
 
     :catch_1
-    sget-object v0, Lcom/google/android/play/core/assetpacks/zzcf;->zza:Lkotlin/jvm/internal/SpreadBuilder;
+    sget-object v0, Lcom/google/android/play/core/assetpacks/zzcf;->zza:Lcom/google/android/play/core/internal/zzag;
 
     const/4 v3, 0x3
 
@@ -1008,13 +1018,15 @@
 
     aput-object v3, v4, v11
 
-    iget-object v3, v2, Lorg/bouncycastle/asn1/OIDTokenizer;->oid:Ljava/lang/String;
+    iget-object v3, v2, Lorg/bouncycastle/crypto/util/SSHBuffer;->buffer:Ljava/lang/Object;
+
+    check-cast v3, Ljava/lang/String;
 
     aput-object v3, v4, v10
 
     const-string v3, "Could not close file for chunk %s of slice %s of pack %s."
 
-    invoke-virtual {v0, v3, v4}, Lkotlin/jvm/internal/SpreadBuilder;->zze(Ljava/lang/String;[Ljava/lang/Object;)I
+    invoke-virtual {v0, v3, v4}, Lcom/google/android/play/core/internal/zzag;->zze(Ljava/lang/String;[Ljava/lang/Object;)I
 
     :goto_a
     iget v0, v2, Lcom/google/android/play/core/assetpacks/zzce;->zzi:I
@@ -1031,66 +1043,66 @@
 
     check-cast v0, Lcom/google/android/play/core/assetpacks/zzbb;
 
-    iget-object v3, v2, Lorg/bouncycastle/asn1/OIDTokenizer;->oid:Ljava/lang/String;
+    iget-object v3, v2, Lorg/bouncycastle/crypto/util/SSHBuffer;->buffer:Ljava/lang/Object;
 
-    iget-wide v7, v2, Lcom/google/android/play/core/assetpacks/zzce;->zzh:J
+    move-object v4, v3
 
-    const/4 v4, 0x3
+    check-cast v4, Ljava/lang/String;
 
-    const/4 v5, 0x0
+    iget-wide v9, v2, Lcom/google/android/play/core/assetpacks/zzce;->zzh:J
 
-    iget-object v6, v1, Lcom/google/android/play/core/assetpacks/zzcf;->zzf:Lcom/google/android/play/core/assetpacks/zzcl;
+    const/4 v5, 0x3
 
-    monitor-enter v6
+    const/4 v6, 0x0
+
+    iget-object v3, v1, Lcom/google/android/play/core/assetpacks/zzcf;->zzf:Lcom/google/android/play/core/assetpacks/zzcl;
+
+    monitor-enter v3
 
     :try_start_a
-    iget v9, v2, Lcom/google/android/play/core/assetpacks/zzce;->zzf:I
+    iget v7, v2, Lcom/google/android/play/core/assetpacks/zzce;->zzf:I
 
-    int-to-double v9, v9
+    int-to-double v7, v7
 
     const-wide/high16 v11, 0x3ff0000000000000L    # 1.0
 
-    add-double/2addr v9, v11
+    add-double/2addr v7, v11
 
     iget v11, v2, Lcom/google/android/play/core/assetpacks/zzce;->zzg:I
 
     int-to-double v11, v11
 
-    div-double/2addr v9, v11
+    div-double v11, v7, v11
 
-    iget-object v11, v6, Lcom/google/android/play/core/assetpacks/zzcl;->zza:Ljava/util/Map;
+    iget-object v7, v3, Lcom/google/android/play/core/assetpacks/zzcl;->zza:Ljava/util/Map;
 
-    invoke-static {v9, v10}, Ljava/lang/Double;->valueOf(D)Ljava/lang/Double;
+    invoke-static {v11, v12}, Ljava/lang/Double;->valueOf(D)Ljava/lang/Double;
 
-    move-result-object v12
+    move-result-object v8
 
-    invoke-interface {v11, v3, v12}, Ljava/util/Map;->put(Ljava/lang/Object;Ljava/lang/Object;)Ljava/lang/Object;
+    invoke-interface {v7, v4, v8}, Ljava/util/Map;->put(Ljava/lang/Object;Ljava/lang/Object;)Ljava/lang/Object;
     :try_end_a
     .catchall {:try_start_a .. :try_end_a} :catchall_3
 
-    monitor-exit v6
+    monitor-exit v3
 
-    const/4 v11, 0x1
+    const/4 v13, 0x1
 
-    iget-object v12, v2, Lcom/google/android/play/core/assetpacks/zzce;->zzc:Ljava/lang/String;
+    iget-object v14, v2, Lcom/google/android/play/core/assetpacks/zzce;->zzc:Ljava/lang/String;
 
-    iget-object v6, v1, Lcom/google/android/play/core/assetpacks/zzcf;->zzg:Lcom/google/android/play/core/assetpacks/zzdy;
+    iget-object v3, v1, Lcom/google/android/play/core/assetpacks/zzcf;->zzg:Lcom/google/android/play/core/assetpacks/zzdy;
 
-    iget-object v2, v2, Lorg/bouncycastle/asn1/OIDTokenizer;->oid:Ljava/lang/String;
+    iget-object v2, v2, Lorg/bouncycastle/crypto/util/SSHBuffer;->buffer:Ljava/lang/Object;
 
-    invoke-virtual {v6, v2}, Lcom/google/android/play/core/assetpacks/zzdy;->zza(Ljava/lang/String;)Ljava/lang/String;
+    check-cast v2, Ljava/lang/String;
 
-    move-result-object v13
+    invoke-virtual {v3, v2}, Lcom/google/android/play/core/assetpacks/zzdy;->zza(Ljava/lang/String;)Ljava/lang/String;
 
-    move-object v2, v3
+    move-result-object v15
 
-    move v3, v4
+    move-wide v7, v9
 
-    move v4, v5
-
-    move-wide v5, v7
-
-    invoke-static/range {v2 .. v13}, Lcom/google/android/play/core/assetpacks/AssetPackState;->zzb(Ljava/lang/String;IIJJDILjava/lang/String;Ljava/lang/String;)Lcom/google/android/play/core/assetpacks/AssetPackState;
+    invoke-static/range {v4 .. v15}, Lcom/google/android/play/core/assetpacks/AssetPackState;->zzb(Ljava/lang/String;IIJJDILjava/lang/String;Ljava/lang/String;)Lcom/google/android/play/core/assetpacks/AssetPackState;
 
     move-result-object v2
 
@@ -1107,7 +1119,7 @@
     :catchall_3
     move-exception v0
 
-    monitor-exit v6
+    monitor-exit v3
 
     throw v0
 
@@ -1134,7 +1146,7 @@
     :catch_2
     move-exception v0
 
-    sget-object v3, Lcom/google/android/play/core/assetpacks/zzcf;->zza:Lkotlin/jvm/internal/SpreadBuilder;
+    sget-object v3, Lcom/google/android/play/core/assetpacks/zzcf;->zza:Lcom/google/android/play/core/internal/zzag;
 
     new-array v4, v11, [Ljava/lang/Object;
 
@@ -1146,7 +1158,7 @@
 
     const-string v5, "IOException during extraction %s."
 
-    invoke-virtual {v3, v5, v4}, Lkotlin/jvm/internal/SpreadBuilder;->zzb(Ljava/lang/String;[Ljava/lang/Object;)I
+    invoke-virtual {v3, v5, v4}, Lcom/google/android/play/core/internal/zzag;->zzb(Ljava/lang/String;[Ljava/lang/Object;)I
 
     new-instance v3, Lcom/google/android/play/core/assetpacks/zzch;
 
@@ -1166,11 +1178,13 @@
 
     aput-object v5, v4, v11
 
-    iget-object v5, v2, Lorg/bouncycastle/asn1/OIDTokenizer;->oid:Ljava/lang/String;
+    iget-object v5, v2, Lorg/bouncycastle/crypto/util/SSHBuffer;->buffer:Ljava/lang/Object;
+
+    check-cast v5, Ljava/lang/String;
 
     aput-object v5, v4, v10
 
-    iget v5, v2, Lorg/bouncycastle/asn1/OIDTokenizer;->index:I
+    iget v5, v2, Lorg/bouncycastle/crypto/util/SSHBuffer;->pos:I
 
     invoke-static {v5}, Ljava/lang/Integer;->valueOf(I)Ljava/lang/Integer;
 
@@ -1186,7 +1200,7 @@
 
     move-result-object v4
 
-    iget v2, v2, Lorg/bouncycastle/asn1/OIDTokenizer;->index:I
+    iget v2, v2, Lorg/bouncycastle/crypto/util/SSHBuffer;->pos:I
 
     invoke-direct {v3, v4, v0, v2}, Lcom/google/android/play/core/assetpacks/zzch;-><init>(Ljava/lang/String;Ljava/lang/Exception;I)V
 
@@ -1198,7 +1212,9 @@
 
     iget-object v0, p0, Lcom/google/android/play/core/assetpacks/zzcf;->zzc:Lcom/google/android/play/core/assetpacks/zzbh;
 
-    iget-object v1, p1, Lorg/bouncycastle/asn1/OIDTokenizer;->oid:Ljava/lang/String;
+    iget-object v1, p1, Lorg/bouncycastle/crypto/util/SSHBuffer;->buffer:Ljava/lang/Object;
+
+    check-cast v1, Ljava/lang/String;
 
     iget v2, p1, Lcom/google/android/play/core/assetpacks/zzce;->zza:I
 

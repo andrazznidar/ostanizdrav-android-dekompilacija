@@ -1,4 +1,4 @@
-.class public final Lkotlin/reflect/jvm/internal/impl/builtins/BuiltInsLoader$Companion$Instance$2;
+.class final Lkotlin/reflect/jvm/internal/impl/builtins/BuiltInsLoader$Companion$Instance$2;
 .super Lkotlin/jvm/internal/Lambda;
 .source "BuiltInsLoader.kt"
 
@@ -55,7 +55,17 @@
 
 
 # virtual methods
-.method public invoke()Ljava/lang/Object;
+.method public bridge synthetic invoke()Ljava/lang/Object;
+    .locals 1
+
+    invoke-virtual {p0}, Lkotlin/reflect/jvm/internal/impl/builtins/BuiltInsLoader$Companion$Instance$2;->invoke()Lkotlin/reflect/jvm/internal/impl/builtins/BuiltInsLoader;
+
+    move-result-object v0
+
+    return-object v0
+.end method
+
+.method public final invoke()Lkotlin/reflect/jvm/internal/impl/builtins/BuiltInsLoader;
     .locals 2
 
     const-class v0, Lkotlin/reflect/jvm/internal/impl/builtins/BuiltInsLoader;

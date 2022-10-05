@@ -5,8 +5,12 @@
 .implements Ljava/security/PublicKey;
 
 
+# static fields
+.field private static final serialVersionUID:J = 0x1L
+
+
 # instance fields
-.field public params:Lorg/bouncycastle/pqc/crypto/mceliece/McEliecePublicKeyParameters;
+.field private params:Lorg/bouncycastle/pqc/crypto/mceliece/McEliecePublicKeyParameters;
 
 
 # direct methods
@@ -23,7 +27,7 @@
 
 # virtual methods
 .method public equals(Ljava/lang/Object;)Z
-    .locals 4
+    .locals 3
 
     instance-of v0, p1, Lorg/bouncycastle/pqc/jcajce/provider/mceliece/BCMcEliecePublicKey;
 
@@ -35,23 +39,37 @@
 
     iget-object v0, p0, Lorg/bouncycastle/pqc/jcajce/provider/mceliece/BCMcEliecePublicKey;->params:Lorg/bouncycastle/pqc/crypto/mceliece/McEliecePublicKeyParameters;
 
-    iget v2, v0, Lorg/bouncycastle/pqc/crypto/mceliece/McEliecePublicKeyParameters;->n:I
+    invoke-virtual {v0}, Lorg/bouncycastle/pqc/crypto/mceliece/McEliecePublicKeyParameters;->getN()I
 
-    iget-object p1, p1, Lorg/bouncycastle/pqc/jcajce/provider/mceliece/BCMcEliecePublicKey;->params:Lorg/bouncycastle/pqc/crypto/mceliece/McEliecePublicKeyParameters;
+    move-result v0
 
-    iget v3, p1, Lorg/bouncycastle/pqc/crypto/mceliece/McEliecePublicKeyParameters;->n:I
+    invoke-virtual {p1}, Lorg/bouncycastle/pqc/jcajce/provider/mceliece/BCMcEliecePublicKey;->getN()I
 
-    if-ne v2, v3, :cond_0
+    move-result v2
 
-    iget v2, v0, Lorg/bouncycastle/pqc/crypto/mceliece/McEliecePublicKeyParameters;->t:I
+    if-ne v0, v2, :cond_0
 
-    iget v3, p1, Lorg/bouncycastle/pqc/crypto/mceliece/McEliecePublicKeyParameters;->t:I
+    iget-object v0, p0, Lorg/bouncycastle/pqc/jcajce/provider/mceliece/BCMcEliecePublicKey;->params:Lorg/bouncycastle/pqc/crypto/mceliece/McEliecePublicKeyParameters;
 
-    if-ne v2, v3, :cond_0
+    invoke-virtual {v0}, Lorg/bouncycastle/pqc/crypto/mceliece/McEliecePublicKeyParameters;->getT()I
 
-    iget-object v0, v0, Lorg/bouncycastle/pqc/crypto/mceliece/McEliecePublicKeyParameters;->g:Lorg/bouncycastle/pqc/math/linearalgebra/GF2Matrix;
+    move-result v0
 
-    iget-object p1, p1, Lorg/bouncycastle/pqc/crypto/mceliece/McEliecePublicKeyParameters;->g:Lorg/bouncycastle/pqc/math/linearalgebra/GF2Matrix;
+    invoke-virtual {p1}, Lorg/bouncycastle/pqc/jcajce/provider/mceliece/BCMcEliecePublicKey;->getT()I
+
+    move-result v2
+
+    if-ne v0, v2, :cond_0
+
+    iget-object v0, p0, Lorg/bouncycastle/pqc/jcajce/provider/mceliece/BCMcEliecePublicKey;->params:Lorg/bouncycastle/pqc/crypto/mceliece/McEliecePublicKeyParameters;
+
+    invoke-virtual {v0}, Lorg/bouncycastle/pqc/crypto/mceliece/McEliecePublicKeyParameters;->getG()Lorg/bouncycastle/pqc/math/linearalgebra/GF2Matrix;
+
+    move-result-object v0
+
+    invoke-virtual {p1}, Lorg/bouncycastle/pqc/jcajce/provider/mceliece/BCMcEliecePublicKey;->getG()Lorg/bouncycastle/pqc/math/linearalgebra/GF2Matrix;
+
+    move-result-object p1
 
     invoke-virtual {v0, p1}, Lorg/bouncycastle/pqc/math/linearalgebra/GF2Matrix;->equals(Ljava/lang/Object;)Z
 
@@ -80,13 +98,23 @@
 
     iget-object v1, p0, Lorg/bouncycastle/pqc/jcajce/provider/mceliece/BCMcEliecePublicKey;->params:Lorg/bouncycastle/pqc/crypto/mceliece/McEliecePublicKeyParameters;
 
-    iget v2, v1, Lorg/bouncycastle/pqc/crypto/mceliece/McEliecePublicKeyParameters;->n:I
+    invoke-virtual {v1}, Lorg/bouncycastle/pqc/crypto/mceliece/McEliecePublicKeyParameters;->getN()I
 
-    iget v3, v1, Lorg/bouncycastle/pqc/crypto/mceliece/McEliecePublicKeyParameters;->t:I
+    move-result v1
 
-    iget-object v1, v1, Lorg/bouncycastle/pqc/crypto/mceliece/McEliecePublicKeyParameters;->g:Lorg/bouncycastle/pqc/math/linearalgebra/GF2Matrix;
+    iget-object v2, p0, Lorg/bouncycastle/pqc/jcajce/provider/mceliece/BCMcEliecePublicKey;->params:Lorg/bouncycastle/pqc/crypto/mceliece/McEliecePublicKeyParameters;
 
-    invoke-direct {v0, v2, v3, v1}, Lorg/bouncycastle/pqc/asn1/McEliecePublicKey;-><init>(IILorg/bouncycastle/pqc/math/linearalgebra/GF2Matrix;)V
+    invoke-virtual {v2}, Lorg/bouncycastle/pqc/crypto/mceliece/McEliecePublicKeyParameters;->getT()I
+
+    move-result v2
+
+    iget-object v3, p0, Lorg/bouncycastle/pqc/jcajce/provider/mceliece/BCMcEliecePublicKey;->params:Lorg/bouncycastle/pqc/crypto/mceliece/McEliecePublicKeyParameters;
+
+    invoke-virtual {v3}, Lorg/bouncycastle/pqc/crypto/mceliece/McEliecePublicKeyParameters;->getG()Lorg/bouncycastle/pqc/math/linearalgebra/GF2Matrix;
+
+    move-result-object v3
+
+    invoke-direct {v0, v1, v2, v3}, Lorg/bouncycastle/pqc/asn1/McEliecePublicKey;-><init>(IILorg/bouncycastle/pqc/math/linearalgebra/GF2Matrix;)V
 
     new-instance v1, Lorg/bouncycastle/asn1/x509/AlgorithmIdentifier;
 
@@ -121,28 +149,94 @@
     return-object v0
 .end method
 
-.method public hashCode()I
-    .locals 3
+.method public getG()Lorg/bouncycastle/pqc/math/linearalgebra/GF2Matrix;
+    .locals 1
 
     iget-object v0, p0, Lorg/bouncycastle/pqc/jcajce/provider/mceliece/BCMcEliecePublicKey;->params:Lorg/bouncycastle/pqc/crypto/mceliece/McEliecePublicKeyParameters;
 
-    iget v1, v0, Lorg/bouncycastle/pqc/crypto/mceliece/McEliecePublicKeyParameters;->n:I
+    invoke-virtual {v0}, Lorg/bouncycastle/pqc/crypto/mceliece/McEliecePublicKeyParameters;->getG()Lorg/bouncycastle/pqc/math/linearalgebra/GF2Matrix;
 
-    iget v2, v0, Lorg/bouncycastle/pqc/crypto/mceliece/McEliecePublicKeyParameters;->t:I
+    move-result-object v0
 
-    mul-int/lit8 v2, v2, 0x25
+    return-object v0
+.end method
 
-    add-int/2addr v2, v1
+.method public getK()I
+    .locals 1
 
-    mul-int/lit8 v2, v2, 0x25
+    iget-object v0, p0, Lorg/bouncycastle/pqc/jcajce/provider/mceliece/BCMcEliecePublicKey;->params:Lorg/bouncycastle/pqc/crypto/mceliece/McEliecePublicKeyParameters;
 
-    iget-object v0, v0, Lorg/bouncycastle/pqc/crypto/mceliece/McEliecePublicKeyParameters;->g:Lorg/bouncycastle/pqc/math/linearalgebra/GF2Matrix;
+    invoke-virtual {v0}, Lorg/bouncycastle/pqc/crypto/mceliece/McEliecePublicKeyParameters;->getK()I
+
+    move-result v0
+
+    return v0
+.end method
+
+.method public getKeyParams()Lorg/bouncycastle/crypto/params/AsymmetricKeyParameter;
+    .locals 1
+
+    iget-object v0, p0, Lorg/bouncycastle/pqc/jcajce/provider/mceliece/BCMcEliecePublicKey;->params:Lorg/bouncycastle/pqc/crypto/mceliece/McEliecePublicKeyParameters;
+
+    return-object v0
+.end method
+
+.method public getN()I
+    .locals 1
+
+    iget-object v0, p0, Lorg/bouncycastle/pqc/jcajce/provider/mceliece/BCMcEliecePublicKey;->params:Lorg/bouncycastle/pqc/crypto/mceliece/McEliecePublicKeyParameters;
+
+    invoke-virtual {v0}, Lorg/bouncycastle/pqc/crypto/mceliece/McEliecePublicKeyParameters;->getN()I
+
+    move-result v0
+
+    return v0
+.end method
+
+.method public getT()I
+    .locals 1
+
+    iget-object v0, p0, Lorg/bouncycastle/pqc/jcajce/provider/mceliece/BCMcEliecePublicKey;->params:Lorg/bouncycastle/pqc/crypto/mceliece/McEliecePublicKeyParameters;
+
+    invoke-virtual {v0}, Lorg/bouncycastle/pqc/crypto/mceliece/McEliecePublicKeyParameters;->getT()I
+
+    move-result v0
+
+    return v0
+.end method
+
+.method public hashCode()I
+    .locals 2
+
+    iget-object v0, p0, Lorg/bouncycastle/pqc/jcajce/provider/mceliece/BCMcEliecePublicKey;->params:Lorg/bouncycastle/pqc/crypto/mceliece/McEliecePublicKeyParameters;
+
+    invoke-virtual {v0}, Lorg/bouncycastle/pqc/crypto/mceliece/McEliecePublicKeyParameters;->getN()I
+
+    move-result v0
+
+    iget-object v1, p0, Lorg/bouncycastle/pqc/jcajce/provider/mceliece/BCMcEliecePublicKey;->params:Lorg/bouncycastle/pqc/crypto/mceliece/McEliecePublicKeyParameters;
+
+    invoke-virtual {v1}, Lorg/bouncycastle/pqc/crypto/mceliece/McEliecePublicKeyParameters;->getT()I
+
+    move-result v1
+
+    mul-int/lit8 v1, v1, 0x25
+
+    add-int/2addr v1, v0
+
+    mul-int/lit8 v1, v1, 0x25
+
+    iget-object v0, p0, Lorg/bouncycastle/pqc/jcajce/provider/mceliece/BCMcEliecePublicKey;->params:Lorg/bouncycastle/pqc/crypto/mceliece/McEliecePublicKeyParameters;
+
+    invoke-virtual {v0}, Lorg/bouncycastle/pqc/crypto/mceliece/McEliecePublicKeyParameters;->getG()Lorg/bouncycastle/pqc/math/linearalgebra/GF2Matrix;
+
+    move-result-object v0
 
     invoke-virtual {v0}, Lorg/bouncycastle/pqc/math/linearalgebra/GF2Matrix;->hashCode()I
 
     move-result v0
 
-    add-int/2addr v0, v2
+    add-int/2addr v0, v1
 
     return v0
 .end method
@@ -160,25 +254,37 @@
 
     iget-object v1, p0, Lorg/bouncycastle/pqc/jcajce/provider/mceliece/BCMcEliecePublicKey;->params:Lorg/bouncycastle/pqc/crypto/mceliece/McEliecePublicKeyParameters;
 
-    iget v1, v1, Lorg/bouncycastle/pqc/crypto/mceliece/McEliecePublicKeyParameters;->n:I
+    invoke-virtual {v1}, Lorg/bouncycastle/pqc/crypto/mceliece/McEliecePublicKeyParameters;->getN()I
 
-    const-string v2, "\n"
+    move-result v1
 
-    invoke-static {v0, v1, v2}, Landroidx/constraintlayout/core/widgets/ConstraintWidget$$ExternalSyntheticOutline0;->m(Ljava/lang/StringBuilder;ILjava/lang/String;)Ljava/lang/String;
+    invoke-virtual {v0, v1}, Ljava/lang/StringBuilder;->append(I)Ljava/lang/StringBuilder;
+
+    const-string v1, "\n"
+
+    invoke-virtual {v0, v1}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+
+    invoke-virtual {v0}, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
 
     move-result-object v0
 
-    const-string v1, " error correction capability: "
+    const-string v2, " error correction capability: "
 
-    invoke-static {v0, v1}, Landroidx/constraintlayout/core/PriorityGoalRow$GoalVariableAccessor$$ExternalSyntheticOutline0;->m(Ljava/lang/String;Ljava/lang/String;)Ljava/lang/StringBuilder;
+    invoke-static {v0, v2}, Landroidx/constraintlayout/core/PriorityGoalRow$GoalVariableAccessor$$ExternalSyntheticOutline0;->m(Ljava/lang/String;Ljava/lang/String;)Ljava/lang/StringBuilder;
 
     move-result-object v0
 
-    iget-object v1, p0, Lorg/bouncycastle/pqc/jcajce/provider/mceliece/BCMcEliecePublicKey;->params:Lorg/bouncycastle/pqc/crypto/mceliece/McEliecePublicKeyParameters;
+    iget-object v2, p0, Lorg/bouncycastle/pqc/jcajce/provider/mceliece/BCMcEliecePublicKey;->params:Lorg/bouncycastle/pqc/crypto/mceliece/McEliecePublicKeyParameters;
 
-    iget v1, v1, Lorg/bouncycastle/pqc/crypto/mceliece/McEliecePublicKeyParameters;->t:I
+    invoke-virtual {v2}, Lorg/bouncycastle/pqc/crypto/mceliece/McEliecePublicKeyParameters;->getT()I
 
-    invoke-static {v0, v1, v2}, Landroidx/constraintlayout/core/widgets/ConstraintWidget$$ExternalSyntheticOutline0;->m(Ljava/lang/StringBuilder;ILjava/lang/String;)Ljava/lang/String;
+    move-result v2
+
+    invoke-virtual {v0, v2}, Ljava/lang/StringBuilder;->append(I)Ljava/lang/StringBuilder;
+
+    invoke-virtual {v0, v1}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+
+    invoke-virtual {v0}, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
 
     move-result-object v0
 
@@ -190,7 +296,9 @@
 
     iget-object v1, p0, Lorg/bouncycastle/pqc/jcajce/provider/mceliece/BCMcEliecePublicKey;->params:Lorg/bouncycastle/pqc/crypto/mceliece/McEliecePublicKeyParameters;
 
-    iget-object v1, v1, Lorg/bouncycastle/pqc/crypto/mceliece/McEliecePublicKeyParameters;->g:Lorg/bouncycastle/pqc/math/linearalgebra/GF2Matrix;
+    invoke-virtual {v1}, Lorg/bouncycastle/pqc/crypto/mceliece/McEliecePublicKeyParameters;->getG()Lorg/bouncycastle/pqc/math/linearalgebra/GF2Matrix;
+
+    move-result-object v1
 
     invoke-virtual {v0, v1}, Ljava/lang/StringBuilder;->append(Ljava/lang/Object;)Ljava/lang/StringBuilder;
 

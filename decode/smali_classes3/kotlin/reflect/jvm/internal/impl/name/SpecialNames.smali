@@ -4,15 +4,19 @@
 
 
 # static fields
+.field public static final ANONYMOUS_FUNCTION:Lkotlin/reflect/jvm/internal/impl/name/Name;
+
 .field public static final DEFAULT_NAME_FOR_COMPANION_OBJECT:Lkotlin/reflect/jvm/internal/impl/name/Name;
 
 .field public static final NO_NAME_PROVIDED:Lkotlin/reflect/jvm/internal/impl/name/Name;
+
+.field public static final ROOT_PACKAGE:Lkotlin/reflect/jvm/internal/impl/name/Name;
 
 .field public static final SAFE_IDENTIFIER_FOR_NO_NAME:Lkotlin/reflect/jvm/internal/impl/name/Name;
 
 
 # direct methods
-.method public static synthetic $$$reportNull$$$0(I)V
+.method private static synthetic $$$reportNull$$$0(I)V
     .locals 7
 
     const/4 v0, 0x1
@@ -115,6 +119,10 @@
 
     invoke-static {v0}, Lkotlin/reflect/jvm/internal/impl/name/Name;->special(Ljava/lang/String;)Lkotlin/reflect/jvm/internal/impl/name/Name;
 
+    move-result-object v0
+
+    sput-object v0, Lkotlin/reflect/jvm/internal/impl/name/SpecialNames;->ROOT_PACKAGE:Lkotlin/reflect/jvm/internal/impl/name/Name;
+
     const-string v0, "Companion"
 
     invoke-static {v0}, Lkotlin/reflect/jvm/internal/impl/name/Name;->identifier(Ljava/lang/String;)Lkotlin/reflect/jvm/internal/impl/name/Name;
@@ -135,5 +143,71 @@
 
     invoke-static {v0}, Lkotlin/reflect/jvm/internal/impl/name/Name;->special(Ljava/lang/String;)Lkotlin/reflect/jvm/internal/impl/name/Name;
 
+    move-result-object v0
+
+    sput-object v0, Lkotlin/reflect/jvm/internal/impl/name/SpecialNames;->ANONYMOUS_FUNCTION:Lkotlin/reflect/jvm/internal/impl/name/Name;
+
     return-void
+.end method
+
+.method public static isSafeIdentifier(Lkotlin/reflect/jvm/internal/impl/name/Name;)Z
+    .locals 2
+
+    const/4 v0, 0x1
+
+    if-nez p0, :cond_0
+
+    invoke-static {v0}, Lkotlin/reflect/jvm/internal/impl/name/SpecialNames;->$$$reportNull$$$0(I)V
+
+    :cond_0
+    invoke-virtual {p0}, Lkotlin/reflect/jvm/internal/impl/name/Name;->asString()Ljava/lang/String;
+
+    move-result-object v1
+
+    invoke-virtual {v1}, Ljava/lang/String;->isEmpty()Z
+
+    move-result v1
+
+    if-nez v1, :cond_1
+
+    invoke-virtual {p0}, Lkotlin/reflect/jvm/internal/impl/name/Name;->isSpecial()Z
+
+    move-result p0
+
+    if-nez p0, :cond_1
+
+    goto :goto_0
+
+    :cond_1
+    const/4 v0, 0x0
+
+    :goto_0
+    return v0
+.end method
+
+.method public static safeIdentifier(Lkotlin/reflect/jvm/internal/impl/name/Name;)Lkotlin/reflect/jvm/internal/impl/name/Name;
+    .locals 1
+
+    if-eqz p0, :cond_0
+
+    invoke-virtual {p0}, Lkotlin/reflect/jvm/internal/impl/name/Name;->isSpecial()Z
+
+    move-result v0
+
+    if-nez v0, :cond_0
+
+    goto :goto_0
+
+    :cond_0
+    sget-object p0, Lkotlin/reflect/jvm/internal/impl/name/SpecialNames;->SAFE_IDENTIFIER_FOR_NO_NAME:Lkotlin/reflect/jvm/internal/impl/name/Name;
+
+    :goto_0
+    if-nez p0, :cond_1
+
+    const/4 v0, 0x0
+
+    invoke-static {v0}, Lkotlin/reflect/jvm/internal/impl/name/SpecialNames;->$$$reportNull$$$0(I)V
+
+    :cond_1
+    return-object p0
 .end method

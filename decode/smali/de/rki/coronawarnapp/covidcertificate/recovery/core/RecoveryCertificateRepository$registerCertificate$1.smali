@@ -17,7 +17,7 @@
     c = "de.rki.coronawarnapp.covidcertificate.recovery.core.RecoveryCertificateRepository"
     f = "RecoveryCertificateRepository.kt"
     l = {
-        0x68
+        0x7c
     }
     m = "registerCertificate"
 .end annotation

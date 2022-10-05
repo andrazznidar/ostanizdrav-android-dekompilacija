@@ -3,6 +3,17 @@
 .source "ISODateTimeFormat.java"
 
 
+# annotations
+.annotation system Ldalvik/annotation/EnclosingClass;
+    value = Lorg/joda/time/format/ISODateTimeFormat;
+.end annotation
+
+.annotation system Ldalvik/annotation/InnerClass;
+    accessFlags = 0x19
+    name = "Constants"
+.end annotation
+
+
 # static fields
 .field public static final bd:Lorg/joda/time/format/DateTimeFormatter;
 
@@ -1591,7 +1602,7 @@
 .end method
 
 .method public static dayOfMonthElement()Lorg/joda/time/format/DateTimeFormatter;
-    .locals 3
+    .locals 2
 
     sget-object v0, Lorg/joda/time/format/ISODateTimeFormat$Constants;->dme:Lorg/joda/time/format/DateTimeFormatter;
 
@@ -1605,13 +1616,9 @@
 
     invoke-virtual {v0, v1}, Lorg/joda/time/format/DateTimeFormatterBuilder;->appendLiteral(C)Lorg/joda/time/format/DateTimeFormatterBuilder;
 
-    sget-object v1, Lorg/joda/time/DateTimeFieldType;->ERA_TYPE:Lorg/joda/time/DateTimeFieldType;
+    const/4 v1, 0x2
 
-    sget-object v1, Lorg/joda/time/DateTimeFieldType;->DAY_OF_MONTH_TYPE:Lorg/joda/time/DateTimeFieldType;
-
-    const/4 v2, 0x2
-
-    invoke-virtual {v0, v1, v2, v2}, Lorg/joda/time/format/DateTimeFormatterBuilder;->appendDecimal(Lorg/joda/time/DateTimeFieldType;II)Lorg/joda/time/format/DateTimeFormatterBuilder;
+    invoke-virtual {v0, v1}, Lorg/joda/time/format/DateTimeFormatterBuilder;->appendDayOfMonth(I)Lorg/joda/time/format/DateTimeFormatterBuilder;
 
     move-result-object v0
 
@@ -1624,7 +1631,7 @@
 .end method
 
 .method public static dayOfWeekElement()Lorg/joda/time/format/DateTimeFormatter;
-    .locals 3
+    .locals 2
 
     sget-object v0, Lorg/joda/time/format/ISODateTimeFormat$Constants;->dwe:Lorg/joda/time/format/DateTimeFormatter;
 
@@ -1638,13 +1645,9 @@
 
     invoke-virtual {v0, v1}, Lorg/joda/time/format/DateTimeFormatterBuilder;->appendLiteral(C)Lorg/joda/time/format/DateTimeFormatterBuilder;
 
-    sget-object v1, Lorg/joda/time/DateTimeFieldType;->ERA_TYPE:Lorg/joda/time/DateTimeFieldType;
+    const/4 v1, 0x1
 
-    sget-object v1, Lorg/joda/time/DateTimeFieldType;->DAY_OF_WEEK_TYPE:Lorg/joda/time/DateTimeFieldType;
-
-    const/4 v2, 0x1
-
-    invoke-virtual {v0, v1, v2, v2}, Lorg/joda/time/format/DateTimeFormatterBuilder;->appendDecimal(Lorg/joda/time/DateTimeFieldType;II)Lorg/joda/time/format/DateTimeFormatterBuilder;
+    invoke-virtual {v0, v1}, Lorg/joda/time/format/DateTimeFormatterBuilder;->appendDayOfWeek(I)Lorg/joda/time/format/DateTimeFormatterBuilder;
 
     move-result-object v0
 
@@ -1657,7 +1660,7 @@
 .end method
 
 .method public static dayOfYearElement()Lorg/joda/time/format/DateTimeFormatter;
-    .locals 3
+    .locals 2
 
     sget-object v0, Lorg/joda/time/format/ISODateTimeFormat$Constants;->dye:Lorg/joda/time/format/DateTimeFormatter;
 
@@ -1671,13 +1674,9 @@
 
     invoke-virtual {v0, v1}, Lorg/joda/time/format/DateTimeFormatterBuilder;->appendLiteral(C)Lorg/joda/time/format/DateTimeFormatterBuilder;
 
-    sget-object v1, Lorg/joda/time/DateTimeFieldType;->ERA_TYPE:Lorg/joda/time/DateTimeFieldType;
+    const/4 v1, 0x3
 
-    sget-object v1, Lorg/joda/time/DateTimeFieldType;->DAY_OF_YEAR_TYPE:Lorg/joda/time/DateTimeFieldType;
-
-    const/4 v2, 0x3
-
-    invoke-virtual {v0, v1, v2, v2}, Lorg/joda/time/format/DateTimeFormatterBuilder;->appendDecimal(Lorg/joda/time/DateTimeFieldType;II)Lorg/joda/time/format/DateTimeFormatterBuilder;
+    invoke-virtual {v0, v1}, Lorg/joda/time/format/DateTimeFormatterBuilder;->appendDayOfYear(I)Lorg/joda/time/format/DateTimeFormatterBuilder;
 
     move-result-object v0
 
@@ -1719,7 +1718,7 @@
 .end method
 
 .method public static hourElement()Lorg/joda/time/format/DateTimeFormatter;
-    .locals 3
+    .locals 2
 
     sget-object v0, Lorg/joda/time/format/ISODateTimeFormat$Constants;->hde:Lorg/joda/time/format/DateTimeFormatter;
 
@@ -1729,13 +1728,9 @@
 
     invoke-direct {v0}, Lorg/joda/time/format/DateTimeFormatterBuilder;-><init>()V
 
-    sget-object v1, Lorg/joda/time/DateTimeFieldType;->ERA_TYPE:Lorg/joda/time/DateTimeFieldType;
+    const/4 v1, 0x2
 
-    sget-object v1, Lorg/joda/time/DateTimeFieldType;->HOUR_OF_DAY_TYPE:Lorg/joda/time/DateTimeFieldType;
-
-    const/4 v2, 0x2
-
-    invoke-virtual {v0, v1, v2, v2}, Lorg/joda/time/format/DateTimeFormatterBuilder;->appendDecimal(Lorg/joda/time/DateTimeFieldType;II)Lorg/joda/time/format/DateTimeFormatterBuilder;
+    invoke-virtual {v0, v1}, Lorg/joda/time/format/DateTimeFormatterBuilder;->appendHourOfDay(I)Lorg/joda/time/format/DateTimeFormatterBuilder;
 
     move-result-object v0
 
@@ -1927,7 +1922,7 @@
 .end method
 
 .method public static minuteElement()Lorg/joda/time/format/DateTimeFormatter;
-    .locals 3
+    .locals 2
 
     sget-object v0, Lorg/joda/time/format/ISODateTimeFormat$Constants;->mhe:Lorg/joda/time/format/DateTimeFormatter;
 
@@ -1941,13 +1936,9 @@
 
     invoke-virtual {v0, v1}, Lorg/joda/time/format/DateTimeFormatterBuilder;->appendLiteral(C)Lorg/joda/time/format/DateTimeFormatterBuilder;
 
-    sget-object v1, Lorg/joda/time/DateTimeFieldType;->ERA_TYPE:Lorg/joda/time/DateTimeFieldType;
+    const/4 v1, 0x2
 
-    sget-object v1, Lorg/joda/time/DateTimeFieldType;->MINUTE_OF_HOUR_TYPE:Lorg/joda/time/DateTimeFieldType;
-
-    const/4 v2, 0x2
-
-    invoke-virtual {v0, v1, v2, v2}, Lorg/joda/time/format/DateTimeFormatterBuilder;->appendDecimal(Lorg/joda/time/DateTimeFieldType;II)Lorg/joda/time/format/DateTimeFormatterBuilder;
+    invoke-virtual {v0, v1}, Lorg/joda/time/format/DateTimeFormatterBuilder;->appendMinuteOfHour(I)Lorg/joda/time/format/DateTimeFormatterBuilder;
 
     move-result-object v0
 
@@ -1960,7 +1951,7 @@
 .end method
 
 .method public static monthElement()Lorg/joda/time/format/DateTimeFormatter;
-    .locals 3
+    .locals 2
 
     sget-object v0, Lorg/joda/time/format/ISODateTimeFormat$Constants;->mye:Lorg/joda/time/format/DateTimeFormatter;
 
@@ -1974,13 +1965,9 @@
 
     invoke-virtual {v0, v1}, Lorg/joda/time/format/DateTimeFormatterBuilder;->appendLiteral(C)Lorg/joda/time/format/DateTimeFormatterBuilder;
 
-    sget-object v1, Lorg/joda/time/DateTimeFieldType;->ERA_TYPE:Lorg/joda/time/DateTimeFieldType;
+    const/4 v1, 0x2
 
-    sget-object v1, Lorg/joda/time/DateTimeFieldType;->MONTH_OF_YEAR_TYPE:Lorg/joda/time/DateTimeFieldType;
-
-    const/4 v2, 0x2
-
-    invoke-virtual {v0, v1, v2, v2}, Lorg/joda/time/format/DateTimeFormatterBuilder;->appendDecimal(Lorg/joda/time/DateTimeFieldType;II)Lorg/joda/time/format/DateTimeFormatterBuilder;
+    invoke-virtual {v0, v1}, Lorg/joda/time/format/DateTimeFormatterBuilder;->appendMonthOfYear(I)Lorg/joda/time/format/DateTimeFormatterBuilder;
 
     move-result-object v0
 
@@ -2053,7 +2040,7 @@
 .end method
 
 .method public static secondElement()Lorg/joda/time/format/DateTimeFormatter;
-    .locals 3
+    .locals 2
 
     sget-object v0, Lorg/joda/time/format/ISODateTimeFormat$Constants;->sme:Lorg/joda/time/format/DateTimeFormatter;
 
@@ -2067,13 +2054,9 @@
 
     invoke-virtual {v0, v1}, Lorg/joda/time/format/DateTimeFormatterBuilder;->appendLiteral(C)Lorg/joda/time/format/DateTimeFormatterBuilder;
 
-    sget-object v1, Lorg/joda/time/DateTimeFieldType;->ERA_TYPE:Lorg/joda/time/DateTimeFieldType;
+    const/4 v1, 0x2
 
-    sget-object v1, Lorg/joda/time/DateTimeFieldType;->SECOND_OF_MINUTE_TYPE:Lorg/joda/time/DateTimeFieldType;
-
-    const/4 v2, 0x2
-
-    invoke-virtual {v0, v1, v2, v2}, Lorg/joda/time/format/DateTimeFormatterBuilder;->appendDecimal(Lorg/joda/time/DateTimeFieldType;II)Lorg/joda/time/format/DateTimeFormatterBuilder;
+    invoke-virtual {v0, v1}, Lorg/joda/time/format/DateTimeFormatterBuilder;->appendSecondOfMinute(I)Lorg/joda/time/format/DateTimeFormatterBuilder;
 
     move-result-object v0
 
@@ -2385,7 +2368,7 @@
 .end method
 
 .method public static weekElement()Lorg/joda/time/format/DateTimeFormatter;
-    .locals 3
+    .locals 2
 
     sget-object v0, Lorg/joda/time/format/ISODateTimeFormat$Constants;->wwe:Lorg/joda/time/format/DateTimeFormatter;
 
@@ -2401,13 +2384,9 @@
 
     move-result-object v0
 
-    sget-object v1, Lorg/joda/time/DateTimeFieldType;->ERA_TYPE:Lorg/joda/time/DateTimeFieldType;
+    const/4 v1, 0x2
 
-    sget-object v1, Lorg/joda/time/DateTimeFieldType;->WEEK_OF_WEEKYEAR_TYPE:Lorg/joda/time/DateTimeFieldType;
-
-    const/4 v2, 0x2
-
-    invoke-virtual {v0, v1, v2, v2}, Lorg/joda/time/format/DateTimeFormatterBuilder;->appendDecimal(Lorg/joda/time/DateTimeFieldType;II)Lorg/joda/time/format/DateTimeFormatterBuilder;
+    invoke-virtual {v0, v1}, Lorg/joda/time/format/DateTimeFormatterBuilder;->appendWeekOfWeekyear(I)Lorg/joda/time/format/DateTimeFormatterBuilder;
 
     move-result-object v0
 

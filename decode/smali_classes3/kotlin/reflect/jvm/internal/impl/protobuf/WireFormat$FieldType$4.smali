@@ -1,4 +1,4 @@
-.class public final enum Lkotlin/reflect/jvm/internal/impl/protobuf/WireFormat$FieldType$4;
+.class final enum Lkotlin/reflect/jvm/internal/impl/protobuf/WireFormat$FieldType$4;
 .super Lkotlin/reflect/jvm/internal/impl/protobuf/WireFormat$FieldType;
 .source "WireFormat.java"
 

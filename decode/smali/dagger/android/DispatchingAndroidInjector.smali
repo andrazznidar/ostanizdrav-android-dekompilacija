@@ -80,7 +80,7 @@
 
     add-int/2addr v1, v0
 
-    invoke-static {v1}, Lkotlin/collections/ArraysUtilJVM;->newLinkedHashMapWithExpectedSize(I)Ljava/util/LinkedHashMap;
+    invoke-static {v1}, Ldagger/internal/DaggerCollections;->newLinkedHashMapWithExpectedSize(I)Ljava/util/LinkedHashMap;
 
     move-result-object v0
 

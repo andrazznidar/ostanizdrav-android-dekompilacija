@@ -7,7 +7,7 @@
 
 
 # instance fields
-.field public final annotations:Ljava/util/List;
+.field private final annotations:Ljava/util/List;
     .annotation system Ldalvik/annotation/Signature;
         value = {
             "Ljava/util/List<",
@@ -20,7 +20,7 @@
 
 # direct methods
 .method public constructor <init>(Ljava/util/List;)V
-    .locals 0
+    .locals 1
     .annotation system Ldalvik/annotation/Signature;
         value = {
             "(",
@@ -30,6 +30,10 @@
             ">;)V"
         }
     .end annotation
+
+    const-string v0, "annotations"
+
+    invoke-static {p1, v0}, Lkotlin/jvm/internal/Intrinsics;->checkNotNullParameter(Ljava/lang/Object;Ljava/lang/String;)V
 
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 

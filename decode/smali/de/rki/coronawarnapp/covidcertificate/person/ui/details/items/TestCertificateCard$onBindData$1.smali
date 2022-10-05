@@ -32,7 +32,7 @@
 .end annotation
 
 .annotation system Ldalvik/annotation/SourceDebugExtension;
-    value = "SMAP\nTestCertificateCard.kt\nKotlin\n*S Kotlin\n*F\n+ 1 TestCertificateCard.kt\nde/rki/coronawarnapp/covidcertificate/person/ui/details/items/TestCertificateCard$onBindData$1\n+ 2 _Collections.kt\nkotlin/collections/CollectionsKt___CollectionsKt\n+ 3 fake.kt\nkotlin/jvm/internal/FakeKt\n+ 4 View.kt\nandroidx/core/view/ViewKt\n*L\n1#1,78:1\n798#2,11:79\n1#3:90\n254#4,2:91\n254#4,2:93\n*S KotlinDebug\n*F\n+ 1 TestCertificateCard.kt\nde/rki/coronawarnapp/covidcertificate/person/ui/details/items/TestCertificateCard$onBindData$1\n*L\n29#1:79,11\n45#1:91,2\n63#1:93,2\n*E\n"
+    value = "SMAP\nTestCertificateCard.kt\nKotlin\n*S Kotlin\n*F\n+ 1 TestCertificateCard.kt\nde/rki/coronawarnapp/covidcertificate/person/ui/details/items/TestCertificateCard$onBindData$1\n+ 2 _Collections.kt\nkotlin/collections/CollectionsKt___CollectionsKt\n+ 3 fake.kt\nkotlin/jvm/internal/FakeKt\n+ 4 View.kt\nandroidx/core/view/ViewKt\n*L\n1#1,78:1\n798#2,11:79\n1#3:90\n254#4,2:91\n254#4,2:93\n*S KotlinDebug\n*F\n+ 1 TestCertificateCard.kt\nde/rki/coronawarnapp/covidcertificate/person/ui/details/items/TestCertificateCard$onBindData$1\n*L\n29#1:79,11\n46#1:91,2\n64#1:93,2\n*E\n"
 .end annotation
 
 
@@ -105,7 +105,7 @@
     goto :goto_0
 
     :cond_1
-    invoke-static {v0}, Lkotlin/collections/CollectionsKt___CollectionsKt;->singleOrNull(Ljava/util/List;)Ljava/lang/Object;
+    invoke-static {v0}, Lkotlin/collections/CollectionsKt___CollectionsKt;->lastOrNull(Ljava/util/List;)Ljava/lang/Object;
 
     move-result-object p3
 
@@ -123,9 +123,9 @@
 
     iget-object v0, p1, Lde/rki/coronawarnapp/databinding/TestCertificateCardBinding;->rootView:Landroidx/constraintlayout/widget/ConstraintLayout;
 
-    new-instance v1, Lde/rki/coronawarnapp/ui/onboarding/OnboardingFragment$$ExternalSyntheticLambda1;
+    new-instance v1, Lde/rki/coronawarnapp/covidcertificate/person/ui/details/items/TestCertificateCard$onBindData$1$$ExternalSyntheticLambda0;
 
-    invoke-direct {v1, p2}, Lde/rki/coronawarnapp/ui/onboarding/OnboardingFragment$$ExternalSyntheticLambda1;-><init>(Lde/rki/coronawarnapp/covidcertificate/person/ui/details/items/TestCertificateCard$Item;)V
+    invoke-direct {v1, p2}, Lde/rki/coronawarnapp/covidcertificate/person/ui/details/items/TestCertificateCard$onBindData$1$$ExternalSyntheticLambda0;-><init>(Lde/rki/coronawarnapp/covidcertificate/person/ui/details/items/TestCertificateCard$Item;)V
 
     invoke-virtual {v0, v1}, Landroid/view/ViewGroup;->setOnClickListener(Landroid/view/View$OnClickListener;)V
 
@@ -137,7 +137,7 @@
 
     move-result-object v1
 
-    const v2, 0x7f13064c
+    const v2, 0x7f1305fb
 
     const/4 v3, 0x1
 
@@ -153,19 +153,9 @@
 
     move-result-object v4
 
-    const-string v5, "<this>"
-
-    invoke-static {v4, v5}, Lkotlin/jvm/internal/Intrinsics;->checkNotNullParameter(Ljava/lang/Object;Ljava/lang/String;)V
-
-    sget-object v5, Lde/rki/coronawarnapp/util/TimeAndDateExtensions;->dayFormatter2DigitYear:Lorg/joda/time/format/DateTimeFormatter;
-
-    invoke-virtual {v4, v5}, Lorg/joda/time/base/AbstractInstant;->toString(Lorg/joda/time/format/DateTimeFormatter;)Ljava/lang/String;
+    invoke-static {v4}, Lde/rki/coronawarnapp/util/TimeAndDateExtensions;->toShortDayFormat(Lorg/joda/time/DateTime;)Ljava/lang/String;
 
     move-result-object v4
-
-    const-string/jumbo v5, "toString(dayFormatter2DigitYear)"
-
-    invoke-static {v4, v5}, Lkotlin/jvm/internal/Intrinsics;->checkNotNullExpressionValue(Ljava/lang/Object;Ljava/lang/String;)V
 
     const/4 v5, 0x0
 
@@ -195,12 +185,12 @@
 
     if-eqz p3, :cond_3
 
-    const p3, 0x7f130646
+    const p3, 0x7f1305f5
 
     goto :goto_2
 
     :cond_3
-    const p3, 0x7f130649
+    const p3, 0x7f1305f8
 
     :goto_2
     iget-object v0, p1, Lde/rki/coronawarnapp/databinding/TestCertificateCardBinding;->testCertificateType:Landroid/widget/TextView;
@@ -209,18 +199,20 @@
 
     iget-object p3, p2, Lde/rki/coronawarnapp/covidcertificate/person/ui/details/items/TestCertificateCard$Item;->certificate:Lde/rki/coronawarnapp/covidcertificate/test/core/TestCertificate;
 
-    invoke-interface {p3}, Lde/rki/coronawarnapp/covidcertificate/common/certificate/CwaCovidCertificate;->isValid()Z
+    invoke-interface {p3}, Lde/rki/coronawarnapp/covidcertificate/common/certificate/CwaCovidCertificate;->isDisplayValid()Z
 
     move-result p3
 
     if-eqz p3, :cond_4
 
-    const p3, 0x7f0800d6
+    iget-object p3, p2, Lde/rki/coronawarnapp/covidcertificate/person/ui/details/items/TestCertificateCard$Item;->colorShade:Lde/rki/coronawarnapp/covidcertificate/person/ui/overview/PersonColorShade;
+
+    iget p3, p3, Lde/rki/coronawarnapp/covidcertificate/person/ui/overview/PersonColorShade;->bookmarkIcon:I
 
     goto :goto_3
 
     :cond_4
-    const p3, 0x7f0800d5
+    const p3, 0x7f0800c6
 
     :goto_3
     iget-object v0, p1, Lde/rki/coronawarnapp/databinding/TestCertificateCardBinding;->currentCertificate:Landroidx/constraintlayout/widget/Group;
@@ -251,7 +243,7 @@
 
     iget-object p3, p2, Lde/rki/coronawarnapp/covidcertificate/person/ui/details/items/TestCertificateCard$Item;->certificate:Lde/rki/coronawarnapp/covidcertificate/test/core/TestCertificate;
 
-    invoke-interface {p3}, Lde/rki/coronawarnapp/covidcertificate/common/certificate/CwaCovidCertificate;->isValid()Z
+    invoke-interface {p3}, Lde/rki/coronawarnapp/covidcertificate/common/certificate/CwaCovidCertificate;->isDisplayValid()Z
 
     move-result p3
 
@@ -267,18 +259,18 @@
     :goto_5
     iget-object v0, p2, Lde/rki/coronawarnapp/covidcertificate/person/ui/details/items/TestCertificateCard$Item;->certificate:Lde/rki/coronawarnapp/covidcertificate/test/core/TestCertificate;
 
-    invoke-interface {v0}, Lde/rki/coronawarnapp/covidcertificate/common/certificate/CwaCovidCertificate;->isValid()Z
+    invoke-interface {v0}, Lde/rki/coronawarnapp/covidcertificate/common/certificate/CwaCovidCertificate;->isDisplayValid()Z
 
     move-result v0
 
     if-eqz v0, :cond_7
 
-    const v0, 0x7f0801c8
+    const v0, 0x7f0801bf
 
     goto :goto_6
 
     :cond_7
-    const v0, 0x7f0800da
+    const v0, 0x7f0800cf
 
     :goto_6
     iget-object v1, p1, Lde/rki/coronawarnapp/databinding/TestCertificateCardBinding;->certificateIcon:Landroid/widget/ImageView;
@@ -296,7 +288,7 @@
     :cond_8
     invoke-static {p3}, Ljava/util/Objects;->requireNonNull(Ljava/lang/Object;)Ljava/lang/Object;
 
-    const p3, 0x7f08007c
+    const p3, 0x7f08006c
 
     :goto_7
     iget-object v0, p1, Lde/rki/coronawarnapp/databinding/TestCertificateCardBinding;->certificateBg:Landroid/widget/ImageView;

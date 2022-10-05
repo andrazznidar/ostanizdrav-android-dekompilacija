@@ -1,4 +1,4 @@
-.class public final synthetic Lkotlin/reflect/jvm/internal/impl/serialization/deserialization/MemberDeserializer$containsSuspendFunctionType$1;
+.class final synthetic Lkotlin/reflect/jvm/internal/impl/serialization/deserialization/MemberDeserializer$containsSuspendFunctionType$1;
 .super Lkotlin/jvm/internal/PropertyReference1;
 .source "MemberDeserializer.kt"
 
@@ -66,15 +66,13 @@
 .end method
 
 .method public getOwner()Lkotlin/reflect/KDeclarationContainer;
-    .locals 3
+    .locals 2
 
     const-class v0, Lkotlin/reflect/jvm/internal/impl/builtins/FunctionTypesKt;
 
-    sget-object v1, Lkotlin/jvm/internal/Reflection;->factory:Lkotlin/jvm/internal/ReflectionFactory;
+    const-string v1, "deserialization"
 
-    const-string v2, "deserialization"
-
-    invoke-virtual {v1, v0, v2}, Lkotlin/jvm/internal/ReflectionFactory;->getOrCreateKotlinPackage(Ljava/lang/Class;Ljava/lang/String;)Lkotlin/reflect/KDeclarationContainer;
+    invoke-static {v0, v1}, Lkotlin/jvm/internal/Reflection;->getOrCreateKotlinPackage(Ljava/lang/Class;Ljava/lang/String;)Lkotlin/reflect/KDeclarationContainer;
 
     move-result-object v0
 

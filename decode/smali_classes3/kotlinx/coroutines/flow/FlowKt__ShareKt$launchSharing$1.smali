@@ -220,14 +220,12 @@
     :goto_0
     invoke-static {p1}, Lkotlin/ResultKt;->throwOnFailure(Ljava/lang/Object;)V
 
-    goto/16 :goto_4
+    goto :goto_2
 
     :cond_3
     invoke-static {p1}, Lkotlin/ResultKt;->throwOnFailure(Ljava/lang/Object;)V
 
     iget-object p1, p0, Lkotlinx/coroutines/flow/FlowKt__ShareKt$launchSharing$1;->$started:Lkotlinx/coroutines/flow/SharingStarted;
-
-    sget v1, Lkotlinx/coroutines/flow/SharingStarted;->$r8$clinit:I
 
     sget-object v1, Lkotlinx/coroutines/flow/SharingStarted$Companion;->Eagerly:Lkotlinx/coroutines/flow/SharingStarted;
 
@@ -243,7 +241,7 @@
 
     move-result-object p1
 
-    if-ne p1, v0, :cond_9
+    if-ne p1, v0, :cond_7
 
     return-object v0
 
@@ -286,7 +284,7 @@
 
     move-result-object p1
 
-    if-ne p1, v0, :cond_9
+    if-ne p1, v0, :cond_7
 
     return-object v0
 
@@ -317,62 +315,16 @@
 
     iput v2, p0, Lkotlinx/coroutines/flow/FlowKt__ShareKt$launchSharing$1;->label:I
 
-    sget v2, Lkotlinx/coroutines/flow/FlowKt__MergeKt;->DEFAULT_CONCURRENCY:I
-
-    new-instance v2, Lkotlinx/coroutines/flow/FlowKt__MergeKt$mapLatest$1;
-
-    invoke-direct {v2, v1, v5}, Lkotlinx/coroutines/flow/FlowKt__MergeKt$mapLatest$1;-><init>(Lkotlin/jvm/functions/Function2;Lkotlin/coroutines/Continuation;)V
-
-    invoke-static {p1, v2}, Lkotlinx/coroutines/flow/FlowKt;->transformLatest(Lkotlinx/coroutines/flow/Flow;Lkotlin/jvm/functions/Function3;)Lkotlinx/coroutines/flow/Flow;
-
-    move-result-object p1
-
-    sget-object v4, Lkotlinx/coroutines/channels/BufferOverflow;->SUSPEND:Lkotlinx/coroutines/channels/BufferOverflow;
-
-    const/4 v3, 0x0
-
-    move-object v1, p1
-
-    check-cast v1, Lkotlinx/coroutines/flow/internal/FusibleFlow;
-
-    const/4 v5, 0x1
-
-    const/4 v6, 0x0
-
-    const/4 v2, 0x0
-
-    invoke-static/range {v1 .. v6}, Lkotlinx/coroutines/flow/internal/FusibleFlow$DefaultImpls;->fuse$default(Lkotlinx/coroutines/flow/internal/FusibleFlow;Lkotlin/coroutines/CoroutineContext;ILkotlinx/coroutines/channels/BufferOverflow;ILjava/lang/Object;)Lkotlinx/coroutines/flow/Flow;
-
-    move-result-object p1
-
-    sget-object v1, Lkotlinx/coroutines/flow/internal/NopCollector;->INSTANCE:Lkotlinx/coroutines/flow/internal/NopCollector;
-
-    invoke-interface {p1, v1, p0}, Lkotlinx/coroutines/flow/Flow;->collect(Lkotlinx/coroutines/flow/FlowCollector;Lkotlin/coroutines/Continuation;)Ljava/lang/Object;
+    invoke-static {p1, v1, p0}, Lkotlinx/coroutines/flow/FlowKt;->collectLatest(Lkotlinx/coroutines/flow/Flow;Lkotlin/jvm/functions/Function2;Lkotlin/coroutines/Continuation;)Ljava/lang/Object;
 
     move-result-object p1
 
     if-ne p1, v0, :cond_7
 
-    goto :goto_2
-
-    :cond_7
-    sget-object p1, Lkotlin/Unit;->INSTANCE:Lkotlin/Unit;
-
-    :goto_2
-    if-ne p1, v0, :cond_8
-
-    goto :goto_3
-
-    :cond_8
-    sget-object p1, Lkotlin/Unit;->INSTANCE:Lkotlin/Unit;
-
-    :goto_3
-    if-ne p1, v0, :cond_9
-
     return-object v0
 
-    :cond_9
-    :goto_4
+    :cond_7
+    :goto_2
     sget-object p1, Lkotlin/Unit;->INSTANCE:Lkotlin/Unit;
 
     return-object p1

@@ -15,12 +15,6 @@
 
 .field public final coronatestNegativeAntigenResultThirdInfo:Lde/rki/coronawarnapp/ui/view/SimpleStepEntry;
 
-.field public final negativeTestProofAdditionalInformation:Landroid/widget/TextView;
-
-.field public final negativeTestProofBody:Landroid/widget/TextView;
-
-.field public final negativeTestProofTitle:Landroid/widget/TextView;
-
 .field public final rapidTestCardPatientInfo:Landroid/widget/TextView;
 
 .field public final resultReceivedCounter:Lde/rki/coronawarnapp/databinding/TimeCounterBinding;
@@ -35,7 +29,7 @@
 
 
 # direct methods
-.method public constructor <init>(Landroidx/constraintlayout/widget/ConstraintLayout;Landroid/widget/ImageView;Landroid/widget/TextView;Landroid/widget/ImageView;Landroid/widget/Button;Lde/rki/coronawarnapp/ui/view/SimpleStepEntry;Lde/rki/coronawarnapp/ui/view/SimpleStepEntry;Landroid/widget/LinearLayout;Lde/rki/coronawarnapp/ui/view/BulletPointList;Landroid/widget/TextView;Landroid/widget/TextView;Landroid/widget/TextView;Landroid/widget/TextView;Landroidx/constraintlayout/widget/ConstraintLayout;Landroid/widget/TextView;Landroid/widget/TextView;Landroid/widget/TextView;Landroid/widget/TextView;Landroid/widget/TextView;Landroid/widget/TextView;Lde/rki/coronawarnapp/databinding/TimeCounterBinding;Landroidx/constraintlayout/widget/ConstraintLayout;Landroid/widget/TextView;Landroid/widget/ScrollView;Landroid/widget/TextView;Landroidx/constraintlayout/widget/ConstraintLayout;Landroid/widget/TextView;Landroid/widget/TextView;Lde/rki/coronawarnapp/ui/view/SimpleStepEntry;Lde/rki/coronawarnapp/ui/view/SimpleStepEntry;Lcom/google/android/material/appbar/MaterialToolbar;)V
+.method public constructor <init>(Landroidx/constraintlayout/widget/ConstraintLayout;Landroid/widget/ImageView;Landroid/widget/TextView;Landroid/widget/ImageView;Landroid/widget/Button;Lde/rki/coronawarnapp/ui/view/SimpleStepEntry;Lde/rki/coronawarnapp/ui/view/SimpleStepEntry;Landroid/widget/LinearLayout;Landroid/widget/TextView;Lde/rki/coronawarnapp/ui/view/BulletPointList;Landroid/widget/TextView;Landroid/widget/TextView;Landroid/widget/TextView;Landroidx/constraintlayout/widget/ConstraintLayout;Landroid/widget/TextView;Landroid/widget/TextView;Landroid/widget/TextView;Landroid/widget/TextView;Landroid/widget/TextView;Landroid/widget/TextView;Lde/rki/coronawarnapp/databinding/TimeCounterBinding;Landroidx/constraintlayout/widget/ConstraintLayout;Landroid/widget/TextView;Landroid/widget/ScrollView;Landroid/widget/TextView;Landroidx/constraintlayout/widget/ConstraintLayout;Landroid/widget/TextView;Landroid/widget/TextView;Lde/rki/coronawarnapp/ui/view/SimpleStepEntry;Lde/rki/coronawarnapp/ui/view/SimpleStepEntry;Lcom/google/android/material/appbar/MaterialToolbar;)V
     .locals 2
     .annotation system Ldalvik/annotation/MethodParameters;
         accessFlags = {
@@ -80,9 +74,9 @@
             "coronatestNegativeAntigenResultFourthInfo",
             "coronatestNegativeAntigenResultThirdInfo",
             "furtherInfo",
+            "furtherInfoBody",
             "furtherInfoText",
             "furtherInfoTitle",
-            "negativeTestProofAdditionalInformation",
             "negativeTestProofBody",
             "negativeTestProofTitle",
             "rapidTestCard",
@@ -130,18 +124,6 @@
 
     iput-object v1, v0, Lde/rki/coronawarnapp/databinding/FragmentSubmissionAntigenTestResultNegativeBinding;->coronatestNegativeAntigenResultThirdInfo:Lde/rki/coronawarnapp/ui/view/SimpleStepEntry;
 
-    move-object v1, p11
-
-    iput-object v1, v0, Lde/rki/coronawarnapp/databinding/FragmentSubmissionAntigenTestResultNegativeBinding;->negativeTestProofAdditionalInformation:Landroid/widget/TextView;
-
-    move-object v1, p12
-
-    iput-object v1, v0, Lde/rki/coronawarnapp/databinding/FragmentSubmissionAntigenTestResultNegativeBinding;->negativeTestProofBody:Landroid/widget/TextView;
-
-    move-object v1, p13
-
-    iput-object v1, v0, Lde/rki/coronawarnapp/databinding/FragmentSubmissionAntigenTestResultNegativeBinding;->negativeTestProofTitle:Landroid/widget/TextView;
-
     move-object/from16 v1, p17
 
     iput-object v1, v0, Lde/rki/coronawarnapp/databinding/FragmentSubmissionAntigenTestResultNegativeBinding;->rapidTestCardPatientInfo:Landroid/widget/TextView;
@@ -178,7 +160,7 @@
 
     move-object/from16 v0, p0
 
-    const v1, 0x7f0a0176
+    const v1, 0x7f0a0194
 
     invoke-static {v0, v1}, Landroidx/viewbinding/ViewBindings;->findChildViewById(Landroid/view/View;I)Landroid/view/View;
 
@@ -192,7 +174,7 @@
 
     if-eqz v5, :cond_2
 
-    const v1, 0x7f0a0178
+    const v1, 0x7f0a0196
 
     invoke-static {v0, v1}, Landroidx/viewbinding/ViewBindings;->findChildViewById(Landroid/view/View;I)Landroid/view/View;
 
@@ -204,7 +186,7 @@
 
     if-eqz v6, :cond_2
 
-    const v1, 0x7f0a017a
+    const v1, 0x7f0a0199
 
     invoke-static {v0, v1}, Landroidx/viewbinding/ViewBindings;->findChildViewById(Landroid/view/View;I)Landroid/view/View;
 
@@ -216,7 +198,7 @@
 
     if-eqz v7, :cond_2
 
-    const v1, 0x7f0a022d
+    const v1, 0x7f0a024c
 
     invoke-static {v0, v1}, Landroidx/viewbinding/ViewBindings;->findChildViewById(Landroid/view/View;I)Landroid/view/View;
 
@@ -228,7 +210,7 @@
 
     if-eqz v8, :cond_2
 
-    const v1, 0x7f0a022e
+    const v1, 0x7f0a024d
 
     invoke-static {v0, v1}, Landroidx/viewbinding/ViewBindings;->findChildViewById(Landroid/view/View;I)Landroid/view/View;
 
@@ -240,7 +222,7 @@
 
     if-eqz v9, :cond_2
 
-    const v1, 0x7f0a022f
+    const v1, 0x7f0a024e
 
     invoke-static {v0, v1}, Landroidx/viewbinding/ViewBindings;->findChildViewById(Landroid/view/View;I)Landroid/view/View;
 
@@ -252,7 +234,7 @@
 
     if-eqz v10, :cond_2
 
-    const v1, 0x7f0a032e
+    const v1, 0x7f0a035c
 
     invoke-static {v0, v1}, Landroidx/viewbinding/ViewBindings;->findChildViewById(Landroid/view/View;I)Landroid/view/View;
 
@@ -264,7 +246,7 @@
 
     if-eqz v11, :cond_2
 
-    const v1, 0x7f0a032f
+    const v1, 0x7f0a035d
 
     invoke-static {v0, v1}, Landroidx/viewbinding/ViewBindings;->findChildViewById(Landroid/view/View;I)Landroid/view/View;
 
@@ -272,11 +254,11 @@
 
     move-object v12, v3
 
-    check-cast v12, Lde/rki/coronawarnapp/ui/view/BulletPointList;
+    check-cast v12, Landroid/widget/TextView;
 
     if-eqz v12, :cond_2
 
-    const v1, 0x7f0a0330
+    const v1, 0x7f0a035e
 
     invoke-static {v0, v1}, Landroidx/viewbinding/ViewBindings;->findChildViewById(Landroid/view/View;I)Landroid/view/View;
 
@@ -284,11 +266,11 @@
 
     move-object v13, v3
 
-    check-cast v13, Landroid/widget/TextView;
+    check-cast v13, Lde/rki/coronawarnapp/ui/view/BulletPointList;
 
     if-eqz v13, :cond_2
 
-    const v1, 0x7f0a049e
+    const v1, 0x7f0a035f
 
     invoke-static {v0, v1}, Landroidx/viewbinding/ViewBindings;->findChildViewById(Landroid/view/View;I)Landroid/view/View;
 
@@ -300,7 +282,7 @@
 
     if-eqz v14, :cond_2
 
-    const v1, 0x7f0a049f
+    const v1, 0x7f0a04e4
 
     invoke-static {v0, v1}, Landroidx/viewbinding/ViewBindings;->findChildViewById(Landroid/view/View;I)Landroid/view/View;
 
@@ -312,7 +294,7 @@
 
     if-eqz v15, :cond_2
 
-    const v1, 0x7f0a04a0
+    const v1, 0x7f0a04e5
 
     invoke-static {v0, v1}, Landroidx/viewbinding/ViewBindings;->findChildViewById(Landroid/view/View;I)Landroid/view/View;
 
@@ -324,7 +306,7 @@
 
     if-eqz v16, :cond_2
 
-    const v1, 0x7f0a0571
+    const v1, 0x7f0a05bb
 
     invoke-static {v0, v1}, Landroidx/viewbinding/ViewBindings;->findChildViewById(Landroid/view/View;I)Landroid/view/View;
 
@@ -336,7 +318,7 @@
 
     if-eqz v17, :cond_2
 
-    const v1, 0x7f0a0572
+    const v1, 0x7f0a05bc
 
     invoke-static {v0, v1}, Landroidx/viewbinding/ViewBindings;->findChildViewById(Landroid/view/View;I)Landroid/view/View;
 
@@ -348,7 +330,7 @@
 
     if-eqz v18, :cond_2
 
-    const v1, 0x7f0a0573
+    const v1, 0x7f0a05bd
 
     invoke-static {v0, v1}, Landroidx/viewbinding/ViewBindings;->findChildViewById(Landroid/view/View;I)Landroid/view/View;
 
@@ -360,7 +342,7 @@
 
     if-eqz v19, :cond_2
 
-    const v1, 0x7f0a0574
+    const v1, 0x7f0a05be
 
     invoke-static {v0, v1}, Landroidx/viewbinding/ViewBindings;->findChildViewById(Landroid/view/View;I)Landroid/view/View;
 
@@ -372,7 +354,7 @@
 
     if-eqz v20, :cond_2
 
-    const v1, 0x7f0a0575
+    const v1, 0x7f0a05bf
 
     invoke-static {v0, v1}, Landroidx/viewbinding/ViewBindings;->findChildViewById(Landroid/view/View;I)Landroid/view/View;
 
@@ -384,7 +366,7 @@
 
     if-eqz v21, :cond_2
 
-    const v1, 0x7f0a0576
+    const v1, 0x7f0a05c0
 
     invoke-static {v0, v1}, Landroidx/viewbinding/ViewBindings;->findChildViewById(Landroid/view/View;I)Landroid/view/View;
 
@@ -396,7 +378,7 @@
 
     if-eqz v22, :cond_2
 
-    const v1, 0x7f0a0577
+    const v1, 0x7f0a05c1
 
     invoke-static {v0, v1}, Landroidx/viewbinding/ViewBindings;->findChildViewById(Landroid/view/View;I)Landroid/view/View;
 
@@ -408,7 +390,7 @@
 
     if-eqz v23, :cond_2
 
-    const v1, 0x7f0a05a4
+    const v1, 0x7f0a05f1
 
     invoke-static {v0, v1}, Landroidx/viewbinding/ViewBindings;->findChildViewById(Landroid/view/View;I)Landroid/view/View;
 
@@ -416,7 +398,7 @@
 
     if-eqz v3, :cond_2
 
-    const v1, 0x7f0a01ab
+    const v1, 0x7f0a01d0
 
     invoke-static {v3, v1}, Landroidx/viewbinding/ViewBindings;->findChildViewById(Landroid/view/View;I)Landroid/view/View;
 
@@ -428,7 +410,7 @@
 
     if-eqz v26, :cond_1
 
-    const v1, 0x7f0a01ac
+    const v1, 0x7f0a01d1
 
     invoke-static {v3, v1}, Landroidx/viewbinding/ViewBindings;->findChildViewById(Landroid/view/View;I)Landroid/view/View;
 
@@ -440,7 +422,7 @@
 
     if-eqz v27, :cond_1
 
-    const v1, 0x7f0a01ad
+    const v1, 0x7f0a01d2
 
     invoke-static {v3, v1}, Landroidx/viewbinding/ViewBindings;->findChildViewById(Landroid/view/View;I)Landroid/view/View;
 
@@ -452,7 +434,7 @@
 
     if-eqz v28, :cond_1
 
-    const v1, 0x7f0a01ae
+    const v1, 0x7f0a01d3
 
     invoke-static {v3, v1}, Landroidx/viewbinding/ViewBindings;->findChildViewById(Landroid/view/View;I)Landroid/view/View;
 
@@ -464,7 +446,7 @@
 
     if-eqz v29, :cond_1
 
-    const v1, 0x7f0a05a8
+    const v1, 0x7f0a05f5
 
     invoke-static {v3, v1}, Landroidx/viewbinding/ViewBindings;->findChildViewById(Landroid/view/View;I)Landroid/view/View;
 
@@ -488,7 +470,7 @@
 
     invoke-direct/range {v24 .. v31}, Lde/rki/coronawarnapp/databinding/TimeCounterBinding;-><init>(Landroidx/constraintlayout/widget/ConstraintLayout;Landroid/widget/TextView;Landroid/widget/TextView;Landroid/widget/TextView;Landroid/widget/TextView;Landroid/widget/TextView;Landroidx/constraintlayout/widget/ConstraintLayout;)V
 
-    const v3, 0x7f0a05a5
+    const v3, 0x7f0a05f2
 
     invoke-static {v0, v3}, Landroidx/viewbinding/ViewBindings;->findChildViewById(Landroid/view/View;I)Landroid/view/View;
 
@@ -500,7 +482,7 @@
 
     if-eqz v25, :cond_0
 
-    const v3, 0x7f0a05a6
+    const v3, 0x7f0a05f3
 
     invoke-static {v0, v3}, Landroidx/viewbinding/ViewBindings;->findChildViewById(Landroid/view/View;I)Landroid/view/View;
 
@@ -512,7 +494,7 @@
 
     if-eqz v26, :cond_0
 
-    const v3, 0x7f0a060e
+    const v3, 0x7f0a065b
 
     invoke-static {v0, v3}, Landroidx/viewbinding/ViewBindings;->findChildViewById(Landroid/view/View;I)Landroid/view/View;
 
@@ -524,7 +506,7 @@
 
     if-eqz v27, :cond_0
 
-    const v3, 0x7f0a0750
+    const v3, 0x7f0a079d
 
     invoke-static {v0, v3}, Landroidx/viewbinding/ViewBindings;->findChildViewById(Landroid/view/View;I)Landroid/view/View;
 
@@ -536,7 +518,7 @@
 
     if-eqz v28, :cond_0
 
-    const v3, 0x7f0a0793
+    const v3, 0x7f0a07e0
 
     invoke-static {v0, v3}, Landroidx/viewbinding/ViewBindings;->findChildViewById(Landroid/view/View;I)Landroid/view/View;
 
@@ -548,7 +530,7 @@
 
     if-eqz v29, :cond_0
 
-    const v3, 0x7f0a0794
+    const v3, 0x7f0a07e1
 
     invoke-static {v0, v3}, Landroidx/viewbinding/ViewBindings;->findChildViewById(Landroid/view/View;I)Landroid/view/View;
 
@@ -560,7 +542,7 @@
 
     if-eqz v30, :cond_0
 
-    const v3, 0x7f0a0795
+    const v3, 0x7f0a07e2
 
     invoke-static {v0, v3}, Landroidx/viewbinding/ViewBindings;->findChildViewById(Landroid/view/View;I)Landroid/view/View;
 
@@ -572,7 +554,7 @@
 
     if-eqz v31, :cond_0
 
-    const v3, 0x7f0a07ae
+    const v3, 0x7f0a07f6
 
     invoke-static {v0, v3}, Landroidx/viewbinding/ViewBindings;->findChildViewById(Landroid/view/View;I)Landroid/view/View;
 
@@ -584,7 +566,7 @@
 
     if-eqz v32, :cond_0
 
-    const v3, 0x7f0a07b0
+    const v3, 0x7f0a07f8
 
     invoke-static {v0, v3}, Landroidx/viewbinding/ViewBindings;->findChildViewById(Landroid/view/View;I)Landroid/view/View;
 
@@ -596,7 +578,7 @@
 
     if-eqz v33, :cond_0
 
-    const v3, 0x7f0a07e4
+    const v3, 0x7f0a082c
 
     invoke-static {v0, v3}, Landroidx/viewbinding/ViewBindings;->findChildViewById(Landroid/view/View;I)Landroid/view/View;
 
@@ -618,7 +600,7 @@
 
     move-object/from16 v24, v1
 
-    invoke-direct/range {v3 .. v34}, Lde/rki/coronawarnapp/databinding/FragmentSubmissionAntigenTestResultNegativeBinding;-><init>(Landroidx/constraintlayout/widget/ConstraintLayout;Landroid/widget/ImageView;Landroid/widget/TextView;Landroid/widget/ImageView;Landroid/widget/Button;Lde/rki/coronawarnapp/ui/view/SimpleStepEntry;Lde/rki/coronawarnapp/ui/view/SimpleStepEntry;Landroid/widget/LinearLayout;Lde/rki/coronawarnapp/ui/view/BulletPointList;Landroid/widget/TextView;Landroid/widget/TextView;Landroid/widget/TextView;Landroid/widget/TextView;Landroidx/constraintlayout/widget/ConstraintLayout;Landroid/widget/TextView;Landroid/widget/TextView;Landroid/widget/TextView;Landroid/widget/TextView;Landroid/widget/TextView;Landroid/widget/TextView;Lde/rki/coronawarnapp/databinding/TimeCounterBinding;Landroidx/constraintlayout/widget/ConstraintLayout;Landroid/widget/TextView;Landroid/widget/ScrollView;Landroid/widget/TextView;Landroidx/constraintlayout/widget/ConstraintLayout;Landroid/widget/TextView;Landroid/widget/TextView;Lde/rki/coronawarnapp/ui/view/SimpleStepEntry;Lde/rki/coronawarnapp/ui/view/SimpleStepEntry;Lcom/google/android/material/appbar/MaterialToolbar;)V
+    invoke-direct/range {v3 .. v34}, Lde/rki/coronawarnapp/databinding/FragmentSubmissionAntigenTestResultNegativeBinding;-><init>(Landroidx/constraintlayout/widget/ConstraintLayout;Landroid/widget/ImageView;Landroid/widget/TextView;Landroid/widget/ImageView;Landroid/widget/Button;Lde/rki/coronawarnapp/ui/view/SimpleStepEntry;Lde/rki/coronawarnapp/ui/view/SimpleStepEntry;Landroid/widget/LinearLayout;Landroid/widget/TextView;Lde/rki/coronawarnapp/ui/view/BulletPointList;Landroid/widget/TextView;Landroid/widget/TextView;Landroid/widget/TextView;Landroidx/constraintlayout/widget/ConstraintLayout;Landroid/widget/TextView;Landroid/widget/TextView;Landroid/widget/TextView;Landroid/widget/TextView;Landroid/widget/TextView;Landroid/widget/TextView;Lde/rki/coronawarnapp/databinding/TimeCounterBinding;Landroidx/constraintlayout/widget/ConstraintLayout;Landroid/widget/TextView;Landroid/widget/ScrollView;Landroid/widget/TextView;Landroidx/constraintlayout/widget/ConstraintLayout;Landroid/widget/TextView;Landroid/widget/TextView;Lde/rki/coronawarnapp/ui/view/SimpleStepEntry;Lde/rki/coronawarnapp/ui/view/SimpleStepEntry;Lcom/google/android/material/appbar/MaterialToolbar;)V
 
     return-object v2
 

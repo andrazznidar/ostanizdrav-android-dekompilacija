@@ -6,6 +6,8 @@
 # instance fields
 .field public final appConfigProvider:Lde/rki/coronawarnapp/appconfig/AppConfigProvider;
 
+.field public final blocklistValidator:Lde/rki/coronawarnapp/covidcertificate/validation/core/BlocklistValidator;
+
 .field public final dscRepository:Lde/rki/coronawarnapp/covidcertificate/signature/core/DscRepository;
 
 .field public final dscSignatureValidator:Lde/rki/coronawarnapp/covidcertificate/signature/core/DscSignatureValidator;
@@ -16,7 +18,7 @@
 
 
 # direct methods
-.method public constructor <init>(Lde/rki/coronawarnapp/util/TimeStamper;Lde/rki/coronawarnapp/appconfig/AppConfigProvider;Lde/rki/coronawarnapp/covidcertificate/signature/core/DscRepository;Lde/rki/coronawarnapp/covidcertificate/signature/core/DscSignatureValidator;Lde/rki/coronawarnapp/covidcertificate/expiration/DccExpirationChecker;)V
+.method public constructor <init>(Lde/rki/coronawarnapp/util/TimeStamper;Lde/rki/coronawarnapp/appconfig/AppConfigProvider;Lde/rki/coronawarnapp/covidcertificate/signature/core/DscRepository;Lde/rki/coronawarnapp/covidcertificate/signature/core/DscSignatureValidator;Lde/rki/coronawarnapp/covidcertificate/validation/core/BlocklistValidator;Lde/rki/coronawarnapp/covidcertificate/expiration/DccExpirationChecker;)V
     .locals 1
 
     const-string/jumbo v0, "timeStamper"
@@ -35,9 +37,13 @@
 
     invoke-static {p4, v0}, Lkotlin/jvm/internal/Intrinsics;->checkNotNullParameter(Ljava/lang/Object;Ljava/lang/String;)V
 
-    const-string v0, "expirationChecker"
+    const-string v0, "blocklistValidator"
 
     invoke-static {p5, v0}, Lkotlin/jvm/internal/Intrinsics;->checkNotNullParameter(Ljava/lang/Object;Ljava/lang/String;)V
+
+    const-string v0, "expirationChecker"
+
+    invoke-static {p6, v0}, Lkotlin/jvm/internal/Intrinsics;->checkNotNullParameter(Ljava/lang/Object;Ljava/lang/String;)V
 
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
@@ -49,7 +55,9 @@
 
     iput-object p4, p0, Lde/rki/coronawarnapp/covidcertificate/common/statecheck/DccStateChecker;->dscSignatureValidator:Lde/rki/coronawarnapp/covidcertificate/signature/core/DscSignatureValidator;
 
-    iput-object p5, p0, Lde/rki/coronawarnapp/covidcertificate/common/statecheck/DccStateChecker;->expirationChecker:Lde/rki/coronawarnapp/covidcertificate/expiration/DccExpirationChecker;
+    iput-object p5, p0, Lde/rki/coronawarnapp/covidcertificate/common/statecheck/DccStateChecker;->blocklistValidator:Lde/rki/coronawarnapp/covidcertificate/validation/core/BlocklistValidator;
+
+    iput-object p6, p0, Lde/rki/coronawarnapp/covidcertificate/common/statecheck/DccStateChecker;->expirationChecker:Lde/rki/coronawarnapp/covidcertificate/expiration/DccExpirationChecker;
 
     return-void
 .end method

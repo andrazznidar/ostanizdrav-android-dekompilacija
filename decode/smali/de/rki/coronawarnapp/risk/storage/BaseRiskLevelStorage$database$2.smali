@@ -46,7 +46,7 @@
 
 # virtual methods
 .method public invoke()Ljava/lang/Object;
-    .locals 7
+    .locals 6
 
     iget-object v0, p0, Lde/rki/coronawarnapp/risk/storage/BaseRiskLevelStorage$database$2;->this$0:Lde/rki/coronawarnapp/risk/storage/BaseRiskLevelStorage;
 
@@ -54,29 +54,25 @@
 
     const/4 v1, 0x1
 
-    const-string v2, "riskresults.db"
-
     invoke-static {v0}, Ljava/util/Objects;->requireNonNull(Ljava/lang/Object;)Ljava/lang/Object;
 
-    const-string v3, "databaseName"
+    sget-object v2, Ltimber/log/Timber;->Forest:Ltimber/log/Timber$Forest;
 
-    invoke-static {v2, v3}, Lkotlin/jvm/internal/Intrinsics;->checkNotNullParameter(Ljava/lang/Object;Ljava/lang/String;)V
+    const/4 v3, 0x0
 
-    sget-object v3, Ltimber/log/Timber;->Forest:Ltimber/log/Timber$Forest;
+    new-array v4, v3, [Ljava/lang/Object;
 
-    const/4 v4, 0x0
+    const-string v5, "Instantiating risk result database."
 
-    new-array v5, v4, [Ljava/lang/Object;
-
-    const-string v6, "Instantiating risk result database."
-
-    invoke-virtual {v3, v6, v5}, Ltimber/log/Timber$Forest;->d(Ljava/lang/String;[Ljava/lang/Object;)V
+    invoke-virtual {v2, v5, v4}, Ltimber/log/Timber$Forest;->d(Ljava/lang/String;[Ljava/lang/Object;)V
 
     iget-object v0, v0, Lde/rki/coronawarnapp/risk/storage/internal/RiskResultDatabase$Factory;->context:Landroid/content/Context;
 
-    const-class v3, Lde/rki/coronawarnapp/risk/storage/internal/RiskResultDatabase;
+    const-class v2, Lde/rki/coronawarnapp/risk/storage/internal/RiskResultDatabase;
 
-    invoke-static {v0, v3, v2}, Landroidx/room/Room;->databaseBuilder(Landroid/content/Context;Ljava/lang/Class;Ljava/lang/String;)Landroidx/room/RoomDatabase$Builder;
+    const-string v4, "riskresults.db"
+
+    invoke-static {v0, v2, v4}, Landroidx/room/Room;->databaseBuilder(Landroid/content/Context;Ljava/lang/Class;Ljava/lang/String;)Landroidx/room/RoomDatabase$Builder;
 
     move-result-object v0
 
@@ -84,9 +80,9 @@
 
     new-array v2, v2, [Landroidx/room/migration/Migration;
 
-    sget-object v3, Lde/rki/coronawarnapp/risk/storage/internal/migrations/RiskResultDatabaseMigration1To2;->INSTANCE:Lde/rki/coronawarnapp/risk/storage/internal/migrations/RiskResultDatabaseMigration1To2;
+    sget-object v4, Lde/rki/coronawarnapp/risk/storage/internal/migrations/RiskResultDatabaseMigration1To2;->INSTANCE:Lde/rki/coronawarnapp/risk/storage/internal/migrations/RiskResultDatabaseMigration1To2;
 
-    aput-object v3, v2, v4
+    aput-object v4, v2, v3
 
     sget-object v3, Lde/rki/coronawarnapp/risk/storage/internal/migrations/RiskResultDatabaseMigration2To3;->INSTANCE:Lde/rki/coronawarnapp/risk/storage/internal/migrations/RiskResultDatabaseMigration2To3;
 

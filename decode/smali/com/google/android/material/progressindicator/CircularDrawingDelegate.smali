@@ -187,13 +187,11 @@
 
     int-to-float p2, p2
 
-    mul-float/2addr v0, p2
+    invoke-static {v0, p2, v2, p1}, Landroidx/constraintlayout/core/widgets/analyzer/ChainRun$$ExternalSyntheticOutline0;->m(FFFF)F
 
-    div-float/2addr v0, v2
+    move-result p1
 
-    add-float/2addr v0, p1
-
-    iput v0, p0, Lcom/google/android/material/progressindicator/CircularDrawingDelegate;->adjustedRadius:F
+    iput p1, p0, Lcom/google/android/material/progressindicator/CircularDrawingDelegate;->adjustedRadius:F
 
     goto :goto_1
 
@@ -544,7 +542,7 @@
 
     iget v1, v1, Lcom/google/android/material/progressindicator/DrawableWithAnimatedVisibilityChange;->totalAlpha:I
 
-    invoke-static {v0, v1}, Ldagger/android/AndroidInjection;->compositeARGBWithAlpha(II)I
+    invoke-static {v0, v1}, Lkotlin/math/MathKt__MathJVMKt;->compositeARGBWithAlpha(II)I
 
     move-result v0
 

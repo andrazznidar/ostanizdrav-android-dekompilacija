@@ -3,11 +3,15 @@
 
 # interfaces
 .implements Ljava/security/PublicKey;
-.implements Ljava/security/Key;
+.implements Lorg/bouncycastle/pqc/jcajce/interfaces/LMSKey;
+
+
+# static fields
+.field private static final serialVersionUID:J = -0x4df536aca40a3826L
 
 
 # instance fields
-.field public transient keyParams:Lorg/bouncycastle/pqc/crypto/lms/LMSKeyParameters;
+.field private transient keyParams:Lorg/bouncycastle/pqc/crypto/lms/LMSKeyParameters;
 
 
 # direct methods
@@ -21,6 +25,29 @@
 
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
+    invoke-direct {p0, p1}, Lorg/bouncycastle/pqc/jcajce/provider/lms/BCLMSPublicKey;->init(Lorg/bouncycastle/asn1/x509/SubjectPublicKeyInfo;)V
+
+    return-void
+.end method
+
+.method public constructor <init>(Lorg/bouncycastle/pqc/crypto/lms/LMSKeyParameters;)V
+    .locals 0
+
+    invoke-direct {p0}, Ljava/lang/Object;-><init>()V
+
+    iput-object p1, p0, Lorg/bouncycastle/pqc/jcajce/provider/lms/BCLMSPublicKey;->keyParams:Lorg/bouncycastle/pqc/crypto/lms/LMSKeyParameters;
+
+    return-void
+.end method
+
+.method private init(Lorg/bouncycastle/asn1/x509/SubjectPublicKeyInfo;)V
+    .locals 0
+    .annotation system Ldalvik/annotation/Throws;
+        value = {
+            Ljava/io/IOException;
+        }
+    .end annotation
+
     invoke-static {p1}, Lorg/bouncycastle/pqc/crypto/util/PublicKeyFactory;->createKey(Lorg/bouncycastle/asn1/x509/SubjectPublicKeyInfo;)Lorg/bouncycastle/crypto/params/AsymmetricKeyParameter;
 
     move-result-object p1
@@ -28,6 +55,51 @@
     check-cast p1, Lorg/bouncycastle/pqc/crypto/lms/LMSKeyParameters;
 
     iput-object p1, p0, Lorg/bouncycastle/pqc/jcajce/provider/lms/BCLMSPublicKey;->keyParams:Lorg/bouncycastle/pqc/crypto/lms/LMSKeyParameters;
+
+    return-void
+.end method
+
+.method private readObject(Ljava/io/ObjectInputStream;)V
+    .locals 0
+    .annotation system Ldalvik/annotation/Throws;
+        value = {
+            Ljava/io/IOException;,
+            Ljava/lang/ClassNotFoundException;
+        }
+    .end annotation
+
+    invoke-virtual {p1}, Ljava/io/ObjectInputStream;->defaultReadObject()V
+
+    invoke-virtual {p1}, Ljava/io/ObjectInputStream;->readObject()Ljava/lang/Object;
+
+    move-result-object p1
+
+    check-cast p1, [B
+
+    invoke-static {p1}, Lorg/bouncycastle/asn1/x509/SubjectPublicKeyInfo;->getInstance(Ljava/lang/Object;)Lorg/bouncycastle/asn1/x509/SubjectPublicKeyInfo;
+
+    move-result-object p1
+
+    invoke-direct {p0, p1}, Lorg/bouncycastle/pqc/jcajce/provider/lms/BCLMSPublicKey;->init(Lorg/bouncycastle/asn1/x509/SubjectPublicKeyInfo;)V
+
+    return-void
+.end method
+
+.method private writeObject(Ljava/io/ObjectOutputStream;)V
+    .locals 1
+    .annotation system Ldalvik/annotation/Throws;
+        value = {
+            Ljava/io/IOException;
+        }
+    .end annotation
+
+    invoke-virtual {p1}, Ljava/io/ObjectOutputStream;->defaultWriteObject()V
+
+    invoke-virtual {p0}, Lorg/bouncycastle/pqc/jcajce/provider/lms/BCLMSPublicKey;->getEncoded()[B
+
+    move-result-object v0
+
+    invoke-virtual {p1, v0}, Ljava/io/ObjectOutputStream;->writeObject(Ljava/lang/Object;)V
 
     return-void
 .end method
@@ -116,6 +188,37 @@
     const-string v0, "X.509"
 
     return-object v0
+.end method
+
+.method public getKeyParams()Lorg/bouncycastle/crypto/CipherParameters;
+    .locals 1
+
+    iget-object v0, p0, Lorg/bouncycastle/pqc/jcajce/provider/lms/BCLMSPublicKey;->keyParams:Lorg/bouncycastle/pqc/crypto/lms/LMSKeyParameters;
+
+    return-object v0
+.end method
+
+.method public getLevels()I
+    .locals 2
+
+    iget-object v0, p0, Lorg/bouncycastle/pqc/jcajce/provider/lms/BCLMSPublicKey;->keyParams:Lorg/bouncycastle/pqc/crypto/lms/LMSKeyParameters;
+
+    instance-of v1, v0, Lorg/bouncycastle/pqc/crypto/lms/LMSPublicKeyParameters;
+
+    if-eqz v1, :cond_0
+
+    const/4 v0, 0x1
+
+    return v0
+
+    :cond_0
+    check-cast v0, Lorg/bouncycastle/pqc/crypto/lms/HSSPublicKeyParameters;
+
+    invoke-virtual {v0}, Lorg/bouncycastle/pqc/crypto/lms/HSSPublicKeyParameters;->getL()I
+
+    move-result v0
+
+    return v0
 .end method
 
 .method public hashCode()I

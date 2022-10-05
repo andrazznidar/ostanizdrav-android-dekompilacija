@@ -152,7 +152,7 @@
 
 
 # virtual methods
-.method public createFragmentContainer()Landroidx/fragment/app/FragmentContainer;
+.method public createFragmentContainer()Lorg/joda/time/Chronology;
     .locals 2
 
     new-instance v0, Landroidx/fragment/app/Fragment$4;
@@ -161,7 +161,7 @@
 
     new-instance v1, Landroidx/fragment/app/DialogFragment$5;
 
-    invoke-direct {v1, p0, v0}, Landroidx/fragment/app/DialogFragment$5;-><init>(Landroidx/fragment/app/DialogFragment;Landroidx/fragment/app/FragmentContainer;)V
+    invoke-direct {v1, p0, v0}, Landroidx/fragment/app/DialogFragment$5;-><init>(Landroidx/fragment/app/DialogFragment;Lorg/joda/time/Chronology;)V
 
     return-object v1
 .end method

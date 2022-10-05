@@ -64,7 +64,23 @@
 
     if-eqz p1, :cond_1
 
-    instance-of p1, p3, Lcom/fasterxml/jackson/databind/deser/std/StdValueInstantiator;
+    invoke-virtual {p3}, Ljava/lang/Object;->getClass()Ljava/lang/Class;
+
+    move-result-object p1
+
+    invoke-static {p1}, Lkotlin/jvm/internal/Reflection;->getOrCreateKotlinClass(Ljava/lang/Class;)Lkotlin/reflect/KClass;
+
+    move-result-object p1
+
+    const-class p2, Lcom/fasterxml/jackson/databind/deser/std/StdValueInstantiator;
+
+    invoke-static {p2}, Lkotlin/jvm/internal/Reflection;->getOrCreateKotlinClass(Ljava/lang/Class;)Lkotlin/reflect/KClass;
+
+    move-result-object p2
+
+    invoke-static {p1, p2}, Lkotlin/jvm/internal/Intrinsics;->areEqual(Ljava/lang/Object;Ljava/lang/Object;)Z
+
+    move-result p1
 
     if-eqz p1, :cond_0
 

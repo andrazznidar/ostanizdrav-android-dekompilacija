@@ -23,12 +23,20 @@
 .end annotation
 
 .annotation system Ldalvik/annotation/SourceDebugExtension;
-    value = "SMAP\nStrings.kt\nKotlin\n*S Kotlin\n*F\n+ 1 Strings.kt\nkotlin/text/StringsKt__StringsKt$rangesDelimitedBy$2\n+ 2 fake.kt\nkotlin/jvm/internal/FakeKt\n*L\n1#1,1485:1\n1#2:1486\n*E\n"
+    value = "SMAP\nStrings.kt\nKotlin\n*S Kotlin\n*F\n+ 1 Strings.kt\nkotlin/text/StringsKt__StringsKt$rangesDelimitedBy$2\n+ 2 fake.kt\nkotlin/jvm/internal/FakeKt\n*L\n1#1,1486:1\n1#2:1487\n*E\n"
 .end annotation
 
 
 # instance fields
 .field public final synthetic $delimitersList:Ljava/util/List;
+    .annotation system Ldalvik/annotation/Signature;
+        value = {
+            "Ljava/util/List<",
+            "Ljava/lang/String;",
+            ">;"
+        }
+    .end annotation
+.end field
 
 .field public final synthetic $ignoreCase:Z
 
@@ -36,6 +44,14 @@
 # direct methods
 .method public constructor <init>(Ljava/util/List;Z)V
     .locals 0
+    .annotation system Ldalvik/annotation/Signature;
+        value = {
+            "(",
+            "Ljava/util/List<",
+            "Ljava/lang/String;",
+            ">;Z)V"
+        }
+    .end annotation
 
     iput-object p1, p0, Lkotlin/text/StringsKt__StringsKt$rangesDelimitedBy$2;->$delimitersList:Ljava/util/List;
 
@@ -51,267 +67,292 @@
 
 # virtual methods
 .method public invoke(Ljava/lang/Object;Ljava/lang/Object;)Ljava/lang/Object;
-    .locals 13
+    .locals 17
 
-    check-cast p1, Ljava/lang/CharSequence;
+    move-object/from16 v0, p0
 
-    check-cast p2, Ljava/lang/Number;
+    move-object/from16 v7, p1
 
-    invoke-virtual {p2}, Ljava/lang/Number;->intValue()I
+    check-cast v7, Ljava/lang/CharSequence;
 
-    move-result p2
+    move-object/from16 v1, p2
 
-    const-string v0, "$receiver"
+    check-cast v1, Ljava/lang/Number;
 
-    invoke-static {p1, v0}, Lkotlin/jvm/internal/Intrinsics;->checkNotNullParameter(Ljava/lang/Object;Ljava/lang/String;)V
-
-    iget-object v6, p0, Lkotlin/text/StringsKt__StringsKt$rangesDelimitedBy$2;->$delimitersList:Ljava/util/List;
-
-    iget-boolean v7, p0, Lkotlin/text/StringsKt__StringsKt$rangesDelimitedBy$2;->$ignoreCase:Z
-
-    const/4 v0, 0x0
-
-    const/4 v8, 0x0
-
-    if-nez v7, :cond_1
-
-    invoke-interface {v6}, Ljava/util/Collection;->size()I
+    invoke-virtual {v1}, Ljava/lang/Number;->intValue()I
 
     move-result v1
 
-    const/4 v2, 0x1
+    const-string v2, "$this$$receiver"
 
-    if-ne v1, v2, :cond_1
+    invoke-static {v7, v2}, Lkotlin/jvm/internal/Intrinsics;->checkNotNullParameter(Ljava/lang/Object;Ljava/lang/String;)V
 
-    invoke-static {v6}, Lkotlin/collections/CollectionsKt___CollectionsKt;->single(Ljava/lang/Iterable;)Ljava/lang/Object;
+    iget-object v8, v0, Lkotlin/text/StringsKt__StringsKt$rangesDelimitedBy$2;->$delimitersList:Ljava/util/List;
 
-    move-result-object v1
+    iget-boolean v15, v0, Lkotlin/text/StringsKt__StringsKt$rangesDelimitedBy$2;->$ignoreCase:Z
 
-    check-cast v1, Ljava/lang/String;
+    const/4 v2, 0x0
 
-    const/4 v2, 0x4
+    const/16 v16, 0x0
 
-    invoke-static {p1, v1, p2, v0, v2}, Lkotlin/text/StringsKt__StringsKt;->indexOf$default(Ljava/lang/CharSequence;Ljava/lang/String;IZI)I
+    if-nez v15, :cond_1
 
-    move-result p1
+    invoke-interface {v8}, Ljava/util/Collection;->size()I
 
-    if-gez p1, :cond_0
+    move-result v3
+
+    const/4 v4, 0x1
+
+    if-ne v3, v4, :cond_1
+
+    invoke-static {v8}, Lkotlin/collections/CollectionsKt___CollectionsKt;->single(Ljava/lang/Iterable;)Ljava/lang/Object;
+
+    move-result-object v3
+
+    check-cast v3, Ljava/lang/String;
+
+    const/4 v4, 0x4
+
+    invoke-static {v7, v3, v1, v2, v4}, Lkotlin/text/StringsKt__StringsKt;->indexOf$default(Ljava/lang/CharSequence;Ljava/lang/String;IZI)I
+
+    move-result v1
+
+    if-gez v1, :cond_0
 
     goto/16 :goto_4
 
     :cond_0
-    invoke-static {p1}, Ljava/lang/Integer;->valueOf(I)Ljava/lang/Integer;
+    invoke-static {v1}, Ljava/lang/Integer;->valueOf(I)Ljava/lang/Integer;
 
-    move-result-object p1
+    move-result-object v1
 
-    new-instance p2, Lkotlin/Pair;
+    new-instance v2, Lkotlin/Pair;
 
-    invoke-direct {p2, p1, v1}, Lkotlin/Pair;-><init>(Ljava/lang/Object;Ljava/lang/Object;)V
+    invoke-direct {v2, v1, v3}, Lkotlin/Pair;-><init>(Ljava/lang/Object;Ljava/lang/Object;)V
 
     goto/16 :goto_5
 
     :cond_1
-    if-gez p2, :cond_2
+    new-instance v3, Lkotlin/ranges/IntRange;
 
-    move p2, v0
+    if-gez v1, :cond_2
+
+    move v1, v2
 
     :cond_2
-    new-instance v0, Lkotlin/ranges/IntRange;
+    invoke-interface {v7}, Ljava/lang/CharSequence;->length()I
 
-    invoke-interface {p1}, Ljava/lang/CharSequence;->length()I
+    move-result v2
 
-    move-result v1
+    invoke-direct {v3, v1, v2}, Lkotlin/ranges/IntRange;-><init>(II)V
 
-    invoke-direct {v0, p2, v1}, Lkotlin/ranges/IntRange;-><init>(II)V
+    instance-of v2, v7, Ljava/lang/String;
 
-    instance-of v1, p1, Ljava/lang/String;
+    if-eqz v2, :cond_9
 
-    if-eqz v1, :cond_7
+    iget v2, v3, Lkotlin/ranges/IntProgression;->last:I
 
-    iget v9, v0, Lkotlin/ranges/IntProgression;->last:I
+    iget v3, v3, Lkotlin/ranges/IntProgression;->step:I
 
-    iget v10, v0, Lkotlin/ranges/IntProgression;->step:I
+    if-lez v3, :cond_3
 
-    if-ltz v10, :cond_3
-
-    if-gt p2, v9, :cond_c
-
-    goto :goto_0
+    if-le v1, v2, :cond_4
 
     :cond_3
-    if-lt p2, v9, :cond_c
+    if-gez v3, :cond_10
 
-    :goto_0
-    invoke-interface {v6}, Ljava/lang/Iterable;->iterator()Ljava/util/Iterator;
-
-    move-result-object v11
+    if-gt v2, v1, :cond_10
 
     :cond_4
-    invoke-interface {v11}, Ljava/util/Iterator;->hasNext()Z
+    :goto_0
+    add-int v4, v1, v3
 
-    move-result v0
+    invoke-interface {v8}, Ljava/lang/Iterable;->iterator()Ljava/util/Iterator;
 
-    if-eqz v0, :cond_5
+    move-result-object v5
 
-    invoke-interface {v11}, Ljava/util/Iterator;->next()Ljava/lang/Object;
+    :cond_5
+    invoke-interface {v5}, Ljava/util/Iterator;->hasNext()Z
 
-    move-result-object v12
+    move-result v6
 
-    move-object v0, v12
+    if-eqz v6, :cond_6
 
-    check-cast v0, Ljava/lang/String;
+    invoke-interface {v5}, Ljava/util/Iterator;->next()Ljava/lang/Object;
 
-    const/4 v1, 0x0
+    move-result-object v6
 
-    move-object v2, p1
+    move-object v9, v6
 
-    check-cast v2, Ljava/lang/String;
+    check-cast v9, Ljava/lang/String;
 
-    invoke-virtual {v0}, Ljava/lang/String;->length()I
+    const/4 v10, 0x0
 
-    move-result v4
+    move-object v11, v7
 
-    move v3, p2
+    check-cast v11, Ljava/lang/String;
 
-    move v5, v7
+    invoke-virtual {v9}, Ljava/lang/String;->length()I
 
-    invoke-static/range {v0 .. v5}, Lkotlin/text/StringsKt__StringsJVMKt;->regionMatches(Ljava/lang/String;ILjava/lang/String;IIZ)Z
+    move-result v13
 
-    move-result v0
+    move v12, v1
 
-    if-eqz v0, :cond_4
+    move v14, v15
+
+    invoke-static/range {v9 .. v14}, Lkotlin/text/StringsKt__StringsJVMKt;->regionMatches(Ljava/lang/String;ILjava/lang/String;IIZ)Z
+
+    move-result v9
+
+    if-eqz v9, :cond_5
 
     goto :goto_1
 
-    :cond_5
-    move-object v12, v8
+    :cond_6
+    move-object/from16 v6, v16
 
     :goto_1
-    check-cast v12, Ljava/lang/String;
+    check-cast v6, Ljava/lang/String;
 
-    if-eqz v12, :cond_6
+    if-eqz v6, :cond_7
 
-    invoke-static {p2}, Ljava/lang/Integer;->valueOf(I)Ljava/lang/Integer;
+    invoke-static {v1}, Ljava/lang/Integer;->valueOf(I)Ljava/lang/Integer;
 
-    move-result-object p1
+    move-result-object v1
 
-    new-instance p2, Lkotlin/Pair;
+    new-instance v2, Lkotlin/Pair;
 
-    invoke-direct {p2, p1, v12}, Lkotlin/Pair;-><init>(Ljava/lang/Object;Ljava/lang/Object;)V
+    invoke-direct {v2, v1, v6}, Lkotlin/Pair;-><init>(Ljava/lang/Object;Ljava/lang/Object;)V
 
     goto :goto_5
 
-    :cond_6
-    if-eq p2, v9, :cond_c
+    :cond_7
+    if-ne v1, v2, :cond_8
 
-    add-int/2addr p2, v10
+    goto :goto_4
+
+    :cond_8
+    move v1, v4
 
     goto :goto_0
 
-    :cond_7
-    iget v9, v0, Lkotlin/ranges/IntProgression;->last:I
+    :cond_9
+    iget v9, v3, Lkotlin/ranges/IntProgression;->last:I
 
-    iget v10, v0, Lkotlin/ranges/IntProgression;->step:I
+    iget v10, v3, Lkotlin/ranges/IntProgression;->step:I
 
-    if-ltz v10, :cond_8
+    if-lez v10, :cond_a
 
-    if-gt p2, v9, :cond_c
+    if-le v1, v9, :cond_b
 
-    goto :goto_2
+    :cond_a
+    if-gez v10, :cond_10
 
-    :cond_8
-    if-lt p2, v9, :cond_c
+    if-gt v9, v1, :cond_10
+
+    :cond_b
+    move v11, v1
 
     :goto_2
-    invoke-interface {v6}, Ljava/lang/Iterable;->iterator()Ljava/util/Iterator;
+    add-int v12, v11, v10
 
-    move-result-object v11
+    invoke-interface {v8}, Ljava/lang/Iterable;->iterator()Ljava/util/Iterator;
 
-    :cond_9
-    invoke-interface {v11}, Ljava/util/Iterator;->hasNext()Z
+    move-result-object v13
 
-    move-result v0
+    :cond_c
+    invoke-interface {v13}, Ljava/util/Iterator;->hasNext()Z
 
-    if-eqz v0, :cond_a
+    move-result v1
 
-    invoke-interface {v11}, Ljava/util/Iterator;->next()Ljava/lang/Object;
+    if-eqz v1, :cond_d
 
-    move-result-object v12
+    invoke-interface {v13}, Ljava/util/Iterator;->next()Ljava/lang/Object;
 
-    move-object v0, v12
+    move-result-object v14
 
-    check-cast v0, Ljava/lang/String;
+    move-object v1, v14
 
-    const/4 v1, 0x0
+    check-cast v1, Ljava/lang/String;
 
-    invoke-virtual {v0}, Ljava/lang/String;->length()I
+    const/4 v2, 0x0
 
-    move-result v4
+    invoke-virtual {v1}, Ljava/lang/String;->length()I
 
-    move-object v2, p1
+    move-result v5
 
-    move v3, p2
+    move-object v3, v7
 
-    move v5, v7
+    move v4, v11
 
-    invoke-static/range {v0 .. v5}, Lkotlin/text/StringsKt__StringsKt;->regionMatchesImpl(Ljava/lang/CharSequence;ILjava/lang/CharSequence;IIZ)Z
+    move v6, v15
 
-    move-result v0
+    invoke-static/range {v1 .. v6}, Lkotlin/text/StringsKt__StringsKt;->regionMatchesImpl(Ljava/lang/CharSequence;ILjava/lang/CharSequence;IIZ)Z
 
-    if-eqz v0, :cond_9
+    move-result v1
+
+    if-eqz v1, :cond_c
 
     goto :goto_3
 
-    :cond_a
-    move-object v12, v8
+    :cond_d
+    move-object/from16 v14, v16
 
     :goto_3
-    check-cast v12, Ljava/lang/String;
+    check-cast v14, Ljava/lang/String;
 
-    if-eqz v12, :cond_b
+    if-eqz v14, :cond_e
 
-    invoke-static {p2}, Ljava/lang/Integer;->valueOf(I)Ljava/lang/Integer;
+    invoke-static {v11}, Ljava/lang/Integer;->valueOf(I)Ljava/lang/Integer;
 
-    move-result-object p1
+    move-result-object v1
 
-    new-instance p2, Lkotlin/Pair;
+    new-instance v2, Lkotlin/Pair;
 
-    invoke-direct {p2, p1, v12}, Lkotlin/Pair;-><init>(Ljava/lang/Object;Ljava/lang/Object;)V
+    invoke-direct {v2, v1, v14}, Lkotlin/Pair;-><init>(Ljava/lang/Object;Ljava/lang/Object;)V
 
     goto :goto_5
 
-    :cond_b
-    if-eq p2, v9, :cond_c
+    :cond_e
+    if-ne v11, v9, :cond_f
 
-    add-int/2addr p2, v10
+    goto :goto_4
+
+    :cond_f
+    move v11, v12
 
     goto :goto_2
 
-    :cond_c
+    :cond_10
     :goto_4
-    move-object p2, v8
+    move-object/from16 v2, v16
 
     :goto_5
-    if-eqz p2, :cond_d
+    if-nez v2, :cond_11
 
-    iget-object p1, p2, Lkotlin/Pair;->first:Ljava/lang/Object;
+    goto :goto_6
 
-    iget-object p2, p2, Lkotlin/Pair;->second:Ljava/lang/Object;
+    :cond_11
+    iget-object v1, v2, Lkotlin/Pair;->first:Ljava/lang/Object;
 
-    check-cast p2, Ljava/lang/String;
+    iget-object v2, v2, Lkotlin/Pair;->second:Ljava/lang/Object;
 
-    invoke-virtual {p2}, Ljava/lang/String;->length()I
+    check-cast v2, Ljava/lang/String;
 
-    move-result p2
+    invoke-virtual {v2}, Ljava/lang/String;->length()I
 
-    invoke-static {p2}, Ljava/lang/Integer;->valueOf(I)Ljava/lang/Integer;
+    move-result v2
 
-    move-result-object p2
+    invoke-static {v2}, Ljava/lang/Integer;->valueOf(I)Ljava/lang/Integer;
 
-    new-instance v8, Lkotlin/Pair;
+    move-result-object v2
 
-    invoke-direct {v8, p1, p2}, Lkotlin/Pair;-><init>(Ljava/lang/Object;Ljava/lang/Object;)V
+    new-instance v3, Lkotlin/Pair;
 
-    :cond_d
-    return-object v8
+    invoke-direct {v3, v1, v2}, Lkotlin/Pair;-><init>(Ljava/lang/Object;Ljava/lang/Object;)V
+
+    move-object/from16 v16, v3
+
+    :goto_6
+    return-object v16
 .end method

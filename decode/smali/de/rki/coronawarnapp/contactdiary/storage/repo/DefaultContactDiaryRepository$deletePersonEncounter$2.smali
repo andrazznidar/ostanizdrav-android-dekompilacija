@@ -33,7 +33,7 @@
     c = "de.rki.coronawarnapp.contactdiary.storage.repo.DefaultContactDiaryRepository$deletePersonEncounter$2"
     f = "DefaultContactDiaryRepository.kt"
     l = {
-        0xec
+        0xf2
     }
     m = "invokeSuspend"
 .end annotation
@@ -75,6 +75,30 @@
 
 
 # virtual methods
+.method public final create(Lkotlin/coroutines/Continuation;)Lkotlin/coroutines/Continuation;
+    .locals 3
+    .annotation system Ldalvik/annotation/Signature;
+        value = {
+            "(",
+            "Lkotlin/coroutines/Continuation<",
+            "*>;)",
+            "Lkotlin/coroutines/Continuation<",
+            "Lkotlin/Unit;",
+            ">;"
+        }
+    .end annotation
+
+    new-instance v0, Lde/rki/coronawarnapp/contactdiary/storage/repo/DefaultContactDiaryRepository$deletePersonEncounter$2;
+
+    iget-object v1, p0, Lde/rki/coronawarnapp/contactdiary/storage/repo/DefaultContactDiaryRepository$deletePersonEncounter$2;->$contactDiaryPersonEncounter:Lde/rki/coronawarnapp/contactdiary/model/ContactDiaryPersonEncounter;
+
+    iget-object v2, p0, Lde/rki/coronawarnapp/contactdiary/storage/repo/DefaultContactDiaryRepository$deletePersonEncounter$2;->this$0:Lde/rki/coronawarnapp/contactdiary/storage/repo/DefaultContactDiaryRepository;
+
+    invoke-direct {v0, v1, v2, p1}, Lde/rki/coronawarnapp/contactdiary/storage/repo/DefaultContactDiaryRepository$deletePersonEncounter$2;-><init>(Lde/rki/coronawarnapp/contactdiary/model/ContactDiaryPersonEncounter;Lde/rki/coronawarnapp/contactdiary/storage/repo/DefaultContactDiaryRepository;Lkotlin/coroutines/Continuation;)V
+
+    return-object v0
+.end method
+
 .method public invoke(Ljava/lang/Object;)Ljava/lang/Object;
     .locals 3
 
@@ -128,7 +152,7 @@
 
     iget-object p1, p0, Lde/rki/coronawarnapp/contactdiary/storage/repo/DefaultContactDiaryRepository$deletePersonEncounter$2;->$contactDiaryPersonEncounter:Lde/rki/coronawarnapp/contactdiary/model/ContactDiaryPersonEncounter;
 
-    invoke-static {p1}, Lde/rki/coronawarnapp/contactdiary/storage/entity/ContactDiaryPersonEncounterEntityKt;->toContactDiaryPersonEncounterEntity(Lde/rki/coronawarnapp/contactdiary/model/ContactDiaryPersonEncounter;)Lde/rki/coronawarnapp/contactdiary/storage/entity/ContactDiaryPersonEncounterEntity;
+    invoke-static {p1}, Lcom/google/android/play/core/internal/zzcj;->toContactDiaryPersonEncounterEntity(Lde/rki/coronawarnapp/contactdiary/model/ContactDiaryPersonEncounter;)Lde/rki/coronawarnapp/contactdiary/storage/entity/ContactDiaryPersonEncounterEntity;
 
     move-result-object p1
 
@@ -140,7 +164,7 @@
 
     iput v2, p0, Lde/rki/coronawarnapp/contactdiary/storage/repo/DefaultContactDiaryRepository$deletePersonEncounter$2;->label:I
 
-    invoke-virtual {v1, p1, p0}, Lde/rki/coronawarnapp/contactdiary/storage/dao/BaseRoomDao;->delete(Ljava/lang/Object;Lkotlin/coroutines/Continuation;)Ljava/lang/Object;
+    invoke-virtual {v1, p1, p0}, Lorg/joda/time/Chronology;->delete(Ljava/lang/Object;Lkotlin/coroutines/Continuation;)Ljava/lang/Object;
 
     move-result-object p1
 

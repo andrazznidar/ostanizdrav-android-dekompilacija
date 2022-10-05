@@ -17,7 +17,7 @@
     c = "de.rki.coronawarnapp.covidcertificate.vaccination.core.repository.VaccinationRepository"
     f = "VaccinationRepository.kt"
     l = {
-        0xa2
+        0xb3
     }
     m = "deleteCertificate"
 .end annotation

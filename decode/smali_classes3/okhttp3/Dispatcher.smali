@@ -329,10 +329,6 @@
 
     invoke-static {v5}, Ljava/util/Objects;->requireNonNull(Ljava/lang/Object;)Ljava/lang/Object;
 
-    const-string v7, "executorService"
-
-    invoke-static {v6, v7}, Lkotlin/jvm/internal/Intrinsics;->checkNotNullParameter(Ljava/lang/Object;Ljava/lang/String;)V
-
     iget-object v7, v5, Lokhttp3/internal/connection/RealCall$AsyncCall;->this$0:Lokhttp3/internal/connection/RealCall;
 
     iget-object v7, v7, Lokhttp3/internal/connection/RealCall;->client:Lokhttp3/OkHttpClient;

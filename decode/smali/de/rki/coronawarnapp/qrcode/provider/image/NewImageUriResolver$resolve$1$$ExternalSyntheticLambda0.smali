@@ -1,5 +1,6 @@
 .class public final synthetic Lde/rki/coronawarnapp/qrcode/provider/image/NewImageUriResolver$resolve$1$$ExternalSyntheticLambda0;
 .super Ljava/lang/Object;
+.source "R8$$SyntheticClass"
 
 # interfaces
 .implements Landroid/graphics/ImageDecoder$OnHeaderDecodedListener;

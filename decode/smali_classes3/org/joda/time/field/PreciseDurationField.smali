@@ -106,19 +106,13 @@
     :cond_4
     new-instance p1, Ljava/lang/ArithmeticException;
 
-    new-instance p2, Ljava/lang/StringBuilder;
+    const-string p2, "Multiplication overflows a long: "
 
-    invoke-direct {p2}, Ljava/lang/StringBuilder;-><init>()V
+    const-string v2, " * "
 
-    const-string v2, "Multiplication overflows a long: "
+    invoke-static {p2, p3, p4, v2}, Landroidx/camera/core/CameraX$$ExternalSyntheticOutline0;->m(Ljava/lang/String;JLjava/lang/String;)Ljava/lang/StringBuilder;
 
-    invoke-virtual {p2, v2}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
-
-    invoke-virtual {p2, p3, p4}, Ljava/lang/StringBuilder;->append(J)Ljava/lang/StringBuilder;
-
-    const-string p3, " * "
-
-    invoke-virtual {p2, p3}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+    move-result-object p2
 
     invoke-virtual {p2, v0, v1}, Ljava/lang/StringBuilder;->append(J)Ljava/lang/StringBuilder;
 

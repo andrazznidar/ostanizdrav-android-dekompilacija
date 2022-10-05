@@ -66,7 +66,7 @@
         }
     .end annotation
 
-    const p1, 0x7f0d0128
+    const p1, 0x7f0d0133
 
     invoke-direct {p0, p1, p2}, Lde/rki/coronawarnapp/ui/lists/BaseAdapter$VH;-><init>(ILandroid/view/ViewGroup;)V
 
@@ -74,7 +74,7 @@
 
     invoke-direct {p1, p0}, Lde/rki/coronawarnapp/release/ItemAdapter$ViewHolder$viewBinding$1;-><init>(Lde/rki/coronawarnapp/release/ItemAdapter$ViewHolder;)V
 
-    invoke-static {p1}, Lkotlin/LazyKt__LazyKt;->lazy(Lkotlin/jvm/functions/Function0;)Lkotlin/Lazy;
+    invoke-static {p1}, Lkotlin/LazyKt__LazyJVMKt;->lazy(Lkotlin/jvm/functions/Function0;)Lkotlin/Lazy;
 
     move-result-object p1
 

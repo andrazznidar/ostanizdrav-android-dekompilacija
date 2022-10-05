@@ -182,7 +182,7 @@
 
     const-string v4, " not permitted by network security policy"
 
-    invoke-static {v3, v0, v4}, Landroidx/core/graphics/PathParser$$ExternalSyntheticOutline0;->m(Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;)Ljava/lang/String;
+    invoke-static {v3, v0, v4}, Landroidx/concurrent/futures/AbstractResolvableFuture$$ExternalSyntheticOutline1;->m(Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;)Ljava/lang/String;
 
     move-result-object v0
 
@@ -623,9 +623,9 @@
     :goto_1
     iput-object v0, p0, Lokhttp3/internal/connection/RealConnection;->rawSocket:Ljava/net/Socket;
 
-    iget-object v2, p0, Lokhttp3/internal/connection/RealConnection;->route:Lokhttp3/Route;
+    iget-object v1, p0, Lokhttp3/internal/connection/RealConnection;->route:Lokhttp3/Route;
 
-    iget-object v2, v2, Lokhttp3/Route;->socketAddress:Ljava/net/InetSocketAddress;
+    iget-object v1, v1, Lokhttp3/Route;->socketAddress:Ljava/net/InetSocketAddress;
 
     invoke-static {p4}, Ljava/util/Objects;->requireNonNull(Ljava/lang/Object;)Ljava/lang/Object;
 
@@ -634,10 +634,6 @@
     invoke-static {p3, p4}, Lkotlin/jvm/internal/Intrinsics;->checkNotNullParameter(Ljava/lang/Object;Ljava/lang/String;)V
 
     const-string p3, "inetSocketAddress"
-
-    invoke-static {v2, p3}, Lkotlin/jvm/internal/Intrinsics;->checkNotNullParameter(Ljava/lang/Object;Ljava/lang/String;)V
-
-    const-string p3, "proxy"
 
     invoke-static {v1, p3}, Lkotlin/jvm/internal/Intrinsics;->checkNotNullParameter(Ljava/lang/Object;Ljava/lang/String;)V
 
@@ -937,9 +933,7 @@
 
     invoke-virtual {v12, v4, v5}, Lokhttp3/internal/http1/Http1ExchangeCodec;->writeRequest(Lokhttp3/Headers;Ljava/lang/String;)V
 
-    iget-object v4, v12, Lokhttp3/internal/http1/Http1ExchangeCodec;->sink:Lokio/BufferedSink;
-
-    invoke-interface {v4}, Lokio/BufferedSink;->flush()V
+    invoke-interface {v11}, Lokio/BufferedSink;->flush()V
 
     const/4 v4, 0x0
 
@@ -1295,8 +1289,17 @@
 
     move-result-object p1
 
-    if-eqz p1, :cond_3
+    if-nez p1, :cond_3
 
+    new-instance p1, Ljava/lang/NullPointerException;
+
+    const-string p2, "null cannot be cast to non-null type java.security.cert.X509Certificate"
+
+    invoke-direct {p1, p2}, Ljava/lang/NullPointerException;-><init>(Ljava/lang/String;)V
+
+    throw p1
+
+    :cond_3
     check-cast p1, Ljava/security/cert/X509Certificate;
 
     new-instance p2, Ljavax/net/ssl/SSLPeerUnverifiedException;
@@ -1384,15 +1387,6 @@
     invoke-direct {p2, p1}, Ljavax/net/ssl/SSLPeerUnverifiedException;-><init>(Ljava/lang/String;)V
 
     throw p2
-
-    :cond_3
-    new-instance p1, Ljava/lang/NullPointerException;
-
-    const-string p2, "null cannot be cast to non-null type java.security.cert.X509Certificate"
-
-    invoke-direct {p1, p2}, Ljava/lang/NullPointerException;-><init>(Ljava/lang/String;)V
-
-    throw p1
 
     :cond_4
     new-instance p1, Ljavax/net/ssl/SSLPeerUnverifiedException;
@@ -2083,14 +2077,6 @@
     if-ltz v0, :cond_4
 
     if-eqz p1, :cond_4
-
-    const-string p1, "$this$isHealthy"
-
-    invoke-static {v3, p1}, Lkotlin/jvm/internal/Intrinsics;->checkNotNullParameter(Ljava/lang/Object;Ljava/lang/String;)V
-
-    const-string p1, "source"
-
-    invoke-static {v4, p1}, Lkotlin/jvm/internal/Intrinsics;->checkNotNullParameter(Ljava/lang/Object;Ljava/lang/String;)V
 
     :try_start_3
     invoke-virtual {v3}, Ljava/net/Socket;->getSoTimeout()I

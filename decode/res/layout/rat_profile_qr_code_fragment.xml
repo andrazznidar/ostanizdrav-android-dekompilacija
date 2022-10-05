@@ -10,7 +10,7 @@
                 </LinearLayout>
                 <com.google.android.material.appbar.MaterialToolbar android:theme="@style/Theme.MaterialComponents" android:id="@id/toolbar" android:layout_width="fill_parent" android:layout_height="?actionBarSize" app:layout_collapseMode="pin" app:layout_scrollFlags="scroll|enterAlways" app:menu="@menu/menu_rat_qr_code_profile" app:navigationIcon="@drawable/ic_close_white" app:popupTheme="@style/Theme.MaterialComponents.DayNight">
                     <FrameLayout android:layout_width="fill_parent" android:layout_height="wrap_content" android:layout_marginEnd="24.0dip">
-                        <ImageView android:layout_gravity="center" android:visibility="gone" android:layout_width="wrap_content" android:layout_height="42.0dip" android:scaleType="center" android:importantForAccessibility="no" app:srcCompat="@drawable/ic_cwa_logo_white" />
+                        <ImageView android:layout_gravity="center" android:layout_width="wrap_content" android:layout_height="wrap_content" android:scaleType="center" android:importantForAccessibility="no" app:srcCompat="@drawable/ic_cwa_logo_white" />
                     </FrameLayout>
                 </com.google.android.material.appbar.MaterialToolbar>
             </com.google.android.material.appbar.CollapsingToolbarLayout>

@@ -86,10 +86,6 @@
 
     iget-object p2, p0, Lcom/fasterxml/jackson/module/kotlin/KotlinObjectSingletonDeserializer;->singletonInstance:Ljava/lang/Object;
 
-    const-string v0, "$this$asSingletonDeserializer"
-
-    invoke-static {p1, v0}, Lkotlin/jvm/internal/Intrinsics;->checkNotNullParameter(Ljava/lang/Object;Ljava/lang/String;)V
-
     const-string/jumbo v0, "singleton"
 
     invoke-static {p2, v0}, Lkotlin/jvm/internal/Intrinsics;->checkNotNullParameter(Ljava/lang/Object;Ljava/lang/String;)V

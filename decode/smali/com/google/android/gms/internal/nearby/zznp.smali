@@ -4,100 +4,6 @@
 
 
 # direct methods
-.method public static final getEnhancement(Lkotlin/reflect/jvm/internal/impl/types/KotlinType;)Lkotlin/reflect/jvm/internal/impl/types/KotlinType;
-    .locals 1
-
-    const-string v0, "<this>"
-
-    invoke-static {p0, v0}, Lkotlin/jvm/internal/Intrinsics;->checkNotNullParameter(Ljava/lang/Object;Ljava/lang/String;)V
-
-    instance-of v0, p0, Lkotlin/reflect/jvm/internal/impl/types/TypeWithEnhancement;
-
-    if-eqz v0, :cond_0
-
-    check-cast p0, Lkotlin/reflect/jvm/internal/impl/types/TypeWithEnhancement;
-
-    invoke-interface {p0}, Lkotlin/reflect/jvm/internal/impl/types/TypeWithEnhancement;->getEnhancement()Lkotlin/reflect/jvm/internal/impl/types/KotlinType;
-
-    move-result-object p0
-
-    goto :goto_0
-
-    :cond_0
-    const/4 p0, 0x0
-
-    :goto_0
-    return-object p0
-.end method
-
-.method public static final inheritEnhancement(Lkotlin/reflect/jvm/internal/impl/types/UnwrappedType;Lkotlin/reflect/jvm/internal/impl/types/KotlinType;)Lkotlin/reflect/jvm/internal/impl/types/UnwrappedType;
-    .locals 1
-
-    const-string v0, "<this>"
-
-    invoke-static {p0, v0}, Lkotlin/jvm/internal/Intrinsics;->checkNotNullParameter(Ljava/lang/Object;Ljava/lang/String;)V
-
-    const-string v0, "origin"
-
-    invoke-static {p1, v0}, Lkotlin/jvm/internal/Intrinsics;->checkNotNullParameter(Ljava/lang/Object;Ljava/lang/String;)V
-
-    invoke-static {p1}, Lcom/google/android/gms/internal/nearby/zznp;->getEnhancement(Lkotlin/reflect/jvm/internal/impl/types/KotlinType;)Lkotlin/reflect/jvm/internal/impl/types/KotlinType;
-
-    move-result-object p1
-
-    invoke-static {p0, p1}, Lcom/google/android/gms/internal/nearby/zznp;->wrapEnhancement(Lkotlin/reflect/jvm/internal/impl/types/UnwrappedType;Lkotlin/reflect/jvm/internal/impl/types/KotlinType;)Lkotlin/reflect/jvm/internal/impl/types/UnwrappedType;
-
-    move-result-object p0
-
-    return-object p0
-.end method
-
-.method public static final wrapEnhancement(Lkotlin/reflect/jvm/internal/impl/types/UnwrappedType;Lkotlin/reflect/jvm/internal/impl/types/KotlinType;)Lkotlin/reflect/jvm/internal/impl/types/UnwrappedType;
-    .locals 1
-
-    const-string v0, "<this>"
-
-    invoke-static {p0, v0}, Lkotlin/jvm/internal/Intrinsics;->checkNotNullParameter(Ljava/lang/Object;Ljava/lang/String;)V
-
-    if-nez p1, :cond_0
-
-    return-object p0
-
-    :cond_0
-    instance-of v0, p0, Lkotlin/reflect/jvm/internal/impl/types/SimpleType;
-
-    if-eqz v0, :cond_1
-
-    new-instance v0, Lkotlin/reflect/jvm/internal/impl/types/SimpleTypeWithEnhancement;
-
-    check-cast p0, Lkotlin/reflect/jvm/internal/impl/types/SimpleType;
-
-    invoke-direct {v0, p0, p1}, Lkotlin/reflect/jvm/internal/impl/types/SimpleTypeWithEnhancement;-><init>(Lkotlin/reflect/jvm/internal/impl/types/SimpleType;Lkotlin/reflect/jvm/internal/impl/types/KotlinType;)V
-
-    goto :goto_0
-
-    :cond_1
-    instance-of v0, p0, Lkotlin/reflect/jvm/internal/impl/types/FlexibleType;
-
-    if-eqz v0, :cond_2
-
-    new-instance v0, Lkotlin/reflect/jvm/internal/impl/types/FlexibleTypeWithEnhancement;
-
-    check-cast p0, Lkotlin/reflect/jvm/internal/impl/types/FlexibleType;
-
-    invoke-direct {v0, p0, p1}, Lkotlin/reflect/jvm/internal/impl/types/FlexibleTypeWithEnhancement;-><init>(Lkotlin/reflect/jvm/internal/impl/types/FlexibleType;Lkotlin/reflect/jvm/internal/impl/types/KotlinType;)V
-
-    :goto_0
-    return-object v0
-
-    :cond_2
-    new-instance p0, Lkotlin/NoWhenBranchMatchedException;
-
-    invoke-direct {p0}, Lkotlin/NoWhenBranchMatchedException;-><init>()V
-
-    throw p0
-.end method
-
 .method public static zzb(IILjava/lang/String;)I
     .locals 5
 
@@ -132,7 +38,7 @@
 
     const-string v0, "negative size: "
 
-    invoke-static {p2, v0, p1}, Lcom/google/android/gms/common/api/internal/BasePendingResult$CallbackHandler$$ExternalSyntheticOutline0;->m(ILjava/lang/String;I)Ljava/lang/String;
+    invoke-static {p2, v0, p1}, Lboofcv/alg/misc/HistogramStatistics$$ExternalSyntheticOutline0;->m(ILjava/lang/String;I)Ljava/lang/String;
 
     move-result-object p1
 
@@ -161,7 +67,7 @@
 
     const-string p0, "%s (%s) must be less than size (%s)"
 
-    invoke-static {p0, v4}, Lcoil/util/-Logs;->zza(Ljava/lang/String;[Ljava/lang/Object;)Ljava/lang/String;
+    invoke-static {p0, v4}, Lcom/google/android/gms/internal/nearby/zznr;->zza(Ljava/lang/String;[Ljava/lang/Object;)Ljava/lang/String;
 
     move-result-object p0
 
@@ -180,7 +86,7 @@
 
     const-string p0, "%s (%s) must not be negative"
 
-    invoke-static {p0, p1}, Lcoil/util/-Logs;->zza(Ljava/lang/String;[Ljava/lang/Object;)Ljava/lang/String;
+    invoke-static {p0, p1}, Lcom/google/android/gms/internal/nearby/zznr;->zza(Ljava/lang/String;[Ljava/lang/Object;)Ljava/lang/String;
 
     move-result-object p0
 
@@ -241,7 +147,7 @@
 
     const-string p0, "end index (%s) must not be less than start index (%s)"
 
-    invoke-static {p0, p2}, Lcoil/util/-Logs;->zza(Ljava/lang/String;[Ljava/lang/Object;)Ljava/lang/String;
+    invoke-static {p0, p2}, Lcom/google/android/gms/internal/nearby/zznr;->zza(Ljava/lang/String;[Ljava/lang/Object;)Ljava/lang/String;
 
     move-result-object p0
 
@@ -293,7 +199,7 @@
 
     const-string p0, "%s (%s) must not be negative"
 
-    invoke-static {p0, p1}, Lcoil/util/-Logs;->zza(Ljava/lang/String;[Ljava/lang/Object;)Ljava/lang/String;
+    invoke-static {p0, p1}, Lcom/google/android/gms/internal/nearby/zznr;->zza(Ljava/lang/String;[Ljava/lang/Object;)Ljava/lang/String;
 
     move-result-object p0
 
@@ -322,7 +228,7 @@
 
     const-string p0, "%s (%s) must not be greater than size (%s)"
 
-    invoke-static {p0, v3}, Lcoil/util/-Logs;->zza(Ljava/lang/String;[Ljava/lang/Object;)Ljava/lang/String;
+    invoke-static {p0, v3}, Lcom/google/android/gms/internal/nearby/zznr;->zza(Ljava/lang/String;[Ljava/lang/Object;)Ljava/lang/String;
 
     move-result-object p0
 
@@ -335,7 +241,7 @@
 
     const-string v0, "negative size: "
 
-    invoke-static {p2, v0, p1}, Lcom/google/android/gms/common/api/internal/BasePendingResult$CallbackHandler$$ExternalSyntheticOutline0;->m(ILjava/lang/String;I)Ljava/lang/String;
+    invoke-static {p2, v0, p1}, Lboofcv/alg/misc/HistogramStatistics$$ExternalSyntheticOutline0;->m(ILjava/lang/String;I)Ljava/lang/String;
 
     move-result-object p1
 

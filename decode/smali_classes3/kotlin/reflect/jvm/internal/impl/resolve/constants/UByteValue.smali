@@ -61,6 +61,10 @@
 
     move-result-object p1
 
+    const-string v0, "createErrorType(\"Unsigned type UByte not found\")"
+
+    invoke-static {p1, v0}, Lkotlin/jvm/internal/Intrinsics;->checkNotNullExpressionValue(Ljava/lang/Object;Ljava/lang/String;)V
+
     :cond_1
     return-object p1
 .end method
@@ -72,7 +76,9 @@
 
     invoke-direct {v0}, Ljava/lang/StringBuilder;-><init>()V
 
-    iget-object v1, p0, Lkotlin/reflect/jvm/internal/impl/resolve/constants/ConstantValue;->value:Ljava/lang/Object;
+    invoke-virtual {p0}, Lkotlin/reflect/jvm/internal/impl/resolve/constants/ConstantValue;->getValue()Ljava/lang/Object;
+
+    move-result-object v1
 
     check-cast v1, Ljava/lang/Number;
 

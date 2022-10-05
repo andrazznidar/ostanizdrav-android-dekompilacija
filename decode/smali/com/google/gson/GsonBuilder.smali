@@ -53,6 +53,10 @@
 
 .field public longSerializationPolicy:Lcom/google/gson/LongSerializationPolicy;
 
+.field public numberToNumberStrategy:Lcom/google/gson/ToNumberStrategy;
+
+.field public objectToNumberStrategy:Lcom/google/gson/ToNumberStrategy;
+
 .field public prettyPrinting:Z
 
 .field public serializeNulls:Z
@@ -122,6 +126,14 @@
 
     iput-boolean v0, p0, Lcom/google/gson/GsonBuilder;->lenient:Z
 
+    sget-object v0, Lcom/google/gson/ToNumberPolicy;->DOUBLE:Lcom/google/gson/ToNumberPolicy;
+
+    iput-object v0, p0, Lcom/google/gson/GsonBuilder;->objectToNumberStrategy:Lcom/google/gson/ToNumberStrategy;
+
+    sget-object v0, Lcom/google/gson/ToNumberPolicy;->LAZILY_PARSED_NUMBER:Lcom/google/gson/ToNumberPolicy;
+
+    iput-object v0, p0, Lcom/google/gson/GsonBuilder;->numberToNumberStrategy:Lcom/google/gson/ToNumberStrategy;
+
     return-void
 .end method
 
@@ -184,6 +196,14 @@
 
     iput-boolean v3, p0, Lcom/google/gson/GsonBuilder;->lenient:Z
 
+    sget-object v3, Lcom/google/gson/ToNumberPolicy;->DOUBLE:Lcom/google/gson/ToNumberPolicy;
+
+    iput-object v3, p0, Lcom/google/gson/GsonBuilder;->objectToNumberStrategy:Lcom/google/gson/ToNumberStrategy;
+
+    sget-object v3, Lcom/google/gson/ToNumberPolicy;->LAZILY_PARSED_NUMBER:Lcom/google/gson/ToNumberPolicy;
+
+    iput-object v3, p0, Lcom/google/gson/GsonBuilder;->numberToNumberStrategy:Lcom/google/gson/ToNumberStrategy;
+
     iget-object v3, p1, Lcom/google/gson/Gson;->excluder:Lcom/google/gson/internal/Excluder;
 
     iput-object v3, p0, Lcom/google/gson/GsonBuilder;->excluder:Lcom/google/gson/internal/Excluder;
@@ -244,9 +264,17 @@
 
     invoke-virtual {v1, v0}, Ljava/util/ArrayList;->addAll(Ljava/util/Collection;)Z
 
-    iget-object p1, p1, Lcom/google/gson/Gson;->builderHierarchyFactories:Ljava/util/List;
+    iget-object v0, p1, Lcom/google/gson/Gson;->builderHierarchyFactories:Ljava/util/List;
 
-    invoke-virtual {v2, p1}, Ljava/util/ArrayList;->addAll(Ljava/util/Collection;)Z
+    invoke-virtual {v2, v0}, Ljava/util/ArrayList;->addAll(Ljava/util/Collection;)Z
+
+    iget-object v0, p1, Lcom/google/gson/Gson;->objectToNumberStrategy:Lcom/google/gson/ToNumberStrategy;
+
+    iput-object v0, p0, Lcom/google/gson/GsonBuilder;->objectToNumberStrategy:Lcom/google/gson/ToNumberStrategy;
+
+    iget-object p1, p1, Lcom/google/gson/Gson;->numberToNumberStrategy:Lcom/google/gson/ToNumberStrategy;
+
+    iput-object p1, p0, Lcom/google/gson/GsonBuilder;->numberToNumberStrategy:Lcom/google/gson/ToNumberStrategy;
 
     return-void
 .end method
@@ -254,7 +282,7 @@
 
 # virtual methods
 .method public create()Lcom/google/gson/Gson;
-    .locals 21
+    .locals 24
 
     move-object/from16 v0, p0
 
@@ -300,100 +328,98 @@
 
     iget v3, v0, Lcom/google/gson/GsonBuilder;->timeStyle:I
 
+    sget-boolean v4, Lcom/google/gson/internal/sql/SqlTypesSupport;->SUPPORTS_SQL_TYPES:Z
+
+    const/4 v5, 0x0
+
     if-eqz v1, :cond_0
 
     invoke-virtual {v1}, Ljava/lang/String;->trim()Ljava/lang/String;
 
-    move-result-object v4
+    move-result-object v6
 
-    const-string v5, ""
+    invoke-virtual {v6}, Ljava/lang/String;->isEmpty()Z
 
-    invoke-virtual {v5, v4}, Ljava/lang/String;->equals(Ljava/lang/Object;)Z
+    move-result v6
 
-    move-result v4
+    if-nez v6, :cond_0
 
-    if-nez v4, :cond_0
+    sget-object v2, Lcom/google/gson/internal/bind/DefaultDateTypeAdapter$DateType;->DATE:Lcom/google/gson/internal/bind/DefaultDateTypeAdapter$DateType;
 
-    new-instance v2, Lcom/google/gson/DefaultDateTypeAdapter;
+    invoke-virtual {v2, v1}, Lcom/google/gson/internal/bind/DefaultDateTypeAdapter$DateType;->createAdapterFactory(Ljava/lang/String;)Lcom/google/gson/TypeAdapterFactory;
 
-    const-class v3, Ljava/util/Date;
+    move-result-object v2
 
-    invoke-direct {v2, v3, v1}, Lcom/google/gson/DefaultDateTypeAdapter;-><init>(Ljava/lang/Class;Ljava/lang/String;)V
+    if-eqz v4, :cond_2
 
-    new-instance v3, Lcom/google/gson/DefaultDateTypeAdapter;
+    sget-object v3, Lcom/google/gson/internal/sql/SqlTypesSupport;->TIMESTAMP_DATE_TYPE:Lcom/google/gson/internal/bind/DefaultDateTypeAdapter$DateType;
 
-    const-class v4, Ljava/sql/Timestamp;
+    invoke-virtual {v3, v1}, Lcom/google/gson/internal/bind/DefaultDateTypeAdapter$DateType;->createAdapterFactory(Ljava/lang/String;)Lcom/google/gson/TypeAdapterFactory;
 
-    invoke-direct {v3, v4, v1}, Lcom/google/gson/DefaultDateTypeAdapter;-><init>(Ljava/lang/Class;Ljava/lang/String;)V
+    move-result-object v5
 
-    new-instance v4, Lcom/google/gson/DefaultDateTypeAdapter;
+    sget-object v3, Lcom/google/gson/internal/sql/SqlTypesSupport;->DATE_DATE_TYPE:Lcom/google/gson/internal/bind/DefaultDateTypeAdapter$DateType;
 
-    const-class v5, Ljava/sql/Date;
+    invoke-virtual {v3, v1}, Lcom/google/gson/internal/bind/DefaultDateTypeAdapter$DateType;->createAdapterFactory(Ljava/lang/String;)Lcom/google/gson/TypeAdapterFactory;
 
-    invoke-direct {v4, v5, v1}, Lcom/google/gson/DefaultDateTypeAdapter;-><init>(Ljava/lang/Class;Ljava/lang/String;)V
+    move-result-object v1
 
     goto :goto_0
 
     :cond_0
     const/4 v1, 0x2
 
-    if-eq v2, v1, :cond_1
+    if-eq v2, v1, :cond_3
 
-    if-eq v3, v1, :cond_1
+    if-eq v3, v1, :cond_3
 
-    new-instance v1, Lcom/google/gson/DefaultDateTypeAdapter;
+    sget-object v1, Lcom/google/gson/internal/bind/DefaultDateTypeAdapter$DateType;->DATE:Lcom/google/gson/internal/bind/DefaultDateTypeAdapter$DateType;
 
-    const-class v4, Ljava/util/Date;
+    invoke-virtual {v1, v2, v3}, Lcom/google/gson/internal/bind/DefaultDateTypeAdapter$DateType;->createAdapterFactory(II)Lcom/google/gson/TypeAdapterFactory;
 
-    invoke-direct {v1, v4, v2, v3}, Lcom/google/gson/DefaultDateTypeAdapter;-><init>(Ljava/lang/Class;II)V
+    move-result-object v1
 
-    new-instance v4, Lcom/google/gson/DefaultDateTypeAdapter;
+    if-eqz v4, :cond_1
 
-    const-class v5, Ljava/sql/Timestamp;
+    sget-object v5, Lcom/google/gson/internal/sql/SqlTypesSupport;->TIMESTAMP_DATE_TYPE:Lcom/google/gson/internal/bind/DefaultDateTypeAdapter$DateType;
 
-    invoke-direct {v4, v5, v2, v3}, Lcom/google/gson/DefaultDateTypeAdapter;-><init>(Ljava/lang/Class;II)V
+    invoke-virtual {v5, v2, v3}, Lcom/google/gson/internal/bind/DefaultDateTypeAdapter$DateType;->createAdapterFactory(II)Lcom/google/gson/TypeAdapterFactory;
 
-    new-instance v5, Lcom/google/gson/DefaultDateTypeAdapter;
+    move-result-object v5
 
-    const-class v6, Ljava/sql/Date;
+    sget-object v6, Lcom/google/gson/internal/sql/SqlTypesSupport;->DATE_DATE_TYPE:Lcom/google/gson/internal/bind/DefaultDateTypeAdapter$DateType;
 
-    invoke-direct {v5, v6, v2, v3}, Lcom/google/gson/DefaultDateTypeAdapter;-><init>(Ljava/lang/Class;II)V
+    invoke-virtual {v6, v2, v3}, Lcom/google/gson/internal/bind/DefaultDateTypeAdapter$DateType;->createAdapterFactory(II)Lcom/google/gson/TypeAdapterFactory;
+
+    move-result-object v2
+
+    move-object/from16 v23, v2
 
     move-object v2, v1
 
-    move-object v3, v4
+    move-object/from16 v1, v23
 
-    move-object v4, v5
-
-    :goto_0
-    const-class v1, Ljava/util/Date;
-
-    invoke-static {v1, v2}, Lcom/google/gson/internal/bind/TypeAdapters;->newFactory(Ljava/lang/Class;Lcom/google/gson/TypeAdapter;)Lcom/google/gson/TypeAdapterFactory;
-
-    move-result-object v1
-
-    invoke-virtual {v15, v1}, Ljava/util/ArrayList;->add(Ljava/lang/Object;)Z
-
-    const-class v1, Ljava/sql/Timestamp;
-
-    invoke-static {v1, v3}, Lcom/google/gson/internal/bind/TypeAdapters;->newFactory(Ljava/lang/Class;Lcom/google/gson/TypeAdapter;)Lcom/google/gson/TypeAdapterFactory;
-
-    move-result-object v1
-
-    invoke-virtual {v15, v1}, Ljava/util/ArrayList;->add(Ljava/lang/Object;)Z
-
-    const-class v1, Ljava/sql/Date;
-
-    invoke-static {v1, v4}, Lcom/google/gson/internal/bind/TypeAdapters;->newFactory(Ljava/lang/Class;Lcom/google/gson/TypeAdapter;)Lcom/google/gson/TypeAdapterFactory;
-
-    move-result-object v1
-
-    invoke-virtual {v15, v1}, Ljava/util/ArrayList;->add(Ljava/lang/Object;)Z
+    goto :goto_0
 
     :cond_1
-    new-instance v19, Lcom/google/gson/Gson;
+    move-object v2, v1
 
-    move-object/from16 v1, v19
+    :cond_2
+    move-object v1, v5
+
+    :goto_0
+    invoke-virtual {v15, v2}, Ljava/util/ArrayList;->add(Ljava/lang/Object;)Z
+
+    if-eqz v4, :cond_3
+
+    invoke-virtual {v15, v5}, Ljava/util/ArrayList;->add(Ljava/lang/Object;)Z
+
+    invoke-virtual {v15, v1}, Ljava/util/ArrayList;->add(Ljava/lang/Object;)Z
+
+    :cond_3
+    new-instance v21, Lcom/google/gson/Gson;
+
+    move-object/from16 v1, v21
 
     iget-object v2, v0, Lcom/google/gson/GsonBuilder;->excluder:Lcom/google/gson/internal/Excluder;
 
@@ -427,7 +453,7 @@
 
     move-object/from16 v18, v16
 
-    move-object/from16 v20, v1
+    move-object/from16 v22, v1
 
     iget-object v1, v0, Lcom/google/gson/GsonBuilder;->factories:Ljava/util/List;
 
@@ -437,11 +463,19 @@
 
     move-object/from16 v17, v1
 
-    move-object/from16 v1, v20
+    iget-object v1, v0, Lcom/google/gson/GsonBuilder;->objectToNumberStrategy:Lcom/google/gson/ToNumberStrategy;
 
-    invoke-direct/range {v1 .. v18}, Lcom/google/gson/Gson;-><init>(Lcom/google/gson/internal/Excluder;Lcom/google/gson/FieldNamingStrategy;Ljava/util/Map;ZZZZZZZLcom/google/gson/LongSerializationPolicy;Ljava/lang/String;IILjava/util/List;Ljava/util/List;Ljava/util/List;)V
+    move-object/from16 v19, v1
 
-    return-object v19
+    iget-object v1, v0, Lcom/google/gson/GsonBuilder;->numberToNumberStrategy:Lcom/google/gson/ToNumberStrategy;
+
+    move-object/from16 v20, v1
+
+    move-object/from16 v1, v22
+
+    invoke-direct/range {v1 .. v20}, Lcom/google/gson/Gson;-><init>(Lcom/google/gson/internal/Excluder;Lcom/google/gson/FieldNamingStrategy;Ljava/util/Map;ZZZZZZZLcom/google/gson/LongSerializationPolicy;Ljava/lang/String;IILjava/util/List;Ljava/util/List;Ljava/util/List;Lcom/google/gson/ToNumberStrategy;Lcom/google/gson/ToNumberStrategy;)V
+
+    return-object v21
 .end method
 
 .method public registerTypeAdapter(Ljava/lang/reflect/Type;Ljava/lang/Object;)Lcom/google/gson/GsonBuilder;
@@ -458,10 +492,6 @@
     instance-of v1, p2, Lcom/google/gson/InstanceCreator;
 
     :cond_0
-    const/4 v1, 0x1
-
-    invoke-static {v1}, Lcom/google/gson/internal/$Gson$Preconditions;->checkArgument(Z)V
-
     instance-of v1, p2, Lcom/google/gson/InstanceCreator;
 
     if-eqz v1, :cond_1

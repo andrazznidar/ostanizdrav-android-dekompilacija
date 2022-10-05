@@ -288,7 +288,7 @@
 .method public cloneConstantState()Landroidx/appcompat/graphics/drawable/DrawableContainer$DrawableContainerState;
     .locals 0
 
-    const p0, 0x0
+    const/4 p0, 0x0
 
     throw p0
 .end method
@@ -1567,7 +1567,7 @@
 .method public setConstantState(Landroidx/appcompat/graphics/drawable/DrawableContainer$DrawableContainerState;)V
     .locals 0
 
-    const p0, 0x0
+    const/4 p0, 0x0
 
     throw p0
 .end method

@@ -3,10 +3,6 @@
 .source "BitmapPoolStrategy.kt"
 
 
-# static fields
-.field public static final synthetic $r8$clinit:I
-
-
 # virtual methods
 .method public abstract get(IILandroid/graphics/Bitmap$Config;)Landroid/graphics/Bitmap;
 .end method

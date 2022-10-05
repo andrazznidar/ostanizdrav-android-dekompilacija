@@ -1174,7 +1174,7 @@
     .end array-data
 .end method
 
-.method public static buildMatrix(Lcom/google/zxing/common/BitArray;Lcom/google/zxing/qrcode/decoder/ErrorCorrectionLevel;Lcom/google/zxing/qrcode/decoder/Version;ILkotlinx/coroutines/internal/ArrayQueue;)V
+.method public static buildMatrix(Lcom/google/zxing/common/BitArray;ILcom/google/zxing/qrcode/decoder/Version;ILcom/google/zxing/qrcode/encoder/ByteMatrix;)V
     .locals 20
     .annotation system Ldalvik/annotation/Throws;
         value = {
@@ -1190,9 +1190,7 @@
 
     move-object/from16 v3, p4
 
-    iget-object v4, v3, Lkotlinx/coroutines/internal/ArrayQueue;->elements:Ljava/lang/Object;
-
-    check-cast v4, [[B
+    iget-object v4, v3, Lcom/google/zxing/qrcode/encoder/ByteMatrix;->bytes:[[B
 
     array-length v5, v4
 
@@ -1220,71 +1218,71 @@
 
     array-length v4, v4
 
-    invoke-static {v6, v6, v3}, Lcom/google/zxing/qrcode/encoder/MatrixUtil;->embedPositionDetectionPattern(IILkotlinx/coroutines/internal/ArrayQueue;)V
+    invoke-static {v6, v6, v3}, Lcom/google/zxing/qrcode/encoder/MatrixUtil;->embedPositionDetectionPattern(IILcom/google/zxing/qrcode/encoder/ByteMatrix;)V
 
-    iget v5, v3, Lkotlinx/coroutines/internal/ArrayQueue;->head:I
-
-    sub-int/2addr v5, v4
-
-    invoke-static {v5, v6, v3}, Lcom/google/zxing/qrcode/encoder/MatrixUtil;->embedPositionDetectionPattern(IILkotlinx/coroutines/internal/ArrayQueue;)V
-
-    iget v5, v3, Lkotlinx/coroutines/internal/ArrayQueue;->head:I
+    iget v5, v3, Lcom/google/zxing/qrcode/encoder/ByteMatrix;->width:I
 
     sub-int/2addr v5, v4
 
-    invoke-static {v6, v5, v3}, Lcom/google/zxing/qrcode/encoder/MatrixUtil;->embedPositionDetectionPattern(IILkotlinx/coroutines/internal/ArrayQueue;)V
+    invoke-static {v5, v6, v3}, Lcom/google/zxing/qrcode/encoder/MatrixUtil;->embedPositionDetectionPattern(IILcom/google/zxing/qrcode/encoder/ByteMatrix;)V
+
+    iget v5, v3, Lcom/google/zxing/qrcode/encoder/ByteMatrix;->width:I
+
+    sub-int/2addr v5, v4
+
+    invoke-static {v6, v5, v3}, Lcom/google/zxing/qrcode/encoder/MatrixUtil;->embedPositionDetectionPattern(IILcom/google/zxing/qrcode/encoder/ByteMatrix;)V
 
     const/4 v4, 0x7
 
-    invoke-static {v6, v4, v3}, Lcom/google/zxing/qrcode/encoder/MatrixUtil;->embedHorizontalSeparationPattern(IILkotlinx/coroutines/internal/ArrayQueue;)V
+    invoke-static {v6, v4, v3}, Lcom/google/zxing/qrcode/encoder/MatrixUtil;->embedHorizontalSeparationPattern(IILcom/google/zxing/qrcode/encoder/ByteMatrix;)V
 
-    iget v5, v3, Lkotlinx/coroutines/internal/ArrayQueue;->head:I
-
-    add-int/lit8 v5, v5, -0x8
-
-    invoke-static {v5, v4, v3}, Lcom/google/zxing/qrcode/encoder/MatrixUtil;->embedHorizontalSeparationPattern(IILkotlinx/coroutines/internal/ArrayQueue;)V
-
-    iget v5, v3, Lkotlinx/coroutines/internal/ArrayQueue;->head:I
+    iget v5, v3, Lcom/google/zxing/qrcode/encoder/ByteMatrix;->width:I
 
     add-int/lit8 v5, v5, -0x8
 
-    invoke-static {v6, v5, v3}, Lcom/google/zxing/qrcode/encoder/MatrixUtil;->embedHorizontalSeparationPattern(IILkotlinx/coroutines/internal/ArrayQueue;)V
+    invoke-static {v5, v4, v3}, Lcom/google/zxing/qrcode/encoder/MatrixUtil;->embedHorizontalSeparationPattern(IILcom/google/zxing/qrcode/encoder/ByteMatrix;)V
 
-    invoke-static {v4, v6, v3}, Lcom/google/zxing/qrcode/encoder/MatrixUtil;->embedVerticalSeparationPattern(IILkotlinx/coroutines/internal/ArrayQueue;)V
+    iget v5, v3, Lcom/google/zxing/qrcode/encoder/ByteMatrix;->width:I
 
-    iget v5, v3, Lkotlinx/coroutines/internal/ArrayQueue;->tail:I
+    add-int/lit8 v5, v5, -0x8
+
+    invoke-static {v6, v5, v3}, Lcom/google/zxing/qrcode/encoder/MatrixUtil;->embedHorizontalSeparationPattern(IILcom/google/zxing/qrcode/encoder/ByteMatrix;)V
+
+    invoke-static {v4, v6, v3}, Lcom/google/zxing/qrcode/encoder/MatrixUtil;->embedVerticalSeparationPattern(IILcom/google/zxing/qrcode/encoder/ByteMatrix;)V
+
+    iget v5, v3, Lcom/google/zxing/qrcode/encoder/ByteMatrix;->height:I
 
     sub-int/2addr v5, v4
 
     add-int/2addr v5, v8
 
-    invoke-static {v5, v6, v3}, Lcom/google/zxing/qrcode/encoder/MatrixUtil;->embedVerticalSeparationPattern(IILkotlinx/coroutines/internal/ArrayQueue;)V
+    invoke-static {v5, v6, v3}, Lcom/google/zxing/qrcode/encoder/MatrixUtil;->embedVerticalSeparationPattern(IILcom/google/zxing/qrcode/encoder/ByteMatrix;)V
 
-    iget v5, v3, Lkotlinx/coroutines/internal/ArrayQueue;->tail:I
+    iget v5, v3, Lcom/google/zxing/qrcode/encoder/ByteMatrix;->height:I
 
     sub-int/2addr v5, v4
 
-    invoke-static {v4, v5, v3}, Lcom/google/zxing/qrcode/encoder/MatrixUtil;->embedVerticalSeparationPattern(IILkotlinx/coroutines/internal/ArrayQueue;)V
+    invoke-static {v4, v5, v3}, Lcom/google/zxing/qrcode/encoder/MatrixUtil;->embedVerticalSeparationPattern(IILcom/google/zxing/qrcode/encoder/ByteMatrix;)V
 
-    iget v5, v3, Lkotlinx/coroutines/internal/ArrayQueue;->tail:I
+    iget v5, v3, Lcom/google/zxing/qrcode/encoder/ByteMatrix;->height:I
 
     const/16 v7, 0x8
 
     sub-int/2addr v5, v7
 
-    invoke-virtual {v3, v7, v5}, Lkotlinx/coroutines/internal/ArrayQueue;->get(II)B
+    invoke-virtual {v3, v7, v5}, Lcom/google/zxing/qrcode/encoder/ByteMatrix;->get(II)B
 
     move-result v5
 
     if-eqz v5, :cond_1e
 
-    iget v5, v3, Lkotlinx/coroutines/internal/ArrayQueue;->tail:I
+    iget v5, v3, Lcom/google/zxing/qrcode/encoder/ByteMatrix;->height:I
 
     sub-int/2addr v5, v7
 
     const/4 v9, 0x1
 
-    invoke-virtual {v3, v7, v5, v9}, Lkotlinx/coroutines/internal/ArrayQueue;->set(III)V
+    invoke-virtual {v3, v7, v5, v9}, Lcom/google/zxing/qrcode/encoder/ByteMatrix;->set(III)V
 
     iget v5, v1, Lcom/google/zxing/qrcode/decoder/Version;->versionNumber:I
 
@@ -1325,7 +1323,7 @@
 
     if-ltz v11, :cond_3
 
-    invoke-virtual {v3, v11, v14}, Lkotlinx/coroutines/internal/ArrayQueue;->get(II)B
+    invoke-virtual {v3, v11, v14}, Lcom/google/zxing/qrcode/encoder/ByteMatrix;->get(II)B
 
     move-result v18
 
@@ -1359,7 +1357,7 @@
 
     aget v7, v19, v9
 
-    invoke-virtual {v3, v6, v10, v7}, Lkotlinx/coroutines/internal/ArrayQueue;->set(III)V
+    invoke-virtual {v3, v6, v10, v7}, Lcom/google/zxing/qrcode/encoder/ByteMatrix;->set(III)V
 
     add-int/lit8 v9, v9, 0x1
 
@@ -1425,7 +1423,7 @@
     const/16 v4, 0x8
 
     :goto_6
-    iget v5, v3, Lkotlinx/coroutines/internal/ArrayQueue;->head:I
+    iget v5, v3, Lcom/google/zxing/qrcode/encoder/ByteMatrix;->width:I
 
     const/16 v6, 0x8
 
@@ -1439,7 +1437,7 @@
 
     rem-int/lit8 v7, v5, 0x2
 
-    invoke-virtual {v3, v4, v6}, Lkotlinx/coroutines/internal/ArrayQueue;->get(II)B
+    invoke-virtual {v3, v4, v6}, Lcom/google/zxing/qrcode/encoder/ByteMatrix;->get(II)B
 
     move-result v8
 
@@ -1449,10 +1447,10 @@
 
     if-eqz v8, :cond_6
 
-    invoke-virtual {v3, v4, v6, v7}, Lkotlinx/coroutines/internal/ArrayQueue;->set(III)V
+    invoke-virtual {v3, v4, v6, v7}, Lcom/google/zxing/qrcode/encoder/ByteMatrix;->set(III)V
 
     :cond_6
-    invoke-virtual {v3, v6, v4}, Lkotlinx/coroutines/internal/ArrayQueue;->get(II)B
+    invoke-virtual {v3, v6, v4}, Lcom/google/zxing/qrcode/encoder/ByteMatrix;->get(II)B
 
     move-result v8
 
@@ -1462,7 +1460,7 @@
 
     if-eqz v8, :cond_7
 
-    invoke-virtual {v3, v6, v4, v7}, Lkotlinx/coroutines/internal/ArrayQueue;->set(III)V
+    invoke-virtual {v3, v6, v4, v7}, Lcom/google/zxing/qrcode/encoder/ByteMatrix;->set(III)V
 
     :cond_7
     move v4, v5
@@ -1490,9 +1488,9 @@
     :goto_7
     if-eqz v5, :cond_1d
 
-    move-object/from16 v5, p1
+    invoke-static/range {p1 .. p1}, Lcom/google/zxing/qrcode/decoder/ErrorCorrectionLevel$EnumUnboxingLocalUtility;->getBits(I)I
 
-    iget v5, v5, Lcom/google/zxing/qrcode/decoder/ErrorCorrectionLevel;->bits:I
+    move-result v5
 
     const/4 v7, 0x3
 
@@ -1587,24 +1585,24 @@
 
     aget v10, v10, v13
 
-    invoke-virtual {v3, v12, v10, v9}, Lkotlinx/coroutines/internal/ArrayQueue;->set(IIZ)V
+    invoke-virtual {v3, v12, v10, v9}, Lcom/google/zxing/qrcode/encoder/ByteMatrix;->set(IIZ)V
 
     const/16 v10, 0x8
 
     if-ge v5, v10, :cond_b
 
-    iget v12, v3, Lkotlinx/coroutines/internal/ArrayQueue;->head:I
+    iget v12, v3, Lcom/google/zxing/qrcode/encoder/ByteMatrix;->width:I
 
     sub-int/2addr v12, v5
 
     sub-int/2addr v12, v13
 
-    invoke-virtual {v3, v12, v10, v9}, Lkotlinx/coroutines/internal/ArrayQueue;->set(IIZ)V
+    invoke-virtual {v3, v12, v10, v9}, Lcom/google/zxing/qrcode/encoder/ByteMatrix;->set(IIZ)V
 
     goto :goto_a
 
     :cond_b
-    iget v12, v3, Lkotlinx/coroutines/internal/ArrayQueue;->tail:I
+    iget v12, v3, Lcom/google/zxing/qrcode/encoder/ByteMatrix;->height:I
 
     add-int/lit8 v12, v12, -0x7
 
@@ -1612,7 +1610,7 @@
 
     add-int/2addr v13, v12
 
-    invoke-virtual {v3, v10, v13, v9}, Lkotlinx/coroutines/internal/ArrayQueue;->set(IIZ)V
+    invoke-virtual {v3, v10, v13, v9}, Lcom/google/zxing/qrcode/encoder/ByteMatrix;->set(IIZ)V
 
     :goto_a
     add-int/lit8 v5, v5, 0x1
@@ -1673,21 +1671,21 @@
 
     add-int/lit8 v1, v1, -0x1
 
-    iget v10, v3, Lkotlinx/coroutines/internal/ArrayQueue;->tail:I
+    iget v10, v3, Lcom/google/zxing/qrcode/encoder/ByteMatrix;->height:I
 
     add-int/lit8 v10, v10, -0xb
 
     add-int/2addr v10, v8
 
-    invoke-virtual {v3, v4, v10, v9}, Lkotlinx/coroutines/internal/ArrayQueue;->set(IIZ)V
+    invoke-virtual {v3, v4, v10, v9}, Lcom/google/zxing/qrcode/encoder/ByteMatrix;->set(IIZ)V
 
-    iget v10, v3, Lkotlinx/coroutines/internal/ArrayQueue;->tail:I
+    iget v10, v3, Lcom/google/zxing/qrcode/encoder/ByteMatrix;->height:I
 
     add-int/lit8 v10, v10, -0xb
 
     add-int/2addr v10, v8
 
-    invoke-virtual {v3, v10, v4, v9}, Lkotlinx/coroutines/internal/ArrayQueue;->set(IIZ)V
+    invoke-virtual {v3, v10, v4, v9}, Lcom/google/zxing/qrcode/encoder/ByteMatrix;->set(IIZ)V
 
     add-int/lit8 v8, v8, 0x1
 
@@ -1700,13 +1698,13 @@
 
     :cond_f
     :goto_d
-    iget v1, v3, Lkotlinx/coroutines/internal/ArrayQueue;->head:I
+    iget v1, v3, Lcom/google/zxing/qrcode/encoder/ByteMatrix;->width:I
 
     const/4 v4, 0x1
 
     sub-int/2addr v1, v4
 
-    iget v5, v3, Lkotlinx/coroutines/internal/ArrayQueue;->tail:I
+    iget v5, v3, Lcom/google/zxing/qrcode/encoder/ByteMatrix;->height:I
 
     sub-int/2addr v5, v4
 
@@ -1725,7 +1723,7 @@
     :goto_f
     if-ltz v5, :cond_17
 
-    iget v9, v3, Lkotlinx/coroutines/internal/ArrayQueue;->tail:I
+    iget v9, v3, Lcom/google/zxing/qrcode/encoder/ByteMatrix;->height:I
 
     if-ge v5, v9, :cond_17
 
@@ -1738,7 +1736,7 @@
 
     sub-int v12, v1, v9
 
-    invoke-virtual {v3, v12, v5}, Lkotlinx/coroutines/internal/ArrayQueue;->get(II)B
+    invoke-virtual {v3, v12, v5}, Lcom/google/zxing/qrcode/encoder/ByteMatrix;->get(II)B
 
     move-result v13
 
@@ -1809,9 +1807,7 @@
     :goto_12
     add-int v15, v15, v16
 
-    move/from16 v16, v15
-
-    goto :goto_13
+    goto :goto_14
 
     :pswitch_2
     mul-int v15, v5, v12
@@ -1822,92 +1818,85 @@
 
     add-int v15, v15, v16
 
-    move/from16 v16, v15
-
-    const/4 v15, 0x1
-
-    goto :goto_15
+    goto :goto_13
 
     :pswitch_3
     div-int/lit8 v15, v5, 0x2
 
     div-int/lit8 v16, v12, 0x3
 
-    add-int v16, v16, v15
+    add-int v15, v16, v15
 
-    :goto_13
-    const/4 v15, 0x1
-
-    :goto_14
-    and-int/lit8 v16, v16, 0x1
-
-    goto :goto_15
+    goto :goto_14
 
     :pswitch_4
-    const/4 v15, 0x1
+    add-int v15, v5, v12
 
-    add-int v16, v5, v12
+    rem-int/2addr v15, v7
 
-    rem-int/lit8 v16, v16, 0x3
-
-    goto :goto_15
+    goto :goto_13
 
     :pswitch_5
+    rem-int/lit8 v15, v12, 0x3
+
+    :goto_13
+    move/from16 v16, v15
+
     const/4 v15, 0x1
 
-    rem-int/lit8 v16, v12, 0x3
+    goto :goto_16
+
+    :pswitch_6
+    move/from16 v16, v5
 
     goto :goto_15
 
-    :pswitch_6
-    const/4 v15, 0x1
-
-    move/from16 v16, v5
-
-    goto :goto_14
-
     :pswitch_7
-    const/4 v15, 0x1
+    add-int v15, v5, v12
 
-    add-int v16, v5, v12
-
-    goto :goto_14
+    :goto_14
+    move/from16 v16, v15
 
     :goto_15
+    const/4 v15, 0x1
+
+    and-int/lit8 v16, v16, 0x1
+
+    :goto_16
     if-nez v16, :cond_12
 
     move/from16 v16, v15
 
-    goto :goto_16
+    goto :goto_17
 
     :cond_12
     move/from16 v16, v11
 
-    :goto_16
+    :goto_17
     if-eqz v16, :cond_14
 
     xor-int/lit8 v13, v13, 0x1
 
-    goto :goto_17
+    goto :goto_18
 
     :cond_13
     const/4 v15, 0x1
 
     :cond_14
-    :goto_17
-    invoke-virtual {v3, v12, v5, v13}, Lkotlinx/coroutines/internal/ArrayQueue;->set(IIZ)V
+    :goto_18
+    invoke-virtual {v3, v12, v5, v13}, Lcom/google/zxing/qrcode/encoder/ByteMatrix;->set(IIZ)V
 
-    goto :goto_18
+    goto :goto_19
 
     :cond_15
     const/4 v14, -0x1
 
     const/4 v15, 0x1
 
-    :goto_18
+    :goto_19
     add-int/lit8 v9, v9, 0x1
 
-    goto/16 :goto_10
+    goto :goto_10
 
     :cond_16
     const/4 v14, -0x1
@@ -2030,6 +2019,8 @@
 
     throw v0
 
+    nop
+
     :pswitch_data_0
     .packed-switch 0x0
         :pswitch_7
@@ -2088,7 +2079,7 @@
     throw p0
 .end method
 
-.method public static embedHorizontalSeparationPattern(IILkotlinx/coroutines/internal/ArrayQueue;)V
+.method public static embedHorizontalSeparationPattern(IILcom/google/zxing/qrcode/encoder/ByteMatrix;)V
     .locals 4
     .annotation system Ldalvik/annotation/Throws;
         value = {
@@ -2107,7 +2098,7 @@
 
     add-int v2, p0, v1
 
-    invoke-virtual {p2, v2, p1}, Lkotlinx/coroutines/internal/ArrayQueue;->get(II)B
+    invoke-virtual {p2, v2, p1}, Lcom/google/zxing/qrcode/encoder/ByteMatrix;->get(II)B
 
     move-result v3
 
@@ -2117,7 +2108,7 @@
 
     if-eqz v3, :cond_0
 
-    invoke-virtual {p2, v2, p1, v0}, Lkotlinx/coroutines/internal/ArrayQueue;->set(III)V
+    invoke-virtual {p2, v2, p1, v0}, Lcom/google/zxing/qrcode/encoder/ByteMatrix;->set(III)V
 
     add-int/lit8 v1, v1, 0x1
 
@@ -2134,7 +2125,7 @@
     return-void
 .end method
 
-.method public static embedPositionDetectionPattern(IILkotlinx/coroutines/internal/ArrayQueue;)V
+.method public static embedPositionDetectionPattern(IILcom/google/zxing/qrcode/encoder/ByteMatrix;)V
     .locals 8
 
     const/4 v0, 0x0
@@ -2161,7 +2152,7 @@
 
     aget v7, v3, v4
 
-    invoke-virtual {p2, v5, v6, v7}, Lkotlinx/coroutines/internal/ArrayQueue;->set(III)V
+    invoke-virtual {p2, v5, v6, v7}, Lcom/google/zxing/qrcode/encoder/ByteMatrix;->set(III)V
 
     add-int/lit8 v4, v4, 0x1
 
@@ -2176,7 +2167,7 @@
     return-void
 .end method
 
-.method public static embedVerticalSeparationPattern(IILkotlinx/coroutines/internal/ArrayQueue;)V
+.method public static embedVerticalSeparationPattern(IILcom/google/zxing/qrcode/encoder/ByteMatrix;)V
     .locals 4
     .annotation system Ldalvik/annotation/Throws;
         value = {
@@ -2195,9 +2186,7 @@
 
     add-int v2, p1, v1
 
-    iget-object v3, p2, Lkotlinx/coroutines/internal/ArrayQueue;->elements:Ljava/lang/Object;
-
-    check-cast v3, [[B
+    iget-object v3, p2, Lcom/google/zxing/qrcode/encoder/ByteMatrix;->bytes:[[B
 
     aget-object v3, v3, v2
 
@@ -2209,9 +2198,7 @@
 
     if-eqz v3, :cond_0
 
-    iget-object v3, p2, Lkotlinx/coroutines/internal/ArrayQueue;->elements:Ljava/lang/Object;
-
-    check-cast v3, [[B
+    iget-object v3, p2, Lcom/google/zxing/qrcode/encoder/ByteMatrix;->bytes:[[B
 
     aget-object v2, v3, v2
 

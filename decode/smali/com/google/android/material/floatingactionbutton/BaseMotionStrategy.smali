@@ -25,11 +25,11 @@
 
 .field public motionSpec:Lcom/google/android/material/animation/MotionSpec;
 
-.field public final tracker:Lcom/google/android/play/core/assetpacks/zzv;
+.field public final tracker:Lorg/bouncycastle/crypto/generators/DHKeyPairGenerator;
 
 
 # direct methods
-.method public constructor <init>(Lcom/google/android/material/floatingactionbutton/ExtendedFloatingActionButton;Lcom/google/android/play/core/assetpacks/zzv;)V
+.method public constructor <init>(Lcom/google/android/material/floatingactionbutton/ExtendedFloatingActionButton;Lorg/bouncycastle/crypto/generators/DHKeyPairGenerator;)V
     .locals 1
 
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
@@ -48,7 +48,7 @@
 
     iput-object p1, p0, Lcom/google/android/material/floatingactionbutton/BaseMotionStrategy;->context:Landroid/content/Context;
 
-    iput-object p2, p0, Lcom/google/android/material/floatingactionbutton/BaseMotionStrategy;->tracker:Lcom/google/android/play/core/assetpacks/zzv;
+    iput-object p2, p0, Lcom/google/android/material/floatingactionbutton/BaseMotionStrategy;->tracker:Lorg/bouncycastle/crypto/generators/DHKeyPairGenerator;
 
     return-void
 .end method
@@ -229,7 +229,7 @@
 
     invoke-direct {p1}, Landroid/animation/AnimatorSet;-><init>()V
 
-    invoke-static {p1, v0}, Lcom/google/android/material/animation/AnimatorSetCompat;->playTogether(Landroid/animation/AnimatorSet;Ljava/util/List;)V
+    invoke-static {p1, v0}, Lboofcv/alg/shapes/polygon/UtilShapePolygon;->playTogether(Landroid/animation/AnimatorSet;Ljava/util/List;)V
 
     return-object p1
 .end method
@@ -271,11 +271,11 @@
 .method public onAnimationCancel()V
     .locals 2
 
-    iget-object v0, p0, Lcom/google/android/material/floatingactionbutton/BaseMotionStrategy;->tracker:Lcom/google/android/play/core/assetpacks/zzv;
+    iget-object v0, p0, Lcom/google/android/material/floatingactionbutton/BaseMotionStrategy;->tracker:Lorg/bouncycastle/crypto/generators/DHKeyPairGenerator;
 
     const/4 v1, 0x0
 
-    iput-object v1, v0, Lcom/google/android/play/core/assetpacks/zzv;->zza:Ljava/lang/Object;
+    iput-object v1, v0, Lorg/bouncycastle/crypto/generators/DHKeyPairGenerator;->param:Ljava/lang/Object;
 
     return-void
 .end method
@@ -283,11 +283,11 @@
 .method public onAnimationEnd()V
     .locals 2
 
-    iget-object v0, p0, Lcom/google/android/material/floatingactionbutton/BaseMotionStrategy;->tracker:Lcom/google/android/play/core/assetpacks/zzv;
+    iget-object v0, p0, Lcom/google/android/material/floatingactionbutton/BaseMotionStrategy;->tracker:Lorg/bouncycastle/crypto/generators/DHKeyPairGenerator;
 
     const/4 v1, 0x0
 
-    iput-object v1, v0, Lcom/google/android/play/core/assetpacks/zzv;->zza:Ljava/lang/Object;
+    iput-object v1, v0, Lorg/bouncycastle/crypto/generators/DHKeyPairGenerator;->param:Ljava/lang/Object;
 
     return-void
 .end method

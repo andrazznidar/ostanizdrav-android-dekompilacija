@@ -4,6 +4,15 @@
 
 
 # annotations
+.annotation system Ldalvik/annotation/EnclosingMethod;
+    value = Lkotlin/reflect/jvm/internal/impl/load/java/lazy/descriptors/LazyJavaStaticClassScope;->flatMapJavaStaticSupertypesScopes(Lkotlin/reflect/jvm/internal/impl/descriptors/ClassDescriptor;Ljava/util/Set;Lkotlin/jvm/functions/Function1;)Ljava/util/Set;
+.end annotation
+
+.annotation system Ldalvik/annotation/InnerClass;
+    accessFlags = 0x19
+    name = null
+.end annotation
+
 .annotation system Ldalvik/annotation/Signature;
     value = {
         "Lkotlin/reflect/jvm/internal/impl/utils/DFS$AbstractNodeHandler<",
@@ -21,8 +30,7 @@
             "Lkotlin/jvm/functions/Function1<",
             "Lkotlin/reflect/jvm/internal/impl/resolve/scopes/MemberScope;",
             "Ljava/util/Collection<",
-            "Ljava/lang/Object;",
-            ">;>;"
+            "TR;>;>;"
         }
     .end annotation
 .end field
@@ -31,8 +39,7 @@
     .annotation system Ldalvik/annotation/Signature;
         value = {
             "Ljava/util/Set<",
-            "Ljava/lang/Object;",
-            ">;"
+            "TR;>;"
         }
     .end annotation
 .end field
@@ -48,15 +55,13 @@
             "(",
             "Lkotlin/reflect/jvm/internal/impl/descriptors/ClassDescriptor;",
             "Ljava/util/Set<",
-            "Ljava/lang/Object;",
-            ">;",
+            "TR;>;",
             "Lkotlin/jvm/functions/Function1<",
             "-",
             "Lkotlin/reflect/jvm/internal/impl/resolve/scopes/MemberScope;",
             "+",
             "Ljava/util/Collection<",
-            "Ljava/lang/Object;",
-            ">;>;)V"
+            "+TR;>;>;)V"
         }
     .end annotation
 
@@ -73,10 +78,20 @@
 
 
 # virtual methods
-.method public beforeChildren(Ljava/lang/Object;)Z
-    .locals 2
+.method public bridge synthetic beforeChildren(Ljava/lang/Object;)Z
+    .locals 0
 
     check-cast p1, Lkotlin/reflect/jvm/internal/impl/descriptors/ClassDescriptor;
+
+    invoke-virtual {p0, p1}, Lkotlin/reflect/jvm/internal/impl/load/java/lazy/descriptors/LazyJavaStaticClassScope$flatMapJavaStaticSupertypesScopes$2;->beforeChildren(Lkotlin/reflect/jvm/internal/impl/descriptors/ClassDescriptor;)Z
+
+    move-result p1
+
+    return p1
+.end method
+
+.method public beforeChildren(Lkotlin/reflect/jvm/internal/impl/descriptors/ClassDescriptor;)Z
+    .locals 2
 
     const-string v0, "current"
 
@@ -88,7 +103,7 @@
 
     if-ne p1, v0, :cond_0
 
-    goto :goto_0
+    return v1
 
     :cond_0
     invoke-interface {p1}, Lkotlin/reflect/jvm/internal/impl/descriptors/ClassDescriptor;->getStaticScope()Lkotlin/reflect/jvm/internal/impl/resolve/scopes/MemberScope;
@@ -115,17 +130,26 @@
 
     invoke-interface {v0, p1}, Ljava/util/Set;->addAll(Ljava/util/Collection;)Z
 
-    const/4 v1, 0x0
+    const/4 p1, 0x0
+
+    return p1
 
     :cond_1
-    :goto_0
     return v1
 .end method
 
 .method public bridge synthetic result()Ljava/lang/Object;
     .locals 1
 
+    invoke-virtual {p0}, Lkotlin/reflect/jvm/internal/impl/load/java/lazy/descriptors/LazyJavaStaticClassScope$flatMapJavaStaticSupertypesScopes$2;->result()V
+
     sget-object v0, Lkotlin/Unit;->INSTANCE:Lkotlin/Unit;
 
     return-object v0
+.end method
+
+.method public result()V
+    .locals 0
+
+    return-void
 .end method

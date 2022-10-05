@@ -18,9 +18,7 @@
 .field public static sPool:Landroidx/core/util/Pools$SimplePool;
     .annotation system Ldalvik/annotation/Signature;
         value = {
-            "Landroidx/core/util/Pools$SimplePool<",
-            "Landroidx/recyclerview/widget/ViewInfoStore$InfoRecord;",
-            ">;"
+            "Landroidx/core/util/Pools$SimplePool;"
         }
     .end annotation
 .end field

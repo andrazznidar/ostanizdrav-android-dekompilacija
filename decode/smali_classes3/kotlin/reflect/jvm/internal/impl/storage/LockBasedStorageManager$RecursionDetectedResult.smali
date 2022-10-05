@@ -1,4 +1,4 @@
-.class public Lkotlin/reflect/jvm/internal/impl/storage/LockBasedStorageManager$RecursionDetectedResult;
+.class Lkotlin/reflect/jvm/internal/impl/storage/LockBasedStorageManager$RecursionDetectedResult;
 .super Ljava/lang/Object;
 .source "LockBasedStorageManager.java"
 
@@ -23,10 +23,14 @@
 .end annotation
 
 
-# instance fields
-.field public final fallThrough:Z
+# static fields
+.field public static final synthetic $assertionsDisabled:Z
 
-.field public final value:Ljava/lang/Object;
+
+# instance fields
+.field private final fallThrough:Z
+
+.field private final value:Ljava/lang/Object;
     .annotation system Ldalvik/annotation/Signature;
         value = {
             "TT;"
@@ -36,7 +40,7 @@
 
 
 # direct methods
-.method public constructor <init>(Ljava/lang/Object;Z)V
+.method private constructor <init>(Ljava/lang/Object;Z)V
     .locals 0
     .annotation system Ldalvik/annotation/Signature;
         value = {
@@ -53,12 +57,79 @@
     return-void
 .end method
 
+.method public static fallThrough()Lkotlin/reflect/jvm/internal/impl/storage/LockBasedStorageManager$RecursionDetectedResult;
+    .locals 3
+    .annotation system Ldalvik/annotation/Signature;
+        value = {
+            "<T:",
+            "Ljava/lang/Object;",
+            ">()",
+            "Lkotlin/reflect/jvm/internal/impl/storage/LockBasedStorageManager$RecursionDetectedResult<",
+            "TT;>;"
+        }
+    .end annotation
+
+    new-instance v0, Lkotlin/reflect/jvm/internal/impl/storage/LockBasedStorageManager$RecursionDetectedResult;
+
+    const/4 v1, 0x0
+
+    const/4 v2, 0x1
+
+    invoke-direct {v0, v1, v2}, Lkotlin/reflect/jvm/internal/impl/storage/LockBasedStorageManager$RecursionDetectedResult;-><init>(Ljava/lang/Object;Z)V
+
+    return-object v0
+.end method
+
+.method public static value(Ljava/lang/Object;)Lkotlin/reflect/jvm/internal/impl/storage/LockBasedStorageManager$RecursionDetectedResult;
+    .locals 2
+    .annotation system Ldalvik/annotation/Signature;
+        value = {
+            "<T:",
+            "Ljava/lang/Object;",
+            ">(TT;)",
+            "Lkotlin/reflect/jvm/internal/impl/storage/LockBasedStorageManager$RecursionDetectedResult<",
+            "TT;>;"
+        }
+    .end annotation
+
+    new-instance v0, Lkotlin/reflect/jvm/internal/impl/storage/LockBasedStorageManager$RecursionDetectedResult;
+
+    const/4 v1, 0x0
+
+    invoke-direct {v0, p0, v1}, Lkotlin/reflect/jvm/internal/impl/storage/LockBasedStorageManager$RecursionDetectedResult;-><init>(Ljava/lang/Object;Z)V
+
+    return-object v0
+.end method
+
 
 # virtual methods
-.method public toString()Ljava/lang/String;
+.method public getValue()Ljava/lang/Object;
+    .locals 1
+    .annotation system Ldalvik/annotation/Signature;
+        value = {
+            "()TT;"
+        }
+    .end annotation
+
+    iget-object v0, p0, Lkotlin/reflect/jvm/internal/impl/storage/LockBasedStorageManager$RecursionDetectedResult;->value:Ljava/lang/Object;
+
+    return-object v0
+.end method
+
+.method public isFallThrough()Z
     .locals 1
 
     iget-boolean v0, p0, Lkotlin/reflect/jvm/internal/impl/storage/LockBasedStorageManager$RecursionDetectedResult;->fallThrough:Z
+
+    return v0
+.end method
+
+.method public toString()Ljava/lang/String;
+    .locals 1
+
+    invoke-virtual {p0}, Lkotlin/reflect/jvm/internal/impl/storage/LockBasedStorageManager$RecursionDetectedResult;->isFallThrough()Z
+
+    move-result v0
 
     if-eqz v0, :cond_0
 

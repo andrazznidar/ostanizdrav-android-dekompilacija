@@ -44,15 +44,3 @@
 
 .method public abstract insert(Lde/rki/coronawarnapp/presencetracing/risk/storage/PresenceTracingRiskLevelResultEntity;)V
 .end method
-
-.method public abstract latestEntries(I)Lkotlinx/coroutines/flow/Flow;
-    .annotation system Ldalvik/annotation/Signature;
-        value = {
-            "(I)",
-            "Lkotlinx/coroutines/flow/Flow<",
-            "Ljava/util/List<",
-            "Lde/rki/coronawarnapp/presencetracing/risk/storage/PresenceTracingRiskLevelResultEntity;",
-            ">;>;"
-        }
-    .end annotation
-.end method

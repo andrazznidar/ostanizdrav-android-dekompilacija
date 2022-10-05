@@ -114,9 +114,9 @@
 
     iget-object p3, p2, Landroidx/recyclerview/widget/RecyclerView$ViewHolder;->itemView:Landroid/view/View;
 
-    new-instance v0, Lde/rki/coronawarnapp/ui/view/MoreInformationView$$ExternalSyntheticLambda1;
+    new-instance v0, Lde/rki/coronawarnapp/bugreporting/debuglog/ui/upload/history/HistoryItemAdapter$CachedKeyViewHolder$onBindData$1$$ExternalSyntheticLambda0;
 
-    invoke-direct {v0, p2, p1}, Lde/rki/coronawarnapp/ui/view/MoreInformationView$$ExternalSyntheticLambda1;-><init>(Lde/rki/coronawarnapp/bugreporting/debuglog/ui/upload/history/HistoryItemAdapter$CachedKeyViewHolder;Lde/rki/coronawarnapp/databinding/BugreportingUploadHistoryItemBinding;)V
+    invoke-direct {v0, p2, p1}, Lde/rki/coronawarnapp/bugreporting/debuglog/ui/upload/history/HistoryItemAdapter$CachedKeyViewHolder$onBindData$1$$ExternalSyntheticLambda0;-><init>(Lde/rki/coronawarnapp/bugreporting/debuglog/ui/upload/history/HistoryItemAdapter$CachedKeyViewHolder;Lde/rki/coronawarnapp/databinding/BugreportingUploadHistoryItemBinding;)V
 
     invoke-virtual {p3, v0}, Landroid/view/View;->setOnClickListener(Landroid/view/View$OnClickListener;)V
 

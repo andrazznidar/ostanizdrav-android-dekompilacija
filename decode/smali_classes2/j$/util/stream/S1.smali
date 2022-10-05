@@ -1,191 +1,142 @@
-.class abstract Lj$/util/stream/S1;
-.super Lj$/util/stream/D1;
+.class Lj$/util/stream/S1;
+.super Ljava/lang/Object;
 
 # interfaces
-.implements Lj$/util/stream/A1;
+.implements Lj$/util/stream/Y1;
+.implements Lj$/util/stream/o2;
+
+
+# instance fields
+.field private a:I
+
+.field final synthetic b:I
+
+.field final synthetic c:Lj$/util/function/l;
 
 
 # direct methods
-.method constructor <init>(Lj$/util/stream/A1;Lj$/util/stream/A1;)V
+.method constructor <init>(ILj$/util/function/l;)V
     .locals 0
 
-    invoke-direct {p0, p1, p2}, Lj$/util/stream/D1;-><init>(Lj$/util/stream/B1;Lj$/util/stream/B1;)V
+    iput p1, p0, Lj$/util/stream/S1;->b:I
+
+    iput-object p2, p0, Lj$/util/stream/S1;->c:Lj$/util/function/l;
+
+    invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
     return-void
 .end method
 
 
 # virtual methods
-.method public g(Ljava/lang/Object;I)V
-    .locals 3
-
-    iget-object v0, p0, Lj$/util/stream/D1;->a:Lj$/util/stream/B1;
-
-    check-cast v0, Lj$/util/stream/A1;
-
-    invoke-interface {v0, p1, p2}, Lj$/util/stream/A1;->g(Ljava/lang/Object;I)V
-
-    iget-object v0, p0, Lj$/util/stream/D1;->b:Lj$/util/stream/B1;
-
-    check-cast v0, Lj$/util/stream/A1;
-
-    iget-object v1, p0, Lj$/util/stream/D1;->a:Lj$/util/stream/B1;
-
-    check-cast v1, Lj$/util/stream/A1;
-
-    invoke-interface {v1}, Lj$/util/stream/B1;->count()J
-
-    move-result-wide v1
-
-    long-to-int v1, v1
-
-    add-int/2addr p2, v1
-
-    invoke-interface {v0, p1, p2}, Lj$/util/stream/A1;->g(Ljava/lang/Object;I)V
-
-    return-void
-.end method
-
-.method public h()Ljava/lang/Object;
-    .locals 4
-
-    invoke-virtual {p0}, Lj$/util/stream/D1;->count()J
-
-    move-result-wide v0
-
-    const-wide/32 v2, 0x7ffffff7
-
-    cmp-long v2, v0, v2
-
-    if-gez v2, :cond_0
-
-    long-to-int v0, v0
-
-    invoke-interface {p0, v0}, Lj$/util/stream/A1;->f(I)Ljava/lang/Object;
-
-    move-result-object v0
-
-    const/4 v1, 0x0
-
-    invoke-virtual {p0, v0, v1}, Lj$/util/stream/S1;->g(Ljava/lang/Object;I)V
-
-    return-object v0
-
-    :cond_0
-    new-instance v0, Ljava/lang/IllegalArgumentException;
-
-    const-string v1, "Stream size exceeds max array size"
-
-    invoke-direct {v0, v1}, Ljava/lang/IllegalArgumentException;-><init>(Ljava/lang/String;)V
-
-    throw v0
-.end method
-
-.method public j(Ljava/lang/Object;)V
-    .locals 1
-
-    iget-object v0, p0, Lj$/util/stream/D1;->a:Lj$/util/stream/B1;
-
-    check-cast v0, Lj$/util/stream/A1;
-
-    invoke-interface {v0, p1}, Lj$/util/stream/A1;->j(Ljava/lang/Object;)V
-
-    iget-object v0, p0, Lj$/util/stream/D1;->b:Lj$/util/stream/B1;
-
-    check-cast v0, Lj$/util/stream/A1;
-
-    invoke-interface {v0, p1}, Lj$/util/stream/A1;->j(Ljava/lang/Object;)V
-
-    return-void
-.end method
-
-.method public synthetic o(Lj$/util/function/j;)[Ljava/lang/Object;
+.method public synthetic a(Ljava/lang/Integer;)V
     .locals 0
 
-    invoke-static {p0, p1}, Lj$/util/stream/p1;->g(Lj$/util/stream/A1;Lj$/util/function/j;)[Ljava/lang/Object;
+    invoke-static {p0, p1}, Lj$/util/stream/D0;->M(Lj$/util/stream/o2;Ljava/lang/Integer;)V
+
+    return-void
+.end method
+
+.method public accept(I)V
+    .locals 2
+
+    iget-object v0, p0, Lj$/util/stream/S1;->c:Lj$/util/function/l;
+
+    iget v1, p0, Lj$/util/stream/S1;->a:I
+
+    invoke-interface {v0, v1, p1}, Lj$/util/function/l;->h(II)I
+
+    move-result p1
+
+    iput p1, p0, Lj$/util/stream/S1;->a:I
+
+    return-void
+.end method
+
+.method public synthetic andThen(Lj$/util/function/IntConsumer;)Lj$/util/function/IntConsumer;
+    .locals 0
+
+    invoke-static {p0, p1}, Lj$/util/function/IntConsumer$-CC;->$default$andThen(Lj$/util/function/IntConsumer;Lj$/util/function/IntConsumer;)Lj$/util/function/IntConsumer;
 
     move-result-object p1
 
     return-object p1
 .end method
 
-.method public toString()Ljava/lang/String;
-    .locals 5
+.method public synthetic c(D)V
+    .locals 0
 
-    invoke-virtual {p0}, Lj$/util/stream/D1;->count()J
+    invoke-static {}, Lj$/util/stream/D0;->K()V
 
-    move-result-wide v0
+    const/4 p1, 0x0
 
-    const-wide/16 v2, 0x20
+    throw p1
+.end method
 
-    cmp-long v0, v0, v2
+.method public synthetic d(J)V
+    .locals 0
 
-    const/4 v1, 0x1
+    invoke-static {}, Lj$/util/stream/D0;->P()V
 
-    const/4 v2, 0x0
+    const/4 p1, 0x0
 
-    const/4 v3, 0x2
+    throw p1
+.end method
 
-    if-gez v0, :cond_0
+.method public synthetic g()V
+    .locals 0
 
-    const/4 v0, 0x3
+    return-void
+.end method
 
-    new-array v0, v0, [Ljava/lang/Object;
+.method public get()Ljava/lang/Object;
+    .locals 1
 
-    invoke-virtual {p0}, Ljava/lang/Object;->getClass()Ljava/lang/Class;
+    iget v0, p0, Lj$/util/stream/S1;->a:I
 
-    move-result-object v4
-
-    invoke-virtual {v4}, Ljava/lang/Class;->getName()Ljava/lang/String;
-
-    move-result-object v4
-
-    aput-object v4, v0, v2
-
-    iget-object v2, p0, Lj$/util/stream/D1;->a:Lj$/util/stream/B1;
-
-    aput-object v2, v0, v1
-
-    iget-object v1, p0, Lj$/util/stream/D1;->b:Lj$/util/stream/B1;
-
-    aput-object v1, v0, v3
-
-    const-string v1, "%s[%s.%s]"
-
-    invoke-static {v1, v0}, Ljava/lang/String;->format(Ljava/lang/String;[Ljava/lang/Object;)Ljava/lang/String;
+    invoke-static {v0}, Ljava/lang/Integer;->valueOf(I)Ljava/lang/Integer;
 
     move-result-object v0
 
     return-object v0
+.end method
 
-    :cond_0
-    new-array v0, v3, [Ljava/lang/Object;
+.method public i(J)V
+    .locals 0
 
-    invoke-virtual {p0}, Ljava/lang/Object;->getClass()Ljava/lang/Class;
+    iget p1, p0, Lj$/util/stream/S1;->b:I
 
-    move-result-object v3
+    iput p1, p0, Lj$/util/stream/S1;->a:I
 
-    invoke-virtual {v3}, Ljava/lang/Class;->getName()Ljava/lang/String;
+    return-void
+.end method
 
-    move-result-object v3
+.method public bridge synthetic j(Ljava/lang/Object;)V
+    .locals 0
 
-    aput-object v3, v0, v2
+    check-cast p1, Ljava/lang/Integer;
 
-    invoke-virtual {p0}, Lj$/util/stream/D1;->count()J
+    invoke-virtual {p0, p1}, Lj$/util/stream/S1;->a(Ljava/lang/Integer;)V
 
-    move-result-wide v2
+    return-void
+.end method
 
-    invoke-static {v2, v3}, Ljava/lang/Long;->valueOf(J)Ljava/lang/Long;
+.method public q(Lj$/util/stream/Y1;)V
+    .locals 0
 
-    move-result-object v2
+    check-cast p1, Lj$/util/stream/S1;
 
-    aput-object v2, v0, v1
+    iget p1, p1, Lj$/util/stream/S1;->a:I
 
-    const-string v1, "%s[size=%d]"
+    invoke-virtual {p0, p1}, Lj$/util/stream/S1;->accept(I)V
 
-    invoke-static {v1, v0}, Ljava/lang/String;->format(Ljava/lang/String;[Ljava/lang/Object;)Ljava/lang/String;
+    return-void
+.end method
 
-    move-result-object v0
+.method public synthetic r()Z
+    .locals 1
 
-    return-object v0
+    const/4 v0, 0x0
+
+    return v0
 .end method

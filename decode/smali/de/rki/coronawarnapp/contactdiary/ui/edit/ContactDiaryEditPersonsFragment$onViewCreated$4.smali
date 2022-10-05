@@ -66,7 +66,7 @@
 
     const/4 v1, 0x1
 
-    invoke-static {v0, p1, v1}, Lde/rki/coronawarnapp/util/lists/diffutil/SmartDiffUtilKt;->update(Landroidx/recyclerview/widget/RecyclerView$Adapter;Ljava/util/List;Z)V
+    invoke-static {v0, p1, v1}, Lcom/google/common/collect/Sets;->update(Landroidx/recyclerview/widget/RecyclerView$Adapter;Ljava/util/List;Z)V
 
     sget-object p1, Lkotlin/Unit;->INSTANCE:Lkotlin/Unit;
 

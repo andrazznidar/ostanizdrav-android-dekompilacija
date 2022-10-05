@@ -177,7 +177,7 @@
 
     iget-object v1, p0, Lde/rki/coronawarnapp/presencetracing/checkins/CheckInRepository$addCheckIn$2;->$checkIn:Lde/rki/coronawarnapp/presencetracing/checkins/CheckIn;
 
-    invoke-static {v1}, Lkotlin/TuplesKt;->toEntity(Lde/rki/coronawarnapp/presencetracing/checkins/CheckIn;)Lde/rki/coronawarnapp/presencetracing/storage/entity/TraceLocationCheckInEntity;
+    invoke-static {v1}, Lde/rki/coronawarnapp/risk/changedetection/CommonKt;->toEntity(Lde/rki/coronawarnapp/presencetracing/checkins/CheckIn;)Lde/rki/coronawarnapp/presencetracing/storage/entity/TraceLocationCheckInEntity;
 
     move-result-object v1
 

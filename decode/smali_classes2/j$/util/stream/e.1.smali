@@ -32,6 +32,8 @@
 
     if-ltz p1, :cond_0
 
+    const/4 v0, 0x4
+
     add-int/lit8 p1, p1, -0x1
 
     invoke-static {p1}, Ljava/lang/Integer;->numberOfLeadingZeros(I)I
@@ -39,8 +41,6 @@
     move-result p1
 
     rsub-int/lit8 p1, p1, 0x20
-
-    const/4 v0, 0x4
 
     invoke-static {v0, p1}, Ljava/lang/Math;->max(II)I
 
@@ -105,7 +105,7 @@
     return-wide v0
 .end method
 
-.method protected q(I)I
+.method protected s(I)I
     .locals 2
 
     const/4 v0, 0x1

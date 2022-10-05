@@ -106,6 +106,14 @@
     return p1
 .end method
 
+.method public getLifecycle()Landroidx/lifecycle/Lifecycle;
+    .locals 1
+
+    iget-object v0, p0, Landroidx/core/app/ComponentActivity;->mLifecycleRegistry:Landroidx/lifecycle/LifecycleRegistry;
+
+    return-object v0
+.end method
+
 .method public onCreate(Landroid/os/Bundle;)V
     .locals 0
     .annotation build Landroid/annotation/SuppressLint;

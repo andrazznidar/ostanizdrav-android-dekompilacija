@@ -15,6 +15,17 @@
     .end annotation
 .end field
 
+.field public final dccTicketingTransactionContextCache:Ljava/util/Map;
+    .annotation system Ldalvik/annotation/Signature;
+        value = {
+            "Ljava/util/Map<",
+            "Ljava/lang/String;",
+            "Lde/rki/coronawarnapp/dccticketing/core/transaction/DccTicketingTransactionContext;",
+            ">;"
+        }
+    .end annotation
+.end field
+
 .field public final verifiedTraceLocationCache:Ljava/util/Map;
     .annotation system Ldalvik/annotation/Signature;
         value = {
@@ -44,6 +55,12 @@
     invoke-direct {v0}, Ljava/util/LinkedHashMap;-><init>()V
 
     iput-object v0, p0, Lde/rki/coronawarnapp/qrcode/ui/QrcodeSharedViewModel;->dccQrCodeCache:Ljava/util/Map;
+
+    new-instance v0, Ljava/util/LinkedHashMap;
+
+    invoke-direct {v0}, Ljava/util/LinkedHashMap;-><init>()V
+
+    iput-object v0, p0, Lde/rki/coronawarnapp/qrcode/ui/QrcodeSharedViewModel;->dccTicketingTransactionContextCache:Ljava/util/Map;
 
     return-void
 .end method

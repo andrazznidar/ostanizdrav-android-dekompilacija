@@ -11,8 +11,26 @@
     return-void
 .end method
 
+.method public constructor <init>(Lorg/bouncycastle/crypto/digests/SHA384Digest;)V
+    .locals 0
+
+    invoke-direct {p0, p1}, Lorg/bouncycastle/crypto/digests/LongDigest;-><init>(Lorg/bouncycastle/crypto/digests/LongDigest;)V
+
+    return-void
+.end method
+
 
 # virtual methods
+.method public copy()Lorg/bouncycastle/util/Memoable;
+    .locals 1
+
+    new-instance v0, Lorg/bouncycastle/crypto/digests/SHA384Digest;
+
+    invoke-direct {v0, p0}, Lorg/bouncycastle/crypto/digests/SHA384Digest;-><init>(Lorg/bouncycastle/crypto/digests/SHA384Digest;)V
+
+    return-object v0
+.end method
+
 .method public doFinal([BI)I
     .locals 3
 
@@ -111,6 +129,16 @@
     const-wide v0, 0x47b5481dbefa4fa4L    # 2.8288236605994657E37
 
     iput-wide v0, p0, Lorg/bouncycastle/crypto/digests/LongDigest;->H8:J
+
+    return-void
+.end method
+
+.method public reset(Lorg/bouncycastle/util/Memoable;)V
+    .locals 0
+
+    check-cast p1, Lorg/bouncycastle/crypto/digests/SHA384Digest;
+
+    invoke-virtual {p0, p1}, Lorg/bouncycastle/crypto/digests/LongDigest;->copyIn(Lorg/bouncycastle/crypto/digests/LongDigest;)V
 
     return-void
 .end method

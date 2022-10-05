@@ -38,7 +38,7 @@
 .end annotation
 
 .annotation system Ldalvik/annotation/SourceDebugExtension;
-    value = "SMAP\nTestCertificateRepository.kt\nKotlin\n*S Kotlin\n*F\n+ 1 TestCertificateRepository.kt\nde/rki/coronawarnapp/covidcertificate/test/core/TestCertificateRepository$registerCertificate$updatedData$1\n+ 2 _Collections.kt\nkotlin/collections/CollectionsKt___CollectionsKt\n+ 3 MapExtensions.kt\nde/rki/coronawarnapp/util/MapExtensionsKt\n*L\n1#1,496:1\n1741#2,3:497\n4#3:500\n*S KotlinDebug\n*F\n+ 1 TestCertificateRepository.kt\nde/rki/coronawarnapp/covidcertificate/test/core/TestCertificateRepository$registerCertificate$updatedData$1\n*L\n197#1:497,3\n216#1:500\n*E\n"
+    value = "SMAP\nTestCertificateRepository.kt\nKotlin\n*S Kotlin\n*F\n+ 1 TestCertificateRepository.kt\nde/rki/coronawarnapp/covidcertificate/test/core/TestCertificateRepository$registerCertificate$updatedData$1\n+ 2 _Collections.kt\nkotlin/collections/CollectionsKt___CollectionsKt\n+ 3 MapExtensions.kt\nde/rki/coronawarnapp/util/MapExtensionsKt\n*L\n1#1,590:1\n1741#2,3:591\n4#3:594\n*S KotlinDebug\n*F\n+ 1 TestCertificateRepository.kt\nde/rki/coronawarnapp/covidcertificate/test/core/TestCertificateRepository$registerCertificate$updatedData$1\n*L\n214#1:591,3\n233#1:594\n*E\n"
 .end annotation
 
 .annotation runtime Lkotlin/coroutines/jvm/internal/DebugMetadata;
@@ -139,7 +139,7 @@
 .end method
 
 .method public final invokeSuspend(Ljava/lang/Object;)Ljava/lang/Object;
-    .locals 17
+    .locals 19
 
     move-object/from16 v0, p0
 
@@ -161,30 +161,27 @@
 
     const/4 v6, 0x0
 
-    if-eqz v4, :cond_1
+    if-eqz v4, :cond_0
 
     invoke-interface {v2}, Ljava/util/Collection;->isEmpty()Z
 
     move-result v4
 
-    if-eqz v4, :cond_1
-
-    :cond_0
-    move v2, v6
+    if-eqz v4, :cond_0
 
     goto :goto_0
 
-    :cond_1
+    :cond_0
     invoke-interface {v2}, Ljava/lang/Iterable;->iterator()Ljava/util/Iterator;
 
     move-result-object v2
 
-    :cond_2
+    :cond_1
     invoke-interface {v2}, Ljava/util/Iterator;->hasNext()Z
 
     move-result v4
 
-    if-eqz v4, :cond_0
+    if-eqz v4, :cond_2
 
     invoke-interface {v2}, Ljava/util/Iterator;->next()Ljava/lang/Object;
 
@@ -192,11 +189,13 @@
 
     check-cast v4, Lde/rki/coronawarnapp/covidcertificate/test/core/storage/TestCertificateContainer;
 
-    invoke-virtual {v4}, Lde/rki/coronawarnapp/covidcertificate/test/core/storage/TestCertificateContainer;->getCertificateId()Ljava/lang/String;
+    invoke-virtual {v4}, Lde/rki/coronawarnapp/covidcertificate/test/core/storage/TestCertificateContainer;->getQrCodeHash()Ljava/lang/String;
 
     move-result-object v4
 
-    invoke-virtual {v3}, Lde/rki/coronawarnapp/covidcertificate/test/core/qrcode/TestCertificateQRCode;->getUniqueCertificateIdentifier()Ljava/lang/String;
+    invoke-static {v3}, Ljava/util/Objects;->requireNonNull(Ljava/lang/Object;)Ljava/lang/Object;
+
+    invoke-static {v3}, Lde/rki/coronawarnapp/covidcertificate/common/qrcode/DccQrCode$DefaultImpls;->getHash(Lde/rki/coronawarnapp/covidcertificate/common/qrcode/DccQrCode;)Ljava/lang/String;
 
     move-result-object v7
 
@@ -204,11 +203,17 @@
 
     move-result v4
 
-    if-eqz v4, :cond_2
+    if-eqz v4, :cond_1
 
     move v2, v5
 
+    goto :goto_1
+
+    :cond_2
     :goto_0
+    move v2, v6
+
+    :goto_1
     if-nez v2, :cond_3
 
     iget-object v2, v0, Lde/rki/coronawarnapp/covidcertificate/test/core/TestCertificateRepository$registerCertificate$updatedData$1;->this$0:Lde/rki/coronawarnapp/covidcertificate/test/core/TestCertificateRepository;
@@ -241,19 +246,23 @@
 
     const/4 v13, 0x0
 
+    const/4 v14, 0x0
+
     iget-object v3, v0, Lde/rki/coronawarnapp/covidcertificate/test/core/TestCertificateRepository$registerCertificate$updatedData$1;->$qrCode:Lde/rki/coronawarnapp/covidcertificate/test/core/qrcode/TestCertificateQRCode;
 
-    iget-object v14, v3, Lde/rki/coronawarnapp/covidcertificate/test/core/qrcode/TestCertificateQRCode;->qrCode:Ljava/lang/String;
+    iget-object v15, v3, Lde/rki/coronawarnapp/covidcertificate/test/core/qrcode/TestCertificateQRCode;->qrCode:Ljava/lang/String;
 
-    const/4 v15, 0x0
+    const/16 v16, 0x0
 
-    const/16 v16, 0x38
+    const/16 v17, 0x0
+
+    const/16 v18, 0x278
 
     move-object v7, v2
 
     move-object v9, v10
 
-    invoke-direct/range {v7 .. v16}, Lde/rki/coronawarnapp/covidcertificate/test/core/storage/types/GenericTestCertificateData;-><init>(Ljava/lang/String;Lorg/joda/time/Instant;Lorg/joda/time/Instant;Lorg/joda/time/Instant;Lde/rki/coronawarnapp/covidcertificate/common/certificate/CwaCovidCertificate$State;Lorg/joda/time/Instant;Ljava/lang/String;ZI)V
+    invoke-direct/range {v7 .. v18}, Lde/rki/coronawarnapp/covidcertificate/test/core/storage/types/GenericTestCertificateData;-><init>(Ljava/lang/String;Lorg/joda/time/Instant;Lorg/joda/time/Instant;Lorg/joda/time/Instant;Lde/rki/coronawarnapp/covidcertificate/common/certificate/CwaCovidCertificate$State;Lorg/joda/time/Instant;Lorg/joda/time/Instant;Ljava/lang/String;ZLorg/joda/time/Instant;I)V
 
     new-instance v3, Lde/rki/coronawarnapp/covidcertificate/test/core/storage/TestCertificateContainer;
 
@@ -275,7 +284,7 @@
 
     const-string v5, "Adding test certificate entry: %s"
 
-    invoke-virtual {v2, v5, v4}, Ltimber/log/Timber$Tree;->d(Ljava/lang/String;[Ljava/lang/Object;)V
+    invoke-virtual {v2, v5, v4}, Ltimber/log/Timber$Forest;->d(Ljava/lang/String;[Ljava/lang/Object;)V
 
     invoke-static {v1}, Lkotlin/collections/MapsKt___MapsKt;->toMutableMap(Ljava/util/Map;)Ljava/util/Map;
 
@@ -308,7 +317,7 @@
 
     const-string v3, "Certificate entry already exists for %s"
 
-    invoke-virtual {v1, v3, v2}, Ltimber/log/Timber$Tree;->e(Ljava/lang/String;[Ljava/lang/Object;)V
+    invoke-virtual {v1, v3, v2}, Ltimber/log/Timber$Forest;->e(Ljava/lang/String;[Ljava/lang/Object;)V
 
     new-instance v1, Lde/rki/coronawarnapp/covidcertificate/common/exception/InvalidTestCertificateException;
 

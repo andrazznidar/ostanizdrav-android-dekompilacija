@@ -449,69 +449,71 @@
 
     invoke-static {v8}, Ljava/lang/Math;->abs(I)I
 
-    move-result v8
+    move-result v9
 
-    neg-int v9, v7
+    neg-int v10, v7
 
-    const/4 v10, 0x2
+    const/4 v11, 0x2
 
-    div-int/2addr v9, v10
+    div-int/2addr v10, v11
 
-    const/4 v11, -0x1
+    const/4 v12, -0x1
 
     if-ge v1, v5, :cond_2
 
-    move v12, v3
+    move v13, v3
 
     goto :goto_2
 
     :cond_2
-    move v12, v11
+    move v13, v12
 
     :goto_2
     if-ge v4, v6, :cond_3
 
-    move v11, v3
+    move v12, v3
 
     :cond_3
-    add-int/2addr v5, v12
+    add-int/2addr v5, v13
 
-    move v13, v1
+    move v14, v1
 
-    move v14, v4
+    move v15, v4
 
-    const/4 v15, 0x0
+    const/4 v2, 0x0
 
     :goto_3
-    if-eq v13, v5, :cond_b
+    if-eq v14, v5, :cond_b
 
     if-eqz v0, :cond_4
 
-    move v2, v14
+    move v11, v15
 
     goto :goto_4
 
     :cond_4
-    move v2, v13
+    move v11, v14
 
     :goto_4
+    move/from16 v16, v0
+
     if-eqz v0, :cond_5
 
-    move v10, v13
+    move v0, v14
 
     goto :goto_5
 
     :cond_5
-    move v10, v14
+    move v0, v15
 
     :goto_5
-    if-ne v15, v3, :cond_6
+    if-ne v2, v3, :cond_6
 
-    move/from16 v16, v0
+    move/from16 p3, v5
 
-    move v0, v3
+    move/from16 p2, v8
 
-    move/from16 p2, v5
+    move v8, v3
 
     move-object/from16 v3, p0
 
@@ -520,83 +522,110 @@
     :cond_6
     move-object/from16 v3, p0
 
-    move/from16 v16, v0
+    move/from16 p3, v5
 
-    move/from16 p2, v5
+    move/from16 p2, v8
 
-    const/4 v0, 0x0
+    const/4 v8, 0x0
 
     :goto_6
     iget-object v5, v3, Lcom/google/zxing/qrcode/detector/Detector;->image:Lcom/google/zxing/common/BitMatrix;
 
-    invoke-virtual {v5, v2, v10}, Lcom/google/zxing/common/BitMatrix;->get(II)Z
+    invoke-virtual {v5, v11, v0}, Lcom/google/zxing/common/BitMatrix;->get(II)Z
 
-    move-result v2
+    move-result v0
 
-    if-ne v0, v2, :cond_8
+    if-ne v8, v0, :cond_8
 
     const/4 v0, 0x2
 
-    if-ne v15, v0, :cond_7
+    if-ne v2, v0, :cond_7
 
-    invoke-static {v13, v14, v1, v4}, Lcom/google/zxing/common/detector/MathUtils;->distance(IIII)F
+    sub-int/2addr v14, v1
 
-    move-result v0
+    sub-int/2addr v15, v4
+
+    mul-int/2addr v14, v14
+
+    mul-int/2addr v15, v15
+
+    add-int/2addr v15, v14
+
+    int-to-double v0, v15
+
+    invoke-static {v0, v1}, Ljava/lang/Math;->sqrt(D)D
+
+    move-result-wide v0
+
+    :goto_7
+    double-to-float v0, v0
 
     return v0
 
     :cond_7
-    add-int/lit8 v15, v15, 0x1
+    add-int/lit8 v2, v2, 0x1
 
     :cond_8
-    add-int/2addr v9, v8
+    add-int/2addr v10, v9
 
-    if-lez v9, :cond_a
+    if-lez v10, :cond_a
 
-    if-eq v14, v6, :cond_9
+    if-eq v15, v6, :cond_9
 
-    add-int/2addr v14, v11
+    add-int/2addr v15, v12
 
-    sub-int/2addr v9, v7
+    sub-int/2addr v10, v7
 
-    goto :goto_7
+    goto :goto_8
 
     :cond_9
     const/4 v0, 0x2
 
-    goto :goto_8
+    goto :goto_9
 
     :cond_a
-    :goto_7
-    add-int/2addr v13, v12
+    :goto_8
+    add-int/2addr v14, v13
 
-    move/from16 v5, p2
+    move/from16 v8, p2
+
+    move/from16 v5, p3
 
     move/from16 v0, v16
 
     const/4 v3, 0x1
 
-    const/4 v10, 0x2
+    const/4 v11, 0x2
 
     goto :goto_3
 
     :cond_b
     move-object/from16 v3, p0
 
-    move/from16 p2, v5
+    move/from16 p3, v5
 
-    move v0, v10
+    move/from16 p2, v8
 
-    :goto_8
-    if-ne v15, v0, :cond_c
+    move v0, v11
 
-    move/from16 v5, p2
+    :goto_9
+    if-ne v2, v0, :cond_c
 
-    invoke-static {v5, v6, v1, v4}, Lcom/google/zxing/common/detector/MathUtils;->distance(IIII)F
+    sub-int v5, p3, v1
 
-    move-result v0
+    mul-int/2addr v5, v5
 
-    return v0
+    mul-int v8, p2, p2
+
+    add-int/2addr v8, v5
+
+    int-to-double v0, v8
+
+    invoke-static {v0, v1}, Ljava/lang/Math;->sqrt(D)D
+
+    move-result-wide v0
+
+    goto :goto_7
 
     :cond_c
     const/high16 v0, 0x7fc00000    # Float.NaN

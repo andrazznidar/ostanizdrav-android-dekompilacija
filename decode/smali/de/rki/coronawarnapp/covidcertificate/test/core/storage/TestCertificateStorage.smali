@@ -59,7 +59,7 @@
 
     invoke-direct {p1, p0}, Lde/rki/coronawarnapp/covidcertificate/test/core/storage/TestCertificateStorage$prefs$2;-><init>(Lde/rki/coronawarnapp/covidcertificate/test/core/storage/TestCertificateStorage;)V
 
-    invoke-static {p1}, Lkotlin/LazyKt__LazyKt;->lazy(Lkotlin/jvm/functions/Function0;)Lkotlin/Lazy;
+    invoke-static {p1}, Lkotlin/LazyKt__LazyJVMKt;->lazy(Lkotlin/jvm/functions/Function0;)Lkotlin/Lazy;
 
     move-result-object p1
 
@@ -69,7 +69,7 @@
 
     invoke-direct {p1, p0}, Lde/rki/coronawarnapp/covidcertificate/test/core/storage/TestCertificateStorage$gson$2;-><init>(Lde/rki/coronawarnapp/covidcertificate/test/core/storage/TestCertificateStorage;)V
 
-    invoke-static {p1}, Lkotlin/LazyKt__LazyKt;->lazy(Lkotlin/jvm/functions/Function0;)Lkotlin/Lazy;
+    invoke-static {p1}, Lkotlin/LazyKt__LazyJVMKt;->lazy(Lkotlin/jvm/functions/Function0;)Lkotlin/Lazy;
 
     move-result-object p1
 
@@ -77,7 +77,7 @@
 
     sget-object p1, Lde/rki/coronawarnapp/covidcertificate/test/core/storage/TestCertificateStorage$typeTokenPCR$2;->INSTANCE:Lde/rki/coronawarnapp/covidcertificate/test/core/storage/TestCertificateStorage$typeTokenPCR$2;
 
-    invoke-static {p1}, Lkotlin/LazyKt__LazyKt;->lazy(Lkotlin/jvm/functions/Function0;)Lkotlin/Lazy;
+    invoke-static {p1}, Lkotlin/LazyKt__LazyJVMKt;->lazy(Lkotlin/jvm/functions/Function0;)Lkotlin/Lazy;
 
     move-result-object p1
 
@@ -85,7 +85,7 @@
 
     sget-object p1, Lde/rki/coronawarnapp/covidcertificate/test/core/storage/TestCertificateStorage$typeTokenRA$2;->INSTANCE:Lde/rki/coronawarnapp/covidcertificate/test/core/storage/TestCertificateStorage$typeTokenRA$2;
 
-    invoke-static {p1}, Lkotlin/LazyKt__LazyKt;->lazy(Lkotlin/jvm/functions/Function0;)Lkotlin/Lazy;
+    invoke-static {p1}, Lkotlin/LazyKt__LazyJVMKt;->lazy(Lkotlin/jvm/functions/Function0;)Lkotlin/Lazy;
 
     move-result-object p1
 
@@ -93,7 +93,7 @@
 
     sget-object p1, Lde/rki/coronawarnapp/covidcertificate/test/core/storage/TestCertificateStorage$typeTokenGeneric$2;->INSTANCE:Lde/rki/coronawarnapp/covidcertificate/test/core/storage/TestCertificateStorage$typeTokenGeneric$2;
 
-    invoke-static {p1}, Lkotlin/LazyKt__LazyKt;->lazy(Lkotlin/jvm/functions/Function0;)Lkotlin/Lazy;
+    invoke-static {p1}, Lkotlin/LazyKt__LazyJVMKt;->lazy(Lkotlin/jvm/functions/Function0;)Lkotlin/Lazy;
 
     move-result-object p1
 
@@ -339,7 +339,7 @@
 .end method
 
 .method public final loadCerts(Lcom/google/gson/reflect/TypeToken;Ljava/lang/String;)Ljava/util/Set;
-    .locals 6
+    .locals 7
     .annotation system Ldalvik/annotation/Signature;
         value = {
             "<T:",
@@ -440,7 +440,11 @@
 
     const/4 v5, 0x0
 
-    aput-object v1, v4, v5
+    invoke-virtual {v1}, Lde/rki/coronawarnapp/covidcertificate/test/core/storage/types/BaseTestCertificateData;->getIdentifier()Ljava/lang/String;
+
+    move-result-object v6
+
+    aput-object v6, v4, v5
 
     invoke-virtual {v2, v3, v4}, Ltimber/log/Timber$Forest;->v(Ljava/lang/String;[Ljava/lang/Object;)V
 
@@ -472,7 +476,7 @@
 .end method
 
 .method public final save(Ljava/util/Collection;Lkotlin/coroutines/Continuation;)Ljava/lang/Object;
-    .locals 7
+    .locals 8
     .annotation system Ldalvik/annotation/Signature;
         value = {
             "(",
@@ -597,7 +601,15 @@
 
     const/4 v5, 0x0
 
-    aput-object p1, v4, v5
+    invoke-interface {p1}, Ljava/util/Collection;->size()I
+
+    move-result v6
+
+    new-instance v7, Ljava/lang/Integer;
+
+    invoke-direct {v7, v6}, Ljava/lang/Integer;-><init>(I)V
+
+    aput-object v7, v4, v5
 
     invoke-virtual {v1, v2, v4}, Ltimber/log/Timber$Forest;->d(Ljava/lang/String;[Ljava/lang/Object;)V
 
@@ -759,7 +771,7 @@
 .end method
 
 .method public final storeCerts(Landroid/content/SharedPreferences$Editor;Ljava/util/Collection;Lcom/google/gson/reflect/TypeToken;Ljava/lang/String;)V
-    .locals 5
+    .locals 6
     .annotation system Ldalvik/annotation/Signature;
         value = {
             "<T:",
@@ -804,19 +816,19 @@
 
     invoke-virtual {v0, p2, p3}, Lcom/google/gson/Gson;->toJson(Ljava/lang/Object;Ljava/lang/reflect/Type;)Ljava/lang/String;
 
-    move-result-object p2
+    move-result-object v0
 
-    sget-object v0, Ltimber/log/Timber;->Forest:Ltimber/log/Timber$Forest;
+    sget-object v4, Ltimber/log/Timber;->Forest:Ltimber/log/Timber$Forest;
 
-    invoke-virtual {v0, v3}, Ltimber/log/Timber$Forest;->tag(Ljava/lang/String;)Ltimber/log/Timber$Tree;
+    invoke-virtual {v4, v3}, Ltimber/log/Timber$Forest;->tag(Ljava/lang/String;)Ltimber/log/Timber$Tree;
 
     new-instance v3, Ljava/lang/StringBuilder;
 
     invoke-direct {v3}, Ljava/lang/StringBuilder;-><init>()V
 
-    const-string v4, "Storing scanned certs ("
+    const-string v5, "Storing scanned certs ("
 
-    invoke-virtual {v3, v4}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+    invoke-virtual {v3, v5}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
 
     invoke-virtual {v3, p3}, Ljava/lang/StringBuilder;->append(Ljava/lang/Object;)Ljava/lang/StringBuilder;
 
@@ -830,11 +842,19 @@
 
     new-array v1, v1, [Ljava/lang/Object;
 
+    invoke-interface {p2}, Ljava/util/Collection;->size()I
+
+    move-result p2
+
+    invoke-static {p2}, Ljava/lang/Integer;->valueOf(I)Ljava/lang/Integer;
+
+    move-result-object p2
+
     aput-object p2, v1, v2
 
-    invoke-virtual {v0, p3, v1}, Ltimber/log/Timber$Forest;->v(Ljava/lang/String;[Ljava/lang/Object;)V
+    invoke-virtual {v4, p3, v1}, Ltimber/log/Timber$Forest;->v(Ljava/lang/String;[Ljava/lang/Object;)V
 
-    invoke-interface {p1, p4, p2}, Landroid/content/SharedPreferences$Editor;->putString(Ljava/lang/String;Ljava/lang/String;)Landroid/content/SharedPreferences$Editor;
+    invoke-interface {p1, p4, v0}, Landroid/content/SharedPreferences$Editor;->putString(Ljava/lang/String;Ljava/lang/String;)Landroid/content/SharedPreferences$Editor;
 
     goto :goto_0
 

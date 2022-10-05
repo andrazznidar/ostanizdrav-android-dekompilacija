@@ -96,7 +96,7 @@
     :goto_0
     if-eqz v1, :cond_2
 
-    invoke-static {v2, v2}, Lcom/google/gson/internal/PreJava9DateFormatProvider;->getUSDateTimeFormat(II)Ljava/text/DateFormat;
+    invoke-static {v2, v2}, Lde/rki/jfn/error/ErrorKt;->getUSDateTimeFormat(II)Ljava/text/DateFormat;
 
     move-result-object v1
 

@@ -1,4 +1,4 @@
-.class public final Lkotlin/reflect/jvm/internal/impl/protobuf/SmallSortedMap$EmptySet$2;
+.class final Lkotlin/reflect/jvm/internal/impl/protobuf/SmallSortedMap$EmptySet$2;
 .super Ljava/lang/Object;
 .source "SmallSortedMap.java"
 
@@ -48,7 +48,9 @@
         }
     .end annotation
 
-    sget-object v0, Lkotlin/reflect/jvm/internal/impl/protobuf/SmallSortedMap$EmptySet;->ITERATOR:Ljava/util/Iterator;
+    invoke-static {}, Lkotlin/reflect/jvm/internal/impl/protobuf/SmallSortedMap$EmptySet;->access$700()Ljava/util/Iterator;
+
+    move-result-object v0
 
     return-object v0
 .end method

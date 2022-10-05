@@ -9,6 +9,7 @@
 # annotations
 .annotation system Ldalvik/annotation/MemberClasses;
     value = {
+        Lcom/fasterxml/jackson/databind/BeanProperty$Bogus;,
         Lcom/fasterxml/jackson/databind/BeanProperty$Std;
     }
 .end annotation

@@ -1,4 +1,4 @@
-.class public final Lkotlin/reflect/jvm/internal/impl/descriptors/FindClassInModuleKt$findNonGenericClassAcrossDependencies$typeParametersCount$2;
+.class final Lkotlin/reflect/jvm/internal/impl/descriptors/FindClassInModuleKt$findNonGenericClassAcrossDependencies$typeParametersCount$2;
 .super Lkotlin/jvm/internal/Lambda;
 .source "findClassInModule.kt"
 
@@ -56,10 +56,8 @@
 
 
 # virtual methods
-.method public invoke(Ljava/lang/Object;)Ljava/lang/Object;
+.method public final invoke(Lkotlin/reflect/jvm/internal/impl/name/ClassId;)Ljava/lang/Integer;
     .locals 1
-
-    check-cast p1, Lkotlin/reflect/jvm/internal/impl/name/ClassId;
 
     const-string v0, "it"
 
@@ -68,6 +66,18 @@
     const/4 p1, 0x0
 
     invoke-static {p1}, Ljava/lang/Integer;->valueOf(I)Ljava/lang/Integer;
+
+    move-result-object p1
+
+    return-object p1
+.end method
+
+.method public bridge synthetic invoke(Ljava/lang/Object;)Ljava/lang/Object;
+    .locals 0
+
+    check-cast p1, Lkotlin/reflect/jvm/internal/impl/name/ClassId;
+
+    invoke-virtual {p0, p1}, Lkotlin/reflect/jvm/internal/impl/descriptors/FindClassInModuleKt$findNonGenericClassAcrossDependencies$typeParametersCount$2;->invoke(Lkotlin/reflect/jvm/internal/impl/name/ClassId;)Ljava/lang/Integer;
 
     move-result-object p1
 

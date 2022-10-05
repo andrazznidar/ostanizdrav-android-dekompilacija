@@ -92,7 +92,7 @@
 
     new-array p3, p2, [Ljava/lang/Object;
 
-    const v0, 0x7f13074d
+    const v0, 0x7f1306de
 
     invoke-static {v0, p3}, Lde/rki/coronawarnapp/util/ui/LazyStringKt;->toResolvingString(I[Ljava/lang/Object;)Lde/rki/coronawarnapp/util/ui/LazyString;
 
@@ -104,9 +104,9 @@
 
     new-instance v1, LTextViewUrlSet;
 
-    const v2, 0x7f13074e
+    const v2, 0x7f1306df
 
-    const v3, 0x7f13074f
+    const v3, 0x7f1306e0
 
     invoke-direct {v1, v2, v3}, LTextViewUrlSet;-><init>(II)V
 
@@ -114,9 +114,9 @@
 
     new-instance p2, LTextViewUrlSet;
 
-    const v1, 0x7f13075c
+    const v1, 0x7f1306ec
 
-    const v2, 0x7f13075d
+    const v2, 0x7f1306ed
 
     invoke-direct {p2, v1, v2}, LTextViewUrlSet;-><init>(II)V
 

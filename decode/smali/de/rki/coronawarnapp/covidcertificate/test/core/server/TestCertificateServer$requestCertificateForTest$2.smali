@@ -124,17 +124,17 @@
 
     iget v1, p0, Lde/rki/coronawarnapp/covidcertificate/test/core/server/TestCertificateServer$requestCertificateForTest$2;->label:I
 
-    const/4 v2, 0x2
+    const/4 v2, 0x1
 
-    const/4 v3, 0x1
+    const/4 v3, 0x2
 
     const/4 v4, 0x0
 
     if-eqz v1, :cond_2
 
-    if-eq v1, v3, :cond_1
+    if-eq v1, v2, :cond_1
 
-    if-ne v1, v2, :cond_0
+    if-ne v1, v3, :cond_0
 
     invoke-static {p1}, Lkotlin/ResultKt;->throwOnFailure(Ljava/lang/Object;)V
 
@@ -163,7 +163,7 @@
 
     invoke-virtual {p1, v1}, Ltimber/log/Timber$Forest;->tag(Ljava/lang/String;)Ltimber/log/Timber$Tree;
 
-    new-array v1, v3, [Ljava/lang/Object;
+    new-array v1, v2, [Ljava/lang/Object;
 
     const/4 v5, 0x0
 
@@ -177,7 +177,7 @@
 
     iget-object p1, p0, Lde/rki/coronawarnapp/covidcertificate/test/core/server/TestCertificateServer$requestCertificateForTest$2;->this$0:Lde/rki/coronawarnapp/covidcertificate/test/core/server/TestCertificateServer;
 
-    iput v3, p0, Lde/rki/coronawarnapp/covidcertificate/test/core/server/TestCertificateServer$requestCertificateForTest$2;->label:I
+    iput v2, p0, Lde/rki/coronawarnapp/covidcertificate/test/core/server/TestCertificateServer$requestCertificateForTest$2;->label:I
 
     invoke-static {p1, p0}, Lde/rki/coronawarnapp/covidcertificate/test/core/server/TestCertificateServer;->access$isInternetAvailable(Lde/rki/coronawarnapp/covidcertificate/test/core/server/TestCertificateServer;Lkotlin/coroutines/Continuation;)Ljava/lang/Object;
 
@@ -213,11 +213,11 @@
 
     new-instance v1, Lde/rki/coronawarnapp/covidcertificate/test/core/server/TestCertificateApiV1$ComponentsRequest;
 
-    iget-object v3, p0, Lde/rki/coronawarnapp/covidcertificate/test/core/server/TestCertificateServer$requestCertificateForTest$2;->$testRegistrationToken:Ljava/lang/String;
+    iget-object v5, p0, Lde/rki/coronawarnapp/covidcertificate/test/core/server/TestCertificateServer$requestCertificateForTest$2;->$testRegistrationToken:Ljava/lang/String;
 
-    invoke-direct {v1, v3}, Lde/rki/coronawarnapp/covidcertificate/test/core/server/TestCertificateApiV1$ComponentsRequest;-><init>(Ljava/lang/String;)V
+    invoke-direct {v1, v5}, Lde/rki/coronawarnapp/covidcertificate/test/core/server/TestCertificateApiV1$ComponentsRequest;-><init>(Ljava/lang/String;)V
 
-    iput v2, p0, Lde/rki/coronawarnapp/covidcertificate/test/core/server/TestCertificateServer$requestCertificateForTest$2;->label:I
+    iput v3, p0, Lde/rki/coronawarnapp/covidcertificate/test/core/server/TestCertificateServer$requestCertificateForTest$2;->label:I
 
     invoke-interface {p1, v1, p0}, Lde/rki/coronawarnapp/covidcertificate/test/core/server/TestCertificateApiV1;->getComponents(Lde/rki/coronawarnapp/covidcertificate/test/core/server/TestCertificateApiV1$ComponentsRequest;Lkotlin/coroutines/Continuation;)Ljava/lang/Object;
 
@@ -278,8 +278,6 @@
     move-result-object v0
 
     :goto_2
-    sget-object v1, Lde/rki/coronawarnapp/covidcertificate/test/core/server/TestCertificateApiV1$ComponentsResponse$Reason;->INTERNAL:Lde/rki/coronawarnapp/covidcertificate/test/core/server/TestCertificateApiV1$ComponentsResponse$Reason;
-
     const-string v1, "INTERNAL"
 
     invoke-static {v0, v1}, Lkotlin/jvm/internal/Intrinsics;->areEqual(Ljava/lang/Object;Ljava/lang/Object;)Z
@@ -287,8 +285,6 @@
     move-result v1
 
     if-nez v1, :cond_a
-
-    sget-object v1, Lde/rki/coronawarnapp/covidcertificate/test/core/server/TestCertificateApiV1$ComponentsResponse$Reason;->SIGNING_CLIENT_ERROR:Lde/rki/coronawarnapp/covidcertificate/test/core/server/TestCertificateApiV1$ComponentsResponse$Reason;
 
     const-string v1, "SIGNING_CLIENT_ERROR"
 
@@ -298,8 +294,6 @@
 
     if-nez v1, :cond_9
 
-    sget-object v1, Lde/rki/coronawarnapp/covidcertificate/test/core/server/TestCertificateApiV1$ComponentsResponse$Reason;->SIGNING_SERVER_ERROR:Lde/rki/coronawarnapp/covidcertificate/test/core/server/TestCertificateApiV1$ComponentsResponse$Reason;
-
     const-string v1, "SIGNING_SERVER_ERROR"
 
     invoke-static {v0, v1}, Lkotlin/jvm/internal/Intrinsics;->areEqual(Ljava/lang/Object;Ljava/lang/Object;)Z
@@ -307,8 +301,6 @@
     move-result v1
 
     if-nez v1, :cond_8
-
-    sget-object v1, Lde/rki/coronawarnapp/covidcertificate/test/core/server/TestCertificateApiV1$ComponentsResponse$Reason;->LAB_INVALID_RESPONSE:Lde/rki/coronawarnapp/covidcertificate/test/core/server/TestCertificateApiV1$ComponentsResponse$Reason;
 
     const-string v1, "LAB_INVALID_RESPONSE"
 
@@ -346,90 +338,86 @@
     :cond_7
     new-instance p1, Lde/rki/coronawarnapp/covidcertificate/common/exception/TestCertificateException;
 
-    sget-object v0, Lde/rki/coronawarnapp/covidcertificate/common/exception/TestCertificateException$ErrorCode;->DCC_COMP_500_LAB_INVALID_RESPONSE:Lde/rki/coronawarnapp/covidcertificate/common/exception/TestCertificateException$ErrorCode;
+    const/4 v0, 0x7
 
-    invoke-direct {p1, v0, v4}, Lde/rki/coronawarnapp/covidcertificate/common/exception/TestCertificateException;-><init>(Lde/rki/coronawarnapp/covidcertificate/common/exception/TestCertificateException$ErrorCode;Ljava/lang/Throwable;)V
+    invoke-direct {p1, v0, v4}, Lde/rki/coronawarnapp/covidcertificate/common/exception/TestCertificateException;-><init>(ILjava/lang/Throwable;)V
 
     throw p1
 
     :cond_8
     new-instance p1, Lde/rki/coronawarnapp/covidcertificate/common/exception/TestCertificateException;
 
-    sget-object v0, Lde/rki/coronawarnapp/covidcertificate/common/exception/TestCertificateException$ErrorCode;->DCC_COMP_500_SIGNING_SERVER_ERROR:Lde/rki/coronawarnapp/covidcertificate/common/exception/TestCertificateException$ErrorCode;
+    const/16 v0, 0x9
 
-    invoke-direct {p1, v0, v4}, Lde/rki/coronawarnapp/covidcertificate/common/exception/TestCertificateException;-><init>(Lde/rki/coronawarnapp/covidcertificate/common/exception/TestCertificateException$ErrorCode;Ljava/lang/Throwable;)V
+    invoke-direct {p1, v0, v4}, Lde/rki/coronawarnapp/covidcertificate/common/exception/TestCertificateException;-><init>(ILjava/lang/Throwable;)V
 
     throw p1
 
     :cond_9
     new-instance p1, Lde/rki/coronawarnapp/covidcertificate/common/exception/TestCertificateException;
 
-    sget-object v0, Lde/rki/coronawarnapp/covidcertificate/common/exception/TestCertificateException$ErrorCode;->DCC_COMP_500_SIGNING_CLIENT_ERROR:Lde/rki/coronawarnapp/covidcertificate/common/exception/TestCertificateException$ErrorCode;
+    const/16 v0, 0x8
 
-    invoke-direct {p1, v0, v4}, Lde/rki/coronawarnapp/covidcertificate/common/exception/TestCertificateException;-><init>(Lde/rki/coronawarnapp/covidcertificate/common/exception/TestCertificateException$ErrorCode;Ljava/lang/Throwable;)V
+    invoke-direct {p1, v0, v4}, Lde/rki/coronawarnapp/covidcertificate/common/exception/TestCertificateException;-><init>(ILjava/lang/Throwable;)V
 
     throw p1
 
     :cond_a
     new-instance p1, Lde/rki/coronawarnapp/covidcertificate/common/exception/TestCertificateException;
 
-    sget-object v0, Lde/rki/coronawarnapp/covidcertificate/common/exception/TestCertificateException$ErrorCode;->DCC_COMP_500:Lde/rki/coronawarnapp/covidcertificate/common/exception/TestCertificateException$ErrorCode;
+    const/4 v0, 0x6
 
-    invoke-direct {p1, v0, v4}, Lde/rki/coronawarnapp/covidcertificate/common/exception/TestCertificateException;-><init>(Lde/rki/coronawarnapp/covidcertificate/common/exception/TestCertificateException$ErrorCode;Ljava/lang/Throwable;)V
+    invoke-direct {p1, v0, v4}, Lde/rki/coronawarnapp/covidcertificate/common/exception/TestCertificateException;-><init>(ILjava/lang/Throwable;)V
 
     throw p1
 
     :cond_b
     new-instance p1, Lde/rki/coronawarnapp/covidcertificate/common/exception/TestCertificateException;
 
-    sget-object v0, Lde/rki/coronawarnapp/covidcertificate/common/exception/TestCertificateException$ErrorCode;->DCC_COMP_412:Lde/rki/coronawarnapp/covidcertificate/common/exception/TestCertificateException$ErrorCode;
+    const/4 v0, 0x5
 
-    invoke-direct {p1, v0, v4}, Lde/rki/coronawarnapp/covidcertificate/common/exception/TestCertificateException;-><init>(Lde/rki/coronawarnapp/covidcertificate/common/exception/TestCertificateException$ErrorCode;Ljava/lang/Throwable;)V
+    invoke-direct {p1, v0, v4}, Lde/rki/coronawarnapp/covidcertificate/common/exception/TestCertificateException;-><init>(ILjava/lang/Throwable;)V
 
     throw p1
 
     :cond_c
     new-instance p1, Lde/rki/coronawarnapp/covidcertificate/common/exception/TestCertificateException;
 
-    sget-object v0, Lde/rki/coronawarnapp/covidcertificate/common/exception/TestCertificateException$ErrorCode;->DCC_COMP_410:Lde/rki/coronawarnapp/covidcertificate/common/exception/TestCertificateException$ErrorCode;
+    const/4 v0, 0x4
 
-    invoke-direct {p1, v0, v4}, Lde/rki/coronawarnapp/covidcertificate/common/exception/TestCertificateException;-><init>(Lde/rki/coronawarnapp/covidcertificate/common/exception/TestCertificateException$ErrorCode;Ljava/lang/Throwable;)V
+    invoke-direct {p1, v0, v4}, Lde/rki/coronawarnapp/covidcertificate/common/exception/TestCertificateException;-><init>(ILjava/lang/Throwable;)V
 
     throw p1
 
     :cond_d
     new-instance p1, Lde/rki/coronawarnapp/covidcertificate/common/exception/TestCertificateException;
 
-    sget-object v0, Lde/rki/coronawarnapp/covidcertificate/common/exception/TestCertificateException$ErrorCode;->DCC_COMP_404:Lde/rki/coronawarnapp/covidcertificate/common/exception/TestCertificateException$ErrorCode;
+    const/4 v0, 0x3
 
-    invoke-direct {p1, v0, v4}, Lde/rki/coronawarnapp/covidcertificate/common/exception/TestCertificateException;-><init>(Lde/rki/coronawarnapp/covidcertificate/common/exception/TestCertificateException$ErrorCode;Ljava/lang/Throwable;)V
+    invoke-direct {p1, v0, v4}, Lde/rki/coronawarnapp/covidcertificate/common/exception/TestCertificateException;-><init>(ILjava/lang/Throwable;)V
 
     throw p1
 
     :cond_e
     new-instance p1, Lde/rki/coronawarnapp/covidcertificate/common/exception/TestCertificateException;
 
-    sget-object v0, Lde/rki/coronawarnapp/covidcertificate/common/exception/TestCertificateException$ErrorCode;->DCC_COMP_400:Lde/rki/coronawarnapp/covidcertificate/common/exception/TestCertificateException$ErrorCode;
-
-    invoke-direct {p1, v0, v4}, Lde/rki/coronawarnapp/covidcertificate/common/exception/TestCertificateException;-><init>(Lde/rki/coronawarnapp/covidcertificate/common/exception/TestCertificateException$ErrorCode;Ljava/lang/Throwable;)V
+    invoke-direct {p1, v3, v4}, Lde/rki/coronawarnapp/covidcertificate/common/exception/TestCertificateException;-><init>(ILjava/lang/Throwable;)V
 
     throw p1
 
     :cond_f
     new-instance p1, Lde/rki/coronawarnapp/covidcertificate/common/exception/TestCertificateException;
 
-    sget-object v0, Lde/rki/coronawarnapp/covidcertificate/common/exception/TestCertificateException$ErrorCode;->DCC_COMP_202:Lde/rki/coronawarnapp/covidcertificate/common/exception/TestCertificateException$ErrorCode;
-
-    invoke-direct {p1, v0, v4}, Lde/rki/coronawarnapp/covidcertificate/common/exception/TestCertificateException;-><init>(Lde/rki/coronawarnapp/covidcertificate/common/exception/TestCertificateException$ErrorCode;Ljava/lang/Throwable;)V
+    invoke-direct {p1, v2, v4}, Lde/rki/coronawarnapp/covidcertificate/common/exception/TestCertificateException;-><init>(ILjava/lang/Throwable;)V
 
     throw p1
 
     :cond_10
     new-instance p1, Lde/rki/coronawarnapp/covidcertificate/common/exception/TestCertificateException;
 
-    sget-object v0, Lde/rki/coronawarnapp/covidcertificate/common/exception/TestCertificateException$ErrorCode;->DCC_COMP_NO_NETWORK:Lde/rki/coronawarnapp/covidcertificate/common/exception/TestCertificateException$ErrorCode;
+    const/16 v0, 0xb
 
-    invoke-direct {p1, v0, v4}, Lde/rki/coronawarnapp/covidcertificate/common/exception/TestCertificateException;-><init>(Lde/rki/coronawarnapp/covidcertificate/common/exception/TestCertificateException$ErrorCode;Ljava/lang/Throwable;)V
+    invoke-direct {p1, v0, v4}, Lde/rki/coronawarnapp/covidcertificate/common/exception/TestCertificateException;-><init>(ILjava/lang/Throwable;)V
 
     throw p1
 .end method

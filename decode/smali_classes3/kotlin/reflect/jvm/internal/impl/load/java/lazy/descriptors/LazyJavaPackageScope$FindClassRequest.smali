@@ -1,4 +1,4 @@
-.class public final Lkotlin/reflect/jvm/internal/impl/load/java/lazy/descriptors/LazyJavaPackageScope$FindClassRequest;
+.class final Lkotlin/reflect/jvm/internal/impl/load/java/lazy/descriptors/LazyJavaPackageScope$FindClassRequest;
 .super Ljava/lang/Object;
 .source "LazyJavaPackageScope.kt"
 
@@ -15,14 +15,18 @@
 
 
 # instance fields
-.field public final javaClass:Lkotlin/reflect/jvm/internal/impl/load/java/structure/JavaClass;
+.field private final javaClass:Lkotlin/reflect/jvm/internal/impl/load/java/structure/JavaClass;
 
-.field public final name:Lkotlin/reflect/jvm/internal/impl/name/Name;
+.field private final name:Lkotlin/reflect/jvm/internal/impl/name/Name;
 
 
 # direct methods
 .method public constructor <init>(Lkotlin/reflect/jvm/internal/impl/name/Name;Lkotlin/reflect/jvm/internal/impl/load/java/structure/JavaClass;)V
-    .locals 0
+    .locals 1
+
+    const-string v0, "name"
+
+    invoke-static {p1, v0}, Lkotlin/jvm/internal/Intrinsics;->checkNotNullParameter(Ljava/lang/Object;Ljava/lang/String;)V
 
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
@@ -63,6 +67,22 @@
 
     :goto_0
     return p1
+.end method
+
+.method public final getJavaClass()Lkotlin/reflect/jvm/internal/impl/load/java/structure/JavaClass;
+    .locals 1
+
+    iget-object v0, p0, Lkotlin/reflect/jvm/internal/impl/load/java/lazy/descriptors/LazyJavaPackageScope$FindClassRequest;->javaClass:Lkotlin/reflect/jvm/internal/impl/load/java/structure/JavaClass;
+
+    return-object v0
+.end method
+
+.method public final getName()Lkotlin/reflect/jvm/internal/impl/name/Name;
+    .locals 1
+
+    iget-object v0, p0, Lkotlin/reflect/jvm/internal/impl/load/java/lazy/descriptors/LazyJavaPackageScope$FindClassRequest;->name:Lkotlin/reflect/jvm/internal/impl/name/Name;
+
+    return-object v0
 .end method
 
 .method public hashCode()I

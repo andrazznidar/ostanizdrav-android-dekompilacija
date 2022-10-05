@@ -89,7 +89,7 @@
 
     iget-object p1, p0, Lkotlinx/coroutines/channels/AbstractChannel$ReceiveHasNext;->cont:Lkotlinx/coroutines/CancellableContinuation;
 
-    sget-object v0, Lkotlinx/coroutines/CancellableContinuationImplKt;->RESUME_TOKEN:Lkotlinx/coroutines/internal/Symbol;
+    sget-object v0, Lcom/upokecenter/cbor/CBORDoubleBits;->RESUME_TOKEN:Lkotlinx/coroutines/internal/Symbol;
 
     invoke-interface {p1, v0}, Lkotlinx/coroutines/CancellableContinuation;->completeResume(Ljava/lang/Object;)V
 
@@ -235,7 +235,7 @@
     return-object v1
 
     :cond_0
-    sget-object p1, Lkotlinx/coroutines/CancellableContinuationImplKt;->RESUME_TOKEN:Lkotlinx/coroutines/internal/Symbol;
+    sget-object p1, Lcom/upokecenter/cbor/CBORDoubleBits;->RESUME_TOKEN:Lkotlinx/coroutines/internal/Symbol;
 
     return-object p1
 .end method

@@ -36,7 +36,7 @@
 .end annotation
 
 .annotation system Ldalvik/annotation/SourceDebugExtension;
-    value = "SMAP\nVaccinationRepository.kt\nKotlin\n*S Kotlin\n*F\n+ 1 VaccinationRepository.kt\nde/rki/coronawarnapp/covidcertificate/vaccination/core/repository/VaccinationRepository$deleteCertificate$2\n+ 2 _Collections.kt\nkotlin/collections/CollectionsKt___CollectionsKt\n+ 3 fake.kt\nkotlin/jvm/internal/FakeKt\n*L\n1#1,368:1\n1741#2,3:369\n616#2,12:372\n764#2:384\n855#2,2:385\n1601#2,9:387\n1849#2:396\n1850#2:398\n1610#2:399\n1#3:397\n*S KotlinDebug\n*F\n+ 1 VaccinationRepository.kt\nde/rki/coronawarnapp/covidcertificate/vaccination/core/repository/VaccinationRepository$deleteCertificate$2\n*L\n164#1:369,3\n172#1:372,12\n179#1:384\n179#1:385,2\n187#1:387,9\n187#1:396\n187#1:398\n187#1:399\n187#1:397\n*E\n"
+    value = "SMAP\nVaccinationRepository.kt\nKotlin\n*S Kotlin\n*F\n+ 1 VaccinationRepository.kt\nde/rki/coronawarnapp/covidcertificate/vaccination/core/repository/VaccinationRepository$deleteCertificate$2\n+ 2 _Collections.kt\nkotlin/collections/CollectionsKt___CollectionsKt\n+ 3 fake.kt\nkotlin/jvm/internal/FakeKt\n*L\n1#1,439:1\n1741#2,3:440\n616#2,12:443\n764#2:455\n855#2,2:456\n1601#2,9:458\n1849#2:467\n1850#2:469\n1610#2:470\n1#3:468\n*S KotlinDebug\n*F\n+ 1 VaccinationRepository.kt\nde/rki/coronawarnapp/covidcertificate/vaccination/core/repository/VaccinationRepository$deleteCertificate$2\n*L\n181#1:440,3\n189#1:443,12\n196#1:455\n196#1:456,2\n204#1:458,9\n204#1:467\n204#1:469\n204#1:470\n204#1:468\n*E\n"
 .end annotation
 
 .annotation runtime Lkotlin/coroutines/jvm/internal/DebugMetadata;
@@ -398,7 +398,7 @@
 
     const/16 v11, 0xe
 
-    invoke-static/range {v6 .. v11}, Lde/rki/coronawarnapp/covidcertificate/vaccination/core/repository/storage/VaccinatedPersonData;->copy$default(Lde/rki/coronawarnapp/covidcertificate/vaccination/core/repository/storage/VaccinatedPersonData;Ljava/util/Set;Lde/rki/coronawarnapp/covidcertificate/validation/core/rule/DccValidationRule;Ljava/lang/String;Lorg/joda/time/Instant;I)Lde/rki/coronawarnapp/covidcertificate/vaccination/core/repository/storage/VaccinatedPersonData;
+    invoke-static/range {v6 .. v11}, Lde/rki/coronawarnapp/covidcertificate/vaccination/core/repository/storage/VaccinatedPersonData;->copy$default(Lde/rki/coronawarnapp/covidcertificate/vaccination/core/repository/storage/VaccinatedPersonData;Ljava/util/Set;Ljava/lang/String;Ljava/lang/String;Lorg/joda/time/Instant;I)Lde/rki/coronawarnapp/covidcertificate/vaccination/core/repository/storage/VaccinatedPersonData;
 
     move-result-object v0
 
@@ -430,7 +430,6 @@
 
     move-result-object p1
 
-    :cond_c
     :goto_5
     invoke-interface {p1}, Ljava/util/Iterator;->hasNext()Z
 
@@ -448,13 +447,16 @@
 
     move-result v3
 
-    if-eqz v3, :cond_d
+    if-eqz v3, :cond_c
 
     move-object v1, v5
 
-    :cond_d
-    if-eqz v1, :cond_c
+    :cond_c
+    if-nez v1, :cond_d
 
+    goto :goto_5
+
+    :cond_d
     invoke-interface {v0, v1}, Ljava/util/Collection;->add(Ljava/lang/Object;)Z
 
     goto :goto_5

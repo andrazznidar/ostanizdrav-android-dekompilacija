@@ -1,105 +1,93 @@
-.class final Lj$/util/stream/W2;
-.super Lj$/util/stream/f;
+.class Lj$/util/stream/W2;
+.super Lj$/util/stream/Y2;
+
+# interfaces
+.implements Lj$/util/B;
 
 
 # instance fields
-.field private final h:Lj$/util/stream/V2;
+.field final synthetic g:Lj$/util/stream/X2;
 
 
 # direct methods
-.method constructor <init>(Lj$/util/stream/V2;Lj$/util/stream/z2;Lj$/util/Spliterator;)V
+.method constructor <init>(Lj$/util/stream/X2;IIII)V
     .locals 0
 
-    invoke-direct {p0, p2, p3}, Lj$/util/stream/f;-><init>(Lj$/util/stream/z2;Lj$/util/Spliterator;)V
+    iput-object p1, p0, Lj$/util/stream/W2;->g:Lj$/util/stream/X2;
 
-    iput-object p1, p0, Lj$/util/stream/W2;->h:Lj$/util/stream/V2;
-
-    return-void
-.end method
-
-.method constructor <init>(Lj$/util/stream/W2;Lj$/util/Spliterator;)V
-    .locals 0
-
-    invoke-direct {p0, p1, p2}, Lj$/util/stream/f;-><init>(Lj$/util/stream/f;Lj$/util/Spliterator;)V
-
-    iget-object p1, p1, Lj$/util/stream/W2;->h:Lj$/util/stream/V2;
-
-    iput-object p1, p0, Lj$/util/stream/W2;->h:Lj$/util/stream/V2;
+    invoke-direct/range {p0 .. p5}, Lj$/util/stream/Y2;-><init>(Lj$/util/stream/Z2;IIII)V
 
     return-void
 .end method
 
 
 # virtual methods
-.method protected a()Ljava/lang/Object;
-    .locals 3
+.method public synthetic a(Lj$/util/function/Consumer;)Z
+    .locals 0
 
-    iget-object v0, p0, Lj$/util/stream/f;->a:Lj$/util/stream/z2;
-
-    iget-object v1, p0, Lj$/util/stream/W2;->h:Lj$/util/stream/V2;
-
-    invoke-virtual {v1}, Lj$/util/stream/V2;->a()Lj$/util/stream/T2;
-
-    move-result-object v1
-
-    iget-object v2, p0, Lj$/util/stream/f;->b:Lj$/util/Spliterator;
-
-    invoke-virtual {v0, v1, v2}, Lj$/util/stream/z2;->r0(Lj$/util/stream/n3;Lj$/util/Spliterator;)Lj$/util/stream/n3;
-
-    return-object v1
-.end method
-
-.method protected f(Lj$/util/Spliterator;)Lj$/util/stream/f;
-    .locals 1
-
-    new-instance v0, Lj$/util/stream/W2;
-
-    invoke-direct {v0, p0, p1}, Lj$/util/stream/W2;-><init>(Lj$/util/stream/W2;Lj$/util/Spliterator;)V
-
-    return-object v0
-.end method
-
-.method public onCompletion(Ljava/util/concurrent/CountedCompleter;)V
-    .locals 1
-
-    invoke-virtual {p0}, Lj$/util/stream/f;->d()Z
+    invoke-static {p0, p1}, Lj$/util/a;->s(Lj$/util/B;Lj$/util/function/Consumer;)Z
 
     move-result p1
 
-    if-nez p1, :cond_0
+    return p1
+.end method
 
-    iget-object p1, p0, Lj$/util/stream/f;->d:Lj$/util/stream/f;
+.method b(Ljava/lang/Object;ILjava/lang/Object;)V
+    .locals 2
 
-    check-cast p1, Lj$/util/stream/W2;
+    check-cast p1, [J
 
-    invoke-virtual {p1}, Lj$/util/stream/f;->b()Ljava/lang/Object;
+    check-cast p3, Lj$/util/function/t;
+
+    aget-wide v0, p1, p2
+
+    invoke-interface {p3, v0, v1}, Lj$/util/function/t;->d(J)V
+
+    return-void
+.end method
+
+.method c(Ljava/lang/Object;II)Lj$/util/D;
+    .locals 1
+
+    check-cast p1, [J
+
+    add-int/2addr p3, p2
+
+    const/16 v0, 0x410
+
+    invoke-static {p1, p2, p3, v0}, Lj$/util/S;->l([JIII)Lj$/util/B;
 
     move-result-object p1
 
-    check-cast p1, Lj$/util/stream/T2;
+    return-object p1
+.end method
 
-    iget-object v0, p0, Lj$/util/stream/f;->e:Lj$/util/stream/f;
+.method d(IIII)Lj$/util/D;
+    .locals 7
 
-    check-cast v0, Lj$/util/stream/W2;
+    new-instance v6, Lj$/util/stream/W2;
 
-    invoke-virtual {v0}, Lj$/util/stream/f;->b()Ljava/lang/Object;
+    iget-object v1, p0, Lj$/util/stream/W2;->g:Lj$/util/stream/X2;
 
-    move-result-object v0
+    move-object v0, v6
 
-    check-cast v0, Lj$/util/stream/T2;
+    move v2, p1
 
-    invoke-interface {p1, v0}, Lj$/util/stream/T2;->n(Lj$/util/stream/T2;)V
+    move v3, p2
 
-    invoke-virtual {p0, p1}, Lj$/util/stream/f;->g(Ljava/lang/Object;)V
+    move v4, p3
 
-    :cond_0
-    const/4 p1, 0x0
+    move v5, p4
 
-    iput-object p1, p0, Lj$/util/stream/f;->b:Lj$/util/Spliterator;
+    invoke-direct/range {v0 .. v5}, Lj$/util/stream/W2;-><init>(Lj$/util/stream/X2;IIII)V
 
-    iput-object p1, p0, Lj$/util/stream/f;->e:Lj$/util/stream/f;
+    return-object v6
+.end method
 
-    iput-object p1, p0, Lj$/util/stream/f;->d:Lj$/util/stream/f;
+.method public synthetic forEachRemaining(Lj$/util/function/Consumer;)V
+    .locals 0
+
+    invoke-static {p0, p1}, Lj$/util/a;->g(Lj$/util/B;Lj$/util/function/Consumer;)V
 
     return-void
 .end method

@@ -73,9 +73,9 @@
 
     move-result-object v2
 
-    invoke-static {v2}, Lcom/google/crypto/tink/hybrid/HybridUtil;->toCurveType(Lcom/google/crypto/tink/proto/EllipticCurveType;)Lcom/google/crypto/tink/subtle/EllipticCurves$CurveType;
+    invoke-static {v2}, Lcom/google/crypto/tink/hybrid/HybridUtil;->toCurveType(Lcom/google/crypto/tink/proto/EllipticCurveType;)I
 
-    move-result-object v2
+    move-result v2
 
     invoke-virtual {p1}, Lcom/google/crypto/tink/proto/EciesAeadHkdfPublicKey;->getX()Lcom/google/crypto/tink/shaded/protobuf/ByteString;
 
@@ -93,7 +93,7 @@
 
     move-result-object p1
 
-    invoke-static {v2, v3, p1}, Lcom/google/crypto/tink/subtle/EllipticCurves;->getEcPublicKey(Lcom/google/crypto/tink/subtle/EllipticCurves$CurveType;[B[B)Ljava/security/interfaces/ECPublicKey;
+    invoke-static {v2, v3, p1}, Lcom/google/crypto/tink/subtle/EllipticCurves;->getEcPublicKey(I[B[B)Ljava/security/interfaces/ECPublicKey;
 
     move-result-object v5
 

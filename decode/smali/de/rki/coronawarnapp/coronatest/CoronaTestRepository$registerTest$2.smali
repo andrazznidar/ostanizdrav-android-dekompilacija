@@ -21,7 +21,7 @@
 .end annotation
 
 .annotation system Ldalvik/annotation/SourceDebugExtension;
-    value = "SMAP\nCoronaTestRepository.kt\nKotlin\n*S Kotlin\n*F\n+ 1 CoronaTestRepository.kt\nde/rki/coronawarnapp/coronatest/CoronaTestRepository$registerTest$2\n+ 2 _Collections.kt\nkotlin/collections/CollectionsKt___CollectionsKt\n*L\n1#1,293:1\n1741#2,3:294\n*S KotlinDebug\n*F\n+ 1 CoronaTestRepository.kt\nde/rki/coronawarnapp/coronatest/CoronaTestRepository$registerTest$2\n*L\n88#1:294,3\n*E\n"
+    value = "SMAP\nCoronaTestRepository.kt\nKotlin\n*S Kotlin\n*F\n+ 1 CoronaTestRepository.kt\nde/rki/coronawarnapp/coronatest/CoronaTestRepository$registerTest$2\n+ 2 _Collections.kt\nkotlin/collections/CollectionsKt___CollectionsKt\n*L\n1#1,341:1\n1741#2,3:342\n*S KotlinDebug\n*F\n+ 1 CoronaTestRepository.kt\nde/rki/coronawarnapp/coronatest/CoronaTestRepository$registerTest$2\n*L\n106#1:342,3\n*E\n"
 .end annotation
 
 
@@ -45,7 +45,7 @@
 
 # virtual methods
 .method public invoke(Ljava/lang/Object;)Ljava/lang/Object;
-    .locals 5
+    .locals 6
 
     check-cast p1, Ljava/util/Collection;
 
@@ -87,13 +87,19 @@
 
     invoke-interface {v1}, Lde/rki/coronawarnapp/coronatest/type/CoronaTest;->getType()Lde/rki/coronawarnapp/coronatest/type/CoronaTest$Type;
 
-    move-result-object v1
+    move-result-object v4
 
     invoke-interface {v0}, Lde/rki/coronawarnapp/coronatest/TestRegistrationRequest;->getType()Lde/rki/coronawarnapp/coronatest/type/CoronaTest$Type;
 
-    move-result-object v4
+    move-result-object v5
 
-    if-ne v1, v4, :cond_2
+    if-ne v4, v5, :cond_2
+
+    invoke-interface {v1}, Lde/rki/coronawarnapp/reyclebin/common/Recyclable;->isNotRecycled()Z
+
+    move-result v1
+
+    if-eqz v1, :cond_2
 
     move v1, v2
 
@@ -131,7 +137,7 @@
 
     const-string v2, "."
 
-    invoke-static {v1, v0, v2}, Lde/rki/coronawarnapp/NavGraphDirections$ActionToSubmissionTestResultAvailableFragment$$ExternalSyntheticOutline0;->m(Ljava/lang/String;Lde/rki/coronawarnapp/coronatest/type/CoronaTest$Type;Ljava/lang/String;)Ljava/lang/String;
+    invoke-static {v1, v0, v2}, Landroidx/recyclerview/widget/ChildHelper$$ExternalSyntheticOutline0;->m(Ljava/lang/String;Lde/rki/coronawarnapp/coronatest/type/CoronaTest$Type;Ljava/lang/String;)Ljava/lang/String;
 
     move-result-object v0
 

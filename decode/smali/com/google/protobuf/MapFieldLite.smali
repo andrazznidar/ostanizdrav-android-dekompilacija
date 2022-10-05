@@ -394,7 +394,7 @@
 
     invoke-virtual {p0}, Lcom/google/protobuf/MapFieldLite;->ensureMutable()V
 
-    invoke-super {p0, p1}, Ljava/util/HashMap;->putAll(Ljava/util/Map;)V
+    invoke-super {p0, p1}, Ljava/util/LinkedHashMap;->putAll(Ljava/util/Map;)V
 
     :cond_0
     return-void
@@ -441,7 +441,7 @@
 
     invoke-virtual {p0}, Lcom/google/protobuf/MapFieldLite;->ensureMutable()V
 
-    invoke-super {p0, p1, p2}, Ljava/util/HashMap;->put(Ljava/lang/Object;Ljava/lang/Object;)Ljava/lang/Object;
+    invoke-super {p0, p1, p2}, Ljava/util/LinkedHashMap;->put(Ljava/lang/Object;Ljava/lang/Object;)Ljava/lang/Object;
 
     move-result-object p1
 
@@ -460,7 +460,7 @@
 
     invoke-virtual {p0}, Lcom/google/protobuf/MapFieldLite;->ensureMutable()V
 
-    invoke-super {p0, p1}, Ljava/util/HashMap;->putAll(Ljava/util/Map;)V
+    invoke-super {p0, p1}, Ljava/util/LinkedHashMap;->putAll(Ljava/util/Map;)V
 
     return-void
 .end method
@@ -477,7 +477,7 @@
 
     invoke-virtual {p0}, Lcom/google/protobuf/MapFieldLite;->ensureMutable()V
 
-    invoke-super {p0, p1}, Ljava/util/HashMap;->remove(Ljava/lang/Object;)Ljava/lang/Object;
+    invoke-super {p0, p1}, Ljava/util/LinkedHashMap;->remove(Ljava/lang/Object;)Ljava/lang/Object;
 
     move-result-object p1
 

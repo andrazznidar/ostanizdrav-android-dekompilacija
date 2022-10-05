@@ -6,19 +6,15 @@
 .implements Ljava/lang/Cloneable;
 
 
-# annotations
-.annotation system Ldalvik/annotation/MemberClasses;
-    value = {
-        Lorg/joda/time/MutableDateTime$Property;
-    }
-.end annotation
-
-
 # direct methods
 .method public constructor <init>(JLorg/joda/time/DateTimeZone;)V
     .locals 0
 
-    invoke-direct {p0, p1, p2, p3}, Lorg/joda/time/base/BaseDateTime;-><init>(JLorg/joda/time/DateTimeZone;)V
+    invoke-static {p3}, Lorg/joda/time/chrono/ISOChronology;->getInstance(Lorg/joda/time/DateTimeZone;)Lorg/joda/time/chrono/ISOChronology;
+
+    move-result-object p3
+
+    invoke-direct {p0, p1, p2, p3}, Lorg/joda/time/base/BaseDateTime;-><init>(JLorg/joda/time/Chronology;)V
 
     return-void
 .end method

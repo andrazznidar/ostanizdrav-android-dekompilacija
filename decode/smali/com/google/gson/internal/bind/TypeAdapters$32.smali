@@ -6,30 +6,23 @@
 .implements Lcom/google/gson/TypeAdapterFactory;
 
 
-# annotations
-.annotation system Ldalvik/annotation/EnclosingMethod;
-    value = Lcom/google/gson/internal/bind/TypeAdapters;->newFactory(Ljava/lang/Class;Lcom/google/gson/TypeAdapter;)Lcom/google/gson/TypeAdapterFactory;
-.end annotation
-
-.annotation system Ldalvik/annotation/InnerClass;
-    accessFlags = 0x1
-    name = null
-.end annotation
-
-
 # instance fields
-.field public final synthetic val$type:Ljava/lang/Class;
+.field public final synthetic val$base:Ljava/lang/Class;
+
+.field public final synthetic val$sub:Ljava/lang/Class;
 
 .field public final synthetic val$typeAdapter:Lcom/google/gson/TypeAdapter;
 
 
 # direct methods
-.method public constructor <init>(Ljava/lang/Class;Lcom/google/gson/TypeAdapter;)V
+.method public constructor <init>(Ljava/lang/Class;Ljava/lang/Class;Lcom/google/gson/TypeAdapter;)V
     .locals 0
 
-    iput-object p1, p0, Lcom/google/gson/internal/bind/TypeAdapters$32;->val$type:Ljava/lang/Class;
+    iput-object p1, p0, Lcom/google/gson/internal/bind/TypeAdapters$32;->val$base:Ljava/lang/Class;
 
-    iput-object p2, p0, Lcom/google/gson/internal/bind/TypeAdapters$32;->val$typeAdapter:Lcom/google/gson/TypeAdapter;
+    iput-object p2, p0, Lcom/google/gson/internal/bind/TypeAdapters$32;->val$sub:Ljava/lang/Class;
+
+    iput-object p3, p0, Lcom/google/gson/internal/bind/TypeAdapters$32;->val$typeAdapter:Lcom/google/gson/TypeAdapter;
 
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
@@ -55,18 +48,26 @@
 
     iget-object p1, p2, Lcom/google/gson/reflect/TypeToken;->rawType:Ljava/lang/Class;
 
-    iget-object p2, p0, Lcom/google/gson/internal/bind/TypeAdapters$32;->val$type:Ljava/lang/Class;
+    iget-object p2, p0, Lcom/google/gson/internal/bind/TypeAdapters$32;->val$base:Ljava/lang/Class;
+
+    if-eq p1, p2, :cond_1
+
+    iget-object p2, p0, Lcom/google/gson/internal/bind/TypeAdapters$32;->val$sub:Ljava/lang/Class;
 
     if-ne p1, p2, :cond_0
-
-    iget-object p1, p0, Lcom/google/gson/internal/bind/TypeAdapters$32;->val$typeAdapter:Lcom/google/gson/TypeAdapter;
 
     goto :goto_0
 
     :cond_0
     const/4 p1, 0x0
 
+    goto :goto_1
+
+    :cond_1
     :goto_0
+    iget-object p1, p0, Lcom/google/gson/internal/bind/TypeAdapters$32;->val$typeAdapter:Lcom/google/gson/TypeAdapter;
+
+    :goto_1
     return-object p1
 .end method
 
@@ -79,11 +80,17 @@
 
     move-result-object v0
 
-    iget-object v1, p0, Lcom/google/gson/internal/bind/TypeAdapters$32;->val$type:Ljava/lang/Class;
+    iget-object v1, p0, Lcom/google/gson/internal/bind/TypeAdapters$32;->val$base:Ljava/lang/Class;
+
+    const-string v2, "+"
+
+    invoke-static {v1, v0, v2}, Landroidx/datastore/preferences/protobuf/MessageSchema$$ExternalSyntheticOutline0;->m(Ljava/lang/Class;Ljava/lang/StringBuilder;Ljava/lang/String;)V
+
+    iget-object v1, p0, Lcom/google/gson/internal/bind/TypeAdapters$32;->val$sub:Ljava/lang/Class;
 
     const-string v2, ",adapter="
 
-    invoke-static {v1, v0, v2}, Lcom/fasterxml/jackson/annotation/JsonInclude$Value$$ExternalSyntheticOutline0;->m(Ljava/lang/Class;Ljava/lang/StringBuilder;Ljava/lang/String;)V
+    invoke-static {v1, v0, v2}, Landroidx/datastore/preferences/protobuf/MessageSchema$$ExternalSyntheticOutline0;->m(Ljava/lang/Class;Ljava/lang/StringBuilder;Ljava/lang/String;)V
 
     iget-object v1, p0, Lcom/google/gson/internal/bind/TypeAdapters$32;->val$typeAdapter:Lcom/google/gson/TypeAdapter;
 

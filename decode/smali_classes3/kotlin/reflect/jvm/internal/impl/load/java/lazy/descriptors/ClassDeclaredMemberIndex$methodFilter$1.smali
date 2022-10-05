@@ -1,4 +1,4 @@
-.class public final Lkotlin/reflect/jvm/internal/impl/load/java/lazy/descriptors/ClassDeclaredMemberIndex$methodFilter$1;
+.class final Lkotlin/reflect/jvm/internal/impl/load/java/lazy/descriptors/ClassDeclaredMemberIndex$methodFilter$1;
 .super Lkotlin/jvm/internal/Lambda;
 .source "DeclaredMemberIndex.kt"
 
@@ -46,10 +46,8 @@
 
 
 # virtual methods
-.method public invoke(Ljava/lang/Object;)Ljava/lang/Object;
-    .locals 5
-
-    check-cast p1, Lkotlin/reflect/jvm/internal/impl/load/java/structure/JavaMethod;
+.method public final invoke(Lkotlin/reflect/jvm/internal/impl/load/java/structure/JavaMethod;)Ljava/lang/Boolean;
+    .locals 1
 
     const-string v0, "m"
 
@@ -57,7 +55,9 @@
 
     iget-object v0, p0, Lkotlin/reflect/jvm/internal/impl/load/java/lazy/descriptors/ClassDeclaredMemberIndex$methodFilter$1;->this$0:Lkotlin/reflect/jvm/internal/impl/load/java/lazy/descriptors/ClassDeclaredMemberIndex;
 
-    iget-object v0, v0, Lkotlin/reflect/jvm/internal/impl/load/java/lazy/descriptors/ClassDeclaredMemberIndex;->memberFilter:Lkotlin/jvm/functions/Function1;
+    invoke-static {v0}, Lkotlin/reflect/jvm/internal/impl/load/java/lazy/descriptors/ClassDeclaredMemberIndex;->access$getMemberFilter$p(Lkotlin/reflect/jvm/internal/impl/load/java/lazy/descriptors/ClassDeclaredMemberIndex;)Lkotlin/jvm/functions/Function1;
+
+    move-result-object v0
 
     invoke-interface {v0, p1}, Lkotlin/jvm/functions/Function1;->invoke(Ljava/lang/Object;)Ljava/lang/Object;
 
@@ -69,189 +69,35 @@
 
     move-result v0
 
-    const/4 v1, 0x1
+    if-eqz v0, :cond_0
 
-    const/4 v2, 0x0
+    invoke-static {p1}, Lkotlin/reflect/jvm/internal/impl/load/java/structure/JavaLoadingKt;->isObjectMethodInInterface(Lkotlin/reflect/jvm/internal/impl/load/java/structure/JavaMember;)Z
 
-    if-eqz v0, :cond_a
+    move-result p1
 
-    const-string v0, "<this>"
+    if-nez p1, :cond_0
 
-    invoke-static {p1, v0}, Lkotlin/jvm/internal/Intrinsics;->checkNotNullParameter(Ljava/lang/Object;Ljava/lang/String;)V
-
-    invoke-interface {p1}, Lkotlin/reflect/jvm/internal/impl/load/java/structure/JavaMember;->getContainingClass()Lkotlin/reflect/jvm/internal/impl/load/java/structure/JavaClass;
-
-    move-result-object v0
-
-    invoke-interface {v0}, Lkotlin/reflect/jvm/internal/impl/load/java/structure/JavaClass;->isInterface()Z
-
-    move-result v0
-
-    if-eqz v0, :cond_9
-
-    invoke-interface {p1}, Lkotlin/reflect/jvm/internal/impl/load/java/structure/JavaNamedElement;->getName()Lkotlin/reflect/jvm/internal/impl/name/Name;
-
-    move-result-object v0
-
-    invoke-virtual {v0}, Lkotlin/reflect/jvm/internal/impl/name/Name;->asString()Ljava/lang/String;
-
-    move-result-object v0
-
-    invoke-virtual {v0}, Ljava/lang/String;->hashCode()I
-
-    move-result v3
-
-    const v4, -0x69e9ad94
-
-    if-eq v3, v4, :cond_6
-
-    const v4, -0x4d378041
-
-    if-eq v3, v4, :cond_1
-
-    const v4, 0x8cdac1b
-
-    if-eq v3, v4, :cond_0
-
-    goto :goto_1
-
-    :cond_0
-    const-string v3, "hashCode"
-
-    invoke-virtual {v0, v3}, Ljava/lang/String;->equals(Ljava/lang/Object;)Z
-
-    move-result v0
-
-    if-nez v0, :cond_8
-
-    goto :goto_1
-
-    :cond_1
-    const-string v3, "equals"
-
-    invoke-virtual {v0, v3}, Ljava/lang/String;->equals(Ljava/lang/Object;)Z
-
-    move-result v0
-
-    if-nez v0, :cond_2
-
-    goto :goto_1
-
-    :cond_2
-    invoke-interface {p1}, Lkotlin/reflect/jvm/internal/impl/load/java/structure/JavaMethod;->getValueParameters()Ljava/util/List;
-
-    move-result-object p1
-
-    invoke-static {p1}, Lkotlin/collections/CollectionsKt___CollectionsKt;->singleOrNull(Ljava/util/List;)Ljava/lang/Object;
-
-    move-result-object p1
-
-    check-cast p1, Lkotlin/reflect/jvm/internal/impl/load/java/structure/JavaValueParameter;
-
-    const/4 v0, 0x0
-
-    if-nez p1, :cond_3
-
-    move-object p1, v0
+    const/4 p1, 0x1
 
     goto :goto_0
 
-    :cond_3
-    invoke-interface {p1}, Lkotlin/reflect/jvm/internal/impl/load/java/structure/JavaValueParameter;->getType()Lkotlin/reflect/jvm/internal/impl/load/java/structure/JavaType;
-
-    move-result-object p1
+    :cond_0
+    const/4 p1, 0x0
 
     :goto_0
-    instance-of v3, p1, Lkotlin/reflect/jvm/internal/impl/load/java/structure/JavaClassifierType;
-
-    if-eqz v3, :cond_4
-
-    move-object v0, p1
-
-    check-cast v0, Lkotlin/reflect/jvm/internal/impl/load/java/structure/JavaClassifierType;
-
-    :cond_4
-    if-nez v0, :cond_5
-
-    goto :goto_1
-
-    :cond_5
-    invoke-interface {v0}, Lkotlin/reflect/jvm/internal/impl/load/java/structure/JavaClassifierType;->getClassifier()Lkotlin/reflect/jvm/internal/impl/load/java/structure/JavaClassifier;
+    invoke-static {p1}, Ljava/lang/Boolean;->valueOf(Z)Ljava/lang/Boolean;
 
     move-result-object p1
 
-    instance-of v0, p1, Lkotlin/reflect/jvm/internal/impl/load/java/structure/JavaClass;
+    return-object p1
+.end method
 
-    if-eqz v0, :cond_7
+.method public bridge synthetic invoke(Ljava/lang/Object;)Ljava/lang/Object;
+    .locals 0
 
-    check-cast p1, Lkotlin/reflect/jvm/internal/impl/load/java/structure/JavaClass;
+    check-cast p1, Lkotlin/reflect/jvm/internal/impl/load/java/structure/JavaMethod;
 
-    invoke-interface {p1}, Lkotlin/reflect/jvm/internal/impl/load/java/structure/JavaClass;->getFqName()Lkotlin/reflect/jvm/internal/impl/name/FqName;
-
-    move-result-object p1
-
-    if-eqz p1, :cond_7
-
-    invoke-virtual {p1}, Lkotlin/reflect/jvm/internal/impl/name/FqName;->asString()Ljava/lang/String;
-
-    move-result-object p1
-
-    const-string v0, "java.lang.Object"
-
-    invoke-static {p1, v0}, Lkotlin/jvm/internal/Intrinsics;->areEqual(Ljava/lang/Object;Ljava/lang/Object;)Z
-
-    move-result p1
-
-    if-eqz p1, :cond_7
-
-    move p1, v1
-
-    goto :goto_2
-
-    :cond_6
-    const-string v3, "toString"
-
-    invoke-virtual {v0, v3}, Ljava/lang/String;->equals(Ljava/lang/Object;)Z
-
-    move-result v0
-
-    if-nez v0, :cond_8
-
-    :cond_7
-    :goto_1
-    move p1, v2
-
-    goto :goto_2
-
-    :cond_8
-    invoke-interface {p1}, Lkotlin/reflect/jvm/internal/impl/load/java/structure/JavaMethod;->getValueParameters()Ljava/util/List;
-
-    move-result-object p1
-
-    invoke-interface {p1}, Ljava/util/List;->isEmpty()Z
-
-    move-result p1
-
-    :goto_2
-    if-eqz p1, :cond_9
-
-    move p1, v1
-
-    goto :goto_3
-
-    :cond_9
-    move p1, v2
-
-    :goto_3
-    if-nez p1, :cond_a
-
-    goto :goto_4
-
-    :cond_a
-    move v1, v2
-
-    :goto_4
-    invoke-static {v1}, Ljava/lang/Boolean;->valueOf(Z)Ljava/lang/Boolean;
+    invoke-virtual {p0, p1}, Lkotlin/reflect/jvm/internal/impl/load/java/lazy/descriptors/ClassDeclaredMemberIndex$methodFilter$1;->invoke(Lkotlin/reflect/jvm/internal/impl/load/java/structure/JavaMethod;)Ljava/lang/Boolean;
 
     move-result-object p1
 

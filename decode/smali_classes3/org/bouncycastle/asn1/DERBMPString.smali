@@ -1,20 +1,217 @@
 .class public Lorg/bouncycastle/asn1/DERBMPString;
 .super Lorg/bouncycastle/asn1/ASN1Primitive;
 
+# interfaces
+.implements Lorg/bouncycastle/asn1/ASN1String;
+
 
 # instance fields
-.field public final string:[C
+.field private final string:[C
 
 
 # direct methods
-.method public constructor <init>([C)V
-    .locals 0
+.method public constructor <init>(Ljava/lang/String;)V
+    .locals 1
 
     invoke-direct {p0}, Lorg/bouncycastle/asn1/ASN1Primitive;-><init>()V
+
+    const-string v0, "\'string\' cannot be null"
+
+    invoke-static {p1, v0}, Ljava/util/Objects;->requireNonNull(Ljava/lang/Object;Ljava/lang/String;)Ljava/lang/Object;
+
+    invoke-virtual {p1}, Ljava/lang/String;->toCharArray()[C
+
+    move-result-object p1
 
     iput-object p1, p0, Lorg/bouncycastle/asn1/DERBMPString;->string:[C
 
     return-void
+.end method
+
+.method public constructor <init>([B)V
+    .locals 5
+
+    invoke-direct {p0}, Lorg/bouncycastle/asn1/ASN1Primitive;-><init>()V
+
+    const-string v0, "\'string\' cannot be null"
+
+    invoke-static {p1, v0}, Ljava/util/Objects;->requireNonNull(Ljava/lang/Object;Ljava/lang/String;)Ljava/lang/Object;
+
+    array-length v0, p1
+
+    and-int/lit8 v1, v0, 0x1
+
+    if-nez v1, :cond_1
+
+    div-int/lit8 v0, v0, 0x2
+
+    new-array v1, v0, [C
+
+    const/4 v2, 0x0
+
+    :goto_0
+    if-eq v2, v0, :cond_0
+
+    mul-int/lit8 v3, v2, 0x2
+
+    aget-byte v4, p1, v3
+
+    shl-int/lit8 v4, v4, 0x8
+
+    add-int/lit8 v3, v3, 0x1
+
+    aget-byte v3, p1, v3
+
+    and-int/lit16 v3, v3, 0xff
+
+    or-int/2addr v3, v4
+
+    int-to-char v3, v3
+
+    aput-char v3, v1, v2
+
+    add-int/lit8 v2, v2, 0x1
+
+    goto :goto_0
+
+    :cond_0
+    iput-object v1, p0, Lorg/bouncycastle/asn1/DERBMPString;->string:[C
+
+    return-void
+
+    :cond_1
+    new-instance p1, Ljava/lang/IllegalArgumentException;
+
+    const-string v0, "malformed BMPString encoding encountered"
+
+    invoke-direct {p1, v0}, Ljava/lang/IllegalArgumentException;-><init>(Ljava/lang/String;)V
+
+    throw p1
+.end method
+
+.method public constructor <init>([C)V
+    .locals 1
+
+    invoke-direct {p0}, Lorg/bouncycastle/asn1/ASN1Primitive;-><init>()V
+
+    const-string v0, "\'string\' cannot be null"
+
+    invoke-static {p1, v0}, Ljava/util/Objects;->requireNonNull(Ljava/lang/Object;Ljava/lang/String;)Ljava/lang/Object;
+
+    iput-object p1, p0, Lorg/bouncycastle/asn1/DERBMPString;->string:[C
+
+    return-void
+.end method
+
+.method public static getInstance(Ljava/lang/Object;)Lorg/bouncycastle/asn1/DERBMPString;
+    .locals 2
+
+    if-eqz p0, :cond_2
+
+    instance-of v0, p0, Lorg/bouncycastle/asn1/DERBMPString;
+
+    if-eqz v0, :cond_0
+
+    goto :goto_0
+
+    :cond_0
+    instance-of v0, p0, [B
+
+    if-eqz v0, :cond_1
+
+    :try_start_0
+    check-cast p0, [B
+
+    invoke-static {p0}, Lorg/bouncycastle/asn1/ASN1Primitive;->fromByteArray([B)Lorg/bouncycastle/asn1/ASN1Primitive;
+
+    move-result-object p0
+
+    check-cast p0, Lorg/bouncycastle/asn1/DERBMPString;
+    :try_end_0
+    .catch Ljava/lang/Exception; {:try_start_0 .. :try_end_0} :catch_0
+
+    return-object p0
+
+    :catch_0
+    move-exception p0
+
+    new-instance v0, Ljava/lang/IllegalArgumentException;
+
+    const-string v1, "encoding error in getInstance: "
+
+    invoke-static {v1}, Landroid/support/v4/media/RatingCompat$$ExternalSyntheticOutline0;->m(Ljava/lang/String;)Ljava/lang/StringBuilder;
+
+    move-result-object v1
+
+    invoke-static {p0, v1}, Lorg/bouncycastle/asn1/ASN1Enumerated$$ExternalSyntheticOutline0;->m(Ljava/lang/Exception;Ljava/lang/StringBuilder;)Ljava/lang/String;
+
+    move-result-object p0
+
+    invoke-direct {v0, p0}, Ljava/lang/IllegalArgumentException;-><init>(Ljava/lang/String;)V
+
+    throw v0
+
+    :cond_1
+    new-instance v0, Ljava/lang/IllegalArgumentException;
+
+    const-string v1, "illegal object in getInstance: "
+
+    invoke-static {v1}, Landroid/support/v4/media/RatingCompat$$ExternalSyntheticOutline0;->m(Ljava/lang/String;)Ljava/lang/StringBuilder;
+
+    move-result-object v1
+
+    invoke-static {p0, v1}, Lcom/fasterxml/jackson/core/JsonGenerator$$ExternalSyntheticOutline0;->m(Ljava/lang/Object;Ljava/lang/StringBuilder;)Ljava/lang/String;
+
+    move-result-object p0
+
+    invoke-direct {v0, p0}, Ljava/lang/IllegalArgumentException;-><init>(Ljava/lang/String;)V
+
+    throw v0
+
+    :cond_2
+    :goto_0
+    check-cast p0, Lorg/bouncycastle/asn1/DERBMPString;
+
+    return-object p0
+.end method
+
+.method public static getInstance(Lorg/bouncycastle/asn1/ASN1TaggedObject;Z)Lorg/bouncycastle/asn1/DERBMPString;
+    .locals 0
+
+    invoke-virtual {p0}, Lorg/bouncycastle/asn1/ASN1TaggedObject;->getObject()Lorg/bouncycastle/asn1/ASN1Primitive;
+
+    move-result-object p0
+
+    if-nez p1, :cond_1
+
+    instance-of p1, p0, Lorg/bouncycastle/asn1/DERBMPString;
+
+    if-eqz p1, :cond_0
+
+    goto :goto_0
+
+    :cond_0
+    new-instance p1, Lorg/bouncycastle/asn1/DERBMPString;
+
+    invoke-static {p0}, Lorg/bouncycastle/asn1/ASN1OctetString;->getInstance(Ljava/lang/Object;)Lorg/bouncycastle/asn1/ASN1OctetString;
+
+    move-result-object p0
+
+    invoke-virtual {p0}, Lorg/bouncycastle/asn1/ASN1OctetString;->getOctets()[B
+
+    move-result-object p0
+
+    invoke-direct {p1, p0}, Lorg/bouncycastle/asn1/DERBMPString;-><init>([B)V
+
+    return-object p1
+
+    :cond_1
+    :goto_0
+    invoke-static {p0}, Lorg/bouncycastle/asn1/DERBMPString;->getInstance(Ljava/lang/Object;)Lorg/bouncycastle/asn1/DERBMPString;
+
+    move-result-object p0
+
+    return-object p0
 .end method
 
 
@@ -60,9 +257,7 @@
 
     const/16 p2, 0x1e
 
-    iget-object v1, p1, Lorg/bouncycastle/asn1/ASN1OutputStream;->os:Ljava/io/OutputStream;
-
-    invoke-virtual {v1, p2}, Ljava/io/OutputStream;->write(I)V
+    invoke-virtual {p1, p2}, Lorg/bouncycastle/asn1/ASN1OutputStream;->write(I)V
 
     :cond_0
     mul-int/lit8 p2, v0, 0x2
@@ -154,9 +349,7 @@
 
     aput-byte v6, v1, v5
 
-    iget-object v5, p1, Lorg/bouncycastle/asn1/ASN1OutputStream;->os:Ljava/io/OutputStream;
-
-    invoke-virtual {v5, v1, v3, p2}, Ljava/io/OutputStream;->write([BII)V
+    invoke-virtual {p1, v1, v3, p2}, Lorg/bouncycastle/asn1/ASN1OutputStream;->write([BII)V
 
     goto :goto_0
 
@@ -188,9 +381,7 @@
 
     if-lt v4, v0, :cond_2
 
-    iget-object p1, p1, Lorg/bouncycastle/asn1/ASN1OutputStream;->os:Ljava/io/OutputStream;
-
-    invoke-virtual {p1, v1, v3, p2}, Ljava/io/OutputStream;->write([BII)V
+    invoke-virtual {p1, v1, v3, p2}, Lorg/bouncycastle/asn1/ASN1OutputStream;->write([BII)V
 
     :cond_3
     return-void
@@ -220,6 +411,18 @@
     add-int/2addr v1, v0
 
     return v1
+.end method
+
+.method public getString()Ljava/lang/String;
+    .locals 2
+
+    new-instance v0, Ljava/lang/String;
+
+    iget-object v1, p0, Lorg/bouncycastle/asn1/DERBMPString;->string:[C
+
+    invoke-direct {v0, v1}, Ljava/lang/String;-><init>([C)V
+
+    return-object v0
 .end method
 
 .method public hashCode()I
@@ -267,13 +470,11 @@
 .end method
 
 .method public toString()Ljava/lang/String;
-    .locals 2
+    .locals 1
 
-    new-instance v0, Ljava/lang/String;
+    invoke-virtual {p0}, Lorg/bouncycastle/asn1/DERBMPString;->getString()Ljava/lang/String;
 
-    iget-object v1, p0, Lorg/bouncycastle/asn1/DERBMPString;->string:[C
-
-    invoke-direct {v0, v1}, Ljava/lang/String;-><init>([C)V
+    move-result-object v0
 
     return-object v0
 .end method

@@ -24,6 +24,8 @@
 
 .field public final synthetic $valueSet:Lde/rki/coronawarnapp/covidcertificate/valueset/valuesets/VaccinationValueSets;
 
+.field public final qrCodeHash$delegate:Lkotlin/Lazy;
+
 .field public final qrCodeToDisplay:Lde/rki/coronawarnapp/util/qrcode/coil/CoilQrCode;
 
 .field public final synthetic this$0:Lde/rki/coronawarnapp/covidcertificate/vaccination/core/repository/storage/VaccinationContainer;
@@ -42,6 +44,16 @@
     iput-object p4, p0, Lde/rki/coronawarnapp/covidcertificate/vaccination/core/repository/storage/VaccinationContainer$toVaccinationCertificate$1;->$userLocale:Ljava/util/Locale;
 
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
+
+    new-instance p2, Lde/rki/coronawarnapp/covidcertificate/vaccination/core/repository/storage/VaccinationContainer$toVaccinationCertificate$1$qrCodeHash$2;
+
+    invoke-direct {p2, p1}, Lde/rki/coronawarnapp/covidcertificate/vaccination/core/repository/storage/VaccinationContainer$toVaccinationCertificate$1$qrCodeHash$2;-><init>(Lde/rki/coronawarnapp/covidcertificate/vaccination/core/repository/storage/VaccinationContainer;)V
+
+    invoke-static {p2}, Lkotlin/LazyKt__LazyJVMKt;->lazy(Lkotlin/jvm/functions/Function0;)Lkotlin/Lazy;
+
+    move-result-object p2
+
+    iput-object p2, p0, Lde/rki/coronawarnapp/covidcertificate/vaccination/core/repository/storage/VaccinationContainer$toVaccinationCertificate$1;->qrCodeHash$delegate:Lkotlin/Lazy;
 
     invoke-virtual {p1}, Lde/rki/coronawarnapp/covidcertificate/vaccination/core/repository/storage/VaccinationContainer;->getVaccinationQrCode()Ljava/lang/String;
 
@@ -79,17 +91,13 @@
 
     move-result-object v2
 
-    const-string v3, "null cannot be cast to non-null type java.lang.String"
-
-    invoke-static {v2, v3}, Ljava/util/Objects;->requireNonNull(Ljava/lang/Object;Ljava/lang/String;)Ljava/lang/Object;
-
     sget-object v3, Ljava/util/Locale;->ROOT:Ljava/util/Locale;
 
     invoke-virtual {v2, v3}, Ljava/lang/String;->toUpperCase(Ljava/util/Locale;)Ljava/lang/String;
 
     move-result-object v2
 
-    const-string v3, "(this as java.lang.Strin\u2026.toUpperCase(Locale.ROOT)"
+    const-string/jumbo v3, "this as java.lang.String).toUpperCase(Locale.ROOT)"
 
     invoke-static {v2, v3}, Lkotlin/jvm/internal/Intrinsics;->checkNotNullExpressionValue(Ljava/lang/Object;Ljava/lang/String;)V
 
@@ -104,22 +112,6 @@
     const-string v1, "Locale(\n                \u2026isplayCountry(userLocale)"
 
     invoke-static {v0, v1}, Lkotlin/jvm/internal/Intrinsics;->checkNotNullExpressionValue(Ljava/lang/Object;Ljava/lang/String;)V
-
-    return-object v0
-.end method
-
-.method public getCertificateId()Ljava/lang/String;
-    .locals 1
-
-    iget-object v0, p0, Lde/rki/coronawarnapp/covidcertificate/vaccination/core/repository/storage/VaccinationContainer$toVaccinationCertificate$1;->this$0:Lde/rki/coronawarnapp/covidcertificate/vaccination/core/repository/storage/VaccinationContainer;
-
-    invoke-virtual {v0}, Lde/rki/coronawarnapp/covidcertificate/vaccination/core/repository/storage/VaccinationContainer;->getVaccination()Lde/rki/coronawarnapp/covidcertificate/common/certificate/DccV1$VaccinationData;
-
-    move-result-object v0
-
-    invoke-virtual {v0}, Lde/rki/coronawarnapp/covidcertificate/common/certificate/DccV1$VaccinationData;->getUniqueCertificateIdentifier()Ljava/lang/String;
-
-    move-result-object v0
 
     return-object v0
 .end method
@@ -353,6 +345,20 @@
     return-object v0
 .end method
 
+.method public getHeaderIssuer()Ljava/lang/String;
+    .locals 1
+
+    iget-object v0, p0, Lde/rki/coronawarnapp/covidcertificate/vaccination/core/repository/storage/VaccinationContainer$toVaccinationCertificate$1;->this$0:Lde/rki/coronawarnapp/covidcertificate/vaccination/core/repository/storage/VaccinationContainer;
+
+    invoke-virtual {v0}, Lde/rki/coronawarnapp/covidcertificate/vaccination/core/repository/storage/VaccinationContainer;->getHeader()Lde/rki/coronawarnapp/covidcertificate/common/certificate/DccHeader;
+
+    move-result-object v0
+
+    iget-object v0, v0, Lde/rki/coronawarnapp/covidcertificate/common/certificate/DccHeader;->issuer:Ljava/lang/String;
+
+    return-object v0
+.end method
+
 .method public getLastName()Ljava/lang/String;
     .locals 1
 
@@ -414,6 +420,18 @@
     return-object v0
 .end method
 
+.method public getNotifiedBlockedAt()Lorg/joda/time/Instant;
+    .locals 1
+
+    iget-object v0, p0, Lde/rki/coronawarnapp/covidcertificate/vaccination/core/repository/storage/VaccinationContainer$toVaccinationCertificate$1;->this$0:Lde/rki/coronawarnapp/covidcertificate/vaccination/core/repository/storage/VaccinationContainer;
+
+    invoke-virtual {v0}, Lde/rki/coronawarnapp/covidcertificate/vaccination/core/repository/storage/VaccinationContainer;->getNotifiedBlockedAt()Lorg/joda/time/Instant;
+
+    move-result-object v0
+
+    return-object v0
+.end method
+
 .method public getNotifiedExpiredAt()Lorg/joda/time/Instant;
     .locals 1
 
@@ -464,10 +482,36 @@
     return-object v0
 .end method
 
+.method public getQrCodeHash()Ljava/lang/String;
+    .locals 1
+
+    iget-object v0, p0, Lde/rki/coronawarnapp/covidcertificate/vaccination/core/repository/storage/VaccinationContainer$toVaccinationCertificate$1;->qrCodeHash$delegate:Lkotlin/Lazy;
+
+    invoke-interface {v0}, Lkotlin/Lazy;->getValue()Ljava/lang/Object;
+
+    move-result-object v0
+
+    check-cast v0, Ljava/lang/String;
+
+    return-object v0
+.end method
+
 .method public getQrCodeToDisplay()Lde/rki/coronawarnapp/util/qrcode/coil/CoilQrCode;
     .locals 1
 
     iget-object v0, p0, Lde/rki/coronawarnapp/covidcertificate/vaccination/core/repository/storage/VaccinationContainer$toVaccinationCertificate$1;->qrCodeToDisplay:Lde/rki/coronawarnapp/util/qrcode/coil/CoilQrCode;
+
+    return-object v0
+.end method
+
+.method public getRawCertificate()Lde/rki/coronawarnapp/covidcertificate/common/certificate/DccV1$MetaData;
+    .locals 1
+
+    iget-object v0, p0, Lde/rki/coronawarnapp/covidcertificate/vaccination/core/repository/storage/VaccinationContainer$toVaccinationCertificate$1;->this$0:Lde/rki/coronawarnapp/covidcertificate/vaccination/core/repository/storage/VaccinationContainer;
+
+    invoke-virtual {v0}, Lde/rki/coronawarnapp/covidcertificate/vaccination/core/repository/storage/VaccinationContainer;->getCertificate()Lde/rki/coronawarnapp/covidcertificate/common/certificate/VaccinationDccV1;
+
+    move-result-object v0
 
     return-object v0
 .end method
@@ -478,6 +522,18 @@
     iget-object v0, p0, Lde/rki/coronawarnapp/covidcertificate/vaccination/core/repository/storage/VaccinationContainer$toVaccinationCertificate$1;->this$0:Lde/rki/coronawarnapp/covidcertificate/vaccination/core/repository/storage/VaccinationContainer;
 
     invoke-virtual {v0}, Lde/rki/coronawarnapp/covidcertificate/vaccination/core/repository/storage/VaccinationContainer;->getCertificate()Lde/rki/coronawarnapp/covidcertificate/common/certificate/VaccinationDccV1;
+
+    move-result-object v0
+
+    return-object v0
+.end method
+
+.method public getRecycledAt()Lorg/joda/time/Instant;
+    .locals 1
+
+    iget-object v0, p0, Lde/rki/coronawarnapp/covidcertificate/vaccination/core/repository/storage/VaccinationContainer$toVaccinationCertificate$1;->this$0:Lde/rki/coronawarnapp/covidcertificate/vaccination/core/repository/storage/VaccinationContainer;
+
+    invoke-virtual {v0}, Lde/rki/coronawarnapp/covidcertificate/vaccination/core/repository/storage/VaccinationContainer;->getRecycledAt()Lorg/joda/time/Instant;
 
     move-result-object v0
 
@@ -549,6 +605,22 @@
     move-result v0
 
     return v0
+.end method
+
+.method public getUniqueCertificateIdentifier()Ljava/lang/String;
+    .locals 1
+
+    iget-object v0, p0, Lde/rki/coronawarnapp/covidcertificate/vaccination/core/repository/storage/VaccinationContainer$toVaccinationCertificate$1;->this$0:Lde/rki/coronawarnapp/covidcertificate/vaccination/core/repository/storage/VaccinationContainer;
+
+    invoke-virtual {v0}, Lde/rki/coronawarnapp/covidcertificate/vaccination/core/repository/storage/VaccinationContainer;->getVaccination()Lde/rki/coronawarnapp/covidcertificate/common/certificate/DccV1$VaccinationData;
+
+    move-result-object v0
+
+    invoke-virtual {v0}, Lde/rki/coronawarnapp/covidcertificate/common/certificate/DccV1$VaccinationData;->getUniqueCertificateIdentifier()Ljava/lang/String;
+
+    move-result-object v0
+
+    return-object v0
 .end method
 
 .method public getVaccinatedOn()Lorg/joda/time/LocalDate;
@@ -669,31 +741,13 @@
     return-object v0
 .end method
 
-.method public isFinalShot()Z
-    .locals 2
+.method public isDisplayValid()Z
+    .locals 1
 
-    const-string/jumbo v0, "this"
-
-    invoke-static {p0, v0}, Lkotlin/jvm/internal/Intrinsics;->checkNotNullParameter(Ljava/lang/Object;Ljava/lang/String;)V
-
-    invoke-virtual {p0}, Lde/rki/coronawarnapp/covidcertificate/vaccination/core/repository/storage/VaccinationContainer$toVaccinationCertificate$1;->getDoseNumber()I
+    invoke-static {p0}, Lde/rki/coronawarnapp/covidcertificate/common/certificate/CwaCovidCertificate$DefaultImpls;->isDisplayValid(Lde/rki/coronawarnapp/covidcertificate/common/certificate/CwaCovidCertificate;)Z
 
     move-result v0
 
-    invoke-virtual {p0}, Lde/rki/coronawarnapp/covidcertificate/vaccination/core/repository/storage/VaccinationContainer$toVaccinationCertificate$1;->getTotalSeriesOfDoses()I
-
-    move-result v1
-
-    if-ne v0, v1, :cond_0
-
-    const/4 v0, 0x1
-
-    goto :goto_0
-
-    :cond_0
-    const/4 v0, 0x0
-
-    :goto_0
     return v0
 .end method
 
@@ -711,17 +765,37 @@
     return v0
 .end method
 
-.method public isValid()Z
+.method public isNotBlocked()Z
     .locals 1
 
-    const-string/jumbo v0, "this"
-
-    invoke-static {p0, v0}, Lkotlin/jvm/internal/Intrinsics;->checkNotNullParameter(Ljava/lang/Object;Ljava/lang/String;)V
-
-    invoke-static {p0}, Lde/rki/coronawarnapp/covidcertificate/common/certificate/CwaCovidCertificate$DefaultImpls;->isValid(Lde/rki/coronawarnapp/covidcertificate/common/certificate/CwaCovidCertificate;)Z
+    invoke-static {p0}, Lde/rki/coronawarnapp/covidcertificate/common/certificate/CwaCovidCertificate$DefaultImpls;->isNotBlocked(Lde/rki/coronawarnapp/covidcertificate/common/certificate/CwaCovidCertificate;)Z
 
     move-result v0
 
+    return v0
+.end method
+
+.method public isSeriesCompletingShot()Z
+    .locals 2
+
+    invoke-interface {p0}, Lde/rki/coronawarnapp/covidcertificate/vaccination/core/VaccinationCertificate;->getDoseNumber()I
+
+    move-result v0
+
+    invoke-interface {p0}, Lde/rki/coronawarnapp/covidcertificate/vaccination/core/VaccinationCertificate;->getTotalSeriesOfDoses()I
+
+    move-result v1
+
+    if-lt v0, v1, :cond_0
+
+    const/4 v0, 0x1
+
+    goto :goto_0
+
+    :cond_0
+    const/4 v0, 0x0
+
+    :goto_0
     return v0
 .end method
 

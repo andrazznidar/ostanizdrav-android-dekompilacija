@@ -22,7 +22,7 @@
 .method public static constructor <clinit>()V
     .locals 5
 
-    invoke-static {}, Lde/rki/coronawarnapp/covidcertificate/validation/core/rule/DccValidationRule$Result;->values()[Lde/rki/coronawarnapp/covidcertificate/validation/core/rule/DccValidationRule$Result;
+    invoke-static {}, Lde/rki/coronawarnapp/server/protocols/internal/RiskScoreParametersOuterClass$RiskScoreParameters$Builder-IA;->_values()[I
 
     move-result-object v0
 
@@ -38,7 +38,7 @@
 
     aput v1, v0, v2
 
-    invoke-static {}, Lde/rki/coronawarnapp/covidcertificate/validation/core/DccValidation$State;->values()[Lde/rki/coronawarnapp/covidcertificate/validation/core/DccValidation$State;
+    invoke-static {}, Lde/rki/coronawarnapp/covidcertificate/validation/core/DccValidation$State$EnumUnboxingLocalUtility;->_values()[I
 
     move-result-object v0
 

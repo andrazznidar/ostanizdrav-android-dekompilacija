@@ -94,17 +94,9 @@
 .end method
 
 .method public constructor <init>(Landroid/content/Context;Landroid/util/AttributeSet;II)V
-    .locals 2
+    .locals 0
 
-    new-instance v0, Lcom/google/android/material/shape/AbsoluteCornerSize;
-
-    const/4 v1, 0x0
-
-    int-to-float v1, v1
-
-    invoke-direct {v0, v1}, Lcom/google/android/material/shape/AbsoluteCornerSize;-><init>(F)V
-
-    invoke-static {p1, p2, p3, p4, v0}, Lcom/google/android/material/shape/ShapeAppearanceModel;->builder(Landroid/content/Context;Landroid/util/AttributeSet;IILcom/google/android/material/shape/CornerSize;)Lcom/google/android/material/shape/ShapeAppearanceModel$Builder;
+    invoke-static {p1, p2, p3, p4}, Lcom/google/android/material/shape/ShapeAppearanceModel;->builder(Landroid/content/Context;Landroid/util/AttributeSet;II)Lcom/google/android/material/shape/ShapeAppearanceModel$Builder;
 
     move-result-object p1
 
@@ -688,7 +680,7 @@
 
     invoke-virtual {p1}, Landroid/graphics/Canvas;->restore()V
 
-    goto :goto_2
+    goto/16 :goto_2
 
     :cond_5
     iget-object v2, p0, Lcom/google/android/material/shape/MaterialShapeDrawable;->pathBounds:Landroid/graphics/RectF;
@@ -747,33 +739,29 @@
 
     iget v8, v8, Lcom/google/android/material/shape/MaterialShapeDrawable$MaterialShapeDrawableState;->shadowCompatRadius:I
 
-    mul-int/2addr v8, v5
-
-    add-int/2addr v8, v7
-
-    add-int/2addr v8, v2
-
-    iget-object v7, p0, Lcom/google/android/material/shape/MaterialShapeDrawable;->pathBounds:Landroid/graphics/RectF;
-
-    invoke-virtual {v7}, Landroid/graphics/RectF;->height()F
+    invoke-static {v8, v5, v7, v2}, Lboofcv/abst/fiducial/QrCodePreciseDetector$$ExternalSyntheticOutline0;->m(IIII)I
 
     move-result v7
 
-    float-to-int v7, v7
+    iget-object v8, p0, Lcom/google/android/material/shape/MaterialShapeDrawable;->pathBounds:Landroid/graphics/RectF;
+
+    invoke-virtual {v8}, Landroid/graphics/RectF;->height()F
+
+    move-result v8
+
+    float-to-int v8, v8
 
     iget-object v9, p0, Lcom/google/android/material/shape/MaterialShapeDrawable;->drawableState:Lcom/google/android/material/shape/MaterialShapeDrawable$MaterialShapeDrawableState;
 
     iget v9, v9, Lcom/google/android/material/shape/MaterialShapeDrawable$MaterialShapeDrawableState;->shadowCompatRadius:I
 
-    mul-int/2addr v9, v5
+    invoke-static {v9, v5, v8, v4}, Lboofcv/abst/fiducial/QrCodePreciseDetector$$ExternalSyntheticOutline0;->m(IIII)I
 
-    add-int/2addr v9, v7
+    move-result v5
 
-    add-int/2addr v9, v4
+    sget-object v8, Landroid/graphics/Bitmap$Config;->ARGB_8888:Landroid/graphics/Bitmap$Config;
 
-    sget-object v5, Landroid/graphics/Bitmap$Config;->ARGB_8888:Landroid/graphics/Bitmap$Config;
-
-    invoke-static {v8, v9, v5}, Landroid/graphics/Bitmap;->createBitmap(IILandroid/graphics/Bitmap$Config;)Landroid/graphics/Bitmap;
+    invoke-static {v7, v5, v8}, Landroid/graphics/Bitmap;->createBitmap(IILandroid/graphics/Bitmap$Config;)Landroid/graphics/Bitmap;
 
     move-result-object v5
 

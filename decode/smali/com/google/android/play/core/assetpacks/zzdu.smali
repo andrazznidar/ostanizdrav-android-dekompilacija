@@ -99,13 +99,13 @@
     goto :goto_0
 
     :catch_0
-    sget-object v4, Lcom/google/android/play/core/assetpacks/zzbh;->zza:Lkotlin/jvm/internal/SpreadBuilder;
+    sget-object v4, Lcom/google/android/play/core/assetpacks/zzbh;->zza:Lcom/google/android/play/core/internal/zzag;
 
     new-array v5, v3, [Ljava/lang/Object;
 
     const-string v6, "Could not write staleness marker."
 
-    invoke-virtual {v4, v6, v5}, Lkotlin/jvm/internal/SpreadBuilder;->zzb(Ljava/lang/String;[Ljava/lang/Object;)I
+    invoke-virtual {v4, v6, v5}, Lcom/google/android/play/core/internal/zzag;->zzb(Ljava/lang/String;[Ljava/lang/Object;)I
 
     :cond_1
     :goto_0

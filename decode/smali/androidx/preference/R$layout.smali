@@ -61,58 +61,58 @@
 
 .field public static final custom_dialog:I = 0x7f0d0051
 
-.field public static final expand_button:I = 0x7f0d0066
+.field public static final expand_button:I = 0x7f0d006f
 
-.field public static final image_frame:I = 0x7f0d00cc
+.field public static final image_frame:I = 0x7f0d00dc
 
-.field public static final notification_action:I = 0x7f0d012a
+.field public static final notification_action:I = 0x7f0d0135
 
-.field public static final notification_action_tombstone:I = 0x7f0d012b
+.field public static final notification_action_tombstone:I = 0x7f0d0136
 
-.field public static final notification_template_custom_big:I = 0x7f0d0132
+.field public static final notification_template_custom_big:I = 0x7f0d013d
 
-.field public static final notification_template_icon_group:I = 0x7f0d0133
+.field public static final notification_template_icon_group:I = 0x7f0d013e
 
-.field public static final notification_template_part_chronometer:I = 0x7f0d0137
+.field public static final notification_template_part_chronometer:I = 0x7f0d0142
 
-.field public static final notification_template_part_time:I = 0x7f0d0138
+.field public static final notification_template_part_time:I = 0x7f0d0143
 
-.field public static final preference:I = 0x7f0d013e
+.field public static final preference:I = 0x7f0d014a
 
-.field public static final preference_category:I = 0x7f0d013f
+.field public static final preference_category:I = 0x7f0d014b
 
-.field public static final preference_category_material:I = 0x7f0d0140
+.field public static final preference_category_material:I = 0x7f0d014c
 
-.field public static final preference_dialog_edittext:I = 0x7f0d0141
+.field public static final preference_dialog_edittext:I = 0x7f0d014d
 
-.field public static final preference_dropdown:I = 0x7f0d0142
+.field public static final preference_dropdown:I = 0x7f0d014e
 
-.field public static final preference_dropdown_material:I = 0x7f0d0143
+.field public static final preference_dropdown_material:I = 0x7f0d014f
 
-.field public static final preference_information:I = 0x7f0d0144
+.field public static final preference_information:I = 0x7f0d0150
 
-.field public static final preference_information_material:I = 0x7f0d0145
+.field public static final preference_information_material:I = 0x7f0d0151
 
-.field public static final preference_list_fragment:I = 0x7f0d0146
+.field public static final preference_list_fragment:I = 0x7f0d0152
 
-.field public static final preference_material:I = 0x7f0d0147
+.field public static final preference_material:I = 0x7f0d0153
 
-.field public static final preference_recyclerview:I = 0x7f0d0148
+.field public static final preference_recyclerview:I = 0x7f0d0154
 
-.field public static final preference_widget_checkbox:I = 0x7f0d0149
+.field public static final preference_widget_checkbox:I = 0x7f0d0155
 
-.field public static final preference_widget_seekbar:I = 0x7f0d014a
+.field public static final preference_widget_seekbar:I = 0x7f0d0156
 
-.field public static final preference_widget_seekbar_material:I = 0x7f0d014b
+.field public static final preference_widget_seekbar_material:I = 0x7f0d0157
 
-.field public static final preference_widget_switch:I = 0x7f0d014c
+.field public static final preference_widget_switch:I = 0x7f0d0158
 
-.field public static final preference_widget_switch_compat:I = 0x7f0d014d
+.field public static final preference_widget_switch_compat:I = 0x7f0d0159
 
-.field public static final select_dialog_item_material:I = 0x7f0d0153
+.field public static final select_dialog_item_material:I = 0x7f0d0164
 
-.field public static final select_dialog_multichoice_material:I = 0x7f0d0154
+.field public static final select_dialog_multichoice_material:I = 0x7f0d0165
 
-.field public static final select_dialog_singlechoice_material:I = 0x7f0d0155
+.field public static final select_dialog_singlechoice_material:I = 0x7f0d0166
 
-.field public static final support_simple_spinner_dropdown_item:I = 0x7f0d015a
+.field public static final support_simple_spinner_dropdown_item:I = 0x7f0d016b

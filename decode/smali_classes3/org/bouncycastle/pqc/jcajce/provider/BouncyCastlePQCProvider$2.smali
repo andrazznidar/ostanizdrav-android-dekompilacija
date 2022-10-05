@@ -1,8 +1,19 @@
-.class public final Lorg/bouncycastle/pqc/jcajce/provider/BouncyCastlePQCProvider$2;
+.class final Lorg/bouncycastle/pqc/jcajce/provider/BouncyCastlePQCProvider$2;
 .super Ljava/lang/Object;
 
 # interfaces
 .implements Ljava/security/PrivilegedAction;
+
+
+# annotations
+.annotation system Ldalvik/annotation/EnclosingMethod;
+    value = Lorg/bouncycastle/pqc/jcajce/provider/BouncyCastlePQCProvider;->loadClass(Ljava/lang/Class;Ljava/lang/String;)Ljava/lang/Class;
+.end annotation
+
+.annotation system Ldalvik/annotation/InnerClass;
+    accessFlags = 0x9
+    name = null
+.end annotation
 
 
 # instance fields

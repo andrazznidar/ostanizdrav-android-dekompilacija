@@ -17,7 +17,7 @@
     c = "de.rki.coronawarnapp.datadonation.analytics.modules.exposureriskmetadata.ExposureRiskMetadataDonor"
     f = "ExposureRiskMetadataDonor.kt"
     l = {
-        0x35
+        0x32
     }
     m = "buildEWMetadata"
 .end annotation

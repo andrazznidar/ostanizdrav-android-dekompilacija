@@ -27,15 +27,15 @@
 .end annotation
 
 .annotation system Ldalvik/annotation/SourceDebugExtension;
-    value = "SMAP\nVaccinationRepository.kt\nKotlin\n*S Kotlin\n*F\n+ 1 VaccinationRepository.kt\nde/rki/coronawarnapp/covidcertificate/vaccination/core/repository/VaccinationRepository$acknowledgeState$2\n+ 2 _Collections.kt\nkotlin/collections/CollectionsKt___CollectionsKt\n*L\n1#1,368:1\n659#2,11:369\n*S KotlinDebug\n*F\n+ 1 VaccinationRepository.kt\nde/rki/coronawarnapp/covidcertificate/vaccination/core/repository/VaccinationRepository$acknowledgeState$2\n*L\n243#1:369,11\n*E\n"
+    value = "SMAP\nVaccinationRepository.kt\nKotlin\n*S Kotlin\n*F\n+ 1 VaccinationRepository.kt\nde/rki/coronawarnapp/covidcertificate/vaccination/core/repository/VaccinationRepository$acknowledgeState$2\n+ 2 _Collections.kt\nkotlin/collections/CollectionsKt___CollectionsKt\n*L\n1#1,439:1\n659#2,11:440\n*S KotlinDebug\n*F\n+ 1 VaccinationRepository.kt\nde/rki/coronawarnapp/covidcertificate/vaccination/core/repository/VaccinationRepository$acknowledgeState$2\n*L\n261#1:440,11\n*E\n"
 .end annotation
 
 .annotation runtime Lkotlin/coroutines/jvm/internal/DebugMetadata;
     c = "de.rki.coronawarnapp.covidcertificate.vaccination.core.repository.VaccinationRepository$acknowledgeState$2"
     f = "VaccinationRepository.kt"
     l = {
-        0xfb,
-        0xfb
+        0x10d,
+        0x10d
     }
     m = "invokeSuspend"
 .end annotation
@@ -137,7 +137,7 @@
 .end method
 
 .method public final invokeSuspend(Ljava/lang/Object;)Ljava/lang/Object;
-    .locals 21
+    .locals 23
 
     move-object/from16 v0, p0
 
@@ -292,7 +292,7 @@
 
     const-string v4, "Couldn\'t find %s"
 
-    invoke-virtual {v1, v4, v3}, Ltimber/log/Timber$Forest;->w(Ljava/lang/String;[Ljava/lang/Object;)V
+    invoke-virtual {v1, v4, v3}, Ltimber/log/Timber$Tree;->w(Ljava/lang/String;[Ljava/lang/Object;)V
 
     return-object v2
 
@@ -363,9 +363,9 @@
     move-object v8, v10
 
     :goto_4
-    move-object/from16 v16, v9
+    move-object/from16 v17, v9
 
-    check-cast v16, Lde/rki/coronawarnapp/covidcertificate/common/certificate/CwaCovidCertificate$State;
+    check-cast v17, Lde/rki/coronawarnapp/covidcertificate/common/certificate/CwaCovidCertificate$State;
 
     sget-object v9, Ltimber/log/Timber;->Forest:Ltimber/log/Timber$Forest;
 
@@ -379,11 +379,11 @@
 
     aput-object v4, v3, v5
 
-    aput-object v16, v3, v7
+    aput-object v17, v3, v7
 
     const-string v4, "Acknowledging state change to %s -> %s."
 
-    invoke-virtual {v9, v4, v3}, Ltimber/log/Timber$Forest;->d(Ljava/lang/String;[Ljava/lang/Object;)V
+    invoke-virtual {v9, v4, v3}, Ltimber/log/Timber$Tree;->d(Ljava/lang/String;[Ljava/lang/Object;)V
 
     const/4 v11, 0x0
 
@@ -395,25 +395,29 @@
 
     const/4 v15, 0x0
 
+    const/16 v16, 0x0
+
     iget-object v3, v0, Lde/rki/coronawarnapp/covidcertificate/vaccination/core/repository/VaccinationRepository$acknowledgeState$2;->this$0:Lde/rki/coronawarnapp/covidcertificate/vaccination/core/repository/VaccinationRepository;
 
     iget-object v3, v3, Lde/rki/coronawarnapp/covidcertificate/vaccination/core/repository/VaccinationRepository;->timeStamper:Lde/rki/coronawarnapp/util/TimeStamper;
 
     invoke-static {v3}, Ljava/util/Objects;->requireNonNull(Ljava/lang/Object;)Ljava/lang/Object;
 
-    new-instance v17, Lorg/joda/time/Instant;
+    new-instance v18, Lorg/joda/time/Instant;
 
-    invoke-direct/range {v17 .. v17}, Lorg/joda/time/Instant;-><init>()V
+    invoke-direct/range {v18 .. v18}, Lorg/joda/time/Instant;-><init>()V
 
-    const/16 v18, 0x0
-
-    const/16 v19, 0x9f
+    const/16 v19, 0x0
 
     const/16 v20, 0x0
 
+    const/16 v21, 0x33f
+
+    const/16 v22, 0x0
+
     move-object v10, v1
 
-    invoke-static/range {v10 .. v20}, Lde/rki/coronawarnapp/covidcertificate/vaccination/core/repository/storage/VaccinationContainer;->copy$default(Lde/rki/coronawarnapp/covidcertificate/vaccination/core/repository/storage/VaccinationContainer;Ljava/lang/String;Lorg/joda/time/Instant;Lorg/joda/time/Instant;Lorg/joda/time/Instant;Lorg/joda/time/Instant;Lde/rki/coronawarnapp/covidcertificate/common/certificate/CwaCovidCertificate$State;Lorg/joda/time/Instant;ZILjava/lang/Object;)Lde/rki/coronawarnapp/covidcertificate/vaccination/core/repository/storage/VaccinationContainer;
+    invoke-static/range {v10 .. v22}, Lde/rki/coronawarnapp/covidcertificate/vaccination/core/repository/storage/VaccinationContainer;->copy$default(Lde/rki/coronawarnapp/covidcertificate/vaccination/core/repository/storage/VaccinationContainer;Ljava/lang/String;Lorg/joda/time/Instant;Lorg/joda/time/Instant;Lorg/joda/time/Instant;Lorg/joda/time/Instant;Lorg/joda/time/Instant;Lde/rki/coronawarnapp/covidcertificate/common/certificate/CwaCovidCertificate$State;Lorg/joda/time/Instant;ZLorg/joda/time/Instant;ILjava/lang/Object;)Lde/rki/coronawarnapp/covidcertificate/vaccination/core/repository/storage/VaccinationContainer;
 
     move-result-object v3
 
@@ -437,9 +441,15 @@
 
     move-result-object v10
 
+    const/4 v11, 0x0
+
+    const/4 v12, 0x0
+
+    const/4 v13, 0x0
+
     const/16 v14, 0xe
 
-    invoke-static/range {v9 .. v14}, Lde/rki/coronawarnapp/covidcertificate/vaccination/core/repository/storage/VaccinatedPersonData;->copy$default(Lde/rki/coronawarnapp/covidcertificate/vaccination/core/repository/storage/VaccinatedPersonData;Ljava/util/Set;Lde/rki/coronawarnapp/covidcertificate/validation/core/rule/DccValidationRule;Ljava/lang/String;Lorg/joda/time/Instant;I)Lde/rki/coronawarnapp/covidcertificate/vaccination/core/repository/storage/VaccinatedPersonData;
+    invoke-static/range {v9 .. v14}, Lde/rki/coronawarnapp/covidcertificate/vaccination/core/repository/storage/VaccinatedPersonData;->copy$default(Lde/rki/coronawarnapp/covidcertificate/vaccination/core/repository/storage/VaccinatedPersonData;Ljava/util/Set;Ljava/lang/String;Ljava/lang/String;Lorg/joda/time/Instant;I)Lde/rki/coronawarnapp/covidcertificate/vaccination/core/repository/storage/VaccinatedPersonData;
 
     move-result-object v1
 

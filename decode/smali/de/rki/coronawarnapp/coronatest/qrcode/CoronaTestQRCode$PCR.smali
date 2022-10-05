@@ -35,6 +35,8 @@
 
 .field public final qrCodeGUID:Ljava/lang/String;
 
+.field public final rawQrCode:Ljava/lang/String;
+
 .field public final type:Lde/rki/coronawarnapp/coronatest/type/CoronaTest$Type;
 
 
@@ -51,12 +53,16 @@
     return-void
 .end method
 
-.method public constructor <init>(Ljava/lang/String;ZLorg/joda/time/LocalDate;)V
+.method public constructor <init>(Ljava/lang/String;ZLorg/joda/time/LocalDate;Ljava/lang/String;)V
     .locals 1
 
     const-string v0, "qrCodeGUID"
 
     invoke-static {p1, v0}, Lkotlin/jvm/internal/Intrinsics;->checkNotNullParameter(Ljava/lang/Object;Ljava/lang/String;)V
+
+    const-string v0, "rawQrCode"
+
+    invoke-static {p4, v0}, Lkotlin/jvm/internal/Intrinsics;->checkNotNullParameter(Ljava/lang/Object;Ljava/lang/String;)V
 
     const/4 v0, 0x0
 
@@ -67,6 +73,8 @@
     iput-boolean p2, p0, Lde/rki/coronawarnapp/coronatest/qrcode/CoronaTestQRCode$PCR;->isDccConsentGiven:Z
 
     iput-object p3, p0, Lde/rki/coronawarnapp/coronatest/qrcode/CoronaTestQRCode$PCR;->dateOfBirth:Lorg/joda/time/LocalDate;
+
+    iput-object p4, p0, Lde/rki/coronawarnapp/coronatest/qrcode/CoronaTestQRCode$PCR;->rawQrCode:Ljava/lang/String;
 
     const/4 p1, 0x1
 
@@ -134,17 +142,30 @@
     :cond_3
     iget-object v1, p0, Lde/rki/coronawarnapp/coronatest/qrcode/CoronaTestQRCode$PCR;->dateOfBirth:Lorg/joda/time/LocalDate;
 
-    iget-object p1, p1, Lde/rki/coronawarnapp/coronatest/qrcode/CoronaTestQRCode$PCR;->dateOfBirth:Lorg/joda/time/LocalDate;
+    iget-object v3, p1, Lde/rki/coronawarnapp/coronatest/qrcode/CoronaTestQRCode$PCR;->dateOfBirth:Lorg/joda/time/LocalDate;
+
+    invoke-static {v1, v3}, Lkotlin/jvm/internal/Intrinsics;->areEqual(Ljava/lang/Object;Ljava/lang/Object;)Z
+
+    move-result v1
+
+    if-nez v1, :cond_4
+
+    return v2
+
+    :cond_4
+    iget-object v1, p0, Lde/rki/coronawarnapp/coronatest/qrcode/CoronaTestQRCode$PCR;->rawQrCode:Ljava/lang/String;
+
+    iget-object p1, p1, Lde/rki/coronawarnapp/coronatest/qrcode/CoronaTestQRCode$PCR;->rawQrCode:Ljava/lang/String;
 
     invoke-static {v1, p1}, Lkotlin/jvm/internal/Intrinsics;->areEqual(Ljava/lang/Object;Ljava/lang/Object;)Z
 
     move-result p1
 
-    if-nez p1, :cond_4
+    if-nez p1, :cond_5
 
     return v2
 
-    :cond_4
+    :cond_5
     return v0
 .end method
 
@@ -165,25 +186,21 @@
 
     iget-object v1, p0, Lde/rki/coronawarnapp/coronatest/qrcode/CoronaTestQRCode$PCR;->qrCodeGUID:Ljava/lang/String;
 
-    new-instance v2, Ljava/lang/StringBuilder;
+    const-string v2, "qrcode-"
 
-    invoke-direct {v2}, Ljava/lang/StringBuilder;-><init>()V
+    const-string v3, "-"
 
-    const-string v3, "qrcode-"
-
-    invoke-virtual {v2, v3}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
-
-    invoke-virtual {v2, v0}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
-
-    const-string v0, "-"
-
-    invoke-virtual {v2, v0}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
-
-    invoke-virtual {v2, v1}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
-
-    invoke-virtual {v2}, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
+    invoke-static {v2, v0, v3, v1}, Landroidx/fragment/app/FragmentManager$$ExternalSyntheticOutline0;->m(Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;)Ljava/lang/String;
 
     move-result-object v0
+
+    return-object v0
+.end method
+
+.method public getRawQrCode()Ljava/lang/String;
+    .locals 1
+
+    iget-object v0, p0, Lde/rki/coronawarnapp/coronatest/qrcode/CoronaTestQRCode$PCR;->rawQrCode:Ljava/lang/String;
 
     return-object v0
 .end method
@@ -234,7 +251,17 @@
     :goto_0
     add-int/2addr v0, v1
 
-    return v0
+    mul-int/lit8 v0, v0, 0x1f
+
+    iget-object v1, p0, Lde/rki/coronawarnapp/coronatest/qrcode/CoronaTestQRCode$PCR;->rawQrCode:Ljava/lang/String;
+
+    invoke-virtual {v1}, Ljava/lang/String;->hashCode()I
+
+    move-result v1
+
+    add-int/2addr v1, v0
+
+    return v1
 .end method
 
 .method public isDccConsentGiven()Z
@@ -254,7 +281,7 @@
 .end method
 
 .method public toString()Ljava/lang/String;
-    .locals 5
+    .locals 6
 
     iget-object v0, p0, Lde/rki/coronawarnapp/coronatest/qrcode/CoronaTestQRCode$PCR;->qrCodeGUID:Ljava/lang/String;
 
@@ -262,33 +289,41 @@
 
     iget-object v2, p0, Lde/rki/coronawarnapp/coronatest/qrcode/CoronaTestQRCode$PCR;->dateOfBirth:Lorg/joda/time/LocalDate;
 
-    new-instance v3, Ljava/lang/StringBuilder;
+    iget-object v3, p0, Lde/rki/coronawarnapp/coronatest/qrcode/CoronaTestQRCode$PCR;->rawQrCode:Ljava/lang/String;
 
-    invoke-direct {v3}, Ljava/lang/StringBuilder;-><init>()V
+    new-instance v4, Ljava/lang/StringBuilder;
 
-    const-string v4, "PCR(qrCodeGUID="
+    invoke-direct {v4}, Ljava/lang/StringBuilder;-><init>()V
 
-    invoke-virtual {v3, v4}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+    const-string v5, "PCR(qrCodeGUID="
 
-    invoke-virtual {v3, v0}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+    invoke-virtual {v4, v5}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+
+    invoke-virtual {v4, v0}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
 
     const-string v0, ", isDccConsentGiven="
 
-    invoke-virtual {v3, v0}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+    invoke-virtual {v4, v0}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
 
-    invoke-virtual {v3, v1}, Ljava/lang/StringBuilder;->append(Z)Ljava/lang/StringBuilder;
+    invoke-virtual {v4, v1}, Ljava/lang/StringBuilder;->append(Z)Ljava/lang/StringBuilder;
 
     const-string v0, ", dateOfBirth="
 
-    invoke-virtual {v3, v0}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+    invoke-virtual {v4, v0}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
 
-    invoke-virtual {v3, v2}, Ljava/lang/StringBuilder;->append(Ljava/lang/Object;)Ljava/lang/StringBuilder;
+    invoke-virtual {v4, v2}, Ljava/lang/StringBuilder;->append(Ljava/lang/Object;)Ljava/lang/StringBuilder;
+
+    const-string v0, ", rawQrCode="
+
+    invoke-virtual {v4, v0}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+
+    invoke-virtual {v4, v3}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
 
     const-string v0, ")"
 
-    invoke-virtual {v3, v0}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+    invoke-virtual {v4, v0}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
 
-    invoke-virtual {v3}, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
+    invoke-virtual {v4}, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
 
     move-result-object v0
 
@@ -313,6 +348,10 @@
     iget-object p2, p0, Lde/rki/coronawarnapp/coronatest/qrcode/CoronaTestQRCode$PCR;->dateOfBirth:Lorg/joda/time/LocalDate;
 
     invoke-virtual {p1, p2}, Landroid/os/Parcel;->writeSerializable(Ljava/io/Serializable;)V
+
+    iget-object p2, p0, Lde/rki/coronawarnapp/coronatest/qrcode/CoronaTestQRCode$PCR;->rawQrCode:Ljava/lang/String;
+
+    invoke-virtual {p1, p2}, Landroid/os/Parcel;->writeString(Ljava/lang/String;)V
 
     return-void
 .end method

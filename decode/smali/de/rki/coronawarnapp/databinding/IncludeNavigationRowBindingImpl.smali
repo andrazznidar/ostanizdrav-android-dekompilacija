@@ -140,7 +140,7 @@
 
     if-eqz v9, :cond_0
 
-    invoke-static {v5}, Lcom/google/android/gms/internal/nearby/zzfc;->formatVisibilityIcon(Ljava/lang/Object;)I
+    invoke-static {v5}, Lorg/ejml/dense/row/misc/ImplCommonOps_DDMA;->formatVisibilityIcon(Ljava/lang/Object;)I
 
     move-result v7
 
@@ -283,7 +283,7 @@
     :try_end_0
     .catchall {:try_start_0 .. :try_end_0} :catchall_0
 
-    const/16 p1, 0x16
+    const/16 p1, 0x15
 
     invoke-virtual {p0, p1}, Landroidx/databinding/BaseObservable;->notifyPropertyChanged(I)V
 
@@ -330,7 +330,7 @@
     :try_end_0
     .catchall {:try_start_0 .. :try_end_0} :catchall_0
 
-    const/16 p1, 0x2d
+    const/16 p1, 0x2b
 
     invoke-virtual {p0, p1}, Landroidx/databinding/BaseObservable;->notifyPropertyChanged(I)V
 
@@ -377,7 +377,7 @@
     :try_end_0
     .catchall {:try_start_0 .. :try_end_0} :catchall_0
 
-    const/16 p1, 0x2f
+    const/16 p1, 0x2d
 
     invoke-virtual {p0, p1}, Landroidx/databinding/BaseObservable;->notifyPropertyChanged(I)V
 

@@ -216,10 +216,6 @@
 
     sget-object v1, Lokhttp3/internal/Util;->EMPTY_BYTE_ARRAY:[B
 
-    const-string v1, "$this$indexOfNonWhitespace"
-
-    invoke-static {v4, v1}, Lkotlin/jvm/internal/Intrinsics;->checkNotNullParameter(Ljava/lang/Object;Ljava/lang/String;)V
-
     invoke-virtual {v4}, Ljava/lang/String;->length()I
 
     move-result v1

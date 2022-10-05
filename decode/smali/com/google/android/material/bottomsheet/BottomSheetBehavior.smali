@@ -756,7 +756,7 @@
 .end method
 
 .method public final createMaterialShapeDrawable(Landroid/content/Context;Landroid/util/AttributeSet;ZLandroid/content/res/ColorStateList;)V
-    .locals 4
+    .locals 2
 
     iget-boolean v0, p0, Lcom/google/android/material/bottomsheet/BottomSheetBehavior;->shapeThemingEnabled:Z
 
@@ -766,15 +766,7 @@
 
     sget v1, Lcom/google/android/material/bottomsheet/BottomSheetBehavior;->DEF_STYLE_RES:I
 
-    new-instance v2, Lcom/google/android/material/shape/AbsoluteCornerSize;
-
-    const/4 v3, 0x0
-
-    int-to-float v3, v3
-
-    invoke-direct {v2, v3}, Lcom/google/android/material/shape/AbsoluteCornerSize;-><init>(F)V
-
-    invoke-static {p1, p2, v0, v1, v2}, Lcom/google/android/material/shape/ShapeAppearanceModel;->builder(Landroid/content/Context;Landroid/util/AttributeSet;IILcom/google/android/material/shape/CornerSize;)Lcom/google/android/material/shape/ShapeAppearanceModel$Builder;
+    invoke-static {p1, p2, v0, v1}, Lcom/google/android/material/shape/ShapeAppearanceModel;->builder(Landroid/content/Context;Landroid/util/AttributeSet;II)Lcom/google/android/material/shape/ShapeAppearanceModel$Builder;
 
     move-result-object p2
 

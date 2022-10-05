@@ -48,7 +48,7 @@
 
     invoke-direct {p2, p1}, Lde/rki/coronawarnapp/presencetracing/storage/repo/DefaultTraceLocationRepository$traceLocationDatabase$2;-><init>(Lde/rki/coronawarnapp/presencetracing/storage/TraceLocationDatabase$Factory;)V
 
-    invoke-static {p2}, Lkotlin/LazyKt__LazyKt;->lazy(Lkotlin/jvm/functions/Function0;)Lkotlin/Lazy;
+    invoke-static {p2}, Lkotlin/LazyKt__LazyJVMKt;->lazy(Lkotlin/jvm/functions/Function0;)Lkotlin/Lazy;
 
     move-result-object p1
 
@@ -58,7 +58,7 @@
 
     invoke-direct {p1, p0}, Lde/rki/coronawarnapp/presencetracing/storage/repo/DefaultTraceLocationRepository$traceLocationDao$2;-><init>(Lde/rki/coronawarnapp/presencetracing/storage/repo/DefaultTraceLocationRepository;)V
 
-    invoke-static {p1}, Lkotlin/LazyKt__LazyKt;->lazy(Lkotlin/jvm/functions/Function0;)Lkotlin/Lazy;
+    invoke-static {p1}, Lkotlin/LazyKt__LazyJVMKt;->lazy(Lkotlin/jvm/functions/Function0;)Lkotlin/Lazy;
 
     move-result-object p1
 
@@ -371,7 +371,7 @@
 
     const-string v0, "No traceLocation found for ID="
 
-    invoke-static {v0, p1, p2}, Landroidx/viewpager2/adapter/FragmentStateAdapter$$ExternalSyntheticOutline0;->m(Ljava/lang/String;J)Ljava/lang/String;
+    invoke-static {v0, p1, p2}, Landroidx/camera/core/impl/DeferrableSurfaces$$ExternalSyntheticOutline0;->m(Ljava/lang/String;J)Ljava/lang/String;
 
     move-result-object p1
 

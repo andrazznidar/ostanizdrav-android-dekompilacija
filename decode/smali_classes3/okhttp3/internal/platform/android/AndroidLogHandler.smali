@@ -118,14 +118,6 @@
 
     move-result-object p1
 
-    const-string v4, "loggerName"
-
-    invoke-static {v0, v4}, Lkotlin/jvm/internal/Intrinsics;->checkNotNullParameter(Ljava/lang/Object;Ljava/lang/String;)V
-
-    const-string v4, "message"
-
-    invoke-static {v2, v4}, Lkotlin/jvm/internal/Intrinsics;->checkNotNullParameter(Ljava/lang/Object;Ljava/lang/String;)V
-
     sget-object v4, Lokhttp3/internal/platform/android/AndroidLog;->knownLoggers:Ljava/util/Map;
 
     invoke-interface {v4, v0}, Ljava/util/Map;->get(Ljava/lang/Object;)Ljava/lang/Object;

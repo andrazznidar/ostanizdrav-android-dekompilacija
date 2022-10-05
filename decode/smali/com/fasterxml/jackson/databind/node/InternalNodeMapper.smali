@@ -74,7 +74,7 @@
 
     sget-object v4, Lcom/fasterxml/jackson/databind/type/TypeFactory;->EMPTY_BINDINGS:Lcom/fasterxml/jackson/databind/type/TypeBindings;
 
-    invoke-virtual {v3, v6, v1, v4}, Lcom/fasterxml/jackson/databind/type/TypeFactory;->_fromAny(Landroidx/fragment/app/FragmentStore;Ljava/lang/reflect/Type;Lcom/fasterxml/jackson/databind/type/TypeBindings;)Lcom/fasterxml/jackson/databind/JavaType;
+    invoke-virtual {v3, v6, v1, v4}, Lcom/fasterxml/jackson/databind/type/TypeFactory;->_fromAny(Lcom/fasterxml/jackson/databind/type/ClassStack;Ljava/lang/reflect/Type;Lcom/fasterxml/jackson/databind/type/TypeBindings;)Lcom/fasterxml/jackson/databind/JavaType;
 
     move-result-object v1
 
@@ -132,7 +132,7 @@
 
     invoke-virtual {v0, v1, v2}, Lj$/util/concurrent/ConcurrentHashMap;->put(Ljava/lang/Object;Ljava/lang/Object;)Ljava/lang/Object;
     :try_end_0
-    .catch Lcom/fasterxml/jackson/core/JsonProcessingException; {:try_start_0 .. :try_end_0} :catch_0
+    .catch Lcom/fasterxml/jackson/core/JacksonException; {:try_start_0 .. :try_end_0} :catch_0
 
     :catch_0
     :cond_4
@@ -152,6 +152,7 @@
 
     invoke-static {v0}, Ljava/util/Objects;->requireNonNull(Ljava/lang/Object;)Ljava/lang/Object;
 
+    :try_start_0
     new-instance v1, Lcom/fasterxml/jackson/core/util/ByteArrayBuilder;
 
     iget-object v2, v0, Lcom/fasterxml/jackson/databind/ObjectMapper;->_jsonFactory:Lcom/fasterxml/jackson/core/JsonFactory;
@@ -163,18 +164,18 @@
     const/16 v3, 0x1f4
 
     invoke-direct {v1, v2, v3}, Lcom/fasterxml/jackson/core/util/ByteArrayBuilder;-><init>(Lcom/fasterxml/jackson/core/util/BufferRecycler;I)V
+    :try_end_0
+    .catch Lcom/fasterxml/jackson/core/JsonProcessingException; {:try_start_0 .. :try_end_0} :catch_1
+    .catch Ljava/io/IOException; {:try_start_0 .. :try_end_0} :catch_0
 
     const/4 v2, 0x1
 
-    :try_start_0
+    :try_start_1
     invoke-virtual {v0, v1, v2}, Lcom/fasterxml/jackson/databind/ObjectMapper;->createGenerator$enumunboxing$(Ljava/io/OutputStream;I)Lcom/fasterxml/jackson/core/JsonGenerator;
 
     move-result-object v2
 
     invoke-virtual {v0, v2, p0}, Lcom/fasterxml/jackson/databind/ObjectMapper;->_writeValueAndClose(Lcom/fasterxml/jackson/core/JsonGenerator;Ljava/lang/Object;)V
-    :try_end_0
-    .catch Lcom/fasterxml/jackson/core/JsonProcessingException; {:try_start_0 .. :try_end_0} :catch_1
-    .catch Ljava/io/IOException; {:try_start_0 .. :try_end_0} :catch_0
 
     invoke-virtual {v1}, Lcom/fasterxml/jackson/core/util/ByteArrayBuilder;->toByteArray()[B
 
@@ -199,9 +200,28 @@
     const/4 v0, 0x0
 
     iput-object v0, v1, Lcom/fasterxml/jackson/core/util/ByteArrayBuilder;->_currBlock:[B
+    :try_end_1
+    .catchall {:try_start_1 .. :try_end_1} :catchall_0
 
     :cond_0
     return-object p0
+
+    :catchall_0
+    move-exception p0
+
+    :try_start_2
+    throw p0
+    :try_end_2
+    .catchall {:try_start_2 .. :try_end_2} :catchall_1
+
+    :catchall_1
+    move-exception p0
+
+    :try_start_3
+    throw p0
+    :try_end_3
+    .catch Lcom/fasterxml/jackson/core/JsonProcessingException; {:try_start_3 .. :try_end_3} :catch_1
+    .catch Ljava/io/IOException; {:try_start_3 .. :try_end_3} :catch_0
 
     :catch_0
     move-exception p0

@@ -175,7 +175,7 @@
 
     const-string v2, "Unexpected number of IObjectWrapper declared fields: "
 
-    invoke-static {v1, v2, v0}, Lcom/google/android/gms/common/api/internal/BasePendingResult$CallbackHandler$$ExternalSyntheticOutline0;->m(ILjava/lang/String;I)Ljava/lang/String;
+    invoke-static {v1, v2, v0}, Lboofcv/alg/misc/HistogramStatistics$$ExternalSyntheticOutline0;->m(ILjava/lang/String;I)Ljava/lang/String;
 
     move-result-object v0
 

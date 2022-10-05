@@ -1,4 +1,4 @@
-.class public Lorg/bouncycastle/pqc/crypto/lms/LMSPrivateKeyParameters$CacheKey;
+.class Lorg/bouncycastle/pqc/crypto/lms/LMSPrivateKeyParameters$CacheKey;
 .super Ljava/lang/Object;
 
 
@@ -14,7 +14,7 @@
 
 
 # instance fields
-.field public final index:I
+.field private final index:I
 
 
 # direct methods
@@ -26,6 +26,14 @@
     iput p1, p0, Lorg/bouncycastle/pqc/crypto/lms/LMSPrivateKeyParameters$CacheKey;->index:I
 
     return-void
+.end method
+
+.method public static synthetic access$000(Lorg/bouncycastle/pqc/crypto/lms/LMSPrivateKeyParameters$CacheKey;)I
+    .locals 0
+
+    iget p0, p0, Lorg/bouncycastle/pqc/crypto/lms/LMSPrivateKeyParameters$CacheKey;->index:I
+
+    return p0
 .end method
 
 

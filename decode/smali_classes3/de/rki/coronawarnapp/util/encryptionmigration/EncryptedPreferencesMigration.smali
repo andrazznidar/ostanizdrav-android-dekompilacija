@@ -120,11 +120,11 @@
 
     iget-object v2, p0, Lde/rki/coronawarnapp/util/encryptionmigration/EncryptedPreferencesMigration;->cwaSettings:Lde/rki/coronawarnapp/main/CWASettings;
 
-    const/high16 v3, -0x80000000
+    const-string v3, "preference_positive_test_result_reminder_count"
 
-    const-string v4, "preference_positive_test_result_reminder_count"
+    const/high16 v4, -0x80000000
 
-    invoke-interface {p1, v4, v3}, Landroid/content/SharedPreferences;->getInt(Ljava/lang/String;I)I
+    invoke-interface {p1, v3, v4}, Landroid/content/SharedPreferences;->getInt(Ljava/lang/String;I)I
 
     move-result v3
 
@@ -144,17 +144,15 @@
 
     invoke-virtual {v3, v4}, Lde/rki/coronawarnapp/util/preferences/FlowPreference;->update(Lkotlin/jvm/functions/Function1;)V
 
-    iget-object v3, p0, Lde/rki/coronawarnapp/util/encryptionmigration/EncryptedPreferencesMigration;->onboardingSettings:Lde/rki/coronawarnapp/storage/OnboardingSettings;
+    iget-object v2, p0, Lde/rki/coronawarnapp/util/encryptionmigration/EncryptedPreferencesMigration;->onboardingSettings:Lde/rki/coronawarnapp/storage/OnboardingSettings;
 
-    iget-object v2, v2, Lde/rki/coronawarnapp/util/encryptionmigration/EncryptedPreferencesMigration$OnboardingLocalData;->sharedPreferences:Landroid/content/SharedPreferences;
+    const-string v3, "preference_background_check_done"
 
-    const-string v4, "preference_background_check_done"
+    invoke-interface {p1, v3, v1}, Landroid/content/SharedPreferences;->getBoolean(Ljava/lang/String;Z)Z
 
-    invoke-interface {v2, v4, v1}, Landroid/content/SharedPreferences;->getBoolean(Ljava/lang/String;Z)Z
+    move-result v3
 
-    move-result v2
-
-    invoke-virtual {v3, v2}, Lde/rki/coronawarnapp/storage/OnboardingSettings;->setBackgroundCheckDone(Z)V
+    invoke-virtual {v2, v3}, Lde/rki/coronawarnapp/storage/OnboardingSettings;->setBackgroundCheckDone(Z)V
 
     new-instance v2, Lde/rki/coronawarnapp/util/encryptionmigration/EncryptedPreferencesMigration$TracingLocalData;
 
@@ -162,13 +160,11 @@
 
     iget-object v3, p0, Lde/rki/coronawarnapp/util/encryptionmigration/EncryptedPreferencesMigration;->tracingSettings:Lde/rki/coronawarnapp/storage/TracingSettings;
 
-    iget-object v4, v2, Lde/rki/coronawarnapp/util/encryptionmigration/EncryptedPreferencesMigration$TracingLocalData;->sharedPreferences:Landroid/content/SharedPreferences;
+    const-string v4, "preference_polling_test_result_started"
 
     const-wide/16 v5, 0x0
 
-    const-string v7, "preference_polling_test_result_started"
-
-    invoke-interface {v4, v7, v5, v6}, Landroid/content/SharedPreferences;->getLong(Ljava/lang/String;J)J
+    invoke-interface {p1, v4, v5, v6}, Landroid/content/SharedPreferences;->getLong(Ljava/lang/String;J)J
 
     move-result-wide v7
 
@@ -196,11 +192,9 @@
 
     iget-object v3, p0, Lde/rki/coronawarnapp/util/encryptionmigration/EncryptedPreferencesMigration;->tracingSettings:Lde/rki/coronawarnapp/storage/TracingSettings;
 
-    iget-object v7, v2, Lde/rki/coronawarnapp/util/encryptionmigration/EncryptedPreferencesMigration$TracingLocalData;->sharedPreferences:Landroid/content/SharedPreferences;
+    const-string v7, "preference_test_result_notification"
 
-    const-string v8, "preference_test_result_notification"
-
-    invoke-interface {v7, v8, v1}, Landroid/content/SharedPreferences;->getBoolean(Ljava/lang/String;Z)Z
+    invoke-interface {p1, v7, v1}, Landroid/content/SharedPreferences;->getBoolean(Ljava/lang/String;Z)Z
 
     move-result v7
 
@@ -232,31 +226,29 @@
 
     invoke-virtual {v3, v7}, Lde/rki/coronawarnapp/util/preferences/FlowPreference;->update(Lkotlin/jvm/functions/Function1;)V
 
-    iget-object v3, p0, Lde/rki/coronawarnapp/util/encryptionmigration/EncryptedPreferencesMigration;->tracingSettings:Lde/rki/coronawarnapp/storage/TracingSettings;
+    iget-object v2, p0, Lde/rki/coronawarnapp/util/encryptionmigration/EncryptedPreferencesMigration;->tracingSettings:Lde/rki/coronawarnapp/storage/TracingSettings;
 
-    iget-object v2, v2, Lde/rki/coronawarnapp/util/encryptionmigration/EncryptedPreferencesMigration$TracingLocalData;->sharedPreferences:Landroid/content/SharedPreferences;
+    const-string v3, "preference_initial_tracing_activation_time"
 
-    const-string v7, "preference_initial_tracing_activation_time"
-
-    invoke-interface {v2, v7, v5, v6}, Landroid/content/SharedPreferences;->getLong(Ljava/lang/String;J)J
+    invoke-interface {p1, v3, v5, v6}, Landroid/content/SharedPreferences;->getLong(Ljava/lang/String;J)J
 
     move-result-wide v7
 
-    cmp-long v2, v7, v5
+    cmp-long v3, v7, v5
 
     const/4 v7, 0x1
 
-    if-eqz v2, :cond_0
+    if-eqz v3, :cond_0
 
-    move v2, v7
+    move v3, v7
 
     goto :goto_0
 
     :cond_0
-    move v2, v1
+    move v3, v1
 
     :goto_0
-    invoke-virtual {v3, v2}, Lde/rki/coronawarnapp/storage/TracingSettings;->setConsentGiven(Z)V
+    invoke-virtual {v2, v3}, Lde/rki/coronawarnapp/storage/TracingSettings;->setConsentGiven(Z)V
 
     iget-object v2, p0, Lde/rki/coronawarnapp/util/encryptionmigration/EncryptedPreferencesMigration;->submissionSettings:Lde/rki/coronawarnapp/submission/SubmissionSettings;
 
@@ -483,9 +475,17 @@
     :cond_0
     sget-object v1, Ltimber/log/Timber;->Forest:Ltimber/log/Timber$Forest;
 
-    const-string v3, "Removing database "
+    new-instance v3, Ljava/lang/StringBuilder;
 
-    invoke-static {v3, v0}, Landroidx/core/content/FileProvider$SimplePathStrategy$$ExternalSyntheticOutline0;->m(Ljava/lang/String;Ljava/io/File;)Ljava/lang/String;
+    invoke-direct {v3}, Ljava/lang/StringBuilder;-><init>()V
+
+    const-string v4, "Removing database "
+
+    invoke-virtual {v3, v4}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+
+    invoke-virtual {v3, v0}, Ljava/lang/StringBuilder;->append(Ljava/lang/Object;)Ljava/lang/StringBuilder;
+
+    invoke-virtual {v3}, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
 
     move-result-object v3
 

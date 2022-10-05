@@ -1,12 +1,23 @@
-.class public Lorg/bouncycastle/asn1/ASN1Set$1;
+.class Lorg/bouncycastle/asn1/ASN1Set$1;
 .super Ljava/lang/Object;
 
 # interfaces
 .implements Ljava/util/Enumeration;
 
 
+# annotations
+.annotation system Ldalvik/annotation/EnclosingMethod;
+    value = Lorg/bouncycastle/asn1/ASN1Set;->getObjects()Ljava/util/Enumeration;
+.end annotation
+
+.annotation system Ldalvik/annotation/InnerClass;
+    accessFlags = 0x1
+    name = null
+.end annotation
+
+
 # instance fields
-.field public pos:I
+.field private pos:I
 
 .field public final synthetic this$0:Lorg/bouncycastle/asn1/ASN1Set;
 

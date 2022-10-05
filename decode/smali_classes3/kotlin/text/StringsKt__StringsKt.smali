@@ -5,7 +5,7 @@
 
 # annotations
 .annotation system Ldalvik/annotation/SourceDebugExtension;
-    value = "SMAP\nStrings.kt\nKotlin\n*S Kotlin\n*F\n+ 1 Strings.kt\nkotlin/text/StringsKt__StringsKt\n+ 2 _Arrays.kt\nkotlin/collections/ArraysKt___ArraysKt\n+ 3 _Collections.kt\nkotlin/collections/CollectionsKt___CollectionsKt\n+ 4 fake.kt\nkotlin/jvm/internal/FakeKt\n*L\n1#1,1485:1\n79#1,22:1486\n113#1,5:1508\n130#1,5:1513\n79#1,22:1518\n107#1:1540\n79#1,22:1541\n113#1,5:1563\n124#1:1568\n113#1,5:1569\n130#1,5:1574\n141#1:1579\n130#1,5:1580\n79#1,22:1585\n113#1,5:1607\n130#1,5:1612\n12781#2,2:1617\n12781#2,2:1619\n286#3,2:1621\n286#3,2:1623\n1547#3:1626\n1618#3,3:1627\n1547#3:1630\n1618#3,3:1631\n1#4:1625\n*S KotlinDebug\n*F\n+ 1 Strings.kt\nkotlin/text/StringsKt__StringsKt\n*L\n107#1:1486,22\n124#1:1508,5\n141#1:1513,5\n146#1:1518,22\n151#1:1540\n151#1:1541,22\n156#1:1563,5\n161#1:1568\n161#1:1569,5\n166#1:1574,5\n171#1:1579\n171#1:1580,5\n176#1:1585,22\n187#1:1607,5\n198#1:1612,5\n940#1:1617,2\n964#1:1619,2\n1003#1:1621,2\n1009#1:1623,2\n1309#1:1626\n1309#1:1627,3\n1334#1:1630\n1334#1:1631,3\n*E\n"
+    value = "SMAP\nStrings.kt\nKotlin\n*S Kotlin\n*F\n+ 1 Strings.kt\nkotlin/text/StringsKt__StringsKt\n+ 2 _Arrays.kt\nkotlin/collections/ArraysKt___ArraysKt\n+ 3 _Collections.kt\nkotlin/collections/CollectionsKt___CollectionsKt\n+ 4 fake.kt\nkotlin/jvm/internal/FakeKt\n*L\n1#1,1486:1\n79#1,22:1487\n113#1,5:1509\n130#1,5:1514\n79#1,22:1519\n107#1:1541\n79#1,22:1542\n113#1,5:1564\n124#1:1569\n113#1,5:1570\n130#1,5:1575\n141#1:1580\n130#1,5:1581\n79#1,22:1586\n113#1,5:1608\n130#1,5:1613\n12781#2,2:1618\n12781#2,2:1620\n286#3,2:1622\n286#3,2:1624\n1547#3:1627\n1618#3,3:1628\n1547#3:1631\n1618#3,3:1632\n1#4:1626\n*S KotlinDebug\n*F\n+ 1 Strings.kt\nkotlin/text/StringsKt__StringsKt\n*L\n107#1:1487,22\n124#1:1509,5\n141#1:1514,5\n146#1:1519,22\n151#1:1541\n151#1:1542,22\n156#1:1564,5\n161#1:1569\n161#1:1570,5\n166#1:1575,5\n171#1:1580\n171#1:1581,5\n176#1:1586,22\n187#1:1608,5\n198#1:1613,5\n940#1:1618,2\n964#1:1620,2\n1003#1:1622,2\n1009#1:1624,2\n1309#1:1627\n1309#1:1628,3\n1334#1:1631\n1334#1:1632,3\n*E\n"
 .end annotation
 
 
@@ -24,7 +24,7 @@
     move p2, v1
 
     :cond_0
-    const-string p3, "$this$contains"
+    const-string p3, "<this>"
 
     invoke-static {p0, p3}, Lkotlin/jvm/internal/Intrinsics;->checkNotNullParameter(Ljava/lang/Object;Ljava/lang/String;)V
 
@@ -59,7 +59,7 @@
     move v6, p2
 
     :goto_0
-    const-string p2, "$this$contains"
+    const-string p2, "<this>"
 
     invoke-static {p0, p2}, Lkotlin/jvm/internal/Intrinsics;->checkNotNullParameter(Ljava/lang/Object;Ljava/lang/String;)V
 
@@ -123,7 +123,7 @@
     move p2, v0
 
     :cond_0
-    const-string p3, "$this$endsWith"
+    const-string p3, "<this>"
 
     invoke-static {p0, p3}, Lkotlin/jvm/internal/Intrinsics;->checkNotNullParameter(Ljava/lang/Object;Ljava/lang/String;)V
 
@@ -156,7 +156,7 @@
 .method public static final getLastIndex(Ljava/lang/CharSequence;)I
     .locals 1
 
-    const-string v0, "$this$lastIndex"
+    const-string v0, "<this>"
 
     invoke-static {p0, v0}, Lkotlin/jvm/internal/Intrinsics;->checkNotNullParameter(Ljava/lang/Object;Ljava/lang/String;)V
 
@@ -172,7 +172,7 @@
 .method public static final indexOf(Ljava/lang/CharSequence;Ljava/lang/String;IZ)I
     .locals 7
 
-    const-string v0, "$this$indexOf"
+    const-string v0, "<this>"
 
     invoke-static {p0, v0}, Lkotlin/jvm/internal/Intrinsics;->checkNotNullParameter(Ljava/lang/Object;Ljava/lang/String;)V
 
@@ -224,19 +224,19 @@
 .end method
 
 .method public static final indexOf$StringsKt__StringsKt(Ljava/lang/CharSequence;Ljava/lang/CharSequence;IIZZ)I
-    .locals 6
+    .locals 7
 
     const/4 v0, 0x0
 
     if-nez p5, :cond_2
+
+    new-instance p5, Lkotlin/ranges/IntRange;
 
     if-gez p2, :cond_0
 
     move p2, v0
 
     :cond_0
-    new-instance p5, Lkotlin/ranges/IntRange;
-
     invoke-interface {p0}, Ljava/lang/CharSequence;->length()I
 
     move-result v0
@@ -272,11 +272,11 @@
     :goto_0
     instance-of p2, p0, Ljava/lang/String;
 
-    if-eqz p2, :cond_7
+    if-eqz p2, :cond_9
 
     instance-of p2, p1, Ljava/lang/String;
 
-    if-eqz p2, :cond_7
+    if-eqz p2, :cond_9
 
     iget p2, p5, Lkotlin/ranges/IntProgression;->first:I
 
@@ -284,16 +284,19 @@
 
     iget p5, p5, Lkotlin/ranges/IntProgression;->step:I
 
-    if-ltz p5, :cond_5
+    if-lez p5, :cond_5
 
-    if-gt p2, p3, :cond_a
-
-    goto :goto_1
+    if-le p2, p3, :cond_6
 
     :cond_5
-    if-lt p2, p3, :cond_a
+    if-gez p5, :cond_e
 
+    if-gt p3, p2, :cond_e
+
+    :cond_6
     :goto_1
+    add-int v6, p2, p5
+
     move-object v0, p1
 
     check-cast v0, Ljava/lang/String;
@@ -316,34 +319,40 @@
 
     move-result v0
 
-    if-eqz v0, :cond_6
+    if-eqz v0, :cond_7
 
     return p2
 
-    :cond_6
-    if-eq p2, p3, :cond_a
+    :cond_7
+    if-ne p2, p3, :cond_8
 
-    add-int/2addr p2, p5
+    goto :goto_3
+
+    :cond_8
+    move p2, v6
 
     goto :goto_1
 
-    :cond_7
+    :cond_9
     iget p2, p5, Lkotlin/ranges/IntProgression;->first:I
 
     iget p3, p5, Lkotlin/ranges/IntProgression;->last:I
 
     iget p5, p5, Lkotlin/ranges/IntProgression;->step:I
 
-    if-ltz p5, :cond_8
+    if-lez p5, :cond_a
 
-    if-gt p2, p3, :cond_a
+    if-le p2, p3, :cond_b
 
-    goto :goto_2
+    :cond_a
+    if-gez p5, :cond_e
 
-    :cond_8
-    if-lt p2, p3, :cond_a
+    if-gt p3, p2, :cond_e
 
+    :cond_b
     :goto_2
+    add-int v6, p2, p5
+
     const/4 v1, 0x0
 
     invoke-interface {p1}, Ljava/lang/CharSequence;->length()I
@@ -362,18 +371,22 @@
 
     move-result v0
 
-    if-eqz v0, :cond_9
+    if-eqz v0, :cond_c
 
     return p2
 
-    :cond_9
-    if-eq p2, p3, :cond_a
+    :cond_c
+    if-ne p2, p3, :cond_d
 
-    add-int/2addr p2, p5
+    goto :goto_3
+
+    :cond_d
+    move p2, v6
 
     goto :goto_2
 
-    :cond_a
+    :cond_e
+    :goto_3
     const/4 p0, -0x1
 
     return p0
@@ -427,7 +440,7 @@
     move p3, v1
 
     :cond_1
-    const-string p4, "$this$indexOf"
+    const-string p4, "<this>"
 
     invoke-static {p0, p4}, Lkotlin/jvm/internal/Intrinsics;->checkNotNullParameter(Ljava/lang/Object;Ljava/lang/String;)V
 
@@ -491,7 +504,7 @@
 .end method
 
 .method public static final indexOfAny(Ljava/lang/CharSequence;[CIZ)I
-    .locals 7
+    .locals 8
 
     const-string v0, "chars"
 
@@ -533,60 +546,63 @@
 
     move-result v2
 
-    if-gt p2, v2, :cond_5
+    if-gt p2, v2, :cond_6
 
     :goto_0
+    add-int/lit8 v3, p2, 0x1
+
     invoke-interface {p0, p2}, Ljava/lang/CharSequence;->charAt(I)C
 
-    move-result v3
+    move-result v4
 
-    array-length v4, p1
+    array-length v5, p1
 
-    move v5, v1
-
-    :goto_1
-    if-ge v5, v4, :cond_3
-
-    aget-char v6, p1, v5
-
-    invoke-static {v6, v3, p3}, Lkotlin/text/CharsKt__CharKt;->equals(CCZ)Z
-
-    move-result v6
-
-    if-eqz v6, :cond_2
-
-    move v3, v0
-
-    goto :goto_2
+    move v6, v1
 
     :cond_2
-    add-int/lit8 v5, v5, 0x1
+    if-ge v6, v5, :cond_3
+
+    aget-char v7, p1, v6
+
+    add-int/lit8 v6, v6, 0x1
+
+    invoke-static {v7, v4, p3}, Lkotlin/text/CharsKt__CharKt;->equals(CCZ)Z
+
+    move-result v7
+
+    if-eqz v7, :cond_2
+
+    move v4, v0
 
     goto :goto_1
 
     :cond_3
-    move v3, v1
+    move v4, v1
 
-    :goto_2
-    if-eqz v3, :cond_4
+    :goto_1
+    if-eqz v4, :cond_4
 
     return p2
 
     :cond_4
-    if-eq p2, v2, :cond_5
+    if-ne p2, v2, :cond_5
 
-    add-int/lit8 p2, p2, 0x1
+    goto :goto_2
+
+    :cond_5
+    move p2, v3
 
     goto :goto_0
 
-    :cond_5
+    :cond_6
+    :goto_2
     const/4 p0, -0x1
 
     return p0
 .end method
 
 .method public static lastIndexOf$default(Ljava/lang/CharSequence;CIZI)I
-    .locals 4
+    .locals 5
 
     and-int/lit8 v0, p4, 0x2
 
@@ -659,51 +675,56 @@
     move p2, p1
 
     :cond_5
+    if-ltz p2, :cond_a
+
     :goto_1
-    if-ltz p2, :cond_9
+    add-int/lit8 p1, p2, -0x1
 
     invoke-interface {p0, p2}, Ljava/lang/CharSequence;->charAt(I)C
 
-    move-result p1
+    move-result v2
 
-    move v2, v0
-
-    :goto_2
-    if-ge v2, p4, :cond_7
-
-    aget-char v3, v1, v2
-
-    invoke-static {v3, p1, p3}, Lkotlin/text/CharsKt__CharKt;->equals(CCZ)Z
-
-    move-result v3
-
-    if-eqz v3, :cond_6
-
-    move p1, p4
-
-    goto :goto_3
+    move v3, v0
 
     :cond_6
-    add-int/lit8 v2, v2, 0x1
+    if-ge v3, p4, :cond_7
+
+    aget-char v4, v1, v3
+
+    add-int/lit8 v3, v3, 0x1
+
+    invoke-static {v4, v2, p3}, Lkotlin/text/CharsKt__CharKt;->equals(CCZ)Z
+
+    move-result v4
+
+    if-eqz v4, :cond_6
+
+    move v2, p4
 
     goto :goto_2
 
     :cond_7
-    move p1, v0
+    move v2, v0
 
-    :goto_3
-    if-eqz p1, :cond_8
+    :goto_2
+    if-eqz v2, :cond_8
 
     move p0, p2
 
     goto :goto_4
 
     :cond_8
-    add-int/lit8 p2, p2, -0x1
+    if-gez p1, :cond_9
+
+    goto :goto_3
+
+    :cond_9
+    move p2, p1
 
     goto :goto_1
 
-    :cond_9
+    :cond_a
+    :goto_3
     const/4 p0, -0x1
 
     :goto_4
@@ -733,7 +754,7 @@
     :cond_1
     move v4, p3
 
-    const-string p2, "$this$lastIndexOf"
+    const-string p2, "<this>"
 
     invoke-static {p0, p2}, Lkotlin/jvm/internal/Intrinsics;->checkNotNullParameter(Ljava/lang/Object;Ljava/lang/String;)V
 
@@ -789,7 +810,7 @@
         }
     .end annotation
 
-    const-string v0, "$this$lines"
+    const-string v0, "<this>"
 
     invoke-static {p0, v0}, Lkotlin/jvm/internal/Intrinsics;->checkNotNullParameter(Ljava/lang/Object;Ljava/lang/String;)V
 
@@ -803,11 +824,11 @@
 
     move-result-object v4
 
+    const/4 v5, 0x0
+
     const/4 v6, 0x0
 
     const/4 v7, 0x0
-
-    const/4 v5, 0x0
 
     const/4 v8, 0x2
 
@@ -833,15 +854,13 @@
 .end method
 
 .method public static final padStart(Ljava/lang/String;IC)Ljava/lang/String;
-    .locals 2
+    .locals 3
 
-    const-string v0, "$this$padStart"
-
-    invoke-static {p0, v0}, Lkotlin/jvm/internal/Intrinsics;->checkNotNullParameter(Ljava/lang/Object;Ljava/lang/String;)V
+    const-string v0, "<this>"
 
     invoke-static {p0, v0}, Lkotlin/jvm/internal/Intrinsics;->checkNotNullParameter(Ljava/lang/Object;Ljava/lang/String;)V
 
-    if-ltz p1, :cond_2
+    if-ltz p1, :cond_3
 
     invoke-interface {p0}, Ljava/lang/CharSequence;->length()I
 
@@ -859,7 +878,7 @@
 
     move-result-object p0
 
-    goto :goto_1
+    goto :goto_2
 
     :cond_0
     new-instance v0, Ljava/lang/StringBuilder;
@@ -874,30 +893,36 @@
 
     const/4 v1, 0x1
 
-    if-gt v1, p1, :cond_1
+    if-gt v1, p1, :cond_2
 
     :goto_0
+    add-int/lit8 v2, v1, 0x1
+
     invoke-virtual {v0, p2}, Ljava/lang/StringBuilder;->append(C)Ljava/lang/StringBuilder;
 
-    if-eq v1, p1, :cond_1
+    if-ne v1, p1, :cond_1
 
-    add-int/lit8 v1, v1, 0x1
+    goto :goto_1
+
+    :cond_1
+    move v1, v2
 
     goto :goto_0
 
-    :cond_1
+    :cond_2
+    :goto_1
     invoke-virtual {v0, p0}, Ljava/lang/StringBuilder;->append(Ljava/lang/CharSequence;)Ljava/lang/StringBuilder;
 
     move-object p0, v0
 
-    :goto_1
+    :goto_2
     invoke-virtual {p0}, Ljava/lang/Object;->toString()Ljava/lang/String;
 
     move-result-object p0
 
     return-object p0
 
-    :cond_2
+    :cond_3
     new-instance p0, Ljava/lang/IllegalArgumentException;
 
     const-string p2, "Desired length "
@@ -959,7 +984,7 @@
 .method public static final regionMatchesImpl(Ljava/lang/CharSequence;ILjava/lang/CharSequence;IIZ)Z
     .locals 4
 
-    const-string v0, "$this$regionMatchesImpl"
+    const-string v0, "<this>"
 
     invoke-static {p0, v0}, Lkotlin/jvm/internal/Intrinsics;->checkNotNullParameter(Ljava/lang/Object;Ljava/lang/String;)V
 
@@ -997,28 +1022,30 @@
     :goto_0
     if-ge v1, p4, :cond_2
 
-    add-int v2, p1, v1
+    add-int/lit8 v2, v1, 0x1
 
-    invoke-interface {p0, v2}, Ljava/lang/CharSequence;->charAt(I)C
+    add-int v3, p1, v1
 
-    move-result v2
-
-    add-int v3, p3, v1
-
-    invoke-interface {p2, v3}, Ljava/lang/CharSequence;->charAt(I)C
+    invoke-interface {p0, v3}, Ljava/lang/CharSequence;->charAt(I)C
 
     move-result v3
 
-    invoke-static {v2, v3, p5}, Lkotlin/text/CharsKt__CharKt;->equals(CCZ)Z
+    add-int/2addr v1, p3
 
-    move-result v2
+    invoke-interface {p2, v1}, Ljava/lang/CharSequence;->charAt(I)C
 
-    if-nez v2, :cond_1
+    move-result v1
+
+    invoke-static {v3, v1, p5}, Lkotlin/text/CharsKt__CharKt;->equals(CCZ)Z
+
+    move-result v1
+
+    if-nez v1, :cond_1
 
     return v0
 
     :cond_1
-    add-int/lit8 v1, v1, 0x1
+    move v1, v2
 
     goto :goto_0
 
@@ -1035,19 +1062,19 @@
 .method public static final removePrefix(Ljava/lang/String;Ljava/lang/CharSequence;)Ljava/lang/String;
     .locals 3
 
-    const-string v0, "$this$removePrefix"
+    const-string v0, "<this>"
 
     invoke-static {p0, v0}, Lkotlin/jvm/internal/Intrinsics;->checkNotNullParameter(Ljava/lang/Object;Ljava/lang/String;)V
 
-    const/4 v0, 0x2
+    move-object v0, p1
+
+    check-cast v0, Ljava/lang/String;
 
     const/4 v1, 0x0
 
-    move-object v2, p1
+    const/4 v2, 0x2
 
-    check-cast v2, Ljava/lang/String;
-
-    invoke-static {p0, v2, v1, v0}, Lkotlin/text/StringsKt__StringsJVMKt;->startsWith$default(Ljava/lang/String;Ljava/lang/String;ZI)Z
+    invoke-static {p0, v0, v1, v2}, Lkotlin/text/StringsKt__StringsJVMKt;->startsWith$default(Ljava/lang/String;Ljava/lang/String;ZI)Z
 
     move-result v0
 
@@ -1061,7 +1088,7 @@
 
     move-result-object p0
 
-    const-string p1, "(this as java.lang.String).substring(startIndex)"
+    const-string p1, "this as java.lang.String).substring(startIndex)"
 
     invoke-static {p0, p1}, Lkotlin/jvm/internal/Intrinsics;->checkNotNullExpressionValue(Ljava/lang/Object;Ljava/lang/String;)V
 
@@ -1072,15 +1099,15 @@
 .method public static final removeSuffix(Ljava/lang/String;Ljava/lang/CharSequence;)Ljava/lang/String;
     .locals 3
 
-    const/4 v0, 0x2
+    move-object v0, p1
+
+    check-cast v0, Ljava/lang/String;
 
     const/4 v1, 0x0
 
-    move-object v2, p1
+    const/4 v2, 0x2
 
-    check-cast v2, Ljava/lang/String;
-
-    invoke-static {p0, v2, v1, v0}, Lkotlin/text/StringsKt__StringsJVMKt;->endsWith$default(Ljava/lang/String;Ljava/lang/String;ZI)Z
+    invoke-static {p0, v0, v1, v2}, Lkotlin/text/StringsKt__StringsJVMKt;->endsWith$default(Ljava/lang/String;Ljava/lang/String;ZI)Z
 
     move-result v0
 
@@ -1100,7 +1127,7 @@
 
     move-result-object p0
 
-    const-string p1, "(this as java.lang.Strin\u2026ing(startIndex, endIndex)"
+    const-string p1, "this as java.lang.String\u2026ing(startIndex, endIndex)"
 
     invoke-static {p0, p1}, Lkotlin/jvm/internal/Intrinsics;->checkNotNullExpressionValue(Ljava/lang/Object;Ljava/lang/String;)V
 
@@ -1126,9 +1153,13 @@
     return-void
 
     :cond_1
+    invoke-static {p0}, Ljava/lang/Integer;->valueOf(I)Ljava/lang/Integer;
+
+    move-result-object p0
+
     const-string v0, "Limit must be non-negative, but was "
 
-    invoke-static {v0, p0}, Landroidx/appcompat/widget/AppCompatTextHelper$$ExternalSyntheticOutline0;->m(Ljava/lang/String;I)Ljava/lang/String;
+    invoke-static {v0, p0}, Lkotlin/jvm/internal/Intrinsics;->stringPlus(Ljava/lang/String;Ljava/lang/Object;)Ljava/lang/String;
 
     move-result-object p0
 
@@ -1286,7 +1317,7 @@
     move p3, v1
 
     :cond_1
-    const-string p4, "$this$split"
+    const-string p4, "<this>"
 
     invoke-static {p0, p4}, Lkotlin/jvm/internal/Intrinsics;->checkNotNullParameter(Ljava/lang/Object;Ljava/lang/String;)V
 
@@ -1394,7 +1425,7 @@
     move v6, p3
 
     :goto_1
-    const-string p2, "$this$split"
+    const-string p2, "<this>"
 
     invoke-static {p0, p2}, Lkotlin/jvm/internal/Intrinsics;->checkNotNullParameter(Ljava/lang/Object;Ljava/lang/String;)V
 
@@ -1485,7 +1516,7 @@
 .method public static final substring(Ljava/lang/CharSequence;Lkotlin/ranges/IntRange;)Ljava/lang/String;
     .locals 1
 
-    const-string v0, "$this$substring"
+    const-string v0, "<this>"
 
     invoke-static {p0, v0}, Lkotlin/jvm/internal/Intrinsics;->checkNotNullParameter(Ljava/lang/Object;Ljava/lang/String;)V
 
@@ -1529,7 +1560,7 @@
 .method public static final substringAfter(Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;)Ljava/lang/String;
     .locals 2
 
-    const-string v0, "$this$substringAfter"
+    const-string v0, "<this>"
 
     invoke-static {p0, v0}, Lkotlin/jvm/internal/Intrinsics;->checkNotNullParameter(Ljava/lang/Object;Ljava/lang/String;)V
 
@@ -1570,7 +1601,7 @@
 
     move-result-object p2
 
-    const-string p0, "(this as java.lang.Strin\u2026ing(startIndex, endIndex)"
+    const-string p0, "this as java.lang.String\u2026ing(startIndex, endIndex)"
 
     invoke-static {p2, p0}, Lkotlin/jvm/internal/Intrinsics;->checkNotNullExpressionValue(Ljava/lang/Object;Ljava/lang/String;)V
 
@@ -1622,7 +1653,7 @@
 
     move-result-object p2
 
-    const-string p0, "(this as java.lang.Strin\u2026ing(startIndex, endIndex)"
+    const-string p0, "this as java.lang.String\u2026ing(startIndex, endIndex)"
 
     invoke-static {p2, p0}, Lkotlin/jvm/internal/Intrinsics;->checkNotNullExpressionValue(Ljava/lang/Object;Ljava/lang/String;)V
 
@@ -1655,7 +1686,7 @@
 .method public static final substringAfterLast(Ljava/lang/String;CLjava/lang/String;)Ljava/lang/String;
     .locals 2
 
-    const-string v0, "$this$substringAfterLast"
+    const-string v0, "<this>"
 
     invoke-static {p0, v0}, Lkotlin/jvm/internal/Intrinsics;->checkNotNullParameter(Ljava/lang/Object;Ljava/lang/String;)V
 
@@ -1688,7 +1719,7 @@
 
     move-result-object p2
 
-    const-string p0, "(this as java.lang.Strin\u2026ing(startIndex, endIndex)"
+    const-string p0, "this as java.lang.String\u2026ing(startIndex, endIndex)"
 
     invoke-static {p2, p0}, Lkotlin/jvm/internal/Intrinsics;->checkNotNullExpressionValue(Ljava/lang/Object;Ljava/lang/String;)V
 
@@ -1733,7 +1764,7 @@
     const/4 p2, 0x0
 
     :goto_0
-    const-string p3, "$this$substringBefore"
+    const-string p3, "<this>"
 
     invoke-static {p0, p3}, Lkotlin/jvm/internal/Intrinsics;->checkNotNullParameter(Ljava/lang/Object;Ljava/lang/String;)V
 
@@ -1760,7 +1791,7 @@
 
     move-result-object p2
 
-    const-string p0, "(this as java.lang.Strin\u2026ing(startIndex, endIndex)"
+    const-string p0, "this as java.lang.String\u2026ing(startIndex, endIndex)"
 
     invoke-static {p2, p0}, Lkotlin/jvm/internal/Intrinsics;->checkNotNullExpressionValue(Ljava/lang/Object;Ljava/lang/String;)V
 
@@ -1783,7 +1814,7 @@
     const/4 p2, 0x0
 
     :goto_0
-    const-string p3, "$this$substringBefore"
+    const-string p3, "<this>"
 
     invoke-static {p0, p3}, Lkotlin/jvm/internal/Intrinsics;->checkNotNullParameter(Ljava/lang/Object;Ljava/lang/String;)V
 
@@ -1810,7 +1841,7 @@
 
     move-result-object p2
 
-    const-string p0, "(this as java.lang.Strin\u2026ing(startIndex, endIndex)"
+    const-string p0, "this as java.lang.String\u2026ing(startIndex, endIndex)"
 
     invoke-static {p2, p0}, Lkotlin/jvm/internal/Intrinsics;->checkNotNullExpressionValue(Ljava/lang/Object;Ljava/lang/String;)V
 
@@ -1818,46 +1849,62 @@
     return-object p2
 .end method
 
-.method public static final substringBeforeLast(Ljava/lang/String;CLjava/lang/String;)Ljava/lang/String;
-    .locals 2
+.method public static substringBeforeLast$default(Ljava/lang/String;CLjava/lang/String;I)Ljava/lang/String;
+    .locals 1
 
-    const-string v0, "$this$substringBeforeLast"
+    and-int/lit8 p2, p3, 0x2
 
-    invoke-static {p0, v0}, Lkotlin/jvm/internal/Intrinsics;->checkNotNullParameter(Ljava/lang/Object;Ljava/lang/String;)V
+    if-eqz p2, :cond_0
 
-    const-string v0, "missingDelimiterValue"
-
-    invoke-static {p2, v0}, Lkotlin/jvm/internal/Intrinsics;->checkNotNullParameter(Ljava/lang/Object;Ljava/lang/String;)V
-
-    const/4 v0, 0x0
-
-    const/4 v1, 0x6
-
-    invoke-static {p0, p1, v0, v0, v1}, Lkotlin/text/StringsKt__StringsKt;->lastIndexOf$default(Ljava/lang/CharSequence;CIZI)I
-
-    move-result p1
-
-    const/4 v1, -0x1
-
-    if-ne p1, v1, :cond_0
+    move-object p2, p0
 
     goto :goto_0
 
     :cond_0
-    invoke-virtual {p0, v0, p1}, Ljava/lang/String;->substring(II)Ljava/lang/String;
+    const/4 p2, 0x0
+
+    :goto_0
+    const-string p3, "<this>"
+
+    invoke-static {p0, p3}, Lkotlin/jvm/internal/Intrinsics;->checkNotNullParameter(Ljava/lang/Object;Ljava/lang/String;)V
+
+    const-string p3, "missingDelimiterValue"
+
+    invoke-static {p2, p3}, Lkotlin/jvm/internal/Intrinsics;->checkNotNullParameter(Ljava/lang/Object;Ljava/lang/String;)V
+
+    const/4 p3, 0x0
+
+    const/4 v0, 0x6
+
+    invoke-static {p0, p1, p3, p3, v0}, Lkotlin/text/StringsKt__StringsKt;->lastIndexOf$default(Ljava/lang/CharSequence;CIZI)I
+
+    move-result p1
+
+    const/4 v0, -0x1
+
+    if-ne p1, v0, :cond_1
+
+    goto :goto_1
+
+    :cond_1
+    invoke-virtual {p0, p3, p1}, Ljava/lang/String;->substring(II)Ljava/lang/String;
 
     move-result-object p2
 
-    const-string p0, "(this as java.lang.Strin\u2026ing(startIndex, endIndex)"
+    const-string p0, "this as java.lang.String\u2026ing(startIndex, endIndex)"
 
     invoke-static {p2, p0}, Lkotlin/jvm/internal/Intrinsics;->checkNotNullExpressionValue(Ljava/lang/Object;Ljava/lang/String;)V
 
-    :goto_0
+    :goto_1
     return-object p2
 .end method
 
 .method public static final trim(Ljava/lang/CharSequence;)Ljava/lang/CharSequence;
     .locals 5
+
+    const-string v0, "<this>"
+
+    invoke-static {p0, v0}, Lkotlin/jvm/internal/Intrinsics;->checkNotNullParameter(Ljava/lang/Object;Ljava/lang/String;)V
 
     invoke-interface {p0}, Ljava/lang/CharSequence;->length()I
 

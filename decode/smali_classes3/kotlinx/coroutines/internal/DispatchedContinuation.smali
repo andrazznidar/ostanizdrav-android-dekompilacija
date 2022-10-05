@@ -355,7 +355,7 @@
 
     const/4 v2, 0x1
 
-    invoke-static {p1, v1, v2}, Lkotlinx/coroutines/SupervisorKt;->toState$default(Ljava/lang/Object;Lkotlin/jvm/functions/Function1;I)Ljava/lang/Object;
+    invoke-static {p1, v1, v2}, Lkotlinx/coroutines/CompletionStateKt;->toState$default(Ljava/lang/Object;Lkotlin/jvm/functions/Function1;I)Ljava/lang/Object;
 
     move-result-object v3
 

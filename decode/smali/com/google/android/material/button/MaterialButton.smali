@@ -211,13 +211,7 @@
 
     iput v1, p0, Lcom/google/android/material/button/MaterialButton;->iconSize:I
 
-    new-instance v1, Lcom/google/android/material/shape/AbsoluteCornerSize;
-
-    int-to-float v4, p1
-
-    invoke-direct {v1, v4}, Lcom/google/android/material/shape/AbsoluteCornerSize;-><init>(F)V
-
-    invoke-static {v7, p2, p3, v6, v1}, Lcom/google/android/material/shape/ShapeAppearanceModel;->builder(Landroid/content/Context;Landroid/util/AttributeSet;IILcom/google/android/material/shape/CornerSize;)Lcom/google/android/material/shape/ShapeAppearanceModel$Builder;
+    invoke-static {v7, p2, p3, v6}, Lcom/google/android/material/shape/ShapeAppearanceModel;->builder(Landroid/content/Context;Landroid/util/AttributeSet;II)Lcom/google/android/material/shape/ShapeAppearanceModel$Builder;
 
     move-result-object p2
 
@@ -971,7 +965,7 @@
 .method public onAttachedToWindow()V
     .locals 1
 
-    invoke-super {p0}, Landroid/widget/TextView;->onAttachedToWindow()V
+    invoke-super {p0}, Landroid/widget/Button;->onAttachedToWindow()V
 
     invoke-virtual {p0}, Lcom/google/android/material/button/MaterialButton;->isUsingOriginalBackground()Z
 
@@ -985,7 +979,7 @@
 
     move-result-object v0
 
-    invoke-static {p0, v0}, Lcom/google/android/material/shape/MaterialShapeUtils;->setParentAbsoluteElevation(Landroid/view/View;Lcom/google/android/material/shape/MaterialShapeDrawable;)V
+    invoke-static {p0, v0}, Lcom/google/common/base/Preconditions;->setParentAbsoluteElevation(Landroid/view/View;Lcom/google/android/material/shape/MaterialShapeDrawable;)V
 
     :cond_0
     return-void
@@ -996,7 +990,7 @@
 
     add-int/lit8 p1, p1, 0x2
 
-    invoke-super {p0, p1}, Landroid/widget/TextView;->onCreateDrawableState(I)[I
+    invoke-super {p0, p1}, Landroid/widget/Button;->onCreateDrawableState(I)[I
 
     move-result-object p1
 
@@ -1092,7 +1086,7 @@
 
     if-nez v0, :cond_0
 
-    invoke-super {p0, p1}, Landroid/widget/TextView;->onRestoreInstanceState(Landroid/os/Parcelable;)V
+    invoke-super {p0, p1}, Landroid/widget/Button;->onRestoreInstanceState(Landroid/os/Parcelable;)V
 
     return-void
 
@@ -1101,7 +1095,7 @@
 
     iget-object v0, p1, Landroidx/customview/view/AbsSavedState;->mSuperState:Landroid/os/Parcelable;
 
-    invoke-super {p0, v0}, Landroid/widget/TextView;->onRestoreInstanceState(Landroid/os/Parcelable;)V
+    invoke-super {p0, v0}, Landroid/widget/Button;->onRestoreInstanceState(Landroid/os/Parcelable;)V
 
     iget-boolean p1, p1, Lcom/google/android/material/button/MaterialButton$SavedState;->checked:Z
 
@@ -1113,7 +1107,7 @@
 .method public onSaveInstanceState()Landroid/os/Parcelable;
     .locals 2
 
-    invoke-super {p0}, Landroid/widget/TextView;->onSaveInstanceState()Landroid/os/Parcelable;
+    invoke-super {p0}, Landroid/widget/Button;->onSaveInstanceState()Landroid/os/Parcelable;
 
     move-result-object v0
 
@@ -1131,7 +1125,7 @@
 .method public onSizeChanged(IIII)V
     .locals 0
 
-    invoke-super {p0, p1, p2, p3, p4}, Landroid/view/View;->onSizeChanged(IIII)V
+    invoke-super {p0, p1, p2, p3, p4}, Landroid/widget/Button;->onSizeChanged(IIII)V
 
     invoke-virtual {p0, p1, p2}, Lcom/google/android/material/button/MaterialButton;->updateIconPosition(II)V
 
@@ -1161,7 +1155,7 @@
 
     invoke-virtual {p0}, Lcom/google/android/material/button/MaterialButton;->toggle()V
 
-    invoke-super {p0}, Landroid/view/View;->performClick()Z
+    invoke-super {p0}, Landroid/widget/Button;->performClick()Z
 
     move-result v0
 
@@ -1248,7 +1242,7 @@
     goto :goto_0
 
     :cond_0
-    invoke-super {p0, p1}, Landroid/view/View;->setBackgroundColor(I)V
+    invoke-super {p0, p1}, Landroid/widget/Button;->setBackgroundColor(I)V
 
     :cond_1
     :goto_0
@@ -1509,7 +1503,7 @@
 .method public setElevation(F)V
     .locals 3
 
-    invoke-super {p0, p1}, Landroid/view/View;->setElevation(F)V
+    invoke-super {p0, p1}, Landroid/widget/Button;->setElevation(F)V
 
     invoke-virtual {p0}, Lcom/google/android/material/button/MaterialButton;->isUsingOriginalBackground()Z
 
@@ -1762,7 +1756,7 @@
     invoke-virtual {v0}, Landroid/widget/LinearLayout;->invalidate()V
 
     :cond_0
-    invoke-super {p0, p1}, Landroid/view/View;->setPressed(Z)V
+    invoke-super {p0, p1}, Landroid/widget/Button;->setPressed(Z)V
 
     return-void
 .end method

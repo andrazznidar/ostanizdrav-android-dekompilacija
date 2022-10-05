@@ -63,7 +63,7 @@
 
     iget-object v0, p0, Lde/rki/coronawarnapp/bugreporting/debuglog/ui/upload/DebugLogUploadFragment$onViewCreated$3;->this$0:Lde/rki/coronawarnapp/bugreporting/debuglog/ui/upload/DebugLogUploadFragment;
 
-    const v1, 0x7f1301cd
+    const v1, 0x7f1301f9
 
     invoke-virtual {v0, v1}, Landroidx/fragment/app/Fragment;->getString(I)Ljava/lang/String;
 
@@ -73,7 +73,7 @@
 
     iput-object v0, v1, Landroidx/appcompat/app/AlertController$AlertParams;->mTitle:Ljava/lang/CharSequence;
 
-    const v0, 0x7f130191
+    const v0, 0x7f1301c6
 
     invoke-virtual {p1, v0}, Lcom/google/android/material/dialog/MaterialAlertDialogBuilder;->setMessage(I)Lcom/google/android/material/dialog/MaterialAlertDialogBuilder;
 

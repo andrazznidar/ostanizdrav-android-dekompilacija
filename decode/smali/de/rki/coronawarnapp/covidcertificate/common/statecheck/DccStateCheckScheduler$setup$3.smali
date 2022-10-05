@@ -144,6 +144,8 @@
 
     iput v2, p0, Lde/rki/coronawarnapp/covidcertificate/common/statecheck/DccStateCheckScheduler$setup$3;->label:I
 
+    sget-object v1, Lde/rki/coronawarnapp/covidcertificate/expiration/DccExpirationNotificationService;->TAG:Ljava/lang/String;
+
     const/4 v1, 0x0
 
     invoke-virtual {p1, v1, p0}, Lde/rki/coronawarnapp/covidcertificate/expiration/DccExpirationNotificationService;->showNotificationIfStateChanged(ZLkotlin/coroutines/Continuation;)Ljava/lang/Object;

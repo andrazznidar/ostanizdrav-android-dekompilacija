@@ -677,8 +677,43 @@
     return-object p1
 .end method
 
+.method public final receive(Lkotlin/coroutines/Continuation;)Ljava/lang/Object;
+    .locals 2
+    .annotation system Ldalvik/annotation/Signature;
+        value = {
+            "(",
+            "Lkotlin/coroutines/Continuation<",
+            "-TE;>;)",
+            "Ljava/lang/Object;"
+        }
+    .end annotation
+
+    invoke-virtual {p0}, Lkotlinx/coroutines/channels/AbstractChannel;->pollInternal()Ljava/lang/Object;
+
+    move-result-object v0
+
+    sget-object v1, Lkotlinx/coroutines/channels/AbstractChannelKt;->POLL_FAILED:Lkotlinx/coroutines/internal/Symbol;
+
+    if-eq v0, v1, :cond_0
+
+    instance-of v1, v0, Lkotlinx/coroutines/channels/Closed;
+
+    if-nez v1, :cond_0
+
+    return-object v0
+
+    :cond_0
+    const/4 v0, 0x0
+
+    invoke-virtual {p0, v0, p1}, Lkotlinx/coroutines/channels/AbstractChannel;->receiveSuspend(ILkotlin/coroutines/Continuation;)Ljava/lang/Object;
+
+    move-result-object p1
+
+    return-object p1
+.end method
+
 .method public final receiveCatching-JP2dKIU(Lkotlin/coroutines/Continuation;)Ljava/lang/Object;
-    .locals 6
+    .locals 4
     .annotation system Ldalvik/annotation/Signature;
         value = {
             "(",
@@ -690,39 +725,39 @@
         }
     .end annotation
 
-    sget-object v0, Lkotlin/coroutines/intrinsics/CoroutineSingletons;->COROUTINE_SUSPENDED:Lkotlin/coroutines/intrinsics/CoroutineSingletons;
+    instance-of v0, p1, Lkotlinx/coroutines/channels/AbstractChannel$receiveCatching$1;
 
-    instance-of v1, p1, Lkotlinx/coroutines/channels/AbstractChannel$receiveCatching$1;
+    if-eqz v0, :cond_0
 
-    if-eqz v1, :cond_0
+    move-object v0, p1
 
-    move-object v1, p1
+    check-cast v0, Lkotlinx/coroutines/channels/AbstractChannel$receiveCatching$1;
 
-    check-cast v1, Lkotlinx/coroutines/channels/AbstractChannel$receiveCatching$1;
+    iget v1, v0, Lkotlinx/coroutines/channels/AbstractChannel$receiveCatching$1;->label:I
 
-    iget v2, v1, Lkotlinx/coroutines/channels/AbstractChannel$receiveCatching$1;->label:I
+    const/high16 v2, -0x80000000
 
-    const/high16 v3, -0x80000000
+    and-int v3, v1, v2
 
-    and-int v4, v2, v3
+    if-eqz v3, :cond_0
 
-    if-eqz v4, :cond_0
+    sub-int/2addr v1, v2
 
-    sub-int/2addr v2, v3
-
-    iput v2, v1, Lkotlinx/coroutines/channels/AbstractChannel$receiveCatching$1;->label:I
+    iput v1, v0, Lkotlinx/coroutines/channels/AbstractChannel$receiveCatching$1;->label:I
 
     goto :goto_0
 
     :cond_0
-    new-instance v1, Lkotlinx/coroutines/channels/AbstractChannel$receiveCatching$1;
+    new-instance v0, Lkotlinx/coroutines/channels/AbstractChannel$receiveCatching$1;
 
-    invoke-direct {v1, p0, p1}, Lkotlinx/coroutines/channels/AbstractChannel$receiveCatching$1;-><init>(Lkotlinx/coroutines/channels/AbstractChannel;Lkotlin/coroutines/Continuation;)V
+    invoke-direct {v0, p0, p1}, Lkotlinx/coroutines/channels/AbstractChannel$receiveCatching$1;-><init>(Lkotlinx/coroutines/channels/AbstractChannel;Lkotlin/coroutines/Continuation;)V
 
     :goto_0
-    iget-object p1, v1, Lkotlinx/coroutines/channels/AbstractChannel$receiveCatching$1;->result:Ljava/lang/Object;
+    iget-object p1, v0, Lkotlinx/coroutines/channels/AbstractChannel$receiveCatching$1;->result:Ljava/lang/Object;
 
-    iget v2, v1, Lkotlinx/coroutines/channels/AbstractChannel$receiveCatching$1;->label:I
+    sget-object v1, Lkotlin/coroutines/intrinsics/CoroutineSingletons;->COROUTINE_SUSPENDED:Lkotlin/coroutines/intrinsics/CoroutineSingletons;
+
+    iget v2, v0, Lkotlinx/coroutines/channels/AbstractChannel$receiveCatching$1;->label:I
 
     const/4 v3, 0x1
 
@@ -732,7 +767,7 @@
 
     invoke-static {p1}, Lkotlin/ResultKt;->throwOnFailure(Ljava/lang/Object;)V
 
-    goto/16 :goto_4
+    goto :goto_1
 
     :cond_1
     new-instance p1, Ljava/lang/IllegalStateException;
@@ -772,110 +807,127 @@
     return-object p1
 
     :cond_4
-    iput v3, v1, Lkotlinx/coroutines/channels/AbstractChannel$receiveCatching$1;->label:I
+    iput v3, v0, Lkotlinx/coroutines/channels/AbstractChannel$receiveCatching$1;->label:I
 
-    invoke-static {v1}, Lkotlinx/coroutines/flow/FlowKt;->intercepted(Lkotlin/coroutines/Continuation;)Lkotlin/coroutines/Continuation;
-
-    move-result-object p1
-
-    invoke-static {p1}, Lkotlinx/coroutines/CancellableContinuationKt;->getOrCreateCancellableContinuation(Lkotlin/coroutines/Continuation;)Lkotlinx/coroutines/CancellableContinuationImpl;
+    invoke-virtual {p0, v3, v0}, Lkotlinx/coroutines/channels/AbstractChannel;->receiveSuspend(ILkotlin/coroutines/Continuation;)Ljava/lang/Object;
 
     move-result-object p1
 
-    iget-object v2, p0, Lkotlinx/coroutines/channels/AbstractSendChannel;->onUndeliveredElement:Lkotlin/jvm/functions/Function1;
+    if-ne p1, v1, :cond_5
 
-    if-nez v2, :cond_5
-
-    new-instance v2, Lkotlinx/coroutines/channels/AbstractChannel$ReceiveElement;
-
-    invoke-direct {v2, p1, v3}, Lkotlinx/coroutines/channels/AbstractChannel$ReceiveElement;-><init>(Lkotlinx/coroutines/CancellableContinuation;I)V
-
-    goto :goto_1
+    return-object v1
 
     :cond_5
-    new-instance v2, Lkotlinx/coroutines/channels/AbstractChannel$ReceiveElementWithUndeliveredHandler;
-
-    iget-object v4, p0, Lkotlinx/coroutines/channels/AbstractSendChannel;->onUndeliveredElement:Lkotlin/jvm/functions/Function1;
-
-    invoke-direct {v2, p1, v3, v4}, Lkotlinx/coroutines/channels/AbstractChannel$ReceiveElementWithUndeliveredHandler;-><init>(Lkotlinx/coroutines/CancellableContinuation;ILkotlin/jvm/functions/Function1;)V
-
-    :cond_6
     :goto_1
-    invoke-virtual {p0, v2}, Lkotlinx/coroutines/channels/AbstractChannel;->enqueueReceiveInternal(Lkotlinx/coroutines/channels/Receive;)Z
-
-    move-result v4
-
-    if-eqz v4, :cond_7
-
-    new-instance v3, Lkotlinx/coroutines/channels/AbstractChannel$RemoveReceiveOnCancel;
-
-    invoke-direct {v3, p0, v2}, Lkotlinx/coroutines/channels/AbstractChannel$RemoveReceiveOnCancel;-><init>(Lkotlinx/coroutines/channels/AbstractChannel;Lkotlinx/coroutines/channels/Receive;)V
-
-    invoke-virtual {p1, v3}, Lkotlinx/coroutines/CancellableContinuationImpl;->invokeOnCancellation(Lkotlin/jvm/functions/Function1;)V
-
-    goto :goto_3
-
-    :cond_7
-    invoke-virtual {p0}, Lkotlinx/coroutines/channels/AbstractChannel;->pollInternal()Ljava/lang/Object;
-
-    move-result-object v4
-
-    instance-of v5, v4, Lkotlinx/coroutines/channels/Closed;
-
-    if-eqz v5, :cond_8
-
-    check-cast v4, Lkotlinx/coroutines/channels/Closed;
-
-    invoke-virtual {v2, v4}, Lkotlinx/coroutines/channels/AbstractChannel$ReceiveElement;->resumeReceiveClosed(Lkotlinx/coroutines/channels/Closed;)V
-
-    goto :goto_3
-
-    :cond_8
-    sget-object v5, Lkotlinx/coroutines/channels/AbstractChannelKt;->POLL_FAILED:Lkotlinx/coroutines/internal/Symbol;
-
-    if-eq v4, v5, :cond_6
-
-    iget v5, v2, Lkotlinx/coroutines/channels/AbstractChannel$ReceiveElement;->receiveMode:I
-
-    if-ne v5, v3, :cond_9
-
-    new-instance v3, Lkotlinx/coroutines/channels/ChannelResult;
-
-    invoke-direct {v3, v4}, Lkotlinx/coroutines/channels/ChannelResult;-><init>(Ljava/lang/Object;)V
-
-    goto :goto_2
-
-    :cond_9
-    move-object v3, v4
-
-    :goto_2
-    invoke-virtual {v2, v4}, Lkotlinx/coroutines/channels/Receive;->resumeOnCancellationFun(Ljava/lang/Object;)Lkotlin/jvm/functions/Function1;
-
-    move-result-object v2
-
-    invoke-virtual {p1, v3, v2}, Lkotlinx/coroutines/CancellableContinuationImpl;->resume(Ljava/lang/Object;Lkotlin/jvm/functions/Function1;)V
-
-    :goto_3
-    invoke-virtual {p1}, Lkotlinx/coroutines/CancellableContinuationImpl;->getResult()Ljava/lang/Object;
-
-    move-result-object p1
-
-    if-ne p1, v0, :cond_a
-
-    const-string v2, "frame"
-
-    invoke-static {v1, v2}, Lkotlin/jvm/internal/Intrinsics;->checkNotNullParameter(Ljava/lang/Object;Ljava/lang/String;)V
-
-    :cond_a
-    if-ne p1, v0, :cond_b
-
-    return-object v0
-
-    :cond_b
-    :goto_4
     check-cast p1, Lkotlinx/coroutines/channels/ChannelResult;
 
     iget-object p1, p1, Lkotlinx/coroutines/channels/ChannelResult;->holder:Ljava/lang/Object;
+
+    return-object p1
+.end method
+
+.method public final receiveSuspend(ILkotlin/coroutines/Continuation;)Ljava/lang/Object;
+    .locals 3
+    .annotation system Ldalvik/annotation/Signature;
+        value = {
+            "<R:",
+            "Ljava/lang/Object;",
+            ">(I",
+            "Lkotlin/coroutines/Continuation<",
+            "-TR;>;)",
+            "Ljava/lang/Object;"
+        }
+    .end annotation
+
+    invoke-static {p2}, Lcom/google/android/gms/nearby/messages/internal/zzag;->intercepted(Lkotlin/coroutines/Continuation;)Lkotlin/coroutines/Continuation;
+
+    move-result-object p2
+
+    invoke-static {p2}, Lkotlinx/coroutines/CancellableContinuationKt;->getOrCreateCancellableContinuation(Lkotlin/coroutines/Continuation;)Lkotlinx/coroutines/CancellableContinuationImpl;
+
+    move-result-object p2
+
+    iget-object v0, p0, Lkotlinx/coroutines/channels/AbstractSendChannel;->onUndeliveredElement:Lkotlin/jvm/functions/Function1;
+
+    if-nez v0, :cond_0
+
+    new-instance v0, Lkotlinx/coroutines/channels/AbstractChannel$ReceiveElement;
+
+    invoke-direct {v0, p2, p1}, Lkotlinx/coroutines/channels/AbstractChannel$ReceiveElement;-><init>(Lkotlinx/coroutines/CancellableContinuation;I)V
+
+    goto :goto_0
+
+    :cond_0
+    new-instance v0, Lkotlinx/coroutines/channels/AbstractChannel$ReceiveElementWithUndeliveredHandler;
+
+    iget-object v1, p0, Lkotlinx/coroutines/channels/AbstractSendChannel;->onUndeliveredElement:Lkotlin/jvm/functions/Function1;
+
+    invoke-direct {v0, p2, p1, v1}, Lkotlinx/coroutines/channels/AbstractChannel$ReceiveElementWithUndeliveredHandler;-><init>(Lkotlinx/coroutines/CancellableContinuation;ILkotlin/jvm/functions/Function1;)V
+
+    :cond_1
+    :goto_0
+    invoke-virtual {p0, v0}, Lkotlinx/coroutines/channels/AbstractChannel;->enqueueReceiveInternal(Lkotlinx/coroutines/channels/Receive;)Z
+
+    move-result p1
+
+    if-eqz p1, :cond_2
+
+    new-instance p1, Lkotlinx/coroutines/channels/AbstractChannel$RemoveReceiveOnCancel;
+
+    invoke-direct {p1, p0, v0}, Lkotlinx/coroutines/channels/AbstractChannel$RemoveReceiveOnCancel;-><init>(Lkotlinx/coroutines/channels/AbstractChannel;Lkotlinx/coroutines/channels/Receive;)V
+
+    invoke-virtual {p2, p1}, Lkotlinx/coroutines/CancellableContinuationImpl;->invokeOnCancellation(Lkotlin/jvm/functions/Function1;)V
+
+    goto :goto_2
+
+    :cond_2
+    invoke-virtual {p0}, Lkotlinx/coroutines/channels/AbstractChannel;->pollInternal()Ljava/lang/Object;
+
+    move-result-object p1
+
+    instance-of v1, p1, Lkotlinx/coroutines/channels/Closed;
+
+    if-eqz v1, :cond_3
+
+    check-cast p1, Lkotlinx/coroutines/channels/Closed;
+
+    invoke-virtual {v0, p1}, Lkotlinx/coroutines/channels/AbstractChannel$ReceiveElement;->resumeReceiveClosed(Lkotlinx/coroutines/channels/Closed;)V
+
+    goto :goto_2
+
+    :cond_3
+    sget-object v1, Lkotlinx/coroutines/channels/AbstractChannelKt;->POLL_FAILED:Lkotlinx/coroutines/internal/Symbol;
+
+    if-eq p1, v1, :cond_1
+
+    iget v1, v0, Lkotlinx/coroutines/channels/AbstractChannel$ReceiveElement;->receiveMode:I
+
+    const/4 v2, 0x1
+
+    if-ne v1, v2, :cond_4
+
+    new-instance v1, Lkotlinx/coroutines/channels/ChannelResult;
+
+    invoke-direct {v1, p1}, Lkotlinx/coroutines/channels/ChannelResult;-><init>(Ljava/lang/Object;)V
+
+    goto :goto_1
+
+    :cond_4
+    move-object v1, p1
+
+    :goto_1
+    invoke-virtual {v0, p1}, Lkotlinx/coroutines/channels/Receive;->resumeOnCancellationFun(Ljava/lang/Object;)Lkotlin/jvm/functions/Function1;
+
+    move-result-object p1
+
+    iget v0, p2, Lkotlinx/coroutines/DispatchedTask;->resumeMode:I
+
+    invoke-virtual {p2, v1, v0, p1}, Lkotlinx/coroutines/CancellableContinuationImpl;->resumeImpl(Ljava/lang/Object;ILkotlin/jvm/functions/Function1;)V
+
+    :goto_2
+    invoke-virtual {p2}, Lkotlinx/coroutines/CancellableContinuationImpl;->getResult()Ljava/lang/Object;
+
+    move-result-object p1
 
     return-object p1
 .end method

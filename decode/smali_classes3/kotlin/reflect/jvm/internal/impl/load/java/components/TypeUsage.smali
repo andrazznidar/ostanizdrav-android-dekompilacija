@@ -14,7 +14,7 @@
 
 
 # static fields
-.field public static final synthetic $VALUES:[Lkotlin/reflect/jvm/internal/impl/load/java/components/TypeUsage;
+.field private static final synthetic $VALUES:[Lkotlin/reflect/jvm/internal/impl/load/java/components/TypeUsage;
 
 .field public static final enum COMMON:Lkotlin/reflect/jvm/internal/impl/load/java/components/TypeUsage;
 
@@ -58,7 +58,7 @@
     return-void
 .end method
 
-.method public constructor <init>(Ljava/lang/String;I)V
+.method private constructor <init>(Ljava/lang/String;I)V
     .locals 0
     .annotation system Ldalvik/annotation/Signature;
         value = {

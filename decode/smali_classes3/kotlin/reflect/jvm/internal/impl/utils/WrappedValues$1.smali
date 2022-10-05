@@ -1,4 +1,4 @@
-.class public final Lkotlin/reflect/jvm/internal/impl/utils/WrappedValues$1;
+.class final Lkotlin/reflect/jvm/internal/impl/utils/WrappedValues$1;
 .super Ljava/lang/Object;
 .source "WrappedValues.java"
 

@@ -35,82 +35,80 @@
 
 # virtual methods
 .method public migrate(Landroidx/sqlite/db/SupportSQLiteDatabase;)V
-    .locals 7
+    .locals 6
 
-    sget-object v0, Lde/rki/coronawarnapp/exception/ExceptionCategory;->INTERNAL:Lde/rki/coronawarnapp/exception/ExceptionCategory;
+    const-string v0, "database"
 
-    const-string v1, "database"
+    invoke-static {p1, v0}, Lkotlin/jvm/internal/Intrinsics;->checkNotNullParameter(Ljava/lang/Object;Ljava/lang/String;)V
 
-    invoke-static {p1, v1}, Lkotlin/jvm/internal/Intrinsics;->checkNotNullParameter(Ljava/lang/Object;Ljava/lang/String;)V
-
-    const/4 v1, 0x0
+    const/4 v0, 0x0
 
     :try_start_0
-    sget-object v2, Ltimber/log/Timber;->Forest:Ltimber/log/Timber$Forest;
+    sget-object v1, Ltimber/log/Timber;->Forest:Ltimber/log/Timber$Forest;
 
-    const-string v3, "Attempting migration 1->2..."
+    const-string v2, "Attempting migration 1->2..."
 
-    new-array v4, v1, [Ljava/lang/Object;
+    new-array v3, v0, [Ljava/lang/Object;
 
-    invoke-virtual {v2, v3, v4}, Ltimber/log/Timber$Forest;->i(Ljava/lang/String;[Ljava/lang/Object;)V
+    invoke-virtual {v1, v2, v3}, Ltimber/log/Timber$Forest;->i(Ljava/lang/String;[Ljava/lang/Object;)V
 
     invoke-virtual {p0, p1}, Lde/rki/coronawarnapp/risk/storage/internal/migrations/RiskResultDatabaseMigration1To2;->performMigration(Landroidx/sqlite/db/SupportSQLiteDatabase;)V
 
-    const-string v3, "Migration 1->2 successful."
+    const-string v2, "Migration 1->2 successful."
 
-    new-array v4, v1, [Ljava/lang/Object;
+    new-array v3, v0, [Ljava/lang/Object;
 
-    invoke-virtual {v2, v3, v4}, Ltimber/log/Timber$Forest;->i(Ljava/lang/String;[Ljava/lang/Object;)V
+    invoke-virtual {v1, v2, v3}, Ltimber/log/Timber$Forest;->i(Ljava/lang/String;[Ljava/lang/Object;)V
     :try_end_0
     .catch Ljava/lang/Exception; {:try_start_0 .. :try_end_0} :catch_0
 
     goto :goto_0
 
     :catch_0
-    move-exception v2
+    move-exception v1
 
-    sget-object v3, Ltimber/log/Timber;->Forest:Ltimber/log/Timber$Forest;
+    sget-object v2, Ltimber/log/Timber;->Forest:Ltimber/log/Timber$Forest;
 
-    new-array v4, v1, [Ljava/lang/Object;
+    new-array v3, v0, [Ljava/lang/Object;
 
-    const-string v5, "Migration 1->2 failed, dropping tables..."
+    const-string v4, "Migration 1->2 failed, dropping tables..."
 
-    invoke-virtual {v3, v2, v5, v4}, Ltimber/log/Timber$Forest;->e(Ljava/lang/Throwable;Ljava/lang/String;[Ljava/lang/Object;)V
+    invoke-virtual {v2, v1, v4, v3}, Ltimber/log/Timber$Forest;->e(Ljava/lang/Throwable;Ljava/lang/String;[Ljava/lang/Object;)V
 
-    const-string v4, "RiskResult database migration failed."
+    const/4 v3, 0x0
 
-    const/4 v5, 0x0
+    const/4 v4, 0x4
 
-    const/4 v6, 0x4
+    const-string v5, "RiskResult database migration failed."
 
-    invoke-static {v2, v0, v4, v5, v6}, Lde/rki/coronawarnapp/exception/reporting/ExceptionReporterKt;->report$default(Ljava/lang/Throwable;Lde/rki/coronawarnapp/exception/ExceptionCategory;Ljava/lang/String;Ljava/lang/String;I)V
+    invoke-static {v1, v4, v5, v3, v4}, Lde/rki/coronawarnapp/exception/reporting/ExceptionReporterKt;->report$default(Ljava/lang/Throwable;ILjava/lang/String;Ljava/lang/String;I)V
 
     :try_start_1
-    new-array v2, v1, [Ljava/lang/Object;
+    new-array v1, v0, [Ljava/lang/Object;
 
-    const-string v4, "Dropping and creating new riskResults v2 table."
+    const-string v5, "Dropping and creating new riskResults v2 table."
 
-    invoke-virtual {v3, v4, v2}, Ltimber/log/Timber$Forest;->i(Ljava/lang/String;[Ljava/lang/Object;)V
+    invoke-virtual {v2, v5, v1}, Ltimber/log/Timber$Forest;->i(Ljava/lang/String;[Ljava/lang/Object;)V
 
-    const-string v2, "DROP TABLE IF EXISTS riskresults"
+    const-string v1, "DROP TABLE IF EXISTS riskresults"
 
-    invoke-interface {p1, v2}, Landroidx/sqlite/db/SupportSQLiteDatabase;->execSQL(Ljava/lang/String;)V
+    invoke-interface {p1, v1}, Landroidx/sqlite/db/SupportSQLiteDatabase;->execSQL(Ljava/lang/String;)V
 
-    const-string v2, "DROP TABLE IF EXISTS riskresults_new"
+    const-string v1, "DROP TABLE IF EXISTS riskresults_new"
 
-    invoke-interface {p1, v2}, Landroidx/sqlite/db/SupportSQLiteDatabase;->execSQL(Ljava/lang/String;)V
+    invoke-interface {p1, v1}, Landroidx/sqlite/db/SupportSQLiteDatabase;->execSQL(Ljava/lang/String;)V
 
-    const-string v2, "CREATE TABLE `riskresults` (\n    `monotonicId` INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL,\n    `id` TEXT NOT NULL,\n    `calculatedAt` TEXT NOT NULL,\n    `failureReason` TEXT,\n    `totalRiskLevel` INTEGER,\n    `totalMinimumDistinctEncountersWithLowRisk` INTEGER,\n    `totalMinimumDistinctEncountersWithHighRisk` INTEGER,\n    `mostRecentDateWithLowRisk` TEXT,\n    `mostRecentDateWithHighRisk` TEXT,\n    `numberOfDaysWithLowRisk` INTEGER,\n    `numberOfDaysWithHighRisk` INTEGER\n)"
+    const-string v1, "CREATE TABLE `riskresults` (\n    `monotonicId` INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL,\n    `id` TEXT NOT NULL,\n    `calculatedAt` TEXT NOT NULL,\n    `failureReason` TEXT,\n    `totalRiskLevel` INTEGER,\n    `totalMinimumDistinctEncountersWithLowRisk` INTEGER,\n    `totalMinimumDistinctEncountersWithHighRisk` INTEGER,\n    `mostRecentDateWithLowRisk` TEXT,\n    `mostRecentDateWithHighRisk` TEXT,\n    `numberOfDaysWithLowRisk` INTEGER,\n    `numberOfDaysWithHighRisk` INTEGER\n)"
 
-    invoke-interface {p1, v2}, Landroidx/sqlite/db/SupportSQLiteDatabase;->execSQL(Ljava/lang/String;)V
+    invoke-interface {p1, v1}, Landroidx/sqlite/db/SupportSQLiteDatabase;->execSQL(Ljava/lang/String;)V
     :try_end_1
     .catch Ljava/lang/Exception; {:try_start_1 .. :try_end_1} :catch_1
 
-    new-array p1, v1, [Ljava/lang/Object;
+    new-array p1, v0, [Ljava/lang/Object;
 
     const-string v0, "Migration failed, but fallback via reset was successful."
 
-    invoke-virtual {v3, v0, p1}, Ltimber/log/Timber$Forest;->w(Ljava/lang/String;[Ljava/lang/Object;)V
+    invoke-virtual {v2, v0, p1}, Ltimber/log/Timber$Forest;->w(Ljava/lang/String;[Ljava/lang/Object;)V
 
     :goto_0
     return-void
@@ -118,9 +116,9 @@
     :catch_1
     move-exception p1
 
-    const-string v1, "Migration failed, table recreation failed too!"
+    const-string v0, "Migration failed, table recreation failed too!"
 
-    invoke-static {p1, v0, v1, v5, v6}, Lde/rki/coronawarnapp/exception/reporting/ExceptionReporterKt;->report$default(Ljava/lang/Throwable;Lde/rki/coronawarnapp/exception/ExceptionCategory;Ljava/lang/String;Ljava/lang/String;I)V
+    invoke-static {p1, v4, v0, v3, v4}, Lde/rki/coronawarnapp/exception/reporting/ExceptionReporterKt;->report$default(Ljava/lang/Throwable;ILjava/lang/String;Ljava/lang/String;I)V
 
     throw p1
 .end method

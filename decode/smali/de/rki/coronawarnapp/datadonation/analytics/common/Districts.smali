@@ -11,7 +11,7 @@
 .end annotation
 
 .annotation system Ldalvik/annotation/SourceDebugExtension;
-    value = "SMAP\nDistricts.kt\nKotlin\n*S Kotlin\n*F\n+ 1 Districts.kt\nde/rki/coronawarnapp/datadonation/analytics/common/Districts\n+ 2 fake.kt\nkotlin/jvm/internal/FakeKt\n+ 3 GsonExtensions.kt\nde/rki/coronawarnapp/util/serialization/GsonExtensionsKt\n*L\n1#1,42:1\n1#2:43\n10#3,4:44\n*S KotlinDebug\n*F\n+ 1 Districts.kt\nde/rki/coronawarnapp/datadonation/analytics/common/Districts\n*L\n21#1:44,4\n*E\n"
+    value = "SMAP\nDistricts.kt\nKotlin\n*S Kotlin\n*F\n+ 1 Districts.kt\nde/rki/coronawarnapp/datadonation/analytics/common/Districts\n+ 2 fake.kt\nkotlin/jvm/internal/FakeKt\n+ 3 GsonExtensions.kt\nde/rki/coronawarnapp/util/serialization/GsonExtensionsKt\n*L\n1#1,42:1\n1#2:43\n11#3,4:44\n*S KotlinDebug\n*F\n+ 1 Districts.kt\nde/rki/coronawarnapp/datadonation/analytics/common/Districts\n*L\n21#1:44,4\n*E\n"
 .end annotation
 
 

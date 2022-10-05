@@ -224,6 +224,31 @@
     .end annotation
 .end method
 
+.method public _contentReference()Lcom/fasterxml/jackson/core/io/ContentReference;
+    .locals 2
+
+    sget-object v0, Lcom/fasterxml/jackson/core/JsonParser$Feature;->INCLUDE_SOURCE_IN_LOCATION:Lcom/fasterxml/jackson/core/JsonParser$Feature;
+
+    iget v1, p0, Lcom/fasterxml/jackson/core/JsonParser;->_features:I
+
+    invoke-virtual {v0, v1}, Lcom/fasterxml/jackson/core/JsonParser$Feature;->enabledIn(I)Z
+
+    move-result v0
+
+    if-eqz v0, :cond_0
+
+    iget-object v0, p0, Lcom/fasterxml/jackson/core/base/ParserBase;->_ioContext:Lcom/fasterxml/jackson/core/io/IOContext;
+
+    iget-object v0, v0, Lcom/fasterxml/jackson/core/io/IOContext;->_contentReference:Lcom/fasterxml/jackson/core/io/ContentReference;
+
+    return-object v0
+
+    :cond_0
+    sget-object v0, Lcom/fasterxml/jackson/core/io/ContentReference;->UNKNOWN_CONTENT:Lcom/fasterxml/jackson/core/io/ContentReference;
+
+    return-object v0
+.end method
+
 .method public final _decodeBase64Escape(Lcom/fasterxml/jackson/core/Base64Variant;CI)I
     .locals 3
     .annotation system Ldalvik/annotation/Throws;
@@ -384,31 +409,6 @@
     return-object v0
 .end method
 
-.method public _getSourceReference()Ljava/lang/Object;
-    .locals 2
-
-    sget-object v0, Lcom/fasterxml/jackson/core/JsonParser$Feature;->INCLUDE_SOURCE_IN_LOCATION:Lcom/fasterxml/jackson/core/JsonParser$Feature;
-
-    iget v1, p0, Lcom/fasterxml/jackson/core/JsonParser;->_features:I
-
-    invoke-virtual {v0, v1}, Lcom/fasterxml/jackson/core/JsonParser$Feature;->enabledIn(I)Z
-
-    move-result v0
-
-    if-eqz v0, :cond_0
-
-    iget-object v0, p0, Lcom/fasterxml/jackson/core/base/ParserBase;->_ioContext:Lcom/fasterxml/jackson/core/io/IOContext;
-
-    iget-object v0, v0, Lcom/fasterxml/jackson/core/io/IOContext;->_sourceRef:Ljava/lang/Object;
-
-    return-object v0
-
-    :cond_0
-    const/4 v0, 0x0
-
-    return-object v0
-.end method
-
 .method public _handleBase64MissingPadding(Lcom/fasterxml/jackson/core/Base64Variant;)V
     .locals 1
     .annotation system Ldalvik/annotation/Throws;
@@ -429,7 +429,7 @@
 .end method
 
 .method public _handleEOF()V
-    .locals 10
+    .locals 4
     .annotation system Ldalvik/annotation/Throws;
         value = {
             Lcom/fasterxml/jackson/core/JsonParseException;
@@ -472,23 +472,15 @@
 
     iget-object v2, p0, Lcom/fasterxml/jackson/core/base/ParserBase;->_parsingContext:Lcom/fasterxml/jackson/core/json/JsonReadContext;
 
-    invoke-virtual {p0}, Lcom/fasterxml/jackson/core/base/ParserBase;->_getSourceReference()Ljava/lang/Object;
+    invoke-virtual {p0}, Lcom/fasterxml/jackson/core/base/ParserBase;->_contentReference()Lcom/fasterxml/jackson/core/io/ContentReference;
 
-    move-result-object v4
+    move-result-object v3
 
-    new-instance v9, Lcom/fasterxml/jackson/core/JsonLocation;
+    invoke-virtual {v2, v3}, Lcom/fasterxml/jackson/core/json/JsonReadContext;->startLocation(Lcom/fasterxml/jackson/core/io/ContentReference;)Lcom/fasterxml/jackson/core/JsonLocation;
 
-    iget v7, v2, Lcom/fasterxml/jackson/core/json/JsonReadContext;->_lineNr:I
+    move-result-object v2
 
-    iget v8, v2, Lcom/fasterxml/jackson/core/json/JsonReadContext;->_columnNr:I
-
-    const-wide/16 v5, -0x1
-
-    move-object v3, v9
-
-    invoke-direct/range {v3 .. v8}, Lcom/fasterxml/jackson/core/JsonLocation;-><init>(Ljava/lang/Object;JII)V
-
-    aput-object v9, v1, v0
+    aput-object v2, v1, v0
 
     const-string v0, ": expected close marker for %s (start marker at %s)"
 
@@ -1111,7 +1103,7 @@
 .end method
 
 .method public _reportMismatchedEndMarker(IC)V
-    .locals 8
+    .locals 3
     .annotation system Ldalvik/annotation/Throws;
         value = {
             Lcom/fasterxml/jackson/core/JsonParseException;
@@ -1150,21 +1142,13 @@
 
     aput-object p1, v1, p2
 
-    invoke-virtual {p0}, Lcom/fasterxml/jackson/core/base/ParserBase;->_getSourceReference()Ljava/lang/Object;
+    invoke-virtual {p0}, Lcom/fasterxml/jackson/core/base/ParserBase;->_contentReference()Lcom/fasterxml/jackson/core/io/ContentReference;
 
-    move-result-object v3
+    move-result-object p1
 
-    new-instance p1, Lcom/fasterxml/jackson/core/JsonLocation;
+    invoke-virtual {v0, p1}, Lcom/fasterxml/jackson/core/json/JsonReadContext;->startLocation(Lcom/fasterxml/jackson/core/io/ContentReference;)Lcom/fasterxml/jackson/core/JsonLocation;
 
-    iget v6, v0, Lcom/fasterxml/jackson/core/json/JsonReadContext;->_lineNr:I
-
-    iget v7, v0, Lcom/fasterxml/jackson/core/json/JsonReadContext;->_columnNr:I
-
-    const-wide/16 v4, -0x1
-
-    move-object v2, p1
-
-    invoke-direct/range {v2 .. v7}, Lcom/fasterxml/jackson/core/JsonLocation;-><init>(Ljava/lang/Object;JII)V
+    move-result-object p1
 
     const/4 p2, 0x3
 
@@ -1661,23 +1645,17 @@
 
     sget-object v2, Lcom/fasterxml/jackson/core/io/NumberInput;->MIN_LONG_STR_NO_SIGN:Ljava/lang/String;
 
-    :try_start_0
-    new-instance v2, Ljava/math/BigDecimal;
-
-    invoke-direct {v2, v0}, Ljava/math/BigDecimal;-><init>(Ljava/lang/String;)V
-    :try_end_0
-    .catch Ljava/lang/NumberFormatException; {:try_start_0 .. :try_end_0} :catch_0
-
-    iput-object v2, p0, Lcom/fasterxml/jackson/core/base/ParserBase;->_numberBigDecimal:Ljava/math/BigDecimal;
-
-    goto :goto_0
-
-    :catch_0
-    invoke-static {v0}, Lcom/fasterxml/jackson/core/io/NumberInput;->_badBD(Ljava/lang/String;)Ljava/lang/NumberFormatException;
+    invoke-virtual {v0}, Ljava/lang/String;->toCharArray()[C
 
     move-result-object v0
 
-    throw v0
+    invoke-static {v0}, Lcom/fasterxml/jackson/core/io/BigDecimalParser;->parse([C)Ljava/math/BigDecimal;
+
+    move-result-object v0
+
+    iput-object v0, p0, Lcom/fasterxml/jackson/core/base/ParserBase;->_numberBigDecimal:Ljava/math/BigDecimal;
+
+    goto :goto_0
 
     :cond_1
     and-int/lit8 v2, v0, 0x4
@@ -2587,7 +2565,7 @@
 
     const-string p2, ": "
 
-    invoke-static {p1, p2, p4}, Landroidx/core/graphics/PathParser$$ExternalSyntheticOutline0;->m(Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;)Ljava/lang/String;
+    invoke-static {p1, p2, p4}, Landroidx/concurrent/futures/AbstractResolvableFuture$$ExternalSyntheticOutline1;->m(Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;)Ljava/lang/String;
 
     move-result-object p1
 

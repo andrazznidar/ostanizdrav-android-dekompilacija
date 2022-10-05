@@ -59,7 +59,7 @@
 
     invoke-virtual {v1}, Lcom/google/android/play/core/internal/zzas;->zzs()V
 
-    sget-object v1, Lcom/google/android/play/core/assetpacks/zzaw;->zza:Lkotlin/jvm/internal/SpreadBuilder;
+    sget-object v1, Lcom/google/android/play/core/assetpacks/zzaw;->zza:Lcom/google/android/play/core/internal/zzag;
 
     const/4 v2, 0x0
 
@@ -67,7 +67,7 @@
 
     const-string v4, "onGetSessionStates"
 
-    invoke-virtual {v1, v4, v3}, Lkotlin/jvm/internal/SpreadBuilder;->zzd(Ljava/lang/String;[Ljava/lang/Object;)I
+    invoke-virtual {v1, v4, v3}, Lcom/google/android/play/core/internal/zzag;->zzd(Ljava/lang/String;[Ljava/lang/Object;)I
 
     iget-object v1, v0, Lcom/google/android/play/core/assetpacks/zzao;->zzc:Lcom/google/android/play/core/assetpacks/zzaw;
 
@@ -203,13 +203,13 @@
 
     if-nez v5, :cond_3
 
-    sget-object v6, Lcom/google/android/play/core/assetpacks/zzaw;->zza:Lkotlin/jvm/internal/SpreadBuilder;
+    sget-object v6, Lcom/google/android/play/core/assetpacks/zzaw;->zza:Lcom/google/android/play/core/internal/zzag;
 
     new-array v7, v2, [Ljava/lang/Object;
 
     const-string v8, "onGetSessionStates: Bundle contained no pack."
 
-    invoke-virtual {v6, v8, v7}, Lkotlin/jvm/internal/SpreadBuilder;->zzb(Ljava/lang/String;[Ljava/lang/Object;)I
+    invoke-virtual {v6, v8, v7}, Lcom/google/android/play/core/internal/zzag;->zzb(Ljava/lang/String;[Ljava/lang/Object;)I
 
     :cond_3
     invoke-virtual {v5}, Lcom/google/android/play/core/assetpacks/AssetPackState;->status()I

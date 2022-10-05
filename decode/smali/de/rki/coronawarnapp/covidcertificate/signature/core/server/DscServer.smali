@@ -179,19 +179,19 @@
 
     new-instance p1, Lde/rki/coronawarnapp/covidcertificate/signature/core/common/exception/DscValidationException;
 
-    sget-object v0, Lde/rki/coronawarnapp/covidcertificate/signature/core/common/exception/DscValidationException$ErrorCode;->SERVER_ERROR:Lde/rki/coronawarnapp/covidcertificate/signature/core/common/exception/DscValidationException$ErrorCode;
+    const/4 v0, 0x5
 
     const/4 v1, 0x0
 
     const/4 v2, 0x2
 
-    invoke-direct {p1, v0, v1, v2}, Lde/rki/coronawarnapp/covidcertificate/signature/core/common/exception/DscValidationException;-><init>(Lde/rki/coronawarnapp/covidcertificate/signature/core/common/exception/DscValidationException$ErrorCode;Ljava/lang/Throwable;I)V
+    invoke-direct {p1, v0, v1, v2}, Lde/rki/coronawarnapp/covidcertificate/signature/core/common/exception/DscValidationException;-><init>(ILjava/lang/Throwable;I)V
 
     throw p1
 .end method
 
 .method public final parseAndValidate$Corona_Warn_App_deviceRelease(Lretrofit2/Response;)[B
-    .locals 7
+    .locals 8
     .annotation system Ldalvik/annotation/Signature;
         value = {
             "(",
@@ -247,66 +247,60 @@
 
     check-cast p1, [B
 
-    const/4 v1, 0x2
+    const/4 v1, 0x0
 
-    const/4 v2, 0x0
+    const/4 v2, 0x1
+
+    const/4 v3, 0x2
 
     if-eqz v0, :cond_1
 
     if-eqz p1, :cond_1
 
-    iget-object v3, p0, Lde/rki/coronawarnapp/covidcertificate/signature/core/server/DscServer;->signatureValidation:Lde/rki/coronawarnapp/util/security/SignatureValidation;
-
-    const-string/jumbo v4, "signatureListProto"
-
-    invoke-static {p1, v4}, Lkotlin/jvm/internal/Intrinsics;->checkNotNullParameter(Ljava/lang/Object;Ljava/lang/String;)V
+    iget-object v4, p0, Lde/rki/coronawarnapp/covidcertificate/signature/core/server/DscServer;->signatureValidation:Lde/rki/coronawarnapp/util/security/SignatureValidation;
 
     :try_start_0
-    sget-object v4, Lde/rki/coronawarnapp/server/protocols/external/exposurenotification/TemporaryExposureKeySignatureList$TEKSignatureList;->DEFAULT_INSTANCE:Lde/rki/coronawarnapp/server/protocols/external/exposurenotification/TemporaryExposureKeySignatureList$TEKSignatureList;
+    sget-object v5, Lde/rki/coronawarnapp/server/protocols/external/exposurenotification/TemporaryExposureKeySignatureList$TEKSignatureList;->DEFAULT_INSTANCE:Lde/rki/coronawarnapp/server/protocols/external/exposurenotification/TemporaryExposureKeySignatureList$TEKSignatureList;
 
-    invoke-static {v4, p1}, Lcom/google/protobuf/GeneratedMessageLite;->parseFrom(Lcom/google/protobuf/GeneratedMessageLite;[B)Lcom/google/protobuf/GeneratedMessageLite;
+    invoke-static {v5, p1}, Lcom/google/protobuf/GeneratedMessageLite;->parseFrom(Lcom/google/protobuf/GeneratedMessageLite;[B)Lcom/google/protobuf/GeneratedMessageLite;
 
-    move-result-object v4
+    move-result-object v5
 
-    check-cast v4, Lde/rki/coronawarnapp/server/protocols/external/exposurenotification/TemporaryExposureKeySignatureList$TEKSignatureList;
+    check-cast v5, Lde/rki/coronawarnapp/server/protocols/external/exposurenotification/TemporaryExposureKeySignatureList$TEKSignatureList;
 
-    iget-object v4, v4, Lde/rki/coronawarnapp/server/protocols/external/exposurenotification/TemporaryExposureKeySignatureList$TEKSignatureList;->signatures_:Lcom/google/protobuf/Internal$ProtobufList;
+    iget-object v5, v5, Lde/rki/coronawarnapp/server/protocols/external/exposurenotification/TemporaryExposureKeySignatureList$TEKSignatureList;->signatures_:Lcom/google/protobuf/Internal$ProtobufList;
 
-    const-string v5, "parseFrom(signatureListP\u2026          .signaturesList"
+    const-string v6, "parseFrom(signatureListP\u2026          .signaturesList"
 
-    invoke-static {v4, v5}, Lkotlin/jvm/internal/Intrinsics;->checkNotNullExpressionValue(Ljava/lang/Object;Ljava/lang/String;)V
+    invoke-static {v5, v6}, Lkotlin/jvm/internal/Intrinsics;->checkNotNullExpressionValue(Ljava/lang/Object;Ljava/lang/String;)V
 
-    invoke-static {v4}, Lkotlin/collections/CollectionsKt___CollectionsKt;->asSequence(Ljava/lang/Iterable;)Lkotlin/sequences/Sequence;
+    invoke-static {v5}, Lkotlin/collections/CollectionsKt___CollectionsKt;->asSequence(Ljava/lang/Iterable;)Lkotlin/sequences/Sequence;
 
-    move-result-object v4
+    move-result-object v5
 
-    sget-object v5, Lde/rki/coronawarnapp/util/security/SignatureValidation$Companion$parseTEKStyleSignature$1;->INSTANCE:Lde/rki/coronawarnapp/util/security/SignatureValidation$Companion$parseTEKStyleSignature$1;
+    sget-object v6, Lde/rki/coronawarnapp/util/security/SignatureValidation$Companion$parseTEKStyleSignature$1;->INSTANCE:Lde/rki/coronawarnapp/util/security/SignatureValidation$Companion$parseTEKStyleSignature$1;
 
-    const-string v6, "$this$onEach"
+    const-string v7, "action"
 
-    invoke-static {v4, v6}, Lkotlin/jvm/internal/Intrinsics;->checkNotNullParameter(Ljava/lang/Object;Ljava/lang/String;)V
+    invoke-static {v6, v7}, Lkotlin/jvm/internal/Intrinsics;->checkNotNullParameter(Ljava/lang/Object;Ljava/lang/String;)V
 
-    const-string v6, "action"
+    new-instance v7, Lkotlin/sequences/SequencesKt___SequencesKt$onEach$1;
 
-    invoke-static {v5, v6}, Lkotlin/jvm/internal/Intrinsics;->checkNotNullParameter(Ljava/lang/Object;Ljava/lang/String;)V
+    invoke-direct {v7, v6}, Lkotlin/sequences/SequencesKt___SequencesKt$onEach$1;-><init>(Lkotlin/jvm/functions/Function1;)V
 
-    new-instance v6, Lkotlin/sequences/SequencesKt___SequencesKt$onEach$1;
+    invoke-static {v5, v7}, Lkotlin/sequences/SequencesKt___SequencesKt;->map(Lkotlin/sequences/Sequence;Lkotlin/jvm/functions/Function1;)Lkotlin/sequences/Sequence;
 
-    invoke-direct {v6, v5}, Lkotlin/sequences/SequencesKt___SequencesKt$onEach$1;-><init>(Lkotlin/jvm/functions/Function1;)V
+    move-result-object v5
 
-    invoke-static {v4, v6}, Lkotlin/sequences/SequencesKt___SequencesKt;->map(Lkotlin/sequences/Sequence;Lkotlin/jvm/functions/Function1;)Lkotlin/sequences/Sequence;
+    sget-object v6, Lde/rki/coronawarnapp/util/security/SignatureValidation$Companion$parseTEKStyleSignature$2;->INSTANCE:Lde/rki/coronawarnapp/util/security/SignatureValidation$Companion$parseTEKStyleSignature$2;
 
-    move-result-object v4
-
-    sget-object v5, Lde/rki/coronawarnapp/util/security/SignatureValidation$Companion$parseTEKStyleSignature$2;->INSTANCE:Lde/rki/coronawarnapp/util/security/SignatureValidation$Companion$parseTEKStyleSignature$2;
-
-    invoke-static {v4, v5}, Lkotlin/sequences/SequencesKt___SequencesKt;->mapNotNull(Lkotlin/sequences/Sequence;Lkotlin/jvm/functions/Function1;)Lkotlin/sequences/Sequence;
+    invoke-static {v5, v6}, Lkotlin/sequences/SequencesKt___SequencesKt;->mapNotNull(Lkotlin/sequences/Sequence;Lkotlin/jvm/functions/Function1;)Lkotlin/sequences/Sequence;
 
     move-result-object p1
     :try_end_0
     .catch Ljava/lang/Exception; {:try_start_0 .. :try_end_0} :catch_0
 
-    invoke-virtual {v3, v0, p1}, Lde/rki/coronawarnapp/util/security/SignatureValidation;->hasValidSignature([BLkotlin/sequences/Sequence;)Z
+    invoke-virtual {v4, v0, p1}, Lde/rki/coronawarnapp/util/security/SignatureValidation;->hasValidSignature([BLkotlin/sequences/Sequence;)Z
 
     move-result p1
 
@@ -317,9 +311,7 @@
     :cond_0
     new-instance p1, Lde/rki/coronawarnapp/covidcertificate/signature/core/common/exception/DscValidationException;
 
-    sget-object v0, Lde/rki/coronawarnapp/covidcertificate/signature/core/common/exception/DscValidationException$ErrorCode;->SIGNATURE_INVALID:Lde/rki/coronawarnapp/covidcertificate/signature/core/common/exception/DscValidationException$ErrorCode;
-
-    invoke-direct {p1, v0, v2, v1}, Lde/rki/coronawarnapp/covidcertificate/signature/core/common/exception/DscValidationException;-><init>(Lde/rki/coronawarnapp/covidcertificate/signature/core/common/exception/DscValidationException$ErrorCode;Ljava/lang/Throwable;I)V
+    invoke-direct {p1, v3, v1, v3}, Lde/rki/coronawarnapp/covidcertificate/signature/core/common/exception/DscValidationException;-><init>(ILjava/lang/Throwable;I)V
 
     throw p1
 
@@ -327,8 +319,6 @@
     move-exception v0
 
     sget-object v1, Ltimber/log/Timber;->Forest:Ltimber/log/Timber$Forest;
-
-    const/4 v2, 0x1
 
     new-array v2, v2, [Ljava/lang/Object;
 
@@ -349,9 +339,7 @@
     :cond_1
     new-instance p1, Lde/rki/coronawarnapp/covidcertificate/signature/core/common/exception/DscValidationException;
 
-    sget-object v0, Lde/rki/coronawarnapp/covidcertificate/signature/core/common/exception/DscValidationException$ErrorCode;->FILE_MISSING:Lde/rki/coronawarnapp/covidcertificate/signature/core/common/exception/DscValidationException$ErrorCode;
-
-    invoke-direct {p1, v0, v2, v1}, Lde/rki/coronawarnapp/covidcertificate/signature/core/common/exception/DscValidationException;-><init>(Lde/rki/coronawarnapp/covidcertificate/signature/core/common/exception/DscValidationException$ErrorCode;Ljava/lang/Throwable;I)V
+    invoke-direct {p1, v2, v1, v3}, Lde/rki/coronawarnapp/covidcertificate/signature/core/common/exception/DscValidationException;-><init>(ILjava/lang/Throwable;I)V
 
     throw p1
 

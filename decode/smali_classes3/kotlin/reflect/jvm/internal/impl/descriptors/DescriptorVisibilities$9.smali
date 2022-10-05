@@ -1,4 +1,4 @@
-.class public final Lkotlin/reflect/jvm/internal/impl/descriptors/DescriptorVisibilities$9;
+.class final Lkotlin/reflect/jvm/internal/impl/descriptors/DescriptorVisibilities$9;
 .super Lkotlin/reflect/jvm/internal/impl/descriptors/DelegatedDescriptorVisibility;
 .source "DescriptorVisibilities.java"
 
@@ -15,7 +15,7 @@
 
 
 # direct methods
-.method public static synthetic $$$reportNull$$$0(I)V
+.method private static synthetic $$$reportNull$$$0(I)V
     .locals 3
 
     const/4 v0, 0x3
@@ -74,27 +74,21 @@
 
 # virtual methods
 .method public isVisible(Lkotlin/reflect/jvm/internal/impl/resolve/scopes/receivers/ReceiverValue;Lkotlin/reflect/jvm/internal/impl/descriptors/DeclarationDescriptorWithVisibility;Lkotlin/reflect/jvm/internal/impl/descriptors/DeclarationDescriptor;)Z
-    .locals 1
+    .locals 0
 
     const/4 p1, 0x0
 
-    const/4 v0, 0x0
+    if-nez p2, :cond_0
 
-    if-eqz p2, :cond_1
-
-    if-eqz p3, :cond_0
-
-    return v0
+    invoke-static {p1}, Lkotlin/reflect/jvm/internal/impl/descriptors/DescriptorVisibilities$9;->$$$reportNull$$$0(I)V
 
     :cond_0
+    if-nez p3, :cond_1
+
     const/4 p2, 0x1
 
     invoke-static {p2}, Lkotlin/reflect/jvm/internal/impl/descriptors/DescriptorVisibilities$9;->$$$reportNull$$$0(I)V
 
-    throw p1
-
     :cond_1
-    invoke-static {v0}, Lkotlin/reflect/jvm/internal/impl/descriptors/DescriptorVisibilities$9;->$$$reportNull$$$0(I)V
-
-    throw p1
+    return p1
 .end method

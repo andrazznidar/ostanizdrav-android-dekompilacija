@@ -118,17 +118,17 @@
 
     invoke-virtual {p0, p1, p2}, Lcom/fasterxml/jackson/databind/deser/std/UntypedObjectDeserializer$Vanilla;->deserialize(Lcom/fasterxml/jackson/core/JsonParser;Lcom/fasterxml/jackson/databind/DeserializationContext;)Ljava/lang/Object;
 
+    move-result-object p4
+
+    invoke-interface {p3, p7, p4}, Ljava/util/Map;->put(Ljava/lang/Object;Ljava/lang/Object;)Ljava/lang/Object;
+
     move-result-object p5
 
-    invoke-interface {p3, p7, p5}, Ljava/util/Map;->put(Ljava/lang/Object;Ljava/lang/Object;)Ljava/lang/Object;
-
-    move-result-object p6
-
-    if-eqz p6, :cond_1
+    if-eqz p5, :cond_1
 
     if-eqz v0, :cond_1
 
-    invoke-virtual {p0, p3, p4, p6, p5}, Lcom/fasterxml/jackson/databind/deser/std/UntypedObjectDeserializer$Vanilla;->_squashDups(Ljava/util/Map;Ljava/lang/String;Ljava/lang/Object;Ljava/lang/Object;)V
+    invoke-virtual {p0, p3, p7, p5, p4}, Lcom/fasterxml/jackson/databind/deser/std/UntypedObjectDeserializer$Vanilla;->_squashDups(Ljava/util/Map;Ljava/lang/String;Ljava/lang/Object;Ljava/lang/Object;)V
 
     :cond_1
     invoke-virtual {p1}, Lcom/fasterxml/jackson/core/JsonParser;->nextFieldName()Ljava/lang/String;
@@ -321,11 +321,11 @@
 
     if-eqz v1, :cond_6
 
-    invoke-virtual {p2}, Lcom/fasterxml/jackson/databind/DeserializationContext;->leaseObjectBuffer()Lkotlinx/coroutines/flow/SharingConfig;
+    invoke-virtual {p2}, Lcom/fasterxml/jackson/databind/DeserializationContext;->leaseObjectBuffer()Lcom/fasterxml/jackson/databind/util/ObjectBuffer;
 
     move-result-object v1
 
-    invoke-virtual {v1}, Lkotlinx/coroutines/flow/SharingConfig;->resetAndStart()[Ljava/lang/Object;
+    invoke-virtual {v1}, Lcom/fasterxml/jackson/databind/util/ObjectBuffer;->resetAndStart()[Ljava/lang/Object;
 
     move-result-object v2
 
@@ -340,7 +340,7 @@
 
     if-lt v3, v6, :cond_4
 
-    invoke-virtual {v1, v2}, Lkotlinx/coroutines/flow/SharingConfig;->appendCompletedChunk([Ljava/lang/Object;)[Ljava/lang/Object;
+    invoke-virtual {v1, v2}, Lcom/fasterxml/jackson/databind/util/ObjectBuffer;->appendCompletedChunk([Ljava/lang/Object;)[Ljava/lang/Object;
 
     move-result-object v2
 
@@ -359,15 +359,15 @@
 
     if-ne v3, v5, :cond_5
 
-    iget v0, v1, Lkotlinx/coroutines/flow/SharingConfig;->extraBufferCapacity:I
+    iget v0, v1, Lcom/fasterxml/jackson/databind/util/ObjectBuffer;->_size:I
 
     add-int/2addr v0, v6
 
     new-array v3, v0, [Ljava/lang/Object;
 
-    invoke-virtual {v1, v3, v0, v2, v6}, Lkotlinx/coroutines/flow/SharingConfig;->_copyTo(Ljava/lang/Object;I[Ljava/lang/Object;I)V
+    invoke-virtual {v1, v3, v0, v2, v6}, Lcom/fasterxml/jackson/databind/util/ObjectBuffer;->_copyTo(Ljava/lang/Object;I[Ljava/lang/Object;I)V
 
-    invoke-virtual {v1}, Lkotlinx/coroutines/flow/SharingConfig;->_reset()V
+    invoke-virtual {v1}, Lcom/fasterxml/jackson/databind/util/ObjectBuffer;->_reset()V
 
     return-object v3
 
@@ -417,11 +417,11 @@
     goto :goto_2
 
     :cond_8
-    invoke-virtual {p2}, Lcom/fasterxml/jackson/databind/DeserializationContext;->leaseObjectBuffer()Lkotlinx/coroutines/flow/SharingConfig;
+    invoke-virtual {p2}, Lcom/fasterxml/jackson/databind/DeserializationContext;->leaseObjectBuffer()Lcom/fasterxml/jackson/databind/util/ObjectBuffer;
 
     move-result-object v2
 
-    invoke-virtual {v2}, Lkotlinx/coroutines/flow/SharingConfig;->resetAndStart()[Ljava/lang/Object;
+    invoke-virtual {v2}, Lcom/fasterxml/jackson/databind/util/ObjectBuffer;->resetAndStart()[Ljava/lang/Object;
 
     move-result-object v6
 
@@ -444,7 +444,7 @@
 
     if-lt v5, v8, :cond_9
 
-    invoke-virtual {v2, v6}, Lkotlinx/coroutines/flow/SharingConfig;->appendCompletedChunk([Ljava/lang/Object;)[Ljava/lang/Object;
+    invoke-virtual {v2, v6}, Lcom/fasterxml/jackson/databind/util/ObjectBuffer;->appendCompletedChunk([Ljava/lang/Object;)[Ljava/lang/Object;
 
     move-result-object v5
 
@@ -469,7 +469,7 @@
 
     invoke-direct {v0, v3}, Ljava/util/ArrayList;-><init>(I)V
 
-    invoke-virtual {v2, v6, v8, v0}, Lkotlinx/coroutines/flow/SharingConfig;->completeAndClearBuffer([Ljava/lang/Object;ILjava/util/List;)V
+    invoke-virtual {v2, v6, v8, v0}, Lcom/fasterxml/jackson/databind/util/ObjectBuffer;->completeAndClearBuffer([Ljava/lang/Object;ILjava/util/List;)V
 
     :goto_2
     return-object v0
@@ -503,7 +503,7 @@
 
     :cond_b
     :pswitch_b
-    invoke-virtual {p1}, Lcom/fasterxml/jackson/core/JsonParser;->getText()Ljava/lang/String;
+    invoke-virtual {p1}, Lcom/fasterxml/jackson/core/JsonParser;->currentName()Ljava/lang/String;
 
     move-result-object v5
 

@@ -4,7 +4,7 @@
 
 
 # instance fields
-.field public final arguments:Ljava/util/List;
+.field private final arguments:Ljava/util/List;
     .annotation system Ldalvik/annotation/Signature;
         value = {
             "Ljava/util/List<",
@@ -14,22 +14,26 @@
     .end annotation
 .end field
 
-.field public final constructor:Lkotlin/reflect/jvm/internal/impl/types/TypeConstructor;
+.field private final constructor:Lkotlin/reflect/jvm/internal/impl/types/TypeConstructor;
 
-.field public final isMarkedNullable:Z
+.field private final isMarkedNullable:Z
 
-.field public final memberScope:Lkotlin/reflect/jvm/internal/impl/resolve/scopes/MemberScope;
+.field private final memberScope:Lkotlin/reflect/jvm/internal/impl/resolve/scopes/MemberScope;
 
-.field public final presentableName:Ljava/lang/String;
+.field private final presentableName:Ljava/lang/String;
 
 
 # direct methods
 .method public constructor <init>(Lkotlin/reflect/jvm/internal/impl/types/TypeConstructor;Lkotlin/reflect/jvm/internal/impl/resolve/scopes/MemberScope;)V
-    .locals 8
+    .locals 9
 
     const-string v0, "constructor"
 
     invoke-static {p1, v0}, Lkotlin/jvm/internal/Intrinsics;->checkNotNullParameter(Ljava/lang/Object;Ljava/lang/String;)V
+
+    const-string v0, "memberScope"
+
+    invoke-static {p2, v0}, Lkotlin/jvm/internal/Intrinsics;->checkNotNullParameter(Ljava/lang/Object;Ljava/lang/String;)V
 
     const/4 v4, 0x0
 
@@ -39,61 +43,97 @@
 
     const/16 v7, 0x1c
 
+    const/4 v8, 0x0
+
     move-object v1, p0
 
     move-object v2, p1
 
     move-object v3, p2
 
-    invoke-direct/range {v1 .. v7}, Lkotlin/reflect/jvm/internal/impl/types/ErrorType;-><init>(Lkotlin/reflect/jvm/internal/impl/types/TypeConstructor;Lkotlin/reflect/jvm/internal/impl/resolve/scopes/MemberScope;Ljava/util/List;ZLjava/lang/String;I)V
+    invoke-direct/range {v1 .. v8}, Lkotlin/reflect/jvm/internal/impl/types/ErrorType;-><init>(Lkotlin/reflect/jvm/internal/impl/types/TypeConstructor;Lkotlin/reflect/jvm/internal/impl/resolve/scopes/MemberScope;Ljava/util/List;ZLjava/lang/String;ILkotlin/jvm/internal/DefaultConstructorMarker;)V
 
     return-void
 .end method
 
-.method public constructor <init>(Lkotlin/reflect/jvm/internal/impl/types/TypeConstructor;Lkotlin/reflect/jvm/internal/impl/resolve/scopes/MemberScope;Ljava/util/List;ZLjava/lang/String;I)V
-    .locals 0
+.method public constructor <init>(Lkotlin/reflect/jvm/internal/impl/types/TypeConstructor;Lkotlin/reflect/jvm/internal/impl/resolve/scopes/MemberScope;Ljava/util/List;Z)V
+    .locals 9
+    .annotation system Ldalvik/annotation/Signature;
+        value = {
+            "(",
+            "Lkotlin/reflect/jvm/internal/impl/types/TypeConstructor;",
+            "Lkotlin/reflect/jvm/internal/impl/resolve/scopes/MemberScope;",
+            "Ljava/util/List<",
+            "+",
+            "Lkotlin/reflect/jvm/internal/impl/types/TypeProjection;",
+            ">;Z)V"
+        }
+    .end annotation
 
-    and-int/lit8 p5, p6, 0x4
+    const-string v0, "constructor"
 
-    if-eqz p5, :cond_0
+    invoke-static {p1, v0}, Lkotlin/jvm/internal/Intrinsics;->checkNotNullParameter(Ljava/lang/Object;Ljava/lang/String;)V
 
-    sget-object p3, Lkotlin/collections/EmptyList;->INSTANCE:Lkotlin/collections/EmptyList;
+    const-string v0, "memberScope"
 
-    :cond_0
-    and-int/lit8 p5, p6, 0x8
+    invoke-static {p2, v0}, Lkotlin/jvm/internal/Intrinsics;->checkNotNullParameter(Ljava/lang/Object;Ljava/lang/String;)V
 
-    if-eqz p5, :cond_1
+    const-string v0, "arguments"
 
-    const/4 p4, 0x0
+    invoke-static {p3, v0}, Lkotlin/jvm/internal/Intrinsics;->checkNotNullParameter(Ljava/lang/Object;Ljava/lang/String;)V
 
-    :cond_1
-    and-int/lit8 p5, p6, 0x10
+    const/4 v6, 0x0
 
-    if-eqz p5, :cond_2
+    const/16 v7, 0x10
 
-    const-string p5, "???"
+    const/4 v8, 0x0
 
-    goto :goto_0
+    move-object v1, p0
 
-    :cond_2
-    const/4 p5, 0x0
+    move-object v2, p1
 
-    :goto_0
-    const-string p6, "constructor"
+    move-object v3, p2
 
-    invoke-static {p1, p6}, Lkotlin/jvm/internal/Intrinsics;->checkNotNullParameter(Ljava/lang/Object;Ljava/lang/String;)V
+    move-object v4, p3
 
-    const-string p6, "memberScope"
+    move v5, p4
 
-    invoke-static {p2, p6}, Lkotlin/jvm/internal/Intrinsics;->checkNotNullParameter(Ljava/lang/Object;Ljava/lang/String;)V
+    invoke-direct/range {v1 .. v8}, Lkotlin/reflect/jvm/internal/impl/types/ErrorType;-><init>(Lkotlin/reflect/jvm/internal/impl/types/TypeConstructor;Lkotlin/reflect/jvm/internal/impl/resolve/scopes/MemberScope;Ljava/util/List;ZLjava/lang/String;ILkotlin/jvm/internal/DefaultConstructorMarker;)V
 
-    const-string p6, "arguments"
+    return-void
+.end method
 
-    invoke-static {p3, p6}, Lkotlin/jvm/internal/Intrinsics;->checkNotNullParameter(Ljava/lang/Object;Ljava/lang/String;)V
+.method public constructor <init>(Lkotlin/reflect/jvm/internal/impl/types/TypeConstructor;Lkotlin/reflect/jvm/internal/impl/resolve/scopes/MemberScope;Ljava/util/List;ZLjava/lang/String;)V
+    .locals 1
+    .annotation system Ldalvik/annotation/Signature;
+        value = {
+            "(",
+            "Lkotlin/reflect/jvm/internal/impl/types/TypeConstructor;",
+            "Lkotlin/reflect/jvm/internal/impl/resolve/scopes/MemberScope;",
+            "Ljava/util/List<",
+            "+",
+            "Lkotlin/reflect/jvm/internal/impl/types/TypeProjection;",
+            ">;Z",
+            "Ljava/lang/String;",
+            ")V"
+        }
+    .end annotation
 
-    const-string p6, "presentableName"
+    const-string v0, "constructor"
 
-    invoke-static {p5, p6}, Lkotlin/jvm/internal/Intrinsics;->checkNotNullParameter(Ljava/lang/Object;Ljava/lang/String;)V
+    invoke-static {p1, v0}, Lkotlin/jvm/internal/Intrinsics;->checkNotNullParameter(Ljava/lang/Object;Ljava/lang/String;)V
+
+    const-string v0, "memberScope"
+
+    invoke-static {p2, v0}, Lkotlin/jvm/internal/Intrinsics;->checkNotNullParameter(Ljava/lang/Object;Ljava/lang/String;)V
+
+    const-string v0, "arguments"
+
+    invoke-static {p3, v0}, Lkotlin/jvm/internal/Intrinsics;->checkNotNullParameter(Ljava/lang/Object;Ljava/lang/String;)V
+
+    const-string v0, "presentableName"
+
+    invoke-static {p5, v0}, Lkotlin/jvm/internal/Intrinsics;->checkNotNullParameter(Ljava/lang/Object;Ljava/lang/String;)V
 
     invoke-direct {p0}, Lkotlin/reflect/jvm/internal/impl/types/SimpleType;-><init>()V
 
@@ -110,14 +150,57 @@
     return-void
 .end method
 
+.method public synthetic constructor <init>(Lkotlin/reflect/jvm/internal/impl/types/TypeConstructor;Lkotlin/reflect/jvm/internal/impl/resolve/scopes/MemberScope;Ljava/util/List;ZLjava/lang/String;ILkotlin/jvm/internal/DefaultConstructorMarker;)V
+    .locals 6
+
+    and-int/lit8 p7, p6, 0x4
+
+    if-eqz p7, :cond_0
+
+    sget-object p3, Lkotlin/collections/EmptyList;->INSTANCE:Lkotlin/collections/EmptyList;
+
+    :cond_0
+    move-object v3, p3
+
+    and-int/lit8 p3, p6, 0x8
+
+    if-eqz p3, :cond_1
+
+    const/4 p4, 0x0
+
+    :cond_1
+    move v4, p4
+
+    and-int/lit8 p3, p6, 0x10
+
+    if-eqz p3, :cond_2
+
+    const-string p5, "???"
+
+    :cond_2
+    move-object v5, p5
+
+    move-object v0, p0
+
+    move-object v1, p1
+
+    move-object v2, p2
+
+    invoke-direct/range {v0 .. v5}, Lkotlin/reflect/jvm/internal/impl/types/ErrorType;-><init>(Lkotlin/reflect/jvm/internal/impl/types/TypeConstructor;Lkotlin/reflect/jvm/internal/impl/resolve/scopes/MemberScope;Ljava/util/List;ZLjava/lang/String;)V
+
+    return-void
+.end method
+
 
 # virtual methods
 .method public getAnnotations()Lkotlin/reflect/jvm/internal/impl/descriptors/annotations/Annotations;
     .locals 1
 
-    sget v0, Lkotlin/reflect/jvm/internal/impl/descriptors/annotations/Annotations;->$r8$clinit:I
+    sget-object v0, Lkotlin/reflect/jvm/internal/impl/descriptors/annotations/Annotations;->Companion:Lkotlin/reflect/jvm/internal/impl/descriptors/annotations/Annotations$Companion;
 
-    sget-object v0, Lkotlin/reflect/jvm/internal/impl/descriptors/annotations/Annotations$Companion;->EMPTY:Lkotlin/reflect/jvm/internal/impl/descriptors/annotations/Annotations;
+    invoke-virtual {v0}, Lkotlin/reflect/jvm/internal/impl/descriptors/annotations/Annotations$Companion;->getEMPTY()Lkotlin/reflect/jvm/internal/impl/descriptors/annotations/Annotations;
+
+    move-result-object v0
 
     return-object v0
 .end method
@@ -171,27 +254,45 @@
 .end method
 
 .method public makeNullableAsSpecified(Z)Lkotlin/reflect/jvm/internal/impl/types/SimpleType;
-    .locals 8
+    .locals 9
 
-    new-instance v7, Lkotlin/reflect/jvm/internal/impl/types/ErrorType;
+    new-instance v8, Lkotlin/reflect/jvm/internal/impl/types/ErrorType;
 
-    iget-object v1, p0, Lkotlin/reflect/jvm/internal/impl/types/ErrorType;->constructor:Lkotlin/reflect/jvm/internal/impl/types/TypeConstructor;
+    invoke-virtual {p0}, Lkotlin/reflect/jvm/internal/impl/types/ErrorType;->getConstructor()Lkotlin/reflect/jvm/internal/impl/types/TypeConstructor;
 
-    iget-object v2, p0, Lkotlin/reflect/jvm/internal/impl/types/ErrorType;->memberScope:Lkotlin/reflect/jvm/internal/impl/resolve/scopes/MemberScope;
+    move-result-object v1
 
-    iget-object v3, p0, Lkotlin/reflect/jvm/internal/impl/types/ErrorType;->arguments:Ljava/util/List;
+    invoke-virtual {p0}, Lkotlin/reflect/jvm/internal/impl/types/ErrorType;->getMemberScope()Lkotlin/reflect/jvm/internal/impl/resolve/scopes/MemberScope;
+
+    move-result-object v2
+
+    invoke-virtual {p0}, Lkotlin/reflect/jvm/internal/impl/types/ErrorType;->getArguments()Ljava/util/List;
+
+    move-result-object v3
 
     const/4 v5, 0x0
 
     const/16 v6, 0x10
 
-    move-object v0, v7
+    const/4 v7, 0x0
+
+    move-object v0, v8
 
     move v4, p1
 
-    invoke-direct/range {v0 .. v6}, Lkotlin/reflect/jvm/internal/impl/types/ErrorType;-><init>(Lkotlin/reflect/jvm/internal/impl/types/TypeConstructor;Lkotlin/reflect/jvm/internal/impl/resolve/scopes/MemberScope;Ljava/util/List;ZLjava/lang/String;I)V
+    invoke-direct/range {v0 .. v7}, Lkotlin/reflect/jvm/internal/impl/types/ErrorType;-><init>(Lkotlin/reflect/jvm/internal/impl/types/TypeConstructor;Lkotlin/reflect/jvm/internal/impl/resolve/scopes/MemberScope;Ljava/util/List;ZLjava/lang/String;ILkotlin/jvm/internal/DefaultConstructorMarker;)V
 
-    return-object v7
+    return-object v8
+.end method
+
+.method public bridge synthetic makeNullableAsSpecified(Z)Lkotlin/reflect/jvm/internal/impl/types/UnwrappedType;
+    .locals 0
+
+    invoke-virtual {p0, p1}, Lkotlin/reflect/jvm/internal/impl/types/ErrorType;->makeNullableAsSpecified(Z)Lkotlin/reflect/jvm/internal/impl/types/SimpleType;
+
+    move-result-object p1
+
+    return-object p1
 .end method
 
 .method public refine(Lkotlin/reflect/jvm/internal/impl/types/checker/KotlinTypeRefiner;)Lkotlin/reflect/jvm/internal/impl/types/ErrorType;
@@ -234,14 +335,14 @@
     return-object p0
 .end method
 
-.method public replaceAnnotations(Lkotlin/reflect/jvm/internal/impl/descriptors/annotations/Annotations;)Lkotlin/reflect/jvm/internal/impl/types/UnwrappedType;
-    .locals 1
+.method public bridge synthetic replaceAnnotations(Lkotlin/reflect/jvm/internal/impl/descriptors/annotations/Annotations;)Lkotlin/reflect/jvm/internal/impl/types/UnwrappedType;
+    .locals 0
 
-    const-string v0, "newAnnotations"
+    invoke-virtual {p0, p1}, Lkotlin/reflect/jvm/internal/impl/types/ErrorType;->replaceAnnotations(Lkotlin/reflect/jvm/internal/impl/descriptors/annotations/Annotations;)Lkotlin/reflect/jvm/internal/impl/types/SimpleType;
 
-    invoke-static {p1, v0}, Lkotlin/jvm/internal/Intrinsics;->checkNotNullParameter(Ljava/lang/Object;Ljava/lang/String;)V
+    move-result-object p1
 
-    return-object p0
+    return-object p1
 .end method
 
 .method public toString()Ljava/lang/String;
@@ -251,11 +352,15 @@
 
     invoke-direct {v0}, Ljava/lang/StringBuilder;-><init>()V
 
-    iget-object v1, p0, Lkotlin/reflect/jvm/internal/impl/types/ErrorType;->constructor:Lkotlin/reflect/jvm/internal/impl/types/TypeConstructor;
+    invoke-virtual {p0}, Lkotlin/reflect/jvm/internal/impl/types/ErrorType;->getConstructor()Lkotlin/reflect/jvm/internal/impl/types/TypeConstructor;
+
+    move-result-object v1
 
     invoke-virtual {v0, v1}, Ljava/lang/StringBuilder;->append(Ljava/lang/Object;)Ljava/lang/StringBuilder;
 
-    iget-object v1, p0, Lkotlin/reflect/jvm/internal/impl/types/ErrorType;->arguments:Ljava/util/List;
+    invoke-virtual {p0}, Lkotlin/reflect/jvm/internal/impl/types/ErrorType;->getArguments()Ljava/util/List;
+
+    move-result-object v1
 
     invoke-interface {v1}, Ljava/util/List;->isEmpty()Z
 
@@ -268,7 +373,9 @@
     goto :goto_0
 
     :cond_0
-    iget-object v2, p0, Lkotlin/reflect/jvm/internal/impl/types/ErrorType;->arguments:Ljava/util/List;
+    invoke-virtual {p0}, Lkotlin/reflect/jvm/internal/impl/types/ErrorType;->getArguments()Ljava/util/List;
+
+    move-result-object v2
 
     const/4 v6, -0x1
 

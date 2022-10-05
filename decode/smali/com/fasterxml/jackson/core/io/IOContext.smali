@@ -10,6 +10,8 @@
 
 .field public _concatCBuffer:[C
 
+.field public final _contentReference:Lcom/fasterxml/jackson/core/io/ContentReference;
+
 .field public _encoding:I
 
 .field public final _managedResource:Z
@@ -19,6 +21,9 @@
 .field public _readIOBuffer:[B
 
 .field public final _sourceRef:Ljava/lang/Object;
+    .annotation runtime Ljava/lang/Deprecated;
+    .end annotation
+.end field
 
 .field public _tokenCBuffer:[C
 
@@ -26,14 +31,18 @@
 
 
 # direct methods
-.method public constructor <init>(Lcom/fasterxml/jackson/core/util/BufferRecycler;Ljava/lang/Object;Z)V
+.method public constructor <init>(Lcom/fasterxml/jackson/core/util/BufferRecycler;Lcom/fasterxml/jackson/core/io/ContentReference;Z)V
     .locals 0
 
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
     iput-object p1, p0, Lcom/fasterxml/jackson/core/io/IOContext;->_bufferRecycler:Lcom/fasterxml/jackson/core/util/BufferRecycler;
 
-    iput-object p2, p0, Lcom/fasterxml/jackson/core/io/IOContext;->_sourceRef:Ljava/lang/Object;
+    iput-object p2, p0, Lcom/fasterxml/jackson/core/io/IOContext;->_contentReference:Lcom/fasterxml/jackson/core/io/ContentReference;
+
+    iget-object p1, p2, Lcom/fasterxml/jackson/core/io/ContentReference;->_rawContent:Ljava/lang/Object;
+
+    iput-object p1, p0, Lcom/fasterxml/jackson/core/io/IOContext;->_sourceRef:Ljava/lang/Object;
 
     iput-boolean p3, p0, Lcom/fasterxml/jackson/core/io/IOContext;->_managedResource:Z
 

@@ -4,6 +4,7 @@
 
 # interfaces
 .implements Ljava/util/RandomAccess;
+.implements Ljava/io/Serializable;
 
 
 # annotations
@@ -20,10 +21,8 @@
         ">",
         "Lkotlin/collections/AbstractMutableList<",
         "TE;>;",
-        "Ljava/util/List<",
-        "TE;>;",
         "Ljava/util/RandomAccess;",
-        "Lkotlin/jvm/internal/markers/KMutableList;"
+        "Ljava/io/Serializable;"
     }
 .end annotation
 
@@ -63,6 +62,16 @@
 
 
 # direct methods
+.method public constructor <init>()V
+    .locals 1
+
+    const/16 v0, 0xa
+
+    invoke-direct {p0, v0}, Lkotlin/collections/builders/ListBuilder;-><init>(I)V
+
+    return-void
+.end method
+
 .method public constructor <init>(I)V
     .locals 0
 
@@ -153,7 +162,7 @@
 
     const-string v2, ", size: "
 
-    invoke-static {v1, p1, v2, v0}, Lcom/airbnb/lottie/utils/GammaEvaluator$$ExternalSyntheticOutline0;->m(Ljava/lang/String;ILjava/lang/String;I)Ljava/lang/String;
+    invoke-static {v1, p1, v2, v0}, Landroidx/camera/camera2/internal/Camera2CameraImpl$$ExternalSyntheticOutline0;->m(Ljava/lang/String;ILjava/lang/String;I)Ljava/lang/String;
 
     move-result-object p1
 
@@ -236,7 +245,7 @@
 
     const-string v2, ", size: "
 
-    invoke-static {v1, p1, v2, v0}, Lcom/airbnb/lottie/utils/GammaEvaluator$$ExternalSyntheticOutline0;->m(Ljava/lang/String;ILjava/lang/String;I)Ljava/lang/String;
+    invoke-static {v1, p1, v2, v0}, Landroidx/camera/camera2/internal/Camera2CameraImpl$$ExternalSyntheticOutline0;->m(Ljava/lang/String;ILjava/lang/String;I)Ljava/lang/String;
 
     move-result-object p1
 
@@ -401,12 +410,25 @@
 
     iget-boolean v0, v0, Lkotlin/collections/builders/ListBuilder;->isReadOnly:Z
 
-    if-nez v0, :cond_1
+    if-eqz v0, :cond_0
+
+    goto :goto_0
 
     :cond_0
-    return-void
+    const/4 v0, 0x0
+
+    goto :goto_1
 
     :cond_1
+    :goto_0
+    const/4 v0, 0x1
+
+    :goto_1
+    if-nez v0, :cond_2
+
+    return-void
+
+    :cond_2
     new-instance v0, Ljava/lang/UnsupportedOperationException;
 
     invoke-direct {v0}, Ljava/lang/UnsupportedOperationException;-><init>()V
@@ -475,9 +497,7 @@
 
     move-result v6
 
-    xor-int/2addr v6, v1
-
-    if-eqz v6, :cond_1
+    if-nez v6, :cond_1
 
     :goto_1
     move p1, v0
@@ -533,7 +553,7 @@
 
     const-string v3, ", size: "
 
-    invoke-static {v2, p1, v3, v0}, Lcom/airbnb/lottie/utils/GammaEvaluator$$ExternalSyntheticOutline0;->m(Ljava/lang/String;ILjava/lang/String;I)Ljava/lang/String;
+    invoke-static {v2, p1, v3, v0}, Landroidx/camera/camera2/internal/Camera2CameraImpl$$ExternalSyntheticOutline0;->m(Ljava/lang/String;ILjava/lang/String;I)Ljava/lang/String;
 
     move-result-object p1
 
@@ -574,16 +594,16 @@
 
     mul-int/lit8 v4, v4, 0x1f
 
-    if-eqz v6, :cond_0
+    if-nez v6, :cond_0
 
-    invoke-virtual {v6}, Ljava/lang/Object;->hashCode()I
-
-    move-result v6
+    move v6, v3
 
     goto :goto_1
 
     :cond_0
-    move v6, v3
+    invoke-virtual {v6}, Ljava/lang/Object;->hashCode()I
+
+    move-result v6
 
     :goto_1
     add-int/2addr v4, v6
@@ -642,7 +662,9 @@
 
     iget-object v1, p0, Lkotlin/collections/builders/ListBuilder;->backing:Lkotlin/collections/builders/ListBuilder;
 
-    if-nez v1, :cond_4
+    if-nez v1, :cond_5
+
+    if-ltz v0, :cond_4
 
     iget-object v1, p0, Lkotlin/collections/builders/ListBuilder;->array:[Ljava/lang/Object;
 
@@ -708,6 +730,13 @@
     return-void
 
     :cond_4
+    new-instance p1, Ljava/lang/OutOfMemoryError;
+
+    invoke-direct {p1}, Ljava/lang/OutOfMemoryError;-><init>()V
+
+    throw p1
+
+    :cond_5
     new-instance p1, Ljava/lang/IllegalStateException;
 
     invoke-direct {p1}, Ljava/lang/IllegalStateException;-><init>()V
@@ -837,7 +866,7 @@
 
     const-string v3, ", size: "
 
-    invoke-static {v2, p1, v3, v0}, Lcom/airbnb/lottie/utils/GammaEvaluator$$ExternalSyntheticOutline0;->m(Ljava/lang/String;ILjava/lang/String;I)Ljava/lang/String;
+    invoke-static {v2, p1, v3, v0}, Landroidx/camera/camera2/internal/Camera2CameraImpl$$ExternalSyntheticOutline0;->m(Ljava/lang/String;ILjava/lang/String;I)Ljava/lang/String;
 
     move-result-object p1
 
@@ -942,7 +971,7 @@
 
     const-string v3, ", size: "
 
-    invoke-static {v2, p1, v3, v0}, Lcom/airbnb/lottie/utils/GammaEvaluator$$ExternalSyntheticOutline0;->m(Ljava/lang/String;ILjava/lang/String;I)Ljava/lang/String;
+    invoke-static {v2, p1, v3, v0}, Landroidx/camera/camera2/internal/Camera2CameraImpl$$ExternalSyntheticOutline0;->m(Ljava/lang/String;ILjava/lang/String;I)Ljava/lang/String;
 
     move-result-object p1
 
@@ -1222,7 +1251,7 @@
 
     const-string v2, ", size: "
 
-    invoke-static {v1, p1, v2, v0}, Lcom/airbnb/lottie/utils/GammaEvaluator$$ExternalSyntheticOutline0;->m(Ljava/lang/String;ILjava/lang/String;I)Ljava/lang/String;
+    invoke-static {v1, p1, v2, v0}, Landroidx/camera/camera2/internal/Camera2CameraImpl$$ExternalSyntheticOutline0;->m(Ljava/lang/String;ILjava/lang/String;I)Ljava/lang/String;
 
     move-result-object p1
 
@@ -1265,14 +1294,14 @@
 
     iget-object p1, p0, Lkotlin/collections/builders/ListBuilder;->root:Lkotlin/collections/builders/ListBuilder;
 
-    if-eqz p1, :cond_0
+    if-nez p1, :cond_0
 
-    move-object v8, p1
+    move-object v8, p0
 
     goto :goto_0
 
     :cond_0
-    move-object v8, p0
+    move-object v8, p1
 
     :goto_0
     move-object v2, v0
@@ -1288,7 +1317,7 @@
 
     const-string v2, " > toIndex: "
 
-    invoke-static {v1, p1, v2, p2}, Lcom/airbnb/lottie/utils/GammaEvaluator$$ExternalSyntheticOutline0;->m(Ljava/lang/String;ILjava/lang/String;I)Ljava/lang/String;
+    invoke-static {v1, p1, v2, p2}, Landroidx/camera/camera2/internal/Camera2CameraImpl$$ExternalSyntheticOutline0;->m(Ljava/lang/String;ILjava/lang/String;I)Ljava/lang/String;
 
     move-result-object p1
 
@@ -1303,7 +1332,7 @@
 
     const-string v4, ", size: "
 
-    invoke-static {v1, p1, v3, p2, v4}, Landroidx/recyclerview/widget/GridLayoutManager$$ExternalSyntheticOutline0;->m(Ljava/lang/String;ILjava/lang/String;ILjava/lang/String;)Ljava/lang/StringBuilder;
+    invoke-static {v1, p1, v3, p2, v4}, Landroidx/datastore/preferences/protobuf/ByteString$LiteralByteString$$ExternalSyntheticOutline0;->m(Ljava/lang/String;ILjava/lang/String;ILjava/lang/String;)Ljava/lang/StringBuilder;
 
     move-result-object p1
 
@@ -1370,7 +1399,7 @@
 
     move-result-object p1
 
-    const-string v0, "java.util.Arrays.copyOfR\u2026h, destination.javaClass)"
+    const-string v0, "copyOfRange(array, offse\u2026h, destination.javaClass)"
 
     invoke-static {p1, v0}, Lkotlin/jvm/internal/Intrinsics;->checkNotNullExpressionValue(Ljava/lang/Object;Ljava/lang/String;)V
 
@@ -1378,10 +1407,6 @@
 
     :cond_0
     iget-object v0, p0, Lkotlin/collections/builders/ListBuilder;->array:[Ljava/lang/Object;
-
-    const-string v2, "null cannot be cast to non-null type kotlin.Array<T>"
-
-    invoke-static {v0, v2}, Ljava/util/Objects;->requireNonNull(Ljava/lang/Object;Ljava/lang/String;)Ljava/lang/Object;
 
     const/4 v2, 0x0
 

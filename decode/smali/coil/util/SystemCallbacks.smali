@@ -47,8 +47,6 @@
 
     iput-object v0, p0, Lcoil/util/SystemCallbacks;->imageLoader:Ljava/lang/ref/WeakReference;
 
-    sget v0, Lcoil/network/NetworkObserver;->$r8$clinit:I
-
     iget-object p1, p1, Lcoil/RealImageLoader;->logger:Lcoil/util/Logger;
 
     const/4 v0, 0x0

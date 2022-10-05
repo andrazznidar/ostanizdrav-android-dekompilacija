@@ -167,13 +167,13 @@
 
     move-result-object p2
 
-    invoke-virtual {v2, p2}, Lcom/fasterxml/jackson/databind/AnnotationIntrospector;->findDeserializer(Lcom/fasterxml/jackson/databind/introspect/Annotated;)Ljava/lang/Object;
+    invoke-virtual {v2, p2}, Lcom/fasterxml/jackson/databind/AnnotationIntrospector;->findDeserializer(Lorg/joda/time/Chronology;)Ljava/lang/Object;
 
     move-result-object v0
 
     if-eqz v0, :cond_3
 
-    invoke-virtual {p1, p2, v0}, Lcom/fasterxml/jackson/databind/DeserializationContext;->deserializerInstance(Lcom/fasterxml/jackson/databind/introspect/Annotated;Ljava/lang/Object;)Lcom/fasterxml/jackson/databind/JsonDeserializer;
+    invoke-virtual {p1, p2, v0}, Lcom/fasterxml/jackson/databind/DeserializationContext;->deserializerInstance(Lorg/joda/time/Chronology;Ljava/lang/Object;)Lcom/fasterxml/jackson/databind/JsonDeserializer;
 
     move-result-object p1
 
@@ -184,7 +184,7 @@
     goto :goto_2
 
     :cond_3
-    invoke-virtual {v2, p3, p2, v1}, Lcom/fasterxml/jackson/databind/AnnotationIntrospector;->refineDeserializationType(Lcom/fasterxml/jackson/databind/cfg/MapperConfig;Lcom/fasterxml/jackson/databind/introspect/Annotated;Lcom/fasterxml/jackson/databind/JavaType;)Lcom/fasterxml/jackson/databind/JavaType;
+    invoke-virtual {v2, p3, p2, v1}, Lcom/fasterxml/jackson/databind/AnnotationIntrospector;->refineDeserializationType(Lcom/fasterxml/jackson/databind/cfg/MapperConfig;Lorg/joda/time/Chronology;Lcom/fasterxml/jackson/databind/JavaType;)Lcom/fasterxml/jackson/databind/JavaType;
 
     move-result-object v1
 
@@ -212,7 +212,7 @@
 
     if-eqz v0, :cond_0
 
-    invoke-virtual {p1}, Lcom/fasterxml/jackson/databind/introspect/Annotated;->getName()Ljava/lang/String;
+    invoke-virtual {p1}, Lorg/joda/time/Chronology;->getName()Ljava/lang/String;
 
     move-result-object p1
 
@@ -578,7 +578,7 @@
 
     if-eqz v1, :cond_0
 
-    invoke-virtual {p1}, Lcom/fasterxml/jackson/databind/introspect/Annotated;->getAnnotated()Ljava/lang/reflect/AnnotatedElement;
+    invoke-virtual {p1}, Lorg/joda/time/Chronology;->getAnnotated()Ljava/lang/reflect/AnnotatedElement;
 
     move-result-object v1
 
@@ -609,7 +609,7 @@
 
     aget-object v2, v2, p2
 
-    if-eqz v2, :cond_7
+    if-eqz v2, :cond_8
 
     iget v3, p0, Lcom/fasterxml/jackson/databind/deser/impl/CreatorCollector;->_explicitCreators:I
 
@@ -632,7 +632,7 @@
     xor-int/lit8 v3, p3, 0x1
 
     :goto_0
-    if-eqz v3, :cond_7
+    if-eqz v3, :cond_8
 
     invoke-virtual {v2}, Ljava/lang/Object;->getClass()Ljava/lang/Class;
 
@@ -642,7 +642,7 @@
 
     move-result-object v5
 
-    if-ne v3, v5, :cond_7
+    if-ne v3, v5, :cond_8
 
     invoke-virtual {v2, v4}, Lcom/fasterxml/jackson/databind/introspect/AnnotatedWithParams;->getRawParameterType(I)Ljava/lang/Class;
 
@@ -690,20 +690,39 @@
     :cond_5
     invoke-virtual {v3, v5}, Ljava/lang/Class;->isAssignableFrom(Ljava/lang/Class;)Z
 
-    move-result v3
+    move-result v7
 
-    if-eqz v3, :cond_6
+    if-eqz v7, :cond_6
 
     goto :goto_1
 
     :cond_6
+    invoke-virtual {v3}, Ljava/lang/Class;->isPrimitive()Z
+
+    move-result v7
+
+    invoke-virtual {v5}, Ljava/lang/Class;->isPrimitive()Z
+
+    move-result v5
+
+    if-eq v7, v5, :cond_7
+
+    invoke-virtual {v3}, Ljava/lang/Class;->isPrimitive()Z
+
+    move-result v2
+
+    if-eqz v2, :cond_8
+
+    return v4
+
+    :cond_7
     invoke-virtual {p0, p2, p3, v2, p1}, Lcom/fasterxml/jackson/databind/deser/impl/CreatorCollector;->_reportDuplicateCreator(IZLcom/fasterxml/jackson/databind/introspect/AnnotatedWithParams;Lcom/fasterxml/jackson/databind/introspect/AnnotatedWithParams;)V
 
     throw v6
 
-    :cond_7
+    :cond_8
     :goto_1
-    if-eqz p3, :cond_8
+    if-eqz p3, :cond_9
 
     iget p3, p0, Lcom/fasterxml/jackson/databind/deser/impl/CreatorCollector;->_explicitCreators:I
 
@@ -711,16 +730,16 @@
 
     iput p3, p0, Lcom/fasterxml/jackson/databind/deser/impl/CreatorCollector;->_explicitCreators:I
 
-    :cond_8
+    :cond_9
     iget-object p3, p0, Lcom/fasterxml/jackson/databind/deser/impl/CreatorCollector;->_creators:[Lcom/fasterxml/jackson/databind/introspect/AnnotatedWithParams;
 
-    if-eqz p1, :cond_9
+    if-eqz p1, :cond_a
 
     iget-boolean v1, p0, Lcom/fasterxml/jackson/databind/deser/impl/CreatorCollector;->_canFixAccess:Z
 
-    if-eqz v1, :cond_9
+    if-eqz v1, :cond_a
 
-    invoke-virtual {p1}, Lcom/fasterxml/jackson/databind/introspect/Annotated;->getAnnotated()Ljava/lang/reflect/AnnotatedElement;
+    invoke-virtual {p1}, Lorg/joda/time/Chronology;->getAnnotated()Ljava/lang/reflect/AnnotatedElement;
 
     move-result-object v1
 
@@ -730,7 +749,7 @@
 
     invoke-static {v1, v2}, Lcom/fasterxml/jackson/databind/util/ClassUtil;->checkAndFixAccess(Ljava/lang/reflect/Member;Z)V
 
-    :cond_9
+    :cond_a
     aput-object p1, p3, p2
 
     return v0

@@ -56,13 +56,13 @@
 
     move-result-object v0
 
-    const-string v1, "(this as java.lang.String).getBytes(charset)"
+    const-string/jumbo v1, "this as java.lang.String).getBytes(charset)"
 
     invoke-static {v0, v1}, Lkotlin/jvm/internal/Intrinsics;->checkNotNullExpressionValue(Ljava/lang/Object;Ljava/lang/String;)V
 
     iget-object v1, p0, Lde/rki/coronawarnapp/presencetracing/checkins/qrcode/TraceLocation$locationId$2;->this$0:Lde/rki/coronawarnapp/presencetracing/checkins/qrcode/TraceLocation;
 
-    invoke-static {v1}, Lcom/google/android/material/shape/MaterialShapeUtils;->qrCodePayload(Lde/rki/coronawarnapp/presencetracing/checkins/qrcode/TraceLocation;)Lde/rki/coronawarnapp/server/protocols/internal/pt/TraceLocationOuterClass$QRCodePayload;
+    invoke-static {v1}, Lgeoregression/struct/ConvertFloatType;->qrCodePayload(Lde/rki/coronawarnapp/presencetracing/checkins/qrcode/TraceLocation;)Lde/rki/coronawarnapp/server/protocols/internal/pt/TraceLocationOuterClass$QRCodePayload;
 
     move-result-object v1
 

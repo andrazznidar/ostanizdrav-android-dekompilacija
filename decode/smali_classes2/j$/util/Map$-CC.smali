@@ -2,16 +2,22 @@
 .super Ljava/lang/Object;
 
 
+# annotations
+.annotation system Ldalvik/annotation/Signature;
+    value = {
+        "<K:",
+        "Ljava/lang/Object;",
+        "V:",
+        "Ljava/lang/Object;",
+        ">",
+        "Ljava/lang/Object;"
+    }
+.end annotation
+
+
 # direct methods
 .method public static $default$compute(Ljava/util/Map;Ljava/lang/Object;Lj$/util/function/BiFunction;)Ljava/lang/Object;
     .locals 1
-    .annotation system Ldalvik/annotation/Signature;
-        value = {
-            "(TK;",
-            "Lj$/util/function/BiFunction<",
-            "-TK;-TV;+TV;>;)TV;"
-        }
-    .end annotation
 
     invoke-static {p2}, Ljava/util/Objects;->requireNonNull(Ljava/lang/Object;)Ljava/lang/Object;
 
@@ -54,13 +60,6 @@
 
 .method public static $default$computeIfAbsent(Ljava/util/Map;Ljava/lang/Object;Lj$/util/function/Function;)Ljava/lang/Object;
     .locals 1
-    .annotation system Ldalvik/annotation/Signature;
-        value = {
-            "(TK;",
-            "Lj$/util/function/Function<",
-            "-TK;+TV;>;)TV;"
-        }
-    .end annotation
 
     invoke-static {p2}, Ljava/util/Objects;->requireNonNull(Ljava/lang/Object;)Ljava/lang/Object;
 
@@ -86,13 +85,6 @@
 
 .method public static $default$computeIfPresent(Ljava/util/Map;Ljava/lang/Object;Lj$/util/function/BiFunction;)Ljava/lang/Object;
     .locals 2
-    .annotation system Ldalvik/annotation/Signature;
-        value = {
-            "(TK;",
-            "Lj$/util/function/BiFunction<",
-            "-TK;-TV;+TV;>;)TV;"
-        }
-    .end annotation
 
     invoke-static {p2}, Ljava/util/Objects;->requireNonNull(Ljava/lang/Object;)Ljava/lang/Object;
 
@@ -123,13 +115,6 @@
 
 .method public static $default$forEach(Ljava/util/Map;Lj$/util/function/BiConsumer;)V
     .locals 2
-    .annotation system Ldalvik/annotation/Signature;
-        value = {
-            "(",
-            "Lj$/util/function/BiConsumer<",
-            "-TK;-TV;>;)V"
-        }
-    .end annotation
 
     invoke-static {p1}, Ljava/util/Objects;->requireNonNull(Ljava/lang/Object;)Ljava/lang/Object;
 
@@ -165,7 +150,7 @@
     :try_end_0
     .catch Ljava/lang/IllegalStateException; {:try_start_0 .. :try_end_0} :catch_0
 
-    invoke-interface {p1, v1, v0}, Lj$/util/function/BiConsumer;->y(Ljava/lang/Object;Ljava/lang/Object;)V
+    invoke-interface {p1, v1, v0}, Lj$/util/function/BiConsumer;->n(Ljava/lang/Object;Ljava/lang/Object;)V
 
     goto :goto_0
 
@@ -184,13 +169,6 @@
 
 .method public static $default$merge(Ljava/util/Map;Ljava/lang/Object;Ljava/lang/Object;Lj$/util/function/BiFunction;)Ljava/lang/Object;
     .locals 1
-    .annotation system Ldalvik/annotation/Signature;
-        value = {
-            "(TK;TV;",
-            "Lj$/util/function/BiFunction<",
-            "-TV;-TV;+TV;>;)TV;"
-        }
-    .end annotation
 
     invoke-static {p3}, Ljava/util/Objects;->requireNonNull(Ljava/lang/Object;)Ljava/lang/Object;
 
@@ -225,11 +203,6 @@
 
 .method public static $default$putIfAbsent(Ljava/util/Map;Ljava/lang/Object;Ljava/lang/Object;)Ljava/lang/Object;
     .locals 1
-    .annotation system Ldalvik/annotation/Signature;
-        value = {
-            "(TK;TV;)TV;"
-        }
-    .end annotation
 
     invoke-interface {p0, p1}, Ljava/util/Map;->get(Ljava/lang/Object;)Ljava/lang/Object;
 
@@ -252,7 +225,7 @@
 
     move-result-object v0
 
-    invoke-static {v0, p2}, Lj$/util/a;->t(Ljava/lang/Object;Ljava/lang/Object;)Z
+    invoke-static {v0, p2}, Lj$/util/a;->A(Ljava/lang/Object;Ljava/lang/Object;)Z
 
     move-result p2
 
@@ -284,11 +257,6 @@
 
 .method public static $default$replace(Ljava/util/Map;Ljava/lang/Object;Ljava/lang/Object;)Ljava/lang/Object;
     .locals 2
-    .annotation system Ldalvik/annotation/Signature;
-        value = {
-            "(TK;TV;)TV;"
-        }
-    .end annotation
 
     invoke-interface {p0, p1}, Ljava/util/Map;->get(Ljava/lang/Object;)Ljava/lang/Object;
 
@@ -313,17 +281,12 @@
 
 .method public static $default$replace(Ljava/util/Map;Ljava/lang/Object;Ljava/lang/Object;Ljava/lang/Object;)Z
     .locals 1
-    .annotation system Ldalvik/annotation/Signature;
-        value = {
-            "(TK;TV;TV;)Z"
-        }
-    .end annotation
 
     invoke-interface {p0, p1}, Ljava/util/Map;->get(Ljava/lang/Object;)Ljava/lang/Object;
 
     move-result-object v0
 
-    invoke-static {v0, p2}, Lj$/util/a;->t(Ljava/lang/Object;Ljava/lang/Object;)Z
+    invoke-static {v0, p2}, Lj$/util/a;->A(Ljava/lang/Object;Ljava/lang/Object;)Z
 
     move-result p2
 
@@ -355,13 +318,6 @@
 
 .method public static $default$replaceAll(Ljava/util/Map;Lj$/util/function/BiFunction;)V
     .locals 3
-    .annotation system Ldalvik/annotation/Signature;
-        value = {
-            "(",
-            "Lj$/util/function/BiFunction<",
-            "-TK;-TV;+TV;>;)V"
-        }
-    .end annotation
 
     invoke-static {p1}, Ljava/util/Objects;->requireNonNull(Ljava/lang/Object;)Ljava/lang/Object;
 

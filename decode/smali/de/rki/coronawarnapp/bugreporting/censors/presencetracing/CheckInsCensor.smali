@@ -76,7 +76,7 @@
 
 # virtual methods
 .method public checkLog(Ljava/lang/String;Lkotlin/coroutines/Continuation;)Ljava/lang/Object;
-    .locals 10
+    .locals 9
     .annotation system Ldalvik/annotation/Signature;
         value = {
             "(",
@@ -89,61 +89,59 @@
         }
     .end annotation
 
-    const-string v0, "action"
+    instance-of v0, p2, Lde/rki/coronawarnapp/bugreporting/censors/presencetracing/CheckInsCensor$checkLog$1;
 
-    instance-of v1, p2, Lde/rki/coronawarnapp/bugreporting/censors/presencetracing/CheckInsCensor$checkLog$1;
+    if-eqz v0, :cond_0
 
-    if-eqz v1, :cond_0
+    move-object v0, p2
 
-    move-object v1, p2
+    check-cast v0, Lde/rki/coronawarnapp/bugreporting/censors/presencetracing/CheckInsCensor$checkLog$1;
 
-    check-cast v1, Lde/rki/coronawarnapp/bugreporting/censors/presencetracing/CheckInsCensor$checkLog$1;
+    iget v1, v0, Lde/rki/coronawarnapp/bugreporting/censors/presencetracing/CheckInsCensor$checkLog$1;->label:I
 
-    iget v2, v1, Lde/rki/coronawarnapp/bugreporting/censors/presencetracing/CheckInsCensor$checkLog$1;->label:I
+    const/high16 v2, -0x80000000
 
-    const/high16 v3, -0x80000000
+    and-int v3, v1, v2
 
-    and-int v4, v2, v3
+    if-eqz v3, :cond_0
 
-    if-eqz v4, :cond_0
+    sub-int/2addr v1, v2
 
-    sub-int/2addr v2, v3
-
-    iput v2, v1, Lde/rki/coronawarnapp/bugreporting/censors/presencetracing/CheckInsCensor$checkLog$1;->label:I
+    iput v1, v0, Lde/rki/coronawarnapp/bugreporting/censors/presencetracing/CheckInsCensor$checkLog$1;->label:I
 
     goto :goto_0
 
     :cond_0
-    new-instance v1, Lde/rki/coronawarnapp/bugreporting/censors/presencetracing/CheckInsCensor$checkLog$1;
+    new-instance v0, Lde/rki/coronawarnapp/bugreporting/censors/presencetracing/CheckInsCensor$checkLog$1;
 
-    invoke-direct {v1, p0, p2}, Lde/rki/coronawarnapp/bugreporting/censors/presencetracing/CheckInsCensor$checkLog$1;-><init>(Lde/rki/coronawarnapp/bugreporting/censors/presencetracing/CheckInsCensor;Lkotlin/coroutines/Continuation;)V
+    invoke-direct {v0, p0, p2}, Lde/rki/coronawarnapp/bugreporting/censors/presencetracing/CheckInsCensor$checkLog$1;-><init>(Lde/rki/coronawarnapp/bugreporting/censors/presencetracing/CheckInsCensor;Lkotlin/coroutines/Continuation;)V
 
     :goto_0
-    iget-object p2, v1, Lde/rki/coronawarnapp/bugreporting/censors/presencetracing/CheckInsCensor$checkLog$1;->result:Ljava/lang/Object;
+    iget-object p2, v0, Lde/rki/coronawarnapp/bugreporting/censors/presencetracing/CheckInsCensor$checkLog$1;->result:Ljava/lang/Object;
 
-    sget-object v2, Lkotlin/coroutines/intrinsics/CoroutineSingletons;->COROUTINE_SUSPENDED:Lkotlin/coroutines/intrinsics/CoroutineSingletons;
+    sget-object v1, Lkotlin/coroutines/intrinsics/CoroutineSingletons;->COROUTINE_SUSPENDED:Lkotlin/coroutines/intrinsics/CoroutineSingletons;
 
-    iget v3, v1, Lde/rki/coronawarnapp/bugreporting/censors/presencetracing/CheckInsCensor$checkLog$1;->label:I
+    iget v2, v0, Lde/rki/coronawarnapp/bugreporting/censors/presencetracing/CheckInsCensor$checkLog$1;->label:I
 
-    const/4 v4, 0x0
+    const/4 v3, 0x0
 
-    const/4 v5, 0x1
+    const/4 v4, 0x1
 
-    if-eqz v3, :cond_2
+    if-eqz v2, :cond_2
 
-    if-ne v3, v5, :cond_1
+    if-ne v2, v4, :cond_1
 
-    iget-object p1, v1, Lde/rki/coronawarnapp/bugreporting/censors/presencetracing/CheckInsCensor$checkLog$1;->L$2:Ljava/lang/Object;
+    iget-object p1, v0, Lde/rki/coronawarnapp/bugreporting/censors/presencetracing/CheckInsCensor$checkLog$1;->L$2:Ljava/lang/Object;
 
     check-cast p1, Lkotlinx/coroutines/sync/Mutex;
 
-    iget-object v2, v1, Lde/rki/coronawarnapp/bugreporting/censors/presencetracing/CheckInsCensor$checkLog$1;->L$1:Ljava/lang/Object;
+    iget-object v1, v0, Lde/rki/coronawarnapp/bugreporting/censors/presencetracing/CheckInsCensor$checkLog$1;->L$1:Ljava/lang/Object;
 
-    check-cast v2, Ljava/lang/String;
+    check-cast v1, Ljava/lang/String;
 
-    iget-object v1, v1, Lde/rki/coronawarnapp/bugreporting/censors/presencetracing/CheckInsCensor$checkLog$1;->L$0:Ljava/lang/Object;
+    iget-object v0, v0, Lde/rki/coronawarnapp/bugreporting/censors/presencetracing/CheckInsCensor$checkLog$1;->L$0:Ljava/lang/Object;
 
-    check-cast v1, Lde/rki/coronawarnapp/bugreporting/censors/presencetracing/CheckInsCensor;
+    check-cast v0, Lde/rki/coronawarnapp/bugreporting/censors/presencetracing/CheckInsCensor;
 
     invoke-static {p2}, Lkotlin/ResultKt;->throwOnFailure(Ljava/lang/Object;)V
 
@@ -163,32 +161,32 @@
 
     iget-object p2, p0, Lde/rki/coronawarnapp/bugreporting/censors/presencetracing/CheckInsCensor;->mutex:Lkotlinx/coroutines/sync/Mutex;
 
-    iput-object p0, v1, Lde/rki/coronawarnapp/bugreporting/censors/presencetracing/CheckInsCensor$checkLog$1;->L$0:Ljava/lang/Object;
+    iput-object p0, v0, Lde/rki/coronawarnapp/bugreporting/censors/presencetracing/CheckInsCensor$checkLog$1;->L$0:Ljava/lang/Object;
 
-    iput-object p1, v1, Lde/rki/coronawarnapp/bugreporting/censors/presencetracing/CheckInsCensor$checkLog$1;->L$1:Ljava/lang/Object;
+    iput-object p1, v0, Lde/rki/coronawarnapp/bugreporting/censors/presencetracing/CheckInsCensor$checkLog$1;->L$1:Ljava/lang/Object;
 
-    iput-object p2, v1, Lde/rki/coronawarnapp/bugreporting/censors/presencetracing/CheckInsCensor$checkLog$1;->L$2:Ljava/lang/Object;
+    iput-object p2, v0, Lde/rki/coronawarnapp/bugreporting/censors/presencetracing/CheckInsCensor$checkLog$1;->L$2:Ljava/lang/Object;
 
-    iput v5, v1, Lde/rki/coronawarnapp/bugreporting/censors/presencetracing/CheckInsCensor$checkLog$1;->label:I
+    iput v4, v0, Lde/rki/coronawarnapp/bugreporting/censors/presencetracing/CheckInsCensor$checkLog$1;->label:I
 
-    invoke-interface {p2, v4, v1}, Lkotlinx/coroutines/sync/Mutex;->lock(Ljava/lang/Object;Lkotlin/coroutines/Continuation;)Ljava/lang/Object;
+    invoke-interface {p2, v3, v0}, Lkotlinx/coroutines/sync/Mutex;->lock(Ljava/lang/Object;Lkotlin/coroutines/Continuation;)Ljava/lang/Object;
 
-    move-result-object v1
+    move-result-object v0
 
-    if-ne v1, v2, :cond_3
+    if-ne v0, v1, :cond_3
 
-    return-object v2
+    return-object v1
 
     :cond_3
-    move-object v1, p0
+    move-object v0, p0
 
-    move-object v2, p1
+    move-object v1, p1
 
     move-object p1, p2
 
     :goto_1
     :try_start_0
-    iget-object p2, v1, Lde/rki/coronawarnapp/bugreporting/censors/presencetracing/CheckInsCensor;->checkInsHistory:Ljava/util/Set;
+    iget-object p2, v0, Lde/rki/coronawarnapp/bugreporting/censors/presencetracing/CheckInsCensor;->checkInsHistory:Ljava/util/Set;
 
     invoke-interface {p2}, Ljava/util/Set;->isEmpty()Z
 
@@ -198,19 +196,19 @@
 
     if-eqz p2, :cond_4
 
-    invoke-interface {p1, v4}, Lkotlinx/coroutines/sync/Mutex;->unlock(Ljava/lang/Object;)V
+    invoke-interface {p1, v3}, Lkotlinx/coroutines/sync/Mutex;->unlock(Ljava/lang/Object;)V
 
-    return-object v4
+    return-object v3
 
     :cond_4
     :try_start_1
-    iget-object p2, v1, Lde/rki/coronawarnapp/bugreporting/censors/presencetracing/CheckInsCensor;->checkInsHistory:Ljava/util/Set;
+    iget-object p2, v0, Lde/rki/coronawarnapp/bugreporting/censors/presencetracing/CheckInsCensor;->checkInsHistory:Ljava/util/Set;
 
-    new-instance v1, Lde/rki/coronawarnapp/bugreporting/censors/BugCensor$CensorContainer;
+    new-instance v0, Lde/rki/coronawarnapp/bugreporting/censors/BugCensor$CensorContainer;
 
-    const/4 v3, 0x2
+    const/4 v2, 0x2
 
-    invoke-direct {v1, v2, v4, v3}, Lde/rki/coronawarnapp/bugreporting/censors/BugCensor$CensorContainer;-><init>(Ljava/lang/String;Ljava/util/Set;I)V
+    invoke-direct {v0, v1, v3, v2}, Lde/rki/coronawarnapp/bugreporting/censors/BugCensor$CensorContainer;-><init>(Ljava/lang/String;Ljava/util/Set;I)V
 
     invoke-interface {p2}, Ljava/lang/Iterable;->iterator()Ljava/util/Iterator;
 
@@ -219,131 +217,127 @@
     :goto_2
     invoke-interface {p2}, Ljava/util/Iterator;->hasNext()Z
 
-    move-result v2
+    move-result v1
 
-    if-eqz v2, :cond_d
+    if-eqz v1, :cond_d
 
     invoke-interface {p2}, Ljava/util/Iterator;->next()Ljava/lang/Object;
 
-    move-result-object v2
+    move-result-object v1
 
-    check-cast v2, Lde/rki/coronawarnapp/presencetracing/checkins/CheckIn;
+    check-cast v1, Lde/rki/coronawarnapp/presencetracing/checkins/CheckIn;
 
-    new-instance v3, Lkotlin/jvm/internal/Ref$ObjectRef;
+    new-instance v2, Lkotlin/jvm/internal/Ref$ObjectRef;
 
-    invoke-direct {v3}, Lkotlin/jvm/internal/Ref$ObjectRef;-><init>()V
+    invoke-direct {v2}, Lkotlin/jvm/internal/Ref$ObjectRef;-><init>()V
 
-    iput-object v1, v3, Lkotlin/jvm/internal/Ref$ObjectRef;->element:Ljava/lang/Object;
+    iput-object v0, v2, Lkotlin/jvm/internal/Ref$ObjectRef;->element:Ljava/lang/Object;
 
-    iget-object v1, v2, Lde/rki/coronawarnapp/presencetracing/checkins/CheckIn;->description:Ljava/lang/String;
+    iget-object v0, v1, Lde/rki/coronawarnapp/presencetracing/checkins/CheckIn;->description:Ljava/lang/String;
 
-    new-instance v6, Lde/rki/coronawarnapp/bugreporting/censors/presencetracing/CheckInsCensor$checkLog$2$newLogMsg$1$1;
+    new-instance v5, Lde/rki/coronawarnapp/bugreporting/censors/presencetracing/CheckInsCensor$checkLog$2$newLogMsg$1$1;
 
-    invoke-direct {v6, v3, v2}, Lde/rki/coronawarnapp/bugreporting/censors/presencetracing/CheckInsCensor$checkLog$2$newLogMsg$1$1;-><init>(Lkotlin/jvm/internal/Ref$ObjectRef;Lde/rki/coronawarnapp/presencetracing/checkins/CheckIn;)V
+    invoke-direct {v5, v2, v1}, Lde/rki/coronawarnapp/bugreporting/censors/presencetracing/CheckInsCensor$checkLog$2$newLogMsg$1$1;-><init>(Lkotlin/jvm/internal/Ref$ObjectRef;Lde/rki/coronawarnapp/presencetracing/checkins/CheckIn;)V
 
-    invoke-static {v6, v0}, Lkotlin/jvm/internal/Intrinsics;->checkNotNullParameter(Ljava/lang/Object;Ljava/lang/String;)V
+    const/4 v6, 0x0
 
-    const/4 v7, 0x0
+    if-eqz v0, :cond_6
 
-    if-eqz v1, :cond_6
+    invoke-static {v0}, Lkotlin/text/StringsKt__StringsJVMKt;->isBlank(Ljava/lang/CharSequence;)Z
 
-    invoke-static {v1}, Lkotlin/text/StringsKt__StringsJVMKt;->isBlank(Ljava/lang/CharSequence;)Z
+    move-result v7
 
-    move-result v8
-
-    if-eqz v8, :cond_5
+    if-eqz v7, :cond_5
 
     goto :goto_3
 
     :cond_5
-    move v8, v7
+    move v7, v6
 
     goto :goto_4
 
     :cond_6
     :goto_3
-    move v8, v5
+    move v7, v4
 
     :goto_4
-    if-eqz v8, :cond_7
+    if-eqz v7, :cond_7
 
     goto :goto_5
 
     :cond_7
-    invoke-virtual {v1}, Ljava/lang/String;->length()I
+    invoke-virtual {v0}, Ljava/lang/String;->length()I
 
-    move-result v8
+    move-result v7
 
-    const/4 v9, 0x5
+    const/4 v8, 0x5
 
-    if-ge v8, v9, :cond_8
+    if-ge v7, v8, :cond_8
 
     goto :goto_5
 
     :cond_8
-    invoke-interface {v6, v1}, Lkotlin/jvm/functions/Function1;->invoke(Ljava/lang/Object;)Ljava/lang/Object;
+    invoke-interface {v5, v0}, Lkotlin/jvm/functions/Function1;->invoke(Ljava/lang/Object;)Ljava/lang/Object;
 
     :goto_5
-    iget-object v1, v2, Lde/rki/coronawarnapp/presencetracing/checkins/CheckIn;->address:Ljava/lang/String;
+    iget-object v0, v1, Lde/rki/coronawarnapp/presencetracing/checkins/CheckIn;->address:Ljava/lang/String;
 
-    new-instance v6, Lde/rki/coronawarnapp/bugreporting/censors/presencetracing/CheckInsCensor$checkLog$2$newLogMsg$1$2;
+    new-instance v5, Lde/rki/coronawarnapp/bugreporting/censors/presencetracing/CheckInsCensor$checkLog$2$newLogMsg$1$2;
 
-    invoke-direct {v6, v3, v2}, Lde/rki/coronawarnapp/bugreporting/censors/presencetracing/CheckInsCensor$checkLog$2$newLogMsg$1$2;-><init>(Lkotlin/jvm/internal/Ref$ObjectRef;Lde/rki/coronawarnapp/presencetracing/checkins/CheckIn;)V
+    invoke-direct {v5, v2, v1}, Lde/rki/coronawarnapp/bugreporting/censors/presencetracing/CheckInsCensor$checkLog$2$newLogMsg$1$2;-><init>(Lkotlin/jvm/internal/Ref$ObjectRef;Lde/rki/coronawarnapp/presencetracing/checkins/CheckIn;)V
 
-    invoke-static {v6, v0}, Lkotlin/jvm/internal/Intrinsics;->checkNotNullParameter(Ljava/lang/Object;Ljava/lang/String;)V
+    if-eqz v0, :cond_9
 
-    if-eqz v1, :cond_9
+    invoke-static {v0}, Lkotlin/text/StringsKt__StringsJVMKt;->isBlank(Ljava/lang/CharSequence;)Z
 
-    invoke-static {v1}, Lkotlin/text/StringsKt__StringsJVMKt;->isBlank(Ljava/lang/CharSequence;)Z
+    move-result v1
 
-    move-result v2
-
-    if-eqz v2, :cond_a
+    if-eqz v1, :cond_a
 
     :cond_9
-    move v7, v5
+    move v6, v4
 
     :cond_a
-    if-eqz v7, :cond_b
+    if-eqz v6, :cond_b
 
     goto :goto_6
 
     :cond_b
-    invoke-virtual {v1}, Ljava/lang/String;->length()I
+    invoke-virtual {v0}, Ljava/lang/String;->length()I
 
-    move-result v2
+    move-result v1
 
-    const/4 v7, 0x4
+    const/4 v6, 0x4
 
-    if-ge v2, v7, :cond_c
+    if-ge v1, v6, :cond_c
 
     goto :goto_6
 
     :cond_c
-    invoke-interface {v6, v1}, Lkotlin/jvm/functions/Function1;->invoke(Ljava/lang/Object;)Ljava/lang/Object;
+    invoke-interface {v5, v0}, Lkotlin/jvm/functions/Function1;->invoke(Ljava/lang/Object;)Ljava/lang/Object;
 
     :goto_6
-    iget-object v1, v3, Lkotlin/jvm/internal/Ref$ObjectRef;->element:Ljava/lang/Object;
+    iget-object v0, v2, Lkotlin/jvm/internal/Ref$ObjectRef;->element:Ljava/lang/Object;
 
-    check-cast v1, Lde/rki/coronawarnapp/bugreporting/censors/BugCensor$CensorContainer;
+    check-cast v0, Lde/rki/coronawarnapp/bugreporting/censors/BugCensor$CensorContainer;
 
     goto :goto_2
 
     :cond_d
-    invoke-virtual {v1}, Lde/rki/coronawarnapp/bugreporting/censors/BugCensor$CensorContainer;->nullIfEmpty()Lde/rki/coronawarnapp/bugreporting/censors/BugCensor$CensorContainer;
+    invoke-virtual {v0}, Lde/rki/coronawarnapp/bugreporting/censors/BugCensor$CensorContainer;->nullIfEmpty()Lde/rki/coronawarnapp/bugreporting/censors/BugCensor$CensorContainer;
 
     move-result-object p2
     :try_end_1
     .catchall {:try_start_1 .. :try_end_1} :catchall_0
 
-    invoke-interface {p1, v4}, Lkotlinx/coroutines/sync/Mutex;->unlock(Ljava/lang/Object;)V
+    invoke-interface {p1, v3}, Lkotlinx/coroutines/sync/Mutex;->unlock(Ljava/lang/Object;)V
 
     return-object p2
 
     :catchall_0
     move-exception p2
 
-    invoke-interface {p1, v4}, Lkotlinx/coroutines/sync/Mutex;->unlock(Ljava/lang/Object;)V
+    invoke-interface {p1, v3}, Lkotlinx/coroutines/sync/Mutex;->unlock(Ljava/lang/Object;)V
 
     throw p2
 .end method

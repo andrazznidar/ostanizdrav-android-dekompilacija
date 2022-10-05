@@ -1,6 +1,7 @@
-.class public abstract Lj$/time/temporal/w;
+.class public interface abstract Lj$/time/temporal/w;
 .super Ljava/lang/Object;
 
 
-# static fields
-.field public static final synthetic a:I
+# virtual methods
+.method public abstract a(Lj$/time/temporal/TemporalAccessor;)Ljava/lang/Object;
+.end method

@@ -164,7 +164,7 @@
 
     new-instance v3, Lkotlinx/coroutines/CancellableContinuationImpl;
 
-    invoke-static {p0}, Lkotlinx/coroutines/flow/FlowKt;->intercepted(Lkotlin/coroutines/Continuation;)Lkotlin/coroutines/Continuation;
+    invoke-static {p0}, Lcom/google/android/gms/nearby/messages/internal/zzag;->intercepted(Lkotlin/coroutines/Continuation;)Lkotlin/coroutines/Continuation;
 
     move-result-object v4
 
@@ -240,16 +240,9 @@
 
     if-ne p1, v0, :cond_2
 
-    const-string v1, "frame"
-
-    invoke-static {p0, v1}, Lkotlin/jvm/internal/Intrinsics;->checkNotNullParameter(Ljava/lang/Object;Ljava/lang/String;)V
-
-    :cond_2
-    if-ne p1, v0, :cond_3
-
     return-object v0
 
-    :cond_3
+    :cond_2
     :goto_0
     return-object p1
 .end method

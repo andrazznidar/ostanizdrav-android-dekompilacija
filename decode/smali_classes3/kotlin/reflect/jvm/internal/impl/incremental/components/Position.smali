@@ -6,19 +6,37 @@
 .implements Ljava/io/Serializable;
 
 
+# annotations
+.annotation system Ldalvik/annotation/MemberClasses;
+    value = {
+        Lkotlin/reflect/jvm/internal/impl/incremental/components/Position$Companion;
+    }
+.end annotation
+
+
 # static fields
-.field public static final NO_POSITION:Lkotlin/reflect/jvm/internal/impl/incremental/components/Position;
+.field public static final Companion:Lkotlin/reflect/jvm/internal/impl/incremental/components/Position$Companion;
+
+.field private static final NO_POSITION:Lkotlin/reflect/jvm/internal/impl/incremental/components/Position;
 
 
 # instance fields
-.field public final column:I
+.field private final column:I
 
-.field public final line:I
+.field private final line:I
 
 
 # direct methods
 .method public static constructor <clinit>()V
     .locals 2
+
+    new-instance v0, Lkotlin/reflect/jvm/internal/impl/incremental/components/Position$Companion;
+
+    const/4 v1, 0x0
+
+    invoke-direct {v0, v1}, Lkotlin/reflect/jvm/internal/impl/incremental/components/Position$Companion;-><init>(Lkotlin/jvm/internal/DefaultConstructorMarker;)V
+
+    sput-object v0, Lkotlin/reflect/jvm/internal/impl/incremental/components/Position;->Companion:Lkotlin/reflect/jvm/internal/impl/incremental/components/Position$Companion;
 
     new-instance v0, Lkotlin/reflect/jvm/internal/impl/incremental/components/Position;
 
@@ -41,6 +59,14 @@
     iput p2, p0, Lkotlin/reflect/jvm/internal/impl/incremental/components/Position;->column:I
 
     return-void
+.end method
+
+.method public static final synthetic access$getNO_POSITION$cp()Lkotlin/reflect/jvm/internal/impl/incremental/components/Position;
+    .locals 1
+
+    sget-object v0, Lkotlin/reflect/jvm/internal/impl/incremental/components/Position;->NO_POSITION:Lkotlin/reflect/jvm/internal/impl/incremental/components/Position;
+
+    return-object v0
 .end method
 
 

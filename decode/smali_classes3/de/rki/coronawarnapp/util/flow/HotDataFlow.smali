@@ -222,25 +222,15 @@
 
     iget p2, p1, Lkotlinx/coroutines/flow/SharingConfig;->extraBufferCapacity:I
 
-    iget-object p3, p1, Lkotlinx/coroutines/flow/SharingConfig;->onBufferOverflow:Ljava/lang/Object;
-
-    check-cast p3, Lkotlinx/coroutines/channels/BufferOverflow;
+    iget-object p3, p1, Lkotlinx/coroutines/flow/SharingConfig;->onBufferOverflow:Lkotlinx/coroutines/channels/BufferOverflow;
 
     invoke-static {p5, p2, p3}, Lkotlinx/coroutines/flow/SharedFlowKt;->MutableSharedFlow(IILkotlinx/coroutines/channels/BufferOverflow;)Lkotlinx/coroutines/flow/MutableSharedFlow;
 
     move-result-object p2
 
-    iget-object p3, p1, Lkotlinx/coroutines/flow/SharingConfig;->context:Ljava/lang/Object;
+    iget-object v3, p1, Lkotlinx/coroutines/flow/SharingConfig;->context:Lkotlin/coroutines/CoroutineContext;
 
-    move-object v3, p3
-
-    check-cast v3, Lkotlin/coroutines/CoroutineContext;
-
-    iget-object p1, p1, Lkotlinx/coroutines/flow/SharingConfig;->upstream:Ljava/lang/Object;
-
-    move-object v4, p1
-
-    check-cast v4, Lkotlinx/coroutines/flow/Flow;
+    iget-object v4, p1, Lkotlinx/coroutines/flow/SharingConfig;->upstream:Lkotlinx/coroutines/flow/Flow;
 
     sget-object v7, Lkotlinx/coroutines/flow/SharedFlowKt;->NO_VALUE:Lkotlinx/coroutines/internal/Symbol;
 
@@ -288,8 +278,6 @@
     and-int/lit8 p3, p6, 0x8
 
     if-eqz p3, :cond_1
-
-    sget p3, Lkotlinx/coroutines/flow/SharingStarted;->$r8$clinit:I
 
     const-wide/16 p3, 0x0
 

@@ -7,12 +7,6 @@
 
 
 # annotations
-.annotation system Ldalvik/annotation/MemberClasses;
-    value = {
-        Lde/rki/coronawarnapp/covidcertificate/validation/core/DccValidation$State;
-    }
-.end annotation
-
 .annotation system Ldalvik/annotation/SourceDebugExtension;
     value = "SMAP\nDccValidation.kt\nKotlin\n*S Kotlin\n*F\n+ 1 DccValidation.kt\nde/rki/coronawarnapp/covidcertificate/validation/core/DccValidation\n+ 2 _Collections.kt\nkotlin/collections/CollectionsKt___CollectionsKt\n*L\n1#1,62:1\n1720#2,3:63\n1720#2,3:66\n1741#2,3:69\n1741#2,3:72\n*S KotlinDebug\n*F\n+ 1 DccValidation.kt\nde/rki/coronawarnapp/covidcertificate/validation/core/DccValidation\n*L\n36#1:63,3\n37#1:66,3\n45#1:69,3\n46#1:72,3\n*E\n"
 .end annotation
@@ -256,14 +250,14 @@
     return v0
 .end method
 
-.method public final getState()Lde/rki/coronawarnapp/covidcertificate/validation/core/DccValidation$State;
+.method public final getState$enumunboxing$()I
     .locals 5
 
     iget-boolean v0, p0, Lde/rki/coronawarnapp/covidcertificate/validation/core/DccValidation;->expirationCheckPassed:Z
 
-    const/4 v1, 0x0
+    const/4 v1, 0x1
 
-    const/4 v2, 0x1
+    const/4 v2, 0x0
 
     if-eqz v0, :cond_1
 
@@ -278,24 +272,24 @@
     goto :goto_0
 
     :cond_0
-    move v3, v1
+    move v3, v2
 
     goto :goto_1
 
     :cond_1
     :goto_0
-    move v3, v2
+    move v3, v1
 
     :goto_1
+    const/4 v4, 0x2
+
     if-eqz v3, :cond_2
 
-    sget-object v0, Lde/rki/coronawarnapp/covidcertificate/validation/core/DccValidation$State;->TECHNICAL_FAILURE:Lde/rki/coronawarnapp/covidcertificate/validation/core/DccValidation$State;
+    const/4 v1, 0x3
 
-    goto/16 :goto_f
+    goto/16 :goto_10
 
     :cond_2
-    sget-object v3, Lde/rki/coronawarnapp/covidcertificate/validation/core/rule/DccValidationRule$Result;->PASSED:Lde/rki/coronawarnapp/covidcertificate/validation/core/rule/DccValidationRule$Result;
-
     if-eqz v0, :cond_b
 
     iget-boolean v0, p0, Lde/rki/coronawarnapp/covidcertificate/validation/core/DccValidation;->jsonSchemaCheckPassed:Z
@@ -308,15 +302,15 @@
 
     iget-object v0, p0, Lde/rki/coronawarnapp/covidcertificate/validation/core/DccValidation;->acceptanceRules:Ljava/util/Set;
 
-    instance-of v4, v0, Ljava/util/Collection;
+    instance-of v3, v0, Ljava/util/Collection;
 
-    if-eqz v4, :cond_3
+    if-eqz v3, :cond_3
 
     invoke-interface {v0}, Ljava/util/Collection;->isEmpty()Z
 
-    move-result v4
+    move-result v3
 
-    if-eqz v4, :cond_3
+    if-eqz v3, :cond_3
 
     goto :goto_3
 
@@ -328,52 +322,52 @@
     :cond_4
     invoke-interface {v0}, Ljava/util/Iterator;->hasNext()Z
 
-    move-result v4
+    move-result v3
 
-    if-eqz v4, :cond_6
+    if-eqz v3, :cond_6
 
     invoke-interface {v0}, Ljava/util/Iterator;->next()Ljava/lang/Object;
 
-    move-result-object v4
+    move-result-object v3
 
-    check-cast v4, Lde/rki/coronawarnapp/covidcertificate/validation/core/rule/EvaluatedDccRule;
+    check-cast v3, Lde/rki/coronawarnapp/covidcertificate/validation/core/rule/EvaluatedDccRule;
 
-    iget-object v4, v4, Lde/rki/coronawarnapp/covidcertificate/validation/core/rule/EvaluatedDccRule;->result:Lde/rki/coronawarnapp/covidcertificate/validation/core/rule/DccValidationRule$Result;
+    iget v3, v3, Lde/rki/coronawarnapp/covidcertificate/validation/core/rule/EvaluatedDccRule;->result:I
 
-    if-ne v4, v3, :cond_5
+    if-ne v3, v1, :cond_5
 
-    move v4, v2
+    move v3, v1
 
     goto :goto_2
 
     :cond_5
-    move v4, v1
+    move v3, v2
 
     :goto_2
-    if-nez v4, :cond_4
+    if-nez v3, :cond_4
 
-    move v0, v1
+    move v0, v2
 
     goto :goto_4
 
     :cond_6
     :goto_3
-    move v0, v2
+    move v0, v1
 
     :goto_4
     if-eqz v0, :cond_b
 
     iget-object v0, p0, Lde/rki/coronawarnapp/covidcertificate/validation/core/DccValidation;->invalidationRules:Ljava/util/Set;
 
-    instance-of v4, v0, Ljava/util/Collection;
+    instance-of v3, v0, Ljava/util/Collection;
 
-    if-eqz v4, :cond_7
+    if-eqz v3, :cond_7
 
     invoke-interface {v0}, Ljava/util/Collection;->isEmpty()Z
 
-    move-result v4
+    move-result v3
 
-    if-eqz v4, :cond_7
+    if-eqz v3, :cond_7
 
     goto :goto_6
 
@@ -385,199 +379,198 @@
     :cond_8
     invoke-interface {v0}, Ljava/util/Iterator;->hasNext()Z
 
-    move-result v4
+    move-result v3
 
-    if-eqz v4, :cond_a
+    if-eqz v3, :cond_a
 
     invoke-interface {v0}, Ljava/util/Iterator;->next()Ljava/lang/Object;
 
-    move-result-object v4
+    move-result-object v3
 
-    check-cast v4, Lde/rki/coronawarnapp/covidcertificate/validation/core/rule/EvaluatedDccRule;
+    check-cast v3, Lde/rki/coronawarnapp/covidcertificate/validation/core/rule/EvaluatedDccRule;
 
-    iget-object v4, v4, Lde/rki/coronawarnapp/covidcertificate/validation/core/rule/EvaluatedDccRule;->result:Lde/rki/coronawarnapp/covidcertificate/validation/core/rule/DccValidationRule$Result;
+    iget v3, v3, Lde/rki/coronawarnapp/covidcertificate/validation/core/rule/EvaluatedDccRule;->result:I
 
-    if-ne v4, v3, :cond_9
+    if-ne v3, v1, :cond_9
 
-    move v4, v2
+    move v3, v1
 
     goto :goto_5
 
     :cond_9
-    move v4, v1
+    move v3, v2
 
     :goto_5
-    if-nez v4, :cond_8
+    if-nez v3, :cond_8
 
-    move v0, v1
+    move v0, v2
 
     goto :goto_7
 
     :cond_a
     :goto_6
-    move v0, v2
+    move v0, v1
 
     :goto_7
     if-eqz v0, :cond_b
 
-    move v0, v2
+    move v0, v1
 
     goto :goto_8
 
     :cond_b
-    move v0, v1
+    move v0, v2
 
     :goto_8
     if-eqz v0, :cond_c
 
-    sget-object v0, Lde/rki/coronawarnapp/covidcertificate/validation/core/DccValidation$State;->PASSED:Lde/rki/coronawarnapp/covidcertificate/validation/core/DccValidation$State;
-
-    goto/16 :goto_f
+    goto/16 :goto_10
 
     :cond_c
-    sget-object v0, Lde/rki/coronawarnapp/covidcertificate/validation/core/rule/DccValidationRule$Result;->FAILED:Lde/rki/coronawarnapp/covidcertificate/validation/core/rule/DccValidationRule$Result;
+    iget-boolean v0, p0, Lde/rki/coronawarnapp/covidcertificate/validation/core/DccValidation;->expirationCheckPassed:Z
 
-    iget-boolean v3, p0, Lde/rki/coronawarnapp/covidcertificate/validation/core/DccValidation;->expirationCheckPassed:Z
+    if-eqz v0, :cond_15
 
-    if-eqz v3, :cond_16
+    iget-boolean v0, p0, Lde/rki/coronawarnapp/covidcertificate/validation/core/DccValidation;->jsonSchemaCheckPassed:Z
 
-    iget-boolean v3, p0, Lde/rki/coronawarnapp/covidcertificate/validation/core/DccValidation;->jsonSchemaCheckPassed:Z
+    if-eqz v0, :cond_15
 
-    if-eqz v3, :cond_16
+    iget-boolean v0, p0, Lde/rki/coronawarnapp/covidcertificate/validation/core/DccValidation;->signatureCheckPassed:Z
 
-    iget-boolean v3, p0, Lde/rki/coronawarnapp/covidcertificate/validation/core/DccValidation;->signatureCheckPassed:Z
+    if-eqz v0, :cond_15
 
-    if-eqz v3, :cond_16
+    iget-object v0, p0, Lde/rki/coronawarnapp/covidcertificate/validation/core/DccValidation;->acceptanceRules:Ljava/util/Set;
 
-    iget-object v3, p0, Lde/rki/coronawarnapp/covidcertificate/validation/core/DccValidation;->acceptanceRules:Ljava/util/Set;
+    instance-of v3, v0, Ljava/util/Collection;
 
-    instance-of v4, v3, Ljava/util/Collection;
+    if-eqz v3, :cond_d
 
-    if-eqz v4, :cond_d
+    invoke-interface {v0}, Ljava/util/Collection;->isEmpty()Z
 
-    invoke-interface {v3}, Ljava/util/Collection;->isEmpty()Z
+    move-result v3
 
-    move-result v4
-
-    if-eqz v4, :cond_d
+    if-eqz v3, :cond_d
 
     goto :goto_a
 
     :cond_d
-    invoke-interface {v3}, Ljava/lang/Iterable;->iterator()Ljava/util/Iterator;
+    invoke-interface {v0}, Ljava/lang/Iterable;->iterator()Ljava/util/Iterator;
+
+    move-result-object v0
+
+    :cond_e
+    invoke-interface {v0}, Ljava/util/Iterator;->hasNext()Z
+
+    move-result v3
+
+    if-eqz v3, :cond_10
+
+    invoke-interface {v0}, Ljava/util/Iterator;->next()Ljava/lang/Object;
 
     move-result-object v3
 
-    :cond_e
-    invoke-interface {v3}, Ljava/util/Iterator;->hasNext()Z
+    check-cast v3, Lde/rki/coronawarnapp/covidcertificate/validation/core/rule/EvaluatedDccRule;
 
-    move-result v4
+    iget v3, v3, Lde/rki/coronawarnapp/covidcertificate/validation/core/rule/EvaluatedDccRule;->result:I
 
-    if-eqz v4, :cond_10
+    if-ne v3, v4, :cond_f
 
-    invoke-interface {v3}, Ljava/util/Iterator;->next()Ljava/lang/Object;
-
-    move-result-object v4
-
-    check-cast v4, Lde/rki/coronawarnapp/covidcertificate/validation/core/rule/EvaluatedDccRule;
-
-    iget-object v4, v4, Lde/rki/coronawarnapp/covidcertificate/validation/core/rule/EvaluatedDccRule;->result:Lde/rki/coronawarnapp/covidcertificate/validation/core/rule/DccValidationRule$Result;
-
-    if-ne v4, v0, :cond_f
-
-    move v4, v2
+    move v3, v1
 
     goto :goto_9
 
     :cond_f
-    move v4, v1
+    move v3, v2
 
     :goto_9
-    if-eqz v4, :cond_e
+    if-eqz v3, :cond_e
 
-    move v3, v2
+    move v0, v1
 
     goto :goto_b
 
     :cond_10
     :goto_a
-    move v3, v1
+    move v0, v2
 
     :goto_b
-    if-nez v3, :cond_15
+    if-nez v0, :cond_16
 
-    iget-object v3, p0, Lde/rki/coronawarnapp/covidcertificate/validation/core/DccValidation;->invalidationRules:Ljava/util/Set;
+    iget-object v0, p0, Lde/rki/coronawarnapp/covidcertificate/validation/core/DccValidation;->invalidationRules:Ljava/util/Set;
 
-    instance-of v4, v3, Ljava/util/Collection;
+    instance-of v3, v0, Ljava/util/Collection;
 
-    if-eqz v4, :cond_11
+    if-eqz v3, :cond_11
 
-    invoke-interface {v3}, Ljava/util/Collection;->isEmpty()Z
+    invoke-interface {v0}, Ljava/util/Collection;->isEmpty()Z
 
-    move-result v4
+    move-result v3
 
-    if-eqz v4, :cond_11
+    if-eqz v3, :cond_11
 
     goto :goto_d
 
     :cond_11
-    invoke-interface {v3}, Ljava/lang/Iterable;->iterator()Ljava/util/Iterator;
+    invoke-interface {v0}, Ljava/lang/Iterable;->iterator()Ljava/util/Iterator;
+
+    move-result-object v0
+
+    :cond_12
+    invoke-interface {v0}, Ljava/util/Iterator;->hasNext()Z
+
+    move-result v3
+
+    if-eqz v3, :cond_14
+
+    invoke-interface {v0}, Ljava/util/Iterator;->next()Ljava/lang/Object;
 
     move-result-object v3
 
-    :cond_12
-    invoke-interface {v3}, Ljava/util/Iterator;->hasNext()Z
+    check-cast v3, Lde/rki/coronawarnapp/covidcertificate/validation/core/rule/EvaluatedDccRule;
 
-    move-result v4
+    iget v3, v3, Lde/rki/coronawarnapp/covidcertificate/validation/core/rule/EvaluatedDccRule;->result:I
 
-    if-eqz v4, :cond_14
+    if-ne v3, v4, :cond_13
 
-    invoke-interface {v3}, Ljava/util/Iterator;->next()Ljava/lang/Object;
-
-    move-result-object v4
-
-    check-cast v4, Lde/rki/coronawarnapp/covidcertificate/validation/core/rule/EvaluatedDccRule;
-
-    iget-object v4, v4, Lde/rki/coronawarnapp/covidcertificate/validation/core/rule/EvaluatedDccRule;->result:Lde/rki/coronawarnapp/covidcertificate/validation/core/rule/DccValidationRule$Result;
-
-    if-ne v4, v0, :cond_13
-
-    move v4, v2
+    move v3, v1
 
     goto :goto_c
 
     :cond_13
-    move v4, v1
+    move v3, v2
 
     :goto_c
-    if-eqz v4, :cond_12
+    if-eqz v3, :cond_12
 
-    move v0, v2
+    move v0, v1
 
     goto :goto_e
 
     :cond_14
     :goto_d
-    move v0, v1
+    move v0, v2
 
     :goto_e
-    if-eqz v0, :cond_16
+    if-eqz v0, :cond_15
+
+    goto :goto_f
 
     :cond_15
     move v1, v2
 
     :cond_16
+    :goto_f
     if-eqz v1, :cond_17
 
-    sget-object v0, Lde/rki/coronawarnapp/covidcertificate/validation/core/DccValidation$State;->FAILURE:Lde/rki/coronawarnapp/covidcertificate/validation/core/DccValidation$State;
+    const/4 v1, 0x4
 
-    goto :goto_f
+    goto :goto_10
 
     :cond_17
-    sget-object v0, Lde/rki/coronawarnapp/covidcertificate/validation/core/DccValidation$State;->OPEN:Lde/rki/coronawarnapp/covidcertificate/validation/core/DccValidation$State;
+    move v1, v4
 
-    :goto_f
-    return-object v0
+    :goto_10
+    return v1
 .end method
 
 .method public hashCode()I

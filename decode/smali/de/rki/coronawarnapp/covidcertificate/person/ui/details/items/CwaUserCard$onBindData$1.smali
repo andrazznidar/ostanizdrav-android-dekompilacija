@@ -111,7 +111,7 @@
     goto :goto_0
 
     :cond_1
-    invoke-static {v3}, Lkotlin/collections/CollectionsKt___CollectionsKt;->singleOrNull(Ljava/util/List;)Ljava/lang/Object;
+    invoke-static {v3}, Lkotlin/collections/CollectionsKt___CollectionsKt;->lastOrNull(Ljava/util/List;)Ljava/lang/Object;
 
     move-result-object v2
 
@@ -134,10 +134,18 @@
 
     iget-object v0, v1, Lde/rki/coronawarnapp/databinding/CwaUserCardItemBinding;->userName:Landroid/widget/TextView;
 
+    if-nez v3, :cond_3
+
+    const/4 v6, 0x0
+
+    goto :goto_1
+
+    :cond_3
     invoke-interface {v3}, Lde/rki/coronawarnapp/covidcertificate/common/certificate/CwaCovidCertificate;->getFullName()Ljava/lang/String;
 
     move-result-object v6
 
+    :goto_1
     invoke-virtual {v0, v6}, Landroid/widget/TextView;->setText(Ljava/lang/CharSequence;)V
 
     iget-object v6, v1, Lde/rki/coronawarnapp/databinding/CwaUserCardItemBinding;->dateOfBirth:Landroid/widget/TextView;
@@ -146,15 +154,28 @@
 
     move-result-object v7
 
-    const v8, 0x7f130346
+    const v8, 0x7f130350
 
     const/4 v9, 0x1
 
     new-array v10, v9, [Ljava/lang/Object;
 
+    if-nez v3, :cond_4
+
+    goto :goto_2
+
+    :cond_4
     invoke-interface {v3}, Lde/rki/coronawarnapp/covidcertificate/common/certificate/CwaCovidCertificate;->getDateOfBirthFormatted()Ljava/lang/String;
 
-    move-result-object v11
+    move-result-object v0
+
+    if-nez v0, :cond_5
+
+    :goto_2
+    const-string v0, ""
+
+    :cond_5
+    move-object v11, v0
 
     const/4 v12, 0x0
 
@@ -171,16 +192,18 @@
 
     move v13, v12
 
-    :goto_1
+    :cond_6
     invoke-virtual {v0}, Ljava/lang/String;->length()I
 
     move-result v14
 
-    if-ge v13, v14, :cond_4
+    if-ge v13, v14, :cond_7
 
     invoke-virtual {v0, v13}, Ljava/lang/String;->charAt(I)C
 
     move-result v14
+
+    add-int/lit8 v13, v13, 0x1
 
     invoke-static {v14}, Ljava/lang/Character;->isDigit(C)Z
 
@@ -188,23 +211,18 @@
 
     xor-int/lit8 v15, v15, 0x1
 
-    if-eqz v15, :cond_3
+    if-eqz v15, :cond_6
 
     invoke-static {v14}, Ljava/lang/Character;->valueOf(C)Ljava/lang/Character;
 
     move-result-object v0
 
-    goto :goto_2
+    goto :goto_3
 
-    :cond_3
-    add-int/lit8 v13, v13, 0x1
-
-    goto :goto_1
-
-    :cond_4
+    :cond_7
     const/4 v0, 0x0
 
-    :goto_2
+    :goto_3
     invoke-static {v0}, Ljava/lang/String;->valueOf(Ljava/lang/Object;)Ljava/lang/String;
 
     move-result-object v14
@@ -221,7 +239,7 @@
 
     const-string v15, "-"
 
-    if-eqz v0, :cond_5
+    if-eqz v0, :cond_8
 
     :try_start_1
     filled-new-array {v15}, [Ljava/lang/String;
@@ -282,9 +300,9 @@
 
     move-result-object v11
 
-    goto :goto_3
+    goto :goto_4
 
-    :cond_5
+    :cond_8
     filled-new-array {v15}, [Ljava/lang/String;
 
     move-result-object v0
@@ -315,7 +333,7 @@
     :try_end_1
     .catch Ljava/lang/Exception; {:try_start_1 .. :try_end_1} :catch_0
 
-    goto :goto_3
+    goto :goto_4
 
     :catch_0
     move-exception v0
@@ -332,7 +350,7 @@
 
     invoke-virtual {v13, v0, v14, v15}, Ltimber/log/Timber$Forest;->d(Ljava/lang/Throwable;Ljava/lang/String;[Ljava/lang/Object;)V
 
-    :goto_3
+    :goto_4
     aput-object v11, v10, v12
 
     invoke-virtual {v7, v8, v10}, Landroid/content/Context;->getString(I[Ljava/lang/Object;)Ljava/lang/String;
@@ -347,14 +365,22 @@
 
     move-result-object v5
 
-    const v6, 0x7f130347
+    const v6, 0x7f130351
 
     new-array v7, v9, [Ljava/lang/Object;
 
+    if-nez v3, :cond_9
+
+    const/4 v3, 0x0
+
+    goto :goto_5
+
+    :cond_9
     invoke-interface {v3}, Lde/rki/coronawarnapp/covidcertificate/common/certificate/CwaCovidCertificate;->getFullName()Ljava/lang/String;
 
     move-result-object v3
 
+    :goto_5
     aput-object v3, v7, v12
 
     invoke-virtual {v5, v6, v7}, Landroid/content/Context;->getString(I[Ljava/lang/Object;)Ljava/lang/String;

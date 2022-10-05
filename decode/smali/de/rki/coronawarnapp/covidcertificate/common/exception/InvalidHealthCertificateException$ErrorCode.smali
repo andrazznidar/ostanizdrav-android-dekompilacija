@@ -57,6 +57,8 @@
 
 .field public static final enum HC_CWT_NO_ISS:Lde/rki/coronawarnapp/covidcertificate/common/exception/InvalidHealthCertificateException$ErrorCode;
 
+.field public static final enum HC_DCC_BLOCKED:Lde/rki/coronawarnapp/covidcertificate/common/exception/InvalidHealthCertificateException$ErrorCode;
+
 .field public static final enum HC_DSC_EXPIRED:Lde/rki/coronawarnapp/covidcertificate/common/exception/InvalidHealthCertificateException$ErrorCode;
 
 .field public static final enum HC_DSC_NOT_YET_VALID:Lde/rki/coronawarnapp/covidcertificate/common/exception/InvalidHealthCertificateException$ErrorCode;
@@ -104,7 +106,7 @@
 
 # direct methods
 .method public static constructor <clinit>()V
-    .locals 39
+    .locals 40
 
     new-instance v0, Lde/rki/coronawarnapp/covidcertificate/common/exception/InvalidHealthCertificateException$ErrorCode;
 
@@ -584,155 +586,173 @@
 
     sput-object v2, Lde/rki/coronawarnapp/covidcertificate/common/exception/InvalidHealthCertificateException$ErrorCode;->HC_DSC_EXPIRED:Lde/rki/coronawarnapp/covidcertificate/common/exception/InvalidHealthCertificateException$ErrorCode;
 
-    const/16 v4, 0x24
+    new-instance v4, Lde/rki/coronawarnapp/covidcertificate/common/exception/InvalidHealthCertificateException$ErrorCode;
 
-    new-array v4, v4, [Lde/rki/coronawarnapp/covidcertificate/common/exception/InvalidHealthCertificateException$ErrorCode;
+    const-string v14, "HC_DCC_BLOCKED"
+
+    const/16 v15, 0x24
+
+    move-object/from16 v39, v2
+
+    const-string v2, "DSC blocked."
+
+    invoke-direct {v4, v14, v15, v2}, Lde/rki/coronawarnapp/covidcertificate/common/exception/InvalidHealthCertificateException$ErrorCode;-><init>(Ljava/lang/String;ILjava/lang/String;)V
+
+    sput-object v4, Lde/rki/coronawarnapp/covidcertificate/common/exception/InvalidHealthCertificateException$ErrorCode;->HC_DCC_BLOCKED:Lde/rki/coronawarnapp/covidcertificate/common/exception/InvalidHealthCertificateException$ErrorCode;
+
+    const/16 v2, 0x25
+
+    new-array v2, v2, [Lde/rki/coronawarnapp/covidcertificate/common/exception/InvalidHealthCertificateException$ErrorCode;
 
     const/4 v14, 0x0
 
-    aput-object v0, v4, v14
+    aput-object v0, v2, v14
 
     const/4 v0, 0x1
 
-    aput-object v1, v4, v0
+    aput-object v1, v2, v0
 
     const/4 v0, 0x2
 
-    aput-object v3, v4, v0
+    aput-object v3, v2, v0
 
     const/4 v0, 0x3
 
-    aput-object v5, v4, v0
+    aput-object v5, v2, v0
 
     const/4 v0, 0x4
 
-    aput-object v7, v4, v0
+    aput-object v7, v2, v0
 
     const/4 v0, 0x5
 
-    aput-object v9, v4, v0
+    aput-object v9, v2, v0
 
     const/4 v0, 0x6
 
-    aput-object v11, v4, v0
+    aput-object v11, v2, v0
 
     const/4 v0, 0x7
 
-    aput-object v13, v4, v0
+    aput-object v13, v2, v0
 
     const/16 v0, 0x8
 
-    aput-object v12, v4, v0
+    aput-object v12, v2, v0
 
     const/16 v0, 0x9
 
-    aput-object v10, v4, v0
+    aput-object v10, v2, v0
 
     const/16 v0, 0xa
 
-    aput-object v8, v4, v0
+    aput-object v8, v2, v0
 
     const/16 v0, 0xb
 
-    aput-object v6, v4, v0
+    aput-object v6, v2, v0
 
     const/16 v0, 0xc
 
-    aput-object v16, v4, v0
+    aput-object v16, v2, v0
 
     const/16 v0, 0xd
 
-    aput-object v17, v4, v0
+    aput-object v17, v2, v0
 
     const/16 v0, 0xe
 
-    aput-object v18, v4, v0
+    aput-object v18, v2, v0
 
     const/16 v0, 0xf
 
-    aput-object v19, v4, v0
+    aput-object v19, v2, v0
 
     const/16 v0, 0x10
 
-    aput-object v20, v4, v0
+    aput-object v20, v2, v0
 
     const/16 v0, 0x11
 
-    aput-object v21, v4, v0
+    aput-object v21, v2, v0
 
     const/16 v0, 0x12
 
-    aput-object v22, v4, v0
+    aput-object v22, v2, v0
 
     const/16 v0, 0x13
 
-    aput-object v23, v4, v0
+    aput-object v23, v2, v0
 
     const/16 v0, 0x14
 
-    aput-object v24, v4, v0
+    aput-object v24, v2, v0
 
     const/16 v0, 0x15
 
-    aput-object v25, v4, v0
+    aput-object v25, v2, v0
 
     const/16 v0, 0x16
 
-    aput-object v26, v4, v0
+    aput-object v26, v2, v0
 
     const/16 v0, 0x17
 
-    aput-object v27, v4, v0
+    aput-object v27, v2, v0
 
     const/16 v0, 0x18
 
-    aput-object v28, v4, v0
+    aput-object v28, v2, v0
 
     const/16 v0, 0x19
 
-    aput-object v29, v4, v0
+    aput-object v29, v2, v0
 
     const/16 v0, 0x1a
 
-    aput-object v30, v4, v0
+    aput-object v30, v2, v0
 
     const/16 v0, 0x1b
 
-    aput-object v31, v4, v0
+    aput-object v31, v2, v0
 
     const/16 v0, 0x1c
 
-    aput-object v32, v4, v0
+    aput-object v32, v2, v0
 
     const/16 v0, 0x1d
 
-    aput-object v33, v4, v0
+    aput-object v33, v2, v0
 
     const/16 v0, 0x1e
 
-    aput-object v34, v4, v0
+    aput-object v34, v2, v0
 
     const/16 v0, 0x1f
 
-    aput-object v35, v4, v0
+    aput-object v35, v2, v0
 
     const/16 v0, 0x20
 
-    aput-object v36, v4, v0
+    aput-object v36, v2, v0
 
     const/16 v0, 0x21
 
-    aput-object v37, v4, v0
+    aput-object v37, v2, v0
 
     const/16 v0, 0x22
 
-    aput-object v38, v4, v0
+    aput-object v38, v2, v0
 
     const/16 v0, 0x23
 
-    aput-object v2, v4, v0
+    aput-object v39, v2, v0
 
-    sput-object v4, Lde/rki/coronawarnapp/covidcertificate/common/exception/InvalidHealthCertificateException$ErrorCode;->$VALUES:[Lde/rki/coronawarnapp/covidcertificate/common/exception/InvalidHealthCertificateException$ErrorCode;
+    const/16 v0, 0x24
+
+    aput-object v4, v2, v0
+
+    sput-object v2, Lde/rki/coronawarnapp/covidcertificate/common/exception/InvalidHealthCertificateException$ErrorCode;->$VALUES:[Lde/rki/coronawarnapp/covidcertificate/common/exception/InvalidHealthCertificateException$ErrorCode;
 
     return-void
 .end method

@@ -81,7 +81,7 @@
 .method public performClick()Z
     .locals 2
 
-    invoke-super {p0}, Landroid/view/View;->performClick()Z
+    invoke-super {p0}, Landroid/widget/ImageView;->performClick()Z
 
     move-result v0
 

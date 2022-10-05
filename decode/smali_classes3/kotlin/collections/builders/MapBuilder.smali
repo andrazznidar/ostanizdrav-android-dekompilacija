@@ -4,6 +4,7 @@
 
 # interfaces
 .implements Ljava/util/Map;
+.implements Ljava/io/Serializable;
 .implements Lkotlin/jvm/internal/markers/KMutableMap;
 
 
@@ -28,6 +29,7 @@
         "Ljava/lang/Object;",
         "Ljava/util/Map<",
         "TK;TV;>;",
+        "Ljava/io/Serializable;",
         "Lkotlin/jvm/internal/markers/KMutableMap;"
     }
 .end annotation
@@ -323,7 +325,7 @@
 .end method
 
 .method public clear()V
-    .locals 6
+    .locals 7
 
     invoke-virtual {p0}, Lkotlin/collections/builders/MapBuilder;->checkIsMutable$kotlin_stdlib()V
 
@@ -333,33 +335,39 @@
 
     const/4 v1, 0x0
 
-    if-ltz v0, :cond_1
+    if-ltz v0, :cond_2
 
     move v2, v1
 
     :goto_0
-    iget-object v3, p0, Lkotlin/collections/builders/MapBuilder;->presenceArray:[I
+    add-int/lit8 v3, v2, 0x1
 
-    aget v4, v3, v2
+    iget-object v4, p0, Lkotlin/collections/builders/MapBuilder;->presenceArray:[I
 
-    if-ltz v4, :cond_0
+    aget v5, v4, v2
 
-    iget-object v5, p0, Lkotlin/collections/builders/MapBuilder;->hashArray:[I
+    if-ltz v5, :cond_0
 
-    aput v1, v5, v4
+    iget-object v6, p0, Lkotlin/collections/builders/MapBuilder;->hashArray:[I
 
-    const/4 v4, -0x1
+    aput v1, v6, v5
 
-    aput v4, v3, v2
+    const/4 v5, -0x1
+
+    aput v5, v4, v2
 
     :cond_0
-    if-eq v2, v0, :cond_1
+    if-ne v2, v0, :cond_1
 
-    add-int/lit8 v2, v2, 0x1
+    goto :goto_1
+
+    :cond_1
+    move v2, v3
 
     goto :goto_0
 
-    :cond_1
+    :cond_2
+    :goto_1
     iget-object v0, p0, Lkotlin/collections/builders/MapBuilder;->keysArray:[Ljava/lang/Object;
 
     iget v2, p0, Lkotlin/collections/builders/MapBuilder;->length:I
@@ -368,13 +376,16 @@
 
     iget-object v0, p0, Lkotlin/collections/builders/MapBuilder;->valuesArray:[Ljava/lang/Object;
 
-    if-eqz v0, :cond_2
+    if-nez v0, :cond_3
 
+    goto :goto_2
+
+    :cond_3
     iget v2, p0, Lkotlin/collections/builders/MapBuilder;->length:I
 
     invoke-static {v0, v1, v2}, Lkotlin/collections/builders/ListBuilderKt;->resetRange([Ljava/lang/Object;II)V
 
-    :cond_2
+    :goto_2
     iput v1, p0, Lkotlin/collections/builders/MapBuilder;->size:I
 
     iput v1, p0, Lkotlin/collections/builders/MapBuilder;->length:I
@@ -527,6 +538,8 @@
 
     add-int/2addr p1, v0
 
+    if-ltz p1, :cond_5
+
     iget-object v1, p0, Lkotlin/collections/builders/MapBuilder;->keysArray:[Ljava/lang/Object;
 
     array-length v2, v1
@@ -555,16 +568,16 @@
 
     iget-object v0, p0, Lkotlin/collections/builders/MapBuilder;->valuesArray:[Ljava/lang/Object;
 
-    if-eqz v0, :cond_1
+    if-nez v0, :cond_1
 
-    invoke-static {v0, p1}, Lkotlin/collections/builders/ListBuilderKt;->copyOfUninitializedElements([Ljava/lang/Object;I)[Ljava/lang/Object;
-
-    move-result-object v0
+    const/4 v0, 0x0
 
     goto :goto_1
 
     :cond_1
-    const/4 v0, 0x0
+    invoke-static {v0, p1}, Lkotlin/collections/builders/ListBuilderKt;->copyOfUninitializedElements([Ljava/lang/Object;I)[Ljava/lang/Object;
+
+    move-result-object v0
 
     :goto_1
     iput-object v0, p0, Lkotlin/collections/builders/MapBuilder;->valuesArray:[Ljava/lang/Object;
@@ -575,7 +588,7 @@
 
     move-result-object v0
 
-    const-string v1, "java.util.Arrays.copyOf(this, newSize)"
+    const-string v1, "copyOf(this, newSize)"
 
     invoke-static {v0, v1}, Lkotlin/jvm/internal/Intrinsics;->checkNotNullExpressionValue(Ljava/lang/Object;Ljava/lang/String;)V
 
@@ -624,6 +637,13 @@
     :cond_4
     :goto_2
     return-void
+
+    :cond_5
+    new-instance p1, Ljava/lang/OutOfMemoryError;
+
+    invoke-direct {p1}, Ljava/lang/OutOfMemoryError;-><init>()V
+
+    throw p1
 .end method
 
 .method public final entrySet()Ljava/util/Set;
@@ -848,16 +868,16 @@
         }
     .end annotation
 
-    if-eqz p1, :cond_0
+    if-nez p1, :cond_0
 
-    invoke-virtual {p1}, Ljava/lang/Object;->hashCode()I
-
-    move-result p1
+    const/4 p1, 0x0
 
     goto :goto_0
 
     :cond_0
-    const/4 p1, 0x0
+    invoke-virtual {p1}, Ljava/lang/Object;->hashCode()I
+
+    move-result p1
 
     :goto_0
     const v0, -0x61c88647
@@ -907,16 +927,16 @@
 
     aget-object v3, v4, v3
 
-    if-eqz v3, :cond_0
+    if-nez v3, :cond_0
 
-    invoke-virtual {v3}, Ljava/lang/Object;->hashCode()I
-
-    move-result v3
+    move v3, v1
 
     goto :goto_1
 
     :cond_0
-    move v3, v1
+    invoke-virtual {v3}, Ljava/lang/Object;->hashCode()I
+
+    move-result v3
 
     :goto_1
     iget-object v4, v0, Lkotlin/collections/builders/MapBuilder$Itr;->map:Lkotlin/collections/builders/MapBuilder;
@@ -929,16 +949,16 @@
 
     aget-object v4, v4, v5
 
-    if-eqz v4, :cond_1
+    if-nez v4, :cond_1
 
-    invoke-virtual {v4}, Ljava/lang/Object;->hashCode()I
-
-    move-result v4
+    move v4, v1
 
     goto :goto_2
 
     :cond_1
-    move v4, v1
+    invoke-virtual {v4}, Ljava/lang/Object;->hashCode()I
+
+    move-result v4
 
     :goto_2
     xor-int/2addr v3, v4
@@ -1130,9 +1150,7 @@
 
     move-result v3
 
-    xor-int/lit8 v3, v3, 0x1
-
-    if-eqz v3, :cond_1
+    if-nez v3, :cond_1
 
     invoke-interface {v0}, Ljava/util/Map$Entry;->getValue()Ljava/lang/Object;
 
@@ -1200,13 +1218,16 @@
 
     invoke-static {v1, v3, v4}, Lkotlin/collections/builders/ListBuilderKt;->resetRange([Ljava/lang/Object;II)V
 
-    if-eqz v0, :cond_3
+    if-nez v0, :cond_3
 
+    goto :goto_1
+
+    :cond_3
     iget v1, p0, Lkotlin/collections/builders/MapBuilder;->length:I
 
     invoke-static {v0, v3, v1}, Lkotlin/collections/builders/ListBuilderKt;->resetRange([Ljava/lang/Object;II)V
 
-    :cond_3
+    :goto_1
     iput v3, p0, Lkotlin/collections/builders/MapBuilder;->length:I
 
     :cond_4
@@ -1230,17 +1251,17 @@
 
     iput p1, p0, Lkotlin/collections/builders/MapBuilder;->hashShift:I
 
-    goto :goto_1
+    goto :goto_2
 
     :cond_5
     array-length p1, v0
 
     invoke-static {v0, v2, p1, v2}, Ljava/util/Arrays;->fill([IIII)V
 
-    :goto_1
+    :goto_2
     move p1, v2
 
-    :goto_2
+    :goto_3
     iget v0, p0, Lkotlin/collections/builders/MapBuilder;->length:I
 
     if-ge p1, v0, :cond_a
@@ -1257,7 +1278,7 @@
 
     iget v4, p0, Lkotlin/collections/builders/MapBuilder;->maxProbeDistance:I
 
-    :goto_3
+    :goto_4
     iget-object v5, p0, Lkotlin/collections/builders/MapBuilder;->hashArray:[I
 
     aget v6, v5, v1
@@ -1272,7 +1293,7 @@
 
     move p1, v3
 
-    goto :goto_4
+    goto :goto_5
 
     :cond_6
     add-int/lit8 v4, v4, -0x1
@@ -1281,12 +1302,12 @@
 
     move p1, v2
 
-    :goto_4
+    :goto_5
     if-eqz p1, :cond_7
 
     move p1, v0
 
-    goto :goto_2
+    goto :goto_3
 
     :cond_7
     new-instance p1, Ljava/lang/IllegalStateException;
@@ -1306,12 +1327,12 @@
 
     sub-int/2addr v1, v3
 
-    goto :goto_3
+    goto :goto_4
 
     :cond_9
     move v1, v6
 
-    goto :goto_3
+    goto :goto_4
 
     :cond_a
     return-void
@@ -1560,10 +1581,6 @@
     invoke-virtual {v0, v3}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
 
     :cond_0
-    const-string v3, "sb"
-
-    invoke-static {v0, v3}, Lkotlin/jvm/internal/Intrinsics;->checkNotNullParameter(Ljava/lang/Object;Ljava/lang/String;)V
-
     iget v3, v2, Lkotlin/collections/builders/MapBuilder$Itr;->index:I
 
     iget-object v4, v2, Lkotlin/collections/builders/MapBuilder$Itr;->map:Lkotlin/collections/builders/MapBuilder;

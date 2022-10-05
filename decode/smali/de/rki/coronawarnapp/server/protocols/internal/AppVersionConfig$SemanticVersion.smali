@@ -110,7 +110,7 @@
     return-void
 .end method
 
-.method public static synthetic -$$Nest$sfgetDEFAULT_INSTANCE()Lde/rki/coronawarnapp/server/protocols/internal/AppVersionConfig$SemanticVersion;
+.method public static bridge synthetic -$$Nest$sfgetDEFAULT_INSTANCE()Lde/rki/coronawarnapp/server/protocols/internal/AppVersionConfig$SemanticVersion;
     .locals 1
 
     sget-object v0, Lde/rki/coronawarnapp/server/protocols/internal/AppVersionConfig$SemanticVersion;->DEFAULT_INSTANCE:Lde/rki/coronawarnapp/server/protocols/internal/AppVersionConfig$SemanticVersion;
@@ -722,7 +722,7 @@
     :pswitch_4
     new-instance p1, Lde/rki/coronawarnapp/server/protocols/internal/AppVersionConfig$SemanticVersion$Builder;
 
-    invoke-direct {p1, v0}, Lde/rki/coronawarnapp/server/protocols/internal/AppVersionConfig$SemanticVersion$Builder;-><init>(Lde/rki/coronawarnapp/server/protocols/internal/AppVersionConfig$SemanticVersion$Builder-IA;)V
+    invoke-direct {p1, v0}, Lde/rki/coronawarnapp/server/protocols/internal/AppVersionConfig$SemanticVersion$Builder;-><init>(Lcom/google/crypto/tink/subtle/Field25519$$ExternalSyntheticOutline0;)V
 
     return-object p1
 

@@ -43,7 +43,7 @@
 
     new-array v4, v2, [I
 
-    const v6, 0x7f0d00d8
+    const v6, 0x7f0d00e9
 
     aput v6, v4, v5
 
@@ -75,37 +75,37 @@
 
     sput-object v0, Lde/rki/coronawarnapp/databinding/FragmentInteroperabilityConfigurationBindingImpl;->sViewsWithIds:Landroid/util/SparseIntArray;
 
-    const v1, 0x7f0a03c0
+    const v1, 0x7f0a03f4
 
     const/4 v2, 0x6
 
     invoke-virtual {v0, v1, v2}, Landroid/util/SparseIntArray;->put(II)V
 
-    const v1, 0x7f0a07db
+    const v1, 0x7f0a0823
 
     const/4 v2, 0x7
 
     invoke-virtual {v0, v1, v2}, Landroid/util/SparseIntArray;->put(II)V
 
-    const v1, 0x7f0a03d4
+    const v1, 0x7f0a0408
 
     const/16 v2, 0x8
 
     invoke-virtual {v0, v1, v2}, Landroid/util/SparseIntArray;->put(II)V
 
-    const v1, 0x7f0a03d5
+    const v1, 0x7f0a0409
 
     const/16 v2, 0x9
 
     invoke-virtual {v0, v1, v2}, Landroid/util/SparseIntArray;->put(II)V
 
-    const v1, 0x7f0a0237
+    const v1, 0x7f0a0256
 
     const/16 v2, 0xa
 
     invoke-virtual {v0, v1, v2}, Landroid/util/SparseIntArray;->put(II)V
 
-    const v1, 0x7f0a03d7
+    const v1, 0x7f0a040b
 
     const/16 v2, 0xb
 
@@ -121,8 +121,8 @@
 
     :array_1
     .array-data 4
-        0x7f0d00dc
-        0x7f0d00da
+        0x7f0d00ed
+        0x7f0d00eb
     .end array-data
 .end method
 
@@ -340,11 +340,11 @@
     move-result v6
 
     :cond_0
-    invoke-static {v6}, Lcom/google/android/gms/internal/nearby/zzfc;->formatVisibilityInverted(Z)I
+    invoke-static {v6}, Lorg/ejml/dense/row/misc/ImplCommonOps_DDMA;->formatVisibilityInverted(Z)I
 
     move-result v7
 
-    invoke-static {v6}, Lcom/google/android/gms/internal/nearby/zzfc;->formatVisibility(Z)I
+    invoke-static {v6}, Lorg/ejml/dense/row/misc/ImplCommonOps_DDMA;->formatVisibility(Z)I
 
     move-result v6
 
@@ -395,7 +395,7 @@
 
     move-result-object v1
 
-    const v2, 0x7f13022c
+    const v2, 0x7f13024d
 
     invoke-virtual {v1, v2}, Landroid/content/res/Resources;->getString(I)Ljava/lang/String;
 
@@ -407,17 +407,17 @@
 
     iget-object v1, p0, Landroidx/databinding/ViewDataBinding;->mRoot:Landroid/view/View;
 
-    const v2, 0x7f0800d0
+    const v2, 0x7f0800c1
 
-    invoke-static {v1, v2, v0}, Lde/rki/coronawarnapp/databinding/FragmentInformationAboutBindingImpl$$ExternalSyntheticOutline0;->m(Landroid/view/View;ILde/rki/coronawarnapp/databinding/IncludeHeaderBinding;)V
+    invoke-static {v1, v2, v0}, Landroidx/constraintlayout/core/widgets/analyzer/DependencyNode$Type$EnumUnboxingLocalUtility;->m(Landroid/view/View;ILde/rki/coronawarnapp/databinding/IncludeHeaderBinding;)V
 
     iget-object v0, p0, Lde/rki/coronawarnapp/databinding/FragmentInteroperabilityConfigurationBinding;->interoperabilityConfigurationHeader:Lde/rki/coronawarnapp/databinding/IncludeHeaderBinding;
 
     iget-object v1, p0, Landroidx/databinding/ViewDataBinding;->mRoot:Landroid/view/View;
 
-    const v2, 0x7f130243
+    const v2, 0x7f130262
 
-    invoke-static {v1, v2, v0}, Lde/rki/coronawarnapp/databinding/FragmentInformationAboutBindingImpl$$ExternalSyntheticOutline1;->m(Landroid/view/View;ILde/rki/coronawarnapp/databinding/IncludeHeaderBinding;)V
+    invoke-static {v1, v2, v0}, Lde/rki/coronawarnapp/server/protocols/internal/ppdd/PpaData$ExposureRiskMetadata$Builder-IA;->m(Landroid/view/View;ILde/rki/coronawarnapp/databinding/IncludeHeaderBinding;)V
 
     sget v0, Landroidx/databinding/ViewDataBinding;->SDK_INT:I
 
@@ -431,7 +431,7 @@
 
     move-result-object v1
 
-    const v2, 0x7f13022f
+    const v2, 0x7f130250
 
     invoke-virtual {v1, v2}, Landroid/content/res/Resources;->getString(I)Ljava/lang/String;
 

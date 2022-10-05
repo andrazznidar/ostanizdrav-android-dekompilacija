@@ -15,14 +15,18 @@
 
 
 # instance fields
-.field public final name:Lkotlin/reflect/jvm/internal/impl/name/Name;
+.field private final name:Lkotlin/reflect/jvm/internal/impl/name/Name;
 
-.field public final signature:Ljava/lang/String;
+.field private final signature:Ljava/lang/String;
 
 
 # direct methods
 .method public constructor <init>(Lkotlin/reflect/jvm/internal/impl/name/Name;Ljava/lang/String;)V
     .locals 1
+
+    const-string v0, "name"
+
+    invoke-static {p1, v0}, Lkotlin/jvm/internal/Intrinsics;->checkNotNullParameter(Ljava/lang/Object;Ljava/lang/String;)V
 
     const-string v0, "signature"
 
@@ -87,6 +91,22 @@
 
     :cond_3
     return v0
+.end method
+
+.method public final getName()Lkotlin/reflect/jvm/internal/impl/name/Name;
+    .locals 1
+
+    iget-object v0, p0, Lkotlin/reflect/jvm/internal/impl/load/java/SpecialGenericSignatures$Companion$NameAndSignature;->name:Lkotlin/reflect/jvm/internal/impl/name/Name;
+
+    return-object v0
+.end method
+
+.method public final getSignature()Ljava/lang/String;
+    .locals 1
+
+    iget-object v0, p0, Lkotlin/reflect/jvm/internal/impl/load/java/SpecialGenericSignatures$Companion$NameAndSignature;->signature:Ljava/lang/String;
+
+    return-object v0
 .end method
 
 .method public hashCode()I

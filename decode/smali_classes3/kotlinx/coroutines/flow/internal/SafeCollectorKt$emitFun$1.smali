@@ -16,20 +16,6 @@
     name = null
 .end annotation
 
-.annotation system Ldalvik/annotation/Signature;
-    value = {
-        "Lkotlin/jvm/internal/FunctionReferenceImpl;",
-        "Lkotlin/jvm/functions/Function3<",
-        "Lkotlinx/coroutines/flow/FlowCollector<",
-        "-",
-        "Ljava/lang/Object;",
-        ">;",
-        "Ljava/lang/Object;",
-        "Lkotlin/Unit;",
-        ">;"
-    }
-.end annotation
-
 
 # static fields
 .field public static final INSTANCE:Lkotlinx/coroutines/flow/internal/SafeCollectorKt$emitFun$1;

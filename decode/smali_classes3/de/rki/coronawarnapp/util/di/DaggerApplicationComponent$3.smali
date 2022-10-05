@@ -53,7 +53,7 @@
 
     const/4 v2, 0x0
 
-    invoke-direct {v0, v1, v2}, Lde/rki/coronawarnapp/util/di/DaggerApplicationComponent$AutoCheckOutBootRestoreReceiverSubcomponentFactory;-><init>(Lde/rki/coronawarnapp/util/di/DaggerApplicationComponent;Lde/rki/coronawarnapp/util/di/DaggerApplicationComponent$AutoCheckOutBootRestoreReceiverSubcomponentFactory-IA;)V
+    invoke-direct {v0, v1, v2}, Lde/rki/coronawarnapp/util/di/DaggerApplicationComponent$AutoCheckOutBootRestoreReceiverSubcomponentFactory;-><init>(Lde/rki/coronawarnapp/util/di/DaggerApplicationComponent;Lorg/bouncycastle/crypto/digests/RIPEMD160Digest$$ExternalSyntheticOutline1;)V
 
     return-object v0
 .end method

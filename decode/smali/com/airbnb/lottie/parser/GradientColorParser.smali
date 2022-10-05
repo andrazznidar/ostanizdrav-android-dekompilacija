@@ -48,19 +48,17 @@
 
     invoke-direct {v1}, Ljava/util/ArrayList;-><init>()V
 
-    invoke-virtual/range {p1 .. p1}, Lcom/airbnb/lottie/parser/moshi/JsonReader;->peek()Lcom/airbnb/lottie/parser/moshi/JsonReader$Token;
+    invoke-virtual/range {p1 .. p1}, Lcom/airbnb/lottie/parser/moshi/JsonReader;->peek$enumunboxing$()I
 
-    move-result-object v2
+    move-result v2
 
-    sget-object v3, Lcom/airbnb/lottie/parser/moshi/JsonReader$Token;->BEGIN_ARRAY:Lcom/airbnb/lottie/parser/moshi/JsonReader$Token;
+    const/4 v3, 0x1
 
     const/4 v4, 0x0
 
-    const/4 v5, 0x1
-
     if-ne v2, v3, :cond_0
 
-    move v2, v5
+    move v2, v3
 
     goto :goto_0
 
@@ -76,21 +74,21 @@
     :goto_1
     invoke-virtual/range {p1 .. p1}, Lcom/airbnb/lottie/parser/moshi/JsonReader;->hasNext()Z
 
-    move-result v3
+    move-result v5
 
-    if-eqz v3, :cond_2
+    if-eqz v5, :cond_2
 
     invoke-virtual/range {p1 .. p1}, Lcom/airbnb/lottie/parser/moshi/JsonReader;->nextDouble()D
 
-    move-result-wide v6
+    move-result-wide v5
 
-    double-to-float v3, v6
+    double-to-float v5, v5
 
-    invoke-static {v3}, Ljava/lang/Float;->valueOf(F)Ljava/lang/Float;
+    invoke-static {v5}, Ljava/lang/Float;->valueOf(F)Ljava/lang/Float;
 
-    move-result-object v3
+    move-result-object v5
 
-    invoke-virtual {v1, v3}, Ljava/util/ArrayList;->add(Ljava/lang/Object;)Z
+    invoke-virtual {v1, v5}, Ljava/util/ArrayList;->add(Ljava/lang/Object;)Z
 
     goto :goto_1
 
@@ -102,9 +100,9 @@
     :cond_3
     iget v2, v0, Lcom/airbnb/lottie/parser/GradientColorParser;->colorPoints:I
 
-    const/4 v3, -0x1
+    const/4 v5, -0x1
 
-    if-ne v2, v3, :cond_4
+    if-ne v2, v5, :cond_4
 
     invoke-virtual {v1}, Ljava/util/ArrayList;->size()I
 
@@ -117,7 +115,7 @@
     :cond_4
     iget v2, v0, Lcom/airbnb/lottie/parser/GradientColorParser;->colorPoints:I
 
-    new-array v3, v2, [F
+    new-array v5, v2, [F
 
     new-array v2, v2, [I
 
@@ -156,7 +154,7 @@
 
     if-eqz v15, :cond_8
 
-    if-eq v15, v5, :cond_7
+    if-eq v15, v3, :cond_7
 
     if-eq v15, v12, :cond_6
 
@@ -198,7 +196,7 @@
     :cond_8
     double-to-float v10, v13
 
-    aput v10, v3, v9
+    aput v10, v5, v9
 
     :goto_3
     add-int/lit8 v6, v6, 0x1
@@ -208,20 +206,17 @@
     :cond_9
     new-instance v6, Lcom/airbnb/lottie/model/content/GradientColor;
 
-    invoke-direct {v6, v3, v2}, Lcom/airbnb/lottie/model/content/GradientColor;-><init>([F[I)V
+    invoke-direct {v6, v5, v2}, Lcom/airbnb/lottie/model/content/GradientColor;-><init>([F[I)V
 
     invoke-virtual {v1}, Ljava/util/ArrayList;->size()I
 
     move-result v2
 
-    if-gt v2, v9, :cond_b
-
-    :cond_a
-    move-object v5, v6
+    if-gt v2, v9, :cond_a
 
     goto/16 :goto_9
 
-    :cond_b
+    :cond_a
     invoke-virtual {v1}, Ljava/util/ArrayList;->size()I
 
     move-result v2
@@ -230,7 +225,7 @@
 
     div-int/2addr v2, v12
 
-    new-array v3, v2, [D
+    new-array v5, v2, [D
 
     new-array v7, v2, [D
 
@@ -241,11 +236,11 @@
 
     move-result v12
 
-    if-ge v9, v12, :cond_d
+    if-ge v9, v12, :cond_c
 
     rem-int/lit8 v12, v9, 0x2
 
-    if-nez v12, :cond_c
+    if-nez v12, :cond_b
 
     invoke-virtual {v1, v9}, Ljava/util/ArrayList;->get(I)Ljava/lang/Object;
 
@@ -259,11 +254,11 @@
 
     float-to-double v12, v12
 
-    aput-wide v12, v3, v8
+    aput-wide v12, v5, v8
 
     goto :goto_5
 
-    :cond_c
+    :cond_b
     invoke-virtual {v1, v9}, Ljava/util/ArrayList;->get(I)Ljava/lang/Object;
 
     move-result-object v12
@@ -285,13 +280,13 @@
 
     goto :goto_4
 
-    :cond_d
+    :cond_c
     :goto_6
     iget-object v1, v6, Lcom/airbnb/lottie/model/content/GradientColor;->colors:[I
 
     array-length v8, v1
 
-    if-ge v4, v8, :cond_a
+    if-ge v4, v8, :cond_f
 
     aget v1, v1, v4
 
@@ -301,22 +296,22 @@
 
     float-to-double v8, v8
 
-    move v12, v5
+    move v12, v3
 
     :goto_7
-    if-ge v12, v2, :cond_f
+    if-ge v12, v2, :cond_e
 
     add-int/lit8 v13, v12, -0x1
 
-    aget-wide v14, v3, v13
+    aget-wide v14, v5, v13
 
-    aget-wide v16, v3, v12
+    aget-wide v16, v5, v12
 
-    aget-wide v18, v3, v12
+    aget-wide v18, v5, v12
 
     cmpl-double v18, v18, v8
 
-    if-ltz v18, :cond_e
+    if-ltz v18, :cond_d
 
     sub-double/2addr v8, v14
 
@@ -326,19 +321,19 @@
 
     const-wide/16 v14, 0x0
 
-    move-object/from16 p1, v6
+    move/from16 v16, v4
 
-    const-wide/high16 v5, 0x3ff0000000000000L    # 1.0
+    const-wide/high16 v3, 0x3ff0000000000000L    # 1.0
 
-    sget-object v16, Lcom/airbnb/lottie/utils/MiscUtils;->pathFromDataCurrentPoint:Landroid/graphics/PointF;
+    sget-object v17, Lcom/airbnb/lottie/utils/MiscUtils;->pathFromDataCurrentPoint:Landroid/graphics/PointF;
 
-    invoke-static {v5, v6, v8, v9}, Ljava/lang/Math;->min(DD)D
+    invoke-static {v3, v4, v8, v9}, Ljava/lang/Math;->min(DD)D
 
-    move-result-wide v5
+    move-result-wide v3
 
-    invoke-static {v14, v15, v5, v6}, Ljava/lang/Math;->max(DD)D
+    invoke-static {v14, v15, v3, v4}, Ljava/lang/Math;->max(DD)D
 
-    move-result-wide v5
+    move-result-wide v3
 
     aget-wide v8, v7, v13
 
@@ -346,40 +341,40 @@
 
     sub-double/2addr v12, v8
 
-    mul-double/2addr v12, v5
+    mul-double/2addr v12, v3
 
     add-double/2addr v12, v8
 
     mul-double/2addr v12, v10
 
-    double-to-int v5, v12
+    double-to-int v3, v12
 
     goto :goto_8
 
-    :cond_e
-    move-object/from16 p1, v6
+    :cond_d
+    move/from16 v16, v4
 
     add-int/lit8 v12, v12, 0x1
 
-    const/4 v5, 0x1
+    const/4 v3, 0x1
 
     goto :goto_7
 
-    :cond_f
-    move-object/from16 p1, v6
+    :cond_e
+    move/from16 v16, v4
 
-    add-int/lit8 v5, v2, -0x1
+    add-int/lit8 v3, v2, -0x1
 
-    aget-wide v5, v7, v5
+    aget-wide v3, v7, v3
 
-    mul-double/2addr v5, v10
+    mul-double/2addr v3, v10
 
-    double-to-int v5, v5
+    double-to-int v3, v3
 
     :goto_8
     invoke-static {v1}, Landroid/graphics/Color;->red(I)I
 
-    move-result v6
+    move-result v4
 
     invoke-static {v1}, Landroid/graphics/Color;->green(I)I
 
@@ -389,24 +384,21 @@
 
     move-result v1
 
-    invoke-static {v5, v6, v8, v1}, Landroid/graphics/Color;->argb(IIII)I
+    invoke-static {v3, v4, v8, v1}, Landroid/graphics/Color;->argb(IIII)I
 
     move-result v1
 
-    move-object/from16 v5, p1
+    iget-object v3, v6, Lcom/airbnb/lottie/model/content/GradientColor;->colors:[I
 
-    iget-object v6, v5, Lcom/airbnb/lottie/model/content/GradientColor;->colors:[I
+    aput v1, v3, v16
 
-    aput v1, v6, v4
+    add-int/lit8 v4, v16, 0x1
 
-    add-int/lit8 v4, v4, 0x1
-
-    move-object v6, v5
-
-    const/4 v5, 0x1
+    const/4 v3, 0x1
 
     goto :goto_6
 
+    :cond_f
     :goto_9
-    return-object v5
+    return-object v6
 .end method

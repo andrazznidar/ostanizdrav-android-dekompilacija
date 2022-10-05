@@ -36,7 +36,7 @@
     return-void
 .end method
 
-.method public static getInstance(Lorg/joda/time/Chronology;Lorg/joda/time/base/AbstractDateTime;Lorg/joda/time/base/AbstractDateTime;)Lorg/joda/time/chrono/LimitChronology;
+.method public static getInstance(Lorg/joda/time/Chronology;Lorg/joda/time/ReadableDateTime;Lorg/joda/time/ReadableDateTime;)Lorg/joda/time/chrono/LimitChronology;
     .locals 1
 
     if-eqz p0, :cond_4
@@ -932,7 +932,7 @@
 
     move-result-object v3
 
-    invoke-static {v3, v1, v2}, Lorg/joda/time/chrono/LimitChronology;->getInstance(Lorg/joda/time/Chronology;Lorg/joda/time/base/AbstractDateTime;Lorg/joda/time/base/AbstractDateTime;)Lorg/joda/time/chrono/LimitChronology;
+    invoke-static {v3, v1, v2}, Lorg/joda/time/chrono/LimitChronology;->getInstance(Lorg/joda/time/Chronology;Lorg/joda/time/ReadableDateTime;Lorg/joda/time/ReadableDateTime;)Lorg/joda/time/chrono/LimitChronology;
 
     move-result-object v1
 

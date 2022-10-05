@@ -25,7 +25,7 @@
 
 
 # instance fields
-.field public final initializer:Lkotlin/jvm/functions/Function0;
+.field private final initializer:Lkotlin/jvm/functions/Function0;
     .annotation system Ldalvik/annotation/Signature;
         value = {
             "Lkotlin/jvm/functions/Function0<",
@@ -34,12 +34,50 @@
     .end annotation
 .end field
 
-.field public volatile value:Ljava/lang/Object;
+.field private volatile value:Ljava/lang/Object;
 
 
 # direct methods
-.method public constructor <init>(Lkotlin/jvm/functions/Function0;)V
+.method private static synthetic $$$reportNull$$$0(I)V
     .locals 2
+
+    const/4 p0, 0x3
+
+    new-array p0, p0, [Ljava/lang/Object;
+
+    const/4 v0, 0x0
+
+    const-string v1, "initializer"
+
+    aput-object v1, p0, v0
+
+    const/4 v0, 0x1
+
+    const-string v1, "kotlin/reflect/jvm/internal/ReflectProperties$LazyVal"
+
+    aput-object v1, p0, v0
+
+    const/4 v0, 0x2
+
+    const-string v1, "<init>"
+
+    aput-object v1, p0, v0
+
+    const-string v0, "Argument for @NotNull parameter \'%s\' of %s.%s must not be null"
+
+    invoke-static {v0, p0}, Ljava/lang/String;->format(Ljava/lang/String;[Ljava/lang/Object;)Ljava/lang/String;
+
+    move-result-object p0
+
+    new-instance v0, Ljava/lang/IllegalArgumentException;
+
+    invoke-direct {v0, p0}, Ljava/lang/IllegalArgumentException;-><init>(Ljava/lang/String;)V
+
+    throw v0
+.end method
+
+.method public constructor <init>(Lkotlin/jvm/functions/Function0;)V
+    .locals 1
     .annotation system Ldalvik/annotation/Signature;
         value = {
             "(",
@@ -48,8 +86,13 @@
         }
     .end annotation
 
-    if-eqz p1, :cond_0
+    if-nez p1, :cond_0
 
+    const/4 v0, 0x0
+
+    invoke-static {v0}, Lkotlin/reflect/jvm/internal/ReflectProperties$LazyVal;->$$$reportNull$$$0(I)V
+
+    :cond_0
     invoke-direct {p0}, Lkotlin/reflect/jvm/internal/ReflectProperties$Val;-><init>()V
 
     const/4 v0, 0x0
@@ -59,41 +102,6 @@
     iput-object p1, p0, Lkotlin/reflect/jvm/internal/ReflectProperties$LazyVal;->initializer:Lkotlin/jvm/functions/Function0;
 
     return-void
-
-    :cond_0
-    const/4 p1, 0x3
-
-    new-array p1, p1, [Ljava/lang/Object;
-
-    const/4 v0, 0x0
-
-    const-string v1, "initializer"
-
-    aput-object v1, p1, v0
-
-    const/4 v0, 0x1
-
-    const-string v1, "kotlin/reflect/jvm/internal/ReflectProperties$LazyVal"
-
-    aput-object v1, p1, v0
-
-    const/4 v0, 0x2
-
-    const-string v1, "<init>"
-
-    aput-object v1, p1, v0
-
-    const-string v0, "Argument for @NotNull parameter \'%s\' of %s.%s must not be null"
-
-    invoke-static {v0, p1}, Ljava/lang/String;->format(Ljava/lang/String;[Ljava/lang/Object;)Ljava/lang/String;
-
-    move-result-object p1
-
-    new-instance v0, Ljava/lang/IllegalArgumentException;
-
-    invoke-direct {v0, p1}, Ljava/lang/IllegalArgumentException;-><init>(Ljava/lang/String;)V
-
-    throw v0
 .end method
 
 
@@ -108,34 +116,25 @@
 
     iget-object v0, p0, Lkotlin/reflect/jvm/internal/ReflectProperties$LazyVal;->value:Ljava/lang/Object;
 
-    if-eqz v0, :cond_1
+    if-eqz v0, :cond_0
 
-    sget-object v1, Lkotlin/reflect/jvm/internal/ReflectProperties$Val;->NULL_VALUE:Ljava/lang/Object;
+    invoke-virtual {p0, v0}, Lkotlin/reflect/jvm/internal/ReflectProperties$Val;->unescape(Ljava/lang/Object;)Ljava/lang/Object;
 
-    if-ne v0, v1, :cond_0
+    move-result-object v0
 
-    const/4 v0, 0x0
-
-    :cond_0
     return-object v0
 
-    :cond_1
+    :cond_0
     iget-object v0, p0, Lkotlin/reflect/jvm/internal/ReflectProperties$LazyVal;->initializer:Lkotlin/jvm/functions/Function0;
 
     invoke-interface {v0}, Lkotlin/jvm/functions/Function0;->invoke()Ljava/lang/Object;
 
     move-result-object v0
 
-    if-nez v0, :cond_2
+    invoke-virtual {p0, v0}, Lkotlin/reflect/jvm/internal/ReflectProperties$Val;->escape(Ljava/lang/Object;)Ljava/lang/Object;
 
-    sget-object v1, Lkotlin/reflect/jvm/internal/ReflectProperties$Val;->NULL_VALUE:Ljava/lang/Object;
+    move-result-object v1
 
-    goto :goto_0
-
-    :cond_2
-    move-object v1, v0
-
-    :goto_0
     iput-object v1, p0, Lkotlin/reflect/jvm/internal/ReflectProperties$LazyVal;->value:Ljava/lang/Object;
 
     return-object v0

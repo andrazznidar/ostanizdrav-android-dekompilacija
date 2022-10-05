@@ -37,7 +37,7 @@
 
 
 # instance fields
-.field public mResultGuardian:Lcom/google/android/gms/common/api/internal/zar;
+.field private mResultGuardian:Lcom/google/android/gms/common/api/internal/zar;
     .annotation build Lcom/google/android/gms/common/annotation/KeepName;
     .end annotation
 
@@ -283,12 +283,6 @@
         .annotation build Landroidx/annotation/RecentlyNonNull;
         .end annotation
     .end param
-
-    const/4 v0, 0x1
-
-    const-string v1, "Callback cannot be null."
-
-    invoke-static {v0, v1}, Lcom/google/android/gms/common/internal/Preconditions;->checkArgument(ZLjava/lang/Object;)V
 
     iget-object v0, p0, Lcom/google/android/gms/common/api/internal/BasePendingResult;->zae:Ljava/lang/Object;
 

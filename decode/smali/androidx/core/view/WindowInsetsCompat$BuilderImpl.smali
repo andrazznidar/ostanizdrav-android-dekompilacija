@@ -62,7 +62,7 @@
 .method public build()Landroidx/core/view/WindowInsetsCompat;
     .locals 0
 
-    const p0, 0x0
+    const/4 p0, 0x0
 
     throw p0
 .end method
@@ -78,7 +78,7 @@
         }
     .end annotation
 
-    const p0, 0x0
+    const/4 p0, 0x0
 
     throw p0
 .end method
@@ -94,7 +94,7 @@
         }
     .end annotation
 
-    const p0, 0x0
+    const/4 p0, 0x0
 
     throw p0
 .end method

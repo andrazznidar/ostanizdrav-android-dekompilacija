@@ -207,7 +207,7 @@
 
     const-string v1, "), resetting."
 
-    invoke-static {v7, v2, v1}, Landroidx/constraintlayout/core/widgets/Barrier$$ExternalSyntheticOutline0;->m(Ljava/lang/StringBuilder;Ljava/lang/String;Ljava/lang/String;)Ljava/lang/String;
+    invoke-static {v7, v2, v1}, Landroidx/activity/ComponentActivity$2$$ExternalSyntheticOutline0;->m(Ljava/lang/StringBuilder;Ljava/lang/String;Ljava/lang/String;)Ljava/lang/String;
 
     move-result-object v1
 
@@ -247,15 +247,13 @@
 
     const/4 v14, 0x0
 
-    const/16 v16, 0x0
-
     const/16 v17, 0x16
+
+    const/4 v8, 0x0
 
     const/4 v5, 0x0
 
     const/4 v6, 0x0
-
-    const/4 v8, 0x0
 
     const/16 v9, 0x16
 
@@ -263,7 +261,7 @@
 
     move-object v3, v10
 
-    invoke-direct/range {v3 .. v9}, Lde/rki/coronawarnapp/task/common/DefaultTaskRequest;-><init>(Lkotlin/reflect/KClass;Lde/rki/coronawarnapp/task/Task$Arguments;Ljava/util/UUID;Ljava/lang/String;Lde/rki/coronawarnapp/task/TaskFactory$Config$ErrorHandling;I)V
+    invoke-direct/range {v3 .. v9}, Lde/rki/coronawarnapp/task/common/DefaultTaskRequest;-><init>(Lkotlin/reflect/KClass;Lde/rki/coronawarnapp/task/Task$Arguments;Ljava/util/UUID;Ljava/lang/String;II)V
 
     invoke-virtual {v2, v10}, Lde/rki/coronawarnapp/task/TaskController;->submit(Lde/rki/coronawarnapp/task/TaskRequest;)V
 
@@ -277,11 +275,13 @@
 
     move-result-object v12
 
+    const/16 v16, 0x0
+
     const-string v15, "ConfigChangeDetector"
 
     move-object v11, v2
 
-    invoke-direct/range {v11 .. v17}, Lde/rki/coronawarnapp/task/common/DefaultTaskRequest;-><init>(Lkotlin/reflect/KClass;Lde/rki/coronawarnapp/task/Task$Arguments;Ljava/util/UUID;Ljava/lang/String;Lde/rki/coronawarnapp/task/TaskFactory$Config$ErrorHandling;I)V
+    invoke-direct/range {v11 .. v17}, Lde/rki/coronawarnapp/task/common/DefaultTaskRequest;-><init>(Lkotlin/reflect/KClass;Lde/rki/coronawarnapp/task/Task$Arguments;Ljava/util/UUID;Ljava/lang/String;II)V
 
     invoke-virtual {v1, v2}, Lde/rki/coronawarnapp/task/TaskController;->submit(Lde/rki/coronawarnapp/task/TaskRequest;)V
 

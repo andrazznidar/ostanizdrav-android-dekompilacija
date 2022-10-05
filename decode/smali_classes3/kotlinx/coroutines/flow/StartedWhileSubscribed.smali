@@ -67,7 +67,7 @@
     :cond_2
     const-string p1, "replayExpiration("
 
-    invoke-static {p1, p3, p4, v5}, Landroidx/work/impl/utils/futures/AbstractFuture$$ExternalSyntheticOutline0;->m(Ljava/lang/String;JLjava/lang/String;)Ljava/lang/String;
+    invoke-static {p1, p3, p4, v5}, Landroidx/concurrent/futures/AbstractResolvableFuture$$ExternalSyntheticOutline0;->m(Ljava/lang/String;JLjava/lang/String;)Ljava/lang/String;
 
     move-result-object p1
 
@@ -84,7 +84,7 @@
     :cond_3
     const-string p3, "stopTimeout("
 
-    invoke-static {p3, p1, p2, v5}, Landroidx/work/impl/utils/futures/AbstractFuture$$ExternalSyntheticOutline0;->m(Ljava/lang/String;JLjava/lang/String;)Ljava/lang/String;
+    invoke-static {p3, p1, p2, v5}, Landroidx/concurrent/futures/AbstractResolvableFuture$$ExternalSyntheticOutline0;->m(Ljava/lang/String;JLjava/lang/String;)Ljava/lang/String;
 
     move-result-object p1
 
@@ -205,7 +205,7 @@
 .end method
 
 .method public toString()Ljava/lang/String;
-    .locals 9
+    .locals 10
 
     new-instance v0, Lkotlin/collections/builders/ListBuilder;
 
@@ -269,25 +269,15 @@
     invoke-virtual {v0, v1}, Lkotlin/collections/builders/ListBuilder;->add(Ljava/lang/Object;)Z
 
     :cond_1
-    const-string v1, "builder"
+    invoke-static {v0}, Lkotlin/collections/CollectionsKt__CollectionsKt;->build(Ljava/util/List;)Ljava/util/List;
 
-    invoke-static {v0, v1}, Lkotlin/jvm/internal/Intrinsics;->checkNotNullParameter(Ljava/lang/Object;Ljava/lang/String;)V
+    move-result-object v2
 
-    invoke-virtual {v0}, Lkotlin/collections/builders/ListBuilder;->checkIsMutable()V
+    const-string v0, "SharingStarted.WhileSubscribed("
 
-    const/4 v1, 0x1
+    invoke-static {v0}, Landroid/support/v4/media/RatingCompat$$ExternalSyntheticOutline0;->m(Ljava/lang/String;)Ljava/lang/StringBuilder;
 
-    iput-boolean v1, v0, Lkotlin/collections/builders/ListBuilder;->isReadOnly:Z
-
-    const-string v1, "SharingStarted.WhileSubscribed("
-
-    invoke-static {v1}, Landroid/support/v4/media/RatingCompat$$ExternalSyntheticOutline0;->m(Ljava/lang/String;)Ljava/lang/StringBuilder;
-
-    move-result-object v8
-
-    const/4 v1, 0x0
-
-    const/4 v2, 0x0
+    move-result-object v0
 
     const/4 v3, 0x0
 
@@ -297,15 +287,19 @@
 
     const/4 v6, 0x0
 
-    const/16 v7, 0x3f
+    const/4 v7, 0x0
 
-    invoke-static/range {v0 .. v7}, Lkotlin/collections/CollectionsKt___CollectionsKt;->joinToString$default(Ljava/lang/Iterable;Ljava/lang/CharSequence;Ljava/lang/CharSequence;Ljava/lang/CharSequence;ILjava/lang/CharSequence;Lkotlin/jvm/functions/Function1;I)Ljava/lang/String;
+    const/4 v8, 0x0
 
-    move-result-object v0
+    const/16 v9, 0x3f
 
-    const/16 v1, 0x29
+    invoke-static/range {v2 .. v9}, Lkotlin/collections/CollectionsKt___CollectionsKt;->joinToString$default(Ljava/lang/Iterable;Ljava/lang/CharSequence;Ljava/lang/CharSequence;Ljava/lang/CharSequence;ILjava/lang/CharSequence;Lkotlin/jvm/functions/Function1;I)Ljava/lang/String;
 
-    invoke-static {v8, v0, v1}, Lcom/airbnb/lottie/manager/ImageAssetManager$$ExternalSyntheticOutline0;->m(Ljava/lang/StringBuilder;Ljava/lang/String;C)Ljava/lang/String;
+    move-result-object v1
+
+    const/16 v2, 0x29
+
+    invoke-static {v0, v1, v2}, Lcom/airbnb/lottie/manager/ImageAssetManager$$ExternalSyntheticOutline0;->m(Ljava/lang/StringBuilder;Ljava/lang/String;C)Ljava/lang/String;
 
     move-result-object v0
 

@@ -47,7 +47,7 @@
 
     iget-object v0, v0, Lcom/google/android/play/core/internal/zzar;->zza:Lcom/google/android/play/core/internal/zzas;
 
-    iget-object v1, v0, Lcom/google/android/play/core/internal/zzas;->zzc:Lkotlin/jvm/internal/SpreadBuilder;
+    iget-object v1, v0, Lcom/google/android/play/core/internal/zzas;->zzc:Lcom/google/android/play/core/internal/zzag;
 
     const/4 v2, 0x0
 
@@ -55,7 +55,7 @@
 
     const-string v4, "linkToDeath"
 
-    invoke-virtual {v1, v4, v3}, Lkotlin/jvm/internal/SpreadBuilder;->zzd(Ljava/lang/String;[Ljava/lang/Object;)I
+    invoke-virtual {v1, v4, v3}, Lcom/google/android/play/core/internal/zzag;->zzd(Ljava/lang/String;[Ljava/lang/Object;)I
 
     :try_start_0
     iget-object v1, v0, Lcom/google/android/play/core/internal/zzas;->zzn:Landroid/os/IInterface;
@@ -75,13 +75,13 @@
     :catch_0
     move-exception v1
 
-    iget-object v0, v0, Lcom/google/android/play/core/internal/zzas;->zzc:Lkotlin/jvm/internal/SpreadBuilder;
+    iget-object v0, v0, Lcom/google/android/play/core/internal/zzas;->zzc:Lcom/google/android/play/core/internal/zzag;
 
     new-array v3, v2, [Ljava/lang/Object;
 
     const-string v4, "linkToDeath failed"
 
-    invoke-virtual {v0, v1, v4, v3}, Lkotlin/jvm/internal/SpreadBuilder;->zzc(Ljava/lang/Throwable;Ljava/lang/String;[Ljava/lang/Object;)I
+    invoke-virtual {v0, v1, v4, v3}, Lcom/google/android/play/core/internal/zzag;->zzc(Ljava/lang/Throwable;Ljava/lang/String;[Ljava/lang/Object;)I
 
     :goto_0
     iget-object v0, p0, Lcom/google/android/play/core/internal/zzao;->zzb:Lcom/google/android/play/core/internal/zzar;

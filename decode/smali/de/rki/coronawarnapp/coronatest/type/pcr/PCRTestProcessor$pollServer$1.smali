@@ -17,7 +17,7 @@
     c = "de.rki.coronawarnapp.coronatest.type.pcr.PCRTestProcessor"
     f = "PCRTestProcessor.kt"
     l = {
-        0x9b
+        0x9e
     }
     m = "pollServer"
 .end annotation

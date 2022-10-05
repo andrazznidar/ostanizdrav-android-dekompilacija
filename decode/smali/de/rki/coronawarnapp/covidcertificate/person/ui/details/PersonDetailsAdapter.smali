@@ -65,7 +65,7 @@
 
     iget-object v0, p0, Lde/rki/coronawarnapp/util/lists/modular/ModularAdapter;->modules:Ljava/util/List;
 
-    const/16 v1, 0x8
+    const/16 v1, 0xa
 
     new-array v1, v1, [Lde/rki/coronawarnapp/util/lists/modular/ModularAdapter$Module;
 
@@ -174,6 +174,34 @@
     invoke-direct {v4, p0}, Lde/rki/coronawarnapp/covidcertificate/person/ui/details/PersonDetailsAdapter$11;-><init>(Lde/rki/coronawarnapp/covidcertificate/person/ui/details/PersonDetailsAdapter;)V
 
     sget-object v5, Lde/rki/coronawarnapp/covidcertificate/person/ui/details/PersonDetailsAdapter$12;->INSTANCE:Lde/rki/coronawarnapp/covidcertificate/person/ui/details/PersonDetailsAdapter$12;
+
+    invoke-direct {v3, v4, v5}, Lde/rki/coronawarnapp/util/lists/modular/mods/TypedVHCreatorMod;-><init>(Lkotlin/jvm/functions/Function1;Lkotlin/jvm/functions/Function1;)V
+
+    aput-object v3, v1, v2
+
+    const/16 v2, 0x8
+
+    new-instance v3, Lde/rki/coronawarnapp/util/lists/modular/mods/TypedVHCreatorMod;
+
+    new-instance v4, Lde/rki/coronawarnapp/covidcertificate/person/ui/details/PersonDetailsAdapter$13;
+
+    invoke-direct {v4, p0}, Lde/rki/coronawarnapp/covidcertificate/person/ui/details/PersonDetailsAdapter$13;-><init>(Lde/rki/coronawarnapp/covidcertificate/person/ui/details/PersonDetailsAdapter;)V
+
+    sget-object v5, Lde/rki/coronawarnapp/covidcertificate/person/ui/details/PersonDetailsAdapter$14;->INSTANCE:Lde/rki/coronawarnapp/covidcertificate/person/ui/details/PersonDetailsAdapter$14;
+
+    invoke-direct {v3, v4, v5}, Lde/rki/coronawarnapp/util/lists/modular/mods/TypedVHCreatorMod;-><init>(Lkotlin/jvm/functions/Function1;Lkotlin/jvm/functions/Function1;)V
+
+    aput-object v3, v1, v2
+
+    const/16 v2, 0x9
+
+    new-instance v3, Lde/rki/coronawarnapp/util/lists/modular/mods/TypedVHCreatorMod;
+
+    new-instance v4, Lde/rki/coronawarnapp/covidcertificate/person/ui/details/PersonDetailsAdapter$15;
+
+    invoke-direct {v4, p0}, Lde/rki/coronawarnapp/covidcertificate/person/ui/details/PersonDetailsAdapter$15;-><init>(Lde/rki/coronawarnapp/covidcertificate/person/ui/details/PersonDetailsAdapter;)V
+
+    sget-object v5, Lde/rki/coronawarnapp/covidcertificate/person/ui/details/PersonDetailsAdapter$16;->INSTANCE:Lde/rki/coronawarnapp/covidcertificate/person/ui/details/PersonDetailsAdapter$16;
 
     invoke-direct {v3, v4, v5}, Lde/rki/coronawarnapp/util/lists/modular/mods/TypedVHCreatorMod;-><init>(Lkotlin/jvm/functions/Function1;Lkotlin/jvm/functions/Function1;)V
 

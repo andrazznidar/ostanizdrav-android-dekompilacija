@@ -15,9 +15,9 @@
 
 
 # instance fields
-.field public final getName:Ljava/lang/reflect/Method;
+.field private final getName:Ljava/lang/reflect/Method;
 
-.field public final getParameters:Ljava/lang/reflect/Method;
+.field private final getParameters:Ljava/lang/reflect/Method;
 
 
 # direct methods
@@ -31,4 +31,22 @@
     iput-object p2, p0, Lkotlin/reflect/jvm/internal/impl/descriptors/runtime/structure/Java8ParameterNamesLoader$Cache;->getName:Ljava/lang/reflect/Method;
 
     return-void
+.end method
+
+
+# virtual methods
+.method public final getGetName()Ljava/lang/reflect/Method;
+    .locals 1
+
+    iget-object v0, p0, Lkotlin/reflect/jvm/internal/impl/descriptors/runtime/structure/Java8ParameterNamesLoader$Cache;->getName:Ljava/lang/reflect/Method;
+
+    return-object v0
+.end method
+
+.method public final getGetParameters()Ljava/lang/reflect/Method;
+    .locals 1
+
+    iget-object v0, p0, Lkotlin/reflect/jvm/internal/impl/descriptors/runtime/structure/Java8ParameterNamesLoader$Cache;->getParameters:Ljava/lang/reflect/Method;
+
+    return-object v0
 .end method

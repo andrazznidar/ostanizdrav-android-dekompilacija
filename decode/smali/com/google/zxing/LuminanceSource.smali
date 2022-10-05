@@ -30,36 +30,6 @@
 .method public abstract getRow(I[B)[B
 .end method
 
-.method public invert()Lcom/google/zxing/LuminanceSource;
-    .locals 1
-
-    new-instance v0, Lcom/google/zxing/InvertedLuminanceSource;
-
-    invoke-direct {v0, p0}, Lcom/google/zxing/InvertedLuminanceSource;-><init>(Lcom/google/zxing/LuminanceSource;)V
-
-    return-object v0
-.end method
-
-.method public isRotateSupported()Z
-    .locals 1
-
-    const/4 v0, 0x0
-
-    return v0
-.end method
-
-.method public rotateCounterClockwise()Lcom/google/zxing/LuminanceSource;
-    .locals 2
-
-    new-instance v0, Ljava/lang/UnsupportedOperationException;
-
-    const-string v1, "This luminance source does not support rotation by 90 degrees."
-
-    invoke-direct {v0, v1}, Ljava/lang/UnsupportedOperationException;-><init>(Ljava/lang/String;)V
-
-    throw v0
-.end method
-
 .method public final toString()Ljava/lang/String;
     .locals 7
 

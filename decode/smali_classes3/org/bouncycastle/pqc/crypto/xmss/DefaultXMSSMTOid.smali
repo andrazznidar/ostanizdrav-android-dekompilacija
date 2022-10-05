@@ -6,7 +6,7 @@
 
 
 # static fields
-.field public static final oidLookupTable:Ljava/util/Map;
+.field private static final oidLookupTable:Ljava/util/Map;
     .annotation system Ldalvik/annotation/Signature;
         value = {
             "Ljava/util/Map<",
@@ -19,14 +19,14 @@
 
 
 # instance fields
-.field public final oid:I
+.field private final oid:I
 
-.field public final stringRepresentation:Ljava/lang/String;
+.field private final stringRepresentation:Ljava/lang/String;
 
 
 # direct methods
 .method public static constructor <clinit>()V
-    .locals 12
+    .locals 11
 
     new-instance v0, Ljava/util/HashMap;
 
@@ -48,613 +48,599 @@
 
     move-result-object v1
 
-    const/4 v2, 0x1
+    new-instance v2, Lorg/bouncycastle/pqc/crypto/xmss/DefaultXMSSMTOid;
 
-    const-string v3, "XMSSMT_SHA2_20/2_256"
+    const/4 v3, 0x1
 
-    invoke-static {v2, v3, v0, v1}, Lorg/bouncycastle/pqc/crypto/xmss/DefaultXMSSMTOid$$ExternalSyntheticOutline0;->m(ILjava/lang/String;Ljava/util/HashMap;Ljava/lang/String;)V
+    const-string v4, "XMSSMT_SHA2_20/2_256"
 
-    const-string v4, "SHA-256"
+    invoke-direct {v2, v3, v4}, Lorg/bouncycastle/pqc/crypto/xmss/DefaultXMSSMTOid;-><init>(ILjava/lang/String;)V
 
-    const/16 v1, 0x20
-
-    const/16 v2, 0x10
-
-    const/16 v3, 0x43
-
-    const/16 v8, 0x14
-
-    const/4 v9, 0x4
-
-    move v5, v1
-
-    move v6, v2
-
-    move v7, v3
-
-    invoke-static/range {v4 .. v9}, Lorg/bouncycastle/pqc/crypto/xmss/DefaultXMSSMTOid;->createKey(Ljava/lang/String;IIIII)Ljava/lang/String;
-
-    move-result-object v4
-
-    const/4 v5, 0x2
-
-    const-string v6, "XMSSMT_SHA2_20/4_256"
-
-    invoke-static {v5, v6, v0, v4}, Lorg/bouncycastle/pqc/crypto/xmss/DefaultXMSSMTOid$$ExternalSyntheticOutline0;->m(ILjava/lang/String;Ljava/util/HashMap;Ljava/lang/String;)V
+    invoke-virtual {v0, v1, v2}, Ljava/util/HashMap;->put(Ljava/lang/Object;Ljava/lang/Object;)Ljava/lang/Object;
 
     const-string v5, "SHA-256"
 
-    const/16 v4, 0x28
+    const/16 v6, 0x20
 
-    const/4 v11, 0x2
+    const/16 v7, 0x10
 
-    move v6, v1
+    const/16 v8, 0x43
 
-    move v7, v2
+    const/16 v9, 0x14
 
-    move v8, v3
-
-    move v9, v4
-
-    move v10, v11
+    const/4 v10, 0x4
 
     invoke-static/range {v5 .. v10}, Lorg/bouncycastle/pqc/crypto/xmss/DefaultXMSSMTOid;->createKey(Ljava/lang/String;IIIII)Ljava/lang/String;
 
-    move-result-object v5
+    move-result-object v1
 
-    const/4 v6, 0x3
+    new-instance v2, Lorg/bouncycastle/pqc/crypto/xmss/DefaultXMSSMTOid;
 
-    const-string v7, "XMSSMT_SHA2_40/2_256"
+    const/4 v3, 0x2
 
-    invoke-static {v6, v7, v0, v5}, Lorg/bouncycastle/pqc/crypto/xmss/DefaultXMSSMTOid$$ExternalSyntheticOutline0;->m(ILjava/lang/String;Ljava/util/HashMap;Ljava/lang/String;)V
+    const-string v4, "XMSSMT_SHA2_20/4_256"
+
+    invoke-direct {v2, v3, v4}, Lorg/bouncycastle/pqc/crypto/xmss/DefaultXMSSMTOid;-><init>(ILjava/lang/String;)V
+
+    invoke-virtual {v0, v1, v2}, Ljava/util/HashMap;->put(Ljava/lang/Object;Ljava/lang/Object;)Ljava/lang/Object;
 
     const-string v5, "SHA-256"
 
-    move v6, v1
+    const/16 v9, 0x28
 
-    move v7, v2
+    const/4 v10, 0x2
 
     invoke-static/range {v5 .. v10}, Lorg/bouncycastle/pqc/crypto/xmss/DefaultXMSSMTOid;->createKey(Ljava/lang/String;IIIII)Ljava/lang/String;
 
-    move-result-object v5
+    move-result-object v1
 
-    const/4 v6, 0x4
+    new-instance v2, Lorg/bouncycastle/pqc/crypto/xmss/DefaultXMSSMTOid;
 
-    const-string v7, "XMSSMT_SHA2_40/4_256"
+    const/4 v3, 0x3
 
-    invoke-static {v6, v7, v0, v5}, Lorg/bouncycastle/pqc/crypto/xmss/DefaultXMSSMTOid$$ExternalSyntheticOutline0;->m(ILjava/lang/String;Ljava/util/HashMap;Ljava/lang/String;)V
+    const-string v4, "XMSSMT_SHA2_40/2_256"
+
+    invoke-direct {v2, v3, v4}, Lorg/bouncycastle/pqc/crypto/xmss/DefaultXMSSMTOid;-><init>(ILjava/lang/String;)V
+
+    invoke-virtual {v0, v1, v2}, Ljava/util/HashMap;->put(Ljava/lang/Object;Ljava/lang/Object;)Ljava/lang/Object;
+
+    const-string v5, "SHA-256"
+
+    invoke-static/range {v5 .. v10}, Lorg/bouncycastle/pqc/crypto/xmss/DefaultXMSSMTOid;->createKey(Ljava/lang/String;IIIII)Ljava/lang/String;
+
+    move-result-object v1
+
+    new-instance v2, Lorg/bouncycastle/pqc/crypto/xmss/DefaultXMSSMTOid;
+
+    const/4 v3, 0x4
+
+    const-string v4, "XMSSMT_SHA2_40/4_256"
+
+    invoke-direct {v2, v3, v4}, Lorg/bouncycastle/pqc/crypto/xmss/DefaultXMSSMTOid;-><init>(ILjava/lang/String;)V
+
+    invoke-virtual {v0, v1, v2}, Ljava/util/HashMap;->put(Ljava/lang/Object;Ljava/lang/Object;)Ljava/lang/Object;
 
     const-string v5, "SHA-256"
 
     const/4 v10, 0x4
 
-    move v6, v1
-
-    move v7, v2
-
     invoke-static/range {v5 .. v10}, Lorg/bouncycastle/pqc/crypto/xmss/DefaultXMSSMTOid;->createKey(Ljava/lang/String;IIIII)Ljava/lang/String;
 
-    move-result-object v4
+    move-result-object v1
 
-    const/4 v5, 0x5
+    new-instance v2, Lorg/bouncycastle/pqc/crypto/xmss/DefaultXMSSMTOid;
 
-    const-string v6, "XMSSMT_SHA2_40/8_256"
+    const/4 v3, 0x5
 
-    invoke-static {v5, v6, v0, v4}, Lorg/bouncycastle/pqc/crypto/xmss/DefaultXMSSMTOid$$ExternalSyntheticOutline0;->m(ILjava/lang/String;Ljava/util/HashMap;Ljava/lang/String;)V
+    const-string v4, "XMSSMT_SHA2_40/8_256"
+
+    invoke-direct {v2, v3, v4}, Lorg/bouncycastle/pqc/crypto/xmss/DefaultXMSSMTOid;-><init>(ILjava/lang/String;)V
+
+    invoke-virtual {v0, v1, v2}, Ljava/util/HashMap;->put(Ljava/lang/Object;Ljava/lang/Object;)Ljava/lang/Object;
 
     const-string v5, "SHA-256"
 
-    const/16 v4, 0x3c
+    const/16 v9, 0x3c
 
     const/16 v10, 0x8
 
-    move v6, v1
-
-    move v9, v4
-
     invoke-static/range {v5 .. v10}, Lorg/bouncycastle/pqc/crypto/xmss/DefaultXMSSMTOid;->createKey(Ljava/lang/String;IIIII)Ljava/lang/String;
 
-    move-result-object v5
+    move-result-object v1
 
-    const/4 v6, 0x6
+    new-instance v2, Lorg/bouncycastle/pqc/crypto/xmss/DefaultXMSSMTOid;
 
-    const-string v7, "XMSSMT_SHA2_60/3_256"
+    const/4 v3, 0x6
 
-    invoke-static {v6, v7, v0, v5}, Lorg/bouncycastle/pqc/crypto/xmss/DefaultXMSSMTOid$$ExternalSyntheticOutline0;->m(ILjava/lang/String;Ljava/util/HashMap;Ljava/lang/String;)V
+    const-string v4, "XMSSMT_SHA2_60/3_256"
+
+    invoke-direct {v2, v3, v4}, Lorg/bouncycastle/pqc/crypto/xmss/DefaultXMSSMTOid;-><init>(ILjava/lang/String;)V
+
+    invoke-virtual {v0, v1, v2}, Ljava/util/HashMap;->put(Ljava/lang/Object;Ljava/lang/Object;)Ljava/lang/Object;
 
     const-string v5, "SHA-256"
 
     const/4 v10, 0x6
 
-    move v6, v1
-
-    move v7, v2
-
     invoke-static/range {v5 .. v10}, Lorg/bouncycastle/pqc/crypto/xmss/DefaultXMSSMTOid;->createKey(Ljava/lang/String;IIIII)Ljava/lang/String;
 
-    move-result-object v5
+    move-result-object v1
 
-    const/4 v6, 0x7
+    new-instance v2, Lorg/bouncycastle/pqc/crypto/xmss/DefaultXMSSMTOid;
 
-    const-string v7, "XMSSMT_SHA2_60/6_256"
+    const/4 v3, 0x7
 
-    invoke-static {v6, v7, v0, v5}, Lorg/bouncycastle/pqc/crypto/xmss/DefaultXMSSMTOid$$ExternalSyntheticOutline0;->m(ILjava/lang/String;Ljava/util/HashMap;Ljava/lang/String;)V
+    const-string v4, "XMSSMT_SHA2_60/6_256"
+
+    invoke-direct {v2, v3, v4}, Lorg/bouncycastle/pqc/crypto/xmss/DefaultXMSSMTOid;-><init>(ILjava/lang/String;)V
+
+    invoke-virtual {v0, v1, v2}, Ljava/util/HashMap;->put(Ljava/lang/Object;Ljava/lang/Object;)Ljava/lang/Object;
 
     const-string v5, "SHA-256"
 
     const/16 v10, 0xc
 
-    move v6, v1
-
-    move v7, v2
-
     invoke-static/range {v5 .. v10}, Lorg/bouncycastle/pqc/crypto/xmss/DefaultXMSSMTOid;->createKey(Ljava/lang/String;IIIII)Ljava/lang/String;
 
     move-result-object v1
+
+    new-instance v2, Lorg/bouncycastle/pqc/crypto/xmss/DefaultXMSSMTOid;
 
     const/16 v3, 0x8
 
     const-string v4, "XMSSMT_SHA2_60/12_256"
 
-    invoke-static {v3, v4, v0, v1}, Lorg/bouncycastle/pqc/crypto/xmss/DefaultXMSSMTOid$$ExternalSyntheticOutline0;->m(ILjava/lang/String;Ljava/util/HashMap;Ljava/lang/String;)V
+    invoke-direct {v2, v3, v4}, Lorg/bouncycastle/pqc/crypto/xmss/DefaultXMSSMTOid;-><init>(ILjava/lang/String;)V
+
+    invoke-virtual {v0, v1, v2}, Ljava/util/HashMap;->put(Ljava/lang/Object;Ljava/lang/Object;)Ljava/lang/Object;
 
     const-string v5, "SHA-512"
 
-    const/16 v1, 0x40
+    const/16 v6, 0x40
 
-    const/16 v3, 0x83
+    const/16 v8, 0x83
 
-    const/16 v4, 0x14
+    const/16 v9, 0x14
 
     const/4 v10, 0x2
 
-    move v6, v1
-
-    move v8, v3
-
-    move v9, v4
-
     invoke-static/range {v5 .. v10}, Lorg/bouncycastle/pqc/crypto/xmss/DefaultXMSSMTOid;->createKey(Ljava/lang/String;IIIII)Ljava/lang/String;
 
-    move-result-object v5
+    move-result-object v1
 
-    const/16 v6, 0x9
+    new-instance v2, Lorg/bouncycastle/pqc/crypto/xmss/DefaultXMSSMTOid;
 
-    const-string v7, "XMSSMT_SHA2_20/2_512"
+    const/16 v3, 0x9
 
-    invoke-static {v6, v7, v0, v5}, Lorg/bouncycastle/pqc/crypto/xmss/DefaultXMSSMTOid$$ExternalSyntheticOutline0;->m(ILjava/lang/String;Ljava/util/HashMap;Ljava/lang/String;)V
+    const-string v4, "XMSSMT_SHA2_20/2_512"
+
+    invoke-direct {v2, v3, v4}, Lorg/bouncycastle/pqc/crypto/xmss/DefaultXMSSMTOid;-><init>(ILjava/lang/String;)V
+
+    invoke-virtual {v0, v1, v2}, Ljava/util/HashMap;->put(Ljava/lang/Object;Ljava/lang/Object;)Ljava/lang/Object;
 
     const-string v5, "SHA-512"
 
     const/4 v10, 0x4
 
-    move v6, v1
-
-    move v7, v2
-
     invoke-static/range {v5 .. v10}, Lorg/bouncycastle/pqc/crypto/xmss/DefaultXMSSMTOid;->createKey(Ljava/lang/String;IIIII)Ljava/lang/String;
 
-    move-result-object v4
+    move-result-object v1
 
-    const/16 v5, 0xa
+    new-instance v2, Lorg/bouncycastle/pqc/crypto/xmss/DefaultXMSSMTOid;
 
-    const-string v6, "XMSSMT_SHA2_20/4_512"
+    const/16 v3, 0xa
 
-    invoke-static {v5, v6, v0, v4}, Lorg/bouncycastle/pqc/crypto/xmss/DefaultXMSSMTOid$$ExternalSyntheticOutline0;->m(ILjava/lang/String;Ljava/util/HashMap;Ljava/lang/String;)V
+    const-string v4, "XMSSMT_SHA2_20/4_512"
+
+    invoke-direct {v2, v3, v4}, Lorg/bouncycastle/pqc/crypto/xmss/DefaultXMSSMTOid;-><init>(ILjava/lang/String;)V
+
+    invoke-virtual {v0, v1, v2}, Ljava/util/HashMap;->put(Ljava/lang/Object;Ljava/lang/Object;)Ljava/lang/Object;
 
     const-string v5, "SHA-512"
 
-    const/16 v4, 0x28
+    const/16 v9, 0x28
 
     const/4 v10, 0x2
 
-    move v6, v1
-
-    move v9, v4
-
     invoke-static/range {v5 .. v10}, Lorg/bouncycastle/pqc/crypto/xmss/DefaultXMSSMTOid;->createKey(Ljava/lang/String;IIIII)Ljava/lang/String;
 
-    move-result-object v5
+    move-result-object v1
 
-    const/16 v6, 0xb
+    new-instance v2, Lorg/bouncycastle/pqc/crypto/xmss/DefaultXMSSMTOid;
 
-    const-string v7, "XMSSMT_SHA2_40/2_512"
+    const/16 v3, 0xb
 
-    invoke-static {v6, v7, v0, v5}, Lorg/bouncycastle/pqc/crypto/xmss/DefaultXMSSMTOid$$ExternalSyntheticOutline0;->m(ILjava/lang/String;Ljava/util/HashMap;Ljava/lang/String;)V
+    const-string v4, "XMSSMT_SHA2_40/2_512"
+
+    invoke-direct {v2, v3, v4}, Lorg/bouncycastle/pqc/crypto/xmss/DefaultXMSSMTOid;-><init>(ILjava/lang/String;)V
+
+    invoke-virtual {v0, v1, v2}, Ljava/util/HashMap;->put(Ljava/lang/Object;Ljava/lang/Object;)Ljava/lang/Object;
 
     const-string v5, "SHA-512"
 
     const/4 v10, 0x4
 
-    move v6, v1
-
-    move v7, v2
-
     invoke-static/range {v5 .. v10}, Lorg/bouncycastle/pqc/crypto/xmss/DefaultXMSSMTOid;->createKey(Ljava/lang/String;IIIII)Ljava/lang/String;
 
-    move-result-object v5
+    move-result-object v1
 
-    const/16 v6, 0xc
+    new-instance v2, Lorg/bouncycastle/pqc/crypto/xmss/DefaultXMSSMTOid;
 
-    const-string v7, "XMSSMT_SHA2_40/4_512"
+    const/16 v3, 0xc
 
-    invoke-static {v6, v7, v0, v5}, Lorg/bouncycastle/pqc/crypto/xmss/DefaultXMSSMTOid$$ExternalSyntheticOutline0;->m(ILjava/lang/String;Ljava/util/HashMap;Ljava/lang/String;)V
+    const-string v4, "XMSSMT_SHA2_40/4_512"
+
+    invoke-direct {v2, v3, v4}, Lorg/bouncycastle/pqc/crypto/xmss/DefaultXMSSMTOid;-><init>(ILjava/lang/String;)V
+
+    invoke-virtual {v0, v1, v2}, Ljava/util/HashMap;->put(Ljava/lang/Object;Ljava/lang/Object;)Ljava/lang/Object;
 
     const-string v5, "SHA-512"
 
     const/16 v10, 0x8
 
-    move v6, v1
-
-    move v7, v2
-
     invoke-static/range {v5 .. v10}, Lorg/bouncycastle/pqc/crypto/xmss/DefaultXMSSMTOid;->createKey(Ljava/lang/String;IIIII)Ljava/lang/String;
 
-    move-result-object v4
+    move-result-object v1
 
-    const/16 v5, 0xd
+    new-instance v2, Lorg/bouncycastle/pqc/crypto/xmss/DefaultXMSSMTOid;
 
-    const-string v6, "XMSSMT_SHA2_40/8_512"
+    const/16 v3, 0xd
 
-    invoke-static {v5, v6, v0, v4}, Lorg/bouncycastle/pqc/crypto/xmss/DefaultXMSSMTOid$$ExternalSyntheticOutline0;->m(ILjava/lang/String;Ljava/util/HashMap;Ljava/lang/String;)V
+    const-string v4, "XMSSMT_SHA2_40/8_512"
+
+    invoke-direct {v2, v3, v4}, Lorg/bouncycastle/pqc/crypto/xmss/DefaultXMSSMTOid;-><init>(ILjava/lang/String;)V
+
+    invoke-virtual {v0, v1, v2}, Ljava/util/HashMap;->put(Ljava/lang/Object;Ljava/lang/Object;)Ljava/lang/Object;
 
     const-string v5, "SHA-512"
 
-    const/16 v4, 0x3c
+    const/16 v9, 0x3c
 
     const/4 v10, 0x3
 
-    move v6, v1
-
-    move v9, v4
-
     invoke-static/range {v5 .. v10}, Lorg/bouncycastle/pqc/crypto/xmss/DefaultXMSSMTOid;->createKey(Ljava/lang/String;IIIII)Ljava/lang/String;
 
-    move-result-object v5
+    move-result-object v1
 
-    const/16 v6, 0xe
+    new-instance v2, Lorg/bouncycastle/pqc/crypto/xmss/DefaultXMSSMTOid;
 
-    const-string v7, "XMSSMT_SHA2_60/3_512"
+    const/16 v3, 0xe
 
-    invoke-static {v6, v7, v0, v5}, Lorg/bouncycastle/pqc/crypto/xmss/DefaultXMSSMTOid$$ExternalSyntheticOutline0;->m(ILjava/lang/String;Ljava/util/HashMap;Ljava/lang/String;)V
+    const-string v4, "XMSSMT_SHA2_60/3_512"
+
+    invoke-direct {v2, v3, v4}, Lorg/bouncycastle/pqc/crypto/xmss/DefaultXMSSMTOid;-><init>(ILjava/lang/String;)V
+
+    invoke-virtual {v0, v1, v2}, Ljava/util/HashMap;->put(Ljava/lang/Object;Ljava/lang/Object;)Ljava/lang/Object;
 
     const-string v5, "SHA-512"
 
     const/4 v10, 0x6
 
-    move v6, v1
-
-    move v7, v2
-
     invoke-static/range {v5 .. v10}, Lorg/bouncycastle/pqc/crypto/xmss/DefaultXMSSMTOid;->createKey(Ljava/lang/String;IIIII)Ljava/lang/String;
 
-    move-result-object v5
+    move-result-object v1
 
-    const/16 v6, 0xf
+    new-instance v2, Lorg/bouncycastle/pqc/crypto/xmss/DefaultXMSSMTOid;
 
-    const-string v7, "XMSSMT_SHA2_60/6_512"
+    const/16 v3, 0xf
 
-    invoke-static {v6, v7, v0, v5}, Lorg/bouncycastle/pqc/crypto/xmss/DefaultXMSSMTOid$$ExternalSyntheticOutline0;->m(ILjava/lang/String;Ljava/util/HashMap;Ljava/lang/String;)V
+    const-string v4, "XMSSMT_SHA2_60/6_512"
+
+    invoke-direct {v2, v3, v4}, Lorg/bouncycastle/pqc/crypto/xmss/DefaultXMSSMTOid;-><init>(ILjava/lang/String;)V
+
+    invoke-virtual {v0, v1, v2}, Ljava/util/HashMap;->put(Ljava/lang/Object;Ljava/lang/Object;)Ljava/lang/Object;
 
     const-string v5, "SHA-512"
 
     const/16 v10, 0xc
 
-    move v6, v1
-
-    move v7, v2
-
     invoke-static/range {v5 .. v10}, Lorg/bouncycastle/pqc/crypto/xmss/DefaultXMSSMTOid;->createKey(Ljava/lang/String;IIIII)Ljava/lang/String;
 
     move-result-object v1
+
+    new-instance v2, Lorg/bouncycastle/pqc/crypto/xmss/DefaultXMSSMTOid;
 
     const/16 v3, 0x10
 
     const-string v4, "XMSSMT_SHA2_60/12_512"
 
-    invoke-static {v3, v4, v0, v1}, Lorg/bouncycastle/pqc/crypto/xmss/DefaultXMSSMTOid$$ExternalSyntheticOutline0;->m(ILjava/lang/String;Ljava/util/HashMap;Ljava/lang/String;)V
+    invoke-direct {v2, v3, v4}, Lorg/bouncycastle/pqc/crypto/xmss/DefaultXMSSMTOid;-><init>(ILjava/lang/String;)V
+
+    invoke-virtual {v0, v1, v2}, Ljava/util/HashMap;->put(Ljava/lang/Object;Ljava/lang/Object;)Ljava/lang/Object;
 
     const-string v5, "SHAKE128"
 
-    const/16 v1, 0x20
+    const/16 v6, 0x20
 
-    const/16 v3, 0x43
+    const/16 v8, 0x43
 
-    const/16 v4, 0x14
+    const/16 v9, 0x14
 
     const/4 v10, 0x2
-
-    move v6, v1
-
-    move v8, v3
-
-    move v9, v4
-
-    invoke-static/range {v5 .. v10}, Lorg/bouncycastle/pqc/crypto/xmss/DefaultXMSSMTOid;->createKey(Ljava/lang/String;IIIII)Ljava/lang/String;
-
-    move-result-object v5
-
-    const/16 v6, 0x11
-
-    const-string v7, "XMSSMT_SHAKE_20/2_256"
-
-    invoke-static {v6, v7, v0, v5}, Lorg/bouncycastle/pqc/crypto/xmss/DefaultXMSSMTOid$$ExternalSyntheticOutline0;->m(ILjava/lang/String;Ljava/util/HashMap;Ljava/lang/String;)V
-
-    const-string v5, "SHAKE128"
-
-    const/4 v10, 0x4
-
-    move v6, v1
-
-    move v7, v2
-
-    invoke-static/range {v5 .. v10}, Lorg/bouncycastle/pqc/crypto/xmss/DefaultXMSSMTOid;->createKey(Ljava/lang/String;IIIII)Ljava/lang/String;
-
-    move-result-object v4
-
-    const/16 v5, 0x12
-
-    const-string v6, "XMSSMT_SHAKE_20/4_256"
-
-    invoke-static {v5, v6, v0, v4}, Lorg/bouncycastle/pqc/crypto/xmss/DefaultXMSSMTOid$$ExternalSyntheticOutline0;->m(ILjava/lang/String;Ljava/util/HashMap;Ljava/lang/String;)V
-
-    const-string v5, "SHAKE128"
-
-    const/16 v4, 0x28
-
-    const/4 v10, 0x2
-
-    move v6, v1
-
-    move v9, v4
-
-    invoke-static/range {v5 .. v10}, Lorg/bouncycastle/pqc/crypto/xmss/DefaultXMSSMTOid;->createKey(Ljava/lang/String;IIIII)Ljava/lang/String;
-
-    move-result-object v5
-
-    const/16 v6, 0x13
-
-    const-string v7, "XMSSMT_SHAKE_40/2_256"
-
-    invoke-static {v6, v7, v0, v5}, Lorg/bouncycastle/pqc/crypto/xmss/DefaultXMSSMTOid$$ExternalSyntheticOutline0;->m(ILjava/lang/String;Ljava/util/HashMap;Ljava/lang/String;)V
-
-    const-string v5, "SHAKE128"
-
-    const/4 v10, 0x4
-
-    move v6, v1
-
-    move v7, v2
-
-    invoke-static/range {v5 .. v10}, Lorg/bouncycastle/pqc/crypto/xmss/DefaultXMSSMTOid;->createKey(Ljava/lang/String;IIIII)Ljava/lang/String;
-
-    move-result-object v5
-
-    const/16 v6, 0x14
-
-    const-string v7, "XMSSMT_SHAKE_40/4_256"
-
-    invoke-static {v6, v7, v0, v5}, Lorg/bouncycastle/pqc/crypto/xmss/DefaultXMSSMTOid$$ExternalSyntheticOutline0;->m(ILjava/lang/String;Ljava/util/HashMap;Ljava/lang/String;)V
-
-    const-string v5, "SHAKE128"
-
-    const/16 v10, 0x8
-
-    move v6, v1
-
-    move v7, v2
-
-    invoke-static/range {v5 .. v10}, Lorg/bouncycastle/pqc/crypto/xmss/DefaultXMSSMTOid;->createKey(Ljava/lang/String;IIIII)Ljava/lang/String;
-
-    move-result-object v4
-
-    const/16 v5, 0x15
-
-    const-string v6, "XMSSMT_SHAKE_40/8_256"
-
-    invoke-static {v5, v6, v0, v4}, Lorg/bouncycastle/pqc/crypto/xmss/DefaultXMSSMTOid$$ExternalSyntheticOutline0;->m(ILjava/lang/String;Ljava/util/HashMap;Ljava/lang/String;)V
-
-    const-string v5, "SHAKE128"
-
-    const/16 v4, 0x3c
-
-    const/4 v10, 0x3
-
-    move v6, v1
-
-    move v9, v4
-
-    invoke-static/range {v5 .. v10}, Lorg/bouncycastle/pqc/crypto/xmss/DefaultXMSSMTOid;->createKey(Ljava/lang/String;IIIII)Ljava/lang/String;
-
-    move-result-object v5
-
-    const/16 v6, 0x16
-
-    const-string v7, "XMSSMT_SHAKE_60/3_256"
-
-    invoke-static {v6, v7, v0, v5}, Lorg/bouncycastle/pqc/crypto/xmss/DefaultXMSSMTOid$$ExternalSyntheticOutline0;->m(ILjava/lang/String;Ljava/util/HashMap;Ljava/lang/String;)V
-
-    const-string v5, "SHAKE128"
-
-    const/4 v10, 0x6
-
-    move v6, v1
-
-    move v7, v2
-
-    invoke-static/range {v5 .. v10}, Lorg/bouncycastle/pqc/crypto/xmss/DefaultXMSSMTOid;->createKey(Ljava/lang/String;IIIII)Ljava/lang/String;
-
-    move-result-object v5
-
-    const/16 v6, 0x17
-
-    const-string v7, "XMSSMT_SHAKE_60/6_256"
-
-    invoke-static {v6, v7, v0, v5}, Lorg/bouncycastle/pqc/crypto/xmss/DefaultXMSSMTOid$$ExternalSyntheticOutline0;->m(ILjava/lang/String;Ljava/util/HashMap;Ljava/lang/String;)V
-
-    const-string v5, "SHAKE128"
-
-    const/16 v10, 0xc
-
-    move v6, v1
-
-    move v7, v2
 
     invoke-static/range {v5 .. v10}, Lorg/bouncycastle/pqc/crypto/xmss/DefaultXMSSMTOid;->createKey(Ljava/lang/String;IIIII)Ljava/lang/String;
 
     move-result-object v1
 
+    new-instance v2, Lorg/bouncycastle/pqc/crypto/xmss/DefaultXMSSMTOid;
+
+    const/16 v3, 0x11
+
+    const-string v4, "XMSSMT_SHAKE_20/2_256"
+
+    invoke-direct {v2, v3, v4}, Lorg/bouncycastle/pqc/crypto/xmss/DefaultXMSSMTOid;-><init>(ILjava/lang/String;)V
+
+    invoke-virtual {v0, v1, v2}, Ljava/util/HashMap;->put(Ljava/lang/Object;Ljava/lang/Object;)Ljava/lang/Object;
+
+    const-string v5, "SHAKE128"
+
+    const/4 v10, 0x4
+
+    invoke-static/range {v5 .. v10}, Lorg/bouncycastle/pqc/crypto/xmss/DefaultXMSSMTOid;->createKey(Ljava/lang/String;IIIII)Ljava/lang/String;
+
+    move-result-object v1
+
+    new-instance v2, Lorg/bouncycastle/pqc/crypto/xmss/DefaultXMSSMTOid;
+
+    const/16 v3, 0x12
+
+    const-string v4, "XMSSMT_SHAKE_20/4_256"
+
+    invoke-direct {v2, v3, v4}, Lorg/bouncycastle/pqc/crypto/xmss/DefaultXMSSMTOid;-><init>(ILjava/lang/String;)V
+
+    invoke-virtual {v0, v1, v2}, Ljava/util/HashMap;->put(Ljava/lang/Object;Ljava/lang/Object;)Ljava/lang/Object;
+
+    const-string v5, "SHAKE128"
+
+    const/16 v9, 0x28
+
+    const/4 v10, 0x2
+
+    invoke-static/range {v5 .. v10}, Lorg/bouncycastle/pqc/crypto/xmss/DefaultXMSSMTOid;->createKey(Ljava/lang/String;IIIII)Ljava/lang/String;
+
+    move-result-object v1
+
+    new-instance v2, Lorg/bouncycastle/pqc/crypto/xmss/DefaultXMSSMTOid;
+
+    const/16 v3, 0x13
+
+    const-string v4, "XMSSMT_SHAKE_40/2_256"
+
+    invoke-direct {v2, v3, v4}, Lorg/bouncycastle/pqc/crypto/xmss/DefaultXMSSMTOid;-><init>(ILjava/lang/String;)V
+
+    invoke-virtual {v0, v1, v2}, Ljava/util/HashMap;->put(Ljava/lang/Object;Ljava/lang/Object;)Ljava/lang/Object;
+
+    const-string v5, "SHAKE128"
+
+    const/4 v10, 0x4
+
+    invoke-static/range {v5 .. v10}, Lorg/bouncycastle/pqc/crypto/xmss/DefaultXMSSMTOid;->createKey(Ljava/lang/String;IIIII)Ljava/lang/String;
+
+    move-result-object v1
+
+    new-instance v2, Lorg/bouncycastle/pqc/crypto/xmss/DefaultXMSSMTOid;
+
+    const/16 v3, 0x14
+
+    const-string v4, "XMSSMT_SHAKE_40/4_256"
+
+    invoke-direct {v2, v3, v4}, Lorg/bouncycastle/pqc/crypto/xmss/DefaultXMSSMTOid;-><init>(ILjava/lang/String;)V
+
+    invoke-virtual {v0, v1, v2}, Ljava/util/HashMap;->put(Ljava/lang/Object;Ljava/lang/Object;)Ljava/lang/Object;
+
+    const-string v5, "SHAKE128"
+
+    const/16 v10, 0x8
+
+    invoke-static/range {v5 .. v10}, Lorg/bouncycastle/pqc/crypto/xmss/DefaultXMSSMTOid;->createKey(Ljava/lang/String;IIIII)Ljava/lang/String;
+
+    move-result-object v1
+
+    new-instance v2, Lorg/bouncycastle/pqc/crypto/xmss/DefaultXMSSMTOid;
+
+    const/16 v3, 0x15
+
+    const-string v4, "XMSSMT_SHAKE_40/8_256"
+
+    invoke-direct {v2, v3, v4}, Lorg/bouncycastle/pqc/crypto/xmss/DefaultXMSSMTOid;-><init>(ILjava/lang/String;)V
+
+    invoke-virtual {v0, v1, v2}, Ljava/util/HashMap;->put(Ljava/lang/Object;Ljava/lang/Object;)Ljava/lang/Object;
+
+    const-string v5, "SHAKE128"
+
+    const/16 v9, 0x3c
+
+    const/4 v10, 0x3
+
+    invoke-static/range {v5 .. v10}, Lorg/bouncycastle/pqc/crypto/xmss/DefaultXMSSMTOid;->createKey(Ljava/lang/String;IIIII)Ljava/lang/String;
+
+    move-result-object v1
+
+    new-instance v2, Lorg/bouncycastle/pqc/crypto/xmss/DefaultXMSSMTOid;
+
+    const/16 v3, 0x16
+
+    const-string v4, "XMSSMT_SHAKE_60/3_256"
+
+    invoke-direct {v2, v3, v4}, Lorg/bouncycastle/pqc/crypto/xmss/DefaultXMSSMTOid;-><init>(ILjava/lang/String;)V
+
+    invoke-virtual {v0, v1, v2}, Ljava/util/HashMap;->put(Ljava/lang/Object;Ljava/lang/Object;)Ljava/lang/Object;
+
+    const-string v5, "SHAKE128"
+
+    const/4 v10, 0x6
+
+    invoke-static/range {v5 .. v10}, Lorg/bouncycastle/pqc/crypto/xmss/DefaultXMSSMTOid;->createKey(Ljava/lang/String;IIIII)Ljava/lang/String;
+
+    move-result-object v1
+
+    new-instance v2, Lorg/bouncycastle/pqc/crypto/xmss/DefaultXMSSMTOid;
+
+    const/16 v3, 0x17
+
+    const-string v4, "XMSSMT_SHAKE_60/6_256"
+
+    invoke-direct {v2, v3, v4}, Lorg/bouncycastle/pqc/crypto/xmss/DefaultXMSSMTOid;-><init>(ILjava/lang/String;)V
+
+    invoke-virtual {v0, v1, v2}, Ljava/util/HashMap;->put(Ljava/lang/Object;Ljava/lang/Object;)Ljava/lang/Object;
+
+    const-string v5, "SHAKE128"
+
+    const/16 v10, 0xc
+
+    invoke-static/range {v5 .. v10}, Lorg/bouncycastle/pqc/crypto/xmss/DefaultXMSSMTOid;->createKey(Ljava/lang/String;IIIII)Ljava/lang/String;
+
+    move-result-object v1
+
+    new-instance v2, Lorg/bouncycastle/pqc/crypto/xmss/DefaultXMSSMTOid;
+
     const/16 v3, 0x18
 
     const-string v4, "XMSSMT_SHAKE_60/12_256"
 
-    invoke-static {v3, v4, v0, v1}, Lorg/bouncycastle/pqc/crypto/xmss/DefaultXMSSMTOid$$ExternalSyntheticOutline0;->m(ILjava/lang/String;Ljava/util/HashMap;Ljava/lang/String;)V
+    invoke-direct {v2, v3, v4}, Lorg/bouncycastle/pqc/crypto/xmss/DefaultXMSSMTOid;-><init>(ILjava/lang/String;)V
+
+    invoke-virtual {v0, v1, v2}, Ljava/util/HashMap;->put(Ljava/lang/Object;Ljava/lang/Object;)Ljava/lang/Object;
 
     const-string v5, "SHAKE256"
 
-    const/16 v1, 0x40
+    const/16 v6, 0x40
 
-    const/16 v3, 0x83
+    const/16 v8, 0x83
 
-    const/16 v4, 0x14
+    const/16 v9, 0x14
 
     const/4 v10, 0x2
 
-    move v6, v1
-
-    move v8, v3
-
-    move v9, v4
-
     invoke-static/range {v5 .. v10}, Lorg/bouncycastle/pqc/crypto/xmss/DefaultXMSSMTOid;->createKey(Ljava/lang/String;IIIII)Ljava/lang/String;
 
-    move-result-object v5
+    move-result-object v1
 
-    const/16 v6, 0x19
+    new-instance v2, Lorg/bouncycastle/pqc/crypto/xmss/DefaultXMSSMTOid;
 
-    const-string v7, "XMSSMT_SHAKE_20/2_512"
+    const/16 v3, 0x19
 
-    invoke-static {v6, v7, v0, v5}, Lorg/bouncycastle/pqc/crypto/xmss/DefaultXMSSMTOid$$ExternalSyntheticOutline0;->m(ILjava/lang/String;Ljava/util/HashMap;Ljava/lang/String;)V
+    const-string v4, "XMSSMT_SHAKE_20/2_512"
+
+    invoke-direct {v2, v3, v4}, Lorg/bouncycastle/pqc/crypto/xmss/DefaultXMSSMTOid;-><init>(ILjava/lang/String;)V
+
+    invoke-virtual {v0, v1, v2}, Ljava/util/HashMap;->put(Ljava/lang/Object;Ljava/lang/Object;)Ljava/lang/Object;
 
     const-string v5, "SHAKE256"
 
     const/4 v10, 0x4
 
-    move v6, v1
-
-    move v7, v2
-
     invoke-static/range {v5 .. v10}, Lorg/bouncycastle/pqc/crypto/xmss/DefaultXMSSMTOid;->createKey(Ljava/lang/String;IIIII)Ljava/lang/String;
 
-    move-result-object v4
+    move-result-object v1
 
-    const/16 v5, 0x1a
+    new-instance v2, Lorg/bouncycastle/pqc/crypto/xmss/DefaultXMSSMTOid;
 
-    const-string v6, "XMSSMT_SHAKE_20/4_512"
+    const/16 v3, 0x1a
 
-    invoke-static {v5, v6, v0, v4}, Lorg/bouncycastle/pqc/crypto/xmss/DefaultXMSSMTOid$$ExternalSyntheticOutline0;->m(ILjava/lang/String;Ljava/util/HashMap;Ljava/lang/String;)V
+    const-string v4, "XMSSMT_SHAKE_20/4_512"
+
+    invoke-direct {v2, v3, v4}, Lorg/bouncycastle/pqc/crypto/xmss/DefaultXMSSMTOid;-><init>(ILjava/lang/String;)V
+
+    invoke-virtual {v0, v1, v2}, Ljava/util/HashMap;->put(Ljava/lang/Object;Ljava/lang/Object;)Ljava/lang/Object;
 
     const-string v5, "SHAKE256"
 
-    const/16 v4, 0x28
+    const/16 v9, 0x28
 
     const/4 v10, 0x2
 
-    move v6, v1
-
-    move v9, v4
-
     invoke-static/range {v5 .. v10}, Lorg/bouncycastle/pqc/crypto/xmss/DefaultXMSSMTOid;->createKey(Ljava/lang/String;IIIII)Ljava/lang/String;
 
-    move-result-object v5
+    move-result-object v1
 
-    const/16 v6, 0x1b
+    new-instance v2, Lorg/bouncycastle/pqc/crypto/xmss/DefaultXMSSMTOid;
 
-    const-string v7, "XMSSMT_SHAKE_40/2_512"
+    const/16 v3, 0x1b
 
-    invoke-static {v6, v7, v0, v5}, Lorg/bouncycastle/pqc/crypto/xmss/DefaultXMSSMTOid$$ExternalSyntheticOutline0;->m(ILjava/lang/String;Ljava/util/HashMap;Ljava/lang/String;)V
+    const-string v4, "XMSSMT_SHAKE_40/2_512"
+
+    invoke-direct {v2, v3, v4}, Lorg/bouncycastle/pqc/crypto/xmss/DefaultXMSSMTOid;-><init>(ILjava/lang/String;)V
+
+    invoke-virtual {v0, v1, v2}, Ljava/util/HashMap;->put(Ljava/lang/Object;Ljava/lang/Object;)Ljava/lang/Object;
 
     const-string v5, "SHAKE256"
 
     const/4 v10, 0x4
 
-    move v6, v1
-
-    move v7, v2
-
     invoke-static/range {v5 .. v10}, Lorg/bouncycastle/pqc/crypto/xmss/DefaultXMSSMTOid;->createKey(Ljava/lang/String;IIIII)Ljava/lang/String;
 
-    move-result-object v5
+    move-result-object v1
 
-    const/16 v6, 0x1c
+    new-instance v2, Lorg/bouncycastle/pqc/crypto/xmss/DefaultXMSSMTOid;
 
-    const-string v7, "XMSSMT_SHAKE_40/4_512"
+    const/16 v3, 0x1c
 
-    invoke-static {v6, v7, v0, v5}, Lorg/bouncycastle/pqc/crypto/xmss/DefaultXMSSMTOid$$ExternalSyntheticOutline0;->m(ILjava/lang/String;Ljava/util/HashMap;Ljava/lang/String;)V
+    const-string v4, "XMSSMT_SHAKE_40/4_512"
+
+    invoke-direct {v2, v3, v4}, Lorg/bouncycastle/pqc/crypto/xmss/DefaultXMSSMTOid;-><init>(ILjava/lang/String;)V
+
+    invoke-virtual {v0, v1, v2}, Ljava/util/HashMap;->put(Ljava/lang/Object;Ljava/lang/Object;)Ljava/lang/Object;
 
     const-string v5, "SHAKE256"
 
     const/16 v10, 0x8
 
-    move v6, v1
-
-    move v7, v2
-
     invoke-static/range {v5 .. v10}, Lorg/bouncycastle/pqc/crypto/xmss/DefaultXMSSMTOid;->createKey(Ljava/lang/String;IIIII)Ljava/lang/String;
 
-    move-result-object v4
+    move-result-object v1
 
-    const/16 v5, 0x1d
+    new-instance v2, Lorg/bouncycastle/pqc/crypto/xmss/DefaultXMSSMTOid;
 
-    const-string v6, "XMSSMT_SHAKE_40/8_512"
+    const/16 v3, 0x1d
 
-    invoke-static {v5, v6, v0, v4}, Lorg/bouncycastle/pqc/crypto/xmss/DefaultXMSSMTOid$$ExternalSyntheticOutline0;->m(ILjava/lang/String;Ljava/util/HashMap;Ljava/lang/String;)V
+    const-string v4, "XMSSMT_SHAKE_40/8_512"
+
+    invoke-direct {v2, v3, v4}, Lorg/bouncycastle/pqc/crypto/xmss/DefaultXMSSMTOid;-><init>(ILjava/lang/String;)V
+
+    invoke-virtual {v0, v1, v2}, Ljava/util/HashMap;->put(Ljava/lang/Object;Ljava/lang/Object;)Ljava/lang/Object;
 
     const-string v5, "SHAKE256"
 
-    const/16 v4, 0x3c
+    const/16 v9, 0x3c
 
     const/4 v10, 0x3
 
-    move v6, v1
-
-    move v9, v4
-
     invoke-static/range {v5 .. v10}, Lorg/bouncycastle/pqc/crypto/xmss/DefaultXMSSMTOid;->createKey(Ljava/lang/String;IIIII)Ljava/lang/String;
 
-    move-result-object v5
+    move-result-object v1
 
-    const/16 v6, 0x1e
+    new-instance v2, Lorg/bouncycastle/pqc/crypto/xmss/DefaultXMSSMTOid;
 
-    const-string v7, "XMSSMT_SHAKE_60/3_512"
+    const/16 v3, 0x1e
 
-    invoke-static {v6, v7, v0, v5}, Lorg/bouncycastle/pqc/crypto/xmss/DefaultXMSSMTOid$$ExternalSyntheticOutline0;->m(ILjava/lang/String;Ljava/util/HashMap;Ljava/lang/String;)V
+    const-string v4, "XMSSMT_SHAKE_60/3_512"
+
+    invoke-direct {v2, v3, v4}, Lorg/bouncycastle/pqc/crypto/xmss/DefaultXMSSMTOid;-><init>(ILjava/lang/String;)V
+
+    invoke-virtual {v0, v1, v2}, Ljava/util/HashMap;->put(Ljava/lang/Object;Ljava/lang/Object;)Ljava/lang/Object;
 
     const-string v5, "SHAKE256"
 
     const/4 v10, 0x6
 
-    move v6, v1
-
-    move v7, v2
-
     invoke-static/range {v5 .. v10}, Lorg/bouncycastle/pqc/crypto/xmss/DefaultXMSSMTOid;->createKey(Ljava/lang/String;IIIII)Ljava/lang/String;
 
-    move-result-object v5
+    move-result-object v1
 
-    const/16 v6, 0x1f
+    new-instance v2, Lorg/bouncycastle/pqc/crypto/xmss/DefaultXMSSMTOid;
 
-    const-string v7, "XMSSMT_SHAKE_60/6_512"
+    const/16 v3, 0x1f
 
-    invoke-static {v6, v7, v0, v5}, Lorg/bouncycastle/pqc/crypto/xmss/DefaultXMSSMTOid$$ExternalSyntheticOutline0;->m(ILjava/lang/String;Ljava/util/HashMap;Ljava/lang/String;)V
+    const-string v4, "XMSSMT_SHAKE_60/6_512"
+
+    invoke-direct {v2, v3, v4}, Lorg/bouncycastle/pqc/crypto/xmss/DefaultXMSSMTOid;-><init>(ILjava/lang/String;)V
+
+    invoke-virtual {v0, v1, v2}, Ljava/util/HashMap;->put(Ljava/lang/Object;Ljava/lang/Object;)Ljava/lang/Object;
 
     const-string v5, "SHAKE256"
 
     const/16 v10, 0xc
-
-    move v6, v1
-
-    move v7, v2
 
     invoke-static/range {v5 .. v10}, Lorg/bouncycastle/pqc/crypto/xmss/DefaultXMSSMTOid;->createKey(Ljava/lang/String;IIIII)Ljava/lang/String;
 
@@ -679,7 +665,7 @@
     return-void
 .end method
 
-.method public constructor <init>(ILjava/lang/String;)V
+.method private constructor <init>(ILjava/lang/String;)V
     .locals 0
 
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
@@ -691,8 +677,12 @@
     return-void
 .end method
 
-.method public static createKey(Ljava/lang/String;IIIII)Ljava/lang/String;
+.method private static createKey(Ljava/lang/String;IIIII)Ljava/lang/String;
     .locals 1
+
+    const-string v0, "algorithmName == null"
+
+    invoke-static {p0, v0}, Ljava/util/Objects;->requireNonNull(Ljava/lang/Object;Ljava/lang/String;)Ljava/lang/Object;
 
     new-instance v0, Ljava/lang/StringBuilder;
 
@@ -725,6 +715,28 @@
     invoke-virtual {v0}, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
 
     move-result-object p0
+
+    return-object p0
+.end method
+
+.method public static lookup(Ljava/lang/String;IIIII)Lorg/bouncycastle/pqc/crypto/xmss/DefaultXMSSMTOid;
+    .locals 1
+
+    const-string v0, "algorithmName == null"
+
+    invoke-static {p0, v0}, Ljava/util/Objects;->requireNonNull(Ljava/lang/Object;Ljava/lang/String;)Ljava/lang/Object;
+
+    sget-object v0, Lorg/bouncycastle/pqc/crypto/xmss/DefaultXMSSMTOid;->oidLookupTable:Ljava/util/Map;
+
+    invoke-static/range {p0 .. p5}, Lorg/bouncycastle/pqc/crypto/xmss/DefaultXMSSMTOid;->createKey(Ljava/lang/String;IIIII)Ljava/lang/String;
+
+    move-result-object p0
+
+    invoke-interface {v0, p0}, Ljava/util/Map;->get(Ljava/lang/Object;)Ljava/lang/Object;
+
+    move-result-object p0
+
+    check-cast p0, Lorg/bouncycastle/pqc/crypto/xmss/DefaultXMSSMTOid;
 
     return-object p0
 .end method

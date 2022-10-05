@@ -8,14 +8,14 @@
 
 # annotations
 .annotation system Ldalvik/annotation/SourceDebugExtension;
-    value = "SMAP\nReflectJavaClassifierType.kt\nKotlin\n*S Kotlin\n*F\n+ 1 ReflectJavaClassifierType.kt\norg/jetbrains/kotlin/descriptors/runtime/structure/ReflectJavaClassifierType\n+ 2 fake.kt\nkotlin/jvm/internal/FakeKt\n+ 3 _Collections.kt\nkotlin/collections/CollectionsKt___CollectionsKt\n*L\n1#1,64:1\n1#2:65\n1517#3:66\n1588#3,3:67\n*E\n*S KotlinDebug\n*F\n+ 1 ReflectJavaClassifierType.kt\norg/jetbrains/kotlin/descriptors/runtime/structure/ReflectJavaClassifierType\n*L\n50#1:66\n50#1,3:67\n*E\n"
+    value = "SMAP\nReflectJavaClassifierType.kt\nKotlin\n*S Kotlin\n*F\n+ 1 ReflectJavaClassifierType.kt\norg/jetbrains/kotlin/descriptors/runtime/structure/ReflectJavaClassifierType\n+ 2 fake.kt\nkotlin/jvm/internal/FakeKt\n+ 3 _Collections.kt\nkotlin/collections/CollectionsKt___CollectionsKt\n*L\n1#1,64:1\n1#2:65\n1547#3:66\n1618#3,3:67\n*S KotlinDebug\n*F\n+ 1 ReflectJavaClassifierType.kt\norg/jetbrains/kotlin/descriptors/runtime/structure/ReflectJavaClassifierType\n*L\n50#1:66\n50#1:67,3\n*E\n"
 .end annotation
 
 
 # instance fields
-.field public final classifier:Lkotlin/reflect/jvm/internal/impl/load/java/structure/JavaClassifier;
+.field private final classifier:Lkotlin/reflect/jvm/internal/impl/load/java/structure/JavaClassifier;
 
-.field public final reflectType:Ljava/lang/reflect/Type;
+.field private final reflectType:Ljava/lang/reflect/Type;
 
 
 # direct methods
@@ -29,6 +29,10 @@
     invoke-direct {p0}, Lkotlin/reflect/jvm/internal/impl/descriptors/runtime/structure/ReflectJavaType;-><init>()V
 
     iput-object p1, p0, Lkotlin/reflect/jvm/internal/impl/descriptors/runtime/structure/ReflectJavaClassifierType;->reflectType:Ljava/lang/reflect/Type;
+
+    invoke-virtual {p0}, Lkotlin/reflect/jvm/internal/impl/descriptors/runtime/structure/ReflectJavaClassifierType;->getReflectType()Ljava/lang/reflect/Type;
+
+    move-result-object p1
 
     instance-of v0, p1, Ljava/lang/Class;
 
@@ -114,7 +118,11 @@
 
 # virtual methods
 .method public findAnnotation(Lkotlin/reflect/jvm/internal/impl/name/FqName;)Lkotlin/reflect/jvm/internal/impl/load/java/structure/JavaAnnotation;
-    .locals 0
+    .locals 1
+
+    const-string v0, "fqName"
+
+    invoke-static {p1, v0}, Lkotlin/jvm/internal/Intrinsics;->checkNotNullParameter(Ljava/lang/Object;Ljava/lang/String;)V
 
     const/4 p1, 0x0
 
@@ -150,7 +158,9 @@
 
     new-instance v0, Ljava/lang/UnsupportedOperationException;
 
-    iget-object v1, p0, Lkotlin/reflect/jvm/internal/impl/descriptors/runtime/structure/ReflectJavaClassifierType;->reflectType:Ljava/lang/reflect/Type;
+    invoke-virtual {p0}, Lkotlin/reflect/jvm/internal/impl/descriptors/runtime/structure/ReflectJavaClassifierType;->getReflectType()Ljava/lang/reflect/Type;
+
+    move-result-object v1
 
     const-string v2, "Type not found: "
 
@@ -166,7 +176,9 @@
 .method public getPresentableText()Ljava/lang/String;
     .locals 1
 
-    iget-object v0, p0, Lkotlin/reflect/jvm/internal/impl/descriptors/runtime/structure/ReflectJavaClassifierType;->reflectType:Ljava/lang/reflect/Type;
+    invoke-virtual {p0}, Lkotlin/reflect/jvm/internal/impl/descriptors/runtime/structure/ReflectJavaClassifierType;->getReflectType()Ljava/lang/reflect/Type;
+
+    move-result-object v0
 
     invoke-virtual {v0}, Ljava/lang/Object;->toString()Ljava/lang/String;
 
@@ -184,7 +196,7 @@
 .end method
 
 .method public getTypeArguments()Ljava/util/List;
-    .locals 6
+    .locals 4
     .annotation system Ldalvik/annotation/Signature;
         value = {
             "()",
@@ -194,21 +206,25 @@
         }
     .end annotation
 
-    iget-object v0, p0, Lkotlin/reflect/jvm/internal/impl/descriptors/runtime/structure/ReflectJavaClassifierType;->reflectType:Ljava/lang/reflect/Type;
+    invoke-virtual {p0}, Lkotlin/reflect/jvm/internal/impl/descriptors/runtime/structure/ReflectJavaClassifierType;->getReflectType()Ljava/lang/reflect/Type;
+
+    move-result-object v0
 
     invoke-static {v0}, Lkotlin/reflect/jvm/internal/impl/descriptors/runtime/structure/ReflectClassUtilKt;->getParameterizedTypeArguments(Ljava/lang/reflect/Type;)Ljava/util/List;
 
     move-result-object v0
 
-    new-instance v1, Ljava/util/ArrayList;
+    sget-object v1, Lkotlin/reflect/jvm/internal/impl/descriptors/runtime/structure/ReflectJavaType;->Factory:Lkotlin/reflect/jvm/internal/impl/descriptors/runtime/structure/ReflectJavaType$Factory;
 
-    const/16 v2, 0xa
+    new-instance v2, Ljava/util/ArrayList;
 
-    invoke-static {v0, v2}, Lkotlin/collections/CollectionsKt__IteratorsJVMKt;->collectionSizeOrDefault(Ljava/lang/Iterable;I)I
+    const/16 v3, 0xa
 
-    move-result v2
+    invoke-static {v0, v3}, Lkotlin/collections/CollectionsKt__IteratorsJVMKt;->collectionSizeOrDefault(Ljava/lang/Iterable;I)I
 
-    invoke-direct {v1, v2}, Ljava/util/ArrayList;-><init>(I)V
+    move-result v3
+
+    invoke-direct {v2, v3}, Ljava/util/ArrayList;-><init>(I)V
 
     invoke-interface {v0}, Ljava/lang/Iterable;->iterator()Ljava/util/Iterator;
 
@@ -217,95 +233,26 @@
     :goto_0
     invoke-interface {v0}, Ljava/util/Iterator;->hasNext()Z
 
-    move-result v2
-
-    if-eqz v2, :cond_4
-
-    invoke-interface {v0}, Ljava/util/Iterator;->next()Ljava/lang/Object;
-
-    move-result-object v2
-
-    check-cast v2, Ljava/lang/reflect/Type;
-
-    const-string v3, "type"
-
-    invoke-static {v2, v3}, Lkotlin/jvm/internal/Intrinsics;->checkNotNullParameter(Ljava/lang/Object;Ljava/lang/String;)V
-
-    instance-of v3, v2, Ljava/lang/Class;
+    move-result v3
 
     if-eqz v3, :cond_0
 
-    move-object v4, v2
+    invoke-interface {v0}, Ljava/util/Iterator;->next()Ljava/lang/Object;
 
-    check-cast v4, Ljava/lang/Class;
+    move-result-object v3
 
-    invoke-virtual {v4}, Ljava/lang/Class;->isPrimitive()Z
+    check-cast v3, Ljava/lang/reflect/Type;
 
-    move-result v5
+    invoke-virtual {v1, v3}, Lkotlin/reflect/jvm/internal/impl/descriptors/runtime/structure/ReflectJavaType$Factory;->create(Ljava/lang/reflect/Type;)Lkotlin/reflect/jvm/internal/impl/descriptors/runtime/structure/ReflectJavaType;
 
-    if-eqz v5, :cond_0
+    move-result-object v3
 
-    new-instance v2, Lkotlin/reflect/jvm/internal/impl/descriptors/runtime/structure/ReflectJavaPrimitiveType;
-
-    invoke-direct {v2, v4}, Lkotlin/reflect/jvm/internal/impl/descriptors/runtime/structure/ReflectJavaPrimitiveType;-><init>(Ljava/lang/Class;)V
-
-    goto :goto_3
-
-    :cond_0
-    instance-of v4, v2, Ljava/lang/reflect/GenericArrayType;
-
-    if-nez v4, :cond_3
-
-    if-eqz v3, :cond_1
-
-    move-object v3, v2
-
-    check-cast v3, Ljava/lang/Class;
-
-    invoke-virtual {v3}, Ljava/lang/Class;->isArray()Z
-
-    move-result v3
-
-    if-eqz v3, :cond_1
-
-    goto :goto_1
-
-    :cond_1
-    instance-of v3, v2, Ljava/lang/reflect/WildcardType;
-
-    if-eqz v3, :cond_2
-
-    new-instance v3, Lkotlin/reflect/jvm/internal/impl/descriptors/runtime/structure/ReflectJavaWildcardType;
-
-    check-cast v2, Ljava/lang/reflect/WildcardType;
-
-    invoke-direct {v3, v2}, Lkotlin/reflect/jvm/internal/impl/descriptors/runtime/structure/ReflectJavaWildcardType;-><init>(Ljava/lang/reflect/WildcardType;)V
-
-    goto :goto_2
-
-    :cond_2
-    new-instance v3, Lkotlin/reflect/jvm/internal/impl/descriptors/runtime/structure/ReflectJavaClassifierType;
-
-    invoke-direct {v3, v2}, Lkotlin/reflect/jvm/internal/impl/descriptors/runtime/structure/ReflectJavaClassifierType;-><init>(Ljava/lang/reflect/Type;)V
-
-    goto :goto_2
-
-    :cond_3
-    :goto_1
-    new-instance v3, Lkotlin/reflect/jvm/internal/impl/descriptors/runtime/structure/ReflectJavaArrayType;
-
-    invoke-direct {v3, v2}, Lkotlin/reflect/jvm/internal/impl/descriptors/runtime/structure/ReflectJavaArrayType;-><init>(Ljava/lang/reflect/Type;)V
-
-    :goto_2
-    move-object v2, v3
-
-    :goto_3
-    invoke-interface {v1, v2}, Ljava/util/Collection;->add(Ljava/lang/Object;)Z
+    invoke-interface {v2, v3}, Ljava/util/Collection;->add(Ljava/lang/Object;)Z
 
     goto :goto_0
 
-    :cond_4
-    return-object v1
+    :cond_0
+    return-object v2
 .end method
 
 .method public isDeprecatedInJavaDoc()Z
@@ -319,7 +266,9 @@
 .method public isRaw()Z
     .locals 4
 
-    iget-object v0, p0, Lkotlin/reflect/jvm/internal/impl/descriptors/runtime/structure/ReflectJavaClassifierType;->reflectType:Ljava/lang/reflect/Type;
+    invoke-virtual {p0}, Lkotlin/reflect/jvm/internal/impl/descriptors/runtime/structure/ReflectJavaClassifierType;->getReflectType()Ljava/lang/reflect/Type;
+
+    move-result-object v0
 
     instance-of v1, v0, Ljava/lang/Class;
 

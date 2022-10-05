@@ -19,9 +19,9 @@
 
     sget-object v0, Lcom/google/android/gms/safetynet/SafetyNet;->API:Lcom/google/android/gms/common/api/Api;
 
-    new-instance v1, Lcom/google/android/gms/common/api/internal/ApiExceptionMapper;
+    new-instance v1, Lokhttp3/internal/HostnamesKt;
 
-    invoke-direct {v1}, Lcom/google/android/gms/common/api/internal/ApiExceptionMapper;-><init>()V
+    invoke-direct {v1}, Lokhttp3/internal/HostnamesKt;-><init>()V
 
     invoke-static {}, Landroid/os/Looper;->getMainLooper()Landroid/os/Looper;
 
@@ -31,7 +31,7 @@
 
     const/4 v4, 0x0
 
-    invoke-direct {v3, v1, v4, v2}, Lcom/google/android/gms/common/api/GoogleApi$Settings;-><init>(Lcom/google/android/gms/common/api/internal/ApiExceptionMapper;Landroid/accounts/Account;Landroid/os/Looper;)V
+    invoke-direct {v3, v1, v4, v2}, Lcom/google/android/gms/common/api/GoogleApi$Settings;-><init>(Lokhttp3/internal/HostnamesKt;Landroid/accounts/Account;Landroid/os/Looper;)V
 
     invoke-direct {p0, p1, v0, v4, v3}, Lcom/google/android/gms/common/api/GoogleApi;-><init>(Landroid/content/Context;Lcom/google/android/gms/common/api/Api;Lcom/google/android/gms/common/api/Api$ApiOptions;Lcom/google/android/gms/common/api/GoogleApi$Settings;)V
 

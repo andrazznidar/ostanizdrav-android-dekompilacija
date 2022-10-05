@@ -25,6 +25,7 @@
         ">;",
         "Lkotlinx/coroutines/flow/MutableSharedFlow<",
         "TT;>;",
+        "Lkotlinx/coroutines/flow/Flow;",
         "Lkotlinx/coroutines/flow/internal/FusibleFlow<",
         "TT;>;"
     }
@@ -86,7 +87,7 @@
 
     new-instance v0, Lkotlinx/coroutines/CancellableContinuationImpl;
 
-    invoke-static {p2}, Lkotlinx/coroutines/flow/FlowKt;->intercepted(Lkotlin/coroutines/Continuation;)Lkotlin/coroutines/Continuation;
+    invoke-static {p2}, Lcom/google/android/gms/nearby/messages/internal/zzag;->intercepted(Lkotlin/coroutines/Continuation;)Lkotlin/coroutines/Continuation;
 
     move-result-object p2
 
@@ -390,7 +391,7 @@
     :catchall_0
     move-exception p1
 
-    goto/16 :goto_5
+    goto :goto_5
 
     :cond_5
     invoke-static {p2}, Lkotlin/ResultKt;->throwOnFailure(Ljava/lang/Object;)V
@@ -435,9 +436,9 @@
 
     :goto_1
     :try_start_4
-    iget-object p2, v0, Lkotlin/coroutines/jvm/internal/ContinuationImpl;->_context:Lkotlin/coroutines/CoroutineContext;
+    invoke-interface {v0}, Lkotlin/coroutines/Continuation;->getContext()Lkotlin/coroutines/CoroutineContext;
 
-    invoke-static {p2}, Lkotlin/jvm/internal/Intrinsics;->checkNotNull(Ljava/lang/Object;)V
+    move-result-object p2
 
     sget v5, Lkotlinx/coroutines/Job;->$r8$clinit:I
 
@@ -658,7 +659,7 @@
 .end method
 
 .method public emit(Ljava/lang/Object;Lkotlin/coroutines/Continuation;)Ljava/lang/Object;
-    .locals 10
+    .locals 9
     .annotation system Ldalvik/annotation/Signature;
         value = {
             "(TT;",
@@ -683,17 +684,17 @@
     :cond_0
     new-instance v6, Lkotlinx/coroutines/CancellableContinuationImpl;
 
-    invoke-static {p2}, Lkotlinx/coroutines/flow/FlowKt;->intercepted(Lkotlin/coroutines/Continuation;)Lkotlin/coroutines/Continuation;
+    invoke-static {p2}, Lcom/google/android/gms/nearby/messages/internal/zzag;->intercepted(Lkotlin/coroutines/Continuation;)Lkotlin/coroutines/Continuation;
 
-    move-result-object v0
+    move-result-object p2
 
     const/4 v7, 0x1
 
-    invoke-direct {v6, v0, v7}, Lkotlinx/coroutines/CancellableContinuationImpl;-><init>(Lkotlin/coroutines/Continuation;I)V
+    invoke-direct {v6, p2, v7}, Lkotlinx/coroutines/CancellableContinuationImpl;-><init>(Lkotlin/coroutines/Continuation;I)V
 
     invoke-virtual {v6}, Lkotlinx/coroutines/CancellableContinuationImpl;->initCancellability()V
 
-    sget-object v8, Lkotlinx/coroutines/flow/internal/AbstractSharedFlowKt;->EMPTY_RESUMES:[Lkotlin/coroutines/Continuation;
+    sget-object p2, Lde/rki/coronawarnapp/bugreporting/BugReportingModule;->EMPTY_RESUMES:[Lkotlin/coroutines/Continuation;
 
     monitor-enter p0
 
@@ -708,16 +709,16 @@
 
     invoke-virtual {v6, p1}, Lkotlinx/coroutines/CancellableContinuationImpl;->resumeWith(Ljava/lang/Object;)V
 
-    invoke-virtual {p0, v8}, Lkotlinx/coroutines/flow/SharedFlowImpl;->findSlotsToResumeLocked([Lkotlin/coroutines/Continuation;)[Lkotlin/coroutines/Continuation;
+    invoke-virtual {p0, p2}, Lkotlinx/coroutines/flow/SharedFlowImpl;->findSlotsToResumeLocked([Lkotlin/coroutines/Continuation;)[Lkotlin/coroutines/Continuation;
 
     move-result-object p1
 
-    const/4 v0, 0x0
+    const/4 p2, 0x0
 
     goto :goto_0
 
     :cond_1
-    new-instance v9, Lkotlinx/coroutines/flow/SharedFlowImpl$Emitter;
+    new-instance v8, Lkotlinx/coroutines/flow/SharedFlowImpl$Emitter;
 
     invoke-virtual {p0}, Lkotlinx/coroutines/flow/SharedFlowImpl;->getHead()J
 
@@ -731,7 +732,7 @@
 
     add-long/2addr v2, v0
 
-    move-object v0, v9
+    move-object v0, v8
 
     move-object v1, p0
 
@@ -741,7 +742,7 @@
 
     invoke-direct/range {v0 .. v5}, Lkotlinx/coroutines/flow/SharedFlowImpl$Emitter;-><init>(Lkotlinx/coroutines/flow/SharedFlowImpl;JLjava/lang/Object;Lkotlin/coroutines/Continuation;)V
 
-    invoke-virtual {p0, v9}, Lkotlinx/coroutines/flow/SharedFlowImpl;->enqueueLocked(Ljava/lang/Object;)V
+    invoke-virtual {p0, v8}, Lkotlinx/coroutines/flow/SharedFlowImpl;->enqueueLocked(Ljava/lang/Object;)V
 
     iget p1, p0, Lkotlinx/coroutines/flow/SharedFlowImpl;->queueSize:I
 
@@ -753,51 +754,47 @@
 
     if-nez p1, :cond_2
 
-    invoke-virtual {p0, v8}, Lkotlinx/coroutines/flow/SharedFlowImpl;->findSlotsToResumeLocked([Lkotlin/coroutines/Continuation;)[Lkotlin/coroutines/Continuation;
+    invoke-virtual {p0, p2}, Lkotlinx/coroutines/flow/SharedFlowImpl;->findSlotsToResumeLocked([Lkotlin/coroutines/Continuation;)[Lkotlin/coroutines/Continuation;
 
-    move-result-object v8
+    move-result-object p2
     :try_end_0
     .catchall {:try_start_0 .. :try_end_0} :catchall_0
 
     :cond_2
-    move-object p1, v8
+    move-object p1, p2
 
-    move-object v0, v9
+    move-object p2, v8
 
     :goto_0
     monitor-exit p0
 
-    if-nez v0, :cond_3
+    if-nez p2, :cond_3
 
     goto :goto_1
 
     :cond_3
-    new-instance v1, Lkotlinx/coroutines/DisposeOnCancel;
-
-    invoke-direct {v1, v0}, Lkotlinx/coroutines/DisposeOnCancel;-><init>(Lkotlinx/coroutines/DisposableHandle;)V
-
-    invoke-virtual {v6, v1}, Lkotlinx/coroutines/CancellableContinuationImpl;->invokeOnCancellation(Lkotlin/jvm/functions/Function1;)V
+    invoke-static {v6, p2}, Lkotlinx/coroutines/CancellableContinuationKt;->disposeOnCancellation(Lkotlinx/coroutines/CancellableContinuation;Lkotlinx/coroutines/DisposableHandle;)V
 
     :goto_1
-    const/4 v0, 0x0
+    const/4 p2, 0x0
 
-    array-length v1, p1
+    array-length v0, p1
 
     :goto_2
-    if-ge v0, v1, :cond_5
+    if-ge p2, v0, :cond_5
 
-    aget-object v2, p1, v0
+    aget-object v1, p1, p2
 
-    add-int/lit8 v0, v0, 0x1
+    add-int/lit8 p2, p2, 0x1
 
-    if-nez v2, :cond_4
+    if-nez v1, :cond_4
 
     goto :goto_2
 
     :cond_4
-    sget-object v3, Lkotlin/Unit;->INSTANCE:Lkotlin/Unit;
+    sget-object v2, Lkotlin/Unit;->INSTANCE:Lkotlin/Unit;
 
-    invoke-interface {v2, v3}, Lkotlin/coroutines/Continuation;->resumeWith(Ljava/lang/Object;)V
+    invoke-interface {v1, v2}, Lkotlin/coroutines/Continuation;->resumeWith(Ljava/lang/Object;)V
 
     goto :goto_2
 
@@ -806,28 +803,21 @@
 
     move-result-object p1
 
-    sget-object v0, Lkotlin/coroutines/intrinsics/CoroutineSingletons;->COROUTINE_SUSPENDED:Lkotlin/coroutines/intrinsics/CoroutineSingletons;
+    sget-object p2, Lkotlin/coroutines/intrinsics/CoroutineSingletons;->COROUTINE_SUSPENDED:Lkotlin/coroutines/intrinsics/CoroutineSingletons;
 
-    if-ne p1, v0, :cond_6
-
-    const-string v1, "frame"
-
-    invoke-static {p2, v1}, Lkotlin/jvm/internal/Intrinsics;->checkNotNullParameter(Ljava/lang/Object;Ljava/lang/String;)V
-
-    :cond_6
-    if-ne p1, v0, :cond_7
+    if-ne p1, p2, :cond_6
 
     goto :goto_3
 
-    :cond_7
+    :cond_6
     sget-object p1, Lkotlin/Unit;->INSTANCE:Lkotlin/Unit;
 
     :goto_3
-    if-ne p1, v0, :cond_8
+    if-ne p1, p2, :cond_7
 
     return-object p1
 
-    :cond_8
+    :cond_7
     sget-object p1, Lkotlin/Unit;->INSTANCE:Lkotlin/Unit;
 
     return-object p1
@@ -1215,7 +1205,7 @@
         }
     .end annotation
 
-    sget-object v0, Lkotlinx/coroutines/flow/internal/AbstractSharedFlowKt;->EMPTY_RESUMES:[Lkotlin/coroutines/Continuation;
+    sget-object v0, Lde/rki/coronawarnapp/bugreporting/BugReportingModule;->EMPTY_RESUMES:[Lkotlin/coroutines/Continuation;
 
     monitor-enter p0
 
@@ -1483,7 +1473,7 @@
 .method public final tryTakeValue(Lkotlinx/coroutines/flow/SharedFlowSlot;)Ljava/lang/Object;
     .locals 8
 
-    sget-object v0, Lkotlinx/coroutines/flow/internal/AbstractSharedFlowKt;->EMPTY_RESUMES:[Lkotlin/coroutines/Continuation;
+    sget-object v0, Lde/rki/coronawarnapp/bugreporting/BugReportingModule;->EMPTY_RESUMES:[Lkotlin/coroutines/Continuation;
 
     monitor-enter p0
 
@@ -1675,7 +1665,7 @@
 
     if-lez v0, :cond_0
 
-    sget-object v0, Lkotlinx/coroutines/flow/internal/AbstractSharedFlowKt;->EMPTY_RESUMES:[Lkotlin/coroutines/Continuation;
+    sget-object v0, Lde/rki/coronawarnapp/bugreporting/BugReportingModule;->EMPTY_RESUMES:[Lkotlin/coroutines/Continuation;
 
     return-object v0
 
@@ -1757,7 +1747,7 @@
 
     if-gtz v4, :cond_6
 
-    sget-object v0, Lkotlinx/coroutines/flow/internal/AbstractSharedFlowKt;->EMPTY_RESUMES:[Lkotlin/coroutines/Continuation;
+    sget-object v0, Lde/rki/coronawarnapp/bugreporting/BugReportingModule;->EMPTY_RESUMES:[Lkotlin/coroutines/Continuation;
 
     return-object v0
 
@@ -1790,7 +1780,7 @@
     iget v4, v9, Lkotlinx/coroutines/flow/SharedFlowImpl;->queueSize:I
 
     :goto_2
-    sget-object v11, Lkotlinx/coroutines/flow/internal/AbstractSharedFlowKt;->EMPTY_RESUMES:[Lkotlin/coroutines/Continuation;
+    sget-object v11, Lde/rki/coronawarnapp/bugreporting/BugReportingModule;->EMPTY_RESUMES:[Lkotlin/coroutines/Continuation;
 
     iget v12, v9, Lkotlinx/coroutines/flow/SharedFlowImpl;->queueSize:I
 

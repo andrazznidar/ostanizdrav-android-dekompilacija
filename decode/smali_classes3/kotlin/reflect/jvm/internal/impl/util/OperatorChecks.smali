@@ -6,7 +6,7 @@
 # static fields
 .field public static final INSTANCE:Lkotlin/reflect/jvm/internal/impl/util/OperatorChecks;
 
-.field public static final checks:Ljava/util/List;
+.field private static final checks:Ljava/util/List;
     .annotation system Ldalvik/annotation/Signature;
         value = {
             "Ljava/util/List<",
@@ -19,7 +19,7 @@
 
 # direct methods
 .method public static constructor <clinit>()V
-    .locals 21
+    .locals 24
 
     new-instance v0, Lkotlin/reflect/jvm/internal/impl/util/OperatorChecks;
 
@@ -31,355 +31,415 @@
 
     new-array v0, v0, [Lkotlin/reflect/jvm/internal/impl/util/Checks;
 
-    new-instance v1, Lkotlin/reflect/jvm/internal/impl/util/Checks;
+    new-instance v7, Lkotlin/reflect/jvm/internal/impl/util/Checks;
 
     sget-object v2, Lkotlin/reflect/jvm/internal/impl/util/OperatorNameConventions;->GET:Lkotlin/reflect/jvm/internal/impl/name/Name;
 
-    const/4 v3, 0x2
+    const/4 v8, 0x2
 
-    new-array v4, v3, [Lkotlin/reflect/jvm/internal/impl/util/Check;
+    new-array v3, v8, [Lkotlin/reflect/jvm/internal/impl/util/Check;
 
-    sget-object v5, Lkotlin/reflect/jvm/internal/impl/util/MemberKindCheck$MemberOrExtension;->INSTANCE:Lkotlin/reflect/jvm/internal/impl/util/MemberKindCheck$MemberOrExtension;
+    sget-object v9, Lkotlin/reflect/jvm/internal/impl/util/MemberKindCheck$MemberOrExtension;->INSTANCE:Lkotlin/reflect/jvm/internal/impl/util/MemberKindCheck$MemberOrExtension;
+
+    const/4 v10, 0x0
+
+    aput-object v9, v3, v10
+
+    new-instance v1, Lkotlin/reflect/jvm/internal/impl/util/ValueParameterCountCheck$AtLeast;
+
+    const/4 v11, 0x1
+
+    invoke-direct {v1, v11}, Lkotlin/reflect/jvm/internal/impl/util/ValueParameterCountCheck$AtLeast;-><init>(I)V
+
+    aput-object v1, v3, v11
+
+    const/4 v4, 0x0
+
+    const/4 v5, 0x4
 
     const/4 v6, 0x0
 
-    aput-object v5, v4, v6
+    move-object v1, v7
 
-    new-instance v7, Lkotlin/reflect/jvm/internal/impl/util/ValueParameterCountCheck$AtLeast;
+    invoke-direct/range {v1 .. v6}, Lkotlin/reflect/jvm/internal/impl/util/Checks;-><init>(Lkotlin/reflect/jvm/internal/impl/name/Name;[Lkotlin/reflect/jvm/internal/impl/util/Check;Lkotlin/jvm/functions/Function1;ILkotlin/jvm/internal/DefaultConstructorMarker;)V
 
-    const/4 v8, 0x1
-
-    invoke-direct {v7, v8}, Lkotlin/reflect/jvm/internal/impl/util/ValueParameterCountCheck$AtLeast;-><init>(I)V
-
-    aput-object v7, v4, v8
-
-    const/4 v7, 0x0
-
-    const/4 v9, 0x4
-
-    invoke-direct {v1, v2, v4, v7, v9}, Lkotlin/reflect/jvm/internal/impl/util/Checks;-><init>(Lkotlin/reflect/jvm/internal/impl/name/Name;[Lkotlin/reflect/jvm/internal/impl/util/Check;Lkotlin/jvm/functions/Function1;I)V
-
-    aput-object v1, v0, v6
+    aput-object v7, v0, v10
 
     new-instance v1, Lkotlin/reflect/jvm/internal/impl/util/Checks;
 
     sget-object v2, Lkotlin/reflect/jvm/internal/impl/util/OperatorNameConventions;->SET:Lkotlin/reflect/jvm/internal/impl/name/Name;
 
-    new-array v4, v3, [Lkotlin/reflect/jvm/internal/impl/util/Check;
+    new-array v3, v8, [Lkotlin/reflect/jvm/internal/impl/util/Check;
 
-    aput-object v5, v4, v6
+    aput-object v9, v3, v10
 
-    new-instance v10, Lkotlin/reflect/jvm/internal/impl/util/ValueParameterCountCheck$AtLeast;
+    new-instance v4, Lkotlin/reflect/jvm/internal/impl/util/ValueParameterCountCheck$AtLeast;
 
-    invoke-direct {v10, v3}, Lkotlin/reflect/jvm/internal/impl/util/ValueParameterCountCheck$AtLeast;-><init>(I)V
+    invoke-direct {v4, v8}, Lkotlin/reflect/jvm/internal/impl/util/ValueParameterCountCheck$AtLeast;-><init>(I)V
 
-    aput-object v10, v4, v8
+    aput-object v4, v3, v11
 
-    sget-object v10, Lkotlin/reflect/jvm/internal/impl/util/OperatorChecks$checks$1;->INSTANCE:Lkotlin/reflect/jvm/internal/impl/util/OperatorChecks$checks$1;
+    sget-object v4, Lkotlin/reflect/jvm/internal/impl/util/OperatorChecks$checks$1;->INSTANCE:Lkotlin/reflect/jvm/internal/impl/util/OperatorChecks$checks$1;
 
-    invoke-direct {v1, v2, v4, v10}, Lkotlin/reflect/jvm/internal/impl/util/Checks;-><init>(Lkotlin/reflect/jvm/internal/impl/name/Name;[Lkotlin/reflect/jvm/internal/impl/util/Check;Lkotlin/jvm/functions/Function1;)V
+    invoke-direct {v1, v2, v3, v4}, Lkotlin/reflect/jvm/internal/impl/util/Checks;-><init>(Lkotlin/reflect/jvm/internal/impl/name/Name;[Lkotlin/reflect/jvm/internal/impl/util/Check;Lkotlin/jvm/functions/Function1;)V
+
+    aput-object v1, v0, v11
+
+    new-instance v1, Lkotlin/reflect/jvm/internal/impl/util/Checks;
+
+    sget-object v13, Lkotlin/reflect/jvm/internal/impl/util/OperatorNameConventions;->GET_VALUE:Lkotlin/reflect/jvm/internal/impl/name/Name;
+
+    const/4 v2, 0x4
+
+    new-array v14, v2, [Lkotlin/reflect/jvm/internal/impl/util/Check;
+
+    aput-object v9, v14, v10
+
+    sget-object v3, Lkotlin/reflect/jvm/internal/impl/util/NoDefaultAndVarargsCheck;->INSTANCE:Lkotlin/reflect/jvm/internal/impl/util/NoDefaultAndVarargsCheck;
+
+    aput-object v3, v14, v11
+
+    new-instance v4, Lkotlin/reflect/jvm/internal/impl/util/ValueParameterCountCheck$AtLeast;
+
+    invoke-direct {v4, v8}, Lkotlin/reflect/jvm/internal/impl/util/ValueParameterCountCheck$AtLeast;-><init>(I)V
+
+    aput-object v4, v14, v8
+
+    sget-object v4, Lkotlin/reflect/jvm/internal/impl/util/IsKPropertyCheck;->INSTANCE:Lkotlin/reflect/jvm/internal/impl/util/IsKPropertyCheck;
+
+    const/4 v5, 0x3
+
+    aput-object v4, v14, v5
+
+    const/4 v15, 0x0
+
+    const/16 v16, 0x4
+
+    const/16 v17, 0x0
+
+    move-object v12, v1
+
+    invoke-direct/range {v12 .. v17}, Lkotlin/reflect/jvm/internal/impl/util/Checks;-><init>(Lkotlin/reflect/jvm/internal/impl/name/Name;[Lkotlin/reflect/jvm/internal/impl/util/Check;Lkotlin/jvm/functions/Function1;ILkotlin/jvm/internal/DefaultConstructorMarker;)V
 
     aput-object v1, v0, v8
 
     new-instance v1, Lkotlin/reflect/jvm/internal/impl/util/Checks;
 
-    sget-object v2, Lkotlin/reflect/jvm/internal/impl/util/OperatorNameConventions;->GET_VALUE:Lkotlin/reflect/jvm/internal/impl/name/Name;
+    sget-object v19, Lkotlin/reflect/jvm/internal/impl/util/OperatorNameConventions;->SET_VALUE:Lkotlin/reflect/jvm/internal/impl/name/Name;
 
-    new-array v4, v9, [Lkotlin/reflect/jvm/internal/impl/util/Check;
+    new-array v6, v2, [Lkotlin/reflect/jvm/internal/impl/util/Check;
 
-    aput-object v5, v4, v6
+    aput-object v9, v6, v10
 
-    sget-object v10, Lkotlin/reflect/jvm/internal/impl/util/NoDefaultAndVarargsCheck;->INSTANCE:Lkotlin/reflect/jvm/internal/impl/util/NoDefaultAndVarargsCheck;
+    aput-object v3, v6, v11
 
-    aput-object v10, v4, v8
+    new-instance v7, Lkotlin/reflect/jvm/internal/impl/util/ValueParameterCountCheck$AtLeast;
 
-    new-instance v11, Lkotlin/reflect/jvm/internal/impl/util/ValueParameterCountCheck$AtLeast;
+    invoke-direct {v7, v5}, Lkotlin/reflect/jvm/internal/impl/util/ValueParameterCountCheck$AtLeast;-><init>(I)V
 
-    invoke-direct {v11, v3}, Lkotlin/reflect/jvm/internal/impl/util/ValueParameterCountCheck$AtLeast;-><init>(I)V
+    aput-object v7, v6, v8
 
-    aput-object v11, v4, v3
+    aput-object v4, v6, v5
 
-    sget-object v11, Lkotlin/reflect/jvm/internal/impl/util/IsKPropertyCheck;->INSTANCE:Lkotlin/reflect/jvm/internal/impl/util/IsKPropertyCheck;
+    const/16 v21, 0x0
 
-    const/4 v12, 0x3
+    const/16 v22, 0x4
 
-    aput-object v11, v4, v12
+    const/16 v23, 0x0
 
-    invoke-direct {v1, v2, v4, v7, v9}, Lkotlin/reflect/jvm/internal/impl/util/Checks;-><init>(Lkotlin/reflect/jvm/internal/impl/name/Name;[Lkotlin/reflect/jvm/internal/impl/util/Check;Lkotlin/jvm/functions/Function1;I)V
+    move-object/from16 v18, v1
 
-    aput-object v1, v0, v3
+    move-object/from16 v20, v6
+
+    invoke-direct/range {v18 .. v23}, Lkotlin/reflect/jvm/internal/impl/util/Checks;-><init>(Lkotlin/reflect/jvm/internal/impl/name/Name;[Lkotlin/reflect/jvm/internal/impl/util/Check;Lkotlin/jvm/functions/Function1;ILkotlin/jvm/internal/DefaultConstructorMarker;)V
+
+    aput-object v1, v0, v5
 
     new-instance v1, Lkotlin/reflect/jvm/internal/impl/util/Checks;
 
-    sget-object v2, Lkotlin/reflect/jvm/internal/impl/util/OperatorNameConventions;->SET_VALUE:Lkotlin/reflect/jvm/internal/impl/name/Name;
+    sget-object v13, Lkotlin/reflect/jvm/internal/impl/util/OperatorNameConventions;->PROVIDE_DELEGATE:Lkotlin/reflect/jvm/internal/impl/name/Name;
 
-    new-array v4, v9, [Lkotlin/reflect/jvm/internal/impl/util/Check;
+    new-array v14, v2, [Lkotlin/reflect/jvm/internal/impl/util/Check;
 
-    aput-object v5, v4, v6
+    aput-object v9, v14, v10
 
-    aput-object v10, v4, v8
+    aput-object v3, v14, v11
 
-    new-instance v13, Lkotlin/reflect/jvm/internal/impl/util/ValueParameterCountCheck$AtLeast;
+    new-instance v6, Lkotlin/reflect/jvm/internal/impl/util/ValueParameterCountCheck$Equals;
 
-    invoke-direct {v13, v12}, Lkotlin/reflect/jvm/internal/impl/util/ValueParameterCountCheck$AtLeast;-><init>(I)V
+    invoke-direct {v6, v8}, Lkotlin/reflect/jvm/internal/impl/util/ValueParameterCountCheck$Equals;-><init>(I)V
 
-    aput-object v13, v4, v3
+    aput-object v6, v14, v8
 
-    aput-object v11, v4, v12
+    aput-object v4, v14, v5
 
-    invoke-direct {v1, v2, v4, v7, v9}, Lkotlin/reflect/jvm/internal/impl/util/Checks;-><init>(Lkotlin/reflect/jvm/internal/impl/name/Name;[Lkotlin/reflect/jvm/internal/impl/util/Check;Lkotlin/jvm/functions/Function1;I)V
+    move-object v12, v1
+
+    invoke-direct/range {v12 .. v17}, Lkotlin/reflect/jvm/internal/impl/util/Checks;-><init>(Lkotlin/reflect/jvm/internal/impl/name/Name;[Lkotlin/reflect/jvm/internal/impl/util/Check;Lkotlin/jvm/functions/Function1;ILkotlin/jvm/internal/DefaultConstructorMarker;)V
+
+    aput-object v1, v0, v2
+
+    new-instance v1, Lkotlin/reflect/jvm/internal/impl/util/Checks;
+
+    sget-object v19, Lkotlin/reflect/jvm/internal/impl/util/OperatorNameConventions;->INVOKE:Lkotlin/reflect/jvm/internal/impl/name/Name;
+
+    new-array v4, v11, [Lkotlin/reflect/jvm/internal/impl/util/Check;
+
+    aput-object v9, v4, v10
+
+    move-object/from16 v18, v1
+
+    move-object/from16 v20, v4
+
+    invoke-direct/range {v18 .. v23}, Lkotlin/reflect/jvm/internal/impl/util/Checks;-><init>(Lkotlin/reflect/jvm/internal/impl/name/Name;[Lkotlin/reflect/jvm/internal/impl/util/Check;Lkotlin/jvm/functions/Function1;ILkotlin/jvm/internal/DefaultConstructorMarker;)V
+
+    const/4 v4, 0x5
+
+    aput-object v1, v0, v4
+
+    new-instance v1, Lkotlin/reflect/jvm/internal/impl/util/Checks;
+
+    sget-object v13, Lkotlin/reflect/jvm/internal/impl/util/OperatorNameConventions;->CONTAINS:Lkotlin/reflect/jvm/internal/impl/name/Name;
+
+    new-array v14, v2, [Lkotlin/reflect/jvm/internal/impl/util/Check;
+
+    aput-object v9, v14, v10
+
+    sget-object v4, Lkotlin/reflect/jvm/internal/impl/util/ValueParameterCountCheck$SingleValueParameter;->INSTANCE:Lkotlin/reflect/jvm/internal/impl/util/ValueParameterCountCheck$SingleValueParameter;
+
+    aput-object v4, v14, v11
+
+    aput-object v3, v14, v8
+
+    sget-object v6, Lkotlin/reflect/jvm/internal/impl/util/ReturnsCheck$ReturnsBoolean;->INSTANCE:Lkotlin/reflect/jvm/internal/impl/util/ReturnsCheck$ReturnsBoolean;
+
+    aput-object v6, v14, v5
+
+    move-object v12, v1
+
+    invoke-direct/range {v12 .. v17}, Lkotlin/reflect/jvm/internal/impl/util/Checks;-><init>(Lkotlin/reflect/jvm/internal/impl/name/Name;[Lkotlin/reflect/jvm/internal/impl/util/Check;Lkotlin/jvm/functions/Function1;ILkotlin/jvm/internal/DefaultConstructorMarker;)V
+
+    const/4 v7, 0x6
+
+    aput-object v1, v0, v7
+
+    new-instance v1, Lkotlin/reflect/jvm/internal/impl/util/Checks;
+
+    sget-object v13, Lkotlin/reflect/jvm/internal/impl/util/OperatorNameConventions;->ITERATOR:Lkotlin/reflect/jvm/internal/impl/name/Name;
+
+    new-array v14, v8, [Lkotlin/reflect/jvm/internal/impl/util/Check;
+
+    aput-object v9, v14, v10
+
+    sget-object v7, Lkotlin/reflect/jvm/internal/impl/util/ValueParameterCountCheck$NoValueParameters;->INSTANCE:Lkotlin/reflect/jvm/internal/impl/util/ValueParameterCountCheck$NoValueParameters;
+
+    aput-object v7, v14, v11
+
+    move-object v12, v1
+
+    invoke-direct/range {v12 .. v17}, Lkotlin/reflect/jvm/internal/impl/util/Checks;-><init>(Lkotlin/reflect/jvm/internal/impl/name/Name;[Lkotlin/reflect/jvm/internal/impl/util/Check;Lkotlin/jvm/functions/Function1;ILkotlin/jvm/internal/DefaultConstructorMarker;)V
+
+    const/4 v12, 0x7
 
     aput-object v1, v0, v12
 
     new-instance v1, Lkotlin/reflect/jvm/internal/impl/util/Checks;
 
-    sget-object v2, Lkotlin/reflect/jvm/internal/impl/util/OperatorNameConventions;->PROVIDE_DELEGATE:Lkotlin/reflect/jvm/internal/impl/name/Name;
+    sget-object v14, Lkotlin/reflect/jvm/internal/impl/util/OperatorNameConventions;->NEXT:Lkotlin/reflect/jvm/internal/impl/name/Name;
 
-    new-array v4, v9, [Lkotlin/reflect/jvm/internal/impl/util/Check;
+    new-array v15, v8, [Lkotlin/reflect/jvm/internal/impl/util/Check;
 
-    aput-object v5, v4, v6
+    aput-object v9, v15, v10
 
-    aput-object v10, v4, v8
+    aput-object v7, v15, v11
 
-    new-instance v13, Lkotlin/reflect/jvm/internal/impl/util/ValueParameterCountCheck$Equals;
+    const/16 v16, 0x0
 
-    invoke-direct {v13, v3}, Lkotlin/reflect/jvm/internal/impl/util/ValueParameterCountCheck$Equals;-><init>(I)V
+    const/16 v17, 0x4
 
-    aput-object v13, v4, v3
+    const/16 v18, 0x0
 
-    aput-object v11, v4, v12
+    move-object v13, v1
 
-    invoke-direct {v1, v2, v4, v7, v9}, Lkotlin/reflect/jvm/internal/impl/util/Checks;-><init>(Lkotlin/reflect/jvm/internal/impl/name/Name;[Lkotlin/reflect/jvm/internal/impl/util/Check;Lkotlin/jvm/functions/Function1;I)V
+    invoke-direct/range {v13 .. v18}, Lkotlin/reflect/jvm/internal/impl/util/Checks;-><init>(Lkotlin/reflect/jvm/internal/impl/name/Name;[Lkotlin/reflect/jvm/internal/impl/util/Check;Lkotlin/jvm/functions/Function1;ILkotlin/jvm/internal/DefaultConstructorMarker;)V
 
-    aput-object v1, v0, v9
+    const/16 v12, 0x8
 
-    new-instance v1, Lkotlin/reflect/jvm/internal/impl/util/Checks;
-
-    sget-object v2, Lkotlin/reflect/jvm/internal/impl/util/OperatorNameConventions;->INVOKE:Lkotlin/reflect/jvm/internal/impl/name/Name;
-
-    new-array v4, v8, [Lkotlin/reflect/jvm/internal/impl/util/Check;
-
-    aput-object v5, v4, v6
-
-    invoke-direct {v1, v2, v4, v7, v9}, Lkotlin/reflect/jvm/internal/impl/util/Checks;-><init>(Lkotlin/reflect/jvm/internal/impl/name/Name;[Lkotlin/reflect/jvm/internal/impl/util/Check;Lkotlin/jvm/functions/Function1;I)V
-
-    const/4 v2, 0x5
-
-    aput-object v1, v0, v2
+    aput-object v1, v0, v12
 
     new-instance v1, Lkotlin/reflect/jvm/internal/impl/util/Checks;
 
-    sget-object v2, Lkotlin/reflect/jvm/internal/impl/util/OperatorNameConventions;->CONTAINS:Lkotlin/reflect/jvm/internal/impl/name/Name;
+    sget-object v14, Lkotlin/reflect/jvm/internal/impl/util/OperatorNameConventions;->HAS_NEXT:Lkotlin/reflect/jvm/internal/impl/name/Name;
 
-    new-array v4, v9, [Lkotlin/reflect/jvm/internal/impl/util/Check;
+    new-array v15, v5, [Lkotlin/reflect/jvm/internal/impl/util/Check;
 
-    aput-object v5, v4, v6
+    aput-object v9, v15, v10
 
-    sget-object v11, Lkotlin/reflect/jvm/internal/impl/util/ValueParameterCountCheck$SingleValueParameter;->INSTANCE:Lkotlin/reflect/jvm/internal/impl/util/ValueParameterCountCheck$SingleValueParameter;
+    aput-object v7, v15, v11
 
-    aput-object v11, v4, v8
+    aput-object v6, v15, v8
 
-    aput-object v10, v4, v3
+    move-object v13, v1
 
-    sget-object v13, Lkotlin/reflect/jvm/internal/impl/util/ReturnsCheck$ReturnsBoolean;->INSTANCE:Lkotlin/reflect/jvm/internal/impl/util/ReturnsCheck$ReturnsBoolean;
+    invoke-direct/range {v13 .. v18}, Lkotlin/reflect/jvm/internal/impl/util/Checks;-><init>(Lkotlin/reflect/jvm/internal/impl/name/Name;[Lkotlin/reflect/jvm/internal/impl/util/Check;Lkotlin/jvm/functions/Function1;ILkotlin/jvm/internal/DefaultConstructorMarker;)V
 
-    aput-object v13, v4, v12
+    const/16 v6, 0x9
 
-    invoke-direct {v1, v2, v4, v7, v9}, Lkotlin/reflect/jvm/internal/impl/util/Checks;-><init>(Lkotlin/reflect/jvm/internal/impl/name/Name;[Lkotlin/reflect/jvm/internal/impl/util/Check;Lkotlin/jvm/functions/Function1;I)V
-
-    const/4 v2, 0x6
-
-    aput-object v1, v0, v2
+    aput-object v1, v0, v6
 
     new-instance v1, Lkotlin/reflect/jvm/internal/impl/util/Checks;
 
-    sget-object v2, Lkotlin/reflect/jvm/internal/impl/util/OperatorNameConventions;->ITERATOR:Lkotlin/reflect/jvm/internal/impl/name/Name;
+    sget-object v13, Lkotlin/reflect/jvm/internal/impl/util/OperatorNameConventions;->RANGE_TO:Lkotlin/reflect/jvm/internal/impl/name/Name;
 
-    new-array v4, v3, [Lkotlin/reflect/jvm/internal/impl/util/Check;
+    new-array v14, v5, [Lkotlin/reflect/jvm/internal/impl/util/Check;
 
-    aput-object v5, v4, v6
+    aput-object v9, v14, v10
 
-    sget-object v14, Lkotlin/reflect/jvm/internal/impl/util/ValueParameterCountCheck$NoValueParameters;->INSTANCE:Lkotlin/reflect/jvm/internal/impl/util/ValueParameterCountCheck$NoValueParameters;
+    aput-object v4, v14, v11
 
-    aput-object v14, v4, v8
+    aput-object v3, v14, v8
 
-    invoke-direct {v1, v2, v4, v7, v9}, Lkotlin/reflect/jvm/internal/impl/util/Checks;-><init>(Lkotlin/reflect/jvm/internal/impl/name/Name;[Lkotlin/reflect/jvm/internal/impl/util/Check;Lkotlin/jvm/functions/Function1;I)V
+    const/4 v15, 0x0
 
-    const/4 v2, 0x7
+    const/16 v16, 0x4
 
-    aput-object v1, v0, v2
+    const/16 v17, 0x0
 
-    new-instance v1, Lkotlin/reflect/jvm/internal/impl/util/Checks;
+    move-object v12, v1
 
-    sget-object v2, Lkotlin/reflect/jvm/internal/impl/util/OperatorNameConventions;->NEXT:Lkotlin/reflect/jvm/internal/impl/name/Name;
+    invoke-direct/range {v12 .. v17}, Lkotlin/reflect/jvm/internal/impl/util/Checks;-><init>(Lkotlin/reflect/jvm/internal/impl/name/Name;[Lkotlin/reflect/jvm/internal/impl/util/Check;Lkotlin/jvm/functions/Function1;ILkotlin/jvm/internal/DefaultConstructorMarker;)V
 
-    new-array v4, v3, [Lkotlin/reflect/jvm/internal/impl/util/Check;
+    const/16 v6, 0xa
 
-    aput-object v5, v4, v6
-
-    aput-object v14, v4, v8
-
-    invoke-direct {v1, v2, v4, v7, v9}, Lkotlin/reflect/jvm/internal/impl/util/Checks;-><init>(Lkotlin/reflect/jvm/internal/impl/name/Name;[Lkotlin/reflect/jvm/internal/impl/util/Check;Lkotlin/jvm/functions/Function1;I)V
-
-    const/16 v2, 0x8
-
-    aput-object v1, v0, v2
+    aput-object v1, v0, v6
 
     new-instance v1, Lkotlin/reflect/jvm/internal/impl/util/Checks;
 
-    sget-object v2, Lkotlin/reflect/jvm/internal/impl/util/OperatorNameConventions;->HAS_NEXT:Lkotlin/reflect/jvm/internal/impl/name/Name;
+    sget-object v6, Lkotlin/reflect/jvm/internal/impl/util/OperatorNameConventions;->EQUALS:Lkotlin/reflect/jvm/internal/impl/name/Name;
 
-    new-array v4, v12, [Lkotlin/reflect/jvm/internal/impl/util/Check;
-
-    aput-object v5, v4, v6
-
-    aput-object v14, v4, v8
-
-    aput-object v13, v4, v3
-
-    invoke-direct {v1, v2, v4, v7, v9}, Lkotlin/reflect/jvm/internal/impl/util/Checks;-><init>(Lkotlin/reflect/jvm/internal/impl/name/Name;[Lkotlin/reflect/jvm/internal/impl/util/Check;Lkotlin/jvm/functions/Function1;I)V
-
-    const/16 v2, 0x9
-
-    aput-object v1, v0, v2
-
-    new-instance v1, Lkotlin/reflect/jvm/internal/impl/util/Checks;
-
-    sget-object v2, Lkotlin/reflect/jvm/internal/impl/util/OperatorNameConventions;->RANGE_TO:Lkotlin/reflect/jvm/internal/impl/name/Name;
-
-    new-array v4, v12, [Lkotlin/reflect/jvm/internal/impl/util/Check;
-
-    aput-object v5, v4, v6
-
-    aput-object v11, v4, v8
-
-    aput-object v10, v4, v3
-
-    invoke-direct {v1, v2, v4, v7, v9}, Lkotlin/reflect/jvm/internal/impl/util/Checks;-><init>(Lkotlin/reflect/jvm/internal/impl/name/Name;[Lkotlin/reflect/jvm/internal/impl/util/Check;Lkotlin/jvm/functions/Function1;I)V
-
-    const/16 v2, 0xa
-
-    aput-object v1, v0, v2
-
-    new-instance v1, Lkotlin/reflect/jvm/internal/impl/util/Checks;
-
-    sget-object v2, Lkotlin/reflect/jvm/internal/impl/util/OperatorNameConventions;->EQUALS:Lkotlin/reflect/jvm/internal/impl/name/Name;
-
-    new-array v4, v8, [Lkotlin/reflect/jvm/internal/impl/util/Check;
+    new-array v12, v11, [Lkotlin/reflect/jvm/internal/impl/util/Check;
 
     sget-object v13, Lkotlin/reflect/jvm/internal/impl/util/MemberKindCheck$Member;->INSTANCE:Lkotlin/reflect/jvm/internal/impl/util/MemberKindCheck$Member;
 
-    aput-object v13, v4, v6
+    aput-object v13, v12, v10
 
     sget-object v13, Lkotlin/reflect/jvm/internal/impl/util/OperatorChecks$checks$2;->INSTANCE:Lkotlin/reflect/jvm/internal/impl/util/OperatorChecks$checks$2;
 
-    invoke-direct {v1, v2, v4, v13}, Lkotlin/reflect/jvm/internal/impl/util/Checks;-><init>(Lkotlin/reflect/jvm/internal/impl/name/Name;[Lkotlin/reflect/jvm/internal/impl/util/Check;Lkotlin/jvm/functions/Function1;)V
+    invoke-direct {v1, v6, v12, v13}, Lkotlin/reflect/jvm/internal/impl/util/Checks;-><init>(Lkotlin/reflect/jvm/internal/impl/name/Name;[Lkotlin/reflect/jvm/internal/impl/util/Check;Lkotlin/jvm/functions/Function1;)V
 
-    const/16 v2, 0xb
+    const/16 v6, 0xb
 
-    aput-object v1, v0, v2
-
-    new-instance v1, Lkotlin/reflect/jvm/internal/impl/util/Checks;
-
-    sget-object v2, Lkotlin/reflect/jvm/internal/impl/util/OperatorNameConventions;->COMPARE_TO:Lkotlin/reflect/jvm/internal/impl/name/Name;
-
-    new-array v4, v9, [Lkotlin/reflect/jvm/internal/impl/util/Check;
-
-    aput-object v5, v4, v6
-
-    sget-object v13, Lkotlin/reflect/jvm/internal/impl/util/ReturnsCheck$ReturnsInt;->INSTANCE:Lkotlin/reflect/jvm/internal/impl/util/ReturnsCheck$ReturnsInt;
-
-    aput-object v13, v4, v8
-
-    aput-object v11, v4, v3
-
-    aput-object v10, v4, v12
-
-    invoke-direct {v1, v2, v4, v7, v9}, Lkotlin/reflect/jvm/internal/impl/util/Checks;-><init>(Lkotlin/reflect/jvm/internal/impl/name/Name;[Lkotlin/reflect/jvm/internal/impl/util/Check;Lkotlin/jvm/functions/Function1;I)V
-
-    const/16 v2, 0xc
-
-    aput-object v1, v0, v2
+    aput-object v1, v0, v6
 
     new-instance v1, Lkotlin/reflect/jvm/internal/impl/util/Checks;
 
-    sget-object v2, Lkotlin/reflect/jvm/internal/impl/util/OperatorNameConventions;->BINARY_OPERATION_NAMES:Ljava/util/Set;
+    sget-object v13, Lkotlin/reflect/jvm/internal/impl/util/OperatorNameConventions;->COMPARE_TO:Lkotlin/reflect/jvm/internal/impl/name/Name;
 
-    new-array v4, v12, [Lkotlin/reflect/jvm/internal/impl/util/Check;
+    new-array v14, v2, [Lkotlin/reflect/jvm/internal/impl/util/Check;
 
-    aput-object v5, v4, v6
+    aput-object v9, v14, v10
 
-    aput-object v11, v4, v8
+    sget-object v6, Lkotlin/reflect/jvm/internal/impl/util/ReturnsCheck$ReturnsInt;->INSTANCE:Lkotlin/reflect/jvm/internal/impl/util/ReturnsCheck$ReturnsInt;
 
-    aput-object v10, v4, v3
+    aput-object v6, v14, v11
 
-    invoke-direct {v1, v2, v4, v7, v9}, Lkotlin/reflect/jvm/internal/impl/util/Checks;-><init>(Ljava/util/Collection;[Lkotlin/reflect/jvm/internal/impl/util/Check;Lkotlin/jvm/functions/Function1;I)V
+    aput-object v4, v14, v8
 
-    const/16 v2, 0xd
+    aput-object v3, v14, v5
 
-    aput-object v1, v0, v2
+    move-object v12, v1
 
-    new-instance v1, Lkotlin/reflect/jvm/internal/impl/util/Checks;
+    invoke-direct/range {v12 .. v17}, Lkotlin/reflect/jvm/internal/impl/util/Checks;-><init>(Lkotlin/reflect/jvm/internal/impl/name/Name;[Lkotlin/reflect/jvm/internal/impl/util/Check;Lkotlin/jvm/functions/Function1;ILkotlin/jvm/internal/DefaultConstructorMarker;)V
 
-    sget-object v2, Lkotlin/reflect/jvm/internal/impl/util/OperatorNameConventions;->SIMPLE_UNARY_OPERATION_NAMES:Ljava/util/Set;
+    const/16 v6, 0xc
 
-    new-array v4, v3, [Lkotlin/reflect/jvm/internal/impl/util/Check;
-
-    aput-object v5, v4, v6
-
-    aput-object v14, v4, v8
-
-    invoke-direct {v1, v2, v4, v7, v9}, Lkotlin/reflect/jvm/internal/impl/util/Checks;-><init>(Ljava/util/Collection;[Lkotlin/reflect/jvm/internal/impl/util/Check;Lkotlin/jvm/functions/Function1;I)V
-
-    const/16 v2, 0xe
-
-    aput-object v1, v0, v2
+    aput-object v1, v0, v6
 
     new-instance v1, Lkotlin/reflect/jvm/internal/impl/util/Checks;
 
-    new-array v2, v3, [Lkotlin/reflect/jvm/internal/impl/name/Name;
+    sget-object v13, Lkotlin/reflect/jvm/internal/impl/util/OperatorNameConventions;->BINARY_OPERATION_NAMES:Ljava/util/Set;
 
-    sget-object v4, Lkotlin/reflect/jvm/internal/impl/util/OperatorNameConventions;->INC:Lkotlin/reflect/jvm/internal/impl/name/Name;
+    new-array v14, v5, [Lkotlin/reflect/jvm/internal/impl/util/Check;
 
-    aput-object v4, v2, v6
+    aput-object v9, v14, v10
 
-    sget-object v4, Lkotlin/reflect/jvm/internal/impl/util/OperatorNameConventions;->DEC:Lkotlin/reflect/jvm/internal/impl/name/Name;
+    aput-object v4, v14, v11
 
-    aput-object v4, v2, v8
+    aput-object v3, v14, v8
 
-    invoke-static {v2}, Lkotlin/collections/CollectionsKt__CollectionsKt;->listOf([Ljava/lang/Object;)Ljava/util/List;
+    move-object v12, v1
 
-    move-result-object v2
+    invoke-direct/range {v12 .. v17}, Lkotlin/reflect/jvm/internal/impl/util/Checks;-><init>(Ljava/util/Collection;[Lkotlin/reflect/jvm/internal/impl/util/Check;Lkotlin/jvm/functions/Function1;ILkotlin/jvm/internal/DefaultConstructorMarker;)V
 
-    new-array v4, v8, [Lkotlin/reflect/jvm/internal/impl/util/Check;
+    const/16 v6, 0xd
 
-    aput-object v5, v4, v6
+    aput-object v1, v0, v6
+
+    new-instance v1, Lkotlin/reflect/jvm/internal/impl/util/Checks;
+
+    sget-object v13, Lkotlin/reflect/jvm/internal/impl/util/OperatorNameConventions;->SIMPLE_UNARY_OPERATION_NAMES:Ljava/util/Set;
+
+    new-array v14, v8, [Lkotlin/reflect/jvm/internal/impl/util/Check;
+
+    aput-object v9, v14, v10
+
+    aput-object v7, v14, v11
+
+    move-object v12, v1
+
+    invoke-direct/range {v12 .. v17}, Lkotlin/reflect/jvm/internal/impl/util/Checks;-><init>(Ljava/util/Collection;[Lkotlin/reflect/jvm/internal/impl/util/Check;Lkotlin/jvm/functions/Function1;ILkotlin/jvm/internal/DefaultConstructorMarker;)V
+
+    const/16 v6, 0xe
+
+    aput-object v1, v0, v6
+
+    new-instance v1, Lkotlin/reflect/jvm/internal/impl/util/Checks;
+
+    new-array v6, v8, [Lkotlin/reflect/jvm/internal/impl/name/Name;
+
+    sget-object v12, Lkotlin/reflect/jvm/internal/impl/util/OperatorNameConventions;->INC:Lkotlin/reflect/jvm/internal/impl/name/Name;
+
+    aput-object v12, v6, v10
+
+    sget-object v12, Lkotlin/reflect/jvm/internal/impl/util/OperatorNameConventions;->DEC:Lkotlin/reflect/jvm/internal/impl/name/Name;
+
+    aput-object v12, v6, v11
+
+    invoke-static {v6}, Lkotlin/collections/CollectionsKt__CollectionsKt;->listOf([Ljava/lang/Object;)Ljava/util/List;
+
+    move-result-object v6
+
+    new-array v12, v11, [Lkotlin/reflect/jvm/internal/impl/util/Check;
+
+    aput-object v9, v12, v10
 
     sget-object v13, Lkotlin/reflect/jvm/internal/impl/util/OperatorChecks$checks$3;->INSTANCE:Lkotlin/reflect/jvm/internal/impl/util/OperatorChecks$checks$3;
 
-    invoke-direct {v1, v2, v4, v13}, Lkotlin/reflect/jvm/internal/impl/util/Checks;-><init>(Ljava/util/Collection;[Lkotlin/reflect/jvm/internal/impl/util/Check;Lkotlin/jvm/functions/Function1;)V
+    invoke-direct {v1, v6, v12, v13}, Lkotlin/reflect/jvm/internal/impl/util/Checks;-><init>(Ljava/util/Collection;[Lkotlin/reflect/jvm/internal/impl/util/Check;Lkotlin/jvm/functions/Function1;)V
 
-    const/16 v2, 0xf
+    const/16 v6, 0xf
 
-    aput-object v1, v0, v2
+    aput-object v1, v0, v6
 
     new-instance v1, Lkotlin/reflect/jvm/internal/impl/util/Checks;
 
-    sget-object v2, Lkotlin/reflect/jvm/internal/impl/util/OperatorNameConventions;->ASSIGNMENT_OPERATIONS:Ljava/util/Set;
+    sget-object v13, Lkotlin/reflect/jvm/internal/impl/util/OperatorNameConventions;->ASSIGNMENT_OPERATIONS:Ljava/util/Set;
 
-    new-array v4, v9, [Lkotlin/reflect/jvm/internal/impl/util/Check;
+    new-array v14, v2, [Lkotlin/reflect/jvm/internal/impl/util/Check;
 
-    aput-object v5, v4, v6
+    aput-object v9, v14, v10
 
-    sget-object v13, Lkotlin/reflect/jvm/internal/impl/util/ReturnsCheck$ReturnsUnit;->INSTANCE:Lkotlin/reflect/jvm/internal/impl/util/ReturnsCheck$ReturnsUnit;
+    sget-object v2, Lkotlin/reflect/jvm/internal/impl/util/ReturnsCheck$ReturnsUnit;->INSTANCE:Lkotlin/reflect/jvm/internal/impl/util/ReturnsCheck$ReturnsUnit;
 
-    aput-object v13, v4, v8
+    aput-object v2, v14, v11
 
-    aput-object v11, v4, v3
+    aput-object v4, v14, v8
 
-    aput-object v10, v4, v12
+    aput-object v3, v14, v5
 
-    invoke-direct {v1, v2, v4, v7, v9}, Lkotlin/reflect/jvm/internal/impl/util/Checks;-><init>(Ljava/util/Collection;[Lkotlin/reflect/jvm/internal/impl/util/Check;Lkotlin/jvm/functions/Function1;I)V
+    move-object v12, v1
+
+    invoke-direct/range {v12 .. v17}, Lkotlin/reflect/jvm/internal/impl/util/Checks;-><init>(Ljava/util/Collection;[Lkotlin/reflect/jvm/internal/impl/util/Check;Lkotlin/jvm/functions/Function1;ILkotlin/jvm/internal/DefaultConstructorMarker;)V
 
     const/16 v2, 0x10
 
@@ -387,45 +447,17 @@
 
     new-instance v1, Lkotlin/reflect/jvm/internal/impl/util/Checks;
 
-    sget-object v2, Lkotlin/reflect/jvm/internal/impl/util/OperatorNameConventions;->COMPONENT_REGEX:Lkotlin/text/Regex;
+    sget-object v13, Lkotlin/reflect/jvm/internal/impl/util/OperatorNameConventions;->COMPONENT_REGEX:Lkotlin/text/Regex;
 
-    new-array v4, v3, [Lkotlin/reflect/jvm/internal/impl/util/Check;
+    new-array v14, v8, [Lkotlin/reflect/jvm/internal/impl/util/Check;
 
-    aput-object v5, v4, v6
+    aput-object v9, v14, v10
 
-    aput-object v14, v4, v8
+    aput-object v7, v14, v11
 
-    sget-object v5, Lkotlin/reflect/jvm/internal/impl/util/Checks$3;->INSTANCE:Lkotlin/reflect/jvm/internal/impl/util/Checks$3;
+    move-object v12, v1
 
-    const-string v7, "regex"
-
-    invoke-static {v2, v7}, Lkotlin/jvm/internal/Intrinsics;->checkNotNullParameter(Ljava/lang/Object;Ljava/lang/String;)V
-
-    const-string v7, "checks"
-
-    invoke-static {v4, v7}, Lkotlin/jvm/internal/Intrinsics;->checkNotNullParameter(Ljava/lang/Object;Ljava/lang/String;)V
-
-    const-string v7, "additionalChecks"
-
-    invoke-static {v5, v7}, Lkotlin/jvm/internal/Intrinsics;->checkNotNullParameter(Ljava/lang/Object;Ljava/lang/String;)V
-
-    new-array v7, v3, [Lkotlin/reflect/jvm/internal/impl/util/Check;
-
-    invoke-static {v4, v6, v7, v6, v3}, Ljava/lang/System;->arraycopy(Ljava/lang/Object;ILjava/lang/Object;II)V
-
-    const/16 v16, 0x0
-
-    const/16 v18, 0x0
-
-    move-object v15, v1
-
-    move-object/from16 v17, v2
-
-    move-object/from16 v19, v5
-
-    move-object/from16 v20, v7
-
-    invoke-direct/range {v15 .. v20}, Lkotlin/reflect/jvm/internal/impl/util/Checks;-><init>(Lkotlin/reflect/jvm/internal/impl/name/Name;Lkotlin/text/Regex;Ljava/util/Collection;Lkotlin/jvm/functions/Function1;[Lkotlin/reflect/jvm/internal/impl/util/Check;)V
+    invoke-direct/range {v12 .. v17}, Lkotlin/reflect/jvm/internal/impl/util/Checks;-><init>(Lkotlin/text/Regex;[Lkotlin/reflect/jvm/internal/impl/util/Check;Lkotlin/jvm/functions/Function1;ILkotlin/jvm/internal/DefaultConstructorMarker;)V
 
     const/16 v2, 0x11
 
@@ -440,7 +472,7 @@
     return-void
 .end method
 
-.method public constructor <init>()V
+.method private constructor <init>()V
     .locals 0
 
     invoke-direct {p0}, Lkotlin/reflect/jvm/internal/impl/util/AbstractModifierChecks;-><init>()V

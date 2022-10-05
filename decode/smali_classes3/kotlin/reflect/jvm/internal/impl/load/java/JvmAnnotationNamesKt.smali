@@ -4,25 +4,25 @@
 
 
 # static fields
-.field public static final ANDROIDX_RECENTLY_NON_NULL_ANNOTATION:Lkotlin/reflect/jvm/internal/impl/name/FqName;
+.field private static final ANDROIDX_RECENTLY_NON_NULL_ANNOTATION:Lkotlin/reflect/jvm/internal/impl/name/FqName;
 
-.field public static final ANDROIDX_RECENTLY_NULLABLE_ANNOTATION:Lkotlin/reflect/jvm/internal/impl/name/FqName;
+.field private static final ANDROIDX_RECENTLY_NULLABLE_ANNOTATION:Lkotlin/reflect/jvm/internal/impl/name/FqName;
 
-.field public static final COMPATQUAL_NONNULL_ANNOTATION:Lkotlin/reflect/jvm/internal/impl/name/FqName;
+.field private static final COMPATQUAL_NONNULL_ANNOTATION:Lkotlin/reflect/jvm/internal/impl/name/FqName;
 
-.field public static final COMPATQUAL_NULLABLE_ANNOTATION:Lkotlin/reflect/jvm/internal/impl/name/FqName;
+.field private static final COMPATQUAL_NULLABLE_ANNOTATION:Lkotlin/reflect/jvm/internal/impl/name/FqName;
 
-.field public static final JAVAX_CHECKFORNULL_ANNOTATION:Lkotlin/reflect/jvm/internal/impl/name/FqName;
+.field private static final JAVAX_CHECKFORNULL_ANNOTATION:Lkotlin/reflect/jvm/internal/impl/name/FqName;
 
-.field public static final JAVAX_NONNULL_ANNOTATION:Lkotlin/reflect/jvm/internal/impl/name/FqName;
+.field private static final JAVAX_NONNULL_ANNOTATION:Lkotlin/reflect/jvm/internal/impl/name/FqName;
 
-.field public static final JSPECIFY_DEFAULT_NOT_NULL:Lkotlin/reflect/jvm/internal/impl/name/FqName;
+.field private static final JSPECIFY_NULLABLE:Lkotlin/reflect/jvm/internal/impl/name/FqName;
 
-.field public static final JSPECIFY_NULLABLE:Lkotlin/reflect/jvm/internal/impl/name/FqName;
+.field private static final JSPECIFY_NULLNESS_UNKNOWN:Lkotlin/reflect/jvm/internal/impl/name/FqName;
 
-.field public static final JSPECIFY_NULLNESS_UNKNOWN:Lkotlin/reflect/jvm/internal/impl/name/FqName;
+.field private static final JSPECIFY_NULL_MARKED:Lkotlin/reflect/jvm/internal/impl/name/FqName;
 
-.field public static final MUTABLE_ANNOTATIONS:Ljava/util/List;
+.field private static final MUTABLE_ANNOTATIONS:Ljava/util/List;
     .annotation system Ldalvik/annotation/Signature;
         value = {
             "Ljava/util/List<",
@@ -32,7 +32,7 @@
     .end annotation
 .end field
 
-.field public static final NOT_NULL_ANNOTATIONS:Ljava/util/List;
+.field private static final NOT_NULL_ANNOTATIONS:Ljava/util/List;
     .annotation system Ldalvik/annotation/Signature;
         value = {
             "Ljava/util/List<",
@@ -42,7 +42,17 @@
     .end annotation
 .end field
 
-.field public static final NULLABLE_ANNOTATIONS:Ljava/util/List;
+.field private static final NULLABILITY_ANNOTATIONS:Ljava/util/Set;
+    .annotation system Ldalvik/annotation/Signature;
+        value = {
+            "Ljava/util/Set<",
+            "Lkotlin/reflect/jvm/internal/impl/name/FqName;",
+            ">;"
+        }
+    .end annotation
+.end field
+
+.field private static final NULLABLE_ANNOTATIONS:Ljava/util/List;
     .annotation system Ldalvik/annotation/Signature;
         value = {
             "Ljava/util/List<",
@@ -52,7 +62,7 @@
     .end annotation
 .end field
 
-.field public static final READ_ONLY_ANNOTATIONS:Ljava/util/List;
+.field private static final READ_ONLY_ANNOTATIONS:Ljava/util/List;
     .annotation system Ldalvik/annotation/Signature;
         value = {
             "Ljava/util/List<",
@@ -69,7 +79,7 @@
 
     new-instance v0, Lkotlin/reflect/jvm/internal/impl/name/FqName;
 
-    const-string v1, "org.jspecify.annotations.Nullable"
+    const-string v1, "org.jspecify.nullness.Nullable"
 
     invoke-direct {v0, v1}, Lkotlin/reflect/jvm/internal/impl/name/FqName;-><init>(Ljava/lang/String;)V
 
@@ -77,7 +87,7 @@
 
     new-instance v1, Lkotlin/reflect/jvm/internal/impl/name/FqName;
 
-    const-string v2, "org.jspecify.annotations.NullnessUnspecified"
+    const-string v2, "org.jspecify.nullness.NullnessUnspecified"
 
     invoke-direct {v1, v2}, Lkotlin/reflect/jvm/internal/impl/name/FqName;-><init>(Ljava/lang/String;)V
 
@@ -85,13 +95,13 @@
 
     new-instance v2, Lkotlin/reflect/jvm/internal/impl/name/FqName;
 
-    const-string v3, "org.jspecify.annotations.DefaultNonNull"
+    const-string v3, "org.jspecify.nullness.NullMarked"
 
     invoke-direct {v2, v3}, Lkotlin/reflect/jvm/internal/impl/name/FqName;-><init>(Ljava/lang/String;)V
 
-    sput-object v2, Lkotlin/reflect/jvm/internal/impl/load/java/JvmAnnotationNamesKt;->JSPECIFY_DEFAULT_NOT_NULL:Lkotlin/reflect/jvm/internal/impl/name/FqName;
+    sput-object v2, Lkotlin/reflect/jvm/internal/impl/load/java/JvmAnnotationNamesKt;->JSPECIFY_NULL_MARKED:Lkotlin/reflect/jvm/internal/impl/name/FqName;
 
-    const/16 v3, 0xd
+    const/16 v3, 0xe
 
     new-array v3, v3, [Lkotlin/reflect/jvm/internal/impl/name/FqName;
 
@@ -203,13 +213,13 @@
 
     new-instance v4, Lkotlin/reflect/jvm/internal/impl/name/FqName;
 
-    const-string v14, "edu.umd.cs.findbugs.annotations.PossiblyNull"
+    const-string v15, "edu.umd.cs.findbugs.annotations.PossiblyNull"
 
-    invoke-direct {v4, v14}, Lkotlin/reflect/jvm/internal/impl/name/FqName;-><init>(Ljava/lang/String;)V
+    invoke-direct {v4, v15}, Lkotlin/reflect/jvm/internal/impl/name/FqName;-><init>(Ljava/lang/String;)V
 
-    const/16 v14, 0xb
+    const/16 v15, 0xb
 
-    aput-object v4, v3, v14
+    aput-object v4, v3, v15
 
     new-instance v4, Lkotlin/reflect/jvm/internal/impl/name/FqName;
 
@@ -218,6 +228,16 @@
     invoke-direct {v4, v14}, Lkotlin/reflect/jvm/internal/impl/name/FqName;-><init>(Ljava/lang/String;)V
 
     const/16 v14, 0xc
+
+    aput-object v4, v3, v14
+
+    new-instance v4, Lkotlin/reflect/jvm/internal/impl/name/FqName;
+
+    const-string v14, "io.reactivex.rxjava3.annotations.Nullable"
+
+    invoke-direct {v4, v14}, Lkotlin/reflect/jvm/internal/impl/name/FqName;-><init>(Ljava/lang/String;)V
+
+    const/16 v14, 0xd
 
     aput-object v4, v3, v14
 
@@ -323,6 +343,16 @@
 
     aput-object v8, v13, v9
 
+    new-instance v8, Lkotlin/reflect/jvm/internal/impl/name/FqName;
+
+    const-string v9, "io.reactivex.rxjava3.annotations.NonNull"
+
+    invoke-direct {v8, v9}, Lkotlin/reflect/jvm/internal/impl/name/FqName;-><init>(Ljava/lang/String;)V
+
+    const/16 v9, 0xa
+
+    aput-object v8, v13, v9
+
     invoke-static {v13}, Lkotlin/collections/CollectionsKt__CollectionsKt;->listOf([Ljava/lang/Object;)Ljava/util/List;
 
     move-result-object v8
@@ -403,6 +433,10 @@
 
     invoke-static {v0, v2}, Lkotlin/collections/SetsKt;->plus(Ljava/util/Set;Ljava/lang/Object;)Ljava/util/Set;
 
+    move-result-object v0
+
+    sput-object v0, Lkotlin/reflect/jvm/internal/impl/load/java/JvmAnnotationNamesKt;->NULLABILITY_ANNOTATIONS:Ljava/util/Set;
+
     new-array v0, v7, [Lkotlin/reflect/jvm/internal/impl/name/FqName;
 
     sget-object v1, Lkotlin/reflect/jvm/internal/impl/load/java/JvmAnnotationNames;->JETBRAINS_READONLY_ANNOTATION:Lkotlin/reflect/jvm/internal/impl/name/FqName;
@@ -436,4 +470,140 @@
     sput-object v0, Lkotlin/reflect/jvm/internal/impl/load/java/JvmAnnotationNamesKt;->MUTABLE_ANNOTATIONS:Ljava/util/List;
 
     return-void
+.end method
+
+.method public static final getANDROIDX_RECENTLY_NON_NULL_ANNOTATION()Lkotlin/reflect/jvm/internal/impl/name/FqName;
+    .locals 1
+
+    sget-object v0, Lkotlin/reflect/jvm/internal/impl/load/java/JvmAnnotationNamesKt;->ANDROIDX_RECENTLY_NON_NULL_ANNOTATION:Lkotlin/reflect/jvm/internal/impl/name/FqName;
+
+    return-object v0
+.end method
+
+.method public static final getANDROIDX_RECENTLY_NULLABLE_ANNOTATION()Lkotlin/reflect/jvm/internal/impl/name/FqName;
+    .locals 1
+
+    sget-object v0, Lkotlin/reflect/jvm/internal/impl/load/java/JvmAnnotationNamesKt;->ANDROIDX_RECENTLY_NULLABLE_ANNOTATION:Lkotlin/reflect/jvm/internal/impl/name/FqName;
+
+    return-object v0
+.end method
+
+.method public static final getCOMPATQUAL_NONNULL_ANNOTATION()Lkotlin/reflect/jvm/internal/impl/name/FqName;
+    .locals 1
+
+    sget-object v0, Lkotlin/reflect/jvm/internal/impl/load/java/JvmAnnotationNamesKt;->COMPATQUAL_NONNULL_ANNOTATION:Lkotlin/reflect/jvm/internal/impl/name/FqName;
+
+    return-object v0
+.end method
+
+.method public static final getCOMPATQUAL_NULLABLE_ANNOTATION()Lkotlin/reflect/jvm/internal/impl/name/FqName;
+    .locals 1
+
+    sget-object v0, Lkotlin/reflect/jvm/internal/impl/load/java/JvmAnnotationNamesKt;->COMPATQUAL_NULLABLE_ANNOTATION:Lkotlin/reflect/jvm/internal/impl/name/FqName;
+
+    return-object v0
+.end method
+
+.method public static final getJAVAX_CHECKFORNULL_ANNOTATION()Lkotlin/reflect/jvm/internal/impl/name/FqName;
+    .locals 1
+
+    sget-object v0, Lkotlin/reflect/jvm/internal/impl/load/java/JvmAnnotationNamesKt;->JAVAX_CHECKFORNULL_ANNOTATION:Lkotlin/reflect/jvm/internal/impl/name/FqName;
+
+    return-object v0
+.end method
+
+.method public static final getJAVAX_NONNULL_ANNOTATION()Lkotlin/reflect/jvm/internal/impl/name/FqName;
+    .locals 1
+
+    sget-object v0, Lkotlin/reflect/jvm/internal/impl/load/java/JvmAnnotationNamesKt;->JAVAX_NONNULL_ANNOTATION:Lkotlin/reflect/jvm/internal/impl/name/FqName;
+
+    return-object v0
+.end method
+
+.method public static final getJSPECIFY_NULLABLE()Lkotlin/reflect/jvm/internal/impl/name/FqName;
+    .locals 1
+
+    sget-object v0, Lkotlin/reflect/jvm/internal/impl/load/java/JvmAnnotationNamesKt;->JSPECIFY_NULLABLE:Lkotlin/reflect/jvm/internal/impl/name/FqName;
+
+    return-object v0
+.end method
+
+.method public static final getJSPECIFY_NULLNESS_UNKNOWN()Lkotlin/reflect/jvm/internal/impl/name/FqName;
+    .locals 1
+
+    sget-object v0, Lkotlin/reflect/jvm/internal/impl/load/java/JvmAnnotationNamesKt;->JSPECIFY_NULLNESS_UNKNOWN:Lkotlin/reflect/jvm/internal/impl/name/FqName;
+
+    return-object v0
+.end method
+
+.method public static final getJSPECIFY_NULL_MARKED()Lkotlin/reflect/jvm/internal/impl/name/FqName;
+    .locals 1
+
+    sget-object v0, Lkotlin/reflect/jvm/internal/impl/load/java/JvmAnnotationNamesKt;->JSPECIFY_NULL_MARKED:Lkotlin/reflect/jvm/internal/impl/name/FqName;
+
+    return-object v0
+.end method
+
+.method public static final getMUTABLE_ANNOTATIONS()Ljava/util/List;
+    .locals 1
+    .annotation system Ldalvik/annotation/Signature;
+        value = {
+            "()",
+            "Ljava/util/List<",
+            "Lkotlin/reflect/jvm/internal/impl/name/FqName;",
+            ">;"
+        }
+    .end annotation
+
+    sget-object v0, Lkotlin/reflect/jvm/internal/impl/load/java/JvmAnnotationNamesKt;->MUTABLE_ANNOTATIONS:Ljava/util/List;
+
+    return-object v0
+.end method
+
+.method public static final getNOT_NULL_ANNOTATIONS()Ljava/util/List;
+    .locals 1
+    .annotation system Ldalvik/annotation/Signature;
+        value = {
+            "()",
+            "Ljava/util/List<",
+            "Lkotlin/reflect/jvm/internal/impl/name/FqName;",
+            ">;"
+        }
+    .end annotation
+
+    sget-object v0, Lkotlin/reflect/jvm/internal/impl/load/java/JvmAnnotationNamesKt;->NOT_NULL_ANNOTATIONS:Ljava/util/List;
+
+    return-object v0
+.end method
+
+.method public static final getNULLABLE_ANNOTATIONS()Ljava/util/List;
+    .locals 1
+    .annotation system Ldalvik/annotation/Signature;
+        value = {
+            "()",
+            "Ljava/util/List<",
+            "Lkotlin/reflect/jvm/internal/impl/name/FqName;",
+            ">;"
+        }
+    .end annotation
+
+    sget-object v0, Lkotlin/reflect/jvm/internal/impl/load/java/JvmAnnotationNamesKt;->NULLABLE_ANNOTATIONS:Ljava/util/List;
+
+    return-object v0
+.end method
+
+.method public static final getREAD_ONLY_ANNOTATIONS()Ljava/util/List;
+    .locals 1
+    .annotation system Ldalvik/annotation/Signature;
+        value = {
+            "()",
+            "Ljava/util/List<",
+            "Lkotlin/reflect/jvm/internal/impl/name/FqName;",
+            ">;"
+        }
+    .end annotation
+
+    sget-object v0, Lkotlin/reflect/jvm/internal/impl/load/java/JvmAnnotationNamesKt;->READ_ONLY_ANNOTATIONS:Ljava/util/List;
+
+    return-object v0
 .end method

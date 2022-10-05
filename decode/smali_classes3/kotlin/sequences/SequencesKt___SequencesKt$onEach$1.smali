@@ -20,11 +20,29 @@
 
 # instance fields
 .field public final synthetic $action:Lkotlin/jvm/functions/Function1;
+    .annotation system Ldalvik/annotation/Signature;
+        value = {
+            "Lkotlin/jvm/functions/Function1<",
+            "Ljava/lang/Object;",
+            "Lkotlin/Unit;",
+            ">;"
+        }
+    .end annotation
+.end field
 
 
 # direct methods
 .method public constructor <init>(Lkotlin/jvm/functions/Function1;)V
     .locals 0
+    .annotation system Ldalvik/annotation/Signature;
+        value = {
+            "(",
+            "Lkotlin/jvm/functions/Function1<",
+            "Ljava/lang/Object;",
+            "Lkotlin/Unit;",
+            ">;)V"
+        }
+    .end annotation
 
     iput-object p1, p0, Lkotlin/sequences/SequencesKt___SequencesKt$onEach$1;->$action:Lkotlin/jvm/functions/Function1;
 

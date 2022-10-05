@@ -25,8 +25,8 @@
     c = "de.rki.coronawarnapp.covidcertificate.vaccination.ui.details.VaccinationDetailsViewModel$refreshCertState$1"
     f = "VaccinationDetailsViewModel.kt"
     l = {
-        0x59,
-        0x5a
+        0x50,
+        0x51
     }
     m = "invokeSuspend"
 .end annotation

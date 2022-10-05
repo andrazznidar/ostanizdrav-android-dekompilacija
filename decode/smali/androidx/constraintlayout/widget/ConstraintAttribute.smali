@@ -486,7 +486,7 @@
     :try_start_0
     iget v8, v6, Landroidx/constraintlayout/widget/ConstraintAttribute;->mType:I
 
-    invoke-static {v8}, Landroidx/constraintlayout/core/SolverVariable$Type$r8$EnumUnboxingUtility;->$enumboxing$ordinal(I)I
+    invoke-static {v8}, Landroidx/camera/camera2/internal/Camera2CameraImpl$InternalState$EnumUnboxingSharedUtility;->ordinal(I)I
 
     move-result v8
 
@@ -834,7 +834,7 @@
 
     iget v0, p0, Landroidx/constraintlayout/widget/ConstraintAttribute;->mType:I
 
-    invoke-static {v0}, Landroidx/constraintlayout/core/SolverVariable$Type$r8$EnumUnboxingUtility;->$enumboxing$ordinal(I)I
+    invoke-static {v0}, Landroidx/camera/camera2/internal/Camera2CameraImpl$InternalState$EnumUnboxingSharedUtility;->ordinal(I)I
 
     move-result v0
 

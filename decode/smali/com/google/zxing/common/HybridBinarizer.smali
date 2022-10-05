@@ -46,156 +46,10 @@
     return-void
 .end method
 
-.method public static estimateBlackPoint([I)I
-    .locals 9
-    .annotation system Ldalvik/annotation/Throws;
-        value = {
-            Lcom/google/zxing/NotFoundException;
-        }
-    .end annotation
-
-    array-length v0, p0
-
-    const/4 v1, 0x0
-
-    move v2, v1
-
-    move v3, v2
-
-    move v4, v3
-
-    move v5, v4
-
-    :goto_0
-    if-ge v2, v0, :cond_2
-
-    aget v6, p0, v2
-
-    if-le v6, v3, :cond_0
-
-    aget v3, p0, v2
-
-    move v5, v2
-
-    :cond_0
-    aget v6, p0, v2
-
-    if-le v6, v4, :cond_1
-
-    aget v4, p0, v2
-
-    :cond_1
-    add-int/lit8 v2, v2, 0x1
-
-    goto :goto_0
-
-    :cond_2
-    move v2, v1
-
-    move v3, v2
-
-    :goto_1
-    if-ge v1, v0, :cond_4
-
-    sub-int v6, v1, v5
-
-    aget v7, p0, v1
-
-    mul-int/2addr v7, v6
-
-    mul-int/2addr v7, v6
-
-    if-le v7, v3, :cond_3
-
-    move v2, v1
-
-    move v3, v7
-
-    :cond_3
-    add-int/lit8 v1, v1, 0x1
-
-    goto :goto_1
-
-    :cond_4
-    if-le v5, v2, :cond_5
-
-    goto :goto_2
-
-    :cond_5
-    move v8, v5
-
-    move v5, v2
-
-    move v2, v8
-
-    :goto_2
-    sub-int v1, v5, v2
-
-    div-int/lit8 v0, v0, 0x10
-
-    if-le v1, v0, :cond_8
-
-    add-int/lit8 v0, v5, -0x1
-
-    const/4 v1, -0x1
-
-    move v3, v1
-
-    move v1, v0
-
-    :goto_3
-    if-le v0, v2, :cond_7
-
-    sub-int v6, v0, v2
-
-    mul-int/2addr v6, v6
-
-    sub-int v7, v5, v0
-
-    mul-int/2addr v7, v6
-
-    aget v6, p0, v0
-
-    sub-int v6, v4, v6
-
-    mul-int/2addr v6, v7
-
-    if-le v6, v3, :cond_6
-
-    move v1, v0
-
-    move v3, v6
-
-    :cond_6
-    add-int/lit8 v0, v0, -0x1
-
-    goto :goto_3
-
-    :cond_7
-    shl-int/lit8 p0, v1, 0x3
-
-    return p0
-
-    :cond_8
-    sget-object p0, Lcom/google/zxing/NotFoundException;->INSTANCE:Lcom/google/zxing/NotFoundException;
-
-    throw p0
-.end method
-
 
 # virtual methods
-.method public createBinarizer(Lcom/google/zxing/LuminanceSource;)Lcom/google/zxing/Binarizer;
-    .locals 1
-
-    new-instance v0, Lcom/google/zxing/common/HybridBinarizer;
-
-    invoke-direct {v0, p1}, Lcom/google/zxing/common/HybridBinarizer;-><init>(Lcom/google/zxing/LuminanceSource;)V
-
-    return-object v0
-.end method
-
 .method public getBlackMatrix()Lcom/google/zxing/common/BitMatrix;
-    .locals 23
+    .locals 24
     .annotation system Ldalvik/annotation/Throws;
         value = {
             Lcom/google/zxing/NotFoundException;
@@ -301,9 +155,9 @@
 
     const/16 v18, 0x0
 
-    const/16 v19, 0x0
+    const/16 v19, 0xff
 
-    const/16 v20, 0xff
+    const/16 v20, 0x0
 
     :goto_2
     if-ge v11, v14, :cond_b
@@ -329,23 +183,23 @@
 
     add-int v18, v18, v14
 
+    if-ge v14, v7, :cond_5
+
+    move v7, v14
+
+    :cond_5
     move/from16 v11, v21
 
-    if-ge v14, v11, :cond_5
+    if-le v14, v11, :cond_6
 
     move/from16 v21, v14
 
     goto :goto_4
 
-    :cond_5
+    :cond_6
     move/from16 v21, v11
 
     :goto_4
-    if-le v14, v7, :cond_6
-
-    move v7, v14
-
-    :cond_6
     add-int/lit8 v5, v5, 0x1
 
     move/from16 v11, v22
@@ -359,7 +213,7 @@
 
     move/from16 v11, v21
 
-    sub-int v5, v7, v11
+    sub-int v5, v11, v7
 
     const/16 v14, 0x18
 
@@ -374,9 +228,9 @@
 
     const/16 v5, 0x8
 
-    move/from16 v19, v7
-
     if-ge v14, v5, :cond_9
+
+    move/from16 v19, v7
 
     const/4 v7, 0x0
 
@@ -411,6 +265,8 @@
     goto :goto_5
 
     :cond_9
+    move/from16 v19, v7
+
     move/from16 v20, v11
 
     move v11, v14
@@ -438,9 +294,9 @@
     :cond_b
     shr-int/lit8 v5, v18, 0x6
 
-    move/from16 v7, v20
+    move/from16 v7, v19
 
-    sub-int v11, v19, v7
+    sub-int v11, v20, v7
 
     const/16 v14, 0x18
 
@@ -720,7 +576,7 @@
     :cond_1a
     iput-object v5, v0, Lcom/google/zxing/common/HybridBinarizer;->matrix:Lcom/google/zxing/common/BitMatrix;
 
-    goto :goto_13
+    goto/16 :goto_17
 
     :cond_1b
     new-instance v4, Lcom/google/zxing/common/BitMatrix;
@@ -785,9 +641,125 @@
     goto :goto_f
 
     :cond_1d
-    invoke-static {v5}, Lcom/google/zxing/common/HybridBinarizer;->estimateBlackPoint([I)I
+    array-length v6, v5
 
-    move-result v5
+    const/4 v7, 0x0
+
+    const/4 v8, 0x0
+
+    const/4 v9, 0x0
+
+    const/4 v10, 0x0
+
+    :goto_11
+    if-ge v7, v6, :cond_20
+
+    aget v11, v5, v7
+
+    if-le v11, v8, :cond_1e
+
+    aget v8, v5, v7
+
+    move v10, v7
+
+    :cond_1e
+    aget v11, v5, v7
+
+    if-le v11, v9, :cond_1f
+
+    aget v9, v5, v7
+
+    :cond_1f
+    add-int/lit8 v7, v7, 0x1
+
+    goto :goto_11
+
+    :cond_20
+    const/4 v7, 0x0
+
+    const/4 v8, 0x0
+
+    const/4 v11, 0x0
+
+    :goto_12
+    if-ge v7, v6, :cond_22
+
+    sub-int v12, v7, v10
+
+    aget v13, v5, v7
+
+    mul-int/2addr v13, v12
+
+    mul-int/2addr v13, v12
+
+    if-le v13, v11, :cond_21
+
+    move v8, v7
+
+    move v11, v13
+
+    :cond_21
+    add-int/lit8 v7, v7, 0x1
+
+    goto :goto_12
+
+    :cond_22
+    if-le v10, v8, :cond_23
+
+    goto :goto_13
+
+    :cond_23
+    move/from16 v23, v10
+
+    move v10, v8
+
+    move/from16 v8, v23
+
+    :goto_13
+    sub-int v7, v10, v8
+
+    div-int/lit8 v6, v6, 0x10
+
+    if-le v7, v6, :cond_29
+
+    add-int/lit8 v6, v10, -0x1
+
+    const/4 v7, -0x1
+
+    move v11, v7
+
+    move v7, v6
+
+    :goto_14
+    if-le v6, v8, :cond_25
+
+    sub-int v12, v6, v8
+
+    mul-int/2addr v12, v12
+
+    sub-int v13, v10, v6
+
+    mul-int/2addr v13, v12
+
+    aget v12, v5, v6
+
+    sub-int v12, v9, v12
+
+    mul-int/2addr v12, v13
+
+    if-le v12, v11, :cond_24
+
+    move v7, v6
+
+    move v11, v12
+
+    :cond_24
+    add-int/lit8 v6, v6, -0x1
+
+    goto :goto_14
+
+    :cond_25
+    shl-int/lit8 v5, v7, 0x3
 
     invoke-virtual {v1}, Lcom/google/zxing/LuminanceSource;->getMatrix()[B
 
@@ -795,15 +767,15 @@
 
     const/4 v6, 0x0
 
-    :goto_11
-    if-ge v6, v3, :cond_20
+    :goto_15
+    if-ge v6, v3, :cond_28
 
     mul-int v7, v6, v2
 
     const/4 v8, 0x0
 
-    :goto_12
-    if-ge v8, v2, :cond_1f
+    :goto_16
+    if-ge v8, v2, :cond_27
 
     add-int v9, v7, v8
 
@@ -813,180 +785,34 @@
 
     and-int/2addr v9, v10
 
-    if-ge v9, v5, :cond_1e
+    if-ge v9, v5, :cond_26
 
     invoke-virtual {v4, v8, v6}, Lcom/google/zxing/common/BitMatrix;->set(II)V
 
-    :cond_1e
+    :cond_26
     add-int/lit8 v8, v8, 0x1
 
-    goto :goto_12
+    goto :goto_16
 
-    :cond_1f
+    :cond_27
     const/16 v10, 0xff
 
     add-int/lit8 v6, v6, 0x1
 
-    goto :goto_11
+    goto :goto_15
 
-    :cond_20
+    :cond_28
     iput-object v4, v0, Lcom/google/zxing/common/HybridBinarizer;->matrix:Lcom/google/zxing/common/BitMatrix;
 
-    :goto_13
+    :goto_17
     iget-object v1, v0, Lcom/google/zxing/common/HybridBinarizer;->matrix:Lcom/google/zxing/common/BitMatrix;
 
     return-object v1
-.end method
 
-.method public getBlackRow(ILcom/google/zxing/common/BitArray;)Lcom/google/zxing/common/BitArray;
-    .locals 9
+    :cond_29
+    sget-object v1, Lcom/google/zxing/NotFoundException;->INSTANCE:Lcom/google/zxing/NotFoundException;
 
-    iget-object v0, p0, Lcom/google/zxing/Binarizer;->source:Lcom/google/zxing/LuminanceSource;
-
-    iget v1, v0, Lcom/google/zxing/LuminanceSource;->width:I
-
-    const/4 v2, 0x0
-
-    if-eqz p2, :cond_1
-
-    iget v3, p2, Lcom/google/zxing/common/BitArray;->size:I
-
-    if-ge v3, v1, :cond_0
-
-    goto :goto_1
-
-    :cond_0
-    iget-object v3, p2, Lcom/google/zxing/common/BitArray;->bits:[I
-
-    array-length v3, v3
-
-    move v4, v2
-
-    :goto_0
-    if-ge v4, v3, :cond_2
-
-    iget-object v5, p2, Lcom/google/zxing/common/BitArray;->bits:[I
-
-    aput v2, v5, v4
-
-    add-int/lit8 v4, v4, 0x1
-
-    goto :goto_0
-
-    :cond_1
-    :goto_1
-    new-instance p2, Lcom/google/zxing/common/BitArray;
-
-    invoke-direct {p2, v1}, Lcom/google/zxing/common/BitArray;-><init>(I)V
-
-    :cond_2
-    invoke-virtual {p0, v1}, Lcom/google/zxing/common/HybridBinarizer;->initArrays(I)V
-
-    iget-object v3, p0, Lcom/google/zxing/common/HybridBinarizer;->luminances:[B
-
-    invoke-virtual {v0, p1, v3}, Lcom/google/zxing/LuminanceSource;->getRow(I[B)[B
-
-    move-result-object p1
-
-    iget-object v0, p0, Lcom/google/zxing/common/HybridBinarizer;->buckets:[I
-
-    move v3, v2
-
-    :goto_2
-    const/4 v4, 0x3
-
-    const/4 v5, 0x1
-
-    if-ge v3, v1, :cond_3
-
-    aget-byte v6, p1, v3
-
-    and-int/lit16 v6, v6, 0xff
-
-    shr-int/lit8 v4, v6, 0x3
-
-    aget v6, v0, v4
-
-    add-int/2addr v6, v5
-
-    aput v6, v0, v4
-
-    add-int/lit8 v3, v3, 0x1
-
-    goto :goto_2
-
-    :cond_3
-    invoke-static {v0}, Lcom/google/zxing/common/HybridBinarizer;->estimateBlackPoint([I)I
-
-    move-result v0
-
-    if-ge v1, v4, :cond_5
-
-    :goto_3
-    if-ge v2, v1, :cond_7
-
-    aget-byte v3, p1, v2
-
-    and-int/lit16 v3, v3, 0xff
-
-    if-ge v3, v0, :cond_4
-
-    invoke-virtual {p2, v2}, Lcom/google/zxing/common/BitArray;->set(I)V
-
-    :cond_4
-    add-int/lit8 v2, v2, 0x1
-
-    goto :goto_3
-
-    :cond_5
-    aget-byte v2, p1, v2
-
-    and-int/lit16 v2, v2, 0xff
-
-    aget-byte v3, p1, v5
-
-    and-int/lit16 v3, v3, 0xff
-
-    move v8, v3
-
-    move v3, v2
-
-    move v2, v8
-
-    :goto_4
-    add-int/lit8 v4, v1, -0x1
-
-    if-ge v5, v4, :cond_7
-
-    add-int/lit8 v4, v5, 0x1
-
-    aget-byte v6, p1, v4
-
-    and-int/lit16 v6, v6, 0xff
-
-    shl-int/lit8 v7, v2, 0x2
-
-    sub-int/2addr v7, v3
-
-    sub-int/2addr v7, v6
-
-    div-int/lit8 v7, v7, 0x2
-
-    if-ge v7, v0, :cond_6
-
-    invoke-virtual {p2, v5}, Lcom/google/zxing/common/BitArray;->set(I)V
-
-    :cond_6
-    move v3, v2
-
-    move v5, v4
-
-    move v2, v6
-
-    goto :goto_4
-
-    :cond_7
-    return-object p2
+    throw v1
 .end method
 
 .method public final initArrays(I)V

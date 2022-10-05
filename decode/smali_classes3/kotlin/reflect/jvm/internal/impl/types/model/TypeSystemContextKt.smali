@@ -3,21 +3,39 @@
 .source "TypeSystemContext.kt"
 
 
+# annotations
+.annotation system Ldalvik/annotation/MemberClasses;
+    value = {
+        Lkotlin/reflect/jvm/internal/impl/types/model/TypeSystemContextKt$WhenMappings;
+    }
+.end annotation
+
+
 # direct methods
 .method public static final convertVariance(Lkotlin/reflect/jvm/internal/impl/types/Variance;)Lkotlin/reflect/jvm/internal/impl/types/model/TypeVariance;
     .locals 1
+
+    const-string v0, "<this>"
+
+    invoke-static {p0, v0}, Lkotlin/jvm/internal/Intrinsics;->checkNotNullParameter(Ljava/lang/Object;Ljava/lang/String;)V
+
+    sget-object v0, Lkotlin/reflect/jvm/internal/impl/types/model/TypeSystemContextKt$WhenMappings;->$EnumSwitchMapping$0:[I
 
     invoke-virtual {p0}, Ljava/lang/Enum;->ordinal()I
 
     move-result p0
 
-    if-eqz p0, :cond_2
+    aget p0, v0, p0
 
     const/4 v0, 0x1
 
-    if-eq p0, v0, :cond_1
+    if-eq p0, v0, :cond_2
 
     const/4 v0, 0x2
+
+    if-eq p0, v0, :cond_1
+
+    const/4 v0, 0x3
 
     if-ne p0, v0, :cond_0
 

@@ -1,89 +1,238 @@
 .class final Lj$/util/stream/m1;
-.super Ljava/lang/Object;
+.super Lj$/util/stream/V2;
 
 # interfaces
-.implements Lj$/util/stream/P4;
-
-
-# instance fields
-.field private final a:Lj$/util/stream/g4;
-
-.field final b:Lj$/util/stream/l1;
-
-.field final c:Lj$/util/function/t;
+.implements Lj$/util/stream/L0;
+.implements Lj$/util/stream/F0;
 
 
 # direct methods
-.method constructor <init>(Lj$/util/stream/g4;Lj$/util/stream/l1;Lj$/util/function/t;)V
+.method constructor <init>()V
     .locals 0
 
-    invoke-direct {p0}, Ljava/lang/Object;-><init>()V
-
-    iput-object p1, p0, Lj$/util/stream/m1;->a:Lj$/util/stream/g4;
-
-    iput-object p2, p0, Lj$/util/stream/m1;->b:Lj$/util/stream/l1;
-
-    iput-object p3, p0, Lj$/util/stream/m1;->c:Lj$/util/function/t;
+    invoke-direct {p0}, Lj$/util/stream/V2;-><init>()V
 
     return-void
 .end method
 
 
 # virtual methods
-.method public b()I
-    .locals 2
+.method public B()Lj$/util/z;
+    .locals 1
 
-    sget v0, Lj$/util/stream/f4;->u:I
+    invoke-super {p0}, Lj$/util/stream/V2;->B()Lj$/util/z;
 
-    sget v1, Lj$/util/stream/f4;->r:I
+    move-result-object v0
 
-    or-int/2addr v0, v1
+    return-object v0
+.end method
+
+.method public synthetic C(Ljava/lang/Integer;)V
+    .locals 0
+
+    invoke-static {p0, p1}, Lj$/util/stream/D0;->M(Lj$/util/stream/o2;Ljava/lang/Integer;)V
+
+    return-void
+.end method
+
+.method public synthetic D([Ljava/lang/Integer;I)V
+    .locals 0
+
+    invoke-static {p0, p1, p2}, Lj$/util/stream/D0;->S(Lj$/util/stream/L0;[Ljava/lang/Integer;I)V
+
+    return-void
+.end method
+
+.method public synthetic E(JJLj$/util/function/p;)Lj$/util/stream/L0;
+    .locals 0
+
+    invoke-static {p0, p1, p2, p3, p4}, Lj$/util/stream/D0;->Y(Lj$/util/stream/L0;JJ)Lj$/util/stream/L0;
+
+    move-result-object p1
+
+    return-object p1
+.end method
+
+.method public a(I)Lj$/util/stream/O0;
+    .locals 0
+
+    new-instance p1, Ljava/lang/IndexOutOfBoundsException;
+
+    invoke-direct {p1}, Ljava/lang/IndexOutOfBoundsException;-><init>()V
+
+    throw p1
+.end method
+
+.method public bridge synthetic a(I)Lj$/util/stream/P0;
+    .locals 0
+
+    invoke-virtual {p0, p1}, Lj$/util/stream/m1;->a(I)Lj$/util/stream/O0;
+
+    const/4 p1, 0x0
+
+    throw p1
+.end method
+
+.method public accept(I)V
+    .locals 0
+
+    invoke-super {p0, p1}, Lj$/util/stream/V2;->accept(I)V
+
+    return-void
+.end method
+
+.method public b()Lj$/util/stream/L0;
+    .locals 0
+
+    return-object p0
+.end method
+
+.method public b()Lj$/util/stream/P0;
+    .locals 0
+
+    return-object p0
+.end method
+
+.method public synthetic c(D)V
+    .locals 0
+
+    invoke-static {}, Lj$/util/stream/D0;->K()V
+
+    const/4 p1, 0x0
+
+    throw p1
+.end method
+
+.method public synthetic d(J)V
+    .locals 0
+
+    invoke-static {}, Lj$/util/stream/D0;->P()V
+
+    const/4 p1, 0x0
+
+    throw p1
+.end method
+
+.method public g()V
+    .locals 0
+
+    return-void
+.end method
+
+.method public h(Ljava/lang/Object;I)V
+    .locals 0
+
+    check-cast p1, [I
+
+    invoke-super {p0, p1, p2}, Lj$/util/stream/Z2;->h(Ljava/lang/Object;I)V
+
+    return-void
+.end method
+
+.method public i(J)V
+    .locals 0
+
+    invoke-virtual {p0}, Lj$/util/stream/Z2;->clear()V
+
+    invoke-virtual {p0, p1, p2}, Lj$/util/stream/Z2;->x(J)V
+
+    return-void
+.end method
+
+.method public bridge synthetic j(Ljava/lang/Object;)V
+    .locals 0
+
+    check-cast p1, Ljava/lang/Integer;
+
+    invoke-virtual {p0, p1}, Lj$/util/stream/m1;->C(Ljava/lang/Integer;)V
+
+    return-void
+.end method
+
+.method public k()Ljava/lang/Object;
+    .locals 1
+
+    invoke-super {p0}, Lj$/util/stream/Z2;->k()Ljava/lang/Object;
+
+    move-result-object v0
+
+    check-cast v0, [I
+
+    return-object v0
+.end method
+
+.method public l(Ljava/lang/Object;)V
+    .locals 0
+
+    check-cast p1, Lj$/util/function/IntConsumer;
+
+    invoke-super {p0, p1}, Lj$/util/stream/Z2;->l(Ljava/lang/Object;)V
+
+    return-void
+.end method
+
+.method public bridge synthetic m([Ljava/lang/Object;I)V
+    .locals 0
+
+    check-cast p1, [Ljava/lang/Integer;
+
+    invoke-virtual {p0, p1, p2}, Lj$/util/stream/m1;->D([Ljava/lang/Integer;I)V
+
+    return-void
+.end method
+
+.method public synthetic n()I
+    .locals 1
+
+    const/4 v0, 0x0
 
     return v0
 .end method
 
-.method public f(Lj$/util/stream/z2;Lj$/util/Spliterator;)Ljava/lang/Object;
-    .locals 1
+.method public synthetic o(Lj$/util/function/p;)[Ljava/lang/Object;
+    .locals 0
 
-    new-instance v0, Lj$/util/stream/n1;
-
-    invoke-direct {v0, p0, p1, p2}, Lj$/util/stream/n1;-><init>(Lj$/util/stream/m1;Lj$/util/stream/z2;Lj$/util/Spliterator;)V
-
-    invoke-virtual {v0}, Ljava/util/concurrent/CountedCompleter;->invoke()Ljava/lang/Object;
+    invoke-static {p0, p1}, Lj$/util/stream/D0;->Q(Lj$/util/stream/O0;Lj$/util/function/p;)[Ljava/lang/Object;
 
     move-result-object p1
-
-    check-cast p1, Ljava/lang/Boolean;
 
     return-object p1
 .end method
 
-.method public g(Lj$/util/stream/z2;Lj$/util/Spliterator;)Ljava/lang/Object;
-    .locals 2
+.method public bridge synthetic p(JJLj$/util/function/p;)Lj$/util/stream/P0;
+    .locals 0
 
-    iget-object v0, p0, Lj$/util/stream/m1;->c:Lj$/util/function/t;
-
-    invoke-interface {v0}, Lj$/util/function/t;->get()Ljava/lang/Object;
-
-    move-result-object v0
-
-    check-cast v0, Lj$/util/stream/k1;
-
-    check-cast p1, Lj$/util/stream/c;
-
-    invoke-static {v0}, Ljava/util/Objects;->requireNonNull(Ljava/lang/Object;)Ljava/lang/Object;
-
-    invoke-virtual {p1, v0}, Lj$/util/stream/c;->s0(Lj$/util/stream/n3;)Lj$/util/stream/n3;
-
-    move-result-object v1
-
-    invoke-virtual {p1, v1, p2}, Lj$/util/stream/c;->k0(Lj$/util/stream/n3;Lj$/util/Spliterator;)V
-
-    iget-boolean p1, v0, Lj$/util/stream/k1;->b:Z
-
-    invoke-static {p1}, Ljava/lang/Boolean;->valueOf(Z)Ljava/lang/Boolean;
+    invoke-virtual/range {p0 .. p5}, Lj$/util/stream/m1;->E(JJLj$/util/function/p;)Lj$/util/stream/L0;
 
     move-result-object p1
 
     return-object p1
+.end method
+
+.method public synthetic r()Z
+    .locals 1
+
+    const/4 v0, 0x0
+
+    return v0
+.end method
+
+.method public spliterator()Lj$/util/D;
+    .locals 1
+
+    invoke-super {p0}, Lj$/util/stream/V2;->B()Lj$/util/z;
+
+    move-result-object v0
+
+    return-object v0
+.end method
+
+.method public spliterator()Lj$/util/Spliterator;
+    .locals 1
+
+    invoke-super {p0}, Lj$/util/stream/V2;->B()Lj$/util/z;
+
+    move-result-object v0
+
+    return-object v0
 .end method

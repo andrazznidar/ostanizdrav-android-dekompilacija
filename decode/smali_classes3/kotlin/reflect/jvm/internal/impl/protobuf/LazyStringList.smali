@@ -3,7 +3,7 @@
 .source "LazyStringList.java"
 
 # interfaces
-.implements Ljava/util/List;
+.implements Lkotlin/reflect/jvm/internal/impl/protobuf/ProtocolStringList;
 
 
 # virtual methods

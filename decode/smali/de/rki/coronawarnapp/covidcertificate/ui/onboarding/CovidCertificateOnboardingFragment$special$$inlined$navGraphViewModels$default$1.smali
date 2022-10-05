@@ -54,11 +54,11 @@
 
     iget-object v0, p0, Lde/rki/coronawarnapp/covidcertificate/ui/onboarding/CovidCertificateOnboardingFragment$special$$inlined$navGraphViewModels$default$1;->$this_navGraphViewModels:Landroidx/fragment/app/Fragment;
 
-    invoke-static {v0}, Landroidx/navigation/fragment/FragmentKt;->findNavController(Landroidx/fragment/app/Fragment;)Landroidx/navigation/NavController;
+    invoke-static {v0}, Lboofcv/alg/filter/kernel/KernelMath;->findNavController(Landroidx/fragment/app/Fragment;)Landroidx/navigation/NavController;
 
     move-result-object v0
 
-    const v1, 0x7f0a0491
+    const v1, 0x7f0a04d7
 
     invoke-virtual {v0, v1}, Landroidx/navigation/NavController;->getBackStackEntry(I)Landroidx/navigation/NavBackStackEntry;
 

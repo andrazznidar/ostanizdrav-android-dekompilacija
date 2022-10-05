@@ -1,4 +1,4 @@
-.class public synthetic Lkotlin/reflect/jvm/internal/impl/metadata/deserialization/Flags$1;
+.class synthetic Lkotlin/reflect/jvm/internal/impl/metadata/deserialization/Flags$1;
 .super Ljava/lang/Object;
 .source "Flags.java"
 

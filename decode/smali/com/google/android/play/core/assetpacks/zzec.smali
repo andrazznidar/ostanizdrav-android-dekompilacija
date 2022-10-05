@@ -1,5 +1,5 @@
 .class public final Lcom/google/android/play/core/assetpacks/zzec;
-.super Lorg/bouncycastle/asn1/OIDTokenizer;
+.super Lorg/bouncycastle/crypto/util/SSHBuffer;
 .source "com.google.android.play:core@@1.10.1"
 
 
@@ -25,7 +25,7 @@
 .method public constructor <init>(ILjava/lang/String;IJIJILjava/lang/String;JLjava/io/InputStream;)V
     .locals 0
 
-    invoke-direct {p0, p1, p2}, Lorg/bouncycastle/asn1/OIDTokenizer;-><init>(ILjava/lang/String;)V
+    invoke-direct {p0, p1, p2}, Lorg/bouncycastle/crypto/util/SSHBuffer;-><init>(ILjava/lang/String;)V
 
     iput p3, p0, Lcom/google/android/play/core/assetpacks/zzec;->zza:I
 

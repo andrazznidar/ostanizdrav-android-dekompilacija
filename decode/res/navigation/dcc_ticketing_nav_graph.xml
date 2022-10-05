@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="utf-8"?>
+<navigation android:id="@id/dcc_ticketing_nav_graph" app:startDestination="@id/dccTicketingConsentOneFragment"
+  xmlns:android="http://schemas.android.com/apk/res/android" xmlns:app="http://schemas.android.com/apk/res-auto">
+    <fragment android:label="fragment_dcc_ticketing_consent_one" android:name="de.rki.coronawarnapp.dccticketing.ui.consent.one.DccTicketingConsentOneFragment" android:id="@id/dccTicketingConsentOneFragment">
+        <deepLink app:uri="cwa://dcc.ticketing.consent.one/?transactionContextIdentifier={transactionContextIdentifier}" />
+        <argument android:name="transactionContextIdentifier" app:argType="string" />
+        <action android:id="@id/action_dccTicketingConsentOneFragment_to_dccTicketingCertificateSelectionFragment" app:destination="@id/dccTicketingCertificateSelectionFragment" app:popUpTo="@id/dccTicketingConsentOneFragment" app:popUpToInclusive="true" />
+    </fragment>
+    <fragment android:label="fragment_dcc_ticketing_certificate_selection" android:name="de.rki.coronawarnapp.dccticketing.ui.certificateselection.DccTicketingCertificateSelectionFragment" android:id="@id/dccTicketingCertificateSelectionFragment">
+        <action android:id="@id/action_dccTicketingCertificateSelectionFragment_to_dccTicketingConsentTwoFragment" app:destination="@id/dccTicketingConsentTwoFragment" />
+    </fragment>
+    <fragment android:label="fragment_dcc_ticketing_consent_two" android:name="de.rki.coronawarnapp.dccticketing.ui.consent.two.DccTicketingConsentTwoFragment" android:id="@id/dccTicketingConsentTwoFragment">
+        <action android:id="@id/action_consentTwoFragment_to_validationResultFragment" app:destination="@id/dccTicketingValidationResultFragment" app:popUpTo="@id/dccTicketingCertificateSelectionFragment" app:popUpToInclusive="true" />
+        <argument android:name="containerId" app:argType="de.rki.coronawarnapp.covidcertificate.common.repository.CertificateContainerId" />
+    </fragment>
+    <fragment android:label="fragment_dcc_ticketing_validation_result" android:name="de.rki.coronawarnapp.dccticketing.ui.validationresult.DccTicketingValidationResultFragment" android:id="@id/dccTicketingValidationResultFragment" />
+    <action android:id="@id/action_dcc_ticketing_nav_graph_pop" app:popUpTo="@id/dcc_ticketing_nav_graph" app:popUpToInclusive="true" />
+</navigation>

@@ -36,7 +36,7 @@
 
     if-nez p1, :cond_0
 
-    goto :goto_2
+    goto :goto_1
 
     :cond_0
     invoke-static {}, Lde/rki/coronawarnapp/diagnosiskeys/storage/CachedKeyInfo$Type;->values()[Lde/rki/coronawarnapp/diagnosiskeys/storage/CachedKeyInfo$Type;
@@ -49,10 +49,13 @@
 
     move v4, v3
 
+    :cond_1
     :goto_0
     if-ge v3, v2, :cond_3
 
     aget-object v5, v1, v3
+
+    add-int/lit8 v3, v3, 0x1
 
     iget-object v6, v5, Lde/rki/coronawarnapp/diagnosiskeys/storage/CachedKeyInfo$Type;->typeValue:Ljava/lang/String;
 
@@ -60,19 +63,17 @@
 
     move-result v6
 
-    if-eqz v6, :cond_2
+    if-eqz v6, :cond_1
 
-    if-nez v4, :cond_1
+    if-nez v4, :cond_2
 
-    const/4 v0, 0x1
-
-    move v4, v0
+    const/4 v4, 0x1
 
     move-object v0, v5
 
-    goto :goto_1
+    goto :goto_0
 
-    :cond_1
+    :cond_2
     new-instance p1, Ljava/lang/IllegalArgumentException;
 
     const-string v0, "Array contains more than one matching element."
@@ -81,16 +82,10 @@
 
     throw p1
 
-    :cond_2
-    :goto_1
-    add-int/lit8 v3, v3, 0x1
-
-    goto :goto_0
-
     :cond_3
     if-eqz v4, :cond_4
 
-    :goto_2
+    :goto_1
     return-object v0
 
     :cond_4

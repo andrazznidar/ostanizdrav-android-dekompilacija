@@ -25,7 +25,7 @@
     c = "de.rki.coronawarnapp.qrcode.ui.QrCodeScannerViewModel$onImportFile$1"
     f = "QrCodeScannerViewModel.kt"
     l = {
-        0x2d
+        0x3b
     }
     m = "invokeSuspend"
 .end annotation
@@ -341,9 +341,9 @@
 
     new-instance v1, Lde/rki/coronawarnapp/qrcode/scanner/ImportDocumentException;
 
-    sget-object v2, Lde/rki/coronawarnapp/qrcode/scanner/ImportDocumentException$ErrorCode;->CANT_READ_FILE:Lde/rki/coronawarnapp/qrcode/scanner/ImportDocumentException$ErrorCode;
+    const/4 v2, 0x3
 
-    invoke-direct {v1, v2}, Lde/rki/coronawarnapp/qrcode/scanner/ImportDocumentException;-><init>(Lde/rki/coronawarnapp/qrcode/scanner/ImportDocumentException$ErrorCode;)V
+    invoke-direct {v1, v2}, Lde/rki/coronawarnapp/qrcode/scanner/ImportDocumentException;-><init>(I)V
 
     invoke-direct {v0, v1}, Lde/rki/coronawarnapp/qrcode/ui/Error;-><init>(Ljava/lang/Throwable;)V
 

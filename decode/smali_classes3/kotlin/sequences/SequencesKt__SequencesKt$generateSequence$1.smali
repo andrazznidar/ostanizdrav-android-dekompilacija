@@ -27,11 +27,25 @@
 
 # instance fields
 .field public final synthetic $nextFunction:Lkotlin/jvm/functions/Function0;
+    .annotation system Ldalvik/annotation/Signature;
+        value = {
+            "Lkotlin/jvm/functions/Function0<",
+            "TT;>;"
+        }
+    .end annotation
+.end field
 
 
 # direct methods
 .method public constructor <init>(Lkotlin/jvm/functions/Function0;)V
     .locals 0
+    .annotation system Ldalvik/annotation/Signature;
+        value = {
+            "(",
+            "Lkotlin/jvm/functions/Function0<",
+            "+TT;>;)V"
+        }
+    .end annotation
 
     iput-object p1, p0, Lkotlin/sequences/SequencesKt__SequencesKt$generateSequence$1;->$nextFunction:Lkotlin/jvm/functions/Function0;
 

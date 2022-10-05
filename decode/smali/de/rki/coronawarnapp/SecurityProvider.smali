@@ -93,7 +93,7 @@
 
     const/16 v3, 0x17
 
-    invoke-static {v0, v3}, Lcom/airbnb/lottie/utils/GammaEvaluator;->hasAPILevel(Lde/rki/coronawarnapp/util/BuildVersionWrap;I)Z
+    invoke-static {v0, v3}, Lokhttp3/CookieJar$Companion$NoCookies;->hasAPILevel(Lde/rki/coronawarnapp/util/BuildVersionWrap;I)Z
 
     move-result v0
     :try_end_3
@@ -140,11 +140,17 @@
     invoke-virtual {v2, v0, v3, v1}, Ltimber/log/Timber$Tree;->w(Ljava/lang/Throwable;Ljava/lang/String;[Ljava/lang/Object;)V
 
     throw v0
-    :try_end_5
-    .catchall {:try_start_5 .. :try_end_5} :catchall_0
 
     :cond_1
     :goto_0
+    invoke-static {}, Lcom/nimbusds/jose/crypto/bc/BouncyCastleProviderSingleton;->getInstance()Lorg/bouncycastle/jce/provider/BouncyCastleProvider;
+
+    move-result-object v0
+
+    sput-object v0, Lcom/nimbusds/jose/util/X509CertUtils;->jcaProvider:Ljava/security/Provider;
+    :try_end_5
+    .catchall {:try_start_5 .. :try_end_5} :catchall_0
+
     monitor-exit p0
 
     return-void

@@ -75,7 +75,7 @@
 
     aput-object p1, v2, v3
 
-    const-string v4, "setRatResultPeriodicPollingMode(mode=%s)"
+    const-string/jumbo v4, "setRatResultPeriodicPollingMode(mode=%s)"
 
     invoke-virtual {v0, v4, v2}, Ltimber/log/Timber$Forest;->i(Ljava/lang/String;[Ljava/lang/Object;)V
 
@@ -166,11 +166,11 @@
 
     check-cast v2, Landroidx/work/PeriodicWorkRequest$Builder;
 
-    sget-object v3, Landroidx/work/BackoffPolicy;->LINEAR:Landroidx/work/BackoffPolicy;
+    const/4 v3, 0x2
 
     const-wide/16 v5, 0x1
 
-    invoke-virtual {v2, v3, v5, v6, p1}, Landroidx/work/WorkRequest$Builder;->setBackoffCriteria(Landroidx/work/BackoffPolicy;JLjava/util/concurrent/TimeUnit;)Landroidx/work/WorkRequest$Builder;
+    invoke-virtual {v2, v3, v5, v6, p1}, Landroidx/work/WorkRequest$Builder;->setBackoffCriteria$enumunboxing$(IJLjava/util/concurrent/TimeUnit;)Landroidx/work/WorkRequest$Builder;
 
     move-result-object p1
 

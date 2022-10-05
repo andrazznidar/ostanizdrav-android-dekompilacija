@@ -1,5 +1,5 @@
 .class public final Lde/rki/coronawarnapp/covidcertificate/validation/ui/validationresult/common/listitem/ValidationFaqVH;
-.super Lde/rki/coronawarnapp/covidcertificate/validation/ui/validationresult/common/listitem/BaseValidationResultVH;
+.super Lde/rki/coronawarnapp/dccticketing/ui/validationresult/items/BaseValidationResultVH;
 .source "ValidationFaqVH.kt"
 
 
@@ -12,10 +12,7 @@
 
 .annotation system Ldalvik/annotation/Signature;
     value = {
-        "Lde/rki/coronawarnapp/covidcertificate/validation/ui/validationresult/common/listitem/BaseValidationResultVH<",
-        "Lde/rki/coronawarnapp/covidcertificate/validation/ui/validationresult/common/listitem/ValidationFaqVH$Item;",
-        "Lde/rki/coronawarnapp/databinding/CovidCertificateValidationResultFaqItemBinding;",
-        ">;"
+        "Lde/rki/coronawarnapp/dccticketing/ui/validationresult/items/BaseValidationResultVH;"
     }
 .end annotation
 
@@ -50,17 +47,19 @@
 
 # direct methods
 .method public constructor <init>(Landroid/view/ViewGroup;)V
-    .locals 1
+    .locals 2
 
     const v0, 0x7f0d0046
 
-    invoke-direct {p0, v0, p1}, Lde/rki/coronawarnapp/covidcertificate/validation/ui/validationresult/common/listitem/BaseValidationResultVH;-><init>(ILandroid/view/ViewGroup;)V
+    const/4 v1, 0x1
+
+    invoke-direct {p0, v0, p1, v1}, Lde/rki/coronawarnapp/dccticketing/ui/validationresult/items/BaseValidationResultVH;-><init>(ILandroid/view/ViewGroup;I)V
 
     new-instance p1, Lde/rki/coronawarnapp/covidcertificate/validation/ui/validationresult/common/listitem/ValidationFaqVH$viewBinding$1;
 
     invoke-direct {p1, p0}, Lde/rki/coronawarnapp/covidcertificate/validation/ui/validationresult/common/listitem/ValidationFaqVH$viewBinding$1;-><init>(Lde/rki/coronawarnapp/covidcertificate/validation/ui/validationresult/common/listitem/ValidationFaqVH;)V
 
-    invoke-static {p1}, Lkotlin/LazyKt__LazyKt;->lazy(Lkotlin/jvm/functions/Function0;)Lkotlin/Lazy;
+    invoke-static {p1}, Lkotlin/LazyKt__LazyJVMKt;->lazy(Lkotlin/jvm/functions/Function0;)Lkotlin/Lazy;
 
     move-result-object p1
 

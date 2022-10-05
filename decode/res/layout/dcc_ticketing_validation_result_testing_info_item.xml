@@ -1,0 +1,5 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout android:layout_width="fill_parent" android:layout_height="wrap_content"
+  xmlns:android="http://schemas.android.com/apk/res/android" xmlns:app="http://schemas.android.com/apk/res-auto">
+    <TextView android:textSize="@dimen/font_button" android:id="@id/text_view_info" android:focusable="true" android:layout_width="0.0dip" android:layout_height="wrap_content" android:layout_marginLeft="@dimen/spacing_normal" android:layout_marginTop="@dimen/spacing_small" android:layout_marginRight="@dimen/spacing_normal" android:text="@string/dcc_ticketing_result_testing_details" android:layout_marginHorizontal="@dimen/spacing_normal" app:layout_constraintEnd_toEndOf="parent" app:layout_constraintStart_toStartOf="parent" app:layout_constraintTop_toTopOf="parent" style="@style/StatisticsCardTitleCaption" />
+</androidx.constraintlayout.widget.ConstraintLayout>

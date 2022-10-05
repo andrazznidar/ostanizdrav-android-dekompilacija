@@ -1,5 +1,5 @@
 .class public final Lcoil/memory/LimitedFileDescriptorHardwareBitmapService;
-.super Lcoil/memory/HardwareBitmapService;
+.super Lorg/bouncycastle/util/Pack;
 .source "HardwareBitmapService.kt"
 
 
@@ -49,7 +49,7 @@
 
     const/4 v0, 0x0
 
-    invoke-direct {p0, v0}, Lcoil/memory/HardwareBitmapService;-><init>(Lkotlin/jvm/internal/DefaultConstructorMarker;)V
+    invoke-direct {p0, v0}, Lorg/bouncycastle/util/Pack;-><init>(Lkotlin/jvm/internal/DefaultConstructorMarker;)V
 
     return-void
 .end method

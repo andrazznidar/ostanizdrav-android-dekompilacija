@@ -73,10 +73,6 @@
 
     if-lt v1, v2, :cond_1
 
-    const-string v1, "$this$removeFirst"
-
-    invoke-static {p1, v1}, Lkotlin/jvm/internal/Intrinsics;->checkNotNullParameter(Ljava/lang/Object;Ljava/lang/String;)V
-
     invoke-virtual {v0}, Ljava/util/ArrayList;->isEmpty()Z
 
     move-result v1
@@ -123,10 +119,6 @@
     iget-object v1, p0, Lde/rki/coronawarnapp/bugreporting/debuglog/upload/SnapshotUploader$uploadSnapshot$2;->$logUpload:Lde/rki/coronawarnapp/bugreporting/debuglog/upload/history/LogUpload;
 
     invoke-virtual {v0, v1}, Ljava/util/ArrayList;->add(Ljava/lang/Object;)Z
-
-    const-string v0, "logs"
-
-    invoke-static {p1, v0}, Lkotlin/jvm/internal/Intrinsics;->checkNotNullParameter(Ljava/lang/Object;Ljava/lang/String;)V
 
     new-instance v0, Lde/rki/coronawarnapp/bugreporting/debuglog/upload/history/UploadHistory;
 

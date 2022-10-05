@@ -14,13 +14,13 @@
 
 
 # instance fields
-.field public final params:Lorg/bouncycastle/pqc/crypto/xmss/XMSSParameters;
+.field private final params:Lorg/bouncycastle/pqc/crypto/xmss/XMSSParameters;
 
-.field public publicKey:[B
+.field private publicKey:[B
 
-.field public publicSeed:[B
+.field private publicSeed:[B
 
-.field public root:[B
+.field private root:[B
 
 
 # direct methods
@@ -40,4 +40,86 @@
     iput-object p1, p0, Lorg/bouncycastle/pqc/crypto/xmss/XMSSPublicKeyParameters$Builder;->params:Lorg/bouncycastle/pqc/crypto/xmss/XMSSParameters;
 
     return-void
+.end method
+
+.method public static synthetic access$000(Lorg/bouncycastle/pqc/crypto/xmss/XMSSPublicKeyParameters$Builder;)Lorg/bouncycastle/pqc/crypto/xmss/XMSSParameters;
+    .locals 0
+
+    iget-object p0, p0, Lorg/bouncycastle/pqc/crypto/xmss/XMSSPublicKeyParameters$Builder;->params:Lorg/bouncycastle/pqc/crypto/xmss/XMSSParameters;
+
+    return-object p0
+.end method
+
+.method public static synthetic access$100(Lorg/bouncycastle/pqc/crypto/xmss/XMSSPublicKeyParameters$Builder;)[B
+    .locals 0
+
+    iget-object p0, p0, Lorg/bouncycastle/pqc/crypto/xmss/XMSSPublicKeyParameters$Builder;->publicKey:[B
+
+    return-object p0
+.end method
+
+.method public static synthetic access$200(Lorg/bouncycastle/pqc/crypto/xmss/XMSSPublicKeyParameters$Builder;)[B
+    .locals 0
+
+    iget-object p0, p0, Lorg/bouncycastle/pqc/crypto/xmss/XMSSPublicKeyParameters$Builder;->root:[B
+
+    return-object p0
+.end method
+
+.method public static synthetic access$300(Lorg/bouncycastle/pqc/crypto/xmss/XMSSPublicKeyParameters$Builder;)[B
+    .locals 0
+
+    iget-object p0, p0, Lorg/bouncycastle/pqc/crypto/xmss/XMSSPublicKeyParameters$Builder;->publicSeed:[B
+
+    return-object p0
+.end method
+
+
+# virtual methods
+.method public build()Lorg/bouncycastle/pqc/crypto/xmss/XMSSPublicKeyParameters;
+    .locals 2
+
+    new-instance v0, Lorg/bouncycastle/pqc/crypto/xmss/XMSSPublicKeyParameters;
+
+    const/4 v1, 0x0
+
+    invoke-direct {v0, p0, v1}, Lorg/bouncycastle/pqc/crypto/xmss/XMSSPublicKeyParameters;-><init>(Lorg/bouncycastle/pqc/crypto/xmss/XMSSPublicKeyParameters$Builder;Lorg/bouncycastle/pqc/crypto/xmss/XMSSPublicKeyParameters$1;)V
+
+    return-object v0
+.end method
+
+.method public withPublicKey([B)Lorg/bouncycastle/pqc/crypto/xmss/XMSSPublicKeyParameters$Builder;
+    .locals 0
+
+    invoke-static {p1}, Lorg/bouncycastle/pqc/crypto/xmss/XMSSUtil;->cloneArray([B)[B
+
+    move-result-object p1
+
+    iput-object p1, p0, Lorg/bouncycastle/pqc/crypto/xmss/XMSSPublicKeyParameters$Builder;->publicKey:[B
+
+    return-object p0
+.end method
+
+.method public withPublicSeed([B)Lorg/bouncycastle/pqc/crypto/xmss/XMSSPublicKeyParameters$Builder;
+    .locals 0
+
+    invoke-static {p1}, Lorg/bouncycastle/pqc/crypto/xmss/XMSSUtil;->cloneArray([B)[B
+
+    move-result-object p1
+
+    iput-object p1, p0, Lorg/bouncycastle/pqc/crypto/xmss/XMSSPublicKeyParameters$Builder;->publicSeed:[B
+
+    return-object p0
+.end method
+
+.method public withRoot([B)Lorg/bouncycastle/pqc/crypto/xmss/XMSSPublicKeyParameters$Builder;
+    .locals 0
+
+    invoke-static {p1}, Lorg/bouncycastle/pqc/crypto/xmss/XMSSUtil;->cloneArray([B)[B
+
+    move-result-object p1
+
+    iput-object p1, p0, Lorg/bouncycastle/pqc/crypto/xmss/XMSSPublicKeyParameters$Builder;->root:[B
+
+    return-object p0
 .end method

@@ -3,5 +3,5 @@
 
 
 # virtual methods
-.method public abstract c(D)V
+.method public abstract l(DD)D
 .end method

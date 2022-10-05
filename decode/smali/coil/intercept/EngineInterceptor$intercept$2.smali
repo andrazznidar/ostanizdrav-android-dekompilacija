@@ -511,11 +511,11 @@
 
     if-eqz v5, :cond_9
 
-    iget-object v5, v1, Lcoil/memory/RequestService;->hardwareBitmapService:Lcoil/memory/HardwareBitmapService;
+    iget-object v5, v1, Lcoil/memory/RequestService;->hardwareBitmapService:Lorg/bouncycastle/util/Pack;
 
     iget-object v1, v1, Lcoil/memory/RequestService;->logger:Lcoil/util/Logger;
 
-    invoke-virtual {v5, v12, v1}, Lcoil/memory/HardwareBitmapService;->allowHardware(Lcoil/size/Size;Lcoil/util/Logger;)Z
+    invoke-virtual {v5, v12, v1}, Lorg/bouncycastle/util/Pack;->allowHardware(Lcoil/size/Size;Lcoil/util/Logger;)Z
 
     move-result v1
 
@@ -694,9 +694,9 @@
     if-eqz v1, :cond_13
 
     :try_start_1
-    iget-object v1, v7, Lkotlin/coroutines/jvm/internal/ContinuationImpl;->_context:Lkotlin/coroutines/CoroutineContext;
+    invoke-interface/range {p0 .. p0}, Lkotlin/coroutines/Continuation;->getContext()Lkotlin/coroutines/CoroutineContext;
 
-    invoke-static {v1}, Lkotlin/jvm/internal/Intrinsics;->checkNotNull(Ljava/lang/Object;)V
+    move-result-object v1
 
     invoke-static {v1}, Lkotlinx/coroutines/JobKt;->ensureActive(Lkotlin/coroutines/CoroutineContext;)V
 
@@ -885,9 +885,9 @@
     check-cast v0, Lcoil/fetch/DrawableResult;
 
     :goto_e
-    iget-object v1, v7, Lkotlin/coroutines/jvm/internal/ContinuationImpl;->_context:Lkotlin/coroutines/CoroutineContext;
+    invoke-interface/range {p0 .. p0}, Lkotlin/coroutines/Continuation;->getContext()Lkotlin/coroutines/CoroutineContext;
 
-    invoke-static {v1}, Lkotlin/jvm/internal/Intrinsics;->checkNotNull(Ljava/lang/Object;)V
+    move-result-object v1
 
     invoke-static {v1}, Lkotlinx/coroutines/JobKt;->ensureActive(Lkotlin/coroutines/CoroutineContext;)V
 
@@ -1144,9 +1144,9 @@
     :goto_12
     check-cast v1, Landroid/graphics/Bitmap;
 
-    iget-object v12, v11, Lkotlin/coroutines/jvm/internal/ContinuationImpl;->_context:Lkotlin/coroutines/CoroutineContext;
+    invoke-interface {v11}, Lkotlin/coroutines/Continuation;->getContext()Lkotlin/coroutines/CoroutineContext;
 
-    invoke-static {v12}, Lkotlin/jvm/internal/Intrinsics;->checkNotNull(Ljava/lang/Object;)V
+    move-result-object v12
 
     invoke-static {v12}, Lkotlinx/coroutines/JobKt;->ensureActive(Lkotlin/coroutines/CoroutineContext;)V
 

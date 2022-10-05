@@ -4,6 +4,12 @@
 
 
 # annotations
+.annotation system Ldalvik/annotation/MemberClasses;
+    value = {
+        Lkotlin/reflect/jvm/internal/impl/builtins/PrimitiveType$Companion;
+    }
+.end annotation
+
 .annotation system Ldalvik/annotation/Signature;
     value = {
         "Ljava/lang/Enum<",
@@ -14,13 +20,15 @@
 
 
 # static fields
-.field public static final synthetic $VALUES:[Lkotlin/reflect/jvm/internal/impl/builtins/PrimitiveType;
+.field private static final synthetic $VALUES:[Lkotlin/reflect/jvm/internal/impl/builtins/PrimitiveType;
 
 .field public static final enum BOOLEAN:Lkotlin/reflect/jvm/internal/impl/builtins/PrimitiveType;
 
 .field public static final enum BYTE:Lkotlin/reflect/jvm/internal/impl/builtins/PrimitiveType;
 
 .field public static final enum CHAR:Lkotlin/reflect/jvm/internal/impl/builtins/PrimitiveType;
+
+.field public static final Companion:Lkotlin/reflect/jvm/internal/impl/builtins/PrimitiveType$Companion;
 
 .field public static final enum DOUBLE:Lkotlin/reflect/jvm/internal/impl/builtins/PrimitiveType;
 
@@ -44,16 +52,74 @@
 
 
 # instance fields
-.field public final arrayTypeFqName$delegate:Lkotlin/Lazy;
+.field private final arrayTypeFqName$delegate:Lkotlin/Lazy;
 
-.field public final arrayTypeName:Lkotlin/reflect/jvm/internal/impl/name/Name;
+.field private final arrayTypeName:Lkotlin/reflect/jvm/internal/impl/name/Name;
 
-.field public final typeFqName$delegate:Lkotlin/Lazy;
+.field private final typeFqName$delegate:Lkotlin/Lazy;
 
-.field public final typeName:Lkotlin/reflect/jvm/internal/impl/name/Name;
+.field private final typeName:Lkotlin/reflect/jvm/internal/impl/name/Name;
 
 
 # direct methods
+.method private static final synthetic $values()[Lkotlin/reflect/jvm/internal/impl/builtins/PrimitiveType;
+    .locals 3
+
+    const/16 v0, 0x8
+
+    new-array v0, v0, [Lkotlin/reflect/jvm/internal/impl/builtins/PrimitiveType;
+
+    sget-object v1, Lkotlin/reflect/jvm/internal/impl/builtins/PrimitiveType;->BOOLEAN:Lkotlin/reflect/jvm/internal/impl/builtins/PrimitiveType;
+
+    const/4 v2, 0x0
+
+    aput-object v1, v0, v2
+
+    sget-object v1, Lkotlin/reflect/jvm/internal/impl/builtins/PrimitiveType;->CHAR:Lkotlin/reflect/jvm/internal/impl/builtins/PrimitiveType;
+
+    const/4 v2, 0x1
+
+    aput-object v1, v0, v2
+
+    sget-object v1, Lkotlin/reflect/jvm/internal/impl/builtins/PrimitiveType;->BYTE:Lkotlin/reflect/jvm/internal/impl/builtins/PrimitiveType;
+
+    const/4 v2, 0x2
+
+    aput-object v1, v0, v2
+
+    sget-object v1, Lkotlin/reflect/jvm/internal/impl/builtins/PrimitiveType;->SHORT:Lkotlin/reflect/jvm/internal/impl/builtins/PrimitiveType;
+
+    const/4 v2, 0x3
+
+    aput-object v1, v0, v2
+
+    sget-object v1, Lkotlin/reflect/jvm/internal/impl/builtins/PrimitiveType;->INT:Lkotlin/reflect/jvm/internal/impl/builtins/PrimitiveType;
+
+    const/4 v2, 0x4
+
+    aput-object v1, v0, v2
+
+    sget-object v1, Lkotlin/reflect/jvm/internal/impl/builtins/PrimitiveType;->FLOAT:Lkotlin/reflect/jvm/internal/impl/builtins/PrimitiveType;
+
+    const/4 v2, 0x5
+
+    aput-object v1, v0, v2
+
+    sget-object v1, Lkotlin/reflect/jvm/internal/impl/builtins/PrimitiveType;->LONG:Lkotlin/reflect/jvm/internal/impl/builtins/PrimitiveType;
+
+    const/4 v2, 0x6
+
+    aput-object v1, v0, v2
+
+    sget-object v1, Lkotlin/reflect/jvm/internal/impl/builtins/PrimitiveType;->DOUBLE:Lkotlin/reflect/jvm/internal/impl/builtins/PrimitiveType;
+
+    const/4 v2, 0x7
+
+    aput-object v1, v0, v2
+
+    return-object v0
+.end method
+
 .method public static constructor <clinit>()V
     .locals 16
 
@@ -69,133 +135,123 @@
 
     sput-object v0, Lkotlin/reflect/jvm/internal/impl/builtins/PrimitiveType;->BOOLEAN:Lkotlin/reflect/jvm/internal/impl/builtins/PrimitiveType;
 
+    new-instance v0, Lkotlin/reflect/jvm/internal/impl/builtins/PrimitiveType;
+
+    const-string v1, "CHAR"
+
+    const/4 v3, 0x1
+
+    const-string v4, "Char"
+
+    invoke-direct {v0, v1, v3, v4}, Lkotlin/reflect/jvm/internal/impl/builtins/PrimitiveType;-><init>(Ljava/lang/String;ILjava/lang/String;)V
+
+    sput-object v0, Lkotlin/reflect/jvm/internal/impl/builtins/PrimitiveType;->CHAR:Lkotlin/reflect/jvm/internal/impl/builtins/PrimitiveType;
+
     new-instance v1, Lkotlin/reflect/jvm/internal/impl/builtins/PrimitiveType;
 
-    const-string v3, "CHAR"
+    const-string v4, "BYTE"
 
-    const/4 v4, 0x1
+    const/4 v5, 0x2
 
-    const-string v5, "Char"
+    const-string v6, "Byte"
 
-    invoke-direct {v1, v3, v4, v5}, Lkotlin/reflect/jvm/internal/impl/builtins/PrimitiveType;-><init>(Ljava/lang/String;ILjava/lang/String;)V
+    invoke-direct {v1, v4, v5, v6}, Lkotlin/reflect/jvm/internal/impl/builtins/PrimitiveType;-><init>(Ljava/lang/String;ILjava/lang/String;)V
 
-    sput-object v1, Lkotlin/reflect/jvm/internal/impl/builtins/PrimitiveType;->CHAR:Lkotlin/reflect/jvm/internal/impl/builtins/PrimitiveType;
+    sput-object v1, Lkotlin/reflect/jvm/internal/impl/builtins/PrimitiveType;->BYTE:Lkotlin/reflect/jvm/internal/impl/builtins/PrimitiveType;
 
-    new-instance v3, Lkotlin/reflect/jvm/internal/impl/builtins/PrimitiveType;
+    new-instance v4, Lkotlin/reflect/jvm/internal/impl/builtins/PrimitiveType;
 
-    const-string v5, "BYTE"
+    const-string v6, "SHORT"
 
-    const/4 v6, 0x2
+    const/4 v7, 0x3
 
-    const-string v7, "Byte"
+    const-string v8, "Short"
 
-    invoke-direct {v3, v5, v6, v7}, Lkotlin/reflect/jvm/internal/impl/builtins/PrimitiveType;-><init>(Ljava/lang/String;ILjava/lang/String;)V
+    invoke-direct {v4, v6, v7, v8}, Lkotlin/reflect/jvm/internal/impl/builtins/PrimitiveType;-><init>(Ljava/lang/String;ILjava/lang/String;)V
 
-    sput-object v3, Lkotlin/reflect/jvm/internal/impl/builtins/PrimitiveType;->BYTE:Lkotlin/reflect/jvm/internal/impl/builtins/PrimitiveType;
+    sput-object v4, Lkotlin/reflect/jvm/internal/impl/builtins/PrimitiveType;->SHORT:Lkotlin/reflect/jvm/internal/impl/builtins/PrimitiveType;
 
-    new-instance v5, Lkotlin/reflect/jvm/internal/impl/builtins/PrimitiveType;
+    new-instance v6, Lkotlin/reflect/jvm/internal/impl/builtins/PrimitiveType;
 
-    const-string v7, "SHORT"
+    const-string v8, "INT"
 
-    const/4 v8, 0x3
+    const/4 v9, 0x4
 
-    const-string v9, "Short"
+    const-string v10, "Int"
 
-    invoke-direct {v5, v7, v8, v9}, Lkotlin/reflect/jvm/internal/impl/builtins/PrimitiveType;-><init>(Ljava/lang/String;ILjava/lang/String;)V
+    invoke-direct {v6, v8, v9, v10}, Lkotlin/reflect/jvm/internal/impl/builtins/PrimitiveType;-><init>(Ljava/lang/String;ILjava/lang/String;)V
 
-    sput-object v5, Lkotlin/reflect/jvm/internal/impl/builtins/PrimitiveType;->SHORT:Lkotlin/reflect/jvm/internal/impl/builtins/PrimitiveType;
+    sput-object v6, Lkotlin/reflect/jvm/internal/impl/builtins/PrimitiveType;->INT:Lkotlin/reflect/jvm/internal/impl/builtins/PrimitiveType;
 
-    new-instance v7, Lkotlin/reflect/jvm/internal/impl/builtins/PrimitiveType;
+    new-instance v8, Lkotlin/reflect/jvm/internal/impl/builtins/PrimitiveType;
 
-    const-string v9, "INT"
+    const-string v10, "FLOAT"
 
-    const/4 v10, 0x4
+    const/4 v11, 0x5
 
-    const-string v11, "Int"
+    const-string v12, "Float"
 
-    invoke-direct {v7, v9, v10, v11}, Lkotlin/reflect/jvm/internal/impl/builtins/PrimitiveType;-><init>(Ljava/lang/String;ILjava/lang/String;)V
+    invoke-direct {v8, v10, v11, v12}, Lkotlin/reflect/jvm/internal/impl/builtins/PrimitiveType;-><init>(Ljava/lang/String;ILjava/lang/String;)V
 
-    sput-object v7, Lkotlin/reflect/jvm/internal/impl/builtins/PrimitiveType;->INT:Lkotlin/reflect/jvm/internal/impl/builtins/PrimitiveType;
+    sput-object v8, Lkotlin/reflect/jvm/internal/impl/builtins/PrimitiveType;->FLOAT:Lkotlin/reflect/jvm/internal/impl/builtins/PrimitiveType;
 
-    new-instance v9, Lkotlin/reflect/jvm/internal/impl/builtins/PrimitiveType;
+    new-instance v10, Lkotlin/reflect/jvm/internal/impl/builtins/PrimitiveType;
 
-    const-string v11, "FLOAT"
+    const-string v12, "LONG"
 
-    const/4 v12, 0x5
+    const/4 v13, 0x6
 
-    const-string v13, "Float"
+    const-string v14, "Long"
 
-    invoke-direct {v9, v11, v12, v13}, Lkotlin/reflect/jvm/internal/impl/builtins/PrimitiveType;-><init>(Ljava/lang/String;ILjava/lang/String;)V
+    invoke-direct {v10, v12, v13, v14}, Lkotlin/reflect/jvm/internal/impl/builtins/PrimitiveType;-><init>(Ljava/lang/String;ILjava/lang/String;)V
 
-    sput-object v9, Lkotlin/reflect/jvm/internal/impl/builtins/PrimitiveType;->FLOAT:Lkotlin/reflect/jvm/internal/impl/builtins/PrimitiveType;
+    sput-object v10, Lkotlin/reflect/jvm/internal/impl/builtins/PrimitiveType;->LONG:Lkotlin/reflect/jvm/internal/impl/builtins/PrimitiveType;
 
-    new-instance v11, Lkotlin/reflect/jvm/internal/impl/builtins/PrimitiveType;
+    new-instance v12, Lkotlin/reflect/jvm/internal/impl/builtins/PrimitiveType;
 
-    const-string v13, "LONG"
+    const-string v14, "DOUBLE"
 
-    const/4 v14, 0x6
+    const/4 v15, 0x7
 
-    const-string v15, "Long"
+    const-string v13, "Double"
 
-    invoke-direct {v11, v13, v14, v15}, Lkotlin/reflect/jvm/internal/impl/builtins/PrimitiveType;-><init>(Ljava/lang/String;ILjava/lang/String;)V
+    invoke-direct {v12, v14, v15, v13}, Lkotlin/reflect/jvm/internal/impl/builtins/PrimitiveType;-><init>(Ljava/lang/String;ILjava/lang/String;)V
 
-    sput-object v11, Lkotlin/reflect/jvm/internal/impl/builtins/PrimitiveType;->LONG:Lkotlin/reflect/jvm/internal/impl/builtins/PrimitiveType;
+    sput-object v12, Lkotlin/reflect/jvm/internal/impl/builtins/PrimitiveType;->DOUBLE:Lkotlin/reflect/jvm/internal/impl/builtins/PrimitiveType;
 
-    new-instance v13, Lkotlin/reflect/jvm/internal/impl/builtins/PrimitiveType;
+    invoke-static {}, Lkotlin/reflect/jvm/internal/impl/builtins/PrimitiveType;->$values()[Lkotlin/reflect/jvm/internal/impl/builtins/PrimitiveType;
 
-    const-string v15, "DOUBLE"
+    move-result-object v13
 
-    const/4 v14, 0x7
+    sput-object v13, Lkotlin/reflect/jvm/internal/impl/builtins/PrimitiveType;->$VALUES:[Lkotlin/reflect/jvm/internal/impl/builtins/PrimitiveType;
 
-    const-string v12, "Double"
+    new-instance v13, Lkotlin/reflect/jvm/internal/impl/builtins/PrimitiveType$Companion;
 
-    invoke-direct {v13, v15, v14, v12}, Lkotlin/reflect/jvm/internal/impl/builtins/PrimitiveType;-><init>(Ljava/lang/String;ILjava/lang/String;)V
+    const/4 v14, 0x0
 
-    sput-object v13, Lkotlin/reflect/jvm/internal/impl/builtins/PrimitiveType;->DOUBLE:Lkotlin/reflect/jvm/internal/impl/builtins/PrimitiveType;
+    invoke-direct {v13, v14}, Lkotlin/reflect/jvm/internal/impl/builtins/PrimitiveType$Companion;-><init>(Lkotlin/jvm/internal/DefaultConstructorMarker;)V
 
-    const/16 v12, 0x8
+    sput-object v13, Lkotlin/reflect/jvm/internal/impl/builtins/PrimitiveType;->Companion:Lkotlin/reflect/jvm/internal/impl/builtins/PrimitiveType$Companion;
 
-    new-array v12, v12, [Lkotlin/reflect/jvm/internal/impl/builtins/PrimitiveType;
+    new-array v13, v15, [Lkotlin/reflect/jvm/internal/impl/builtins/PrimitiveType;
 
-    aput-object v0, v12, v2
+    aput-object v0, v13, v2
 
-    aput-object v1, v12, v4
+    aput-object v1, v13, v3
 
-    aput-object v3, v12, v6
+    aput-object v4, v13, v5
 
-    aput-object v5, v12, v8
+    aput-object v6, v13, v7
 
-    aput-object v7, v12, v10
+    aput-object v8, v13, v9
 
-    const/4 v0, 0x5
+    aput-object v10, v13, v11
 
-    aput-object v9, v12, v0
+    const/4 v0, 0x6
 
-    const/4 v15, 0x6
+    aput-object v12, v13, v0
 
-    aput-object v11, v12, v15
-
-    aput-object v13, v12, v14
-
-    sput-object v12, Lkotlin/reflect/jvm/internal/impl/builtins/PrimitiveType;->$VALUES:[Lkotlin/reflect/jvm/internal/impl/builtins/PrimitiveType;
-
-    new-array v12, v14, [Lkotlin/reflect/jvm/internal/impl/builtins/PrimitiveType;
-
-    aput-object v1, v12, v2
-
-    aput-object v3, v12, v4
-
-    aput-object v5, v12, v6
-
-    aput-object v7, v12, v8
-
-    aput-object v9, v12, v10
-
-    aput-object v11, v12, v0
-
-    aput-object v13, v12, v15
-
-    invoke-static {v12}, Lkotlin/collections/SetsKt__SetsKt;->setOf([Ljava/lang/Object;)Ljava/util/Set;
+    invoke-static {v13}, Lorg/bouncycastle/util/IPAddress;->setOf([Ljava/lang/Object;)Ljava/util/Set;
 
     move-result-object v0
 
@@ -204,7 +260,7 @@
     return-void
 .end method
 
-.method public constructor <init>(Ljava/lang/String;ILjava/lang/String;)V
+.method private constructor <init>(Ljava/lang/String;ILjava/lang/String;)V
     .locals 0
     .annotation system Ldalvik/annotation/Signature;
         value = {
@@ -220,6 +276,10 @@
 
     move-result-object p1
 
+    const-string p2, "identifier(typeName)"
+
+    invoke-static {p1, p2}, Lkotlin/jvm/internal/Intrinsics;->checkNotNullExpressionValue(Ljava/lang/Object;Ljava/lang/String;)V
+
     iput-object p1, p0, Lkotlin/reflect/jvm/internal/impl/builtins/PrimitiveType;->typeName:Lkotlin/reflect/jvm/internal/impl/name/Name;
 
     const-string p1, "Array"
@@ -232,25 +292,29 @@
 
     move-result-object p1
 
+    const-string p2, "identifier(\"${typeName}Array\")"
+
+    invoke-static {p1, p2}, Lkotlin/jvm/internal/Intrinsics;->checkNotNullExpressionValue(Ljava/lang/Object;Ljava/lang/String;)V
+
     iput-object p1, p0, Lkotlin/reflect/jvm/internal/impl/builtins/PrimitiveType;->arrayTypeName:Lkotlin/reflect/jvm/internal/impl/name/Name;
 
-    sget-object p1, Lkotlin/LazyThreadSafetyMode;->PUBLICATION:Lkotlin/LazyThreadSafetyMode;
+    new-instance p1, Lkotlin/reflect/jvm/internal/impl/builtins/PrimitiveType$typeFqName$2;
 
-    new-instance p2, Lkotlin/reflect/jvm/internal/impl/builtins/PrimitiveType$typeFqName$2;
+    invoke-direct {p1, p0}, Lkotlin/reflect/jvm/internal/impl/builtins/PrimitiveType$typeFqName$2;-><init>(Lkotlin/reflect/jvm/internal/impl/builtins/PrimitiveType;)V
 
-    invoke-direct {p2, p0}, Lkotlin/reflect/jvm/internal/impl/builtins/PrimitiveType$typeFqName$2;-><init>(Lkotlin/reflect/jvm/internal/impl/builtins/PrimitiveType;)V
+    const/4 p2, 0x2
 
-    invoke-static {p1, p2}, Lkotlin/LazyKt__LazyKt;->lazy(Lkotlin/LazyThreadSafetyMode;Lkotlin/jvm/functions/Function0;)Lkotlin/Lazy;
+    invoke-static {p2, p1}, Lkotlin/LazyKt__LazyJVMKt;->lazy(ILkotlin/jvm/functions/Function0;)Lkotlin/Lazy;
 
-    move-result-object p2
+    move-result-object p1
 
-    iput-object p2, p0, Lkotlin/reflect/jvm/internal/impl/builtins/PrimitiveType;->typeFqName$delegate:Lkotlin/Lazy;
+    iput-object p1, p0, Lkotlin/reflect/jvm/internal/impl/builtins/PrimitiveType;->typeFqName$delegate:Lkotlin/Lazy;
 
-    new-instance p2, Lkotlin/reflect/jvm/internal/impl/builtins/PrimitiveType$arrayTypeFqName$2;
+    new-instance p1, Lkotlin/reflect/jvm/internal/impl/builtins/PrimitiveType$arrayTypeFqName$2;
 
-    invoke-direct {p2, p0}, Lkotlin/reflect/jvm/internal/impl/builtins/PrimitiveType$arrayTypeFqName$2;-><init>(Lkotlin/reflect/jvm/internal/impl/builtins/PrimitiveType;)V
+    invoke-direct {p1, p0}, Lkotlin/reflect/jvm/internal/impl/builtins/PrimitiveType$arrayTypeFqName$2;-><init>(Lkotlin/reflect/jvm/internal/impl/builtins/PrimitiveType;)V
 
-    invoke-static {p1, p2}, Lkotlin/LazyKt__LazyKt;->lazy(Lkotlin/LazyThreadSafetyMode;Lkotlin/jvm/functions/Function0;)Lkotlin/Lazy;
+    invoke-static {p2, p1}, Lkotlin/LazyKt__LazyJVMKt;->lazy(ILkotlin/jvm/functions/Function0;)Lkotlin/Lazy;
 
     move-result-object p1
 
@@ -261,10 +325,6 @@
 
 .method public static valueOf(Ljava/lang/String;)Lkotlin/reflect/jvm/internal/impl/builtins/PrimitiveType;
     .locals 1
-
-    const-string v0, "value"
-
-    invoke-static {p0, v0}, Lkotlin/jvm/internal/Intrinsics;->checkNotNullParameter(Ljava/lang/Object;Ljava/lang/String;)V
 
     const-class v0, Lkotlin/reflect/jvm/internal/impl/builtins/PrimitiveType;
 
@@ -278,19 +338,61 @@
 .end method
 
 .method public static values()[Lkotlin/reflect/jvm/internal/impl/builtins/PrimitiveType;
-    .locals 4
+    .locals 1
 
     sget-object v0, Lkotlin/reflect/jvm/internal/impl/builtins/PrimitiveType;->$VALUES:[Lkotlin/reflect/jvm/internal/impl/builtins/PrimitiveType;
 
-    array-length v1, v0
+    invoke-virtual {v0}, [Ljava/lang/Object;->clone()Ljava/lang/Object;
 
-    new-array v1, v1, [Lkotlin/reflect/jvm/internal/impl/builtins/PrimitiveType;
+    move-result-object v0
 
-    array-length v2, v0
+    check-cast v0, [Lkotlin/reflect/jvm/internal/impl/builtins/PrimitiveType;
 
-    const/4 v3, 0x0
+    return-object v0
+.end method
 
-    invoke-static {v0, v3, v1, v3, v2}, Ljava/lang/System;->arraycopy(Ljava/lang/Object;ILjava/lang/Object;II)V
 
-    return-object v1
+# virtual methods
+.method public final getArrayTypeFqName()Lkotlin/reflect/jvm/internal/impl/name/FqName;
+    .locals 1
+
+    iget-object v0, p0, Lkotlin/reflect/jvm/internal/impl/builtins/PrimitiveType;->arrayTypeFqName$delegate:Lkotlin/Lazy;
+
+    invoke-interface {v0}, Lkotlin/Lazy;->getValue()Ljava/lang/Object;
+
+    move-result-object v0
+
+    check-cast v0, Lkotlin/reflect/jvm/internal/impl/name/FqName;
+
+    return-object v0
+.end method
+
+.method public final getArrayTypeName()Lkotlin/reflect/jvm/internal/impl/name/Name;
+    .locals 1
+
+    iget-object v0, p0, Lkotlin/reflect/jvm/internal/impl/builtins/PrimitiveType;->arrayTypeName:Lkotlin/reflect/jvm/internal/impl/name/Name;
+
+    return-object v0
+.end method
+
+.method public final getTypeFqName()Lkotlin/reflect/jvm/internal/impl/name/FqName;
+    .locals 1
+
+    iget-object v0, p0, Lkotlin/reflect/jvm/internal/impl/builtins/PrimitiveType;->typeFqName$delegate:Lkotlin/Lazy;
+
+    invoke-interface {v0}, Lkotlin/Lazy;->getValue()Ljava/lang/Object;
+
+    move-result-object v0
+
+    check-cast v0, Lkotlin/reflect/jvm/internal/impl/name/FqName;
+
+    return-object v0
+.end method
+
+.method public final getTypeName()Lkotlin/reflect/jvm/internal/impl/name/Name;
+    .locals 1
+
+    iget-object v0, p0, Lkotlin/reflect/jvm/internal/impl/builtins/PrimitiveType;->typeName:Lkotlin/reflect/jvm/internal/impl/name/Name;
+
+    return-object v0
 .end method

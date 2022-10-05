@@ -61,7 +61,7 @@
 .end method
 
 .method public static final access$decrement(Lcoil/memory/PoolableTargetDelegate;Landroid/graphics/Bitmap;)V
-    .locals 2
+    .locals 1
 
     iget-object v0, p0, Lcoil/memory/PoolableTargetDelegate;->target:Lcoil/target/PoolableViewTarget;
 
@@ -72,10 +72,6 @@
     invoke-static {v0}, Lcoil/util/-Extensions;->getRequestManager(Landroid/view/View;)Lcoil/memory/ViewTargetRequestManager;
 
     move-result-object v0
-
-    const-string/jumbo v1, "tag"
-
-    invoke-static {p0, v1}, Lkotlin/jvm/internal/Intrinsics;->checkNotNullParameter(Ljava/lang/Object;Ljava/lang/String;)V
 
     if-eqz p1, :cond_0
 
@@ -143,7 +139,7 @@
 .end method
 
 .method public error(Lcoil/request/ErrorResult;Lkotlin/coroutines/Continuation;)Ljava/lang/Object;
-    .locals 17
+    .locals 16
     .annotation system Ldalvik/annotation/Signature;
         value = {
             "(",
@@ -283,8 +279,6 @@
 
     iget-object v15, v14, Lcoil/request/ImageRequest;->transition:Lcoil/transition/Transition;
 
-    sget v16, Lcoil/transition/Transition;->$r8$clinit:I
-
     sget-object v7, Lcoil/transition/NoneTransition;->INSTANCE:Lcoil/transition/NoneTransition;
 
     if-ne v15, v7, :cond_4
@@ -384,8 +378,6 @@
     iget-object v14, v1, Lcoil/request/ErrorResult;->request:Lcoil/request/ImageRequest;
 
     iget-object v15, v14, Lcoil/request/ImageRequest;->transition:Lcoil/transition/Transition;
-
-    sget v16, Lcoil/transition/Transition;->$r8$clinit:I
 
     sget-object v8, Lcoil/transition/NoneTransition;->INSTANCE:Lcoil/transition/NoneTransition;
 
@@ -533,7 +525,7 @@
 .end method
 
 .method public success(Lcoil/request/SuccessResult;Lkotlin/coroutines/Continuation;)Ljava/lang/Object;
-    .locals 17
+    .locals 16
     .annotation system Ldalvik/annotation/Signature;
         value = {
             "(",
@@ -703,8 +695,6 @@
 
     iget-object v15, v9, Lcoil/request/ImageRequest;->transition:Lcoil/transition/Transition;
 
-    sget v16, Lcoil/transition/Transition;->$r8$clinit:I
-
     sget-object v6, Lcoil/transition/NoneTransition;->INSTANCE:Lcoil/transition/NoneTransition;
 
     if-ne v15, v6, :cond_6
@@ -812,8 +802,6 @@
     iget-object v15, v1, Lcoil/request/SuccessResult;->request:Lcoil/request/ImageRequest;
 
     iget-object v7, v15, Lcoil/request/ImageRequest;->transition:Lcoil/transition/Transition;
-
-    sget v16, Lcoil/transition/Transition;->$r8$clinit:I
 
     sget-object v8, Lcoil/transition/NoneTransition;->INSTANCE:Lcoil/transition/NoneTransition;
 

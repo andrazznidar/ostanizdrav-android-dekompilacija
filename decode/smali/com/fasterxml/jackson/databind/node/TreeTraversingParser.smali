@@ -12,26 +12,6 @@
 
 
 # direct methods
-.method public constructor <init>(Lcom/fasterxml/jackson/databind/JsonNode;)V
-    .locals 2
-
-    const/4 v0, 0x0
-
-    invoke-direct {p0, v0}, Lcom/fasterxml/jackson/core/base/ParserMinimalBase;-><init>(I)V
-
-    const/4 v0, 0x0
-
-    iput-object v0, p0, Lcom/fasterxml/jackson/databind/node/TreeTraversingParser;->_objectCodec:Lcom/fasterxml/jackson/core/ObjectCodec;
-
-    new-instance v1, Lcom/fasterxml/jackson/databind/node/NodeCursor$RootCursor;
-
-    invoke-direct {v1, p1, v0}, Lcom/fasterxml/jackson/databind/node/NodeCursor$RootCursor;-><init>(Lcom/fasterxml/jackson/databind/JsonNode;Lcom/fasterxml/jackson/databind/node/NodeCursor;)V
-
-    iput-object v1, p0, Lcom/fasterxml/jackson/databind/node/TreeTraversingParser;->_nodeCursor:Lcom/fasterxml/jackson/databind/node/NodeCursor;
-
-    return-void
-.end method
-
 .method public constructor <init>(Lcom/fasterxml/jackson/databind/JsonNode;Lcom/fasterxml/jackson/core/ObjectCodec;)V
     .locals 1
 
@@ -56,11 +36,6 @@
 # virtual methods
 .method public _handleEOF()V
     .locals 1
-    .annotation system Ldalvik/annotation/Throws;
-        value = {
-            Lcom/fasterxml/jackson/core/JsonParseException;
-        }
-    .end annotation
 
     invoke-static {}, Lcom/fasterxml/jackson/core/util/VersionUtil;->throwInternal()V
 
@@ -126,7 +101,7 @@
     .locals 3
     .annotation system Ldalvik/annotation/Throws;
         value = {
-            Lcom/fasterxml/jackson/core/JsonParseException;
+            Lcom/fasterxml/jackson/core/JacksonException;
         }
     .end annotation
 
@@ -209,8 +184,7 @@
     .locals 2
     .annotation system Ldalvik/annotation/Throws;
         value = {
-            Ljava/io/IOException;,
-            Lcom/fasterxml/jackson/core/JsonParseException;
+            Ljava/io/IOException;
         }
     .end annotation
 
@@ -527,19 +501,17 @@
 .end method
 
 .method public getText()Ljava/lang/String;
-    .locals 3
+    .locals 2
 
-    iget-boolean v0, p0, Lcom/fasterxml/jackson/databind/node/TreeTraversingParser;->_closed:Z
-
-    const/4 v1, 0x0
-
-    if-eqz v0, :cond_0
-
-    return-object v1
-
-    :cond_0
     iget-object v0, p0, Lcom/fasterxml/jackson/core/base/ParserMinimalBase;->_currToken:Lcom/fasterxml/jackson/core/JsonToken;
 
+    if-nez v0, :cond_0
+
+    const/4 v0, 0x0
+
+    return-object v0
+
+    :cond_0
     invoke-virtual {v0}, Ljava/lang/Enum;->ordinal()I
 
     move-result v0
@@ -557,9 +529,9 @@
 
     invoke-virtual {v0}, Lcom/fasterxml/jackson/databind/JsonNode;->isBinary()Z
 
-    move-result v2
+    move-result v1
 
-    if-eqz v2, :cond_1
+    if-eqz v1, :cond_1
 
     invoke-virtual {v0}, Lcom/fasterxml/jackson/databind/JsonNode;->asText()Ljava/lang/String;
 
@@ -604,15 +576,11 @@
     :goto_0
     iget-object v0, p0, Lcom/fasterxml/jackson/core/base/ParserMinimalBase;->_currToken:Lcom/fasterxml/jackson/core/JsonToken;
 
-    if-nez v0, :cond_2
+    iget-object v0, v0, Lcom/fasterxml/jackson/core/JsonToken;->_serialized:Ljava/lang/String;
 
-    goto :goto_1
+    return-object v0
 
-    :cond_2
-    iget-object v1, v0, Lcom/fasterxml/jackson/core/JsonToken;->_serialized:Ljava/lang/String;
-
-    :goto_1
-    return-object v1
+    nop
 
     :pswitch_data_0
     .packed-switch 0x5
@@ -628,8 +596,7 @@
     .locals 1
     .annotation system Ldalvik/annotation/Throws;
         value = {
-            Ljava/io/IOException;,
-            Lcom/fasterxml/jackson/core/JsonParseException;
+            Ljava/io/IOException;
         }
     .end annotation
 
@@ -648,8 +615,7 @@
     .locals 1
     .annotation system Ldalvik/annotation/Throws;
         value = {
-            Ljava/io/IOException;,
-            Lcom/fasterxml/jackson/core/JsonParseException;
+            Ljava/io/IOException;
         }
     .end annotation
 
@@ -668,8 +634,7 @@
     .locals 1
     .annotation system Ldalvik/annotation/Throws;
         value = {
-            Ljava/io/IOException;,
-            Lcom/fasterxml/jackson/core/JsonParseException;
+            Ljava/io/IOException;
         }
     .end annotation
 
@@ -727,8 +692,7 @@
     .locals 2
     .annotation system Ldalvik/annotation/Throws;
         value = {
-            Ljava/io/IOException;,
-            Lcom/fasterxml/jackson/core/JsonParseException;
+            Ljava/io/IOException;
         }
     .end annotation
 
@@ -810,8 +774,7 @@
     .locals 2
     .annotation system Ldalvik/annotation/Throws;
         value = {
-            Ljava/io/IOException;,
-            Lcom/fasterxml/jackson/core/JsonParseException;
+            Ljava/io/IOException;
         }
     .end annotation
 

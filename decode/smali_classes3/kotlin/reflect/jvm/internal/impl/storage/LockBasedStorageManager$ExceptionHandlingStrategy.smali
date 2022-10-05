@@ -30,3 +30,8 @@
 
     return-void
 .end method
+
+
+# virtual methods
+.method public abstract handleException(Ljava/lang/Throwable;)Ljava/lang/RuntimeException;
+.end method
