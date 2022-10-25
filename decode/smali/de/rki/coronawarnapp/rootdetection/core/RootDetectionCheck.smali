@@ -149,7 +149,7 @@
 
     move-result-wide v5
 
-    const-wide/32 v7, 0x214406
+    const-wide/32 v7, 0x216b16
 
     cmp-long p1, v7, v5
 

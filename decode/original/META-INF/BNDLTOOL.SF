@@ -1,10 +1,10 @@
 Signature-Version: 1.0
 Created-By: 1.0 (Android)
-SHA-256-Digest-Manifest: fKxBP/r7Y6YHjpuGNTUOXqBFQNBiU5yybnWIzQCKAf8=
+SHA-256-Digest-Manifest: jVcpHjXYojDDBrxdsVKuWjtUXSAlJdAzw/DVvUs3bUM=
 X-Android-APK-Signed: 2, 3
 
 Name: AndroidManifest.xml
-SHA-256-Digest: H+8J39s2vcVDHD0M9Gdo0lDDf09Q8EBUmRsteVbaRZQ=
+SHA-256-Digest: DFaUe9UHfgy+ueNT+7V1mjYC6fLDhz0Y94OD15oAHHA=
 
 Name: META-INF/androidx.activity_activity-ktx.version
 SHA-256-Digest: cW0h2ll8n2uVzIKUe5vP1atZHglkdA7RbVffAB4OsRI=
@@ -401,13 +401,13 @@ Name: build-data.properties
 SHA-256-Digest: 3yioYmZ9nQ2jS/Wl8v4dYoPEtb/KLuk348806XIRk3U=
 
 Name: classes.dex
-SHA-256-Digest: oSNk4eam5hvGTteaSHYBbaL3jvOI6QTd0/DVdwkziAA=
+SHA-256-Digest: bct6vZX9P4+13YM+2pDPftCd9GM/i16IRGtPVDrLfQo=
 
 Name: classes2.dex
 SHA-256-Digest: 06ybtCabDcoNtlZ/IyrI0YYhOFpUC64QDLUcAWfQb28=
 
 Name: classes3.dex
-SHA-256-Digest: cqNmWP5FSq+nkp+jrpmA4UECm6ytvCD/1q3GxpQPEP0=
+SHA-256-Digest: wij6syjY8E7n/14/sMZ/wf+Z0wNufh2qUmrB4MhEoMc=
 
 Name: core.properties
 SHA-256-Digest: kLWTKuAIJjO+zljJn5cun8hlXx5m1GsDOK1xajvMbKE=
@@ -5059,7 +5059,7 @@ Name: res/layout/fragment_onboarding_delta_interoperability.xml
 SHA-256-Digest: 72Uip2Ksal65t7j/alInA4qAFh/wYVS5xBBpNpptKmQ=
 
 Name: res/layout/fragment_onboarding_delta_ppa.xml
-SHA-256-Digest: FHZZA38QYvNXQvmW8gxFZ2pWCP69JP7XYEnDuJ3dXUU=
+SHA-256-Digest: 9bYqo3vr75Z4F2UX/noA3QngZ8e7/xdfBkHs6TsNs4c=
 
 Name: res/layout/fragment_onboarding_notifications.xml
 SHA-256-Digest: UKbx2aR3YJrk2d1f25Ym/oHrN9Tfw+U5cD5fZWS39Kg=
@@ -6119,7 +6119,7 @@ Name: res/raw/ic_settings_tracing_animated.json
 SHA-256-Digest: zyb8GrFT9yxwue/ur57D5TDQL5oXoLTWX25B8F6e3GM=
 
 Name: res/xml/network_security_config.xml
-SHA-256-Digest: jnQnLohZJlYbJYLhHK2HdUXUU7QwM22ZJXQpklfVPV4=
+SHA-256-Digest: jm8EF0bXXRYf9hkiWoE+Z817IgPiULa0rYimbn6/IBs=
 
 Name: res/xml/provider_paths.xml
 SHA-256-Digest: P1/Iog8oAY3WFlE6221N8G/cOSoELu7eiKJDRjeNd/M=
@@ -6143,7 +6143,7 @@ Name: res/xml/standalone_badge_offset.xml
 SHA-256-Digest: 1QhvvvKsjVMjz5vEzCLi+vEb6V7NFZK6c6z5DVh9KCM=
 
 Name: resources.arsc
-SHA-256-Digest: ET2ebhhLSN8uZiGPg3O586Ix5Z1QlgRFPc72KmADTD0=
+SHA-256-Digest: wwXOPoyqe5zidZC0aU4woEEm8tjtk0pvsqJpC7M2pgo=
 
 Name: stamp-cert-sha256
 SHA-256-Digest: L0p4Bm/NGffFWX26fUKi8jlq3aKsfwyEBtSavY6F0c0=

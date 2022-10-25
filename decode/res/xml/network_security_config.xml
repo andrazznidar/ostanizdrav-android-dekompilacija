@@ -4,7 +4,7 @@
         <domain includeSubdomains="false">submission.cwa.gov.si</domain>
         <domain includeSubdomains="false">verification.cwa.gov.si</domain>
         <pin-set expiration="2024-02-12">
-            <pin digest="SHA-256">H2Am9Nz7BiC8PR4YKrNH0hlDHOM72EjPsfzWVba85Y4=</pin>
+            <pin digest="SHA-256">XO9AN4+Sqy473gKwP6qvTvOTjXGSmJsSzcYAMgBTxmQ=</pin>
         </pin-set>
         <trust-anchors>
             <certificates overridePins="false" src="system" />

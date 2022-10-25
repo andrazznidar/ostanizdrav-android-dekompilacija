@@ -841,7 +841,7 @@ The information will be analyzed for statistical purposes. It will not be saved 
     <string name="onboarding_ppa_more_info_rki_data_point_7_text">Information about the time between your last exposure with increased risk and the test registration.</string>
     <string name="onboarding_ppa_more_info_rki_data_point_8_text">Information about the time between the last notification of an increased risk and the test registration.</string>
     <string name="onboarding_ppa_more_info_rki_data_point_9_text">Information about whether you shared your test result and warned others.</string>
-    <string name="onboarding_ppa_more_info_rki_data_title">To this end, the RKI collects the following data:</string>
+    <string name="onboarding_ppa_more_info_rki_data_title">To this end, the NIJZ collects the following data:</string>
     <string name="onboarding_ppa_more_info_title">Detailed Information about This Data Processing and Data Protection Risks in the U.S. and Other Third Countries</string>
     <string name="onboarding_ppa_state_title">Your region (optional)</string>
     <string name="onboarding_privacy_accessibility_title">Onboarding page 2 of 6: Data Privacy. A long text follows. To proceed at any time, use the button at the bottom of the screen.</string>
@@ -1141,7 +1141,7 @@ You’ll find more information about certificate verification on our FAQ page."<
     <string name="risk_details_explanation_dialog_faq_body">General information on covid-19 is available on the <a href="https://www.nijz.si/sl/koronavirus-2019-ncov"> National Institute of Public Health website. </a>" "</string>
     <string name="risk_details_explanation_dialog_title">Information about exposure logging functionality</string>
     <string name="risk_details_explanation_faq_link">https://www.coronawarn.app/en/faq/#encounter_but_green</string>
-    <string name="risk_details_faq_symptoms">Monitor your health. In case of signs or symptoms, stay at home and consult with your doctor over the phone.</string>
+    <string name="risk_details_faq_symptoms">Pay attention to your health. In case of signs or symptoms or a positive test for SARS-CoV-2, stay at home and consult with your physician over the phone.</string>
     <string name="risk_details_faq_symptoms_increase">Pay attention to your health. In case of signs or symptoms or a positive test for SARS-CoV-2, stay at home and consult with your physician over the phone.</string>
     <string name="risk_details_find_details_in_journal">You will find more information about your exposures in your contact journal.</string>
     <string name="risk_details_find_details_in_journal_increased_risk">"You will find more information about your exposures in your contact journal.

@@ -80,7 +80,7 @@
 
     invoke-static {p1}, Ljava/util/Objects;->requireNonNull(Ljava/lang/Object;)Ljava/lang/Object;
 
-    const-wide/32 v0, 0x214406
+    const-wide/32 v0, 0x216b16
 
     goto :goto_0
 

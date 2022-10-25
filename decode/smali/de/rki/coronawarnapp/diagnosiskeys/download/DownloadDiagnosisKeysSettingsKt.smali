@@ -17,7 +17,7 @@
 
     new-array v1, v1, [Ljava/lang/Object;
 
-    const-wide/32 v2, 0x214406
+    const-wide/32 v2, 0x216b16
 
     invoke-static {v2, v3}, Ljava/lang/Long;->valueOf(J)Ljava/lang/Long;
 

@@ -179,7 +179,7 @@
 
     int-to-long v0, p1
 
-    const-wide/32 v4, 0x214406
+    const-wide/32 v4, 0x216b16
 
     cmp-long v0, v0, v4
 

@@ -125,7 +125,7 @@
 
     const/4 v0, 0x0
 
-    const-string v4, "2.18.1"
+    const-string v4, "2.19.1"
 
     aput-object v4, p4, v0
 

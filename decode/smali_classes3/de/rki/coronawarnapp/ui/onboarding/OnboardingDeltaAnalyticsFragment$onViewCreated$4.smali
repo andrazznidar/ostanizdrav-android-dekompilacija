@@ -65,18 +65,8 @@
 
     iget-object v0, v0, Lde/rki/coronawarnapp/databinding/FragmentOnboardingDeltaPpaBinding;->districtRow:Landroidx/constraintlayout/widget/ConstraintLayout;
 
-    sget-object v1, Lde/rki/coronawarnapp/server/protocols/internal/ppdd/PpaData$PPAFederalState;->FEDERAL_STATE_UNSPECIFIED:Lde/rki/coronawarnapp/server/protocols/internal/ppdd/PpaData$PPAFederalState;
-
-    if-eq p1, v1, :cond_0
-
-    const/4 v1, 0x0
-
-    goto :goto_0
-
-    :cond_0
     const/16 v1, 0x8
 
-    :goto_0
     invoke-virtual {v0, v1}, Landroid/view/ViewGroup;->setVisibility(I)V
 
     iget-object v0, p0, Lde/rki/coronawarnapp/ui/onboarding/OnboardingDeltaAnalyticsFragment$onViewCreated$4;->this$0:Lde/rki/coronawarnapp/ui/onboarding/OnboardingDeltaAnalyticsFragment;

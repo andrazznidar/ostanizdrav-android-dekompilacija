@@ -8,7 +8,7 @@
 
 # annotations
 .annotation system Ldalvik/annotation/SourceDebugExtension;
-    value = "SMAP\nOnboardingDeltaAnalyticsFragment.kt\nKotlin\n*S Kotlin\n*F\n+ 1 OnboardingDeltaAnalyticsFragment.kt\nde/rki/coronawarnapp/ui/onboarding/OnboardingDeltaAnalyticsFragment\n+ 2 CWAViewModelExtensions.kt\nde/rki/coronawarnapp/util/viewmodel/CWAViewModelExtensionsKt\n+ 3 ViewBindingExtensions.kt\nde/rki/coronawarnapp/util/ui/ViewBindingExtensionsKt\n*L\n1#1,96:1\n10#2,10:97\n18#3,11:107\n*S KotlinDebug\n*F\n+ 1 OnboardingDeltaAnalyticsFragment.kt\nde/rki/coronawarnapp/ui/onboarding/OnboardingDeltaAnalyticsFragment\n*L\n24#1:97,10\n25#1:107,11\n*E\n"
+    value = "SMAP\nOnboardingDeltaAnalyticsFragment.kt\nKotlin\n*S Kotlin\n*F\n+ 1 OnboardingDeltaAnalyticsFragment.kt\nde/rki/coronawarnapp/ui/onboarding/OnboardingDeltaAnalyticsFragment\n+ 2 CWAViewModelExtensions.kt\nde/rki/coronawarnapp/util/viewmodel/CWAViewModelExtensionsKt\n+ 3 ViewBindingExtensions.kt\nde/rki/coronawarnapp/util/ui/ViewBindingExtensionsKt\n*L\n1#1,92:1\n10#2,10:93\n18#3,11:103\n*S KotlinDebug\n*F\n+ 1 OnboardingDeltaAnalyticsFragment.kt\nde/rki/coronawarnapp/ui/onboarding/OnboardingDeltaAnalyticsFragment\n*L\n24#1:93,10\n25#1:103,11\n*E\n"
 .end annotation
 
 .annotation runtime Lkotlin/Metadata;

@@ -197,7 +197,7 @@
     check-cast p1, Lde/rki/coronawarnapp/appconfig/CWAConfig;
 
     :goto_4
-    const-wide/32 v0, 0x214406
+    const-wide/32 v0, 0x216b16
 
     invoke-interface {p1}, Lde/rki/coronawarnapp/appconfig/CWAConfig;->getMinVersionCode()J
 
@@ -508,7 +508,7 @@
 
     move-result-wide v5
 
-    const-wide/32 v7, 0x214406
+    const-wide/32 v7, 0x216b16
 
     sget-object p1, Ltimber/log/Timber;->Forest:Ltimber/log/Timber$Forest;
 
